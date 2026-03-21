@@ -1,0 +1,73 @@
+--- include/internal/catch_approx.cpp.orig	2022-10-16 09:02:17 UTC
++++ include/internal/catch_approx.cpp
+@@ -73,10 +73,10 @@ namespace literals {
+ } // end namespace Detail
+ 
+ namespace literals {
+-    Detail::Approx operator "" _a(long double val) {
++    Detail::Approx operator ""_a(long double val) {
+         return Detail::Approx(val);
+     }
+-    Detail::Approx operator "" _a(unsigned long long val) {
++    Detail::Approx operator ""_a(unsigned long long val) {
+         return Detail::Approx(val);
+     }
+ } // end namespace literals
+--- include/internal/catch_approx.h.orig	2022-10-16 09:02:17 UTC
++++ include/internal/catch_approx.h
+@@ -118,8 +118,8 @@ namespace literals {
+ } // end namespace Detail
+ 
+ namespace literals {
+-    Detail::Approx operator "" _a(long double val);
+-    Detail::Approx operator "" _a(unsigned long long val);
++    Detail::Approx operator ""_a(long double val);
++    Detail::Approx operator ""_a(unsigned long long val);
+ } // end namespace literals
+ 
+ template<>
+--- include/internal/catch_stringref.h.orig	2022-10-16 09:02:17 UTC
++++ include/internal/catch_stringref.h
+@@ -92,12 +92,12 @@ namespace Catch {
+     auto operator << ( std::ostream& os, StringRef const& sr ) -> std::ostream&;
+ 
+ 
+-    constexpr auto operator "" _sr( char const* rawChars, std::size_t size ) noexcept -> StringRef {
++    constexpr auto operator ""_sr( char const* rawChars, std::size_t size ) noexcept -> StringRef {
+         return StringRef( rawChars, size );
+     }
+ } // namespace Catch
+ 
+-constexpr auto operator "" _catch_sr( char const* rawChars, std::size_t size ) noexcept -> Catch::StringRef {
++constexpr auto operator ""_catch_sr( char const* rawChars, std::size_t size ) noexcept -> Catch::StringRef {
+     return Catch::StringRef( rawChars, size );
+ }
+ 
+--- projects/SelfTest/IntrospectiveTests/String.tests.cpp.orig	2022-10-16 09:02:17 UTC
++++ projects/SelfTest/IntrospectiveTests/String.tests.cpp
+@@ -141,7 +141,7 @@ TEST_CASE("StringRef at compilation time", "[Strings][
+         STATIC_REQUIRE(sr1.size() == 3);
+         STATIC_REQUIRE(sr1.isNullTerminated());
+ 
+-        using Catch::operator"" _sr;
++        using Catch::operator""_sr;
+         constexpr auto sr2 = ""_sr;
+         STATIC_REQUIRE(sr2.empty());
+         STATIC_REQUIRE(sr2.size() == 0);
+--- projects/SelfTest/UsageTests/ToStringVariant.tests.cpp.orig	2022-10-16 09:02:17 UTC
++++ projects/SelfTest/UsageTests/ToStringVariant.tests.cpp
+@@ -10,12 +10,12 @@ struct MyType1 {
+ struct MyType1 {
+     MyType1() = default;
+     [[noreturn]] MyType1(MyType1 const&) { throw 1; }
+-    MyType1& operator=(MyType1 const&) { throw 3; }
++    [[noreturn]] MyType1& operator=(MyType1 const&) { throw 3; }
+ };
+ struct MyType2 {
+     MyType2() = default;
+     [[noreturn]] MyType2(MyType2 const&) { throw 2; }
+-    MyType2& operator=(MyType2 const&) { throw 4; }
++    [[noreturn]] MyType2& operator=(MyType2 const&) { throw 4; }
+ };
+ 
+ TEST_CASE( "variant<std::monostate>", "[toString][variant][approvals]")

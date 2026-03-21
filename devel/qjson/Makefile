@@ -11,6 +11,9 @@ WWW=		https://qjson.sourceforge.net/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.lib
 
+DEPRECATED=		Deprecated upstream, not used by anything
+EXPIRATION_DATE=	2026-03-31
+
 USES=		cmake compiler:c++11-lang pathfix qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	flavio

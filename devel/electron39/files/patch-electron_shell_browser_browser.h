@@ -1,6 +1,6 @@
---- electron/shell/browser/browser.h.orig	2025-10-27 17:58:27 UTC
+--- electron/shell/browser/browser.h.orig	2026-03-17 08:46:38 UTC
 +++ electron/shell/browser/browser.h
-@@ -148,7 +148,7 @@ class Browser : private WindowListObserver {
+@@ -152,7 +152,7 @@ class Browser : private WindowListObserver {
  
    std::u16string GetApplicationNameForProtocol(const GURL& url);
  
@@ -9,7 +9,7 @@
    // get the name, icon and path for an application
    v8::Local<v8::Promise> GetApplicationInfoForProtocol(v8::Isolate* isolate,
                                                         const GURL& url);
-@@ -276,10 +276,10 @@ class Browser : private WindowListObserver {
+@@ -280,10 +280,10 @@ class Browser : private WindowListObserver {
    PCWSTR GetAppUserModelID();
  #endif  // BUILDFLAG(IS_WIN)
  

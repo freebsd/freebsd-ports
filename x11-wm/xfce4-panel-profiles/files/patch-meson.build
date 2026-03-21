@@ -1,0 +1,19 @@
+--- meson.build.orig	2025-05-22 06:53:32 UTC
++++ meson.build
+@@ -11,14 +11,14 @@ if get_option('check-runtime-dependencies')
+ 
+ python3_path = ''
+ if get_option('check-runtime-dependencies')
+-  python3 = python.find_installation('python3', modules: python3_required_modules)
++  python3 = python.find_installation('%%PYTHON_CMD%%', modules: python3_required_modules)
+   python3_path = python3.full_path()
+ endif
+ if get_option('python-path') != ''
+   python3_path = get_option('python-path')
+ endif
+ if python3_path == ''
+-  python3_path = 'python3'
++  python3_path = '%%PYTHON_CMD%%'
+ endif
+ 
+ dependency_versions = {

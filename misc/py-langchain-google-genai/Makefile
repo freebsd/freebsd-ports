@@ -1,5 +1,5 @@
 PORTNAME=	langchain-google-genai
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

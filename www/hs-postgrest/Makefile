@@ -1,11 +1,12 @@
 PORTNAME=	postgrest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.2
+DISTVERSION=	14.6
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	PostgREST create a REST API to an existing Postgres database
-WWW=		https://postgrest.org/
+WWW=		https://postgrest.org/ \
+		https://github.com/PostgREST/postgrest/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

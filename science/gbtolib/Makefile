@@ -7,7 +7,7 @@ DISTNAME=	GBTOLib-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance library for evaluation of molecular integrals
-WWW=		https://zenodo.org/record/5798035 #.Yo1sazXMKV4
+WWW=		https://zenodo.org/record/5798035
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,2 +1,3 @@
-SHA256 (gnulib-20140202-stable.tar.gz) = 9f028f48e60f066bf511a969c519da705eeefb20d54a80dce88afd0935a845e1
-SIZE (gnulib-20140202-stable.tar.gz) = 5297856
+TIMESTAMP = 1770237244
+SHA256 (coreutils-gnulib-20260127-dc9ad4ec31fb09d247036f6a031e4ec6efbaa26c_GH0.tar.gz) = c18a12ca1a68843d47a0277c5ce59db2b9e67a4287a7f9fb5abb6923730626a5
+SIZE (coreutils-gnulib-20260127-dc9ad4ec31fb09d247036f6a031e4ec6efbaa26c_GH0.tar.gz) = 9388593

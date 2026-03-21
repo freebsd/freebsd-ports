@@ -1,10 +1,10 @@
 PORTNAME=	egl-x11
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	EGL X11/XCB platform library for NVIDIA driver
+COMMENT=	NVIDIA graphics EGL xlib/xcb XWayland platform
 WWW=		https://github.com/NVIDIA/egl-x11
 
 LICENSE=	APACHE20

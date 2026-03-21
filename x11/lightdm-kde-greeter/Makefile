@@ -1,5 +1,6 @@
 PORTNAME=	lightdm-kde-greeter
 PORTVERSION=	6.0.4
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org

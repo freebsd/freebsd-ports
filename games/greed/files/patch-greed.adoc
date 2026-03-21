@@ -1,0 +1,52 @@
+--- greed.adoc.orig	2026-02-26 13:04:03 UTC
++++ greed.adoc
+@@ -1,16 +1,9 @@
+-= greed(6) =
+-:doctype: manpage
+-
+-// spellcheck: add hjklyubn Num GREEDOPTS usr greedscores ESR's
+-// spellcheck: add cn Ctrl-L
+-
+ == NAME ==
+ greed - eat a game field until you run out of moves
+ 
+ == SYNOPSIS ==
+ greed [-s] [-w width] [-h height] [-f] [-p] [-r seed]
+ 
+-[[description]]
+ == DESCRIPTION ==
+ 
+ The object of Greed is to erase as much of the screen as
+@@ -50,7 +43,6 @@ With the -s option, output the hight score file
+ 
+ With the -s option, output the hight score file
+ 
+-[[environment]]
+ == ENVIRONMENT ==
+ The environment variable GREEDOPTS can override the default
+ color set, which will be parsed as a string of the form:
+@@ -80,22 +72,17 @@ defined.
+ defined.
+ 
+ 
+-[[files]]
+ == FILES ==
+-/usr/lib/games/greed.hs::
++/usr/lib/games/greed.hs
+    Default location of Greed high scores.
+-~/.greedscores::
++~/.greedscores
+    Where they're put if the default location cannot be written to..
+ 
+-[[authors]]
+ == AUTHORS == Originally written
+ Written by Matt Day.  Maintained by <esr@snark.thyrsus.com>. See ESR's home
+ page at http://www.catb.org/~esr/ for
+ updates and other resources.
+ 
+-[[bugs]]
+ == BUGS ==
+ This really ought to be an X game, but that would have been too much
+ like work.
+-
+-// end

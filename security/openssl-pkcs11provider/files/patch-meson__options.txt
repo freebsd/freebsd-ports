@@ -1,0 +1,11 @@
+--- meson_options.txt.orig	2026-03-13 08:56:01 UTC
++++ meson_options.txt
+@@ -17,3 +17,8 @@ option('build_info',
+     type : 'string',
+     value : '',
+     description : 'Optional string with build information, like a build id')
++
++option('modulesdir',
++    type : 'string',
++    value : '',
++    description : 'Overrride for modulesdir variable for libcrypto')

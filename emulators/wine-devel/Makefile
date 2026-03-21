@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	11.3
+DISTVERSION=	11.4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/11.x/
@@ -22,7 +22,7 @@ FLAVORS=	default allaudio
 FLAVOR?=	default
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
-USES=		bison cpe desktop-file-utils gmake llvm:min=17,build,noexport \
+USES=		autoreconf bison cpe desktop-file-utils gmake llvm:min=17,build,noexport \
 		localbase pkgconfig sdl shebangfix tar:xz
 CPE_VENDOR=	winehq
 USE_GCC=	yes
@@ -55,7 +55,7 @@ CONFIGURE_ARGS=	--verbose \
 		--with-sdl \
 		--without-udev \
 		--without-unwind \
-		--without-usb
+		--with-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 
 PIE_UNSAFE=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	deal.II
 DISTVERSION=	9.6.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
@@ -54,8 +54,8 @@ ADOLC_BROKEN=		requires the development version: see https://github.com/dealii/d
 ARPACK_DESC=		Compile with Arpack and PArpack (only with MPI, LAPACK)
 ARPACK_CMAKE_BOOL=	DEAL_II_WITH_ARPACK
 ARPACK_CMAKE_ON=	-DARPACK_LINKER_FLAGS:STRING="${LDFLAGS}"
-ARPACK_BUILD_DEPENDS=	arpack-ng>0:math/arpack-ng
-ARPACK_RUN_DEPENDS=	arpack-ng>0:math/arpack-ng # itself doesn't link to arpack, but makes depending project link to it
+ARPACK_BUILD_DEPENDS=	arpack-ng@mpich>0:math/arpack-ng@mpich
+ARPACK_RUN_DEPENDS=	arpack-ng@mpich>0:math/arpack-ng@mpich # itself doesn't link to arpack, but makes depending project link to it
 ARPACK_IMPLIES=		LAPACK
 
 GSL_DESC=		Compile with gsl

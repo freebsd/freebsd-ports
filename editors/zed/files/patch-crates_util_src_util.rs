@@ -1,7 +1,7 @@
---- crates/util/src/util.rs.orig	2026-02-04 14:02:45 UTC
+--- crates/util/src/util.rs.orig	2026-03-11 14:31:09 UTC
 +++ crates/util/src/util.rs
-@@ -306,7 +306,7 @@ pub fn get_shell_safe_zed_path(shell_kind: shell::Shel
- pub fn get_shell_safe_zed_path(shell_kind: shell::ShellKind) -> anyhow::Result<String> {
+@@ -289,7 +289,7 @@ pub fn get_shell_safe_zed_path(shell_kind: shell::Shel
+     use paths::PathExt;
      let mut zed_path =
          std::env::current_exe().context("Failed to determine current zed executable path.")?;
 -    if cfg!(target_os = "linux")

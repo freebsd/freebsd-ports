@@ -1,6 +1,6 @@
---- media/capture/video/video_capture_device_client.cc.orig	2026-02-11 09:05:39 UTC
+--- media/capture/video/video_capture_device_client.cc.orig	2026-03-13 06:02:14 UTC
 +++ media/capture/video/video_capture_device_client.cc
-@@ -167,7 +167,7 @@ FourccAndFlip GetFourccAndFlipFromPixelFormat(
+@@ -166,7 +166,7 @@ FourccAndFlip GetFourccAndFlipFromPixelFormat(
        CHECK(!is_width_odd && !is_height_odd);
        return {libyuv::FOURCC_UYVY};
      case media::PIXEL_FORMAT_RGB24:

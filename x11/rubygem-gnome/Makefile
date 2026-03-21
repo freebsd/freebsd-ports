@@ -1,5 +1,5 @@
 PORTNAME=	gnome
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.5
 CATEGORIES=	x11 gnome rubygems
 PKGNAMEPREFIX=	rubygem-
 

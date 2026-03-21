@@ -1,10 +1,10 @@
-TIMESTAMP = 1771935289
-SHA256 (openscad-openscad-2026.02.19-10cc3aa86098068f663e496ebf9742e670f5bab6_GH0.tar.gz) = d2fa645662dfc06976fe19823bf4fb78a64191e66cf05e310aa868bca08f37a5
-SIZE (openscad-openscad-2026.02.19-10cc3aa86098068f663e496ebf9742e670f5bab6_GH0.tar.gz) = 25352928
+TIMESTAMP = 1773852723
+SHA256 (openscad-openscad-2026.03.16-cc559f7aab12b1e44a531ca2180b7d9c1c40ac34_GH0.tar.gz) = 35aed43e786939f13a70db555f2a0ef810dbca59be02b4caa8d6674887846081
+SIZE (openscad-openscad-2026.03.16-cc559f7aab12b1e44a531ca2180b7d9c1c40ac34_GH0.tar.gz) = 25338204
 SHA256 (microsoft-mimalloc-4cebb48062196625b91c79311f3ff4b22f493d47_GH0.tar.gz) = 1811a777b83ffa9cb5c2f3c1b2f41b48bd72b6f044812d7ba2c2bacf5e1b8e2c
 SIZE (microsoft-mimalloc-4cebb48062196625b91c79311f3ff4b22f493d47_GH0.tar.gz) = 1133506
-SHA256 (elalish-manifold-aa0dc12da8275c3b40c448e7b9a29b047e293597_GH0.tar.gz) = 42fa1213ab63617e1621e8bcc432de643b3f8aeb6602902827016dafe5b33859
-SIZE (elalish-manifold-aa0dc12da8275c3b40c448e7b9a29b047e293597_GH0.tar.gz) = 30443312
+SHA256 (elalish-manifold-cf01c7bee2c93a6b5747b428a6d91cc69fcd5bf5_GH0.tar.gz) = 14ef78420812557a079917e635fc2119dc9eb6669439dd1f8b80bb48dd95f6f7
+SIZE (elalish-manifold-cf01c7bee2c93a6b5747b428a6d91cc69fcd5bf5_GH0.tar.gz) = 30747678
 SHA256 (arsenm-sanitizers-cmake-bcb1fc68616e9645ca5acea2992412606373ab04_GH0.tar.gz) = 98f25152be7305263189e1167c7b65a79328b335d1cf4861f592318a36d031ae
 SIZE (arsenm-sanitizers-cmake-bcb1fc68616e9645ca5acea2992412606373ab04_GH0.tar.gz) = 7491
 SHA256 (openscad-OpenCSG-313018fbf997f484f66cb4a320bbd2abf79a4fc1_GH0.tar.gz) = e6da517ab86422ed822e09c71e1ca6a673149fbbac50e7f3cb94f2daa3f7999d

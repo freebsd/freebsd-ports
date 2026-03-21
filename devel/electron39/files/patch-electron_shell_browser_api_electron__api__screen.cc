@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_screen.cc.orig	2025-07-02 10:12:01 UTC
+--- electron/shell/browser/api/electron_api_screen.cc.orig	2026-03-17 08:46:38 UTC
 +++ electron/shell/browser/api/electron_api_screen.cc
 @@ -28,7 +28,7 @@
  #include "ui/display/win/screen_win.h"
@@ -9,7 +9,16 @@
  #include "shell/browser/linux/x11_util.h"
  #endif
  
-@@ -136,7 +136,7 @@ gfx::PointF Screen::ScreenToDIPPoint(const gfx::PointF
+@@ -77,7 +77,7 @@ gfx::Point Screen::GetCursorScreenPoint(v8::Isolate* i
+ }
+ 
+ gfx::Point Screen::GetCursorScreenPoint(v8::Isolate* isolate) {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (x11_util::IsWayland())
+     return {};
+ #endif
+@@ -125,7 +125,7 @@ gfx::PointF Screen::ScreenToDIPPoint(const gfx::PointF
  gfx::PointF Screen::ScreenToDIPPoint(const gfx::PointF& point_px) {
  #if BUILDFLAG(IS_WIN)
    return display::win::GetScreenWin()->ScreenToDIPPoint(point_px);
@@ -18,7 +27,7 @@
    if (x11_util::IsX11()) {
      gfx::Point pt_px = gfx::ToFlooredPoint(point_px);
      display::Display display = GetDisplayNearestPoint(pt_px);
-@@ -155,7 +155,7 @@ gfx::Point Screen::DIPToScreenPoint(const gfx::Point& 
+@@ -144,7 +144,7 @@ gfx::Point Screen::DIPToScreenPoint(const gfx::Point& 
  gfx::Point Screen::DIPToScreenPoint(const gfx::Point& point_dip) {
  #if BUILDFLAG(IS_WIN)
    return display::win::GetScreenWin()->DIPToScreenPoint(point_dip);
@@ -27,7 +36,7 @@
    if (x11_util::IsX11()) {
      display::Display display = GetDisplayNearestPoint(point_dip);
      gfx::Rect bounds_dip = display.bounds();
-@@ -198,7 +198,7 @@ gin::ObjectTemplateBuilder Screen::GetObjectTemplateBu
+@@ -187,7 +187,7 @@ gin::ObjectTemplateBuilder Screen::GetObjectTemplateBu
        .SetMethod("getPrimaryDisplay", &Screen::GetPrimaryDisplay)
        .SetMethod("getAllDisplays", &Screen::GetAllDisplays)
        .SetMethod("getDisplayNearestPoint", &Screen::GetDisplayNearestPoint)

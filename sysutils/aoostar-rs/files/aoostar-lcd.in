@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# PROVIDE: aoostar_lcd
+# REQUIRE: DAEMON usb
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable at boot:
+#
+# aoostar_lcd_enable="YES"          # Enable service (default: NO)
+# aoostar_lcd_device="/dev/cuaU0"   # Override serial device (optional)
+# aoostar_lcd_action="off"          # Action at start: "off" or "on" (default: off)
+#
+
+. /etc/rc.subr
+
+name="aoostar_lcd"
+rcvar="aoostar_lcd_enable"
+desc="AOOSTAR WTR MAX / GEM12+ PRO LCD screen control"
+
+: ${aoostar_lcd_enable:="NO"}
+: ${aoostar_lcd_device:="%%DEVICE%%"}
+: ${aoostar_lcd_action:="off"}
+
+asterctl_cmd="%%ASTERCTL%%"
+command="/usr/bin/true"
+
+start_cmd="aoostar_lcd_start"
+stop_cmd="aoostar_lcd_stop"
+status_cmd="aoostar_lcd_status"
+
+aoostar_lcd_start()
+{
+	if [ ! -c "${aoostar_lcd_device}" ]; then
+		warn "aoostar_lcd: device ${aoostar_lcd_device} not found."
+		warn "Try: kldload umodem"
+		return 1
+	fi
+
+	case "${aoostar_lcd_action}" in
+	off)
+		info "aoostar_lcd: switching LCD off on ${aoostar_lcd_device}"
+		${asterctl_cmd} -d "${aoostar_lcd_device}" --off
+		;;
+	on)
+		info "aoostar_lcd: switching LCD on on ${aoostar_lcd_device}"
+		${asterctl_cmd} -d "${aoostar_lcd_device}" --on
+		;;
+	*)
+		warn "aoostar_lcd: unknown action '${aoostar_lcd_action}' (use 'on' or 'off')"
+		return 1
+		;;
+	esac
+}
+
+aoostar_lcd_stop()
+{
+	# Nothing to stop — this is a one-shot action service
+	:
+}
+
+aoostar_lcd_status()
+{
+	if [ -c "${aoostar_lcd_device}" ]; then
+		echo "aoostar_lcd: device ${aoostar_lcd_device} is present"
+	else
+		echo "aoostar_lcd: device ${aoostar_lcd_device} NOT found"
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

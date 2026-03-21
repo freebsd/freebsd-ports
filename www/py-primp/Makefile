@@ -1,6 +1,6 @@
 PORTNAME=	primp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	www
 #MASTER_SITES=	PYPI # conflicts with USES=cargo
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,10 +36,10 @@ BINARY_ALIAS=	cc=${FILESDIR}/cc
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 1.1.2:
-# Results (12.29s):
+# tests as of 1.1.3:
+# Results (12.34s):
 #          3 failed
-#        253 passed
+#        765 passed
 #          3 warnings
 
 .include <bsd.port.mk>

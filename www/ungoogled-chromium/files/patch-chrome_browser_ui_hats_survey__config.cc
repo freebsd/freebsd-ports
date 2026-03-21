@@ -1,6 +1,6 @@
---- chrome/browser/ui/hats/survey_config.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/ui/hats/survey_config.cc.orig	2026-03-15 18:32:51 UTC
 +++ chrome/browser/ui/hats/survey_config.cc
-@@ -546,7 +546,7 @@ std::vector<hats::SurveyConfig> GetAllSurveyConfigs() 
+@@ -559,7 +559,7 @@ std::vector<hats::SurveyConfig> GetAllSurveyConfigs() 
        &features::kHappinessTrackingSurveysForWallpaperSearch,
        kHatsSurveyTriggerWallpaperSearch);
  

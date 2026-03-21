@@ -1,5 +1,5 @@
 PORTNAME=	deheader
-DISTVERSION=	1.11
+DISTVERSION=	1.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.catb.org/esr/${PORTNAME}/
 
@@ -10,9 +10,9 @@ WWW=		http://www.catb.org/esr/deheader/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xmlto:textproc/xmlto
+BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 
-USES=		python shebangfix
+USES=		gmake python shebangfix
 SHEBANG_FILES=	${PORTNAME}
 
 NO_ARCH=	yes

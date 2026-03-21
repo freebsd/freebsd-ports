@@ -1,0 +1,9 @@
+erldash connects to an Erlang node using the dynamic node name feature
+to collect metrics. It only depends on erlang and erpc modules. So you can
+use this dashboard out of the box without installing any additional
+packages to the target Erlang node:
+
+  erldash run [-c $COOKIE] name@$IP
+
+Metrics are collected using erlang:statistics/1, erlang:memory/0 and
+erlang:system_info/1 functions.

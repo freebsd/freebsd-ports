@@ -1,10 +1,10 @@
 PORTNAME=	crowdsec
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
-MAINTAINER=	marco@crowdsec.net
+MAINTAINER=	manuel@crowdsec.net
 COMMENT=	CrowdSec lightweight and collaborative security engine
 WWW=		https://github.com/crowdsecurity/crowdsec
 

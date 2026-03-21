@@ -1,7 +1,7 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	26.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
 		libnetcdf.so:science/netcdf \
-		libparpack.so:math/arpack-ng \
+		libparpack.so:math/arpack-ng@mpich \
 		libcholmod.so:math/suitesparse-cholmod \
 	        libumfpack.so:math/suitesparse-umfpack
 

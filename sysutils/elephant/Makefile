@@ -1,6 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.3
+DISTVERSION=	2.20.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -28,7 +28,7 @@ OPTIONS_GROUP=		PROVIDERS
 OPTIONS_GROUP_PROVIDERS=1PASSWORD BITWARDEN BOOKMARKS CALC CLIPBOARD \
 			DESKTOPAPPLICATIONS FILES MENUS NIRIACTIONS \
 			NIRISESSIONS PROVIDERLIST RUNNER SNIPPETS SYMBOLS TODO \
-			UNICODE WEBSEARCH WINDOWS
+			UNICODE WEBSEARCH WINDOWS WIREPLUMBER
 
 PROVIDERS_DESC=		Enabled providers
 1PASSWORD_DESC=		Access your 1Password vaults
@@ -49,6 +49,7 @@ TODO_DESC=		Basic Todolist
 UNICODE_DESC=		Search for unicode symbols
 WEBSEARCH_DESC=		Search web with custom defined search engines
 WINDOWS_DESC=		Find and focus opened windows
+WIREPLUMBER_DESC=	Configure audio devices via Pipewire/Wireplumber
 
 1PASSWORD_RUN_DEPENDS=	op:security/1password-client2
 1PASSWORD_PLIST_FILES=	etc/xdg/elephant/providers/1password.so
@@ -85,6 +86,8 @@ UNICODE_PLIST_FILES=	etc/xdg/elephant/providers/unicode.so
 WEBSEARCH_PLIST_FILES=	etc/xdg/elephant/providers/websearch.so
 WINDOWS_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WINDOWS_PLIST_FILES=	etc/xdg/elephant/providers/windows.so
+WIREPLUMBER_RUN_DEPENDS=wireplumber:multimedia/wireplumber
+WIREPLUMBER_PLIST_FILES=etc/xdg/elephant/providers/wireplumber.so
 
 .include <bsd.port.options.mk>
 

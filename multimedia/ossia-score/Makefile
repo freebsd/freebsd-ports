@@ -1,5 +1,6 @@
 PORTNAME=	ossia-score # uses -mcx16
 DISTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/ossia/score/releases/download/v${DISTVERSION}/
 DISTFILES=	ossia.score-${DISTVERSION}-src${EXTRACT_SUFX}
@@ -37,12 +38,11 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		cmake gl localbase:ldflags llvm:19 pkgconfig qt:6 sdl tar:xz
 USE_GL=		gl opengl
-USE_QT=		base declarative networkauth scxml serialport shadertools svg websockets webview
+USE_QT=		base declarative networkauth quick3d scxml serialport shadertools svg websockets webview
 USE_SDL=	sdl2
 
 CMAKE_ON=	SCORE_USE_SYSTEM_LIBRARIES \
-		BUILD_SHARED_LIBS \
-		SCORE_USE_SYSTEM_LIBRARIES
+		BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DSCORE_DISABLED_PLUGINS="score-plugin-pd;score-plugin-vst3" \
 		-DCMAKE_CXX_FLAGS="-fexperimental-library" \
 		-DCMAKE_UNITY_BUILD=1

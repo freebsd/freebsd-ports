@@ -1,7 +1,6 @@
 PORTNAME=	qo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	textproc
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -11,9 +10,10 @@ WWW=		https://github.com/kiki-ki/go-qo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	vendor/modernc.org/libc/libc_freebsd.go:1638:17: invalid operation: Uint64(Uint64FromInt32(-1)) / uint64(255) * size_t(c) (mismatched types uint64 and size_t)
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
-USES=		go:1.25+,modules
+USES=		go:1.26+,modules
 GO_MODULE=	github.com/kiki-ki/go-qo
 GO_TARGET=	./cmd/qo
 

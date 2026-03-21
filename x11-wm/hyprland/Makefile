@@ -1,6 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.54.0
+DISTVERSION=	0.54.2
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
@@ -67,8 +67,6 @@ X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
 			libxcb-icccm.so:x11/xcb-util-wm
 X11_USE=		XORG=xcb
 X11_CMAKE_BOOL_OFF=	NO_XWAYLAND
-
-.include <bsd.port.options.mk>
 
 post-patch:
 # Respect consolekit2 as XDG_RUNTIME_DIR fallback

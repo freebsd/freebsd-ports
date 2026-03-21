@@ -1,43 +1,22 @@
---- configure.orig	2023-04-12 18:52:51 UTC
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/3d29724c008d
+
+--- configure.orig	2026-03-15 17:13:37 UTC
 +++ configure
-@@ -3784,13 +3784,7 @@ target_os_default=$(tolower $(uname -s))
- host_os=$target_os_default
- 
- # machine
--if test "$target_os_default" = aix; then
--    arch_default=$(uname -p)
--    strip_default="strip -X32_64"
--    nm_default="nm -g -X32_64"
--else
--    arch_default=$(uname -m)
--fi
-+arch_default=$(uname -p)
- cpu="generic"
- intrinsics="none"
- 
-@@ -5387,6 +5381,7 @@ case $target_os in
-         disable symver
-         ;;
-     freebsd)
-+        enable section_data_rel_ro
-         ;;
-     bsd/os)
-         add_extralibs -lpoll -lgnugetopt
-@@ -6369,7 +6369,7 @@ enabled libfribidi        && require_pkg_config libfri
- enabled libfontconfig     && require_pkg_config libfontconfig fontconfig "fontconfig/fontconfig.h" FcInit
- enabled libfreetype       && require_pkg_config libfreetype freetype2 "ft2build.h FT_FREETYPE_H" FT_Init_FreeType
- enabled libfribidi        && require_pkg_config libfribidi fribidi fribidi.h fribidi_version_info
--enabled libglslang        && require_cpp libglslang glslang/SPIRV/GlslangToSpv.h "glslang::TIntermediate*" -lglslang -lMachineIndependent -lOSDependent -lHLSL -lOGLCompiler -lGenericCodeGen -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++
-+enabled libglslang        && require_cpp libglslang glslang/SPIRV/GlslangToSpv.h "glslang::TIntermediate*" -lglslang -lMachineIndependent -lOSDependent -lGenericCodeGen -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++
- enabled libgme            && { check_pkg_config libgme libgme gme/gme.h gme_new_emu ||
-                                require libgme gme/gme.h gme_new_emu -lgme -lstdc++; }
- enabled libgsm            && { for gsm_hdr in "gsm.h" "gsm/gsm.h"; do
-@@ -6758,7 +6753,7 @@ enabled vulkan &&
- 
- if enabled x86; then
-     case $target_os in
--        mingw32*|mingw64*|win32|win64|linux|cygwin*)
-+        freebsd|mingw32*|mingw64*|win32|win64|linux|cygwin*)
-             ;;
-         *)
-             disable ffnvcodec cuvid nvdec nvenc
+@@ -3668,7 +3668,7 @@ vidstabtransform_filter_deps="libvidstab"
+ vaguedenoiser_filter_deps="gpl"
+ vidstabdetect_filter_deps="libvidstab"
+ vidstabtransform_filter_deps="libvidstab"
+-libvmaf_filter_deps="libvmaf pthreads"
++libvmaf_filter_deps="libvmaf"
+ zmq_filter_deps="libzmq"
+ zoompan_filter_deps="swscale"
+ zscale_filter_deps="libzimg const_nan"
+@@ -6460,7 +6460,7 @@ enabled libvidstab        && require_pkg_config libvid
+ enabled libuavs3d         && require_pkg_config libuavs3d "uavs3d >= 1.1.41" uavs3d.h uavs3d_decode
+ enabled libv4l2           && require_pkg_config libv4l2 libv4l2 libv4l2.h v4l2_ioctl
+ enabled libvidstab        && require_pkg_config libvidstab "vidstab >= 0.98" vid.stab/libvidstab.h vsMotionDetectInit
+-enabled libvmaf           && require_pkg_config libvmaf "libvmaf >= 1.5.2" libvmaf.h compute_vmaf
++enabled libvmaf           && require_pkg_config libvmaf "libvmaf >= 2.0.0" libvmaf.h vmaf_init
+ enabled libvo_amrwbenc    && require libvo_amrwbenc vo-amrwbenc/enc_if.h E_IF_init -lvo-amrwbenc
+ enabled libvorbis         && require_pkg_config libvorbis vorbis vorbis/codec.h vorbis_info_init &&
+                              require_pkg_config libvorbisenc vorbisenc vorbis/vorbisenc.h vorbis_encode_init

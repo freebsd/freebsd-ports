@@ -32,6 +32,8 @@ share/icons/hicolor/scalable/apps/luanti.svg
 %%CLIENT%%%%NLS%%share/locale/hu/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/hy/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/id/LC_MESSAGES/luanti.mo
+%%CLIENT%%%%NLS%%share/locale/io/LC_MESSAGES/luanti.mo
+%%CLIENT%%%%NLS%%share/locale/isv/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/it/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/ja/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/jbo/LC_MESSAGES/luanti.mo

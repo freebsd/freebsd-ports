@@ -27,9 +27,17 @@ PACKAGE_VERSION="$2"
 PACKAGE_LOCK_JSON="$3"
 PACKAGE_TARBALL_OUTPUT="$4"
 
+LOCALBASE=${LOCALBASE}
+
 if [ -z "$PACKAGE_NAME" ] || [ -z "$PACKAGE_VERSION" ] || [ -z "$PACKAGE_LOCK_JSON" ] || [ -z "$PACKAGE_TARBALL_OUTPUT" ]; then
 	echo "Usage: $0 <package name> <package version> <package-lock.json> <package tarball output>"
 	echo "Example: $0 sharp 0.34.4 outdir/sharp-package-lock.json outdir/sharp-0.34.4.tar.gz"
+	exit 1
+fi
+
+if ! [ -f ${LOCALBASE}/share/certs/ca-root-nss.crt ]; then
+	echo "error: the CA certificate file ${LOCALBASE}/share/certs/ca-root-nss.crt is missing"
+	echo "       please install the 'ca_root_nss' package to provide it"
 	exit 1
 fi
 
@@ -92,7 +100,7 @@ if [ -f $PACKAGE_LOCK_JSON ]; then
 	# fetch dependencies
 	echo "{\"name\":\"${PACKAGE_NAME}-installer\",\"version\":\"1.0.0\",\"dependencies\":{\"${PACKAGE_NAME}\":\"${PACKAGE_VERSION}\"}}" > package.json
 	cp $PACKAGE_LOCK_JSON package-lock.json
-	HOME=${TMPDIR} npm ci --ignore-scripts --global-style --legacy-peer-deps --omit=dev
+	HOME=${TMPDIR} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt npm ci --ignore-scripts --global-style --legacy-peer-deps --omit=dev
 else
 	# info
 	echo "INFO: the file $PACKAGE_LOCK_JSON does not exist, we will attempt to generate it"

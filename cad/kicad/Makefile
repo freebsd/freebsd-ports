@@ -1,6 +1,5 @@
 PORTNAME=	kicad
-DISTVERSION=	9.0.7
-PORTREVISION=	1
+DISTVERSION=	10.0.0
 PORTEPOCH=	2
 CATEGORIES=	cad
 
@@ -27,6 +26,8 @@ LIB_DEPENDS=	libboost_locale.so:devel/boost-libs	\
 		libfreetype.so:print/freetype2		\
 		libsecret-1.so:security/libsecret	\
 		libfontconfig.so:x11-fonts/fontconfig	\
+		libspnav.so:misc/libspnav		\
+		libpoppler-glib.so:graphics/poppler-glib	\
 		libodbc.so:databases/unixODBC
 
 USES=		cmake:noninja compiler:c++20-lang desktop-file-utils \
@@ -46,7 +47,6 @@ GL_PROJECT=	kicad
 
 CXXFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 CXXFLAGS_powerpc=	-O0
-# not using "bundled glew" breaks the 3d viewer
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DwxWidgets_USE_UNICODE=ON			\
 		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD}		\
@@ -57,7 +57,6 @@ CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DKICAD_SCRIPTING_WXPYTHON=ON			\
 		-DKICAD_UPDATE_CHECK=OFF			\
 		-DKICAD_USE_EGL=ON				\
-		-DKICAD_USE_BUNDLED_GLEW=ON 			\
 		-DKICAD_WAYLAND=ON				\
 		-DKICAD_INSTALL_DEMOS=ON			\
 		-DNANODBC_ENABLE_BOOST=ON			\
@@ -67,7 +66,7 @@ USE_LDCONFIG=	yes
 
 # SOVERSION helps testing rc packages
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||} \
-		SOVERSION=${PORTVERSION:C/.r[0-9]*//}
+		SOVERSION=${PORTVERSION:C/.r[0-9.]*//}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

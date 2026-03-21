@@ -226,6 +226,7 @@
     SUBDIR += py-fugashi
     SUBDIR += py-ipadic
     SUBDIR += py-jaconv
+    SUBDIR += py-mojimoji
     SUBDIR += py-unidic
     SUBDIR += qkc
     SUBDIR += qolibri

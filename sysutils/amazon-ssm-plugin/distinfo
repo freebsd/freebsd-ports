@@ -1,12 +1,10 @@
-TIMESTAMP = 1771075168
-SHA256 (aws-session-manager-plugin-1.2.779.0_GH0.tar.gz) = e2d130b05b7cfe9ad569a5d5d078c0ac32faf53159ee8d566986a610c60774e2
-SIZE (aws-session-manager-plugin-1.2.779.0_GH0.tar.gz) = 35497183
+TIMESTAMP = 1774030811
+SHA256 (aws-session-manager-plugin-1.2.792.0_GH0.tar.gz) = 207851175cdd9a233c966e3e7a74cf27563bc669add6198e425a2d53e29127f3
+SIZE (aws-session-manager-plugin-1.2.792.0_GH0.tar.gz) = 35494472
 SHA256 (aws-aws-sdk-go-v1.54.10_GH0.tar.gz) = d682bdd896a59a6ad82fceae275a6c20bd1d9b193758dc1db06db97fab956dac
 SIZE (aws-aws-sdk-go-v1.54.10_GH0.tar.gz) = 33088833
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
-SHA256 (eiannone-keyboard-6d2a597fd0f1_GH0.tar.gz) = fb97638e3f16a94233a809d50f01e7a20657a44e3cec0e9a00907b0ed909051a
-SIZE (eiannone-keyboard-6d2a597fd0f1_GH0.tar.gz) = 7962
 SHA256 (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = b7530d973d0ab0e58ad8ce1b9a4b963d6f57b3d72f2f9e13d49846976361b1cd
 SIZE (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = 31139
 SHA256 (gorilla-websocket-e8629af678b7_GH0.tar.gz) = 5f0b2c4324629f591f6ef1e809eddf77a8fe831073a371a1c54d4409624c9459

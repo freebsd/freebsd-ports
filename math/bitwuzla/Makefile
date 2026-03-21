@@ -1,5 +1,5 @@
 PORTNAME=	bitwuzla # successor of Boolector
-DISTVERSION=	0.8.2
+DISTVERSION=	0.9.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,8 @@ BUILD_DEPENDS=	gmp>0:math/gmp \
 		${LOCALBASE}/lib/symfpu.a:math/symfpu
 LIB_DEPENDS=	libcadical.so:math/cadical \
 		libcryptominisat5.so:math/cryptominisat \
-		libgmp.so:math/gmp
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig python:build
@@ -36,12 +37,13 @@ do-test: # 1 test hangs, see https://github.com/bitwuzla/bitwuzla/issues/117
 		cd ${BUILD_WRKSRC} && \
 		${DO_MAKE_BUILD} test
 
-# tests as of 0.8.2:
-# Ok:                 3935
-# Expected Fail:      0
-# Fail:               0
-# Unexpected Pass:    0
-# Skipped:            0
+# tests as of 0.9.0:
+# Ok:                 4214
+# Expected Fail:      0   
+# Fail:               0   
+# Unexpected Pass:    0   
+# Skipped:            0   
+# Timeout:            0
 # Timeout:            0
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	abiword-docs
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
@@ -8,6 +8,9 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	AbiWord help files
 WWW=		https://www.abisource.com/
+
+DEPRECATED=	abisource.com no longer exists
+EXPIRATION_DATE=	2026-05-09
 
 BUILD_DEPENDS=	abiword:editors/abiword
 RUN_DEPENDS=	abiword:editors/abiword

@@ -1,5 +1,5 @@
 PORTNAME=	powa-web
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,6 @@ WWW=		https://powa.readthedocs.org/
 LICENSE=	PostgreSQL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0:databases/py-sqlalchemy10@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=2.0:www/py-tornado@${PY_FLAVOR}
 
 USES=		python

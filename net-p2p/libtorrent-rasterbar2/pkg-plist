@@ -277,6 +277,6 @@ lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets-%%CMAKE_BUILD_TYPE%%.cm
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.2.0
-lib/libtorrent-rasterbar.so.2.0.11
+lib/libtorrent-rasterbar.so.2.0.12
 libdata/pkgconfig/libtorrent-rasterbar.pc
 share/cmake/Modules/FindLibtorrentRasterbar.cmake

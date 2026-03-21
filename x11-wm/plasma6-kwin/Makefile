@@ -1,9 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11-wm kde kde-plasma
-PATCH_SITES=	https://invent.kde.org/plasma/kwin/-/commit/
-PATCHFILES=	f79af348ed9f18bc30417df4bfe539383fd9fa77.patch:-p1
 
 COMMENT=	Easy to use, but flexible, Wayland Compositor
 MAINTAINER=	kde@FreeBSD.org
@@ -14,8 +11,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
 		libinput.so:x11/libinput \
 		liblcms2.so:graphics/lcms2 \
 		libpipewire-0.3.so:multimedia/pipewire \
@@ -57,4 +52,10 @@ EI_DESC=		Emulated input for Wayland
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_CMAKE_BOOL=		KWIN_BUILD_EIS
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500050
+LIB_DEPENDS+=	libinotify.so.0:devel/libinotify
+.endif
+
+.include <bsd.port.post.mk>

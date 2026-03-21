@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 		libdrm.so:graphics/libdrm \
 		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
 
-USES=		cmake pkgconfig xorg
+USES=		cmake compiler pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
@@ -25,3 +25,9 @@ USE_XORG=	pixman
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
+
+# XXX COMPILER_TYPE is defined after USES was already parsed
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${_CCVERSION:M+assertions}
+llvm_ARGS=	build
+.include "${USESDIR}/llvm.mk"
+.endif

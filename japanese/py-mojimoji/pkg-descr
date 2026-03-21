@@ -1,0 +1,5 @@
+mojimoji is a fast converter between Japanese hankaku (half-width) and zenkaku
+(full-width) characters.
+
+mojimoji provides simple functions to convert between half-width and full-width
+Japanese characters, which is useful for text normalization.

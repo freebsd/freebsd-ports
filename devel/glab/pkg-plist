@@ -157,6 +157,7 @@
 %%MANPAGES%%share/man/man1/glab-repo-update.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-view.1.gz
 %%MANPAGES%%share/man/man1/glab-repo.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-assign.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-create.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-list.1.gz
@@ -173,6 +174,7 @@
 %%MANPAGES%%share/man/man1/glab-runner-controller.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-list.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-unassign.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-update.1.gz
 %%MANPAGES%%share/man/man1/glab-runner.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-create.1.gz

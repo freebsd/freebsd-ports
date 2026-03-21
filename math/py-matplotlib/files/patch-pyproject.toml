@@ -1,0 +1,23 @@
+  Can be removed when Upstream publishes a new release.
+  https://github.com/matplotlib/matplotlib/commit/03fa1ffb1b26733f109ae10ac67c8432f48ec320
+
+--- pyproject.toml.orig	2026-03-01 09:44:50 UTC
++++ pyproject.toml
+@@ -48,7 +48,7 @@ dev = [
+ [project.optional-dependencies]
+ # Should be a copy of the build dependencies below.
+ dev = [
+-    "meson-python>=0.13.1,<0.17.0",
++    "meson-python>=0.13.1,!=0.17.*",
+     "pybind11>=2.13.2,!=2.13.3",
+     "setuptools_scm>=7",
+     # Not required by us but setuptools_scm without a version, cso _if_
+@@ -72,7 +72,7 @@ requires = [
+ build-backend = "mesonpy"
+ # Also keep in sync with optional dependencies above.
+ requires = [
+-    "meson-python>=0.13.1,<0.17.0",
++    "meson-python>=0.13.1,!=0.17.*",
+     "pybind11>=2.13.2,!=2.13.3",
+     "setuptools_scm>=7",
+ ]

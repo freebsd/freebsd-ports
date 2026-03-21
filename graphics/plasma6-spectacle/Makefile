@@ -1,6 +1,5 @@
 PORTNAME=	spectacle
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +9,8 @@ LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
 		libopencv_core.so:graphics/opencv \
-		libwayland-client.so:graphics/wayland
+		libwayland-client.so:graphics/wayland \
+		libKQuickImageEditor.so:graphics/kquickimageeditor
 
 USES=		cmake compiler:c++20-lang gettext kde:6 localbase pkgconfig \
 		qt:6 tar:xz xorg

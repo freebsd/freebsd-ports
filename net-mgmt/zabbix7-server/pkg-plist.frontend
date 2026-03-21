@@ -1616,6 +1616,7 @@
 %%WWWDIR%%/vendor/firebase/php-jwt/src/JWTExceptionWithPayloadInterface.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/Key.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/SignatureInvalidException.php
+%%WWWDIR%%/vendor/onelogin/php-saml/.github/workflows/php-package.yml
 %%WWWDIR%%/vendor/onelogin/php-saml/CHANGELOG
 %%WWWDIR%%/vendor/onelogin/php-saml/LICENSE
 %%WWWDIR%%/vendor/onelogin/php-saml/README.md
@@ -1682,10 +1683,12 @@
 %%WWWDIR%%/vendor/pragmarx/google2fa/src/Support/Base32.php
 %%WWWDIR%%/vendor/pragmarx/google2fa/src/Support/Constants.php
 %%WWWDIR%%/vendor/pragmarx/google2fa/src/Support/QRCode.php
+%%WWWDIR%%/vendor/robrichards/xmlseclibs/.github/workflows/ci.yml
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/CHANGELOG.txt
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/LICENSE
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/README.md
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/composer.json
+%%WWWDIR%%/vendor/robrichards/xmlseclibs/phpunit.xml
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/src/Utils/XPath.php
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/src/XMLSecEnc.php
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/src/XMLSecurityDSig.php

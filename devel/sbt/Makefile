@@ -1,6 +1,5 @@
 PORTNAME=	sbt
-PORTVERSION=	1.12.4
-PORTREVISION=	1
+PORTVERSION=	1.12.6
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/sbt/sbt/releases/download/v${PORTVERSION}/
 

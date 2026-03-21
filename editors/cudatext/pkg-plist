@@ -462,7 +462,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_snippet_panel/clips/Quote selection/quote.txt
 %%DATADIR%%/py/cuda_snippet_panel/clips/Special characters/List.txt
 %%DATADIR%%/py/cuda_snippet_panel/install.inf
-%%DATADIR%%/py/cuda_snippet_panel/readme/history.txt
 %%DATADIR%%/py/cuda_snippet_panel/readme/readme.txt
 %%DATADIR%%/py/cuda_snippet_panel/snips.py
 %%DATADIR%%/py/cuda_snippet_panel/utils.py

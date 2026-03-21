@@ -1,0 +1,9 @@
+TorchSDE provides stochastic differential equation (SDE) solvers with GPU
+support and efficient backpropagation in PyTorch.
+
+Features:
+- Multiple SDE solvers (Euler-Maruyama, Milstein, etc.)
+- Efficient backpropagation through SDE solvers
+- GPU acceleration
+- Support for various noise types
+- Latent SDE models for variational inference

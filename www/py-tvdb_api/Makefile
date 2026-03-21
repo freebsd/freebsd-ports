@@ -1,6 +1,6 @@
 PORTNAME=	tvdb_api
 PORTVERSION=	3.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,9 @@ PATCHFILES+=	f8db8e91377b30a6da078a43467ebf2f3b38227e.patch:-p1 \
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	API interface to TheTVDB.com
 WWW=		https://pypi.org/project/tvdb_api/
+
+DEPRECATED=    Upstream project appears to be abandoned, last release was in 2021
+EXPIRATION_DATE=       2026-04-15
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE

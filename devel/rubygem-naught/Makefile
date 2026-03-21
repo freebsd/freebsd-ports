@@ -1,5 +1,5 @@
 PORTNAME=	naught
-PORTVERSION=	1.1.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,8 +8,10 @@ COMMENT=	Toolkit for building Null Objects
 WWW=		https://github.com/avdi/naught
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		gem
 
 NO_ARCH=	yes
-USES=		gem
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.4.10
+DISTVERSION=	1.6.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -31,7 +31,7 @@ GL_SITE=	https://gitlab.freedesktop.org
 SHEBANG_FILES=	doc/*.py
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		ALSA AVAHI DOCS DOXYGEN EBUR GSTREAMER JACK LV2 PULSEAUDIO \
+OPTIONS_DEFINE=		ALSA AVAHI DOCS DOXYGEN EBUR GSTREAMER JACK LV2 ONNX PULSEAUDIO \
 			VULKAN X11_BELL
 OPTIONS_DEFAULT=	EBUR GSTREAMER JACK
 OPTIONS_SUB=		yes
@@ -64,6 +64,10 @@ LV2_DESC=		Support lv2-based audio plugins via lilv
 LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv
 LV2_MESON_ENABLED=	lv2
 
+ONNX_DESC=		ONNX filter-graph plugin
+ONNX_LIB_DEPENDS=	libonnxruntime.so:misc/onnxruntime
+ONNX_MESON_ENABLED=	onnxruntime
+
 PULSEAUDIO_DESC=		Enable PulseAudio emulation
 PULSEAUDIO_MESON_ENABLED=	libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
@@ -92,7 +96,8 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D roc=disabled \
 		-D sdl2=disabled \
 		-D selinux=disabled \
-		-D systemd=disabled \
+		-D libsystemd=disabled \
+		-D systemd-user-service=disabled \
 		-D logind=disabled \
 		-D pipewire-v4l2=disabled \
 		-D libmysofa=disabled \

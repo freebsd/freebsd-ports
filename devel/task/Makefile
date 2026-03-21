@@ -1,7 +1,6 @@
 PORTNAME=	task
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.48.0
-PORTREVISION=	1
+DISTVERSION=	3.49.1
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://taskfile.dev/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/go-task/task/v3
 GO_TARGET=	./cmd/task

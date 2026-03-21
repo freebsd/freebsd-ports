@@ -1,6 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	7.2.1
-PORTREVISION=	2
+PORTVERSION=	7.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,15 +19,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<5:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-filter>=23.3:www/py-dj52-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-django-modelcluster>=6.2.1<7.0:www/py-dj52-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-django-modelcluster>=6.4.1<7.0:www/py-dj52-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-permissionedforms>=0.1<1.0:www/py-dj52-django-permissionedforms@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-taggit>=5.0<7:www/py-dj52-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-django-tasks>=0.8<0.12:www/py-dj52-django-tasks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-django-tasks>=0.9<1:www/py-dj52-django-tasks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-treebeard>=4.5.1<5.0:www/py-dj52-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.15.1<4.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5<6.0:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-laces>=0.1<0.2:www/py-dj52-laces@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}modelsearch>=1.1<1.2:www/py-modelsearch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}modelsearch>=1.1<1.3:www/py-modelsearch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0.10<4.0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-10-01 23:26:43 UTC
++++ Makefile.in
+@@ -232,7 +232,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/bria
+ 	$(srcdir)/config_dummy.h.in \
+ 	$(top_srcdir)/libbrial/include/polybori/config.h.in README \
+ 	ar-lib compile config.guess config.sub depcomp install-sh \
+-	ltmain.sh missing
++	ltmain.sh
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)

@@ -1,5 +1,5 @@
-TIMESTAMP = 1721420927
-SHA256 (blender-doc-4.2/blender_manual_html.zip) = 3ee24545acf3a496c7c41464cf0417fcee8926868aff4e7763017243d4d9ce5f
-SIZE (blender-doc-4.2/blender_manual_html.zip) = 299240776
-SHA256 (blender-doc-4.2/blender_manual_epub.zip) = 37aceb1155fc8b8bca0214afd3af050839624290fd529cb5b21db01d4afc35cb
-SIZE (blender-doc-4.2/blender_manual_epub.zip) = 462727128
+TIMESTAMP = 1773222222
+SHA256 (blender-doc-5.0/blender_manual_html.zip) = 68fb14d70ac7203ac3fe4a923de420776f1760204f3cba0efe028a8a892b4581
+SIZE (blender-doc-5.0/blender_manual_html.zip) = 343219836
+SHA256 (blender-doc-5.0/blender_manual_epub.zip) = 0ed7e047a213b7272dc1c39f41830ad5c09d3015d48ebe2d1b3900d699214b0b
+SIZE (blender-doc-5.0/blender_manual_epub.zip) = 510796209

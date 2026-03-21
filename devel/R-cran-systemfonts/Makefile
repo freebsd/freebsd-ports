@@ -1,5 +1,5 @@
 PORTNAME=	systemfonts
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -23,7 +23,8 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-ragg>0:graphics/R-cran-ragg \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-testthat>=2.1.0:devel/R-cran-testthat
+		R-cran-testthat>=2.1.0:devel/R-cran-testthat \
+		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 
 USES=		cran:auto-plist,compiles pkgconfig
 

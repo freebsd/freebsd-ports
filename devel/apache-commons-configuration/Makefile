@@ -12,7 +12,7 @@ WWW=		https://commons.apache.org/proper/commons-configuration/
 
 LICENSE=	APACHE20
 
-DEPRECATED=	'The 1.x codebase no longer receives updates. Denial of service issues...', no maintainer, no users in the ports tree, https://commons.apache.org/proper/commons-configuration/#Commons_Configuration_1.x_and_2.x
+DEPRECATED=	'The 1.x codebase no longer receives updates. Denial of service issues...', no maintainer, no users in the ports tree, https://commons.apache.org/proper/commons-configuration/\#Commons_Configuration_1.x_and_2.x
 EXPIRATION_DATE=	2026-07-26
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils \

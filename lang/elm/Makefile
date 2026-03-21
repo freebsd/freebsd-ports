@@ -1,6 +1,6 @@
 PORTNAME=	elm
 PORTVERSION=	0.19.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/arrowd/:package_list
 DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
@@ -8,6 +8,9 @@ DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Delightful language for reliable webapps
 WWW=		https://elm-lang.org/
+
+DEPRECATED=	Depends on a deprecated compiler's version
+EXPIRATION_DATE=2026-04-30
 
 LICENSE=	BSD3CLAUSE
 

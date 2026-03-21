@@ -1,6 +1,6 @@
---- libbeat/scripts/Makefile.orig	2024-07-09 00:00:36.000000000 +0200
-+++ libbeat/scripts/Makefile	2024-07-13 21:45:40.788621000 +0200
-@@ -47,7 +47,7 @@
+--- libbeat/scripts/Makefile.orig	2025-09-15 19:57:17 UTC
++++ libbeat/scripts/Makefile
+@@ -47,7 +47,7 @@ GOPACKAGES_STRESSTESTS=$(shell find . -type d \( -name
  GOFILES_NOVENDOR = $(shell find . -type f -name '*.go' -not -path "*/vendor/*" 2>/dev/null)
  GOFILES_ALL = $(GOFILES) $(shell find $(ES_BEATS) -type f -name '*.go' 2>/dev/null)
  GOPACKAGES_STRESSTESTS=$(shell find . -type d \( -name "stress" \) 2>/dev/null)
@@ -9,7 +9,7 @@
  ES_HOST?=elasticsearch
  ES_PORT?=9200
  ES_USER?=beats
-@@ -352,12 +352,12 @@
+@@ -346,12 +346,12 @@ update: python-env fields collect config ## @build Upd
  update: python-env fields collect config ## @build Update expects the most recent version of libbeat in the GOPATH
  	@echo "Updating generated files for ${BEAT_NAME}"
  

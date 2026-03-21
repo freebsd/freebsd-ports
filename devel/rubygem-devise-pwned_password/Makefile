@@ -1,6 +1,6 @@
 PORTNAME=	devise-pwned_password
 PORTVERSION=	0.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/michaelbanfield/devise-pwned_password
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-devise-rails81>=0:devel/rubygem-devise-rails81 \
+RUN_DEPENDS=	rubygem-devise-rails81>=4:devel/rubygem-devise-rails81 \
 		rubygem-pwned>=2.4<3:security/rubygem-pwned
 
 USES=		gem

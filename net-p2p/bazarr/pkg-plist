@@ -5789,11 +5789,11 @@
 %%DATADIR%%/bin/libs/importlib_metadata/compat/__init__.py
 %%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/__init__%%PYTHON_TAG%%.pyc
-%%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/py%%PYTHON_SUFFIX%%%%PYTHON_TAG%%.opt-1.pyc
-%%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/py%%PYTHON_SUFFIX%%%%PYTHON_TAG%%.pyc
+%%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/py311%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/py311%%PYTHON_TAG%%.pyc
 %%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/py39%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/bin/libs/importlib_metadata/compat/__pycache__/py39%%PYTHON_TAG%%.pyc
-%%DATADIR%%/bin/libs/importlib_metadata/compat/py%%PYTHON_SUFFIX%%.py
+%%DATADIR%%/bin/libs/importlib_metadata/compat/py311.py
 %%DATADIR%%/bin/libs/importlib_metadata/compat/py39.py
 %%DATADIR%%/bin/libs/importlib_metadata/diagnose.py
 %%DATADIR%%/bin/libs/importlib_metadata/py.typed

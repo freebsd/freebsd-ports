@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2025-11-13 22:57:06 UTC
+--- electron/spec/api-app-spec.ts.orig	2026-03-10 11:28:57 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -129,11 +129,11 @@ describe('app module', () => {
    });
@@ -95,7 +95,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(
          app.getApplicationInfoForProtocol('bogus-protocol://')
-@@ -1497,7 +1497,7 @@ describe('app module', () => {
+@@ -1520,7 +1520,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -104,7 +104,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1579,7 +1579,7 @@ describe('app module', () => {
+@@ -1602,7 +1602,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -113,7 +113,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1653,7 +1653,7 @@ describe('app module', () => {
+@@ -1676,7 +1676,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -122,7 +122,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1677,7 +1677,7 @@ describe('app module', () => {
+@@ -1700,7 +1700,7 @@ describe('app module', () => {
      });
    });
  

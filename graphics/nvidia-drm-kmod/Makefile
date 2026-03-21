@@ -4,7 +4,7 @@ PORTREVISION?=	0
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	NVIDIA DRM Kernel Module
+COMMENT=	NVIDIA DRM kernel module
 WWW=		https://www.nvidia.com/object/unix.html
 
 USES=		metaport

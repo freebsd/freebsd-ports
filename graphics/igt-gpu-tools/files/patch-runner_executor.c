@@ -31,7 +31,7 @@
 +	uint32_t ssi_signo;
 +	uint32_t ssi_pid;
 +};
-+#define	WDIOC_KEEPALIVE			WDIOCPATPAT
++#define	WDIOC_KEEPALIVE			WDIOC_PATPAT
 +#define	signalfd(fd, mask, flags)	-ENOSYS
 +#endif
  

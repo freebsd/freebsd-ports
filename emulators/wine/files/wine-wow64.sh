@@ -9,7 +9,12 @@ I386_ROOT="${WINE_i386_ROOT:-$HOME/.i386-wine-pkg}"
 if [ ! -f "$I386_ROOT/$PREFIX/bin/wine" ]
 then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
-  printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine mesa-dri"
+  printf "Try installing 32-bit Wine with\n\t%s\n\n" "$PREFIX/share/wine/pkg32.sh install wine mesa-dri"
+
+  printf "On FreeBSD 15, use wine64.bin if 32-bit support is not needed.\n"
+  printf "If 32-bit is needed, either use the repository from FreeBSD 14 with this command:\n\t%s\n" "$PREFIX/share/wine/pkg32.sh --old install -r FreeBSD-ports wine mesa-dri"
+  printf "or use Poudriere to build your own packages.\n"
+
   ABI=$(pkg config ABI | sed s/amd64/i386/)
   FREEBSD_VERSION_MAJOR=`uname -r | sed "s/\..*//"`
   cat <<- HERE
@@ -32,6 +37,7 @@ if [ "$WINE32_VERSION" != "$WINE64_VERSION" ]
 then
   printf "wine [%s] and wine64 [%s] versions do not match!\n\n" "$WINE32_VERSION" "$WINE64_VERSION"
   printf "Try updating 32-bit wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh upgrade"
+  printf "If you are on FreeBSD 15, you can use the old repository\n\t%s\n" "$PREFIX/share/wine/pkg32.sh --old upgrade -r FreeBSD-ports"
   exit 1
 fi
 

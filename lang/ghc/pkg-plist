@@ -4,6 +4,7 @@ bin/ghc-pkg
 bin/ghc-pkg-%%GHC_VERSION%%
 bin/ghci
 bin/ghci-%%GHC_VERSION%%
+bin/haddock
 bin/haddock-ghc-%%GHC_VERSION%%
 bin/hp2ps
 bin/hp2ps-ghc-%%GHC_VERSION%%

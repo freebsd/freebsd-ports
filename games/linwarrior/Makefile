@@ -10,6 +10,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Navigate a mech through a 3D world and fire at enemies
 WWW=		https://www.hackcraft.de/games/linwarrior_3d/index.htm
 
+DEPRECATED=	Abandoned and obsolete, last release in 2010, not really playable
+EXPIRATION_DATE=2026-05-10
+
 USES=		compiler:c++11-lang gl gmake openal:al,alut sdl
 USE_GL=		gl glu
 USE_SDL=	sdl

@@ -1,0 +1,11 @@
+Python bindings for the official Rust implementation of BLAKE3.
+
+BLAKE3 is a cryptographic hash function that is much faster than MD5, SHA-1,
+SHA-2, and SHA-3, yet is at least as secure as the latest standard, SHA-3.
+
+Features:
+- Fast hashing (up to 2-3x faster than SHA-256)
+- Parallelism using multiple threads
+- Extendable output (XOF)
+- Keyed hashing and key derivation
+- Compatible with Python's hashlib module

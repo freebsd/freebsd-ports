@@ -1,10 +1,7 @@
 PORTNAME=	nbytes
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-
-PATCH_SITES=	https://github.com/nodejs/nbytes/commit/
-PATCHFILES=	00f48a0620cef800054d4aab061f09d89990a1b9.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library of byte handling functions extracted from Node.js core

@@ -1,6 +1,5 @@
 PORTNAME=	scala
-DISTVERSION=	3.3.5
-PORTREVISION=	1
+DISTVERSION=	3.3.7
 CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/scala/scala3/releases/download/${DISTVERSION}/
 DISTNAME=	scala3-${DISTVERSION}
@@ -33,10 +32,10 @@ pre-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${SCALA_HOME}/bin
-.for f in ${SCALA_BINS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${SCALA_HOME}/bin/${f}
-	${RLN} ${STAGEDIR}${SCALA_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
-.endfor
+	${INSTALL_SCRIPT} ${SCALA_BINS:S,^,${WRKSRC}/bin/,} \
+		${STAGEDIR}${SCALA_HOME}/bin
+	${RLN} ${SCALA_BINS:S,^,${STAGEDIR}${SCALA_HOME}/bin/,} \
+		${STAGEDIR}${PREFIX}/bin
 .for d in ${SCALA_SHRDIRS}
 	(cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${SCALA_HOME}/${d})
 .endfor

@@ -55,3 +55,5 @@ share/man/man1/rumur.1.gz
 %%DATADIR%%/lib/v2025.02.02/_set
 %%DATADIR%%/lib/v2025.08.31/_list
 %%DATADIR%%/lib/v2025.08.31/_set
+%%DATADIR%%/lib/v2026.0%%PYTHON_VER%%/_list
+%%DATADIR%%/lib/v2026.0%%PYTHON_VER%%/_set

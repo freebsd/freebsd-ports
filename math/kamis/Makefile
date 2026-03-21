@@ -1,11 +1,12 @@
 PORTNAME=	kamis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
+DISTVERSION=	3.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Maximum independent sets and vertex covers of large sparse graphs
-WWW=		https://karlsruhemis.github.io/
+WWW=		https://karlsruhemis.github.io/ \
+		https://github.com/KarlsruheMIS/KaMIS
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

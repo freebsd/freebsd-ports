@@ -166,7 +166,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
-		lzma-rust2-0.13.0 \
+		lzma-rust2-0.16.2 \
 		lzma-sys-0.1.20 \
 		lzxd-0.2.6 \
 		mailparse-0.16.1 \
@@ -227,7 +227,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		psm-0.1.30 \
 		purl-0.1.6 \
 		pyproject-toml-0.13.7 \
-		python-pkginfo-0.6.6 \
+		python-pkginfo-0.6.8 \
 		quote-1.0.44 \
 		quoted_printable-0.5.1 \
 		r-efi-5.3.0 \
@@ -243,6 +243,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
+		reflink-copy-0.1.28 \
 		regex-1.12.3 \
 		regex-automata-0.3.9 \
 		regex-automata-0.4.14 \
@@ -343,6 +344,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-subscriber-0.3.22 \
 		trycmd-0.15.11 \
 		twox-hash-2.1.2 \
+		typed-path-0.12.3 \
 		typenum-1.19.0 \
 		unicase-2.9.0 \
 		unicode-bidi-0.3.18 \
@@ -385,7 +387,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.62.2 \
+		windows-collections-0.3.2 \
+		windows-core-0.62.2 \
+		windows-future-0.3.2 \
+		windows-implement-0.60.2 \
+		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
+		windows-numerics-0.3.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
 		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -394,6 +405,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-targets-0.42.2 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
+		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.1 \
@@ -437,7 +449,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.2 \
 		zip-4.6.1 \
-		zip-6.0.0 \
+		zip-8.1.0 \
 		zlib-rs-0.6.0 \
 		zmij-1.0.19 \
 		zopfli-0.8.3 \

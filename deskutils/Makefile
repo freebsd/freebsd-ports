@@ -304,10 +304,10 @@
     SUBDIR += xcalendar
     SUBDIR += xcbautolock
     SUBDIR += xchm
-    SUBDIR += xdgctl
     SUBDIR += xdg-desktop-portal
     SUBDIR += xdg-desktop-portal-lxqt
     SUBDIR += xdg-terminal-exec
+    SUBDIR += xdgctl
     SUBDIR += xdpi
     SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin

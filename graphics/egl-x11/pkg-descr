@@ -1,2 +1,5 @@
 This is an EGL platform library for the NVIDIA driver to support XWayland
 via xlib (using EGL_KHR_platform_x11) or xcb (using EGL_EXT_platform_xcb).
+
+Minimum required version of nvidia-driver for this is 560.
+Any of legacy versions are not supported.

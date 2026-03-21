@@ -1,6 +1,6 @@
 PORTNAME=	fts-xapian
-DISTVERSION=	1.8.2
-PORTREVISION?=	2
+DISTVERSION=	1.9.3
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/grosjo/fts-xapian/releases/download/${DISTVERSIONFULL}/
 PKGNAMEPREFIX=	dovecot-
@@ -23,10 +23,16 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONFULL}
 
-PLIST_FILES=	lib/dovecot/lib21_fts_xapian_plugin.a \
+PLIST_FILES=	lib/dovecot/settings/lib21_fts_xapian_settings.a \
+		lib/dovecot/settings/lib21_fts_xapian_settings.so \
+		lib/dovecot/settings/lib21_fts_xapian_settings.so.0 \
+		lib/dovecot/settings/lib21_fts_xapian_settings.so.0.0.0 \
+		lib/dovecot/lib21_fts_xapian_plugin.a \
 		lib/dovecot/lib21_fts_xapian_plugin.so
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dovecot/settings/lib21_fts_xapian_settings.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dovecot/settings/lib21_fts_xapian_settings.so.0.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dovecot/lib21_fts_xapian_plugin.so
 
 .include <bsd.port.mk>

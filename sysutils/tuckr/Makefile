@@ -1,6 +1,5 @@
 PORTNAME=	tuckr
-DISTVERSION=	0.12.0
-PORTREVISION=	3
+DISTVERSION=	0.13.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,36 +16,36 @@ GH_ACCOUNT=	RaphGL
 GH_PROJECT=	Tuckr
 
 CARGO_CRATES=	aead-0.5.2 \
-		aho-corasick-1.1.3 \
+		aho-corasick-1.1.4 \
 		ansi-str-0.9.0 \
 		ansitok-0.3.0 \
-		anstream-0.6.20 \
+		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.4 \
-		anstyle-wincon-3.0.10 \
-		arc-swap-1.7.1 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		arc-swap-1.8.1 \
 		arrayvec-0.7.6 \
 		base62-2.2.3 \
 		bitflags-1.3.2 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		block-buffer-0.10.4 \
-		bstr-1.12.0 \
+		bstr-1.12.1 \
 		bytecount-0.6.9 \
-		cfg-if-1.0.3 \
+		cfg-if-1.0.4 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		cipher-0.4.4 \
-		clap-4.5.48 \
-		clap_builder-4.5.48 \
-		clap_derive-4.5.47 \
-		clap_lex-0.7.5 \
+		clap-4.5.58 \
+		clap_builder-4.5.58 \
+		clap_derive-4.5.55 \
+		clap_lex-1.0.0 \
 		colorchoice-1.0.4 \
 		cpufeatures-0.2.17 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		crypto-common-0.1.6 \
+		crypto-common-0.1.7 \
 		digest-0.10.7 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
@@ -56,28 +55,28 @@ CARGO_CRATES=	aead-0.5.2 \
 		equivalent-1.0.2 \
 		fnv-1.0.7 \
 		generic-array-0.14.7 \
-		getrandom-0.2.16 \
+		getrandom-0.2.17 \
 		glob-0.3.3 \
-		globset-0.4.16 \
+		globset-0.4.18 \
 		globwalk-0.8.1 \
-		hashbrown-0.16.0 \
+		hashbrown-0.16.1 \
 		heck-0.5.0 \
-		ignore-0.4.23 \
-		indexmap-2.11.4 \
+		ignore-0.4.25 \
+		indexmap-2.13.0 \
 		inout-0.1.4 \
-		is_terminal_polyfill-1.70.1 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.11.0 \
-		itoa-1.0.15 \
+		itoa-1.0.17 \
 		lazy_static-1.5.0 \
-		libc-0.2.176 \
-		libredox-0.1.10 \
-		log-0.4.28 \
-		memchr-2.7.6 \
+		libc-0.2.181 \
+		libredox-0.1.12 \
+		log-0.4.29 \
+		memchr-2.8.0 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
 		normpath-1.5.0 \
 		once_cell-1.21.3 \
-		once_cell_polyfill-1.70.1 \
+		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
 		option-ext-0.2.0 \
 		owo-colors-4.2.3 \
@@ -85,47 +84,48 @@ CARGO_CRATES=	aead-0.5.2 \
 		poly1305-0.8.0 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.101 \
-		quote-1.0.41 \
+		proc-macro2-1.0.106 \
+		quote-1.0.44 \
 		rand_core-0.6.4 \
 		redox_users-0.5.2 \
-		regex-1.11.3 \
-		regex-automata-0.4.11 \
-		regex-syntax-0.8.6 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.9 \
 		rpassword-7.4.0 \
 		rtoolbox-0.0.3 \
 		rust-i18n-3.1.5 \
 		rust-i18n-macro-3.1.5 \
 		rust-i18n-support-3.1.5 \
-		ryu-1.0.20 \
+		rustversion-1.0.22 \
+		ryu-1.0.23 \
 		same-file-1.0.6 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.145 \
+		serde_json-1.0.149 \
 		serde_spanned-0.6.9 \
 		serde_yaml-0.9.34+deprecated \
 		sha2-0.10.9 \
-		siphasher-1.0.1 \
+		siphasher-1.0.2 \
 		smallvec-1.15.1 \
-		stable_deref_trait-1.2.0 \
+		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.106 \
+		syn-2.0.115 \
 		sys-locale-0.3.2 \
 		tabled-0.20.0 \
 		tabled_derive-0.11.0 \
 		testing_table-0.3.0 \
-		thiserror-2.0.17 \
-		thiserror-impl-2.0.17 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
 		toml-0.8.23 \
 		toml_datetime-0.6.11 \
 		toml_edit-0.22.27 \
 		toml_write-0.1.2 \
-		triomphe-0.1.14 \
-		typenum-1.18.0 \
-		unicode-ident-1.0.19 \
-		unicode-width-0.2.1 \
+		triomphe-0.1.15 \
+		typenum-1.19.0 \
+		unicode-ident-1.0.23 \
+		unicode-width-0.2.2 \
 		universal-hash-0.5.1 \
 		unsafe-libyaml-0.2.11 \
 		utf8parse-0.2.2 \
@@ -134,31 +134,22 @@ CARGO_CRATES=	aead-0.5.2 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		winapi-util-0.1.11 \
-		windows-link-0.2.0 \
+		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-sys-0.60.2 \
-		windows-sys-0.61.1 \
+		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.4 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.13 \
-		zeroize-1.8.2
+		winnow-0.7.14 \
+		zeroize-1.8.2 \
+		zmij-1.0.21
 
 PLIST_FILES=	bin/${PORTNAME}
 

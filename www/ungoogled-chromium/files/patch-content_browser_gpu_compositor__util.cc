@@ -1,4 +1,4 @@
---- content/browser/gpu/compositor_util.cc.orig	2025-09-10 13:22:16 UTC
+--- content/browser/gpu/compositor_util.cc.orig	2026-03-15 18:32:51 UTC
 +++ content/browser/gpu/compositor_util.cc
 @@ -143,7 +143,7 @@ std::vector<GpuFeatureData> GetGpuFeatureData(
        "video_decode",
@@ -18,3 +18,12 @@
            !base::FeatureList::IsEnabled(media::kAcceleratedVideoEncodeLinux)),
  #else
            command_line.HasSwitch(switches::kDisableAcceleratedVideoEncode)),
+@@ -217,7 +217,7 @@ std::vector<GpuFeatureData> GetGpuFeatureData(
+                             ? gpu::kGpuFeatureStatusEnabled
+                             : gpu::kGpuFeatureStatusDisabled);
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   features.emplace_back(
+       "webgpu_on_vk_via_gl_interop",
+       SafeGetFeatureStatus(gpu_feature_info,

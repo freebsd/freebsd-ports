@@ -23,6 +23,6 @@ include/m4ri/xor.h
 include/m4ri/xor_template.h
 lib/libm4ri.a
 lib/libm4ri.so
-lib/libm4ri.so.0
-lib/libm4ri.so.0.0.0
+lib/libm4ri.so.2
+lib/libm4ri.so.2.0.1
 libdata/pkgconfig/m4ri.pc

@@ -1,4 +1,4 @@
---- crates/remote_server/Cargo.toml.orig	2026-02-06 04:11:05 UTC
+--- crates/remote_server/Cargo.toml.orig	2026-03-04 15:41:56 UTC
 +++ crates/remote_server/Cargo.toml
 @@ -27,7 +27,6 @@ collections.workspace = true
  clap.workspace = true
@@ -8,9 +8,9 @@
  dap_adapters.workspace = true
  debug_adapter_extension.workspace = true
  env_logger.workspace = true
-@@ -72,11 +71,18 @@ rayon.workspace = true
- thiserror.workspace = true
+@@ -74,11 +73,18 @@ uuid = { workspace = true, features = ["v4"] }
  rayon.workspace = true
+ uuid = { workspace = true, features = ["v4"] }
  
 -[target.'cfg(not(windows))'.dependencies]
 +[target.'cfg(not(any(windows, target_os = "freebsd")))'.dependencies]

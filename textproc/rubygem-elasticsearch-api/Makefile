@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch-api
-PORTVERSION=	9.2.0
+PORTVERSION=	9.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-ap
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-multi_json>=0:devel/rubygem-multi_json
 
 USES=		gem
 

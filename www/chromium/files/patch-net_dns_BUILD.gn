@@ -1,4 +1,4 @@
---- net/dns/BUILD.gn.orig	2025-12-05 10:12:50 UTC
+--- net/dns/BUILD.gn.orig	2026-03-13 06:02:14 UTC
 +++ net/dns/BUILD.gn
 @@ -144,7 +144,7 @@ source_set("dns") {
        "platform_dns_query_executor_android.cc",
@@ -17,7 +17,7 @@
  
    public_deps = [
      ":dns_client",
-@@ -258,6 +259,7 @@ source_set("host_resolver") {
+@@ -257,6 +258,7 @@ source_set("host_resolver") {
    deps = [
      "//net:net_deps",
      "//net/dns/public",
@@ -25,7 +25,7 @@
    ]
    public_deps = [ "//net:net_public_deps" ]
  
-@@ -463,9 +465,9 @@ source_set("tests") {
+@@ -462,9 +464,9 @@ source_set("tests") {
        "dns_config_service_android_unittest.cc",
        "platform_dns_query_executor_android_unittest.cc",
      ]

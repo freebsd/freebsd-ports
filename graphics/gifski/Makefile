@@ -1,6 +1,5 @@
 PORTNAME=	gifski
-DISTVERSION=	1.10.3
-PORTREVISION=	25
+DISTVERSION=	1.34.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,99 +14,108 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ImageOptim
 
-CARGO_CRATES=	adler-1.0.2 \
-		ahash-0.8.3 \
-		arrayvec-0.7.2 \
-		autocfg-1.1.0 \
-		bindgen-0.59.2 \
+CARGO_CRATES=	adler2-2.0.1 \
+		aho-corasick-1.1.3 \
+		anstream-0.6.19 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.3 \
+		anstyle-wincon-3.0.9 \
+		arrayvec-0.7.6 \
+		autocfg-1.5.0 \
+		bindgen-0.64.0 \
 		bitflags-1.3.2 \
-		bytemuck-1.13.1 \
-		cc-1.0.79 \
+		bytemuck-1.23.1 \
+		cc-1.2.29 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.0 \
-		clang-sys-1.6.0 \
-		clap-4.1.8 \
-		clap_lex-0.3.2 \
-		color_quant-1.1.0 \
-		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.7 \
-		crossbeam-deque-0.8.3 \
-		crossbeam-epoch-0.9.14 \
-		crossbeam-utils-0.8.15 \
-		dunce-1.0.3 \
-		either-1.8.1 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
-		fallible_collections-0.4.7 \
-		ffmpeg-next-4.4.0 \
-		flate2-1.0.25 \
-		gif-0.12.0 \
-		gif-dispose-4.0.0 \
-		gifsicle-1.93.0 \
-		glob-0.3.1 \
-		hashbrown-0.13.2 \
-		hermit-abi-0.2.6 \
-		hermit-abi-0.3.1 \
-		imagequant-4.1.1 \
-		imgref-1.9.4 \
-		io-lifetimes-1.0.7 \
-		is-terminal-0.4.4 \
-		lazy_static-1.4.0 \
+		cfg-if-1.0.1 \
+		clang-sys-1.8.1 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
+		clap_lex-0.7.5 \
+		colorchoice-1.0.4 \
+		crc32fast-1.5.0 \
+		crossbeam-channel-0.5.15 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
+		dunce-1.0.5 \
+		either-1.15.0 \
+		ffmpeg-next-6.1.1 \
+		flate2-1.1.2 \
+		gif-0.13.3 \
+		gif-dispose-5.0.1 \
+		glob-0.3.2 \
+		hermit-abi-0.5.2 \
+		imagequant-4.4.1 \
+		imgref-1.11.0 \
+		is_terminal_polyfill-1.70.1 \
+		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.140 \
-		libloading-0.7.4 \
-		linux-raw-sys-0.1.4 \
-		lodepng-3.7.2 \
-		loop9-0.1.3 \
-		memchr-2.5.0 \
-		memoffset-0.8.0 \
+		libc-0.2.174 \
+		libloading-0.8.8 \
+		libz-rs-sys-0.5.1 \
+		lodepng-3.12.1 \
+		loop9-0.1.5 \
+		memchr-2.7.5 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.6.2 \
+		miniz_oxide-0.8.9 \
 		natord-1.0.9 \
-		noisy_float-0.2.0 \
 		nom-7.1.3 \
-		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
-		once_cell-1.17.1 \
-		os_str_bytes-6.4.1 \
+		num-traits-0.2.19 \
+		num_cpus-1.17.0 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		ordered-channel-1.2.0 \
 		pbr-1.1.1 \
 		peeking_take_while-0.1.2 \
-		pkg-config-0.3.26 \
-		proc-macro2-1.0.52 \
+		pkg-config-0.3.32 \
+		proc-macro2-1.0.95 \
 		quick-error-2.0.1 \
-		quote-1.0.26 \
-		rayon-1.7.0 \
-		rayon-core-1.11.0 \
-		regex-1.7.1 \
-		regex-syntax-0.6.28 \
-		resize-0.7.4 \
-		rgb-0.8.36 \
+		quote-1.0.40 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		resize-0.8.8 \
+		rgb-0.8.51 \
 		rustc-hash-1.1.0 \
-		rustix-0.36.9 \
-		scopeguard-1.1.0 \
-		shlex-1.1.0 \
-		strsim-0.10.0 \
-		termcolor-1.2.0 \
-		thread_local-1.1.7 \
-		unicode-ident-1.0.8 \
+		shlex-1.3.0 \
+		strsim-0.11.1 \
+		syn-1.0.109 \
+		thread_local-1.1.9 \
+		unicode-ident-1.0.18 \
+		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
-		version_check-0.9.4 \
-		weezl-0.1.7 \
-		wild-2.1.0 \
+		weezl-0.1.10 \
+		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.45.0 \
-		windows-targets-0.42.2 \
-		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_msvc-0.42.2 \
-		windows_i686_gnu-0.42.2 \
-		windows_i686_msvc-0.42.2 \
-		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_msvc-0.42.2 \
-		ffmpeg-sys-next@git+https://github.com/kornelski/rust-ffmpeg-sys-1?rev=78458039d5fac99354f9cb078869f3be3f3af5fb\#78458039d5fac99354f9cb078869f3be3f3af5fb
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows-targets-0.53.2 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
+		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
+		y4m-0.8.0 \
+		yuv-0.1.9 \
+		zlib-rs-0.5.1 \
+		ffmpeg-sys-next@git+https://github.com/kornelski/rust-ffmpeg-sys-1?rev=fd5784d645df2ebe022a204ac36582074da1edf7\#fd5784d645df2ebe022a204ac36582074da1edf7
 
 PLIST_FILES=	bin/${PORTNAME}
 

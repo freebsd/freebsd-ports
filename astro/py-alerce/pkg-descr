@@ -1,0 +1,13 @@
+ALeRCE Python Client is a library designed to interact with ALeRCE
+(Automatic Learning for the Rapid Classification of Events) services
+and databases.
+
+Its primary functions include:
+* Multi-Survey Support: Querying astronomical data from both the Zwicky
+  Transient Facility (ZTF) and the LSST/Rubin Observatory.
+* Data Retrieval: Accessing astronomical objects, lightcurves, stamps,
+  and classification results.
+* Advanced Queries: Performing crossmatches (catsHTM conesearch) and
+  filtering by classifier or probability.
+* Flexible Formats: Returning data in JSON, Pandas DataFrames, or
+  VOTable formats for easy analysis.

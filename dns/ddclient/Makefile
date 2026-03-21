@@ -1,6 +1,7 @@
 PORTNAME=	ddclient
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	mjl@luckie.org.nz
@@ -11,8 +12,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	curl:ftp/curl
-RUN_DEPENDS=	p5-Data-Validate-IP>0:net-mgmt/p5-Data-Validate-IP \
-		curl:ftp/curl
+RUN_DEPENDS=	curl:ftp/curl \
+		p5-Data-Validate-IP>0:net-mgmt/p5-Data-Validate-IP
 
 USES=		autoreconf gmake perl5 tar:bzip2
 USE_GITHUB=	yes

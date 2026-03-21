@@ -1,0 +1,19 @@
+--- configure.ac.orig	2026-02-18 03:16:18 UTC
++++ configure.ac
+@@ -80,7 +80,7 @@ fribidi_req='fribidi >= 0.10.4'
+ 
+ # cross platform deps
+ fribidi_req='fribidi >= 0.10.4'
+-glib_req='glib-2.0 >= 2.6.0 gthread-2.0 >= 2.6.0 gobject-2.0 >= 2.6.0'
++glib_req='glib-2.0 >= 2.6.0 gthread-2.0 >= 2.6.0 gobject-2.0 >= 2.6.0 gmodule-2.0 >= 2.6.0'
+ gsf_req='libgsf-1 >= 1.14.18'
+ gsf_gio_req='libgsf-1 >= 1.14.9'
+ wv_req='wv-1.0 >= 1.2.0'
+@@ -644,7 +644,6 @@ if test "$GCC" = "yes"; then
+ if test "$GCC" = "yes"; then
+ 	for option in -Wall -Wextra -Wsign-compare -Wpointer-arith \
+ 		      -Wchar-subscripts -Wwrite-strings -Wmissing-noreturn \
+-                      -Wformat-overflow=2 \
+ 		      -Wunused -Wpointer-arith -Wshadow; do
+ 		SAVE_CPPFLAGS="$CPPFLAGS"
+ 		CPPFLAGS="$CPPFLAGS $option"

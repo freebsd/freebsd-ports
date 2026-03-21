@@ -833,6 +833,7 @@
     SUBDIR += gh
     SUBDIR += ghidra
     SUBDIR += ghostie
+    SUBDIR += ghpr
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gilt
@@ -859,6 +860,7 @@
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-p4
+    SUBDIR += git-pkgs
     SUBDIR += git-prev-next
     SUBDIR += git-repo-manager
     SUBDIR += git-review
@@ -2539,6 +2541,7 @@
     SUBDIR += p5-Directory-Queue
     SUBDIR += p5-Directory-Scratch
     SUBDIR += p5-Directory-Scratch-Structured
+    SUBDIR += p5-Dist-Build
     SUBDIR += p5-Dist-CheckConflicts
     SUBDIR += p5-Dist-Joseki
     SUBDIR += p5-Dist-Metadata
@@ -4712,6 +4715,7 @@
     SUBDIR += py-cloc
     SUBDIR += py-cloudpathlib
     SUBDIR += py-cloudpickle
+    SUBDIR += py-cloup
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
     SUBDIR += py-cmdtest
@@ -4778,6 +4782,7 @@
     SUBDIR += py-custodian
     SUBDIR += py-cvss
     SUBDIR += py-cwcwidth
+    SUBDIR += py-cwltest
     SUBDIR += py-cxx
     SUBDIR += py-cycler
     SUBDIR += py-cyclopts
@@ -4872,6 +4877,7 @@
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-e3-core
+    SUBDIR += py-e3-testsuite
     SUBDIR += py-easydict
     SUBDIR += py-easyprocess
     SUBDIR += py-editables
@@ -5290,7 +5296,6 @@
     SUBDIR += py-marrow.mailer
     SUBDIR += py-marrow.util
     SUBDIR += py-marshmallow
-    SUBDIR += py-marshmallow-enum
     SUBDIR += py-mashumaro
     SUBDIR += py-matrix-angular-sdk
     SUBDIR += py-matrix-common
@@ -5315,6 +5320,7 @@
     SUBDIR += py-minimal-snowplow-tracker
     SUBDIR += py-minimongo
     SUBDIR += py-minio
+    SUBDIR += py-mirakuru
     SUBDIR += py-mmh3
     SUBDIR += py-mock
     SUBDIR += py-molecule
@@ -5804,6 +5810,7 @@
     SUBDIR += py-pytest-order
     SUBDIR += py-pytest-parallel
     SUBDIR += py-pytest-plus
+    SUBDIR += py-pytest-postgresql
     SUBDIR += py-pytest-pretty
     SUBDIR += py-pytest-profiling
     SUBDIR += py-pytest-pycodestyle
@@ -5886,6 +5893,7 @@
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxb-x
+    SUBDIR += py-pyxdg
     SUBDIR += py-pyyaml
     SUBDIR += py-pyyaml-env-tag
     SUBDIR += py-pyyaml-ft
@@ -5990,6 +5998,7 @@
     SUBDIR += py-schedule
     SUBDIR += py-scheduler
     SUBDIR += py-schema
+    SUBDIR += py-schema-salad
     SUBDIR += py-schematics-patched
     SUBDIR += py-scholarly
     SUBDIR += py-scikit-base
@@ -5997,6 +6006,7 @@
     SUBDIR += py-scikit-build-core
     SUBDIR += py-scooby
     SUBDIR += py-scripttest
+    SUBDIR += py-seedir
     SUBDIR += py-selection
     SUBDIR += py-semantic-version
     SUBDIR += py-semver
@@ -6088,6 +6098,7 @@
     SUBDIR += py-super-collections
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
+    SUBDIR += py-sybil
     SUBDIR += py-synr
     SUBDIR += py-syrupy
     SUBDIR += py-sysctl
@@ -6146,12 +6157,14 @@
     SUBDIR += py-tooz
     SUBDIR += py-toposort
     SUBDIR += py-tox
+    SUBDIR += py-tox-ini-fmt
     SUBDIR += py-tox-toml-fmt
     SUBDIR += py-traceback2
     SUBDIR += py-trailrunner
     SUBDIR += py-traitlets
     SUBDIR += py-traits
     SUBDIR += py-traittypes
+    SUBDIR += py-trampoline
     SUBDIR += py-transaction
     SUBDIR += py-transitions
     SUBDIR += py-tree-format
@@ -6184,7 +6197,10 @@
     SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-typer-slim
+    SUBDIR += py-types-Flask-Cors
     SUBDIR += py-types-Pygments
+    SUBDIR += py-types-aws-xray-sdk
+    SUBDIR += py-types-boto
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-jsonschema
@@ -6305,7 +6321,6 @@
     SUBDIR += py-xarray-simlab
     SUBDIR += py-xasm
     SUBDIR += py-xattr
-    SUBDIR += py-xdg
     SUBDIR += py-xdg-user-dirs
     SUBDIR += py-xdis
     SUBDIR += py-xdoctest
@@ -6723,6 +6738,7 @@
     SUBDIR += rubygem-aws-sdk-connectcampaignsv2
     SUBDIR += rubygem-aws-sdk-connectcases
     SUBDIR += rubygem-aws-sdk-connectcontactlens
+    SUBDIR += rubygem-aws-sdk-connecthealth
     SUBDIR += rubygem-aws-sdk-connectparticipant
     SUBDIR += rubygem-aws-sdk-connectwisdomservice
     SUBDIR += rubygem-aws-sdk-controlcatalog
@@ -6768,6 +6784,7 @@
     SUBDIR += rubygem-aws-sdk-elasticloadbalancing
     SUBDIR += rubygem-aws-sdk-elasticloadbalancingv2
     SUBDIR += rubygem-aws-sdk-elasticsearchservice
+    SUBDIR += rubygem-aws-sdk-elementalinference
     SUBDIR += rubygem-aws-sdk-emr
     SUBDIR += rubygem-aws-sdk-emrcontainers
     SUBDIR += rubygem-aws-sdk-emrserverless
@@ -6989,6 +7006,7 @@
     SUBDIR += rubygem-aws-sdk-sesv2
     SUBDIR += rubygem-aws-sdk-shield
     SUBDIR += rubygem-aws-sdk-signer
+    SUBDIR += rubygem-aws-sdk-signerdata
     SUBDIR += rubygem-aws-sdk-simpledb
     SUBDIR += rubygem-aws-sdk-simspaceweaver
     SUBDIR += rubygem-aws-sdk-snowball
@@ -7211,6 +7229,8 @@
     SUBDIR += rubygem-buftok
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-bullet
+    SUBDIR += rubygem-bullet-rails72
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-c21e
     SUBDIR += rubygem-cabin
@@ -7269,6 +7289,7 @@
     SUBDIR += rubygem-contracts
     SUBDIR += rubygem-contracts016
     SUBDIR += rubygem-cookbook-omnifetch
+    SUBDIR += rubygem-cookstyle
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-corefines
     SUBDIR += rubygem-corefoundation
@@ -8224,6 +8245,7 @@
     SUBDIR += rubygem-unicode-emoji
     SUBDIR += rubygem-unicode-version
     SUBDIR += rubygem-unicode_utils
+    SUBDIR += rubygem-uniform_notifier
     SUBDIR += rubygem-unleash
     SUBDIR += rubygem-useragent
     SUBDIR += rubygem-uuid
@@ -8541,7 +8563,6 @@
     SUBDIR += universal-ctags
     SUBDIR += unordered-dense
     SUBDIR += upnp
-    SUBDIR += upp
     SUBDIR += urjtag
     SUBDIR += ut
     SUBDIR += utf8cpp
@@ -8573,6 +8594,7 @@
     SUBDIR += wasi-compiler-rt19
     SUBDIR += wasi-compiler-rt20
     SUBDIR += wasi-compiler-rt21
+    SUBDIR += wasi-compiler-rt22
     SUBDIR += wasi-libc
     SUBDIR += wasi-libcxx
     SUBDIR += wasi-libcxx17
@@ -8580,6 +8602,7 @@
     SUBDIR += wasi-libcxx19
     SUBDIR += wasi-libcxx20
     SUBDIR += wasi-libcxx21
+    SUBDIR += wasi-libcxx22
     SUBDIR += wasm-server-runner
     SUBDIR += wasm3
     SUBDIR += wasmer

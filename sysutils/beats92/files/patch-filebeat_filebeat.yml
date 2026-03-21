@@ -1,0 +1,33 @@
+--- filebeat/filebeat.yml.orig	2026-02-23 21:59:03 UTC
++++ filebeat/filebeat.yml
+@@ -81,7 +81,7 @@ filebeat.config.modules:
+ 
+ filebeat.config.modules:
+   # Glob pattern for configuration loading
+-  path: ${path.config}/modules.d/*.yml
++  path: ${path.config}/filebeat.modules.d/*.yml
+ 
+   # Set to true to enable config reloading
+   reload.enabled: false
+@@ -124,6 +124,10 @@ setup.template.settings:
+ # website.
+ #setup.dashboards.url:
+ 
++# The directory from where to read the dashboards. The default is the `kibana`
++# folder in the home path.
++#setup.dashboards.directory: %%DATADIR%%/filebeat/kibana
++
+ # =================================== Kibana ===================================
+ 
+ # Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
+@@ -195,8 +199,8 @@ processors:
+   - add_host_metadata:
+       when.not.contains.tags: forwarded
+   - add_cloud_metadata: ~
+-  - add_docker_metadata: ~
+-  - add_kubernetes_metadata: ~
++#  - add_docker_metadata: ~
++#  - add_kubernetes_metadata: ~
+ 
+ # ================================== Logging ===================================
+ 

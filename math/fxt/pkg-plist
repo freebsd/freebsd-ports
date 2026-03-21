@@ -1799,6 +1799,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A368948-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A369376-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A369376-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A383977-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A383977-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bracelets-demo.cc

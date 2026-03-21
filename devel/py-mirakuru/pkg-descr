@@ -1,0 +1,9 @@
+Mirakuru is a process orchestration tool designed for functional and integration
+tests.
+
+When your application or tests rely on external processes (like databases, APIs,
+or other services), ensuring these processes are started and ready before your
+main code executes can be challenging. Mirakuru solves this by orchestrating the
+startup of these processes and waiting until they are fully operational (e.g.,
+accepting connections, producing specific output) before allowing your program
+or tests to continue.

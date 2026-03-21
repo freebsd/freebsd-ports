@@ -1,5 +1,5 @@
 PORTNAME=	hxtools
-PORTVERSION=	20231224
+PORTVERSION=	20251011
 CATEGORIES=	misc
 MASTER_SITES=	http://inai.de/files/hxtools/ \
 		https://codeberg.org/jengelh/hxtools/releases/download/rel-${PORTVERSION}/
@@ -17,7 +17,6 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		compiler:c++11-lang iconv perl5 pkgconfig shebangfix \
 		tar:zst xorg
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	data/hxtools_bashrc.bash data/hxtools_profile.bash \
 		examples/git-deconstruct examples/rc4 sadmin/hxnetload \
 		sadmin/ldif-duplicate-attrs sadmin/ldif-leading-spaces \
@@ -26,12 +25,14 @@ SHEBANG_FILES=	data/hxtools_bashrc.bash data/hxtools_profile.bash \
 		sdevel/diff2php sdevel/doxygen-kerneldoc-filter \
 		sdevel/gh-trim-workflowruns \
 		sdevel/git-author-stat sdevel/git-blame-stats \
-		sdevel/git-forest sdevel/git-revert-stats \
+		sdevel/git-forest sdevel/git-logsortbychgsize \
+		sdevel/git-revert-stats \
 		sdevel/git-track sdevel/man2html sdevel/paddrspacesize \
-		sdevel/proc_stat_signal_decode sdevel/sourcefuncsize \
+		sdevel/proc_stat_signal_decode sdevel/selective-preprocess \
+		sdevel/sourcefuncsize \
 		sdevel/spec-beautifier smm/aumeta smm/extract_d3pkg \
 		smm/extract_dfqshared.pm smm/extract_dxhog \
-		smm/extract_f3pod smm/extract_qupak smm/gpsh smm/mkvappend \
+		smm/extract_qupak smm/gpsh smm/make_qupak smm/mkvappend \
 		smm/mod2opus smm/ssa2srt suser/fxterm suser/mailsplit \
 		suser/pegrep suser/pesubst suser/qpdecode suser/qtar \
 		suser/rezip suser/wktimer suser/xmlformat

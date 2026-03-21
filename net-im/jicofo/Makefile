@@ -1,6 +1,5 @@
 PORTNAME=	jicofo
-DISTVERSION=	1.0-1118
-PORTREVISION=	1
+DISTVERSION=	1.0-1169
 CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -16,8 +15,8 @@ BUILD_DEPENDS=	maven>0:devel/maven
 USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	jitsi
-GH_TAGNAME=	5803269
-JAVA_VERSION=	11
+GH_TAGNAME=	d8333e9
+JAVA_VERSION=	17
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES+=	pkg-message
@@ -34,8 +33,7 @@ post-build:
 	@cd ${WRKDIR} && ${TAR} czf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} m2
 	@${ECHO} "(!!!) Please upload the maven deps archive: ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
 .else
-MASTER_SITES+=	LOCAL/acm/:maven \
-		LOCAL/grembo/:maven
+MASTER_SITES+=	LOCAL/acm/:maven
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:maven
 MAVEN_ARGS=	--offline
 .endif

@@ -2,20 +2,19 @@
 # `go` command.
 #
 # Feature:	go
-# Usage:	USES=go
+# Usage:	USES=go or USES=go:<arg1>[,<arg2>,...]
 # Valid ARGS:	(none), N.NN+, N.NN, modules, no_targets, run
 #
-# (none)	Setup GOPATH and build in GOPATH mode using default Go version.
+# (none)	Build in GOPATH mode using default Go version.
 # N.NN+		Specify minimum Go version
 # N.NN		Specify exact Go version (should be avoided)
-# modules	If the upstream uses Go modules, this can be set to build
-#		in modules-aware mode.
-# no_targets	Indicates that Go is needed at build time as a part of
-#		make/CMake build.  This will setup build environment like
-#		GO_ENV, GO_BUILDFLAGS but will not create post-extract and
-#		do-{build,install,test} targets.
-# run		Indicates that Go is needed at run time and adds it to
-#		RUN_DEPENDS.
+# modules	Build in native, modules-aware mode (most Go ports use this)
+# no_targets	Use this when an app has its own make/cmake files that call Go.
+#		Sets up the build environment (GO_ENV, GO_BUILDFLAGS, etc.) but
+#		does not create make(1) targets (post-extract, do-build,
+#		do-install, do-test, etc.).
+# run		Adds the Go compiler to RUN_DEPENDS. Rarely needed; Go-based
+#		applications are compiled and only need Go at build time.
 #
 # Note about Go version specifiers (i.e. USES=go:1.20+):
 #   Try to use a range (USES=go:1.20+) rather than a single-version pin
@@ -29,6 +28,24 @@
 #
 #   When go.mod says "go 1.20", it's usually fine to say USES=go:1.20+.
 #
+# === RESOURCES ===
+# Further documentation about porting Go-based applications:
+# - https://docs.freebsd.org/en/books/porters-handbook/special/#using-go
+# - https://docs.freebsd.org/en/books/porters-handbook/uses/#uses-go
+# An explanation of why we accept ports only for Go-based applications, not
+# libraries:
+# - https://docs.freebsd.org/en/books/porters-handbook/special/#go-libs
+#
+# === REACHING OUT ===
+# For questions or assistance, reach out on mailing lists. The Go team
+# monitors the FreeBSD-Go mailing list, but the FreeBSD-Ports list is far
+# more active.
+# - For help with porting, including Go apps (freebsd-ports@FreeBSD.org):
+#   https://lists.freebsd.org/subscription/freebsd-ports
+# - For questions about the Go framework itself (freebsd-go@FreeBSD.org):
+#   https://lists.freebsd.org/subscription/freebsd-go
+#
+# === DOCUMENTATION ON USES=go ===
 # You can set the following variables to control the process.
 #
 # GO_MODULE
@@ -37,14 +54,14 @@
 #	use Go modules.
 #
 # GO_MOD_DIST
-#       The location to download the go.mod file if GO_MODULE is used.
-#       The default is empty, so it is loaded from GO_PROXY.
-#       Set it to "gitlab" and make sure GL_PROJECT is defined to download
-#       the "go.mod" from gitlab.
-#       Set it to "github" and make sure GH_PROJECT is defined to download
-#       the "go.mod" from github.
-#       You can also set it completely manually a URI without go.mod in it,
-#       is attached automatically to the URI.
+#	The location to download the go.mod file if GO_MODULE is used.
+#	The default is empty, so it is loaded from GO_PROXY.
+#	Set it to "gitlab" and make sure GL_PROJECT is defined to download
+#	the "go.mod" from gitlab.
+#	Set it to "github" and make sure GH_PROJECT is defined to download
+#	the "go.mod" from github.
+#	You can also set it completely manually a URI without go.mod in it,
+#	is attached automatically to the URI.
 #
 # GO_PKGNAME
 #	The name of the package when building in GOPATH mode.  This

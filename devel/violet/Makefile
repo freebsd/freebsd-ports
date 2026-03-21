@@ -1,6 +1,5 @@
 PORTNAME=	violet
-DISTVERSION=	2.2.2
-PORTREVISION=	1
+DISTVERSION=	2.3.1
 CATEGORIES=	devel editors java
 MASTER_SITES=	SF/${PORTNAME}/violetumleditor/${DISTVERSION}-SNAPSHOT/
 DISTNAME=	violetumleditor-${DISTVERSION}-SNAPSHOT
@@ -16,20 +15,18 @@ LICENSE=	GPLv2
 
 USES=		java
 
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
 NO_ARCH=	YES
 NO_BUILD=	YES
+SUB_FILES=	${PORTNAME}
 
-PLIST_FILES=	${JAVASHAREDIR}/${PORTNAME}/violetumleditor.jar bin/${PORTNAME}
-
-pre-install:
-	${ECHO} "#!/bin/sh" > ${WRKDIR}/violet.sh
-	${ECHO} "${PREFIX}/bin/java -jar ${JAVASHAREDIR}/${PORTNAME}/violetumleditor.jar" \
-		>> ${WRKDIR}/violet.sh
+PLIST_FILES=	${DATADIR}/violetumleditor.jar bin/${PORTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
-	${INSTALL_DATA} ${DISTDIR}/violetumleditor-${DISTVERSION}-SNAPSHOT.jar \
-		${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/violetumleditor.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/violet.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar \
+		${STAGEDIR}${DATADIR}/violetumleditor.jar
 
 .include <bsd.port.mk>

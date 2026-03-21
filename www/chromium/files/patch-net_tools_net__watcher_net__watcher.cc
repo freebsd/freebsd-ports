@@ -1,14 +1,14 @@
---- net/tools/net_watcher/net_watcher.cc.orig	2026-01-14 08:33:23 UTC
+--- net/tools/net_watcher/net_watcher.cc.orig	2026-03-13 06:02:14 UTC
 +++ net/tools/net_watcher/net_watcher.cc
-@@ -32,7 +32,7 @@
+@@ -31,7 +31,7 @@
  #include "net/proxy_resolution/proxy_config_service.h"
  #include "net/proxy_resolution/proxy_config_with_annotation.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "net/base/network_change_notifier_linux.h"
+ #include "third_party/abseil-cpp/absl/container/flat_hash_set.h"
  #endif
- 
 @@ -42,7 +42,7 @@
  
  namespace {

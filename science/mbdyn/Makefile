@@ -1,6 +1,6 @@
 PORTNAME=	mbdyn
 DISTVERSION=	1.7.3
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
@@ -15,7 +15,7 @@ BROKEN_powerpc=		does not compile on powerpc
 
 BUILD_DEPENDS=	libatomic_ops>0:devel/libatomic_ops
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libarpack.so:math/arpack-ng \
+		libarpack.so:math/arpack-ng@mpich \
 		libumfpack.so:math/suitesparse-umfpack
 
 USES=		compiler:c++11-lib fortran gmake libtool:build localbase

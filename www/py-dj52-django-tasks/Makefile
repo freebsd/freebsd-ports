@@ -1,5 +1,5 @@
 PORTNAME=	django-tasks
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj52-
@@ -22,12 +22,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	RQ
-RQ_DESC=	RQ (Redis Queue) support
-
-RQ_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}dj52-django-rq>=0:devel/py-dj52-django-rq@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}rq>=2.5:devel/py-rq@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}rq-scheduler>=0:devel/py-rq-scheduler@${PY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-configtool
 DISTVERSION=	5.1.12
+PORTREVISION=	1
 CATEGORIES=	textproc x11
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -9,9 +10,6 @@ WWW=		https://github.com/fcitx/fcitx5-configtool
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
-
-qt5_PKGNAMESUFFIX=	-qt5
-qt6_PKGNAMESUFFIX=	-qt6
 
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		libFcitx5Qt6DBusAddons.so:textproc/fcitx5-qt@qt6 \
@@ -26,10 +24,8 @@ USE_GL=		opengl
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-LIB_DEPENDS+=	libKF6Svg.so:graphics/kf6-ksvg \
-		libKF6KCMUtilsQuick.so:devel/kf6-kcmutils
-USE_KDE=	config coreaddons ecm i18n iconthemes itemviews \
-		kdeclarative kirigami2 libplasma package service \
+USE_KDE=	config coreaddons ecm i18n iconthemes itemviews kcmutils \
+		kdeclarative kirigami2 libplasma package service svg \
 		widgetsaddons
 USE_QT=		base declarative
 CMAKE_OFF=	ENABLE_TEST

@@ -1,5 +1,5 @@
 PORTNAME=	hiera-eyaml
-PORTVERSION=	4.3.0
+PORTVERSION=	5.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/voxpupuli/hiera-eyaml
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-highline2>=2.1:devel/rubygem-highline2 \
+RUN_DEPENDS=	rubygem-base64>=0.3.0:converters/rubygem-base64 \
+		rubygem-highline2>=2.1:devel/rubygem-highline2 \
 		rubygem-optimist>=3.1:devel/rubygem-optimist
 
 USES=		gem

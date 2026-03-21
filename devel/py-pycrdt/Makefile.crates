@@ -1,7 +1,6 @@
 CARGO_CRATES=	arc-swap-1.8.0 \
 		async-lock-3.4.2 \
 		async-trait-0.1.89 \
-		autocfg-1.5.0 \
 		bitflags-2.10.0 \
 		bumpalo-3.19.1 \
 		cfg-if-1.0.4 \
@@ -14,24 +13,22 @@ CARGO_CRATES=	arc-swap-1.8.0 \
 		getrandom-0.2.17 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
-		indoc-2.0.7 \
 		itoa-1.0.17 \
 		js-sys-0.3.85 \
 		libc-0.2.180 \
 		lock_api-0.4.14 \
 		memchr-2.7.6 \
-		memoffset-0.9.1 \
 		once_cell-1.21.3 \
 		parking-2.2.1 \
 		parking_lot_core-0.9.12 \
 		pin-project-lite-0.2.16 \
-		portable-atomic-1.13.0 \
+		portable-atomic-1.13.1 \
 		proc-macro2-1.0.106 \
-		pyo3-0.27.2 \
-		pyo3-build-config-0.27.2 \
-		pyo3-ffi-0.27.2 \
-		pyo3-macros-0.27.2 \
-		pyo3-macros-backend-0.27.2 \
+		pyo3-0.28.0 \
+		pyo3-build-config-0.28.0 \
+		pyo3-ffi-0.28.0 \
+		pyo3-macros-0.28.0 \
+		pyo3-macros-backend-0.28.0 \
 		quote-1.0.44 \
 		redox_syscall-0.5.18 \
 		rustversion-1.0.22 \
@@ -47,7 +44,6 @@ CARGO_CRATES=	arc-swap-1.8.0 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
 		unicode-ident-1.0.22 \
-		unindent-0.2.4 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.108 \
 		wasm-bindgen-macro-0.2.108 \
@@ -55,4 +51,4 @@ CARGO_CRATES=	arc-swap-1.8.0 \
 		wasm-bindgen-shared-0.2.108 \
 		windows-link-0.2.1 \
 		yrs-0.25.0 \
-		zmij-1.0.16
+		zmij-1.0.19

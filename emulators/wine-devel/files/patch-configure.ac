@@ -1,0 +1,45 @@
+--- configure.ac.orig	2026-03-06 20:41:46 UTC
++++ configure.ac
+@@ -1552,14 +1552,35 @@ then
+ dnl **** Check for libusb ****
+ if test "x$with_usb" != "xno"
+ then
+-    WINE_PACKAGE_FLAGS(USB,[libusb-1.0],[-lusb-1.0],,,
+-        [AC_CHECK_HEADER([libusb.h],
+-            [AC_CHECK_LIB(usb-1.0,libusb_interrupt_event_handler,[:],[USB_LIBS=""],[$USB_LIBS])],
+-            [USB_LIBS=""])])
++
++    case $host_os in
++      freebsd*)
++        WINE_PACKAGE_FLAGS(USB,[libusb-1.0],[-lusb],,,
++            [AC_CHECK_HEADER([libusb.h],
++                [AC_CHECK_LIB(usb,libusb_interrupt_event_handler,[:],[USB_LIBS=""],[$USB_LIBS])],
++                [USB_LIBS=""])])
++        ;;
++      *)
++        WINE_PACKAGE_FLAGS(USB,[libusb-1.0],[-lusb-1.0],,,
++            [AC_CHECK_HEADER([libusb.h],
++                [AC_CHECK_LIB(usb-1.0,libusb_interrupt_event_handler,[:],[USB_LIBS=""],[$USB_LIBS])],
++                [USB_LIBS=""])])
++        ;;
++    esac
++
+ fi
+-WINE_NOTICE_WITH(usb,[test "$ac_cv_lib_usb_1_0_libusb_interrupt_event_handler" != "yes"],
+-                 [libusb-1.0 ${notice_platform}development files not found (or too old), USB devices won't be supported.],
+-                 [enable_wineusb_sys])
++case $host_os in
++    freebsd*)
++        WINE_NOTICE_WITH(usb,[test "$ac_cv_lib_usb_libusb_interrupt_event_handler" != "yes"],
++                         [libusb-1.0 ${notice_platform}development files not found (or too old), USB devices won't be supported.],
++                         [enable_wineusb_sys])
++    ;;
++    *)
++        WINE_NOTICE_WITH(usb,[test "$ac_cv_lib_usb_1_0_libusb_interrupt_event_handler" != "yes"],
++                         [libusb-1.0 ${notice_platform}development files not found (or too old), USB devices won't be supported.],
++                         [enable_wineusb_sys])
++    ;;
++esac
+ 
+ dnl **** Check for libv4l2 ****
+ if test "x$with_v4l2" != "xno"

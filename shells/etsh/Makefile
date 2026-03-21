@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://etsh.nl/src/${PORTNAME}_${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Enhanced V6 Thompson Compatible Shell
 WWW=		https://etsh.nl/
 

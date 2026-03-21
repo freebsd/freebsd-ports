@@ -50,8 +50,8 @@ share/icons/net.wz2100.warzone2100.png
 %%NLS%%share/locale/ru/LC_MESSAGES/warzone2100_guide.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/warzone2100.mo
-%%NLS%%share/locale/sr_CS/LC_MESSAGES/warzone2100.mo
-%%NLS%%share/locale/sr_CS/LC_MESSAGES/warzone2100_guide.mo
+%%NLS%%share/locale/sr_RS/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/sr_RS/LC_MESSAGES/warzone2100_guide.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/warzone2100_guide.mo
 %%NLS%%share/locale/tt_RU/LC_MESSAGES/warzone2100.mo

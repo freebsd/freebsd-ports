@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2026-03-04 01:32:49 UTC
++++ pyproject.toml
+@@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools"]
+ 
+ [project]
+ name = "types-aws-xray-sdk"
+ version = "2.15.0.20251206"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
+ description = "Typing stubs for aws-xray-sdk"
+ readme = { text = """\
+ ## Typing stubs for aws-xray-sdk
+@@ -45,6 +43,3 @@ dependencies = []
+ "Issue tracker" = "https://github.com/python/typeshed/issues"
+ "Chat" = "https://gitter.im/python/typing"
+ 
+-[tool.setuptools]
+-packages = ['aws_xray_sdk-stubs']
+-include-package-data = false

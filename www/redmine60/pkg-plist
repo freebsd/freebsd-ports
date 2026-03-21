@@ -2004,6 +2004,7 @@
 %%WWWDIR%%/test/system/keyboard_shortcuts_test.rb
 %%WWWDIR%%/test/system/messages_test.rb
 %%WWWDIR%%/test/system/my_page_test.rb
+%%WWWDIR%%/test/system/query_test.rb
 %%WWWDIR%%/test/system/quick_jump_test.rb
 %%WWWDIR%%/test/system/repositories_test.rb
 %%WWWDIR%%/test/system/sudo_mode_test.rb

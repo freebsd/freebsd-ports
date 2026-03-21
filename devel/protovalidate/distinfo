@@ -1,5 +1,5 @@
-TIMESTAMP = 1765895686
-SHA256 (go/devel_protovalidate/protovalidate-v1.1.0/v1.1.0.mod) = 4a3498fde5d036212906ba6914ef10a7b17e3361a3982e44a8fddf9750bbb8cb
-SIZE (go/devel_protovalidate/protovalidate-v1.1.0/v1.1.0.mod) = 381
-SHA256 (go/devel_protovalidate/protovalidate-v1.1.0/v1.1.0.zip) = 4c47ca13cc9430e0635ad47c20ec55d2477c4f863485dc014af3a7d4db83f488
-SIZE (go/devel_protovalidate/protovalidate-v1.1.0/v1.1.0.zip) = 347932
+TIMESTAMP = 1771421434
+SHA256 (go/devel_protovalidate/protovalidate-v1.1.1/v1.1.1.mod) = b3d2e072eee73c8933b3aa96c190bf8ed2064395b57ec8ec780c0b0df93862bd
+SIZE (go/devel_protovalidate/protovalidate-v1.1.1/v1.1.1.mod) = 381
+SHA256 (go/devel_protovalidate/protovalidate-v1.1.1/v1.1.1.zip) = 201549ca190ab7171c9751ac9424df6c4e3ae7f8512980931a62df675a6f0a90
+SIZE (go/devel_protovalidate/protovalidate-v1.1.1/v1.1.1.zip) = 348403

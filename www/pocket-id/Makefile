@@ -1,6 +1,6 @@
 PORTNAME=	pocket-id
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
@@ -13,9 +13,10 @@ WWW=		https://pocket-id.org
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+ONLY_FOR_ARCHS=	aarch64 amd64                                                                                   
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64   
 
-USES=		go:1.25+,modules
+USES=		go:1.26+,modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 

@@ -107,6 +107,7 @@ include/gtk-4.0/gsk/gpu/gskglrenderer.h
 include/gtk-4.0/gsk/gpu/gskvulkanrenderer.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
+include/gtk-4.0/gsk/gskcomponenttransfer.h
 include/gtk-4.0/gsk/gskenums.h
 include/gtk-4.0/gsk/gskenumtypes.h
 include/gtk-4.0/gsk/gskglshader.h
@@ -286,6 +287,7 @@ include/gtk-4.0/gtk/gtkgrid.h
 include/gtk-4.0/gtk/gtkgridlayout.h
 include/gtk-4.0/gtk/gtkgridview.h
 include/gtk-4.0/gtk/gtkheaderbar.h
+include/gtk-4.0/gtk/gtkiconpaintable.h
 include/gtk-4.0/gtk/gtkicontheme.h
 include/gtk-4.0/gtk/gtkimage.h
 include/gtk-4.0/gtk/gtkimcontext.h
@@ -416,12 +418,10 @@ lib/girepository-1.0/Gdk-4.0.typelib
 %%X11%%lib/girepository-1.0/GdkX11-4.0.typelib
 lib/girepository-1.0/Gsk-4.0.typelib
 lib/girepository-1.0/Gtk-4.0.typelib
-%%GSTREAMER%%lib/gtk-4.0/4.0.0/media/libmedia-gstreamer.so
-%%CUPS%%lib/gtk-4.0/4.0.0/printbackends/libprintbackend-cups.so
-lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
 lib/libgtk-4.so
 lib/libgtk-4.so.1
 lib/libgtk-4.so.%%LIBVERSION%%
+%%ACCESSKIT%%libdata/pkgconfig/gtk4-accesskit.pc
 libdata/pkgconfig/gtk4-atspi.pc
 %%BROADWAY%%libdata/pkgconfig/gtk4-broadway.pc
 libdata/pkgconfig/gtk4-unix-print.pc
@@ -432,6 +432,14 @@ share/applications/org.gtk.Demo4.desktop
 share/applications/org.gtk.PrintEditor4.desktop
 share/applications/org.gtk.WidgetFactory4.desktop
 share/applications/org.gtk.gtk4.NodeEditor.desktop
+%%BASH%%share/bash-completion/completions/gtk4-builder-tool
+%%BASH%%share/bash-completion/completions/gtk4-demo
+%%BASH%%share/bash-completion/completions/gtk4-image-tool
+%%BASH%%share/bash-completion/completions/gtk4-node-editor
+%%BASH%%share/bash-completion/completions/gtk4-path-tool
+%%BASH%%share/bash-completion/completions/gtk4-print-editor
+%%BASH%%share/bash-completion/completions/gtk4-rendernode-tool
+%%BASH%%share/bash-completion/completions/gtk4-widget-factory
 share/gettext/its/gtk4builder.its
 share/gettext/its/gtk4builder.loc
 share/gir-1.0/Gdk-4.0.gir
@@ -530,7 +538,6 @@ share/locale/it/LC_MESSAGES/gtk40.mo
 share/locale/ja/LC_MESSAGES/gtk40.mo
 share/locale/ka/LC_MESSAGES/gtk40.mo
 share/locale/kab/LC_MESSAGES/gtk40.mo
-share/locale/kg/LC_MESSAGES/gtk40.mo
 share/locale/kk/LC_MESSAGES/gtk40.mo
 share/locale/km/LC_MESSAGES/gtk40.mo
 share/locale/kn/LC_MESSAGES/gtk40.mo
@@ -578,7 +585,6 @@ share/locale/ta/LC_MESSAGES/gtk40.mo
 share/locale/te/LC_MESSAGES/gtk40.mo
 share/locale/tg/LC_MESSAGES/gtk40.mo
 share/locale/th/LC_MESSAGES/gtk40.mo
-share/locale/tk/LC_MESSAGES/gtk40.mo
 share/locale/tr/LC_MESSAGES/gtk40.mo
 share/locale/tt/LC_MESSAGES/gtk40.mo
 share/locale/ug/LC_MESSAGES/gtk40.mo

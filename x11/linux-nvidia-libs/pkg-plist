@@ -192,6 +192,7 @@
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json
+%%LINUXBASE%%/usr/share/egl/egl_external_platform.d/09_nvidia_wayland2.json
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/99_nvidia_wayland2.json
 %%LINUXBASE%%/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 %%LINUXBASE%%/usr/share/man/man1/nvidia-cuda-mps-control.1.gz

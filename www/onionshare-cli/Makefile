@@ -1,7 +1,7 @@
 PORTNAME=	onionshare-cli
 PORTVERSION=	2.6
 DISTNAME=	onionshare_cli-${PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www security python
 MASTER_SITES=   PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	meek-client:security/meek \
 		${PYTHON_PKGNAMEPREFIX}flask-socketio>=0:www/py-flask-socketio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0:www/py-gevent-websocket@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pynacl>=0:security/py-pynacl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyNaCl>=0:security/py-pynacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:converters/py-unidecode@${PY_FLAVOR} \

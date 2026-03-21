@@ -1,6 +1,8 @@
 PORTNAME=	atac-seq
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
+DISTVERSION=	0.3.0
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
@@ -20,6 +22,7 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		samtools>0:biology/samtools \
 		${PYTHON_PKGNAMEPREFIX}macs2>0:biology/py-macs2@${PY_FLAVOR} \
 		fasda>0:biology/fasda \
+		fasda-utils>0:biology/fasda-utils \
 		peak-classifier>0:biology/peak-classifier \
 		webbrowser>0:www/webbrowser \
 		curl>0:ftp/curl
@@ -28,7 +31,7 @@ USES=		metaport python
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD
+.if ${OPSYS} != FreeBSD || ${OSVERSION} >= 1302509
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR}
 .endif
 

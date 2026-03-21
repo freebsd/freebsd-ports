@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-02-15 04:04:43 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.9"
+ description = "Makes working with XML feel like you are working with JSON"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { file = "LICENSE" }
+ authors = [{ name = "Martin Blech" }]
+ classifiers = [
+     "Intended Audience :: Developers",

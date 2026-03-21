@@ -1,0 +1,11 @@
+--- devise-pwned_password.gemspec.orig	2026-02-18 20:46:19 UTC
++++ devise-pwned_password.gemspec
+@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<devise>.freeze, ["~> 4".freeze])
++  s.add_runtime_dependency(%q<devise>.freeze, [">= 4".freeze])
+   s.add_runtime_dependency(%q<pwned>.freeze, ["~> 2.4".freeze])
+   s.add_development_dependency(%q<byebug>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<capybara>.freeze, [">= 0".freeze])

@@ -1,0 +1,43 @@
+--- src/common/Makefile.in.orig	2026-01-15 20:26:01 UTC
++++ src/common/Makefile.in
+@@ -179,6 +179,7 @@ am_libcommon_la_OBJECTS = assoc_mgr.lo bitstring.lo ca
+ 	slurm_opt.lo slurm_protocol_api.lo slurm_protocol_defs.lo \
+ 	slurm_protocol_pack.lo slurm_protocol_util.lo \
+ 	slurm_protocol_socket.lo slurm_resolv.lo \
++	slurm_sockaddr.lo \
+ 	slurm_resource_info.lo slurm_rlimits_info.lo \
+ 	slurm_step_layout.lo slurm_time.lo slurmdb_defs.lo \
+ 	slurmdb_pack.lo slurmdbd_defs.lo slurmdbd_pack.lo spank.lo \
+@@ -711,6 +712,8 @@ libcommon_la_SOURCES = \
+ 	slurm_protocol_socket.h			\
+ 	slurm_resolv.c				\
+ 	slurm_resolv.h				\
++	slurm_sockaddr.c			\
++	slurm_sockaddr.h			\
+ 	slurm_resource_info.c			\
+ 	slurm_resource_info.h			\
+ 	slurm_rlimits_info.c			\
+@@ -909,6 +912,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_protocol_socket.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_protocol_util.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_resolv.Plo@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_sockaddr.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_resource_info.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_rlimits_info.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slurm_step_layout.Plo@am__quote@ # am--include-marker
+@@ -1134,6 +1138,7 @@ distclean: distclean-am
+ 	-rm -f ./$(DEPDIR)/slurm_protocol_socket.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_protocol_util.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_resolv.Plo
++	-rm -f ./$(DEPDIR)/slurm_sockaddr.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_resource_info.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_rlimits_info.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_step_layout.Plo
+@@ -1279,6 +1284,7 @@ maintainer-clean: maintainer-clean-am
+ 	-rm -f ./$(DEPDIR)/slurm_protocol_socket.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_protocol_util.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_resolv.Plo
++	-rm -f ./$(DEPDIR)/slurm_sockaddr.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_resource_info.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_rlimits_info.Plo
+ 	-rm -f ./$(DEPDIR)/slurm_step_layout.Plo

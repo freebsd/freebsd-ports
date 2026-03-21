@@ -1,6 +1,5 @@
 PORTNAME=	maven
-DISTVERSION=	3.9.12
-PORTREVISION=	1
+DISTVERSION=	3.9.14
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -29,7 +28,8 @@ INSTANCE_ID=	${DISTNAME:S/-bin//:R}
 INSTANCES_DIR=	${LOCALBASE}/etc/maven-wrapper/instances.d
 
 post-extract:
-	${RM} -r ${WRKSRC}/lib/jansi-native ${WRKSRC}/bin/*.cmd
+	${RM} ${WRKSRC}/bin/*.cmd
+	${RM} -r ${WRKSRC}/lib/jansi-native
 	${ECHO_CMD} "${DATADIR}" > ${WRKDIR}/${INSTANCE_ID}
 
 post-patch:

@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -102,7 +102,7 @@
  #include "ui/base/ui_base_switches.h"
@@ -102,7 +102,7 @@
    ui::SetOzonePlatformForLinuxIfNeeded(*base::CommandLine::ForCurrentProcess());
  #endif
    ui::OzonePlatform::PreEarlyInitialization();
-@@ -995,7 +995,7 @@ void ChromeMainDelegate::CommonEarlyInitialization() {
+@@ -983,7 +983,7 @@ void ChromeMainDelegate::CommonEarlyInitialization() {
  
    const bool emit_crashes =
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -111,7 +111,7 @@
        IsCanaryDev();
  #else
        false;
-@@ -1137,7 +1137,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
+@@ -1125,7 +1125,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
      return 0;  // Got a --credits switch; exit with a success error code.
    }
  
@@ -120,7 +120,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1453,7 +1453,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1441,7 +1441,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      CHECK(!loaded_locale.empty()) << "Locale could not be found for " << locale;
    }
  

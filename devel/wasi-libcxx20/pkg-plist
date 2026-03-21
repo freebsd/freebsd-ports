@@ -2082,10 +2082,10 @@ share/wasi-sysroot/include/c++/v1/vector
 share/wasi-sysroot/include/c++/v1/version
 share/wasi-sysroot/include/c++/v1/wchar.h
 share/wasi-sysroot/include/c++/v1/wctype.h
-share/wasi-sysroot/lib/wasm32-wasi/libc++.a
-share/wasi-sysroot/lib/wasm32-wasi/libc++.modules.json
-share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a
-share/wasi-sysroot/lib/wasm32-wasi/libc++experimental.a
+share/wasi-sysroot/lib/%%TRIPLE%%/libc++.a
+share/wasi-sysroot/lib/%%TRIPLE%%/libc++.modules.json
+share/wasi-sysroot/lib/%%TRIPLE%%/libc++abi.a
+share/wasi-sysroot/lib/%%TRIPLE%%/libc++experimental.a
 share/wasi-sysroot/share/libc++/v1/std.compat.cppm
 share/wasi-sysroot/share/libc++/v1/std.compat/cassert.inc
 share/wasi-sysroot/share/libc++/v1/std.compat/cctype.inc

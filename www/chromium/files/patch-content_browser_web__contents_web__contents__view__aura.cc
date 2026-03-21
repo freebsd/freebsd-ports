@@ -1,4 +1,4 @@
---- content/browser/web_contents/web_contents_view_aura.cc.orig	2026-02-11 09:05:39 UTC
+--- content/browser/web_contents/web_contents_view_aura.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/browser/web_contents/web_contents_view_aura.cc
 @@ -188,7 +188,7 @@ class WebDragSourceAura : public content::WebContentsO
    raw_ptr<aura::Window> window_;
@@ -18,7 +18,7 @@
    // We set the file contents before the URL because the URL also sets file
    // contents (to a .URL shortcut).  We want to prefer file content data over
    // a shortcut so we add it first.
-@@ -1370,7 +1370,7 @@ void WebContentsViewAura::OnMouseEvent(ui::MouseEvent*
+@@ -1404,7 +1404,7 @@ void WebContentsViewAura::OnMouseEvent(ui::MouseEvent*
      // Linux window managers like to handle raise-on-click themselves.  If we
      // raise-on-click manually, this may override user settings that prevent
      // focus-stealing.

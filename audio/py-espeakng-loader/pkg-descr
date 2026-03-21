@@ -1,0 +1,5 @@
+espeakng_loader is a Python package that provides a shared library loader for
+eSpeak NG.
+
+This package helps locate and load the eSpeak NG shared library across different
+platforms, making it easier to use eSpeak NG from Python applications.

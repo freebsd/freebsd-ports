@@ -1,9 +1,16 @@
 PORTNAME=	netgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.2601
+DISTVERSION=	6.2.2602
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/alexxy/netgen/commit/
+# Patch to fix build with JPEG enabled
+# Issue https://github.com/NGSolve/netgen/issues/210
+# Bug https://bugs.gentoo.org/947728
+PATCHFILES+=	3d82bf88360b9d032671a72a31cd9c351bf674f8.patch:-p1
+# Patch to fix build with MPEG enabled
+# Issue https://github.com/NGSolve/netgen/issues/192
+PATCHFILES+=	8737bff2bfec303b4affd06be9f44acd4b13f34d.patch:-p1
 
 MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
@@ -20,19 +27,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git
 
 USES=		cmake gl localbase:ldflags python tcl tk xorg
-
-# Patch to fix build with JPEG enabled
-# Issue https://github.com/NGSolve/netgen/issues/210
-# Bug https://bugs.gentoo.org/947728
-PATCHFILES+=	3d82bf88360b9d032671a72a31cd9c351bf674f8.patch:-p1
-# Patch to fix build with MPEG enabled
-# Issue https://github.com/NGSolve/netgen/issues/192
-PATCHFILES+=	8737bff2bfec303b4affd06be9f44acd4b13f34d.patch:-p1
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	NGSolve
 GH_TUPLE=	NGSolve:pybind11:v3.0.1:pybind11/external_dependencies/pybind11
-
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xi xmu

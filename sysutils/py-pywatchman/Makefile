@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	p.mousavizadeh@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watchman client for Python
 WWW=		https://pypi.org/project/pywatchman/
 

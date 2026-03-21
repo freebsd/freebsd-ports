@@ -1,0 +1,4 @@
+e3-testsuite is a Python library built on top of e3-core. Its purpose it to
+provide building blocks for software projects to create testsuites in a simple
+way. This is a generic library, therefore, the targeted software does not need
+to use Python.

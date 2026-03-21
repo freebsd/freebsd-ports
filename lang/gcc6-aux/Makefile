@@ -29,6 +29,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 PIE_UNSAFE=		yes
 
+OPTIONS_DEFINE=		GRAPHITE
 OPTIONS_GROUP=		STANDARD BOOTSTRAP
 OPTIONS_GROUP_STANDARD=	FORTRAN OBJC NLS TESTSUITE ALLSTAGES STATIC
 OPTIONS_GROUP_BOOTSTRAP=BOOTSTRAP
@@ -39,6 +40,10 @@ TESTSUITE_DESC=		Activate test support
 ALLSTAGES_DESC=		Build compiler with itself (twice, brings in libcc1)
 STATIC_DESC=		Link compilers and drivers statically
 BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
+GRAPHITE_DESC=		Support for Graphite loop optimizations
+
+GRAPHITE_LIB_DEPENDS=		libisl.so:devel/isl
+GRAPHITE_CONFIGURE_WITH+=	isl
 
 # The BOOTSTRAP option overrides all the others.  "make stage" will build a
 # static compiler that supports C, C++, and Ada languages and then create
@@ -213,44 +218,44 @@ post-extract:
 
 do-configure:
 	${MKDIR} ${BUILDDIR}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_CONFIGURE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_CONFIGURE_ENV} \
 		${CFG_SCRIPT} ${ADA_CONFIG_ARGS}
 
 do-build:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} all
 
 .if ${PORT_OPTIONS:MTESTSUITE} && !${PORT_OPTIONS:MBOOTSTRAP}
 test: build test-ada test-fortran test-objc test-cxx test-c
 
 test-ada:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -sk check-ada
 
 test-cxx:
 	# libstdc++ testsuite will break every time, for TRUE to continue
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c++ || true
 
 test-c:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c
 
 test-fortran:
 .  if ${PORT_OPTIONS:MFORTRAN}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-fortran
 .  endif
 
 test-objc:
 .  if ${PORT_OPTIONS:MOBJC}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-objc
 .  endif
 .endif
 
 do-install:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} install-strip ${MAKE_ARGS}
 	${MV} ${STAGEDIR}${PKG_PREFIX}/share ${WRKDIR}/moved_share
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/dejagnu/baseboards \

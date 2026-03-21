@@ -1,0 +1,10 @@
+Kornia-rs is a low-level computer vision library written in Rust, designed to
+provide efficient image I/O and processing primitives for machine learning and
+data science. Its Python bindings allow users to leverage Rust's speed and
+memory safety directly within Python workflows.
+
+Features:
+- High-performance multi-threaded image decoding (JPEG, PNG).
+- Zero-copy integration with NumPy and PyTorch via DLPack.
+- SIMD acceleration for operations like resizing and color conversions.
+- Thread-safe design for use in multi-threaded data loading pipelines.

@@ -64,7 +64,7 @@ lib/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2.9
 @mode
-lib/libexecline.so.2.9.7.0
+lib/libexecline.so.2.9.8.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html

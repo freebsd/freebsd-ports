@@ -1,0 +1,12 @@
+bundle-audit is a simple wrapper gem for bundler-audit. It was created to
+provide an easy way to include bundler-audit functionality for developers
+who might mistakenly require "bundle-audit" instead of "bundler-audit".
+
+This gem essentially just requires bundler-audit, which is the actual
+security auditing tool for Ruby applications. It provides patch-level
+verification for bundled Ruby applications by checking for known
+vulnerabilities in gem dependencies.
+
+The wrapper serves as a convenience for developers and ensures that
+both "bundle-audit" and "bundler-audit" references work correctly
+in Ruby applications that need security auditing capabilities.

@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	${PNP_IDS_FILE}:misc/hwdata
+RUN_DEPENDS=	${LOCALBASE}/share/hwdata/pnp.ids:misc/hwdata
 
 USES=		cmake compiler:c++11-lib gl kde:6 pkgconfig qt:6 tar:xz xorg
 USE_GL=		gl opengl
@@ -16,10 +16,9 @@ USE_KDE=	config \
 USE_QT=		base wayland
 USE_XORG=	xcb
 
-PNP_IDS_FILE=	${LOCALBASE}/share/hwdata/pnp.ids
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/hwdata/pnp.ids|${PNP_IDS_FILE}|' \
+# Looking for pnp.ids
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/src/edid.cpp
 
 .include <bsd.port.mk>

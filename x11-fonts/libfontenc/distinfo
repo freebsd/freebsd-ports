@@ -1,3 +1,3 @@
-TIMESTAMP = 1709443635
-SHA256 (xorg/lib/libfontenc-1.1.8.tar.xz) = 7b02c3d405236e0d86806b1de9d6868fe60c313628b38350b032914aa4fd14c6
-SIZE (xorg/lib/libfontenc-1.1.8.tar.xz) = 274176
+TIMESTAMP = 1770657473
+SHA256 (xorg/lib/libfontenc-1.1.9.tar.xz) = 9d8392705cb10803d5fe1d27d236cbab3f664e26841ce01916bbbe430cf273e2
+SIZE (xorg/lib/libfontenc-1.1.9.tar.xz) = 280828

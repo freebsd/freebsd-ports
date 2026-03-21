@@ -1299,6 +1299,7 @@
 %%WWWDIR%%/js/widgets/class.widget.map.js
 %%WWWDIR%%/js/widgets/class.widget.navtree.js
 %%WWWDIR%%/js/widgets/class.widget.paste-placeholder.js
+%%WWWDIR%%/js/widgets/class.widget.plaintext.js
 %%WWWDIR%%/js/widgets/class.widget.problems.js
 %%WWWDIR%%/js/widgets/class.widget.problemsbysv.js
 %%WWWDIR%%/js/widgets/class.widget.svggraph.js
@@ -1403,6 +1404,8 @@
 %%WWWDIR%%/vendor/bin/yaml-lint
 %%WWWDIR%%/vendor/bin/yaml-lint.bat
 %%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
+%%WWWDIR%%/vendor/composer/installed.php
 %%WWWDIR%%/vendor/composer/LICENSE
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_files.php
@@ -1411,6 +1414,8 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/platform_check.php
+%%WWWDIR%%/vendor/onelogin/php-saml/.github/workflows/php-package.yml
 %%WWWDIR%%/vendor/onelogin/php-saml/CHANGELOG
 %%WWWDIR%%/vendor/onelogin/php-saml/LICENSE
 %%WWWDIR%%/vendor/onelogin/php-saml/README.md
@@ -1445,10 +1450,12 @@
 %%WWWDIR%%/vendor/onelogin/php-saml/src/Saml2/schemas/xml.xsd
 %%WWWDIR%%/vendor/onelogin/php-saml/src/Saml2/schemas/xmldsig-core-schema.xsd
 %%WWWDIR%%/vendor/onelogin/php-saml/src/Saml2/version.json
+%%WWWDIR%%/vendor/robrichards/xmlseclibs/.github/workflows/ci.yml
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/CHANGELOG.txt
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/LICENSE
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/README.md
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/composer.json
+%%WWWDIR%%/vendor/robrichards/xmlseclibs/phpunit.xml
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/src/Utils/XPath.php
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/src/XMLSecEnc.php
 %%WWWDIR%%/vendor/robrichards/xmlseclibs/src/XMLSecurityDSig.php

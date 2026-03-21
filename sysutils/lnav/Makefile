@@ -1,5 +1,5 @@
 PORTNAME=	lnav
-DISTVERSION=	0.12.3
+DISTVERSION=	0.13.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -11,9 +11,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpcre2-8.so:devel/pcre2
+		libpcre2-8.so:devel/pcre2 \
+		libunistring.so:devel/libunistring
 
-USES=		autoreconf compiler:c++17-lang gmake ncurses readline sqlite \
+USES=		autoreconf compiler:c++17-lang gmake localbase ncurses sqlite \
 		tar:bz2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

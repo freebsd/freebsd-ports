@@ -1,5 +1,5 @@
 PORTNAME=	xephem
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	astro
 
 MAINTAINER=	eduardo@FreeBSD.org

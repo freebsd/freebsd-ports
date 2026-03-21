@@ -1,4 +1,4 @@
-TIMESTAMP = 1742169932
+TIMESTAMP = 1773251981
 SHA256 (rust/crates/aho-corasick-1.0.1.crate) = 67fc08ce920c31afb70f013dcce1bfc3a3195de6a228474e45e1f145b36f8d04
 SIZE (rust/crates/aho-corasick-1.0.1.crate) = 167320
 SHA256 (rust/crates/alsa-0.9.0.crate) = 37fe60779335388a88c01ac6c3be40304d1e349de3ada3b15f7808bb90fa9dce
@@ -495,5 +495,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (rust/crates/winnow-0.4.1.crate) = ae8970b36c66498d8ff1d66685dc86b91b29db0c7739899012f63a63814b4b28
 SIZE (rust/crates/winnow-0.4.1.crate) = 138177
-SHA256 (BlackMIDIDevs-xsynth-0.3.3_GH0.tar.gz) = 0eda56ac72f3b6763f44dc34d40a79f3dd283d0584e59bb33f5455ecc0f44019
-SIZE (BlackMIDIDevs-xsynth-0.3.3_GH0.tar.gz) = 100079
+SHA256 (BlackMIDIDevs-xsynth-0.3.4_GH0.tar.gz) = 70c84de1cd444d1537e8ef534a9a628efbccef1e6610b4b2e0d73e1c3564946c
+SIZE (BlackMIDIDevs-xsynth-0.3.4_GH0.tar.gz) = 100450

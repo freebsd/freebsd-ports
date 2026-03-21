@@ -1,6 +1,5 @@
 PORTNAME=	poedit
-DISTVERSION=	3.4.2
-PORTREVISION=	8
+DISTVERSION=	3.9
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${DISTVERSION}-oss/
 
@@ -19,12 +18,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		liblucene++.so:textproc/luceneplusplus
 
-USES=				autoreconf desktop-file-utils gettext-tools:build,run \
-				gmake gnome pkgconfig
-USE_GNOME=			cairo gdkpixbuf glib20 gtk30 pango
-USE_WX=				3.2
-WX_CONF_ARGS=			absolute
-GNU_CONFIGURE=			yes
+USES=		autoreconf desktop-file-utils gettext-tools:build,run gmake \
+		gnome pkgconfig
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
+USE_WX=		3.2
+WX_CONF_ARGS=	absolute
+GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:

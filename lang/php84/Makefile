@@ -1,5 +1,5 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.18
+DISTVERSION=	8.4.19
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -138,6 +138,10 @@ CONFIGURE_ARGS+=	--with-openssl-argon2
 .  else
 LIB_DEPENDS+=		libargon2.so:security/libargon2
 CONFIGURE_ARGS+=	--with-password-argon2=${LOCALBASE}
+.  endif
+
+.  if ${SSL_DEFAULT:Mlibressl*}
+EXTRA_PATCHES+=	${PATCHDIR}/libressl-patch-ext_openssl_openssl.c
 .  endif
 
 CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \

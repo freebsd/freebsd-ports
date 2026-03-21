@@ -1,4 +1,4 @@
---- components/proxy_config/proxy_override_rules_policy_handler.cc.orig	2026-02-11 09:05:39 UTC
+--- components/proxy_config/proxy_override_rules_policy_handler.cc.orig	2026-03-13 06:02:14 UTC
 +++ components/proxy_config/proxy_override_rules_policy_handler.cc
 @@ -28,7 +28,7 @@ policy::PolicyErrorPath CreateNewPath(
    return path;
@@ -25,23 +25,32 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    // This code should run to set errors for
-   // `kEnableProxyOverrideRulesForAllUsers`, but the regular proxy override
-   // rules policy might still be valid so we ignore the returned boolean.
-@@ -78,7 +78,7 @@ bool ProxyOverrideRulesPolicyHandler::CheckPolicySetti
-     return false;
-   }
+   // `kEnableProxyOverrideRulesForAllUsers`.
+   enabled_for_all_users_handler_.CheckPolicySettings(policies, errors);
+@@ -74,7 +74,7 @@ bool ProxyOverrideRulesPolicyHandler::CheckPolicySetti
+ 
+   policy::SchemaValidatingPolicyHandler::CheckPolicySettings(policies, errors);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    const policy::PolicyMap::Entry* proxy_override_rules_policy =
        policies.Get(policy_name());
    if (proxy_override_rules_policy &&
-@@ -126,7 +126,7 @@ void ProxyOverrideRulesPolicyHandler::ApplyPolicySetti
- 
+@@ -109,7 +109,7 @@ bool ProxyOverrideRulesPolicyHandler::CheckPolicySetti
+ void ProxyOverrideRulesPolicyHandler::ApplyPolicySettings(
+     const policy::PolicyMap& policies,
+     PrefValueMap* prefs) {
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   // ALWAYS update affiliation, even if kProxyOverrideRules is not set.
+   // This ensures the state is captured in the Managed pref store and
+   // kept in sync with the latest policy bundle's affiliation status.
+@@ -136,7 +136,7 @@ void ProxyOverrideRulesPolicyHandler::ApplyPolicySetti
    prefs->SetValue(proxy_config::prefs::kProxyOverrideRules,
                    policy_value->Clone());
+ 
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    prefs->SetInteger(proxy_config::prefs::kProxyOverrideRulesScope,
                      policy->scope);
-   prefs->SetBoolean(proxy_config::prefs::kProxyOverrideRulesAffiliation,
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

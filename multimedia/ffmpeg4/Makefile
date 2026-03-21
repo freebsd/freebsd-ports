@@ -1,11 +1,10 @@
 PORTNAME=	ffmpeg
-PORTVERSION=	4.4.4
-PORTREVISION=	30
+PORTVERSION=	4.4.6
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server (legacy 4.* series)
 WWW=		https://ffmpeg.org/
 

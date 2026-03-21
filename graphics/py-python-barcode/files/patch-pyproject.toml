@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-27 11:05:38 UTC
++++ pyproject.toml
+@@ -44,7 +44,7 @@ include-package-data = true
+ include-package-data = true
+ 
+ [tool.setuptools.packages.find]
+-exclude = ["tests"]
++exclude = ["docs", "docs.*", "tests", "tests.*"]
+ 
+ [tool.setuptools_scm]
+ write_to = "barcode/version.py"

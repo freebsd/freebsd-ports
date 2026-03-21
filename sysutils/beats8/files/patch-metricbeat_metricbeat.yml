@@ -1,6 +1,6 @@
---- metricbeat/metricbeat.yml.orig	2021-10-07 17:20:31 UTC
+--- metricbeat/metricbeat.yml.orig	2025-09-15 19:57:17 UTC
 +++ metricbeat/metricbeat.yml
-@@ -11,7 +11,7 @@
+@@ -11,7 +11,7 @@ metricbeat.config.modules:
  
  metricbeat.config.modules:
    # Glob pattern for configuration loading
@@ -20,7 +20,7 @@
  # =================================== Kibana ===================================
  
  # Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-@@ -123,8 +127,8 @@ output.elasticsearch:
+@@ -127,8 +131,8 @@ processors:
  processors:
    - add_host_metadata: ~
    - add_cloud_metadata: ~

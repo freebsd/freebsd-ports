@@ -111,7 +111,6 @@
     SUBDIR += pcsx2
     SUBDIR += playonbsd
     SUBDIR += ppsspp
-    SUBDIR += ppsspp-qt5
     SUBDIR += py-gns3-converter
     SUBDIR += py-m64py
     SUBDIR += py-unicorn
@@ -129,6 +128,7 @@
     SUBDIR += rpcs3
     SUBDIR += rubygem-fission
     SUBDIR += rvvm
+    SUBDIR += rvvm-devel
     SUBDIR += sameboy
     SUBDIR += simh
     SUBDIR += simh-hp2100

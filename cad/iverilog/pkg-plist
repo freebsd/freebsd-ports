@@ -10,7 +10,6 @@ include/iverilog/vpi_user.h
 lib/ivl/blif-s.conf
 lib/ivl/blif.conf
 lib/ivl/blif.tgt
-lib/ivl/cadpli.vpl
 lib/ivl/include/constants.vams
 lib/ivl/include/disciplines.vams
 lib/ivl/ivl
@@ -44,7 +43,6 @@ lib/ivl/vhdlpp
 lib/ivl/vvp-s.conf
 lib/ivl/vvp.conf
 lib/ivl/vvp.tgt
-lib/libveriuser.a
 lib/libvpi.a
 share/man/man1/iverilog.1.gz
 share/man/man1/iverilog-vpi.1.gz

@@ -1,0 +1,4 @@
+lib/libnvidia-egl-wayland2.so
+lib/libnvidia-egl-wayland2.so.1
+lib/libnvidia-egl-wayland2.so.%%DISTVERSION%%
+share/egl/egl_external_platform.d/09_nvidia_wayland2.json

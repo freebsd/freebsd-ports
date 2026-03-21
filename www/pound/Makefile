@@ -1,5 +1,5 @@
 PORTNAME=	pound
-PORTVERSION=	4.18
+PORTVERSION=	4.21
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
@@ -26,17 +26,16 @@ SUB_LIST=	NAME=${PORTNAME}
 INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.apsis NEWS README THANKS
 
-OPTIONS_DEFINE=	DOCS DSAPARAM PCRE
+OPTIONS_DEFINE=	DOCS LUA PCRE
 OPTIONS_DEFAULT=PCRE
 
-DSAPARAM_DESC=	Generate DH parameters without using "safe" primes
+LUA_USES=		lua # supported versions: 5.3.5 or 5.4
+LUA_CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" \
+			LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
+LUA_CONFIGURE_OFF=	--disable-lua
 
 PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE_CONFIGURE_OFF=	--disable-pcre
-
-post-patch-DSAPARAM-on:
-	@${REINPLACE_CMD} -e '/openssl dhparam/s,-5,-dsaparam,' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.cfg \

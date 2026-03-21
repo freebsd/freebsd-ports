@@ -203,6 +203,7 @@ share/locale/nb/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/nb/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/nb/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/nb/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/nb/LC_MESSAGES/makefileactions.mo
 share/locale/nb/LC_MESSAGES/mountisoaction.mo
 share/locale/nds/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/nds/LC_MESSAGES/fileviewgitplugin.mo

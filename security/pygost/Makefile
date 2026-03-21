@@ -2,7 +2,7 @@ PORTNAME=	pygost
 PORTVERSION=	5.13
 PORTREVISION=	1
 CATEGORIES=	security python
-MASTER_SITES=	http://www.pygost.cypherpunks.ru/ \
+MASTER_SITES=	http://www.pygost.cypherpunks.su/ \
 		http://www.grosbein.net/freebsd/distfiles/ \
 		LOCAL/eugen
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.zst
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Pure Python 2.7/3.x GOST cryptographic functions library
-WWW=		http://www.pygost.cypherpunks.ru/
+WWW=		http://www.pygost.cypherpunks.su/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

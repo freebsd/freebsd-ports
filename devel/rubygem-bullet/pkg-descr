@@ -1,0 +1,16 @@
+Bullet is a development tool designed to help increase your application's
+performance by reducing the number of queries it makes. It will watch your
+queries while you develop your application and notify you when you should
+add eager loading (N+1 queries), when you're using eager loading that isn't
+necessary and when you should use counter cache.
+
+Best practice is to use Bullet in development mode or custom mode
+(staging, profile, etc). The last thing you want is your clients getting
+alerts about how lazy you are.
+
+Key features:
+- Detects N+1 queries automatically
+- Identifies unused eager loading
+- Suggests counter cache usage
+- Multiple notification methods (log, alert, console, etc.)
+- Integration with popular Rails applications

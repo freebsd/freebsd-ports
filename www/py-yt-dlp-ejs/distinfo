@@ -1,5 +1,5 @@
-TIMESTAMP = 1772466774
-SHA256 (yt-dlp-ejs/yt_dlp_ejs-0.5.0.tar.gz) = 8dfae59e418232f485253dcf8e197fefa232423c3af7824fe19e4517b173293b
-SIZE (yt-dlp-ejs/yt_dlp_ejs-0.5.0.tar.gz) = 98925
-SHA256 (yt-dlp-ejs/yt-dlp-ejs-node-modules-0.5.0.tar.gz) = 9412c22a67a2218a168e2feceb4b42cbb06574cfdebc9ef1a9bc8d981e7f6631
-SIZE (yt-dlp-ejs/yt-dlp-ejs-node-modules-0.5.0.tar.gz) = 15397650
+TIMESTAMP = 1773465366
+SHA256 (yt-dlp-ejs/yt_dlp_ejs-0.7.0.tar.gz) = ecac13eb9ff948da84b39f1030fa03422abaf32dc58a0edd78f5dbcc03843556
+SIZE (yt-dlp-ejs/yt_dlp_ejs-0.7.0.tar.gz) = 95961
+SHA256 (yt-dlp-ejs/yt-dlp-ejs-node-modules-0.7.0.tar.gz) = 9412c22a67a2218a168e2feceb4b42cbb06574cfdebc9ef1a9bc8d981e7f6631
+SIZE (yt-dlp-ejs/yt-dlp-ejs-node-modules-0.7.0.tar.gz) = 15397650

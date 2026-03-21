@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-02-11 09:05:39 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-03-13 06:02:14 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
  #include "gpu/vulkan/vulkan_device_queue.h"
  
@@ -9,7 +9,7 @@
  #include "gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.h"
  #endif
  
-@@ -113,7 +113,7 @@ const char* GmbTypeToString(gfx::GpuMemoryBufferType t
+@@ -118,7 +118,7 @@ const char* GmbTypeToString(gfx::GpuMemoryBufferType t
      case gfx::IO_SURFACE_BUFFER:
        return "platform";
  #endif
@@ -18,7 +18,7 @@
      case gfx::NATIVE_PIXMAP:
        return "platform";
  #endif
-@@ -134,7 +134,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
+@@ -139,7 +139,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
    return gfx::GpuMemoryBufferType::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::GpuMemoryBufferType::ANDROID_HARDWARE_BUFFER;
@@ -27,7 +27,7 @@
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -309,7 +309,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -314,7 +314,7 @@ SharedImageFactory::SharedImageFactory(
      factories_.push_back(std::move(ozone_factory));
    }
  
@@ -36,3 +36,12 @@
    if (gr_context_type_ == GrContextType::kVulkan
  #if BUILDFLAG(USE_WEBGPU_ON_VULKAN_VIA_GL_INTEROP)
        /* We support GL context for WebGPU gl-vulkan interop (on linux).*/
+@@ -1045,7 +1045,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
+   }
+ #endif  // BUILDFLAG(IS_ANDROID)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // VizBufferQueue with Vulkan enabled over command-line for Linux does not
+   // work. Suppress dumps for these cases.
+   if (context_state_->GrContextIsVulkan() &&

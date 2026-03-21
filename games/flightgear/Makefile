@@ -50,7 +50,7 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_USES=	pkgconfig
 DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
-QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
+QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON -DCHECK_FOR_QT6:BOOL=OFF
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
 QT5_USES=	qt:5
 QT5_USE=	QT=core,buildtools,linguisttools,gui,declarative,network,qmake,widgets,svg

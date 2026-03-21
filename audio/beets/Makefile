@@ -1,5 +1,6 @@
 PORTNAME=	beets
 DISTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 
@@ -88,7 +89,7 @@ REPLAYGAIN_RUN_DEPENDS=		mp3gain>=0:audio/mp3gain
 # Broken, unfechable	aacgain>=0:audio/aacgain
 SONOS_UPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soco>=0:multimedia/py-soco@${PY_FLAVOR}
 SPOTIFY_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
-THUMBNAILS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR}
+THUMBNAILS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyxdg>=0:devel/py-pyxdg@${PY_FLAVOR}
 WEB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR}
 WEB_CORS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=0:www/py-flask-cors@${PY_FLAVOR}
 

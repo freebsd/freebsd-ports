@@ -1,5 +1,6 @@
 PORTNAME=	orc
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://dlcdn.apache.org/orc/orc-2.2.0/:orc \
 		https://archive.apache.org/dist/orc/orc-format-1.1.0/:orc_format

@@ -6,7 +6,7 @@ PKGNAMEPREFIX?=	pt_PT-
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Portuguese dictionary
-WWW=		https://natura.di.uminho.pt/wiki/doku.php?id=dicionarios:main#aspell
+WWW=		https://natura.di.uminho.pt/wiki/doku.php?id=dicionarios:main\#aspell
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copyright

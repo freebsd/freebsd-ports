@@ -1,0 +1,5 @@
+Maolan is a digital audio workstation written in Rust for recording,
+editing, routing, automation, export, and plugin hosting.
+
+It supports audio and MIDI tracks, plugin routing, freeze and bounce
+workflows, and Unix plugin hosting via LV2, CLAP, and VST3.

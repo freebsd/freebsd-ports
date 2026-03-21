@@ -1,5 +1,5 @@
 PORTNAME=	dwm
-DISTVERSION=	6.7
+DISTVERSION=	6.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 

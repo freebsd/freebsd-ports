@@ -22,10 +22,10 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libcolamd.so:math/suitesparse-colamd \
 		libsuitesparseconfig.so:math/suitesparse-config \
 		libumfpack.so:math/suitesparse-umfpack
-TEST_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		git:devel/git \
+TEST_DEPENDS=	git:devel/git \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		autoreconf bison gmake fortran libtool localbase perl5 python:test # GNU tools should be used for 7.5 and on until the cmake build is declared stable
 USE_CXXSTD=	c++14 # otherwise configure fails because of c++14 features like std::conditional_t

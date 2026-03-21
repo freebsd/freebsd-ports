@@ -46,13 +46,12 @@
 %%DATADIR%%/symbols/Diode_Laser.kicad_sym
 %%DATADIR%%/symbols/Display_Character.kicad_sym
 %%DATADIR%%/symbols/Display_Graphic.kicad_sym
+%%DATADIR%%/symbols/Driver.kicad_sym
 %%DATADIR%%/symbols/Driver_Display.kicad_sym
 %%DATADIR%%/symbols/Driver_FET.kicad_sym
-%%DATADIR%%/symbols/Driver_Haptic.kicad_sym
 %%DATADIR%%/symbols/Driver_LED.kicad_sym
 %%DATADIR%%/symbols/Driver_Motor.kicad_sym
-%%DATADIR%%/symbols/Driver_Relay.kicad_sym
-%%DATADIR%%/symbols/Driver_TEC.kicad_sym
+%%DATADIR%%/symbols/FPGA_Altera_MAX10.kicad_sym
 %%DATADIR%%/symbols/FPGA_CologneChip_GateMate.kicad_sym
 %%DATADIR%%/symbols/FPGA_Efinix_Trion.kicad_sym
 %%DATADIR%%/symbols/FPGA_Lattice.kicad_sym

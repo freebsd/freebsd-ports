@@ -53,12 +53,14 @@ libexec/postfix/main.cf.proto
 libexec/postfix/makedefs.out
 libexec/postfix/master
 libexec/postfix/master.cf.proto
+libexec/postfix/nbdb_reindexd
 libexec/postfix/nqmgr
 libexec/postfix/oqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
 libexec/postfix/post-install
 libexec/postfix/postfix-files
+libexec/postfix/postfix-non-bdb-script
 %%CDB%%libexec/postfix/postfix-files.d/cdb-files
 %%LDAP%%libexec/postfix/postfix-files.d/ldap-files
 %%LMDB%%libexec/postfix/postfix-files.d/lmdb-files
@@ -91,6 +93,7 @@ share/man/man1/postalias.1.gz
 share/man/man1/postcat.1.gz
 share/man/man1/postconf.1.gz
 share/man/man1/postdrop.1.gz
+share/man/man1/postfix-non-bdb.1.gz
 share/man/man1/postfix-tls.1.gz
 share/man/man1/postfix.1.gz
 share/man/man1/postkick.1.gz
@@ -144,6 +147,7 @@ share/man/man8/flush.8.gz
 share/man/man8/lmtp.8.gz
 share/man/man8/local.8.gz
 share/man/man8/master.8.gz
+share/man/man8/nbdb_reindexd.8.gz
 share/man/man8/oqmgr.8.gz
 share/man/man8/pickup.8.gz
 share/man/man8/pipe.8.gz

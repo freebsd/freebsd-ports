@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-03-05 09:00:00 UTC
++++ pyproject.toml
+@@ -45,6 +45,7 @@ path = "camel_converter/_version.py"
+ [tool.pytest.ini_options]
+ minversion = "6.0"
+ addopts = "--cov=camel_converter --cov-report term-missing --no-cov-on-fail"
++testpaths = ["tests"]
+ 
+ [tool.mypy]
+ check_untyped_defs = true

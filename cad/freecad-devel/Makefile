@@ -66,8 +66,6 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
 
-VTK_VER=	9.5
-
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 SHEBANG_FILES=	src/Tools/freecad-thumbnailer.in
 
@@ -145,4 +143,5 @@ post-install:
 	# ${INSTALL_SCRIPT} ${WRKSRC}/src/Tools/freecad-thumbnailer \
 	# 	${STAGEDIR}${PREFIX}/bin/freecad-thumbnailer
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	CMakeLists.txt fails for non-64-bit architectures: Compiler does not support 64-bit builds; also: pxr/base/arch/defines.h:69:2: error: "Unsupported architecture.  x86_64 or ARM64 required."
+BROKEN_aarch64=		fails to build: see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=293845
 
 LIB_DEPENDS=	libtbb.so:devel/onetbb
 

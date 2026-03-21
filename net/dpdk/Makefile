@@ -1,41 +1,37 @@
 PORTNAME=	dpdk
-DISTVERSION=	22.11.2
-PORTREVISION=	1
+DISTVERSION=	25.11
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
-PKGNAMESUFFIX=	22.11
+PKGNAMESUFFIX=	25.11
 
-MAINTAINER=	bruce.richardson@intel.com
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	DPDK: Software libraries for packet processing
 WWW=		https://dpdk.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/README
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	only tested on 64-bit x86 hardware
 
 BUILD_DEPENDS=	objdump:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 
-LIB_DEPENDS=	libelf.so:devel/elfutils \
+LIB_DEPENDS=	libelf.so.1:devel/elfutils \
 		libjansson.so:devel/jansson \
 		libpcap.so.1:net/libpcap \
 		libisal.so:devel/isa-l
+LIB_DEPENDS+=	${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_amd64=	libIPSec_MB.so:security/intel-ipsec-mb
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
-
-USES=		kmod meson pkgconfig:both python shebangfix ssl tar:xz
+USES=		kmod meson libarchive localbase:ldflags pkgconfig:both \
+		python shebangfix ssl tar:xz
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	examples/ipsec-secgw/test/pkttest.py \
-		examples/ipsec-secgw/test/pkttest.sh \
-		examples/ipsec-secgw/test/run_test.sh \
-		examples/ipsec-secgw/test/trs_ipv6opts.py \
-		examples/ipsec-secgw/test/tun_null_header_reconstruct.py \
-		examples/pipeline/examples/vxlan_table.py \
-		usertools/dpdk-devbind.py usertools/dpdk-hugepages.py \
-		usertools/dpdk-pmdinfo.py usertools/dpdk-telemetry-client.py \
-		usertools/dpdk-telemetry.py
+LDFLAGS+=	-Wl,--undefined-version
+SHEBANG_GLOB=	*.py *.sh
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+CONFLICTS_INSTALL=	dpdk2[024].11
 
 .if defined(CPUTYPE)
 DPDK_CPUTYPE=${CPUTYPE}
@@ -45,21 +41,47 @@ DPDK_CPUTYPE=default
 
 MESON_ARGS=	-Ddefault_library=shared \
 		-Denable_driver_sdk=true \
-		-Denable_kmods=true \
 		-Dc_link_args=-Wl,--undefined-version \
 		-Dmachine=${DPDK_CPUTYPE}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${DISTVERSION}
+#WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${DISTVERSION}
 
-OPTIONS_DEFINE=		EXAMPLES TEST TOOLS
+OPTIONS_DEFINE=		DOCS EXAMPLES TEST TOOLS
 OPTIONS_DEFAULT=	TOOLS
 OPTIONS_SUB=		yes
 
 TEST_DESC=		Build and install automated unit test binary
 TOOLS_DESC=		Install tool scripts
 
+DOCS_MESON_TRUE=	enable_docs
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			sphinx-build-${PYTHON_VER}:textproc/py-sphinx@${PY_FLAVOR}\
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
+DOCS_PORTDOCS=		*
+
 EXAMPLES_MESON_ON=	-Dexamples=all
+EXAMPLES_MESON_OFF=	-Dexamples=''
+
 TEST_MESON_TRUE=	tests
+
 TOOLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools@${PY_FLAVOR}
+
+PLIST_SUB+=	LIBMAJOR=26 LIBVER=26.0
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "aarch64"
+PLIST_SUB+=	AARCH64="" \
+		AMD64="@comment "
+.elif ${ARCH} == "amd64"
+PLIST_SUB+=	AARCH64="@comment " \
+		AMD64=""
+.endif
+
+post-patch-TOOLS-off:
+	# do not build tools
+	@${REINPLACE_CMD} -e "/^subdir('usertools')/d" \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

@@ -11,9 +11,12 @@ WWW=		https://www.github.com/quictls/quictls
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3* openssl*-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl[14]* openssl3[3456]
 
 BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
+
+DEPRECATED=	Upstream project has been archived, use security/quictls
+EXPIRES=	2026-03-31
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config

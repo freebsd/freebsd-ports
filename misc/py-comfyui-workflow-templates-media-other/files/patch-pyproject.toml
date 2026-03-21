@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-03-17 21:00:00 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ version = "0.3.146"
+ description = "Media bundle containing audio/3D/misc workflow assets"
+ readme = {text = "Media bundle containing audio/3D/misc workflow assets for ComfyUI.", content-type = "text/plain"}
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {text = "MIT"}
+ 
+ [tool.setuptools.packages.find]
+ where = ["src"]

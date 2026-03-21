@@ -12,7 +12,7 @@ LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 __MAX_PGSQL=	18
-USES=		gmake pgsql:13-${__MAX_PGSQL}
+USES=		gmake pgsql:14-${__MAX_PGSQL}
 WANT_PGSQL=	contrib server
 
 USE_GITHUB=	yes

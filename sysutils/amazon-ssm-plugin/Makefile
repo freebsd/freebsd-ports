@@ -1,5 +1,5 @@
 PORTNAME=	amazon-ssm-plugin
-DISTVERSION=	1.2.779.0
+DISTVERSION=	1.2.792.0
 PORTREVISION=	0
 CATEGORIES=	sysutils
 
@@ -19,7 +19,6 @@ GH_PROJECT=	session-manager-plugin
 GH_SUBDIR=	${GH_PROJECT}
 GH_TUPLE=	aws:aws-sdk-go:v1.54.10:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eiannone/keyboard \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gorilla:websocket:e8629af678b7:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \

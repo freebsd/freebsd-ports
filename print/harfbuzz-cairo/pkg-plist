@@ -2,6 +2,7 @@
 @comment bin/hb-ot-shape-closure
 @comment bin/hb-shape
 @comment bin/hb-subset
+@comment bin/hb-vector
 bin/hb-view
 @comment include/harfbuzz/hb-aat-layout.h
 @comment include/harfbuzz/hb-aat.h
@@ -35,6 +36,7 @@ include/harfbuzz/hb-cairo.h
 @comment include/harfbuzz/hb-ot-var.h
 @comment include/harfbuzz/hb-ot.h
 @comment include/harfbuzz/hb-paint.h
+@comment include/harfbuzz/hb-raster.h
 @comment include/harfbuzz/hb-script-list.h
 @comment include/harfbuzz/hb-set.h
 @comment include/harfbuzz/hb-shape-plan.h
@@ -43,6 +45,7 @@ include/harfbuzz/hb-cairo.h
 @comment include/harfbuzz/hb-subset-serialize.h
 @comment include/harfbuzz/hb-subset.h
 @comment include/harfbuzz/hb-unicode.h
+@comment include/harfbuzz/hb-vector.h
 @comment include/harfbuzz/hb-version.h
 @comment include/harfbuzz/hb.h
 @comment lib/cmake/harfbuzz/harfbuzz-config.cmake
@@ -56,15 +59,23 @@ lib/libharfbuzz-cairo.so.%%LIBVER%%
 @comment lib/libharfbuzz-icu.so
 @comment lib/libharfbuzz-icu.so.0
 @comment lib/libharfbuzz-icu.so.%%LIBVER%%
+@comment lib/libharfbuzz-raster.so
+@comment lib/libharfbuzz-raster.so.0
+@comment lib/libharfbuzz-raster.so.%%LIBVER%%
 @comment lib/libharfbuzz-subset.so
 @comment lib/libharfbuzz-subset.so.0
 @comment lib/libharfbuzz-subset.so.%%LIBVER%%
+@comment lib/libharfbuzz-vector.so
+@comment lib/libharfbuzz-vector.so.0
+@comment lib/libharfbuzz-vector.so.%%LIBVER%%
 @comment lib/libharfbuzz.so
 @comment lib/libharfbuzz.so.0
 @comment lib/libharfbuzz.so.%%LIBVER%%
 libdata/pkgconfig/harfbuzz-cairo.pc
 @comment libdata/pkgconfig/harfbuzz-gobject.pc
 @comment libdata/pkgconfig/harfbuzz-icu.pc
+@comment libdata/pkgconfig/harfbuzz-raster.pc
 @comment libdata/pkgconfig/harfbuzz-subset.pc
+@comment libdata/pkgconfig/harfbuzz-vector.pc
 @comment libdata/pkgconfig/harfbuzz.pc
 @comment share/gir-1.0/HarfBuzz-0.0.gir

@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2026-03-15 18:32:51 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
 @@ -68,7 +68,7 @@
  #include "ui/base/l10n/l10n_util.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/user_permission_service_factory.h"
  #include "components/device_signals/core/browser/user_permission_service.h"  // nogncheck
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -381,7 +381,7 @@ void ManagementUIHandler::AddReportingInfo(base::Value
+@@ -380,7 +380,7 @@ void ManagementUIHandler::AddReportingInfo(base::ListV
        report_sources->Append(std::move(data));
      }
  
@@ -18,7 +18,7 @@
      auto device_signal_data = GetDeviceSignalGrantedMessage();
      if (!device_signal_data.empty()) {
        report_sources->Append(std::move(device_signal_data));
-@@ -403,7 +403,7 @@ void ManagementUIHandler::AddReportingInfo(base::Value
+@@ -402,7 +402,7 @@ void ManagementUIHandler::AddReportingInfo(base::ListV
        report_sources->Append(std::move(data));
      }
  
@@ -27,7 +27,7 @@
      auto device_signal_data = GetDeviceSignalGrantedMessage();
      if (!device_signal_data.empty()) {
        report_sources->Append(std::move(device_signal_data));
-@@ -593,7 +593,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
+@@ -591,7 +591,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
        ->policy_service();
  }
  

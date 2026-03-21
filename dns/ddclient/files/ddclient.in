@@ -8,8 +8,9 @@
 #
 # ddclient_enable="YES"
 #
-# By default, ddclient does not daemonize.  To launch ddclient
-# as a daemon, add the -daemon 300 argument to ddclient_flags
+# By default, ddclient does not daemonize.  To ensure ddclient runs
+# as a daemon, the configuration file must contain a line like
+# daemon=300 in it.
 #
 
 . /etc/rc.subr

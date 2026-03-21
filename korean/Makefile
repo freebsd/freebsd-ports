@@ -41,6 +41,7 @@
     SUBDIR += nhpf
     SUBDIR += p5-Lingua-KO-Hangul-Util
     SUBDIR += p5-Lingua-KO-Romanize-Hangul
+    SUBDIR += py-jamo
     SUBDIR += py-korean-lunar-calendar
     SUBDIR += scim-hangul
     SUBDIR += scim-tables

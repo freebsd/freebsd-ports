@@ -1,4 +1,3 @@
 #!/bin/sh
 
-cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
--Djava.ext.dirs="%%DATADIR%%" -jar "%%DATADIR%%/venice.jar" "${@}"
+"%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/venice.jar"

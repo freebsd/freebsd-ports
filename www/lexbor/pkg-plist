@@ -33,7 +33,9 @@ include/lexbor/css/at_rule.h
 include/lexbor/css/at_rule/const.h
 include/lexbor/css/at_rule/res.h
 include/lexbor/css/at_rule/state.h
+include/lexbor/css/at_rule/types.h
 include/lexbor/css/base.h
+include/lexbor/css/blank.h
 include/lexbor/css/css.h
 include/lexbor/css/declaration.h
 include/lexbor/css/log.h
@@ -42,6 +44,7 @@ include/lexbor/css/property.h
 include/lexbor/css/property/const.h
 include/lexbor/css/property/res.h
 include/lexbor/css/property/state.h
+include/lexbor/css/property/types.h
 include/lexbor/css/rule.h
 include/lexbor/css/selectors/base.h
 include/lexbor/css/selectors/pseudo.h
@@ -234,6 +237,10 @@ include/lexbor/utils/base.h
 include/lexbor/utils/http.h
 include/lexbor/utils/utils.h
 include/lexbor/utils/warc.h
+lib/cmake/lexbor/lexbor-config-version.cmake
+lib/cmake/lexbor/lexbor-config.cmake
+lib/cmake/lexbor/lexbor-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/lexbor/lexbor-targets.cmake
 lib/liblexbor.so
 lib/liblexbor.so.2
 lib/liblexbor.so.%%SOVERSION%%

@@ -1,4 +1,4 @@
---- packetbeat/packetbeat.yml.orig	2022-10-24 06:49:31 UTC
+--- packetbeat/packetbeat.yml.orig	2025-09-15 19:57:17 UTC
 +++ packetbeat/packetbeat.yml
 @@ -25,7 +25,8 @@
  #   internal_networks:

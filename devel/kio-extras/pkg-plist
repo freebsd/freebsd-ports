@@ -802,6 +802,7 @@ share/locale/pt_BR/LC_MESSAGES/kio6_smb.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/ro/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ro/LC_MESSAGES/kio6_activities.mo
+share/locale/ro/LC_MESSAGES/kio6_afc.mo
 share/locale/ro/LC_MESSAGES/kio6_archive.mo
 share/locale/ro/LC_MESSAGES/kio6_filenamesearch.mo
 share/locale/ro/LC_MESSAGES/kio6_fish.mo

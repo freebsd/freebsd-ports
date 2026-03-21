@@ -1,6 +1,6 @@
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	${FULL_VERSION:S/.rel/r/}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu/${FULL_VERSION}/srcrel/:src
 DISTFILES=	arm-gnu-toolchain-src-snapshot-${FULL_VERSION}.tar.xz:src
@@ -126,6 +126,6 @@ do-install:
 	@cd ${WRKDIR} && ${PAX} -l -r -w ${DIR_NAME} ${STAGEDIR}${PREFIX}
 
 post-install-SYMLINK-on:
-	@${LN} -s ${PKGNAME} ${STAGEDIR}${PREFIX}/${PORTNAME}${PKGNAMESUFFIX}
+	@${LN} -s ${PORTNAME}-${FULL_VERSION} ${STAGEDIR}${PREFIX}/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>

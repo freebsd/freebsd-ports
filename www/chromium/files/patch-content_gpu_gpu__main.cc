@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2025-10-02 04:28:32 UTC
+--- content/gpu/gpu_main.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/gpu/gpu_main.cc
 @@ -108,10 +108,14 @@
  #include "sandbox/win/src/sandbox.h"
@@ -53,7 +53,7 @@
    // Thread type delegate of the process should be registered before
    // thread type change below for the main thread and for thread pool in
    // ChildProcess constructor.
-@@ -485,7 +490,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -484,7 +489,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -62,7 +62,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -533,7 +538,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -532,7 +537,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

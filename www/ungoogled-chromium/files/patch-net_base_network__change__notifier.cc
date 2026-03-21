@@ -1,7 +1,7 @@
---- net/base/network_change_notifier.cc.orig	2025-05-31 17:16:41 UTC
+--- net/base/network_change_notifier.cc.orig	2026-03-15 18:32:51 UTC
 +++ net/base/network_change_notifier.cc
 @@ -38,7 +38,7 @@
- #include "net/base/network_change_notifier_linux.h"
+ #include "third_party/abseil-cpp/absl/container/flat_hash_set.h"
  #elif BUILDFLAG(IS_APPLE)
  #include "net/base/network_change_notifier_apple.h"
 -#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)

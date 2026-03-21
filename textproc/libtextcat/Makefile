@@ -11,6 +11,9 @@ WWW=		https://software.wise-guys.nl/libtextcat/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	It has been superseded by textproc/libexttextcat
+EXPIRATION_DATE=2026-07-31
+
 GNU_CONFIGURE=	yes
 USES=		libtool
 USE_LDCONFIG=	yes

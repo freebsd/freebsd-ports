@@ -1,6 +1,7 @@
 PORTNAME=	waves
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.41
+DISTVERSION=	0.1.42
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -11,7 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
-RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+RUN_DEPENDS=	alsa-plugins>=1.2.12:audio/alsa-plugins \
+		ffmpeg:multimedia/ffmpeg \
 		xdg-open:devel/xdg-utils
 
 USES=		go:modules pkgconfig

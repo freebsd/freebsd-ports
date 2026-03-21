@@ -19,3 +19,4 @@ include/stb/stb_tilemap_editor.h
 include/stb/stb_truetype.h
 include/stb/stb_vorbis.c
 include/stb/stb_voxel_render.h
+libdata/pkgconfig/stb.pc

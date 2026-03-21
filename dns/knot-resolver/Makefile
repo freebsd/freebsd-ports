@@ -1,6 +1,6 @@
 PORTNAME=	knot-resolver
 DISTVERSION=	5.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	https://knot-resolver.nic.cz/release/ \
 		https://dns.company/downloads/knot-resolver/

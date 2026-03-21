@@ -19,7 +19,8 @@ PLIST_FILES=	bin/pbzip2 bin/pbunzip2 \
 post-patch:
 	@${REINPLACE_CMD} -e 's,PRI[iu]MAX, & ,g' ${WRKSRC}/pbzip2.cpp \
 		${WRKSRC}/BZ2StreamScanner.cpp
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500053
+.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1403508 || \
+	${OSVERSION} >= 1500000 && ${OSVERSION} < 1500053)
 # Spell target sources to be understood by both BSD and GNU make(1)
 	@${REINPLACE_CMD} -e '/-O2/s,^,#, ; s,$$^,$$>&,' \
 		${WRKSRC}/Makefile

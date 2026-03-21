@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: slapd
-# REQUIRE: FILESYSTEMS ldconfig netif
+# REQUIRE: %%SLAPD_REQUIRE%% ldconfig netif
 # BEFORE: SERVERS kdc
 # KEYWORD: shutdown
 
@@ -71,7 +71,7 @@ pidfile="%%LDAP_RUN_DIR%%/slapd.pid"
 if checkyesno slapd_cn_config; then
   required_dirs="%%PREFIX%%/etc/openldap/slapd.d"
   required_files="%%PREFIX%%/etc/openldap/slapd.d/cn=config.ldif"
-  DATABASEDIR=`grep olcDbDirectory %%PREFIX%%/etc/openldap/slapd.d/cn=config/olcDatabase=* | awk '{ print $2 }'`
+  DATABASEDIR=`grep -r olcDbDirectory %%PREFIX%%/etc/openldap/slapd.d/cn=config/olcDatabase=* | awk '{ print $2 }'`
 else
   required_files="%%PREFIX%%/etc/openldap/slapd.conf"
   DATABASEDIR=`awk '$1 == "directory" { print $2 }' "%%PREFIX%%/etc/openldap/slapd.conf" 2>&1 /dev/null`
@@ -87,7 +87,7 @@ start_precmd()
 {
   local slapd_ownername slapd_groupname
 
-  mkdir -p %%LDAP_RUN_DIR%%
+  mkdir -p %%LDAP_RUN_DIR%% %%NSLCD_VARDIR%%
 
   case "$slapd_owner" in
   ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
@@ -102,7 +102,7 @@ start_precmd()
        chown -fRL "$slapd_owner" "${DBDIR}"
        chmod 700 "${DBDIR}"
     done
-    chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
+    chown "$slapd_owner" %%LDAP_RUN_DIR%% %%NSLCD_VARDIR%%
 
     if checkyesno slapd_cn_config; then
         chown -fR $slapd_owner "%%PREFIX%%/etc/openldap/slapd.d"

@@ -1,6 +1,6 @@
 PORTNAME=	postfix
-DISTVERSION=	3.10.6
-PORTREVISION?=	0
+DISTVERSION=	3.11.1
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -97,7 +97,7 @@ GROUPS=		mail maildrop postfix
 
 OPTIONS_DEFINE=		BDB BLACKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MONGO \
 			MYSQL NIS PCRE2 PGSQL SASL SQLITE TEST TLS TLSRPT
-OPTIONS_DEFAULT?=	BLACKLISTD EAI PCRE2 TLS
+OPTIONS_DEFAULT?=	BLACKLISTD CDB EAI LMDB PCRE2 TLS
 OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
 .if ${FLAVOR:U} == ldap
@@ -154,8 +154,8 @@ HTML1=		body_checks.5.html bounce.5.html postfix-power.png \
 		scache.8.html tlsmgr.8.html
 
 STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local \
-		master nqmgr oqmgr pickup pipe postlogd postscreen proxymap \
-		qmgr qmqpd scache showq smtp smtpd spawn tlsmgr tlsproxy \
+		master nbdb_reindexd nqmgr oqmgr pickup pipe postlogd postscreen \
+		proxymap qmgr qmqpd scache showq smtp smtpd spawn tlsmgr tlsproxy \
 		trivial-rewrite verify virtual
 
 .if !defined(DEBUG)

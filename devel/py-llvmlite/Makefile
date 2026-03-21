@@ -11,11 +11,13 @@ WWW=		https://github.com/numba/llvmlite
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gmake:devel/gmake
+BUILD_DEPENDS=	gmake:devel/gmake \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 # llvm compatibility table https://github.com/numba/llvmlite#compatibility
 USES=		cmake:indirect fortran llvm:20,lib python
-USE_PYTHON=	distutils autoplist pytest # many tests fail, see https://github.com/numba/llvmlite/issues/1015
+USE_PYTHON=	autoplist pep517 pytest # many tests fail, see https://github.com/numba/llvmlite/issues/1015
 
 MAKE_ENV=	LLVM_CONFIG=${LLVM_CONFIG} \
 		LLVMLITE_SHARED=ON \

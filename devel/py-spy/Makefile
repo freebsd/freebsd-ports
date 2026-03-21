@@ -12,6 +12,8 @@ WWW=		https://github.com/benfred/py-spy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile: attempt to compute `16_usize - 20_usize`, which would overflow
+
 USES=		cargo llvm
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}

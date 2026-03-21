@@ -1,5 +1,5 @@
-TIMESTAMP = 1759263836
-SHA256 (go/archivers_unpackerr/unpackerr-v0.14.5/v0.14.5.mod) = 398c880324fd0261e639105a31d5149a8e92457454aac443e511a321a5b24cf8
-SIZE (go/archivers_unpackerr/unpackerr-v0.14.5/v0.14.5.mod) = 3148
-SHA256 (go/archivers_unpackerr/unpackerr-v0.14.5/v0.14.5.zip) = 25c7d38d3a70f3171076bef30980b8da783dc8cf049f0ddd2830f3045516f7d2
-SIZE (go/archivers_unpackerr/unpackerr-v0.14.5/v0.14.5.zip) = 655980
+TIMESTAMP = 1773513825
+SHA256 (go/archivers_unpackerr/unpackerr-v0.15.2/v0.15.2.mod) = 984a2435be94d57a01c24b032420082e3284b3e78c26425badc79485eed34c9b
+SIZE (go/archivers_unpackerr/unpackerr-v0.15.2/v0.15.2.mod) = 3715
+SHA256 (go/archivers_unpackerr/unpackerr-v0.15.2/v0.15.2.zip) = 2a7ddb791b6aa15d0c9ee8174c42e95effffa0af64d26cfbc3b0fbdf3af6c4d6
+SIZE (go/archivers_unpackerr/unpackerr-v0.15.2/v0.15.2.zip) = 664850

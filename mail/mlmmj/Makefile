@@ -1,5 +1,5 @@
 PORTNAME=	mlmmj
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	mail
 MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION:C/\./_/g}/
 

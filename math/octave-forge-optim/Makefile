@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-optim
-PORTVERSION=	1.6.2
-PORTREVISION=	5
+PORTVERSION=	1.6.3
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
@@ -13,8 +12,6 @@ LICENSE=	Parts
 LICENSE_NAME=	See individual files for licenses
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN=		does not build with octave version >= 10.1.0
 
 RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/statistics.tar.gz:math/octave-forge-statistics \
 		${OCTAVE_TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct

@@ -1,5 +1,6 @@
 PORTNAME=	librenms
-PORTVERSION=	26.2.0
+PORTVERSION=	26.3.1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -107,8 +108,6 @@ NMAP_RUN_DEPENDS=	nmap:security/nmap
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 X11_RUN_DEPENDS=	mtr:net/mtr
 X11_RUN_DEPENDS_OFF=	mtr:net/mtr@nox11
-X11_USES=		magick:6
-X11_USES_OFF=		magick:6,nox11
 
 _ROOT_FILES=		alerts.php artisan billing-calculate.php \
 			check-services.php composer.json composer.lock \
@@ -122,7 +121,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1771243997
+_RELEASE_TIMESTAMP=	1773739534
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests

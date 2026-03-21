@@ -1,3 +1,574 @@
+  <vuln vid="71b4ce56-23c5-11f1-b865-b42e991fc52e">
+    <topic>UniFi Network Application - Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>unifi10</name>
+	<range><lt>10.1.89</lt></range>
+    </package>
+    <package>
+	<name>unifi9</name>
+	<range><lt>9.0.114</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://community.ui.com/releases/Security-Advisory-Bulletin-062-062/c29719c0-405e-4d4a-8f26-e343e99f931b reports:</p>
+	<blockquote cite="https://community.ui.com/releases/Security-Advisory-Bulletin-062-062/c29719c0-405e-4d4a-8f26-e343e99f931b">
+	  <p>An Authenticated NoSQL Injection vulnerability found in
+	  UniFi Network Application could allow a malicious actor with
+	  authenticated access to the network to escalate
+	  privileges.</p>
+	  <p>A malicious actor with access to the network could
+	  exploit a Path Traversal vulnerability found in the UniFi
+	  Network Application to access files on the underlying system
+	  that could be manipulated to access an underlying
+	  account.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-22558</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-22558</url>
+      <cvename>CVE-2026-22557</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-22557</url>
+    </references>
+    <dates>
+      <discovery>2026-03-19</discovery>
+      <entry>2026-03-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c5b93cb5-2363-11f1-81da-8447094a420f">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>roundcube</name>
+<range><lt>1.6.14,1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://github.com/roundcube/roundcubemail/releases/tag/1.6.14">
+	  <p>pre-auth arbitrary file write via unsafe deserialization in redis/memcache session handler</p>
+	  <p>password could get changed without providing the old password</p>
+	  <p>IMAP Injection + CSRF bypass in mail search</p>
+	  <p>remote image blocking bypass via various SVG animate attributes</p>
+	  <p>remote image blocking bypass via a crafted body background attribute</p>
+	  <p>fixed position mitigation bypass via use of !important</p>
+	  <p>XSS issue in a HTML attachment preview</p>
+	  <p>SSRF + Information Disclosure via stylesheet links to a local network hosts</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/roundcube/roundcubemail/releases/tag/1.6.14</url>
+    </references>
+    <dates>
+      <discovery>2026-03-18</discovery>
+      <entry>2026-03-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="db3bdcc6-377f-47d9-9ce8-4bdede4fdafe">
+    <topic>homebox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>homebox</name>
+	<range><lt>0.24.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Homebox reports:</p>
+	<ul>
+	  <li>[HIGH] CVE-2026-27981: Auth Rate Limit Bypass via IP Spoofing</li>
+	  <li>[MODERATE] CVE-2026-27600: Blind SSRF</li>
+	  <li>[MODERATE] CVE-2026-26272: Stored XSS via HTML/SVG Attachment Upload</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27981</cvename>
+      <cvename>CVE-2026-27600</cvename>
+      <cvename>CVE-2026-26272</cvename>
+    </references>
+    <dates>
+      <discovery>2026-03-01</discovery>
+      <entry>2026-03-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="73eeb578-fd13-4d79-b50b-ed25c3614528">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>146.0.7680.80</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>146.0.7680.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[491421267] High CVE-2026-3909: Out of bounds write in Skia. Reported by Google Threat Analysis Group on 2026-03-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3909</cvename>
+      <url>https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-13</discovery>
+      <entry>2026-03-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="26776062-fd24-4c2f-bf6c-7f231948ab19">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>146.0.7680.75</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>146.0.7680.75</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[491421267] High CVE-2026-3909: Out of bounds write in Skia. Reported by Google on 2026-03-10</li>
+	    <li>[491410818] High CVE-2026-3910: Inappropriate implementation in V8. Reported by Google on 2026-03-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3909</cvename>
+      <cvename>CVE-2026-3910</cvename>
+      <url>https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-12</discovery>
+      <entry>2026-03-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e45fb606-b731-4871-881d-27a1d5e2fd03">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>146.0.7680.71</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>146.0.7680.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 29 security fixes:</p>
+	 <ul>
+	    <li>[483445078] Critical CVE-2026-3913: Heap buffer overflow in WebML. Reported by Tobias Wienand on 2026-02-10</li>
+	    <li>[481776048] High CVE-2026-3914: Integer overflow in WebML. Reported by cinzinga on 2026-02-04</li>
+	    <li>[483971526] High CVE-2026-3915: Heap buffer overflow in WebML. Reported by Tobias Wienand on 2026-02-12</li>
+	    <li>[482828615] High CVE-2026-3916: Out of bounds read in Web Speech. Reported by Grischa Hauser on 2026-02-09</li>
+	    <li>[483569512] High CVE-2026-3917: Use after free in Agents. Reported by Syn4pse on 2026-02-11</li>
+	    <li>[483853103] High CVE-2026-3918: Use after free in WebMCP. Reported by Syn4pse on 2026-02-12</li>
+	    <li>[444176961] High CVE-2026-3919: Use after free in Extensions. Reported by Huinian Yang (@vmth6) of Amber Security Lab, OPPO Mobile Telecommunications Corp. Ltd. on 2025-09-10</li>
+	    <li>[482875307] High CVE-2026-3920: Out of bounds memory access in WebML. Reported by Google on 2026-02-09</li>
+	    <li>[484946544] High CVE-2026-3921: Use after free in TextEncoding. Reported by Pranamya Keshkamat &amp; Cantina.xyz on 2026-02-17</li>
+	    <li>[485397139] High CVE-2026-3922: Use after free in MediaStream. Reported by c6eed09fc8b174b0f3eebedcceb1e792 on 2026-02-18</li>
+	    <li>[485935314] High CVE-2026-3923: Use after free in WebMIDI. Reported by c6eed09fc8b174b0f3eebedcceb1e792 on 2026-02-20</li>
+	    <li>[487338366] High CVE-2026-3924: Use after free in WindowDialog. Reported by c6eed09fc8b174b0f3eebedcceb1e792 on 2026-02-25</li>
+	    <li>[418214610] Medium CVE-2026-3925: Incorrect security UI in LookalikeChecks. Reported by NDevTK and Alesandro Ortiz on 2025-05-17</li>
+	    <li>[478659010] Medium CVE-2026-3926: Out of bounds read in V8. Reported by qymag1c on 2026-01-26</li>
+	    <li>[474948986] Medium CVE-2026-3927: Incorrect security UI in PictureInPicture. Reported by Barath Stalin K on 2026-01-11</li>
+	    <li>[435980394] Medium CVE-2026-3928: Insufficient policy enforcement in Extensions. Reported by portsniffer443 on 2025-08-03</li>
+	    <li>[477180001] Medium CVE-2026-3929: Side-channel information leakage in ResourceTiming. Reported by Povcfe of Tencent Security Xuanwu Lab on 2026-01-20</li>
+	    <li>[476898368] Medium CVE-2026-3930: Unsafe navigation in Navigation. Reported by Povcfe of Tencent Security Xuanwu Lab on 2026-01-19</li>
+	    <li>[417599694] Medium CVE-2026-3931: Heap buffer overflow in Skia. Reported by Huinian Yang (@vmth6) of Amber Security Lab, OPPO Mobile Telecommunications Corp. Ltd. on 2025-05-14</li>
+	    <li>[478296121] Medium CVE-2026-3932: Insufficient policy enforcement in PDF. Reported by Ayato Shitomi on 2026-01-23   </li>
+	    <li>[478783560] Medium CVE-2026-3934: Insufficient policy enforcement in ChromeDriver. Reported by Povcfe of Tencent Security Xuanwu Lab on 2026-01-26</li>
+	    <li>[479326680] Medium CVE-2026-3935: Incorrect security UI in WebAppInstalls. Reported by Barath Stalin K on 2026-01-28</li>
+	    <li>[481920229] Medium CVE-2026-3936: Use after free in WebView. Reported by Am4deu$ on 2026-02-05</li>
+	    <li>[473118648] Low CVE-2026-3937: Incorrect security UI in Downloads. Reported by Abhishek Kumar on 2026-01-03</li>
+	    <li>[474763968] Low CVE-2026-3938: Insufficient policy enforcement in Clipboard. Reported by vicevirus on 2026-01-10</li>
+	    <li>[40058077] Low CVE-2026-3939: Insufficient policy enforcement in PDF. Reported by NDevTK on 2021-11-30</li>
+	    <li>[470574526] Low CVE-2026-3940: Insufficient policy enforcement in DevTools. Reported by Jorian Woltjer, Mian, bug_blitzer on 2025-12-21</li>
+	    <li>[474670215] Low CVE-2026-3941: Insufficient policy enforcement in DevTools. Reported by Lyra Rebane (rebane2001) on 2026-01-10</li>
+	    <li>[475238879] Low CVE-2026-3942: Incorrect security UI in PictureInPicture. Reported by Barath Stalin K on 2026-01-12</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3913</cvename>
+      <cvename>CVE-2026-3914</cvename>
+      <cvename>CVE-2026-3915</cvename>
+      <cvename>CVE-2026-3916</cvename>
+      <cvename>CVE-2026-3917</cvename>
+      <cvename>CVE-2026-3918</cvename>
+      <cvename>CVE-2026-3919</cvename>
+      <cvename>CVE-2026-3920</cvename>
+      <cvename>CVE-2026-3921</cvename>
+      <cvename>CVE-2026-3922</cvename>
+      <cvename>CVE-2026-3923</cvename>
+      <cvename>CVE-2026-3924</cvename>
+      <cvename>CVE-2026-3925</cvename>
+      <cvename>CVE-2026-3926</cvename>
+      <cvename>CVE-2026-3927</cvename>
+      <cvename>CVE-2026-3928</cvename>
+      <cvename>CVE-2026-3929</cvename>
+      <cvename>CVE-2026-3930</cvename>
+      <cvename>CVE-2026-3931</cvename>
+      <cvename>CVE-2026-3932</cvename>
+      <cvename>CVE-2026-3934</cvename>
+      <cvename>CVE-2026-3935</cvename>
+      <cvename>CVE-2026-3936</cvename>
+      <cvename>CVE-2026-3937</cvename>
+      <cvename>CVE-2026-3938</cvename>
+      <cvename>CVE-2026-3939</cvename>
+      <cvename>CVE-2026-3940</cvename>
+      <cvename>CVE-2026-3941</cvename>
+      <cvename>CVE-2026-3942</cvename>
+      <url>https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-10</discovery>
+      <entry>2026-03-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee1e6a24-1eeb-11f1-81da-8447094a420f">
+    <topic>OpenSSL -- key agreement vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.5_1</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260313.txt">
+	  <p>TLS 1.3 server may choose unexpected key agreement group (Low)</p>
+	  <p>An OpenSSL TLS 1.3 server may fail to negotiate the expected
+	    preferred key exchange group when its key exchange group configuration includes
+	    the default by using the "DEFAULT" keyword.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2673</cvename>
+      <url>https://openssl-library.org/news/secadv/20260313.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-03-13</discovery>
+      <entry>2026-03-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b45d25ab-1de3-11f1-8aff-b42e991fc52e">
+    <topic>Mozilla -- Undefined behavior in the DOM: Core &amp; HTML component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>148.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.8.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>148.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2014593 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2014593">
+	  <p>Undefined behavior in the DOM: Core &amp; HTML component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2771</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-2771</url>
+    </references>
+    <dates>
+      <discovery>2026-02-24</discovery>
+      <entry>2026-03-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e1e40d50-1de2-11f1-8aff-b42e991fc52e">
+    <topic>Firefox -- Same-origin policy bypass</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>148.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2018400 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2018400">
+	  <p>Same-origin policy bypass in the CSS Parsing and
+	    Computation component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3846</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-3846</url>
+    </references>
+    <dates>
+      <discovery>2026-03-10</discovery>
+      <entry>2026-03-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="df82f42c-1de2-11f1-8aff-b42e991fc52e">
+    <topic>firefox -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>148.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/buglist.cgi?bug_id=2017513%2C2017622%2C2019341 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=2017513%2C2017622%2C2019341">
+	  <p>Memory safety bugs present in Firefox 148.0.2.  Some of
+	  these bugs showed evidence of memory corruption and we
+	  presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3847</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-3847</url>
+    </references>
+    <dates>
+      <discovery>2026-03-10</discovery>
+      <entry>2026-03-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0236eab0-1d62-11f1-88f8-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>18.9.0</ge><lt>18.9.2</lt></range>
+<range><ge>18.8.0</ge><lt>18.8.6</lt></range>
+<range><ge>1.0.0</ge><lt>18.7.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/03/11/patch-release-gitlab-18-9-2-released/">
+	  <p>Cross-site Scripting issue in Markdown placeholder processing impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in GraphQL API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in repository archive endpoint impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in protected branches API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in webhook custom headers impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in webhook endpoint impacts GitLab CE/EE</p>
+	  <p>Improper Neutralization of CRLF Sequences issue impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in runners API impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in snippet rendering impacts GitLab CE/EE</p>
+	  <p>Information Disclosure issue in inaccessible issues impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in Group Import impacts GitLab CE/EE</p>
+	  <p>Incorrect Reference issue in repository download impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Virtual Registry impacts GitLab EE</p>
+	  <p>Improper Escaping of Output issue in Datadog integration impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1090</cvename>
+      <cvename>CVE-2026-1069</cvename>
+      <cvename>CVE-2025-13929</cvename>
+      <cvename>CVE-2025-14513</cvename>
+      <cvename>CVE-2025-13690</cvename>
+      <cvename>CVE-2025-12576</cvename>
+      <cvename>CVE-2026-3848</cvename>
+      <cvename>CVE-2025-12555</cvename>
+      <cvename>CVE-2026-0602</cvename>
+      <cvename>CVE-2026-1732</cvename>
+      <cvename>CVE-2026-1663</cvename>
+      <cvename>CVE-2026-1230</cvename>
+      <cvename>CVE-2025-12704</cvename>
+      <cvename>CVE-2025-12697</cvename>
+      <url>https://about.gitlab.com/releases/2026/03/11/patch-release-gitlab-18-9-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-03-11</discovery>
+      <entry>2026-03-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="086d53fa-1d47-11f1-81da-8447094a420f">
+    <topic>curl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.18.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-8.17.0.html">
+	  <p>Multiple vulnerabilities</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-15224</cvename>
+      <cvename>CVE-2025-15079</cvename>
+      <cvename>CVE-2025-14819</cvename>
+      <cvename>CVE-2025-14524</cvename>
+      <cvename>CVE-2025-14017</cvename>
+      <cvename>CVE-2025-13034</cvename>
+      <url>https://curl.se/docs/vuln-8.17.0.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-06</discovery>
+      <entry>2026-03-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1933737d-1d46-11f1-81da-8447094a420f">
+    <topic>curl -- Multiple vulnerabilties</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.19.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-8.18.0.html">
+	  <ul>
+	    <li>use after free in SMB connection reuse</li>
+	    <li>wrong proxy connection reuse with credentials</li>
+	    <li>token leak with redirect and netrc</li>
+	    <li>bad reuse of HTTP Negotiate connection</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3805</cvename>
+      <cvename>CVE-2026-3784</cvename>
+      <cvename>CVE-2026-3783</cvename>
+      <cvename>CVE-2026-1965</cvename>
+      <url>https://curl.se/docs/vuln-8.18.0.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-11</discovery>
+      <entry>2026-03-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="791d4b29-19fb-11f1-87cc-e73692421fef">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports multiple security vulnerabilities fixed in the 1.28.1 release:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Twelve security vulnerabilities were addressed, including:</p>
+	  <ul>
+	    <li>Out-of-bounds reads and writes in the H.266 video parser, WAV parser,
+	    MP4 and ASF demuxers, and DVB subtitle decoder.</li>
+	    <li>Integer overflows in the RIFF parser and Huffman table handling in the JPEG parser.</li>
+	    <li>Stack buffer overflows in the RTP QDM2 depayloader and H.266 parser.</li>
+	  </ul>
+	  <p>These could lead to application crashes or potentially arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1940</cvename>
+      <cvename>CVE-2026-3082</cvename>
+      <cvename>CVE-2026-2921</cvename>
+      <cvename>CVE-2026-2922</cvename>
+      <cvename>CVE-2026-2920</cvename>
+      <cvename>CVE-2026-2923</cvename>
+      <cvename>CVE-2026-3083</cvename>
+      <cvename>CVE-2026-3085</cvename>
+      <cvename>CVE-2026-3086</cvename>
+      <cvename>CVE-2026-3081</cvename>
+      <cvename>CVE-2026-3084</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0001.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0002.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0003.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0004.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0005.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0006.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0007.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0008.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0009.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0010.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0011.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0012.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-25</discovery>
+      <entry>2026-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10319b08-f050-4beb-95e3-fe025cdafd25">
     <topic>oauth2-proxy -- multiple vulnerabilities</topic>
     <affects>

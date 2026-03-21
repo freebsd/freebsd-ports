@@ -1,6 +1,6 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	10.15.0.0
+DISTVERSION=	10.15.0.1
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -28,28 +28,28 @@ LIBSODIUM_HASH=	dbb48cce5429cb6585c9034f002568964f1ce567
 
 LIBS_PREFIX=	${WRKDIR}/libs_install
 
-USE_CABAL=	Cabal-3.16.0.0_1 \
-		Cabal-syntax-3.16.0.0 \
+USE_CABAL=	Cabal-3.16.1.0 \
+		Cabal-syntax-3.16.1.0 \
 		Diff-1.0.2 \
 		FailT-0.1.2.0 \
 		Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
 		ImpSpec-0.2.0.0 \
 		MemoTrie-0.6.11 \
-		MonadRandom-0.6.2 \
-		OneTuple-0.4.2_1 \
+		MonadRandom-0.6.2.1 \
+		OneTuple-0.4.2.1 \
 		Only-0.1_2 \
 		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \
 		Stream-0.4.7.2 \
 		Unique-0.4.8.0_1 \
 		Win32-network-0.2.0.1:chap \
-		adjunctions-4.4.3 \
+		adjunctions-4.4.4 \
 		aeson-2.2.3.0_4 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.4.0 \
-		algebraic-graphs-0.7_3 \
-		ansi-terminal-1.1.3 \
+		algebraic-graphs-0.8 \
+		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
 		ansi-wl-pprint-1.0.2 \
 		appar-0.1.8 \
@@ -57,7 +57,7 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1_2 \
-		async-2.2.5_4 \
+		async-2.2.6 \
 		atomic-counter-0.1.2.4 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
@@ -66,15 +66,15 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		base-compat-0.14.1 \
 		base-compat-batteries-0.14.1 \
 		base-deriving-via-0.1.0.2:chap \
-		base-orphans-0.9.3 \
+		base-orphans-0.9.4 \
 		base16-bytestring-1.0.2.0_1 \
 		base58-bytestring-0.1.0 \
 		base64-bytestring-1.2.1.0_1 \
-		base64-bytestring-type-1.0.1_24 \
+		base64-bytestring-type-1.0.1_25 \
 		basement-0.0.16 \
 		bech32-1.1.9 \
 		bech32-th-1.1.9 \
-		bifunctors-5.6.2_2 \
+		bifunctors-5.6.3_1 \
 		bimap-0.5.0 \
 		bin-0.1.4_2 \
 		binary-orphans-1.0.5_1 \
@@ -93,8 +93,8 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		call-stack-0.4.0 \
 		canonical-json-0.6.0.1_1 \
 		capability-0.5.0.1_6 \
-		cardano-addresses-4.0.1 \
-		cardano-api-10.23.0.0_2:chap \
+		cardano-addresses-4.0.2 \
+		cardano-api-10.24.1.0:chap \
 		cardano-binary-1.7.2.0:chap \
 		cardano-crypto-1.3.0 \
 		cardano-crypto-class-2.2.3.2:chap \
@@ -109,7 +109,7 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		cardano-ledger-alonzo-test-1.4.0.0:chap \
 		cardano-ledger-api-1.12.1.0:chap \
 		cardano-ledger-babbage-1.12.0.0:chap \
-		cardano-ledger-binary-1.7.0.0:chap \
+		cardano-ledger-binary-1.7.1.0:chap \
 		cardano-ledger-byron-1.2.0.0:chap \
 		cardano-ledger-conway-1.20.0.0:chap \
 		cardano-ledger-core-1.18.0.0:chap \
@@ -119,13 +119,13 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		cardano-ledger-shelley-ma-test-1.4.0.0:chap \
 		cardano-ledger-shelley-test-1.7.0.0:chap \
 		cardano-lmdb-0.4.0.3:chap \
-		cardano-lmdb-simple-0.8.1.0:chap \
+		cardano-lmdb-simple-0.8.1.1:chap \
 		cardano-ping-0.9.0.0:chap \
 		cardano-prelude-0.2.1.0:chap \
 		cardano-prelude-test-0.1.0.5:chap \
 		cardano-protocol-tpraos-1.4.1.0:chap \
 		cardano-slotting-0.2.0.1:chap \
-		cardano-strict-containers-0.1.5.0:chap \
+		cardano-strict-containers-0.1.6.0:chap \
 		case-insensitive-1.2.1.0 \
 		casing-0.1.4.1_1 \
 		cassava-0.5.4.1 \
@@ -138,30 +138,30 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		code-page-0.2.1 \
 		colour-2.3.6 \
 		commutative-semigroups-0.2.0.2 \
-		comonad-5.0.9_1 \
+		comonad-5.0.10 \
 		compact-0.2.0.0_4 \
 		composition-prelude-3.0.1.0 \
 		concurrent-output-1.10.21 \
 		conduit-1.3.6.1 \
 		conduit-extra-1.3.8_1 \
 		config-ini-0.2.7.0_1 \
-		constraints-0.14.2_1 \
+		constraints-0.14.4 \
 		constraints-extras-0.4.0.2 \
 		contra-tracer-0.1.0.2:chap \
-		contravariant-1.5.5 \
+		contravariant-1.5.6 \
 		cookie-0.5.1 \
 		criterion-1.6.4.1_1 \
 		criterion-measurement-0.2.3.0 \
-		crypton-1.0.4 \
+		crypton-1.0.6 \
 		crypton-connection-0.4.5_1 \
 		crypton-socks-0.6.2 \
-		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.12_1 \
+		crypton-x509-1.7.7_1 \
+		crypton-x509-store-1.6.14_1 \
 		crypton-x509-system-1.6.7 \
-		crypton-x509-validation-1.6.14 \
+		crypton-x509-validation-1.6.14_1 \
 		cuddle-1.0.0.0 \
 		data-clist-0.2_1 \
-		data-default-0.8.0.1_1 \
+		data-default-0.8.0.2 \
 		data-default-class-0.2.0.0 \
 		data-fix-0.3.4_2 \
 		dec-0.0.6_1 \
@@ -170,37 +170,37 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		dependent-sum-0.7.2.0_2 \
 		deque-0.4.4.2 \
 		deriving-aeson-0.2.10 \
-		deriving-compat-0.6.7_1 \
+		deriving-compat-0.6.8 \
 		dictionary-sharing-0.1.0.0_4 \
 		diff-containers-1.3.0.0:chap \
 		digest-0.0.2.1 \
 		directory-ospath-streaming-0.3_1 \
-		distributive-0.6.2.1_1 \
+		distributive-0.6.3 \
 		dlist-1.0_2 \
 		dns-4.2.0 \
 		dom-lt-0.2.4 \
 		dot-0.3 \
-		ech-config-0.0.1 \
-		either-5.0.3_1 \
+		ech-config-0.0.1_1 \
+		either-5.0.3_2 \
 		erf-2.0.0.0 \
 		errors-2.3.0_5 \
 		extensible-exceptions-0.1.1.4 \
 		extra-1.8 \
 		fgl-5.8.3.0_2 \
 		file-embed-0.0.16.0 \
-		file-io-0.1.5 \
-		filelock-0.1.1.8 \
+		file-io-0.1.6 \
+		filelock-0.1.1.9 \
 		fin-0.3.2_1 \
-		fingertree-0.1.6.2 \
+		fingertree-0.1.6.3 \
 		fingertree-rm-1.0.0.4:chap \
 		fmt-0.6.3.0 \
-		foldable1-classes-compat-0.1.2_2 \
+		foldable1-classes-compat-0.1.3_2 \
 		foldl-1.4.18_2 \
 		formatting-7.2.0 \
 		foundation-0.0.30 \
 		free-5.2_8 \
-		fs-api-0.4.0.0 \
-		fs-sim-0.4.1.0 \
+		fs-api-0.4.0.0_1 \
+		fs-sim-0.4.1.0_1 \
 		generic-lens-2.3.0.0 \
 		generic-lens-core-2.3.0.0 \
 		generic-optics-2.3.0.0 \
@@ -211,10 +211,10 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		githash-0.1.7.0 \
 		graphviz-2999.20.2.1 \
 		groups-0.5.3 \
-		half-0.3.3_1 \
-		happy-2.1.7 \
-		happy-lib-2.1.7 \
-		hashable-1.5.0.0_1 \
+		half-0.3.3_2 \
+		happy-2.2 \
+		happy-lib-2.2 \
+		hashable-1.5.1.0 \
 		haskell-lexer-1.2.1 \
 		hdaemonize-0.5.7 \
 		heapwords-0.1.0.2:chap \
@@ -223,15 +223,15 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		hedgehog-quickcheck-0.1.1_10 \
 		heredoc-0.2.0.0 \
 		hourglass-0.2.12_1 \
-		hpke-0.0.0 \
+		hpke-0.0.0_1 \
 		hsc2hs-0.68.10_5 \
-		hspec-2.11.14 \
-		hspec-core-2.11.14_1 \
-		hspec-discover-2.11.14 \
+		hspec-2.11.16 \
+		hspec-core-2.11.16 \
+		hspec-discover-2.11.16 \
 		hspec-expectations-0.8.4_2 \
 		hspec-expectations-lifted-0.10.0 \
 		hsyslog-5.0.2_1 \
-		http-api-data-0.6.2 \
+		http-api-data-0.6.3 \
 		http-client-0.7.19 \
 		http-client-tls-0.3.6.4_2 \
 		http-conduit-2.3.9.1 \
@@ -242,20 +242,20 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
-		infinite-list-0.1.2 \
+		infinite-list-0.1.3 \
 		integer-conversion-0.1.1_2 \
-		integer-logarithms-1.0.4 \
-		invariant-0.6.4_1 \
-		io-classes-1.8.0.1 \
-		io-sim-1.8.0.1_1 \
+		integer-logarithms-1.0.5 \
+		invariant-0.6.5 \
+		io-classes-1.8.0.1_1 \
+		io-sim-1.8.0.1_2 \
 		iproute-1.7.15 \
 		js-chart-2.9.4.1 \
-		kan-extensions-5.2.7 \
+		kan-extensions-5.2.8 \
 		kes-agent-0.2.0.1:chap \
 		kes-agent-crypto-0.1.0.0:chap \
 		lazy-search-0.1.3.0 \
 		lazysmallcheck-0.6 \
-		lens-5.3.5_1 \
+		lens-5.3.6 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
 		lifted-async-0.11.0 \
@@ -263,7 +263,7 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		list-t-1.0.5.7 \
 		logict-0.8.2.0 \
 		math-functions-0.3.4.4 \
-		measures-0.1.0.2:chap \
+		measures-0.1.0.3:chap \
 		megaparsec-9.7.0_1 \
 		memory-0.18.0_1 \
 		memory-pool-0.1.0.0 \
@@ -271,54 +271,54 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		microlens-0.4.14.0 \
 		microlens-ghc-0.4.15.1 \
 		microlens-mtl-0.2.1.0 \
-		microlens-th-0.4.3.17 \
+		microlens-th-0.4.3.17_1 \
 		microstache-1.0.3_1 \
-		mime-types-0.1.2.0 \
-		mmorph-1.2.1_1 \
+		mime-types-0.1.2.1 \
+		mmorph-1.2.2_1 \
 		monad-control-1.0.3.1 \
 		mono-traversable-1.0.21.0 \
-		monoid-subclasses-1.2.6 \
-		monoidal-containers-0.6.6.0 \
+		monoid-subclasses-1.2.6.1 \
+		monoidal-containers-0.6.7.0 \
 		monoidal-synchronisation-0.1.0.7:chap \
 		multiset-0.3.4.3_1 \
 		mutable-containers-0.3.4.1 \
-		mwc-random-0.15.2.0 \
+		mwc-random-0.15.3.0 \
 		network-3.2.8.0 \
 		network-byte-order-0.1.7 \
 		network-control-0.1.7 \
 		network-mux-0.9.0.0:chap \
 		network-uri-2.6.4.2_1 \
-		newtype-0.2.2.0_3 \
+		newtype-0.2.2.1 \
 		newtype-generics-0.6.2_5 \
 		non-integral-1.0.0.0_2:chap \
 		nonempty-containers-0.3.5.0 \
 		nonempty-vector-0.2.4 \
 		nothunks-0.2.1.1 \
 		old-locale-1.0.0.7_2 \
-		old-time-1.1.0.4 \
+		old-time-1.1.0.5 \
 		optics-core-0.4.1.1_1 \
 		optparse-applicative-0.19.0.0 \
 		optparse-applicative-fork-0.18.1.0:chap \
 		ordered-containers-0.2.4 \
-		ouroboros-consensus-0.30.0.0:chap \
+		ouroboros-consensus-0.30.0.1:chap \
 		ouroboros-consensus-cardano-0.26.0.3_2:chap \
-		ouroboros-consensus-diffusion-0.25.0.0_2:chap \
+		ouroboros-consensus-diffusion-0.26.0.0:chap \
 		ouroboros-consensus-protocol-0.13.0.0_2:chap \
-		ouroboros-network-0.22.4.0:chap \
+		ouroboros-network-0.22.6.0:chap \
 		ouroboros-network-api-0.16.0.0:chap \
-		ouroboros-network-framework-0.19.2.0:chap \
-		ouroboros-network-mock-0.1.1.2:chap \
-		ouroboros-network-protocols-0.15.0.0_1:chap \
+		ouroboros-network-framework-0.19.3.0:chap \
+		ouroboros-network-mock-0.1.2.0:chap \
+		ouroboros-network-protocols-0.15.2.0:chap \
 		ouroboros-network-testing-0.8.2.0:chap \
 		parallel-3.3.0.0_1 \
-		parser-combinators-1.3.0_1 \
+		parser-combinators-1.3.1 \
 		parsers-0.12.12_1 \
 		partial-order-0.2.0.0 \
 		pem-0.2.4 \
 		pipes-4.3.16_6 \
-		plutus-core-1.57.0.0:chap \
-		plutus-ledger-api-1.57.0.0:chap \
-		plutus-tx-1.57.0.0:chap \
+		plutus-core-1.58.0.0:chap \
+		plutus-ledger-api-1.58.0.0:chap \
+		plutus-tx-1.58.0.0:chap \
 		polyparse-1.13.1 \
 		pretty-show-1.10 \
 		pretty-simple-4.1.4.0 \
@@ -329,7 +329,7 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		primes-0.2.1.0 \
 		primitive-0.9.1.0_1 \
 		profunctors-5.6.3 \
-		psqueues-0.2.8.2 \
+		psqueues-0.2.8.3 \
 		pvar-1.0.0.0_1 \
 		quickcheck-instances-0.3.33_1 \
 		quickcheck-io-0.2.0 \
@@ -340,8 +340,8 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		ral-0.2.2_2 \
 		random-1.2.1.3 \
 		random-shuffle-0.0.4 \
-		rawlock-0.1.2.0 \
-		recursion-schemes-5.2.3_1 \
+		rawlock-0.1.2.0_1 \
+		recursion-schemes-5.2.3_2 \
 		recv-0.1.1 \
 		reducers-3.12.5_1 \
 		reflection-2.1.9_1 \
@@ -353,11 +353,11 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
 		safe-wild-cards-1.0.0.2_2 \
-		scientific-0.3.8.0_2 \
+		scientific-0.3.8.1 \
 		selective-0.7.0.1 \
 		semialign-1.3.1_2 \
-		semigroupoids-6.0.1_2 \
-		semigroups-0.20 \
+		semigroupoids-6.0.2_1 \
+		semigroups-0.20.1 \
 		serdoc-core-0.3.2.0 \
 		serialise-0.2.6.1_5 \
 		set-algebra-1.1.0.4:chap \
@@ -371,54 +371,53 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		sop-core-0.5.0.2_6 \
 		sop-extras-0.4.1.0:chap \
 		split-0.2.5 \
-		splitmix-0.1.3.1 \
-		statistics-0.16.4.0 \
+		splitmix-0.1.3.2 \
+		statistics-0.16.5.0 \
 		statistics-linreg-0.3 \
 		streaming-0.2.4.0 \
 		streaming-binary-0.3.0.1 \
 		streaming-bytestring-0.3.4 \
 		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
-		strict-checked-vars-0.2.1.0_1 \
+		strict-checked-vars-0.2.1.0_2 \
 		strict-list-0.1.7.6 \
 		strict-sop-core-0.1.3.0:chap \
 		syb-0.7.3 \
-		tagged-0.8.9 \
+		tagged-0.8.10_1 \
 		tar-0.7.0.0_2 \
 		tasty-1.5.3_2 \
 		tasty-discover-5.2.0 \
 		tasty-expected-failure-0.12.3 \
-		tasty-golden-2.3.5 \
+		tasty-golden-2.3.6 \
 		tasty-hedgehog-1.4.0.2_8 \
 		tasty-hunit-0.10.2 \
-		tasty-quickcheck-0.11.1_4 \
+		tasty-quickcheck-0.11.1_5 \
 		tasty-rerun-1.1.20_2 \
 		tdigest-0.3.1 \
 		temporary-1.3 \
 		terminal-progress-bar-0.4.2 \
 		terminal-size-0.3.4_1 \
 		testing-type-modifiers-0.1.0.1 \
-		text-builder-1.0.0.4 \
-		text-builder-core-0.1.1.1 \
+		text-builder-1.0.0.5 \
+		text-builder-core-0.1.1.3 \
 		text-iso8601-0.1.1_2 \
-		text-short-0.1.6_3 \
+		text-short-0.1.6.1 \
 		text-zipper-0.13 \
-		tf-random-0.5 \
-		th-abstraction-0.7.1.0_1 \
-		th-compat-0.1.6 \
+		th-abstraction-0.7.2.0 \
+		th-compat-0.1.7 \
 		th-desugar-1.17 \
 		th-env-0.1.1 \
 		th-expand-syns-0.4.12.0_1 \
-		th-lift-0.8.6 \
+		th-lift-0.8.7 \
 		th-lift-instances-0.1.20 \
-		th-orphans-0.13.16 \
+		th-orphans-0.13.17 \
 		th-reify-many-0.1.10 \
 		th-utilities-0.2.5.2 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
 		time-locale-compat-0.1.1.5 \
-		time-manager-0.2.4 \
-		tls-2.1.13 \
+		time-manager-0.3.1.1 \
+		tls-2.1.14 \
 		tomland-1.3.3.3_4 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
@@ -433,26 +432,26 @@ USE_CABAL=	Cabal-3.16.0.0_1 \
 		unix-time-0.4.17 \
 		unliftio-0.2.25.1 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20.1 \
+		unordered-containers-0.2.21_2 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
 		validation-1.1.3_1 \
 		validation-selective-0.2.0.0_7 \
 		validity-0.12.1.0 \
 		vary-0.1.1.3 \
-		vault-0.3.1.5_10 \
+		vault-0.3.1.6 \
 		vector-0.13.2.0_2 \
-		vector-algorithms-0.9.1.0 \
+		vector-algorithms-0.9.1.0_1 \
 		vector-binary-instances-0.2.5.2_5 \
 		vector-map-1.1.0.1:chap \
 		vector-stream-0.1.0.1_4 \
 		vector-th-unbox-0.2.2_9 \
-		void-0.7.3 \
+		void-0.7.4 \
 		vty-6.2_1 \
 		vty-crossplatform-0.4.0.0 \
 		vty-unix-0.2.0.0 \
 		wai-3.2.4 \
-		warp-3.4.10_2 \
+		warp-3.4.12_1 \
 		wherefrom-compat-0.1.1.1_4 \
 		with-utf8-1.1.0.0_2 \
 		witherable-0.5_2 \

@@ -1,6 +1,5 @@
 PORTNAME=	flare
-DISTVERSION=	0.18.1
-PORTREVISION=	1
+DISTVERSION=	0.18.8
 CATEGORIES=	net-im
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -13,11 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler \
 		protoc:devel/protobuf
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libsecret-1.so:security/libsecret
+		libsecret-1.so:security/libsecret \
+		libsqlcipher.so:databases/sqlcipher
 RUN_DEPENDS=	gnome-keyring:security/gnome-keyring \
 		noto-emoji>=0:x11-fonts/noto-emoji
 
-USES=		cargo gettext-tools gnome meson pkgconfig python:build ssl
+USES=		cargo gettext-tools gnome meson pkgconfig python:build
 USE_GITLAB=	yes
 GL_ACCOUNT=	schmiddi-on-mobile
 USE_GNOME=	cairo gdkpixbuf gtk40 gtksourceview5 libadwaita libxml2 pango
@@ -39,6 +39,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
 		-e "/cp/s,'target',& / '${CARGO_BUILD_TARGET}'," \
 		${WRKSRC}/src/meson.build
+	${REINPLACE_CMD} -e 's|bundled-sqlcipher-vendored-openssl|sqlcipher|g' \
+		${WRKDIR}/presage-*/presage-store-sqlite/Cargo.toml
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/system-services \

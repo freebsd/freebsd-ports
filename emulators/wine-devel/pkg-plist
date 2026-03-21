@@ -40,6 +40,7 @@ include/wine/msvcrt/conio.h
 include/wine/msvcrt/corecrt.h
 include/wine/msvcrt/corecrt_io.h
 include/wine/msvcrt/corecrt_malloc.h
+include/wine/msvcrt/corecrt_math_defines.h
 include/wine/msvcrt/corecrt_startup.h
 include/wine/msvcrt/corecrt_stdio_config.h
 include/wine/msvcrt/corecrt_wctype.h
@@ -72,6 +73,7 @@ include/wine/msvcrt/math.h
 include/wine/msvcrt/mbctype.h
 include/wine/msvcrt/mbstring.h
 include/wine/msvcrt/memory.h
+include/wine/msvcrt/new.h
 include/wine/msvcrt/process.h
 include/wine/msvcrt/search.h
 include/wine/msvcrt/setjmp.h
@@ -94,6 +96,9 @@ include/wine/msvcrt/time.h
 include/wine/msvcrt/uchar.h
 include/wine/msvcrt/unistd.h
 include/wine/msvcrt/vadefs.h
+include/wine/msvcrt/vcruntime_exception.h
+include/wine/msvcrt/vcruntime_new.h
+include/wine/msvcrt/vcruntime_typeinfo.h
 include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
 include/wine/svcctl.h
@@ -1205,6 +1210,8 @@ include/wine/windows/windows.graphics.directx.direct3d11.h
 include/wine/windows/windows.graphics.directx.direct3d11.idl
 include/wine/windows/windows.graphics.directx.h
 include/wine/windows/windows.graphics.directx.idl
+include/wine/windows/windows.graphics.display.h
+include/wine/windows/windows.graphics.display.idl
 include/wine/windows/windows.graphics.effects.h
 include/wine/windows/windows.graphics.effects.idl
 include/wine/windows/windows.graphics.h
@@ -1304,6 +1311,10 @@ include/wine/windows/windows.ui.input.h
 include/wine/windows/windows.ui.input.idl
 include/wine/windows/windows.ui.notifications.h
 include/wine/windows/windows.ui.notifications.idl
+include/wine/windows/windows.ui.text.core.h
+include/wine/windows/windows.ui.text.core.idl
+include/wine/windows/windows.ui.text.h
+include/wine/windows/windows.ui.text.idl
 include/wine/windows/windows.ui.viewmanagement.core.h
 include/wine/windows/windows.ui.viewmanagement.core.idl
 include/wine/windows/windows.ui.viewmanagement.h
@@ -1718,6 +1729,7 @@ lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 lib/wine/%%WINEARCH%%-unix/wineps.so
 %%PULSEAUDIO%%lib/wine/%%WINEARCH%%-unix/winepulse.so
+lib/wine/%%WINEARCH%%-unix/wineusb.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
 %%WAYLAND%%lib/wine/%%WINEARCH%%-unix/winewayland.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/winex11.so
@@ -2654,6 +2666,7 @@ lib/wine/%%WINEARCH%%-windows/windows.devices.usb.dll
 lib/wine/%%WINEARCH%%-windows/windows.gaming.input.dll
 lib/wine/%%WINEARCH%%-windows/windows.gaming.ui.gamebar.dll
 lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
+lib/wine/%%WINEARCH%%-windows/windows.graphics.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.mediacontrol.dll
@@ -2696,6 +2709,7 @@ lib/wine/%%WINEARCH%%-windows/winemsibuilder.exe
 lib/wine/%%WINEARCH%%-windows/winepath.exe
 lib/wine/%%WINEARCH%%-windows/wineps.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wineps16.drv16
+lib/wine/%%WINEARCH%%-windows/wineusb.sys
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winevdm.exe
 lib/wine/%%WINEARCH%%-windows/winevulkan.dll
 %%WAYLAND%%lib/wine/%%WINEARCH%%-windows/winewayland.drv

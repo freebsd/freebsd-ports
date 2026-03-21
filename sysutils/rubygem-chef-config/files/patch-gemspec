@@ -1,0 +1,11 @@
+--- chef-config.gemspec.orig	2026-02-19 07:13:21 UTC
++++ chef-config.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<mixlib-config>.freeze, [">= 2.2.12".freeze, "< 4.0".freeze])
+   s.add_runtime_dependency(%q<fuzzyurl>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<addressable>.freeze, [">= 0".freeze])
+-  s.add_runtime_dependency(%q<tomlrb>.freeze, ["~> 1.2".freeze])
++  s.add_runtime_dependency(%q<tomlrb>.freeze, [">= 1.2".freeze, "< 3".freeze])
+   s.add_runtime_dependency(%q<racc>.freeze, [">= 0".freeze])
+ end
+ 

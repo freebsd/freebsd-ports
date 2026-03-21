@@ -81,7 +81,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/webmin/.gitignore
 %%PORTDOCS%%%%DOCSDIR%%/webmin/README.md
 %%PORTDOCS%%%%DOCSDIR%%/webmin/awstats-2.0.wbm
-%%WWWDIR%%/cgi-bin/awdownloadcsv.pl
 %%WWWDIR%%/cgi-bin/awredir.pl
 %%WWWDIR%%/cgi-bin/awstats.model.conf
 %%WWWDIR%%/cgi-bin/awstats.pl

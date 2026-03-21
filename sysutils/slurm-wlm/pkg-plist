@@ -207,6 +207,8 @@ lib/slurm/topology_flat.a
 lib/slurm/topology_flat.so
 lib/slurm/topology_tree.a
 lib/slurm/topology_tree.so
+%%S2N%%lib/%%USERS%%/tls_s2n.a
+%%S2N%%lib/%%USERS%%/tls_s2n.so
 sbin/sackd
 sbin/slurmctld
 sbin/slurmd

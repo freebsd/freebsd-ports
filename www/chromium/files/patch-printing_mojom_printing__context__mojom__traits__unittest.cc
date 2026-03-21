@@ -1,6 +1,6 @@
---- printing/mojom/printing_context_mojom_traits_unittest.cc.orig	2026-02-11 09:05:39 UTC
+--- printing/mojom/printing_context_mojom_traits_unittest.cc.orig	2026-03-13 06:02:14 UTC
 +++ printing/mojom/printing_context_mojom_traits_unittest.cc
-@@ -81,7 +81,7 @@ base::Value::Dict GenerateSampleSystemPrintDialogData(
+@@ -81,7 +81,7 @@ base::DictValue GenerateSampleSystemPrintDialogData(
               "file:///foo/bar.pdf");
    }
  
@@ -9,14 +9,14 @@
    data.Set(kLinuxSystemPrintDialogDataPrinter, "printer-name");
    data.Set(kLinuxSystemPrintDialogDataPrintSettings, "print-settings-foo");
    data.Set(kLinuxSystemPrintDialogDataPageSetup, "page-setup-bar");
-@@ -93,7 +93,7 @@ base::Value::Dict GenerateSampleSystemPrintDialogData(
+@@ -93,7 +93,7 @@ base::DictValue GenerateSampleSystemPrintDialogData(
    return data;
  }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- base::Value::Dict GenerateSampleSystemPrintDialogDataPortal() {
-   base::Value::Dict data;
+ base::DictValue GenerateSampleSystemPrintDialogDataPortal() {
+   base::DictValue data;
    data.Set(kLinuxSystemPrintDialogDataPrintSettingsBin,
 @@ -132,7 +132,7 @@ const PageMargins kPrintSettingsCustomMarginsInMicrons
                                                         /*top=*/10583,

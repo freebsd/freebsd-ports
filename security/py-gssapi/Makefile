@@ -1,5 +1,5 @@
 PORTNAME=	gssapi
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
 
-# Officially: 3.9-3.14
+# Officially: 3.9-3.14,3.14t
 USES=	python
 USE_PYTHON=	autoplist cython pep517
 

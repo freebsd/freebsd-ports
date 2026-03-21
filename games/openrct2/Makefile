@@ -7,9 +7,10 @@ MASTER_SITES=	https://github.com/OpenRCT2/title-sequences/releases/download/v0.4
 		https://github.com/OpenRCT2/OpenMusic/releases/download/v1.6.1/:openmsx \
 		https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.6/:opensfx
 DISTFILES=	title-sequences.zip:sequence \
-		objects.zip:object\
+		objects.zip:object \
 		openmusic.zip:openmsx \
 		opensound.zip:opensfx
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
@@ -22,17 +23,17 @@ NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only for little-endian architectures
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libzip.so:archivers/libzip \
-		libFLAC.so:audio/flac \
-		libvorbisfile.so:audio/libvorbis \
-		libspeexdsp.so:audio/speexdsp \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
 		libcurl.so:ftp/curl \
+		libFLAC.so:audio/flac \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libicuuc.so:devel/icu \
-		libbenchmark.so:devel/benchmark \
 		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
+		libspeexdsp.so:audio/speexdsp \
+		libvorbisfile.so:audio/libvorbis \
+		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl \

@@ -1,0 +1,12 @@
+--- meson.build.orig	2025-12-19 12:05:33 UTC
++++ meson.build
+@@ -93,7 +93,8 @@ install_subdir('examples',
+ # install any example code into the appropriate install path
+ subdir('examples')
+ install_subdir('examples',
+-        install_dir: get_option('datadir') + '/dpdk',
++        install_dir: get_option('datadir') + '/examples/dpdk',
++        strip_directory : true,
+         exclude_files: ex_file_excludes)
+ 
+ # build kernel modules

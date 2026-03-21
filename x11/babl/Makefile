@@ -1,6 +1,5 @@
 PORTNAME=	babl
-PORTVERSION=	0.1.122
-PORTREVISION=	2
+PORTVERSION=	0.1.124
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
 
@@ -22,7 +21,7 @@ USE_LDCONFIG=	yes
 # relocatable does not mean ELF relocation
 MESON_ARGS=	-Dgi-docgen=disabled -Dwith-docs=false -Drelocatable=disabled
 
-BABL_SHLIB=	0.221.1
+BABL_SHLIB=	0.223.1
 BABL_VER=	0.1
 PLIST_SUB+=	BABL_SHLIB=${BABL_SHLIB} BABL_VER=${BABL_VER}
 

@@ -1,11 +1,14 @@
 include/lace.h
-include/lace14.h
+include/lace128.h
+include/lace32.h
 include/lace_config.h
 lib/cmake/lace/lace-config-version.cmake
 lib/cmake/lace/lace-config.cmake
 lib/cmake/lace/lace-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/lace/lace-targets.cmake
 lib/liblace.so
-lib/liblace14.so
+lib/liblace128.so
+lib/liblace32.so
 libdata/pkgconfig/lace.pc
-libdata/pkgconfig/lace14.pc
+libdata/pkgconfig/lace128.pc
+libdata/pkgconfig/lace32.pc

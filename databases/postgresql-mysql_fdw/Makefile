@@ -11,7 +11,7 @@ WWW=		https://github.com/EnterpriseDB/mysql_fdw
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake mysql pgsql:13+
+USES=		gmake mysql pgsql:14+
 WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB

@@ -1,0 +1,14 @@
+--- tests/bad-filenames.orig	2025-02-27 13:33:25 UTC
++++ tests/bad-filenames
+@@ -200,3 +200,11 @@ No file to patch.  Skipping patch.
+ 1 out of 1 hunk ignored
+ status: 1
+ EOF
++
++# Empty filenames are not allowed:
++
++check 'emit_patch f | patch -r- "" || echo status: $?' <<EOF
++File '' is not a regular file -- refusing to patch
++1 out of 1 hunk ignored
++status: 1
++EOF

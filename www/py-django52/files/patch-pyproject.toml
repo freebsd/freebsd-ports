@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-11-05 12:32:26 UTC
+--- pyproject.toml.orig	2026-03-05 00:36:36 UTC
 +++ pyproject.toml
 @@ -1,9 +1,9 @@
  [build-system]
@@ -17,9 +17,9 @@
  description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
  readme = "README.rst"
 -license = "BSD-3-Clause"
--license-files = ["LICENSE", "LICENSE.python"]
+-license-files = ["LICENSE", "LICENSE.python", "AUTHORS"]
 +license = {text="BSD-3-Clause"}
-+#license-files = ["LICENSE", "LICENSE.python"]
++#license-files = ["LICENSE", "LICENSE.python", "AUTHORS"]
  classifiers = [
      "Development Status :: 5 - Production/Stable",
      "Environment :: Web Environment",

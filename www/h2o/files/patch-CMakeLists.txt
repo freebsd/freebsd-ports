@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-10-11 10:00:58 UTC
+--- CMakeLists.txt.orig	2026-03-13 10:31:00 UTC
 +++ CMakeLists.txt
-@@ -174,7 +174,6 @@ INCLUDE_DIRECTORIES(
+@@ -177,7 +177,6 @@ INCLUDE_DIRECTORIES(
      deps/cloexec
      deps/brotli/c/include
      deps/golombset
@@ -8,7 +8,7 @@
      deps/libgkc
      deps/libyrmcds
      deps/klib
-@@ -186,7 +185,6 @@ INCLUDE_DIRECTORIES(
+@@ -189,7 +188,6 @@ INCLUDE_DIRECTORIES(
      deps/picotls/deps/micro-ecc
      deps/picotls/include
      deps/quicly/include
@@ -16,7 +16,7 @@
      deps/yoml
      ${CMAKE_CURRENT_BINARY_DIR})
  
-@@ -257,6 +255,23 @@ ENDIF (PKG_CONFIG_FOUND)
+@@ -260,6 +258,22 @@ ENDIF (PKG_CONFIG_FOUND)
      ENDIF (LIBCAP_FOUND)
  ENDIF (PKG_CONFIG_FOUND)
  
@@ -36,20 +36,19 @@
 +    ENDIF (LIBYAML_FOUND)
 +ENDIF (PKG_CONFIG_FOUND)
 +
-+
  SET(CC_WARNING_FLAGS "-Wall -Wno-unused-value -Wno-unused-function -Wno-nullability-completeness -Wno-expansion-to-defined -Werror=implicit-function-declaration -Werror=incompatible-pointer-types")
  
  IF ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
-@@ -269,7 +284,7 @@ ENDIF ()
+@@ -272,7 +286,7 @@ ENDIF ()
  ENDIF ()
  
  # setup compile flags
--SET(CMAKE_C_FLAGS "-g3 ${CC_WARNING_FLAGS} ${CMAKE_C_FLAGS} -DH2O_ROOT=\"${CMAKE_INSTALL_PREFIX}\" -DH2O_CONFIG_PATH=\"${CMAKE_INSTALL_FULL_SYSCONFDIR}/h2o.conf\"")
-+SET(CMAKE_C_FLAGS "${CC_WARNING_FLAGS} ${CMAKE_C_FLAGS} -DH2O_ROOT=\"${CMAKE_INSTALL_PREFIX}\" -DH2O_CONFIG_PATH=\"${CMAKE_INSTALL_FULL_SYSCONFDIR}/h2o.conf\"")
+-SET(CMAKE_C_FLAGS "-g3 ${CC_WARNING_FLAGS} ${CMAKE_C_FLAGS} -DH2O_ROOT=\"${CMAKE_INSTALL_PREFIX}\" -DH2O_CONFIG_PATH=\"${CMAKE_INSTALL_FULL_SYSCONFDIR}/h2o.conf\" -DH2O_LOCALSTATEDIR=\"${CMAKE_INSTALL_FULL_LOCALSTATEDIR}\"")
++SET(CMAKE_C_FLAGS "${CC_WARNING_FLAGS} ${CMAKE_C_FLAGS} -DH2O_ROOT=\"${CMAKE_INSTALL_PREFIX}\" -DH2O_CONFIG_PATH=\"${CMAKE_INSTALL_FULL_SYSCONFDIR}/h2o.conf\" -DH2O_LOCALSTATEDIR=\"${CMAKE_INSTALL_FULL_LOCALSTATEDIR}\"")
  IF (WITH_DTRACE)
      SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPICOTLS_USE_DTRACE=1 -DQUICLY_USE_DTRACE=1 -DH2O_USE_DTRACE=1")
  ENDIF ()
-@@ -339,12 +354,6 @@ SET(LIB_SOURCE_FILES
+@@ -342,12 +356,6 @@ SET(LIB_SOURCE_FILES
  
  SET(LIB_SOURCE_FILES
      deps/cloexec/cloexec.c
@@ -62,7 +61,7 @@
      deps/libgkc/gkc.c
      deps/libyrmcds/close.c
      deps/libyrmcds/connect.c
-@@ -498,7 +507,6 @@ SET(UNIT_TEST_SOURCE_FILES
+@@ -501,7 +509,6 @@ SET(UNIT_TEST_SOURCE_FILES
  
  SET(UNIT_TEST_SOURCE_FILES
      ${LIB_SOURCE_FILES}
@@ -70,7 +69,7 @@
      ${BROTLI_SOURCE_FILES}
      deps/picotest/picotest.c
      t/00unit/test.c
-@@ -711,6 +719,10 @@ TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${E
+@@ -714,6 +721,10 @@ TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${E
      COMPILE_FLAGS "-DH2O_USE_LIBUV=0")
  TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${EXTRA_LIBS})
  
@@ -81,7 +80,7 @@
  SET_TARGET_PROPERTIES(examples-socket-client-evloop PROPERTIES
      COMPILE_FLAGS "-DH2O_USE_LIBUV=0"
      EXCLUDE_FROM_ALL 1)
-@@ -789,6 +801,15 @@ TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE
+@@ -797,6 +808,16 @@ TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE
  SET_TARGET_PROPERTIES(h2o PROPERTIES COMPILE_FLAGS "${STANDALONE_COMPILE_FLAGS}")
  TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${OPENSSL_INCLUDE_DIR})
  TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE_DL_LIBS})
@@ -94,6 +93,7 @@
 +   TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${LIBYXML_INCLUDE_DIRS})
 +   TARGET_LINK_LIBRARIES(h2o ${LIBYAML_LIBRARIES})
 +ENDIF (LIBYAML_FOUND)
++
  IF (WITH_MRUBY)
      TARGET_INCLUDE_DIRECTORIES(h2o BEFORE PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby/include ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby-input-stream/src)
      # note: the paths need to be determined before libmruby.flags.mak is generated

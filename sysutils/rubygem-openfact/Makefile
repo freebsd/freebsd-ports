@@ -1,5 +1,5 @@
 PORTNAME=	openfact
-PORTVERSION=	5.2.1
+PORTVERSION=	5.5.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-base64>0.1:converters/rubygem-base64 \
 		rubygem-hocon>=1.3<2:devel/rubygem-hocon \
 		rubygem-logger>=1.7:devel/rubygem-logger \
-		rubygem-thor>=1.0.1<2.0:devel/rubygem-thor
+		rubygem-thor>=1.0.1<2.0:devel/rubygem-thor \
+		rubygem-tsort>=0.2.0<30.3:devel/rubygem-tsort
 # Soft dependencies that resolve more FreeBSD facts
 RUN_DEPENDS+=	rubygem-ruby-augeas>0:textproc/rubygem-ruby-augeas \
 		rubygem-ffi>=1.0:devel/rubygem-ffi \

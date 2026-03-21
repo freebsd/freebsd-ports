@@ -1,4 +1,4 @@
---- SRC/pmlcg/longlong.h.orig	2024-12-17 18:25:17 UTC
+--- SRC/pmlcg/longlong.h.orig	2021-01-15 16:37:37 UTC
 +++ SRC/pmlcg/longlong.h
 @@ -211,9 +211,8 @@ UDItype __umulsidi3 (USItype, USItype);
  	     "r" ((USItype) (al)),					\
@@ -12,4 +12,3 @@
  	   "	mov	%0, %6, lsr #16\n"				\
  	   "	bic	%3, %5, %2, lsl #16\n"				\
  	   "	bic	%4, %6, %0, lsl #16\n"				\
-

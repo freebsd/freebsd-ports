@@ -1,5 +1,5 @@
 PORTNAME=	magick
-DISTVERSION=	2.9.0
+DISTVERSION=	2.9.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CRAN_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
-		R-cran-Rcpp>0:devel/R-cran-Rcpp
+		R-cran-Rcpp>=0.12.12:devel/R-cran-Rcpp
 BUILD_DEPENDS+=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-gapminder>0:misc/R-cran-gapminder \

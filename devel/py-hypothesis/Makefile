@@ -1,5 +1,5 @@
 PORTNAME=	hypothesis
-PORTVERSION=	6.150.2
+PORTVERSION=	6.151.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=20.8b0:devel/py-black@${PY_FLAVOR
 			${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}rich>=9.0.0:textproc/py-rich@${PY_FLAVOR}
 CODEMODS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.3.16:devel/py-libcst@${PY_FLAVOR}
-CROSSHAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crosshair-tool>=0.0.101:devel/py-crosshair-tool@${PY_FLAVOR} \
+CROSSHAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crosshair-tool>=0.0.102:devel/py-crosshair-tool@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}hypothesis-crosshair>=0.0.27:devel/py-hypothesis-crosshair@${PY_FLAVOR}
 DATEUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=1.4:devel/py-python-dateutil@${PY_FLAVOR}
 DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR}

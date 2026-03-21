@@ -1,6 +1,6 @@
---- chrome/browser/glic/widget/glic_widget.cc.orig	2026-01-14 08:33:23 UTC
+--- chrome/browser/glic/widget/glic_widget.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/glic/widget/glic_widget.cc
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  #include "ui/views/win/hwnd_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -391,7 +391,7 @@ std::unique_ptr<GlicWidget> GlicWidget::Create(views::
+@@ -395,7 +395,7 @@ std::unique_ptr<GlicWidget> GlicWidget::Create(views::
  #if BUILDFLAG(IS_MAC)
    params.animation_enabled = true;
  #endif  // BUILDFLAG(IS_MAC)

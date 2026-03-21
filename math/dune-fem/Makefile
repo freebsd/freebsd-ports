@@ -1,6 +1,6 @@
 PORTNAME=	dune-fem
 DISTVERSION=	2.8.0.5
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	arpack++>0:math/arpack++ \
 		vc>0:devel/vc \
 		openmpi4>0:net/openmpi4
 LIB_DEPENDS=	libpsurface.so:math/psurface \
-		libarpack.so:math/arpack-ng \
+		libarpack.so:math/arpack-ng@mpich \
 		libdunealugrid.so:math/dune-alugrid \
 		libdunecommon.so:math/dune-common \
 		libdunegeometry.so:math/dune-geometry \

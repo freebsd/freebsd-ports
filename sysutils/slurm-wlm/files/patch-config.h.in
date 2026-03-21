@@ -1,0 +1,20 @@
+--- config.h.in.orig	2026-01-29 06:29:02 UTC
++++ config.h.in
+@@ -1,5 +1,17 @@
+ /* config.h.in.  Generated from configure.ac by autoheader.  */
+ 
++/* Define to 1 if 'sa_len' is a member of 'struct sockaddr'. */
++#undef HAVE_STRUCT_SOCKADDR_SA_LEN
++
++/* Define to 1 if 'sin_len' is a member of 'struct sockaddr_in'. */
++#undef HAVE_STRUCT_SOCKADDR_IN_SIN_LEN
++
++/* Define to 1 if 'sin6_len' is a member of 'struct sockaddr_in6'. */
++#undef HAVE_STRUCT_SOCKADDR_IN6_SIN6_LEN
++
++/* Define to 1 if 'sun_len' is a member of 'struct sockaddr_un'. */
++#undef HAVE_STRUCT_SOCKADDR_UN_SUN_LEN
++
+ /* Define if building universal (internal helper macro) */
+ #undef AC_APPLE_UNIVERSAL_BUILD
+ 

@@ -1,6 +1,6 @@
 PORTNAME=	mixxx
 DISTVERSION=	2.5.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -91,6 +91,8 @@ QTKEYCHAIN_LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CMAKE_BOOL=	WAVPACK
+
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx|" \

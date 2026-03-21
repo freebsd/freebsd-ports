@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.2
+DISTVERSION=	1.29.3
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	dependency modernc.org/sqlite only supported on these
+ONLY_FOR_ARCHS_REASON=	dependency modernc.org/sqlite suppoorterd only on amd64 and aarch64
 
 BUILD_DEPENDS=	npm>0:www/npm
 

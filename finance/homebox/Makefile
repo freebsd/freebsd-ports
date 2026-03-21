@@ -1,6 +1,6 @@
 PORTNAME=	homebox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
+DISTVERSION=	0.24.2
 CATEGORIES=	finance
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
@@ -13,7 +13,8 @@ WWW=		https://homebox.software
 
 LICENSE=	AGPLv3
 
-BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
 USES=		go:modules
 USE_GITHUB=	yes
@@ -41,7 +42,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the Homebox repository to get the value of GITID.
-GITID=		27e9eb2277b90783f6d3a03d4895ce7dec6f0fe9
+GITID=		90b69123f44b9d56f11f88c5282580e660e7ea89
 
 HOMEBOX_USER=	${PORTNAME}
 HOMEBOX_GROUP=	${HOMEBOX_USER}

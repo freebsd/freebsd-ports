@@ -24,3 +24,5 @@ lib/libkahip.so
 lib/libkahip_static.a
 lib/libparhip_interface.so
 lib/libparhip_interface_static.a
+libdata/pkgconfig/kahip.pc
+libdata/pkgconfig/parhip_interface.pc

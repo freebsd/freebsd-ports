@@ -1,7 +1,6 @@
 PORTNAME=	zot
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.1.14
-PORTREVISION=	1
+DISTVERSION=	2.1.15
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/project-zot/zui/releases/download/commit-${ZUI_VERSION}/:ui
 DISTFILES=	zui.tgz:ui
@@ -13,13 +12,14 @@ WWW=		https://zotregistry.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	modernc.org/libc does not compile on i386
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
 USES=		go:1.25+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	project-zot
 
-ZUI_VERSION=	7dfa6bf
+ZUI_VERSION=	111cb8e
 
 GO_MODULE=	zotproject.dev/zot
 GO_MOD_DIST=	https://raw.githubusercontent.com/project-zot/zot/refs/tags/v${DISTVERSION}/

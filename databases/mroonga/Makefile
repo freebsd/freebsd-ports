@@ -1,5 +1,5 @@
 PORTNAME=	mroonga
-DISTVERSION=	15.17
+DISTVERSION=	15.23
 CATEGORIES=	databases textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:configure
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		compiler:c11 libtool mysql pkgconfig shebangfix
-IGNORE_WITH_MYSQL=	105m 106m 1011m 81
+IGNORE_WITH_MYSQL=	105m 106m 1011m 81 84
 
 SHEBANG_FILES=	data/rpm/post.sh data/rpm/preun.sh
 

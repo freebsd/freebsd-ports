@@ -50,6 +50,7 @@ share/icons/hicolor/scalable/apps/org.xfce.ScreenSaver.svg
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/kab/LC_MESSAGES/xfce4-screensaver.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-screensaver.mo
@@ -68,7 +69,9 @@ share/icons/hicolor/scalable/apps/org.xfce.ScreenSaver.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/th/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-screensaver.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-screensaver.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-screensaver.mo
 share/pixmaps/xfce-logo-white.svg

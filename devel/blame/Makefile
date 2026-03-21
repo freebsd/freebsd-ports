@@ -1,5 +1,5 @@
 PORTNAME=	blame
-DISTVERSION=	1.4-20250101
+DISTVERSION=	1.4-20260222
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/rcs-blame/
 

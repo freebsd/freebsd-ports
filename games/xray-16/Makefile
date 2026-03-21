@@ -1,6 +1,5 @@
 PORTNAME=	xray-16
-DISTVERSION=	2921-january-2025-rc1.20251014
-PORTREVISION=	1
+DISTVERSION=	2921-january-2025-rc1.20260315
 CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -13,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	upstream only supports "x86, x64, ARM, ARM64, E2K (Elbrus 2000), PPC64LE"
 
-SSE2NEON_ARCHS=	aarch64 armv7
-BUILD_DEPENDS=	${SSE2NEON_ARCHS:M${ARCH}:S|${ARCH}|${LOCALBASE}/include/sse2neon.h:devel/sse2neon|}
+BUILD_DEPENDS=	${aarch64 armv7:L:M${ARCH}:S|${ARCH}|${LOCALBASE}/include/sse2neon.h:devel/sse2neon|}
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libtheora.so:multimedia/libtheora \
@@ -27,11 +25,11 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 USES=		cmake jpeg localbase:ldflags openal sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenXRay
-GH_TAGNAME=	e836dd9e8453fc427d5cee9aa911bdb66b1c6eff
+GH_TAGNAME=	5f16507
 GH_TUPLE=	GPUOpen-LibrariesAndSDKs:AGS_SDK:5d8812d:AGSSDK/Externals/AGS_SDK \
 		OpenXRay:GameSpy:3e43480:GameSpy/Externals/GameSpy \
 		OpenXRay:LuaJIT:5a5cd82:LuaJIT/Externals/LuaJIT \
- 		g-truc:gli:779b99ac6656e4d30c3b24e96e0136a59649a869:gli/Externals/gli \
+		g-truc:gli:7efdcf8:gli/Externals/gli \
 		OpenXRay:luabind-deboostified:8da131b:luabind/Externals/luabind \
 		pattonkan:sse2rvv:373f788:sse2rvv/Externals/sse2rvv \
 		OpenXRay:xrLuaFix:0e89050:xrLuaFix/Externals/xrLuaFix \

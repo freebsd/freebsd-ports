@@ -1,5 +1,5 @@
 PORTNAME=	unifi10
-PORTVERSION=	10.1.85
+PORTVERSION=	10.1.89
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax

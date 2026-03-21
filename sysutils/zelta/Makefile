@@ -1,17 +1,16 @@
 PORTNAME=	zelta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	daniel@belltech.it
 COMMENT=	ZFS tools used for data migration and backup management
-WWW=		https://github.com/bellhyve/zelta
+WWW=		https://github.com/bell-tower/zelta
 
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	bellhyve
+GH_ACCOUNT=	bell-tower
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -32,7 +31,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${_ZELTA_ENV} ${STAGEDIR}${ETCDIR}/${_ZELTA_ENV}.sample
 	${INSTALL_DATA} ${WRKSRC}/${_ZELTA_CONF} ${STAGEDIR}${ETCDIR}/${_ZELTA_CONF}.sample
 	${MKDIR} ${STAGEDIR}${_ZELTA_SHARE}
-	${INSTALL_SCRIPT} ${WRKSRC}/share/zelta/* ${STAGEDIR}${_ZELTA_SHARE}
+	${INSTALL_DATA} ${WRKSRC}/share/zelta/* ${STAGEDIR}${_ZELTA_SHARE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man7
+	${INSTALL_MAN} ${WRKSRC}/doc/*.7 ${STAGEDIR}${PREFIX}/share/man/man7
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

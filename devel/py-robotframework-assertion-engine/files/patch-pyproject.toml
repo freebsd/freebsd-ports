@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-02-11 13:48:08 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ authors = [{ name="Tatu Aalto", email="aalto.tatu@gmai
+ version = "4.0.0"
+ description = "Generic way to create meaningful and easy to use assertions for the Robot Framework libraries."
+ authors = [{ name="Tatu Aalto", email="aalto.tatu@gmail.com" }]
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ readme = "README.md"
+ classifiers = [
+     "Programming Language :: Python :: 3",

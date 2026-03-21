@@ -1,0 +1,6 @@
+phonemizer-fork is a fork of phonemizer that provides simple phonemization of
+words and texts in many languages.
+
+This is a maintained fork with additional features and bug fixes for the
+original phonemizer library, used for converting text to phonetic
+representations.

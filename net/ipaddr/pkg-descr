@@ -1,0 +1,12 @@
+ipaddr is a command-line tool for manipulating and querying IP addresses
+and networks. It provides functionality similar to Python's ipaddress module
+but as a standalone CLI utility.
+
+Features include:
+- IPv4 and IPv6 address normalization
+- CIDR and netmask prefix notation support
+- Network calculations (network, broadcast, host addressing)
+- Address classification (private, loopback, multicast, etc.)
+- Subnet and supernet operations
+- Command chaining for complex operations
+- IPv6-specific features (6to4, Teredo, zone-id)

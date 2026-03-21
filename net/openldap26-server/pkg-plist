@@ -138,6 +138,12 @@
 %%NOPS%%libexec/openldap/nops.so.0
 %%NOPS%%libexec/openldap/nops.so.0.0.0
 %%NOPS%%share/man/man5/slapo-nops.5.gz
+%%NSSOV%%@sample %%ETCDIR%%/schema/ldapns.schema.sample
+%%NSSOV%%libexec/openldap/nssov.la
+%%NSSOV%%libexec/openldap/nssov.so
+%%NSSOV%%libexec/openldap/nssov.so.0
+%%NSSOV%%libexec/openldap/nssov.so.0.0.0
+%%NSSOV%%share/man/man5/slapo-nssov.5.gz
 %%OTP%%libexec/openldap/otp.so.%%SHLIB_MAJOR%%
 %%OTP%%libexec/openldap/otp.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%OTP%%libexec/openldap/otp.la

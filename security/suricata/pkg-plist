@@ -102,6 +102,7 @@ share/man/man1/suricatasc.1.gz
 %%DATADIR%%/rules/http2-events.rules
 %%DATADIR%%/rules/ipsec-events.rules
 %%DATADIR%%/rules/kerberos-events.rules
+%%DATADIR%%/rules/ldap-events.rules
 %%DATADIR%%/rules/mdns-events.rules
 %%DATADIR%%/rules/modbus-events.rules
 %%DATADIR%%/rules/mqtt-events.rules

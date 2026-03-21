@@ -12,6 +12,10 @@
 #   Default value %%ETCDIR%%/config.toml
 #   Path to the cascade configuration file
 #
+# cascade_state (string)
+#   Default value %%DBDIR%%/state.db
+#   Path to file where cascade should store its global state
+#
 # cascade_user (string)
 #   This is the user that cascade runs as
 #   Set to %%USERS%% by default
@@ -29,11 +33,12 @@ load_rc_config $name
 
 : ${cascade_enable:="NO"}
 : ${cascade_config:="%%ETCDIR%%/config.toml"}
+: ${cascade_state:="%%DBDIR%%/state.db"}
 : ${cascade_user:=%%USERS%%}
 : ${cascade_group:=%%GROUPS%%}
 
 command="%%PREFIX%%/bin/cascaded"
-command_args="--config ${cascade_config} --daemonize"
+command_args="--config ${cascade_config} --state ${cascade_state} --daemonize"
 start_precmd="cascade_checkconf"
 restart_precmd="cascade_checkconf"
 configtest_cmd="cascade_checkconf"

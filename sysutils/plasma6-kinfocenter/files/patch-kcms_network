@@ -1,0 +1,21 @@
+--- kcms/network/ip.sh.orig	2026-03-03 09:30:53 UTC
++++ kcms/network/ip.sh
+@@ -17,6 +17,6 @@ fi
+ # (so before entries in index range 2-9, or anything double-or-more digit).
+ 
+ # For sed testing please use --posix on GNU sed so you don't end up using gnu-isms.
+-ip -color -statistics -human-readable address 2>&1 \
++ifconfig -v 2>&1 \
+     | sed -E 's@^([2-9]|[0-9]{2,}):@\n\1:@g' \
+     | aha $AHA_ARGS
+--- kcms/network/main.cpp.orig	2026-03-03 09:30:53 UTC
++++ kcms/network/main.cpp
+@@ -24,7 +24,7 @@ class KCMNetwork : public KQuickConfigModule (public)
+     {
+         const QString executable = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"kinfocenter/network/ip.sh"_s, QStandardPaths::LocateFile);
+         const QString darkness = QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark ? u"1"_s : u"0"_s;
+-        m_outputContext = new CommandOutputContext({u"ip"_s, u"aha"_s}, u"/bin/sh"_s, {executable, darkness}, Qt::TextFormat::RichText, parent);
++        m_outputContext = new CommandOutputContext({u"ifconfig"_s, u"aha"_s}, u"/bin/sh"_s, {executable, darkness}, Qt::TextFormat::RichText, parent);
+     }
+     CommandOutputContext *outputContext() const
+     {

@@ -1,5 +1,5 @@
 PORTNAME=	homebank
-PORTVERSION=	5.9.6
+PORTVERSION=	5.10
 CATEGORIES=	finance
 MASTER_SITES=	https://www.gethomebank.org/public/sources/
 
@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libosp.so:textproc/opensp
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.0
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake gnome localbase pkgconfig \

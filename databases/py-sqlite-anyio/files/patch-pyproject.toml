@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["uv_build"]
+-build-backend = "uv_build"
++requires = ["hatchling"]
++build-backend = "hatchling.build"
+ 
+ [project]
+ name = "sqlite-anyio"

@@ -1,6 +1,6 @@
 PORTNAME=	fmd-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	www
 
 MAINTAINER=	mm@FreeBSD.org
@@ -15,6 +15,8 @@ USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_ACCOUNT=	fmd-foss
 GO_MODULE=	gitlab.com/fmd-foss/fmd-server
+
+NO_PACKAGE=	downloads nodejs modules during web interface build
 
 USE_RC_SUBR=	${PORTNAME}
 

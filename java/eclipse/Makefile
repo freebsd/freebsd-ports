@@ -1,6 +1,5 @@
 PORTNAME=	eclipse
-DISTVERSION=	4.38
-PORTREVISION=	1
+DISTVERSION=	4.39
 CATEGORIES=	java devel
 ECLIPSE_TAG=	R${DISTVERSION:S|.|_|g}
 
@@ -64,11 +63,15 @@ MAVEN_PARAMS=	--offline \
 		-Dnative=gtk.freebsd.${MAVEN_ARCH} \
 		-DskipTests clean verify
 
-ECLIPSE_RESULT=	eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/target/products/org.eclipse.sdk.ide-freebsd.gtk.${MAVEN_ARCH}.tar.gz
+ECLIPSE_RESULT=	products/eclipse-sdk/target/products/org.eclipse.sdk.ide-freebsd.gtk.${MAVEN_ARCH}.tar.gz
 
 .if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-deprecated-non-prototype
 .endif
+
+_ICONS_PNG=	16 22 24 32 48 64 128 256 512 1024
+_ICONS_SVG=	16 32 48
+_ICONS_PATH=	${STAGEDIR}${DATADIR}/plugins/org.eclipse.platform_${DISTVERSION}.0.v*
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAVEN_ENV} mvn ${MAVEN_PARAMS}
@@ -78,9 +81,21 @@ do-install:
 	${TAR} -x --directory ${STAGEDIR}${DATADIR}/.. --file ${WRKSRC}/${ECLIPSE_RESULT}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
+	${MKDIR} ${_ICONS_PNG:C|([0-9]*)|${STAGEDIR}${PREFIX}/share/icons/hicolor/\1x\1/apps|}
+.for _ICON in ${_ICONS_PNG}
+	${INSTALL_DATA} \
+		${_ICONS_PATH}/${PORTNAME}${_ICON}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${_ICON}x${_ICON}/apps/${PORTNAME}.png
+.endfor
+.for _ICON in ${_ICONS_SVG}
+	${INSTALL_DATA} \
+		${_ICONS_PATH}/${PORTNAME}${_ICON}.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${_ICON}x${_ICON}/apps/${PORTNAME}.svg
+.endfor
+
 # Generate dynamic plist, to cater for different ARCHS
 post-install:
-	cd ${STAGEDIR}${PREFIX} && ${FIND} -s bin/${PORTNAME} share/${PORTNAME} -not -type d >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} && ${FIND} -s bin/${PORTNAME} share/${PORTNAME} share/icons -not -type d >> ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds share/${PORTNAME} -type d | ${SED} -e 's,^,@dir ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

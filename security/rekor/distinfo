@@ -1,5 +1,5 @@
-TIMESTAMP = 1769278120
-SHA256 (go/security_rekor/rekor-v1.5.0/v1.5.0.mod) = d82342a4adb9e8a90dfb12667d9cf235882a46f7656ee7cb7ca1728d6420429e
-SIZE (go/security_rekor/rekor-v1.5.0/v1.5.0.mod) = 11763
-SHA256 (go/security_rekor/rekor-v1.5.0/v1.5.0.zip) = f56a8e36623cc014dffd33c504eab46bc28b4b9c428619b8c30456755e0882fa
-SIZE (go/security_rekor/rekor-v1.5.0/v1.5.0.zip) = 1220905
+TIMESTAMP = 1773440656
+SHA256 (go/security_rekor/rekor-v1.5.1/v1.5.1.mod) = 44b46a2250620bfeb24e0bc00cd9d230997cac11a2d07ab368f09389f2f4fe1e
+SIZE (go/security_rekor/rekor-v1.5.1/v1.5.1.mod) = 11655
+SHA256 (go/security_rekor/rekor-v1.5.1/v1.5.1.zip) = f3b55a07b7d6f2ce17c26d1840a6e0b28875bb5ca28b9fcd3ecd4f3f53be9051
+SIZE (go/security_rekor/rekor-v1.5.1/v1.5.1.zip) = 1219824

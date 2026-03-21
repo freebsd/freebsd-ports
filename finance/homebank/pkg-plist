@@ -512,7 +512,6 @@ share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/scalable/status/prf-transaction-dialog-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/status/prf-transaction-payment-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/status/prf-transaction-symbolic.svg
-%%DATADIR%%/icons/hicolor/scalable/status/prf-transaction-transfer-symbolic.svg
 %%DATADIR%%/images/homebank-icon.svg
 %%DATADIR%%/images/splash.png
 share/icons/hicolor/16x16/apps/homebank.png

@@ -8,7 +8,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	status_command for swaybar
-WWW=		https://sr.ht/~tsdh/swayr/#swayrbar
+WWW=		https://sr.ht/~tsdh/swayr/\#swayrbar
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${_LICENSE_STORE}/GPLv3

@@ -9,6 +9,9 @@ WWW=		https://puppetlabs.com/facter
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Discontinued, use sysutils/rubygem-openfact
+EXPIRATION_DATE=2026-07-01
+
 RUN_DEPENDS=	rubygem-hocon>=1.3<2:devel/rubygem-hocon \
 		rubygem-thor>=1.0.1<2.0:devel/rubygem-thor
 # Soft dependencies that resolve more FreeBSD facts

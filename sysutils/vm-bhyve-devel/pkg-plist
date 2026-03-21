@@ -6,6 +6,7 @@ lib/vm-bhyve/vm-config
 lib/vm-bhyve/vm-core
 lib/vm-bhyve/vm-datastore
 lib/vm-bhyve/vm-guest
+lib/vm-bhyve/vm-help
 lib/vm-bhyve/vm-info
 lib/vm-bhyve/vm-migration
 lib/vm-bhyve/vm-rctl
@@ -24,7 +25,6 @@ sbin/vm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/default.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dragonfly.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freebsd-zvol.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/freepbx.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/legacy-alpine.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/legacy-arch.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/legacy-debian.conf

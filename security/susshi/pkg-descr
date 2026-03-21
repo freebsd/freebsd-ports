@@ -1,0 +1,7 @@
+susshi is a terminal-based SSH connection manager written in Rust.
+It provides a user-friendly interface to manage and connect to multiple
+SSH hosts efficiently.
+
+Features include:
+- Interactive TUI for host selection
+- SSH connection management

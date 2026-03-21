@@ -1,0 +1,21 @@
+PORTNAME=	erldash
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.0
+CATEGORIES=	sysutils
+
+MAINTAINER=	dch@FreeBSD.org
+COMMENT=	Terminal-based Erlang / BEAM dashboard
+WWW=		https://github.com/sile/erldash
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	sile
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

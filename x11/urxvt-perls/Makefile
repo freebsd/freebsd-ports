@@ -1,11 +1,14 @@
 PORTNAME=	urxvt-perls
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Perl extension scripts for rxvt-unicode terminal emulator
-WWW=		https://github.com/muennich/urxvt-perls
+WWW=		https://github.com/xyb3rt/urxvt-perls
+
+DEPRECATED=	Upstream repository archived in 2021
+EXPIRATION_DATE=	2026-05-04
 
 LICENSE=	GPLv2
 

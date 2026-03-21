@@ -11,6 +11,9 @@ WWW=		https://docs.puppetlabs.com/puppetdb/latest/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Discontinued, use databases/openvoxdb-8
+EXPIRATION_DATE=2026-07-01
+
 RUN_DEPENDS=	bash:shells/bash
 
 USE_RC_SUBR=	puppetdb

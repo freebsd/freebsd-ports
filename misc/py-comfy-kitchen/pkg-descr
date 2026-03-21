@@ -1,0 +1,17 @@
+Comfy Kitchen is a high-performance kernel library designed for Diffusion model
+inference. It provides optimized implementations for critical operations,
+including various quantization formats and Rotary Positional Embeddings (RoPE).
+The library features a flexible dispatch system that automatically selects the
+most efficient compute backend—CUDA, Triton, or eager PyTorch—based on available
+hardware and input constraints.
+
+Key features include:
+* Optimized kernels specifically tuned for Diffusion inference workloads.
+* Support for multiple compute backends (CUDA C, Triton JIT, and pure PyTorch).
+* Transparent quantization via a QuantizedTensor subclass that intercepts
+  PyTorch operations.
+* Support for advanced quantization formats including FP8, NVFP4, and MXFP8.
+* Automatic backend selection and constraint validation for hardware-specific
+  optimizations.
+* Implementation of performance-critical functions like RoPE and scaled matrix
+  multiplication.

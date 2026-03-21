@@ -1,5 +1,6 @@
 PORTNAME=	igraph
 DISTVERSION=	0.11.9
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${LOCALBASE}/bin/flex:textproc/flex
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libblas.so:math/blas \
 		libglpk.so:math/glpk \
 		libgmp.so:math/gmp \

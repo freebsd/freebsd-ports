@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # PROVIDE: v2ray
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON NETWORKING FILESYSTEMS
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable `v2ray':
@@ -17,19 +18,22 @@
 
 . /etc/rc.subr
 
+desc="v2ray startup script"
 name="v2ray"
-rcvar="${name}_enable"
+rcvar="v2ray_enable"
+
+load_rc_config ${name}
 
 : ${v2ray_enable="NO"}
-: ${v2ray_config="%%PREFIX%%/etc/$name/config.json"}
-: ${v2ray_logdir="/var/log/${name}"}
 : ${v2ray_env=""}
-: ${v2ray_user="%%USER%%"}
+: ${v2ray_config="%%PREFIX%%/etc/v2ray/config.json"}
 : ${v2ray_group="%%GROUP%%"}
+: ${v2ray_user="%%USER%%"}
+: ${v2ray_logdir="/var/log/v2ray"}
 
-asset_env="V2RAY_LOCATION_ASSET=%%PREFIX%%/share/$name"
-pidfile="/var/run/$name.pid"
-procname="%%PREFIX%%/bin/$name"
+asset_env="V2RAY_LOCATION_ASSET=%%DATADIR%%"
+pidfile="/var/run/v2ray.pid"
+procname="%%PREFIX%%/bin/v2ray"
 command="/usr/sbin/daemon"
 command_args="-c -p ${pidfile} /usr/bin/env ${asset_env} ${v2ray_env} ${procname} run -config ${v2ray_config}"
 required_files="${v2ray_config}"
@@ -38,10 +42,8 @@ start_precmd="v2ray_startprecmd"
 
 v2ray_startprecmd() {
 	touch "${pidfile}"
-	chown ${v2ray_user}:${v2ray_group} "${pidfile}"
 	mkdir -p "${v2ray_logdir}"
-	chown -R ${v2ray_user}:${v2ray_group} "${v2ray_logdir}"
+	chown -R ${v2ray_user}:${v2ray_group} "${pidfile}" "${v2ray_logdir}"
 }
 
-load_rc_config "$name"
 run_rc_command "$1"

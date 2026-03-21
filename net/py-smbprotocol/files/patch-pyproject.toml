@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-02-09 00:48:33 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 77.0.0",  # Support for SPDX license expressions
++    "setuptools >= 61.0.0",  # Support for SPDX license expressions
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -10,7 +10,7 @@ requires-python = ">=3.9"
+ description = "Interact with a server using the SMB 2/3 Protocol"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {file = "LICENSE"}
+ authors = [
+     { name = "Jordan Borean", email = "jborean93@gmail.com" }
+ ]

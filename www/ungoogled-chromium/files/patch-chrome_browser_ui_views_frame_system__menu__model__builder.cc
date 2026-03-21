@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2026-03-15 18:32:51 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -81,7 +81,7 @@ void SystemMenuModelBuilder::BuildMenu(ui::SimpleMenuM
+@@ -88,7 +88,7 @@ void SystemMenuModelBuilder::BuildMenu(ui::SimpleMenuM
  
  void SystemMenuModelBuilder::BuildSystemMenuForBrowserWindow(
      ui::SimpleMenuModel* model) {
@@ -9,7 +9,7 @@
    model->AddItemWithStringId(IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
-@@ -128,7 +128,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -156,7 +156,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER_CONTEXT_MENU, IDS_TASK_MANAGER);
    }
@@ -18,7 +18,7 @@
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    bool supports_server_side_decorations = true;
  #if BUILDFLAG(IS_OZONE) && !BUILDFLAG(IS_CHROMEOS)
-@@ -202,7 +202,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -231,7 +231,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER, IDS_TASK_MANAGER);
    }

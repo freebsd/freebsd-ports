@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-02-11 09:05:39 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-03-13 06:02:14 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
 @@ -0,0 +1,445 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -224,7 +224,7 @@
 +      ufile = _UNVEIL_CDM;
 +      break;
 +    default:
-+      unveil("/dev/null", "r");
++      unveil("/dev/null", "rw");
 +      goto done;
 +  }
 +
@@ -348,7 +348,7 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kGpu:
 +    case sandbox::mojom::Sandbox::kOnDeviceModelExecution:
-+      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd tmppath unix", NULL);
++      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd unix", NULL);
 +      break;
 +    case sandbox::mojom::Sandbox::kAudio:
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_audio");

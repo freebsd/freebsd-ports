@@ -1,6 +1,6 @@
---- ui/accessibility/accessibility_features.h.orig	2026-02-15 10:01:45 UTC
+--- ui/accessibility/accessibility_features.h.orig	2026-03-15 18:32:51 UTC
 +++ ui/accessibility/accessibility_features.h
-@@ -386,7 +386,7 @@ AX_BASE_EXPORT bool IsScreenAIOCREnabled();
+@@ -383,7 +383,7 @@ AX_BASE_EXPORT bool IsScreenAIOCREnabled();
  AX_BASE_EXPORT BASE_DECLARE_FEATURE(kScreenAITestMode);
  AX_BASE_EXPORT bool IsScreenAITestModeEnabled();
  
@@ -9,7 +9,7 @@
  // Enables advanced partition allocation checks in ScreenAI service.
  // TODO(crbug.com/418199684): Remove when the bug is fixed.
  AX_BASE_EXPORT BASE_DECLARE_FEATURE(
-@@ -413,7 +413,7 @@ AX_BASE_EXPORT BASE_DECLARE_FEATURE(kBlockRootWindowAc
+@@ -410,7 +410,7 @@ AX_BASE_EXPORT BASE_DECLARE_FEATURE(kBlockRootWindowAc
  AX_BASE_EXPORT bool IsBlockRootWindowAccessibleNameChangeEventEnabled();
  #endif  // BUILDFLAG(IS_MAC)
  

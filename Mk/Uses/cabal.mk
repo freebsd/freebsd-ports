@@ -88,7 +88,7 @@ CABAL_EXECUTABLES?=	${PORTNAME}
 
 CABAL_CMD?=	cabal
 CABAL_PORT=	devel/hs-cabal-install
-CABAL_HOME=	${WRKDIR}/cabal-home
+CABAL_HOME?=	${WRKDIR}/cabal-home
 CABAL_HOME_ENV=XDG_DATA_HOME=${CABAL_HOME} XDG_CONFIG_HOME=${CABAL_HOME} XDG_CACHE_HOME=${CABAL_HOME} HOME=${CABAL_HOME}
 CABAL_LIBEXEC=	libexec/cabal
 CABAL_EXTRACT_SUFX=	.tar.gz
@@ -203,7 +203,9 @@ cabal-extract: check-cabal
 	${RM} -r ${CABAL_HOME}
 .  endif
 	@${ECHO_MSG} "===> Fetching Hackage index into ${CABAL_HOME}/.cabal"
-	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} update
+	@${MKDIR} ${CABAL_HOME}
+	cd ${WRKDIR} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} update
 .  if ${_hackage_is_default} == yes
 	cd ${WRKDIR} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} get ${HACKAGE_DISTNAME}
@@ -319,7 +321,7 @@ cabal-pre-configure:
 .  if !target(do-build)
 do-build:
 	cd ${WRKSRC} && \
-		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --no-semaphore --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)

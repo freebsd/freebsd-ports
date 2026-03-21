@@ -1,7 +1,8 @@
 PORTNAME=	bustle
-DISTVERSION=	0.12.0
-PORTREVISION=	6
+DISTVERSION=	0.13.0
 CATEGORIES=	devel gnome
+MASTER_SITES=	https://gitlab.gnome.org/World/${PORTNAME}/-/releases/${DISTVERSION}/downloads/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visualize D-Bus activity
@@ -14,11 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	appstreamcli:devel/appstream
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
-USES=		cargo desktop-file-utils gettext-tools gnome meson
-
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	World
+USES=		cargo desktop-file-utils gettext-tools gnome meson tar:xz
 
 USE_GNOME=	glib20 gtk40 libadwaita
 GLIB_SCHEMAS=	org.freedesktop.Bustle.gschema.xml

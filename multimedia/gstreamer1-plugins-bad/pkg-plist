@@ -22,11 +22,14 @@ include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabin-enum.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabinpreview.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/codecparsers-prelude.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstav1bitwriter.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstav1parser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gsth264bitwriter.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth264parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth265parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth266parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpeg2000sampling.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpegbitwriter.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpegparser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstlcevcmeta.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpeg4parser.h
@@ -89,6 +92,7 @@ include/gstreamer-%%VERSION%%/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/uridownloader-prelude.h
 lib/girepository-%%VERSION%%/GstAnalytics-%%VERSION%%.typelib
 lib/girepository-%%VERSION%%/GstBadAudio-%%VERSION%%.typelib
+lib/girepository-%%VERSION%%/GstCodecParsers-%%VERSION%%.typelib
 lib/girepository-%%VERSION%%/GstCodecs-%%VERSION%%.typelib
 lib/girepository-%%VERSION%%/GstDxva-%%VERSION%%.typelib
 lib/girepository-%%VERSION%%/GstInsertBin-%%VERSION%%.typelib
@@ -234,6 +238,7 @@ libdata/pkgconfig/gstreamer-plugins-bad-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-transcoder-%%VERSION%%.pc
 share/gir-%%VERSION%%/GstAnalytics-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstBadAudio-%%VERSION%%.gir
+share/gir-%%VERSION%%/GstCodecParsers-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstCodecs-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstDxva-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstInsertBin-%%VERSION%%.gir

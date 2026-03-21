@@ -24,4 +24,7 @@ NO_ARCH=	yes
 
 PYTEST_BROKEN_TESTS=	test_cleanup TestRepoExamples # uses files missing from pypi distribution
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|hatchling=|hatchling>|g' ${WRKSRC}/pyproject.toml
+
 .include <bsd.port.mk>

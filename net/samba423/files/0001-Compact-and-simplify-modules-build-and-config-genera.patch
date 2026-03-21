@@ -25,7 +25,7 @@ index 404b346a885..8e5a8ba5f25 100644
  import uuid
  import shutil
  import time
-@@ -1010,52 +1011,37 @@ def create_named_conf(paths, realm, dnsdomain, dns_backend, logger):
+@@ -1008,53 +1009,37 @@
                                       stderr=subprocess.STDOUT,
                                       cwd='.').communicate()[0]
          bind_info = get_string(bind_info)
@@ -51,7 +51,8 @@ index 404b346a885..8e5a8ba5f25 100644
 -            bind9_14 = ''
 -        elif bind_info.upper().find('BIND 9.16') != -1:
 -            bind9_16 = ''
--        elif bind_info.upper().find('BIND 9.18') != -1:
+-        elif bind_info.upper().find('BIND 9.18') != -1 \
+-          or bind_info.upper().find('BIND 9.20') != -1:
 -            bind9_18 = ''
 -        elif bind_info.upper().find('BIND 9.7') != -1:
 -            raise ProvisioningError("DLZ option incompatible with BIND 9.7.")
@@ -104,7 +105,7 @@ index 404b346a885..8e5a8ba5f25 100644
  
  
  def create_named_txt(path, realm, dnsdomain, dnsname, binddns_dir,
-diff --git a/source4/dns_server/dlz_minimal.h b/source4/dns_server/dlz_minimal.h
+
 index b7e36e7f8e6..bbdb616deb2 100644
 --- a/source4/dns_server/dlz_minimal.h
 +++ b/source4/dns_server/dlz_minimal.h
@@ -268,8 +269,8 @@ index cbe7d805f58..32672768af4 100644
 -
 -    # For BIND 9.16.x
 -    ${BIND9_16} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_16.so";
--    #
--    # For BIND 9.18.x
+-
+-    # For BIND 9.18.x and 9.20.x
 -    ${BIND9_18} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_18.so";
 +${BIND9_DLZ}
  };

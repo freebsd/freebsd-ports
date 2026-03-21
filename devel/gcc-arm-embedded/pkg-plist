@@ -7299,7 +7299,6 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gdb/syscalls/sparc-linux.xml
 gcc-arm-embedded-%%FULL_VERSION%%/share/gdb/syscalls/sparc64-linux.xml
 gcc-arm-embedded-%%FULL_VERSION%%/share/gdb/system-gdbinit/elinos.py
 gcc-arm-embedded-%%FULL_VERSION%%/share/gdb/system-gdbinit/wrs-linux.py
-gcc-arm-embedded-%%FULL_VERSION%%/share/info/dir
 gcc-arm-embedded-%%FULL_VERSION%%/share/man/man1/%%TARGET%%-addr2line.1.gz
 gcc-arm-embedded-%%FULL_VERSION%%/share/man/man1/%%TARGET%%-ar.1.gz
 gcc-arm-embedded-%%FULL_VERSION%%/share/man/man1/%%TARGET%%-as.1.gz

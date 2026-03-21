@@ -1,7 +1,7 @@
 PORTNAME=	android-ota-payload-extractor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@FreeBSD.org

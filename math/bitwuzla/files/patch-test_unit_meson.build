@@ -1,0 +1,13 @@
+--- test/unit/meson.build.orig	2026-03-17 07:48:04 UTC
++++ test/unit/meson.build
+@@ -147,9 +147,7 @@ cpp_args = ['-fno-access-control', '-DBZLA_ENABLE_UNIT
+ endif
+ 
+ cpp_args = ['-fno-access-control', '-DBZLA_ENABLE_UNIT_TESTING']
+-if cadical_dep.found()
+-  cpp_args += ['-DBZLA_USE_CADICAL']
+-endif
++cpp_args += ['-DBZLA_USE_CADICAL']
+ if cms_dep.found()
+   cpp_args += ['-DBZLA_USE_CMS']
+ endif

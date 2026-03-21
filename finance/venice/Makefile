@@ -1,61 +1,48 @@
 PORTNAME=	venice
-DISTVERSION=	0.752beta
-PORTREVISION=	1
+DISTVERSION=	0.753beta
 CATEGORIES=	finance java
-MASTER_SITES=	SF/mov/${PORTNAME}/0.752%20beta/ \
+MASTER_SITES=	SF/mov/${PORTNAME}/0.753%20beta/ \
 		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
-DIST_SUBDIR=	java
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Merchant Of Venice, a stock market trading program
 WWW=		https://mov.sourceforge.net/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		gnome java
 
-NO_BUILD=	yes
-
-PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	changelog.txt readme.txt
-
-DOCSRCDIR2=	${WRKSRC}/doc
-DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	manual.html manual.txt
-
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-
-SUB_FILES=	${PORTNAME}
-
-ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
-
 DESKTOP_ENTRIES="Venice" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Office;Finance;" false
+NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_FILES=	${PORTNAME}
+
+PORTDOCS=	changelog.txt doc/manual.html doc/manual.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}
 
 .for s in ${ICON_SIZES}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

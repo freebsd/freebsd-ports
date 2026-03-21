@@ -1,4 +1,4 @@
---- electron/spec/api-browser-window-spec.ts.orig	2026-02-24 02:09:51 UTC
+--- electron/spec/api-browser-window-spec.ts.orig	2026-03-17 08:46:36 UTC
 +++ electron/spec/api-browser-window-spec.ts
 @@ -69,7 +69,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -180,16 +180,7 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -5931,7 +5931,7 @@ describe('BrowserWindow module', () => {
-       });
-     });
- 
--    ifdescribe(process.platform === 'linux')('menu bar AltGr behavior', () => {
-+    ifdescribe(process.platform === 'linux' || process.platform === 'freebsd')('menu bar AltGr behavior', () => {
-       it('does not toggle auto-hide menu bar visibility', async () => {
-         const w = new BrowserWindow({ show: false, autoHideMenuBar: true });
-         w.setMenuBarVisibility(false);
-@@ -6885,7 +6885,7 @@ describe('BrowserWindow module', () => {
+@@ -6940,7 +6940,7 @@ describe('BrowserWindow module', () => {
    describe('"transparent" option', () => {
      afterEach(closeAllWindows);
  

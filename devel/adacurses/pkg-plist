@@ -1,3 +1,4 @@
+bin/AdaCurses
 bin/adacurses-config
 include/%%atic%%-aux.adb
 include/%%atic%%-aux.ads
@@ -110,4 +111,8 @@ lib/%%atic%%.ali
 lib/%%atic%%_constants.ali
 lib/adacurses/terminal_interface.ali
 lib/gnat/adacurses.gpr
+libexec/AdaCurses/ncurses
+libexec/AdaCurses/rain
+libexec/AdaCurses/tour
+%%DATADIR%%/explain.txt
 share/man/man1/adacurses-config.1.gz

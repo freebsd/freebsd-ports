@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://code.kryo.se/iodine/
 
-MAINTAINER=	p.mousavizadeh@protonmail.com
+MAINTAINER=	pouria@FreeBSD.org
 COMMENT=	Tunnel IPv4 data through a DNS server
 WWW=		https://code.kryo.se/iodine/
 

@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2026-02-11 09:05:39 UTC
+--- content/utility/utility_main.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/utility/utility_main.cc
 @@ -38,22 +38,31 @@
  #include "services/on_device_model/public/mojom/on_device_model_service.mojom.h"
@@ -51,7 +51,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -277,7 +286,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -276,7 +285,7 @@ int UtilityMain(MainFunctionParams parameters) {
      CHECK(on_device_model::PreSandboxInit());
    }
  
@@ -60,7 +60,7 @@
  
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION) && BUILDFLAG(USE_VAAPI)
    // Regardless of the sandbox status, the VaapiWrapper needs to be initialized
-@@ -292,7 +301,10 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -291,7 +300,10 @@ int UtilityMain(MainFunctionParams parameters) {
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
    // application of the sandbox.
@@ -71,7 +71,7 @@
  
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
-@@ -325,7 +337,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -324,7 +336,7 @@ int UtilityMain(MainFunctionParams parameters) {
            base::BindOnce(&speech::SpeechRecognitionPreSandboxHook);
        break;
  #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
@@ -80,7 +80,7 @@
      case sandbox::mojom::Sandbox::kOnDeviceTranslation:
        pre_sandbox_hook = base::BindOnce(
            &on_device_translation::OnDeviceTranslationSandboxHook);
-@@ -342,7 +354,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -341,7 +353,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #else
        NOTREACHED();
  #endif
@@ -89,7 +89,7 @@
      case sandbox::mojom::Sandbox::kShapeDetection:
        pre_sandbox_hook =
            base::BindOnce(&shape_detection::ShapeDetectionPreSandboxHook);
-@@ -371,6 +383,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -370,6 +382,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -97,7 +97,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -378,6 +391,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -377,6 +390,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

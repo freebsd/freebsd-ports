@@ -33,6 +33,7 @@ include/qcoro6/qcoro/coroutine.h
 include/qcoro6/qcoro/impl/connect.h
 include/qcoro6/qcoro/impl/isqprivatesignal.h
 include/qcoro6/qcoro/impl/lazytask.h
+include/qcoro6/qcoro/impl/mixins.h
 include/qcoro6/qcoro/impl/task.h
 include/qcoro6/qcoro/impl/taskawaiterbase.h
 include/qcoro6/qcoro/impl/taskbase.h
@@ -41,6 +42,7 @@ include/qcoro6/qcoro/impl/taskpromise.h
 include/qcoro6/qcoro/impl/taskpromisebase.h
 include/qcoro6/qcoro/impl/waitfor.h
 include/qcoro6/qcoro/macros_p.h
+include/qcoro6/qcoro/mixins_p.h
 include/qcoro6/qcoro/qcoro.h
 include/qcoro6/qcoro/qcoroabstractsocket.h
 include/qcoro6/qcoro/qcoroasyncgenerator.h

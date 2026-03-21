@@ -31,6 +31,7 @@ lib/libPlasmaSystemMonitorTable.so
 %%QT_QMLDIR%%/org/kde/ksysguard/table/KillDialog.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/LineChartCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/PlasmaSystemMonitorTable.qmltypes
+%%QT_QMLDIR%%/org/kde/ksysguard/table/ReniceDialog.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/TableViewHeader.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/TextCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/UserCellDelegate.qml

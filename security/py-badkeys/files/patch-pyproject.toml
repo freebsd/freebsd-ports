@@ -1,0 +1,38 @@
+From cd7fad358fe65ac14e8fba25e1053f98e2e96eaf Mon Sep 17 00:00:00 2001
+From: Fabian Keil <fk@fabiankeil.de>
+Date: Sat, 17 Jan 2026 11:01:05 +0100
+Subject: [PATCH] Revert "Remove deprecated license classifier"
+
+... to fix a build error with py311-setuptools-63.1.0_3:
+
+| configuration error: `project.license` must be valid exactly by one definition (2 matches found):
+
+This reverts commit 47e6881de76c7883a5d6cbfb017a809ac1472c06.
+---
+ pyproject.toml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git pyproject.toml pyproject.toml
+index d6ed7ae..7bcf406 100644
+--- pyproject.toml
++++ pyproject.toml
+@@ -4,6 +4,7 @@ description = "Check cryptographic keys for known weaknesses"
+ readme = "README.md"
+ authors = [{ name = "Hanno Böck" }]
+ classifiers = [
++  "License :: OSI Approved :: MIT License",
+   "Programming Language :: Python :: 3 :: Only",
+   "Programming Language :: Python :: 3",
+   "Programming Language :: Python :: 3.9",
+@@ -15,7 +16,7 @@ classifiers = [
+   "Natural Language :: English",
+   "Development Status :: 4 - Beta",
+ ]
+-license = "MIT"
++license = {text = "MIT"}
+ keywords = ["cryptography", "rsa", "security"]
+ requires-python = ">=3.9"
+ dependencies = ["cryptography", "gmpy2"]
+-- 
+2.52.0
+

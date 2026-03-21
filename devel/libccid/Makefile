@@ -1,5 +1,5 @@
 PORTNAME=	ccid
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 PKGNAMEPREFIX=	lib
@@ -22,6 +22,7 @@ MESON_FALSE=	class \
 		embedded \
 		os_log \
 		serial \
+		udev-rules \
 		zlp
 MESON_TRUE=	enable-extras \
 		pcsclite

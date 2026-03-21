@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_form_filling.cc.orig	2025-12-06 13:30:52 UTC
+--- components/password_manager/core/browser/password_form_filling.cc.orig	2026-03-15 18:32:51 UTC
 +++ components/password_manager/core/browser/password_form_filling.cc
-@@ -197,7 +197,7 @@ LikelyFormFilling SendFillInformationToRenderer(
+@@ -176,7 +176,7 @@ LikelyFormFilling SendFillInformationToRenderer(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

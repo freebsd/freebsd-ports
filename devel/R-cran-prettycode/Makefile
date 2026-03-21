@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Pretty Print R Code in the Terminal
-WWW=		https://github.com/r-lib/prettycode #readme
+WWW=		https://github.com/r-lib/prettycode\#readme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

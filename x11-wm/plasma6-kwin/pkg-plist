@@ -8,6 +8,7 @@ include/kwin/atoms.h
 include/kwin/client_machine.h
 include/kwin/compositor.h
 include/kwin/config-kwin.h
+include/kwin/core/backendoutput.h
 include/kwin/core/colorlut3d.h
 include/kwin/core/colorpipeline.h
 include/kwin/core/colorpipelinestage.h
@@ -26,6 +27,8 @@ include/kwin/core/outputbackend.h
 include/kwin/core/outputconfiguration.h
 include/kwin/core/outputlayer.h
 include/kwin/core/pixelgrid.h
+include/kwin/core/rect.h
+include/kwin/core/region.h
 include/kwin/core/renderbackend.h
 include/kwin/core/renderjournal.h
 include/kwin/core/renderloop.h
@@ -154,6 +157,7 @@ include/kwin/utils/orientationsensor.h
 include/kwin/utils/ramfile.h
 include/kwin/utils/realtime.h
 include/kwin/utils/resource.h
+include/kwin/utils/serial.h
 include/kwin/utils/serviceutils.h
 include/kwin/utils/softwarevsyncmonitor.h
 include/kwin/utils/subsurfacemonitor.h
@@ -326,10 +330,12 @@ lib/libkwin.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kwin/plugins/BounceKeysPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/KeyNotificationPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/MouseKeysPlugin.so
+%%QT_PLUGINDIR%%/kwin/plugins/SlowKeysPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/StickyKeysPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/TouchpadShortcutsPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/buttonsrebind.so
 %%EI%%%%QT_PLUGINDIR%%/kwin/plugins/eis.so
+%%QT_PLUGINDIR%%/kwin/plugins/gamecontroller.so
 %%QT_PLUGINDIR%%/kwin/plugins/krunnerintegration.so
 %%QT_PLUGINDIR%%/kwin/plugins/nightlight.so
 %%QT_PLUGINDIR%%/kwin/plugins/screencast.so
@@ -1406,6 +1412,7 @@ share/locale/nl/LC_MESSAGES/kcmkwincommon.mo
 share/locale/nl/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/nl/LC_MESSAGES/kcmkwm.mo
 share/locale/nl/LC_MESSAGES/kwin.mo
+share/locale/nn/LC_MESSAGES/kcm_animations.mo
 share/locale/nn/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/nn/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/nn/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
@@ -1478,6 +1485,7 @@ share/locale/pt_BR/LC_MESSAGES/kcmkwincommon.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkwm.mo
 share/locale/pt_BR/LC_MESSAGES/kwin.mo
+share/locale/ro/LC_MESSAGES/kcm_animations.mo
 share/locale/ro/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/ro/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/ro/LC_MESSAGES/kcm_kwin_virtualdesktops.mo

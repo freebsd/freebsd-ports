@@ -1,1 +1,3 @@
-A BQN implementation in C
+BQN is an APL-family language designed primarily by Marshall Lochbaum.
+BQN has several implementations. CBQN, developed by dzaima in C, is
+the primary implementation with the best performance.

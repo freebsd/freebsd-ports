@@ -1,6 +1,6 @@
---- ui/views/views_delegate.h.orig	2025-05-31 17:16:41 UTC
+--- ui/views/views_delegate.h.orig	2026-03-15 18:32:51 UTC
 +++ ui/views/views_delegate.h
-@@ -143,7 +143,7 @@ class VIEWS_EXPORT ViewsDelegate {
+@@ -139,7 +139,7 @@ class VIEWS_EXPORT ViewsDelegate {
    // environment.
    virtual bool IsWindowInMetro(gfx::NativeWindow window) const;
  #elif BUILDFLAG(ENABLE_DESKTOP_AURA) && \

@@ -1,11 +1,12 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.9.1
+PORTVERSION=	6.9.4
 PORTREVISION?=	0
 .ifndef WORDPRESS_LANG
+DISTNAME=	wordpress-6.9.1
 PORTEPOCH=	1
 MASTER_SITES=	https://wordpress.org/
 .else
-DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
+DISTNAME=	wordpress-6.9.1-${WORDPRESS_LANG}
 MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
 .endif
 CATEGORIES+=	www
@@ -20,8 +21,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 
 USES=		cpe php:web
-.if ${DISTVERSION:N*.*.*}
-CPE_VERSION=	${DISTVERSION}.0
+.if ${PORTVERSION:N*.*.*}
+CPE_VERSION=	${PORTVERSION}.0
 .endif
 
 .ifdef WORDPRESS_LANG

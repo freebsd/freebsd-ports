@@ -1,0 +1,17 @@
+lib/postgresql/vchord.so
+share/postgresql/extension/vchord--0.1.0--0.2.0.sql
+share/postgresql/extension/vchord--0.2.0--0.2.1.sql
+share/postgresql/extension/vchord--0.2.1--0.2.2.sql
+share/postgresql/extension/vchord--0.2.2--0.3.0.sql
+share/postgresql/extension/vchord--0.3.0--0.4.0.sql
+share/postgresql/extension/vchord--0.4.0--0.4.1.sql
+share/postgresql/extension/vchord--0.4.1--0.4.2.sql
+share/postgresql/extension/vchord--0.4.2--0.4.3.sql
+share/postgresql/extension/vchord--0.4.3--0.5.0.sql
+share/postgresql/extension/vchord--0.5.0--0.5.1.sql
+share/postgresql/extension/vchord--0.5.1--0.5.2.sql
+share/postgresql/extension/vchord--0.5.2--0.5.3.sql
+share/postgresql/extension/vchord--0.5.3--1.0.0.sql
+share/postgresql/extension/vchord--1.0.0--1.1.0.sql
+share/postgresql/extension/vchord--1.1.0.sql
+share/postgresql/extension/vchord.control

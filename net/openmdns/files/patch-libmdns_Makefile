@@ -1,0 +1,18 @@
+--- libmdns/Makefile.orig	2025-12-01 15:56:40 UTC
++++ libmdns/Makefile
+@@ -1,11 +1,14 @@
+ LIB= mdns
+ SRCS+= mdnsl.c
+ 
+-CFLAGS+= -g -Wall
++CFLAGS+= -g -Wall -fPIC
+ CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
+ CFLAGS+= -Wmissing-declarations
+ CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual
+ CFLAGS+= -Wsign-compare
+ CFLAGS+= -I${.CURDIR} -I${.CURDIR}/../mdnsd
+ 
++install:
++	@:
++
+ .include <bsd.lib.mk>

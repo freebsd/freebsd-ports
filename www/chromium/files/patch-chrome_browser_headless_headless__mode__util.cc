@@ -1,4 +1,4 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -13,7 +13,7 @@
  // New headless mode is available on Linux, Windows and Mac platforms.
@@ -18,12 +18,12 @@
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -94,7 +94,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
-       command_line->AppendSwitchPath(switches::kUserDataDir, user_data_dir);
+@@ -95,7 +95,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
+       command_line.AppendSwitchPath(switches::kUserDataDir, user_data_dir);
      }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      // Headless mode on Linux relies on ozone/headless platform.
-     command_line->AppendSwitchASCII(::switches::kOzonePlatform,
-                                     switches::kHeadless);
+     command_line.AppendSwitchASCII(::switches::kOzonePlatform,
+                                    switches::kHeadless);

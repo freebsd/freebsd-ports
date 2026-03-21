@@ -1,6 +1,5 @@
 PORTNAME=	gthumb
-PORTVERSION=	3.12.8
-PORTREVISION=	1
+PORTVERSION=	3.12.10
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,7 +20,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libexiv2.so:graphics/exiv2
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		bison compiler:c++11-lib cpe desktop-file-utils gettext \
+USES=		bison compiler:c++11-lib cpe desktop-file-utils gettext-tools \
 		gnome jpeg localbase:ldflags meson pkgconfig \
 		python:build shebangfix tar:xz xorg
 USE_GNOME=	cairo glib20 gtk30 librsvg2

@@ -1,6 +1,6 @@
---- chrome/browser/net/profile_network_context_service.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/net/profile_network_context_service.cc.orig	2026-03-15 18:32:51 UTC
 +++ chrome/browser/net/profile_network_context_service.cc
-@@ -143,7 +143,7 @@
+@@ -144,7 +144,7 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/client_certificates/certificate_provisioning_service_factory.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
-@@ -300,7 +300,7 @@ void UpdateCookieSettings(Profile* profile, ContentSet
+@@ -301,7 +301,7 @@ void UpdateCookieSettings(Profile* profile, ContentSet
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  std::unique_ptr<net::ClientCertStore> GetWrappedCertStore(
      Profile* profile,
      std::unique_ptr<net::ClientCertStore> platform_store) {
-@@ -1293,7 +1293,7 @@ ProfileNetworkContextService::CreateClientCertStore() 
+@@ -1247,7 +1247,7 @@ ProfileNetworkContextService::CreateClientCertStore() 
        std::make_unique<net::ClientCertStoreNSS>(
            base::BindRepeating(&CreateCryptoModuleBlockingPasswordDelegate,
                                kCryptoModulePasswordClientAuth));

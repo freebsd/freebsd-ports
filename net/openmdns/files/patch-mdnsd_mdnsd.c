@@ -1,8 +1,8 @@
---- mdnsd/mdnsd.c.orig	2017-03-10 09:24:12 UTC
+--- mdnsd/mdnsd.c.orig	2026-03-19 21:46:02 UTC
 +++ mdnsd/mdnsd.c
-@@ -45,8 +45,12 @@ int		mdns_sock(void);
- void		fetchmyname(char [MAXHOSTNAMELEN]);
- void		fetchhinfo(struct hinfo *);
+@@ -51,8 +51,12 @@
+ void			 fetchhinfo(struct hinfo *);
+ struct reflect_rule	*parse_reflect_rule(char *);
  
 +ctl_conns_t	ctl_conns;
 +
@@ -13,13 +13,13 @@
  
  __dead void
  usage(void)
-@@ -230,7 +234,9 @@ main(int argc, char *argv[])
+@@ -307,7 +311,9 @@
  		switch (ch) {
  		case 'd':
  			debug = 1;
 +#ifdef __OpenBSD__
- 			malloc_options = "AFGJPX";
+ 			malloc_options = "CFGJ";
 +#endif
  			break;
- 		case 'v':
- 			display_version();
+ 		default:
+ 			break;

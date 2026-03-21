@@ -1,5 +1,6 @@
 PORTNAME=	cabal-install
 PORTVERSION=	3.16.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-v
 CATEGORIES=	devel haskell
 EXTRACT_ONLY=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
@@ -9,6 +10,8 @@ COMMENT=	Command-line interface for Cabal and Hackage
 WWW=		https://www.haskell.org/cabal/
 
 LICENSE=	BSD3CLAUSE
+
+TEST_DEPENDS=	git:devel/git
 
 USES=		cabal:nodefault compiler:c11 pkgconfig python:build
 
@@ -53,6 +56,11 @@ USE_CABAL=	alex-3.5.3.0 \
 CABAL_EXECUTABLES=	cabal
 SKIP_CABAL_EXTRACT=	yes
 
+TESTING_UNSAFE=	Tests require network access
+.if make(test)
+CABAL_HOME=	${WRKDIR}/cabal-test-home
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}/_build/tarballs/
 .for package in ${USE_CABAL}
@@ -72,5 +80,11 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/bin/cabal ${STAGEDIR}${PREFIX}/bin/
+
+do-test:
+	cd ${WRKSRC} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} update
+	cd ${WRKSRC} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} test all
 
 .include <bsd.port.mk>

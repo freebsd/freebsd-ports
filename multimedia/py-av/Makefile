@@ -1,6 +1,5 @@
 PORTNAME=	av
-DISTVERSION=	14.0.1
-PORTREVISION=	2
+DISTVERSION=	16.1.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +10,6 @@ WWW=		https://docs.mikeboers.com/pyav/develop/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN=		Does not build with ffmpeg > 6
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 

@@ -27,6 +27,9 @@ GH_ACCOUNT=	citusdata
 
 WANT_PGSQL=	server
 
+DEPRECATED=	Columnar storage is now part of databases/pg_citus. Please migrate.
+EXPIRATION_DATE=2026-03-31
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/cstore_fdw.so
 

@@ -1,9 +1,9 @@
 PORTNAME=	ReFrame_HPC
-DISTVERSION=	4.9.1
+DISTVERSION=	4.9.2
 CATEGORIES=	benchmarks python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	reframe_hpc-${DISTVERSION}
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	rikka.goering@outlook.de
 COMMENT=	HPC regression/benchmark testing framework
@@ -31,5 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archspec>=0.2.4:devel/py-archspec@${PY_FLAVO
 
 USES=		python
 USE_PYTHON=	autoplist pep517
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

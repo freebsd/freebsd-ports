@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-02-24 03:59:12 UTC
++++ pyproject.toml
+@@ -8,7 +8,7 @@ requires-python = ">=3.9"
+ description = "Embedded documentation for ComfyUI nodes"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "GPL-3.0"
++license = {text = "GPL-3.0"}
+ authors = [
+     {name = "Comfy-Org"}
+ ]

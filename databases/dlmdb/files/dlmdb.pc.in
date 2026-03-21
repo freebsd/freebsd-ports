@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: dlmdb
+Description: Datalevin Lightning Memory-Mapped Database
+URL: https://github.com/datalevin/dlmdb
+Version: %%PORTVERSION%%
+Libs: -L${libdir} -ldlmdb
+Cflags: -I${includedir}

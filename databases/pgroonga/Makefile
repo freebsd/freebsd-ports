@@ -1,5 +1,5 @@
 PORTNAME=	pgroonga
-DISTVERSION=	4.0.4
+DISTVERSION=	4.0.5
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
-USES=		gmake localbase pgsql:13+ pkgconfig
+USES=		gmake localbase pgsql:14+ pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include/groonga
 LLD_UNSAFE=	yes

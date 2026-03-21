@@ -24,7 +24,6 @@ USES=		cmake tar:xz
 IGNORE=		is a meta-port; there is nothing to build
 PKGNAMESUFFIX=	-master
 .else
-BUILD_DEPENDS=	${WASI_SYSROOT}/include/stdarg.h:devel/wasi-libc@${LLVM_VERSION}
 USES+=		llvm:${LLVM_SUFFIX}
 .endif
 
@@ -34,7 +33,7 @@ DISTINFO_FILE=	${PORTSDIR}/${LLVM_PORT}/distinfo
 NO_ARCH=	yes
 
 WASI_SYSROOT=	${LOCALBASE}/share/wasi-sysroot
-TRIPLE=		wasm32-wasi
+TRIPLE=		wasm32-unknown-wasip1
 WITHOUT_CPU_CFLAGS=	yes
 # try to sync with https://github.com/WebAssembly/wasi-sdk
 # wasi-sdk.cmake and cmake/wasi-sdk-sysroot.cmake
@@ -54,11 +53,11 @@ CMAKE_ARGS=	-DCMAKE_SYSTEM_NAME=WASI \
 		-DCMAKE_C_COMPILER_WORKS=ON \
 		-DCMAKE_CXX_COMPILER_WORKS=ON \
 		-DCMAKE_SYSROOT=${WASI_SYSROOT} \
+		-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=ON \
 		-DCOMPILER_RT_BAREMETAL_BUILD=ON \
 		-DCOMPILER_RT_BUILD_XRAY=OFF \
 		-DCOMPILER_RT_INCLUDE_TESTS=OFF \
 		-DCOMPILER_RT_HAS_FPIC_FLAG=OFF \
-		-DCOMPILER_RT_ENABLE_IOS=OFF \
 		-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON \
 		-DCOMPILER_RT_BUILD_SANITIZERS=OFF \
 		-DCOMPILER_RT_BUILD_XRAY=OFF \
@@ -67,10 +66,9 @@ CMAKE_ARGS=	-DCMAKE_SYSTEM_NAME=WASI \
 		-DCOMPILER_RT_BUILD_CTX_PROFILE=OFF \
 		-DCOMPILER_RT_BUILD_MEMPROF=OFF \
 		-DCOMPILER_RT_BUILD_ORC=OFF \
-		-DCOMPILER_RT_BUILD_GWP_ASAN=OFF \
-		-DCOMPILER_RT_OS_DIR=wasi
+		-DCOMPILER_RT_BUILD_GWP_ASAN=OFF
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}/lib/clang/${LLVM_VERSION}
 
-PLIST_FILES=	${LLVM_PREFIX}/lib/clang/${LLVM_VERSION}/lib/wasi/libclang_rt.builtins-wasm32.a
+PLIST_FILES=	${LLVM_PREFIX}/lib/clang/${LLVM_VERSION}/lib/${TRIPLE}/libclang_rt.builtins.a
 
 .include <bsd.port.mk>

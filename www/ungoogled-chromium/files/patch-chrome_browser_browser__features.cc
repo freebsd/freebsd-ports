@@ -1,4 +1,4 @@
---- chrome/browser/browser_features.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/browser_features.cc.orig	2026-03-15 18:32:51 UTC
 +++ chrome/browser/browser_features.cc
 @@ -70,7 +70,7 @@ BASE_FEATURE(kCertVerificationNetworkTime, base::FEATU
  BASE_FEATURE(kClearUserDataUponProfileDestruction,
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -176,7 +176,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlocked, base::FE
+@@ -179,7 +179,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlocked, base::FE
  BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               base::FEATURE_ENABLED_BY_DEFAULT);
  

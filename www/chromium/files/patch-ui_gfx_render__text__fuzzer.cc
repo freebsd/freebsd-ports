@@ -1,6 +1,6 @@
---- ui/gfx/render_text_fuzzer.cc.orig	2026-02-11 09:05:39 UTC
+--- ui/gfx/render_text_fuzzer.cc.orig	2026-03-13 06:02:14 UTC
 +++ ui/gfx/render_text_fuzzer.cc
-@@ -18,7 +18,7 @@
+@@ -17,7 +17,7 @@
  #include "ui/gfx/canvas.h"
  #include "ui/gfx/font_util.h"
  
@@ -9,7 +9,7 @@
  #include "third_party/test_fonts/fontconfig/fontconfig_util_linux.h"
  #endif
  
-@@ -41,7 +41,7 @@ struct Environment {
+@@ -40,7 +40,7 @@ struct Environment {
  
      CHECK(base::i18n::InitializeICU());
  

@@ -1,6 +1,6 @@
-TIMESTAMP = 1769874390
-SHA256 (pcodec-1.0.0.tar.gz) = 40f14ca0d8d267a078ff168401f59f4874dc6a82406d6d81ad07db9126e048ae
-SIZE (pcodec-1.0.0.tar.gz) = 143467
+TIMESTAMP = 1771421706
+SHA256 (pcodec-1.0.1.tar.gz) = 559112623ae9ffb42f9f3fdffb5b0cb27d5c363b104994e66a6c0f1093e2de83
+SIZE (pcodec-1.0.1.tar.gz) = 144648
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301

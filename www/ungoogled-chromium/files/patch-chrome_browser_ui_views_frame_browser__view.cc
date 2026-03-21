@@ -1,15 +1,15 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2026-03-15 18:32:51 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -2362,7 +2362,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
+@@ -2440,7 +2440,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
  }
  
  void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
 -#if !BUILDFLAG(IS_LINUX)
 +#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
-   std::vector<ContentsWebView*> contents_web_views =
-       GetAllVisibleContentsWebViews();
+   UpdateFastResizeForContentViews(is_dragging);
  
-@@ -6020,7 +6020,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
+   if (!is_dragging) {
+@@ -5930,7 +5930,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {
@@ -18,7 +18,7 @@
    if (!ShouldShowAvatarToolbarIPH()) {
      return;
    }
-@@ -6030,7 +6030,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
+@@ -5940,7 +5940,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
  }
  
  void BrowserView::MaybeShowSignInBenefitsIPH() {

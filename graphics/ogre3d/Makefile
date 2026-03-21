@@ -1,7 +1,7 @@
 PORTNAME=	ogre3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libpugixml.so:textproc/pugixml
 #		libimgui.so:x11-toolkits/imgui
 
 USES=		cmake compiler:c++14-lang pkgconfig sdl xorg

@@ -69,6 +69,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stconn-close.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/thread-exec-ctx.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/watchdog.txt
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt
 %%PORTDOCS%%%%DOCSDIR%%/lgpl.txt

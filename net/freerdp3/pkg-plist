@@ -79,6 +79,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/codec/planar.h
 include/freerdp%%MAJORVERSION%%/freerdp/codec/progressive.h
 include/freerdp%%MAJORVERSION%%/freerdp/codec/region.h
 include/freerdp%%MAJORVERSION%%/freerdp/codec/rfx.h
+include/freerdp%%MAJORVERSION%%/freerdp/codec/video.h
 include/freerdp%%MAJORVERSION%%/freerdp/codec/yuv.h
 include/freerdp%%MAJORVERSION%%/freerdp/codec/zgfx.h
 include/freerdp%%MAJORVERSION%%/freerdp/codecs.h
@@ -191,6 +192,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/window.h
 include/winpr%%MAJORVERSION%%/winpr/asn1.h
 include/winpr%%MAJORVERSION%%/winpr/assert-api.h
 include/winpr%%MAJORVERSION%%/winpr/assert.h
+include/winpr%%MAJORVERSION%%/winpr/atexit.h
 include/winpr%%MAJORVERSION%%/winpr/bcrypt.h
 include/winpr%%MAJORVERSION%%/winpr/bitstream.h
 include/winpr%%MAJORVERSION%%/winpr/build-config.h

@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-biosig
-DISTVERSION=	3.0.1
-PORTREVISION=	6
+DISTVERSION=	3.9.4
 CATEGORIES=	math
 MASTER_SITES=	https://pub.ist.ac.at/~schloegl/biosig/prereleases/
 DISTNAME=	biosig4octave-${DISTVERSION}.src

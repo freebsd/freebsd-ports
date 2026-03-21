@@ -1,0 +1,14 @@
+--- Cargo.toml.orig	2026-03-17 20:46:58 UTC
++++ Cargo.toml
+@@ -2,10 +2,9 @@ members = [
+ resolver = "2"
+ members = [
+     "crates/*",
+-    "examples/*",
+     # "kornia-py",
+ ]
+-exclude = ["kornia-py", "examples/dora"]
++exclude = ["kornia-py"]
+ 
+ [workspace.package]
+ authors = ["kornia.org <edgar@kornia.org>"]

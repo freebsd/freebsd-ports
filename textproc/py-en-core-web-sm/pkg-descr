@@ -1,0 +1,13 @@
+English language model for spaCy natural language processing library.
+
+This model includes vocabulary, syntax and entities trained on written web text
+(blogs, news, comments), optimized for small size and efficiency.
+
+Model details:
+- Language: English (en)
+- Type: Core web (general purpose)
+- Size: Small (sm)
+- Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer
+
+This package is required by applications that need English language support
+with spaCy, such as text-to-speech engines and other NLP applications.

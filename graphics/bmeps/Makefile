@@ -1,5 +1,5 @@
 PORTNAME=	bitmap2pp
-DISTVERSION=	4.39.1
+DISTVERSION=	4.39.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${DISTVERSION}
 DISTNAME=	dktools-${DISTVERSION}
@@ -11,7 +11,7 @@ WWW=		https://sourceforge.net/p/dktools/wiki/bitmap2pp/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		jpeg localbase:ldflags

@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Mixx was installed
+
+1) To use a MIDI DJ controller you need to use audio/alsa-seq-server.
+
+   This server allows Mixxx to detect your MIDI controller and communicate with it properly.
+
+2) Enjoy it
+EOM
+}
+]

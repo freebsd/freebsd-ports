@@ -4378,6 +4378,7 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacs-icon.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacs-module.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacs-module.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacs-module.in.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacs.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacsgtkfixed.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/emacsgtkfixed.h

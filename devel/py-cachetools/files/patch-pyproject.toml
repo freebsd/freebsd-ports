@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-12-15 18:09:20 UTC
+--- pyproject.toml.orig	2026-02-01 18:54:12 UTC
 +++ pyproject.toml
 @@ -13,8 +13,7 @@ readme = "README.rst"
      {name = "Thomas Kemmer", email = "tkemmer@computer.org"}
@@ -7,6 +7,6 @@
 -license = "MIT"
 -license-files = ["LICENSE"]
 +license = {text = "MIT"}
- requires-python = ">= 3.9"
+ requires-python = ">= 3.10"
  classifiers = [
      "Development Status :: 5 - Production/Stable",

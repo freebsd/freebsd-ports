@@ -1,19 +1,22 @@
---- sys/unix/Makefile.doc.orig	2025-03-15 15:02:36 UTC
+--- sys/unix/Makefile.doc.orig	2026-02-28 22:45:03 UTC
 +++ sys/unix/Makefile.doc
-@@ -80,10 +80,10 @@ $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h .
+@@ -83,13 +83,13 @@ $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h .
  # (note: 'make makedefs', not 'make $(MAKEDEFS)')
  $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h ../src/mdlib.c \
  		  ../util/mdgrep.h
--	( cd ../util ; make makedefs )
-+	( cd ../util ; ${MAKE} makedefs )
+-	( cd .. ; make makedefs )
++	( cd .. ; $(MAKE) makedefs )
+ 
+ ../util/stripbs: ../util/stripbs.c
+ 	( cd .. ; $(MAKE) stripbs )
  
  GAME	= xnethack
 -MANDIR	?= /usr/man/man6
-+MANDIR	?= ${PREFIX}/share/man/man6
++MANDIR	?= $(PREFIX)/share/man/man6
  MANEXT	= 6
  NROFF ?= nroff
  
-@@ -99,10 +99,10 @@ manpages: $(PREMANPAGES)
+@@ -105,10 +105,10 @@ manpages: $(PREMANPAGES)
  # MDMANCREATE = cat makedefs.6 | $(NHGREP) | nroff -man - >
  
  manpages: $(PREMANPAGES)

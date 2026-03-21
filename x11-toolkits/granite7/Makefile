@@ -1,5 +1,5 @@
 PORTNAME=	granite
-DISTVERSION=	7.8.0
+DISTVERSION=	7.8.1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	7
 
@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20 gtk40 introspection:build
 USE_LDCONFIG=	yes
+
+MESON_ARGS=	-Dgtk-stylesheets=true
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	DISTVERSION=${DISTVERSION}

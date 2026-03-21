@@ -1,0 +1,5 @@
+trampoline is a simple and tiny yield-based trampoline implementation
+for Python.
+
+Trampolines are useful for implementing tail-call optimization and managing
+deep recursion without stack overflow.

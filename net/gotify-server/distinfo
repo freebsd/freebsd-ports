@@ -1,7 +1,7 @@
-TIMESTAMP = 1760251977
-SHA256 (go/net_gotify-server/server/gotify-server-yarn-offline-cache-2.7.3.tar.gz) = fb5d008a93f7ff5f63d8668401444449bfad0d6fca8a61e5d1c60de867852a59
-SIZE (go/net_gotify-server/server/gotify-server-yarn-offline-cache-2.7.3.tar.gz) = 160736290
-SHA256 (go/net_gotify-server/server/v2.7.3.mod) = bfdb293d34ee4a0c595a86df5633a3aa202b334db9c0c8dc77ab006a994a3adb
-SIZE (go/net_gotify-server/server/v2.7.3.mod) = 2411
-SHA256 (go/net_gotify-server/server/v2.7.3.zip) = 84ada62b7c53e0487cf991175bb41575e476c0a04acf751adfa4e96ddefef8c3
-SIZE (go/net_gotify-server/server/v2.7.3.zip) = 589444
+TIMESTAMP = 1772689105
+SHA256 (go/net_gotify-server/server/gotify-server-yarn-offline-cache-2.9.1.tar.gz) = 42f7b80c03c6d556a2228608ff367bb8629fa14dd031bd75cb1b86dd97178ab6
+SIZE (go/net_gotify-server/server/gotify-server-yarn-offline-cache-2.9.1.tar.gz) = 192375366
+SHA256 (go/net_gotify-server/server/v2.9.1.mod) = f2071c81e8ec40818c234ac508a50ed909f8bb7df3951a02b6ab041210537c2c
+SIZE (go/net_gotify-server/server/v2.9.1.mod) = 2758
+SHA256 (go/net_gotify-server/server/v2.9.1.zip) = d8416bb79737d3f253f1a21f1fdff99203ea227cfadf99eaeda1e7d824294970
+SIZE (go/net_gotify-server/server/v2.9.1.zip) = 597342

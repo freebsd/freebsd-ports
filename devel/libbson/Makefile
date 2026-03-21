@@ -1,5 +1,5 @@
 PORTNAME=	libbson
-DISTVERSION=	1.30.4
+DISTVERSION=	1.30.7
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com

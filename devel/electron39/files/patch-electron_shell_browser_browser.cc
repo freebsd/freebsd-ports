@@ -1,7 +1,7 @@
---- electron/shell/browser/browser.cc.orig	2025-01-29 20:10:57 UTC
+--- electron/shell/browser/browser.cc.orig	2026-03-17 08:46:38 UTC
 +++ electron/shell/browser/browser.cc
-@@ -71,7 +71,7 @@ Browser* Browser::Get() {
-   return ElectronBrowserMainParts::Get()->browser();
+@@ -96,7 +96,7 @@ bool Browser::IsValidProtocolScheme(const std::string&
+   return true;
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)

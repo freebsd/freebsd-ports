@@ -170,6 +170,7 @@
     SUBDIR += ebsynth
     SUBDIR += edje_viewer
     SUBDIR += egl-wayland
+    SUBDIR += egl-wayland2
     SUBDIR += egl-x11
     SUBDIR += eglexternalplatform
     SUBDIR += elastix
@@ -959,6 +960,8 @@
     SUBDIR += py-imagesize
     SUBDIR += py-img2pdf
     SUBDIR += py-imutils
+    SUBDIR += py-kornia
+    SUBDIR += py-kornia-rs
     SUBDIR += py-leather
     SUBDIR += py-lerc
     SUBDIR += py-mapclassify

@@ -1,6 +1,7 @@
 PORTNAME=	ggml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/ggml-org/ggml
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang python:run shebangfix
+USES=		cmake:testing compiler:c++17-lang llvm:build,min=22 python:run shebangfix
 USE_LDCONFIG=	yes
 
 BROKEN_i386=	compilation fails: LLVM ERROR: out of memory

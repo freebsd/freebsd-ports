@@ -1,5 +1,6 @@
 PORTNAME=	protobuf
-PORTVERSION=	29.5
+# Be sure to bump consumers when updating
+PORTVERSION=	29.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/

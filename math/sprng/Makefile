@@ -1,6 +1,6 @@
 PORTNAME=	SPRNG
 PORTVERSION=	5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math science
 MASTER_SITES=	http://www.sprng.org/Version${PORTVERSION}/
 DISTNAME=	${PORTNAME:tl}${PORTVERSION:R}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtestu01.so:math/testu01
 
-USES=		compiler dos2unix fortran gmake localbase tar:bz2
+USES=		compiler fortran gmake localbase tar:bz2
 DOS2UNIX_GLOB=	LICENSE
 
 FFLAGS=		-I${LOCALBASE}/include

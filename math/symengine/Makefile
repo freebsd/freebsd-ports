@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libgmp.so:math/gmp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++14-lang llvm:min=15,max=15
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

@@ -1,0 +1,16 @@
+asterctl is an open-source tool to control the embedded LCD screen of the
+AOOSTAR WTR MAX and GEM12+ PRO mini PCs.
+
+Features:
+- Switch the secondary display on or off
+- Display custom images (auto-scaled to 960x376, RGB565)
+- Render dynamic sensor panels compatible with AOOSTAR-X config files
+- Partial screen update support for fast refresh
+- USB device/serial port selection
+
+The LCD screen communicates over USB UART (vendor ID 0x0416, product ID
+0x90A1). On FreeBSD the device appears as /dev/cuaU0 (requires the umodem
+kernel module).
+
+All protocol commands have been reverse engineered from the original
+AOOSTAR-X Windows software.  No official documentation is available.

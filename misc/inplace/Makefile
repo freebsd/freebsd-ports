@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to edit files in-place through given filter commands
-WWW=		https://akinori.org/ #inplace
+WWW=		https://akinori.org/\#inplace
 
 USES=		tar:bzip2 uidfix ruby shebangfix
 

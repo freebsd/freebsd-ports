@@ -1,13 +1,12 @@
 PORTNAME=	cgit
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		KERNEL_ORG/software/scm/git:git
 DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 		git-${GIT_VERSION}${EXTRACT_SUFX}:git
 
-MAINTAINER=	mt@markoturk.info
+MAINTAINER=	mt-bugs@markoturk.info
 COMMENT=	Fast, lightweight web frontend for Git repositories
 WWW=		https://git.zx2c4.com/cgit/about/
 
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	msgfmt:devel/gettext-tools
 
-GIT_VERSION=	2.25.1
+GIT_VERSION=	2.53.0
 USES=		compiler:c++11-lang cpe gmake iconv perl5 python:env \
 		shebangfix ssl tar:xz
 CPE_VENDOR=	lars_hjemli

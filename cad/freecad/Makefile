@@ -1,6 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	1.0.2
-PORTREVISION=	8
+DISTVERSION=	1.1rc3
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -10,8 +9,6 @@ WWW=		https://www.freecadweb.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		incompatible with VTK 9.6.0
-
 CONFLICTS_INSTALL=	freecad-devel # bin/FreeCAD
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
@@ -19,7 +16,6 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}pyside6-tools>0:devel/pyside6-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
 		microsoft-gsl>0:devel/microsoft-gsl \
 		googletest>0:devel/googletest \
 		swig:devel/swig
@@ -50,23 +46,29 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
+PORTSCOUT=	limit:^[0-9\.]*$$
+
+USES=		dos2unix compiler:c++20-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:6 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	Ondsel-Development:ondselsolver
-GH_PROJECT=	OndselSolver:ondselsolver
-GH_TAGNAME=	91f70382beeb58b32432b5a82da3802e4c19199c:ondselsolver
-GH_SUBDIR=	src/3rdParty/OndselSolver:ondselsolver
+GH_ACCOUNT=	FreeCAD:ondselsolver \
+		FreeCAD:addonmgr
+GH_PROJECT=	OndselSolver:ondselsolver \
+		AddonManager:addonmgr
+GH_TAGNAME=	30e9b64e8bf881d438d4b88834f9ba3674865418:ondselsolver \
+		937b6877239dc78ef59eeefe8099e5f14243eda1:addonmgr
+GH_SUBDIR=	src/3rdParty/OndselSolver:ondselsolver \
+		src/Mod/AddonManager:addonmgr
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		base declarative location svg tools webchannel
+USE_QT=		base declarative svg tools
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
-SHEBANG_FILES=	src/Tools/freecad-thumbnailer
+SHEBANG_FILES=	src/Tools/freecad-thumbnailer.in
 
 # our HDF5/CMake integration is messy, so workarounds are required below
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
@@ -76,7 +78,6 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
-		-DPYCXX_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
 		-DBUILD_ASSEMBLY="ON" \
 		-DBUILD_DESIGNER_PLUGIN="ON" \
 		-DBUILD_FLAT_MESH="ON" \
@@ -100,12 +101,10 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5" \
 		-DHDF5_LIBRARIES="-L${LOCALBASE}/lib -lhdf5" \
 		-DHDF5_LIBRARY_DIRS="${LOCALBASE}/lib" \
-		-DBUILD_ENABLE_CXX_STD=C++17 \
+		-DBUILD_ENABLE_CXX_STD=C++20 \
 		-DXDG_DATADIR="${PREFIX}/share"
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-
-CXXFLAGS+=	-DGetCellLinks=GetLinks # fix for vtk-9.5.0: equivalent of this patch: https://github.com/FreeCAD/FreeCAD/issues/21731#issuecomment-2934487147
 
 OPTIONS_DEFINE=	COLLADA
 
@@ -133,8 +132,6 @@ pre-configure:
 post-install:
 	${LN} -s ../${PORTNAME}/bin/FreeCAD ${STAGEDIR}${LOCALBASE}/bin/FreeCAD
 	${LN} -s ../${PORTNAME}/bin/FreeCADCmd ${STAGEDIR}${LOCALBASE}/bin/FreeCADCmd
-	${INSTALL_SCRIPT} ${WRKSRC}/src/Tools/freecad-thumbnailer \
-		${STAGEDIR}${PREFIX}/bin/freecad-thumbnailer
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

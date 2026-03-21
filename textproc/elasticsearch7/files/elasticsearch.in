@@ -9,11 +9,11 @@
 #
 # elasticsearch_enable="YES"
 #
-# elasticsearch_user (username): Set to elasticsearch by default.
+# elasticsearch_user (username): Set to %%SEARCHUSER%% by default.
 #               Set it to required username.
-# elasticsearch_group (group):   Set to elasticsearch by default.
+# elasticsearch_group (group):   Set to %%SEARCHGROUP%% by default.
 #               Set it to required group.
-# elasticsearch_config (path):   Set to %%PREFIX%%/etc/elasticsearch/elasticsearch.yml by default.
+# elasticsearch_config (path):   Set to %%ETCDIR%%/elasticsearch.yml by default.
 #               Set it to the config file location.
 # elasticsearch_java_home (path): Set to %%JAVA_HOME%% by default.
 #               Set it to the root of the JDK to use.
@@ -26,9 +26,9 @@ rcvar=elasticsearch_enable
 load_rc_config ${name}
 
 : ${elasticsearch_enable:=NO}
-: ${elasticsearch_user=elasticsearch}
-: ${elasticsearch_group=elasticsearch}
-: ${elasticsearch_config=%%PREFIX%%/etc/elasticsearch}
+: ${elasticsearch_user=%%SEARCHUSER%%}
+: ${elasticsearch_group=%%SEARCHGROUP%%}
+: ${elasticsearch_config=%%ETCDIR%%}
 : ${elasticsearch_login_class=root}
 : ${elasticsearch_java_home="%%JAVA_HOME%%"}
 

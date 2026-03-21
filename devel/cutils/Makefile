@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	schaiba@gmail.com
 COMMENT=	Miscellaneous C programmer's utilities
-WWW=		http://www.sigala.it/sandro/software.php #cutils
+WWW=		http://www.sigala.it/sandro/software.php\#cutils
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

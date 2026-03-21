@@ -1,0 +1,166 @@
+--- Gemfile.orig	2026-03-17 07:40:07 UTC
++++ Gemfile
+@@ -1,34 +1,34 @@ source 'https://rubygems.org'
+ source 'https://rubygems.org'
+ 
+-ruby '>= 3.2.0', '< 3.5.0'
++ruby '>= 3.2.0', '< 4.0.0'
+ 
+-gem 'rails', '7.2.3'
+-gem 'rouge', '~> 4.5'
+-gem 'mini_mime', '~> 1.1.0'
++gem 'rails', '>= 7.2.3'
++gem 'rouge', '>= 4.5'
++gem 'mini_mime', '>= 1.1.0'
+ gem "actionpack-xml_parser"
+-gem 'roadie-rails', '~> 3.3.0'
++gem 'roadie-rails', '>= 3.3.0'
+ gem 'marcel'
+-gem 'mail', '~> 2.8.1'
+-gem 'nokogiri', '~> 1.19.1'
+-gem 'i18n', '~> 1.14.1'
+-gem 'rbpdf', '~> 1.21.4'
++gem 'mail', '>= 2.8.1'
++gem 'nokogiri', '>= 1.19.1'
++gem 'i18n', '>= 1.14.1'
++gem 'rbpdf', '>= 1.21.4'
+ gem 'addressable'
+-gem 'rubyzip', '~> 2.4.0'
+-gem 'propshaft', '~> 1.1.0'
++gem 'rubyzip', '>= 2.4.0'
++gem 'propshaft', '>= 1.1.0'
+ gem 'rack', '>= 3.1.3'
+-gem "stimulus-rails", "~> 1.3"
+-gem "importmap-rails", "~> 2.0"
+-gem 'commonmarker', '~> 2.3.0'
+-gem "doorkeeper", "~> 5.8.2"
++gem "stimulus-rails", ">= 1.3"
++gem "importmap-rails", ">= 2.0"
++gem 'commonmarker', '>= 2.3.0'
++gem "doorkeeper", ">= 5.8.2"
+ gem "bcrypt", require: false
+-gem "doorkeeper-i18n", "~> 5.2"
+-gem "requestjs-rails", "~> 0.0.13"
++gem "doorkeeper-i18n", ">= 5.2"
++gem "requestjs-rails", ">= 0.0.13"
+ 
+ #  Ruby Standard Gems
+-gem 'csv', '~> 3.3.2'
+-gem 'net-imap', '~> 0.5.7'
+-gem 'net-pop', '~> 0.1.2'
+-gem 'net-smtp', '~> 0.5.0'
++gem 'csv', '>= 3.3.2'
++gem 'net-imap', '>= 0.5.7'
++gem 'net-pop', '>= 0.1.2'
++gem 'net-smtp', '>= 0.5.0'
+ 
+ # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+ gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin]
+@@ -38,94 +38,19 @@ gem 'rqrcode'
+ gem 'rqrcode'
+ 
+ # HTML pipeline and sanitization
+-gem "html-pipeline", "~> 2.13.2"
+-gem "sanitize", "~> 6.0"
++gem "html-pipeline", ">= 2.13.2"
++gem "sanitize", ">= 6.0"
+ 
+ # Optional gem for LDAP authentication
+ group :ldap do
+-  gem 'net-ldap', '~> 0.17.0'
++  gem 'net-ldap', '>= 0.17.0'
+ end
+ 
+ # Optional gem for exporting the gantt to a PNG file
+ group :minimagick do
+-  gem 'mini_magick', '~> 5.2.0'
++  gem 'mini_magick', '>= 5.2.0'
+ end
+ 
+-# Include database gems for the adapters found in the database
+-# configuration file
+-database_file = File.join(File.dirname(__FILE__), "config/database.yml")
+-if File.exist?(database_file)
+-  database_config = File.read(database_file)
+-
+-  # Requiring libraries in a Gemfile may cause Bundler warnings or
+-  # unexpected behavior, especially if multiple gem versions are available.
+-  # So, process database.yml through ERB only if it contains ERB syntax
+-  # in the adapter setting. See https://www.redmine.org/issues/41749.
+-  if database_config.match?(/^ *adapter: *<%=/)
+-    require 'erb'
+-    database_config = ERB.new(database_config).result
+-  end
+-
+-  adapters = database_config.scan(/^ *adapter: *(.*)/).flatten.uniq
+-  if adapters.any?
+-    adapters.each do |adapter|
+-      case adapter.strip
+-      when /mysql2/
+-        gem 'mysql2', '~> 0.5.0'
+-        gem "with_advisory_lock"
+-      when /trilogy/
+-        gem 'trilogy', '~> 2.9.0'
+-        gem "with_advisory_lock"
+-      when /postgresql/
+-        gem 'pg', '~> 1.5.3'
+-      when /sqlite3/
+-        gem 'sqlite3', '~> 2.5.0'
+-      when /sqlserver/
+-        gem 'tiny_tds', '~> 2.1.2'
+-        gem 'activerecord-sqlserver-adapter', '~> 7.2.0'
+-      else
+-        warn("Unknown database adapter `#{adapter}` found in config/database.yml, use Gemfile.local to load your own database gems")
+-      end
+-    end
+-  else
+-    warn("No adapter found in config/database.yml, please configure it first")
+-  end
+-else
+-  warn("Please configure your config/database.yml first")
+-end
+-
+-group :development, :test do
+-  gem 'debug'
+-end
+-
+-group :development do
+-  gem 'listen', '~> 3.3'
+-  gem 'yard', require: false
+-  gem 'svg_sprite', require: false
+-  gem 'bullet'
+-end
+-
+-group :test do
+-  gem "rails-dom-testing", '>= 2.3.0'
+-  gem 'mocha', '>= 2.0.1'
+-  gem 'simplecov', '~> 0.22.0', :require => false
+-  gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
+-  # For running system tests
+-  gem 'puma'
+-  gem "capybara", ">= 3.39"
+-  gem 'selenium-webdriver', '>= 4.11.0'
+-  # RuboCop
+-  gem 'rubocop', '~> 1.76.0', require: false
+-  gem 'rubocop-performance', '~> 1.25.0', require: false
+-  gem 'rubocop-rails', '~> 2.32.0', require: false
+-  gem 'bundle-audit', require: false
+-  # for testing oauth provider capabilities
+-  gem 'oauth2'
+-  gem 'rest-client'
+-  # Lock minitest to 5.x until a Rails release includes support for minitest 6.0
+-  gem 'minitest', '~> 5.27'
+-end
+-
+ local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
+ if File.exist?(local_gemfile)
+   eval_gemfile local_gemfile
+@@ -134,4 +59,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
+ # Load plugins' Gemfiles
+ Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
+   eval_gemfile file
++end
++
++Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
++  self.instance_eval(Bundler.read_file(bundle))
+ end

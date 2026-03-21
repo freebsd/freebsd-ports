@@ -81,12 +81,6 @@ lib/qt/plugins/avkys/libRotate.so
 lib/qt/plugins/avkys/libSaturated.so
 lib/qt/plugins/avkys/libScanLines.so
 lib/qt/plugins/avkys/libShagadelic.so
-lib/qt/plugins/avkys/libSimdCore_avx.so
-lib/qt/plugins/avkys/libSimdCore_avx2.so
-lib/qt/plugins/avkys/libSimdCore_mmx.so
-lib/qt/plugins/avkys/libSimdCore_sse.so
-lib/qt/plugins/avkys/libSimdCore_sse2.so
-lib/qt/plugins/avkys/libSimdCore_sse4_1.so
 lib/qt/plugins/avkys/libSwapRB.so
 lib/qt/plugins/avkys/libSwirl.so
 lib/qt/plugins/avkys/libTemperature.so

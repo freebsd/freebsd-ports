@@ -1,6 +1,6 @@
 PORTNAME=	director
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
+DISTVERSION=	0.17.0
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,5 +30,9 @@ OPTIONS_DEFINE=	DOCS
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}/${DOCSDIR}
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/director.1 ${STAGEDIR}${PREFIX}/share/man/man1/director.1
+	${INSTALL_MAN} ${WRKSRC}/director-spec.5 ${STAGEDIR}${PREFIX}/share/man/man5/director-spec.5
 
 .include <bsd.port.mk>

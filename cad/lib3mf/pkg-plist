@@ -27,8 +27,12 @@ include/Bindings/NodeJS/lib3mf_nodewrapper.h
 include/Bindings/NodeJS/lib3mf_types.h
 include/Bindings/Pascal/Unit_Lib3MF.pas
 include/Bindings/Python/Lib3MF.py
+include/Bindings/WASM/lib3mf_bindings.cpp
 lib/cmake/lib3mf/lib3mfConfig.cmake
+lib/cmake/lib3mf/lib3mfConfigVersion.cmake
+lib/cmake/lib3mf/lib3mfTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/lib3mf/lib3mfTargets.cmake
 lib/lib3mf.so
 lib/lib3mf.so.2
-lib/lib3mf.so.2.4.1.0
+lib/lib3mf.so.2.5.0.0
 libdata/pkgconfig/lib3mf.pc

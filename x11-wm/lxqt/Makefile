@@ -1,6 +1,6 @@
 PORTNAME=	lxqt
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	lxqt@FreeBSD.org
@@ -11,7 +11,6 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-about>=${PORTVERSION}:x11/lxqt-about \
 	lxqt-admin>=${PORTVERSION}:sysutils/lxqt-admin \
 	lxqt-config>=${PORTVERSION}:sysutils/lxqt-config \
-	lxqt-qtplugin>=1.4.0:sysutils/lxqt-qtplugin \
 	lxqt-qt6plugin>=${PORTVERSION}:sysutils/lxqt-qt6plugin \
 	qterminal>=2.3.0:x11/qterminal \
 	obconf-qt>=0.16.6:x11-wm/obconf-qt \

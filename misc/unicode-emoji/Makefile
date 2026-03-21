@@ -1,7 +1,7 @@
 PORTNAME=	unicode-emoji
-DISTVERSION=	16.0
+DISTVERSION=	17.0.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.unicode.org/Public/emoji/${DISTVERSION}/
+MASTER_SITES=	https://www.unicode.org/Public/${DISTVERSION}/emoji/
 DISTFILES=	emoji-sequences.txt emoji-test.txt emoji-zwj-sequences.txt
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# nothing to extract

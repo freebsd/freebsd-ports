@@ -1,5 +1,6 @@
 PORTNAME=	greed
-DISTVERSION=	4.3
+DISTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
@@ -19,10 +20,12 @@ PLIST_SUB+=	SCOREFILE=${SCOREFILE}
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o greed greed.c ${LDFLAGS})
+	${REINPLACE_CMD} -e 's|/usr/lib/games/greed.hs|${SCOREFILE}|g' ${WRKSRC}/greed.adoc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/greed ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/greed.6 ${STAGEDIR}${PREFIX}/share/man/man6/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/greed.adoc ${STAGEDIR}${DOCSDIR}/README
 	@${MKDIR} ${STAGEDIR}${SCOREFILE:H}
 	${TOUCH} ${STAGEDIR}${SCOREFILE}.sample
 

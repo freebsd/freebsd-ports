@@ -38,6 +38,9 @@ libexec/kanidmd
 %%DATADIR%%/ui/hpkg/pkhtml.js
 %%DATADIR%%/ui/hpkg/style.css
 %%DATADIR%%/ui/hpkg/style.js
+%%DATADIR%%/ui/hpkg/img/kani-waving.svg.br
+%%DATADIR%%/ui/hpkg/img/logo.svg.br
+%%DATADIR%%/ui/hpkg/override.css
 @dir %%ETCDIR%%
 @dir /var/lib
 @dir(kanidmd,kanidmd,750) /var/lib/kanidmd

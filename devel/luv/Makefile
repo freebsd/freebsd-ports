@@ -1,6 +1,6 @@
 PORTNAME=	luv
 #DISTVERSIONPREFIX=	v
-DISTVERSION=	1.51.0-2
+DISTVERSION=	1.52.1-0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/luvit/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -26,7 +26,7 @@ CMAKE_ARGS=	-DLUA_BUILD_TYPE=System \
 
 PLIST_FILES=	lib/libluv.so \
 		lib/libluv.so.1 \
-		lib/libluv.so.1.51.0 \
+		lib/libluv.so.1.52.1 \
 		libdata/pkgconfig/libluv.pc \
 		include/luv/util.h \
 		include/luv/luv.h \

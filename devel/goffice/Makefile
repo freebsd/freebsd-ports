@@ -1,33 +1,34 @@
 PORTNAME=	goffice
-PORTVERSION=	0.10.59
-PORTREVISION=	1
+PORTVERSION=	0.10.60
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GTK set of document centric objects and utilities
-WWW=		http://live.gnome.org/libgoffice
+WWW=		https://gitlab.gnome.org/GNOME/goffice
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libspectre.so:print/libspectre \
-		libfribidi.so:converters/fribidi
+LIB_DEPENDS=	libspectre.so:print/libspectre
 
-USES=		gettext gmake gnome libtool pathfix perl5 pkgconfig \
+USES=		gettext-tools gmake gnome libtool pathfix perl5 pkgconfig \
 		shebangfix tar:xz xorg
-USE_GNOME=	cairo gtk30 intlhack introspection:build libgsf librsvg2 libxslt
-USE_XORG=	xrender xext
-GNU_CONFIGURE=	yes
+USE_GNOME=	cairo gtk30 intltool:build introspection:build libgsf \
+		librsvg2 libxslt
 USE_LDCONFIG=	yes
+USE_PERL5=	build
+USE_XORG=	xrender xext
+SHEBANG_FILES=	${WRKSRC}/tools/introspection-identifier-filter
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings \
+		--enable-introspection
+
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings \
-		--enable-compile-warnings=no \
-		--enable-introspection
-USE_PERL5=	build
-SHEBANG_FILES=	${WRKSRC}/tools/introspection-identifier-filter
 
 PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${PORTVERSION:R} LIB_VER=${PORTVERSION:E}
 

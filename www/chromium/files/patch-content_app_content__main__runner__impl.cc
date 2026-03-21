@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2026-02-11 09:05:39 UTC
+--- content/app/content_main_runner_impl.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/app/content_main_runner_impl.cc
-@@ -151,18 +151,21 @@
+@@ -152,18 +152,21 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -24,7 +24,7 @@
  #include "third_party/boringssl/src/include/openssl/crypto.h"
  #include "third_party/webrtc_overrides/init_webrtc.h"  // nogncheck
  
-@@ -186,6 +189,10 @@
+@@ -187,6 +190,10 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -35,7 +35,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/android/background_thread_pool_field_trial.h"
  #include "base/system/sys_info.h"
-@@ -385,7 +392,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -366,7 +373,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
@@ -44,7 +44,7 @@
  
  #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
  // Loads registered library CDMs but does not initialize them. This is needed by
-@@ -404,7 +411,10 @@ void PreloadLibraryCdms() {
+@@ -385,7 +392,10 @@ void PreloadLibraryCdms() {
  
  void PreSandboxInit() {
    // Ensure the /dev/urandom is opened.
@@ -55,7 +55,7 @@
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -416,9 +426,16 @@ void PreSandboxInit() {
+@@ -397,9 +407,16 @@ void PreSandboxInit() {
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
@@ -72,16 +72,16 @@
  
  #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
    // Ensure access to the library CDMs before the sandbox is turned on.
-@@ -638,7 +655,7 @@ NO_STACK_PROTECTOR int RunZygote(ContentMainDelegate* 
- 
+@@ -628,7 +645,7 @@ NO_STACK_PROTECTOR int RunZygote(ContentMainDelegate* 
    // Once Zygote forks and feature list initializes we can start a thread to
    // begin tracing immediately.
+   if (delegate->ShouldInitializePerfetto(invoked_in_child)) {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (process_type == switches::kGpuProcess) {
-     tracing::InitTracingPostFeatureList(/*enable_consumer=*/false,
-                                         /*will_trace_thread_restart=*/true);
-@@ -741,7 +758,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+     if (process_type == switches::kGpuProcess) {
+       tracing::InitTracingPostFeatureList(/*enable_consumer=*/false,
+                                           /*will_trace_thread_restart=*/true);
+@@ -732,7 +749,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      base::HangWatcher::CreateHangWatcherInstance();
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
@@ -90,8 +90,13 @@
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -859,11 +876,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -848,13 +865,15 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+   g_fds->Set(kTraceOutputSharedMemoryDescriptor,
+              kTraceOutputSharedMemoryDescriptor +
                   base::GlobalDescriptors::kBaseDescriptor);
++  g_fds->Set(kPseudonymizationSaltDescriptor,
++             kPseudonymizationSaltDescriptor +
++                 base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OPENBSD)
@@ -104,7 +109,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1015,7 +1031,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1010,7 +1029,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
      // SeatbeltExecServer.
      CHECK(sandbox::Seatbelt::IsSandboxed());
    }
@@ -113,7 +118,7 @@
    // In sandboxed processes and zygotes, certain resource should be pre-warmed
    // as they cannot be initialized under a sandbox. In addition, loading these
    // resources in zygotes (including the unsandboxed zygote) allows them to be
-@@ -1025,10 +1041,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1020,10 +1039,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
@@ -136,7 +141,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1130,6 +1158,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1140,6 +1171,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

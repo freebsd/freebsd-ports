@@ -1,0 +1,8 @@
+Syft is a CLI tool and library for generating a Software Bill of Materials
+(SBOM) from container images and filesystems.
+
+It supports multiple SBOM formats including CycloneDX and SPDX and can scan
+containers, directories, and archives to identify installed packages.
+
+Syft is developed by Anchore and is commonly used in software supply-chain
+security workflows.

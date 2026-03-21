@@ -1,15 +1,15 @@
---- meson.build.orig	2024-03-05 18:09:52 UTC
+--- meson.build.orig	2026-03-10 10:57:12 UTC
 +++ meson.build
-@@ -7,7 +7,7 @@ python = import('python')
- gnome = import('gnome')
- python = import('python')
+@@ -13,7 +13,7 @@ endif
+   required_python_modules += ['parameterized']
+ endif
  
--python3 = python.find_installation('python3', modules: ['pygments'])
-+python3 = python.find_installation(python.find_installation().full_path(), modules: ['pygments'])
+-python3 = python.find_installation('python3', modules: required_python_modules)
++python3 = python.find_installation(python.find_installation().full_path(), modules: required_python_modules)
  
  # Paths
  srcdir = meson.current_source_dir()
-@@ -134,7 +134,7 @@ configure_file(
+@@ -140,7 +140,7 @@ configure_file(
    output: 'gtk-doc.pc',
    configuration: gtkdoc_pc,
    install: true,

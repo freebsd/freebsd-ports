@@ -1,7 +1,8 @@
 PORTNAME=	mpfi
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	https://gforge.inria.fr/frs/download.php/file/38111/
+MASTER_SITES=	https://perso.ens-lyon.fr/nathalie.revol/softwares/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Multiple Precision Floating-point Interval library
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	makeinfo:print/texinfo
 LIB_DEPENDS=	libgmp.so:math/gmp		\
 		libmpfr.so:math/mpfr
 
-USES=		autoreconf libtool localbase
+USES=		libtool localbase tar:bz2
 
 INFO=		${PORTNAME}
 

@@ -1,8 +1,8 @@
---- source/preferences.pas.orig	2026-01-30 17:33:07 UTC
+--- source/preferences.pas.orig	2026-03-10 16:34:29 UTC
 +++ source/preferences.pas
 @@ -15,7 +15,11 @@ uses
    SynEdit, laz.VirtualTrees, SynEditKeyCmds, ActnList, Menus,
-   dbstructures, RegExpr, EditBtn, LCLType, StrUtils,
+   dbstructures, RegExpr, EditBtn, LCLType, StrUtils, SpinEx,
    extra_controls, reformatter, Buttons, ColorBox, LCLProc, LCLIntf, lazaruscompat, FileUtil,
 -  vktable, generic_types;
 +  vktable, generic_types
@@ -29,16 +29,15 @@
  procedure TfrmPreferences.SQLFontChange(Sender: TObject);
  var
    AttriIdx: Integer;
--  Attri: TSynHighlighterAttributes;
 +{$IFDEF CPUAARCH64 AND $IFDEF FREEBSD}
 +  Attri: TLazEditTextAttribute;
 +{$ELSE}
-+   Attri: TSynHighlighterAttributes;
+   Attri: TSynHighlighterAttributes;
 +{$ENDIF}
    Foreground, Background: TColor;
+   FontStyle: Integer;
  begin
-   if comboSQLFontName.ItemIndex > -1 then
-@@ -890,8 +902,13 @@ begin
+@@ -894,8 +906,13 @@ begin
    // Color preset selected
    ColorScheme := AppColorSchemes[comboEditorColorsPreset.ItemIndex];
    for j:=0 to SynSQLSynSQLSample.AttrCount - 1 do begin
@@ -52,7 +51,7 @@
    end;
    SynMemoSQLSample.LineHighlightColor.Background := ColorScheme.ActiveLineBackground;
    SynMemoSQLSample.BracketMatchColor.Foreground := ColorScheme.MatchingBraceForeground;
-@@ -952,7 +969,11 @@ var
+@@ -956,7 +973,11 @@ var
  procedure TfrmPreferences.comboSQLColElementChange(Sender: TObject);
  var
    AttriIdx: Integer;
@@ -64,7 +63,7 @@
    Foreground, Background: TColor;
  begin
    AttriIdx := comboSQLColElement.ItemIndex;
-@@ -997,7 +1018,11 @@ var
+@@ -1001,7 +1022,11 @@ var
  procedure TfrmPreferences.SynMemoSQLSampleClick(Sender: TObject);
  var
    Token: String;

@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/web_app.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/web_applications/web_app.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/web_applications/web_app.cc
 @@ -77,7 +77,7 @@
  #include "url/origin.h"
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -755,7 +755,7 @@ void WebApp::SetCurrentOsIntegrationStates(
+@@ -777,7 +777,7 @@ void WebApp::SetCurrentOsIntegrationStates(
  void WebApp::SetIsolationData(IsolationData isolation_data) {
    CHECK(manifest_id_.is_valid()
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

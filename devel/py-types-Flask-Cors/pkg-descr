@@ -1,0 +1,4 @@
+types-Flask-Cors is typing stubs for Flask-Cors.
+
+This package provides type stubs for the Flask-Cors library, which enables
+CORS support for Flask applications.

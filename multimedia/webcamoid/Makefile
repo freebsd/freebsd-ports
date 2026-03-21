@@ -41,4 +41,22 @@ QMAKE_ARGS=	INSTALLQMLDIR=${QT_QMLDIR} \
 		LIBDIR=${PREFIX}/lib \
 		MANDIR=${PREFIX}/man
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# attempt to fix build on i386
+.if ${ARCH} == "i386"
+CFLAGS+=	-mmmx
+CXXFLAGS+=	-mmmx
+.endif
+
+# Intel SIMD instructions are only supported on amd64 and i386
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_FILES+=	lib/qt/plugins/avkys/libSimdCore_avx.so \
+		lib/qt/plugins/avkys/libSimdCore_avx2.so \
+		lib/qt/plugins/avkys/libSimdCore_mmx.so \
+		lib/qt/plugins/avkys/libSimdCore_sse.so \
+		lib/qt/plugins/avkys/libSimdCore_sse2.so \
+		lib/qt/plugins/avkys/libSimdCore_sse4_1.so
+.endif
+
+.include <bsd.port.post.mk>
