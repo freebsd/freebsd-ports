@@ -1,4 +1,4 @@
---- misc/Makefile.in.orig	2024-05-21 02:52:47 UTC
+--- misc/Makefile.in.orig	2026-03-06 17:17:36 UTC
 +++ misc/Makefile.in
 @@ -31,24 +31,24 @@ MKDIR_P = @MKDIR_P@
  @BLKID_CMT@BLKID_STATIC= blkid.static
@@ -50,7 +50,7 @@
  		>  default_profile.c
  findsuper: findsuper.o
  	$(E) "	LD $@"
-@@ -624,34 +624,9 @@ install: all $(SMANPAGES) $(UMANPAGES) installdirs
+@@ -625,34 +625,9 @@ install: all $(SMANPAGES) $(UMANPAGES) installdirs
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done

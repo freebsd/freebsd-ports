@@ -2,7 +2,7 @@
 // remove the #define _XOPEN_SOURCE 600
 // It would hide all non-POSIX declarations, including SIGINFO.
 
---- e2fsck/unix.c.orig	2024-05-21 02:52:47 UTC
+--- e2fsck/unix.c.orig	2026-03-06 17:17:36 UTC
 +++ e2fsck/unix.c
 @@ -9,8 +9,6 @@
   * %End-Header%
@@ -22,7 +22,7 @@
  #endif
  #ifdef HAVE_SYS_TYPES_H
  #include <sys/types.h>
-@@ -608,6 +606,24 @@ static int e2fsck_update_progress(e2fsck_t ctx, int pa
+@@ -612,6 +610,24 @@ static int e2fsck_update_progress(e2fsck_t ctx, int pa
  	return 0;
  }
  
@@ -47,7 +47,7 @@
  #define PATH_SET "PATH=/sbin"
  
  /*
-@@ -641,6 +657,17 @@ static void signal_progress_on(int sig EXT2FS_ATTR((un
+@@ -645,6 +661,17 @@ static void signal_progress_on(int sig EXT2FS_ATTR((un
  	ctx->progress = e2fsck_update_progress;
  }
  
@@ -65,7 +65,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -1127,6 +1154,10 @@ static errcode_t PRS(int argc, char *argv[], e2fsck_t 
+@@ -1131,6 +1158,10 @@ static errcode_t PRS(int argc, char *argv[], e2fsck_t 
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
