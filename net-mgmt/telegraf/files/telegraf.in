@@ -54,9 +54,9 @@ telegraf_prestart()
         exit 1
     fi
     install -d -o ${telegraf_user} -g ${telegraf_group} -m 750 %%TELEGRAF_LOGDIR%%
-    if ! %%PREFIX%%/bin/${name} --test ${telegraf_options} > /dev/null 2>&1; then
-        echo WARNING: failing to start ${name} ${telegraf_options}
-        echo Try running ${name} --test ${telegraf_options}
+    if ! %%PREFIX%%/bin/${name} config check ${telegraf_options} > /dev/null 2>&1; then
+        echo WARNING: invalid configuration to start ${name} ${telegraf_options}
+        echo Try running ${name} config check ${telegraf_options}
         exit 1
     fi
 }
