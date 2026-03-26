@@ -34,11 +34,12 @@ load_rc_config $name
 : ${telegraf_flags:="--quiet"}
 : ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
 : ${telegraf_confdir:=""}
-: ${telegraf_options:="${telegraf_flags} --config=${telegraf_conf}"}
 
+: ${telegraf_configuration_options:="--config=${telegraf_conf}"}
 if [ -n "${telegraf_confdir}" ]; then
-	telegraf_options="${telegraf_options} --config-directory=${telegraf_confdir}"
+	telegraf_configuration_options="${telegraf_configuration_options} --config-directory=${telegraf_confdir}"
 fi
+: ${telegraf_options:="${telegraf_flags} ${telegraf_configuration_options}"}
 
 logfile="%%TELEGRAF_LOGDIR%%/${name}.log"
 pidfile="/var/run/${name}.pid"
@@ -54,9 +55,9 @@ telegraf_prestart()
         exit 1
     fi
     install -d -o ${telegraf_user} -g ${telegraf_group} -m 750 %%TELEGRAF_LOGDIR%%
-    if ! %%PREFIX%%/bin/${name} config check ${telegraf_options} > /dev/null 2>&1; then
-        echo WARNING: invalid configuration to start ${name} ${telegraf_options}
-        echo Try running ${name} config check ${telegraf_options}
+    if ! %%PREFIX%%/bin/${name} config check ${telegraf_configuration_options} > /dev/null 2>&1; then
+        echo WARNING: invalid configuration to start ${name} ${telegraf_configuration_options}
+        echo Try running ${name} config check ${telegraf_configuration_options}
         exit 1
     fi
 }
