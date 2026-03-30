@@ -512,6 +512,7 @@
     SUBDIR += hid-tools
     SUBDIR += highlnk
     SUBDIR += hilite
+    SUBDIR += hl
     SUBDIR += host-setup
     SUBDIR += hostctl
     SUBDIR += hourglass
