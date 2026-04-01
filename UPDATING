@@ -24,6 +24,15 @@ you update your ports collection, before attempting any port upgrades.
   Users who require the rrsync script must install Python separately,
   as indicated in the install message.
 
+20260401:
+  AFFECTS: users of security/openvpn
+  AUTHOR: mandree@FreeBSD.org
+
+  The openvpn 2.7 port update no longer installs the openvpn-client.up
+  and openvpn-client.down scripts into libexec/, but instead a
+  dns-updown script into libexec/openvpn/.
+  Review your configuration, and the openvpn man page for --dns-updown.
+
 20260329:
   AFFECTS: users of java/openjdk25 and java/openjdk26 with the jre flavor
   AUTHOR: jrm@FreeBSD.org

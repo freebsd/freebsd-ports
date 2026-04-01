@@ -4,12 +4,13 @@
 Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
 startup. See %%PREFIX%%/etc/rc.d/openvpn for details.
 
-Connect to VPN server as a client with this command to include
-the client.up/down scripts in the initialization:
+Connect to VPN server as a client with this command to include the
+%%PREFIX%%/libexec/openvpn/dns-updown script in the initialization:
 openvpn-client <spec>.ovpn
 
 For compatibility notes when interoperating with older OpenVPN
-versions, please see <http://openvpn.net/relnotes.html>
+versions, please see online documentation at
+<https://github.com/OpenVPN/openvpn/blob/release/2.7/Changes.rst>
 
 Note that OpenVPN does not officially support LibreSSL.
 
@@ -29,6 +30,16 @@ when an unprivileged user account is desired.
 
 It is advisable to review existing configuration files and
 to consider adding/changing user openvpn and group openvpn.
+
+For compatibility notes when interoperating with older OpenVPN
+versions, please see online documentation at
+<https://github.com/OpenVPN/openvpn/blob/release/2.7/Changes.rst>
+
+Note that the 2.7 version of the port replaced the
+libexec/openvpn-client.down and .up scripts with a shared
+%%PREFIX%%/libexec/openvpn/dns-updown script
+(the sbin/openvpn-client script has been updated accordingly).
+
 EOM
 }
 ]
