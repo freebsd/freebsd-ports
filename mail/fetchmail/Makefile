@@ -1,5 +1,5 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.6.1
+DISTVERSION=	6.6.3
 PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
@@ -13,7 +13,7 @@ WWW=		https://www.fetchmail.info/
 LICENSE=	GPLv2+
 
 .if empty(MASTERDIR)
-USES=		cpe gmake pkgconfig tar:xz
+USES=		cpe gmake localbase:ldflags pkgconfig tar:xz
 IGNORE_SSL=	libressl libressl-devel
 IGNORE_SSL_REASON=	incompatible license/no GPLv2 clause 2b exception for LibreSSL
 # The Free Software Foundation asserts that a GPL v2 clause 2b exception is
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--enable-SDPS \
 
 # -Wl,--as-needed suppresses unneeded library references,
 # for instance, libcom_err.so on GSSAPI_NONE builds:
-LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed
 
 SUB_FILES=	pkg-message
 USERS=		${PORTNAME}
@@ -105,13 +105,12 @@ post-install-DOCS-on:
 
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPIE} && ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD
 . if ${OSVERSION} >= 1400072
 LIB_DEPENDS+=	libopie.so:security/opie	# moved to port (from base in 13.X)
-CPPFLAGS+=	-I${LOCALBASE}/include
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
