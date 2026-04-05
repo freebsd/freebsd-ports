@@ -9,7 +9,7 @@ lib/cmake/libaec/libaec_static-targets.cmake
 lib/libaec.a
 lib/libaec.so
 lib/libaec.so.0
-lib/libaec.so.0.1.5
+lib/libaec.so.0.1.6
 lib/libsz.a
 lib/libsz.so
 lib/libsz.so.2

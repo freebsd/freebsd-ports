@@ -1,12 +1,12 @@
 PORTNAME=	libaec
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	science
-MASTER_SITES=	https://github.com/MathisRosenhauer/libaec/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adaptive entropy coding library
-WWW=		https://gitlab.dkrz.de/k202009/libaec \
-		https://github.com/MathisRosenhauer/libaec
+WWW=		https://gitlab.dkrz.de/dkrz-sw/libaec \
+		https://github.com/Deutsches-Klimarechenzentrum/libaec
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
