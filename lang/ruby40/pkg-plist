@@ -2815,9 +2815,11 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/bundle_config_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/bundle_update_bundler_version-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/bundler_config_file-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/bundler_global_config_file-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/bundler_local_config_file-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/bundler_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/cdesc-BundlerVersionFinder.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/gemfile_path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/lockfile_contents-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/lockfile_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/prioritize%21-c.ri
@@ -4404,6 +4406,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_in_unresolved-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_in_unresolved_tree-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_inactive_by_path-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_unloaded_by_path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/for_cache-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/from_yaml-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/gems_dir-i.ri
@@ -4488,6 +4491,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_array_attributes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_attribute_present-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_authors_field-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_executable-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_for_resolution-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_lazy_metadata-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_licenses-i.ri
@@ -4521,6 +4525,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_all_by_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_by_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_inactive_by_path-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_unloaded_by_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/from_path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/installed_stubs-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/latest_spec_for-i.ri
