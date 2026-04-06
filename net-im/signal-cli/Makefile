@@ -1,7 +1,6 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.20
-PORTREVISION=	1
+DISTVERSION=	0.14.1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:jars
@@ -22,7 +21,7 @@ TEST_DEPENDS=		qrencode:graphics/libqrencode
 USES=		gmake java shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	AsamK
-JAVA_VERSION=	21+
+JAVA_VERSION=	25+
 USE_RC_SUBR=	signal_cli
 SHEBANG_FILES=	bin/${PORTNAME}
 SHEBANG_LANG=	sh
@@ -55,6 +54,9 @@ post-extract:
 	zip -d ${WRKSRC}/lib/libsignal-client-*.jar libsignal_jni_amd64.so
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/signal_cli \
+		${STAGEDIR}${PREFIX}/etc/rc.d/
 	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} \
 		${STAGEDIR}${DATADIR}/bin/${PORTNAME}
