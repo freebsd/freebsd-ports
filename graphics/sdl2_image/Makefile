@@ -1,7 +1,6 @@
 PORTNAME=	sdl2_image
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	2.8.8
-PORTREVISION=	1
+DISTVERSION=	2.8.12
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -48,7 +47,6 @@ TEST_CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 TEST_LIB_DEPENDS=	libunwind.so:devel/libunwind
 TEST_TEST_TARGET=	test
 TEST_IMPLIES=		PNG JPEG  # does not build otherwise
-TEST_BROKEN=		does not build  # XXX: probably devel/sdl20 problem
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CMAKE_BOOL=	SDL2IMAGE_WEBP
