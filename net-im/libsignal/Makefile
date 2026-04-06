@@ -1,7 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.84.0
-PORTREVISION=	5
+DISTVERSION=	0.87.5
 CATEGORIES=	net-im java
 
 MAINTAINER=	jaap.aarts1@gmail.com
@@ -26,23 +25,23 @@ USE_LDCONFIG=	yes
 # git submodule update --init --recursive
 # the hash for boringssl and fips should be printed on screen
 # or browse https://github.com/signalapp/boring/tree/signal-v4.15.0/boring-sys/deps (with the correct tag)
-GH_TUPLE=	google:boringssl:44b3df6f03d85c901767250329c571db405122d5:boringssl \
-		google:boringssl:853ca1ea1168dff08011e5d42d94609cc0ca2e27:boringssl_fips
+GH_TUPLE=	google:boringssl:91a66a59b6c1435120ff83e245d7719411294386:boringssl \
 
 CARGO_BUILD_ARGS=	--package libsignal-jni --package libsignal-ffi
 MAKE_ENV=		CARGO_PROFILE_RELEASE_LTO=thin \
 			OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 			OPENSSL_LIB_DIR=${OPENSSLLIB} \
 			RUSTC_BOOTSTRAP=aes,polyval
-PLIST_FILES=		lib/libsignal_jni.so
+PLIST_FILES=		lib/libsignal_ffi.a lib/libsignal_jni.so
 
 .include <bsd.port.options.mk>
 
 post-extract:
-	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.18.0/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.18.0/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-91a66a59b6c1435120ff83e245d7719411294386/* ${WRKDIR}/boring-signal-v5.0.2/boring-sys/deps/boringssl
 
 do-install:
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/libsignal_ffi.a \
+		${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libsignal_jni.so \
 		${STAGEDIR}${PREFIX}/lib/
 
