@@ -1,6 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.0
+DISTVERSION=	4.7.0
 CATEGORIES=	audio
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
@@ -19,7 +19,7 @@ nox11_CONFLICTS_INSTALL=	baresip
 
 USES=		cmake localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
-GH_TUPLE=	baresip:baresip-apps:v4.6.0:e/baresip-apps
+GH_TUPLE=	baresip:baresip-apps:v4.7.0:e/baresip-apps
 PORTDOCS=	CONTRIBUTING.md ChangeLog THANKS
 
 OPTIONS_DEFINE=		AAC ALSA AMR AV1 AVCODEC AVFILTER AVFORMAT CODEC2 DBUS \
