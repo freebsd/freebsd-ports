@@ -1,14 +1,14 @@
---- src/xdp-app-info-flatpak.c.orig	2025-02-19 15:48:35 UTC
+--- src/xdp-app-info-flatpak.c.orig	2026-06-17 16:46:28 UTC
 +++ src/xdp-app-info-flatpak.c
-@@ -25,6 +25,7 @@
+@@ -27,6 +27,7 @@
  
  #include <errno.h>
  #include <fcntl.h>
 +#include <sys/mount.h>
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -643,6 +644,10 @@ open_flatpak_info (int      pid,
+ 
+ #include <json-glib/json-glib.h>
+ 
+@@ -645,6 +646,10 @@ open_flatpak_info (int      pid,
  open_flatpak_info (int      pid,
                     GError **error)
  {
