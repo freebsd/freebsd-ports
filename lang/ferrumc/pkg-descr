@@ -1,5 +1,3 @@
 Ferrum-language is a systems programming language with C syntax and
 compile-time memory safety via a borrow checker and ownership model.
 Compiled to native code through LLVM 18.
-
-WWW: https://ferrum-language.github.io/Ferrum/
