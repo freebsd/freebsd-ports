@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	5-postgresql
 
