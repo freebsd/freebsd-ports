@@ -1,5 +1,5 @@
 PORTNAME=	copyq
-DISTVERSION=	14.0.0
+DISTVERSION=	15.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 DISTNAME=	Copyq-${DISTVERSION}
@@ -10,8 +10,6 @@ WWW=		https://github.com/hluk/CopyQ
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake gl kde:6 pkgconfig qt:6 xorg
 USE_GL=		opengl

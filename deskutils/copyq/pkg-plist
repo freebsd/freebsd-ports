@@ -20,6 +20,7 @@ share/bash-completion/completions/copyq
 %%DATADIR%%/themes/nord.ini
 %%DATADIR%%/themes/nord_light.ini
 %%DATADIR%%/themes/notification.css
+%%DATADIR%%/themes/onedark.ini
 %%DATADIR%%/themes/paper.ini
 %%DATADIR%%/themes/simple.ini
 %%DATADIR%%/themes/solarized-dark.ini
