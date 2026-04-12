@@ -6,7 +6,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ferrum-language compiler with compile-time memory safety
 WWW=		https://ferrum-language.github.io/Ferrum/
 
-LICENSE=	MIT
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz
