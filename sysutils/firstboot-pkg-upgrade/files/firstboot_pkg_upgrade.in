@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# KEYWORD: firstboot
+# PROVIDE: firstboot_pkg_upgrade
+# REQUIRE: syslogd NETWORKING
+# BEFORE: LOGIN
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf (in the
+# disk image, since this only runs on the first boot) to enable this:
+#
+# firstboot_pkg_upgrade_enable="YES"
+#
+# By default this upgrades all packages, to limit this to a specific
+# repo, write it in firstboot_pkg_upgrade_repos, e.g.,
+#
+# firstboot_pkg_upgrade_repos="FreeBSD-base FreeBSD-ports"
+#
+# Note that release engineering only provides base system updates for
+# *BETA*, *RC*, and *RELEASE* systems.
+
+. /etc/rc.subr
+
+: ${firstboot_pkg_upgrade_enable:="NO"}
+
+name="firstboot_pkg_upgrade"
+rcvar=firstboot_pkg_upgrade_enable
+start_cmd="firstboot_pkg_upgrade_run | logger -s -t pkg"
+stop_cmd=":"
+
+firstboot_pkg_upgrade_run()
+{
+	pkg -N > /dev/null 2>&1 || pkg bootstrap -y
+	pkg update
+
+	state_orig=`pkg info | sha256`
+	repo_args=""
+
+	for repo in ${firstboot_pkg_upgrade_repos}; do
+		repo_args="${repo_args} -r ${repo}"
+	done
+
+	env AUTOCLEAN=ON pkg upgrade ${repo_args} -y
+
+	state_new=`pkg info | sha256`
+
+	case "`uname -r`" in
+	*-BETA* | *-RC* | *-RELEASE*)
+		if [ $state_orig != $state_new ]; then
+			echo "Requesting reboot after installing updates."
+			touch ${firstboot_sentinel}-reboot
+		else
+			return 0
+		;;
+	*)
+		return 0
+		;;
+	esac
+}
+
+load_rc_config $name
+run_rc_command "$1"
+
