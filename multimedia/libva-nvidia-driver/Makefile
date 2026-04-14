@@ -1,6 +1,6 @@
 PORTNAME=	libva-nvidia-driver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16
+DISTVERSION=	0.0.17
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
