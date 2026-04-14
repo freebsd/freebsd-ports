@@ -22,6 +22,7 @@ libexec/poudriere/setsid
 libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
+libexec/poudriere/write_atomic
 %%BASH%%share/bash-completion/completions/poudriere
 share/man/man8/poudriere-audit.8.gz
 share/man/man8/poudriere-bulk.8.gz
