@@ -1,5 +1,5 @@
 CSSC is the GNU Project's replacement for SCCS.  SCCS is a proprietary suite
-of tools which is provided with most commercial versions of Unix.  The purpose
+of tools which is provided with most nonfree versions of Unix.  The purpose
 behind CSSC is to provide a work-alike for SCCS which can be used on the
 various Free versions of Unix.
 

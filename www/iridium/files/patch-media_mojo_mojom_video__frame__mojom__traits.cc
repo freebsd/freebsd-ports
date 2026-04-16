@@ -1,4 +1,4 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2026-03-24 16:59:08 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2026-04-16 10:10:12 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -23,7 +23,7 @@
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
@@ -27,7 +27,7 @@
  // static
  bool StructTraits<
      media::mojom::ColorPlaneLayoutDataView,
-@@ -381,7 +381,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -414,7 +414,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
      frame = media::VideoFrame::WrapTrackingToken(
          format, *metadata.tracking_token, coded_size, visible_rect,
          natural_size, timestamp);

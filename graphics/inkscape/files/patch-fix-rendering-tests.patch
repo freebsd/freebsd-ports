@@ -1,0 +1,30 @@
+From 3ad0be197fe1c2e203a301e11c169915776fc341 Mon Sep 17 00:00:00 2001
+From: Alvin Wong <alvin@alvinhc.com>
+Date: Thu, 4 Dec 2025 18:10:54 +0800
+Subject: [PATCH] Fix rendering_tests for newer ImageMagick
+
+The output of `-match AE` was changed in ImageMagick 7.1.1.44.
+
+Ref:
+* https://github.com/ImageMagick/ImageMagick/issues/7990
+* https://github.com/ImageMagick/ImageMagick/commit/d85a7583f9a96bf031941c24d774b71529de3ce0
+---
+ testfiles/rendering_tests/test.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git testfiles/rendering_tests/test.sh testfiles/rendering_tests/test.sh
+index 9d44a22787..a6398dd621 100755
+--- testfiles/rendering_tests/test.sh
++++ testfiles/rendering_tests/test.sh
+@@ -36,7 +36,7 @@ perform_test()
+     COMPARE_OUTPUT="$(compare -metric "$METRIC" "${TESTNAME}${SUFFIX}.png" "${EXPECTED}${SUFFIX}.png" "${TESTNAME}-compare${SUFFIX}.png" 2>&1)"
+ 
+     if [ "$FUZZ" = "" ]; then
+-        if [ "$COMPARE_OUTPUT" = 0 ]; then
++        if [ "$COMPARE_OUTPUT" = 0 ] || [ "$COMPARE_OUTPUT" = "0 (0)" ]; then
+             echo "${TESTNAME}${SUFFIX}" "PASSED; absolute difference is exactly zero."
+             rm "${TESTNAME}${SUFFIX}.png" "${TESTNAME}-compare${SUFFIX}.png"
+         else
+-- 
+GitLab
+

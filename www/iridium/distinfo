@@ -1,6 +1,6 @@
-TIMESTAMP = 1776255158
-SHA256 (iridium-browser-2026.04.147.tar.xz) = 5e5cd3c84165da2206e4feeff1fdac8d4ae537d2e8b97935dd916c656102f2b1
-SIZE (iridium-browser-2026.04.147.tar.xz) = 1284503020
+TIMESTAMP = 1776334302
+SHA256 (iridium-browser-2026.04.147.1.tar.xz) = f21eb1731d2485d08046f6b8e3b8d78f19966807e7b7d82490ea2f5a4765deec
+SIZE (iridium-browser-2026.04.147.1.tar.xz) = 1284502288
 SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9242315ac54ce2d7c92
 SIZE (pulseaudio-16.1.tar.gz) = 2763111
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
