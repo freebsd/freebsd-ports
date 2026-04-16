@@ -1,13 +1,13 @@
---- Makefile.orig	2026-02-18 15:31:31 UTC
+--- Makefile.orig	2026-04-15 10:01:25 UTC
 +++ Makefile
 @@ -5,11 +5,15 @@ BINDIR = $(PREFIX)/bin
  PREFIX ?= /usr/local
  BINDIR = $(PREFIX)/bin
  
 -CC = gcc
--CFLAGS = -Wall -Wextra -O3 -ffast-math -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
+-CFLAGS = -Wall -Wextra -O3 -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
 +CC ?= gcc
-+CFLAGS ?= -Wall -Wextra -O3 -ffast-math -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
++CFLAGS ?= -Wall -Wextra -O3 -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
           -flto -funroll-loops -finline-functions
 -LDFLAGS = -pthread -flto
 +LDFLAGS += -pthread -flto
