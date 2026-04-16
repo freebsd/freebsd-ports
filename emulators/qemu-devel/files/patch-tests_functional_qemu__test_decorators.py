@@ -1,4 +1,4 @@
---- tests/functional/qemu_test/decorators.py.orig	2025-11-25 22:22:39 UTC
+--- tests/functional/qemu_test/decorators.py.orig	2026-01-30 13:52:59 UTC
 +++ tests/functional/qemu_test/decorators.py
 @@ -6,6 +6,7 @@ import resource
  import os
@@ -8,7 +8,7 @@
  from unittest import skipIf, skipUnless
  
  from .cmd import which
-@@ -165,3 +166,24 @@ def skipLockedMemoryTest(locked_memory):
+@@ -177,3 +178,24 @@ def skipLockedMemoryTest(locked_memory):
          ulimit_memory == resource.RLIM_INFINITY or ulimit_memory >= locked_memory * 1024,
          f'Test required {locked_memory} kB of available locked memory',
      )

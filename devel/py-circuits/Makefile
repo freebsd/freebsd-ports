@@ -1,13 +1,12 @@
 PORTNAME=	circuits
-PORTVERSION=	3.2
-PORTREVISION=	1
+DISTVERSION=	3.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Asynchronous Component-based Event Application Framework
-WWW=		https://bitbucket.org/prologic/circuits/
+WWW=		http://circuitsframework.com
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

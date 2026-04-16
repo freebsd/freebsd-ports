@@ -1,5 +1,5 @@
 PORTNAME=	cg3
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/GrammarSoft/${PORTNAME}/releases/download/v${DISTVERSION}/
 
