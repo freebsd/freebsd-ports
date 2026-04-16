@@ -1,6 +1,7 @@
 PORTNAME=	dps8m
 DISTVERSIONPREFIX=	R
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	gspurki@gmail.com
@@ -20,17 +21,21 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		gmake
 USE_GITLAB=	yes
 
+MAKEFILE=	GNUmakefile
+MAKE_ARGS=	V=1 NO_LTO=1
+
 CFLAGS_powerpc64=	-Datomic_testandset_64=atomic_testandset_long
 CFLAGS_powerpc64le=	-Datomic_testandset_64=atomic_testandset_long
 CFLAGS_riscv64=		-Datomic_testandset_64=atomic_testandset_long
-
-MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/dps8 \
 		bin/prt2pdf \
 		bin/punutil
 
-MAKE_ARGS=	V=1 NO_LTO=1
+OPTIONS_DEFINE=	GCC
+OPTIONS_DEFAULT=
+GCC_DESC=	Build with GCC 14 for optimal performance
+GCC_USE=	GCC=14
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dps8/dps8 ${STAGEDIR}${PREFIX}/bin
