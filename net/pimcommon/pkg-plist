@@ -3,8 +3,6 @@ include/KPim6/PimCommon/PimCommon/AbstractGenericPluginInterface
 include/KPim6/PimCommon/PimCommon/BroadcastStatus
 include/KPim6/PimCommon/PimCommon/ConfigureImmutableWidgetUtils
 include/KPim6/PimCommon/PimCommon/ConfigurePluginDialog
-include/KPim6/PimCommon/PimCommon/ConfigurePluginsListWidget
-include/KPim6/PimCommon/PimCommon/ConfigurePluginsTreeWidgetDelegate
 include/KPim6/PimCommon/PimCommon/ConfigurePluginsWidget
 include/KPim6/PimCommon/PimCommon/CustomLogWidget
 include/KPim6/PimCommon/PimCommon/CustomToolsPlugin
@@ -33,8 +31,6 @@ include/KPim6/PimCommon/pimcommon/abstractgenericplugininterface.h
 include/KPim6/PimCommon/pimcommon/broadcaststatus.h
 include/KPim6/PimCommon/pimcommon/configureimmutablewidgetutils.h
 include/KPim6/PimCommon/pimcommon/configureplugindialog.h
-include/KPim6/PimCommon/pimcommon/configurepluginslistwidget.h
-include/KPim6/PimCommon/pimcommon/configurepluginstreewidgetdelegate.h
 include/KPim6/PimCommon/pimcommon/configurepluginswidget.h
 include/KPim6/PimCommon/pimcommon/customlogwidget.h
 include/KPim6/PimCommon/pimcommon/customtoolsplugin.h

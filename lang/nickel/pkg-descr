@@ -1,0 +1,16 @@
+Nickel is the universal configuration language. Nickel is
+configuration templating, but done right. Modular, correct
+and concise.
+
+Its purpose is to automate the generation of static
+configuration files - think JSON, YAML, XML, or your
+favorite data representation language - that are then fed
+to another system.
+
+Nickel's salient traits are:
+
+* Composable code: functions are first-class citizens.
+* Composable data: records can be composed through the
+  merge operator.
+* Typed, but only when it helps: a gradual type system.
+* Design by contract: contracts act like schemas.

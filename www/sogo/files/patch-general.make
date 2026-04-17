@@ -1,6 +1,6 @@
---- general.make.orig	2020-12-24 01:44:13.874889000 -0500
-+++ general.make	2020-12-24 01:44:34.714359000 -0500
-@@ -16,6 +16,7 @@
+--- general.make.orig	2026-03-30 08:52:40 UTC
++++ general.make
+@@ -16,6 +16,7 @@ ADDITIONAL_OBJCFLAGS=-O0
  ADDITIONAL_OBJCFLAGS=-O2
  ifeq ($(debug),yes)
  ADDITIONAL_OBJCFLAGS=-O0
@@ -8,7 +8,7 @@
  else
  ADDITIONAL_OBJCFLAGS=-Wuninitialized
  endif
-@@ -23,5 +24,3 @@
+@@ -23,5 +24,3 @@ endif
  # information plus the compiler flags used; that can
  # be afterwards read with:
  # readelf -p .GCC.command.line /path/to/elf_file

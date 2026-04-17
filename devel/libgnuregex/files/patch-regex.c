@@ -8,3 +8,11 @@
  
  #include <regex.h>
  #include "regex_internal.h"
+@@ -70,6 +71,7 @@
+ #include "regex_internal.c"
+ #include "regcomp.c"
+ #include "regexec.c"
++#include "malloc/dynarray_resize.c"
+ 
+ /* Binary backward compatibility.  */
+ #if _LIBC

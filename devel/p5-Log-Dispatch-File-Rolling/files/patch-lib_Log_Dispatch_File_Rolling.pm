@@ -1,5 +1,14 @@
---- lib/Log/Dispatch/File/Rolling.pm.orig	2017-11-09 20:22:14 UTC
+--- lib/Log/Dispatch/File/Rolling.pm.orig	2025-08-11 13:17:33 UTC
 +++ lib/Log/Dispatch/File/Rolling.pm
+@@ -5,7 +5,7 @@ use warnings;
+ use strict;
+ use warnings;
+ 
+-use Log::Dispatch::File '2.37';
++use Log::Dispatch::File 2.37;
+ use Log::Log4perl::DateFormat;
+ use Fcntl ':flock'; # import LOCK_* constants
+ 
 @@ -39,7 +39,8 @@ sub new {
  	my $self = bless {}, $class;
  

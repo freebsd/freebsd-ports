@@ -50,7 +50,6 @@ lib/libKPim6AkonadiSearchXapian.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/akonadi/calendarsearchstore.so
 %%QT_PLUGINDIR%%/pim6/akonadi/contactsearchstore.so
 %%QT_PLUGINDIR%%/pim6/akonadi/emailsearchstore.so
-%%QT_PLUGINDIR%%/pim6/akonadi/notesearchstore.so
 share/akonadi/agents/akonadiindexingagent.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/ast/LC_MESSAGES/akonadi_search.mo

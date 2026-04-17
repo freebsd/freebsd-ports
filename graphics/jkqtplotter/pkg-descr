@@ -1,3 +1,17 @@
-JKQtPlotter is a plotting library for Qt.
-It provides a wide range of plot types, customization options,
-and high performance for scientific and engineering applications.
+JKQtPlotter is an extensive, standalone, C++17 Qt plotter framework
+(library) with no additional dependencies, compatible with Qt5 and Qt6.
+
+It provides a wide range of 2D plot types including:
+- Line, scatter, bar, impulse, and filled curve graphs
+- Statistical plots: box plots, violin plots, histograms
+- Image plots with color mapping, contour plots
+- Mathematical function plots, parametric curves
+- Geometric elements (circles, ellipses, polygons, arrows)
+- Overlay images, regression curves
+
+Other features:
+- Multiple axes with separate coordinate systems
+- Extensive styling and theming support
+- LaTeX-style math rendering (JKQTMathText)
+- High-resolution export to SVG, PDF, PNG
+- Interactive zoom/pan/selection

@@ -358,7 +358,6 @@
     SUBDIR += libid3tag
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
-    SUBDIR += libkcompactdisc
     SUBDIR += libkeyfinder
     SUBDIR += liblastfm
     SUBDIR += liblo

@@ -50,5 +50,5 @@ share/locale/uk/LC_MESSAGES/massif-visualizer.mo
 share/locale/zh_CN/LC_MESSAGES/massif-visualizer.mo
 share/locale/zh_TW/LC_MESSAGES/massif-visualizer.mo
 %%DATADIR%%/icons/hicolor/22x22/actions/shortentemplates.png
-share/metainfo/org.kde.massif-visualizer.appdata.xml
+share/metainfo/org.kde.massif_visualizer.appdata.xml
 share/mime/packages/massif.xml

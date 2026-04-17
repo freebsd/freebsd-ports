@@ -12,8 +12,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libcdda_paranoia.so:audio/cdparanoia \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libKCddb6.so:audio/libkcddb \
-		libKCompactDisc6.so:audio/libkcompactdisc
+		libKCddb6.so:audio/libkcddb
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \

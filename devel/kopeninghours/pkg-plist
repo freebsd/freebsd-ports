@@ -14,7 +14,7 @@ lib/cmake/KOpeningHours/KOpeningHoursTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KOpeningHours/KOpeningHoursTargets.cmake
 lib/libKOpeningHours.so
 lib/libKOpeningHours.so.1
-lib/libKOpeningHours.so.%%SHLIB_VER%%
+lib/libKOpeningHours.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kopeninghours/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kopeninghours/kopeninghoursqmlplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kopeninghours/libkopeninghoursqmlplugin.so

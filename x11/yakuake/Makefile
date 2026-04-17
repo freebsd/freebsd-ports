@@ -11,12 +11,12 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	konsole:x11/konsole
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz xorg
-USE_KDE=	archive attica auth codecs completion config configwidgets \
+USE_KDE=	archive attica auth codecs colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons globalaccel i18n iconthemes \
 		jobwidgets kio newstuff notifications notifyconfig parts \
 		service solid sonnet statusnotifieritem textwidgets wayland \
 		widgetsaddons windowsystem xmlgui \
-		ecm:build
+		ecm:build plasma-wayland-protocols:build
 USE_QT=		base
 USE_XORG=	x11
 

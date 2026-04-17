@@ -1,4 +1,4 @@
---- chrome/browser/ui/tabs/tab_features.cc.orig	2026-03-13 16:54:03 UTC
+--- chrome/browser/ui/tabs/tab_features.cc.orig	2026-03-30 20:35:34 UTC
 +++ chrome/browser/ui/tabs/tab_features.cc
 @@ -96,7 +96,7 @@
  #include "components/contextual_tasks/public/features.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/contextual_tasks/contextual_tasks_tab_visit_tracker.h"
  #include "chrome/browser/wallet/chrome_walletable_pass_client.h"
  #endif
-@@ -461,7 +461,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
+@@ -470,7 +470,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
    task_manager::WebContentsTags::CreateForTabContents(tab.GetContents());
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    inactive_window_mouse_event_controller_ =
        std::make_unique<InactiveWindowMouseEventController>();
  
-@@ -527,7 +527,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
+@@ -536,7 +536,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
    }
  #endif  // BUILDFLAG(ENABLE_GLIC) && !BUILDFLAG(IS_ANDROID)
  

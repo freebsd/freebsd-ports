@@ -1,9 +1,8 @@
 PORTNAME=	cassandra
-DISTVERSION=	4.0.8
-PORTREVISION=	3
+DISTVERSION=	4.1.11
 CATEGORIES=	databases java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${DISTVERSION}/:apache \
-		https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.5.0-4/:maven
+		https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.5.6-7/:maven
 PKGNAMESUFFIX=	4
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:apache \
@@ -31,7 +30,7 @@ SHEBANG_FILES=	bin/cqlsh.py pylib/setup.py
 TEST_TARGET=	test
 CPE_VENDOR=	apache
 
-CONFLICTS=	cassandra3
+CONFLICTS=	cassandra[35]
 
 JAVA_VERSION=	8 11
 JAVA_VENDOR=	openjdk
@@ -49,18 +48,17 @@ REPO_DIR=	${WRKDIR}/repository
 CONFIG_FILES=	cassandra-env.sh \
 		cassandra-jaas.config \
 		cassandra-rackdc.properties \
-		cassandra-topology.properties \
 		cassandra.yaml \
 		commitlog_archiving.properties \
 		hotspot_compiler \
-		logback-tools.xml \
-		logback.xml \
 		jvm8-clients.options \
 		jvm8-server.options \
 		jvm11-clients.options \
 		jvm11-server.options \
 		jvm-clients.options \
-		jvm-server.options
+		jvm-server.options \
+		logback-tools.xml \
+		logback.xml
 
 SCRIPT_FILES=	cassandra \
 		nodetool \
@@ -87,25 +85,11 @@ PORTDOCS=		*
 
 MAVEN_CACHE_FILE=	apache-${PORTNAME}-${DISTVERSION}-repo.tar.xz
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${MAVEN_CACHE_FILE})
-pre-fetch:
-	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	${MKDIR} ${WRKSRC}/.build
-	${MKDIR} ${WRKSRC}/src/java
-	${CP} ${FILESDIR}/maven/build.* ${WRKSRC}
-	${CP} ${FILESDIR}/maven/build-* ${WRKSRC}/.build
-	cd ${WRKSRC} && ${FETCH_ENV} ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocal.repository=${REPO_DIR} ${USEJDK11} resolver-dist-lib
-	cd ${REPO_DIR} && ${FIND} . -type f -name "*.repositories" -a -exec ${SED} -i '' -e '2s,.*,Mon Aug 08 20:40:04 CEST 2022,' {} +
-	cd ${WRKDIR} && ${MTREE_CMD} -cbnSp repository | ${MTREE_CMD} -C | ${SED} \
-		-e 's:time=[0-9.]*:time=0.000000000:' \
-		-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
-		-e 's:flags=.*:flags=none:' \
-		-e 's:^\.:./repository:' \
-		> maven-offline-cache.mtree
-	cd ${WRKDIR} && ${TAR} cJf ${DISTDIR}/${DIST_SUBDIR}/${MAVEN_CACHE_FILE} \
-		@maven-offline-cache.mtree
-	${SHA256} ${WRKDIR}/maven-offline-cache.mtree ${DISTDIR}/${DIST_SUBDIR}/${MAVEN_CACHE_FILE}
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|for interpreter in |for interpreter in ${PYTHON_CMD} |' ${WRKSRC}/bin/cqlsh
+
+post-patch-DOCS-on:
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/doc/Makefile
 
 do-build:
 	@${DO_NADA} # Do nothing: Prevent USE_ANT from running a default build target.
@@ -127,6 +111,8 @@ post-build:
 .for f in ${CONFIG_FILES}
 	@${MV} ${BUILD_DIST_DIR}/conf/${f} ${BUILD_DIST_DIR}/conf/${f}.sample
 .endfor
+	@${MV} ${BUILD_DIST_DIR}/conf/cassandra-topology.properties.example ${BUILD_DIST_DIR}/conf/cassandra-topology.properties.sample
+	@${MV} ${BUILD_DIST_DIR}/conf/metrics-reporter-config-sample.yaml ${BUILD_DIST_DIR}/conf/metrics-reporter-config.yaml.sample
 	@${RM} ${BUILD_DIST_DIR}/lib/licenses/sigar*
 	@${RMDIR} ${BUILD_DIST_DIR}/lib/sigar-bin
 	@${RM} ${BUILD_DIST_DIR}/lib/zstd-jni*
@@ -159,22 +145,37 @@ do-test:
 
 .include <bsd.port.pre.mk>
 
+pre-fetch:
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${MAVEN_CACHE_FILE})
+	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
+	${MKDIR} ${WRKSRC}/.build
+	${MKDIR} ${WRKSRC}/src/java
+	${CP} ${FILESDIR}/maven/build.* ${WRKSRC}
+	${CP} ${FILESDIR}/maven/build-* ${WRKSRC}/.build
+	cd ${WRKSRC} && ${FETCH_ENV} ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocal.repository=${REPO_DIR} ${USEJDK11} resolver-dist-lib
+	cd ${REPO_DIR} && ${FIND} . -type f -name "*.repositories" -a -exec ${SED} -i '' -e '2s,.*,Mon Aug 08 20:40:04 CEST 2022,' {} +
+	cd ${WRKDIR} && ${MTREE_CMD} -cbnSp repository | ${MTREE_CMD} -C | ${SED} \
+		-e 's:time=[0-9.]*:time=0.000000000:' \
+		-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
+		-e 's:flags=.*:flags=none:' \
+		-e 's:^\.:./repository:' \
+		> maven-offline-cache.mtree
+	cd ${WRKDIR} && ${TAR} cJf ${DISTDIR}/${DIST_SUBDIR}/${MAVEN_CACHE_FILE} \
+		@maven-offline-cache.mtree
+	${SHA256} ${WRKDIR}/maven-offline-cache.mtree ${DISTDIR}/${DIST_SUBDIR}/${MAVEN_CACHE_FILE}
+.endif
+
 .if ${JAVA_PORT_VERSION} == 11
 USEJDK11=	-Duse.jdk11=true -Drat.skip=true
 .endif
 
 .if ${ARCH} == amd64
 PLIST_SUB+=		AMD64ONLY=""
-PLIST_SUB+=		I386ONLY="@comment "
-.elif ${ARCH} == i386
-PLIST_SUB+=		AMD64ONLY="@comment "
-PLIST_SUB+=		I386ONLY=""
 .else
 PLIST_SUB+=		AMD64ONLY="@comment "
-PLIST_SUB+=		I386ONLY="@comment "
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64
 ZSTD_DISTFILE=	zstd-jni-${MASTER_SITES:M*\:maven:H:T}-freebsd_${ARCH}.jar:maven
 .else
 ZSTD_DISTFILE=
@@ -182,7 +183,7 @@ ZSTD_DISTFILE=
 
 post-install:
 	${LN} -s ${JAVAJARDIR}/netty.jar ${STAGEDIR}${DATADIR}/lib/netty.jar
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/zstd-jni-${ZSTDJNI_VERSION}-freebsd_${ARCH}.jar ${STAGEDIR}${DATADIR}/lib/
 .endif
 

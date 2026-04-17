@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.12.1
+PORTVERSION=	9.12.2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/([0-9]).*/\1/1}/SAGA%20-%20${PORTVERSION}
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -29,12 +29,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS:=	swig:devel/swig
 
-USES=		cmake compiler:c++17-lang desktop-file-utils \
+USES=		cmake compiler:c++17-lang desktop-file-utils dos2unix \
 		gnome iconv:wchar_t localbase pkgconfig python
+DOS2UNIX_GLOB=	*.cpp *.h *.txt
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	ded80db7a
+GIT_TAGNAME=	39fdd74b1
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h \
 		-DWITH_TOOLS_PDAL:BOOL=TRUE

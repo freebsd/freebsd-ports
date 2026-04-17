@@ -10,6 +10,7 @@ lib/cmake/DolphinVcs/DolphinVcsConfigVersion.cmake
 lib/cmake/DolphinVcs/DolphinVcsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
 lib/kconf_update_bin/dolphin_25.04_update_statusandlocationbarssettings
+lib/kconf_update_bin/dolphin_update_splitviewsettings
 lib/libdolphinprivate.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libdolphinprivate.so.%%SHLIB_SHVER%%
 lib/libdolphinvcs.so

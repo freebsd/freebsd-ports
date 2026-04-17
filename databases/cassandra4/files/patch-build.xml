@@ -1,14 +1,14 @@
---- build.xml.orig	2022-07-12 10:18:13 UTC
+--- build.xml.orig	2026-03-17 23:20:36 UTC
 +++ build.xml
-@@ -31,6 +31,7 @@
-     <property file="build.properties" />
+@@ -32,6 +32,7 @@ -->
      <property file="build.properties.default" />
+     <property file="${user.home}/.ant/build.properties"/>
      <property name="debuglevel" value="source,lines,vars"/>
 +    <property name="pycmd" value="python"/>
  
      <!-- default version and SCM information -->
-     <property name="base.version" value="4.0.5"/>
-@@ -81,7 +82,7 @@
+     <property name="base.version" value="4.1.11"/>
+@@ -93,7 +94,7 @@ -->
      <condition property="version" value="${base.version}">
        <isset property="release"/>
      </condition>
@@ -17,7 +17,7 @@
      <property name="version.properties.dir"
                value="${build.src.resources}/org/apache/cassandra/config/" />
      <property name="final.name" value="${ant.project.name}-${version}"/>
-@@ -288,6 +289,24 @@
+@@ -350,6 +351,24 @@ -->
              <exclude name="**/ant-*.jar"/>
          </fileset>
      </path>
@@ -42,16 +42,7 @@
  
    <macrodef name="create-javadoc">
      <attribute name="destdir"/>
-@@ -297,7 +316,7 @@
-         windowtitle="${ant.project.name} API" classpathref="cassandra.classpath"
-         bottom="Copyright &amp;copy; 2009-2022 The Apache Software Foundation"
-         useexternalfile="yes" encoding="UTF-8" failonerror="false"
--        maxmemory="256m" additionalparam="${jdk11-javadoc-exports}">
-+        maxmemory="512m" additionalparam="${jdk11-javadoc-exports}">
-         <filesets/>
-       </javadoc>
-       <fail message="javadoc failed">
-@@ -438,6 +457,8 @@
+@@ -501,6 +520,8 @@ -->
      <target name="gen-doc" description="Generate documentation" depends="gen-asciidoc,generate-cql-html" unless="ant.gen-doc.skip">
          <exec executable="make" osfamily="unix" dir="${doc.dir}">
              <arg value="html"/>
@@ -60,7 +51,16 @@
          </exec>
      </target>
  
-@@ -896,7 +917,7 @@
+@@ -965,7 +986,7 @@ -->
+     <!--
+         The build target builds all the .class files
+     -->
+-    <target name="build" depends="resolver-retrieve-build,build-project,checkstyle" description="Compile Cassandra classes"/>
++    <target name="build" depends="resolver-retrieve-build,build-project" description="Compile Cassandra classes"/>
+     <target name="_build_unsafe" depends="resolver-retrieve-build,build-project" description="Compile Cassandra classes without checks"/>
+     <target name="codecoverage" depends="jacoco-run,jacoco-report" description="Create code coverage report"/>
+ 
+@@ -986,7 +1007,7 @@ -->
          </javac>
      </target>
  
@@ -69,7 +69,7 @@
              name="build-project">
          <echo message="${ant.project.name}: ${ant.file}"/>
          <!-- Order matters! -->
-@@ -1147,6 +1168,89 @@
+@@ -1339,6 +1360,89 @@ -->
        </copy>
      </target>
  
@@ -157,18 +157,18 @@
 +    </target>
 +    
      <!-- creates release tarballs -->
-     <target name="artifacts" depends="_artifacts-init,gen-doc,sources-jar,javadoc-jar"
+     <target name="artifacts" depends="_artifacts-init,gen-doc,sources-jar"
              description="Create Cassandra release artifacts">
-@@ -1397,7 +1501,7 @@
-           <pathelement path="${java.class.path}"/>
+@@ -1621,7 +1725,7 @@ -->
            <pathelement location="${stress.build.classes}"/>
            <pathelement location="${fqltool.build.classes}"/>
+           <pathelement location="${test.classes}"/>
 -          <path refid="cassandra.classpath.test" />
 +          <path refid="cassandra.classpath.staged" />
-           <pathelement location="${test.classes}"/>
            <pathelement location="${stress.test.classes}"/>
            <pathelement location="${fqltool.test.classes}"/>
-@@ -2089,7 +2193,7 @@
+           <pathelement location="${test.conf}"/>
+@@ -2302,7 +2406,7 @@ -->
    </target>
  
    <!-- ECJ 4.6.1 in standalone mode does not work with JPMS, so we skip this target for Java 11 -->

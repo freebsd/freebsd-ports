@@ -1,5 +1,5 @@
 PORTNAME=	libmicrohttpd
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.4
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -20,7 +20,8 @@ INFO=		libmicrohttpd libmicrohttpd-tutorial
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CONFIGURE_ARGS=	--disable-examples
+CONFIGURE_ARGS=	--disable-examples \
+		--disable-static
 
 OPTIONS_DEFINE=		GNUTLS TESTCURL
 OPTIONS_DEFAULT=	GNUTLS

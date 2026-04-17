@@ -38,7 +38,7 @@ include/adf/adflib.h
 lib/libadf.a
 lib/libadf.so
 lib/libadf.so.3
-lib/libadf.so.3.0.6
+lib/libadf.so.3.0.7
 libdata/pkgconfig/adflib.pc
 %%PORTDOCS%%%%DOCSDIR%%/API/API.txt
 %%PORTDOCS%%%%DOCSDIR%%/API/api_device.html

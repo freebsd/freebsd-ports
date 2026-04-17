@@ -1,9 +1,9 @@
 PORTNAME=		sope
-PORTVERSION=		5.12.4
+PORTVERSION=		5.12.7
 CATEGORIES=		devel gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
-DISTNAME=		SOPE-${PORTVERSION}
 PKGNAMESUFFIX=		-${FLAVOR}
+DISTNAME=		SOPE-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Extensive set of GNUstep web application frameworks

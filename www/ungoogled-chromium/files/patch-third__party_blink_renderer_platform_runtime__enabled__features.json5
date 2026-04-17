@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-04-15 11:25:12 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-04-17 05:46:07 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -377,7 +377,7 @@
          "default": "",
@@ -54,7 +54,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1373,7 +1373,7 @@
+@@ -1365,7 +1365,7 @@
        name: "CSPHashesV1",
        base_feature: "none",
        origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
@@ -63,7 +63,7 @@
        status: "experimental",
        public: true,
      },
-@@ -2019,7 +2019,7 @@
+@@ -2011,7 +2011,7 @@
      {
        name: "DeviceBoundSessionCredentials",
        origin_trial_feature_name: "DeviceBoundSessionCredentials",
@@ -72,7 +72,7 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -2027,7 +2027,7 @@
+@@ -2019,7 +2019,7 @@
      {
        name: "DeviceBoundSessionCredentials2",
        origin_trial_feature_name: "DeviceBoundSessionCredentials2",
@@ -81,7 +81,7 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -2186,7 +2186,7 @@
+@@ -2178,7 +2178,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -90,7 +90,7 @@
        base_feature: "none",
      },
      {
-@@ -2502,7 +2502,7 @@
+@@ -2494,7 +2494,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -99,7 +99,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -5891,7 +5891,7 @@
+@@ -5888,7 +5888,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -108,7 +108,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5982,7 +5982,7 @@
+@@ -5979,7 +5979,7 @@
        status: "experimental",
        origin_trial_feature_name: "UserMediaElement",
        public: true,
@@ -117,7 +117,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
      },
-@@ -6093,7 +6093,7 @@
+@@ -6090,7 +6090,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -126,7 +126,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
      },
-@@ -6106,7 +6106,7 @@
+@@ -6103,7 +6103,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",

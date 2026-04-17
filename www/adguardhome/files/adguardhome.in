@@ -1,11 +1,9 @@
+# cat /usr/local/etc/rc.d/adguardhome
 #!/bin/sh
 
 # PROVIDE: adguardhome
 # REQUIRE: DAEMON NETWORKING
 # KEYWORD: shutdown
-
-# Add the following lines to /etc/rc.conf to enable adguardhome:
-# adguardhome_enable : set to "YES" to enable the daemon, default is "NO"
 
 . /etc/rc.subr
 
@@ -14,59 +12,95 @@ rcvar="${name}_enable"
 
 load_rc_config "$name"
 
+# ----  Default values  ----------------------------------------
 : "${adguardhome_enable:=NO}"
-: "${adguardhome_config:=%%PREFIX%%/etc/AdGuardHome.yaml}"
-: "${adguardhome_user:=%%USER%%}"
-: "${adguardhome_group:=%%GROUP%%}"
+: "${adguardhome_config:=/usr/local/etc/adguardhome/AdGuardHome.yaml}"
+: "${adguardhome_user:=unbound}"      # NOT root! User must exist
+: "${adguardhome_group:=unbound}"
 : "${adguardhome_work_dir:=/var/db/adguardhome}"
 : "${adguardhome_svcj_options:=net_basic}"
-: "${adguardhome_extra:=}"
+: "${adguardhome_extra:=}"                # extra options can be added here
 
-# old values
-: "${adguardhome_config_old:=%%PREFIX%%/bin/AdGuardHome.yaml}"
-: "${adguardhome_work_dir_old:=%%PREFIX%%/bin}"
+# ----  Old location (migration)  ------------------------------
+: "${adguardhome_config_old:=/usr/local/bin/AdGuardHome.yaml}"
+: "${adguardhome_work_dir_old:=/usr/local/bin}"
 
+# ----  Paths for logs and pid files  --------------------------
 logfile="/var/log/${name}.log"
 pidfile="/var/run/${name}.pid"
 
+# ----  The command (without -u – rc.subr will add it)  --------
 command="/usr/sbin/daemon"
-command_args="-H -o $logfile -t $name -P $pidfile %%PREFIX%%/bin/adguardhome -c $adguardhome_config -w $adguardhome_work_dir $adguardhome_extra"
+command_args="-o ${logfile} -t ${name} -P ${pidfile} \
+    /usr/local/bin/adguardhome -c ${adguardhome_config} -w ${adguardhome_work_dir} ${adguardhome_extra}"
 
+# If we want to set HOME for the process (useful for some versions)
+# Since the user's home directory is /var/db/adguardhome,
+# we set it explicitly – this way `daemon` can create the
+# environment even if the rc-scripts clear the environment.
+adguardhome_env="HOME=${adguardhome_work_dir} IS_DAEMON=1"
+
+# --------------------------------------------------------------
+#  PRE-START – creates necessary directories and sets permissions
+# --------------------------------------------------------------
 start_precmd="${name}_prestart"
 extra_commands="reload"
 
 adguardhome_prestart()
 {
-    # check if the old config exists
-    if [ -f "$adguardhome_config_old" ] || [ -d "${adguardhome_work_dir_old}/data" ]; then
-        if ! [ -f "$adguardhome_config" ] && ! [ -d "${adguardhome_work_dir}/data" ]; then
-            # old config exists, new config doesn't exist
-            # move old config to new locations
-            if [ -f "$adguardhome_config_old" ]; then
-                echo "moving old config $adguardhome_config_old to the new location $adguardhome_config"
-                mv "$adguardhome_config_old" "$adguardhome_config"
+    local _config_dir _file _dir
+    _config_dir=$(dirname "${adguardhome_config}")
+
+    # 1) Config directory (create if missing)
+    if [ ! -d "${_config_dir}" ]; then
+        echo "Creating configuration directory: ${_config_dir}"
+        install -d -m 0750 -o "${adguardhome_user}" -g "${adguardhome_group}" "${_config_dir}"
+    fi
+
+    # 2) If config file already exists – fix ownership
+    if [ -f "${adguardhome_config}" ]; then
+        chown "${adguardhome_user}:${adguardhome_group}" "${adguardhome_config}"
+    fi
+
+    # 3) If old configuration exists – migrate it
+    if [ -f "${adguardhome_config_old}" ] || [ -d "${adguardhome_work_dir_old}/data" ]; then
+        if [ ! -f "${adguardhome_config}" ] && [ ! -d "${adguardhome_work_dir}/data" ]; then
+            # 3.1) Move the old yaml
+            if [ -f "${adguardhome_config_old}" ]; then
+                echo "Moving old config ${adguardhome_config_old} → ${adguardhome_config}"
+                mv "${adguardhome_config_old}" "${adguardhome_config}"
             fi
+            # 3.2) Move the data
             if [ -d "${adguardhome_work_dir_old}/data" ]; then
-                install -d -m 0750 -o "$adguardhome_user" \
-                        -g "$adguardhome_group" "$adguardhome_work_dir"
-                echo "moving old config ${adguardhome_work_dir_old}/data to the new location ${adguardhome_work_dir}/data"
+                [ ! -d "${adguardhome_work_dir}" ] && install -d -m 0750 -o "${adguardhome_user}" -g "${adguardhome_group}" "${adguardhome_work_dir}"
+                echo "Moving old data ${adguardhome_work_dir_old}/data → ${adguardhome_work_dir}/data"
                 mv "${adguardhome_work_dir_old}/data" "${adguardhome_work_dir}/data"
             fi
-        else # both old and new config exist
-            echo "(!!!) WARNING =================================================================="
-            echo "(!!!) WARNING Both old and new configs exist"
-            echo "(!!!) WARNING Please choose which configs do you need and remove the old configs"
-            echo "(!!!) WARNING OLD config locations: $adguardhome_config_old ${adguardhome_work_dir_old}/data"
-            echo "(!!!) WARNING NEW config locations: $adguardhome_config ${adguardhome_work_dir}/data"
-            echo "(!!!) WARNING =================================================================="
+        else
+            # Both exist – issue a warning
+            echo "(!!!) WARNING – both old and new configs exist!"
+            echo "(!!!)   OLD : ${adguardhome_config_old} ${adguardhome_work_dir_old}/data"
+            echo "(!!!)   NEW : ${adguardhome_config} ${adguardhome_work_dir}/data"
         fi
     fi
 
-    # install dir
-    if [ ! -d "$adguardhome_work_dir" ]; then
-        install -d -m 0750 -o "$adguardhome_user" -g "$adguardhome_group" \
-                "$adguardhome_work_dir"
+    # 4) Create/verify working directory
+    if [ ! -d "${adguardhome_work_dir}" ]; then
+        install -d -m 0750 -o "${adguardhome_user}" -g "${adguardhome_group}" "${adguardhome_work_dir}"
     fi
+
+    # 5) Prepare log/pid files
+    for _file in "${logfile}" "${pidfile}"; do
+        [ -z "${_file}" ] && continue
+        _dir=$(dirname "${_file}")
+        # Създаваме директорията само ако не е стандартна системна такава
+        if [ ! -d "${_dir}" ]; then
+            install -d -m 0755 -o root -g wheel "${_dir}"
+        fi
+        touch "${_file}"
+        chown "${adguardhome_user}:${adguardhome_group}" "${_file}"
+    done
 }
 
+# --------------------------------------------------------------
 run_rc_command "$1"

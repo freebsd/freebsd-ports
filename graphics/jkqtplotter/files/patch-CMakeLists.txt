@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-04-16 21:21:39 UTC
++++ CMakeLists.txt
+@@ -69,7 +69,7 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+         add_subdirectory(tools)
+     endif()
+ 
+-    add_subdirectory(doc)
++    #add_subdirectory(doc)
+     
+     if (JKQtPlotter_BUILD_TESTS)
+       include(CTest)

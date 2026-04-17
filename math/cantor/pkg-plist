@@ -7,8 +7,6 @@ include/cantor/backend.h
 include/cantor/cantor_export.h
 include/cantor/cantor_macros.h
 include/cantor/cantorlibs_version.h
-include/cantor/completionobject.h
-include/cantor/defaulthighlighter.h
 include/cantor/defaultvariablemodel.h
 include/cantor/epsresult.h
 include/cantor/expression.h
@@ -18,6 +16,7 @@ include/cantor/helpresult.h
 include/cantor/htmlresult.h
 include/cantor/imageresult.h
 include/cantor/jupyterutils.h
+include/cantor/keywordsmanager.h
 include/cantor/latexresult.h
 include/cantor/mimeresult.h
 include/cantor/panelplugin.h

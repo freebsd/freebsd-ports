@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/common/chrome_features.cc.orig	2026-04-17 05:46:07 UTC
 +++ chrome/common/chrome_features.cc
 @@ -84,7 +84,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
  #endif  // BUILDFLAG(IS_MAC)
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1378,7 +1378,7 @@ BASE_FEATURE(kIsolatedWebAppManagedGuestSessionInstall
+@@ -1380,7 +1380,7 @@ BASE_FEATURE(kIsolatedWebAppManagedGuestSessionInstall
  BASE_FEATURE(kIsolatedWebAppBundleCache, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -36,7 +36,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1389,7 +1389,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1391,7 +1391,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

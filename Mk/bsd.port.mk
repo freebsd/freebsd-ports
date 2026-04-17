@@ -1856,15 +1856,15 @@ USE_BINUTILS=	yes
 .    if defined(USE_BINUTILS) && !defined(DISABLE_BINUTILS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BINUTILS?=	ADDR2LINE AR AS CPPFILT GPROF LD NM OBJCOPY OBJDUMP RANLIB \
-	READELF SIZE STRINGS
+	READELF SIZE STRINGS STRIP_CMD
 BINUTILS_NO_MAKE_ENV?=
 .      for b in ${BINUTILS}
-${b}=	${LOCALBASE}/bin/${b:C/PP/++/:tl}
+${b}=	${LOCALBASE}/bin/${b:C/PP/++/:C/_CMD//:tl}
 .        if defined(GNU_CONFIGURE) || defined(BINUTILS_CONFIGURE)
-CONFIGURE_ENV+=	${b}="${${b}}"
+CONFIGURE_ENV+=	${b:C/_CMD//}="${${b}}"
 .        endif
 .        if ${BINUTILS_NO_MAKE_ENV:M${b}} == ""
-MAKE_ENV+=	${b}="${${b}}"
+MAKE_ENV+=	${b:C/_CMD//}="${${b}}"
 .        endif
 .      endfor
 .    endif

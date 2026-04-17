@@ -8,11 +8,11 @@ etc/ufw/applications.d/kdeconnect
 etc/xdg/autostart/org.kde.kdeconnect.daemon.desktop
 lib/libkdeconnectcore.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkdeconnectcore.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-lib/libkdeconnectinterfaces.a
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_battery.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_clipboard.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_connectivity_report.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_contacts.so
+%%QT_PLUGINDIR%%/kdeconnect/kdeconnect_digitizer.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_findmyphone.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_findthisdevice.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_lockdevice.so
@@ -49,6 +49,7 @@ lib/libkdeconnectinterfaces.a
 %%QT_QMLDIR%%/org/kde/kdeconnect/private/findthisdevice/libkdeconnect_findthisdevice_qmlhelper.so
 %%QT_QMLDIR%%/org/kde/kdeconnect/private/findthisdevice/qmldir
 %%QT_QMLDIR%%/org/kde/kdeconnect/qmldir
+lib/udev/rules.d/40-kdeconnect-uinput.rules
 share/Thunar/sendto/kdeconnect-thunar.desktop
 share/applications/org.kde.kdeconnect.app.desktop
 share/applications/org.kde.kdeconnect.daemon.desktop
@@ -99,6 +100,7 @@ share/icons/hicolor/scalable/apps/kdeconnectindicator.svg
 share/icons/hicolor/scalable/apps/kdeconnectindicatordark.svg
 share/kdeconnect/kdeconnect_clipboard_config.qml
 share/kdeconnect/kdeconnect_pausemusic_config.qml
+share/kdeconnect/kdeconnect_presenter_config.qml
 share/kdeconnect/kdeconnect_runcommand_config.qml
 share/kdeconnect/kdeconnect_sendnotifications_config.qml
 share/kdeconnect/kdeconnect_share_config.qml

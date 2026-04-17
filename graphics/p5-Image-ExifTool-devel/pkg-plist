@@ -84,6 +84,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GIMP.pm
 %%SITE_PERL%%/Image/ExifTool/GM.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
+%%SITE_PERL%%/Image/ExifTool/Garmin.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
 %%SITE_PERL%%/Image/ExifTool/Geolocation.dat
 %%SITE_PERL%%/Image/ExifTool/Geolocation.pm
@@ -295,6 +296,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::GIMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GPS.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Garmin.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GeoTiff.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geolocation.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geotag.3.gz

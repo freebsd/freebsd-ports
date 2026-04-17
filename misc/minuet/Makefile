@@ -8,8 +8,8 @@ WWW=		https://apps.kde.org/minuet/
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
-USES=		cmake compiler:c++17-lang gettext kde:6 qt:6 tar:xz
-USE_KDE=	coreaddons crash i18n \
+USES=		cmake compiler:c++17-lang gettext kde:6 pkgconfig qt:6 tar:xz
+USE_KDE=	coreaddons crash doctools i18n kirigami2 \
 		ecm:build
 USE_QT=		base declarative
 

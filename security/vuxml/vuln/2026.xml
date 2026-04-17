@@ -1,3 +1,81 @@
+  <vuln vid="6ae8f9e5-3a26-11f1-b60b-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>149.0.2,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.9.1</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>149.0.2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.9.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=2021894%2C2022225%2C2022252%2C2022294%2C2023007%2C2023130%2C2023191%2C2023364%2C2023829%2C2024074%2C2024417%2C2024433%2C2024436%2C2024437%2C2024453%2C2024461%2C2024462%2C2024472%2C2024474%2C2024477%2C2025364%2C2025401%2C2025402%2C2025472%2C2026287%2C2026299%2C2026305%2C2026426">
+	<p>
+	Memory safety bugs present in Firefox ESR, Firefox ESR ,
+	Thunderbird ESR, and Thunderbird. Some of these bugs
+	showed evidence of memory corruption and we presume that
+	with enough effort some of these could have been exploited
+	  to run arbitrary code.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-5731</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-5731</url>
+    </references>
+    <dates>
+      <discovery>2026-04-07</discovery>
+      <entry>2026-04-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c8c00ce-3642-11f1-bd03-3c7c3fba4204">
+    <topic>go-ethereum -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>go-ethereum</name>
+	<range><lt>1.17.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/ethereum/go-ethereum/security/advisories reports:</p>
+	<blockquote cite="https://github.com/ethereum/go-ethereum/security/advisories">
+	  <ul>
+	    <li>DoS via malicious p2p message (CVE-2026-26313)</li>
+	    <li>DoS via malicious p2p message (CVE-2026-26314)</li>
+	    <li>Improper ECIES Public Key Validation in RLPx Handshake (CVE-2026-26315)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-26313</cvename>
+      <url>https://github.com/ethereum/go-ethereum/security/advisories/GHSA-689v-6xwf-5jf3</url>
+      <cvename>CVE-2026-26314</cvename>
+      <url>https://github.com/ethereum/go-ethereum/security/advisories/GHSA-2gjw-fg97-vg3r</url>
+      <cvename>CVE-2026-26315</cvename>
+      <url>https://github.com/ethereum/go-ethereum/security/advisories/GHSA-m6j8-rg6r-7mv8</url>
+    </references>
+    <dates>
+      <discovery>2026-02-17</discovery>
+      <entry>2026-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d93c247b-4dba-43ce-b5c0-ac5bd03bea8d">
     <topic>chromium -- security fixes</topic>
     <affects>
@@ -183,6 +261,82 @@
     <dates>
       <discovery>2026-04-14</discovery>
       <entry>2026-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cf75f572-378a-11f1-a119-e36228bfe7d4">
+    <topic>python -- more webbrowser.open() command injection vulnerabilities</topic>
+    <affects>
+      <package><name>python310</name><range><ge>0</ge></range></package>
+      <package><name>python311</name><range><ge>0</ge></range></package>
+      <package><name>python312</name><range><ge>0</ge></range></package>
+      <package><name>python313</name><range><ge>0</ge></range></package>
+      <package><name>python314</name><range><lt>3.14.4_2</lt></range></package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Seth Larson reports:</p>
+	<blockquote cite="https://mail.python.org/archives/list/security-announce@python.org/thread/JQDUNJVB4AQNTJECSUKOBDU3XCJIPSE5/">
+	  <p>[CVE-2026-4786] Incomplete mitigation of CVE-2026-4519, %action expansion for command injection to webbrowser.open()</p>
+	  <p>There is a HIGH severity vulnerability affecting CPython.</p>
+	  <p>Mitgation of CVE-2026-4519 was incomplete. If the URL contained "%action"
+	   the mitigation could be bypassed for certain browser types the
+	   "webbrowser.open()" API could have commands injected into the underlying
+	    shell. See CVE-2026-4519 for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-4786</cvename>
+      <url>https://mail.python.org/archives/list/security-announce@python.org/thread/JQDUNJVB4AQNTJECSUKOBDU3XCJIPSE5/</url>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-4786</url>
+      <url>https://github.com/python/cpython/issues/148169</url>
+      <url>https://github.com/python/cpython/pull/148170</url>
+    </references>
+    <dates>
+      <discovery>2026-04-06</discovery>
+      <entry>2026-04-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b8e9f33c-375d-11f1-a119-e36228bfe7d4">
+    <topic>Python -- use-after-free vulnerability in decompressors under memory pressure</topic>
+    <affects>
+      <package><name>python310</name><range><ge>0</ge></range></package>
+      <package><name>python311</name><range><ge>0</ge></range></package>
+      <package><name>python312</name><range><ge>0</ge></range></package>
+      <package><name>python313</name><range><ge>0</ge></range></package>
+      <package><name>python314</name><range><lt>3.14.4_1</lt></range></package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Seth Larson reports:</p>
+	<blockquote cite="https://mail.python.org/archives/list/security-announce@python.org/thread/HTWB2Z6KT5QQX4RYEZAFININDHNOSIF3/">
+	  <p>There is a CRITICAL severity vulnerability affecting CPython.</p>
+	  <p>Use-after-free (UAF) was possible in the lzma.LZMADecompressor,
+	    bz2.BZ2Decompressor, and gzip.GzipFile when a memory allocation fails
+	    with a MemoryError and the decompression instance is re-used. This
+	    scenario can be triggered if the process is under memory pressure. The fix
+	    cleans up the dangling pointer in this specific error condition.</p>
+	  <p>The vulnerability is only present if the program re-uses decompressor
+	    instances across multiple decompression calls even after a MemoryError is
+	    raised during decompression. Using the helper functions to one-shot
+	    decompress data such as lzma.decompress(), bz2.decompress(),
+	    gzip.decompress(), and zlib.decompress() are not affected as a new
+	    decompressor instance is created for each call. If the decompressor
+	    instance is not re-used after an error condition, this usage is similarly
+	    not vulnerable.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6100</cvename>
+      <url>https://mail.python.org/archives/list/security-announce@python.org/thread/HTWB2Z6KT5QQX4RYEZAFININDHNOSIF3/</url>
+      <url>https://github.com/python/cpython/issues/148395</url>
+    </references>
+    <dates>
+      <discovery>2026-04-11</discovery>
+      <entry>2026-04-13</entry>
     </dates>
   </vuln>
 

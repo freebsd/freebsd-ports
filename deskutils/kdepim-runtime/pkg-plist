@@ -182,6 +182,7 @@ share/icons/hicolor/96x96/apps/akonadi-ews.png
 share/knotifications6/akonadi_ews_resource.notifyrc
 share/knotifications6/akonadi_google_resource.notifyrc
 share/knotifications6/akonadi_imap_resource.notifyrc
+share/knotifications6/akonadi_kolab_resource.notifyrc
 share/knotifications6/akonadi_maildispatcher_agent.notifyrc
 share/knotifications6/akonadi_newmailnotifier_agent.notifyrc
 share/knotifications6/akonadi_pop3_resource.notifyrc

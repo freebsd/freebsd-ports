@@ -79,6 +79,7 @@ include/KPim6/Libkleo/Libkleo/UserIDListProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/Libkleo/Validation
+include/KPim6/Libkleo/Libkleo/Verification
 include/KPim6/Libkleo/libkleo/algorithm.h
 include/KPim6/Libkleo/libkleo/animatedexpander.h
 include/KPim6/Libkleo/libkleo/applicationpalettewatcher.h
@@ -162,6 +163,7 @@ include/KPim6/Libkleo/libkleo/useridlistproxymodel.h
 include/KPim6/Libkleo/libkleo/useridproxymodel.h
 include/KPim6/Libkleo/libkleo/useridselectioncombo.h
 include/KPim6/Libkleo/libkleo/validation.h
+include/KPim6/Libkleo/libkleo/verification.h
 include/KPim6/Libkleo/libkleo_version.h
 lib/cmake/KPim6Libkleo/KPim6LibkleoConfig.cmake
 lib/cmake/KPim6Libkleo/KPim6LibkleoConfigVersion.cmake

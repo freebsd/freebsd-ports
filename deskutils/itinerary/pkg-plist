@@ -1,9 +1,6 @@
 bin/itinerary
-lib/libSolidExtras.so
 %%QT_PLUGINDIR%%/kf6/kfilemetadata/kfilemetadata_itineraryextractor.so
 %%QT_PLUGINDIR%%/kf6/thumbcreator/itinerarythumbnail.so
-%%QT_QMLDIR%%/org/kde/solidextras/libsolidextrasqmlplugin.so
-%%QT_QMLDIR%%/org/kde/solidextras/qmldir
 share/applications/org.kde.itinerary.desktop
 share/icons/hicolor/scalable/apps/org.kde.itinerary.svg
 share/knotifications6/itinerary.notifyrc

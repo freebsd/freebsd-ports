@@ -7,8 +7,10 @@ lib/libMerkuroComponents.so.6
 lib/libmerkuro_contact.so
 lib/libmerkuro_contact.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libmerkuro_contact.so.6
+%%QT_PLUGINDIR%%/plasma/applets/org.kde.merkuro.contact.applet.so
 %%QT_QMLDIR%%/org/kde/merkuro/components/BaseApplication.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/ColoredCheckbox.qml
+%%QT_QMLDIR%%/org/kde/merkuro/components/EditCollectionPage.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/EditMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/FileMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/HelpMenu.qml
@@ -22,7 +24,6 @@ lib/libmerkuro_contact.so.6
 %%QT_QMLDIR%%/org/kde/merkuro/components/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/merkuro/components/libMerkuroComponentsplugin.so
 %%QT_QMLDIR%%/org/kde/merkuro/components/qmldir
-%%QT_QMLDIR%%/org/kde/merkuro/contact/AddressBookCollectionHandler.qml
 %%QT_QMLDIR%%/org/kde/merkuro/contact/ContactChooserPage.qml
 %%QT_QMLDIR%%/org/kde/merkuro/contact/ContactListItem.qml
 %%QT_QMLDIR%%/org/kde/merkuro/contact/ContactView.qml
@@ -197,15 +198,5 @@ share/metainfo/org.kde.merkuro.calendar.metainfo.xml
 share/metainfo/org.kde.merkuro.contact.metainfo.xml
 share/metainfo/org.kde.merkuro.mail.metainfo.xml
 share/metainfo/org.kde.merkuro.metainfo.xml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/config/main.xml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/resources/fallbackBackground.png
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/CompactRepresentation.qml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/ContactPage.qml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/ContactsPage.qml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/Header.qml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/QrCodePage.qml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json
-share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json.license
 share/qlogging-categories6/merkuro.categories
 share/qlogging-categories6/merkuro.contact.categories

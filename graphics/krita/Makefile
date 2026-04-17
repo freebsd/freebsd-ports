@@ -33,6 +33,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libheif.so:graphics/libheif \
 		libjson-c.so:devel/json-c \
 		libjxl.so:graphics/libjxl \
+		libKF5KDcraw.so:graphics/libkdcraw-qt5 \
 		liblcms2.so:graphics/lcms2 \
 		libmypaint.so:graphics/libmypaint \
 		libopenjp2.so:graphics/openjpeg \
@@ -50,7 +51,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils eigen:3 gettext \
 		sdl shared-mime-info tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	completion config coreaddons crash guiaddons i18n \
-		itemmodels itemviews libkdcraw service widgetsaddons \
+		itemmodels itemviews service widgetsaddons \
 		windowsystem ecm:build
 USE_QT=		concurrent core dbus gui network \
 		printsupport sql svg widgets x11extras xml \

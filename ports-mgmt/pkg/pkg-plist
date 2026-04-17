@@ -13,6 +13,8 @@ lib/libpkg.a
 lib/libpkg.so
 lib/libpkg.so.4
 libdata/pkgconfig/pkg.pc
+sbin/pkg
+sbin/pkg-static
 share/man/man3/pkg_create.3.gz
 share/man/man3/pkg_printf.3.gz
 share/man/man3/pkg_repo_create.3.gz
@@ -62,7 +64,5 @@ share/man/man8/pkg-upgrade.8.gz
 share/man/man8/pkg-version.8.gz
 share/man/man8/pkg-which.8.gz
 share/man/man8/pkg.8.gz
-sbin/pkg
-sbin/pkg-static
 share/zsh/site-functions/_pkg
 @dir lib/compat/pkg

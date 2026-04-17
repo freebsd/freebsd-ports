@@ -1,4 +1,4 @@
-TIMESTAMP = 1776316036
+TIMESTAMP = 1776401869
 SHA256 (rust/crates/aead-0.5.2.crate) = d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0
 SIZE (rust/crates/aead-0.5.2.crate) = 15509
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -1275,5 +1275,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.2.crate) = eadce39539ca5cb3985590102671f
 SIZE (rust/crates/zerovec-derive-0.11.2.crate) = 21421
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (atuinsh-atuin-v18.15.1_GH0.tar.gz) = 5afbcd5a654604ab3118dbacb91d2202cba51500d92a4f2a3d1e43d023fb4b32
-SIZE (atuinsh-atuin-v18.15.1_GH0.tar.gz) = 2804031
+SHA256 (atuinsh-atuin-v18.15.2_GH0.tar.gz) = 9f0c9f1b52e42a805da6b448375c7cf38978510bd421e1f3e042c12652a12e54
+SIZE (atuinsh-atuin-v18.15.2_GH0.tar.gz) = 2804431

@@ -1,5 +1,8 @@
-bin/geth
 %%DEVTOOLS%%bin/abigen
-%%DEVTOOLS%%bin/evm
-%%DEVTOOLS%%bin/rlpdump
+%%DEVTOOLS%%bin/blsync
 %%DEVTOOLS%%bin/clef
+%%DEVTOOLS%%bin/era
+%%DEVTOOLS%%bin/ethkey
+%%DEVTOOLS%%bin/evm
+bin/geth
+%%DEVTOOLS%%bin/rlpdump

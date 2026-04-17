@@ -1,45 +1,68 @@
 PORTNAME=	jkqtplotter
 DISTVERSION=	5.0.0 # not tagged yet, see https://github.com/jkriege2/JKQtPlotter/issues/155
+PORTREVISION=	1
 CATEGORIES=	graphics
-PKGNAMESUFFIX?=	-${FLAVOR}
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Qt plotter framework
-WWW=		https://github.com/jkriege2/JKQtPlotter \
-		https://jkriege2.github.io/JKQtPlotter/index.html
+COMMENT=	Extensive Qt plotter framework
+WWW=		https://github.com/jkriege2/JKQtPlotter
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 FLAVORS=	qt6 qt5
 FLAVOR?=	qt6
 
-USES=		cmake gl qt:${FLAVOR:S/qt//}
-_USE_QT_qt5=	core gui opengl printsupport svg xml widgets qmake:build buildtools:build
-_USE_QT_qt6=	base svg tools:build
-USE_QT=		${_USE_QT_${FLAVOR}}
-USE_GL=		gl opengl
+QT_VER=		${FLAVOR:S/qt//}
+
+USES=		cmake compiler:c++11-lang dos2unix gl qt:${QT_VER}
+USE_GL=		opengl
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jkriege2
-GH_TAGNAME=	d243218
+GH_PROJECT=	JKQtPlotter
+GH_TAGNAME=	ff89c530
 
-WRKSRC=		${WRKDIR}/JKQtPlotter-${GH_TAGNAME}
+DOS2UNIX_FILES=	CMakeLists.txt \
+		lib/jkqtmathtext/CMakeLists.txt \
+		lib/jkqtplotter/graphs/jkqtpbarchart.h \
+		lib/jkqtplotter/graphs/jkqtpcontour.h \
+		lib/jkqtplotter/graphs/jkqtpfilledcurve.h \
+		lib/jkqtplotter/graphs/jkqtpimpulses.h \
+		lib/jkqtplotter/graphs/jkqtprange.h \
+		lib/jkqtplotter/graphs/jkqtpscatter.h \
+		lib/jkqtplotter/graphs/jkqtpspecialline.h
 
-CMAKE_ARGS=	-DQT_VERSION=${FLAVOR:S/qt//}
-CMAKE_OFF=	JKQtPlotter_BUILD_TESTS \
-		JKQtPlotter_BUILD_EXAMPLES
+_USE_QT_qt5=	core gui opengl printsupport svg testlib xml widgets qmake:build buildtools:build
+_USE_QT_qt6=	base svg tools:build
+USE_QT=		${_USE_QT_${FLAVOR}}
 
-DOCSDIR=	${PREFIX}/share/doc/JKQTPlotter
+CMAKE_ON=	JKQtPlotter_BUILD_SHARED_LIBS
+CMAKE_OFF=	JKQtPlotter_BUILD_STATIC_LIBS \
+		JKQtPlotter_BUILD_TOOLS \
+		JKQtPlotter_BUILD_TESTS \
+		JKQtPlotter_BUILD_EXAMPLES \
+		JKQtPlotter_BUILD_DECORATE_LIBNAMES_WITH_BUILDTYPE
 
-PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
+CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR=include/qt${QT_VER}
 
-OPTIONS_DEFINE=	DOCS
+PLIST_SUB=	CMAKE_BUILD_TYPE=release \
+		QT_VER=${QT_VER}
 
-PORTDOCS=	*
+OPTIONS_DEFINE=	EXAMPLES
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${QT_VER}
+PORTEXAMPLES=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)|find_package(QT NAMES Qt${FLAVOR:S/qt//} COMPONENTS Core REQUIRED)|g' \
+	@${REINPLACE_CMD} -e 's|NAMES Qt6 Qt5|NAMES Qt${QT_VER}|g' \
 		${WRKSRC}/cmake/jkqtplotter_common_qtsettings.cmake
+
+post-install-EXAMPLES-on:
+	@cd ${FILESDIR}/examples && \
+		${COPYTREE_SHARE} all-in-tabs ${STAGEDIR}${EXAMPLESDIR} && \
+		${COPYTREE_SHARE} simple-plot ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

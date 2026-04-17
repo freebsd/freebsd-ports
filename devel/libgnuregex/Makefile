@@ -1,5 +1,6 @@
 PORTNAME=	libgnuregex
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# Nothing to fetch
 DISTFILES=	# Nothing to fetch
@@ -33,6 +34,7 @@ REGEX_FILES=	lib/attribute.h \
 		lib/regcomp.c \
 		lib/verify.h
 REGEX_MALLOC_FILES=	lib/malloc/dynarray.h \
+			lib/malloc/dynarray_resize.c \
 			lib/malloc/dynarray-skeleton.c
 
 do-extract:

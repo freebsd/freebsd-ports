@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2024-04-01 20:14:00 UTC
+--- CMakeLists.txt.orig	2026-03-30 00:43:18 UTC
 +++ CMakeLists.txt
-@@ -13,7 +13,7 @@ else()
-   if(EMSCRIPTEN)
+@@ -14,7 +14,7 @@ else()
      list(APPEND COMPILE_OPTIONS -O3)
    else()
--    list(APPEND COMPILE_OPTIONS -Ofast)
-+#    list(APPEND COMPILE_OPTIONS -Ofast)
+     # Apply -ffast-math to allow compiler autovectorization generate effective SIMD code for arm compilation
+-    list(APPEND COMPILE_OPTIONS -O3 -ffast-math)
++    # list(APPEND COMPILE_OPTIONS -O3 -ffast-math)
    endif()
  endif()
  

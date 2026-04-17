@@ -1,11 +1,12 @@
 PORTNAME=	spdx-tools
 DISTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	spdx_tools-${DISTVERSION}
 
-MAINTAINER=	kai@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parses, validates and creates SPDX documents
 WWW=		https://github.com/spdx/tools-python
 
@@ -36,6 +37,9 @@ NO_ARCH=	yes
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
+
+pre-build:
+	${SETENVI} PYTHONPATH=${WRKSRC}/src:${PYTHON_LIBDIR} ${PYTHON_CMD} ${FILESDIR}/generate-parsetag.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

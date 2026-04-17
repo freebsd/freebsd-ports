@@ -1,4 +1,4 @@
-lib/libexec/kf6/kauth/authhelper
+lib/libexec/kf6/kauth/sambausershareplugin_authhelper
 %%QT_PLUGINDIR%%/kf6/propertiesdialog/SambaAcl.so
 %%QT_PLUGINDIR%%/kf6/propertiesdialog/sambausershareplugin.so
 share/dbus-1/system-services/org.kde.filesharing.samba.service

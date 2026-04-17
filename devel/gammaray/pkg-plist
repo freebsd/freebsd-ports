@@ -72,6 +72,7 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_3dinspector_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_3dinspector.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_actioninspector_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_actioninspector_ui_plugin.so
+lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_bluetooth.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_eventmonitor_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_eventmonitor_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_fontbrowser_plugin.so
@@ -102,6 +103,7 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_sceneinspector_plugin.
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_sceneinspector_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_signalmonitor_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_signalmonitor.so
+lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_statemachineviewer_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_styleinspector_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_styleinspector_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_sysinfo_plugin.so

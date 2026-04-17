@@ -3,8 +3,8 @@
 @@ -1,6 +1,6 @@ module github.com/AdguardTeam/AdGuardHome
  module github.com/AdguardTeam/AdGuardHome
  
--go 1.25.7
-+go 1.25
+-go 1.26.2
++go 1.26
  
  require (
- 	github.com/AdguardTeam/dnsproxy v0.78.2
+ 	github.com/AdguardTeam/dnsproxy v0.81.

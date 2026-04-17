@@ -1,4 +1,4 @@
-TIMESTAMP = 1776315731
+TIMESTAMP = 1776401824
 SHA256 (rust/crates/ab_glyph-0.2.32.crate) = 01c0457472c38ea5bd1c3b5ada5e368271cb550be7a4ca4a0b4634e9913f6cc2
 SIZE (rust/crates/ab_glyph-0.2.32.crate) = 20967
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.10.crate) = 366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618
@@ -1303,5 +1303,5 @@ SHA256 (rust/crates/zvariant_derive-4.2.0.crate) = 73e2ba546bda683a90652bac4a279
 SIZE (rust/crates/zvariant_derive-4.2.0.crate) = 11057
 SHA256 (rust/crates/zvariant_utils-2.1.0.crate) = c51bcff7cc3dbb5055396bcf774748c3dab426b4b8659046963523cee4808340
 SIZE (rust/crates/zvariant_utils-2.1.0.crate) = 7043
-SHA256 (raphamorim-rio-v0.3.10_GH0.tar.gz) = 11e84859757d9872f0c39be8cc9c751d2b8329e222cc5a49dacab43e94627b6d
-SIZE (raphamorim-rio-v0.3.10_GH0.tar.gz) = 83679505
+SHA256 (raphamorim-rio-v0.3.11_GH0.tar.gz) = f59abcfb501bb4e98dd13d471ba4ceba9b7dd25bcd2c45865b2aef3d8dce9a19
+SIZE (raphamorim-rio-v0.3.11_GH0.tar.gz) = 83931160

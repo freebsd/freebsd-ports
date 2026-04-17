@@ -1,5 +1,5 @@
 PORTNAME=	zensical
-DISTVERSION=	0.0.31
+DISTVERSION=	0.0.33
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.8<2.0:devel/py-maturin@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deepmerge>=1.1.1:devel/py-deepmerge@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.7:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.16:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.15:textproc/py-pymdown-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.20:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.21.2:textproc/py-pymdown-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.2:devel/py-pyyaml@${PY_FLAVOR} \
 		${PY_TOMLI}
 
