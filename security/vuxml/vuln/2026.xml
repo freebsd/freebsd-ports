@@ -1,3 +1,73 @@
+  <vuln vid="6a0aa20d-399f-11f1-8626-901b0edee044">
+    <topic>py-strawberry-graphql -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>py310-strawberry-graphql</name>
+	<name>py311-strawberry-graphql</name>
+	<name>py312-strawberry-graphql</name>
+	<name>py313-strawberry-graphql</name>
+	<name>py313t-strawberry-graphql</name>
+	<name>py314-strawberry-graphql</name>
+	<range><lt>0.312.3</lt></range>
+    </package>
+    <package>
+	<name>py310-dj52-strawberry-graphql</name>
+	<name>py311-dj52-strawberry-graphql</name>
+	<name>py312-dj52-strawberry-graphql</name>
+	<name>py313-dj52-strawberry-graphql</name>
+	<name>py313t-dj52-strawberry-graphql</name>
+	<name>py314-dj52-strawberry-graphql</name>
+	<range><lt>0.312.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Strawberry GraphQL project reports:</p>
+	<blockquote cite="https://github.com/strawberry-graphql/strawberry/security/advisories/GHSA-vpwc-v33q-mq89">
+	<p>Strawberry up until version 0.312.3 is vulnerable to an authentication bypass
+	on WebSocket subscription endpoints. The legacy graphql-ws subprotocol handler
+	does not verify that a 'connection_init' handshake has been completed before
+	processing start (subscription) messages. This allows a remote attacker to skip
+	the 'on_ws_connect' authentication hook entirely by connecting with the
+	graphql-ws subprotocol and sending a start message directly, without ever
+	sending 'connection_init'.
+
+	The graphql-transport-ws subprotocol handler is not affected, as it correctly
+	gates subscription operations on a connection_acknowledged flag. However, both
+	subprotocols are enabled by default in all framework integrations that support
+	websockets, and the subprotocol is selected by the client via the
+	Sec-WebSocket-Protocol header.
+
+	Any application relying on 'on_ws_connect' for authentication or authorization
+	is affected.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/strawberry-graphql/strawberry/security/advisories/GHSA-hv3w-m4g2-5x77">
+	<p>Strawberry GraphQL's WebSocket subscription handlers for both the
+	'graphql-transport-ws' and legacy 'graphql-ws' protocols allocate an
+	asyncio.Task and associated Operation object for every incoming subscribe
+	message without enforcing any limit on the number of active subscriptions per
+	connection.
+
+	An unauthenticated attacker can open a single WebSocket connection, send
+	connection_init, and then flood subscribe messages with unique IDs. Each
+	message unconditionally spawns a new 'asyncio.Task' and async generator,
+	causing linear memory growth and event loop saturation. This leads to server
+	degradation or an OOM crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-35523</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-35523</url>
+      <cvename>CVE-2026-35526</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-35526</url>
+    </references>
+    <dates>
+      <discovery>2026-04-04</discovery>
+      <entry>2026-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ae8f9e5-3a26-11f1-b60b-b42e991fc52e">
     <topic>Mozilla -- Memory safety bugs</topic>
     <affects>
