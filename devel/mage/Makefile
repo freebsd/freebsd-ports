@@ -1,13 +1,13 @@
 PORTNAME=	mage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
-PORTREVISION=	25
+DISTVERSION=	1.17.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	gspurki@gmail.com
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Command-line make-like build tool using Go as input files
-WWW=		https://magefile.org/
+WWW=		https://magefile.org/ \
+		https://github.com/magefile/mage/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
