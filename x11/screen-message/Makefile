@@ -1,10 +1,12 @@
 PORTNAME=	screen-message
 DISTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	gspurki@gmail.com
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Very simple tool to display some text as large as possible
-WWW=		https://sm.nomeata.de/
+WWW=		https://sm.nomeata.de/ \
+		https://github.com/nomeata/screen-message/
 
 LICENSE=	GPLv2+
 
@@ -13,7 +15,6 @@ USES=		autoreconf desktop-file-utils gettext-runtime gmake gnome \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nomeata
-GH_TAGNAME=	d4f2d831672eaf8283406d8f1fda4449e9c06d9f
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30
 
 GNU_CONFIGURE=	yes
