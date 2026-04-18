@@ -1,5 +1,5 @@
 PORTNAME=	erlang
-DISTVERSION=	26.2
+DISTVERSION=	26.2.5.19
 CATEGORIES=	lang parallel
 MASTER_SITES=	https://github.com/erlang/otp/releases/download/OTP-${PORTVERSION}/:erlangorg \
 		LOCAL/olgeni:local
@@ -18,8 +18,8 @@ LICENSE=	APACHE20
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 BOOK_DISTFILES=	armstrong_thesis_2003.pdf:local \
 		bjarnelic.pdf:local \
@@ -39,5 +39,10 @@ do-install:
 .for FILE in ${BOOK_DISTFILES}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${STAGEDIR}/${DOCSDIR}/pdf
 .endfor
+
+post-stage:
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} ${DOCSDIR_REL} -type f -o -type l | \
+		${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>
