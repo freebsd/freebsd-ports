@@ -1,5 +1,5 @@
 PORTNAME=	erlang
-PORTVERSION=	26.2
+PORTVERSION=	26.2.5.19
 CATEGORIES=	lang parallel
 MASTER_SITES=	https://github.com/erlang/otp/releases/download/OTP-${PORTVERSION}/
 PKGNAMESUFFIX=	-man
@@ -27,5 +27,10 @@ do-install:
 	for SECTION in 1 3 4 6 7; do \
 		cd ${WRKSRC}/man/ && ${COPYTREE_SHARE} man$${SECTION} ${STAGEDIR}${PREFIX}/lib/erlang/man; \
 	done
+
+post-stage:
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} lib/erlang/man -type f -o -type l | \
+		${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>
