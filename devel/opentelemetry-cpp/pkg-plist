@@ -13,6 +13,7 @@ include/opentelemetry/config.h
 include/opentelemetry/context/context.h
 include/opentelemetry/context/context_value.h
 include/opentelemetry/context/propagation/composite_propagator.h
+include/opentelemetry/context/propagation/environment_carrier.h
 include/opentelemetry/context/propagation/global_propagator.h
 include/opentelemetry/context/propagation/noop_propagator.h
 include/opentelemetry/context/propagation/text_map_propagator.h
@@ -183,7 +184,13 @@ include/opentelemetry/sdk/configuration/log_record_exporter_configuration_visito
 include/opentelemetry/sdk/configuration/log_record_limits_configuration.h
 include/opentelemetry/sdk/configuration/log_record_processor_configuration.h
 include/opentelemetry/sdk/configuration/log_record_processor_configuration_visitor.h
+include/opentelemetry/sdk/configuration/logger_config_configuration.h
+include/opentelemetry/sdk/configuration/logger_configurator_configuration.h
+include/opentelemetry/sdk/configuration/logger_matcher_and_config_configuration.h
 include/opentelemetry/sdk/configuration/logger_provider_configuration.h
+include/opentelemetry/sdk/configuration/meter_config_configuration.h
+include/opentelemetry/sdk/configuration/meter_configurator_configuration.h
+include/opentelemetry/sdk/configuration/meter_matcher_and_config_configuration.h
 include/opentelemetry/sdk/configuration/meter_provider_configuration.h
 include/opentelemetry/sdk/configuration/metric_producer_configuration.h
 include/opentelemetry/sdk/configuration/metric_producer_configuration_visitor.h
@@ -241,6 +248,9 @@ include/opentelemetry/sdk/configuration/sum_aggregation_configuration.h
 include/opentelemetry/sdk/configuration/temporality_preference.h
 include/opentelemetry/sdk/configuration/text_map_propagator_builder.h
 include/opentelemetry/sdk/configuration/trace_id_ratio_based_sampler_configuration.h
+include/opentelemetry/sdk/configuration/tracer_config_configuration.h
+include/opentelemetry/sdk/configuration/tracer_configurator_configuration.h
+include/opentelemetry/sdk/configuration/tracer_matcher_and_config_configuration.h
 include/opentelemetry/sdk/configuration/tracer_provider_configuration.h
 include/opentelemetry/sdk/configuration/translation_strategy.h
 include/opentelemetry/sdk/configuration/unsupported_exception.h
@@ -459,6 +469,8 @@ include/opentelemetry/semconv/incubating/openai_attributes.h
 include/opentelemetry/semconv/incubating/openshift_attributes.h
 include/opentelemetry/semconv/incubating/openshift_metrics.h
 include/opentelemetry/semconv/incubating/opentracing_attributes.h
+include/opentelemetry/semconv/incubating/oracle_attributes.h
+include/opentelemetry/semconv/incubating/oracle_cloud_attributes.h
 include/opentelemetry/semconv/incubating/os_attributes.h
 include/opentelemetry/semconv/incubating/otel_attributes.h
 include/opentelemetry/semconv/incubating/otel_metrics.h
