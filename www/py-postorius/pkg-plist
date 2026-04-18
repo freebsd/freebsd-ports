@@ -1,0 +1,9 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/README.rst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/logs/.keep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/mailman.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/manage.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/settings.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/test_settings.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/urls.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_project/wsgi.py
