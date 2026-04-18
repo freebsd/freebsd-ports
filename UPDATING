@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260418:
+  AFFECTS: Users of net/rsync and net/rsync@python
+  AUTHOR: rodrigo@FreeBSD.org
+
+  Revert the introduction of two net/rsync flavours, the default  without
+  the rrsync script and the python flavour with rrsync and python as a dependency.
+  Restore the previous setup with a single net/rsync package that includes
+  the rrsync script but does not depend on Python.
+  Users who require the rrsync script must install Python separately,
+  as indicated in the install message.
+
 20260329:
   AFFECTS: users of java/openjdk25 and java/openjdk26 with the jre flavor
   AUTHOR: jrm@FreeBSD.org
