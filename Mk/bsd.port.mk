@@ -1707,6 +1707,13 @@ MAKE_ENV+=			PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconf
 CONFIGURE_ENV+=		PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${LOCALBASE}/share/pkgconfig:${PKGCONFIG_BASEDIR}
 .    endif
 
+.    if !defined(IGNORE_MASTER_SITE_FORGEJO) && defined(USE_FORGEJO) && empty(USE_FORGEJO:Mnodefault)
+.      if defined(WRKSRC)
+DEV_WARNING+=	"You are using USE_FORGEJO and WRKSRC is set which is wrong.  Set FJ_PROJECT correctly or set WRKSRC_SUBDIR and remove WRKSRC entirely."
+.      endif
+WRKSRC?=		${WRKDIR}/${FJ_PROJECT_DEFAULT}
+.    endif
+
 .    if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB) && empty(USE_GITHUB:Mnodefault)
 .      if defined(WRKSRC)
 DEV_WARNING+=	"You are using USE_GITHUB and WRKSRC is set which is wrong.  Set GH_PROJECT correctly or set WRKSRC_SUBDIR and remove WRKSRC entirely."
@@ -4528,6 +4535,10 @@ describe-json:
 	${ECHO_CMD} \"distversionsuffix\":\"${DISTVERSIONSUFFIX}\", ;\
 	${ECHO_CMD} \"expiration_date\":\"${EXPIRATION_DATE}\", ;\
 	${ECHO_CMD} \"flavor\":\"${FLAVOR}\", ;\
+	${ECHO_CMD} \"fj_account\":\"${FJ_ACCOUNT}\", ;\
+	${ECHO_CMD} \"fj_project\":\"${FJ_PROJECT}\", ;\
+	${ECHO_CMD} \"fj_site\":\"${FJ_SITE}\", ;\
+	${ECHO_CMD} \"fj_tagname\":\"${FJ_TAGNAME}\", ;\
 	${ECHO_CMD} \"gh_account\":\"${GH_ACCOUNT}\", ;\
 	${ECHO_CMD} \"gh_project\":\"${GH_PROJECT}\", ;\
 	${ECHO_CMD} \"gh_tagname\":\"${GH_TAGNAME}\", ;\
@@ -4546,6 +4557,7 @@ describe-json:
 	${ECHO_CMD} \"portname\":\"${PORTNAME}\", ;\
 	${ECHO_CMD} \"portrevision\":\"${PORTREVISION}\", ;\
 	${ECHO_CMD} \"portversion\":\"${PORTVERSION}\", ;\
+	${ECHO_CMD} \"use_forgejo\":\"${USE_FORGEJO}\", ;\
 	${ECHO_CMD} \"use_github\":\"${USE_GITHUB}\", ;\
 	${ECHO_CMD} \"use_gitlab\":\"${USE_GITLAB}\", ;\
 	${ECHO_CMD} \"www\":\"${WWW:Q}\" ;\

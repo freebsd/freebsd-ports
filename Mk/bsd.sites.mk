@@ -240,6 +240,195 @@ MASTER_SITE_GENTOO+= \
 	http://gentoo-mirror.flux.utah.edu/%SUBDIR%/
 .endif
 
+# Keep this before USE_FORGEJO to avoid a bogus warning with make makesum
+.if !(make(fetch) && !empty(NO_CHECKSUM) && !empty(DISABLE_SIZE))
+.  if !empty(MASTER_SITES:M*/codeberg.org/*/archive/*)
+DEV_WARNING+=	"MASTER_SITES contains ${MASTER_SITES:M*/codeberg.org/*/archive/*}, please use USE_FORGEJO instead."
+.  endif
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_FORGEJO)
+#
+# In order to use Forgejo your port must define USE_FORGEJO and the following
+# variables:
+#
+# FJ_SITE       - base URL of the Forgejo instance, including any port
+#                 or path prefix the instance is served under.
+#                 default: https://codeberg.org
+#
+# FJ_ACCOUNT    - account name of the Forgejo user hosting the project
+#                 default: ${PORTNAME}
+#
+# FJ_PROJECT    - name of the project on Forgejo
+#                 default: ${PORTNAME}
+#                 Forgejo archives extract to a directory named after the
+#                 project, so every group, including the default, must use
+#                 a distinct FJ_PROJECT.
+#
+# FJ_TAGNAME    - name of the tag to download (2.0.1, hash, ...)
+#                 Using the name of a branch here is incorrect. It is
+#                 possible to do FJ_TAGNAME= GIT_HASH to do a snapshot.
+#                 default: ${DISTVERSIONFULL}
+#
+# FJ_SUBDIR     - directory relative to WRKSRC where to move this distfile's
+#                 content after extracting.
+#
+# FJ_TUPLE      - above shortened to
+#                 [site[:port][/webroot]:]account:project:tagname[:group][/subdir]
+#
+.  if defined(USE_FORGEJO)
+.    if defined(FJ_TUPLE)
+.      for _tuple in ${FJ_TUPLE}
+_t_tmp=${_tuple}
+# Anything the pattern does not consume is a malformed part of the tuple.
+.        if !empty(_t_tmp:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@@)
+check-makevars::
+	@${ECHO_MSG} "The ${_tuple} FJ_TUPLE line is not in the form"
+	@${ECHO_MSG} "[site[:port][/webroot]:]account:project:tagname[:group][/subdir]"
+	@${FALSE}
+.        elif ${_t_tmp:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@\8@:S/://:C/[a-zA-Z0-9_.+-]//g}
+check-makevars::
+	@${ECHO_MSG} "The ${_tuple} FJ_TUPLE line has"
+	@${ECHO_MSG} "a group name containing something other than [a-zA-Z0-9_.+-]"
+	@${FALSE}
+.        endif
+.      endfor
+FJ_SITE+=	${FJ_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@\1\8@:S@::@:@:S@:$@@}
+FJ_ACCOUNT+=	${FJ_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@\5\8@}
+FJ_PROJECT+=	${FJ_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@\6\8@}
+FJ_TAGNAME+=	${FJ_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@\7\8@}
+FJ_SUBDIR+=	${FJ_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)?(/.*)?@\9\8@:M/*:S/^\///}
+.    endif
+
+# Check each tag name, including those from FJ_TUPLE, with any :group suffix
+# removed.
+.    for _fj_tag in ${FJ_TAGNAME:C@:[^/:]+$@@}
+.      if ${_fj_tag} == main || ${_fj_tag} == master
+IGNORE?=	Using ${_fj_tag} as FJ_TAGNAME is invalid. \
+		Must use a tag or commit hash so the upstream does \
+		not "reroll" as soon as the branch is updated
+.      endif
+.      if ${_fj_tag:C/^[0-9a-f]{7,39}$//} == "" && ${_fj_tag:M*[a-f]*} != ""
+DEV_WARNING+=	"FJ_TAGNAME ${_fj_tag} may be a short commit hash instead of the full 40-character hash"
+.      endif
+.    endfor
+
+.    if !${USE_FORGEJO:Mnodefault}
+MASTER_SITES+=	${FJ_SITE}/${FJ_ACCOUNT}/${FJ_PROJECT}/archive/${FJ_TAGNAME}${_FORGEJO_EXTRACT_SUFX}?dummy=/
+.    endif
+FJ_SITE_DEFAULT=	https://codeberg.org
+FJ_SITE?=	${FJ_SITE_DEFAULT}
+FJ_ACCOUNT_DEFAULT=	${PORTNAME}
+FJ_ACCOUNT?=	${FJ_ACCOUNT_DEFAULT}
+FJ_PROJECT_DEFAULT=	${PORTNAME}
+FJ_PROJECT?=	${FJ_PROJECT_DEFAULT}
+FJ_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
+FJ_TAGNAME?=	${FJ_TAGNAME_DEFAULT}
+_FORGEJO_GROUPS=	DEFAULT
+# Set FJ_*_DEFAULT, FJ_*_group1, FJ_*_group2, ... for each FJ_* variable.
+.    for _fj_v in FJ_SITE FJ_ACCOUNT FJ_PROJECT FJ_TAGNAME FJ_SUBDIR
+.      for _v_ex in ${${_fj_v}}
+_FJ_GROUPS=	${_v_ex:S/^${_v_ex:C@:[^/:]+$@@}//:S/^://}
+.        if !empty(_FJ_GROUPS)
+.          for _group in ${_FJ_GROUPS:S/,/ /g}
+.            if ${_group} == all || ${_group} == ALL || ${_group} == default
+check-makevars::
+		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
+		@${ECHO_MSG} "used in group definitions. Please fix your ${_fj_v}"
+		@${FALSE}
+.            endif
+.            if !${_FORGEJO_GROUPS:M${_group}}
+_FORGEJO_GROUPS+=	${_group}
+.            endif
+${_fj_v}_${_group}=	${_v_ex:C@^(.*):[^/:]+$@\1@}
+.          endfor
+.        else
+${_fj_v}_DEFAULT=	${_v_ex:C@^(.*):[^/:]+$@\1@}
+.        endif
+.      endfor
+.    endfor
+# Remove :group suffixes now that per-group variables have been set
+FJ_SITE:=	${FJ_SITE_DEFAULT}
+FJ_ACCOUNT:=	${FJ_ACCOUNT_DEFAULT}
+FJ_PROJECT:=	${FJ_PROJECT_DEFAULT}
+FJ_TAGNAME:=	${FJ_TAGNAME_DEFAULT}
+FJ_SUBDIR:=	${FJ_SUBDIR_DEFAULT}
+.    if defined(FJ_TAGNAME)
+FJ_TAGNAME_SANITIZED=	${FJ_TAGNAME:S,/,-,g}
+.    endif
+
+_FORGEJO_REV=		0
+_FORGEJO_EXTRACT_SUFX=	.tar.gz
+
+_FORGEJO_CLONE_DIR?=	${WRKDIR}/git-clone
+_PORTS_DIRECTORIES+=	${_FORGEJO_CLONE_DIR}
+.    if !${USE_FORGEJO:Mnodefault}
+DISTNAME:=	${FJ_ACCOUNT}-${FJ_PROJECT}-${FJ_TAGNAME_SANITIZED}_FJ${_FORGEJO_REV}
+DISTFILES+=	${DISTNAME}${_FORGEJO_EXTRACT_SUFX}
+git-clone: git-clone-DEFAULT
+git-clone-DEFAULT: ${_FORGEJO_CLONE_DIR}
+	@git clone ${FJ_SITE_DEFAULT}/${FJ_ACCOUNT_DEFAULT}/${FJ_PROJECT_DEFAULT}.git ${_FORGEJO_CLONE_DIR}/${FJ_PROJECT_DEFAULT}
+	@${ECHO_MSG} "Cloned the default Forgejo repository into ${_FORGEJO_CLONE_DIR}/${FJ_PROJECT_DEFAULT}" | ${FMT_80}
+.    endif
+.    if !empty(FJ_SUBDIR)
+_SITES_extract:=	690:post-extract-fj-DEFAULT
+post-extract-fj-DEFAULT:
+	@${RMDIR} ${WRKSRC}/${FJ_SUBDIR_DEFAULT} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${FJ_SUBDIR_DEFAULT:H} 2>/dev/null || :
+	@${LN} -s ${FJ_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g:S/^$/./} ${WRKSRC}/${FJ_SUBDIR_DEFAULT}
+.    endif
+.    if !${USE_FORGEJO:Mnodefault}
+_FJ_PROJECTS=	${FJ_PROJECT_DEFAULT}
+.    else
+_FJ_PROJECTS=
+.    endif
+.    if !empty(_FORGEJO_GROUPS:NDEFAULT)
+.      for _group in ${_FORGEJO_GROUPS:NDEFAULT}
+.        if empty(FJ_SITE_${_group})
+FJ_SITE_${_group}=	${FJ_SITE_DEFAULT}
+.        endif
+FJ_ACCOUNT_${_group}?=	${FJ_ACCOUNT_DEFAULT}
+FJ_PROJECT_${_group}?=	${FJ_PROJECT_DEFAULT}
+FJ_TAGNAME_${_group}?=	${FJ_TAGNAME_DEFAULT}
+# Every archive extracts to ${WRKDIR}/${FJ_PROJECT}, so project names must
+# not repeat across groups.
+.        if ${_FJ_PROJECTS:M${FJ_PROJECT_${_group}}}
+check-makevars::
+	@${ECHO_MSG} "Makefile error: FJ_PROJECT ${FJ_PROJECT_${_group}} is used by more than one"
+	@${ECHO_MSG} "Forgejo group.  Archives extract to a directory named after the project,"
+	@${ECHO_MSG} "so every group, including the default, needs a distinct FJ_PROJECT."
+	@${FALSE}
+.        endif
+_FJ_PROJECTS+=	${FJ_PROJECT_${_group}}
+FJ_TAGNAME_${_group}_SANITIZED=	${FJ_TAGNAME_${_group}:S,/,-,g}
+_FJ_TUPLE_OUT:=	${_FJ_TUPLE_OUT} ${FJ_SITE_${_group}}:${FJ_ACCOUNT_${_group}}:${FJ_PROJECT_${_group}}:${FJ_TAGNAME_${_group}}:${_group}/${FJ_SUBDIR_${_group}}
+DISTNAME_${_group}:=	${FJ_ACCOUNT_${_group}}-${FJ_PROJECT_${_group}}-${FJ_TAGNAME_${_group}_SANITIZED}_FJ${_FORGEJO_REV}
+DISTFILE_${_group}:=	${DISTNAME_${_group}}${_FORGEJO_EXTRACT_SUFX}
+DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
+MASTER_SITES:=	${MASTER_SITES} ${FJ_SITE_${_group}}/${FJ_ACCOUNT_${_group}}/${FJ_PROJECT_${_group}}/archive/${FJ_TAGNAME_${_group}}${_FORGEJO_EXTRACT_SUFX}?dummy=/:${_group}
+WRKSRC_${_group}:=	${WRKDIR}/${FJ_PROJECT_${_group}}
+.        if !empty(FJ_SUBDIR_${_group})
+# Order the subdir moves so that foo/bar is moved in before foo/bar/baz by
+# encoding the path depth in the target priority.  This handles up to 9 levels.
+_SITES_extract:=	${_SITES_extract} 69${FJ_SUBDIR_${_group}:C=[^/]+= =g:[#]}:post-extract-fj-${_group}
+post-extract-fj-${_group}:
+	@${RMDIR} ${WRKSRC}/${FJ_SUBDIR_${_group}} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${FJ_SUBDIR_${_group}:H} 2>/dev/null || :
+	@${MV} ${WRKSRC_${_group}} ${WRKSRC}/${FJ_SUBDIR_${_group}}
+	@${LN} -s ${WRKSRC:T}/${FJ_SUBDIR_${_group}} ${WRKSRC_${_group}}
+.        endif
+git-clone: git-clone-${_group}
+git-clone-${_group}: ${_FORGEJO_CLONE_DIR}
+	@git clone ${FJ_SITE_${_group}}/${FJ_ACCOUNT_${_group}}/${FJ_PROJECT_${_group}}.git ${_FORGEJO_CLONE_DIR}/${FJ_PROJECT_${_group}}
+	@${ECHO_MSG} "Cloned the ${_group} Forgejo repository into ${_FORGEJO_CLONE_DIR}/${FJ_PROJECT_${_group}}" | ${FMT_80}
+.      endfor
+.    endif
+convert-to-fj-tuple:
+	@${ECHO_MSG} ${FJ_SITE}:${FJ_ACCOUNT}:${FJ_PROJECT}:${FJ_TAGNAME} ${_FJ_TUPLE_OUT:S/\/$//}
+WWW?=	${FJ_SITE}/${FJ_ACCOUNT}/${FJ_PROJECT}/
+.  endif # defined(USE_FORGEJO)
+.endif # !defined(IGNORE_MASTER_SITE_FORGEJO)
+
 # Keep this before USE_GITHUB
 .if !empty(MASTER_SITES:M*/github.com/*/archive/*)
 DEV_WARNING+=	"MASTER_SITES contains ${MASTER_SITES:M*/github.com/*/archive/*}, please use USE_GITHUB instead."
