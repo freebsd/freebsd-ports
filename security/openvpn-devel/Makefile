@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20270220
+DISTVERSION=	g20270422
 PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	38243844f225517fa1d288517db9a34a33c5ad13
+GL_TAGNAME=	64fae9d82989ede6c92e230c594ab9335c05df8d
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
@@ -50,7 +50,8 @@ SUB_FILES=	openvpn-client pkg-message
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		ASYNC_PUSH DCO DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL TEST UNITTEST
+OPTIONS_DEFINE=		ASYNC_PUSH DCO DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL
+OPTIONS_DEFINE+=	TEST UNITTESTS
 OPTIONS_DEFAULT=	DCO EASYRSA LZ4 OPENSSL TEST
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	MBEDTLS OPENSSL
@@ -63,7 +64,7 @@ DCO_DESC=		Build with Data Channel Offload (ovpn(4)) support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 PKCS11_DESC=		Use security/pkcs11-helper
 SMALL_DESC=		Build a smaller executable with fewer features
-UNITTESTS_DESC=         Enable unit tests
+UNITTESTS_DESC=		Enable unit tests
 
 # option implementations
 
@@ -128,7 +129,6 @@ _tlslibs=	libssl libcrypto
 LIB_DEPENDS+=	libinotify.so:devel/libinotify
 . endif
 .endif
-
 
 # sanity check that we don't inherit incompatible SSL libs through,
 # for instance, pkcs11-helper:
