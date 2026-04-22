@@ -47,6 +47,37 @@
     </dates>
   </vuln>
 
+  <vuln vid="549313db-3e93-11f1-8d38-7fbbe0285610">
+    <topic>OpenVPN -- server DOS and data leak in TLS handshake vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gert Doering reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/blob/v2.7.2/Changes.rst">
+	  <p>[Security fixes in 2.7.2]</p>
+	  <ul>
+	    <li>fix race condition in TLS handshake that could lead to leaking of packet data from a previous handshake under specific circumstances (CVE-2026-40215)</li>
+	    <li>fix server [termination] on receiving a suitably malformed packet with a valid tls-crypt-v2 key (CVE-2026-35058)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-35058</cvename>
+      <cvename>CVE-2026-40215</cvename>
+      <url>https://github.com/OpenVPN/openvpn/blob/v2.7.2/Changes.rst</url>
+    </references>
+    <dates>
+      <discovery>2026-04-19</discovery>
+      <entry>2026-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="128951d0-3df0-11f1-bb07-bc241121aa0a">
     <topic>FreeBSD -- Missing large page handling in pmap_pkru_update_range()</topic>
     <affects>
