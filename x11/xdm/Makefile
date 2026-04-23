@@ -1,6 +1,6 @@
 PORTNAME=	xdm
 PORTVERSION=	1.1.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,7 +9,8 @@ COMMENT=	X.Org X display manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	xsm:x11/xsm
+RUN_DEPENDS=	xrdb:x11/xrdb \
+		xsm:x11/xsm
 
 EXTRACT_SUFX=	.tar.xz
 USES=		cpe libtool xorg xorg-cat:app
