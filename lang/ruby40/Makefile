@@ -115,9 +115,6 @@ PKGNAMESUFFIX=	${RUBY_SUFFIX}
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-post-extract-DOCS-on:
-	${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc/ChangeLog
-
 post-build:
 #
 # Hack to allow modules to be installed into separate PREFIX and/or under user
