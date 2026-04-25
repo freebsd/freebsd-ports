@@ -1,5 +1,5 @@
 PORTNAME=	bazel
-DISTVERSION=	9.0.1
+DISTVERSION=	9.1.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/bazelbuild/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	9
@@ -17,7 +17,7 @@ NOT_FOR_ARCHS=	i386
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
-USES=		cpe java python shebangfix zip
+USES=		cpe go:no_targets java python shebangfix zip
 CPE_VENDOR=	google
 JAVA_VERSION=	21
 JAVA_VENDOR=	openjdk
@@ -30,6 +30,8 @@ CONFLICTS_INSTALL=	bazel[0-9]*
 STRIP=
 
 NO_WRKSUBDIR=	YES
+
+GOROOT=		${LOCALBASE}/go${GO_SUFFIX}
 
 .include <bsd.port.pre.mk>
 
@@ -61,6 +63,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
 		${WRKSRC}/toolchain_local/BUILD \
 		${WRKSRC}/toolchain_local/rules_python_freebsd.patch
+	@${CP} ${FILESDIR}/rules_go_freebsd.patch \
+		${WRKSRC}/toolchain_local/rules_go_freebsd.patch
 
 do-build:
 	@${MKDIR} ${WRKDIR}/bazel_tmp
@@ -78,7 +82,7 @@ do-build:
 	PATH=${LOCALBASE}/bin:$$PATH \
 	SOURCE_DATE_EPOCH=$${SOURCE_DATE_EPOCH} \
 	BAZEL_JAVAC_OPTS=${BAZEL_JAVAC_OPTS} \
-	EXTRA_BAZEL_ARGS='--host_javabase=@local_jdk//:jdk --tool_java_runtime_version=local_jdk --java_language_version=${JAVA_PORT_VERSION} --tool_java_language_version=${JAVA_PORT_VERSION} --extra_toolchains=//toolchain_local:freebsd_python3_toolchain,//toolchain_local:local_jdk_21_runtime,//toolchain_local:local_jdk_21_bootstrap --action_env=PATH=${LOCALBASE}/bin:/bin:/usr/bin:/sbin:/usr/sbin --host_linkopt=-lm --linkopt=-lm' \
+	EXTRA_BAZEL_ARGS='--host_javabase=@local_jdk//:jdk --tool_java_runtime_version=local_jdk --java_language_version=${JAVA_PORT_VERSION} --tool_java_language_version=${JAVA_PORT_VERSION} --extra_toolchains=//toolchain_local:freebsd_python3_toolchain,//toolchain_local:local_jdk_21_runtime,//toolchain_local:local_jdk_21_bootstrap --action_env=PATH=${LOCALBASE}/bin:/bin:/usr/bin:/sbin:/usr/sbin --repo_env=GOROOT=${GOROOT} --host_linkopt=-lm --linkopt=-lm' \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:

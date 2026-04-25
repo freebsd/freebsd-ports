@@ -1,14 +1,35 @@
 --- MODULE.bazel.orig	2026-04-05 02:28:47 UTC
 +++ MODULE.bazel
-@@ -132,6 +132,12 @@ local_path_override(
+@@ -59,7 +59,7 @@
+ bazel_dep(name = "rules_apple", version = "4.3.1", repo_name = None)
+ bazel_dep(name = "google_benchmark", version = "1.9.4", repo_name = None)
+ bazel_dep(name = "onetbb", version = "2022.2.0", repo_name = None)
+-bazel_dep(name = "rules_go", version = "0.59.0", repo_name = None)  # Required for loads of CcInfo
++bazel_dep(name = "rules_go", version = "0.59.0")  # Required for loads of CcInfo
+
+ # bazel_dep overrides
+ single_version_override(
+@@ -135,8 +135,24 @@
+ local_path_override(
+     module_name = "remoteapis",
      path = "./third_party/remoteapis",
- )
- 
++)
++
++single_version_override(
++    module_name = "rules_go",
++    patch_strip = 1,
++    patches = ["//toolchain_local:rules_go_freebsd.patch"],
++    version = "0.59.0",
++)
++
 +single_version_override(
 +    module_name = "rules_python",
 +    patch_strip = 1,
 +    patches = ["//toolchain_local:rules_python_freebsd.patch"],
-+)
+ )
+
++go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
++go_sdk.host(name = "go_default_sdk")
 +
  # =========================================
  # Java dependencies

@@ -3,7 +3,7 @@ load("@rules_python//python:py_runtime_pair.bzl", "py_runtime_pair")
 
 package(default_visibility = ["//visibility:public"])
 
-exports_files(["rules_python_freebsd.patch"])
+exports_files(["rules_python_freebsd.patch", "rules_go_freebsd.patch"])
 
 config_setting(
     name = "remotejdk_21_setting",
