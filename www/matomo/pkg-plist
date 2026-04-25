@@ -440,7 +440,9 @@
 %%WWWDIR%%/core/Settings/Storage/Backend/PluginSettingsTable.php
 %%WWWDIR%%/core/Settings/Storage/Backend/SitesTable.php
 %%WWWDIR%%/core/Settings/Storage/Factory.php
+%%WWWDIR%%/core/Settings/Storage/LegacyUserSettingsMigration.php
 %%WWWDIR%%/core/Settings/Storage/Storage.php
+%%WWWDIR%%/core/Settings/Storage/UserScopedSettingsAccessManager.php
 %%WWWDIR%%/core/SettingsPiwik.php
 %%WWWDIR%%/core/SettingsServer.php
 %%WWWDIR%%/core/Singleton.php
@@ -709,6 +711,8 @@
 %%WWWDIR%%/core/Updates/5.7.0-b3.php
 %%WWWDIR%%/core/Updates/5.8.0-b1.php
 %%WWWDIR%%/core/Updates/5.8.0-b2.php
+%%WWWDIR%%/core/Updates/5.9.0-b1.php
+%%WWWDIR%%/core/Updates/5.9.0-b2.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Validators/BaseValidator.php
@@ -1109,6 +1113,7 @@
 %%WWWDIR%%/plugins/AIAgents/lang/zh-cn.json
 %%WWWDIR%%/plugins/AIAgents/lang/zh-tw.json
 %%WWWDIR%%/plugins/API/API.php
+%%WWWDIR%%/plugins/API/BulkRequestLimit.php
 %%WWWDIR%%/plugins/API/Controller.php
 %%WWWDIR%%/plugins/API/DataTable/MergeDataTables.php
 %%WWWDIR%%/plugins/API/Filter/DataComparisonFilter.php
@@ -1720,6 +1725,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/InvalidateReportData.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/MigrateAnnotations.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/MigrateTokenAuths.php
+%%WWWDIR%%/plugins/CoreAdminHome/Commands/MigrateUserScopedSettings.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/OptimizeArchiveTables.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/PurgeBrokenArchiveData.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/PurgeLegacyAnnotations.php
@@ -2131,6 +2137,7 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/ActivityIndicator/ActivityIndicator.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/AjaxForm/AjaxForm.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.adapter.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.spec.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/Alert/Alert.spec.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/Alert/Alert.vue
@@ -2195,8 +2202,25 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/PasswordStrength/PasswordStrength.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/PasswordStrength/PasswordStrength.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/PeriodDatePicker/PeriodDatePicker.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodOptions.component.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodOptions.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.applyButton.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.hashSync.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.hashSync.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.helpers.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.less
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.mountedOwnership.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.selection.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.templateContract.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.types.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelector.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelectorCalendarColumn.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelectorCompareControls.component.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelectorCompareControls.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PeriodSelectorOptionsColumn.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PresetDateRangeResolver.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PresetDateRanges.component.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/PeriodSelector/PresetDateRanges.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/Periods/Day.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/Periods/Month.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/Periods/Periods.spec.ts
@@ -2949,6 +2973,7 @@
 %%WWWDIR%%/plugins/Dashboard/vue/dist/umd.metadata.json
 %%WWWDIR%%/plugins/Dashboard/vue/src/Dashboard/Dashboard.store.ts
 %%WWWDIR%%/plugins/Dashboard/vue/src/Dashboard/Dashboard.ts
+%%WWWDIR%%/plugins/Dashboard/vue/src/DashboardSettings/DashboardSettings.spec.ts
 %%WWWDIR%%/plugins/Dashboard/vue/src/DashboardSettings/DashboardSettings.vue
 %%WWWDIR%%/plugins/Dashboard/vue/src/index.ts
 %%WWWDIR%%/plugins/Dashboard/vue/src/types.ts
@@ -3519,6 +3544,7 @@
 %%WWWDIR%%/plugins/FeatureFlags/FeatureFlagStorageInterface.php
 %%WWWDIR%%/plugins/FeatureFlags/FeatureFlags.php
 %%WWWDIR%%/plugins/FeatureFlags/FeatureFlags/Example.php
+%%WWWDIR%%/plugins/FeatureFlags/ForcedFeatureFlagStateInterface.php
 %%WWWDIR%%/plugins/FeatureFlags/Storage/ConfigFeatureFlagStorage.php
 %%WWWDIR%%/plugins/FeatureFlags/config/config.php
 %%WWWDIR%%/plugins/Feedback/API.php
@@ -4612,10 +4638,13 @@
 %%WWWDIR%%/plugins/Live/vue/dist/Live.umd.js
 %%WWWDIR%%/plugins/Live/vue/dist/Live.umd.min.js
 %%WWWDIR%%/plugins/Live/vue/dist/umd.metadata.json
+%%WWWDIR%%/plugins/Live/vue/src/AutoRefreshWidget/AutoRefreshController.ts
+%%WWWDIR%%/plugins/Live/vue/src/AutoRefreshWidget/AutoRefreshWidget.vue
 %%WWWDIR%%/plugins/Live/vue/src/IndexHeader/IndexHeader.vue
-%%WWWDIR%%/plugins/Live/vue/src/LastVisits/LastVisits.ts
 %%WWWDIR%%/plugins/Live/vue/src/LivePage/LivePage.vue
-%%WWWDIR%%/plugins/Live/vue/src/LiveWidget/LiveWidgetRefresh.ts
+%%WWWDIR%%/plugins/Live/vue/src/LiveWidget/LiveWidget.vue
+%%WWWDIR%%/plugins/Live/vue/src/SimpleRealtimeVisitorWidget/SimpleRealtimeVisitorWidget.spec.ts
+%%WWWDIR%%/plugins/Live/vue/src/SimpleRealtimeVisitorWidget/SimpleRealtimeVisitorWidget.vue
 %%WWWDIR%%/plugins/Live/vue/src/TotalVisitors/TotalVisitors.vue
 %%WWWDIR%%/plugins/Live/vue/src/index.ts
 %%WWWDIR%%/plugins/Login/API.php
@@ -6692,6 +6721,7 @@
 %%WWWDIR%%/plugins/Morpheus/vue/src/Demo/Demo.vue
 %%WWWDIR%%/plugins/Morpheus/vue/src/Demo/DemoCodePair.vue
 %%WWWDIR%%/plugins/Morpheus/vue/src/index.ts
+%%WWWDIR%%/plugins/Morpheus/vue/src/piwikHelper.spec.ts
 %%WWWDIR%%/plugins/MultiSites/API.php
 %%WWWDIR%%/plugins/MultiSites/Categories/MultiSitesCategory.php
 %%WWWDIR%%/plugins/MultiSites/Columns/Metrics/EcommerceOnlyEvolutionMetric.php
@@ -6992,6 +7022,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/Config.php
 %%WWWDIR%%/plugins/PrivacyManager/Controller.php
 %%WWWDIR%%/plugins/PrivacyManager/Dao/LogDataAnonymizer.php
+%%WWWDIR%%/plugins/PrivacyManager/DataRounding.php
 %%WWWDIR%%/plugins/PrivacyManager/Diagnostic/PrivacyInformational.php
 %%WWWDIR%%/plugins/PrivacyManager/DoNotTrackHeaderChecker.php
 %%WWWDIR%%/plugins/PrivacyManager/FeatureFlags/PrivacyCompliance.php
@@ -7005,6 +7036,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/ReportsPurger.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/CampaignTrackingParametersDisabled.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/CompliancePolicyEnforcedSetting.php
+%%WWWDIR%%/plugins/PrivacyManager/Settings/DataRoundingEnabled.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/IPAnonymisation.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/IpAddressMaskLength.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/ReferrerAnonymisation.php
@@ -7088,11 +7120,13 @@
 %%WWWDIR%%/plugins/PrivacyManager/stylesheets/gdprOverview.less
 %%WWWDIR%%/plugins/PrivacyManager/templates/askingForConsent.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/compliance.twig
+%%WWWDIR%%/plugins/PrivacyManager/templates/ePrivacyLaws.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/footerLinks.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/gdprOverview.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/gdprTools.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/getDatabaseSize.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/privacySettings.twig
+%%WWWDIR%%/plugins/PrivacyManager/templates/understandingYourLegalObligations.twig
 %%WWWDIR%%/plugins/PrivacyManager/templates/usersOptOut.twig
 %%WWWDIR%%/plugins/PrivacyManager/tracker.js
 %%WWWDIR%%/plugins/PrivacyManager/tracker.min.js
@@ -7111,6 +7145,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/DeleteOldLogs/DeleteOldLogs.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/DeleteOldReports/DeleteOldReports.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/DoNotTrackPreference/DoNotTrackPreference.vue
+%%WWWDIR%%/plugins/PrivacyManager/vue/src/EPrivacyLaws/EPrivacyLaws.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/GdprOverview/GdprOverview.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/ManageGdpr/ManageGdpr.less
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/ManageGdpr/ManageGdpr.vue
@@ -7119,6 +7154,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/PrivacySettings/PrivacySettings.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/ReportDeletionSettings/ReportDeletionSettings.store.ts
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/ScheduleReportDeletion/ScheduleReportDeletion.vue
+%%WWWDIR%%/plugins/PrivacyManager/vue/src/UnderstandingYourLegalObligations/UnderstandingYourLegalObligations.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/UsersOptOut/UsersOptOut.vue
 %%WWWDIR%%/plugins/PrivacyManager/vue/src/index.ts
 %%WWWDIR%%/plugins/ProfessionalServices/API.php
@@ -7486,10 +7522,8 @@
 %%WWWDIR%%/plugins/SEO/Metric/MetricsProvider.php
 %%WWWDIR%%/plugins/SEO/Metric/ProviderCache.php
 %%WWWDIR%%/plugins/SEO/SEO.php
-%%WWWDIR%%/plugins/SEO/Widgets/GetRank.php
 %%WWWDIR%%/plugins/SEO/config/config.php
 %%WWWDIR%%/plugins/SEO/config/tracker.php
-%%WWWDIR%%/plugins/SEO/javascripts/rank.js
 %%WWWDIR%%/plugins/SEO/lang/am.json
 %%WWWDIR%%/plugins/SEO/lang/ar.json
 %%WWWDIR%%/plugins/SEO/lang/az.json
@@ -7557,7 +7591,6 @@
 %%WWWDIR%%/plugins/SEO/lang/vi.json
 %%WWWDIR%%/plugins/SEO/lang/zh-cn.json
 %%WWWDIR%%/plugins/SEO/lang/zh-tw.json
-%%WWWDIR%%/plugins/SEO/templates/getRank.twig
 %%WWWDIR%%/plugins/ScheduledReports/API.php
 %%WWWDIR%%/plugins/ScheduledReports/Controller.php
 %%WWWDIR%%/plugins/ScheduledReports/GeneratedReport.php
@@ -7570,6 +7603,7 @@
 %%WWWDIR%%/plugins/ScheduledReports/ScheduledReports.php
 %%WWWDIR%%/plugins/ScheduledReports/SubscriptionModel.php
 %%WWWDIR%%/plugins/ScheduledReports/Tasks.php
+%%WWWDIR%%/plugins/ScheduledReports/WidgetReportMapper.php
 %%WWWDIR%%/plugins/ScheduledReports/config/config.php
 %%WWWDIR%%/plugins/ScheduledReports/config/tcpdf_config.php
 %%WWWDIR%%/plugins/ScheduledReports/config/tracker.php
@@ -7650,12 +7684,16 @@
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/AddReport/AddReport.vue
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/AddReport/SelectedReportsList.vue
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/ListReports/ListReports.vue
+%%WWWDIR%%/plugins/ScheduledReports/vue/src/ManageScheduledReport/ManageScheduledReport.spec.ts
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/ManageScheduledReport/ManageScheduledReport.vue
+%%WWWDIR%%/plugins/ScheduledReports/vue/src/ManageScheduledReport/storage.ts
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/ReportParameters/ReportParameters.vue
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/index.ts
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/types.ts
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/utilities.ts
 %%WWWDIR%%/plugins/SegmentEditor/API.php
+%%WWWDIR%%/plugins/SegmentEditor/Controller.php
+%%WWWDIR%%/plugins/SegmentEditor/Menu.php
 %%WWWDIR%%/plugins/SegmentEditor/Model.php
 %%WWWDIR%%/plugins/SegmentEditor/SegmentEditor.php
 %%WWWDIR%%/plugins/SegmentEditor/SegmentFormatter.php
@@ -7664,6 +7702,9 @@
 %%WWWDIR%%/plugins/SegmentEditor/Services/StoredSegmentService.php
 %%WWWDIR%%/plugins/SegmentEditor/Settings/LimitSegments.php
 %%WWWDIR%%/plugins/SegmentEditor/UnprocessedSegmentException.php
+%%WWWDIR%%/plugins/SegmentEditor/Widgets/ManageSegments.php
+%%WWWDIR%%/plugins/SegmentEditor/categories/ManageSegmentsSubcategory.php
+%%WWWDIR%%/plugins/SegmentEditor/changes.json
 %%WWWDIR%%/plugins/SegmentEditor/config/config.php
 %%WWWDIR%%/plugins/SegmentEditor/config/tracker.php
 %%WWWDIR%%/plugins/SegmentEditor/images/ajax-loader.gif
@@ -7678,6 +7719,7 @@
 %%WWWDIR%%/plugins/SegmentEditor/images/search_btn.png
 %%WWWDIR%%/plugins/SegmentEditor/images/segment-close.png
 %%WWWDIR%%/plugins/SegmentEditor/javascripts/Segmentation.js
+%%WWWDIR%%/plugins/SegmentEditor/javascripts/manageSegmentsPage.js
 %%WWWDIR%%/plugins/SegmentEditor/lang/am.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/ar.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/az.json
@@ -7748,6 +7790,7 @@
 %%WWWDIR%%/plugins/SegmentEditor/stylesheets/segmentation.less
 %%WWWDIR%%/plugins/SegmentEditor/templates/_segmentSelector.twig
 %%WWWDIR%%/plugins/SegmentEditor/templates/_unprocessedSegmentMessage.twig
+%%WWWDIR%%/plugins/SegmentEditor/templates/manageSegments.twig
 %%WWWDIR%%/plugins/SegmentEditor/vue/dist/SegmentEditor.umd.js
 %%WWWDIR%%/plugins/SegmentEditor/vue/dist/SegmentEditor.umd.min.js
 %%WWWDIR%%/plugins/SegmentEditor/vue/dist/umd.metadata.json
@@ -9270,6 +9313,7 @@
 %%WWWDIR%%/plugins/UsersManager/TokenNotifications/TokenNotifierTask.php
 %%WWWDIR%%/plugins/UsersManager/TokenNotifications/TokenRotationNotificationProvider.php
 %%WWWDIR%%/plugins/UsersManager/UserAccessFilter.php
+%%WWWDIR%%/plugins/UsersManager/UserLoginHelper.php
 %%WWWDIR%%/plugins/UsersManager/UserNotifications/InactiveUsersEmailNotification.php
 %%WWWDIR%%/plugins/UsersManager/UserNotifications/InactiveUsersNotificationProvider.php
 %%WWWDIR%%/plugins/UsersManager/UserNotifications/UserEmailNotification.php
