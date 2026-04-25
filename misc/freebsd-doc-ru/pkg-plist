@@ -38,6 +38,17 @@
 %%HTML%%%%DOCBASE%%/ru/articles/vinum/index.html
 %%HTML%%%%DOCBASE%%/ru/articles/vm-design/index.html
 %%HTML%%%%DOCBASE%%/ru/articles/vpn-ipsec/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/blindness/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/book/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/colors/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/development/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/help/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/lowvision/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/parti/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/partii/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/preface/index.html
+%%HTML%%%%DOCBASE%%/ru/books/accessibility/virtual-terminal/index.html
 %%HTML%%%%DOCBASE%%/ru/books/arch-handbook/bibliography/index.html
 %%HTML%%%%DOCBASE%%/ru/books/arch-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/ru/books/arch-handbook/boot/index.html
@@ -169,6 +180,7 @@
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/upgrading/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/uses/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/versions/index.html
+%%PDF%%%%DOCBASE%%/ru/books/accessibility/accessibility_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/articles/bsdl-gpl/bsdl-gpl_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/articles/building-products/building-products_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/articles/committers-guide/committers-guide_ru.pdf
