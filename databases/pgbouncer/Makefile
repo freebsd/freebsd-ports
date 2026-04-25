@@ -1,5 +1,5 @@
 PORTNAME=	pgbouncer
-DISTVERSION=	1.24.1
+DISTVERSION=	1.25.1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.pgbouncer.org/downloads/files/${DISTVERSION}/
 
@@ -10,10 +10,12 @@ WWW=		https://www.pgbouncer.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		cpe gmake pkgconfig ssl
+USES=		cpe gmake pkgconfig python:build shebangfix ssl
 USE_RC_SUBR=	pgbouncer
+SHEBANG_FILES=	doc/filter.py etc/mkauth.py
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-evdns \
