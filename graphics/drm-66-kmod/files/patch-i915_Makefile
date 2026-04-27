@@ -1,0 +1,12 @@
+--- i915/Makefile.orig	2025-12-11 14:11:14 UTC
++++ i915/Makefile
+@@ -360,6 +360,9 @@ CWARNFLAGS += -Wno-pointer-arith -Wno-format -Wno-cast
+ # Reason: More or less all files need it due to use of test_bit() macro
+ # error: cast from 'const unsigned long *' to 'volatile unsigned long *'
+ CWARNFLAGS += -Wno-pointer-arith -Wno-format -Wno-cast-qual
++.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 210000
++CWARNFLAGS += -Wno-default-const-init-var-unsafe
++.endif
+ 
+ CWARNFLAGS.intel_acpi.c=	-Wno-incompatible-pointer-types
+ CWARNFLAGS.intel_audio.c=	-Wno-unused-function
