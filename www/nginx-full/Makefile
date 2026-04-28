@@ -41,4 +41,6 @@ OPTIONS_DEFAULT=DSO DEBUG DEBUGLOG FILE_AIO GOOGLE_PERFTOOLS \
 OPTIONS_DEFAULT+=	GSSAPI_MIT
 .endif
 
+OPTIONS_EXCLUDE_aarch64=GOOGLE_PERFTOOLS # devel/google-perftools does not build on aarch64
+
 .include "${MASTERDIR}/Makefile"
