@@ -1,5 +1,5 @@
 ZnapZend is a ZFS centric backup tool.
-It relies on snapshot, send and recieve to do its work.
+It relies on snapshot, send and receive to do its work.
 It has the built-in ability to manage both local
 snapshots as well as remote copies by thinning them out
 as time progresses.
