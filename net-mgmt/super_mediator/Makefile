@@ -28,7 +28,7 @@ OPTIONS_SUB=	yes
 
 MYSQL_DESC=	Enable SuperMediator to directly write into MySQL
 SKIPSET_DESC=	Enable SiLK IPSET files for filtering
-SPREAD_DESC=	Enable Spread libary as a pub/sub distribution capability
+SPREAD_DESC=	Enable Spread library as a pub/sub distribution capability
 
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_USES=	mysql
