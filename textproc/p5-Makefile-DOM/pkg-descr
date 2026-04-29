@@ -1,4 +1,4 @@
-This libary can serve as an advanced lexer for (GNU) makefiles. It parses
+This library can serve as an advanced lexer for (GNU) makefiles. It parses
 makefiles as "documents" and the parsing is lossless. The results are data
 structures similar to DOM trees. The DOM trees hold every single bit of the
 information in the original input files, including white spaces, blank lines and

@@ -1,4 +1,4 @@
-This is is a set of Python bindings for the scrypt key derivation function.
+This is a set of Python bindings for the scrypt key derivation function.
 
 Scrypt is useful when encrypting password as it is possible to specify a
 minimum amount of time to use when encrypting and decrypting. If, for example,

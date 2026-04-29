@@ -7,7 +7,7 @@ in the wavelength definition through a simplified version of pint.
 
 Filters are represented individually by a Filter object. Collections of filters
 are handled with a Library. We provide an internal library that contains a
-signitificant amount of common filters.
+significant amount of common filters.
 
 Each filter is minimally defined by a wavelength and throughput. Many properties
 such as central of pivot wavelength are computed internally.

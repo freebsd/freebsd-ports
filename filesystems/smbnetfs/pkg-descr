@@ -15,4 +15,4 @@ Featuries:
       not warry that there is no file with such name :-)
     * command "cd mountpoint/username:password@computer_or_ip" allows
       you to access "computer_or_ip" as user "username" with password
-      "password" (this is insecure, but usefull)
+      "password" (this is insecure, but useful)
