@@ -24,7 +24,7 @@ PORTDOCS=	${PORTNAME}.html
 
 .include <bsd.port.options.mk>
 
-# usefull if you run mimetex on another machine
+# useful if you run mimetex on another machine
 .if ${PORT_OPTIONS:MSTATIC}
 STATIC_MIMETEX=	-static
 .endif

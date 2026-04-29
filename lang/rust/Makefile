@@ -115,7 +115,7 @@ MAKE_ENV+=	RUST_BACKTRACE=1
 .endif
 
 # per https://rust-lang.github.io/rustup/concepts/components.html
-# rustc-dev is only usefull on nightly
+# rustc-dev is only useful on nightly
 .if defined(NIGHTLY_DATE)
 _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
