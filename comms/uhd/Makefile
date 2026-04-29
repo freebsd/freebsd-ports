@@ -9,7 +9,7 @@ COMMENT=	Ettus Research UHD driver framework
 WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 
 # See https://www.ettus.com/sdr-software/licenses/.  Dual license
-# under GPLv3 and and "Alternate License" whose terms are not documented
+# under GPLv3 and "Alternate License" whose terms are not documented
 # on the web site (contact info@ettus.com).  Mark as GPLv3 for now
 # until terms of the "Alternate License" are made clear.  When that
 # is understood and if appropriate, we can add that license here.

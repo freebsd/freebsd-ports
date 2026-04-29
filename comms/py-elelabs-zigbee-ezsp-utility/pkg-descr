@@ -1,5 +1,5 @@
 The Elelabs Firmware Update Utility is a basic Python 3 script to flash
-the the firmware inside a range of Elelabs Zigbee and Thread products to
+the firmware inside a range of Elelabs Zigbee and Thread products to
 a newer version.
 
 Currently sold supported products based on Silicon Labs microcontrollers:

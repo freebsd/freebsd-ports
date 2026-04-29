@@ -15,5 +15,5 @@ resourced can be extracted, however only in raw form - icons and cursors require
 additional conversion before they can be saved as icon and cursor files.
 
 The extresso script automates the tasks of extracting and converting icons. This
-is done with the help of of special resource scripts. The purpose of these
+is done with the help of special resource scripts. The purpose of these
 scripts are to give names to the icons in the executables and libraries.

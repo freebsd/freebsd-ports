@@ -6,7 +6,7 @@ CATEGORIES=	devel science
 PATCH_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/
 # Adds the "ALL" option back and adds the install target for docs
 PATCHFILES+=	ftxui_build_docs_target_all.patch?h=ftxui:-p1
-# Adds the the install target for examples
+# Adds the install target for examples
 PATCHFILES+=	ftxui_make_examples_installable.patch?h=ftxui:-p1
 
 MAINTAINER=	yuri@FreeBSD.org

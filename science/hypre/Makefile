@@ -61,7 +61,7 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} usr-manual ${STAGEDIR}${DOCSDIR}
 
-post-test: # run tests; unclear how to to run tests, see https://github.com/hypre-space/hypre/issues/502
+post-test: # run tests; unclear how to run tests, see https://github.com/hypre-space/hypre/issues/502
 .for t in ij ij_assembly ij_mv maxwell_unscaled
 	@cd ${WRKSRC}/test && \
 		${ECHO} "==> running test ${t}" && \
