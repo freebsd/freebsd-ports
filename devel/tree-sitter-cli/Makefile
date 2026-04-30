@@ -1,10 +1,9 @@
 PORTNAME=	tree-sitter-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.8
-PORTREVISION=	7
+DISTVERSION=	0.26.9
 CATEGORIES=	devel
 
-MAINTAINER=	amad@atl.tools
+MAINTAINER=	amadaluzia@disroot.org
 COMMENT=	CLI tool for developing, testing, and using Tree-sitter parsers
 WWW=		https://tree-sitter.github.io/tree-sitter/
 
@@ -19,7 +18,7 @@ GH_ACCOUNT=	tree-sitter
 GH_PROJECT=	tree-sitter
 
 CARGO_BUILD_ARGS=	-p tree-sitter-cli
-CARGO_INSTALL_PATH=	cli
+CARGO_INSTALL_PATH=	crates/cli
 # tests require cloning fixtures.
 CARGO_TEST=		no
 
