@@ -1,4 +1,5 @@
 lib/mlt-7/libmltqt6.so
+%%DATADIR%%/qt6/consumer_qglsl.yml
 %%DATADIR%%/qt6/filter_audiolevelgraph.yml
 %%DATADIR%%/qt6/filter_audiospectrum.yml
 %%DATADIR%%/qt6/filter_audiowaveform.yml
