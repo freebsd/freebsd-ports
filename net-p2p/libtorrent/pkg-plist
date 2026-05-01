@@ -31,12 +31,10 @@ include/torrent/net/fd.h
 include/torrent/net/http_get.h
 include/torrent/net/http_stack.h
 include/torrent/net/network_config.h
-include/torrent/net/network_manager.h
 include/torrent/net/poll.h
 include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
-include/torrent/net/socket_event.h
 include/torrent/net/types.h
 include/torrent/object.h
 include/torrent/object_raw_bencode.h
@@ -51,6 +49,9 @@ include/torrent/peer/peer.h
 include/torrent/peer/peer_info.h
 include/torrent/peer/peer_list.h
 include/torrent/rate.h
+include/torrent/runtime/network_manager.h
+include/torrent/runtime/socket_manager.h
+include/torrent/system/thread.h
 include/torrent/throttle.h
 include/torrent/torrent.h
 include/torrent/tracker/dht_controller.h
@@ -61,6 +62,7 @@ include/torrent/tracker/wrappers.h
 include/torrent/utils/chrono.h
 include/torrent/utils/directory_events.h
 include/torrent/utils/extents.h
+include/torrent/utils/file_stat.h
 include/torrent/utils/log.h
 include/torrent/utils/log_buffer.h
 include/torrent/utils/option_strings.h
@@ -70,9 +72,9 @@ include/torrent/utils/resume.h
 include/torrent/utils/scheduler.h
 include/torrent/utils/signal_bitfield.h
 include/torrent/utils/string_manip.h
-include/torrent/utils/thread.h
+include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.35
-lib/libtorrent.so.35.0.0
+lib/libtorrent.so.41
+lib/libtorrent.so.41.0.0
 libdata/pkgconfig/libtorrent.pc

@@ -1,9 +1,7 @@
 PORTNAME=	libtorrent
-DISTVERSION=	0.16.6
-PORTREVISION=	1
+DISTVERSION=	0.16.11
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v0.16.5/
-DISTNAME=	${PORTNAME}-0.16.5
+MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
@@ -31,8 +29,8 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I ${OPENSSLINC}" \
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
 
-TESTING_UNSAFE=	https://github.com/rakshasa/libtorrent/issues/292
+TEST_ARGS=	CPPUNIT_LIBS="-L${LOCALBASE}/lib -lcppunit"
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
