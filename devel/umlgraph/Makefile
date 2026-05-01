@@ -1,14 +1,17 @@
 PORTNAME=	umlgraph
 DISTVERSIONPREFIX=	R
 DISTVERSION=	5_7_2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated drawing of UML diagrams
-WWW=		https://www.umlgraph.org/
+WWW=		https://www.spinellis.gr/umlgraph/
 
 LICENSE=	BSD3CLAUSE
+
+DEPRECATED=	10 years old, not activaly maintained, does not run with jdk11+
+EXPIRATION_DATE=	2026-10-28
 
 USES=		java:ant
 JAVA_VERSION=	8
