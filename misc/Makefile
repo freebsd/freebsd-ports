@@ -8,6 +8,7 @@
     SUBDIR += actiona
     SUBDIR += adiak
     SUBDIR += adios2
+    SUBDIR += agtop
     SUBDIR += aichat
     SUBDIR += air
     SUBDIR += alpaca
