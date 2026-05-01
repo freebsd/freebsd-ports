@@ -1,4 +1,4 @@
---- tests/t_cltsrv.sh.orig	2026-02-04 16:27:00 UTC
+--- tests/t_cltsrv.sh.orig	2026-04-25 20:34:09 UTC
 +++ tests/t_cltsrv.sh
 @@ -1,7 +1,7 @@
  #! /bin/sh
@@ -9,7 +9,7 @@
  #
  # This program is free software; you can redistribute it and/or
  # modify it under the terms of the GNU General Public License
-@@ -23,8 +23,9 @@ openvpn="${openvpn:-${top_builddir}/src/openvpn/openvp
+@@ -21,8 +21,9 @@ openvpn="${openvpn:-${top_builddir}/src/openvpn/openvp
  top_srcdir="${top_srcdir:-..}"
  top_builddir="${top_builddir:-..}"
  openvpn="${openvpn:-${top_builddir}/src/openvpn/openvpn}"
@@ -21,7 +21,7 @@
  addopts=
  case `uname -s` in
      FreeBSD)
-@@ -46,18 +47,38 @@ downscript="../tests/t_cltsrv-down.sh"
+@@ -44,18 +45,38 @@ downscript="../tests/t_cltsrv-down.sh"
  # make sure that the --down script is executable -- fail (rather than
  # skip) test if it isn't.
  downscript="../tests/t_cltsrv-down.sh"
