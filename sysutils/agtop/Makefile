@@ -1,0 +1,273 @@
+PORTNAME=	agtop
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.9
+CATEGORIES=	sysutils
+
+MAINTAINER=	matt@brassey.io
+COMMENT=	Process monitor for AI coding agents
+WWW=		https://github.com/MBrassey/agtop
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	MBrassey
+
+PLIST_FILES=	bin/agtop
+
+# Generated via scripts/gen_freebsd_port.py against Cargo.lock.
+# Re-generate when Cargo.lock changes.
+CARGO_CRATES=	\
+	aho-corasick-1.1.4 \
+	allocator-api2-0.2.21 \
+	android_system_properties-0.1.5 \
+	anstream-1.0.0 \
+	anstyle-1.0.14 \
+	anstyle-parse-1.0.0 \
+	anstyle-query-1.1.5 \
+	anstyle-wincon-3.0.11 \
+	anyhow-1.0.102 \
+	atomic-0.6.1 \
+	autocfg-1.5.0 \
+	base64-0.22.1 \
+	bit-set-0.5.3 \
+	bit-vec-0.6.3 \
+	bitflags-1.3.2 \
+	bitflags-2.11.1 \
+	block-buffer-0.10.4 \
+	bumpalo-3.20.2 \
+	bytemuck-1.25.0 \
+	castaway-0.2.4 \
+	cc-1.2.61 \
+	cfg-if-1.0.4 \
+	cfg_aliases-0.2.1 \
+	chrono-0.4.44 \
+	clap-4.6.1 \
+	clap_builder-4.6.0 \
+	clap_derive-4.6.1 \
+	clap_lex-1.1.0 \
+	colorchoice-1.0.5 \
+	compact_str-0.9.0 \
+	convert_case-0.10.0 \
+	core-foundation-sys-0.8.7 \
+	cpufeatures-0.2.17 \
+	crossterm-0.29.0 \
+	crossterm_winapi-0.9.1 \
+	crypto-common-0.1.7 \
+	csscolorparser-0.6.2 \
+	darling-0.23.0 \
+	darling_core-0.23.0 \
+	darling_macro-0.23.0 \
+	deltae-0.3.2 \
+	deranged-0.5.8 \
+	derive_more-2.1.1 \
+	derive_more-impl-2.1.1 \
+	digest-0.10.7 \
+	dirs-6.0.0 \
+	dirs-sys-0.5.0 \
+	document-features-0.2.12 \
+	either-1.15.0 \
+	equivalent-1.0.2 \
+	errno-0.3.14 \
+	euclid-0.22.14 \
+	fancy-regex-0.11.0 \
+	fastrand-2.4.1 \
+	filedescriptor-0.8.3 \
+	find-msvc-tools-0.1.9 \
+	finl_unicode-1.4.0 \
+	fixedbitset-0.4.2 \
+	fnv-1.0.7 \
+	foldhash-0.1.5 \
+	foldhash-0.2.0 \
+	futures-core-0.3.32 \
+	futures-task-0.3.32 \
+	futures-util-0.3.32 \
+	generic-array-0.14.7 \
+	getrandom-0.2.17 \
+	getrandom-0.3.4 \
+	getrandom-0.4.2 \
+	hashbrown-0.15.5 \
+	hashbrown-0.16.1 \
+	hashbrown-0.17.0 \
+	heck-0.5.0 \
+	hex-0.4.3 \
+	iana-time-zone-0.1.65 \
+	iana-time-zone-haiku-0.1.2 \
+	id-arena-2.3.0 \
+	ident_case-1.0.1 \
+	indexmap-2.14.0 \
+	indoc-2.0.7 \
+	instability-0.3.12 \
+	is_terminal_polyfill-1.70.2 \
+	itertools-0.14.0 \
+	itoa-1.0.18 \
+	js-sys-0.3.97 \
+	kasuari-0.4.12 \
+	lab-0.11.0 \
+	lazy_static-1.5.0 \
+	leb128fmt-0.1.0 \
+	libc-0.2.186 \
+	libredox-0.1.16 \
+	line-clipping-0.3.7 \
+	linux-raw-sys-0.12.1 \
+	litrs-1.0.0 \
+	lock_api-0.4.14 \
+	log-0.4.29 \
+	lru-0.16.4 \
+	mac_address-1.1.8 \
+	memchr-2.8.0 \
+	memmem-0.1.1 \
+	memoffset-0.9.1 \
+	minimal-lexical-0.2.1 \
+	mio-1.2.0 \
+	nix-0.29.0 \
+	nom-7.1.3 \
+	ntapi-0.4.3 \
+	num-conv-0.2.1 \
+	num-derive-0.4.2 \
+	num-traits-0.2.19 \
+	num_threads-0.1.7 \
+	objc2-core-foundation-0.3.2 \
+	objc2-io-kit-0.3.2 \
+	once_cell-1.21.4 \
+	once_cell_polyfill-1.70.2 \
+	option-ext-0.2.0 \
+	ordered-float-4.6.0 \
+	parking_lot-0.12.5 \
+	parking_lot_core-0.9.12 \
+	pest-2.8.6 \
+	pest_derive-2.8.6 \
+	pest_generator-2.8.6 \
+	pest_meta-2.8.6 \
+	phf-0.11.3 \
+	phf_codegen-0.11.3 \
+	phf_generator-0.11.3 \
+	phf_macros-0.11.3 \
+	phf_shared-0.11.3 \
+	pin-project-lite-0.2.17 \
+	portable-atomic-1.13.1 \
+	powerfmt-0.2.0 \
+	prettyplease-0.2.37 \
+	proc-macro2-1.0.106 \
+	quote-1.0.45 \
+	r-efi-5.3.0 \
+	r-efi-6.0.0 \
+	rand-0.8.6 \
+	rand_core-0.6.4 \
+	ratatui-0.30.0 \
+	ratatui-core-0.1.0 \
+	ratatui-crossterm-0.1.0 \
+	ratatui-macros-0.7.0 \
+	ratatui-termwiz-0.1.0 \
+	ratatui-widgets-0.3.0 \
+	redox_syscall-0.5.18 \
+	redox_users-0.5.2 \
+	regex-1.12.3 \
+	regex-automata-0.4.14 \
+	regex-syntax-0.8.10 \
+	rustc_version-0.4.1 \
+	rustix-1.1.4 \
+	rustversion-1.0.22 \
+	ryu-1.0.23 \
+	scopeguard-1.2.0 \
+	semver-1.0.28 \
+	serde-1.0.228 \
+	serde_core-1.0.228 \
+	serde_derive-1.0.228 \
+	serde_json-1.0.149 \
+	serde_spanned-1.1.1 \
+	sha2-0.10.9 \
+	shlex-1.3.0 \
+	signal-hook-0.3.18 \
+	signal-hook-mio-0.2.5 \
+	signal-hook-registry-1.4.8 \
+	siphasher-1.0.2 \
+	slab-0.4.12 \
+	smallvec-1.15.1 \
+	static_assertions-1.1.0 \
+	strsim-0.11.1 \
+	strum-0.27.2 \
+	strum_macros-0.27.2 \
+	syn-1.0.109 \
+	syn-2.0.117 \
+	sysinfo-0.38.4 \
+	tempfile-3.27.0 \
+	terminfo-0.9.0 \
+	termios-0.3.3 \
+	termwiz-0.23.3 \
+	thiserror-1.0.69 \
+	thiserror-2.0.18 \
+	thiserror-impl-1.0.69 \
+	thiserror-impl-2.0.18 \
+	time-0.3.47 \
+	time-core-0.1.8 \
+	toml-1.1.2+spec-1.1.0 \
+	toml_datetime-1.1.1+spec-1.1.0 \
+	toml_parser-1.1.2+spec-1.1.0 \
+	typenum-1.20.0 \
+	ucd-trie-0.1.7 \
+	unicode-ident-1.0.24 \
+	unicode-segmentation-1.13.2 \
+	unicode-truncate-2.0.1 \
+	unicode-width-0.2.0 \
+	unicode-xid-0.2.6 \
+	utf8parse-0.2.2 \
+	uuid-1.23.1 \
+	version_check-0.9.5 \
+	vtparse-0.6.2 \
+	wasi-0.11.1+wasi-snapshot-preview1 \
+	wasip2-1.0.3+wasi-0.2.9 \
+	wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+	wasm-bindgen-0.2.120 \
+	wasm-bindgen-macro-0.2.120 \
+	wasm-bindgen-macro-support-0.2.120 \
+	wasm-bindgen-shared-0.2.120 \
+	wasm-encoder-0.244.0 \
+	wasm-metadata-0.244.0 \
+	wasmparser-0.244.0 \
+	wezterm-bidi-0.2.3 \
+	wezterm-blob-leases-0.1.1 \
+	wezterm-color-types-0.3.0 \
+	wezterm-dynamic-0.2.1 \
+	wezterm-dynamic-derive-0.1.1 \
+	wezterm-input-types-0.1.0 \
+	winapi-0.3.9 \
+	winapi-i686-pc-windows-gnu-0.4.0 \
+	winapi-x86_64-pc-windows-gnu-0.4.0 \
+	windows-0.62.2 \
+	windows-collections-0.3.2 \
+	windows-core-0.62.2 \
+	windows-future-0.3.2 \
+	windows-implement-0.60.2 \
+	windows-interface-0.59.3 \
+	windows-link-0.2.1 \
+	windows-numerics-0.3.1 \
+	windows-result-0.4.1 \
+	windows-strings-0.5.1 \
+	windows-sys-0.59.0 \
+	windows-sys-0.61.2 \
+	windows-targets-0.52.6 \
+	windows-threading-0.2.1 \
+	windows_aarch64_gnullvm-0.52.6 \
+	windows_aarch64_msvc-0.52.6 \
+	windows_i686_gnu-0.52.6 \
+	windows_i686_gnullvm-0.52.6 \
+	windows_i686_msvc-0.52.6 \
+	windows_x86_64_gnu-0.52.6 \
+	windows_x86_64_gnullvm-0.52.6 \
+	windows_x86_64_msvc-0.52.6 \
+	winnow-1.0.2 \
+	wit-bindgen-0.51.0 \
+	wit-bindgen-0.57.1 \
+	wit-bindgen-core-0.51.0 \
+	wit-bindgen-rust-0.51.0 \
+	wit-bindgen-rust-macro-0.51.0 \
+	wit-component-0.244.0 \
+	wit-parser-0.244.0 \
+	zmij-1.0.21
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/agtop
+
+.include <bsd.port.mk>
