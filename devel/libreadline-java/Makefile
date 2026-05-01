@@ -1,13 +1,16 @@
 PORTNAME=	libreadline-java
 PORTVERSION=	0.8.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel java
 MASTER_SITES=	SF/java-readline/java-readline/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around GNU Readline / libedit / libgetline
 WWW=		https://sourceforge.net/projects/java-readline/
+
+DEPRECATED=	20 years old, does not build with jdk11+, not actively maintained, no users in the tree, forked(?) to https://github.com/aclemons/java-readline
+EXPIRATION_DATE=	2026-10-28
 
 USES=		gmake java libedit ncurses readline
 JAVA_VERSION=	8
