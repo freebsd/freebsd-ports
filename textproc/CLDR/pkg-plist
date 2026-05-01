@@ -8,6 +8,7 @@
 %%DATADIR%%/common/annotations/as.xml
 %%DATADIR%%/common/annotations/ast.xml
 %%DATADIR%%/common/annotations/az.xml
+%%DATADIR%%/common/annotations/ba.xml
 %%DATADIR%%/common/annotations/be.xml
 %%DATADIR%%/common/annotations/bew.xml
 %%DATADIR%%/common/annotations/bg.xml
@@ -127,6 +128,7 @@
 %%DATADIR%%/common/annotations/sat.xml
 %%DATADIR%%/common/annotations/sc.xml
 %%DATADIR%%/common/annotations/sd.xml
+%%DATADIR%%/common/annotations/shn.xml
 %%DATADIR%%/common/annotations/si.xml
 %%DATADIR%%/common/annotations/sk.xml
 %%DATADIR%%/common/annotations/sl.xml
@@ -139,8 +141,10 @@
 %%DATADIR%%/common/annotations/sr_Latn_BA.xml
 %%DATADIR%%/common/annotations/su.xml
 %%DATADIR%%/common/annotations/sv.xml
+%%DATADIR%%/common/annotations/sv_FI.xml
 %%DATADIR%%/common/annotations/sw.xml
 %%DATADIR%%/common/annotations/sw_KE.xml
+%%DATADIR%%/common/annotations/syr.xml
 %%DATADIR%%/common/annotations/ta.xml
 %%DATADIR%%/common/annotations/te.xml
 %%DATADIR%%/common/annotations/tg.xml
@@ -175,6 +179,7 @@
 %%DATADIR%%/common/annotationsDerived/as.xml
 %%DATADIR%%/common/annotationsDerived/ast.xml
 %%DATADIR%%/common/annotationsDerived/az.xml
+%%DATADIR%%/common/annotationsDerived/ba.xml
 %%DATADIR%%/common/annotationsDerived/be.xml
 %%DATADIR%%/common/annotationsDerived/bew.xml
 %%DATADIR%%/common/annotationsDerived/bg.xml
@@ -293,6 +298,7 @@
 %%DATADIR%%/common/annotationsDerived/sat.xml
 %%DATADIR%%/common/annotationsDerived/sc.xml
 %%DATADIR%%/common/annotationsDerived/sd.xml
+%%DATADIR%%/common/annotationsDerived/shn.xml
 %%DATADIR%%/common/annotationsDerived/si.xml
 %%DATADIR%%/common/annotationsDerived/sk.xml
 %%DATADIR%%/common/annotationsDerived/sl.xml
@@ -307,6 +313,7 @@
 %%DATADIR%%/common/annotationsDerived/sv.xml
 %%DATADIR%%/common/annotationsDerived/sw.xml
 %%DATADIR%%/common/annotationsDerived/sw_KE.xml
+%%DATADIR%%/common/annotationsDerived/syr.xml
 %%DATADIR%%/common/annotationsDerived/ta.xml
 %%DATADIR%%/common/annotationsDerived/te.xml
 %%DATADIR%%/common/annotationsDerived/tg.xml
@@ -537,6 +544,7 @@
 %%DATADIR%%/common/casing/seh.xml
 %%DATADIR%%/common/casing/ses.xml
 %%DATADIR%%/common/casing/sg.xml
+%%DATADIR%%/common/casing/sgs.xml
 %%DATADIR%%/common/casing/shi.xml
 %%DATADIR%%/common/casing/shi_Latn.xml
 %%DATADIR%%/common/casing/si.xml
@@ -610,6 +618,7 @@
 %%DATADIR%%/common/collation/bal_Latn.xml
 %%DATADIR%%/common/collation/be.xml
 %%DATADIR%%/common/collation/bg.xml
+%%DATADIR%%/common/collation/blo.xml
 %%DATADIR%%/common/collation/bn.xml
 %%DATADIR%%/common/collation/bo.xml
 %%DATADIR%%/common/collation/br.xml
@@ -701,6 +710,7 @@
 %%DATADIR%%/common/collation/ru.xml
 %%DATADIR%%/common/collation/sa.xml
 %%DATADIR%%/common/collation/se.xml
+%%DATADIR%%/common/collation/sgs.xml
 %%DATADIR%%/common/collation/si.xml
 %%DATADIR%%/common/collation/sk.xml
 %%DATADIR%%/common/collation/sl.xml
@@ -857,6 +867,8 @@
 %%DATADIR%%/common/main/bo.xml
 %%DATADIR%%/common/main/bo_CN.xml
 %%DATADIR%%/common/main/bo_IN.xml
+%%DATADIR%%/common/main/bqi.xml
+%%DATADIR%%/common/main/bqi_IR.xml
 %%DATADIR%%/common/main/br.xml
 %%DATADIR%%/common/main/br_FR.xml
 %%DATADIR%%/common/main/brx.xml
@@ -868,6 +880,8 @@
 %%DATADIR%%/common/main/bs_Latn_BA.xml
 %%DATADIR%%/common/main/bss.xml
 %%DATADIR%%/common/main/bss_CM.xml
+%%DATADIR%%/common/main/bua.xml
+%%DATADIR%%/common/main/bua_RU.xml
 %%DATADIR%%/common/main/byn.xml
 %%DATADIR%%/common/main/byn_ER.xml
 %%DATADIR%%/common/main/ca.xml
@@ -978,6 +992,7 @@
 %%DATADIR%%/common/main/en_DM.xml
 %%DATADIR%%/common/main/en_Dsrt.xml
 %%DATADIR%%/common/main/en_Dsrt_US.xml
+%%DATADIR%%/common/main/en_EE.xml
 %%DATADIR%%/common/main/en_ER.xml
 %%DATADIR%%/common/main/en_ES.xml
 %%DATADIR%%/common/main/en_FI.xml
@@ -987,6 +1002,7 @@
 %%DATADIR%%/common/main/en_FR.xml
 %%DATADIR%%/common/main/en_GB.xml
 %%DATADIR%%/common/main/en_GD.xml
+%%DATADIR%%/common/main/en_GE.xml
 %%DATADIR%%/common/main/en_GG.xml
 %%DATADIR%%/common/main/en_GH.xml
 %%DATADIR%%/common/main/en_GI.xml
@@ -1005,6 +1021,7 @@
 %%DATADIR%%/common/main/en_IT.xml
 %%DATADIR%%/common/main/en_JE.xml
 %%DATADIR%%/common/main/en_JM.xml
+%%DATADIR%%/common/main/en_JP.xml
 %%DATADIR%%/common/main/en_KE.xml
 %%DATADIR%%/common/main/en_KI.xml
 %%DATADIR%%/common/main/en_KN.xml
@@ -1012,6 +1029,8 @@
 %%DATADIR%%/common/main/en_LC.xml
 %%DATADIR%%/common/main/en_LR.xml
 %%DATADIR%%/common/main/en_LS.xml
+%%DATADIR%%/common/main/en_LT.xml
+%%DATADIR%%/common/main/en_LV.xml
 %%DATADIR%%/common/main/en_MG.xml
 %%DATADIR%%/common/main/en_MH.xml
 %%DATADIR%%/common/main/en_MO.xml
@@ -1060,6 +1079,7 @@
 %%DATADIR%%/common/main/en_TT.xml
 %%DATADIR%%/common/main/en_TV.xml
 %%DATADIR%%/common/main/en_TZ.xml
+%%DATADIR%%/common/main/en_UA.xml
 %%DATADIR%%/common/main/en_UG.xml
 %%DATADIR%%/common/main/en_UM.xml
 %%DATADIR%%/common/main/en_US.xml
@@ -1304,6 +1324,8 @@
 %%DATADIR%%/common/main/kde_TZ.xml
 %%DATADIR%%/common/main/kea.xml
 %%DATADIR%%/common/main/kea_CV.xml
+%%DATADIR%%/common/main/kek.xml
+%%DATADIR%%/common/main/kek_GT.xml
 %%DATADIR%%/common/main/ken.xml
 %%DATADIR%%/common/main/ken_CM.xml
 %%DATADIR%%/common/main/kgp.xml
@@ -1352,6 +1374,13 @@
 %%DATADIR%%/common/main/ksh.xml
 %%DATADIR%%/common/main/ksh_DE.xml
 %%DATADIR%%/common/main/ku.xml
+%%DATADIR%%/common/main/ku_Arab.xml
+%%DATADIR%%/common/main/ku_Arab_IQ.xml
+%%DATADIR%%/common/main/ku_Arab_IR.xml
+%%DATADIR%%/common/main/ku_Latn.xml
+%%DATADIR%%/common/main/ku_Latn_IQ.xml
+%%DATADIR%%/common/main/ku_Latn_SY.xml
+%%DATADIR%%/common/main/ku_Latn_TR.xml
 %%DATADIR%%/common/main/ku_TR.xml
 %%DATADIR%%/common/main/kw.xml
 %%DATADIR%%/common/main/kw_GB.xml
@@ -1404,6 +1433,8 @@
 %%DATADIR%%/common/main/luy_KE.xml
 %%DATADIR%%/common/main/lv.xml
 %%DATADIR%%/common/main/lv_LV.xml
+%%DATADIR%%/common/main/lzz.xml
+%%DATADIR%%/common/main/lzz_TR.xml
 %%DATADIR%%/common/main/mai.xml
 %%DATADIR%%/common/main/mai_IN.xml
 %%DATADIR%%/common/main/mas.xml
@@ -1459,6 +1490,9 @@
 %%DATADIR%%/common/main/mua_CM.xml
 %%DATADIR%%/common/main/mus.xml
 %%DATADIR%%/common/main/mus_US.xml
+%%DATADIR%%/common/main/mww.xml
+%%DATADIR%%/common/main/mww_Hmnp.xml
+%%DATADIR%%/common/main/mww_Hmnp_US.xml
 %%DATADIR%%/common/main/my.xml
 %%DATADIR%%/common/main/my_MM.xml
 %%DATADIR%%/common/main/myv.xml
@@ -1510,6 +1544,9 @@
 %%DATADIR%%/common/main/oc.xml
 %%DATADIR%%/common/main/oc_ES.xml
 %%DATADIR%%/common/main/oc_FR.xml
+%%DATADIR%%/common/main/oka.xml
+%%DATADIR%%/common/main/oka_CA.xml
+%%DATADIR%%/common/main/oka_US.xml
 %%DATADIR%%/common/main/om.xml
 %%DATADIR%%/common/main/om_ET.xml
 %%DATADIR%%/common/main/om_KE.xml
@@ -1530,10 +1567,15 @@
 %%DATADIR%%/common/main/pap_CW.xml
 %%DATADIR%%/common/main/pcm.xml
 %%DATADIR%%/common/main/pcm_NG.xml
+%%DATADIR%%/common/main/pi.xml
+%%DATADIR%%/common/main/pi_Latn.xml
+%%DATADIR%%/common/main/pi_Latn_GB.xml
 %%DATADIR%%/common/main/pis.xml
 %%DATADIR%%/common/main/pis_SB.xml
 %%DATADIR%%/common/main/pl.xml
 %%DATADIR%%/common/main/pl_PL.xml
+%%DATADIR%%/common/main/pms.xml
+%%DATADIR%%/common/main/pms_IT.xml
 %%DATADIR%%/common/main/prg.xml
 %%DATADIR%%/common/main/prg_PL.xml
 %%DATADIR%%/common/main/ps.xml
@@ -1622,6 +1664,8 @@
 %%DATADIR%%/common/main/ses_ML.xml
 %%DATADIR%%/common/main/sg.xml
 %%DATADIR%%/common/main/sg_CF.xml
+%%DATADIR%%/common/main/sgs.xml
+%%DATADIR%%/common/main/sgs_LT.xml
 %%DATADIR%%/common/main/shi.xml
 %%DATADIR%%/common/main/shi_Latn.xml
 %%DATADIR%%/common/main/shi_Latn_MA.xml
@@ -1683,6 +1727,11 @@
 %%DATADIR%%/common/main/su.xml
 %%DATADIR%%/common/main/su_Latn.xml
 %%DATADIR%%/common/main/su_Latn_ID.xml
+%%DATADIR%%/common/main/suz.xml
+%%DATADIR%%/common/main/suz_Deva.xml
+%%DATADIR%%/common/main/suz_Deva_NP.xml
+%%DATADIR%%/common/main/suz_Sunu.xml
+%%DATADIR%%/common/main/suz_Sunu_NP.xml
 %%DATADIR%%/common/main/sv.xml
 %%DATADIR%%/common/main/sv_AX.xml
 %%DATADIR%%/common/main/sv_FI.xml
@@ -2096,14 +2145,17 @@
 %%DATADIR%%/common/testData/personNameTest/ar.txt
 %%DATADIR%%/common/testData/personNameTest/as.txt
 %%DATADIR%%/common/testData/personNameTest/az.txt
+%%DATADIR%%/common/testData/personNameTest/ba.txt
 %%DATADIR%%/common/testData/personNameTest/bal_Latn.txt
 %%DATADIR%%/common/testData/personNameTest/be.txt
 %%DATADIR%%/common/testData/personNameTest/bg.txt
+%%DATADIR%%/common/testData/personNameTest/blo.txt
 %%DATADIR%%/common/testData/personNameTest/bn.txt
 %%DATADIR%%/common/testData/personNameTest/bs.txt
 %%DATADIR%%/common/testData/personNameTest/ca.txt
 %%DATADIR%%/common/testData/personNameTest/chr.txt
 %%DATADIR%%/common/testData/personNameTest/cs.txt
+%%DATADIR%%/common/testData/personNameTest/cv.txt
 %%DATADIR%%/common/testData/personNameTest/cy.txt
 %%DATADIR%%/common/testData/personNameTest/da.txt
 %%DATADIR%%/common/testData/personNameTest/de.txt
@@ -2137,10 +2189,12 @@
 %%DATADIR%%/common/testData/personNameTest/jv.txt
 %%DATADIR%%/common/testData/personNameTest/ka.txt
 %%DATADIR%%/common/testData/personNameTest/kk.txt
+%%DATADIR%%/common/testData/personNameTest/kk_Arab.txt
 %%DATADIR%%/common/testData/personNameTest/km.txt
 %%DATADIR%%/common/testData/personNameTest/kn.txt
 %%DATADIR%%/common/testData/personNameTest/ko.txt
 %%DATADIR%%/common/testData/personNameTest/kok.txt
+%%DATADIR%%/common/testData/personNameTest/kok_Latn.txt
 %%DATADIR%%/common/testData/personNameTest/ky.txt
 %%DATADIR%%/common/testData/personNameTest/lo.txt
 %%DATADIR%%/common/testData/personNameTest/lt.txt
@@ -2162,10 +2216,12 @@
 %%DATADIR%%/common/testData/personNameTest/ps.txt
 %%DATADIR%%/common/testData/personNameTest/pt.txt
 %%DATADIR%%/common/testData/personNameTest/qu.txt
+%%DATADIR%%/common/testData/personNameTest/rm.txt
 %%DATADIR%%/common/testData/personNameTest/ro.txt
 %%DATADIR%%/common/testData/personNameTest/ru.txt
 %%DATADIR%%/common/testData/personNameTest/sc.txt
 %%DATADIR%%/common/testData/personNameTest/sd.txt
+%%DATADIR%%/common/testData/personNameTest/shn.txt
 %%DATADIR%%/common/testData/personNameTest/si.txt
 %%DATADIR%%/common/testData/personNameTest/sk.txt
 %%DATADIR%%/common/testData/personNameTest/sl.txt
@@ -2881,6 +2937,7 @@
 %%DATADIR%%/common/uca/CollationTest_CLDR_SHIFTED_SHORT.txt
 %%DATADIR%%/common/uca/FractionalUCA.txt
 %%DATADIR%%/common/uca/FractionalUCA_SHORT.txt
+%%DATADIR%%/common/uca/FractionalUCA_blanked.txt
 %%DATADIR%%/common/uca/UCA_Rules.txt
 %%DATADIR%%/common/uca/UCA_Rules_SHORT.txt
 %%DATADIR%%/common/uca/allkeys_CLDR.txt
