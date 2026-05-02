@@ -303,9 +303,11 @@
       "taskExecutionTerminal",
       "dataChannels",
       "chatSessionsProvider",
+      "chatSessionCustomizationProvider",
       "devDeviceId",
       "contribEditorContentMenu",
       "tokenInformation",
+      "toolInvocationApproveCombination",
       "chatPromptFiles",
       "mcpServerDefinitions",
       "tabInputMultiDiff",
@@ -412,6 +414,10 @@
     ],
     "ms-autodev.vscode-autodev": [
       "chatParticipantAdditions"
+    ],
+    "vscjava.migrate-java-to-azure": [
+      "chatParticipantAdditions",
+      "chatParticipantPrivate"
     ],
     "vscjava.vscode-java-upgrade": [
       "chatParticipantAdditions",

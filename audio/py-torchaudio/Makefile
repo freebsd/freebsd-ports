@@ -1,7 +1,6 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
-PORTREVISION=	1
+DISTVERSION=	2.11.0
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +26,7 @@ LIB_DEPENDS=	libabsl_symbolize.so:devel/abseil \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}SoundFile>0:audio/py-SoundFile@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}torchcodec>0:multimedia/py-torchcodec@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>0:devel/py-expecttest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -39,6 +39,6 @@ GH_PROJECT=	audio
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 2.10.0: 8 failed, 37 passed, 2 skipped, 75 errors in 308.41s (0:05:08)
+# tests as of 2.11.0: 592 passed, 4 failed, 473 skipped (segfault in rnnt_pipeline_test upstream issue)
 
 .include <bsd.port.mk>

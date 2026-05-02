@@ -1,9 +1,9 @@
 PORTNAME=	vulkan-utility-libraries
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.336
+DISTVERSION=	1.4.349
 CATEGORIES=	graphics
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Utility libraries for Vulkan developers
 WWW=		https://github.com/KhronosGroup/Vulkan-Utility-Libraries
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/Apache-2.0.txt
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++11-lib localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Utility-Libraries

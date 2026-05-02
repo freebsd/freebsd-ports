@@ -1,4 +1,7 @@
---- pyproject.toml.orig	2025-05-04 17:07:20 UTC
+Obtained from:	https://github.com/pylint-dev/pylint/commit/40817ce1a1b62a41486d81eff5b2db3bd9c23755
+		https://github.com/pylint-dev/pylint/commit/074153dfd44821c22127c73ef10ab7dcdb5971a4
+
+--- pyproject.toml.orig	2026-02-20 09:06:52 UTC
 +++ pyproject.toml
 @@ -1,15 +1,15 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -19,3 +22,12 @@
  authors = [
    { name = "Python Code Quality Authority", email = "code-quality@python.org" },
  ]
+@@ -40,7 +40,7 @@ dependencies = [
+   # Also upgrade requirements_test_min.txt.
+   # Pinned to dev of second minor update to allow editable installs and fix primer issues,
+   # see https://github.com/pylint-dev/astroid/issues/1341
+-  "astroid>=4.0.2,<=4.1.dev0",
++  "astroid>=4.1.1,<=4.2.0b1",
+   "colorama>=0.4.5; sys_platform=='win32'",
+   "dill>=0.2; python_version<'3.11'",
+   "dill>=0.3.6; python_version>='3.11'",

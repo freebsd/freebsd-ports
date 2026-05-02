@@ -1,5 +1,5 @@
 PORTNAME=	clawhub
-DISTVERSION=	0.9.0
+DISTVERSION=	0.12.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 

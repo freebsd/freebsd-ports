@@ -1,43 +1,31 @@
 PORTNAME=	netron
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.9
-PORTREVISION=	1
-CATEGORIES=	misc python # machine-learning
-MASTER_SITES=	LOCAL/yuri/:js
-DISTFILES=	netron-${DISTVERSION}-node_modules.tgz:js
+DISTVERSION=	9.0.6
+CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualizer for neural network, deep learning, machine learning models
-WWW=		https://github.com/lutzroeder/netron
+WWW=		https://netron.app/ \
+		https://github.com/lutzroeder/netron
 
-LICENSE=	APACHE20
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
+USE_PYTHON=	pep517 autoplist noflavors
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	lutzroeder
-USE_PYTHON=	distutils noflavors
 
 NO_ARCH=	yes
 
 post-extract:
-	@${RLN} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
+	@${MV} ${WRKSRC}/source ${WRKSRC}/netron
 
-#
-# To update the netron-${DISTVERSION}-node_modules.tgz archive:
-# 1. Comment out the DISTFILES and post-extract lines
-# 2. Run 'make makesum regenerate-node_modules-distfile clean'
-# 3. Upload the archive
-# 4. Uncomment the lines from step #1
-# 5. Run 'make makesum'
-#
-
-regenerate-node_modules-distfile: patch # requires npm installed by www/npm
-	@${MAKE} clean patch && \
-	cd ${WRKSRC} && \
-	${RM} -r node_modules && \
-	npm install -l && \
-	${TAR} czf ${DISTDIR}/netron-${DISTVERSION}-node_modules.tgz node_modules && \
-	${ECHO} "Please upload the file ${DISTDIR}/netron-${DISTVERSION}-node_modules.tgz"
+post-patch:
+	@${REINPLACE_CMD} -e 's/0\.0\.0/${DISTVERSION}/g' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

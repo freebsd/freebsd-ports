@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+
+In order to run ElmerGUI you have to set the environment variable
+ELMERGUI_HOME to %%PREFIX%%/share/ElmerGUI
+
+EOM
+}
+]

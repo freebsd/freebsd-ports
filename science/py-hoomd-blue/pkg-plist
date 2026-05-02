@@ -86,6 +86,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_shape_utils.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_small_box_2d.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_small_box_3d.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_translate_move_dimensions.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/shape_move.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/tune/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/tune/boxmc_move_size.py
@@ -441,7 +442,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ExternalPotentialLinear.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/GPUHelpers.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/GPUTree.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/GSDHPMCSchema.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/HPMCCounters.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/HPMCMiscFunctions.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/IntegratorHPMC.h

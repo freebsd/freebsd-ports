@@ -1,6 +1,6 @@
---- build/gulpfile.vscode.ts.orig	2026-04-21 23:12:14 UTC
+--- build/gulpfile.vscode.ts.orig	2026-04-29 14:36:44 UTC
 +++ build/gulpfile.vscode.ts
-@@ -401,6 +401,7 @@ function packageTask(platform: string, arch: string, s
+@@ -383,6 +383,7 @@ function packageTask(platform: string, arch: string, s
  					const embeddedObj = json['embedded'] as EmbeddedProductInfo;
  					embeddedObj['darwinSiblingBundleIdentifier'] = json['darwinBundleIdentifier'] as string;
  				}

@@ -1,1 +1,4 @@
-Test code and data for science/py-MDAnalysis.
+Test code and trajectory data for the test cases of MDAnalysis.
+
+This package provides the test suite and test data files required to run the
+full test suite of MDAnalysis.

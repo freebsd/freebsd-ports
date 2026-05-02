@@ -1,15 +1,13 @@
---- CMakeLists.txt.orig	2026-03-19 19:26:04 UTC
+--- CMakeLists.txt.orig	2026-04-29 19:51:26 UTC
 +++ CMakeLists.txt
-@@ -62,22 +62,22 @@ if(BUILD_TESTING)
+@@ -62,14 +62,14 @@ if(BUILD_TESTING)
    file(GLOB_RECURSE TESTFILES CONFIGURE_DEPENDS "tests/*.cpp")
    add_executable(hyprutils_tests ${TESTFILES})
  
 -  target_compile_options(hyprutils_tests PRIVATE --coverage -fsanitize=address)
--  target_link_options(hyprutils_tests PRIVATE --coverage)
--  
-+  # target_compile_options(hyprutils_tests PRIVATE --coverage -fsanitize=address)
-+  # target_link_options(hyprutils_tests PRIVATE --coverage)
-+
++  target_compile_options(hyprutils_tests PRIVATE --coverage)
+   target_link_options(hyprutils_tests PRIVATE --coverage)
+   
    target_include_directories(
      hyprutils_tests
      PUBLIC "./include"
@@ -19,13 +17,3 @@
                                                         PkgConfig::deps)
    gtest_discover_tests(hyprutils_tests
      PROPERTIES ENVIRONMENT "ASAN_OPTIONS=detect_leaks=0"
-   )
- 
-   # Add coverage to hyprutils for test builds
--  target_compile_options(hyprutils PRIVATE --coverage)
--  target_link_options(hyprutils PRIVATE --coverage)
-+  # target_compile_options(hyprutils PRIVATE --coverage)
-+  # target_link_options(hyprutils PRIVATE --coverage)
- endif()
- 
- # Installation

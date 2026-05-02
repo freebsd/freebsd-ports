@@ -1,0 +1,23 @@
+https://github.com/rust-lang/hashbrown/commit/41e6a490a53c
+
+--- cargo-crates/hashbrown-0.16.0/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/hashbrown-0.16.0/src/lib.rs
+@@ -17,6 +17,7 @@
+         core_intrinsics,
+         dropck_eyepatch,
+         min_specialization,
++        trivial_clone,
+         extend_one,
+         allocator_api,
+         slice_ptr_get,
+--- cargo-crates/hashbrown-0.16.0/src/raw/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/hashbrown-0.16.0/src/raw/mod.rs
+@@ -3266,7 +3266,7 @@ impl<T: Clone, A: Allocator + Clone> RawTableClone for
+     }
+ }
+ #[cfg(feature = "nightly")]
+-impl<T: Copy, A: Allocator + Clone> RawTableClone for RawTable<T, A> {
++impl<T: core::clone::TrivialClone, A: Allocator + Clone> RawTableClone for RawTable<T, A> {
+     #[cfg_attr(feature = "inline-more", inline)]
+     unsafe fn clone_from_spec(&mut self, source: &Self) {
+         source

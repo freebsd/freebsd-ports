@@ -1,0 +1,13 @@
+bun-decompile extracts and de-minifies source code from Bun-compiled
+executables using AI. Originally developed to inspect the Claude Code CLI,
+which ships as a Bun-compiled binary.
+
+Features:
+- Binary extraction: parse Bun's embedded module graph to extract all bundled
+  sources
+- Sourcemap recovery: automatically recover original TypeScript/JSX sources
+  from embedded sourcemaps
+- AI de-minification: use OpenAI or Anthropic to rename minified identifiers
+  back to meaningful names
+- Functional equivalence: Babel-based renaming guarantees the de-minified
+  code works identically

@@ -1,9 +1,8 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	7.0.26
-PORTREVISION?=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
-PKGNAMESUFFIX?=	-additions-70
 DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -22,34 +21,35 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 		kmk:devel/kBuild \
 		xsltproc:textproc/libxslt
 
+FLAVORS=	xorg xlibre nox11
+FLAVOR?=	${FLAVORS:[1]}
+_SUFFIX=	-additions
+_VER=		${DISTVERSION:R:S|.||}
+${FLAVOR}_PKGNAMESUFFIX=	${${_SUFFIX} ${FLAVOR:N${FLAVORS:[1]}} ${_VER}:L:ts-}
+
 USES=		compiler:c++14-lang cpe iconv kmod tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_RC_SUBR=	vboxguest vboxservice
 
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--disable-alsa \
-			--disable-docs \
-			--disable-libvpx \
-			--disable-opengl \
-			--disable-pulse \
-			--disable-python \
-			--disable-sdl-ttf \
-			--disable-xpcom
-CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-alsa \
+		--disable-docs \
+		--disable-libvpx \
+		--disable-opengl \
+		--disable-pulse \
+		--disable-python \
+		--disable-sdl-ttf \
+		--disable-xpcom \
+		--nofatal \
+		--with-gcc="${CC}" \
+		--with-g++="${CXX}"
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
-			virtualbox-ose-additions-nox11-legacy \
-			virtualbox-ose-additions \
-			virtualbox-ose-additions-nox11 \
-			virtualbox-ose-additions-71 \
-			virtualbox-ose-additions-nox11-71 \
-			virtualbox-ose-additions-72 \
-			virtualbox-ose-additions-nox11-72
+CONFLICTS_INSTALL=	${PORTNAME}${_SUFFIX}*
 
-PATCHDIR=		${.CURDIR}/../${PORTNAME}-70/files
+PATCHDIR=		${.CURDIR}/../${${PORTNAME} ${_VER}:L:ts-}/files
 EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 \
 			--exclude tools/*.amd64 \
 			--exclude Firmware \
@@ -57,30 +57,28 @@ EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 \
 			--no-same-owner --no-same-permissions
 PORTSCOUT=		limit:^7\.0\.
 
+BUILD_WRKSRC=		${VBOX_BIN}/src
 WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}
 
 OPTIONS_DEFINE=		DBUS DEBUG X11
+OPTIONS_DEFINE_i386=	PAE
 OPTIONS_DEFAULT=	DBUS X11
+nox11_OPTIONS_EXCLUDE=	DBUS DEBUG X11
+OPTIONS_EXCLUDE=	${${FLAVOR}_OPTIONS_EXCLUDE}
 OPTIONS_SUB=		yes
 
+PAE_DESC=		Build kernel modules for PAE-kernels
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DEBUG_CONFIGURE_ON=	--build-debug
 DEBUG_VARS=		KMK_BUILDTYPE=debug
 DEBUG_VARS_OFF=		KMK_BUILDTYPE=release
-X11_BUILD_DEPENDS=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
 X11_RUN_DEPENDS=	xrandr:x11/xrandr
-X11_USES=		pkgconfig xorg
-X11_USE=		XORG=x11,xcursor,xext,xorgproto,xmu,xrandr,xt
+X11_USES=		pkgconfig ${FLAVOR:Mxlibre} xorg
+X11_USE=		${FLAVOR:tu}=${FLAVOR}-server \
+			XORG=x11,xcursor,xext,xorgproto,xmu,xrandr,xt
 X11_VARS=		VBOX_WITH_X11=1
-
-.include <bsd.port.options.mk>
-
-.if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-70
-.else
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-70
-.endif
+X11_VARS_OFF=		VBOX_WITH_X11=
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
@@ -90,15 +88,8 @@ VBOX_SBINS=	VBoxControl \
 		VBoxService \
 		mount_vboxvfs
 
-BUILD_WRKSRC=	${VBOX_BIN}/src
-
 KMK_ARCH=	freebsd.${ARCH:S/i386/x86/}
-KMK_CONFIG+=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys VBOX_ONLY_ADDITIONS=1
-
-.if ${PORT_OPTIONS:MX11}
-.else
-VBOX_WITH_X11=
-.endif
+KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys VBOX_ONLY_ADDITIONS=1
 
 .include <bsd.port.pre.mk>
 
@@ -134,6 +125,9 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk \
 	    ${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${PORT_OPTIONS:MPAE}
+	@${ECHO_CMD} 'VBOX_FREEBSD = -DPAE' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${OSVERSION} >= 1500038
 	@${ECHO_CMD} 'HAVE_MNTOPTS_IN_LIBUTIL = 1' >> \

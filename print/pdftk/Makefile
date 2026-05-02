@@ -4,7 +4,7 @@ DISTVERSION=	3.3.3
 PORTREVISION=	3
 CATEGORIES=	print java
 
-MAINTAINER=	andreas@bilke.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool for doing everyday things with PDF documents
 WWW=		https://gitlab.com/pdftk-java/pdftk
 

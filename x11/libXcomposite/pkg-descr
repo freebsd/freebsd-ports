@@ -1,1 +1,8 @@
-This package contains the X Composite extension library.
+This package contains Xlib-based client library for the Composite
+extension to the X11 protocol
+
+This extension causes a entire sub-tree of the window hierarchy to be
+rendered to an off-screen buffer. Applications can then take the
+contents of that buffer and do whatever they like. The off-screen
+buffer can be automatically merged into the parent window or merged by
+external programs, called compositing managers.

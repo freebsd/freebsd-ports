@@ -1199,7 +1199,6 @@ lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/reg.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/setjmp.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/signal.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/stat.h
-lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/stdint.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/syscall.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/user.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/crt_arch.h
@@ -5993,8 +5992,10 @@ lib/emscripten/system/lib/mimalloc/LICENSE
 lib/emscripten/system/lib/mimalloc/README.emscripten
 lib/emscripten/system/lib/mimalloc/include/mimalloc-new-delete.h
 lib/emscripten/system/lib/mimalloc/include/mimalloc-override.h
+lib/emscripten/system/lib/mimalloc/include/mimalloc-stats.h
 lib/emscripten/system/lib/mimalloc/include/mimalloc.h
 lib/emscripten/system/lib/mimalloc/include/mimalloc/atomic.h
+lib/emscripten/system/lib/mimalloc/include/mimalloc/bits.h
 lib/emscripten/system/lib/mimalloc/include/mimalloc/internal.h
 lib/emscripten/system/lib/mimalloc/include/mimalloc/prim.h
 lib/emscripten/system/lib/mimalloc/include/mimalloc/track.h
@@ -6004,6 +6005,7 @@ lib/emscripten/system/lib/mimalloc/src/alloc-aligned.c
 lib/emscripten/system/lib/mimalloc/src/alloc-override.c
 lib/emscripten/system/lib/mimalloc/src/alloc-posix.c
 lib/emscripten/system/lib/mimalloc/src/alloc.c
+lib/emscripten/system/lib/mimalloc/src/arena-meta.c
 lib/emscripten/system/lib/mimalloc/src/arena.c
 lib/emscripten/system/lib/mimalloc/src/bitmap.c
 lib/emscripten/system/lib/mimalloc/src/bitmap.h
@@ -6013,6 +6015,7 @@ lib/emscripten/system/lib/mimalloc/src/init.c
 lib/emscripten/system/lib/mimalloc/src/libc.c
 lib/emscripten/system/lib/mimalloc/src/options.c
 lib/emscripten/system/lib/mimalloc/src/os.c
+lib/emscripten/system/lib/mimalloc/src/page-map.c
 lib/emscripten/system/lib/mimalloc/src/page-queue.c
 lib/emscripten/system/lib/mimalloc/src/page.c
 lib/emscripten/system/lib/mimalloc/src/prim/emscripten/prim.c
@@ -6028,10 +6031,10 @@ lib/emscripten/system/lib/mimalloc/src/prim/windows/etw.man
 lib/emscripten/system/lib/mimalloc/src/prim/windows/prim.c
 lib/emscripten/system/lib/mimalloc/src/prim/windows/readme.md
 lib/emscripten/system/lib/mimalloc/src/random.c
-lib/emscripten/system/lib/mimalloc/src/segment-map.c
-lib/emscripten/system/lib/mimalloc/src/segment.c
 lib/emscripten/system/lib/mimalloc/src/static.c
 lib/emscripten/system/lib/mimalloc/src/stats.c
+lib/emscripten/system/lib/mimalloc/src/theap.c
+lib/emscripten/system/lib/mimalloc/src/threadlocal.c
 lib/emscripten/system/lib/pkgconfig/egl.pc
 lib/emscripten/system/lib/pkgconfig/glesv2.pc
 lib/emscripten/system/lib/pkgconfig/glfw3.pc

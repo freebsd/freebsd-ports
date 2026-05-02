@@ -4,6 +4,9 @@ DISTVERSION=	0.50.0
 PORTREVISION=	1
 CATEGORIES=	games
 
+PATCH_SITES+=	https://github.com/OpenMW/${PORTNAME}/commit/
+PATCHFILES+=	307a131ca09f705b97f15ede1f702630cca6b396.diff:-p1
+
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Unofficial open source engine reimplementation of the game Morrowind
 WWW=		https://openmw.org/

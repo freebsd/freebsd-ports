@@ -364,6 +364,7 @@ share/elmersolver/include/exchangecorrelations.mod
 share/elmersolver/include/fetisolve.mod
 share/elmersolver/include/freesurface.mod
 share/elmersolver/include/generalutils.mod
+share/elmersolver/include/geometryfitting.mod
 share/elmersolver/include/globmat.mod
 share/elmersolver/include/globmatc.mod
 share/elmersolver/include/h1basis.mod
@@ -402,6 +403,7 @@ share/elmersolver/include/matrixassembly.mod
 share/elmersolver/include/maxwell.mod
 share/elmersolver/include/maxwellaxis.mod
 share/elmersolver/include/maxwellgeneral.mod
+share/elmersolver/include/meshallocations.mod
 share/elmersolver/include/meshgenerate.mod
 share/elmersolver/include/meshpartition.mod
 share/elmersolver/include/meshremeshing.mod
@@ -409,6 +411,7 @@ share/elmersolver/include/meshutils.mod
 share/elmersolver/include/messages.mod
 share/elmersolver/include/mgdynmaterialutils.mod
 share/elmersolver/include/modeldescription.mod
+share/elmersolver/include/mortarutils.mod
 share/elmersolver/include/multigrid.mod
 share/elmersolver/include/navierstokes.mod
 share/elmersolver/include/navierstokescylindrical.mod
@@ -470,6 +473,7 @@ share/elmersolver/lib/DivProjection.so
 share/elmersolver/lib/DivergenceSolver.so
 share/elmersolver/lib/EMPort.so
 share/elmersolver/lib/EMWaveSolver.so
+share/elmersolver/lib/EdgeFEInterpolationTest.so
 share/elmersolver/lib/ElasticSolve.so
 share/elmersolver/lib/ElectricForce.so
 share/elmersolver/lib/Electrokinetics.so
@@ -515,6 +519,7 @@ share/elmersolver/lib/MeshSolve.so
 share/elmersolver/lib/ModelMixedPoisson.so
 share/elmersolver/lib/ModelPDE.so
 share/elmersolver/lib/ModelPDECutFEM.so
+share/elmersolver/lib/ModelPDEhandle.so
 share/elmersolver/lib/NodeToEdgeSolver.so
 share/elmersolver/lib/NonphysicalMeshSolve.so
 share/elmersolver/lib/NormalSolver.so

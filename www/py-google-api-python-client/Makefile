@@ -1,5 +1,5 @@
 PORTNAME=	google-api-python-client
-DISTVERSION=	2.194.0
+DISTVERSION=	2.195.0
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
@@ -13,6 +13,8 @@ WWW=		https://github.com/googleapis/google-api-python-client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0_3:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.47.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth-httplib2>=0.2.0:security/py-google-auth-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=1.32:security/py-google-auth@${PY_FLAVOR} \
@@ -27,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-c
 		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.1:net/py-uritemplate@${PY_FLAVOR}
 
 USES=		pytest python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 # Require Application Default Credentials
 # see https://cloud.google.com/docs/authentication/external/set-up-adc
 PYTEST_IGNORED_TESTS=	test_universe_env_var_configured_with_mtls \

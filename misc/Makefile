@@ -42,6 +42,7 @@
     SUBDIR += boxes
     SUBDIR += broot
     SUBDIR += bsod
+    SUBDIR += bun-decompile
     SUBDIR += caffe
     SUBDIR += camsnap
     SUBDIR += chatblade
@@ -201,6 +202,7 @@
     SUBDIR += grizzly
     SUBDIR += grok-cli
     SUBDIR += gwhich
+    SUBDIR += hashcards
     SUBDIR += hashdb
     SUBDIR += hello
     SUBDIR += help2man

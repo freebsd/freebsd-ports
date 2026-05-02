@@ -339,6 +339,7 @@
     SUBDIR += boxed-cpp
     SUBDIR += boxfort
     SUBDIR += bpython
+    SUBDIR += brpc
     SUBDIR += brz
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
@@ -537,6 +538,7 @@
     SUBDIR += csoap
     SUBDIR += cssc
     SUBDIR += ctags
+    SUBDIR += ctags-lsp
     SUBDIR += ctre
     SUBDIR += ctypes.sh
     SUBDIR += cunit
@@ -744,6 +746,7 @@
     SUBDIR += freebsd-gcc14
     SUBDIR += freebsd-gcc15
     SUBDIR += freebsd-git-arc
+    SUBDIR += freebsd-git-pr
     SUBDIR += freebsd-nvme-shim
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
@@ -4662,6 +4665,7 @@
     SUBDIR += py-buildbot-wsgi-dashboards
     SUBDIR += py-buildbot-www
     SUBDIR += py-bullet3
+    SUBDIR += py-bump-my-version
     SUBDIR += py-bump2version
     SUBDIR += py-bytecode
     SUBDIR += py-cabby
@@ -5637,6 +5641,7 @@
     SUBDIR += py-pre-commit
     SUBDIR += py-pre-commit-hooks
     SUBDIR += py-prefixed
+    SUBDIR += py-prek
     SUBDIR += py-preshed
     SUBDIR += py-preshed3
     SUBDIR += py-pretend
@@ -8697,6 +8702,7 @@
     SUBDIR += vc-intrinsics
     SUBDIR += vcglib
     SUBDIR += vdf
+    SUBDIR += vectorscan
     SUBDIR += venom
     SUBDIR += vera++
     SUBDIR += vexcl

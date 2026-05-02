@@ -1,0 +1,12 @@
+Different compression programs result in different
+compression ratios and compress different types of files
+unequally.
+Archmerge will take the best files from each archive and
+create a new output file, which is guaranteed to be equal
+to, or smaller in size than both of the input files. Archmerge
+can also be used to perform boolean operations on archives,
+such as merging 2 archives together, or updating a new file.
+
+NOTE: in it's current incarnation. Archmerge only operates on
+zip archives. Additional compression algorithms and techniques
+will be added soon.

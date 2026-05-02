@@ -1,3 +1,3 @@
-TIMESTAMP = 1670267055
-SHA256 (xorg/lib/libXxf86dga-1.1.6.tar.xz) = be44427579808fe3a217d59f51cae756a26913eb6e4c8738ccab65ff56d7980f
-SIZE (xorg/lib/libXxf86dga-1.1.6.tar.xz) = 267760
+TIMESTAMP = 1776042631
+SHA256 (xorg/lib/libXxf86dga-1.1.7.tar.xz) = b3be5b444d324cb6e0f4b5019a4972c99ea336ccb8ab7968eccefecd917ffde6
+SIZE (xorg/lib/libXxf86dga-1.1.7.tar.xz) = 276188

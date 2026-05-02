@@ -1,5 +1,5 @@
-TIMESTAMP = 1774876645
-SHA256 (go/textproc_moor/moor-v2.12.0/v2.12.0.mod) = 798223f02edbf8b697ea909714de3086b5caa69d8688baf1e902a97ae9a06934
-SIZE (go/textproc_moor/moor-v2.12.0/v2.12.0.mod) = 617
-SHA256 (go/textproc_moor/moor-v2.12.0/v2.12.0.zip) = ee4fc54f0d0de1ca0726eeb7c8964b2b8dd17b4d3790d674cff4de9899c7b51b
-SIZE (go/textproc_moor/moor-v2.12.0/v2.12.0.zip) = 5464228
+TIMESTAMP = 1777501350
+SHA256 (go/textproc_moor/moor-v2.12.2/v2.12.2.mod) = 798223f02edbf8b697ea909714de3086b5caa69d8688baf1e902a97ae9a06934
+SIZE (go/textproc_moor/moor-v2.12.2/v2.12.2.mod) = 617
+SHA256 (go/textproc_moor/moor-v2.12.2/v2.12.2.zip) = 1388c98c06ac3a6e5d022896781b42b47cfa99e516a3225941331932b39e1b7d
+SIZE (go/textproc_moor/moor-v2.12.2/v2.12.2.zip) = 5466894

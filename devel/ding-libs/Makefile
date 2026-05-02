@@ -1,5 +1,5 @@
 PORTNAME=	ding-libs
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/SSSD/ding-libs/releases/download/${PORTVERSION}/
 
@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
-USES=		iconv gettext-runtime libtool localbase
+USES=		iconv gettext-runtime libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -27,6 +27,5 @@ OPTIONS_DEFINE=	DOCS TEST
 # libcheck is required to run *all* the unit tests.
 # Without it only 14/20 tests will run.
 TEST_BUILD_DEPENDS=	check>=0:devel/check
-TEST_USES=		pkgconfig
 
 .include <bsd.port.mk>

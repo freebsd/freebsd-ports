@@ -16,13 +16,12 @@ USES=		xorg
 USE_GSTREAMER=	gl
 USE_XORG=	xcb
 
-MESON_ARGS+=	-Dwayland=enabled
-
 MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
 PLIST=		${.CURDIR}/pkg-plist
 
 DIST=		bad
 GST_PLUGIN=	vulkan
+GST_PLUGIN_DEPENDS=	wayland
 
 .include "${MASTERDIR}/Makefile"

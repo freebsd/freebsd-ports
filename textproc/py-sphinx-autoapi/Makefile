@@ -5,7 +5,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	andreas@bilke.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx API documentation generator
 WWW=		https://sphinx-autoapi.readthedocs.io/
 

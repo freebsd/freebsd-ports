@@ -1,5 +1,5 @@
 PORTNAME=	rdiscount
-PORTVERSION=	2.2.7.4
+PORTVERSION=	2.2.7.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

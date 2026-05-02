@@ -1,20 +1,23 @@
 PORTNAME=	tfel
-PORTVERSION=	4.0.0
-PORTREVISION=	9
+PORTVERSION=	5.1.0
 CATEGORIES=	science
-MASTER_SITES=	SF/${PORTNAME}/
+MASTER_SITES=	https://github.com/thelfer/tfel/archive/refs/tags/
 PKGNAMESUFFIX=	-mfront
+DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code generation tool dedicated to material knowledge
 WWW=		https://github.com/thelfer/tfel
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gnuplot:math/gnuplot
+BUILD_DEPENDS=	gnuplot:math/gnuplot	\
+		pybind11>0:devel/pybind11
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cmake compiler:c++0x fortran
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 
 CONFLICTS_INSTALL=	tfel-mfront-edf-3.*
 
@@ -41,21 +44,10 @@ CMAKE_ON+=	enable-portable-build
 
 TEST_TARGET=	check
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
-		${WRKSRC}/include/NUMODIS/Math/Utilities.hxx \
-		${WRKSRC}/include/TFEL/Math/General/Abs.hxx
-	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
-		${WRKSRC}/include/TFEL/Math/General/AbsCompare.hxx
-.endif
-
-post-install:
+post-install-PYTHON-on:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

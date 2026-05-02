@@ -129,15 +129,19 @@ include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-auto-expression.
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-chi-squared.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-exp-smoothing.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-frequency.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-ftest.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-histogram.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-kaplan-meier.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-normality.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-one-mean-test.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-principal-components.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-regression.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-sign-test.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-signed-rank-test.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-tools.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-ttest.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-wilcoxon-mann-whitney.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/analysis-ztest.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/auto-correct.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/dao.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/data-shuffling.h
@@ -150,7 +154,6 @@ include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/random-generator.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/scenarios.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/simulation.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/tabulate.h
-include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools/tools.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/undo.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/validation-combo.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/validation.h
@@ -191,9 +194,6 @@ lib/gnumeric/%%VERSION%%/plugins/dif/dif.so
 lib/gnumeric/%%VERSION%%/plugins/dif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/excel/excel.so
 lib/gnumeric/%%VERSION%%/plugins/excel/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/excelplugins/plugin.so
-lib/gnumeric/%%VERSION%%/plugins/excelplugins/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/excelplugins/xlcall32.so
 lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-complex/plugin.so

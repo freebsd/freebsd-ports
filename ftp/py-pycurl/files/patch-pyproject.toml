@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-04-30 02:39:54 UTC
++++ pyproject.toml
+@@ -1,13 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=77", "wheel"]
++requires = ["setuptools>=61", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "pycurl"
+ description = "PycURL -- A Python Interface To The cURL library"
+ requires-python = ">=3.10"
+-license = "LGPL-2.1-only OR MIT"
+-license-files = ["COPYING-LGPL", "COPYING-MIT"]
++license =  { text = "LGPL-2.1-only OR MIT" }
+ keywords = ["curl", "libcurl", "urllib", "wget", "download", "file transfer", "http", "www"]
+ authors = [
+     { name = "Kjetil Jacobsen",         email = "kjetilja@gmail.com" },

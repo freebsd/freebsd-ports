@@ -52,6 +52,6 @@ lib/libsimdutf.so
 lib/libsimdutf.so.34
 lib/libsimdutf.so.34.0.0
 libdata/pkgconfig/simdutf.pc
-share/man/man1/fastbase64.1.gz
-share/man/man1/fastbase64.coreutils.1.gz
-share/man/man1/sutf.1.gz
+%%TOOLS%%share/man/man1/fastbase64.1.gz
+%%TOOLS%%share/man/man1/fastbase64.coreutils.1.gz
+%%TOOLS%%share/man/man1/sutf.1.gz

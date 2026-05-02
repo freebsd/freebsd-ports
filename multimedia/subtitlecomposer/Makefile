@@ -8,8 +8,6 @@ PATCH_SITES=	https://invent.kde.org/multimedia/subtitlecomposer/-/commit/
 PATCHFILES+=	1e11d53565ab6df3ba8329072e7b4b12f9f88d72.patch:-p1 # Fix configure with Qt 6.10
 PATCHFILES+=	0043f4434886c5aabe99705d40bd7f633b8b73e7.patch:-p1 # Fix build with FFmpeg 8
 
-IGNORE_i386=	fails to build with openal-soft>=1.25.0
-
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced FFmpeg-based subtitle editor
 WWW=		https://subtitlecomposer.kde.org
@@ -28,6 +26,8 @@ USE_KDE=	codecs config configwidgets coreaddons i18n \
 USE_QT=		5compat base declarative \
 		tools:build
 USE_XORG=	x11
+
+LDFLAGS_i386=	-Wl,-znotext
 
 # Requires PocketSphinx-5prealpha
 SPHINX_DESC=	Speech recognition via PocketSphinx

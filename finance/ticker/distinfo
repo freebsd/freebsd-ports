@@ -1,5 +1,5 @@
-TIMESTAMP = 1767812021
-SHA256 (go/finance_ticker/ticker-v5.2.0/v5.2.0.mod) = 8dbac1083855a53eb0671a0289fdc1cd66ddc51258957eef6130c5d3b015ef2f
-SIZE (go/finance_ticker/ticker-v5.2.0/v5.2.0.mod) = 2587
-SHA256 (go/finance_ticker/ticker-v5.2.0/v5.2.0.zip) = 2464fec6b3a5f29428b900f139d4d505e09ca9f4dd9b737a0c358ad21e24303d
-SIZE (go/finance_ticker/ticker-v5.2.0/v5.2.0.zip) = 1678364
+TIMESTAMP = 1777283613
+SHA256 (go/finance_ticker/ticker-v5.2.1/v5.2.1.mod) = 98bcffec1d3434c0f951432eb92d7f0c3e7f8fac5c2558a95456b24e5c466099
+SIZE (go/finance_ticker/ticker-v5.2.1/v5.2.1.mod) = 11503
+SHA256 (go/finance_ticker/ticker-v5.2.1/v5.2.1.zip) = 8cabd64b646e99bb335100cc3acc8c52b8ec8c5ad440e0927a006b81335951e9
+SIZE (go/finance_ticker/ticker-v5.2.1/v5.2.1.zip) = 1715948

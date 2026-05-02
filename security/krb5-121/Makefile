@@ -1,6 +1,6 @@
 PORTNAME=		krb5
 PORTVERSION=		1.21.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -9,6 +9,9 @@ PKGNAME_X=		-${FLAVOR:S/default//}-121
 PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
 PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
+
+DEPRECATED=		Unpatched vulnerabilities, no longer supported by MIT
+EXPIRATION_DATE=	2026-06-30
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2

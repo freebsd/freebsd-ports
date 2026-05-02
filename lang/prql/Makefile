@@ -1,6 +1,5 @@
 PORTNAME=	prql
-DISTVERSION=	0.13.11
-PORTREVISION=	2
+DISTVERSION=	0.13.12
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -27,10 +26,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		ansi-to-html-0.2.2 \
-		anstream-0.6.21 \
 		anstream-1.0.0 \
 		anstyle-1.0.13 \
-		anstyle-parse-0.2.7 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
@@ -38,17 +35,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		arbitrary-1.4.2 \
 		ariadne-0.5.1 \
 		arrayvec-0.7.6 \
-		arrow-56.2.0 \
-		arrow-arith-56.2.0 \
-		arrow-array-56.2.0 \
-		arrow-buffer-56.2.0 \
-		arrow-cast-56.2.0 \
-		arrow-data-56.2.0 \
-		arrow-ord-56.2.0 \
-		arrow-row-56.2.0 \
-		arrow-schema-56.2.0 \
-		arrow-select-56.2.0 \
-		arrow-string-56.2.0 \
+		arrow-58.1.0 \
+		arrow-arith-58.1.0 \
+		arrow-array-58.1.0 \
+		arrow-buffer-58.1.0 \
+		arrow-cast-58.1.0 \
+		arrow-data-58.1.0 \
+		arrow-ord-58.1.0 \
+		arrow-row-58.1.0 \
+		arrow-schema-58.1.0 \
+		arrow-select-58.1.0 \
+		arrow-string-58.1.0 \
 		async-trait-0.1.89 \
 		asynchronous-codec-0.6.2 \
 		atoi-2.0.0 \
@@ -82,13 +79,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.60 \
-		clap_builder-4.5.60 \
+		clap-4.5.61 \
+		clap_builder-4.5.61 \
 		clap_complete-4.5.66 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.5.2 \
 		clap_complete_nushell-0.1.11 \
-		clap_derive-4.5.55 \
+		clap_derive-4.5.61 \
 		clap_lex-1.0.0 \
 		clio-0.3.5 \
 		color-eyre-0.6.5 \
@@ -98,8 +95,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		combine-4.6.7 \
 		comfy-table-7.1.2 \
 		connection-string-0.2.0 \
-		connector_arrow-0.10.0 \
+		connector_arrow-0.11.0 \
 		console-0.15.11 \
+		console-0.16.3 \
 		console_error_panic_hook-0.1.7 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
@@ -127,7 +125,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		derive_utils-0.15.0 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
-		duckdb-1.4.4 \
+		duckdb-1.10501.0 \
 		dyn-clone-1.0.20 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
@@ -205,7 +203,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indoc-2.0.7 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
-		insta-1.46.3 \
+		insta-1.47.2 \
 		insta-cmd-0.6.0 \
 		instant-0.1.13 \
 		inventory-0.3.22 \
@@ -230,12 +228,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lexical-util-1.0.7 \
 		lexical-write-float-1.0.6 \
 		lexical-write-integer-1.0.6 \
-		libc-0.2.183 \
-		libduckdb-sys-1.4.4 \
+		libc-0.2.185 \
+		libduckdb-sys-1.10501.0 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
-		libsqlite3-sys-0.36.0 \
+		libsqlite3-sys-0.37.0 \
 		libz-sys-1.1.24 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.7.4 \
@@ -249,25 +247,23 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		mdbook-core-0.5.2 \
 		mdbook-preprocessor-0.5.2 \
 		memchr-2.8.0 \
+		memo-map-0.3.3 \
 		memoffset-0.9.1 \
 		minicov-0.3.8 \
-		minijinja-2.16.0 \
+		minijinja-2.19.0 \
 		miniz_oxide-0.8.9 \
-		mio-1.1.1 \
-		mysql-27.0.0 \
+		mio-1.2.0 \
+		mysql-28.0.0 \
 		mysql-common-derive-0.32.1 \
-		mysql_common-0.36.2 \
+		mysql_common-0.37.1 \
 		named_pipe-0.4.1 \
 		notify-7.0.0 \
 		notify-types-1.0.1 \
 		nu-ansi-term-0.50.3 \
-		num-0.4.3 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
 		num-conv-0.1.0 \
 		num-integer-0.1.46 \
-		num-iter-0.1.45 \
-		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
 		object-0.36.7 \
@@ -310,10 +306,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
-		quote-1.0.44 \
+		quote-1.0.45 \
 		r-efi-5.3.0 \
 		radium-0.7.0 \
-		rand-0.8.5 \
+		rand-0.8.6 \
 		rand-0.9.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
@@ -338,7 +334,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rsqlite-vfs-0.1.0 \
 		rstest-0.26.1 \
 		rstest_macros-0.26.1 \
-		rusqlite-0.38.0 \
+		rusqlite-0.39.0 \
 		rust_decimal-1.40.0 \
 		rustc-demangle-0.1.27 \
 		rustc-hash-2.1.1 \
@@ -365,7 +361,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		seahash-4.1.0 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.17.0 \
-		semver-1.0.27 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -388,7 +384,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		socket2-0.5.10 \
-		socket2-0.6.2 \
+		socket2-0.6.3 \
 		sqlformat-0.3.5 \
 		sqlite-wasm-rs-0.5.2 \
 		sqlparser-0.60.0 \
@@ -407,7 +403,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
-		tar-0.4.44 \
+		tar-0.4.45 \
 		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
@@ -427,8 +423,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.50.0 \
-		tokio-macros-2.6.0 \
+		tokio-1.51.1 \
+		tokio-macros-2.7.0 \
 		tokio-postgres-0.7.13 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.4 \

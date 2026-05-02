@@ -1,5 +1,5 @@
-TIMESTAMP = 1775893245
-SHA256 (go/www_ghostunnel/ghostunnel-v1.9.2/v1.9.2.mod) = 97fe444b64a0ce59811ef55e570f919ebe9f0186ea4f7b011e427bb788c39fb7
-SIZE (go/www_ghostunnel/ghostunnel-v1.9.2/v1.9.2.mod) = 15203
-SHA256 (go/www_ghostunnel/ghostunnel-v1.9.2/v1.9.2.zip) = f65b595ceb13ed442e42136cf709445460889153cedde97756d884c32d50a5e9
-SIZE (go/www_ghostunnel/ghostunnel-v1.9.2/v1.9.2.zip) = 332231
+TIMESTAMP = 1777458435
+SHA256 (go/www_ghostunnel/ghostunnel-v1.10.0/v1.10.0.mod) = 7ddc5e834cc32b327880eaee471f27076e8db9e2a30465c6a97a7bc74b351343
+SIZE (go/www_ghostunnel/ghostunnel-v1.10.0/v1.10.0.mod) = 14289
+SHA256 (go/www_ghostunnel/ghostunnel-v1.10.0/v1.10.0.zip) = a243b357686c436604cd2f423123ae51b7bd2bbb956402d9118dc2588d300c44
+SIZE (go/www_ghostunnel/ghostunnel-v1.10.0/v1.10.0.zip) = 473259

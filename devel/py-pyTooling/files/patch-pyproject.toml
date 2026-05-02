@@ -1,12 +1,11 @@
---- pyproject.toml.orig	2026-01-18 14:51:17 UTC
+-- Remove setuptools version constraint as FreeBSD ports manages build tool
+-- versions independently. This prevents conflicts with newer setuptools versions.
+--- pyproject.toml.orig2026-04-29 16:34:32 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@ requires = [
+@@ -1,6 +1,6 @@
  [build-system]
  requires = [
 -  "setuptools >= 80.0",
--  "wheel ~= 0.45.0",
 +  "setuptools",
-+  "wheel",
-   "pyTooling ~= 8.10"
  ]
  build-backend = "setuptools.build_meta"

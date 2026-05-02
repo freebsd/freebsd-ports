@@ -1,1 +1,4 @@
-This package contains the pciaccess library.
+The pciaccess library wraps platform-dependent PCI access methods in a
+convenient library.
+For historical reference, the original proposal for this work is at:
+https://www.x.org/wiki/PciReworkProposal

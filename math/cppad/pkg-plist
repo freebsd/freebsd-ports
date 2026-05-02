@@ -250,6 +250,7 @@ include/cppad/local/optimize/size_pair.hpp
 include/cppad/local/optimize/usage.hpp
 include/cppad/local/play/addr_enum.hpp
 include/cppad/local/play/atom_op_info.hpp
+include/cppad/local/play/dyn_player.hpp
 include/cppad/local/play/player.hpp
 include/cppad/local/play/random_iterator.hpp
 include/cppad/local/play/random_setup.hpp
@@ -258,6 +259,7 @@ include/cppad/local/play/subgraph_iterator.hpp
 include/cppad/local/pod_vector.hpp
 include/cppad/local/record/comp_op.hpp
 include/cppad/local/record/cond_exp.hpp
+include/cppad/local/record/dyn_recorder.hpp
 include/cppad/local/record/put_dyn_atomic.hpp
 include/cppad/local/record/put_var_atomic.hpp
 include/cppad/local/record/put_var_vecad.hpp
@@ -412,7 +414,7 @@ include/cppad/utility/vector.hpp
 include/cppad/utility/vector_bool.hpp
 include/cppad/wno_conversion.hpp
 lib/libcppad_lib.so
-lib/libcppad_lib.so.2200.1
+lib/libcppad_lib.so.2572.0
 libdata/pkgconfig/cppad.pc
 share/pkgconfig/cppad.pc
 @dir include/cppad/local/sweep/template

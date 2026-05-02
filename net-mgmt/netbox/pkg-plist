@@ -314,6 +314,7 @@
 %%DATADIR%%/dcim/tables/template_code.py
 %%DATADIR%%/dcim/tests/__init__.py
 %%DATADIR%%/dcim/tests/test_api.py
+%%DATADIR%%/dcim/tests/test_cable_profiles.py
 %%DATADIR%%/dcim/tests/test_cablepaths.py
 %%DATADIR%%/dcim/tests/test_cablepaths2.py
 %%DATADIR%%/dcim/tests/test_filtersets.py
@@ -1232,6 +1233,7 @@
 %%DATADIR%%/templates/core/datasource.html
 %%DATADIR%%/templates/core/datasource/attrs/ignore_rules.html
 %%DATADIR%%/templates/core/datasource/attrs/source_url.html
+%%DATADIR%%/templates/core/htmx/system_db_schema.html
 %%DATADIR%%/templates/core/inc/config_data.html
 %%DATADIR%%/templates/core/inc/datafile_panel.html
 %%DATADIR%%/templates/core/inc/plugin_installation.html
@@ -1671,6 +1673,7 @@
 %%DATADIR%%/tenancy/tests/__init__.py
 %%DATADIR%%/tenancy/tests/test_api.py
 %%DATADIR%%/tenancy/tests/test_filtersets.py
+%%DATADIR%%/tenancy/tests/test_models.py
 %%DATADIR%%/tenancy/tests/test_tables.py
 %%DATADIR%%/tenancy/tests/test_views.py
 %%DATADIR%%/tenancy/ui/__init__.py

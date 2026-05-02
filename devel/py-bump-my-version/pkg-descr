@@ -1,0 +1,11 @@
+Bump My Version's purpose is to:
+- Work as a part of an automated build system
+- Manage project versioning through the project's development life cycle
+  - Incrementing and serializing version numbers
+  - parsing version numbers
+  - supporting SemVer, CalVer, and other versioning schemes
+- Search and replace data in project files
+- Work with the project's source control system
+  - Committing changes
+  - Tagging releases
+  - Reading version numbers from tags

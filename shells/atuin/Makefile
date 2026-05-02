@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.15.2
-PORTREVISION=	1
+DISTVERSION=	18.16.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,6 +35,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		approx-0.5.1 \
 		arboard-3.6.1 \
 		argon2-0.5.3 \
+		arraydeque-0.5.1 \
 		arrayvec-0.7.6 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
@@ -133,6 +133,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		ed25519-dalek-2.2.0 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
+		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
@@ -140,8 +141,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		euclid-0.22.13 \
 		event-listener-5.4.1 \
 		eventsource-stream-0.2.3 \
-		eye_declare-0.4.3 \
-		eye_declare_macros-0.4.3 \
+		eye_declare-0.5.1 \
+		eye_declare_macros-0.5.1 \
 		eyre-0.6.12 \
 		fancy-regex-0.11.0 \
 		fast-srgb8-1.0.0 \
@@ -185,6 +186,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashlink-0.10.0 \
+		hashlink-0.11.0 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		hkdf-0.12.4 \
@@ -213,6 +215,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
+		imara-diff-0.2.0 \
 		indenter-0.3.4 \
 		indexmap-1.9.3 \
 		indexmap-2.13.0 \
@@ -647,6 +650,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		writeable-0.6.2 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
+		xxhash-rust-0.8.15 \
+		yaml-rust2-0.11.0 \
 		yansi-1.0.1 \
 		yoke-0.8.1 \
 		yoke-derive-0.8.1 \

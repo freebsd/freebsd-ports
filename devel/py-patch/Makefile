@@ -11,6 +11,9 @@ WWW=		https://github.com/techtonik/python-patch
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream no longer active, project is abandoned, please used devel/py-patch-ng instead
+EXPIRATION_DATE=2026-07-31
+
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 

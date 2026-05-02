@@ -1,6 +1,5 @@
 PORTNAME=	cargo-about
-DISTVERSION=	0.8.4
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +25,7 @@ GH_ACCOUNT=	EmbarkStudios
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_BUILDDEP=	no
+CARGO_FEATURES=	cli
 
 PLIST_FILES=	bin/${PORTNAME}
 

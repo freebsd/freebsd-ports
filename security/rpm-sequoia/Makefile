@@ -1,7 +1,6 @@
 PORTNAME=	rpm-sequoia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1
-PORTREVISION=	2
+DISTVERSION=	1.10.2
 CATEGORIES=	security archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,19 +27,19 @@ CARGO_CRATES=	aead-0.5.2 \
 		aes-gcm-0.10.3 \
 		aho-corasick-1.1.4 \
 		android_system_properties-0.1.5 \
-		anstyle-1.0.13 \
-		anyhow-1.0.101 \
+		anstyle-1.0.14 \
+		anyhow-1.0.102 \
 		argon2-0.5.3 \
 		ascii-canvas-4.0.0 \
-		assert_cmd-2.1.2 \
+		assert_cmd-2.2.1 \
 		autocfg-1.5.0 \
 		base16ct-0.2.0 \
 		base64-0.22.1 \
 		base64ct-1.8.3 \
-		bindgen-0.70.1 \
+		bindgen-0.72.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
-		bitflags-2.10.0 \
+		bitflags-2.11.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
@@ -49,17 +48,17 @@ CARGO_CRATES=	aead-0.5.2 \
 		botan-sys-0.11.1 \
 		bstr-1.12.1 \
 		buffered-reader-1.4.0 \
-		bumpalo-3.19.1 \
+		bumpalo-3.20.2 \
 		byteorder-1.5.0 \
 		camellia-0.1.0 \
 		cast5-0.11.1 \
 		cbc-0.1.2 \
-		cc-1.2.56 \
+		cc-1.2.61 \
 		cdylib-link-lines-0.1.5 \
 		cexpr-0.6.0 \
 		cfb-mode-0.8.2 \
 		cfg-if-1.0.4 \
-		chrono-0.4.43 \
+		chrono-0.4.44 \
 		cipher-0.4.4 \
 		clang-sys-1.8.1 \
 		cmac-0.7.2 \
@@ -90,7 +89,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		ena-0.14.4 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		fastrand-2.3.0 \
+		fastrand-2.4.1 \
 		ff-0.13.1 \
 		fiat-crypto-0.2.9 \
 		find-msvc-tools-0.1.9 \
@@ -99,14 +98,15 @@ CARGO_CRATES=	aead-0.5.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		generic-array-0.14.7 \
+		generic-array-1.3.5 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
-		getrandom-0.4.1 \
+		getrandom-0.4.2 \
 		ghash-0.5.1 \
 		glob-0.3.3 \
 		group-0.13.0 \
 		hashbrown-0.15.5 \
-		hashbrown-0.16.1 \
+		hashbrown-0.17.0 \
 		heck-0.5.0 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
@@ -123,30 +123,30 @@ CARGO_CRATES=	aead-0.5.2 \
 		idea-0.5.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		indexmap-2.13.0 \
+		indexmap-2.14.0 \
 		inout-0.1.4 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
-		itoa-1.0.17 \
-		js-sys-0.3.85 \
-		keccak-0.1.5 \
+		itoa-1.0.18 \
+		js-sys-0.3.95 \
+		keccak-0.1.6 \
 		lalrpop-0.22.2 \
 		lalrpop-util-0.22.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.182 \
+		libc-0.2.186 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
-		linux-raw-sys-0.11.0 \
-		litemap-0.8.1 \
+		linux-raw-sys-0.12.1 \
+		litemap-0.8.2 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
 		md-5-0.10.6 \
 		memchr-2.8.0 \
 		memsec-0.7.0 \
 		minimal-lexical-0.2.1 \
-		nettle-7.4.0 \
-		nettle-sys-2.3.1 \
+		nettle-7.5.0 \
+		nettle-sys-2.3.2 \
 		new_debug_unreachable-1.0.6 \
 		nom-7.1.3 \
 		num-bigint-dig-0.8.6 \
@@ -154,11 +154,11 @@ CARGO_CRATES=	aead-0.5.2 \
 		num-iter-0.1.45 \
 		num-traits-0.2.19 \
 		ocb3-0.1.0 \
-		once_cell-1.21.3 \
+		once_cell-1.21.4 \
 		opaque-debug-0.3.1 \
-		openssl-0.10.75 \
+		openssl-0.10.78 \
 		openssl-macros-0.1.1 \
-		openssl-sys-0.9.111 \
+		openssl-sys-0.9.114 \
 		p256-0.13.2 \
 		p384-0.13.1 \
 		p521-0.13.3 \
@@ -170,9 +170,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		phf_shared-0.11.3 \
 		pkcs1-0.7.5 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.32 \
+		pkg-config-0.3.33 \
 		polyval-0.6.2 \
-		potential_utf-0.1.4 \
+		potential_utf-0.1.5 \
 		ppv-lite86-0.2.21 \
 		precomputed-hash-0.1.1 \
 		predicates-3.1.4 \
@@ -181,28 +181,29 @@ CARGO_CRATES=	aead-0.5.2 \
 		prettyplease-0.2.37 \
 		primeorder-0.13.6 \
 		proc-macro2-1.0.106 \
-		quote-1.0.44 \
+		quote-1.0.45 \
 		r-efi-5.3.0 \
-		rand-0.8.5 \
-		rand-0.9.2 \
+		r-efi-6.0.0 \
+		rand-0.8.6 \
+		rand-0.9.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		redox_syscall-0.5.18 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.9 \
+		regex-syntax-0.8.10 \
 		rfc6979-0.4.0 \
 		ripemd-0.1.3 \
 		rsa-0.9.10 \
-		rustc-hash-1.1.0 \
+		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
-		rustix-1.1.3 \
+		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		sec1-0.7.3 \
-		semver-1.0.27 \
+		semver-1.0.28 \
 		sequoia-openpgp-2.2.0 \
 		sequoia-policy-config-0.8.1 \
 		serde-1.0.228 \
@@ -211,7 +212,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		serde_json-1.0.149 \
 		sha1collisiondetection-0.3.4 \
 		sha2-0.10.9 \
-		sha3-0.10.8 \
+		sha3-0.10.9 \
 		shlex-1.3.0 \
 		signature-2.2.0 \
 		siphasher-1.0.2 \
@@ -221,20 +222,20 @@ CARGO_CRATES=	aead-0.5.2 \
 		stable_deref_trait-1.2.1 \
 		string_cache-0.8.9 \
 		subtle-2.6.1 \
-		syn-2.0.115 \
+		syn-2.0.117 \
 		synstructure-0.13.2 \
-		tempfile-3.25.0 \
+		tempfile-3.27.0 \
 		term-1.2.1 \
 		termtree-0.5.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.18 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
-		tinystr-0.8.2 \
+		tinystr-0.8.3 \
 		toml-0.5.11 \
 		twofish-0.7.1 \
-		typenum-1.19.0 \
-		unicode-ident-1.0.23 \
+		typenum-1.20.0 \
+		unicode-ident-1.0.24 \
 		unicode-xid-0.2.6 \
 		universal-hash-0.5.1 \
 		utf8_iter-1.0.4 \
@@ -245,10 +246,10 @@ CARGO_CRATES=	aead-0.5.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.1+wasi-0.2.4 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.108 \
-		wasm-bindgen-macro-0.2.108 \
-		wasm-bindgen-macro-support-0.2.108 \
-		wasm-bindgen-shared-0.2.108 \
+		wasm-bindgen-0.2.118 \
+		wasm-bindgen-macro-0.2.118 \
+		wasm-bindgen-macro-support-0.2.118 \
+		wasm-bindgen-shared-0.2.118 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
@@ -271,20 +272,20 @@ CARGO_CRATES=	aead-0.5.2 \
 		wit-bindgen-rust-macro-0.51.0 \
 		wit-component-0.244.0 \
 		wit-parser-0.244.0 \
-		writeable-0.6.2 \
+		writeable-0.6.3 \
 		x25519-dalek-2.0.1 \
 		xxhash-rust-0.8.15 \
-		yoke-0.8.1 \
-		yoke-derive-0.8.1 \
-		zerocopy-0.8.39 \
-		zerocopy-derive-0.8.39 \
-		zerofrom-0.1.6 \
-		zerofrom-derive-0.1.6 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerocopy-0.8.48 \
+		zerocopy-derive-0.8.48 \
+		zerofrom-0.1.7 \
+		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
 		zeroize_derive-1.4.3 \
-		zerotrie-0.2.3 \
-		zerovec-0.11.5 \
-		zerovec-derive-0.11.2 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3 \
 		zmij-1.0.21
 
 OPENSSLINC=	/usr/include

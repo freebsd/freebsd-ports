@@ -1,9 +1,9 @@
 PORTNAME=	libXxf86vm
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X Vidmode Extension
+COMMENT=	Extension library for the XFree86-VidMode X extension
 WWW=		https://gitlab.freedesktop.org/xorg/lib/libxxf86vm
 
 LICENSE=	MIT

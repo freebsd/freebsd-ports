@@ -36,6 +36,7 @@ libexec/kanidmd
 %%DATADIR%%/ui/hpkg/img/logo.svg
 %%DATADIR%%/ui/hpkg/modules/cred_update.mjs
 %%DATADIR%%/ui/hpkg/pkhtml.js
+%%DATADIR%%/ui/hpkg/csrf.js
 %%DATADIR%%/ui/hpkg/style.css
 %%DATADIR%%/ui/hpkg/style.js
 %%DATADIR%%/ui/hpkg/img/kani-waving.svg.br

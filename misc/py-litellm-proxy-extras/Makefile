@@ -1,5 +1,5 @@
 PORTNAME=	litellm-proxy-extras
-DISTVERSION=	0.4.58
+DISTVERSION=	0.4.70
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://github.com/BerriAI/litellm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.10.7:devel/py-uv-build@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517

@@ -24,6 +24,8 @@
 # OPTIONS_RADIO_${NAME}		- List of OPTIONS grouped as radio choice (for
 #				  the radio named as ${NAME} as defined in
 #				  OPTIONS_RADIO)
+# OPTIONS_RADIO_${NAME}_${ARCH}	- List of OPTIONS to append to the radio group
+#				  named ${NAME} on architecture ${ARCH}
 # OPTIONS_MULTI_${NAME}		- List of OPTIONS grouped as multiple-choice
 #				  (for the multi named as ${NAME} as defined in
 #				  OPTIONS_MULTI)
@@ -217,6 +219,15 @@ _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
 .    if empty(OPTIONS_DEFINE:M${opt})
 OPTIONS_DEFINE+=	${opt}
 .    endif
+.  endfor
+
+# Add per arch radio options
+.  for radio in ${OPTIONS_RADIO}
+.    for opt in ${OPTIONS_RADIO_${radio}_${ARCH}}
+.      if empty(OPTIONS_RADIO_${radio}:M${opt})
+OPTIONS_RADIO_${radio}+=	${opt}
+.      endif
+.    endfor
 .  endfor
 
 # Add per arch defaults

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -25,7 +25,7 @@ dependencies = [
+ ]
+ dependencies = [
+     "jsonschema >=4.24.0,<5.0.0",
+-    "openapi-schema-validator >=0.7.3,<0.9.0",
++    "openapi-schema-validator >=0.7.3,<0.10.0",
+     "jsonschema-path >=0.4.3,<0.5.0",
+     "lazy-object-proxy >=1.7.1,<2.0",
+     "pydantic-settings (>=2.0.0,<3.0.0)",

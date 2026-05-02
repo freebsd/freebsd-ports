@@ -1,7 +1,7 @@
-TIMESTAMP = 1774062699
+TIMESTAMP = 1777609817
 SHA256 (vst-sdk_3.7.4_build-25_2021-12-16.zip) = 49b0e46345af323ab84be9df065653b2a6531745dea6f3ac3fb47915df9f3a81
 SIZE (vst-sdk_3.7.4_build-25_2021-12-16.zip) = 104869292
-SHA256 (rncbc-qtractor-v1.5.12_GH0.tar.gz) = 0df945e2a2d853ceeaf0a9038f4665f213d39df169aaff7f8d4fdd219e81fba8
-SIZE (rncbc-qtractor-v1.5.12_GH0.tar.gz) = 2013736
+SHA256 (rncbc-qtractor-v1.6.0_GH0.tar.gz) = 657966193faf54eff00ea3739dd87aad28506286b226041145d70596739a4f84
+SIZE (rncbc-qtractor-v1.6.0_GH0.tar.gz) = 2024380
 SHA256 (breakfastquay-minibpm-43de991_GH0.tar.gz) = 925d18acdd0a902e7ea2ff3722ebe247895b044d1fc35b7b9ba072b77c3f7b58
 SIZE (breakfastquay-minibpm-43de991_GH0.tar.gz) = 41564

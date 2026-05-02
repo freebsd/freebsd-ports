@@ -1,0 +1,42 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -10,18 +10,18 @@ dependencies = [
+     { name = "BerriAI" },
+ ]
+ dependencies = [
+-    "fastuuid==0.14.0",
+-    "httpx==0.28.1",
+-    "openai==2.24.0",
+-    "python-dotenv==1.2.2",
+-    "tiktoken==0.12.0",
+-    "importlib-metadata==8.5.0",
+-    "tokenizers==0.22.2",
+-    "click==8.1.8",
+-    "jinja2==3.1.6",
+-    "aiohttp==3.13.4",
+-    "pydantic==2.12.5",
+-    "jsonschema==4.23.0",
++    "fastuuid>=0.14.0",
++    "httpx>=0.28.1",
++    "openai>=2.24.0",
++    "python-dotenv>=1.2.2",
++    "tiktoken>=0.12.0",
++    "importlib-metadata>=8.5.0",
++    "tokenizers>=0.22.2",
++    "click>=8.1.7",
++    "jinja2>=3.1.6",
++    "aiohttp>=3.13.4",
++    "pydantic>=2.12.5",
++    "jsonschema>=4.23.0",
+ ]
+ 
+ [project.urls]
+@@ -203,7 +203,7 @@ healthcheck = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build==0.10.7"]
++requires = ["uv_build>=0.10.7"]
+ build-backend = "uv_build"
+ 
+ [tool.uv]

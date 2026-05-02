@@ -1,8 +1,7 @@
 PORTNAME=	xonsh
-DISTVERSION=	0.23.2
-PORTREVISION=	2
+DISTVERSION=	0.23.3
 CATEGORIES=	shells python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -14,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.29:devel/py-prompt-toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=5.3.1:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.29:devel/py-prompt-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.2:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyte>=0.8.0:devel/py-pyte@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
@@ -29,27 +28,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=5.3.1:devel/py-coverage@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}restructuredtext-lint>0:textproc/py-restructuredtext-lint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.16.2:devel/py-virtualenv@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent pep517 pytest
-PYTEST_BROKEN_TESTS=	\
-		test_bash_completer.py \
-		test_command_completers.py \
-		test_commands_cache.py \
-		test_dir_completers.py \
-		test_integrations.py \
-		test_man.py \
-		test_os.xsh \
-		test_pipelines.py \
-		test_ptk_highlight.py \
-		test_stress.py \
-		test_specs.py
-SHEBANG_FILES=	tests/bin/cat tests/bin/pwd tests/bin/wc
 
 NO_ARCH=	yes
 
-post-patch:
-	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' \
-		${WRKSRC}/tests/xintegration/test_integrations.py \
-		${WRKSRC}/tests/test_virtualenv_activator.py
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>

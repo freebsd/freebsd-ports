@@ -1,5 +1,5 @@
 PORTNAME=	verdict
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org

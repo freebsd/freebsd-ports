@@ -112,6 +112,7 @@ destroy_jail()
     jroot="$1"
 
     if [ "$jail_mount_devfs" = "yes" ]; then
+        umount -t devfs -f "$jroot/dev"
         rmdir "$jroot/dev"
     fi
 
@@ -140,6 +141,7 @@ kill_jail()
 
     if checkyesno "$_varname"; then
         killall -j ${name}_jail ${_signal}
+        wait_for_pids $(killall -s -j ${name}_jail ${_signal} | sed "s|kill ${_signal}||" | xargs)
     else
         kill ${_signal} "$_pid"
     fi

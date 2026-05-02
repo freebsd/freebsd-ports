@@ -1,7 +1,7 @@
 PORTNAME=	pyqir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.3
-PORTREVISION=	1
+DISTVERSION=	0.12.4
+PORTREVISION=	0
 CATEGORIES=	misc python # quantum-computing
 #MASTER_SITES=	PYPI # no tarballs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,6 @@ CARGO_FEATURES=	llvm20-1
 CARGO_CRATES=	anyhow-1.0.98 \
 		autocfg-1.4.0 \
 		cc-1.2.48 \
-		cfg-if-1.0.0 \
 		cmake-0.1.54 \
 		const-str-0.6.2 \
 		find-msvc-tools-0.1.5 \
@@ -45,11 +44,11 @@ CARGO_CRATES=	anyhow-1.0.98 \
 		once_cell-1.21.3 \
 		portable-atomic-1.11.0 \
 		proc-macro2-1.0.94 \
-		pyo3-0.24.1 \
-		pyo3-build-config-0.24.1 \
-		pyo3-ffi-0.24.1 \
-		pyo3-macros-0.24.1 \
-		pyo3-macros-backend-0.24.1 \
+		pyo3-0.27.2 \
+		pyo3-build-config-0.27.2 \
+		pyo3-ffi-0.27.2 \
+		pyo3-macros-0.27.2 \
+		pyo3-macros-backend-0.27.2 \
 		quote-1.0.40 \
 		regex-lite-0.1.7 \
 		semver-1.0.26 \

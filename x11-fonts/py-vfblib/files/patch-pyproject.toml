@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-03-04 18:44:28 UTC
+--- pyproject.toml.orig	2026-04-28 15:05:05 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@
  [project]
@@ -17,8 +17,8 @@
 @@ -23,7 +21,7 @@ dependencies = [
  requires-python = ">=3.11"
  dependencies = [
-     "fonttools[ufo] >= 4.61.0",
--    "orjson >= 3.11.7, < 4",
+     "fonttools[ufo] >= 4.62.1",
+-    "orjson >= 3.11.8, < 4",
 +    "orjson >= 3.11.4, < 4",
      "typing_extensions >= 4.15.0",
      "ufonormalizer >= 0.6.3",

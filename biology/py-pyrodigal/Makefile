@@ -1,5 +1,5 @@
 PORTNAME=	pyrodigal
-DISTVERSION=	3.6.3
+DISTVERSION=	3.7.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,9 @@ xpost-build:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyrodigal/lib${PYTHON_TAG}.so
 
-do-test: # as of 3.6.3 this doesn't work: https://github.com/althonos/pyrodigal/issues/63
-	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest discover -vv
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest pyrodigal.tests -vv
+
+# tests as of 3.7.1: Ran 99 tests in 2.562s
 
 .include <bsd.port.mk>

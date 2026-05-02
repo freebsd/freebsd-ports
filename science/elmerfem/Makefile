@@ -1,7 +1,6 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	26.1
-PORTREVISION=	4
+DISTVERSION=	26.2.1
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -26,6 +25,7 @@ USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 CMAKE_ARGS=	-DELMER_FEM_REVISION:STRING=${GH_TAGNAME}
 
 ALL_TARGET=	# empty
+TESTING_UNSAFE=	yes
 
 CMAKE_ARGS+=	-DHAVE_INTTYPES_H:BOOL=ON	\
 		-DEXTERNAL_ARPACK:BOOL=ON	\
@@ -73,6 +73,8 @@ _LIBSTAGEDIR=	${STAGEDIR}/${PREFIX}/lib/elmersolver
 _PYVERSION=	${PYTHON_VER}${PYTHON_ABIVER}
 _QT5_LIBS=	buildtools:build core declarative gui network opengl \
 		printsupport qmake:build script sql svg widgets xml
+
+SUB_FILES=	pkg-message
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.pre.mk>

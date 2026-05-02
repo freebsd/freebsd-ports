@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	andreas@bilke.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static site generator written in Python
 WWW=		https://docs.getpelican.com/
 

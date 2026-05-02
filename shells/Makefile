@@ -1,6 +1,7 @@
     COMMENT = Shells
 
     SUBDIR += 44bsd-csh
+    SUBDIR += agsh
     SUBDIR += anongitssh
     SUBDIR += antibody
     SUBDIR += ast-ksh

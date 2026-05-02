@@ -1,7 +1,6 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.39.3
-PORTREVISION=	1
+DISTVERSION=	1.40.1
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +28,6 @@ USE_PYTHON=	pep517 noflavors # autoplist is broken
 USE_GITHUB=	yes
 GH_ACCOUNT=	pola-rs
 GH_PROJECT=	polars
-GH_TAGNAME=	880651f782 # avoid breakage https://github.com/pola-rs/polars/issues/27130
 
 # the below RUSTFLAGS builds the polars package that fails in the run-time with the TLS error about insufficient TLS memory
 # this RUSTFLAGS is replaced with ugly patches in files/ that allow to build a working package
@@ -161,7 +159,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
-		ethnum-1.5.2 \
+		ethnum-1.5.3 \
 		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
 		fallible-streaming-iterator-0.1.9 \
@@ -581,6 +579,9 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${CARGO_WRKSRC}/tests
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+xpost-patch:
+	@${REINPLACE_CMD} -e 's|ethnum-1.5.2|ethnum-1.5.3|' ${WRKSRC}/Cargo.lock
 
 PLIST_SUB+=	FLAVOR=${FLAVOR} \
 		PORTVERSION=${PORTVERSION}

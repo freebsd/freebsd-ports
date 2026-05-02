@@ -1,7 +1,6 @@
 PORTNAME=	rustconn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.18
-PORTREVISION=	1
+DISTVERSION=	0.12.9
 CATEGORIES=	net
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgraphene-1.0.so:graphics/graphene \
 		libzstd.so:archivers/zstd
 
-USES=		cargo gettext-tools gnome shebangfix ssl
+USES=		cargo desktop-file-utils gettext-tools gnome shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	totoshko88
 GH_PROJECT=	RustConn

@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.3
+DISTVERSION=	3.4.7
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
+		anes-0.1.6 \
+		anstyle-1.0.14 \
 		anyhow-1.0.102 \
 		async-trait-0.1.89 \
 		atomic-0.6.1 \
@@ -44,10 +46,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		block-buffer-0.12.0 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
+		bytecount-0.6.9 \
 		bytemuck-1.25.0 \
 		byteorder-1.5.0 \
 		bytes-1.11.1 \
 		bzip2-0.6.1 \
+		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.60 \
 		cesu8-1.1.0 \
@@ -55,7 +59,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
 		chrono-0.4.44 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
 		cipher-0.4.4 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_lex-1.1.0 \
 		cmake-0.1.58 \
 		cmov-0.5.3 \
 		combine-4.6.7 \
@@ -68,12 +78,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc32fast-1.5.0 \
+		criterion-0.5.1 \
+		criterion-plot-0.5.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
 		crossterm-0.28.1 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
+		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.1 \
 		csscolorparser-0.6.2 \
@@ -136,6 +149,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.4.2 \
 		glob-0.3.3 \
 		globset-0.4.18 \
+		half-2.7.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.0 \
@@ -174,6 +188,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		instability-0.3.12 \
 		ipnet-2.12.0 \
 		iri-string-0.7.12 \
+		is-terminal-0.4.17 \
+		itertools-0.10.5 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
 		jni-0.21.1 \
@@ -228,6 +244,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-core-foundation-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		once_cell-1.21.4 \
+		oorandom-11.1.5 \
 		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
@@ -251,6 +268,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pin-project-lite-0.2.17 \
 		pkg-config-0.3.33 \
 		plain-0.2.3 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
 		portable-atomic-1.13.1 \
 		postgres-protocol-0.6.11 \
 		postgres-types-0.2.13 \
@@ -381,6 +401,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
 		tinystr-0.8.3 \
+		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.52.1 \

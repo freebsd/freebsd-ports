@@ -1,0 +1,12 @@
+agsh is a general-purpose AI agent runtime that provides Large Language
+Models (LLMs) with tools like web search, shell execution, and file
+editing to perform complex tasks.
+
+Key features:
+* Natural-language shell with four permission modes (none, read, ask, write)
+* Session persistence via SQLite
+* Support for Model Context Protocol (MCP) servers
+* Support for multiple providers including OpenAI and Claude
+* Syntax-highlighted output and adaptive thinking capabilities
+* Built-in tools for file manipulation, web searching, and delegating
+  tasks to sub-agents

@@ -1,0 +1,7 @@
+MorphIO is a library for reading and writing neuron morphology files.
+It supports the following formats:
+
+SWC
+ASC (aka. neurolucida)
+H5 v1
+H5 v2 is not supported anymore, see H5v2

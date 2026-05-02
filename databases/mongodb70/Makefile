@@ -1,7 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	7.0.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -158,6 +158,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's#rU#r#g' ${WRKDIR}/spidermonkey-${MOZJS_TAG}/python/mozbuild/mozbuild/preprocessor.py
 	${REINPLACE_CMD} -e 's#rU#r#g' ${WRKDIR}/spidermonkey-${MOZJS_TAG}/python/mozbuild/mozbuild/backend/base.py
 	${REINPLACE_CMD} -e 's#rU#r#g' ${WRKDIR}/spidermonkey-${MOZJS_TAG}/python/mozbuild/mozbuild/action/process_define_files.py
+# fix build with python-3.14
+	${PATCH} -d ${WRKDIR}/spidermonkey-${MOZJS_TAG} -p1 < ${PATCHDIR}/d497aa4f770ca02f6083e93b94996a8fe32c2ff4.patch
 
 pre-configure:
 # Replacement of ${WRKSRC}/src/third_party/mozjs/get-sources.sh

@@ -1,5 +1,5 @@
 PORTNAME=	cups
-DISTVERSION=	2.4.18
+DISTVERSION=	2.4.19
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source

@@ -1,0 +1,11 @@
+--- projects/CMakeLists.txt.orig	2022-10-16 09:02:17 UTC
++++ projects/CMakeLists.txt
+@@ -354,7 +354,7 @@ if ( CMAKE_CXX_COMPILER_ID MATCHES "Clang|AppleClang|G
+ if ( CMAKE_CXX_COMPILER_ID MATCHES "Clang|AppleClang|GNU" )
+     target_compile_options( SelfTest PRIVATE -Wall -Wextra -Wunreachable-code -Wpedantic -Wmissing-declarations )
+     if (CATCH_ENABLE_WERROR)
+-        target_compile_options( SelfTest PRIVATE -Werror -Wno-error=pragmas )
++        target_compile_options( SelfTest PRIVATE -Werror -Wno-error=pragmas -Wno-error=c++20-extensions )
+     endif()
+ endif()
+ # Clang specific options go here

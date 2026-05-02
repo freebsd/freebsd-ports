@@ -9,7 +9,6 @@ COMMENT=	Save your computers from the evil clutches of Bill
 WWW=		http://www.xbill.org
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR} --disable-gtk
 
 SCORES_DIR?=	${DATADIR}/scores

@@ -19,10 +19,10 @@ index cab90280ef40..13718b8ce83c 100644
  const char* pw_get_library_version();
  
 diff --git third_party/libwebrtc/modules/portal/pipewire_utils.cc third_party/libwebrtc/modules/portal/pipewire_utils.cc
-index 91a2ae69513a..9dc0c47b969b 100644
+index 7008696b7d20..758b21e2677c 100644
 --- third_party/libwebrtc/modules/portal/pipewire_utils.cc
 +++ third_party/libwebrtc/modules/portal/pipewire_utils.cc
-@@ -52,12 +52,12 @@ PipeWireThreadLoopLock::~PipeWireThreadLoopLock() {
+@@ -108,7 +108,7 @@ PipeWireThreadLoopLock::~PipeWireThreadLoopLock() {
  
  RTC_NO_SANITIZE("cfi-icall")
  PipeWireInitializer::PipeWireInitializer() {
@@ -31,12 +31,15 @@ index 91a2ae69513a..9dc0c47b969b 100644
  }
  
  RTC_NO_SANITIZE("cfi-icall")
- PipeWireInitializer::~PipeWireInitializer() {
--  pw_deinit();
-+  pipewire_deinit();
+@@ -116,7 +116,7 @@ PipeWireInitializer::~PipeWireInitializer() {
+   PipeWireVersion pw_client_version =
+       PipeWireVersion::Parse(pw_get_library_version());
+   if (pw_client_version >= kReentrantDeinitMinVersion) {
+-    pw_deinit();
++    pipewire_deinit();
+   }
  }
  
- }  // namespace webrtc
 diff --git third_party/pipewire/libpipewire/mozpipewire.cpp third_party/pipewire/libpipewire/mozpipewire.cpp
 index 11f938b1de20..0191e557374d 100644
 --- third_party/pipewire/libpipewire/mozpipewire.cpp

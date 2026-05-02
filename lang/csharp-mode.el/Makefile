@@ -9,6 +9,9 @@ WWW=		https://github.com/josteink/csharp-mode
 
 LICENSE=	GPLv2
 
+DEPRECATED=	No longer maintained upstream as a standalone package. This mode is part of Emacs core since Emacs 29
+EXPIRATION_DATE=2026-06-30
+
 USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	josteink

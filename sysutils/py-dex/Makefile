@@ -1,7 +1,11 @@
 PORTNAME=	dex
+PORTREVISION=	1
 DISTVERSION=	0.10.1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	99492884c0ec39b03785cb8efe2c4a23af3099fc.patch:-p1 # https://github.com/jceb/dex/pull/78
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	DesktopEntry Execution

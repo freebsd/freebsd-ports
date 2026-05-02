@@ -1,7 +1,6 @@
 PORTNAME=	qh3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
-PORTREVISION=	1
+DISTVERSION=	1.7.4
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +43,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		cbc-0.1.2 \
-		cc-1.2.60 \
+		cc-1.2.61 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
 		cipher-0.4.4 \
@@ -55,7 +54,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		crypto-common-0.1.7 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
-		data-encoding-2.10.0 \
+		data-encoding-2.11.0 \
 		der-0.7.10 \
 		der-parser-10.0.0 \
 		der_derive-0.7.3 \
@@ -85,13 +84,13 @@ CARGO_CRATES=	aes-0.8.4 \
 		icu_properties_data-2.2.0 \
 		icu_provider-2.2.0 \
 		idna-1.1.0 \
-		idna_adapter-1.2.1 \
+		idna_adapter-1.2.2 \
 		inout-0.1.4 \
 		itertools-0.13.0 \
 		itoa-1.0.18 \
 		jobserver-0.1.34 \
 		lazy_static-1.5.0 \
-		libc-0.2.185 \
+		libc-0.2.186 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		litemap-0.8.2 \
@@ -140,9 +139,9 @@ CARGO_CRATES=	aes-0.8.4 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rusticata-macros-4.1.0 \
-		rustls-0.23.38 \
+		rustls-0.23.39 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.14.0 \
+		rustls-pki-types-1.14.1 \
 		rustls-webpki-0.103.13 \
 		salsa20-0.10.2 \
 		scrypt-0.11.0 \

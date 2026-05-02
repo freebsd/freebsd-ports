@@ -1,6 +1,6 @@
---- src/vs/platform/environment/node/userDataPath.ts.orig	2026-03-06 23:06:10 UTC
+--- src/vs/platform/environment/node/userDataPath.ts.orig	2026-04-29 14:36:44 UTC
 +++ src/vs/platform/environment/node/userDataPath.ts
-@@ -91,6 +91,7 @@ function doGetUserDataPath(cliArgs: NativeParsedArgs, 
+@@ -101,6 +101,7 @@ export function getDefaultUserDataPath(productName: st
  			appDataPath = join(homedir(), 'Library', 'Application Support');
  			break;
  		case 'linux':

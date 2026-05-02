@@ -1,5 +1,5 @@
 PORTNAME=	goffice
-PORTVERSION=	0.10.60
+PORTVERSION=	0.10.61
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -34,7 +34,5 @@ PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${PORTVERSION:R} LIB_VER=${PORTVERSI
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/goffice/${SHORT_VER}/plugins
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoffice-0.10.so.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/goffice/${PORTVERSION}/plugins/*/*.so
 
 .include <bsd.port.mk>

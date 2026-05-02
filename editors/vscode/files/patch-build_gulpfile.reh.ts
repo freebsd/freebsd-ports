@@ -1,4 +1,4 @@
---- build/gulpfile.reh.ts.orig	2026-04-15 00:28:13 UTC
+--- build/gulpfile.reh.ts.orig	2026-04-29 14:36:44 UTC
 +++ build/gulpfile.reh.ts
 @@ -27,7 +27,7 @@ import rceditCallback from 'rcedit';
  import glob from 'glob';
@@ -18,7 +18,7 @@
  			.pipe(es.through(function (file) {
  				productJsonContents = file.contents.toString();
  				this.emit('data', file);
-@@ -534,7 +534,7 @@ function tweakProductForServerWeb(product: typeof impo
+@@ -533,7 +533,7 @@ function tweakProductForServerWeb(product: typeof impo
  			gulp.task(serverTaskCI);
  
  			const serverTask = task.define(`vscode-${type}${dashed(platform)}${dashed(arch)}${dashed(minified)}`, task.series(

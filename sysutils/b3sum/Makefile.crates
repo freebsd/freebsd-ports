@@ -6,12 +6,12 @@ CARGO_CRATES=	anstream-1.0.0 \
 		anyhow-1.0.102 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
-		bitflags-2.11.0 \
-		cc-1.2.58 \
+		bitflags-2.11.1 \
+		cc-1.2.61 \
 		cfg-if-1.0.4 \
-		clap-4.6.0 \
+		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_derive-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		colorchoice-1.0.5 \
 		constant_time_eq-0.4.2 \
@@ -22,21 +22,21 @@ CARGO_CRATES=	anstream-1.0.0 \
 		duct-1.1.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		fastrand-2.3.0 \
+		fastrand-2.4.1 \
 		find-msvc-tools-0.1.9 \
 		foldhash-0.1.5 \
 		getrandom-0.4.2 \
 		glob-0.3.3 \
 		hashbrown-0.15.5 \
-		hashbrown-0.16.1 \
+		hashbrown-0.17.0 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		id-arena-2.3.0 \
-		indexmap-2.13.0 \
+		indexmap-2.14.0 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
 		leb128fmt-0.1.0 \
-		libc-0.2.183 \
+		libc-0.2.186 \
 		linux-raw-sys-0.12.1 \
 		log-0.4.29 \
 		memchr-2.8.0 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	anstream-1.0.0 \
 		r-efi-6.0.0 \
 		rayon-core-1.13.0 \
 		rustix-1.1.4 \
-		semver-1.0.27 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -68,7 +68,7 @@ CARGO_CRATES=	anstream-1.0.0 \
 		unicode-ident-1.0.24 \
 		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
-		wasip2-1.0.2+wasi-0.2.9 \
+		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
@@ -87,6 +87,7 @@ CARGO_CRATES=	anstream-1.0.0 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.53.1 \
 		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rust-0.51.0 \
 		wit-bindgen-rust-macro-0.51.0 \

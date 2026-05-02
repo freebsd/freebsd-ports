@@ -10,6 +10,7 @@
     SUBDIR += apache-commons-compress
     SUBDIR += appscript
     SUBDIR += arc
+    SUBDIR += archmerge
     SUBDIR += arj
     SUBDIR += ark
     SUBDIR += arqiver

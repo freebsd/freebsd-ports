@@ -1,5 +1,5 @@
-TIMESTAMP = 1775930790
-SHA256 (go/databases_rqlite/rqlite-v9.4.5/v9.4.5.mod) = 498b6a37117df61feae9cd8097d28b8ba2fc06b50c40b58079aea1393e00ea54
-SIZE (go/databases_rqlite/rqlite-v9.4.5/v9.4.5.mod) = 4040
-SHA256 (go/databases_rqlite/rqlite-v9.4.5/v9.4.5.zip) = 1bb3b7d845728a70e78acd663f7e2e12914201f1d629118c8420b9eb344d1588
-SIZE (go/databases_rqlite/rqlite-v9.4.5/v9.4.5.zip) = 1086829
+TIMESTAMP = 1777529780
+SHA256 (go/databases_rqlite/rqlite-v10.0.1/v10.0.1.mod) = 1e284bbda9cfde955b4c28934c4c6c51068007e084ff2e20fcb439cceeb28c12
+SIZE (go/databases_rqlite/rqlite-v10.0.1/v10.0.1.mod) = 3972
+SHA256 (go/databases_rqlite/rqlite-v10.0.1/v10.0.1.zip) = d8916cd91dd9626f1f5d498e7f8f3c3c949123d051af23af92bbf0eb8f8f079f
+SIZE (go/databases_rqlite/rqlite-v10.0.1/v10.0.1.zip) = 1280712

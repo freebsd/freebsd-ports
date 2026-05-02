@@ -1,11 +1,11 @@
---- setup.py.orig	2025-01-07 09:16:36 UTC
-+++ setup.py
-@@ -57,7 +57,7 @@ def find_libsndfile():
-                     # only check for the mandatory main library, others are
-                     # optional
-                     found_lib = (tmp_lib_dir / "libsndfile.a").exists()
--                elif platform.system() == "Linux":
-+                elif platform.system() == "Linux" or platform.system() == "FreeBSD":
-                     found_lib = (tmp_lib_dir / "libsndfile.so").exists()
-                 elif platform.system() == "Darwin":
-                     found_lib = (tmp_lib_dir / "libsndfile.dylib").exists()
+--- setup.py.orig	2025-03-06 05:53:30 UTC
++++ setup.py	2025-03-06 05:53:30 UTC
+@@ -45,7 +45,7 @@ def _get_libsndfile_lib_name():
+     elif os.environ.get("PYSNDFILE_USE_STATIC", "0") != "0":
+         # only check for the mandatory main library, others are optional
+         return "libsndfile.a"
+-    elif platform.system() == "Linux":
++    elif platform.system() == "Linux" or platform.system() == "FreeBSD":
+         return "libsndfile.so"
+     elif platform.system() == "Darwin":
+         return "libsndfile.dylib"

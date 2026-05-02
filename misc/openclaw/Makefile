@@ -1,6 +1,5 @@
 PORTNAME=	openclaw
-DISTVERSION=	2026.4.24
-PORTREVISION=	1
+DISTVERSION=	2026.4.29
 CATEGORIES=	misc # machine-learning
 PKGNAMESUFFIX=	-ai-gateway
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -175,6 +174,11 @@ post-patch-EXTEND_TYPING_TTL_TIMEOUT-on:
 
 post-install:
 	# remove empty directories in STAGEDIR
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules -type d -empty -delete
+	# remove lancedb plugin to ensure it is never enabled at runtime
+	# not to be removed until https://github.com/lancedb/lancedb/issues/3338 is resolved and the plugin can be safely re-enabled
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/dist/extensions/memory-lancedb
+	@${RM} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/docs/plugins/memory-lancedb.md
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules -type d -empty -delete
 	# autoplist: 32k+ files with randomizing strings in names warrant autoplist
 	@cd ${STAGEDIR}${PREFIX} && \

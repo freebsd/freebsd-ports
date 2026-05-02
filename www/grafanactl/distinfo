@@ -1,7 +1,7 @@
-TIMESTAMP = 1773152791
-SHA256 (go/www_grafanactl/grafana-grafanactl-v0.1.9_GH0/v0.1.9.mod) = 34b4f27570070b804ef4e6c4005c6dc40dcdf80b7b83a04944b35e84eaa3b364
-SIZE (go/www_grafanactl/grafana-grafanactl-v0.1.9_GH0/v0.1.9.mod) = 4767
-SHA256 (go/www_grafanactl/grafana-grafanactl-v0.1.9_GH0/v0.1.9.zip) = 20d9b4bc9d3b34bb171f817b4f797b02d809879fc60837ab60efdb87fc1a1a81
-SIZE (go/www_grafanactl/grafana-grafanactl-v0.1.9_GH0/v0.1.9.zip) = 224620
-SHA256 (go/www_grafanactl/grafana-grafanactl-v0.1.9_GH0/grafana-grafanactl-v0.1.9_GH0.tar.gz) = f978c3f36d6b6efb1e145a73c9f3fdeca1720def348a137fec6a289fb7df4541
-SIZE (go/www_grafanactl/grafana-grafanactl-v0.1.9_GH0/grafana-grafanactl-v0.1.9_GH0.tar.gz) = 154593
+TIMESTAMP = 1777311610
+SHA256 (go/www_grafanactl/grafana-grafanactl-v0.1.10_GH0/v0.1.10.mod) = e8d9ca65dec869a314be4a02ccac9ba774e15999501101a8e60ef89cbf17ccfc
+SIZE (go/www_grafanactl/grafana-grafanactl-v0.1.10_GH0/v0.1.10.mod) = 4771
+SHA256 (go/www_grafanactl/grafana-grafanactl-v0.1.10_GH0/v0.1.10.zip) = 6c1f69e68407a480448012200e7c18150b3e74890a87b34b021c9416f59d3d3e
+SIZE (go/www_grafanactl/grafana-grafanactl-v0.1.10_GH0/v0.1.10.zip) = 242972
+SHA256 (go/www_grafanactl/grafana-grafanactl-v0.1.10_GH0/grafana-grafanactl-v0.1.10_GH0.tar.gz) = c3a3fef02f073aa92fb7b62c6f60a26e80fe794cf158f86830fe38ff053035fd
+SIZE (go/www_grafanactl/grafana-grafanactl-v0.1.10_GH0/grafana-grafanactl-v0.1.10_GH0.tar.gz) = 166150

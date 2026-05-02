@@ -1,7 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.0.0
-PORTREVISION=	1
+DISTVERSION=	7.0.1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,15 +20,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	glotzerlab
 
 GH_TUPLE=	glotzerlab:upp11:0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360:glotzerlab_upp11/hoomd/extern/upp11 \
-		glotzerlab:nano-signal-slot:8d13689:glotzerlab_nano_signal_slot/hoomd/extern/nano-signal-slot \
+		glotzerlab:nano-signal-slot:8d136893dc78b11c689bc9f48afab49e5de8ab19:glotzerlab_nano_signal_slot/hoomd/extern/nano-signal-slot \
 		glotzerlab:quickhull:1ffbc6f884ea1da89e104a5996cf8a726db673d5:glotzerlab_quickhull/hoomd/extern/quickhull \
-		glotzerlab:HIP:db753e4:glotzerlab_HIP/hoomd/extern/HIP \
-		glotzerlab:hipCUB:64d8adf:glotzerlab_hipCUB/hoomd/extern/hipCUB \
+		glotzerlab:HIP:db753e4ea7a715afec405117250cecef9e882b33:glotzerlab_HIP/hoomd/extern/HIP \
+		glotzerlab:hipCUB:64d8adf32bd48d8723cc7df9e5c970169e2845b5:glotzerlab_hipCUB/hoomd/extern/hipCUB \
 		mphowardlab:neighbor:ba0f06869b766066a7068852fa3b8c5fa746f71f:mphowardlab_neighbor/hoomd/extern/neighbor \
-		mphowardlab:hipper:076059b:mphowardlab_hipper/hoomd/extern/hipper \
-		glotzerlab:hoomd-examples:94a5b52d159bc7c07e2650e31b429cef55384542:glotzerlab_hoomd_examples/sphinx-doc/tutorial \
-		glotzerlab:OpenRAND:92dc12a:glotzerlab_OpenRAND/hoomd/extern/OpenRAND \
-		mphowardlab:hipper:b6da049a516ada03e4e1b66ca6b4c2c7c9668595:mphowardlab_hipper/hoomd/extern/hipper
+		glotzerlab:hipper:076059b9be58e5dd49f0f65a49ca48f703efa37a:glotzerlab_hipper/hoomd/extern/hipper \
+		glotzerlab:hoomd-examples:37066e712ba37a43d76e26f8e1ae829359c06bc5:glotzerlab_hoomd_examples/sphinx-doc/tutorial \
+		glotzerlab:OpenRAND:92dc12a23dff2d0aa3545f749d1c013677b9a87e:glotzerlab_OpenRAND/hoomd/extern/OpenRAND
 
 SHEBANG_GLOB=	*.sh
 
@@ -59,7 +57,7 @@ TBB_DESC=		Enable support for Threading Building Blocks (TBB)
 TBB_CMAKE_BOOL=		ENABLE_TBB
 TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
-# tests as of 6.0.0: 97% tests passed, 2 tests failed out of 67
+# tests as of 7.0.1: 97% tests passed, 2 tests failed out of 67
 # The following tests FAILED:
 #          18 - mpi-test_load_balancer (Failed)
 #          35 - mpi-test_communication (Failed)

@@ -14,6 +14,7 @@ include/gnutls/crypto.h
 include/gnutls/dtls.h
 include/gnutls/gnutls.h
 include/gnutls/gnutlsxx.h
+include/gnutls/hpke.h
 include/gnutls/ocsp.h
 include/gnutls/openpgp.h
 include/gnutls/openssl.h
@@ -35,7 +36,7 @@ lib/libgnutls-openssl.so.27
 lib/libgnutls-openssl.so.27.0.2
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.41.1
+lib/libgnutls.so.30.42.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -407,6 +408,14 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_hmac_init.3.gz
 %%MAN3%%share/man/man3/gnutls_hmac_output.3.gz
 %%MAN3%%share/man/man3/gnutls_hmac_set_nonce.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_decap.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_deinit.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_derive_keypair.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_encap.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_export.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_init.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_open.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_seal.3.gz
 %%MAN3%%share/man/man3/gnutls_idna_map.3.gz
 %%MAN3%%share/man/man3/gnutls_idna_reverse_map.3.gz
 %%MAN3%%share/man/man3/gnutls_init.3.gz
@@ -526,6 +535,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_pkcs11_obj_get_exts.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs11_obj_get_flags.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs11_obj_get_info.3.gz
+%%MAN3%%share/man/man3/gnutls_pkcs11_obj_get_pk_algorithm.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs11_obj_get_ptr.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs11_obj_get_type.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs11_obj_import_url.3.gz

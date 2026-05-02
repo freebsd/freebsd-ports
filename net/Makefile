@@ -455,6 +455,7 @@
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += lldap
+    SUBDIR += localgo
     SUBDIR += lua-luasocket
     SUBDIR += lualdap
     SUBDIR += mDNSResponder
@@ -1600,6 +1601,8 @@
     SUBDIR += tcpslice
     SUBDIR += tcpsplit
     SUBDIR += tcpstat
+    SUBDIR += tcpstats-kmod
+    SUBDIR += tcpstats-reader
     SUBDIR += tcptestsuite
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute

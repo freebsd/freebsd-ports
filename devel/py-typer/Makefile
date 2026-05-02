@@ -1,5 +1,5 @@
 PORTNAME=	typer
-PORTVERSION=	0.24.2
+PORTVERSION=	0.25.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-doc>=0.0.2:devel/py-annotated-doc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rich>=12.3.0:textproc/py-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rich>=13.8.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.3.0:devel/py-shellingham@${PY_FLAVOR}
 
 USES=		python

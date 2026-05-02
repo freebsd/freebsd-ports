@@ -1,6 +1,5 @@
 PORTNAME=	liboqs-python
-DISTVERSION=	0.10.0
-PORTREVISION=	3
+DISTVERSION=	0.12.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,5 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	open-quantum-safe
 
 NO_ARCH=	yes
+
+# tests as of 0.12.0: Ran 955 tests in 212.627s
 
 .include <bsd.port.mk>

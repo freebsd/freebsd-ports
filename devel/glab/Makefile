@@ -52,7 +52,7 @@ pre-build:
 
 post-install-COMPLETIONS-on:
 .for _shell in bash fish zsh
-	${GO_WRKDIR_BIN}/${PORTNAME} completion -s ${_shell} \
+	${SETENV} HOME=${WRKDIR} ${GO_WRKDIR_BIN}/${PORTNAME} completion -s ${_shell} \
 		>${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
 .endfor
 
@@ -62,7 +62,7 @@ post-install-DOCS-on:
 		${STAGEDIR}${DOCSDIR}
 
 post-install-MANPAGES-on:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run \
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} HOME=${WRKDIR} ${GO_CMD} run \
 		./cmd/gen-docs --manpage --path ${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

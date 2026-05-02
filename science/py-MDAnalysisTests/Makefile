@@ -1,6 +1,5 @@
 PORTNAME=	MDAnalysisTests
-DISTVERSION=	2.7.0
-PORTREVISION=	3
+DISTVERSION=	2.10.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MDAnalysis>0:science/py-MDAnalysis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist pytest
 NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/mdanalysistests-${DISTVERSION}
+
+# tests as of 2.10.0
 
 .include <bsd.port.mk>

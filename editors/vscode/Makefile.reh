@@ -173,9 +173,6 @@ do-build:
 		npm_config_nodedir=${LOCALBASE} \
 		npm --userconfig=${WRKSRC}/remote/.npmrc run \
 			gulp vscode-reh-linux-${NODEJS_ARCH}-min
-# rename linux directory to freebsd
-	@${MV} ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH}/node_modules/@github/copilot/prebuilds/linux-${NODEJS_ARCH} \
-		${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH}/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
 # strip native node modules
 	@${FIND} ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH} -type f -exec ${FILE} {} ';' | \
 		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ': ' '{print $$1}' | ${XARGS} ${STRIP_CMD}

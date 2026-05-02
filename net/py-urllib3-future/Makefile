@@ -1,5 +1,5 @@
 PORTNAME=	urllib3-future
-PORTVERSION=	2.19.911
+PORTVERSION=	2.19.913
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/urllib3.future/releases/download/${PORTVERSION}/

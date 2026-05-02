@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	OPENSSL THREADS MBEDTLS
 OPTIONS_DEFAULT=	OPENSSL THREADS
 OPTIONS_SUB=	yes
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls3
 MBEDTLS_USES=	localbase:ldflags
 MBEDTLS_CONFIGURE_OFF=	--disable-mbedtls
 

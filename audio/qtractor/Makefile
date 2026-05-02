@@ -1,6 +1,6 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.12
+DISTVERSION=	1.6.0
 CATEGORIES=	audio
 MASTER_SITES=	https://download.steinberg.net/sdk_downloads/:vst3sdk
 DISTFILES=	${VST3_SDK_ARCHIVE}:vst3sdk
@@ -37,7 +37,7 @@ RUN_DEPENDS=	alsa-seq-server>0:audio/alsa-seq-server
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf gtk20 gtkmm24 pango
-USE_QT=		core gui svg widgets x11extras xml buildtools:build linguisttools:build qmake:build
+USE_QT=		core gui network svg widgets x11extras xml buildtools:build linguisttools:build qmake:build
 #USE_QT=		base svg tools:build # for Qt6
 
 USE_GITHUB=	yes

@@ -649,7 +649,7 @@
 +
 +	const maxlen = uint(1024)
 +	out := make([]C.char, maxlen)
-+	if res, err := C.procstat_getpathname(procstat, &p.kinfo, &out[0], C.ulong(maxlen)); res != 0 {
++	if res, err := C.procstat_getpathname(procstat, &p.kinfo, &out[0], C.size_t(maxlen)); res != 0 {
 +		return "", err
 +	}
 +	return C.GoString(&out[0]), nil
@@ -945,7 +945,7 @@
 +		return time.Time{}, fmt.Errorf("failed to get host uptime: %w", err)
 +	}
 +
-+	bootTime := time.Unix(tv.Sec, tv.Usec*int64(time.Microsecond))
++	bootTime := time.Unix(int64(tv.Sec), 1000*int64(tv.Usec))
 +	return bootTime, nil
 +}
 +

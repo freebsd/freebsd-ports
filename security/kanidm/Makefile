@@ -1,7 +1,6 @@
 PORTNAME=	kanidm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.2
-PORTREVISION=	2
+DISTVERSION=	1.10.0
 CATEGORIES=	security net
 
 # implicit-approval+: dtxdf
@@ -25,7 +24,7 @@ server_PKGNAMESUFFIX=	-server
 server_COMMENT=		(server only)
 server_PLIST=	${.CURDIR}/pkg-plist.server
 
-USES=		cargo ssl llvm
+USES=		cargo llvm
 USE_GITHUB=	yes
 
 MAKE_ENV=    LIBCLANG_PATH=${LLVM_PREFIX}/lib

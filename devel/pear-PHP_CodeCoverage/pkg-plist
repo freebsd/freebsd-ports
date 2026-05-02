@@ -147,6 +147,8 @@
 %%DATADIR%%/Test/TestSize.php
 %%DATADIR%%/Test/TestStatus.php
 %%DATADIR%%/UnintentionallyCoveredCodeChecker.php
+%%DATADIR%%/Util/EnsuresUtf8.php
+%%DATADIR%%/Util/EnsuresUtf8Test.php
 %%DATADIR%%/Util/Filesystem.php
 %%DATADIR%%/Util/PathReducer.php
 %%DATADIR%%/Util/Percentage.php

@@ -1,10 +1,9 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	7.0.26
-PORTREVISION?=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/vvd:docs
-PKGNAMESUFFIX?=	-70
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
 		VirtualBox-docs-${DISTVERSION}${EXTRACT_SUFX}:docs
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} \
@@ -31,6 +30,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
 
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+_VER=		${DISTVERSION:R:S|.||}
+${FLAVOR}_PKGNAMESUFFIX=	-${${FLAVOR:N${FLAVORS:[1]}} ${_VER}:L:ts-}
+
 USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
@@ -38,18 +42,16 @@ USE_BINUTILS=	yes
 USE_GNOME=	libxml2
 USE_RC_SUBR=	vboxheadless vboxwatchdog
 
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-java --passive-mesa --disable-docs
-CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-docs \
+		--disable-java \
+		--passive-mesa \
+		--with-gcc="${CC}" \
+		--with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-legacy \
-			virtualbox-ose-nox11-legacy \
-			virtualbox-ose \
-			virtualbox-ose-nox11 \
-			virtualbox-ose-71 \
-			virtualbox-ose-nox11-71 \
-			virtualbox-ose-72 \
-			virtualbox-ose-nox11-72
+_VERSIONS=		_-legacy _ _-70 _-71 _-72
+CONFLICTS_INSTALL=	${_VERSIONS:S|_|${PORTNAME}|} \
+			${_VERSIONS:S|_|${PORTNAME}-nox11|}
 
 EXTRACT_AFTER_ARGS=	--exclude kBuild/bin \
 			--no-same-owner --no-same-permissions
@@ -85,15 +87,15 @@ PLIST_SUB=	GUEST_VER=${DISTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
 		VBOXGROUP=${VBOXGROUP}
 
-SLAVE_PORT?=	no
-
 OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OGG \
 			PULSEAUDIO PYTHON QT5 R0LOGGING TPM UDPTUNNEL VBOXIMG \
 			VDE VNC VORBIS VPX WEBSERVICE X11
-OPTIONS_DEFAULT=	AIO DBUS QT5 TPM UDPTUNNEL VNC WEBSERVICE X11
-.if ${SLAVE_PORT} == no
-OPTIONS_DEFAULT+=	PYTHON
-.endif
+OPTIONS_DEFAULT_x11=	PYTHON
+OPTIONS_DEFAULT=	AIO DBUS QT5 TPM UDPTUNNEL VNC WEBSERVICE X11 \
+			${OPTIONS_DEFAULT_${FLAVOR}}
+OPTIONS_EXCLUDE_nox11=	ALSA DBUS DEBUG GUESTADDITIONS DOCS NLS OGG PULSEAUDIO \
+			QT5 VORBIS VPX X11
+OPTIONS_EXCLUDE=	${OPTIONS_EXCLUDE_${FLAVOR}}
 # Since version 6.1.24 pulseaudio is broken at runtime, preventing
 # virtual machines from starting if configured to use it.
 OPTIONS_EXCLUDE+=	PULSEAUDIO
@@ -159,12 +161,6 @@ ENV=
 .export ENV
 
 .include <bsd.port.options.mk>
-
-.if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-nox11-70
-.else
-CONFLICTS_INSTALL+=	virtualbox-ose-70
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug

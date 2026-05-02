@@ -26,6 +26,7 @@ share/man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/reseed/rambler_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/reseed_at_diva.exchange.crt
 %%DATADIR%%/certificates/reseed/sahil_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/vserod1488_at_proton.me.crt
 @dir %%ETCDIR%%/tunnels.d
 @dir(%%USER%%,%%GROUP%%,755) /var/db/i2pd
 @dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd

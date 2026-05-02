@@ -1,5 +1,5 @@
 PORTNAME=	train
-PORTVERSION=	3.16.2
+PORTVERSION=	3.16.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/inspec/train
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport72>=7.2.2.1<8:devel/rubygem-activesupport72 \
+RUN_DEPENDS=	rubygem-activesupport72>=7.2.3.1<8:devel/rubygem-activesupport72 \
 		rubygem-azure_graph_rbac>=0.16<1:devel/rubygem-azure_graph_rbac \
 		rubygem-azure_mgmt_key_vault>=0.17<1:devel/rubygem-azure_mgmt_key_vault \
 		rubygem-azure_mgmt_resources>=0.15<1:devel/rubygem-azure_mgmt_resources \

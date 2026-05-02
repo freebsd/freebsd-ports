@@ -1,9 +1,9 @@
 PORTNAME=	vulkan-extension-layer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.333
+DISTVERSION=	1.4.349
 CATEGORIES=	graphics
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Layer providing Vulkan features when native support is unavailable
 WWW=		https://github.com/KhronosGroup/Vulkan-ExtensionLayer
 
@@ -19,7 +19,7 @@ LICENSE_PERMS_LLVM-exception=	dist-mirror dist-sell pkg-mirror pkg-sell auto-acc
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 		vulkan-utility-libraries>0:graphics/vulkan-utility-libraries
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		cmake compiler:c++11-lib localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer

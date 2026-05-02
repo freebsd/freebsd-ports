@@ -1,5 +1,5 @@
 PORTNAME=	pyvo
-PORTVERSION=	1.7
+PORTVERSION=	1.8.1
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ NO_ARCH=	yes
 
 TEST_ARGS=	--remote-data
 
-# tests as of 1.7: 462 passed, 1 xfailed, 1 xpassed in 146.52s (0:02:26)
+# tests as of 1.8.1: 510 passed, 1 xfailed, 1 xpassed in 101.56s
 
 .include <bsd.port.mk>

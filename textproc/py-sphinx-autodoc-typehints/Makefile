@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	sphinx_autodoc_typehints-${DISTVERSION}
 
-MAINTAINER=	andreas@bilke.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type hints (PEP 484) support for the Sphinx autodoc extension
 WWW=		https://github.com/tox-dev/sphinx-autodoc-typehints
 

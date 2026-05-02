@@ -7,7 +7,7 @@ bin/turnutils_stunclient
 bin/turnutils_uclient
 lib/libturnclient.a
 %%SQLITE%%var/db/turndb
-etc/turnserver.conf.default
+@sample etc/turnserver.conf.sample
 share/man/man1/turnserver.1.gz
 share/man/man1/turnadmin.1.gz
 share/man/man1/turnutils.1.gz

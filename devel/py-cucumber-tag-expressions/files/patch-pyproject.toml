@@ -1,10 +1,11 @@
---- pyproject.toml.orig	2026-04-28 05:17:17 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@ build-backend = "uv_build"
+@@ -1,6 +1,6 @@
  [build-system]
- build-backend = "uv_build"
+-build-backend = "uv_build"
 -requires = ["uv_build>=0.10.0,<0.11.0"]
-+requires = ["uv_build>=0.10.0"]
++requires = ["flit-core >= 3.12"]
++build-backend = "flit_core.buildapi"
  
  [project]
  name = "cucumber-tag-expressions"

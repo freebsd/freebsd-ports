@@ -1,5 +1,5 @@
 PORTNAME=	radicale
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6:deskutils/py-vobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pika>=1.1.0:devel/py-pika@${PY_FLAVOR} \

@@ -1,8 +1,10 @@
 include/llhttp.h
-lib/cmake/llhttp/llhttp-config-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/llhttp/llhttp-config.cmake
+lib/cmake/llhttp/llhttp-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/llhttp/llhttp-targets.cmake
+lib/cmake/llhttp/llhttpConfig.cmake
+lib/cmake/llhttp/llhttpConfigVersion.cmake
 %%STATIC%%lib/libllhttp.a
 lib/libllhttp.so
-lib/libllhttp.so.9.3
+lib/libllhttp.so.9.4
 lib/libllhttp.so.%%PORTVERSION%%
 libdata/pkgconfig/libllhttp.pc

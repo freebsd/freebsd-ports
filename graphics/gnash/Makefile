@@ -1,6 +1,6 @@
 PORTNAME=	gnash
 PORTVERSION=	0.8.11.20190130
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics multimedia
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libavcodec.so.58:multimedia/ffmpeg4 \
 		libtheora.so:multimedia/libtheora \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
@@ -47,9 +46,6 @@ PORTSCOUT=	limit:^0\.
 SYSCONFIGDIR=	${PREFIX}/etc
 
 # jemalloc leads to infinite recursion on FreeBSD
-CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
-CPPFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
-LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
 CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl2-config
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
@@ -57,16 +53,15 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--sysconfdir="${SYSCONFIGDIR}" \
 		--enable-gui=gtk \
 		--enable-renderer=cairo \
-		--enable-media=ffmpeg \
 		--enable-sound=sdl \
-		--with-ffmpeg-incl="${LOCALBASE}/ffmpeg4/include/libavcodec" \
-		--with-ffmpeg-lib=${LOCALBASE}/ffmpeg4/lib \
+		--disable-docbook \
 		--disable-testsuite \
 		--disable-kparts3 \
 		--disable-jemalloc \
+		--disable-npapi \
+		--disable-kparts4 \
 		--without-gconf
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-#MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/ffmpeg4"
 
 GNASHVER=	0.8.11dev
 CONFIG_FILES=	gnashpluginrc gnashrc
@@ -75,9 +70,8 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS
-OPTIONS_SINGLE=	MEDIA RENDERER
-OPTIONS_DEFAULT=VAAPI
+OPTIONS_DEFINE=	CYGNAL FFMPEG VAAPI DOCS NLS
+OPTIONS_DEFAULT=VAAPI FFMPEG
 
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
@@ -85,7 +79,21 @@ CYGNAL_DESC=	Cygnal media server
 VAAPI_DESC=	VAAPI support
 
 CYGNAL_CONFIGURE_ENABLE=	cygnal
-VAAPI_CPPFLAGS=	-I../libdevice/vaapi
+VAAPI_LIB_DEPENDS+=	libva.so:multimedia/libva
+VAAPI_CPPFLAGS=		-I../libdevice/vaapi
+VAAPI_CONFIGURE_ON=	--enable-device=egl,x11,vaapi
+VAAPI_CONFIGURE_OFF+=	--enable-hwaccel=none
+VAAPI_CONFIGURE_OFF+=	--enable-device=egl,x11
+FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
+FFMPEG_CPPFLAGS=	-I${LOCALBASE}/ffmpeg4/include
+FFMPEG_CFLAGS=		-I${LOCALBASE}/ffmpeg4/include
+FFMPEG_LDFLAGS=		-L${LOCALBASE}/ffmpeg4/lib
+FFMPEG_CONFIGURE_ON+=	--enable-media=ffmpeg
+FFMPEG_CONFIGURE_ON+=	--with-ffmpeg-incl="${LOCALBASE}/ffmpeg4/include/libavcodec"
+FFMPEG_CONFIGURE_ON+=	--with-ffmpeg-lib=${LOCALBASE}/ffmpeg4/lib
+FFMPEG_CONFIGURE_OFF=	--enable-media=no
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.options.mk>
 
@@ -93,30 +101,6 @@ VAAPI_CPPFLAGS=	-I../libdevice/vaapi
 .if ${PORT_OPTIONS:MCYGNAL}
 CONFIG_FILES+=	cygnalrc
 .endif
-
-# NLS option processing (not sure if --disable-nls actually has any effect)
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-CONFIGURE_ARGS+=	--disable-npapi --disable-kparts4
-
-#
-# Hardware acceleration options processing
-#
-.if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=		libva.so:multimedia/libva
-CONFIGURE_ARGS+=	--enable-device=egl,x11,vaapi
-.else
-CONFIGURE_ARGS+=	--enable-hwaccel=none # XVideo
-CONFIGURE_ARGS+=	--enable-device=egl,x11
-.endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|lib64|lib|g' -e 's|lib32|lib|g' \
@@ -134,4 +118,4 @@ post-install:
 	${MV} ${STAGEDIR}/${SYSCONFIGDIR}/${conf} ${STAGEDIR}${SYSCONFIGDIR}/${conf}.dist
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

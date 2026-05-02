@@ -1,0 +1,24 @@
+-- Disable the NodeJS lancedb memory plugin by removing it from the postinstall inventory.
+-- The postinstall-inventory.json file lists all files that should be installed.
+-- By removing all lancedb plugin entries from this list, the plugin is never
+-- installed or discovered at runtime, ensuring it cannot be enabled under any
+-- circumstances.
+-- Not to be removed until https://github.com/lancedb/lancedb/issues/3338 is resolved and the plugin can be safely re-enabled.
+
+--- node_modules/openclaw/dist/postinstall-inventory.json.orig
++++ node_modules/openclaw/dist/postinstall-inventory.json
+@@ -1769,14 +1769,6 @@
+   "dist/extensions/memory-core/openclaw.plugin.json",
+   "dist/extensions/memory-core/package.json",
+   "dist/extensions/memory-core/runtime-api.js",
+-  "dist/extensions/memory-lancedb/api.js",
+-  "dist/extensions/memory-lancedb/cli-metadata.js",
+-  "dist/extensions/memory-lancedb/config.js",
+-  "dist/extensions/memory-lancedb/index.js",
+-  "dist/extensions/memory-lancedb/lancedb-runtime.js",
+-  "dist/extensions/memory-lancedb/openclaw.plugin.json",
+-  "dist/extensions/memory-lancedb/package.json",
+-  "dist/extensions/memory-lancedb/test-helpers.js",
+   "dist/extensions/memory-wiki/api.js",
+   "dist/extensions/memory-wiki/cli-metadata.js",
+   "dist/extensions/memory-wiki/contract-api.js",

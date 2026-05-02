@@ -1,5 +1,5 @@
 PORTNAME=	cppad
-DISTVERSION=	20250000.1
+DISTVERSION=	20260000.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -18,6 +18,8 @@ GH_ACCOUNT=	coin-or
 GH_PROJECT=	CppAD
 
 CMAKE_ARGS=	-Dcppad_prefix=${PREFIX}
+
+LDFLAGS+=	-pthread
 
 TEST_TARGET=	check
 

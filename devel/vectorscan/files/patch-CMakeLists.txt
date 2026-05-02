@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2026-05-02 04:09:59 UTC
++++ CMakeLists.txt
+@@ -170,11 +170,6 @@ endif()
+     endif()
+ endif()
+ 
+-# remove CMake's idea of optimisation
+-foreach (CONFIG ${CMAKE_BUILD_TYPE} ${CMAKE_CONFIGURATION_TYPES})
+-    string(REGEX REPLACE "-O[^ ]*" "" CMAKE_C_FLAGS_${CONFIG} "${CMAKE_C_FLAGS_${CONFIG}}")
+-    string(REGEX REPLACE "-O[^ ]*" "" CMAKE_CXX_FLAGS_${CONFIG} "${CMAKE_CXX_FLAGS_${CONFIG}}")
+-endforeach ()
+ 
+ message(STATUS "ARCH_C_FLAGS   : ${ARCH_C_FLAGS}")
+ message(STATUS "ARCH_CXX_FLAGS : ${ARCH_CXX_FLAGS}")

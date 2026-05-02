@@ -1,0 +1,2 @@
+The git-pr script is a git plugin that simplifies creating and managing
+pull requests in FreeBSD's Forgejo instance.

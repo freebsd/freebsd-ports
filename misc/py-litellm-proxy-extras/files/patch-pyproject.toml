@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-05-02 02:50:01 UTC
++++ pyproject.toml
+@@ -16,7 +16,7 @@ Documentation = "https://docs.litellm.ai"
+ Documentation = "https://docs.litellm.ai"
+ 
+ [build-system]
+-requires = ["uv_build==0.10.7"]
++requires = ["uv_build>=0.10.7"]
+ build-backend = "uv_build"
+ 
+ [tool.uv]

@@ -1,4 +1,4 @@
---- crates/zed/Cargo.toml.orig	2026-04-23 01:03:50 UTC
+--- crates/zed/Cargo.toml.orig	2026-04-29 09:20:29 UTC
 +++ crates/zed/Cargo.toml
 @@ -91,7 +91,6 @@ copilot_ui.workspace = true
  copilot.workspace = true
@@ -8,7 +8,7 @@
  csv_preview.workspace = true
  dap_adapters.workspace = true
  db.workspace = true
-@@ -248,6 +247,9 @@ pkg-config = "0.3.22"
+@@ -251,6 +250,9 @@ pkg-config = "0.3.22"
  
  [target.'cfg(target_os = "linux")'.build-dependencies]
  pkg-config = "0.3.22"

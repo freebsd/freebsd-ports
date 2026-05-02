@@ -1,4 +1,4 @@
-GITLAB_VERSION=		18.11.1
+GITLAB_VERSION=		18.11.2
 GITLAB_PORTREVISION=	6	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
 
 # Git version gitaly should use (from gitlab mirror)

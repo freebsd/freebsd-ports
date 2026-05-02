@@ -411,7 +411,7 @@
 %%WWWDIR%%/nodes/utils/PostProcessingUtils.js
 %%WWWDIR%%/nodes/utils/RTTNode.js
 %%WWWDIR%%/nodes/utils/ReflectorNode.js
-%%WWWDIR%%/nodes/utils/RemapNode.js
+%%WWWDIR%%/nodes/utils/Remap.js
 %%WWWDIR%%/nodes/utils/RotateNode.js
 %%WWWDIR%%/nodes/utils/SampleNode.js
 %%WWWDIR%%/nodes/utils/SetNode.js
@@ -471,6 +471,7 @@
 %%WWWDIR%%/renderers/common/PostProcessing.js
 %%WWWDIR%%/renderers/common/ProgrammableStage.js
 %%WWWDIR%%/renderers/common/QuadMesh.js
+%%WWWDIR%%/renderers/common/ReadbackBuffer.js
 %%WWWDIR%%/renderers/common/RenderBundle.js
 %%WWWDIR%%/renderers/common/RenderBundles.js
 %%WWWDIR%%/renderers/common/RenderContext.js
@@ -562,6 +563,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/iridescence_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/iridescence_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/lightprobes_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lights_fragment_end.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lights_fragment_maps.glsl.js
@@ -691,6 +693,7 @@
 %%WWWDIR%%/renderers/webgpu/nodes/WGSLNodeParser.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUAttributeUtils.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUBindingUtils.js
+%%WWWDIR%%/renderers/webgpu/utils/WebGPUCapabilities.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUConstants.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUPipelineUtils.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUTexturePassUtils.js
@@ -715,6 +718,7 @@
 %%WWWDIR%%/textures/DepthTexture.js
 %%WWWDIR%%/textures/ExternalTexture.js
 %%WWWDIR%%/textures/FramebufferTexture.js
+%%WWWDIR%%/textures/HTMLTexture.js
 %%WWWDIR%%/textures/Source.js
 %%WWWDIR%%/textures/Texture.js
 %%WWWDIR%%/textures/VideoFrameTexture.js

@@ -1,7 +1,7 @@
 CARGO_CRATES=	aliasable-0.1.3 \
 		ammonia-4.1.2 \
-		bitflags-2.11.0 \
-		cc-1.2.57 \
+		bitflags-2.11.1 \
+		cc-1.2.61 \
 		cfg-if-1.0.4 \
 		cssparser-0.35.0 \
 		cssparser-macros-0.6.1 \
@@ -14,18 +14,18 @@ CARGO_CRATES=	aliasable-0.1.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		html5ever-0.35.0 \
-		icu_collections-2.1.1 \
-		icu_locale_core-2.1.1 \
-		icu_normalizer-2.1.1 \
-		icu_normalizer_data-2.1.1 \
-		icu_properties-2.1.2 \
-		icu_properties_data-2.1.2 \
-		icu_provider-2.1.1 \
+		icu_collections-2.2.0 \
+		icu_locale_core-2.2.0 \
+		icu_normalizer-2.2.0 \
+		icu_normalizer_data-2.2.0 \
+		icu_properties-2.2.0 \
+		icu_properties_data-2.2.0 \
+		icu_provider-2.2.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		itoa-1.0.18 \
-		libc-0.2.183 \
-		litemap-0.8.1 \
+		libc-0.2.186 \
+		litemap-0.8.2 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
 		mac-0.1.1 \
@@ -45,18 +45,18 @@ CARGO_CRATES=	aliasable-0.1.3 \
 		phf_macros-0.11.3 \
 		phf_shared-0.11.3 \
 		portable-atomic-1.13.1 \
-		potential_utf-0.1.4 \
+		potential_utf-0.1.5 \
 		precomputed-hash-0.1.1 \
 		proc-macro2-1.0.106 \
 		proc-macro2-diagnostics-0.10.1 \
-		pyo3-0.28.2 \
-		pyo3-build-config-0.28.2 \
-		pyo3-ffi-0.28.2 \
-		pyo3-macros-0.28.2 \
-		pyo3-macros-backend-0.28.2 \
-		python3-dll-a-0.2.14 \
+		pyo3-0.28.3 \
+		pyo3-build-config-0.28.3 \
+		pyo3-ffi-0.28.3 \
+		pyo3-macros-0.28.3 \
+		pyo3-macros-backend-0.28.3 \
+		python3-dll-a-0.2.15 \
 		quote-1.0.45 \
-		rand-0.8.5 \
+		rand-0.8.6 \
 		rand_core-0.6.4 \
 		redox_syscall-0.5.18 \
 		scopeguard-1.2.0 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	aliasable-0.1.3 \
 		synstructure-0.13.2 \
 		target-lexicon-0.13.5 \
 		tendril-0.4.3 \
-		tinystr-0.8.2 \
+		tinystr-0.8.3 \
 		unicode-ident-1.0.24 \
 		url-2.5.8 \
 		utf-8-0.7.6 \
@@ -82,12 +82,12 @@ CARGO_CRATES=	aliasable-0.1.3 \
 		version_check-0.9.5 \
 		web_atoms-0.1.3 \
 		windows-link-0.2.1 \
-		writeable-0.6.2 \
+		writeable-0.6.3 \
 		yansi-1.0.1 \
-		yoke-0.8.1 \
-		yoke-derive-0.8.1 \
-		zerofrom-0.1.6 \
-		zerofrom-derive-0.1.6 \
-		zerotrie-0.2.3 \
-		zerovec-0.11.5 \
-		zerovec-derive-0.11.2
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerofrom-0.1.7 \
+		zerofrom-derive-0.1.7 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3

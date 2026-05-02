@@ -206,7 +206,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ratatui-macros-0.7.0 \
 		ratatui-termion-0.1.0 \
 		ratatui-termwiz-0.1.0 \
-		ratatui-textarea-0.9.0 \
+		ratatui-textarea-0.9.1 \
 		ratatui-widgets-0.3.0 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \

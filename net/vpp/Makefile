@@ -17,7 +17,8 @@ PATCHFILES=	3589daf20b23f03d65c947268462fb3ccf2e202f.patch:-p1 \
 		fafca3d1636624d298d400b35f452b40a2559a13.patch:-p1 \
 		55c934b7f9af69939aeafb9aac9e492bcee2ab36.patch:-p1 \
 		d3f3ae886af4dac7db2abf698ec754ce6e343ac9.patch:-p1 \
-		36d758b6df23a3e068639cdb574c3250b54d5d6a.patch:-p1
+		36d758b6df23a3e068639cdb574c3250b54d5d6a.patch:-p1 \
+		75943ef3cc2be32e8c5767423d60b28ab032a0c1.patch:-p1
 
 MAINTAINER=	thj@freebsd.org
 COMMENT=	VPP: A fast, scalable layer 2-4 multi-platform network stack

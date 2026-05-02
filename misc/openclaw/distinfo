@@ -1,6 +1,6 @@
-TIMESTAMP = 1777158987
-SHA256 (openclaw/openclaw-2026.4.24.tar.gz) = 9cb9f973c5af88b677c34a89f85b0b26d7eec58cc23629269dbc3030744ff9ea
-SIZE (openclaw/openclaw-2026.4.24.tar.gz) = 51067266
+TIMESTAMP = 1777622027
+SHA256 (openclaw/openclaw-2026.4.29.tar.gz) = 700fd92e7b94cc2d435dbb40a758e87cebcca0c79c155067d1b38ad14f4466e0
+SIZE (openclaw/openclaw-2026.4.29.tar.gz) = 60846911
 SHA256 (openclaw/sharp-0.34.5.tar.gz) = 51d49607b350a8dd7d79442e4770209a4c0b6a895e4b1c4f49345a6c95f6e23e
 SIZE (openclaw/sharp-0.34.5.tar.gz) = 175644
 SHA256 (openclaw/koffi-2.16.1.tar.gz) = dcf21a43e55eb43621ea1e04e565588562282da5cf426976e45c3c2fcb82cc9d

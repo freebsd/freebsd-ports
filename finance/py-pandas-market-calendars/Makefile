@@ -1,6 +1,6 @@
 PORTNAME=	pandas-market-calendars
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0
+DISTVERSION=	5.3.2
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ GH_PROJECT=	${PORTNAME:S/-/_/g}
 
 NO_ARCH=	yes
 
-# tests as of 4.5.1: 1434 passed in 446.26s (0:07:26)
+# tests as of 5.3.2: 1471 passed, 1 failed in 47.10s
 
 .include <bsd.port.mk>

@@ -418,6 +418,10 @@ MESON_ARGS+=	-D${d}=enabled
 MESON_ARGS+=	-D${GST_PLUGIN}=enabled
 .endif
 
+.if defined(GST_PLUGIN_DEPENDS)
+MESON_ARGS+=	-D${GST_PLUGIN_DEPENDS}=enabled
+.endif
+
 .if !defined(NO_GSTREAMER_COMMON)
 GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
 

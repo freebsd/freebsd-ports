@@ -1,6 +1,10 @@
--- remove jemalloc dependencies from Cargo.lock
+-- Update ethnum from 1.5.2 to 1.5.3 to fix Rust build failure
+--
+-- The Rust build fails with ethnum 1.5.2 due to a compilation issue that
+-- is resolved in the newer 1.5.3 release. This patch updates the Cargo.lock
+-- to use the newer version.
 
---- Cargo.lock.orig	2026-04-09 13:00:26 UTC
+--- Cargo.lock.orig	2026-04-22 12:27:45 UTC
 +++ Cargo.lock
 @@ -999,7 +999,6 @@ version = "0.7.2"
  [[package]]
@@ -18,15 +22,15 @@
  dependencies = [
   "async-trait",
   "base64",
-@@ -3336,7 +3334,6 @@ dependencies = [
+@@ -3337,7 +3335,6 @@ dependencies = [
   "polars-core",
+  "polars-io",
   "polars-utils",
-  "slotmap",
 - "tikv-jemallocator",
+  "tokio",
  ]
  
- [[package]]
-@@ -5030,24 +5027,6 @@ dependencies = [
+@@ -5032,24 +5029,6 @@ dependencies = [
   "proc-macro2",
   "quote",
   "syn 2.0.116",

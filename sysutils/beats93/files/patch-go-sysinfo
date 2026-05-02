@@ -1,4 +1,4 @@
---- vendor/github.com/elastic/go-sysinfo/internal/cgo/disabled.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/internal/cgo/disabled.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/internal/cgo/disabled.go
 @@ -0,0 +1,23 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -24,7 +24,7 @@
 +
 +// Enabled is true if cgo was enabled at compile-time.
 +const Enabled = false
---- vendor/github.com/elastic/go-sysinfo/internal/cgo/enabled.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/internal/cgo/enabled.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/internal/cgo/enabled.go
 @@ -0,0 +1,23 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -50,7 +50,7 @@
 +
 +// Enabled is true if cgo was enabled at compile-time.
 +const Enabled = true
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go
 @@ -0,0 +1,33 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -86,7 +86,7 @@
 +type kvmSwap C.struct_kvm_swap
 +
 +type clockInfo C.struct_clockinfo
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/doc.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/doc.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/doc.go
 @@ -0,0 +1,22 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -111,7 +111,7 @@
 +package freebsd
 +
 +//go:generate sh -c "go tool cgo -godefs defs_freebsd.go > ztypes_freebsd.go"
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go
 @@ -0,0 +1,238 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -352,7 +352,7 @@
 +	elem := append([]string{fs.mountPoint}, p...)
 +	return filepath.Join(elem...)
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go
 @@ -0,0 +1,53 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -408,7 +408,7 @@
 +		t.Log(string(data))
 +	})
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go
 @@ -0,0 +1,58 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -469,7 +469,7 @@
 +
 +	return &swap, nil
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go
 @@ -0,0 +1,386 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -649,7 +649,7 @@
 +
 +	const maxlen = uint(1024)
 +	out := make([]C.char, maxlen)
-+	if res, err := C.procstat_getpathname(procstat, &p.kinfo, &out[0], C.ulong(maxlen)); res != 0 {
++	if res, err := C.procstat_getpathname(procstat, &p.kinfo, &out[0], C.size_t(maxlen)); res != 0 {
 +		return "", err
 +	}
 +	return C.GoString(&out[0]), nil
@@ -858,7 +858,7 @@
 +
 +	return &proc, nil
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go
 @@ -0,0 +1,248 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -945,7 +945,7 @@
 +		return time.Time{}, fmt.Errorf("failed to get host uptime: %w", err)
 +	}
 +
-+	bootTime := time.Unix(tv.Sec, tv.Usec*int64(time.Microsecond))
++	bootTime := time.Unix(int64(tv.Sec), 1000*int64(tv.Usec))
 +	return bootTime, nil
 +}
 +
@@ -1109,7 +1109,7 @@
 +	}
 +	return uint64(v)
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go
 @@ -0,0 +1,137 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -1249,7 +1249,7 @@
 +		t.Logf("%#v", os)
 +	})
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go.orig	2025-09-19 18:12:17 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go.orig	2026-04-30 16:18:17 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go
 @@ -0,0 +1,39 @@
 +// Licensed to Elasticsearch B.V. under one or more contributor
@@ -1291,7 +1291,7 @@
 +	Stathz int32
 +	Profhz int32
 +}
---- vendor/github.com/elastic/go-sysinfo/providers/shared/fqdn.go.orig	2025-09-19 18:12:11 UTC
+--- vendor/github.com/elastic/go-sysinfo/providers/shared/fqdn.go.orig	2026-04-30 16:18:09 UTC
 +++ vendor/github.com/elastic/go-sysinfo/providers/shared/fqdn.go
 @@ -15,7 +15,7 @@
  // specific language governing permissions and limitations
@@ -1302,7 +1302,7 @@
  
  package shared
  
---- vendor/github.com/elastic/go-sysinfo/system.go.orig	2025-09-19 18:12:11 UTC
+--- vendor/github.com/elastic/go-sysinfo/system.go.orig	2026-04-30 16:18:09 UTC
 +++ vendor/github.com/elastic/go-sysinfo/system.go
 @@ -26,6 +26,7 @@ import (
  	// Register host and process providers.

@@ -1,0 +1,9 @@
+A Language Server Protocol (LSP) implementation using universal-ctags
+as backend, supporting 100+ languages.
+
+This won't replace your dedicated language server, and it doesn't try
+to. The goal is to have a "better than nothing" language server that's
+trivial to setup for any language.
+
+NOTE: This requires universal-ctags to be built with the JSON option
+enabled (which it is by default).

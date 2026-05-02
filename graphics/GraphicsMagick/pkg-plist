@@ -88,6 +88,7 @@ include/GraphicsMagick/wand/wand_symbols.h
 lib/GraphicsMagick/config/delegates.mgk
 lib/GraphicsMagick/config/type-ghostscript.mgk
 lib/GraphicsMagick/config/type-solaris.mgk
+lib/GraphicsMagick/config/type-urw-base35-otf.mgk
 lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
 @dir lib/GraphicsMagick/modules-Q%%Q%%/coders
@@ -95,15 +96,15 @@ lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.so
 lib/libGraphicsMagick++.so.12
-lib/libGraphicsMagick++.so.12.8.0
+lib/libGraphicsMagick++.so.12.8.2
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.25.0
+lib/libGraphicsMagick.so.3.26.0
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
-lib/libGraphicsMagickWand.so.2.10.0
+lib/libGraphicsMagickWand.so.2.10.2
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
@@ -158,6 +159,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2021.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2022.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2023.html
+%%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2024.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changes.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html

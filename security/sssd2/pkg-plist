@@ -28,10 +28,10 @@ lib/libsss_sudo.so
 lib/nss_sss.so.1
 lib/pam_sss.so
 lib/pam_sss_gss.so
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.13.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.13.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.13.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.13.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf%%PYTHON_TAG%%.pyc
@@ -109,6 +109,7 @@ sbin/sssd
 share/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
 share/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
 %%NLS%%share/locale/bg/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/br/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sssd.mo
@@ -122,6 +123,7 @@ share/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
 %%NLS%%share/locale/ja/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sssd.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sssd.mo

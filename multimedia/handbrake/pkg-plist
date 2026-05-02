@@ -11,11 +11,13 @@ bin/HandBrakeCLI
 %%X11%%share/locale/eu/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/fi/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/fr/LC_MESSAGES/ghb.mo
+%%X11%%share/locale/gl_ES/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/it/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/ja/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/ko/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/nl/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/pt_BR/LC_MESSAGES/ghb.mo
+%%X11%%share/locale/ru/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/sl_SI/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/sv/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/zh_CN/LC_MESSAGES/ghb.mo

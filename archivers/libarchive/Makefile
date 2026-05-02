@@ -1,5 +1,5 @@
 PORTNAME=	libarchive
-DISTVERSION=	3.8.5
+DISTVERSION=	3.8.7
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		cpe iconv libtool localbase:ldflags pathfix pkgconfig tar:xz
+USES=		cpe iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -22,13 +22,15 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CONFIGURE_ARGS=	--disable-static --without-xml2
+CONFIGURE_ARGS=	--disable-static \
+		--without-libb2 \
+		--without-xml2
 
 OPTIONS_DEFINE=	LZ4 LZO ZSTD
 OPTIONS_DEFAULT=LZ4 ZSTD OPENSSL
 
 OPTIONS_RADIO=	CRYPTO
-OPTIONS_RADIO_CRYPTO=	OPENSSL MBEDTLS NETTLE
+OPTIONS_RADIO_CRYPTO=	OPENSSL NETTLE
 
 CRYPTO_DESC=	Crypto and hashing support
 NETTLE_DESC=	Crypto support via Nettle
@@ -48,9 +50,6 @@ NETTLE_CONFIGURE_WITH=	nettle
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_CONFIGURE_OFF=	--without-openssl
-
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
-MBEDTLS_CONFIGURE_WITH=	mbedtls
 
 .include <bsd.port.pre.mk>
 

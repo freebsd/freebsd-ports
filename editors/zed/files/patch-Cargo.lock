@@ -1,6 +1,6 @@
---- Cargo.lock.orig	2026-04-23 01:03:50 UTC
+--- Cargo.lock.orig	2026-04-29 09:20:29 UTC
 +++ Cargo.lock
-@@ -8881,21 +8881,21 @@ name = "ipc-channel"
+@@ -8961,21 +8961,21 @@ name = "ipc-channel"
  
  [[package]]
  name = "ipc-channel"
@@ -30,7 +30,7 @@
  ]
  
  [[package]]
-@@ -20594,16 +20594,6 @@ name = "windows"
+@@ -20640,16 +20640,6 @@ name = "windows"
  
  [[package]]
  name = "windows"
@@ -47,7 +47,7 @@
  version = "0.61.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "9babd3a767a4c1aef6900409f85f5d53ce2544ccdfaa86dad48c91782c6d6893"
-@@ -20696,19 +20686,6 @@ name = "windows-core"
+@@ -20742,19 +20732,6 @@ name = "windows-core"
  
  [[package]]
  name = "windows-core"
@@ -67,7 +67,7 @@
  version = "0.61.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "c0fdd3ddb90610c7638aa2b3a3ab2904fb9e5cdbecc643ddb3647212781c4ae3"
-@@ -20779,17 +20756,6 @@ name = "windows-implement"
+@@ -20825,17 +20802,6 @@ name = "windows-implement"
  
  [[package]]
  name = "windows-implement"
@@ -85,7 +85,7 @@
  version = "0.60.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "053e2e040ab57b9dc951b72c264860db7eb3b0200ba345b4e4c3b14f67855ddf"
-@@ -20823,17 +20789,6 @@ name = "windows-interface"
+@@ -20869,17 +20835,6 @@ name = "windows-interface"
  
  [[package]]
  name = "windows-interface"
@@ -103,7 +103,7 @@
  version = "0.59.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "3f316c4a2570ba26bbec722032c4099d8c8bc095efccdc15688708623367e358"
-@@ -20919,15 +20874,6 @@ name = "windows-result"
+@@ -20965,15 +20920,6 @@ name = "windows-result"
  
  [[package]]
  name = "windows-result"
@@ -119,7 +119,7 @@
  version = "0.3.4"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "56f42bd332cc6c8eac5af113fc0c1fd6a8fd2aa08a0119358686e5160d0586c6"
-@@ -20942,16 +20888,6 @@ dependencies = [
+@@ -20988,16 +20934,6 @@ dependencies = [
  checksum = "7781fa89eaf60850ac3d2da7af8e5242a5ea78d1a11c49bf2910bb5a73853eb5"
  dependencies = [
   "windows-link 0.2.1",

@@ -1,3 +1,3 @@
-TIMESTAMP = 1773966846
-SHA256 (openapi_schema_validator-0.8.1.tar.gz) = 4c57266ce8cbfa37bb4eb4d62cdb7d19356c3a468e3535743c4562863e1790da
-SIZE (openapi_schema_validator-0.8.1.tar.gz) = 23134
+TIMESTAMP = 1777311650
+SHA256 (openapi_schema_validator-0.9.0.tar.gz) = b72db64315b89d21834cd3ffef37e3e6893bc876327be2d366e8424b1029afd3
+SIZE (openapi_schema_validator-0.9.0.tar.gz) = 24686

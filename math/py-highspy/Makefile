@@ -1,6 +1,5 @@
 PORTNAME=	highspy
-DISTVERSION=	1.11.0
-PORTREVISION=	1
+DISTVERSION=	1.14.0
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +21,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.11.0: 58 passed in 2.98s
+# tests as of 1.14.0: 61 passed in 0.25s
 
 .include <bsd.port.mk>

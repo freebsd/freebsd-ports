@@ -1,5 +1,5 @@
 PORTNAME=	sflowtool
-DISTVERSION=	6.09
+DISTVERSION=	6.10
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/sflow/${PORTNAME}/releases/download/v${DISTVERSION}/
 

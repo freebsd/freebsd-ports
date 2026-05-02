@@ -1,6 +1,6 @@
 PORTNAME=	katarakt
 PORTVERSION=	0.2
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	graphics
 
 MAINTAINER=	kurt@kmk-computers.de

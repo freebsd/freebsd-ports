@@ -1,0 +1,15 @@
+-- Fix invalid pyproject.toml configuration that references LICENSE.md which doesn't exist
+-- in the distribution tarball. Upstream issue: the project uses invalid license specification.
+-- Changed from 'license = "MIT"' with non-existent license-files reference to 'license = {text = "MIT"}'
+--- pyproject.toml.orig2025-04-09 16:20:00 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@
+ description = "Parse and serialise HTTP Structured Fields"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "MIT"
+-license-files = ["LICENSE.md"]
++license = {text = "MIT"}
+ classifiers = [
+     "Operating System :: OS Independent",
+     "Development Status :: 4 - Beta"

@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	33.0.2
+PORTVERSION=	33.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -74,9 +74,5 @@ post-patch-GUIADDONS-off:
 
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sync-exclude.lst ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

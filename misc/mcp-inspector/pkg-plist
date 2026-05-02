@@ -14,10 +14,10 @@ lib/node_modules/@modelcontextprotocol/inspector/cli/build/transport.js
 lib/node_modules/@modelcontextprotocol/inspector/cli/build/utils/awaitable-log.js
 lib/node_modules/@modelcontextprotocol/inspector/client/bin/client.js
 lib/node_modules/@modelcontextprotocol/inspector/client/bin/start.js
-lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/OAuthCallback-BmmrcnPJ.js
-lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/OAuthDebugCallback-DZk_RAqV.js
-lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/index-_5aZhNPC.css
-lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/index-uKaJPCZp.js
+lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/OAuthCallback-BbXbF8aU.js
+lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/OAuthDebugCallback-dQjnRYOz.js
+lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/index-D3cjomHV.css
+lib/node_modules/@modelcontextprotocol/inspector/client/dist/assets/index-zNfT6w38.js
 lib/node_modules/@modelcontextprotocol/inspector/client/dist/index.html
 lib/node_modules/@modelcontextprotocol/inspector/client/dist/mcp.svg
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/.bin/acorn
@@ -234,6 +234,7 @@ lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextproto
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/generated/schema.test.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/message-transport.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/message-transport.examples.d.ts
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/message-transport.test.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/react/index.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/react/index.examples.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/react/index.js
@@ -251,6 +252,7 @@ lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextproto
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/server/index.js
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/server/index.test.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/spec.types.d.ts
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/standard-schema.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/styles.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/styles.examples.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/ext-apps/dist/src/types.d.ts
@@ -271,10 +273,10 @@ lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextproto
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/LICENSE
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/bin/client.js
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/bin/start.js
-lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/OAuthCallback-BmmrcnPJ.js
-lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/OAuthDebugCallback-DZk_RAqV.js
-lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/index-_5aZhNPC.css
-lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/index-uKaJPCZp.js
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/OAuthCallback-BbXbF8aU.js
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/OAuthDebugCallback-dQjnRYOz.js
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/index-D3cjomHV.css
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/assets/index-zNfT6w38.js
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/index.html
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/dist/mcp.svg
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@modelcontextprotocol/inspector-client/package.json
@@ -2110,6 +2112,12 @@ lib/node_modules/@modelcontextprotocol/inspector/node_modules/@radix-ui/rect/dis
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@radix-ui/rect/dist/index.mjs
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@radix-ui/rect/dist/index.mjs.map
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@radix-ui/rect/package.json
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@standard-schema/spec/LICENSE
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@standard-schema/spec/dist/index.cjs
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@standard-schema/spec/dist/index.d.cts
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@standard-schema/spec/dist/index.d.ts
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@standard-schema/spec/dist/index.js
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/@standard-schema/spec/package.json
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@tsconfig/node10/LICENSE
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@tsconfig/node10/package.json
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/@tsconfig/node10/tsconfig.json
@@ -3375,11 +3383,11 @@ lib/node_modules/@modelcontextprotocol/inspector/node_modules/has-symbols/test/s
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/has-symbols/test/shams/get-own-property-symbols.js
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/has-symbols/test/tests.js
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/has-symbols/tsconfig.json
-lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/.eslintrc
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/.github/FUNDING.yml
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/.nycrc
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/CHANGELOG.md
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/LICENSE
+lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/eslint.config.mjs
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/index.d.ts
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/index.js
 lib/node_modules/@modelcontextprotocol/inspector/node_modules/hasown/package.json
@@ -12906,5 +12914,3 @@ lib/node_modules/@modelcontextprotocol/inspector/server/build/index.js
 lib/node_modules/@modelcontextprotocol/inspector/server/build/mcpProxy.js
 lib/node_modules/@modelcontextprotocol/inspector/server/build/static/sandbox_proxy.html
 lib/node_modules/@modelcontextprotocol/inspector/server/static/sandbox_proxy.html
-lib/package-lock.json
-lib/package.json

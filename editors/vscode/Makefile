@@ -1,6 +1,6 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -278,9 +278,6 @@ do-build:
 		npm --userconfig=${WRKSRC}/.npmrc run gulp vscode-linux-${ELECTRON_ARCH}-min
 # move marketplace extensions
 	@${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/extensions
-# rename linux directory to freebsd
-	@${MV} ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/node_modules/@github/copilot/prebuilds/linux-${ELECTRON_ARCH} \
-		${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

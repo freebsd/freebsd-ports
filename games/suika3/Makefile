@@ -1,5 +1,5 @@
 PORTNAME=	suika3
-DISTVERSION=	26.04.9
+DISTVERSION=	26.05.0
 CATEGORIES=	games
 
 MAINTAINER=	awe@noctvm.io
@@ -19,18 +19,23 @@ LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libwebp.so:graphics/webp
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf:x11-fonts/noto-sans
 
-USES=		cmake gl pkgconfig xorg
+USES=		cmake desktop-file-utils gl pkgconfig shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	awemorris
 USE_GL=		gl
 USE_XORG=	x11 xext xpm
 
 CMAKE_ON=	SUIKA_ENABLE_DIST \
+		SUIKA_TARGET_FREEBSD \
+		SUIKA_ENABLE_FREEDESKTOP \
 		SUIKA_ENABLE_INSTALL \
 		SUIKA_ENABLE_JIT \
-		SUIKA_ENABLE_
+		SUIKA_ENABLE_UNSAFE
+
 CMAKE_ARGS=	-DSUIKA_DIR_DOCS="share/doc/suika3" \
-		-DSUIKA_DIR_GAME="share/examples/suika3"
+		-DSUIKA_DIR_SAMPLE="share/examples/suika3" \
+		-DSUIKA_DIR_LAUNCHER="share/examples/suika3" \
+		-DSUIKA_DIR_ELISP="share/examples/suika3"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -52,14 +57,12 @@ GST_CMAKE_BOOL=		SUIKA_ENABLE_GST
 JIT_CMAKE_BOOL=	SUIKA_ENABLE_JIT
 NLS_CMAKE_BOOL=	SUIKA_ENABLE_I18N
 
-# Remove the bundled font and use a packaged system font instead.
-# The bundled font has a separate license (not ZLIB), and FreeBSD Ports
-# should not install bundled fonts when system-packaged ones are available.
-# Create a symlink to NotoSans to satisfy the engine's expected file name
-# without modifying upstream sample data.
+# Create symlinks to NotoSans because -DSUIKA_ENABLE_DIST=ON removes
+# the bundled fonts due to license issues.
 post-build:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/suika3/game/system/font
-	${LN} -s ${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf \
-		${STAGEDIR}${PREFIX}/share/examples/suika3/game/system/font/rounded-l-mplus-1c-bold.ttf
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/game/system/font
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/launcher/system/font
+	${LN} -s ${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf ${STAGEDIR}${EXAMPLESDIR}/game/system/font/NotoSansCJK-Medium.ttc
+	${LN} -s ${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf ${STAGEDIR}${EXAMPLESDIR}/launcher/system/font/NotoSans-Medium.ttf
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	fwupd
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -59,6 +59,7 @@ MESON_ARGS+=	-Dlibmnl=disabled \
 		-Dpolkit=disabled \
 		-Dsystemd=disabled \
 		-Dpassim=disabled \
+		-Dhsi=disabled \
 		-Dumockdev_tests=disabled \
 		-Dplugin_modem_manager=disabled \
 		-Dpython=${PYTHON_CMD}

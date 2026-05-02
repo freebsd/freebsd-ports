@@ -1,20 +1,20 @@
---- setup.py.orig	2024-06-10 18:55:29 UTC
+--- setup.py.orig	2026-04-13 19:35:05 UTC
 +++ setup.py
-@@ -100,12 +100,10 @@ class Clean(clean):
-         for targets in [glob.glob(x.strip()) for x in f]:
-             for target in filter(os.path.isdir, targets):
-                 log.info("removing {}".format(target))
--                if not self.dry_run:
--                    shutil.rmtree(target)
-+                shutil.rmtree(target)
-             for target in filter(os.path.isfile, targets):
-                 log.info("removing {}".format(target))
--                if not self.dry_run:
--                    os.remove(target)
-+                os.remove(target)
-         f.close()
+@@ -102,12 +102,10 @@ class Clean(clean):
+             for targets in [glob.glob(x.strip()) for x in f]:
+                 for target in filter(os.path.isdir, targets):
+                     log.info("removing {}".format(target))
+-                    if not self.dry_run:
+-                        shutil.rmtree(target)
++                    shutil.rmtree(target)
+                 for target in filter(os.path.isfile, targets):
+                     log.info("removing {}".format(target))
+-                    if not self.dry_run:
+-                        os.remove(target)
++                    os.remove(target)
  
  
+ class Distribution(distribution):
 @@ -219,7 +217,9 @@ class InstallData(install_data):
          data_dir = get_command_obj("install_data").install_dir
          data_dir = os.path.join(data_dir, "share", "gaupol")

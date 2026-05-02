@@ -1,5 +1,5 @@
 PORTNAME=	pkgload
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -7,7 +7,7 @@ MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Simulate Package Installation and Attach
 WWW=		https://github.com/r-lib/pkgload
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 
 RUN_DEPENDS=	R-cran-cli>=3.3.0:devel/R-cran-cli \
 		R-cran-desc>0:devel/R-cran-desc \

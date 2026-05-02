@@ -1,5 +1,4 @@
 bin/kea-msg-compiler
-@sample %%ETCDIR%%/kea-ctrl-agent.conf.sample
 @sample %%ETCDIR%%/kea-dhcp-ddns.conf.sample
 @sample %%ETCDIR%%/kea-dhcp4.conf.sample
 @sample %%ETCDIR%%/kea-dhcp6.conf.sample
@@ -262,6 +261,8 @@ include/kea/dhcpsrv/random_allocation_state.h
 include/kea/dhcpsrv/random_allocator.h
 include/kea/dhcpsrv/resource_handler.h
 include/kea/dhcpsrv/sanity_checker.h
+include/kea/dhcpsrv/sflq_allocation_state.h
+include/kea/dhcpsrv/sflq_allocator.h
 include/kea/dhcpsrv/shared_network.h
 include/kea/dhcpsrv/srv_config.h
 include/kea/dhcpsrv/subnet.h
@@ -491,8 +492,8 @@ lib/libkea-cfgrpt.so
 lib/libkea-cfgrpt.so.3
 lib/libkea-cfgrpt.so.3.0.0
 lib/libkea-config.so
-lib/libkea-config.so.96
-lib/libkea-config.so.96.0.0
+lib/libkea-config.so.97
+lib/libkea-config.so.97.0.0
 lib/libkea-cryptolink.so
 lib/libkea-cryptolink.so.76
 lib/libkea-cryptolink.so.76.0.0
@@ -503,14 +504,14 @@ lib/libkea-database.so
 lib/libkea-database.so.87
 lib/libkea-database.so.87.0.0
 lib/libkea-dhcp.so
-lib/libkea-dhcp.so.126
-lib/libkea-dhcp.so.126.0.0
+lib/libkea-dhcp.so.127
+lib/libkea-dhcp.so.127.0.0
 lib/libkea-dhcp_ddns.so
-lib/libkea-dhcp_ddns.so.80
-lib/libkea-dhcp_ddns.so.80.0.0
+lib/libkea-dhcp_ddns.so.81
+lib/libkea-dhcp_ddns.so.81.0.0
 lib/libkea-dhcpsrv.so
-lib/libkea-dhcpsrv.so.146
-lib/libkea-dhcpsrv.so.146.0.0
+lib/libkea-dhcpsrv.so.147
+lib/libkea-dhcpsrv.so.147.0.0
 lib/libkea-dns.so
 lib/libkea-dns.so.83
 lib/libkea-dns.so.83.0.0
@@ -521,11 +522,11 @@ lib/libkea-exceptions.so
 lib/libkea-exceptions.so.55
 lib/libkea-exceptions.so.55.0.0
 lib/libkea-hooks.so
-lib/libkea-hooks.so.136
-lib/libkea-hooks.so.136.0.0
+lib/libkea-hooks.so.137
+lib/libkea-hooks.so.137.0.0
 lib/libkea-http.so
-lib/libkea-http.so.99
-lib/libkea-http.so.99.0.0
+lib/libkea-http.so.100
+lib/libkea-http.so.100.0.0
 lib/libkea-log-interprocess.so
 lib/libkea-log-interprocess.so.4
 lib/libkea-log-interprocess.so.4.0.0
@@ -533,11 +534,11 @@ lib/libkea-log.so
 lib/libkea-log.so.86
 lib/libkea-log.so.86.0.0
 %%MYSQL%%lib/libkea-mysql.so
-%%MYSQL%%lib/libkea-mysql.so.103
-%%MYSQL%%lib/libkea-mysql.so.103.0.0
+%%MYSQL%%lib/libkea-mysql.so.104
+%%MYSQL%%lib/libkea-mysql.so.104.0.0
 %%PGSQL%%lib/libkea-pgsql.so
-%%PGSQL%%lib/libkea-pgsql.so.102
-%%PGSQL%%lib/libkea-pgsql.so.102.0.0
+%%PGSQL%%lib/libkea-pgsql.so.103
+%%PGSQL%%lib/libkea-pgsql.so.103.0.0
 lib/libkea-process.so
 lib/libkea-process.so.105
 lib/libkea-process.so.105.0.0
@@ -557,7 +558,6 @@ lib/libkea-util.so.116.0.0
 %%PYTHON_SITELIBDIR%%/kea/kea_connector3.py
 libdata/pkgconfig/kea.pc
 sbin/kea-admin
-sbin/kea-ctrl-agent
 sbin/kea-dhcp-ddns
 sbin/kea-dhcp4
 sbin/kea-dhcp6
@@ -817,6 +817,7 @@ sbin/perfdhcp
 %%DATADIR%%/scripts/mysql/upgrade_030_to_031.sh
 %%DATADIR%%/scripts/mysql/upgrade_031_to_032.sh
 %%DATADIR%%/scripts/mysql/upgrade_032_to_033.sh
+%%DATADIR%%/scripts/mysql/upgrade_033_to_034.sh
 %%DATADIR%%/scripts/mysql/wipe_data.sh
 %%DATADIR%%/scripts/pgsql/dhcpdb_create.pgsql
 %%DATADIR%%/scripts/pgsql/dhcpdb_drop.pgsql
@@ -857,9 +858,9 @@ sbin/perfdhcp
 %%DATADIR%%/scripts/pgsql/upgrade_029_to_030.sh
 %%DATADIR%%/scripts/pgsql/upgrade_030_to_031.sh
 %%DATADIR%%/scripts/pgsql/upgrade_031_to_032.sh
+%%DATADIR%%/scripts/pgsql/upgrade_032_to_033.sh
 %%DATADIR%%/scripts/pgsql/wipe_data.sh
 share/man/man8/kea-admin.8.gz
-share/man/man8/kea-ctrl-agent.8.gz
 share/man/man8/kea-dhcp-ddns.8.gz
 share/man/man8/kea-dhcp4.8.gz
 share/man/man8/kea-dhcp6.8.gz

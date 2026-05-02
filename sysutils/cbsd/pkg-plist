@@ -12,7 +12,7 @@ share/man/man8/cbsd.8.gz
 %%FBSD%%cbsd/tools/racct-hoster-statsd
 %%FBSD%%cbsd/tools/racct-jail-statsd
 %%FBSD%%cbsd/tools/vale-ctl
-%%X86%%cbsd/misc/popcnttest
+%%X86%%cbsd/misc/x86-cpu-cap
 cbsd/.clang-format
 cbsd/.gitignore
 cbsd/.ssh/config

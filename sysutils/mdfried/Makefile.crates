@@ -75,6 +75,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
 		csscolorparser-0.6.2 \
+		ctor-0.2.9 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \

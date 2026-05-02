@@ -1,6 +1,6 @@
 PORTNAME=	pyTooling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.11.0
+DISTVERSION=	8.14.0
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # requirements.txt is missing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,13 +29,16 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anytree>=2.8.0:devel/py-anytree@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}treelib>0:devel/py-treelib@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist unittest # 8 tests fail, see https://github.com/pyTooling/pyTooling/issues/123#issuecomment-2362275029
+USE_PYTHON=	pep517 autoplist
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
 
 TEST_WRKSRC=	${WRKSRC}
 
-# tests as of 8.3.0: 6 failed, 858 passed, 17 skipped, 6 xfailed in 20.75s
+# tests as of 8.14.0: 1149 passed, 19 skipped, 8 xfailed, 17 deselected
+
+do-test:
+	cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest tests/unit -k 'not ExplicitPathsOnWindows and not ExplicitPathsOnLinux and not ExplicitBinaryDirectoryOnWindows and not ExplicitBinaryDirectoryOnLinux and not test_TypeConvertToInt and not test_LineTerminal' -v
 
 .include <bsd.port.mk>

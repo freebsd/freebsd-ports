@@ -1,8 +1,13 @@
 bin/suika3
 bin/suika3-aotc
 bin/suika3-bcc
+bin/suika3-launcher
 bin/suika3-pack
+share/applications/vn.suika3.engine.desktop
+share/icons/hicolor/512x512/apps/vn.suika3.engine.png
 share/man/man1/suika3-aotc.1.gz
 share/man/man1/suika3-bcc.1.gz
+share/man/man1/suika3-launcher.1.gz
 share/man/man1/suika3-pack.1.gz
 share/man/man1/suika3.1.gz
+share/mime/packages/vn.suika3.engine.mime.xml

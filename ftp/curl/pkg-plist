@@ -66,6 +66,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
 %%PORTDOCS%%%%DOCSDIR%%/TheArtOfHttpScripting.md
 %%PORTDOCS%%%%DOCSDIR%%/URL-SYNTAX.md
+%%PORTDOCS%%%%DOCSDIR%%/VERIFY.md
 %%PORTDOCS%%%%DOCSDIR%%/VERSIONS.md
 %%PORTDOCS%%%%DOCSDIR%%/VULN-DISCLOSURE-POLICY.md
 %%PORTDOCS%%%%DOCSDIR%%/curl-config.md
@@ -90,6 +91,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/internals/SCORECARD.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/SPLAY.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/STRPARSE.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/THRDPOOL-AND-QUEUE.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/TIME-KEEPING.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/TLS-SESSIONS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/UINT_SETS.md
@@ -298,6 +300,7 @@ share/man/man3/CURLINFO_RTSP_CSEQ_RECV.3.gz
 share/man/man3/CURLINFO_RTSP_SERVER_CSEQ.3.gz
 share/man/man3/CURLINFO_RTSP_SESSION_ID.3.gz
 share/man/man3/CURLINFO_SCHEME.3.gz
+share/man/man3/CURLINFO_SIZE_DELIVERED.3.gz
 share/man/man3/CURLINFO_SIZE_DOWNLOAD.3.gz
 share/man/man3/CURLINFO_SIZE_DOWNLOAD_T.3.gz
 share/man/man3/CURLINFO_SIZE_UPLOAD.3.gz
@@ -336,6 +339,8 @@ share/man/man3/CURLMOPT_PIPELINING_SERVER_BL.3.gz
 share/man/man3/CURLMOPT_PIPELINING_SITE_BL.3.gz
 share/man/man3/CURLMOPT_PUSHDATA.3.gz
 share/man/man3/CURLMOPT_PUSHFUNCTION.3.gz
+share/man/man3/CURLMOPT_QUICK_EXIT.3.gz
+share/man/man3/CURLMOPT_RESOLVE_THREADS_MAX.3.gz
 share/man/man3/CURLMOPT_SOCKETDATA.3.gz
 share/man/man3/CURLMOPT_SOCKETFUNCTION.3.gz
 share/man/man3/CURLMOPT_TIMERDATA.3.gz

@@ -1,7 +1,7 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.8
-PORTREVISION=	1
+DISTVERSION=	2.3.9
+PORTREVISION=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -53,7 +53,7 @@ CARGO_CRATES=	accessory-2.1.0 \
 		chrono-0.4.44 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_complete-4.6.2 \
+		clap_complete-4.6.3 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		cmake-0.1.58 \
@@ -114,7 +114,7 @@ CARGO_CRATES=	accessory-2.1.0 \
 		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
-		idna_adapter-1.2.1 \
+		idna_adapter-1.2.2 \
 		impartial-ord-1.0.6 \
 		indexed_db_futures-0.6.4 \
 		indexed_db_futures_macros_internal-1.0.0 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	accessory-2.1.0 \
 		ipnetwork-0.21.1 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
-		js-sys-0.3.95 \
+		js-sys-0.3.97 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
@@ -248,18 +248,18 @@ CARGO_CRATES=	accessory-2.1.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.118 \
-		wasm-bindgen-futures-0.4.68 \
-		wasm-bindgen-macro-0.2.118 \
-		wasm-bindgen-macro-support-0.2.118 \
-		wasm-bindgen-shared-0.2.118 \
-		wasm-bindgen-test-0.3.68 \
-		wasm-bindgen-test-macro-0.3.68 \
-		wasm-bindgen-test-shared-0.2.118 \
+		wasm-bindgen-0.2.120 \
+		wasm-bindgen-futures-0.4.70 \
+		wasm-bindgen-macro-0.2.120 \
+		wasm-bindgen-macro-support-0.2.120 \
+		wasm-bindgen-shared-0.2.120 \
+		wasm-bindgen-test-0.3.70 \
+		wasm-bindgen-test-macro-0.3.70 \
+		wasm-bindgen-test-shared-0.2.120 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.95 \
+		web-sys-0.3.97 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \

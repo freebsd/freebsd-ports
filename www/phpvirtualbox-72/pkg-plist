@@ -490,12 +490,12 @@
 %%WWWDIR%%/js/datamediator.js
 %%WWWDIR%%/js/dialogs.js
 %%WWWDIR%%/js/eventlistener.js
-%%WWWDIR%%/js/jquery-3.7.1.min.js
-%%WWWDIR%%/js/jquery-ui-1.14.1.min.js
-%%WWWDIR%%/js/jquery.jec-1.3.1.js
+%%WWWDIR%%/js/jquery-4.0.0.min.js
+%%WWWDIR%%/js/jquery-ui-1.14.2.min.js
+%%WWWDIR%%/js/jquery.jec-1.4.0.js
 %%WWWDIR%%/js/jquery.projectPlugins.js
-%%WWWDIR%%/js/jquery.scrollTo-min.js
-%%WWWDIR%%/js/jquery.tipped-2.1b.min.js
+%%WWWDIR%%/js/jquery.scrollTo-2.1.3.js
+%%WWWDIR%%/js/jquery.tipped-2.2b.js
 %%WWWDIR%%/js/phpvirtualbox.js
 %%WWWDIR%%/js/utils.js
 %%WWWDIR%%/languages/cs.xml
