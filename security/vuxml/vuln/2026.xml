@@ -2566,7 +2566,8 @@ affected.</p>
     <affects>
       <package>
 	<name>openvpn</name>
-	<range><lt>2.7.2</lt></range>
+	<range><ge>2.7.0</ge><lt>2.7.2</lt></range>
+	<range><lt>2.6.20</lt></range>
       </package>
     </affects>
     <description>
@@ -2589,6 +2590,7 @@ affected.</p>
     <dates>
       <discovery>2026-04-19</discovery>
       <entry>2026-04-22</entry>
+      <modified>2026-05-02</modified>
     </dates>
   </vuln>
 
