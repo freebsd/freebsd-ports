@@ -1,6 +1,5 @@
 PORTNAME=	i3lock-color
-DISTVERSION=	2.13.c.4
-PORTREVISION=	4
+DISTVERSION=	2.13.c.5
 CATEGORIES=	x11
 
 MAINTAINER=	fjachuf@gmail.com
@@ -20,19 +19,20 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libxkbfile.so:x11/libxkbfile
 RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
-USES=		autoreconf gmake gnome iconv jpeg localbase pkgconfig tar:bzip2 xorg
+USES=		autoreconf gmake gnome iconv jpeg localbase pkgconfig tar:bzip2 \
+		xorg
 USE_CSTD=	c99
-USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Raymo111
 USE_GNOME=	cairo
 USE_XORG=	x11 xcb xext xinerama xorgproto xrandr xt
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
-		X11INC="${LOCALBASE}/include" CC="${CC}"
+MAKE_ARGS=	CC="${CC}" \
+		PREFIX="${PREFIX}" \
+		X11INC="${LOCALBASE}/include" \
+		X11LIB="${LOCALBASE}/lib"
 
 LDFLAGS+=	${ICONV_LIB}
 
@@ -42,19 +42,32 @@ PLIST_FILES=	bin/i3lock \
 		etc/pam.d/i3lock \
 		share/man/man1/i3lock.1.gz
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		BASH DOCS ZSH
+OPTIONS_DEFAULT=	BASH ZSH
+
+BASH_PLIST_FILES=	share/bash-completion/completions/i3lock
+DOCS_PLIST_FILES=	${DOC_FILES:S|^|${DOCSDIR_REL}/|}
+ZSH_PLIST_FILES=	share/zsh/site-functions/_i3lock
 
 DOC_FILES=	CHANGELOG README.md
-DOCS_PLIST_FILES=	${DOC_FILES:S|^|${DOCSDIR_REL}/|}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/i3lock
 	@${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
 	@${LN} -s ${LOCALBASE}/etc/pam.d/unix-selfauth \
 		${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
 
+post-install-BASH-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA}	${WRKSRC}/i3lock-bash \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/i3lock
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-ZSH-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA}	${WRKSRC}/i3lock-zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_i3lock
 
 .include <bsd.port.mk>
