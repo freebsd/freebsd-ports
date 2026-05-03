@@ -1,8 +1,7 @@
 # this port is for future amdgpu kernel support testing.
 
 PORTNAME=	xf86-video-amdgpu
-DISTVERSION=	22.0.0
-PORTREVISION=	2
+DISTVERSION=	25.0.0
 CATEGORIES=	x11-drivers
 
 PATCH_SITES=	https://gitlab.freedesktop.org/xorg/driver/${PORTNAME}/-/commit/
@@ -10,7 +9,7 @@ PATCHFILES+=	77b13493.patch:-p1 # https://gitlab.freedesktop.org/xorg/driver/xf8
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org amdgpu display driver
-WWW=		https://www.x.org/wiki/RadeonFeature/
+WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-amdgpu/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,15 +18,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64/powerpc64le
 
-LIB_DEPENDS=	libdrm_amdgpu.so:graphics/libdrm
+LIB_DEPENDS=	libdrm_amdgpu.so:graphics/libdrm \
+		libudev.so:devel/libudev-devd
 
-USES=		gl tar:xz xorg-cat:driver
+USES=		gl pkgconfig tar:xz xorg-cat:driver,meson
+
 USE_GL=		gbm
 
-CONFIGURE_ARGS+=--disable-udev
-
 PLIST_FILES=	lib/xorg/modules/drivers/amdgpu_drv.so \
-		share/man/man4/amdgpu.4x.gz \
-		share/X11/xorg.conf.d/10-amdgpu.conf
+		share/X11/xorg.conf.d/10-amdgpu.conf \
+		share/man/man4/amdgpu.4.gz
 
 .include <bsd.port.mk>
