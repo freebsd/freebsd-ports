@@ -78,7 +78,7 @@ rundeck_prestart() {
 rundeck_start()
 {
 	check_startmsgs && echo "Starting ${name}."
-	su -l ${rundeck_user} -c "exec ${command} ${command_args} ${rc_arg}"
+	su -l ${rundeck_user} -c "exec ${command} ${command_args}"
 }
 
 run_rc_command "$1"
