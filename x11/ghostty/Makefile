@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libsimdutf.so:converters/simdutf \
 		libspirv-cross-c-shared.so:graphics/spirv-cross
 
-USES=		gettext-runtime gettext-tools gnome pkgconfig zig
+USES=		gettext-runtime gettext-tools gnome pkgconfig zig:015
 USE_GITHUB=	yes
 GH_ACCOUNT=	ghostty-org
 
