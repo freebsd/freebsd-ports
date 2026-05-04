@@ -30,6 +30,7 @@ share/gir-1.0/UPowerGlib-1.0.gir
 %%NLS%%share/locale/pl/LC_MESSAGES/upower.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
+share/polkit-1/rules.d/org.freedesktop.upower.rules
 @dir etc/UPower/UPower.conf.d
 @dir /var/lib/upower
 @dir /var/lib/
