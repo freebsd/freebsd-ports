@@ -1,6 +1,6 @@
-TIMESTAMP = 1754318154
-SHA256 (shotman-v0.4.10.tar.gz) = acb87715eb98521dda3de44851d4ef6e4cc7eae399bb2dfc4d501b8c8bb2308a
-SIZE (shotman-v0.4.10.tar.gz) = 31656
+TIMESTAMP = 1777860330
+SHA256 (shotman-v0.5.0.tar.gz) = b2cb324db9ac3ad892eea7eca6fb71d648d7062d063fe8072d0720335c644d68
+SIZE (shotman-v0.5.0.tar.gz) = 33435
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/anstream-0.6.4.crate) = 2ab91ebe16eb252986481c5b62f6098f3b698a45e34b5b98200cf20dd2484a44
