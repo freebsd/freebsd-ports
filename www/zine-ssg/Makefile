@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # This is needed to run `make test`.
 TEST_DEPENDS=	git:devel/git
 
-USES=		inotify zig
+USES=		inotify zig:015
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kristoff-it
