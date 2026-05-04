@@ -1,5 +1,5 @@
 PORTNAME=	libinput
-DISTVERSION=	1.28.1
+DISTVERSION=	1.31.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 TEST_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		cpe localbase meson pkgconfig python:run,test shebangfix
+USES=		cpe localbase lua meson pkgconfig python:run,test shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
