@@ -6,18 +6,18 @@ libinput reopens devices just to check path equality.
 The udev_devices from reopening do have the right properties,
 so we just use them instead of the original (enumerated) ones.
 
---- src/evdev.c.orig	2025-04-01 02:46:07 UTC
+--- src/evdev.c.orig	2026-04-02 01:04:12 UTC
 +++ src/evdev.c
-@@ -1104,7 +1104,7 @@ evdev_sync_device(struct evdev_device *device)
- 		evdev_device_dispatch_one(device, &ev);
- 	} while (rc == LIBEVDEV_READ_STATUS_SYNC);
+@@ -1007,7 +1007,7 @@ evdev_sync_device(struct libinput *libinput, struct ev
+ 
+ 	evdev_device_dispatch_frame(libinput, device, frame);
  
 -	return rc == -EAGAIN ? 0 : rc;
 +	return (rc == -EAGAIN || rc == -EINVAL)? 0 : rc;
  }
  
  static inline void
-@@ -1177,6 +1177,17 @@ evdev_device_dispatch(void *data)
+@@ -1105,6 +1105,17 @@ evdev_device_dispatch(void *data)
  
  	if (rc != -EAGAIN && rc != -EINTR) {
  		libinput_remove_source(libinput, device->source);
