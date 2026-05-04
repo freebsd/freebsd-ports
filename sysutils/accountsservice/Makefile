@@ -1,8 +1,6 @@
 PORTNAME=	accountsservice
-PORTVERSION=	23.13.9
-PORTREVISION=	3
+DISTVERSION=	26.13.3
 CATEGORIES=	sysutils devel
-MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	D-Bus interface for user account query and manipulation
@@ -13,13 +11,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dbus>0:devel/dbus
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
+		libjson-c.so:devel/json-c \
 		libconsolekit.so:sysutils/consolekit2
 
-USES=		cpe gettext gnome meson pkgconfig tar:xz
+USES=		cpe gettext-tools gnome meson pkgconfig tar:bz2
 CPE_VENDOR=	freedesktop
-USE_GNOME=	glib20 intltool libxslt introspection:build
+USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dconsolekit=true \
+		-Dwtmpfile=/var/log/utx.log \
 		-Dgdmconffile=${LOCALBASE}/etc/gdm/custom.conf \
 		-Dlightdmconffile=${LOCALBASE}/etc/lightdm/lightdm.conf \
 		-Dsystemdsystemunitdir=no \
@@ -28,7 +28,7 @@ MESON_ARGS=	-Dconsolekit=true \
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	arrowd
-GL_TAGNAME=	665c4390164f47283f234970087105e52245ae67
+GL_TAGNAME=	dab9a3e353851bb066c7feb8a12a59150dbdc009
 
 OPTIONS_DEFINE=		VAPI
 OPTIONS_DEFAULT=	VAPI
