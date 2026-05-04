@@ -9,7 +9,7 @@ WWW=		https://github.com/kenrap/zig2tuple
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		zig
+USES=		zig:015
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kenrap
