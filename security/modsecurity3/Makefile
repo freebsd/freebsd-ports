@@ -1,12 +1,12 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.14
-PORTREVISION=	1
+DISTVERSION=	3.0.15
+PORTREVISION=	0
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/owasp-modsecurity/ModSecurity/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	marius.halden@modirum.com
+MAINTAINER=	wolfgang.gerlach@proton.me
 COMMENT=	Intrusion detection and prevention engine
 WWW=		https://www.modsecurity.org/
 
