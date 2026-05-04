@@ -9,10 +9,12 @@ bin/ly_wrapper
 %%ETCDIR%%/lang/cs.ini
 %%ETCDIR%%/lang/de.ini
 %%ETCDIR%%/lang/en.ini
+%%ETCDIR%%/lang/eo.ini
 %%ETCDIR%%/lang/es.ini
 %%ETCDIR%%/lang/fr.ini
 %%ETCDIR%%/lang/it.ini
 %%ETCDIR%%/lang/ja_JP.ini
+%%ETCDIR%%/lang/ku.ini
 %%ETCDIR%%/lang/lv.ini
 %%ETCDIR%%/lang/pl.ini
 %%ETCDIR%%/lang/pt.ini
