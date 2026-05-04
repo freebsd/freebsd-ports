@@ -10,7 +10,7 @@ WWW=		https://zine-ssg.io/docs/superhtml
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		zig
+USES=		zig:015
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kristoff-it
