@@ -17,6 +17,8 @@ WWW=		https://www.paradedb.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+
 BUILD_DEPENDS=	cargo-pgrx>0:databases/cargo-pgrx
 
 USES=		cargo gmake pgsql
