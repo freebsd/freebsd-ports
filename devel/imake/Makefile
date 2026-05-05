@@ -1,17 +1,15 @@
 PORTNAME=	imake
-DISTVERSION=	1.0.10
-PORTREVISION=	1
+DISTVERSION=	1.0.11
 PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Imake and other utilities from X.Org
-WWW=		https://www.x.org/
+COMMENT=	Obsolete C preprocessor interface to the make utility
+WWW=		https://gitlab.freedesktop.org/xorg/util/imake
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	tradcpp:devel/tradcpp
 RUN_DEPENDS=	gccmakedep:devel/gccmakedep \
 		makedepend:devel/makedepend \
 		${LOCALBASE}/lib/X11/config/xorg.cf:x11/xorg-cf-files
@@ -21,8 +19,5 @@ USE_XORG=	xorgproto
 USE_PERL5=	run
 
 SHEBANG_FILES=	mkhtmlindex.pl
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ENV=	ac_cv_path_RAWCPP=tradcpp
 
 .include <bsd.port.mk>
