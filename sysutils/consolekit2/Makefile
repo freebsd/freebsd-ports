@@ -1,6 +1,5 @@
 PORTNAME=	consolekit
-PORTVERSION=	1.2.6
-PORTREVISION=	6
+DISTVERSION=	2.0.0
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
@@ -11,6 +10,7 @@ WWW=		https://github.com/ConsoleKit2/ConsoleKit2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/gtk-doc.m4:textproc/gtk-doc
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdrm.so:graphics/libdrm \
 		libevdev.so:devel/libevdev \
@@ -21,7 +21,6 @@ OPTIONS_DEFAULT=POLKIT X11
 OPTIONS_SUB=	yes
 
 POLKIT_DESC=	Build with Polkit support
-
 POLKIT_LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit
 POLKIT_CONFIGURE_ENABLE=	polkit
 
@@ -30,9 +29,8 @@ X11_USE=		XORG=x11
 X11_CONFIGURE_WITH=	x
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	arrowd
+GH_ACCOUNT=	ConsoleKit2
 GH_PROJECT=	ConsoleKit2
-GH_TAGNAME=	fbf7045c8d83b0c3f08535577aa2365bf9b250bf
 
 USES=		autoreconf gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
