@@ -1,15 +1,15 @@
 PORTNAME=	wasmer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.1
-PORTREVISION=	1
+DISTVERSION=	7.1.0
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/wasmerio/wasmer/releases/download/${DISTVERSIONFULL}/
+DISTFILES=	wasmer-full-source.tar.xz
 
 MAINTAINER=	kjozic@gmail.com
 COMMENT=	WebAssembly Runtime supporting WASIX, WASI and Emscripten
 WWW=		https://wasmer.io/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 ONLY_FOR_ARCHS_REASON=	only amd64 and aarch64 works so far
@@ -20,9 +20,6 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 
 USES=		cargo gmake llvm:21 nodejs:build pkgconfig
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	wasmerio
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -41,6 +38,8 @@ ALL_TARGET=	build-wasmer
 CC=		clang${_LLVM_VERSION}
 CPP=		clang-cpp${_LLVM_VERSION}
 CXX=		clang++${_LLVM_VERSION}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/wasmer
 
