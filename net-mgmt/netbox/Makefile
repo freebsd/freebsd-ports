@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.9
+DISTVERSION=	4.5.10
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -39,11 +39,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.13<5.3:www/py-django52@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}dj52-django-timezone-field>=7.2.1<8:www/py-dj52-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.16.1<3.17.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular>=0.29.0<1:www/py-dj52-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular-sidecar>=2026.4.14:www/py-dj52-drf-spectacular-sidecar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-social-auth-app-django>=5.8.0<6:www/py-dj52-social-auth-app-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular-sidecar>=2026.5.1:www/py-dj52-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-social-auth-app-django>=5.9.0<6:www/py-dj52-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-sorl-thumbnail>=13.0.0<14:graphics/py-dj52-sorl-thumbnail@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.315.2<1:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql-django>=0.82.1<1:www/py-dj52-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.315.3<1:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql-django>=0.84.0<1:www/py-dj52-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6<1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.12<7:textproc/py-feedparser@${PY_FLAVOR} \
