@@ -9,6 +9,9 @@ WWW=		https://gitlab.freedesktop.org/mesa/vkrunner
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	Vulkan non-dispatchable handles are u64 on 32-bit
+
 RUN_DEPENDS=	glslangValidator:graphics/glslang
 
 USES=		cargo
