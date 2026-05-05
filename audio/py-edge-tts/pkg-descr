@@ -1,0 +1,3 @@
+edge-tts is a Python library and command-line tool that uses Microsoft
+Edge's online text-to-speech service to generate speech audio without
+requiring an API key, account, or Microsoft Edge installation.
