@@ -1,0 +1,6 @@
+Official Python SDK for the Exa search API.
+
+Exa provides a developer-focused search engine designed for retrieving web
+web content for LLM applications. This SDK supports neural and keyword search,
+content retrieval (text, highlights, summaries), similarity search, and the
+Answer / Research / WebSets endpoints.
