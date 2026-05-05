@@ -36,6 +36,8 @@ _JAVAVM_OPTS_CONF="${_JAVAVM_PREFIX}/etc/javavm_opts.conf"
 _JAVAVM_PROG=`basename "${0}"`
 _JAVAVM_MAKE=/usr/bin/make
 
+_JAVAVM_LATEST_JDK="26"     # update as required
+
 #
 # Try to run a Java command.
 #
@@ -503,26 +505,9 @@ setJavaHome() {
         _JAVAVM_VERSION=
         for version in ${JAVA_VERSION}; do
             case "${version}" in
-                8+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8 11 17 18 19 20 21"
-                    ;;
-                11+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 11 17 18 19 20 21"
-                    ;;
-                17+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 17 18 19 20 21"
-                    ;;
-                18+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 18 19 20 21"
-                    ;;
-                19+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 19 20 21"
-                    ;;
-                20+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 20 21"
-                    ;;
-                21+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 21"
+                *+)
+                    version_base=$(echo $version | sed -e s/+$//)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} $(seq $version_base $_JAVAVM_LATEST_JDK)"
                     ;;
                 *)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} ${version}"
