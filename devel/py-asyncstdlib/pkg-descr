@@ -1,0 +1,4 @@
+asyncstdlib provides async variants of features from the Python standard
+library, such as itertools, functools, contextlib, builtins (any/all/min/
+max/sum/...) and more.  All tools are designed to work seamlessly with
+both async and sync iterables, callables and context managers.
