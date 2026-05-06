@@ -1,5 +1,5 @@
 PORTNAME=	haskell-language-server
-DISTVERSION=	2.13.0.0
+DISTVERSION=	2.14.0.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -20,12 +20,12 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 # Do not use a flavor helper to let Uses/cabal.mk machinery to kick in
 .if ${FLAVOR:U} == ghc96
-BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
+BUILD_DEPENDS=	ghc-${GHC_VERSION}:lang/ghc96
 GHC_VERSION=	9.6.7
 .endif
 
 .if ${FLAVOR:U} == ghc98
-BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98
+BUILD_DEPENDS=	ghc-${GHC_VERSION}:lang/ghc98
 GHC_VERSION=	9.8.4
 .endif
 
@@ -50,8 +50,8 @@ PLIST_FILES=		bin/${PORTNAME}-${GHC_VERSION}
 
 # When running 'make makesum' we want USE_CABAL to include packages for all flavors
 .ifmake makesum
-.for f in ${FLAVORS}
-USE_CABAL+=		${${f}_USE_CABAL}
+.for flavor in ${FLAVORS}
+USE_CABAL+=		${${flavor}_USE_CABAL}
 .endfor
 .endif
 
