@@ -1,5 +1,6 @@
 PORTNAME=	apache24
 PORTVERSION=	2.4.67
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -65,6 +66,7 @@ MPM_SHARED_SUB_LIST_OFF=	MPM_FALLBACK_CHECK="\#"
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
 BROTLI_CONFIGURE_WITH=		brotli=${LOCALBASE}
 BROTLI_LIB_DEPENDS=		libbrotlicommon.so:archivers/brotli
+GDBM_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE} \
 				--with-ssl=${OPENSSLBASE}
 HTTP2_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
@@ -92,7 +94,6 @@ SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 #  apu-1-config --(includes|ldflags) and apr_rules.mk
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_USES=			ssl
-TLS_BROKEN=			Module removed upstream, replaced by security/mod_tls
 SUEXEC_SYSLOG_CONFIGURE_ON=	--without-suexec-logfile --with-suexec-syslog
 XML2ENC_USE=			GNOME=libxml2
 XML2ENC_USES=			gnome
@@ -143,11 +144,12 @@ IGNORE=	LDAP and AUTHNZ_LDAP requires APR-util to have LDAP support built in.\
 .  endif
 .  if ${PORT_OPTIONS:MSESSION_CRYPTO} && \
 	!(exists(${APU_CRYPTO_OPENSSL}) || exists(${APU_CRYPTO_NSS}))
-IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support built in.\
-	Please rebuild APR with crypto openssl support
+IGNORE=	SESSION_CRYPTO requires apr-util to have OpenSSL or NSS support built in.\
+	Please rebuild APR with OpenSSL or NSS support
 .  endif
-.  if exists(${APU_GDBM})
-        LIB_DEPENDS+=libgdbm.so:databases/gdbm
+.  if ${PORT_OPTIONS:MGDBM} && !exists(${APU_GDBM})
+IGNORE=	GDBM requires apr-util to have gdbm support built in.\
+	Please rebuild APR with gdbm support
 .  endif
 .endif	# exists APU_CONFIG
 
