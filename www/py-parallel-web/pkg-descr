@@ -1,0 +1,6 @@
+Python library for the Parallel API.
+
+Parallel provides web search and content-retrieval API optimised for AI agents
+and LLM-based applications. This SDK exposes search, fetch, and  task-running
+endpoints with synchronous and asynchronous interfaces, plus optional aiohttp
+transport support.

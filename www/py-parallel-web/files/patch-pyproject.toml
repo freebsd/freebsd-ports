@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-05-05 09:25:56 UTC
++++ pyproject.toml
+@@ -92,7 +92,7 @@ typecheck = { chain = [
+ "typecheck:mypy" = "mypy ."
+ 
+ [build-system]
+-requires = ["hatchling==1.26.3", "hatch-fancy-pypi-readme"]
++requires = ["hatchling>=1.26.3", "hatch-fancy-pypi-readme"]
+ build-backend = "hatchling.build"
+ 
+ [tool.hatch.build]

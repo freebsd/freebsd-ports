@@ -1881,6 +1881,7 @@
     SUBDIR += py-onetimepass
     SUBDIR += py-openbrokerapi
     SUBDIR += py-pafy
+    SUBDIR += py-parallel-web
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-path-and-address
