@@ -1352,7 +1352,6 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_rwcoxI.jpg
 %%DATADIR%%/funstuff/face_rwcoxJ.jpg
 %%DATADIR%%/funstuff/face_rwcoxK.jpg
-%%DATADIR%%/funstuff/face_will_e.jpg
 %%DATADIR%%/funstuff/face_rwcoxL.jpg
 %%DATADIR%%/funstuff/face_rwcoxM.jpg
 %%DATADIR%%/funstuff/face_rwcoxN.jpg
@@ -1429,8 +1428,10 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_wapostman2.jpg
 %%DATADIR%%/funstuff/face_watercubestud.jpg
 %%DATADIR%%/funstuff/face_wendyhasenkamp.jpg
+%%DATADIR%%/funstuff/face_will_e.jpg
 %%DATADIR%%/funstuff/face_wmluh.jpg
 %%DATADIR%%/funstuff/face_wpostman.jpg
+%%DATADIR%%/funstuff/face_x2zhang.jpg
 %%DATADIR%%/funstuff/face_xinianzuo.jpg
 %%DATADIR%%/funstuff/face_xue_zhang.jpg
 %%DATADIR%%/funstuff/face_xzhang.jpg
