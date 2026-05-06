@@ -1,7 +1,6 @@
 PORTNAME=	cloudflare-speed-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.6
-PORTREVISION=	1
+DISTVERSION=	0.6.7
 CATEGORIES=	net
 
 MAINTAINER=	meta@FreeBSD.org
@@ -14,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kavehtehrani
+
+PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.4 \
@@ -322,7 +323,5 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zmij-1.0.19 \
 		zune-core-0.4.12 \
 		zune-jpeg-0.4.21
-
-PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
