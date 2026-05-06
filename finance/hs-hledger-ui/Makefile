@@ -1,5 +1,5 @@
 PORTNAME=	hledger-ui
-DISTVERSION=	1.52
+DISTVERSION=	1.52.3
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,8 +8,6 @@ WWW=		https://hledger.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_16=	compilation fails: ghc SEGVs, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=294032
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 

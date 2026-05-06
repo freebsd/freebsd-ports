@@ -1,5 +1,5 @@
 PORTNAME=	hledger
-DISTVERSION=	1.52
+DISTVERSION=	1.52.3
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
