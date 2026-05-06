@@ -206,6 +206,7 @@
     SUBDIR += hashdb
     SUBDIR += hello
     SUBDIR += help2man
+    SUBDIR += hermes-agent
     SUBDIR += heyu2
     SUBDIR += hicolor-icon-theme
     SUBDIR += histring

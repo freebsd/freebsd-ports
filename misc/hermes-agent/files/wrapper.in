@@ -1,0 +1,13 @@
+#!%%PYTHON_CMD%%
+# Wrapper installed by FreeBSD ports — see misc/hermes-agent.
+# Hermes is installed under %%HERMES_LIBDIR%% (not site-packages) because
+# upstream ships top-level packages with generic names (tools, agent,
+# gateway, plugins, ...) that would collide with other Python packages.
+import sys
+
+sys.path.insert(0, "%%HERMES_LIBDIR%%")
+
+from %%ENTRY_MODULE%% import %%ENTRY_FUNC%% as _entry
+
+if __name__ == "__main__":
+    sys.exit(_entry())
