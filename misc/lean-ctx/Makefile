@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.7
+DISTVERSION=	3.5.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -460,6 +460,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ureq-3.3.0 \
 		ureq-proto-0.6.0 \
 		url-2.5.8 \
+		urlencoding-2.1.3 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
