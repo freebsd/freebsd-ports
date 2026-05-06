@@ -1,5 +1,5 @@
 PORTNAME=	apache24
-PORTVERSION=	2.4.66
+PORTVERSION=	2.4.67
 CATEGORIES=	www
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -229,8 +229,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${ETCDIR}/modules.d/
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/apache24/mod_*.so
-	# Remove files left behind by strip
-	${RM} ${STAGEDIR}${DATADIR}/build/ecp.???????? 2>/dev/null
 
 post-install-LOG_FORENSIC-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
