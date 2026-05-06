@@ -1,32 +1,31 @@
 PORTNAME=		docker
-PORTVERSION=		18.09.5
+PORTVERSION=		29.4.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	37
 CATEGORIES=		sysutils
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Open-source application container engine
-WWW=		https://www.docker.com/
+WWW=			https://www.docker.com/
 
 LICENSE=		APACHE20
-
-BROKEN_aarch64=		fails to build: golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
 
 PLIST_FILES=		bin/docker
 
 USE_GITHUB=		yes
-GH_PROJECT=		docker-ce
+GH_ACCOUNT=		docker
+GH_PROJECT=		cli
 
-USES=	cpe go
+USES=			cpe go:1.23+
+
+GO_PKGNAME=		github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_TARGET=		${GO_PKGNAME}/cmd/docker
 
 CONFLICTS_INSTALL=	docker-tray # bin/docker
 
-GO_PKGNAME=	github.com/${PORTNAME}
-GO_TARGET=	${GO_PKGNAME}/cli/cmd/docker
-
-pre-build:
-		@${MV} ${GO_WRKSRC}/components/* ${GO_WRKSRC}/
-		@${CP} ${FILESDIR}/default_store_freebsd.go \
-			${GO_WRKSRC}/cli/cli/config/credentials/
+TAG_HASH!=		fetch -qo - https://api.github.com/repos/docker/cli/git/ref/tags/${DISTVERSIONPREFIX}${PORTVERSION} | grep -oE '"[a-f0-9]*"' | cut -c 2-41
+COMMIT_HASH!=		fetch -qo - https://api.github.com/repos/docker/cli/git/tags/${TAG_HASH} | grep -oE '"object":\{"sha":"[a-f0-9]*"' | grep -oE '"[a-f0-9]*"' | cut -c 2-8
+GO_BUILDFLAGS=		-ldflags "\
+			-X github.com/docker/cli/cli/version.Version=${PORTVERSION} \
+			-X github.com/docker/cli/cli/version.GitCommit=${COMMIT_HASH}"
 
 .include <bsd.port.mk>
