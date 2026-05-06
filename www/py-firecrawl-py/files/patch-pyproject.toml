@@ -1,0 +1,7 @@
+--- pyproject.toml.orig	2026-05-05 08:54:41 UTC
++++ pyproject.toml
+@@ -52,3 +52,4 @@ where = ["."]
+ 
+ [tool.setuptools.packages.find]
+ where = ["."]
++include = ["firecrawl", "firecrawl.*"]

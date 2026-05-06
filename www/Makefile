@@ -1732,6 +1732,7 @@
     SUBDIR += py-fastapi-sso
     SUBDIR += py-feedgen
     SUBDIR += py-feedgenerator
+    SUBDIR += py-firecrawl-py
     SUBDIR += py-flasgger
     SUBDIR += py-flask
     SUBDIR += py-flask-admin
