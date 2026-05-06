@@ -481,6 +481,7 @@
     SUBDIR += py-evaluate
     SUBDIR += py-ezc3d
     SUBDIR += py-facenet-pytorch
+    SUBDIR += py-fal-client
     SUBDIR += py-fast-histogram
     SUBDIR += py-fastmcp
     SUBDIR += py-fastscapelib
