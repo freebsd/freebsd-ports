@@ -1,12 +1,19 @@
---- i915/Makefile.orig	2025-12-11 14:11:14 UTC
+--- i915/Makefile.orig	2026-04-29 07:43:28 UTC
 +++ i915/Makefile
-@@ -360,6 +360,9 @@ CWARNFLAGS += -Wno-pointer-arith -Wno-format -Wno-cast
- # Reason: More or less all files need it due to use of test_bit() macro
- # error: cast from 'const unsigned long *' to 'volatile unsigned long *'
- CWARNFLAGS += -Wno-pointer-arith -Wno-format -Wno-cast-qual
-+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 210000
-+CWARNFLAGS += -Wno-default-const-init-var-unsafe
-+.endif
- 
- CWARNFLAGS.intel_acpi.c=	-Wno-incompatible-pointer-types
- CWARNFLAGS.intel_audio.c=	-Wno-unused-function
+@@ -382,12 +382,13 @@ CWARNFLAGS.intel_freebsd.c=	-Wno-unused-function
+ CWARNFLAGS.intel_fbc.c=		-Wno-unused-variable
+ CWARNFLAGS.intel_fbdev.c=	-Wno-initializer-overrides
+ CWARNFLAGS.intel_freebsd.c=	-Wno-unused-function
+-CWARNFLAGS.i915_gem_context.c=	-Wno-unused-function
++CWARNFLAGS.i915_gem_context.c=	-Wno-unused-function -Wno-address-of-packed-member
+ CWARNFLAGS.intel_ggtt.c=	-Wno-integer-overflow
+ CWARNFLAGS.intel_gmch.c=	-Wno-unused-but-set-variable
+ CWARNFLAGS.intel_gt_mcr.c=	-Wno-tautological-constant-out-of-range-compare
+-CWARNFLAGS.intel_guc_capture.c=	-Wno-unused-but-set-variable
+-CWARNFLAGS.intel_guc_submission.c=	-Wno-unused-function
++CWARNFLAGS.intel_guc_capture.c=	-Wno-unused-but-set-variable -Wno-address-of-packed-member
++CWARNFLAGS.intel_guc_ct.c=	-Wno-address-of-packed-member
++CWARNFLAGS.intel_guc_submission.c=	-Wno-unused-function -Wno-address-of-packed-member
+ CWARNFLAGS.intel_hdmi.c=	-Wno-unused-but-set-variable
+ CWARNFLAGS.intel_hotplug.c=	-Wno-uninitialized
+ CWARNFLAGS.intel_psr.c=		-Wno-unused-but-set-variable
