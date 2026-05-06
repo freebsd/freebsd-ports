@@ -1,4 +1,4 @@
-TIMESTAMP = 1778021578
+TIMESTAMP = 1778108337
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
@@ -1379,5 +1379,5 @@ SHA256 (rust/crates/zvariant_derive-5.10.0.crate) = 5b59b012ebe9c46656f9cc08d8da
 SIZE (rust/crates/zvariant_derive-5.10.0.crate) = 16592
 SHA256 (rust/crates/zvariant_utils-3.3.0.crate) = f75c23a64ef8f40f13a6989991e643554d9bef1d682a281160cf0c1bc389c5e9
 SIZE (rust/crates/zvariant_utils-3.3.0.crate) = 15417
-SHA256 (astral-sh-uv-0.11.10_GH0.tar.gz) = 9880a22700988cfc9cfd54f575180672a43449e5621f99941494548a99309388
-SIZE (astral-sh-uv-0.11.10_GH0.tar.gz) = 5252516
+SHA256 (astral-sh-uv-0.11.11_GH0.tar.gz) = 01749eada44a650580d11ab8dd06ec42fb86d4feafd1f9a08cf8a9c82fb1d760
+SIZE (astral-sh-uv-0.11.11_GH0.tar.gz) = 5253331
