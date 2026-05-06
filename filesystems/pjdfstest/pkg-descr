@@ -1,0 +1,5 @@
+A generic POSIX file system test suite
+
+pjdfstest is a suite of compliance tests for POSIX-like file systems, focusing
+on metadata operations.  This is a Rust-based rewrite of the classic C and sh
+utility, originally written by Pawel Jakub Dawidek.

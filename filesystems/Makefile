@@ -89,6 +89,7 @@
     SUBDIR += p5-Filesys-Statvfs
     SUBDIR += p5-Fuse
     SUBDIR += pear-Horde_Vfs
+    SUBDIR += pjdfstest
     SUBDIR += pod
     SUBDIR += progsreiserfs
     SUBDIR += py-dfvfs
