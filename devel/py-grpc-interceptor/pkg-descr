@@ -1,0 +1,7 @@
+Simplifies gRPC interceptors.
+
+Provides a simplified interface than gRPC API that's easier to learn and use,
+with separate base classes for synchronous/asynchronous client and server
+interceptors. It also includes an exception-to-status helper that lets
+server-side code raise high-level exceptions which are translated into gRPC
+status codes.

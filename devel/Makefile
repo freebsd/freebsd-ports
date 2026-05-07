@@ -5080,6 +5080,7 @@
     SUBDIR += py-grimoirelab-toolkit
     SUBDIR += py-grizzled
     SUBDIR += py-grpc-google-iam-v1
+    SUBDIR += py-grpc-interceptor
     SUBDIR += py-grpc-stubs
     SUBDIR += py-grpcio
     SUBDIR += py-grpcio-gcp
