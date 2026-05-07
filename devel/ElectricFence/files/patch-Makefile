@@ -1,14 +1,11 @@
 --- Makefile.orig	1999-04-13 17:22:49 UTC
 +++ Makefile
-@@ -1,8 +1,14 @@
+@@ -1,8 +1,11 @@ PIC= -fPIC
  PIC= -fPIC
 -CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
 -LIBS= -lpthread
 +#CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
 +CFLAGS+= -g $(PIC)
-+.if ${MACHINE_ARCH} == "sparc64"
-+CFLAGS+= -DPAGE_PROTECTION_VIOLATED_SIGNAL=SIGBUS
-+.endif
 +#CFLAGS+= -pthread
 +#	for FreeBSD comment out the below as this is not how we do pthreads.
 +#LIB_PTHREADS= -lpthread -lc
@@ -18,7 +15,7 @@
  BIN_INSTALL_DIR= $(prefix)/bin
  LIB_INSTALL_DIR= $(prefix)/lib
  MAN_INSTALL_DIR= $(prefix)/man/man3
-@@ -17,14 +23,18 @@ PACKAGE_SOURCE= README efence.3 Makefile efence.h \
+@@ -17,14 +20,18 @@ all:	libefence.a libefence.so.0.0 tstheap eftest
  OBJECTS= efence.o page.o print.o
  
  all:	libefence.a libefence.so.0.0 tstheap eftest
@@ -45,7 +42,7 @@
  
  install: libefence.a efence.3 libefence.so.0.0
  	$(INSTALL) -m 755 ef.sh $(BIN_INSTALL_DIR)/ef
-@@ -54,16 +64,16 @@ libefence.a: $(OBJECTS)
+@@ -54,16 +61,16 @@ libefence.so.0.0: $(OBJECTS)
  	$(AR) crv libefence.a $(OBJECTS)
  
  libefence.so.0.0: $(OBJECTS)
