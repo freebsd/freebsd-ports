@@ -1097,6 +1097,8 @@ share/locale/sk/LC_MESSAGES/customtoolsplugin.mo
 share/locale/sk/LC_MESSAGES/importwizard_plugins.mo
 share/locale/sk/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/sk/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/sk/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/sk/LC_MESSAGES/kaichat_calendar.mo
 share/locale/sk/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1106,6 +1108,7 @@ share/locale/sk/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_plugins.mo
 share/locale/sk/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/sk/LC_MESSAGES/korganizer_plugins.mo
+share/locale/sk/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/sk/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/sk/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1776248160
-SHA256 (KDE/release-service/26.04.0/kdev-python-26.04.0.tar.xz) = 9e89b3019b09245289e22b06b4b81996fad1228f126f08506175763dd7fb482c
-SIZE (KDE/release-service/26.04.0/kdev-python-26.04.0.tar.xz) = 1139768
+TIMESTAMP = 1778069106
+SHA256 (KDE/release-service/26.04.1/kdev-python-26.04.1.tar.xz) = fad514d7081d24c8f6d4b2673c1d6121676657d40bb496cc181452cb05226910
+SIZE (KDE/release-service/26.04.1/kdev-python-26.04.1.tar.xz) = 1139696

@@ -1884,12 +1884,14 @@ share/locale/he/LC_MESSAGES/kdevcustomscript.mo
 share/locale/he/LC_MESSAGES/kdevdocker.mo
 share/locale/he/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/he/LC_MESSAGES/kdevdocumentview.mo
+share/locale/he/LC_MESSAGES/kdevelop.mo
 share/locale/he/LC_MESSAGES/kdevexecute.mo
 share/locale/he/LC_MESSAGES/kdevexecuteplasmoid.mo
 share/locale/he/LC_MESSAGES/kdevexecutescript.mo
 share/locale/he/LC_MESSAGES/kdevfilemanager.mo
 share/locale/he/LC_MESSAGES/kdevflatpak.mo
 share/locale/he/LC_MESSAGES/kdevghprovider.mo
+share/locale/he/LC_MESSAGES/kdevgit.mo
 share/locale/he/LC_MESSAGES/kdevgrepview.mo
 share/locale/he/LC_MESSAGES/kdevkonsole.mo
 share/locale/he/LC_MESSAGES/kdevlldb.mo

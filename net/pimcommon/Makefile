@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	archive attica auth codecs completion config configwidgets \
-		coreaddons dbusaddons i18n iconthemes itemmodels itemviews \
+		coreaddons dbusaddons i18n iconthemes itemmodels \
 		jobwidgets kcmutils kio newstuff service solid sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
 		ecm:build

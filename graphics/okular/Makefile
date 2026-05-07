@@ -1,6 +1,5 @@
 PORTNAME=	okular
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext jpeg \
 		kde:6 pkgconfig qt:6 tar:xz xorg
 USE_KDE=	activities archive auth bookmarks codecs completion config \
-		iconthemes itemmodels itemviews jobwidgets kio libkexiv2 parts \
+		iconthemes itemmodels jobwidgets kio libkexiv2 parts \
 		phonon pty service solid sonnet textwidgets threadweaver \
 		wallet widgetsaddons windowsystem xmlgui \
 		ecm:build

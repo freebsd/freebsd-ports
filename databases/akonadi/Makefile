@@ -8,9 +8,7 @@ WWW=		https://community.kde.org/KDE_PIM/Akonadi
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libkaccounts6.so:net-im/kaccounts-integration \
-		libaccounts-qt6.so:net-im/libaccounts-qt@qt6
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
@@ -19,7 +17,7 @@ USES=		cmake compiler:c++11-lib gettext gnome kde:6 qt:6 \
 USE_GNOME=	libxml2
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons guiaddons i18n iconthemes itemmodels itemviews kio \
-		service widgetsaddons windowsystem xmlgui \
+		service widgetsaddons xmlgui \
 		ecm:build
 USE_QT=		base \
 		sqldriver-sqlite:run
