@@ -7,7 +7,7 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -9,12 +9,12 @@ readme = "README.md"
+@@ -9,7 +9,7 @@ readme = "README.md"
  ]
  description = "The LocalStack Command Line Interface"
  readme = "README.md"
@@ -16,9 +16,3 @@
  requires-python = ">=3.10"
  dependencies = [
      "asn1crypto",
-     "cachetools>=5.0",
--    "click>=8.2.0",
-+    "click>=8.1.0",
-     "cryptography",
-     "dnslib>=0.9.10",
-     "dnspython>=1.16.0",
