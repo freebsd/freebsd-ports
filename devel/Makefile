@@ -6442,6 +6442,7 @@
     SUBDIR += py-zconfig
     SUBDIR += py-zfp
     SUBDIR += py-zict
+    SUBDIR += py-zipkin
     SUBDIR += py-zipp
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration

@@ -1,0 +1,5 @@
+py_zipkin provides a context manager/decorator along with some utilities to
+facilitate the usage of Zipkin in Python applications.
+
+Zipkin is a distributed tracing system that helps gather timing data needed
+to troubleshoot latency problems in microservice architectures.
