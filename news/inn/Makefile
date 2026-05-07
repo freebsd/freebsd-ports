@@ -80,10 +80,14 @@ OPTIONS_DEFINE=		BERKELEYDB BLOCKLISTD DOCS EXAMPLES GNUPG KERBEROS \
 			SQLITE TAGGED_HASH UUCP_RNEWS
 OPTIONS_DEFAULT=	BERKELEYDB BLOCKLISTD GNUPG KEYWORDS LARGE_FILES \
 			OPENSSL PYTHON SETGID_INEWS SQLITE UUCP_RNEWS
+.if ${BRANCH:U} == 2.8
+OPTIONS_DEFINE+=	EXPERIMENTAL
+.endif
 OPTIONS_SUB=		yes
 
 BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
 BLOCKLISTD_DESC=	Enable blocklistd support
+EXPERIMENTAL_DESC=	Experimental upstream patches (ovsqlite, bloom filter)
 GNUPG_DESC=		GnuPG support (for pgpverify control message)
 KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
 KEYWORDS_DESC=		Automatic keyword generation support
@@ -101,7 +105,7 @@ BERKELEYDB_CONFIGURE_ON=	--with-bdb-include=${BDB_INCLUDE_DIR} \
 				--with-bdb-lib=${LOCALBASE}/lib \
 				--with-bdb=${LOCALBASE}
 
-.if ${BRANCH:U} == 2.8 && ${OSVERSION} >= 1500000
+.if ${BRANCH:U} == 2.8 && ${OSVERSION:U} >= 1500000
 BLOCKLISTD_CONFIGURE_WITH=	blocklist
 .else
 BLOCKLISTD_CONFIGURE_WITH=	blacklist
@@ -152,9 +156,20 @@ TAGGED_HASH_PLIST_SUB_OFF=	WITH_TAGGED_HASH="@comment " \
 UUCP_RNEWS_RUN_DEPENDS=		uucp:net/freebsd-uucp
 UUCP_RNEWS_CONFIGURE_ENABLE=	uucp-rnews
 
+EXPERIMENTAL_PATCH_SITES=	https://github.com/InterNetNews/inn/commit/
+EXPERIMENTAL_PATCHFILES=	cf4a8ecac2f3149505f9a55cdd95383e9b3f725b.patch:-p1 \
+				0d84255b417c89219225f0a034fd4c068d9749a0.patch:-p1 \
+				93a36682f7ba9d013d07859882c2b8c501da249e.patch:-p1 \
+				d0c379ee3f325f4a80dada6c3129c23496b1c83e.patch:-p1
+EXPERIMENTAL_PLIST_SUB=		EXPERIMENTAL=""
+EXPERIMENTAL_PLIST_SUB_OFF=	EXPERIMENTAL="@comment "
+
 .include <bsd.port.pre.mk>
 
 GID?=		${.MAKE.GID}
+
+post-extract-EXPERIMENTAL-on:
+	@${CP} ${PKGDIR}/files/gitignore ${WRKSRC}/.gitignore
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \

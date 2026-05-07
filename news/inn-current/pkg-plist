@@ -127,6 +127,7 @@ http/innreport.css
 include/inn/buffer.h
 include/inn/concat.h
 include/inn/confparse.h
+%%EXPERIMENTAL%%include/inn/bloom.h
 include/inn/dbz.h
 include/inn/dispatch.h
 include/inn/fdflag.h
