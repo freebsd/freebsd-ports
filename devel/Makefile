@@ -5609,6 +5609,7 @@
     SUBDIR += py-pkgconfig
     SUBDIR += py-plac
     SUBDIR += py-plan
+    SUBDIR += py-plaster
     SUBDIR += py-platformdirs
     SUBDIR += py-plette
     SUBDIR += py-plex
