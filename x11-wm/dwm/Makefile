@@ -1,5 +1,6 @@
 PORTNAME=	dwm
 DISTVERSION=	6.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
@@ -11,9 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
-# Kyua is not used by the upstream to test. It's only used in the port's
-# do-test target.
-TEST_DEPENDS=	${LOCALBASE}/libexec/atf-check:devel/kyua
 
 USES=		xorg
 USE_XORG=	x11 xft
