@@ -1,15 +1,10 @@
---- src/main.cpp.orig	2026-02-12 05:19:31 UTC
+--- src/main.cpp.orig	2026-05-04 23:34:34 UTC
 +++ src/main.cpp
-@@ -1,3 +1,4 @@
-+#include <charconv>
- #include <cstdint>
- #include <format>
- #include <regex>
-@@ -90,12 +91,24 @@ int main(int argc, char** argv, char** envp) {
+@@ -94,12 +94,24 @@ int main(int argc, char** argv, char** envp) {
              }
              case 's': {
                  float value;
-+#if defined(__FreeBSD__)
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 200000
 +                try {
 +                    size_t pos;
 +                    value = std::stof(optarg, &pos);
