@@ -22,6 +22,7 @@ include/proj/util.hpp
 include/proj_constants.h
 include/proj_experimental.h
 include/proj_symbol_rename.h
+include/projapps_lib.h
 lib/cmake/proj/proj-config-version.cmake
 lib/cmake/proj/proj-config.cmake
 lib/cmake/proj/proj-targets-%%CMAKE_BUILD_TYPE%%.cmake
