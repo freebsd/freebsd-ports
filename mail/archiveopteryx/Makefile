@@ -8,7 +8,7 @@ COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 WWW=		https://www.archiveopteryx.org/
 
 LICENSE=	PostgreSQL
-LICENSE_FILE=	doc/readme/license.txt
+LICENSE_FILE=	${WRKSRC}/doc/readme/license.txt
 
 BUILD_DEPENDS=	jam:devel/jam \
 		idnkit2>0:dns/idnkit2
