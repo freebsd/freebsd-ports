@@ -1,5 +1,5 @@
-TIMESTAMP = 1777168970
-SHA256 (go/audio_sag/sag-v0.2.2/v0.2.2.mod) = 793dd7b4d72c4c94e6aae9b3e3bd45b56cc31cc6614a0fe03da22b21ea58c5a1
-SIZE (go/audio_sag/sag-v0.2.2/v0.2.2.mod) = 363
-SHA256 (go/audio_sag/sag-v0.2.2/v0.2.2.zip) = 2aafc468491febc3d41cabed267ceb187c56c52f92f828b5513d450da1ce2f9e
-SIZE (go/audio_sag/sag-v0.2.2/v0.2.2.zip) = 38809
+TIMESTAMP = 1778139762
+SHA256 (go/audio_sag/sag-v0.3.0/v0.3.0.mod) = d16783cfe17623255de6e2192f98140735f000fde941221d9a7e4d2f7f0a912c
+SIZE (go/audio_sag/sag-v0.3.0/v0.3.0.mod) = 364
+SHA256 (go/audio_sag/sag-v0.3.0/v0.3.0.zip) = c42cb7e37e40680693a5177cb06f6daef6ba75f17eebf74e1995dbb7275c0988
+SIZE (go/audio_sag/sag-v0.3.0/v0.3.0.zip) = 49539
