@@ -5610,6 +5610,7 @@
     SUBDIR += py-plac
     SUBDIR += py-plan
     SUBDIR += py-plaster
+    SUBDIR += py-plaster-pastedeploy
     SUBDIR += py-platformdirs
     SUBDIR += py-plette
     SUBDIR += py-plex
