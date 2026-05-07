@@ -240,7 +240,7 @@ ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/rollup/package.json
 ROLLUP_VER=			4.22.4
 # Keep in sync with devel/esbuild
-ESBUILD_VER=			0.27.1
+ESBUILD_VER=			0.28.0
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
