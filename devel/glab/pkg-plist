@@ -135,6 +135,13 @@
 %%MANPAGES%%share/man/man1/glab-opentofu-state-unlock.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu-state.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-remote-graph-status.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-remote-query.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-remote-schema.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-remote-status.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-remote-tools.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-remote.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit.1.gz
 %%MANPAGES%%share/man/man1/glab-release-create.1.gz
 %%MANPAGES%%share/man/man1/glab-release-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-release-download.1.gz
@@ -235,6 +242,8 @@
 %%MANPAGES%%share/man/man1/glab-variable-update.1.gz
 %%MANPAGES%%share/man/man1/glab-variable.1.gz
 %%MANPAGES%%share/man/man1/glab-version.1.gz
+%%MANPAGES%%share/man/man1/glab-work-items-create.1.gz
+%%MANPAGES%%share/man/man1/glab-work-items-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-work-items-list.1.gz
 %%MANPAGES%%share/man/man1/glab-work-items.1.gz
 %%MANPAGES%%share/man/man1/glab.1.gz
