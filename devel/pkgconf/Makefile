@@ -1,5 +1,6 @@
 PORTNAME=	pkgconf
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.ariadne.space/${PORTNAME}/
@@ -12,8 +13,6 @@ COMMENT=	Utility to help to configure compiler and linker flags
 WWW=		https://gitea.treehouse.systems/ariadne/${PORTNAME}
 
 LICENSE=	ISCL
-
-TEST_DEPENDS=	kyua:devel/kyua
 
 USES=		cpe tar:xz libtool pathfix
 GNU_CONFIGURE=	yes
