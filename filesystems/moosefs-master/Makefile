@@ -1,5 +1,5 @@
 PORTNAME=		moosefs
-DISTVERSION=		4.58.3
+DISTVERSION=		4.58.4
 DISTVERSIONSUFFIX=	-1
 PORTREVISION?=		0
 CATEGORIES=		filesystems sysutils
@@ -31,8 +31,7 @@ CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
 			--with-default-user=${MFS_USER} \
 			--with-default-group=${MFS_GROUP}
 
-CONFLICTS=		moosefs2-* \
-			moosefs3-*
+CONFLICTS=		moosefs3-*
 
 PLIST_SUB=		USER=${MFS_USER} \
 			GROUP=${MFS_GROUP}
