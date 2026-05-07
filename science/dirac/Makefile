@@ -13,10 +13,7 @@ WWW=		http://diracprogram.org/doku.php
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=		compilation fails: Error: Old-style type declaration REAL*16 not supported at (1)
 BROKEN_i386=		compilation fails: Error: Type mismatch in argument 'lu' at (1); passed INTEGER(8) to INTEGER(4) (and similar)
-BROKEN_powerpc64=	compilation fails: Error: Old-style type declaration REAL*16 not supported at (1)
-BROKEN_powerpc64le=	compilation fails: Error: Old-style type declaration REAL*16 not supported at (1)
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libblas.so:math/blas \
@@ -44,6 +41,12 @@ LDFLAGS+=	-llapack -lblas
 BINARY_ALIAS=	make=${GMAKE} \
 		python=${PYTHON_CMD} \
 		python3=${PYTHON_CMD}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv7 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+CMAKE_ARGS+=	ENABLE_STIELTJES
+.endif
 
 # 2 tests are known to fail, see https://gitlab.com/dirac/dirac/-/issues/35
 
