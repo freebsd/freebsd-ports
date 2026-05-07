@@ -1,6 +1,6 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.75.0
+DISTVERSION=	3.76.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,9 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libasound.so:audio/alsa-lib \
 		libboost_program_options.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
 		libpugixml.so:textproc/pugixml \
+		libpulse.so:audio/pulseaudio \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt \
 		libxxhash.so:devel/xxhash
