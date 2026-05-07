@@ -67,10 +67,10 @@ _SYSROOT_EXCLUDE_armv7=			usr/lib/debug/*
 _SYSROOT_ARCH_amd64=			x86_64
 _SYSROOT_ARCH_i386=			i686
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
-_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd{_SYSROOT_VER:C/-RELEASE//}
-_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd{_SYSROOT_VER:C/-RELEASE//}-gnueabihf
-_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd{_SYSROOT_VER:C/-RELEASE//} # secure-plt
-_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd{_SYSROOT_VER:C/-RELEASE//} # elfv2
+_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//}
+_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//}-gnueabihf
+_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//} # secure-plt
+_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//} # elfv2
 
 .if make(distclean) || make(makesum)
 MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
