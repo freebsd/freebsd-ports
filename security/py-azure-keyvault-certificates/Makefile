@@ -1,5 +1,5 @@
 PORTNAME=	azure-keyvault-certificates
-PORTVERSION=	4.11.0
+PORTVERSION=	4.11.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.31.0:devel/py-azure-core@${PY_
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
