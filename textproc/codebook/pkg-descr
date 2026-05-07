@@ -1,0 +1,9 @@
+odebook is a spell checker for code. It binds together the venerable
+Tree Sitter and the fast spell checker Spellbook. Included is a
+Language Server for use in (theoretically) any editor. Everything
+is done in Rust to keep response times snappy and memory usage low.
+
+However, if you are looking for a traditional spell checker for
+prose, Codebook may not be what you are looking for. For example,
+capitalization issues are handled loosely and grammar checking is
+out of scope.

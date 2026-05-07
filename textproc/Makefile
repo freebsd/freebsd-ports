@@ -108,6 +108,7 @@
     SUBDIR += coccigrep
     SUBDIR += code-minimap
     SUBDIR += code2html
+    SUBDIR += codebook
     SUBDIR += codesearch
     SUBDIR += codespell
     SUBDIR += colordiff
