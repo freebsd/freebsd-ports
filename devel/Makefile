@@ -5708,6 +5708,7 @@
     SUBDIR += py-pycompilation
     SUBDIR += py-pycomplete
     SUBDIR += py-pycomposefile
+    SUBDIR += py-pyconfigurator
     SUBDIR += py-pyconify
     SUBDIR += py-pycparser
     SUBDIR += py-pycrdt
