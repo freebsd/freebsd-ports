@@ -1,5 +1,6 @@
 PORTNAME=	azure-cli
 PORTVERSION=	2.86.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,7 +43,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-botservice>=2.0.0.b3:devel/py-azure-mgmt-botservice@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-cdn>=12.0.0:devel/py-azure-mgmt-cdn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-cognitiveservices>=15.0.0.b1:devel/py-azure-mgmt-cognitiveservices@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute>=34.1.0:devel/py-azure-mgmt-compute@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute34>=34.1.0:devel/py-azure-mgmt-compute34@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerinstance>=10.2.0.b1:devel/py-azure-mgmt-containerinstance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=15.1.0.b1:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistrytasks>=1.0.0.b1:devel/py-azure-mgmt-containerregistrytasks@${PY_FLAVOR} \
