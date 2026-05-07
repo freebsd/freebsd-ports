@@ -233,7 +233,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.0 \
 		winreg-0.50.0
 
-CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 CFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS
 
 OPENSSLINC=	/usr/include
