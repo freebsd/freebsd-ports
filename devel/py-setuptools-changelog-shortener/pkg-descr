@@ -1,0 +1,4 @@
+Setuptools plugin to shorten the number of changelog entries used for the
+long_description metadata in Python packages.  Useful for projects that
+keep a long CHANGELOG file but want only the most recent entries shown
+on PyPI.

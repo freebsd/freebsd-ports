@@ -6072,6 +6072,7 @@
     SUBDIR += py-setproctitle
     SUBDIR += py-setupmeta
     SUBDIR += py-setuptools
+    SUBDIR += py-setuptools-changelog-shortener
     SUBDIR += py-setuptools-declarative-requirements
     SUBDIR += py-setuptools-dso
     SUBDIR += py-setuptools-gettext
