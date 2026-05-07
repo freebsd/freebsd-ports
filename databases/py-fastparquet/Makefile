@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Retired by upstream. See https://github.com/dask/fastparquet/commit/dfe8d4ed0107427674dfa1b18918a167f057a328 for details
 EXPIRATION_DATE=2026-06-30
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
