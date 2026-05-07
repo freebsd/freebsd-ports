@@ -1,5 +1,5 @@
 PORTNAME=	moosefs-cgi
-DISTVERSION=	4.58.3
+DISTVERSION=	4.58.4
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	freebsd@moosefs.com
