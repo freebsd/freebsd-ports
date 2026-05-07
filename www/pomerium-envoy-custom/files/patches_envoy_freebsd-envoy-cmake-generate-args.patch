@@ -1,0 +1,12 @@
+--- a/bazel/envoy_build_system.bzl
++++ b/bazel/envoy_build_system.bzl
+@@ -128,6 +128,9 @@
+         targets = ["", "install"],
+         **kwargs):
+     cache_entries.update(default_cache_entries)
++    if generate_args == ["-G", "Ninja"]:
++        # rules_foreign_cc expects the generator as one argument, e.g. "-GNinja".
++        generate_args = ["-GNinja"]
+     cache_entries_debug = dict(cache_entries)
+     cache_entries_debug.update(debug_cache_entries)
+ 

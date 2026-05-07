@@ -1,0 +1,10 @@
+--- a/python/private/py_runtime_info.bzl
++++ b/python/private/py_runtime_info.bzl
+@@ -16,6 +16,6 @@
+ # limitations under the License.
+ """Providers for Python rules."""
+ 
+-DEFAULT_STUB_SHEBANG = "#!/usr/bin/env python3"
++DEFAULT_STUB_SHEBANG = "#!%%PYTHON_CMD%%"
+ 
+ _PYTHON_VERSION_VALUES = ["PY2", "PY3"]

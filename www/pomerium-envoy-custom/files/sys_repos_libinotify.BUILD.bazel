@@ -1,0 +1,7 @@
+cc_library(
+    name = "libinotify",
+    hdrs = ["sys/inotify.h"],
+    includes = ["."],
+    linkopts = ["-linotify"],
+    visibility = ["//visibility:public"],
+)

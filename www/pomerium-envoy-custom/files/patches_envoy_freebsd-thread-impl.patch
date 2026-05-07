@@ -1,0 +1,60 @@
+--- a/source/common/common/posix/thread_impl.cc
++++ b/source/common/common/posix/thread_impl.cc
+@@ -10,6 +10,9 @@
+ #if defined(__linux__)
+ #include <sys/resource.h>
+ #include <sys/syscall.h>
++#elif defined(__FreeBSD__)
++#include <sys/resource.h>
++#include <pthread_np.h>
+ #elif defined(__APPLE__)
+ #include <objc/message.h>
+ #include <objc/runtime.h>
+@@ -27,6 +30,8 @@ int64_t getCurrentThreadIdBase() {
+   uint64_t tid;
+   pthread_threadid_np(nullptr, &tid);
+   return tid;
++#elif defined(__FreeBSD__)
++  return static_cast<int64_t>(pthread_getthreadid_np());
+ #else
+ #error "Enable and test pthread id retrieval code for you arch in pthread/thread_impl.cc"
+ #endif
+@@ -45,6 +50,11 @@ void setThreadPriority(const int64_t tid, const int priority) {
+   if (rc != 0) {
+     ENVOY_LOG_MISC(warn, "failed to set thread priority: {}", Envoy::errorDetails(errno));
+   }
++#elif defined(__FreeBSD__)
++  const int rcf = setpriority(PRIO_PROCESS, tid, priority);
++  if (rcf != 0) {
++    ENVOY_LOG_MISC(warn, "failed to set thread priority: {}", Envoy::errorDetails(errno));
++  }
+ #elif defined(__APPLE__)
+   UNREFERENCED_PARAMETER(tid);
+   // Use NSThread via the Objective-C runtime to set the thread priority; it's the best way to set
+@@ -140,6 +150,8 @@ ThreadId PosixThread::pthreadId() const {
+   ASSERT(!joined_);
+ #if defined(__linux__)
+   return ThreadId(static_cast<int64_t>(thread_handle_->handle()));
++#elif defined(__FreeBSD__)
++  return ThreadId(reinterpret_cast<int64_t>(pthread_self()));
+ #elif defined(__APPLE__)
+   uint64_t tid;
+   pthread_threadid_np(thread_handle_->handle(), &tid);
+@@ -203,6 +215,8 @@ int PosixThreadFactory::currentThreadPriority() const {
+ int PosixThreadFactory::currentThreadPriority() const {
+ #if defined(__linux__)
+   return static_cast<double>(getpriority(PRIO_PROCESS, getCurrentThreadId()));
++#elif defined(__FreeBSD__)
++  return static_cast<int>(getpriority(PRIO_PROCESS, getCurrentThreadId()));
+ #elif defined(__APPLE__)
+   Class nsthread = objc_getClass("NSThread");
+   SEL selector = sel_registerName("threadPriority");
+@@ -218,6 +232,8 @@ ThreadId PosixThreadFactory::currentPthreadId() const {
+ ThreadId PosixThreadFactory::currentPthreadId() const {
+ #if defined(__linux__)
+   return static_cast<ThreadId>(static_cast<int64_t>(pthread_self()));
++#elif defined(__FreeBSD__)
++  return static_cast<ThreadId>(reinterpret_cast<int64_t>(pthread_self()));
+ #elif defined(__APPLE__)
+   uint64_t tid;
+   pthread_threadid_np(pthread_self(), &tid);

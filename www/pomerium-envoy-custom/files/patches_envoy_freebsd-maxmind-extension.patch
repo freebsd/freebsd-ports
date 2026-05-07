@@ -1,0 +1,18 @@
+--- a/source/extensions/geoip_providers/maxmind/BUILD
++++ b/source/extensions/geoip_providers/maxmind/BUILD
+@@ -17,6 +17,7 @@
+     srcs = select({
+         "//bazel:linux": ["config.cc"],
+         "//bazel:darwin_any": ["config.cc"],
++        "//bazel:freebsd": ["config.cc"],
+         "//conditions:default": [],
+     }),
+     hdrs = ["config.h"],
+@@ -36,6 +37,7 @@
+     srcs = select({
+         "//bazel:linux": ["geoip_provider.cc"],
+         "//bazel:darwin_any": ["geoip_provider.cc"],
++        "//bazel:freebsd": ["geoip_provider.cc"],
+         "//conditions:default": [],
+     }),
+     hdrs = ["geoip_provider.h"],

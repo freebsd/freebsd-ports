@@ -1,0 +1,66 @@
+From 0688d9f8ec38fd7dc7088a834f6e5176d378ae6b Mon Sep 17 00:00:00 2001
+From: FreeBSD Ports Collection <ports@FreeBSD.org>
+Date: Sun, 29 Mar 2026 20:05:19 -0700
+Subject: [PATCH] FreeBSD: fix sys/statfs.h, memfd_create, cgroup
+
+---
+ src/datadog/platform_util.cpp | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+diff --git a/src/datadog/platform_util.cpp b/src/datadog/platform_util.cpp
+index 854c117..d2c5a7b 100644
+--- a/src/datadog/platform_util.cpp
++++ b/src/datadog/platform_util.cpp
+@@ -25,6 +25,9 @@
+ #    include <sys/sysctl.h>
+ #    define DD_SDK_OS "Darwin"
+ #    define DD_SDK_KERNEL "Darwin"
++#  elif defined(__FreeBSD__)
++#    define DD_SDK_OS "FreeBSD"
++#    define DD_SDK_KERNEL "FreeBSD"
+ #  elif defined(__linux__) || defined(__unix__)
+ #    define DD_SDK_OS "GNU/Linux"
+ #    define DD_SDK_KERNEL "Linux"
+@@ -81,6 +84,12 @@ std::string get_os_version() {
+ 
+   return "";
+ }
++#elif defined(__FreeBSD__)
++std::string get_os_version() {
++  struct utsname buffer;
++  if (uname(&buffer) != 0) return "";
++  return buffer.release;
++}
+ #endif
+ 
+ #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
+@@ -246,7 +255,7 @@ InMemoryFile& InMemoryFile::operator=(InMemoryFile&& rhs) {
+   return *this;
+ }
+ 
+-#if defined(__linux__) || defined(__unix__)
++#if defined(__linux__)
+ 
+ InMemoryFile::~InMemoryFile() {
+   /// NOTE(@dmehala): No need to close the fd since it is automatically handled
+@@ -290,7 +299,7 @@ Expected<InMemoryFile> InMemoryFile::make(StringView) {
+ 
+ namespace container {
+ namespace {
+-#if defined(__linux__) || defined(__unix__)
++#if defined(__linux__)
+ /// Magic numbers from linux/magic.h:
+ /// <https://github.com/torvalds/linux/blob/ca91b9500108d4cf083a635c2e11c884d5dd20ea/include/uapi/linux/magic.h#L71>
+ constexpr uint64_t TMPFS_MAGIC = 0x01021994;
+@@ -403,7 +412,7 @@ Optional<std::string> find_container_id(std::istream& source) {
+ }
+ 
+ Optional<ContainerID> get_id() {
+-#if defined(__linux__) || defined(__unix__)
++#if defined(__linux__)
+   auto maybe_cgroup = get_cgroup_version();
+   if (!maybe_cgroup) return nullopt;
+ 
+-- 
+2.53.0
+

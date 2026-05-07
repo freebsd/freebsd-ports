@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "STABLE_BUILD_SCM_REVISION $(cat %%WRKSRC%%/SOURCE_VERSION 2>/dev/null || echo 0000000000000000)"
+echo "BUILD_SCM_STATUS Distribution"

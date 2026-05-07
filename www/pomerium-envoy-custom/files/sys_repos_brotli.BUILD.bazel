@@ -1,0 +1,42 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_import(
+    name = "_brotlicommon",
+    shared_library = "libbrotlicommon.so",
+)
+
+cc_import(
+    name = "_brotlidec",
+    shared_library = "libbrotlidec.so",
+)
+
+cc_import(
+    name = "_brotlienc",
+    shared_library = "libbrotlienc.so",
+)
+
+cc_library(
+    name = "brotlidec",
+    hdrs = glob(["brotli/*.h"]),
+    includes = [""],
+    deps = [":_brotlidec", ":_brotlicommon"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "brotlienc",
+    hdrs = glob(["brotli/*.h"]),
+    includes = [""],
+    deps = [":_brotlienc", ":_brotlicommon"],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "all",
+    srcs = glob(["brotli/*.h"]) + [
+        "libbrotlicommon.so",
+        "libbrotlidec.so",
+        "libbrotlienc.so",
+    ],
+    visibility = ["//visibility:public"],
+)

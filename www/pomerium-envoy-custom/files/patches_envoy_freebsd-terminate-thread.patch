@@ -1,0 +1,32 @@
+--- a/source/common/thread/terminate_thread.cc
++++ b/source/common/thread/terminate_thread.cc
+@@ -4,6 +4,11 @@
+
+ #include <csignal>
+
++#if defined(__FreeBSD__)
++#include <pthread.h>
++#include <pthread_np.h>
++#endif
++
+ #include "source/common/common/logger.h"
+
+ namespace Envoy {
+@@ -12,11 +17,15 @@ namespace {
+ #ifdef __linux__
+ pid_t toPlatformTid(int64_t tid) { return static_cast<pid_t>(tid); }
+ #elif defined(__APPLE__)
+ uint64_t toPlatformTid(int64_t tid) { return static_cast<uint64_t>(tid); }
++#elif defined(__FreeBSD__)
++pthread_t toPlatformTid(int64_t tid) { return reinterpret_cast<pthread_t>(tid); }
+ #endif
+ } // namespace
+
+ bool terminateThread(const ThreadId& tid) {
+-#ifndef WIN32
++#if defined(__FreeBSD__)
++  return pthread_kill(toPlatformTid(tid.getId()), SIGABRT) == 0;
++#elif !defined(WIN32)
+   // Assume POSIX-compatible system and signal to the thread.
+   return kill(toPlatformTid(tid.getId()), SIGABRT) == 0;
+ #else

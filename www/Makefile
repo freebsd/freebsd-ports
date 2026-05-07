@@ -1476,6 +1476,7 @@
     SUBDIR += pocket-id
     SUBDIR += podcastamatic
     SUBDIR += pomerium
+    SUBDIR += pomerium-envoy-custom
     SUBDIR += pound
     SUBDIR += privatebin
     SUBDIR += privoxy

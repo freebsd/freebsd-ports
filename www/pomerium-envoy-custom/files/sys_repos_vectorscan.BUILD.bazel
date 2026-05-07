@@ -1,0 +1,14 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_import(
+    name = "_hs",
+    static_library = "libhs.a",
+)
+
+cc_library(
+    name = "hyperscan",
+    hdrs = glob(["include/hs/*.h"]),
+    includes = ["include"],
+    deps = [":_hs"],
+    visibility = ["//visibility:public"],
+)

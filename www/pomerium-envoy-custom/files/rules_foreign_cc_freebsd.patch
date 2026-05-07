@@ -1,0 +1,39 @@
+diff --git a/toolchains/private/BUILD.bazel b/toolchains/private/BUILD.bazel
+--- a/toolchains/private/BUILD.bazel
++++ b/toolchains/private/BUILD.bazel
+@@ -10,8 +10,8 @@ package(default_visibility = ["//visibility:public"])
+ native_tool_toolchain(
+     name = "preinstalled_make",
+     path = select({
+         "@platforms//os:windows": "make.exe",
+-        "//conditions:default": "make",
++        "//conditions:default": "gmake",
+     }),
+ )
+
+@@ -23,5 +23,8 @@ native_tool_toolchain(
+ make_tool(
+     name = "make_tool",
+     srcs = "@gnumake_src//:all_srcs",
++    features = [
++        "-default_link_libs",
++    ],
+     tags = ["manual"],
+ )
+
+diff --git a/foreign_cc/cmake.bzl b/foreign_cc/cmake.bzl
+--- a/foreign_cc/cmake.bzl
++++ b/foreign_cc/cmake.bzl
+@@ -343,10 +343,12 @@
+         if "win" in execution_os_name:
+             generator = "Ninja"
+         elif "macos" in execution_os_name:
+             generator = "Unix Makefiles"
+         elif "linux" in execution_os_name:
++            generator = "Unix Makefiles"
++        elif "freebsd" in execution_os_name:
+             generator = "Unix Makefiles"
+         else:
+             fail("No generator set and no default is known. Please set the cmake `generator` attribute")
+ 
+     # Sanity check

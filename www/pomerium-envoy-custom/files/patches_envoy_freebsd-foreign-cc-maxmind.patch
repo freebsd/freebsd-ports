@@ -1,0 +1,53 @@
+--- a/bazel/foreign_cc/BUILD
++++ b/bazel/foreign_cc/BUILD
+@@ -580,38 +580,11 @@
+     working_directory = "build/cmake",
+ )
+
+-envoy_cmake(
++# Use pre-installed system libmaxminddb (net/libmaxminddb)
++alias(
+     name = "maxmind",
+-    build_args = select({
+-        "//bazel/foreign_cc:parallel_builds_enabled": ["-j"],
+-        "//bazel:engflow_rbe_x86_64": ["-j"],
+-        "//bazel:engflow_rbe_aarch64": ["-j"],
+-        "//conditions:default": ["-j1"],
+-    }),
+-    cache_entries = {
+-        "CMAKE_BUILD_TYPE": "Release",
+-        "CMAKE_INSTALL_LIBDIR": "lib",
+-        "CMAKE_CXX_COMPILER_FORCED": "on",
+-        "BUILD_SHARED_LIBS": "off",
+-        "BUILD_TESTING": "off",
+-    },
+-    defines = ["MAXMIND_STATICLIB"],
+-    exec_properties = select({
+-        "//bazel:engflow_rbe_x86_64": {
+-            "Pool": "linux_x64_large",
+-        },
+-        "//bazel:engflow_rbe_aarch64": {
+-            "Pool": "linux_arm64_small",
+-        },
+-        "//conditions:default": {},
+-    }),
+-    generate_args = [
+-        "-G",
+-        "Ninja",
+-    ],
+-    lib_source = "@com_github_maxmind_libmaxminddb//:all",
+-    out_static_libs = ["libmaxminddb.a"],
+-    tags = ["skip_on_windows"],
++    actual = "@com_github_maxmind_libmaxminddb//:maxmind",
++    visibility = ["//visibility:public"],
+ )
+
+ envoy_cc_library(
+@@ -620,6 +593,7 @@
+     deps = select({
+         "//bazel:linux": [":maxmind"],
+         "//bazel:darwin_any": [":maxmind"],
++        "//bazel:freebsd": [":maxmind"],
+         "//conditions:default": [],
+     }),
+ )

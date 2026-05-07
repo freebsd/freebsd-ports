@@ -1,0 +1,32 @@
+--- BUILD.orig	2026-03-16 21:25:50 UTC
++++ BUILD
+@@ -2,7 +2,6 @@ load(
+     "@envoy//bazel:envoy_build_system.bzl",
+     "envoy_cc_binary",
+ )
+-load("@hedron_compile_commands//:refresh_compile_commands.bzl", "refresh_compile_commands")
+ load("@rules_foreign_cc//foreign_cc:configure.bzl", "configure_make")
+ 
+ package(default_visibility = ["//visibility:public"])
+@@ -11,6 +10,7 @@ envoy_cc_binary(
+     name = "envoy",
+     features = select({
+         "@platforms//os:macos": [],
++        "@platforms//os:freebsd": [],
+         "@envoy//bazel:asan_build": [],
+         "@envoy//bazel:tsan_build": [],
+         "//conditions:default": ["fully_static_link"],
+@@ -70,13 +70,4 @@ configure_make(
+         "@envoy//bazel:boringcrypto",
+         "@envoy//bazel:boringssl",
+     ],
+-)
+-
+-refresh_compile_commands(
+-    name = "refresh_compile_commands",
+-    exclude_headers = "external",
+-    targets = {
+-        "//:envoy": "",
+-        "//test/...": "",
+-    },
+ )
