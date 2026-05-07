@@ -155,6 +155,7 @@
     SUBDIR += drawing
     SUBDIR += drawio
     SUBDIR += drawpile
+    SUBDIR += drawy
     SUBDIR += drm-515-kmod
     SUBDIR += drm-61-kmod
     SUBDIR += drm-66-kmod
