@@ -1,6 +1,6 @@
---- setup.py.orig	2024-05-06 12:37:20 UTC
+--- setup.py.orig	2026-04-24 12:16:30 UTC
 +++ setup.py
-@@ -373,7 +373,7 @@ readme = open('README.rst', encoding="utf-8").read()
+@@ -422,7 +422,7 @@ readme = open('README.rst', encoding="utf-8").read()
  
  readme = open('README.rst', encoding="utf-8").read()
  
