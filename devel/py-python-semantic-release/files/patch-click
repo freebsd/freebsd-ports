@@ -1,0 +1,15 @@
+Upstream PR: https://github.com/python-semantic-release/python-semantic-release/pull/1411
+
+--- src/semantic_release/cli/commands/main.py.orig	2026-03-03 15:33:16 UTC
++++ src/semantic_release/cli/commands/main.py
+@@ -30,8 +30,8 @@ LOG_LEVELS = [
+ ]
+ 
+ 
+-class Cli(click.MultiCommand):
+-    """Root MultiCommand for the semantic-release CLI"""
++class Cli(click.Group):
++    """Root Group for the semantic-release CLI"""
+ 
+     class SubCmds(Enum):
+         """Subcommand import definitions"""

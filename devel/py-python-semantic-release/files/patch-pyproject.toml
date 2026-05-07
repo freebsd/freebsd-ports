@@ -9,7 +9,13 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -32,12 +32,12 @@ dependencies = [
+@@ -27,17 +27,17 @@ dependencies = [
+   { name = "codejedi365", email = "codejedi365@gmail.com" },
+ ]
+ dependencies = [
+-  "click ~= 8.1.0",
++  "click ~= 8.3.0",
+   "click-option-group ~= 0.5",
    "gitpython ~= 3.0",
    "requests ~= 2.25",
    "jinja2 ~= 3.1",
