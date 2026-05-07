@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}  # see Makefile.version
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -58,7 +58,6 @@ PLIST_SUB=		ABI=${ABIFLAGS} \
 
 OPTIONS_DEFINE=		DEBUG IPV6 LIBMPDEC LTO NLS PYMALLOC
 OPTIONS_DEFAULT=	LIBMPDEC LTO PYMALLOC
-OPTIONS_EXCLUDE_powerpc64=	LTO
 OPTIONS_EXCLUDE_riscv64=	LTO
 OPTIONS_RADIO=		HASH
 OPTIONS_RADIO_HASH=	FNV SIPHASH
@@ -107,10 +106,6 @@ PLIST_FILES+=	bin/python${PYTHON_VER}${ABIFLAGS} \
 		bin/python${PYTHON_VER}${ABIFLAGS}-config \
 		libdata/pkgconfig/python-${PYTHON_VER}${ABIFLAGS}.pc \
 		libdata/pkgconfig/python-${PYTHON_VER}${ABIFLAGS}-embed.pc
-.endif
-
-.if ${ARCH} == sparc64
-CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
 # See https://bugs.freebsd.org/115940 and https://bugs.freebsd.org/193650
