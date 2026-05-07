@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.19.7
+PORTVERSION=	3.19.8
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -42,6 +42,7 @@ MANPAGES=	android2po \
 		ini2po \
 		json2po \
 		md2po \
+		mdx2po \
 		moz2po \
 		mozlang2po \
 		odf2xliff \
@@ -58,6 +59,7 @@ MANPAGES=	android2po \
 		po2ini \
 		po2json \
 		po2md \
+		po2mdx \
 		po2moz \
 		po2mozlang \
 		po2odf \
