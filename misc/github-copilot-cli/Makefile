@@ -1,6 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	1.0.41-0
-PORTEPOCH=	1
+DISTVERSION=	1.0.43
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}-x # -x is to see if it would fix checksum errors
@@ -153,6 +152,15 @@ post-patch:
 	${REINPLACE_CMD} -i '' \
 		-e 's|qg.default.createElement(U,{color:e.MUTED},"v",t)|qg.default.createElement(U,{color:e.MUTED},"v","${PORTVERSION}")|g' \
 		${WRKSRC}/node_modules/@github/copilot/index.js
+	# keytar bundles node-addon-api 4.3.0, whose napi.h initializes
+	# TypedArray::unknown_array_type with static_cast<napi_typedarray_type>(-1).
+	# Clang 16+ (FreeBSD 16-CURRENT) rejects this as "not a constant expression"
+	# because -1 falls outside the valid range [0,15] of the enum.
+	# Adding 'inline' makes it a C++17 inline static data member whose
+	# initialiser is no longer required to be a constant expression.
+	@${REINPLACE_CMD} -i '' \
+		-e "s/static const napi_typedarray_type unknown_array_type = /static inline const napi_typedarray_type unknown_array_type = /" \
+		${WRKSRC}/../keytar-${dep_keytar_version}/node_modules/keytar/node_modules/node-addon-api/napi.h
 
 do-build:
 	# Create directory for FreeBSD prebuilds

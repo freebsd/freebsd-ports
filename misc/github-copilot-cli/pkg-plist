@@ -32,7 +32,77 @@ lib/node_modules/@github/copilot/definitions/rubber-duck.agent.yaml
 lib/node_modules/@github/copilot/definitions/sidekick/github-context.yaml
 lib/node_modules/@github/copilot/definitions/sidekick/subconscious-agent.yaml
 lib/node_modules/@github/copilot/definitions/task.agent.yaml
+lib/node_modules/@github/copilot/foundry-local-sdk/index.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/deps_versions.json
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/catalog.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/configuration.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/coreInterop.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/model.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelLoadManager.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelVariant.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/foundryLocalManager.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/imodel.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/index.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/audioClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/chatClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTranscriptionClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTranscriptionTypes.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/responsesClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/types.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/LICENSE
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/adm-zip.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/headers/entryHeader.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/headers/index.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/headers/mainHeader.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/methods/deflater.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/methods/index.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/methods/inflater.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/methods/zipcrypto.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/util/constants.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/util/decoder.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/util/errors.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/util/fattr.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/util/index.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/util/utils.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/zipEntry.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/zipFile.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/script/install-utils.cjs
 lib/node_modules/@github/copilot/index.js
+lib/node_modules/@github/copilot/koffi/build/koffi/freebsd_arm64/koffi.node
+lib/node_modules/@github/copilot/koffi/build/koffi/freebsd_ia32/koffi.node
+lib/node_modules/@github/copilot/koffi/build/koffi/freebsd_%%NODE_ARCH%%/koffi.node
+lib/node_modules/@github/copilot/koffi/index.d.ts
+lib/node_modules/@github/copilot/koffi/index.js
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/ESRPClientLogs0505223422747.json
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/ESRPClientLogs0505224031447.json
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/bsi.cose
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/bsi.json
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/manifest.cat
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/manifest.spdx.cose
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/manifest.spdx.json
+lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/manifest.spdx.json.sha256
+lib/node_modules/@github/copilot/mxc-bin/arm64/lxc-exec
+lib/node_modules/@github/copilot/mxc-bin/arm64/winhttp-proxy-shim.exe
+lib/node_modules/@github/copilot/mxc-bin/arm64/wslcsdk.dll
+lib/node_modules/@github/copilot/mxc-bin/arm64/wxc-exec.exe
+lib/node_modules/@github/copilot/mxc-bin/arm64/wxc-test-proxy.exe
+lib/node_modules/@github/copilot/mxc-bin/arm64/wxc-windows-sandbox-daemon.exe
+lib/node_modules/@github/copilot/mxc-bin/arm64/wxc-windows-sandbox-guest.exe
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/ESRPClientLogs0505223425059.json
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/ESRPClientLogs0505224148037.json
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/bsi.cose
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/bsi.json
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/manifest.cat
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/manifest.spdx.cose
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/manifest.spdx.json
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/_manifest/spdx_2.2/manifest.spdx.json.sha256
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/lxc-exec
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/winhttp-proxy-shim.exe
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/wslcsdk.dll
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/wxc-exec.exe
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/wxc-test-proxy.exe
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/wxc-windows-sandbox-daemon.exe
+lib/node_modules/@github/copilot/mxc-bin/%%NODE_ARCH%%/wxc-windows-sandbox-guest.exe
 lib/node_modules/@github/copilot/node_modules/@img/sharp-freebsd-%%NODE_ARCH%%/sharp.node
 lib/node_modules/@github/copilot/npm-loader.js
 lib/node_modules/@github/copilot/npm-loader.js.orig
@@ -40,6 +110,27 @@ lib/node_modules/@github/copilot/prebuilds/freebsd-%%NODE_ARCH%%/keytar.node
 lib/node_modules/@github/copilot/prebuilds/freebsd-%%NODE_ARCH%%/pty.node
 lib/node_modules/@github/copilot/preloads/extension_bootstrap.mjs
 lib/node_modules/@github/copilot/preloads/extension_sdk_resolver.mjs
+lib/node_modules/@github/copilot/pvrecorder/index.js
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/errors.js
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/errors.js.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/index.js
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/index.js.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/platforms.js
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/platforms.js.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/pv_recorder.js
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/pv_recorder.js.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/pv_recorder_status_t.js
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/pv_recorder_status_t.js.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/errors.d.ts
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/errors.d.ts.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/index.d.ts
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/index.d.ts.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/platforms.d.ts
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/platforms.d.ts.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder.d.ts
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder.d.ts.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder_status_t.d.ts
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder_status_t.d.ts.map
 lib/node_modules/@github/copilot/queries/bash-highlights.scm
 lib/node_modules/@github/copilot/queries/c-highlights.scm
 lib/node_modules/@github/copilot/queries/cpp-highlights.scm
@@ -99,5 +190,17 @@ lib/node_modules/@github/copilot/tree-sitter-scala.wasm
 lib/node_modules/@github/copilot/tree-sitter-tsx.wasm
 lib/node_modules/@github/copilot/tree-sitter-typescript.wasm
 lib/node_modules/@github/copilot/tree-sitter.wasm
+lib/node_modules/@github/copilot/voice-foundry.worker.js
+lib/node_modules/@github/copilot/voice-installer.worker.js
+lib/node_modules/@github/copilot/voice-mic.worker.js
 lib/node_modules/@github/copilot/worker/conoutSocketWorker.js
+@dir lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/prebuilds
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/musl_arm64
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/musl_%%NODE_ARCH%%
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/openbsd_ia32
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/openbsd_%%NODE_ARCH%%
+@dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/mac/arm64
+@dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/mac/x86_64
+@dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/amd64
+@dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/arm64
 @dir lib/node_modules/@github/copilot/ripgrep/bin
