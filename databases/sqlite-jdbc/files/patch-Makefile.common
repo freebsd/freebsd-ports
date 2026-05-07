@@ -1,20 +1,5 @@
 --- Makefile.common.orig	2026-04-14 03:25:20 UTC
 +++ Makefile.common
-@@ -12,13 +12,12 @@ OSINFO_PROG := lib/org/sqlite/util/OSInfo.class
- SRC:=src/main/java
- OSINFO_CLASS := org.sqlite.util.OSInfo
- OSINFO_PROG := lib/org/sqlite/util/OSInfo.class
--JAVA_CLASSPATH:=$(TARGET)/classpath/slf4j-api.jar
-+JAVA_CLASSPATH?=$(TARGET)/classpath/slf4j-api.jar
- 
- ## building OSInfo.java
- ifeq ("$(wildcard $(OSINFO_PROG))","")
- $(info Building OSInfo tool)
- $(shell mkdir -p $(TARGET)/classpath)
--$(shell curl -L -f -o$(JAVA_CLASSPATH) https://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar)
- $(shell $(JAVAC) -cp $(JAVA_CLASSPATH) -sourcepath $(SRC) -d lib src/main/java/org/sqlite/util/OSInfo.java)
- endif
- 
 @@ -155,23 +154,23 @@ DragonFly-x86_64_SQLITE_FLAGS  :=
  DragonFly-x86_64_LIBNAME   := libsqlitejdbc.so
  DragonFly-x86_64_SQLITE_FLAGS  :=

@@ -1,5 +1,5 @@
-TIMESTAMP = 1777227359
-SHA256 (sqlite-jdbc-3.53.0.0-without-natives.jar) = 8098b34191dd832a112934e12087e0d430b7e9ae93aee7c155e06f82866b1b2b
-SIZE (sqlite-jdbc-3.53.0.0-without-natives.jar) = 247330
-SHA256 (xerial-sqlite-jdbc-3.53.0.0_GH0.tar.gz) = 3bdb37d04ec817dc68e4911149d1b3ebe5b7ca419b550dc56b91d01a4f396952
-SIZE (xerial-sqlite-jdbc-3.53.0.0_GH0.tar.gz) = 18548916
+TIMESTAMP = 1778178527
+SHA256 (sqlite-jdbc-3.53.1.0-without-natives.jar) = 7b8d5d0d6f5c484e834e2577a8b5ecebeae8a499be1bd83ca8e2a429a4dfe777
+SIZE (sqlite-jdbc-3.53.1.0-without-natives.jar) = 247414
+SHA256 (xerial-sqlite-jdbc-3.53.1.0_GH0.tar.gz) = c73538bcfdd6aa79861ac1a712137da6f16b9be053b03f64030f4c6aa7c6c023
+SIZE (xerial-sqlite-jdbc-3.53.1.0_GH0.tar.gz) = 18551112
