@@ -1,6 +1,6 @@
 PORTNAME=	netgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.2603
+DISTVERSION=	6.2.2604
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/alexxy/netgen/commit/
