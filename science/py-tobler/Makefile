@@ -1,6 +1,6 @@
 PORTNAME=	tobler
 PORTVERSION=	0.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geopandas>=1.0:graphics/py-geopandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}joblib>=1.4:devel/py-joblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libpysal>=4.10:science/py-libpysal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.2,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rasterio>=1.4:graphics/py-rasterio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rasterstats>=0.20:graphics/py-rasterstats@${PY_FLAVOR} \
