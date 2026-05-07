@@ -5285,4 +5285,5 @@ graphics/drm-510-kmod||2026-05-05|Removed, is only for FreeBSD 13
 graphics/nvidia-drm-510-kmod||2026-05-05|Removed, is only for FreeBSD 13
 graphics/nvidia-drm-510-kmod-580||2026-05-05|Removed, is only for FreeBSD 13
 graphics/nvidia-drm-510-kmod-devel||2026-05-05|Removed, is only for FreeBSD 13
-mail/archiveopteryx-devel|mail/archiveopteryx|2026-05-06|Remove obsoleted port. Use mail/archiveopteryx instead.
+mail/archiveopteryx-devel|mail/archiveopteryx|2026-05-06|Remove obsoleted port. Use mail/archiveopteryx instead
+devel/kyua||2026-05-07|Removed, kyua from base must be used for FreeBSD 14.x and newer
