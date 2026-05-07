@@ -1,0 +1,19 @@
+--- Makefile.orig	2026-05-07 15:14:30 UTC
++++ Makefile
+@@ -21,11 +21,11 @@ LIBADD+=	m
+ CFLAGS+=-Dmain=ls_main -I${SRCTOP}/bin/ls
+ LIBADD+=	m
+ 
+-.if ${MK_BLOCKLIST_SUPPORT} != "no"
+-CFLAGS+= -DUSE_BLOCKLIST -I${SRCTOP}/contrib/blocklist/include
+-SRCS+= blocklist.c
+-LIBADD+= blocklist
+-LDFLAGS+=-L${LIBBLOCKLISTDIR}
++.if ${MK_BLACKLIST_SUPPORT} != "no"
++CFLAGS+= -DUSE_BLACKLIST -I${SRCTOP}/contrib/blacklist/include
++SRCS+= blacklist.c
++LIBADD+= blacklist
++LDFLAGS+=-L${LIBBLACKLISTDIR}
+ .endif
+ 
+ .if ${MK_INET6_SUPPORT} != "no"
