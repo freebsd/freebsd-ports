@@ -4849,6 +4849,7 @@
     SUBDIR += py-datadog
     SUBDIR += py-dataflows-tabulator
     SUBDIR += py-datapackage
+    SUBDIR += py-datashape
     SUBDIR += py-datasette
     SUBDIR += py-datatest
     SUBDIR += py-dateparser
