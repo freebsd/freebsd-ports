@@ -1,6 +1,7 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 DISTVERSION=	3.50.1
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -24,7 +25,6 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfltk.so:x11-toolkits/fltk \
 		libcpptest.so:devel/cpptest
-MAKE_JOBS_UNSAFE=yes
 
 USES=		cmake:noninja localbase \
 		gl gnome jpeg xorg
@@ -38,7 +38,6 @@ USES+=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	${GH_PROJECT}
 GH_PROJECT=	OpenVSP
-BINARY_ALIAS=	fltk::fluid=fluid
 
 USE_GL=		gl glew glu
 USE_GNOME=	libxml2
@@ -60,7 +59,11 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 
 BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenVSP-${DISTVERSION}-FreeBSD
 
+MAKE_JOBS_UNSAFE=yes
+
 CXXFLAGS_powerpc64=	-mvsx
+
+BINARY_ALIAS=	fltk::fluid=fluid
 
 post-patch:
 	@${REINPLACE_CMD} 's/fltk::gl/fltk_gl/' ${WRKSRC}/src/CMakeLists.txt \
