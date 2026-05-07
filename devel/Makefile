@@ -4540,6 +4540,7 @@
     SUBDIR += py-azure-mgmt-cdn
     SUBDIR += py-azure-mgmt-cognitiveservices
     SUBDIR += py-azure-mgmt-compute
+    SUBDIR += py-azure-mgmt-compute34
     SUBDIR += py-azure-mgmt-consumption
     SUBDIR += py-azure-mgmt-containerinstance
     SUBDIR += py-azure-mgmt-containerregistry
