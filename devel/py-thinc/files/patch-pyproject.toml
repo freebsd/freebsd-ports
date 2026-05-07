@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	2024-09-12 19:54:11 UTC
 +++ pyproject.toml
-@@ -1,13 +1,13 @@ requires = [
+@@ -1,11 +1,11 @@ requires = [
  [build-system]
  requires = [
      "setuptools",
@@ -10,11 +10,7 @@
      "cymem>=2.0.2,<2.1.0",
      "preshed>=3.0.2,<3.1.0",
 -    "blis>=1.0.0,<1.1.0",
--    "numpy>=2.0.0,<3.0.0; python_version < '3.9'",
--    "numpy>=2.0.0,<3.0.0; python_version >= '3.9'",
 +    "blis>=1.0.0,<1.4.0",
-+    "numpy>=0,<3.0.0; python_version < '3.9'",
-+    "numpy>=0,<3.0.0; python_version >= '3.9'",
+     "numpy>=2.0.0,<3.0.0; python_version < '3.9'",
+     "numpy>=2.0.0,<3.0.0; python_version >= '3.9'",
  ]
- build-backend = "setuptools.build_meta"
- 
