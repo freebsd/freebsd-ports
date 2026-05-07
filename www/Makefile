@@ -525,6 +525,7 @@
     SUBDIR += npm-node22
     SUBDIR += npm-node24
     SUBDIR += npm-node25
+    SUBDIR += npm-node26
     SUBDIR += nyxt
     SUBDIR += oatpp
     SUBDIR += oauth2-proxy
