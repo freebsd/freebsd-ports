@@ -516,6 +516,7 @@
     SUBDIR += node22
     SUBDIR += node24
     SUBDIR += node25
+    SUBDIR += node26
     SUBDIR += nostromo
     SUBDIR += novnc
     SUBDIR += npc
