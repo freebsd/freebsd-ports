@@ -1,6 +1,6 @@
 PORTNAME=	cloudflare-speed-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.7
+DISTVERSION=	0.6.8
 CATEGORIES=	net
 
 MAINTAINER=	meta@FreeBSD.org
@@ -34,7 +34,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		aws-lc-rs-1.15.4 \
 		aws-lc-sys-0.37.0 \
 		base64-0.22.1 \
-		bitflags-2.10.0 \
+		bitflags-2.11.1 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
 		bumpalo-3.19.1 \
@@ -56,6 +56,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		compact_str-0.8.1 \
 		compression-codecs-0.4.36 \
 		compression-core-0.4.31 \
+		core-foundation-0.10.1 \
+		core-foundation-sys-0.8.7 \
 		crc32fast-1.5.0 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
@@ -157,6 +159,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-io-surface-0.3.2 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
+		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -198,11 +201,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-0.38.44 \
 		rustix-1.1.3 \
 		rustls-0.23.36 \
+		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
 		rustls-webpki-0.103.9 \
 		rustversion-1.0.22 \
 		ryu-1.0.22 \
+		schannel-0.1.29 \
 		scopeguard-1.2.0 \
+		security-framework-3.7.0 \
+		security-framework-sys-2.17.0 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
