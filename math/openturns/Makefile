@@ -60,11 +60,8 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=${LOCALBASE}/lib/libopenblas.so \
 		-DOPENTURNS_EXAMPLE_PATH:STRING=share/examples/openturns \
 		-DOPENTURNS_DOC_PATH:STRING=share/doc/openturns
-CMAKE_OFF=	USE_DOXYGEN USE_SPHINX
-CMAKE_OFF+=	USE_HMAT # broken with hmat-oss-1.7.1: https://github.com/openturns/openturns/issues/1868
-CMAKE_OFF+=	USE_CERES # ceres-solver-2.2.0 fails to be found by cmake, see https://github.com/ceres-solver/ceres-solver/issues/1023
 
-TEST_TARGET=	check # 10 tests are known to fail: https://github.com/openturns/openturns/issues/1919
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=		PYTHON EXAMPLES
 OPTIONS_DEFAULT=	PYTHON
