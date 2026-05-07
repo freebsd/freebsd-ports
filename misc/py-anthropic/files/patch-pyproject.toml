@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2025-08-24 08:31:41 UTC
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -65,7 +65,7 @@ dev-dependencies = [
+@@ -95,7 +95,7 @@ pydantic-v2 = [
  ]
  
  [build-system]
