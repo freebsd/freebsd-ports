@@ -25,8 +25,8 @@ PLIST_FILES=	"@sample %%ETCDIR%%.conf.sample" \
 		libexec/bitcoin-node \
 		share/man/man1/bitcoind.1.gz
 
-OPTIONS_DEFINE=		DEBUG HARDENING TESTS WALLET ZMQ
-OPTIONS_DEFAULT=	HARDENING WALLET ZMQ
+OPTIONS_DEFINE=		DEBUG TESTS WALLET ZMQ
+OPTIONS_DEFAULT=	WALLET ZMQ
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bitcoin.conf ${STAGEDIR}${PREFIX}/etc/bitcoin.conf.sample
