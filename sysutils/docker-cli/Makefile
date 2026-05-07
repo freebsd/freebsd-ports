@@ -1,4 +1,4 @@
-PORTNAME=		docker
+PORTNAME=		docker-cli
 PORTVERSION=		29.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
