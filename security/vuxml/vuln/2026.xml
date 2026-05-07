@@ -1,3 +1,44 @@
+  <vuln vid="67e31a04-49fa-11f1-9b23-b42e991fc52e">
+    <topic>MongoDB Server -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.21</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-119981 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-119981">
+	<ul>
+	    <li>
+	    Computing the MD5 checksum of a malformed BSON object
+	    under specific conditions may cause loss of availability
+	    in MongoDB server.
+	    </li>
+	    <li>
+	    An authorization flaw in the user management command
+	    could allow an authenticated user to make limited
+	    changes to authentication-related data associated with
+	    another user account. This could affect how
+	    authentication is performed for the impacted account.
+	    </li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6914</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-6914</url>
+      <cvename>CVE-2026-6915</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-6915</url>
+    </references>
+    <dates>
+      <discovery>2026-04-29</discovery>
+      <entry>2026-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b5d6fbb-4893-11f1-82bf-3c7c3fba4204">
     <topic>devel/ocaml-opam -- CWE-24 Path Traversal: '../filedir'</topic>
     <affects>
