@@ -159,6 +159,11 @@ UUCP_RNEWS_CONFIGURE_ENABLE=	uucp-rnews
 EXPERIMENTAL_PATCH_SITES=	https://github.com/InterNetNews/inn/commit/
 EXPERIMENTAL_PATCHFILES=	cf4a8ecac2f3149505f9a55cdd95383e9b3f725b.patch:-p1 \
 				0d84255b417c89219225f0a034fd4c068d9749a0.patch:-p1 \
+				05d70a17c5720be25fcd957c8ab7a0c12a64d30b.patch:-p1 \
+				0b308fdd3f6255e8c81a3deaf1bad08cb1fe8f1d.patch:-p1 \
+				755ab163eb124658959a8e4168732e6a7f7dc300.patch:-p1 \
+				d23b3f84aebe3fb49af0b42b7cfaa7a7ebae5a26.patch:-p1 \
+				919cf653b54c72ef4bf1563f3fb6bbdf9a193a3a.patch:-p1 \
 				93a36682f7ba9d013d07859882c2b8c501da249e.patch:-p1 \
 				d0c379ee3f325f4a80dada6c3129c23496b1c83e.patch:-p1
 EXPERIMENTAL_PLIST_SUB=		EXPERIMENTAL=""
