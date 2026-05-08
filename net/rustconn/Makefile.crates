@@ -207,7 +207,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		gtk4-0.11.3 \
 		gtk4-macros-0.11.0 \
 		gtk4-sys-0.11.3 \
-		h2-0.4.13 \
+		h2-0.4.14 \
 		half-2.7.1 \
 		hash32-0.2.1 \
 		hashbrown-0.15.5 \
@@ -254,7 +254,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		io-lifetimes-2.0.4 \
 		ipconfig-0.3.4 \
 		ipnet-2.12.0 \
-		iri-string-0.7.12 \
 		ironrdp-0.14.0 \
 		ironrdp-async-0.8.0 \
 		ironrdp-cliprdr-0.5.0 \
@@ -284,10 +283,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		jpeg-decoder-0.3.2 \
-		js-sys-0.3.97 \
+		js-sys-0.3.98 \
 		keccak-0.2.0-rc.0 \
 		kqueue-1.1.1 \
-		kqueue-sys-1.0.4 \
+		kqueue-sys-1.1.0 \
 		ksni-0.3.4 \
 		kurbo-0.13.0 \
 		lazy_static-1.5.0 \
@@ -355,10 +354,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		open-5.3.4 \
-		openssl-0.10.78 \
+		openssl-0.10.79 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.114 \
+		openssl-sys-0.9.115 \
 		option-ext-0.2.0 \
 		ordered-stream-0.2.0 \
 		owo-colors-4.3.0 \
@@ -415,7 +414,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pxfm-0.1.29 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
-		quick-xml-0.39.2 \
+		quick-xml-0.39.3 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -431,7 +430,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rayon-core-1.13.0 \
 		rc2-0.9.0-pre.0 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.4 \
+		redox_syscall-0.7.5 \
 		redox_users-0.5.2 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
@@ -445,7 +444,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		roff-1.1.1 \
 		roxmltree-0.20.0 \
 		roxmltree-0.21.1 \
-		rpassword-7.5.1 \
+		rpassword-7.5.2 \
 		rsa-0.9.10 \
 		rsa-0.10.0-rc.9 \
 		rtoolbox-0.0.5 \
@@ -478,7 +477,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml_ng-0.10.0 \
-		serdect-0.4.2 \
+		serdect-0.4.3 \
 		sha1-0.10.6 \
 		sha1-0.11.0-rc.2 \
 		sha2-0.10.9 \
@@ -493,7 +492,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		signature-3.0.0-rc.4 \
 		simd-adler32-0.3.9 \
 		simplecss-0.2.2 \
-		siphasher-1.0.2 \
+		siphasher-1.0.3 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		slug-0.1.6 \
@@ -537,7 +536,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinyvec_macros-0.1.1 \
 		tls_codec-0.4.2 \
 		tls_codec_derive-0.4.2 \
-		tokio-1.52.1 \
+		tokio-1.52.2 \
 		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.4 \
@@ -549,7 +548,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_parser-1.1.2+spec-1.1.0 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tower-0.5.3 \
-		tower-http-0.6.8 \
+		tower-http-0.6.10 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
@@ -570,6 +569,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-ident-1.0.24 \
 		unicode-properties-0.1.4 \
 		unicode-script-0.5.8 \
+		unicode-segmentation-1.13.2 \
 		unicode-vo-0.1.0 \
 		unicode-xid-0.2.6 \
 		universal-hash-0.6.0-rc.2 \
@@ -593,16 +593,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.120 \
-		wasm-bindgen-futures-0.4.70 \
-		wasm-bindgen-macro-0.2.120 \
-		wasm-bindgen-macro-support-0.2.120 \
-		wasm-bindgen-shared-0.2.120 \
+		wasm-bindgen-0.2.121 \
+		wasm-bindgen-futures-0.4.71 \
+		wasm-bindgen-macro-0.2.121 \
+		wasm-bindgen-macro-support-0.2.121 \
+		wasm-bindgen-shared-0.2.121 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.97 \
+		web-sys-0.3.98 \
 		weezl-0.1.12 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
@@ -691,6 +691,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15 \
-		zvariant-5.10.1 \
-		zvariant_derive-5.10.1 \
+		zvariant-5.11.0 \
+		zvariant_derive-5.11.0 \
 		zvariant_utils-3.3.1
