@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	11.4.1
+DISTVERSION=	12.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/Limine-Bootloader/Limine/releases/download/v${DISTVERSION}/
 
