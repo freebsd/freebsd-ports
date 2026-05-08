@@ -9,3 +9,16 @@
               statbuf.st_mtimespec.tv_nsec / 1000000;
    }
  }
+@@ -152,6 +152,12 @@ int portable_cpu_speed() {
+ int portable_cpu_speed() {
+   // Currently not implemented.
+   return -1;
++}
++
++extern "C" JNIEXPORT void JNICALL
++Java_com_google_devtools_build_lib_profiler_SystemNetworkStats_getNetIoCountersNative(
++    JNIEnv *env, jclass clazz, jobject counters_list) {
++  // Currently not implemented.
+ }
+ 
+ }  // namespace blaze_jni
