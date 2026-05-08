@@ -1,6 +1,7 @@
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
