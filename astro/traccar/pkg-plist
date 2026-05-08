@@ -323,9 +323,7 @@ traccar/lib/woodstox-core-7.0.0.jar
 traccar/lib/xmlbeans-5.0.3.jar
 traccar/lib/zstd-jni-1.5.6-10.jar
 traccar/schema/changelog-6.13.0.xml
-traccar/web/assets/index-Bqy9ERXP.js
 traccar/web/assets/index-Dpy-g0Ki.css
-traccar/web/assets/workbox-window.prod.es5-Bq4GJJid.js
 traccar/schema/changelog-4.0-clean.xml
 traccar/schema/changelog-4.1.xml
 traccar/schema/changelog-4.10.xml
@@ -608,6 +606,39 @@ traccar/templates/notifications/tr/queuedCommandSent.vm
 traccar/templates/notifications/tr/scheduledReport.vm
 traccar/templates/notifications/tr/userExpiration.vm
 traccar/templates/notifications/tr/userExpirationReminder.vm
+traccar/templates/notifications/de/proximityEnter.vm
+traccar/templates/notifications/de/proximityExit.vm
+traccar/templates/notifications/de/unaccompaniedMotion.vm
+traccar/templates/notifications/el/proximityEnter.vm
+traccar/templates/notifications/el/proximityExit.vm
+traccar/templates/notifications/el/unaccompaniedMotion.vm
+traccar/templates/notifications/en/proximityEnter.vm
+traccar/templates/notifications/en/proximityExit.vm
+traccar/templates/notifications/en/unaccompaniedMotion.vm
+traccar/templates/notifications/es/proximityEnter.vm
+traccar/templates/notifications/es/proximityExit.vm
+traccar/templates/notifications/es/unaccompaniedMotion.vm
+traccar/templates/notifications/fr/proximityEnter.vm
+traccar/templates/notifications/fr/proximityExit.vm
+traccar/templates/notifications/fr/unaccompaniedMotion.vm
+traccar/templates/notifications/it/proximityEnter.vm
+traccar/templates/notifications/it/proximityExit.vm
+traccar/templates/notifications/it/unaccompaniedMotion.vm
+traccar/templates/notifications/pl/proximityEnter.vm
+traccar/templates/notifications/pl/proximityExit.vm
+traccar/templates/notifications/pl/unaccompaniedMotion.vm
+traccar/templates/notifications/pt_BR/proximityEnter.vm
+traccar/templates/notifications/pt_BR/proximityExit.vm
+traccar/templates/notifications/pt_BR/unaccompaniedMotion.vm
+traccar/templates/notifications/ru/proximityEnter.vm
+traccar/templates/notifications/ru/proximityExit.vm
+traccar/templates/notifications/ru/unaccompaniedMotion.vm
+traccar/templates/notifications/tr/proximityEnter.vm
+traccar/templates/notifications/tr/proximityExit.vm
+traccar/templates/notifications/tr/unaccompaniedMotion.vm
+traccar/web/assets/index-mpix2PMe.js
+traccar/web/assets/workbox-window.prod.es5-Cch4wiA5.js
+traccar/web/workbox-2fbc6a65.js
 traccar/templates/translations/af.json
 traccar/templates/translations/ar.json
 traccar/templates/translations/az.json
@@ -682,7 +713,6 @@ traccar/web/sw.js
 traccar/web/apple-touch-icon-180x180.png
 traccar/web/assets/alarm-DM0YUa2r.mp3
 traccar/web/favicon.ico
-traccar/web/workbox-1ef09536.js
 traccar/web/node_modules/@mapbox/mapbox-gl-rtl-text/dist/mapbox-gl-rtl-text.js
 @dir(traccar,traccar,0750) %%ETCDIR%%
 @dir(traccar,traccar,0750) %%TRACCAR_DATADIR%%
