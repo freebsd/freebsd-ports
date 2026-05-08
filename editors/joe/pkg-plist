@@ -46,6 +46,7 @@ share/applications/jstar.desktop
 %%DATADIR%%/syntax/awk.jsf
 %%DATADIR%%/syntax/batch.jsf
 %%DATADIR%%/syntax/c.jsf
+%%DATADIR%%/syntax/classic_pascal.jsf
 %%DATADIR%%/syntax/clojure.jsf
 %%DATADIR%%/syntax/cobol.jsf
 %%DATADIR%%/syntax/coffee.jsf
@@ -57,6 +58,7 @@ share/applications/jstar.desktop
 %%DATADIR%%/syntax/css.jsf
 %%DATADIR%%/syntax/d.jsf
 %%DATADIR%%/syntax/debian.jsf
+%%DATADIR%%/syntax/debian_changelog.jsf
 %%DATADIR%%/syntax/diff.jsf
 %%DATADIR%%/syntax/dockerfile.jsf
 %%DATADIR%%/syntax/elixir.jsf
@@ -110,6 +112,7 @@ share/applications/jstar.desktop
 %%DATADIR%%/syntax/spec.jsf
 %%DATADIR%%/syntax/sql.jsf
 %%DATADIR%%/syntax/swift.jsf
+%%DATADIR%%/syntax/systemverilog.jsf
 %%DATADIR%%/syntax/tcl.jsf
 %%DATADIR%%/syntax/tex.jsf
 %%DATADIR%%/syntax/troff.jsf

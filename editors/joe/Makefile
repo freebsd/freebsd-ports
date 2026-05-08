@@ -1,26 +1,23 @@
 PORTNAME=	joe
-PORTVERSION=	4.6
-PORTREVISION=	1
+DISTVERSION=	4.8
 PORTEPOCH=	1
 CATEGORIES?=	editors
-MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
+MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${DISTVERSION}
 
-MAINTAINER=	juergen.gotteswinter@googlemail.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Joe's Own Editor
 WWW=		https://sourceforge.net/projects/joe-editor/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	jupp
-
-USES=		gmake iconv localbase ncurses
+USES=		desktop-file-utils gmake iconv ncurses
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	SPELL=aspell
-LIBS+=		${ICONV_LIB}
 
 ALL_TARGET=	${PORTNAME}
+
+CONFLICTS=	jupp
 
 OPTIONS_DEFINE=	ASPELL DOCS
 
