@@ -1,6 +1,5 @@
 PORTNAME=	ossia-score # uses -mcx16
-DISTVERSION=	3.8.0
-PORTREVISION=	1
+DISTVERSION=	3.8.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/ossia/score/releases/download/v${DISTVERSION}/
 DISTFILES=	ossia.score-${DISTVERSION}-src${EXTRACT_SUFX}
@@ -68,8 +67,9 @@ CXXFLAGS+=	-fexperimental-library # to fix libossia/src/ossia/detail/jthread.hpp
 #		lib/libkfr_dsp_sse41.a
 #.endif
 
-post-install: # workaaround for https://github.com/ossia/score/issues/1977: ossia-score installs many projects that it depends on: Eigen, xtensor, xtl, xsimd
+post-install: # workaaround for https://github.com/ossia/score/issues/1977: ossia-score installs many projects that it depends on: Eigen, xtensor, xtl, xsimd, and https://github.com/ossia/score/issues/2047
 	@${RM} -r \
+		${STAGEDIR}${LOCALBASE}/etc \
 		${STAGEDIR}${LOCALBASE}/include \
 		${STAGEDIR}${LOCALBASE}/lib \
 		${STAGEDIR}${LOCALBASE}/share
