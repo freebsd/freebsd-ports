@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing.cc.orig	2026-04-09 06:05:42 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing.cc.orig	2026-05-07 17:02:56 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing.cc
-@@ -52,7 +52,7 @@
+@@ -55,7 +55,7 @@
  #include "ui/gl/gl_version_info.h"
  #include "ui/gl/scoped_binders.h"
  
@@ -9,7 +9,7 @@
  #include "gpu/command_buffer/service/shared_image/external_vk_image_dawn_representation.h"
  #if BUILDFLAG(DAWN_ENABLE_BACKEND_OPENGLES)
  #include "gpu/command_buffer/service/shared_image/dawn_gl_texture_representation.h"
-@@ -734,7 +734,7 @@ std::unique_ptr<DawnImageRepresentation> ExternalVkIma
+@@ -775,7 +775,7 @@ std::unique_ptr<DawnImageRepresentation> ExternalVkIma
      wgpu::BackendType backend_type,
      std::vector<wgpu::TextureFormat> view_formats,
      scoped_refptr<SharedContextState> context_state) {

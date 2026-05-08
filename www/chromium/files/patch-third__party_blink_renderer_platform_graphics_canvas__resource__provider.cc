@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/canvas_resource_provider.cc.orig	2026-04-09 06:05:42 UTC
+--- third_party/blink/renderer/platform/graphics/canvas_resource_provider.cc.orig	2026-05-13 07:46:05 UTC
 +++ third_party/blink/renderer/platform/graphics/canvas_resource_provider.cc
-@@ -1243,7 +1243,7 @@ std::unique_ptr<T> CanvasResourceProvider::CreateShare
+@@ -1478,7 +1478,7 @@ std::unique_ptr<T> CanvasResourceProvider::CreateShare
            gpu::SHARED_IMAGE_USAGE_CONCURRENT_READ_WRITE);
  #endif
  

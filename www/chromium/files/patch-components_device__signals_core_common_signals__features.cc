@@ -1,6 +1,6 @@
---- components/device_signals/core/common/signals_features.cc.orig	2026-01-14 08:33:23 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2026-05-07 17:02:56 UTC
 +++ components/device_signals/core/common/signals_features.cc
-@@ -63,7 +63,7 @@ bool IsPolicyDataCollectionEnabled() {
+@@ -54,7 +54,7 @@ bool IsPolicyDataCollectionEnabled() {
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

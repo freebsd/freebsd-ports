@@ -1,4 +1,4 @@
---- ui/accessibility/ax_tree.cc.orig	2026-02-11 09:05:39 UTC
+--- ui/accessibility/ax_tree.cc.orig	2026-05-07 17:02:56 UTC
 +++ ui/accessibility/ax_tree.cc
 @@ -699,7 +699,7 @@ struct AXTreeUpdateState {
    // (crrev.com/c/2892259).
@@ -36,7 +36,7 @@
    if (update_state.should_clear_extra_announcement_nodes) {
      ClearExtraAnnouncementNodes();
    }
-@@ -2186,7 +2186,7 @@ void AXTree::NotifyNodeAttributesWillChange(
+@@ -2198,7 +2198,7 @@ void AXTree::NotifyNodeAttributesWillChange(
                      new_data);
  }
  
@@ -45,7 +45,7 @@
  void AXTree::ClearExtraAnnouncementNodes() {
    if (!extra_announcement_nodes_) {
      return;
-@@ -2587,7 +2587,7 @@ bool AXTree::CreateNewChildVector(
+@@ -2599,7 +2599,7 @@ bool AXTree::CreateNewChildVector(
      AXTreeUpdateState* update_state) {
    DCHECK(GetTreeUpdateInProgressState());
    bool success = true;

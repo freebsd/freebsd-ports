@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/unix_socket.cc.orig	2026-04-09 06:05:42 UTC
+--- third_party/perfetto/src/base/unix_socket.cc.orig	2026-05-07 17:02:56 UTC
 +++ third_party/perfetto/src/base/unix_socket.cc
-@@ -1071,9 +1071,15 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+@@ -1073,9 +1073,15 @@ void UnixSocket::ReadPeerCredentialsPosix() {
    ignore_result(peer_gid);
    PERFETTO_CHECK(res == 0);
    // There is no pid when obtaining peer credentials for QNX

@@ -1,4 +1,4 @@
---- chrome/browser/ui/accelerator_table.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/ui/accelerator_table.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/ui/accelerator_table.cc
 @@ -73,11 +73,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
@@ -32,7 +32,7 @@
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -310,7 +310,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+@@ -312,7 +312,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
                           std::begin(kDevToolsAcceleratorMap),
                           std::end(kDevToolsAcceleratorMap));
  
