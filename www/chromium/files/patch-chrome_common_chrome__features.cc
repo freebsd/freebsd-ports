@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2026-04-16 08:18:50 UTC
+--- chrome/common/chrome_features.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/common/chrome_features.cc
-@@ -84,7 +84,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
+@@ -85,7 +85,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
  #endif  // BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Enables or disables the Autofill survey triggered by opening a prompt to
  // save address info.
  BASE_FEATURE(kAutofillAddressSurvey, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -227,7 +227,7 @@ BASE_FEATURE(kEnableFullscreenToAnyScreenAndroid,
+@@ -178,7 +178,7 @@ BASE_FEATURE(kEnableFullscreenToAnyScreenAndroid,
  // Enables the new reset banner on the settings page.
  BASE_FEATURE(kShowResetProfileBannerV2, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -18,7 +18,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -820,7 +820,7 @@ BASE_FEATURE(kGlicWarming, base::FEATURE_DISABLED_BY_D
+@@ -732,7 +732,7 @@ BASE_FEATURE(kGlicWarming, base::FEATURE_DISABLED_BY_D
  // Killswitch that controls whether the guest WebContents visibility state is
  // set to hidden when the Glic panel is warming.
  BASE_FEATURE(kGlicGuestContentsVisibilityState,
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1380,7 +1380,7 @@ BASE_FEATURE(kIsolatedWebAppManagedGuestSessionInstall
+@@ -1200,7 +1200,7 @@ BASE_FEATURE(kIsolatedWebAppManagedGuestSessionInstall
  BASE_FEATURE(kIsolatedWebAppBundleCache, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -36,7 +36,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1391,7 +1391,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1211,7 +1211,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

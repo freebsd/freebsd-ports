@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp.orig	2022-02-07 13:39:41 UTC
+--- third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp.orig	2026-05-07 17:02:56 UTC
 +++ third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp
-@@ -144,10 +144,10 @@ bool FunctionsGLX::initialize(Display *xDisplay, int s
+@@ -153,10 +153,10 @@ bool FunctionsGLX::initialize(Display *xDisplay, int s
      // which a GLXWindow was ever created.
      if (!sLibHandle)
      {

@@ -1,4 +1,4 @@
---- chrome/browser/global_features.cc.orig	2026-04-09 06:05:42 UTC
+--- chrome/browser/global_features.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/global_features.cc
 @@ -36,7 +36,7 @@
  #include "chrome/browser/background/glic/glic_background_mode_manager.h"  // nogncheck
@@ -18,7 +18,7 @@
    // TODO(crbug.com/463742800): Migrate WhatsNewRegistry (and other non-core
    // features) to Init().
    whats_new_registry_ = CreateWhatsNewRegistry();
-@@ -223,7 +223,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
+@@ -224,7 +224,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
  
    application_advanced_protection_status_detector_.reset();
  
@@ -27,7 +27,7 @@
    DefaultBrowserPromptManager::GetInstance()->CloseAllPrompts(
        DefaultBrowserPromptManager::CloseReason::kDismiss);
  #endif
-@@ -244,7 +244,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -245,7 +245,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  

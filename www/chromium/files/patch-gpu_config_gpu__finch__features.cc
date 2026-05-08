@@ -1,4 +1,4 @@
---- gpu/config/gpu_finch_features.cc.orig	2026-04-09 06:05:42 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2026-05-07 17:02:56 UTC
 +++ gpu/config/gpu_finch_features.cc
 @@ -110,7 +110,7 @@ const base::FeatureParam<std::string>
  // of associating with an unused IPC::Channel.
@@ -9,7 +9,16 @@
  // Feature flag to control whether SharedImageStub sequence uses high priority
  // on ChromeOS and Linux. Enabled by default.
  BASE_FEATURE(kSharedImageStubHighPriority, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -122,7 +122,8 @@ BASE_FEATURE(kSharedImageStubHighPriority, base::FEATU
+@@ -119,7 +119,7 @@ BASE_FEATURE(kSharedImageStubHighPriority, base::FEATU
+ // Disables hardware YUV conversion on NVIDIA + Wayland to workaround a driver
+ // bug.
+ BASE_FEATURE(kNvidiaWaylandYuvHardwareConversionWorkaround,
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -132,7 +132,8 @@ BASE_FEATURE(kNvidiaWaylandYuvHardwareConversionWorkar
  // Android and Linux.
  BASE_FEATURE(kDefaultEnableGpuRasterization,
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
@@ -19,7 +28,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -457,7 +458,7 @@ BASE_FEATURE(kGPUDriverBugListTestGroup, base::FEATURE
+@@ -468,7 +469,7 @@ BASE_FEATURE(kGPUDriverBugListTestGroup, base::FEATURE
  const base::FeatureParam<int> kGPUDriverBugListTestGroupId{
      &kGPUDriverBugListTestGroup, "test_group", 0};
  

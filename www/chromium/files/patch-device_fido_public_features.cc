@@ -1,6 +1,6 @@
---- device/fido/public/features.cc.orig	2026-03-13 06:02:14 UTC
+--- device/fido/public/features.cc.orig	2026-05-07 17:02:56 UTC
 +++ device/fido/public/features.cc
-@@ -40,7 +40,7 @@ namespace device {
+@@ -46,7 +46,7 @@ namespace device {
  // comment.
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

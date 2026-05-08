@@ -1,8 +1,8 @@
---- chrome/browser/flag_descriptions.h.orig	2026-04-16 08:18:50 UTC
+--- chrome/browser/flag_descriptions.h.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -8413,6 +8413,18 @@ inline constexpr char kEnableOktaSSOName[] =
- inline constexpr char kEnableOktaSSODescription[] =
-     "Enables native support for Okta SSO on managed MacOS devices.";
+@@ -8453,6 +8453,18 @@ inline constexpr char kAndroidEntraSsoDescription[] =
+     "Enables native support for Entra SSO on Android provided by selected "
+     "Authentication Brokers.";
  
 +#if BUILDFLAG(IS_BSD)
 +inline constexpr char kAudioBackendName[] =

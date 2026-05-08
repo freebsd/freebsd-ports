@@ -1,24 +1,24 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-04-16 08:18:50 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-05-07 17:02:56 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -377,7 +377,7 @@
-         "default": "",
-       },
-       origin_trial_feature_name: "AIPromptAPIMultimodalInput",
+@@ -411,7 +411,7 @@
+       name: "AIPromptAPILegacyParams",
+       public: true,
+       origin_trial_feature_name: "AIPromptAPIParams",
 -      origin_trial_os: ["win", "mac", "linux", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
        origin_trial_allows_third_party: true,
-       implied_by: ["AIPromptAPIMultimodalInput"],
+       implied_by: ["AIPromptAPIParams"],
      },
-@@ -407,7 +407,7 @@
+@@ -437,7 +437,7 @@
          "default": "",
        },
-       origin_trial_feature_name: "AIPromptAPIMultimodalInput",
+       origin_trial_feature_name: "AIPromptAPIParams",
 -      origin_trial_os: ["win", "mac", "linux", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
        origin_trial_allows_third_party: true,
-       base_feature_status: "enabled",
-       copied_from_base_feature_if: "overridden",
-@@ -441,7 +441,7 @@
+     },
+     {
+@@ -469,7 +469,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIProofreaderAPI",
@@ -27,7 +27,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -456,7 +456,7 @@
+@@ -484,7 +484,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIRewriterAPI",
@@ -36,7 +36,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -493,7 +493,7 @@
+@@ -521,7 +521,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIWriterAPI",
@@ -45,7 +45,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -631,7 +631,7 @@
+@@ -662,7 +662,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -54,7 +54,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1365,7 +1365,7 @@
+@@ -1425,7 +1425,7 @@
        name: "CSPHashesV1",
        base_feature: "none",
        origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
@@ -63,25 +63,7 @@
        status: "experimental",
        public: true,
      },
-@@ -2011,7 +2011,7 @@
-     {
-       name: "DeviceBoundSessionCredentials",
-       origin_trial_feature_name: "DeviceBoundSessionCredentials",
--      origin_trial_os: ["win", "linux", "mac"],
-+      origin_trial_os: ["win", "linux", "mac", "openbsd", "freebsd"],
-       status: "experimental",
-       // Killswitch is net::features::kDeviceBoundSessions
-       base_feature: "none",
-@@ -2019,7 +2019,7 @@
-     {
-       name: "DeviceBoundSessionCredentials2",
-       origin_trial_feature_name: "DeviceBoundSessionCredentials2",
--      origin_trial_os: ["win", "linux", "mac"],
-+      origin_trial_os: ["win", "linux", "mac", "openbsd", "freebsd"],
-       status: "experimental",
-       // Killswitch is net::features::kDeviceBoundSessions
-       base_feature: "none",
-@@ -2178,7 +2178,7 @@
+@@ -2257,7 +2257,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -90,7 +72,7 @@
        base_feature: "none",
      },
      {
-@@ -2494,7 +2494,7 @@
+@@ -2575,7 +2575,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -99,7 +81,16 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -5879,7 +5879,7 @@
+@@ -3384,7 +3384,7 @@
+       name: "InstallElement",
+       status: {"Android": "", "default": "test"},
+       origin_trial_feature_name: "InstallElement",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       public: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -5992,7 +5992,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -108,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5970,7 +5970,7 @@
+@@ -6089,7 +6089,7 @@
        status: "experimental",
        origin_trial_feature_name: "UserMediaElement",
        public: true,
@@ -117,16 +108,16 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
      },
-@@ -6081,7 +6081,7 @@
+@@ -6200,7 +6200,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
 -      origin_trial_os: ["win", "mac", "linux", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-     },
-@@ -6094,7 +6094,7 @@
+@@ -6214,7 +6214,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",

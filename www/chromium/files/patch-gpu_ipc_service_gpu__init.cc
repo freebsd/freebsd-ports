@@ -1,6 +1,6 @@
---- gpu/ipc/service/gpu_init.cc.orig	2026-04-09 06:05:42 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2026-05-07 17:02:56 UTC
 +++ gpu/ipc/service/gpu_init.cc
-@@ -163,7 +163,7 @@ void InitializePlatformOverlaySettings(GPUInfo* gpu_in
+@@ -164,7 +164,7 @@ void InitializePlatformOverlaySettings(GPUInfo* gpu_in
  
  #if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CASTOS)
  bool CanAccessDeviceFile(const GPUInfo& gpu_info) {
@@ -9,7 +9,7 @@
    if (gpu_info.gpu.vendor_id != 0x10de ||  // NVIDIA
        gpu_info.gpu.driver_vendor != "NVIDIA")
      return true;
-@@ -425,7 +425,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -428,7 +428,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    enable_watchdog = false;
  #endif
  
@@ -18,7 +18,7 @@
    bool gpu_sandbox_start_early = gpu_preferences_.gpu_sandbox_start_early;
  #else   // !(BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
    // For some reasons MacOSX's VideoToolbox might crash when called after
-@@ -463,7 +463,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -466,7 +466,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    }
  
    bool attempted_startsandbox = false;
@@ -27,7 +27,7 @@
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
-@@ -557,7 +557,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -560,7 +560,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
      gpu_preferences_.gr_context_type = GrContextType::kGL;
    }
  
@@ -36,7 +36,7 @@
    // The ContentSandboxHelper is currently the only one implementation of
    // GpuSandboxHelper and it has no dependency. Except on Linux where
    // VaapiWrapper checks the GL implementation to determine which display
-@@ -615,7 +615,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -618,7 +618,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
            command_line, gpu_feature_info_,
            gpu_preferences_.disable_software_rasterizer, false);
        if (gl_use_swiftshader_) {
@@ -45,16 +45,16 @@
          VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
                  << "on Linux";
          return false;
-@@ -812,7 +812,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -818,7 +818,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+     }
    }
- #endif  // BUILDFLAG(IS_OZONE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -870,7 +870,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -893,7 +893,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
        }
      }
    }
@@ -63,7 +63,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -1066,7 +1066,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -1089,7 +1089,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
    }
    bool gl_disabled = gl::GetGLImplementation() == gl::kGLImplementationDisabled;
  
@@ -72,7 +72,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -1122,7 +1122,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -1145,7 +1145,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
      }
    }
  
