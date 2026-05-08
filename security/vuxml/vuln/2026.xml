@@ -1,3 +1,288 @@
+  <vuln vid="da4d7162-4aa3-11f1-b189-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>148.0.7778.96</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>148.0.7778.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop.html">
+	 <p>This update includes 127 security fixes:</p>
+	 <ul>
+	    <li>[493747582] Critical CVE-2026-7896: Integer overflow in Blink.</li>
+	    <li>[504069514] Critical CVE-2026-7897: Use after free in Mobile.</li>
+	    <li>[504587882] Critical CVE-2026-7898: Use after free in Chromoting.</li>
+	    <li>[505481948] High CVE-2026-7899: Out of bounds read and write in V8.</li>
+	    <li>[496503799] High CVE-2026-7900: Heap buffer overflow in ANGLE.</li>
+	    <li>[497724490] High CVE-2026-7901: Use after free in ANGLE.</li>
+	    <li>[502030575] High CVE-2026-7902: Out of bounds memory access in V8.</li>
+	    <li>[491760376] High CVE-2026-7903: Integer overflow in ANGLE.</li>
+	    <li>[492350406] High CVE-2026-7904: Out of bounds read in Fonts.</li>
+	    <li>[495259842] High CVE-2026-7905: Insufficient validation of untrusted input in Media.</li>
+	    <li>[496284584] High CVE-2026-7906: Use after free in SVG.</li>
+	    <li>[496292089] High CVE-2026-7907: Use after free in DOM.</li>
+	    <li>[497436531] High CVE-2026-7908: Use after free in Fullscreen.</li>
+	    <li>[497437113] High CVE-2026-7909: Inappropriate implementation in ServiceWorker.</li>
+	    <li>[497543810] High CVE-2026-7910: Use after free in Views.</li>
+	    <li>[497548912] High CVE-2026-7911: Use after free in Aura.</li>
+	    <li>[497639714] High CVE-2026-7912: Integer overflow in GPU.</li>
+	    <li>[497936728] High CVE-2026-7913: Insufficient policy enforcement in DevTools.</li>
+	    <li>[498401609] High CVE-2026-7914: Type Confusion in Accessibility.</li>
+	    <li>[498454478] High CVE-2026-7915: Insufficient data validation in DevTools.</li>
+	    <li>[498720754] High CVE-2026-7916: Insufficient data validation in InterestGroups.</li>
+	    <li>[498752242] High CVE-2026-7917: Use after free in Fullscreen.</li>
+	    <li>[498780188] High CVE-2026-7918: Use after free in GPU.</li>
+	    <li>[498832921] High CVE-2026-7919: Use after free in Aura.</li>
+	    <li>[498989348] High CVE-2026-7920: Use after free in Skia.</li>
+	    <li>[499062376] High CVE-2026-7921: Use after free in Passwords.</li>
+	    <li>[499449324] High CVE-2026-7922: Use after free in ServiceWorker.</li>
+	    <li>[500080194] High CVE-2026-7923: Out of bounds write in Skia.</li>
+	    <li>[500087204] High CVE-2026-7924: Uninitialized Use in Dawn.</li>
+	    <li>[501833981] High CVE-2026-7925: Use after free in Chromoting.</li>
+	    <li>[502249087] High CVE-2026-7926: Use after free in PresentationAPI.</li>
+	    <li>[502830119] High CVE-2026-7927: Type Confusion in Runtime.</li>
+	    <li>[504612429] High CVE-2026-7928: Use after free in WebRTC.</li>
+	    <li>[504660052] High CVE-2026-7929: Use after free in MediaRecording.</li>
+	    <li>[434825208] Medium CVE-2026-7930: Insufficient validation of untrusted input in Cookies.</li>
+	    <li>[474338157] Medium CVE-2026-7931: Insufficient validation of untrusted input in iOS.</li>
+	    <li>[481634116] Medium CVE-2026-7932: Insufficient policy enforcement in Downloads.</li>
+	    <li>[488585490] Medium CVE-2026-7933: Out of bounds read in WebCodecs.</li>
+	    <li>[489023922] Medium CVE-2026-7934: Insufficient validation of untrusted input in Popup Blocker.</li>
+	    <li>[489624550] Medium CVE-2026-7935: Inappropriate implementation in Speech.</li>
+	    <li>[490485402] Medium CVE-2026-7936: Object lifecycle issue in V8.</li>
+	    <li>[491766258] Medium CVE-2026-7937: Insufficient policy enforcement in DevTools.</li>
+	    <li>[492735384] Medium CVE-2026-7938: Use after free in CSS.</li>
+	    <li>[492963096] Medium CVE-2026-7939: Inappropriate implementation in SanitizerAPI.</li>
+	    <li>[493631402] Medium CVE-2026-7940: Use after free in V8.</li>
+	    <li>[493955234] Medium CVE-2026-7941: Insufficient validation of untrusted input in Mobile.</li>
+	    <li>[495363705] Medium CVE-2026-7942: Integer overflow in ANGLE.</li>
+	    <li>[495373657] Medium CVE-2026-7943: Insufficient validation of untrusted input in ANGLE.</li>
+	    <li>[495783187] Medium CVE-2026-7944: Insufficient validation of untrusted input in Persistent Cache.</li>
+	    <li>[495802788] Medium CVE-2026-7945: Insufficient validation of untrusted input in COOP.</li>
+	    <li>[496016840] Medium CVE-2026-7946: Insufficient policy enforcement in WebUI.</li>
+	    <li>[496169594] Medium CVE-2026-7947: Insufficient validation of untrusted input in Network.</li>
+	    <li>[496193452] Medium CVE-2026-7948: Race in Chromoting.</li>
+	    <li>[496206134] Medium CVE-2026-7949: Out of bounds read in Skia.</li>
+	    <li>[496259890] Medium CVE-2026-7950: Out of bounds read and write in GFX.</li>
+	    <li>[496266456] Medium CVE-2026-7951: Out of bounds write in WebRTC.</li>
+	    <li>[496279876] Medium CVE-2026-7952: Insufficient policy enforcement in Extensions.</li>
+	    <li>[496379792] Medium CVE-2026-7953: Insufficient validation of untrusted input in Omnibox.</li>
+	    <li>[496380960] Medium CVE-2026-7954: Race in Shared Storage.</li>
+	    <li>[496441232] Medium CVE-2026-7955: Uninitialized Use in GPU.</li>
+	    <li>[496463315] Medium CVE-2026-7956: Use after free in Navigation.</li>
+	    <li>[496607380] Medium CVE-2026-7957: Out of bounds write in Media.</li>
+	    <li>[496632973] Medium CVE-2026-7958: Inappropriate implementation in ServiceWorker.</li>
+	    <li>[496645205] Medium CVE-2026-7959: Inappropriate implementation in Navigation.</li>
+	    <li>[497007825] Medium CVE-2026-7960: Race in Speech.</li>
+	    <li>[497008295] Medium CVE-2026-7961: Insufficient validation of untrusted input in Permissions.</li>
+	    <li>[497081987] Medium CVE-2026-7962: Insufficient policy enforcement in DirectSockets.</li>
+	    <li>[497250399] Medium CVE-2026-7963: Inappropriate implementation in ServiceWorker.</li>
+	    <li>[497254383] Medium CVE-2026-7964: Insufficient validation of untrusted input in FileSystem.</li>
+	    <li>[497255035] Medium CVE-2026-7965: Insufficient validation of untrusted input in DevTools.</li>
+	    <li>[497341787] Medium CVE-2026-7966: Insufficient validation of untrusted input in SiteIsolation.</li>
+	    <li>[497365545] Medium CVE-2026-7967: Insufficient validation of untrusted input in Navigation.</li>
+	    <li>[497432281] Medium CVE-2026-7968: Insufficient validation of untrusted input in CORS.</li>
+	    <li>[497450574] Medium CVE-2026-7969: Integer overflow in Network.</li>
+	    <li>[497487462] Medium CVE-2026-7970: Use after free in TopChrome.</li>
+	    <li>[497529290] Medium CVE-2026-7971: Inappropriate implementation in ORB.</li>
+	    <li>[497546281] Medium CVE-2026-7972: Uninitialized Use in GPU.</li>
+	    <li>[497565944] Medium CVE-2026-7973: Integer overflow in Dawn.</li>
+	    <li>[497649372] Medium CVE-2026-7974: Use after free in Blink.</li>
+	    <li>[497735587] Medium CVE-2026-7975: Use after free in DevTools.</li>
+	    <li>[497736679] Medium CVE-2026-7976: Use after free in Views.</li>
+	    <li>[497821223] Medium CVE-2026-7977: Inappropriate implementation in Canvas.</li>
+	    <li>[497828892] Medium CVE-2026-7978: Inappropriate implementation in Companion.</li>
+	    <li>[497849876] Medium CVE-2026-7979: Inappropriate implementation in Media.</li>
+	    <li>[497859275] Medium CVE-2026-7980: Use after free in WebAudio.</li>
+	    <li>[497926602] Medium CVE-2026-7981: Out of bounds read in Codecs.</li>
+	    <li>[497952533] Medium CVE-2026-7982: Uninitialized Use in WebCodecs.</li>
+	    <li>[497975608] Medium CVE-2026-7983: Out of bounds read in Dawn.</li>
+	    <li>[498277368] Medium CVE-2026-7984: Use after free in ReadingMode.</li>
+	    <li>[498352423] Medium CVE-2026-7985: Use after free in GPU.</li>
+	    <li>[498396238] Medium CVE-2026-7986: Insufficient policy enforcement in Autofill.</li>
+	    <li>[498696266] Medium CVE-2026-7987: Use after free in WebRTC.</li>
+	    <li>[498753456] Medium CVE-2026-7988: Type Confusion in WebRTC.</li>
+	    <li>[498765082] Medium CVE-2026-7989: Insufficient data validation in DataTransfer.</li>
+	    <li>[498892267] Medium CVE-2026-7990: Insufficient validation of untrusted input in Updater.</li>
+	    <li>[499065126] Medium CVE-2026-7991: Use after free in UI.</li>
+	    <li>[499067529] Medium CVE-2026-7992: Insufficient validation of untrusted input in UI.</li>
+	    <li>[499099003] Medium CVE-2026-7993: Insufficient validation of untrusted input in Payments.</li>
+	    <li>[499116954] Medium CVE-2026-7994: Inappropriate implementation in Chromoting.</li>
+	    <li>[501745798] Medium CVE-2026-7995: Out of bounds read in AdFilter.</li>
+	    <li>[484547631] Low CVE-2026-7996: Insufficient validation of untrusted input in SSL.</li>
+	    <li>[487960705] Low CVE-2026-7997: Insufficient validation of untrusted input in Updater.</li>
+	    <li>[491676472] Low CVE-2026-7998: Insufficient validation of untrusted input in Dialog.</li>
+	    <li>[493099941] Low CVE-2026-7999: Inappropriate implementation in V8.</li>
+	    <li>[494464734] Low CVE-2026-8000: Insufficient validation of untrusted input in ChromeDriver.</li>
+	    <li>[494764371] Low CVE-2026-8001: Use after free in Printing.</li>
+	    <li>[495779613] Low CVE-2026-8002: Use after free in Audio.</li>
+	    <li>[495985532] Low CVE-2026-8003: Insufficient validation of untrusted input in TabGroups.</li>
+	    <li>[496189510] Low CVE-2026-8004: Insufficient policy enforcement in DevTools.</li>
+	    <li>[496298665] Low CVE-2026-8005: Insufficient validation of untrusted input in Cast.</li>
+	    <li>[496373088] Low CVE-2026-8006: Insufficient policy enforcement in DevTools.</li>
+	    <li>[496399759] Low CVE-2026-8007: Insufficient validation of untrusted input in Cast.</li>
+	    <li>[496426191] Low CVE-2026-8008: Inappropriate implementation in DevTools.</li>
+	    <li>[496555077] Low CVE-2026-8009: Inappropriate implementation in Cast.</li>
+	    <li>[496624084] Low CVE-2026-8010: Insufficient validation of untrusted input in SiteIsolation.</li>
+	    <li>[496626029] Low CVE-2026-8011: Insufficient policy enforcement in Search.</li>
+	    <li>[496628298] Low CVE-2026-8012: Inappropriate implementation in MHTML.</li>
+	    <li>[497427430] Low CVE-2026-8013: Insufficient validation of untrusted input in FedCM.</li>
+	    <li>[497490364] Low CVE-2026-8014: Inappropriate implementation in Preload.</li>
+	    <li>[497548558] Low CVE-2026-8015: Inappropriate implementation in Media.</li>
+	    <li>[497695401] Low CVE-2026-8016: Use after free in WebRTC.</li>
+	    <li>[497722578] Low CVE-2026-8017: Side-channel information leakage in Media.</li>
+	    <li>[498292657] Low CVE-2026-8018: Insufficient policy enforcement in DevTools.</li>
+	    <li>[498353173] Low CVE-2026-8019: Insufficient policy enforcement in WebApp.</li>
+	    <li>[498382925] Low CVE-2026-8020: Uninitialized Use in GPU.</li>
+	    <li>[498417031] Low CVE-2026-8021: Script injection in UI.</li>
+	    <li>[499194407] Low CVE-2026-8022: Inappropriate implementation in MHTML.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-7896</cvename>
+      <cvename>CVE-2026-7897</cvename>
+      <cvename>CVE-2026-7898</cvename>
+      <cvename>CVE-2026-7899</cvename>
+      <cvename>CVE-2026-7900</cvename>
+      <cvename>CVE-2026-7901</cvename>
+      <cvename>CVE-2026-7902</cvename>
+      <cvename>CVE-2026-7903</cvename>
+      <cvename>CVE-2026-7904</cvename>
+      <cvename>CVE-2026-7905</cvename>
+      <cvename>CVE-2026-7906</cvename>
+      <cvename>CVE-2026-7907</cvename>
+      <cvename>CVE-2026-7908</cvename>
+      <cvename>CVE-2026-7909</cvename>
+      <cvename>CVE-2026-7910</cvename>
+      <cvename>CVE-2026-7911</cvename>
+      <cvename>CVE-2026-7912</cvename>
+      <cvename>CVE-2026-7913</cvename>
+      <cvename>CVE-2026-7914</cvename>
+      <cvename>CVE-2026-7915</cvename>
+      <cvename>CVE-2026-7916</cvename>
+      <cvename>CVE-2026-7917</cvename>
+      <cvename>CVE-2026-7918</cvename>
+      <cvename>CVE-2026-7919</cvename>
+      <cvename>CVE-2026-7920</cvename>
+      <cvename>CVE-2026-7921</cvename>
+      <cvename>CVE-2026-7922</cvename>
+      <cvename>CVE-2026-7923</cvename>
+      <cvename>CVE-2026-7924</cvename>
+      <cvename>CVE-2026-7925</cvename>
+      <cvename>CVE-2026-7926</cvename>
+      <cvename>CVE-2026-7927</cvename>
+      <cvename>CVE-2026-7928</cvename>
+      <cvename>CVE-2026-7929</cvename>
+      <cvename>CVE-2026-7930</cvename>
+      <cvename>CVE-2026-7931</cvename>
+      <cvename>CVE-2026-7932</cvename>
+      <cvename>CVE-2026-7933</cvename>
+      <cvename>CVE-2026-7934</cvename>
+      <cvename>CVE-2026-7935</cvename>
+      <cvename>CVE-2026-7936</cvename>
+      <cvename>CVE-2026-7937</cvename>
+      <cvename>CVE-2026-7938</cvename>
+      <cvename>CVE-2026-7939</cvename>
+      <cvename>CVE-2026-7940</cvename>
+      <cvename>CVE-2026-7941</cvename>
+      <cvename>CVE-2026-7942</cvename>
+      <cvename>CVE-2026-7943</cvename>
+      <cvename>CVE-2026-7944</cvename>
+      <cvename>CVE-2026-7945</cvename>
+      <cvename>CVE-2026-7946</cvename>
+      <cvename>CVE-2026-7947</cvename>
+      <cvename>CVE-2026-7948</cvename>
+      <cvename>CVE-2026-7949</cvename>
+      <cvename>CVE-2026-7950</cvename>
+      <cvename>CVE-2026-7951</cvename>
+      <cvename>CVE-2026-7952</cvename>
+      <cvename>CVE-2026-7953</cvename>
+      <cvename>CVE-2026-7954</cvename>
+      <cvename>CVE-2026-7955</cvename>
+      <cvename>CVE-2026-7956</cvename>
+      <cvename>CVE-2026-7957</cvename>
+      <cvename>CVE-2026-7958</cvename>
+      <cvename>CVE-2026-7959</cvename>
+      <cvename>CVE-2026-7960</cvename>
+      <cvename>CVE-2026-7961</cvename>
+      <cvename>CVE-2026-7962</cvename>
+      <cvename>CVE-2026-7963</cvename>
+      <cvename>CVE-2026-7964</cvename>
+      <cvename>CVE-2026-7965</cvename>
+      <cvename>CVE-2026-7966</cvename>
+      <cvename>CVE-2026-7967</cvename>
+      <cvename>CVE-2026-7968</cvename>
+      <cvename>CVE-2026-7969</cvename>
+      <cvename>CVE-2026-7970</cvename>
+      <cvename>CVE-2026-7971</cvename>
+      <cvename>CVE-2026-7972</cvename>
+      <cvename>CVE-2026-7973</cvename>
+      <cvename>CVE-2026-7974</cvename>
+      <cvename>CVE-2026-7975</cvename>
+      <cvename>CVE-2026-7976</cvename>
+      <cvename>CVE-2026-7977</cvename>
+      <cvename>CVE-2026-7978</cvename>
+      <cvename>CVE-2026-7979</cvename>
+      <cvename>CVE-2026-7980</cvename>
+      <cvename>CVE-2026-7981</cvename>
+      <cvename>CVE-2026-7982</cvename>
+      <cvename>CVE-2026-7983</cvename>
+      <cvename>CVE-2026-7984</cvename>
+      <cvename>CVE-2026-7985</cvename>
+      <cvename>CVE-2026-7986</cvename>
+      <cvename>CVE-2026-7987</cvename>
+      <cvename>CVE-2026-7988</cvename>
+      <cvename>CVE-2026-7989</cvename>
+      <cvename>CVE-2026-7990</cvename>
+      <cvename>CVE-2026-7991</cvename>
+      <cvename>CVE-2026-7992</cvename>
+      <cvename>CVE-2026-7993</cvename>
+      <cvename>CVE-2026-7994</cvename>
+      <cvename>CVE-2026-7995</cvename>
+      <cvename>CVE-2026-7996</cvename>
+      <cvename>CVE-2026-7997</cvename>
+      <cvename>CVE-2026-7998</cvename>
+      <cvename>CVE-2026-7999</cvename>
+      <cvename>CVE-2026-8000</cvename>
+      <cvename>CVE-2026-8001</cvename>
+      <cvename>CVE-2026-8002</cvename>
+      <cvename>CVE-2026-8003</cvename>
+      <cvename>CVE-2026-8004</cvename>
+      <cvename>CVE-2026-8005</cvename>
+      <cvename>CVE-2026-8006</cvename>
+      <cvename>CVE-2026-8007</cvename>
+      <cvename>CVE-2026-8008</cvename>
+      <cvename>CVE-2026-8009</cvename>
+      <cvename>CVE-2026-8010</cvename>
+      <cvename>CVE-2026-8011</cvename>
+      <cvename>CVE-2026-8012</cvename>
+      <cvename>CVE-2026-8013</cvename>
+      <cvename>CVE-2026-8014</cvename>
+      <cvename>CVE-2026-8015</cvename>
+      <cvename>CVE-2026-8016</cvename>
+      <cvename>CVE-2026-8017</cvename>
+      <cvename>CVE-2026-8018</cvename>
+      <cvename>CVE-2026-8019</cvename>
+      <cvename>CVE-2026-8020</cvename>
+      <cvename>CVE-2026-8021</cvename>
+      <cvename>CVE-2026-8022</cvename>
+      <url>https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2026-05-05</discovery>
+      <entry>2026-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67e31a04-49fa-11f1-9b23-b42e991fc52e">
     <topic>MongoDB Server -- Multiple vulnerabilities</topic>
     <affects>
