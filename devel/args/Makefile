@@ -1,5 +1,5 @@
 PORTNAME=	args
-DISTVERSION=	6.4.13
+DISTVERSION=	6.4.16
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,11 +21,10 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	include/args.hxx \
-		lib/cmake/args/args-config-version.cmake \
 		share/cmake/args/args-config.cmake \
+		share/cmake/args/args-config-version.cmake \
 		share/pkgconfig/args.pc
 
-# tests as of 6.4.10: 100% tests passed, 0 tests failed out of 2
-# tests as of 6.4.13: fail to compile, see https://github.com/Taywee/args/issues/143
+# tests as of 6.4.16: 100% tests passed, 0 tests failed out of 69
 
 .include <bsd.port.mk>
