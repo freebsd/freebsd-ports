@@ -1,3 +1,162 @@
+  <vuln vid="818efa2a-4aae-11f1-88d3-b42e991fc52e">
+    <topic>firefox ESR -- Other issue in the WebRTC component</topic>
+    <affects>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.10.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2035939 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2035939">
+	  <p>Other issue in the WebRTC component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-8094</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-8094</url>
+    </references>
+    <dates>
+      <discovery>2026-05-07</discovery>
+      <entry>2026-05-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7eae7f45-4aae-11f1-88d3-b42e991fc52e">
+    <topic>firefox -- Memory safety bugs present in Firefox 150</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>150.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>https://www.mozilla.org/en-US/security/advisories/mfsa2026-40/ reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2026-40/">
+	<p>
+	  Memory safety bugs present in Firefox 150.0.1. Some of
+	  these bugs showed evidence of memory corruption and we
+	  presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-8093</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-8093</url>
+    </references>
+    <dates>
+      <discovery>2026-05-07</discovery>
+      <entry>2026-05-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7a9f1c15-4aae-11f1-88d3-b42e991fc52e">
+    <topic>firefox -- Memory safety bugs present in Firefox ESR 115</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>150.0.2,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.10.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>https://www.mozilla.org/en-US/security/advisories/mfsa2026-40/ reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2026-40/">
+	<p>
+	  Memory safety bugs. Some of these bugs showed evidence of
+	  memory corruption and we presume that with enough effort
+	  some of these could have been exploited to run arbitrary
+	  code.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-8092</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-8092</url>
+    </references>
+    <dates>
+      <discovery>2026-05-07</discovery>
+      <entry>2026-05-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="76763f24-4aae-11f1-88d3-b42e991fc52e">
+    <topic>Mozilla -- Incorrect boundary conditions</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>150.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.10.1</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>150.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2029301 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2029301">
+	<p>
+	  Incorrect boundary conditions in the Audio/Video: Playback
+	  component.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-8091</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-8091</url>
+    </references>
+    <dates>
+      <discovery>2026-05-07</discovery>
+      <entry>2026-05-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7360cdae-4aae-11f1-88d3-b42e991fc52e">
+    <topic>firefox -- Use-after-free</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>150.0.2,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.10.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2034352 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2034352">
+	  <p>Use-after-free in the DOM: Networking component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-8090</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-8090</url>
+    </references>
+    <dates>
+      <discovery>2026-05-07</discovery>
+      <entry>2026-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da4d7162-4aa3-11f1-b189-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
