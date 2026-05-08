@@ -1,9 +1,10 @@
 PORTNAME=	alttab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Task switcher for minimalistic window managers
 WWW=		https://github.com/sagb/alttab
 
@@ -19,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sagb
 USE_XORG=	x11 xft xpm xrandr xrender
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/alttab \
 		share/man/man1/alttab.1.gz
