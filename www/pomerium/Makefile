@@ -1,6 +1,6 @@
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.6
+DISTVERSION=	0.32.7
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -187,7 +187,7 @@ GH_TUPLE=	\
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
 		jackc:pgservicefile:5a60cdf6a761:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
-		jackc:pgx:v5.8.0:jackc_pgx_v5/vendor/github.com/jackc/pgx/v5 \
+		jackc:pgx:v5.9.2:jackc_pgx_v5/vendor/github.com/jackc/pgx/v5 \
 		jackc:puddle:v2.2.2:jackc_puddle_v2/vendor/github.com/jackc/puddle/v2 \
 		johannesboyne:gofakes3:ebf3e50324d3:johannesboyne_gofakes3/vendor/github.com/johannesboyne/gofakes3 \
 		jxskiss:base62:v1.1.0:jxskiss_base62/vendor/github.com/jxskiss/base62 \
