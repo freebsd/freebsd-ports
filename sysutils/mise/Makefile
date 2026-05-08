@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.1
+DISTVERSION=	2026.5.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -206,8 +206,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.1 \
 		crypto_secretbox-0.1.1 \
-		ctor-0.10.1 \
-		ctor-proc-macro-0.0.13 \
+		ctor-0.12.0 \
 		ctr-0.9.2 \
 		ctutils-0.4.2 \
 		curve25519-dalek-4.1.3 \
@@ -225,7 +224,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		deadpool-runtime-0.1.4 \
 		decoded-char-0.1.1 \
 		deflate64-0.1.12 \
-		demand-2.0.0 \
+		demand-2.0.1 \
 		der-0.7.10 \
 		der-parser-10.0.0 \
 		der_derive-0.7.3 \
@@ -246,8 +245,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		displaydoc-0.2.5 \
 		document-features-0.2.12 \
 		dotenvy-0.15.7 \
-		dtor-0.8.1 \
-		dtor-proc-macro-0.0.13 \
 		duct-1.1.1 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
@@ -385,7 +382,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		globset-0.4.18 \
 		globwalk-0.9.1 \
 		group-0.13.0 \
-		h2-0.4.13 \
+		h2-0.4.14 \
 		halfbrown-0.4.0 \
 		hash32-0.3.1 \
 		hashbrown-0.12.3 \
@@ -453,7 +450,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		io-close-0.3.7 \
 		io_tee-0.1.1 \
 		ipnet-2.12.0 \
-		iri-string-0.7.12 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
@@ -500,7 +496,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
-		link-section-0.2.1 \
+		link-section-0.12.0 \
+		linktime-proc-macro-0.1.0 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
@@ -612,8 +609,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
 		phf_shared-0.11.3 \
-		pin-project-1.1.11 \
-		pin-project-internal-1.1.11 \
+		pin-project-1.1.12 \
+		pin-project-internal-1.1.12 \
 		pin-project-lite-0.2.17 \
 		pin-utils-0.1.0 \
 		pkcs1-0.7.5 \
@@ -652,7 +649,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		quick-error-1.2.3 \
 		quick-xml-0.37.5 \
 		quick-xml-0.38.4 \
-		quick-xml-0.39.2 \
+		quick-xml-0.39.3 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
@@ -686,7 +683,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.4 \
+		redox_syscall-0.7.5 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
@@ -861,7 +858,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinyvec_macros-0.1.1 \
 		tls_codec-0.4.2 \
 		tls_codec_derive-0.4.2 \
-		tokio-1.52.1 \
+		tokio-1.52.2 \
 		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.4 \
@@ -875,7 +872,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tough-0.21.0 \
 		tower-0.5.3 \
-		tower-http-0.6.8 \
+		tower-http-0.6.9 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
