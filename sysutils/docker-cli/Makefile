@@ -3,7 +3,7 @@ PORTVERSION=		29.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		leafoliage@FreeBSD.org
 COMMENT=		Open-source application container engine
 WWW=			https://www.docker.com/
 
