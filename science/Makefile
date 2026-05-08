@@ -205,6 +205,7 @@
     SUBDIR += mutationpp
     SUBDIR += namd
     SUBDIR += ncrystal
+    SUBDIR += neko
     SUBDIR += nest
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
