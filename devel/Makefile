@@ -8464,7 +8464,6 @@
     SUBDIR += sccs
     SUBDIR += schilybase
     SUBDIR += scons
-    SUBDIR += sd-mux-ctrl
     SUBDIR += sdbus-cpp
     SUBDIR += sdl12
     SUBDIR += sdl12-compat
