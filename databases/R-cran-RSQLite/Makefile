@@ -1,5 +1,5 @@
 PORTNAME=	RSQLite
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.6
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -16,7 +16,6 @@ CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-DBI>=1.2.0:databases/R-cran-DBI \
 		R-cran-memoise>0:devel/R-cran-memoise \
 		R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
-		R-cran-plogr>=0.2.0:devel/R-cran-plogr \
 		R-cran-Rcpp>=0.4.00:devel/R-cran-Rcpp \
 		R-cran-rlang>0:devel/R-cran-rlang
 BUILD_DEPENDS=	${CRAN_DEPENDS}
