@@ -1,5 +1,5 @@
 PORTNAME=	wabt
-DISTVERSION=	1.0.40
+DISTVERSION=	1.0.41
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,8 +39,8 @@ FUZZ_TOOLS_CMAKE_BOOL=	BUILD_FUZZ_TOOLS
 post-test:
 	@cd ${TEST_WRKSRC} && ./wabt-unittests
 
-# tests as of 1.0.40
-# [==========] 130 tests from 18 test suites ran. (254 ms total)
+# tests as of 1.0.41
+# [==========] 130 tests from 18 test suites ran. (255 ms total)
 # [  PASSED  ] 130 tests.
 
 .include <bsd.port.mk>
