@@ -204,6 +204,8 @@
 %%MANPAGES%%share/man/man1/glab-securefile-list.1.gz
 %%MANPAGES%%share/man/man1/glab-securefile-remove.1.gz
 %%MANPAGES%%share/man/man1/glab-securefile.1.gz
+%%MANPAGES%%share/man/man1/glab-skills-install.1.gz
+%%MANPAGES%%share/man/man1/glab-skills.1.gz
 %%MANPAGES%%share/man/man1/glab-snippet-create.1.gz
 %%MANPAGES%%share/man/man1/glab-snippet.1.gz
 %%MANPAGES%%share/man/man1/glab-ssh-key-add.1.gz
