@@ -28,7 +28,6 @@ USE_RC_SUBR=	gerbera
 USERS=		gerbera
 GROUPS=		gerbera
 
-SUB_FILES=	pkg-message
 SUB_LIST=	USER=${USERS} GROUP=${GROUPS}
 
 PLIST_SUB=	USER=${USERS} GROUP=${GROUPS}
