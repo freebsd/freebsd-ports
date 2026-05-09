@@ -1,4 +1,4 @@
---- apps/ymir-sdl3/src/app/ui/windows/about_window.cpp.orig	2026-05-03 13:13:03 UTC
+--- apps/ymir-sdl3/src/app/ui/windows/about_window.cpp.orig	2026-05-09 08:40:32 UTC
 +++ apps/ymir-sdl3/src/app/ui/windows/about_window.cpp
 @@ -32,9 +32,6 @@
  #include <zlib.h>
@@ -10,19 +10,7 @@
  #define _STR_IMPL(x) #x
  #define _STR(x) _STR_IMPL(x)
  #define _SEMVER_STR(major, minor, patch) _STR(major.minor.patch)
-@@ -60,6 +57,11 @@
- #define TOMLPP_VERSION _SEMVER_STR(TOML_LIB_MAJOR, TOML_LIB_MINOR, TOML_LIB_PATCH)
- #define XXHASH_VERSION _SEMVER_STR(XXH_VERSION_MAJOR, XXH_VERSION_MINOR, XXH_VERSION_RELEASE)
- 
-+// Needed on 13.5, openssl in base is too old
-+#ifndef OPENSSL_FULL_VERSION_STR
-+#define OPENSSL_FULL_VERSION_STR OPENSSL_VERSION_TEXT
-+#endif
-+
- static const std::string fmtVersion = std::to_string(FMT_VERSION / 10000) + "." +
-                                       std::to_string(FMT_VERSION / 100 % 100) + "." + std::to_string(FMT_VERSION % 100);
- 
-@@ -121,7 +123,6 @@ static const struct {
+@@ -121,7 +118,6 @@ static const struct {
      {.name = "lz4",                           .version = LZ4_VERSION_STRING,         .license = licenseBSD2,          .repoURL = "https://github.com/lz4/lz4",                     .licenseURL = "https://github.com/lz4/lz4/blob/dev/lib/LICENSE",                        .homeURL = "https://lz4.org/",},
      {.name = "lzma",                          .version = LZMA_VERSION,               .license = licensePublicDomain,                                                                                                                                                       .homeURL = "https://www.7-zip.org/sdk.html",},
      {.name = "mio",                           .version = MIO_VERSION,                .license = licenseMIT,           .repoURL = "https://github.com/StrikerX3/mio",               .licenseURL = "https://github.com/StrikerX3/mio/blob/master/LICENSE"},
