@@ -1,5 +1,6 @@
 bin/ojph_compress
 bin/ojph_expand
+bin/ojph_stream_expand
 include/openjph/ojph_arch.h
 include/openjph/ojph_arg.h
 include/openjph/ojph_base.h

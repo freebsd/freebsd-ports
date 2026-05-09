@@ -1,0 +1,10 @@
+Reference:	https://github.com/aous72/OpenJPH/pull/270
+
+--- src/core/openjph/ojph_version.h.orig	2026-05-07 03:33:32 UTC
++++ src/core/openjph/ojph_version.h
+@@ -35,4 +35,4 @@
+ 
+ #define OPENJPH_VERSION_MAJOR 0
+ #define OPENJPH_VERSION_MINOR 27
+-#define OPENJPH_VERSION_PATCH 0
++#define OPENJPH_VERSION_PATCH 1
