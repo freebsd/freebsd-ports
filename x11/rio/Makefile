@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.3
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -265,11 +265,11 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.97 \
+		js-sys-0.3.98 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kqueue-1.1.1 \
-		kqueue-sys-1.0.4 \
+		kqueue-sys-1.1.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
@@ -381,8 +381,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		petgraph-0.8.3 \
 		phf-0.13.1 \
 		phf_shared-0.13.1 \
-		pin-project-1.1.11 \
-		pin-project-internal-1.1.11 \
+		pin-project-1.1.12 \
+		pin-project-internal-1.1.12 \
 		pin-project-lite-0.2.17 \
 		piper-0.2.5 \
 		pkg-config-0.3.33 \
@@ -403,10 +403,10 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		prettyplease-0.2.37 \
 		proc-macro-crate-3.5.0 \
 		proc-macro2-1.0.106 \
-		profiling-1.0.17 \
+		profiling-1.0.18 \
 		pxfm-0.1.29 \
 		quick-error-2.0.1 \
-		quick-xml-0.39.2 \
+		quick-xml-0.39.3 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -430,7 +430,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		read-fonts-0.37.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.4 \
+		redox_syscall-0.7.5 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		regex-1.12.3 \
@@ -464,8 +464,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		signal-hook-0.4.4 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.9 \
-		simdutf8-0.1.5 \
-		siphasher-1.0.2 \
+		simdutf-0.7.0 \
+		siphasher-1.0.3 \
 		skrifa-0.37.0 \
 		skrifa-0.40.0 \
 		slab-0.4.12 \
@@ -547,14 +547,14 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.120 \
-		wasm-bindgen-futures-0.4.70 \
-		wasm-bindgen-macro-0.2.120 \
-		wasm-bindgen-macro-support-0.2.120 \
-		wasm-bindgen-shared-0.2.120 \
-		wasm-bindgen-test-0.3.70 \
-		wasm-bindgen-test-macro-0.3.70 \
-		wasm-bindgen-test-shared-0.2.120 \
+		wasm-bindgen-0.2.121 \
+		wasm-bindgen-futures-0.4.71 \
+		wasm-bindgen-macro-0.2.121 \
+		wasm-bindgen-macro-support-0.2.121 \
+		wasm-bindgen-shared-0.2.121 \
+		wasm-bindgen-test-0.3.71 \
+		wasm-bindgen-test-macro-0.3.71 \
+		wasm-bindgen-test-shared-0.2.121 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
@@ -569,7 +569,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wayland-protocols-wlr-0.3.12 \
 		wayland-scanner-0.31.10 \
 		wayland-sys-0.31.11 \
-		web-sys-0.3.97 \
+		web-sys-0.3.98 \
 		web-time-1.1.0 \
 		weezl-0.1.12 \
 		wgpu-28.0.0 \
@@ -579,7 +579,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wgpu-core-deps-windows-linux-android-28.0.0 \
 		wgpu-hal-28.0.1 \
 		wgpu-types-28.0.0 \
-		wide-1.3.0 \
+		wide-1.4.0 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
