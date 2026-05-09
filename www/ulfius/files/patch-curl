@@ -9,6 +9,15 @@
                y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting follow redirection option");
                ret = U_ERROR_LIBCURL;
                break;
+@@ -518,7 +518,7 @@ int ulfius_send_http_streaming_request_max_header(cons
+           // Set body content
+           if (copy_request->binary_body_length && copy_request->binary_body != NULL) {
+             if (copy_request->binary_body_length < 2147483648) {
+-              if (curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDSIZE, (curl_off_t)copy_request->binary_body_length) != CURLE_OK) {
++              if (curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDSIZE, (long)copy_request->binary_body_length) != CURLE_OK) {
+                 y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting POST fields size");
+                 ret = U_ERROR_LIBCURL;
+                 break;
 @@ -622,21 +622,21 @@ int ulfius_send_http_streaming_request_max_header(cons
  
            // Disable server certificate validation if needed
