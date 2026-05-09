@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
+DISTVERSION=	0.23.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
