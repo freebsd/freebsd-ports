@@ -2,7 +2,6 @@
 @(,,755) bin/npm
 @(,,755) bin/npx
 etc/man.d/npm.conf
-etc/npmrc
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/README.md
 @(,,755) lib/node_modules/npm/bin/node-gyp-bin/node-gyp
