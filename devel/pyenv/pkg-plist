@@ -306,6 +306,8 @@ libexec/pyenv-plugins/python-build/share/python-build/3.15t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15.0b1
 libexec/pyenv-plugins/python-build/share/python-build/3.15.0b1t
+libexec/pyenv-plugins/python-build/share/python-build/3.16t-dev
+libexec/pyenv-plugins/python-build/share/python-build/3.16-dev
 libexec/pyenv-plugins/python-build/share/python-build/activepython-2.7.14
 libexec/pyenv-plugins/python-build/share/python-build/activepython-3.5.4
 libexec/pyenv-plugins/python-build/share/python-build/activepython-3.6.0
