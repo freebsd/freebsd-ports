@@ -1,19 +1,32 @@
-PORTNAME=		toml11
+PORTNAME=	toml11
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.7.1
-CATEGORIES=		devel
+PORTVERSION=	4.4.0
+CATEGORIES=	devel
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		C++11 header-only toml parser & encoder
-WWW=		https://github.com/ToruNiina/toml11
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	C++11 header-only toml parser & encoder
+WWW=		https://toruniina.github.io/toml11/ \
+		https://github.com/ToruNiina/toml11
 
-LICENSE=		MIT
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++17-lang cmake
+USES=		compiler:c++11-lang cmake
+
+CMAKE_OFF=	TOML11_BUILD_EXAMPLES \
+		TOML11_BUILD_TESTS \
+		TOML11_BUILD_TOML_TESTS \
+		TOML11_ENABLE_ACCESS_CHECK \
+		TOML11_PRECOMPILE \
+		TOML11_TEST_WITH_ASAN \
+		TOML11_TEST_WITH_UBSAN
+CMAKE_ON=	TOML11_INSTALL
+CMAKE_TESTING_ON=	\
+		TOML11_BUILD_TESTS \
+		TOML11_BUILD_TOML_TESTS
+NO_ARCH=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ToruNiina
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
