@@ -1,13 +1,14 @@
 PORTNAME=	qh3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightway and fast implementation of QUIC and HTTP/3
-WWW=		https://qh3.readthedocs.io/en/latest/
+WWW=		https://qh3.readthedocs.io/en/latest/ \
+		https://github.com/jawah/qh3
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
