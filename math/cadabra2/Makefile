@@ -1,11 +1,11 @@
 PORTNAME=	cadabra2
-DISTVERSION=	2.5.8
-PORTREVISION=	5
+DISTVERSION=	2.5.14-p1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system for solving field theory problems
-WWW=		https://cadabra.science/
+WWW=		https://cadabra.science/ \
+		https://github.com/kpeeters/cadabra2
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
@@ -35,6 +35,9 @@ DOS2UNIX_FILES=	cmake/version.cmake
 
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP USE_PYTHON_3 # OFF doesn't work, still links to python3: https://github.com/kpeeters/cadabra2/issues/76
 CMAKE_OFF=	ENABLE_MATHEMATICA
+CMAKE_ARGS=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
+		-DPYTHON_LIBRARY=${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so \
+		-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR}
 CXXFLAGS+=	-I${LOCALBASE}/include/jsoncpp
 LDFLAGS+=	-ljsoncpp
 
