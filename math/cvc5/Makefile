@@ -1,6 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.4
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -44,19 +44,20 @@ OPTIONS_GROUP=			SOLVERS
 OPTIONS_GROUP_SOLVERS=		CRYPTOMINISAT KISSAT
 OPTIONS_RADIO=			NUMLIB
 OPTIONS_RADIO_NUMLIB=		GMP CLN
-OPTIONS_DEFAULT=		CRYPTOMINISAT EDITLINE GMP KISSAT # COCOALIB GLPK JAVA POLY are broken
+OPTIONS_DEFAULT=		CRYPTOMINISAT EDITLINE JAVA GMP POLY KISSAT # COCOALIB requires patched version, GLPK requires patched version
 OPTIONS_SUB=			yes
 
 COCOALIB_DESC=			Use CoCoALib for further polynomial operations
 COCOALIB_CMAKE_BOOL=		USE_COCOA
-COCOALIB_BROKEN=		fails to compile with cocoalib, see https://github.com/cvc5/cvc5/issues/9484
+#COCOALIB_BROKEN=		fails to compile with cocoalib, see https://github.com/cvc5/cvc5/issues/9484
 
+JAVA_USES=			java
 JAVA_CMAKE_BOOL=		BUILD_BINDINGS_JAVA
 JAVA_CMAKE_ON=			-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 				-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
-				-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ATCH}/libjava.so
+				-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjava.so
 JAVA_BUILD_DEPENDS=		swig:devel/swig
-JAVA_BROKEN=			compilation fails: error: unmappable character for encoding ASCII, see https://github.com/cvc5/cvc5/issues/11145
+#JAVA_BROKEN=			compilation fails: error: unmappable character for encoding ASCII, see https://github.com/cvc5/cvc5/issues/11145
 
 EDITLINE_DESC=			Use Editline for better interactive support
 EDITLINE_CMAKE_BOOL=		USE_EDITLINE
@@ -66,7 +67,6 @@ EDITLINE_RUN_DEPENDS=		libedit>0:devel/libedit
 POLY_DESC=			Use LibPoly for polynomial arithmetic
 POLY_CMAKE_BOOL=		USE_POLY
 POLY_LIB_DEPENDS=		libpoly.so:math/libpoly
-POLY_BROKEN=		compilation fails with libpoly API mismatch, see poly_conversion.cpp:250
 
 # SOLVERS options
 
@@ -102,6 +102,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# tests as of 1.3.3: 100% tests passed, 0 tests failed out of 4177
+# tests as of 1.3.4: 99% tests passed, 6 tests failed out of 4241, see https://github.com/cvc5/cvc5/issues/12662
 
 .include <bsd.port.mk>
