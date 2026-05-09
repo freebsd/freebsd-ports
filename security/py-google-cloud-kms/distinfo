@@ -1,3 +1,3 @@
-TIMESTAMP = 1774661306
-SHA256 (google_cloud_kms-3.12.0.tar.gz) = c9445aac1e35a9f76efb4a7d57c9a2aa7b73034b6afec339ba0862fe4993ff25
-SIZE (google_cloud_kms-3.12.0.tar.gz) = 440013
+TIMESTAMP = 1778298471
+SHA256 (google_cloud_kms-3.13.0.tar.gz) = 672fdc594b928b0415c22e41f3d67c854e940a8a5917e8ff16a6566096b12407
+SIZE (google_cloud_kms-3.13.0.tar.gz) = 440145
