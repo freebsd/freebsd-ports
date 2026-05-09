@@ -1,6 +1,5 @@
 PORTNAME=	maolan
-DISTVERSION=	0.0.3
-PORTREVISION=	2
+DISTVERSION=	0.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	meka@tilda.center
@@ -12,12 +11,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-LIB_DEPENDS=	libjack.so:audio/jack \
+LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+		libjack.so:audio/jack \
 		liblilv-0.so:audio/lilv \
+		libonig.so:devel/oniguruma \
 		librubberband.so:audio/rubberband \
+		libsentencepiece.so:textproc/sentencepiece \
 		libsuil-0.so:audio/suil
 
-USES=		cargo gnome pkgconfig xorg
+USES=		cargo gnome llvm:build pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	maolan
 GH_TAGNAME=	${DISTVERSION}
@@ -25,12 +27,14 @@ GH_TAGNAME=	${DISTVERSION}
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
 
-PLIST_FILES=	bin/${PORTNAME}
+MAKE_ENV=	LIBCLANG_PATH="${LOCALBASE}/llvm${LLVM_VERSION}/lib"
 
-do-test:
-	@${CARGO_CARGO_RUN} test --manifest-path ${CARGO_CARGOTOML} --verbose \
-		${CARGO_TEST_ARGS}
-	@${CARGO_CARGO_RUN} test --manifest-path ${CARGO_WRKSRC}/engine/Cargo.toml \
-		--verbose ${CARGO_TEST_ARGS}
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/desktop/maolan-bsd.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/maolan.desktop
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/images/maolan.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 
 .include <bsd.port.mk>
