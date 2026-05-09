@@ -21,6 +21,7 @@ BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libada.so:devel/libada \
 		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
+		libffi.so:devel/libffi \
 		libgtest.so:devel/googletest \
 		libhdr_histogram.so:graphics/hdr_histogram \
 		libicui18n.so:devel/icu \
@@ -43,6 +44,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ada \
 		--shared-brotli \
 		--shared-cares \
+		--shared-ffi \
 		--shared-gtest \
 		--shared-hdr-histogram \
 		--shared-http-parser \
