@@ -1,6 +1,7 @@
 PORTNAME=	amazon-efs-utils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	filesystems python
 
 MAINTAINER=	olivier@FreeBSD.org

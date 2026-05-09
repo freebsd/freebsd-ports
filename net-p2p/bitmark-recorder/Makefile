@@ -1,4 +1,4 @@
-PORTREVISION=	15
+PORTREVISION=	16
 PKGNAMESUFFIX=	-recorder
 
 COMMENT=	Bitmark distributed property system recorder

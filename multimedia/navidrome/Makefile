@@ -1,6 +1,7 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.61.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:

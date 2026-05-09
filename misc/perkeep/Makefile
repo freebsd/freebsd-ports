@@ -1,6 +1,7 @@
 PORTNAME=	perkeep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod

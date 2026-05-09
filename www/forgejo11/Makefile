@@ -1,7 +1,7 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	11.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]+).*/\1/}
@@ -76,7 +76,6 @@ ALL_TARGET=	backend
 
 # Go binaries are statically linked
 STRIP=		#
-
 
 # The provided Makefile does not include an install target.
 do-install:

@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-elasticsearch-indexer
 PORTVERSION=	5.13.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 #RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
 NO_SHLIB_REQUIRES_GLOB=	libparser_c_bindings.so
-
 
 USES=		gmake go:modules,no_targets pkgconfig
 

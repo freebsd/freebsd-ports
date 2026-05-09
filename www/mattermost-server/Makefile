@@ -1,5 +1,6 @@
 PORTNAME=	mattermost
 PORTVERSION=	10.11.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
-
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mattermost-webapp>=${PORTVERSION}:www/mattermost-webapp

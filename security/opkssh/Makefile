@@ -1,7 +1,7 @@
 PORTNAME=	opkssh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
