@@ -328,7 +328,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/decay.lib
 %%DATADIR%%/factory/delay.ed
 %%DATADIR%%/factory/din.hlp
-%%DATADIR%%/factory/din_info
 %%DATADIR%%/factory/dot.crv
 %%DATADIR%%/factory/dp_bpm.crv
 %%DATADIR%%/factory/dp_depth.crv
@@ -370,7 +369,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/init.tcl
 %%DATADIR%%/factory/inner.crv
 %%DATADIR%%/factory/inner_space.crv
-%%DATADIR%%/factory/jag.fnt
 %%DATADIR%%/factory/just-intonation.tuning
 %%DATADIR%%/factory/key.help.tcl
 %%DATADIR%%/factory/keyboard-keyboard-waveform.crv
@@ -389,6 +387,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/microtonal-keyboard-waveform.ed
 %%DATADIR%%/factory/midimap.help.tcl
 %%DATADIR%%/factory/midimap.patch.tcl
+%%DATADIR%%/factory/mkb_info
 %%DATADIR%%/factory/modulation.ed
 %%DATADIR%%/factory/modv.crv
 %%DATADIR%%/factory/modv.ed
@@ -446,6 +445,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/rose_milker_radius.ed
 %%DATADIR%%/factory/rose_milker_sin.crv
 %%DATADIR%%/factory/rose_milker_sin.ed
+%%DATADIR%%/factory/sampath.fnt
 %%DATADIR%%/factory/save_settings.tcl
 %%DATADIR%%/factory/scalelist
 %%DATADIR%%/factory/scope.osc
