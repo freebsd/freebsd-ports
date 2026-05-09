@@ -678,7 +678,6 @@
     SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
     SUBDIR += p5-Catalyst-Component-InstancePerContext
     SUBDIR += p5-Catalyst-Controller-ActionRole
-    SUBDIR += p5-Catalyst-Controller-BindLex
     SUBDIR += p5-Catalyst-Controller-FormBuilder
     SUBDIR += p5-Catalyst-Controller-HTML-FormFu
     SUBDIR += p5-Catalyst-Controller-RateLimit
