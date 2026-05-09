@@ -11,7 +11,7 @@
 # godns_flags (str):		Custom additional arguments to be passed
 #				to godns (default empty).
 # godns_conf_dir (str):		Directory where ${name} configuration
-#				data is stored.
+#				file is located.
 
 . /etc/rc.subr
 

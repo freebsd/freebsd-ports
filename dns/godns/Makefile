@@ -24,8 +24,6 @@ GH_ACCOUNT=	TimothyYe
 GO_MODULE=	github.com/TimothyYe/godns
 GO_TARGET=	./cmd/${PORTNAME}
 
-SUB_FILES=	pkg-message
-
 post-extract:
 	@if [ ! -d ${WRKSRC}/internal/server/out ]; then \
 	    ${MKDIR} ${PATCH_WRKSRC}/internal/server/out ;\
