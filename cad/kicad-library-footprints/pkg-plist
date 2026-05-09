@@ -8364,6 +8364,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR10-24xxWIR_48xxWIR_72xxWIR_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR2-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR4-xxxxWI_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR8-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMU3-05xx_12xx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMU3-24xx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMV-051xD_121xD_Dual_THT.kicad_mod
@@ -11976,6 +11977,8 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-48-1EP_7x7mm_P0.5mm_EP4.2x4.2mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-48-1EP_7x7mm_P0.5mm_EP5.15x5.15mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-48-1EP_7x7mm_P0.5mm_EP5.15x5.15mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-52-1EP_6x6mm_P0.4mm_EP4.7x4.7mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-52-1EP_6x6mm_P0.4mm_EP4.7x4.7mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.1x4.96mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.1x4.96mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.5x5.06mm.kicad_mod

@@ -1,5 +1,5 @@
 PORTNAME=	kicad
-DISTVERSION=	10.0.1
+DISTVERSION=	10.0.2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-footprints
 

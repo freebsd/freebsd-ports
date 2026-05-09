@@ -1,5 +1,5 @@
 PORTNAME=	kicad
-DISTVERSION=	10.0.1
+DISTVERSION=	10.0.2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-doc
 
@@ -34,7 +34,6 @@ CONFLICTS=	kicad-devel-r2*
 
 NO_ARCH=	yes
 
-# MAKE_ENV+=	LC_CTYPE="en_US.UTF-8" LANG="en_US.UTF-8"
 # the PDF build only works with asciidoctor-web-pdf, which is not easy to port
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DADOC_TOOLCHAIN=ASCIIDOC \

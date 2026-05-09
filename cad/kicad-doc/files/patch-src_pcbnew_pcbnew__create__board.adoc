@@ -1,0 +1,30 @@
+commit 28a6df1f7ad37df084192bcaa71156d9ef86d348
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+
+    our asciidoc stack errors out on source blocks without language
+    
+    but a "listing" block without language style only results in
+    warnings, so use that.
+
+diff --git src/pcbnew/pcbnew_create_board.adoc src/pcbnew/pcbnew_create_board.adoc
+index dddd7d3b..326fb3fe 100644
+--- src/pcbnew/pcbnew_create_board.adoc
++++ src/pcbnew/pcbnew_create_board.adoc
+@@ -787,7 +787,7 @@ Component classes can be referenced in <<custom-design-rules,custom design rules
+ 
+ For example, to enforce a minimum clearance on all items belonging to footprints in the `Power_Stage` class:
+ 
+-[source]
++[listing]
+ ----
+ (rule "Power component clearance"
+     (condition "A.hasComponentClass('Power_Stage')")
+@@ -797,7 +797,7 @@ For example, to enforce a minimum clearance on all items belonging to footprints
+ 
+ To enforce courtyard clearance between two component classes:
+ 
+-[source]
++[listing]
+ ----
+ (rule "Keep analog away from digital"
+     (condition "A.hasComponentClass('Analog') && B.hasComponentClass('Digital')")
