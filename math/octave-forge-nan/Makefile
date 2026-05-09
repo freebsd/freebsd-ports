@@ -1,8 +1,7 @@
 PORTNAME=	octave-forge-nan
-PORTVERSION=	3.7.0
-PORTREVISION=	5
+PORTVERSION=	3.7.2
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+MASTER_SITES=	https://pub.ista.ac.at/~schloegl/matlab/NaN/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
