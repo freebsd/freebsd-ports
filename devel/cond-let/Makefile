@@ -1,7 +1,6 @@
 PORTNAME=	cond-let
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -18,19 +17,20 @@ GH_ACCOUNT=	tarsius
 CONFLICTS_INSTALL=	cond-let-emacs_*
 
 NO_ARCH=	yes
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/cond-let-autoloads.el \
-		${EMACS_SITE_LISPDIR}/cond-let.el
+PLIST_FILES=	${ELISPDIR}/cond-let-autoloads.el \
+		${ELISPDIR}/cond-let.el
 
 PORTDOCS=	README.org
 
 OPTIONS_DEFINE=	DOCS
 
+ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 ELISP_FILES=	cond-let-autoloads.el cond-let.el
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA}  ${ELISP_FILES:C/^/${WRKSRC}\//} \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${ELISPDIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
