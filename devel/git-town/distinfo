@@ -1,7 +1,7 @@
-TIMESTAMP = 1775879770
-SHA256 (go/devel_git-town/git-town-v22.7.1/v22.7.1.mod) = 32fd3ffc41ee212cbfb02ea6dad6e2a08d04978142e2e1d0456acf389f51ad18
-SIZE (go/devel_git-town/git-town-v22.7.1/v22.7.1.mod) = 3145
-SHA256 (go/devel_git-town/git-town-v22.7.1/v22.7.1.zip) = 4960306c6c3eeaefbbff2387272f44c72e7d364cd8f463a18bbba3ec178103e4
-SIZE (go/devel_git-town/git-town-v22.7.1/v22.7.1.zip) = 2141370
-SHA256 (go/devel_git-town/git-town-v22.7.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/devel_git-town/git-town-v22.7.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1778351616
+SHA256 (go/devel_git-town/git-town-v23.0.0/v23.0.0.mod) = 82ed23b964314474366a62c95ad6d3f74bcc657ffbd9b110189066ea11fd1b5d
+SIZE (go/devel_git-town/git-town-v23.0.0/v23.0.0.mod) = 3145
+SHA256 (go/devel_git-town/git-town-v23.0.0/v23.0.0.zip) = 1cc59e16494563d4f271b998045d2e5e9066c24596fced39fd00e6645ec8e8f2
+SIZE (go/devel_git-town/git-town-v23.0.0/v23.0.0.zip) = 2233956
+SHA256 (go/devel_git-town/git-town-v23.0.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/devel_git-town/git-town-v23.0.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
