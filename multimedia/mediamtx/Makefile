@@ -21,7 +21,6 @@ USE_RC_SUBR=	mediamtx
 USERS=		mediamtx
 GROUPS=		mediamtx
 
-SUB_FILES=	pkg-message
 SUB_LIST=	USER=${USERS} GROUP=${GROUPS}
 
 post-extract:
