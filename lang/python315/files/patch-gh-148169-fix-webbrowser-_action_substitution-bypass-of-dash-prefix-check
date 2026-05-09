@@ -1,0 +1,66 @@
+From f529b9470752c28ab69c96f31b0dbc10db69b404 Mon Sep 17 00:00:00 2001
+From: Stan Ulbrych <stan@python.org>
+Date: Mon, 13 Apr 2026 20:02:52 +0100
+Subject: [PATCH] gh-148169: Fix webbrowser `%action` substitution bypass of
+ dash-prefix check (GH-148170) (cherry picked from commit
+ d22922c8a7958353689dc4763dd72da2dea03fff)
+
+Co-authored-by: Stan Ulbrych <stan@python.org>
+---
+ Lib/test/test_webbrowser.py                              | 9 +++++++++
+ Lib/webbrowser.py                                        | 5 +++--
+ .../2026-03-31-09-15-51.gh-issue-148169.EZJzz2.rst       | 2 ++
+ 3 files changed, 14 insertions(+), 2 deletions(-)
+ create mode 100644 Misc/NEWS.d/next/Security/2026-03-31-09-15-51.gh-issue-148169.EZJzz2.rst
+
+diff --git a/Lib/test/test_webbrowser.py b/Lib/test/test_webbrowser.py
+index 404b3a31a5d2c9..bfbcf112b0b085 100644
+--- ./Lib/test/test_webbrowser.py
++++ b/Lib/test/test_webbrowser.py
+@@ -119,6 +119,15 @@ def test_open_bad_new_parameter(self):
+                        arguments=[URL],
+                        kw=dict(new=999))
+ 
++    def test_reject_action_dash_prefixes(self):
++        browser = self.browser_class(name=CMD_NAME)
++        with self.assertRaises(ValueError):
++            browser.open('%action--incognito')
++        # new=1: action is "--new-window", so "%action" itself expands to
++        # a dash-prefixed flag even with no dash in the original URL.
++        with self.assertRaises(ValueError):
++            browser.open('%action', new=1)
++
+ 
+ class EdgeCommandTest(CommandTestMixin, unittest.TestCase):
+ 
+diff --git a/Lib/webbrowser.py b/Lib/webbrowser.py
+index 0e0b5034e5f53d..97aad6eea509eb 100644
+--- ./Lib/webbrowser.py
++++ b/Lib/webbrowser.py
+@@ -274,7 +274,6 @@ def _invoke(self, args, remote, autoraise, url=None):
+ 
+     def open(self, url, new=0, autoraise=True):
+         sys.audit("webbrowser.open", url)
+-        self._check_url(url)
+         if new == 0:
+             action = self.remote_action
+         elif new == 1:
+@@ -288,7 +287,9 @@ def open(self, url, new=0, autoraise=True):
+             raise Error("Bad 'new' parameter to open(); "
+                         f"expected 0, 1, or 2, got {new}")
+ 
+-        args = [arg.replace("%s", url).replace("%action", action)
++        self._check_url(url.replace("%action", action))
++
++        args = [arg.replace("%action", action).replace("%s", url)
+                 for arg in self.remote_args]
+         args = [arg for arg in args if arg]
+         success = self._invoke(args, True, autoraise, url)
+diff --git a/Misc/NEWS.d/next/Security/2026-03-31-09-15-51.gh-issue-148169.EZJzz2.rst b/Misc/NEWS.d/next/Security/2026-03-31-09-15-51.gh-issue-148169.EZJzz2.rst
+new file mode 100644
+index 00000000000000..45cdeebe1b6d64
+--- /dev/null
++++ ./Misc/NEWS.d/next/Security/2026-03-31-09-15-51.gh-issue-148169.EZJzz2.rst
+@@ -0,0 +1,2 @@
++A bypass in :mod:`webbrowser` allowed URLs prefixed with ``%action`` to pass
++the dash-prefix safety check.

@@ -1,0 +1,83 @@
+From ab8704a8e05e2f926c10f994e4085e8726048fa4 Mon Sep 17 00:00:00 2001
+From: Joshua Swanson <22283299+joshuaswanson@users.noreply.github.com>
+Date: Tue, 7 Apr 2026 16:10:34 +0200
+Subject: [PATCH] gh-146333: Fix quadratic regex backtracking in configparser
+ option parsing (GH-146399)
+
+Use negative lookahead in option regex to prevent backtracking, and to avoid changing logic outside the regexes (since people could use the regex directly).
+(cherry picked from commit 7e0a0be4097f9d29d66fe23f5af86f18a34ed7dd)
+
+Co-authored-by: Joshua Swanson <22283299+joshuaswanson@users.noreply.github.com>
+---
+ Lib/configparser.py                           |  8 ++++++--
+ Lib/test/test_configparser.py                 | 20 +++++++++++++++++++
+ ...3-25-00-51-03.gh-issue-146333.LqdL__bn.rst |  3 +++
+ 3 files changed, 29 insertions(+), 2 deletions(-)
+ create mode 100644 Misc/NEWS.d/next/Security/2026-03-25-00-51-03.gh-issue-146333.LqdL__bn.rst
+
+diff --git a/Lib/configparser.py b/Lib/configparser.py
+index d435a5c2fe0da2..e76647d339e913 100644
+--- ./Lib/configparser.py
++++ b/Lib/configparser.py
+@@ -613,7 +613,9 @@ class RawConfigParser(MutableMapping):
+         \]                                 # ]
+         """
+     _OPT_TMPL = r"""
+-        (?P<option>.*?)                    # very permissive!
++        (?P<option>                        # very permissive!
++            (?:(?!{delim})\S)*             # non-delimiter non-whitespace
++            (?:\s+(?:(?!{delim})\S)+)*)    # optionally more words
+         \s*(?P<vi>{delim})\s*              # any number of space/tab,
+                                            # followed by any of the
+                                            # allowed delimiters,
+@@ -621,7 +623,9 @@ class RawConfigParser(MutableMapping):
+         (?P<value>.*)$                     # everything up to eol
+         """
+     _OPT_NV_TMPL = r"""
+-        (?P<option>.*?)                    # very permissive!
++        (?P<option>                        # very permissive!
++            (?:(?!{delim})\S)*             # non-delimiter non-whitespace
++            (?:\s+(?:(?!{delim})\S)+)*)    # optionally more words
+         \s*(?:                             # any number of space/tab,
+         (?P<vi>{delim})\s*                 # optionally followed by
+                                            # any of the allowed
+diff --git a/Lib/test/test_configparser.py b/Lib/test/test_configparser.py
+index 1bfb53ccbb1398..d7c4f19c1a5ef0 100644
+--- ./Lib/test/test_configparser.py
++++ b/Lib/test/test_configparser.py
+@@ -2270,6 +2270,26 @@ def test_section_bracket_in_key(self):
+         output.close()
+ 
+ 
++class ReDoSTestCase(unittest.TestCase):
++    """Regression tests for quadratic regex backtracking (gh-146333)."""
++
++    def test_option_regex_does_not_backtrack(self):
++        # A line with many spaces between non-delimiter characters
++        # should be parsed in linear time, not quadratic.
++        parser = configparser.RawConfigParser()
++        content = "[section]\n" + "x" + " " * 40000 + "y" + "\n"
++        # This should complete almost instantly. Before the fix,
++        # it would take over a minute due to catastrophic backtracking.
++        with self.assertRaises(configparser.ParsingError):
++            parser.read_string(content)
++
++    def test_option_regex_no_value_does_not_backtrack(self):
++        parser = configparser.RawConfigParser(allow_no_value=True)
++        content = "[section]\n" + "x" + " " * 40000 + "y" + "\n"
++        parser.read_string(content)
++        self.assertTrue(parser.has_option("section", "x" + " " * 40000 + "y"))
++
++
+ class MiscTestCase(unittest.TestCase):
+     def test__all__(self):
+         support.check__all__(self, configparser, not_exported={"Error"})
+diff --git a/Misc/NEWS.d/next/Security/2026-03-25-00-51-03.gh-issue-146333.LqdL__bn.rst b/Misc/NEWS.d/next/Security/2026-03-25-00-51-03.gh-issue-146333.LqdL__bn.rst
+new file mode 100644
+index 00000000000000..96d86ecc0a0fb3
+--- /dev/null
++++ ./Misc/NEWS.d/next/Security/2026-03-25-00-51-03.gh-issue-146333.LqdL__bn.rst
+@@ -0,0 +1,3 @@
++Fix quadratic backtracking in :class:`configparser.RawConfigParser` option
++parsing regexes (``OPTCRE`` and ``OPTCRE_NV``). A crafted configuration line
++with many whitespace characters could cause excessive CPU usage.
