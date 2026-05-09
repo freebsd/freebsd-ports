@@ -1,6 +1,5 @@
 PORTNAME=	mypy
-PORTVERSION=	1.20.2
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ WWW=		https://www.mypy-lang.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}librt>=0.8.0:devel/py-librt@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ast-serialize>=0.3.0<1.0.0:devel/py-ast-serialize@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}librt>=0.10.0:devel/py-librt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=1.0.0:devel/py-mypy_extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=1.0.0:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}librt>=0.8.0:devel/py-librt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-setuptools>=0:devel/py-types-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}librt>=0.8.0:devel/py-librt@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ast-serialize>=0.3.0<1.0.0:devel/py-ast-serialize@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}librt>=0.10.0:devel/py-librt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=1.0.0:devel/py-mypy_extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=1.0.0:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
@@ -47,20 +48,18 @@ PYTEST_BROKEN_TESTS=	test_c_unit_test	# https://github.com/python/mypy/issues/12
 
 CONFLICTS_INSTALL=	py*-sqlglot-mypy
 
-OPTIONS_DEFINE=	DMYPY FASTER_CACHE INSTALL_TYPES MYPYC NATIVE_PARSER REPORTS
-OPTIONS_DEFAULT=DMYPY FASTER_CACHE INSTALL_TYPES MYPYC NATIVE_PARSER REPORTS
+OPTIONS_DEFINE=	DMYPY FASTER_CACHE INSTALL_TYPES MYPYC REPORTS
+OPTIONS_DEFAULT=DMYPY FASTER_CACHE INSTALL_TYPES MYPYC REPORTS
 DMYPY_DESC=		Daemon mode
 FASTER_CACHE_DESC=	Faster cache support
 INSTALL_TYPES_DESC=	Install support
 MYPYC_DESC=		Mypypc support
-NATIVE_PARSER_DESC=	Native binary format parser
 REPORTS_DESC=		Coverage reports
 
 DMYPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=4.0:sysutils/py-psutil@${PY_FLAVOR}
 FASTER_CACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=0:devel/py-orjson@${PY_FLAVOR}
 INSTALL_TYPES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 MYPYC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=50:devel/py-setuptools@${PY_FLAVOR}
-NATIVE_PARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ast-serialize>=0.1.1<1.0.0:devel/py-ast-serialize@${PY_FLAVOR}
 REPORTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
