@@ -40,3 +40,4 @@ MASTER_SITES=	\
 		https://github.com/ARM-software/kleidiai/archive/refs/tags/:kleidiai \
 		https://github.com/qualcomm/kleidiai/archive/:kleidiai_qmx \
 		https://github.com/svaarala/duktape/releases/download/v2.7.0/:duktape \
+		https://codeload.github.com/KhronosGroup/Vulkan-Headers/tar.gz/refs/tags/:vulkan_headers \

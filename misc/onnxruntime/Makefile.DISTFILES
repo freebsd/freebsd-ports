@@ -32,11 +32,12 @@ DISTFILES=	\
 		2024-07-02.zip:re2 \
 		3.0.28.zip:safeint \
 		373eb09e4c5d2b3cc2493f0949dc4be6b6a45e81.zip:tensorboard \
-		v4.2.1.zip:cutlass \
+		v4.4.2.zip:cutlass \
 		c24b7bab0c12f53da76d0c31b03b9f0f8ec8f3b4.zip:extensions \
 		v1.613.1.zip:directx_headers \
 		v1.12.0.zip:cudnn_frontend \
 		ec7b457e5bb1fcec6f59733c4f3dd84d2f885a38.zip:dawn \
 		v1.20.0.tar.gz:kleidiai \
-		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai_qmx \
+		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai-qmx \
 		duktape-2.7.0.tar.xz:duktape \
+		v1.4.344:vulkan_headers \
