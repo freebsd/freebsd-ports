@@ -1,10 +1,11 @@
 PORTNAME=	crucible
 DISTVERSION=	g20260429
+PORTREVISION=	1
 CATEGORIES=	graphics
 
-PATCH_SITES=	https://github.com/ocochard/crucible/commit/
-PATCHFILES=	2b898ed7107178224b451728f15672dc1733121d.patch:-p1 \
-		384620d1fcb58cdb20a5594aac3d5a5844dfd757.patch:-p1
+PATCH_SITES=	https://gitlab.freedesktop.org/ocochard/crucible/-/commit/
+PATCHFILES=	327659e852353954a8393c0137359dfec355f612.patch:-p1 \
+		53d96b1f69a181e0aeb18b56b3a0842269ef20ce.patch:-p1
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Vulkan test suite
