@@ -1,9 +1,11 @@
-TIMESTAMP = 1766606660
-SHA256 (zoneminder-zoneminder-1.36.37_GH0.tar.gz) = 44948a2c15b7b3a3cbd5ce26de9f859899da14e9568bfb41cee7498c4eb53034
-SIZE (zoneminder-zoneminder-1.36.37_GH0.tar.gz) = 13971532
+TIMESTAMP = 1777777771
+SHA256 (zoneminder-zoneminder-1.38.1_GH0.tar.gz) = 6d766a864a375a8e8f681e7a8c9f780a5f3b891a1518ea2e8300aba630f68032
+SIZE (zoneminder-zoneminder-1.38.1_GH0.tar.gz) = 25295052
 SHA256 (FriendsOfCake-crud-1429237_GH0.tar.gz) = 4dc57f344623d3c0e735b53ed583e5382aa9e43012215f641cbd8ebad381aadc
 SIZE (FriendsOfCake-crud-1429237_GH0.tar.gz) = 73018
 SHA256 (ZoneMinder-CakePHP-Enum-Behavior-ea90c0c_GH0.tar.gz) = 3a9006c7c59f2b864ce628df4725b241fc23cfd9abc56e746acbd22d850f5ab1
 SIZE (ZoneMinder-CakePHP-Enum-Behavior-ea90c0c_GH0.tar.gz) = 3500
-SHA256 (ZoneMinder-RtspServer-eab3285_GH0.tar.gz) = 8e37a14b4895e2e1d76e323875ae515f4ac4018b50d579842848718de804c142
-SIZE (ZoneMinder-RtspServer-eab3285_GH0.tar.gz) = 1396598
+SHA256 (chmike-CxxUrl-eaf46c0_GH0.tar.gz) = 975c1463c3a5d44c1dd911094f58b9490f46c0cc78683418dcd9dbb78c34e35a
+SIZE (chmike-CxxUrl-eaf46c0_GH0.tar.gz) = 14291
+SHA256 (ZoneMinder-RtspServer-a071599_GH0.tar.gz) = f834708f475474e7e2ab2de34c81b169f1580866bbef58395c68d99319111c08
+SIZE (ZoneMinder-RtspServer-a071599_GH0.tar.gz) = 1400029
