@@ -1,6 +1,5 @@
 PORTNAME=	typescript-go
-PORTVERSION=	7.0.0.g20260408
-PORTREVISION=	1
+PORTVERSION=	7.0.0.g20260429
 CATEGORIES=	lang
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,7 +15,7 @@ USES=		go:1.26+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_PROJECT=	typescript-go
-GH_TAGNAME=	9c19dee6ab88ae11444837f16efa16a6b3dc9f59
+GH_TAGNAME=	56ab4af421576f5326e0c08be5ac67149c053618
 GH_TUPLE=	microsoft:TypeScript:c3bd12d888b86f676718b16e64d7d2abcb423514:typescript/_submodules/TypeScript
 
 GO_MOD_DIST=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}/
