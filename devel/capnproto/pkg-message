@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Due to a kernel bug this library may not work as intended on 15.0-RELEASE,
+it's expected to be fixed in 15.1-RELEASE. See following URL for more
+information:
+https://cgit.freebsd.org/src/commit/?id=476805133f5736c2c8638e41d2b5d8dd2c597f3a
+EOM
+}
+]
