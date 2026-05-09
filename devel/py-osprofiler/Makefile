@@ -28,4 +28,20 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	ELASTICSEARCH MESSAGING MONGO OTLP REDIS SQLALCHEMY
+ELASTICSEARCH_DESC=	Elasticsearch driver support
+MESSAGING_DESC=	Messaging driver support
+MONGO_DESC=	MongoDB driver support
+OTLP_DESC=	OTLP exporter support
+REDIS_DESC=	Redis driver support
+SQLALCHEMY_DESC=SQLAlchemy driver support
+
+ELASTICSEARCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=2.0.0:textproc/py-elasticsearch@${PY_FLAVOR}
+MESSAGING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oslo.messaging>=14.1.0:devel/py-oslo.messaging@${PY_FLAVOR}
+MONGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=3.0.2:databases/py-pymongo@${PY_FLAVOR}
+OTLP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp>=1.16.0:devel/py-opentelemetry-exporter-otlp@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.16.0:devel/py-opentelemetry-sdk@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=2.10.0:databases/py-redis@${PY_FLAVOR}
+SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0.0:databases/py-sqlalchemy20@${PY_FLAVOR}
+
 .include <bsd.port.mk>
