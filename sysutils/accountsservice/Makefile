@@ -1,5 +1,6 @@
 PORTNAME=	accountsservice
 DISTVERSION=	26.13.3
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -36,5 +37,9 @@ OPTIONS_SUB=		yes
 
 VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
+
+post-patch:
+	${ECHO_CMD} "#!${SH}" > ${WRKSRC}/generate-version.sh
+	${ECHO_CMD} "${ECHO_CMD} ${PORTVERSION}" >> ${WRKSRC}/generate-version.sh
 
 .include <bsd.port.mk>
