@@ -1,6 +1,6 @@
-TIMESTAMP = 1778096626
-SHA256 (prek-0.3.12.tar.gz) = 3689dbb8fbd6965bdbf3331d51d01d2569c768f35b6975ddba144cceb8e9d7cc
-SIZE (prek-0.3.12.tar.gz) = 444157
+TIMESTAMP = 1778246807
+SHA256 (prek-0.3.13.tar.gz) = c48586ee3708bfbf3df80121f55583e9a7d0fa166b08172c091fe5971e92a0ac
+SIZE (prek-0.3.13.tar.gz) = 444848
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
