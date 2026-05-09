@@ -1,5 +1,5 @@
 PORTNAME=	pydantic
-PORTVERSION=	2.13.3
+PORTVERSION=	2.13.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=22.5.0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>=0.6.0:devel/py-annotated-types@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.46.3<2.46.3_99:devel/py-pydantic-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.46.4<2.46.4_99:devel/py-pydantic-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.1:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-inspection>=0.4.2:devel/py-typing-inspection@${PY_FLAVOR}
 
