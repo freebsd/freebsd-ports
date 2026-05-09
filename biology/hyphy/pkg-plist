@@ -195,6 +195,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/SLAC.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/SingleOmega.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/aBSREL.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/clade_support.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/contrast-fel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/contrast-meme.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/error-filter.bf
