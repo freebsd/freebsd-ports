@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.3
+DISTVERSION=	2026.5.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +56,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
 		assert-json-diff-2.0.2 \
+		astral-reqwest-middleware-0.4.2 \
 		astral-tokio-tar-0.6.1 \
+		astral_async_http_range_reader-0.9.1 \
 		astral_async_zip-0.0.17 \
 		async-backtrace-0.2.7 \
 		async-backtrace-attributes-0.2.7 \
@@ -66,7 +68,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		async-recursion-1.1.1 \
 		async-spooled-tempfile-0.1.0 \
 		async-trait-0.1.89 \
-		async_http_range_reader-0.9.1 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
 		aws-config-1.8.14 \
@@ -277,7 +278,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fastrand-2.4.1 \
 		ff-0.13.1 \
 		fiat-crypto-0.2.9 \
-		file_url-0.2.8 \
+		file_url-0.3.0 \
 		filetime-0.2.27 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
@@ -471,7 +472,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		json-patch-4.2.0 \
 		json-syntax-0.12.5 \
 		jsonptr-0.7.1 \
-		junction-1.4.2 \
+		junction-2.0.0 \
 		jwt-0.16.0 \
 		kdl-6.5.0 \
 		known-folders-1.4.2 \
@@ -594,7 +595,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pastey-0.2.2 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
-		path_resolver-0.2.7 \
+		path_resolver-0.2.8 \
 		pbkdf2-0.12.2 \
 		pbkdf2-0.13.0 \
 		pem-3.0.6 \
@@ -666,20 +667,20 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
-		rattler-0.40.6 \
-		rattler_cache-0.6.21 \
-		rattler_conda_types-0.44.6 \
-		rattler_digest-1.2.3 \
-		rattler_macros-1.0.12 \
-		rattler_menuinst-0.2.56 \
-		rattler_networking-0.26.9 \
-		rattler_package_streaming-0.24.9 \
-		rattler_pty-0.2.9 \
-		rattler_redaction-0.1.13 \
-		rattler_repodata_gateway-0.27.6 \
-		rattler_shell-0.26.9 \
-		rattler_solve-5.2.2 \
-		rattler_virtual_packages-2.3.18 \
+		rattler-0.42.0 \
+		rattler_cache-0.7.1 \
+		rattler_conda_types-0.46.1 \
+		rattler_digest-1.2.4 \
+		rattler_macros-1.0.13 \
+		rattler_menuinst-0.2.59 \
+		rattler_networking-0.26.12 \
+		rattler_package_streaming-0.25.1 \
+		rattler_pty-0.2.10 \
+		rattler_redaction-0.1.15 \
+		rattler_repodata_gateway-0.28.2 \
+		rattler_shell-0.26.12 \
+		rattler_solve-6.0.2 \
+		rattler_virtual_packages-2.3.21 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
@@ -695,7 +696,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		regex-syntax-0.8.10 \
 		reqwest-0.12.28 \
 		reqwest-0.13.3 \
-		reqwest-middleware-0.4.2 \
 		resolvo-0.10.2 \
 		retry-policies-0.5.1 \
 		rfc6979-0.4.0 \
