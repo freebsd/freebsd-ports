@@ -1,5 +1,5 @@
 PORTNAME=	sphinxcontrib-bibtex
-PORTVERSION=	2.6.5
+PORTVERSION=	2.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.8,1:textproc/py-docutils@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.20,1:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybtex>=0.25:textproc/py-pybtex@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybtex-docutils>=1.0.0:textproc/py-pybtex-docutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybtex-docutils>=1.0.2:textproc/py-pybtex-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=3.5,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python
