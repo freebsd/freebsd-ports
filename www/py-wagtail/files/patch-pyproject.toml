@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-03-03 15:31:47 UTC
+--- pyproject.toml.orig	2026-05-05 16:33:54 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -17,10 +17,10 @@
  authors = [
    { name = "Wagtail core team + contributors", email = "hello@wagtail.org" },
  ]
-@@ -116,15 +115,6 @@ include = ["wagtail*"]
+@@ -114,15 +113,6 @@ include = ["wagtail*"]
  
  "wagtail" = ["**/*"]
- "*" = [ ".dockerignore",]
+ "*" = [".dockerignore"]
 -
 -[tool.setuptools.data-files]
 -"." = [
