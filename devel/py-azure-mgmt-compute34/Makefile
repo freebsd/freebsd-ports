@@ -27,5 +27,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^34\.
+
 .include <bsd.port.mk>
 
