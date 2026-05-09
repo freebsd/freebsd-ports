@@ -597,6 +597,7 @@
     SUBDIR += py-sagemaker
     SUBDIR += py-sagemaker-core
     SUBDIR += py-sagemaker-mlops
+    SUBDIR += py-sagemaker-schema-inference-artifacts
     SUBDIR += py-sagemaker-serve
     SUBDIR += py-sagemaker-shim
     SUBDIR += py-sagemaker-train
