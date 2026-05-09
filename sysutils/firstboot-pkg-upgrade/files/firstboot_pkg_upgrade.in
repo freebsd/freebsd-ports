@@ -50,6 +50,7 @@ firstboot_pkg_upgrade_run()
 			touch ${firstboot_sentinel}-reboot
 		else
 			return 0
+		fi
 		;;
 	*)
 		return 0
