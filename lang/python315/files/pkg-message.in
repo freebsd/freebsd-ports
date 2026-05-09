@@ -1,6 +1,13 @@
 [
-{ type: install
+{ type: [install, upgrade],
   message: <<EOM
+Note that this is a preview version that is not recommended for
+production environments.  Maintainers of third-party packages
+are, however, encouraged to test.
+
+Note that the ABI is not stable yet.
+
+
 Note that some standard Python modules are provided as separate ports
 as they require additional dependencies. They are available as:
 

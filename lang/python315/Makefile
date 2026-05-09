@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}  # see Makefile.version
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -8,7 +8,7 @@ DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	Interpreted object-oriented programming language
+COMMENT=	Pre-release versions of the interpreted object-oriented programming language
 WWW=		https://www.python.org/
 
 LICENSE=	PSFL
