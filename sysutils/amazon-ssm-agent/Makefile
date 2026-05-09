@@ -1,6 +1,6 @@
 PORTNAME=	amazon-ssm-agent
 PORTVERSION=	3.3.4177.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org

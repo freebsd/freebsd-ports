@@ -1,7 +1,7 @@
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
 DISTVERSION=	38.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel editors
 .ifmake makesum
 MASTER_SITES=	https://go.googlesource.com/sync/+archive/refs/tags/:errgroup
