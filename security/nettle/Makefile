@@ -34,8 +34,6 @@ EXAMPLES_CFLAGS=	-I${OPENSSLINC}
 EXAMPLES_USES=		ssl
 EXAMPLES_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 	${INSTALL_DATA} ${WRKSRC}/nettle.info ${STAGEDIR}${PREFIX}/${INFO_PATH}/nettle.info
