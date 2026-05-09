@@ -1,5 +1,5 @@
 PORTNAME=	tatsu
-PORTVERSION=	5.18.0
+PORTVERSION=	5.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	tatsu/bootstrap.py \
-		tatsu/g2e/__init__.py
+SHEBANG_GLOB=	*.py
 
 .include <bsd.port.mk>
