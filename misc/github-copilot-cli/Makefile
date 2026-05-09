@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	1.0.43
+DISTVERSION=	1.0.44
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}-x # -x is to see if it would fix checksum errors
@@ -201,6 +201,12 @@ do-build:
 	@${STRIP_CMD} ${WRKSRC}/copilot
 .endif	# FLAVOR == binary
 
+x:
+	${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -path "*/build/*" -name *.node | ${XARGS} ${STRIP_CMD}
+
+x2:
+	@${STRIP_CMD} ${WRKSRC}/copilot
+
 do-install:
 .if ${FLAVOR} == script
 	# install files
@@ -226,8 +232,8 @@ do-install:
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/npm-loader.js
 	# create symlink in bin
 	@${RLN} -s ${STAGEDIR}${PREFIX}/lib/node_modules/.bin/copilot ${STAGEDIR}${PREFIX}/bin/copilot
-	# strip binaries
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -path "*/build/*" -name *.node | ${XARGS} ${STRIP_CMD}
+	# strip binaries (disabed because it breaks on 14 where strip fails with a cryptic error)
+	#@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -path "*/build/*" -name *.node | ${XARGS} ${STRIP_CMD}
 .elif ${FLAVOR} == binary
 	${INSTALL_PROGRAM} ${WRKSRC}/copilot ${STAGEDIR}${PREFIX}/bin/copilot
 .endif	# FLAVOR

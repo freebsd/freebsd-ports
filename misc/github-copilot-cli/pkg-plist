@@ -24,7 +24,6 @@ lib/node_modules/@github/copilot/copilot-sdk/sessionFsProvider.d.ts
 lib/node_modules/@github/copilot/copilot-sdk/telemetry.d.ts
 lib/node_modules/@github/copilot/copilot-sdk/types.d.ts
 lib/node_modules/@github/copilot/definitions/code-review.agent.yaml
-lib/node_modules/@github/copilot/definitions/configure-copilot.agent.yaml
 lib/node_modules/@github/copilot/definitions/explore.agent.yaml
 lib/node_modules/@github/copilot/definitions/rem-agent.agent.yaml
 lib/node_modules/@github/copilot/definitions/research.agent.yaml
@@ -34,21 +33,54 @@ lib/node_modules/@github/copilot/definitions/sidekick/subconscious-agent.yaml
 lib/node_modules/@github/copilot/definitions/task.agent.yaml
 lib/node_modules/@github/copilot/foundry-local-sdk/index.js
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/deps_versions.json
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/catalog.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/catalog.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/catalog.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/configuration.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/configuration.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/configuration.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/coreInterop.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/coreInterop.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/coreInterop.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/model.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/model.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/model.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelLoadManager.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelLoadManager.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelLoadManager.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelVariant.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelVariant.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/modelVariant.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/foundryLocalManager.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/foundryLocalManager.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/foundryLocalManager.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/imodel.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/imodel.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/imodel.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/index.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/index.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/index.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/audioClient.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/audioClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/audioClient.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/chatClient.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/chatClient.js
-lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTranscriptionClient.js
-lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTranscriptionTypes.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/chatClient.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/embeddingClient.d.ts
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/embeddingClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/embeddingClient.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioSession.d.ts
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioSession.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioSession.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTypes.d.ts
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTypes.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/liveAudioTypes.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/responsesClient.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/responsesClient.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/openai/responsesClient.js.map
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/types.d.ts
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/types.js
+lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/types.js.map
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/LICENSE
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/adm-zip.js
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/headers/entryHeader.js
@@ -131,6 +163,8 @@ lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-n
 lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder.d.ts.map
 lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder_status_t.d.ts
 lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/dist/types/pv_recorder_status_t.d.ts.map
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/arm64/LICENSE
+lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/arm64/NOTICE.md
 lib/node_modules/@github/copilot/queries/bash-highlights.scm
 lib/node_modules/@github/copilot/queries/c-highlights.scm
 lib/node_modules/@github/copilot/queries/cpp-highlights.scm
@@ -202,5 +236,4 @@ lib/node_modules/@github/copilot/worker/conoutSocketWorker.js
 @dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/mac/arm64
 @dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/mac/x86_64
 @dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/amd64
-@dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/arm64
 @dir lib/node_modules/@github/copilot/ripgrep/bin
