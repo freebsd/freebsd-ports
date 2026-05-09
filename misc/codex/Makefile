@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.128.0
+DISTVERSION=	0.130.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -78,7 +78,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/exec_policy_tests.rs \
 		${BUILD_WRKSRC}/core/src/exec_tests.rs \
 		${BUILD_WRKSRC}/core/src/shell.rs \
-		${BUILD_WRKSRC}/core/src/shell_snapshot.rs \
+		${BUILD_WRKSRC}/core/src/shell_snapshot_tests.rs \
 		${BUILD_WRKSRC}/core/src/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec_tests.rs \
@@ -91,7 +91,6 @@ post-patch:
 		${BUILD_WRKSRC}/shell-escalation/src/unix/escalate_server.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
-		${BUILD_WRKSRC}/app-server/src/config_api.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/command_exec.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/hooks_list.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_resume.rs \
@@ -110,6 +109,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/mcp_tool_call_tests.rs \
 		${BUILD_WRKSRC}/core/src/session/tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
+		${BUILD_WRKSRC}/core/tests/suite/compact.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
@@ -121,6 +121,7 @@ post-patch:
 		${BUILD_WRKSRC}/execpolicy/tests/basic.rs \
 		${BUILD_WRKSRC}/external-agent-migration/src/lib.rs \
 		${BUILD_WRKSRC}/hooks/src/engine/mod_tests.rs \
+		${BUILD_WRKSRC}/hooks/src/events/compact.rs \
 		${BUILD_WRKSRC}/hooks/src/events/post_tool_use.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/landlock.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy.rs \

@@ -1,4 +1,4 @@
-TIMESTAMP = 1777952381
+TIMESTAMP = 1778308193
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
@@ -129,6 +129,8 @@ SHA256 (rust/crates/aws-lc-sys-0.39.0.crate) = 1fa7e52a4c5c547c741610a2c6f123f38
 SIZE (rust/crates/aws-lc-sys-0.39.0.crate) = 9461007
 SHA256 (rust/crates/aws-runtime-1.5.17.crate) = d81b5b2898f6798ad58f484856768bca817e3cd9de0974c24ae0f1113fe88f1b
 SIZE (rust/crates/aws-runtime-1.5.17.crate) = 77032
+SHA256 (rust/crates/aws-sdk-signin-1.2.0.crate) = c084bd63941916e1348cb8d9e05ac2e49bdd40a380e9167702683184c6c6be53
+SIZE (rust/crates/aws-sdk-signin-1.2.0.crate) = 74539
 SHA256 (rust/crates/aws-sdk-sso-1.91.0.crate) = 8ee6402a36f27b52fe67661c6732d684b2635152b676aa2babbfb5204f99115d
 SIZE (rust/crates/aws-sdk-sso-1.91.0.crate) = 92652
 SHA256 (rust/crates/aws-sdk-ssooidc-1.93.0.crate) = a45a7f750bbd170ee3677671ad782d90b894548f4e4ae168302c57ec9de5cb3e
@@ -2299,5 +2301,5 @@ SHA256 (openai-oss-forks-tungstenite-rs-9200079d3b54a1ff51072e24d81fd354f085156f
 SIZE (openai-oss-forks-tungstenite-rs-9200079d3b54a1ff51072e24d81fd354f085156f_GH0.tar.gz) = 293929
 SHA256 (openai-oss-forks-tokio-tungstenite-132f5b39c862e3a970f731d709608b3e6276d5f6_GH0.tar.gz) = d533d657efccf27a6c11c86114998b1a777d5243696d19da2e180729bda7c47d
 SIZE (openai-oss-forks-tokio-tungstenite-132f5b39c862e3a970f731d709608b3e6276d5f6_GH0.tar.gz) = 31620
-SHA256 (openai-codex-rust-v0.128.0_GH0.tar.gz) = 7fa05570bb9b3e65a690bb58933d26bcb804b777ff63ff5d831027354374e047
-SIZE (openai-codex-rust-v0.128.0_GH0.tar.gz) = 7297632
+SHA256 (openai-codex-rust-v0.130.0_GH0.tar.gz) = 13fac7f7aa8ef2e2747696ae2681bd2129f31f0f592a9d276af9780234f4fdf0
+SIZE (openai-codex-rust-v0.130.0_GH0.tar.gz) = 7565974
