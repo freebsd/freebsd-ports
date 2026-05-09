@@ -142,3 +142,22 @@
      /* RFC 4954 Section 6. */
      smtpd_chat_reply(state, "235 2.7.0 Authentication successful");
      if ((sasl_username = xsasl_server_get_username(state->sasl_server)) == 0)
+--- src/postscreen/Makefile.in.orig	2026-05-04 15:24:10.810630000 +0200
++++ src/postscreen/Makefile.in	2026-05-04 15:24:27.809059000 +0200
+@@ -3,13 +3,13 @@
+ 	postscreen_early.c postscreen_smtpd.c postscreen_misc.c \
+ 	postscreen_state.c postscreen_tests.c postscreen_send.c \
+ 	postscreen_starttls.c postscreen_expand.c postscreen_endpt.c \
+-	postscreen_haproxy.c postscreen_tls_conf.c
++	postscreen_haproxy.c postscreen_tls_conf.c pfilter.c
+ OBJS	= postscreen.o postscreen_dict.o postscreen_dnsbl.o \
+ 	postscreen_early.o postscreen_smtpd.o postscreen_misc.o \
+ 	postscreen_state.o postscreen_tests.o postscreen_send.o \
+ 	postscreen_starttls.o postscreen_expand.o postscreen_endpt.o \
+-	postscreen_haproxy.o postscreen_tls_conf.o
+-HDRS	= 
++	postscreen_haproxy.o postscreen_tls_conf.o pfilter.o
++HDRS	= pfilter.h
+ TESTSRC	= postscreen_dnsbl_test.c
+ DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
+ CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
