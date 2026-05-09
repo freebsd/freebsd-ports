@@ -1,4 +1,4 @@
---- html/main.php.orig	2026-01-14 16:37:00 UTC
+--- html/main.php.orig	2026-03-25 14:20:42 UTC
 +++ html/main.php
 @@ -69,37 +69,6 @@ if ($theme != 'dark' && $theme != 'light') {
  
@@ -7,7 +7,7 @@
 -<div id="currentversioninfo">
 -	<div>
 -		<div class="version">Version <b><?php echo $this_version; ?></b></div>
--		<div class="releasedate">January 14, 2026</div>
+-		<div class="releasedate">March 25, 2026</div>
 -	</div>
 -	<div><span id="core-status"></span></div>
 -	<a class="checkforupdates" href="https://www.nagios.org/checkforupdates/?version=<?php echo $this_version; ?>&amp;product=nagioscore" target="_blank">Check for updates</a>

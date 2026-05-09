@@ -1,6 +1,5 @@
 PORTNAME=	nagios
-DISTVERSION=	4.5.11
-PORTREVISION=	1
+DISTVERSION=	4.5.12
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/ \
