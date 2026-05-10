@@ -1683,9 +1683,9 @@
     SUBDIR += massif-visualizer
     SUBDIR += mate-common
     SUBDIR += matreshka
-    SUBDIR += maven
     SUBDIR += maven-wrapper
     SUBDIR += maven363
+    SUBDIR += maven38
     SUBDIR += maven39
     SUBDIR += mcpp
     SUBDIR += mdb
