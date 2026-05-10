@@ -1,1 +1,5 @@
-X.org cf files for use with imake based builds.
+The xorg-cf-files package contains the data files for the imake utility,
+defining the known settings for a wide variety of platforms (many of
+which have not been verified or tested in almost two decades), and for
+many of the libraries formerly delivered in the X.Org monolithic
+releases.
