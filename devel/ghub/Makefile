@@ -1,6 +1,6 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.0
+DISTVERSION=	5.2.0
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -18,8 +18,6 @@ RUN_DEPENDS=	compat.el>=30.1.0.0:misc/compat.el \
 USES=		emacs:build gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
-
-MAKE_ARGS=	LOAD_PATH=" -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_SITE_LISPDIR}/compat -L ."
 
 CONFLICTS_INSTALL=	ghub-emacs_*
 
