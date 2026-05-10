@@ -586,7 +586,6 @@
     SUBDIR += linux-unrealgold
     SUBDIR += linux-ut
     SUBDIR += linux-virtual-jay-peak
-    SUBDIR += linwarrior
     SUBDIR += lizzie
     SUBDIR += lm-solve
     SUBDIR += lmarbles
