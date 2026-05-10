@@ -1,0 +1,13 @@
+--- intl/Makefile.in.orig	2026-01-28 23:39:23 UTC
++++ intl/Makefile.in
+@@ -3292,8 +3292,8 @@ compat.lo:           ../config.h libgnuintl.h
+ @USE_INCLUDED_LIBINTL_TRUE@install-exec-local: install-exec-libintl
+ @USE_INCLUDED_LIBINTL_TRUE@install-exec-libintl: libintl.la
+ @USE_INCLUDED_LIBINTL_TRUE@	$(mkdir_p) $(DESTDIR)$(libdir)
+-@USE_INCLUDED_LIBINTL_TRUE@	$(LIBTOOL) --mode=install \
+-@USE_INCLUDED_LIBINTL_TRUE@	  $(INSTALL) libintl.la $(DESTDIR)$(libdir)/libintl.la; \
++@USE_INCLUDED_LIBINTL_TRUE@	$(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install \
++@USE_INCLUDED_LIBINTL_TRUE@	  $(INSTALL) $(INSTALL_STRIP_FLAG) libintl.la $(DESTDIR)$(libdir)/libintl.la; \
+ @USE_INCLUDED_LIBINTL_TRUE@	if test "@RELOCATABLE@" = yes; then \
+ @USE_INCLUDED_LIBINTL_TRUE@	  dependencies=`sed -n -e 's,^dependency_libs=\(.*\),\1,p' < $(DESTDIR)$(libdir)/libintl.la | sed -e "s,^',," -e "s,'\$$,,"`; \
+ @USE_INCLUDED_LIBINTL_TRUE@	  if test -n "$$dependencies"; then \

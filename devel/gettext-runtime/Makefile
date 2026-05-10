@@ -3,7 +3,7 @@
 # discretion.
 
 PORTNAME=	gettext-runtime
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GNU gettext runtime libraries and programs
 WWW=		https://www.gnu.org/software/gettext/
