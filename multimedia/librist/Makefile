@@ -1,6 +1,5 @@
 PORTNAME=	librist
-DISTVERSION=	0.2.11
-PORTREVISION=	2
+DISTVERSION=	0.2.14
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ USE_LDCONFIG=	yes
 
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	rist
-GL_TAGNAME=	c526858020ce14c1ef156c0c68a655ba8dfe8b00
+GL_TAGNAME=	91a88de284542ec0414e32e5b884ba33b3fd3b91
 
 MESON_ARGS=	-Dtest=false
 

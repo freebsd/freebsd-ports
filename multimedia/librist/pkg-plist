@@ -2,6 +2,7 @@ bin/rist2rist
 bin/ristreceiver
 bin/ristsender
 bin/ristsrppasswd
+bin/udp2udp
 include/librist/common.h
 include/librist/headers.h
 include/librist/librist.h
@@ -14,10 +15,12 @@ include/librist/peer.h
 include/librist/receiver.h
 include/librist/sender.h
 include/librist/stats.h
+include/librist/tun.h
+include/librist/tunnel.h
 include/librist/udpsocket.h
 include/librist/urlparam.h
 include/librist/version.h
 lib/librist.so
 lib/librist.so.4
-lib/librist.so.4.4.0
+lib/librist.so.4.6.2
 libdata/pkgconfig/librist.pc
