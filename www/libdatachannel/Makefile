@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1
+DISTVERSION=	0.24.3
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +39,6 @@ do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6o
 
 # installs lib/libjuice.a and lib/libusrsctp.a that would conflict with separately installed packages juice and usrsctp, see https://github.com/paullouisageneau/libdatachannel/issues/1277
 
-# tests as of 0.24.0: Finished 12 tests in 38s (38025 ms). Succeeded: 12. Failed: 0.
+# tests as of 0.24.3: Finished 12 tests in 37s (37027 ms). Succeeded: 12. Failed: 0.
 
 .include <bsd.port.post.mk>
