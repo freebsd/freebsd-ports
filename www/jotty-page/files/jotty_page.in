@@ -1,0 +1,116 @@
+#!/bin/sh
+
+# PROVIDE: jotty_page
+# REQUIRE: NETWORKING LOGIN
+# KEYWORD: shutdown
+
+# Add the following to /etc/rc.conf to enable jotty-page:
+#
+# jotty_page_enable="YES"
+#
+# Optional tunables (override in /etc/rc.conf):
+#
+# jotty_page_user="%%JOTTYPAGE_USER%%"
+# jotty_page_group="%%JOTTYPAGE_GROUP%%"
+# jotty_page_env="%%PREFIX%%/etc/jotty-page.env"
+# jotty_page_port="3000"
+# jotty_page_hostname="127.0.0.1"
+# jotty_page_appdir="%%DATADIR%%"
+# jotty_page_logfile="/var/log/jotty-page.log"
+
+. /etc/rc.subr
+
+name="jotty_page"
+rcvar="jotty_page_enable"
+
+load_rc_config "${name}"
+
+: ${jotty_page_enable:="NO"}
+: ${jotty_page_user:="%%JOTTYPAGE_USER%%"}
+: ${jotty_page_group:="%%JOTTYPAGE_GROUP%%"}
+: ${jotty_page_env:="%%PREFIX%%/etc/jotty-page.env"}
+: ${jotty_page_port:="3000"}
+: ${jotty_page_hostname:="127.0.0.1"}
+: ${jotty_page_appdir:="%%DATADIR%%"}
+: ${jotty_page_logfile:="/var/log/jotty-page.log"}
+
+pidfile="/var/run/${name}.pid"
+
+command="%%PREFIX%%/bin/node"
+command_args="${jotty_page_appdir}/server.js"
+procname="${command}"
+
+start_precmd="${name}_prestart"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+jotty_page_prestart()
+{
+	# Create the data directory if it does not exist yet.
+	if [ ! -d /var/db/jotty-page ]; then
+		install -d -o "${jotty_page_user}" -g "${jotty_page_group}" \
+			-m 750 /var/db/jotty-page
+	fi
+
+	# Ensure common subdirectories expected by the application exist.
+	for _d in users notes checklists; do
+		if [ ! -d "/var/db/jotty-page/${_d}" ]; then
+			install -d -o "${jotty_page_user}" -g "${jotty_page_group}" \
+				-m 750 "/var/db/jotty-page/${_d}"
+		fi
+	done
+
+	# Ensure the Next.js cache directory is writable by the service user.
+	if [ ! -d "${jotty_page_appdir}/.next/cache" ]; then
+		install -d -o "${jotty_page_user}" -g "${jotty_page_group}" \
+			-m 750 "${jotty_page_appdir}/.next/cache"
+	fi
+}
+
+jotty_page_start()
+{
+	# Build the environment for the daemon process.
+	local _env
+
+	_env="NODE_ENV=production"
+	_env="${_env} JOTTY_FREEBSD=1"
+	_env="${_env} NEXT_TELEMETRY_DISABLED=1"
+	_env="${_env} PORT=${jotty_page_port}"
+	_env="${_env} HOSTNAME=${jotty_page_hostname}"
+
+	# Source the operator-supplied env file if present.
+	if [ -r "${jotty_page_env}" ]; then
+		# Export each KEY=value line (skip comments and blank lines).
+		while IFS= read -r _line; do
+			case "${_line}" in
+				''|\#*) continue ;;
+			esac
+			_env="${_env} ${_line}"
+		done < "${jotty_page_env}"
+	fi
+
+	echo "Starting jotty-page on ${jotty_page_hostname}:${jotty_page_port}"
+
+	/usr/sbin/daemon \
+		-f \
+		-p "${pidfile}" \
+		-u "${jotty_page_user}" \
+		-o "${jotty_page_logfile}" \
+		/usr/bin/env -i \
+		${_env} \
+		HOME="/var/db/jotty-page" \
+		PATH="%%PREFIX%%/bin:/usr/bin:/bin" \
+		${command} ${command_args}
+}
+
+jotty_page_stop()
+{
+	if [ -f "${pidfile}" ]; then
+		kill "$(cat "${pidfile}")" 2>/dev/null
+		rm -f "${pidfile}"
+	else
+		echo "${name} is not running."
+	fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,65 @@
+[
+{ type: install
+  message: <<EOM
+=============================================================================
+jotty-page has been installed.
+
+Quick-start
+-----------
+
+1. Copy and edit the sample configuration file:
+
+     cp %%PREFIX%%/etc/jotty-page.env.sample %%PREFIX%%/etc/jotty-page.env
+     ${EDITOR:-vi} %%PREFIX%%/etc/jotty-page.env
+
+   At minimum set APP_URL to the public URL of this instance.
+
+2. Enable and start the service:
+
+     sysrc jotty_page_enable=YES
+     service jotty_page start
+
+   The application listens on 127.0.0.1:3000 by default.  Use a reverse
+   proxy (nginx, Caddy, haproxy, …) to expose it on port 80/443.
+
+3. User data is stored in /var/db/jotty-page/.
+
+File locations
+--------------
+  Application:   %%DATADIR%%
+  User data:     /var/db/jotty-page   (→ %%DATADIR%%/data symlink)
+  Configuration: %%PREFIX%%/etc/jotty-page.env
+  Log file:      /var/log/jotty-page.log   (set via jotty_page_logfile)
+  PID file:      /var/run/jotty_page.pid
+
+rc.conf tunables
+----------------
+  jotty_page_enable="YES"          # required to enable the service
+  jotty_page_port="3000"           # listening port
+  jotty_page_hostname="127.0.0.1"  # bind address (0.0.0.0 for all interfaces)
+  jotty_page_env="%%PREFIX%%/etc/jotty-page.env"
+  jotty_page_user="%%JOTTYPAGE_USER%%"
+  jotty_page_logfile="/var/log/jotty-page.log"
+
+Body size limit
+---------------
+The maximum upload size (JOTTY_BODY_SIZE_LIMIT) is patched into the compiled
+Next.js runtime at build time and defaults to 100mb.  To change it, set
+JOTTY_BODY_SIZE_LIMIT in the environment *before* rebuilding the port:
+
+     JOTTY_BODY_SIZE_LIMIT=500mb make reinstall
+
+Custom user patches
+-------------------
+Place additional JavaScript patch modules in:
+
+     %%DATADIR%%/user_patches/
+
+They follow the same convention as the built-in patches/: export an apply()
+function and a name string.  They are picked up automatically the next time
+the patch runner executes.
+
+=============================================================================
+EOM
+}
+]
