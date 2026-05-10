@@ -45,7 +45,7 @@ BINARY_ALIAS=	make=${GMAKE} \
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == armv7 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
-CMAKE_ARGS+=	ENABLE_STIELTJES
+CMAKE_ARGS+=	-DENABLE_STIELTJES:BOOL=OFF
 .endif
 
 # 2 tests are known to fail, see https://gitlab.com/dirac/dirac/-/issues/35
