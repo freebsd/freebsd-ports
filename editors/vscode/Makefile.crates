@@ -70,7 +70,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		castaway-0.2.3 \
 		cbor4ii-1.2.2 \
 		cc-1.2.46 \
-		cc-1.2.61 \
+		cc-1.2.62 \
 		cfg-if-1.0.4 \
 		chrono-0.4.42 \
 		ciborium-0.2.2 \
@@ -413,7 +413,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pulley-macros-35.0.0 \
 		pxfm-0.1.29 \
 		quick-error-2.0.1 \
-		quick-xml-0.39.2 \
+		quick-xml-0.39.4 \
 		quote-1.0.43 \
 		quote-1.0.45 \
 		r-efi-5.2.0 \
@@ -604,7 +604,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.48.0 \
-		tokio-1.52.1 \
+		tokio-1.52.3 \
 		tokio-macros-2.6.0 \
 		toml-0.8.23 \
 		toml-0.9.10+spec-1.1.0 \
