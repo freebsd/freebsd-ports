@@ -15,10 +15,10 @@ Without daemon option:
 - To edit java's parameters, edit %%ETCDIR%%/java-args.txt
 - To run with a specific version of Java, set environment variable JAVA_VERSION,
   for example:
-    export JAVA_VERSION=22
+    export JAVA_VERSION=26
     %%PREFIX%%/bin/minecraft-server
   or:
-    JAVA_VERSION=22 %%PREFIX%%/bin/minecraft-server
+    JAVA_VERSION=26 %%PREFIX%%/bin/minecraft-server
 
 With daemon option:
 - The service has been installed with the name 'minecraft'
@@ -27,6 +27,30 @@ With daemon option:
 - To add other java parameters, use minecraft_args= in /etc/rc.conf
 - To run with a specific version of Java, use minecraft_java_version= in /etc/rc.conf
 - To see the interactive console, type service minecraft console
+EOM
+}
+{ type: upgrade
+  maximum_version: "26.1"
+  message: << EOM
+The file structure of how worlds and their data are stored have been changed since new 26.1 version.
+If you upgrade from a version older than 26.1 (v1.21.11 for example), you can get the following error during wold upgrade:
+  net.minecraft.util.filefix.virtualfilesystem.exception.CowFSSymlinkException:
+  Cannot build copy-on-write file system when symlink is present: ./world
+
+To successfully migrate your world, you must relocate /var/db/minecraft content in /usr/local/minecraft/world, then launch 'minecraft-server' as usual.
+When 'world' upgrade is finished, stop 'minecraft-server' then relocate your world in initial folder /var/db/minecraft-server.
+
+Approximate list of commands:
+  # service minecraft stop
+  # mv /usr/local/minecraft/world /usr/local/minecraft/world.bak
+  # mv /var/db/minecraft-server /usr/local/minecraft/world
+  # service minecraft start
+Wait until the conversion is complete.
+  # service minecraft stop
+  # mv /usr/local/minecraft/world /var/db/minecraft-server
+  # /usr/local/minecraft/world.bak /usr/local/minecraft/world
+  # service minecraft start
+Enjoy!
 EOM
 }
 ]

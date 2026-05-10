@@ -5,6 +5,37 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260510:
+  AFFECTS: Users of games/minecraft-server
+  AUTHOR: freebsd.tug890@passmail.net
+
+  The file structure of how worlds and their data are stored have been
+  changed since new 26.1 version.
+  If you upgrade from a version older than 26.1 (v1.21.11 for example),
+  you can get the following error during wold upgrade:
+  "
+  net.minecraft.util.filefix.virtualfilesystem.exception.CowFSSymlinkException:
+  Cannot build copy-on-write file system when symlink is present: ./world
+  "
+
+  To successfully migrate your world, you must relocate /var/db/minecraft
+  content in /usr/local/minecraft/world, then launch 'minecraft-server'
+  as usual. 
+  When 'world' upgrade is finished, stop 'minecraft-server' then relocate
+  your world in initial folder /var/db/minecraft-server.
+
+  Approximate list of commands:
+  # service minecraft stop
+  # mv /usr/local/minecraft/world /usr/local/minecraft/world.bak
+  # mv /var/db/minecraft-server /usr/local/minecraft/world
+  # service minecraft start
+  Wait until the conversion is complete.
+  # service minecraft stop
+  # mv /usr/local/minecraft/world /var/db/minecraft-server
+  # /usr/local/minecraft/world.bak /usr/local/minecraft/world
+  # service minecraft start
+  Enjoy!
+
 20260508:
   AFFECTS: users of shells/bash-completion
   AUTHOR: michaelo@FreeBSD.org
