@@ -1,5 +1,5 @@
 PORTNAME=	gradle
-PORTVERSION=	9.3.1
+PORTVERSION=	9.5.0
 PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://services.gradle.org/distributions/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe java zip
 
-CONFLICTS_INSTALL=	gradle6 gradle62
+CONFLICTS_INSTALL=	gradle6 gradle8
 
 NO_ARCH=	yes
 NO_BUILD=	yes
