@@ -1,0 +1,20 @@
+Jotty is a self-hosted, privacy-focused productivity platform combining
+notes, checklists and a knowledge base in a single web application.
+
+Key features:
+- Rich-text editor (TipTap) with Markdown, tables, tasks and code blocks
+- Excalidraw whiteboard and Drawio diagram embedding
+- Encrypted notes (OpenPGP / libsodium)
+- OIDC / SSO authentication with optional local-account fallback
+- TOTP two-factor authentication
+- Git-tracked note history
+- WebSocket-based real-time collaboration
+- PWA support for offline use
+- LDAP / Active Directory integration
+- Theming and i18n (multiple locales)
+
+The application is a Next.js 16 app using the standalone output mode.  On
+FreeBSD, SWC native binaries are unavailable; the port patches node_modules
+at build time to substitute a WASM fallback and force the webpack bundler.
+
+WWW: https://github.com/fccview/jotty
