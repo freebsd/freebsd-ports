@@ -1,5 +1,5 @@
 PORTNAME=	curtail
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.0
 CATEGORIES=	graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,12 @@ WWW=		https://github.com/Huluti/Curtail
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib
-RUN_DEPENDS=	cwebp:graphics/webp \
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		appstreamcli:devel/appstream \
+		blueprint-compiler:devel/blueprint-compiler \
+		libadwaita>0:x11-toolkits/libadwaita
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygobject>=0:devel/py-pygobject@${PY_FLAVOR} \
+		cwebp:graphics/webp \
 		jpegoptim:graphics/jpegoptim \
 		libadwaita>0:x11-toolkits/libadwaita \
 		oxipng:graphics/oxipng \
@@ -18,7 +22,7 @@ RUN_DEPENDS=	cwebp:graphics/webp \
 		scour:textproc/py-scour@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig python
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk40
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Huluti
