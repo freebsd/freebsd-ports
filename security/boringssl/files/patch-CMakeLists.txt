@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-04-14 06:05:39 UTC
+--- CMakeLists.txt.orig	2026-05-08 11:25:09 UTC
 +++ CMakeLists.txt
-@@ -773,6 +773,9 @@ endif()
+@@ -775,6 +775,9 @@ endif()
    target_link_libraries(generate_mldsa_certs crypto)
  endif()
  
