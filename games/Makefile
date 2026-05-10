@@ -991,6 +991,7 @@
     SUBDIR += triplane
     SUBDIR += trojka
     SUBDIR += tsito
+    SUBDIR += tshock
     SUBDIR += tt
     SUBDIR += ttt
     SUBDIR += tty-solitaire
