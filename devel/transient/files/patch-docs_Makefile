@@ -1,11 +1,34 @@
---- docs/Makefile.orig	2024-03-21 22:09:38 UTC
+--- docs/Makefile.orig	2026-05-07 15:21:42 UTC
 +++ docs/Makefile
-@@ -50,7 +50,7 @@ html-dir: $(PKG).texi
+@@ -29,7 +29,7 @@ _    := $(shell test "$(REVDESC)" = "$$(cat .revdesc 2
+ %.texi: %.org .orgconfig .revdesc
+ 	@printf "Generating $@\n"
+ 	@$(EMACS_ORG) $< $(ORG_EVAL)
+-	@sed -e 's/“/``/g' -e "s/”/''/g" -e '$$a\' -ix $@ && rm $@x #'
++	@$(SED) -e 's/“/``/g' -e "s/”/''/g" -e '$$a\' -ix $@ && rm $@x #'
+ 
+ %.info: %.texi
+ 	@printf "Generating $@\n"
+@@ -52,19 +52,19 @@ HTML_FIXUP_MENU   = '/<\/body>/i<div id="s-css-s--menu
+ %.html: %.texi
+ 	@printf "Generating $@\n"
+ 	@$(MAKEINFO) --html --no-split $(MANUAL_HTML_ARGS) $<
+-	@sed -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) -ix $@ && rm $@x
++	@$(SED) -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) -ix $@ && rm $@x
+ 
+ %/index.html: %.texi
+ 	@printf "Generating $(PKG)/*.html\n"
+ 	@rm -rf $(PKG)
+ 	@$(MAKEINFO) --html -o $(PKG)/ $(MANUAL_HTML_ARGS) $<
+ 	@for f in $$(find $(PKG) -name '*.html') ; do \
+-	sed -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) -ix $$f && rm $${f}x ; \
++	$(SED) -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) -ix $$f && rm $${f}x ; \
+ 	done
  
  %.pdf: %.texi
  	@printf "Generating $@\n"
 -	@texi2pdf --clean $< > /dev/null
 +	@texi2pdf $< > /dev/null
  
- PUBLISH_PATH   ?= /manual/
- RELEASE_PATH   ?= /manual/$(VERSION)/
+ DOCS_DOMAIN = docs.$(DOMAIN)
+ STAT_DOMAIN = stats.$(DOMAIN)

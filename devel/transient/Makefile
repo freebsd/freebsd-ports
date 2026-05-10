@@ -1,7 +1,6 @@
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.13.3
 CATEGORIES=	devel elisp
 
 MAINTAINER=	freebsd@dev.thsi.be
@@ -20,18 +19,15 @@ USES=		emacs:build gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-MAKE_ENV=	LOAD_PATH="-L ${PREFIX}/${EMACS_SITE_LISPDIR}/compat \
-			   -L ${PREFIX}/${EMACS_SITE_LISPDIR}"
-MAKE_JOBS_UNSAFE=	yes
-ALL_TARGET=	lisp
-
 CONFLICTS_INSTALL=	transient-emacs_*
 
 NO_ARCH=	yes
 
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/transient-autoloads.el \
-		${EMACS_SITE_LISPDIR}/transient.el
+PLIST_FILES=	${ELISPDIR}/transient-autoloads.el \
+		${ELISPDIR}/transient.el
 PORTDOCS=	CHANGELOG README.org transient.html
+
+ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS INFO PDF
 OPTIONS_DEFAULT=	INFO
@@ -40,26 +36,32 @@ PDF_DESC=	Build and install PDF document
 
 DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_USES=		makeinfo
-DOCS_ALL_TARGET=	html
-DOCS_BINARY_ALIAS=	sed=gsed
 
 INFO_BUILD_DEPENDS=	gsed:textproc/gsed
-INFO_ALL_TARGET=	info
-INFO_BINARY_ALIAS=	sed=gsed
 INFO_INFO=		transient
 
 PDF_BUILD_DEPENDS=	gsed:textproc/gsed \
 			texi2pdf:print/texinfo
 PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
-PDF_ALL_TARGET=		pdf
-PDF_BINARY_ALIAS=	sed=gsed
 PDF_PLIST_FILES=	${DOCSDIR}/transient.pdf
 
+do-build:
+	cd ${WRKSRC}/lisp && ${MAKE_CMD} autoloads
+
+do-build-DOCS-on:
+	cd ${WRKSRC}/docs && SED=gsed ${MAKE_CMD} html
+
+do-build-INFO-on:
+	cd ${WRKSRC} && SED=gsed ${MAKE_CMD} info
+
+do-build-PDF-on:
+	cd ${WRKSRC}/docs && SED=gsed ${MAKE_CMD} pdf
+
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/lisp/*.el \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${ELISPDIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
