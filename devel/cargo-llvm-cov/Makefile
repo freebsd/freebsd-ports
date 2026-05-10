@@ -1,7 +1,6 @@
 PORTNAME=	cargo-llvm-cov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
-PORTREVISION=	1
+DISTVERSION=	0.8.6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ GH_ACCOUNT=	taiki-e
 CARGO_CRATES=	aho-corasick-1.1.4 \
 		anyhow-1.0.102 \
 		autocfg-1.5.0 \
-		bitflags-2.11.0 \
+		bitflags-2.11.1 \
 		bstr-1.12.1 \
 		build-context-0.1.4 \
 		camino-1.2.2 \
@@ -30,32 +29,29 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		duct-1.1.1 \
 		errno-0.3.14 \
 		fastrand-2.4.1 \
-		filetime-0.2.27 \
+		filetime-0.2.28 \
 		fs-err-3.3.0 \
 		glob-0.3.3 \
 		itoa-1.0.18 \
 		lcov2cobertura-1.0.9 \
 		lexopt-0.3.2 \
-		libc-0.2.184 \
-		libredox-0.1.16 \
+		libc-0.2.186 \
 		linux-raw-sys-0.12.1 \
 		memchr-2.8.0 \
-		normpath-1.5.0 \
+		normpath-1.5.1 \
 		once_cell-1.21.4 \
 		opener-0.8.4 \
 		os_pipe-1.2.3 \
-		plain-0.2.3 \
 		proc-macro2-1.0.106 \
-		quick-xml-0.39.2 \
+		quick-xml-0.39.4 \
 		quote-1.0.45 \
-		redox_syscall-0.7.4 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
 		rustc-demangle-0.1.27 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
-		ruzstd-0.8.2 \
+		ruzstd-0.8.3 \
 		same-file-1.0.6 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
@@ -87,10 +83,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.53.1 \
-		winnow-1.0.1 \
+		winnow-1.0.2 \
 		xattr-1.6.1 \
-		zmij-1.0.21 \
-		test-helper@git+https://github.com/taiki-e/test-helper.git?rev=f38a7f5\#f38a7f5895cb5f562195c6116cffc139d712acf5
+		zmij-1.0.21
 
 PLIST_FILES=	bin/${PORTNAME}
 
