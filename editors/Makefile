@@ -2,7 +2,6 @@
 
     SUBDIR += 2bsd-vi
     SUBDIR += abiword
-    SUBDIR += abiword-docs
     SUBDIR += ad
     SUBDIR += aee
     SUBDIR += aewan
