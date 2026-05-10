@@ -12,7 +12,7 @@
 #
 # jotty_page_user="%%JOTTYPAGE_USER%%"
 # jotty_page_group="%%JOTTYPAGE_GROUP%%"
-# jotty_page_env="%%PREFIX%%/etc/jotty-page.env"
+# jotty_page_envfile="%%PREFIX%%/etc/jotty-page.env"
 # jotty_page_port="3000"
 # jotty_page_hostname="127.0.0.1"
 # jotty_page_appdir="%%DATADIR%%"
@@ -28,7 +28,7 @@ load_rc_config "${name}"
 : ${jotty_page_enable:="NO"}
 : ${jotty_page_user:="%%JOTTYPAGE_USER%%"}
 : ${jotty_page_group:="%%JOTTYPAGE_GROUP%%"}
-: ${jotty_page_env:="%%PREFIX%%/etc/jotty-page.env"}
+: ${jotty_page_envfile:="%%PREFIX%%/etc/jotty-page.env"}
 : ${jotty_page_port:="3000"}
 : ${jotty_page_hostname:="127.0.0.1"}
 : ${jotty_page_appdir:="%%DATADIR%%"}
@@ -79,14 +79,14 @@ jotty_page_start()
 	_env="${_env} HOSTNAME=${jotty_page_hostname}"
 
 	# Source the operator-supplied env file if present.
-	if [ -r "${jotty_page_env}" ]; then
+	if [ -r "${jotty_page_envfile}" ]; then
 		# Export each KEY=value line (skip comments and blank lines).
 		while IFS= read -r _line; do
 			case "${_line}" in
 				''|\#*) continue ;;
 			esac
 			_env="${_env} ${_line}"
-		done < "${jotty_page_env}"
+		done < "${jotty_page_envfile}"
 	fi
 
 	echo "Starting jotty-page on ${jotty_page_hostname}:${jotty_page_port}"
