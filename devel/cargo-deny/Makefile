@@ -1,6 +1,5 @@
 PORTNAME=	cargo-deny
-DISTVERSION=	0.19.4
-PORTREVISION=	1
+DISTVERSION=	0.19.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,7 +59,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-utils-0.8.21 \
 		crypto-common-0.1.7 \
-		deranged-0.5.8 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
 		either-1.15.0 \
@@ -116,7 +114,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		memmap2-0.9.10 \
 		miniz_oxide-0.8.9 \
 		nu-ansi-term-0.50.3 \
-		num-conv-0.2.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		parking_lot-0.12.5 \
@@ -128,7 +125,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-atomic-1.13.1 \
 		portable-atomic-util-0.2.6 \
 		potential_utf-0.1.5 \
-		powerfmt-0.2.0 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
 		quote-1.0.45 \
@@ -146,7 +142,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-1.1.4 \
 		rustls-0.23.37 \
 		rustls-pki-types-1.14.0 \
-		rustls-webpki-0.103.12 \
+		rustls-webpki-0.103.13 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		scroll-0.13.0 \
@@ -177,9 +173,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		termcolor-1.4.1 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
-		time-0.3.47 \
-		time-core-0.1.8 \
-		time-macros-0.2.27 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
