@@ -1,6 +1,6 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.9
+DISTVERSION=	3.5.0
 CATEGORIES=	editors elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -21,8 +21,8 @@ CONFLICTS_INSTALL=	with-editor-devel-emacs*
 NO_ARCH=	yes
 
 INFO=		with-editor
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/with-editor-autoloads.el \
-		${EMACS_SITE_LISPDIR}/with-editor.el
+PLIST_FILES=	${ELISPDIR}/with-editor-autoloads.el \
+		${ELISPDIR}/with-editor.el
 PORTDOCS=	README.org with-editor.html
 
 OPTIONS_DEFINE=	DOCS PDF
@@ -35,6 +35,8 @@ PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
 PDF_PLIST_FILES=	${DOCSDIR}/with-editor.pdf
 
+ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
+
 do-build:
 	cd ${WRKSRC} && ${MAKE_CMD} info
 	cd ${WRKSRC}/lisp && ${MAKE_CMD} autoloads
@@ -46,9 +48,9 @@ do-build-PDF-on:
 	cd ${WRKSRC} && ${MAKE_CMD} pdf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/lisp/*.el \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 do-install-DOCS-on:
