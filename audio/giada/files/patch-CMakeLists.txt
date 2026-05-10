@@ -1,0 +1,37 @@
+-- Add FreeBSD to install rules and exclude bundled FLTK/JUCE from installing
+-- their own files (headers, tools) into the stage directory.
+
+--- CMakeLists.txt.orig	2026-05-10 04:37:33 UTC
++++ CMakeLists.txt
+@@ -577,6 +577,8 @@ FetchContent_MakeAvailable(FLTK)
+ set(FLTK_BUILD_FORMS OFF CACHE BOOL "FLTK: don't build (X)Forms compatibility library")
+ 
+ FetchContent_MakeAvailable(FLTK)
++FetchContent_GetProperties(FLTK)
++set_property(DIRECTORY ${fltk_SOURCE_DIR} PROPERTY EXCLUDE_FROM_ALL TRUE)
+ list(APPEND LIBRARIES fltk::fltk fltk::images)
+ 
+ # Libsndfile
+@@ -770,7 +772,7 @@ endif()
+ # Extra parameters for audio plug-ins support.
+ # ------------------------------------------------------------------------------
+ 
+-add_subdirectory(${CMAKE_SOURCE_DIR}/src/deps/juce)
++add_subdirectory(${CMAKE_SOURCE_DIR}/src/deps/juce EXCLUDE_FROM_ALL)
+ 
+ list(APPEND LIBRARIES 
+ 	juce::juce_audio_utils
+@@ -829,9 +831,12 @@ target_compile_options(giada PRIVATE ${COMPILER_OPTION
+ # Install rules
+ # ------------------------------------------------------------------------------
+ 
+-if(DEFINED OS_LINUX)
++if(DEFINED OS_LINUX OR DEFINED OS_FREEBSD)
+ 	include(GNUInstallDirs)
+ 	install(TARGETS giada DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR})
++endif()
++
++if(DEFINED OS_LINUX)
+ 	install(FILES ${CMAKE_SOURCE_DIR}/extras/com.giadamusic.Giada.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ 	install(FILES ${CMAKE_SOURCE_DIR}/extras/com.giadamusic.Giada.metainfo.xml DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo)
+ 	install(FILES ${CMAKE_SOURCE_DIR}/extras/giada-logo.svg RENAME com.giadamusic.Giada.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps)
