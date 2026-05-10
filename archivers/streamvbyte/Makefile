@@ -10,7 +10,7 @@ WWW=		https://github.com/lemire/streamvbyte/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# From 0.5.2.  Retest with 2.0.0.
+# From 0.5.2.  Retest with 3.0.0.
 BROKEN_powerpc=		test fails on big-endian systems
 BROKEN_powerpc64=	test fails on big-endian systems
 

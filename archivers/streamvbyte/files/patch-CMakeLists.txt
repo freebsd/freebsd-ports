@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-05-09 21:04:29 UTC
++++ CMakeLists.txt
+@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
+ set(CMAKE_C_STANDARD 99)
+ set(CMAKE_C_STANDARD_REQUIRED ON)
+ 
+-include(cmake/CPM.cmake)
++# include(cmake/CPM.cmake)
+ 
+ include(CheckCCompilerFlag)
+ include(GNUInstallDirs)
