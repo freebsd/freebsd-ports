@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2025-06-26 12:56:37 UTC
++++ CMakeLists.txt
+@@ -1,7 +1,9 @@ project(recycle)
+ cmake_minimum_required(VERSION 3.10)
+ project(recycle)
+ 
++set(CMAKE_BUILD_TYPE "WurfRelease")
+ 
++
+ # Include common CMake settings
+ include("${STEINWURF_RESOLVE}/toolchains/common_settings.cmake")
+ 
+@@ -19,7 +21,7 @@ install(
+   PATTERN *.hpp)
+ 
+   # Is top level project?
+-if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
++if(FALSE AND ${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+ 
+   # Setup testing
+   enable_testing()
