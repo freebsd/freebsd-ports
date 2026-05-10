@@ -1,4 +1,7 @@
---- makefile.orig	2025-09-30 06:45:40 UTC
+-- Fix build on FreeBSD.
+-- Use port's CC and CURSES flags, and respect LDFLAGS.
+
+--- makefile.orig	2026-05-10 07:33:30 UTC
 +++ makefile
 @@ -6,11 +6,11 @@ USE_GDB ?= 0
  USE_FLTO ?= 0
@@ -7,7 +10,7 @@
 -CC := gcc
 +#CC := gcc
  LIBS := -lm -ldl -lpthread -lncurses
- INCS := -Icii/include
+ INCS := 
 -CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
 -CURSES_LIBS := $(shell ncursesw6-config --libs)
 +#CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
@@ -15,28 +18,41 @@
  
  
  CFLAGS += $(INCS) -Wall $(CURSES_CFLAGS) 
-@@ -33,7 +33,7 @@ ifeq ($(USE_FLTO),1)
- CFLAGS += -O3 -DNDEBUG=1 -Wno-stringop-truncation 
+@@ -29,17 +29,17 @@ SRC_LISP := library/bit.lsp \
+ 		library/plot.lsp \
+ 		library/unistd.lsp 
+ 
+-CFLAGS += -O3
++#CFLAGS += -O3
  
  ifeq ($(USE_FLTO),1)
--CFLAGS += -O3 -flto -DNDEBUG=1 -Wno-stringop-truncation
-+CFLAGS += -O3 -DNDEBUG=1 -Wno-stringop-truncation
+-CFLAGS += -O3 -flto
++#CFLAGS += -flto
  endif
  ifeq ($(USE_GDB),1)
- CFLAGS += -O0 -g -DNDEBUG=1 -Wno-stringop-truncation
-@@ -98,7 +98,7 @@ eisl: $(EISL_OBJS) $(OBJ_CII)
+-CFLAGS += -O0 -g
++CFLAGS += -g
+ endif 
+ 
+ ifeq  ($(shell uname -n),raspberrypi)
+-CFLAGS += -O3
++#CFLAGS += -O3
+ endif
+ 
+ OBJ_LISP := $(SRC_LISP:.lsp=.o)
+@@ -98,7 +98,7 @@ eisl: $(EISL_OBJS) 
  all: $(TARGETS)
  
- eisl: $(EISL_OBJS) $(OBJ_CII)
+ eisl: $(EISL_OBJS) 
 -	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) 
-+	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) $(LDFLAGS)
++	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) $(LDFLAGS) 
  
- %.o: %.c eisl.h ffi.h term.h cii/include/except.h 
+ %.o: %.c eisl.h ffi.h term.h
  	$(CC) $(CFLAGS) -c $< -o $@
-@@ -126,7 +126,7 @@ edlis: edlis.o syn_highlight.o $(OBJ_CII) 
+@@ -125,7 +125,7 @@ edlis: edlis.o syn_highlight.o 
  
  
- edlis: edlis.o syn_highlight.o $(OBJ_CII) 
+ edlis: edlis.o syn_highlight.o 
 -	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS)
 +	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS) $(LDFLAGS)
  

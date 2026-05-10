@@ -1,3 +1,6 @@
+-- Reduce CELLSIZE.
+-- This saves memory on FreeBSD.
+
 --- ffi.h.orig	2025-11-23 16:45:45 UTC
 +++ ffi.h
 @@ -4,7 +4,7 @@
