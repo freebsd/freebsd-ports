@@ -1,7 +1,7 @@
 PORTNAME=	digital
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.31
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/hneemann/Digital
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		desktop-file-utils java
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn

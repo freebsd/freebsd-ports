@@ -1,6 +1,6 @@
 PORTNAME=	jicofo
 DISTVERSION=	1.0-1169
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		java
 USE_GITHUB=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	jts
 DISTVERSION=	1.18.1
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	jts-
 CATEGORIES=	math databases java
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/locationtech/jts
 LICENSE=	EPL
 #LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		java
 JAVA_VERSION=	11+

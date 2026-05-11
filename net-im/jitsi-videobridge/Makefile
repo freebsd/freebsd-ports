@@ -1,6 +1,6 @@
 PORTNAME=	jitsi
 DISTVERSION=	2.3-272
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im java
 PKGNAMESUFFIX=	-videobridge
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		java

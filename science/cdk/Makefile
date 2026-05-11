@@ -1,7 +1,7 @@
 PORTNAME=	cdk
 DISTVERSIONPREFIX=	cdk-
 DISTVERSION=	2.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science java
 PKGNAMESUFFIX=	-chemistry
 
@@ -12,7 +12,7 @@ WWW=		https://cdk.github.io/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		java
 USE_GITHUB=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	jinput
 DISTVERSION=	2.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games java
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/jinput/jinput
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
-		maven>0:devel/maven
+		maven38>0:devel/maven38
 RUN_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils
 
 USES=		java

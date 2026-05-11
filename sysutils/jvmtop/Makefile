@@ -1,6 +1,6 @@
 PORTNAME=	jvmtop
 DISTVERSION=	0.8.0-27
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-g5693965
 CATEGORIES=	sysutils java
 MASTER_SITES=	SF/bsdsrc/jvmtop:source2
@@ -12,7 +12,7 @@ WWW=		https://github.com/patric-r/jvmtop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

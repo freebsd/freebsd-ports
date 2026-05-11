@@ -1,7 +1,7 @@
 PORTNAME=	jacop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math java
 MASTER_SITES=	LOCAL/yuri/:maven \
 		http://people.freebsd.org/~yuri/:maven
@@ -13,7 +13,7 @@ WWW=		https://github.com/radsz/jacop
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		java
 USE_GITHUB=	yes
