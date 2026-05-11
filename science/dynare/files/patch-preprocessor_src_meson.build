@@ -1,0 +1,21 @@
+-- FreeBSD compatibility: link the dynare preprocessor against pthreads.
+-- std::thread requires pthreads on FreeBSD; the original code used std::jthread
+-- whose thread support was implicitly pulled in by the C++ standard library.
+-- After replacing jthread with std::thread, an explicit threads dependency is needed.
+
+--- preprocessor/src/meson.build.orig	2025-03-19 00:00:00 UTC
++++ preprocessor/src/meson.build	2025-03-19 00:00:00 UTC
+@@ -1,4 +1,5 @@
+ boost_dep = dependency('boost')
++threads_dep = dependency('threads')
+ 
+ ## Flex stuff
+ flex_exe = find_program('flex')
+@@ -74,6 +75,6 @@
+ endif
+ 
+ executable('dynare-preprocessor', preprocessor_src, flex_src, flexlexer_h, bison_src,
+-           include_directories : preprocessor_incdir, dependencies : boost_dep,
++           include_directories : preprocessor_incdir, dependencies : [boost_dep, threads_dep],
+            link_args : preprocessor_link_args,
+            install : true)

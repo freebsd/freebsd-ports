@@ -1,0 +1,26 @@
+-- FreeBSD compatibility: link the korder library and its test executables against pthreads.
+-- The korder library's thread_pool.cc uses std::thread which requires pthreads on FreeBSD.
+-- On Linux/macOS this is implicit; on FreeBSD it must be explicitly declared.
+
+--- meson.build.orig	2025-03-19 00:00:00 UTC
++++ meson.build	2025-03-19 00:00:00 UTC
+@@ -496,9 +496,10 @@
+                'mex/sources/libkorder/dynamic_m.cc' ]
+ korder_incdir = include_directories('mex/sources/libkorder', 'mex/sources/libkorder/tl', 'mex/sources/libkorder/sylv',
+                                     'mex/sources/libkorder/kord', 'mex/sources/libkorder/utils')
++threads_dep = dependency('threads')
+ korder_lib = static_library('korder', korder_src,
+                             kwargs : static_library_kwargs + { 'include_directories' : static_library_kwargs.get('include_directories') + korder_incdir},
+-                            dependencies : [ blas_dep, lapack_dep, dl_dep ])
++                            dependencies : [ blas_dep, lapack_dep, dl_dep, threads_dep ])
+ 
+ korder_mex_kwargs = mex_kwargs + { 'include_directories' : mex_kwargs.get('include_directories') + korder_incdir}
+ shared_module('gensylv', 'mex/sources/gensylv/gensylv.cc', kwargs : korder_mex_kwargs, link_with : korder_lib)
+@@ -515,6 +516,7 @@
+                         'cpp_args' : mex_kwargs['cpp_args'],
+                         'link_args' : exe_link_args,
+                         'build_rpath' : exe_rpath,
++                        'dependencies' : threads_dep,
+                         'link_with' : korder_lib }
+ 
+ k_order_sylv_test_exe = executable('k_order_sylv_test', [ 'mex/sources/libkorder/sylv/tests/MMMatrix.cc',
