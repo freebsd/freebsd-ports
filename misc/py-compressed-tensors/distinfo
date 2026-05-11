@@ -1,3 +1,3 @@
-TIMESTAMP = 1775500352
-SHA256 (compressed_tensors-0.14.0.1.tar.gz) = 5ad3841184b6f5020e06059b2463191c5c57a144bb97cab9159978d8118839b1
-SIZE (compressed_tensors-0.14.0.1.tar.gz) = 226393
+TIMESTAMP = 1778483252
+SHA256 (compressed_tensors-0.15.0.1.tar.gz) = a8e93054e8a5ec49c980b09ed36c4c1249b4a8ee167920a8e461c4da26e78d99
+SIZE (compressed_tensors-0.15.0.1.tar.gz) = 229412
