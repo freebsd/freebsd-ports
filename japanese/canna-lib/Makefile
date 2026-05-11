@@ -1,5 +1,5 @@
 PORTNAME=	canna
-PORTVERSION=	3.7p5
+PORTVERSION=	3.8
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/canna-input/canna/releases/download/release-${PORTVERSION}/
 PKGNAMESUFFIX=	-lib
@@ -12,7 +12,7 @@ WWW=		https://canna-input.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		imake:notall,noman tar:bzip2
+USES=		imake:notall,noman tar:xz
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
