@@ -22,7 +22,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons holidays i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdav kio \
 		notifications notifyconfig parts service solid sonnet \
-		textwidgets unitconversion wallet widgetsaddons windowsystem \
+		textwidgets unitconversion widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build
 # pim components

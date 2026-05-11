@@ -1643,10 +1643,13 @@ share/locale/sk/LC_MESSAGES/kgetplugin.mo
 share/locale/sk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sk/LC_MESSAGES/khtmltts.mo
 share/locale/sk/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/sk/LC_MESSAGES/konqsidebar.mo
 share/locale/sk/LC_MESSAGES/konqueror.mo
 share/locale/sk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sk/LC_MESSAGES/libkonq.mo
 share/locale/sk/LC_MESSAGES/searchbarplugin.mo
+share/locale/sk/LC_MESSAGES/speeddial.mo
+share/locale/sk/LC_MESSAGES/temporarysavedir.mo
 share/locale/sk/LC_MESSAGES/uachangerplugin.mo
 share/locale/sk/LC_MESSAGES/webarchiver.mo
 share/locale/sk/LC_MESSAGES/webenginepart.mo

@@ -27,7 +27,7 @@ USE_QT=		base multimedia speech webview \
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		dbusaddons i18n itemmodels jobwidgets kio kirigami-addons \
 		kirigami2 kquickcharts notifications purpose qqc2-desktop-style \
-		service solid sonnet statusnotifieritem syntaxhighlighting \
+		service solid sonnet syntaxhighlighting \
 		widgetsaddons windowsystem \
 		prison:run \
 		ecm:build
