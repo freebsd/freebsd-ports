@@ -359,7 +359,7 @@ FREEBSD_BACKENDS+=	WebAssembly
 NATIVE_BACKENDS+=	WebAssembly
 .endif
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
-			LoongArch MSP430 NVPTX SystemZ VE WebAssembly XCore
+			LoongArch Mips MSP430 NVPTX SystemZ VE WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_INCS_AArch64=	arm_sme_draft_spec_subject_to_change.h
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
