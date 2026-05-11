@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.14
+DISTVERSION=	3.5.18
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +28,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anes-0.1.6 \
 		anstyle-1.0.14 \
 		anyhow-1.0.102 \
+		argon2-0.5.3 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		async-trait-0.1.89 \
@@ -40,10 +41,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		axum-core-0.5.6 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		base64ct-1.8.3 \
+		bincode-2.0.1 \
+		bincode_derive-2.0.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.11.1 \
+		blake2-0.10.6 \
 		blake3-1.8.5 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.0 \
@@ -83,6 +88,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crc32fast-1.5.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
@@ -233,6 +239,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
+		moka-0.12.15 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		nom-8.0.0 \
@@ -253,6 +260,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ordered-float-4.6.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
+		password-hash-0.5.0 \
 		pastey-0.2.2 \
 		pbkdf2-0.12.2 \
 		pem-3.0.6 \
@@ -389,6 +397,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
+		tagptr-0.2.0 \
 		tar-0.4.45 \
 		tempfile-3.27.0 \
 		terminfo-0.9.0 \
@@ -460,6 +469,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		untrusted-0.9.0 \
+		unty-0.0.4 \
 		ureq-3.3.0 \
 		ureq-proto-0.6.0 \
 		url-2.5.8 \
@@ -471,6 +481,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
+		virtue-0.0.18 \
 		vtparse-0.6.2 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
