@@ -677,11 +677,16 @@ filepath can use ../ to reach a parent directory.</p>
 	</body>
     </description>
     <references>
+      <cvename>CVE-2026-43504</cvename>
+      <cvename>CVE-2026-43505</cvename>
+      <cvename>CVE-2026-43506</cvename>
+      <cvename>CVE-2026-43507</cvename>
       <url>https://prosody.im/security/advisory_735dd9d3/</url>
     </references>
     <dates>
       <discovery>2026-04-29</discovery>
       <entry>2026-04-30</entry>
+      <modified>2026-05-08</modified>
     </dates>
   </vuln>
 
