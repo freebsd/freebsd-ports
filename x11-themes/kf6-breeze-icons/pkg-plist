@@ -39868,3 +39868,7 @@ share/icons/breeze/status/64/printer-warning.svg
 share/icons/breeze/status/64/security-high.svg
 share/icons/breeze/status/64/security-low.svg
 share/icons/breeze/status/64/security-medium.svg
+@dir share/icons/breeze/animations/24
+@dir share/icons/breeze/emotes/24
+@dir share/icons/breeze-dark/animations/24
+@dir share/icons/breeze-dark/emotes/24
