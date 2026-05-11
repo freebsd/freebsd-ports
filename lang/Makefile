@@ -400,6 +400,6 @@
     SUBDIR += zephir
     SUBDIR += zig
     SUBDIR += zig014
-	SUBDIR += zig015
+    SUBDIR += zig015
 
 .include <bsd.port.subdir.mk>
