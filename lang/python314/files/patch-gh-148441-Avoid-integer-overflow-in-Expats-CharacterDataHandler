@@ -1,0 +1,70 @@
+From 6588ca5b642a0f878197fc31afb6bfa424fd7219 Mon Sep 17 00:00:00 2001
+From: "Miss Islington (bot)"
+ <31488909+miss-islington@users.noreply.github.com>
+Date: Sun, 10 May 2026 16:08:59 +0200
+Subject: [PATCH] [3.14] gh-148441: Avoid integer overflow in Expat's
+ CharacterDataHandler (GH-148904) (#149638)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+gh-148441: Avoid integer overflow in Expat's CharacterDataHandler (GH-148904)
+(cherry picked from commit bc1be4f6174086b4a46e3fe656552f5bb4e6e7b2)
+
+Co-authored-by: ByteFlow <fakeshadow1337@gmail.com>
+Co-authored-by: Bénédikt Tran <10796600+picnixz@users.noreply.github.com>
+---
+ Lib/test/test_pyexpat.py                           | 14 ++++++++++++++
+ .../2026-04-23-12-50-15.gh-issue-148441.zvpCkR.rst |  4 ++++
+ Modules/pyexpat.c                                  |  2 +-
+ 3 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 Misc/NEWS.d/next/Library/2026-04-23-12-50-15.gh-issue-148441.zvpCkR.rst
+
+diff --git ./Lib/test/test_pyexpat.py b/Lib/test/test_pyexpat.py
+index 465f65a03b9e15..6eda89ad2cdf2a 100644
+--- ./Lib/test/test_pyexpat.py
++++ b/Lib/test/test_pyexpat.py
+@@ -672,6 +672,20 @@ def test_change_size_2(self):
+         parser.Parse(xml2, True)
+         self.assertEqual(self.n, 4)
+ 
++    @support.requires_resource('cpu')
++    @support.requires_resource('walltime')
++    @support.bigmemtest(size=2**31, memuse=4, dry_run=False)
++    def test_large_character_data_does_not_crash(self):
++        # See https://github.com/python/cpython/issues/148441
++        parser = expat.ParserCreate()
++        parser.buffer_text = True
++        parser.buffer_size = 2**31 - 1  # INT_MAX
++        N = 2049 * (1 << 20) - 3  # Character data greater than INT_MAX
++        self.assertGreater(N, parser.buffer_size)
++        parser.CharacterDataHandler = lambda text: None
++        xml_data = b"<r>" + b"A" * N + b"</r>"
++        self.assertEqual(parser.Parse(xml_data, True), 1)
++
+ class ElementDeclHandlerTest(unittest.TestCase):
+     def test_trigger_leak(self):
+         # Unfixed, this test would leak the memory of the so-called
+diff --git a/Misc/NEWS.d/next/Library/2026-04-23-12-50-15.gh-issue-148441.zvpCkR.rst b/Misc/NEWS.d/next/Library/2026-04-23-12-50-15.gh-issue-148441.zvpCkR.rst
+new file mode 100644
+index 00000000000000..762815270e4d40
+--- /dev/null
++++ ./Misc/NEWS.d/next/Library/2026-04-23-12-50-15.gh-issue-148441.zvpCkR.rst
+@@ -0,0 +1,4 @@
++:mod:`xml.parsers.expat`: prevent a crash in
++:meth:`~xml.parsers.expat.xmlparser.CharacterDataHandler`
++when the character data size exceeds the parser's
++:attr:`buffer size <xml.parsers.expat.xmlparser.buffer_size>`.
+diff --git a/Modules/pyexpat.c b/Modules/pyexpat.c
+index f82f8456e489eb..c9dc5e2211ecd5 100644
+--- ./Modules/pyexpat.c
++++ b/Modules/pyexpat.c
+@@ -389,7 +389,7 @@ my_CharacterDataHandler(void *userData, const XML_Char *data, int len)
+     if (self->buffer == NULL)
+         call_character_handler(self, data, len);
+     else {
+-        if ((self->buffer_used + len) > self->buffer_size) {
++        if (len > (self->buffer_size - self->buffer_used)) {
+             if (flush_character_buffer(self) < 0)
+                 return;
+             /* handler might have changed; drop the rest on the floor

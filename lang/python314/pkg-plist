@@ -1847,7 +1847,7 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-26.0.1-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -2908,9 +2908,6 @@ lib/python%%XYDOT%%/test/__pycache__/_test_eintr.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_embed_structseq.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_embed_structseq.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_embed_structseq.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/test/__pycache__/_test_gc_fast_cycles.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/test/__pycache__/_test_gc_fast_cycles.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/test/__pycache__/_test_gc_fast_cycles.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_monitoring_shutdown.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_monitoring_shutdown.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_monitoring_shutdown.cpython-%%XY%%.pyc
@@ -4233,7 +4230,6 @@ lib/python%%XYDOT%%/test/_crossinterp_definitions.py
 lib/python%%XYDOT%%/test/_test_atexit.py
 lib/python%%XYDOT%%/test/_test_eintr.py
 lib/python%%XYDOT%%/test/_test_embed_structseq.py
-lib/python%%XYDOT%%/test/_test_gc_fast_cycles.py
 lib/python%%XYDOT%%/test/_test_monitoring_shutdown.py
 lib/python%%XYDOT%%/test/_test_multiprocessing.py
 lib/python%%XYDOT%%/test/_test_venv_multiprocessing.py
@@ -6679,6 +6675,7 @@ lib/python%%XYDOT%%/test/test_json/__pycache__/test_tool.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_json/__pycache__/test_unicode.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_json/__pycache__/test_unicode.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_json/__pycache__/test_unicode.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_json/json_lines.jsonl
 lib/python%%XYDOT%%/test/test_json/test_decode.py
 lib/python%%XYDOT%%/test/test_json/test_default.py
 lib/python%%XYDOT%%/test/test_json/test_dump.py
