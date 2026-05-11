@@ -1,3 +1,33 @@
+  <vuln vid="ab2258a2-4cea-11f1-aec8-bc241107513d">
+    <topic>dash -- arith: INTMAX_MIN / -1 overflow</topic>
+    <affects>
+<package>
+<name>dash</name>
+<range><lt>0.5.13.3</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://git.kernel.org/pub/scm/utils/dash/dash.git/commit/?id=0034bfe185d3d875cebace8cb3ca5c9dabf9e0f3 reports:</p>
+	<blockquote cite="https://git.kernel.org/pub/scm/utils/dash/dash.git/commit/?id=0034bfe185d3d875cebace8cb3ca5c9dabf9e0f3">
+	    <p>
+		Division and remainder currently guard against division by zero, but not
+		against the signed overflow case INTMAX_MIN / -1. On affected systems
+		this can trigger SIGFPE during arithmetic expansion.
+	    </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-31323</cvename>
+      <url>https://git.kernel.org/pub/scm/utils/dash/dash.git/commit/?id=0034bfe185d3d875cebace8cb3ca5c9dabf9e0f3</url>
+    </references>
+    <dates>
+      <discovery>2026-04-13</discovery>
+      <entry>2026-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="818efa2a-4aae-11f1-88d3-b42e991fc52e">
     <topic>firefox ESR -- Other issue in the WebRTC component</topic>
     <affects>
