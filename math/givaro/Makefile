@@ -1,6 +1,7 @@
 PORTNAME=	givaro
 PORTVERSION=	4.2.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -30,16 +31,17 @@ CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS DOXYGEN
+DOXYGEN_IMPLIES=DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
-DOCS_USE=		TEX=base:build,dvipsk:build,latex:build,pdftex:build
-DOCS_CONFIGURE_ON=	--enable-doc \
+DOXYGEN_USE=		TEX=base:build,dvipsk:build,latex:build,pdftex:build
+DOXYGEN_CONFIGURE_ON=	--enable-doc \
 			--with-docdir=${DOCSDIR}
 
-post-install-DOCS-on:
+post-install-DOXYGEN-on:
 	${RMDIR} ${STAGEDIR}${DOCSDIR}/givaro-dev-html
 	${FIND} ${WRKSRC}/docs/givaro-html -not -type d \
 		| ${SED} -ne 's,^${WRKSRC}/docs/givaro-html,${DOCSDIR}/givaro-html,p' >> ${TMPPLIST}
