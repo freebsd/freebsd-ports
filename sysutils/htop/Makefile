@@ -1,5 +1,5 @@
 PORTNAME=	htop
-PORTVERSION=	3.4.1
+PORTVERSION=	3.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/htop-dev/htop/releases/download/${PORTVERSION}/
 
