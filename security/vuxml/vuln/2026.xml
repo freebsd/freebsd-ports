@@ -204,134 +204,144 @@
        <p>Chrome Releases reports:</p>
        <blockquote cite="https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop.html">
 	 <p>This update includes 127 security fixes:</p>
+	 <p>Critical:</p>
 	 <ul>
-	    <li>[493747582] Critical CVE-2026-7896: Integer overflow in Blink.</li>
-	    <li>[504069514] Critical CVE-2026-7897: Use after free in Mobile.</li>
-	    <li>[504587882] Critical CVE-2026-7898: Use after free in Chromoting.</li>
-	    <li>[505481948] High CVE-2026-7899: Out of bounds read and write in V8.</li>
-	    <li>[496503799] High CVE-2026-7900: Heap buffer overflow in ANGLE.</li>
-	    <li>[497724490] High CVE-2026-7901: Use after free in ANGLE.</li>
-	    <li>[502030575] High CVE-2026-7902: Out of bounds memory access in V8.</li>
-	    <li>[491760376] High CVE-2026-7903: Integer overflow in ANGLE.</li>
-	    <li>[492350406] High CVE-2026-7904: Out of bounds read in Fonts.</li>
-	    <li>[495259842] High CVE-2026-7905: Insufficient validation of untrusted input in Media.</li>
-	    <li>[496284584] High CVE-2026-7906: Use after free in SVG.</li>
-	    <li>[496292089] High CVE-2026-7907: Use after free in DOM.</li>
-	    <li>[497436531] High CVE-2026-7908: Use after free in Fullscreen.</li>
-	    <li>[497437113] High CVE-2026-7909: Inappropriate implementation in ServiceWorker.</li>
-	    <li>[497543810] High CVE-2026-7910: Use after free in Views.</li>
-	    <li>[497548912] High CVE-2026-7911: Use after free in Aura.</li>
-	    <li>[497639714] High CVE-2026-7912: Integer overflow in GPU.</li>
-	    <li>[497936728] High CVE-2026-7913: Insufficient policy enforcement in DevTools.</li>
-	    <li>[498401609] High CVE-2026-7914: Type Confusion in Accessibility.</li>
-	    <li>[498454478] High CVE-2026-7915: Insufficient data validation in DevTools.</li>
-	    <li>[498720754] High CVE-2026-7916: Insufficient data validation in InterestGroups.</li>
-	    <li>[498752242] High CVE-2026-7917: Use after free in Fullscreen.</li>
-	    <li>[498780188] High CVE-2026-7918: Use after free in GPU.</li>
-	    <li>[498832921] High CVE-2026-7919: Use after free in Aura.</li>
-	    <li>[498989348] High CVE-2026-7920: Use after free in Skia.</li>
-	    <li>[499062376] High CVE-2026-7921: Use after free in Passwords.</li>
-	    <li>[499449324] High CVE-2026-7922: Use after free in ServiceWorker.</li>
-	    <li>[500080194] High CVE-2026-7923: Out of bounds write in Skia.</li>
-	    <li>[500087204] High CVE-2026-7924: Uninitialized Use in Dawn.</li>
-	    <li>[501833981] High CVE-2026-7925: Use after free in Chromoting.</li>
-	    <li>[502249087] High CVE-2026-7926: Use after free in PresentationAPI.</li>
-	    <li>[502830119] High CVE-2026-7927: Type Confusion in Runtime.</li>
-	    <li>[504612429] High CVE-2026-7928: Use after free in WebRTC.</li>
-	    <li>[504660052] High CVE-2026-7929: Use after free in MediaRecording.</li>
-	    <li>[434825208] Medium CVE-2026-7930: Insufficient validation of untrusted input in Cookies.</li>
-	    <li>[474338157] Medium CVE-2026-7931: Insufficient validation of untrusted input in iOS.</li>
-	    <li>[481634116] Medium CVE-2026-7932: Insufficient policy enforcement in Downloads.</li>
-	    <li>[488585490] Medium CVE-2026-7933: Out of bounds read in WebCodecs.</li>
-	    <li>[489023922] Medium CVE-2026-7934: Insufficient validation of untrusted input in Popup Blocker.</li>
-	    <li>[489624550] Medium CVE-2026-7935: Inappropriate implementation in Speech.</li>
-	    <li>[490485402] Medium CVE-2026-7936: Object lifecycle issue in V8.</li>
-	    <li>[491766258] Medium CVE-2026-7937: Insufficient policy enforcement in DevTools.</li>
-	    <li>[492735384] Medium CVE-2026-7938: Use after free in CSS.</li>
-	    <li>[492963096] Medium CVE-2026-7939: Inappropriate implementation in SanitizerAPI.</li>
-	    <li>[493631402] Medium CVE-2026-7940: Use after free in V8.</li>
-	    <li>[493955234] Medium CVE-2026-7941: Insufficient validation of untrusted input in Mobile.</li>
-	    <li>[495363705] Medium CVE-2026-7942: Integer overflow in ANGLE.</li>
-	    <li>[495373657] Medium CVE-2026-7943: Insufficient validation of untrusted input in ANGLE.</li>
-	    <li>[495783187] Medium CVE-2026-7944: Insufficient validation of untrusted input in Persistent Cache.</li>
-	    <li>[495802788] Medium CVE-2026-7945: Insufficient validation of untrusted input in COOP.</li>
-	    <li>[496016840] Medium CVE-2026-7946: Insufficient policy enforcement in WebUI.</li>
-	    <li>[496169594] Medium CVE-2026-7947: Insufficient validation of untrusted input in Network.</li>
-	    <li>[496193452] Medium CVE-2026-7948: Race in Chromoting.</li>
-	    <li>[496206134] Medium CVE-2026-7949: Out of bounds read in Skia.</li>
-	    <li>[496259890] Medium CVE-2026-7950: Out of bounds read and write in GFX.</li>
-	    <li>[496266456] Medium CVE-2026-7951: Out of bounds write in WebRTC.</li>
-	    <li>[496279876] Medium CVE-2026-7952: Insufficient policy enforcement in Extensions.</li>
-	    <li>[496379792] Medium CVE-2026-7953: Insufficient validation of untrusted input in Omnibox.</li>
-	    <li>[496380960] Medium CVE-2026-7954: Race in Shared Storage.</li>
-	    <li>[496441232] Medium CVE-2026-7955: Uninitialized Use in GPU.</li>
-	    <li>[496463315] Medium CVE-2026-7956: Use after free in Navigation.</li>
-	    <li>[496607380] Medium CVE-2026-7957: Out of bounds write in Media.</li>
-	    <li>[496632973] Medium CVE-2026-7958: Inappropriate implementation in ServiceWorker.</li>
-	    <li>[496645205] Medium CVE-2026-7959: Inappropriate implementation in Navigation.</li>
-	    <li>[497007825] Medium CVE-2026-7960: Race in Speech.</li>
-	    <li>[497008295] Medium CVE-2026-7961: Insufficient validation of untrusted input in Permissions.</li>
-	    <li>[497081987] Medium CVE-2026-7962: Insufficient policy enforcement in DirectSockets.</li>
-	    <li>[497250399] Medium CVE-2026-7963: Inappropriate implementation in ServiceWorker.</li>
-	    <li>[497254383] Medium CVE-2026-7964: Insufficient validation of untrusted input in FileSystem.</li>
-	    <li>[497255035] Medium CVE-2026-7965: Insufficient validation of untrusted input in DevTools.</li>
-	    <li>[497341787] Medium CVE-2026-7966: Insufficient validation of untrusted input in SiteIsolation.</li>
-	    <li>[497365545] Medium CVE-2026-7967: Insufficient validation of untrusted input in Navigation.</li>
-	    <li>[497432281] Medium CVE-2026-7968: Insufficient validation of untrusted input in CORS.</li>
-	    <li>[497450574] Medium CVE-2026-7969: Integer overflow in Network.</li>
-	    <li>[497487462] Medium CVE-2026-7970: Use after free in TopChrome.</li>
-	    <li>[497529290] Medium CVE-2026-7971: Inappropriate implementation in ORB.</li>
-	    <li>[497546281] Medium CVE-2026-7972: Uninitialized Use in GPU.</li>
-	    <li>[497565944] Medium CVE-2026-7973: Integer overflow in Dawn.</li>
-	    <li>[497649372] Medium CVE-2026-7974: Use after free in Blink.</li>
-	    <li>[497735587] Medium CVE-2026-7975: Use after free in DevTools.</li>
-	    <li>[497736679] Medium CVE-2026-7976: Use after free in Views.</li>
-	    <li>[497821223] Medium CVE-2026-7977: Inappropriate implementation in Canvas.</li>
-	    <li>[497828892] Medium CVE-2026-7978: Inappropriate implementation in Companion.</li>
-	    <li>[497849876] Medium CVE-2026-7979: Inappropriate implementation in Media.</li>
-	    <li>[497859275] Medium CVE-2026-7980: Use after free in WebAudio.</li>
-	    <li>[497926602] Medium CVE-2026-7981: Out of bounds read in Codecs.</li>
-	    <li>[497952533] Medium CVE-2026-7982: Uninitialized Use in WebCodecs.</li>
-	    <li>[497975608] Medium CVE-2026-7983: Out of bounds read in Dawn.</li>
-	    <li>[498277368] Medium CVE-2026-7984: Use after free in ReadingMode.</li>
-	    <li>[498352423] Medium CVE-2026-7985: Use after free in GPU.</li>
-	    <li>[498396238] Medium CVE-2026-7986: Insufficient policy enforcement in Autofill.</li>
-	    <li>[498696266] Medium CVE-2026-7987: Use after free in WebRTC.</li>
-	    <li>[498753456] Medium CVE-2026-7988: Type Confusion in WebRTC.</li>
-	    <li>[498765082] Medium CVE-2026-7989: Insufficient data validation in DataTransfer.</li>
-	    <li>[498892267] Medium CVE-2026-7990: Insufficient validation of untrusted input in Updater.</li>
-	    <li>[499065126] Medium CVE-2026-7991: Use after free in UI.</li>
-	    <li>[499067529] Medium CVE-2026-7992: Insufficient validation of untrusted input in UI.</li>
-	    <li>[499099003] Medium CVE-2026-7993: Insufficient validation of untrusted input in Payments.</li>
-	    <li>[499116954] Medium CVE-2026-7994: Inappropriate implementation in Chromoting.</li>
-	    <li>[501745798] Medium CVE-2026-7995: Out of bounds read in AdFilter.</li>
-	    <li>[484547631] Low CVE-2026-7996: Insufficient validation of untrusted input in SSL.</li>
-	    <li>[487960705] Low CVE-2026-7997: Insufficient validation of untrusted input in Updater.</li>
-	    <li>[491676472] Low CVE-2026-7998: Insufficient validation of untrusted input in Dialog.</li>
-	    <li>[493099941] Low CVE-2026-7999: Inappropriate implementation in V8.</li>
-	    <li>[494464734] Low CVE-2026-8000: Insufficient validation of untrusted input in ChromeDriver.</li>
-	    <li>[494764371] Low CVE-2026-8001: Use after free in Printing.</li>
-	    <li>[495779613] Low CVE-2026-8002: Use after free in Audio.</li>
-	    <li>[495985532] Low CVE-2026-8003: Insufficient validation of untrusted input in TabGroups.</li>
-	    <li>[496189510] Low CVE-2026-8004: Insufficient policy enforcement in DevTools.</li>
-	    <li>[496298665] Low CVE-2026-8005: Insufficient validation of untrusted input in Cast.</li>
-	    <li>[496373088] Low CVE-2026-8006: Insufficient policy enforcement in DevTools.</li>
-	    <li>[496399759] Low CVE-2026-8007: Insufficient validation of untrusted input in Cast.</li>
-	    <li>[496426191] Low CVE-2026-8008: Inappropriate implementation in DevTools.</li>
-	    <li>[496555077] Low CVE-2026-8009: Inappropriate implementation in Cast.</li>
-	    <li>[496624084] Low CVE-2026-8010: Insufficient validation of untrusted input in SiteIsolation.</li>
-	    <li>[496626029] Low CVE-2026-8011: Insufficient policy enforcement in Search.</li>
-	    <li>[496628298] Low CVE-2026-8012: Inappropriate implementation in MHTML.</li>
-	    <li>[497427430] Low CVE-2026-8013: Insufficient validation of untrusted input in FedCM.</li>
-	    <li>[497490364] Low CVE-2026-8014: Inappropriate implementation in Preload.</li>
-	    <li>[497548558] Low CVE-2026-8015: Inappropriate implementation in Media.</li>
-	    <li>[497695401] Low CVE-2026-8016: Use after free in WebRTC.</li>
-	    <li>[497722578] Low CVE-2026-8017: Side-channel information leakage in Media.</li>
-	    <li>[498292657] Low CVE-2026-8018: Insufficient policy enforcement in DevTools.</li>
-	    <li>[498353173] Low CVE-2026-8019: Insufficient policy enforcement in WebApp.</li>
-	    <li>[498382925] Low CVE-2026-8020: Uninitialized Use in GPU.</li>
-	    <li>[498417031] Low CVE-2026-8021: Script injection in UI.</li>
-	    <li>[499194407] Low CVE-2026-8022: Inappropriate implementation in MHTML.</li>
+	    <li>[493747582] CVE-2026-7896: Integer overflow in Blink.</li>
+	    <li>[504069514] CVE-2026-7897: Use after free in Mobile.</li>
+	    <li>[504587882] CVE-2026-7898: Use after free in Chromoting.</li>
+	</ul>
+	<p>High:</p>
+	<ul>
+	    <li>[505481948] CVE-2026-7899: Out of bounds read and write in V8.</li>
+	    <li>[496503799] CVE-2026-7900: Heap buffer overflow in ANGLE.</li>
+	    <li>[497724490] CVE-2026-7901: Use after free in ANGLE.</li>
+	    <li>[502030575] CVE-2026-7902: Out of bounds memory access in V8.</li>
+	    <li>[491760376] CVE-2026-7903: Integer overflow in ANGLE.</li>
+	    <li>[492350406] CVE-2026-7904: Out of bounds read in Fonts.</li>
+	    <li>[495259842] CVE-2026-7905: Insufficient validation of untrusted input in Media.</li>
+	    <li>[496284584] CVE-2026-7906: Use after free in SVG.</li>
+	    <li>[496292089] CVE-2026-7907: Use after free in DOM.</li>
+	    <li>[497436531] CVE-2026-7908: Use after free in Fullscreen.</li>
+	    <li>[497437113] CVE-2026-7909: Inappropriate implementation in ServiceWorker.</li>
+	    <li>[497543810] CVE-2026-7910: Use after free in Views.</li>
+	    <li>[497548912] CVE-2026-7911: Use after free in Aura.</li>
+	    <li>[497639714] CVE-2026-7912: Integer overflow in GPU.</li>
+	    <li>[497936728] CVE-2026-7913: Insufficient policy enforcement in DevTools.</li>
+	    <li>[498401609] CVE-2026-7914: Type Confusion in Accessibility.</li>
+	    <li>[498454478] CVE-2026-7915: Insufficient data validation in DevTools.</li>
+	    <li>[498720754] CVE-2026-7916: Insufficient data validation in InterestGroups.</li>
+	    <li>[498752242] CVE-2026-7917: Use after free in Fullscreen.</li>
+	    <li>[498780188] CVE-2026-7918: Use after free in GPU.</li>
+	    <li>[498832921] CVE-2026-7919: Use after free in Aura.</li>
+	    <li>[498989348] CVE-2026-7920: Use after free in Skia.</li>
+	    <li>[499062376] CVE-2026-7921: Use after free in Passwords.</li>
+	    <li>[499449324] CVE-2026-7922: Use after free in ServiceWorker.</li>
+	    <li>[500080194] CVE-2026-7923: Out of bounds write in Skia.</li>
+	    <li>[500087204] CVE-2026-7924: Uninitialized Use in Dawn.</li>
+	    <li>[501833981] CVE-2026-7925: Use after free in Chromoting.</li>
+	    <li>[502249087] CVE-2026-7926: Use after free in PresentationAPI.</li>
+	    <li>[502830119] CVE-2026-7927: Type Confusion in Runtime.</li>
+	    <li>[504612429] CVE-2026-7928: Use after free in WebRTC.</li>
+	    <li>[504660052] CVE-2026-7929: Use after free in MediaRecording.</li>
+	</ul>
+	<p>Medium:</p>
+	<ul>
+	    <li>[434825208] CVE-2026-7930: Insufficient validation of untrusted input in Cookies.</li>
+	    <li>[474338157] CVE-2026-7931: Insufficient validation of untrusted input in iOS.</li>
+	    <li>[481634116] CVE-2026-7932: Insufficient policy enforcement in Downloads.</li>
+	    <li>[488585490] CVE-2026-7933: Out of bounds read in WebCodecs.</li>
+	    <li>[489023922] CVE-2026-7934: Insufficient validation of untrusted input in Popup Blocker.</li>
+	    <li>[489624550] CVE-2026-7935: Inappropriate implementation in Speech.</li>
+	    <li>[490485402] CVE-2026-7936: Object lifecycle issue in V8.</li>
+	    <li>[491766258] CVE-2026-7937: Insufficient policy enforcement in DevTools.</li>
+	    <li>[492735384] CVE-2026-7938: Use after free in CSS.</li>
+	    <li>[492963096] CVE-2026-7939: Inappropriate implementation in SanitizerAPI.</li>
+	    <li>[493631402] CVE-2026-7940: Use after free in V8.</li>
+	    <li>[493955234] CVE-2026-7941: Insufficient validation of untrusted input in Mobile.</li>
+	    <li>[495363705] CVE-2026-7942: Integer overflow in ANGLE.</li>
+	    <li>[495373657] CVE-2026-7943: Insufficient validation of untrusted input in ANGLE.</li>
+	    <li>[495783187] CVE-2026-7944: Insufficient validation of untrusted input in Persistent Cache.</li>
+	    <li>[495802788] CVE-2026-7945: Insufficient validation of untrusted input in COOP.</li>
+	    <li>[496016840] CVE-2026-7946: Insufficient policy enforcement in WebUI.</li>
+	    <li>[496169594] CVE-2026-7947: Insufficient validation of untrusted input in Network.</li>
+	    <li>[496193452] CVE-2026-7948: Race in Chromoting.</li>
+	    <li>[496206134] CVE-2026-7949: Out of bounds read in Skia.</li>
+	    <li>[496259890] CVE-2026-7950: Out of bounds read and write in GFX.</li>
+	    <li>[496266456] CVE-2026-7951: Out of bounds write in WebRTC.</li>
+	    <li>[496279876] CVE-2026-7952: Insufficient policy enforcement in Extensions.</li>
+	    <li>[496379792] CVE-2026-7953: Insufficient validation of untrusted input in Omnibox.</li>
+	    <li>[496380960] CVE-2026-7954: Race in Shared Storage.</li>
+	    <li>[496441232] CVE-2026-7955: Uninitialized Use in GPU.</li>
+	    <li>[496463315] CVE-2026-7956: Use after free in Navigation.</li>
+	    <li>[496607380] CVE-2026-7957: Out of bounds write in Media.</li>
+	    <li>[496632973] CVE-2026-7958: Inappropriate implementation in ServiceWorker.</li>
+	    <li>[496645205] CVE-2026-7959: Inappropriate implementation in Navigation.</li>
+	    <li>[497007825] CVE-2026-7960: Race in Speech.</li>
+	    <li>[497008295] CVE-2026-7961: Insufficient validation of untrusted input in Permissions.</li>
+	    <li>[497081987] CVE-2026-7962: Insufficient policy enforcement in DirectSockets.</li>
+	    <li>[497250399] CVE-2026-7963: Inappropriate implementation in ServiceWorker.</li>
+	    <li>[497254383] CVE-2026-7964: Insufficient validation of untrusted input in FileSystem.</li>
+	    <li>[497255035] CVE-2026-7965: Insufficient validation of untrusted input in DevTools.</li>
+	    <li>[497341787] CVE-2026-7966: Insufficient validation of untrusted input in SiteIsolation.</li>
+	    <li>[497365545] CVE-2026-7967: Insufficient validation of untrusted input in Navigation.</li>
+	    <li>[497432281] CVE-2026-7968: Insufficient validation of untrusted input in CORS.</li>
+	    <li>[497450574] CVE-2026-7969: Integer overflow in Network.</li>
+	    <li>[497487462] CVE-2026-7970: Use after free in TopChrome.</li>
+	    <li>[497529290] CVE-2026-7971: Inappropriate implementation in ORB.</li>
+	    <li>[497546281] CVE-2026-7972: Uninitialized Use in GPU.</li>
+	    <li>[497565944] CVE-2026-7973: Integer overflow in Dawn.</li>
+	    <li>[497649372] CVE-2026-7974: Use after free in Blink.</li>
+	    <li>[497735587] CVE-2026-7975: Use after free in DevTools.</li>
+	    <li>[497736679] CVE-2026-7976: Use after free in Views.</li>
+	    <li>[497821223] CVE-2026-7977: Inappropriate implementation in Canvas.</li>
+	    <li>[497828892] CVE-2026-7978: Inappropriate implementation in Companion.</li>
+	    <li>[497849876] CVE-2026-7979: Inappropriate implementation in Media.</li>
+	    <li>[497859275] CVE-2026-7980: Use after free in WebAudio.</li>
+	    <li>[497926602] CVE-2026-7981: Out of bounds read in Codecs.</li>
+	    <li>[497952533] CVE-2026-7982: Uninitialized Use in WebCodecs.</li>
+	    <li>[497975608] CVE-2026-7983: Out of bounds read in Dawn.</li>
+	    <li>[498277368] CVE-2026-7984: Use after free in ReadingMode.</li>
+	    <li>[498352423] CVE-2026-7985: Use after free in GPU.</li>
+	    <li>[498396238] CVE-2026-7986: Insufficient policy enforcement in Autofill.</li>
+	    <li>[498696266] CVE-2026-7987: Use after free in WebRTC.</li>
+	    <li>[498753456] CVE-2026-7988: Type Confusion in WebRTC.</li>
+	    <li>[498765082] CVE-2026-7989: Insufficient data validation in DataTransfer.</li>
+	    <li>[498892267] CVE-2026-7990: Insufficient validation of untrusted input in Updater.</li>
+	    <li>[499065126] CVE-2026-7991: Use after free in UI.</li>
+	    <li>[499067529] CVE-2026-7992: Insufficient validation of untrusted input in UI.</li>
+	    <li>[499099003] CVE-2026-7993: Insufficient validation of untrusted input in Payments.</li>
+	    <li>[499116954] CVE-2026-7994: Inappropriate implementation in Chromoting.</li>
+	    <li>[501745798] CVE-2026-7995: Out of bounds read in AdFilter.</li>
+	</ul>
+	<p>Low:</p>
+	<ul>
+	    <li>[484547631] CVE-2026-7996: Insufficient validation of untrusted input in SSL.</li>
+	    <li>[487960705] CVE-2026-7997: Insufficient validation of untrusted input in Updater.</li>
+	    <li>[491676472] CVE-2026-7998: Insufficient validation of untrusted input in Dialog.</li>
+	    <li>[493099941] CVE-2026-7999: Inappropriate implementation in V8.</li>
+	    <li>[494464734] CVE-2026-8000: Insufficient validation of untrusted input in ChromeDriver.</li>
+	    <li>[494764371] CVE-2026-8001: Use after free in Printing.</li>
+	    <li>[495779613] CVE-2026-8002: Use after free in Audio.</li>
+	    <li>[495985532] CVE-2026-8003: Insufficient validation of untrusted input in TabGroups.</li>
+	    <li>[496189510] CVE-2026-8004: Insufficient policy enforcement in DevTools.</li>
+	    <li>[496298665] CVE-2026-8005: Insufficient validation of untrusted input in Cast.</li>
+	    <li>[496373088] CVE-2026-8006: Insufficient policy enforcement in DevTools.</li>
+	    <li>[496399759] CVE-2026-8007: Insufficient validation of untrusted input in Cast.</li>
+	    <li>[496426191] CVE-2026-8008: Inappropriate implementation in DevTools.</li>
+	    <li>[496555077] CVE-2026-8009: Inappropriate implementation in Cast.</li>
+	    <li>[496624084] CVE-2026-8010: Insufficient validation of untrusted input in SiteIsolation.</li>
+	    <li>[496626029] CVE-2026-8011: Insufficient policy enforcement in Search.</li>
+	    <li>[496628298] CVE-2026-8012: Inappropriate implementation in MHTML.</li>
+	    <li>[497427430] CVE-2026-8013: Insufficient validation of untrusted input in FedCM.</li>
+	    <li>[497490364] CVE-2026-8014: Inappropriate implementation in Preload.</li>
+	    <li>[497548558] CVE-2026-8015: Inappropriate implementation in Media.</li>
+	    <li>[497695401] CVE-2026-8016: Use after free in WebRTC.</li>
+	    <li>[497722578] CVE-2026-8017: Side-channel information leakage in Media.</li>
+	    <li>[498292657] CVE-2026-8018: Insufficient policy enforcement in DevTools.</li>
+	    <li>[498353173] CVE-2026-8019: Insufficient policy enforcement in WebApp.</li>
+	    <li>[498382925] CVE-2026-8020: Uninitialized Use in GPU.</li>
+	    <li>[498417031] CVE-2026-8021: Script injection in UI.</li>
+	    <li>[499194407] CVE-2026-8022: Inappropriate implementation in MHTML.</li>
 	 </ul>
        </blockquote>
       </body>
@@ -3546,67 +3556,77 @@ affected.</p>
        <p>Chrome Releases reports:</p>
        <blockquote cite="https://chromereleases.googleblog.com/2026/04/stable-channel-update-for-desktop.html">
 	 <p>This update includes multiple security fixes:</p>
+	 <p>Critical:</p>
 	 <ul>
-	    <li>Critical CVE-2026-5858: Heap buffer overflow in WebML.</li>
-	    <li>Critical CVE-2026-5859: Integer overflow in WebML.</li>
-	    <li>High CVE-2026-5860: Use after free in WebRTC.</li>
-	    <li>High CVE-2026-5861: Use after free in V8.</li>
-	    <li>High CVE-2026-5862: Inappropriate implementation in V8.</li>
-	    <li>High CVE-2026-5863: Inappropriate implementation in V8.</li>
-	    <li>High CVE-2026-5864: Heap buffer overflow in WebAudio.</li>
-	    <li>High CVE-2026-5865: Type Confusion in V8.</li>
-	    <li>High CVE-2026-5866: Use after free in Media.</li>
-	    <li>High CVE-2026-5867: Heap buffer overflow in WebML.</li>
-	    <li>High CVE-2026-5868: Heap buffer overflow in ANGLE.</li>
-	    <li>High CVE-2026-5869: Heap buffer overflow in WebML.</li>
-	    <li>High CVE-2026-5870: Integer overflow in Skia.</li>
-	    <li>High CVE-2026-5871: Type Confusion in V8.</li>
-	    <li>High CVE-2026-5872: Use after free in Blink.</li>
-	    <li>High CVE-2026-5873: Out of bounds read and write in V8.</li>
-	    <li>Medium CVE-2026-5874: Use after free in PrivateAI.</li>
-	    <li>Medium CVE-2026-5875: Policy bypass in Blink.</li>
-	    <li>Medium CVE-2026-5876: Side-channel information leakage in Navigation.</li>
-	    <li>Medium CVE-2026-5877: Use after free in Navigation.</li>
-	    <li>Medium CVE-2026-5878: Incorrect security UI in Blink.</li>
-	    <li>Medium CVE-2026-5879: Insufficient validation of untrusted input in ANGLE.</li>
-	    <li>Medium CVE-2026-5880: Incorrect security UI in browser UI.</li>
-	    <li>Medium CVE-2026-5881: Policy bypass in LocalNetworkAccess.</li>
-	    <li>Medium CVE-2026-5882: Incorrect security UI in Fullscreen.</li>
-	    <li>Medium CVE-2026-5883: Use after free in Media.</li>
-	    <li>Medium CVE-2026-5884: Insufficient validation of untrusted input in Media.</li>
-	    <li>Medium CVE-2026-5885: Insufficient validation of untrusted input in WebML.</li>
-	    <li>Medium CVE-2026-5886: Out of bounds read in WebAudio.</li>
-	    <li>Medium CVE-2026-5887: Insufficient validation of untrusted input in Downloads.</li>
-	    <li>Medium CVE-2026-5888: Uninitialized Use in WebCodecs.</li>
-	    <li>Medium CVE-2026-5889: Cryptographic Flaw in PDFium.</li>
-	    <li>Medium CVE-2026-5890: Race in WebCodecs.</li>
-	    <li>Medium CVE-2026-5891: Insufficient policy enforcement in browser UI.</li>
-	    <li>Medium CVE-2026-5892: Insufficient policy enforcement in PWAs.</li>
-	    <li>Medium CVE-2026-5893: Race in V8.</li>
-	    <li>Low CVE-2026-5894: Inappropriate implementation in PDF.</li>
-	    <li>Low CVE-2026-5895: Incorrect security UI in Omnibox.</li>
-	    <li>Low CVE-2026-5896: Policy bypass in Audio.</li>
-	    <li>Low CVE-2026-5897: Incorrect security UI in Downloads.</li>
-	    <li>Low CVE-2026-5898: Incorrect security UI in Omnibox.</li>
-	    <li>Low CVE-2026-5899: Incorrect security UI in History Navigation.</li>
-	    <li>Low CVE-2026-5900: Policy bypass in Downloads.</li>
-	    <li>Low CVE-2026-5901: Policy bypass in DevTools.</li>
-	    <li>Low CVE-2026-5902: Race in Media.</li>
-	    <li>Low CVE-2026-5903: Policy bypass in IFrameSandbox.</li>
-	    <li>Low CVE-2026-5904: Use after free in V8.</li>
-	    <li>Low CVE-2026-5905: Incorrect security UI in Permissions.</li>
-	    <li>Low CVE-2026-5906: Incorrect security UI in Omnibox.</li>
-	    <li>Low CVE-2026-5907: Insufficient data validation in Media.</li>
-	    <li>Low CVE-2026-5908: Integer overflow in Media.</li>
-	    <li>Low CVE-2026-5909: Integer overflow in Media.</li>
-	    <li>Low CVE-2026-5910: Integer overflow in Media.</li>
-	    <li>Low CVE-2026-5911: Policy bypass in ServiceWorkers.</li>
-	    <li>Low CVE-2026-5912: Integer overflow in WebRTC.</li>
-	    <li>Low CVE-2026-5913: Out of bounds read in Blink.</li>
-	    <li>Low CVE-2026-5914: Type Confusion in CSS.</li>
-	    <li>Low CVE-2026-5915: Insufficient validation of untrusted input in WebML.</li>
-	    <li>Low CVE-2026-5918: Inappropriate implementation in Navigation.</li>
-	    <li>Low CVE-2026-5919: Insufficient validation of untrusted input in WebSockets.</li>
+	    <li>CVE-2026-5858: Heap buffer overflow in WebML.</li>
+	    <li>CVE-2026-5859: Integer overflow in WebML.</li>
+	</ul>
+	<p>High:</p>
+	<ul>
+	    <li>CVE-2026-5860: Use after free in WebRTC.</li>
+	    <li>CVE-2026-5861: Use after free in V8.</li>
+	    <li>CVE-2026-5862: Inappropriate implementation in V8.</li>
+	    <li>CVE-2026-5863: Inappropriate implementation in V8.</li>
+	    <li>CVE-2026-5864: Heap buffer overflow in WebAudio.</li>
+	    <li>CVE-2026-5865: Type Confusion in V8.</li>
+	    <li>CVE-2026-5866: Use after free in Media.</li>
+	    <li>CVE-2026-5867: Heap buffer overflow in WebML.</li>
+	    <li>CVE-2026-5868: Heap buffer overflow in ANGLE.</li>
+	    <li>CVE-2026-5869: Heap buffer overflow in WebML.</li>
+	    <li>CVE-2026-5870: Integer overflow in Skia.</li>
+	    <li>CVE-2026-5871: Type Confusion in V8.</li>
+	    <li>CVE-2026-5872: Use after free in Blink.</li>
+	    <li>CVE-2026-5873: Out of bounds read and write in V8.</li>
+	</ul>
+	<p>Medium:</p>
+	<ul>
+	    <li>CVE-2026-5874: Use after free in PrivateAI.</li>
+	    <li>CVE-2026-5875: Policy bypass in Blink.</li>
+	    <li>CVE-2026-5876: Side-channel information leakage in Navigation.</li>
+	    <li>CVE-2026-5877: Use after free in Navigation.</li>
+	    <li>CVE-2026-5878: Incorrect security UI in Blink.</li>
+	    <li>CVE-2026-5879: Insufficient validation of untrusted input in ANGLE.</li>
+	    <li>CVE-2026-5880: Incorrect security UI in browser UI.</li>
+	    <li>CVE-2026-5881: Policy bypass in LocalNetworkAccess.</li>
+	    <li>CVE-2026-5882: Incorrect security UI in Fullscreen.</li>
+	    <li>CVE-2026-5883: Use after free in Media.</li>
+	    <li>CVE-2026-5884: Insufficient validation of untrusted input in Media.</li>
+	    <li>CVE-2026-5885: Insufficient validation of untrusted input in WebML.</li>
+	    <li>CVE-2026-5886: Out of bounds read in WebAudio.</li>
+	    <li>CVE-2026-5887: Insufficient validation of untrusted input in Downloads.</li>
+	    <li>CVE-2026-5888: Uninitialized Use in WebCodecs.</li>
+	    <li>CVE-2026-5889: Cryptographic Flaw in PDFium.</li>
+	    <li>CVE-2026-5890: Race in WebCodecs.</li>
+	    <li>CVE-2026-5891: Insufficient policy enforcement in browser UI.</li>
+	    <li>CVE-2026-5892: Insufficient policy enforcement in PWAs.</li>
+	    <li>CVE-2026-5893: Race in V8.</li>
+	</ul>
+	<p>Low:</p>
+	<ul>
+	    <li>CVE-2026-5894: Inappropriate implementation in PDF.</li>
+	    <li>CVE-2026-5895: Incorrect security UI in Omnibox.</li>
+	    <li>CVE-2026-5896: Policy bypass in Audio.</li>
+	    <li>CVE-2026-5897: Incorrect security UI in Downloads.</li>
+	    <li>CVE-2026-5898: Incorrect security UI in Omnibox.</li>
+	    <li>CVE-2026-5899: Incorrect security UI in History Navigation.</li>
+	    <li>CVE-2026-5900: Policy bypass in Downloads.</li>
+	    <li>CVE-2026-5901: Policy bypass in DevTools.</li>
+	    <li>CVE-2026-5902: Race in Media.</li>
+	    <li>CVE-2026-5903: Policy bypass in IFrameSandbox.</li>
+	    <li>CVE-2026-5904: Use after free in V8.</li>
+	    <li>CVE-2026-5905: Incorrect security UI in Permissions.</li>
+	    <li>CVE-2026-5906: Incorrect security UI in Omnibox.</li>
+	    <li>CVE-2026-5907: Insufficient data validation in Media.</li>
+	    <li>CVE-2026-5908: Integer overflow in Media.</li>
+	    <li>CVE-2026-5909: Integer overflow in Media.</li>
+	    <li>CVE-2026-5910: Integer overflow in Media.</li>
+	    <li>CVE-2026-5911: Policy bypass in ServiceWorkers.</li>
+	    <li>CVE-2026-5912: Integer overflow in WebRTC.</li>
+	    <li>CVE-2026-5913: Out of bounds read in Blink.</li>
+	    <li>CVE-2026-5914: Type Confusion in CSS.</li>
+	    <li>CVE-2026-5915: Insufficient validation of untrusted input in WebML.</li>
+	    <li>CVE-2026-5918: Inappropriate implementation in Navigation.</li>
+	    <li>CVE-2026-5919: Insufficient validation of untrusted input in WebSockets.</li>
 	 </ul>
        </blockquote>
       </body>
