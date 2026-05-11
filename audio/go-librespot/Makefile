@@ -1,7 +1,6 @@
 PORTNAME=	go-librespot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
-PORTREVISION=	7
+DISTVERSION=	0.7.1
 CATEGORIES=	audio
 
 MAINTAINER=	ale@biancalanas.net
@@ -24,7 +23,7 @@ GO_MODULE=	github.com/devgianlu/go-librespot
 GO_TARGET=	./cmd/daemon:${PREFIX}/bin/go-librespot
 GO_BUILDFLAGS=	-ldflags "\
 		-X github.com/devgianlu/go-librespot.version=${DISTVERSION} \
-		-X github.com/devgianlu/go-librespot.commit=ab178ff"
+		-X github.com/devgianlu/go-librespot.commit=b030f614627bb83d51b76013a45686150543d5e9"
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
