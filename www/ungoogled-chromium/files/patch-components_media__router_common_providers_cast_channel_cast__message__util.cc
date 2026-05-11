@@ -1,6 +1,6 @@
---- components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2026-04-15 11:25:12 UTC
+--- components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2026-05-14 09:18:10 UTC
 +++ components/media_router/common/providers/cast/channel/cast_message_util.cc
-@@ -156,7 +156,7 @@ int GetVirtualConnectPlatformValue() {
+@@ -167,7 +167,7 @@ int GetVirtualConnectPlatformValue() {
    return 4;
  #elif BUILDFLAG(IS_CHROMEOS)
    return 5;

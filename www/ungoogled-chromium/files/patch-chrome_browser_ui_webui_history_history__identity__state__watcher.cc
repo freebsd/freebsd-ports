@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/history/history_identity_state_watcher.cc.orig	2026-01-16 13:40:34 UTC
+--- chrome/browser/ui/webui/history/history_identity_state_watcher.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/ui/webui/history/history_identity_state_watcher.cc
-@@ -124,7 +124,7 @@ HistoryIdentityStateWatcher::GetSyncStateForType(
+@@ -122,7 +122,7 @@ HistoryIdentityStateWatcher::GetSyncStateForType(
    }
    const signin_util::SignedInState signed_in_state =
        signin_util::GetSignedInState(identity_manager_);

@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/build_ffmpeg.py.orig	2025-09-10 13:22:16 UTC
+--- media/ffmpeg/scripts/build_ffmpeg.py.orig	2026-05-09 18:09:27 UTC
 +++ media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -12,7 +12,7 @@
 @@ -43,6 +43,8 @@ BRANDINGS = [
  ARCH_MAP = {
      'android': ['ia32', 'x64', 'arm-neon', 'arm64'],
-     'linux': ['ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64', 'riscv64'],
+     'linux': ['ia32', 'x64', 'noasm-x64', 'arm-neon', 'arm64', 'riscv64'],
 +    'openbsd': ['x64', 'arm64', 'ia32'],
 +    'freebsd': ['x64', 'arm64', 'ia32'],
      'mac': ['x64', 'arm64'],
@@ -54,7 +54,7 @@
          if target_arch == 'x64':
              if target_os == 'android':
                  configure_flags['Common'].extend([
-@@ -827,9 +829,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -808,9 +810,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
  
                  configure_flags['Common'].extend([
                      '--target-os=linux',

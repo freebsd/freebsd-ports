@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -205,11 +205,11 @@
+@@ -206,11 +206,11 @@
  #include "chrome/browser/metrics/google_update_metrics_provider_mac.h"
  #endif
  
@@ -14,7 +14,7 @@
  #include "chrome/browser/metrics/chrome_metrics_service_crash_reporter.h"
  #endif
  
-@@ -222,19 +222,19 @@
+@@ -223,19 +223,19 @@
  #include "chrome/browser/metrics/power/power_metrics_provider_mac.h"
  #endif
  
@@ -37,7 +37,7 @@
  #include "chrome/browser/updates/update_metrics_provider.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -253,7 +253,7 @@ const int kMaxHistogramGatheringWaitDuration = 60000; 
+@@ -254,7 +254,7 @@ const int kMaxHistogramGatheringWaitDuration = 60000; 
  // Needs to be kept in sync with the writer in
  // third_party/crashpad/crashpad/handler/handler_main.cc.
  const char kCrashpadHistogramAllocatorName[] = "CrashpadMetrics";
@@ -46,7 +46,7 @@
  ChromeMetricsServiceCrashReporter& GetCrashReporter() {
    static base::NoDestructor<ChromeMetricsServiceCrashReporter> crash_reporter;
    return *crash_reporter;
-@@ -563,7 +563,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
+@@ -564,7 +564,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -55,7 +55,7 @@
    metrics::structured::StructuredMetricsService::RegisterPrefs(registry);
  
  #if !BUILDFLAG(IS_CHROMEOS)
-@@ -656,7 +656,7 @@ std::string ChromeMetricsServiceClient::GetVersionStri
+@@ -661,7 +661,7 @@ std::string ChromeMetricsServiceClient::GetVersionStri
  void ChromeMetricsServiceClient::OnEnvironmentUpdate(std::string* environment) {
    // TODO(https://bugs.ch40m1um.qjz9zk/p/crashpad/issues/detail?id=135): call this
    // on Mac when the Crashpad API supports it.
@@ -64,7 +64,7 @@
    // Register the environment with the crash reporter. Note that there is a
    // window from startup to this point during which crash reports will not have
    // an environment set.
-@@ -756,7 +756,7 @@ void ChromeMetricsServiceClient::Initialize() {
+@@ -761,7 +761,7 @@ void ChromeMetricsServiceClient::Initialize() {
          this, local_state);
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -73,7 +73,7 @@
    metrics::structured::Recorder::GetInstance()->SetUiTaskRunner(
        base::SequencedTaskRunner::GetCurrentDefault());
  #endif
-@@ -816,7 +816,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -821,7 +821,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::CPUMetricsProvider>());
  
@@ -82,7 +82,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -905,7 +905,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -910,7 +910,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<GoogleUpdateMetricsProviderMac>());
  #endif
  
@@ -91,7 +91,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -1004,7 +1004,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -1009,7 +1009,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<HttpsEngagementMetricsProvider>());
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -100,7 +100,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<TabMetricsProvider>(
            g_browser_process->profile_manager()));
-@@ -1026,7 +1026,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -1031,7 +1031,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -109,7 +109,7 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
    metrics_service_->RegisterMetricsProvider(
-@@ -1232,7 +1232,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1237,7 +1237,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
    }
  #endif
  
@@ -118,7 +118,7 @@
    // This creates the DesktopProfileSessionDurationsServices if it didn't exist
    // already.
    metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(
-@@ -1583,7 +1583,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
+@@ -1588,7 +1588,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
    recorder =
        std::make_unique<metrics::structured::AshStructuredMetricsRecorder>(
            cros_system_profile_provider_.get());

@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2026-04-15 11:25:12 UTC
+--- content/public/common/content_features.cc.orig	2026-05-20 20:50:29 UTC
 +++ content/public/common/content_features.cc
 @@ -140,7 +140,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup, base::FEATU
  
@@ -6,6 +6,15 @@
  BASE_FEATURE(kAudioServiceOutOfProcess,
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -150,7 +150,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
+ // Enables the audio-service sandbox. This feature has an effect only when the
+ // kAudioServiceOutOfProcess feature is enabled.
+ BASE_FEATURE(kAudioServiceSandbox,
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT

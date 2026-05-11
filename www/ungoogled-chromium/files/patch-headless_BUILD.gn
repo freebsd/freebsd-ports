@@ -1,7 +1,7 @@
---- headless/BUILD.gn.orig	2026-04-15 11:25:12 UTC
+--- headless/BUILD.gn.orig	2026-05-09 18:09:27 UTC
 +++ headless/BUILD.gn
-@@ -849,7 +849,7 @@ component("headless_shell_lib") {
-     "//printing/buildflags",
+@@ -850,7 +850,7 @@ component("headless_shell_lib") {
+     "//v8",
    ]
  
 -  if (!is_fuchsia) {

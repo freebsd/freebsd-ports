@@ -1,6 +1,6 @@
---- net/dns/dns_util.cc.orig	2026-03-15 18:32:51 UTC
+--- net/dns/dns_util.cc.orig	2026-05-09 18:09:27 UTC
 +++ net/dns/dns_util.cc
-@@ -28,6 +28,8 @@
+@@ -27,6 +27,8 @@
  #include "net/dns/public/util.h"
  #include "net/third_party/uri_template/uri_template.h"
  

@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h
 @@ -21,7 +21,7 @@
  #endif
@@ -18,7 +18,7 @@
    void SetToastControllerForTesting(ToastController* controller);
  #endif
  
-@@ -73,7 +73,7 @@ class SafeBrowsingPrefChangeHandler {
+@@ -77,7 +77,7 @@ class SafeBrowsingPrefChangeHandler {
    raw_ptr<Profile> profile_;
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

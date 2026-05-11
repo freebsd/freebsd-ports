@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2026-04-15 11:25:12 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2026-05-09 18:09:27 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -373,7 +373,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPinMostVisitedSiteFeatur
+@@ -380,7 +380,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPinMostVisitedSiteFeatur
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,17 +9,16 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  DEFINE_VARIATION_PARAM(kEsbDownloadRowPromoFeature, "EsbDownloadRowPromo");
  #endif
-@@ -506,7 +506,8 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
+@@ -513,7 +513,7 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
-+    BUILDFLAG(IS_BSD)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  DEFINE_VARIATION_PARAM(kIPHAutofillAiOptInFeature, "IPH_AutofillAiOptIn");
  DEFINE_VARIATION_PARAM(kIPHAutofillAiValuablesFeature,
                         "IPH_AutofillAiValuables");
-@@ -547,7 +548,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
+@@ -554,7 +554,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
                         "IPH_LauncherSearchHelpUi");
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -28,26 +27,25 @@
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunch,
                         "IPH_DesktopPWAsLinkCapturingLaunch");
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
-@@ -762,7 +763,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
-         VARIATION_ENTRY(kIPHiOSGeminiImageRemixFeature),
-         VARIATION_ENTRY(kIPHiOSPinMostVisitedSiteFeature),
+@@ -778,7 +778,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+         VARIATION_ENTRY(kIPHWhatsNewUpdatedFeature),
+ // keep-sorted end
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-         VARIATION_ENTRY(kIPHBatterySaverModeFeature),
-         VARIATION_ENTRY(kIPHCompanionSidePanelFeature),
-         VARIATION_ENTRY(kIPHCompanionSidePanelRegionSearchFeature),
-@@ -829,7 +830,8 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+ #if BUILDFLAG(ENABLE_EXTENSIONS)
+         VARIATION_ENTRY(kIPHExtensionsMenuFeature),
+         VARIATION_ENTRY(kIPHExtensionsRequestAccessButtonFeature),
+@@ -846,7 +846,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
-+    BUILDFLAG(IS_BSD)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ // keep-sorted start case=no
+         VARIATION_ENTRY(kIPHAutofillAccountNameEmailSuggestionFeature),
          VARIATION_ENTRY(kIPHAutofillAiOptInFeature),
-         VARIATION_ENTRY(kIPHAutofillAiValuablesFeature),
-         VARIATION_ENTRY(kIPHAutofillCreditCardBenefitFeature),
-@@ -853,7 +855,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -872,7 +872,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHLauncherSearchHelpUiFeature),
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
