@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.13
+DISTVERSION=	3.5.14
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +28,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anes-0.1.6 \
 		anstyle-1.0.14 \
 		anyhow-1.0.102 \
+		arrayref-0.3.9 \
+		arrayvec-0.7.6 \
 		async-trait-0.1.89 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
@@ -42,6 +44,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.11.1 \
+		blake3-1.8.5 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.0 \
 		bstr-1.12.1 \
