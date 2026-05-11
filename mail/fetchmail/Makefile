@@ -1,5 +1,5 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.6.3
+DISTVERSION=	6.6.4
 PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
@@ -23,7 +23,6 @@ IGNORE_SSL_REASON=	incompatible license/no GPLv2 clause 2b exception for LibreSS
 USE_RC_SUBR=	fetchmail
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 # the added PYTHON=: suppresses python builds,
 # see ../../mail/fetchmailconf/ for the configuration tool
