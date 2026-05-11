@@ -1367,6 +1367,7 @@
     SUBDIR += libk8055
     SUBDIR += libkiwix
     SUBDIR += libkiwix13
+    SUBDIR += libks
     SUBDIR += libklel
     SUBDIR += liblangtag
     SUBDIR += liblnk

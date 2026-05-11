@@ -1,0 +1,4 @@
+libks is a foundational C support library used by SignalWire projects.
+
+It provides common platform, threading, networking, JSON, UUID, and utility
+helpers used by software such as FreeSWITCH and related SignalWire components.

@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2026-05-09 17:08:09 UTC
++++ CMakeLists.txt
+@@ -14,10 +14,6 @@ option(WITH_PACKAGING "Enable packaging" ON)
+ # Must include cotire before anything else for auto pch setup
+ #include(cmake/cotire.cmake)
+ 
+-# Load our common utility api and setup the platfomrm and build
+-include(cmake/ksutil.cmake)
+-ksutil_setup_platform()
+-
+ # Find stuff we need for packaging on UNIX
+ if(KS_PLAT_LIN AND WITH_PACKAGING)
+ 	find_package(Git)
+@@ -45,6 +41,10 @@ message("LibKS2 Version ${PROJECT_VERSION_MAJOR}.${PRO
+ # Declare our project, libks2
+ project(LibKS2 VERSION 2.0.10 LANGUAGES C CXX)
+ message("LibKS2 Version ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}")
++
++# Load our common utility api and setup the platfomrm and build
++include(cmake/ksutil.cmake)
++ksutil_setup_platform()
+ 
+ # Set package version
+ set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
