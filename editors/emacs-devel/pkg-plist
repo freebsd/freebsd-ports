@@ -42,6 +42,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.28
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.29
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.30
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.31
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORG-NEWS
@@ -2125,8 +2126,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-cloud.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-cus.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-cus.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-dbus.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-dbus.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-delay.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-delay.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-demon.el.gz
@@ -3152,6 +3151,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/elint.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gnus-dbus.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gnus-dbus.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.el.gz
@@ -3992,6 +3993,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/less-css-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/markdown-ts-mode-x.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/markdown-ts-mode-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/markdown-ts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/markdown-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-mode.el.gz
@@ -4459,6 +4462,7 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-29.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-30.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-31.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-32.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h

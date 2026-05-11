@@ -53,7 +53,7 @@ EMACS_SITE_LISPDIR=	${EMACS_LIBDIR}/site-lisp
 
 .  if defined(_EMACS_BUILD_DEP)
 .    if defined(EMACS_DEFAULT) && ${EMACS_DEFAULT:Mdevel*}
-EMACS_VER=		31.0.50
+EMACS_VER=		32.0.50
 EMACS_PORTDIR=		editors/emacs-devel
 EMACS_BUILD_FLAVOR=	${EMACS_DEFAULT:C/devel_//}
 .    else
