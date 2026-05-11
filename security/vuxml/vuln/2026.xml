@@ -1,3 +1,32 @@
+  <vuln vid="bacc1417-4d82-11f1-87f3-18dbf25a98c6">
+    <topic>Vulnerability found in Expat</topic>
+    <affects>
+<package>
+<name>expat</name>
+<name>linux-c7-expat</name>
+<name>linux-rl9-expat</name>
+<range><lt>2.8.1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://blog.hartwork.org/posts/expat-2-8-1-released/">
+	  <p>Expat 2.8.1 was released yesterday. The key motivation for cutting a release and doing so now was:</p>
+	  <p>Fixing vulnerability CVE-2026-45186 that allows easy denial of service.</p>
+	  <p>See also https://github.com/libexpat/libexpat/pull/1216</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45186</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-45186</url>
+    </references>
+    <dates>
+      <discovery>2025-10-01</discovery>
+      <entry>2026-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab2258a2-4cea-11f1-aec8-bc241107513d">
     <topic>dash -- arith: INTMAX_MIN / -1 overflow</topic>
     <affects>
