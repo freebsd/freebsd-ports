@@ -1,4 +1,4 @@
---- remoting/host/mojo_caller_security_checker.cc.orig	2026-03-15 18:32:51 UTC
+--- remoting/host/mojo_caller_security_checker.cc.orig	2026-05-09 18:09:27 UTC
 +++ remoting/host/mojo_caller_security_checker.cc
 @@ -32,7 +32,7 @@
  namespace remoting {
@@ -9,16 +9,16 @@
  constexpr auto kAllowedCallerProgramNames =
      base::MakeFixedFlatSet<base::FilePath::StringViewType>({
          "remote-open-url",
-@@ -61,7 +61,7 @@ bool IsTrustedMojoEndpoint(
+@@ -62,7 +62,7 @@ bool IsTrustedMojoEndpoint(
      const named_mojo_ipc_server::ConnectionInfo& caller) {
  #if BUILDFLAG(IS_MAC)
    return IsProcessTrusted(caller.audit_token, kAllowedIdentifiers);
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  
-   // TODO: yuweih - see if it's possible to move away from PID-based security
-   // checks, which might be susceptible of PID reuse attacks.
-@@ -85,7 +85,7 @@ bool IsTrustedMojoEndpoint(
+   static base::NoDestructor<base::FilePath> current_process_image_path(
+       GetProcessImagePath(base::GetCurrentProcId()));
+@@ -99,7 +99,7 @@ bool IsTrustedMojoEndpoint(
    base::FilePath::StringType program_name =
        caller_process_image_path.BaseName().value();
    if (!kAllowedCallerProgramNames.contains(program_name)) {

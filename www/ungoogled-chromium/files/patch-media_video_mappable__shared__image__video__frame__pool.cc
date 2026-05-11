@@ -1,6 +1,6 @@
---- media/video/mappable_shared_image_video_frame_pool.cc.orig	2026-03-15 18:32:51 UTC
+--- media/video/mappable_shared_image_video_frame_pool.cc.orig	2026-05-09 18:09:27 UTC
 +++ media/video/mappable_shared_image_video_frame_pool.cc
-@@ -685,7 +685,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
+@@ -686,7 +686,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
    }
  
    bool is_software_backed_video_frame = !video_frame->HasSharedImage();
@@ -9,12 +9,12 @@
    is_software_backed_video_frame &= !video_frame->HasDmaBufs();
  #endif
  
-@@ -1093,7 +1093,7 @@ scoped_refptr<VideoFrame> MappableSharedImageVideoFram
-       media::IOSurfaceIsWebGPUCompatible(handle.io_surface().get());
+@@ -1099,7 +1099,7 @@ scoped_refptr<VideoFrame> MappableSharedImageVideoFram
+           gpu::SHARED_IMAGE_USAGE_WEBGPU_READ);
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // TOOD(crbug.com/425634684): Check for webgpu support from
-   // SharedImageCapabilities, once this metadata is compatible.
-   is_webgpu_compatible =
+   // Gate this on SharedImage usage as ScopedAccess now CHECKs for it.
+   // TOOD(crbug.com/425634684, crbug.com/413659843): Check for webgpu support
+   // from SharedImageCapabilities, once this metadata is compatible.

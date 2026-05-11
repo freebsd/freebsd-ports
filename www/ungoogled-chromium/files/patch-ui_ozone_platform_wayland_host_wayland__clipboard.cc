@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/host/wayland_clipboard.cc.orig	2026-03-15 18:32:51 UTC
+--- ui/ozone/platform/wayland/host/wayland_clipboard.cc.orig	2026-05-09 18:09:27 UTC
 +++ ui/ozone/platform/wayland/host/wayland_clipboard.cc
 @@ -34,7 +34,7 @@
  #include "ui/ozone/platform/wayland/host/zwp_primary_selection_device_manager.h"
@@ -9,21 +9,39 @@
  #include "base/strings/string_util.h"
  #include "ui/base/clipboard/clipboard_util_linux.h"
  #include "ui/ozone/platform/wayland/host/wayland_exchange_data_provider.h"
-@@ -102,7 +102,7 @@ class ClipboardImpl final : public Clipboard, public D
-   }
+@@ -106,7 +106,7 @@ class ClipboardImpl final : public Clipboard, public D
  
-   ui::PlatformClipboard::Data ReadFileTransfer() final {
+   void ReadFileTransfer(
+       ui::PlatformClipboard::RequestDataClosure callback) final {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      // Prefer portal types
-     ui::PlatformClipboard::Data data =
-         GetDevice()->ReadSelectionData(ui::kMimeTypePortalFileTransfer);
-@@ -146,7 +146,7 @@ class ClipboardImpl final : public Clipboard, public D
-     } else {
-       offered_data_ = *data;
+     std::string mime_type;
+     auto available_types = GetDevice()->GetAvailableMimeTypes();
+@@ -185,7 +185,7 @@ class ClipboardImpl final : public Clipboard, public D
+       }
+     }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       // Check if we need to register files for transfer
+     if (offered_data_.contains(ui::kMimeTypeUriList)) {
+       if (!offered_data_.contains(ui::kMimeTypePortalFileTransfer)) {
+         mime_types.push_back(ui::kMimeTypePortalFileTransfer);
+@@ -220,7 +220,7 @@ class ClipboardImpl final : public Clipboard, public D
+     NotifyClipboardChanged();
+   }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   void OnPortalKeyRead(ui::PlatformClipboard::RequestDataClosure callback,
+                        const ui::PlatformClipboard::Data& data) {
+     if (!data) {
+@@ -282,7 +282,7 @@ class ClipboardImpl final : public Clipboard, public D
+       DataSource* source,
+       const std::string& mime_type,
+       typename DataSource::Delegate::ContentCallback callback) override {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     if (mime_type == ui::kMimeTypePortalFileTransfer ||
+         mime_type == ui::kMimeTypePortalFiles) {
        auto it = offered_data_.find(ui::kMimeTypeUriList);
-       if (it != offered_data_.end()) {

@@ -1,0 +1,9 @@
+--- third_party/litert/features.gni.orig	2026-05-09 18:09:27 UTC
++++ third_party/litert/features.gni
+@@ -4,5 +4,5 @@
+ 
+ declare_args() {
+   # This enables building LiteRT with XNNPACK.
+-  build_litert_with_xnnpack = current_cpu != "arm" && !is_fuchsia
++  build_litert_with_xnnpack = current_cpu != "arm" && !is_fuchsia && !is_bsd
+ }

@@ -1,6 +1,6 @@
---- ui/gfx/native_ui_types.h.orig	2025-11-01 06:40:37 UTC
+--- ui/gfx/native_ui_types.h.orig	2026-05-09 18:09:27 UTC
 +++ ui/gfx/native_ui_types.h
-@@ -101,7 +101,7 @@ class ViewAndroid;
+@@ -106,7 +106,7 @@ class ViewAndroid;
  }  // namespace ui
  #endif
  
@@ -9,7 +9,7 @@
  extern "C" {
  struct _AtkObject;
  using AtkObject = struct _AtkObject;
-@@ -190,7 +190,7 @@ using NativeViewAccessible = IAccessible*;
+@@ -197,7 +197,7 @@ using NativeViewAccessible = IAccessible*;
  using NativeViewAccessible = base::apple::OwnedNSObject;
  #elif BUILDFLAG(IS_MAC)
  using NativeViewAccessible = base::apple::OwnedNSAccessibility;

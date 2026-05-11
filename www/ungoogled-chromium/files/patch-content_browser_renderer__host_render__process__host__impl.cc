@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2026-04-15 11:25:12 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2026-05-09 18:09:27 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -226,7 +226,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -27,7 +27,7 @@
    child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  }
-@@ -3661,7 +3661,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3687,7 +3687,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -36,7 +36,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3716,6 +3716,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3742,6 +3742,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
        switches::kDisableSkiaRuntimeOpts,
        switches::kDisableSpeechAPI,
        switches::kDisableThreadedCompositing,
@@ -44,7 +44,7 @@
        switches::kDisableV8IdleTasks,
        switches::kDisableVideoCaptureUseGpuMemoryBuffer,
        switches::kDomAutomationController,
-@@ -5611,7 +5612,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
+@@ -5672,7 +5673,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
    // - Win: https://crbug.com/707022 .
    uint64_t total_size = 0;
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

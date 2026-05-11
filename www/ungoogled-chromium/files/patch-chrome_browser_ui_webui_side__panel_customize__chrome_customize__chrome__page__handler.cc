@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/side_panel/customize_chrome/customize_chrome_page_handler.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/ui/webui/side_panel/customize_chrome/customize_chrome_page_handler.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/ui/webui/side_panel/customize_chrome/customize_chrome_page_handler.cc
-@@ -573,7 +573,7 @@ void CustomizeChromePageHandler::UpdateFooterSettings(
+@@ -569,7 +569,7 @@ void CustomizeChromePageHandler::UpdateFooterSettings(
        side_panel::mojom::ManagementNoticeState::New();
    management_notice_state->can_be_shown = false;
    management_notice_state->enabled_by_policy = false;

@@ -1,6 +1,6 @@
---- ui/gtk/select_file_dialog_linux_gtk.cc.orig	2026-03-30 11:37:05 UTC
+--- ui/gtk/select_file_dialog_linux_gtk.cc.orig	2026-05-09 18:09:27 UTC
 +++ ui/gtk/select_file_dialog_linux_gtk.cc
-@@ -49,7 +49,8 @@ namespace {
+@@ -50,7 +50,8 @@ namespace {
  // GTK_RESPONSE_ACCEPT as the default button, which should be avoided to prevent
  // an exploit where the user is instructed to hold Enter before the dialog
  // appears.

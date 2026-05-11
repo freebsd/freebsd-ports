@@ -1,6 +1,6 @@
---- chrome/browser/browser_features.cc.orig	2026-03-15 18:32:51 UTC
+--- chrome/browser/browser_features.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/browser_features.cc
-@@ -70,7 +70,7 @@ BASE_FEATURE(kCertVerificationNetworkTime, base::FEATU
+@@ -66,7 +66,7 @@ BASE_FEATURE(kCertVerificationNetworkTime, base::FEATU
  BASE_FEATURE(kClearUserDataUponProfileDestruction,
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // Enables usage of os_crypt_async::SecretPortalKeyProvider.  Once
  // `kSecretPortalKeyProviderUseForEncryption` is enabled, this flag cannot be
  // disabled without losing data.
-@@ -80,7 +80,7 @@ BASE_FEATURE(kDbusSecretPortal, base::FEATURE_ENABLED_
+@@ -76,7 +76,7 @@ BASE_FEATURE(kDbusSecretPortal, base::FEATURE_ENABLED_
  // Destroy profiles when their last browser window is closed, instead of when
  // the browser exits.
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -179,7 +179,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlocked, base::FE
+@@ -175,7 +175,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlocked, base::FE
  BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               base::FEATURE_ENABLED_BY_DEFAULT);
  

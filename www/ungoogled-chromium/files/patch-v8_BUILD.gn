@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2026-04-15 11:25:12 UTC
+--- v8/BUILD.gn.orig	2026-05-09 18:09:27 UTC
 +++ v8/BUILD.gn
-@@ -1024,6 +1024,8 @@ external_v8_defines = [
+@@ -1045,6 +1045,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",
    "V8_TARGET_OS_CHROMEOS",
@@ -9,7 +9,7 @@
    "V8_TARGET_ARCH_ARM64",
    "V8_TARGET_ARCH_PPC64",
    "V8_TARGET_ARCH_MIPS64",
-@@ -1108,6 +1110,12 @@ if (target_os == "android") {
+@@ -1129,6 +1131,12 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -22,7 +22,16 @@
  }
  
  # Some V8_TARGET_ARCH_ defines that affect Api constants (see usages of
-@@ -1870,9 +1878,6 @@ config("strict_warnings") {
+@@ -1796,7 +1804,7 @@ config("toolchain") {
+ 
+   if (is_clang) {
+     cflags += [ "-Wunreachable-code" ]
+-    if (v8_current_cpu != "ppc64" && v8_current_cpu != "s390x") {
++    if (v8_current_cpu != "ppc64" && v8_current_cpu != "s390x" && !is_bsd) {
+       cflags += [ "-Wlifetime-safety-permissive" ]
+     }
+ 
+@@ -1899,9 +1907,6 @@ config("strict_warnings") {
        cflags += [ "-Wshorten-64-to-32" ]
      }
      cflags += [ "-Wmissing-field-initializers" ]
@@ -32,7 +41,7 @@
    }
  }
  
-@@ -2826,6 +2831,12 @@ template("run_mksnapshot") {
+@@ -2829,6 +2834,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -45,7 +54,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -7223,7 +7234,7 @@ v8_component("v8_libbase") {
+@@ -7248,7 +7259,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -54,7 +63,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -7234,6 +7245,18 @@ v8_component("v8_libbase") {
+@@ -7259,6 +7270,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

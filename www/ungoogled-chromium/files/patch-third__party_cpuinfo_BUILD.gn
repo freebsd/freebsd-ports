@@ -1,0 +1,47 @@
+--- third_party/cpuinfo/BUILD.gn.orig	2026-05-09 18:09:27 UTC
++++ third_party/cpuinfo/BUILD.gn
+@@ -67,7 +67,7 @@ source_set("cpuinfo") {
+ }
+ 
+ source_set("os_specific") {
+-  if (is_chromeos || is_linux || is_android) {
++  if (!is_bsd && (is_chromeos || is_linux || is_android)) {
+     sources = [
+       "src/src/linux/cpulist.c",
+       "src/src/linux/multiline.c",
+@@ -149,7 +149,7 @@ source_set("x86_cache") {
+ }
+ 
+ source_set("cpu_and_os_specific") {
+-  if ((is_linux || is_chromeos) &&
++  if (!is_bsd && (is_linux || is_chromeos) &&
+       (current_cpu == "x86" || current_cpu == "x64")) {
+     sources = [
+       "src/src/x86/linux/cpuinfo.c",
+@@ -157,7 +157,7 @@ source_set("cpu_and_os_specific") {
+     ]
+   }
+ 
+-  if ((is_linux || is_chromeos) && current_cpu == "arm") {
++  if (!is_bsd && (is_linux || is_chromeos) && current_cpu == "arm") {
+     sources = [
+       "src/src/arm/linux/aarch32-isa.c",
+       "src/src/arm/linux/api.h",
+@@ -170,7 +170,7 @@ source_set("cpu_and_os_specific") {
+     ]
+   }
+ 
+-  if ((is_linux || is_chromeos) && current_cpu == "arm64") {
++  if (!is_bsd && (is_linux || is_chromeos) && current_cpu == "arm64") {
+     sources = [
+       "src/src/arm/linux/aarch64-isa.c",
+       "src/src/arm/linux/api.h",
+@@ -183,7 +183,7 @@ source_set("cpu_and_os_specific") {
+     ]
+   }
+ 
+-  if ((is_linux || is_chromeos) && current_cpu == "riscv64") {
++  if (!is_bsd && (is_linux || is_chromeos) && current_cpu == "riscv64") {
+     sources = [
+       "src/src/riscv/linux/init.c",
+       "src/src/riscv/linux/riscv-hw.c",

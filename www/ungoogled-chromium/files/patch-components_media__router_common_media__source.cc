@@ -1,6 +1,6 @@
---- components/media_router/common/media_source.cc.orig	2025-09-10 13:22:16 UTC
+--- components/media_router/common/media_source.cc.orig	2026-05-09 18:09:27 UTC
 +++ components/media_router/common/media_source.cc
-@@ -62,7 +62,7 @@ bool IsSystemAudioCaptureSupported() {
+@@ -68,7 +68,7 @@ bool IsSystemAudioCaptureSupported() {
  #if BUILDFLAG(IS_MAC)
    return media::IsMacSckSystemLoopbackCaptureSupported() ||
           base::FeatureList::IsEnabled(media::kMacCatapLoopbackAudioForCast);

@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc
 @@ -96,7 +96,7 @@ DialogText GetPromptDialogTextFromStatus(
        break;
@@ -6,10 +6,10 @@
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (base::FeatureList::IsEnabled(
-           syncer::kReplaceSyncPromosWithSignInPromos) &&
+   if (syncer::IsReplaceSyncPromosWithSignInPromosEnabled() &&
        status.signin_status != collaboration::SigninStatus::kSigninDisabled) {
-@@ -434,7 +434,7 @@ void CollaborationControllerDelegateDesktop::ShowError
+     title_id = IDS_SYNC_HISTORY_TITLE;
+@@ -433,7 +433,7 @@ void CollaborationControllerDelegateDesktop::ShowError
        chrome::ShowBrowserModal(browser_, std::move(dialog_model));
  }
  
@@ -18,7 +18,7 @@
  void CollaborationControllerDelegateDesktop::
      MaybeShowSignInUiForHistorySyncOptin() {
    collaboration::ServiceStatus status = GetServiceStatus();
-@@ -519,7 +519,7 @@ void CollaborationControllerDelegateDesktop::
+@@ -518,7 +518,7 @@ void CollaborationControllerDelegateDesktop::
    }
  
    AccountInfo account_for_promo =
@@ -27,21 +27,21 @@
        signin_ui_util::GetSingleAccountForPromos(
            IdentityManagerFactory::GetForProfile(browser_->profile()));
  #else
-@@ -554,7 +554,7 @@ void CollaborationControllerDelegateDesktop::
+@@ -553,7 +553,7 @@ void CollaborationControllerDelegateDesktop::
                .SetLabel(dialog_text.ok_button_text)
                .SetEnabled(true));
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (base::FeatureList::IsEnabled(
-           syncer::kReplaceSyncPromosWithSignInPromos)) {
+   if (syncer::IsReplaceSyncPromosWithSignInPromosEnabled()) {
      dialog_builder.SetFootnote(ui::DialogModelLabel(dialog_text.footnote));
-@@ -605,7 +605,7 @@ void CollaborationControllerDelegateDesktop::OnPromptD
+ 
+@@ -602,7 +602,7 @@ void CollaborationControllerDelegateDesktop::OnPromptD
          .Run(CollaborationControllerDelegate::Outcome::kSuccess);
    }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (base::FeatureList::IsEnabled(
-           syncer::kReplaceSyncPromosWithSignInPromos)) {
+   if (syncer::IsReplaceSyncPromosWithSignInPromosEnabled()) {
      MaybeShowSignInUiForHistorySyncOptin();
+     return;

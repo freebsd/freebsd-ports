@@ -1,4 +1,4 @@
---- media/base/video_frame.h.orig	2026-03-15 18:32:51 UTC
+--- media/base/video_frame.h.orig	2026-05-09 18:09:27 UTC
 +++ media/base/video_frame.h
 @@ -40,7 +40,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -18,7 +18,7 @@
      STORAGE_DMABUFS = 5,  // Each plane is stored into a DmaBuf.
  #endif
      STORAGE_MAPPABLE_SHARED_IMAGE = 6,
-@@ -311,7 +311,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -324,7 +324,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        base::span<const uint8_t> uv_data,
        base::TimeDelta timestamp);
  
@@ -27,7 +27,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -628,7 +628,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -641,7 +641,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // wait for the included sync point.
    scoped_refptr<gpu::ClientSharedImage> shared_image() const;
  
@@ -36,7 +36,7 @@
    // The number of DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
    // remaining planes. Should be > 0 for STORAGE_DMABUFS.
-@@ -818,7 +818,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -846,7 +846,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    base::ReadOnlySharedMemoryRegion owned_shm_region_;
    base::ReadOnlySharedMemoryMapping owned_shm_mapping_;
  
