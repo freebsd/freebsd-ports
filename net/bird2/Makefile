@@ -1,5 +1,6 @@
 PORTNAME=	bird
 DISTVERSION=	2.18.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://bird.nic.cz/download/
 PKGNAMESUFFIX=	2
@@ -29,10 +30,10 @@ GROUPS=		birdvty
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_MULTI=	RP
+OPTIONS_GROUP=	RP
 RP_DESC=	Routing Protocols
-OPTIONS_MULTI_RP=	BFD BABEL BMP BGP MRT OSPF PIPE RADV RIP RPKI STATIC
-OPTIONS_DEFAULT=	BFD BABEL BGP MRT OSPF PIPE RADV RIP RPKI STATIC
+OPTIONS_GROUP_RP=	BFD BABEL BMP BGP MRT OSPF PIPE RADV RIP RPKI
+OPTIONS_DEFAULT=	BFD BABEL BGP MRT OSPF PIPE RADV RIP RPKI
 
 BFD_DESC=	Bidirectional Forwarding Detection
 BABEL_DESC=	Babel routing protocol
@@ -44,7 +45,6 @@ PIPE_DESC=	PIPE routing
 RADV_DESC=	Router Advertisement
 RIP_DESC=	Routing Information Protocol
 RPKI_DESC=	Resource Public Key Infrastructure
-STATIC_DESC=	Static routing
 
 BFD_VARS=	rt_prot+=bfd
 BABEL_VARS=	rt_prot+=babel
@@ -56,7 +56,8 @@ PIPE_VARS=	rt_prot+=pipe
 RADV_VARS=	rt_prot+=radv
 RIP_VARS=	rt_prot+=rip
 RPKI_VARS=	rt_prot+=rpki
-STATIC_VARS=	rt_prot+=static
+
+RT_PROT+=	static
 
 CONFIGURE_ARGS+=--with-protocols="${RT_PROT}"
 RPKI_LIB_DEPENDS=	libssh.so:security/libssh
