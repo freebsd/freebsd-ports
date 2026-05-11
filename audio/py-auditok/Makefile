@@ -1,8 +1,8 @@
 PORTNAME=	auditok
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.2
 CATEGORIES=	audio python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no testdata
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,8 +23,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR
 USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
-NOARCH=		yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	amsehili
+
+NO_ARCH=	yes
 
 # tests as of 0.4.1: 768 passed, 1 failed (FFmpeg FLAC codec not available in test environment)
+# tests as of 0.4.2: 8 failed, 768 passed, 6 warnings in 10.88s, see https://github.com/amsehili/auditok/issues/51
 
 .include <bsd.port.mk>
