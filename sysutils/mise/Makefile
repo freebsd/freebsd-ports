@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.5
+DISTVERSION=	2026.5.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -121,9 +121,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		block-buffer-0.12.0 \
 		block-padding-0.3.3 \
 		blowfish-0.9.1 \
+		bs58-0.5.1 \
 		bstr-1.12.1 \
 		built-0.8.0 \
 		bumpalo-3.20.2 \
+		bytecheck-0.8.2 \
+		bytecheck_derive-0.8.2 \
 		bytecount-0.6.9 \
 		byteorder-1.5.0 \
 		bytes-1.11.1 \
@@ -136,7 +139,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
 		cbc-0.1.2 \
-		cc-1.2.61 \
+		cc-1.2.62 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -156,7 +159,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		clru-0.6.3 \
-		clx-2.0.2 \
+		clx-2.0.3 \
 		cmake-0.1.58 \
 		cmov-0.5.3 \
 		coalesced_map-0.1.2 \
@@ -279,7 +282,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ff-0.13.1 \
 		fiat-crypto-0.2.9 \
 		file_url-0.3.0 \
-		filetime-0.2.27 \
+		filetime-0.2.28 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
@@ -390,7 +393,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
@@ -413,7 +416,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		human_format-1.2.1 \
 		humansize-2.1.3 \
 		humantime-2.3.0 \
-		hybrid-array-0.4.11 \
+		hybrid-array-0.4.12 \
 		hyper-1.9.0 \
 		hyper-rustls-0.27.9 \
 		hyper-tls-0.6.0 \
@@ -467,7 +470,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.97 \
+		js-sys-0.3.98 \
 		json-number-0.4.10 \
 		json-patch-4.2.0 \
 		json-syntax-0.12.5 \
@@ -538,6 +541,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		mlua_derive-0.11.0 \
 		mockito-1.7.2 \
 		multimap-0.10.1 \
+		munge-0.4.7 \
+		munge_macro-0.4.7 \
 		native-tls-0.2.18 \
 		ndk-context-0.1.1 \
 		netrc-rs-0.1.2 \
@@ -618,7 +623,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pkcs5-0.7.1 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.33 \
-		plain-0.2.3 \
 		platforms-3.10.0 \
 		plist-1.9.0 \
 		poly1305-0.8.0 \
@@ -646,11 +650,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		prost-reflect-build-0.16.0 \
 		prost-reflect-derive-0.16.0 \
 		prost-types-0.14.3 \
+		ptr_meta-0.3.1 \
+		ptr_meta_derive-0.3.1 \
 		purl-0.1.6 \
 		quick-error-1.2.3 \
 		quick-xml-0.37.5 \
 		quick-xml-0.38.4 \
-		quick-xml-0.39.3 \
+		quick-xml-0.39.4 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
@@ -658,6 +664,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
+		rancor-0.1.1 \
 		rand-0.8.6 \
 		rand-0.9.4 \
 		rand-0.10.1 \
@@ -684,7 +691,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.5 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
@@ -694,12 +700,15 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		regex-lite-0.1.9 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.10 \
+		rend-0.5.3 \
 		reqwest-0.12.28 \
 		reqwest-0.13.3 \
 		resolvo-0.10.2 \
-		retry-policies-0.5.1 \
+		retry-policies-0.5.2 \
 		rfc6979-0.4.0 \
 		ring-0.17.14 \
+		rkyv-0.8.16 \
+		rkyv_derive-0.8.16 \
 		rmcp-1.6.0 \
 		rmcp-macros-1.6.0 \
 		rmp-0.8.15 \
@@ -764,8 +773,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.19.0 \
-		serde_with_macros-3.19.0 \
+		serde_with-3.20.0 \
+		serde_with_macros-3.20.0 \
 		serde_yaml-0.9.34+deprecated \
 		serial_test-3.4.0 \
 		serial_test_derive-3.4.0 \
@@ -858,7 +867,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinyvec_macros-0.1.1 \
 		tls_codec-0.4.2 \
 		tls_codec_derive-0.4.2 \
-		tokio-1.52.2 \
+		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.4 \
@@ -872,7 +881,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tough-0.21.0 \
 		tower-0.5.3 \
-		tower-http-0.6.9 \
+		tower-http-0.6.10 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
@@ -930,17 +939,17 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.120 \
-		wasm-bindgen-futures-0.4.70 \
-		wasm-bindgen-macro-0.2.120 \
-		wasm-bindgen-macro-support-0.2.120 \
-		wasm-bindgen-shared-0.2.120 \
+		wasm-bindgen-0.2.121 \
+		wasm-bindgen-futures-0.4.71 \
+		wasm-bindgen-macro-0.2.121 \
+		wasm-bindgen-macro-support-0.2.121 \
+		wasm-bindgen-shared-0.2.121 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
 		wasmparser-0.244.0 \
 		wasmtimer-0.4.3 \
-		web-sys-0.3.97 \
+		web-sys-0.3.98 \
 		web-time-1.1.0 \
 		webbrowser-1.2.1 \
 		webpki-root-certs-1.0.7 \
