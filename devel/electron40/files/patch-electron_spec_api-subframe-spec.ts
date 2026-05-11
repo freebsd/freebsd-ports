@@ -1,6 +1,6 @@
---- electron/spec/api-subframe-spec.ts.orig	2025-09-02 20:56:04 UTC
+--- electron/spec/api-subframe-spec.ts.orig	2026-05-08 13:55:13 UTC
 +++ electron/spec/api-subframe-spec.ts
-@@ -247,7 +247,7 @@ describe('subframe with non-standard schemes', () => {
+@@ -248,7 +248,7 @@ describe('subframe with non-standard schemes', () => {
  });
  
  // app.getAppMetrics() does not return sandbox information on Linux.

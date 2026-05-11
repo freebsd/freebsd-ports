@@ -1,9 +1,9 @@
---- electron/spec/api-desktop-capturer-spec.ts.orig	2026-04-15 14:05:49 UTC
+--- electron/spec/api-desktop-capturer-spec.ts.orig	2026-05-08 13:55:13 UTC
 +++ electron/spec/api-desktop-capturer-spec.ts
-@@ -9,7 +9,7 @@ function getSourceTypes (): ('window' | 'screen')[] {
+@@ -9,7 +9,7 @@ function getSourceTypes(): ('window' | 'screen')[] {
  import { closeAllWindows } from './lib/window-helpers';
  
- function getSourceTypes (): ('window' | 'screen')[] {
+ function getSourceTypes(): ('window' | 'screen')[] {
 -  if (process.platform === 'linux') {
 +  if (process.platform === 'linux' || process.platform === 'freebsd') {
      return ['screen'];
@@ -36,7 +36,7 @@
      const displays = screen.getAllDisplays();
      const sources = await desktopCapturer.getSources({ types: ['screen'] });
      expect(sources).to.be.an('array').of.length(displays.length);
-@@ -99,7 +99,7 @@ describe('desktopCapturer', () => {
+@@ -103,7 +103,7 @@ describe('desktopCapturer', () => {
    });
  
    // Linux doesn't return any window sources.
@@ -45,7 +45,7 @@
      const w2 = new BrowserWindow({ show: false, width: 100, height: 100, webPreferences: { contextIsolation: false } });
      const wShown = once(w2, 'show');
      const wFocused = once(w2, 'focus');
-@@ -123,7 +123,7 @@ describe('desktopCapturer', () => {
+@@ -127,7 +127,7 @@ describe('desktopCapturer', () => {
    });
  
    // Linux doesn't return any window sources.
@@ -54,7 +54,7 @@
      const w2 = new BrowserWindow({ show: false, width: 100, height: 100, webPreferences: { contextIsolation: false } });
      const wShown = once(w2, 'show');
      const wFocused = once(w2, 'focus');
-@@ -169,7 +169,7 @@ describe('desktopCapturer', () => {
+@@ -173,7 +173,7 @@ describe('desktopCapturer', () => {
    });
  
    // Linux doesn't return any window sources.
@@ -63,7 +63,7 @@
      // DesktopCapturer.getSources() is guaranteed to return in the correct
      // z-order from foreground to background.
      const MAX_WIN = 4;
-@@ -256,7 +256,7 @@ describe('desktopCapturer', () => {
+@@ -259,7 +259,7 @@ describe('desktopCapturer', () => {
    });
  
    // Linux doesn't return any window sources.

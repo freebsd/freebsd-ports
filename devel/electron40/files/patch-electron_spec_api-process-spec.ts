@@ -1,6 +1,6 @@
---- electron/spec/api-process-spec.ts.orig	2025-03-12 08:26:33 UTC
+--- electron/spec/api-process-spec.ts.orig	2026-05-08 13:55:13 UTC
 +++ electron/spec/api-process-spec.ts
-@@ -39,7 +39,7 @@ describe('process module', () => {
+@@ -41,7 +41,7 @@ describe('process module', () => {
        it('resolves promise successfully with valid data', async () => {
          const memoryInfo = await invoke(() => process.getProcessMemoryInfo());
          expect(memoryInfo).to.be.an('object');

@@ -1,6 +1,6 @@
---- electron/spec/api-tray-spec.ts.orig	2025-08-25 07:57:03 UTC
+--- electron/spec/api-tray-spec.ts.orig	2026-05-08 13:55:13 UTC
 +++ electron/spec/api-tray-spec.ts
-@@ -30,13 +30,13 @@ describe('tray module', () => {
+@@ -32,13 +32,13 @@ describe('tray module', () => {
        }).to.throw(/Failed to load image from path (.+)/);
      });
  
@@ -16,9 +16,9 @@
        expect(() => {
          tray = new Tray(nativeImage.createEmpty(), '0019A433-3526-48BA-A66C-676742C0FEFB');
        }).to.not.throw();
-@@ -131,7 +131,7 @@ describe('tray module', () => {
-   describe('tray.getBounds()', () => {
-     afterEach(() => { tray.destroy(); });
+@@ -139,7 +139,7 @@ describe('tray module', () => {
+       tray.destroy();
+     });
  
 -    ifit(process.platform !== 'linux')('returns a bounds object', function () {
 +    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('returns a bounds object', function () {
