@@ -9,7 +9,7 @@ WWW=		https://github.com/charlesrocket/xtxf
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.15.1:lang/zig
+BUILD_DEPENDS=	zig015>=0.15.1:lang/zig015
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	charlesrocket
