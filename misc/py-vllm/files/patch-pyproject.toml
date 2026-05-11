@@ -1,20 +1,21 @@
---- pyproject.toml.orig	2026-04-06 20:40:36 UTC
+--- pyproject.toml.orig	2026-05-10 07:34:36 UTC
 +++ pyproject.toml
-@@ -1,12 +1,9 @@ requires = [
+@@ -1,12 +1,10 @@ requires = [
  [build-system]
- # Should be mirrored in requirements/build.txt
+ # Should be mirrored in requirements/build/cuda.txt
  requires = [
 -    "cmake>=3.26.1",
 -    "ninja",
      "packaging>=24.2",
 -    "setuptools>=77.0.3,<81.0.0",
-+    "setuptools>=63.0",
++    "setuptools",
      "setuptools-scm>=8.0",
--    "torch == 2.10.0",
+-    "torch == 2.11.0",
++    "torch",
      "wheel",
      "jinja2",
  ]
-@@ -15,8 +12,7 @@ authors = [{name = "vLLM Team"}]
+@@ -15,8 +13,7 @@ authors = [{name = "vLLM Team"}]
  [project]
  name = "vllm"
  authors = [{name = "vLLM Team"}]

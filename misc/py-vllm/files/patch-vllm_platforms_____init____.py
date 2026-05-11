@@ -1,4 +1,4 @@
---- vllm/platforms/__init__.py.orig	2026-04-07 17:26:12 UTC
+--- vllm/platforms/__init__.py.orig	2026-05-09 20:28:19 UTC
 +++ vllm/platforms/__init__.py
 @@ -58,6 +58,11 @@ def cuda_platform_plugin() -> str | None:
  
@@ -25,5 +25,5 @@
 -                    "Confirmed CPU platform is available because the machine is MacOS."
 +                    "Confirmed CPU platform is available because the machine is MacOS or FreeBSD."
                  )
- 
      except Exception as e:
+         logger.debug("CPU platform is not available because: %s", str(e))
