@@ -8,6 +8,8 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Graphics device for R for creating bitmap output
 WWW=		http://www.rosuda.org/R/GDD/
 
+BROKEN=		Fails to compile with the latest version of R
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	libgd>=2.0.35_8,1:graphics/gd
