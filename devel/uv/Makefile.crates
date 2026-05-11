@@ -84,9 +84,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		cmake-0.1.57 \
-		codspeed-4.5.0 \
-		codspeed-criterion-compat-4.5.0 \
-		codspeed-criterion-compat-walltime-4.5.0 \
+		codspeed-4.6.0 \
+		codspeed-criterion-compat-4.6.0 \
+		codspeed-criterion-compat-walltime-4.6.0 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.5 \
 		colored-2.2.0 \
