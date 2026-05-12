@@ -1,3 +1,30 @@
+  <vuln vid="e665f0a2-fe6d-44b0-ba9e-d383f055a8a3">
+    <topic>zeek -- potential DoS vulnerability</topic>
+    <affects>
+	<package>
+	    <name>zeek</name>
+	    <range><lt>8.0.8</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p> Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v8.0.8">
+	  <p> A specially-crafted series of MIME headers sent via
+	  SMTP or HTTP could cause Zeek to use large amounts of
+	  memory and potentially crash. </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v8.0.8</url>
+    </references>
+    <dates>
+      <discovery>2026-05-12</discovery>
+      <entry>2026-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eeb4d69a-4d74-11f1-9a9c-994b98c88011">
     <topic>dnsmasq -- multiple vulnerabilities</topic>
     <affects>
