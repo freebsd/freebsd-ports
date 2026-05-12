@@ -1,5 +1,5 @@
-TIMESTAMP = 1770931491
-SHA256 (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.0/v3.29.0.mod) = 0c1e0ae1edb814de7ae65c8334c81c2d091ebf84737b630bcb58b063e80d6fb9
-SIZE (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.0/v3.29.0.mod) = 10799
-SHA256 (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.0/v3.29.0.zip) = 6e65d637edeae66f1c91c468e21735ca5df4f2fa8f94cea5958e432fd7971d9a
-SIZE (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.0/v3.29.0.zip) = 3370863
+TIMESTAMP = 1778616316
+SHA256 (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.1/v3.29.1.mod) = 0c1e0ae1edb814de7ae65c8334c81c2d091ebf84737b630bcb58b063e80d6fb9
+SIZE (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.1/v3.29.1.mod) = 10799
+SHA256 (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.1/v3.29.1.zip) = 67d49d93cb27b0b4636aece120949a385a17d24d2f840da368016fcb11078623
+SIZE (go/net_ooni-probe-cli/ooni-probe-cli-v3.29.1/v3.29.1.zip) = 3370879
