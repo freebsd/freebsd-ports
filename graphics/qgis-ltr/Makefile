@@ -5,6 +5,9 @@ CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
 
+PATCH_SITES=	https://github.com/qgis/QGIS/commit/
+PATCHFILES=	ac1443a90bb295cfb179de969b07b885c64e6252.patch:-p1
+
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Free and Open Source Geographic Information System
 WWW=		https://qgis.org/en/site/
