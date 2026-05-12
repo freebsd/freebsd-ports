@@ -18,11 +18,11 @@ include/libpeas-1.0/libpeas/peas.h
 lib/girepository-1.0/Peas-1.0.typelib
 lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0.so
-lib/libpeas-1.0.so.0
-lib/libpeas-1.0.so.0.3600.0
+lib/libpeas-1.0.so.1
+lib/libpeas-1.0.so.1.3800.1
 lib/libpeas-gtk-1.0.so
-lib/libpeas-gtk-1.0.so.0
-lib/libpeas-gtk-1.0.so.0.3600.0
+lib/libpeas-gtk-1.0.so.1
+lib/libpeas-gtk-1.0.so.1.3800.1
 %%DEMOS%%lib/peas-demo/plugins/helloworld/helloworld.plugin
 %%DEMOS%%lib/peas-demo/plugins/helloworld/libhelloworld.so
 %%DEMOS%%lib/peas-demo/plugins/secondtime/libsecondtime.so
@@ -83,6 +83,7 @@ libdata/pkgconfig/libpeas-gtk-1.0.pc
 %%DOCS%%%%DOCSDIR%%-1.0/func.DEPRECATED_FOR.html
 %%DOCS%%%%DOCSDIR%%-1.0/func.DEPRECATED_IN_1_22_FOR.html
 %%DOCS%%%%DOCSDIR%%-1.0/func.DEPRECATED_IN_1_24_FOR.html
+%%DOCS%%%%DOCSDIR%%-1.0/func.DEPRECATED_IN_1_38_FOR.html
 %%DOCS%%%%DOCSDIR%%-1.0/func.EXTENSION.html
 %%DOCS%%%%DOCSDIR%%-1.0/func.UNAVAILABLE.html
 %%DOCS%%%%DOCSDIR%%-1.0/fzy.js
@@ -284,6 +285,7 @@ share/locale/is/LC_MESSAGES/libpeas-1.0.mo
 share/locale/it/LC_MESSAGES/libpeas-1.0.mo
 share/locale/ja/LC_MESSAGES/libpeas-1.0.mo
 share/locale/ka/LC_MESSAGES/libpeas-1.0.mo
+share/locale/kab/LC_MESSAGES/libpeas-1.0.mo
 share/locale/kk/LC_MESSAGES/libpeas-1.0.mo
 share/locale/kn/LC_MESSAGES/libpeas-1.0.mo
 share/locale/ko/LC_MESSAGES/libpeas-1.0.mo
