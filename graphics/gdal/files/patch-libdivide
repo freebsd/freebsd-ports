@@ -1,7 +1,30 @@
---- frmts/vrt/CMakeLists.txt.orig	2026-02-09 17:36:29 UTC
+--- frmts/nitf/CMakeLists.txt.orig	2026-05-08 10:14:57 UTC
++++ frmts/nitf/CMakeLists.txt
+@@ -45,7 +45,8 @@ target_include_directories(gdal_NITF PRIVATE ${GDAL_RA
+ 
+ gdal_standard_includes(gdal_NITF)
+ target_include_directories(gdal_NITF PRIVATE ${GDAL_RASTER_FORMAT_SOURCE_DIR}/gtiff
+-                                             ${GDAL_RASTER_FORMAT_SOURCE_DIR}/vrt)
++                                             ${GDAL_RASTER_FORMAT_SOURCE_DIR}/vrt
++                                             ${PROJECT_SOURCE_DIR}/third_party/libdivide)
+ 
+ set_property(SOURCE nitfwritejpeg.cpp nitfwritejpeg_12.cpp PROPERTY SKIP_UNITY_BUILD_INCLUSION ON)
+ 
+--- frmts/nitf/kdtree_vq_cadrg.h.orig	2026-05-08 10:14:57 UTC
++++ frmts/nitf/kdtree_vq_cadrg.h
+@@ -23,7 +23,7 @@
+ #pragma GCC diagnostic ignored "-Wold-style-cast"
+ #pragma GCC diagnostic ignored "-Weffc++"
+ #endif
+-#include "../../third_party/libdivide/libdivide.h"
++#include "libdivide.h"
+ #ifdef __GNUC__
+ #pragma GCC diagnostic pop
+ #endif
+--- frmts/vrt/CMakeLists.txt.orig	2026-05-08 10:14:57 UTC
 +++ frmts/vrt/CMakeLists.txt
-@@ -31,7 +31,8 @@ target_include_directories(gdal_vrt PRIVATE ${GDAL_RAS
- endif()
+@@ -33,7 +33,8 @@ target_include_directories(gdal_vrt PRIVATE ${GDAL_RAS
+ gdal_target_link_libraries(gdal_vrt PRIVATE PROJ::proj)
  
  target_include_directories(gdal_vrt PRIVATE ${GDAL_RASTER_FORMAT_SOURCE_DIR}/raw
 -                                            $<TARGET_PROPERTY:ogrsf_generic,SOURCE_DIR>)
@@ -10,9 +33,9 @@
  
  if (GDAL_ENABLE_ARM_NEON_OPTIMIZATIONS)
    target_compile_definitions(gdal_vrt PRIVATE -DUSE_NEON_OPTIMIZATIONS)
---- frmts/vrt/pixelfunctions.cpp.orig	2026-02-09 17:36:29 UTC
+--- frmts/vrt/pixelfunctions.cpp.orig	2026-05-08 10:14:57 UTC
 +++ frmts/vrt/pixelfunctions.cpp
-@@ -30,7 +30,7 @@
+@@ -33,7 +33,7 @@
  #pragma GCC diagnostic ignored "-Wold-style-cast"
  #pragma GCC diagnostic ignored "-Weffc++"
  #endif
