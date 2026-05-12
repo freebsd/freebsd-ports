@@ -84,7 +84,6 @@
     SUBDIR += openjdk17-jre
     SUBDIR += openjdk21
     SUBDIR += openjdk21-jre
-    SUBDIR += openjdk23
     SUBDIR += openjdk24
     SUBDIR += openjdk25
     SUBDIR += openjdk26
