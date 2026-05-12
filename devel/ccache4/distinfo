@@ -1,3 +1,3 @@
-TIMESTAMP = 1777311106
-SHA256 (ccache-ccache-v4.13.5_GH0.tar.gz) = 99478c1b55b9c097baceef4cc559931bd2aff8dd43920df1a8cbb7445f23d1f1
-SIZE (ccache-ccache-v4.13.5_GH0.tar.gz) = 753491
+TIMESTAMP = 1778382657
+SHA256 (ccache-4.13.6.tar.xz) = a7de667ca08cf67c3c8af9f213f6aa701a1188a2b3163fb74483858ce5e79fbb
+SIZE (ccache-4.13.6.tar.xz) = 538628

@@ -1,7 +1,7 @@
 PORTNAME=	ccache
-DISTVERSIONPREFIX=	v
-DISTVERSION=	4.13.5
+DISTVERSION=	4.13.6
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	osidorkin@gmail.com
@@ -11,17 +11,16 @@ WWW=		https://ccache.dev/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 
-USES=		cmake:noninja compiler:c++17-lang pathfix shebangfix
-USE_GITHUB=	yes
+USES=		cmake:noninja compiler:c++17-lang pathfix shebangfix tar:xz
 
 SHEBANG_FILES=	doc/scripts/* test/*
 SHEBANG_GLOB=	*.sh *.bash
 
-CMAKE_ARGS+=	-D DEPS=LOCAL
-CMAKE_OFF=	WARNINGS_AS_ERRORS \
-		ENABLE_IPO \
+CMAKE_ARGS=	-D DEPS=LOCAL
+CMAKE_OFF=	ENABLE_IPO \
 		ENABLE_TRACING \
-		REDIS_STORAGE_BACKEND
+		REDIS_STORAGE_BACKEND \
+		WARNINGS_AS_ERRORS
 
 CONFLICTS_INSTALL?=	ccache ccache-static
 
