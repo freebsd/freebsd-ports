@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.68.0
-PORTREVISION=	1
+DISTVERSION=	0.69.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -125,21 +124,23 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tikv-jemallocator-0.6.0 \
 		tree-sitter-0.26.3 \
 		tree-sitter-ada-0.1.0 \
+		tree-sitter-asm-0.24.0 \
 		tree-sitter-bash-0.25.1 \
 		tree-sitter-c-0.24.1 \
 		tree-sitter-c-sharp-0.23.1 \
-		tree-sitter-clojure-orchard-0.2.0 \
+		tree-sitter-clojure-orchard-0.2.5 \
 		tree-sitter-cmake-0.7.1 \
+		tree-sitter-commonlisp-0.4.1 \
 		tree-sitter-cpp-0.23.4 \
-		tree-sitter-css-0.23.1 \
-		tree-sitter-dart-orchard-0.2.1 \
+		tree-sitter-css-0.25.0 \
+		tree-sitter-dart-orchard-0.3.2 \
 		tree-sitter-devicetree-0.14.1 \
 		tree-sitter-elisp-1.6.1 \
 		tree-sitter-elixir-0.3.4 \
 		tree-sitter-elm-5.8.0 \
-		tree-sitter-erlang-0.13.0 \
+		tree-sitter-erlang-0.16.0 \
 		tree-sitter-fortran-0.5.1 \
-		tree-sitter-fsharp-0.1.0 \
+		tree-sitter-fsharp-0.3.0 \
 		tree-sitter-gleam-1.0.0 \
 		tree-sitter-go-0.25.0 \
 		tree-sitter-haskell-0.23.1 \
@@ -155,18 +156,17 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-newick-1.1.0 \
 		tree-sitter-nix-0.3.0 \
 		tree-sitter-objc-3.0.2 \
-		tree-sitter-ocaml-0.23.2 \
+		tree-sitter-ocaml-0.24.2 \
 		tree-sitter-pascal-0.10.0 \
-		tree-sitter-perl-1.1.2 \
 		tree-sitter-php-0.23.11 \
 		tree-sitter-proto-0.2.0 \
-		tree-sitter-python-0.23.6 \
+		tree-sitter-python-0.25.0 \
 		tree-sitter-qmljs-0.3.0 \
 		tree-sitter-r-1.2.0 \
 		tree-sitter-racket-0.24.7 \
 		tree-sitter-ruby-0.23.1 \
-		tree-sitter-rust-orchard-0.16.2 \
-		tree-sitter-scala-0.23.4 \
+		tree-sitter-rust-orchard-0.16.6 \
+		tree-sitter-scala-0.26.0 \
 		tree-sitter-scheme-0.24.7 \
 		tree-sitter-sequel-0.3.11 \
 		tree-sitter-sfapex-2.4.0 \
@@ -175,10 +175,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-toml-ng-0.7.0 \
 		tree-sitter-typescript-0.23.2 \
 		tree-sitter-verilog-1.0.3 \
+		tree-sitter-vhdl-1.4.0 \
 		tree-sitter-xml-0.7.0 \
 		tree-sitter-yaml-0.7.2 \
 		tree-sitter-zig-1.1.2 \
 		tree_magic_mini-3.1.6 \
+		ts-parser-perl-1.0.1 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.11 \
