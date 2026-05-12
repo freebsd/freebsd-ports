@@ -5293,3 +5293,4 @@ devel/py-termstyle||2026-05-09|Has expired: Upstream project appears to be aband
 www/p5-Catalyst-Controller-BindLex||2026-05-09|Has expired: Upstream unmaintained and declared to be dangerous to use
 editors/abiword-docs||2026-05-10|Has expired: abisource.com no longer exists
 games/linwarrior||2026-05-10|Has expired: Abandoned and obsolete, last release in 2010, not really playable
+devel/lace14|devel/lace|2026-05-12|Last user switched to devel/lace
