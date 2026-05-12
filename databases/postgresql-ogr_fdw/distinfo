@@ -1,3 +1,5 @@
-TIMESTAMP = 1762492594
+TIMESTAMP = 1778385586
 SHA256 (pramsey-pgsql-ogr-fdw-v1.1.7_GH0.tar.gz) = ba1f81c4d10b91b89cb775519b3749d584c0d4de3c01fe032de0f1ae62da3c78
 SIZE (pramsey-pgsql-ogr-fdw-v1.1.7_GH0.tar.gz) = 256735
+SHA256 (fba0f6f7c97b0c162b996e1796fffb30abe9b38d.patch) = 9bd32f213d985656ab0583e68cb9fea98e0e224aa8758cebc71958416c08f8d5
+SIZE (fba0f6f7c97b0c162b996e1796fffb30abe9b38d.patch) = 800

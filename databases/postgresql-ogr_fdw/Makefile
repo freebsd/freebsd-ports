@@ -5,6 +5,9 @@ PORTREVISION=	2
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
+PATCH_SITE=	https://github.com/pramsey/pgsql-ogr-fdw/commit/
+PATCHFILES=	fba0f6f7c97b0c162b996e1796fffb30abe9b38d.patch:-p1
+
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper for OGR
 WWW=		https://github.com/pramsey/pgsql-ogr-fdw
