@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.4
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -92,7 +92,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		calloop-wayland-source-0.3.0 \
 		calloop-wayland-source-0.4.1 \
 		cast-0.3.0 \
-		cc-1.2.61 \
+		cc-1.2.62 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-0.1.10 \
@@ -235,7 +235,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kqueue-1.1.1 \
-		kqueue-sys-1.1.0 \
+		kqueue-sys-1.1.1 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
@@ -406,7 +406,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		profiling-1.0.18 \
 		pxfm-0.1.29 \
 		quick-error-2.0.1 \
-		quick-xml-0.39.3 \
+		quick-xml-0.39.4 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -672,7 +672,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		zeno-0.3.3 \
 		zerocopy-0.8.48 \
 		zerocopy-derive-0.8.48 \
-		zerofrom-0.1.7 \
+		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
