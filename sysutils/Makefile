@@ -829,6 +829,7 @@
     SUBDIR += openvox-agent8
     SUBDIR += openvox-server8
     SUBDIR += osinfo-db-tools
+    SUBDIR += osquery
     SUBDIR += p5-App-Regather
     SUBDIR += p5-App-RunCron
     SUBDIR += p5-App-ZFSCurses
