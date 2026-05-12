@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2026-04-21 16:36:20 UTC
++++ CMakeLists.txt
+@@ -312,7 +312,7 @@ function(jwt_add_test)
+ 			${CMAKE_BINARY_DIR}/tests)
+ 
+ 	target_link_libraries(${LibTest_NAME} PRIVATE PkgConfig::CHECK)
+-	add_test(NAME ${LibTest_NAME} COMMAND /bin/bash -c
++	add_test(NAME ${LibTest_NAME} COMMAND %%LOCALBASE%%/bin/bash -c
+ 		"export TEST=${LibTest_NAME}; . ${CMAKE_SOURCE_DIR}/tests/test-env.sh; exec ${CMAKE_BINARY_DIR}/tests/${LibTest_NAME}")
+ endfunction()
+ 
+@@ -339,7 +339,7 @@ if (CHECK_FOUND)
+ 	endforeach()
+ 
+ 	if (BATS_CMD)
+-		add_test(NAME jwt_cli COMMAND /bin/bash -c
++		add_test(NAME jwt_cli COMMAND %%LOCALBASE%%/bin/bash -c
+ 			"export SRCDIR=\"${CMAKE_SOURCE_DIR}\"; \"${CMAKE_SOURCE_DIR}\"/tests/jwt-cli.bats")
+ 	endif()
+ 

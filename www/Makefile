@@ -339,6 +339,7 @@
     SUBDIR += libhsts
     SUBDIR += libhubbub
     SUBDIR += libjwt
+    SUBDIR += libjwt3
     SUBDIR += libmicrohttpd
     SUBDIR += libnghttp2
     SUBDIR += libnghttp3
