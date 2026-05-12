@@ -37,11 +37,15 @@ include/wasmtime/engine.h
 include/wasmtime/engine.hh
 include/wasmtime/error.h
 include/wasmtime/error.hh
+include/wasmtime/exn.h
+include/wasmtime/exn.hh
 include/wasmtime/extern.h
 include/wasmtime/extern.hh
 include/wasmtime/extern_declare.hh
 include/wasmtime/func.h
 include/wasmtime/func.hh
+include/wasmtime/gc.h
+include/wasmtime/gc.hh
 include/wasmtime/global.h
 include/wasmtime/global.hh
 include/wasmtime/helpers.hh
@@ -60,6 +64,8 @@ include/wasmtime/store.h
 include/wasmtime/store.hh
 include/wasmtime/table.h
 include/wasmtime/table.hh
+include/wasmtime/tag.h
+include/wasmtime/tag.hh
 include/wasmtime/trap.h
 include/wasmtime/trap.hh
 include/wasmtime/types.hh
@@ -70,6 +76,7 @@ include/wasmtime/types/global.hh
 include/wasmtime/types/import.hh
 include/wasmtime/types/memory.hh
 include/wasmtime/types/table.hh
+include/wasmtime/types/tag.hh
 include/wasmtime/types/val.hh
 include/wasmtime/val.h
 include/wasmtime/val.hh
