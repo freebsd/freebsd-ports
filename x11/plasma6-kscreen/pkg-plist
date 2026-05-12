@@ -185,8 +185,10 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/sa/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sa/LC_MESSAGES/kscreen_common.mo
 share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/sk/LC_MESSAGES/hdrcalibrator.mo
 share/locale/sk/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sk/LC_MESSAGES/kscreen_common.mo
+share/locale/sk/LC_MESSAGES/kscreen_osd.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/sl/LC_MESSAGES/hdrcalibrator.mo
 share/locale/sl/LC_MESSAGES/kcm_kscreen.mo
