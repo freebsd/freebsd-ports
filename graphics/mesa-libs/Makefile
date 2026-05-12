@@ -1,6 +1,5 @@
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -11,7 +10,15 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 USES=		llvm:noexport
 
-BUILD_DEPENDS=	libglvnd>=0:graphics/libglvnd
+BUILD_DEPENDS=	libglvnd>=0:graphics/libglvnd \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+		libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
+		spirv-tools>0:graphics/spirv-tools \
+		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
+		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+
+CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 
 OPTIONS_GROUP=		PLATFORM
 OPTIONS_GROUP_PLATFORM=	X11 WAYLAND
@@ -33,23 +40,31 @@ USE_LDCONFIG=		yes
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
+LDFLAGS_i386=	-Wl,-znotext
+
+# mesa-libs is the home of libgallium-${MESAVERSION}.so (the unified gallium
+# runtime introduced in mesa 25's "megalib" refactor). It must be built with
+# a real gallium driver set so install_megadrivers actually ships the lib;
+# the per-driver lib/dri/*_dri.so shims that fall out of this build are
+# stripped in post-install (they belong to graphics/mesa-dri).
+GALLIUM_DRIVERS=	crocus i915 iris llvmpipe panfrost r300 r600 radeonsi svga zink
+.if ${ARCH} != amd64 && ${ARCH} != i386 && ${ARCH} != x86_64
+GALLIUM_DRIVERS:=	${GALLIUM_DRIVERS:Ncrocus:Ni915:Niris:Nsvga}
+.endif
+.if ${ARCH} == armv7
+GALLIUM_DRIVERS=	llvmpipe
+.endif
+
+MESON_ARGS+=	-Dgallium-drivers=${GALLIUM_DRIVERS:ts,}
+MESON_ARGS+=	-Dvulkan-drivers=""
+
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dgallium-vdpau=disabled \
-		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
-		-Dgallium-xa=disabled \
-		-Dgallium-nine=false \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
-		-Dosmesa=false \
 		-Dtools="" \
-		-Dvalgrind=disabled \
-		-Degl=enabled \
-		-Dgbm=enabled \
-		-Dvulkan-drivers="" \
-		-Dglvnd=enabled
-# Building EGL and GBM requires a driver so add r300
-MESON_ARGS+=	-Dgallium-drivers="r300"
+		-Dvalgrind=disabled
 
 .if ${PORT_OPTIONS:MX11}
 MESA_PLATFORMS+=	x11
@@ -76,9 +91,13 @@ MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/is
 LDFLAGS+=-Wl,-z,notext
 .endif
 
+PLIST_SUB+=	MESAVERSION=${MESAVERSION}
+
 post-install:
 # Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
 	@${ECHO_CMD} "libGLX_indirect.so.0 libGLX_mesa.so.0" \
 		>${STAGEDIR}${PREFIX}/etc/libmap.d/mesa.conf
+# Strip the per-hardware DRI shims; they are owned by graphics/mesa-dri.
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/dri
 
 .include <bsd.port.post.mk>

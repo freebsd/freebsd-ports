@@ -12,7 +12,8 @@ ONLY_FOR_ARCHS=		aarch64 i386 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 
 BUILD_DEPENDS=	libvdpau>=0:multimedia/libvdpau
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libgallium-${MESAVERSION}.so:graphics/mesa-libs
 
 USES=		llvm:lib,noexport xorg
 
@@ -39,20 +40,14 @@ ${_gd}_VARS+=		GALLIUM_DRIVERS+=${_gd}
 MESON_ARGS+=	-Dvulkan-drivers="" \
 		-Dandroid-libbacktrace=disabled \
 		-Dgallium-va=disabled \
-		-Dgallium-omx=disabled \
-		-Dgallium-xa=disabled \
-		-Dgallium-opencl=disabled \
-		-Dgallium-nine=false \
 		-Dgbm=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
 		-Dglvnd=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
-		-Dosmesa=false \
 		-Dvalgrind=disabled \
-		-Dglx=disabled \
-		-Ddri3=enabled
+		-Dglx=disabled
 
 LDFLAGS_i386=	-Wl,-znotext
 
@@ -70,5 +65,12 @@ PLIST_SUB+=	${_gd}=""
 PLIST_SUB+=	${_gd}="@comment "
 . endif
 .endfor
+
+post-install:
+# Mesa 25: libgallium-${MESAVERSION}.so is owned by graphics/mesa-libs.
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/libgallium-${MESAVERSION}.so
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/dri/r300_dri.so
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/dri/r600_dri.so
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/dri/radeonsi_dri.so
 
 .include <bsd.port.post.mk>

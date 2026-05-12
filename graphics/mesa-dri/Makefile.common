@@ -9,17 +9,11 @@
 #    - graphics/mesa-libs
 #    - lang/clover
 
-MESAVERSION=	24.1.7
+MESAVERSION=	25.2.8
 
 MASTER_SITES=	https://mesa.freedesktop.org/archive/
 
 DISTFILES=	mesa-${MESAVERSION}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
-PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
-PATCHFILES+=	5a9c052ba78e5d1b0020b8f8320d211d2205a958.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/29993
-PATCHFILES+=	5d48fb19553c15bbbac498afcb7cc8710a803716.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31931
-PATCHFILES+=	fa9cd89a85b904615ebc11da609445b5b751e68d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31533
 
 MAINTAINER=	x11@FreeBSD.org
 
@@ -29,7 +23,8 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}
 .if ${COMPONENT} != clover
 .if ${PORT_OPTIONS:MX11}
 USES+=	xorg
@@ -64,13 +59,11 @@ BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG}
 
-# Deal with unclean env if the user have elfutils installed
-# and build the port directly without poudriere
+# mesa 25.x removed the -Dlibelf option; libelf is now auto-detected.
+# If the user has elfutils installed in LOCALBASE, propagate it as a
+# proper LIB_DEPENDS so the dependency is recorded.
 .if exists(${LOCALBASE}/include/libelf.h)
 LIB_DEPENDS+=	libelf.so:devel/elfutils
-MESON_ARGS+=	-Dlibelf=enabled
-.else
-MESON_ARGS+=	-Dlibelf=disabled
 .endif
 
 # Some symbols in mesa's linker version scripts are not always defined,
@@ -80,4 +73,5 @@ LDFLAGS+=	-Wl,--undefined-version
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_VERSION}/lib
 MESON_ARGS+=	-Dllvm=enabled \
-		-Dlibunwind=disabled
+		-Dlibunwind=disabled \
+		-Dgallium-mediafoundation=disabled
