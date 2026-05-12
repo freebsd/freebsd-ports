@@ -1,5 +1,6 @@
 PORTNAME=	gedit-plugins
 DISTVERSION=	50.0
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 DIST_SUBDIR=	gnome
 
