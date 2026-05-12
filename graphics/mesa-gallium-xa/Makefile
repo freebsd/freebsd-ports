@@ -8,6 +8,8 @@ WWW=		https://www.mesa3d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
+BROKEN=		gallium-xa was removed upstream in mesa 25.1
+
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	used only by VMware supported architectures
 

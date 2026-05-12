@@ -8,6 +8,8 @@ WWW=		https://www.mesa3d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
+BROKEN=		osmesa was removed upstream in mesa 25.1
+
 LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
 
 USES=		llvm:lib,noexport xorg

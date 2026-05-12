@@ -1,14 +1,13 @@
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	11
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 WWW=		https://www.mesa3d.org/
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
-
-LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
+LIB_DEPENDS+=	libgallium-${MESAVERSION}.so:graphics/mesa-libs \
+		libgbm.so:graphics/mesa-libs
 
 USES+=		llvm:lib,noexport
 
@@ -27,7 +26,7 @@ WAYLAND_DESC=		Enable Wayland support for GBM/EGL and Vulkan
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-OPTIONS_GROUP_GALLIUM=	crocus i915 iris panfrost r300 r600 radeonsi svga swrast zink
+OPTIONS_GROUP_GALLIUM=	crocus i915 iris llvmpipe panfrost r300 r600 radeonsi svga zink
 GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Intel GPU Gen4 (Broadwater) to Gen7 (Haswell)
 i915_DESC=		Intel GPU Gen3 (Grantsdale to Pineview)
@@ -39,12 +38,12 @@ iris_RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 iris_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 iris_IMPLIES=		SPIRV
+llvmpipe_DESC=		Software Rasterizer
 panfrost_DESC=		ARM Midgard and Bifrost
 r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
 radeonsi_DESC=		AMD/ATI Southern Islands and newer
 svga_DESC=		VMWare Virtual GPU
-swrast_DESC=		Software Rasterizer
 zink_DESC=		OpenGL on top of Khronos’ Vulkan API
 
 OPTIONS_EXCLUDE+=	${ARCH:Marmv7:C/.+/crocus i915 iris panfrost r300 r600 radeonsi svga zink/}
@@ -101,7 +100,6 @@ MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc,av1dec,av1en
 
 # Disable some options
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
-		-Dgallium-xa=disabled \
 		-Dgallium-vdpau=disabled \
 		-Dgallium-va=disabled \
 		-Dgles1=enabled \
@@ -111,7 +109,6 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Degl=enabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
-		-Dosmesa=false \
 		-Dvalgrind=disabled
 
 .if ${ARCH} != amd64
@@ -136,7 +133,12 @@ PLIST_SUB+=	${_vd}="@comment "
 .endfor
 
 post-install:
-	@${RM} -r ${STAGEDIR}/etc/OpenCL
+# Mesa 25: libgallium-${MESAVERSION}.so and the gbm/GL/dri.pc/drirc bits
+# all belong to graphics/mesa-libs. Strip them from this port's stage tree.
+	${RM} -r ${STAGEDIR}${PREFIX}/include
+	${RM} ${STAGEDIR}${PREFIX}/lib/libgallium-${MESAVERSION}.so
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/gbm
+	${RM} -r ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${FILESDIR}/01-freebsd.conf \
 		${STAGEDIR}${PREFIX}/share/drirc.d
 
