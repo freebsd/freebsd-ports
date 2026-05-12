@@ -13,6 +13,12 @@ WWW=		https://www.redmine.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+BROKEN_RUBY33=	Ruby 3.3 and later is not supported
+BROKEN_RUBY34=	Ruby 3.3 and later is not supported
+BROKEN_RUBY40=	Ruby 3.3 and later is not supported
+DEPRECATED=	Please migrate to newer version. Ruby 3.2 has been removed from the ports tree
+EXPIRATION_DATE=2026-05-31
+
 RUN_DEPENDS=	rubygem-actionpack-xml_parser-rails61>=0:textproc/rubygem-actionpack-xml_parser-rails61 \
 		rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
@@ -79,12 +85,6 @@ THIN_RUN_DEPENDS=	rubygem-thin>=1.6.2:www/rubygem-thin
 THIN_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 THIN_VARS=		USE_RC_SUBR=redmine
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 3.3
-BROKEN=		ruby 3.3 and later is not supported
-.endif
-
 post-extract:
 	@${RM} -r ${WRKSRC}/.hgignore ${WRKSRC}/.gitignore ${WRKSRC}/.github \
 		${WRKSRC}/files/delete.me ${WRKSRC}/log/delete.me
@@ -126,4 +126,4 @@ post-install:
 	${RM} ${STAGEDIR}${WWWDIR}/package.json \
 		${STAGEDIR}${WWWDIR}/yarn.lock
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
