@@ -108,7 +108,6 @@
     SUBDIR += jetbrains-datagrip
     SUBDIR += jlog
     SUBDIR += jrobin
-    SUBDIR += jrrd
     SUBDIR += kbibtex
     SUBDIR += kdb
     SUBDIR += kexi

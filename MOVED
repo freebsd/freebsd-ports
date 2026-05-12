@@ -5295,3 +5295,4 @@ editors/abiword-docs||2026-05-10|Has expired: abisource.com no longer exists
 games/linwarrior||2026-05-10|Has expired: Abandoned and obsolete, last release in 2010, not really playable
 devel/lace14|devel/lace|2026-05-12|Last user switched to devel/lace
 java/openjdk23||2026-05-12|Has expired: No longer supported by upstream
+databases/jrrd||2026-05-12|Has expired: only builds with Java 8, unmaintained, no dependencies in the ports tree, an alternative is https://github.com/OpenNMS/jrrd2
