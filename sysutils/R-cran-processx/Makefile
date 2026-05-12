@@ -1,5 +1,5 @@
 PORTNAME=	processx
-DISTVERSION=	3.8.6
+DISTVERSION=	3.9.0
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,7 +10,7 @@ WWW=		https://processx.r-lib.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	R-cran-ps>=1.2.0:sysutils/R-cran-ps \
+RUN_DEPENDS=	R-cran-ps>=1.9.3:sysutils/R-cran-ps \
 		R-cran-R6>0:devel/R-cran-R6
 TEST_DEPENDS=	R-cran-callr>=3.7.3:devel/R-cran-callr \
 		R-cran-cli>=3.3.0:devel/R-cran-cli \
