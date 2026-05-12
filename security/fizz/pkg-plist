@@ -8,6 +8,7 @@ include/fizz/backend/openssl/OpenSSL.h
 include/fizz/backend/openssl/Properties.h
 include/fizz/backend/openssl/certificate/CertUtils-inl.h
 include/fizz/backend/openssl/certificate/CertUtils.h
+include/fizz/backend/openssl/certificate/OpenSSLCertificateVerifier.h
 include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl-inl.h
 include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl.h
 include/fizz/backend/openssl/certificate/OpenSSLSelfCertImpl-inl.h
@@ -29,6 +30,7 @@ include/fizz/client/CertManager.h
 include/fizz/client/ClientExtensions.h
 include/fizz/client/ClientProtocol.h
 include/fizz/client/ECHPolicy.h
+include/fizz/client/ECHRetryCallback.h
 include/fizz/client/EarlyDataRejectionPolicy.h
 include/fizz/client/FizzClient-inl.h
 include/fizz/client/FizzClient.h
@@ -85,6 +87,7 @@ include/fizz/experimental/ktls/AsyncKTLSSocket.h
 include/fizz/experimental/ktls/FizzKTLSCallback.h
 include/fizz/experimental/ktls/KTLS.h
 include/fizz/experimental/ktls/LinuxKTLS.h
+include/fizz/experimental/psp/PSP.h
 include/fizz/experimental/util/CertExtraction.h
 include/fizz/extensions/clientpadding/PaddingClientExtension.h
 include/fizz/extensions/clientpadding/Types.h
@@ -113,6 +116,7 @@ include/fizz/protocol/Actions.h
 include/fizz/protocol/AsyncFizzBase.h
 include/fizz/protocol/CertMatch.h
 include/fizz/protocol/Certificate.h
+include/fizz/protocol/CertificateBase.h
 include/fizz/protocol/CertificateVerifier.h
 include/fizz/protocol/DefaultCertificateVerifier.h
 include/fizz/protocol/DefaultFactory.h
