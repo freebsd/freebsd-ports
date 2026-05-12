@@ -1,6 +1,7 @@
 PORTNAME=	ly
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/fairyglade/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -36,7 +37,7 @@ post-install:
 	${REINPLACE_CMD} 's,$$PREFIX_DIRECTORY,${PREFIX},g; \
 		s,$$CONFIG_DIRECTORY,${PREFIX}/etc,g ; \
 		s,^brightness_down_cmd = .*,brightness_down_cmd = /usr/bin/backlight - 10, ; \
-		s,^brightness_up_cmd = .*,brightness_down_cmd = /usr/bin/backlight + 10, ; \
+		s,^brightness_up_cmd = .*,brightness_up_cmd = /usr/bin/backlight + 10, ; \
 		s,$$PLATFORM_SHUTDOWN_ARG,-p,g' \
 		${WRKSRC}/res/config.ini
 	${INSTALL_DATA} ${WRKSRC}/res/config.ini ${STAGEDIR}${ETCDIR}/config.ini.sample
