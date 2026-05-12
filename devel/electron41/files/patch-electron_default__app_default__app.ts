@@ -1,6 +1,6 @@
---- electron/default_app/default_app.ts.orig	2026-04-15 14:10:25 UTC
+--- electron/default_app/default_app.ts.orig	2026-05-07 20:19:20 UTC
 +++ electron/default_app/default_app.ts
-@@ -101,7 +101,7 @@ async function createWindow (backgroundColor?: string)
+@@ -100,7 +100,7 @@ async function createWindow(backgroundColor?: string) 
      show: false
    };
  

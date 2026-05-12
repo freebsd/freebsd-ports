@@ -1,15 +1,15 @@
---- electron/spec/api-web-contents-spec.ts.orig	2026-05-01 21:06:40 UTC
+--- electron/spec/api-web-contents-spec.ts.orig	2026-05-07 20:19:20 UTC
 +++ electron/spec/api-web-contents-spec.ts
-@@ -1267,7 +1267,7 @@ describe('webContents module', () => {
+@@ -1282,7 +1282,7 @@ describe('webContents module', () => {
      // back to OpenFolder() which does a blocking DirectoryExists() on the UI
      // thread (pre-existing behavior). Workspace-gating is covered by the test
      // above.
--    ifit(process.platform !== 'linux')('reveals paths under a registered workspace folder without executing them', async () => {
-+    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('reveals paths under a registered workspace folder without executing them', async () => {
-       const w = new BrowserWindow({ show: false });
-       await openDevTools(w);
- 
-@@ -3024,7 +3024,7 @@ describe('webContents module', () => {
+-    ifit(process.platform !== 'linux')(
++    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')(
+       'reveals paths under a registered workspace folder without executing them',
+       async () => {
+         const w = new BrowserWindow({ show: false });
+@@ -3084,7 +3084,7 @@ describe('webContents module', () => {
      });
  
      // TODO(codebytere): OOPIF printing is disabled on Linux at the moment due to crashes.

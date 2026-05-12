@@ -1,15 +1,15 @@
---- electron/spec/api-content-tracing-spec.ts.orig	2026-05-01 21:06:40 UTC
+--- electron/spec/api-content-tracing-spec.ts.orig	2026-05-07 20:19:20 UTC
 +++ electron/spec/api-content-tracing-spec.ts
 @@ -13,7 +13,7 @@ const fixturesPath = path.resolve(__dirname, 'fixtures
  const fixturesPath = path.resolve(__dirname, 'fixtures');
  
  // FIXME: The tests are skipped on linux arm/arm64
--ifdescribe(!(['arm', 'arm64'].includes(process.arch)) || (process.platform !== 'linux'))('contentTracing', () => {
-+ifdescribe(!(['arm', 'arm64'].includes(process.arch)) || (process.platform !== 'linux' && process.platform !== 'freebsd'))('contentTracing', () => {
-   const record = async (options: TraceConfig | TraceCategoriesAndOptions, outputFilePath: string | undefined, recordTimeInMilliseconds = 1e1) => {
-     await app.whenReady();
- 
-@@ -95,7 +95,7 @@ ifdescribe(!(['arm', 'arm64'].includes(process.arch)) 
+-ifdescribe(!['arm', 'arm64'].includes(process.arch) || process.platform !== 'linux')('contentTracing', () => {
++ifdescribe(!['arm', 'arm64'].includes(process.arch) || (process.platform !== 'linux' && process.platform !== 'freebsd'))('contentTracing', () => {
+   const record = async (
+     options: TraceConfig | TraceCategoriesAndOptions,
+     outputFilePath: string | undefined,
+@@ -99,7 +99,7 @@ ifdescribe(!['arm', 'arm64'].includes(process.arch) ||
      });
    });
  
