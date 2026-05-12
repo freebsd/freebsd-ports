@@ -1,6 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.6.9
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,6 +48,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		async-task-4.7.1 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
+		audio_thread_priority-0.35.1 \
 		autocfg-1.5.0 \
 		base64-0.22.1 \
 		bindgen-0.72.1 \
@@ -84,13 +84,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		convert_case-0.8.0 \
 		cookie-factory-0.3.3 \
 		core-foundation-sys-0.8.7 \
-		coreaudio-rs-0.14.1 \
+		coreaudio-rs-0.14.2 \
 		cpufeatures-0.3.0 \
 		crc32fast-1.5.0 \
 		crossbeam-utils-0.8.21 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
 		dasp_sample-0.11.0 \
+		dbus-0.6.5 \
 		directories-6.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
@@ -169,6 +170,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libadwaita-0.8.1 \
 		libadwaita-sys-0.8.1 \
 		libc-0.2.185 \
+		libdbus-sys-0.2.7 \
 		libloading-0.8.9 \
 		libpulse-binding-2.30.1 \
 		libpulse-sys-1.23.0 \
@@ -359,7 +361,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_msvc-0.42.2 \
 		winnow-0.7.15 \
-		winnow-1.0.1 \
+		winnow-1.0.2 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-0.57.1 \
 		wit-bindgen-core-0.51.0 \
@@ -375,14 +377,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zvariant-5.10.0 \
 		zvariant_derive-5.10.0 \
 		zvariant_utils-3.3.0 \
-		cpal@git+https://github.com/RustAudio/cpal.git?rev=509e5bb\#509e5bba9dafb52c6e4a32492ccfb1933f1be9ed
+		cpal@git+https://github.com/RustAudio/cpal.git?rev=bce156d\#bce156d8a3ea5999f763bb831342fb2f6ed23db1
 
 PLIST_FILES=	bin/${PORTNAME}
 
 # known problem: The 'Audio input' combobox doesn't have any selections, see https://github.com/marin-m/SongRec/issues/115
 
 post-patch:
-	@${PATCH} -p0 -d ${WRKDIR}/cpal-509e5bba9dafb52c6e4a32492ccfb1933f1be9ed \
+	@${PATCH} -p0 -d ${WRKDIR}/cpal-bce156d8a3ea5999f763bb831342fb2f6ed23db1 \
 		< ${PATCHDIR}/cpal-alsa-estrpipe.patch
+	@${PATCH} -p0 -d ${WRKDIR}/cpal-bce156d8a3ea5999f763bb831342fb2f6ed23db1 \
+		< ${PATCHDIR}/cpal-frames-to-duration-bsd.patch
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+-- frames_to_duration() is gated behind a #[cfg] that excludes bare FreeBSD/DragonFly/NetBSD.
+-- These BSDs use the ALSA and PipeWire backends which both call frames_to_duration().
+-- Add the missing target_os values so the function is compiled on BSDs even without the
+-- jack feature.
+--- src/host/mod.rs.orig
++++ src/host/mod.rs
+@@ -195,6 +195,9 @@
+ /// Convert a frame count at a given sample rate to a [`std::time::Duration`].
+ #[cfg(any(
+     target_os = "linux",
++    target_os = "dragonfly",
++    target_os = "freebsd",
++    target_os = "netbsd",
+     target_os = "windows",
+     target_vendor = "apple",
+     feature = "audioworklet",
