@@ -25,6 +25,7 @@ include/quic/client/QuicClientTransport.h
 include/quic/client/QuicClientTransportLite.h
 include/quic/client/connector/QuicConnector.h
 include/quic/client/handshake/CachedServerTransportParameters.h
+include/quic/client/handshake/CachedServerTransportParametersSerialization.h
 include/quic/client/handshake/ClientHandshake.h
 include/quic/client/handshake/ClientHandshakeFactory.h
 include/quic/client/handshake/ClientTransportParametersExtension.h
@@ -58,6 +59,7 @@ include/quic/common/MvfstLogging.h
 include/quic/common/NetworkData.h
 include/quic/common/Optional.h
 include/quic/common/QuicBuffer.h
+include/quic/common/QuicIOBufQueue.h
 include/quic/common/QuicRange.h
 include/quic/common/SocketUtil.h
 include/quic/common/StringUtils.h
@@ -99,6 +101,10 @@ include/quic/congestion_control/SimulatedTBF.h
 include/quic/congestion_control/StaticCwndCongestionController.h
 include/quic/congestion_control/ThrottlingSignalProvider.h
 include/quic/congestion_control/TokenlessPacer.h
+include/quic/congestion_control/modular/Bbr2ProbeBw.h
+include/quic/congestion_control/modular/Bbr2ProbeRtt.h
+include/quic/congestion_control/modular/Bbr2Shared.h
+include/quic/congestion_control/modular/Bbr2Startup.h
 include/quic/congestion_control/third_party/windowed_filter.h
 include/quic/datagram/DatagramFlowManager.h
 include/quic/fizz/client/handshake/FizzClientExtensions.h
@@ -108,6 +114,7 @@ include/quic/fizz/client/handshake/QuicPskCache.h
 include/quic/fizz/client/handshake/QuicTokenCache.h
 include/quic/fizz/handshake/FizzBridge.h
 include/quic/fizz/handshake/FizzCryptoFactory.h
+include/quic/fizz/handshake/FizzOpenSSLPacketNumberCipher.h
 include/quic/fizz/handshake/FizzPacketNumberCipher.h
 include/quic/fizz/handshake/FizzRetryIntegrityTagGenerator.h
 include/quic/fizz/handshake/FizzTransportParameters.h
@@ -132,6 +139,9 @@ include/quic/logging/QLoggerCommon.h
 include/quic/logging/QLoggerConstants.h
 include/quic/logging/QLoggerMacros.h
 include/quic/logging/QLoggerTypes.h
+include/quic/logging/oops_logger/GlogOopsLogger.h
+include/quic/logging/oops_logger/OopsFields.h
+include/quic/logging/oops_logger/OopsLogger.h
 include/quic/loss/QuicLossFunctions.h
 include/quic/mvfst-config.h
 include/quic/observer/SocketObserverContainer.h
@@ -176,6 +186,7 @@ include/quic/state/AckHandlers.h
 include/quic/state/AckStates.h
 include/quic/state/AckedPacketIterator.h
 include/quic/state/ClonedPacketIdentifier.h
+include/quic/state/ConnectionOopsFields.h
 include/quic/state/DatagramHandlers.h
 include/quic/state/EarlyDataAppParamsHandler.h
 include/quic/state/LossState.h
