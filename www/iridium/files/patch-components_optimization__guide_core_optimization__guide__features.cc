@@ -1,6 +1,6 @@
---- components/optimization_guide/core/optimization_guide_features.cc.orig	2026-03-24 16:59:08 UTC
+--- components/optimization_guide/core/optimization_guide_features.cc.orig	2026-05-11 13:57:04 UTC
 +++ components/optimization_guide/core/optimization_guide_features.cc
-@@ -96,7 +96,7 @@ BASE_FEATURE(kOptimizationGuideModelExecution,
+@@ -97,7 +97,7 @@ BASE_FEATURE(kOptimizationGuideModelExecution,
  // Whether to use the on device model service in optimization guide.
  BASE_FEATURE(kOptimizationGuideOnDeviceModel,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

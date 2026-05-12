@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/common/webui_url_constants.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -185,7 +185,7 @@ base::span<const base::cstring_view> ChromeURLHosts() 
+@@ -186,7 +186,7 @@ base::span<const base::cstring_view> ChromeURLHosts() 
        kChromeUITermsHost,
  #endif
        kChromeUITranslateInternalsHost,
@@ -9,7 +9,7 @@
        kChromeUIUpdaterHost,
  #endif
        kChromeUIUsbInternalsHost,
-@@ -253,17 +253,17 @@ base::span<const base::cstring_view> ChromeURLHosts() 
+@@ -254,17 +254,17 @@ base::span<const base::cstring_view> ChromeURLHosts() 
        ash::kChromeUIInternetDetailDialogHost,
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

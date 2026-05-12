@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc.orig	2026-03-24 16:59:08 UTC
+--- third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc.orig	2026-05-11 13:57:04 UTC
 +++ third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc
-@@ -269,7 +269,7 @@ GPUCanvasContext::PaintRenderingResultsToSnapshot(
+@@ -270,7 +270,7 @@ GPUCanvasContext::PaintRenderingResultsToSnapshot(
  
    scoped_refptr<WebGPUMailboxTexture> front_buffer_texture;
    if (source_buffer == kFrontBuffer) {
@@ -9,7 +9,7 @@
      // By returning false here the canvas will show up as black in the scenarios
      // that copy the front buffer, such as printing.
      // TODO(crbug.com/40902474): Support concurrent SharedImage reads via Dawn
-@@ -487,7 +487,7 @@ void GPUCanvasContext::configure(const GPUCanvasConfig
+@@ -486,7 +486,7 @@ void GPUCanvasContext::configure(const GPUCanvasConfig
    }
  #endif
  

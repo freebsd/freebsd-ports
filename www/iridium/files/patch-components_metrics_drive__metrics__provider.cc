@@ -1,16 +1,16 @@
---- components/metrics/drive_metrics_provider.cc.orig	2026-01-16 14:21:21 UTC
+--- components/metrics/drive_metrics_provider.cc.orig	2026-05-11 13:57:04 UTC
 +++ components/metrics/drive_metrics_provider.cc
-@@ -20,7 +20,7 @@
+@@ -23,7 +23,7 @@
  namespace metrics {
  
  namespace {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- void RecordTriStateMetric(const char* name, std::optional<bool> sample) {
-   base::UmaHistogramEnumeration(
-       name, !sample.has_value()
-@@ -105,7 +105,7 @@ void DriveMetricsProvider::FillDriveMetrics(
-     drive->set_has_seek_penalty(*response.has_seek_penalty);
+ // These values are persisted to logs. Entries should not be renumbered and
+ // numeric values should never be reused.
+ enum class OptionalBoolRecord {
+@@ -133,7 +133,7 @@ void DriveMetricsProvider::FillDriveMetrics(
+     drive->set_has_seek_penalty(local_state_->GetBoolean(pref_name));
    }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

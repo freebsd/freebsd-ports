@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/extensions/api/tabs/tabs_api.cc
-@@ -1210,7 +1210,7 @@ ExtensionFunction::ResponseValue WindowsCreateFunction
+@@ -1226,7 +1226,7 @@ ExtensionFunction::ResponseValue WindowsCreateFunction
  // created as minimized.
  // TODO(crbug.com/40254339): Remove this workaround when linux is fixed.
  // TODO(crbug.com/40254339): Find a fix for wayland as well.

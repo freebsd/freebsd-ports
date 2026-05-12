@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2026-04-15 12:07:04 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2026-05-11 13:57:04 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -32,7 +32,7 @@ bool IsOnDeviceStorageEnabled() {
  }
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_FEATURE(kEsbDownloadRowPromoFeature,
               "EsbDownloadRowPromo",
-@@ -896,7 +896,7 @@ BASE_FEATURE(kIPHiOSActiveDaysTrackingFeature,
+@@ -901,7 +901,7 @@ BASE_FEATURE(kIPHiOSActiveDaysTrackingFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

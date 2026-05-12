@@ -1,6 +1,6 @@
---- content/shell/renderer/shell_content_renderer_client.cc.orig	2026-03-24 16:59:08 UTC
+--- content/shell/renderer/shell_content_renderer_client.cc.orig	2026-05-11 13:57:04 UTC
 +++ content/shell/renderer/shell_content_renderer_client.cc
-@@ -56,7 +56,7 @@
+@@ -57,7 +57,7 @@
  #include "components/surface_embed/renderer/create_plugin.h"
  #endif  // BUILDFLAG(ENABLE_SURFACE_EMBED)
  

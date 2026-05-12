@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -394,7 +394,7 @@
+@@ -401,7 +401,7 @@
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/client_certificates/certificate_provisioning_service_factory.h"
  #include "chrome/browser/enterprise/client_certificates/certificate_store_factory.h"
  #include "chrome/browser/enterprise/idle/idle_service_factory.h"
-@@ -442,7 +442,7 @@
+@@ -450,7 +450,7 @@
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -18,7 +18,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.h"
  #include "chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.h"
  #include "chrome/browser/ui/tabs/saved_tab_groups/collaboration_messaging_observer_factory.h"
-@@ -453,11 +453,11 @@
+@@ -461,11 +461,11 @@
  #include "chrome/browser/webauthn/passkey_unlock_manager_factory.h"
  #include "device/fido/public/features.h"
  #endif
@@ -32,7 +32,16 @@
  #include "chrome/browser/browser_switcher/browser_switcher_service_factory.h"
  #include "chrome/browser/enterprise/reporting/saas_usage/saas_usage_reporting_controller_factory.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_service_factory.h"
-@@ -684,7 +684,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -553,7 +553,7 @@
+ #include "chrome/browser/sessions/session_service_factory.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/gapis/gapis_service_factory.h"
+ #include "components/gapis/features.h"
+ #endif  // BUILDFLAG(IS_LINUX)
+@@ -692,7 +692,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_ANDROID)
    AutoPictureInPictureHatsServiceFactory::GetInstance();
  #endif
@@ -41,7 +50,7 @@
    AccountsPolicyManagerFactory::GetInstance();
    search_integrity::SearchIntegrityFactory::GetInstance();
  #endif
-@@ -785,7 +785,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -789,7 +789,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    DiceBoundSessionCookieServiceFactory::GetInstance();
  #endif
  #endif
@@ -50,7 +59,7 @@
    browser_switcher::BrowserSwitcherServiceFactory::GetInstance();
  #endif
    browser_sync::UserEventServiceFactory::GetInstance();
-@@ -849,7 +849,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -853,7 +853,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    collaboration::comments::CommentsServiceFactory::GetInstance();
    collaboration::messaging::MessagingBackendServiceFactory::GetInstance();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -59,16 +68,16 @@
    tab_groups::CollaborationMessagingObserverFactory::GetInstance();
  #endif
    commerce::ShoppingServiceFactory::GetInstance();
-@@ -862,7 +862,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -870,7 +870,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    contextual_tasks::ContextualTasksUiServiceFactory::GetInstance();
- #endif
+ 
    ContentIndexProviderFactory::GetInstance();
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   contextual_cueing::ContextualCueingServiceFactory::GetInstance();
+   glic::ContextualCueingServiceFactory::GetInstance();
  #endif
    ContextualSearchServiceFactory::GetInstance();
-@@ -913,11 +913,11 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -924,11 +924,11 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
    enterprise_connectors::ConnectorsServiceFactory::GetInstance();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -82,7 +91,7 @@
      BUILDFLAG(ENTERPRISE_LOCAL_CONTENT_ANALYSIS) &&                    \
      BUILDFLAG(SAFE_BROWSING_AVAILABLE)
    enterprise_connectors::LocalBinaryUploadServiceFactory::GetInstance();
-@@ -927,7 +927,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -938,7 +938,7 @@ void ChromeBrowserMainExtraPartsProfiles::
        GetInstance();
  #endif
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -91,7 +100,7 @@
    enterprise_idle::IdleServiceFactory::GetInstance();
    enterprise_signals::SignalsAggregatorFactory::GetInstance();
  #endif
-@@ -935,14 +935,14 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -946,14 +946,14 @@ void ChromeBrowserMainExtraPartsProfiles::
    enterprise_reporting::CloudProfileReportingServiceFactory::GetInstance();
  #endif
    enterprise_reporting::LegacyTechServiceFactory::GetInstance();
@@ -109,7 +118,16 @@
    enterprise_signin::EnterpriseSigninServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(ENABLE_SESSION_SERVICE)
-@@ -1075,7 +1075,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1002,7 +1002,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+ #if BUILDFLAG(IS_CHROMEOS)
+   GalleryWatchManager::EnsureFactoryBuilt();
+ #endif
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (base::FeatureList::IsEnabled(gapis::kEnableGapis)) {
+     GapisServiceFactory::GetInstance();
+   }
+@@ -1099,7 +1099,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_ANDROID)
    MerchantViewerDataManagerFactory::GetInstance();
  #endif
@@ -118,7 +136,7 @@
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
    ProfileMetricsServiceFactory::GetInstance();
-@@ -1083,7 +1083,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1107,7 +1107,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    MicrosoftAuthServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -127,7 +145,7 @@
    multistep_filter::MultistepFilterServiceFactory::GetInstance();
  #endif
  #if !BUILDFLAG(IS_ANDROID)
-@@ -1168,7 +1168,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1189,7 +1189,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    PasswordCounterFactory::GetInstance();
  #endif  // !BUILDFLAG(IS_ANDROID)
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -136,7 +154,7 @@
    PasswordManagerBlocklistPolicyFactory::GetInstance();
  #endif
    PasswordManagerSettingsServiceFactory::GetInstance();
-@@ -1214,7 +1214,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1235,7 +1235,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_CHROMEOS)
    policy::PolicyCertServiceFactory::GetInstance();
  #endif
@@ -145,7 +163,7 @@
    policy::ProfileTokenPolicyWebSigninServiceFactory::GetInstance();
  #endif
    policy::UserCloudPolicyInvalidatorFactory::GetInstance();
-@@ -1224,7 +1224,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1245,7 +1245,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #else
    policy::UserPolicySigninServiceFactory::GetInstance();
  #endif
@@ -154,7 +172,7 @@
    policy::UserPolicyOidcSigninServiceFactory::GetInstance();
  #endif
    PredictionServiceFactory::GetInstance();
-@@ -1247,7 +1247,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1265,7 +1265,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS)
    ProfileStatisticsFactory::GetInstance();
  #endif
@@ -163,7 +181,7 @@
    ProfileTokenWebSigninInterceptorFactory::GetInstance();
    OidcAuthenticationSigninInterceptorFactory::GetInstance();
  #endif
-@@ -1267,7 +1267,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1285,7 +1285,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    ReduceAcceptLanguageFactory::GetInstance();
    RendererUpdaterFactory::GetInstance();
    regional_capabilities::RegionalCapabilitiesServiceFactory::GetInstance();

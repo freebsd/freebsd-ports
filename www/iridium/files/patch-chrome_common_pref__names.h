@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2026-04-15 12:07:04 UTC
+--- chrome/common/pref_names.h.orig	2026-05-11 13:57:04 UTC
 +++ chrome/common/pref_names.h
-@@ -1271,7 +1271,7 @@ inline constexpr char kGeminiSettings[] = "browser.gem
+@@ -874,7 +874,7 @@ inline constexpr char kGeminiSettings[] = "browser.gem
  inline constexpr char kAllowedDomainsForApps[] =
      "settings.allowed_domains_for_apps";
  
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  inline constexpr char kSystemTheme[] = "extensions.theme.system_theme";
  #endif
-@@ -1440,7 +1440,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
+@@ -1050,7 +1050,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  inline constexpr char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -2012,7 +2012,7 @@ inline constexpr char kPinInfoBarTimesShown[] =
+@@ -1640,7 +1640,7 @@ inline constexpr char kPinInfoBarTimesShown[] =
      "browser.pin_infobar_times_shown";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
@@ -27,7 +27,7 @@
  
  // How many times the session restore infobar has been shown.
  inline constexpr char kSessionRestoreInfoBarTimesShown[] =
-@@ -2059,7 +2059,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
+@@ -1687,7 +1687,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
  inline constexpr char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -36,7 +36,7 @@
  inline constexpr char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2519,7 +2519,7 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
+@@ -2147,7 +2147,7 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
  inline constexpr char kMediaCdmOriginData[] = "media.cdm.origin_data";
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@
  // A boolean pref to determine whether or not the network service is running
  // sandboxed.
  inline constexpr char kNetworkServiceSandboxEnabled[] =
-@@ -2533,7 +2533,7 @@ inline constexpr char kNetworkServiceSandboxEnabled[] 
+@@ -2161,7 +2161,7 @@ inline constexpr char kNetworkServiceSandboxEnabled[] 
  inline constexpr char kNetworkServiceFailedLaunchMajorVersion[] =
      "net.network_service_failed_launch_major_version";
  
@@ -54,7 +54,7 @@
  // Records whether the user has seen an HTTP auth "negotiate" header.
  inline constexpr char kReceivedHttpAuthNegotiateHeader[] =
      "net.received_http_auth_negotiate_headers";
-@@ -2630,7 +2630,7 @@ inline constexpr char kIsolatedWebAppUserInstallationE
+@@ -2258,7 +2258,7 @@ inline constexpr char kIsolatedWebAppUserInstallationE
  inline constexpr char kIsolatedWebAppPendingInitializationCount[] =
      "profile.isolated_web_app.install.pending_initialization_count";
  
@@ -63,7 +63,7 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  inline constexpr char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3059,7 +3059,7 @@ inline constexpr char kDeviceAllowEnterpriseRemoteAcce
+@@ -2643,7 +2643,7 @@ inline constexpr char kDeviceAllowEnterpriseRemoteAcce
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -72,7 +72,7 @@
  // Defines administrator-set availability of Chrome for Testing.
  inline constexpr char kChromeForTestingAllowed[] = "chrome_for_testing.allowed";
  #endif
-@@ -3539,7 +3539,7 @@ inline constexpr char kScreenCaptureWithoutGestureAllo
+@@ -3121,7 +3121,7 @@ inline constexpr char kScreenCaptureWithoutGestureAllo
  inline constexpr char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
@@ -81,7 +81,7 @@
  // Boolean that indicates if system notifications are allowed to be used in
  // place of Chrome notifications.
  inline constexpr char kAllowSystemNotifications[] =
-@@ -3732,7 +3732,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
+@@ -3314,7 +3314,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
      "policy.lens_desktop_ntp_search_enabled";
  #endif
  
@@ -90,7 +90,7 @@
  // A dict mapping the edition name with the major version it was shown.
  inline constexpr char kWhatsNewEditionUsed[] = "browser.whats_new.edition_used";
  // A list containing the features of each module in order of when they
-@@ -3829,7 +3829,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
+@@ -3411,7 +3411,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
      "printing.oauth2_authorization_servers";
  #endif
  

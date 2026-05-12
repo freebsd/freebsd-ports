@@ -1,4 +1,4 @@
---- chrome/browser/ui/tabs/public/tab_features.h.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/ui/tabs/public/tab_features.h.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/ui/tabs/public/tab_features.h
 @@ -155,7 +155,7 @@ class TabContextualizationController;
  }  // namespace lens
@@ -9,7 +9,7 @@
  namespace wallet {
  class ChromeWalletablePassClient;
  }  // namespace wallet
-@@ -571,7 +571,7 @@ class TabFeatures {
+@@ -560,7 +560,7 @@ class TabFeatures {
        skills_ui_tab_controller_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    std::unique_ptr<wallet::ChromeWalletablePassClient> walletable_pass_client_;
  #endif
  
-@@ -582,7 +582,7 @@ class TabFeatures {
+@@ -571,7 +571,7 @@ class TabFeatures {
    std::unique_ptr<skills::SkillsUpdateObserver> skills_update_observer_;
  #endif  //  !BUILDFLAG(IS_ANDROID)
  

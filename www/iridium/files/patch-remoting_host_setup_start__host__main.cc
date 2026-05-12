@@ -1,4 +1,4 @@
---- remoting/host/setup/start_host_main.cc.orig	2026-01-16 14:21:21 UTC
+--- remoting/host/setup/start_host_main.cc.orig	2026-05-11 13:57:04 UTC
 +++ remoting/host/setup/start_host_main.cc
 @@ -41,7 +41,7 @@
  #include <unistd.h>
@@ -9,7 +9,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #include "remoting/host/setup/daemon_controller_delegate_linux.h"
  #include "remoting/host/setup/start_host_as_root.h"
-@@ -370,7 +370,7 @@ bool InitializeCloudMachineParams(HostStarter::Params&
+@@ -373,7 +373,7 @@ bool InitializeCloudMachineParams(HostStarter::Params&
  }  // namespace
  
  int StartHostMain(int argc, char** argv) {
@@ -18,7 +18,7 @@
    // Minimize the amount of code that runs as root on Posix systems.
    if (getuid() == 0) {
      return remoting::StartHostAsRoot(argc, argv);
-@@ -395,7 +395,7 @@ int StartHostMain(int argc, char** argv) {
+@@ -398,7 +398,7 @@ int StartHostMain(int argc, char** argv) {
  
    mojo::core::Init();
  
@@ -27,7 +27,7 @@
    if (command_line->HasSwitch("no-start")) {
      // On Linux, registering the host with systemd and starting it is the only
      // reason start_host requires root. The --no-start options skips that final
-@@ -446,7 +446,7 @@ int StartHostMain(int argc, char** argv) {
+@@ -449,7 +449,7 @@ int StartHostMain(int argc, char** argv) {
    // We don't have a config file yet so we can't use IsUsageStatsAllowed(),
    // instead we can just check the command line parameter.
    if (params.enable_crash_reporting) {

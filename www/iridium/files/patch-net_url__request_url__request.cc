@@ -1,4 +1,4 @@
---- net/url_request/url_request.cc.orig	2026-03-30 11:37:05 UTC
+--- net/url_request/url_request.cc.orig	2026-05-11 13:57:04 UTC
 +++ net/url_request/url_request.cc
 @@ -10,6 +10,7 @@
  #	include <unistd.h>
@@ -16,7 +16,7 @@
  #include "net/base/auth.h"
  #include "net/base/features.h"
  #include "net/base/io_buffer.h"
-@@ -66,7 +68,10 @@ namespace iridium {
+@@ -67,7 +69,10 @@ namespace iridium {
  
  void textlog_request(const char *caller, const GURL &url)
  {

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/first_run_flow_controller.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/ui/views/profiles/first_run_flow_controller.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/ui/views/profiles/first_run_flow_controller.cc
-@@ -59,7 +59,7 @@
+@@ -62,7 +62,7 @@
  #include "chrome/installer/util/shell_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/check_deref.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/global_features.h"
-@@ -616,7 +616,7 @@ void FirstRunFlowController::RunFinishFlowCallback() {
+@@ -633,7 +633,7 @@ std::string FirstRunFlowController::GetHatsSurveyTrigg
  }
  
  void FirstRunFlowController::MaybeTriggerHatsSurvey() {

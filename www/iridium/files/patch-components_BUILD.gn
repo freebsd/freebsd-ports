@@ -1,6 +1,6 @@
---- components/BUILD.gn.orig	2026-04-15 12:07:04 UTC
+--- components/BUILD.gn.orig	2026-05-11 13:57:04 UTC
 +++ components/BUILD.gn
-@@ -224,7 +224,6 @@ test("components_unittests") {
+@@ -226,7 +226,6 @@ test("components_unittests") {
      "//components/contextual_search/internal:unit_tests",
      "//components/contextual_tasks:unit_tests",
      "//components/country_codes:unit_tests",
@@ -8,7 +8,7 @@
      "//components/cross_device/logging:unit_tests",
      "//components/crx_file:unit_tests",
      "//components/data_sharing:unit_tests",
-@@ -641,7 +640,7 @@ test("components_unittests") {
+@@ -651,7 +650,7 @@ test("components_unittests") {
        "//components/user_data_importer/content:unit_tests",
      ]
  
@@ -17,7 +17,7 @@
        deps += [
          "//components/crash/content/browser:unit_tests",
          "//components/crash/core/app:unit_tests",
-@@ -818,7 +817,7 @@ test("components_unittests") {
+@@ -834,7 +833,7 @@ test("components_unittests") {
      deps += [ "//components/constrained_window:unit_tests" ]
    }
  
@@ -26,7 +26,7 @@
      deps += [
        "//components/stability_report:unit_tests",
        "//components/webapps/isolated_web_apps:unit_tests",
-@@ -989,8 +988,7 @@ test("components_unittests") {
+@@ -1006,8 +1005,7 @@ test("components_unittests") {
    # No components should depend on Chrome.
    # Since //chrome depends on //extensions, we also only assert_no_deps on
    # extensions targets.
@@ -36,7 +36,7 @@
  
    if (is_ios) {
      assert_no_deps += ios_assert_no_deps
-@@ -1318,8 +1316,7 @@ if (use_blink) {
+@@ -1337,8 +1335,7 @@ if (use_blink) {
      # No components should depend on Chrome.
      # Since //chrome depends on //extensions, we also only assert_no_deps on
      # extensions targets.
