@@ -1,3 +1,90 @@
+  <vuln vid="eeb4d69a-4d74-11f1-9a9c-994b98c88011">
+    <topic>dnsmasq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.92rel2,1</lt></range>
+      </package>
+      <package> <!-- preannounced 2.93rc1, see https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2026q2/018471.html -->
+	<name>dnsmasq-devel</name>
+	<range><lt>2.93.r1,8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Kelley reports:</p>
+	<blockquote cite="https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2026q2/018471.html">
+	<p>
+	Today, 11th May 2026 CERT is releasing a set of six CVEs for serious
+	security vulnerabilities in dnsmasq. These are all long-standing
+	bugs
+	which apply to pretty much all non-ancient versions.
+	</p>
+	</blockquote>
+	<p>
+	Christopher Cullen and Molly Jaconski write, in Vulnerability Note
+	VU#471747:
+	</p>
+	<blockquote cite="https://www.kb.cert.org/vuls/id/471747">
+	<dl>
+	  <dt>CVE-2026-2291</dt>
+	  <dd>
+	    dnsmasq's <code>extract_name()</code> function can be abused to
+	    cause a heap buffer overflow, enabling an attacker to inject false
+	    DNS cache entries. This could cause DNS queries to be redirected
+	    to attacker-controlled IP addresses or result in a Denial of
+	    Service (DoS).
+	  </dd>
+	  <dt>CVE-2026-4890</dt>
+	  <dd>
+	    An infinite-loop flaw in the DNSSEC validation of dnsmasq allows
+	    remote attackers to cause Denial of Service (DoS) conditions via a
+	    crafted DNS packet.
+	  </dd>
+	  <dt>CVE-2026-4891</dt>
+	  <dd>
+	    A heap-based out-of-bounds read vulnerability in the DNSSEC
+	    validation of dnsmasq allows remote attackers to leak memory
+	    information via a crafted DNS packet.
+	  </dd>
+	  <dt>CVE-2026-4892</dt>
+	  <dd>
+	    A heap-based out-of-bounds write vulnerability in the DHCPv6
+	    implementation of dnsmasq allows local attackers to execute
+	    arbitrary code with root privileges via a crafted DHCPv6 packet.
+	  </dd>
+	  <dt>CVE-2026-4893</dt>
+	  <dd>
+	    An information disclosure vulnerability in dnsmasq allows remote
+	    attackers to bypass source checks via a crafted DNS packet
+	    containing RFC 7871 client-subnet information.
+	  </dd>
+	  <dt>CVE-2026-5172</dt>
+	  <dd>
+	    A buffer overflow vulnerability in dnsmasq’s <code>extract_addresses()</code> function
+	    allows attackers to trigger a heap out-of-bounds read and crash
+	    dnsmasq by exploiting a malformed DNS response.
+	  </dd>
+	</dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2026q2/018471.html</url>
+      <url>https://www.kb.cert.org/vuls/id/471747</url>
+      <cvename>CVE-2026-2291</cvename>
+      <cvename>CVE-2026-4890</cvename>
+      <cvename>CVE-2026-4891</cvename>
+      <cvename>CVE-2026-4892</cvename>
+      <cvename>CVE-2026-4893</cvename>
+      <cvename>CVE-2026-5172</cvename>
+    </references>
+    <dates>
+      <discovery>2026-03-25</discovery> <!-- earliest commit date for a fix -->
+      <entry>2026-05-11</entry> <!-- publication/embargo date -->
+    </dates>
+  </vuln>
+
   <vuln vid="5b3b7f60-4de9-11f1-873e-0f64d023d0c7">
     <topic>postorius -- XSS</topic>
     <affects>
