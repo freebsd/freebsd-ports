@@ -1684,7 +1684,6 @@ lib/node_modules/npm/node_modules/smart-buffer/build/smartbuffer.js
 lib/node_modules/npm/node_modules/smart-buffer/build/utils.js
 lib/node_modules/npm/node_modules/smart-buffer/docs/ROADMAP.md
 lib/node_modules/npm/node_modules/smart-buffer/package.json
-lib/node_modules/npm/node_modules/socks/.claude/settings.local.json
 lib/node_modules/npm/node_modules/socks/LICENSE
 lib/node_modules/npm/node_modules/socks/build/client/socksclient.js
 lib/node_modules/npm/node_modules/socks/build/common/constants.js
