@@ -1,10 +1,10 @@
 PORTNAME=	llm
-DISTVERSION=	0.27
+DISTVERSION=	0.31
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Interact with Large Language Models by API, or locally
 WWW=		https://llm.datasette.io/ \
 		https://github.com/simonw/llm
