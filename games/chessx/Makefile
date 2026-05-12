@@ -1,5 +1,5 @@
 PORTNAME=	chessx
-DISTVERSION=	1.6.8
+DISTVERSION=	1.6.10
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake qmake qt:5 tar:tgz
 USE_GL=		gl
-USE_QT=		concurrent core gui multimedia network opengl printsupport svg \
-		widgets xml buildtools:build linguisttools:build speech
+USE_QT=		concurrent:build core gui multimedia network printsupport svg \
+		widgets xml buildtools:build linguisttools:build
 
 PLIST_FILES=	bin/chessx \
 		share/applications/chessx.desktop \
@@ -36,5 +36,8 @@ post-extract:
 
 post-configure:
 	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chessx
 
 .include <bsd.port.mk>
