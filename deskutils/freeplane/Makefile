@@ -16,7 +16,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe desktop-file-utils java shebangfix zip
 
-JAVA_VERSION=	8 11 17 21 23
+JAVA_VERSION=	8 11 17 21
 
 SHEBANG_FILES=	${WRKSRC}/freeplane.sh
 
