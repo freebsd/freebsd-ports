@@ -7,15 +7,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -29,9 +29,9 @@ dependencies = [
+@@ -29,7 +29,7 @@ dependencies = [
  ]
  dependencies = [
      "gnureadline>=8; platform_system == 'Darwin'",
 -    "pyperclip>=1.8",
 +    "pyperclip>=1.7",
      "pyreadline3>=3.4; platform_system == 'Windows'",
--    "wcwidth>=0.2.10",
-+    "wcwidth>=0.2.8",
+     "wcwidth>=0.2.10",
  ]
- 
- [dependency-groups]
