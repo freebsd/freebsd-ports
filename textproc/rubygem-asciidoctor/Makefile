@@ -1,5 +1,6 @@
 PORTNAME=	asciidoctor
 PORTVERSION=	2.0.26
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -17,4 +18,10 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/asciidoctor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 4.0
+RUN_DEPENDS+=	rubygem-logger>=0:devel/rubygem-logger
+.endif
+
+.include <bsd.port.post.mk>
