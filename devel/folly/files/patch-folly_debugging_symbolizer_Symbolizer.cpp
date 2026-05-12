@@ -1,6 +1,6 @@
---- folly/debugging/symbolizer/Symbolizer.cpp.orig	2025-11-05 09:24:00 UTC
+--- folly/debugging/symbolizer/Symbolizer.cpp.orig	2026-05-11 14:37:10 UTC
 +++ folly/debugging/symbolizer/Symbolizer.cpp
-@@ -348,7 +348,7 @@ void ElfCache::Symbolizer::symbolize(
+@@ -357,7 +357,7 @@ size_t Symbolizer::symbolize(
        // Get the unrelocated, ELF-relative address by normalizing via the
        // address at which the object is loaded.
        auto const eaddr = static_cast<ElfAddr>(addr);

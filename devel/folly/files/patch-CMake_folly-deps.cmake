@@ -1,6 +1,6 @@
---- CMake/folly-deps.cmake.orig	2025-11-02 05:43:14 UTC
+--- CMake/folly-deps.cmake.orig	2026-05-11 14:37:10 UTC
 +++ CMake/folly-deps.cmake
-@@ -175,7 +175,7 @@ if (NOT WIN32 AND NOT APPLE)
+@@ -191,7 +191,7 @@ if (NOT WIN32 AND NOT APPLE)
  set(FOLLY_HAVE_BACKTRACE ${Backtrace_FOUND})
  set(FOLLY_HAVE_DWARF ${LIBDWARF_FOUND})
  if (NOT WIN32 AND NOT APPLE)
