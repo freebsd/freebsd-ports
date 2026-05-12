@@ -72,6 +72,7 @@ include/amgcl/mpi/relaxation/chebyshev.hpp
 include/amgcl/mpi/relaxation/damped_jacobi.hpp
 include/amgcl/mpi/relaxation/gauss_seidel.hpp
 include/amgcl/mpi/relaxation/ilu0.hpp
+include/amgcl/mpi/relaxation/ilu0_chow_patel.hpp
 include/amgcl/mpi/relaxation/iluk.hpp
 include/amgcl/mpi/relaxation/ilup.hpp
 include/amgcl/mpi/relaxation/ilut.hpp
@@ -108,6 +109,7 @@ include/amgcl/relaxation/damped_jacobi.hpp
 include/amgcl/relaxation/detail/ilu_solve.hpp
 include/amgcl/relaxation/gauss_seidel.hpp
 include/amgcl/relaxation/ilu0.hpp
+include/amgcl/relaxation/ilu0_chow_patel.hpp
 include/amgcl/relaxation/iluk.hpp
 include/amgcl/relaxation/ilup.hpp
 include/amgcl/relaxation/ilut.hpp
