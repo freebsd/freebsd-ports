@@ -366,7 +366,6 @@ include/broker/zeek.hh
 %%SPICY%%include/hilti/rt/configuration.h
 %%SPICY%%include/hilti/rt/context.h
 %%SPICY%%include/hilti/rt/debug-logger.h
-%%SPICY%%include/hilti/rt/doctest.h
 %%SPICY%%include/hilti/rt/exception.h
 %%SPICY%%include/hilti/rt/extension-points.h
 %%SPICY%%include/hilti/rt/fiber-check-stack.h
