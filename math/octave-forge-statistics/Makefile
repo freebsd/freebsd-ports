@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-statistics
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
+
+RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/datatypes.tar.gz:math/octave-forge-datatypes
 
 USES=		octave
 USE_GITHUB=	yes
