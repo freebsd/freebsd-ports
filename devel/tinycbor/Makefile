@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcjson.so:devel/libcjson
 
-USES=		cmake:testing localbase:ldflags pkgconfig
+USES=		cmake:testing compiler:c++20-lang localbase:ldflags pkgconfig
 
 CMAKE_OFF=	WITH_FREESTANDING
 CMAKE_ON=	BUILD_SHARED_LIBS \
