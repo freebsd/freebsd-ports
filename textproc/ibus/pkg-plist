@@ -61,7 +61,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK4%%lib/gtk-4.0/4.0.0/immodules/libim-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.533
+lib/libibus-1.0.so.5.0.534
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%%%EMOJI%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -146,6 +146,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-as.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ast.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-az.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-ba.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-be.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-bew.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-bg.dict
@@ -182,6 +183,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-et.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-eu.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fa.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-ff.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ff_Adlm.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fi.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fil.dict
@@ -262,6 +264,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sat.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sc.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sd.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-shn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-si.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sk.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sl.dict
@@ -273,8 +276,10 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-su.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sv.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-sv_FI.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw_KE.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-syr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ta.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-te.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-tg.dict
@@ -384,6 +389,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/kab/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/ibus10.mo
@@ -398,6 +404,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/ibus10.mo
