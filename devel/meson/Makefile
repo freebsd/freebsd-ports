@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_F
 		gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		ninja:run python shebangfix vala:test
-USE_PYTHON=	autoplist cython_test pep517 pytest
+USE_PYTHON=	autoplist cython_test optsuffix pep517 pytest
 SHEBANG_FILES=	mesonbuild/rewriter.py \
 		mesonbuild/scripts/cmake_run_ctgt.py
 NO_ARCH=	yes
@@ -47,12 +47,6 @@ pre-test: create-binary-alias # force if run late
 PYTEST_BROKEN_TESTS=	test_pkgconfig_formatting \
 			test_static_link
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
-PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|g' \
 		-e "s|'lib', 'pkgconfig'|'libdata', 'pkgconfig'|g" \
@@ -63,4 +57,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|'gcc'|'gcc${GCC_DEFAULT}'|g" \
 		${WRKSRC}/unittests/internaltests.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
