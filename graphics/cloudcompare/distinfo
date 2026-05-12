@@ -1,4 +1,4 @@
-TIMESTAMP = 1771820855
+TIMESTAMP = 1778385588
 SHA256 (cloudcompare-2.13.2/ccViewer.png) = 076ec373a81b852d6b416bc9a6140aa2c19cd2826416a8e6c1c37e3d108d7626
 SIZE (cloudcompare-2.13.2/ccViewer.png) = 21997
 SHA256 (cloudcompare-2.13.2/cloudcompare.png) = 24b8737a6bc7adcb29f42269f4a59a64646854fd4b02679fb36d76cbe2ea2f48
@@ -27,3 +27,5 @@ SHA256 (cloudcompare-2.13.2/cloudcompare-PoissonRecon-d215dbaa_GH0.tar.gz) = b4d
 SIZE (cloudcompare-2.13.2/cloudcompare-PoissonRecon-d215dbaa_GH0.tar.gz) = 734098
 SHA256 (cloudcompare-2.13.2/truebelief-cc-treeiso-plugin-fbe6a41a_GH0.tar.gz) = 6afc6af9fdd6d35d93bdacdbe5f59e1c1aaedceb876403edd06e5fa5d0a86dda
 SIZE (cloudcompare-2.13.2/truebelief-cc-treeiso-plugin-fbe6a41a_GH0.tar.gz) = 788967
+SHA256 (cloudcompare-2.13.2/449a8e5106d119d4bce71b6d0a84e3d663a3bbf9.patch) = 3083d65804db1cd4b7899f2875f4dd5ff3487578d55561245825d2eb5b1be6d8
+SIZE (cloudcompare-2.13.2/449a8e5106d119d4bce71b6d0a84e3d663a3bbf9.patch) = 1161
