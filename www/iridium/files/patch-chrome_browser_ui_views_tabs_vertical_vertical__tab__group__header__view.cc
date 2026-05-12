@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/vertical/vertical_tab_group_header_view.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/ui/views/tabs/vertical/vertical_tab_group_header_view.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/ui/views/tabs/vertical/vertical_tab_group_header_view.cc
-@@ -293,7 +293,7 @@ void VerticalTabGroupHeaderView::OnMouseEntered(const 
+@@ -321,7 +321,7 @@ void VerticalTabGroupHeaderView::OnMouseEntered(const 
  }
  
  void VerticalTabGroupHeaderView::OnMouseExited(const ui::MouseEvent& event) {

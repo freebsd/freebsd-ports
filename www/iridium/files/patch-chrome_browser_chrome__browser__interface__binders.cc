@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2026-03-30 11:37:05 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
 @@ -84,7 +84,7 @@
  #endif  // BUILDFLAG(ENABLE_UNHANDLED_TAP)
@@ -9,7 +9,7 @@
  #include "chrome/browser/web_applications/sub_apps_service_impl.h"
  #endif
  
-@@ -522,7 +522,7 @@ void PopulateChromeFrameBinders(
+@@ -525,7 +525,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
-@@ -132,7 +132,7 @@
+@@ -139,7 +139,7 @@
  #include "ui/webui/resources/js/browser_command/browser_command.mojom.h"
  #include "ui/webui/resources/js/tracked_element/tracked_element.mojom.h"  // nogncheck crbug.com/1125897
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/app_home/app_home.mojom.h"
  #include "chrome/browser/ui/webui/app_home/app_home_ui.h"
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
-@@ -348,7 +348,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -362,7 +362,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -18,7 +18,7 @@
    RegisterWebUIControllerInterfaceBinder<whats_new::mojom::PageHandlerFactory,
                                           WhatsNewUI>(map);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -360,7 +360,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -374,7 +374,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
  
    RegisterWebUIControllerInterfaceBinder<
        browser_command::mojom::CommandHandlerFactory,
@@ -27,7 +27,7 @@
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -571,7 +571,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -591,7 +591,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          OmniboxPopupUI>(map);
    }
  
@@ -36,8 +36,8 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -601,7 +601,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
-         ContextualTasksUI>(map);
+@@ -613,7 +613,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+         private_ai::PrivateAiInternalsUI>(map);
    }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

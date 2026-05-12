@@ -1,15 +1,15 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2026-04-15 12:07:04 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2026-05-11 13:57:04 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
-@@ -46,7 +46,7 @@
+@@ -50,7 +50,7 @@
+ #include "testing/gtest/include/gtest/gtest.h"
  #include "third_party/skia/include/core/SkBitmap.h"
  #include "third_party/skia/include/core/SkColor.h"
- 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "base/nix/xdg_util.h"
  #endif
  
-@@ -121,7 +121,7 @@ std::vector<std::wstring> GetFileExtensionsForProgId(
+@@ -125,7 +125,7 @@ std::vector<std::wstring> GetFileExtensionsForProgId(
  }
  #endif
  
@@ -18,7 +18,7 @@
  // Performs a blocking read of app icons from the disk.
  std::optional<SkBitmap> IconManagerReadIconForSize(
      WebAppIconManager& icon_manager,
-@@ -306,7 +306,7 @@ bool OsIntegrationTestOverrideImpl::SimulateDeleteShor
+@@ -310,7 +310,7 @@ bool OsIntegrationTestOverrideImpl::SimulateDeleteShor
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    CHECK(base::PathExists(app_folder_shortcut_path));
    return base::DeletePathRecursively(app_folder_shortcut_path);
@@ -27,7 +27,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    LOG(INFO) << desktop_shortcut_path;
-@@ -353,7 +353,7 @@ bool OsIntegrationTestOverrideImpl::DeleteApplicationM
+@@ -357,7 +357,7 @@ bool OsIntegrationTestOverrideImpl::DeleteApplicationM
  }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
  bool OsIntegrationTestOverrideImpl::DeleteDesktopDirOnLinux() {
    if (desktop_.IsValid()) {
      return desktop_.Delete();
-@@ -367,7 +367,7 @@ bool OsIntegrationTestOverrideImpl::IsRunOnOsLoginEnab
+@@ -371,7 +371,7 @@ bool OsIntegrationTestOverrideImpl::IsRunOnOsLoginEnab
      Profile* profile,
      const webapps::AppId& app_id,
      const std::string& app_name) {
@@ -45,7 +45,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    base::i18n::ReplaceIllegalCharactersInPath(&shortcut_filename, '_');
-@@ -424,7 +424,7 @@ bool OsIntegrationTestOverrideImpl::IsFileExtensionHan
+@@ -428,7 +428,7 @@ bool OsIntegrationTestOverrideImpl::IsFileExtensionHan
    is_file_handled =
        shell_integration::CanApplicationHandleURL(app_path, test_file_url);
    base::DeleteFile(test_file_path);
@@ -54,7 +54,7 @@
    base::FilePath user_applications_dir = applications();
    bool database_update_called = false;
    for (const LinuxFileRegistration& command : linux_file_registration_) {
-@@ -473,7 +473,7 @@ std::optional<SkBitmap> OsIntegrationTestOverrideImpl:
+@@ -477,7 +477,7 @@ std::optional<SkBitmap> OsIntegrationTestOverrideImpl:
      return std::nullopt;
    }
    return GetIconFromShortcutFile(shortcut_path);
@@ -63,7 +63,7 @@
    WebAppProvider* provider = WebAppProvider::GetForLocalAppsUnchecked(profile);
    if (!provider) {
      return std::nullopt;
-@@ -541,7 +541,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
+@@ -545,7 +545,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
        return bundle.bundle_path();
      }
    }
@@ -72,7 +72,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    base::i18n::ReplaceIllegalCharactersInPath(&shortcut_filename, '_');
-@@ -568,7 +568,7 @@ bool OsIntegrationTestOverrideImpl::IsShortcutCreated(
+@@ -572,7 +572,7 @@ bool OsIntegrationTestOverrideImpl::IsShortcutCreated(
    base::FilePath app_shortcut_path =
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    return base::PathExists(app_shortcut_path);
@@ -81,7 +81,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    return base::PathExists(desktop_shortcut_path);
-@@ -760,7 +760,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
+@@ -771,7 +771,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -90,7 +90,7 @@
  base::FilePath OsIntegrationTestOverrideImpl::desktop() {
    return desktop_.GetPath();
  }
-@@ -811,7 +811,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -822,7 +822,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    success = chrome_apps_folder_.CreateUniqueTempDirUnderPath(
        outer_temp_dir_.GetPath());
    CHECK(success);
@@ -99,7 +99,7 @@
    success = desktop_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
    CHECK(success);
    success = startup_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
-@@ -824,7 +824,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -835,7 +835,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    CHECK(success);
  #endif
  
@@ -108,7 +108,7 @@
    auto callback = base::BindRepeating([](base::FilePath filename_in,
                                           std::string xdg_command,
                                           std::string file_contents) {
-@@ -896,7 +896,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
+@@ -907,7 +907,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
    EXPECT_TRUE(!startup_.IsValid() || startup_.Delete());
  #elif BUILDFLAG(IS_MAC)
    EXPECT_TRUE(!chrome_apps_folder_.IsValid() || DeleteChromeAppsDir());

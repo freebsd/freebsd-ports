@@ -1,6 +1,6 @@
---- components/dbus/xdg/file_transfer_portal.cc.orig	2026-03-24 16:59:08 UTC
+--- components/dbus/xdg/file_transfer_portal.cc.orig	2026-05-11 13:57:04 UTC
 +++ components/dbus/xdg/file_transfer_portal.cc
-@@ -28,6 +28,10 @@
+@@ -31,6 +31,10 @@
  #include "dbus/object_path.h"
  #include "dbus/object_proxy.h"
  

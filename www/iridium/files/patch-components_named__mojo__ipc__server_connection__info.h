@@ -1,6 +1,6 @@
---- components/named_mojo_ipc_server/connection_info.h.orig	2026-02-16 10:45:29 UTC
+--- components/named_mojo_ipc_server/connection_info.h.orig	2026-05-11 13:57:04 UTC
 +++ components/named_mojo_ipc_server/connection_info.h
-@@ -12,7 +12,8 @@
+@@ -13,7 +13,8 @@
  #include "base/win/scoped_handle.h"
  #elif BUILDFLAG(IS_MAC)
  #include <bsm/libbsm.h>
@@ -10,7 +10,7 @@
  #include <sys/socket.h>
  #endif
  
-@@ -29,8 +30,10 @@ struct ConnectionInfo {
+@@ -30,8 +31,10 @@ struct ConnectionInfo {
    base::ProcessId pid{};
  #if BUILDFLAG(IS_MAC)
    audit_token_t audit_token{};
@@ -19,6 +19,6 @@
    ucred credentials{};
 +#elif BUILDFLAG(IS_FREEBSD)
 +  xucred credentials{};
- #endif
- };
- 
+ #elif BUILDFLAG(IS_WIN)
+   // The process of the peer. Only valid if `include_peer_process_info` is true
+   // in EndpointOptions.

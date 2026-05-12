@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter.cc.orig	2026-03-24 16:59:08 UTC
+--- media/video/video_encode_accelerator_adapter.cc.orig	2026-05-11 13:57:04 UTC
 +++ media/video/video_encode_accelerator_adapter.cc
-@@ -468,7 +468,7 @@ void VideoEncodeAcceleratorAdapter::InitializeOnAccele
+@@ -503,7 +503,7 @@ void VideoEncodeAcceleratorAdapter::InitializeOnAccele
  #endif  // BUILDFLAG(USE_PROPRIETARY_CODECS)
  
    auto storage_type = VideoEncodeAccelerator::Config::StorageType::kShmem;
