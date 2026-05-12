@@ -1,12 +1,10 @@
 PORTNAME=	rsync
-DISTVERSION=	3.4.1
-PORTREVISION=	7
+DISTVERSION=	3.4.2
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		https://download.samba.org/pub/rsync/src/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
@@ -18,17 +16,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
+TEST_DEPENDS=	${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
 
 USES=		autoreconf:build cpe python shebangfix ssl
-PYTHON_NO_DEPENDS=	yes
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
+PYTHON_NO_DEPENDS=	yes
 USE_RC_SUBR=	rsyncd
 
-SHEBANG_FILES=	support/rrsync
+SHEBANG_FILES=	runtests.py support/rrsync
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-ipv6 \
 		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
@@ -39,29 +38,21 @@ TEST_TARGET=	check
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PATCH_STRIP=	-p1
 SUB_LIST=	NAME=rsyncd
 
 PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 
 # define options
 OPTIONS_DEFINE=		DOCS ICONV POPT_PORT SSH ZLIB_BASE
-OPTIONS_DEFAULT=	FLAGS ICONV SSH ZLIB_BASE
+OPTIONS_DEFAULT=	ICONV SSH ZLIB_BASE
 OPTIONS_RADIO=		PTS
-OPTIONS_RADIO_PTS=	FLAGS RENAMED
 
 # options provided upstream
-FLAGS_DESC=	File system flags support patch, adds --fileflags
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
-SSH_DESC=	Use SSH instead of RSH
-ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
-
-# options provided by patch (mutually exclusive)
 PTS_DESC=	Functionality provided by third party patches
-RENAMED_DESC=	Add support for renamed file detection
+SSH_DESC=	Use SSH instead of RSH
 
-FLAGS_EXTRA_PATCHES=	${WRKSRC}/patches/fileflags.diff \
-			${FILESDIR}/extrapatch-main.c
+ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 
 ICONV_USES=		iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
@@ -69,28 +60,15 @@ ICONV_CONFIGURE_ENABLE=	iconv iconv-open
 POPT_PORT_LIB_DEPENDS=		libpopt.so:devel/popt
 POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 
-RENAMED_EXTRA_PATCHES=	${WRKSRC}/patches/detect-renamed.diff
-
 SSH_CONFIGURE_ON=	--with-rsh=ssh
 SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS}
-DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB) || !${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	ac_cv_search_libiconv_open=no
-.endif
-
-.if make(makesum) || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS}
-pre-patch:
-	@${REINPLACE_CMD} 's:+int module_dirlen = 0;:+:' ${WRKSRC}/patches/fileflags.diff
 .endif
 
 post-patch:

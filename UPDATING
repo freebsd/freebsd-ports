@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260515:
+  AFFECTS: Users of net/rsync
+  AUTHOR: rodrigo@FreeBSD.org
+
+  Since rsync 3.4.2, the rsync project removed support for the unmaintained
+  rsync-patches archive. As a consequence options such as File system flags
+  (--fileflags) are not available anymore in default build.
+
 20260510:
   AFFECTS: Users of games/minecraft-server
   AUTHOR: freebsd.tug890@passmail.net

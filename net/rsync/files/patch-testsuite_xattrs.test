@@ -1,5 +1,5 @@
---- a/testsuite/xattrs.test.orig	2022-10-20 16:09:26.000000000 +0000
-+++ b/testsuite/xattrs.test	2025-06-29 07:49:45.880992000 +0000
+--- testsuite/xattrs.test.orig	2022-10-20 16:09:26 UTC
++++ testsuite/xattrs.test
 @@ -10,7 +10,14 @@
  
  $RSYNC -VV | grep '"xattrs": true' >/dev/null || test_skipped "Rsync is configured without xattr support"
