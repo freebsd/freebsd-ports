@@ -1,8 +1,7 @@
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.38.3
-PORTREVISION=	1
-CATEGORIES=	net-mgmt
+DISTVERSION=	1.38.4
+CATEGORIES=	net-mgmt sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Time-series data collection
