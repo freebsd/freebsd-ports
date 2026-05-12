@@ -1,5 +1,5 @@
 PORTNAME=	action_text-trix
-PORTVERSION=	2.1.18
+PORTVERSION=	2.1.19
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
