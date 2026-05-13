@@ -95,6 +95,7 @@ libdata/pkgconfig/libdar64.pc
 %%PORTDOCS%%%%DOCSDIR%%/Limitations.html
 %%PORTDOCS%%%%DOCSDIR%%/Notes.html
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/References.html
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/api_tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/authentification.html
@@ -120,6 +121,10 @@ libdata/pkgconfig/libdar64.pc
 %%PORTDOCS%%%%DOCSDIR%%/old_dar_key1.txt
 %%PORTDOCS%%%%DOCSDIR%%/old_dar_key2.txt
 %%PORTDOCS%%%%DOCSDIR%%/presentation.html
+%%PORTDOCS%%%%DOCSDIR%%/ref_irisa.html
+%%PORTDOCS%%%%DOCSDIR%%/ref_john-goerzen.html
+%%PORTDOCS%%%%DOCSDIR%%/ref_max_planck.html
+%%PORTDOCS%%%%DOCSDIR%%/ref_per-jensen.html
 %%PORTDOCS%%%%DOCSDIR%%/restoration-with-dar.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/JH-dar-make_user_backup.sh
 %%PORTDOCS%%%%DOCSDIR%%/samples/JH-readme.txt
