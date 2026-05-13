@@ -1,4 +1,4 @@
---- debootstrap.orig	2022-10-14 11:16:30 UTC
+--- debootstrap.orig	2025-10-14 09:32:18 UTC
 +++ debootstrap
 @@ -1,4 +1,4 @@
 -#!/bin/sh
@@ -6,7 +6,7 @@
  set -e
  
  VERSION='@VERSION@'
-@@ -14,7 +14,7 @@ if [ -z "$DEBOOTSTRAP_DIR" ]; then
+@@ -14,7 +14,7 @@ if [ -z "${DEBOOTSTRAP_DIR-}" ]; then
  	if [ -x /debootstrap/debootstrap ]; then
  		DEBOOTSTRAP_DIR=/debootstrap
  	else
@@ -15,18 +15,18 @@
  	fi
  fi
  
-@@ -379,8 +379,8 @@ if [ $# != 0 ] ; then
+@@ -385,8 +385,8 @@ if [ $# != 0 ] ; then
  		shift
  		;;
  	    --keyring|--keyring=?*)
--		if ! gpgv --version >/dev/null 2>&1; then
--			error 1 NEEDGPGV "gpgv not installed, but required for Release verification"
-+		if ! gpgv2 --version >/dev/null 2>&1; then
-+			error 1 NEEDGPGV "gpgv2 not installed, but required for Release verification"
+-		if ! in_path sopv && ! in_path sqv && ! in_path gpgv; then
+-			error 1 NEEDPGPV "none of sopv, sqv or gpgv are installed, but required for Release verification"
++		if ! in_path sopv && ! in_path sqv && ! in_path gpgv2; then
++			error 1 NEEDPGPV "none of sopv, sqv or gpgv2 are installed, but required for Release verification"
  		fi
  		if [ "$1" = "--keyring" ] && [ -n "$2" ]; then
  			KEYRING="$2"
-@@ -536,13 +536,7 @@ fi
+@@ -560,13 +560,7 @@ fi
  
  ###########################################################################
  
@@ -41,8 +41,8 @@
  	HOST_ARCH=$(cat "$DEBOOTSTRAP_DIR/arch")
  fi
  HOST_OS="$HOST_ARCH"
-@@ -562,6 +556,14 @@ if [ -z "$HOST_OS" ]; then
- 			HOST_OS=freebsd
+@@ -589,6 +583,14 @@ if [ -z "$HOST_OS" ]; then
+ 			HOST_OS=darwin
  		;;
  	esac
 +fi
