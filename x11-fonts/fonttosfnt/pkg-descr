@@ -1,2 +1,3 @@
-This package contains fonttosfnt, an application used for wrapping a bitmap
-font in a sfnt (TrueType) wrapper.
+Fonttosfnt wraps a set of bdf or pcf bitmap fonts in a sfnt (TrueType or
+OpenType) wrapper. If no font is specified, a BDF font is read from
+standard input (stdin).
