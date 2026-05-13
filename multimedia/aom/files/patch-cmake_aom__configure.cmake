@@ -1,21 +1,22 @@
 - FreeBSD and NetBSD powerpc* targets don't abbreviate to ppc*
 - ARM uses compiler intrinsics, so don't require GNU as
 
---- build/cmake/aom_configure.cmake.orig	2024-08-27 18:17:57 UTC
-+++ build/cmake/aom_configure.cmake
-@@ -73,7 +73,7 @@ if(NOT AOM_TARGET_CPU)
+--- cmake/aom_configure.cmake.orig	2026-05-13 23:13:38 UTC
++++ cmake/aom_configure.cmake
+@@ -74,7 +74,7 @@ if(NOT AOM_TARGET_CPU)
      set(AOM_TARGET_CPU "${cpu_lowercase}")
    elseif(cpu_lowercase MATCHES "aarch64")
      set(AOM_TARGET_CPU "arm64")
 -  elseif(cpu_lowercase MATCHES "^ppc")
 +  elseif(cpu_lowercase MATCHES "^ppc|^powerpc")
      set(AOM_TARGET_CPU "ppc")
-   else()
-     message(WARNING "The architecture ${CMAKE_SYSTEM_PROCESSOR} is not "
-@@ -182,35 +182,6 @@ if(AOM_TARGET_CPU STREQUAL "x86" OR AOM_TARGET_CPU STR
+   elseif(cpu_lowercase MATCHES "^riscv")
+     set(AOM_TARGET_CPU "riscv")
+@@ -184,35 +184,6 @@ if(AOM_TARGET_CPU STREQUAL "x86" OR AOM_TARGET_CPU STR
+         "To build without optimizations, add -DAOM_TARGET_CPU=generic to "
          "your cmake command line.")
    endif()
-   string(STRIP "${AOM_AS_FLAGS}" AOM_AS_FLAGS)
+-  string(STRIP "${AOM_AS_FLAGS}" AOM_AS_FLAGS)
 -elseif(AOM_TARGET_CPU MATCHES "arm")
 -  if(AOM_TARGET_SYSTEM STREQUAL "Darwin")
 -    if(NOT CMAKE_ASM_COMPILER)
@@ -44,7 +45,6 @@
 -        "cmake command line.")
 -  endif()
 -  enable_language(ASM)
--  string(STRIP "${AOM_AS_FLAGS}" AOM_AS_FLAGS)
+   string(STRIP "${AOM_AS_FLAGS}" AOM_AS_FLAGS)
  endif()
  
- if(CONFIG_ANALYZER)
