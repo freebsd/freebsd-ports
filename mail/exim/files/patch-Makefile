@@ -1,11 +1,11 @@
---- Makefile.orig	2014-07-05 18:05:16.180788015 +0100
-+++ Makefile	2014-07-05 18:05:40.464360574 +0100
-@@ -53,7 +53,7 @@
+--- Makefile.orig	2025-12-17 18:05:41.764604000 +0100
++++ Makefile	2025-12-17 18:08:15.055964000 +0100
+@@ -70,7 +70,7 @@
  # Configure-Makefile script. This does its own dependency checking because of
  # the optional files.
  
--configure: checks build-directory
-+configure: build-directory
+-configure: checks build-directory \
++configure: build-directory \
+ 		scripts/lookups-Makefile scripts/drivers-Makefile
  	@cd build-$(buildname); \
  	  build=$(build) $(SHELL) ../scripts/Configure-Makefile
- 
