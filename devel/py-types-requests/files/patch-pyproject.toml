@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-08 04:50:53 UTC
+--- pyproject.toml.orig	2026-05-13 05:39:20 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,14 +8,14 @@
  
  [project]
  name = "types-requests"
- version = "2.33.0.20260508"
+ version = "2.33.0.20260513"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
  description = "Typing stubs for requests"
  readme = { text = """\
  ## Typing stubs for requests
-@@ -48,8 +47,4 @@ dependencies = ['urllib3>=2']
+@@ -53,8 +52,4 @@ dependencies = ['urllib3>=2']
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
