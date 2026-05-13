@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.21
+DISTVERSION=	3.5.23
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://leanctx.com \
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+BUILD_DEPENDS=	gmake:devel/gmake
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo
 
@@ -233,6 +236,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
 		memchr-2.8.0 \
+		memmap2-0.9.10 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
 		mime-0.3.17 \
@@ -261,6 +265,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		password-hash-0.5.0 \
+		paste-1.0.15 \
 		pastey-0.2.2 \
 		pbkdf2-0.12.2 \
 		pem-3.0.6 \
@@ -409,6 +414,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		tiktoken-rs-0.6.0 \
+		tikv-jemalloc-ctl-0.6.1 \
+		tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
+		tikv-jemallocator-0.6.1 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
