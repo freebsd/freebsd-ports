@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	allflavors autoplist concurrent pep517
+USE_PYTHON=	allflavors autoplist concurrent pep517 pytest
 
 MAKE_ENV=	PYTHONPATH=${WRKSRC}/src
 NO_ARCH=	yes
