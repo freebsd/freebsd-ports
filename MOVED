@@ -5297,3 +5297,4 @@ devel/lace14|devel/lace|2026-05-12|Last user switched to devel/lace
 java/openjdk23||2026-05-12|Has expired: No longer supported by upstream
 databases/jrrd||2026-05-12|Has expired: only builds with Java 8, unmaintained, no dependencies in the ports tree, an alternative is https://github.com/OpenNMS/jrrd2
 deskutils/growl-for-linux||2026-05-12|Has expired: Obsolete software that does not compile with recent versions of GCC or Clang
+www/py-requests-cache93|www/py-requests-cache|2026-05-13|Use latest version
