@@ -1,5 +1,5 @@
 PORTNAME=	mypy
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ast-serialize>=0.3.0<1.0.0:devel/py-ast-serialize@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}librt>=0.10.0:devel/py-librt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}librt>=0.11.0:devel/py-librt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=1.0.0:devel/py-mypy_extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=1.0.0:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
