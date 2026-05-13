@@ -9,6 +9,9 @@ WWW=		https://gitlab.com/gitlab-org/gitaly-proto
 
 LICENSE=	MIT
 
+DEPRECATED=	gitaly-proto has been deprecated
+EXPIRATION_DATE=2026-05-31
+
 RUN_DEPENDS=	rubygem-grpc>=1.0:net/rubygem-grpc
 
 USES=		gem
