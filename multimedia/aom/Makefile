@@ -1,5 +1,5 @@
 PORTNAME=	aom
-DISTVERSION=	3.13.3
+DISTVERSION=	3.14.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://storage.googleapis.com/${PORTNAME}-releases/
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
@@ -39,6 +39,6 @@ VMAF_CMAKE_ON=		-DCONFIG_TUNE_VMAF:STRING=1
 post-patch:
 # Extract (snapshot) version from the port instead of CHANGELOG
 	@${REINPLACE_CMD} 's,$${AOM_ROOT}/CHANGELOG,${DISTVERSIONFULL:S/^v//},' \
-		${WRKSRC}/build/cmake/version.cmake
+		${WRKSRC}/cmake/version.cmake
 
 .include <bsd.port.mk>
