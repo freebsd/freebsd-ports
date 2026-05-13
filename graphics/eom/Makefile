@@ -1,8 +1,8 @@
 PORTNAME=	eom
-DISTVERSION=	1.28.0
-PORTREVISION=	3
+DISTVERSION=	1.28.1
 CATEGORIES=	graphics mate
-MASTER_SITES=	MATE
+MASTER_SITES=	MATE \
+		https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -12,15 +12,18 @@ WWW=		https://mate-desktop.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		yelp-build:textproc/yelp-tools \
+		gtkdocize:textproc/gtk-doc \
+		autoconf-archive>0:devel/autoconf-archive
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libpeas-gtk-1.0.so:devel/libpeas1
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
-		jpeg libtool localbase mate pathfix pkgconfig tar:xz xorg
-USE_MATE=	desktop icontheme
+USES=		autoreconf:build compiler:c11 desktop-file-utils gettext-tools gmake \
+		gnome jpeg libtool localbase mate pathfix pkgconfig tar:xz xorg
+USE_MATE=	autogen common desktop icontheme
 USE_XORG=	x11
 USE_GNOME=	cairo glib20 gnomeprefix gtk30 intltool introspection \
 		librsvg2 libxml2
