@@ -1,6 +1,5 @@
 PORTNAME=	raylib
-DISTVERSION=	5.5
-PORTREVISION=	1
+DISTVERSION=	6.0
 CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -14,7 +13,7 @@ USES=		cmake localbase:ldflags sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	raysan5
 USE_LDCONFIG=	yes
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr xxf86vm
 
 CMAKE_ARGS=	-DPLATFORM=SDL
