@@ -1,6 +1,6 @@
 PORTNAME=	cif-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.13
+DISTVERSION=	2.0.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
