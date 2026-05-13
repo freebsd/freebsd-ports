@@ -4839,6 +4839,7 @@
     SUBDIR += py-dal
     SUBDIR += py-darkdetect
     SUBDIR += py-darts.util.lru
+    SUBDIR += py-dasbus
     SUBDIR += py-dask
     SUBDIR += py-dask-awkward
     SUBDIR += py-dask-expr

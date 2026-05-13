@@ -1,0 +1,2 @@
+Dasbus is a DBus library written in Python 3, based on GLib and inspired
+by pydbus. It is designed to be easy to use and extend.
