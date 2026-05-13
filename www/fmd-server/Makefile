@@ -1,7 +1,6 @@
 PORTNAME=	fmd-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.2
-PORTREVISION=	1
+DISTVERSION=	0.15.0
 CATEGORIES=	www
 
 MAINTAINER=	mm@FreeBSD.org
@@ -16,6 +15,7 @@ USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_ACCOUNT=	fmd-foss
 GO_MODULE=	gitlab.com/fmd-foss/fmd-server
+GO_TARGET=	${GO_PKGNAME} ./ctl:fmd-server-ctl
 
 NO_PACKAGE=	downloads nodejs modules during web interface build
 
@@ -24,7 +24,8 @@ USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ENV=	COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 PLIST_FILES=	"@sample ${ETCDIR}/config.yml.sample" \
-		bin/${PORTNAME}
+		bin/${PORTNAME} \
+		bin/${PORTNAME}-ctl
 
 GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
