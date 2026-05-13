@@ -23,6 +23,7 @@ include/eog-%%VERSION%%/eog/eog-transform.h
 include/eog-%%VERSION%%/eog/eog-uri-converter.h
 include/eog-%%VERSION%%/eog/eog-window-activatable.h
 include/eog-%%VERSION%%/eog/eog-window.h
+lib/eog/girepository-1.0/Eog-%%VERSION%%.typelib
 lib/eog/libeog.so
 lib/eog/plugins/fullscreen.plugin
 lib/eog/plugins/libfullscreen.so
@@ -30,10 +31,10 @@ lib/eog/plugins/libreload.so
 lib/eog/plugins/libstatusbar-date.so
 lib/eog/plugins/reload.plugin
 lib/eog/plugins/statusbar-date.plugin
-lib/girepository-1.0/Eog-%%VERSION%%.typelib
 libdata/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
 share/applications/org.gnome.eog.desktop
+%%DATADIR%%/gir-1.0/Eog-%%VERSION%%.gir
 %%DATADIR%%/icons/hicolor/16x16/actions/eog-plugin.png
 %%DATADIR%%/icons/hicolor/16x16/actions/slideshow-play.png
 %%DATADIR%%/icons/hicolor/22x22/actions/eog-plugin.png
@@ -45,7 +46,6 @@ share/applications/org.gnome.eog.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/eog-image-gallery-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/eog-plugin.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/slideshow-play.svg
-share/gir-1.0/Eog-%%VERSION%%.gir
 share/help/C/eog/bug-filing.page
 share/help/C/eog/commandline.page
 share/help/C/eog/copy-paste.page
