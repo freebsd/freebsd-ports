@@ -1,5 +1,5 @@
 PORTNAME=	xsynth
-DISTVERSION=	0.3.4
+DISTVERSION=	0.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,107 +18,120 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BlackMIDIDevs
 
 CARGO_BUILDDEP=	no
-CARGO_CRATES=	aho-corasick-1.0.1 \
-		alsa-0.9.0 \
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		alsa-0.9.1 \
 		alsa-sys-0.3.1 \
 		anes-0.1.6 \
-		anstream-0.6.15 \
-		anstyle-1.0.8 \
-		anstyle-parse-0.2.5 \
-		anstyle-query-1.1.1 \
-		anstyle-wincon-3.0.4 \
-		arrayvec-0.7.2 \
-		atomic_float-1.0.0 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		anyhow-1.0.102 \
+		arrayvec-0.7.6 \
+		atomic_float-1.1.0 \
 		atomic_refcell-0.1.13 \
 		atty-0.2.14 \
-		autocfg-1.1.0 \
-		bindgen-0.64.0 \
+		autocfg-1.5.0 \
+		bindgen-0.72.1 \
 		biquad-0.4.2 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
-		bumpalo-3.12.1 \
-		bytemuck-1.16.3 \
-		bytes-1.4.0 \
+		bitflags-2.11.0 \
+		bumpalo-3.20.2 \
+		bytemuck-1.25.0 \
+		bytes-1.11.1 \
 		cast-0.3.0 \
 		cbindgen-0.26.0 \
-		cc-1.0.79 \
+		cc-1.2.59 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.0 \
-		ciborium-0.2.0 \
-		ciborium-io-0.2.0 \
-		ciborium-ll-0.2.0 \
-		clang-sys-1.6.1 \
-		clap-3.2.23 \
-		clap-4.5.16 \
-		clap_builder-4.5.15 \
+		cfg-if-1.0.4 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clang-sys-1.8.1 \
+		clap-3.2.25 \
+		clap-4.6.0 \
+		clap_builder-4.6.0 \
 		clap_lex-0.2.4 \
-		clap_lex-0.7.2 \
-		colorchoice-1.0.2 \
-		combine-4.6.6 \
+		clap_lex-1.1.0 \
+		colorchoice-1.0.5 \
+		combine-4.6.7 \
 		convert_case-0.4.0 \
-		core-foundation-sys-0.8.4 \
+		core-foundation-sys-0.8.7 \
 		coreaudio-rs-0.11.3 \
-		coreaudio-sys-0.2.12 \
+		coreaudio-sys-0.2.17 \
 		cpal-0.15.3 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.13 \
-		crossbeam-deque-0.8.5 \
+		crossbeam-channel-0.5.15 \
+		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-queue-0.3.11 \
-		crossbeam-utils-0.8.20 \
+		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
 		dasp_sample-0.11.0 \
 		directories-5.0.1 \
 		dirs-sys-0.4.1 \
-		either-1.8.1 \
-		encoding_rs-0.8.34 \
+		either-1.15.0 \
+		encoding_rs-0.8.35 \
 		encoding_rs_io-0.1.7 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
+		equivalent-1.0.2 \
+		errno-0.3.14 \
 		extended-0.1.0 \
-		fastrand-1.9.0 \
+		fastrand-2.3.0 \
 		file-id-0.1.0 \
-		filetime-0.2.24 \
+		filetime-0.2.27 \
+		find-msvc-tools-0.1.9 \
+		foldhash-0.1.5 \
 		fsevent-sys-4.1.0 \
-		getrandom-0.2.9 \
-		glob-0.3.1 \
-		half-1.8.2 \
+		futures-core-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
+		getrandom-0.2.17 \
+		getrandom-0.3.4 \
+		getrandom-0.4.2 \
+		glob-0.3.3 \
+		half-2.7.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.15.5 \
+		hashbrown-0.16.1 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.1 \
+		hermit-abi-0.5.2 \
 		hotwatch-0.5.0 \
 		hound-3.5.1 \
+		id-arena-2.3.0 \
 		indexmap-1.9.3 \
+		indexmap-2.13.1 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.10 \
-		is-terminal-0.4.12 \
-		is_terminal_polyfill-1.70.1 \
+		is-terminal-0.4.17 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
-		itoa-1.0.6 \
+		itertools-0.13.0 \
+		itoa-1.0.18 \
 		jni-0.21.1 \
-		jni-sys-0.3.0 \
-		jobserver-0.1.26 \
-		js-sys-0.3.64 \
-		kqueue-1.0.8 \
+		jni-sys-0.3.1 \
+		jni-sys-0.4.1 \
+		jni-sys-macros-0.4.1 \
+		jobserver-0.1.34 \
+		js-sys-0.3.94 \
+		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
-		lazy-regex-3.2.0 \
-		lazy-regex-proc_macros-3.2.0 \
+		lazy-regex-3.6.0 \
+		lazy-regex-proc_macros-3.6.0 \
 		lazy_static-1.5.0 \
-		lazycell-1.3.0 \
-		libc-0.2.149 \
-		libloading-0.7.4 \
+		leb128fmt-0.1.0 \
+		libc-0.2.184 \
+		libloading-0.8.9 \
 		libm-0.1.4 \
-		libredox-0.1.3 \
-		linux-raw-sys-0.3.3 \
-		lock_api-0.4.12 \
-		log-0.4.17 \
-		mach2-0.4.1 \
-		memchr-2.6.4 \
+		libredox-0.1.15 \
+		linux-raw-sys-0.12.1 \
+		lock_api-0.4.14 \
+		log-0.4.29 \
+		mach2-0.4.3 \
+		memchr-2.8.0 \
 		midi-toolkit-rs-0.1.0 \
 		midi-toolkit-rs-derive-0.1.0 \
 		minimal-lexical-0.2.1 \
@@ -129,143 +142,166 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		nom-7.1.3 \
 		notify-6.1.1 \
 		notify-debouncer-full-0.1.0 \
-		num-complex-0.4.5 \
+		num-complex-0.4.6 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
-		num-traits-0.2.15 \
-		num_enum-0.7.3 \
-		num_enum_derive-0.7.3 \
+		num-traits-0.2.19 \
+		num_enum-0.7.6 \
+		num_enum_derive-0.7.6 \
 		oboe-0.6.1 \
 		oboe-sys-0.6.1 \
-		once_cell-1.17.1 \
-		oorandom-11.1.3 \
+		once_cell-1.21.4 \
+		once_cell_polyfill-1.70.2 \
+		oorandom-11.1.5 \
 		option-ext-0.2.0 \
-		os_str_bytes-6.5.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
-		paste-1.0.12 \
-		peeking_take_while-0.1.2 \
-		pkg-config-0.3.26 \
+		os_str_bytes-6.6.1 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
+		paste-1.0.15 \
+		pin-project-lite-0.2.17 \
+		pkg-config-0.3.32 \
 		pkg-version-1.0.0 \
 		pkg-version-impl-0.1.1 \
-		plotters-0.3.4 \
-		plotters-backend-0.3.4 \
-		plotters-svg-0.3.3 \
-		ppv-lite86-0.2.17 \
-		primal-check-0.3.3 \
-		proc-macro-crate-1.3.1 \
+		plain-0.2.3 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
+		ppv-lite86-0.2.21 \
+		prettyplease-0.2.37 \
+		primal-check-0.3.4 \
+		proc-macro-crate-3.5.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.86 \
-		quote-1.0.36 \
+		proc-macro2-1.0.106 \
+		quote-1.0.45 \
+		r-efi-5.3.0 \
+		r-efi-6.0.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
-		realfft-3.3.0 \
-		redox_syscall-0.3.5 \
-		redox_syscall-0.5.3 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		realfft-3.5.0 \
+		redox_syscall-0.5.18 \
+		redox_syscall-0.7.3 \
 		redox_users-0.4.6 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
 		regex-bnf-0.1.2 \
 		regex-bnf-macro-0.1.1 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.10 \
 		riff-1.0.1 \
 		rubato-0.15.0 \
-		rustc-hash-1.1.0 \
-		rustfft-6.2.0 \
-		rustix-0.37.13 \
-		ryu-1.0.13 \
+		rustc-hash-2.1.2 \
+		rustfft-6.4.1 \
+		rustix-1.1.4 \
+		rustversion-1.0.22 \
 		same-file-1.0.6 \
-		scopeguard-1.1.0 \
-		serde-1.0.209 \
-		serde_derive-1.0.209 \
-		serde_json-1.0.127 \
-		shlex-1.1.0 \
-		simdeez-2.0.0-dev3 \
-		smallvec-1.13.2 \
+		scopeguard-1.2.0 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
+		shlex-1.3.0 \
+		simdeez-3.0.1 \
+		slab-0.4.12 \
+		smallvec-1.15.1 \
 		soundfont-0.1.0 \
-		spin_sleep-1.2.1 \
+		spin_sleep-1.3.3 \
 		strength_reduce-0.2.4 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
-		symphonia-0.5.4 \
-		symphonia-bundle-flac-0.5.4 \
-		symphonia-codec-adpcm-0.5.4 \
-		symphonia-codec-pcm-0.5.4 \
-		symphonia-codec-vorbis-0.5.4 \
-		symphonia-core-0.5.4 \
-		symphonia-format-mkv-0.5.4 \
-		symphonia-format-ogg-0.5.4 \
-		symphonia-format-riff-0.5.4 \
-		symphonia-metadata-0.5.4 \
-		symphonia-utils-xiph-0.5.4 \
+		symphonia-0.5.5 \
+		symphonia-bundle-flac-0.5.5 \
+		symphonia-codec-adpcm-0.5.5 \
+		symphonia-codec-pcm-0.5.5 \
+		symphonia-codec-vorbis-0.5.5 \
+		symphonia-core-0.5.5 \
+		symphonia-format-mkv-0.5.5 \
+		symphonia-format-ogg-0.5.5 \
+		symphonia-format-riff-0.5.5 \
+		symphonia-metadata-0.5.5 \
+		symphonia-utils-xiph-0.5.5 \
 		syn-1.0.109 \
-		syn-2.0.72 \
-		tempfile-3.5.0 \
-		termcolor-1.2.0 \
-		textwrap-0.16.0 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		syn-2.0.117 \
+		tempfile-3.27.0 \
+		termcolor-1.4.1 \
+		textwrap-0.16.2 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
 		tinytemplate-1.2.1 \
 		to_vec-0.1.0 \
 		toml-0.5.11 \
-		toml_datetime-0.6.1 \
-		toml_edit-0.19.8 \
+		toml_datetime-1.1.1+spec-1.1.0 \
+		toml_edit-0.25.10+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
 		transpose-0.2.3 \
-		unicode-ident-1.0.8 \
+		unicode-ident-1.0.24 \
+		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
-		version_check-0.9.4 \
-		walkdir-2.3.3 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.37 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
+		version_check-0.9.5 \
+		walkdir-2.5.0 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-bindgen-0.2.117 \
+		wasm-bindgen-futures-0.4.67 \
+		wasm-bindgen-macro-0.2.117 \
+		wasm-bindgen-macro-support-0.2.117 \
+		wasm-bindgen-shared-0.2.117 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
 		wav-1.0.1 \
-		web-sys-0.3.61 \
+		web-sys-0.3.94 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.54.0 \
 		windows-core-0.54.0 \
+		windows-link-0.2.1 \
 		windows-result-0.1.2 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
-		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
+		windows-sys-0.61.2 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.0 \
+		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.0 \
+		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.4.1
+		winnow-1.0.1 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		zerocopy-0.8.48 \
+		zerocopy-derive-0.8.48 \
+		zmij-1.0.21
 
 PLIST_FILES=	bin/xsynth-render
 
