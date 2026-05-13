@@ -1,0 +1,17 @@
+Mojo::SQL safely generates and composes SQL statements. To prevent SQL injection
+attacks, every ? in the input becomes a placeholder in the generated query, with
+the corresponding value bound to it. Partial statements can be composed
+recursively to build more complex queries.
+
+Literal question marks can be escaped with ??.
+
+Make partial statements optional to dynamically generate WHERE clauses.
+
+If you need a little more control over the generated SQL query, you can also
+bypass safety features with "sql_unsafe". But make sure to handle unsafe values
+yourself with appropriate escaping functions for your database. For PostgreSQL
+there are "escape_literal" and "escape_identifier" functions included with this
+module.
+
+For databases that do not support numbered placeholders like $1 and $2, you can
+set a custom character with the placeholder option.
