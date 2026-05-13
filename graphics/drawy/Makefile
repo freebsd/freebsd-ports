@@ -7,6 +7,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Infinite whiteboard application
 WWW=		https://apps.kde.org/drawy/
 
+IGNORE_i386=	upstream does not test builds on i386
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cmake desktop-file-utils gettext kde:6 \
