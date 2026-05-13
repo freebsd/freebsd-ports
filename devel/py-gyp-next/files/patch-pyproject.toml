@@ -1,10 +1,14 @@
---- pyproject.toml.orig	2026-04-21 07:23:16 UTC
+--- pyproject.toml.orig	2026-05-13 02:28:12 UTC
 +++ pyproject.toml
-@@ -12,7 +12,7 @@ requires-python = ">=3.9"
+@@ -10,10 +10,9 @@ readme = "README.md"
+ ]
+ description = "A fork of the GYP build system for use in the Node.js projects"
  readme = "README.md"
- license = { file="LICENSE" }
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { file="LICENSE" }
  requires-python = ">=3.9"
--dependencies = ["packaging>=24.0", "setuptools>=69.5.1"]
+-dependencies = ["packaging>=24.0", "setuptools>=77.0.3"]
 +dependencies = ["packaging>=24.0", "setuptools>=61.0"]
  classifiers = [
      "Development Status :: 3 - Alpha",
