@@ -3067,6 +3067,8 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SignoutCommand/cdesc-SignoutCommand.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SignoutCommand/execute-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SignoutCommand/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SourcesCommand/build_new_source-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SourcesCommand/build_source-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SourcesCommand/cdesc-SourcesCommand.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SourcesCommand/check_typo_squatting-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/SourcesCommand/config_file_name-i.ri
@@ -4692,6 +4694,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Version/bump-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Version/canonical_segments-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Version/cdesc-Version.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Version/compute_sort_key-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Version/correct%3f-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Version/create-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Version/eql%3f-i.ri
