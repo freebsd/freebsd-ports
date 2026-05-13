@@ -1,6 +1,6 @@
 --- cargo-crates/v8-147.0.0/build/toolchain/freebsd/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ cargo-crates/v8-147.0.0/build/toolchain/freebsd/BUILD.gn
-@@ -0,0 +1,66 @@
+@@ -0,0 +1,73 @@
 +# Copyright 2013 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be
 +# found in the LICENSE file.
@@ -64,6 +64,13 @@
 +clang_toolchain("clang_arm64") {
 +  toolchain_args = {
 +    current_cpu = "arm64"
++    current_os = "freebsd"
++  }
++}
++
++clang_toolchain("clang_ppc64") {
++  toolchain_args = {
++    current_cpu = "ppc64"
 +    current_os = "freebsd"
 +  }
 +}
