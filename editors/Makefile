@@ -61,6 +61,7 @@
     SUBDIR += gummi
     SUBDIR += helix
     SUBDIR += heme
+    SUBDIR += hexapoda
     SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexer
