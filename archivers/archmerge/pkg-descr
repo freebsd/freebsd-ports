@@ -7,6 +7,6 @@ to, or smaller in size than both of the input files. Archmerge
 can also be used to perform boolean operations on archives,
 such as merging 2 archives together, or updating a new file.
 
-NOTE: in it's current incarnation. Archmerge only operates on
+NOTE: in its current incarnation, Archmerge only operates on
 zip archives. Additional compression algorithms and techniques
 will be added soon.
