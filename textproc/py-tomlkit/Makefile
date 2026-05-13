@@ -1,5 +1,5 @@
 PORTNAME=	tomlkit
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/sdispater/tomlkit/releases/download/${PORTVERSION}/
@@ -21,7 +21,7 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	tests/toml-test/gen-multi.py
+SHEBANG_FILES=	tests/toml-test/gen.py
 
 post-patch:
 	@${MV} ${WRKSRC}/tests ${WRKSRC}/tomlkit
