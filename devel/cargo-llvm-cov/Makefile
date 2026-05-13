@@ -1,6 +1,6 @@
 PORTNAME=	cargo-llvm-cov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
+DISTVERSION=	0.8.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		duct-1.1.1 \
 		errno-0.3.14 \
 		fastrand-2.4.1 \
-		filetime-0.2.28 \
+		filetime-0.2.29 \
 		fs-err-3.3.0 \
 		glob-0.3.3 \
 		itoa-1.0.18 \
@@ -85,7 +85,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-1.0.2 \
 		xattr-1.6.1 \
-		zmij-1.0.21
+		zmij-1.0.21 \
+		test-helper@git+https://github.com/taiki-e/test-helper.git?rev=f38a7f5\#f38a7f5895cb5f562195c6116cffc139d712acf5
 
 PLIST_FILES=	bin/${PORTNAME}
 
