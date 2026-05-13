@@ -1,5 +1,5 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.20
+DISTVERSION=	8.4.21
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -395,10 +395,16 @@ CONFIGURE_ARGS+= --with-unixODBC=${LOCALBASE}
 .  endif
 
 .  if ${PHP_MODNAME} == "opcache"
-LIB_DEPENDS+=	libcapstone.so:devel/capstone
 # This is needed by Zend extensions, keep before everything.
 PHP_MOD_PRIO=		10
-CONFIGURE_ARGS+=        --enable-opcache --with-capstone
+CONFIGURE_ARGS+=        --enable-opcache
+
+OPTIONS_DEFINE=	JIT
+
+JIT_DESC=		Enable JIT support for opcache
+
+JIT_LIB_DEPENDS=	libcapstone.so:devel/capstone
+JIT_CONFIGURE_ON=	--with-capstone --enable-opcache-jit=yes
 .  endif
 
 .  if ${PHP_MODNAME} == "pcntl"
