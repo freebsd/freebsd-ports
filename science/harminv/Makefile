@@ -1,6 +1,6 @@
 PORTNAME=	harminv
 DISTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/harminv/releases/download/v${DISTVERSION}/
 

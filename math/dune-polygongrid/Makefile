@@ -1,5 +1,6 @@
 PORTNAME=	dune-polygongrid
 DISTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org

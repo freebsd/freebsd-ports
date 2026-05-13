@@ -1,6 +1,7 @@
 PORTNAME=	multicharge
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/

@@ -1,6 +1,6 @@
 PORTNAME=	numpy
 DISTVERSION=	1.26.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://numpy.org/doc/${DISTVERSION:R}/:doc

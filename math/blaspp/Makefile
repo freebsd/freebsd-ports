@@ -1,5 +1,6 @@
 PORTNAME=	blaspp
 DISTVERSION=	2025.05.28
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/icl-utk-edu/blaspp/releases/download/v${DISTVERSION}/
 

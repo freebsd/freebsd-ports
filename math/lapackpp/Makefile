@@ -1,5 +1,6 @@
 PORTNAME=	lapackpp
 DISTVERSION=	2025.05.28
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/icl-utk-edu/lapackpp/releases/download/v${DISTVERSION}/
 
