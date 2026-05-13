@@ -1,4 +1,4 @@
-odebook is a spell checker for code. It binds together the venerable
+Codebook is a spell checker for code. It binds together the venerable
 Tree Sitter and the fast spell checker Spellbook. Included is a
 Language Server for use in (theoretically) any editor. Everything
 is done in Rust to keep response times snappy and memory usage low.
