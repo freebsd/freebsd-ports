@@ -1,6 +1,6 @@
---- src/common/filesystem.c.orig	2022-01-22 08:51:28 UTC
+--- src/common/filesystem.c.orig	2025-09-14 05:35:31 UTC
 +++ src/common/filesystem.c
-@@ -2029,7 +2029,8 @@ void FS_BuildRawPath(void) {
+@@ -2131,7 +2131,8 @@ FS_BuildRawPath(void)
  	// binary compiled with SYSTEMWIDE (installed from
  	// packages), but no systemwide game data.
  #ifdef SYSTEMWIDE

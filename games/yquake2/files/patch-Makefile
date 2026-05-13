@@ -1,6 +1,6 @@
---- Makefile.orig	2022-01-22 08:51:28 UTC
+--- Makefile.orig	2025-09-14 05:35:31 UTC
 +++ Makefile
-@@ -251,10 +251,13 @@ endif
+@@ -253,10 +253,13 @@ override CFLAGS += -DSYSTEMWIDE
  # Systemwide installation.
  ifeq ($(WITH_SYSTEMWIDE),yes)
  override CFLAGS += -DSYSTEMWIDE
@@ -16,9 +16,9 @@
  
  # ----------
  
-@@ -405,7 +408,8 @@ config:
- 	@echo "WITH_OPENAL = $(WITH_OPENAL)"
+@@ -429,7 +432,8 @@ config:
  	@echo "WITH_RPATH = $(WITH_RPATH)"
+ 	@echo "WITH_SDL3 = $(WITH_SDL3)"
  	@echo "WITH_SYSTEMWIDE = $(WITH_SYSTEMWIDE)"
 -	@echo "WITH_SYSTEMDIR = $(WITH_SYSTEMDIR)"
 +	@echo "WITH_SYSTEMDATADIR = $(WITH_SYSTEMDATADIR)"
