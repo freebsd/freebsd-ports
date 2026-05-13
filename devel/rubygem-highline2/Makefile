@@ -1,5 +1,6 @@
 PORTNAME=	highline
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -18,4 +19,10 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^2\.
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.4
+RUN_DEPENDS+=	rubygem-abbrev>=0:textproc/rubygem-abbrev
+.endif
+
+.include <bsd.port.post.mk>
