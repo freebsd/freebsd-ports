@@ -12,7 +12,7 @@ WWW=		https://dev.yorhel.nl/ncdu \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt
 
-BUILD_DEPENDS=	zig>=0.14:lang/zig
+BUILD_DEPENDS=	zig015>=0.14<0.16:lang/zig015
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		ncurses pkgconfig
