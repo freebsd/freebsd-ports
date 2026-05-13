@@ -1,9 +1,12 @@
 PORTNAME=	postorius
 PORTVERSION=	1.3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://gitlab.com/mailman/postorius/-/commit/
+PATCHFILES=	c4706abd05ba6bcf472fc674b160d3a9d6a4868b.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web user interface for GNU Mailman
