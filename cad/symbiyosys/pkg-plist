@@ -6,6 +6,7 @@ share/yosys/python3/sby_design.py
 share/yosys/python3/sby_engine_abc.py
 share/yosys/python3/sby_engine_aiger.py
 share/yosys/python3/sby_engine_btor.py
+share/yosys/python3/sby_engine_itp.py
 share/yosys/python3/sby_engine_smtbmc.py
 share/yosys/python3/sby_jobserver.py
 share/yosys/python3/sby_mode_bmc.py
