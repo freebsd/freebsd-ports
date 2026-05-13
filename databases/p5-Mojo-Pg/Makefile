@@ -1,5 +1,5 @@
 PORTNAME=	Mojo-Pg
-PORTVERSION=	4.29
+PORTVERSION=	5.0
 CATEGORIES=	databases www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SRI
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBD-Pg>=3.7.4:databases/p5-DBD-Pg \
+		p5-Mojo-SQL>=0.01:databases/p5-Mojo-SQL \
 		p5-Mojolicious>=8.50:www/p5-Mojolicious \
 		p5-SQL-Abstract-Pg>=1.0:databases/p5-SQL-Abstract-Pg
 
