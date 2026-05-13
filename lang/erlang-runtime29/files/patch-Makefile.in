@@ -1,20 +1,20 @@
---- Makefile.in.orig	2025-02-12 10:24:27 UTC
+--- Makefile.in.orig	2026-05-13 09:29:44 UTC
 +++ Makefile.in
-@@ -60,7 +60,7 @@ libdir		= @libdir@
+@@ -62,7 +62,7 @@ libdir		= @libdir@
  libdir		= @libdir@
- 
+
  # Where Erlang/OTP is located
 -libdir_suffix	= /erlang
 +libdir_suffix	= /erlang29
  erlang_libdir	= $(libdir)$(libdir_suffix)
  erlang_bindir	= $(erlang_libdir)/bin
- 
-@@ -851,7 +851,7 @@ $(TEST_DIRS):
+
+@@ -855,7 +855,7 @@ $(TEST_DIRS):
  #
  # Order is important here, don't change it!
  #
--INST_DEP += install.dirs install.emulator install.libs install.Install install.otp_version install.bin
-+INST_DEP += install.dirs install.emulator install.libs install.Install install.otp_version
- 
+-INST_DEP += sys.config install.dirs install.emulator install.libs install.Install install.otp_version install.config install.bin
++INST_DEP += sys.config install.dirs install.emulator install.libs install.Install install.otp_version install.config
+
  install: $(INST_DEP)
- 
+
