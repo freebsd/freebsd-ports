@@ -577,6 +577,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/bin/blake3_test
 %%TESTS%%share/zfs/zfs-tests/bin/btree_test
 %%TESTS%%share/zfs/zfs-tests/bin/chg_usr_exec
+%%TESTS%%share/zfs/zfs-tests/bin/clone_after_trunc
 %%TESTS%%share/zfs/zfs-tests/bin/clone_mmap_cached
 %%TESTS%%share/zfs/zfs-tests/bin/clone_mmap_write
 %%TESTS%%share/zfs/zfs-tests/bin/clonefile
@@ -714,6 +715,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/bclone/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_after_device_removal.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_after_trunc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_clone_mmap_cached.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_clone_mmap_write.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_copyfilerange.ksh
@@ -1066,6 +1068,9 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/jail.conf
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/zfs_jail_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_list/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_list/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_list/zfs_list_009_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_load-key/HEXKEY
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_load-key/PASSPHRASE
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_load-key/RAWKEY
@@ -1987,6 +1992,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/exec_002_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/fadvise_dontneed.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/fadvise_sequential.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/fadvise_willneed.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/setup.ksh
@@ -2173,6 +2179,9 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/large_files/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/largest_pool/largest_pool.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/largest_pool/largest_pool_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/lease/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/lease/lease_setlease.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/lease/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/libzfs/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/libzfs/libzfs_input.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/libzfs/many_fds
@@ -2412,6 +2421,8 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid3.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_damaged1.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_damaged2.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_degraded1.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_degraded2.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare1.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare2.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare3.ksh
