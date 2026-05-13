@@ -1,5 +1,5 @@
 PORTNAME=	wassima
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/wassima/releases/download/${PORTVERSION}/
