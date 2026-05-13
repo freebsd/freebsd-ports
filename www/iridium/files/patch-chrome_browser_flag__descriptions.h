@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2026-05-11 13:57:04 UTC
+--- chrome/browser/flag_descriptions.h.orig	2026-05-13 08:49:22 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -8457,6 +8457,18 @@ inline constexpr char kAndroidEntraSsoDescription[] =
+@@ -8469,6 +8469,18 @@ inline constexpr char kAndroidEntraSsoDescription[] =
      "Enables native support for Entra SSO on Android provided by selected "
      "Authentication Brokers.";
  
