@@ -590,7 +590,6 @@ etc/bash_completion.d/000_bash_completion_compat.bash
 %%DATADIR%%/completions/inotifywait
 %%DATADIR%%/completions/inotifywatch
 %%DATADIR%%/completions/installpkg
-%%DATADIR%%/completions/interdiff
 %%DATADIR%%/completions/invoke-rc.d
 %%DATADIR%%/completions/ip
 %%DATADIR%%/completions/ipcalc
