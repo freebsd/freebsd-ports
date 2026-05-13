@@ -1,6 +1,7 @@
 PORTNAME=	jujutsu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.41.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	se@FreeBSD.org
@@ -26,10 +27,10 @@ do-install:
 			${STAGEDIR}${PREFIX}/bin/
 		cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 		cd ${WRKSRC}/demos && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-		${STAGEDIR}${PREFIX}/bin/jj util install-man-pages ${STAGEDIR}${PREFIX}/share/man/
+		cd ${TMPDIR:U/tmp} && ${STAGEDIR}${PREFIX}/bin/jj util install-man-pages ${STAGEDIR}${PREFIX}/share/man/
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-		${STAGEDIR}${PREFIX}/bin/jj util completion bash > ${STAGEDIR}${PREFIX}/etc/bash_completion.d/jj
+		cd ${TMPDIR:U/tmp} && ${STAGEDIR}${PREFIX}/bin/jj util completion bash > ${STAGEDIR}${PREFIX}/etc/bash_completion.d/jj
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-		${STAGEDIR}${PREFIX}/bin/jj util completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_jj
+		cd ${TMPDIR:U/tmp} && ${STAGEDIR}${PREFIX}/bin/jj util completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_jj
 
 .include <bsd.port.mk>
