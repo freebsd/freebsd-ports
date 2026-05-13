@@ -1,8 +1,8 @@
 PORTNAME=	pluma
-PORTVERSION=	1.28.0
-PORTREVISION=	4
+DISTVERSION=	1.28.1
 CATEGORIES=	editors mate
-MASTER_SITES=	MATE
+MASTER_SITES=	MATE \
+		https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
