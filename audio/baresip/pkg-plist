@@ -29,7 +29,6 @@ lib/baresip/modules/echo.so
 lib/baresip/modules/fakevideo.so
 lib/baresip/modules/g711.so
 %%G722%%lib/baresip/modules/g722.so
-%%G726%%lib/baresip/modules/g726.so
 %%GSTREAMER%%lib/baresip/modules/gst.so
 %%GTK3%%lib/baresip/modules/gtk.so
 lib/baresip/modules/httpd.so
@@ -84,7 +83,7 @@ lib/baresip/modules/vumeter.so
 %%X11%%lib/baresip/modules/x11.so
 lib/libbaresip.so
 lib/libbaresip.so.27
-lib/libbaresip.so.27.7.0
+lib/libbaresip.so.27.8.0
 libdata/pkgconfig/libbaresip.pc
 share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
