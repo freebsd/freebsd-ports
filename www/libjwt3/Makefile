@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash>=0:shells/bash
 LIB_DEPENDS=	libjansson.so:devel/jansson
+TEST_DEPENDS=	bash>=0:shells/bash \
+		check>=0.9.10:devel/check
 
-USES=		cmake pkgconfig ssl tar:xz
+USES=		cmake:testing pkgconfig ssl tar:xz
 
 CMAKE_OFF=	CODE_COVERAGE_VERBOSE \
 		ENABLE_COVERAGE \
@@ -24,6 +26,7 @@ CMAKE_OFF=	CODE_COVERAGE_VERBOSE \
 		WITH_MBEDTLS \
 		WITH_TESTS
 CMAKE_ON=	EXCLUDE_DEPRECATED
+CMAKE_TESTING_ON=	WITH_TESTS
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/LibJWT
