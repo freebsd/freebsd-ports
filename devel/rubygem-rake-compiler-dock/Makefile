@@ -1,5 +1,5 @@
 PORTNAME=	rake-compiler-dock
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,9 +8,11 @@ COMMENT=	Cross compiler environment for building Windows binary gems
 WWW=		https://github.com/rake-compiler/rake-compiler-dock
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		gem shebangfix
 
 NO_ARCH=	yes
-USES=		gem shebangfix
 
 SHEBANG_FILES=	build/runas
 
