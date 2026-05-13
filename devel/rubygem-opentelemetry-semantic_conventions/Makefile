@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-semantic_conventions
-PORTVERSION=	1.37.0
+PORTVERSION=	1.37.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
