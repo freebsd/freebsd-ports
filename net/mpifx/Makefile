@@ -1,6 +1,5 @@
 PORTNAME=	mpifx
-DISTVERSION=	1.5
-PORTREVISION=	1
+DISTVERSION=	1.6
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 post-patch:
 	${REINPLACE_CMD} -e '/include(CTest)/d' ${WRKSRC}/CMakeLists.txt
 
-post-test: # run test programs # at least one test crashes, see https://github.com/dftbplus/mpifx/issues/35
+post-test: # run test programs without mpirun (CTest disabled, see https://github.com/dftbplus/mpifx/issues/49)
 .for f in test_allgather test_allgatherv test_allreduce test_bcast test_comm_split test_gather test_gatherv test_reduce test_scatter test_scatterv
 	cd ${BUILD_WRKSRC}/test && ./${f}
 .endfor
@@ -33,7 +32,5 @@ post-test: # run test programs # at least one test crashes, see https://github.c
 # workaround for Type mismatch in argument 'cc' at (1); passed COMPLEX(8) to REAL(8)
 FFLAGS+=	-fallow-argument-mismatch
 .endif
-
-# tests fail to run: https://github.com/dftbplus/mpifx/issues/49
 
 .include <bsd.port.post.mk>
