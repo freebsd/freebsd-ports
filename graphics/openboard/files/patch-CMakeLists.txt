@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-03-23 11:30:46 UTC
++++ CMakeLists.txt
+@@ -80,7 +80,7 @@ set(OPENBOARD_MIMEICON_FILE resources/linux/ch.openboa
+ # Basic compiler settings
+ # ==========================================================================
+ 
+-set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard to use - defaults to C++17")
++set(CMAKE_CXX_STANDARD 20 CACHE STRING "C++ standard to use - defaults to C++20")
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTOUIC ON)
