@@ -1,7 +1,6 @@
 PORTNAME=	picom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.5
-PORTREVISION=	1
+DISTVERSION=	13
 CATEGORIES=	x11-wm
 
 MAINTAINER=	yukiteruamano@volfread.xyz
@@ -35,14 +34,15 @@ PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-trans \
 		"@sample etc/xdg/${PORTNAME}.conf.sample" \
 		etc/xdg/autostart/${PORTNAME}.desktop \
+		include/${PORTNAME}/api.h \
+		include/${PORTNAME}/backend.h \
 		libdata/pkgconfig/${PORTNAME}-api.pc \
 		share/applications/${PORTNAME}.desktop
 
-OPTIONS_DEFINE=		CONFIG DBUS DOCS DRM OPENGL PCRE
+OPTIONS_DEFINE=		CONFIG DBUS DOCS OPENGL PCRE
 OPTIONS_DEFAULT=	CONFIG DBUS OPENGL PCRE
 
 CONFIG_DESC=	Configuration file parsing support
-DRM_DESC=	DRM VSync fallback (deprecated)
 
 CONFIG_LIB_DEPENDS=	libconfig.so:devel/libconfig
 
@@ -55,9 +55,6 @@ DOCS_MESON_TRUE=	with_docs
 DOCS_PLIST_FILES=	share/man/man1/${PORTNAME}-inspect.1.gz \
 			share/man/man1/${PORTNAME}-trans.1.gz \
 			share/man/man1/${PORTNAME}.1.gz
-
-DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
-DRM_MESON_TRUE=		vsync_drm
 
 OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
 OPENGL_MESON_TRUE=	opengl
