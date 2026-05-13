@@ -176,16 +176,19 @@ include/php/ext/lexbor/core/swar.h
 include/php/ext/lexbor/core/types.h
 include/php/ext/lexbor/core/utils.h
 include/php/ext/lexbor/css/at_rule.h
+include/php/ext/lexbor/css/at_rule/types.h
 include/php/ext/lexbor/css/at_rule/const.h
 include/php/ext/lexbor/css/at_rule/res.h
 include/php/ext/lexbor/css/at_rule/state.h
 include/php/ext/lexbor/css/base.h
+include/php/ext/lexbor/css/blank.h
 include/php/ext/lexbor/css/css.h
 include/php/ext/lexbor/css/declaration.h
 include/php/ext/lexbor/css/property.h
 include/php/ext/lexbor/css/property/const.h
 include/php/ext/lexbor/css/property/res.h
 include/php/ext/lexbor/css/property/state.h
+include/php/ext/lexbor/css/property/types.h
 include/php/ext/lexbor/css/rule.h
 include/php/ext/lexbor/css/selectors/base.h
 include/php/ext/lexbor/css/selectors/pseudo.h
@@ -288,7 +291,9 @@ include/php/ext/lexbor/html/interfaces/pre_element.h
 include/php/ext/lexbor/html/interfaces/progress_element.h
 include/php/ext/lexbor/html/interfaces/quote_element.h
 include/php/ext/lexbor/html/interfaces/script_element.h
+include/php/ext/lexbor/html/interfaces/search_element.h
 include/php/ext/lexbor/html/interfaces/select_element.h
+include/php/ext/lexbor/html/interfaces/selectedcontent_element.h
 include/php/ext/lexbor/html/interfaces/slot_element.h
 include/php/ext/lexbor/html/interfaces/source_element.h
 include/php/ext/lexbor/html/interfaces/span_element.h
@@ -310,7 +315,6 @@ include/php/ext/lexbor/html/interfaces/video_element.h
 include/php/ext/lexbor/html/interfaces/window.h
 include/php/ext/lexbor/html/node.h
 include/php/ext/lexbor/html/serialize.h
-include/php/ext/lexbor/html/style.h
 include/php/ext/lexbor/html/tag.h
 include/php/ext/lexbor/html/tag_res.h
 include/php/ext/lexbor/html/token.h
