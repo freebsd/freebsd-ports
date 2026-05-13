@@ -54,7 +54,6 @@ include/catch2/generators/catch_generators_throw.hpp
 include/catch2/interfaces/catch_interfaces_all.hpp
 include/catch2/interfaces/catch_interfaces_capture.hpp
 include/catch2/interfaces/catch_interfaces_config.hpp
-include/catch2/interfaces/catch_interfaces_enum_values_registry.hpp
 include/catch2/interfaces/catch_interfaces_exception.hpp
 include/catch2/interfaces/catch_interfaces_generatortracker.hpp
 include/catch2/interfaces/catch_interfaces_registry_hub.hpp
@@ -84,7 +83,7 @@ include/catch2/internal/catch_debugger.hpp
 include/catch2/internal/catch_decomposer.hpp
 include/catch2/internal/catch_deprecation_macro.hpp
 include/catch2/internal/catch_enforce.hpp
-include/catch2/internal/catch_enum_values_registry.hpp
+include/catch2/internal/catch_enum_info.hpp
 include/catch2/internal/catch_errno_guard.hpp
 include/catch2/internal/catch_exception_translator_registry.hpp
 include/catch2/internal/catch_fatal_condition_handler.hpp
@@ -192,9 +191,9 @@ lib/cmake/Catch2/CatchShardTests.cmake
 lib/cmake/Catch2/CatchShardTestsImpl.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.14.0
+lib/libCatch2.so.3.15.0
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.14.0
+lib/libCatch2Main.so.3.15.0
 share/Catch2/gdbinit
 share/Catch2/lldbinit
 share/pkgconfig/catch2-with-main.pc
