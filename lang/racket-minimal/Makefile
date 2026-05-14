@@ -1,6 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	9.0
-PORTREVISION=	1
+PORTVERSION=	9.1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -101,12 +100,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/ChezScheme/configure ${WRKSRC}/bc/configure ${WRKSRC}/cs/c/configure
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 # Base strip on 14.x lacks --keep-section, but also leaves .rackboot intact.
 .if ${OSVERSION} >= 1500000
 	${STRIP_CMD} --keep-section=.rackboot ${STAGEDIR}${PREFIX}/lib/racket/gracket
 .else
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/racket/gracket
 .endif
+
+post-stage:
+	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} etc include lib share/doc share/racket \
+			\( -type f -o -type l \) | \
+		${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>
