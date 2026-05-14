@@ -1,2 +1,9 @@
-Canna is a Kana-Kanji conversion server. It supports
-Mule(Multi-lingual extention Emacs), kinput2 X11 input method, etc.
+Canna is a Japanese input system available in Free Software.
+Canna provides a unified user interface for inputing Japanese.
+
+Canna supports Emacs, kinput2 and others. All of these tools can be used
+by a single customization file, romaji-to-kana conversion rules and
+conversion dictionaries, and input Japanese in the same way.
+
+Canna converts kana to kanji based on a client-server model and supports
+automatic kana-to-kanji conversion.

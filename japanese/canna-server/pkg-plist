@@ -17,7 +17,6 @@ bin/dpbindic
 bin/dpromdic
 bin/dpxdic
 bin/forcpp
-bin/forsort
 bin/kpdic
 bin/lsdic
 bin/mergeword
@@ -39,6 +38,7 @@ sbin/cannakill
 @(bin,bin,) %%DATADIR%%/dic/canna/hojoswd.ctd
 @(bin,bin,) %%DATADIR%%/dic/canna/iroha.cbd
 @(bin,bin,) %%DATADIR%%/dic/canna/iroha.cld
+@(bin,bin,) %%DATADIR%%/dic/canna/jigyosyo.cld
 @(bin,bin,) %%DATADIR%%/dic/canna/kanasmpl.ctd
 @(bin,bin,) %%DATADIR%%/dic/canna/katakana.ctd
 @(bin,bin,) %%DATADIR%%/dic/canna/keishiki.ctd
@@ -46,6 +46,8 @@ sbin/cannakill
 @(bin,bin,) %%DATADIR%%/dic/canna/number.ctd
 @(bin,bin,) %%DATADIR%%/dic/canna/software.ctd
 @(bin,bin,) %%DATADIR%%/dic/canna/suffix.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/zipcode.cbd
+@(bin,bin,) %%DATADIR%%/dic/canna/zipcode.cld
 share/man/ja/man1/addwords.1.gz
 share/man/ja/man1/cannacheck.1.gz
 share/man/ja/man1/cannakill.1.gz
