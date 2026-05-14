@@ -1,5 +1,5 @@
 PORTNAME=	sabnzbd
-DISTVERSION=	4.5.5
+DISTVERSION=	5.0.1
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	SABnzbd-${DISTVERSION}-src
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apprise>0:net-im/py-apprise@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybonjour>0:dns/py-pybonjour@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rarfile>0:archivers/py-rarfile@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sabctools>=8.2.0<8.3:news/py-sabctools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sabctools>=9.4.0:news/py-sabctools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		par2cmdline-turbo>0:archivers/par2cmdline-turbo \
 		unrar:archivers/unrar
