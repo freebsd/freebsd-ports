@@ -1,12 +1,12 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.11.1.558
+DISTVERSION=	25.11.2.24
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
-# implicit-approval+: bofh
-MAINTAINER=	pi@FreeBSD.org
+# implicit-approval+: pi
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fast open-source OLAP database management system
 WWW=		https://clickhouse.com/
 
@@ -117,7 +117,7 @@ do-test-TEST-on:
 	cd ${WRKSRC} && ctest -j4 -V
 
 .if defined(MAINTAINER_MODE)
-_make-touples:
+_make-touples: extract
 	@set -eu; \
 	_REPO=${GH_ACCOUNT}/${GH_PROJECT}; \
 	_API="https://api.github.com/repos/$${_REPO}"; \
@@ -125,17 +125,21 @@ _make-touples:
 	_TMPDIR=$$(mktemp -d -t clickhouse-submods); \
 	trap 'rm -rf "$${_TMPDIR}"' EXIT INT TERM; \
 	_OUTFILE="$$(pwd)/Makefile.submodules"; \
+	_CURL_OPTS="-s"; \
+	if [ -n "$${GH_TOKEN}" ]; then \
+		_CURL_OPTS="$${_CURL_OPTS} -H Authorization:\ Bearer\ $${GH_TOKEN}"; \
+	fi; \
 	${ECHO_CMD} "===> Resolving tag $${_TAG}"; \
-	_COMMIT=$$(${FETCH_CMD} -qo - "$${_API}/git/refs/tags/$${_TAG}" \
+	_COMMIT=$$(curl $${_CURL_OPTS} "$${_API}/git/refs/tags/$${_TAG}" \
 	  | jq -r 'if type=="array" then .[0].object.sha else .object.sha end'); \
 	${ECHO_CMD} "===> Commit: $${_COMMIT}"; \
 	${ECHO_CMD} "===> Fetching contrib tree"; \
-	${FETCH_CMD} -qo - "$${_API}/git/trees/$${_COMMIT}?recursive=1" \
-	  | jq -r '.tree[] | select(.path|startswith("contrib/")) | select(.type=="commit") | "\(.path) \(.sha)"' \
-	  > "$${_TMPDIR}/tree.txt"; \
+	curl $${_CURL_OPTS} "$${_API}/git/trees/$${_COMMIT}?recursive=1" \
+	 | jq -r '.tree[] | select(.path|startswith("contrib/")) | select(.type=="commit") | "\(.path) \(.sha)"' \
+	 > "$${_TMPDIR}/tree.txt"; \
 	${ECHO_CMD} "===> Fetching .gitmodules"; \
-	${FETCH_CMD} -qo "$${_TMPDIR}/.gitmodules" \
-	  "https://raw.githubusercontent.com/$${_REPO}/$${_TAG}/.gitmodules" 2>/dev/null || true; \
+	curl -so "$${_TMPDIR}/.gitmodules" \
+	 "https://raw.githubusercontent.com/$${_REPO}/$${_TAG}/.gitmodules" 2>/dev/null || true; \
 	${SED} -e 's/\r$$//' "$${_TMPDIR}/.gitmodules" > "$${_TMPDIR}/.gitmodules.lf"; \
 	${AWK} '/^[[:space:]]*path[[:space:]]*=/ { \
 			gsub(/^[[:space:]]*path[[:space:]]*=[[:space:]]*/, "", $$0); \
@@ -148,15 +152,15 @@ _make-touples:
 	${ECHO_CMD} "===> Generating Makefile.gh-touples"; \
 	${AWK} 'NR==FNR { urls[$$1]=$$2; next } \
 		{ path=$$1; sha=$$2; url=urls[path]; if (url == "") next; \
-		  n=split(url, parts, "/"); org=parts[n-1]; repo=parts[n]; sub(/\.git$$/, "", repo); \
-		  org_repl=org; repo_repl=repo; gsub(/[-.]/, "_", org_repl); gsub(/[-.]/, "_", repo_repl); \
-		  printf("GH_TUPLE+=\t%s:%s:%s:%s_%s/%s\n", \
-		         org, repo, substr(sha,1,8), org_repl, repo_repl, path); }' \
+		 n=split(url, parts, "/"); org=parts[n-1]; repo=parts[n]; sub(/\.git$$/, "", repo); \
+		 org_repl=org; repo_repl=repo; gsub(/[-.]/, "_", org_repl); gsub(/[-.]/, "_", repo_repl); \
+		 printf("GH_TUPLE+=\t%s:%s:%s:%s_%s/%s\n", \
+		        org, repo, substr(sha,1,8), org_repl, repo_repl, path); }' \
 		"$${_TMPDIR}/modules.txt" "$${_TMPDIR}/tree.txt" > "$${_OUTFILE}"; \
 	${ECHO_CMD} "===> Writing $${_OUTFILE} completed"
 	${REINPLACE_CMD} -e 's|unum-cloud:usearch|unum-cloud:USearch|' \
 		${.CURDIR}/Makefile.submodules
-	${RM} ${.CURDIR}/Makefile.submodules.bak
+	if [ -f ${.CURDIR}/Makefile.submodules.bak ]; then ${RM} ${.CURDIR}/Makefile.submodules.bak; fi
 .endif
 
 .include <bsd.port.mk>
