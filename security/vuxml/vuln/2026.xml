@@ -2,6 +2,13 @@
     <topic>py-setuptools -- Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</topic>
     <affects>
     <package>
+	<name>py27-setuptools44</name>
+	<name>py310-setuptools58</name>
+	<name>py311-setuptools58</name>
+	<name>py312-setuptools58</name>
+	<name>py313-setuptools58</name>
+	<name>py313t-setuptools58</name>
+	<name>py314-setuptools58</name>
 	<name>py310-setuptools</name>
 	<name>py311-setuptools</name>
 	<name>py312-setuptools</name>
