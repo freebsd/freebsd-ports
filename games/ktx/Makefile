@@ -1,6 +1,14 @@
 PORTNAME=	ktx
-DISTVERSION=	1.45
+DISTVERSION=	1.46
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/QW-Group/ktx/commit/
+PATCHFILES=	18ce9990e07f08f433759d68f47115e93fa05067.patch:-p1 \
+		c166537fafc128cdcbe6f1d126d8089461a812bb.patch:-p1 \
+		1f324ab0dd99c55bf8a4c126be7d72ba1992c779.patch:-p1 \
+		0b8bf7ac91f8b47c15f926d2c3214dd9d413e1a6.patch:-p1 \
+		c43aafcdc31e66812bb9116c7eca4bc736b76376.patch:-p1 \
+		c871f3d2064e1881c694a7357986479b8cb96333.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Kombat Teams eXtreme is a popular QuakeWorld server modification
@@ -11,10 +19,12 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	mvdsv:games/mvdsv
 
 USES=		cmake dos2unix
-DOS2UNIX_FILES=	resources/example-configs/ktx/ktx.cfg \
+DOS2UNIX_FILES=	resources/example-configs/id1/maps/arena3.ent \
+		resources/example-configs/ktx/ktx.cfg \
 		resources/example-configs/ktx/mvdsv.cfg \
 		resources/example-configs/ktx/problem.cfg \
-		resources/example-configs/ktx/race/routes/ztricks2.route
+		resources/example-configs/ktx/race/routes/ztricks2.route \
+		resources/extralog/ktxlog_0.1.xsd
 USE_GITHUB=	yes
 GH_ACCOUNT=	QW-Group
 USE_RC_SUBR=	${PORTNAME}
