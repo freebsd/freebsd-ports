@@ -1,12 +1,12 @@
-PORTNAME=	storcli
-DISTVERSION=	7.3603
+PORTNAME=	storcli2
+DISTVERSION=	8.17
 CATEGORIES=	sysutils
-MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p37/
-DISTNAME=	STORCLI_SAS3.5_P37
-DIST_SUBDIR=	${PORTNAME}${DISTVERSION}
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/
+DISTNAME=	StorCLI_Avenger_8.17_08.017.000.0008
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	takefu@airport.fm
-COMMENT=	SAS MegaRAID FreeBSD StorCLI
+COMMENT=	SAS4 MegaRAID FreeBSD StorCLI2
 WWW=		https://www.broadcom.com/support/
 
 LICENSE=	storcli
@@ -22,10 +22,10 @@ USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST_FILES=	sbin/storcli
-PORTDOCS=	MR_SAS_Unified_StorCLI--00${DISTVERSION}.0000.0000.pdf readme.txt
+PLIST_FILES=	sbin/storcli2
+PORTDOCS=	ThirdPartyLicenseNotice.pdf readme.txt
 OPTIONS_DEFINE=	DOCS
-BINSRC=		${WRKSRC}/${DISTNAME}/univ_viva_cli_rel/Unified_storcli_all_os
+BINSRC=		${WRKSRC}/storcli_rel/Avenger_StorCLI
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +37,7 @@ IGNORE=		you must manually fetch the distribution file \
 .endif
 
 post-extract:
-	@${TAR} xf ${BINSRC}/FreeBSD/storcli64.tar -C${WRKSRC}
+	@${TAR} xf ${BINSRC}/FreeBSD/storcli2.tar -C${WRKSRC}
 	@${ECHO} "[" > ${WRKDIR}/pkg-message
 	@${ECHO} "{" >> ${WRKDIR}/pkg-message
 	@${ECHO} "  message: <<EOM" >> ${WRKDIR}/pkg-message
@@ -47,11 +47,11 @@ post-extract:
 	@${ECHO} "]" >> ${WRKDIR}/pkg-message
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/storcli64 ${STAGEDIR}${PREFIX}/sbin/storcli
+	${INSTALL_PROGRAM} ${WRKSRC}/storcli2 ${STAGEDIR}${PREFIX}/sbin/storcli2
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA}	${BINSRC}/../../MR_SAS_Unified_StorCLI--00${DISTVERSION}.0000.0000.pdf \
+	${INSTALL_DATA}	${BINSRC}/ThirdPartyLicenseNotice.pdf \
 		${BINSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
