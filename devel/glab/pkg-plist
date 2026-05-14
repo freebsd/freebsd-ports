@@ -135,6 +135,7 @@
 %%MANPAGES%%share/man/man1/glab-opentofu-state-unlock.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu-state.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-local.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-remote-graph-status.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-remote-query.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-remote-schema.1.gz
