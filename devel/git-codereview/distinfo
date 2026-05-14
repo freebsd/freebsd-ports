@@ -1,3 +1,5 @@
-TIMESTAMP = 1773440307
-SHA256 (golang-review-v1.19.0_GH0.tar.gz) = f088137cd0b92b17975efcb42fceae6c6f1726d684524a9feca77cbde2f356a8
-SIZE (golang-review-v1.19.0_GH0.tar.gz) = 72316
+TIMESTAMP = 1778691076
+SHA256 (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.mod) = eb00041913cb6472bb9c5022013c7fcd600287ad5dd617fed6c9e1bf392c3d8c
+SIZE (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.mod) = 38
+SHA256 (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.zip) = 215f7bccf9dd2ab0d829b0a95f72d70be765304ba265121c29d635bd5442ce98
+SIZE (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.zip) = 92656

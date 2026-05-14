@@ -1,7 +1,6 @@
 PORTNAME=	git-codereview
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.0
-PORTREVISION=	2
+DISTVERSION=	1.20.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,14 +10,8 @@ WWW=		https://godoc.org/golang.org/x/review/git-codereview
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
-#GO_MODULE=	golang.org/x/review
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	golang
-GH_PROJECT=	review
-
-GO_PKGNAME=	golang.org/x/review
+USES=		go:modules
+GO_MODULE=	golang.org/x/review
 GO_TARGET=	./git-codereview
 
 PLIST_FILES=	bin/git-codereview
