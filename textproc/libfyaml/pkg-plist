@@ -6,6 +6,19 @@ bin/fy-testsuite
 bin/fy-tool
 bin/fy-ypath
 include/libfyaml.h
+include/libfyaml/libfyaml-align.h
+include/libfyaml/libfyaml-allocator.h
+include/libfyaml/libfyaml-atomics.h
+include/libfyaml/libfyaml-blake3.h
+include/libfyaml/libfyaml-composer.h
+include/libfyaml/libfyaml-core.h
+include/libfyaml/libfyaml-docbuild.h
+include/libfyaml/libfyaml-dociter.h
+include/libfyaml/libfyaml-endian.h
+include/libfyaml/libfyaml-path-exec.h
+include/libfyaml/libfyaml-thread.h
+include/libfyaml/libfyaml-util.h
+include/libfyaml/libfyaml-vlsize.h
 lib/libfyaml.a
 lib/libfyaml.so
 lib/libfyaml.so.0
@@ -18,3 +31,6 @@ share/man/man1/fy-join.1.gz
 share/man/man1/fy-testsuite.1.gz
 share/man/man1/fy-tool.1.gz
 share/man/man1/fy-ypath.1.gz
+share/man/man3/libfyaml-core.3.gz
+share/man/man3/libfyaml-misc.3.gz
+share/man/man3/libfyaml.3.gz
