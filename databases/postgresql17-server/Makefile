@@ -1,4 +1,4 @@
-DISTVERSION?=	17.9
+DISTVERSION?=	17.10
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
