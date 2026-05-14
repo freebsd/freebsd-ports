@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	1.0.44
+DISTVERSION=	1.0.48
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}-x # -x is to see if it would fix checksum errors
