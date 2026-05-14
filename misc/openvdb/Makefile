@@ -1,7 +1,11 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	13.0.0
+PORTREVISION=	1
 CATEGORIES=	misc
+
+PATCH_SITES=	https://github.com/AcademySoftwareFoundation/openvdb/commit/
+PATCHFILES=	d68d0914fc6ed41cadd363bd4330c39a7fb5b1f1.diff:-p1 # TBB 2023 fix
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for storage and manipulation of sparse volumetric data

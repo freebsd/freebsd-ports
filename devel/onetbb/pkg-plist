@@ -37,6 +37,7 @@ include/oneapi/tbb/detail/_flow_graph_join_impl.h
 include/oneapi/tbb/detail/_flow_graph_node_impl.h
 include/oneapi/tbb/detail/_flow_graph_node_set_impl.h
 include/oneapi/tbb/detail/_flow_graph_nodes_deduction.h
+include/oneapi/tbb/detail/_flow_graph_resource_limiting.h
 include/oneapi/tbb/detail/_flow_graph_tagged_buffer_impl.h
 include/oneapi/tbb/detail/_flow_graph_trace_impl.h
 include/oneapi/tbb/detail/_flow_graph_types_impl.h
@@ -148,14 +149,14 @@ lib/cmake/TBB/TBBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb%%DBGSUFX%%.so
 lib/libtbb%%DBGSUFX%%.so.12
-lib/libtbb%%DBGSUFX%%.so.12.17
+lib/libtbb%%DBGSUFX%%.so.12.18
 lib/libtbbbind_2_5%%DBGSUFX%%.so
 lib/libtbbbind_2_5%%DBGSUFX%%.so.3
-lib/libtbbbind_2_5%%DBGSUFX%%.so.3.17
+lib/libtbbbind_2_5%%DBGSUFX%%.so.3.18
 lib/libtbbmalloc%%DBGSUFX%%.so
 lib/libtbbmalloc%%DBGSUFX%%.so.2
-lib/libtbbmalloc%%DBGSUFX%%.so.2.17
+lib/libtbbmalloc%%DBGSUFX%%.so.2.18
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2
-lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.17
+lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.18
 libdata/pkgconfig/tbb%%PCSUFX%%.pc
