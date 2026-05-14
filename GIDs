@@ -6,6 +6,7 @@ operator:*:5:amanda
 mail:*:6:postfix,clamav
 ftp:*:14:
 smmsp:*:25:
+audio:*:43:
 video:*:44:lightdm
 bind:*:53:
 rdfdb:*:55:
