@@ -1,7 +1,3 @@
-TIMESTAMP = 1778328157
-SHA256 (traefik-3.6.13.tar.xz) = 4fd2ec3e18fdd3a568defa1ecdb293c49b39b68477fb91b60b05c00eade5983b
-SIZE (traefik-3.6.13.tar.xz) = 26388616
-SHA256 (traefik-3.6.13-3.6.15.patch.xz) = 9518a36490193326b9751fa377b721d5dc741456eba36b69a8bc2c80507d8e93
-SIZE (traefik-3.6.13-3.6.15.patch.xz) = 732956
-SHA256 (traefik-3.6.15-3.6.16.patch.xz) = 53ade44fa6202258afc1c78d82bf782d311409b1a02ae36c823c3ee400fd4b9e
-SIZE (traefik-3.6.15-3.6.16.patch.xz) = 916776
+TIMESTAMP = 1778785441
+SHA256 (traefik-3.7.1.tar.xz) = eec16fb917306b27537ca3ab585182c058373eaf5c7fc8f42e95003ea94ab699
+SIZE (traefik-3.7.1.tar.xz) = 25827640
