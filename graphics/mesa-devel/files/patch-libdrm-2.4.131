@@ -20,6 +20,18 @@ meson.build:1835:15: ERROR: Dependency lookup for libdrm with method 'pkgconfig'
  
 --- src/amd/common/ac_gpu_info.c.orig	2026-05-06 17:09:22 UTC
 +++ src/amd/common/ac_gpu_info.c
+@@ -420,7 +420,11 @@ ac_fill_compiler_info(struct radeon_info *info, const 
+     *
+     * Only GFX9 works as expected.
+     */
++#if 0 /* No macro to detect libdrm version */
+    out->has_smem_with_null_prt_bug = info->gfx_level <= GFX12 && info->gfx_level != GFX9;
++#else
++   out->has_smem_with_null_prt_bug = 0;
++#endif
+ 
+    if (compat_mode && info->family == CHIP_REMBRANDT) {
+       out->has_ngg_passthru_no_msg = false;
 @@ -1740,6 +1740,7 @@ ac_query_gpu_info(int fd, void *dev_p, struct radeon_i
                             &info->pa_sc_raster_config_1, &info->se_tile_repeat);
     }
