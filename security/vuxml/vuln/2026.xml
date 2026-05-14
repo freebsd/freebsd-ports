@@ -1,3 +1,80 @@
+  <vuln vid="b3cb8f40-4f4c-11f1-80f1-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>18.11.0</ge><lt>18.11.3</lt></range>
+<range><ge>18.10.0</ge><lt>18.10.6</lt></range>
+<range><ge>8.3.0</ge><lt>18.9.7</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-18-11-3-released/">
+	  <p>Cross-site Scripting issue in Analytics dashboard chart rendering impacts GitLab EE</p>
+	  <p>Cross-site Scripting issue in global search impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Duo Agent output rendering impacts GitLab EE</p>
+	  <p>Cross-site Scripting issue in Analytics Dashboard impacts GitLab EE</p>
+	  <p>Denial of Service issue in CI/CD job update API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in Duo Workflows API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in internal API endpoints impacts GitLab CE/EE</p>
+	  <p>Improper Authorization issue in GraphQL token scope enforcement impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in Insights Configuration impacts GitLab EE</p>
+	  <p>Access Control issue in Issues API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in direct transfer CSV parser impacts GitLab CE/EE</p>
+	  <p>CSRF issue in JiraConnect subscriptions impacts GitLab CE/EE</p>
+	  <p>Confused Deputy issue in Jira integration impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Banzai markdown sanitizer impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in achievement email notifications impacts GitLab CE/EE</p>
+	  <p>Access Control issue in Helm package upload impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in NuGet Symbol Server impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in Container Registry protected tags impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in group user search impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in code owner approval rules impacts GitLab EE</p>
+	  <p>Access Control issue in PyPI Package Protection Rules impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in issue links API impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in virtual registry redirect handler impacts GitLab EE</p>
+	  <p>Access Control issue in GraphQL approval rule mutations impacts GitLab EE</p>
+	  <p>Missing Authorization issue in Security Policy Project Reassignment impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-7481</cvename>
+      <cvename>CVE-2026-5297</cvename>
+      <cvename>CVE-2026-6073</cvename>
+      <cvename>CVE-2026-7377</cvename>
+      <cvename>CVE-2026-1659</cvename>
+      <cvename>CVE-2025-14870</cvename>
+      <cvename>CVE-2025-14869</cvename>
+      <cvename>CVE-2026-1322</cvename>
+      <cvename>CVE-2026-1184</cvename>
+      <cvename>CVE-2026-4524</cvename>
+      <cvename>CVE-2026-8280</cvename>
+      <cvename>CVE-2026-4527</cvename>
+      <cvename>CVE-2026-3160</cvename>
+      <cvename>CVE-2026-6335</cvename>
+      <cvename>CVE-2025-12669</cvename>
+      <cvename>CVE-2026-3607</cvename>
+      <cvename>CVE-2026-3074</cvename>
+      <cvename>CVE-2026-1338</cvename>
+      <cvename>CVE-2026-8144</cvename>
+      <cvename>CVE-2026-6063</cvename>
+      <cvename>CVE-2026-3073</cvename>
+      <cvename>CVE-2025-13874</cvename>
+      <cvename>CVE-2026-7471</cvename>
+      <cvename>CVE-2026-2900</cvename>
+      <cvename>CVE-2026-6883</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-18-11-3-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-05-13</discovery>
+      <entry>2026-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e665f0a2-fe6d-44b0-ba9e-d383f055a8a3">
     <topic>zeek -- potential DoS vulnerability</topic>
     <affects>
