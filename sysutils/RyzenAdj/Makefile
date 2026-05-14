@@ -1,6 +1,6 @@
 PORTNAME=	RyzenAdj
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
+DISTVERSION=	0.19.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vladislav.movchan@gmail.com
@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	specific to Ryzen CPUs
 
 LIB_DEPENDS=	libpci.so:devel/libpci
 
-USES=		cmake localbase:ldflags
+USES=		cmake localbase:ldflags pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FlyGoat
