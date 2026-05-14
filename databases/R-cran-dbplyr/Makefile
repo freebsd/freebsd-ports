@@ -1,5 +1,5 @@
 PORTNAME=	dbplyr
-DISTVERSION=	2.5.1
+DISTVERSION=	2.5.2
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -28,7 +28,9 @@ RUN_DEPENDS=	R-cran-blob>=1.2.0:devel/R-cran-blob \
 TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-covr>0:devel/R-cran-covr \
 		R-cran-knitr>0:print/R-cran-knitr \
+		R-cran-RMariaDB>=1.2.2:databases/R-cran-RMariaDB \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
+		R-cran-RPostgres>=1.4.5:databases/R-cran-RPostgres \
 		R-cran-RPostgreSQL>0:databases/R-cran-RPostgreSQL \
 		R-cran-RSQLite>=2.3.8:databases/R-cran-RSQLite \
 		R-cran-testthat>=3.1.10:devel/R-cran-testthat
