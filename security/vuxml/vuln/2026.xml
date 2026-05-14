@@ -1,3 +1,180 @@
+  <vuln vid="7185ecc9-4fb7-11f1-bc50-6cc21735f730">
+    <topic>PostgreSQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>postgresql14-server</name>
+       <range><lt>14.23</lt></range>
+      </package>
+      <package>
+       <name>postgresql15-server</name>
+       <range><lt>15.18</lt></range>
+      </package>
+      <package>
+       <name>postgresql16-server</name>
+       <range><lt>16.14</lt></range>
+      </package>
+      <package>
+       <name>postgresql17-server</name>
+       <range><lt>17.10</lt></range>
+      </package>
+      <package>
+       <name>postgresql18-server</name>
+       <range><lt>18.4</lt></range>
+      </package>
+       <package>
+       <name>postgresql14-client</name>
+       <range><lt>14.23</lt></range>
+      </package>
+      <package>
+       <name>postgresql15-client</name>
+       <range><lt>15.18</lt></range>
+      </package>
+      <package>
+       <name>postgresql16-client</name>
+       <range><lt>16.14</lt></range>
+      </package>
+      <package>
+       <name>postgresql17-client</name>
+       <range><lt>17.10</lt></range>
+      </package>
+      <package>
+       <name>postgresql18-client</name>
+       <range><lt>18.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/about/news/postgresql-184-1710-1614-1518-and-1423-released-3297/">
+	<p>
+	  Missing authorization in PostgreSQL CREATE TYPE
+	  allows an object creator to hijack other queries that use
+	  search_path to find user-defined types, including
+	  extension-defined types. That is to say, the victim will execute
+	  arbitrary SQL functions of the attacker's choice.
+	</p>
+	<p>
+	  Integer wraparound in multiple PostgreSQL server
+	  features allows an application input provider to cause the
+	  server to undersize an allocation and write out-of-bounds. This
+	  results in a segmentation fault.
+	</p>
+	<p>
+	  Externally-controlled format string in PostgreSQL timeofday()
+	  function allows an attacker to retrieve portions of server
+	  memory, via crafted timezone zones.
+	</p>
+	<p>
+	  Symlink following in
+	  PostgreSQL pg_basebackup plain format and in pg_rewind allows an
+	  origin superuser to overwrite local files, e.g.
+	  /var/lib/postgres/.bashrc, that hijack the operating system
+	  account. It will remain the case that starting the server after
+	  these commands implicitly trusts the origin superuser, due to
+	  features like shared_preload_libraries. Hence, the attack has
+	  practical implications only if one takes relevant action between
+	  these commands and server start, like moving the files to a
+	  different VM or snapshotting the VM.
+	</p>
+	<p>
+	  SQL injection in PostgreSQL
+	  pg_createsubscriber allows an attacker with
+	  pg_create_subscription rights to execute arbitrary SQL as a
+	  superuser. The attack takes effect when pg_createsubscriber next
+	  runs. Versions before PostgreSQL 17 are unaffected.
+	</p>
+	<p>
+	  PostgreSQL libpq lo_* functions let server superuser overwrite
+	  client stack memory. Use of inherently dangerous function
+	  PQfn(..., result_is_int=0, ...) in PostgreSQL libpq lo_export(),
+	  lo_read(), lo_lseek64(), and lo_tell64() functions allows the
+	  server superuser to overwrite a client stack buffer with an
+	  arbitrarily-large response. Like gets(), PQfn(...,
+	  result_is_int=0, ...) stores arbitrary-length, server-determined
+	  data into a buffer of unspecified size. Because both the
+	  \lo_export command in psql and pg_dump call lo_read(), the
+	  server superuser can overwrite pg_dump or psql stack memory.
+	</p>
+	<p>
+	  PostgreSQL discloses MD5-hashed passwords via covert timing
+	  channel. Covert timing channel in comparison of MD5-hashed
+	  password in PostgreSQL authentication allows an attacker to
+	  recover user credentials sufficient to authenticate. This does
+	  not affect scram-sha-256 passwords, the default in all supported
+	  releases. However, current databases may have MD5-hashed
+	  passwords originating in upgrades from PostgreSQL 13 or earlier.
+	</p>
+	<p>
+	  PostgreSQL SSL/GSS init causes denial of service, via
+	  uncontrolled recursion. Uncontrolled recursion in PostgreSQL SSL
+	  and GSS negotiation allows an attacker able to connect to a
+	  PostgreSQL AF_UNIX socket to achieve sustained denial of
+	  service. If SSL and GSS are both disabled, an attacker can do
+	  the same via access to a PostgreSQL TCP socket.
+	</p>
+	<p>
+	  PostgreSQL pg_restore_attribute_stats accepts values that cause
+	  query planning to read past end of stats array. Buffer over-read
+	  in PostgreSQL function pg_restore_attribute_stats() accepts
+	  array values of unmatched length, which causes query planning to
+	  read past end of one array. This allows a table maintainer to
+	  infer memory values past that array end. Versions before
+	  PostgreSQL 18 are unaffected.
+	</p>
+	<p>
+	  PostgreSQL refint allows stack buffer overflow and SQL
+	  injection. Stack buffer overflow in PostgreSQL module refint
+	  allows an unprivileged database user to execute arbitrary code
+	  as the operating system user running the database. A distinct
+	  attack is possible if the application declares a user-controlled
+	  column as a refint cascade primary key and facilitates
+	  user-controlled updates to that column. In that case, a SQL
+	  injection allows a primary key update value provider to execute
+	  arbitrary SQL as the database user performing the primary key
+	  update.
+	</p>
+	<p>
+	  PostgreSQL REFRESH PUBLICATION allows SQL injection via table
+	  name. SQL injection in PostgreSQL logical replication ALTER
+	  SUBSCRIPTION ... REFRESH PUBLICATION allows a subscriber table
+	  creator to execute arbitrary SQL with the subscription's
+	  publication-side credentials. The attack takes effect at the
+	  next REFRESH PUBLICATION. Versions before PostgreSQL 16 are
+	  unaffected.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6472</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6472/</url>
+      <cvename>CVE-2026-6473</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6473/</url>
+      <cvename>CVE-2026-6474</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6474/</url>
+      <cvename>CVE-2026-6475</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6475/</url>
+      <cvename>CVE-2026-6476</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6476/</url>
+      <cvename>CVE-2026-6477</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6477/</url>
+      <cvename>CVE-2026-6478</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6478/</url>
+      <cvename>CVE-2026-6479</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6479/</url>
+      <cvename>CVE-2026-6575</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6575/</url>
+      <cvename>CVE-2026-6637</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6637/</url>
+      <cvename>CVE-2026-6538</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2026-6538/</url>
+    </references>
+    <dates>
+      <discovery>2026-05-14</discovery>
+      <entry>2026-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3414ac89-4f9f-11f1-a1c0-0050569f0b83">
     <topic>www/nginx -- Remote Code Execution/DoS</topic>
     <affects>
