@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.15.12
+DISTVERSION=	0.15.13
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -54,7 +54,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
-		bitflags-2.11.0 \
+		bitflags-2.11.1 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
@@ -74,12 +74,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.0 \
+		clap-4.6.1 \
 		clap_builder-4.6.0 \
 		clap_complete-4.5.58 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
-		clap_derive-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.0.0 \
 		clearscreen-4.0.6 \
 		codspeed-4.4.1 \
@@ -149,6 +149,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		flate2-1.1.2 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
+		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
 		fs-err-3.3.0 \
 		fsevent-sys-4.1.0 \
@@ -204,8 +205,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.23 \
-		jiff-static-0.2.23 \
+		jiff-0.2.24 \
+		jiff-static-0.2.24 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
@@ -215,10 +216,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.184 \
+		libc-0.2.186 \
 		libcst-1.8.6 \
 		libcst_derive-1.8.6 \
-		libmimalloc-sys-0.1.44 \
+		libmimalloc-sys-0.1.47 \
 		libredox-0.1.10 \
 		libtest-mimic-0.7.3 \
 		libtest-mimic-0.8.1 \
@@ -234,7 +235,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		matchit-0.9.2 \
 		memchr-2.8.0 \
 		memoffset-0.9.1 \
-		mimalloc-0.1.48 \
+		mimalloc-0.1.50 \
 		minicov-0.3.7 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -312,7 +313,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_core-0.10.0 \
-		rayon-1.11.0 \
+		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.17 \
 		redox_users-0.5.2 \
@@ -329,9 +330,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
-		salsa-0.26.1 \
-		salsa-macro-rules-0.26.1 \
-		salsa-macros-0.26.1 \
+		salsa-0.26.2 \
+		salsa-macro-rules-0.26.2 \
+		salsa-macros-0.26.2 \
 		same-file-1.0.6 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
@@ -347,8 +348,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.1.1 \
 		serde_test-1.0.177 \
-		serde_with-3.18.0 \
-		serde_with_macros-3.18.0 \
+		serde_with-3.19.0 \
+		serde_with_macros-3.19.0 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.2 \
@@ -425,7 +426,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.0 \
+		uuid-1.23.1 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
