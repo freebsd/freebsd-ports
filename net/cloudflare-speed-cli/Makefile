@@ -1,6 +1,6 @@
 PORTNAME=	cloudflare-speed-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.8
+DISTVERSION=	0.6.10
 CATEGORIES=	net
 
 MAINTAINER=	meta@FreeBSD.org
@@ -41,7 +41,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytemuck-1.25.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.1 \
-		cassowary-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.55 \
 		cfg-if-1.0.4 \
@@ -53,23 +52,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clipboard-win-5.4.1 \
 		cmake-0.1.57 \
 		colorchoice-1.0.4 \
-		compact_str-0.8.1 \
+		compact_str-0.9.0 \
 		compression-codecs-0.4.36 \
 		compression-core-0.4.31 \
+		convert_case-0.10.0 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		crc32fast-1.5.0 \
-		crossterm-0.28.1 \
+		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.4 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		deranged-0.5.5 \
+		derive_more-2.1.1 \
+		derive_more-impl-2.1.1 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
+		document-features-0.2.12 \
 		dunce-1.0.5 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
@@ -81,7 +84,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		find-msvc-tools-0.1.9 \
 		flate2-1.1.9 \
 		fnv-1.0.7 \
-		foldhash-0.1.5 \
+		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
 		futures-0.3.31 \
@@ -99,7 +102,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		glob-0.3.3 \
 		h2-0.4.13 \
 		half-2.7.1 \
-		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		http-1.4.0 \
@@ -129,18 +131,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ipnet-2.11.0 \
 		iri-string-0.7.10 \
 		is_terminal_polyfill-1.70.2 \
-		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.17 \
 		jobserver-0.1.34 \
 		js-sys-0.3.85 \
+		kasuari-0.4.12 \
 		libc-0.2.180 \
 		libredox-0.1.12 \
-		linux-raw-sys-0.4.15 \
+		line-clipping-0.3.7 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.1 \
+		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
-		lru-0.12.5 \
+		lru-0.16.4 \
 		lru-slab-0.1.2 \
 		memchr-2.7.6 \
 		miniz_oxide-0.8.9 \
@@ -163,7 +167,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		paste-1.0.15 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
@@ -172,6 +175,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pnet_macros_support-0.35.0 \
 		pnet_packet-0.35.0 \
 		png-0.18.0 \
+		portable-atomic-1.13.1 \
 		potential_utf-0.1.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
@@ -189,7 +193,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
-		ratatui-0.29.0 \
+		ratatui-0.30.0 \
+		ratatui-core-0.1.0 \
+		ratatui-crossterm-0.1.0 \
+		ratatui-textarea-0.9.1 \
+		ratatui-widgets-0.3.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
 		regex-1.12.3 \
@@ -198,7 +206,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		reqwest-0.12.28 \
 		ring-0.17.14 \
 		rustc-hash-2.1.1 \
-		rustix-0.38.44 \
+		rustc_version-0.4.1 \
 		rustix-1.1.3 \
 		rustls-0.23.36 \
 		rustls-native-certs-0.8.3 \
@@ -210,6 +218,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		scopeguard-1.2.0 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -227,8 +236,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		strum-0.26.3 \
-		strum_macros-0.26.4 \
+		strum-0.27.2 \
+		strum_macros-0.27.2 \
 		subtle-2.6.1 \
 		syn-2.0.114 \
 		sync_wrapper-1.0.2 \
@@ -257,8 +266,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		try-lock-0.2.5 \
 		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
-		unicode-truncate-1.1.0 \
-		unicode-width-0.1.14 \
+		unicode-truncate-2.0.1 \
 		unicode-width-0.2.0 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
@@ -284,7 +292,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-link-0.2.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.48.5 \
