@@ -2,13 +2,11 @@ Relax some version requirements.
 
 --- pyproject.toml.orig	2006-07-24 01:21:28 UTC
 +++ pyproject.toml
-@@ -48,8 +48,8 @@ dependencies = [
- ]
+@@ -49,7 +49,7 @@ dependencies = [
  dynamic = ["version"]
  dependencies = [
--    "click>=8.1.8",
+     "click>=8.1.8",
 -    "deepmerge>=2.0",
-+    "click>=8.1.7",
 +    "deepmerge>=1.1.1",
      "jinja2>=3.1",
      "markdown>=3.7",
