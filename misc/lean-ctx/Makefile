@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.23
+DISTVERSION=	3.5.25
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,7 +48,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
 		bit-set-0.5.3 \
+		bit-set-0.8.0 \
 		bit-vec-0.6.3 \
+		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
 		bitflags-2.11.1 \
 		blake2-0.10.6 \
@@ -296,6 +298,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
+		proptest-1.11.0 \
+		quick-error-1.2.3 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
@@ -310,6 +314,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
+		rand_xorshift-0.4.0 \
 		ratatui-0.30.0 \
 		ratatui-core-0.1.0 \
 		ratatui-crossterm-0.1.0 \
@@ -355,6 +360,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustls-platform-verifier-android-0.1.1 \
 		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
+		rusty-fork-0.3.1 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
 		schannel-0.1.29 \
@@ -468,6 +474,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		typeid-1.0.3 \
 		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
+		unarray-0.1.4 \
 		unicode-bidi-0.3.18 \
 		unicode-ident-1.0.24 \
 		unicode-normalization-0.1.25 \
@@ -491,6 +498,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		version_check-0.9.5 \
 		virtue-0.0.18 \
 		vtparse-0.6.2 \
+		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
