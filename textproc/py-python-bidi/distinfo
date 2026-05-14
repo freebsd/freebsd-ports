@@ -1,6 +1,6 @@
-TIMESTAMP = 1778003090
-SHA256 (python_bidi-0.6.9.tar.gz) = 001c1769893fd859216b0dc39dd4679c7260bf292c3637b727a928402a254322
-SIZE (python_bidi-0.6.9.tar.gz) = 57902
+TIMESTAMP = 1778728702
+SHA256 (python_bidi-0.6.10.tar.gz) = a7853e894f723675489ac49aa4b52dc8eac87d7a67b5940631c8c9d2aab46f90
+SIZE (python_bidi-0.6.10.tar.gz) = 58172
 SHA256 (rust/crates/autocfg-1.3.0.crate) = 0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0
 SIZE (rust/crates/autocfg-1.3.0.crate) = 16524
 SHA256 (rust/crates/cc-1.2.39.crate) = e1354349954c6fc9cb0deab020f27f783cf0b604e8bb754dc4658ecf0d29c35f
