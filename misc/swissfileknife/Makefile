@@ -1,5 +1,5 @@
 PORTNAME=	swissfileknife
-PORTVERSION=	2.0.0.2
+PORTVERSION=	2.0.0.3
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/1-${PORTNAME}/${PORTVERSION}
 DISTNAME=	sfk-${PORTVERSION:R}
@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-DVER_STR_OS=\\\"${OPSYS:tl}-${ARCH}\\\"
 
 PLIST_FILES=	bin/sfk ${DATADIR_REL}/mtk.tar.gz
-PORTDOCS=	changes.txt README
+PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,6 +34,8 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${TR} -d \\r < ${WRKSRC}/${f} > ${STAGEDIR}${DOCSDIR}/${f}
+.endfor
 
 .include <bsd.port.mk>
