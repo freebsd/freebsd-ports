@@ -74,6 +74,7 @@ TARGET_CPU_ARCH=	POWER8
 .else
 TARGET_CPU_ARCH=	PPC970
 .  endif
+CFLAGS+=		-lm
 .endif
 
 .if ${ARCH} == powerpc
