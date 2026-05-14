@@ -11,11 +11,9 @@ Date:   Fri Feb 20 21:15:44 2026 +0100
     
         security/nss: fix build on powerpc64le
 
-diff --git lib/freebl/Makefile lib/freebl/Makefile
-index 9286e436f..3509a0656 100644
---- lib/freebl/Makefile
+--- lib/freebl/Makefile.orig	2026-04-23 19:28:50 UTC
 +++ lib/freebl/Makefile
-@@ -263,7 +263,7 @@ else ifeq ($(CPU_ARCH),x86)
+@@ -263,7 +263,7 @@ endif # Darwin
  endif
  endif # Darwin
  
@@ -24,16 +22,25 @@ index 9286e436f..3509a0656 100644
  ifeq ($(CPU_ARCH),x86_64)
      # Lower case s on mpi_amd64_common due to make implicit rules.
      ASFILES  = arcfour-amd64-gas.s mpi_amd64_common.s
-@@ -297,11 +297,11 @@ ifdef USE_64
+@@ -290,18 +290,16 @@ ifeq ($(CPU_ARCH),ppc)
+     MPI_SRCS += mpi_arm.c
+ endif
+ ifeq ($(CPU_ARCH),ppc)
+-    DEFINES += -DHAVE_PLATFORM_GHASH
+-    EXTRA_SRCS += ghash-ppc.c
+ ifdef USE_64
+     DEFINES += -DNSS_NO_INIT_SUPPORT
      PPC_ABI := $(shell $(CC) -dM -E - < /dev/null | awk '$$2 == "_CALL_ELF" {print $$3}')
      ifeq ($(PPC_ABI),2)
          ASFILES += sha512-p8.s
 -    ifeq ($(OS_TEST),ppc64le)
+-        EXTRA_SRCS += chacha20poly1305-ppc.c ppc-gcm-wrap.c
 +    ifeq (,$(filter-out powerpc64le ppc64le, $(OS_TEST)))
-         EXTRA_SRCS += chacha20poly1305-ppc.c ppc-gcm-wrap.c
++        EXTRA_SRCS += chacha20poly1305-ppc.c ghash-ppc.c ppc-gcm-wrap.c
          ASFILES += chacha20-ppc64le.s ppc-gcm.s
-         DEFINES += -DHAVE_PLATFORM_GCM
+-        DEFINES += -DHAVE_PLATFORM_GCM
 -    endif # ppc64le
++        DEFINES += -DHAVE_PLATFORM_GCM -DHAVE_PLATFORM_GHASH
 +    endif # powerpc64le, ppc64le
      endif
  endif # USE_64
