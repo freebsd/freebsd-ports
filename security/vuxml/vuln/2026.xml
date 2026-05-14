@@ -1,3 +1,40 @@
+  <vuln vid="690144e9-4f88-11f1-982e-00a098b42aeb">
+    <topic>py-setuptools -- Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</topic>
+    <affects>
+    <package>
+	<name>py310-setuptools</name>
+	<name>py311-setuptools</name>
+	<name>py312-setuptools</name>
+	<name>py313-setuptools</name>
+	<name>py313t-setuptools</name>
+	<name>py314-setuptools</name>
+	<range><lt>78.1.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pypa/setuptools/security/advisories/GHSA-5rjg-fvgr-3xxf reports:</p>
+	<blockquote cite="https://github.com/pypa/setuptools/security/advisories/GHSA-5rjg-fvgr-3xxf">
+	  <p>setuptools is a package that allows users to download, build,
+	  install, upgrade, and uninstall Python packages. A path traversal
+	  vulnerability in `PackageIndex` is present in setuptools prior to
+	  version 78.1.1. An attacker would be allowed to write files to
+	  arbitrary locations on the filesystem with the permissions of the
+	  process running the Python code, which could escalate to remote
+	  code execution depending on the context.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-47273</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-47273</url>
+    </references>
+    <dates>
+      <discovery>2025-05-17</discovery>
+      <entry>2026-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3cb8f40-4f4c-11f1-80f1-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
