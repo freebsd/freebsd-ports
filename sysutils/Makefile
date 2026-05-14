@@ -1381,6 +1381,7 @@
     SUBDIR += stalepid
     SUBDIR += stepsync
     SUBDIR += storcli
+    SUBDIR += storcli2
     SUBDIR += stow
     SUBDIR += stowES
     SUBDIR += stress
