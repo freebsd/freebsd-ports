@@ -1,7 +1,6 @@
 PORTNAME=	spoofdpi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.5.2
 CATEGORIES=	net
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -31,20 +30,21 @@ GH_TUPLE=	BurntSushi:toml:v1.5.0:burntsushi_toml/vendor/github.com/BurntSushi/to
 		erikgeiser:coninput:1c3628e74d0f:erikgeiser_coninput/vendor/github.com/erikgeiser/coninput \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:v0.43.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.48.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:9a3e6036ecaa:golang_exp/vendor/golang.org/x/exp \
-		golang:mod:v0.29.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.46.0:golang_net/vendor/golang.org/x/net \
-		golang:sync:v0.17.0:golang_sync/vendor/golang.org/x/sync \
+		golang:mod:v0.32.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.50.0:golang_net/vendor/golang.org/x/net \
+		golang:sync:v0.19.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.42.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.36.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.30.0:golang_text/vendor/golang.org/x/text \
+		golang:term:v0.40.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.34.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.12.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.38.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.41.0:golang_tools/vendor/golang.org/x/tools \
 		google:btree:v1.1.2:google_btree/vendor/github.com/google/btree \
 		google:gopacket:v1.1.19:google_gopacket/vendor/github.com/google/gopacket \
 		google:gvisor:479e1cc2c3d9:google_gvisor/vendor/gvisor.dev/gvisor \
-		jackpal:gateway:v1.1.1:jackpal_gateway/vendor/github.com/jackpal/gateway \
+		jackpal:gateway:v1.2.0:jackpal_gateway/vendor/github.com/jackpal/gateway \
+		kentik:patricia:v1.2.2:kentik_patricia/vendor/github.com/kentik/patricia \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		lucasb-eyer:go-colorful:v1.3.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -61,7 +61,6 @@ GH_TUPLE=	BurntSushi:toml:v1.5.0:burntsushi_toml/vendor/github.com/BurntSushi/to
 		rogpeppe:go-internal:v1.14.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		rs:zerolog:v1.33.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		samber:lo:v1.52.0:samber_lo/vendor/github.com/samber/lo \
-		stretchr:objx:v0.5.2:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.11.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		urfave:cli:v3.6.1:urfave_cli_v3/vendor/github.com/urfave/cli/v3 \
 		wireguard:wireguard-go:f333402bd9cb:wireguard_wireguard_go/vendor/golang.zx2c4.com/wireguard \
@@ -82,6 +81,6 @@ PLIST_FILES=	bin/${PORTNAME}
 post-patch:
 	${CP} ${FILESDIR}/modules.txt ${WRKSRC}/vendor
 	@${REINPLACE_CMD} -e 's|"etc"|"${ETCDIR}"|g' \
-		${WRKSRC}/internal/config/cli.go
+		${WRKSRC}/internal/config/load.go
 
 .include <bsd.port.mk>
