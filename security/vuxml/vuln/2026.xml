@@ -1,3 +1,46 @@
+  <vuln vid="6e701ad2-4f61-11f1-af6d-10ffe07f9334">
+    <topic>mail/mailpit -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.30.0</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Mailpit author reports:</p>
+       <blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.30.0">
+	 <p>Set a default 50MB per message limit to prevent DoS via
+	 unlimited SMTP DATA and /api/v1/send body sizes
+	 (GHSA-fpxj-m5q8-fphw)</p>
+	 <p>Include CGNAT (Carrier-Grade NAT) in internal IP checks
+	 (GHSA-j3fj-qppj-fmmc)</p>
+	 <p>Block internal IP access by default in HTML check
+	 (GHSA-j3fj-qppj-fmmc)</p>
+	 <p>Fix for path traversal &amp; arbitrary file write in
+	 mailpit dump --http &lt;instance&gt; via attacker-controlled
+	 message IDs (GHSA-qx5x-85p8-vg4j)</p>
+	 <p>Fix concurrent map read &amp; write in proxy CSS rewriter
+	 (GHSA-w4vj-r5pg-3722)</p>
+       </blockquote>
+       </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45713</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-fpxj-m5q8-fphw</url>
+      <cvename>CVE-2026-45709</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-j3fj-qppj-fmmc</url>
+      <cvename>CVE-2026-45711</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-qx5x-85p8-vg4j</url>
+      <cvename>CVE-2026-45712</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-w4vj-r5pg-3722</url>
+    </references>
+    <dates>
+      <discovery>2026-05-14</discovery>
+      <entry>2026-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="690144e9-4f88-11f1-982e-00a098b42aeb">
     <topic>py-setuptools -- Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</topic>
     <affects>
