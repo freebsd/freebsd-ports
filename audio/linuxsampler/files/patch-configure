@@ -1,6 +1,6 @@
---- configure.orig	2017-11-25 17:33:38 UTC
+--- configure.orig	2025-12-17 11:55:33 UTC
 +++ configure
-@@ -10376,7 +10376,7 @@ $as_echo_n "checking whether the $compil
+@@ -11665,7 +11665,7 @@ printf %s "checking whether the $compiler linker ($LD)
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -9,7 +9,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -10678,7 +10678,7 @@ _LT_EOF
+@@ -11972,7 +11972,7 @@ _LT_EOF
  	wlarc=
        else
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -18,7 +18,7 @@
        fi
        ;;
  
-@@ -10697,7 +10697,7 @@ _LT_EOF
+@@ -11991,7 +11991,7 @@ _LT_EOF
  _LT_EOF
        elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -27,7 +27,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -10726,7 +10726,7 @@ _LT_EOF
+@@ -12020,7 +12020,7 @@ _LT_EOF
  	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
  	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -36,7 +36,7 @@
  	  else
  	    ld_shlibs=no
  	  fi
-@@ -10744,7 +10744,7 @@ _LT_EOF
+@@ -12038,7 +12038,7 @@ _LT_EOF
      *)
        if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -45,7 +45,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -11393,7 +11393,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
+@@ -12703,7 +12703,7 @@ printf "%s\n" "$lt_cv_irix_exported_symbol" >&6; }
  	hardcode_direct_absolute=yes
  	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
  	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -54,7 +54,7 @@
  	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
  	  export_dynamic_flag_spec='$wl-E'
  	else
-@@ -12242,7 +12242,7 @@ freebsd* | dragonfly*)
+@@ -13572,7 +13572,7 @@ freebsd* | dragonfly* | midnightbsd*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -63,16 +63,16 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -13386,7 +13386,7 @@ striplib=
- old_striplib=
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
- $as_echo_n "checking whether stripping libraries is possible... " >&6; }
--if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
-+if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
-   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
-   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-@@ -13638,7 +13638,7 @@ hardcode_automatic_CXX=no
+@@ -15330,7 +15330,7 @@ else
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+ else
+-  if $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++  if $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+     old_striplib="$STRIP --strip-debug"
+     striplib="$STRIP --strip-unneeded"
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -15590,7 +15590,7 @@ module_expsym_cmds_CXX=
  inherit_rpath_CXX=no
  module_cmds_CXX=
  module_expsym_cmds_CXX=
@@ -81,7 +81,7 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -13849,7 +13849,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
+@@ -15807,7 +15807,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
        # archiving commands below assume that GNU ld is being used.
        if test yes = "$with_gnu_ld"; then
          archive_cmds_CXX='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -90,7 +90,7 @@
  
          hardcode_libdir_flag_spec_CXX='$wl-rpath $wl$libdir'
          export_dynamic_flag_spec_CXX='$wl--export-dynamic'
-@@ -14541,7 +14541,7 @@ fi
+@@ -16506,7 +16506,7 @@ fi
  	    case `$CC -V 2>&1` in
  	      *"Version 7."*)
  	        archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -99,7 +99,7 @@
  		;;
  	      *)  # Version 8.0 or newer
  	        tmp_idyn=
-@@ -14549,7 +14549,7 @@ fi
+@@ -16514,7 +16514,7 @@ fi
  		  ia64*) tmp_idyn=' -i_dynamic';;
  		esac
  	        archive_cmds_CXX='$CC -shared'"$tmp_idyn"' $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -108,7 +108,7 @@
  		;;
  	    esac
  	    archive_cmds_need_lc_CXX=no
-@@ -14581,7 +14581,7 @@ fi
+@@ -16546,7 +16546,7 @@ fi
  	      ;;
  	    *) # Version 6 and above use weak symbols
  	      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -117,7 +117,7 @@
  	      ;;
  	    esac
  
-@@ -14592,7 +14592,7 @@ fi
+@@ -16557,7 +16557,7 @@ fi
  	  cxx*)
  	    # Compaq C++
  	    archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -126,7 +126,7 @@
  
  	    runpath_var=LD_RUN_PATH
  	    hardcode_libdir_flag_spec_CXX='-rpath $libdir'
-@@ -14626,7 +14626,7 @@ fi
+@@ -16591,7 +16591,7 @@ fi
  	      # Sun C++ 5.9
  	      no_undefined_flag_CXX=' -zdefs'
  	      archive_cmds_CXX='$CC -G$allow_undefined_flag -h$soname -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags'
@@ -135,7 +135,7 @@
  	      hardcode_libdir_flag_spec_CXX='-R$libdir'
  	      whole_archive_flag_spec_CXX='$wl--whole-archive`new_convenience=; for conv in $convenience\"\"; do test -z \"$conv\" || new_convenience=\"$new_convenience,$conv\"; done; func_echo_all \"$new_convenience\"` $wl--no-whole-archive'
  	      compiler_needs_object_CXX=yes
-@@ -14694,7 +14694,7 @@ fi
+@@ -16663,7 +16663,7 @@ fi
  	  archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
  	  hardcode_libdir_flag_spec_CXX='$wl-rpath,$libdir'
  	  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
@@ -144,7 +144,7 @@
  	    export_dynamic_flag_spec_CXX='$wl-E'
  	    whole_archive_flag_spec_CXX=$wlarc'--whole-archive$convenience '$wlarc'--no-whole-archive'
  	  fi
-@@ -16219,7 +16219,7 @@ freebsd* | dragonfly*)
+@@ -18222,7 +18222,7 @@ freebsd* | dragonfly* | midnightbsd*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -153,7 +153,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -17406,9 +17406,9 @@ _ACEOF
+@@ -20911,9 +20911,9 @@ if ! echo "X $CXXFLAGS " | grep -q -- " \(-march=\|-mc
  CXX_CPU_SWITCH=
  if ! echo "X $CXXFLAGS " | grep -q -- " \(-march=\|-mcpu=\|-mtune=\|-arch=\)" ; then
    if test "$def_arch_x86" = 1 -a "$host_cpu" != "x86_64"; then
@@ -165,7 +165,7 @@
    fi
  fi
  
-@@ -18120,7 +18120,7 @@ fi
+@@ -21763,7 +21763,7 @@ if echo "$YACC" | grep -q bison; then
  # parser yacc tables.
  if echo "$YACC" | grep -q bison; then
      # NOTE: m4 removes [], that's why it needs to be escaped
