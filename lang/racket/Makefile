@@ -1,5 +1,6 @@
 PORTNAME=	racket
 PORTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -102,6 +103,11 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
+# Base strip on 14.x lacks --keep-section, but also leaves .rackboot intact.
+.if ${OSVERSION} >= 1500000
+	${STRIP_CMD} --keep-section=.rackboot ${STAGEDIR}${PREFIX}/lib/racket/gracket
+.else
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/racket/gracket
+.endif
 
 .include <bsd.port.mk>
