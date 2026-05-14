@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.6
+DISTVERSION=	2026.5.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -159,7 +159,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		clru-0.6.3 \
-		clx-2.0.3 \
+		clx-2.1.0 \
 		cmake-0.1.58 \
 		cmov-0.5.3 \
 		coalesced_map-0.1.2 \
