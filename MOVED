@@ -5304,3 +5304,4 @@ lang/erlang-runtime23|lang/erlang-runtime28|2026-05-14|Has expired: no longer su
 lang/erlang-runtime24|lang/erlang-runtime28|2026-05-14|Has expired: no longer supported upstream, use lang/erlang >=28
 lang/erlang-runtime25|lang/erlang-runtime28|2026-05-14|Has expired: no longer supported upstream, use lang/erlang >=28
 lang/erlang-runtime26|lang/erlang-runtime28|2026-05-14|Has expired: no longer supported upstream, use lang/erlang >=28
+databases/leofs||2026-05-14|Has expired: no longer maintained upstream, with no supported OTP release
