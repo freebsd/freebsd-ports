@@ -1,6 +1,6 @@
 PORTNAME=	james
 PORTVERSION=	2.3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail java
 MASTER_SITES=	APACHE/${PORTNAME}/server/
 DISTNAME=	${PORTNAME}-binary-${PORTVERSION}
@@ -11,6 +11,9 @@ WWW=		https://james.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	This is a version that is over 10 years old and has multiple vulnerabilities
+EXPIRATION_DATE=2026-06-30
 
 USES=		cpe java
 CPE_VENDOR=	apache
