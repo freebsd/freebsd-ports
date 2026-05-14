@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: bunkerweb
+# REQUIRE: NETWORKING bunkerweb_scheduler
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="bunkerweb"
+rcvar="bunkerweb_enable"
+
+load_rc_config "$name"
+
+: ${bunkerweb_enable:="NO"}
+: ${bunkerweb_conf:="/usr/local/etc/nginx/nginx.conf"}
+: ${bunkerweb_prefix:="/usr/local/etc/nginx"}
+: ${bunkerweb_logdir:="/var/log/bunkerweb"}
+
+command="%%PREFIX%%/bin/openresty"
+pidfile="/var/run/bunkerweb/nginx.pid"
+command_args="-e ${bunkerweb_logdir}/error.log -p ${bunkerweb_prefix} -c ${bunkerweb_conf}"
+
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
+
+bunkerweb_prestart()
+{
+	install -d -m 0755 "${bunkerweb_prefix}"
+	install -d -m 0755 "${bunkerweb_logdir}"
+	install -d -m 0755 /var/run/bunkerweb
+}
+
+bunkerweb_stop()
+{
+	${command} -e "${bunkerweb_logdir}/error.log" \
+		-p "${bunkerweb_prefix}" \
+		-c "${bunkerweb_conf}" \
+		-s stop
+}
+
+bunkerweb_reload()
+{
+	${command} -e "${bunkerweb_logdir}/error.log" \
+		-p "${bunkerweb_prefix}" \
+		-c "${bunkerweb_conf}" \
+		-s reload
+}
+
+run_rc_command "$1"

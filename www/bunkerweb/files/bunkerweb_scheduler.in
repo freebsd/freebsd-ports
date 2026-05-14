@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# PROVIDE: bunkerweb_scheduler
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="bunkerweb_scheduler"
+rcvar="bunkerweb_scheduler_enable"
+
+load_rc_config "$name"
+
+: ${bunkerweb_scheduler_enable:="NO"}
+
+pidfile="/var/run/${name}.pid"
+procname="/usr/local/bin/python3.11"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/bin/env PYTHONPATH=/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api:/usr/local/share/bunkerweb/deps/python /usr/local/bin/python3.11 /usr/local/share/bunkerweb/scheduler/main.py"
+
+bunkerweb_scheduler_precmd()
+{
+	mkdir -p /var/cache/bunkerweb/misc
+	mkdir -p /usr/local/share/bunkerweb/misc
+	mkdir -p /var/log/bunkerweb
+
+	if [ ! -f /var/cache/bunkerweb/misc/default-server-cert.pem ] || \
+	   [ ! -f /var/cache/bunkerweb/misc/default-server-cert.key ]; then
+		/usr/bin/openssl req -x509 -nodes -newkey rsa:2048 \
+			-days 3650 \
+			-subj "/CN=localhost" \
+			-keyout /var/cache/bunkerweb/misc/default-server-cert.key \
+			-out /var/cache/bunkerweb/misc/default-server-cert.pem >/dev/null 2>&1
+	fi
+
+	if [ ! -f /usr/local/share/bunkerweb/misc/root-ca.pem ] || \
+	   [ ! -f /usr/local/share/bunkerweb/misc/root-ca.key ]; then
+		/usr/bin/openssl req -x509 -nodes -newkey rsa:2048 \
+			-days 3650 \
+			-subj "/CN=BunkerWeb Root CA" \
+			-keyout /usr/local/share/bunkerweb/misc/root-ca.key \
+			-out /usr/local/share/bunkerweb/misc/root-ca.pem >/dev/null 2>&1
+	fi
+
+	chown -R bunkerweb:bunkerweb /var/cache/bunkerweb
+	chmod 600 /var/cache/bunkerweb/misc/default-server-cert.key
+	chmod 644 /var/cache/bunkerweb/misc/default-server-cert.pem
+
+	chown root:bunkerweb /usr/local/share/bunkerweb/misc/root-ca.key /usr/local/share/bunkerweb/misc/root-ca.pem
+	chmod 640 /usr/local/share/bunkerweb/misc/root-ca.key
+	chmod 644 /usr/local/share/bunkerweb/misc/root-ca.pem
+
+	chown -R bunkerweb:bunkerweb /var/log/bunkerweb
+}
+
+start_precmd="bunkerweb_scheduler_precmd"
+
+run_rc_command "$1"

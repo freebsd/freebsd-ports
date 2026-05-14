@@ -90,6 +90,7 @@
     SUBDIR += browsh
     SUBDIR += bugzilla2atom
     SUBDIR += buku
+    SUBDIR += bunkerweb
     SUBDIR += butterfly
     SUBDIR += c-icap
     SUBDIR += c-icap-modules

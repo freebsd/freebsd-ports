@@ -1,0 +1,20 @@
+--- src/common/settings.json.orig	2026-05-25 18:23:18 UTC
++++ src/common/settings.json
+@@ -10,7 +10,7 @@
+   },
+   "NGINX_PREFIX": {
+     "context": "global",
+-    "default": "/etc/nginx/",
++    "default": "/usr/local/etc/nginx/",
+     "help": "Where nginx will search for configurations.",
+     "id": "nginx-prefix",
+     "label": "nginx prefix",
+@@ -93,7 +93,7 @@
+   },
+   "DNS_RESOLVERS": {
+     "context": "global",
+-    "default": "127.0.0.11",
++    "default": "1.1.1.1 8.8.8.8",
+     "help": "DNS addresses of resolvers to use.",
+     "id": "dns-resolvers",
+     "label": "DNS resolvers",
