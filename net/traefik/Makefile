@@ -1,13 +1,7 @@
 PORTNAME=	traefik
-PORTVERSION=	3.6.16
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}
-DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${BASE_SRC}${DISTVERSIONSUFFIX}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${BASE_SRC}-3.6.15.patch.xz:-p1 \
-		${PORTNAME}-3.6.15-${PORTVERSION}.patch.xz:-p1
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High availability reverse proxy and load balancer
@@ -19,9 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
 USES=		cpe go:1.25+,modules tar:xz
-
-BASE_SRC=	3.6.13
-WRKSRC=		${WRKDIR}/traefik-${BASE_SRC}
 
 USE_RC_SUBR=	traefik
 
