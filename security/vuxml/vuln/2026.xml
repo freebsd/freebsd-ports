@@ -1,3 +1,55 @@
+  <vuln vid="3414ac89-4f9f-11f1-a1c0-0050569f0b83">
+    <topic>www/nginx -- Remote Code Execution/DoS</topic>
+    <affects>
+<package>
+<name>nginx</name>
+<range><lt>1.30.1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>nginx development team reports:</p>
+	<blockquote cite="https://nginx.org/en/CHANGES-1.30">
+	  <p>When using the "proxy_set_body" directive, an attacker
+	  might inject data in the proxied request to an HTTP/2 backend</p>
+	  <p>A heap memory buffer overflow might occur in a worker
+	  process while handling a specially crafted request by
+	  ngx_http_rewrite_module, potentially resulting in arbitrary code
+	  execution</p>
+	  <p>A heap memory buffer overread might occur in a worker
+	  process while handling a specially crafted response by
+	  ngx_http_scgi_module or ngx_http_uwsgi_module, allowing an attacker
+	  to cause a disclosure of worker process memory or segmentation fault
+	  in a worker process</p>
+	  <p>A heap memory buffer overread might occur in a worker
+	  process while handling a specially sent response with decoding from
+	  UTF-8 via the "charset_map" directive, allowing an attacker to cause
+	  a limited disclosure of worker proccess memory or segmentation fault
+	  in a worker process</p>
+	  <p>When using HTTP/3, processing of connection migration might
+	  cause new QUIC streams to receive a new client address before
+	  validation, allowing an attacker to cause address spoofing</p>
+	  <p>use-after-free might occur during DNS server response
+	  processing if the "ssl_ocsp" directive was used, allowing an attacker
+	  to cause worker process memory corruption or segmentation fault in a
+	  worker process</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42926</cvename>
+      <cvename>CVE-2026-42945</cvename>
+      <cvename>CVE-2026-42946</cvename>
+      <cvename>CVE-2026-42934</cvename>
+      <cvename>CVE-2026-40460</cvename>
+      <cvename>CVE-2026-40701</cvename>
+    </references>
+    <dates>
+      <discovery>2026-05-14</discovery>
+      <entry>2026-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e701ad2-4f61-11f1-af6d-10ffe07f9334">
     <topic>mail/mailpit -- multiple vulnerabilities</topic>
     <affects>
