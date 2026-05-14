@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.25
+DISTVERSION=	3.6.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -604,10 +604,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7
 
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/gen_mcp_manifest \
-		bin/gen_tdd_schema \
-		bin/seed_observatory
+PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
