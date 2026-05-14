@@ -66,12 +66,6 @@
     SUBDIR += erlang-doc
     SUBDIR += erlang-java
     SUBDIR += erlang-man
-    SUBDIR += erlang-runtime21
-    SUBDIR += erlang-runtime22
-    SUBDIR += erlang-runtime23
-    SUBDIR += erlang-runtime24
-    SUBDIR += erlang-runtime25
-    SUBDIR += erlang-runtime26
     SUBDIR += erlang-runtime27
     SUBDIR += erlang-runtime28
     SUBDIR += erlang-runtime29
