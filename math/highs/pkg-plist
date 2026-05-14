@@ -3,7 +3,6 @@ include/highs/HConfig.h
 include/highs/Highs.h
 include/highs/interfaces/highs_c_api.h
 include/highs/io/Filereader.h
-include/highs/io/FilereaderEms.h
 include/highs/io/FilereaderLp.h
 include/highs/io/FilereaderMps.h
 include/highs/io/HMPSIO.h
@@ -138,6 +137,8 @@ include/highs/parallel/HighsSplitDeque.h
 include/highs/parallel/HighsTask.h
 include/highs/parallel/HighsTaskExecutor.h
 include/highs/pdlp/CupdlpWrapper.h
+include/highs/pdlp/HiPdlpTimer.h
+include/highs/pdlp/HiPdlpWrapper.h
 include/highs/pdlp/cupdlp/cupdlp_cs.h
 include/highs/pdlp/cupdlp/cupdlp_defs.h
 include/highs/pdlp/cupdlp/cupdlp_linalg.h
@@ -147,6 +148,13 @@ include/highs/pdlp/cupdlp/cupdlp_scaling.h
 include/highs/pdlp/cupdlp/cupdlp_solver.h
 include/highs/pdlp/cupdlp/cupdlp_step.h
 include/highs/pdlp/cupdlp/cupdlp_utils.c
+include/highs/pdlp/hipdlp/defs.hpp
+include/highs/pdlp/hipdlp/linalg.hpp
+include/highs/pdlp/hipdlp/logger.hpp
+include/highs/pdlp/hipdlp/pdhg.hpp
+include/highs/pdlp/hipdlp/restart.hpp
+include/highs/pdlp/hipdlp/scaling.hpp
+include/highs/pdlp/hipdlp/solver_results.hpp
 include/highs/pdqsort/pdqsort.h
 include/highs/presolve/HPresolve.h
 include/highs/presolve/HPresolveAnalysis.h
@@ -236,5 +244,5 @@ lib/cmake/highs/highs-targets.cmake
 lib/cmake/highs/highs-targets.cmake.bak
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.13.0
+lib/libhighs.so.1.14.0
 libdata/pkgconfig/highs.pc

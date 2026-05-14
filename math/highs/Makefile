@@ -1,6 +1,6 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.0
+DISTVERSION=	1.14.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -24,15 +24,12 @@ post-install:
 	# see https://github.com/ERGO-Code/HiGHS/issues/502
 	${RM} -r ${STAGEDIR}${PREFIX}/external
 	# remove stray files
-	@${RM} \
-		${STAGEDIR}${PREFIX}/LICENSE.txt \
-		${STAGEDIR}${PREFIX}/README.md \
-		${STAGEDIR}${PREFIX}/THIRD_PARTY_NOTICES.md
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 	# workaround for https://github.com/ERGO-Code/HiGHS/issues/2250
 	@${REINPLACE_CMD} \
 		-e 's|INTERFACE_INCLUDE_DIRECTORIES "/include;|INTERFACE_INCLUDE_DIRECTORIES "|' \
 		${STAGEDIR}${PREFIX}/lib/cmake/highs/highs-targets.cmake
 
-# tests as of 1.13.0: 100% tests passed, 0 tests failed out of 2
+# tests as of 1.14.0: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
