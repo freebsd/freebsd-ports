@@ -1,6 +1,6 @@
 PORTNAME=	kombu
 PORTVERSION=	5.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,13 +21,13 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	BOTO MONGODB REDIS SQLALCHEMY ZMQ
 
-BOTO_DESC=	Include AWS transport support
-MONGODB_DESC=	Include MongoDB transport support
-REDIS_DESC=	Include Redis transport support
-SQLALCHEMY_DESC=Include SQLAlchemy transport support
-ZMQ_DESC=	Include ZMQ transport support
+BOTO_DESC=		Include AWS transport support
+MONGODB_DESC=		Include MongoDB transport support
+REDIS_DESC=		Include Redis transport support
+SQLALCHEMY_DESC=	Include SQLAlchemy transport support
+ZMQ_DESC=		Include ZMQ transport support
 
-BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=2.6.0:devel/py-boto@${PY_FLAVOR}
+BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.26.43:www/py-boto3@${PY_FLAVOR}
 MONGODB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=3.3.0:databases/py-pymongo@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
 SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR}
