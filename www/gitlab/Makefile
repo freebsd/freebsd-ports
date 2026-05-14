@@ -33,7 +33,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	gitlab-pages>=${GITLAB_VERSION}:www/gitlab-pages \
 	gitlab-shell>=14.49.0:devel/gitlab-shell \
 	gitlab-workhorse>=${GITLAB_VERSION}:www/gitlab-workhorse \
-	gitlab-zoekt-indexer>=1.13.0:textproc/gitlab-zoekt-indexer \
+	gitlab-zoekt-indexer>=1.13.1:textproc/gitlab-zoekt-indexer \
 	redis>=6.2.11:databases/redis \
 	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 	gtar>0:archivers/gtar \
@@ -197,6 +197,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-babosa>=2.0<3:textproc/rubygem-babosa \
 	rubygem-loofah-gitlab>=2.25.1<2.26:textproc/rubygem-loofah-gitlab \
 	rubygem-licensee-gitlab>=9.16<10:devel/rubygem-licensee-gitlab \
+	rubygem-rugged17>=1.7.2<1.8:devel/rubygem-rugged17 \
 	rubygem-charlock_holmes>=0.7.9<0.8:textproc/rubygem-charlock_holmes \
 	rubygem-ruby-magic>=0.6<1:devel/rubygem-ruby-magic \
 	rubygem-fast_blank>=1.0.1<1.1:devel/rubygem-fast_blank \
