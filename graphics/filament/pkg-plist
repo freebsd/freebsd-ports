@@ -5,6 +5,7 @@
 %%SAMPLES%%bin/assets/ibl/lightroom_14b/sh.txt
 bin/basisu
 bin/cmgen
+bin/diffimg
 bin/filamesh
 bin/glslminifier
 %%SAMPLES%%bin/gltf_viewer
@@ -56,7 +57,9 @@ include/backend/platforms/WebGPUPlatform.h
 include/backend/platforms/WebGPUPlatformAndroid.h
 include/backend/platforms/WebGPUPlatformApple.h
 include/backend/platforms/WebGPUPlatformLinux.h
+include/backend/platforms/WebGPUPlatformWasm.h
 include/backend/platforms/WebGPUPlatformWindows.h
+include/backend/platforms/WebGPUWasmPolyfill.h
 include/camutils/Bookmark.h
 include/camutils/Manipulator.h
 include/camutils/compiler.h
@@ -131,6 +134,8 @@ include/image/ImageOps.h
 include/image/ImageSampler.h
 include/image/Ktx1Bundle.h
 include/image/LinearImage.h
+include/imageio-lite/ImageDecoder.h
+include/imageio-lite/ImageEncoder.h
 include/ktxreader/Ktx1Reader.h
 include/ktxreader/Ktx2Reader.h
 include/math/TMatHelpers.h
@@ -172,9 +177,11 @@ include/utils/InternPool.h
 include/utils/Invocable.h
 include/utils/Log.h
 include/utils/Logger.h
+include/utils/LruCache.h
 include/utils/MonotonicRingMap.h
 include/utils/Mutex.h
 include/utils/NameComponentManager.h
+include/utils/PagedArenaBitset.h
 include/utils/Panic.h
 include/utils/Path.h
 include/utils/PrivateImplementation-impl.h
@@ -192,9 +199,11 @@ include/utils/compiler.h
 include/utils/compressed_pair.h
 include/utils/debug.h
 include/utils/generic/Mutex.h
+include/utils/getopt.h
 include/utils/memalign.h
 include/utils/ostream.h
 include/utils/sstream.h
+include/utils/tribool.h
 include/utils/unwindows.h
 include/viewer/AutomationEngine.h
 include/viewer/AutomationSpec.h
@@ -222,6 +231,8 @@ lib/libgltfio_core.a
 lib/libibl-lite.a
 lib/libibl.a
 lib/libimage.a
+lib/libimagediff.a
+lib/libimageio-lite.a
 lib/libktxreader.a
 lib/libmatdbg.a
 lib/libmatp.a
