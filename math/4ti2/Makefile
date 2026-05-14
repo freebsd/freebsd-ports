@@ -1,11 +1,12 @@
 PORTNAME=	4ti2
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1_6_13
+DISTVERSION=	1_6_15
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solve algebraic, geometric, combinatorial problems on linear spaces
-WWW=		https://4ti2.github.io/
+WWW=		https://4ti2.github.io/ \
+		https://github.com/4ti2/4ti2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
