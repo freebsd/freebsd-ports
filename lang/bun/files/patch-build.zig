@@ -4,7 +4,7 @@
 -- 2. SemanticVersion format: use {d}.{d}.{d} instead of {f} for compatibility
 -- 3. validateGeneratedPath: skip panic when generated files are not yet present
 
---- build.zig.orig	2026-04-27 07:25:40 UTC
+--- build.zig.orig	2026-05-12 22:12:49 UTC
 +++ build.zig
 @@ -90,7 +90,7 @@ const BunBuildOptions = struct {
          opts.addOption(bool, "enable_valgrind", this.enable_valgrind);
@@ -24,7 +24,7 @@
      if (os == .freebsd and freebsd_sysroot == null) {
          std.debug.panic("-Dfreebsd_sysroot is required when cross-compiling to FreeBSD (zig does not bundle FreeBSD libc headers)", .{});
      }
-@@ -1086,13 +1086,8 @@ fn validateGeneratedPath(path: []const u8) void {
+@@ -1106,13 +1106,8 @@ fn validateGeneratedPath(path: []const u8) void {
  }
  
  fn validateGeneratedPath(path: []const u8) void {

@@ -1,7 +1,6 @@
 PORTNAME=	bun
 DISTVERSIONPREFIX=	bun-v
-DISTVERSION=	1.3.13-93
-DISTVERSIONSUFFIX=	-g146a674cf6
+DISTVERSION=	1.3.14
 CATEGORIES=	lang
 MASTER_SITES=	GH \
 		https://github.com/oven-sh/zig/releases/download/autobuild-04e7f6ac1e009525bc00934f20199c68f04e0a24/:ovenzig \
@@ -11,7 +10,10 @@ MASTER_SITES=	GH \
 DISTFILES=	bootstrap-x86_64-linux-musl.zip:ovenzig \
 		bun-webkit-freebsd-amd64.tar.gz:webkit \
 		node-v${NODE_VERSION}-headers.tar.gz:nodejshdr \
-		bun-1.3.13-93-bootstrap:bootstrap
+		bun-1.3.13-93-bootstrap:bootstrap \
+		bun-node-modules-${DISTVERSION}.tar.gz:bootstrap \
+		bun-dep-tarballs-${DISTVERSION}.tar.gz:bootstrap \
+		bun-cargo-vendor-lolhtml-${DISTVERSION}.tar.gz:bootstrap
 DIST_SUBDIR=	${PORTNAME}
 # Only auto-extract the GitHub source tarball; everything else is handled in post-extract.
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -67,13 +69,19 @@ _BUN_DEP_TARBALLS=	\
 	brotli-723494d4c3a9902a.tar.gz:https://github.com/google/brotli/archive/v1.1.0.tar.gz \
 	cares-4e43539b43c0f4ae.tar.gz:https://github.com/c-ares/c-ares/archive/3ac47ee46edd8ea40370222f91613fc16c434853.tar.gz \
 	hdrhistogram-97084f213075a65e.tar.gz:https://github.com/HdrHistogram/HdrHistogram_c/archive/be60a9987ee48d0abf0d7b6a175bad8d6c1585d1.tar.gz \
-	highway-a10c8937e1b920ad.tar.gz:https://github.com/google/highway/archive/ac0d5d297b13ab1b89f48484fc7911082d76a93f.tar.gz \
+	highway-b2dcc6002e95cc47.tar.gz:https://github.com/google/highway/archive/2607d3b5b0113992fe84d3848859eae13b3b52c1.tar.gz \
 	libarchive-4296b191210d6b1b.tar.gz:https://github.com/libarchive/libarchive/archive/ded82291ab41d5e355831b96b0e1ff49e24d8939.tar.gz \
 	libdeflate-ce0e2d9805b30dcc.tar.gz:https://github.com/ebiggers/libdeflate/archive/c8c56a20f8f621e6a966b716b31f1dedab6a41e3.tar.gz \
+	libjpeg-turbo-297099166a01f75e.tar.gz:https://github.com/libjpeg-turbo/libjpeg-turbo/archive/e352b02f794f701407b39af08576035ba3360d60.tar.gz \
+	libspng-e6aca86c593b51ad.tar.gz:https://github.com/randy408/libspng/archive/fb768002d4288590083a476af628e51c3f1d47cd.tar.gz \
+	libwebp-2ced709f169b40bd.tar.gz:https://github.com/webmproject/libwebp/archive/b7e29b9d75bd31422b00c2a446d49d7af06c328d.tar.gz \
 	lolhtml-929339b1d898e66b.tar.gz:https://github.com/cloudflare/lol-html/archive/77127cd2b8545998756e8d64e36ee2313c4bb312.tar.gz \
 	lshpack-73e0c55d12ea4fc2.tar.gz:https://github.com/litespeedtech/ls-hpack/archive/8905c024b6d052f083a3d11d0a169b3c2735c8a1.tar.gz \
-	mimalloc-9e61bdd994e99463.tar.gz:https://github.com/oven-sh/mimalloc/archive/dbbb9a0819d00d521f9f58ad4d0a336efa4ce53a.tar.gz \
+	lsqpack-ceeb8e315778b938.tar.gz:https://github.com/litespeedtech/ls-qpack/archive/1e9c5b8e59f8161c54f168a570c8bfdc59ded0c3.tar.gz \
+	lsquic-d3ef6cf1fbedd7f9.tar.gz:https://github.com/litespeedtech/lsquic/archive/3181911301b1aa4f54c1ed690901abc674ee08fb.tar.gz \
+	mimalloc-4a1c4f1f45e31b88.tar.gz:https://github.com/oven-sh/mimalloc/archive/f15aecb94fc8096008bf87b90c53ed682026914a.tar.gz \
 	picohttpparser-fad59b16ad4752cc.tar.gz:https://github.com/h2o/picohttpparser/archive/066d2b1e9ab820703db0837a7255d92d30f0c9f5.tar.gz \
+	tinycc-2f1f629056328c7b.tar.gz:https://github.com/oven-sh/tinycc/archive/12882eee073cfe5c7621bcfadf679e1372d4537b.tar.gz \
 	zlib-655c6ecdb6fc9cd5.tar.gz:https://github.com/zlib-ng/zlib-ng/archive/12731092979c6d07f42da27da673a9f6c7b13586.tar.gz \
 	zstd-e010993a24072468.tar.gz:https://github.com/facebook/zstd/archive/f8745da6ff1ad1e7bab384bd1f9d742439278e99.tar.gz
 
@@ -96,7 +104,7 @@ do-fetch:
 			${DISTFILES:M*\:ovenzig} \
 			${DISTFILES:M*\:webkit} \
 			${DISTFILES:M*\:nodejshdr} \
-			${DISTFILES:M*\:bootstrap}
+			${DISTFILES:M*\:bootstrap:N*node-modules-*:N*dep-tarballs-*:N*cargo-vendor-*}
 	# Build bun-node-modules tarball (npm install with workspace: → file: fixes).
 	# Uses deterministic tar so the checksum is reproducible across builds.
 	@if ! [ -f "${DD}/bun-node-modules-${DISTVERSION}.tar.gz" ]; then \
