@@ -1,6 +1,7 @@
 PORTNAME=	ldview
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 LIB_DEPENDS=	lib3ds.so:graphics/lib3ds \
 		libgl2ps.so:print/gl2ps \
 		libminizip.so:archivers/minizip \
-		libOSMesa.so:graphics/libosmesa \
 		libpng16.so:graphics/png \
 		libtinyxml.so:textproc/tinyxml
 RUN_DEPENDS=	bash:shells/bash \
