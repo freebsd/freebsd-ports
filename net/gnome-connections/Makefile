@@ -1,6 +1,5 @@
 PORTNAME=	gnome-connections
-PORTVERSION=	47.2.1
-PORTREVISION=	2
+PORTVERSION=	50.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,9 +10,6 @@ WWW=		https://apps.gnome.org/app/org.gnome.Connections/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		gtk-frdp does not build with freerdp 3.25.0
-# https://gitlab.gnome.org/GNOME/gtk-frdp/-/work_items/56
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgtk-vnc-2.0.so:net/gtk-vnc \
