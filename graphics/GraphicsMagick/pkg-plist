@@ -96,15 +96,15 @@ lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.so
 lib/libGraphicsMagick++.so.12
-lib/libGraphicsMagick++.so.12.8.2
+lib/libGraphicsMagick++.so.12.9.0
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.26.0
+lib/libGraphicsMagick.so.3.27.0
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
-lib/libGraphicsMagickWand.so.2.10.2
+lib/libGraphicsMagickWand.so.2.11.0
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
@@ -160,6 +160,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2022.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2023.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2024.html
+%%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2025.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changes.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html
