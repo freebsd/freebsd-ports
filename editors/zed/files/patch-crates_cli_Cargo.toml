@@ -1,11 +1,11 @@
---- crates/cli/Cargo.toml.orig	2026-04-15 21:06:43 UTC
+--- crates/cli/Cargo.toml.orig	2026-05-13 17:09:47 UTC
 +++ crates/cli/Cargo.toml
 @@ -27,7 +27,7 @@ dialoguer.workspace = true
  collections.workspace = true
  console.workspace = true
  dialoguer.workspace = true
 -ipc-channel = "0.19"
-+ipc-channel = "0.21"
++ipc-channel = "0.22"
  parking_lot.workspace = true
  paths.workspace = true
  release_channel.workspace = true
