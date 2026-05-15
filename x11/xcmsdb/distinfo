@@ -1,2 +1,3 @@
-SHA256 (xorg/app/xcmsdb-1.0.5.tar.bz2) = e5585361bb8b6a05bb814a8d0e444ee93e0f00180881d3070aff4571e97f67c6
-SIZE (xorg/app/xcmsdb-1.0.5.tar.bz2) = 145419
+TIMESTAMP = 1751477535
+SHA256 (xorg/app/xcmsdb-1.0.7.tar.xz) = 5ec4068e488187b05ea92ee1362c96b78a90f19ccc7a1844c5921d70626bbc38
+SIZE (xorg/app/xcmsdb-1.0.7.tar.xz) = 142356
