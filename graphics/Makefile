@@ -935,6 +935,7 @@
     SUBDIR += py-djvulibre
     SUBDIR += py-easyocr
     SUBDIR += py-exifread
+    SUBDIR += py-exiv2
     SUBDIR += py-f3d
     SUBDIR += py-face_recognition
     SUBDIR += py-face_recognition_models
