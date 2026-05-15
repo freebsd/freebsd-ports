@@ -1,0 +1,18 @@
+--- src/Makefile.in.orig	2025-01-01 00:00:00 UTC
++++ src/Makefile.in
+@@ -1451,11 +1451,13 @@ uninstall-man3:
+ 
+ .lua.luao:
+ 	@mkdir -p `dirname "$@"`
+-	$(LUAJIT) -bg -n "dnsjit.`echo \"$@\" | sed 's%\..*%%' | sed 's%/%.%g'`" -t o "$<" "$@"
++	$(LUAJIT) -bg -n "dnsjit.`echo \"$@\" | sed 's%\..*%%' | sed 's%/%.%g'`" "$<" "$@.o"
++	mv "$@.o" "$@"
+ 
+ .luah.luaho:
+ 	@mkdir -p `dirname "$@"`
+-	$(LUAJIT) -bg -n "dnsjit.`echo \"$@\" | sed 's%\..*%%' | sed 's%/%.%g'`_h" -t o "$<" "$@"
++	$(LUAJIT) -bg -n "dnsjit.`echo \"$@\" | sed 's%\..*%%' | sed 's%/%.%g'`_h" "$<" "$@.o"
++	mv "$@.o" "$@"
+ 
+ .hh.luah:
+ 	@mkdir -p `dirname "$@"`
