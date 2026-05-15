@@ -124,6 +124,23 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)/"
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c @LDAIX_SRC@ @DTRACE_SRC@ ; do \
+@@ -885,11 +884,11 @@ install-libraries: libraries
+ 	@for i in $(TOP_DIR)/library/encoding/*.enc; do \
+ 		$(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)/encoding"; \
+ 	done
+-	@if [ -n "$(TCL_MODULE_PATH)" -a -f $(TOP_DIR)/library/tm.tcl ] ; then \
+-	    echo "Customizing tcl module path"; \
+-	    echo "if {![interp issafe]} { ::tcl::tm::roots [list $(TCL_MODULE_PATH)] }" >> \
+-		    "$(SCRIPT_INSTALL_DIR)/tm.tcl"; \
+-	fi
++	@echo "Customizing tcl module path";
++	echo "if {![interp issafe]} { ::tcl::tm::roots {$(TCL_MODULE_PATH)} }" >> \
++	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl;
++	echo "::tcl::tm::path add {$(TCL_LIBRARY)}" >> \
++	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl;
+ 
+ install-tzdata:
+ 	@for i in tzdata; do \
 @@ -956,7 +955,7 @@ install-headers:
  	done
  
