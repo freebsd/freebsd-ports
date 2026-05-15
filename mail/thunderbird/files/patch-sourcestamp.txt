@@ -1,0 +1,6 @@
+--- sourcestamp.txt.orig
++++ sourcestamp.txt
+@@ -1 +1,3 @@
+ 20260515020702
++https://hg.mozilla.org/releases/comm-release/rev/82da0b799946d58ce8a7e3edd5008919a2fa7acb
++https://hg.mozilla.org/releases/mozilla-beta/rev/903d02bd0593077a014525321734716
