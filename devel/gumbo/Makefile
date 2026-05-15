@@ -1,9 +1,10 @@
 PORTNAME=	gumbo
 DISTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://codeberg.org/gumbo-parser/gumbo-parser/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	fsbruva@yahoo.com
 COMMENT=	Pure-C HTML5 parser
 WWW=		https://codeberg.org/gumbo-parser/gumbo-parser/
 
