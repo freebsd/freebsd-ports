@@ -21,7 +21,8 @@ LIB_DEPENDS=	\
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lang jpeg localbase xorg
+USES=		cmake compiler:c++11-lang gl jpeg localbase xorg
+USE_GL=		gl glu
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm xcursor xfixes xrender
 
@@ -52,9 +53,8 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS OMPI OSMESA PYTHON QT5 EXAMPLES
+OPTIONS_DEFINE=	DESIGNER DOCS OMPI PYTHON QT5 EXAMPLES
 OPTIONS_DEFAULT=	OMPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
-OSMESA_DESC=	Use Mesa for off-screen rendering
 OMPI_DESC=	OpenMPI (Message Passing Interface) support
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
@@ -92,13 +92,6 @@ OMPI_USES=		mpi:openmpi
 OMPI_CMAKE_ON=		-DMPI_HOME=${LOCALBASE}/mpi/openmpi
 OMPI_LDFLAGS=		${MPI_LIBS}
 
-OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
-			-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-			-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
-			-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
-			-DVTK_USE_X:BOOL=OFF
-OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
-
 JAVA_USES=		java
 JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA
 JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
@@ -117,11 +110,6 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 
 .include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MOSMESA}
-USES+=		gl
-USE_GL=		gl glu
-.endif
 
 .if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MOMPI}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
