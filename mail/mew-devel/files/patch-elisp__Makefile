@@ -1,0 +1,20 @@
+--- elisp/Makefile.orig	2026-04-03 03:20:44 UTC
++++ elisp/Makefile
+@@ -123,13 +123,14 @@
+ 	@echo "(defun mew-compile () (mapcar (lambda (x) (byte-compile-file (symbol-name x))) '($(SRCS))))" >> $(TEMPFILE)
+ 
+ .PHONY: install-elisp
+-install-elisp: $(OBJS)
++#install-elisp: $(OBJS)
++install-elisp:
+ 	-@if [ ! -d $(DESTDIR)$(elispdir) ]; then \
+ 		$(MKDIR) $(DESTDIR)$(elispdir); \
+ 	fi
+ 	$(CP) $(SRCS) $(DESTDIR)$(elispdir)
+-	$(CP) $(EXTRA_SRCS) $(DESTDIR)$(elispdir)
+-	$(CP) $(OBJS) $(DESTDIR)$(elispdir)
++#	$(CP) $(EXTRA_SRCS) $(DESTDIR)$(elispdir)
++#	$(CP) $(OBJS) $(DESTDIR)$(elispdir)
+ 
+ ################################################################
+ 
