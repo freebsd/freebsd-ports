@@ -1,7 +1,6 @@
 PORTNAME=	hidden-lake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.4
-PORTREVISION=	2
+DISTVERSION=	1.10.5
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	alven@FreeBSD.org
@@ -15,6 +14,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/number571/hidden-lake
 GO_TARGET=	./cmd/hla/hla-http:hla-http \
+		./cmd/hla/hla-https:hla-https \
 		./cmd/hla/hla-tcp:hla-tcp \
 		./cmd/hlc:hlc \
 		./cmd/hlk:hlk \
