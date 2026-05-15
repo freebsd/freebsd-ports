@@ -1,0 +1,41 @@
+[
+{ type: install
+  message: <<EOM
+To start junos_exporter, create a configuration file at:
+
+  %%PREFIX%%/etc/junos_exporter.yml
+
+With a configuration like this basic example:
+
+  devices:
+    - host: router1
+      username: exporter
+      key_file: /path/to/key
+    - host: router2
+      username: exporter
+      password: secret
+      features:
+        alarm: true
+        environment: true
+        interfaces: true
+
+  # Optional
+  features:
+    alarm: true
+    environment: true
+    power: true
+    system: true
+
+then run "sysrc junos_exporter_enable=yes" to enable.
+
+For more configuration options, visit:
+
+  https://github.com/czerwonk/junos_exporter
+
+Since junos_exporter can allow for the calling of arbitrary probe targets
+via HTTP parameters, it is set to listen on localhost only by default. This
+behaviour can be changed using its junos_exporter_listen_address option, but
+please note the potential security implications of doing so.
+EOM
+}
+]

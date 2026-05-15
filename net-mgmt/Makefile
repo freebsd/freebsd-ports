@@ -129,6 +129,7 @@
     SUBDIR += irrtoolset
     SUBDIR += isic
     SUBDIR += jnettop
+    SUBDIR += junos_exporter
     SUBDIR += kapacitor
     SUBDIR += kf6-networkmanager-qt
     SUBDIR += kismet

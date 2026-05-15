@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: junos_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# junos_exporter_enable (bool):			Set to NO by default.
+#						Set it to YES to enable junos_exporter.
+# junos_exporter_user (string):			Set user that junos_exporter will run under
+#						Default is "%%USERS%%".
+# junos_exporter_group (string):		Set group that junos_exporter will run under
+#						Default is "%%GROUPS%%".
+# junos_exporter_args (string):			Set extra arguments to pass to junos_exporter
+#						Default is "".
+# junos_exporter_listen_address (string):	Set ip:port that junos_exporter will listen on
+#						Default is "localhost:9326".
+# junos_exporter_config (string):		Set configuration file path for junos_exporter
+#						Default is "%%PREFIX%%/etc/junos_exporter.yml".
+
+. /etc/rc.subr
+
+name=junos_exporter
+desc="junos_exporter for use with Prometheus"
+rcvar=junos_exporter_enable
+
+load_rc_config $name
+
+: ${junos_exporter_enable:="NO"}
+: ${junos_exporter_user:="%%USERS%%"}
+: ${junos_exporter_group:="%%GROUPS%%"}
+: ${junos_exporter_args:=""}
+: ${junos_exporter_listen_address:="localhost:9326"}
+: ${junos_exporter_config:="%%PREFIX%%/etc/junos_exporter.yml"}
+
+conf_file="--config.file=${junos_exporter_config}"
+
+pidfile=/var/run/junos_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/junos_exporter"
+command_args="-f -p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
+    --web.listen-address=${junos_exporter_listen_address} \
+    ${conf_file} \
+    ${junos_exporter_args}"
+
+start_precmd=junos_exporter_startprecmd
+
+junos_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${junos_exporter_user} \
+            -g ${junos_exporter_group} \
+            /dev/null ${pidfile};
+    else
+        chown ${junos_exporter_user}:${junos_exporter_group} ${pidfile};
+    fi
+}
+
+run_rc_command "$1"
