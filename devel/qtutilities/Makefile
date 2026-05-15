@@ -1,6 +1,6 @@
 PORTNAME=	qtutilities
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.18.4
+DISTVERSION=	6.21.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +26,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ARGS=	-DEXCLUDE_TESTS_FROM_ALL=OFF
 CMAKE_TESTING_TARGET=	check
 
-# tests as of 6.18.4: 100% tests passed, 0 tests failed out of 3
+# tests as of 6.21.1: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>

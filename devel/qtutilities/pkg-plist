@@ -7,6 +7,7 @@ include/qtutilities/misc/conversion.h
 include/qtutilities/misc/dbusnotification.h
 include/qtutilities/misc/desktoputils.h
 include/qtutilities/misc/dialogutils.h
+include/qtutilities/misc/disablewarningsmoc.h
 include/qtutilities/misc/recentmenumanager.h
 include/qtutilities/misc/trylocker.h
 include/qtutilities/misc/undefxmlparsermacros.h
@@ -35,7 +36,7 @@ include/qtutilities/widgets/iconbutton.h
 include/qtutilities/widgets/pathselection.h
 lib/libqtutilities.so
 lib/libqtutilities.so.6
-lib/libqtutilities.so.6.18.4
+lib/libqtutilities.so.6.21.1
 libdata/pkgconfig/qtutilities.pc
 %%DATADIR%%/cmake/modules/QtConfig.cmake
 %%DATADIR%%/cmake/modules/QtGuiConfig.cmake
@@ -53,6 +54,7 @@ libdata/pkgconfig/qtutilities.pc
 %%DATADIR%%/cmake/templates/webviewincludes.h.in
 %%DATADIR%%/translations/qtutilities_de_DE.qm
 %%DATADIR%%/translations/qtutilities_en_US.qm
+%%DATADIR%%/translations/qtutilities_fr_FR.qm
 %%DATADIR%%/translations/qtutilities_ja_JP.qm
 %%DATADIR%%/translations/qtutilities_ru_RU.qm
 %%DATADIR%%/translations/qtutilities_zh_CN.qm
