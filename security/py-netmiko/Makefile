@@ -1,7 +1,6 @@
 PORTNAME=	netmiko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.0
-PORTREVISION=	1
+DISTVERSION=	4.7.0
 CATEGORIES=	security net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ntc-templates>=3.1.0:textproc/py-ntc-templates@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=2.9.5:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}paramiko>=3.5.0<5:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>=3.3:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.8:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17:devel/py-ruamel.yaml@${PY_FLAVOR} \
