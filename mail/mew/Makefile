@@ -1,10 +1,9 @@
 PORTNAME=	mew
-DISTVERSION=	6.10
-PORTREVISION=	2
+DISTVERSION=	6.11
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.mew.org/Release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	t.masub@gmail.com
 COMMENT=	Messaging in the Emacs World for emacs
 WWW=		https://www.Mew.org/
 
@@ -40,10 +39,6 @@ STUNNEL_DESC=	Support TLS feature using stunnel
 
 DATABASE_RUN_DEPENDS=	rubygem-sqlite3>=0:databases/rubygem-sqlite3
 STUNNEL_RUN_DEPENDS=	stunnel>=0:security/stunnel
-
-post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/mew \
-	-name "*.elc" -delete
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

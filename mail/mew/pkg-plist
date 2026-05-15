@@ -71,6 +71,7 @@ share/man/man1/smew.1.gz
 %%EMACS_SITE_LISPDIR%%/mew/mew-fib.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-func.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-gemacs.el
+%%EMACS_SITE_LISPDIR%%/mew/mew-gnutls.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-header.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-highlight.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-imap.el
@@ -101,7 +102,7 @@ share/man/man1/smew.1.gz
 %%EMACS_SITE_LISPDIR%%/mew/mew-smtp.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-sort.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-ssh.el
-%%EMACS_SITE_LISPDIR%%/mew/mew-ssl.el
+%%EMACS_SITE_LISPDIR%%/mew/mew-stunnel.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-summary.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-summary2.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-summary3.el
@@ -114,5 +115,4 @@ share/man/man1/smew.1.gz
 %%EMACS_SITE_LISPDIR%%/mew/mew-vars3.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-varsx.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-virtual.el
-%%EMACS_SITE_LISPDIR%%/mew/mew-win32.el
 %%EMACS_SITE_LISPDIR%%/mew/mew.el
