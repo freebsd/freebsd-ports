@@ -1,5 +1,5 @@
 PORTNAME=	dplyr
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/hadley/dplyr
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	R-cran-assertthat>=0.2.0:math/R-cran-assertthat \
+BUILD_DEPENDS=	R-cran-cli>=3.6.2:devel/R-cran-cli \
 		R-cran-generics>=0:devel/R-cran-generics \
 		R-cran-glue>=1.3.2:devel/R-cran-glue \
 		R-cran-lifecycle>=1.0.5:devel/R-cran-lifecycle \
