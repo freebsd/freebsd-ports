@@ -18,9 +18,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.29.0:devel/py-hatchling@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=1.5:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2021.1:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+SHEBANG_FILES=	src/croniter/tests/*.py
 
 .include <bsd.port.mk>
