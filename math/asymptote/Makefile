@@ -33,7 +33,8 @@ USE_PYQT=	pyqt5:run
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-lsp # disable the module with Boost-related errors
+CONFIGURE_ARGS=	--disable-offscreen \
+		--disable-lsp # disable the module with Boost-related errors
 
 MAKE_ENV=	ASYMPTOTE_HOME=${WRKDIR} HOME=${WRKDIR}
 MAKE_JOBS_UNSAFE=	yes # see https://github.com/vectorgraphics/asymptote/issues/331
@@ -45,7 +46,7 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFAULT=	FFTW GSL MANPAGES READLINE
-OPTIONS_DEFINE=		BDWGC DOCS EXAMPLES FFTW GSL MANPAGES OFFSCREEN READLINE
+OPTIONS_DEFINE=		BDWGC DOCS EXAMPLES FFTW GSL MANPAGES READLINE
 
 BDWGC_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 BDWGC_DESC=		Enable Boehm-Demers-Weiser garbage collector
@@ -67,10 +68,6 @@ GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 MANPAGES_ALL_TARGET=	man
 MANPAGES_BUILD_DEPENDS=	texi2dvi:print/texinfo
 MANPAGES_INFO=	asy-faq
-
-OFFSCREEN_CONFIGURE_ENABLE=	offscreen
-OFFSCREEN_DESC=	Enable offscreen rendering using OSMesa library
-OFFSCREEN_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 
 READLINE_CONFIGURE_ENABLE=	readline
 READLINE_USES=	readline
