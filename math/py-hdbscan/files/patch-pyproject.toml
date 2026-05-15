@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-05-13 03:08:02 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools>=64",
++  "setuptools>=61",
+   "wheel",
+   "cython>=3.0.11,<4",
+   "numpy>=2.0,<3"
