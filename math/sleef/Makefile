@@ -26,11 +26,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	shibatch
 
-# CPUTYPE breaks unit tests and presumably the library itself
-.if defined(CPUTYPE) && ${ARCH} == amd64
-CPUTYPE=
-.endif
-
 CMAKE_TESTING_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenSSL \
 			SLEEF_DISABLE_FFTW
 CMAKE_TESTING_ON=	SLEEF_BUILD_TESTS \
@@ -53,6 +48,11 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_OpenSSL \
 PLIST_SUB+=	GNUABI="@comment "
 .else
 PLIST_SUB+=	GNUABI=""
+.endif
+
+# CPUTYPE breaks unit tests and presumably the library itself
+.if defined(CPUTYPE) && ${ARCH} == amd64
+CPUTYPE=
 .endif
 
 .include <bsd.port.mk>
