@@ -119,7 +119,6 @@
     SUBDIR += ldb28
     SUBDIR += ldb29
     SUBDIR += leo_center
-    SUBDIR += leofs
     SUBDIR += leveldb
     SUBDIR += libcouchbase
     SUBDIR += libdbi
