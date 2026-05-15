@@ -18,7 +18,6 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-loongarch64
 %%NO_X86_TARGETS%%bin/qemu-system-m68k
 %%NO_X86_TARGETS%%bin/qemu-system-microblaze
-%%NO_X86_TARGETS%%bin/qemu-system-microblazeel
 %%NO_X86_TARGETS%%bin/qemu-system-mips
 %%NO_X86_TARGETS%%bin/qemu-system-mips64
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
