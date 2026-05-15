@@ -9,6 +9,9 @@ WWW=		https://brpc.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	uses architecture-specific code in butil/time.h
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gtest/gtest.h:devel/googletest
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libgflags.so:devel/gflags \
