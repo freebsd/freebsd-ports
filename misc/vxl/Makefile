@@ -19,12 +19,11 @@ USES=		cmake compiler:c++11-lang jpeg
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_BUILD=	openjpeg15
+# dcmtk conflicts due to bundled vxl
+CONFLICTS_BUILD=	dcmtk openjpeg15
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
-
-CONFLICTS_BUILD=	dcmtk # because it is bundled
 
 do-test: # 1 test fails, see https://github.com/vxl/vxl/issues/920
 	@cd ${BUILD_WRKSRC} && \
