@@ -1,7 +1,6 @@
 PORTNAME=	orbiton
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.73.1
-PORTREVISION=	1
+DISTVERSION=	2.74.0
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ WWW=		https://roboticoverlords.org/orbiton/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/xyproto/orbiton/v2
 
