@@ -42,7 +42,15 @@ llvmpipe_DESC=		Software Rasterizer
 panfrost_DESC=		ARM Midgard and Bifrost
 r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
+r600_BUILD_DEPENDS=	libva>=0:multimedia/libva \
+			libvdpau>=0:multimedia/libvdpau
+r600_MESON_ON=		-Dgallium-va=enabled \
+			-Dgallium-vdpau=enabled
 radeonsi_DESC=		AMD/ATI Southern Islands and newer
+radeonsi_BUILD_DEPENDS=	libva>=0:multimedia/libva \
+			libvdpau>=0:multimedia/libvdpau
+radeonsi_MESON_ON=	-Dgallium-va=enabled \
+			-Dgallium-vdpau=enabled
 svga_DESC=		VMWare Virtual GPU
 zink_DESC=		OpenGL on top of Khronos’ Vulkan API
 
@@ -100,8 +108,6 @@ MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc,av1dec,av1en
 
 # Disable some options
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
-		-Dgallium-vdpau=disabled \
-		-Dgallium-va=disabled \
 		-Dgles1=enabled \
 		-Dgles2=enabled \
 		-Dglvnd=disabled \
@@ -110,6 +116,11 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dvalgrind=disabled
+
+.if !${PORT_OPTIONS:Mr600} && !${PORT_OPTIONS:Mradeonsi}
+MESON_ARGS+=	-Dgallium-va=disabled \
+		-Dgallium-vdpau=disabled
+.endif
 
 .if ${ARCH} != amd64
 MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629

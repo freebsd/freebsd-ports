@@ -6,7 +6,9 @@ lib/dri/libdril_dri.so
 %%panfrost%%lib/dri/rockchip_dri.so
 %%r300%%lib/dri/r300_dri.so
 %%r600%%lib/dri/r600_dri.so
+%%r600%%lib/dri/r600_drv_video.so
 %%radeonsi%%lib/dri/radeonsi_dri.so
+%%radeonsi%%lib/dri/radeonsi_drv_video.so
 %%svga%%lib/dri/vmwgfx_dri.so
 %%llvmpipe%%lib/dri/kms_swrast_dri.so
 %%llvmpipe%%lib/dri/swrast_dri.so
@@ -26,6 +28,14 @@ lib/dri/libdril_dri.so
 %%anv%%lib/libvulkan_intel.so
 %%radv%%lib/libvulkan_radeon.so
 %%swrast_vk%%lib/libvulkan_lvp.so
+%%r600%%lib/vdpau/libvdpau_r600.so
+%%r600%%lib/vdpau/libvdpau_r600.so.1
+%%r600%%lib/vdpau/libvdpau_r600.so.1.0
+%%r600%%lib/vdpau/libvdpau_r600.so.1.0.0
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so.1
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so.1.0
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
 share/drirc.d/00-mesa-defaults.conf
 %%radv%%share/drirc.d/00-radv-defaults.conf
 share/drirc.d/01-freebsd.conf
