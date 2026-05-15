@@ -4432,6 +4432,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qgis/PyQt/QtMultimedia.py
 %%DATADIR%%/python/qgis/PyQt/QtNetwork.py
 %%DATADIR%%/python/qgis/PyQt/QtPrintSupport.py
+%%DATADIR%%/python/qgis/PyQt/QtQuick.py
 %%DATADIR%%/python/qgis/PyQt/QtQuickWidgets.py
 %%DATADIR%%/python/qgis/PyQt/QtSerialPort.py
 %%DATADIR%%/python/qgis/PyQt/QtSql.py
