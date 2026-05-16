@@ -1,8 +1,8 @@
---- torch/distributed/elastic/multiprocessing/redirects.py.orig	2026-04-19 02:32:30 UTC
+--- torch/distributed/elastic/multiprocessing/redirects.py.orig	2026-05-13 17:40:44 UTC
 +++ torch/distributed/elastic/multiprocessing/redirects.py
-@@ -31,7 +31,9 @@ def get_libc():
+@@ -47,7 +47,9 @@ def get_libc():
+             "msvcr110, msvcr100). Redirects cannot function without a CRT."
          )
-         return None
      else:
 -        return ctypes.CDLL("libc.so.6")
 +        import ctypes.util

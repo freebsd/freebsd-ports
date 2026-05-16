@@ -1,6 +1,6 @@
---- test/run_test.py.orig	2026-03-23 18:40:42 UTC
+--- test/run_test.py.orig	2026-05-13 17:40:38 UTC
 +++ test/run_test.py
-@@ -1142,6 +1142,12 @@ def run_doctests(test_module, test_directory, options)
+@@ -1155,6 +1155,12 @@ def run_doctests(test_module, test_directory, options)
          else:
              enabled["onnx"] = True
  
@@ -13,7 +13,7 @@
      # Set doctest environment variables
      if enabled["cuda"]:
          os.environ["TORCH_DOCTEST_CUDA"] = "1"
-@@ -1812,6 +1818,35 @@ def get_selected_tests(options) -> list[str]:
+@@ -1869,6 +1875,35 @@ def get_selected_tests(options) -> list[str]:
              "Skip distributed tests on s390x",
          )
  
@@ -49,7 +49,7 @@
      # skip all distributed tests if distributed package is not available.
      if not dist.is_available():
          selected_tests = exclude_tests(
-@@ -2086,7 +2121,7 @@ def check_pip_packages() -> None:
+@@ -2148,7 +2183,7 @@ def check_pip_packages() -> None:
  def check_pip_packages() -> None:
      packages = [
          "pytest-rerunfailures",

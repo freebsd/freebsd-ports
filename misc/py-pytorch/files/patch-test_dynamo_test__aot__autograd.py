@@ -1,4 +1,4 @@
---- test/dynamo/test_aot_autograd.py.orig	2026-04-19 12:47:58 UTC
+--- test/dynamo/test_aot_autograd.py.orig	2026-05-13 17:40:38 UTC
 +++ test/dynamo/test_aot_autograd.py
 @@ -1,6 +1,7 @@ import re
  # Owner(s): ["module: dynamo"]
@@ -8,7 +8,7 @@
  import unittest
  from textwrap import dedent
  from unittest.mock import patch
-@@ -1009,6 +1010,7 @@ SeqNr|OrigAten|SrcFn|FwdSrcFn
+@@ -1006,6 +1007,7 @@ SeqNr|OrigAten|SrcFn|FwdSrcFn
  
      # set donated_buffer=False due to create_graph=True
      @torch._functorch.config.patch("donated_buffer", False)

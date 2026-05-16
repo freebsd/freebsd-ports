@@ -1,7 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
-PORTREVISION=	3
+DISTVERSION=	2.12.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,10 +38,8 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
-		libblis.so:math/blis \
 		libonnx.so:misc/onnx \
 		libopenblas.so:math/openblas \
-		libpthreadpool.so:devel/pthreadpool \
 		libprotobuf.so:devel/protobuf \
 		libsleef.so:math/sleef
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
@@ -56,6 +53,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}astunparse>0:devel/py-astunparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} # optional dependencies
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang localbase:ldflags mpi:openmpi python
 USE_PYTHON=	pep517 autoplist
@@ -80,10 +79,6 @@ LDFLAGS_powerpc64le=	-pthread
 
 BINARY_ALIAS=	make=${GMAKE}
 
-POST_PLIST=	fix-plist
-
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		TORCHINDUCTOR_CACHE_DIR=${WRKDIR}/torchinductor_cache
 TEST_WRKSRC=	${WRKSRC}/test
@@ -126,9 +121,6 @@ do-install: # port should be moved to 'torch', but keep this for now with the ha
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
 			${_PYTHONPKGLIST}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
-
-fix-plist: # remove the stray %%PYTHON_SITELIBDIR%%/caffe2 file
-	@${REINPLACE_CMD} -e "s|.*/caffe2$$||" ${TMPPLIST}
 
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_test.py

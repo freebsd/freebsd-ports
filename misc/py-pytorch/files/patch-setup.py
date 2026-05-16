@@ -1,6 +1,6 @@
---- setup.py.orig	2026-03-23 18:40:42 UTC
+--- setup.py.orig	2026-05-13 17:40:38 UTC
 +++ setup.py
-@@ -286,7 +286,7 @@ from typing import Any, ClassVar, IO
+@@ -285,7 +285,7 @@ from typing import Any, ClassVar, IO
  from pathlib import Path
  from typing import Any, ClassVar, IO
  
@@ -9,7 +9,7 @@
  import setuptools.command.build_ext
  import setuptools.command.sdist
  import setuptools.errors
-@@ -1435,30 +1435,37 @@ class concat_license_files:
+@@ -1425,30 +1425,37 @@ class concat_license_files:
          self.f1.write_text(self.bsd_text, encoding="utf-8")
  
  
@@ -68,7 +68,7 @@
  
  
  class clean(Command):
-@@ -1647,11 +1654,12 @@ def configure_extension_build() -> tuple[
+@@ -1623,11 +1630,12 @@ def configure_extension_build() -> tuple[
      ext_modules.append(C)
  
      cmdclass = {

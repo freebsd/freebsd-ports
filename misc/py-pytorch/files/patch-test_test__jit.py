@@ -1,6 +1,6 @@
---- test/test_jit.py.orig	2026-04-18 22:16:10 UTC
+--- test/test_jit.py.orig	2026-05-13 17:40:38 UTC
 +++ test/test_jit.py
-@@ -375,6 +375,10 @@ class TestJitProfiler(JitTestCase):
+@@ -377,6 +377,10 @@ class TestJitProfiler(JitTestCase):
              self.graph_executor_optimize_opt
          )
  
@@ -11,7 +11,7 @@
      def test_profiler(self):
          torch._C._set_graph_executor_optimize(False)
  
-@@ -1832,6 +1836,10 @@ graph(%Ra, %Rb):
+@@ -1838,6 +1842,10 @@ graph(%Ra, %Rb):
  
      @slowTest
      @unittest.skipIf(GRAPH_EXECUTOR != ProfilingMode.LEGACY, 'Testing differentiable graph')
@@ -22,7 +22,7 @@
      def test_dropout_module_requires_grad(self):
          with enable_profiling_mode_for_profiling_tests():
              class MyModule(torch.nn.Module):
-@@ -1875,6 +1883,10 @@ graph(%Ra, %Rb):
+@@ -1881,6 +1889,10 @@ graph(%Ra, %Rb):
  
      @unittest.skipIf(GRAPH_EXECUTOR == ProfilingMode.SIMPLE, 'Testing differentiable graph')
      @skipIfTorchDynamo("Torchdynamo cannot correctly handle profiler.profile calls")
