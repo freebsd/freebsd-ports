@@ -1,4 +1,4 @@
---- caffe2/CMakeLists.txt.orig	2024-06-05 19:17:56 UTC
+--- caffe2/CMakeLists.txt.orig	2026-05-13 17:40:38 UTC
 +++ caffe2/CMakeLists.txt
 @@ -1,6 +1,8 @@ include(../cmake/Codegen.cmake)
  # ---[ Generate and install header and cpp files
@@ -9,7 +9,7 @@
  # ---[ Vulkan code gen
  if(USE_VULKAN)
    include(../cmake/VulkanCodegen.cmake)
-@@ -561,7 +563,7 @@ endif()
+@@ -483,7 +485,7 @@ endif()
  endif()
  
  # Enable conditional FP16 arithmetic intrinsics

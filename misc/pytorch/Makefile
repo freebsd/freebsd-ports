@@ -1,7 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
-PORTREVISION=	3
+DISTVERSION=	2.12.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -16,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	compilation fails: clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=294067
 BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
 
-BUILD_DEPENDS=	gmake:devel/gmake \
-		${LOCALBASE}/include/fxdiv.h:devel/fxdiv \
+BUILD_DEPENDS=	${LOCALBASE}/include/fxdiv.h:devel/fxdiv \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libblis.so:math/blis \
@@ -28,10 +27,11 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libsleef.so:math/sleef
 
-USES=		compiler:c++17-lang cmake localbase:ldflags python # requires python even with PYTHON=off
+USES=		compiler:c++17-lang cmake:noninja gmake localbase:ldflags python # requires python even with PYTHON=off
 
 CMAKE_OFF=	BUILD_CUSTOM_PROTOBUF USE_CUDA USE_ROCM  USE_NNPACK USE_QNNPACK USE_PYTORCH_QNNPACK \
 		USE_FBGEMM # workaround recommended by the upstream here: https://github.com/pytorch/pytorch/issues/28337
+CMAKE_OFF+=	BUILD_TEST BUILD_AOT_INDUCTOR_TEST
 CMAKE_ON=	USE_SYSTEM_PYBIND11 \
 		USE_SYSTEM_SLEEF \
 		USE_SYSTEM_ONNX # see other USE_SYSTEM_xx in CMakeLists.txt
