@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.8
+DISTVERSION=	2026.5.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -562,9 +562,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pest_meta-2.8.6 \
 		petgraph-0.8.3 \
 		phf-0.11.3 \
+		phf-0.13.1 \
 		phf_codegen-0.11.3 \
+		phf_codegen-0.13.1 \
 		phf_generator-0.11.3 \
+		phf_generator-0.13.1 \
 		phf_shared-0.11.3 \
+		phf_shared-0.13.1 \
 		pin-project-1.1.12 \
 		pin-project-internal-1.1.12 \
 		pin-project-lite-0.2.17 \
