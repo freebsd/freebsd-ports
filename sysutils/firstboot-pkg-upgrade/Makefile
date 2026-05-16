@@ -1,5 +1,5 @@
 PORTNAME=	firstboot-pkg-upgrade
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none

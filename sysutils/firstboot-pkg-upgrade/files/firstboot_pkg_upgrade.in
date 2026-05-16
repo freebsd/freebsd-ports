@@ -29,15 +29,16 @@ stop_cmd=":"
 
 firstboot_pkg_upgrade_run()
 {
-	pkg -N > /dev/null 2>&1 || pkg bootstrap -y
-	pkg update
-
-	state_orig=`pkg info | sha256`
 	repo_args=""
 
 	for repo in ${firstboot_pkg_upgrade_repos}; do
 		repo_args="${repo_args} -r ${repo}"
 	done
+
+	pkg -N > /dev/null 2>&1 || pkg bootstrap -y
+	pkg update ${repo_args}
+
+	state_orig=`pkg info | sha256`
 
 	env AUTOCLEAN=ON pkg upgrade ${repo_args} -y
 
