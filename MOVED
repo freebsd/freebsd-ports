@@ -5348,3 +5348,4 @@ net/pecl-oauth2|net/php-oauth|2026-06-14|Renamed to avoid confusion between impl
 graphics/mesa-gallium-va|graphics/mesa-dri|2026-06-15|Merged into graphics/mesa-dri
 graphics/mesa-gallium-vdpau|graphics/mesa-dri|2026-06-15|Merged into graphics/mesa-dri
 graphics/libosmesa||2026-06-15|EOLed upstream
+graphics/mesa-gallium-xa||2026-06-15|EOLed upstream
