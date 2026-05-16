@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2026-05-16 01:30:24 UTC
++++ CMakeLists.txt
+@@ -563,14 +563,6 @@ install(FILES
+   "${PROJECT_SOURCE_DIR}/data/uninstall.sql"
+   "${PROJECT_BINARY_DIR}/data/update.sql"
+   DESTINATION "${MRN_DATA_DIR}/")
+-install(PROGRAMS
+-  "${PROJECT_SOURCE_DIR}/data/deb/postinst.sh"
+-  "${PROJECT_SOURCE_DIR}/data/deb/prerm.sh"
+-  DESTINATION "${MRN_DATA_DIR}/deb/")
+-install(PROGRAMS
+-  "${PROJECT_SOURCE_DIR}/data/rpm/post.sh"
+-  "${PROJECT_SOURCE_DIR}/data/rpm/preun.sh"
+-  DESTINATION "${MRN_DATA_DIR}/rpm/")
+ if(MSVC)
+   install(FILES $<TARGET_PDB_FILE:mroonga>
+     DESTINATION "${MYSQL_PLUGIN_DIR}"
