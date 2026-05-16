@@ -127,8 +127,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cssparser-color-0.1.0 \
 		cssparser-macros-0.6.1 \
 		ctor-0.1.26 \
-		ctor-0.11.1 \
 		ctor-0.4.1 \
+		ctor-1.0.5 \
 		ctor-proc-macro-0.0.5 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
@@ -317,11 +317,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		munge-0.4.1 \
 		munge_macro-0.4.1 \
 		napi-3.1.6 \
-		napi-3.8.6 \
+		napi-3.9.0 \
 		napi-build-2.2.3 \
-		napi-build-2.3.1 \
+		napi-build-2.3.2 \
 		napi-derive-3.1.2 \
-		napi-derive-3.5.5 \
+		napi-derive-3.5.6 \
 		napi-derive-backend-2.0.3 \
 		napi-derive-backend-5.0.4 \
 		napi-sys-3.0.0 \
