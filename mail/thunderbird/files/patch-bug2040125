@@ -18,10 +18,10 @@ Author: Christoph Moench-Tegeder <cmt@burggraben.net>
     
     Differential Revision: https://phabricator.services.mozilla.com/D300937
 
-diff --git a/toolkit/system/unixproxy/nsLibProxySettings.cpp b/toolkit/system/unixproxy/nsLibProxySettings.cpp
+diff --git toolkit/system/unixproxy/nsLibProxySettings.cpp toolkit/system/unixproxy/nsLibProxySettings.cpp
 index 3de1b7ce9b8f..8b063d446c1e 100644
---- a/toolkit/system/unixproxy/nsLibProxySettings.cpp
-+++ b/toolkit/system/unixproxy/nsLibProxySettings.cpp
+--- toolkit/system/unixproxy/nsLibProxySettings.cpp
++++ toolkit/system/unixproxy/nsLibProxySettings.cpp
 @@ -111,6 +111,13 @@ nsUnixSystemProxySettings::GetSystemWPADSetting(bool* aSystemWPADSetting) {
    return NS_OK;
  }
