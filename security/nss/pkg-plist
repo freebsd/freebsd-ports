@@ -28,13 +28,9 @@ include/nss/cert.h
 include/nss/certdb.h
 include/nss/certt.h
 include/nss/ciferfam.h
-include/nss/cmmf.h
-include/nss/cmmft.h
 include/nss/cms.h
 include/nss/cmsreclist.h
 include/nss/cmst.h
-include/nss/crmf.h
-include/nss/crmft.h
 include/nss/cryptohi.h
 include/nss/cryptoht.h
 include/nss/eccutil.h
@@ -127,7 +123,6 @@ include/nss/utilmodt.h
 include/nss/utilpars.h
 include/nss/utilparst.h
 include/nss/utilrename.h
-lib/libcrmf.a
 lib/libfreebl3.so
 lib/libfreeblpriv3.so
 lib/libnss3.so
