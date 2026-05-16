@@ -1,4 +1,5 @@
 bin/comfyui
+%%DATADIR%%/.spectral.yaml
 %%DATADIR%%/CODEOWNERS
 %%DATADIR%%/CONTRIBUTING.md
 %%DATADIR%%/LICENSE
@@ -76,6 +77,7 @@ bin/comfyui
 %%DATADIR%%/blueprints/Color Adjustment.json
 %%DATADIR%%/blueprints/Color Balance.json
 %%DATADIR%%/blueprints/Color Curves.json
+%%DATADIR%%/blueprints/ControlNet (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Crop Images 2x2.json
 %%DATADIR%%/blueprints/Crop Images 3x3.json
 %%DATADIR%%/blueprints/Depth to Image (Z-Image-Turbo).json
@@ -83,19 +85,25 @@ bin/comfyui
 %%DATADIR%%/blueprints/Edge-Preserving Blur.json
 %%DATADIR%%/blueprints/Film Grain.json
 %%DATADIR%%/blueprints/First-Last-Frame to Video (LTX-2.3).json
+%%DATADIR%%/blueprints/First-Last-Frame to Video.json
+%%DATADIR%%/blueprints/Frame Interpolation.json
+%%DATADIR%%/blueprints/Get Any Video Frame.json
 %%DATADIR%%/blueprints/Glow.json
 %%DATADIR%%/blueprints/Hue and Saturation.json
 %%DATADIR%%/blueprints/Image Blur.json
 %%DATADIR%%/blueprints/Image Captioning (gemini).json
 %%DATADIR%%/blueprints/Image Channels.json
 %%DATADIR%%/blueprints/Image Edit (FireRed Image Edit 1.1).json
+%%DATADIR%%/blueprints/Image Edit (Flux.2 Dev).json
 %%DATADIR%%/blueprints/Image Edit (Flux.2 Klein 4B).json
 %%DATADIR%%/blueprints/Image Edit (LongCat Image Edit).json
+%%DATADIR%%/blueprints/Image Edit (Qwen 2509).json
 %%DATADIR%%/blueprints/Image Edit (Qwen 2511).json
 %%DATADIR%%/blueprints/Image Inpainting (Flux.1 Fill Dev).json
 %%DATADIR%%/blueprints/Image Inpainting (Qwen-image).json
 %%DATADIR%%/blueprints/Image Levels.json
 %%DATADIR%%/blueprints/Image Outpainting (Qwen-Image).json
+%%DATADIR%%/blueprints/Image Segmentation (SAM3).json
 %%DATADIR%%/blueprints/Image Upscale(Z-image-Turbo).json
 %%DATADIR%%/blueprints/Image to Depth Map (Lotus).json
 %%DATADIR%%/blueprints/Image to Layers(Qwen-Image-Layered).json
@@ -105,25 +113,35 @@ bin/comfyui
 %%DATADIR%%/blueprints/Pose to Image (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Pose to Video (LTX 2.0).json
 %%DATADIR%%/blueprints/Prompt Enhance.json
+%%DATADIR%%/blueprints/Remove Background (BiRefNet).json
 %%DATADIR%%/blueprints/Sharpen.json
 %%DATADIR%%/blueprints/Text to Audio (ACE-Step 1.5).json
+%%DATADIR%%/blueprints/Text to Image (Ernie Image Turbo).json
+%%DATADIR%%/blueprints/Text to Image (Ernie Image).json
 %%DATADIR%%/blueprints/Text to Image (Flux.1 Dev).json
 %%DATADIR%%/blueprints/Text to Image (Flux.1 Krea Dev).json
+%%DATADIR%%/blueprints/Text to Image (Flux.2 Dev).json
 %%DATADIR%%/blueprints/Text to Image (NetaYume Lumina).json
 %%DATADIR%%/blueprints/Text to Image (Qwen-Image 2512).json
 %%DATADIR%%/blueprints/Text to Image (Qwen-Image).json
+%%DATADIR%%/blueprints/Text to Image (Z-Image-Base).json
 %%DATADIR%%/blueprints/Text to Image (Z-Image-Turbo).json
+%%DATADIR%%/blueprints/Text to Image.json
 %%DATADIR%%/blueprints/Text to Video (LTX-2.3).json
 %%DATADIR%%/blueprints/Text to Video (Wan 2.2).json
 %%DATADIR%%/blueprints/Unsharp Mask.json
 %%DATADIR%%/blueprints/Video Captioning (Gemini).json
 %%DATADIR%%/blueprints/Video Inpaint(Wan2.1 VACE).json
+%%DATADIR%%/blueprints/Video Segmentation (SAM3).json
 %%DATADIR%%/blueprints/Video Stitch.json
 %%DATADIR%%/blueprints/Video Upscale(GAN x4).json
 %%DATADIR%%/blueprints/put_blueprints_here
 %%DATADIR%%/comfy/audio_encoders/audio_encoders.py
 %%DATADIR%%/comfy/audio_encoders/wav2vec2.py
 %%DATADIR%%/comfy/audio_encoders/whisper.py
+%%DATADIR%%/comfy/background_removal/birefnet.json
+%%DATADIR%%/comfy/background_removal/birefnet.py
+%%DATADIR%%/comfy/bg_removal_model.py
 %%DATADIR%%/comfy/cldm/cldm.py
 %%DATADIR%%/comfy/cldm/control_types.py
 %%DATADIR%%/comfy/cldm/dit_embedder.py
@@ -150,6 +168,7 @@ bin/comfyui
 %%DATADIR%%/comfy/conds.py
 %%DATADIR%%/comfy/context_windows.py
 %%DATADIR%%/comfy/controlnet.py
+%%DATADIR%%/comfy/deploy_environment.py
 %%DATADIR%%/comfy/diffusers_convert.py
 %%DATADIR%%/comfy/diffusers_load.py
 %%DATADIR%%/comfy/extra_samplers/uni_pc.py
@@ -187,6 +206,9 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/chroma/model.py
 %%DATADIR%%/comfy/ldm/chroma_radiance/layers.py
 %%DATADIR%%/comfy/ldm/chroma_radiance/model.py
+%%DATADIR%%/comfy/ldm/cogvideo/__init__.py
+%%DATADIR%%/comfy/ldm/cogvideo/model.py
+%%DATADIR%%/comfy/ldm/cogvideo/vae.py
 %%DATADIR%%/comfy/ldm/common_dit.py
 %%DATADIR%%/comfy/ldm/cosmos/blocks.py
 %%DATADIR%%/comfy/ldm/cosmos/cosmos_tokenizer/layers3d.py
@@ -209,6 +231,10 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/genmo/joint_model/utils.py
 %%DATADIR%%/comfy/ldm/genmo/vae/model.py
 %%DATADIR%%/comfy/ldm/hidream/model.py
+%%DATADIR%%/comfy/ldm/hidream_o1/attention.py
+%%DATADIR%%/comfy/ldm/hidream_o1/conditioning.py
+%%DATADIR%%/comfy/ldm/hidream_o1/model.py
+%%DATADIR%%/comfy/ldm/hidream_o1/utils.py
 %%DATADIR%%/comfy/ldm/hunyuan3d/model.py
 %%DATADIR%%/comfy/ldm/hunyuan3d/vae.py
 %%DATADIR%%/comfy/ldm/hunyuan3dv2_1/hunyuandit.py
@@ -274,9 +300,11 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/supir/supir_modules.py
 %%DATADIR%%/comfy/ldm/supir/supir_patch.py
 %%DATADIR%%/comfy/ldm/util.py
+%%DATADIR%%/comfy/ldm/wan/ar_model.py
 %%DATADIR%%/comfy/ldm/wan/model.py
 %%DATADIR%%/comfy/ldm/wan/model_animate.py
 %%DATADIR%%/comfy/ldm/wan/model_multitalk.py
+%%DATADIR%%/comfy/ldm/wan/model_wandancer.py
 %%DATADIR%%/comfy/ldm/wan/vae.py
 %%DATADIR%%/comfy/ldm/wan/vae2_2.py
 %%DATADIR%%/comfy/lora.py
@@ -286,6 +314,7 @@ bin/comfyui
 %%DATADIR%%/comfy/model_detection.py
 %%DATADIR%%/comfy/model_management.py
 %%DATADIR%%/comfy/model_patcher.py
+%%DATADIR%%/comfy/model_prefetch.py
 %%DATADIR%%/comfy/model_sampling.py
 %%DATADIR%%/comfy/nested_tensor.py
 %%DATADIR%%/comfy/ops.py
@@ -322,11 +351,14 @@ bin/comfyui
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/added_tokens.json
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/special_tokens_map.json
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/tokenizer_config.json
+%%DATADIR%%/comfy/text_encoders/cogvideo.py
 %%DATADIR%%/comfy/text_encoders/cosmos.py
 %%DATADIR%%/comfy/text_encoders/ernie.py
 %%DATADIR%%/comfy/text_encoders/flux.py
+%%DATADIR%%/comfy/text_encoders/gemma4.py
 %%DATADIR%%/comfy/text_encoders/genmo.py
 %%DATADIR%%/comfy/text_encoders/hidream.py
+%%DATADIR%%/comfy/text_encoders/hidream_o1.py
 %%DATADIR%%/comfy/text_encoders/hunyuan_image.py
 %%DATADIR%%/comfy/text_encoders/hunyuan_video.py
 %%DATADIR%%/comfy/text_encoders/hydit.py
@@ -428,6 +460,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api/version_list.py
 %%DATADIR%%/comfy_api_nodes/__init__.py
 %%DATADIR%%/comfy_api_nodes/apis/__init__.py
+%%DATADIR%%/comfy_api_nodes/apis/anthropic.py
 %%DATADIR%%/comfy_api_nodes/apis/bfl.py
 %%DATADIR%%/comfy_api_nodes/apis/bria.py
 %%DATADIR%%/comfy_api_nodes/apis/bytedance.py
@@ -442,7 +475,6 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/apis/magnific.py
 %%DATADIR%%/comfy_api_nodes/apis/meshy.py
 %%DATADIR%%/comfy_api_nodes/apis/minimax.py
-%%DATADIR%%/comfy_api_nodes/apis/moonvalley.py
 %%DATADIR%%/comfy_api_nodes/apis/openai.py
 %%DATADIR%%/comfy_api_nodes/apis/pixverse.py
 %%DATADIR%%/comfy_api_nodes/apis/quiver.py
@@ -457,6 +489,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/apis/vidu.py
 %%DATADIR%%/comfy_api_nodes/apis/wan.py
 %%DATADIR%%/comfy_api_nodes/apis/wavespeed.py
+%%DATADIR%%/comfy_api_nodes/nodes_anthropic.py
 %%DATADIR%%/comfy_api_nodes/nodes_bfl.py
 %%DATADIR%%/comfy_api_nodes/nodes_bria.py
 %%DATADIR%%/comfy_api_nodes/nodes_bytedance.py
@@ -472,7 +505,6 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/nodes_magnific.py
 %%DATADIR%%/comfy_api_nodes/nodes_meshy.py
 %%DATADIR%%/comfy_api_nodes/nodes_minimax.py
-%%DATADIR%%/comfy_api_nodes/nodes_moonvalley.py
 %%DATADIR%%/comfy_api_nodes/nodes_openai.py
 %%DATADIR%%/comfy_api_nodes/nodes_pixverse.py
 %%DATADIR%%/comfy_api_nodes/nodes_quiver.py
@@ -515,9 +547,11 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_advanced_samplers.py
 %%DATADIR%%/comfy_extras/nodes_align_your_steps.py
 %%DATADIR%%/comfy_extras/nodes_apg.py
+%%DATADIR%%/comfy_extras/nodes_ar_video.py
 %%DATADIR%%/comfy_extras/nodes_attention_multiply.py
 %%DATADIR%%/comfy_extras/nodes_audio.py
 %%DATADIR%%/comfy_extras/nodes_audio_encoder.py
+%%DATADIR%%/comfy_extras/nodes_bg_removal.py
 %%DATADIR%%/comfy_extras/nodes_camera_trajectory.py
 %%DATADIR%%/comfy_extras/nodes_canny.py
 %%DATADIR%%/comfy_extras/nodes_cfg.py
@@ -543,6 +577,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_gits.py
 %%DATADIR%%/comfy_extras/nodes_glsl.py
 %%DATADIR%%/comfy_extras/nodes_hidream.py
+%%DATADIR%%/comfy_extras/nodes_hidream_o1.py
 %%DATADIR%%/comfy_extras/nodes_hooks.py
 %%DATADIR%%/comfy_extras/nodes_hunyuan.py
 %%DATADIR%%/comfy_extras/nodes_hunyuan3d.py
@@ -592,6 +627,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_rtdetr.py
 %%DATADIR%%/comfy_extras/nodes_sag.py
 %%DATADIR%%/comfy_extras/nodes_sam3.py
+%%DATADIR%%/comfy_extras/nodes_save_3d.py
 %%DATADIR%%/comfy_extras/nodes_sd3.py
 %%DATADIR%%/comfy_extras/nodes_sdpose.py
 %%DATADIR%%/comfy_extras/nodes_sdupscale.py
@@ -608,10 +644,13 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_upscale_model.py
 %%DATADIR%%/comfy_extras/nodes_video.py
 %%DATADIR%%/comfy_extras/nodes_video_model.py
+%%DATADIR%%/comfy_extras/nodes_void.py
 %%DATADIR%%/comfy_extras/nodes_wan.py
+%%DATADIR%%/comfy_extras/nodes_wandancer.py
 %%DATADIR%%/comfy_extras/nodes_wanmove.py
 %%DATADIR%%/comfy_extras/nodes_webcam.py
 %%DATADIR%%/comfy_extras/nodes_zimage.py
+%%DATADIR%%/comfy_extras/void_noise_warp.py
 %%DATADIR%%/comfyui_version.py
 %%DATADIR%%/cuda_malloc.py
 %%DATADIR%%/custom_nodes/example_node.py.example
@@ -627,6 +666,7 @@ bin/comfyui
 %%DATADIR%%/middleware/__init__.py
 %%DATADIR%%/middleware/cache_middleware.py
 %%DATADIR%%/models/audio_encoders
+%%DATADIR%%/models/background_removal/put_background_removal_models_here
 %%DATADIR%%/models/checkpoints
 %%DATADIR%%/models/clip
 %%DATADIR%%/models/clip_vision
@@ -651,6 +691,7 @@ bin/comfyui
 %%DATADIR%%/models/latent_upscale_models
 %%DATADIR%%/models/loras
 %%DATADIR%%/models/model_patches
+%%DATADIR%%/models/optical_flow/put_optical_flow_models_here
 %%DATADIR%%/models/photomaker
 %%DATADIR%%/models/style_models
 %%DATADIR%%/models/text_encoders
@@ -677,6 +718,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/app_test/custom_node_manager_test.py
 %%DATADIR%%/tests-unit/app_test/frontend_manager_test.py
 %%DATADIR%%/tests-unit/app_test/model_manager_test.py
+%%DATADIR%%/tests-unit/app_test/node_replace_manager_test.py
 %%DATADIR%%/tests-unit/app_test/test_migrations.py
 %%DATADIR%%/tests-unit/app_test/user_manager_system_user_test.py
 %%DATADIR%%/tests-unit/assets_test/conftest.py
@@ -707,6 +749,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/assets_test/test_tags_api.py
 %%DATADIR%%/tests-unit/assets_test/test_uploads.py
 %%DATADIR%%/tests-unit/comfy_api_test/input_impl_test.py
+%%DATADIR%%/tests-unit/comfy_api_test/multicombo_serialization_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_types_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/__init__.py
 %%DATADIR%%/tests-unit/comfy_extras_test/image_stitch_test.py
@@ -715,6 +758,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_quant/test_mixed_precision.py
 %%DATADIR%%/tests-unit/comfy_test/folder_path_test.py
 %%DATADIR%%/tests-unit/comfy_test/model_detection_test.py
+%%DATADIR%%/tests-unit/deploy_environment_test.py
 %%DATADIR%%/tests-unit/execution_test/preview_method_override_test.py
 %%DATADIR%%/tests-unit/execution_test/test_cache_provider.py
 %%DATADIR%%/tests-unit/execution_test/validate_node_input_test.py
