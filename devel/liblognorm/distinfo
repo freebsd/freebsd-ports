@@ -1,3 +1,3 @@
-TIMESTAMP = 1765961899
-SHA256 (liblognorm-2.0.9.tar.gz) = 76c7cc2cb76a3d58e7732e0cff239180f83f3b635002b8aa04865c8812857793
-SIZE (liblognorm-2.0.9.tar.gz) = 675265
+TIMESTAMP = 1778897605
+SHA256 (rsyslog-liblognorm-v2.1.0_GH0.tar.gz) = 1f6c63d218a0a182b7758ce177033b604c2df30bbff80ea42b9bc032975e9ca9
+SIZE (rsyslog-liblognorm-v2.1.0_GH0.tar.gz) = 423271
