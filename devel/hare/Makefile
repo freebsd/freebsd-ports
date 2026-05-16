@@ -1,6 +1,5 @@
 PORTNAME=	hare
-DISTVERSION=	0.25.2
-PORTREVISION=	1
+DISTVERSION=	0.26.0
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 PKGNAMESUFFIX=	-lang
@@ -13,7 +12,7 @@ LICENSE=	GPLv3 MPL20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 # aarch64 riscv64
+ONLY_FOR_ARCHS=	amd64 aarch64 riscv64
 
 BUILD_DEPENDS=	harec:lang/harec \
 		qbe:devel/qbe \
@@ -42,7 +41,6 @@ do-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/*
-	${MKDIR} ${STAGEDIR}${DATADIR}/third-party
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.md ${STAGEDIR}${DOCSDIR}
 
