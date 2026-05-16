@@ -12,15 +12,14 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>0:graphics/wayland-protocols \
-		zig>=0.15.1:lang/zig
+		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
 		libwlroots-0.20.so:x11-toolkits/wlroots020 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		pkgconfig xorg zig
+USES=		pkgconfig xorg zig:015
 USE_XORG=	pixman
 
 OPTIONS_DEFINE=	MANPAGES X11
