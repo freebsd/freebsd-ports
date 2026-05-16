@@ -1,3 +1,4 @@
 bin/mautrix-whatsapp
 @dir(mautrix-whatsapp,mautrix-whatsapp) %%ETCDIR%%
+@sample(mautrix-whatsapp,mautrix-whatsapp) %%ETCDIR%%/config.yaml.sample
 @dir(mautrix-whatsapp,mautrix-whatsapp) /var/log/mautrix-whatsapp

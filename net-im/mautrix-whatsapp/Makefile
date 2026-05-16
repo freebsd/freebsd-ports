@@ -1,7 +1,6 @@
 PORTNAME=	mautrix-whatsapp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2604.0
-PORTREVISION=	2
+DISTVERSION=	0.2606.0
 CATEGORIES=	net-im
 
 MAINTAINER=	juw@posteo.de
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 LIB_DEPENDS=	libolm.so:security/olm
 
-USES=		go:modules
+USES=		go:1.26+,modules
 USE_RC_SUBR=	mautrix_whatsapp
 
 GO_MODULE=	go.mau.fi/mautrix-whatsapp
@@ -23,5 +22,7 @@ WRKSRC_SUBDIR=	cmd/${PORTNAME}
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR} \
 		 ${STAGEDIR}/var/log/mautrix-whatsapp
+	${INSTALL_DATA} ${FILESDIR}/config.yaml.sample \
+		${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>
