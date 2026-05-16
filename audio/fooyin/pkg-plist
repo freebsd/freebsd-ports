@@ -11,6 +11,7 @@ lib/fooyin/plugins/fyplugin_libarchive.so
 lib/fooyin/plugins/fyplugin_lyrics.so
 lib/fooyin/plugins/fyplugin_mpris.so
 lib/fooyin/plugins/fyplugin_notify.so
+lib/fooyin/plugins/fyplugin_quicktagger.so
 lib/fooyin/plugins/fyplugin_rawaudio.so
 lib/fooyin/plugins/fyplugin_rgscanner.so
 lib/fooyin/plugins/fyplugin_scrobbler.so
