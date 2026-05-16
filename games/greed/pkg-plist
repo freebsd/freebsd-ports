@@ -1,3 +1,2 @@
 @(,games,2555) bin/greed
-%%DOCSDIR%%/README
 @sample(,games,664) %%SCOREFILE%%.sample
