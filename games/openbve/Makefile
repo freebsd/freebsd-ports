@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.12.1.3
+PORTVERSION=	1.13.0.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,21 +22,25 @@ ALL_TARGET=	all-${WITH_DEBUG:?debug:release}
 
 # Generated with `make makenuget'
 NUGET_DEPENDS=	Antlr4.Runtime=4.6.6 \
-		Bve5_Parsing.OpenBVE=1.1.17 \
+		Bve5_Parsing.OpenBVE=1.1.19 \
 		CS-Script.lib=3.30.3 \
 		DotNetZip.OpenBVE=1.17.2 \
+		HidSharp=2.6.4 \
 		LibUsbDotNet=2.2.29 \
+		Microsoft.Bcl.AsyncInterfaces=8.0.0 \
 		Mono.Cecil=0.11.3 \
 		NAudio.Vorbis=1.2.0 \
 		NAudio=1.10.0 \
 		NLayer.NAudioSupport=1.0.0 \
 		NLayer=1.12.0 \
 		NVorbis=0.10.1 \
+		Newtonsoft.Json=13.0.4 \
 		OpenTK-OpenBVE=1.0.4 \
 		OpenTK.GLControl-OpenBVE=1.0.1 \
 		ReactiveProperty.Core=9.7.0 \
 		ReactiveProperty=9.7.0 \
 		SharpCompress=0.32.2 \
+		SharpCompress=0.48.0 \
 		System.Buffers=4.5.1 \
 		System.ComponentModel.Annotations=5.0.0 \
 		System.Memory=4.5.5 \
@@ -44,6 +48,7 @@ NUGET_DEPENDS=	Antlr4.Runtime=4.6.6 \
 		System.Reactive=6.0.1 \
 		System.Runtime.CompilerServices.Unsafe=6.0.0 \
 		System.Text.Encoding.CodePages=6.0.0 \
+		System.Text.Encoding.CodePages=8.0.0 \
 		System.Threading.Tasks.Extensions=4.5.4 \
 		System.ValueTuple=4.5.0 \
 		Ude.NetStandard=1.2.0
