@@ -2,7 +2,7 @@ BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		mt76
 FWSUBDIR=	mediatek
-FWDRV_VERSION=	20251125
+FWDRV_VERSION=	20260410
 
 LICENSE_FILE=	LICENCE.mediatek
 LICENSE_NAME=	Mediatek firmware license (${FWDRV})

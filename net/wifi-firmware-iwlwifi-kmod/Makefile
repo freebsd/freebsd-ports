@@ -10,7 +10,8 @@ STRIP_FWSUBDIR=	intel/iwlwifi/
 #FWDRV_VERSION=	20240513
 #FWDRV_VERSION=	20241017
 #FWDRV_VERSION=	20251021
-FWDRV_VERSION=	20251125
+#FWDRV_VERSION=	20251125
+FWDRV_VERSION=	20260410
 
 LICENSE_FILE=	LICENCE.iwlwifi_firmware
 LICENSE_NAME=	Intel firmware license (${FWDRV})
@@ -28,7 +29,7 @@ COMPAT_LINUXKPI_HWCRYPTO_HT_VHT=	22000 ax210 bz
 # Note: we manually added (kept) some older versions (outside
 # the generated template) to be able to support all branches.
 #
-### >>> main, stable/15, 15.0
+### >>> main, stable/15, 15.0 (no -c[ore] files), 15.1
 
 FWSUBS= \
 	7000 \
@@ -74,16 +75,20 @@ DISTFILES_ax210+= \
 	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0-89.ucode${DISTURL_SUFFIX}
 DISTFILES_bz+= \
-	${FWSUBDIR}/iwlwifi-bz-b0-fm-c0.pnvm${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-bz-b0-fm-c0-101.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-fm-c0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-fm-c0-c101.ucode${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-bz-b0-gf-a0.pnvm${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-bz-b0-gf-a0-100.ucode${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-bz-b0-hr-b0.pnvm${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-bz-b0-hr-b0-100.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-101.ucode${DISTURL_SUFFIX} \
 	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0.pnvm${DISTURL_SUFFIX} \
-	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-101.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-c101.ucode${DISTURL_SUFFIX}
 DISTFILES_sc+= \
-	${FWSUBDIR}/iwlwifi-sc-a0-wh-b0-101.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-sc-a0-fm-c0-c101.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-sc-a0-wh-b0-101.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-sc-a0-wh-b0-c101.ucode${DISTURL_SUFFIX}
 
 DISTFILES_${FWDRV}= \
 	${DISTFILES_7000} \
@@ -94,24 +99,12 @@ DISTFILES_${FWDRV}= \
 	${DISTFILES_bz} \
 	${DISTFILES_sc}
 DISTFILES_${FWDRV}_lic=
-### <<< main, stable/15, 15.0
+### <<< main, stable/15, 15.0, 15.1
 
-### >>> 14.3, stable/14
+### >>> 14.3, 14.4, stable/14
 DISTFILES_bz+= \
 	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-92.ucode${DISTURL_SUFFIX}
-### <<< 14.3, stable/14
-
-### >>> 14.2, stable/14
-DISTFILES_ax210+= \
-	${FWSUBDIR}/iwlwifi-ma-b0-gf4-a0-83.ucode${DISTURL_SUFFIX} \
-	${FWSUBDIR}/iwlwifi-ma-b0-gf-a0-83.ucode${DISTURL_SUFFIX} \
-	${FWSUBDIR}/iwlwifi-ma-b0-hr-b0-83.ucode${DISTURL_SUFFIX} \
-	${FWSUBDIR}/iwlwifi-so-a0-gf-a0-83.ucode${DISTURL_SUFFIX} \
-	${FWSUBDIR}/iwlwifi-so-a0-hr-b0-83.ucode${DISTURL_SUFFIX} \
-	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0-83.ucode${DISTURL_SUFFIX}
-DISTFILES_bz+= \
-	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-83.ucode${DISTURL_SUFFIX}
-### <<< stable/14
+### <<< 14.3, 14.4, stable/14
 
 ### >>> iwx(4)
 DISTFILES_22000+= \

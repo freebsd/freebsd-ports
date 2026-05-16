@@ -2,7 +2,7 @@ BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		ath10k
 FWSUBDIR=	ath10k
-FWDRV_VERSION=	20251125
+FWDRV_VERSION=	20260410
 
 LICENSE_FILE=	LICENSE.QualcommAtheros_ath10k
 LICENSE_NAME=	QCA firmware license (${FWDRV})

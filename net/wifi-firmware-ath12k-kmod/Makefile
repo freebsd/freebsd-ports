@@ -2,7 +2,7 @@ BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		ath12k
 FWSUBDIR=	ath12k
-FWDRV_VERSION=	20251125
+FWDRV_VERSION=	20260410
 
 # Yes, the license is the ath10k one; see WHENCE.
 LICENSE_FILE=	LICENSE.QualcommAtheros_ath10k
