@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -143,6 +143,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fixedbitset-0.4.2 \
 		flatbuffers-24.12.23 \
 		flate2-1.1.9 \
+		fluent-uri-0.1.4 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
@@ -231,6 +232,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		log-0.4.29 \
 		lru-0.16.4 \
 		lru-slab-0.1.2 \
+		lsp-types-0.97.0 \
 		lzma-rust2-0.16.2 \
 		mac_address-1.1.8 \
 		matchers-0.2.0 \
@@ -376,6 +378,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.149 \
 		serde_path_to_error-0.1.20 \
+		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
