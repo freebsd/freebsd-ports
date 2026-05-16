@@ -5347,3 +5347,4 @@ devel/simian||2026-06-14|Has expired: does not fetch
 net/pecl-oauth2|net/php-oauth|2026-06-14|Renamed to avoid confusion between implemented protocol and library version. Also, pecl repository is deprecated
 graphics/mesa-gallium-va|graphics/mesa-dri|2026-06-15|Merged into graphics/mesa-dri
 graphics/mesa-gallium-vdpau|graphics/mesa-dri|2026-06-15|Merged into graphics/mesa-dri
+graphics/libosmesa||2026-06-15|EOLed upstream
