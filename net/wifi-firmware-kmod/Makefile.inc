@@ -2,7 +2,7 @@ PORTNAME=	wifi-firmware-${FWDRV}-kmod
 PORTVERSION=	${FWDRV_VERSION}
 #PORTREVISION?=	0
 CATEGORIES=	net
-MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+_MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
 		https://fra.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
 		https://sea.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
 		https://sg2.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
@@ -70,12 +70,12 @@ ${f}_PKGNAMESUFFIX=		-${f}
 ${f}_CONFLICTS_INSTALL=		${PORTNAME}
 .endfor
 
-DISTFILES=	${DISTFILES_${FLAVOR}:O:u} \
+_DISTFILES_URL:=${DISTFILES_${FLAVOR}:O:u} \
 		${DISTFILES_${FLAVOR}_lic} \
 		${LICENSE_FILE}${DISTURL_SUFFIX} \
 		WHENCE${DISTURL_SUFFIX}
 
-DIST_SUBDIR=	linux-firmware/${FWDRV}fw
+DIST_SUBDIR=	linux-firmware/${FWDRV_VERSION}/${FWDRV}fw
 EXTRACT_ONLY=
 
 .if !defined(NOT_FOR_ARCHS)
@@ -86,6 +86,14 @@ ONLY_FOR_ARCHS_REASON=	LinuxKPI driver only available for these architectures
 USES=		uidfix
 
 .include <bsd.port.pre.mk>
+
+# This needs to stay after bsd.port.pre.mk.
+.for _d in ${_DISTFILES_URL:range}
+DISTFILES+=	${_DISTFILES_URL:[${_d}]:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}:${_d}
+.for _m in ${_MASTER_SITES:range}
+MASTER_SITES+=	${_MASTER_SITES:[${_m}]}${_DISTFILES_URL:[${_d}]}&dummy=/:${_d}
+.endfor
+.endfor
 
 # src.git main 479905a1ed26c54ef29cdff65cf25f7feade654b (stable/14 2ca7b03d6275)
 # allows direct loading of firmware files.
@@ -101,8 +109,8 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/fw
 	@${MKDIR} ${WRKSRC}/lic
 	# Deal with supplementary licenses files.
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${LICENSE_FILE}${DISTURL_SUFFIX} ${WRKSRC}/${LICENSE_FILE}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/WHENCE${DISTURL_SUFFIX} ${WRKSRC}/WHENCE.in
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${LICENSE_FILE} ${WRKSRC}/${LICENSE_FILE}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/WHENCE ${WRKSRC}/WHENCE.in
 	@${SED} -e "s@%%XXX%%@${WHENCE_REGEX:Q}@g" ${FILESDIR}/WHENCE.awk.in > ${WRKSRC}/WHENCE.awk
 	@${AWK} -f ${WRKSRC}/WHENCE.awk ${WRKSRC}/WHENCE.in > ${WRKSRC}/WHENCE
 	# Do we need to set a tunable?
@@ -127,7 +135,8 @@ post-extract:
 .for _f in ${DISTFILES_${FLAVOR}:O:u}
 	# Create firmware source directory and copy in distfile.
 	@${MKDIR} ${WRKSRC}/fw/${_f:S@${STRIP_FWSUBDIR:Q}@@:H}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S@${STRIP_FWSUBDIR:Q}@@}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@} \
+	    ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S@${STRIP_FWSUBDIR:Q}@@}
 	@${ECHO_CMD} ${BOOTFWDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S@${STRIP_FWSUBDIR:Q}@@} >> ${PLIST}.tmp
 .endfor
 	# Create PLIST for firmware files.
@@ -138,7 +147,8 @@ post-extract:
 ################################################################################
 	# Copy in additional licenses files.
 .for _f in ${DISTFILES_${FLAVOR}_lic}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/lic/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@} \
+	    ${WRKSRC}/lic/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
 .endfor
 
 do-install:
