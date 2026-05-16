@@ -1,23 +1,185 @@
 bin/gpxsee
 share/applications/gpxsee.desktop
-%%DATADIR%%/csv/ellipsoids.csv
-%%DATADIR%%/csv/gcs.csv
-%%DATADIR%%/csv/pcs.csv
-%%MAPS%%%%DATADIR%%/maps/4UMaps.xml
-%%MAPS%%%%DATADIR%%/maps/Antarctica.xml
-%%MAPS%%%%DATADIR%%/maps/OpenStreetMap.xml
-%%MAPS%%%%DATADIR%%/maps/OpenTopoMap.xml
-%%MAPS%%%%DATADIR%%/maps/USGS-imagery.xml
-%%MAPS%%%%DATADIR%%/maps/USGS-topo.xml
+%%DATADIR%%/CRS/ellipsoids.csv
+%%DATADIR%%/CRS/gcs.csv
+%%DATADIR%%/CRS/pcs.csv
+%%DATADIR%%/CRS/projections.csv
+%%DATADIR%%/maps/Antarctica.xml
+%%DATADIR%%/maps/OpenFreeMap.xml
+%%DATADIR%%/maps/OpenSeaMap.xml
+%%DATADIR%%/maps/OpenStreetMap.xml
+%%DATADIR%%/maps/OpenTopoMap.xml
+%%DATADIR%%/maps/USGS-imagery.xml
+%%DATADIR%%/maps/USGS-topo.xml
+%%DATADIR%%/maps/mtbmap-cz.xml
+%%DATADIR%%/style/COROS/sprite.json
+%%DATADIR%%/style/COROS/sprite.png
+%%DATADIR%%/style/COROS/sprite@2x.json
+%%DATADIR%%/style/COROS/sprite@2x.png
+%%DATADIR%%/style/COROS/style.json
+%%DATADIR%%/style/Mapsforge/GPXSee.xml
+%%DATADIR%%/style/Mapsforge/patterns/cemetery.svg
+%%DATADIR%%/style/Mapsforge/patterns/military-area.svg
+%%DATADIR%%/style/Mapsforge/patterns/nature-reserve.svg
+%%DATADIR%%/style/Mapsforge/patterns/orchard.svg
+%%DATADIR%%/style/Mapsforge/patterns/vineyard.svg
+%%DATADIR%%/style/Mapsforge/patterns/wetland.svg
+%%DATADIR%%/style/OpenMapTiles/LICENCE.md
+%%DATADIR%%/style/OpenMapTiles/sprite.json
+%%DATADIR%%/style/OpenMapTiles/sprite.png
+%%DATADIR%%/style/OpenMapTiles/sprite@2x.json
+%%DATADIR%%/style/OpenMapTiles/sprite@2x.png
+%%DATADIR%%/style/OpenMapTiles/style.json
+%%DATADIR%%/style/Protomaps/LICENCE.md
+%%DATADIR%%/style/Protomaps/sprite.json
+%%DATADIR%%/style/Protomaps/sprite.png
+%%DATADIR%%/style/Protomaps/sprite@2x.json
+%%DATADIR%%/style/Protomaps/sprite@2x.png
+%%DATADIR%%/style/Protomaps/style.json
+%%DATADIR%%/symbols/ATV.png
+%%DATADIR%%/symbols/Airport.png
+%%DATADIR%%/symbols/Alert.png
+%%DATADIR%%/symbols/Amusement Park.png
+%%DATADIR%%/symbols/Anchor.png
+%%DATADIR%%/symbols/Ballpark.png
+%%DATADIR%%/symbols/Bank.png
+%%DATADIR%%/symbols/Bar.png
+%%DATADIR%%/symbols/Beach.png
+%%DATADIR%%/symbols/Big Game.png
+%%DATADIR%%/symbols/Bike Trail.png
+%%DATADIR%%/symbols/Boat Ramp.png
+%%DATADIR%%/symbols/Bowling.png
+%%DATADIR%%/symbols/Bridge.png
+%%DATADIR%%/symbols/Building.png
+%%DATADIR%%/symbols/Campground.png
+%%DATADIR%%/symbols/Car Rental.png
+%%DATADIR%%/symbols/Car Repair.png
+%%DATADIR%%/symbols/Car.png
+%%DATADIR%%/symbols/Cemetary.png
+%%DATADIR%%/symbols/Checkpoint.png
+%%DATADIR%%/symbols/Church.png
+%%DATADIR%%/symbols/Crossing.png
+%%DATADIR%%/symbols/Dam.png
+%%DATADIR%%/symbols/Danger.png
+%%DATADIR%%/symbols/Drinking Water.png
+%%DATADIR%%/symbols/Fastfood.png
+%%DATADIR%%/symbols/Ferry.png
+%%DATADIR%%/symbols/First Aid.png
+%%DATADIR%%/symbols/First Category.png
+%%DATADIR%%/symbols/Fishing Area.png
+%%DATADIR%%/symbols/Flag, Blue.png
+%%DATADIR%%/symbols/Flag, Green.png
+%%DATADIR%%/symbols/Flag, Red.png
+%%DATADIR%%/symbols/Flag.png
+%%DATADIR%%/symbols/Food.png
+%%DATADIR%%/symbols/Forest.png
+%%DATADIR%%/symbols/Fourth Category.png
+%%DATADIR%%/symbols/Funicular.png
+%%DATADIR%%/symbols/Furbearer.png
+%%DATADIR%%/symbols/Gas Station.png
+%%DATADIR%%/symbols/Gear.png
+%%DATADIR%%/symbols/Geocache Found.png
+%%DATADIR%%/symbols/Geocache.png
+%%DATADIR%%/symbols/Ghost Town.png
+%%DATADIR%%/symbols/Glider Area.png
+%%DATADIR%%/symbols/Golf Course.png
+%%DATADIR%%/symbols/Ground Transportation.png
+%%DATADIR%%/symbols/Heliport.png
+%%DATADIR%%/symbols/Hors Category.png
+%%DATADIR%%/symbols/Hunting Area.png
+%%DATADIR%%/symbols/Iceskating.png
+%%DATADIR%%/symbols/Info.png
+%%DATADIR%%/symbols/Information.png
+%%DATADIR%%/symbols/Left.png
+%%DATADIR%%/symbols/Library.png
+%%DATADIR%%/symbols/Live Theater.png
+%%DATADIR%%/symbols/Lodge.png
+%%DATADIR%%/symbols/Lodging.png
+%%DATADIR%%/symbols/Marina.png
+%%DATADIR%%/symbols/Medical Facility.png
+%%DATADIR%%/symbols/Meeting Spot.png
+%%DATADIR%%/symbols/Military.png
+%%DATADIR%%/symbols/Mine.png
+%%DATADIR%%/symbols/Movie Theater.png
+%%DATADIR%%/symbols/Museum.png
+%%DATADIR%%/symbols/Obstacle.png
+%%DATADIR%%/symbols/Oil Field.png
+%%DATADIR%%/symbols/Overlook.png
+%%DATADIR%%/symbols/Parachute Area.png
+%%DATADIR%%/symbols/Park.png
+%%DATADIR%%/symbols/Parking Area.png
+%%DATADIR%%/symbols/Pharmacy.png
+%%DATADIR%%/symbols/Physical Stage.png
+%%DATADIR%%/symbols/Picnic Area.png
+%%DATADIR%%/symbols/Pizza.png
+%%DATADIR%%/symbols/Police Station.png
+%%DATADIR%%/symbols/Post Office.png
+%%DATADIR%%/symbols/RV Park.png
+%%DATADIR%%/symbols/Radio Beacon.png
+%%DATADIR%%/symbols/Railway.png
+%%DATADIR%%/symbols/Residence.png
+%%DATADIR%%/symbols/Rest Area.png
+%%DATADIR%%/symbols/Restaurant.png
+%%DATADIR%%/symbols/Restroom.png
+%%DATADIR%%/symbols/Right.png
+%%DATADIR%%/symbols/Scenic Area.png
+%%DATADIR%%/symbols/School.png
+%%DATADIR%%/symbols/Second Category.png
+%%DATADIR%%/symbols/Segment End.png
+%%DATADIR%%/symbols/Segment Start.png
+%%DATADIR%%/symbols/Service.png
+%%DATADIR%%/symbols/Sharp Curve.png
+%%DATADIR%%/symbols/Sharp Left.png
+%%DATADIR%%/symbols/Sharp Right.png
+%%DATADIR%%/symbols/Shelter.png
+%%DATADIR%%/symbols/Shipwreck.png
+%%DATADIR%%/symbols/Shopping Center.png
+%%DATADIR%%/symbols/Shower.png
+%%DATADIR%%/symbols/Ski Resort.png
+%%DATADIR%%/symbols/Skiing Area.png
+%%DATADIR%%/symbols/Skull and Crossbones.png
+%%DATADIR%%/symbols/Slight Left.png
+%%DATADIR%%/symbols/Slight Right.png
+%%DATADIR%%/symbols/Small Game.png
+%%DATADIR%%/symbols/Sprint.png
+%%DATADIR%%/symbols/Stadium.png
+%%DATADIR%%/symbols/Steep Incline.png
+%%DATADIR%%/symbols/Store.png
+%%DATADIR%%/symbols/Straight.png
+%%DATADIR%%/symbols/Summit.png
+%%DATADIR%%/symbols/Tall Tower.png
+%%DATADIR%%/symbols/Telephone.png
+%%DATADIR%%/symbols/Third Category.png
+%%DATADIR%%/symbols/Toilet.png
+%%DATADIR%%/symbols/Trail Head.png
+%%DATADIR%%/symbols/Transport.png
+%%DATADIR%%/symbols/Truck Stop.png
+%%DATADIR%%/symbols/Truck.png
+%%DATADIR%%/symbols/Tunnel.png
+%%DATADIR%%/symbols/U-Turn.png
+%%DATADIR%%/symbols/Ultralight Area.png
+%%DATADIR%%/symbols/Upland Game.png
+%%DATADIR%%/symbols/Valley.png
+%%DATADIR%%/symbols/Virtual Stage.png
+%%DATADIR%%/symbols/Water Hydrant.png
+%%DATADIR%%/symbols/Water Source.png
+%%DATADIR%%/symbols/Water.png
+%%DATADIR%%/symbols/Waterfowl.png
+%%DATADIR%%/symbols/Waypoint.png
+%%DATADIR%%/symbols/Winery.png
+%%DATADIR%%/symbols/Zoo.png
+%%NLS%%%%DATADIR%%/translations/gpxsee_ca.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_cs.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_da.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_de.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_en.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_eo.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_es.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fi.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fr.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_hu.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_it.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_ko.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_nb.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_pl.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_pt_BR.qm
@@ -25,6 +187,12 @@ share/applications/gpxsee.desktop
 %%NLS%%%%DATADIR%%/translations/gpxsee_sv.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_tr.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_uk.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_zh_CN.qm
+share/icons/hicolor/128x128/apps/gpxsee.png
+share/icons/hicolor/16x16/apps/gpxsee.png
+share/icons/hicolor/32x32/apps/gpxsee.png
+share/icons/hicolor/48x48/apps/gpxsee.png
+share/icons/hicolor/64x64/apps/gpxsee.png
+share/icons/hicolor/scalable/apps/gpxsee.svg
 share/metainfo/gpxsee.appdata.xml
 share/mime/packages/gpxsee.xml
-share/icons/hicolor/64x64/apps/gpxsee.png
