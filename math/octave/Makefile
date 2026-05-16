@@ -39,7 +39,6 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libhdf5.so:science/hdf5 \
 		libklu.so:math/suitesparse-klu \
-		libOSMesa.so:graphics/libosmesa \
 		libpcre.so:devel/pcre \
 		libportaudio.so:audio/portaudio \
 		libqhull_r.so:math/qhull \
@@ -82,8 +81,7 @@ CONFIGURE_ARGS=	--disable-jit \
 		--enable-shared \
 		--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
-		--with-lapack="${LAPACKLIB}" \
-		--with-osmesa
+		--with-lapack="${LAPACKLIB}"
 
 INFO=		octave liboctave
 
