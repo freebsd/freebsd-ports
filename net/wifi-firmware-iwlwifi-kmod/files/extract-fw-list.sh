@@ -109,6 +109,14 @@ BEGIN {
 	flavors[6] = "bz";	# mld starts here
 	flavors[7] = "sc";
 	flavors[8] = "dr";
+
+	# Linux version 7.0 at most uses -c101 but we already have FW for 103.
+	# Limit this for now. 7.1 likely will only use up to 102.
+	fwmaxver["bz","bz-b0-fm-c0-c"] = 101;
+	fwmaxver["bz","bz-b0-wh-b0-c"] = 101;
+	fwmaxver["bz","gl-c0-fm-c0-c"] = 101;
+	fwmaxver["sc","sc-a0-fm-c0-c"] = 101;
+	fwmaxver["sc","sc-a0-wh-b0-c"] = 101;
 }
 {
 	if (! /^File:/) {
@@ -143,27 +151,53 @@ BEGIN {
 
 	flav=get_flavor(name);
 	ver=name;
-	gsub("-[[:digit:]]*$", "", name);
+
+	# from 101 it can be -cNNN
+	# It is a bit of a mess as some other files end in -c0.pnvm and so
+	# we also need to filter out pnvm for core -cNNN versions, though
+	# matching NNN* instead of N* should help (for now) as well.
+	if (name ~ /-c[[:digit:]][[:digit:]][[:digit:]]*$/) {
+		gsub("-c[[:digit:]][[:digit:]][[:digit:]]*$", "", name);
+	} else {
+		gsub("-[[:digit:]]*$", "", name);
+	}
 	gsub("^.*-", "", ver);
+	if (ver ~ /^c/) {
+		#printf("DEBUG: ver starting with core prefix c: %s, name: %s, full name: %s\n", ver, name, $0);
+		gsub("^c", "", ver);		# from 101 it can be -cNNN
+		name = name "-c";
+	} else {
+		name = name "-";
+	}
 
 	# Assoc.Arrays are great but we lose the order which we want for the FLAVORs.
 	x1=known_in_2arr(fwver, flav, name);
 	x2=known_in_2arr(fwpnvm, flav, name);
+	# Need to check both old and new variants (though not sure if -c has .pnvm included again and thus never has one?)
+	if (!x2 && name ~ /-c$/) {
+		xname=name
+		gsub("c$", "", xname);
+		x2=known_in_2arr(fwpnvm, flav, xname);
+	}
 	if (x1 || x2) {
 		#printf("DEBUG: %s SKIPPING %s/%s, already known in %d,%d\n", $0, flav, name, x1, x2);
-	} else {
+	}
+
+	if (!x2 && ispnvm) {
+		fwpnvm[flav,name] = 1;
+		next;
+	}
+	if (!x1) {
 		fwn[flav]++;
 		fwname[flav,fwn[flav]] = name;
 		#printf("DEBUG: %s ADDING %s/%s, already known in %d,%d\n", $0, flav, name, x1, x2);
 	}
-	if (ispnvm) {
-		fwpnvm[flav,name] = 1;
+
+	if ((fwver[flav,name] + 0) < (ver + 0) &&
+	    ((fwmaxver[flav,name] + 0) == 0 || (ver + 0) <= (fwmaxver[flav,name] + 0))) {
+		fwver[flav,name] = ver;
 	} else {
-		if ((fwver[flav,name] + 0) < (ver + 0)) {
-			fwver[flav,name] = ver;
-		} else {
-			printf("DEBUG: skipping %s: %s < %s\n", $0, fwver[flav,name], ver);
-		}
+		printf("DEBUG: skipping %s: %s is < %s || > %s\n", $0, ver, fwver[flav,name], fwmaxver[flav,name]);
 	}
 }
 END {
@@ -197,9 +231,15 @@ END {
 		# Print
 		for (i = 1; i <= fwn[flav]; i++) {
 			if (fwpnvm[flav,fwname[flav,i]]) {
-				printf(" \\\n\t\${FWSUBDIR}/iwlwifi-%s.pnvm\${DISTURL_SUFFIX}", fwname[flav,i]);
+				pname=fwname[flav,i];
+				gsub("-c$", "", pname);
+				gsub("-$", "", pname);
+				printf(" \\\n\t\${FWSUBDIR}/iwlwifi-%s.pnvm\${DISTURL_SUFFIX}", pname);
 			}
-			printf(" \\\n\t\${FWSUBDIR}/iwlwifi-%s-%s.ucode\${DISTURL_SUFFIX}", fwname[flav,i], fwver[flav,fwname[flav,i]]);
+			# Could be there as a file but only higher than "fwmaxver".
+			if ((fwver[flav,fwname[flav,i]] + 0) > 0) {
+				printf(" \\\n\t\${FWSUBDIR}/iwlwifi-%s%s.ucode\${DISTURL_SUFFIX}", fwname[flav,i], fwver[flav,fwname[flav,i]]);
+			}
 		}
 	}
 	printf("\n");
