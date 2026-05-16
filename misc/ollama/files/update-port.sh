@@ -71,7 +71,7 @@ git push origin
 git push --tags
 
 # make GoLang proxy to ingest the new version
-echo "==> submitting the new version $VERSION to GoLang proxy"
+echo "==> submitting the new version $VERSION to the GoLang proxy"
 GOPROXY=proxy.golang.org $GO_CMD list -m github.com/$GH_ACCOUNT_FORK/ollama@v$VERSION
 
 # final message
