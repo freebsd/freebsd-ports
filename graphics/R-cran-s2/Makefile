@@ -3,7 +3,7 @@ DISTVERSION=	1.1.9
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spherical Geometry Operators Using the S2 Geometry Library
 WWW=		https://cran.r-project.org/web/packages/s2/
 
