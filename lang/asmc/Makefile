@@ -2,7 +2,7 @@ PORTNAME=	asmc
 PORTVERSION=	2.37.94
 CATEGORIES=	lang devel
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Masm compatible assembler
 
 LICENSE=	GPLv2+
