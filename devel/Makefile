@@ -4673,6 +4673,7 @@
     SUBDIR += py-bump2version
     SUBDIR += py-bytecode
     SUBDIR += py-cabby
+    SUBDIR += py-cachebox
     SUBDIR += py-cached-path
     SUBDIR += py-cached-property
     SUBDIR += py-cachetools
