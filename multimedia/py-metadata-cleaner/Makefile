@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio graphics python textproc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python GTK application to view and clean metadata in files, using mat2
 WWW=		https://gitlab.com/rmnvgr/metadata-cleaner
 
