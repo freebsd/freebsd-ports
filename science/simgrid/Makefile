@@ -1,12 +1,12 @@
 PORTNAME=	SimGrid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.35
-PORTREVISION=	7
+DISTVERSION=	4.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simulator of the behavior of large-scale distributed systems
-WWW=		https://simgrid.org/
+WWW=		https://simgrid.org/ \
+		https://github.com/simgrid/simgrid
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL-2.1
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libevent.so:devel/libevent \
 		${LIB_DEPENDS_${ARCH}}
 
-USES=		cmake:testing compiler:c++14-lang perl5 python shebangfix
+USES=		cmake:testing compiler:c++14-lang fortran perl5 python shebangfix
 SHEBANG_FILES=	tools/simgrid_convert_TI_traces.py
 USE_LDCONFIG=	yes
 

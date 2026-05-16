@@ -5,6 +5,8 @@ bin/simgrid_update_xml
 bin/smpicc
 bin/smpicxx
 bin/smpirun
+bin/smpif90
+bin/smpiff
 bin/tesh
 include/simgrid/Exception.hpp
 include/simgrid/activity_set.h
@@ -80,6 +82,7 @@ include/simgrid/vm.h
 include/simgrid/zone.h
 include/smpi/forward.hpp
 include/smpi/mpi.h
+include/smpi/mpi.mod
 include/smpi/mpif.h
 include/smpi/sampi.h
 include/smpi/smpi.h
