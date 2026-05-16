@@ -1,5 +1,5 @@
-TIMESTAMP = 1778372321
-SHA256 (go/misc_wacli/wacli-v0.8.1/v0.8.1.mod) = 95363da4fbbbef632c9423a7e3e561dabdcef1d4224ce06973999be8c0346561
-SIZE (go/misc_wacli/wacli-v0.8.1/v0.8.1.mod) = 1425
-SHA256 (go/misc_wacli/wacli-v0.8.1/v0.8.1.zip) = 39b2921fa76712a2694d6876d7bf2634ed05c8d349359b3258b243ae9edd887d
-SIZE (go/misc_wacli/wacli-v0.8.1/v0.8.1.zip) = 321980
+TIMESTAMP = 1778910199
+SHA256 (go/misc_wacli/wacli-v0.9.0/v0.9.0.mod) = 95363da4fbbbef632c9423a7e3e561dabdcef1d4224ce06973999be8c0346561
+SIZE (go/misc_wacli/wacli-v0.9.0/v0.9.0.mod) = 1425
+SHA256 (go/misc_wacli/wacli-v0.9.0/v0.9.0.zip) = 3c4f6b2bc9dc2ee1ec05ebc2d15fb0f3dff6dc978baad4b6cc75b5b95e241962
+SIZE (go/misc_wacli/wacli-v0.9.0/v0.9.0.zip) = 378594
