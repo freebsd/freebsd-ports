@@ -1,8 +1,7 @@
 PORTNAME=	supertux
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
+DISTVERSION=	0.7.0
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
@@ -13,9 +12,9 @@ COMMENT=	Side-scroller game similar to Super Mario Brothers
 WWW=		https://supertux.org/
 
 BUILD_DEPENDS=	glm>0:math/glm
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libharfbuzz.so:print/harfbuzz \
+		libfmt.so:devel/libfmt \
 		libfribidi.so:converters/fribidi \
 		libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
@@ -24,17 +23,17 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libraqm.so:print/libraqm \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:noninja compiler:c++14-lang dos2unix gl iconv \
-		localbase openal:al pkgconfig sdl
+USES=		cmake:noninja compiler:c++17-lang gl iconv \
+		openal:al pkgconfig sdl
 USE_GL=		gl glew glu
 USE_SDL=	sdl2 image2
 
 CMAKE_ARGS=	-DINSTALL_SUBDIR_BIN=bin \
 		-DBUILD_SHARED_LIBS=off \
 		-DBUILD_DOCUMENTATION=off # doxygen
+CMAKE_ON=	USE_STATIC_SIMPLESQUIRREL
 LDFLAGS_i386=	-Wl,-znotext
 
-DOS2UNIX_FILES=	external/squirrel/squirrel/sqvm.cpp
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS
