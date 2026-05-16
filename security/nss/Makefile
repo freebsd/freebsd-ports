@@ -1,5 +1,5 @@
 PORTNAME=	nss
-DISTVERSION=	3.123.1
+DISTVERSION=	3.124
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -108,8 +108,6 @@ do-install:
 	${FIND} ${DIST}/public/nss -type l \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss \;
 	${INSTALL_LIB} ${BINS}/lib/*.so \
-		${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_DATA} ${BINS}/lib/libcrmf.a \
 		${STAGEDIR}${PREFIX}/lib/
 .for bin in ${INSTALL_BINS}
 	${INSTALL_PROGRAM} ${BINS}/bin/${bin} \
