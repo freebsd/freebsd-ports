@@ -602,7 +602,6 @@
     SUBDIR += mesa-demos
     SUBDIR += mesa-devel
     SUBDIR += mesa-dri
-    SUBDIR += mesa-gallium-xa
     SUBDIR += mesa-libs
     SUBDIR += metacam
     SUBDIR += metapixel
