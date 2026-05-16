@@ -1,51 +1,70 @@
 PORTNAME=	vde
-PORTVERSION=	2.3.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.3-57
+DISTVERSIONSUFFIX=	-g6ad51c2
 CATEGORIES=	net
-#MASTER_SITES=	https://github.com/virtualsquare/vde-2/archive/refs/tags/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 WWW=		https://github.com/virtualsquare/vde-2
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libpcap.so.1:net/libpcap
+BUILD_DEPENDS=	gmake:devel/gmake
 
-USES=		autoreconf gmake libtool pathfix shebangfix ssl
-USE_LDCONFIG=	yes
-
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	virtualsquare
 GH_PROJECT=	${PORTNAME}-${PKGNAMESUFFIX}
+USE_LDCONFIG=	yes
 
-CONFLICTS=	vde
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INSTALL_TARGET=	install-strip
-MAKE_ENV=	V=1
-MAKE_JOBS_UNSAFE=yes
+CMAKE_ON=	ENABLE_VXLAN \
+		ENABLE_VDE_OVER_NS \
+		ENABLE_ROUTER \
+		ENABLE_PCAP \
+		ENABLE_TUNTAP
+CMAKE_OFF=	ENABLE_EXPERIMENTAL \
+		ENABLE_PROFILE
 
-OPTIONS_DEFINE=	CRYPTCAB
-OPTIONS_SUB=	yes
+LDFLAGS+=	-L/usr/lib # for use system libpcap
 
-CRYPTCAB_DESC=			Enable vde_cryptcab (require security/wolfssl)
-CRYPTCAB_LIB_DEPENDS=		libwolfssl.so:security/wolfssl
-CRYPTCAB_USES=			localbase:ldflags
-CRYPTCAB_CONFIGURE_ENABLE=	cryptcab
+CONFLICTS=	${PORTNAME}
 
-post-patch:
-	@${REINPLACE_CMD} -e '/-Wall/s|-O2||g' \
-		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|$$(MAKE).*install-data-hook||g' \
-		${WRKSRC}/man/Makefile.am
+BINARY_ALIAS=	make=${GMAKE}
+
+OPTIONS_DEFINE=		EXPERIMENTAL PROFILE
+OPTIONS_RADIO=		CRYPTCAB
+OPTIONS_RADIO_CRYPTCAB=	MBEDTLS WOLFSSL
+OPTIONS_SUB=		yes
+
+CRYPTCAB_DESC=		Enable vde_cryptcab
+EXPERIMENTAL_DESC=	Enable experimental features
+MBEDTLS_DESC=		via mbed TLS
+WOLFSSL_DESC=		via wolfSSL
+
+EXPERIMENTAL_CMAKE_BOOL=	ENABLE_EXPERIMENTAL
+
+MBEDTLS_LIB_DEPENDS=	libmbedcrypto.so:security/mbedtls3
+MBEDTLS_USES=		localbase:ldflags
+MBEDTLS_CMAKE_ON=	-DENABLE_CRYPTCAB=ON \
+			-DWITH_CRYPT=mbedtls
+
+PROFILE_CMAKE_BOOL=	ENABLE_PROFILE
+
+WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
+WOLFSSL_USES=		localbase:ldflags
+WOLFSSL_CMAKE_ON=	-DENABLE_CRYPTCAB=ON \
+			-DWITH_CRYPT=wolfssl
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MMBEDTLS} && !${PORT_OPTIONS:MWOLFSSL}
+CMAKE_OFF+=	ENABLE_CRYPTCAB
+.endif
 
 post-install:
 	${LN} -sf unixcmd.1 ${STAGEDIR}${PREFIX}/share/man/man1/vdecmd.1
-	${LN} -sf vdeq.1 ${STAGEDIR}${PREFIX}/share/man/man1/vdeqemu.1
-	${LN} -sf vdeq.1 ${STAGEDIR}${PREFIX}/share/man/man1/vdekvm.1
 
 .include <bsd.port.mk>
