@@ -1,5 +1,5 @@
-TIMESTAMP = 1776741293
-SHA256 (go/misc_camsnap/camsnap-v0.2.0/v0.2.0.mod) = 7e7aa2327c5f46a5e93ce230ba451fd793f508e1e1892cfc973218418d6936f9
-SIZE (go/misc_camsnap/camsnap-v0.2.0/v0.2.0.mod) = 984
-SHA256 (go/misc_camsnap/camsnap-v0.2.0/v0.2.0.zip) = 794d96af42009ae0ad2009a24f631780803f1c05229e90f4504defd76cd4d552
-SIZE (go/misc_camsnap/camsnap-v0.2.0/v0.2.0.zip) = 50148
+TIMESTAMP = 1778910228
+SHA256 (go/misc_camsnap/camsnap-v0.2.1/v0.2.1.mod) = b275969417dc117a2049db35e783d426ce26f9867315ee23353462d3d5371378
+SIZE (go/misc_camsnap/camsnap-v0.2.1/v0.2.1.mod) = 1027
+SHA256 (go/misc_camsnap/camsnap-v0.2.1/v0.2.1.zip) = 8a278a752fdc76b9fead5020e09c3c93b801ede704186256350f20564c4fb009
+SIZE (go/misc_camsnap/camsnap-v0.2.1/v0.2.1.zip) = 54261
