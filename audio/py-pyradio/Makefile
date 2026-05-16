@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.9.3.11.30
+DISTVERSION=	0.9.3.11.31
 PORTREVISION=	0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}dnspython>=2.2.1:dns/py-dnspython@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}requests>=2.28.1:www/py-requests@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}rich>=13.3.2:textproc/py-rich@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}wheel>=0.38.4:devel/py-wheel@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}rapidfuzz>=3.14.0:devel/py-rapidfuzz@${PY_FLAVOR} \
 		bash:shells/bash \
 		xdg-open:devel/xdg-utils
 
