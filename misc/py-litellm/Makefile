@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.83.14
+DISTVERSION=	1.84.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,19 +11,19 @@ WWW=		https://github.com/BerriAI/litellm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.10.7:devel/py-uv-build@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0:devel/py-fastuuid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openai>=2.24.0:misc/py-openai@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.2.2:www/py-python-dotenv@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.12.0:textproc/py-tiktoken@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.5.0:devel/py-importlib-metadata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.22.2:textproc/py-tokenizers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.13.4:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.12.5:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.23.0:devel/py-jsonschema@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.11.8:devel/py-uv-build@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1<1.0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=2.22.0<3.0.0:misc/py-openai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.0<2.0:www/py-python-dotenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.8.0<1.0:textproc/py-tiktoken@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.0.0<9.0:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.21.0<1.0:textproc/py-tokenizers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6<4.0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.10<4.0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.10.0<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0.0<5.0:devel/py-jsonschema@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
