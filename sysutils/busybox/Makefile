@@ -1,5 +1,5 @@
 PORTNAME=	busybox
-PORTVERSION=	1.37.0
+PORTVERSION=	1.38.0
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 

@@ -1,6 +1,6 @@
---- Makefile.flags.orig	2023-07-16 18:11:37 UTC
+--- Makefile.flags.orig	2024-09-26 14:00:52 UTC
 +++ Makefile.flags
-@@ -188,7 +188,7 @@ ifneq (,$(findstring linux,$(shell $(CC) $(CFLAGS) -du
+@@ -189,7 +189,7 @@ ifneq (,$(findstring gnu,$(shell $(CC) $(CFLAGS) -dump
  LDLIBS += resolv
  endif
  ifneq (,$(findstring gnu,$(shell $(CC) $(CFLAGS) -dumpmachine)))
