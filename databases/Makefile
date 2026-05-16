@@ -91,6 +91,7 @@
     SUBDIR += gqlplus
     SUBDIR += grass8
     SUBDIR += greptimedb
+    SUBDIR += groonga-normalizer-mysql
     SUBDIR += hashtypes
     SUBDIR += heidisql
     SUBDIR += hiredis
