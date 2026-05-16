@@ -1,11 +1,13 @@
---- comfy_aimdo/control.py.orig	2026-03-19 07:04:32 UTC
+-- Add FreeBSD support for loading the aimdo shared library.
+-- FreeBSD uses .so shared libraries like Linux, with the same RTLD_DEEPBIND mode.
+--- comfy_aimdo/control.py.orig	2026-05-16 19:21:31 UTC
 +++ comfy_aimdo/control.py
-@@ -19,6 +19,8 @@ def init():
-             lib = ctypes.CDLL(str(base_path / "aimdo.dll"))
-         elif system == "Linux":
-             lib = ctypes.CDLL(str(base_path / "aimdo.so"), mode=258)
-+        elif system == "FreeBSD":
-+            lib = ctypes.CDLL(str(base_path / "aimdo.so"), mode=258)
+@@ -55,7 +55,7 @@ def init(implementation: str | None = None):
+         if system == "Windows":
+             ext = "dll"
+             mode = 0
+-        elif system == "Linux":
++        elif system in ("Linux", "FreeBSD"):
+             ext = "so"
+             mode = 258
          else:
-             logging.info(f"comfy-aimdo os not supported {system}")
-             logging.info(f"NOTE: comfy-aimdo is currently only support for Windows and Linux")
