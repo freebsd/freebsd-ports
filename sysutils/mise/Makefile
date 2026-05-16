@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.9
+DISTVERSION=	2026.5.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -73,6 +73,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		aws-lc-sys-0.40.0 \
 		aws-runtime-1.7.1 \
 		aws-sdk-s3-1.119.0 \
+		aws-sdk-sso-1.95.0 \
+		aws-sdk-ssooidc-1.97.0 \
 		aws-sdk-sts-1.99.0 \
 		aws-sigv4-1.4.1 \
 		aws-smithy-async-1.2.13 \
