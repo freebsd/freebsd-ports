@@ -31,6 +31,7 @@ bin/mstvpd
 %%DATADIR%%/BlueField.csv
 %%DATADIR%%/BlueField2.csv
 %%DATADIR%%/BlueField3.csv
+%%DATADIR%%/BlueField4.csv
 %%DATADIR%%/Cable.csv
 %%DATADIR%%/CableQSFP.csv
 %%DATADIR%%/CableQSFPaging.csv
@@ -58,10 +59,10 @@ bin/mstvpd
 %%DATADIR%%/GR100.csv
 %%DATADIR%%/GR150.csv
 %%DATADIR%%/InfiniScaleIV.csv
+%%DATADIR%%/NVLink6_Switch.csv
 %%DATADIR%%/Quantum.csv
 %%DATADIR%%/Quantum2.csv
 %%DATADIR%%/Quantum3.csv
-%%DATADIR%%/Quantum4.csv
 %%DATADIR%%/Sagitta.csv
 %%DATADIR%%/Spectrum.csv
 %%DATADIR%%/Spectrum2.csv
