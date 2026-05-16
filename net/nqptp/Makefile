@@ -1,5 +1,5 @@
 PORTNAME=	nqptp
-DISTVERSION=	1.2.7
+DISTVERSION=	1.2.8
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -16,7 +16,8 @@ GH_ACCOUNT=	mikebrady
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/nqptp \
-		etc/rc.d/nqptp
+		etc/rc.d/nqptp \
+		share/man/man8/nqptp.8.gz
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nqptp.freebsd \
