@@ -1,6 +1,6 @@
 PORTNAME=	pickle
 DISTVERSION=	5.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/bofh/devel/${PORTNAME}
 
@@ -34,7 +34,7 @@ BIN_SYMLINKS=	bin/n14 \
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=		llvm:max=15
+USES+=		llvm:max=16
 .endif
 
 post-patch:
