@@ -512,7 +512,6 @@
     SUBDIR += libnsgif
     SUBDIR += libopendrive
     SUBDIR += libopenraw
-    SUBDIR += libosmesa
     SUBDIR += libpano13
     SUBDIR += libpcd
     SUBDIR += libpgf

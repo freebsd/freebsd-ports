@@ -23,6 +23,7 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
+graphics/libosmesa||????|EOLed upstream
 graphics/mesa-gallium-va|graphics/mesa-dri|?????|Merged into graphics/mesa-dri
 graphics/mesa-gallium-vdpau|graphics/mesa-dri|?????|Merged into graphics/mesa-dri
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
