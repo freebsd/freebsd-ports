@@ -1,7 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	26.1-branchpoint-1298
 DISTVERSIONSUFFIX=	-gf6debb842d7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -45,11 +45,11 @@ OPTIONS_DEFINE=		DRM LLVM LTO OPENCL VAAPI VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_DEFAULT=	DRM LLVM LTO OPENCL VAAPI VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_GROUP=		GALLIUM VULKAN
 OPTIONS_GROUP_GALLIUM=	crocus iris panfrost r600 radeonsi
-OPTIONS_GROUP_VULKAN=	anv hasvk radv
+OPTIONS_GROUP_VULKAN=	anv radv
 OPTIONS_EXCLUDE_aarch64=LTO # OPENCL fails to build
 OPTIONS_EXCLUDE_i386=	LTO # anv: vkcube fails on vkCreateSwapchainKHR
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:C/.+/panfrost/}
-OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/crocus hasvk/}
+OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/crocus/}
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Ni386:Nx86_64:Npowerpc64*:C/.+/anv iris/}
 OPTIONS_EXCLUDE+=	${"${GL_DEFAULT:S/,/ /g:[-1]}"==${.CURDIR:T}:?COINST:}
 OPTIONS_SLAVE+=		${"${GL_DEFAULT:S/,/ /g:[-1]}"!=${.CURDIR:T}:?COINST:}
@@ -60,7 +60,7 @@ OPTIONS_SUB=		yes
 MESON_ARGS+=		-D${i:tl}-drivers=${${i}_DRIVERS:ts,}
 . for j in ${OPTIONS_GROUP_${i}}
 OPTIONS_DEFAULT+=	${j}
-${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/hasvk/intel_&/:S/radv/amd/}
+${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/radv/amd/}
 . endfor
 .endfor
 
@@ -78,7 +78,6 @@ anv_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 			glslangValidator:graphics/glslang
 anv_MESON_ON=		${"${ARCH:Naarch64:Namd64}":?-Dintel-rt=disabled:} # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
 anv_IMPLIES=		OPENCL
-hasvk_DESC=		Ivy Bridge, Haswell, Broadwell
 radv_DESC=		Southern Islands and newer
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 
