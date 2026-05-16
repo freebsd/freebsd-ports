@@ -1,23 +1,27 @@
 PORTNAME=	radare2
-DISTVERSION=	5.9.8
+DISTVERSION=	6.0.0
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/radareorg/radare2/releases/download/${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 WWW=		https://www.radare.org
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 NOT_FOR_ARCHS=	armv6 armv7 powerpcspe
 NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
-LIB_DEPENDS=	libcapstone.so:devel/capstone
+LIB_DEPENDS=	libcapstone.so:devel/capstone \
+		libquickjs.so:lang/quickjs
 
 USES=		cpe gmake localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	radare
 PATHFIX_MAKEFILEIN=	Makefile
+USE_GITHUB=	yes
+GH_ACCOUNT=	radareorg
+GH_TUPLE=	radareorg:sdb:2.4.2:sdb/subprojects/sdb \
+		quickjs-ng:quickjs:7238ee64dbc2fbdea044555cda8cda78785a93ed:qjs/subprojects/qjs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-syscapstone
