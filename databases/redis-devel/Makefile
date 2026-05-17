@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.6.0.20260129
+DISTVERSION=	8.6.0.20260228
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -18,7 +18,7 @@ LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		compiler:c11 cpe gmake tcl:test pkgconfig
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TAGNAME=	bf6287d08
+GH_TAGNAME=	3de7fa257
 USE_RC_SUBR=	redis sentinel
 
 MAKE_ENV=	OPTIMIZATION= \
