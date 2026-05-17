@@ -2,15 +2,14 @@
 
 PORTNAME=	zeitgeist
 DISTVERSION=	1.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Event logging framework
-WWW=		https://wiki.gnome.org/Projects/Zeitgeist
+WWW=		http://zeitgeist.freedesktop.org/
 
 BROKEN=		plist issues, stray python bytecode files
-EXPIRATION_DATE=2026-07-31
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
