@@ -56,7 +56,7 @@ FPC_DEFAULT?=		3.3.1
 .  else
 FPC_DEFAULT?=		3.2.3
 .  endif
-# Possible values: 12, 13, 14, 15, 16
+# Possible values: 12, 13, 14, 15, 16, 17
 # (Any other version is completely unsupported and not meant for general use.)
 GCC_DEFAULT?=		14
 # Possible values: 10
