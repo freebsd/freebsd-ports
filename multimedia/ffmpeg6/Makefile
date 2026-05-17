@@ -1,5 +1,5 @@
 PORTNAME=	ffmpeg
-PORTVERSION=	6.1.4
+PORTVERSION=	6.1.5
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 PKGNAMESUFFIX=	6
@@ -234,7 +234,7 @@ CONFIGURE_ARGS+=	--enable-version3
 
 INSTALL_TARGET=	install-progs install-doc install-data \
 		install-libs install-headers install-examples
-#TEST_TARGET=	check
+TEST_TARGET=	check
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
