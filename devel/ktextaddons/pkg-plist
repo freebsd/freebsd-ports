@@ -741,6 +741,7 @@ share/locale/sa/LC_MESSAGES/libtextspeechtotext.mo
 share/locale/sa/LC_MESSAGES/libtexttranslator.mo
 share/locale/sk/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/sk/LC_MESSAGES/libtextautocorrection.mo
+share/locale/sk/LC_MESSAGES/libtextautogeneratetext.mo
 share/locale/sk/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/sk/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/sk/LC_MESSAGES/libtextemoticons.mo
