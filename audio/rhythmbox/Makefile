@@ -9,6 +9,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Music playback and management application for the GNOME desktop
 WWW=		https://gnome.pages.gitlab.gnome.org/rhythmbox/
 
+BROKEN=		fails to build, error: 'girepository.h' file not found
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
