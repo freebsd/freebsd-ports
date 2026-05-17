@@ -1,35 +1,34 @@
---- src/Makefile.orig	2015-03-29 12:25:24 UTC
+--- src/Makefile.orig	2020-09-17 16:17:21 UTC
 +++ src/Makefile
-@@ -38,13 +38,12 @@ DESTDIR = /usr/local/bin
+@@ -39,8 +39,7 @@ DESTDIR = /usr/local/bin
  #***************************************************************************************************
  
- # Which compiler
+ # Which compiler and linker (eg. g++ or clang++)
 -CXX = g++
- 
- # Application name
- PROG = gspiceui
- 
- # wxWidgets configuration utility
--WXCFG = wx-config --unicode --version=$(GSPICEUI_WXLIB)
+-LD  = g++
++LD = $(CXX)
+ ifneq ($(GSPICEUI_MSWIN),0)
+   LD += -static-libstdc++ -static-libgcc
+   WINDRES = windres
+@@ -62,7 +61,7 @@ endif
+   WXCFG  = /usr/bin/wx-config
+ #  WXCFG  = /usr/local/bin/wx-config
+ endif
+-WXCFG += --unicode --version=$(GSPICEUI_WXLIB)
 +WXCFG = $(WX_CONFIG)
- 
- # Dependency file
- DEPS = Makefile.deps
-@@ -71,7 +70,7 @@ BINDIR     = $(ROOT)/bin
- #  -Og        Optimize debugging experience but don't break debugging
- ifeq ($(GSPICEUI_DBG),0)
+ ifneq ($(GSPICEUI_MSWIN),0)
+   WXCFG += --static
+ endif
+@@ -93,10 +92,10 @@ ifeq ($(GSPICEUI_DEBUG),0)
+ #  -std=[C++NO]  The C++ standard to use where C++NO is eg. c++98, c++03, c++11, c++14, c++17, etc.
+ ifeq ($(GSPICEUI_DEBUG),0)
    # Options for release (not using -Wall since it's GCC specific)
--  CXXFLAGS := -O1 -pipe $(shell $(WXCFG) --cxxflags)
-+  CXXFLAGS += $(shell $(WXCFG) --cxxflags)
+-  CXXFLAGS := -O3 -std=c++17 -pipe $(shell $(WXCFG) --cxxflags)
++  CXXFLAGS := $(CXXFLAGS) -std=c++17 $(shell $(WXCFG) --cxxflags)
  else
    # Options for development
-   CXXFLAGS := -g -Og -Wall -Wextra -pipe $(shell $(WXCFG) --cxxflags)
-@@ -83,7 +82,7 @@ ifeq ($(GSPICEUI_WXLIB),2.8)
+-  CXXFLAGS := -g -Og -std=c++17 -Wall -Wextra -Wpedantic -pipe $(shell $(WXCFG) --cxxflags)
++  CXXFLAGS := $(CXXFLAGS) -g -Og -std=c++17 -Wall -Wextra -Wpedantic -pipe $(shell $(WXCFG) --cxxflags)
  endif
  
- # Includes
--INCLUDES = -I/usr/include -I/usr/X11R6/include -I.
-+INCLUDES = -I.
- 
- # Libraries
- # (The pkg-config stuff was requested by a user, somehow pangox was missing)
+ # I like to compile using the option "-Wall" etc., tests that break wxWidgets are turned off below

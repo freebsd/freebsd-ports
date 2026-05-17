@@ -1,6 +1,5 @@
 PORTNAME=	gspiceui
-DISTVERSION=	1.1.00
-PORTREVISION=	8
+DISTVERSION=	1.2.87
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/gSpiceUI/${PORTNAME}-v${DISTVERSION}
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
@@ -11,17 +10,16 @@ WWW=		https://sourceforge.net/projects/gspiceui/
 
 LICENSE=	GPLv3
 
-USES=		compiler:c++11-lib gmake pkgconfig
+USES=		compiler:c++17-lang gmake pkgconfig
 USE_WX=		3.0
-
-CXXFLAGS+=	-std=c++11
 
 DESKTOP_ENTRIES=	"GSpiceUI" "Circuit Simulator GUI" \
 			"${PREFIX}/share/pixmaps/gspiceui-48x48.xpm" \
 			"gspiceui" "Science;Electronics;" false
 
-PLIST_FILES=	bin/gspiceui share/pixmaps/gspiceui-48x48.xpm \
-		share/man/man1/gspiceui.1.gz
+PLIST_FILES=	bin/gspiceui \
+		share/man/man1/gspiceui.1.gz \
+		share/pixmaps/gspiceui-48x48.xpm
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -35,7 +33,7 @@ CFLAGS:=	${CFLAGS:C/-O[2-9]/-O1/g}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/share/gspiceui|${DOCSDIR:S|^${PREFIX}||}|g' \
-	    ${WRKSRC}/src/main/HelpTasks.cpp
+	    ${WRKSRC}/src/main/FrmHtmlVwr.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gspiceui ${STAGEDIR}${PREFIX}/bin
