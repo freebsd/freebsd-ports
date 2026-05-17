@@ -5306,3 +5306,4 @@ lang/erlang-runtime26|lang/erlang-runtime28|2026-05-14|Has expired: no longer su
 databases/leofs||2026-05-14|Has expired: no longer maintained upstream, with no supported OTP release
 net-im/fractal||2026-05-17|Marked broken for months
 chinese/fcitx-rime||2026-05-17|Marked broken for almost a year and upstream repo is archived
+deskutils/gnome-shell-extension-audio-output-switcher||2026-05-17|Marked broken and upstream repo is archived

@@ -82,7 +82,6 @@
     SUBDIR += gnome-planner
     SUBDIR += gnome-pomodoro
     SUBDIR += gnome-screenshot
-    SUBDIR += gnome-shell-extension-audio-output-switcher
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
     SUBDIR += gnome-shell-extension-dashtopanel
