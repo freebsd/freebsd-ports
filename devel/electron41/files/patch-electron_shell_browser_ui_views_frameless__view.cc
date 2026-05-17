@@ -1,6 +1,6 @@
---- electron/shell/browser/ui/views/frameless_view.cc.orig	2026-03-17 08:46:52 UTC
+--- electron/shell/browser/ui/views/frameless_view.cc.orig	2026-05-14 05:52:47 UTC
 +++ electron/shell/browser/ui/views/frameless_view.cc
-@@ -123,7 +123,7 @@ gfx::Size FramelessView::GetMaximumSize() const {
+@@ -122,7 +122,7 @@ gfx::Size FramelessView::GetMaximumSize() const {
    return window_->GetMaximumSize();
  }
  
