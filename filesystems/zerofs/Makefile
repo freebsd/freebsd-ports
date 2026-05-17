@@ -1,7 +1,6 @@
 PORTNAME=	zerofs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.6
-PORTREVISION=	3
+DISTVERSION=	1.1.7
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	stephan@lichtenauer.co.za
@@ -15,8 +14,7 @@ NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	32-bit compilation is not supported
 
 BUILD_DEPENDS+=	protoc:devel/protobuf
-LIB_DEPENDS+=	libprotobuf.so:devel/protobuf \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS+=	libzstd.so:archivers/zstd
 
 USES=		cargo gmake
 USE_GITHUB=	yes
