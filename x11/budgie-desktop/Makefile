@@ -9,6 +9,8 @@ MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Modern and familiar desktop environment
 WWW=		https://github.com/BuddiesOfBudgie/budgie-desktop
 
+BROKEN=		Fails to build, vapigen command fails
+
 LICENSE=		GPLv2 LGPL21
 LICENSE_COMB=		multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
