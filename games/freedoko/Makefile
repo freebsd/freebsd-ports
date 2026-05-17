@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
 WWW=		https://free-doko.sourceforge.net/
 
+BROKEN=		plist issues and error messages during install stage
+EXPIRATION_DATE=2026-07-31
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
