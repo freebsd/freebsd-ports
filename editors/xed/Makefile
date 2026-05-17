@@ -1,14 +1,11 @@
 PORTNAME=	xed
-PORTVERSION=	3.8.5
-PORTREVISION=	1
+PORTVERSION=	3.8.9
 CATEGORIES=	editors gnome
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for GTK
 WWW=		https://github.com/linuxmint/xed
-
-BROKEN=		Fails to build, fatal error: 'girepository.h' file not found
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -26,7 +23,7 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 gtksourceview4 intltool \
-		introspection pango
+		introspection pango pygobject3
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.x.editor.gschema.xml \
