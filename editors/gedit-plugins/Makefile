@@ -8,6 +8,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for gedit
 WWW=		https://gitlab.gnome.org/World/gedit/gedit-plugins
 
+BROKEN=		"gedit-plugins-50.0_1 depends on package: gedit=50.0 - not found"
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
