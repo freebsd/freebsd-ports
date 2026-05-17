@@ -1,5 +1,5 @@
-TIMESTAMP = 1774785153
-SHA256 (go/sysutils_incus-client/incus-client-v6.23.0/v6.23.0.mod) = 62ad4c82a9440b79d2c8b2f86e48131d19a4ffc487d36eea1d17c173e95611c5
-SIZE (go/sysutils_incus-client/incus-client-v6.23.0/v6.23.0.mod) = 8457
-SHA256 (go/sysutils_incus-client/incus-client-v6.23.0/v6.23.0.zip) = 290d7ac823a6b0e41c529f4967450d2bc8d01f1461fcca42cffbacae26859fa2
-SIZE (go/sysutils_incus-client/incus-client-v6.23.0/v6.23.0.zip) = 6116722
+TIMESTAMP = 1778937541
+SHA256 (go/sysutils_incus-client/incus-client-v7.0.0/v7.0.0.mod) = e4e82c000470a187046a7d80b99ae566bff39c855d339657010fa94f0c38e5e5
+SIZE (go/sysutils_incus-client/incus-client-v7.0.0/v7.0.0.mod) = 9049
+SHA256 (go/sysutils_incus-client/incus-client-v7.0.0/v7.0.0.zip) = 45c82ea4d707df94ce96c6559b54f1c73f92a9b771b33bb21217da87fbb58b50
+SIZE (go/sysutils_incus-client/incus-client-v7.0.0/v7.0.0.zip) = 6236113
