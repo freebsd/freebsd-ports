@@ -8,6 +8,8 @@ MAINTAINER=	mylan.connolly@gmail.com
 COMMENT=	Graphical email client for notmuch, inspired by sup and others
 WWW=		https://astroidmail.github.io/
 
+BROKEN=		fails to build, fatal error: 'girepository.h' file not found
+
 LICENSE=	GPLv3+ LGPL21+
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING.GPL-3.0+
