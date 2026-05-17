@@ -8,6 +8,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for GTK
 WWW=		https://github.com/linuxmint/xed
 
+BROKEN=		Fails to build, fatal error: 'girepository.h' file not found
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
