@@ -2,6 +2,7 @@ bin/zli
 include/openzl/codecs/zl_ace.h
 include/openzl/codecs/zl_bitpack.h
 include/openzl/codecs/zl_bitpack_manual.md
+include/openzl/codecs/zl_bitsplit.h
 include/openzl/codecs/zl_bitunpack.h
 include/openzl/codecs/zl_brute_force_selector.h
 include/openzl/codecs/zl_clustering.h
@@ -27,9 +28,14 @@ include/openzl/codecs/zl_generic.h
 include/openzl/codecs/zl_illegal.h
 include/openzl/codecs/zl_interleave.h
 include/openzl/codecs/zl_interleave_manual.md
+include/openzl/codecs/zl_lz.h
+include/openzl/codecs/zl_lz4.h
 include/openzl/codecs/zl_merge_sorted.h
+include/openzl/codecs/zl_mlselector.h
+include/openzl/codecs/zl_mux_lengths.h
 include/openzl/codecs/zl_parse_int.h
 include/openzl/codecs/zl_parse_int_manual.md
+include/openzl/codecs/zl_partition.h
 include/openzl/codecs/zl_prefix.h
 include/openzl/codecs/zl_prefix.md
 include/openzl/codecs/zl_quantize.h
@@ -37,6 +43,9 @@ include/openzl/codecs/zl_range_pack.h
 include/openzl/codecs/zl_range_pack.md
 include/openzl/codecs/zl_sddl.h
 include/openzl/codecs/zl_sddl.md
+include/openzl/codecs/zl_sddl2.h
+include/openzl/codecs/zl_segmenters.h
+include/openzl/codecs/zl_sentinel.h
 include/openzl/codecs/zl_split.h
 include/openzl/codecs/zl_split_by_struct.h
 include/openzl/codecs/zl_store.h
@@ -54,6 +63,7 @@ include/openzl/cpp/CustomCodecDescription.hpp
 include/openzl/cpp/CustomDecoder.hpp
 include/openzl/cpp/CustomEncoder.hpp
 include/openzl/cpp/DCtx.hpp
+include/openzl/cpp/DecompressIntrospectionHooks.hpp
 include/openzl/cpp/Exception.hpp
 include/openzl/cpp/FrameInfo.hpp
 include/openzl/cpp/FunctionGraph.hpp
@@ -64,6 +74,7 @@ include/openzl/cpp/Selector.hpp
 include/openzl/cpp/Type.hpp
 include/openzl/cpp/codecs/ACE.hpp
 include/openzl/cpp/codecs/Bitpack.hpp
+include/openzl/cpp/codecs/Bitsplit.hpp
 include/openzl/cpp/codecs/Bitunpack.hpp
 include/openzl/cpp/codecs/BruteForce.hpp
 include/openzl/cpp/codecs/Compress.hpp
@@ -80,14 +91,21 @@ include/openzl/cpp/codecs/Flatpack.hpp
 include/openzl/cpp/codecs/FloatDeconstruct.hpp
 include/openzl/cpp/codecs/Graph.hpp
 include/openzl/cpp/codecs/Illegal.hpp
+include/openzl/cpp/codecs/Lz.hpp
+include/openzl/cpp/codecs/Lz4.hpp
 include/openzl/cpp/codecs/MergeSorted.hpp
 include/openzl/cpp/codecs/Metadata.hpp
+include/openzl/cpp/codecs/MuxLengths.hpp
 include/openzl/cpp/codecs/Node.hpp
 include/openzl/cpp/codecs/ParseInt.hpp
+include/openzl/cpp/codecs/Partition.hpp
 include/openzl/cpp/codecs/Prefix.hpp
 include/openzl/cpp/codecs/Quantize.hpp
 include/openzl/cpp/codecs/RangePack.hpp
 include/openzl/cpp/codecs/SDDL.hpp
+include/openzl/cpp/codecs/SDDL2.hpp
+include/openzl/cpp/codecs/SegmentSerial.hpp
+include/openzl/cpp/codecs/Sentinel.hpp
 include/openzl/cpp/codecs/Split.hpp
 include/openzl/cpp/codecs/SplitByStruct.hpp
 include/openzl/cpp/codecs/Store.hpp
@@ -109,7 +127,6 @@ include/openzl/detail/zl_errors_detail.h
 include/openzl/openzl.h
 include/openzl/openzl.hpp
 include/openzl/zl_buffer.h
-include/openzl/zl_cgraph.h
 include/openzl/zl_common_types.h
 include/openzl/zl_compress.h
 include/openzl/zl_compressor.h
@@ -119,9 +136,9 @@ include/openzl/zl_ctransform.h
 include/openzl/zl_ctransform_legacy.h
 include/openzl/zl_data.h
 include/openzl/zl_decompress.h
+include/openzl/zl_dict.h
 include/openzl/zl_dtransform.h
 include/openzl/zl_dtransform_legacy.h
-include/openzl/zl_dyngraph.h
 include/openzl/zl_errors.h
 include/openzl/zl_errors_types.h
 include/openzl/zl_graph_api.h
@@ -130,6 +147,7 @@ include/openzl/zl_input.h
 include/openzl/zl_introspection.h
 include/openzl/zl_localParams.h
 include/openzl/zl_macro_helpers.h
+include/openzl/zl_materializer.h
 include/openzl/zl_nodes.h
 include/openzl/zl_opaque_types.h
 include/openzl/zl_output.h
@@ -140,7 +158,7 @@ include/openzl/zl_segmenter.h
 include/openzl/zl_selector.h
 include/openzl/zl_selector_declare_helper.h
 include/openzl/zl_selector_declare_helper_macro_utils.h
-include/openzl/zl_stream.h
+include/openzl/zl_unique_id.h
 include/openzl/zl_version.h
 lib/libopenzl.a
 lib/libopenzl.so

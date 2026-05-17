@@ -1,11 +1,7 @@
 PORTNAME=	openzl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.0
 CATEGORIES=	archivers
-MASTER_SITES=	https://github.com/google/googletest/releases/download/v${GOOGLETEST_VER}/:googletest
-DISTFILES=	${DISTFILE_GOOGLETEST}:googletest
-EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
-		${DISTFILE_zstd}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Novel data compression framework
@@ -18,32 +14,30 @@ NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	32-bit platforms not yet supported (https://github.com/facebook/openzl/issues/342)
 
 BUILD_DEPENDS=	gmd5sum:sysutils/coreutils
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libzstd.so:archivers/zstd
 
 USES=		cmake:indirect gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-GH_TUPLE=	facebook:zstd:v${ZSTD_VER}:zstd/deps/zstd
+GH_TUPLE=	facebook:zstd:f8745da6ff1ad1e7bab384bd1f9d742439278e99:zstd/deps/zstd \
+		lz4:lz4:ebb370ca83af193212df4dcbadcc5d87bc0de2f0:lz4/deps/lz4 \
+		dmlc:xgboost:ccb511768e13d1670c10be07dea89d0edca138f3:xgboost/deps/xgboost \
+		dmlc:dmlc-core:8986b0598df709117570984571476c3614f55724:dmlc_core/deps/xgboost/dmlc-core \
+		rapidsai:gputreeshap:40eae8c4c45974705f8053e4d3d05b88e3cfaefd:gputreeshap//deps/xgboost/gputreeshap \
+		google:googletest:56efe3983185e3f37e43415d1afa97e3860f187f:googletest/deps/googletest
 
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	ZL_JOBS=${MAKE_JOBS_NUMBER}
 
 CFLAGS_i386=	-msse2
-LDFLAGS+=	-pthread
+LDFLAGS+=	-pthread -lexecinfo
 
 PORTDOCS=	CHANGELOG CONTRIBUTING.md README.md
 
 OPTIONS_DEFINE=	DOCS
-
-GOOGLETEST_VER=		1.17.0
-ZSTD_VER=		1.5.7
-DISTFILE_GOOGLETEST=	googletest-${GOOGLETEST_VER}${EXTRACT_SUFX}
-
-post-extract:
-	@${CP} ${DISTDIR}/${DISTFILE_GOOGLETEST} \
-		${WRKSRC}/deps/googletest${EXTRACT_SUFX}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zli ${STAGEDIR}${PREFIX}/bin

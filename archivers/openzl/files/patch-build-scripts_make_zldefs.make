@@ -1,5 +1,5 @@
---- build/make/zldefs.make.orig	2025-10-08 08:51:15 UTC
-+++ build/make/zldefs.make
+--- build-scripts/make/zldefs.make.orig	2026-05-17 03:17:57 UTC
++++ build-scripts/make/zldefs.make
 @@ -21,8 +21,8 @@ CPPFLAGS += -I. -Iinclude -Isrc -Icpp/include -Icpp/sr
  
  # base compilation flags
