@@ -1,9 +1,23 @@
---- pyproject.toml.orig	2026-03-01 18:46:34 UTC
+-- Relax dependency constraints that break the ports tree.
+-- Drop the nanobind upper cap and remove phonors hard runtime dependency
+-- until a corresponding FreeBSD port is available.
+-- Upstream: not yet submitted
+
+--- pyproject.toml.orig	2026-05-17 08:22:00 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,4 +1,4 @@
  [build-system]
 -requires = ["scikit-build-core", "nanobind<2.10.0", "numpy"]
 +requires = ["scikit-build-core", "nanobind", "numpy"]
  build-backend = "scikit_build_core.build"
  
- [project]
+@@ -13,8 +13,7 @@
+ dependencies = [
+     "numpy>=1.17.0",
+     "PyYAML>=5.3",
+     "matplotlib>=2.2.2",
+     "h5py>=3.0",
+     "spglib>=2.5",
+     "symfc>=1.7",
+-    "phonors"
+ ]
