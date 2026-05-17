@@ -20,7 +20,6 @@
     SUBDIR += finch
     SUBDIR += flare
     SUBDIR += folks
-    SUBDIR += fractal
     SUBDIR += freetalk
     SUBDIR += gajim
     SUBDIR += gloox
