@@ -30,4 +30,4 @@ lib/libggml-cpu.so.%%DISTVERSION%%
 lib/libggml.so
 lib/libggml.so.0
 lib/libggml.so.%%DISTVERSION%%
-share/pkgconfig/ggml.pc
+libdata/pkgconfig/ggml.pc
