@@ -1,9 +1,11 @@
 PORTNAME=	torchao
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
-PORTREVISION=	2
+DISTVERSION=	0.17.0
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/pytorch/ao/commit/
+PATCHFILES=	cf7d0b178f989bf43fff27a4246cf2cab9175ac9.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PyTorch: Package for applying ao techniques to GPU models
