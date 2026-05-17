@@ -1,6 +1,6 @@
 PORTNAME=	rhythmbox
-PORTVERSION=	3.4.9
-PORTREVISION=	1
+DISTVERSION=	3.4.9
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -8,8 +8,6 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Music playback and management application for the GNOME desktop
 WWW=		https://gnome.pages.gitlab.gnome.org/rhythmbox/
-
-BROKEN=		fails to build, error: 'girepository.h' file not found
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -35,7 +33,7 @@ GLIB_SCHEMAS=	org.gnome.rhythmbox.gschema.xml
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BRASERO DAAP GRILO IPOD LIRC MTP NLS NOTIFY PYTHON
-OPTIONS_DEFAULT=NOTIFY
+OPTIONS_DEFAULT=NOTIFY PYTHON
 BRASERO_DESC=	Brasero disc burning support
 BRASERO_MESON_ENABLED=	brasero
 BRASERO_LIB_DEPENDS=	libbrasero-media3.so:sysutils/brasero
@@ -65,5 +63,6 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>=0:devel/py-libpeas1@${PY_FL
 			zeitgeist>0:sysutils/zeitgeist \
 			avahi-app>0:net/avahi-app
 PYTHON_BINARY_ALIAS=	python3=${PYTHON_CMD}
+PYTHON_BROKEN_OFF=	https://gitlab.gnome.org/GNOME/rhythmbox/-/work_items/2135
 
 .include <bsd.port.mk>
