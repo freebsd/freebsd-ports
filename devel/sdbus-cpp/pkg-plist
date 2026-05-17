@@ -1,5 +1,6 @@
 bin/sdbus-c++-xml2cpp
 include/sdbus-c++/AdaptorInterfaces.h
+include/sdbus-c++/Awaitable.h
 include/sdbus-c++/ConvenienceApiClasses.h
 include/sdbus-c++/ConvenienceApiClasses.inl
 include/sdbus-c++/Error.h
