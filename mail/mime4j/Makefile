@@ -1,6 +1,6 @@
 PORTNAME=	mime4j
 PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail java
 MASTER_SITES=	https://archive.apache.org/dist/james/${PORTNAME}/${POSTVERSION}/
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
@@ -10,6 +10,9 @@ COMMENT=	Java parser for e-mail message streams
 WWW=		https://james.apache.org/mime4j/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	This is a version that is over 14 years old and has multiple vulnerabilities
+EXPIRATION_DATE=2026-06-30
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
