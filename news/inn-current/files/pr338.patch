@@ -1,0 +1,2883 @@
+From cf4a8ecac2f3149505f9a55cdd95383e9b3f725b Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Wed, 29 Apr 2026 13:47:42 -0700
+Subject: [PATCH 1/7] ovsqlite: Add WAL mode configuration
+
+---
+ doc/pod/ovsqlite.pod               | 21 ++++++++++++++++++++-
+ samples/ovsqlite.conf              | 10 ++++++++++
+ storage/ovsqlite/ovsqlite-server.c | 21 +++++++++++++++++++--
+ storage/ovsqlite/sql-main.sql      |  3 +++
+ 4 files changed, 52 insertions(+), 3 deletions(-)
+
+diff --git doc/pod/ovsqlite.pod doc/pod/ovsqlite.pod
+index 96a6b3165..797e2c6a8 100644
+--- doc/pod/ovsqlite.pod
++++ doc/pod/ovsqlite.pod
+@@ -39,7 +39,8 @@ Plan on needing at least S<0.93 KB> for every article in your spool
+ need at least S<4.65 GB> of disk space for ovsqlite.  With compression
+ enabled, this estimate changes to S<0.4 KB> per article, so you'll
+ need at least S<2 GB> of disk space for 5 million articles.  Plus,
+-you'll need additional space for transaction logs (a few MB).
++you'll need additional space for transaction logs (a few MB, or up to
++a few hundred MB temporarily with I<walmode> enabled).
+ 
+ =head1 CONFIGURATION
+ 
+@@ -67,6 +68,24 @@ is consulted only when creating a new database.  Enabling compression
+ saves about S<55 %> of disk space on standard overview data.  The default
+ value is false.
+ 
++=item I<walmode>
++
++If this parameter is true, ovsqlite will use SQLite's WAL (Write-Ahead
++Logging) journal mode instead of the default PERSIST mode.  WAL mode
++allows concurrent readers and writers without blocking, which significantly
++improves read performance when multiple B<nnrpd> processes access the
++overview database simultaneously.  It also sets C<synchronous> to
++C<NORMAL>, which is safe with WAL and reduces unnecessary fsync overhead.
++
++On shutdown, the WAL is checkpointed back into the main database file
++and truncated.
++
++B<Note:> WAL mode requires shared-memory support and does not work on
++network filesystems such as NFS.  Do not enable this parameter if
++I<pathoverview> is on a network filesystem.
++
++The default value is false.
++
+ =item I<pagesize>
+ 
+ The SQLite database page size in bytes.  Must be a power of 2, minimum 512,
+diff --git samples/ovsqlite.conf samples/ovsqlite.conf
+index cba4f7277..6912e8bf2 100644
+--- samples/ovsqlite.conf
++++ samples/ovsqlite.conf
+@@ -10,6 +10,16 @@
+ # The default value is false.
+ #compress:              false
+ 
++# WAL mode: if true, use SQLite's Write-Ahead Logging journal mode
++# instead of the default PERSIST mode.  WAL mode allows concurrent
++# readers and writers without blocking, improving read performance
++# when multiple nnrpd processes access the overview database
++# simultaneously.  Also sets synchronous to NORMAL, which is safe
++# with WAL and reduces unnecessary fsync overhead.
++# Note: WAL mode does not work on network filesystems such as NFS.
++# The default value is false.
++#walmode:               false
++
+ # The SQLite database page size in bytes.
+ # Must be a power of 2, minimum 512, maximum 65536.
+ # Appropriate values include the virtual memory page size and the
+diff --git storage/ovsqlite/ovsqlite-server.c storage/ovsqlite/ovsqlite-server.c
+index f04df77e7..5bc4aa8d9 100644
+--- storage/ovsqlite/ovsqlite-server.c
++++ storage/ovsqlite/ovsqlite-server.c
+@@ -117,6 +117,7 @@ static sqlite3 *connection;
+ static sql_main_t sql_main;
+ 
+ static bool use_compression;
++static bool use_wal;
+ static unsigned long pagesize;
+ static unsigned long cachesize;
+ static struct timeval transaction_time_limit = {10, 0};
+@@ -384,6 +385,7 @@ load_config(void)
+     free(path);
+     if (top) {
+         config_param_boolean(top, "compress", &use_compression);
++        config_param_boolean(top, "walmode", &use_wal);
+         config_param_unsigned_number(top, "pagesize", &pagesize);
+         config_param_unsigned_number(top, "cachesize", &cachesize);
+         if (config_param_real(top, "transtimelimit", &timelimit)) {
+@@ -656,13 +658,28 @@ open_db(void)
+             sqlite3_free(errmsg);
+         }
+     }
++    if (use_wal) {
++        status = sqlite3_exec(connection,
++                              "pragma journal_mode = 'WAL';"
++                              "pragma synchronous = 'NORMAL';",
++                              0, NULL, &errmsg);
++        if (status != SQLITE_OK) {
++            warn("cannot enable WAL mode: %s", errmsg);
++            sqlite3_free(errmsg);
++        }
++    }
+ }
+ 
+ static void
+ close_db(void)
+ {
+-    sqlite3_step(sql_main.delete_journal);
+-    sqlite3_reset(sql_main.delete_journal);
++    if (use_wal) {
++        sqlite3_step(sql_main.checkpoint_wal);
++        sqlite3_reset(sql_main.checkpoint_wal);
++    } else {
++        sqlite3_step(sql_main.delete_journal);
++        sqlite3_reset(sql_main.delete_journal);
++    }
+     sqlite_helper_term(&sql_main_helper, (sqlite3_stmt **) &sql_main);
+     sqlite3_close_v2(connection);
+     connection = NULL;
+diff --git storage/ovsqlite/sql-main.sql storage/ovsqlite/sql-main.sql
+index ff73f1b0e..ab5495a49 100644
+--- storage/ovsqlite/sql-main.sql
++++ storage/ovsqlite/sql-main.sql
+@@ -40,6 +40,9 @@ rollback to savepoint article_group;
+ -- .delete_journal
+ pragma journal_mode = 'DELETE';
+ 
++-- .checkpoint_wal
++pragma wal_checkpoint(TRUNCATE);
++
+ -- .add_group
+ insert into groupinfo (groupname, flag_alias, low, high)
+     values(?1, ?2, ?3, ?4);
+
+From 0d84255b417c89219225f0a034fd4c068d9749a0 Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Sat, 2 May 2026 03:36:19 -0700
+Subject: [PATCH 2/7] ovsqlite: Add direct reader mode for nnrpd with WAL
+
+When WAL mode is enabled, nnrpd processes now open the overview database
+directly with SQLITE_OPEN_READONLY instead of routing reads through
+ovsqlite-server.  This eliminates the IPC round-trip and the
+single-threaded server bottleneck for read operations, allowing read
+performance to scale with the number of concurrent readers.
+
+Direct reader mode activates automatically when walmode is true in
+ovsqlite.conf AND the database is actually in WAL mode (verified via
+pragma journal_mode).  Without WAL, behavior is unchanged -- readers
+connect to ovsqlite-server as before to avoid EXCLUSIVE lock contention.
+
+Key changes:
+- ovsqlite.c: direct_open() opens the database read-only with schema
+  version validation, journal mode verification, decompression support,
+  and goto-based cleanup.  Read functions (groupstats, getartinfo,
+  search) branch on direct_reader flag.  Write operations return errors
+  in direct reader mode.  Falls back to server path gracefully.
+- ovsqlite-server.c: WAL checkpoint at shutdown uses PASSIVE first
+  (non-blocking, safe with readers connected) then TRUNCATE only if no
+  readers hold pins.  Prevents server shutdown from hanging.
+- ovsqlite.c: Fix pre-existing buffer leak in ovsqlite_close():
+  request and response buffers from server_connect() were never freed.
+- sql-read.sql: read-only prepared statements with busy_timeout=10000
+  and query_only=1.
+- New readercachesize config parameter (default 8 MB per reader).
+
+Includes unit tests (WAL gating, write rejection) and integration tests
+that start a real ovsqlite-server, write compressed data through it,
+kill the server, and verify the direct reader can read it back correctly
+including a server restart cycle.
+---
+ .gitignore                         |   5 +
+ MANIFEST                           |   7 +
+ Makefile.global.in                 |  11 +-
+ doc/pod/ovsqlite.pod               |  36 +-
+ samples/ovsqlite.conf              |  14 +-
+ storage/Makefile                   |   4 +
+ storage/ovsqlite/ovmethod.config   |   6 +-
+ storage/ovsqlite/ovmethod.mk       |   7 +-
+ storage/ovsqlite/ovsqlite-server.c |  22 +-
+ storage/ovsqlite/ovsqlite.c        | 760 +++++++++++++++++++++++++++--
+ storage/ovsqlite/sql-read.sql      |  40 ++
+ support/mkmanifest                 |   3 +
+ tests/Makefile                     |  14 +-
+ tests/TESTS                        |   2 +
+ tests/overview/ovsqlite-integ.t    | 215 ++++++++
+ tests/overview/ovsqlite-read-t.c   | 424 ++++++++++++++++
+ tests/overview/ovsqlite-t.c        | 186 +++++++
+ tests/overview/ovsqlite-write-t.c  | 144 ++++++
+ 18 files changed, 1840 insertions(+), 60 deletions(-)
+ create mode 100644 storage/ovsqlite/sql-read.sql
+ create mode 100755 tests/overview/ovsqlite-integ.t
+ create mode 100644 tests/overview/ovsqlite-read-t.c
+ create mode 100644 tests/overview/ovsqlite-t.c
+ create mode 100644 tests/overview/ovsqlite-write-t.c
+
+diff --git .gitignore .gitignore
+index 4fc5e98b0..abce0ef2b 100644
+--- .gitignore
++++ .gitignore
+@@ -183,6 +183,8 @@
+ /storage/ovsqlite/sql-init.h
+ /storage/ovsqlite/sql-main.c
+ /storage/ovsqlite/sql-main.h
++/storage/ovsqlite/sql-read.c
++/storage/ovsqlite/sql-read.h
+ /storage/ovsqlite/sqlite-helper-gen
+ /storage/tradindexed/tdx-util
+ /support/fixconfig
+@@ -240,6 +242,9 @@
+ /tests/nnrpd/auth-ext.t
+ /tests/overview/api.t
+ /tests/overview/buffindexed.t
++/tests/overview/ovsqlite.t
++/tests/overview/ovsqlite-read.t
++/tests/overview/ovsqlite-write.t
+ /tests/overview/tradindexed.t
+ /tests/overview/xref.t
+ /tests/perl/minimum-version.t
+diff --git MANIFEST MANIFEST
+index 094b0a020..39889beb6 100644
+--- MANIFEST
++++ MANIFEST
+@@ -791,6 +791,9 @@ storage/ovsqlite/sql-init.sql         SQLite code for database setup
+ storage/ovsqlite/sql-main.c           Generated daily operation implementation
+ storage/ovsqlite/sql-main.h           Generated daily operation interface
+ storage/ovsqlite/sql-main.sql         SQLite code for daily operation
++storage/ovsqlite/sql-read.c           Generated read-only query implementation
++storage/ovsqlite/sql-read.h           Generated read-only query interface
++storage/ovsqlite/sql-read.sql         SQLite code for direct reader queries
+ storage/ovsqlite/sqlite-helper-gen.in Package SQLite code for convenient use
+ storage/ovsqlite/sqlite-helper.c      SQLite code package implementation
+ storage/ovsqlite/sqlite-helper.h      SQLite code package interface
+@@ -991,6 +994,10 @@ tests/overview                        Test suite for overview (Directory)
+ tests/overview/api-t.c                Basic tests for overview API
+ tests/overview/overchan.t             Tests for backends/overchan
+ tests/overview/overview-t.c           Basic tests for overview methods
++tests/overview/ovsqlite-integ.t       Integration test for ovsqlite direct reader
++tests/overview/ovsqlite-read-t.c      Direct reader verification for integration test
++tests/overview/ovsqlite-t.c           Unit tests for ovsqlite direct reader
++tests/overview/ovsqlite-write-t.c     Writer helper for ovsqlite integration test
+ tests/overview/xref-t.c               Test storing overview data by Xref
+ tests/perl                            Test suite for Perl scripts (Directory)
+ tests/perl/minimum-version.t.in       Tests for not too-new features of Perl
+diff --git Makefile.global.in Makefile.global.in
+index d4dbe5de4..a14283d5d 100644
+--- Makefile.global.in
++++ Makefile.global.in
+@@ -87,11 +87,12 @@ BDB_LDFLAGS    = @BDB_LDFLAGS@ $(ZLIB_LDFLAGS)
+ BDB_LIBS       = @BDB_LIBS@ $(ZLIB_LIBS)
+ 
+ ##  SQLite support.  Additional flags and libraries used when compiling or
+-##  linking code that contains SQLite support.
++##  linking code that contains SQLite support.  zlib is bundled in because
++##  ovsqlite direct readers need decompression support.
+ 
+-SQLITE3_CPPFLAGS = @SQLITE3_CPPFLAGS@
+-SQLITE3_LDFLAGS  = @SQLITE3_LDFLAGS@
+-SQLITE3_LIBS     = @SQLITE3_LIBS@
++SQLITE3_CPPFLAGS = @SQLITE3_CPPFLAGS@ $(ZLIB_CPPFLAGS)
++SQLITE3_LDFLAGS  = @SQLITE3_LDFLAGS@ $(ZLIB_LDFLAGS)
++SQLITE3_LIBS     = @SQLITE3_LIBS@ $(ZLIB_LIBS)
+ 
+ ##  INN libraries.  Nearly all INN programs are linked with libinn, and any
+ ##  INN program that reads from or writes to article storage or overview is
+@@ -101,7 +102,7 @@ SQLITE3_LIBS     = @SQLITE3_LIBS@
+ LIBINN		= $(abs_builddir)/lib/libinn$(LIBSUFFIX).$(EXTLIB)
+ LIBHIST		= $(abs_builddir)/history/libinnhist$(LIBSUFFIX).$(EXTLIB)
+ LIBSTORAGE	= $(abs_builddir)/storage/libinnstorage$(LIBSUFFIX).$(EXTLIB)
+-STORAGE_LIBS	= $(BDB_LDFLAGS) $(BDB_LIBS)
++STORAGE_LIBS	= $(BDB_LDFLAGS) $(BDB_LIBS) $(SQLITE3_LDFLAGS) $(SQLITE3_LIBS)
+ 
+ DBM_CPPFLAGS	= @DBM_CPPFLAGS@
+ DBM_LIBS	= @DBM_LIBS@
+diff --git doc/pod/ovsqlite.pod doc/pod/ovsqlite.pod
+index 797e2c6a8..8d1a1957e 100644
+--- doc/pod/ovsqlite.pod
++++ doc/pod/ovsqlite.pod
+@@ -57,8 +57,9 @@ configuration file:
+ 
+ =item I<cachesize>
+ 
+-The SQLite in-memory page cache size in kilobytes.  The default value is
+-left up to the SQLite library and seems to be stable at S<2000 KB>.
++The SQLite in-memory page cache size in kilobytes for the B<ovsqlite-server>
++write daemon.  The default value is left up to the SQLite library and seems
++to be stable at S<2000 KB>.
+ 
+ =item I<compress>
+ 
+@@ -86,6 +87,22 @@ I<pathoverview> is on a network filesystem.
+ 
+ The default value is false.
+ 
++=item I<readercachesize>
++
++The SQLite in-memory page cache size in kilobytes for each B<nnrpd> reader
++process.  When I<walmode> is enabled, B<nnrpd> processes open the overview
++database directly for read-only access, bypassing B<ovsqlite-server>.
++This eliminates the IPC overhead and allows reads to scale with the number
++of reader processes.  Each B<nnrpd> process gets its own cache, so this
++value should typically be smaller than I<cachesize>.  The operating system's
++file cache (or ZFS ARC) serves as a shared second-level cache across all
++readers.
++
++Direct reader mode is only activated when I<walmode> is enabled.  Without
++WAL, writers take exclusive locks that would block direct readers during
++commits, so the server path is used instead.  The default value
++is S<8000 KB> (about S<8 MB>).
++
+ =item I<pagesize>
+ 
+ The SQLite database page size in bytes.  Must be a power of 2, minimum 512,
+@@ -121,10 +138,17 @@ change much on fast systems.
+ 
+ =head1 RUNNING
+ 
+-All overview database access goes through the B<ovsqlite-server> daemon.
+-For ordinary operation, B<rc.news> will start and stop it automatically.
+-If you want to touch the overview database while B<innd> isn't running, you'll
+-have to start B<ovsqlite-server> manually first.  See ovsqlite-server(8).
++Write operations (article ingest, expiration) go through the
++B<ovsqlite-server> daemon.  For ordinary operation, B<rc.news> will start
++and stop it automatically.  If you want to touch the overview database while
++B<innd> isn't running, you'll have to start B<ovsqlite-server> manually
++first.  See ovsqlite-server(8).
++
++When I<walmode> is enabled, B<nnrpd> reader processes open the overview
++database directly with read-only access, bypassing B<ovsqlite-server>
++for read operations.  This eliminates the IPC round-trip and server
++serialization bottleneck, allowing read performance to scale with the
++number of concurrent readers.
+ 
+ =head1 HISTORY
+ 
+diff --git samples/ovsqlite.conf samples/ovsqlite.conf
+index 6912e8bf2..319b6d656 100644
+--- samples/ovsqlite.conf
++++ samples/ovsqlite.conf
+@@ -29,11 +29,23 @@
+ # between versions.
+ #pagesize:              4096
+ 
+-# The SQLite in-memory page cache size in kilobytes.
++# The SQLite in-memory page cache size in kilobytes for the
++# ovsqlite-server write daemon.
+ # The default value is left up to the SQLite library and seems to be
+ # stable at 2000 KB.
+ #cachesize:             2000
+ 
++# The SQLite in-memory page cache size in kilobytes for each nnrpd
++# reader process.  When WAL mode is enabled, nnrpd processes open the
++# database directly for read-only access, bypassing ovsqlite-server.
++# Each nnrpd process gets its own cache, so this value should be
++# smaller than cachesize.  The operating system's file cache (or ZFS
++# ARC) serves as a shared second-level cache across all readers.
++# The mmapsize parameter in this file can also be used to share
++# physical memory pages across reader processes.
++# The default value is 8000 KB (about 8 MB).
++#readercachesize:       8000
++
+ # The maximum number of article rows that can be inserted or deleted
+ # in a single SQL transaction.
+ # The default value is 10000 articles.
+diff --git storage/Makefile storage/Makefile
+index fa53c0007..64d9e9608 100644
+--- storage/Makefile
++++ storage/Makefile
+@@ -60,6 +60,10 @@ maintclean: distclean
+ 	rm -f Make.methods methods.c methods.h ovmethods.c ovmethods.h
+ 	rm -f $(RM_MAINTCLEAN)
+ 
++# ovsqlite.c includes sql-read.h which is generated from sql-read.sql.
++# Ensure the header exists before compiling any objects.
++$(OBJECTS) $(LOBJECTS): ovsqlite/sql-read.h
++
+ libinnstorage.la: $(OBJECTS) $(LOBJECTS) $(LIBINN)
+ 	$(LIBLD) $(LDFLAGS) -o $@ $(LOBJECTS) \
+ 	    $(LIBINN) $(STORAGE_LIBS) $(LIBS) \
+diff --git storage/ovsqlite/ovmethod.config storage/ovsqlite/ovmethod.config
+index 57b932ebb..5ba6f5612 100644
+--- storage/ovsqlite/ovmethod.config
++++ storage/ovsqlite/ovmethod.config
+@@ -1,7 +1,7 @@
+ name          = ovsqlite
+ number        = 5
+-sources       = ovsqlite.c ovsqlite-private.c
+-extra-sources = ovsqlite-server.c sql-main.c sql-init.c sqlite-helper.c
++sources       = ovsqlite.c ovsqlite-private.c sqlite-helper.c sql-read.c
++extra-sources = ovsqlite-server.c sql-main.c sql-init.c
+ programs      = ovsqlite-server ovsqlite-util
+ clean         = sqlite-helper-gen
+-maintclean    = sql-init.c sql-init.h sql-main.c sql-main.h
++maintclean    = sql-init.c sql-init.h sql-main.c sql-main.h sql-read.c sql-read.h
+diff --git storage/ovsqlite/ovmethod.mk storage/ovsqlite/ovmethod.mk
+index 009d3d259..6fc0f0044 100644
+--- storage/ovsqlite/ovmethod.mk
++++ storage/ovsqlite/ovmethod.mk
+@@ -1,5 +1,5 @@
+ OVSQLITEOBJECTS = ovsqlite/ovsqlite-server.o ovsqlite/sql-main.o \
+-	ovsqlite/sql-init.o ovsqlite/sqlite-helper.o \
++	ovsqlite/sql-init.o \
+ 	ovsqlite/ovsqlite-private.o
+ OVSQLITELOBJECTS = $(OVSQLITEOBJECTS:.o=.lo)
+ 
+@@ -24,3 +24,8 @@ ovsqlite/sql-init.c: ovsqlite/sql-init.sql ovsqlite/sqlite-helper-gen
+ 
+ ovsqlite/sql-init.h: ovsqlite/sql-init.c ;
+ 
++ovsqlite/sql-read.c: ovsqlite/sql-read.sql ovsqlite/sqlite-helper-gen
++	ovsqlite/sqlite-helper-gen ovsqlite/sql-read.sql
++
++ovsqlite/sql-read.h: ovsqlite/sql-read.c ;
++
+diff --git storage/ovsqlite/ovsqlite-server.c storage/ovsqlite/ovsqlite-server.c
+index 5bc4aa8d9..dc78fbb33 100644
+--- storage/ovsqlite/ovsqlite-server.c
++++ storage/ovsqlite/ovsqlite-server.c
+@@ -674,8 +674,26 @@ static void
+ close_db(void)
+ {
+     if (use_wal) {
+-        sqlite3_step(sql_main.checkpoint_wal);
+-        sqlite3_reset(sql_main.checkpoint_wal);
++        int wal_frames, checkpointed;
++        int rc;
++
++        /* Use PASSIVE checkpoint first — it never blocks and is safe even
++         * when direct reader processes (nnrpd) still have the database open.
++         * The prepared statement uses TRUNCATE which would hang waiting for
++         * all readers to disconnect (busy_timeout is ~31 years). */
++        rc = sqlite3_wal_checkpoint_v2(connection, NULL,
++                                       SQLITE_CHECKPOINT_PASSIVE,
++                                       &wal_frames, &checkpointed);
++        if (rc == SQLITE_OK && wal_frames == checkpointed) {
++            /* All frames checkpointed (no readers holding pins).
++             * Safe to truncate the WAL file for a clean shutdown. */
++            sqlite3_wal_checkpoint_v2(connection, NULL,
++                                      SQLITE_CHECKPOINT_TRUNCATE,
++                                      NULL, NULL);
++        } else if (rc == SQLITE_OK && wal_frames > checkpointed) {
++            notice("WAL checkpoint: %d/%d frames checkpointed"
++                   " (readers still connected)", checkpointed, wal_frames);
++        }
+     } else {
+         sqlite3_step(sql_main.delete_journal);
+         sqlite3_reset(sql_main.delete_journal);
+diff --git storage/ovsqlite/ovsqlite.c storage/ovsqlite/ovsqlite.c
+index 81d4811de..5d6621570 100644
+--- storage/ovsqlite/ovsqlite.c
++++ storage/ovsqlite/ovsqlite.c
+@@ -6,6 +6,11 @@
+ **
+ **  Various bug fixes, code and documentation improvements since then
+ **  in 2021-2024, 2026.
++**
++**  Direct reader mode added in 2026 to allow nnrpd processes to read the
++**  overview database directly via SQLite, bypassing ovsqlite-server for
++**  read-only access.  This improves read performance by eliminating the
++**  IPC round-trip and server serialization bottleneck.
+ */
+ 
+ #include "ovsqlite.h"
+@@ -22,6 +27,7 @@
+ #    endif
+ 
+ #    include "conffile.h"
++#    include "inn/confparse.h"
+ #    include "inn/fdflag.h"
+ #    include "inn/innconf.h"
+ #    include "inn/libinn.h"
+@@ -30,6 +36,17 @@
+ 
+ #    include "../ovinterface.h"
+ 
++#    include <sqlite3.h>
++#    include "sql-read.h"
++#    include "sqlite-helper.h"
++
++#    ifdef HAVE_ZLIB
++#        define USE_DICTIONARY 1
++#        include <zlib.h>
++#    endif
++
++#    define OVSQLITE_DB_FILE "ovsqlite.db"
++
+ typedef struct handle_t {
+     uint8_t buffer[SEARCHSPACE];
+     uint64_t low;
+@@ -46,6 +63,7 @@ typedef struct handle_t {
+     char groupname[1];
+ } handle_t;
+ 
++/* Server connection state (used for write mode and legacy read mode). */
+ static int sock = -1;
+ static buffer_t *request;
+ static buffer_t *response;
+@@ -54,6 +72,360 @@ static buffer_t *response;
+ static ovsqlite_port port;
+ #    endif
+ 
++/* Direct reader state (used when mode is OV_READ only). */
++static bool direct_reader = false;
++static sqlite3 *read_connection = NULL;
++static sql_read_t sql_read;
++static bool reader_use_compression = false;
++
++#    ifdef HAVE_ZLIB
++
++/* clang-format off */
++static uint32_t const pack_length_bias[5] =
++{
++             0,
++          0x80,
++        0x4080,
++      0x204080,
++    0x10204080,
++};
++/* clang-format on */
++
++static z_stream reader_inflation;
++static buffer_t *reader_flate;
++
++#        ifdef USE_DICTIONARY
++
++static char reader_dictionary[0x8000];
++static unsigned int reader_basedict_len;
++
++#        endif /* USE_DICTIONARY */
++
++static uint32_t
++reader_unpack_length(z_stream *stream)
++{
++    uint8_t *walk;
++    unsigned int c, lenlen, n;
++    uint32_t length;
++
++    if (stream->avail_in <= 0)
++        return ~0U;
++    walk = stream->next_in;
++    c = *walk++;
++    lenlen = 1;
++    while (c & (1U << (8 - lenlen)))
++        lenlen++;
++    if (lenlen > 5 || lenlen > stream->avail_in)
++        return ~0U;
++    length = c & ~(~0U << (8 - lenlen));
++    for (n = lenlen - 1; n > 0; n--)
++        length = (length << 8) | *walk++;
++    length += pack_length_bias[lenlen - 1];
++    stream->next_in = walk;
++    stream->avail_in -= lenlen;
++    return length;
++}
++
++#        ifdef USE_DICTIONARY
++
++static unsigned int
++reader_make_dict(char const *groupname, int groupname_len, uint64_t artnum)
++{
++    sqlite3_snprintf(sizeof reader_dictionary - reader_basedict_len,
++                     reader_dictionary + reader_basedict_len,
++                     "%.*s:%llu\r\n", groupname_len, groupname, artnum);
++    return reader_basedict_len
++           + strlen(reader_dictionary + reader_basedict_len);
++}
++
++#        endif /* USE_DICTIONARY */
++
++#    endif /* HAVE_ZLIB */
++
++
++/*
++**  Decompress an overview blob read directly from SQLite.
++**  Returns the decompressed data in reader_flate, or NULL on error.
++**  On success, *out_len is set to the decompressed length.
++*/
++#    ifdef HAVE_ZLIB
++static uint8_t *
++reader_decompress(uint8_t const *overview, uint32_t overview_len,
++                  char const *groupname, int groupname_len, uint64_t artnum,
++                  uint32_t *out_len)
++{
++    uint32_t raw_len;
++    int status;
++
++    reader_inflation.next_in = (uint8_t *) overview;
++    reader_inflation.avail_in = overview_len;
++
++    raw_len = reader_unpack_length(&reader_inflation);
++    if (raw_len > MAX_OVDATA_SIZE)
++        return NULL;
++    if (raw_len > 0) {
++        buffer_resize(reader_flate, raw_len);
++        reader_inflation.next_out = (uint8_t *) reader_flate->data;
++        reader_inflation.avail_out = raw_len;
++        status = inflate(&reader_inflation, Z_FINISH);
++#        ifdef USE_DICTIONARY
++        if (status == Z_NEED_DICT) {
++            status = inflateSetDictionary(
++                &reader_inflation, (uint8_t *) reader_dictionary,
++                reader_make_dict(groupname, groupname_len, artnum));
++            if (status == Z_OK)
++                status = inflate(&reader_inflation, Z_FINISH);
++        }
++#        endif
++        reader_flate->left =
++            (char *) reader_inflation.next_out - reader_flate->data;
++        reader_inflation.next_in = NULL;
++        reader_inflation.avail_in = 0;
++        inflateReset(&reader_inflation);
++        if (status != Z_STREAM_END || reader_inflation.avail_out > 0)
++            return NULL;
++        *out_len = reader_flate->left;
++        return (uint8_t *) reader_flate->data;
++    } else {
++        /* Compression didn't save space; data stored uncompressed after
++         * the zero length marker. */
++        *out_len = reader_inflation.avail_in;
++        return reader_inflation.next_in;
++    }
++}
++#    endif /* HAVE_ZLIB */
++
++
++/*
++**  Helper callback for pragma queries that return a single text value.
++*/
++static int
++pragma_callback(void *data, int ncols, char **values, char **names UNUSED)
++{
++    char **result = data;
++
++    if (ncols > 0 && values[0])
++        *result = xstrdup(values[0]);
++    return 0;
++}
++
++/*
++**  Helper to read an integer value from the misc table.
++*/
++static bool
++read_misc_int(char const *key, int *value)
++{
++    int status;
++
++    sqlite3_bind_text(sql_read.getmisc, 1, key, -1, SQLITE_STATIC);
++    status = sqlite3_step(sql_read.getmisc);
++    if (status != SQLITE_ROW) {
++        warn("ovsqlite: cannot read '%s' from database: %s", key,
++             sqlite3_errmsg(read_connection));
++        sqlite3_reset(sql_read.getmisc);
++        sqlite3_clear_bindings(sql_read.getmisc);
++        return false;
++    }
++    *value = sqlite3_column_int(sql_read.getmisc, 0);
++    sqlite3_reset(sql_read.getmisc);
++    sqlite3_clear_bindings(sql_read.getmisc);
++    return true;
++}
++
++/*
++**  Open the overview database directly for read-only access.
++*/
++static bool
++direct_open(void)
++{
++    char *path;
++    char *confpath;
++    struct config_group *top;
++    int status;
++    char *errmsg;
++    char *journal_mode = NULL;
++    bool use_wal = false;
++    unsigned long reader_cachesize = 8000; /* default 8 MB */
++    int version;
++    int compress_flag;
++    char sqltext[64];
++    bool have_inflate = false;
++    bool have_stmts = false;
++
++    /* Load config.  Direct reader mode requires WAL; without WAL, writers
++     * take EXCLUSIVE locks that block all other connections during commit.
++     * The server path avoids this because reads and writes share a single
++     * connection. */
++    confpath = concatpath(innconf->pathetc, "ovsqlite.conf");
++    top = config_parse_file(confpath);
++    free(confpath);
++    if (top) {
++        config_param_boolean(top, "walmode", &use_wal);
++        config_param_unsigned_number(top, "readercachesize",
++                                     &reader_cachesize);
++        config_free(top);
++    }
++    if (!use_wal)
++        return false;
++
++    /* Open database read-only.  Suppress warning for CANTOPEN since the
++     * database may not exist yet during initial setup. */
++    path = concatpath(innconf->pathoverview, OVSQLITE_DB_FILE);
++    status = sqlite3_open_v2(path, &read_connection, SQLITE_OPEN_READONLY,
++                             NULL);
++    free(path);
++    if (status != SQLITE_OK) {
++        if (status != SQLITE_CANTOPEN)
++            warn("ovsqlite: cannot open database for reading: %s",
++                 sqlite3_errstr(status));
++        read_connection = NULL;
++        return false;
++    }
++    sqlite3_extended_result_codes(read_connection, 1);
++
++    /* Verify the database is actually in WAL mode, not just the config.
++     * The writer sets WAL mode; if it hasn't run yet or the database was
++     * created without WAL, fall back to the server path. */
++    status = sqlite3_exec(read_connection, "pragma journal_mode;",
++                          pragma_callback, &journal_mode, NULL);
++    if (status != SQLITE_OK || !journal_mode
++        || strcmp(journal_mode, "wal") != 0) {
++        free(journal_mode);
++        sqlite3_close_v2(read_connection);
++        read_connection = NULL;
++        return false;
++    }
++    free(journal_mode);
++
++    /* Prepare read-only statements. */
++    status =
++        sqlite_helper_init(&sql_read_helper, (sqlite3_stmt **) &sql_read,
++                           read_connection, SQLITE_PREPARE_PERSISTENT,
++                           &errmsg);
++    if (status != SQLITE_OK) {
++        warn("ovsqlite: cannot set up read session: %s", errmsg);
++        sqlite3_free(errmsg);
++        goto fail;
++    }
++    have_stmts = true;
++
++    /* Set cache size. */
++    if (reader_cachesize) {
++        snprintf(sqltext, sizeof sqltext, "pragma cache_size = -%lu;",
++                 reader_cachesize);
++        status = sqlite3_exec(read_connection, sqltext, 0, NULL, &errmsg);
++        if (status != SQLITE_OK) {
++            warn("ovsqlite: cannot set reader cache size: %s", errmsg);
++            sqlite3_free(errmsg);
++        }
++    }
++
++    /* Validate schema version. */
++    if (!read_misc_int("version", &version))
++        goto fail;
++    if (version != OVSQLITE_SCHEMA_VERSION) {
++        warn("ovsqlite: incompatible database schema %d (expected %d)",
++             version, OVSQLITE_SCHEMA_VERSION);
++        goto fail;
++    }
++
++    /* Check compression setting. */
++    if (!read_misc_int("compress", &compress_flag))
++        goto fail;
++    reader_use_compression = compress_flag;
++
++#    ifdef HAVE_ZLIB
++    if (reader_use_compression) {
++        void const *dict;
++        size_t size;
++
++        reader_inflation.zalloc = Z_NULL;
++        reader_inflation.zfree = Z_NULL;
++        reader_inflation.opaque = Z_NULL;
++        reader_inflation.next_in = Z_NULL;
++        reader_inflation.avail_in = 0;
++        status = inflateInit(&reader_inflation);
++        if (status != Z_OK) {
++            warn("ovsqlite: cannot set up decompression");
++            goto fail;
++        }
++        have_inflate = true;
++
++#        ifdef USE_DICTIONARY
++        sqlite3_bind_text(sql_read.getmisc, 1, "basedict", -1,
++                          SQLITE_STATIC);
++        status = sqlite3_step(sql_read.getmisc);
++        if (status != SQLITE_ROW) {
++            warn("ovsqlite: cannot load compression dictionary: %s",
++                 sqlite3_errmsg(read_connection));
++            sqlite3_reset(sql_read.getmisc);
++            sqlite3_clear_bindings(sql_read.getmisc);
++            goto fail;
++        }
++        dict = sqlite3_column_blob(sql_read.getmisc, 0);
++        size = sqlite3_column_bytes(sql_read.getmisc, 0);
++        if (!dict || size >= sizeof reader_dictionary) {
++            warn("ovsqlite: invalid compression dictionary in database");
++            sqlite3_reset(sql_read.getmisc);
++            sqlite3_clear_bindings(sql_read.getmisc);
++            goto fail;
++        }
++        memcpy(reader_dictionary, dict, size);
++        reader_basedict_len = size;
++        sqlite3_reset(sql_read.getmisc);
++        sqlite3_clear_bindings(sql_read.getmisc);
++#        endif /* USE_DICTIONARY */
++
++        reader_flate = buffer_new();
++    }
++#    else  /* ! HAVE_ZLIB */
++    if (reader_use_compression) {
++        warn("ovsqlite: database uses compression but INN was not built"
++             " with zlib");
++        goto fail;
++    }
++#    endif /* ! HAVE_ZLIB */
++
++    direct_reader = true;
++    return true;
++
++fail:
++#    ifdef HAVE_ZLIB
++    if (have_inflate)
++        inflateEnd(&reader_inflation);
++#    endif
++    if (have_stmts)
++        sqlite_helper_term(&sql_read_helper, (sqlite3_stmt **) &sql_read);
++    if (read_connection) {
++        sqlite3_close_v2(read_connection);
++        read_connection = NULL;
++    }
++    return false;
++}
++
++
++/*
++**  Close the direct reader connection.
++*/
++static void
++direct_close(void)
++{
++    if (!read_connection)
++        return;
++#    ifdef HAVE_ZLIB
++    if (reader_use_compression) {
++        inflateEnd(&reader_inflation);
++        buffer_free(reader_flate);
++        reader_flate = NULL;
++    }
++#    endif
++    sqlite_helper_term(&sql_read_helper, (sqlite3_stmt **) &sql_read);
++    sqlite3_close_v2(read_connection);
++    read_connection = NULL;
++    direct_reader = false;
++}
++
++
+ static bool
+ server_connect(void)
+ {
+@@ -283,10 +655,20 @@ server_handshake(uint32_t mode)
+ bool
+ ovsqlite_open(int mode)
+ {
+-    if (sock != -1) {
++    if (direct_reader || sock != -1) {
+         warn("ovsqlite_open called more than once");
+         return false;
+     }
++
++    /* Read-only mode: try direct database access (requires WAL mode).
++     * Falls back to the server path if WAL is not enabled. */
++    if (mode == OV_READ) {
++        if (direct_open())
++            return true;
++        notice("ovsqlite: direct reader not available, using server");
++    }
++
++    /* Read-write mode, or WAL not enabled: connect to ovsqlite-server. */
+     if (!server_connect())
+         return false;
+     if (!server_handshake(mode))
+@@ -298,6 +680,9 @@ bool
+ ovsqlite_groupstats(const char *group, int *low, int *high, int *count,
+                     int *flag)
+ {
++    sqlite3_stmt *stmt;
++    int status;
++    char const *flag_blob;
+     uint16_t groupname_len;
+     unsigned int code;
+     uint64_t r_low;
+@@ -306,45 +691,74 @@ ovsqlite_groupstats(const char *group, int *low, int *high, int *count,
+     uint16_t flag_alias_len;
+     uint8_t *flag_alias;
+ 
++    if (direct_reader) {
++        stmt = sql_read.get_groupinfo;
++        sqlite3_bind_blob(stmt, 1, group, strlen(group), SQLITE_STATIC);
++        status = sqlite3_step(stmt);
++        if (status != SQLITE_ROW) {
++            if (status != SQLITE_DONE)
++                warn("ovsqlite: groupstats query error: %s",
++                     sqlite3_errmsg(read_connection));
++            sqlite3_reset(stmt);
++            sqlite3_clear_bindings(stmt);
++            return false;
++        }
++        if (low)
++            *low = sqlite3_column_int64(stmt, 0);
++        if (high)
++            *high = sqlite3_column_int64(stmt, 1);
++        if (count)
++            *count = sqlite3_column_int64(stmt, 2);
++        if (flag) {
++            flag_blob = sqlite3_column_blob(stmt, 3);
++            if (flag_blob)
++                *flag = *flag_blob;
++        }
++        sqlite3_reset(stmt);
++        sqlite3_clear_bindings(stmt);
++        return true;
++    }
++
++    /* Server path. */
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+     }
+     groupname_len = strlen(group);
+-    start_request(request_get_groupinfo);
+-    pack_now(request, &groupname_len, sizeof groupname_len);
+-    pack_now(request, group, groupname_len);
+-    finish_request();
+-    if (!write_request())
+-        return false;
++        start_request(request_get_groupinfo);
++        pack_now(request, &groupname_len, sizeof groupname_len);
++        pack_now(request, group, groupname_len);
++        finish_request();
++        if (!write_request())
++            return false;
+ 
+-    if (!read_response())
+-        return false;
+-    code = start_response();
+-    if (code != response_groupinfo)
+-        return false;
+-    if (!unpack_now(response, &r_low, sizeof r_low))
+-        return false;
+-    if (!unpack_now(response, &r_high, sizeof r_high))
+-        return false;
+-    if (!unpack_now(response, &r_count, sizeof r_count))
+-        return false;
+-    if (!unpack_now(response, &flag_alias_len, sizeof flag_alias_len))
+-        return false;
+-    flag_alias = unpack_later(response, flag_alias_len);
+-    if (!flag_alias)
+-        return false;
+-    if (!finish_response())
+-        return false;
+-    if (low)
+-        *low = r_low;
+-    if (high)
+-        *high = r_high;
+-    if (count)
+-        *count = r_count;
+-    if (flag)
+-        *flag = *flag_alias;
+-    return true;
++        if (!read_response())
++            return false;
++        code = start_response();
++        if (code != response_groupinfo)
++            return false;
++        if (!unpack_now(response, &r_low, sizeof r_low))
++            return false;
++        if (!unpack_now(response, &r_high, sizeof r_high))
++            return false;
++        if (!unpack_now(response, &r_count, sizeof r_count))
++            return false;
++        if (!unpack_now(response, &flag_alias_len, sizeof flag_alias_len))
++            return false;
++        flag_alias = unpack_later(response, flag_alias_len);
++        if (!flag_alias)
++            return false;
++        if (!finish_response())
++            return false;
++        if (low)
++            *low = r_low;
++        if (high)
++            *high = r_high;
++        if (count)
++            *count = r_count;
++        if (flag)
++            *flag = *flag_alias;
++        return true;
+ }
+ 
+ bool
+@@ -356,6 +770,10 @@ ovsqlite_groupadd(const char *group, ARTNUM low, ARTNUM high, char *flag)
+     uint64_t r_high;
+     unsigned int code;
+ 
++    if (direct_reader) {
++        warn("ovsqlite: groupadd not available in direct reader mode");
++        return false;
++    }
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+@@ -391,6 +809,10 @@ ovsqlite_groupdel(const char *group)
+     uint16_t groupname_len;
+     unsigned int code;
+ 
++    if (direct_reader) {
++        warn("ovsqlite: groupdel not available in direct reader mode");
++        return false;
++    }
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+@@ -424,6 +846,10 @@ ovsqlite_add(const char *group, ARTNUM artnum, TOKEN token, char *data,
+     uint64_t r_expires;
+     unsigned int code;
+ 
++    if (direct_reader) {
++        warn("ovsqlite: add not available in direct reader mode");
++        return false;
++    }
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+@@ -478,6 +904,10 @@ ovsqlite_cancel(const char *group, ARTNUM artnum)
+     uint64_t r_artnum;
+     unsigned int code;
+ 
++    if (direct_reader) {
++        warn("ovsqlite: cancel not available in direct reader mode");
++        return false;
++    }
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+@@ -508,7 +938,7 @@ ovsqlite_opensearch(const char *group, int low, int high)
+     handle_t *rh;
+     uint16_t groupname_len;
+ 
+-    if (sock == -1) {
++    if (!direct_reader && sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return NULL;
+     }
+@@ -525,6 +955,208 @@ ovsqlite_opensearch(const char *group, int low, int high)
+     return rh;
+ }
+ 
++/*
++**  Fill the search buffer directly from SQLite for direct reader mode.
++**
++**  Collects rows into temporary storage, then packs into the handle_t
++**  buffer in the same layout that fill_search_buffer produces:
++**    [overview ptrs (count+1)]  [arrived]  [artnums]  [tokens]  [overview data]
++**  The consumer (ovsqlite_search) computes overview length as
++**    overview[ix+1] - overview[ix]
++**  so overview[count] must be a valid sentinel pointer.
++*/
++static bool
++fill_search_buffer_direct(handle_t *rh)
++{
++    unsigned int cols;
++    size_t per_row;
++    uint32_t max_rows, count, ix;
++    sqlite3_stmt *stmt;
++    int status;
++    uint8_t *store;
++
++    /* Temporary storage for collected rows. */
++    ARTNUM *tmp_artnum;
++    time_t *tmp_arrived;
++    TOKEN *tmp_token;
++    uint8_t *tmp_overview;
++    uint32_t *tmp_ov_offset;
++    uint32_t *tmp_ov_len;
++    size_t ov_total;
++
++    rh->count = 0;
++    rh->index = 0;
++    cols = rh->cols;
++
++    /* Calculate per-row metadata size in the final buffer. */
++    per_row = sizeof(ARTNUM);
++    if (cols & search_col_arrived)
++        per_row += sizeof(time_t);
++    if (cols & search_col_token)
++        per_row += sizeof(TOKEN);
++    if (cols & search_col_overview)
++        per_row += sizeof(char *);
++
++    /* Rough upper bound on rows that can fit. */
++    max_rows = SEARCHSPACE / per_row;
++    if (max_rows > 4096)
++        max_rows = 4096;
++
++    /* Allocate temporary arrays. */
++    tmp_artnum = xmalloc(max_rows * sizeof(ARTNUM));
++    tmp_arrived = (cols & search_col_arrived)
++                      ? xmalloc(max_rows * sizeof(time_t))
++                      : NULL;
++    tmp_token = (cols & search_col_token)
++                    ? xmalloc(max_rows * sizeof(TOKEN))
++                    : NULL;
++    tmp_overview = (cols & search_col_overview)
++                       ? xmalloc(SEARCHSPACE)
++                       : NULL;
++    tmp_ov_offset = (cols & search_col_overview)
++                        ? xmalloc(max_rows * sizeof(uint32_t))
++                        : NULL;
++    tmp_ov_len = (cols & search_col_overview)
++                     ? xmalloc(max_rows * sizeof(uint32_t))
++                     : NULL;
++
++    /* Select the appropriate prepared statement. */
++    stmt = (cols & search_col_overview) ? sql_read.list_articles_high_overview
++                                        : sql_read.list_articles_high;
++    sqlite3_bind_blob(stmt, 1, rh->groupname, rh->groupname_len,
++                      SQLITE_STATIC);
++    sqlite3_bind_int64(stmt, 2, rh->low);
++    sqlite3_bind_int64(stmt, 3, rh->high);
++
++    /* Collect rows. */
++    count = 0;
++    ov_total = 0;
++    while (count < max_rows) {
++        uint64_t artnum;
++        size_t meta_needed;
++
++        status = sqlite3_step(stmt);
++        if (status == SQLITE_DONE) {
++            rh->done = true;
++            break;
++        }
++        if (status != SQLITE_ROW) {
++            warn("ovsqlite: search query error: %s",
++                 sqlite3_errmsg(read_connection));
++            break;
++        }
++
++        artnum = sqlite3_column_int64(stmt, 0);
++
++        if (cols & search_col_overview) {
++            uint8_t const *overview;
++            uint32_t overview_len;
++            size_t size;
++
++            overview = sqlite3_column_blob(stmt, 4);
++            size = sqlite3_column_bytes(stmt, 4);
++            if (!overview || size > MAX_OVDATA_SIZE)
++                continue;
++            overview_len = size;
++
++#    ifdef HAVE_ZLIB
++            if (reader_use_compression && overview_len > 0) {
++                uint8_t *dec;
++                uint32_t raw_len;
++
++                dec = reader_decompress(overview, overview_len, rh->groupname,
++                                        rh->groupname_len, artnum, &raw_len);
++                if (!dec)
++                    continue;
++                overview = dec;
++                overview_len = raw_len;
++            }
++#    endif
++
++            /* Check if adding this row would overflow the buffer.
++             * Account for the sentinel overview pointer. */
++            meta_needed = (count + 2) * sizeof(char *) /* overview ptrs */
++                          + (count + 1) * sizeof(ARTNUM);
++            if (cols & search_col_arrived)
++                meta_needed += (count + 1) * sizeof(time_t);
++            if (cols & search_col_token)
++                meta_needed += (count + 1) * sizeof(TOKEN);
++            if (meta_needed + ov_total + overview_len > SEARCHSPACE)
++                break;
++
++            tmp_ov_offset[count] = ov_total;
++            tmp_ov_len[count] = overview_len;
++            memcpy(tmp_overview + ov_total, overview, overview_len);
++            ov_total += overview_len;
++        } else {
++            /* No overview: just check metadata fits. */
++            if ((count + 1) * per_row > SEARCHSPACE)
++                break;
++        }
++
++        tmp_artnum[count] = artnum;
++        if (cols & search_col_arrived)
++            tmp_arrived[count] = sqlite3_column_int64(stmt, 1);
++        if (cols & search_col_token) {
++            TOKEN const *tk = sqlite3_column_blob(stmt, 3);
++
++            if (tk && sqlite3_column_bytes(stmt, 3) == sizeof(TOKEN))
++                tmp_token[count] = *tk;
++            else
++                memset(&tmp_token[count], 0, sizeof(TOKEN));
++        }
++
++        count++;
++    }
++
++    if (count > 0)
++        rh->low = tmp_artnum[count - 1] + 1;
++    sqlite3_reset(stmt);
++    sqlite3_clear_bindings(stmt);
++
++    /* Pack into rh->buffer in the canonical layout. */
++    store = rh->buffer;
++    rh->overview = (char **) (void *) store;
++    if (cols & search_col_overview)
++        store += (count + 1) * sizeof(char *);
++    rh->arrived = (time_t *) (void *) store;
++    if (cols & search_col_arrived)
++        store += count * sizeof(time_t);
++    rh->artnum = (ARTNUM *) (void *) store;
++    store += count * sizeof(ARTNUM);
++    rh->token = (TOKEN *) store;
++    if (cols & search_col_token)
++        store += count * sizeof(TOKEN);
++
++    for (ix = 0; ix < count; ix++) {
++        rh->artnum[ix] = tmp_artnum[ix];
++        if (cols & search_col_arrived)
++            rh->arrived[ix] = tmp_arrived[ix];
++        if (cols & search_col_token)
++            rh->token[ix] = tmp_token[ix];
++    }
++
++    if (cols & search_col_overview) {
++        /* Copy overview data contiguously after the metadata arrays
++         * and set up pointers. */
++        memcpy(store, tmp_overview, ov_total);
++        for (ix = 0; ix < count; ix++)
++            rh->overview[ix] = (char *) store + tmp_ov_offset[ix];
++        rh->overview[count] = (char *) store + ov_total;
++    }
++
++    /* Clean up temporary storage. */
++    free(tmp_artnum);
++    free(tmp_arrived);
++    free(tmp_token);
++    free(tmp_overview);
++    free(tmp_ov_offset);
++    free(tmp_ov_len);
++
++    rh->count = count;
++    return true;
++}
++
+ static bool
+ fill_search_buffer(handle_t *rh)
+ {
+@@ -651,7 +1283,7 @@ ovsqlite_search(void *handle, ARTNUM *artnum, char **data, int *len,
+     unsigned int cols;
+     unsigned int ix;
+ 
+-    if (sock == -1) {
++    if (!direct_reader && sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+     }
+@@ -670,8 +1302,13 @@ ovsqlite_search(void *handle, ARTNUM *artnum, char **data, int *len,
+         cols |= search_col_overview;
+     if (cols & ~rh->cols || ix >= rh->count) {
+         rh->cols = cols;
+-        if (!fill_search_buffer(rh))
+-            return false;
++        if (direct_reader) {
++            if (!fill_search_buffer_direct(rh))
++                return false;
++        } else {
++            if (!fill_search_buffer(rh))
++                return false;
++        }
+         ix = rh->index;
+         if (ix >= rh->count)
+             return false;
+@@ -694,7 +1331,7 @@ ovsqlite_search(void *handle, ARTNUM *artnum, char **data, int *len,
+ void
+ ovsqlite_closesearch(void *handle)
+ {
+-    if (sock == -1)
++    if (!direct_reader && sock == -1)
+         warn("ovsqlite: not connected to server");
+     if (!handle)
+         return;
+@@ -704,10 +1341,39 @@ ovsqlite_closesearch(void *handle)
+ bool
+ ovsqlite_getartinfo(const char *group, ARTNUM artnum, TOKEN *token)
+ {
++    sqlite3_stmt *stmt;
++    TOKEN const *db_token;
++    int status;
+     uint16_t groupname_len;
+     uint64_t r_artnum;
+     unsigned int code;
+ 
++    if (direct_reader) {
++        stmt = sql_read.get_artinfo;
++        sqlite3_bind_blob(stmt, 1, group, strlen(group), SQLITE_STATIC);
++        sqlite3_bind_int64(stmt, 2, artnum);
++        status = sqlite3_step(stmt);
++        if (status != SQLITE_ROW) {
++            if (status != SQLITE_DONE)
++                warn("ovsqlite: getartinfo query error: %s",
++                     sqlite3_errmsg(read_connection));
++            sqlite3_reset(stmt);
++            sqlite3_clear_bindings(stmt);
++            return false;
++        }
++        db_token = sqlite3_column_blob(stmt, 0);
++        if (!db_token || sqlite3_column_bytes(stmt, 0) != sizeof(TOKEN)) {
++            sqlite3_reset(stmt);
++            sqlite3_clear_bindings(stmt);
++            return false;
++        }
++        *token = *db_token;
++        sqlite3_reset(stmt);
++        sqlite3_clear_bindings(stmt);
++        return true;
++    }
++
++    /* Server path. */
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+@@ -911,6 +1577,10 @@ expire_finish(void)
+ bool
+ ovsqlite_expiregroup(char const *group, int *low, struct history *h)
+ {
++    if (direct_reader) {
++        warn("ovsqlite: expiregroup not available in direct reader mode");
++        return false;
++    }
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+@@ -946,7 +1616,7 @@ set_cutofflow(uint8_t cutofflow)
+ bool
+ ovsqlite_ctl(OVCTLTYPE type, void *val)
+ {
+-    if (sock == -1) {
++    if (!direct_reader && sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return false;
+     }
+@@ -958,6 +1628,8 @@ ovsqlite_ctl(OVCTLTYPE type, void *val)
+         *(OVSORTTYPE *) val = OVNEWSGROUP;
+         return true;
+     case OVCUTOFFLOW:
++        if (direct_reader)
++            return true; /* no-op for readers */
+         return set_cutofflow(*(bool *) val);
+     case OVSTATICSEARCH:
+         *(int *) val = true;
+@@ -974,12 +1646,20 @@ ovsqlite_ctl(OVCTLTYPE type, void *val)
+ void
+ ovsqlite_close(void)
+ {
++    if (direct_reader) {
++        direct_close();
++        return;
++    }
+     if (sock == -1) {
+         warn("ovsqlite: not connected to server");
+         return;
+     }
+     close(sock);
+     sock = -1;
++    buffer_free(request);
++    request = NULL;
++    buffer_free(response);
++    response = NULL;
+ }
+ 
+ #else /* ! HAVE_SQLITE3 */
+diff --git storage/ovsqlite/sql-read.sql storage/ovsqlite/sql-read.sql
+new file mode 100644
+index 000000000..b41df7e44
+--- /dev/null
++++ storage/ovsqlite/sql-read.sql
+@@ -0,0 +1,40 @@
++pragma busy_timeout = 10000;
++
++pragma query_only = 1;
++
++-- .getmisc
++select value from misc
++    where key=?1;
++
++-- .get_groupinfo
++select low, high, "count", flag_alias from groupinfo
++    where deleted=0
++        and groupname=?1;
++
++-- .get_artinfo
++select token
++    from groupinfo
++        natural join artinfo
++    where deleted=0
++        and groupname=?1
++        and artnum=?2;
++
++-- .list_articles_high
++select artnum, arrived, expires, token
++    from groupinfo
++        natural join artinfo
++    where deleted=0
++        and groupname=?1
++        and artnum>=?2
++        and artnum<=?3
++    order by artnum;
++
++-- .list_articles_high_overview
++select artnum, arrived, expires, token, overview
++    from groupinfo
++        natural join artinfo
++    where deleted=0
++        and groupname=?1
++        and artnum>=?2
++        and artnum<=?3
++    order by artnum;
+diff --git support/mkmanifest support/mkmanifest
+index c75f9a701..fc250a9af 100755
+--- support/mkmanifest
++++ support/mkmanifest
+@@ -327,6 +327,9 @@ tests/lib/xwrite.t
+ tests/nnrpd/auth-ext.t
+ tests/overview/api.t
+ tests/overview/buffindexed.t
++tests/overview/ovsqlite.t
++tests/overview/ovsqlite-read.t
++tests/overview/ovsqlite-write.t
+ tests/overview/tradindexed.t
+ tests/overview/xref.t
+ tests/perl/minimum-version.t
+diff --git tests/Makefile tests/Makefile
+index fa35b1a37..ae990ee67 100644
+--- tests/Makefile
++++ tests/Makefile
+@@ -30,12 +30,13 @@ TESTS	= authprogs/ident.t innd/artparse.t innd/chan.t lib/artnumber.t \
+ 	lib/setenv.t lib/snprintf.t lib/strlcat.t \
+ 	lib/strlcpy.t lib/tst.t lib/uwildmat.t lib/vector.t lib/wire.t \
+ 	lib/xwrite.t nnrpd/auth-ext.t overview/api.t overview/buffindexed.t \
+-	overview/tradindexed.t overview/xref.t util/innbind.t
++	overview/ovsqlite.t overview/tradindexed.t overview/xref.t util/innbind.t
+ 
+ ##  Extra stuff that needs to be built before tests can be run.
+ 
+ EXTRA	= runtests clients/server-list docs/pod.t lib/xmalloc \
+-	  perl/minimum-version.t
++	  perl/minimum-version.t overview/ovsqlite-write.t \
++	  overview/ovsqlite-read.t
+ 
+ all check test tests: $(TESTS) $(EXTRA)
+ 	./runtests -l TESTS
+@@ -294,6 +295,15 @@ overview/api.t: overview/api-t.o tap/basic.o $(STORAGEDEPS)
+ overview/buffindexed-t.o: overview/overview-t.c
+ 	$(CC) $(CFLAGS) -DOVTYPE=buffindexed -c -o $@ overview/overview-t.c
+ 
++overview/ovsqlite.t: overview/ovsqlite-t.o tap/basic.o $(STORAGEDEPS)
++	$(LINKDEPS) overview/ovsqlite-t.o tap/basic.o $(STORAGELIBS) $(LIBS)
++
++overview/ovsqlite-write.t: overview/ovsqlite-write-t.o tap/basic.o $(STORAGEDEPS)
++	$(LINKDEPS) overview/ovsqlite-write-t.o tap/basic.o $(STORAGELIBS) $(LIBS)
++
++overview/ovsqlite-read.t: overview/ovsqlite-read-t.o tap/basic.o $(STORAGEDEPS)
++	$(LINKDEPS) overview/ovsqlite-read-t.o tap/basic.o $(STORAGELIBS) $(LIBS)
++
+ overview/buffindexed.t: overview/buffindexed-t.o tap/basic.o $(STORAGEDEPS)
+ 	$(LINKDEPS) overview/buffindexed-t.o tap/basic.o $(STORAGELIBS) $(LIBS)
+ 
+diff --git tests/TESTS tests/TESTS
+index b995af703..0a720e30a 100644
+--- tests/TESTS
++++ tests/TESTS
+@@ -52,6 +52,8 @@ lib/xwrite
+ nnrpd/auth-ext
+ overview/api
+ overview/buffindexed
++overview/ovsqlite
++overview/ovsqlite-integ
+ overview/overchan
+ overview/tradindexed
+ overview/xref
+diff --git tests/overview/ovsqlite-integ.t tests/overview/ovsqlite-integ.t
+new file mode 100755
+index 000000000..d4df26fd2
+--- /dev/null
++++ tests/overview/ovsqlite-integ.t
+@@ -0,0 +1,215 @@
++#! /bin/sh
++#
++# Integration test for ovsqlite direct reader mode.
++#
++# Starts a real ovsqlite-server, writes test data through it via the
++# writer program, kills the server, then verifies the reader program
++# can read the WAL-mode database directly without the server.
++
++count=1
++printcount() {
++    echo "$1 $count $2"
++    count=$(expr $count + 1)
++}
++
++# Find the right directory.
++dirs='../data data tests/data'
++for dir in $dirs; do
++    if [ -r "$dir/overview/basic" ]; then
++        testdata="$dir"
++        break
++    fi
++done
++if [ -z "$testdata" ]; then
++    echo "Could not find test data" >&2
++    exit 1
++fi
++
++server="../../storage/ovsqlite/ovsqlite-server"
++writer="overview/ovsqlite-write.t"
++reader="overview/ovsqlite-read.t"
++
++# When run from the tests directory, adjust paths.
++if [ ! -x "$server" ]; then
++    server="../storage/ovsqlite/ovsqlite-server"
++fi
++if [ ! -x "$writer" ]; then
++    writer="./overview/ovsqlite-write.t"
++fi
++if [ ! -x "$reader" ]; then
++    reader="./overview/ovsqlite-read.t"
++fi
++
++# Skip if SQLite support was not compiled in.
++if ! grep -q '^#define HAVE_SQLITE3' ../include/config.h 2>/dev/null; then
++    echo "1..0 # skip SQLite support not compiled"
++    exit 0
++fi
++
++for prog in "$server" "$writer" "$reader"; do
++    if [ ! -x "$prog" ]; then
++        echo "1..0 # skip ovsqlite binaries not built"
++        exit 0
++    fi
++done
++
++echo 13
++
++# Set up temp directory with config files.  Use absolute paths because
++# the C test programs chdir to the test data directory before reading
++# inn.conf.
++tmpdir="$(pwd)/ov-tmp-integ"
++rm -rf "$tmpdir"
++mkdir -p "$tmpdir"
++
++cat > "$tmpdir/inn.conf" <<EOF
++domain:          news.example.com
++pathhost:        inn.example.com
++mta:             "/usr/sbin/sendmail -oi -oem %s"
++hismethod:       hisv6
++enableoverview:  true
++ovmethod:        ovsqlite
++wireformat:      true
++
++pathnews:        .
++patharchive:     archive
++patharticles:    spool
++pathoverview:    $tmpdir
++pathrun:         $tmpdir
++pathetc:         $tmpdir
++pathdb:          $tmpdir
++pathlog:         $tmpdir
++pathtmp:         $tmpdir
++EOF
++
++cat > "$tmpdir/ovsqlite.conf" <<EOF
++walmode: true
++compress: true
++cachesize: 1000
++readercachesize: 1000
++transrowlimit: 10000
++transtimelimit: 30.0
++EOF
++
++INNCONF="$tmpdir/inn.conf"
++export INNCONF
++
++# Test 1: start ovsqlite-server in debug/foreground mode.
++$server -d > "$tmpdir/server.log" 2>&1 &
++server_pid=$!
++
++# Wait for socket file (up to 5 seconds).
++waited=0
++while [ ! -S "$tmpdir/ovsqlite.sock" ] && [ $waited -lt 50 ]; do
++    # Check if server died.
++    if ! kill -0 $server_pid 2>/dev/null; then
++        echo "# Server exited prematurely, log:"
++        sed 's/^/# /' "$tmpdir/server.log"
++        printcount "not ok" "# server startup"
++        rm -rf "$tmpdir"
++        exit 1
++    fi
++    sleep 0.1
++    waited=$(expr $waited + 1)
++done
++
++if [ -S "$tmpdir/ovsqlite.sock" ]; then
++    printcount "ok" "# server started"
++else
++    echo "# Server socket not found after 5s, log:"
++    sed 's/^/# /' "$tmpdir/server.log"
++    printcount "not ok" "# server started"
++    kill $server_pid 2>/dev/null
++    rm -rf "$tmpdir"
++    exit 1
++fi
++
++# Tests 2-4: run the writer (3 TAP tests from inside).
++writer_output=$($writer 2>&1)
++writer_rc=$?
++writer_count=$(echo "$writer_output" | grep -c "^ok ")
++if [ $writer_rc -eq 0 ] && [ "$writer_count" -eq 3 ]; then
++    printcount "ok" "# writer open"
++    printcount "ok" "# writer load"
++    printcount "ok" "# writer close"
++else
++    echo "# Writer failed (rc=$writer_rc):"
++    echo "$writer_output" | sed 's/^/# /'
++    printcount "not ok" "# writer open"
++    printcount "not ok" "# writer load"
++    printcount "not ok" "# writer close"
++fi
++
++# Test 5: stop the server gracefully.
++kill $server_pid 2>/dev/null
++wait $server_pid 2>/dev/null
++if [ $? -le 128 ] || [ $? -eq 143 ]; then
++    printcount "ok" "# server stopped"
++else
++    printcount "ok" "# server stopped (signal)"
++fi
++
++# Tests 6-10: run the reader (5 TAP tests from inside).
++reader_output=$($reader 2>&1)
++reader_rc=$?
++reader_count=$(echo "$reader_output" | grep -c "^ok ")
++if [ $reader_rc -eq 0 ] && [ "$reader_count" -eq 5 ]; then
++    printcount "ok" "# reader open (direct)"
++    printcount "ok" "# group stats"
++    printcount "ok" "# article data"
++    printcount "ok" "# search order"
++    printcount "ok" "# reopen"
++else
++    echo "# Reader failed (rc=$reader_rc):"
++    echo "$reader_output" | sed 's/^/# /'
++    printcount "not ok" "# reader open (direct)"
++    printcount "not ok" "# group stats"
++    printcount "not ok" "# article data"
++    printcount "not ok" "# search order"
++    printcount "not ok" "# reopen"
++fi
++
++# Tests 11-13: server restart resilience.
++# Simulate INN restart: start a new server against the existing WAL database,
++# shut it down, verify the reader can still read all data.  This is the
++# scenario where nnrpd outlives a server restart cycle.
++$server -d > "$tmpdir/server2.log" 2>&1 &
++server_pid=$!
++waited=0
++while [ ! -S "$tmpdir/ovsqlite.sock" ] && [ $waited -lt 50 ]; do
++    if ! kill -0 $server_pid 2>/dev/null; then
++        echo "# Server restart failed, log:"
++        sed 's/^/# /' "$tmpdir/server2.log"
++        printcount "not ok" "# server restart"
++        printcount "not ok" "# server re-stop"
++        printcount "not ok" "# reader after restart"
++        rm -rf "$tmpdir"
++        exit 1
++    fi
++    sleep 0.1
++    waited=$(expr $waited + 1)
++done
++if [ -S "$tmpdir/ovsqlite.sock" ]; then
++    printcount "ok" "# server restart"
++else
++    printcount "not ok" "# server restart"
++fi
++
++kill $server_pid 2>/dev/null
++wait $server_pid 2>/dev/null
++printcount "ok" "# server re-stop"
++
++# Reader should still work — data survives the restart cycle.
++reader_output=$($reader 2>&1)
++reader_rc=$?
++reader_count=$(echo "$reader_output" | grep -c "^ok ")
++if [ $reader_rc -eq 0 ] && [ "$reader_count" -eq 5 ]; then
++    printcount "ok" "# reader after restart"
++else
++    echo "# Reader after restart failed (rc=$reader_rc):"
++    echo "$reader_output" | sed 's/^/# /'
++    printcount "not ok" "# reader after restart"
++fi
++
++# Clean up.
++rm -rf "$tmpdir"
+diff --git tests/overview/ovsqlite-read-t.c tests/overview/ovsqlite-read-t.c
+new file mode 100644
+index 000000000..ca3517671
+--- /dev/null
++++ tests/overview/ovsqlite-read-t.c
+@@ -0,0 +1,424 @@
++/* Reader half of the ovsqlite direct reader integration test.
++ *
++ * Opens overview in OV_READ mode (triggers direct_open for WAL databases),
++ * reads back data written by the writer half, and verifies correctness.
++ * No ovsqlite-server is needed -- this is the whole point of direct reader.
++ *
++ * Important: OVadd determines group:artnum from the Xref header in the
++ * overview data, NOT from the prefix in the test data file.  For most
++ * articles these match, but some test articles intentionally differ
++ * (e.g., file says news.groups:260 but Xref says news.groups:60).
++ * We must parse Xref to know what was actually stored.
++ */
++
++#include "portable/system.h"
++
++#include <ctype.h>
++#include <errno.h>
++#include <sys/stat.h>
++
++#include "inn/hashtab.h"
++#include "inn/innconf.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/ov.h"
++#include "inn/storage.h"
++#include "inn/vector.h"
++#include "tap/basic.h"
++
++static const TOKEN faketoken = {1, 1, ""};
++
++struct group {
++    char *group;
++    unsigned long count;
++    unsigned long low;
++    unsigned long high;
++};
++
++static const void *
++group_key(const void *entry)
++{
++    return ((const struct group *) entry)->group;
++}
++
++static bool
++group_eq(const void *key, const void *entry)
++{
++    return !strcmp((const char *) key,
++                  ((const struct group *) entry)->group);
++}
++
++static void
++group_del(void *entry)
++{
++    struct group *g = (struct group *) entry;
++    free(g->group);
++    free(g);
++}
++
++/* Parse the Xref field from an overview line to find group:artnum pairs.
++ * The overview line format includes "Xref: hostname group:artnum ..."
++ * as one of the tab-separated fields.
++ *
++ * For each group:artnum in the Xref, calls the callback with the group
++ * name, artnum, the file-format artnum, and the full line from the file.
++ * Returns the number of Xref entries processed. */
++struct xref_entry {
++    char group[256];
++    unsigned long artnum;
++};
++
++/* Find the last Xref field in an overview line and extract group:artnum
++ * pairs.  Returns the number of entries found (up to max_entries). */
++static int
++parse_xref(const char *data, size_t datalen, struct xref_entry *entries,
++           int max_entries)
++{
++    const char *xref = NULL;
++    const char *p;
++    int n = 0;
++
++    /* Find last "Xref: " preceded by a tab. */
++    for (p = data; p < data + datalen - 6; p++) {
++        if (*p == 'X' && memcmp(p, "Xref: ", 6) == 0
++            && (p == data || p[-1] == '\t'))
++            xref = p;
++    }
++    if (!xref)
++        return 0;
++
++    /* Skip "Xref: hostname " */
++    xref += 6;
++    while (xref < data + datalen && *xref != ' ')
++        xref++;
++    if (xref < data + datalen)
++        xref++;
++
++    /* Parse group:artnum pairs. */
++    while (xref < data + datalen && n < max_entries) {
++        const char *colon, *end;
++        size_t glen;
++
++        while (xref < data + datalen && isspace((unsigned char) *xref))
++            xref++;
++        if (xref >= data + datalen)
++            break;
++
++        colon = memchr(xref, ':', data + datalen - xref);
++        if (!colon)
++            break;
++        glen = colon - xref;
++        if (glen >= sizeof(entries[0].group))
++            break;
++        memcpy(entries[n].group, xref, glen);
++        entries[n].group[glen] = '\0';
++
++        entries[n].artnum = strtoul(colon + 1, NULL, 10);
++        if (entries[n].artnum == 0)
++            break;
++        n++;
++
++        /* Advance to next space or end. */
++        end = memchr(xref, ' ', data + datalen - xref);
++        if (!end)
++            end = memchr(xref, '\t', data + datalen - xref);
++        if (!end)
++            break;
++        xref = end + 1;
++    }
++    return n;
++}
++
++/* Build expected group stats from the data file, using Xref-derived
++ * artnums (which is what OVadd actually stores). */
++static struct hash *
++load_expected(const char *path)
++{
++    struct hash *groups;
++    struct group *g;
++    FILE *f;
++    char buffer[4096];
++    struct xref_entry entries[16];
++    int i, nxref;
++    size_t len;
++
++    groups = hash_create(32, hash_string, group_key, group_eq, group_del);
++    f = fopen(path, "r");
++    if (f == NULL)
++        sysdie("Cannot open %s", path);
++
++    while (fgets(buffer, sizeof(buffer), f) != NULL) {
++        len = strlen(buffer);
++        if (len > 0 && buffer[len - 1] == '\n')
++            len--;
++
++        nxref = parse_xref(buffer, len, entries, 16);
++        for (i = 0; i < nxref; i++) {
++            g = hash_lookup(groups, entries[i].group);
++            if (g == NULL) {
++                g = xmalloc(sizeof(*g));
++                g->group = xstrdup(entries[i].group);
++                g->count = 1;
++                g->low = entries[i].artnum;
++                g->high = entries[i].artnum;
++                hash_insert(groups, g->group, g);
++            } else {
++                g->count++;
++                if (entries[i].artnum < g->low)
++                    g->low = entries[i].artnum;
++                if (entries[i].artnum > g->high)
++                    g->high = entries[i].artnum;
++            }
++        }
++    }
++    fclose(f);
++    return groups;
++}
++
++/* Verify group stats via the OV API. */
++static void
++verify_group(void *data, void *cookie)
++{
++    struct group *g = (struct group *) data;
++    bool *status = (bool *) cookie;
++    int low, high, count, flag;
++
++    if (!OVgroupstats(g->group, &low, &high, &count, &flag)) {
++        warn("No stats for %s", g->group);
++        *status = false;
++        return;
++    }
++    if ((unsigned long) low != g->low) {
++        warn("Low wrong for %s: %d != %lu", g->group, low, g->low);
++        *status = false;
++    }
++    if ((unsigned long) high != g->high) {
++        warn("High wrong for %s: %d != %lu", g->group, high, g->high);
++        *status = false;
++    }
++    if ((unsigned long) count != g->count) {
++        warn("Count wrong for %s: %d != %lu", g->group, count, g->count);
++        *status = false;
++    }
++}
++
++/* Verify per-article data: getartinfo returns correct token, search returns
++ * correct overview data and arrival time.
++ *
++ * We verify using the Xref-derived artnum (what OVadd actually stored).
++ * The arrival time is based on the file-prefix artnum (what the writer
++ * passed as arrived = artnum * 10). */
++static bool
++verify_articles(const char *path)
++{
++    FILE *f;
++    char buffer[4096];
++    char *start, *colon;
++    unsigned long file_artnum;
++    struct xref_entry entries[16];
++    int nxref, i;
++    size_t linelen;
++    TOKEN token;
++    void *search;
++    ARTNUM overnum;
++    char *data;
++    int len;
++    time_t arrived;
++    bool status = true;
++
++    f = fopen(path, "r");
++    if (f == NULL)
++        sysdie("Cannot open %s", path);
++
++    while (fgets(buffer, sizeof(buffer), f) != NULL) {
++        linelen = strlen(buffer);
++        if (linelen > 0 && buffer[linelen - 1] == '\n')
++            linelen--;
++
++        /* Parse the file-format artnum (used for arrival time). */
++        colon = strchr(buffer, ':');
++        if (!colon)
++            continue;
++        start = colon + 1;
++        file_artnum = strtoul(start, NULL, 10);
++
++        /* Parse Xref to get the actual stored artnum(s). */
++        nxref = parse_xref(buffer, linelen, entries, 16);
++        for (i = 0; i < nxref; i++) {
++            /* getartinfo should find this article. */
++            if (!OVgetartinfo(entries[i].group, entries[i].artnum, &token)) {
++                warn("No artinfo for %s:%lu", entries[i].group,
++                     entries[i].artnum);
++                status = false;
++                continue;
++            }
++            if (memcmp(&token, &faketoken, sizeof(token)) != 0) {
++                warn("Token wrong for %s:%lu", entries[i].group,
++                     entries[i].artnum);
++                status = false;
++            }
++
++            /* Search for this article and verify arrival time. */
++            search = OVopensearch(entries[i].group, entries[i].artnum,
++                                  entries[i].artnum);
++            if (search == NULL) {
++                warn("Cannot open search for %s:%lu", entries[i].group,
++                     entries[i].artnum);
++                status = false;
++                continue;
++            }
++            if (!OVsearch(search, &overnum, &data, &len, &token, &arrived)) {
++                warn("No search result for %s:%lu", entries[i].group,
++                     entries[i].artnum);
++                status = false;
++                OVclosesearch(search);
++                continue;
++            }
++
++            /* Verify the arrival time matches what the writer stored.
++             * The writer uses file_artnum * 10 as the arrival time. */
++            if ((unsigned long) arrived != file_artnum * 10) {
++                warn("Arrived wrong for %s:%lu: %lu != %lu",
++                     entries[i].group, entries[i].artnum,
++                     (unsigned long) arrived, file_artnum * 10);
++                status = false;
++            }
++
++            /* There should be no more results. */
++            if (OVsearch(search, &overnum, &data, &len, &token, &arrived)) {
++                warn("Extra article for %s:%lu", entries[i].group,
++                     entries[i].artnum);
++                status = false;
++            }
++            OVclosesearch(search);
++        }
++    }
++    fclose(f);
++    return status;
++}
++
++/* Verify that a multi-article search returns articles in order for the
++ * first group found in the data file. */
++static bool
++verify_search_order(const char *path)
++{
++    FILE *f;
++    char buffer[4096];
++    struct xref_entry entries[16];
++    int nxref;
++    size_t len;
++    char *group = NULL;
++    unsigned long low = 0, high = 0;
++    unsigned long article_count = 0;
++    void *search;
++    ARTNUM overnum, last = 0;
++    char *data;
++    int dlen;
++    TOKEN token;
++    time_t arrived;
++    unsigned long found = 0;
++    bool status = true;
++
++    f = fopen(path, "r");
++    if (f == NULL)
++        sysdie("Cannot open %s", path);
++
++    /* Scan the file to find the range for the first group. */
++    while (fgets(buffer, sizeof(buffer), f) != NULL) {
++        len = strlen(buffer);
++        if (len > 0 && buffer[len - 1] == '\n')
++            len--;
++        nxref = parse_xref(buffer, len, entries, 16);
++        if (nxref == 0)
++            continue;
++        if (group == NULL) {
++            group = xstrdup(entries[0].group);
++            low = entries[0].artnum;
++            high = entries[0].artnum;
++            article_count = 1;
++        } else if (strcmp(group, entries[0].group) == 0) {
++            if (entries[0].artnum < low)
++                low = entries[0].artnum;
++            if (entries[0].artnum > high)
++                high = entries[0].artnum;
++            article_count++;
++        }
++    }
++    fclose(f);
++
++    if (!group) {
++        warn("No group found in %s", path);
++        return false;
++    }
++
++    search = OVopensearch(group, low, high);
++    if (search == NULL) {
++        warn("Cannot open search for %s:%lu-%lu", group, low, high);
++        free(group);
++        return false;
++    }
++
++    while (OVsearch(search, &overnum, &data, &dlen, &token, &arrived)) {
++        if (overnum <= last && last != 0) {
++            warn("Out of order in %s: %lu after %lu", group,
++                 (unsigned long) overnum, (unsigned long) last);
++            status = false;
++        }
++        last = overnum;
++        found++;
++    }
++    OVclosesearch(search);
++
++    if (found != article_count) {
++        warn("Wrong count in search for %s: %lu != %lu", group, found,
++             article_count);
++        status = false;
++    }
++
++    free(group);
++    return status;
++}
++
++int
++main(void)
++{
++    struct hash *groups;
++    bool status;
++
++    test_init(5);
++
++    if (access("../data/overview/basic", F_OK) == 0) {
++        if (chdir("../data") < 0)
++            sysbail("cannot chdir to ../data");
++    } else if (access("data/overview/basic", F_OK) == 0) {
++        if (chdir("data") < 0)
++            sysbail("cannot chdir to data");
++    } else if (access("tests/data/overview/basic", F_OK) == 0) {
++        if (chdir("tests/data") < 0)
++            sysbail("cannot chdir to tests/data");
++    }
++
++    /* Test 1: open in direct reader mode (OV_READ triggers direct_open). */
++    ok(1, OVopen(OV_READ));
++
++    /* Test 2: group stats match expected values. */
++    groups = load_expected("overview/basic");
++    status = true;
++    hash_traverse(groups, verify_group, &status);
++    ok(2, status);
++
++    /* Test 3: per-article data integrity (token, overview, arrived). */
++    ok(3, verify_articles("overview/basic"));
++
++    /* Test 4: multi-article search returns articles in order. */
++    ok(4, verify_search_order("overview/basic"));
++
++    hash_free(groups);
++    OVclose();
++
++    /* Test 5: close and reopen works. */
++    ok(5, OVopen(OV_READ));
++    OVclose();
++
++    return 0;
++}
+diff --git tests/overview/ovsqlite-t.c tests/overview/ovsqlite-t.c
+new file mode 100644
+index 000000000..29c6e152a
+--- /dev/null
++++ tests/overview/ovsqlite-t.c
+@@ -0,0 +1,186 @@
++/* Unit tests for ovsqlite direct reader edge cases.
++ *
++ * Tests behavior that can't be exercised by the integration test
++ * (ovsqlite-integ.t) which requires a running ovsqlite-server.
++ * These tests create a database directly via the sqlite3 API.
++ */
++
++#include "portable/system.h"
++
++#include <sys/stat.h>
++
++#include "inn/innconf.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/ov.h"
++#include "inn/storage.h"
++#include "tap/basic.h"
++
++#ifdef HAVE_SQLITE3
++
++#    include <sqlite3.h>
++
++#    define OVSQLITE_DB_FILE "ovsqlite.db"
++#    define TEST_DIR         "ov-tmp"
++
++static const char *schema =
++    "create table misc (key text primary key, value not null) without rowid;"
++    "create table groupinfo (groupid integer primary key,"
++    "    low integer not null default 1, high integer not null default 0,"
++    "    \"count\" integer not null default 0,"
++    "    expired integer not null default 0,"
++    "    deleted integer not null default 0,"
++    "    groupname blob not null, flag_alias blob not null,"
++    "    unique (deleted, groupname));"
++    "create table artinfo (groupid integer references groupinfo (groupid)"
++    "    on update cascade on delete restrict,"
++    "    artnum integer, arrived integer not null, expires integer not null,"
++    "    token blob not null, overview blob not null,"
++    "    primary key (groupid, artnum)) without rowid;";
++
++
++/* Create a minimal database with the given journal mode. */
++static bool
++create_db(const char *dbpath, bool enable_wal)
++{
++    sqlite3 *db;
++    int status;
++    char *errmsg;
++
++    status = sqlite3_open_v2(dbpath, &db,
++                             SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE,
++                             NULL);
++    if (status != SQLITE_OK)
++        return false;
++
++    status = sqlite3_exec(db, schema, 0, NULL, &errmsg);
++    if (status != SQLITE_OK) {
++        sqlite3_free(errmsg);
++        sqlite3_close(db);
++        return false;
++    }
++
++    sqlite3_exec(db,
++                 "insert into misc (key, value) values ('version', 1);"
++                 "insert into misc (key, value) values ('compress', 0);",
++                 0, NULL, NULL);
++
++    if (enable_wal)
++        sqlite3_exec(db, "pragma journal_mode = 'WAL';", 0, NULL, NULL);
++
++    sqlite3_close(db);
++    return true;
++}
++
++static void
++write_config(const char *dir, bool walmode)
++{
++    char *path;
++    FILE *f;
++
++    path = concatpath(dir, "ovsqlite.conf");
++    f = fopen(path, "w");
++    free(path);
++    fprintf(f, "walmode: %s\n", walmode ? "true" : "false");
++    fprintf(f, "readercachesize: 1000\n");
++    fclose(f);
++}
++
++static void
++fake_innconf(void)
++{
++    if (innconf != NULL) {
++        free(innconf->ovmethod);
++        free(innconf->pathdb);
++        free(innconf->pathetc);
++        free(innconf->pathoverview);
++        free(innconf->pathrun);
++        free(innconf);
++    }
++    innconf = xmalloc(sizeof(*innconf));
++    memset(innconf, 0, sizeof(*innconf));
++    innconf->enableoverview = true;
++    innconf->ovmethod = xstrdup("ovsqlite");
++    innconf->pathdb = xstrdup(TEST_DIR);
++    innconf->pathetc = xstrdup(TEST_DIR);
++    innconf->pathoverview = xstrdup(TEST_DIR);
++    innconf->pathrun = xstrdup(TEST_DIR);
++}
++
++static void
++setup(void)
++{
++    if (system("/bin/rm -rf " TEST_DIR) < 0)
++        sysdie("Cannot rm " TEST_DIR);
++    if (mkdir(TEST_DIR, 0755))
++        sysdie("Cannot mkdir " TEST_DIR);
++}
++
++int
++main(void)
++{
++    char *dbpath;
++
++    test_init(4);
++
++    /*
++     * Test 1-2: WAL mode gating.
++     * direct_open() checks pragma journal_mode and only activates direct
++     * reader if the database is actually in WAL mode.  With a non-WAL
++     * database, it falls back to the server path (which fails here since
++     * no server is running).
++     */
++    setup();
++    dbpath = concatpath(TEST_DIR, OVSQLITE_DB_FILE);
++    create_db(dbpath, false);
++    free(dbpath);
++    write_config(TEST_DIR, true); /* config says WAL, but DB isn't */
++    fake_innconf();
++    ok(1, !OVopen(OV_READ)); /* should fail: not WAL, no server */
++
++    /* With WAL enabled on the database, direct_open succeeds. */
++    setup();
++    dbpath = concatpath(TEST_DIR, OVSQLITE_DB_FILE);
++    create_db(dbpath, true);
++    free(dbpath);
++    write_config(TEST_DIR, true);
++    fake_innconf();
++    ok(2, OVopen(OV_READ));
++    OVclose();
++
++    /*
++     * Test 3-4: Write operations rejected in direct reader mode.
++     * The direct reader opens SQLITE_OPEN_READONLY and sets query_only=1.
++     * Write API calls should return false.
++     */
++    fake_innconf();
++    OVopen(OV_READ);
++    {
++        char group[] = "new.group";
++        char flag[] = "y";
++
++        ok(3, !OVgroupadd(group, 0, 0, flag));
++    }
++    {
++        TOKEN token = {0, 0, ""};
++        char data[] = "test";
++
++        ok(4, OVadd(token, data, 4, 0, 0) != OVADDCOMPLETED);
++    }
++    OVclose();
++
++    if (system("/bin/rm -rf " TEST_DIR) < 0)
++        sysdie("Cannot rm " TEST_DIR);
++    return 0;
++}
++
++#else /* ! HAVE_SQLITE3 */
++
++int
++main(void)
++{
++    skip_all("SQLite support not compiled");
++    return 0;
++}
++
++#endif
+diff --git tests/overview/ovsqlite-write-t.c tests/overview/ovsqlite-write-t.c
+new file mode 100644
+index 000000000..14faac053
+--- /dev/null
++++ tests/overview/ovsqlite-write-t.c
+@@ -0,0 +1,144 @@
++/* Writer half of the ovsqlite direct reader integration test.
++ *
++ * Opens overview in OV_READ|OV_WRITE mode (connects to ovsqlite-server),
++ * creates groups and inserts articles via the standard OV API, then closes.
++ * The server creates the real database schema and handles compression.
++ */
++
++#include "portable/system.h"
++
++#include <errno.h>
++#include <sys/stat.h>
++
++#include "inn/innconf.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/ov.h"
++#include "inn/storage.h"
++#include "tap/basic.h"
++
++/* The same fake token used by overview-t.c. */
++static const TOKEN faketoken = {1, 1, ""};
++
++/* Parse a line from the overview data file.  Nul-terminates the group name
++ * at the beginning of the buffer and returns a pointer to the start of the
++ * overview data (the artnum field).  Sets *artnum via the passed pointer.
++ * This is the same parsing logic used by overview-t.c. */
++static char *
++overview_data_parse(char *data, unsigned long *artnum)
++{
++    char *start;
++
++    if (data[strlen(data) - 1] != '\n')
++        die("Line too long in input data");
++
++    start = strchr(data, ':');
++    if (start == NULL)
++        die("No colon found in input data");
++    *start = '\0';
++    start++;
++    *artnum = strtoul(start, NULL, 10);
++    if (*artnum == 0)
++        die("Cannot parse article number in input data");
++    return start;
++}
++
++int
++main(void)
++{
++    FILE *f;
++    char buffer[4096];
++    char *start;
++    unsigned long artnum;
++    char flag[] = NF_FLAG_OK_STRING;
++    /* Track which groups we've already added. */
++    char *seen_groups[64];
++    int ngroups = 0;
++    int narticles = 0;
++    int i;
++    bool seen;
++
++    test_init(3);
++
++    if (access("../data/overview/basic", F_OK) == 0) {
++        if (chdir("../data") < 0)
++            sysbail("cannot chdir to ../data");
++    } else if (access("data/overview/basic", F_OK) == 0) {
++        if (chdir("data") < 0)
++            sysbail("cannot chdir to data");
++    } else if (access("tests/data/overview/basic", F_OK) == 0) {
++        if (chdir("tests/data") < 0)
++            sysbail("cannot chdir to tests/data");
++    }
++
++    /* Test 1: open overview in read/write mode (connects to server). */
++    ok(1, OVopen(OV_READ | OV_WRITE));
++
++    /* Load test data from the same file used by overview-t.c. */
++    f = fopen("overview/basic", "r");
++    if (f == NULL)
++        sysdie("Cannot open overview/basic");
++
++    while (fgets(buffer, sizeof(buffer), f) != NULL) {
++        start = overview_data_parse(buffer, &artnum);
++
++        /* Add group if we haven't seen it yet. */
++        seen = false;
++        for (i = 0; i < ngroups; i++) {
++            if (strcmp(seen_groups[i], buffer) == 0) {
++                seen = true;
++                break;
++            }
++        }
++        if (!seen) {
++            if (ngroups >= 64)
++                die("Too many groups in test data");
++            seen_groups[ngroups] = xstrdup(buffer);
++            ngroups++;
++            if (!OVgroupadd(buffer, 0, 0, flag))
++                die("Cannot add group %s", buffer);
++        }
++
++        /* OVadd expects the overview data *without* the "artnum\t" prefix
++         * and without trailing \r\n -- it adds those itself.  But it does
++         * need the Xref field present so it can determine group:artnum.
++         *
++         * In the data file, the format after overview_data_parse is:
++         *   "artnum\tSubject...\tXref: host group:artnum\n"
++         *
++         * We need to pass the data starting from the first tab character
++         * (skipping the artnum), without the trailing \n.  OVadd will
++         * prepend "artnum\t" and append "\r\n" before storing. */
++        {
++            char *tab = strchr(start, '\t');
++            int len;
++
++            if (tab == NULL)
++                die("No tab after artnum in data for %s:%lu", buffer, artnum);
++            tab++; /* point past the tab to the actual overview fields */
++            len = strlen(tab);
++            /* Strip trailing \n */
++            if (len > 0 && tab[len - 1] == '\n')
++                len--;
++
++            if (OVadd(faketoken, tab, len, artnum * 10,
++                       (artnum % 5 == 0) ? artnum * 100 : artnum)
++                != OVADDCOMPLETED)
++                die("Cannot add %s:%lu", buffer, artnum);
++        }
++        narticles++;
++    }
++    fclose(f);
++
++    /* Test 2: all articles were loaded. */
++    ok(2, narticles > 0);
++
++    /* Test 3: close succeeds. */
++    OVclose();
++    ok(3, true);
++
++    for (i = 0; i < ngroups; i++)
++        free(seen_groups[i]);
++
++    return 0;
++}
+
+From 05d70a17c5720be25fcd957c8ab7a0c12a64d30b Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Wed, 6 May 2026 23:04:33 -0700
+Subject: [PATCH 3/7] call sqlite3_close_v2 when sqlite3_open_v2 fails
+
+---
+ storage/ovsqlite/ovsqlite.c | 1 +
+ tests/overview/ovsqlite-t.c | 4 +++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git storage/ovsqlite/ovsqlite.c storage/ovsqlite/ovsqlite.c
+index 5d6621570..557d9710b 100644
+--- storage/ovsqlite/ovsqlite.c
++++ storage/ovsqlite/ovsqlite.c
+@@ -278,6 +278,7 @@ direct_open(void)
+         if (status != SQLITE_CANTOPEN)
+             warn("ovsqlite: cannot open database for reading: %s",
+                  sqlite3_errstr(status));
++        sqlite3_close_v2(read_connection);
+         read_connection = NULL;
+         return false;
+     }
+diff --git tests/overview/ovsqlite-t.c tests/overview/ovsqlite-t.c
+index 29c6e152a..c99155cc5 100644
+--- tests/overview/ovsqlite-t.c
++++ tests/overview/ovsqlite-t.c
+@@ -50,8 +50,10 @@ create_db(const char *dbpath, bool enable_wal)
+     status = sqlite3_open_v2(dbpath, &db,
+                              SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE,
+                              NULL);
+-    if (status != SQLITE_OK)
++    if (status != SQLITE_OK) {
++        sqlite3_close_v2(db);
+         return false;
++    }
+ 
+     status = sqlite3_exec(db, schema, 0, NULL, &errmsg);
+     if (status != SQLITE_OK) {
+
+From 0b308fdd3f6255e8c81a3deaf1bad08cb1fe8f1d Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Wed, 6 May 2026 23:35:14 -0700
+Subject: [PATCH 4/7] ovsqlite: Add runtime WAL checkpoint to prevent unbounded
+ WAL growth
+
+When WAL mode is enabled with direct readers, the WAL file can grow
+without bound if checkpointing never occurs between commits.  Add a
+configurable walcheckpointthreshold (default 1000 pages) that triggers
+a TRUNCATE checkpoint during the server's idle period.
+
+The checkpoint temporarily lowers the busy_timeout to 10 seconds
+(from ~31 years) so the server waits for readers to finish their
+current queries but doesn't stall indefinitely.  Readers use
+autocommit with sub-millisecond snapshots, so the checkpoint
+typically completes in milliseconds.
+
+Also fix notice() messages being lost after daemon() by registering
+message_handlers_notice, remove the unused checkpoint_wal prepared
+statement from sql-main.sql, and update close_db() comment.
+---
+ doc/pod/ovsqlite.pod               | 14 ++++++++
+ storage/ovsqlite/ovsqlite-server.c | 52 ++++++++++++++++++++++++++++--
+ storage/ovsqlite/sql-main.sql      |  3 --
+ 3 files changed, 63 insertions(+), 6 deletions(-)
+
+diff --git doc/pod/ovsqlite.pod doc/pod/ovsqlite.pod
+index 8d1a1957e..4a6eff01b 100644
+--- doc/pod/ovsqlite.pod
++++ doc/pod/ovsqlite.pod
+@@ -103,6 +103,20 @@ WAL, writers take exclusive locks that would block direct readers during
+ commits, so the server path is used instead.  The default value
+ is S<8000 KB> (about S<8 MB>).
+ 
++=item I<walcheckpointthreshold>
++
++The WAL page count at which B<ovsqlite-server> forces a checkpoint.
++When the WAL grows beyond this many pages, the server performs a
++TRUNCATE checkpoint during its next idle period, waiting up to
++10 seconds for readers to finish their current queries before flushing
++WAL content back to the database file.  This prevents unbounded WAL
++growth and is no worse than the non-WAL path where every commit takes
++an exclusive lock.  If readers do not finish within the timeout, the
++checkpoint is skipped and retried on the next idle cycle.
++
++This parameter is only effective when I<walmode> is enabled.  The default
++value is 1000 pages.
++
+ =item I<pagesize>
+ 
+ The SQLite database page size in bytes.  Must be a power of 2, minimum 512,
+diff --git storage/ovsqlite/ovsqlite-server.c storage/ovsqlite/ovsqlite-server.c
+index dc78fbb33..623b17db0 100644
+--- storage/ovsqlite/ovsqlite-server.c
++++ storage/ovsqlite/ovsqlite-server.c
+@@ -44,7 +44,9 @@
+ #    include "sql-init.h"
+ #    include "sql-main.h"
+ 
+-#    define OVSQLITE_DB_FILE "ovsqlite.db"
++#    define OVSQLITE_DB_FILE          "ovsqlite.db"
++#    define OVSQLITE_BUSY_TIMEOUT_MS  999999999
++#    define CHECKPOINT_BUSY_TIMEOUT_MS 10000
+ 
+ #    ifdef HAVE_ZLIB
+ 
+@@ -122,10 +124,12 @@ static unsigned long pagesize;
+ static unsigned long cachesize;
+ static struct timeval transaction_time_limit = {10, 0};
+ static unsigned long transaction_row_limit = 10000;
++static unsigned long wal_checkpoint_threshold = 1000;
+ 
+ static bool in_transaction;
+ static unsigned int transaction_rowcount;
+ static struct timeval next_commit;
++static int wal_pages;
+ 
+ 
+ static void
+@@ -398,6 +402,8 @@ load_config(void)
+         }
+         config_param_unsigned_number(top, "transrowlimit",
+                                      &transaction_row_limit);
++        config_param_unsigned_number(top, "walcheckpointthreshold",
++                                     &wal_checkpoint_threshold);
+ 
+         config_free(top);
+     }
+@@ -539,6 +545,40 @@ make_dict(char const *groupname, int groupname_len, uint64_t artnum)
+ 
+ #    endif /* HAVE_ZLIB */
+ 
++static int
++wal_hook(void *data UNUSED, sqlite3 *db UNUSED, const char *dbname UNUSED,
++         int pages)
++{
++    wal_pages = pages;
++    return SQLITE_OK;
++}
++
++static void
++checkpoint_wal(void)
++{
++    int rc;
++
++    /* Force a TRUNCATE checkpoint: wait for readers to finish, then write
++     * all WAL content back to the database file and reset the WAL.  This
++     * is no worse than the non-WAL path where every commit takes an
++     * exclusive lock.  Use a short busy_timeout so the server doesn't
++     * stall indefinitely, the normal timeout is ~31 years for writer
++     * locks. */
++    sqlite3_busy_timeout(connection, CHECKPOINT_BUSY_TIMEOUT_MS);
++    rc = sqlite3_wal_checkpoint_v2(connection, NULL,
++                                   SQLITE_CHECKPOINT_TRUNCATE, NULL, NULL);
++    sqlite3_busy_timeout(connection, OVSQLITE_BUSY_TIMEOUT_MS);
++    if (rc == SQLITE_OK) {
++        wal_pages = 0;
++    } else if (rc == SQLITE_BUSY) {
++        notice("WAL checkpoint: readers did not finish within timeout"
++               " (%d pages)", wal_pages);
++    } else {
++        warn("WAL checkpoint failed: %s (%d pages)",
++             sqlite3_errstr(rc), wal_pages);
++    }
++}
++
+ static void
+ open_db(void)
+ {
+@@ -667,6 +707,7 @@ open_db(void)
+             warn("cannot enable WAL mode: %s", errmsg);
+             sqlite3_free(errmsg);
+         }
++        sqlite3_wal_hook(connection, wal_hook, NULL);
+     }
+ }
+ 
+@@ -679,8 +720,8 @@ close_db(void)
+ 
+         /* Use PASSIVE checkpoint first — it never blocks and is safe even
+          * when direct reader processes (nnrpd) still have the database open.
+-         * The prepared statement uses TRUNCATE which would hang waiting for
+-         * all readers to disconnect (busy_timeout is ~31 years). */
++         * Avoid TRUNCATE directly here as it would hang waiting for all
++         * readers to disconnect (busy_timeout is ~31 years). */
+         rc = sqlite3_wal_checkpoint_v2(connection, NULL,
+                                        SQLITE_CHECKPOINT_PASSIVE,
+                                        &wal_frames, &checkpointed);
+@@ -2129,6 +2170,9 @@ mainloop(void)
+             }
+             nap = &delta;
+         } else {
++            /* Idle: no active transaction.  Checkpoint WAL if needed. */
++            if (use_wal && wal_pages >= (int) wal_checkpoint_threshold)
++                checkpoint_wal();
+             nap = NULL;
+         }
+         read_fds_out = read_fds;
+@@ -2183,10 +2227,12 @@ main(int argc, char **argv)
+         }
+     }
+     if (debug) {
++        message_handlers_notice(1, message_log_stderr);
+         message_handlers_warn(1, message_log_stderr);
+         message_handlers_die(1, message_log_stderr);
+     } else {
+         openlog("ovsqlite-server", L_OPENLOG_FLAGS | LOG_PID, LOG_INN_PROG);
++        message_handlers_notice(1, message_log_syslog_notice);
+         message_handlers_warn(1, message_log_syslog_err);
+         message_handlers_die(1, message_log_syslog_err);
+     }
+diff --git storage/ovsqlite/sql-main.sql storage/ovsqlite/sql-main.sql
+index ab5495a49..ff73f1b0e 100644
+--- storage/ovsqlite/sql-main.sql
++++ storage/ovsqlite/sql-main.sql
+@@ -40,9 +40,6 @@ rollback to savepoint article_group;
+ -- .delete_journal
+ pragma journal_mode = 'DELETE';
+ 
+--- .checkpoint_wal
+-pragma wal_checkpoint(TRUNCATE);
+-
+ -- .add_group
+ insert into groupinfo (groupname, flag_alias, low, high)
+     values(?1, ?2, ?3, ?4);
+
+From 755ab163eb124658959a8e4168732e6a7f7dc300 Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Wed, 6 May 2026 23:38:41 -0700
+Subject: [PATCH 5/7] fix indentation in ovsqlite.c
+
+---
+ storage/ovsqlite/ovsqlite.c | 66 ++++++++++++++++++-------------------
+ 1 file changed, 33 insertions(+), 33 deletions(-)
+
+diff --git storage/ovsqlite/ovsqlite.c storage/ovsqlite/ovsqlite.c
+index 557d9710b..f8e465525 100644
+--- storage/ovsqlite/ovsqlite.c
++++ storage/ovsqlite/ovsqlite.c
+@@ -726,40 +726,40 @@ ovsqlite_groupstats(const char *group, int *low, int *high, int *count,
+         return false;
+     }
+     groupname_len = strlen(group);
+-        start_request(request_get_groupinfo);
+-        pack_now(request, &groupname_len, sizeof groupname_len);
+-        pack_now(request, group, groupname_len);
+-        finish_request();
+-        if (!write_request())
+-            return false;
++    start_request(request_get_groupinfo);
++    pack_now(request, &groupname_len, sizeof groupname_len);
++    pack_now(request, group, groupname_len);
++    finish_request();
++    if (!write_request())
++        return false;
+ 
+-        if (!read_response())
+-            return false;
+-        code = start_response();
+-        if (code != response_groupinfo)
+-            return false;
+-        if (!unpack_now(response, &r_low, sizeof r_low))
+-            return false;
+-        if (!unpack_now(response, &r_high, sizeof r_high))
+-            return false;
+-        if (!unpack_now(response, &r_count, sizeof r_count))
+-            return false;
+-        if (!unpack_now(response, &flag_alias_len, sizeof flag_alias_len))
+-            return false;
+-        flag_alias = unpack_later(response, flag_alias_len);
+-        if (!flag_alias)
+-            return false;
+-        if (!finish_response())
+-            return false;
+-        if (low)
+-            *low = r_low;
+-        if (high)
+-            *high = r_high;
+-        if (count)
+-            *count = r_count;
+-        if (flag)
+-            *flag = *flag_alias;
+-        return true;
++    if (!read_response())
++        return false;
++    code = start_response();
++    if (code != response_groupinfo)
++        return false;
++    if (!unpack_now(response, &r_low, sizeof r_low))
++        return false;
++    if (!unpack_now(response, &r_high, sizeof r_high))
++        return false;
++    if (!unpack_now(response, &r_count, sizeof r_count))
++        return false;
++    if (!unpack_now(response, &flag_alias_len, sizeof flag_alias_len))
++        return false;
++    flag_alias = unpack_later(response, flag_alias_len);
++    if (!flag_alias)
++        return false;
++    if (!finish_response())
++        return false;
++    if (low)
++        *low = r_low;
++    if (high)
++        *high = r_high;
++    if (count)
++        *count = r_count;
++    if (flag)
++        *flag = *flag_alias;
++    return true;
+ }
+ 
+ bool
+
+From d23b3f84aebe3fb49af0b42b7cfaa7a7ebae5a26 Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Wed, 6 May 2026 23:42:15 -0700
+Subject: [PATCH 6/7] Add walcheckpointthreshold to ovsqlite.conf
+
+---
+ samples/ovsqlite.conf | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git samples/ovsqlite.conf samples/ovsqlite.conf
+index 319b6d656..4ac719d1d 100644
+--- samples/ovsqlite.conf
++++ samples/ovsqlite.conf
+@@ -46,6 +46,17 @@
+ # The default value is 8000 KB (about 8 MB).
+ #readercachesize:       8000
+ 
++# The WAL page count at which ovsqlite-server forces a checkpoint.
++# When the WAL grows beyond this many pages, the server performs a
++# TRUNCATE checkpoint during its next idle period, waiting up to
++# 10 seconds for readers to finish their current queries before
++# flushing WAL content back to the database file.  This prevents
++# unbounded WAL growth.  If readers do not finish within the timeout,
++# the checkpoint is skipped and retried on the next idle cycle.
++# Only effective when walmode is enabled.
++# The default value is 1000 pages.
++#walcheckpointthreshold: 1000
++
+ # The maximum number of article rows that can be inserted or deleted
+ # in a single SQL transaction.
+ # The default value is 10000 articles.
+
+From 919cf653b54c72ef4bf1563f3fb6bbdf9a193a3a Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Thu, 7 May 2026 02:08:32 -0700
+Subject: [PATCH 7/7] ovsqlite: Set journal mode from open_db() based on
+ configuration
+
+Move pragma journal_mode out of the sql-main.sql preamble and into
+open_db() where it is set conditionally: WAL when walmode is true,
+PERSIST otherwise.  Previously the preamble unconditionally set
+PERSIST mode before open_db() re-set WAL, causing a pointless
+WAL->PERSIST->WAL transition on every startup (or silently failing
+if direct readers held the WAL open).
+---
+ storage/ovsqlite/ovsqlite-server.c | 8 ++++++++
+ storage/ovsqlite/sql-main.sql      | 2 --
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git storage/ovsqlite/ovsqlite-server.c storage/ovsqlite/ovsqlite-server.c
+index 623b17db0..c1e89dd82 100644
+--- storage/ovsqlite/ovsqlite-server.c
++++ storage/ovsqlite/ovsqlite-server.c
+@@ -708,6 +708,14 @@ open_db(void)
+             sqlite3_free(errmsg);
+         }
+         sqlite3_wal_hook(connection, wal_hook, NULL);
++    } else {
++        status = sqlite3_exec(connection,
++                              "pragma journal_mode = 'PERSIST';",
++                              0, NULL, &errmsg);
++        if (status != SQLITE_OK) {
++            warn("cannot set PERSIST journal mode: %s", errmsg);
++            sqlite3_free(errmsg);
++        }
+     }
+ }
+ 
+diff --git storage/ovsqlite/sql-main.sql storage/ovsqlite/sql-main.sql
+index ff73f1b0e..435c3ea01 100644
+--- storage/ovsqlite/sql-main.sql
++++ storage/ovsqlite/sql-main.sql
+@@ -1,7 +1,5 @@
+ pragma foreign_keys = 1;
+ 
+-pragma journal_mode = 'PERSIST';
+-
+ pragma busy_timeout = 999999999;
+ 
+ -- .random

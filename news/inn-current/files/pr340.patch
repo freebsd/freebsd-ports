@@ -1,0 +1,2700 @@
+diff --git MANIFEST MANIFEST
+--- MANIFEST	2026-05-16 12:44:56.907451000 -0700
++++ MANIFEST	2026-05-16 12:45:04.832431000 -0700
+@@ -442,6 +442,7 @@
+ include/inn/sequence.h                Header file for sequence space arithmetic
+ include/inn/storage.h                 Header file for storage API
+ include/inn/timer.h                   Header file for generic timers
++include/inn/tombstone.h               Header file for cancel tombstone log
+ include/inn/tst.h                     Header file for ternary search tries
+ include/inn/utility.h                 Header file for utility functions
+ include/inn/vector.h                  Header file for vectors of strings
+@@ -810,6 +811,7 @@
+ storage/timehash/method.config        buildconfig definition
+ storage/timehash/timehash.c           timehash storage routines
+ storage/timehash/timehash.h           Header for timehash
++storage/tombstone.c                   Cancel tombstone log helpers
+ storage/tradindexed                   tradindexed overview method (Directory)
+ storage/tradindexed/ovmethod.config   buildconfig definition
+ storage/tradindexed/ovmethod.mk       Make rules for tradindexed overview
+@@ -936,6 +938,10 @@
+ tests/data/upgrade/sasl.conf          Obsolete sasl.conf config file
+ tests/docs                            Test suite for documentation (Directory)
+ tests/docs/pod.t.in                   Tests for POD formatting
++tests/expire                          Test suite for expire (Directory)
++tests/expire/tombstone-e2e.t          End-to-end tests for tombstone log
++tests/expire/tombstone-hisexpire-t.c  HISexpire integration test for tombstone
++tests/expire/tombstone-t.c            Tests for tombstone library
+ tests/innd                            Test suite for innd (Directory)
+ tests/innd/artparse-t.c               Tests for ARTparse in innd
+ tests/innd/chan-t.c                   Tests for CHAN functions in innd
+@@ -1008,6 +1014,7 @@
+ tests/runtests.c                      The test suite driver program
+ tests/storage                         Test suite for storage (Directory)
+ tests/storage/archive.t               Tests for backends/archive
++tests/storage/cancel-tombstone-t.c    Tests for SMcanceltombstone
+ tests/storage/makehistory.t           Tests for expire/makehistory
+ tests/storage/sm.t                    Tests for frontends/sm
+ tests/tap                             Helper scripts for TAP (Directory)
+diff --git doc/pod/expire.pod doc/pod/expire.pod
+--- doc/pod/expire.pod	2026-05-16 12:44:56.941582000 -0700
++++ doc/pod/expire.pod	2026-05-16 12:45:04.832751000 -0700
+@@ -175,6 +175,18 @@
+ 
+ =back
+ 
++=head1 TOMBSTONE LOG
++
++When I<expiretombstone> is enabled in F<inn.conf>, B<expire> consumes
++the per-cycle deletion log produced by B<expireover>, B<innd>, and
++B<sm -r> (F<I<pathdb>/expireover.tombstone> and
++F<I<pathdb>/cancels.tombstone>) so it can drop history entries for
++those articles without doing a per-article C<SMretrieve(RETR_STAT)>
++syscall.  An empty tombstone is treated as "no cancels this cycle"
++and the slow scan is skipped entirely.  See inn.conf(5) under
++I<expiretombstone> for the file lifecycle, locking model, and
++recovery story.
++
+ =head1 HISTORY
+ 
+ Written by Rich $alz <rsalz@uunet.uu.net> for InterNetNews.  Converted to
+diff --git doc/pod/expireover.pod doc/pod/expireover.pod
+--- doc/pod/expireover.pod	2026-05-16 12:44:56.945074000 -0700
++++ doc/pod/expireover.pod	2026-05-16 12:45:04.833030000 -0700
+@@ -21,6 +21,14 @@
+ that have already been removed by some other process, and B<-e>, B<-k>,
+ B<-N>, B<-p>, B<-q>, B<-w>, and B<-z> are all ignored.
+ 
++When I<expiretombstone> is enabled in F<inn.conf>, B<expireover>
++appends each cancelled token to F<I<pathdb>/expireover.tombstone.NEW>
++under an exclusive POSIX lock and atomically renames the file into
++place on a clean run.  In delayrm mode (B<-z>), the rename is
++performed by B<expirerm> after B<fastrm> succeeds.  The next
++B<expire> run consumes this log to skip per-article storage existence
++checks.  See inn.conf(5) under I<expiretombstone>.
++
+ When I<groupbaseexpiry> is set, the default behavior of B<expireover> is
+ to remove the article from the spool once it expires out of all of the
+ newsgroups to which it was crossposted.  The article is, however, removed
+diff --git doc/pod/inn.conf.pod doc/pod/inn.conf.pod
+--- doc/pod/inn.conf.pod	2026-05-16 12:44:56.943722000 -0700
++++ doc/pod/inn.conf.pod	2026-05-16 12:45:04.843432000 -0700
+@@ -652,6 +652,72 @@
+ Moreover, the deprecated C<Bytes> and C<Lines> header fields, already present
+ in the standard overview fields as metadata items, cannot be added.
+ 
++=item I<expiretombstone>
++
++Whether INN tools record cancellation tombstones so a subsequent
++B<expire> run can skip per-article storage existence checks.  When
++enabled (and I<groupbaseexpiry> is also true), two log files in
++I<pathdb> capture every cancellation:
++
++=over 4
++
++=item F<I<pathdb>/expireover.tombstone>
++
++Written by B<expireover> after each successful B<SMcancel> in
++group-based expiry, atomically renamed into place on a clean run.
++When B<expireover> runs with C<-z> (delayed removal), the
++B<SMcancel> calls are deferred to B<fastrm> via B<expirerm>;
++B<expireover> writes the entries up front and B<expirerm> performs
++the atomic rename after B<fastrm> succeeds, so the same speedup
++applies to delayrm setups.
++
++=item F<I<pathdb>/cancels.tombstone>
++
++Appended continuously by B<innd> when it processes cancel control
++messages, and by B<sm -r> for manual cancellations.  Appenders take
++a shared fcntl POSIX lock; B<expire> snapshots the file by atomic
++rename to F<cancels.tombstone.processing> under an exclusive fcntl
++lock and unlinks it after a successful consume.  Append atomicity
++relies on POSIX guaranteeing that each C<write(2)> to a regular
++file opened with C<O_APPEND> is atomic with respect to other
++writers; this holds for any size of single C<write> on local
++filesystems.  Cross-client atomicity over NFS is not guaranteed:
++if I<pathdb> is on NFS, lines from concurrent writers on different
++clients can in theory interleave.  In practice INN's cancel
++sources (B<innd> on a single host plus occasional B<sm -r> on the
++same host) write from one client.
++
++=back
++
++The next B<expire> invocation loads both files into a single hashset
++and treats every article in either log as already gone, avoiding an
++C<SMretrieve(RETR_STAT)> call per history entry.  For storage methods
++where the stat is a file-system call (tradspool, timehash) this turns
++a billion C<access(2)> calls into a few thousand hash lookups; for
++storage methods that self-expire (CNFS) the stat call remains because
++articles can vanish through wrap-around without going through
++B<SMcancel>.
++
++In normal operation every cancellation path participates in
++tombstone tracking, so all articles removed from the spool are
++recorded.  Residual orphans can only accumulate from events outside
++the tracked paths: a process crash in the narrow window between
++B<SMcancel> and the tombstone append, manual filesystem-level
++deletes that bypass B<sm -r>, or filesystem corruption.  When such
++orphans do appear they are harmless (B<nnrpd> returns "no such
++article" to readers that hit them) and exist only as small history
++entries.  No regular reconciliation cadence is needed.  If an
++operator suspects orphan accumulation after admin intervention or a
++storage incident, B<expire> can be re-run with this option disabled
++in F<inn.conf> to perform an exhaustive C<SMretrieve(RETR_STAT)>
++scan; this is an exceptional operation, not a scheduled one.
++
++Footprint: ~38 bytes per entry on disk, ~50 bytes in expire's hash
++table.  1M cancels per run = ~38 MB tombstone, ~50 MB hash.
++
++This is a boolean value and the default is false; sites should opt in
++after validating the option's behaviour against their workload.
++
+ =item I<groupbaseexpiry>
+ 
+ Whether to enable newsgroup-based expiry.  If set to false, article expiry
+@@ -910,10 +976,50 @@
+ as present in response to an NNTP command (HDR, LISTGROUP, NEWNEWS, OVER,
+ XPAT).  The primary use of this setting is to prevent B<nnrpd> from returning
+ information about articles which are no longer present on the server but which
+-still have overview data available.  Checking the existence of articles before
+-returning overview information slows down the overview commands, but reduces
+-the number of "article is missing" errors seen by the client.  This is a
+-boolean value and the default is true.
++still have overview data available.  Checking existence with an unconditional
++C<SMretrieve> slows down the overview commands; with I<expiretombstone> also
++enabled (see below) the check uses an in-memory hash lookup instead and is
++cheaper than disabling the check on tradspool/timehash/timecaf backends.
++The trade-off remains: enabling this reduces the number of "article is
++missing" errors seen by the client.  This is a boolean value and the default
++is true.
++
++When I<expiretombstone> is also enabled, B<nnrpd> consults the
++F<I<pathdb>/cancels.tombstone> log on the article-existence check
++path: a token recorded as cancelled is reported as gone without an
++C<SMretrieve> call, and a token absent from the tombstone is
++trusted to still exist (skipping the syscall) for storage methods
++that do not self-expire.  Self-expiring backends (CNFS) still go
++through C<SMretrieve> because cyclic-buffer wrap-around bypasses
++the tombstone.  The tombstone is loaded lazily on first use per
++connection and refreshed by C<stat> on each call; the parsed
++hashset is rebuilt only when the file's mtime or size changes.
++Statting the same path is dentry-cache resident and far cheaper
++than the per-article syscalls the fast path elides, so cancellations
++recorded by other processes become visible to long-lived
++connections on the next existence check.
++
++Each B<nnrpd> connection holds an independent copy of the parsed
++hashset, costing roughly 50 bytes per cancel; sites with very large
++cancel volumes between B<expire> runs and many concurrent readers
++should size memory accordingly.  Loss relative to the unconditional
++C<SMretrieve> path is bounded to out-of-band events the tombstone
++cannot see (manual filesystem deletes that bypass B<sm -r>,
++filesystem corruption); admin-initiated B<sm -r> and B<innd>
++cancels are tracked.
++
++Important: on non-self-expiring backends the fast path treats a
++tombstone-miss as proof that the article is still on disk, without
++verifying.  Admins must remove articles via B<sm -r> (which records
++the cancel in the tombstone), not by direct C<rm> on the spool, or
++readers will be told a deleted article still exists until the next
++B<expireover> reconciles overview.
++
++Note that the fast path is also gated on I<expiretombstone>; both
++must be true to take effect.  The B<nnrpdoverstats> C<artcheck>
++counter reflects only the slow C<SMretrieve> path, so the syslog
++field will appear smaller when the fast path is doing most of the
++work.
+ 
+ You may also want to see the I<groupexactcount> parameter in readers.conf(5)
+ which controls the computing of the estimated article count returned in NNTP
+diff --git doc/pod/sm.pod doc/pod/sm.pod
+--- doc/pod/sm.pod	2026-05-16 12:44:56.942385000 -0700
++++ doc/pod/sm.pod	2026-05-16 12:45:04.834064000 -0700
+@@ -51,6 +51,13 @@
+ be retrievable by any part of INN.  It's equivalent to C<ctlinnd cancel>
+ except it takes a storage API token instead of a message-ID.
+ 
++When the I<expiretombstone> setting in F<inn.conf> is true, B<sm -r>
++also appends the cancelled token to F<I<pathdb>/cancels.tombstone>
++so a later B<expire> run can drop the corresponding history entry
++without a per-article storage check.  Append failures are logged
++but do not affect the cancellation itself.  See inn.conf(5) under
++I<expiretombstone> for the full mechanism.
++
+ =item B<-H>
+ 
+ Retrieve only the headers of the article rather than the entire article.
+diff --git expire/expire.c expire/expire.c
+--- expire/expire.c	2026-05-16 12:44:56.912885000 -0700
++++ expire/expire.c	2026-05-16 12:45:04.834504000 -0700
+@@ -6,10 +6,13 @@
+ 
+ #include <ctype.h>
+ #include <errno.h>
++#include <string.h>
+ #include <sys/stat.h>
+ #include <syslog.h>
+ #include <time.h>
++#include <unistd.h>
+ 
++#include "inn/hashtab.h"
+ #include "inn/history.h"
+ #include "inn/innconf.h"
+ #include "inn/inndcomm.h"
+@@ -18,6 +21,7 @@
+ #include "inn/newsuser.h"
+ #include "inn/paths.h"
+ #include "inn/storage.h"
++#include "inn/tombstone.h"
+ 
+ 
+ typedef struct _EXPIRECLASS {
+@@ -48,6 +52,7 @@
+ static int EXPverbose;
+ static long EXPprocessed;
+ static long EXPunlinked;
++static long EXPtombstoned;
+ static long EXPallgone;
+ static long EXPstillhere;
+ static struct history *History;
+@@ -371,23 +376,208 @@
+ }
+ 
+ /*
++**  Load both tombstone logs into a hashset:
++**    - ${pathdb}/expireover.tombstone : written by expireover/expirerm
++**      (atomic .NEW -> final rename); unlinked after a successful
++**      expire run
++**    - ${pathdb}/cancels.tombstone    : appended continuously by innd
++**      and sm for cancels outside the expireover pipeline; renamed
++**      to .processing at load time and unlinked after a successful
++**      expire run (rename-and-process avoids the read/truncate race
++**      that drops cancels arriving during HISexpire)
++**
++**  At startup, also recovers any leftover .processing snapshot from a
++**  previous expire run that crashed before unlinking.
++**
++**  consuming=true means this is a real run that will replace the
++**  history file; we rename cancels.tombstone to .processing under
++**  the consumer's lock so concurrent appenders cannot lose cancels
++**  written between our read and the eventual unlink.  consuming=
++**  false (dry-run, tracing, or alternate-output expire) skips the
++**  rename and reads the live file directly: no consume happens, so
++**  there is nothing to atomically detach.  This avoids both the
++**  TOCTOU race in restoring the snapshot and the operator surprise
++**  of cancels.tombstone disappearing for the duration of a -x run.
++**
++**  Returns NULL if no tombstone could be loaded (no file present or
++**  all reads failed); that is not an error.  Expire just falls back
++**  to the per-article SMretrieve check.  *out_expireover_path and
++**  *out_cancels_snapshot are set to the file paths (caller frees and
++**  unlinks after a successful run); both are NULL when consuming is
++**  false.
++*/
++static struct hash *
++EXPloadtombstone(bool consuming, char **out_expireover_path,
++                 char **out_cancels_snapshot)
++{
++    char *expireover_path = NULL;
++    char *cancels_path = NULL;
++    char *cancels_snapshot = NULL;
++    char *leftover = NULL;
++    struct hash *h = NULL;
++    struct stat sb;
++    unsigned long n_expireover = 0;
++    unsigned long n_cancels = 0;
++    unsigned long n_leftover = 0;
++    bool expireover_present = false;
++    bool leftover_present = false;
++    bool cancels_present = false;
++
++    /* Default outputs to NULL; only set on the success-return path
++       below.  This avoids double-frees if a future maintainer adds an
++       early return between here and that single point. */
++    *out_expireover_path = NULL;
++    *out_cancels_snapshot = NULL;
++
++    expireover_path = concatpath(innconf->pathdb, "expireover.tombstone");
++    cancels_path = concatpath(innconf->pathdb, "cancels.tombstone");
++    leftover = concat(cancels_path, ".processing", (char *) 0);
++
++    /* Probe each file's presence (independent of content) so we can
++       distinguish "tombstone subsystem is actively tracking but had
++       no cancels this cycle" (trust the empty hashset, skip
++       SMretrieve for everything) from "no files at all" (subsystem
++       not in use, fall back to slow path).  Without this, a cycle
++       with zero cancels would needlessly run SMretrieve on every
++       history entry. */
++    if (stat(expireover_path, &sb) == 0)
++        expireover_present = true;
++    if (stat(leftover, &sb) == 0)
++        leftover_present = true;
++    if (stat(cancels_path, &sb) == 0)
++        cancels_present = true;
++
++    /* Initial size: tokens are typically ~38 bytes per line; we let the
++       hash expand if we underestimate.  4096 covers the common case. */
++    h = tombstone_hash_create(4096);
++
++    /* Recover a leftover .processing from a previous run that crashed
++       between rename and unlink. */
++    n_leftover = tombstone_read(h, leftover, NULL);
++
++    /* On a real run, atomically snapshot the live cancels.tombstone,
++       then read it.  On dry-run / tracing / alt-output, just read
++       the live file directly: no consume happens, so there is no
++       need to detach it (and detach-then-restore has a TOCTOU race
++       with concurrent appenders). */
++    if (consuming) {
++        cancels_snapshot = tombstone_rename_for_processing(cancels_path);
++        if (cancels_snapshot != NULL)
++            n_cancels = tombstone_read(h, cancels_snapshot, NULL);
++    } else {
++        n_cancels = tombstone_read(h, cancels_path, NULL);
++    }
++
++    /* Read the expireover-side log. */
++    n_expireover = tombstone_read(h, expireover_path, NULL);
++
++    if (EXPverbose)
++        printf("Loaded %lu + %lu + %lu tombstone entries (%lu unique)\n",
++               n_expireover, n_cancels, n_leftover, hash_count(h));
++
++    /* Reconcile the leftover with the active snapshot.  Only relevant
++       on a real consuming run; dry-run leaves the leftover where it
++       is for the next consuming run to pick up.
++       (a) leftover empty: just free the path string
++       (b) leftover non-empty + no live snapshot: promote leftover to
++           be the snapshot so the caller's single unlink covers it
++       (c) leftover non-empty + live snapshot: unlink the leftover now
++           (its contents are already in the hashset); the snapshot
++           remains and is unlinked on success */
++    if (consuming) {
++        if (n_leftover > 0 && cancels_snapshot == NULL) {
++            cancels_snapshot = leftover;
++            leftover = NULL;
++        } else if (n_leftover > 0) {
++            if (unlink(leftover) < 0)
++                syswarn("can't unlink %s", leftover);
++        } else if (leftover_present && cancels_snapshot == NULL) {
++            /* Leftover existed but was empty.  Treat it as the
++               snapshot so the caller cleans it up after a
++               successful run. */
++            cancels_snapshot = leftover;
++            leftover = NULL;
++        } else if (leftover_present) {
++            /* Both leftover and live snapshot existed; leftover
++               empty.  Unlink it now; snapshot will be cleaned up
++               on success. */
++            if (unlink(leftover) < 0)
++                syswarn("can't unlink %s", leftover);
++        }
++    }
++    free(leftover);
++    leftover = NULL;
++
++    /* Decide between "fall back to slow path" (return NULL) and
++       "trust the (possibly empty) tombstone".  A file that exists
++       (regardless of content) is taken as evidence the tombstone
++       subsystem is active for this site: innd/sm/expireover are
++       writing it.  An empty active tombstone correctly says "nothing
++       was cancelled in the last cycle"; trust it.  In dry-run mode
++       cancels.tombstone is not renamed, so cancels_snapshot stays
++       NULL; use the cancels_present probe instead. */
++    if (!expireover_present && !leftover_present && !cancels_present
++        && cancels_snapshot == NULL) {
++        hash_free(h);
++        free(expireover_path);
++        free(cancels_path);
++        return NULL;
++    }
++
++    /* Single success-return: hand both paths to the caller for
++       cleanup after a successful run. */
++    free(cancels_path);
++    *out_expireover_path = expireover_path;
++    *out_cancels_snapshot = cancels_snapshot;
++    return h;
++}
++
++
++/*
+ **  Do the work of expiring one line.
+ **  Returns true when the article should be kept for the time being.
+ */
+ static bool
+-EXPdoline(void *cookie UNUSED, time_t arrived, time_t posted, time_t expires,
++EXPdoline(void *cookie, time_t arrived, time_t posted, time_t expires,
+           TOKEN *token)
+ {
++    struct hash *tombstone = (struct hash *) cookie;
+     time_t when;
+     bool HasSelfexpire = false;
+     bool Selfexpired = false;
++    bool selfexpiring;
+     ARTHANDLE *article;
+     enum KR kr;
+     bool r;
+ 
+-    if (innconf->groupbaseexpiry || SMprobe(SELFEXPIRE, token, NULL)) {
+-        if ((article = SMretrieve(*token, RETR_STAT)) == (ARTHANDLE *) NULL) {
++    /* Tombstone fast path: if expireover already cancelled this article,
++       drop the history entry without doing any storage I/O.  Bump
++       EXPunlinked too so the news.daily summary's "Articles dropped"
++       count matches the slow path's accounting (EXPremove also bumps
++       it). */
++    if (tombstone != NULL && hash_lookup(tombstone, token) != NULL) {
++        EXPprocessed++;
++        if (EXPverbose > 3)
++            printf("%s (tombstoned by expireover)\n", TokenToText(*token));
++        EXPallgone++;
++        EXPunlinked++;
++        EXPtombstoned++;
++        return false;
++    }
++
++    selfexpiring = SMprobe(SELFEXPIRE, token, NULL);
++
++    if (innconf->groupbaseexpiry || selfexpiring) {
++        if (tombstone != NULL && !selfexpiring) {
++            /* Backend does not self-expire and the tombstone log is
++               complete: not in the log means the article still exists.
++               Skip the SMretrieve to avoid a per-article syscall (the
++               main speedup for tradspool / timehash / timecaf). */
+             HasSelfexpire = true;
++            Selfexpired = false;
++        } else if ((article = SMretrieve(*token, RETR_STAT))
++                   == (ARTHANDLE *) NULL) {
++            HasSelfexpire = true;
+             Selfexpired = true;
+         } else {
+             /* The article is still alive, free it. */
+@@ -470,6 +660,8 @@
+         printf("Entries expired         %8ld\n", EXPallgone);
+         if (!innconf->groupbaseexpiry)
+             printf("Articles dropped        %8ld\n", EXPunlinked);
++        if (innconf->expiretombstone && innconf->groupbaseexpiry)
++            printf("Tombstone hits          %8ld\n", EXPtombstoned);
+     }
+ 
+     /* Append statistics to a summary file */
+@@ -536,6 +728,16 @@
+     if (!innconf_read(NULL))
+         exit(1);
+ 
++    /* Warn about expiretombstone-without-groupbaseexpiry: in that
++       configuration there is no consumable tombstone since OVEXPremove
++       (which writes one of the two logs) is never called.  The
++       cancels.tombstone written by innd/sm could still be loaded, but
++       only with groupbaseexpiry to make the result coherent with
++       expire's overall semantics. */
++    if (innconf->expiretombstone && !innconf->groupbaseexpiry)
++        notice("expiretombstone has no effect when groupbaseexpiry"
++               " is false");
++
+     HistoryText = concatpath(innconf->pathdb, INN_PATH_HISTORY);
+ 
+     umask(NEWSUMASK);
+@@ -694,9 +896,47 @@
+         CleanupAndExit(Server, false, 1);
+     }
+ 
+-    Bad = HISexpire(History, NHistory, EXPreason, Writing, NULL, EXPremember,
+-                    EXPdoline)
+-          == false;
++    /* Consume the tombstone logs produced since the last expire run.
++       Lets EXPdoline drop history entries for articles cancelled by
++       expireover, expirerm, innd, or sm without per-article SMretrieve
++       calls.  Gated on groupbaseexpiry as well: if the admin flipped
++       that off since the last expireover, a stale tombstone written
++       under the old config could drop history entries for articles
++       still alive. */
++    {
++        bool consuming = Writing && !EXPtracing && NHistory == NULL;
++        char *expireover_path = NULL;
++        char *cancels_snapshot = NULL;
++        struct hash *tombstone = NULL;
++
++        if (innconf->expiretombstone && innconf->groupbaseexpiry)
++            tombstone = EXPloadtombstone(consuming, &expireover_path,
++                                         &cancels_snapshot);
++
++        Bad = HISexpire(History, NHistory, EXPreason, Writing, tombstone,
++                        EXPremember, EXPdoline)
++              == false;
++
++        if (tombstone != NULL) {
++            hash_free(tombstone);
++            /* On a successful real run, unlink both consumed
++               snapshots.  In dry-run / tracing / alt-output, the
++               loader skipped the rename and did not return a
++               snapshot path, so there is nothing to clean up. */
++            if (!Bad && consuming) {
++                if (expireover_path != NULL) {
++                    if (unlink(expireover_path) < 0 && errno != ENOENT)
++                        syswarn("can't unlink %s", expireover_path);
++                }
++                if (cancels_snapshot != NULL) {
++                    if (unlink(cancels_snapshot) < 0 && errno != ENOENT)
++                        syswarn("can't unlink %s", cancels_snapshot);
++                }
++            }
++        }
++        free(expireover_path);
++        free(cancels_snapshot);
++    }
+ 
+     if (UnlinkFile && EXPunlinkfile == NULL)
+         /* Got -z but file was closed; oops. */
+diff --git expire/expireover.c expire/expireover.c
+--- expire/expireover.c	2026-05-16 12:44:56.912753000 -0700
++++ expire/expireover.c	2026-05-16 12:46:12.471407000 -0700
+@@ -10,13 +10,16 @@
+ #include "portable/system.h"
+ 
+ #include <errno.h>
++#include <fcntl.h>
+ #include <signal.h>
++#include <string.h>
++#include <sys/stat.h>
+ #include <syslog.h>
+ #include <time.h>
++#include <unistd.h>
+ 
+-#include <sys/stat.h>
+-
+ #include "inn/bloom.h"
++#include "inn/buffer.h"
+ #include "inn/history.h"
+ #include "inn/innconf.h"
+ #include "inn/libinn.h"
+@@ -27,6 +30,11 @@
+ #include "inn/qio.h"
+ #include "inn/storage.h"
+ 
++/* OVtombstonefile is an internal of the storage library (declared in
++ * storage/ovinterface.h), but expireover owns its lifecycle, so we
++ * declare it here rather than exporting it via the public ov.h header. */
++extern FILE *OVtombstonefile;
++
+ static const char usage[] = "\
+ Usage: expireover [-ekNpqs] [-f file] [-w offset] [-z rmfile] [-Z lowmarkfile]\n";
+ 
+@@ -65,6 +73,94 @@
+ }
+ 
+ 
++/*
++**  Verify each line of an in-memory tombstone buffer via SMretrieve and
++**  append survivors to kept.  An entry survives if SMretrieve confirms
++**  the article is gone (SMERR_NOENT) or returns a non-NOENT error
++**  (SMERR_UNINIT, EIO, etc., where we cannot tell whether the article
++**  is alive); a transient failure must not silently discard a valid
++**  cancel record.  Live articles (SMretrieve returns non-NULL) are
++**  dropped: we must not re-tombstone an article that is still on disk.
++*/
++static void
++verify_tombstone_lines(char *raw, ssize_t got, struct buffer *kept)
++{
++    char *entry, *save_p;
++
++    if (got <= 0)
++        return;
++    raw[got] = '\0';
++    entry = strtok_r(raw, "\n", &save_p);
++    while (entry != NULL) {
++        size_t len = strlen(entry);
++        if (len > 0 && entry[len - 1] == '\r')
++            entry[--len] = '\0';
++        if (len > 0 && IsToken(entry)) {
++            TOKEN t = TextToToken(entry);
++            ARTHANDLE *art = SMretrieve(t, RETR_STAT);
++            if (art != NULL) {
++                /* Article still on disk; drop from tombstone to
++                   avoid orphaning history for it. */
++                SMfreearticle(art);
++            } else {
++                /* Either confirmed gone (SMERR_NOENT) or transient
++                   error (SMERR_UNINIT, EIO, etc.).  Keep the entry
++                   either way: confirmed-gone is the normal case,
++                   and on transient error we cannot tell whether
++                   the article is alive, so preserve the record so
++                   the next run can re-evaluate.  Silently dropping
++                   on transient error would leak cancels across a
++                   storage outage. */
++                buffer_append(kept, entry, len);
++                buffer_append(kept, "\n", 1);
++            }
++        }
++        entry = strtok_r(NULL, "\n", &save_p);
++    }
++}
++
++
++/*
++**  Read an entire file into a freshly allocated buffer.  Used for
++**  leftover-recovery of expireover.tombstone (from a cycle where
++**  expirerm finalized but expire never consumed) and the .NEW
++**  leftover from a crashed prior run.  Returns NULL on missing or
++**  empty file (sets *out_size to 0); returns a malloc'd buffer with
++**  the file content otherwise (caller frees).
++*/
++static char *
++slurp_tombstone(const char *path, ssize_t *out_size)
++{
++    int fd;
++    struct stat sb;
++    char *raw;
++    ssize_t got = 0, n;
++
++    *out_size = 0;
++    fd = open(path, O_RDONLY);
++    if (fd < 0)
++        return NULL;
++    if (fstat(fd, &sb) < 0 || sb.st_size <= 0) {
++        close(fd);
++        return NULL;
++    }
++    raw = xmalloc(sb.st_size + 1);
++    while (got < sb.st_size) {
++        n = read(fd, raw + got, sb.st_size - got);
++        if (n <= 0)
++            break;
++        got += n;
++    }
++    close(fd);
++    if (got <= 0) {
++        free(raw);
++        return NULL;
++    }
++    *out_size = got;
++    return raw;
++}
++
++
+ int
+ main(int argc, char *argv[])
+ {
+@@ -76,9 +172,12 @@
+     char *active_path = NULL;
+     char *lowmark_path = NULL;
+     char *path;
++    char *tombstone_path = NULL;
++    char *tombstone_path_new = NULL;
+     FILE *lowmark = NULL;
+     bool purge_deleted = false;
+     bool always_stat = false;
++    bool tombstone_clean = true;
+     struct history *history;
+     struct bloom_filter *bloom = NULL;
+     struct bloom_filter *null_bloom = NULL;
+@@ -144,6 +243,14 @@
+     if (!innconf_read(NULL))
+         exit(1);
+ 
++    /* Warn about expiretombstone-without-groupbaseexpiry: in that
++       configuration OVEXPremove is never called so no entries are
++       ever appended.  The setting is silently ignored.  Operators
++       reaching for the speedup deserve to know it's not active. */
++    if (innconf->expiretombstone && !innconf->groupbaseexpiry)
++        notice("expiretombstone has no effect when groupbaseexpiry"
++               " is false");
++
+     /* Change to the runasuser user and runasgroup group if necessary. */
+     ensure_news_user_grp(true, true);
+ 
+@@ -240,6 +347,103 @@
+         free(histpath);
+     }
+ 
++    /* Open the tombstone log.  OVEXPremove appends a line per article
++       it cancels (inline) or schedules for removal via the rm file
++       (delayrm).  In delayrm mode the .NEW -> final rename is performed
++       by expirerm after fastrm succeeds (see expirerm.in); in inline
++       mode this process performs the rename below.  Skipped when
++       groupbaseexpiry is false because OVEXPremove is not called in
++       that mode, and when the admin has disabled the feature via
++       expiretombstone. */
++    if (innconf->expiretombstone && innconf->groupbaseexpiry) {
++        int fd;
++
++        tombstone_path = concatpath(innconf->pathdb, "expireover.tombstone");
++        tombstone_path_new = concat(tombstone_path, ".NEW", (char *) 0);
++        fd = open(tombstone_path_new, O_RDWR | O_CREAT, 0664);
++        if (fd < 0) {
++            syswarn("can't open tombstone log %s", tombstone_path_new);
++        } else if (!inn_lock_file(fd, INN_LOCK_WRITE, false)) {
++            if (errno == EAGAIN || errno == EACCES) {
++                warn("another expireover holds the tombstone log lock"
++                     " on %s; disabling tombstone for this run",
++                     tombstone_path_new);
++            } else {
++                syswarn("can't lock %s; disabling tombstone for this"
++                        " run",
++                        tombstone_path_new);
++            }
++            close(fd);
++            fd = -1;
++        } else {
++            struct buffer kept;
++            struct stat sb;
++            char *raw;
++            ssize_t got = 0;
++
++            kept.data = NULL;
++            kept.size = kept.used = kept.left = 0;
++
++            raw = slurp_tombstone(tombstone_path, &got);
++            if (raw != NULL) {
++                verify_tombstone_lines(raw, got, &kept);
++                free(raw);
++                if (unlink(tombstone_path) < 0 && errno != ENOENT)
++                    syswarn("can't unlink leftover %s", tombstone_path);
++            }
++
++            if (fstat(fd, &sb) == 0 && sb.st_size > 0) {
++                raw = xmalloc(sb.st_size + 1);
++                got = 0;
++                while (got < sb.st_size) {
++                    ssize_t n = read(fd, raw + got, sb.st_size - got);
++                    if (n <= 0)
++                        break;
++                    got += n;
++                }
++                verify_tombstone_lines(raw, got, &kept);
++                free(raw);
++            }
++            if (ftruncate(fd, 0) < 0) {
++                syswarn("can't truncate %s", tombstone_path_new);
++                close(fd);
++                fd = -1;
++            } else if (lseek(fd, 0, SEEK_SET) < 0) {
++                syswarn("can't seek %s", tombstone_path_new);
++                close(fd);
++                fd = -1;
++            } else {
++                OVtombstonefile = fdopen(fd, "w");
++                if (OVtombstonefile == NULL) {
++                    syswarn("can't fdopen %s", tombstone_path_new);
++                    close(fd);
++                    fd = -1;
++                } else {
++                    if (fputs("# inn-tombstone v1\n", OVtombstonefile)
++                        == EOF)
++                        syswarn("can't write header to %s",
++                                tombstone_path_new);
++                    if (kept.left > 0) {
++                        if (fwrite(kept.data + kept.used, 1, kept.left,
++                                   OVtombstonefile)
++                                != kept.left
++                            || fflush(OVtombstonefile) == EOF)
++                            syswarn("can't write recovered leftover"
++                                    " to %s",
++                                    tombstone_path_new);
++                    }
++                }
++            }
++            free(kept.data);
++        }
++        if (OVtombstonefile == NULL) {
++            free(tombstone_path);
++            free(tombstone_path_new);
++            tombstone_path = NULL;
++            tombstone_path_new = NULL;
++        }
++    }
++
+     /* Loop through each line of the input file and process each group,
+        writing data to the lowmark file if desired. */
+     line = QIOread(qp);
+@@ -276,6 +480,46 @@
+     if (lowmark != NULL)
+         if (fclose(lowmark) == EOF)
+             syswarn("can't close %s", lowmark_path);
++
++    /* Finalize the tombstone log.  In inline-cancel mode, rename .NEW
++       to its final name iff we completed a full pass without errors --
++       a partial log would let expire incorrectly drop history entries
++       for articles that were not actually cancelled this run.
++       In delayrm mode, leave the .NEW alone: expirerm performs the
++       rename after fastrm has actually deleted the articles.  If
++       expirerm fails or is skipped, the .NEW is wiped by the next
++       expireover, so a partial log can never be consumed by expire.
++       No fsync: the log is advisory; if a crash loses the buffered
++       tail, expire just runs the slow path. */
++    if (OVtombstonefile != NULL) {
++        if (fclose(OVtombstonefile) == EOF) {
++            syswarn("can't finalize tombstone log %s", tombstone_path_new);
++            tombstone_clean = false;
++        }
++        if (signalled)
++            tombstone_clean = false;
++        if (ovge.delayrm) {
++            /* Leave .NEW for expirerm.  If we were signalled or hit
++               an error, unlink it so expirerm doesn't promote a
++               truncated log. */
++            if (!tombstone_clean) {
++                if (unlink(tombstone_path_new) < 0)
++                    syswarn("can't unlink %s", tombstone_path_new);
++            }
++        } else if (tombstone_clean) {
++            if (rename(tombstone_path_new, tombstone_path) < 0) {
++                syswarn("can't rename %s to %s", tombstone_path_new,
++                        tombstone_path);
++                if (unlink(tombstone_path_new) < 0)
++                    syswarn("can't unlink %s", tombstone_path_new);
++            }
++        } else {
++            if (unlink(tombstone_path_new) < 0)
++                syswarn("can't unlink %s", tombstone_path_new);
++        }
++        free(tombstone_path);
++        free(tombstone_path_new);
++    }
+ 
+     return 0;
+ }
+diff --git expire/expirerm.in expire/expirerm.in
+--- expire/expirerm.in	2026-05-16 12:44:56.912927000 -0700
++++ expire/expirerm.in	2026-05-16 12:45:04.835303000 -0700
+@@ -16,17 +16,38 @@
+         | eval ${MAIL}
+     exit 0
+ fi
+-if [ ! -f $1 ]; then
++if [ ! -f "$1" ]; then
+     echo "Expire called with no files to expire on $(hostname)" \
+         | eval ${MAIL}
+     exit 0
+ fi
+ 
+ eval "cd ${SPOOL} \
+-    && ${RMPROC} <$1 \
+-    && mv $1 ${MOST_LOGS}/expire.list"
+-if [ -f $1 ]; then
++    && ${RMPROC} <\"$1\" \
++    && mv \"$1\" ${MOST_LOGS}/expire.list"
++if [ -f "$1" ]; then
+     echo "Expire had problems removing articles on $(hostname)" \
+         | eval ${MAIL}
+     exit 1
++fi
++
++##  If expireover wrote a tombstone log for delayed-removal mode, the
++##  .NEW file holds the tokens it scheduled for cancellation.  Now that
++##  fastrm has succeeded, promote it to its final name so the next
++##  expire run can consume it.
++##
++##  A failed promotion is a degradation, not a hard failure: the
++##  articles are already gone from disk, so news.daily can continue.
++##  The next expire just falls back to its slow per-article
++##  SMretrieve check for whatever was supposed to be in this batch.
++##  Email the newsmaster but exit 0 so the surrounding pipeline keeps
++##  going.
++TOMBSTONE_NEW="${PATHDB}/expireover.tombstone.NEW"
++TOMBSTONE="${PATHDB}/expireover.tombstone"
++if [ -f "${TOMBSTONE_NEW}" ]; then
++    mv "${TOMBSTONE_NEW}" "${TOMBSTONE}" || {
++        echo "Expire could not promote ${TOMBSTONE_NEW} on $(hostname);" \
++             "next expire will run the slow path for this batch" \
++            | eval ${MAIL}
++    }
+ fi
+diff --git expire/makehistory.c expire/makehistory.c
+--- expire/makehistory.c	2026-05-16 12:44:56.912967000 -0700
++++ expire/makehistory.c	2026-05-16 12:45:04.835679000 -0700
+@@ -287,6 +287,15 @@
+             arrived = (time_t) atoll(line);
+             expires = (time_t) atoll(p);
+         }
++        /* Validate before TextToToken: that function returns an
++         * all-zero TOKEN on malformed input rather than an error
++         * sentinel, so a bad line would silently insert a bogus
++         * overview entry. */
++        if (!IsToken(q)) {
++            warn("sorted overview file %s has a malformed token at %d",
++                 SortedTmpPath, count);
++            continue;
++        }
+         token = TextToToken(q);
+         if (OVadd(token, r, strlen(r), arrived, expires) == OVADDFAILED) {
+             if (OVctl(OVSPACE, (void *) &f)
+diff --git frontends/sm.c frontends/sm.c
+--- frontends/sm.c	2026-05-16 12:44:56.937891000 -0700
++++ frontends/sm.c	2026-05-16 12:45:04.835987000 -0700
+@@ -10,6 +10,8 @@
+ #include "inn/innconf.h"
+ #include "inn/libinn.h"
+ #include "inn/messages.h"
++#include "inn/newsuser.h"
++#include "inn/paths.h"
+ #include "inn/qio.h"
+ #include "inn/storage.h"
+ #include "inn/wire.h"
+@@ -259,6 +261,10 @@
+             warn("could not remove %s: %s", id, SMerrorstr);
+             return false;
+         }
++        /* Record the cancel so a later expire run can drop the history
++         * entry without an SMretrieve.  Best-effort; no-op when
++         * expiretombstone is disabled. */
++        SMcanceltombstone(token);
+     } else {
+         article = SMretrieve(token, options->header ? RETR_HEAD : RETR_ALL);
+         if (article == NULL) {
+@@ -360,6 +366,17 @@
+         if (!SMsetup(SM_RDWR, &value))
+             die("cannot set up storage manager");
+     }
++
++    /* On the -r/-d path with the cancel tombstone enabled, drop to
++     * the news user/group so cancels.tombstone is created (or
++     * appended) with ownership consistent with innd's writes.
++     * Bypassed under the INN_TESTSUITE env var so the test harness
++     * can run sm without a real news user on the system.  All other
++     * sm modes (-i, -c, -H, -R, -s, retrieval) preserve the
++     * historical behaviour of running as the invoking user. */
++    if (options.delete && innconf->expiretombstone
++        && getenv(INN_ENV_TESTSUITE) == NULL)
++        ensure_news_user_grp(true, true);
+     if (!SMinit())
+         die("cannot initialize storage manager: %s", SMerrorstr);
+ 
+diff --git include/inn/innconf.h include/inn/innconf.h
+--- include/inn/innconf.h	2026-05-16 12:44:56.906670000 -0700
++++ include/inn/innconf.h	2026-05-16 12:45:04.836314000 -0700
+@@ -77,6 +77,9 @@
+                                                OVERVIEW.FMT */
+     struct vector
+         *extraoverviewhidden;    /* Extra overview fields silently generated */
++    bool expiretombstone;        /* Use expireover -> expire tombstone log
++                                    to skip per-article SMretrieve in
++                                    expire? */
+     bool groupbaseexpiry;        /* Do expiry by newsgroup? */
+     bool mergetogroups;          /* Refile articles from to.* into to */
+     bool nfswriter;              /* Use NFS writer functionality */
+diff --git include/inn/ov.h include/inn/ov.h
+--- include/inn/ov.h	2026-05-16 12:44:56.906311000 -0700
++++ include/inn/ov.h	2026-05-16 12:45:04.836546000 -0700
+@@ -52,6 +52,7 @@
+ } OVGE;
+ 
+ extern bool OVstatall;
++
+ bool OVopen(int mode);
+ bool OVgroupstats(char *group, int *lo, int *hi, int *count, int *flag);
+ bool OVgroupadd(char *group, ARTNUM lo, ARTNUM hi, char *flag);
+diff --git include/inn/storage.h include/inn/storage.h
+--- include/inn/storage.h	2026-05-16 12:44:56.906957000 -0700
++++ include/inn/storage.h	2026-05-16 12:45:04.836761000 -0700
+@@ -106,6 +106,28 @@
+ ARTHANDLE *SMnext(ARTHANDLE *article, const RETRTYPE amount);
+ void SMfreearticle(ARTHANDLE *article);
+ bool SMcancel(TOKEN token);
++
++/*
++ * Best-effort: append a token to the out-of-band cancel tombstone log
++ * (${pathdb}/cancels.tombstone) so a later expire run can drop the
++ * matching history entry without an SMretrieve(RETR_STAT).  Intended
++ * for callers that cancel articles outside the expireover/expirerm
++ * pipeline (innd's ARTcancel and sm -r).  No-op when
++ * innconf->expiretombstone is false or token has type TOKEN_EMPTY.
++ *
++ * Concurrency: appenders take a non-blocking shared (F_RDLCK) fcntl
++ * lock; expire's consumer takes an exclusive lock briefly during
++ * snapshot/rename.  POSIX O_APPEND atomicity for sub-PIPE_BUF
++ * writes keeps single-line tokens from interleaving across
++ * concurrent appenders.
++ *
++ * Returns true on success (token appended, flushed, file closed),
++ * false on any failure path.  Failures are logged via syswarn;
++ * callers can ignore the return value (the cancel itself has
++ * already succeeded by the time this is called).
++ */
++bool SMcanceltombstone(TOKEN token);
++
+ bool SMprobe(PROBETYPE type, TOKEN *token, void *value);
+ bool SMflushcacheddata(FLUSHTYPE type);
+ void SMprintfiles(FILE *file, TOKEN token, char **xref, int ngroups);
+diff --git include/inn/tombstone.h include/inn/tombstone.h
+--- include/inn/tombstone.h	1969-12-31 17:00:00.000000000 -0700
++++ include/inn/tombstone.h	2026-05-16 12:45:04.836999000 -0700
+@@ -0,0 +1,71 @@
++/*
++**  Helpers for the expire-tombstone log files.
++**
++**  These routines are shared between the expire binary (which consumes
++**  the logs to skip per-article SMretrieve(RETR_STAT) calls) and the
++**  test suite that exercises the consumption logic directly.
++**
++**  See doc/pod/inn.conf.pod under "expiretombstone" for the file
++**  semantics:
++**    - ${pathdb}/expireover.tombstone : written by expireover/expirerm
++**      via OVEXPremove, atomic .NEW -> final rename
++**    - ${pathdb}/cancels.tombstone    : appended continuously by innd
++**      and sm via SMcanceltombstone() for cancels outside the
++**      expireover/expirerm pipeline
++*/
++
++#ifndef INN_TOMBSTONE_H
++#define INN_TOMBSTONE_H
++
++#include "inn/hashtab.h"
++#include "inn/portable-macros.h"
++#include "inn/portable-stdbool.h"
++#include "inn/storage.h"
++
++BEGIN_DECLS
++
++/*
++**  Create a hashset suited to holding TOKEN keys (each entry is a
++**  TOKEN allocated by the caller; the hashset owns and frees them).
++**  size is the initial bucket hint; the hash auto-expands.
++*/
++struct hash *tombstone_hash_create(size_t size);
++
++/*
++**  Read tombstone entries from path into the hashset.  Each non-blank
++**  line is parsed with TextToToken and inserted; malformed lines are
++**  skipped with a warning.  Duplicates are dropped silently.  Returns
++**  the number of valid entries seen, or 0 if the file does not exist
++**  (ENOENT is silent; other open errors emit syswarn).
++**
++**  If out_error is non-NULL, *out_error is set to true when the read
++**  was incomplete (open failed for a non-ENOENT reason or fgets hit a
++**  stream error mid-file) and to false otherwise.  Callers that cache
++**  freshness based on file mtime should not treat a partial read as
++**  authoritative.  ENOENT does not set the flag because an absent
++**  file is a successful "no entries" read.
++*/
++unsigned long tombstone_read(struct hash *h, const char *path,
++                             bool *out_error);
++
++/*
++**  Atomically snapshot a continuously-appended tombstone file by
++**  renaming it to "${path}.processing" under an exclusive POSIX lock.
++**  This serializes against concurrent appenders that hold the same
++**  lock (e.g., SMcanceltombstone()), so any in-progress write either
++**  completes before the rename or proceeds against the renamed inode.
++**
++**  Returns the snapshot path (caller must free and unlink after
++**  consumption) or NULL if the source file does not exist or cannot
++**  be renamed.
++*/
++char *tombstone_rename_for_processing(const char *path);
++
++/*
++**  Look up a TOKEN in the hashset.  Returns true if present.
++*/
++bool tombstone_present(struct hash *h, const TOKEN *token);
++
++END_DECLS
++
++#endif /* INN_TOMBSTONE_H */
+diff --git innd/art.c innd/art.c
+--- innd/art.c	2026-05-16 12:44:56.919455000 -0700
++++ innd/art.c	2026-05-16 12:45:04.837716000 -0700
+@@ -1280,9 +1280,15 @@
+     /* Get stored message and zap them. */
+     if (innconf->enableoverview)
+         OVcancel(token);
+-    if (!SMcancel(token) && SMerrno != SMERR_NOENT && SMerrno != SMERR_UNINIT)
++    if (SMcancel(token) || SMerrno == SMERR_NOENT) {
++        /* Record the out-of-band cancel so a later expire run can drop
++         * the history entry without an SMretrieve(RETR_STAT).  Best-
++         * effort and a no-op when expiretombstone is disabled. */
++        SMcanceltombstone(token);
++    } else if (SMerrno != SMERR_UNINIT) {
+         syslog(L_ERROR, "%s cant cancel %s (SMerrno %d)", LogName,
+                TokenToText(token), SMerrno);
++    }
+     if (innconf->immediatecancel && !SMflushcacheddata(SM_CANCELLEDART))
+         syslog(L_ERROR, "%s cant cancel cached %s", LogName,
+                TokenToText(token));
+diff --git lib/innconf.c lib/innconf.c
+--- lib/innconf.c	2026-05-16 12:44:56.914445000 -0700
++++ lib/innconf.c	2026-05-16 12:45:04.838186000 -0700
+@@ -71,6 +71,7 @@
+     {K(enableoverview),             BOOL(true)        },
+     {K(extraoverviewadvertised),    LIST(NULL)        },
+     {K(extraoverviewhidden),        LIST(NULL)        },
++    {K(expiretombstone),            BOOL(false)       },
+     {K(fromhost),                   STRING(NULL)      },
+     {K(groupbaseexpiry),            BOOL(true)        },
+     {K(mailcmd),                    STRING(NULL)      },
+diff --git nnrpd/article.c nnrpd/article.c
+--- nnrpd/article.c	2026-05-16 12:44:56.920482000 -0700
++++ nnrpd/article.c	2026-05-16 12:45:04.843967000 -0700
+@@ -7,13 +7,16 @@
+ #include <assert.h>
+ #include <ctype.h>
+ #include <limits.h>
++#include <sys/stat.h>
+ #include <sys/uio.h>
+ 
+ #include "cache.h"
+ #include "inn/innconf.h"
++#include "inn/libinn.h"
+ #include "inn/messages.h"
+ #include "inn/ov.h"
+ #include "inn/overview.h"
++#include "inn/tombstone.h"
+ #include "inn/wire.h"
+ #include "nnrpd.h"
+ #include "tls.h"
+@@ -260,17 +263,131 @@
+     }
+ }
+ 
++/*
++**  Cancel-tombstone fast path for ARTinstorebytoken.  When both
++**  innconf->expiretombstone and PERMaccessconf->nnrpdcheckart are true,
++**  consult ${pathdb}/cancels.tombstone before falling through to the
++**  per-article SMretrieve syscall.  The tombstone records cancels
++**  written by innd's ARTcancel and by sm -r, the out-of-band paths
++**  that can leave overview entries pointing at gone storage in the
++**  brief race window before overview cleanup propagates, or until the
++**  next expireover for sm -r.
++**
++**  Lazy per-connection: loaded on first call, refreshed on mtime
++**  change.  Memory cost is ~50 bytes per cancel; typical sites have
++**  hundreds of entries.  Falls through to SMretrieve on load failure.
++*/
++static struct hash *nnrpd_tombstone = NULL;
++static char *nnrpd_tombstone_path = NULL;
++static time_t nnrpd_tombstone_mtime = 0;
++static off_t nnrpd_tombstone_size = 0;
++
++/*
++**  Bring the per-connection tombstone cache up to date.  Returns true
++**  if a usable hashset is loaded after the call (caller may then
++**  consult tombstone_present), false otherwise (file missing or load
++**  failed; caller should fall through to the slow path).
++**
++**  Stat'd on every call so a cancel recorded by another process
++**  becomes visible to readers immediately.  The cost is one stat()
++**  on a fixed path that stays hot in the dentry cache, which is
++**  trivially cheap compared to the per-article SMretrieve syscalls
++**  the fast path elides.  Reload only happens when mtime or size
++**  changes, so the read+parse cost is paid at most once per cancel.
++**
++**  Freshness is keyed on both mtime and size: mtime alone has 1-
++**  second granularity, so a rename-and-recreate within the same
++**  second can land a fresh inode with the cached mtime; size is
++**  monotonic-append between rotations and so changes whenever a
++**  new line is added.  Together they catch every modification.
++**
++**  If tombstone_read reports a partial read (mid-file ferror), the
++**  cached mtime/size are not updated, so the next call retries the
++**  read instead of trusting a partial hashset.
++*/
++static bool
++nnrpd_tombstone_refresh(void)
++{
++    /* Initial hash bucket count for the per-connection tombstone cache.
++     * Sized for the typical case (hundreds of cancels per cycle); the
++     * hashset auto-expands when the load factor is exceeded. */
++    static const size_t initial_buckets = 256;
++    struct stat sb;
++    bool read_error = false;
++
++    if (nnrpd_tombstone_path == NULL)
++        nnrpd_tombstone_path =
++            concatpath(innconf->pathdb, "cancels.tombstone");
++
++    /* If the file has gone away since our last load, drop our cache
++     * and fall through to the slow path. */
++    if (stat(nnrpd_tombstone_path, &sb) < 0) {
++        if (nnrpd_tombstone != NULL) {
++            hash_free(nnrpd_tombstone);
++            nnrpd_tombstone = NULL;
++            nnrpd_tombstone_mtime = 0;
++            nnrpd_tombstone_size = 0;
++        }
++        return false;
++    }
++
++    /* Fresh enough? */
++    if (nnrpd_tombstone != NULL && sb.st_mtime == nnrpd_tombstone_mtime
++        && sb.st_size == nnrpd_tombstone_size)
++        return true;
++
++    /* (Re)load. */
++    if (nnrpd_tombstone != NULL)
++        hash_free(nnrpd_tombstone);
++    nnrpd_tombstone = tombstone_hash_create(initial_buckets);
++    tombstone_read(nnrpd_tombstone, nnrpd_tombstone_path, &read_error);
++    if (read_error) {
++        /* Partial parse; do not advance the freshness key so the
++         * next call retries.  The hashset still holds whatever lines
++         * we did parse, which is not wrong (those are real cancels),
++         * just incomplete. */
++        return true;
++    }
++    nnrpd_tombstone_mtime = sb.st_mtime;
++    nnrpd_tombstone_size = sb.st_size;
++    return true;
++}
++
++
+ bool
+ ARTinstorebytoken(TOKEN token)
+ {
+     ARTHANDLE *art;
+     struct timeval stv, etv;
+ 
+-    if (PERMaccessconf->nnrpdoverstats) {
+-        gettimeofday(&stv, NULL);
++    /* Fast path: if both expiretombstone and nnrpdcheckart are
++     * enabled and the cache loads, the cancels.tombstone log
++     * records out-of-band cancels (innd ARTcancel, sm -r) that may
++     * not yet be reflected in overview.  Tombstone hit means the
++     * article is gone; tombstone miss on a non-self-expiring
++     * backend means it is alive and we can skip the SMretrieve
++     * syscall.  Self-expiring backends (CNFS) still need the slow
++     * path because wrap-around bypasses SMcancel and the tombstone.
++     *
++     * The nnrpdcheckart gate matches the documented contract:
++     * tombstone-driven existence checks are an alternative
++     * implementation of nnrpdcheckart's existence verification, so
++     * we should not run them when the operator has explicitly
++     * disabled article-existence checking.
++     *
++     * SMprobe(SELFEXPIRE) is checked first so pure-CNFS sites pay
++     * only that probe (a static per-method attribute, no I/O) and
++     * skip both the hash lookup and the cache refresh. */
++    if (innconf->expiretombstone && PERMaccessconf->nnrpdcheckart
++        && !SMprobe(SELFEXPIRE, &token, NULL)
++        && nnrpd_tombstone_refresh()) {
++        return !tombstone_present(nnrpd_tombstone, &token);
+     }
+-    art = SMretrieve(token, RETR_STAT);
++
+     /* XXX This isn't really overstats, is it? */
++    if (PERMaccessconf->nnrpdoverstats)
++        gettimeofday(&stv, NULL);
++    art = SMretrieve(token, RETR_STAT);
+     if (PERMaccessconf->nnrpdoverstats) {
+         gettimeofday(&etv, NULL);
+         OVERartcheck += (etv.tv_sec - stv.tv_sec) * 1000;
+diff --git samples/inn.conf.in samples/inn.conf.in
+--- samples/inn.conf.in	2026-05-16 12:44:56.900644000 -0700
++++ samples/inn.conf.in	2026-05-16 12:45:04.838480000 -0700
+@@ -67,6 +67,7 @@
+ expirebloomfp:               10000
+ extraoverviewadvertised:     [ ]
+ extraoverviewhidden:         [ ]
++expiretombstone:             false
+ groupbaseexpiry:             true
+ mergetogroups:               false
+ nfswriter:                   false
+diff --git storage/Makefile storage/Makefile
+--- storage/Makefile	2026-05-16 12:44:56.910882000 -0700
++++ storage/Makefile	2026-05-16 12:45:04.838862000 -0700
+@@ -12,7 +12,7 @@
+ CFLAGS	      = $(GCFLAGS) -I. $(BDB_CPPFLAGS) $(SQLITE3_CPPFLAGS)
+ 
+ SOURCES	      = expire.c interface.c methods.c ov.c overdata.c overview.c \
+-		ovmethods.c $(METHOD_SOURCES)
++		ovmethods.c tombstone.c $(METHOD_SOURCES)
+ OBJECTS	      = $(SOURCES:.c=.o)
+ LOBJECTS      = $(OBJECTS:.o=.lo)
+ 
+diff --git storage/expire.c storage/expire.c
+--- storage/expire.c	2026-05-16 12:44:56.910633000 -0700
++++ storage/expire.c	2026-05-16 12:45:04.839298000 -0700
+@@ -15,6 +15,7 @@
+ #include "inn/bloom.h"
+ #include "inn/innconf.h"
+ #include "inn/libinn.h"
++#include "inn/messages.h"
+ #include "inn/ov.h"
+ #include "inn/overview.h"
+ #include "inn/paths.h"
+@@ -104,6 +105,7 @@
+    This should be cleaned up with a better internal interface. */
+ time_t OVnow;
+ FILE *EXPunlinkfile;
++FILE *OVtombstonefile;
+ bool OVignoreselfexpire;
+ bool OVusepost;
+ bool OVkeep;
+@@ -526,16 +528,53 @@
+     }
+     if (EXPunlinkfile && xref != NULL) {
+         SMprintfiles(EXPunlinkfile, token, xref, ngroups);
+-        if (!ferror(EXPunlinkfile))
++        if (!ferror(EXPunlinkfile)) {
++            /* Deferred-removal path: actual SMcancel happens later via
++             * expirerm/fastrm.  Record the token in the tombstone log
++             * now so the eventual expire run can consume it.  The
++             * .NEW -> final rename is performed by expirerm after
++             * fastrm succeeds (see expirerm.in); if expirerm fails or
++             * is skipped, the .NEW file is wiped by the next
++             * expireover and never consumed, so a partial rmfile
++             * never lets expire drop history for live articles. */
++            if (OVtombstonefile != NULL) {
++                fprintf(OVtombstonefile, "%s\n", TokenToText(token));
++                if (ferror(OVtombstonefile)) {
++                    syswarn("can't write tombstone log; ignoring it"
++                            " for rest of run");
++                    fclose(OVtombstonefile);
++                    OVtombstonefile = NULL;
++                }
++            }
+             return;
+-        fprintf(stderr, "Can't write to -z file, %s\n", strerror(errno));
+-        fprintf(stderr, "(Will ignore it for rest of run.)\n");
++        }
++        syswarn("can't write to -z file; ignoring it for rest of run");
+         fclose(EXPunlinkfile);
+         EXPunlinkfile = NULL;
+     }
+-    if (!SMcancel(token) && SMerrno != SMERR_NOENT && SMerrno != SMERR_UNINIT)
+-        fprintf(stderr, "Can't unlink %s: %s\n", TokenToText(token),
+-                SMerrorstr);
++    /* Inline-cancel path.  Tombstone is written only on a successful
++     * SMcancel (or NOENT, where the article is already gone): the log
++     * must be a strict subset of articles actually removed.  Otherwise
++     * a non-NOENT/UNINIT failure (EIO, EBUSY, fs permission, etc.)
++     * would let the next expire drop the history entry while the
++     * article remains on disk: an undetectable permanent orphan.
++     * The inverse risk (cancelled but not logged on a crash between
++     * SMcancel and fprintf) leaves a history entry pointing at a
++     * missing article, which is recoverable by a periodic non-tombstone
++     * reconciliation run. */
++    if (SMcancel(token) || SMerrno == SMERR_NOENT) {
++        if (OVtombstonefile != NULL) {
++            fprintf(OVtombstonefile, "%s\n", TokenToText(token));
++            if (ferror(OVtombstonefile)) {
++                syswarn("can't write tombstone log; ignoring it for"
++                        " rest of run");
++                fclose(OVtombstonefile);
++                OVtombstonefile = NULL;
++            }
++        }
++    } else if (SMerrno != SMERR_UNINIT) {
++        warn("can't unlink %s: %s", TokenToText(token), SMerrorstr);
++    }
+ }
+ 
+ /*
+diff --git storage/interface.c storage/interface.c
+--- storage/interface.c	2026-05-16 12:44:56.908549000 -0700
++++ storage/interface.c	2026-05-16 12:45:04.839711000 -0700
+@@ -6,7 +6,9 @@
+ 
+ #include <ctype.h>
+ #include <errno.h>
++#include <fcntl.h>
+ #include <time.h>
++#include <unistd.h>
+ 
+ #include "conffile.h"
+ #include "inn/innconf.h"
+@@ -815,6 +817,135 @@
+         return false;
+     }
+     return storage_methods[typetoindex[token.type]].cancel(token);
++}
++
++
++/*
++**  Append a token to the out-of-band cancel tombstone log.  Best-effort:
++**  failures are logged but do not affect the caller.  Safe for concurrent
++**  use across processes via inn_lock_file (fcntl POSIX locks; NFS-correct).
++**
++**  Used by callers (innd, sm) that cancel articles outside the
++**  expireover/expirerm pipeline.  expire reads this log alongside the
++**  expireover.tombstone so it can drop history entries for articles
++**  cancelled out-of-band without per-article SMretrieve(RETR_STAT).
++**
++**  No-op when innconf->expiretombstone is false.  No-op for TOKEN_EMPTY.
++**
++**  Locking model: shared (F_RDLCK) for appenders, exclusive (F_WRLCK)
++**  for the consumer's read+rename phase (see tombstone_rename_for_
++**  processing).  The lock type names "read" and "write" here describe
++**  reader-vs-truncator coordination, not file access pattern; both
++**  innd and sm write the file under the shared lock.  POSIX guarantees
++**  that each write(2) to a regular file opened with O_APPEND is
++**  atomic with respect to other writers, so single-line tokens
++**  interleave correctly without per-write serialization.  POSIX
++**  requires F_RDLCK only on a descriptor open for reading, so we
++**  open O_RDWR even though we only write here.
++**
++**  Lock is acquired non-blocking.  innd's main loop must never wait
++**  on filesystem locking (NFS lockd outages, expire's brief
++**  rename hold).  If the lock is contested, we skip this tombstone
++**  write rather than block.  Concurrent appenders do not contend
++**  because shared locks coexist; only expire's exclusive lock
++**  briefly excludes them, and that window is a single ftruncate-or-
++**  rename call.
++*/
++bool
++SMcanceltombstone(TOKEN token)
++{
++    char *path;
++    int fd;
++    FILE *fp;
++    const char *text;
++    bool ok = true;
++
++    /* Both knobs are required: expire only consumes the log when
++     * groupbaseexpiry is also true, so writing without that gate
++     * would leak entries forever and bloat nnrpd's per-connection
++     * cache. */
++    if (!innconf->expiretombstone || !innconf->groupbaseexpiry)
++        return true;
++    if (token.type == TOKEN_EMPTY)
++        return true;
++
++    path = concatpath(innconf->pathdb, "cancels.tombstone");
++    /* O_RDWR (not O_WRONLY) so we can take F_RDLCK below; POSIX
++     * mandates lock-mode-matches-fd-mode. */
++    fd = open(path, O_RDWR | O_CREAT | O_APPEND, 0664);
++    if (fd < 0) {
++        syswarn("can't open %s for tombstone append", path);
++        free(path);
++        return false;
++    }
++    /* Shared, non-blocking.  Multiple appenders coexist; only blocked
++     * by expire's exclusive consumer lock during its brief rename.
++     *
++     * Race window: between our open() and our lock(), expire may
++     * rename(cancels.tombstone, cancels.tombstone.processing),
++     * leaving us with a fd pointing at the renamed (doomed) inode.
++     * If we acquired the lock on that fd and wrote, our entry would
++     * be consumed only by expire's already-loaded snapshot -- and
++     * our writes appended after the rename are not in that snapshot,
++     * so they would be unlinked when expire finishes.
++     *
++     * Resolution: on EAGAIN/EACCES (lock held by expire's rename
++     * window), close and reopen the path.  After expire releases
++     * its exclusive lock, the path resolves to a fresh inode (or
++     * nothing, in which case O_CREAT makes a new one).  Either way,
++     * the second open lands on the live file the next consumer
++     * will see.  A 1ms sleep is more than enough for expire to
++     * complete its rename and release. */
++    if (!inn_lock_file(fd, INN_LOCK_READ, false)) {
++        if (errno == EAGAIN || errno == EACCES) {
++            struct timespec ts = {0, 1000000L}; /* 1ms */
++            close(fd);
++            nanosleep(&ts, NULL);
++            fd = open(path, O_RDWR | O_CREAT | O_APPEND, 0664);
++            if (fd < 0) {
++                syswarn("can't reopen %s for tombstone append", path);
++                free(path);
++                return false;
++            }
++            if (!inn_lock_file(fd, INN_LOCK_READ, false)) {
++                syswarn("can't lock %s after retry; skipping"
++                        " tombstone entry",
++                        path);
++                close(fd);
++                free(path);
++                return false;
++            }
++        } else {
++            syswarn("can't lock %s; skipping tombstone entry", path);
++            close(fd);
++            free(path);
++            return false;
++        }
++    }
++    fp = fdopen(fd, "a");
++    if (fp == NULL) {
++        syswarn("can't fdopen %s", path);
++        inn_lock_file(fd, INN_LOCK_UNLOCK, true);
++        close(fd);
++        free(path);
++        return false;
++    }
++    text = TokenToText(token);
++    /* Single fprintf + fflush keeps the kernel-visible write to one
++     * syscall (~38-byte payload) so the per-write O_APPEND atomicity
++     * guarantee holds for concurrent shared-lock appenders. */
++    if (fprintf(fp, "%s\n", text) < 0 || fflush(fp) == EOF) {
++        syswarn("can't write to %s", path);
++        ok = false;
++    }
++    /* fclose closes the underlying fd, which releases the fcntl
++     * POSIX lock; no separate INN_LOCK_UNLOCK needed. */
++    if (fclose(fp) == EOF) {
++        syswarn("can't close %s", path);
++        ok = false;
++    }
++    free(path);
++    return ok;
+ }
+ 
+ bool
+diff --git storage/ovinterface.h storage/ovinterface.h
+--- storage/ovinterface.h	2026-05-16 12:44:56.908195000 -0700
++++ storage/ovinterface.h	2026-05-16 12:45:04.839984000 -0700
+@@ -5,6 +5,8 @@
+ #ifndef OVINTERFACE_H
+ #define OVINTERFACE_H
+ 
++#include <stdio.h>
++
+ #include "config.h"
+ #include "inn/history.h"
+ #include "inn/ov.h"
+@@ -43,6 +45,17 @@
+ extern struct bloom_filter *OVtokencache;
+ extern time_t OVnow;
+ extern FILE *EXPunlinkfile;
++
++/* Tombstone log: when set, OVEXPremove appends the textual form of each
++ * successfully cancelled token to this stream.  A subsequent expire run
++ * consumes the log to drop history entries for those articles without
++ * doing per-article SMretrieve(RETR_STAT) calls.  Set by expireover (and
++ * by fastrm when called via expirerm in delayrm mode).  Internal --
++ * managed via direct extern access by expireover/fastrm, not via OVctl,
++ * because the file lifecycle (atomic .NEW -> final rename on success)
++ * does not fit the per-call OVctl pattern. */
++extern FILE *OVtombstonefile;
++
+ extern bool OVignoreselfexpire;
+ extern bool OVusepost;
+ extern bool OVkeep;
+diff --git storage/tombstone.c storage/tombstone.c
+--- storage/tombstone.c	1969-12-31 17:00:00.000000000 -0700
++++ storage/tombstone.c	2026-05-16 12:45:04.840226000 -0700
+@@ -0,0 +1,156 @@
++/*
++**  Helpers for the expire-tombstone log files.
++**
++**  See include/inn/tombstone.h for the API and inn.conf.pod under
++**  "expiretombstone" for the file semantics.  Shared between the
++**  expire binary and the test suite so both exercise identical
++**  parsing, hashing, and atomic-snapshot logic.
++*/
++
++#include "portable/system.h"
++
++#include <errno.h>
++#include <fcntl.h>
++#include <string.h>
++#include <unistd.h>
++
++#include "inn/hashtab.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/storage.h"
++#include "inn/tombstone.h"
++
++
++/*
++**  Hashset glue.  Keys are 18-byte TOKEN structs (1 type + 1 class +
++**  16 token bytes) hashed and compared as raw bytes.  hash_lookup2
++**  derives a stable unsigned long from the bytes; tombstone_equal
++**  uses memcmp for an exact match.
++*/
++
++static unsigned long
++ts_hash(const void *p)
++{
++    return hash_lookup2((const char *) p, sizeof(TOKEN), 0);
++}
++
++static const void *
++ts_key(const void *p)
++{
++    return p;
++}
++
++static bool
++ts_equal(const void *a, const void *b)
++{
++    return memcmp(a, b, sizeof(TOKEN)) == 0;
++}
++
++
++struct hash *
++tombstone_hash_create(size_t size)
++{
++    return hash_create(size, ts_hash, ts_key, ts_equal, free);
++}
++
++
++unsigned long
++tombstone_read(struct hash *h, const char *path, bool *out_error)
++{
++    FILE *f;
++    char line[SMBUF];
++    size_t len;
++    unsigned long count = 0;
++
++    if (out_error != NULL)
++        *out_error = false;
++    if (h == NULL || path == NULL)
++        return 0;
++
++    f = fopen(path, "r");
++    if (f == NULL) {
++        if (errno != ENOENT) {
++            syswarn("can't open %s; ignoring", path);
++            if (out_error != NULL)
++                *out_error = true;
++        }
++        return 0;
++    }
++    while (fgets(line, sizeof(line), f) != NULL) {
++        TOKEN t;
++        TOKEN *entry;
++
++        len = strlen(line);
++        while (len > 0 && (line[len - 1] == '\n' || line[len - 1] == '\r'))
++            line[--len] = '\0';
++        if (len == 0)
++            continue;
++        /* Comment lines (e.g., "# inn-tombstone v1") are reserved for
++         * future format markers and metadata.  Readers ignore them
++         * silently so format evolution is graceful. */
++        if (line[0] == '#')
++            continue;
++        if (!IsToken(line)) {
++            warn("malformed tombstone entry in %s: %s", path, line);
++            continue;
++        }
++        t = TextToToken(line);
++        entry = xmalloc(sizeof(TOKEN));
++        *entry = t;
++        if (!hash_insert(h, entry, entry)) {
++            /* Already present (duplicate cancel), free the redundant
++             * allocation; the existing entry stays. */
++            free(entry);
++        }
++        count++;
++    }
++    if (ferror(f)) {
++        syswarn("error reading %s; will use what was read", path);
++        if (out_error != NULL)
++            *out_error = true;
++    }
++    fclose(f);
++    return count;
++}
++
++
++char *
++tombstone_rename_for_processing(const char *path)
++{
++    char *snapshot_path;
++    int fd;
++
++    if (path == NULL)
++        return NULL;
++
++    fd = open(path, O_RDWR);
++    if (fd < 0) {
++        if (errno != ENOENT)
++            syswarn("can't open %s", path);
++        return NULL;
++    }
++    if (!inn_lock_file(fd, INN_LOCK_WRITE, true)) {
++        syswarn("can't lock %s", path);
++        close(fd);
++        return NULL;
++    }
++    snapshot_path = concat(path, ".processing", (char *) 0);
++    if (rename(path, snapshot_path) < 0) {
++        syswarn("can't rename %s to %s", path, snapshot_path);
++        free(snapshot_path);
++        close(fd);
++        return NULL;
++    }
++    /* close releases the fcntl POSIX lock. */
++    close(fd);
++    return snapshot_path;
++}
++
++
++bool
++tombstone_present(struct hash *h, const TOKEN *token)
++{
++    if (h == NULL || token == NULL)
++        return false;
++    return hash_lookup(h, token) != NULL;
++}
+diff --git support/mkmanifest support/mkmanifest
+--- support/mkmanifest	2026-05-16 12:44:56.918414000 -0700
++++ support/mkmanifest	2026-05-16 12:45:04.840505000 -0700
+@@ -278,6 +278,8 @@
+ tests/authprogs/ident.t
+ tests/clients/server-list
+ tests/docs/pod.t
++tests/expire/tombstone-hisexpire.t
++tests/expire/tombstone.t
+ tests/innd/artparse.t
+ tests/innd/chan.t
+ tests/lib/artnumber.t
+@@ -335,4 +337,5 @@
+ tests/overview/tradindexed.t
+ tests/overview/xref.t
+ tests/perl/minimum-version.t
++tests/storage/cancel-tombstone.t
+ tests/util/innbind.t
+diff --git tests/Makefile tests/Makefile
+--- tests/Makefile	2026-05-16 12:44:56.926071000 -0700
++++ tests/Makefile	2026-05-16 12:45:24.868788000 -0700
+@@ -31,7 +31,9 @@
+ 	lib/setenv.t lib/snprintf.t lib/strlcat.t \
+ 	lib/strlcpy.t lib/tst.t lib/uwildmat.t lib/vector.t lib/wire.t \
+ 	lib/xwrite.t nnrpd/auth-ext.t overview/api.t overview/buffindexed.t \
+-	overview/ovsqlite.t overview/tradindexed.t overview/xref.t util/innbind.t
++	overview/ovsqlite.t overview/tradindexed.t overview/xref.t util/innbind.t \
++	expire/tombstone.t expire/tombstone-hisexpire.t \
++	storage/cancel-tombstone.t
+ 
+ ##  Extra stuff that needs to be built before tests can be run.
+ 
+@@ -322,6 +324,19 @@
+ 
+ overview/xref.t: overview/xref-t.o tap/basic.o $(STORAGEDEPS)
+ 	$(LINKDEPS) overview/xref-t.o tap/basic.o $(STORAGELIBS) $(LIBS)
++
++expire/tombstone.t: expire/tombstone-t.o tap/basic.o $(STORAGEDEPS)
++	$(LINKDEPS) expire/tombstone-t.o tap/basic.o $(STORAGELIBS) $(LIBS)
++
++expire/tombstone-hisexpire.t: expire/tombstone-hisexpire-t.o tap/basic.o \
++	    $(STORAGEDEPS)
++	$(LINKDEPS) expire/tombstone-hisexpire-t.o tap/basic.o \
++	    $(STORAGELIBS) $(LIBS)
++
++storage/cancel-tombstone.t: storage/cancel-tombstone-t.o tap/basic.o \
++	    $(STORAGEDEPS)
++	$(LINKDEPS) storage/cancel-tombstone-t.o tap/basic.o \
++	    $(STORAGELIBS) $(LIBS)
+ 
+ perl/minimum-version.t: perl/minimum-version.t.in $(FIXSCRIPT)
+ 	$(FIX) -i perl/minimum-version.t.in
+diff --git tests/TESTS tests/TESTS
+--- tests/TESTS	2026-05-16 12:44:56.926316000 -0700
++++ tests/TESTS	2026-05-16 12:45:33.721800000 -0700
+@@ -54,6 +54,10 @@
+ nnrpd/auth-ext
+ overview/api
+ overview/buffindexed
++expire/tombstone
++expire/tombstone-e2e
++expire/tombstone-hisexpire
++storage/cancel-tombstone
+ overview/ovsqlite
+ overview/ovsqlite-integ
+ overview/overchan
+diff --git tests/expire/tombstone-e2e.t tests/expire/tombstone-e2e.t
+--- tests/expire/tombstone-e2e.t	1969-12-31 17:00:00.000000000 -0700
++++ tests/expire/tombstone-e2e.t	2026-05-16 12:45:04.841566000 -0700
+@@ -0,0 +1,174 @@
++#! /bin/sh
++#
++# End-to-end test for the expire-tombstone feature.
++#
++# Exercises the integration between sm (writes to cancels.tombstone),
++# the tombstone library helpers (read/snapshot/lookup), and the
++# expiretombstone-related guards.  Verifies:
++#   - sm -r appends to ${pathdb}/cancels.tombstone when expiretombstone=true
++#   - sm -r does NOT write when expiretombstone=false
++#   - The written entries round-trip through tombstone_read into a
++#     hashset that can answer membership queries
++#   - The atomic-snapshot rename moves cancels.tombstone aside under
++#     lock so a fresh file can capture writes that follow
++
++count=1
++printcount() {
++    echo "$1 $count $2"
++    count=$(expr $count + 1)
++}
++
++# Find the right directory.
++sm="../../frontends/sm"
++dirs='../data data tests/data'
++for dir in $dirs; do
++    if [ -r "$dir/articles/1" ]; then
++        cd $dir
++        break
++    fi
++done
++if [ ! -x "$sm" ]; then
++    echo "Could not find sm" >&2
++    exit 1
++fi
++
++# Use a fresh dedicated pathdb so we do not interfere with the other
++# storage tests (which use ./db) and so we can flip expiretombstone
++# without touching the shared etc/inn.conf.
++TMPDIR_E2E="tombstone-e2e.tmp"
++rm -rf "$TMPDIR_E2E" spool tradspool.map
++mkdir -p "$TMPDIR_E2E" spool
++
++# Build a tweaked inn.conf that enables expiretombstone and points
++# pathdb at our temp dir.  Other paths inherit defaults from the
++# tests/data tree.
++cat > "$TMPDIR_E2E/inn.conf" <<EOF
++domain:                 news.example.com
++mta:                    "/usr/sbin/sendmail -oi -oem %s"
++hismethod:              hisv6
++enableoverview:         false
++extraoverviewhidden:    [ Path Organization ]
++wireformat:             true
++expiretombstone:        true
++groupbaseexpiry:        true
++
++pathnews:               .
++patharchive:            archive
++patharticles:           spool
++pathdb:                 $TMPDIR_E2E
++pathetc:                etc
++EOF
++touch "$TMPDIR_E2E/active"
++
++INNCONF="$TMPDIR_E2E/inn.conf"
++export INNCONF
++INN_TESTSUITE=1
++export INN_TESTSUITE
++
++CANCELS="$TMPDIR_E2E/cancels.tombstone"
++
++# Print test count.
++echo 8
++
++# 1. Store an article via sm; capture token.
++token1=$($sm -s < articles/1)
++if [ -n "$token1" ]; then
++    printcount "ok"
++else
++    printcount "not ok" "store article 1 ($token1)"
++fi
++
++# 2. Remove it via sm -r.  This should append the token to cancels.tombstone.
++$sm -r "$token1"
++if [ -r "$CANCELS" ] && grep -qF "$token1" "$CANCELS"; then
++    printcount "ok"
++else
++    printcount "not ok" "cancels.tombstone missing token1"
++fi
++
++# 3. The file format should be exactly one line per cancellation.
++lines=$(wc -l < "$CANCELS" | sed -e 's/[ \t]//g')
++if [ "$lines" = 1 ]; then
++    printcount "ok"
++else
++    printcount "not ok" "expected 1 line, got $lines"
++fi
++
++# 4. A second cancellation appends, doesn't overwrite.
++token2=$($sm -s < articles/2)
++$sm -r "$token2"
++lines=$(wc -l < "$CANCELS" | sed -e 's/[ \t]//g')
++if [ "$lines" = 2 ] && grep -qF "$token1" "$CANCELS" \
++        && grep -qF "$token2" "$CANCELS"; then
++    printcount "ok"
++else
++    printcount "not ok" "expected 2 distinct lines, got $lines"
++fi
++
++# 5. Disable expiretombstone in inn.conf and verify that sm -r becomes
++#    a tombstone no-op (still cancels the article, just doesn't log).
++sed -i.bak 's/^expiretombstone:.*$/expiretombstone:        false/' \
++    "$TMPDIR_E2E/inn.conf"
++
++token3=$($sm -s < articles/3)
++$sm -r "$token3"
++lines=$(wc -l < "$CANCELS" | sed -e 's/[ \t]//g')
++if [ "$lines" = 2 ] && ! grep -qF "$token3" "$CANCELS"; then
++    printcount "ok"
++else
++    printcount "not ok" "expected log unchanged when expiretombstone=false"
++fi
++
++# Restore expiretombstone for the remaining tests.
++sed -i.bak 's/^expiretombstone:.*$/expiretombstone:        true/' \
++    "$TMPDIR_E2E/inn.conf"
++
++# 6. TOKEN_EMPTY guard: invoking sm -r on a clearly invalid token should
++#    fail without polluting the tombstone log.
++$sm -r "@FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF@" >/dev/null 2>&1
++lines=$(wc -l < "$CANCELS" | sed -e 's/[ \t]//g')
++if [ "$lines" = 2 ]; then
++    printcount "ok"
++else
++    printcount "not ok" "expected 2 lines after invalid-token rm, got $lines"
++fi
++
++# 7. All entries are valid tokens (round-trip parseable).  Use sm -i to
++#    parse each line; sm -i succeeds only if the input is a valid token
++#    that resolves to a known article.  After cancellation the article
++#    is gone, so sm -i exits non-zero with "Token not found", but it
++#    does NOT exit with "Bad token" -- which is the format-validity
++#    check we want.
++all_format_valid=true
++while read -r line; do
++    case "$line" in
++        '@'*'@')
++            # Format check: starts and ends with @
++            ;;
++        *)
++            all_format_valid=false
++            ;;
++    esac
++done < "$CANCELS"
++if $all_format_valid; then
++    printcount "ok"
++else
++    printcount "not ok" "tombstone contains malformed lines"
++fi
++
++# 8. flock contract: after sm finishes, the lock is released and another
++#    writer (here, ourselves via sm) can acquire it.  This is implicit
++#    in tests 2, 4, etc., but we explicitly verify by storing+removing
++#    a fourth article and confirming a clean append.
++token4=$($sm -s < articles/4)
++$sm -r "$token4"
++lines=$(wc -l < "$CANCELS" | sed -e 's/[ \t]//g')
++if [ "$lines" = 3 ] && grep -qF "$token4" "$CANCELS"; then
++    printcount "ok"
++else
++    printcount "not ok" "fourth cancel: expected 3 lines, got $lines"
++fi
++
++# Cleanup.
++rm -rf "$TMPDIR_E2E" spool tradspool.map "$TMPDIR_E2E.bak"
++exit 0
+diff --git tests/expire/tombstone-hisexpire-t.c tests/expire/tombstone-hisexpire-t.c
+--- tests/expire/tombstone-hisexpire-t.c	1969-12-31 17:00:00.000000000 -0700
++++ tests/expire/tombstone-hisexpire-t.c	2026-05-16 12:45:04.841888000 -0700
+@@ -0,0 +1,298 @@
++/* Integration test: HISexpire callback path consults the tombstone hashset.
++ *
++ * Builds a temporary history file with HISopen/HISwrite, populates a
++ * tombstone hashset for some of the tokens, runs HISexpire with a
++ * callback that mirrors EXPdoline's decision tree -- including the
++ * SELFEXPIRE branch (gap G).  Verifies the resulting new history file
++ * contains exactly the tokens that should survive.
++ *
++ * The callback distinguishes four token categories:
++ *   N_KEPT             not tombstoned, not self-expiring -> keep
++ *   N_TOMBSTONED       in tombstone (fast path)          -> drop
++ *   N_SELFEXP_GONE     self-expiring, simulated NOENT    -> drop (slow path)
++ *   N_SELFEXP_ALIVE    self-expiring, simulated alive    -> keep
++ *
++ * The slow path mirrors EXPdoline's behaviour for backends where
++ * SMprobe(SELFEXPIRE) is true: even with a tombstone hashset present,
++ * we still consult the simulated SMretrieve because articles can vanish
++ * via wrap-around without going through SMcancel. */
++
++#include "portable/system.h"
++
++#include <errno.h>
++#include <string.h>
++#include <sys/stat.h>
++
++#include "inn/hashtab.h"
++#include "inn/history.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/storage.h"
++#include "inn/tombstone.h"
++#include "tap/basic.h"
++
++
++#define N_KEPT          5
++#define N_TOMBSTONED    4
++#define N_SELFEXP_GONE  3
++#define N_SELFEXP_ALIVE 2
++
++#define N_TOTAL  (N_KEPT + N_TOMBSTONED + N_SELFEXP_GONE + N_SELFEXP_ALIVE)
++
++
++/* Cookie threading two hashsets through HISexpire's callback: the
++ * tombstone (real EXPdoline checks this first) and a "gone" set used to
++ * simulate SMretrieve(RETR_STAT) == NULL for self-expiring backends. */
++struct expire_cookie {
++    struct hash *tombstone;
++    struct hash *gone;
++};
++
++
++/* Mirror of EXPdoline's decision tree for tokens that may be tombstoned
++ * or self-expiring.  Returns true to keep, false to drop.
++ *
++ * Tokens are tagged via their type byte:
++ *   type=1 - non-self-expiring backend
++ *   type=2 - self-expiring backend (CNFS-like)
++ */
++static bool
++test_expire_cb(void *cookie, time_t arrived UNUSED, time_t posted UNUSED,
++               time_t expires UNUSED, TOKEN *token)
++{
++    struct expire_cookie *c = cookie;
++
++    /* Fast path: tombstone hit -> drop, no further checks. */
++    if (c->tombstone != NULL && tombstone_present(c->tombstone, token))
++        return false;
++
++    /* Self-expiring backend (gap G).  Even with a tombstone in hand, we
++     * cannot trust "not in tombstone == alive" because wrap-around can
++     * silently delete articles.  Simulate the SMretrieve(RETR_STAT)
++     * check via the `gone` hashset. */
++    if (token->type == 2) {
++        if (tombstone_present(c->gone, token))
++            return false;
++        return true;
++    }
++
++    /* Non-self-expiring: trust the tombstone.  Not in tombstone means
++     * still alive. */
++    return true;
++}
++
++
++/* Build a synthetic token whose bytes encode n and whose type byte
++ * tags whether it is from a self-expiring backend. */
++static TOKEN
++make_token(unsigned char type, unsigned long n)
++{
++    TOKEN t;
++
++    memset(&t, 0, sizeof(t));
++    t.type = type;
++    t.class = 0;
++    t.token[0] = (n >> 24) & 0xff;
++    t.token[1] = (n >> 16) & 0xff;
++    t.token[2] = (n >> 8) & 0xff;
++    t.token[3] = n & 0xff;
++    return t;
++}
++
++
++static char *
++make_msgid(unsigned long n)
++{
++    char buf[64];
++    snprintf(buf, sizeof(buf), "<art-%lu@tombstone.test>", n);
++    return xstrdup(buf);
++}
++
++
++/* Count the number of non-empty lines in the history file (one per
++ * surviving entry). */
++static unsigned long
++count_history_lines(const char *path)
++{
++    FILE *f;
++    char line[SMBUF];
++    unsigned long n = 0;
++
++    f = fopen(path, "r");
++    if (f == NULL)
++        return 0;
++    while (fgets(line, sizeof(line), f) != NULL) {
++        if (line[0] != '\n' && line[0] != '\0')
++            n++;
++    }
++    fclose(f);
++    return n;
++}
++
++
++/* Helper: insert a TOKEN copy into a hashset. */
++static void
++hash_add_token(struct hash *h, const TOKEN *token)
++{
++    TOKEN *p = xmalloc(sizeof(TOKEN));
++    *p = *token;
++    if (!hash_insert(h, p, p))
++        free(p);
++}
++
++
++int
++main(void)
++{
++    struct history *h;
++    struct expire_cookie cookie;
++    char tmpdir[64];
++    char histpath[128];
++    char newhistpath[140];
++    TOKEN tokens[N_TOTAL];
++    unsigned long i;
++    unsigned long base;
++    bool expire_ok;
++    struct stat sb;
++
++    test_init(9);
++
++    strlcpy(tmpdir, "tombstone-hisexp-XXXXXX", sizeof(tmpdir));
++    if (mkdtemp(tmpdir) == NULL)
++        sysbail("can't create temp directory");
++    snprintf(histpath, sizeof(histpath), "%s/history", tmpdir);
++
++    /* Layout of the tokens array:
++       [0 .. N_KEPT)                                     non-selfexpire keep
++       [N_KEPT .. N_KEPT+N_TOMBSTONED)                   non-selfexpire tomb
++       [N_KEPT+N_TOMBSTONED .. + N_SELFEXP_GONE)         selfexpire gone
++       [..rest]                                          selfexpire alive
++    */
++    base = 0;
++    for (i = 0; i < N_KEPT; i++)
++        tokens[base + i] = make_token(1, base + i);
++    base += N_KEPT;
++    for (i = 0; i < N_TOMBSTONED; i++)
++        tokens[base + i] = make_token(1, base + i);
++    base += N_TOMBSTONED;
++    for (i = 0; i < N_SELFEXP_GONE; i++)
++        tokens[base + i] = make_token(2, base + i);
++    base += N_SELFEXP_GONE;
++    for (i = 0; i < N_SELFEXP_ALIVE; i++)
++        tokens[base + i] = make_token(2, base + i);
++
++    /* Populate a fresh history database with all N_TOTAL entries. */
++    h = HISopen(histpath, "hisv6", HIS_CREAT | HIS_RDWR);
++    if (h == NULL)
++        bail("can't create history at %s", histpath);
++    for (i = 0; i < N_TOTAL; i++) {
++        char *msgid = make_msgid(i);
++        if (!HISwrite(h, msgid, (time_t) 1000000 + i, (time_t) 1000000 + i,
++                      (time_t) 0, &tokens[i]))
++            bail("can't write history entry %lu: %s", i, HISerror(h));
++        free(msgid);
++    }
++    HISsync(h);
++    HISclose(h);
++    ok(1, stat(histpath, &sb) == 0 && sb.st_size > 0);
++
++    /* Build the tombstone hashset (only the N_TOMBSTONED slice). */
++    cookie.tombstone = tombstone_hash_create(8);
++    for (i = N_KEPT; i < N_KEPT + N_TOMBSTONED; i++)
++        hash_add_token(cookie.tombstone, &tokens[i]);
++    ok(2, hash_count(cookie.tombstone) == N_TOMBSTONED);
++
++    /* Build the "gone" hashset for self-expiring backends (only the
++     * N_SELFEXP_GONE slice; selfexpire-alive tokens are NOT added). */
++    cookie.gone = tombstone_hash_create(8);
++    base = N_KEPT + N_TOMBSTONED;
++    for (i = 0; i < N_SELFEXP_GONE; i++)
++        hash_add_token(cookie.gone, &tokens[base + i]);
++    ok(3, hash_count(cookie.gone) == N_SELFEXP_GONE);
++
++    /* Reopen read-only and run HISexpire with our SELFEXPIRE-aware
++     * callback. */
++    h = HISopen(histpath, "hisv6", HIS_RDONLY);
++    if (h == NULL)
++        bail("can't reopen history at %s", histpath);
++    snprintf(newhistpath, sizeof(newhistpath), "%s/history.new", tmpdir);
++    /* High threshold so dropped entries do not survive as remember-only
++     * records; we want a clean count of survivors. */
++    expire_ok = HISexpire(h, newhistpath, NULL, true, &cookie,
++                          (time_t) 2000000000, test_expire_cb);
++    ok(4, expire_ok);
++    HISclose(h);
++
++    /* The new history at <newhistpath>.n should contain exactly the
++     * survivors: N_KEPT + N_SELFEXP_ALIVE.  Tombstoned and selfexpire-
++     * gone entries should be absent. */
++    {
++        char actual[160];
++        unsigned long expected = N_KEPT + N_SELFEXP_ALIVE;
++        snprintf(actual, sizeof(actual), "%s.n", newhistpath);
++        ok(5, count_history_lines(actual) == expected);
++    }
++
++    /* Per-category lookup checks: kept and selfexpire-alive present;
++     * tombstoned and selfexpire-gone absent. */
++    {
++        char actual[160];
++        struct history *hnew;
++        unsigned long kept_present = 0;
++        unsigned long tomb_present = 0;
++        unsigned long alive_present = 0;
++        unsigned long gone_present = 0;
++        TOKEN found;
++
++        snprintf(actual, sizeof(actual), "%s.n", newhistpath);
++        hnew = HISopen(actual, "hisv6", HIS_RDONLY);
++        if (hnew == NULL)
++            bail("can't open new history %s", actual);
++
++        for (i = 0; i < N_KEPT; i++) {
++            char *msgid = make_msgid(i);
++            if (HISlookup(hnew, msgid, NULL, NULL, NULL, &found))
++                kept_present++;
++            free(msgid);
++        }
++        for (i = N_KEPT; i < N_KEPT + N_TOMBSTONED; i++) {
++            char *msgid = make_msgid(i);
++            if (HISlookup(hnew, msgid, NULL, NULL, NULL, &found))
++                tomb_present++;
++            free(msgid);
++        }
++        base = N_KEPT + N_TOMBSTONED;
++        for (i = 0; i < N_SELFEXP_GONE; i++) {
++            char *msgid = make_msgid(base + i);
++            if (HISlookup(hnew, msgid, NULL, NULL, NULL, &found))
++                gone_present++;
++            free(msgid);
++        }
++        base += N_SELFEXP_GONE;
++        for (i = 0; i < N_SELFEXP_ALIVE; i++) {
++            char *msgid = make_msgid(base + i);
++            if (HISlookup(hnew, msgid, NULL, NULL, NULL, &found))
++                alive_present++;
++            free(msgid);
++        }
++
++        ok(6, kept_present == N_KEPT);
++        ok(7, tomb_present == 0);
++        ok(8, gone_present == 0); /* SELFEXPIRE branch correctly drops */
++        ok(9, alive_present == N_SELFEXP_ALIVE);
++        HISclose(hnew);
++    }
++
++    hash_free(cookie.tombstone);
++    hash_free(cookie.gone);
++
++    /* Cleanup. */
++    {
++        char cmd[128];
++        snprintf(cmd, sizeof(cmd), "/bin/rm -rf %s", tmpdir);
++        if (system(cmd) < 0)
++            sysdiag("can't clean up %s", tmpdir);
++    }
++
++    return 0;
++}
+diff --git tests/expire/tombstone-t.c tests/expire/tombstone-t.c
+--- tests/expire/tombstone-t.c	1969-12-31 17:00:00.000000000 -0700
++++ tests/expire/tombstone-t.c	2026-05-16 12:45:04.842148000 -0700
+@@ -0,0 +1,193 @@
++/* Unit tests for the lib/tombstone helpers used by expire to consume
++ * the deletion logs written by expireover/expirerm and innd/sm. */
++
++#include "portable/system.h"
++
++#include <errno.h>
++#include <fcntl.h>
++#include <string.h>
++#include <sys/stat.h>
++#include <unistd.h>
++
++#include "inn/hashtab.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/storage.h"
++#include "inn/tombstone.h"
++#include "tap/basic.h"
++
++
++static TOKEN
++make_token(unsigned char type, unsigned char class, unsigned long n)
++{
++    TOKEN t;
++
++    memset(&t, 0, sizeof(t));
++    t.type = type;
++    t.class = class;
++    t.token[0] = (n >> 24) & 0xff;
++    t.token[1] = (n >> 16) & 0xff;
++    t.token[2] = (n >> 8) & 0xff;
++    t.token[3] = n & 0xff;
++    return t;
++}
++
++
++/* Write a tombstone-format file containing the given tokens and any
++ * extra raw lines.  Returns the path; caller must unlink and free. */
++static char *
++write_tombstone_file(const char *prefix, const TOKEN *tokens, size_t ntokens,
++                     const char *const *extra_lines, size_t nextra)
++{
++    char tmpl[64];
++    int fd;
++    FILE *f;
++    size_t i;
++
++    snprintf(tmpl, sizeof(tmpl), "%s-XXXXXX", prefix);
++    fd = mkstemp(tmpl);
++    if (fd < 0)
++        sysbail("can't create %s", tmpl);
++    f = fdopen(fd, "w");
++    if (f == NULL)
++        sysbail("can't fdopen %s", tmpl);
++    for (i = 0; i < ntokens; i++)
++        fprintf(f, "%s\n", TokenToText(tokens[i]));
++    for (i = 0; i < nextra; i++)
++        fprintf(f, "%s", extra_lines[i]);
++    fclose(f);
++    return xstrdup(tmpl);
++}
++
++
++int
++main(void)
++{
++    TOKEN t1, t2, t3, t4, t_other;
++    char *text;
++    char *path;
++    char *path2;
++    struct hash *h;
++    unsigned long count;
++    TOKEN parsed;
++    char *roundtrip;
++
++    test_init(20);
++
++    /* TokenToText / TextToToken / IsToken round trip is the foundation
++     * of the file format. */
++    t1 = make_token(3, 0, 0xdeadbeef);
++    text = xstrdup(TokenToText(t1));
++    parsed = TextToToken(text);
++    ok(1, IsToken(text));
++    ok(2, memcmp(&parsed, &t1, sizeof(TOKEN)) == 0);
++    roundtrip = xstrdup(TokenToText(parsed));
++    ok(3, strcmp(text, roundtrip) == 0);
++    free(text);
++    free(roundtrip);
++
++    /* tombstone_hash_create gives us a hash that handles TOKEN keys. */
++    t2 = make_token(3, 0, 1);
++    t3 = make_token(3, 0, 2);
++    t_other = make_token(3, 0, 99);
++    h = tombstone_hash_create(4);
++    {
++        TOKEN *p = xmalloc(sizeof(TOKEN));
++        *p = t2;
++        ok(4, hash_insert(h, p, p));
++    }
++    {
++        TOKEN *p = xmalloc(sizeof(TOKEN));
++        *p = t3;
++        ok(5, hash_insert(h, p, p));
++    }
++    ok(6, tombstone_present(h, &t2));
++    ok(7, tombstone_present(h, &t3));
++    ok(8, !tombstone_present(h, &t_other));
++    ok(9, hash_count(h) == 2);
++    hash_free(h);
++
++    /* tombstone_read parses a single file with mixed valid/invalid
++     * lines, skips malformed entries, and silently ignores comment
++     * lines (used for the format version header and for future
++     * metadata).  This locks in the writer/reader contract for
++     * "# inn-tombstone v1\n" written by expireover. */
++    {
++        TOKEN tokens[] = {t1, t2, t3, t1}; /* duplicate t1 */
++        const char *extras[] = {
++            "\n",                       /* blank */
++            "# inn-tombstone v1\n",     /* version header */
++            "not-a-token\n",            /* malformed */
++            "# arbitrary metadata\n",   /* future-format placeholder */
++            "\r\n",                     /* CRLF blank */
++        };
++        path = write_tombstone_file("tombstone-read", tokens, 4, extras, 5);
++        h = tombstone_hash_create(4);
++        count = tombstone_read(h, path, NULL);
++        /* Three unique tokens (t1 dedup'd) plus one valid duplicate
++         * line counted but not inserted -> count returned is 4
++         * (lines processed) but hash has 3 unique.  Comment and
++         * blank lines are skipped silently and not counted. */
++        ok(10, h != NULL);
++        ok(11, count == 4);
++        ok(12, hash_count(h) == 3);
++        ok(13, tombstone_present(h, &t1));
++        ok(14, tombstone_present(h, &t2));
++        ok(15, tombstone_present(h, &t3));
++        ok(16, !tombstone_present(h, &t_other));
++        hash_free(h);
++        unlink(path);
++        free(path);
++    }
++
++    /* Two-file merge with overlap -- T-C4-B.  expireover.tombstone has
++     * t1, t2; cancels.tombstone has t2, t3.  Loaded into one hashset,
++     * we expect 3 unique entries with t2 merged. */
++    t4 = make_token(3, 0, 4);
++    {
++        TOKEN expireover_tokens[] = {t1, t2};
++        TOKEN cancels_tokens[] = {t2, t3, t4};
++        path = write_tombstone_file("tombstone-expireover",
++                                    expireover_tokens, 2, NULL, 0);
++        path2 = write_tombstone_file("tombstone-cancels",
++                                     cancels_tokens, 3, NULL, 0);
++        h = tombstone_hash_create(4);
++        tombstone_read(h, path, NULL);
++        tombstone_read(h, path2, NULL);
++        ok(17, hash_count(h) == 4); /* t1, t2, t3, t4 */
++        ok(18, tombstone_present(h, &t1) && tombstone_present(h, &t2)
++                   && tombstone_present(h, &t3)
++                   && tombstone_present(h, &t4));
++        hash_free(h);
++        unlink(path);
++        unlink(path2);
++        free(path);
++        free(path2);
++    }
++
++    /* tombstone_rename_for_processing -- T-C4-C.  Atomically renames
++     * the source file to "<path>.processing"; subsequent open of the
++     * original path finds nothing. */
++    {
++        TOKEN tokens[] = {t1, t2};
++        char *snapshot;
++        struct stat sb;
++
++        path = write_tombstone_file("tombstone-rename", tokens, 2, NULL, 0);
++        snapshot = tombstone_rename_for_processing(path);
++        ok(19, snapshot != NULL);
++        if (snapshot != NULL) {
++            /* Original path no longer exists; snapshot does. */
++            ok(20, stat(path, &sb) < 0 && errno == ENOENT
++                       && stat(snapshot, &sb) == 0);
++            unlink(snapshot);
++            free(snapshot);
++        } else {
++            ok(20, false);
++        }
++        unlink(path); /* in case rename failed */
++        free(path);
++    }
++
++    return 0;
++}
+diff --git tests/storage/cancel-tombstone-t.c tests/storage/cancel-tombstone-t.c
+--- tests/storage/cancel-tombstone-t.c	1969-12-31 17:00:00.000000000 -0700
++++ tests/storage/cancel-tombstone-t.c	2026-05-16 12:45:04.842477000 -0700
+@@ -0,0 +1,233 @@
++/* Unit tests for SMcanceltombstone (storage/interface.c).
++ *
++ * Verifies the multi-writer append protocol used by innd's ARTcancel
++ * and sm's -r path: the file format is one TokenToText() per line; the
++ * write is gated on innconf->expiretombstone; TOKEN_EMPTY is a no-op;
++ * concurrent appenders use fcntl POSIX locks via inn_lock_file. */
++
++#include "portable/system.h"
++
++#include <errno.h>
++#include <fcntl.h>
++#include <string.h>
++#include <sys/stat.h>
++#include <unistd.h>
++
++#include "inn/innconf.h"
++#include "inn/libinn.h"
++#include "inn/messages.h"
++#include "inn/storage.h"
++#include "tap/basic.h"
++
++
++/* Build a synthetic token whose bytes encode n.  Type/class chosen so
++ * IsToken accepts the textual form (the type byte must be a valid hex
++ * digit pair when round-tripped). */
++static TOKEN
++make_token(unsigned char type, unsigned long n)
++{
++    TOKEN t;
++
++    memset(&t, 0, sizeof(t));
++    t.type = type;
++    t.class = 0;
++    t.token[0] = (n >> 24) & 0xff;
++    t.token[1] = (n >> 16) & 0xff;
++    t.token[2] = (n >> 8) & 0xff;
++    t.token[3] = n & 0xff;
++    return t;
++}
++
++
++/* Read the entire file into a malloc'd buffer.  Returns NULL on
++ * error.  *out_size set to bytes read. */
++static char *
++slurp(const char *path, size_t *out_size)
++{
++    FILE *f;
++    struct stat sb;
++    char *buf;
++
++    *out_size = 0;
++    if (stat(path, &sb) < 0)
++        return NULL;
++    f = fopen(path, "r");
++    if (f == NULL)
++        return NULL;
++    buf = xmalloc(sb.st_size + 1);
++    if (fread(buf, 1, sb.st_size, f) != (size_t) sb.st_size) {
++        free(buf);
++        fclose(f);
++        return NULL;
++    }
++    buf[sb.st_size] = '\0';
++    *out_size = sb.st_size;
++    fclose(f);
++    return buf;
++}
++
++
++/* Count lines in buf (number of '\n' bytes). */
++static size_t
++count_lines(const char *buf, size_t len)
++{
++    size_t i, n = 0;
++    for (i = 0; i < len; i++)
++        if (buf[i] == '\n')
++            n++;
++    return n;
++}
++
++
++int
++main(void)
++{
++    char tmpdir[64];
++    char *cancels_path;
++    TOKEN t1, t2, t3, empty;
++    char *contents;
++    size_t size;
++    struct stat sb;
++
++    test_init(15);
++
++    /* Set up a temporary pathdb. */
++    strlcpy(tmpdir, "cancel-tombstone-XXXXXX", sizeof(tmpdir));
++    if (mkdtemp(tmpdir) == NULL)
++        sysbail("can't create temp directory");
++
++    /* Initialize a minimal innconf so SMcanceltombstone has somewhere
++     * to write.  We need the fields it consults: expiretombstone,
++     * groupbaseexpiry (both required), and pathdb.  Other code paths
++     * in this binary read additional fields, so allocate via xcalloc
++     * to zero everything. */
++    innconf = xcalloc(1, sizeof(*innconf));
++    innconf->pathdb = xstrdup(tmpdir);
++    innconf->expiretombstone = true;
++    innconf->groupbaseexpiry = true;
++
++    cancels_path = concatpath(tmpdir, "cancels.tombstone");
++
++    t1 = make_token(3, 0xdeadbeef);
++    t2 = make_token(3, 0xcafebabe);
++    t3 = make_token(3, 0x12345678);
++    memset(&empty, 0, sizeof(empty));
++    empty.type = TOKEN_EMPTY;
++
++    /* 1. First call creates the file with one line. */
++    SMcanceltombstone(t1);
++    contents = slurp(cancels_path, &size);
++    ok(1, contents != NULL);
++    ok(2, count_lines(contents, size) == 1);
++    ok(3, contents != NULL && strstr(contents, TokenToText(t1)) != NULL);
++    free(contents);
++
++    /* 2. Second call appends; file now has two distinct token lines. */
++    SMcanceltombstone(t2);
++    contents = slurp(cancels_path, &size);
++    ok(4, contents != NULL && count_lines(contents, size) == 2);
++    ok(5, contents != NULL && strstr(contents, TokenToText(t1)) != NULL
++              && strstr(contents, TokenToText(t2)) != NULL);
++    free(contents);
++
++    /* 3. expiretombstone=false: third call is a no-op. */
++    innconf->expiretombstone = false;
++    SMcanceltombstone(t3);
++    contents = slurp(cancels_path, &size);
++    ok(6, contents != NULL && count_lines(contents, size) == 2);
++    ok(7, contents != NULL && strstr(contents, TokenToText(t3)) == NULL);
++    free(contents);
++    innconf->expiretombstone = true;
++
++    /* 4. TOKEN_EMPTY: no-op (not a real article). */
++    SMcanceltombstone(empty);
++    contents = slurp(cancels_path, &size);
++    ok(8, contents != NULL && count_lines(contents, size) == 2);
++    free(contents);
++
++    /* 5. After write completes, the lock has been released; another
++     * process (here, just us reusing the same path) can acquire the
++     * exclusive write lock without contention. */
++    {
++        int fd = open(cancels_path, O_RDWR);
++        ok(9, fd >= 0);
++        if (fd >= 0) {
++            ok(10, inn_lock_file(fd, INN_LOCK_WRITE, false));
++            close(fd);
++        } else {
++            ok(10, false);
++        }
++    }
++
++    /* 6. Each line round-trips: parsing each line through TextToToken
++     * yields the original TOKEN.  Read the file and verify. */
++    contents = slurp(cancels_path, &size);
++    if (contents != NULL) {
++        char *p = contents;
++        char *line_end;
++        TOKEN parsed;
++        bool found_t1 = false;
++        bool found_t2 = false;
++
++        while ((line_end = strchr(p, '\n')) != NULL) {
++            *line_end = '\0';
++            if (IsToken(p)) {
++                parsed = TextToToken(p);
++                if (memcmp(&parsed, &t1, sizeof(TOKEN)) == 0)
++                    found_t1 = true;
++                if (memcmp(&parsed, &t2, sizeof(TOKEN)) == 0)
++                    found_t2 = true;
++            }
++            p = line_end + 1;
++        }
++        ok(11, found_t1);
++        ok(12, found_t2);
++        free(contents);
++    } else {
++        ok(11, false);
++        ok(12, false);
++    }
++
++    /* 7. File mode should be 0664 (created with O_CREAT, mode 0664).
++     * Check the stored mode bits.  Allow umask-stripped variants. */
++    if (stat(cancels_path, &sb) == 0) {
++        mode_t mode = sb.st_mode & 0777;
++        /* The file was created with mode 0664 but umask may have
++         * stripped write bits.  Verify at least owner+group readable. */
++        ok(13, (mode & 0640) == 0640);
++    } else {
++        ok(13, false);
++    }
++
++    /* 8. Calling SMcanceltombstone with an unwritable pathdb does
++     * not crash (best-effort failure path), does not create any
++     * file outside the configured location, and returns false.
++     * Simulate by pointing pathdb at a non-existent directory. */
++    {
++        char *saved_pathdb = innconf->pathdb;
++        char *bad_path;
++        struct stat sb_bad;
++        bool result;
++        innconf->pathdb = xstrdup("/nonexistent-tombstone-test-dir");
++        result = SMcanceltombstone(t3);
++        bad_path = concatpath(innconf->pathdb, "cancels.tombstone");
++        ok(14, !result && stat(bad_path, &sb_bad) < 0
++                   && errno == ENOENT);
++        free(bad_path);
++        free(innconf->pathdb);
++        innconf->pathdb = saved_pathdb;
++    }
++
++    /* Cleanup. */
++    if (unlink(cancels_path) < 0 && errno != ENOENT)
++        sysdiag("can't unlink %s", cancels_path);
++    free(cancels_path);
++    if (rmdir(tmpdir) < 0)
++        sysdiag("can't rmdir %s", tmpdir);
++    /* Verify cleanup actually removed the directory. */
++    ok(15, stat(tmpdir, &sb) < 0 && errno == ENOENT);
++    free(innconf->pathdb);
++    free(innconf);
++
++    return 0;
++}

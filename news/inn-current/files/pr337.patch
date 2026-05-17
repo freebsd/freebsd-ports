@@ -1,0 +1,87 @@
+From 93a36682f7ba9d013d07859882c2b8c501da249e Mon Sep 17 00:00:00 2001
+From: Kevin Bowling <kevin.bowling@kev009.com>
+Date: Wed, 29 Apr 2026 13:54:21 -0700
+Subject: [PATCH] ovsqlite: add mmapsize configuration
+
+---
+ doc/pod/ovsqlite.pod               | 11 +++++++++++
+ samples/ovsqlite.conf              |  7 +++++++
+ storage/ovsqlite/ovsqlite-server.c | 11 +++++++++++
+ 3 files changed, 29 insertions(+)
+
+diff --git doc/pod/ovsqlite.pod doc/pod/ovsqlite.pod
+index 96a6b3165..3090d5bcb 100644
+--- doc/pod/ovsqlite.pod
++++ doc/pod/ovsqlite.pod
+@@ -67,6 +67,17 @@ is consulted only when creating a new database.  Enabling compression
+ saves about S<55 %> of disk space on standard overview data.  The default
+ value is false.
+ 
++=item I<mmapsize>
++
++The maximum number of bytes of the database file that SQLite will
++memory-map.  When set, SQLite reads data directly from the operating
++system's page cache via mmap instead of copying it into its own page
++cache, which can significantly improve read performance for large
++databases.  A good starting value is the size of the database file
++or the amount of available memory, whichever is smaller.  For example,
++a value of C<4294967296> allows up to S<4 GB> to be memory-mapped.
++The default value of 0 disables memory-mapped I/O.
++
+ =item I<pagesize>
+ 
+ The SQLite database page size in bytes.  Must be a power of 2, minimum 512,
+diff --git samples/ovsqlite.conf samples/ovsqlite.conf
+index cba4f7277..a2e2e204f 100644
+--- samples/ovsqlite.conf
++++ samples/ovsqlite.conf
+@@ -10,6 +10,13 @@
+ # The default value is false.
+ #compress:              false
+ 
++# The maximum number of bytes of the database file that SQLite will
++# memory-map.  When set, SQLite reads data via mmap instead of copying
++# into its own page cache, which can improve read performance for large
++# databases.  A good value is the database file size or available memory,
++# whichever is smaller.  Set to 0 (the default) to disable.
++#mmapsize:              0
++
+ # The SQLite database page size in bytes.
+ # Must be a power of 2, minimum 512, maximum 65536.
+ # Appropriate values include the virtual memory page size and the
+diff --git storage/ovsqlite/ovsqlite-server.c storage/ovsqlite/ovsqlite-server.c
+index f04df77e7..afc20e46b 100644
+--- storage/ovsqlite/ovsqlite-server.c
++++ storage/ovsqlite/ovsqlite-server.c
+@@ -119,6 +119,7 @@ static sql_main_t sql_main;
+ static bool use_compression;
+ static unsigned long pagesize;
+ static unsigned long cachesize;
++static unsigned long mmapsize;
+ static struct timeval transaction_time_limit = {10, 0};
+ static unsigned long transaction_row_limit = 10000;
+ 
+@@ -386,6 +387,7 @@ load_config(void)
+         config_param_boolean(top, "compress", &use_compression);
+         config_param_unsigned_number(top, "pagesize", &pagesize);
+         config_param_unsigned_number(top, "cachesize", &cachesize);
++        config_param_unsigned_number(top, "mmapsize", &mmapsize);
+         if (config_param_real(top, "transtimelimit", &timelimit)) {
+             transaction_time_limit.tv_sec = (long) timelimit;
+             transaction_time_limit.tv_usec =
+@@ -656,6 +658,15 @@ open_db(void)
+             sqlite3_free(errmsg);
+         }
+     }
++    if (mmapsize) {
++        snprintf(sqltext, sizeof sqltext, "pragma mmap_size = %lu;",
++                 mmapsize);
++        status = sqlite3_exec(connection, sqltext, 0, NULL, &errmsg);
++        if (status != SQLITE_OK) {
++            warn("cannot set mmap size: %s", errmsg);
++            sqlite3_free(errmsg);
++        }
++    }
+ }
+ 
+ static void
