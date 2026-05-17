@@ -1,11 +1,12 @@
 PORTNAME=	ignition-cmake
-DISTVERSION=	2.0.0
+DISTVERSIONPREFIX=	ignition-cmake2_
+DISTVERSION=	2.18.0
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CMake modules to be used by the Ignition projects
-WWW=		https://ignitionrobotics.org/home
+WWW=		https://gazebosim.org/home \
+		https://github.com/gazebosim/gz-cmake
 
 LICENSE=	APACHE20
 
@@ -13,11 +14,10 @@ USES=		cmake pkgconfig ruby
 
 CMAKE_OFF=	BUILD_TESTING
 
-BB_ACCOUNT=	ignitionrobotics
-BB_PROJECT=	ign-cmake
-BB_COMMIT=	776c2bfe1d18
+USE_GITHUB=	yes
+GH_ACCOUNT=	gazebosim
+GH_PROJECT=	gz-cmake
 
-WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 NO_ARCH=	yes
 
 PLIST_SUB+=	CMAKE_IGN_VER=cmake${DISTVERSION:R:R}
