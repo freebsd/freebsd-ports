@@ -1,8 +1,6 @@
 PORTNAME=	odin2-synthesizer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.4-13
-DISTVERSIONSUFFIX=	-gc8d3861f
-PORTREVISION=	2
+DISTVERSION=	2.4.1
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,10 +18,11 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2
 
-USES=		gl cmake localbase:ldflags pkgconfig xorg
+USES=		gl cmake dos2unix localbase:ldflags pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11 xcursor xext xinerama xrandr xrender # for juce
 
+CMAKE_ARGS=	-DODIN2_COPY_PLUGIN_AFTER_BUILD:BOOL=OFF
 USE_GITHUB=	yes
 GH_ACCOUNT=	TheWaveWarden
 GH_PROJECT=	odin2
@@ -32,6 +31,7 @@ GH_TUPLE=	surge-synthesizer:tuning-library:8eb7232ac24ac2f97a052063161c0c4f5fd76
 		free-audio:clap-juce-extensions:f11e8c3284e7ff2629534148cbd98da9f602bfea:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
 			free-audio:clap:84ad6fe9739d3070ed0eb05c24be303a899ab813:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
 			free-audio:clap-helpers:2bb43c18788c689708ead6f127a2d75e772ab389:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers \
+		nlohmann:json:960b763:nlohmann_json/libs/json \
 		lv2-porting-project:JUCE:b8fb637be2f7d6bb3bd2f104c4c798ec79b2f2f1:lv2_porting_project_JUCE/libs/JUCELV2
 
 CXXFLAGS+=	-DJUCE_CUSTOM_VST3_SDK=1

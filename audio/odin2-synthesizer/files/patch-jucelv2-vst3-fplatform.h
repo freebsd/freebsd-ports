@@ -1,14 +1,7 @@
---- libs/JUCELV2/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h.orig	2022-02-11 05:09:33 UTC
+-- Add FreeBSD support to VST3 SDK fplatform.h.
+
+--- libs/JUCELV2/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h.orig	2026-05-17 03:55:19 UTC
 +++ libs/JUCELV2/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h
-@@ -57,7 +57,7 @@
- 	#define BYTEORDER kLittleEndian
- 	
- 	#define COM_COMPATIBLE	1
--	#define PLUGIN_API __stdcall
-+	#define __stdcall
- 	#define SMTG_PTHREADS	0
- 
- 	#define SMTG_EXPORT_SYMBOL __declspec (dllexport)
 @@ -95,7 +95,7 @@
  //-----------------------------------------------------------------------------
  // LINUX
