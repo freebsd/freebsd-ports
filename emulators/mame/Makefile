@@ -1,5 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.287
+DISTVERSION=	0.288
 CATEGORIES=	emulators games
 
 MAINTAINER=	laurent@FreeBSD.org
@@ -106,7 +106,7 @@ SSE2_DESC=			Build with Streaming SIMD Extensions 2
 TOOLS_DESC=			Tools for archiving, development, and multimedia
 
 DEBUG_MAKE_ENV=				DEBUG=1 \
-					OPTIMIZE=g \
+					SYMBOLS=1 \
 					STRIP_SYMBOLS=0
 DEBUG_MAKE_ENV_OFF=			STRIP_SYMBOLS=1
 # Attempt to avoid address space exhaustion during linking, specifically
@@ -139,8 +139,7 @@ OPENMP_MAKE_ENV=			OPENMP=1
 OPENMP_MAKE_ENV_OFF=			OPENMP=0
 QTDEBUGGER_USES=			qt:6
 QTDEBUGGER_USE=				QT=base,tools:build
-QTDEBUGGER_MAKE_ENV=			QT_HOME="${PREFIX}" \
-					USE_QTDEBUG=1
+QTDEBUGGER_MAKE_ENV=			USE_QTDEBUG=1
 QTDEBUGGER_MAKE_ENV_OFF=		USE_QTDEBUG=0
 SIZE_OPTIMIZED_CFLAGS_MAKE_ENV=		OPTIMIZE=s
 SIZE_OPTIMIZED_CFLAGS_CXXFLAGS=		-Os
@@ -197,9 +196,9 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-3rdparty_lzma_C_AesOpt.c
 # Compiling with -pg (PROFILE) causes the linker to run out of memory on i386,
 # build with less profiling data:
 .if ${ARCH:Mi386}
-DEBUG_MAKE_ENV=		PROFILER=1
+DEBUG_MAKE_ENV+=	PROFILER=1
 .else
-DEBUG_MAKE_ENV=		PROFILE=1
+DEBUG_MAKE_ENV+=	PROFILE=1
 .endif
 
 .if empty(PORT_OPTIONS:MMAME) && empty(PORT_OPTIONS:MMAMENL) && \

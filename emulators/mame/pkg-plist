@@ -850,6 +850,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/apple2_flop_clcracked.xml
 %%MAMEDATA%%%%DATADIR%%/hash/apple2_flop_misc.xml
 %%MAMEDATA%%%%DATADIR%%/hash/apple2_flop_orig.xml
+%%MAMEDATA%%%%DATADIR%%/hash/apple2_rom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/apple2gs_flop_clcracked.xml
 %%MAMEDATA%%%%DATADIR%%/hash/apple2gs_flop_misc.xml
 %%MAMEDATA%%%%DATADIR%%/hash/apple2gs_flop_orig.xml
@@ -1092,6 +1093,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/jakks_gamekey_nk.xml
 %%MAMEDATA%%%%DATADIR%%/hash/jakks_gamekey_nm.xml
 %%MAMEDATA%%%%DATADIR%%/hash/jakks_gamekey_sw.xml
+%%MAMEDATA%%%%DATADIR%%/hash/jakks_gamekey_wp.xml
 %%MAMEDATA%%%%DATADIR%%/hash/jaminator.xml
 %%MAMEDATA%%%%DATADIR%%/hash/jazz.xml
 %%MAMEDATA%%%%DATADIR%%/hash/jb3000_flop.xml
@@ -1180,6 +1182,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/mobigo_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/monon_color.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpc3000_flop.xml
+%%MAMEDATA%%%%DATADIR%%/hash/mpc60_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpf1_rom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpu1000.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpz80.xml
@@ -1254,6 +1257,8 @@
 %%MAMEDATA%%%%DATADIR%%/hash/orionpro_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/osborne1.xml
 %%MAMEDATA%%%%DATADIR%%/hash/osborne2.xml
+%%MAMEDATA%%%%DATADIR%%/hash/p2000_cart.xml
+%%MAMEDATA%%%%DATADIR%%/hash/p2000_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/p500_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/partner_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/partner_flop.xml
@@ -1279,6 +1284,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/pc8801_cdrom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc8801_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc88va.xml
+%%MAMEDATA%%%%DATADIR%%/hash/pc88va_flop_orig.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc98.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc98_cd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc98_flop_orig.xml
@@ -1317,6 +1323,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/plus4_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/plus4_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/plus4_flop.xml
+%%MAMEDATA%%%%DATADIR%%/hash/plus4_quik.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pmd85_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pockchalv2.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pockchalw.xml
@@ -1325,6 +1332,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/pokemini.xml
 %%MAMEDATA%%%%DATADIR%%/hash/poly_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/polysix.xml
+%%MAMEDATA%%%%DATADIR%%/hash/popstar_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/precur2w_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/princ.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pro128_cart.xml
@@ -1337,6 +1345,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/psion1.xml
 %%MAMEDATA%%%%DATADIR%%/hash/psion2.xml
 %%MAMEDATA%%%%DATADIR%%/hash/psion_flop.xml
+%%MAMEDATA%%%%DATADIR%%/hash/psion_quik.xml
 %%MAMEDATA%%%%DATADIR%%/hash/psion_ssd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/psx.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pt68k2.xml
@@ -1542,10 +1551,12 @@
 %%MAMEDATA%%%%DATADIR%%/hash/x1_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/x1_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/x37_flop.xml
+%%MAMEDATA%%%%DATADIR%%/hash/x37_hdd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/x68k_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/xegs.xml
 %%MAMEDATA%%%%DATADIR%%/hash/xerox820.xml
 %%MAMEDATA%%%%DATADIR%%/hash/xerox820ii.xml
+%%MAMEDATA%%%%DATADIR%%/hash/yeno_laptop_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/z80clock.xml
 %%MAMEDATA%%%%DATADIR%%/hash/z80ne_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/z80ne_flop.xml
