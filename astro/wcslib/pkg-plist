@@ -40,6 +40,7 @@ include/wcslib-%%VERSION%%/wcsfix.inc
 include/wcslib-%%VERSION%%/wcshdr.h
 include/wcslib-%%VERSION%%/wcshdr.inc
 include/wcslib-%%VERSION%%/wcslib.h
+include/wcslib-%%VERSION%%/wcslimits.h
 include/wcslib-%%VERSION%%/wcsmath.h
 include/wcslib-%%VERSION%%/wcsmath.inc
 include/wcslib-%%VERSION%%/wcsprintf.h
@@ -78,6 +79,7 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/cel_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clipboard.js
+%%PORTDOCS%%%%DOCSDIR%%/html/codefolding.js
 %%PORTDOCS%%%%DOCSDIR%%/html/cookie.js
 %%PORTDOCS%%%%DOCSDIR%%/html/deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/diagnostics.html
@@ -87,7 +89,6 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_crawl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fitshdr_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fitshdr_8h_source.html
@@ -348,7 +349,6 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_z.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/limits.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lin_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lin_8h_source.html
@@ -549,6 +549,8 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/wcshdr_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcslib_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcslib_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/wcslimits_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/wcslimits_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsmath_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsmath_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsprintf_8h.html
