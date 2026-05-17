@@ -1,5 +1,6 @@
 PORTNAME=	libfyaml
 DISTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/pantoniou/libfyaml/releases/download/v${DISTVERSION}/
 
