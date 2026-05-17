@@ -1,7 +1,6 @@
 PORTNAME=	torchmetrics
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
-PORTREVISION=	3
+DISTVERSION=	1.9.0
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ WWW=		https://lightning.ai/docs/torchmetrics/stable/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lightning-utilities>=0.8.0:misc/py-lightning-utilities@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lightning-utilities>=0.15.3:misc/py-lightning-utilities@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>=3.6:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>17.1:devel/py-packaging@${PY_FLAVOR} \
