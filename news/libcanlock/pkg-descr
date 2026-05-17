@@ -1,0 +1,10 @@
+libcanlock is a standalone implementation of RFC 8315 Netnews Cancel-Locks
+without external dependencies.  It uses the recommended algorithm from
+Section 4 of the RFC with HMAC based on the same hash function as the
+selected Cancel-Lock scheme.
+
+The package installs:
+- libcanlock, a C library for creating and verifying Cancel-Locks;
+- canlock, a command line frontend to the library;
+- libcanlock-hp and the canlock-hfp/canlock-mhp utilities, which parse
+  Cancel-Lock and Cancel-Key article header fields (RFC 8315 receivers).

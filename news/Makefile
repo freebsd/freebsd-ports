@@ -24,6 +24,7 @@
     SUBDIR += inn-current
     SUBDIR += knews
     SUBDIR += leafnode
+    SUBDIR += libcanlock
     SUBDIR += lusernet
     SUBDIR += mail2nntp
     SUBDIR += mmail
