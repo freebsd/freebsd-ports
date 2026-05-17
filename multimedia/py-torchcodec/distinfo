@@ -1,5 +1,3 @@
-TIMESTAMP = 1777603296
-SHA256 (meta-pytorch-torchcodec-v0.11.1_GH0.tar.gz) = df0fbc3a1115f55cfcba0d8b241569354ade1deb6e180dcf8631f4c57853bcdf
-SIZE (meta-pytorch-torchcodec-v0.11.1_GH0.tar.gz) = 12663808
-SHA256 (906a2753082f6591df841331c7713a8c30e1f7f4.patch) = 06985809525b9e44fb401dea8e477fd5c0107058ef3fdd6faac4f516c2da6a13
-SIZE (906a2753082f6591df841331c7713a8c30e1f7f4.patch) = 997
+TIMESTAMP = 1778963179
+SHA256 (meta-pytorch-torchcodec-v0.12.0_GH0.tar.gz) = f0cc21c1f99439cff30eb43080e9bc8e43c6b9505b4f327cb42ee132075bcec4
+SIZE (meta-pytorch-torchcodec-v0.12.0_GH0.tar.gz) = 14265182
