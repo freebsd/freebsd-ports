@@ -1,7 +1,6 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.1
-PORTREVISION=	2
+DISTVERSION=	0.27.0
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,27 +15,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	compilation fails: Go fails: cannot use math.MaxInt64 (untyped int constant 9223372036854775807) as int value in argument to strconv.Itoa (overflows)
 BROKEN_i386=	compilation fails: Go fails: cannot use math.MaxInt64 (untyped int constant 9223372036854775807) as int value in argument to strconv.Itoa (overflows)
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.3:devel/py-appdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click>=7.1:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docker-pycreds>=0.4.0:security/py-docker-pycreds@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=1.0.0:devel/py-gitpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pathtools>0:devel/py-pathtools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3.19.0:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=5.0.0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>4.21.0:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.6:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0,<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=1.0.0:devel/py-sentry-sdk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plotly>0:graphics/py-plotly@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>0:www/py-httpx@${PY_FLAVOR} \
@@ -64,9 +55,12 @@ CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TEST=		no
 CARGO_CONFIGURE=	no
+CARGO_CARGOTOML=	${WRKSRC}/xpu/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/xpu/Cargo.lock
 CARGO_VENDOR_DIR=	${WRKSRC}/cargo-crates
 
-MAKE_ENV+=	CARGO_HOME=${WRKDIR}/cargo-home
+MAKE_ENV+=	CARGO_HOME=${WRKDIR}/cargo-home \
+		GOTOOLCHAIN=local
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # Skip tests requiring optional integrations not available as FreeBSD ports:
@@ -116,5 +110,13 @@ post-configure:
 	@${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> ${WRKSRC}/.cargo/config.toml
 	@${ECHO_CMD} "[source.crates-io]" >> ${WRKSRC}/.cargo/config.toml
 	@${ECHO_CMD} "replace-with = 'cargo'" >> ${WRKSRC}/.cargo/config.toml
+
+post-install:
+	@if [ -f ${STAGEDIR}${PREFIX}/bin/wandb-${PYTHON_VER} ]; then \
+		${MV} ${STAGEDIR}${PREFIX}/bin/wandb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wandb; \
+	fi
+	@if [ -f ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ]; then \
+		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
+	fi
 
 .include <bsd.port.mk>

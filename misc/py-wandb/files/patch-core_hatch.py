@@ -5,9 +5,9 @@
 -- wandb-core binary fails at runtime with "Undefined symbol environ".
 -- See: https://github.com/ebitengine/purego/blob/v0.10.0/internal/fakecgo/freebsd.go
 
---- core/hatch.py.orig	2026-04-28 03:37:39 UTC
+--- core/hatch.py.orig	2026-05-16 20:53:29 UTC
 +++ core/hatch.py
-@@ -4,6 +4,7 @@ import pathlib
+@@ -4,6 +4,7 @@
  
  import os
  import pathlib
@@ -15,7 +15,7 @@
  import shutil
  import subprocess
  from collections.abc import Mapping
-@@ -57,6 +58,12 @@ def build_wandb_core(
+@@ -57,6 +58,12 @@
  
      vendor_flags = ["-mod=vendor"]
  
@@ -28,7 +28,7 @@
      # We have to invoke Go from the directory with go.mod, hence the
      # paths relative to ./core
      subprocess.check_call(
-@@ -66,6 +73,7 @@ def build_wandb_core(
+@@ -66,6 +73,7 @@
              *build_tags,
              *coverage_flags,
              *race_detect_flags,
