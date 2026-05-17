@@ -1,5 +1,6 @@
 PORTNAME=	tin
 DISTVERSION=	2.6.5
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	https://ftp.icm.edu.pl/pub/unix/news/tin/v${DISTVERSION:R}/ \
 		ftp://ftp.tin.org/pub/news/clients/tin/v${DISTVERSION:R}/
@@ -43,7 +44,7 @@ CONFIGURE_ARGS=		--with-editor=${TIN_EDITOR} \
 
 OPTIONS_DEFINE=		CANLOCK GNUPG ISPELL METAMAIL NLS NNTP_ONLY \
 			NNTPS SLRNFACE
-OPTIONS_DEFAULT=	GNUPG ISPELL METAMAIL NNTPS
+OPTIONS_DEFAULT=	CANLOCK GNUPG ISPELL METAMAIL NNTPS
 OPTIONS_SUB=		yes
 
 CANLOCK_DESC=		Enable Cancel-Lock key support via libcanlock
@@ -52,7 +53,9 @@ NNTP_ONLY_DESC=		Only read news via NNTP (no spool dir support)
 NNTPS_DESC=		Enable NNTPS
 SLRNFACE_DESC=		Use slrnface to displace sender images
 
+CANLOCK_LIB_DEPENDS=		libcanlock.so:news/libcanlock
 CANLOCK_CONFIGURE_ENABLE=	cancel-locks
+CANLOCK_CONFIGURE_ON=		--with-canlock=yes
 
 ISPELL_RUN_DEPENDS=		ispell:textproc/aspell-ispell
 ISPELL_CONFIGURE_ON=		--with-ispell=${LOCALBASE}/bin/ispell
