@@ -1,6 +1,5 @@
 PORTNAME=	jython
-PORTVERSION=	2.7.0
-PORTREVISION=	2
+PORTVERSION=	2.7.4
 DISTVERSIONPREFIX=	installer-
 CATEGORIES=	lang python java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/python/jython-installer/${PORTVERSION}/
@@ -52,9 +51,6 @@ do-install:
 	${REINPLACE_CMD} \
 		's,if expr "$$link" : '\''/'\'' > /dev/null; then,if expr "$$link" : '\''^/'\'' > /dev/null; then,' \
 		${STAGEDIR}${JYTHON_PREFIX}/bin/jython
-# Delete python.cachedir entry from Jython's registry file
-	${REINPLACE_CMD} 's/^python\.cachedir/#&/g' \
-		${STAGEDIR}${JYTHON_PREFIX}/registry
 # Compile all the *.py files to *$py.class files, override HOME and user.home to place
 # .jython-cachedir and .jline-jython.history in WRKDIR
 	-HOME=${WRKDIR} JAVA_OPTS="-Duser.home=${WRKDIR}" \
