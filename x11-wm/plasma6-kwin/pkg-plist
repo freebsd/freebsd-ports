@@ -1537,6 +1537,7 @@ share/locale/si/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/si/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/si/LC_MESSAGES/kcmkwm.mo
 share/locale/si/LC_MESSAGES/kwin.mo
+share/locale/sk/LC_MESSAGES/kcm_animations.mo
 share/locale/sk/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/sk/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/sk/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
