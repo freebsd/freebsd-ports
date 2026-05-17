@@ -1,5 +1,5 @@
 PORTNAME=	mpi4py
-DISTVERSION=	4.1.1
+DISTVERSION=	4.1.2
 CATEGORIES=	net parallel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,11 @@ WWW=		https://github.com/mpi4py/mpi4py
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		pkgconfig python
-USE_PYTHON=	autoplist concurrent cython distutils
+USE_PYTHON=	autoplist concurrent cython pep517
 
 LDFLAGS+=	${MPI_LIBS}
 
@@ -37,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${FORTRAN_DEFAULT} == gfortran
+.if ${MP} == "MPICH" && ${FORTRAN_DEFAULT} == gfortran
 LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 .endif
 
