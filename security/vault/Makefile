@@ -1,7 +1,6 @@
 PORTNAME=	vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.4
-PORTREVISION=	2
+DISTVERSION=	2.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
 		LOCAL/bofh/security/${PORTNAME}/:web_ui
@@ -24,8 +23,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if defined(MAINTAINER_MODE)
-EXTRACT_DEPENDS=npm-node20>0:www/npm-node20 \
-		yarn-node20>0:www/yarn-node20
+EXTRACT_DEPENDS=npm-node20>0:www/npm-node20
 .endif
 
 USES=		cpe go:1.25+,modules
@@ -47,7 +45,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	ffe7023c481dc1ea2d8550bbaca8d85f8e611e0b
+GITID=	cf1ce4df8af6e323558bd5f8c37e771388cbc951
 
 .include <bsd.port.pre.mk>
 
@@ -61,9 +59,10 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 _make-web_ui: clean extract
-	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} yarn
+	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} npm install -g pnpm@latest-10
+	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} pnpm i
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} npm rebuild node-sass
-	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} yarn run build
+	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} pnpm run build
 	cd ${WRKDIR} && ${TAR} -czf \
 		${PORTNAME}-web_ui-${DISTVERSION}${EXTRACT_SUFX} -C ${WRKSRC}/http web_ui
 	scp ${WRKDIR}/${PORTNAME}-web_ui-${DISTVERSION}${EXTRACT_SUFX} \
