@@ -9,8 +9,6 @@ MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Event logging framework
 WWW=		http://zeitgeist.freedesktop.org/
 
-BROKEN=		plist issues, stray python bytecode files
-
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
@@ -29,7 +27,6 @@ GL_TAGNAME=	8b89364c077b46734d193c5b8a80f83b0fc917dd
 USE_GNOME=	cairo gdkpixbuf glib20 intlhack \
 		introspection:build
 USE_LDCONFIG=	yes
-USE_PYTHON=	py3kplist
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
