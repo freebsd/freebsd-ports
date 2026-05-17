@@ -8,6 +8,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Application dock applet for the MATE panel
 WWW=		https://github.com/ubuntu-mate/mate-dock-applet
 
+BROKEN=		Broken plist
+
 LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
