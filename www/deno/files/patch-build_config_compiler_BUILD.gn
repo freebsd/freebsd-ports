@@ -1,5 +1,5 @@
---- cargo-crates/v8-147.0.0/build/config/compiler/BUILD.gn.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/v8-147.0.0/build/config/compiler/BUILD.gn
+--- cargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
 @@ -202,7 +202,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
    # debugging information which is required by some specialized
