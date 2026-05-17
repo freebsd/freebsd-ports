@@ -101,7 +101,7 @@ lib/cmake/libwebsockets/libwebsockets-config.cmake
 %%LIBUV%%lib/libwebsockets-evlib_uv.so
 lib/libwebsockets.a
 lib/libwebsockets.so
-lib/libwebsockets.so.20
+lib/libwebsockets.so.21
 libdata/pkgconfig/libwebsockets.pc
 libdata/pkgconfig/libwebsockets_static.pc
 %%PLUGINS%%%%DATADIR%%-test-server/deaddrop/deaddrop.css
