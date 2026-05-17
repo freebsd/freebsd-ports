@@ -10,6 +10,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 WWW=		https://wz2100.net/
 
+BROKEN=		Fails to build, error: no member named 'eVkColorspaceSrgbNonlinear' in 'vk::ColorSpaceKHR'
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
