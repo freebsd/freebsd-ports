@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event logging framework
 WWW=		https://wiki.gnome.org/Projects/Zeitgeist
 
+BROKEN=		plist issues, stray python bytecode files
+EXPIRATION_DATE=2026-07-31
+
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
