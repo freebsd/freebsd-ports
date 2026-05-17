@@ -1,10 +1,7 @@
 PORTNAME=	mac-vendor-lookup
-DISTVERSION=	0.1.12
-PORTREVISION=	1
+DISTVERSION=	0.1.13
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	mac_vendor_lookup-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Find the vendor for a given MAC address
@@ -19,6 +16,9 @@ RUN_DEPENDS=	\
 
 USES=		dos2unix python
 DOS2UNIX_FILES=	${WRKSRC}/setup.py
+USE_GITHUB=	yes
+GH_ACCOUNT=	bauerj
+GH_PROJECT=	${PORTNAME:S/-/_/g}
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
