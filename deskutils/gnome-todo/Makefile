@@ -9,6 +9,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small application to manage your personal tasks
 WWW=		https://wiki.gnome.org/Apps/Todo
 
+BROKEN=		fails to build, fatal error: 'girepository.h' file not found
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
