@@ -11,6 +11,9 @@ RUN_DEPENDS=	kde-baseapps>=${KDE_APPLICATIONS_VERSION}:x11/kde-baseapps
 USES=		kde:6 metaport qt:6
 USE_KDE=	${_USE_PLASMA_ALL:Nbreeze-gtk:Nkde-gtk-config:Noxygen:Noxygen-sounds}
 
+# Phonon framework is superseded by QtMultimedia. Remove the option once
+# the last consumers, namely editors/calligra, graphics/kphotoalbum,
+# graphics/okular, and irc/kvirc are ported away from Phonon.
 # The official VLC backend can be used, but vlc port still uses Qt5 for GUI.
 OPTIONS_DEFAULT=	MPV
 OPTIONS_MULTI=		PHONON
