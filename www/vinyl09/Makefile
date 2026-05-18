@@ -1,5 +1,5 @@
 PORTNAME=	vinyl
-DISTVERSION=	9.0.0
+DISTVERSION=	9.0.1
 CATEGORIES=	www
 MASTER_SITES=	https://vinyl-cache.org/downloads/
 PKGNAMESUFFIX=	09
@@ -48,6 +48,8 @@ post-patch:
 .if defined(BAD_TESTS)
 	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/vinyltest/tests/\0.vtc|}
 .endif
+	${REINPLACE_CMD} 's|^\(.*install_sh.*VINYL_STATE_DIR.*\)$$|\techo \1|' \
+		${WRKSRC}/Makefile.in
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/vinyl-cache
