@@ -1,5 +1,6 @@
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,7 +22,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext jpeg \
 USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		configwidgets coreaddons filemetadata guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets \
-		kimageformats kio libkdcraw notifications parts phonon \
+		kimageformats kio libkdcraw notifications parts \
 		purpose service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build

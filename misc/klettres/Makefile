@@ -1,5 +1,6 @@
 PORTNAME=	klettres
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,7 +9,7 @@ WWW=		https://edu.kde.org/klettres
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
-		crash i18n itemmodels newstuff phonon service widgetsaddons \
+		crash i18n itemmodels newstuff service widgetsaddons \
 		xmlgui \
 		doctools:build ecm:build
 USE_QT=		base multimedia
