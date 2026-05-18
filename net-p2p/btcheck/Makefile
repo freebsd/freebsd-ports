@@ -20,7 +20,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	SHA1
 SHA1_DESC=	Optimized SHA-1 calculation
-OPTIONS_RADIO_SHA1=	BEECRYPT GCRYPT GNUTLS NETTLE OPENSSL TOMCRYPT
+OPTIONS_RADIO_SHA1=	BEECRYPT GCRYPT GNUTLS MBEDTLS NETTLE OPENSSL TOMCRYPT
 OPTIONS_DEFAULT=	OPENSSL
 
 BEECRYPT_DESC=		Use SHA-1 implementation from BeeCrypt
@@ -37,6 +37,11 @@ GNUTLS_DESC=		Use SHA-1 implementation from GnuTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		localbase
 GNUTLS_CONFIGURE_ON=	--with-gnutls
+
+MBEDTLS_DESC=		Use SHA-1 implementation from mbedTLS/PolarSSL
+MBEDTLS_LIB_DEPENDS=	libmbedcrypto.so:security/mbedtls3
+MBEDTLS_USES=		localbase
+MBEDTLS_CONFIGURE_ON=	--with-polarssl
 
 NETTLE_DESC=		Use SHA-1 implementation from Nettle
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
