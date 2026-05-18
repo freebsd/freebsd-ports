@@ -1,12 +1,12 @@
 PORTNAME=	mdbx
-DISTVERSION=	0.13.11
+DISTVERSION=	0.13.12
 CATEGORIES=	databases
 MASTER_SITES=	https://libmdbx.dqdkfa.ru/release/
 DISTNAME=	libmdbx-amalgamated-${DISTVERSION}
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	Lightning Memory-Mapped Database (Extended)
-WWW=		https://github.com/erthink/libmdbx
+WWW=		https://libmdbx.dqdkfa.ru/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
