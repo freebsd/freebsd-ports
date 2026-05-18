@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2025-10-26 05:55:04 UTC
++++ CMakeLists.txt
+@@ -112,8 +112,8 @@ endif()
+ 
+ ########################################################################
+ 
+-include(FindICU)
+ find_package(ICU ${Required_Icu_Version} OPTIONAL_COMPONENTS uc i18n)
++include(FindICU)
+ 
+ include(CheckIncludeFiles)
+ include(CheckLibraryExists)
