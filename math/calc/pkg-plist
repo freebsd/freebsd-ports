@@ -1,16 +1,13 @@
 bin/calc
-%%FULL%%include/calc/alloc.h
 %%FULL%%include/calc/attribute.h
 %%FULL%%include/calc/banned.h
 %%FULL%%include/calc/blkcpy.h
 %%FULL%%include/calc/block.h
-%%FULL%%include/calc/bool.h
 %%FULL%%include/calc/byteswap.h
 %%FULL%%include/calc/calc.h
 %%FULL%%include/calc/cmath.h
 %%FULL%%include/calc/config.h
 %%FULL%%include/calc/custom.h
-%%FULL%%include/calc/decl.h
 %%FULL%%include/calc/errtbl.h
 %%FULL%%include/calc/file.h
 %%FULL%%include/calc/func.h
