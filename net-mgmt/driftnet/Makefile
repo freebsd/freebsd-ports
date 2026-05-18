@@ -7,8 +7,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to grab images out of (your) TCP connections
 WWW=		https://www.ex-parrot.com/~chris/driftnet/
 
-BROKEN=		Fails to build, error: incompatible pointer to integer conversion initializing 'unsigned char' with an expression of type 'void *'
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
