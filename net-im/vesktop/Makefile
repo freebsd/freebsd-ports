@@ -1,6 +1,5 @@
 PORTNAME=	vesktop
-DISTVERSION=	1.6.3
-PORTREVISION=	4
+DISTVERSION=	1.6.5
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/Vencord/Vesktop/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_${ARCH:S/aarch64/arm64/}
@@ -14,7 +13,7 @@ LICENSE=	GPLv3
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 
-USES=		electronfix:39
+USES=		electronfix:40
 ELECTRONFIX_MAIN_EXECUTABLE=	vesktop
 
 NO_BUILD=	yes
