@@ -1,5 +1,5 @@
 PORTNAME=	libmt32emu
-DISTVERSION=	2_7_3
+DISTVERSION=	2_8_0
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -9,7 +9,9 @@ WWW=		https://munt.sourceforge.net
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER.txt
 
-USES=		cmake
+TEST_DEPENDS=	doctest>0:devel/doctest
+
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	munt
@@ -17,6 +19,10 @@ GH_PROJECT=	munt
 GH_TAGNAME=	${PORTNAME}_${DISTVERSION}
 
 USE_LDCONFIG=	yes
+
+CMAKE_OFF=		BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING \
+			${PORTNAME}_TESTS_DETAILED
 
 EXTRACT_AFTER_ARGS=	--include ${GH_PROJECT}-${GH_TAGNAME}/mt32emu \
 			--no-same-owner --no-same-permissions
