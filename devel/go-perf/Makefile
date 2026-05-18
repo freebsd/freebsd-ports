@@ -1,8 +1,7 @@
 PORTNAME=	go-perf
 PORTVERSION=	${MODVERSION:S/-/./g:R}
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
-CATEGORIES=	devel
+CATEGORIES=	devel benchmarks
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Go performance measurement, storage, and analysis tools
@@ -12,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-MODVERSION=	0.0.0-20250605212013-b481878a17be
+MODVERSION=	0.0.0-20260512194132-3cf34090a3db
 GO_MODULE=	golang.org/x/perf@v${MODVERSION}
 
 GO_TARGET=	./cmd/benchsave \
