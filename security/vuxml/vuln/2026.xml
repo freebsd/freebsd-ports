@@ -7,7 +7,7 @@
       </package>
       <package>
       <name>varnish7</name>
-      <range><lt>8.0.1</lt></range>
+      <range><lt>7.7.3_1</lt></range>
       </package>
     </affects>
     <description>
