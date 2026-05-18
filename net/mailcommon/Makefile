@@ -1,5 +1,6 @@
 PORTNAME=	mailcommon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		guiaddons i18n iconthemes itemmodels itemviews jobwidgets kio \
-		phonon service solid sonnet syntaxhighlighting textwidgets \
+		service solid sonnet syntaxhighlighting textwidgets \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
 # pim components

@@ -1,5 +1,6 @@
 PORTNAME=	korganizer
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,7 @@ USE_GL=		gl
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kio newstuff \
-		notifications parts phonon service solid sonnet textwidgets \
+		notifications parts service solid sonnet textwidgets \
 		unitconversion userfeedback wallet widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build

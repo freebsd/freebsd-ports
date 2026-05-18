@@ -1,5 +1,6 @@
 PORTNAME=	kolf
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +12,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemviews jobwidgets kio libkdegames notifications parts \
-		phonon service solid sonnet textwidgets unitconversion \
+		service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		base declarative

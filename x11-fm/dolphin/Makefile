@@ -1,5 +1,6 @@
 PORTNAME=	dolphin
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-fm kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +20,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:6 qt:6 \
 USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
 		completion config configwidgets coreaddons crash dbusaddons \
 		itemmodels itemviews jobwidgets kcmutils kde-cli-tools kio \
-		newstuff notifications parts phonon service solid sonnet \
+		newstuff notifications parts service solid sonnet \
 		texteditor textwidgets userfeedback widgetsaddons windowsystem \
 		xmlgui \
 		doctools:build ecm:build
