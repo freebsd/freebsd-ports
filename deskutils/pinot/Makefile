@@ -1,6 +1,5 @@
 PORTNAME=	pinot
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.24
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -37,9 +36,9 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
 
-USES=		compiler:c++11-lang autoreconf gettext gnome libarchive	\
+USES=		compiler:c++17-lang autoreconf gettext gnome libarchive	\
 		libtool localbase pkgconfig python shebangfix sqlite:3 ssl xorg
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 USE_XORG=	pixman
 USE_GNOME=	atkmm cairo cairomm gdkpixbuf glibmm gtk30 gtkmm30	\
 		libsigc++20 libxml2 pangomm
