@@ -3,6 +3,7 @@
 # for the next lang/rust update.
 PORTNAME=	rust
 PORTVERSION=	1.95.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
