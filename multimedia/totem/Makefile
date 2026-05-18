@@ -9,6 +9,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gstreamer-based video player for the GNOME Desktop
 WWW=		https://apps.gnome.org/Totem/
 
+BROKEN=		error: typedef redefinition with different types ('struct _GIBaseInfo' vs 'struct _GIBaseInfoStub')
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
