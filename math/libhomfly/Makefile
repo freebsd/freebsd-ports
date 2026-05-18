@@ -1,5 +1,5 @@
 PORTNAME=	libhomfly
-DISTVERSION=	1.03
+DISTVERSION=	1.04
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/miguelmarco/${PORTNAME}/releases/download/${DISTVERSION}/
 
