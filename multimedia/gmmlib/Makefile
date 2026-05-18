@@ -1,6 +1,6 @@
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	22.5.4
+DISTVERSION=	22.10.0
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -13,9 +13,9 @@ PATCHFILES+=	ab150305017a.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	0d45ab8163e7.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	4ae2fd0de966.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tmp386@live.com
 COMMENT=	Intel Graphics Memory Management Library
-WWW=		https://01.org/intel-media-for-linux
+WWW=		https://github.com/intel/gmmlib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
