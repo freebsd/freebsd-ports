@@ -92,7 +92,6 @@
     SUBDIR += gnome-shell-extension-panel-osd
     SUBDIR += gnome-shell-extension-recent-items
     SUBDIR += gnome-shell-extension-simple-weather
-    SUBDIR += gnome-shell-extension-trash
     SUBDIR += gnome-shell-extra-extensions
     SUBDIR += gnome-sound-recorder
     SUBDIR += gnome-todo
