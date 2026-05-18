@@ -1,4 +1,4 @@
---- cargo-crates/v8-146.4.0/build/config/compiler/BUILD.gn.orig	2006-07-24 01:21:28 UTC
+--- cargo-crates/v8-146.4.0/build/config/compiler/BUILD.gn.orig	2026-05-17 20:29:57 UTC
 +++ cargo-crates/v8-146.4.0/build/config/compiler/BUILD.gn
 @@ -201,7 +201,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -92,6 +92,15 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
+@@ -1584,7 +1591,7 @@ config("compiler_cpu_abi") {
+           cflags += [ "-maix64" ]
+           ldflags += [ "-maix64" ]
+         }
+-      } else if (is_clang) {
++      } else if (is_clang && !is_bsd) {
+         cflags += [ "--target=powerpc64le-unknown-linux-gnu" ]
+         ldflags += [ "--target=powerpc64le-unknown-linux-gnu" ]
+       } else {
 @@ -1692,7 +1699,7 @@ config("compiler_deterministic") {
        "-file-prefix-map",
        rebase_path("//.", "") + "=" + rebase_path("//.", root_build_dir),
