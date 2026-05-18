@@ -1,0 +1,11 @@
+--- media/mojo/mojom/BUILD.gn.orig	2026-03-13 16:54:03 UTC
++++ media/mojo/mojom/BUILD.gn
+@@ -1033,7 +1033,7 @@ source_set("test_support") {
+   sources = []
+   deps = []
+ 
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     sources += [
+       "buffer_handle_test_util.cc",
+       "buffer_handle_test_util.h",

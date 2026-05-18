@@ -1,0 +1,16 @@
+--- chrome/browser/media_galleries/media_file_system_registry.cc.orig	2026-03-13 16:54:03 UTC
++++ chrome/browser/media_galleries/media_file_system_registry.cc
+@@ -572,7 +572,12 @@ MediaFileSystemRegistry::MediaFileSystemRegistry()
+ // Constructor in 'private' section because depends on private class definition.
+ MediaFileSystemRegistry::MediaFileSystemRegistry()
+     : file_system_context_(new MediaFileSystemContextImpl) {
+-  StorageMonitor::GetInstance()->AddObserver(this);
++  /*
++   * This conditional is needed for shutdown.  Destructors
++   * try to get the media file system registry.
++   */
++  if (StorageMonitor::GetInstance())
++    StorageMonitor::GetInstance()->AddObserver(this);
+ }
+ 
+ MediaFileSystemRegistry::~MediaFileSystemRegistry() {

@@ -1,0 +1,16 @@
+--- components/gwp_asan/buildflags/buildflags.gni.orig	2025-10-21 20:19:54 UTC
++++ components/gwp_asan/buildflags/buildflags.gni
+@@ -11,10 +11,10 @@ import("//build/config/compiler/compiler.gni")
+ # Android requires frame pointers for unwinding, unwind tables aren't shipped in
+ # official builds.
+ # iOS is disabled when !use_partition_alloc due to https://crbug.com/446856826
+-supported_platform =
+-    is_linux || is_chromeos || is_mac || (is_ios && use_partition_alloc) ||
++supported_platform = !is_bsd &&
++    (is_linux || is_chromeos || is_mac || (is_ios && use_partition_alloc) ||
+     (is_win && (current_cpu == "x64" || current_cpu == "arm64")) ||
+-    (is_android && !is_component_build && enable_frame_pointers)
++    (is_android && !is_component_build && enable_frame_pointers))
+ 
+ declare_args() {
+   # Is GWP-ASan malloc/PartitionAlloc hooking enabled for chrome/ on a given

@@ -1,0 +1,11 @@
+--- ui/strings/translations/app_locale_settings_bn.xtb.orig	2022-09-24 10:57:32 UTC
++++ ui/strings/translations/app_locale_settings_bn.xtb
+@@ -10,7 +10,7 @@
+   <translation id="IDS_WEB_FONT_FAMILY">Vrinda</translation>
+   <translation id="IDS_WEB_FONT_FAMILY_XP">Vrinda</translation>
+ </if>
+-<if expr="is_linux">
++<if expr="is_posix">
+   <translation id="IDS_WEB_FONT_FAMILY">Lohit Bengali</translation>
+ </if>
+ <if expr="is_chromeos">

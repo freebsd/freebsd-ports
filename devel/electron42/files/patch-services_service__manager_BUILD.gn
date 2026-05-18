@@ -1,0 +1,11 @@
+--- services/service_manager/BUILD.gn.orig	2025-03-24 20:50:14 UTC
++++ services/service_manager/BUILD.gn
+@@ -65,7 +65,7 @@ source_set("service_manager") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [ "//sandbox/linux:sandbox_services" ]
+   }
+ }

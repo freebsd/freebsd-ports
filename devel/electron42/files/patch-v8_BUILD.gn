@@ -1,0 +1,84 @@
+--- v8/BUILD.gn.orig	2026-05-12 08:53:52 UTC
++++ v8/BUILD.gn
+@@ -1045,6 +1045,8 @@ external_v8_defines = [
+   "V8_TARGET_OS_MACOS",
+   "V8_TARGET_OS_WIN",
+   "V8_TARGET_OS_CHROMEOS",
++  "V8_TARGET_OS_OPENBSD",
++  "V8_TARGET_OS_FREEBSD",
+   "V8_TARGET_ARCH_ARM64",
+   "V8_TARGET_ARCH_PPC64",
+   "V8_TARGET_ARCH_MIPS64",
+@@ -1129,6 +1131,12 @@ if (target_os == "android") {
+ } else if (target_os == "chromeos") {
+   enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
+   enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
++} else if (target_os == "openbsd") {
++  enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
++  enabled_external_v8_defines += [ "V8_TARGET_OS_OPENBSD" ]
++} else if (target_os == "freebsd") {
++  enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
++  enabled_external_v8_defines += [ "V8_TARGET_OS_FREEBSD" ]
+ }
+ 
+ # Some V8_TARGET_ARCH_ defines that affect Api constants (see usages of
+@@ -1796,7 +1804,7 @@ config("toolchain") {
+ 
+   if (is_clang) {
+     cflags += [ "-Wunreachable-code" ]
+-    if (v8_current_cpu != "ppc64" && v8_current_cpu != "s390x") {
++    if (v8_current_cpu != "ppc64" && v8_current_cpu != "s390x" && !is_bsd) {
+       cflags += [ "-Wlifetime-safety-permissive" ]
+     }
+ 
+@@ -1899,9 +1907,6 @@ config("strict_warnings") {
+       cflags += [ "-Wshorten-64-to-32" ]
+     }
+     cflags += [ "-Wmissing-field-initializers" ]
+-    if (v8_current_cpu != "ppc64" && v8_current_cpu != "s390x") {
+-      cflags += [ "-Wunnecessary-virtual-specifier" ]
+-    }
+   }
+ }
+ 
+@@ -2831,6 +2836,12 @@ template("run_mksnapshot") {
+       if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
+         args += [ "--reorder-builtins" ]
+       }
++
++      if (v8_current_cpu == "x86") {
++        args -= [
++          "--abort-on-bad-builtin-profile-data",
++        ]
++      }
+     }
+ 
+     # This is needed to distinguish between generating code for the simulator
+@@ -7250,7 +7261,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -7261,6 +7272,18 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_openbsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
++  } else if (is_freebsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",

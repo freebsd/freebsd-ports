@@ -1,0 +1,18 @@
+--- third_party/libvpx/libvpx_srcs.gni.orig	2026-04-28 21:06:17 UTC
++++ third_party/libvpx/libvpx_srcs.gni
+@@ -1863,7 +1863,6 @@ libvpx_srcs_arm64_neon_dotprod = [
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/sad4d_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/sad_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/sse_neon_dotprod.c",
+-  "//third_party/libvpx/source/libvpx/vpx_dsp/arm/subpel_variance_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/variance_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/vpx_convolve8_neon_dotprod.c",
+ ]
+@@ -2799,7 +2798,6 @@ libvpx_srcs_arm64_highbd_neon_dotprod = [
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/sad4d_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/sad_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/sse_neon_dotprod.c",
+-  "//third_party/libvpx/source/libvpx/vpx_dsp/arm/subpel_variance_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/variance_neon_dotprod.c",
+   "//third_party/libvpx/source/libvpx/vpx_dsp/arm/vpx_convolve8_neon_dotprod.c",
+ ]

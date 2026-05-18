@@ -1,0 +1,11 @@
+--- services/viz/public/mojom/BUILD.gn.orig	2026-04-28 21:06:17 UTC
++++ services/viz/public/mojom/BUILD.gn
+@@ -54,7 +54,7 @@ mojom("mojom") {
+ 
+   # Used in thread.mojom
+   enabled_features = []
+-  if (is_fuchsia || is_apple) {
++  if (is_fuchsia || is_apple || is_bsd) {
+     enabled_features += [ "thread_id_is_64_bit" ]
+   } else {
+     enabled_features += [ "thread_id_is_32_bit" ]
