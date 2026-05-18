@@ -1,6 +1,6 @@
 PORTNAME=	shodan
 PORTVERSION=	1.31.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-plugins>=1.0.3:devel/py-click-plugins@
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.2.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tldextract>=2:dns/py-tldextract@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>0:textproc/py-xlsxwriter@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

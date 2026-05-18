@@ -1,5 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	18.0.20251227
+PORTREVISION=	1
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	18
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GeoIP2>0:net/py-GeoIP2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asn1crypto>=0:devel/py-asn1crypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cbor2>0:devel/py-cbor2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
