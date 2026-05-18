@@ -40,6 +40,7 @@ DEMOS_DESC=		Build demos (not installed)
 DEMOS_CMAKE_BOOL=	ODE_WITH_DEMOS
 DEMOS_USES=		gl localbase pkgconfig
 DEMOS_USE=		GL=gl,glu
+DEMOS_BROKEN=		error: use of undeclared identifier 'mem_fun'; did you mean 'mem_fn'?
 
 GIMPACT_DESC=		Enable gimpact instead of opcode support
 GIMPACT_CMAKE_BOOL=	ODE_WITH_GIMPACT
