@@ -30,7 +30,6 @@ CMAKE_ARGS=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 		-DBUILD_TESTS:BOOL=false
 CONFIGURE_ENV=	LLVM_INSTALL_DIR="${LLVM_PREFIX}/lib/cmake/llvm"
 
-BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 
 WRKSRC_SUBDIR=	sources/shiboken6
 PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER} \
@@ -45,6 +44,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} 
 			${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx-design>0:textproc/py-sphinx-design@${PY_FLAVOR}
+DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 DOCS_ALL_TARGET=	all doc
 DOCS_PORTDOCS=		*
 
