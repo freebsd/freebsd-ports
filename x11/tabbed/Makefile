@@ -1,5 +1,5 @@
 PORTNAME=	tabbed
-DISTVERSION=	0.8
+DISTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
