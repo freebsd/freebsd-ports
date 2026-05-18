@@ -1,7 +1,7 @@
 diff --git MANIFEST MANIFEST
---- MANIFEST	2026-05-16 12:44:56.907451000 -0700
-+++ MANIFEST	2026-05-16 12:45:04.832431000 -0700
-@@ -442,6 +442,7 @@
+--- MANIFEST	2026-05-18 00:16:06.149832000 -0700
++++ MANIFEST	2026-05-18 00:16:11.124094000 -0700
+@@ -441,6 +441,7 @@
  include/inn/sequence.h                Header file for sequence space arithmetic
  include/inn/storage.h                 Header file for storage API
  include/inn/timer.h                   Header file for generic timers
@@ -9,7 +9,7 @@ diff --git MANIFEST MANIFEST
  include/inn/tst.h                     Header file for ternary search tries
  include/inn/utility.h                 Header file for utility functions
  include/inn/vector.h                  Header file for vectors of strings
-@@ -810,6 +811,7 @@
+@@ -805,6 +806,7 @@
  storage/timehash/method.config        buildconfig definition
  storage/timehash/timehash.c           timehash storage routines
  storage/timehash/timehash.h           Header for timehash
@@ -17,7 +17,7 @@ diff --git MANIFEST MANIFEST
  storage/tradindexed                   tradindexed overview method (Directory)
  storage/tradindexed/ovmethod.config   buildconfig definition
  storage/tradindexed/ovmethod.mk       Make rules for tradindexed overview
-@@ -936,6 +938,10 @@
+@@ -931,6 +933,10 @@
  tests/data/upgrade/sasl.conf          Obsolete sasl.conf config file
  tests/docs                            Test suite for documentation (Directory)
  tests/docs/pod.t.in                   Tests for POD formatting
@@ -28,7 +28,7 @@ diff --git MANIFEST MANIFEST
  tests/innd                            Test suite for innd (Directory)
  tests/innd/artparse-t.c               Tests for ARTparse in innd
  tests/innd/chan-t.c                   Tests for CHAN functions in innd
-@@ -1008,6 +1014,7 @@
+@@ -997,6 +1003,7 @@
  tests/runtests.c                      The test suite driver program
  tests/storage                         Test suite for storage (Directory)
  tests/storage/archive.t               Tests for backends/archive
@@ -37,8 +37,8 @@ diff --git MANIFEST MANIFEST
  tests/storage/sm.t                    Tests for frontends/sm
  tests/tap                             Helper scripts for TAP (Directory)
 diff --git doc/pod/expire.pod doc/pod/expire.pod
---- doc/pod/expire.pod	2026-05-16 12:44:56.941582000 -0700
-+++ doc/pod/expire.pod	2026-05-16 12:45:04.832751000 -0700
+--- doc/pod/expire.pod	2026-05-18 00:16:06.130540000 -0700
++++ doc/pod/expire.pod	2026-05-18 00:16:11.124260000 -0700
 @@ -175,6 +175,18 @@
  
  =back
@@ -59,8 +59,8 @@ diff --git doc/pod/expire.pod doc/pod/expire.pod
  
  Written by Rich $alz <rsalz@uunet.uu.net> for InterNetNews.  Converted to
 diff --git doc/pod/expireover.pod doc/pod/expireover.pod
---- doc/pod/expireover.pod	2026-05-16 12:44:56.945074000 -0700
-+++ doc/pod/expireover.pod	2026-05-16 12:45:04.833030000 -0700
+--- doc/pod/expireover.pod	2026-05-18 00:16:06.132608000 -0700
++++ doc/pod/expireover.pod	2026-05-18 00:16:11.124389000 -0700
 @@ -21,6 +21,14 @@
  that have already been removed by some other process, and B<-e>, B<-k>,
  B<-N>, B<-p>, B<-q>, B<-w>, and B<-z> are all ignored.
@@ -77,9 +77,9 @@ diff --git doc/pod/expireover.pod doc/pod/expireover.pod
  to remove the article from the spool once it expires out of all of the
  newsgroups to which it was crossposted.  The article is, however, removed
 diff --git doc/pod/inn.conf.pod doc/pod/inn.conf.pod
---- doc/pod/inn.conf.pod	2026-05-16 12:44:56.943722000 -0700
-+++ doc/pod/inn.conf.pod	2026-05-16 12:45:04.843432000 -0700
-@@ -652,6 +652,72 @@
+--- doc/pod/inn.conf.pod	2026-05-18 00:16:06.131089000 -0700
++++ doc/pod/inn.conf.pod	2026-05-18 00:16:11.129304000 -0700
+@@ -652,6 +652,82 @@
  Moreover, the deprecated C<Bytes> and C<Lines> header fields, already present
  in the standard overview fields as metadata items, cannot be added.
  
@@ -100,7 +100,11 @@ diff --git doc/pod/inn.conf.pod doc/pod/inn.conf.pod
 +B<SMcancel> calls are deferred to B<fastrm> via B<expirerm>;
 +B<expireover> writes the entries up front and B<expirerm> performs
 +the atomic rename after B<fastrm> succeeds, so the same speedup
-+applies to delayrm setups.
++applies to delayrm setups.  After B<expire> consumes this file it
++is unlinked and re-seeded as a header-only successor, matching
++the on-disk presence of F<cancels.tombstone>; the next
++B<expireover> run overwrites the seeded file with its full
++content.
 +
 +=item F<I<pathdb>/cancels.tombstone>
 +
@@ -108,7 +112,13 @@ diff --git doc/pod/inn.conf.pod doc/pod/inn.conf.pod
 +messages, and by B<sm -r> for manual cancellations.  Appenders take
 +a shared fcntl POSIX lock; B<expire> snapshots the file by atomic
 +rename to F<cancels.tombstone.processing> under an exclusive fcntl
-+lock and unlinks it after a successful consume.  Append atomicity
++lock, unlinks the snapshot after a successful consume, then
++recreates F<cancels.tombstone> as a header-only file under an
++exclusive lock so B<nnrpd>'s per-connection fast path stays
++active through quiet inter-cancel periods.  An appender that
++raced a cancel into a new live file between the rename and the
++recreate has its content preserved verbatim below the restored
++header.  Append atomicity
 +relies on POSIX guaranteeing that each C<write(2)> to a regular
 +file opened with C<O_APPEND> is atomic with respect to other
 +writers; this holds for any size of single C<write> on local
@@ -152,7 +162,7 @@ diff --git doc/pod/inn.conf.pod doc/pod/inn.conf.pod
  =item I<groupbaseexpiry>
  
  Whether to enable newsgroup-based expiry.  If set to false, article expiry
-@@ -910,10 +976,50 @@
+@@ -910,10 +986,50 @@
  as present in response to an NNTP command (HDR, LISTGROUP, NEWNEWS, OVER,
  XPAT).  The primary use of this setting is to prevent B<nnrpd> from returning
  information about articles which are no longer present on the server but which
@@ -208,8 +218,8 @@ diff --git doc/pod/inn.conf.pod doc/pod/inn.conf.pod
  You may also want to see the I<groupexactcount> parameter in readers.conf(5)
  which controls the computing of the estimated article count returned in NNTP
 diff --git doc/pod/sm.pod doc/pod/sm.pod
---- doc/pod/sm.pod	2026-05-16 12:44:56.942385000 -0700
-+++ doc/pod/sm.pod	2026-05-16 12:45:04.834064000 -0700
+--- doc/pod/sm.pod	2026-05-18 00:16:06.130876000 -0700
++++ doc/pod/sm.pod	2026-05-18 00:16:11.124893000 -0700
 @@ -51,6 +51,13 @@
  be retrievable by any part of INN.  It's equivalent to C<ctlinnd cancel>
  except it takes a storage API token instead of a message-ID.
@@ -225,8 +235,8 @@ diff --git doc/pod/sm.pod doc/pod/sm.pod
  
  Retrieve only the headers of the article rather than the entire article.
 diff --git expire/expire.c expire/expire.c
---- expire/expire.c	2026-05-16 12:44:56.912885000 -0700
-+++ expire/expire.c	2026-05-16 12:45:04.834504000 -0700
+--- expire/expire.c	2026-05-18 00:16:06.129750000 -0700
++++ expire/expire.c	2026-05-18 00:16:11.125117000 -0700
 @@ -6,10 +6,13 @@
  
  #include <ctype.h>
@@ -495,7 +505,7 @@ diff --git expire/expire.c expire/expire.c
      HistoryText = concatpath(innconf->pathdb, INN_PATH_HISTORY);
  
      umask(NEWSUMASK);
-@@ -694,9 +896,47 @@
+@@ -694,9 +896,70 @@
          CleanupAndExit(Server, false, 1);
      }
  
@@ -523,21 +533,44 @@ diff --git expire/expire.c expire/expire.c
 +                        EXPremember, EXPdoline)
 +              == false;
 +
-+        if (tombstone != NULL) {
++        if (tombstone != NULL)
 +            hash_free(tombstone);
-+            /* On a successful real run, unlink both consumed
-+               snapshots.  In dry-run / tracing / alt-output, the
-+               loader skipped the rename and did not return a
-+               snapshot path, so there is nothing to clean up. */
-+            if (!Bad && consuming) {
-+                if (expireover_path != NULL) {
-+                    if (unlink(expireover_path) < 0 && errno != ENOENT)
-+                        syswarn("can't unlink %s", expireover_path);
-+                }
-+                if (cancels_snapshot != NULL) {
-+                    if (unlink(cancels_snapshot) < 0 && errno != ENOENT)
-+                        syswarn("can't unlink %s", cancels_snapshot);
-+                }
++
++        /* On a successful real run, unlink both consumed snapshots
++           and seed header-only successors.  Dry-run / tracing /
++           alt-output skipped the rename in the loader so there are
++           no snapshot paths to clean up. */
++        if (!Bad && consuming) {
++            if (expireover_path != NULL) {
++                if (unlink(expireover_path) < 0 && errno != ENOENT)
++                    syswarn("can't unlink %s", expireover_path);
++            }
++            if (cancels_snapshot != NULL) {
++                if (unlink(cancels_snapshot) < 0 && errno != ENOENT)
++                    syswarn("can't unlink %s", cancels_snapshot);
++            }
++
++            /* Leave header-only successors behind so both tombstone
++               files exist symmetrically in pathdb after every
++               successful expire.  For cancels.tombstone this keeps
++               nnrpd's per-connection fast path active through quiet
++               inter-cycle periods.  For expireover.tombstone it is
++               cosmetic but matches the file's documented presence;
++               expireover will overwrite the header-only file the
++               next time it runs.  Runs every consuming cycle when
++               the feature is enabled, including the brand-new-
++               install case where EXPloadtombstone returned NULL and
++               there was no snapshot to consume.  Idempotent when
++               the file already starts with the header. */
++            if (innconf->expiretombstone && innconf->groupbaseexpiry) {
++                char *path;
++
++                path = concatpath(innconf->pathdb, "cancels.tombstone");
++                tombstone_ensure_header(path);
++                free(path);
++                path = concatpath(innconf->pathdb, "expireover.tombstone");
++                tombstone_ensure_header(path);
++                free(path);
 +            }
 +        }
 +        free(expireover_path);
@@ -547,8 +580,8 @@ diff --git expire/expire.c expire/expire.c
      if (UnlinkFile && EXPunlinkfile == NULL)
          /* Got -z but file was closed; oops. */
 diff --git expire/expireover.c expire/expireover.c
---- expire/expireover.c	2026-05-16 12:44:56.912753000 -0700
-+++ expire/expireover.c	2026-05-16 12:46:12.471407000 -0700
+--- expire/expireover.c	2026-05-18 00:16:06.129729000 -0700
++++ expire/expireover.c	2026-05-18 00:17:50.715171000 -0700
 @@ -10,13 +10,16 @@
  #include "portable/system.h"
  
@@ -568,9 +601,11 @@ diff --git expire/expireover.c expire/expireover.c
  #include "inn/history.h"
  #include "inn/innconf.h"
  #include "inn/libinn.h"
-@@ -27,6 +30,11 @@
+@@ -26,7 +29,13 @@
+ #include "inn/paths.h"
  #include "inn/qio.h"
  #include "inn/storage.h"
++#include "inn/tombstone.h"
  
 +/* OVtombstonefile is an internal of the storage library (declared in
 + * storage/ovinterface.h), but expireover owns its lifecycle, so we
@@ -580,7 +615,7 @@ diff --git expire/expireover.c expire/expireover.c
  static const char usage[] = "\
  Usage: expireover [-ekNpqs] [-f file] [-w offset] [-z rmfile] [-Z lowmarkfile]\n";
  
-@@ -65,6 +73,94 @@
+@@ -65,6 +74,94 @@
  }
  
  
@@ -675,7 +710,7 @@ diff --git expire/expireover.c expire/expireover.c
  int
  main(int argc, char *argv[])
  {
-@@ -76,9 +172,12 @@
+@@ -76,9 +173,12 @@
      char *active_path = NULL;
      char *lowmark_path = NULL;
      char *path;
@@ -688,7 +723,7 @@ diff --git expire/expireover.c expire/expireover.c
      struct history *history;
      struct bloom_filter *bloom = NULL;
      struct bloom_filter *null_bloom = NULL;
-@@ -144,6 +243,14 @@
+@@ -144,6 +244,14 @@
      if (!innconf_read(NULL))
          exit(1);
  
@@ -703,7 +738,7 @@ diff --git expire/expireover.c expire/expireover.c
      /* Change to the runasuser user and runasgroup group if necessary. */
      ensure_news_user_grp(true, true);
  
-@@ -240,6 +347,103 @@
+@@ -240,6 +348,169 @@
          free(histpath);
      }
  
@@ -714,7 +749,34 @@ diff --git expire/expireover.c expire/expireover.c
 +       mode this process performs the rename below.  Skipped when
 +       groupbaseexpiry is false because OVEXPremove is not called in
 +       that mode, and when the admin has disabled the feature via
-+       expiretombstone. */
++       expiretombstone.
++
++       Concurrency model: open with O_RDWR|O_CREAT (no truncate), then
++       take an exclusive *non-blocking* fcntl POSIX lock via
++       inn_lock_file.  Non-blocking is required for correctness, not
++       just performance: the truncate below would destroy the previous
++       holder's content if we ever waited for the lock.  If we cannot
++       acquire the lock, another expireover is running; disable
++       tombstone writing for this run and proceed with normal
++       expiration.  Manual concurrent invocations are protected
++       against tombstone corruption; news.daily's shlock prevents
++       them in normal flow.  The lock is released by fclose at
++       finalize time.
++
++       Leftover handling: two recovery paths, both verified per-token
++       with SMretrieve(RETR_STAT) before merging into the new .NEW.
++       (1) An existing .NEW file means a previous run crashed or
++       whose expirerm failed.  (2) An existing final tombstone
++       (without a .NEW) means the previous cycle's expirerm promoted
++       it but expire never consumed.  Naively truncating .NEW or
++       overwriting the final would lose cancels that genuinely
++       happened, while preserving them blindly would risk dropping
++       history for articles still on disk (fastrm failures).  Per-
++       token verification keeps confirmed-gone entries (SMERR_NOENT)
++       and entries with transient errors (SMERR_UNINIT, EIO, ...) so
++       the next run can re-evaluate them without silent loss; live
++       articles are dropped.  Cost is one stat per leftover token,
++       only on the rare crash-recovery path. */
 +    if (innconf->expiretombstone && innconf->groupbaseexpiry) {
 +        int fd;
 +
@@ -724,6 +786,9 @@ diff --git expire/expireover.c expire/expireover.c
 +        if (fd < 0) {
 +            syswarn("can't open tombstone log %s", tombstone_path_new);
 +        } else if (!inn_lock_file(fd, INN_LOCK_WRITE, false)) {
++            /* Distinguish contention (another expireover holds it)
++               from other lock errors (NFS lockd outage, kernel
++               resource exhaustion, etc.). */
 +            if (errno == EAGAIN || errno == EACCES) {
 +                warn("another expireover holds the tombstone log lock"
 +                     " on %s; disabling tombstone for this run",
@@ -736,6 +801,25 @@ diff --git expire/expireover.c expire/expireover.c
 +            close(fd);
 +            fd = -1;
 +        } else {
++            /* Recover leftover content under the lock, filter through
++               SMretrieve, then truncate .NEW and rewrite.  All under
++               the same fd/lock so no other writer can race.  Two
++               sources to recover:
++
++                 (a) the existing .NEW file: residue from a prior
++                     expireover run that crashed, or whose expirerm
++                     never promoted .NEW to final.
++                 (b) the existing final tombstone: residue from a
++                     prior cycle where expirerm did promote .NEW to
++                     final but expire never ran (or never finished)
++                     so the entries were never consumed.  Without
++                     this recovery, this expireover's end-of-run
++                     rename(.NEW, final) would silently overwrite
++                     the unconsumed file, dropping its records.
++
++               Both use verify_tombstone_lines, which preserves
++               entries on transient SMretrieve errors so a momentary
++               storage outage doesn't silently lose cancel records. */
 +            struct buffer kept;
 +            struct stat sb;
 +            char *raw;
@@ -744,14 +828,21 @@ diff --git expire/expireover.c expire/expireover.c
 +            kept.data = NULL;
 +            kept.size = kept.used = kept.left = 0;
 +
++            /* Recover unconsumed final tombstone first. */
 +            raw = slurp_tombstone(tombstone_path, &got);
 +            if (raw != NULL) {
 +                verify_tombstone_lines(raw, got, &kept);
 +                free(raw);
++                /* Unlink whether or not we extracted entries: the
++                   active .NEW (after this run's rename) becomes the
++                   new authoritative final.  Preserving the old one
++                   would risk a future expireover folding the same
++                   entries in twice. */
 +                if (unlink(tombstone_path) < 0 && errno != ENOENT)
 +                    syswarn("can't unlink leftover %s", tombstone_path);
 +            }
 +
++            /* Recover .NEW leftover. */
 +            if (fstat(fd, &sb) == 0 && sb.st_size > 0) {
 +                raw = xmalloc(sb.st_size + 1);
 +                got = 0;
@@ -779,11 +870,21 @@ diff --git expire/expireover.c expire/expireover.c
 +                    close(fd);
 +                    fd = -1;
 +                } else {
-+                    if (fputs("# inn-tombstone v1\n", OVtombstonefile)
++                    /* Format marker.  Readers tolerate comment lines
++                       (lines starting with #), so any future format
++                       change can be detected by inspecting this
++                       header without breaking earlier readers. */
++                    if (fputs(TOMBSTONE_HEADER, OVtombstonefile)
 +                        == EOF)
 +                        syswarn("can't write header to %s",
 +                                tombstone_path_new);
 +                    if (kept.left > 0) {
++                        /* Replay verified leftover entries before
++                           this run's new entries are appended by
++                           OVEXPremove.  (struct buffer convention:
++                           appended data lives at data[used ..
++                           used+left]; used==0 here so we start at
++                           data.) */
 +                        if (fwrite(kept.data + kept.used, 1, kept.left,
 +                                   OVtombstonefile)
 +                                != kept.left
@@ -807,7 +908,7 @@ diff --git expire/expireover.c expire/expireover.c
      /* Loop through each line of the input file and process each group,
         writing data to the lowmark file if desired. */
      line = QIOread(qp);
-@@ -276,6 +480,46 @@
+@@ -276,6 +547,46 @@
      if (lowmark != NULL)
          if (fclose(lowmark) == EOF)
              syswarn("can't close %s", lowmark_path);
@@ -855,8 +956,8 @@ diff --git expire/expireover.c expire/expireover.c
      return 0;
  }
 diff --git expire/expirerm.in expire/expirerm.in
---- expire/expirerm.in	2026-05-16 12:44:56.912927000 -0700
-+++ expire/expirerm.in	2026-05-16 12:45:04.835303000 -0700
+--- expire/expirerm.in	2026-05-18 00:16:06.129706000 -0700
++++ expire/expirerm.in	2026-05-18 00:16:11.125489000 -0700
 @@ -16,17 +16,38 @@
          | eval ${MAIL}
      exit 0
@@ -901,8 +1002,8 @@ diff --git expire/expirerm.in expire/expirerm.in
 +    }
  fi
 diff --git expire/makehistory.c expire/makehistory.c
---- expire/makehistory.c	2026-05-16 12:44:56.912967000 -0700
-+++ expire/makehistory.c	2026-05-16 12:45:04.835679000 -0700
+--- expire/makehistory.c	2026-05-18 00:16:06.129684000 -0700
++++ expire/makehistory.c	2026-05-18 00:16:11.125727000 -0700
 @@ -287,6 +287,15 @@
              arrived = (time_t) atoll(line);
              expires = (time_t) atoll(p);
@@ -920,8 +1021,8 @@ diff --git expire/makehistory.c expire/makehistory.c
          if (OVadd(token, r, strlen(r), arrived, expires) == OVADDFAILED) {
              if (OVctl(OVSPACE, (void *) &f)
 diff --git frontends/sm.c frontends/sm.c
---- frontends/sm.c	2026-05-16 12:44:56.937891000 -0700
-+++ frontends/sm.c	2026-05-16 12:45:04.835987000 -0700
+--- frontends/sm.c	2026-05-18 00:16:06.154106000 -0700
++++ frontends/sm.c	2026-05-18 00:16:11.125872000 -0700
 @@ -10,6 +10,8 @@
  #include "inn/innconf.h"
  #include "inn/libinn.h"
@@ -961,8 +1062,8 @@ diff --git frontends/sm.c frontends/sm.c
          die("cannot initialize storage manager: %s", SMerrorstr);
  
 diff --git include/inn/innconf.h include/inn/innconf.h
---- include/inn/innconf.h	2026-05-16 12:44:56.906670000 -0700
-+++ include/inn/innconf.h	2026-05-16 12:45:04.836314000 -0700
+--- include/inn/innconf.h	2026-05-18 00:16:06.144766000 -0700
++++ include/inn/innconf.h	2026-05-18 00:16:11.126026000 -0700
 @@ -77,6 +77,9 @@
                                                 OVERVIEW.FMT */
      struct vector
@@ -974,8 +1075,8 @@ diff --git include/inn/innconf.h include/inn/innconf.h
      bool mergetogroups;          /* Refile articles from to.* into to */
      bool nfswriter;              /* Use NFS writer functionality */
 diff --git include/inn/ov.h include/inn/ov.h
---- include/inn/ov.h	2026-05-16 12:44:56.906311000 -0700
-+++ include/inn/ov.h	2026-05-16 12:45:04.836546000 -0700
+--- include/inn/ov.h	2026-05-18 00:16:06.144243000 -0700
++++ include/inn/ov.h	2026-05-18 00:16:11.126122000 -0700
 @@ -52,6 +52,7 @@
  } OVGE;
  
@@ -985,8 +1086,8 @@ diff --git include/inn/ov.h include/inn/ov.h
  bool OVgroupstats(char *group, int *lo, int *hi, int *count, int *flag);
  bool OVgroupadd(char *group, ARTNUM lo, ARTNUM hi, char *flag);
 diff --git include/inn/storage.h include/inn/storage.h
---- include/inn/storage.h	2026-05-16 12:44:56.906957000 -0700
-+++ include/inn/storage.h	2026-05-16 12:45:04.836761000 -0700
+--- include/inn/storage.h	2026-05-18 00:16:06.144486000 -0700
++++ include/inn/storage.h	2026-05-18 00:16:11.126228000 -0700
 @@ -106,6 +106,28 @@
  ARTHANDLE *SMnext(ARTHANDLE *article, const RETRTYPE amount);
  void SMfreearticle(ARTHANDLE *article);
@@ -1018,8 +1119,8 @@ diff --git include/inn/storage.h include/inn/storage.h
  void SMprintfiles(FILE *file, TOKEN token, char **xref, int ngroups);
 diff --git include/inn/tombstone.h include/inn/tombstone.h
 --- include/inn/tombstone.h	1969-12-31 17:00:00.000000000 -0700
-+++ include/inn/tombstone.h	2026-05-16 12:45:04.836999000 -0700
-@@ -0,0 +1,71 @@
++++ include/inn/tombstone.h	2026-05-18 00:16:11.126336000 -0700
+@@ -0,0 +1,100 @@
 +/*
 +**  Helpers for the expire-tombstone log files.
 +**
@@ -1043,6 +1144,13 @@ diff --git include/inn/tombstone.h include/inn/tombstone.h
 +#include "inn/portable-macros.h"
 +#include "inn/portable-stdbool.h"
 +#include "inn/storage.h"
++
++/*
++**  Format marker written at the top of every tombstone file.
++**  Readers skip leading comment lines silently so the marker can
++**  evolve without breaking earlier consumers.
++*/
++#define TOMBSTONE_HEADER "# inn-tombstone v1\n"
 +
 +BEGIN_DECLS
 +
@@ -1088,12 +1196,34 @@ diff --git include/inn/tombstone.h include/inn/tombstone.h
 +*/
 +bool tombstone_present(struct hash *h, const TOKEN *token);
 +
++/*
++**  Ensure path exists and starts with TOMBSTONE_HEADER under an
++**  exclusive POSIX lock.  Idempotent: a file whose first bytes
++**  already match TOMBSTONE_HEADER is left untouched.  Otherwise the
++**  helper shifts any existing content right by sizeof(TOMBSTONE_
++**  HEADER)-1 bytes via a chunked end-to-start pread/pwrite walk on
++**  the same fd, then writes the header at offset 0.  Working
++**  memory is bounded by an internal chunk size regardless of file
++**  size, so a pathological never-consumed file cannot OOM.
++**
++**  An empty file (or one freshly created by this call) just gets
++**  the header written at offset 0.  An appender that raced a
++**  cancel into a new live file between the consumer's unlink and
++**  this call has its content preserved verbatim below the header.
++**  Best-effort: failures log via syswarn but do not raise.
++**
++**  Called by expire after consuming cancels.tombstone.processing
++**  to leave a header-only file behind so the nnrpd fast path
++**  remains active through quiet inter-cancel periods.
++*/
++void tombstone_ensure_header(const char *path);
++
 +END_DECLS
 +
 +#endif /* INN_TOMBSTONE_H */
 diff --git innd/art.c innd/art.c
---- innd/art.c	2026-05-16 12:44:56.919455000 -0700
-+++ innd/art.c	2026-05-16 12:45:04.837716000 -0700
+--- innd/art.c	2026-05-18 00:16:06.151875000 -0700
++++ innd/art.c	2026-05-18 00:16:11.126750000 -0700
 @@ -1280,9 +1280,15 @@
      /* Get stored message and zap them. */
      if (innconf->enableoverview)
@@ -1112,8 +1242,8 @@ diff --git innd/art.c innd/art.c
          syslog(L_ERROR, "%s cant cancel cached %s", LogName,
                 TokenToText(token));
 diff --git lib/innconf.c lib/innconf.c
---- lib/innconf.c	2026-05-16 12:44:56.914445000 -0700
-+++ lib/innconf.c	2026-05-16 12:45:04.838186000 -0700
+--- lib/innconf.c	2026-05-18 00:16:06.146141000 -0700
++++ lib/innconf.c	2026-05-18 00:16:11.126974000 -0700
 @@ -71,6 +71,7 @@
      {K(enableoverview),             BOOL(true)        },
      {K(extraoverviewadvertised),    LIST(NULL)        },
@@ -1123,8 +1253,8 @@ diff --git lib/innconf.c lib/innconf.c
      {K(groupbaseexpiry),            BOOL(true)        },
      {K(mailcmd),                    STRING(NULL)      },
 diff --git nnrpd/article.c nnrpd/article.c
---- nnrpd/article.c	2026-05-16 12:44:56.920482000 -0700
-+++ nnrpd/article.c	2026-05-16 12:45:04.843967000 -0700
+--- nnrpd/article.c	2026-05-18 00:16:06.128622000 -0700
++++ nnrpd/article.c	2026-05-18 00:16:11.129572000 -0700
 @@ -7,13 +7,16 @@
  #include <assert.h>
  #include <ctype.h>
@@ -1278,8 +1408,8 @@ diff --git nnrpd/article.c nnrpd/article.c
          gettimeofday(&etv, NULL);
          OVERartcheck += (etv.tv_sec - stv.tv_sec) * 1000;
 diff --git samples/inn.conf.in samples/inn.conf.in
---- samples/inn.conf.in	2026-05-16 12:44:56.900644000 -0700
-+++ samples/inn.conf.in	2026-05-16 12:45:04.838480000 -0700
+--- samples/inn.conf.in	2026-05-18 00:16:06.149493000 -0700
++++ samples/inn.conf.in	2026-05-18 00:16:11.127103000 -0700
 @@ -67,6 +67,7 @@
  expirebloomfp:               10000
  extraoverviewadvertised:     [ ]
@@ -1289,8 +1419,8 @@ diff --git samples/inn.conf.in samples/inn.conf.in
  mergetogroups:               false
  nfswriter:                   false
 diff --git storage/Makefile storage/Makefile
---- storage/Makefile	2026-05-16 12:44:56.910882000 -0700
-+++ storage/Makefile	2026-05-16 12:45:04.838862000 -0700
+--- storage/Makefile	2026-05-18 00:16:06.152619000 -0700
++++ storage/Makefile	2026-05-18 00:16:11.127275000 -0700
 @@ -12,7 +12,7 @@
  CFLAGS	      = $(GCFLAGS) -I. $(BDB_CPPFLAGS) $(SQLITE3_CPPFLAGS)
  
@@ -1301,8 +1431,8 @@ diff --git storage/Makefile storage/Makefile
  LOBJECTS      = $(OBJECTS:.o=.lo)
  
 diff --git storage/expire.c storage/expire.c
---- storage/expire.c	2026-05-16 12:44:56.910633000 -0700
-+++ storage/expire.c	2026-05-16 12:45:04.839298000 -0700
+--- storage/expire.c	2026-05-18 00:16:06.152668000 -0700
++++ storage/expire.c	2026-05-18 00:16:11.127467000 -0700
 @@ -15,6 +15,7 @@
  #include "inn/bloom.h"
  #include "inn/innconf.h"
@@ -1380,8 +1510,8 @@ diff --git storage/expire.c storage/expire.c
  
  /*
 diff --git storage/interface.c storage/interface.c
---- storage/interface.c	2026-05-16 12:44:56.908549000 -0700
-+++ storage/interface.c	2026-05-16 12:45:04.839711000 -0700
+--- storage/interface.c	2026-05-18 00:16:06.153708000 -0700
++++ storage/interface.c	2026-05-18 00:16:11.127675000 -0700
 @@ -6,7 +6,9 @@
  
  #include <ctype.h>
@@ -1392,7 +1522,7 @@ diff --git storage/interface.c storage/interface.c
  
  #include "conffile.h"
  #include "inn/innconf.h"
-@@ -815,6 +817,135 @@
+@@ -815,6 +817,139 @@
          return false;
      }
      return storage_methods[typetoindex[token.type]].cancel(token);
@@ -1427,8 +1557,12 @@ diff --git storage/interface.c storage/interface.c
 +**  rename hold).  If the lock is contested, we skip this tombstone
 +**  write rather than block.  Concurrent appenders do not contend
 +**  because shared locks coexist; only expire's exclusive lock
-+**  briefly excludes them, and that window is a single ftruncate-or-
-+**  rename call.
++**  briefly excludes them, during the consumer's rename of cancels.
++**  tombstone to .processing and during the post-consume header
++**  re-seeding shift (tombstone_ensure_header).  Both windows
++**  scale with the file size at the moment they fire; for a
++**  typical site (a few KiB of tokens) the combined hold is well
++**  under a millisecond and the EAGAIN retry below absorbs it.
 +*/
 +bool
 +SMcanceltombstone(TOKEN token)
@@ -1529,8 +1663,8 @@ diff --git storage/interface.c storage/interface.c
  
  bool
 diff --git storage/ovinterface.h storage/ovinterface.h
---- storage/ovinterface.h	2026-05-16 12:44:56.908195000 -0700
-+++ storage/ovinterface.h	2026-05-16 12:45:04.839984000 -0700
+--- storage/ovinterface.h	2026-05-18 00:16:06.152455000 -0700
++++ storage/ovinterface.h	2026-05-18 00:16:11.127767000 -0700
 @@ -5,6 +5,8 @@
  #ifndef OVINTERFACE_H
  #define OVINTERFACE_H
@@ -1560,8 +1694,8 @@ diff --git storage/ovinterface.h storage/ovinterface.h
  extern bool OVkeep;
 diff --git storage/tombstone.c storage/tombstone.c
 --- storage/tombstone.c	1969-12-31 17:00:00.000000000 -0700
-+++ storage/tombstone.c	2026-05-16 12:45:04.840226000 -0700
-@@ -0,0 +1,156 @@
++++ storage/tombstone.c	2026-05-18 00:16:11.127901000 -0700
+@@ -0,0 +1,277 @@
 +/*
 +**  Helpers for the expire-tombstone log files.
 +**
@@ -1576,6 +1710,7 @@ diff --git storage/tombstone.c storage/tombstone.c
 +#include <errno.h>
 +#include <fcntl.h>
 +#include <string.h>
++#include <sys/stat.h>
 +#include <unistd.h>
 +
 +#include "inn/hashtab.h"
@@ -1718,9 +1853,129 @@ diff --git storage/tombstone.c storage/tombstone.c
 +        return false;
 +    return hash_lookup(h, token) != NULL;
 +}
++
++
++void
++tombstone_ensure_header(const char *path)
++{
++    static const char header[] = TOMBSTONE_HEADER;
++    static const size_t header_len = sizeof(header) - 1;
++    /* Bounded working memory: shift the file right by header_len bytes
++     * in chunks read end-to-start.  64 KiB keeps us cache-warm without
++     * paying excessive syscall overhead.  Memory is bounded regardless
++     * of file size, so a pathological never-consumed file cannot OOM
++     * the expire run. */
++    static const size_t CHUNK = 64 * 1024;
++    int fd;
++    struct stat sb;
++    off_t size;
++    char *chunk_buf;
++    off_t pos;
++
++    if (path == NULL)
++        return;
++
++    /* No O_APPEND: we use explicit offsets via pread/pwrite, and on
++     * Linux O_APPEND would override pwrite's offset and force every
++     * write to EOF -- breaking the shift loop below. */
++    fd = open(path, O_RDWR | O_CREAT, 0664);
++    if (fd < 0) {
++        syswarn("can't open %s for header restore", path);
++        return;
++    }
++
++    /* Blocking exclusive lock.  Appenders use shared locks, so we
++     * conflict; the operation runs for microseconds to milliseconds
++     * and only once per expire cycle, so blocking is fine.  The
++     * serialization is what makes the read-modify-write safe
++     * against appenders. */
++    if (!inn_lock_file(fd, INN_LOCK_WRITE, true)) {
++        syswarn("can't lock %s for header restore", path);
++        close(fd);
++        return;
++    }
++
++    if (fstat(fd, &sb) < 0) {
++        syswarn("can't stat %s for header restore", path);
++        close(fd);
++        return;
++    }
++    size = sb.st_size;
++
++    /* Idempotency fast path: if the file already starts with the
++     * header line, the rest is well-formed appended content and we
++     * have nothing to do.  Without this, every call would prepend an
++     * additional header, growing the file by header_len each expire
++     * cycle on a site with zero cancels per cycle. */
++    if (size >= (off_t) header_len) {
++        char prefix[sizeof(header)];
++
++        if (pread(fd, prefix, header_len, 0) == (ssize_t) header_len
++            && memcmp(prefix, header, header_len) == 0) {
++            close(fd);
++            return;
++        }
++    }
++
++    /* Shift existing content right by header_len bytes, walking from
++     * end to start so we never read a region we have already
++     * overwritten.  This works in place on the same fd; memory is
++     * bounded by CHUNK regardless of file size.  A crash mid-shift
++     * leaves the file with some duplicated/partial lines, which
++     * tombstone_read tolerates (malformed lines warn and skip); no
++     * infinite escalation across crashes because the next run's
++     * idempotency check sees no header and shifts once more,
++     * producing a header-prefixed file the run after that leaves
++     * alone. */
++    chunk_buf = xmalloc(CHUNK);
++    pos = size;
++    while (pos > 0) {
++        size_t this_chunk = (pos < (off_t) CHUNK) ? (size_t) pos : CHUNK;
++        off_t src = pos - this_chunk;
++        size_t io = 0;
++        ssize_t n;
++
++        while (io < this_chunk) {
++            n = pread(fd, chunk_buf + io, this_chunk - io, src + io);
++            if (n <= 0)
++                break;
++            io += n;
++        }
++        if (io < this_chunk) {
++            syswarn("short read on %s during header restore", path);
++            free(chunk_buf);
++            close(fd);
++            return;
++        }
++        io = 0;
++        while (io < this_chunk) {
++            n = pwrite(fd, chunk_buf + io, this_chunk - io,
++                       src + header_len + io);
++            if (n <= 0) {
++                syswarn("short write on %s during header restore", path);
++                free(chunk_buf);
++                close(fd);
++                return;
++            }
++            io += n;
++        }
++        pos = src;
++    }
++    free(chunk_buf);
++
++    /* Header at offset 0.  Single small pwrite; partial-write on a
++     * regular file is vanishingly rare but if it happens
++     * tombstone_read still treats the leading '#' bytes as a
++     * comment and skips them. */
++    if (pwrite(fd, header, header_len, 0) != (ssize_t) header_len)
++        syswarn("can't write header to %s", path);
++
++    /* close releases the fcntl POSIX lock. */
++    close(fd);
++}
 diff --git support/mkmanifest support/mkmanifest
---- support/mkmanifest	2026-05-16 12:44:56.918414000 -0700
-+++ support/mkmanifest	2026-05-16 12:45:04.840505000 -0700
+--- support/mkmanifest	2026-05-18 00:16:06.151174000 -0700
++++ support/mkmanifest	2026-05-18 00:16:11.128015000 -0700
 @@ -278,6 +278,8 @@
  tests/authprogs/ident.t
  tests/clients/server-list
@@ -1737,8 +1992,8 @@ diff --git support/mkmanifest support/mkmanifest
 +tests/storage/cancel-tombstone.t
  tests/util/innbind.t
 diff --git tests/Makefile tests/Makefile
---- tests/Makefile	2026-05-16 12:44:56.926071000 -0700
-+++ tests/Makefile	2026-05-16 12:45:24.868788000 -0700
+--- tests/Makefile	2026-05-18 00:16:06.137090000 -0700
++++ tests/Makefile	2026-05-18 00:18:06.443094000 -0700
 @@ -31,7 +31,9 @@
  	lib/setenv.t lib/snprintf.t lib/strlcat.t \
  	lib/strlcpy.t lib/tst.t lib/uwildmat.t lib/vector.t lib/wire.t \
@@ -1771,8 +2026,8 @@ diff --git tests/Makefile tests/Makefile
  perl/minimum-version.t: perl/minimum-version.t.in $(FIXSCRIPT)
  	$(FIX) -i perl/minimum-version.t.in
 diff --git tests/TESTS tests/TESTS
---- tests/TESTS	2026-05-16 12:44:56.926316000 -0700
-+++ tests/TESTS	2026-05-16 12:45:33.721800000 -0700
+--- tests/TESTS	2026-05-18 00:16:06.136991000 -0700
++++ tests/TESTS	2026-05-18 00:18:23.837362000 -0700
 @@ -54,6 +54,10 @@
  nnrpd/auth-ext
  overview/api
@@ -1786,7 +2041,7 @@ diff --git tests/TESTS tests/TESTS
  overview/overchan
 diff --git tests/expire/tombstone-e2e.t tests/expire/tombstone-e2e.t
 --- tests/expire/tombstone-e2e.t	1969-12-31 17:00:00.000000000 -0700
-+++ tests/expire/tombstone-e2e.t	2026-05-16 12:45:04.841566000 -0700
++++ tests/expire/tombstone-e2e.t	2026-05-18 00:16:11.128465000 -0700
 @@ -0,0 +1,174 @@
 +#! /bin/sh
 +#
@@ -1964,7 +2219,7 @@ diff --git tests/expire/tombstone-e2e.t tests/expire/tombstone-e2e.t
 +exit 0
 diff --git tests/expire/tombstone-hisexpire-t.c tests/expire/tombstone-hisexpire-t.c
 --- tests/expire/tombstone-hisexpire-t.c	1969-12-31 17:00:00.000000000 -0700
-+++ tests/expire/tombstone-hisexpire-t.c	2026-05-16 12:45:04.841888000 -0700
++++ tests/expire/tombstone-hisexpire-t.c	2026-05-18 00:16:11.128590000 -0700
 @@ -0,0 +1,298 @@
 +/* Integration test: HISexpire callback path consults the tombstone hashset.
 + *
@@ -2266,8 +2521,8 @@ diff --git tests/expire/tombstone-hisexpire-t.c tests/expire/tombstone-hisexpire
 +}
 diff --git tests/expire/tombstone-t.c tests/expire/tombstone-t.c
 --- tests/expire/tombstone-t.c	1969-12-31 17:00:00.000000000 -0700
-+++ tests/expire/tombstone-t.c	2026-05-16 12:45:04.842148000 -0700
-@@ -0,0 +1,193 @@
++++ tests/expire/tombstone-t.c	2026-05-18 00:16:11.128733000 -0700
+@@ -0,0 +1,316 @@
 +/* Unit tests for the lib/tombstone helpers used by expire to consume
 + * the deletion logs written by expireover/expirerm and innd/sm. */
 +
@@ -2342,7 +2597,7 @@ diff --git tests/expire/tombstone-t.c tests/expire/tombstone-t.c
 +    TOKEN parsed;
 +    char *roundtrip;
 +
-+    test_init(20);
++    test_init(25);
 +
 +    /* TokenToText / TextToToken / IsToken round trip is the foundation
 +     * of the file format. */
@@ -2459,11 +2714,134 @@ diff --git tests/expire/tombstone-t.c tests/expire/tombstone-t.c
 +        free(path);
 +    }
 +
++    /* tombstone_ensure_header on an absent file: creates a header-only
++     * file under exclusive lock.  Read back as a hashset that holds
++     * no tokens (the header is a comment line, skipped by the
++     * reader). */
++    {
++        char tmpl[] = "tombstone-ensure-XXXXXX";
++        int tmp_fd;
++        struct stat sb;
++
++        tmp_fd = mkstemp(tmpl);
++        if (tmp_fd < 0)
++            sysbail("can't create temp file");
++        close(tmp_fd);
++        unlink(tmpl); /* mkstemp creates it; we want absent */
++        path = xstrdup(tmpl);
++        tombstone_ensure_header(path);
++        h = tombstone_hash_create(4);
++        count = tombstone_read(h, path, NULL);
++        ok(21, stat(path, &sb) == 0 && sb.st_size > 0 && count == 0
++                   && hash_count(h) == 0);
++        hash_free(h);
++        unlink(path);
++        free(path);
++    }
++
++    /* tombstone_ensure_header on a non-empty file (appender raced a
++     * cancel in between consumer's unlink and our recreate): the
++     * existing tokens are preserved verbatim below the new header. */
++    {
++        TOKEN raced[] = {t1, t2};
++
++        path = write_tombstone_file("tombstone-prepend", raced, 2, NULL, 0);
++        tombstone_ensure_header(path);
++        h = tombstone_hash_create(4);
++        count = tombstone_read(h, path, NULL);
++        ok(22, count == 2 && hash_count(h) == 2
++                   && tombstone_present(h, &t1) && tombstone_present(h, &t2));
++        hash_free(h);
++        unlink(path);
++        free(path);
++    }
++
++    /* tombstone_ensure_header is idempotent: called twice in a row,
++     * the second call is a no-op because the file already starts
++     * with the header.  Without this, every expire cycle would
++     * prepend an extra header line and grow the file 19 bytes per
++     * cycle on a site with zero cancels per cycle. */
++    {
++        char tmpl[] = "tombstone-idem-XXXXXX";
++        int tmp_fd;
++        struct stat sb1, sb2;
++
++        tmp_fd = mkstemp(tmpl);
++        if (tmp_fd < 0)
++            sysbail("can't create temp file");
++        close(tmp_fd);
++        unlink(tmpl);
++        path = xstrdup(tmpl);
++        tombstone_ensure_header(path);
++        stat(path, &sb1);
++        tombstone_ensure_header(path);
++        stat(path, &sb2);
++        ok(23, sb1.st_size == sb2.st_size && sb1.st_size > 0);
++        unlink(path);
++        free(path);
++    }
++
++    /* Multi-chunk shift: build a file larger than the internal
++     * chunk size (64 KiB), call tombstone_ensure_header, and verify
++     * the shift loop's chunk-boundary arithmetic is correct.  At
++     * ~38 bytes per token line, 3000 tokens is ~108 KiB, which
++     * forces the loop to run at least twice (one full CHUNK + one
++     * partial trailing chunk). */
++    {
++        size_t nbig = 3000;
++        TOKEN *big = xmalloc(nbig * sizeof(TOKEN));
++        size_t i;
++        bool all_present;
++
++        for (i = 0; i < nbig; i++)
++            big[i] = make_token(3, 0, 0x10000 + i);
++        path = write_tombstone_file("tombstone-multichunk", big, nbig,
++                                    NULL, 0);
++        tombstone_ensure_header(path);
++        h = tombstone_hash_create(nbig * 2);
++        count = tombstone_read(h, path, NULL);
++        all_present = (count == nbig && hash_count(h) == nbig);
++        for (i = 0; i < nbig && all_present; i++)
++            all_present = tombstone_present(h, &big[i]);
++        ok(24, all_present);
++        hash_free(h);
++        unlink(path);
++        free(path);
++        free(big);
++    }
++
++    /* Crash-recovery tolerance: simulate a file in a post-crash
++     * state (no header, some garbled lines interleaved with valid
++     * tokens).  ensure_header should shift everything right by
++     * header_len without crashing; the subsequent tombstone_read
++     * should warn-and-skip garbled lines and parse the valid
++     * tokens.  This pins down the recovery argument as actual
++     * behavior. */
++    {
++        TOKEN valid[] = {t1, t2, t3};
++        const char *garbled[] = {
++            "this-is-not-a-token\n",
++            "neither-is-this\n",
++        };
++
++        path = write_tombstone_file("tombstone-corrupt", valid, 3,
++                                    garbled, 2);
++        tombstone_ensure_header(path);
++        h = tombstone_hash_create(4);
++        count = tombstone_read(h, path, NULL);
++        ok(25, hash_count(h) == 3 && tombstone_present(h, &t1)
++                   && tombstone_present(h, &t2)
++                   && tombstone_present(h, &t3));
++        hash_free(h);
++        unlink(path);
++        free(path);
++    }
++
 +    return 0;
 +}
 diff --git tests/storage/cancel-tombstone-t.c tests/storage/cancel-tombstone-t.c
 --- tests/storage/cancel-tombstone-t.c	1969-12-31 17:00:00.000000000 -0700
-+++ tests/storage/cancel-tombstone-t.c	2026-05-16 12:45:04.842477000 -0700
++++ tests/storage/cancel-tombstone-t.c	2026-05-18 00:16:11.128870000 -0700
 @@ -0,0 +1,233 @@
 +/* Unit tests for SMcanceltombstone (storage/interface.c).
 + *
