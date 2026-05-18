@@ -13,6 +13,8 @@ include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/atmosphere.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/atmosphere.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/axis.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/axis.proto
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/axis_aligned_box.pb.h
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/axis_aligned_box.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/battery.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/battery.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/boolean.pb.h
@@ -62,6 +64,8 @@ include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/duration.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/duration.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/empty.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/empty.proto
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/entity.pb.h
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/entity.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/entity_factory.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/entity_factory.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/float.pb.h
@@ -223,6 +227,8 @@ include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/sensor_noise.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/sensor_noise.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/sensor_v.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/sensor_v.proto
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/serialized.pb.h
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/serialized.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/server_control.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/server_control.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/shadows.pb.h
@@ -255,6 +261,8 @@ include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/topic_info.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/topic_info.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/track_visual.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/track_visual.proto
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/twist.pb.h
+include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/twist.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/uint32.pb.h
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/uint32.proto
 include/ignition/%%MSGS_IGN_VER%%/ignition/msgs/uint32_v.pb.h
@@ -304,11 +312,12 @@ lib/cmake/ignition-%%MSGS_IGN_VER%%/ignition-%%MSGS_IGN_VER%%-targets-%%CMAKE_BU
 lib/cmake/ignition-%%MSGS_IGN_VER%%/ignition-%%MSGS_IGN_VER%%-targets.cmake
 lib/libignition-%%MSGS_IGN_VER%%.so
 lib/libignition-%%MSGS_IGN_VER%%.so.3
-lib/libignition-%%MSGS_IGN_VER%%.so.3.0.0~pre3
+lib/libignition-%%MSGS_IGN_VER%%.so.3.2.0
 lib/ruby/ignition/cmd%%MSGS_IGN_VER%%.rb
 lib/ruby/ignition/msgs/altimeter_pb.rb
 lib/ruby/ignition/msgs/any_pb.rb
 lib/ruby/ignition/msgs/atmosphere_pb.rb
+lib/ruby/ignition/msgs/axis_aligned_box_pb.rb
 lib/ruby/ignition/msgs/axis_pb.rb
 lib/ruby/ignition/msgs/battery_pb.rb
 lib/ruby/ignition/msgs/boolean_pb.rb
@@ -334,6 +343,7 @@ lib/ruby/ignition/msgs/double_v_pb.rb
 lib/ruby/ignition/msgs/duration_pb.rb
 lib/ruby/ignition/msgs/empty_pb.rb
 lib/ruby/ignition/msgs/entity_factory_pb.rb
+lib/ruby/ignition/msgs/entity_pb.rb
 lib/ruby/ignition/msgs/float_pb.rb
 lib/ruby/ignition/msgs/float_v_pb.rb
 lib/ruby/ignition/msgs/fluid_pb.rb
@@ -413,6 +423,7 @@ lib/ruby/ignition/msgs/selection_pb.rb
 lib/ruby/ignition/msgs/sensor_noise_pb.rb
 lib/ruby/ignition/msgs/sensor_pb.rb
 lib/ruby/ignition/msgs/sensor_v_pb.rb
+lib/ruby/ignition/msgs/serialized_pb.rb
 lib/ruby/ignition/msgs/server_control_pb.rb
 lib/ruby/ignition/msgs/shadows_pb.rb
 lib/ruby/ignition/msgs/sim_event_pb.rb
@@ -429,6 +440,7 @@ lib/ruby/ignition/msgs/test_pb.rb
 lib/ruby/ignition/msgs/time_pb.rb
 lib/ruby/ignition/msgs/topic_info_pb.rb
 lib/ruby/ignition/msgs/track_visual_pb.rb
+lib/ruby/ignition/msgs/twist_pb.rb
 lib/ruby/ignition/msgs/uint32_pb.rb
 lib/ruby/ignition/msgs/uint32_v_pb.rb
 lib/ruby/ignition/msgs/uint64_pb.rb
