@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-01-22 01:57:45 UTC
++++ pyproject.toml
+@@ -8,7 +8,7 @@ requires-python = ">=3.9"
+ description = "A little word cloud generator"
+ readme = { file = "README.md", content-type = "text/markdown" }
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {text = "MIT"}
+ dependencies = ["numpy>=1.19.3", "pillow", "matplotlib"]
+ dynamic = ["version"]
+ 
