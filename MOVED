@@ -5307,3 +5307,4 @@ databases/leofs||2026-05-14|Has expired: no longer maintained upstream, with no 
 chinese/fcitx-rime||2026-05-17|Marked broken for almost a year and upstream repo is archived
 deskutils/gnome-shell-extension-audio-output-switcher||2026-05-17|Marked broken and upstream repo is archived
 deskutils/gnome-shell-extension-filesmenu||2026-05-17|Marked broken and abandoned upstream
+deskutils/gnome-shell-extension-windowoverlay-icons||2026-05-18|Marked broken and deprecated upstream

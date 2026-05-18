@@ -94,7 +94,6 @@
     SUBDIR += gnome-shell-extension-simple-weather
     SUBDIR += gnome-shell-extension-trash
     SUBDIR += gnome-shell-extension-weather
-    SUBDIR += gnome-shell-extension-windowoverlay-icons
     SUBDIR += gnome-shell-extra-extensions
     SUBDIR += gnome-sound-recorder
     SUBDIR += gnome-todo
