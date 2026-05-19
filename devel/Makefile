@@ -1055,6 +1055,7 @@
     SUBDIR += ignition-msgs
     SUBDIR += ignition-plugin
     SUBDIR += ignition-tools
+    SUBDIR += ignition-utils
     SUBDIR += ikos
     SUBDIR += imake
     SUBDIR += immer
