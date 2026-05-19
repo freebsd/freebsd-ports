@@ -268,7 +268,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-as-inner-0.6.1 \
 		enumflags2-0.7.12 \
 		enumflags2_derive-0.7.12 \
-		env-flags-0.1.1 \
 		env_filter-1.0.0 \
 		env_home-0.1.0 \
 		env_logger-0.11.9 \
@@ -807,6 +806,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
 		serde_html_form-0.3.2 \
+		serde_ignored-0.1.14 \
 		serde_json-1.0.149 \
 		serde_path_to_error-0.1.20 \
 		serde_repr-0.1.20 \

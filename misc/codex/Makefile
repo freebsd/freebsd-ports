@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.130.0
+DISTVERSION=	0.131.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -73,6 +73,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
+		${BUILD_WRKSRC}/core/src/command_canonicalization_tests.rs \
 		${BUILD_WRKSRC}/core/src/context/environment_context_tests.rs \
 		${BUILD_WRKSRC}/core/src/exec_policy.rs \
 		${BUILD_WRKSRC}/core/src/exec_policy_tests.rs \
@@ -82,6 +83,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec_tests.rs \
+		${BUILD_WRKSRC}/core/src/tools/runtimes/mod.rs \
 		${BUILD_WRKSRC}/core/src/tools/runtimes/mod_tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
@@ -110,6 +112,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/session/tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/compact.rs \
+		${BUILD_WRKSRC}/core/tests/suite/compact_remote_parity.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
