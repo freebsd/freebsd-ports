@@ -1,5 +1,5 @@
 PORTNAME=	libscca
-DISTVERSION=	alpha-20240427
+DISTVERSION=	alpha-20250915
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libscca/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python --with-libfwnt=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		libtool pathfix python
+USES=		libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
