@@ -1,6 +1,6 @@
 PORTNAME=	ignition-cmake
-DISTVERSIONPREFIX=	ignition-cmake2_
-DISTVERSION=	2.18.0
+DISTVERSIONPREFIX=	gz-cmake5_
+DISTVERSION=	5.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,12 @@ WWW=		https://gazebosim.org/home \
 
 LICENSE=	APACHE20
 
-USES=		cmake pkgconfig ruby
+USES=		cmake pkgconfig python:build,run ruby shebangfix
+
+SHEBANG_FILES=	benchmark/run_benchmarks.py \
+		codecheck/cpplint.py \
+		tools/check_test_ran.py \
+		tools/print_package_xml_version.py
 
 CMAKE_OFF=	BUILD_TESTING
 
