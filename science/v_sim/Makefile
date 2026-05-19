@@ -1,6 +1,6 @@
 PORTNAME=	v_sim
 DISTVERSION=	3.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -21,10 +21,12 @@ LIB_DEPENDS=	libgdkglext-x11-1.0.so:x11-toolkits/gtkglext	\
 		libfontconfig.so:x11-fonts/fontconfig	\
 		libopenbabel.so:science/openbabel	\
 		libfreetype.so:print/freetype2	\
+		libepoxy.so:graphics/libepoxy	\
 		libharfbuzz.so:print/harfbuzz	\
 		libyaml.so:textproc/libyaml	\
 		libnetcdf.so:science/netcdf	\
 		libmsym.so:science/libmsym	\
+		libpng16.so:graphics/png	\
 		libftgl.so:graphics/ftgl	\
 		libxc.so:science/libxc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
@@ -100,7 +102,11 @@ pre-configure-EXAMPLES-off:
 		${WRKSRC}/lib/python/Makefile.am
 
 post-install:
+.if !defined(WITH_DEBUG)
 	${FIND} ${STAGEDIR}${PREFIX}/lib -type f -name "lib*.so.8.0.0" | \
 		${XARGS} ${STRIP_CMD}
+.endif
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} lib/${PYTHON_VERSION} -type f -or -type l >> ${TMPPLIST}
 
 .include <bsd.port.mk>
