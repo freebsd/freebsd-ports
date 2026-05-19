@@ -1,6 +1,6 @@
 PORTNAME=	ignition-math
-DISTVERSIONPREFIX=	ignition-math6_
-DISTVERSION=	6.16.0
+DISTVERSIONPREFIX=	gz-math9_
+DISTVERSION=	9.0.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://ignitionrobotics.org/home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ignition-cmake>=2:devel/ignition-cmake
+BUILD_DEPENDS=	ignition-cmake>=5:devel/ignition-cmake
+LIB_DEPENDS=	libgz-utils.so:devel/ignition-utils
 
 USES=		compiler:c++17-lang cmake eigen:3
 USE_GITHUB=	yes
