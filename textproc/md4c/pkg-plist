@@ -5,10 +5,10 @@ lib/cmake/md4c/md4cConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/md4c/md4cConfig.cmake
 lib/libmd4c-html.so
 lib/libmd4c-html.so.0
-lib/libmd4c-html.so.0.5.2
+lib/libmd4c-html.so.%%SOVER%%
 lib/libmd4c.so
 lib/libmd4c.so.0
-lib/libmd4c.so.0.5.2
+lib/libmd4c.so.%%SOVER%%
 libdata/pkgconfig/md4c-html.pc
 libdata/pkgconfig/md4c.pc
 share/man/man1/md2html.1.gz
