@@ -1,3 +1,65 @@
+  <vuln vid="31b7e7bc-5358-11f1-8b62-8447094a420f">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb118-client</name>
+	<range><lt>11.8.7</lt></range>
+      </package>
+      <package>
+	<name>mariadb114-client</name>
+	<range><lt>11.4.11</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-client</name>
+	<range><lt>10.11.17</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-client</name>
+	<range><lt>10.6.26</lt></range>
+      </package>
+      <package>
+	<name>mariadb118-server</name>
+	<range><lt>11.8.7</lt></range>
+      </package>
+      <package>
+	<name>mariadb114-server</name>
+	<range><lt>11.4.11</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.17</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.26</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/docs/release-notes/community-server/11.8/11.8.7">
+	  <p>See linked CVE's for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44173</cvename>
+      <cvename>CVE-2026-44172</cvename>
+      <cvename>CVE-2026-44171</cvename>
+      <cvename>CVE-2026-44170</cvename>
+      <cvename>CVE-2026-44169</cvename>
+      <cvename>CVE-2026-44168</cvename>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.8/11.8.7</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.4/11.4.11</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.11/11.11.17</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.6/10.6.26</url>
+    </references>
+    <dates>
+      <discovery>2026-05-18</discovery>
+      <entry>2026-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0f4bb64-52c6-11f1-a1c0-0050569f0b83">
     <topic>Vinyl/Varnish -- HTTP/2 parsing deficiency</topic>
     <affects>
