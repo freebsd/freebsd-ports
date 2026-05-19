@@ -1,6 +1,5 @@
 PORTNAME=	bmd-plugin-avahi
-DISTVERSION=	3.0
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -13,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	bhyve runs on amd64 only
 
-BUILD_DEPENDS=	bmd>0:sysutils/bmd
-RUN_DEPENDS=	bmd>0:sysutils/bmd \
+BUILD_DEPENDS=	bmd>3.5:sysutils/bmd
+RUN_DEPENDS=	bmd>3.5:sysutils/bmd \
 		avahi-app>0:net/avahi-app
 
 USES=		uidfix
