@@ -9,7 +9,7 @@ WWW=		https://github.com/animetosho/par2cmdline-turbo
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	untested on other archs
 
 USES=		autoreconf compiler:c++11-lang
