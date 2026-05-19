@@ -1139,6 +1139,7 @@
     SUBDIR += py-simhash
     SUBDIR += py-slepc4py
     SUBDIR += py-snuggs
+    SUBDIR += py-sparsediffpy
     SUBDIR += py-spectral
     SUBDIR += py-spglm
     SUBDIR += py-spint
