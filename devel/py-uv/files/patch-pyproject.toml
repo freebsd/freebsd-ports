@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-02-24 23:33:36 UTC
+--- pyproject.toml.orig	2026-05-18 19:20:44 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -9,7 +9,7 @@
  
  [project]
  name = "uv"
-@@ -11,8 +11,6 @@ requires-python = ">=3.8"
+@@ -11,8 +11,6 @@ keywords = [
  keywords = [
    "uv", "requirements", "packaging"
  ]
@@ -18,12 +18,13 @@
  classifiers = [
    "Development Status :: 5 - Production/Stable",
    "Environment :: Console",
-@@ -42,57 +42,12 @@ Discord = "https://discord.gg/astral-sh"
+@@ -42,59 +40,6 @@ Discord = "https://discord.gg/astral-sh"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
 -[tool.maturin]
 -bindings = "bin"
+-editable-profile = "dev"
 -manifest-path = "crates/uv/Cargo.toml"
 -module-name = "uv"
 -python-source = "python"
@@ -37,10 +38,7 @@
 -    { path = "LICENSE-APACHE", format = "sdist" },
 -    { path = "LICENSE-MIT", format = "sdist" },
 -]
-+[tool.setuptools]
-+packages = ["uv"]
-+package-dir = {"" = "python"}
- 
+-
 -[tool.rooster]
 -changelog-contributors = false  # We exclude contributors from the CHANGELOG file
 -major-labels = []  # We do not use the major version number yet
@@ -76,8 +74,21 @@
 -"Rust API" = ["rustlib"]
 -"Documentation" = ["documentation"]
 -"Other changes" = ["__unknown__"]
+-
+ [dependency-groups]
+ docs = [
+   "black>=23.10.0",
+@@ -119,6 +64,13 @@ cache-keys = [
+     { file = "crates/**/*.rs" },
+     { file = "crates/**/Cargo.toml" },
+ ]
++
++[tool.setuptools]
++packages = ["uv"]
++package-dir = {"" = "python"}
++
 +[tool.setuptools.package-data]
 +uv = ["py.typed"]
  
- [tool.uv]
- managed = false
+ [tool.uv.dependency-groups]
+ docs = { requires-python = ">=3.12" }
