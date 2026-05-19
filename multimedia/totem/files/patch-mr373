@@ -1,0 +1,1022 @@
+https://gitlab.gnome.org/GNOME/totem/-/merge_requests/373
+
+diff --git .gitlab-ci.yml .gitlab-ci.yml
+index 6776359ac3301366846e79c7b920d71f8e54dcf8..2ee511e33f24ce1e2a15ac5cbbbbb081e7adc320 100644
+--- .gitlab-ci.yml
++++ .gitlab-ci.yml
+@@ -29,7 +29,7 @@ variables:
+       libappstream-glib
+       liberation-sans-fonts
+       libhandy-devel
+-      libpeas1-devel
++      libpeas-devel
+       python3-gobject-devel
+       pylint
+       python3-devel
+diff --git docs/reference/totem-plugins.xml docs/reference/totem-plugins.xml
+index 1cedadf6c6a218ea0752c0f463ae2025c9d104ec..c421c15ac9683867584168484a24d8167ff7eb83 100644
+--- docs/reference/totem-plugins.xml
++++ docs/reference/totem-plugins.xml
+@@ -82,7 +82,7 @@ typedef struct {
+ TOTEM_PLUGIN_REGISTER (TOTEM_TYPE_FOOBAR_PLUGIN, TotemFoobarPlugin, totem_foobar_plugin);
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemFoobarPlugin *self = TOTEM_FOOBAR_PLUGIN (plugin);
+ 	TotemFoobarPluginPrivate *priv = self->priv;
+@@ -95,7 +95,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemFoobarPlugin *self = TOTEM_FOOBAR_PLUGIN (plugin);
+ 
+diff --git meson.build meson.build
+index 5c1f170303b3ce740aaeb4e5c72822008497f0dd..915cfd7dd6860b182308389c120af5116207f31b 100644
+--- meson.build
++++ meson.build
+@@ -128,7 +128,7 @@ gtk_req_version = '>= 3.22.0'
+ hdy_req_version = '>= 1.5.0'
+ gst_req_version = '>= 1.21.1'
+ grilo_req_version = '>= 0.3.0'
+-peas_req_version = '>= 1.1.0'
++peas_req_version = '>= 1.99.1'
+ gnome_desktop_req_version = '>= 43'
+ totem_plparser_req_version = '>= 3.26.5'
+ libportal_req_version = '>= 0.7'
+@@ -149,7 +149,7 @@ gst_dep = dependency('gstreamer-1.0', version: gst_req_version)
+ gst_tag_dep = dependency('gstreamer-tag-1.0', version: gst_req_version)
+ gst_video_dep = dependency('gstreamer-video-1.0', version: gst_req_version)
+ gst_pbutils_dep = dependency('gstreamer-pbutils-1.0', version: gst_req_version)
+-peas_dep = dependency('libpeas-1.0', version: peas_req_version)
++peas_dep = dependency('libpeas-2', version: peas_req_version)
+ totem_plparser_dep = dependency('totem-plparser', version: totem_plparser_req_version)
+ m_dep = cc.find_library('m', required: true)
+ 
+diff --git src/meson.build src/meson.build
+index f9051bd18e1e9aa1f46d45a5a090c165c7bd1097..2b9ed90c77d803dde0f41054ff8348a2980e2aa7 100644
+--- src/meson.build
++++ src/meson.build
+@@ -71,6 +71,7 @@ totem_common_cflags = common_flags + warn_flags + [
+ ]
+ 
+ headers = files(
++  'plugins/totem-plugin-activatable.h',
+   'plugins/totem-plugin.h',
+   'plugins/totem-dirs.h',
+   'totem-interface.h',
+@@ -108,6 +109,7 @@ libtotem_player_dep = declare_dependency(
+ 
+ libtotem_sources = files(
+   'plugins/totem-dirs.c',
++  'plugins/totem-plugin-activatable.c',
+   'plugins/totem-plugins-engine.c',
+   'icon-helpers.c',
+   'totem-grilo.c',
+diff --git src/plugins/autoload-subtitles/totem-autoload-subtitles.c src/plugins/autoload-subtitles/totem-autoload-subtitles.c
+index 9addf9efb08e4e0ef7c9abbf30774dbf8d64bf3b..d5cd99818a32713f159102432d727b70a44967cd 100644
+--- src/plugins/autoload-subtitles/totem-autoload-subtitles.c
++++ src/plugins/autoload-subtitles/totem-autoload-subtitles.c
+@@ -232,7 +232,7 @@ autoload_subs_changed (GSettings                *settings,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemAutoloadSubtitlesPlugin *pi = TOTEM_AUTOLOAD_SUBTITLES_PLUGIN (plugin);
+ 
+@@ -246,7 +246,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemAutoloadSubtitlesPlugin *pi = TOTEM_AUTOLOAD_SUBTITLES_PLUGIN (plugin);
+ 
+diff --git src/plugins/im-status/totem-im-status.c src/plugins/im-status/totem-im-status.c
+index 0e89044b96bee052d09f0ee55d49f2391abe66a7..9ee49d233ea613ba5d7865865d4503ed7e115d0b 100644
+--- src/plugins/im-status/totem-im-status.c
++++ src/plugins/im-status/totem-im-status.c
+@@ -12,9 +12,8 @@
+ #include <glib-object.h>
+ #include <glib/gi18n-lib.h>
+ #include <string.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ 
+ #include "totem.h"
+ #include "totem-plugin.h"
+@@ -117,7 +116,7 @@ got_proxy_cb (GObject             *source_object,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemImStatusPlugin *pi = TOTEM_IM_STATUS_PLUGIN (plugin);
+ 	TotemObject *totem;
+@@ -149,7 +148,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemImStatusPlugin *pi = TOTEM_IM_STATUS_PLUGIN (plugin);
+ 	TotemObject *totem;
+diff --git src/plugins/mpris/totem-mpris.c src/plugins/mpris/totem-mpris.c
+index c37299cca32ad799c8de05af29b7d98a284f33af..a0e388520862aa9ccd95ffc1600316d394d3fa9f 100644
+--- src/plugins/mpris/totem-mpris.c
++++ src/plugins/mpris/totem-mpris.c
+@@ -12,9 +12,8 @@
+ #include <glib-object.h>
+ #include <glib/gi18n-lib.h>
+ #include <gmodule.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ #include <string.h>
+ 
+ #include "totem-plugin.h"
+@@ -589,7 +588,7 @@ name_lost_cb (GDBusConnection *connection, const char *name, TotemMprisPlugin *p
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemMprisPlugin *pi = TOTEM_MPRIS_PLUGIN (plugin);
+ 	GDBusInterfaceInfo *ifaceinfo;
+@@ -673,7 +672,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemMprisPlugin *pi = TOTEM_MPRIS_PLUGIN (plugin);
+ 	TotemObject *totem;
+diff --git src/plugins/open-directory/totem-open-directory.c src/plugins/open-directory/totem-open-directory.c
+index b8959b3988f0b4ad98d3e4dd15a11848c57f633c..b54ab07ab02cb383f00d8343bf5c71cc0fb787f6 100644
+--- src/plugins/open-directory/totem-open-directory.c
++++ src/plugins/open-directory/totem-open-directory.c
+@@ -9,9 +9,8 @@
+ #include "config.h"
+ 
+ #include <glib/gi18n-lib.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ #include <libportal-gtk3/portal-gtk3.h>
+ 
+ #include "totem-plugin.h"
+@@ -118,7 +117,7 @@ totem_open_directory_file_opened (TotemObject              *totem,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemOpenDirectoryPlugin *pi = TOTEM_OPEN_DIRECTORY_PLUGIN (plugin);
+ 	GMenu *menu;
+@@ -161,7 +160,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemOpenDirectoryPlugin *pi = TOTEM_OPEN_DIRECTORY_PLUGIN (plugin);
+ 
+diff --git src/plugins/opensubtitles/opensubtitles.plugin.desktop.in src/plugins/opensubtitles/opensubtitles.plugin.desktop.in
+index a385d359c046b65d8b0cf4860ba364df4944d545..ee60098db869db59c58220f8b262d9019fdd3051 100644
+--- src/plugins/opensubtitles/opensubtitles.plugin.desktop.in
++++ src/plugins/opensubtitles/opensubtitles.plugin.desktop.in
+@@ -1,5 +1,5 @@
+ [Plugin]
+-Loader=python3
++Loader=python
+ Module=opensubtitles
+ IAge=1
+ Name=Subtitle Downloader
+diff --git src/plugins/opensubtitles/opensubtitles.py src/plugins/opensubtitles/opensubtitles.py
+index 45ddc9f1923a410df8530158ae525ba5f00d7ac9..820d92eb794be570e2c9d0f74e3d0e8793f35fdb 100644
+--- src/plugins/opensubtitles/opensubtitles.py
++++ src/plugins/opensubtitles/opensubtitles.py
+@@ -8,11 +8,10 @@ import os
+ import gettext
+ 
+ import gi
+-gi.require_version('Peas', '1.0')
+ gi.require_version('Gtk', '3.0')
+ gi.require_version('Totem', '1.0')
+ from gi.repository import GLib, GObject # pylint: disable=wrong-import-position
+-from gi.repository import Peas, Gtk, Gdk # pylint: disable=wrong-import-position,
++from gi.repository import Totem, Gtk, Gdk # pylint: disable=wrong-import-position,no-name-in-module
+ from gi.repository import Gio # pylint: disable=wrong-import-position,no-name-in-module
+ 
+ from hash import hash_file # pylint: disable=wrong-import-position
+@@ -390,7 +389,7 @@ class OpenSubtitlesModel:
+         return (None, message)
+ 
+ class OpenSubtitles (GObject.Object, # pylint: disable=R0902
+-                     Peas.Activatable):
++                     Totem.PluginActivatable):
+     __gtype_name__ = 'OpenSubtitles'
+ 
+     object = GObject.Property (type = GObject.Object)
+diff --git src/plugins/properties/totem-movie-properties.c src/plugins/properties/totem-movie-properties.c
+index a9c157b43b4e456bc66310f1445db8e0d5aa6d21..279f66148fad742dab4ed72abb78f924c91266c0 100644
+--- src/plugins/properties/totem-movie-properties.c
++++ src/plugins/properties/totem-movie-properties.c
+@@ -13,9 +13,8 @@
+ #include <glib/gi18n-lib.h>
+ #include <gmodule.h>
+ #include <string.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ #include <bacon-video-widget-properties.h>
+ 
+ #include "totem-plugin.h"
+@@ -238,7 +237,7 @@ properties_action_cb (GSimpleAction              *simple,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemMoviePropertiesPlugin *pi;
+ 	TotemObject *totem;
+@@ -299,7 +298,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemMoviePropertiesPlugin *pi;
+ 	TotemObject *totem;
+diff --git src/plugins/pythonconsole/pythonconsole.plugin.desktop.in src/plugins/pythonconsole/pythonconsole.plugin.desktop.in
+index 4775923bf7c8b7dee5556a122dc0af1ce1960320..bf6bc7e84516e5f0024fff092d14cccf0257677d 100644
+--- src/plugins/pythonconsole/pythonconsole.plugin.desktop.in
++++ src/plugins/pythonconsole/pythonconsole.plugin.desktop.in
+@@ -1,5 +1,5 @@
+ [Plugin]
+-Loader=python3
++Loader=python
+ Module=pythonconsole
+ IAge=1
+ Name=Python Console
+diff --git src/plugins/pythonconsole/pythonconsole.py src/plugins/pythonconsole/pythonconsole.py
+index f9f8a68a64129caa6168aa9161e842f8b108fd64..21dfed2faec6201a6d999f460b681f800132260f 100644
+--- src/plugins/pythonconsole/pythonconsole.py
++++ src/plugins/pythonconsole/pythonconsole.py
+@@ -17,11 +17,10 @@ import gettext
+ import gi
+ 
+ gi.require_version('Gtk', '3.0')
+-gi.require_version('Peas', '1.0')
+ gi.require_version('Pango', '1.0')
+ gi.require_version('Totem', '1.0')
+ 
+-from gi.repository import GObject, Peas, Gtk, Totem # pylint: disable=wrong-import-position,no-name-in-module
++from gi.repository import GObject, Gtk, Totem # pylint: disable=wrong-import-position,no-name-in-module
+ from gi.repository import Gio # pylint: disable=wrong-import-position
+ 
+ from console import PythonConsole, OutFile # pylint: disable=wrong-import-position
+@@ -39,7 +38,7 @@ gettext.textdomain ("totem")
+ D_ = gettext.dgettext
+ _ = gettext.gettext
+ 
+-class PythonConsolePlugin (GObject.Object, Peas.Activatable):
++class PythonConsolePlugin (GObject.Object, Totem.PluginActivatable):
+     __gtype_name__ = 'PythonConsolePlugin'
+ 
+     object = GObject.property (type = GObject.Object)
+diff --git src/plugins/recent/totem-recent.c src/plugins/recent/totem-recent.c
+index dd7726ec309faf2f39d3adb0bc425c8ddce9b30a..c2b01759c99c42947a672c63fed3f8fb7ff15fd0 100644
+--- src/plugins/recent/totem-recent.c
++++ src/plugins/recent/totem-recent.c
+@@ -138,7 +138,7 @@ file_has_played_cb (TotemObject       *totem,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemRecentPlugin *pi = TOTEM_RECENT_PLUGIN (plugin);
+ 
+@@ -149,7 +149,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemRecentPlugin *pi = TOTEM_RECENT_PLUGIN (plugin);
+ 
+diff --git src/plugins/rotation/totem-rotation.c src/plugins/rotation/totem-rotation.c
+index 6227a13f23d6759e0296e984850e8856f4f8429e..2028abfc90623b488b3ff97aa2ef6e62bd865d7e 100644
+--- src/plugins/rotation/totem-rotation.c
++++ src/plugins/rotation/totem-rotation.c
+@@ -17,9 +17,8 @@
+ #include <gligstdio.h>
+ #include <gmodule.h>
+ #include <errno.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ 
+ #include "totem-plugin.h"
+ #include "backend/bacon-video-widget.h"
+@@ -197,7 +196,7 @@ totem_rotation_file_opened (TotemObject *totem,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemRotationPlugin *pi = TOTEM_ROTATION_PLUGIN (plugin);
+ 	GMenu *menu;
+@@ -254,7 +253,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemRotationPlugin *pi = TOTEM_ROTATION_PLUGIN (plugin);
+ 	const char * const accels[] = { NULL };
+diff --git src/plugins/samplepython/samplepython.plugin.desktop.in src/plugins/samplepython/samplepython.plugin.desktop.in
+index ccac3c94eff27b656da907754bc9ef357e781b27..2e49a4e1d9e9571beabae0b5397ffd00fa7658c7 100644
+--- src/plugins/samplepython/samplepython.plugin.desktop.in
++++ src/plugins/samplepython/samplepython.plugin.desktop.in
+@@ -1,5 +1,5 @@
+ [Plugin]
+-Loader=python3
++Loader=python
+ Module=samplepython
+ IAge=1
+ Name=Python Sample Plugin
+diff --git src/plugins/samplepython/samplepython.py src/plugins/samplepython/samplepython.py
+index 82af8b37967ecd5b29b7778d3bd954e7809748b7..4f161b8753eea40faa71c812543005a89ee7f3e3 100644
+--- src/plugins/samplepython/samplepython.py
++++ src/plugins/samplepython/samplepython.py
+@@ -1,8 +1,8 @@
+ # From code by James Livingston
+ 
+-from gi.repository import GObject, Peas, Totem # pylint: disable=no-name-in-module,unused-import
++from gi.repository import GObject, Totem # pylint: disable=no-name-in-module,unused-import
+ 
+-class SamplePython (GObject.Object, Peas.Activatable):
++class SamplePython (GObject.Object, Totem.PluginActivatable):
+     __gtype_name__ = 'SamplePython'
+ 
+     object = GObject.property (type = GObject.Object)
+diff --git src/plugins/save-file/totem-save-file.c src/plugins/save-file/totem-save-file.c
+index 147041ecea71eac799fcbcf751779e44b9b0bcff..8ed68252734ab029f06fe091c885131570b3b82f 100644
+--- src/plugins/save-file/totem-save-file.c
++++ src/plugins/save-file/totem-save-file.c
+@@ -16,9 +16,8 @@
+ #include <gligstdio.h>
+ #include <gmodule.h>
+ #include <errno.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ 
+ #include "totem-plugin.h"
+ #include "totem-interface.h"
+@@ -402,7 +401,7 @@ totem_save_file_download_filename (GObject    *gobject,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemSaveFilePlugin *pi = TOTEM_SAVE_FILE_PLUGIN (plugin);
+ 	GMenu *menu;
+@@ -450,7 +449,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemSaveFilePlugin *pi = TOTEM_SAVE_FILE_PLUGIN (plugin);
+ 
+diff --git src/plugins/screensaver/totem-screensaver.c src/plugins/screensaver/totem-screensaver.c
+index 45aec6b274144a7f1370e1f520618308320a7b2f..9817bc1572cc8449abe50c292e614740dadc7f70 100644
+--- src/plugins/screensaver/totem-screensaver.c
++++ src/plugins/screensaver/totem-screensaver.c
+@@ -11,9 +11,8 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <glib/gi18n-lib.h>
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include "totem-plugin-activatable.h"
+ #include <string.h>
+ 
+ #include "totem-plugin.h"
+@@ -137,7 +136,7 @@ screensaver_proxy_ready_cb (GObject      *source_object,
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemScreensaverPlugin *pi = TOTEM_SCREENSAVER_PLUGIN (plugin);
+ 	TotemObject *totem;
+@@ -170,7 +169,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate	(PeasActivatable *plugin)
++impl_deactivate	(TotemPluginActivatable *plugin)
+ {
+ 	TotemScreensaverPlugin *pi = TOTEM_SCREENSAVER_PLUGIN (plugin);
+ 
+diff --git src/plugins/screenshot/totem-screenshot-plugin.c src/plugins/screenshot/totem-screenshot-plugin.c
+index 5b6680e41fab721a3c1b4f4ae13a65147944514d..4de4f9983a51415ded370acde13d7a6c220a9a58 100644
+--- src/plugins/screenshot/totem-screenshot-plugin.c
++++ src/plugins/screenshot/totem-screenshot-plugin.c
+@@ -12,7 +12,7 @@
+ #include <gmodule.h>
+ #include <string.h>
+ #include <gdk/gdkkeysyms.h>
+-#include <libpeas/peas-activatable.h>
++#include "totem-plugin-activatable.h"
+ 
+ #include "totem-plugin.h"
+ #include "totem-screenshot-plugin.h"
+@@ -271,7 +271,7 @@ disable_save_to_disk_changed_cb (GSettings *settings, const gchar *key, TotemScr
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	TotemScreenshotPlugin *pi = TOTEM_SCREENSHOT_PLUGIN (plugin);
+ 	GMenu *menu;
+@@ -321,7 +321,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemScreenshotPlugin *pi = TOTEM_SCREENSHOT_PLUGIN (plugin);
+ 	const char * const accels[] = { NULL };
+diff --git src/plugins/screenshot/totem-screenshot-plugin.h src/plugins/screenshot/totem-screenshot-plugin.h
+index 545093f5927a5ef02070428735edb475d3513d73..c190f3283a4008d28c261d867ba2775e1d00330a 100644
+--- src/plugins/screenshot/totem-screenshot-plugin.h
++++ src/plugins/screenshot/totem-screenshot-plugin.h
+@@ -11,8 +11,7 @@
+ #include <glib.h>
+ 
+ #include "totem.h"
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
++#include <libpeas.h>
+ 
+ gchar *totem_screenshot_plugin_setup_file_chooser (const char *filename_format, const char *movie_name) G_GNUC_WARN_UNUSED_RESULT G_GNUC_FORMAT (1);
+ void totem_screenshot_plugin_update_file_chooser (const char *filename);
+diff --git src/plugins/totem-plugin-activatable.c src/plugins/totem-plugin-activatable.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..dd4df45c25dab5ee3eb528cd4bc4dcf5faccccc2
+--- /dev/null
++++ src/plugins/totem-plugin-activatable.c
+@@ -0,0 +1,88 @@
++/*
++ * Copyright (C) 2010 - Steve Frécinaux
++ *
++ * SPDX-License-Identifier: GPL-3-or-later
++ *
++ * Originally from libpeas
++ */
++
++/**
++ * SECTION:totem-plugin-activatable
++ * @short_description: Interface for activatable plugins.
++ * @stability: Unstable
++ * @include: totem-plugin-activatable.h
++ *
++ * #TotemPluginActivatable is an interface which should be implemented by plugins
++ * which will be used in Totem.
++**/
++
++#include "totem-plugin-activatable.h"
++
++G_DEFINE_INTERFACE (TotemPluginActivatable, totem_plugin_activatable, G_TYPE_OBJECT)
++
++static void
++totem_plugin_activatable_default_init (TotemPluginActivatableInterface *iface)
++{
++  /**
++   * TotemPluginActivatable:object:
++   *
++   * The object property contains the targetted object for this #TotemPluginActivatable
++   * instance.
++   *
++   * For example a toplevel window in a typical windowed application. It is set
++   * at construction time and won't change.
++   */
++    g_object_interface_install_property (iface,
++                                         g_param_spec_object ("object",
++                                                              "object",
++                                                              "object",
++                                                              G_TYPE_OBJECT,
++                                                              G_PARAM_READWRITE |
++                                                              G_PARAM_CONSTRUCT_ONLY |
++                                                              G_PARAM_STATIC_STRINGS));
++}
++
++/**
++ * totem_plugin_activatable_activate:
++ * @self: A #TotemPluginActivatable.
++ *
++ * Activates the extension on the targetted object.
++ *
++ * On activation, the extension should hook itself to the object
++ * where it makes sense.
++ */
++void
++totem_plugin_activatable_activate (TotemPluginActivatable *self)
++{
++    TotemPluginActivatableInterface *iface;
++
++    g_return_if_fail (TOTEM_IS_PLUGIN_ACTIVATABLE (self));
++
++    iface = TOTEM_PLUGIN_ACTIVATABLE_GET_IFACE (self);
++    g_return_if_fail (iface->activate != NULL);
++
++    iface->activate(self);
++}
++
++/**
++ * totem_plugin_activatable_deactivate:
++ * @self: A #TotemPluginActivatable.
++ *
++ * Deactivates the extension on the targetted object.
++ *
++ * On deactivation, an extension should remove itself from all the hooks it
++ * used and should perform any cleanup required, so it can be unreffed safely
++ * and without any more effect on the host application.
++ */
++void
++totem_plugin_activatable_deactivate (TotemPluginActivatable *self)
++{
++    TotemPluginActivatableInterface *iface;
++
++    g_return_if_fail (TOTEM_IS_PLUGIN_ACTIVATABLE (self));
++
++    iface = TOTEM_PLUGIN_ACTIVATABLE_GET_IFACE (self);
++    g_return_if_fail (iface->deactivate != NULL);
++
++    iface->deactivate(self);
++}
+diff --git src/plugins/totem-plugin-activatable.h src/plugins/totem-plugin-activatable.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9f32fac76f3b976754e04e514916d58f9d54477
+--- /dev/null
++++ src/plugins/totem-plugin-activatable.h
+@@ -0,0 +1,24 @@
++/*
++ * Copyright (C) 2010 - Steve Frécinaux
++ *
++ * SPDX-License-Identifier: GPL-3-or-later
++ *
++ * Originally from libpeas
++ */
++
++#pragma once
++
++#include <glib-object.h>
++
++#define TOTEM_TYPE_PLUGIN_ACTIVATABLE       (totem_plugin_activatable_get_type())
++G_DECLARE_INTERFACE (TotemPluginActivatable, totem_plugin_activatable, TOTEM, PLUGIN_ACTIVATABLE, GObject)
++
++struct _TotemPluginActivatableInterface {
++    GTypeInterface parent;
++
++    void    (*activate)     (TotemPluginActivatable *self);
++    void    (*deactivate)   (TotemPluginActivatable *self);
++};
++
++void    totem_plugin_activatable_activate       (TotemPluginActivatable *self);
++void    totem_plugin_activatable_deactivate     (TotemPluginActivatable *self);
+diff --git src/plugins/totem-plugin.h src/plugins/totem-plugin.h
+index c7c842bd7e18c62cf22354f091329cf355826220..3d04bf8c65f964991c1281a25f53ea73e5cc5a5a 100644
+--- src/plugins/totem-plugin.h
++++ src/plugins/totem-plugin.h
+@@ -13,9 +13,8 @@
+ 
+ #pragma once
+ 
+-#include <libpeas/peas-extension-base.h>
+-#include <libpeas/peas-object-module.h>
+-#include <libpeas/peas-activatable.h>
++#include <libpeas.h>
++#include <totem-plugin-activatable.h>
+ #include <totem.h>
+ 
+ /**
+@@ -33,10 +32,10 @@
+ 		PeasExtensionBaseClass parent_class;				\
+ 	} TypeName##Class;							\
+ 	GType type_name##_get_type (void) G_GNUC_CONST;				\
+-	static void impl_activate (PeasActivatable *plugin);			\
+-	static void impl_deactivate (PeasActivatable *plugin);			\
++	static void impl_activate (TotemPluginActivatable *plugin);			\
++	static void impl_deactivate (TotemPluginActivatable *plugin);			\
+ 	G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);	\
+-	static void peas_activatable_iface_init (PeasActivatableInterface *iface); \
++	static void peas_activatable_iface_init (TotemPluginActivatableInterface *iface); \
+ 	enum {									\
+ 		PROP_0,								\
+ 		PROP_OBJECT							\
+@@ -45,11 +44,11 @@
+ 					type_name,				\
+ 					PEAS_TYPE_EXTENSION_BASE,		\
+ 					0,					\
+-					G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE, \
++					G_IMPLEMENT_INTERFACE_DYNAMIC (TOTEM_TYPE_PLUGIN_ACTIVATABLE, \
+ 								       peas_activatable_iface_init) \
+ 					)					\
+ 	static void								\
+-	peas_activatable_iface_init (PeasActivatableInterface *iface)		\
++	peas_activatable_iface_init (TotemPluginActivatableInterface *iface)		\
+ 	{									\
+ 		iface->activate = impl_activate;				\
+ 		iface->deactivate = impl_deactivate;				\
+@@ -109,6 +108,6 @@
+ 	{									\
+ 		type_name##_register_type (G_TYPE_MODULE (module));		\
+ 		peas_object_module_register_extension_type (module,		\
+-							    PEAS_TYPE_ACTIVATABLE, \
++							    TOTEM_TYPE_PLUGIN_ACTIVATABLE, \
+ 							    TYPE_NAME);		\
+ 	}
+diff --git src/plugins/totem-plugins-engine.c src/plugins/totem-plugins-engine.c
+index ebc7a5e389601f92080958108ba47882e00d02d5..c1715a70b6aee044bb9a4c9aea36d9414babbcb1 100644
+--- src/plugins/totem-plugins-engine.c
++++ src/plugins/totem-plugins-engine.c
+@@ -20,21 +20,22 @@
+ #include <glib/gi18n.h>
+ #include <glib.h>
+ #include <girepository.h>
+-#include <libpeas/peas-activatable.h>
+-#include <libpeas/peas-extension-set.h>
+ 
+ #include "totem-dirs.h"
+ #include "totem-plugins-engine.h"
++#include "totem-plugin-activatable.h"
+ 
+ struct _TotemPluginsEngine {
+-	PeasEngine parent;
++	GObject parent;
++
++	PeasEngine *peas_engine;
+ 	PeasExtensionSet *activatable_extensions;
+ 	TotemObject *totem;
+ 	GSettings *settings;
+ 	guint garbage_collect_id;
+ };
+ 
+-G_DEFINE_TYPE (TotemPluginsEngine, totem_plugins_engine, PEAS_TYPE_ENGINE)
++G_DEFINE_TYPE (TotemPluginsEngine, totem_plugins_engine, G_TYPE_OBJECT)
+ 
+ static void totem_plugins_engine_dispose (GObject *object);
+ 
+@@ -42,7 +43,7 @@ static gboolean
+ garbage_collect_cb (gpointer data)
+ {
+ 	TotemPluginsEngine *engine = (TotemPluginsEngine *) data;
+-	peas_engine_garbage_collect (PEAS_ENGINE (engine));
++	peas_engine_garbage_collect (engine->peas_engine);
+ 	return TRUE;
+ }
+ 
+@@ -57,19 +58,19 @@ totem_plugins_engine_class_init (TotemPluginsEngineClass *klass)
+ static void
+ on_activatable_extension_added (PeasExtensionSet *set,
+ 				PeasPluginInfo   *info,
+-				PeasExtension    *exten,
++				GObject          *exten,
+ 				TotemPluginsEngine *engine)
+ {
+-	peas_activatable_activate (PEAS_ACTIVATABLE (exten));
++	totem_plugin_activatable_activate (TOTEM_PLUGIN_ACTIVATABLE (exten));
+ }
+ 
+ static void
+ on_activatable_extension_removed (PeasExtensionSet *set,
+ 				  PeasPluginInfo   *info,
+-				  PeasExtension    *exten,
++				  GObject          *exten,
+ 				  TotemPluginsEngine *engine)
+ {
+-	peas_activatable_deactivate (PEAS_ACTIVATABLE (exten));
++	totem_plugin_activatable_deactivate (TOTEM_PLUGIN_ACTIVATABLE (exten));
+ }
+ 
+ TotemPluginsEngine *
+@@ -78,37 +79,38 @@ totem_plugins_engine_get_default (TotemObject *totem)
+ 	static TotemPluginsEngine *engine = NULL;
+ 	char **paths;
+ 	guint i;
+-	const GList *plugin_infos, *l;
+ 
+ 	if (G_LIKELY (engine != NULL))
+ 		return g_object_ref (engine);
+ 
+ 	g_return_val_if_fail (totem != NULL, NULL);
+ 
+-	g_irepository_require (g_irepository_get_default (), "Peas", "1.0", 0, NULL);
+-	g_irepository_require (g_irepository_get_default (), "PeasGtk", "1.0", 0, NULL);
++	g_irepository_require (g_irepository_get_default (), "Peas-2", "1.0", 0, NULL);
+ 	g_irepository_require (g_irepository_get_default (), "Totem", TOTEM_API_VERSION, 0, NULL);
+ 
+ 	paths = totem_get_plugin_paths ();
+ 
+ 	engine = TOTEM_PLUGINS_ENGINE (g_object_new (TOTEM_TYPE_PLUGINS_ENGINE,
+ 						     NULL));
++
++	engine->peas_engine = peas_engine_new ();
++
+ 	for (i = 0; paths[i] != NULL; i++) {
+ 		/* Totem uses the libdir even for noarch data */
+-		peas_engine_add_search_path (PEAS_ENGINE (engine),
++		peas_engine_add_search_path (engine->peas_engine,
+ 					     paths[i], paths[i]);
+ 	}
+ 	g_strfreev (paths);
+ 
+-	peas_engine_enable_loader (PEAS_ENGINE (engine), "python3");
++	peas_engine_enable_loader (engine->peas_engine, "python");
+ 
+ 	g_object_add_weak_pointer (G_OBJECT (engine),
+ 				   (gpointer) &engine);
+ 
+ 	engine->totem = g_object_ref (totem);
+ 
+-	engine->activatable_extensions = peas_extension_set_new (PEAS_ENGINE (engine),
+-								       PEAS_TYPE_ACTIVATABLE,
++	engine->activatable_extensions = peas_extension_set_new (engine->peas_engine,
++								       TOTEM_TYPE_PLUGIN_ACTIVATABLE,
+ 								       "object", totem,
+ 								       NULL);
+ 
+@@ -118,25 +120,32 @@ totem_plugins_engine_get_default (TotemObject *totem)
+ 			  G_CALLBACK (on_activatable_extension_removed), engine);
+ 
+ 	g_settings_bind (engine->settings, "active-plugins",
+-			 engine, "loaded-plugins",
++			 engine->peas_engine, "loaded-plugins",
+ 			 G_SETTINGS_BIND_DEFAULT | G_SETTINGS_BIND_NO_SENSITIVITY);
+ 
+ 	/* Load builtin plugins */
+-	plugin_infos = peas_engine_get_plugin_list (PEAS_ENGINE (engine));
+-
+-	g_object_freeze_notify (G_OBJECT (engine));
+-	for (l = plugin_infos; l != NULL; l = l->next) {
+-		PeasPluginInfo *plugin_info = PEAS_PLUGIN_INFO (l->data);
++	g_object_freeze_notify (G_OBJECT (engine->peas_engine));
++	for (i = 0; i < g_list_model_get_n_items (G_LIST_MODEL (engine->peas_engine)); i++) {
++		g_autoptr(PeasPluginInfo) plugin_info = PEAS_PLUGIN_INFO (g_list_model_get_item (G_LIST_MODEL (engine->peas_engine), i));
+ 
+ 		if (peas_plugin_info_is_builtin (plugin_info)) {
+-			peas_engine_load_plugin (PEAS_ENGINE (engine), plugin_info);
++			peas_engine_load_plugin (engine->peas_engine, plugin_info);
+ 		}
+ 	}
+-	g_object_thaw_notify (G_OBJECT (engine));
++	g_object_thaw_notify (G_OBJECT (engine->peas_engine));
+ 
+ 	return engine;
+ }
+ 
++static void
++on_plugin_shutdown (PeasExtensionSet *set,
++                    PeasPluginInfo   *info,
++                    GObject          *plugin,
++                    gpointer          data)
++{
++	totem_plugin_activatable_deactivate (TOTEM_PLUGIN_ACTIVATABLE (plugin));
++}
++
+ /* Necessary to break the reference cycle between activatable_extensions and the engine itself. Also useful to allow the plugins to be shut down
+  * earlier than the rest of Totem, so that (for example) they can display modal save dialogues and the like. */
+ void
+@@ -151,7 +160,7 @@ totem_plugins_engine_shut_down (TotemPluginsEngine *self)
+ 
+ 	/* We then explicitly deactivate all the extensions. Normally, this would be done extension-by-extension as they're unreffed when the
+ 	 * PeasExtensionSet is finalised, but we've just removed the signal handler which would do that (extension-removed). */
+-	peas_extension_set_call (self->activatable_extensions, "deactivate");
++	peas_extension_set_foreach (self->activatable_extensions, on_plugin_shutdown, NULL);
+ 
+ 	g_clear_object (&self->activatable_extensions);
+ }
+@@ -174,10 +183,19 @@ totem_plugins_engine_dispose (GObject *object)
+ 		totem_plugins_engine_shut_down (engine);
+ 
+ 	g_clear_handle_id (&engine->garbage_collect_id, g_source_remove);
+-	peas_engine_garbage_collect (PEAS_ENGINE (engine));
++	peas_engine_garbage_collect (engine->peas_engine);
+ 
+ 	g_clear_object (&engine->totem);
+ 	g_clear_object (&engine->settings);
++	g_clear_object (&engine->peas_engine);
+ 
+ 	G_OBJECT_CLASS (totem_plugins_engine_parent_class)->dispose (object);
+ }
++
++PeasEngine*
++totem_plugins_engine_get_engine (TotemPluginsEngine *self)
++{
++	g_return_val_if_fail (TOTEM_IS_PLUGINS_ENGINE (self), NULL);
++
++	return self->peas_engine;
++}
+diff --git src/plugins/totem-plugins-engine.h src/plugins/totem-plugins-engine.h
+index d33d568ac424ed06578fceef24a5a830354a0347..b44bfb4ecd92a9f7f7b38cdfa684a57c7c3f9015 100644
+--- src/plugins/totem-plugins-engine.h
++++ src/plugins/totem-plugins-engine.h
+@@ -14,13 +14,13 @@
+ #pragma once
+ 
+ #include <glib.h>
+-#include <libpeas/peas-engine.h>
+-#include <libpeas/peas-autocleanups.h>
++#include <libpeas.h>
+ #include <totem.h>
+ 
+ #define TOTEM_TYPE_PLUGINS_ENGINE              (totem_plugins_engine_get_type ())
+-G_DECLARE_FINAL_TYPE(TotemPluginsEngine, totem_plugins_engine, TOTEM, PLUGINS_ENGINE, PeasEngine)
++G_DECLARE_FINAL_TYPE(TotemPluginsEngine, totem_plugins_engine, TOTEM, PLUGINS_ENGINE, GObject)
+ 
+-GType			totem_plugins_engine_get_type			(void) G_GNUC_CONST;
+-TotemPluginsEngine	*totem_plugins_engine_get_default		(TotemObject *totem);
+-void			totem_plugins_engine_shut_down			(TotemPluginsEngine *self);
++GType			  totem_plugins_engine_get_type			(void) G_GNUC_CONST;
++TotemPluginsEngine	* totem_plugins_engine_get_default		(TotemObject *totem);
++void			  totem_plugins_engine_shut_down		(TotemPluginsEngine *self);
++PeasEngine              * totem_plugins_engine_get_engine		(TotemPluginsEngine *self);
+diff --git src/plugins/variable-rate/totem-variable-rate-plugin.c src/plugins/variable-rate/totem-variable-rate-plugin.c
+index aea977581f2e09e93fdae5f204e77a058e2f0292..c2089ec394c3d049089cc61a3b031a9af644a6a4 100644
+--- src/plugins/variable-rate/totem-variable-rate-plugin.c
++++ src/plugins/variable-rate/totem-variable-rate-plugin.c
+@@ -13,7 +13,7 @@
+ #include <gmodule.h>
+ #include <string.h>
+ #include <gdk/gdkkeysyms.h>
+-#include <libpeas/peas-activatable.h>
++#include "totem-plugin-activatable.h"
+ 
+ #include "totem-plugin.h"
+ #include "totem.h"
+@@ -180,7 +180,7 @@ on_window_key_press_event (GtkWidget *window, GdkEventKey *event, TotemVariableR
+ }
+ 
+ static void
+-impl_activate (PeasActivatable *plugin)
++impl_activate (TotemPluginActivatable *plugin)
+ {
+ 	GtkWindow *window;
+ 	TotemVariableRatePlugin *pi = TOTEM_VARIABLE_RATE_PLUGIN (plugin);
+@@ -225,7 +225,7 @@ impl_activate (PeasActivatable *plugin)
+ }
+ 
+ static void
+-impl_deactivate (PeasActivatable *plugin)
++impl_deactivate (TotemPluginActivatable *plugin)
+ {
+ 	TotemVariableRatePlugin *pi = TOTEM_VARIABLE_RATE_PLUGIN (plugin);
+ 	GtkWindow *window;
+diff --git src/totem-preferences-dialog.c src/totem-preferences-dialog.c
+index 098a1436a39b359589362594f00691532d699959..ac4a4f4ca0860bda7e1a9a2d93125c496df5ecb0 100644
+--- src/totem-preferences-dialog.c
++++ src/totem-preferences-dialog.c
+@@ -207,10 +207,10 @@ totem_preferences_dialog_constructed (GObject *object)
+ 	TotemPreferencesDialog *prefs = TOTEM_PREFERENCES_DIALOG (object);
+ 	g_autoptr(TotemPluginsEngine) engine = NULL;
+ 	g_autoptr(GtkWidget) bvw = NULL;
++	PeasEngine *peas_engine = NULL;
+ 	TotemObject *totem;
+ 	guint i, hidden;
+ 	char *font, *encoding;
+-	const GList *plugin_infos, *l;
+ 
+ 	G_OBJECT_CLASS (totem_preferences_dialog_parent_class)->constructed (object);
+ 
+@@ -307,15 +307,15 @@ totem_preferences_dialog_constructed (GObject *object)
+ 	gtk_list_box_set_sort_func (prefs->tpw_plugins_list, totems_plugins_sort_cb, NULL, NULL);
+ 
+ 	engine = totem_plugins_engine_get_default (totem);
+-	plugin_infos = peas_engine_get_plugin_list (PEAS_ENGINE (engine));
++	peas_engine = totem_plugins_engine_get_engine (engine);
+ 
+-	for (l = plugin_infos; l != NULL; l = l->next) {
++	for (i = 0; i < g_list_model_get_n_items (G_LIST_MODEL (peas_engine)); i++) {
+ 		g_autoptr(GError) error = NULL;
+-		PeasPluginInfo *plugin_info;
++		g_autoptr(PeasPluginInfo) plugin_info = NULL;
+ 		const char *plugin_name;
+ 		GtkWidget *plugin_row;
+ 
+-		plugin_info = PEAS_PLUGIN_INFO (l->data);
++		plugin_info = PEAS_PLUGIN_INFO (g_list_model_get_item (G_LIST_MODEL (peas_engine), i));
+ 		plugin_name = peas_plugin_info_get_name (plugin_info);
+ 
+ 		if (!peas_plugin_info_is_available (plugin_info, &error)) {
+diff --git src/totem-preferences-plugin-row.c src/totem-preferences-plugin-row.c
+index f8d6a8b0eddd61f8bc2b97cc654ec65bb144d6e7..6b549b94375d51370bb75ee353a3489e185480ca 100644
+--- src/totem-preferences-plugin-row.c
++++ src/totem-preferences-plugin-row.c
+@@ -48,11 +48,12 @@ totem_preferences_plugin_row_activate_plugin_cb (GtkWidget  *object,
+ 						 gpointer    data)
+ {
+ 	TotemPreferencesPluginRow *self = data;
++	PeasEngine *peas_engine = totem_plugins_engine_get_engine (TOTEM_PLUGINS_ENGINE (self->plugins_engine));
+ 
+ 	if (gtk_switch_get_active (GTK_SWITCH (object)))
+-		peas_engine_load_plugin (PEAS_ENGINE (self->plugins_engine), self->plugin_info);
++		peas_engine_load_plugin (peas_engine, self->plugin_info);
+ 	else
+-		peas_engine_unload_plugin (PEAS_ENGINE (self->plugins_engine), self->plugin_info);
++		peas_engine_unload_plugin (peas_engine, self->plugin_info);
+ }
+ 
+ static void
+@@ -60,7 +61,7 @@ totem_preferences_plugin_display_plugin_info (TotemPreferencesPluginRow *self)
+ {
+ 	g_autofree char *authors = NULL;
+ 	const char  *plugin_copyright;
+-	const char **plugin_authors;
++	const char* const* plugin_authors;
+ 	const char  *plugin_version;
+ 	const char  *plugin_website;
+ 
+@@ -97,7 +98,7 @@ totem_preferences_plugin_row_get_property (GObject    *object,
+ 	switch (prop_id)
+ 	{
+ 	case PROP_PLUGIN_INFO:
+-		g_value_set_boxed (value, self->plugin_info);
++		g_value_set_object (value, self->plugin_info);
+ 		break;
+ 	default:
+ 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+@@ -115,7 +116,7 @@ totem_preferences_plugin_row_set_property (GObject      *object,
+ 	switch (prop_id)
+ 	{
+ 	case PROP_PLUGIN_INFO:
+-		self->plugin_info = g_value_get_boxed (value);
++		self->plugin_info = g_value_get_object (value);
+ 		totem_preferences_plugin_display_plugin_info (self);
+ 		break;
+ 	default:
+@@ -143,7 +144,7 @@ totem_preferences_plugin_row_class_init (TotemPreferencesPluginRowClass *klass)
+ 	object_class->set_property = totem_preferences_plugin_row_set_property;
+ 	object_class->dispose = totem_preferences_plugin_row_dispose;
+ 
+-	properties[PROP_PLUGIN_INFO] = g_param_spec_boxed ("plugin-info",
++	properties[PROP_PLUGIN_INFO] = g_param_spec_object ("plugin-info",
+ 							   "Plugin Info",
+ 							   "",
+ 							   PEAS_TYPE_PLUGIN_INFO,
+diff --git src/totem-preferences-plugin-row.h src/totem-preferences-plugin-row.h
+index 7b93334f29f4e479de581bfe91a7d8ac8fba09a7..eab4548017e317c9b7eb8b5f641c5efe4a8dbe4b 100644
+--- src/totem-preferences-plugin-row.h
++++ src/totem-preferences-plugin-row.h
+@@ -7,7 +7,7 @@
+ #pragma once
+ 
+ #include <handy.h>
+-#include <libpeas/peas-plugin-info.h>
++#include <libpeas.h>
+ 
+ #define TOTEM_TYPE_PREFERENCES_PLUGIN_ROW              (totem_preferences_plugin_row_get_type ())
+ G_DECLARE_FINAL_TYPE(TotemPreferencesPluginRow, totem_preferences_plugin_row, TOTEM, PREFERENCES_PLUGIN_ROW, HdyExpanderRow)

@@ -2,6 +2,7 @@ bin/totem
 bin/totem-video-thumbnailer
 include/totem/1.0/totem-dirs.h
 include/totem/1.0/totem-interface.h
+include/totem/1.0/totem-plugin-activatable.h
 include/totem/1.0/totem-plugin.h
 include/totem/1.0/totem.h
 lib/girepository-1.0/Totem-1.0.typelib
@@ -17,9 +18,9 @@ lib/totem/plugins/mpris/mpris.plugin
 lib/totem/plugins/open-directory/libopen-directory.so
 lib/totem/plugins/open-directory/open-directory.plugin
 lib/totem/plugins/opensubtitles/hash.py
+lib/totem/plugins/opensubtitles/opensubtitles.gresource
 lib/totem/plugins/opensubtitles/opensubtitles.plugin
 lib/totem/plugins/opensubtitles/opensubtitles.py
-lib/totem/plugins/opensubtitles/opensubtitles.ui
 lib/totem/plugins/properties/libmovie-properties.so
 lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/pythonconsole/console.py
@@ -35,8 +36,6 @@ lib/totem/plugins/screensaver/libscreensaver.so
 lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/libscreenshot.so
 lib/totem/plugins/screenshot/screenshot.plugin
-lib/totem/plugins/skipto/libskipto.so
-lib/totem/plugins/skipto/skipto.plugin
 lib/totem/plugins/variable-rate/libvariable-rate.so
 lib/totem/plugins/variable-rate/variable-rate.plugin
 libdata/pkgconfig/totem.pc
