@@ -8,17 +8,15 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for gedit
 WWW=		https://gitlab.gnome.org/World/gedit/gedit-plugins
 
-BROKEN=		"gedit-plugins-50.0_1 depends on package: gedit=50.0 - not found"
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gedit=50.0:editors/gedit \
+BUILD_DEPENDS=	gedit>=50.0:editors/gedit \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas1 \
 		libgedit-tepl-6.so:x11-toolkits/tepl6 \
 		libgedit-gtksourceview-300.so:x11-toolkits/libgedit-gtksourceview
-RUN_DEPENDS=	gedit=50.0:editors/gedit
+RUN_DEPENDS=	gedit>=50.0:editors/gedit
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
 		tar:bz2
