@@ -1,7 +1,7 @@
 PORTNAME=	fbsd-duckstation
 PORTVERSION=	20240614
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -63,4 +63,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/duckstation.png
 	${INSTALL_DATA} ${FILESDIR}/fbsd-duckstation.desktop ${STAGEDIR}${DESKTOPDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# XXX Shipped fmt does not build with clang 21 and consteval enabled
+# See also 76122faa9d1b5e85f9a5f32a5671103d7eef1695
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 211
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-disable-consteval.txt
+.endif
+
+.include <bsd.port.post.mk>
