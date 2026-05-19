@@ -133,6 +133,7 @@
     SUBDIR += bmd-plugin-hookcmd
     SUBDIR += boot-extract
     SUBDIR += bottom
+    SUBDIR += boxrun
     SUBDIR += bpytop
     SUBDIR += brasero
     SUBDIR += brename
