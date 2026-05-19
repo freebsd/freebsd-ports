@@ -1,3 +1,38 @@
+  <vuln vid="1ed77d8e-53bb-11f1-b339-3497f65b111b">
+    <topic>nginx-devel -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.31.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="https://nginx.org/en/CHANGES">
+	  <p>nginx 1.31.0 fixes multiple security issues affecting HTTP/2
+	    proxying, rewrite handling, SCGI/uWSGI response handling, charset
+	    conversion, HTTP/3 connection migration, and OCSP resolver response
+	    processing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42926</cvename>
+      <cvename>CVE-2026-42945</cvename>
+      <cvename>CVE-2026-42946</cvename>
+      <cvename>CVE-2026-42934</cvename>
+      <cvename>CVE-2026-40460</cvename>
+      <cvename>CVE-2026-40701</cvename>
+      <url>https://nginx.org/en/CHANGES</url>
+      <url>https://nginx.org/en/security_advisories.html</url>
+    </references>
+    <dates>
+      <discovery>2026-05-13</discovery>
+      <entry>2026-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f69dbfcc-535b-11f1-8b62-8447094a420f">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
