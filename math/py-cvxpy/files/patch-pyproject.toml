@@ -1,0 +1,13 @@
+-- Use inline table format for license field; the SPDX string format (PEP 639)
+-- is only supported by setuptools >= 78.0, which is not yet in the ports tree.
+--- pyproject.toml.orig	2026-05-19 08:06:52 UTC
++++ pyproject.toml
+@@ -89,7 +89,7 @@ urls = {Homepage = "https://github.com/cvxpy/cvxpy"}
+ ]
+ requires-python = ">=3.11"
+ urls = {Homepage = "https://github.com/cvxpy/cvxpy"}
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ authors = [{name = "Steven Diamond", email = "stevend2@stanford.edu"},
+            {name = "", email = "akshayka@cs.stanford.edu"},
+            {name = "Eric Chu", email = "echu508@stanford.edu"},
