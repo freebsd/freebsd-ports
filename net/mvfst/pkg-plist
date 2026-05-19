@@ -54,6 +54,7 @@ include/quic/common/Expected.h
 include/quic/common/FunctionRef.h
 include/quic/common/IntervalSet-inl.h
 include/quic/common/IntervalSet.h
+include/quic/common/LinuxKernelVersion.h
 include/quic/common/MvfstCheck.h
 include/quic/common/MvfstLogging.h
 include/quic/common/NetworkData.h
