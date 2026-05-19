@@ -1,4 +1,4 @@
-TIMESTAMP = 1779053944
+TIMESTAMP = 1779157061
 SHA256 (fractal-4.4.2.tar.gz) = 7872f050bf1c5904b93ba518b542bcb6fc80c557966645101103060098ddf6d0
 SIZE (fractal-4.4.2.tar.gz) = 851022
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -415,8 +415,8 @@ SHA256 (rust/crates/proc-macro-hack-0.5.20+deprecated.crate) = dc375e1527247fe1a
 SIZE (rust/crates/proc-macro-hack-0.5.20+deprecated.crate) = 15045
 SHA256 (rust/crates/proc-macro2-1.0.101.crate) = 89ae43fd86e4158d6db51ad8e2b80f313af9cc74f5c0e03ccb87de09998732de
 SIZE (rust/crates/proc-macro2-1.0.101.crate) = 53886
-SHA256 (rust/crates/quote-1.0.23.crate) = 8856d8364d252a14d474036ea1358d63c9e6965c8e5c1885c18f73d70bff9c7b
-SIZE (rust/crates/quote-1.0.23.crate) = 28058
+SHA256 (rust/crates/quote-1.0.41.crate) = ce25767e7b499d1b604768e7cde645d14cc8584231ea6b295e9c9eb22c02e1d1
+SIZE (rust/crates/quote-1.0.41.crate) = 31408
 SHA256 (rust/crates/rand-0.7.3.crate) = 6a6b1679d49b24bbfe0c803429aa1874472f50d9b363131f0e89fc356b544d03
 SIZE (rust/crates/rand-0.7.3.crate) = 112246
 SHA256 (rust/crates/rand-0.8.5.crate) = 34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404
