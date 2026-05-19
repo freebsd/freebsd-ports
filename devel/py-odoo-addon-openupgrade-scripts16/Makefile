@@ -1,5 +1,5 @@
 PORTNAME=	odoo-addon-openupgrade-scripts16
-DISTVERSION=	16.0.1.0.5.13
+DISTVERSION=	16.0.1.0.5.14
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI/py${PYTHON_MAJOR_VER}/o/odoo-addon-openupgrade-scripts/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
