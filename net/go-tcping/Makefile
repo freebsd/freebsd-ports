@@ -1,6 +1,7 @@
 PORTNAME=	tcping
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 PKGNAMEPREFIX=	go-
@@ -12,6 +13,9 @@ WWW=		https://github.com/pouriyajamshidi/tcping
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON_i386=	vendored modernc.org/libc fails to compile on FreeBSD/i386
 
 USES=		go:modules
 
