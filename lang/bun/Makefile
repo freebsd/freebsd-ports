@@ -1,6 +1,7 @@
 PORTNAME=	bun
 DISTVERSIONPREFIX=	bun-v
 DISTVERSION=	1.3.14
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GH \
 		https://github.com/oven-sh/zig/releases/download/autobuild-04e7f6ac1e009525bc00934f20199c68f04e0a24/:ovenzig \
@@ -105,7 +106,7 @@ do-fetch:
 			${DISTFILES:M*\:webkit} \
 			${DISTFILES:M*\:nodejshdr} \
 			${DISTFILES:M*\:bootstrap:N*node-modules-*:N*dep-tarballs-*:N*cargo-vendor-*}
-	# Build bun-node-modules tarball (npm install with workspace: → file: fixes).
+	# Build bun-node-modules tarball (npm ci with vendored package-lock*.json).
 	# Uses deterministic tar so the checksum is reproducible across builds.
 	@if ! [ -f "${DD}/bun-node-modules-${DISTVERSION}.tar.gz" ]; then \
 		${ECHO_CMD} "===> Building bun-node-modules-${DISTVERSION}.tar.gz" && \
@@ -118,11 +119,24 @@ do-fetch:
 		${SED} -i '' \
 			's|"bun-types": "workspace:"|"bun-types": "file:../bun-types"|' \
 			$$_NSrc/packages/@types/bun/package.json && \
-		(cd $$_NSrc && ${LOCALBASE}/bin/npm install --ignore-scripts) && \
+		${CP} ${FILESDIR}/package-lock.json $$_NSrc/package-lock.json && \
+		${CP} ${FILESDIR}/package-lock-bun-error.json \
+			$$_NSrc/packages/bun-error/package-lock.json && \
+		${CP} ${FILESDIR}/package-lock-node-fallbacks.json \
+			$$_NSrc/src/node-fallbacks/package-lock.json && \
+		(cd $$_NSrc && ${LOCALBASE}/bin/npm ci --ignore-scripts) && \
 		(cd $$_NSrc/packages/bun-error && \
-			${LOCALBASE}/bin/npm install --ignore-scripts) && \
+			${LOCALBASE}/bin/npm ci --ignore-scripts) && \
 		(cd $$_NSrc/src/node-fallbacks && \
-			${LOCALBASE}/bin/npm install --ignore-scripts) && \
+			${LOCALBASE}/bin/npm ci --ignore-scripts) && \
+		${FIND} $$_NSrc/node_modules \
+			$$_NSrc/packages/bun-error/node_modules \
+			$$_NSrc/src/node-fallbacks/node_modules \
+			-name '.package-lock.json' -delete && \
+		${FIND} $$_NSrc/node_modules \
+			$$_NSrc/packages/bun-error/node_modules \
+			$$_NSrc/src/node-fallbacks/node_modules \
+			-type d -name '@*' -empty -delete && \
 		${FIND} $$_NSrc/node_modules \
 			$$_NSrc/packages/bun-error/node_modules \
 			$$_NSrc/src/node-fallbacks/node_modules \

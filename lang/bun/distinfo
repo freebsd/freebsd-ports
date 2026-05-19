@@ -1,4 +1,4 @@
-TIMESTAMP = 1779059871
+TIMESTAMP = 1779128958
 SHA256 (bun/bootstrap-x86_64-linux-musl.zip) = 0c09b44c0b2432d7ad8a759b685ba8ae1f883902851ac52e282ad60a89bebe42
 SIZE (bun/bootstrap-x86_64-linux-musl.zip) = 100112252
 SHA256 (bun/bun-webkit-freebsd-amd64.tar.gz) = 2bbab3f44e3b3d7961408c703271285ca3cc4d128d7ff9fc54dc5ab112e89fbf
@@ -7,8 +7,8 @@ SHA256 (bun/node-v24.3.0-headers.tar.gz) = 045e9bf477cd5db0ec67f8c1a63ba7f784ded
 SIZE (bun/node-v24.3.0-headers.tar.gz) = 8747815
 SHA256 (bun/bun-1.3.13-93-bootstrap) = aea7f1c221f812d726aad220ecc879914bbe49b05e5bd4e76c3155ec0a133f54
 SIZE (bun/bun-1.3.13-93-bootstrap) = 105685712
-SHA256 (bun/bun-node-modules-1.3.14.tar.gz) = c9f02dc3ed2437005595a7cf93553b9ca6c163e0a3361b0484c374db5ff65328
-SIZE (bun/bun-node-modules-1.3.14.tar.gz) = 31883282
+SHA256 (bun/bun-node-modules-1.3.14.tar.gz) = 5fa07dc80359b9144253c67e67e8519840de9652b40a8fda223db4e74d91c0c6
+SIZE (bun/bun-node-modules-1.3.14.tar.gz) = 31861513
 SHA256 (bun/bun-dep-tarballs-1.3.14.tar.gz) = 8cf5f1aaae1f3494bde36d358fd5d8046e62a4aea48431f99b1317e33dc603ac
 SIZE (bun/bun-dep-tarballs-1.3.14.tar.gz) = 98808662
 SHA256 (bun/bun-cargo-vendor-lolhtml-1.3.14.tar.gz) = 55bd5cbcd4c430c8f8fe8ef3f2bb097da7bfd017a76472d17fb973bb3b49edbb
