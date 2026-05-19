@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.8
+DISTVERSION=	3.6.9
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -373,10 +373,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rusty-fork-0.3.1 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
+		scc-2.4.0 \
 		schannel-0.1.29 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
 		scopeguard-1.2.0 \
+		sdd-3.0.10 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
 		semver-1.0.28 \
@@ -389,6 +391,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
+		serial_test-3.4.0 \
+		serial_test_derive-3.4.0 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
