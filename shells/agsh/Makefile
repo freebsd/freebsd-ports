@@ -1,5 +1,5 @@
 PORTNAME=	agsh
-DISTVERSION=	0.22.1
+DISTVERSION=	0.23.1
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
