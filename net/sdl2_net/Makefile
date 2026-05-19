@@ -4,7 +4,7 @@ DISTVERSION=	2.4.0
 CATEGORIES=	net
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Small sample cross-platform networking library
+COMMENT=	Simple, cross-platform wrapper over TCP/IP sockets
 WWW=		https://github.com/libsdl-org/SDL_net
 
 LICENSE=	ZLIB
