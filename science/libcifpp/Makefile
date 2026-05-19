@@ -1,6 +1,6 @@
 PORTNAME=	libcifpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.0.3
+DISTVERSION=	10.0.4
 CATEGORIES=	science
 MASTER_SITES=	https://files.wwpdb.org/pub/pdb/data/monomers/:components
 DISTFILES=	components.cif.gz:components
@@ -14,7 +14,7 @@ WWW=		https://github.com/PDB-REDO/libcifpp
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	catch>0:devel/catch \
+BUILD_DEPENDS=	catch2>0:devel/catch2 \
 		fast_float>0:math/fast_float
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libpcre2-8.so:devel/pcre2
