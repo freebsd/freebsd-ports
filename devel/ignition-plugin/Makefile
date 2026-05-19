@@ -1,6 +1,6 @@
 PORTNAME=	ignition-plugin
-DISTVERSIONPREFIX=	ignition-plugin_
-DISTVERSION=	1.4.0
+DISTVERSIONPREFIX=	gz-plugin4_
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,9 +8,11 @@ COMMENT=	Library for registering plugins and dynamically loading them
 WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ignition-cmake>=2:devel/ignition-cmake
+BUILD_DEPENDS=	cli11>0:devel/cli11 \
+		ignition-cmake>=5:devel/ignition-cmake
+LIB_DEPENDS=	libgz-utils.so:devel/ignition-utils
 
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
