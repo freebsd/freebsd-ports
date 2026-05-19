@@ -1,6 +1,6 @@
---- src/pymatgen/core/structure.py.orig	2026-04-20 04:32:30 UTC
+--- src/pymatgen/core/structure.py.orig	2026-05-18 23:38:43 UTC
 +++ src/pymatgen/core/structure.py
-@@ -1172,7 +1172,7 @@ class IStructure(SiteCollection, MSONable):
+@@ -1182,7 +1182,7 @@ class IStructure(SiteCollection, MSONable):
                  )
                  new_sites.append(periodic_site)
  
