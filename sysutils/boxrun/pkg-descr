@@ -1,0 +1,11 @@
+boxrun creates isolated execution environments, i.e. a sandbox, using
+FreeBSD's native security primitives: jails for filesystem and network
+isolation, nullfs mounts for selective directory exposure, RCTL for
+resource accounting and control, and procctl for process security
+features.
+
+It provides fine-grained control over filesystem visibility, network
+access, resource limits, and security hardening. All security features
+are enabled by default (ASLR, W^X, no-new-privs, ptrace denied,
+securelevel 3). Optional NAT networking with PF integration allows
+isolated sandboxes to have outbound connectivity and port forwarding.
