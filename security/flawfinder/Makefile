@@ -1,8 +1,8 @@
 PORTNAME=	flawfinder
-PORTVERSION=	2.0.19
-PORTREVISION=	1
+PORTVERSION=	2.0.20
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.dwheeler.com/flawfinder/ \
+MASTER_SITES=	SF/${PORTNAME} \
+		https://dwheeler.com/flawfinder/ \
 		PACKETSTORM/UNIX/security
 
 MAINTAINER=	se@FreeBSD.org
@@ -14,6 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python shebangfix
 SHEBANG_FILES=	flawfinder.py
+
+MAKEFILE=	makefile
+TEST_TARGET=	test
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
