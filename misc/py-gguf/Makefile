@@ -1,6 +1,5 @@
 PORTNAME=	gguf
-DISTVERSION=	0.18.0.${GH_TAGNAME:S/b//} # the base version is in pyproject.toml, updated by post-patch
-PORTREVISION=	1
+DISTVERSION=	0.19.0.${GH_TAGNAME:S/b//} # the base version is in pyproject.toml, updated by post-patch
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # the PYPI version is way behind of llama-cpp
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ USE_PYTHON=	pep517 autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	llama.cpp
-GH_TAGNAME=	b8913
+GH_TAGNAME=	b9222
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/gguf-py
 
