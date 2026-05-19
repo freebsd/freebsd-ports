@@ -1,0 +1,20 @@
+Drop freebsd/inotify.{cpp,h} on FreeBSD < 1500050 (no native sys/inotify.h).
+
+--- osquery/events/CMakeLists.txt.orig
++++ osquery/events/CMakeLists.txt
+@@ -59,7 +59,6 @@
+       audit_flags.cpp
+       file_events_flags.cpp
+       freebsd/devd.cpp
+-      freebsd/inotify.cpp
+       freebsd/openbsm.cpp
+     )
+
+@@ -188,7 +187,6 @@
+   elseif(DEFINED PLATFORM_FREEBSD)
+     set(platform_public_header_files
+       freebsd/devd.h
+-      freebsd/inotify.h
+       freebsd/openbsm.h
+     )
+

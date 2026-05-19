@@ -52,6 +52,12 @@ GH_TUPLE=	ocochard:linenoise-ng:2c90f29:linenoiseng/libraries/cmake/source/linen
 
 EXTRA_PATCHES=	${WRKDIR}/0c61e05a6-freebsd.patch:-p1
 
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1500050
+EXTRA_PATCHES+=	${PATCHDIR}/extra-osquery_events_CMakeLists.txt
+.endif
+
 CMAKE_OFF=	OSQUERY_BUILD_TESTS \
 		OSQUERY_BUILD_BPF \
 		OSQUERY_BUILD_DPKG \
