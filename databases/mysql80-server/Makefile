@@ -12,6 +12,9 @@ WWW=		https://www.mysql.com/
 
 LICENSE=		GPLv2
 
+DEPRECATED=	EOLed upstream, switch to newer version
+EXPIRATION_DATE=2026-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client

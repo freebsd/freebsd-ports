@@ -6,6 +6,9 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
+DEPRECATED=	EOLed upstream, switch to newer version
+EXPIRATION_DATE=2026-12-31
+
 MASTERDIR=	${.CURDIR}/../mysql80-server
 
 PKGMESSAGE=	${.CURDIR}/pkg-message
