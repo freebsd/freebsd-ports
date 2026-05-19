@@ -1,5 +1,5 @@
 PORTNAME=	ruby-macho
-PORTVERSION=	4.1.0
+PORTVERSION=	5.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
 USES=		gem
 
 .include <bsd.port.mk>
