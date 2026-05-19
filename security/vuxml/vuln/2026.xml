@@ -1,3 +1,78 @@
+  <vuln vid="f69dbfcc-535b-11f1-8b62-8447094a420f">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql80-client</name>
+	<range><lt>8.0.46</lt></range>
+      </package>
+      <package>
+	<name>mysql84-client</name>
+	<range><lt>8.4.9</lt></range>
+      </package>
+      <package>
+	<name>mysql96-client</name>
+	<range><lt>9.6.1</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.46</lt></range>
+      </package>
+      <package>
+	<name>mysql84-server</name>
+	<range><lt>8.4.9</lt></range>
+      </package>
+      <package>
+	<name>mysql96-server</name>
+	<range><lt>9.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpuapr2026.html">
+	  <p>See linked CVE's for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-15467</cvename>
+      <cvename>CVE-2026-34270</cvename>
+      <cvename>CVE-2026-34271</cvename>
+      <cvename>CVE-2026-34276</cvename>
+      <cvename>CVE-2026-34308</cvename>
+      <cvename>CVE-2026-22009</cvename>
+      <cvename>CVE-2026-22017</cvename>
+      <cvename>CVE-2026-34272</cvename>
+      <cvename>CVE-2026-34303</cvename>
+      <cvename>CVE-2025-14017</cvename>
+      <cvename>CVE-2026-34318</cvename>
+      <cvename>CVE-2026-34317</cvename>
+      <cvename>CVE-2026-34319</cvename>
+      <cvename>CVE-2026-22004</cvename>
+      <cvename>CVE-2026-34304</cvename>
+      <cvename>CVE-2026-35236</cvename>
+      <cvename>CVE-2026-35237</cvename>
+      <cvename>CVE-2026-35238</cvename>
+      <cvename>CVE-2026-34293</cvename>
+      <cvename>CVE-2026-35239</cvename>
+      <cvename>CVE-2026-35235</cvename>
+      <cvename>CVE-2026-21998</cvename>
+      <cvename>CVE-2026-22005</cvename>
+      <cvename>CVE-2026-22002</cvename>
+      <cvename>CVE-2026-34267</cvename>
+      <cvename>CVE-2026-34278</cvename>
+      <cvename>CVE-2026-35240</cvename>
+      <cvename>CVE-2026-35234</cvename>
+      <cvename>CVE-2026-22015</cvename>
+      <cvename>CVE-2026-22001</cvename>
+      <url>https://www.oracle.com/security-alerts/cpuapr2026.html</url>
+    </references>
+    <dates>
+      <discovery>2026-04-21</discovery>
+      <entry>2026-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31b7e7bc-5358-11f1-8b62-8447094a420f">
     <topic>MariaDB -- Multiple vulnerabilities</topic>
     <affects>
