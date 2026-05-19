@@ -1,6 +1,6 @@
 PORTNAME=	freenginx
-PORTVERSION=	1.28.0
-PORTREVISION?=	13
+PORTVERSION=	1.30.0
+PORTREVISION?=	0
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
