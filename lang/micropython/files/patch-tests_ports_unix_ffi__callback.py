@@ -1,7 +1,7 @@
 Required to let pass the test "ffi_callback" successfully
 
---- tests/unix/ffi_callback.py.orig	2021-09-04 05:46:01 UTC
-+++ tests/unix/ffi_callback.py
+--- tests/ports/unix/ffi_callback.py.orig	2021-09-04 05:46:01 UTC
++++ tests/ports/unix/ffi_callback.py
 @@ -16,7 +16,7 @@ def ffi_open(names):
      raise err
  
