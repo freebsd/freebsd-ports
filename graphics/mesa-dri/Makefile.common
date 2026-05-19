@@ -6,7 +6,6 @@
 #
 #    - graphics/mesa-dri
 #    - graphics/mesa-libs
-#    - lang/clover
 
 MESAVERSION=	25.2.8
 

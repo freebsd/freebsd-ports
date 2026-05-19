@@ -1,2 +1,0 @@
-This package contains Mesa's libOpenCL implementation "Clover".
-It is built upon GALLIUM and currently only supports Radeon GPUs.
