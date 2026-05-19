@@ -1,6 +1,6 @@
---- hermes_cli/main.py.orig	2026-05-06 08:29:55 UTC
-+++ hermes_cli/main.py
-@@ -8118,7 +8118,7 @@ def main():
+--- hermes_cli/main.py.orig	2026-05-16 09:59:15 UTC
++++ hermes_cli/main.py	2026-05-19 11:13:44.567947000 +0200
+@@ -9838,7 +9838,7 @@
      gateway_start.add_argument(
          "--system",
          action="store_true",
@@ -9,7 +9,7 @@
      )
      gateway_start.add_argument(
          "--all",
-@@ -8131,7 +8131,7 @@ def main():
+@@ -9851,7 +9851,7 @@
      gateway_stop.add_argument(
          "--system",
          action="store_true",
@@ -18,7 +18,7 @@
      )
      gateway_stop.add_argument(
          "--all",
-@@ -8146,7 +8146,7 @@ def main():
+@@ -9866,7 +9866,7 @@
      gateway_restart.add_argument(
          "--system",
          action="store_true",
@@ -27,7 +27,7 @@
      )
      gateway_restart.add_argument(
          "--all",
-@@ -8166,23 +8166,23 @@ def main():
+@@ -9886,23 +9886,23 @@
      gateway_status.add_argument(
          "--system",
          action="store_true",
@@ -55,7 +55,7 @@
      )
  
      # gateway uninstall
-@@ -8192,7 +8192,7 @@ def main():
+@@ -9912,7 +9912,7 @@
      gateway_uninstall.add_argument(
          "--system",
          action="store_true",
@@ -63,4 +63,4 @@
 +        help="Target the system-level gateway service (Linux only; ignored on FreeBSD/macOS)",
      )
  
-     # gateway setup
+     # gateway list

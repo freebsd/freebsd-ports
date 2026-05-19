@@ -1,9 +1,10 @@
---- hermes_cli/uninstall.py.orig	2026-05-06 08:29:55 UTC
-+++ hermes_cli/uninstall.py
-@@ -201,6 +201,32 @@ def uninstall_gateway_service():
+--- hermes_cli/uninstall.py.orig	2026-05-16 09:59:15 UTC
++++ hermes_cli/uninstall.py	2026-05-19 11:13:44.570355000 +0200
+@@ -224,6 +224,32 @@
+                     log_warn(f"Could not fully uninstall Windows gateway: {e}")
          except Exception as e:
-             log_warn(f"Could not remove launchd gateway service: {e}")
- 
+             log_warn(f"Could not check Windows gateway service: {e}")
++
 +    # 4. FreeBSD: stop the rc.d service and remove its rcvar from rc.conf.
 +    #    The rc script itself (/usr/local/etc/rc.d/hermes_gateway) is owned
 +    #    by the FreeBSD package — `pkg delete hermes-agent` removes it.
@@ -29,7 +30,6 @@
 +                    stopped_something = True
 +        except Exception as e:
 +            log_warn(f"Could not disable FreeBSD gateway service: {e}")
-+
-     return stopped_something
  
+     return stopped_something
  

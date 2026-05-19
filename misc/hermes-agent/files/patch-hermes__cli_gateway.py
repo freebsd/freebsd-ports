@@ -1,14 +1,17 @@
---- hermes_cli/gateway.py.orig	2026-05-06 08:29:55 UTC
-+++ hermes_cli/gateway.py
-@@ -733,7 +733,175 @@ def is_windows() -> bool:
-     return sys.platform == 'win32'
- 
- 
+--- hermes_cli/gateway.py.orig	2026-05-16 09:59:15 UTC
++++ hermes_cli/gateway.py	2026-05-19 11:14:21.477531000 +0200
+@@ -1245,9 +1245,177 @@
+     try:
+         return not bool(sys.stdin and sys.stdin.isatty())
+     except (ValueError, OSError):
++        return True
++
++
 +def is_freebsd() -> bool:
 +    return sys.platform.startswith('freebsd')
 +
 +
- # =============================================================================
++# =============================================================================
 +# FreeBSD rc.d service helpers
 +# =============================================================================
 +#
@@ -71,7 +74,7 @@
 +    sudo_cmd = ["sudo"] + cmd
 +    try:
 +        subprocess.run(sudo_cmd, check=True)
-+        return True
+         return True
 +    except subprocess.CalledProcessError as e:
 +        print(f"✗ Failed to {action} hermes_gateway: exit {e.returncode}")
 +        return False
@@ -108,8 +111,8 @@
 +        ["service", FREEBSD_RC_SCRIPT_NAME, "start"],
 +        action="start",
 +    )
-+
-+
+ 
+ 
 +def freebsd_rc_uninstall(system: bool = False):
 +    """Stop hermes_gateway and remove its rcvar from /etc/rc.conf.  Does NOT
 +    delete the rc.d script itself — that belongs to the FreeBSD package."""
@@ -172,11 +175,10 @@
 +        print("✗ service(8) not found — is this really FreeBSD?")
 +
 +
-+# =============================================================================
+ # =============================================================================
  # Service Configuration
  # =============================================================================
- 
-@@ -4083,6 +4251,8 @@ def _gateway_command_inner(args):
+@@ -5057,6 +5225,8 @@
                  print_info("  Or use tmux/screen for persistence: tmux new -s hermes 'hermes gateway run'")
                  print()
              systemd_install(force=force, system=system, run_as_user=run_as_user)
@@ -184,8 +186,8 @@
 +            freebsd_rc_install(force=force, system=system, run_as_user=run_as_user)
          elif is_macos():
              launchd_install(force)
-         elif is_wsl():
-@@ -4119,6 +4289,8 @@ def _gateway_command_inner(args):
+         elif is_windows():
+@@ -5096,6 +5266,8 @@
              sys.exit(1)
          if supports_systemd_services():
              systemd_uninstall(system=system)
@@ -193,8 +195,8 @@
 +            freebsd_rc_uninstall(system=system)
          elif is_macos():
              launchd_uninstall()
-         elif is_container():
-@@ -4149,6 +4321,8 @@ def _gateway_command_inner(args):
+         elif is_windows():
+@@ -5129,6 +5301,8 @@
              sys.exit(1)
          if supports_systemd_services():
              systemd_start(system=system)
@@ -202,8 +204,17 @@
 +            freebsd_rc_start(system=system)
          elif is_macos():
              launchd_start()
-         elif is_wsl():
-@@ -4187,6 +4361,12 @@ def _gateway_command_inner(args):
+         elif is_windows():
+@@ -5167,9 +5341,21 @@
+             if supports_systemd_services() and (get_systemd_unit_path(system=False).exists() or get_systemd_unit_path(system=True).exists()):
+                 try:
+                     systemd_stop(system=system)
++                    service_available = True
++                except subprocess.CalledProcessError:
++                    pass
++            elif supports_freebsd_rc():
++                try:
++                    freebsd_rc_stop(system=system)
                      service_available = True
                  except subprocess.CalledProcessError:
                      pass
@@ -216,33 +227,20 @@
              elif is_macos() and get_launchd_plist_path().exists():
                  try:
                      launchd_stop()
-@@ -4208,6 +4388,12 @@ def _gateway_command_inner(args):
-                     service_available = True
-                 except subprocess.CalledProcessError:
-                     pass
-+            elif supports_freebsd_rc():
-+                try:
-+                    freebsd_rc_stop(system=system)
-+                    service_available = True
-+                except subprocess.CalledProcessError:
-+                    pass
-             elif is_macos() and get_launchd_plist_path().exists():
+@@ -5236,6 +5422,12 @@
+             if supports_systemd_services() and (get_systemd_unit_path(system=False).exists() or get_systemd_unit_path(system=True).exists()):
                  try:
-                     launchd_stop()
-@@ -4240,6 +4426,12 @@ def _gateway_command_inner(args):
-                     service_stopped = True
-                 except subprocess.CalledProcessError:
-                     pass
-+            elif supports_freebsd_rc():
-+                try:
-+                    freebsd_rc_stop(system=system)
+                     systemd_stop(system=system)
 +                    service_stopped = True
 +                except subprocess.CalledProcessError:
 +                    pass
-             elif is_macos() and get_launchd_plist_path().exists():
-                 try:
-                     launchd_stop()
-@@ -4256,12 +4448,14 @@ def _gateway_command_inner(args):
++            elif supports_freebsd_rc():
++                try:
++                    freebsd_rc_stop(system=system)
+                     service_stopped = True
+                 except subprocess.CalledProcessError:
+                     pass
+@@ -5263,6 +5455,8 @@
              print("Starting gateway...")
              if supports_systemd_services() and (get_systemd_unit_path(system=False).exists() or get_systemd_unit_path(system=True).exists()):
                  systemd_start(system=system)
@@ -250,15 +248,8 @@
 +                freebsd_rc_start(system=system)
              elif is_macos() and get_launchd_plist_path().exists():
                  launchd_start()
-             else:
-                 run_gateway(verbose=0)
-             return
--        
-+
-         if supports_systemd_services() and (get_systemd_unit_path(system=False).exists() or get_systemd_unit_path(system=True).exists()):
-             service_configured = True
-             try:
-@@ -4269,6 +4463,13 @@ def _gateway_command_inner(args):
+             elif is_windows():
+@@ -5282,6 +5476,13 @@
                  service_available = True
              except subprocess.CalledProcessError:
                  pass
@@ -272,13 +263,13 @@
          elif is_macos() and get_launchd_plist_path().exists():
              service_configured = True
              try:
-@@ -4320,6 +4521,9 @@ def _gateway_command_inner(args):
-         # Check for service first
+@@ -5347,6 +5548,9 @@
          if supports_systemd_services() and (get_systemd_unit_path(system=False).exists() or get_systemd_unit_path(system=True).exists()):
              systemd_status(deep, system=system, full=full)
-+            _print_gateway_process_mismatch(snapshot)
+             _print_gateway_process_mismatch(snapshot)
 +        elif supports_freebsd_rc():
 +            freebsd_rc_status(deep=deep, system=system, full=full)
-             _print_gateway_process_mismatch(snapshot)
++            _print_gateway_process_mismatch(snapshot)
          elif is_macos() and get_launchd_plist_path().exists():
              launchd_status(deep)
+             _print_gateway_process_mismatch(snapshot)
