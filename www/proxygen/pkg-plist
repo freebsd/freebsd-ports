@@ -257,8 +257,6 @@ include/proxygen/lib/http/session/HTTPTransactionEgressSM.h
 include/proxygen/lib/http/session/HTTPTransactionIngressSM.h
 include/proxygen/lib/http/session/HTTPUpstreamSession.h
 include/proxygen/lib/http/session/QuicProtocolInfo.h
-include/proxygen/lib/http/session/SecondaryAuthManager.h
-include/proxygen/lib/http/session/SecondaryAuthManagerBase.h
 include/proxygen/lib/http/session/ServerPushLifecycle.h
 include/proxygen/lib/http/session/SessionLoopCallback.h
 include/proxygen/lib/http/session/SimpleController.h
@@ -277,6 +275,9 @@ include/proxygen/lib/http/stats/HttpServerStats.h
 include/proxygen/lib/http/stats/ResponseCodeStatsMinute.h
 include/proxygen/lib/http/stats/TLResponseCodeStats.h
 include/proxygen/lib/http/stats/ThreadLocalHTTPSessionStats.h
+include/proxygen/lib/http/structuredheaders/StructuredFields.h
+include/proxygen/lib/http/structuredheaders/StructuredFieldsDecoder.h
+include/proxygen/lib/http/structuredheaders/StructuredFieldsEncoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersBuffer.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersConstants.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersDecoder.h
@@ -330,7 +331,9 @@ include/proxygen/lib/transport/PersistentFizzPskCache.h
 include/proxygen/lib/transport/PersistentQuicPskCache.h
 include/proxygen/lib/transport/PersistentQuicTokenCache.h
 include/proxygen/lib/transport/qmux/QmuxCodec.h
+include/proxygen/lib/transport/qmux/QmuxConnector.h
 include/proxygen/lib/transport/qmux/QmuxFramer.h
+include/proxygen/lib/transport/qmux/QmuxSession.h
 include/proxygen/lib/utils/AcceptorAddress.h
 include/proxygen/lib/utils/AsyncTimeoutSet.h
 include/proxygen/lib/utils/CobHelper.h
