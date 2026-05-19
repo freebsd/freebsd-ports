@@ -1,28 +1,39 @@
 %%DATADIR%%/httpd-tt-rss.conf
+@dir /var/tt-rss
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/ttrssd.conf
-@group %%WWWGRP%%
-@mode ug=rx
+@dir etc/newsyslog.conf.d
+@group ttrssd
+@mode 0454
+%%WWWDIR%%/start.sh
+@owner %%WWWOWN%%
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
-@group
 @mode
-@owner %%WWWOWN%%
-@mode 0400
+@mode 0440
 @sample %%WWWDIR%%/config.php.sample
-@mode
-@dir %%WWWDIR%%/cache
-@dir %%WWWDIR%%/cache/export
-@dir %%WWWDIR%%/cache/feeds
-@dir %%WWWDIR%%/cache/images
-@dir %%WWWDIR%%/cache/upload
-@dir %%WWWDIR%%/lock
-@dir %%WWWDIR%%/plugins.local
-@dir %%WWWDIR%%/plugins/af_comics/filters.local
-@dir %%WWWDIR%%/templates.local
-@dir %%WWWDIR%%/themes.local
+@mode 0770
+@dir /var/tt-rss/cache
+@dir /var/tt-rss/cache/export
+@dir /var/tt-rss/cache/feeds
+@dir /var/tt-rss/cache/images
+@dir /var/tt-rss/cache/upload
+@dir /var/tt-rss/lock
+@dir /var/tt-rss/local/plugins.local
+@dir /var/tt-rss/local/plugins/af_comics/filters.local
+@dir /var/tt-rss/local/templates.local
+@dir /var/tt-rss/local/themes.local
 @owner
+@group ttrssd
+@mode 775
+@dir /var/log/ttrssd
+@dir /var/run/ttrssd
+@dir /var/tt-rss/local
+@dir /var/tt-rss/local/plugins
+@dir /var/tt-rss/local/plugins/af_comics
 @group
 @mode
+/var/tt-rss/local/plugins.local/index.html
+/var/tt-rss/local/templates.local/index.html
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
@@ -2008,7 +2019,6 @@
 %%WWWDIR%%/package.json
 %%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/phpunit.xml
-%%WWWDIR%%/plugins.local/index.html
 %%WWWDIR%%/plugins/af_comics/af_comics_template.php
 %%WWWDIR%%/plugins/af_comics/filter_base.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_cad.php
@@ -2209,7 +2219,6 @@
 %%WWWDIR%%/sql/pgsql/migrations/150.sql
 %%WWWDIR%%/sql/pgsql/migrations/151.sql
 %%WWWDIR%%/sql/pgsql/schema.sql
-%%WWWDIR%%/templates.local/index.html
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt

@@ -17,23 +17,37 @@ rcvar=ttrssd_enable
 
 # read settings, set default values
 load_rc_config "${name}"
-: ${ttrssd_enable="NO"}
+: ${ttrssd_enable=NO}
+: ${ttrssd_user="$name"}
+: ${ttrssd_group="$name"}
 
 long_name="Tiny Tiny RSS updating feeds daemon."
 required_files="%%WWWDIR%%/config.php"
-pidfile="/var/run/${name}.pid"
-cpidfile="/var/run/${name}_child.pid"
+pidfile="/var/run/${name}/${name}.pid"
+cpidfile="/var/run/${name}/${name}_child.pid"
 phpcli="%%LOCALBASE%%/bin/php"
 
 initdb_php="%%WWWDIR%%/update.php"
 phpupd="%%WWWDIR%%/update_daemon2.php"
-ttrssd_log="/var/log/${name}.log"
+ttrssd_log="/var/log/${name}/${name}.log"
 
+ttrssd_cmd="%%WWWDIR%%/start.sh"
+ttrssd_umask="0003"
 command="/usr/sbin/daemon"
-command_args="-rR 10 -H -u %%WWWOWN%% \
-		-P $pidfile -p $cpidfile \
-		-o $ttrssd_log sh -c \
-		'$initdb_php --update-schema=force-yes; \
-			$phpupd;'"
+command_args="-rR 10 -H -P $pidfile -p $cpidfile \
+		-o $ttrssd_log $ttrssd_cmd"
+
+start_precmd="${name}_start_precmd"
+
+ttrssd_start_precmd()
+{
+    # daemon defaults to 0600 when using -o
+    if [ -f "$ttrssd_log" ]; then
+	if ! chown "$ttrssd_user" "$ttrssd_log"; then
+		echo "Setting ${ttrssd_log} owner failed"
+		exit 1
+	fi
+    fi
+}
 
 run_rc_command "$1"

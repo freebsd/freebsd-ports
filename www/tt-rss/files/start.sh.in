@@ -1,0 +1,12 @@
+#!/bin/sh
+
+trap 'kill -INT $child' INT
+trap 'kill -TERM $child' TERM
+
+%%WWWDIR%%/update.php --update-schema=force-yes
+%%WWWDIR%%/update_daemon2.php &
+
+child="$!"
+
+wait "$child"
+
