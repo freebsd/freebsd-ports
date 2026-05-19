@@ -1,0 +1,4 @@
+This is a portable network library for use with SDL. It's goal is
+to simplify the use of the usual socket interfaces and use SDL to
+handle common portable functionality such as threading and reporting
+errors.
