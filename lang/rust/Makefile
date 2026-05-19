@@ -115,9 +115,11 @@ MAKE_ENV+=	RUST_BACKTRACE=1
 .endif
 
 # per https://rust-lang.github.io/rustup/concepts/components.html
-# rustc-dev is only useful on nightly
+# rustc-dev and miri are only useful on nightly
 .if defined(NIGHTLY_DATE)
-_COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
+_RUST_TOOLS+=	miri cargo-miri
+_COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET} \
+		miri-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
 .if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
