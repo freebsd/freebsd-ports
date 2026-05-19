@@ -257,6 +257,7 @@
     SUBDIR += grafanactl
     SUBDIR += grails
     SUBDIR += gregarius
+    SUBDIR += grist-core
     SUBDIR += groupoffice
     SUBDIR += grr
     SUBDIR += gstreamer1-plugins-neon

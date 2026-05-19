@@ -496,7 +496,7 @@ ejabberd:*:543:543::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
 # free: 547
 # free: 548
 # free: 549
-# free: 550
+grist:*:550:550::0:0:Grist Daemon User:/usr/local/www/grist-core:/usr/sbin/nologin
 # free: 551
 kresd:*:552:552::0:0:Knot DNS Resolver:/nonexistent:/usr/sbin/nologin
 knot:*:553:553::0:0:Knot DNS Server:/nonexistent:/usr/sbin/nologin

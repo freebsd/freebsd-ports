@@ -490,7 +490,7 @@ ejabberd:*:543:
 # free: 547
 # free: 548
 # free: 549
-# free: 550
+grist:*:550:
 # free: 551
 kresd:*:552:
 knot:*:553:

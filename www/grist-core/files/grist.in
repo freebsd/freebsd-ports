@@ -1,0 +1,59 @@
+#!/bin/sh
+# PROVIDE: grist
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+export PATH=$PATH:/usr/local/bin
+export HOME=${workingdir}
+export COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+
+name="grist"
+rcvar="${name}_enable"
+
+load_rc_config $name
+: ${grist_enable:=no}
+: ${grist_user:="%%GRIST_USER%%"}
+: ${grist_group:="%%GRIST_GROUP%%"}
+
+logfile="/var/log/${name}/${name}.log"
+pidfile="/var/run/${name}/${name}.pid"
+workingdir="%%WWWDIR%%"
+venvdir="${workingdir}/venv"
+
+command="/usr/sbin/daemon"
+command_args="-H -o ${logfile} -t ${name} -P ${pidfile} \
+	bash -c 'cd $workingdir && source venv/bin/activate && source /usr/local/etc/grist.conf && sandbox/run.sh'"
+
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+
+grist_precmd()
+{
+  # Ensure pid directory exists
+  install -d -g "${grist_group}" -o "${grist_user}" "$(dirname "${pidfile}")"
+
+  # Ensure log directory exists
+  install -d -g "${grist_group}" -o "${grist_user}" "$(dirname "${logfile}")"
+
+  # Ensure document directory exists
+  install -d -g "${grist_group}" -o "${grist_user}" "/var/db/grist"
+
+  # Ensure virtualenv exists
+  if [ ! -d "${venvdir}" ]; then
+	  echo "Creating Python virtual environment..."
+	  su -m "${grist_user}" -c "%%PYTHON_CMD%% -m venv ${venvdir}" || return 1
+  fi
+
+  echo "Installing Python requirements..."
+  su -m "${grist_user}" -c "cd ${workingdir} && ${venvdir}/bin/python -m pip install -r ${workingdir}/sandbox/requirements.txt" || return 1
+}
+
+grist_start()
+{
+  su -m ${grist_user} -c "${command} ${command_args}"
+}
+
+run_rc_command "$1"
+
