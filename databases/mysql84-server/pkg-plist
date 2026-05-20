@@ -111,6 +111,8 @@ lib/mysql/plugin/component_test_mysql_thd_store_service.so
 lib/mysql/plugin/component_test_pfs_notification.so
 lib/mysql/plugin/component_test_pfs_resource_group.so
 lib/mysql/plugin/component_test_sensitive_system_variables.so
+lib/mysql/plugin/component_test_server_telemetry_logs_client.so
+lib/mysql/plugin/component_test_server_telemetry_logs_export.so
 lib/mysql/plugin/component_test_server_telemetry_traces.so
 lib/mysql/plugin/component_test_status_var_reader.so
 lib/mysql/plugin/component_test_status_var_service.so
