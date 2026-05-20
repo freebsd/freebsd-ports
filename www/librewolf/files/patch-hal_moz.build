@@ -1,0 +1,18 @@
+commit b4a1f15edc3ebc2b68d2aae22bb59e2ce779cce7
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    try to enable gamepad interface on FreeBSD
+
+diff --git hal/moz.build hal/moz.build
+index bb486ec1e411..60e44128840f 100644
+--- hal/moz.build
++++ hal/moz.build
+@@ -19,7 +19,7 @@ EXPORTS.mozilla += [
+     "HalWakeLockInformation.h",
+ ]
+ 
+-if CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["OS_TARGET"] == "Linux" or CONFIG["OS_TARGET"] == "FreeBSD":
+     EXPORTS.mozilla += [
+         "linux/UdevLib.h",
+     ]
