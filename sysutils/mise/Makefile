@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.11
+DISTVERSION=	2026.5.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -69,8 +69,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		aws-config-1.8.14 \
 		aws-credential-types-1.2.13 \
 		aws-lc-fips-sys-0.13.14 \
-		aws-lc-rs-1.16.3 \
-		aws-lc-sys-0.40.0 \
+		aws-lc-rs-1.17.0 \
+		aws-lc-sys-0.41.0 \
 		aws-runtime-1.7.1 \
 		aws-sdk-s3-1.119.0 \
 		aws-sdk-sso-1.95.0 \
@@ -214,11 +214,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		dashmap-5.5.3 \
-		dashmap-6.1.0 \
+		dashmap-6.2.1 \
 		deadpool-0.12.3 \
 		deadpool-runtime-0.1.4 \
 		deflate64-0.1.12 \
-		demand-2.0.1 \
+		demand-2.0.2 \
 		der-0.7.10 \
 		der_derive-0.7.3 \
 		deranged-0.5.8 \
@@ -265,7 +265,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fastrand-2.4.1 \
 		fiat-crypto-0.2.9 \
 		file_url-0.3.0 \
-		filetime-0.2.28 \
+		filetime-0.2.29 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
@@ -462,13 +462,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lazy-regex-proc_macros-3.6.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libbz2-rs-sys-0.2.3 \
+		libbz2-rs-sys-0.2.5 \
 		libc-0.2.186 \
 		libloading-0.8.9 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
-		link-section-0.17.0 \
+		link-section-0.17.1 \
 		linktime-proc-macro-0.1.0 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
@@ -488,7 +488,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lzma-rust2-0.16.2 \
 		lzma-sys-0.1.20 \
 		matchers-0.2.0 \
-		maybe-async-0.2.10 \
+		maybe-async-0.2.11 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
 		memchr-2.8.0 \
@@ -510,7 +510,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		native-tls-0.2.18 \
 		netrc-rs-0.1.2 \
 		nix-0.30.1 \
-		nix-0.31.2 \
+		nix-0.31.3 \
 		nodejs-semver-4.2.0 \
 		nom-7.1.3 \
 		nom-8.0.0 \
@@ -534,10 +534,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
-		openssl-0.10.79 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.115 \
+		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
 		os-release-0.1.0 \
@@ -571,8 +571,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		phf_generator-0.13.1 \
 		phf_shared-0.11.3 \
 		phf_shared-0.13.1 \
-		pin-project-1.1.12 \
-		pin-project-internal-1.1.12 \
+		pin-project-1.1.13 \
+		pin-project-internal-1.1.13 \
 		pin-project-lite-0.2.17 \
 		pin-utils-0.1.0 \
 		pkcs1-0.7.5 \
@@ -653,8 +653,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ring-0.17.14 \
 		rkyv-0.8.16 \
 		rkyv_derive-0.8.16 \
-		rmcp-1.6.0 \
-		rmcp-macros-1.6.0 \
+		rmcp-1.7.0 \
+		rmcp-macros-1.7.0 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
 		roff-1.1.1 \
@@ -958,7 +958,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.6.24 \
 		winnow-0.7.15 \
-		winnow-1.0.2 \
+		winnow-1.0.3 \
 		winver-1.0.0 \
 		wiremock-0.6.5 \
 		wit-bindgen-0.51.0 \
@@ -982,7 +982,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		yoke-derive-0.8.2 \
 		zerocopy-0.8.48 \
 		zerocopy-derive-0.8.48 \
-		zerofrom-0.1.7 \
+		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
 		zeroize_derive-1.4.3 \
