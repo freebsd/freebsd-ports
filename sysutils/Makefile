@@ -119,6 +119,7 @@
     SUBDIR += beats91
     SUBDIR += beats92
     SUBDIR += beats93
+    SUBDIR += beats94
     SUBDIR += bfs
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
