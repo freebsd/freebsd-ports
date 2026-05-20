@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		LOCAL/vvd/elastic
-PKGNAMESUFFIX=	8
+PKGNAMESUFFIX=	${DISTVERSION:R:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	elastic@FreeBSD.org
@@ -26,11 +26,11 @@ GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 		uhop:node-re2:${_NODE_RE2_VER}:node_re2
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	${PORTNAME}9*
+CONFLICTS=	${PORTNAME}*
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
-PORTSCOUT=	limit:^8
+PORTSCOUT=	limit:^${DISTVERSION:R:R}\.
 
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	BINDIR=${PREFIX}/bin \

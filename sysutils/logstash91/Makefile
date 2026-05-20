@@ -5,10 +5,10 @@ DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
 		LOCAL/vvd/elastic
-PKGNAMESUFFIX=	91
+PKGNAMESUFFIX=	${DISTVERSION:R:S|.||}
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Server-side data ingestion and transformation tool (9.1.x version)
+COMMENT=	Server-side data ingestion and transformation tool (${DISTVERSION:R}.x version)
 WWW=		https://www.elastic.co/products/logstash
 
 LICENSE=	APACHE20
@@ -24,14 +24,14 @@ USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/*
 
-CONFLICTS=	${PORTNAME}7 ${PORTNAME}8 ${PORTNAME}92 ${PORTNAME}93
+CONFLICTS=	${PORTNAME}*
 
 EXTRACT_AFTER_ARGS=	--exclude jdk.app \
 			--exclude *.bat \
 			--no-same-owner --no-same-permissions
 
 NO_BUILD=	yes
-PORTSCOUT=	limit:^9\.1\.
+PORTSCOUT=	limit:^${DISTVERSION:R:S|.|\.|}\.
 SUB_FILES=	pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME} \
@@ -55,6 +55,7 @@ LOGSTASH_HOME?=			${PREFIX}/${PORTNAME}
 LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
 				jruby.sh jrubyc rake rdoc ri
 LOGSTASH_JRUBY_SUBDIR=		vendor/jruby/bin
+LOGSTASH_JRUBY_VER=		3.1.0
 
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml
@@ -70,8 +71,8 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_HOME})
 	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_HOME}/bin/* \
 		${LOGSTASH_JRUBY_BIN_FILES:S|^|${STAGEDIR}${LOGSTASH_HOME}/${LOGSTASH_JRUBY_SUBDIR}/|}
-	${FIND} ${STAGEDIR}${LOGSTASH_HOME}/vendor/bundle/jruby/3.1.0/gems \
-	        ${STAGEDIR}${LOGSTASH_HOME}/vendor/bundle/jruby/3.1.0/plugins \
+	${FIND} ${STAGEDIR}${LOGSTASH_HOME}/vendor/bundle/jruby/${LOGSTASH_JRUBY_VER}/gems \
+	        ${STAGEDIR}${LOGSTASH_HOME}/vendor/bundle/jruby/${LOGSTASH_JRUBY_VER}/plugins \
 		${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/ruby/gems/shared/gems \
 		-type d -empty -delete
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${LOGSTASH_HOME}/config
@@ -81,10 +82,10 @@ post-install:
 .for x in ${LOGSTASH_CONF_FILES}
 	${ECHO} "@sample ${ETCDIR}/${x}.sample" >> ${TMPPLIST}
 .endfor
-	${ECHO} "@dir logstash/vendor/bundle/jruby/3.1.0/build_info" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/3.1.0/cache" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/3.1.0/doc" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/3.1.0/extensions" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/${LOGSTASH_JRUBY_VER}/build_info" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/${LOGSTASH_JRUBY_VER}/cache" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/${LOGSTASH_JRUBY_VER}/doc" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/${LOGSTASH_JRUBY_VER}/extensions" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/jruby/lib/ruby/gems/shared/cache" >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${LOGSTASH_HOME} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}

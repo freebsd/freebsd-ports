@@ -1,13 +1,13 @@
 PORTNAME=	elasticsearch
-PORTVERSION=	8.11.3
+DISTVERSION=	8.11.3
 PORTREVISION=	2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
-PKGNAMESUFFIX=	8
-DISTNAME=	${PORTNAME}-${PORTVERSION}-darwin-x86_64
+PKGNAMESUFFIX=	${DISTVERSION:R:R}
+DISTNAME=	${PORTNAME}-${DISTVERSION}-darwin-x86_64
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Distributed, RESTful search and analytics engine
+COMMENT=	Distributed, RESTful search and analytics engine (${DISTVERSION:R:R} version)
 WWW=		https://www.elastic.co/
 
 LICENSE=	APACHE20
@@ -34,11 +34,12 @@ SHEBANG_FILES=	bin/elasticsearch bin/elasticsearch-certgen \
 		bin/elasticsearch-sql-cli bin/elasticsearch-syskeygen \
 		bin/elasticsearch-users
 
-CONFLICTS=	elasticsearch6 elasticsearch7
+CONFLICTS=	${PORTNAME}*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PORTSCOUT=	limit:^${DISTVERSION:R:R}\.
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -54,7 +55,7 @@ BINS=		elasticsearch elasticsearch-certgen elasticsearch-certutil \
 		elasticsearch-reconfigure-node elasticsearch-reset-password \
 		elasticsearch-saml-metadata elasticsearch-service-tokens \
 		elasticsearch-setup-passwords elasticsearch-shard \
-		elasticsearch-sql-cli elasticsearch-sql-cli-${PORTVERSION}.jar \
+		elasticsearch-sql-cli elasticsearch-sql-cli-${DISTVERSION}.jar \
 		elasticsearch-syskeygen elasticsearch-users
 
 PORTDOCS=	LICENSE.txt NOTICE.txt README.asciidoc

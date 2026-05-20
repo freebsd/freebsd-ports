@@ -4,11 +4,11 @@ PORTREVISION=	3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		LOCAL/vvd/elastic
-PKGNAMESUFFIX=	7
+PKGNAMESUFFIX=	${DISTVERSION:R:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-darwin-x86_64
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Full-text search engine for Java
+COMMENT=	Distributed, RESTful search and analytics engine (${DISTVERSION:R:R} version)
 WWW=		https://www.elastic.co/
 
 LICENSE=	APACHE20
@@ -35,7 +35,7 @@ SHEBANG_FILES=	bin/elasticsearch bin/elasticsearch-certgen \
 		bin/elasticsearch-users bin/x-pack-env bin/x-pack-security-env \
 		bin/x-pack-watcher-env
 
-CONFLICTS=	${PORTNAME}8 ${PORTNAME}9*
+CONFLICTS=	${PORTNAME}*
 
 # ML plugin not supported on FreeBSD
 EXTRACT_AFTER_ARGS=	--exclude jdk.app \
@@ -45,7 +45,7 @@ EXTRACT_AFTER_ARGS=	--exclude jdk.app \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-PORTSCOUT=	limit:^7
+PORTSCOUT=	limit:^${DISTVERSION:R:R}\.
 SUB_FILES=	pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		SEARCHUSER=${SEARCHUSER} \
