@@ -68,6 +68,12 @@ OPTIONS_SINGLE_SIMD+=	SIMD_SSE41
 
 CXXFLAGS:=	${CXXFLAGS:S/-O2/-O3/} # clang writes wrong binary code when -O2 optimization is used and one testcase is failing, see https://bugs.llvm.org/show_bug.cgi?id=48104
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
+CXXFLAGS+=	-mcpu=power7
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
