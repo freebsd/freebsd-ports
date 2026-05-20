@@ -1044,6 +1044,7 @@
     SUBDIR += py-ansible-core218
     SUBDIR += py-ansible-core219
     SUBDIR += py-ansible-core220
+    SUBDIR += py-ansible-core221
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
     SUBDIR += py-appjail-gui

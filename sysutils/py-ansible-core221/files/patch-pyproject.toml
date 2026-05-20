@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-05-19 14:23:57.112598000 -0700
++++ pyproject.toml	2026-05-19 14:25:15.952696000 -0700
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0.3, <= 82.0.1"]  # lower bound to support license/license-files (PEP 639), upper bound for latest version tested at release
++requires = ["setuptools >= 63.1.0, <= 82.0.1"]  # lower bound to support license/license-files (PEP 639), upper bound for latest version tested at release
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,11 +10,6 @@
+ ]
+ description = "Radically simple IT automation"
+ readme = "README.md"
+-license = "GPL-3.0-or-later"
+-license-files = [
+-    "COPYING",
+-    "licenses/*.txt",
+-]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
