@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		fuse libtool pathfix pkgconfig python
+USES=		fuse libtool localbase pathfix pkgconfig python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
