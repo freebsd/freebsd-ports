@@ -998,6 +998,7 @@ include/universal/utility/compiler.hpp
 include/universal/utility/compiler_specialization.hpp
 include/universal/utility/console_utf8.hpp
 include/universal/utility/convert_to.hpp
+include/universal/utility/decimal_to_binary.hpp
 include/universal/utility/directives.hpp
 include/universal/utility/error.hpp
 include/universal/utility/error_tracking_traits.hpp
@@ -1017,6 +1018,7 @@ include/universal/utility/reverse_view.hpp
 include/universal/utility/sampleviz.hpp
 include/universal/utility/scale_tracker.hpp
 include/universal/utility/scientific.hpp
+include/universal/utility/string_parse.hpp
 include/universal/utility/tracked.hpp
 include/universal/utility/tracked_bounded.hpp
 include/universal/utility/tracked_exact.hpp
