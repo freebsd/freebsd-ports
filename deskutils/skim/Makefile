@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.2
+DISTVERSION=	4.6.3
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -38,7 +38,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		autocfg-1.5.0 \
 		backtrace-0.3.76 \
 		base64-0.22.1 \
-		bincode-1.3.3 \
+		bincode-next-2.1.0 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -51,7 +51,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bytes-1.11.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.2.61 \
+		cc-1.2.62 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ciborium-ll-0.2.2 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_complete-4.6.3 \
+		clap_complete-4.6.5 \
 		clap_complete_nushell-4.6.0 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
@@ -133,13 +133,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		getrandom-0.4.2 \
 		gimli-0.32.3 \
 		gnuplot-0.0.46 \
-		gungraun-0.18.2 \
-		gungraun-macros-0.8.0 \
-		gungraun-runner-0.18.2 \
+		gungraun-0.19.0 \
+		gungraun-macros-0.9.0 \
+		gungraun-runner-0.19.0 \
 		half-2.7.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		id-arena-2.3.0 \
@@ -156,7 +156,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		itoa-1.0.18 \
 		jiff-0.2.24 \
 		jiff-static-0.2.24 \
-		js-sys-0.3.97 \
+		js-sys-0.3.98 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
@@ -180,10 +180,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		mio-1.2.0 \
 		nix-0.28.0 \
 		nix-0.29.0 \
-		nix-0.31.2 \
+		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
-		num-conv-0.2.1 \
+		num-conv-0.2.2 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
@@ -217,7 +217,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.106 \
-		pulldown-cmark-0.13.3 \
+		pulldown-cmark-0.13.4 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -255,7 +255,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.149 \
-		serial2-0.2.36 \
+		serial2-0.2.37 \
 		serial_test-3.4.0 \
 		serial_test_derive-3.4.0 \
 		sha2-0.10.9 \
@@ -264,12 +264,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		shell-quote-0.7.2 \
 		shell-words-1.1.1 \
 		shlex-1.3.0 \
+		shlex-2.0.1 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
 		simdutf8-0.1.5 \
 		similar-2.7.0 \
-		siphasher-1.0.2 \
+		siphasher-1.0.3 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		socket2-0.6.3 \
@@ -293,7 +294,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.1 \
+		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
 		tokio-util-0.7.18 \
 		tracing-0.1.44 \
@@ -312,6 +313,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
+		unty-next-0.1.1 \
 		utf8parse-0.2.2 \
 		uuid-1.23.1 \
 		valuable-0.1.1 \
@@ -323,14 +325,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.120 \
-		wasm-bindgen-macro-0.2.120 \
-		wasm-bindgen-macro-support-0.2.120 \
-		wasm-bindgen-shared-0.2.120 \
+		wasm-bindgen-0.2.121 \
+		wasm-bindgen-macro-0.2.121 \
+		wasm-bindgen-macro-support-0.2.121 \
+		wasm-bindgen-shared-0.2.121 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.97 \
+		web-sys-0.3.98 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
