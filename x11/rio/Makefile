@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
+DISTVERSION=	0.4.5
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -143,7 +143,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ctor-0.10.1 \
 		cursor-icon-1.2.0 \
 		d3d12-descriptor-heap-0.2.1 \
-		dashmap-6.1.0 \
+		dashmap-6.2.1 \
 		dasp_sample-0.11.0 \
 		data-encoding-2.11.0 \
 		deflate-1.0.0 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kqueue-1.1.1 \
-		kqueue-sys-1.1.1 \
+		kqueue-sys-1.1.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
@@ -381,8 +381,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		petgraph-0.8.3 \
 		phf-0.13.1 \
 		phf_shared-0.13.1 \
-		pin-project-1.1.12 \
-		pin-project-internal-1.1.12 \
+		pin-project-1.1.13 \
+		pin-project-internal-1.1.13 \
 		pin-project-lite-0.2.17 \
 		piper-0.2.5 \
 		pkg-config-0.3.33 \
@@ -639,7 +639,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.15 \
-		winnow-1.0.2 \
+		winnow-1.0.3 \
 		winres-0.1.12 \
 		wio-0.2.2 \
 		wit-bindgen-0.51.0 \
