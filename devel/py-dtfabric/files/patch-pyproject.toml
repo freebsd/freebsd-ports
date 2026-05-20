@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-05-06 08:23:10 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ maintainers = [
+ maintainers = [
+     { name = "Joachim Metz", email = "joachim.metz@gmail.com" },
+ ]
+-license = "Apache-2.0"
+-license-files = ["ACKNOWLEDGEMENTS", "AUTHORS", "LICENSE"]
++license = {text = "Apache-2.0"}
+ readme = "README.md"
+ classifiers = [
+     "Development Status :: 3 - Alpha",

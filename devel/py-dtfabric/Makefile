@@ -1,8 +1,8 @@
 PORTNAME=	dtfabric
-PORTVERSION=	20240211
+PORTVERSION=	20260506
 CATEGORIES=	devel python
-MASTER_SITES=	https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/ \
-		LOCAL/antoine
+MASTER_SITES=	PYPI \
+		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
