@@ -1,5 +1,5 @@
 PORTNAME=	tmux
-PORTVERSION=	3.6a
+PORTVERSION=	3.6b
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${DISTVERSION}/
 
