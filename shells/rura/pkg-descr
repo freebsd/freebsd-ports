@@ -1,0 +1,10 @@
+Rura is an interactive terminal user interface (TUI) scratchpad
+designed for constructing and debugging shell pipelines. It
+emphasizes real-time feedback through live execution modes,
+allowing users to test command segments interactively rather than
+repeatedly editing and re-running full commands.
+
+Features include partial pipeline execution (running commands up
+to a specific point), syntax highlighting, command history,
+regex-based search in output, and customizable key bindings and
+themes.

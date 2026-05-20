@@ -57,6 +57,7 @@
     SUBDIR += psh
     SUBDIR += rc
     SUBDIR += rubygem-shellwords
+    SUBDIR += rura
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += schemesh
