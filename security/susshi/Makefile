@@ -1,6 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.6
+DISTVERSION=	0.15.8
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,6 +41,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_builder-4.6.0 \
 		clap_derive-4.6.1 \
 		clap_lex-1.0.0 \
+		clap_mangen-0.2.33 \
 		clipboard-win-5.4.1 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
@@ -76,6 +77,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fluent-syntax-0.12.0 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
+		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getrandom-0.2.17 \
@@ -149,6 +151,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
 		ring-0.17.14 \
+		roff-1.1.1 \
 		rust-embed-8.11.0 \
 		rust-embed-impl-8.11.0 \
 		rust-embed-utils-8.11.0 \
@@ -190,6 +193,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-2.0.18 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
+		thread_local-1.1.9 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		tinystr-0.8.3 \
