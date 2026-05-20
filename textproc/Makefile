@@ -365,6 +365,7 @@
     SUBDIR += kibana91
     SUBDIR += kibana92
     SUBDIR += kibana93
+    SUBDIR += kibana94
     SUBDIR += kiss-templates
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
