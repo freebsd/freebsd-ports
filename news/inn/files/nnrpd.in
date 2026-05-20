@@ -16,6 +16,7 @@ rcvar=nnrpd_enable
 load_rc_config ${name}
 
 : ${nnrpd_enable:="NO"}
+: ${nnrpd_user:="news"}
 : ${nnrpd_port:="563"}
 : ${nnrpd_flags:="-D -p ${nnrpd_port} -S"}
 
@@ -29,6 +30,7 @@ else
 	pidfile="%%RUNDIR%%/${name}-${nnrpd_port}.pid"
 fi
 command="%%NEWSBASE%%/bin/${name}"
+command_user="${nnrpd_user}"
 
 stop_postcmd="rm -f ${pidfile}"
 
