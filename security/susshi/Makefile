@@ -1,7 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.15.6
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	yatoub
 
-CARGO_CRATES=	allocator-api2-0.2.21 \
+CARGO_CRATES=	adler2-2.0.1 \
+		allocator-api2-0.2.21 \
 		anstream-1.0.0 \
 		anstyle-1.0.13 \
 		anstyle-parse-1.0.0 \
@@ -26,57 +26,82 @@ CARGO_CRATES=	allocator-api2-0.2.21 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
 		arboard-3.6.1 \
+		arc-swap-1.9.1 \
+		base64-0.22.1 \
+		basic-toml-0.1.10 \
 		bitflags-2.11.0 \
+		block-buffer-0.10.4 \
+		bytes-1.11.1 \
 		castaway-0.2.4 \
-		catppuccin-2.7.0 \
+		catppuccin-2.8.0 \
 		cc-1.2.56 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.6.0 \
+		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_derive-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.0.0 \
 		clipboard-win-5.4.1 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
 		convert_case-0.10.0 \
+		cpufeatures-0.2.17 \
+		crc32fast-1.5.0 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
+		crypto-common-0.1.7 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		deranged-0.5.8 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
+		digest-0.10.7 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.0 \
+		displaydoc-0.2.5 \
 		document-features-0.2.12 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
 		fastrand-2.3.0 \
+		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
+		flate2-1.1.9 \
+		fluent-0.17.0 \
+		fluent-bundle-0.16.0 \
+		fluent-langneg-0.13.1 \
+		fluent-syntax-0.12.0 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
+		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getrandom-0.2.17 \
 		getrandom-0.4.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		heck-0.5.0 \
+		http-1.4.0 \
+		httparse-1.10.1 \
+		i18n-config-0.4.8 \
+		i18n-embed-0.16.0 \
+		i18n-embed-fl-0.10.0 \
+		i18n-embed-impl-0.8.4 \
 		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		indexmap-2.13.0 \
 		indoc-2.0.7 \
 		instability-0.3.11 \
+		intl-memoizer-0.5.3 \
+		intl_pluralrules-7.0.2 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.14.0 \
 		itoa-1.0.17 \
 		kasuari-0.4.11 \
 		leb128fmt-0.1.0 \
-		libc-0.2.183 \
+		libc-0.2.186 \
 		libredox-0.1.12 \
 		libssh2-sys-0.3.1 \
 		libz-sys-1.1.24 \
@@ -87,8 +112,9 @@ CARGO_CRATES=	allocator-api2-0.2.21 \
 		log-0.4.29 \
 		lru-0.16.3 \
 		memchr-2.8.0 \
+		miniz_oxide-0.8.9 \
 		mio-1.1.1 \
-		nix-0.31.2 \
+		nix-0.31.3 \
 		num-conv-0.2.0 \
 		num_threads-0.1.7 \
 		objc2-0.6.3 \
@@ -110,6 +136,9 @@ CARGO_CRATES=	allocator-api2-0.2.21 \
 		portable-atomic-1.13.1 \
 		powerfmt-0.2.0 \
 		prettyplease-0.2.37 \
+		proc-macro-error-attr2-2.0.0 \
+		proc-macro-error2-2.0.1 \
+		proc-macro-hack-0.5.20+deprecated \
 		proc-macro2-1.0.106 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
@@ -119,62 +148,104 @@ CARGO_CRATES=	allocator-api2-0.2.21 \
 		ratatui-widgets-0.3.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
+		ring-0.17.14 \
+		rust-embed-8.11.0 \
+		rust-embed-impl-8.11.0 \
+		rust-embed-utils-8.11.0 \
+		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
+		rustls-0.23.40 \
+		rustls-pki-types-1.14.1 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
+		same-file-1.0.6 \
 		scopeguard-1.2.0 \
+		self_cell-1.2.2 \
 		semver-1.0.27 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.149 \
-		serde_yaml-0.9.34+deprecated \
+		serde_yaml_ng-0.10.0 \
+		sha2-0.10.9 \
 		shellexpand-3.1.2 \
 		shlex-1.3.0 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
+		simd-adler32-0.3.9 \
 		smallvec-1.15.1 \
 		ssh2-0.9.5 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum_macros-0.27.2 \
+		subtle-2.6.1 \
 		syn-2.0.117 \
+		sys-locale-0.3.2 \
 		tempfile-3.27.0 \
+		thiserror-1.0.69 \
 		thiserror-2.0.18 \
+		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
 		time-0.3.47 \
 		time-core-0.1.8 \
+		tinystr-0.8.3 \
+		toml-0.5.11 \
+		type-map-0.5.1 \
+		typenum-1.20.0 \
+		unic-langid-0.9.6 \
+		unic-langid-impl-0.9.6 \
+		unic-langid-macros-0.9.6 \
+		unic-langid-macros-impl-0.9.6 \
 		unicode-ident-1.0.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		unsafe-libyaml-0.2.11 \
+		untrusted-0.9.0 \
+		ureq-3.3.0 \
+		ureq-proto-0.6.0 \
+		utf8-zero-0.8.1 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
+		version_check-0.9.5 \
+		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
+		webpki-roots-1.0.7 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-link-0.2.1 \
+		windows-sys-0.52.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
+		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.1 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_aarch64_msvc-0.53.1 \
+		windows_i686_gnu-0.52.6 \
 		windows_i686_gnu-0.53.1 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_gnullvm-0.53.1 \
+		windows_i686_msvc-0.52.6 \
 		windows_i686_msvc-0.53.1 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnu-0.53.1 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_gnullvm-0.53.1 \
+		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-core-0.51.0 \
@@ -184,6 +255,9 @@ CARGO_CRATES=	allocator-api2-0.2.21 \
 		wit-parser-0.244.0 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
+		zerofrom-0.1.8 \
+		zeroize-1.8.2 \
+		zerovec-0.11.6 \
 		zmij-1.0.21
 
 OPENSSLINC=	${DESTDIR}/usr/include
