@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.22.0
-PORTREVISION=	3
+DISTVERSION=	3.23.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -189,8 +188,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		js-sys-0.3.83 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
-		lazy-regex-3.5.1 \
-		lazy-regex-proc_macros-3.5.1 \
+		lazy-regex-3.6.0 \
+		lazy-regex-proc_macros-3.6.0 \
 		lazy_static-1.5.0 \
 		libc-0.2.180 \
 		libredox-0.1.12 \
@@ -237,6 +236,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		percent-encoding-2.3.2 \
+		pin-project-lite-0.2.17 \
 		pkg-config-0.3.32 \
 		portable-atomic-1.13.0 \
 		portable-atomic-util-0.2.4 \
@@ -303,6 +303,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_edit-0.23.10+spec-1.0.0 \
 		toml_parser-1.0.6+spec-1.1.0 \
 		toml_writer-1.0.6+spec-1.1.0 \
+		tracing-0.1.44 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.36 \
 		typenum-1.19.0 \
 		unicode-bom-2.0.3 \
 		unicode-ident-1.0.22 \
