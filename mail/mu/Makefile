@@ -1,6 +1,6 @@
 PORTNAME=	mu
 DISTVERSION=	1.12.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/djcb/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -34,8 +34,8 @@ CLD2_MESON_ENABLED=	cld2
 GUILE_USES=		guile:3.0
 GUILE_MESON_ENABLED=	guile
 
-MANPAGES_BUILD_DEPENDS=	emacs:editors/emacs
+MANPAGES_BUILD_DEPENDS=	emacs:editors/emacs@nox
 
-MU4E_RUN_DEPENDS=	emacs:editors/emacs
+MU4E_BUILD_DEPENDS=	emacs:editors/emacs@nox
 
 .include <bsd.port.mk>
