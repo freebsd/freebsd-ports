@@ -1,4 +1,4 @@
---- libde265/image-io.cc.orig	2025-04-26 20:58:45 UTC
+--- libde265/image-io.cc.orig	2026-05-19 05:53:49 UTC
 +++ libde265/image-io.cc
 @@ -208,7 +208,7 @@ PacketSink_File::PacketSink_File()
  }
@@ -16,7 +16,7 @@
 -LIBDE265_API void PacketSink_File::set_filename(const char* filename)
 +void PacketSink_File::set_filename(const char* filename)
  {
-   assert(mFH==NULL);
+   assert(mFH==nullptr);
  
 @@ -224,7 +224,7 @@ LIBDE265_API void PacketSink_File::set_filename(const 
  }
