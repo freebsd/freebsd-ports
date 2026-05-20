@@ -107,6 +107,8 @@ include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
 include/dns/zonefetch.h
+include/dns/zonemgr.h
+include/dns/zoneproperties.h
 include/dns/zoneverify.h
 include/dns/zt.h
 include/dst/dst.h
@@ -242,11 +244,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.21.so
-lib/libisc-9.21.21.so
-lib/libisccc-9.21.21.so
-lib/libisccfg-9.21.21.so
-lib/libns-9.21.21.so
+lib/libdns-9.21.22.so
+lib/libisc-9.21.22.so
+lib/libisccc-9.21.22.so
+lib/libisccfg-9.21.22.so
+lib/libns-9.21.22.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
