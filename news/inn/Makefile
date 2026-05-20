@@ -1,6 +1,6 @@
 PORTNAME?=	inn
 PORTVERSION?=	2.7.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	news
 MASTER_SITES=	ISC
 MASTER_SITE_SUBDIR?=	${PORTNAME}
@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe gmake libtool perl5 uidfix
 CPE_VENDOR=	isc
-USE_RC_SUBR=	innd
+USE_RC_SUBR=	innd nnrpd
 
 .ifnmake portclippy
 VARBASE?=	/var
