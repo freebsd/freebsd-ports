@@ -1,5 +1,5 @@
 PORTNAME=	kim-api
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	science
 MASTER_SITES=	https://s3.openkim.org/kim-api/
 
