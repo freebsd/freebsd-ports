@@ -66,12 +66,14 @@
 %%DSO%%%%LUA%%share/lua/5.1/ngx/ocsp.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/pipe.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/process.lua
+%%DSO%%%%LUA%%share/lua/5.1/ngx/proxyssl.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/re.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/req.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/resp.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/semaphore.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/ssl.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/ssl/clienthello.lua
+%%DSO%%%%LUA%%share/lua/5.1/ngx/ssl/proxysslcert.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/ssl/proxysslverify.lua
 %%DSO%%%%LUA%%share/lua/5.1/ngx/ssl/session.lua
 %%DSO%%%%LUA%%share/lua/5.1/resty/core.lua
