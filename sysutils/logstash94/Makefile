@@ -1,5 +1,5 @@
 PORTNAME=	logstash
-DISTVERSION=	9.3.4
+DISTVERSION=	9.4.1
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
@@ -54,7 +54,7 @@ LOGSTASH_HOME?=			${PREFIX}/${PORTNAME}
 LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
 				jruby.sh jrubyc rake rdoc ri
 LOGSTASH_JRUBY_SUBDIR=		vendor/jruby/bin
-LOGSTASH_JRUBY_VER=		3.1.0
+LOGSTASH_JRUBY_VER=		3.4.0
 
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml
