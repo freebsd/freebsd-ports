@@ -1,6 +1,6 @@
---- make/compiler_flags.orig	2021-08-28 03:13:59 UTC
+--- make/compiler_flags.orig	2026-05-19 13:36:01 UTC
 +++ make/compiler_flags
-@@ -274,9 +274,9 @@ LDLIBS_TBB ?= $(LDFLAGS_TBB)
+@@ -332,9 +332,9 @@ endif
  
  endif
  
