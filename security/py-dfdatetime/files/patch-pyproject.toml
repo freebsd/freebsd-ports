@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-04-11 08:41:25 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ maintainers = [
+ maintainers = [
+     { name = "Log2Timeline maintainers", email = "log2timeline-maintainers@googlegroups.com" },
+ ]
+-license = "Apache-2.0"
+-license-files = ["ACKNOWLEDGEMENTS", "AUTHORS", "LICENSE"]
++license = {text = "Apache-2.0"}
+ readme = "README.md"
+ classifiers = [
+     "Development Status :: 3 - Alpha",
