@@ -1,5 +1,5 @@
 PORTNAME=	diffstat
-PORTVERSION=	1.68
+PORTVERSION=	1.69
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/${PORTNAME}/
