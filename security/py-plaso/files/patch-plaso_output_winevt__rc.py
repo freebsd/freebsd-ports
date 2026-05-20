@@ -1,6 +1,6 @@
---- plaso/output/winevt_rc.py.orig	2024-06-08 09:38:22 UTC
+--- plaso/output/winevt_rc.py.orig	2026-05-12 13:50:02 UTC
 +++ plaso/output/winevt_rc.py
-@@ -16,7 +16,7 @@ class Sqlite3DatabaseFile(object):
+@@ -18,7 +18,7 @@ class Sqlite3DatabaseFile:
  
    _HAS_TABLE_QUERY = (
        'SELECT name FROM sqlite_master '
@@ -9,7 +9,7 @@
  
    def __init__(self):
      """Initializes the database file object."""
-@@ -166,7 +166,7 @@ class WinevtResourcesSqlite3DatabaseReader(object):
+@@ -168,7 +168,7 @@ class WinevtResourcesSqlite3DatabaseReader:
      """
      table_names = ['event_log_providers']
      column_names = ['event_log_provider_key']
@@ -18,7 +18,7 @@
  
      values_list = list(self._database_file.GetValues(
          table_names, column_names, condition))
-@@ -202,7 +202,7 @@ class WinevtResourcesSqlite3DatabaseReader(object):
+@@ -204,7 +204,7 @@ class WinevtResourcesSqlite3DatabaseReader:
        return None
  
      column_names = ['message_string']
@@ -27,7 +27,7 @@
  
      values = list(self._database_file.GetValues(
          [table_name], column_names, condition))
-@@ -290,7 +290,7 @@ class WinevtResourcesSqlite3DatabaseReader(object):
+@@ -292,7 +292,7 @@ class WinevtResourcesSqlite3DatabaseReader:
        return None
  
      column_names = ['value']
@@ -36,7 +36,7 @@
  
      values = list(self._database_file.GetValues(
          [table_name], column_names, condition))
-@@ -485,7 +485,7 @@ class WinevtResourcesHelper(object):
+@@ -784,7 +784,7 @@ class WinevtResourcesHelper:
          'windows_wevt_template_event'):
        # TODO: add message_file_identifiers to filter_expression
        filter_expression = (

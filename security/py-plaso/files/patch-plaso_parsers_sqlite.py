@@ -1,6 +1,6 @@
---- plaso/parsers/sqlite.py.orig	2024-06-08 09:38:22 UTC
+--- plaso/parsers/sqlite.py.orig	2026-05-12 13:50:02 UTC
 +++ plaso/parsers/sqlite.py
-@@ -118,8 +118,8 @@ class SQLiteDatabase(object):
+@@ -117,8 +117,8 @@ class SQLiteDatabase:
    SCHEMA_QUERY = (
        'SELECT tbl_name, sql '
        'FROM sqlite_master '

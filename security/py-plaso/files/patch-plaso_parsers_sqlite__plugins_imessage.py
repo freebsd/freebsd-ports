@@ -1,6 +1,6 @@
---- plaso/parsers/sqlite_plugins/imessage.py.orig	2024-06-08 09:38:22 UTC
+--- plaso/parsers/sqlite_plugins/imessage.py.orig	2026-05-12 13:50:02 UTC
 +++ plaso/parsers/sqlite_plugins/imessage.py
-@@ -81,7 +81,7 @@ class IMessagePlugin(interface.SQLitePlugin):
+@@ -80,7 +80,7 @@ class IMessagePlugin(interface.SQLitePlugin):
  
    _CLIENT_VERSION_QUERY = (
        'SELECT key, value FROM _SqliteDatabaseProperties '
