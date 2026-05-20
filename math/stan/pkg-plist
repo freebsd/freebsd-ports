@@ -1,7 +1,15 @@
 include/stan/analyze/mcmc/autocovariance.hpp
+include/stan/analyze/mcmc/check_chains.hpp
 include/stan/analyze/mcmc/compute_effective_sample_size.hpp
 include/stan/analyze/mcmc/compute_potential_scale_reduction.hpp
+include/stan/analyze/mcmc/ess.hpp
+include/stan/analyze/mcmc/mcse.hpp
+include/stan/analyze/mcmc/rank_normalization.hpp
+include/stan/analyze/mcmc/rhat.hpp
 include/stan/analyze/mcmc/split_chains.hpp
+include/stan/analyze/mcmc/split_rank_normalized_ess.hpp
+include/stan/analyze/mcmc/split_rank_normalized_rhat.hpp
+include/stan/callbacks/concurrent_writer.hpp
 include/stan/callbacks/interrupt.hpp
 include/stan/callbacks/json_writer.hpp
 include/stan/callbacks/logger.hpp
@@ -33,6 +41,7 @@ include/stan/mcmc/base_adaptation.hpp
 include/stan/mcmc/base_adapter.hpp
 include/stan/mcmc/base_mcmc.hpp
 include/stan/mcmc/chains.hpp
+include/stan/mcmc/chainset.hpp
 include/stan/mcmc/covar_adaptation.hpp
 include/stan/mcmc/fixed_param_sampler.hpp
 include/stan/mcmc/hmc/base_hmc.hpp
