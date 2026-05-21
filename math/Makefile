@@ -641,6 +641,7 @@
     SUBDIR += octave-forge-nurbs
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octave-pool
+    SUBDIR += octave-forge-octave_ffmpeg_free
     SUBDIR += octave-forge-octave_mermaid_js
     SUBDIR += octave-forge-octave_php_wrapper
     SUBDIR += octave-forge-octave_tar
