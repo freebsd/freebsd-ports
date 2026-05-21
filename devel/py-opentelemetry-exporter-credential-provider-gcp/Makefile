@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-exporter-credential-provider-gcp
-PORTVERSION=	0.62b1
+PORTVERSION=	0.63b0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
