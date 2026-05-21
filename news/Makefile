@@ -9,6 +9,7 @@
     SUBDIR += diablo
     SUBDIR += fidogate
     SUBDIR += fidogate4
+    SUBDIR += flnews
     SUBDIR += golded+
     SUBDIR += gup
     SUBDIR += husky
