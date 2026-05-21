@@ -1,5 +1,5 @@
 PORTNAME=	zathura-pdf-mupdf
-DISTVERSION=	2026.02.03
+DISTVERSION=	2026.05.10
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/
 
