@@ -1,3 +1,555 @@
+  <vuln vid="738f5590-550c-11f1-9f97-3fa0ea3edd7d">
+    <topic>qt6-webengine -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>qt6-pdf</name>
+<name>qt6-webengine</name>
+<range><lt>6.11.1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=140-based">
+	  <p>Backports for 262 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2025-13223: Type Confusion in V8</li>
+	    <li>CVE-2025-13224: Type Confusion in V8</li>
+	    <li>CVE-2025-13630: Type Confusion in V8</li>
+	    <li>CVE-2025-13632: Inappropriate implementation in DevTools</li>
+	    <li>CVE-2025-13634: Inappropriate implementation in Downloads</li>
+	    <li>CVE-2025-13721: Race in v8</li>
+	    <li>CVE-2025-14766: Out of bounds read and write in V8</li>
+	    <li>CVE-2026-0628: Insufficient policy enforcement in WebView tag</li>
+	    <li>CVE-2026-0899: Out of bounds memory access in V8</li>
+	    <li>CVE-2026-0902: Inappropriate implementation in V8</li>
+	    <li>CVE-2026-0905: Insufficient policy enforcement in Network</li>
+	    <li>CVE-2026-1220: Description pending NVD publication</li>
+	    <li>CVE-2026-1861: Heap buffer overflow in libvpx</li>
+	    <li>CVE-2026-2314: Heap buffer overflow in Codecs</li>
+	    <li>CVE-2026-2315: Inappropriate implementation in WebGPU</li>
+	    <li>CVE-2026-2316: Insufficient policy enforcement in Frames</li>
+	    <li>CVE-2026-2317: Inappropriate implementation in Animation</li>
+	    <li>CVE-2026-2319: Race in DevTools</li>
+	    <li>CVE-2026-2320: Inappropriate implementation in File input</li>
+	    <li>CVE-2026-2441: Use after free in CSS</li>
+	    <li>CVE-2026-2648: Heap buffer overflow in PDFium</li>
+	    <li>CVE-2026-2649: Integer overflow in V8</li>
+	    <li>CVE-2026-2650: Heap buffer overflow in Media</li>
+	    <li>CVE-2026-3061: Out of bounds read in Media</li>
+	    <li>CVE-2026-3062: Out of bounds read and write in Tint</li>
+	    <li>CVE-2026-3063: Inappropriate implementation in DevTools</li>
+	    <li>CVE-2026-3536: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-3537: Object lifecycle issue in PowerVR</li>
+	    <li>CVE-2026-3538: Integer overflow in Skia</li>
+	    <li>CVE-2026-3539: Object lifecycle issue in DevTools</li>
+	    <li>CVE-2026-3540: Inappropriate implementation in WebAudio</li>
+	    <li>CVE-2026-3541: Inappropriate implementation in CSS</li>
+	    <li>CVE-2026-3542: Inappropriate implementation in WebAssembly</li>
+	    <li>CVE-2026-3543: Inappropriate implementation in V8</li>
+	    <li>CVE-2026-3544: Heap buffer overflow in WebCodecs</li>
+	    <li>CVE-2026-3545: Insufficient data validation in Navigation</li>
+	    <li>CVE-2026-3909: Out of bounds write in Skia</li>
+	    <li>CVE-2026-3910: Inappropriate implementation in V8</li>
+	    <li>CVE-2026-3919: Use after free in Extensions</li>
+	    <li>CVE-2026-3921: Use after free in TextEncoding</li>
+	    <li>CVE-2026-3922: Use after free in MediaStream</li>
+	    <li>CVE-2026-3923: Use after free in WebMIDI</li>
+	    <li>CVE-2026-3924: use after free in WindowDialog</li>
+	    <li>CVE-2026-3926: Out of bounds read in V8</li>
+	    <li>CVE-2026-3929: Side-channel information leakage in ResourceTiming</li>
+	    <li>CVE-2026-3931: Heap buffer overflow in Skia</li>
+	    <li>CVE-2026-3934: Insufficient policy enforcement in ChromeDriver</li>
+	    <li>CVE-2026-3938: Insufficient policy enforcement in Clipboard</li>
+	    <li>CVE-2026-3940: Insufficient policy enforcement in DevTools</li>
+	    <li>CVE-2026-3941: Insufficient policy enforcement in DevTools</li>
+	    <li>CVE-2026-3942: Incorrect security UI in PictureInPicture</li>
+	    <li>CVE-2026-4440: Out of bounds read and write in WebGL</li>
+	    <li>CVE-2026-4441: Use after free in Base</li>
+	    <li>CVE-2026-4442: Heap buffer overflow in CSS</li>
+	    <li>CVE-2026-4443: Heap buffer overflow in WebAudio</li>
+	    <li>CVE-2026-4444: Stack buffer overflow in WebRTC</li>
+	    <li>CVE-2026-4445: Use after free in WebRTC</li>
+	    <li>CVE-2026-4446: Use after free in WebRTC</li>
+	    <li>CVE-2026-4448: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2026-4449: Use after free in Blink</li>
+	    <li>CVE-2026-4450: Out of bounds write in V8</li>
+	    <li>CVE-2026-4451: Insufficient validation of untrusted input in Navigation</li>
+	    <li>CVE-2026-4452: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-4453: Integer overflow in Dawn</li>
+	    <li>CVE-2026-4454: Use after free in Network</li>
+	    <li>CVE-2026-4455: Heap buffer overflow in PDFium</li>
+	    <li>CVE-2026-4457: Type Confusion in V8</li>
+	    <li>CVE-2026-4458: Use after free in Extensions</li>
+	    <li>CVE-2026-4459: Out of bounds read and write in WebAudio</li>
+	    <li>CVE-2026-4460: Out of bounds read in Skia</li>
+	    <li>CVE-2026-4462: Out of bounds read in Blink</li>
+	    <li>CVE-2026-4463: Heap buffer overflow in WebRTC</li>
+	    <li>CVE-2026-4464: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-4674: Out of bounds read in CSS</li>
+	    <li>CVE-2026-4675: Heap buffer overflow in WebGL</li>
+	    <li>CVE-2026-4677: Out of bounds read in WebAudio</li>
+	    <li>CVE-2026-4679: Integer overflow in Fonts</li>
+	    <li>CVE-2026-5272: Heap buffer overflow in GPU</li>
+	    <li>CVE-2026-5273: Use after free in CSS</li>
+	    <li>CVE-2026-5274: Integer overflow in Codecs</li>
+	    <li>CVE-2026-5275: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2026-5276: Insufficient policy enforcement in WebUSB</li>
+	    <li>CVE-2026-5277: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-5279: Object corruption in V8</li>
+	    <li>CVE-2026-5280: Use after free in WebCodecs</li>
+	    <li>CVE-2026-5281: Use after free in Dawn</li>
+	    <li>CVE-2026-5282: Out of bounds read in WebCodecs</li>
+	    <li>CVE-2026-5283: Inappropriate implementation in ANGLE</li>
+	    <li>CVE-2026-5284: Use after free in Dawn</li>
+	    <li>CVE-2026-5285: Use after free in WebGL</li>
+	    <li>CVE-2026-5287: Use after free in PDF</li>
+	    <li>CVE-2026-5289: Use after free in Navigation</li>
+	    <li>CVE-2026-5290: Use after free in Compositing</li>
+	    <li>CVE-2026-5291: Inappropriate implementation in WebGL</li>
+	    <li>CVE-2026-5292: Out of bounds read in WebCodecs</li>
+	    <li>CVE-2026-5860: Use after free in WebRTC</li>
+	    <li>CVE-2026-5861: Use after free in V8</li>
+	    <li>CVE-2026-5862: Inappropriate implementation in V8</li>
+	    <li>CVE-2026-5863: Inappropriate implementation in V8</li>
+	    <li>CVE-2026-5865: Type Confusion in V8</li>
+	    <li>CVE-2026-5866: Use after free in Media</li>
+	    <li>CVE-2026-5868: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2026-5870: Integer overflow in Skia</li>
+	    <li>CVE-2026-5871: Type Confusion in V8</li>
+	    <li>CVE-2026-5872: Use after free in Blink</li>
+	    <li>CVE-2026-5873: Out of bounds read and write in V8</li>
+	    <li>CVE-2026-5875: Policy bypass in Blink</li>
+	    <li>CVE-2026-5876: Side-channel information leakage in Navigation</li>
+	    <li>CVE-2026-5877: Use after free in Navigation</li>
+	    <li>CVE-2026-5878: Incorrect security UI in Blink</li>
+	    <li>CVE-2026-5879: Insufficient validation of untrusted input in ANGLE</li>
+	    <li>CVE-2026-5880: Incorrect security UI in browser UI</li>
+	    <li>CVE-2026-5882: Incorrect security UI in Fullscreen</li>
+	    <li>CVE-2026-5883: Use after free in Media</li>
+	    <li>CVE-2026-5884: Insufficient validation of untrusted input in Media</li>
+	    <li>CVE-2026-5885: Insufficient validation of untrusted input in WebML</li>
+	    <li>CVE-2026-5886: Out of bounds read in WebAudio</li>
+	    <li>CVE-2026-5888: Uninitialized Use in WebCodecs</li>
+	    <li>CVE-2026-5889: Cryptographic Flaw in PDFium</li>
+	    <li>CVE-2026-5890: Race in WebCodecs</li>
+	    <li>CVE-2026-5891: Insufficient policy enforcement in browser UI</li>
+	    <li>CVE-2026-5893: Race in V8</li>
+	    <li>CVE-2026-5894: Inappropriate implementation in PDF</li>
+	    <li>CVE-2026-5896: Policy bypass in Audio</li>
+	    <li>CVE-2026-5899: Incorrect security UI in History Navigation</li>
+	    <li>CVE-2026-5900: Policy bypass in Downloads</li>
+	    <li>CVE-2026-5901: Policy bypass in DevTools</li>
+	    <li>CVE-2026-5903: Policy bypass in IFrameSandbox</li>
+	    <li>CVE-2026-5904: Use after free in V8</li>
+	    <li>CVE-2026-5907: Insufficient data validation in Media</li>
+	    <li>CVE-2026-5908: Integer overflow in Media</li>
+	    <li>CVE-2026-5909: Integer overflow in Media</li>
+	    <li>CVE-2026-5910: Integer overflow in Media</li>
+	    <li>CVE-2026-5911: Policy bypass in ServiceWorkers</li>
+	    <li>CVE-2026-5912: Integer overflow in WebRTC</li>
+	    <li>CVE-2026-5913: Out of bounds read in Blink</li>
+	    <li>CVE-2026-5914: Type Confusion in CSS</li>
+	    <li>CVE-2026-5915: Insufficient validation of untrusted input in WebML</li>
+	    <li>CVE-2026-5918: Inappropriate implementation in Navigation</li>
+	    <li>CVE-2026-5919: Insufficient validation of untrusted input in WebSockets</li>
+	    <li>CVE-2026-6296: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2026-6297: Use after free in Proxy</li>
+	    <li>CVE-2026-6298: Heap buffer overflow in Skia</li>
+	    <li>CVE-2026-6299: Use after free in Prerender</li>
+	    <li>CVE-2026-6300: Use after free in CSS</li>
+	    <li>CVE-2026-6301: Type Confusion in Turbofan</li>
+	    <li>CVE-2026-6302: Use after free in Video</li>
+	    <li>CVE-2026-6303: Use after free in Codecs</li>
+	    <li>CVE-2026-6304: Use after free in Graphite</li>
+	    <li>CVE-2026-6305: Heap buffer overflow in PDFium</li>
+	    <li>CVE-2026-6306: Heap buffer overflow in PDFium</li>
+	    <li>CVE-2026-6307: Type Confusion in Turbofan</li>
+	    <li>CVE-2026-6308: Out of bounds read in Media</li>
+	    <li>CVE-2026-6309: Use after free in Viz</li>
+	    <li>CVE-2026-6311: Uninitialized Use in Accessibility</li>
+	    <li>CVE-2026-6312: Insufficient policy enforcement in Passwords</li>
+	    <li>CVE-2026-6313: Insufficient policy enforcement in CORS</li>
+	    <li>CVE-2026-6314: Out of bounds write in GPU</li>
+	    <li>CVE-2026-6316: Use after free in Forms</li>
+	    <li>CVE-2026-6359: Use after free in Video</li>
+	    <li>CVE-2026-6360: Use after free in FileSystem</li>
+	    <li>CVE-2026-6361: Heap buffer overflow in PDFium</li>
+	    <li>CVE-2026-6362: Use after free in Codecs</li>
+	    <li>CVE-2026-6363: Type Confusion in V8</li>
+	    <li>CVE-2026-6364: Out of bounds read in Skia</li>
+	    <li>CVE-2026-6919: Use after free in DevTools</li>
+	    <li>CVE-2026-6920: Out of bounds read in GPU</li>
+	    <li>CVE-2026-7333: Use after free in GPU</li>
+	    <li>CVE-2026-7335: Use after free in media</li>
+	    <li>CVE-2026-7336: Use after free in WebRTC</li>
+	    <li>CVE-2026-7339: Heap buffer overflow in WebRTC</li>
+	    <li>CVE-2026-7340: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-7341: Use after free in WebRTC</li>
+	    <li>CVE-2026-7342: Use after free in WebView</li>
+	    <li>CVE-2026-7343: Use after free in Views</li>
+	    <li>CVE-2026-7344: Use after free in Accessibility</li>
+	    <li>CVE-2026-7345: Insufficient validation of untrusted input in Feedback</li>
+	    <li>CVE-2026-7346: Inappropriate implementation in Tint</li>
+	    <li>CVE-2026-7348: Use after free in Codecs</li>
+	    <li>CVE-2026-7349: Use after free in Cast</li>
+	    <li>CVE-2026-7350: Use after free in WebMIDI</li>
+	    <li>CVE-2026-7351: Race in MHTML</li>
+	    <li>CVE-2026-7353: Heap buffer overflow in Skia</li>
+	    <li>CVE-2026-7354: Out of bounds read and write in Angle</li>
+	    <li>CVE-2026-7355: Use after free in Media</li>
+	    <li>CVE-2026-7356: Use after free in Navigation</li>
+	    <li>CVE-2026-7357: Use after free in GPU</li>
+	    <li>CVE-2026-7359: Use after free in ANGLE</li>
+	    <li>CVE-2026-7360: Insufficient validation of untrusted input in Compositing</li>
+	    <li>CVE-2026-7363: Use after free in Canvas</li>
+	    <li>CVE-2026-7899: Out of bounds read and write in V8</li>
+	    <li>CVE-2026-7900: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2026-7901: Use after free in ANGLE</li>
+	    <li>CVE-2026-7902: Out of bounds memory access in V8</li>
+	    <li>CVE-2026-7903: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-7904: Out of bounds read in Fonts</li>
+	    <li>CVE-2026-7906: Use after free in SVG</li>
+	    <li>CVE-2026-7907: Use after free in DOM</li>
+	    <li>CVE-2026-7908: Use after free in Fullscreen</li>
+	    <li>CVE-2026-7910: Use after free in Views</li>
+	    <li>CVE-2026-7912: Integer overflow in GPU</li>
+	    <li>CVE-2026-7914: Type Confusion in Accessibility</li>
+	    <li>CVE-2026-7916: Insufficient data validation in InterestGroups</li>
+	    <li>CVE-2026-7917: Use after free in Fullscreen</li>
+	    <li>CVE-2026-7918: Use after free in GPU</li>
+	    <li>CVE-2026-7919: Use after free in Aura</li>
+	    <li>CVE-2026-7920: Use after free in Skia</li>
+	    <li>CVE-2026-7921: Use after free in Passwords</li>
+	    <li>CVE-2026-7922: Use after free in ServiceWorker</li>
+	    <li>CVE-2026-7923: Out of bounds write in Skia</li>
+	    <li>CVE-2026-7924: Uninitialized Use in Dawn</li>
+	    <li>CVE-2026-7926: Use after free in PresentationAPI</li>
+	    <li>CVE-2026-7927: Type Confusion in Runtime</li>
+	    <li>CVE-2026-7929: Use after free in MediaRecording</li>
+	    <li>CVE-2026-7933: Out of bounds read in WebCodecs</li>
+	    <li>CVE-2026-7935: Inappropriate implementation in Speech</li>
+	    <li>CVE-2026-7937: Insufficient policy enforcement in DevTools</li>
+	    <li>CVE-2026-7938: Use after free in CSS</li>
+	    <li>CVE-2026-7940: Use after free in V8</li>
+	    <li>CVE-2026-7942: Integer overflow in ANGLE</li>
+	    <li>CVE-2026-7944: Insufficient validation of untrusted input in Persistent Cache</li>
+	    <li>CVE-2026-7945: Insufficient validation of untrusted input in COOP</li>
+	    <li>CVE-2026-7946: Insufficient policy enforcement in WebUI</li>
+	    <li>CVE-2026-7947: Insufficient validation of untrusted input in Network</li>
+	    <li>CVE-2026-7949: Out of bounds read in Skia</li>
+	    <li>CVE-2026-7950: Out of bounds read and write in GFX</li>
+	    <li>CVE-2026-7951: Out of bounds write in WebRTC</li>
+	    <li>CVE-2026-7954: Race in Shared Storage</li>
+	    <li>CVE-2026-7955: Uninitialized Use in GPU</li>
+	    <li>CVE-2026-7956: Use after free in Navigation</li>
+	    <li>CVE-2026-7957: Out of bounds write in Media</li>
+	    <li>CVE-2026-7959: Inappropriate implementation in Navigation</li>
+	    <li>CVE-2026-7963: Inappropriate implementation in ServiceWorker</li>
+	    <li>CVE-2026-7964: Insufficient validation of untrusted input in FileSystem</li>
+	    <li>CVE-2026-7965: Insufficient validation of untrusted input in DevTools</li>
+	    <li>CVE-2026-7967: Insufficient validation of untrusted input in Navigation</li>
+	    <li>CVE-2026-7968: Insufficient validation of untrusted input in CORS</li>
+	    <li>CVE-2026-7969: Integer overflow in Network</li>
+	    <li>CVE-2026-7971: Inappropriate implementation in ORB</li>
+	    <li>CVE-2026-7972: Uninitialized Use in GPU</li>
+	    <li>CVE-2026-7973: Integer overflow in Dawn</li>
+	    <li>CVE-2026-7974: Use after free in Blink</li>
+	    <li>CVE-2026-7975: Use after free in DevTools</li>
+	    <li>CVE-2026-7976: Use after free in Views</li>
+	    <li>CVE-2026-7977: Inappropriate implementation in Canvas</li>
+	    <li>CVE-2026-7980: Use after free in WebAudio</li>
+	    <li>CVE-2026-7982: Uninitialized Use in WebCodecs</li>
+	    <li>CVE-2026-7983: Out of bounds read in Dawn</li>
+	    <li>CVE-2026-7985: Use after free in GPU</li>
+	    <li>CVE-2026-7986: Insufficient policy enforcement in Autofill</li>
+	    <li>CVE-2026-7987: Use after free in WebRTC</li>
+	    <li>CVE-2026-7988: Type Confusion in WebRTC</li>
+	    <li>CVE-2026-7989: Insufficient data validation in DataTransfer</li>
+	    <li>CVE-2026-7991: Use after free in UI</li>
+	    <li>CVE-2026-7993: Insufficient validation of untrusted input in Payments</li>
+	    <li>CVE-2026-7996: Insufficient validation of untrusted input in SSL</li>
+	    <li>CVE-2026-7998: Insufficient validation of untrusted input in Dialog</li>
+	    <li>CVE-2026-7999: Inappropriate implementation in V8</li>
+	    <li>CVE-2026-8002: Use after free in Audio</li>
+	    <li>CVE-2026-8003: Insufficient validation of untrusted input in TabGroups</li>
+	    <li>CVE-2026-8004: Insufficient policy enforcement in DevTools</li>
+	    <li>CVE-2026-8007: Insufficient validation of untrusted input in Cast</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13223</cvename>
+      <cvename>CVE-2025-13224</cvename>
+      <cvename>CVE-2025-13630</cvename>
+      <cvename>CVE-2025-13632</cvename>
+      <cvename>CVE-2025-13634</cvename>
+      <cvename>CVE-2025-13721</cvename>
+      <cvename>CVE-2025-14766</cvename>
+      <cvename>CVE-2026-0628</cvename>
+      <cvename>CVE-2026-0899</cvename>
+      <cvename>CVE-2026-0902</cvename>
+      <cvename>CVE-2026-0905</cvename>
+      <cvename>CVE-2026-1220</cvename>
+      <cvename>CVE-2026-1861</cvename>
+      <cvename>CVE-2026-2314</cvename>
+      <cvename>CVE-2026-2315</cvename>
+      <cvename>CVE-2026-2316</cvename>
+      <cvename>CVE-2026-2317</cvename>
+      <cvename>CVE-2026-2319</cvename>
+      <cvename>CVE-2026-2320</cvename>
+      <cvename>CVE-2026-2441</cvename>
+      <cvename>CVE-2026-2648</cvename>
+      <cvename>CVE-2026-2649</cvename>
+      <cvename>CVE-2026-2650</cvename>
+      <cvename>CVE-2026-3061</cvename>
+      <cvename>CVE-2026-3062</cvename>
+      <cvename>CVE-2026-3063</cvename>
+      <cvename>CVE-2026-3536</cvename>
+      <cvename>CVE-2026-3537</cvename>
+      <cvename>CVE-2026-3538</cvename>
+      <cvename>CVE-2026-3539</cvename>
+      <cvename>CVE-2026-3540</cvename>
+      <cvename>CVE-2026-3541</cvename>
+      <cvename>CVE-2026-3542</cvename>
+      <cvename>CVE-2026-3543</cvename>
+      <cvename>CVE-2026-3544</cvename>
+      <cvename>CVE-2026-3545</cvename>
+      <cvename>CVE-2026-3909</cvename>
+      <cvename>CVE-2026-3910</cvename>
+      <cvename>CVE-2026-3919</cvename>
+      <cvename>CVE-2026-3921</cvename>
+      <cvename>CVE-2026-3922</cvename>
+      <cvename>CVE-2026-3923</cvename>
+      <cvename>CVE-2026-3924</cvename>
+      <cvename>CVE-2026-3926</cvename>
+      <cvename>CVE-2026-3929</cvename>
+      <cvename>CVE-2026-3931</cvename>
+      <cvename>CVE-2026-3934</cvename>
+      <cvename>CVE-2026-3938</cvename>
+      <cvename>CVE-2026-3940</cvename>
+      <cvename>CVE-2026-3941</cvename>
+      <cvename>CVE-2026-3942</cvename>
+      <cvename>CVE-2026-4440</cvename>
+      <cvename>CVE-2026-4441</cvename>
+      <cvename>CVE-2026-4442</cvename>
+      <cvename>CVE-2026-4443</cvename>
+      <cvename>CVE-2026-4444</cvename>
+      <cvename>CVE-2026-4445</cvename>
+      <cvename>CVE-2026-4446</cvename>
+      <cvename>CVE-2026-4448</cvename>
+      <cvename>CVE-2026-4449</cvename>
+      <cvename>CVE-2026-4450</cvename>
+      <cvename>CVE-2026-4451</cvename>
+      <cvename>CVE-2026-4452</cvename>
+      <cvename>CVE-2026-4453</cvename>
+      <cvename>CVE-2026-4454</cvename>
+      <cvename>CVE-2026-4455</cvename>
+      <cvename>CVE-2026-4457</cvename>
+      <cvename>CVE-2026-4458</cvename>
+      <cvename>CVE-2026-4459</cvename>
+      <cvename>CVE-2026-4460</cvename>
+      <cvename>CVE-2026-4462</cvename>
+      <cvename>CVE-2026-4463</cvename>
+      <cvename>CVE-2026-4464</cvename>
+      <cvename>CVE-2026-4674</cvename>
+      <cvename>CVE-2026-4675</cvename>
+      <cvename>CVE-2026-4677</cvename>
+      <cvename>CVE-2026-4679</cvename>
+      <cvename>CVE-2026-5272</cvename>
+      <cvename>CVE-2026-5273</cvename>
+      <cvename>CVE-2026-5274</cvename>
+      <cvename>CVE-2026-5275</cvename>
+      <cvename>CVE-2026-5276</cvename>
+      <cvename>CVE-2026-5277</cvename>
+      <cvename>CVE-2026-5279</cvename>
+      <cvename>CVE-2026-5280</cvename>
+      <cvename>CVE-2026-5281</cvename>
+      <cvename>CVE-2026-5282</cvename>
+      <cvename>CVE-2026-5283</cvename>
+      <cvename>CVE-2026-5284</cvename>
+      <cvename>CVE-2026-5285</cvename>
+      <cvename>CVE-2026-5287</cvename>
+      <cvename>CVE-2026-5289</cvename>
+      <cvename>CVE-2026-5290</cvename>
+      <cvename>CVE-2026-5291</cvename>
+      <cvename>CVE-2026-5292</cvename>
+      <cvename>CVE-2026-5860</cvename>
+      <cvename>CVE-2026-5861</cvename>
+      <cvename>CVE-2026-5862</cvename>
+      <cvename>CVE-2026-5863</cvename>
+      <cvename>CVE-2026-5865</cvename>
+      <cvename>CVE-2026-5866</cvename>
+      <cvename>CVE-2026-5868</cvename>
+      <cvename>CVE-2026-5870</cvename>
+      <cvename>CVE-2026-5871</cvename>
+      <cvename>CVE-2026-5872</cvename>
+      <cvename>CVE-2026-5873</cvename>
+      <cvename>CVE-2026-5875</cvename>
+      <cvename>CVE-2026-5876</cvename>
+      <cvename>CVE-2026-5877</cvename>
+      <cvename>CVE-2026-5878</cvename>
+      <cvename>CVE-2026-5879</cvename>
+      <cvename>CVE-2026-5880</cvename>
+      <cvename>CVE-2026-5882</cvename>
+      <cvename>CVE-2026-5883</cvename>
+      <cvename>CVE-2026-5884</cvename>
+      <cvename>CVE-2026-5885</cvename>
+      <cvename>CVE-2026-5886</cvename>
+      <cvename>CVE-2026-5888</cvename>
+      <cvename>CVE-2026-5889</cvename>
+      <cvename>CVE-2026-5890</cvename>
+      <cvename>CVE-2026-5891</cvename>
+      <cvename>CVE-2026-5893</cvename>
+      <cvename>CVE-2026-5894</cvename>
+      <cvename>CVE-2026-5896</cvename>
+      <cvename>CVE-2026-5899</cvename>
+      <cvename>CVE-2026-5900</cvename>
+      <cvename>CVE-2026-5901</cvename>
+      <cvename>CVE-2026-5903</cvename>
+      <cvename>CVE-2026-5904</cvename>
+      <cvename>CVE-2026-5907</cvename>
+      <cvename>CVE-2026-5908</cvename>
+      <cvename>CVE-2026-5909</cvename>
+      <cvename>CVE-2026-5910</cvename>
+      <cvename>CVE-2026-5911</cvename>
+      <cvename>CVE-2026-5912</cvename>
+      <cvename>CVE-2026-5913</cvename>
+      <cvename>CVE-2026-5914</cvename>
+      <cvename>CVE-2026-5915</cvename>
+      <cvename>CVE-2026-5918</cvename>
+      <cvename>CVE-2026-5919</cvename>
+      <cvename>CVE-2026-6296</cvename>
+      <cvename>CVE-2026-6297</cvename>
+      <cvename>CVE-2026-6298</cvename>
+      <cvename>CVE-2026-6299</cvename>
+      <cvename>CVE-2026-6300</cvename>
+      <cvename>CVE-2026-6301</cvename>
+      <cvename>CVE-2026-6302</cvename>
+      <cvename>CVE-2026-6303</cvename>
+      <cvename>CVE-2026-6304</cvename>
+      <cvename>CVE-2026-6305</cvename>
+      <cvename>CVE-2026-6306</cvename>
+      <cvename>CVE-2026-6307</cvename>
+      <cvename>CVE-2026-6308</cvename>
+      <cvename>CVE-2026-6309</cvename>
+      <cvename>CVE-2026-6311</cvename>
+      <cvename>CVE-2026-6312</cvename>
+      <cvename>CVE-2026-6313</cvename>
+      <cvename>CVE-2026-6314</cvename>
+      <cvename>CVE-2026-6316</cvename>
+      <cvename>CVE-2026-6359</cvename>
+      <cvename>CVE-2026-6360</cvename>
+      <cvename>CVE-2026-6361</cvename>
+      <cvename>CVE-2026-6362</cvename>
+      <cvename>CVE-2026-6363</cvename>
+      <cvename>CVE-2026-6364</cvename>
+      <cvename>CVE-2026-6919</cvename>
+      <cvename>CVE-2026-6920</cvename>
+      <cvename>CVE-2026-7333</cvename>
+      <cvename>CVE-2026-7335</cvename>
+      <cvename>CVE-2026-7336</cvename>
+      <cvename>CVE-2026-7339</cvename>
+      <cvename>CVE-2026-7340</cvename>
+      <cvename>CVE-2026-7341</cvename>
+      <cvename>CVE-2026-7342</cvename>
+      <cvename>CVE-2026-7343</cvename>
+      <cvename>CVE-2026-7344</cvename>
+      <cvename>CVE-2026-7345</cvename>
+      <cvename>CVE-2026-7346</cvename>
+      <cvename>CVE-2026-7348</cvename>
+      <cvename>CVE-2026-7349</cvename>
+      <cvename>CVE-2026-7350</cvename>
+      <cvename>CVE-2026-7351</cvename>
+      <cvename>CVE-2026-7353</cvename>
+      <cvename>CVE-2026-7354</cvename>
+      <cvename>CVE-2026-7355</cvename>
+      <cvename>CVE-2026-7356</cvename>
+      <cvename>CVE-2026-7357</cvename>
+      <cvename>CVE-2026-7359</cvename>
+      <cvename>CVE-2026-7360</cvename>
+      <cvename>CVE-2026-7363</cvename>
+      <cvename>CVE-2026-7899</cvename>
+      <cvename>CVE-2026-7900</cvename>
+      <cvename>CVE-2026-7901</cvename>
+      <cvename>CVE-2026-7902</cvename>
+      <cvename>CVE-2026-7903</cvename>
+      <cvename>CVE-2026-7904</cvename>
+      <cvename>CVE-2026-7906</cvename>
+      <cvename>CVE-2026-7907</cvename>
+      <cvename>CVE-2026-7908</cvename>
+      <cvename>CVE-2026-7910</cvename>
+      <cvename>CVE-2026-7912</cvename>
+      <cvename>CVE-2026-7914</cvename>
+      <cvename>CVE-2026-7916</cvename>
+      <cvename>CVE-2026-7917</cvename>
+      <cvename>CVE-2026-7918</cvename>
+      <cvename>CVE-2026-7919</cvename>
+      <cvename>CVE-2026-7920</cvename>
+      <cvename>CVE-2026-7921</cvename>
+      <cvename>CVE-2026-7922</cvename>
+      <cvename>CVE-2026-7923</cvename>
+      <cvename>CVE-2026-7924</cvename>
+      <cvename>CVE-2026-7926</cvename>
+      <cvename>CVE-2026-7927</cvename>
+      <cvename>CVE-2026-7929</cvename>
+      <cvename>CVE-2026-7933</cvename>
+      <cvename>CVE-2026-7935</cvename>
+      <cvename>CVE-2026-7937</cvename>
+      <cvename>CVE-2026-7938</cvename>
+      <cvename>CVE-2026-7940</cvename>
+      <cvename>CVE-2026-7942</cvename>
+      <cvename>CVE-2026-7944</cvename>
+      <cvename>CVE-2026-7945</cvename>
+      <cvename>CVE-2026-7946</cvename>
+      <cvename>CVE-2026-7947</cvename>
+      <cvename>CVE-2026-7949</cvename>
+      <cvename>CVE-2026-7950</cvename>
+      <cvename>CVE-2026-7951</cvename>
+      <cvename>CVE-2026-7954</cvename>
+      <cvename>CVE-2026-7955</cvename>
+      <cvename>CVE-2026-7956</cvename>
+      <cvename>CVE-2026-7957</cvename>
+      <cvename>CVE-2026-7959</cvename>
+      <cvename>CVE-2026-7963</cvename>
+      <cvename>CVE-2026-7964</cvename>
+      <cvename>CVE-2026-7965</cvename>
+      <cvename>CVE-2026-7967</cvename>
+      <cvename>CVE-2026-7968</cvename>
+      <cvename>CVE-2026-7969</cvename>
+      <cvename>CVE-2026-7971</cvename>
+      <cvename>CVE-2026-7972</cvename>
+      <cvename>CVE-2026-7973</cvename>
+      <cvename>CVE-2026-7974</cvename>
+      <cvename>CVE-2026-7975</cvename>
+      <cvename>CVE-2026-7976</cvename>
+      <cvename>CVE-2026-7977</cvename>
+      <cvename>CVE-2026-7980</cvename>
+      <cvename>CVE-2026-7982</cvename>
+      <cvename>CVE-2026-7983</cvename>
+      <cvename>CVE-2026-7985</cvename>
+      <cvename>CVE-2026-7986</cvename>
+      <cvename>CVE-2026-7987</cvename>
+      <cvename>CVE-2026-7988</cvename>
+      <cvename>CVE-2026-7989</cvename>
+      <cvename>CVE-2026-7991</cvename>
+      <cvename>CVE-2026-7993</cvename>
+      <cvename>CVE-2026-7996</cvename>
+      <cvename>CVE-2026-7998</cvename>
+      <cvename>CVE-2026-7999</cvename>
+      <cvename>CVE-2026-8002</cvename>
+      <cvename>CVE-2026-8003</cvename>
+      <cvename>CVE-2026-8004</cvename>
+      <cvename>CVE-2026-8007</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=140-based</url>
+    </references>
+    <dates>
+      <discovery>2026-01-29</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecca89eb-54e6-11f1-bc4a-40b034429ecf">
     <topic>ner/rsync -- multiple vulnerabilities</topic>
     <affects>
