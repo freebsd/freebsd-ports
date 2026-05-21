@@ -24,6 +24,6 @@ OPTIONS_DEFINE=	WIDECHARS
 OPTIONS_DEFAULT=WIDECHARS
 WIDECHARS_DESC=	Wide characters support
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}
+WIDECHARS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}
 
 .include <bsd.port.mk>
