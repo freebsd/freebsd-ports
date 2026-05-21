@@ -10,6 +10,8 @@ bin/rt-run-scheduled-processes
 %%RT_ETC_DIR%%/acl.Oracle
 %%RT_ETC_DIR%%/acl.Pg
 %%RT_ETC_DIR%%/acl.mysql
+%%RT_ETC_DIR%%/ai/syntax/format_grammar.md
+%%RT_ETC_DIR%%/ai/syntax/ticketsql_grammar.md
 %%RT_ETC_DIR%%/cpanfile
 %%RT_ETC_DIR%%/initialdata
 %%RT_ETC_DIR%%/schema.Oracle
@@ -234,6 +236,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/REST2/Resource/Collection/QueryBySQL.pm
 %%SITE_PERL%%/RT/REST2/Resource/Collection/Search.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomField.pm
+%%SITE_PERL%%/RT/REST2/Resource/CustomFieldAppliesTo.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomFieldValue.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomFieldValues.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomFields.pm
@@ -242,6 +245,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/REST2/Resource/Group.pm
 %%SITE_PERL%%/RT/REST2/Resource/GroupMembers.pm
 %%SITE_PERL%%/RT/REST2/Resource/Groups.pm
+%%SITE_PERL%%/RT/REST2/Resource/Lifecycle.pm
 %%SITE_PERL%%/RT/REST2/Resource/Message.pm
 %%SITE_PERL%%/RT/REST2/Resource/ObjectCustomFieldValue.pm
 %%SITE_PERL%%/RT/REST2/Resource/Queue.pm
@@ -254,7 +258,9 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/REST2/Resource/Record/Readable.pm
 %%SITE_PERL%%/RT/REST2/Resource/Record/WithETag.pm
 %%SITE_PERL%%/RT/REST2/Resource/Record/Writable.pm
+%%SITE_PERL%%/RT/REST2/Resource/Rights.pm
 %%SITE_PERL%%/RT/REST2/Resource/Role/RequestBodyIsJSON.pm
+%%SITE_PERL%%/RT/REST2/Resource/Role/Rights.pm
 %%SITE_PERL%%/RT/REST2/Resource/Search.pm
 %%SITE_PERL%%/RT/REST2/Resource/Searches.pm
 %%SITE_PERL%%/RT/REST2/Resource/Ticket.pm
@@ -347,6 +353,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/Test/ExternalStorage.pm
 %%SITE_PERL%%/RT/Test/FTS.pm
 %%SITE_PERL%%/RT/Test/GnuPG.pm
+%%SITE_PERL%%/RT/Test/Playwright.pm
 %%SITE_PERL%%/RT/Test/REST2.pm
 %%SITE_PERL%%/RT/Test/SMIME.pm
 %%SITE_PERL%%/RT/Test/Selenium.pm
@@ -378,6 +385,7 @@ sbin/rt-attributes-viewer
 sbin/rt-clean-attributes
 sbin/rt-clean-sessions
 sbin/rt-clean-shorteners
+sbin/rt-config
 sbin/rt-dump-initialdata
 sbin/rt-email-dashboards
 sbin/rt-email-digest
@@ -770,6 +778,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/5.0.3/indexes
 %%DOCSDIR%%/upgrade/5.0.3/schema.Pg
 %%DOCSDIR%%/upgrade/5.0.4/acl.Pg
+%%DOCSDIR%%/upgrade/5.0.4/backcompat-preinit
 %%DOCSDIR%%/upgrade/5.0.4/content
 %%DOCSDIR%%/upgrade/5.0.4/schema.Oracle
 %%DOCSDIR%%/upgrade/5.0.4/schema.Pg
@@ -810,6 +819,9 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/5.9.7/schema.Pg
 %%DOCSDIR%%/upgrade/5.9.7/schema.mysql
 %%DOCSDIR%%/upgrade/6.0.1/content
+%%DOCSDIR%%/upgrade/6.0.3/schema.Oracle
+%%DOCSDIR%%/upgrade/6.0.3/schema.Pg
+%%DOCSDIR%%/upgrade/6.0.3/schema.mysql
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -1096,7 +1108,6 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Elements/ShowPeople
 %%DATADIR%%/html/Asset/Elements/ShowRoleMembers
 %%DATADIR%%/html/Asset/Elements/ShowSummary
-%%DATADIR%%/html/Asset/Elements/TSVExport
 %%DATADIR%%/html/Asset/Helpers/CreateLinkedTicket
 %%DATADIR%%/html/Asset/History.html
 %%DATADIR%%/html/Asset/ModifyCFs.html
@@ -1125,6 +1136,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Dashboards/Elements/ListOfDashboards
 %%DATADIR%%/html/Dashboards/Elements/SelectPrivacy
 %%DATADIR%%/html/Dashboards/Elements/ShowDashboards
+%%DATADIR%%/html/Dashboards/Elements/ShowPortlet/articlelinks
 %%DATADIR%%/html/Dashboards/Elements/ShowPortlet/component
 %%DATADIR%%/html/Dashboards/Elements/ShowPortlet/dashboard
 %%DATADIR%%/html/Dashboards/Elements/ShowPortlet/search
@@ -1260,6 +1272,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SelectArticleAutocomplete
 %%DATADIR%%/html/Elements/SelectAttachmentField
 %%DATADIR%%/html/Elements/SelectBoolean
+%%DATADIR%%/html/Elements/SelectCalendarColorMode
 %%DATADIR%%/html/Elements/SelectCustomDateRangeField
 %%DATADIR%%/html/Elements/SelectCustomFieldOperator
 %%DATADIR%%/html/Elements/SelectCustomFieldValue
@@ -1334,6 +1347,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/ShowWidgets
 %%DATADIR%%/html/Elements/SimpleSearch
 %%DATADIR%%/html/Elements/SingleUserRoleInput
+%%DATADIR%%/html/Elements/StatusBadge
 %%DATADIR%%/html/Elements/Submit
 %%DATADIR%%/html/Elements/SystemWarnings
 %%DATADIR%%/html/Elements/TSVExport
@@ -1482,6 +1496,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Search/Elements/BuildFormatString
 %%DATADIR%%/html/Search/Elements/Calendar
 %%DATADIR%%/html/Search/Elements/CalendarEvent
+%%DATADIR%%/html/Search/Elements/CalendarStatusFilterDropdown
 %%DATADIR%%/html/Search/Elements/Chart
 %%DATADIR%%/html/Search/Elements/ChartTable
 %%DATADIR%%/html/Search/Elements/ConditionRow
@@ -1528,6 +1543,12 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Asset/Display.html
 %%DATADIR%%/html/SelfService/Asset/Helpers/CreateLinkedTicket
 %%DATADIR%%/html/SelfService/Asset/History.html
+%%DATADIR%%/html/SelfService/Asset/Widgets/Display/Basics
+%%DATADIR%%/html/SelfService/Asset/Widgets/Display/CustomFieldCustomGroupings
+%%DATADIR%%/html/SelfService/Asset/Widgets/Display/Dates
+%%DATADIR%%/html/SelfService/Asset/Widgets/Display/Links
+%%DATADIR%%/html/SelfService/Asset/Widgets/Display/People
+%%DATADIR%%/html/SelfService/Asset/Widgets/autohandler
 %%DATADIR%%/html/SelfService/Asset/index.html
 %%DATADIR%%/html/SelfService/Attachment/dhandler
 %%DATADIR%%/html/SelfService/Closed.html
@@ -1546,6 +1567,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
+%%DATADIR%%/html/SelfService/Helpers/CalendarEventInfo
 %%DATADIR%%/html/SelfService/Helpers/SelectOwnerDropdown
 %%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
 %%DATADIR%%/html/SelfService/Helpers/TextDiff
@@ -1556,11 +1578,21 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Open.html
 %%DATADIR%%/html/SelfService/Prefs.html
 %%DATADIR%%/html/SelfService/Search/Results.tsv
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Create/Default
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Display/Assets
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Display/Basics
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Display/CustomFieldCustomGroupings
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Display/Dates
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Display/History
+%%DATADIR%%/html/SelfService/Ticket/Widgets/Update/Default
+%%DATADIR%%/html/SelfService/Ticket/Widgets/autohandler
 %%DATADIR%%/html/SelfService/Transaction/Display.html
 %%DATADIR%%/html/SelfService/Update.html
 %%DATADIR%%/html/SelfService/User/Elements/RelatedData
 %%DATADIR%%/html/SelfService/User/RelatedData.tsv
+%%DATADIR%%/html/SelfService/Views/Asset/dhandler
 %%DATADIR%%/html/SelfService/Views/Component/dhandler
+%%DATADIR%%/html/SelfService/Views/Ticket/dhandler
 %%DATADIR%%/html/SelfService/index.html
 %%DATADIR%%/html/Ticket/Attachment/WithHeaders/dhandler
 %%DATADIR%%/html/Ticket/Attachment/dhandler
@@ -1742,6 +1774,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/de.po
 %%DATADIR%%/po/el.po
 %%DATADIR%%/po/en.po
+%%DATADIR%%/po/en_CA.po
 %%DATADIR%%/po/en_GB.po
 %%DATADIR%%/po/es.po
 %%DATADIR%%/po/et.po
@@ -1755,6 +1788,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/is.po
 %%DATADIR%%/po/it.po
 %%DATADIR%%/po/ja.po
+%%DATADIR%%/po/lo.po
 %%DATADIR%%/po/lt.po
 %%DATADIR%%/po/lv.po
 %%DATADIR%%/po/nb.po
@@ -1926,6 +1960,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/history-folding.js
 %%DATADIR%%/static/js/htmx.min.js
 %%DATADIR%%/static/js/i18n.js
+%%DATADIR%%/static/js/init.js
 %%DATADIR%%/static/js/jquery-3.6.0.min.js
 %%DATADIR%%/static/js/jquery.jgrowl.min.js
 %%DATADIR%%/static/js/jquery.tablesorter.min.js
