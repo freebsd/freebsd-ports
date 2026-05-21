@@ -1,4 +1,5 @@
-Antigravity CLI is a command-line tool for interacting with the Antigravity
-platform.
+Antigravity CLI is a command-line tool 'agy' for interacting with the Google's
 
-It replaces the Gemini CLI (misc/gemini-cli).
+Antigravity AI platform.
+
+It replaces the Google's Gemini CLI (misc/gemini-cli) application.
