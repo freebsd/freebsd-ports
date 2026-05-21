@@ -8,3 +8,13 @@
          .allowlist_type("FILE")
          .opaque_type("FILE")
          .allowlist_item("max_align_t")
+@@ -336,7 +337,8 @@ impl Target {
+             os: env::var("CARGO_CFG_TARGET_OS")?,
+             env: env::var("CARGO_CFG_TARGET_ENV")?,
+ 
+-            features: env::var("CARGO_CFG_TARGET_FEATURE")?
++            features: env::var("CARGO_CFG_TARGET_FEATURE")
++                .unwrap_or_default()
+                 .split(',')
+                 .map(str::to_owned)
+                 .collect(),
