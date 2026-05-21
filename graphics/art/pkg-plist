@@ -345,6 +345,7 @@ share/ART/images/edit-point.svg
 share/ART/images/edit-small.svg
 share/ART/images/edit.svg
 share/ART/images/empty.png
+share/ART/images/empty.svg
 share/ART/images/env-bright.svg
 share/ART/images/env-dark.svg
 share/ART/images/env-dim.svg
@@ -396,6 +397,7 @@ share/ART/images/grid.svg
 share/ART/images/hand-closed-hicontrast.svg
 share/ART/images/hand-open-hicontrast.svg
 share/ART/images/hand-open.svg
+share/ART/images/hidpi.svg
 share/ART/images/histogram-bar-off-small.svg
 share/ART/images/histogram-bar-on-small.svg
 share/ART/images/histogram-bayer-off-small.svg

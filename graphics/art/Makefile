@@ -1,5 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.26.3
+DISTVERSION=	1.26.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/artpixls/ART/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-raw-image-editor
