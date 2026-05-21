@@ -59,7 +59,7 @@
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -466,19 +457,12 @@ etc-install:
+@@ -466,13 +457,6 @@ etc-install:
  @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
  @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
  @COMMENT_INPLACE_LAYOUT@	done
@@ -70,8 +70,10 @@
 -@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f -not -name '*.in' -print ) | while read file ; do \
 -@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/upgrade/$$file" "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
 -@COMMENT_INPLACE_LAYOUT@	done
- 
- 
+ @COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH)/ai ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)/ai
+ @COMMENT_INPLACE_LAYOUT@	-( cd etc/ai && find . -type d -print ) | while read dir ; do \
+ @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/ai/$$dir" ; \
+@@ -485,7 +469,7 @@ sbin-install:
  sbin-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_SBIN_PATH)
  @COMMENT_INPLACE_LAYOUT@	for file in $(SYSTEM_BINARIES) ; do \
@@ -80,7 +82,7 @@
  @COMMENT_INPLACE_LAYOUT@	done
  
  
-@@ -486,7 +470,7 @@ bin-install:
+@@ -493,7 +477,7 @@ bin-install:
  bin-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_BIN_PATH)
  @COMMENT_INPLACE_LAYOUT@	for file in $(BINARIES) ; do \

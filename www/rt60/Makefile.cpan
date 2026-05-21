@@ -24,8 +24,9 @@
 ### DateTime 0.44
 ### DateTime::Format::Natural 0.67
 ### DateTime::Locale 0.40
+### DateTime::Set
 ### DBI 1.37
-### DBIx::SearchBuilder 1.80
+### DBIx::SearchBuilder 1.85
 ### Devel::GlobalDestruction
 ### Devel::StackTrace 1.19
 ### Digest::base                                perl std
@@ -91,7 +92,7 @@
 ### Text::Wrapper
 ### Time::Local 1.27                           perl std
 ### Time::HiRes                                perl std
-### Time::ParseDate
+### Time::ParseDate 2026.0219
 ### Tree::Simple 1.04
 ### URI 1.59
 ### URI::QueryParam
@@ -110,7 +111,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Convert-Color>0:graphics/p5-Convert-Color				\
 		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
 		p5-DBI>=1.37:databases/p5-DBI						\
-		p5-DBIx-SearchBuilder>=1.80:databases/p5-DBIx-SearchBuilder		\
+		p5-DBIx-SearchBuilder>=1.85:databases/p5-DBIx-SearchBuilder		\
 		p5-Data-GUID>0:devel/p5-Data-GUID					\
 		p5-Data-ICal>0:deskutils/p5-Data-ICal					\
 		p5-Data-Page>0:databases/p5-Data-Page					\
@@ -119,6 +120,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-DateTime>=0.44:devel/p5-DateTime					\
 		p5-DateTime-Format-Natural>=0.67:devel/p5-DateTime-Format-Natural	\
 		p5-DateTime-Locale>=0.40:devel/p5-DateTime-Locale			\
+		p5-DateTime-Set>=0:devel/p5-DateTime-Set				\
 		p5-DateTime>=0.44:devel/p5-DateTime					\
 		p5-Devel-GlobalDestruction>0:devel/p5-Devel-GlobalDestruction		\
 		p5-Devel-StackTrace>=1.30:devel/p5-Devel-StackTrace			\
@@ -172,7 +174,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Text-WikiFormat>=0.76:textproc/p5-Text-WikiFormat			\
 		p5-Text-WordDiff>0:textproc/p5-Text-WordDiff				\
 		p5-Text-Wrapper>0:textproc/p5-Text-Wrapper				\
-		p5-Time-modules>0:devel/p5-Time-modules					\
+		p5-Time-ParseDate>=2026.021:devel/p5-Time-ParseDate			\
 		p5-Tree-Simple>=1.04:devel/p5-Tree-Simple				\
 		p5-URI>=1.59:net/p5-URI							\
 		p5-XML-RSS>=1.05:textproc/p5-XML-RSS
