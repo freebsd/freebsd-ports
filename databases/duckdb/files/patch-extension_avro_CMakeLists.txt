@@ -1,0 +1,21 @@
+-- The Avro extension's CMakeLists.txt file was modified to search for shared
+-- libraries instead of static libraries. This is necessary because FreeBSD ports
+-- typically provide shared libraries, and the static versions are not available.
+
+--- extension/avro/CMakeLists.txt.orig	2026-05-21 06:43:12 UTC
++++ extension/avro/CMakeLists.txt
+@@ -22,10 +22,10 @@ else()
+   find_library(LZMA_LIBRARY lzma.lib REQUIRED)
+   find_library(ZLIB_LIBRARY zlib.lib REQUIRED)
+ else()
+-  find_library(AVRO_LIBRARY libavro.a REQUIRED)
+-  find_library(JANSSON_LIBRARY libjansson.a REQUIRED)
+-  find_library(LZMA_LIBRARY liblzma.a REQUIRED)
+-  find_library(ZLIB_LIBRARY libz.a REQUIRED)
++  find_library(AVRO_LIBRARY avro REQUIRED)
++  find_library(JANSSON_LIBRARY jansson REQUIRED)
++  find_library(LZMA_LIBRARY lzma REQUIRED)
++  find_library(ZLIB_LIBRARY z REQUIRED)
+ endif()
+ 
+ find_library(SNAPPY_LIBRARY snappy REQUIRED)
