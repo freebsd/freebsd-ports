@@ -1,3 +1,3 @@
-TIMESTAMP = 1760247489
-SHA256 (rubygem/opentelemetry-instrumentation-active_storage-0.2.0.gem) = d8aff194b7469f3beb63a707d5fb3179fd24a02c84ee5ba4d428367e86764d66
-SIZE (rubygem/opentelemetry-instrumentation-active_storage-0.2.0.gem) = 11776
+TIMESTAMP = 1779223128
+SHA256 (rubygem/opentelemetry-instrumentation-active_storage-0.5.0.gem) = 39920d405fd111cd98c01a90a24b19413f4cb5bc8de2a24d7882f785e8f02c19
+SIZE (rubygem/opentelemetry-instrumentation-active_storage-0.5.0.gem) = 12288
