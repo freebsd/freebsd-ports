@@ -1,8 +1,8 @@
 PORTNAME=	edflib
-DISTVERSION=	1.24
+DISTVERSION=	1.27
 CATEGORIES=	misc # medicine
-MASTER_SITES=	https://www.teuniz.net/edflib/
-DISTNAME=	${PORTNAME}_${DISTVERSION:S/.//}
+MASTER_SITES=	https://gitlab.com/Teuniz/EDFlib/-/archive/v${DISTVERSION}/
+DISTNAME=	EDFlib-v${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library to read/write EDF+/BDF+ (medical data series) files
