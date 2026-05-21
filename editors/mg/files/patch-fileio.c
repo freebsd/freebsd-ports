@@ -1,4 +1,4 @@
---- fileio.c.orig	2023-10-22 13:42:02 UTC
+--- fileio.c.orig	2026-05-19 14:58:49 UTC
 +++ fileio.c
 @@ -22,6 +22,7 @@
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  
  #include "def.h"
  #include "kbd.h"
-@@ -705,7 +706,7 @@ expandtilde(const char *fn)
+@@ -703,7 +704,7 @@ expandtilde(const char *fn)
  	struct passwd	*pw;
  	struct stat	 statbuf;
  	const char	*cp;

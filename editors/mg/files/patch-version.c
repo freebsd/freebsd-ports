@@ -1,11 +1,14 @@
---- version.c.orig	2024-10-10 16:12:07 UTC
+--- version.c.orig	2023-03-08 04:43:11 UTC
 +++ version.c
-@@ -13,7 +13,7 @@
+@@ -13,7 +13,11 @@
  
  #include "def.h"
  
--const char	version[] = "Mg 2a";
-+const char	version[] = "Mg 2a (20241008)";
++#ifdef VERSION
++const char	version[] = "Mg 2a (" VERSION ")";
++#else
+ const char	version[] = "Mg 2a";
++#endif
  
  /*
   * Display the version. All this does
