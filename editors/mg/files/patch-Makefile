@@ -1,12 +1,22 @@
---- Makefile.orig	2023-10-22 13:42:02 UTC
+--- Makefile.orig	2019-07-18 05:57:48 UTC
 +++ Makefile
-@@ -29,9 +29,4 @@ SRCS+=	cmode.c cscope.c dired.c grep.c interpreter.c t
+@@ -11,7 +11,7 @@ DPADD+=	${LIBCURSES} ${LIBUTIL}
+ #	STARTUPFILE	-- look for and handle initialization file.
+ #	MGLOG		-- debug mg internals to a log file.
+ #
+-CFLAGS+=-Wall -DREGEX
++CFLAGS+=-Wall -DREGEX -DVERSION=\"${DISTVERSION}\"
+ 
+ SRCS=	autoexec.c basic.c bell.c buffer.c cinfo.c dir.c display.c \
+	echo.c extend.c file.c fileio.c funmap.c help.c kbd.c keymap.c \
+@@ -28,10 +28,5 @@ SRCS+=	cmode.c cscope.c dired.c grep.c interpreter.c t
+ # -DMGLOG source file.
  #
  #SRCS+=	log.c
- 
+-
 -afterinstall:
 -	${INSTALL} -d -o root -g wheel ${DESTDIR}${DOCDIR}/mg
 -	${INSTALL} ${INSTALL_COPY} -o ${DOCOWN} -g ${DOCGRP} -m ${DOCMODE} \
 -	    ${.CURDIR}/tutorial ${DESTDIR}${DOCDIR}/mg
--
+
  .include <bsd.prog.mk>
