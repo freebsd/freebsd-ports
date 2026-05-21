@@ -1,5 +1,6 @@
 PORTNAME=	modules
 DISTVERSION=	5.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils tcl
 MASTER_SITES=	https://github.com/envmodules/modules/releases/download/v${DISTVERSION}/
 
@@ -19,17 +20,20 @@ USES=		gmake python:env shebangfix tar:bzip2 tcl
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/Modules
 CONFIGURE_ARGS=	--enable-versioning \
+		--with-modulepath=${GNU_CONFIGURE_PREFIX}/\$$MODULE_VERSION/modulefiles:${PREFIX}/etc/modulefiles \
 		--with-python="${PYTHON_CMD}"
 
 TEST_TARGET=	test
 
+SUB_FILES=	pkg-message
 PLIST_SUB=	MODULES_VERSION=${DISTVERSION}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${GNU_CONFIGURE_PREFIX}/${DISTVERSION}/lib/libtclenvmodules.so
 
 post-stage:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/profile.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles \
+		${STAGEDIR}${PREFIX}/etc/profile.d
 	${RLN} ${STAGEDIR}${PREFIX}/Modules/${PORTVERSION}/init/profile.sh \
 		${STAGEDIR}${PREFIX}/etc/profile.d/module.sh
 	${RLN} ${STAGEDIR}${PREFIX}/Modules/${PORTVERSION}/init/profile.csh \

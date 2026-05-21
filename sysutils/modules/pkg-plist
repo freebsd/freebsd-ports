@@ -56,6 +56,7 @@ Modules/%%MODULES_VERSION%%/share/vim/vimfiles/ftdetect/modulefile.vim
 Modules/%%MODULES_VERSION%%/share/vim/vimfiles/ftplugin/modulefile.vim
 Modules/%%MODULES_VERSION%%/share/vim/vimfiles/syntax/modulefile.vim
 Modules/versions/%%MODULES_VERSION%%
+@dir etc/modulefiles
 etc/profile.d/module.csh
 etc/profile.d/module.sh
 share/man/man1/envml.1.gz
