@@ -1,7 +1,6 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
-PORTREVISION=	0
+DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		bitflags-2.11.1 \
 		bytes-1.11.1 \
 		camino-1.2.2 \
-		cc-1.2.58 \
+		cc-1.2.62 \
 		cfg-if-1.0.4 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
@@ -53,8 +52,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		fastrand-2.4.1 \
 		find-msvc-tools-0.1.9 \
 		form_urlencoded-1.2.2 \
+		getrandom-0.2.17 \
 		getrandom-0.3.4 \
-		git2-0.20.4 \
+		git2-0.21.0 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		http-1.4.0 \
@@ -71,14 +71,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		indexmap-2.14.0 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
-		jobserver-0.1.33 \
+		jobserver-0.1.34 \
 		lazy_static-1.5.0 \
 		libc-0.2.186 \
 		libgit2-sys-0.18.4+1.9.3 \
 		libssh2-sys-0.3.1 \
-		libz-sys-1.1.22 \
+		libz-sys-1.1.28 \
 		linux-raw-sys-0.12.1 \
-		litemap-0.8.1 \
+		litemap-0.8.2 \
 		litrs-0.4.2 \
 		lock_api-0.4.13 \
 		log-0.4.29 \
@@ -88,13 +88,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		once_cell_polyfill-1.70.2 \
 		openssl-probe-0.1.6 \
 		openssl-src-300.5.1+3.5.1 \
-		openssl-sys-0.9.109 \
+		openssl-sys-0.9.116 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		parse_link_header-0.4.1 \
 		percent-encoding-2.3.2 \
-		pkg-config-0.3.32 \
-		potential_utf-0.1.4 \
+		pkg-config-0.3.33 \
+		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
 		proc-macro2-1.0.106 \
 		quote-1.0.45 \
@@ -103,7 +103,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
+		ring-0.17.14 \
 		rustix-1.1.4 \
+		rustls-0.23.40 \
+		rustls-pki-types-1.14.1 \
+		rustls-webpki-0.103.13 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
 		serde-1.0.228 \
@@ -116,6 +120,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		shlex-1.3.0 \
 		smallvec-1.15.1 \
 		stable_deref_trait-1.2.1 \
+		subtle-2.6.1 \
 		syn-2.0.117 \
 		synstructure-0.13.2 \
 		temp-env-0.3.6 \
@@ -125,7 +130,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		time-0.3.45 \
 		time-core-0.1.7 \
 		time-macros-0.2.25 \
-		tinystr-0.8.2 \
+		tinystr-0.8.3 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
@@ -134,6 +139,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		unicode-segmentation-1.13.2 \
 		unicode-width-0.2.2 \
 		unsafe-libyaml-0.2.11 \
+		untrusted-0.9.0 \
 		ureq-3.3.0 \
 		ureq-proto-0.6.0 \
 		url-2.5.8 \
@@ -143,8 +149,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
+		webpki-roots-1.0.7 \
 		windows-link-0.2.1 \
+		windows-sys-0.52.0 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -157,14 +166,15 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-1.0.2 \
 		wit-bindgen-0.51.0 \
-		writeable-0.6.2 \
-		yoke-0.8.1 \
-		yoke-derive-0.8.1 \
-		zerofrom-0.1.6 \
-		zerofrom-derive-0.1.6 \
-		zerotrie-0.2.3 \
-		zerovec-0.11.5 \
-		zerovec-derive-0.11.2 \
+		writeable-0.6.3 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerofrom-0.1.8 \
+		zerofrom-derive-0.1.7 \
+		zeroize-1.8.2 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3 \
 		zmij-1.0.21
 
 OPENSSLINC=	/usr/include
