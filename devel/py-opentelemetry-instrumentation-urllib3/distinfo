@@ -1,3 +1,3 @@
-TIMESTAMP = 1777252690
-SHA256 (opentelemetry_instrumentation_urllib3-0.62b1.tar.gz) = 1aff2f16292efd9b11eae5850cfb09ec5f7111ae2fe8c3ac223251ed468f13a1
-SIZE (opentelemetry_instrumentation_urllib3-0.62b1.tar.gz) = 19337
+TIMESTAMP = 1779222990
+SHA256 (opentelemetry_instrumentation_urllib3-0.63b0.tar.gz) = 41d341f9fb163543d0fa09a7a4928122612c8b794818b38bd9c2b2da9cd653a4
+SIZE (opentelemetry_instrumentation_urllib3-0.63b0.tar.gz) = 18945
