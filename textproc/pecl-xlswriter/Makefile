@@ -1,5 +1,5 @@
 PORTNAME=	xlswriter
-PORTVERSION=	1.5.8
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,11 +10,8 @@ WWW=		https://pecl.php.net/package/xlswriter \
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase php:pecl ssl
+USES=		php:pecl ssl
 
-LIB_DEPENDS=	libxlsxio_read.so:textproc/xlsxio
-
-CONFIGURE_ARGS=	 --with-libxlsxio=${LOCALBASE} \
-		 --with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
 
 .include <bsd.port.mk>
