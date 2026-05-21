@@ -1,5 +1,5 @@
 PORTNAME=	azure-monitor-opentelemetry
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.28.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-core-tracing-opentelemetry>=1.0.0b11<1.1:devel/py-azure-core-tracing-opentelemetry@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-monitor-opentelemetry-exporter>=1.0.0b49<1.1:devel/py-azure-monitor-opentelemetry-exporter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-monitor-opentelemetry-exporter>=1.0.0b52<1.1:devel/py-azure-monitor-opentelemetry-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-instrumentation-django>=0.61b0:devel/py-opentelemetry-instrumentation-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-instrumentation-fastapi>=0.61b0:devel/py-opentelemetry-instrumentation-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-instrumentation-flask>=0.61b0:devel/py-opentelemetry-instrumentation-flask@${PY_FLAVOR} \
