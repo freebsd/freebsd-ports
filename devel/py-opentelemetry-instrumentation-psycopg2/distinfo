@@ -1,3 +1,3 @@
-TIMESTAMP = 1777252684
-SHA256 (opentelemetry_instrumentation_psycopg2-0.62b1.tar.gz) = 0f756c7e00babb04429c528e8cd0054b348a8458a7a986a6807c0d413222f45c
-SIZE (opentelemetry_instrumentation_psycopg2-0.62b1.tar.gz) = 12077
+TIMESTAMP = 1779222984
+SHA256 (opentelemetry_instrumentation_psycopg2-0.63b0.tar.gz) = 5afc8e49cf21269d9fdac368909a2e8c40fedba9ce1dd613f9c41998796aa14a
+SIZE (opentelemetry_instrumentation_psycopg2-0.63b0.tar.gz) = 12065
