@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-sinatra
-PORTVERSION=	0.27.1
+PORTVERSION=	0.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-rack>=0.21<1:devel/rubygem-opentelemetry-instrumentation-rack
+RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-rack>=0.29<1:devel/rubygem-opentelemetry-instrumentation-rack
 
 USES=		gem
 
