@@ -1,3 +1,3 @@
-TIMESTAMP = 1777252674
-SHA256 (opentelemetry_instrumentation_asgi-0.62b1.tar.gz) = 7cf5f5d5c493bbb1edd2bd6d51fa879d964e94048904017258a32ffa47329310
-SIZE (opentelemetry_instrumentation_asgi-0.62b1.tar.gz) = 26781
+TIMESTAMP = 1779222974
+SHA256 (opentelemetry_instrumentation_asgi-0.63b0.tar.gz) = e201eed7616f7da0840adf8ab8c5ea64db7ab19b920373b38983e2bac8d3645d
+SIZE (opentelemetry_instrumentation_asgi-0.63b0.tar.gz) = 26154
