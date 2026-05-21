@@ -1,5 +1,6 @@
 PORTNAME=	kalzium
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,24 +10,23 @@ WWW=		https://www.kde.org/applications/education/kalzium
 LICENSE=	GPLv2 LGPL20 GFDL
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libopenbabel.so:science/openbabel \
-		libAvogadroCore.so:science/avogadrolibs
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:math/facile \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
+LIB_DEPENDS=	libAvogadroCore.so:science/avogadrolibs \
+		libopenbabel.so:science/openbabel
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl kde:6 \
-		ocaml:build pkgconfig qt:6 tar:xz xorg
-USE_GL=		gl glew glu
-USE_KDE=	archive attica auth bookmarks codecs completion config \
-		configwidgets coreaddons crash doctools guiaddons i18n \
-		iconthemes itemmodels itemviews jobwidgets kio newstuff \
-		notifications parts plotting service solid sonnet textwidgets \
-		unitconversion widgetsaddons windowsystem xmlgui \
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools gl \
+		kde:6 ocaml:build pkgconfig qt:6 tar:xz xorg
+USE_GL=		opengl
+USE_KDE=	attica colorscheme completion config configwidgets \
+		coreaddons crash doctools guiaddons i18n itemviews \
+		jobwidgets kio newstuff plotting service sonnet textwidgets \
+		unitconversion widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		base scxml
-USE_XORG=	x11
 USE_LDCONFIG=	yes
+USE_QT=		5compat base declarative scxml svg
+USE_XORG=	x11
 
 PIE_UNSAFE=	yes
 
