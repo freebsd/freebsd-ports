@@ -7835,6 +7835,7 @@
     SUBDIR += rubygem-mustermann-contrib
     SUBDIR += rubygem-mustermann-grape
     SUBDIR += rubygem-mustermann-grape10
+    SUBDIR += rubygem-mustermann3
     SUBDIR += rubygem-mutex_m
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-nakayoshi_fork
