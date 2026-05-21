@@ -1,5 +1,6 @@
 PORTNAME=	actionmailer
 PORTVERSION=	${RAILS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -16,7 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/rub
 		rubygem-actionview-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-actionview-gitlab \
 		rubygem-activejob-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activejob-gitlab \
 		rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport-gitlab \
-		rubygem-mail>=2.8.0,2:mail/rubygem-mail \
+		rubygem-mail-gitlab>=2.8.0:mail/rubygem-mail-gitlab \
 		rubygem-rails-dom-testing-rails-gitlab>=2.2<3:textproc/rubygem-rails-dom-testing-rails-gitlab
 
 USES=		gem
