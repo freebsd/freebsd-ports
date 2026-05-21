@@ -1,5 +1,6 @@
 PORTNAME=	gammaray
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	32.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}

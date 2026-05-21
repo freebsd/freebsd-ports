@@ -1,7 +1,7 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/musescore/MuseScore/commit/

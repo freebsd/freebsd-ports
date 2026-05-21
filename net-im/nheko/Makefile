@@ -1,6 +1,7 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/Nheko-Reborn/nheko/commit/

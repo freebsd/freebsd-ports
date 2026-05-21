@@ -1,5 +1,6 @@
 PORTNAME=	libquotient
 DISTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/quotient-im/libQuotient/commit/
