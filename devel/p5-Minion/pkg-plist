@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Minion/Backend/resources/migrations/pg.sql
 %%SITE_PERL%%/Minion/Command/minion.pm
 %%SITE_PERL%%/Minion/Command/minion/job.pm
+%%SITE_PERL%%/Minion/Command/minion/schedule.pm
 %%SITE_PERL%%/Minion/Command/minion/worker.pm
 %%SITE_PERL%%/Minion/Guide.pod
 %%SITE_PERL%%/Minion/Iterator.pm
@@ -47,12 +48,14 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/dashboard.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/jobs.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/locks.html.ep
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/schedules.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/workers.html.ep
 %%PERL5_MAN3%%/Minion.3.gz
 %%PERL5_MAN3%%/Minion::Backend.3.gz
 %%PERL5_MAN3%%/Minion::Backend::Pg.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::job.3.gz
+%%PERL5_MAN3%%/Minion::Command::minion::schedule.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::worker.3.gz
 %%PERL5_MAN3%%/Minion::Guide.3.gz
 %%PERL5_MAN3%%/Minion::Iterator.3.gz
