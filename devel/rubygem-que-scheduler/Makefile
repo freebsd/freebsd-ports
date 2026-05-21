@@ -1,5 +1,5 @@
 PORTNAME=	que-scheduler
-PORTVERSION=	6.0.1
+PORTVERSION=	7.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
