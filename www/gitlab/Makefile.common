@@ -1,5 +1,5 @@
 GITLAB_VERSION=		18.11.3
-GITLAB_PORTREVISION=	6	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
+GITLAB_PORTREVISION=	7	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
 
 # Git version gitaly should use (from gitlab mirror)
 # Find current tag from Makefile and .gitlab-ci.yaml

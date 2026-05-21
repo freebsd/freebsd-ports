@@ -185,7 +185,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-redis-client>=0.26.4<1:databases/rubygem-redis-client \
 	rubygem-redis-cluster-client>=0.13.5<1:databases/rubygem-redis-cluster-client \
 	rubygem-redis-clustering-gitlab>=5.4.1<5.5:databases/rubygem-redis-clustering-gitlab \
-	rubygem-connection_pool>=2.5.5<2.6:net/rubygem-connection_pool \
+	rubygem-connection_pool-gitlab>=2.5.5<2.6:net/rubygem-connection_pool-gitlab \
 	rubygem-redis-actionpack-rails-gitlab>=5.5.0<5.6:databases/rubygem-redis-actionpack-rails-gitlab \
 	rubygem-jira-ruby-gitlab>=2.3.0<2.4:devel/rubygem-jira-ruby-gitlab \
 	rubygem-atlassian-jwt>=0.2.1<0.3.0:www/rubygem-atlassian-jwt \
@@ -203,7 +203,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-fast_blank>=1.0.1<1.1:devel/rubygem-fast_blank \
 	rubygem-gitlab-chronic>=0.10.6<0.11.0:devel/rubygem-gitlab-chronic \
 	rubygem-gitlab_chronic_duration>=0.12<1:devel/rubygem-gitlab_chronic_duration \
-	rubygem-rack-proxy>=0.7.7<0.8.0:www/rubygem-rack-proxy \
+	rubygem-rack-proxy-gitlab>=0.7.7<0.8.0:www/rubygem-rack-proxy-gitlab \
 	rubygem-cssbundling-rails-rails-gitlab>=1.4.3<1.5:www/rubygem-cssbundling-rails-rails-gitlab \
 	rubygem-terser>=1.0.2<1.0.3:textproc/rubygem-terser \
 	rubygem-click_house-client>=0.8.8<0.9:databases/rubygem-click_house-client \
