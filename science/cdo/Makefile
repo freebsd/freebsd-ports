@@ -1,8 +1,7 @@
 PORTNAME=	cdo
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/30182/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/30210/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,6 +23,7 @@ CONFIGURE_ARGS=	--disable-data \
 		--program-transform-name="" \
 		--with-zlib=/usr
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
+CXXFLAGS+=	-fexperimental-library # std::jthread
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
