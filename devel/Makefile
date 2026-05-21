@@ -5010,6 +5010,7 @@
     SUBDIR += py-flatland
     SUBDIR += py-flatten-dict
     SUBDIR += py-flex
+    SUBDIR += py-flexcache
     SUBDIR += py-flexmock
     SUBDIR += py-flit
     SUBDIR += py-flit-core
