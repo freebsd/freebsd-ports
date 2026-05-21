@@ -143,6 +143,7 @@
     SUBDIR += kmail
     SUBDIR += kmail-account-wizard
     SUBDIR += kodaskanna
+    SUBDIR += komodo
     SUBDIR += kongress
     SUBDIR += kontact
     SUBDIR += korganizer

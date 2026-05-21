@@ -1,0 +1,4 @@
+KomoDo is a todo manager that uses todo.txt specification. It parses any
+compliant todo.txt files and turns them into easy to use list of tasks.
+KomoDo has built-in help for the todo.txt specification, so it's suitable
+for newcomers too!
