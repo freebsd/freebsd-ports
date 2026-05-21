@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-mongo
-PORTVERSION=	0.24.0
+PORTVERSION=	0.26.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-base>=0.23<1:devel/rubygem-opentelemetry-instrumentation-base
+RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-base>=0.25<1:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem
 
