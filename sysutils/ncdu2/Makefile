@@ -4,6 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 PKGNAMESUFFIX=	2
+DIST_SUBDIR=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NCurses Disk Usage (stable version written in Zig)
