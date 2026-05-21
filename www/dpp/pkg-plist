@@ -95,5 +95,5 @@ lib/cmake/dpp/dpp-config.cmake
 lib/cmake/dpp/dpp-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dpp/dpp.cmake
 lib/libdpp.so
-lib/libdpp.so.10.1.4
+lib/libdpp.so.10.1.5
 libdata/pkgconfig/dpp.pc
