@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/platform_window/platform_window_delegate.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/platform_window/platform_window_delegate.h.orig	2025-05-07 06:38:02 UTC
 +++ src/3rdparty/chromium/ui/platform_window/platform_window_delegate.h
 @@ -144,7 +144,7 @@ class COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindow
    virtual void OnWindowStateChanged(PlatformWindowState old_state,

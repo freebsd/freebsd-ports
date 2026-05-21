@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/feature_engagement/public/event_constants.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/feature_engagement/public/event_constants.cc.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/components/feature_engagement/public/event_constants.cc
-@@ -11,7 +11,7 @@ namespace events {
+@@ -11,7 +11,7 @@ namespace feature_engagement {
  namespace events {
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

@@ -317,6 +317,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpolygon.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_native_interface.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_qlist.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_qmap.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_vulkan.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qquaternion.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qrasterwindow.sip
@@ -729,7 +730,6 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qerrormessage.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qfiledialog.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qfileiconprovider.sip
-%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qfilesystemmodel.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qfocusframe.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qfontcombobox.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWidgets/qfontdialog.sip

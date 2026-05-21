@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.cc
-@@ -47,7 +47,7 @@ bool IsWebUIJavaScriptErrorReportingSupported() {
+@@ -47,7 +47,7 @@ std::string RedactURL(const GURL& url) {
  bool IsWebUIJavaScriptErrorReportingSupported() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
    return false;

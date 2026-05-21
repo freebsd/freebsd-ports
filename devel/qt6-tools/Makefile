@@ -6,7 +6,9 @@ PKGNAMEPREFIX=	qt6-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>0:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.8.3:misc/py-spdx-tools@${PY_FLAVOR} \
+		vulkan-headers>=1.4:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
@@ -28,6 +30,7 @@ CMAKE_ARGS=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 # the major version, we pass the full version via a command and let CMake process
 # it during the configure stage.
 CMAKE_ARGS+=	-DQDOC_USER_CLANG_VERSION:STRING="`${LLVM_CONFIG} --version`"
+CMAKE_ON=	QT_INSTALL_XDG_DESKTOP_ENTRIES
 
 post-install:
 # Install symlinks for user-facing tools

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/functional/callback.h"
@@ -8,7 +8,7 @@
  #include "build/build_config.h"
  #include "net/base/url_util.h"
  #include "ui/events/platform/platform_event_dispatcher.h"
-@@ -44,10 +45,14 @@ std::size_t MaxShmSegmentSizeImpl() {
+@@ -44,10 +45,14 @@ constexpr float kShmResizeShrinkThreshold =
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {

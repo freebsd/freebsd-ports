@@ -110,7 +110,7 @@ MASTER_SITES_PYQTWEBENGINE=	${MASTER_SITES_PYQT${_PYQT_VERSION}WEBENGINE}
 # Qt version-agnostic components
 PYQTBUILDER_VERSION=		1.19.1
 QSCI2_VERSION=			2.14.1
-SIP_VERSION=			6.15.1	# ,1
+SIP_VERSION=			6.15.3	# ,1
 
 # Qt 5 components
 PYQT5SIP_VERSION=		12.18.0
@@ -122,14 +122,14 @@ PYQT5NETWORKAUTH_VERSION=	5.15.6
 PYQT5WEBENGINE_VERSION=		5.15.7
 
 # Qt 6 components
-PYQT6SIP_VERSION=		13.11.0
-PYQT6_VERSION=			6.10.2
-PYQT63D_VERSION=		6.10.0
-PYQT6CHARTS_VERSION=		6.10.0
-PYQT6DATAVIS3D_VERSION=		6.10.0
-PYQT6GRAPHS_VERSION=		6.10.0
-PYQT6NETWORKAUTH_VERSION=	6.10.0
-PYQT6WEBENGINE_VERSION=		6.10.0
+PYQT6SIP_VERSION=		13.11.1
+PYQT6_VERSION=			6.11.0
+PYQT63D_VERSION=		6.11.0
+PYQT6CHARTS_VERSION=		6.11.0
+PYQT6DATAVIS3D_VERSION=		6.11.0
+PYQT6GRAPHS_VERSION=		6.11.0
+PYQT6NETWORKAUTH_VERSION=	6.11.0
+PYQT6WEBENGINE_VERSION=		6.11.0
 
 # Qt version-agnostic components
 PYQTBUILDER_DISTNAME=		pyqt_builder-${PYQTBUILDER_VERSION}
@@ -260,17 +260,6 @@ SIP_ARGS+=	--qmake ${QMAKE} \
 		--protected-is-public \
 		--api-dir ${PYQT_APIDIR} \
 		--jobs ${MAKE_JOBS_NUMBER}
-.    if ${PORTNAME} == "pyqt"
-SIP_ARGS+=	--confirm-license
-.    endif
-
-.    if ${PORTNAME} == "pyqt"
-.      if !target(post-patch)
-post-patch:
-	${REINPLACE_CMD} -e "s#%%PYQT_DESIGNERDIR%%#${PYQT_DESIGNERDIR}#" ${WRKSRC}/project.py
-	${REINPLACE_CMD} -e "s#%%PYQT_QMLDIR%%#${PYQT_QMLDIR}#" ${WRKSRC}/project.py
-.      endif  # !target(post-patch)
-.    endif
 
 .    if !target(do-build)
 do-build:
@@ -280,7 +269,7 @@ do-build:
 
 .    if !target(do-install)
 do-install:
-	(cd ${WRKSRC} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
+	(cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR})
 .    endif  # !target(do-install)
 
 .  endif  # defined(_PYQT_DIST)

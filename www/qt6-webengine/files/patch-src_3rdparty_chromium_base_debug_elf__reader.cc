@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/debug/elf_reader.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/debug/elf_reader.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/base/debug/elf_reader.cc
-@@ -49,6 +49,10 @@ constexpr char kGnuNoteName[] = "GNU";
+@@ -49,6 +49,10 @@ using Xword = Elf64_Xword;
  
  constexpr char kGnuNoteName[] = "GNU";
  

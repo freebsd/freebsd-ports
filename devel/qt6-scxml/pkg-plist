@@ -111,18 +111,21 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_scxmlConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_scxmlConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_scxmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_scxmlTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_scxmlTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachineTargetsPrecheck.cmake
 lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginConfig.cmake
 lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginConfigVersion.cmake
 lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginTargets.cmake
+lib/cmake/Qt6Scxml/Qt6QScxmlEcmaScriptDataModelPluginTargetsPrecheck.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlConfig.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlConfigVersion.cmake
@@ -132,6 +135,7 @@ lib/cmake/Qt6Scxml/Qt6ScxmlMacros.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlPlugins.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlTargets.cmake
+lib/cmake/Qt6Scxml/Qt6ScxmlTargetsPrecheck.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateAdditionalTargetInfo.cmake
@@ -140,6 +144,7 @@ lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateConfigVersion.cmake
 lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateExtraProperties.cmake
 lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateTargets.cmake
+lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6ScxmlGlobalPrivate/Qt6ScxmlGlobalPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateAdditionalTargetInfo.cmake
@@ -148,6 +153,7 @@ lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateConfigVersion.cmake
 lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateDependencies.cmake
 lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateTargets.cmake
+lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6ScxmlPrivate/Qt6ScxmlPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlAdditionalTargetInfo.cmake
@@ -157,6 +163,7 @@ lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlConfigVersionImpl.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlDependencies.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlTargets.cmake
+lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlTargetsPrecheck.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateAdditionalTargetInfo.cmake
@@ -165,6 +172,7 @@ lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateConfigVersion.cmake
 lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateDependencies.cmake
 lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateTargets.cmake
+lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6ScxmlQmlPrivate/Qt6ScxmlQmlPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsAdditionalTargetInfo.cmake
@@ -174,6 +182,7 @@ lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsDependencies.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsTargets.cmake
+lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsTargetsPrecheck.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsVersionlessTargets.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineAdditionalTargetInfo.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineConfig.cmake
@@ -182,6 +191,7 @@ lib/cmake/Qt6StateMachine/Qt6StateMachineConfigVersionImpl.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineDependencies.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineTargets.cmake
+lib/cmake/Qt6StateMachine/Qt6StateMachineTargetsPrecheck.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineVersionlessAliasTargets.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineVersionlessTargets.cmake
 lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateAdditionalTargetInfo.cmake
@@ -190,6 +200,7 @@ lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateConfigVersion.cmake
 lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateConfigVersionImpl.cmake
 lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateDependencies.cmake
 lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateTargets.cmake
+lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateTargetsPrecheck.cmake
 lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6StateMachinePrivate/Qt6StateMachinePrivateVersionlessTargets.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlAdditionalTargetInfo.cmake
@@ -199,6 +210,7 @@ lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlConfigVersionImpl.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlDependencies.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlTargets.cmake
+lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlTargetsPrecheck.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlVersionlessTargets.cmake
 lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateAdditionalTargetInfo.cmake
@@ -207,6 +219,7 @@ lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateConfigVersion.cmake
 lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateDependencies.cmake
 lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateTargets.cmake
+lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Scxml.prl
@@ -246,7 +259,9 @@ lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateVersionlessTargets.
 %%QT_QMLDIR%%/QtScxml/libdeclarative_scxmlplugin.so
 %%QT_QMLDIR%%/QtScxml/plugins.qmltypes
 %%QT_QMLDIR%%/QtScxml/qmldir
+%%QT_SBOMDIR%%/qtscxml-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtscxml-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtscxml-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6Scxml.pc
 libdata/pkgconfig/Qt6ScxmlQml.pc
 libdata/pkgconfig/Qt6StateMachine.pc

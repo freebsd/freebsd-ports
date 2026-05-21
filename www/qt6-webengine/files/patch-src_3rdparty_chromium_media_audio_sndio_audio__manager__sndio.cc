@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/audio/sndio/audio_manager_sndio.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/media/audio/sndio/audio_manager_sndio.cc.orig	2026-03-19 22:35:33 UTC
 +++ src/3rdparty/chromium/media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,213 @@
+@@ -0,0 +1,215 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -8,6 +8,8 @@
 +#include "base/command_line.h"
 +#include "base/metrics/histogram_macros.h"
 +#include "base/memory/ptr_util.h"
++
++#include "base/logging.h"
 +
 +#include "media/audio/sndio/audio_manager_sndio.h"
 +
@@ -35,7 +37,7 @@
 +static const int kMaxOutputStreams = 50;
 +
 +// Default sample rate for input and output streams.
-+static const int kDefaultSampleRateAMS = 48000;
++static const int kDefaultSampleRate = 48000;
 +
 +void AddDefaultDevice(AudioDeviceNames* device_names) {
 +  DCHECK(device_names->empty());
@@ -62,7 +64,7 @@
 +}
 +
 +#if defined(USE_SNDIO)
-+const char* AudioManagerSndio::GetName() {
++const std::string_view AudioManagerSndio::GetName() {
 +  return "SNDIO";
 +}
 +#endif
@@ -77,7 +79,7 @@
 +
 +  return AudioParameters(
 +      AudioParameters::AUDIO_PCM_LOW_LATENCY, ChannelLayoutConfig::Stereo(),
-+      kDefaultSampleRateAMS, buffer_size);
++      kDefaultSampleRate, buffer_size);
 +}
 +
 +AudioManagerSndio::AudioManagerSndio(std::unique_ptr<AudioThread> audio_thread,
@@ -130,7 +132,7 @@
 +  static const int kDefaultOutputBufferSize = 2048;
 +
 +  ChannelLayoutConfig channel_layout_config = ChannelLayoutConfig::Stereo();
-+  int sample_rate = kDefaultSampleRateAMS;
++  int sample_rate = kDefaultSampleRate;
 +  int buffer_size = kDefaultOutputBufferSize;
 +  if (input_params.IsValid()) {
 +    sample_rate = input_params.sample_rate();

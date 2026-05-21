@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/files/drive_info_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/files/drive_info_posix.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/base/files/drive_info_posix.cc
-@@ -24,7 +24,7 @@ std::optional<DriveInfo> GetFileDriveInfo(const FilePa
+@@ -24,7 +24,7 @@ namespace base {
  
  std::optional<DriveInfo> GetFileDriveInfo(const FilePath& file_path) {
    DriveInfo drive_info;

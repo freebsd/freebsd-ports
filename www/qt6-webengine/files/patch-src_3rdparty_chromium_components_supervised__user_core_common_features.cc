@@ -1,55 +1,38 @@
---- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/common/features.cc
-@@ -68,7 +68,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
-              "UpdatedSupervisedUserExtensionApprovalStrings",
-              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -37,7 +37,7 @@ BASE_FEATURE(kAllowSubframeLocalWebApprovals,
+ #endif
+ 
+ #if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) 
+ const int kLocalWebApprovalBottomSheetLoadTimeoutDefaultValueMs = 5000;
+ 
+ const base::FeatureParam<int> kLocalWebApprovalBottomSheetLoadTimeoutMs{
+@@ -46,7 +46,7 @@ const base::FeatureParam<int> kLocalWebApprovalBottomS
+ #endif  // BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
-              "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) 
+ BASE_FEATURE(kEnableLocalWebApprovalErrorDialog,
+              "EnableLocalWebApprovalErrorDialog",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -83,7 +83,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
- #if BUILDFLAG(IS_CHROMEOS)
-   return base::FeatureList::IsEnabled(
-       kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
--#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   bool skipParentApprovalEnabled = base::FeatureList::IsEnabled(
-       kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
-   bool permissionExtensionsForSupervisedUsersEnabled =
-@@ -104,14 +104,14 @@ BASE_FEATURE(kCustomProfileStringsForSupervisedUsers,
-              "CustomProfileStringsForSupervisedUsers",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -58,7 +58,7 @@ BASE_FEATURE(kLocalWebApprovalsWidgetSupportsUrlPayloa
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- 
- BASE_FEATURE(kShowKiteForSupervisedUsers,
-              "ShowKiteForSupervisedUsers",
-              base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers,
-              "ForceSafeSearchForUnauthenticatedSupervisedUsers",
+ // TODO(crbug.com/435635774): Release the interstitial v3 in all platforms.
+ #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_IOS)
++    BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kSupervisedUserBlockInterstitialV3,
+              "SupervisedUserBlockInterstitialV3",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -121,7 +121,7 @@ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervi
-              base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
+@@ -98,7 +98,7 @@ bool IsLocalWebApprovalsEnabledForSubframes() {
+   return base::FeatureList::IsEnabled(kAllowSubframeLocalWebApprovals);
+ }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) 
  BASE_FEATURE(kEnableSupervisedUserVersionSignOutDialog,
               "EnableSupervisedUserVersionSignOutDialog",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -141,7 +141,7 @@ BASE_FEATURE(kExemptYouTubeInfrastructureFromBlocking,
- // kUncredentialedFilteringFallbackForSupervisedUsers and
- // kWaitUntilAccessTokenAvailableForClassifyUrl flags, by inlining the
- // platform #defines.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kUncredentialedFilteringFallbackForSupervisedUsers,
-              "UncredentialedFilteringFallbackForSupervisedUsers",
               base::FEATURE_ENABLED_BY_DEFAULT);

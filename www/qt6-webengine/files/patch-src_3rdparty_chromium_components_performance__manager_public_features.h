@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/performance_manager/public/features.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/performance_manager/public/features.h.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/components/performance_manager/public/features.h
-@@ -17,7 +17,7 @@ namespace performance_manager::features {
+@@ -19,7 +19,7 @@ namespace performance_manager::features {
  
  #if !BUILDFLAG(IS_ANDROID)
  

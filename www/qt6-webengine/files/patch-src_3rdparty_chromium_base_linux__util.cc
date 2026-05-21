@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/linux_util.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/linux_util.cc.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/base/linux_util.cc
-@@ -164,10 +164,14 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
+@@ -163,10 +163,14 @@ void SetLinuxDistro(const std::string& distro) {
  }
  
  bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {

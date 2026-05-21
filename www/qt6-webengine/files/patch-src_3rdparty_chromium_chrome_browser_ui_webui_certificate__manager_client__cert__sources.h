@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/certificate_manager/client_cert_sources.h
 @@ -19,7 +19,7 @@ CreatePlatformClientCertSource(
          remote_client,
@@ -9,7 +9,7 @@
  std::unique_ptr<CertificateManagerPageHandler::CertSource>
  CreateProvisionedClientCertSource(Profile* profile);
  #endif
-@@ -29,7 +29,7 @@ CreateExtensionsClientCertSource(Profile* profile);
+@@ -29,7 +29,7 @@ std::unique_ptr<CertificateManagerPageHandler::CertSou
  CreateExtensionsClientCertSource(Profile* profile);
  #endif
  

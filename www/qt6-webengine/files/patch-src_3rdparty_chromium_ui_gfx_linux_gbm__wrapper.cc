@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/linux/gbm_wrapper.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/gfx/linux/gbm_wrapper.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/ui/gfx/linux/gbm_wrapper.cc
 @@ -330,7 +330,7 @@ class Device final : public ui::GbmDevice {
      // of 1x1 BOs which are destroyed before creating the final BO creation used

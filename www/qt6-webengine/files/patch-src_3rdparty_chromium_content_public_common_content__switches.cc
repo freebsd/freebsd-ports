@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/common/content_switches.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/public/common/content_switches.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/content/public/common/content_switches.cc
-@@ -342,6 +342,8 @@ const char kEnableLogging[]                 = "enable-
+@@ -347,6 +347,8 @@ const char kEnableLogging[]                 = "enable-
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -9,7 +9,7 @@
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -956,7 +958,7 @@ const char kPreventResizingContentsForTesting[] =
+@@ -948,7 +950,7 @@ const char kPreventResizingContentsForTesting[] =
      "prevent-resizing-contents-for-testing";
  #endif
  

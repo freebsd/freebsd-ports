@@ -9,6 +9,7 @@
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/barsrenderer_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/charthelpers_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/commonutils_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/customrenderer_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/gradientholder_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/pierenderer_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/pointrenderer_p.h
@@ -29,6 +30,8 @@
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qcustom3ditem_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qcustom3dlabel_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qcustom3dvolume_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qcustomseries_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qcustomseriesdata_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qdatetimeaxis_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphanimation_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphpointanimation_p.h
@@ -99,6 +102,7 @@
 %%QT_INCDIR%%/QtGraphs/QCustom3DItem
 %%QT_INCDIR%%/QtGraphs/QCustom3DLabel
 %%QT_INCDIR%%/QtGraphs/QCustom3DVolume
+%%QT_INCDIR%%/QtGraphs/QCustomSeries
 %%QT_INCDIR%%/QtGraphs/QDateTimeAxis
 %%QT_INCDIR%%/QtGraphs/QGraphsLine
 %%QT_INCDIR%%/QtGraphs/QGraphsTheme
@@ -148,6 +152,7 @@
 %%QT_INCDIR%%/QtGraphs/qcustom3ditem.h
 %%QT_INCDIR%%/QtGraphs/qcustom3dlabel.h
 %%QT_INCDIR%%/QtGraphs/qcustom3dvolume.h
+%%QT_INCDIR%%/QtGraphs/qcustomseries.h
 %%QT_INCDIR%%/QtGraphs/qdatetimeaxis.h
 %%QT_INCDIR%%/QtGraphs/qgraphs3dnamespace.h
 %%QT_INCDIR%%/QtGraphs/qgraphsglobal.h
@@ -205,6 +210,7 @@ lib/cmake/Qt6Graphs/Qt6GraphsConfigVersionImpl.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsDependencies.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsTargets.cmake
+lib/cmake/Qt6Graphs/Qt6GraphsTargetsPrecheck.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsVersionlessTargets.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateAdditionalTargetInfo.cmake
@@ -213,6 +219,7 @@ lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateConfigVersion.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateDependencies.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateTargets.cmake
+lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsAdditionalTargetInfo.cmake
@@ -222,6 +229,7 @@ lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsDependencies.cmake
 lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsTargets.cmake
+lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsTargetsPrecheck.cmake
 lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6GraphsWidgets/Qt6GraphsWidgetsVersionlessTargets.cmake
 lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateAdditionalTargetInfo.cmake
@@ -230,6 +238,7 @@ lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateConfigVersion.cmake
 lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateDependencies.cmake
 lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateTargets.cmake
+lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6GraphsWidgetsPrivate/Qt6GraphsWidgetsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginAdditionalTargetInfo.cmake
@@ -238,6 +247,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargetsPrecheck.cmake
 %%QT_LIBDIR%%/libQt6Graphs.prl
 %%QT_LIBDIR%%/libQt6Graphs.so
 %%QT_LIBDIR%%/libQt6Graphs.so.6
@@ -290,7 +300,9 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets.cmake
 %%QT_QMLDIR%%/QtGraphs/designer/qtgraphs2d.metainfo
 %%QT_QMLDIR%%/QtGraphs/libgraphsplugin.so
 %%QT_QMLDIR%%/QtGraphs/qmldir
+%%QT_SBOMDIR%%/qtgraphs-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtgraphs-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtgraphs-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6Graphs.pc
 libdata/pkgconfig/Qt6GraphsWidgets.pc
 %%QT_DATADIR%%/modules/Graphs.json

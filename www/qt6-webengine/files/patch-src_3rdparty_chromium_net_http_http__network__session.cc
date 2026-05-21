@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/http/http_network_session.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/net/http/http_network_session.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/net/http/http_network_session.cc
-@@ -20,7 +20,9 @@
+@@ -21,7 +21,9 @@
  #include "build/build_config.h"
  #include "net/base/features.h"
  #include "net/dns/host_resolver.h"

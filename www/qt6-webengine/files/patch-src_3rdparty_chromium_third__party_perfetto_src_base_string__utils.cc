@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/third_party/perfetto/src/base/string_utils.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/perfetto/src/base/string_utils.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/string_utils.cc
-@@ -39,7 +39,8 @@ double StrToD(const char* nptr, char** endptr) {
- // Locale-independant as possible version of strtod.
+@@ -39,7 +39,8 @@ namespace base {
+ // Locale-independent as possible version of strtod.
  double StrToD(const char* nptr, char** endptr) {
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
+ #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) ||           \
 -    PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
 +    (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \

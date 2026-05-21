@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/http/http_auth_preferences.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/net/http/http_auth_preferences.cc.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/net/http/http_auth_preferences.cc
-@@ -39,7 +39,7 @@ std::string HttpAuthPreferences::AuthAndroidNegotiateA
+@@ -38,7 +38,7 @@ std::string HttpAuthPreferences::AuthAndroidNegotiateA
  }
  #endif  // BUILDFLAG(IS_ANDROID)
  

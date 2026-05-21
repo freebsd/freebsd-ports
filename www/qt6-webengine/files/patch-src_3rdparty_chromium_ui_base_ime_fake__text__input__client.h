@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/ime/fake_text_input_client.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/ime/fake_text_input_client.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/base/ime/fake_text_input_client.h
 @@ -107,7 +107,7 @@ class FakeTextInputClient : public TextInputClient {
    void SetTextEditCommandForNextKeyEvent(TextEditCommand command) override;

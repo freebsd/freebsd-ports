@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/compiler_specific.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/compiler_specific.h.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/base/compiler_specific.h
-@@ -729,6 +729,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
+@@ -733,6 +733,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
  #if __has_cpp_attribute(clang::preserve_most) &&             \
      (defined(ARCH_CPU_ARM64) || defined(ARCH_CPU_X86_64)) && \
      !defined(COMPONENT_BUILD) &&                             \

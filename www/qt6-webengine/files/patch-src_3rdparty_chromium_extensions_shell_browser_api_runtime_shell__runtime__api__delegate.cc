@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc
-@@ -45,7 +45,7 @@ bool ShellRuntimeAPIDelegate::GetPlatformInfo(Platform
+@@ -45,7 +45,7 @@ void ShellRuntimeAPIDelegate::OpenURL(const GURL& unin
  bool ShellRuntimeAPIDelegate::GetPlatformInfo(PlatformInfo* info) {
  #if BUILDFLAG(IS_CHROMEOS)
    info->os = api::runtime::PlatformOs::kCros;

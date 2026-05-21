@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/password_manager/core/common/password_manager_pref_names.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/password_manager/core/common/password_manager_pref_names.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/password_manager/core/common/password_manager_pref_names.h
-@@ -50,7 +50,7 @@ inline constexpr char kCredentialProviderEnabledOnStar
+@@ -59,7 +59,7 @@ inline constexpr char kCredentialProviderEnabledOnStar
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Boolean pref controlled by the DeletingUndecryptablePasswordsEnabled policy.
  // If set to false it blocks deleting undecryptable passwords, otherwise the
  // deletion can happen.
-@@ -359,7 +359,7 @@ inline constexpr char kPasswordSharingEnabled[] =
+@@ -285,7 +285,7 @@ inline constexpr char kAutofillableCredentialsAccountS
  inline constexpr char kPasswordSharingEnabled[] =
      "password_manager.password_sharing_enabled";
  

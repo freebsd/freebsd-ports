@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/content/browser/browser_child_process_host_impl_receiver_bindings.cc
 @@ -64,7 +64,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
      }

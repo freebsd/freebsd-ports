@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc
 @@ -52,7 +52,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
  // 1046598, and 1153667.

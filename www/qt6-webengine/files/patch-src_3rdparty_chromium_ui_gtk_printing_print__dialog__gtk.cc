@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gtk/printing/print_dialog_gtk.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/gtk/printing/print_dialog_gtk.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/ui/gtk/printing/print_dialog_gtk.cc
-@@ -438,7 +438,7 @@ void PrintDialogGtk::ShowDialog(
+@@ -446,7 +446,7 @@ void PrintDialogGtk::ShowDialog(
    GtkPrintCapabilities cap = static_cast<GtkPrintCapabilities>(
        GTK_PRINT_CAPABILITY_GENERATE_PDF | GTK_PRINT_CAPABILITY_PAGE_SET |
        GTK_PRINT_CAPABILITY_COPIES | GTK_PRINT_CAPABILITY_COLLATE |

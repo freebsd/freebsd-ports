@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/components/device_signals/core/common/signals_features.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/device_signals/core/common/signals_features.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/device_signals/core/common/signals_features.h
-@@ -14,7 +14,7 @@ BASE_DECLARE_FEATURE(kAllowClientCertificateReportingF
- BASE_DECLARE_FEATURE(kAllowClientCertificateReportingForUsers);
+@@ -33,7 +33,7 @@ bool IsBrowserSignalsReportingEnabled();
+ bool IsDetectedAgentSignalCollectionEnabled();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

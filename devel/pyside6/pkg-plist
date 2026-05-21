@@ -5,6 +5,7 @@ PySide6/include/Qt3DInput/pyside6_qt3dinput_python.h
 PySide6/include/Qt3DLogic/pyside6_qt3dlogic_python.h
 PySide6/include/Qt3DRender/pyside6_qt3drender_python.h
 PySide6/include/QtBluetooth/pyside6_qtbluetooth_python.h
+PySide6/include/QtCanvasPainter/pyside6_qtcanvaspainter_python.h
 PySide6/include/QtCharts/pyside6_qtcharts_python.h
 PySide6/include/QtConcurrent/pyside6_qtconcurrent_python.h
 PySide6/include/QtCore/pyside6_qtcore_python.h
@@ -80,6 +81,7 @@ PySide6/include/pysidedynamicclass_p.h
 PySide6/include/pysidedynamiccommon_p.h
 PySide6/include/pysidedynamicenum_p.h
 PySide6/include/pysidedynamicpod_p.h
+PySide6/include/pysideglobals_p.h
 PySide6/include/pysideinit.h
 PySide6/include/pysidelogging_p.h
 PySide6/include/pysidemacros.h
@@ -88,16 +90,17 @@ PySide6/include/pysidemetafunction_p.h
 PySide6/include/pysidemetatype.h
 PySide6/include/pysideproperty.h
 PySide6/include/pysideproperty_p.h
+PySide6/include/pysidepropertybase_p.h
 PySide6/include/pysideqapp.h
 PySide6/include/pysideqenum.h
 PySide6/include/pysideqhash.h
-PySide6/include/pysideqmetatype.h
 PySide6/include/pysideqml.h
 PySide6/include/pysideqmlattached.h
 PySide6/include/pysideqmlattached_p.h
 PySide6/include/pysideqmlextended_p.h
 PySide6/include/pysideqmlforeign_p.h
 PySide6/include/pysideqmllistproperty_p.h
+PySide6/include/pysideqmllistpropertymixin.h
 PySide6/include/pysideqmlmacros.h
 PySide6/include/pysideqmlmetacallerror_p.h
 PySide6/include/pysideqmlnamedelement_p.h
@@ -106,6 +109,7 @@ PySide6/include/pysideqmlregistertype_p.h
 PySide6/include/pysideqmltypeinfo_p.h
 PySide6/include/pysideqmluncreatable.h
 PySide6/include/pysideqobject.h
+PySide6/include/pysideqobject_p.h
 PySide6/include/pysideqslotobject_p.h
 PySide6/include/pysiderephandler_p.h
 PySide6/include/pysidesignal.h
@@ -157,6 +161,8 @@ lib/libpyside6remoteobjects.a
 %%PYTHON_SITELIBDIR%%/PySide6/QtAsyncio/tasks.py
 %%PYTHON_SITELIBDIR%%/PySide6/QtBluetooth.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtBluetooth.pyi
+%%PYTHON_SITELIBDIR%%/PySide6/QtCanvasPainter.abi3.so
+%%PYTHON_SITELIBDIR%%/PySide6/QtCanvasPainter.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtCharts.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtCharts.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtConcurrent.abi%%PYTHON_MAJOR_VER%%.so
@@ -276,14 +282,17 @@ lib/libpyside6remoteobjects.a
 %%PYTHON_SITELIBDIR%%/PySide6/support/deprecated.py
 %%PYTHON_SITELIBDIR%%/PySide6/support/generate_pyi.py
 %%QT_PLUGINDIR%%/designer/libPySidePlugin.so
+lib/wheels/cmake/PySide6/PySide6Config.abi%%PYTHON_MAJOR_VER%%.cmake
 lib/wheels/cmake/PySide6/PySide6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/wheels/cmake/PySide6/PySide6Targets.cmake
 libdata/pkgconfig/pyside6.pc
+share/PySide6/doc/qtcanvaspainter.rst
 share/PySide6/doc/qtcore.rst
 share/PySide6/doc/qtqml.rst
 share/PySide6/doc/qtquicktest.rst
 share/PySide6/doc/qtuitools.rst
 %%WEBENGINE%%share/PySide6/doc/qtwebenginecore.rst
+share/PySide6/glue/qtcanvaspainter.cpp
 share/PySide6/glue/qtcharts.cpp
 share/PySide6/glue/qtcore.cpp
 share/PySide6/glue/qtdatavisualization.cpp
@@ -307,6 +316,7 @@ share/PySide6/glue/qtstatemachine.cpp
 share/PySide6/glue/qttest.cpp
 share/PySide6/glue/qtuitools.cpp
 %%WEBENGINE%%share/PySide6/glue/qtwebenginecore.cpp
+share/PySide6/glue/qtwebview.cpp
 share/PySide6/glue/qtwidgets.cpp
 share/PySide6/glue/qtxml.cpp
 share/PySide6/typesystems/common.xml
@@ -323,6 +333,7 @@ share/PySide6/typesystems/typesystem_3dinput.xml
 share/PySide6/typesystems/typesystem_3dlogic.xml
 share/PySide6/typesystems/typesystem_3drender.xml
 share/PySide6/typesystems/typesystem_bluetooth.xml
+share/PySide6/typesystems/typesystem_canvaspainter.xml
 share/PySide6/typesystems/typesystem_charts.xml
 share/PySide6/typesystems/typesystem_concurrent.xml
 share/PySide6/typesystems/typesystem_core.xml

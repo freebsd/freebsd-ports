@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/ime/dummy_text_input_client.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/ime/dummy_text_input_client.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/base/ime/dummy_text_input_client.cc
 @@ -175,7 +175,7 @@ bool DummyTextInputClient::ShouldDoLearning() {
    return false;

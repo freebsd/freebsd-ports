@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/third_party/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
 @@ -2971,7 +2971,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
  

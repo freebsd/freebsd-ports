@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/device_signals/core/browser/signals_aggregator_impl.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/device_signals/core/browser/signals_aggregator_impl.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/device_signals/core/browser/signals_aggregator_impl.cc
-@@ -64,7 +64,7 @@ SignalsAggregatorImpl::~SignalsAggregatorImpl() = defa
+@@ -64,7 +64,7 @@ SignalsAggregatorImpl::SignalsAggregatorImpl(
  
  SignalsAggregatorImpl::~SignalsAggregatorImpl() = default;
  

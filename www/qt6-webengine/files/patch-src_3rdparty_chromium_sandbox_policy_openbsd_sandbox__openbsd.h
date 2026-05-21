@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.h.orig	2025-09-01 08:52:32 UTC
+--- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.h.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.h
 @@ -0,0 +1,280 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/window/dialog_delegate.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/views/window/dialog_delegate.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/ui/views/window/dialog_delegate.cc
-@@ -105,7 +105,7 @@ bool DialogDelegate::CanSupportCustomFrame(gfx::Native
+@@ -108,7 +108,7 @@ Widget* DialogDelegate::CreateDialogWidget(
  
  // static
  bool DialogDelegate::CanSupportCustomFrame(gfx::NativeView parent) {

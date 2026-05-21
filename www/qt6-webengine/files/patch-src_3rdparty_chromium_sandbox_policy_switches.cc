@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/sandbox/policy/switches.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/sandbox/policy/switches.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/sandbox/policy/switches.cc
-@@ -38,7 +38,9 @@ const char kNoSandbox[] = "no-sandbox";
+@@ -40,7 +40,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
  // Meant to be used as a browser-level switch for testing purposes only.
  const char kNoSandbox[] = "no-sandbox";
  

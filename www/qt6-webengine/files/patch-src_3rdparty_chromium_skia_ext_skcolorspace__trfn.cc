@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/skia/ext/skcolorspace_trfn.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/skia/ext/skcolorspace_trfn.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/skia/ext/skcolorspace_trfn.cc
 @@ -2,6 +2,8 @@
  // Use of this source code is governed by a BSD-style license that can be

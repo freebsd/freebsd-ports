@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/viz/service/display_embedder/software_output_surface.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/viz/service/display_embedder/software_output_surface.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/viz/service/display_embedder/software_output_surface.cc
 @@ -115,7 +115,7 @@ void SoftwareOutputSurface::SwapBuffersCallback(base::
    base::TimeTicks now = base::TimeTicks::Now();

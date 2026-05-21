@@ -23,8 +23,8 @@ _QT_MK_INCLUDED=	qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.18
-QT6_VERSION?=		6.10.2
-PYSIDE6_VERSION?=	6.10.2
+QT6_VERSION?=		6.11.1
+PYSIDE6_VERSION?=	6.11.1
 
 # Support for intermediate Qt6 releases. This partially defines
 # _QT6_MASTER_SITE_SUBDIR and would probably be better in qt-dist.mk,
@@ -168,10 +168,11 @@ _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			uitools webglplugin websockets-qml \
 			widgets x11extras xml xmlpatterns
 
-_USE_QT6_ONLY=		5compat base coap graphs grpc httpserver languageserver \
-			lottie mqtt pdf positioning quick3dphysics quickeffectmaker \
-			shadertools tools translations sqldriver-sqlite \
-			sqldriver-mysql sqldriver-psql sqldriver-odbc
+_USE_QT6_ONLY=		5compat base canvaspainter coap graphs grpc httpserver \
+			languageserver lottie mqtt openapi pdf positioning \
+			quick3dphysics quickeffectmaker shadertools tasktree \
+			tools translations sqldriver-sqlite sqldriver-mysql \
+			sqldriver-psql sqldriver-odbc
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
@@ -204,6 +205,9 @@ qt-connectivity_LIB=	libQt${_QT_LIBVER}Bluetooth.so
 
 qt-core_PORT=		devel/${_QT_RELNAME}-core
 qt-core_LIB=		libQt${_QT_LIBVER}Core.so
+
+qt-canvaspainter_PORT=	x11-toolkits/${_QT_RELNAME}-canvaspainter
+qt-canvaspainter_LIB=	libQt${_QT_LIBVER}CanvasPainter.so
 
 qt-datavis3d_PORT=	x11-toolkits/${_QT_RELNAME}-datavis3d
 qt-datavis3d_LIB=	libQt${_QT_LIBVER}DataVisualization.so
@@ -282,6 +286,9 @@ qt-network_LIB=		libQt${_QT_LIBVER}Network.so
 
 qt-networkauth_PORT=	net/${_QT_RELNAME}-networkauth
 qt-networkauth_LIB=	libQt${_QT_LIBVER}NetworkAuth.so
+
+qt-openapi_PORT=	devel/${_QT_RELNAME}-openapi
+qt-openapi_LIB=		libQt${_QT_LIBVER}OpenApiCommon.so
 
 qt-opengl_PORT=		graphics/${_QT_RELNAME}-opengl
 qt-opengl_LIB=		libQt${_QT_LIBVER}OpenGL.so
@@ -387,6 +394,9 @@ qt-sqldriver-${db}_PATH?=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsql${d
 
 qt-svg_PORT=		graphics/${_QT_RELNAME}-svg
 qt-svg_LIB=		libQt${_QT_LIBVER}Svg.so
+
+qt-tasktree_PORT= 	devel/${_QT_RELNAME}-tasktree
+qt-tasktree_LIB=	libQt${_QT_LIBVER}TaskTree.so
 
 qt-testlib_PORT=	devel/${_QT_RELNAME}-testlib
 qt-testlib_LIB=		libQt${_QT_LIBVER}Test.so

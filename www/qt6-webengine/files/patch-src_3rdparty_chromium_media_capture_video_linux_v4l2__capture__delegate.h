@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.h
-@@ -34,7 +34,7 @@ namespace media {
+@@ -34,7 +34,7 @@ class Location;
  
  namespace media {
  

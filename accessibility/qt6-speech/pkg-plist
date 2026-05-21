@@ -24,6 +24,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargetsPrecheck.cmake
 %%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginAdditionalTargetInfo.cmake
 %%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginConfig.cmake
 %%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginConfigVersion.cmake
@@ -36,12 +37,14 @@ lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginConfigVersion.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginConfigVersionImpl.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginTargets.cmake
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginTargetsPrecheck.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginAdditionalTargetInfo.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginConfig.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginConfigVersion.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginConfigVersionImpl.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargets.cmake
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargetsPrecheck.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechAdditionalTargetInfo.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechConfig.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechConfigVersion.cmake
@@ -50,6 +53,7 @@ lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechDependencies.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechPlugins.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechTargets.cmake
+lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechTargetsPrecheck.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechVersionlessAliasTargets.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechVersionlessTargets.cmake
 lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateAdditionalTargetInfo.cmake
@@ -58,6 +62,7 @@ lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateConfigVersion.cmake
 lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateDependencies.cmake
 lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateTargets.cmake
+lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6TextToSpeech.prl
@@ -73,6 +78,8 @@ lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtTextToSpeech/libtexttospeechqmlplugin.so
 %%QT_QMLDIR%%/QtTextToSpeech/plugins.qmltypes
 %%QT_QMLDIR%%/QtTextToSpeech/qmldir
+%%QT_SBOMDIR%%/qtspeech-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtspeech-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtspeech-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6TextToSpeech.pc
 %%QT_DATADIR%%/modules/TextToSpeech.json

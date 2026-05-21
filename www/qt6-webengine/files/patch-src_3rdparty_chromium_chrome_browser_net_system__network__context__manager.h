@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/net/system_network_context_manager.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/chrome/browser/net/system_network_context_manager.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/chrome/browser/net/system_network_context_manager.h
-@@ -198,7 +198,7 @@ class SystemNetworkContextManager {
+@@ -212,7 +212,7 @@ class SystemNetworkContextManager {
    class URLLoaderFactoryForSystem;
    class NetworkProcessLaunchWatcher;
  
@@ -9,7 +9,7 @@
    class GssapiLibraryLoadObserver
        : public network::mojom::GssapiLibraryLoadObserver {
     public:
-@@ -279,7 +279,7 @@ class SystemNetworkContextManager {
+@@ -295,7 +295,7 @@ class SystemNetworkContextManager {
    std::unique_ptr<NetworkAnnotationMonitor> network_annotation_monitor_;
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/files/dir_reader_linux.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/files/dir_reader_linux.h.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/files/dir_reader_linux.h
 @@ -21,10 +21,16 @@
  #include "base/logging.h"

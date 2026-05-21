@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/media/mojo/mojom/video_frame_mojom_traits.h.orig	2025-05-05 10:57:53 UTC
++++ src/3rdparty/chromium/media/mojo/mojom/video_frame_mojom_traits.h
+@@ -21,7 +21,7 @@
+ 
+ namespace mojo {
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ template <>
+ struct StructTraits<media::mojom::ColorPlaneLayoutDataView,
+                     media::ColorPlaneLayout> {

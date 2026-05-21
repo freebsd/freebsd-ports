@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/error_page/common/localized_error.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/error_page/common/localized_error.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/error_page/common/localized_error.cc
 @@ -901,7 +901,7 @@ void AddSuggestionsDetails(int error_code,
    if (suggestions & SUGGEST_PROXY_CONFIG) {

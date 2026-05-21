@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/shell/utility/shell_content_utility_client.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/shell/utility/shell_content_utility_client.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/content/shell/utility/shell_content_utility_client.cc
 @@ -43,7 +43,7 @@
  #include "sandbox/policy/sandbox.h"
@@ -11,7 +11,7 @@
  
 @@ -192,7 +192,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
    binders->Add<mojom::PowerMonitorTest>(
-       base::BindRepeating(&PowerMonitorTestImpl::MakeSelfOwnedReceiver),
+       &PowerMonitorTestImpl::MakeSelfOwnedReceiver,
        base::SingleThreadTaskRunner::GetCurrentDefault());
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

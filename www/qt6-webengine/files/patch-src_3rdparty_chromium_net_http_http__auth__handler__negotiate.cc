@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/http/http_auth_handler_negotiate.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/net/http/http_auth_handler_negotiate.cc.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/net/http/http_auth_handler_negotiate.cc
-@@ -120,7 +120,7 @@ int HttpAuthHandlerNegotiate::Factory::CreateAuthHandl
+@@ -119,7 +119,7 @@ int HttpAuthHandlerNegotiate::Factory::CreateAuthHandl
  #elif BUILDFLAG(IS_POSIX)
    if (is_unsupported_)
      return ERR_UNSUPPORTED_AUTH_SCHEME;

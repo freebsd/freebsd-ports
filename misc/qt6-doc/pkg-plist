@@ -35,10 +35,12 @@
 %%QT_DOCDIR%%/qtdoc/accessible.html
 %%QT_DOCDIR%%/qtdoc/activeqt-idc.html
 %%QT_DOCDIR%%/qtdoc/activeqt-testcon.html
+%%QT_DOCDIR%%/qtdoc/add-update-remove-components.html
 %%QT_DOCDIR%%/qtdoc/android-3rdparty-libs.html
 %%QT_DOCDIR%%/qtdoc/android-build-environment-variables.html
 %%QT_DOCDIR%%/qtdoc/android-building-projects-from-commandline.html
 %%QT_DOCDIR%%/qtdoc/android-building.html
+%%QT_DOCDIR%%/qtdoc/android-configure-dev-environment.html
 %%QT_DOCDIR%%/qtdoc/android-emojis.html
 %%QT_DOCDIR%%/qtdoc/android-environment-variables.html
 %%QT_DOCDIR%%/qtdoc/android-getting-started.html
@@ -86,7 +88,6 @@
 %%QT_DOCDIR%%/qtdoc/exportcontrols.html
 %%QT_DOCDIR%%/qtdoc/extras-changes-qt6.html
 %%QT_DOCDIR%%/qtdoc/fdl.html
-%%QT_DOCDIR%%/qtdoc/feature-delivery-example.html
 %%QT_DOCDIR%%/qtdoc/functions.html
 %%QT_DOCDIR%%/qtdoc/get-and-install-qt-cli.html
 %%QT_DOCDIR%%/qtdoc/get-and-install-qt.html
@@ -114,6 +115,7 @@
 %%QT_DOCDIR%%/qtdoc/images/alarms3.png
 %%QT_DOCDIR%%/qtdoc/images/android-source-folder.png
 %%QT_DOCDIR%%/qtdoc/images/android.webp
+%%QT_DOCDIR%%/qtdoc/images/android_overview_apps.webp
 %%QT_DOCDIR%%/qtdoc/images/animation-examples.png
 %%QT_DOCDIR%%/qtdoc/images/arrow_bc.png
 %%QT_DOCDIR%%/qtdoc/images/bgrContent.png
@@ -154,15 +156,15 @@
 %%QT_DOCDIR%%/qtdoc/images/ios.webp
 %%QT_DOCDIR%%/qtdoc/images/layout-examples.png
 %%QT_DOCDIR%%/qtdoc/images/lightningviewer.jpg
+%%QT_DOCDIR%%/qtdoc/images/link-qt-kit.webp
 %%QT_DOCDIR%%/qtdoc/images/logo.png
 %%QT_DOCDIR%%/qtdoc/images/lottietoqmlexample.png
 %%QT_DOCDIR%%/qtdoc/images/macos.webp
-%%QT_DOCDIR%%/qtdoc/images/maintenancetool.png
+%%QT_DOCDIR%%/qtdoc/images/maintenancetool.webp
 %%QT_DOCDIR%%/qtdoc/images/mediaplayerapp.png
 %%QT_DOCDIR%%/qtdoc/images/mobile_dark.png
 %%QT_DOCDIR%%/qtdoc/images/mobile_light.png
 %%QT_DOCDIR%%/qtdoc/images/nmvurCcsWos.jpg
-%%QT_DOCDIR%%/qtdoc/images/ok.png
 %%QT_DOCDIR%%/qtdoc/images/open-project.png
 %%QT_DOCDIR%%/qtdoc/images/osmbuildings.jpg
 %%QT_DOCDIR%%/qtdoc/images/piemenu.gif
@@ -199,7 +201,7 @@
 %%QT_DOCDIR%%/qtdoc/images/qtdesignstudio.webp
 %%QT_DOCDIR%%/qtdoc/images/qthangman-example.png
 %%QT_DOCDIR%%/qtdoc/images/qthangman-store-example.png
-%%QT_DOCDIR%%/qtdoc/images/qtinstallercomponents.png
+%%QT_DOCDIR%%/qtdoc/images/qtinstallercomponents.webp
 %%QT_DOCDIR%%/qtdoc/images/qtjenny-callback-extended-class.drawio.svg
 %%QT_DOCDIR%%/qtdoc/images/qtjenny-callback-interface.drawio.svg
 %%QT_DOCDIR%%/qtdoc/images/qtjenny-sequence.drawio.svg
@@ -218,16 +220,20 @@
 %%QT_DOCDIR%%/qtdoc/images/robotarm-example.png
 %%QT_DOCDIR%%/qtdoc/images/sa8155-target.png
 %%QT_DOCDIR%%/qtdoc/images/sa8155p.png
-%%QT_DOCDIR%%/qtdoc/images/scalability-gridlayout.png
 %%QT_DOCDIR%%/qtdoc/images/session.png
 %%QT_DOCDIR%%/qtdoc/images/small_dark.png
 %%QT_DOCDIR%%/qtdoc/images/small_light.png
 %%QT_DOCDIR%%/qtdoc/images/splash-screen-launch.webp
 %%QT_DOCDIR%%/qtdoc/images/sql-examples.png
+%%QT_DOCDIR%%/qtdoc/images/summermap-view.webp
 %%QT_DOCDIR%%/qtdoc/images/thread-examples.png
 %%QT_DOCDIR%%/qtdoc/images/threadsandobjects.png
 %%QT_DOCDIR%%/qtdoc/images/tiger.png
 %%QT_DOCDIR%%/qtdoc/images/tool-examples.png
+%%QT_DOCDIR%%/qtdoc/images/toycustomizer-animation.webp
+%%QT_DOCDIR%%/qtdoc/images/toycustomizer-interactive-3d.webp
+%%QT_DOCDIR%%/qtdoc/images/toycustomizer-landscape.png
+%%QT_DOCDIR%%/qtdoc/images/toycustomizer.png
 %%QT_DOCDIR%%/qtdoc/images/vectorimageexample.png
 %%QT_DOCDIR%%/qtdoc/images/vxwb-advanced-settings.png
 %%QT_DOCDIR%%/qtdoc/images/vxwb-cmake-rtp-project.png
@@ -268,6 +274,7 @@
 %%QT_DOCDIR%%/qtdoc/license-changes.html
 %%QT_DOCDIR%%/qtdoc/licenses-used-in-qt.html
 %%QT_DOCDIR%%/qtdoc/licensing.html
+%%QT_DOCDIR%%/qtdoc/linux-alternative-installers.html
 %%QT_DOCDIR%%/qtdoc/linux-building.html
 %%QT_DOCDIR%%/qtdoc/linux-deployment.html
 %%QT_DOCDIR%%/qtdoc/linux-issues.html
@@ -276,6 +283,7 @@
 %%QT_DOCDIR%%/qtdoc/localization.html
 %%QT_DOCDIR%%/qtdoc/macos-building.html
 %%QT_DOCDIR%%/qtdoc/macos-deployment.html
+%%QT_DOCDIR%%/qtdoc/macos-installation.html
 %%QT_DOCDIR%%/qtdoc/macos-issues.html
 %%QT_DOCDIR%%/qtdoc/macos.html
 %%QT_DOCDIR%%/qtdoc/mobiledevelopment.html
@@ -283,11 +291,11 @@
 %%QT_DOCDIR%%/qtdoc/modulechanges.html
 %%QT_DOCDIR%%/qtdoc/modules-cpp.html
 %%QT_DOCDIR%%/qtdoc/modules-qml.html
-%%QT_DOCDIR%%/qtdoc/modules.html
 %%QT_DOCDIR%%/qtdoc/namespaces.html
 %%QT_DOCDIR%%/qtdoc/newclasses60.html
 %%QT_DOCDIR%%/qtdoc/newclasses61.html
 %%QT_DOCDIR%%/qtdoc/newclasses610.html
+%%QT_DOCDIR%%/qtdoc/newclasses611.html
 %%QT_DOCDIR%%/qtdoc/newclasses62.html
 %%QT_DOCDIR%%/qtdoc/newclasses63.html
 %%QT_DOCDIR%%/qtdoc/newclasses64.html
@@ -327,6 +335,7 @@
 %%QT_DOCDIR%%/qtdoc/qt-embedded-kmap2qmap.html
 %%QT_DOCDIR%%/qtdoc/qt-for-education.html
 %%QT_DOCDIR%%/qtdoc/qt-framework-product-information.html
+%%QT_DOCDIR%%/qtdoc/qt-gpl-exception-1-0.html
 %%QT_DOCDIR%%/qtdoc/qt-gui-concepts.html
 %%QT_DOCDIR%%/qtdoc/qt-intro.html
 %%QT_DOCDIR%%/qtdoc/qt-online-installation.html
@@ -344,6 +353,7 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-thermostatexample-materialicons.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-thermostatexample-phosphoricons.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-todolistexample-materialicons.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-android-feature-delivery-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-android-splashscreen-manifest-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-android-splashscreen-quick-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-calqlatr-example.html
@@ -367,6 +377,7 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-stocqt-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-thermostat-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-todolist-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-toycustomizer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-windowembedding-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-xr-physicsbase-teleportation-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-toc.html
@@ -395,7 +406,6 @@
 %%QT_DOCDIR%%/qtdoc/reference-overview.html
 %%QT_DOCDIR%%/qtdoc/restoring-geometry.html
 %%QT_DOCDIR%%/qtdoc/sbom.html
-%%QT_DOCDIR%%/qtdoc/scalability.html
 %%QT_DOCDIR%%/qtdoc/security.html
 %%QT_DOCDIR%%/qtdoc/session.html
 %%QT_DOCDIR%%/qtdoc/sharedlibrary.html
@@ -438,6 +448,7 @@
 %%QT_DOCDIR%%/qtdoc/whatsnew60.html
 %%QT_DOCDIR%%/qtdoc/whatsnew61.html
 %%QT_DOCDIR%%/qtdoc/whatsnew610.html
+%%QT_DOCDIR%%/qtdoc/whatsnew611.html
 %%QT_DOCDIR%%/qtdoc/whatsnew62.html
 %%QT_DOCDIR%%/qtdoc/whatsnew63.html
 %%QT_DOCDIR%%/qtdoc/whatsnew64.html

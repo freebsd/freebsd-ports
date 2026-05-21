@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/perfetto/src/base/utils.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/perfetto/src/base/utils.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/utils.cc
 @@ -38,7 +38,8 @@
  #include <mach/vm_page_size.h>
@@ -10,7 +10,7 @@
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
  
-@@ -278,14 +279,22 @@ std::string GetCurExecutablePath() {
+@@ -280,14 +281,22 @@ void Daemonize(std::function<int()> parent_cb) {
  
  std::string GetCurExecutablePath() {
    std::string self_path;
@@ -35,7 +35,7 @@
  #elif PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
    uint32_t size = 0;
    PERFETTO_CHECK(_NSGetExecutablePath(nullptr, &size));
-@@ -337,7 +346,8 @@ bool IsSyncMemoryTaggingEnabled() {
+@@ -339,7 +348,8 @@ void AlignedFree(void* ptr) {
  }
  
  bool IsSyncMemoryTaggingEnabled() {

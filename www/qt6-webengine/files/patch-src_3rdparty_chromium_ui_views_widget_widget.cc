@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/ui/views/widget/widget.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/views/widget/widget.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/ui/views/widget/widget.cc
 @@ -63,7 +63,7 @@
- #include "ui/views/window/custom_frame_view.h"
+ #include "ui/views/widget/widget_removals_observer.h"
  #include "ui/views/window/dialog_delegate.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -2444,7 +2444,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -2498,7 +2498,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
      return parent_->GetNativeTheme();
    }
  

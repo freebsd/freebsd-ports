@@ -1,11 +1,13 @@
---- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_bsd.cc.orig	2025-09-01 08:52:32 UTC
+--- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_bsd.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_bsd.cc
-@@ -0,0 +1,58 @@
+@@ -0,0 +1,61 @@
 +// Copyright 2022 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
 +#include "services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h"
++
++#include "base/notimplemented.h"
 +
 +#include "base/memory/page_size.h"
 +#include "base/process/process.h"
@@ -26,6 +28,7 @@
 +
 +// static
 +bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
++                                 const MemDumpFlagSet& flags,
 +                                 mojom::RawOSMemDump* dump) {
 +  base::Process process = pid == base::kNullProcessId
 +                              ? base::Process::Current()

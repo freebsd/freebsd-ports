@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc
 @@ -22,7 +22,9 @@
  #include "content/public/common/result_codes.h"
@@ -10,7 +10,7 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  
  namespace content {
-@@ -47,14 +49,20 @@ bool ChildProcessLauncherHelper::IsUsingLaunchOptions(
+@@ -47,14 +49,20 @@ ChildProcessLauncherHelper::GetFilesToMap() {
  }
  
  bool ChildProcessLauncherHelper::IsUsingLaunchOptions() {
@@ -109,7 +109,7 @@
  }
  
  void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
-@@ -182,11 +202,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+@@ -181,11 +201,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
    }
  }
  

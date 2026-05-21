@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/child/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/child/BUILD.gn.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/content/child/BUILD.gn
-@@ -143,6 +143,13 @@ target(link_target_type, "child") {
+@@ -144,6 +144,13 @@ target(link_target_type, "child") {
      ]
    }
  

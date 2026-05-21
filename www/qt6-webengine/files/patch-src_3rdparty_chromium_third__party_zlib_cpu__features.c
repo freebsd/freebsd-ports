@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/zlib/cpu_features.c.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/zlib/cpu_features.c.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/third_party/zlib/cpu_features.c
 @@ -39,7 +39,8 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmul = 0;
  #ifndef CPU_NO_SIMD

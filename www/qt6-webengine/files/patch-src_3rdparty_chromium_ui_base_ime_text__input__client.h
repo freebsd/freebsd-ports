@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/ime/text_input_client.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/ime/text_input_client.h.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/ui/base/ime/text_input_client.h
 @@ -337,7 +337,7 @@ class COMPONENT_EXPORT(UI_BASE_IME) TextInputClient {
    // fields that are considered 'private' (e.g. in incognito tabs).

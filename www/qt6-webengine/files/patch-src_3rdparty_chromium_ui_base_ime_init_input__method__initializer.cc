@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/ime/init/input_method_initializer.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/ime/init/input_method_initializer.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/ui/base/ime/init/input_method_initializer.cc
 @@ -9,7 +9,7 @@
  #include "base/trace_event/trace_event.h"
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/fake_input_method_context.h"
  #include "ui/base/ime/linux/linux_input_method_context_factory.h"
  #elif BUILDFLAG(IS_WIN)
-@@ -33,7 +33,7 @@ void InitializeInputMethodForTesting() {
+@@ -33,7 +33,7 @@ void ShutdownInputMethod() {
  }
  
  void InitializeInputMethodForTesting() {
@@ -18,7 +18,7 @@
    GetInputMethodContextFactoryForTest() =
        base::BindRepeating([](LinuxInputMethodContextDelegate* delegate)
                                -> std::unique_ptr<LinuxInputMethodContext> {
-@@ -45,7 +45,7 @@ void ShutdownInputMethodForTesting() {
+@@ -45,7 +45,7 @@ void InitializeInputMethodForTesting() {
  }
  
  void ShutdownInputMethodForTesting() {

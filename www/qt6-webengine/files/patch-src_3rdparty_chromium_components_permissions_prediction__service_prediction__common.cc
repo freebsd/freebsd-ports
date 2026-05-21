@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/permissions/prediction_service/prediction_common.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/permissions/prediction_service/prediction_common.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/components/permissions/prediction_service/prediction_common.cc
-@@ -32,7 +32,7 @@ ClientFeatures_Platform GetCurrentPlatformProto() {
+@@ -36,7 +36,7 @@ int BucketizeValue(int count) {
  
  ClientFeatures_Platform GetCurrentPlatformProto() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
    return permissions::ClientFeatures_Platform_PLATFORM_DESKTOP;
  #elif BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
    return permissions::ClientFeatures_Platform_PLATFORM_MOBILE;
-@@ -43,7 +43,7 @@ ClientFeatures_PlatformEnum GetCurrentPlatformEnumProt
+@@ -47,7 +47,7 @@ ClientFeatures_Platform GetCurrentPlatformProto() {
  
  ClientFeatures_PlatformEnum GetCurrentPlatformEnumProto() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

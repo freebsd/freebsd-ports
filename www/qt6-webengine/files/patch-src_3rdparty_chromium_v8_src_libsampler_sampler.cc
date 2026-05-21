@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/src/libsampler/sampler.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/v8/src/libsampler/sampler.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/v8/src/libsampler/sampler.cc
-@@ -519,6 +519,16 @@ void SignalHandler::FillRegisterState(void* context, R
+@@ -527,6 +527,16 @@ void SignalHandler::FillRegisterState(void* context, R
    state->pc = reinterpret_cast<void*>(mcontext.__gregs[_REG_PC]);
    state->sp = reinterpret_cast<void*>(mcontext.__gregs[_REG_SP]);
    state->fp = reinterpret_cast<void*>(mcontext.__gregs[_REG_FP]);

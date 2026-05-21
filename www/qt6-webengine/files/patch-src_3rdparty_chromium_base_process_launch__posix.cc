@@ -3,9 +3,9 @@ with -Wl,-no-undefined.
 
 See https://reviews.freebsd.org/D30842
 
---- src/3rdparty/chromium/base/process/launch_posix.cc.orig	2025-08-18 00:53:11 UTC
+--- src/3rdparty/chromium/base/process/launch_posix.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/base/process/launch_posix.cc
-@@ -67,7 +67,9 @@
+@@ -61,7 +61,9 @@
  #error "macOS should use launch_mac.cc"
  #endif
  
@@ -15,7 +15,7 @@ See https://reviews.freebsd.org/D30842
  
  namespace base {
  
-@@ -88,13 +90,27 @@ char** GetEnvironment() {
+@@ -82,13 +84,27 @@ char** GetEnvironment() {
  // Get the process's "environment" (i.e. the thing that setenv/getenv
  // work with).
  char** GetEnvironment() {

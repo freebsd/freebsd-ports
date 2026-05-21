@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/password_manager/core/browser/password_store_factory_util.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/password_manager/core/browser/password_store_factory_util.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/password_manager/core/browser/password_store_factory_util.cc
-@@ -29,7 +29,7 @@ LoginDatabase::DeletingUndecryptablePasswordsEnabled G
+@@ -30,7 +30,7 @@ namespace {
  LoginDatabase::DeletingUndecryptablePasswordsEnabled GetPolicyFromPrefs(
      PrefService* prefs) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

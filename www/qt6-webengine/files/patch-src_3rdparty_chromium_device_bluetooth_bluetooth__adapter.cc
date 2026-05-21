@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/device/bluetooth/bluetooth_adapter.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/device/bluetooth/bluetooth_adapter.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/device/bluetooth/bluetooth_adapter.cc
-@@ -32,7 +32,7 @@ BluetoothAdapter::ServiceOptions::~ServiceOptions() = 
+@@ -33,7 +33,7 @@ namespace device {
  BluetoothAdapter::ServiceOptions::ServiceOptions() = default;
  BluetoothAdapter::ServiceOptions::~ServiceOptions() = default;
  

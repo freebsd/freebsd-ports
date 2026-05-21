@@ -58,6 +58,7 @@ lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfigVersionImpl.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatDependencies.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake
+lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargetsPrecheck.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateAdditionalTargetInfo.cmake
@@ -66,6 +67,7 @@ lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfigVersion.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateDependencies.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateTargets.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake
@@ -74,12 +76,14 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake
 %%QT_LIBDIR%%/libQt6Core5Compat.prl
 %%QT_LIBDIR%%/libQt6Core5Compat.so
 %%QT_LIBDIR%%/libQt6Core5Compat.so.6
@@ -125,6 +129,8 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/qmldir
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/qmldir
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/qtgraphicaleffectsplugin.qmltypes
+%%QT_SBOMDIR%%/qt5compat-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qt5compat-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qt5compat-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6Core5Compat.pc
 %%QT_DATADIR%%/modules/Core5Compat.json

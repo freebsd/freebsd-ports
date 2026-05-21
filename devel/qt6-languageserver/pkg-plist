@@ -32,6 +32,7 @@ lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateDependencies.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateTargets.cmake
+lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateVersionlessTargets.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateAdditionalTargetInfo.cmake
@@ -41,6 +42,7 @@ lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateConfigVersionImpl.cma
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateDependencies.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateTargets.cmake
+lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6JsonRpc.a
@@ -51,6 +53,8 @@ lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateVersionlessTargets.cm
 %%QT_LIBDIR%%/metatypes/qt6languageserverprivate_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_jsonrpc_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_languageserver_private.pri
+%%QT_SBOMDIR%%/qtlanguageserver-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtlanguageserver-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtlanguageserver-%%FULLVER%%.spdx.json
 %%QT_DATADIR%%/modules/JsonRpcPrivate.json
 %%QT_DATADIR%%/modules/LanguageServerPrivate.json

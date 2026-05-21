@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/message_loop/message_pump_glib.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/message_loop/message_pump_glib.cc.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/base/message_loop/message_pump_glib.cc
 @@ -8,6 +8,11 @@
  #include <glib.h>
@@ -12,7 +12,7 @@
  #include "base/logging.h"
  #include "base/memory/raw_ptr.h"
  #include "base/notreached.h"
-@@ -52,9 +57,13 @@ bool RunningOnMainThread() {
+@@ -52,9 +57,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
  }
  
  bool RunningOnMainThread() {
@@ -20,7 +20,7 @@
 +  return pthread_main_np();
 +#else
    auto pid = getpid();
-   auto tid = PlatformThread::CurrentId();
+   auto tid = PlatformThread::CurrentId().raw();
    return pid > 0 && tid > 0 && pid == tid;
 +#endif
  }

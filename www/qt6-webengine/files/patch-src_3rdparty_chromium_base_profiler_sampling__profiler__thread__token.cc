@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.cc.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.cc
 @@ -6,7 +6,7 @@
  
@@ -11,7 +11,7 @@
  #include "base/profiler/stack_base_address_posix.h"
 @@ -18,7 +18,7 @@ SamplingProfilerThreadToken GetSamplingProfilerCurrent
    PlatformThreadId id = PlatformThread::CurrentId();
- #if BUILDFLAG(IS_ANDROID)
+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_APPLE)
    return {id, pthread_self()};
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

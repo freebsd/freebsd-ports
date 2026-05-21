@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
-@@ -192,7 +192,7 @@ Vector<String> InspectorMemoryAgent::Symbolize(
+@@ -192,7 +192,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
  
  Vector<String> InspectorMemoryAgent::Symbolize(
      const std::vector<const void*>& addresses) {

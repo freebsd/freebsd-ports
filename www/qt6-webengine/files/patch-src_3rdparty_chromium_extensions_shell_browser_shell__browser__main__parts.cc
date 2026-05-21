@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/extensions/shell/browser/shell_browser_main_parts.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/extensions/shell/browser/shell_browser_main_parts.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/extensions/shell/browser/shell_browser_main_parts.cc
-@@ -137,7 +137,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -126,7 +126,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
        switches::kAppShellAllowRoaming)) {
      network_controller_->SetCellularAllowRoaming(true);
    }

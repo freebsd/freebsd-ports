@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/build/config/BUILD.gn.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/build/config/BUILD.gn
-@@ -219,6 +219,10 @@ config("default_libs") {
+@@ -213,6 +213,10 @@ config("default_libs") {
      # Targets should choose to explicitly link frameworks they require. Since
      # linking can have run-time side effects, nothing should be listed here.
      libs = []

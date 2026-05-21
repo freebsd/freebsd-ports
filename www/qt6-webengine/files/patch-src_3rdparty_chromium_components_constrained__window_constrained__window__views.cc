@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/constrained_window/constrained_window_views.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/constrained_window/constrained_window_views.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/components/constrained_window/constrained_window_views.cc
-@@ -375,7 +375,7 @@ bool PlatformClipsChildrenToViewport() {
+@@ -380,7 +380,7 @@ bool SupportsGlobalScreenCoordinates() {
  }
  
  bool PlatformClipsChildrenToViewport() {

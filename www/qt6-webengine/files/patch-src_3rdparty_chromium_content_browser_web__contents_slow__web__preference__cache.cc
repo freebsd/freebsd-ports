@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/web_contents/slow_web_preference_cache.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/web_contents/slow_web_preference_cache.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/content/browser/web_contents/slow_web_preference_cache.cc
 @@ -17,7 +17,7 @@
  
@@ -18,7 +18,7 @@
    ui::DeviceDataManager::GetInstance()->AddObserver(this);
  #elif BUILDFLAG(IS_ANDROID)
    ui::InputDeviceObserverAndroid::GetInstance()->AddObserver(this);
-@@ -69,7 +69,7 @@ SlowWebPreferenceCache::~SlowWebPreferenceCache() {
+@@ -69,7 +69,7 @@ SlowWebPreferenceCache::SlowWebPreferenceCache() {
  SlowWebPreferenceCache::~SlowWebPreferenceCache() {
  #if BUILDFLAG(IS_WIN)
    ui::InputDeviceObserverWin::GetInstance()->RemoveObserver(this);

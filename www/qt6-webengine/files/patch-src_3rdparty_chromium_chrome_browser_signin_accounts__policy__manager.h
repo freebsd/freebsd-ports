@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/signin/accounts_policy_manager.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/chrome/browser/signin/accounts_policy_manager.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/chrome/browser/signin/accounts_policy_manager.h
 @@ -13,7 +13,7 @@
  #include "components/signin/public/base/signin_metrics.h"

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/performance_manager/decorators/process_metrics_decorator.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/performance_manager/decorators/process_metrics_decorator.cc.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/components/performance_manager/decorators/process_metrics_decorator.cc
 @@ -264,7 +264,7 @@ void ProcessMetricsDecorator::DidGetMemoryUsage(
      // RSS and PMF to each node proportionally to its V8 heap size.

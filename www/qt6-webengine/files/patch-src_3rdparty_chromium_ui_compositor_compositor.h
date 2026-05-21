@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/compositor/compositor.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/compositor/compositor.h.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/ui/compositor/compositor.h
-@@ -458,7 +458,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
+@@ -462,7 +462,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
    // base::PowerSuspendObserver:
    void OnResume() override;
  

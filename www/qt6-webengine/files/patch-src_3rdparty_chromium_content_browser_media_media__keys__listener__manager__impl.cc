@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/media/media_keys_listener_manager_impl.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/media/media_keys_listener_manager_impl.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/content/browser/media/media_keys_listener_manager_impl.cc
 @@ -332,7 +332,7 @@ void MediaKeysListenerManagerImpl::StartListeningForMe
      return;

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/services/on_device_translation/sandbox_hook.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/services/on_device_translation/sandbox_hook.h.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/components/services/on_device_translation/sandbox_hook.h
 @@ -5,7 +5,13 @@
  #ifndef COMPONENTS_SERVICES_ON_DEVICE_TRANSLATION_SANDBOX_HOOK_H_

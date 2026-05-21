@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/extensions/shell/app/shell_main_delegate.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/extensions/shell/app/shell_main_delegate.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/extensions/shell/app/shell_main_delegate.cc
-@@ -40,7 +40,7 @@
+@@ -31,7 +31,7 @@
  #if BUILDFLAG(IS_WIN)
  #include "base/base_paths_win.h"
  #include "base/process/process_info.h"
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #elif BUILDFLAG(IS_MAC)
  #include "base/base_paths_mac.h"
-@@ -60,7 +60,7 @@ base::FilePath GetDataPath() {
+@@ -51,7 +51,7 @@ base::FilePath GetDataPath() {
    }
  
    base::FilePath data_dir;

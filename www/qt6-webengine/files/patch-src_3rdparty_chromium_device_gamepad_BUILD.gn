@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/device/gamepad/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/device/gamepad/BUILD.gn.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/device/gamepad/BUILD.gn
-@@ -99,7 +99,7 @@ component("gamepad") {
+@@ -98,7 +98,7 @@ component("gamepad") {
        "hid_writer_linux.cc",
        "hid_writer_linux.h",
      ]

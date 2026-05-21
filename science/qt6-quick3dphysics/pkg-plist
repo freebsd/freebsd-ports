@@ -1,3 +1,4 @@
+bin/cooker6
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qabstractcollisionshape_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qabstractphysicsbody_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qabstractphysicsnode_p.h
@@ -49,6 +50,7 @@ lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXConfigVersion.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXConfigVersionImpl.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXTargets.cmake
+lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXTargetsPrecheck.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXVersionlessAliasTargets.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginAdditionalTargetInfo.cmake
@@ -57,12 +59,14 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dphysicshelperspluginTargetsPrecheck.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsConfig.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsConfigVersion.cmake
@@ -70,6 +74,7 @@ lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsConfigVersionImpl.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsDependencies.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsTargets.cmake
+lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsTargetsPrecheck.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsVersionlessTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersAdditionalTargetInfo.cmake
@@ -79,6 +84,7 @@ lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersConfigVersionImpl.cma
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersDependencies.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersTargets.cmake
+lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersTargetsPrecheck.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersVersionlessAliasTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersVersionlessTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateAdditionalTargetInfo.cmake
@@ -87,6 +93,7 @@ lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateConfigV
 lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateDependencies.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateTargets.cmake
+lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpersPrivate/Qt6Quick3DPhysicsHelpersPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateAdditionalTargetInfo.cmake
@@ -95,6 +102,7 @@ lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateConfigVersion.cmake
 lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateDependencies.cmake
 lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateTargets.cmake
+lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateVersionlessTargets.cmake
 %%QT_BINDIR%%/cooker
@@ -186,7 +194,9 @@ lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateVersionlessTargets.cm
 %%QT_QMLDIR%%/QtQuick3D/Physics/libqquick3dphysicsplugin.so
 %%QT_QMLDIR%%/QtQuick3D/Physics/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick3D/Physics/qmldir
+%%QT_SBOMDIR%%/qtquick3dphysics-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtquick3dphysics-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtquick3dphysics-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6Quick3DPhysics.pc
 libdata/pkgconfig/Qt6Quick3DPhysicsHelpers.pc
 %%QT_DATADIR%%/modules/Quick3DPhysics.json

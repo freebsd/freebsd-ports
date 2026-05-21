@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/memory/platform_shared_memory_region_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/memory/platform_shared_memory_region_posix.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/base/memory/platform_shared_memory_region_posix.cc
-@@ -55,7 +55,7 @@ bool CheckFDAccessMode(int fd, int expected_mode) {
+@@ -59,7 +59,7 @@ std::optional<FDAccessModeError> CheckFDAccessMode(int
  
  }  // namespace
  
@@ -9,7 +9,7 @@
  // static
  ScopedFD PlatformSharedMemoryRegion::ExecutableRegion::CreateFD(size_t size) {
    PlatformSharedMemoryRegion region =
-@@ -175,7 +175,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+@@ -184,7 +184,7 @@ bool PlatformSharedMemoryRegion::ConvertToUnsafe() {
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Create(Mode mode,
                                                                size_t size
@@ -18,7 +18,7 @@
                                                                ,
                                                                bool executable
  #endif
-@@ -204,7 +204,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+@@ -209,7 +209,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
    // flag.
    FilePath directory;
    if (!GetShmemTempDir(

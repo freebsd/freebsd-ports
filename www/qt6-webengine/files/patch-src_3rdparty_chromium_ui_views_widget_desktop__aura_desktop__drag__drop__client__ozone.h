@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h
 @@ -67,7 +67,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
      // The offset of |drag_widget_| relative to the mouse position.

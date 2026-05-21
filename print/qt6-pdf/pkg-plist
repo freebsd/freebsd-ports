@@ -59,6 +59,9 @@
 @comment lib/cmake/Qt6/FindNinja.cmake
 @comment lib/cmake/Qt6/FindNodejs.cmake
 @comment lib/cmake/Qt6/FindPkgConfigHost.cmake
+@comment lib/cmake/Qt6/FindQWEBindgen.cmake
+@comment lib/cmake/Qt6/FindQWELibClang.cmake
+@comment lib/cmake/Qt6/FindQWERust.cmake
 @comment lib/cmake/Qt6/FindSnappy.cmake
 @comment lib/cmake/Qt6BuildInternals/StandaloneTests/QtWebEngineTestsConfig.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake
@@ -67,6 +70,7 @@ lib/cmake/Qt6Gui/Qt6QPdfPluginConfigVersion.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QPdfPluginTargetsPrecheck.cmake
 lib/cmake/Qt6Pdf/Qt6PdfAdditionalTargetInfo.cmake
 lib/cmake/Qt6Pdf/Qt6PdfConfig.cmake
 lib/cmake/Qt6Pdf/Qt6PdfConfigVersion.cmake
@@ -74,6 +78,7 @@ lib/cmake/Qt6Pdf/Qt6PdfConfigVersionImpl.cmake
 lib/cmake/Qt6Pdf/Qt6PdfDependencies.cmake
 lib/cmake/Qt6Pdf/Qt6PdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Pdf/Qt6PdfTargets.cmake
+lib/cmake/Qt6Pdf/Qt6PdfTargetsPrecheck.cmake
 lib/cmake/Qt6Pdf/Qt6PdfVersionlessAliasTargets.cmake
 lib/cmake/Qt6Pdf/Qt6PdfVersionlessTargets.cmake
 lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateAdditionalTargetInfo.cmake
@@ -82,6 +87,7 @@ lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateConfigVersion.cmake
 lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateDependencies.cmake
 lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateTargets.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateVersionlessTargets.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickAdditionalTargetInfo.cmake
@@ -91,6 +97,7 @@ lib/cmake/Qt6PdfQuick/Qt6PdfQuickConfigVersionImpl.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickDependencies.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargets.cmake
+lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargetsPrecheck.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickVersionlessTargets.cmake
 lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateAdditionalTargetInfo.cmake
@@ -99,6 +106,7 @@ lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateConfigVersion.cmake
 lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateDependencies.cmake
 lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateTargets.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateVersionlessTargets.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsAdditionalTargetInfo.cmake
@@ -108,6 +116,7 @@ lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsDependencies.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargets.cmake
+lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargetsPrecheck.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsVersionlessTargets.cmake
 lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateAdditionalTargetInfo.cmake
@@ -116,6 +125,7 @@ lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateConfigVersion.cmake
 lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateDependencies.cmake
 lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateTargets.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginAdditionalTargetInfo.cmake
@@ -124,6 +134,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargetsPrecheck.cmake
 %%QT_LIBDIR%%/libQt6Pdf.prl
 %%QT_LIBDIR%%/libQt6Pdf.so
 %%QT_LIBDIR%%/libQt6Pdf.so.6
@@ -156,7 +167,11 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake
 %%QT_QMLDIR%%/QtQuick/Pdf/libpdfquickplugin.so
 %%QT_QMLDIR%%/QtQuick/Pdf/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Pdf/qmldir
+%%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.spdx.json
+%%QT_SBOMDIR%%/qtwebengine-chromium-pdf-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtwebengine-chromium-pdf-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6Pdf.pc
 libdata/pkgconfig/Qt6PdfQuick.pc
 libdata/pkgconfig/Qt6PdfWidgets.pc

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/syslog_logging.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/syslog_logging.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/syslog_logging.cc
 @@ -17,7 +17,7 @@
  #include "base/strings/string_util.h"

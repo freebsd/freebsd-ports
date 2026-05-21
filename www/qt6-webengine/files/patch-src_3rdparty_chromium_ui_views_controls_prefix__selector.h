@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/views/controls/prefix_selector.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/views/controls/prefix_selector.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/views/controls/prefix_selector.h
 @@ -91,7 +91,7 @@ class VIEWS_EXPORT PrefixSelector : public ui::TextInp
    ukm::SourceId GetClientSourceForMetrics() const override;

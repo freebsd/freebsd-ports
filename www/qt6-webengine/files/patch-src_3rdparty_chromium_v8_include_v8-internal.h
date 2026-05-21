@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/include/v8-internal.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/v8/include/v8-internal.h.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/v8/include/v8-internal.h
 @@ -232,7 +232,7 @@ using SandboxedPointer_t = Address;
  #ifdef V8_ENABLE_SANDBOX

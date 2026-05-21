@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/kill.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/process/kill.h.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/process/kill.h
-@@ -123,7 +123,7 @@ GetKnownDeadTerminationStatus(ProcessHandle handle, in
+@@ -123,7 +123,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
  BASE_EXPORT TerminationStatus
  GetKnownDeadTerminationStatus(ProcessHandle handle, int* exit_code);
  

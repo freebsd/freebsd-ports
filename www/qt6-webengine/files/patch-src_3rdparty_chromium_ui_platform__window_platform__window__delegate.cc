@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/platform_window/platform_window_delegate.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/platform_window/platform_window_delegate.cc.orig	2025-04-04 08:52:13 UTC
 +++ src/3rdparty/chromium/ui/platform_window/platform_window_delegate.cc
-@@ -57,7 +57,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
+@@ -56,7 +56,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
    return gfx::Insets();
  }
  

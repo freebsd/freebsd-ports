@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/memory/protected_memory.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/memory/protected_memory.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/base/memory/protected_memory.h
 @@ -120,12 +120,12 @@ __declspec(selectany) char __stop_protected_memory;
  

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/media_router/common/providers/cast/channel/cast_message_util.cc
 @@ -168,7 +168,7 @@ int GetVirtualConnectPlatformValue() {
    return 4;

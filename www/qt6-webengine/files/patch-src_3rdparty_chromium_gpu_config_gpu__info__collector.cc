@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/config/gpu_info_collector.cc.orig	2025-09-01 18:56:10 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_info_collector.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_info_collector.cc
-@@ -358,7 +358,7 @@ void ReportWebGPUSupportMetrics(dawn::native::Instance
+@@ -361,7 +361,7 @@ void ReportWebGPUSupportMetrics(dawn::native::Instance
  }
  
  void ReportWebGPUSupportMetrics(dawn::native::Instance* instance) {

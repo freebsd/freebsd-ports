@@ -18,6 +18,7 @@ lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsDependencies.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets.cmake
+lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargetsPrecheck.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessTargets.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateAdditionalTargetInfo.cmake
@@ -26,6 +27,7 @@ lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateConfigVersion.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateDependencies.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateTargets.cmake
+lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsMacros.cmake
@@ -36,6 +38,7 @@ lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsDependencies.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake
+lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargetsPrecheck.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake
 %%QT_BINDIR%%/qsb
 %%QT_LIBDIR%%/libQt6ShaderTools.prl
@@ -45,6 +48,8 @@ lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6shadertools_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_shadertools.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_shadertools_private.pri
+%%QT_SBOMDIR%%/qtshadertools-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtshadertools-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtshadertools-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6ShaderTools.pc
 %%QT_DATADIR%%/modules/ShaderTools.json

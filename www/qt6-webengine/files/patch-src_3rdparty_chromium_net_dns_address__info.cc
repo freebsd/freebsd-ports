@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/dns/address_info.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/net/dns/address_info.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/net/dns/address_info.cc
-@@ -83,8 +83,12 @@ AddressInfo::AddressInfoAndResult AddressInfo::Get(
+@@ -78,8 +78,12 @@ AddressInfo::AddressInfoAndResult AddressInfo::Get(
      // error.
      // http://crbug.com/134142
      err = ERR_NAME_NOT_RESOLVED;

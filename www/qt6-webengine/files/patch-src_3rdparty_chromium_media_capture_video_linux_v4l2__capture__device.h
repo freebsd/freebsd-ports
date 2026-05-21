@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device.h.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device.h
-@@ -21,7 +21,7 @@ class CAPTURE_EXPORT V4L2CaptureDevice
-  public:
+@@ -23,7 +23,7 @@ class CAPTURE_EXPORT V4L2CaptureDevice
+ 
    virtual int open(const char* device_name, int flags) = 0;
    virtual int close(int fd) = 0;
 -  virtual int ioctl(int fd, int request, void* argp) = 0;

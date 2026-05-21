@@ -1,29 +1,26 @@
---- src/3rdparty/chromium/components/supervised_user/core/common/features.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/common/features.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/common/features.h
-@@ -30,7 +30,7 @@ BASE_DECLARE_FEATURE(kUpdatedSupervisedUserExtensionAp
- // Applies new informative strings during the parental extension approval flow.
- BASE_DECLARE_FEATURE(kUpdatedSupervisedUserExtensionApprovalStrings);
+@@ -20,12 +20,12 @@ BASE_DECLARE_FEATURE(kLocalWebApprovals);
+ BASE_DECLARE_FEATURE(kAllowSubframeLocalWebApprovals);
+ 
+ #if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) 
+ extern const base::FeatureParam<int> kLocalWebApprovalBottomSheetLoadTimeoutMs;
+ #endif  // BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_DECLARE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop);
- #endif
- 
-@@ -60,7 +60,7 @@ BASE_DECLARE_FEATURE(kCustomProfileStringsForSupervise
- 
- // Displays a Family Link kite badge on the supervised user avatar in various
- // surfaces.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_DECLARE_FEATURE(kShowKiteForSupervisedUsers);
- #endif
- 
-@@ -68,7 +68,7 @@ BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticate
- // unauthenticated (e.g. signed out of the content area) account.
- BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers);
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) 
+ // Whether we show an error screen in case of failure of a local web approval.
+ BASE_DECLARE_FEATURE(kEnableLocalWebApprovalErrorDialog);
+ #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
+@@ -37,7 +37,7 @@ BASE_DECLARE_FEATURE(kLocalWebApprovalsWidgetSupportsU
+ // Whether supervised users see an updated URL filter interstitial.
+ BASE_DECLARE_FEATURE(kSupervisedUserBlockInterstitialV3);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) 
  // Uses supervised user strings on the signout dialog.
  BASE_DECLARE_FEATURE(kEnableSupervisedUserVersionSignOutDialog);
- 
+ #endif

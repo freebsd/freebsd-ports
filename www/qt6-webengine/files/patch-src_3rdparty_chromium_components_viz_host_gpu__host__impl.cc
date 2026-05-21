@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/viz/host/gpu_host_impl.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/viz/host/gpu_host_impl.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/viz/host/gpu_host_impl.cc
 @@ -135,7 +135,7 @@ GpuHostImpl::GpuHostImpl(Delegate* delegate,
        mojom::GpuServiceCreationParams::New();

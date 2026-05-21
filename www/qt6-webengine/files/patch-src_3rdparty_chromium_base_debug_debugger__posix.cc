@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/base/debug/debugger_posix.cc
-@@ -41,6 +41,10 @@
+@@ -38,6 +38,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -99,33 +103,52 @@ bool BeingDebugged() {
+@@ -96,33 +100,52 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.

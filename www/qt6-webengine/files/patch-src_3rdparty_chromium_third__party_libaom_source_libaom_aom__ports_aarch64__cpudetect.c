@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c
 @@ -127,9 +127,45 @@ static int arm_get_cpu_caps(void) {
    return flags;

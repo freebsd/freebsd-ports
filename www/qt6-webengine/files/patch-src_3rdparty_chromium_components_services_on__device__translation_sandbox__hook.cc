@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/services/on_device_translation/sandbox_hook.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/services/on_device_translation/sandbox_hook.cc.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/components/services/on_device_translation/sandbox_hook.cc
 @@ -7,12 +7,15 @@
  #include "components/services/on_device_translation/translate_kit_client.h"

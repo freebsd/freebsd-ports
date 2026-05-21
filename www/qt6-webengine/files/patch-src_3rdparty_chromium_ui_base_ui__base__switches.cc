@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/ui_base_switches.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/ui_base_switches.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/ui/base/ui_base_switches.cc
-@@ -24,13 +24,13 @@ const char kShowMacOverlayBorders[] = "show-mac-overla
+@@ -24,13 +24,13 @@ const char kDisableModalAnimations[] = "disable-modal-
  const char kShowMacOverlayBorders[] = "show-mac-overlay-borders";
  #endif
  
@@ -15,4 +15,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Specify the toolkit used to construct the Linux GUI.
  const char kUiToolkitFlag[] = "ui-toolkit";
- // Disables GTK IME integration.
+ // Specify the GTK version to be loaded.

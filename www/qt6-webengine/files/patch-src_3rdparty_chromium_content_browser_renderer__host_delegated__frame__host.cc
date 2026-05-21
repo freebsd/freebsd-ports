@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc
 @@ -334,7 +334,7 @@ void DelegatedFrameHost::EmbedSurface(
  

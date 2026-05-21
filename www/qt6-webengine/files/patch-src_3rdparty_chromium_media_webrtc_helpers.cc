@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/webrtc/helpers.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/media/webrtc/helpers.cc.orig	2025-05-28 14:55:43 UTC
 +++ src/3rdparty/chromium/media/webrtc/helpers.cc
-@@ -43,14 +43,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
+@@ -46,14 +46,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
      return;
    }
  

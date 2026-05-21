@@ -6,10 +6,9 @@ PKGNAMEPREFIX=	qt6-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 6 module Documentations
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+BUILD_DEPENDS=	vulkan-headers>=1.4:graphics/vulkan-headers
 
-USES=		cmake compiler:c++17-lang \
-		qt-dist:6
+USES=		cmake compiler:c++17-lang qt-dist:6
 USE_QT=		base declarative sqldriver-sqlite tools
 
 ALL_TARGET=	docs

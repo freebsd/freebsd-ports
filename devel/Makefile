@@ -6529,9 +6529,11 @@
     SUBDIR += qt6-grpc
     SUBDIR += qt6-languageserver
     SUBDIR += qt6-location
+    SUBDIR += qt6-openapi
     SUBDIR += qt6-positioning
     SUBDIR += qt6-remoteobjects
     SUBDIR += qt6-scxml
+    SUBDIR += qt6-tasktree
     SUBDIR += qt6-tools
     SUBDIR += qt6-translations
     SUBDIR += qtcreator
@@ -8505,6 +8507,7 @@
     SUBDIR += shfmt
     SUBDIR += shiboken2
     SUBDIR += shiboken6
+    SUBDIR += shiboken6-tools
     SUBDIR += shmap
     SUBDIR += shroud
     SUBDIR += shtk

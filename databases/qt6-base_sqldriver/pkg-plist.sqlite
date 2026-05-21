@@ -4,4 +4,5 @@ lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfigVersion.cmake
 lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake
+lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargetsPrecheck.cmake
 %%QT_PLUGINDIR%%/sqldrivers/libqsqlite.so

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h
 @@ -46,12 +46,14 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
                       base::ScopedFD* control_fd,

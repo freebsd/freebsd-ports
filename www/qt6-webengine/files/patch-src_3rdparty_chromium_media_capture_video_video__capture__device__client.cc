@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/video_capture_device_client.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/media/capture/video/video_capture_device_client.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/media/capture/video/video_capture_device_client.cc
 @@ -173,7 +173,7 @@ FourccAndFlip GetFourccAndFlipFromPixelFormat(
        CHECK(!is_width_odd && !is_height_odd);

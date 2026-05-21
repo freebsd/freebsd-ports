@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/build/config/clang/BUILD.gn
-@@ -213,7 +213,12 @@ clang_lib("compiler_builtins") {
+@@ -268,7 +268,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
@@ -13,4 +13,4 @@
 +  } else if (is_mac) {
      libname = "osx"
    } else if (is_ios) {
-     if (target_environment == "simulator") {
+     if (target_platform == "iphoneos") {

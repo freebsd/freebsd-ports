@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/base_paths_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/base_paths_posix.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/base_paths_posix.cc
 @@ -15,6 +15,7 @@
  #include <ostream>

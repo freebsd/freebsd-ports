@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/process_iterator_freebsd.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/process/process_iterator_freebsd.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/process/process_iterator_freebsd.cc
-@@ -18,7 +18,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -18,7 +18,7 @@ namespace base {
  
  ProcessIterator::ProcessIterator(const ProcessFilter* filter)
      : filter_(filter) {

@@ -1,14 +1,9 @@
-bin/shiboken6
 lib/cmake/Shiboken6/Shiboken6Config.abi%%PYTHON_MAJOR_VER%%.cmake
 lib/cmake/Shiboken6/Shiboken6Config.cmake
 lib/cmake/Shiboken6/Shiboken6ConfigVersion.cmake
 lib/cmake/Shiboken6/Shiboken6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken6/Shiboken6Targets.cmake
 lib/cmake/Shiboken6/ShibokenHelpers.cmake
-lib/cmake/Shiboken6Tools/Shiboken6ToolsConfig.cmake
-lib/cmake/Shiboken6Tools/Shiboken6ToolsConfigVersion.cmake
-lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets.cmake
 lib/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so
 lib/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VER%%
 %%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.abi%%PYTHON_MAJOR_VER%%.so
@@ -23,14 +18,8 @@ lib/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VER%%
 %%PYTHON_SITELIBDIR%%/shiboken6/_config.py
 %%PYTHON_SITELIBDIR%%/shiboken6/_git_shiboken_module_version.py
 %%PYTHON_SITELIBDIR%%/shiboken6/py.typed
-%%PYTHON_SITELIBDIR%%/shiboken6_generator/__init__.py
-%%PYTHON_SITELIBDIR%%/shiboken6_generator/_config.py
-%%PYTHON_SITELIBDIR%%/shiboken6_generator/_git_shiboken_generator_version.py
-lib/cmake/Shiboken6Tools/Shiboken6ToolsMacros.cmake
 lib/wheels/cmake/Shiboken6/Shiboken6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/wheels/cmake/Shiboken6/Shiboken6Targets.cmake
-lib/wheels/cmake/Shiboken6Tools/Shiboken6ToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/wheels/cmake/Shiboken6Tools/Shiboken6ToolsTargets.cmake
 libdata/pkgconfig/shiboken6.pc
 shiboken6/include/autodecref.h
 shiboken6/include/basewrapper.h
@@ -48,7 +37,9 @@ shiboken6/include/sbkcontainer.h
 shiboken6/include/sbkconverter.h
 shiboken6/include/sbkcppstring.h
 shiboken6/include/sbkcpptonumpy.h
+shiboken6/include/sbkdestructorentry.h
 shiboken6/include/sbkenum.h
+shiboken6/include/sbkenum_p.h
 shiboken6/include/sbkerrors.h
 shiboken6/include/sbkfeature_base.h
 shiboken6/include/sbkmodule.h
@@ -73,4 +64,3 @@ shiboken6/include/threadstatesaver.h
 shiboken6/include/voidptr.h
 shiboken6/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so
 shiboken6/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VER%%
-shiboken6_generator/shiboken6

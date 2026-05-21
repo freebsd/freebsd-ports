@@ -24,6 +24,9 @@ USE_QT=		base connectivity declarative imageformats multimedia \
 		shadertools speech svg tools translations webchannel \
 		websockets
 
+SIP_ARGS=	--confirm-license \
+		--disable QAxContainer
+
 PORTSCOUT=	limit:^${_QT_VERSION:R}
 
 .include <bsd.port.pre.mk>
@@ -32,12 +35,19 @@ PORTSCOUT=	limit:^${_QT_VERSION:R}
 USE_QT+=	pdf
 PLIST_SUB+=	PDF=""
 .else
-SIP_ARGS+=	--disable QtPdf --disable QtPdfWidgets
+SIP_ARGS+=	--disable QtPdf \
+		--disable QtPdfWidgets
 PLIST_SUB+=	PDF="@comment "
 .endif
 
 post-extract:
 	${RM} -r ${WRKSRC}/pyuic/uic/port_v2
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|%%PYQT_DESIGNERDIR%%|${PYQT_DESIGNERDIR}|' \
+		-e 's|%%PYQT_QMLDIR%%|${PYQT_QMLDIR}|' \
+		${WRKSRC}/project.py
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \

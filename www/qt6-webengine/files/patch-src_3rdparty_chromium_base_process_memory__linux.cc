@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/memory_linux.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/process/memory_linux.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/process/memory_linux.cc
-@@ -28,6 +28,7 @@ namespace base {
+@@ -28,6 +28,7 @@ void __libc_free(void*);
  
  namespace base {
  
@@ -34,7 +34,7 @@
  // ScopedAllowBlocking() has private constructor and it can only be used in
  // friend classes/functions. Declaring a class is easier in this situation to
  // avoid adding more dependency to thread_restrictions.h because of the
-@@ -111,6 +116,7 @@ bool AdjustOOMScore(ProcessId process, int score) {
+@@ -111,6 +116,7 @@ bool AdjustOOMScoreHelper::AdjustOOMScore(ProcessId pr
  bool AdjustOOMScore(ProcessId process, int score) {
    return AdjustOOMScoreHelper::AdjustOOMScore(process, score);
  }

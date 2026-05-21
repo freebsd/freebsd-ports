@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/media_router/common/providers/cast/channel/enum_table.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/media_router/common/providers/cast/channel/enum_table.h.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/media_router/common/providers/cast/channel/enum_table.h
 @@ -368,7 +368,12 @@ class EnumTable {
  

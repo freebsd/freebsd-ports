@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/disk_cache/backend_experiment.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/net/disk_cache/backend_experiment.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/net/disk_cache/backend_experiment.h
-@@ -14,7 +14,7 @@ constexpr bool IsSimpleBackendEnabledByDefaultPlatform
+@@ -15,7 +15,7 @@ namespace disk_cache {
  // default.
  constexpr bool IsSimpleBackendEnabledByDefaultPlatform() {
    return BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) ||

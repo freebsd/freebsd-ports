@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
 @@ -140,7 +140,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]
@@ -20,12 +20,12 @@
      } else {
        assert(false, "Unsupported ARM OS")
      }
-@@ -467,7 +471,7 @@ static_library("bundled_minizip") {
+@@ -473,7 +477,7 @@ static_library("bundled_minizip") {
      ]
    }
  
--  if (is_apple || is_android || is_nacl) {
-+  if (is_apple || is_android || is_nacl || is_bsd) {
+-  if (is_apple || is_android) {
++  if (is_apple || is_android || is_bsd) {
      # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
      # use fopen, ftell, and fseek instead on these systems.
      defines = [ "USE_FILE32API" ]

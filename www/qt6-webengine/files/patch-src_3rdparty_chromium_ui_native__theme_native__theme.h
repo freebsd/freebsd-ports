@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/native_theme/native_theme.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/native_theme/native_theme.h.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/ui/native_theme/native_theme.h
-@@ -61,7 +61,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
+@@ -61,7 +61,7 @@ class COMPONENT_EXPORT(NATIVE_THEME) NativeTheme {
    // The part to be painted / sized.
    enum Part {
      kCheckbox,

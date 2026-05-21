@@ -19,6 +19,7 @@
 %%PYQT_SIPDIR%%/QtGraphs/qcustom3ditem.sip
 %%PYQT_SIPDIR%%/QtGraphs/qcustom3dlabel.sip
 %%PYQT_SIPDIR%%/QtGraphs/qcustom3dvolume.sip
+%%PYQT_SIPDIR%%/QtGraphs/qcustomseries.sip
 %%PYQT_SIPDIR%%/QtGraphs/qdatetimeaxis.sip
 %%PYQT_SIPDIR%%/QtGraphs/qgraphs3dnamespace.sip
 %%PYQT_SIPDIR%%/QtGraphs/qgraphstheme.sip

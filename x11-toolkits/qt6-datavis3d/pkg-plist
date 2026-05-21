@@ -180,6 +180,7 @@ lib/cmake/Qt6DataVisualization/Qt6DataVisualizationConfigVersionImpl.cmake
 lib/cmake/Qt6DataVisualization/Qt6DataVisualizationDependencies.cmake
 lib/cmake/Qt6DataVisualization/Qt6DataVisualizationTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6DataVisualization/Qt6DataVisualizationTargets.cmake
+lib/cmake/Qt6DataVisualization/Qt6DataVisualizationTargetsPrecheck.cmake
 lib/cmake/Qt6DataVisualization/Qt6DataVisualizationVersionlessAliasTargets.cmake
 lib/cmake/Qt6DataVisualization/Qt6DataVisualizationVersionlessTargets.cmake
 lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateAdditionalTargetInfo.cmake
@@ -188,6 +189,7 @@ lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateConfigVersion.c
 lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateDependencies.cmake
 lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateTargets.cmake
+lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6DataVisualizationPrivate/Qt6DataVisualizationPrivateVersionlessTargets.cmake
 lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlAdditionalTargetInfo.cmake
@@ -197,6 +199,7 @@ lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlConfigVersionImpl.cmake
 lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlDependencies.cmake
 lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlTargets.cmake
+lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlTargetsPrecheck.cmake
 lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6DataVisualizationQml/Qt6DataVisualizationQmlVersionlessTargets.cmake
 lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateAdditionalTargetInfo.cmake
@@ -205,6 +208,7 @@ lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateConfigVer
 lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateDependencies.cmake
 lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateTargets.cmake
+lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6DataVisualizationQmlPrivate/Qt6DataVisualizationQmlPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginAdditionalTargetInfo.cmake
@@ -213,6 +217,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargetsPrecheck.cmake
 %%QT_LIBDIR%%/libQt6DataVisualization.prl
 %%QT_LIBDIR%%/libQt6DataVisualization.so
 %%QT_LIBDIR%%/libQt6DataVisualization.so.6
@@ -243,7 +248,9 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargets.cmake
 %%QT_QMLDIR%%/QtDataVisualization/libdatavisualizationqmlplugin.so
 %%QT_QMLDIR%%/QtDataVisualization/plugins.qmltypes
 %%QT_QMLDIR%%/QtDataVisualization/qmldir
+%%QT_SBOMDIR%%/qtdatavisualization-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtdatavisualization-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtdatavisualization-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6DataVisualization.pc
 libdata/pkgconfig/Qt6DataVisualizationQml.pc
 %%QT_DATADIR%%/modules/DataVisualization.json

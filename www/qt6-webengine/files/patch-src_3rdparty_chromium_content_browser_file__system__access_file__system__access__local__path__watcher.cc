@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_local_path_watcher.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_local_path_watcher.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/content/browser/file_system_access/file_system_access_local_path_watcher.cc
 @@ -67,7 +67,7 @@ void FileSystemAccessLocalPathWatcher::Initialize(
        .type = scope().IsRecursive() ? FilePathWatcher::Type::kRecursive

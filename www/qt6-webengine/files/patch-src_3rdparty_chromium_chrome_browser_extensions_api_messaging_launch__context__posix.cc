@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/extensions/api/messaging/launch_context_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/chrome/browser/extensions/api/messaging/launch_context_posix.cc.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/chrome/browser/extensions/api/messaging/launch_context_posix.cc
 @@ -84,7 +84,7 @@ std::optional<LaunchContext::ProcessState> LaunchConte
  

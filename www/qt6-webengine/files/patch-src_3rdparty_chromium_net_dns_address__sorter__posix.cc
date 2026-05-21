@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/dns/address_sorter_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/net/dns/address_sorter_posix.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/net/dns/address_sorter_posix.cc
-@@ -32,6 +32,7 @@
+@@ -33,6 +33,7 @@
  #include "net/dns/netinet_in_var_ios.h"
  #else
  #include <netinet/in_var.h>

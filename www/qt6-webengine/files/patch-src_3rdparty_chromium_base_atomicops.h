@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/atomicops.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/atomicops.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/base/atomicops.h
-@@ -74,7 +74,11 @@ typedef intptr_t Atomic64;
+@@ -72,7 +72,11 @@ typedef intptr_t Atomic64;
  
  // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
  // Atomic64 routines below, depending on your architecture.

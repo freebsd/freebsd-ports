@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/config/gpu_finch_features.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_finch_features.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_finch_features.cc
 @@ -154,7 +154,8 @@ BASE_FEATURE(kAllowHardwareBufferUsageFlagsFromVulkanF
  // DefaultEnableGpuRasterization has launched on Mac, Windows, ChromeOS,

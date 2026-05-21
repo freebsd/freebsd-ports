@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui.cc
-@@ -175,11 +175,11 @@ void ManagementUI::GetLocalizedStrings(
+@@ -183,11 +183,11 @@ void ManagementUI::GetLocalizedStrings(
         IDS_MANAGEMENT_FILE_TRANSFER_VISIBLE_DATA},
        {kManagementReportFileEvents, IDS_MANAGEMENT_REPORT_FILE_EVENTS},
  #endif  // BUILDFLAG(IS_CHROMEOS)

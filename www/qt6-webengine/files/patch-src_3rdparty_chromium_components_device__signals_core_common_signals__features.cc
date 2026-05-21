@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/components/device_signals/core/common/signals_features.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/device_signals/core/common/signals_features.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/device_signals/core/common/signals_features.cc
-@@ -11,7 +11,7 @@ BASE_FEATURE(kAllowClientCertificateReportingForUsers,
-              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -55,7 +55,7 @@ bool IsDetectedAgentSignalCollectionEnabled() {
+ }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

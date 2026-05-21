@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/video_effects/video_effects_sandbox_hook_linux.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/services/video_effects/video_effects_sandbox_hook_linux.h.orig	2024-11-14 07:57:23 UTC
 +++ src/3rdparty/chromium/services/video_effects/video_effects_sandbox_hook_linux.h
 @@ -5,7 +5,13 @@
  #ifndef SERVICES_VIDEO_EFFECTS_VIDEO_EFFECTS_SANDBOX_HOOK_LINUX_H_

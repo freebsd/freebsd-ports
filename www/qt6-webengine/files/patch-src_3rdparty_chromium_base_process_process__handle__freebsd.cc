@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_handle_freebsd.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/process/process_handle_freebsd.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/process/process_handle_freebsd.cc
 @@ -3,6 +3,7 @@
  // found in the LICENSE file.
@@ -8,7 +8,7 @@
  
  #include <limits.h>
  #include <stddef.h>
-@@ -20,10 +21,13 @@ ProcessId GetParentProcessId(ProcessHandle process) {
+@@ -20,10 +21,13 @@ namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
    struct kinfo_proc info;

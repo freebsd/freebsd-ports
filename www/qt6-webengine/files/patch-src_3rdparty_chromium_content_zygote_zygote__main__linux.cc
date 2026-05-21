@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/zygote/zygote_main_linux.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/zygote/zygote_main_linux.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/content/zygote/zygote_main_linux.cc
 @@ -11,7 +11,9 @@
  #include <stddef.h>

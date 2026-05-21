@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc
-@@ -48,7 +48,7 @@ scoped_refptr<StaticBitmapImage> MakeAccelerated(
+@@ -47,7 +47,7 @@ scoped_refptr<StaticBitmapImage> MakeAccelerated(
  
    const auto paint_image = source->PaintImageForCurrentFrame();
    const auto image_info = paint_image.GetSkImageInfo();

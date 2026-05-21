@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_posix.cc
-@@ -124,7 +124,7 @@ namespace base {
+@@ -144,7 +144,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
  
  namespace base {
  
@@ -9,7 +9,7 @@
  // static
  int SysInfo::NumberOfProcessors() {
  #if BUILDFLAG(IS_MAC)
-@@ -180,7 +180,7 @@ int SysInfo::NumberOfProcessors() {
+@@ -200,7 +200,7 @@ int SysInfo::NumberOfProcessors() {
  
    return cached_num_cpus;
  }
@@ -18,7 +18,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -268,6 +268,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -286,6 +286,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

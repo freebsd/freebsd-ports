@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/angle/util/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/angle/util/BUILD.gn.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/third_party/angle/util/BUILD.gn
-@@ -311,7 +311,7 @@ foreach(is_shared_library,
+@@ -334,7 +334,7 @@ foreach(is_shared_library,
      ]
      libs = []
  

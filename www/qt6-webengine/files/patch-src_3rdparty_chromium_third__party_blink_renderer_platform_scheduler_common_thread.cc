@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/scheduler/common/thread.cc
-@@ -87,7 +87,7 @@ void Thread::CreateAndSetCompositorThread() {
-             "Compositor");
-       }));
+@@ -95,7 +95,7 @@ void Thread::CreateAndSetCompositorThread() {
+           // the program's lifetime once assigned.
+           base::Unretained(compositor_thread.get())));
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_OPENBSD)

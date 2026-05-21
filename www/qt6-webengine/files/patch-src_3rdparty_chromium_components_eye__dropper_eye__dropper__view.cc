@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/components/eye_dropper/eye_dropper_view.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/eye_dropper/eye_dropper_view.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/components/eye_dropper/eye_dropper_view.cc
-@@ -208,7 +208,7 @@ EyeDropperView::EyeDropperView(gfx::NativeView parent,
+@@ -215,7 +215,7 @@ EyeDropperView::EyeDropperView(gfx::NativeView parent,
    // EyeDropper/WidgetDelegate.
-   set_owned_by_client();
+   set_owned_by_client(OwnedByClientPassKey());
    SetPreferredSize(GetSize());
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

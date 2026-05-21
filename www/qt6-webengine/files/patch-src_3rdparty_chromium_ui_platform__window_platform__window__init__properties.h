@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/platform_window/platform_window_init_properties.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/platform_window/platform_window_init_properties.h.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/ui/platform_window/platform_window_init_properties.h
-@@ -56,7 +56,7 @@ class ScenicWindowDelegate;
+@@ -56,7 +56,7 @@ class WorkspaceExtensionDelegate;
  class ScenicWindowDelegate;
  #endif
  
@@ -9,7 +9,7 @@
  class X11ExtensionDelegate;
  #endif
  
-@@ -121,7 +121,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -120,7 +120,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
  
    PlatformWindowShadowType shadow_type = PlatformWindowShadowType::kDefault;
  

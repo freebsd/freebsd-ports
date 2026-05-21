@@ -12,7 +12,8 @@ WWW=		https://wiki.qt.io/Qt_for_Python
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
+		${PYTHON_PKGNAMEPREFIX}shiboken6-tools>=${PYSIDE6_VERSION}:devel/shiboken6-tools@${PY_FLAVOR}
 LIB_DEPENDS=	libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR} \
 		libxkbcommon.so:x11/libxkbcommon
 
@@ -20,8 +21,8 @@ USES=		cmake gl llvm:lib,min=17,noexport python qt:6 tar:xz
 USE_GL=		opengl
 USE_LDCONFIG=	${PREFIX}/PySide6
 USE_PYTHON=	flavors
-USE_QT=		3d base charts connectivity datavis3d declarative doc graphs \
-		httpserver imageformats location multimedia networkauth \
+USE_QT=		3d base charts canvaspainter connectivity datavis3d declarative \
+		doc graphs httpserver imageformats location multimedia networkauth \
 		positioning quick3d quicktimeline remoteobjects scxml sensors \
 		serialbus serialport shadertools speech svg tools translations \
 		webchannel websockets

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_iterator_openbsd.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/process/process_iterator_openbsd.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/process/process_iterator_openbsd.cc
 @@ -6,6 +6,9 @@
  
@@ -10,7 +10,7 @@
  #include <sys/sysctl.h>
  
  #include "base/logging.h"
-@@ -17,12 +20,13 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -17,12 +20,13 @@ namespace base {
  ProcessIterator::ProcessIterator(const ProcessFilter* filter)
      : filter_(filter) {
    int mib[] = {

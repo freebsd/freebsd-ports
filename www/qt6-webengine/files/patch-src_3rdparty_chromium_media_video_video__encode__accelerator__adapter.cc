@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/video/video_encode_accelerator_adapter.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/media/video/video_encode_accelerator_adapter.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/media/video/video_encode_accelerator_adapter.cc
-@@ -463,7 +463,7 @@ void VideoEncodeAcceleratorAdapter::InitializeOnAccele
+@@ -467,7 +467,7 @@ void VideoEncodeAcceleratorAdapter::InitializeOnAccele
  
    auto format = PIXEL_FORMAT_I420;
    auto storage_type = VideoEncodeAccelerator::Config::StorageType::kShmem;

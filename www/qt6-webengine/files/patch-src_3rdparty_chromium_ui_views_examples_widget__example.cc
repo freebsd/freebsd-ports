@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/examples/widget_example.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/views/examples/widget_example.cc.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/ui/views/examples/widget_example.cc
-@@ -50,7 +50,7 @@ void WidgetExample::CreateExampleView(View* container)
+@@ -51,7 +51,7 @@ void WidgetExample::CreateExampleView(View* container)
    modal_button->SetCallback(
        base::BindRepeating(&WidgetExample::CreateDialogWidget,
                            base::Unretained(this), modal_button, true));

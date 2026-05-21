@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_control_list.cc
-@@ -831,7 +831,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -843,7 +843,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif BUILDFLAG(IS_FUCHSIA)
    return kOsFuchsia;

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/aura/screen_ozone.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/aura/screen_ozone.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/aura/screen_ozone.cc
 @@ -107,7 +107,7 @@ display::Display ScreenOzone::GetPrimaryDisplay() cons
    return platform_screen_->GetPrimaryDisplay();

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/webui/web_ui_util.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/base/webui/web_ui_util.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/ui/base/webui/web_ui_util.cc
-@@ -45,7 +45,7 @@ std::string GetFontFamilyMd() {
+@@ -44,7 +44,7 @@ std::string GetFontFamilyMd() {
  constexpr float kMaxScaleFactor = 1000.0f;
  
  std::string GetFontFamilyMd() {
@@ -9,7 +9,7 @@
    return "Roboto, " + GetFontFamily();
  #else
    return GetFontFamily();
-@@ -220,7 +220,7 @@ std::string GetFontFamily() {
+@@ -219,7 +219,7 @@ std::string GetFontFamily() {
  std::string GetFontFamily() {
    std::string font_family = l10n_util::GetStringUTF8(IDS_WEB_FONT_FAMILY);
  

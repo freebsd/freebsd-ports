@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/font_render_params.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/gfx/font_render_params.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/gfx/font_render_params.h
-@@ -115,7 +115,7 @@ FontRenderParams GetFontRenderParams(const FontRenderP
+@@ -115,7 +115,7 @@ COMPONENT_EXPORT(GFX)
  FontRenderParams GetFontRenderParams(const FontRenderParamsQuery& query,
                                       std::string* family_out);
  
@@ -9,7 +9,7 @@
  // Clears GetFontRenderParams()'s cache. Intended to be called by tests that are
  // changing Fontconfig's configuration.
  COMPONENT_EXPORT(GFX) void ClearFontRenderParamsCacheForTest();
-@@ -125,7 +125,7 @@ COMPONENT_EXPORT(GFX) float GetFontRenderParamsDeviceS
+@@ -125,7 +125,7 @@ COMPONENT_EXPORT(GFX) void ClearFontRenderParamsCacheF
  COMPONENT_EXPORT(GFX) float GetFontRenderParamsDeviceScaleFactor();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

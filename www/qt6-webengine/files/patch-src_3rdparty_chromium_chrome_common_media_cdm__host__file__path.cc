@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/common/media/cdm_host_file_path.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/chrome/common/media/cdm_host_file_path.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/chrome/common/media/cdm_host_file_path.cc
-@@ -90,7 +90,7 @@ void AddCdmHostFilePaths(
+@@ -91,7 +91,7 @@ void AddCdmHostFilePaths(
    cdm_host_file_paths->emplace_back(chrome_framework_path,
                                      chrome_framework_sig_path);
  

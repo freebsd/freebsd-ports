@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/extensions/browser/api/networking_private/networking_private_delegate_factory.cc
 @@ -12,7 +12,7 @@
  

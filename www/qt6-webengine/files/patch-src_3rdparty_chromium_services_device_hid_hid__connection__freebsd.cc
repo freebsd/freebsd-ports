@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/hid/hid_connection_freebsd.cc.orig	2025-09-01 08:52:32 UTC
+--- src/3rdparty/chromium/services/device/hid/hid_connection_freebsd.cc.orig	2025-01-19 19:00:05 UTC
 +++ src/3rdparty/chromium/services/device/hid/hid_connection_freebsd.cc
 @@ -0,0 +1,240 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.

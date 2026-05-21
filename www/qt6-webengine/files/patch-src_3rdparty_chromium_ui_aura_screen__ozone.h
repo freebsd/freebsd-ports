@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/aura/screen_ozone.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/aura/screen_ozone.h.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/aura/screen_ozone.h
 @@ -44,7 +44,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
    display::Display GetDisplayMatching(

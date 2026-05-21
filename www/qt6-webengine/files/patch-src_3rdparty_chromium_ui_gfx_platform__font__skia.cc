@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/platform_font_skia.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/gfx/platform_font_skia.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/ui/gfx/platform_font_skia.cc
 @@ -29,7 +29,7 @@
  #include "ui/gfx/system_fonts_win.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -167,7 +167,7 @@ void PlatformFontSkia::EnsuresDefaultFontIsInitialized
+@@ -170,7 +170,7 @@ void PlatformFontSkia::EnsuresDefaultFontIsInitialized
    weight = system_font.GetWeight();
  #endif  // BUILDFLAG(IS_WIN)
  

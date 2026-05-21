@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/public/mojom/BUILD.gn.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/services/device/public/mojom/BUILD.gn.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/services/device/public/mojom/BUILD.gn
-@@ -97,7 +97,7 @@ mojom("device_service") {
+@@ -95,7 +95,7 @@ mojom("device_service") {
    enable_js_fuzzing = false
  
    enabled_features = []

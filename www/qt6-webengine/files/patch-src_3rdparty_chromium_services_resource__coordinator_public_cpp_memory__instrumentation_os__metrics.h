@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2025-06-17 06:32:04 UTC
 +++ src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
-@@ -57,7 +57,7 @@ class COMPONENT_EXPORT(
+@@ -65,7 +65,7 @@ class COMPONENT_EXPORT(
    static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(
        base::ProcessHandle);
  
@@ -9,7 +9,7 @@
    static void SetProcSmapsForTesting(FILE*);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
          // BUILDFLAG(IS_ANDROID)
-@@ -79,7 +79,7 @@ class COMPONENT_EXPORT(
+@@ -87,7 +87,7 @@ class COMPONENT_EXPORT(
    GetMemoryInfo(base::ProcessHandle handle);
  #endif  // !BUILDFLAG(IS_APPLE)
  

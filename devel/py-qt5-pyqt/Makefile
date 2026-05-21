@@ -24,12 +24,23 @@ USE_QT=		connectivity core dbus declarative designer gui help imageformats locat
 		widgets x11extras xml xmlpatterns \
 		buildtools:build qmake:build
 
-SIP_ARGS=	--disable QtWebKit --disable QtWebKitWidgets
+SIP_ARGS=	--confirm-license \
+		--disable Enginio \
+		--disable QAxContainer \
+		--disable QtWebKit \
+		--disable QtWebKitWidgets \
+		--disable QtWinExtras
 
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
 
 post-extract:
 	${RM} -r ${WRKSRC}/pyuic/uic/port_v2
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|%%PYQT_DESIGNERDIR%%|${PYQT_DESIGNERDIR}|' \
+		-e 's|%%PYQT_QMLDIR%%|${PYQT_QMLDIR}|' \
+		${WRKSRC}/project.py
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \

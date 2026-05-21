@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/sandbox/policy/switches.h.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/sandbox/policy/switches.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/sandbox/policy/switches.h
-@@ -23,7 +23,8 @@ SANDBOX_POLICY_EXPORT extern const char kNoSandbox[];
+@@ -24,7 +24,8 @@ SANDBOX_POLICY_EXPORT extern const char kDisableSetuid
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxAllowSysVShm[];
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxFailuresFatal[];
  SANDBOX_POLICY_EXPORT extern const char kNoSandbox[];

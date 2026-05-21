@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.cc
 @@ -23,8 +23,10 @@
  #include "build/build_config.h"
@@ -11,7 +11,7 @@
  #include "sandbox/linux/services/credentials.h"
  #include "sandbox/linux/services/namespace_sandbox.h"
  #include "sandbox/linux/suid/client/setuid_sandbox_host.h"
-@@ -42,6 +44,7 @@ namespace {
+@@ -42,6 +44,7 @@ namespace content {
  
  namespace {
  
@@ -27,7 +27,7 @@
  
  }  // namespace
  
-@@ -73,9 +77,13 @@ ZygoteHostImpl::ZygoteHostImpl()
+@@ -73,9 +77,13 @@ ZygoteHost* ZygoteHost::GetInstance() {
  }
  
  ZygoteHostImpl::ZygoteHostImpl()
@@ -41,7 +41,7 @@
        sandbox_binary_(),
        zygote_pids_lock_(),
        zygote_pids_() {}
-@@ -88,6 +96,7 @@ void ZygoteHostImpl::Init(const base::CommandLine& com
+@@ -88,6 +96,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
  }
  
  void ZygoteHostImpl::Init(const base::CommandLine& command_line) {

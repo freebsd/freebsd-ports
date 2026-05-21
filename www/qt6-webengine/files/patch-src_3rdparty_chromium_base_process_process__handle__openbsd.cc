@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_handle_openbsd.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/base/process/process_handle_openbsd.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/base/process/process_handle_openbsd.cc
 @@ -3,17 +3,25 @@
  // found in the LICENSE file.

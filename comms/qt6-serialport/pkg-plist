@@ -20,6 +20,7 @@ lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersionImpl.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortDependencies.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake
+lib/cmake/Qt6SerialPort/Qt6SerialPortTargetsPrecheck.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessAliasTargets.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake
 lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateAdditionalTargetInfo.cmake
@@ -28,6 +29,7 @@ lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateConfigVersion.cmake
 lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateDependencies.cmake
 lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateTargets.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6SerialPort.prl
@@ -37,6 +39,8 @@ lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6serialport_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_serialport.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_serialport_private.pri
+%%QT_SBOMDIR%%/qtserialport-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtserialport-%%FULLVER%%.spdx
+%%QT_SBOMDIR%%/qtserialport-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6SerialPort.pc
 %%QT_DATADIR%%/modules/SerialPort.json

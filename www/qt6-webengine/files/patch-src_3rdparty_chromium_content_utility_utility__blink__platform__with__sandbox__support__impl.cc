@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 @@ -9,7 +9,7 @@
  
@@ -9,7 +9,7 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #elif BUILDFLAG(IS_WIN)
  #include "content/child/child_process_sandbox_support_impl_win.h"
-@@ -19,7 +19,7 @@ UtilityBlinkPlatformWithSandboxSupportImpl::
+@@ -19,7 +19,7 @@ namespace content {
  
  UtilityBlinkPlatformWithSandboxSupportImpl::
      UtilityBlinkPlatformWithSandboxSupportImpl() {
@@ -18,7 +18,7 @@
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -40,7 +40,7 @@ UtilityBlinkPlatformWithSandboxSupportImpl::GetSandbox
+@@ -40,7 +40,7 @@ UtilityBlinkPlatformWithSandboxSupportImpl::
  blink::WebSandboxSupport*
  UtilityBlinkPlatformWithSandboxSupportImpl::GetSandboxSupport() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

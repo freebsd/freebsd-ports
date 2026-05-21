@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/render_text_api_fuzzer.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/ui/gfx/render_text_api_fuzzer.cc.orig	2025-01-15 09:18:26 UTC
 +++ src/3rdparty/chromium/ui/gfx/render_text_api_fuzzer.cc
 @@ -19,7 +19,7 @@
  #include "ui/gfx/font_util.h"

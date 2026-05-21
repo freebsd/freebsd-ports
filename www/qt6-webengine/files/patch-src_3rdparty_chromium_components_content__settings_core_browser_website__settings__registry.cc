@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/content_settings/core/browser/website_settings_registry.cc.orig	2025-08-15 18:30:00 UTC
+--- src/3rdparty/chromium/components/content_settings/core/browser/website_settings_registry.cc.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/components/content_settings/core/browser/website_settings_registry.cc
 @@ -66,7 +66,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
  #if BUILDFLAG(IS_WIN)
