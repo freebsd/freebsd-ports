@@ -1,6 +1,5 @@
 PORTNAME=	eaglemode
-PORTVERSION=	0.96.3
-PORTREVISION=	4
+PORTVERSION=	0.96.4
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c++11-lib jpeg gnome perl5 \
-		pkgconfig tar:bzip2 xorg
+		pkgconfig tar:xz xorg
 USE_PERL5=	build
 USE_XORG=	x11
 SUB_FILES=	eaglemode.sh
@@ -41,7 +40,7 @@ XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 XINE_VARS=		EMAV+=xine
 RSVG_USE=		GNOME=librsvg2
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
-PDF_USE=		GNOME=gtk20
+PDF_USE=		GNOME=gtk30
 VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 VLC_VARS=		EMAV+=vlc
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
