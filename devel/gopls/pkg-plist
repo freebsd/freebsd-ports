@@ -12,6 +12,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/design.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/implementation.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating-interactive-refactoring.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/editor/emacs.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/editor/helix.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/editor/sublime.md
