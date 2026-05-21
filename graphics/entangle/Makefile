@@ -8,8 +8,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Digital camera tethered control and capture program
 WWW=		https://www.entangle-photo.org/
 
-BROKEN=		Fails to build, ld: error: undefined symbol: g_irepository_require
-
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc \
@@ -22,7 +20,7 @@ LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>0:devel/py-libpeas1@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gnome gstreamer meson pkgconfig python tar:xz xorg
-USE_GNOME=	cairo gtk30 intltool introspection
+USE_GNOME=	cairo gtk30 intltool
 USE_GSTREAMER=	core
 USE_XORG=	xext
 GLIB_SCHEMAS=	org.entangle-photo.manager.gschema.xml
