@@ -1,5 +1,6 @@
 Antigravity CLI is a command-line tool 'agy' for interacting with the Google's
-
 Antigravity AI platform.
+
+agy is a closed source Linux GoLang binary working through Linuxlator.
 
 It replaces the Google's Gemini CLI (misc/gemini-cli) application.
