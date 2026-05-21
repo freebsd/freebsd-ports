@@ -1295,6 +1295,7 @@
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-cloudflare
     SUBDIR += rubygem-connection_pool
+    SUBDIR += rubygem-connection_pool-gitlab
     SUBDIR += rubygem-devfile
     SUBDIR += rubygem-docker-api
     SUBDIR += rubygem-dogapi
