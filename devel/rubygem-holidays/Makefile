@@ -1,5 +1,5 @@
 PORTNAME=	holidays
-PORTVERSION=	9.2.0
+PORTVERSION=	10.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,8 @@ WWW=		https://github.com/holidays/holidays
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem shebangfix
+USES=		gem
 
 NO_ARCH=	yes
-
-SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>
