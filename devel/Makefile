@@ -7545,6 +7545,7 @@
     SUBDIR += rubygem-forwardable
     SUBDIR += rubygem-forwardable-extended
     SUBDIR += rubygem-fugit
+    SUBDIR += rubygem-freezolite
     SUBDIR += rubygem-fugit-gitlab
     SUBDIR += rubygem-fuubar
     SUBDIR += rubygem-fuzzy_match
@@ -8130,6 +8131,7 @@
     SUBDIR += rubygem-repl_type_completor
     SUBDIR += rubygem-request_store
     SUBDIR += rubygem-request_store15
+    SUBDIR += rubygem-require-hooks
     SUBDIR += rubygem-require_all
     SUBDIR += rubygem-resque
     SUBDIR += rubygem-resque-scheduler
