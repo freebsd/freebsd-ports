@@ -1,24 +1,24 @@
---- Makefile.in.orig	2025-06-24 07:57:05 UTC
+--- Makefile.in.orig	2026-05-18 10:22:39 UTC
 +++ Makefile.in
-@@ -5974,7 +5974,7 @@ ADOCFILES_COMMON = man-common/bugreports.adoc man-comm
- 	man-common/footer-lib.adoc man-common/help-version.adoc \
+@@ -6105,7 +6105,7 @@ ADOCFILES_COMMON = man-common/annotate.adoc man-common
+ 	man-common/help-version.adoc man-common/hyperlink.adoc \
  	man-common/in-bytes.adoc man-common/manpage-stub.adoc \
- 	man-common/translation.adoc
--MANPAGES = lib/terminal-colors.d.5 $(am__append_20) $(am__append_31) \
-+MANPAGES = $(am__append_20) $(am__append_31) \
- 	$(am__append_55) $(am__append_89) $(am__append_106) \
- 	$(am__append_109) $(am__append_112) $(am__append_115) \
- 	$(am__append_118) $(am__append_121) $(am__append_124) \
-@@ -6093,7 +6093,7 @@ DISTCLEANFILES = po-man/util-linux-man.pot $(POMAN_PO_
- 	$(am__append_533) $(am__append_720) $(PATHFILES) \
+ 	man-common/env-smartcols.adoc man-common/translation.adoc
+-MANPAGES = lib/terminal-colors.d.5 $(am__append_18) $(am__append_29) \
++MANPAGES = $(am__append_18) $(am__append_29) \
+ 	$(am__append_53) $(am__append_88) $(am__append_105) \
+ 	$(am__append_108) $(am__append_111) $(am__append_114) \
+ 	$(am__append_117) $(am__append_120) $(am__append_123) \
+@@ -6225,7 +6225,7 @@ DISTCLEANFILES = po-man/util-linux-man.pot $(POMAN_PO_
+ 	$(am__append_528) $(am__append_728) $(PATHFILES) \
  	$(EXTRA_LTLIBRARIES)
  DISTCLEANFILES = po-man/util-linux-man.pot $(POMAN_PO_FILES)
--SUBDIRS = po $(am__append_52) $(am__append_75) $(am__append_86) \
-+SUBDIRS = $(am__append_52) $(am__append_75) $(am__append_86) \
- 	$(am__append_102)
+-SUBDIRS = po $(am__append_50) $(am__append_74) $(am__append_85) \
++SUBDIRS = $(am__append_50) $(am__append_74) $(am__append_85) \
+ 	$(am__append_101)
  RCS_FIND_IGNORE = \( -name SCCS -o -name BitKeeper -o -name .svn -o \
  		-name CVS -o -name .pc -o -name .hg -o -name .git \) -prune -o
-@@ -7260,7 +7260,7 @@ test_islocal_CPPFLAGS = -DTEST_PROGRAM $(AM_CPPFLAGS)
+@@ -7417,7 +7417,7 @@ test_islocal_CPPFLAGS = -DTEST_PROGRAM $(AM_CPPFLAGS)
  @BUILD_RENAME_TRUE@rename_LDADD = $(LDADD) libcommon.la
  @BUILD_GETOPT_TRUE@getopt_SOURCES = misc-utils/getopt.c
  @BUILD_GETOPT_TRUE@getopt_LDADD = $(LDADD) libcommon.la
