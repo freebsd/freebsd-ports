@@ -5,6 +5,7 @@ bin/comfyui
 %%DATADIR%%/LICENSE
 %%DATADIR%%/QUANTIZATION.md
 %%DATADIR%%/README.md
+%%DATADIR%%/SECURITY.md
 %%DATADIR%%/alembic.ini
 %%DATADIR%%/alembic_db/README.md
 %%DATADIR%%/alembic_db/env.py
@@ -195,6 +196,7 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/audio/autoencoder.py
 %%DATADIR%%/comfy/ldm/audio/dit.py
 %%DATADIR%%/comfy/ldm/audio/embedders.py
+%%DATADIR%%/comfy/ldm/audio/vae_sa3.py
 %%DATADIR%%/comfy/ldm/aura/mmdit.py
 %%DATADIR%%/comfy/ldm/cascade/common.py
 %%DATADIR%%/comfy/ldm/cascade/controlnet.py
@@ -287,6 +289,10 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/modules/sdpose.py
 %%DATADIR%%/comfy/ldm/modules/sub_quadratic_attention.py
 %%DATADIR%%/comfy/ldm/modules/temporal_ae.py
+%%DATADIR%%/comfy/ldm/moge/geometry.py
+%%DATADIR%%/comfy/ldm/moge/model.py
+%%DATADIR%%/comfy/ldm/moge/modules.py
+%%DATADIR%%/comfy/ldm/moge/panorama.py
 %%DATADIR%%/comfy/ldm/omnigen/omnigen2.py
 %%DATADIR%%/comfy/ldm/pixart/blocks.py
 %%DATADIR%%/comfy/ldm/pixart/pixartms.py
@@ -389,6 +395,7 @@ bin/comfyui
 %%DATADIR%%/comfy/text_encoders/qwen35_tokenizer/vocab.json
 %%DATADIR%%/comfy/text_encoders/qwen_image.py
 %%DATADIR%%/comfy/text_encoders/qwen_vl.py
+%%DATADIR%%/comfy/text_encoders/sa3.py
 %%DATADIR%%/comfy/text_encoders/sa_t5.py
 %%DATADIR%%/comfy/text_encoders/sam3_clip.py
 %%DATADIR%%/comfy/text_encoders/sd2_clip.py
@@ -464,6 +471,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/apis/bfl.py
 %%DATADIR%%/comfy_api_nodes/apis/bria.py
 %%DATADIR%%/comfy_api_nodes/apis/bytedance.py
+%%DATADIR%%/comfy_api_nodes/apis/bytedance_llm.py
 %%DATADIR%%/comfy_api_nodes/apis/elevenlabs.py
 %%DATADIR%%/comfy_api_nodes/apis/gemini.py
 %%DATADIR%%/comfy_api_nodes/apis/grok.py
@@ -493,6 +501,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/nodes_bfl.py
 %%DATADIR%%/comfy_api_nodes/nodes_bria.py
 %%DATADIR%%/comfy_api_nodes/nodes_bytedance.py
+%%DATADIR%%/comfy_api_nodes/nodes_bytedance_llm.py
 %%DATADIR%%/comfy_api_nodes/nodes_elevenlabs.py
 %%DATADIR%%/comfy_api_nodes/nodes_gemini.py
 %%DATADIR%%/comfy_api_nodes/nodes_grok.py
@@ -511,8 +520,8 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/nodes_recraft.py
 %%DATADIR%%/comfy_api_nodes/nodes_reve.py
 %%DATADIR%%/comfy_api_nodes/nodes_rodin.py
-%%DATADIR%%/comfy_api_nodes/nodes_sonilo.py
 %%DATADIR%%/comfy_api_nodes/nodes_runway.py
+%%DATADIR%%/comfy_api_nodes/nodes_sonilo.py
 %%DATADIR%%/comfy_api_nodes/nodes_sora.py
 %%DATADIR%%/comfy_api_nodes/nodes_stability.py
 %%DATADIR%%/comfy_api_nodes/nodes_topaz.py
@@ -606,6 +615,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_model_merging.py
 %%DATADIR%%/comfy_extras/nodes_model_merging_model_specific.py
 %%DATADIR%%/comfy_extras/nodes_model_patch.py
+%%DATADIR%%/comfy_extras/nodes_moge.py
 %%DATADIR%%/comfy_extras/nodes_morphology.py
 %%DATADIR%%/comfy_extras/nodes_nag.py
 %%DATADIR%%/comfy_extras/nodes_nop.py
@@ -686,6 +696,7 @@ bin/comfyui
 %%DATADIR%%/models/diffusion_models
 %%DATADIR%%/models/embeddings
 %%DATADIR%%/models/frame_interpolation/put_frame_interpolation_models_here
+%%DATADIR%%/models/geometry_estimation/put_geometry_estimation_models_here
 %%DATADIR%%/models/gligen
 %%DATADIR%%/models/hypernetworks
 %%DATADIR%%/models/latent_upscale_models
