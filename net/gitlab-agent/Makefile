@@ -15,15 +15,15 @@ BUILD_DEPENDS=	git>=0:devel/git \
 		golangci-lint>=0:devel/golangci-lint
 
 USES=		go:modules
-GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v18
+GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v19
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
 GO_TARGET=     ./cmd/kas
 GO_BUILDFLAGS= -tags="tracer_static,tracer_static_jaeger" \
 		-ldflags=" \
-		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16/cmd.Version=v${PORTVERSION}' \
-		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16/cmd.Commit=${GL_TAGNAME:C/^(........).*/\1/}' \
-		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16/cmd.BuildTime=${_BUILD_DATE}'"
+		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v19/cmd.Version=v${PORTVERSION}' \
+		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v19/cmd.Commit=${GL_TAGNAME:C/^(........).*/\1/}' \
+		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v19/cmd.BuildTime=${_BUILD_DATE}'"
 
 PLIST_FILES=	bin/kas
 
