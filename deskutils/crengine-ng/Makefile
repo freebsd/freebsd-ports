@@ -1,5 +1,6 @@
 PORTNAME=	crengine-ng
 DISTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	kenrap@FreeBSD.org
