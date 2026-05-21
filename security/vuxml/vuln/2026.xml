@@ -1,3 +1,263 @@
+  <vuln vid="37ab0cbc-54b7-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- Incorrect libcap_net limitation list manipulation</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>In the case of the cap_net service, when a key present in the
+	  old limit was omitted from the new limit, the missing key was treated
+	  as "allow any" instead of being rejected.</p>
+	<h1>Impact:</h1>
+	  <p>In certain scenarios, an application that had previously
+	  restricted a subset of network operations could ask for a new limit
+	  that extended the permissions of the process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45254</cvename>
+      <freebsdsa>SA-26:24.cap_net</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="039c0ab0-54b7-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- Remote code execution via installer Wi-Fi access point scans</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When bsdinstall or bsdconfig are prompted to scan for nearby
+	  Wi-Fi networks, they build up a list of network names and use
+	  bsddialog(1) to prompt the user to select a network.  This is
+	  implemented using a shell script, and the code which handled network
+	  names was not careful to prevent expansion by the shell.  As a
+	  result, a suitably crafted network name can be used to execute
+	  commands via a subshell.</p>
+	<h1>Impact:</h1>
+	  <p>The problem can be exploited to execute code as root on the
+	  system running bsdinstall or bsdconfig.  The attacker would need
+	  to create an access point with a specially crafted name and be
+	  within range of a Wi-Fi scan.  Note that bsdinstall and bsdconfig
+	  are vulnerable as soon as the user prompts them to scan for nearby
+	  networks; they do not need to actually select the malicious
+	  network.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45255</cvename>
+      <freebsdsa>SA-26:23.bsdinstall</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="90fe1784-54b6-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- select(2) file descriptor set overflow causes stack overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>libcasper(3) communicates with helper processes via UNIX domain
+	  sockets, and uses the select(2) system call to wait for data to
+	  become available.  However, it does not verify that its socket
+	  descriptor fits within select(2)'s descriptor set size limit of
+	  FD_SETSIZE (1024).</p>
+	<h1>Impact:</h1>
+	  <p>An attacker able to cause an application using libcasper(3) to
+	  allocate large file descriptors, e.g., by opening many descriptors
+	  and executing a program which is not careful to close them upon
+	  startup, may trigger stack corruption.  If the target application
+	  runs with setuid root privileges, this could be used to escalate
+	  local privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-39461</cvename>
+      <freebsdsa>SA-26:22.libcasper</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c96da5e-54b6-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- Missing validation in ptrace(PT_SC_REMOTE)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>ptrace(PT_SC_REMOTE) failed to properly validate parameters for
+	  the syscall(2) and __syscall(2) meta-system calls.  As a result, a
+	  user with the ability to debug a process may trigger arbitrary code
+	  execution in the kernel, even if the target process has no special
+	  privileges.</p>
+	<h1>Impact:</h1>
+	  <p>The missing validation allows an unprivileged local user to
+	  escalate privileges, potentially gaining full control of the affected
+	  system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45253</cvename>
+      <freebsdsa>SA-26:21.ptrace</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3cc34467-54b6-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- Heap overflow in FUSE_LISTXATTR</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When a fusefs file system implements extended attributes, the
+	  kernel may send a FUSE_LISTXATTR message to the userspace daemon
+	  to retrieve the list of extended attributes for a given file.  The
+	  FUSE protocol requires the daemon to return a packed list of
+	  NUL-terminated strings.  The fusefs kernel module calls strlen()
+	  on this daemon-supplied buffer without first verifying that the
+	  entire list is NUL-terminated.</p>
+	<h1>Impact:</h1>
+	  <p>If a malicious daemon sends a non-NUL-terminated list, the
+	  fusefs kernel module may read beyond the end of one heap-allocated
+	  buffer and potentially write beyond the end of a second buffer.  A
+	  malicious daemon could disclose up to 253 bytes of kernel heap
+	  memory, or it could inject up to 250 attacker-controlled bytes into
+	  unallocated kernel heap space.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45252</cvename>
+      <freebsdsa>SA-26:20.fusefs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee21f41f-54b5-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- Kernel use-after-free via file descriptor syscalls</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>A file descriptor can be closed while a thread is blocked in a
+	  poll(2) or select(2) call waiting for that descriptor.  Because the
+	  blocked thread does not hold a reference to the underlying object,
+	  this closure may result in the object being freed while the thread
+	  remains blocked.  In this situation, the kernel must remove the
+	  blocked thread from the per-object wait queue prior to freeing the
+	  object.</p>
+	  <p>In the case of some file descriptor types, the kernel failed to
+	  unlink blocked threads from the object before freeing it.  When the
+	  blocked thread is subsequently woken, it accesses memory that has
+	  already been freed resulting in a use-after-free vulnerability.</p>
+	<h1>Impact:</h1>
+	  <p>The use-after-free vulnerability may be triggered by an
+	  unprivileged local user and can be exploited to obtain superuser
+	  privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45251</cvename>
+      <freebsdsa>SA-26:19.file</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="39728e41-54b5-11f1-8d7a-bc241121aa0a">
+    <topic>FreeBSD -- Stack buffer overflow via setcred(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_9</lt></range>
+	<range><ge>14.4</ge><lt>14.4_5</lt></range>
+	<range><ge>14.3</ge><lt>14.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The setcred(2) system call is only available to privileged
+	  users.  However, before the privilege level of the caller is checked,
+	  the user-supplied list of supplementary groups is copied into a
+	  fixed-size kernel stack buffer without first validating its length.
+	  If the supplied list exceeds the capacity of that buffer, a stack
+	  buffer overflow occurs.</p>
+	<h1>Impact:</h1>
+	  <p>Because the bounds check on the supplementary groups list occurs
+	  after the kernel stack buffer has already been written, an unprivileged
+	  local user may trigger the overflow without holding any special
+	  privilege.  Successful exploitation may allow an attacker to execute
+	  arbitrary code in the context of the kernel, allowing an unprivileged
+	  local user to gain elevated privileges on the affected system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45250</cvename>
+      <freebsdsa>SA-26:18.setcred</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ed77d8e-53bb-11f1-b339-3497f65b111b">
     <topic>nginx-devel -- multiple vulnerabilities</topic>
     <affects>
