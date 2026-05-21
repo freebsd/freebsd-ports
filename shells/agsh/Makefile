@@ -1,5 +1,5 @@
 PORTNAME=	agsh
-DISTVERSION=	0.24.1
+DISTVERSION=	0.26.0
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -182,6 +182,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		indexmap-2.14.0 \
+		infer-0.19.0 \
 		ipnet-2.12.0 \
 		iri-string-0.7.12 \
 		is-docker-0.2.0 \
