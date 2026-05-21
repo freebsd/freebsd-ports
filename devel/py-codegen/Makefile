@@ -11,7 +11,10 @@ WWW=		https://github.com/andreif/codegen
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist
 
 .include <bsd.port.mk>
