@@ -1,5 +1,5 @@
-TIMESTAMP = 1775320601
-SHA256 (numpy-2.4/numpy-2.4.4.tar.gz) = 2d390634c5182175533585cc89f3608a4682ccb173cc9bb940b2881c8d6f8fa0
-SIZE (numpy-2.4/numpy-2.4.4.tar.gz) = 20731587
+TIMESTAMP = 1779296811
+SHA256 (numpy-2.4/numpy-2.4.6.tar.gz) = f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda
+SIZE (numpy-2.4/numpy-2.4.6.tar.gz) = 20735807
 SHA256 (numpy-2.4/numpy-html.zip) = 905f823345774ce868c33cb2ccfc0ef4ca3717df0ec45eb8c18429c8763eadb0
 SIZE (numpy-2.4/numpy-html.zip) = 34959264
