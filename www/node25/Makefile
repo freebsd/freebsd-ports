@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=	libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_SSL option enabled
+DEPRECATED=	Node.js 25.* will reach its EoL on 2026-06-01. Use Node.js 26.* (www/node26) instead
+EXPIRATION_DATE=2026-06-30
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	objdump:devel/binutils
