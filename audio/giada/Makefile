@@ -1,5 +1,6 @@
 PORTNAME=	giada
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -7,12 +8,15 @@ COMMENT=	Hardcore loop machine
 WWW=		https://www.giadamusic.com/ \
 		https://github.com/monocasual/giada
 
+BROKEN_FreeBSD_14=		fails to find clang-scan-deps
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-1.0.so:accessibility/at-spi2-core \
+		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
 		libfmt.so:devel/libfmt \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -25,6 +29,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libwayland-client.so:graphics/wayland \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++17-lang gettext-runtime gl gnome jpeg localbase pkgconfig xorg
