@@ -1,7 +1,7 @@
-TIMESTAMP = 1771077457
-SHA256 (phkaeser-wlmaker-v0.7.1_GH0.tar.gz) = c04a26972e92d5722abe5fae07406d8926aaca37a6144950c2eca5efc7c6a789
-SIZE (phkaeser-wlmaker-v0.7.1_GH0.tar.gz) = 513049
-SHA256 (phkaeser-libbase-a6c6a27_GH0.tar.gz) = 474aec72d920a574ac241763b9a3955d4ad6310080c312639e8a562eae04f462
-SIZE (phkaeser-libbase-a6c6a27_GH0.tar.gz) = 134464
+TIMESTAMP = 1779353019
+SHA256 (phkaeser-wlmaker-v0.8_GH0.tar.gz) = 17103a0fc89b6316c4970ccd2eb92b5c83adaa9e909ab6338958face45013bbd
+SIZE (phkaeser-wlmaker-v0.8_GH0.tar.gz) = 596657
+SHA256 (phkaeser-libbase-54e6055_GH0.tar.gz) = 98c4b7c3c49b665539218c23402b3156c4e66c1d0d1e36e6b5da877f4b9df3a9
+SIZE (phkaeser-libbase-54e6055_GH0.tar.gz) = 138944
 SHA256 (benhoyt-inih-r62_GH0.tar.gz) = 9c15fa751bb8093d042dae1b9f125eb45198c32c6704cd5481ccde460d4f8151
 SIZE (benhoyt-inih-r62_GH0.tar.gz) = 22145
