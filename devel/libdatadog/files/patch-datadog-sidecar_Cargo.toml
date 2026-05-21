@@ -1,0 +1,11 @@
+--- datadog-sidecar/Cargo.toml.orig	2026-05-21 10:59:02.642121000 +0200
++++ datadog-sidecar/Cargo.toml	2026-05-21 10:59:02.649190000 +0200
+@@ -70,7 +70,7 @@
+ # watchdog and self telemetry
+ memory-stats = { version = "1.2.0", features = ["always_use_statm"] }
+ 
+-[dependencies.windows]
++[target.'cfg(windows)'.dependencies.windows]
+ features = [
+     "Win32_Foundation",
+     "Wdk_Storage_FileSystem",

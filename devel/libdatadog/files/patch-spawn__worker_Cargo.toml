@@ -1,0 +1,11 @@
+--- spawn_worker/Cargo.toml.orig	2026-05-21 10:59:02.522202000 +0200
++++ spawn_worker/Cargo.toml	2026-05-21 10:59:02.528203000 +0200
+@@ -15,7 +15,7 @@
+ [build-dependencies]
+ cc_utils = { path = "../tools/cc_utils" }
+ 
+-[dependencies.windows]
++[target.'cfg(windows)'.dependencies.windows]
+ features = [
+   "Win32_Foundation",
+   "Win32_Security",
