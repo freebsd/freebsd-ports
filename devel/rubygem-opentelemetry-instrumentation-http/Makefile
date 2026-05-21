@@ -1,9 +1,9 @@
 PORTNAME=	opentelemetry-instrumentation-http
-PORTVERSION=	0.26.0
+PORTVERSION=	0.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mfechner@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP instrumentation for the OpenTelemetry framework
 WWW=		https://opentelemetry.io/ \
 		https://github.com/open-telemetry/opentelemetry-ruby \
@@ -12,7 +12,7 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-base>=0.23<1:devel/rubygem-opentelemetry-instrumentation-base
+RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-base>=0.25<1:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem
 
