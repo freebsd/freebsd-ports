@@ -1,3 +1,3 @@
-TIMESTAMP = 1760248828
-SHA256 (rubygem/opentelemetry-instrumentation-http_client-0.25.0.gem) = 01d4f2104b7fb1a71d5cf79f74bc8f13474eb5aa94142a37103051535bb15364
-SIZE (rubygem/opentelemetry-instrumentation-http_client-0.25.0.gem) = 12800
+TIMESTAMP = 1779223166
+SHA256 (rubygem/opentelemetry-instrumentation-http_client-0.29.0.gem) = 92363f0aa7a4286cb02e551c483078a2d5323e9f4ca2b706f2066834f7793d3d
+SIZE (rubygem/opentelemetry-instrumentation-http_client-0.29.0.gem) = 13312
