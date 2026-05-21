@@ -3,6 +3,7 @@ PORTVERSION=	14.1.5
 PORTREVISION=	1
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
+
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 WWW=		https://www.graphviz.org/
@@ -136,7 +137,7 @@ PANGOCAIRO_CONFIGURE_WITH=	pangocairo
 POPPLER_CONFIGURE_WITH=		poppler
 POPPLER_IMPLIES=		PANGOCAIRO
 GTK3_CONFIGURE_WITH=		gtk
-GDK_CONFIGURE_WITH=		gdk gdk-pixbuf 
+GDK_CONFIGURE_WITH=		gdk gdk-pixbuf
 GDK_IMPLIES=			PANGOCAIRO
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
 GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
