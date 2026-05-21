@@ -1,6 +1,6 @@
 PORTNAME=	openid_connect
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-activemodel-gitlab>=0:databases/rubygem-activemodel-gitlab 
 		rubygem-faraday-gitlab>=2.0<3:www/rubygem-faraday-gitlab \
 		rubygem-faraday-follow_redirects-gitlab>=0:www/rubygem-faraday-follow_redirects-gitlab \
 		rubygem-json-jwt-gitlab>=1.16:www/rubygem-json-jwt-gitlab \
-		rubygem-mail>=0:mail/rubygem-mail \
+		rubygem-mail-gitlab>=0:mail/rubygem-mail-gitlab \
 		rubygem-rack-oauth2-gitlab>=2.2<3:security/rubygem-rack-oauth2-gitlab \
 		rubygem-swd>=2.0<3:www/rubygem-swd \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
