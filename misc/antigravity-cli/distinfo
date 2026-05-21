@@ -1,0 +1,5 @@
+TIMESTAMP = 1779331922
+SHA256 (cli_linux_x64.tar.gz) = 70096340574fafc4a06c4d3c8057314e22d475ce1c820d0ad51ff07fb7e99eb6
+SIZE (cli_linux_x64.tar.gz) = 51935150
+SHA256 (cli_linux_arm64.tar.gz) = f4dc7c96c1836b00768d8a6ec6eacc7851f3424bd6f4ebe4d8b848a652072a85
+SIZE (cli_linux_arm64.tar.gz) = 48961626

@@ -15,6 +15,7 @@
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
     SUBDIR += ansiweather
+    SUBDIR += antigravity-cli
     SUBDIR += apparix
     SUBDIR += arrow-datafusion
     SUBDIR += artikulate
