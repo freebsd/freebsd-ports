@@ -1,0 +1,13 @@
+This is the contrib edition of mustermann gem. It provides:
+- CakePHP Syntax for Mustermann
+- Express Syntax for Mustermann
+- FileUtils for Mustermann
+- Flask Syntax for Mustermann
+- Mapper for Mustermann
+- Pyramid Syntax for Mustermann
+- Shell Syntax for Mustermann
+- Simple Syntax for Mustermann
+- String Scanner for Mustermann
+- to_pattern for Mustermann
+- URI Template Syntax for Mustermann
+- Mustermann Pattern Visualizer
