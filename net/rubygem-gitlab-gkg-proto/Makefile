@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-gkg-proto
-PORTVERSION=	0.7.0
+PORTVERSION=	0.37.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
