@@ -1,5 +1,6 @@
 PORTNAME=	vesktop
 DISTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/Vencord/Vesktop/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_${ARCH:S/aarch64/arm64/}
