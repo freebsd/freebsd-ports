@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-mysql2
-PORTVERSION=	0.30.0
+PORTVERSION=	0.34.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-helpers-mysql>=0:devel/rubygem-opentelemetry-helpers-mysql \
 		rubygem-opentelemetry-helpers-sql>=0:devel/rubygem-opentelemetry-helpers-sql \
-		rubygem-opentelemetry-helpers-sql-obfuscation>=0:devel/rubygem-opentelemetry-helpers-sql-obfuscation \
-		rubygem-opentelemetry-instrumentation-base>=0.23<1:devel/rubygem-opentelemetry-instrumentation-base
+		rubygem-opentelemetry-helpers-sql-processor>=0:devel/rubygem-opentelemetry-helpers-sql-processor \
+		rubygem-opentelemetry-instrumentation-base>=0.25<1:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem
 
