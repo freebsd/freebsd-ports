@@ -35,7 +35,7 @@ GL_TUPLE=	gitlab-org:git:v${GITLAB_GIT_VERSION}:git_dep/_build/deps/git-v${GITLA
 		gitlab-org:git:${GITLAB_GIT_PREV_VERSION}:git_prev_dep/_build/deps/git-prev
 
 GO_MOD_DIST=	gitlab
-GO_MODULE=	gitlab.com/gitlab-org/gitaly/v18
+GO_MODULE=	gitlab.com/gitlab-org/gitaly/v19
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
