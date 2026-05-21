@@ -1,3 +1,47 @@
+  <vuln vid="ecca89eb-54e6-11f1-bc4a-40b034429ecf">
+    <topic>ner/rsync -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>rsync</name>
+    <range><lt>3.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The rsync project reports:</p>
+	<blockquote cite="https://download.samba.org/pub/rsync/NEWS#3.4.3">
+	  <p>Six CVEs are fixed in this release. All six are assigned by VulnCheck as CNA.
+	    Affected versions are 3.4.2 and earlier in every case.</p>
+      <p>In addition to the six CVE fixes, this release adds defence-in-depth
+		hardening on several adjacent paths: bounded wire-supplied counts and
+		lengths in flist/io/acls/xattrs, a guard against length underflow in
+		cumulative snprintf() callers, a parent block-index bounds check on the
+		receiver, a NULL check in read_delay_line(), a lower ceiling on
+		MAX_WIRE_DEL_STAT to avoid signed-int overflow in the read_del_stats()
+		accumulator, rejection of hyphen-prefixed remote-shell hostnames
+		(defence-in-depth against argv-injection in tooling that forwards untrusted
+		input into the hostspec position; reported by Aisle Research via Michal
+		Ruprich), and a NULL-check on localtime_r() in timestring() to keep a
+		malicious server from crashing the client by advertising a file with an
+		out-of-range modtime.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-29518</cvename>
+      <cvename>CVE-2026-43617</cvename>
+      <cvename>CVE-2026-43618</cvename>
+      <cvename>CVE-2026-43619</cvename>
+      <cvename>CVE-2026-43620</cvename>
+      <cvename>CVE-2026-45232</cvename>
+      <url>https://download.samba.org/pub/rsync/NEWS#3.4.3</url>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37ab0cbc-54b7-11f1-8d7a-bc241121aa0a">
     <topic>FreeBSD -- Incorrect libcap_net limitation list manipulation</topic>
     <affects>
