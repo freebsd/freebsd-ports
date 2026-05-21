@@ -1,0 +1,8 @@
+Why write another parser? I have asked myself the same question while working on
+this project. It is clear that there are excellent parsers out there, but I
+wanted to experiment with another way of writing them.
+
+The idea is quite simple. You write a class for every type of content (called
+here ParsedStatement) you need to parse. Each class should have a from_string
+constructor. We used the typing module extensively to make the output structure
+easy to use and less error-prone.
