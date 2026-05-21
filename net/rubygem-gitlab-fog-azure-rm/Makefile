@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-fog-azure-rm
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-fog-azure-rm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-faraday-gitlab>=2.0<3:www/rubygem-faraday-gitlab \
-		rubygem-faraday-follow_redirects-gitlab>=0.3.0<0.4:www/rubygem-faraday-follow_redirects-gitlab \
+RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-faraday-gitlab>=2.0<3:www/rubygem-faraday-gitlab \
+		rubygem-faraday-follow_redirects-gitlab>=0.5.0<0.6:www/rubygem-faraday-follow_redirects-gitlab \
 		rubygem-faraday-net_http_persistent-gitlab>=2.0<3:www/rubygem-faraday-net_http_persistent-gitlab \
 		rubygem-fog-core-gitlab>=2.1<3:devel/rubygem-fog-core-gitlab \
 		rubygem-fog-json-gitlab>=1.2<2:devel/rubygem-fog-json-gitlab \
