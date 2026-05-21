@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-05-19 19:57:25 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@ requires = [
+   # NOTE: provisioning of the in-tree build backend located under
+   # NOTE: `packaging/pep517_backend/`.
+   "expandvars",
+-  "setuptools >= 82.0.1",  # Minimum required for `version = attr:`
++  "setuptools",
+   "tomli; python_version < '3.11'",
+ ]
+ backend-path = ["packaging"]  # requires `pip >= 20` or `pep517 >= 0.6.0`
