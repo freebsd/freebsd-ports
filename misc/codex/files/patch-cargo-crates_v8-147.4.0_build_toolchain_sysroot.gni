@@ -1,5 +1,5 @@
---- cargo-crates/v8-146.4.0/build/toolchain/sysroot.gni.orig	2026-03-28 03:05:39 UTC
-+++ cargo-crates/v8-146.4.0/build/toolchain/sysroot.gni
+--- cargo-crates/v8-147.4.0/build/toolchain/sysroot.gni.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/build/toolchain/sysroot.gni
 @@ -8,7 +8,9 @@ declare_args() {
    # Move the argument here to avoid complex dependencies and dependency loop
    # as this is needed by files in both config and toolchain directories.

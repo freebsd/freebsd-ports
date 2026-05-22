@@ -1,5 +1,5 @@
---- cargo-crates/v8-146.4.0/build/toolchain/freebsd/BUILD.gn.orig	2026-05-17 20:00:01 UTC
-+++ cargo-crates/v8-146.4.0/build/toolchain/freebsd/BUILD.gn
+--- cargo-crates/v8-147.4.0/build/toolchain/freebsd/BUILD.gn.orig	2026-05-22 03:12:22 UTC
++++ cargo-crates/v8-147.4.0/build/toolchain/freebsd/BUILD.gn
 @@ -0,0 +1,73 @@
 +# Copyright 2013 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be

@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.131.0
+DISTVERSION=	0.133.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -32,6 +32,9 @@ USE_GNOME=	glib20
 SHEBANG_FILES=	codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/remove_chroma_key.py \
 		codex-rs/skills/src/assets/samples/plugin-creator/scripts/create_basic_plugin.py \
+		codex-rs/skills/src/assets/samples/plugin-creator/scripts/read_marketplace_name.py \
+		codex-rs/skills/src/assets/samples/plugin-creator/scripts/update_plugin_cachebuster.py \
+		codex-rs/skills/src/assets/samples/plugin-creator/scripts/validate_plugin.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/generate_openai_yaml.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/init_skill.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/quick_validate.py \
@@ -111,12 +114,14 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/mcp_tool_call_tests.rs \
 		${BUILD_WRKSRC}/core/src/session/tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
+		${BUILD_WRKSRC}/core/tests/suite/code_mode.rs \
 		${BUILD_WRKSRC}/core/tests/suite/compact.rs \
 		${BUILD_WRKSRC}/core/tests/suite/compact_remote_parity.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/openai_file_mcp.rs \
+		${BUILD_WRKSRC}/core/tests/suite/subagent_notifications.rs \
 		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/exec-server/tests/exec_process.rs \

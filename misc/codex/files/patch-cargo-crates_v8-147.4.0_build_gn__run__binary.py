@@ -1,5 +1,5 @@
---- cargo-crates/v8-146.4.0/build/gn_run_binary.py.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/v8-146.4.0/build/gn_run_binary.py
+--- cargo-crates/v8-147.4.0/build/gn_run_binary.py.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/build/gn_run_binary.py
 @@ -23,7 +23,7 @@ args = [path] + sys.argv[2:]
  # The rest of the arguments are passed directly to the executable.
  args = [path] + sys.argv[2:]

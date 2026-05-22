@@ -1,5 +1,5 @@
---- cargo-crates/v8-146.4.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/v8-146.4.0/build.rs
+--- cargo-crates/v8-147.4.0/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/build.rs
 @@ -253,7 +253,7 @@ fn build_v8(is_asan: bool) {
      download_ninja_gn_binaries();
    }
@@ -9,7 +9,7 @@
  
    // `#[cfg(...)]` attributes don't work as expected from build.rs -- they refer to the configuration
    // of the host system which the build.rs script will be running on. In short, `cfg!(target_<os/arch>)`
-@@ -363,9 +363,11 @@ fn build_v8(is_asan: bool) {
+@@ -391,9 +391,11 @@ fn build_v8(is_asan: bool) {
    if target_arch == "arm" {
      gn_args.push(r#"target_cpu="arm""#.to_string());
      gn_args.push(r#"v8_target_cpu="arm""#.to_string());
@@ -24,7 +24,7 @@
    }
  
    let target_triple = env::var("TARGET").unwrap();
-@@ -385,7 +387,6 @@ fn build_v8(is_asan: bool) {
+@@ -413,7 +415,6 @@ fn build_v8(is_asan: bool) {
      gn_args.push(format!(r#"target_cpu="{arch}""#).to_string());
      gn_args.push(r#"target_os="android""#.to_string());
      gn_args.push("treat_warnings_as_errors=false".to_string());

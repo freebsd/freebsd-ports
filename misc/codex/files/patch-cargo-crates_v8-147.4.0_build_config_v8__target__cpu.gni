@@ -1,5 +1,5 @@
---- cargo-crates/v8-146.4.0/build/config/v8_target_cpu.gni.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/v8-146.4.0/build/config/v8_target_cpu.gni
+--- cargo-crates/v8-147.4.0/build/config/v8_target_cpu.gni.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/build/config/v8_target_cpu.gni
 @@ -36,6 +36,8 @@ if (v8_target_cpu == "") {
  if (v8_target_cpu == "") {
    if (current_toolchain == "//build/toolchain/linux:clang_x64_v8_arm64") {

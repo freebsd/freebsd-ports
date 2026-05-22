@@ -1,5 +1,5 @@
---- cargo-crates/v8-146.4.0/.gn.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/v8-146.4.0/.gn
+--- cargo-crates/v8-147.4.0/.gn.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/.gn
 @@ -84,9 +84,7 @@ default_args = {
    # TODO: third_party/compiler-rt missing?
    use_llvm_libatomic = false

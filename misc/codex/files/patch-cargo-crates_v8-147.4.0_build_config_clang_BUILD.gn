@@ -1,6 +1,6 @@
---- cargo-crates/v8-146.4.0/build/config/clang/BUILD.gn.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/v8-146.4.0/build/config/clang/BUILD.gn
-@@ -237,7 +237,12 @@ clang_lib("compiler_builtins") {
+--- cargo-crates/v8-147.4.0/build/config/clang/BUILD.gn.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-147.4.0/build/config/clang/BUILD.gn
+@@ -240,7 +240,12 @@ clang_lib("compiler_builtins") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
@@ -14,7 +14,7 @@
      libname = "osx"
    } else if (is_ios) {
      if (target_platform == "iphoneos") {
-@@ -262,7 +267,7 @@ clang_lib("compiler_builtins") {
+@@ -265,7 +270,7 @@ clang_lib("compiler_builtins") {
        assert(false, "unsupported target_platform=$target_platform")
      }
    } else if (current_cpu != "ppc64" && current_cpu != "s390x") {
