@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_remote_execution_ssh
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
