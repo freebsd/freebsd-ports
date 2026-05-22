@@ -1,6 +1,6 @@
 PORTNAME=	openapi-core
 PORTVERSION=	0.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.23.0<5:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema-path>=0.4.5<0.5:devel/py-jsonschema-path@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema-path>=0.4.5<0.6:devel/py-jsonschema-path@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.7.0<0.10.0:devel/py-openapi-schema-validator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.8.0<0.9:devel/py-openapi-spec-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.8.0<0.10:devel/py-openapi-spec-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8.0<5:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=2.1.0:www/py-werkzeug@${PY_FLAVOR}
 
