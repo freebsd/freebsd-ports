@@ -1,5 +1,5 @@
 PORTNAME=	oauth-tty
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://oauth-tty.galtzo.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-auth-sanitizer>=0.1<1:security/rubygem-auth-sanitizer \
+RUN_DEPENDS=	rubygem-auth-sanitizer>=0.1.3<1:security/rubygem-auth-sanitizer \
 		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-version_gem>=1.1.9<2:devel/rubygem-version_gem
 
