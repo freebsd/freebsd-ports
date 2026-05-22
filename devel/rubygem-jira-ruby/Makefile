@@ -1,5 +1,5 @@
 PORTNAME=	jira-ruby
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
-		rubygem-atlassian-jwt>=0:www/rubygem-atlassian-jwt \
 		rubygem-cgi>=0:www/rubygem-cgi \
+		rubygem-jwt>=2.1:www/rubygem-jwt \
 		rubygem-multipart-post>=0:www/rubygem-multipart-post \
 		rubygem-oauth>=1.0<2:net/rubygem-oauth
 
