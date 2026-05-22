@@ -18,7 +18,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
-		arc-swap-1.8.2 \
+		arc-swap-1.9.1 \
 		ascii-1.1.0 \
 		autocfg-1.5.0 \
 		backtrace-0.3.76 \
@@ -131,50 +131,43 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		git-ref-format-core-0.6.0 \
 		git-ref-format-macro-0.6.0 \
 		git2-0.20.4 \
-		gix-actor-0.38.0 \
-		gix-actor-0.39.0 \
-		gix-chunk-0.5.0 \
-		gix-chunk-0.6.0 \
-		gix-command-0.7.1 \
-		gix-commitgraph-0.32.0 \
-		gix-commitgraph-0.33.0 \
-		gix-config-value-0.17.1 \
-		gix-credentials-0.36.0 \
-		gix-date-0.13.0 \
-		gix-date-0.14.0 \
-		gix-diff-0.58.0 \
-		gix-error-0.0.0 \
-		gix-error-0.1.0 \
-		gix-features-0.46.1 \
-		gix-fs-0.19.1 \
-		gix-glob-0.24.0 \
-		gix-hash-0.22.1 \
-		gix-hashtable-0.12.0 \
-		gix-lock-21.0.1 \
-		gix-negotiate-0.27.0 \
-		gix-object-0.55.0 \
-		gix-object-0.56.0 \
-		gix-odb-0.75.0 \
-		gix-pack-0.65.0 \
-		gix-packetline-0.21.1 \
-		gix-path-0.11.1 \
-		gix-prompt-0.13.1 \
-		gix-protocol-0.57.0 \
-		gix-quote-0.6.2 \
-		gix-ref-0.59.0 \
-		gix-refspec-0.37.0 \
-		gix-revision-0.41.0 \
-		gix-revwalk-0.26.0 \
-		gix-revwalk-0.27.0 \
-		gix-sec-0.13.1 \
-		gix-shallow-0.8.1 \
-		gix-tempfile-21.0.1 \
-		gix-trace-0.1.18 \
-		gix-transport-0.54.0 \
-		gix-traverse-0.52.0 \
-		gix-url-0.35.2 \
-		gix-utils-0.3.1 \
-		gix-validate-0.11.0 \
+		gix-actor-0.41.0 \
+		gix-chunk-0.7.1 \
+		gix-command-0.9.0 \
+		gix-commitgraph-0.37.0 \
+		gix-config-value-0.18.0 \
+		gix-credentials-0.38.0 \
+		gix-date-0.15.3 \
+		gix-diff-0.63.0 \
+		gix-error-0.2.3 \
+		gix-features-0.48.0 \
+		gix-fs-0.21.1 \
+		gix-glob-0.26.0 \
+		gix-hash-0.25.0 \
+		gix-hashtable-0.15.0 \
+		gix-lock-23.0.0 \
+		gix-negotiate-0.31.0 \
+		gix-object-0.60.0 \
+		gix-odb-0.80.0 \
+		gix-pack-0.70.0 \
+		gix-packetline-0.21.3 \
+		gix-path-0.12.0 \
+		gix-prompt-0.15.0 \
+		gix-protocol-0.61.0 \
+		gix-quote-0.7.1 \
+		gix-ref-0.63.0 \
+		gix-refspec-0.41.0 \
+		gix-revision-0.45.0 \
+		gix-revwalk-0.31.0 \
+		gix-sec-0.14.0 \
+		gix-shallow-0.12.0 \
+		gix-tempfile-23.0.0 \
+		gix-trace-0.1.19 \
+		gix-transport-0.57.0 \
+		gix-traverse-0.57.0 \
+		gix-url-0.36.0 \
+		gix-utils-0.3.2 \
+		gix-validate-0.11.1 \
 		group-0.13.0 \
 		hash32-0.3.1 \
 		hashbrown-0.15.5 \
@@ -235,6 +228,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		multibase-0.9.2 \
 		noise-framework-0.4.1 \
 		nonempty-0.9.0 \
+		nonempty-0.12.0 \
 		normalize-line-endings-0.3.0 \
 		ntapi-0.4.3 \
 		nu-ansi-term-0.50.3 \
@@ -361,7 +355,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		sqlite-0.37.0 \
 		sqlite3-src-0.7.0 \
 		sqlite3-sys-0.18.0 \
-		ssh-agent-lib-0.5.2 \
+		ssh-agent-lib-0.6.0 \
 		ssh-cipher-0.2.0 \
 		ssh-encoding-0.2.0 \
 		ssh-key-0.6.7 \
@@ -499,7 +493,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.15 \
 		winpipe-0.1.1 \
 		winsplit-0.1.0 \
 		wit-bindgen-0.51.0 \
