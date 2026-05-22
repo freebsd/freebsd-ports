@@ -1,6 +1,5 @@
 PORTNAME=	czkawka
-DISTVERSION=	11.0.0
-PORTREVISION=	2
+DISTVERSION=	11.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	uzsolt@FreeBSD.org
@@ -29,7 +28,7 @@ PLIST_FILES=	bin/${PORTNAME}_cli \
 		share/icons/hicolor/scalable/apps/com.github.qarmin.czkawka-symbolic.svg \
 		share/icons/hicolor/scalable/apps/com.github.qarmin.czkawka.Devel.svg \
 		share/icons/hicolor/scalable/apps/com.github.qarmin.czkawka.svg \
-		share/icons/hicolor/scalable/apps/io.github.qarmin.czkawka.krokiet.svg \
+		share/icons/hicolor/scalable/apps/io.github.qarmin.krokiet.svg \
 		share/metainfo/com.github.qarmin.czkawka.metainfo.xml \
 		share/metainfo/io.github.qarmin.krokiet.metainfo.xml
 

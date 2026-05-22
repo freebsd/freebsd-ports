@@ -12,22 +12,22 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		alloc-stdlib-0.2.2 \
 		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
-		alsa-0.9.1 \
-		alsa-sys-0.3.1 \
+		alsa-0.11.0 \
+		alsa-sys-0.4.0 \
 		android-activity-0.6.0 \
 		android-properties-0.2.2 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		annotate-snippets-0.12.11 \
+		annotate-snippets-0.12.12 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.101 \
+		anyhow-1.0.102 \
 		approx-0.5.1 \
 		arbitrary-1.4.2 \
-		arc-swap-1.8.1 \
+		arc-swap-1.8.2 \
 		arg_enum_proc_macro-0.3.4 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
@@ -37,7 +37,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ashpd-0.12.2 \
 		async-broadcast-0.7.2 \
 		async-channel-2.5.0 \
-		async-executor-1.13.3 \
+		async-executor-1.14.0 \
 		async-io-2.6.0 \
 		async-lock-3.4.2 \
 		async-process-2.5.0 \
@@ -58,6 +58,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		bincode-1.3.3 \
 		bincode-2.0.1 \
 		bindgen-0.72.1 \
+		bit-set-0.8.0 \
+		bit-vec-0.8.0 \
 		bit_field-0.10.3 \
 		bitflags-1.3.2 \
 		bitflags-2.11.0 \
@@ -66,6 +68,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		bitvec-1.0.1 \
 		bk-tree-0.5.0 \
 		blake3-1.8.3 \
+		block-0.1.6 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		block2-0.5.1 \
@@ -75,7 +78,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
 		built-0.8.0 \
-		bumpalo-3.19.1 \
+		bumpalo-3.20.2 \
 		by_address-1.2.1 \
 		byte-slice-cast-1.2.3 \
 		bytecount-0.6.9 \
@@ -85,8 +88,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.1 \
 		bzip2-0.6.1 \
-		cairo-rs-0.22.0-alpha.3 \
-		cairo-sys-rs-0.22.0-alpha.3 \
+		cairo-rs-0.22.0 \
+		cairo-sys-rs-0.22.0 \
 		calloop-0.13.0 \
 		calloop-0.14.4 \
 		calloop-wayland-source-0.3.0 \
@@ -108,12 +111,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ciborium-ll-0.2.2 \
 		cipher-0.4.4 \
 		clang-sys-1.8.1 \
-		clap-4.5.58 \
-		clap_builder-4.5.58 \
+		clap-4.5.60 \
+		clap_builder-4.5.60 \
 		clap_derive-4.5.55 \
 		clap_lex-1.0.0 \
 		clipboard-win-5.4.1 \
 		clru-0.6.2 \
+		codespan-reporting-0.12.0 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.4 \
 		combine-4.6.7 \
@@ -125,14 +129,16 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		convert_case-0.10.0 \
 		copypasta-0.10.2 \
 		core-foundation-0.9.4 \
+		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		core-graphics-0.23.2 \
 		core-graphics-types-0.1.3 \
+		core-graphics-types-0.2.0 \
 		core2-0.4.0 \
 		core_maths-0.1.1 \
-		coreaudio-rs-0.13.0 \
+		coreaudio-rs-0.14.0 \
 		countme-3.0.1 \
-		cpal-0.16.0 \
+		cpal-0.17.3 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc-3.4.0 \
@@ -148,7 +154,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
-		ctor-lite-0.1.1 \
+		ctor-lite-0.1.2 \
 		ctrlc-3.5.1 \
 		cursor-icon-1.2.0 \
 		darling-0.14.4 \
@@ -208,7 +214,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		fax-0.2.6 \
 		fax_derive-0.2.0 \
 		fdeflate-0.3.7 \
-		femtovg-0.20.1 \
+		femtovg-0.20.3 \
 		ffmpeg_cmdline_utils-0.4.0 \
 		ffmpeg_gst_wrapper-0.4.0 \
 		field-offset-0.3.6 \
@@ -239,22 +245,22 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		fun_time-0.3.4 \
 		fun_time_derive-0.3.4 \
 		funty-2.0.0 \
-		futures-0.3.31 \
-		futures-channel-0.3.31 \
-		futures-core-0.3.31 \
-		futures-executor-0.3.31 \
-		futures-io-0.3.31 \
+		futures-0.3.32 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
+		futures-executor-0.3.32 \
+		futures-io-0.3.32 \
 		futures-lite-2.6.1 \
-		futures-macro-0.3.31 \
-		futures-sink-0.3.31 \
-		futures-task-0.3.31 \
-		futures-util-0.3.31 \
+		futures-macro-0.3.32 \
+		futures-sink-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
 		gbm-0.18.0 \
 		gbm-sys-0.4.0 \
-		gdk-pixbuf-0.22.0-alpha.3 \
-		gdk-pixbuf-sys-0.22.0-alpha.3 \
-		gdk4-0.11.0-alpha.3 \
-		gdk4-sys-0.11.0-alpha.3 \
+		gdk-pixbuf-0.22.0 \
+		gdk-pixbuf-sys-0.22.0 \
+		gdk4-0.11.0 \
+		gdk4-sys-0.11.0 \
 		generic-array-0.14.7 \
 		geo-types-0.7.18 \
 		gethostname-1.1.0 \
@@ -264,12 +270,12 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		getrandom-0.4.1 \
 		gif-0.14.1 \
 		gimli-0.32.3 \
-		gio-0.22.0-alpha.3 \
-		gio-sys-0.22.0-alpha.3 \
+		gio-0.22.0 \
+		gio-sys-0.22.0 \
 		gl_generator-0.14.0 \
-		glib-0.22.0-alpha.2 \
-		glib-macros-0.22.0-alpha.3 \
-		glib-sys-0.22.0-alpha.3 \
+		glib-0.22.0 \
+		glib-macros-0.22.0 \
+		glib-sys-0.22.0 \
 		glibc_musl_version-0.1.0 \
 		glob-0.3.3 \
 		glow-0.16.0 \
@@ -278,17 +284,20 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		glutin_egl_sys-0.7.1 \
 		glutin_glx_sys-0.6.1 \
 		glutin_wgl_sys-0.6.1 \
-		gobject-sys-0.22.0-alpha.3 \
-		graphene-rs-0.22.0-alpha.3 \
-		graphene-sys-0.22.0-alpha.3 \
-		gsk4-0.11.0-alpha.3 \
-		gsk4-sys-0.11.0-alpha.3 \
-		gtk4-0.11.0-alpha.3 \
-		gtk4-macros-0.11.0-alpha.3 \
-		gtk4-sys-0.11.0-alpha.3 \
+		gobject-sys-0.22.0 \
+		gpu-allocator-0.28.0 \
+		gpu-descriptor-0.3.2 \
+		gpu-descriptor-types-0.2.0 \
+		graphene-rs-0.22.0 \
+		graphene-sys-0.22.0 \
+		gsk4-0.11.0 \
+		gsk4-sys-0.11.0 \
+		gtk4-0.11.0 \
+		gtk4-macros-0.11.0 \
+		gtk4-sys-0.11.0 \
 		half-2.7.1 \
 		hamming-bitwise-fast-1.0.0 \
-		handsome_logger-0.9.1 \
+		handsome_logger-0.9.2 \
 		harfrust-0.3.2 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.5 \
@@ -299,6 +308,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		hermit-abi-0.3.9 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
+		hexf-parse-0.2.1 \
 		hmac-0.12.1 \
 		home-0.5.12 \
 		htmlparser-0.2.1 \
@@ -337,7 +347,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		imagesize-0.14.0 \
 		imgref-1.12.0 \
 		indexmap-2.13.0 \
-		indicatif-0.18.3 \
+		indicatif-0.18.4 \
 		infer-0.19.0 \
 		inout-0.1.4 \
 		input-0.9.1 \
@@ -377,6 +387,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		jxl-threadpool-1.0.0 \
 		jxl-vardct-0.11.1 \
 		keyboard-types-0.7.0 \
+		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kurbo-0.12.0 \
 		kurbo-0.13.0 \
@@ -389,7 +400,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		libflate_lz77-2.2.0 \
 		libfuzzer-sys-0.4.12 \
 		libheif-rs-2.6.1 \
-		libheif-sys-5.1.1+1.21.2 \
+		libheif-sys-5.2.0+1.21.2 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libraw-rs-0.0.4 \
@@ -406,7 +417,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		litrs-1.0.0 \
 		little_exif-0.6.23 \
 		lock_api-0.4.14 \
-		lofty-0.23.1 \
+		lofty-0.23.2 \
 		lofty_attr-0.12.0 \
 		log-0.4.29 \
 		log-panics-2.1.0 \
@@ -416,14 +427,17 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		lyon_extra-1.0.3 \
 		lyon_geom-1.0.18 \
 		lyon_path-1.0.16 \
-		mach2-0.4.3 \
+		mach2-0.5.0 \
+		malloc_buf-0.0.6 \
 		matrixmultiply-0.3.10 \
 		maybe-rayon-0.1.1 \
 		md-5-0.10.6 \
 		md5-0.8.0 \
 		memchr-2.8.0 \
-		memmap2-0.9.9 \
+		memmap2-0.9.10 \
 		memoffset-0.9.1 \
+		metal-0.31.0 \
+		metal-0.33.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
@@ -434,6 +448,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		muda-0.17.1 \
 		multiversion-0.8.0 \
 		multiversion-macros-0.8.0 \
+		naga-28.0.0 \
 		nalgebra-0.32.6 \
 		natord-1.0.9 \
 		ndarray-0.16.1 \
@@ -459,12 +474,14 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		num_enum-0.7.5 \
 		num_enum_derive-0.7.5 \
 		num_threads-0.1.7 \
+		objc-0.2.7 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-0.6.3 \
 		objc2-app-kit-0.2.2 \
 		objc2-app-kit-0.3.2 \
 		objc2-audio-toolbox-0.3.2 \
+		objc2-avf-audio-0.3.2 \
 		objc2-cloud-kit-0.2.2 \
 		objc2-cloud-kit-0.3.2 \
 		objc2-contacts-0.2.2 \
@@ -502,12 +519,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		oorandom-11.1.5 \
 		open-5.3.3 \
 		orbclient-0.3.50 \
+		ordered-float-5.1.0 \
 		ordered-stream-0.2.0 \
 		os_info-3.14.0 \
 		owned_ttf_parser-0.25.1 \
 		page_size-0.6.0 \
-		pango-0.22.0-alpha.3 \
-		pango-sys-0.22.0-alpha.3 \
+		pango-0.22.0 \
+		pango-sys-0.22.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -526,7 +544,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		piper-0.2.4 \
 		pkg-config-0.3.32 \
 		png-0.17.16 \
-		png-0.18.0 \
+		png-0.18.1 \
 		polling-3.11.0 \
 		pollster-0.4.0 \
 		portable-atomic-1.13.1 \
@@ -534,6 +552,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		potential_utf-0.1.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
+		presser-0.3.1 \
 		prettyplease-0.2.37 \
 		primal-check-0.3.4 \
 		proc-macro-crate-3.4.0 \
@@ -561,6 +580,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		rand_core-0.9.5 \
 		rand_core-0.10.0 \
 		rand_distr-0.4.3 \
+		range-alloc-0.1.4 \
 		rangemap-1.7.1 \
 		rav1e-0.8.1 \
 		ravif-0.12.0 \
@@ -579,12 +599,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.9 \
+		renderdoc-sys-1.1.0 \
 		resvg-0.46.0 \
 		resvg-0.47.0 \
 		rfd-0.17.2 \
 		rgb-0.8.52 \
 		rle-decode-fast-1.0.3 \
-		rodio-0.21.1 \
+		rodio-0.22.0 \
 		rowan-0.16.1 \
 		roxmltree-0.21.1 \
 		rspolib-0.1.2 \
@@ -648,6 +669,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		socket2-0.6.2 \
 		softbuffer-0.4.8 \
 		spin_on-0.1.1 \
+		spirv-0.3.0+sdk-1.3.268.0 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strength_reduce-0.2.4 \
@@ -677,7 +699,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		symphonia-metadata-0.5.5 \
 		symphonia-utils-xiph-0.5.5 \
 		syn-1.0.109 \
-		syn-2.0.115 \
+		syn-2.0.117 \
 		synstructure-0.13.2 \
 		sys-locale-0.3.2 \
 		system-deps-7.0.7 \
@@ -715,7 +737,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		toml_edit-0.22.27 \
 		toml_edit-0.23.10+spec-1.0.0 \
 		toml_edit-0.24.1+spec-1.1.0 \
-		toml_parser-1.0.8+spec-1.1.0 \
+		toml_parser-1.0.9+spec-1.1.0 \
 		toml_write-0.1.2 \
 		toml_writer-1.0.6+spec-1.1.0 \
 		tracing-0.1.44 \
@@ -739,7 +761,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		unicode-bidi-0.3.18 \
 		unicode-bidi-mirroring-0.4.0 \
 		unicode-ccc-0.4.0 \
-		unicode-ident-1.0.23 \
+		unicode-ident-1.0.24 \
 		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.25 \
 		unicode-properties-0.1.4 \
@@ -793,17 +815,22 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		web-sys-0.3.85 \
 		web-time-1.1.0 \
 		weezl-0.1.12 \
+		wgpu-28.0.0 \
+		wgpu-core-28.0.0 \
+		wgpu-core-deps-apple-28.0.0 \
+		wgpu-core-deps-emscripten-28.0.0 \
+		wgpu-core-deps-windows-linux-android-28.0.0 \
+		wgpu-hal-28.0.0 \
+		wgpu-types-28.0.0 \
 		wide-0.7.33 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.54.0 \
 		windows-0.56.0 \
 		windows-0.58.0 \
 		windows-0.62.2 \
 		windows-collections-0.3.2 \
-		windows-core-0.54.0 \
 		windows-core-0.56.0 \
 		windows-core-0.58.0 \
 		windows-core-0.62.2 \
@@ -904,8 +931,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		zerotrie-0.2.3 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.2 \
-		zip-7.4.0 \
-		zlib-rs-0.6.0 \
+		zip-8.1.0 \
+		zlib-rs-0.6.2 \
 		zmij-1.0.21 \
 		zopfli-0.8.3 \
 		zune-core-0.4.12 \
