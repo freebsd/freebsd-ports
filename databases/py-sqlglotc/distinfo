@@ -1,5 +1,5 @@
-TIMESTAMP = 1775587098
-SHA256 (sqlglot-30.0.3.tar.gz) = 35ba7514c132b54f87fd1732a65a73615efa9fd83f6e1eed0a315bc9ee3e1027
-SIZE (sqlglot-30.0.3.tar.gz) = 5802632
-SHA256 (sqlglotc-30.0.3.tar.gz) = 8e85b401fc3cec09d4341ea14bfe8bac5d28179e348638d00384c41e039ab79b
-SIZE (sqlglotc-30.0.3.tar.gz) = 245524
+TIMESTAMP = 1779394339
+SHA256 (sqlglot-30.8.0.tar.gz) = 1c5f93fb742dd9aaa75eee6bb33a637794a858b9a86375fac23a2dc0f7bc127e
+SIZE (sqlglot-30.8.0.tar.gz) = 5869750
+SHA256 (sqlglotc-30.8.0.tar.gz) = 7068fcfd64ebcedc10bd174b69e0d8d312a89a18772f6312e51a8d3bb1757f1d
+SIZE (sqlglotc-30.8.0.tar.gz) = 476352

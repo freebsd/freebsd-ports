@@ -1,5 +1,5 @@
 PORTNAME=	sqlglotc
-PORTVERSION=	30.0.3
+PORTVERSION=	30.8.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlglot-mypy>=1.19.1.post1:databases/py-sqlglot-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlglot-mypy>=1.20.0.post6:databases/py-sqlglot-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-python-dateutil>=0:devel/py-types-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
