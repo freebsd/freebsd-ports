@@ -1,6 +1,5 @@
 PORTNAME=	netbeans
-DISTVERSION=	29
-PORTREVISION=	1
+DISTVERSION=	30
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/netbeans/netbeans/${DISTVERSION}/
 DISTNAME=	netbeans-${DISTVERSION}-bin
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe java perl5 python:run shebangfix zip
 CPE_VENDOR=	apache
-JAVA_VERSION=	21 17 25
+JAVA_VERSION=	21+
 
 SHEBANG_FILES=	extide/ant/bin/antRun.pl \
 		extide/ant/bin/complete-ant-cmd.pl \
