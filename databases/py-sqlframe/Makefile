@@ -1,5 +1,5 @@
 PORTNAME=	sqlframe
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prettytable>=0<4:devel/py-prettytable@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlglot>=28.0.0<30.1:databases/py-sqlglot@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlglot>=28.0.0<30.9:databases/py-sqlglot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
@@ -45,6 +45,6 @@ PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=2,1<4,1:math/py-pandas@${PY_F
 POSTGRES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8<3:databases/py-psycopg2@${PY_FLAVOR}
 REDSHIFT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redshift-connector>=2.1.1<2.2.0:databases/py-redshift-connector@${PY_FLAVOR}
 SNOWFLAKE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=23.1.0,1<26.0.0,1:security/py-keyring@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}snowflake-connector-python>=3.10.0<4.4:databases/py-snowflake-connector-python@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}snowflake-connector-python>=3.10.0<4.5:databases/py-snowflake-connector-python@${PY_FLAVOR}
 
 .include <bsd.port.mk>
