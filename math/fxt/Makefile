@@ -1,5 +1,5 @@
 PORTNAME=	fxt
-PORTVERSION=	2026.01.31
+PORTVERSION=	2026.05.19
 CATEGORIES=	math
 MASTER_SITES=	https://www.jjj.de/fxt/
 
@@ -10,11 +10,10 @@ WWW=		https://www.jjj.de/fxt/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++17-lang gmake
 
 MAKE_ENV=	FXT_INSTALL="${INSTALL_DATA}"
 MAKEFILE=	makefile
-USE_CXXSTD=	c++11
 WRKSRC=		${WRKDIR}/fxt
 
 OPTIONS_DEFINE=	EXAMPLES
