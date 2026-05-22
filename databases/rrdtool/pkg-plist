@@ -16,11 +16,15 @@ lib/librrd.so.8.3.0
 %%PERL%%%%SITE_ARCH%%/auto/RRDs/RRDs.so
 %%PERL%%%%PERL5_MAN3%%/RRDp.3.gz
 %%PERL%%%%PERL5_MAN3%%/RRDs.3.gz
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool%%PYTHON_TAG%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/COPYING
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/INSTALLER
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/RECORD
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/REQUESTED
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/WHEEL
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/direct_url.json
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10.dist-info/top_level.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool.cpython-%%PYTHON_SUFFIX%%.so
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%share/man/man1/bin_dec_hex.1.gz
@@ -58,3 +62,4 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%share/man/man3/librrd.3.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/rrdtool.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/rrdtool.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/rrdtool.mo

@@ -1,6 +1,6 @@
---- bindings/Makefile.in.orig	2022-03-14 14:29:39 UTC
+--- bindings/Makefile.in.orig	2026-05-19 19:34:45 UTC
 +++ bindings/Makefile.in
-@@ -727,11 +727,11 @@ all-local:  @COMP_PERL@ @COMP_RUBY@ @COMP_PYTHON@
+@@ -728,11 +728,11 @@ install-data-local:
  install-data-local:
  	$(AM_V_GEN)test -f ${builddir}/perl-piped/Makefile \
             && ( cd ${builddir}/perl-piped \
@@ -14,3 +14,12 @@
             || true
  	$(AM_V_GEN)test -f ${builddir}/ruby/Makefile \
             && ( cd ${builddir}/ruby \
+@@ -741,7 +741,7 @@ install-data-local:
+ 	$(AM_V_GEN)test -f ${builddir}/python/dist/*.whl \
+            && ( $(PYTHON) -m pip install --upgrade --no-index --no-deps \
+                   --no-cache-dir --disable-pip-version-check \
+-                  --target=$(DESTDIR)$(libdir)/python3/site-packages \
++                  --target=$(DESTDIR)$(pythondir) \
+                   ${builddir}/python/dist/*.whl ) \
+            || true
+ 

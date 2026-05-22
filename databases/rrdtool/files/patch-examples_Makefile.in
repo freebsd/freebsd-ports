@@ -1,6 +1,6 @@
---- examples/Makefile.in.orig	2022-03-14 14:29:40 UTC
+--- examples/Makefile.in.orig	2026-05-19 19:34:45 UTC
 +++ examples/Makefile.in
-@@ -431,7 +431,7 @@ top_builddir = @top_builddir@
+@@ -433,7 +433,7 @@ EXTRA_DIST = cgi-demo.cgi.in stripes.py
  top_srcdir = @top_srcdir@
  SUBDIRS = rrdcached
  EXTRA_DIST = cgi-demo.cgi.in stripes.py
