@@ -1,3 +1,3 @@
-TIMESTAMP = 1732260928
-SHA256 (oslo.reports-3.5.0.tar.gz) = ca9888b6be2d7dd5f57faa01b15b028822743d6328a04e75cfa9b327b26fa666
-SIZE (oslo.reports-3.5.0.tar.gz) = 53501
+TIMESTAMP = 1779455593
+SHA256 (oslo_reports-3.8.0.tar.gz) = 6345d694fa22e5e0a80bc4e74728be8e0e990ae6276825886627b013d236a7a7
+SIZE (oslo_reports-3.8.0.tar.gz) = 55727
