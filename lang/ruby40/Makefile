@@ -48,7 +48,6 @@ GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread
 USE_LDCONFIG=	yes
-USE_LOCALE=	en_US.UTF-8
 
 RUBY_VER=	4.0
 
