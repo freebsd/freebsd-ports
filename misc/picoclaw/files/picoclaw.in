@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: picoclaw
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable picoclaw:
+#
+# picoclaw_enable="YES"
+# picoclaw_user="picoclaw"	# user to run picoclaw as (must exist)
+# picoclaw_flags=""		# extra flags passed to "picoclaw gateway"
+#
+# The picoclaw configuration is read from ~picoclaw_user/.picoclaw/config.json.
+# Before enabling the service, run "picoclaw onboard" as picoclaw_user to
+# create that file with API keys and model settings.
+
+. /etc/rc.subr
+
+name="picoclaw"
+rcvar="picoclaw_enable"
+
+load_rc_config $name
+
+: ${picoclaw_enable:=NO}
+: ${picoclaw_user:=picoclaw}
+: ${picoclaw_flags:=}
+
+_userhome=$(getent passwd "${picoclaw_user}" | cut -d: -f6)
+_confdir="${_userhome}/.picoclaw"
+_rundir="/var/run/${name}"
+_logdir="/var/log/${name}"
+
+pidfile="${_rundir}/${name}.pid"
+procname="%%PREFIX%%/bin/picoclaw"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -o ${_logdir}/${name}.log -t ${name} \
+	env HOME=${_userhome} \
+	${procname} gateway ${picoclaw_flags}"
+
+start_precmd="picoclaw_prestart"
+
+picoclaw_prestart()
+{
+	if [ -z "${_userhome}" ]; then
+		err 1 "user '${picoclaw_user}' does not exist."
+	fi
+	if [ ! -f "${_confdir}/config.json" ]; then
+		err 1 "${_confdir}/config.json not found; run 'picoclaw onboard' as ${picoclaw_user} first."
+	fi
+	/usr/bin/install -d -m 0755 -o ${picoclaw_user} ${_rundir}
+	/usr/bin/install -d -m 0755 -o ${picoclaw_user} ${_logdir}
+}
+
+run_rc_command "$1"

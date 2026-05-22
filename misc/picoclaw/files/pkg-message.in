@@ -1,0 +1,28 @@
+[
+{ type: install
+  message: <<EOM
+PicoClaw is installed.  The self-update command (`picoclaw update`) is
+removed in this port; use `pkg upgrade picoclaw` instead.
+
+To use PicoClaw as a per-user CLI:
+
+  $ picoclaw onboard
+  $ picoclaw gateway
+
+To run the gateway as a system service:
+
+  1. Create a dedicated user (any name works; defaults to "picoclaw"):
+       # pw useradd -n picoclaw -d /home/picoclaw -s /bin/sh -m
+  2. Onboard once as that user (will prompt for API keys, model, etc.):
+       # su -l picoclaw -c 'picoclaw onboard'
+     This creates ~picoclaw/.picoclaw/config.json.
+  3. Enable and start the service:
+       # sysrc picoclaw_enable=YES
+       # sysrc picoclaw_user=picoclaw      # only if not using the default name
+       # service picoclaw start
+
+The gateway binds to 127.0.0.1:18790 by default; health endpoints are
+exposed at /health, /ready and /reload (POST).
+EOM
+}
+]

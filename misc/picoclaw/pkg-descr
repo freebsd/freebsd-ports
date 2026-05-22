@@ -1,0 +1,5 @@
+PicoClaw is an ultra-lightweight personal AI assistant inspired by NanoBot,
+rebuilt from the ground up in Go.  It is designed to run on minimal hardware
+(under 10MB of RAM) and ships as a single static binary supporting multiple
+chat backends (Anthropic, OpenAI, Bedrock, local OLLAMA) and messaging
+integrations (Discord, Slack, Telegram, Matrix, and others).
