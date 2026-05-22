@@ -18,10 +18,7 @@
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/scripts/pydata-sphinx-theme.js.map
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/styles/pydata-sphinx-theme.css
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/styles/pydata-sphinx-theme.css.map
-%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/vendor/fontawesome/webfonts/fa-brands-400.ttf
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/vendor/fontawesome/webfonts/fa-brands-400.woff2
-%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/vendor/fontawesome/webfonts/fa-regular-400.ttf
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/vendor/fontawesome/webfonts/fa-regular-400.woff2
-%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/vendor/fontawesome/webfonts/fa-solid-900.ttf
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/vendor/fontawesome/webfonts/fa-solid-900.woff2
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/webpack-macros.html
