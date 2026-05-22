@@ -1,6 +1,6 @@
 PORTNAME=	postorius
 PORTVERSION=	1.3.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,11 @@ CPE_VENDOR=	postorius_project
 SHEBANG_FILES=	example_project/manage.py
 
 OPTIONS_DEFINE=	EXAMPLES
+
+post-patch:
+# https://gitlab.com/mailman/postorius/-/commit/c4706abd05ba6bcf472fc674b160d3a9d6a4868b
+	@${RM} ${WRKSRC}/src/postorius/doc/news.rst.orig
+	@${RM} ${WRKSRC}/src/postorius/static/postorius/js/held_messages.js.orig
 
 post-install-EXAMPLES-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} example_project ${STAGEDIR}${EXAMPLESDIR}
