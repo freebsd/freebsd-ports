@@ -128,7 +128,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cssparser-macros-0.6.1 \
 		ctor-0.1.26 \
 		ctor-0.4.1 \
-		ctor-1.0.5 \
+		ctor-1.0.6 \
 		ctor-proc-macro-0.0.5 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
