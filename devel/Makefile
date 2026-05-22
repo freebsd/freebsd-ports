@@ -7544,8 +7544,8 @@
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-forwardable
     SUBDIR += rubygem-forwardable-extended
-    SUBDIR += rubygem-fugit
     SUBDIR += rubygem-freezolite
+    SUBDIR += rubygem-fugit
     SUBDIR += rubygem-fugit-gitlab
     SUBDIR += rubygem-fuubar
     SUBDIR += rubygem-fuzzy_match
