@@ -1,3 +1,34 @@
+  <vuln vid="36a3131d-5600-11f1-b339-3497f65b111b">
+    <topic>nginx -- heap buffer overflow in ngx_http_rewrite_module</topic>
+    <affects>
+      <package>
+       <name>nginx</name>
+       <range><lt>1.30.2,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx developers report:</p>
+       <blockquote cite="https://nginx.org/en/CHANGES">
+       <p>
+       A heap memory buffer overflow might occur in a worker process
+       when using a configuration with overlapping captures in
+       ngx_http_rewrite_module, potentially resulting in arbitrary
+       code execution (CVE-2026-9256).
+       </p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-9256</cvename>
+      <url>https://nginx.org/en/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2026-05-22</discovery>
+      <entry>2026-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea4c5b9d-55f7-11f1-915c-8974b59277b5">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
