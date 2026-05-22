@@ -1,3 +1,3 @@
-TIMESTAMP = 1776796100
-SHA256 (azure_mgmt_storage-24.0.1.tar.gz) = a7f7068163b308e5f1f718541ac8014f7ff9219da0463bf7346ee29d9c349938
-SIZE (azure_mgmt_storage-24.0.1.tar.gz) = 213354
+TIMESTAMP = 1779455559
+SHA256 (azure_mgmt_storage-25.0.0.tar.gz) = 52c4bb1fb395fcfa7a2e8fb024c1dabc5a67bd6fa23c0d2d5a7fb29314f172d2
+SIZE (azure_mgmt_storage-25.0.0.tar.gz) = 228272
