@@ -1,5 +1,5 @@
 PORTNAME=	openapi-spec-validator
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=2.0.0<3.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.24.0<5.0.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema-path>=0.4.3<0.5.0:devel/py-jsonschema-path@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.26.0<5.0.0:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema-path>=0.5.0<0.6.0:devel/py-jsonschema-path@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=1.7.1<2.0:devel/py-lazy-object-proxy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.7.3<0.10.0:devel/py-openapi-schema-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.9.0<0.10.0:devel/py-openapi-schema-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.0.0<3.0.0:devel/py-pydantic-settings@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
