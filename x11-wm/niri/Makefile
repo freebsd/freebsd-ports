@@ -1,7 +1,7 @@
 PORTNAME=	niri
 DISTVERSIONPREFIX=	v
 DISTVERSION=	26.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	lme@FreeBSD.org
@@ -20,7 +20,7 @@ RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
 USES=		cargo gl gnome xorg
 USE_GITHUB=	yes
-USE_GL=		gbm
+USE_GL=		egl gbm
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	niri-wm
