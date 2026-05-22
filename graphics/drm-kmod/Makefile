@@ -1,9 +1,9 @@
 PORTNAME=	drm-kmod
-PORTVERSION=	20250428
+PORTVERSION=	20260508
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Direct Rendering Manager GPU drivers metaport
+COMMENT=	Direct Rendering Manager (DRM) GPU drivers metaport
 WWW=		https://github.com/freebsd/drm-kmod
 
 USES=		metaport
@@ -21,6 +21,9 @@ _DRM_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 .  elif ${OSVERSION} >= 1400097 && (${ARCH} == i386 || ${ARCH} == aarch64)
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-510-kmod
 _DRM_ARCHS=	aarch64 i386
+.  elif ${OSVERSION} >= 1500509 && ${ARCH} == amd64
+RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-612-kmod
+_DRM_ARCHS=	amd64
 .  elif ${OSVERSION} >= 1500031 && ${ARCH} == amd64
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-66-kmod
 _DRM_ARCHS=	amd64
