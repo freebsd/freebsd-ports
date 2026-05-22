@@ -1,0 +1,11 @@
+--- kernel/write.c.orig	2026-05-16 11:29:35 UTC
++++ kernel/write.c
+@@ -655,7 +655,7 @@ workbook_file(xls_resource_write_t *self)
+         if (worksheet->index == self->workbook->active_sheet)
+             worksheet->active = 1;
+ 
+-        if (worksheet->has_dynamic_arrays)
++        if (worksheet->has_dynamic_functions)
+             self->workbook->has_metadata = LXW_TRUE;
+     }
+ 
