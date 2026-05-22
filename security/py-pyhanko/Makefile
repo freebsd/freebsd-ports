@@ -1,5 +1,5 @@
 PORTNAME=	pyhanko
-PORTVERSION=	0.35.0
+PORTVERSION=	0.35.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/MatthiasValvekens/pyHanko/releases/download/v${PORTVERSION}/
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.31.0<0.32:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.31.1<0.32:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=5.4.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.31.0:www/py-requests@${PY_FLAVOR} \
