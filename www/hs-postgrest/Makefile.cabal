@@ -18,7 +18,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		async-2.2.5_4 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_6 \
-		attoparsec-aeson-2.2.2.0 \
+		attoparsec-aeson-2.2.2.0_1 \
 		auto-update-0.2.6 \
 		base-compat-0.14.1 \
 		base-compat-batteries-0.14.1 \
@@ -96,7 +96,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		http-date-0.0.11 \
 		http-media-0.8.1.1_2 \
 		http-semantics-0.3.0 \
-		http-types-0.12.4 \
+		http-types-0.12.4_1 \
 		http2-5.3.10_1 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.4_2 \
