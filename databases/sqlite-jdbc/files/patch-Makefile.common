@@ -1,6 +1,18 @@
---- Makefile.common.orig	2026-04-14 03:25:20 UTC
+--- Makefile.common.orig	2026-05-06 05:09:24 UTC
 +++ Makefile.common
-@@ -155,23 +154,23 @@ DragonFly-x86_64_SQLITE_FLAGS  :=
+@@ -66,9 +66,9 @@ CROSS_PREFIX :=
+ # cross-compilation toolchain prefix (e.g. "arm-linux-gnueabi-")
+ CROSS_PREFIX :=
+ 
+-Default_CC        := $(CROSS_PREFIX)gcc
++Default_CC        := $(CROSS_PREFIX)cc
+ Default_STRIP     := $(CROSS_PREFIX)strip
+-Default_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
++Default_CCFLAGS   := -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd -Os -fPIC -fvisibility=hidden
+ Default_LINKFLAGS := -shared -static-libgcc -pthread -lm
+ Default_LIBNAME   := libsqlitejdbc.so
+ Default_SQLITE_FLAGS  := 
+@@ -157,23 +157,23 @@ DragonFly-x86_64_SQLITE_FLAGS  :=
  DragonFly-x86_64_LIBNAME   := libsqlitejdbc.so
  DragonFly-x86_64_SQLITE_FLAGS  :=
  
