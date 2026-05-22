@@ -1,75 +1,6 @@
---- crates/fs/src/fs.rs.orig	2026-05-06 20:35:33 UTC
+--- crates/fs/src/fs.rs.orig	2026-05-20 14:31:42 UTC
 +++ crates/fs/src/fs.rs
-@@ -96,8 +96,14 @@ pub fn requires_poll_watcher(path: &Path) -> bool {
-         return detect_requires_poll_watcher_linux(&path);
-     }
- 
--    #[cfg(not(target_os = "linux"))]
-+    #[cfg(target_os = "freebsd")]
-     {
-+        let path = effective_watch_path(path);
-+        return detect_requires_poll_watcher_freebsd(&path);
-+    }
-+
-+    #[cfg(not(any(target_os = "linux", target_os = "freebsd")))]
-+    {
-         let _ = path;
-         false
-     }
-@@ -198,6 +204,52 @@ fn is_wsl_drvfs_path(path: &Path) -> bool {
-         && (after_mnt.len() == 1 || after_mnt.as_bytes()[1] == b'/')
- }
- 
-+#[cfg(target_os = "freebsd")]
-+fn detect_requires_poll_watcher_freebsd(path: &Path) -> bool {
-+    use std::ffi::{CStr, CString};
-+    use std::os::unix::ffi::OsStrExt;
-+
-+    // Check filesystem type via statfs
-+    let c_path = match CString::new(path.as_os_str().as_bytes()) {
-+        Ok(p) => p,
-+        Err(_) => return false,
-+    };
-+
-+    let mut stat: libc::statfs = unsafe { std::mem::zeroed() };
-+    if unsafe { libc::statfs(c_path.as_ptr(), &mut stat) } != 0 {
-+        return false;
-+    }
-+
-+    // Filesystem type is stored in f_fstypename on FreeBSD
-+    let fstype_ptr = stat.f_fstypename.as_ptr();
-+    let fstype_res = unsafe { CStr::from_ptr(fstype_ptr) }.to_str();
-+
-+    if let Ok(fstype) = fstype_res {
-+        match fstype {
-+            "nfs" | "smbfs" | "fusefs" | "nullfs" => {
-+                log::info!(
-+                    "Detected {} filesystem at {}, using poll watcher",
-+                    fstype,
-+                    path.display()
-+                );
-+                return true;
-+            }
-+            _ => {}
-+        }
-+    }
-+
-+    // Fallback for checking any non-local filesystem flags directly
-+    if (stat.f_flags & libc::MNT_LOCAL) == 0 {
-+        log::info!(
-+            "Detected non-local filesystem at {}, using poll watcher",
-+            path.display()
-+        );
-+        return true;
-+    }
-+
-+    false
-+}
-+
- #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
- pub enum PathEventKind {
-     Removed,
-@@ -568,7 +620,7 @@ impl FileHandle for std::fs::File {
+@@ -443,7 +443,7 @@ impl FileHandle for std::fs::File {
          Ok(new_path)
      }
  
@@ -78,7 +9,7 @@
      fn current_path(&self, _: &Arc<dyn Fs>) -> Result<PathBuf> {
          use std::{
              ffi::{CStr, OsStr},
-@@ -577,7 +629,10 @@ impl FileHandle for std::fs::File {
+@@ -452,7 +452,10 @@ impl FileHandle for std::fs::File {
  
          let fd = self.as_fd();
          let mut kif = MaybeUninit::<libc::kinfo_file>::uninit();
@@ -90,7 +21,7 @@
  
          let result = unsafe { libc::fcntl(fd.as_raw_fd(), libc::F_KINFO, kif.as_mut_ptr()) };
          anyhow::ensure!(result != -1, "fcntl returned -1");
-@@ -589,6 +644,11 @@ impl FileHandle for std::fs::File {
+@@ -464,6 +467,11 @@ impl FileHandle for std::fs::File {
          Ok(path)
      }
  
@@ -102,7 +33,7 @@
      #[cfg(target_os = "windows")]
      fn current_path(&self, _: &Arc<dyn Fs>) -> Result<PathBuf> {
          use std::ffi::OsString;
-@@ -679,7 +739,7 @@ impl RealFs {
+@@ -554,7 +562,7 @@ impl RealFs {
      }
  }
  
@@ -111,7 +42,7 @@
  fn rename_without_replace(source: &Path, target: &Path) -> io::Result<()> {
      let source = path_to_c_string(source)?;
      let target = path_to_c_string(target)?;
-@@ -699,6 +759,27 @@ fn rename_without_replace(source: &Path, target: &Path
+@@ -574,6 +582,27 @@ fn rename_without_replace(source: &Path, target: &Path
          )
      };
  
@@ -139,7 +70,7 @@
      if result == 0 {
          Ok(())
      } else {
-@@ -726,7 +807,7 @@ fn rename_without_replace(source: &Path, target: &Path
+@@ -601,7 +630,7 @@ fn rename_without_replace(source: &Path, target: &Path
      .map_err(|_| io::Error::last_os_error())
  }
  
@@ -148,7 +79,7 @@
  fn path_to_c_string(path: &Path) -> io::Result<CString> {
      CString::new(path.as_os_str().as_bytes()).map_err(|_| {
          io::Error::new(
-@@ -830,7 +911,12 @@ impl Fs for RealFs {
+@@ -705,7 +734,12 @@ impl Fs for RealFs {
          }
  
          let use_metadata_fallback = {
@@ -162,7 +93,7 @@
              {
                  let source = source.to_path_buf();
                  let target = target.to_path_buf();
-@@ -863,7 +949,12 @@ impl Fs for RealFs {
+@@ -738,7 +772,12 @@ impl Fs for RealFs {
                  }
              }
  

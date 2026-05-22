@@ -1,6 +1,6 @@
---- crates/zed/src/main.rs.orig	2026-05-13 17:09:47 UTC
+--- crates/zed/src/main.rs.orig	2026-05-20 14:31:42 UTC
 +++ crates/zed/src/main.rs
-@@ -13,6 +13,7 @@ use collections::HashMap;
+@@ -23,6 +23,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
  use collab_ui::channel_view::ChannelView;
  use collections::HashMap;
@@ -8,7 +8,7 @@
  use crashes::InitCrashHandler;
  use db::kvp::{GlobalKeyValueStore, KeyValueStore};
  use editor::Editor;
-@@ -69,7 +70,10 @@ use zed::{
+@@ -79,7 +80,10 @@ use zed::{
      handle_keymap_file_changes, initialize_workspace, open_paths_with_positions,
  };
  
@@ -19,7 +19,7 @@
  
  #[cfg(feature = "mimalloc")]
  #[global_allocator]
-@@ -196,6 +200,7 @@ fn main() {
+@@ -206,6 +210,7 @@ fn main() {
      }
  
      // `zed --crash-handler` Makes zed operate in minidump crash handler mode
@@ -27,7 +27,7 @@
      if let Some(socket) = &args.crash_handler {
          crashes::crash_server(socket.as_path(), paths::logs_dir().clone());
          return;
-@@ -377,6 +382,7 @@ fn main() {
+@@ -387,6 +392,7 @@ fn main() {
      ) || *release_channel::RELEASE_CHANNEL
          != ReleaseChannel::Dev;
  
@@ -35,7 +35,7 @@
      let crash_handler = if should_install_crash_handler {
          Some(
              app.background_executor().spawn(crashes::init(
-@@ -599,6 +605,7 @@ fn main() {
+@@ -609,6 +615,7 @@ fn main() {
              let telemetry = telemetry.clone();
              move |_, evt: &client::user::Event, cx| match evt {
                  client::user::Event::PrivateUserInfoUpdated => {
@@ -43,7 +43,7 @@
                      if let Some(crash_client) = cx.try_global::<CrashHandler>() {
                          crashes::set_user_info(
                              &crash_client.0,
-@@ -648,6 +655,7 @@ fn main() {
+@@ -658,6 +665,7 @@ fn main() {
          auto_update::init(client.clone(), cx);
          dap_adapters::init(cx);
          auto_update_ui::init(cx);
@@ -51,7 +51,7 @@
          reliability::init(client.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -840,6 +848,7 @@ fn main() {
+@@ -850,6 +858,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  
