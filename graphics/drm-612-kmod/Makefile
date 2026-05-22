@@ -1,4 +1,4 @@
-PORTNAME=	drm-latest-kmod
+PORTNAME=	drm-612-kmod
 DISTVERSION=	${DRM_KMOD_DISTVERSION}
 CATEGORIES=	graphics kld
 
@@ -14,10 +14,10 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64
 
-CONFLICTS_INSTALL=	drm-515-kmod \
+CONFLICTS_INSTALL=	drm-latest-kmod \
+			drm-515-kmod \
 			drm-61-kmod \
-			drm-66-kmod \
-			drm-612-kmod
+			drm-66-kmod
 
 USES=		kmod uidfix compiler:c++11-lang
 

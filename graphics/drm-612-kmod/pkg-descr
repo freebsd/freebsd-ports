@@ -1,0 +1,4 @@
+amdgpu, i915, and radeon DRM drivers modules.
+Currently corresponding to Linux 6.12 DRM.
+This version is for FreeBSD 15 1500509
+and above, or FreeBSD 16 1600018 and above.
