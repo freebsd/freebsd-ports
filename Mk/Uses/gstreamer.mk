@@ -42,7 +42,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 # When modifying _GST1_VERSION, run `make -C ${PORTSDIR}/multimedia/gstreamer1 makesum-all`
 # to update the distinfo files for the entire suite.
-_GST1_VERSION=		1.28.1
+_GST1_VERSION=		1.28.3
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
@@ -353,7 +353,7 @@ gst-rtsp-server_IMPL=	#
 
 gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
 gst-rust_IMPL=		#
-gst-rust_GST1_VERSION=	0.15.1
+gst-rust_GST1_VERSION=	0.15.2
 gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming
