@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.85.0
+DISTVERSION=	1.85.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.11.8:devel/py-uv-build@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1<1.0:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openai>=2.22.0<3.0.0:misc/py-openai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.0<1.0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=2.20.0<3.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.0<2.0:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.8.0<1.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.0.0<9.0:devel/py-importlib-metadata@${PY_FLAVOR} \
