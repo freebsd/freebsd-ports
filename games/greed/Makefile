@@ -1,5 +1,5 @@
 PORTNAME=	greed
-DISTVERSION=	5.0
+DISTVERSION=	5.2
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game

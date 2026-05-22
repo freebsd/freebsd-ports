@@ -1,6 +1,6 @@
-TIMESTAMP = 1778966957
-SHA256 (greed-5.0.tar.gz) = 340a6f2bdb47159d1c31a435c568db52962bd9637c8d9006b6fcf5958018e8cc
-SIZE (greed-5.0.tar.gz) = 15901
+TIMESTAMP = 1779488706
+SHA256 (greed-5.2.tar.gz) = 4d72075bcf9d951c247bec7cc9d2a64f2319e96784c895835bc880b93430fd7b
+SIZE (greed-5.2.tar.gz) = 18954
 SHA256 (rust/crates/bitflags-2.11.1.crate) = c4512299f36f043ab09a583e57bceb5a5aab7a73db1805848e8fef3c9e8c78b3
 SIZE (rust/crates/bitflags-2.11.1.crate) = 49082
 SHA256 (rust/crates/cfg-if-1.0.4.crate) = 9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801
