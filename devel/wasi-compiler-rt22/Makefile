@@ -1,5 +1,5 @@
 # must sync with devel/llvm22
-DISTVERSION=	22.1.5
+DISTVERSION=	22.1.6
 
 MASTERDIR=	${.CURDIR}/../wasi-compiler-rt
 
