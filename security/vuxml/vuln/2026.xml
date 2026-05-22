@@ -1,3 +1,73 @@
+  <vuln vid="05aadfcc-55f5-11f1-915c-8974b59277b5">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-base</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The GStreamer project reports multiple security vulnerabilities fixed in the 1.28.2 release:</p>
+      <blockquote cite="https://gstreamer.freedesktop.org/security/">
+	<p>Several security vulnerabilities were addressed, including:</p>
+	<ul>
+	  <li>H.264 video parser NULL pointer dereference when freeing SPS/MVC data.</li>
+	  <li>Integer overflows in the AV1 LEB128 parser, H.266/VVC video parser, and WAV parser cue handling.</li>
+	  <li>Heap buffer overflow in the Matroska demuxer.</li>
+	  <li>Assertion failures in the FLV demuxer on corrupted streams.</li>
+	  <li>NULL-pointer dereferences in the mDVDsub subtitle parser.</li>
+	  <li>Multiple out-of-bounds reads and writes in the MOV/MP4 demuxer audio channel layout parsing.</li>
+	  <li>Denial of service in SRT/WebVTT parser</li>
+	</ul>
+	<p>These could lead to application crashes, memory exhaustion, or potentially arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-5056</cvename>
+      <cvename>CVE-2026-39043</cvename>
+      <cvename>CVE-2026-39044</cvename>
+      <cvename>CVE-2026-46469</cvename>
+      <cvename>CVE-2026-46470</cvename>
+      <cvename>CVE-2026-46472</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0013.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0014.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0015.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0017.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0018.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0019.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0020.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0021.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0022.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0023.html</url>
+    </references>
+    <dates>
+      <discovery>2026-04-07</discovery>
+      <entry>2026-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="738f5590-550c-11f1-9f97-3fa0ea3edd7d">
     <topic>qt6-webengine -- multiple vulnerabilities</topic>
     <affects>
