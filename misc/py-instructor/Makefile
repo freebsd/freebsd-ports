@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=2.0.0<3.0.0:misc/py-openai@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.1<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=8.2.3<10.0.0:devel/py-tenacity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.18.0<3.0.0:devel/py-pydantic-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1<0.15:textproc/py-jiter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1<1.0:textproc/py-jiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.4<4.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3.0.0:www/py-requests@${PY_FLAVOR}
 
