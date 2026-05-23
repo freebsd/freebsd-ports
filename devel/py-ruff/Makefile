@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.15.13
+DISTVERSION=	0.15.14
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -144,7 +144,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fancy-regex-0.14.0 \
 		fastrand-2.3.0 \
 		fern-0.7.1 \
-		filetime-0.2.27 \
+		filetime-0.2.29 \
 		find-msvc-tools-0.1.2 \
 		flate2-1.1.2 \
 		fnv-1.0.7 \
@@ -167,7 +167,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		half-2.6.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
@@ -348,8 +348,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.1.1 \
 		serde_test-1.0.177 \
-		serde_with-3.19.0 \
-		serde_with_macros-3.19.0 \
+		serde_with-3.20.0 \
+		serde_with_macros-3.20.0 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.2 \
