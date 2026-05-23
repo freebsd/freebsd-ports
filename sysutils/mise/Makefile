@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.12
+DISTVERSION=	2026.5.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
 		astral-reqwest-middleware-0.4.2 \
-		astral-tokio-tar-0.6.1 \
+		astral-tokio-tar-0.6.2 \
 		astral_async_http_range_reader-0.9.1 \
 		astral_async_zip-0.0.17 \
 		async-backtrace-0.2.7 \
