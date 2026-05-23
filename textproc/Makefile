@@ -1676,6 +1676,7 @@
     SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-actdiag
     SUBDIR += py-sphinxcontrib-adadomain
+    SUBDIR += py-sphinxcontrib-apidoc
     SUBDIR += py-sphinxcontrib-applehelp
     SUBDIR += py-sphinxcontrib-autoprogram
     SUBDIR += py-sphinxcontrib-bibtex
