@@ -10101,6 +10101,7 @@
 %%WWWDIR%%/lib/private/Files/External/SessionStorageWrapper.php
 %%WWWDIR%%/lib/private/Files/External/StorageConfig.php
 %%WWWDIR%%/lib/private/Files/External/StorageModifierTrait.php
+%%WWWDIR%%/lib/private/Files/External/StoragesBackendChecker.php
 %%WWWDIR%%/lib/private/Files/External/StoragesBackendService.php
 %%WWWDIR%%/lib/private/Files/External/VisibilityTrait.php
 %%WWWDIR%%/lib/private/Files/FileInfo.php
