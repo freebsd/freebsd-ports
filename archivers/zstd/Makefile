@@ -1,6 +1,6 @@
 PORTNAME=	zstd
 PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
 
@@ -19,8 +19,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-# Note this port is in the dependency chain of lang/python314
-# as a requisite, thus cannot use meson or python to build
 USES=		cpe gmake localbase:ldflags tar:zst
 
 ALL_TARGET=	default
@@ -31,21 +29,24 @@ MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		V=1
-MAKE_ARGS+=	${_MAKE_JOBS} HAVE_LZ4=0
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-
-CPE_VENDOR=	facebook
-CPE_PRODUCT=	zstandard
 
 PLIST_SUB=	BUILD_TYPE=${BUILD_TYPE:tl} PORTVERSION=${PORTVERSION}
 SUB_FILES=	zstdConfigVersion.cmake zstdTargets-BUILD_TYPE.cmake
 SUB_LIST=	BUILD_TYPE_CAPS=${BUILD_TYPE:tu} BUILD_TYPE_MIXED=${BUILD_TYPE} PORTVERSION=${PORTVERSION}
 
+CPE_VENDOR=	facebook
+CPE_PRODUCT=	zstandard
+
 BUILD_TYPE=	${defined(WITH_DEBUG) :?Debug:Release}
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	LZ4 OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=LZ4
 
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_MAKE_ARGS=		HAVE_LZ4=1
+LZ4_MAKE_ARGS_OFF=	HAVE_LZ4=0
 OPTIMIZED_CFLAGS_VARS=	CFLAGS+=-O3
 
 post-install:
