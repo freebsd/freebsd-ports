@@ -1,6 +1,6 @@
---- example/docker-compose/shared/tempo.yaml.orig	2024-10-22 18:23:02 UTC
+--- example/docker-compose/shared/tempo.yaml.orig	2025-01-01 00:00:00 UTC
 +++ example/docker-compose/shared/tempo.yaml
-@@ -36,22 +36,22 @@ metrics_generator:
+@@ -33,20 +33,20 @@ metrics_generator:
    registry:
      external_labels:
        source: tempo
@@ -18,10 +18,10 @@
  
  storage:
    trace:
-     backend: local                     # backend configuration to use
+     backend: local # backend configuration to use
      wal:
--      path: /var/tempo/wal             # where to store the wal locally
-+      path: /var/db/tempo/wal             # where to store the wal locally
+-      path: /var/tempo/wal # where to store the wal locally
++      path: /var/db/tempo/wal # where to store the wal locally
      local:
 -      path: /var/tempo/blocks
 +      path: /var/db/tempo/blocks

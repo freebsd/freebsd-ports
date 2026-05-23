@@ -1,7 +1,6 @@
 PORTNAME=	tempo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
-PORTREVISION=	13
+DISTVERSION=	2.10.5
 CATEGORIES=	sysutils
 MASTER_SITES+=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${PORTNAME}/${DISTVERSIONFULL}/
 PKGNAMEPREFIX=	grafana-
@@ -14,7 +13,7 @@ WWW=		https://github.com/grafana/tempo
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	grafana
 GH_PROJECT=	tempo
@@ -34,16 +33,20 @@ LD_FLAG_STRING=	-s \
 LD_FLAG_X_PREFIX=	-X github.com/grafana/tempo/pkg/util/build
 BUILD_USER?=	${USER}
 
-TEMPO_USER?=	tempo
-TEMPO_GROUP?=	tempo
+TEMPO_USER?=	${PORTNAME}
+TEMPO_GROUP?=	${PORTNAME}
 TEMPO_DATADIR?=	/var/db/${PORTNAME}
 
 SUB_LIST=	TEMPO_USER=${TEMPO_USER} \
 		TEMPO_GROUP=${TEMPO_GROUP} \
 		TEMPO_DATADIR=${TEMPO_DATADIR} \
 
+.if ${TEMPO_USER} == ${PORTNAME}
 USERS=		${TEMPO_USER}
+.endif
+.if ${TEMPO_GROUP} == ${PORTNAME}
 GROUPS=		${TEMPO_GROUP}
+.endif
 
 PLIST_SUB=	${SUB_LIST}
 
