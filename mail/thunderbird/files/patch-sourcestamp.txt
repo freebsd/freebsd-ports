@@ -1,6 +1,6 @@
---- sourcestamp.txt.orig
-+++ sourcestamp.txt
+--- sourcestamp.txt.orig	2026-05-23 17:32:40.702999000 +0200
++++ sourcestamp.txt	2026-05-23 17:34:55.189214000 +0200
 @@ -1 +1,3 @@
- 20260515020702
-+https://hg.mozilla.org/releases/comm-release/rev/82da0b799946d58ce8a7e3edd5008919a2fa7acb
-+https://hg.mozilla.org/releases/mozilla-beta/rev/903d02bd0593077a014525321734716
+ 20260522225032
++https://hg.mozilla.org/releases/comm-release/rev/6bb91c3c9c3cb5aadbb47114cbfec856cbce141a
++https://hg.mozilla.org/releases/mozilla-release/rev/08b6bd8d41197610421c9afa119fdf1cb8b8153e
