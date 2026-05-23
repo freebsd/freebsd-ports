@@ -1,7 +1,6 @@
 PORTNAME=	cargo-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
-PORTREVISION=	2
+DISTVERSION=	0.32.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,16 +28,16 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.14 \
+		anstream-1.0.0 \
 		anstyle-1.0.13 \
-		anstyle-parse-0.2.4 \
+		anstyle-parse-1.0.0 \
 		anstyle-query-1.0.3 \
-		anstyle-wincon-3.0.3 \
+		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
 		arraydeque-0.5.1 \
 		autocfg-1.3.0 \
-		aws-lc-rs-1.16.0 \
-		aws-lc-sys-0.37.1 \
+		aws-lc-rs-1.16.2 \
+		aws-lc-sys-0.39.0 \
 		axoasset-2.0.1 \
 		axocli-0.3.0 \
 		axoprocess-0.2.1 \
@@ -51,6 +50,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bitflags-2.11.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
+		bstr-1.12.1 \
 		bumpalo-3.19.0 \
 		bytecount-0.6.8 \
 		bytemuck-1.16.0 \
@@ -71,18 +71,18 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
-		clap-4.5.60 \
+		clap-4.6.1 \
 		clap-cargo-0.18.3 \
-		clap_builder-4.5.60 \
-		clap_derive-4.5.55 \
+		clap_builder-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.0.0 \
 		cmake-0.1.57 \
-		color-backtrace-0.7.2 \
+		color-backtrace-0.7.3 \
 		colorchoice-1.0.1 \
 		combine-4.6.7 \
 		comfy-table-7.2.2 \
 		console-0.15.10 \
-		console-0.16.2 \
+		console-0.16.3 \
 		constant_time_eq-0.4.2 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
@@ -189,7 +189,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		leb128fmt-0.1.0 \
 		lexopt-0.3.0 \
 		libbz2-rs-sys-0.2.2 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.7.3 \
@@ -207,10 +207,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		miette-derive-5.10.0 \
 		miette-derive-7.6.0 \
 		mime-0.3.17 \
-		minijinja-2.16.0 \
+		minijinja-2.19.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
-		mio-1.0.1 \
+		mio-1.2.0 \
 		mustache-0.9.0 \
 		nested-0.1.1 \
 		newline-converter-0.3.0 \
@@ -222,13 +222,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		num-traits-0.2.19 \
 		object-0.37.3 \
 		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.2 \
 		openssl-probe-0.2.1 \
 		oro-common-0.3.34 \
 		oro-package-spec-0.3.34 \
 		owo-colors-4.0.0 \
 		parking_lot-0.12.2 \
 		parking_lot_core-0.9.10 \
-		parse-changelog-0.6.15 \
+		parse-changelog-0.6.16 \
 		pathdiff-0.2.3 \
 		pbkdf2-0.12.2 \
 		percent-encoding-2.3.2 \
@@ -244,11 +245,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		proc-macro2-1.0.106 \
 		quick-error-1.2.3 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.13 \
+		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
-		quote-1.0.36 \
+		quote-1.0.45 \
 		r-efi-5.3.0 \
-		rand-0.9.2 \
+		rand-0.9.4 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.5 \
 		redox_syscall-0.4.1 \
@@ -270,7 +271,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustls-pki-types-1.14.0 \
 		rustls-platform-verifier-0.6.2 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.9 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -284,8 +285,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
 		self-replace-1.5.0 \
-		self_cell-1.0.4 \
-		semver-1.0.27 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -302,10 +302,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signal-hook-registry-1.4.2 \
 		simd-adler32-0.3.7 \
 		similar-2.7.0 \
+		similar-3.1.0 \
 		slab-0.4.9 \
 		smallvec-1.15.1 \
-		socket2-0.6.0 \
-		spdx-0.13.3 \
+		socket2-0.6.3 \
+		spdx-0.13.4 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
@@ -320,7 +321,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.1 \
 		synstructure-0.13.1 \
-		tar-0.4.44 \
+		tar-0.4.45 \
 		target-lexicon-0.13.3 \
 		target-spec-3.5.7 \
 		temp-dir-0.2.0 \
@@ -339,8 +340,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinystr-0.7.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.49.0 \
-		tokio-macros-2.6.0 \
+		tokio-1.52.3 \
+		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.0 \
 		toml-1.0.3+spec-1.1.0 \
 		toml_datetime-1.0.0+spec-1.1.0 \
@@ -371,8 +372,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		url-2.5.8 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
-		utf8parse-0.2.1 \
-		uuid-1.21.0 \
+		utf8parse-0.2.2 \
+		uuid-1.23.1 \
 		valuable-0.1.0 \
 		version_check-0.9.4 \
 		walkdir-2.5.0 \
