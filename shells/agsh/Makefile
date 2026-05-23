@@ -1,5 +1,5 @@
 PORTNAME=	agsh
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.2
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +50,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.1 \
 		cc-1.2.61 \
-		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
@@ -91,7 +90,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.1 \
 		cssparser-0.36.0 \
+		cssparser-0.37.0 \
 		cssparser-macros-0.6.1 \
+		cssparser-macros-0.7.0 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
@@ -154,7 +155,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		half-2.7.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
 		html5ever-0.39.0 \
@@ -178,7 +179,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
-		idna_adapter-1.2.1 \
+		idna_adapter-1.2.2 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		indexmap-2.14.0 \
@@ -190,12 +191,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itoa-1.0.18 \
-		jni-0.21.1 \
-		jni-sys-0.3.1 \
+		jni-0.22.4 \
+		jni-macros-0.22.4 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.95 \
+		js-sys-0.3.97 \
 		jsonwebtoken-10.3.0 \
 		lazy-regex-3.6.0 \
 		lazy-regex-proc_macros-3.6.0 \
@@ -289,18 +290,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
-		reqwest-0.13.2 \
+		reqwest-0.13.3 \
 		ring-0.17.14 \
-		rmcp-1.5.0 \
-		rmcp-macros-1.5.0 \
+		rmcp-1.7.0 \
+		rmcp-macros-1.7.0 \
 		rusqlite-0.37.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.39 \
+		rustls-0.23.40 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.1 \
-		rustls-platform-verifier-0.6.2 \
+		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
 		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
@@ -310,11 +311,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
 		scopeguard-1.2.0 \
-		scraper-0.26.0 \
+		scraper-0.27.0 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
 		selectors-0.33.0 \
-		selectors-0.36.1 \
+		selectors-0.38.0 \
 		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
@@ -335,6 +336,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
 		simd-adler32-0.3.9 \
+		simd_cesu8-1.1.1 \
+		simdutf8-0.1.5 \
 		simple_asn1-0.6.4 \
 		siphasher-1.0.2 \
 		slab-0.4.12 \
@@ -371,7 +374,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.1 \
+		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
 		tokio-rusqlite-0.7.0 \
 		tokio-rustls-0.26.4 \
@@ -416,16 +419,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.118 \
-		wasm-bindgen-futures-0.4.68 \
-		wasm-bindgen-macro-0.2.118 \
-		wasm-bindgen-macro-support-0.2.118 \
-		wasm-bindgen-shared-0.2.118 \
+		wasm-bindgen-0.2.120 \
+		wasm-bindgen-futures-0.4.70 \
+		wasm-bindgen-macro-0.2.120 \
+		wasm-bindgen-macro-support-0.2.120 \
+		wasm-bindgen-shared-0.2.120 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.5.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.95 \
+		web-sys-0.3.97 \
 		web-time-1.1.0 \
 		web_atoms-0.2.4 \
 		webpki-root-certs-1.0.7 \
@@ -445,36 +448,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-registry-0.6.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
-		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
-		windows-targets-0.42.2 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
 		windows-threading-0.2.1 \
-		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.1 \
-		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_aarch64_msvc-0.53.1 \
-		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_gnullvm-0.53.1 \
-		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.52.6 \
 		windows_i686_msvc-0.53.1 \
-		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnu-0.53.1 \
-		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_gnullvm-0.53.1 \
-		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-1.0.2 \
