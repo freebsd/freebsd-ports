@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	azure_core_tracing_opentelemetry-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Microsoft Azure Azure Core OpenTelemetry plugin Library for Python
+COMMENT=	Microsoft Azure Core OpenTelemetry plugin Library for Python
 WWW=		https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/core/azure-core-tracing-opentelemetry \
 		https://github.com/Azure/azure-sdk-for-python
 
