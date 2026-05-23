@@ -1,5 +1,5 @@
-TIMESTAMP = 1772214879
-SHA256 (go/dns_blocky/blocky-v0.29.0/v0.29.0.mod) = 3cebfe6b8c40dd658f91d8be987a1eea4121979c9b0c453c3933d0ece3c2c7f1
-SIZE (go/dns_blocky/blocky-v0.29.0/v0.29.0.mod) = 9290
-SHA256 (go/dns_blocky/blocky-v0.29.0/v0.29.0.zip) = d5d236e72d3a6c0957d9583a9942afe6aaeb800e4946dada319fc214e6d22d24
-SIZE (go/dns_blocky/blocky-v0.29.0/v0.29.0.zip) = 7425022
+TIMESTAMP = 1779152633
+SHA256 (go/dns_blocky/blocky-v0.30.0/v0.30.0.mod) = 0560220b44563e985895f86c55d53fd7730d656973998849a932c7732d386ad6
+SIZE (go/dns_blocky/blocky-v0.30.0/v0.30.0.mod) = 9285
+SHA256 (go/dns_blocky/blocky-v0.30.0/v0.30.0.zip) = b1489070b5cd1322b723345d49bee7d271f20bc7a782a6cf15943611dcbc2bcf
+SIZE (go/dns_blocky/blocky-v0.30.0/v0.30.0.zip) = 7476989
