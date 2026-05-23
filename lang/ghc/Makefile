@@ -3,7 +3,8 @@ PORTVERSION=	${GHC_VERSION}
 PORTREVISION?=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
-		LOCAL/arrowd/:boot
+		LOCAL/arrowd/:boot \
+		LOCAL/pkubaj:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,7 +14,7 @@ WWW=		https://www.haskell.org/ghc/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libgmp.so:math/gmp
 
@@ -130,7 +131,7 @@ DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS}
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
 
-GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
+GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/powerpc64le/ppc64/}
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
 BOOT_INSTALL_DIR=	${WRKDIR}/ghc-boot-install
 
@@ -142,12 +143,17 @@ BOOT_GHC=		${BOOT_INSTALL_DIR}/bin/ghc-${BOOT_GHC_VERSION}
 BOOT_GHC?=		${LOCALBASE}/bin/ghc
 .endif # MBOOT
 
+HADRIAN_BOOT_TARBALL?=	hadrian-${GHC_VERSION}-boot.tar.gz
+
 .if !defined(IGNORE_MISSING_HADRIAN)
-DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
+DISTFILES+=		${HADRIAN_BOOT_TARBALL}:boot
 .endif
 
 .if ${ARCH} == aarch64
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
+CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
+.elif ${ARCH} == powerpc64le
+CONFIGURE_TARGET=	${ARCH}-unknown-freebsd
 CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
 .endif
 
@@ -164,7 +170,7 @@ pre-build:
 .if ! ${PORT_OPTIONS:MBOOT}
 # Compile Hadrian using the bootstrap compiler and bootstrap Hadrian distfile
 	cd ${WRKSRC}/hadrian/bootstrap && \
-		./bootstrap.py -w ${BOOT_GHC} -s ${DISTDIR}/hadrian-${GHC_VERSION}-boot.tar.gz
+		./bootstrap.py -w ${BOOT_GHC} -s ${DISTDIR}/${HADRIAN_BOOT_TARBALL}
 .else
 # Otherwise, use whatever GHC and Hadrian plan the user wants
 .  if !exists(${BOOT_GHC})

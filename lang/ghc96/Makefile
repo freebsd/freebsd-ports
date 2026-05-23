@@ -14,11 +14,17 @@ BASE_PACKAGES=		Cabal-3.10.3.0 array-0.5.8.0 base-4.18.3.0 binary-0.8.9.1 \
 			process-1.6.19.0 stm-2.5.1.0 template-haskell-2.20.0.0 \
 			terminfo-0.4.1.6 text-2.0.2 time-1.12.2 \
 			transformers-0.6.1.0 unix-2.8.6.0 xhtml-3000.2.2.1
-BOOT_GHC_VERSION=	9.2.8
 BOOT_LLVM_VERSION=	12
 
 MASTERDIR=	${.CURDIR}/../ghc
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
+
+.if ${ARCH} == powerpc64le
+BOOT_GHC_VERSION=	9.6.7
+HADRIAN_BOOT_TARBALL=	hadrian-9.6.7-boot-powerpc64le.tar.gz
+.else
+BOOT_GHC_VERSION=	9.2.8
+.endif
 
 .include	"${MASTERDIR}/Makefile"
