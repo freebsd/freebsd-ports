@@ -1,5 +1,5 @@
 PORTNAME=	virt-firmware
-PORTVERSION=	26.4
+PORTVERSION=	26.5.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 DISTNAME=	virt_firmware-${PORTVERSION}
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-	        ${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
