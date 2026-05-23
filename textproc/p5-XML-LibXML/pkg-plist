@@ -19,6 +19,7 @@
 %%SITE_ARCH%%/XML/LibXML/Error.pod
 %%SITE_ARCH%%/XML/LibXML/InputCallback.pod
 %%SITE_ARCH%%/XML/LibXML/Literal.pm
+%%SITE_ARCH%%/XML/LibXML/NamedNodeMap.pod
 %%SITE_ARCH%%/XML/LibXML/Namespace.pod
 %%SITE_ARCH%%/XML/LibXML/Node.pod
 %%SITE_ARCH%%/XML/LibXML/NodeList.pm
@@ -59,6 +60,7 @@
 %%PERL5_MAN3%%/XML::LibXML::Error.3.gz
 %%PERL5_MAN3%%/XML::LibXML::InputCallback.3.gz
 %%PERL5_MAN3%%/XML::LibXML::Literal.3.gz
+%%PERL5_MAN3%%/XML::LibXML::NamedNodeMap.3.gz
 %%PERL5_MAN3%%/XML::LibXML::Namespace.3.gz
 %%PERL5_MAN3%%/XML::LibXML::Node.3.gz
 %%PERL5_MAN3%%/XML::LibXML::NodeList.3.gz
