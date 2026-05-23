@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.14
+DISTVERSION=	2026.5.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,6 +37,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
+		ambient-id-0.0.11 \
 		android_system_properties-0.1.5 \
 		ansi-str-0.9.0 \
 		ansitok-0.3.0 \
@@ -48,13 +49,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anyhow-1.0.102 \
 		arbitrary-1.4.2 \
 		arc-swap-1.9.1 \
-		archspec-0.1.3 \
+		archspec-0.2.0 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
-		astral-reqwest-middleware-0.4.2 \
+		astral-reqwest-middleware-0.5.1 \
 		astral-tokio-tar-0.6.2 \
-		astral_async_http_range_reader-0.9.1 \
+		astral_async_http_range_reader-0.11.0 \
 		astral_async_zip-0.0.17 \
 		async-backtrace-0.2.7 \
 		async-backtrace-attributes-0.2.7 \
@@ -104,7 +105,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		beef-0.5.2 \
 		bindgen-0.72.1 \
 		binstall-tar-0.4.42 \
-		bisection-0.1.0 \
 		bit-set-0.6.0 \
 		bit-set-0.8.0 \
 		bit-vec-0.7.0 \
@@ -160,7 +160,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cmov-0.5.3 \
 		cmpv2-0.2.0 \
 		cms-0.2.3 \
-		coalesced_map-0.1.2 \
+		coalesced_map-0.1.3 \
 		color-eyre-0.6.5 \
 		color-print-0.3.7 \
 		color-print-proc-macro-0.3.7 \
@@ -264,7 +264,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		faster-hex-0.10.0 \
 		fastrand-2.4.1 \
 		fiat-crypto-0.2.9 \
-		file_url-0.3.0 \
+		file_url-0.3.1 \
 		filetime-0.2.29 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
@@ -388,7 +388,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
-		http-cache-semantics-2.1.1 \
+		http-cache-semantics-3.0.0 \
 		http-content-range-0.2.4 \
 		http-serde-2.1.1 \
 		httparse-1.10.1 \
@@ -437,7 +437,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
-		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
@@ -552,7 +551,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pastey-0.2.2 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
-		path_resolver-0.2.8 \
+		path_resolver-0.2.10 \
 		pbkdf2-0.12.2 \
 		pbkdf2-0.13.0 \
 		pem-3.0.6 \
@@ -619,20 +618,20 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
-		rattler-0.42.0 \
-		rattler_cache-0.7.1 \
-		rattler_conda_types-0.46.1 \
-		rattler_digest-1.2.4 \
-		rattler_macros-1.0.13 \
-		rattler_menuinst-0.2.59 \
-		rattler_networking-0.26.12 \
-		rattler_package_streaming-0.25.1 \
-		rattler_pty-0.2.10 \
-		rattler_redaction-0.1.15 \
-		rattler_repodata_gateway-0.28.2 \
-		rattler_shell-0.26.12 \
-		rattler_solve-6.0.2 \
-		rattler_virtual_packages-2.3.21 \
+		rattler-0.43.2 \
+		rattler_cache-0.8.2 \
+		rattler_conda_types-0.46.4 \
+		rattler_digest-1.3.0 \
+		rattler_macros-1.1.0 \
+		rattler_menuinst-0.2.62 \
+		rattler_networking-0.27.2 \
+		rattler_package_streaming-0.26.2 \
+		rattler_pty-0.2.12 \
+		rattler_redaction-0.2.1 \
+		rattler_repodata_gateway-0.29.2 \
+		rattler_shell-0.27.2 \
+		rattler_solve-7.1.1 \
+		rattler_virtual_packages-2.4.1 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
@@ -891,6 +890,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
+		wasm-streams-0.5.0 \
 		wasmparser-0.244.0 \
 		wasmtimer-0.4.3 \
 		web-sys-0.3.98 \
