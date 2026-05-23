@@ -1,5 +1,5 @@
 PORTNAME=	cargo-deny
-DISTVERSION=	0.19.6
+DISTVERSION=	0.19.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,20 +31,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
 		base64-0.22.1 \
-		bitflags-2.11.0 \
+		bitflags-2.11.1 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		borsh-1.6.1 \
 		bstr-1.12.1 \
 		bytes-1.11.1 \
 		camino-1.2.2 \
-		cc-1.2.60 \
+		cc-1.2.62 \
 		cfg-expr-0.20.7 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.6.0 \
+		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_derive-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		codespan-0.13.1 \
 		codespan-reporting-0.13.1 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-common-0.1.7 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
-		either-1.15.0 \
+		either-1.16.0 \
 		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
@@ -81,7 +81,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		globset-0.4.18 \
 		goblin-0.10.5 \
 		hashbrown-0.15.5 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		home-0.5.12 \
 		http-1.4.0 \
@@ -95,17 +95,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_provider-2.2.0 \
 		id-arena-2.3.0 \
 		idna-1.1.0 \
-		idna_adapter-1.2.1 \
+		idna_adapter-1.2.2 \
 		indexmap-2.14.0 \
 		insta-1.47.2 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
-		jiff-0.2.23 \
-		jiff-static-0.2.23 \
+		jiff-0.2.24 \
+		jiff-static-0.2.24 \
 		jobserver-0.1.34 \
-		krates-0.21.1 \
+		krates-0.21.2 \
 		leb128fmt-0.1.0 \
-		libc-0.2.184 \
+		libc-0.2.186 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
 		lock_api-0.4.14 \
@@ -120,10 +120,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot_core-0.9.12 \
 		percent-encoding-2.3.2 \
 		petgraph-0.8.1 \
-		pkg-config-0.3.32 \
+		pkg-config-0.3.33 \
 		plain-0.2.3 \
 		portable-atomic-1.13.1 \
-		portable-atomic-util-0.2.6 \
+		portable-atomic-util-0.2.7 \
 		potential_utf-0.1.5 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
-		rayon-1.11.0 \
+		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
 		regex-1.12.3 \
@@ -140,8 +140,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ring-0.17.14 \
 		rustc-stable-hash-0.1.2 \
 		rustix-1.1.4 \
-		rustls-0.23.37 \
-		rustls-pki-types-1.14.0 \
+		rustls-0.23.40 \
+		rustls-pki-types-1.14.1 \
 		rustls-webpki-0.103.13 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
@@ -151,7 +151,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.9 \
@@ -166,7 +166,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		subtle-2.6.1 \
 		syn-2.0.117 \
 		synstructure-0.13.2 \
-		tame-index-0.26.2 \
+		tame-index-0.26.3 \
 		tap-1.0.1 \
 		target-lexicon-0.13.3 \
 		tempfile-3.27.0 \
@@ -178,7 +178,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinyvec_macros-0.1.1 \
 		toml-span-0.7.1 \
 		twox-hash-2.1.2 \
-		typenum-1.19.0 \
+		typenum-1.20.0 \
 		unicode-ident-1.0.24 \
 		unicode-normalization-0.1.25 \
 		unicode-width-0.2.2 \
@@ -193,12 +193,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.2+wasi-0.2.9 \
+		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		webpki-roots-1.0.6 \
+		webpki-roots-1.0.7 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
@@ -213,6 +213,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
 		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rust-0.51.0 \
 		wit-bindgen-rust-macro-0.51.0 \
@@ -222,7 +223,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wyz-0.5.1 \
 		yoke-0.8.2 \
 		yoke-derive-0.8.2 \
-		zerofrom-0.1.7 \
+		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
 		zerotrie-0.2.4 \
