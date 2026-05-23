@@ -19,19 +19,19 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/programs/COPYING
 # Note this port is in the dependency chain of lang/python314
 # via archivers/zstd and cannot use meson or python to build
 USES=		cpe gmake pkgconfig
-CPE_VENDOR=	lz4_project
-USE_LDCONFIG=	yes
-
-MAKE_ARGS=	PREFIX="${PREFIX}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		MANDIR="${PREFIX}/share/man"
-MAKE_ENV+=	TARGET_ARCH=
-TEST_TARGET=	check
 
 CFLAGS+=	-DLZ4IO_MULTITHREAD -pthread
 LDFLAGS+=	-pthread
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		MANDIR="${PREFIX}/share/man"
+MAKE_ENV=	TARGET_ARCH=
+TEST_TARGET=	check
+USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	make=${GMAKE}
+
+CPE_VENDOR=	lz4_project
 
 PORTSCOUT=	limit:^[0-9]*\.
 
@@ -40,14 +40,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 OPTIONS_DEFINE=	TEST
 TEST_DESC=	Run extensive tests
 
-# we need to do something else when python 3.14 is
-# the oldest or default version in the tree
-# (between October 2026 and October 2029)
-# unless zstd gives up on the lz4 depdencency.
-#   This is in order to solve a circular dependency:
-# python314 -> zstd -> lz4
-# test(lz4) -> python
+TEST_TEST_TARGET=	test
 TEST_USES=	python:-3.13,test
-TEST_TEST_TARGET=test
 
 .include <bsd.port.mk>
