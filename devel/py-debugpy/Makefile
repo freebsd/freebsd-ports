@@ -1,5 +1,5 @@
 PORTNAME=	debugpy
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.20
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		dos2unix python zip
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 post-install:
