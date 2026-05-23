@@ -1,17 +1,8 @@
-HDF4 (originally known as HDF) is file format for storing scientific data
-and a software library that provides high-level APIs and a low-level data
-access interface.
+HDF4 is a library and multi-object file format for storing and managing data
+between machines. HDF4 is a very different technology than HDF5. The HDF Group
+recommends that, other than for working with existing HDF4 data, new
+applications use HDF5 since HDF5 addresses important deficiencies of HDF4.
 
-HDF technologies at present include two data management formats (HDF4 and
-HDF5) and libraries, a modular data browser/editor, associated tools and
-utilities, and a conversion library.  Both HDF4 and HDF5 were designed to
-be a general scientific format, adaptable to virtually any scientific or
-engineering application, and also have been used successfully in non-
-technical areas.  The Open Source format is a key technological foundation
-for HDF core technologies.  It allows users to collaborate with The HDF
-Group regarding functionality requirements and permits users' experience
-and knowledge to be incorporated into the HDF product when appropriate.
-
-It also permits users and organizations without adequate technology
-resources to use a sophisticated and robust data management tool for no
-charge.
+Although The HDF Group maintains HDF4 by fixing defects and porting it to new
+operating environments, there is no longer any new development occurring. HDF4
+is considered deprecated and new products should be developed in HDF5.
