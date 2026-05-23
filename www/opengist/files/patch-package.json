@@ -2,8 +2,8 @@
 +++ package.json
 @@ -31,5 +31,9 @@
      "pdfobject": "^2.3.1",
-     "tailwindcss": "^4.1.18",
-     "vite": "^7.3.1"
+     "tailwindcss": "^4.2.4",
+     "vite": "^8.0.10"
 +  },
 +  "overrides": {
 +    "rollup": "npm:@rollup/wasm-node",
