@@ -1,5 +1,5 @@
 PORTNAME=	vfblib
-PORTVERSION=	0.11.3
+PORTVERSION=	0.11.4
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +11,8 @@ WWW=		https://github.com/LucasFonts/vfbLib
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=9.2.0:devel/py-setuptools-scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.62.1:print/py-fonttools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.63.0:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.11.4<4:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.15.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.18.1:print/py-ufolib2@${PY_FLAVOR} \
@@ -23,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.62.1:print/py-fonttools@${PY_FL
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+MAKE_ENV=	SOURCE_DATE_EPOCH=315532800 # 1980-01-01 00:00:00 UTC
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	ALL TOML YAML

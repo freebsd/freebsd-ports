@@ -1,34 +1,22 @@
---- pyproject.toml.orig	2026-04-28 15:05:05 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -1,12 +1,10 @@
- [project]
--name = "vfbLib"
-+name = "vfblib"
- dynamic = ["version"]
- description = "Tools for converting FontLab Studio 5 (VFB) files."
- keywords = ["vfb", "vfbLib", "fonttools"]
- 
- readme = "README.md"
--license = "GPL-3.0-or-later"
--license-files = ["LICENSE"]
- 
- authors = [{ name = "Jens Kutílek", email = "webmail@kutilek.de" }]
- classifiers = [
-@@ -23,7 +21,7 @@ dependencies = [
+@@ -23,7 +23,7 @@ dependencies = [
  requires-python = ">=3.11"
  dependencies = [
-     "fonttools[ufo] >= 4.62.1",
--    "orjson >= 3.11.8, < 4",
+     "fonttools[ufo] >= 4.63.0",
+-    "orjson >= 3.11.9, < 4",
 +    "orjson >= 3.11.4, < 4",
      "typing_extensions >= 4.15.0",
      "ufonormalizer >= 0.6.3",
      "ufoLib2[json] >= 0.18.1",
-@@ -73,7 +71,7 @@ vfbdiff = "vfbLib.diff:diffvfb"
- # yuri = vfbLib.value:yuri
+@@ -76,8 +76,8 @@ yuri = "vfbLib.value:yuri"
+ yuri = "vfbLib.value:yuri"
  
  [build-system]
--requires = ["setuptools>=80.9.0", "setuptools-scm[toml]>=9.2.0", "wheel"]
-+requires = ["setuptools>=61", "setuptools-scm[toml]>=9.2.0", "wheel"]
- build-backend = "setuptools.build_meta"
+-requires = ["uv_build>=0.11.8,<0.12"]
+-build-backend = "uv_build"
++requires = ["flit-core >= 3.12"]
++build-backend = "flit_core.buildapi"
  
- [tool.setuptools.package-data]
+ 
+ [tool.coverage.paths]
