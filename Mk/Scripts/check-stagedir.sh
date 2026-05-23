@@ -1,5 +1,5 @@
 #!/bin/sh
-# ports/Mk/Scripts/check-stagedir.sh - called from ports/Mk/bsd.stage.mk
+# ports/Mk/Scripts/check-stagedir.sh - called from ports/Mk/bsd.port.mk
 #
 # MAINTAINER: portmgr@FreeBSD.org
 #
