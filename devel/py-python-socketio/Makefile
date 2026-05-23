@@ -1,5 +1,5 @@
 PORTNAME=	python-socketio
-PORTVERSION=	5.16.1
+PORTVERSION=	5.16.2
 CATEGORIES=	devel net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bidict>=0.21.0:devel/py-bidict@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-engineio>=4.11.0:devel/py-python-engineio@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-engineio>=4.13.2:devel/py-python-engineio@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
