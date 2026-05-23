@@ -158,8 +158,8 @@
     SUBDIR += drawy
     SUBDIR += drm-515-kmod
     SUBDIR += drm-61-kmod
-    SUBDIR += drm-66-kmod
     SUBDIR += drm-612-kmod
+    SUBDIR += drm-66-kmod
     SUBDIR += drm-kmod
     SUBDIR += drm-latest-kmod
     SUBDIR += drm_info
