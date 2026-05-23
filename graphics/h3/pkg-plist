@@ -17,3 +17,4 @@ lib/cmake/h3/h3Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/h3/h3Targets.cmake
 lib/libh3.so
 lib/libh3.so.1
+libdata/pkgconfig/h3.pc
