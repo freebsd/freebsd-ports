@@ -1,8 +1,8 @@
 Unixify built-in help.
 
---- Source/Console/Console.cpp.orig	2025-08-15 06:11:17 UTC
+--- Source/Console/Console.cpp.orig	2026-05-23 07:19:19 UTC
 +++ Source/Console/Console.cpp
-@@ -135,7 +135,7 @@ static void DisplayProperUsage(FILE * pFile)
+@@ -221,7 +221,7 @@ static void DisplayProperUsage(FILE * pFile)
  **************************************************************************************************/
  static void DisplayProperUsage(FILE * pFile)
  {
@@ -11,8 +11,8 @@ Unixify built-in help.
  
      fwprintf(pFile, L"Modes:\n");
      fwprintf(pFile, L"    Compress (fast): '-c1000'\n");
-@@ -155,18 +155,18 @@ static void DisplayProperUsage(FILE * pFile)
-     fwprintf(pFile, L"    Set the number of threads when compressing or decompressing: -threads=#'\n\n");
+@@ -242,18 +242,18 @@ static void DisplayProperUsage(FILE * pFile)
+     fwprintf(pFile, L"    Read the entire file until the end of file if it's unknown length so the seek table can be made perfect: -readfullinput'\n\n");
  
      fwprintf(pFile, L"Examples:\n");
 -    fwprintf(pFile, L"    Compress: mac.exe \"Metallica - One.wav\" \"Metallica - One.ape\" -c2000\n");
