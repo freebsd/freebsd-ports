@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.3
+DISTVERSION=	4.7.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -101,7 +101,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		doctest-file-1.1.1 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
-		either-1.15.0 \
+		either-1.16.0 \
 		encode_unicode-1.0.0 \
 		env_filter-1.0.1 \
 		env_logger-0.11.10 \
