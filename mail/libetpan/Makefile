@@ -1,6 +1,5 @@
 PORTNAME=	libetpan
-PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTVERSION=	1.10
 CATEGORIES=	mail
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,6 +16,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		autoreconf compiler:c++11-lang cpe gmake iconv libtool localbase pkgconfig
 
+CONFIGURE_ARGS=	--disable-db \
+		--with-poll
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
