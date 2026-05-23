@@ -1,7 +1,6 @@
 PORTNAME=	gatus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.35.0
-PORTREVISION=	3
+DISTVERSION=	5.36.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
@@ -18,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
-USES=		go:modules
+USES=		go:1.26+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	TwiN
 
