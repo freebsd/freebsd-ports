@@ -31,6 +31,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargetsPrecheck.cmake
 %%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginConfigVersionImpl.cmake
 %%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginTargets.cmake
+%%FLITE%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginTargetsPrecheck.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginConfig.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginConfigVersion.cmake
@@ -44,7 +45,7 @@ lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginTargetsPrecheck.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginConfigVersionImpl.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargets.cmake
-lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargetsPrecheck.cmake
+%%SPEECHD%%lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechSpeechdPluginTargetsPrecheck.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechAdditionalTargetInfo.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechConfig.cmake
 lib/cmake/Qt6TextToSpeech/Qt6TextToSpeechConfigVersion.cmake
