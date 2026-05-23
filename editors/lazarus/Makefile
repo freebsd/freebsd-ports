@@ -15,9 +15,9 @@ CONFLICTS?=	lazarus-gtk2-devel lazarus-gtk3-devel lazarus-qt5 lazarus-qt5-devel 
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		gmake:devel/gmake \
-		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
+		${LOCALBASE}/share/fpc${FPC_DEVELSUFFIX}-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64le powerpc64
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
@@ -73,6 +73,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|startlazarus|${PORTNAME}|g' ${WRKSRC}/install/${PORTNAME}.desktop
+	@${REINPLACE_CMD} \
+		-e 's|powerpc64-linux powerpc64-darwin|powerpc64-linux powerpc64-freebsd powerpc64-darwin|' \
+		-e 's|ifeq ($$(CPU_OS_TARGET),powerpc64-linux)|ifneq ($$(filter $$(CPU_OS_TARGET),powerpc64-linux powerpc64-freebsd),)|g' \
+		${WRKSRC}/lcl/interfaces/*/Makefile
 
 do-build:
 	@cd ${WRKSRC} && \

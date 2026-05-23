@@ -52,7 +52,7 @@ PPNAME=			ppcppc64
 PPNAME=			ppc_not_yet_ported
 .  endif
 
-.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc64*}
 FPC_DEVELSUFFIX=	-devel
 .  else
 FPC_DEVELSUFFIX=	#
