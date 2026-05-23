@@ -1,8 +1,8 @@
 PORTNAME=	Email-Address-List
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://download.bestpractical.com/mirror/ \
-		CPAN
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BPS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
