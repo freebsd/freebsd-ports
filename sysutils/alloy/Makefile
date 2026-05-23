@@ -1,6 +1,6 @@
 PORTNAME=	alloy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.1
+DISTVERSION=	1.16.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	zach.leslie@grafana.com
