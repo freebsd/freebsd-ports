@@ -1,7 +1,7 @@
 CARGO_CRATES=	actix-codec-0.5.2 \
 		actix-cors-0.7.1 \
 		actix-files-0.6.10 \
-		actix-http-3.12.0 \
+		actix-http-3.12.1 \
 		actix-macros-0.2.4 \
 		actix-multipart-0.7.2 \
 		actix-multipart-derive-0.7.0 \
@@ -85,6 +85,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		blocking-1.6.2 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
+		bs58-0.5.1 \
 		bumpalo-3.20.2 \
 		bustle-0.5.1 \
 		bytemuck-1.25.0 \
@@ -94,7 +95,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		bytestring-1.5.0 \
 		cap-0.1.2 \
 		cast-0.3.0 \
-		cc-1.2.61 \
+		cc-1.2.62 \
 		cedarwood-0.4.6 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
@@ -118,7 +119,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		colorz-1.1.4 \
 		combine-4.6.7 \
 		concurrent-queue-2.5.0 \
-		config-0.15.22 \
+		config-0.15.23 \
 		console-0.16.2 \
 		console-api-0.9.0 \
 		console-subscriber-0.5.0 \
@@ -162,7 +163,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		darling_macro-0.20.11 \
 		darling_macro-0.23.0 \
 		dary_heap-0.3.8 \
-		dashmap-6.1.0 \
+		dashmap-6.2.1 \
 		data-encoding-2.11.0 \
 		debugid-0.8.0 \
 		der-0.7.10 \
@@ -276,7 +277,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.0 \
-		hashlink-0.10.0 \
+		hashlink-0.11.0 \
 		hashring-0.3.6 \
 		hdrhistogram-7.5.4 \
 		heapless-0.8.0 \
@@ -352,11 +353,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.34 \
 		js-sys-0.3.91 \
-		jsonwebtoken-10.3.0 \
+		jsonwebtoken-10.4.0 \
 		language-tags-0.3.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.184 \
+		libc-0.2.186 \
 		libflate-2.3.0 \
 		libflate_lz77-2.3.0 \
 		libloading-0.8.9 \
@@ -374,7 +375,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		lru-slab-0.1.2 \
 		lz4-1.28.1 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
-		lz4_flex-0.13.0 \
+		lz4_flex-0.13.1 \
 		macho-unwind-info-0.5.0 \
 		macro_rules_attribute-0.2.2 \
 		macro_rules_attribute-proc_macro-0.2.2 \
@@ -404,7 +405,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		nias-0.5.0 \
 		nix-0.25.1 \
 		nix-0.26.4 \
-		nix-0.31.2 \
+		nix-0.31.3 \
 		no_std_io2-0.9.3 \
 		nodrop-0.1.14 \
 		nom-7.1.3 \
@@ -430,7 +431,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		object-0.29.0 \
 		object-0.37.3 \
 		object_store-0.13.2 \
-		once_cell-1.21.3 \
+		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		openssl-probe-0.2.1 \
@@ -525,7 +526,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		quick-error-1.2.3 \
 		quick-xml-0.26.0 \
 		quick-xml-0.39.2 \
-		quick_cache-0.6.21 \
+		quick_cache-0.6.22 \
 		quickcheck-1.1.0 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
@@ -590,7 +591,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.6.2 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.10 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		rusty-forkfork-0.4.0 \
 		rusty-hook-0.11.2 \
@@ -630,11 +631,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		serde_repr-0.1.20 \
 		serde_urlencoded-0.7.1 \
 		serde_variant-0.1.3 \
-		serde_with-3.19.0 \
-		serde_with_macros-3.19.0 \
+		serde_with-3.20.0 \
+		serde_with_macros-3.20.0 \
 		serial_test-3.4.0 \
 		serial_test_derive-3.4.0 \
-		sha1-0.10.6 \
+		sha1-0.11.0 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
 		shaderc-0.10.1 \
@@ -684,7 +685,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		sysinfo-0.38.4 \
 		tango-bench-0.7.2 \
 		tap-1.0.1 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
 		thiserror-1.0.69 \
@@ -703,7 +704,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.2 \
+		tokio-1.52.3 \
 		tokio-io-timeout-1.2.1 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
@@ -854,7 +855,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		wyz-0.5.1 \
 		xattr-1.6.1 \
 		xxhash-rust-0.8.15 \
-		yaml-rust2-0.10.4 \
+		yaml-rust2-0.11.0 \
 		yoke-0.8.1 \
 		yoke-derive-0.8.1 \
 		zbus-5.14.0 \
@@ -865,6 +866,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.2 \
+		zeroize_derive-1.4.3 \
 		zerotrie-0.2.3 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.2 \
