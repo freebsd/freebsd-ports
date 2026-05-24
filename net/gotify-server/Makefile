@@ -13,7 +13,8 @@ WWW=		https://github.com/gotify/server
 
 LICENSE=	MIT
 
-BROKEN_i386=	Build does not succeed (timeout in poudriere)
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated
 
 BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 
