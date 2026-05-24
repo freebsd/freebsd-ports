@@ -530,7 +530,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-core-0.1.36 \
 		tracing-durations-export-0.3.3 \
 		tracing-log-0.2.0 \
-		tracing-serde-0.2.0 \
 		tracing-subscriber-0.3.23 \
 		tracing-test-0.2.6 \
 		tracing-test-macro-0.2.6 \
