@@ -1,7 +1,7 @@
 PORTNAME=	bun
 DISTVERSIONPREFIX=	bun-v
 DISTVERSION=	1.3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GH \
 		https://github.com/oven-sh/zig/releases/download/autobuild-04e7f6ac1e009525bc00934f20199c68f04e0a24/:ovenzig \
@@ -50,12 +50,15 @@ USES=		shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oven-sh
+GH_TUPLE=	simdutf:simdutf:v${SIMDUTF_VERSION}:simdutf_src
 
 SHEBANG_FILES=	test/regression/issue/18239/data-generator.sh
 
 # WebKit/JavaScriptCore FreeBSD prebuilt
 WEBKIT_VERSION=	bdf6aab38a9c6f99df3fd1486406ab6b74180fbb
 WEBKIT_SHORT=	bdf6aab38a9c6f99
+# simdutf source (used to rebuild SIMDUTF.cpp.o in libWTF.a for baseline builds)
+SIMDUTF_VERSION=	8.2.0
 # Node.js headers (official tarball from nodejs.org; do-fetch trims unused dirs)
 NODE_VERSION=	24.3.0
 
@@ -93,6 +96,14 @@ BUN_BUILD_DIR=	${WRKSRC}/build/release
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if empty(CPUTYPE)
+_BUN_CPU_FLAGS=	--baseline=true
+.else
+_BUN_CPU_FLAGS=	--cpu=${CPUTYPE} --baseline=false
+.endif
+
 # do-fetch: download the standard distfiles, then build the 3 custom archives
 # (node_modules, dep tarballs, cargo vendor) if they are not already cached.
 # All files land in ${DD} so make checksum and poudriere can reuse them.
@@ -105,6 +116,7 @@ do-fetch:
 			${DISTFILES:M*\:ovenzig} \
 			${DISTFILES:M*\:webkit} \
 			${DISTFILES:M*\:nodejshdr} \
+			${DISTFILES:M*\:simdutf_src} \
 			${DISTFILES:M*\:bootstrap:N*node-modules-*:N*dep-tarballs-*:N*cargo-vendor-*}
 	# Build bun-node-modules tarball (npm ci with vendored package-lock*.json).
 	# Uses deterministic tar so the checksum is reproducible across builds.
@@ -237,6 +249,47 @@ post-extract:
 	# Extract node_modules into WRKSRC
 	@tar xzf ${DD}/bun-node-modules-${DISTVERSION}.tar.gz \
 		-C ${WRKSRC}
+.if empty(CPUTYPE)
+	# Baseline build: rebuild SIMDUTF.cpp.o from simdutf ${SIMDUTF_VERSION} without
+	# the icelake (AVX-512) and haswell (AVX2) runtime-dispatch targets.  The
+	# pre-built FreeBSD WebKit lacks a "-baseline" variant (unlike Linux/Windows),
+	# so its libWTF.a SIMDUTF.cpp.o contains AVX-512 icelake dispatch code that
+	# would otherwise appear in the final binary.
+	@${ECHO_CMD} "===> Rebuilding SIMDUTF.cpp.o for baseline (no icelake/haswell)"
+	@_SDTmp=$$(mktemp -d /tmp/bun-simdutf.XXXXXX) && \
+	bsdtar xzf ${DD}/simdutf-simdutf-v${SIMDUTF_VERSION}_GH0.tar.gz \
+		-C $$_SDTmp --strip-components 1 && \
+	${LOCALBASE}/llvm21/bin/clang++ \
+		-std=c++17 -march=nehalem -O2 \
+		-ffunction-sections -fdata-sections \
+		-fno-exceptions -fno-rtti \
+		-DSIMDUTF_IMPLEMENTATION_ICELAKE=0 \
+		-DSIMDUTF_IMPLEMENTATION_HASWELL=0 \
+		-I$$_SDTmp/include -I$$_SDTmp/src \
+		-c $$_SDTmp/src/simdutf.cpp \
+		-o $$_SDTmp/SIMDUTF.cpp.o && \
+	${LOCALBASE}/llvm21/bin/llvm-ar d \
+		${BUN_CACHE_DIR}/webkit-${WEBKIT_SHORT}-freebsd/lib/libWTF.a \
+		SIMDUTF.cpp.o && \
+	${LOCALBASE}/llvm21/bin/llvm-ar r \
+		${BUN_CACHE_DIR}/webkit-${WEBKIT_SHORT}-freebsd/lib/libWTF.a \
+		$$_SDTmp/SIMDUTF.cpp.o && \
+	${RM} -rf $$_SDTmp
+.endif
+
+post-patch:
+	# Install FreeBSD-specific bun-internal patches applied by bun's build
+	# system (fetchDep) when it extracts each vendor tarball from cache.
+	# These disable AVX2/AVX/AVX-512 code paths that would otherwise appear
+	# in the ELF binary even with -march=x86-64.
+	@${MKDIR} ${WRKSRC}/patches/libdeflate
+	@${CP} ${FILESDIR}/bun-libdeflate-adler32-disable-avx2.patch \
+		${WRKSRC}/patches/libdeflate/adler32-disable-avx2.patch
+	@${CP} ${FILESDIR}/bun-libdeflate-crc32-disable-avx.patch \
+		${WRKSRC}/patches/libdeflate/crc32-disable-avx.patch
+	@${MKDIR} ${WRKSRC}/patches/boringssl
+	@${CP} ${FILESDIR}/bun-boringssl-disable-avx512-gcm.patch \
+		${WRKSRC}/patches/boringssl/disable-avx512-gcm.patch
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -251,7 +304,8 @@ do-build:
 			--cacheDir=${BUN_CACHE_DIR} \
 			--buildDir=${BUN_BUILD_DIR} \
 			--profile=release \
-			-j${MAKE_JOBS_NUMBER}
+			-j${MAKE_JOBS_NUMBER} \
+			${_BUN_CPU_FLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${BUN_BUILD_DIR}/bun ${STAGEDIR}${PREFIX}/bin/
@@ -265,4 +319,4 @@ do-test:
 	@${ECHO_CMD} "==> Running Bun regression tests..."
 	cd ${WRKSRC} && ${STAGEDIR}${PREFIX}/bin/bun test --timeout 120000 --parallel 1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
