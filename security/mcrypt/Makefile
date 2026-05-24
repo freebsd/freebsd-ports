@@ -1,6 +1,6 @@
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
@@ -13,6 +13,9 @@ WWW=		https://mcrypt.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned, it has multiple vulnerabilities
+EXPIRATION_DATE=2026-06-30
 
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
 		libmhash.so:security/mhash
