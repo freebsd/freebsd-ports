@@ -5312,3 +5312,4 @@ deskutils/gnome-shell-extension-weather||2026-05-18|Marked broken and abandoned 
 deskutils/gnome-shell-extension-trash||2026-05-18|Marked broken and abandoned upstream
 deskutils/gnome-shell-extension-panel-osd||2026-05-18|Marked broken and abandoned upstream
 deskutils/gnome-shell-extension-mediaplayer||2026-05-18|Marked broken and upstream repo is archived
+devel/rubygem-rugged17|devel/rubygem-rugged|2026-05-24|Use devel/rubygem-rugged instead
