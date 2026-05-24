@@ -1,10 +1,10 @@
 PORTNAME=	lizard
-DISTVERSION=	1.17.23
+DISTVERSION=	1.17.24
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Extensible Cyclomatic Complexity Analyzer
 WWW=		https://github.com/terryyin/lizard
 
