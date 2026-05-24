@@ -1,4 +1,4 @@
---- src/Makefile.orig	2025-10-21 16:05:42 UTC
+--- src/Makefile.orig	2026-05-19 15:03:27 UTC
 +++ src/Makefile
 @@ -61,8 +61,8 @@ endif
  	STD+=-std=c99
@@ -8,10 +8,10 @@
 -INSTALL_BIN=$(PREFIX)/bin
 +PREFIX:=$(PREFIX)
 +INSTALL_BIN=$(DESTDIR)$(PREFIX)/bin
+ INSTALL_LIB=$(PREFIX)/lib
  INSTALL=install
  PKG_CONFIG?=pkg-config
- 
-@@ -138,7 +138,6 @@ FINAL_LIBS=-lm
+@@ -139,7 +139,6 @@ FINAL_LIBS=-lm
  FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(SERVER_CFLAGS)
  FINAL_LDFLAGS=$(LDFLAGS) $(OPT) $(SERVER_LDFLAGS) $(DEBUG)
  FINAL_LIBS=-lm
@@ -19,7 +19,7 @@
  
  # Linux ARM32 needs -latomic at linking time
  ifneq (,$(findstring armv,$(uname_M)))
-@@ -182,6 +181,11 @@ else
+@@ -184,6 +183,11 @@ else
  	OPENSSL_PREFIX?=/usr/local/opt/openssl
  endif
  else
@@ -31,7 +31,7 @@
  ifeq ($(uname_S),AIX)
          # AIX
          FINAL_LDFLAGS+= -Wl,-bexpall
-@@ -241,6 +245,7 @@ endif
+@@ -247,6 +251,7 @@ endif
  endif
  endif
  endif
@@ -39,7 +39,7 @@
  
  ifdef OPENSSL_PREFIX
  	OPENSSL_CFLAGS=-I$(OPENSSL_PREFIX)/include
-@@ -642,12 +647,6 @@ install: all
+@@ -850,12 +855,6 @@ install: all $(LUA_MODULE_INSTALL)
  	@ln -sf $(SERVER_NAME) $(INSTALL_BIN)/$(ENGINE_CHECK_RDB_NAME)
  	@ln -sf $(SERVER_NAME) $(INSTALL_BIN)/$(ENGINE_CHECK_AOF_NAME)
  	@ln -sf $(SERVER_NAME) $(INSTALL_BIN)/$(ENGINE_SENTINEL_NAME)
@@ -50,5 +50,5 @@
 -	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(ENGINE_CHECK_AOF_NAME),$(INSTALL_BIN))
 -	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(ENGINE_SENTINEL_NAME),$(INSTALL_BIN))
  
- uninstall:
- 	@rm -f $(INSTALL_BIN)/{$(SERVER_NAME),$(ENGINE_BENCHMARK_NAME),$(ENGINE_CLI_NAME),$(ENGINE_CHECK_RDB_NAME),$(ENGINE_CHECK_AOF_NAME),$(ENGINE_SENTINEL_NAME)}
+ install-lua-module: $(LUA_MODULE)
+ 	@mkdir -p $(INSTALL_LIB)

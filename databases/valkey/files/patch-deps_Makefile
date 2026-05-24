@@ -1,15 +1,15 @@
---- deps/Makefile.orig	2025-10-21 16:05:42 UTC
+--- deps/Makefile.orig	2026-05-19 15:03:27 UTC
 +++ deps/Makefile
-@@ -90,7 +90,7 @@ else
+@@ -92,7 +92,7 @@ else
  ifeq ($(LUA_DEBUG),yes)
  	LUA_CFLAGS+= -O0 -g -DLUA_USE_APICHECK
  else
--	LUA_CFLAGS+= -O2 
+-	LUA_CFLAGS+= -O2
 +	LUA_CFLAGS+=
  endif
  ifeq ($(LUA_COVERAGE),yes)
  	LUA_CFLAGS += -fprofile-arcs -ftest-coverage
-@@ -118,8 +118,8 @@ jemalloc: .make-prerequisites
+@@ -120,8 +120,8 @@ jemalloc: .make-prerequisites
  
  jemalloc: .make-prerequisites
  	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
