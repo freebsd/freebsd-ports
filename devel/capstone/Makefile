@@ -1,5 +1,5 @@
 PORTNAME=	capstone
-DISTVERSION=	5.0.7
+DISTVERSION=	5.0.8
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}-engine/${PORTNAME}/releases/download/${DISTVERSION}/
 
