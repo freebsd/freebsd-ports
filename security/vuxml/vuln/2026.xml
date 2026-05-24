@@ -1,3 +1,32 @@
+  <vuln vid="b8777bc2-5758-11f1-8607-8447094a420f">
+    <topic>Roundcube Webmail -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube-php82</name>
+	<name>roundcube-php83</name>
+	<name>roundcube-php84</name>
+	<name>roundcube-php85</name>
+	<range><lt>1.6.16,1</lt></range>
+	<range><ge>1.7.0,1</ge><lt>1.7.1,1</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube Webmail project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2026/05/24/security-updates-1.6.16-and-1.7.1">
+	  <p>See link for details. No CVE numbers available at the moment.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2026/05/24/security-updates-1.6.16-and-1.7.1</url>
+    </references>
+    <dates>
+      <discovery>2026-05-24</discovery>
+      <entry>2026-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e221ca1-573a-11f1-9f6d-5404a68ad561">
     <topic>traefik -- Unauthorized exposure of the REST provider</topic>
     <affects>
