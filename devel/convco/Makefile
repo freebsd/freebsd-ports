@@ -1,7 +1,6 @@
 PORTNAME=	convco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
-PORTREVISION=	2
+DISTVERSION=	0.6.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,25 +14,25 @@ USES=		cargo
 USE_GITHUB=	yes
 
 CARGO_CRATES=	aho-corasick-1.1.4 \
-		anstream-0.6.21 \
-		anstyle-1.0.13 \
-		anstyle-parse-0.2.7 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
-		anstyle-wincon-3.0.6 \
+		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
-		bitflags-2.11.0 \
+		bitflags-2.11.1 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
-		cc-1.2.6 \
+		cc-1.2.62 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.60 \
-		clap_builder-4.5.60 \
-		clap_complete-4.5.66 \
-		clap_derive-4.5.55 \
-		clap_lex-1.0.0 \
-		cmake-0.1.52 \
-		colorchoice-1.0.4 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_complete-4.6.5 \
+		clap_derive-4.6.1 \
+		clap_lex-1.1.0 \
+		cmake-0.1.58 \
+		colorchoice-1.0.5 \
 		console-0.16.2 \
 		cpufeatures-0.2.17 \
 		crypto-common-0.1.7 \
@@ -52,14 +51,16 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		equivalent-1.0.1 \
 		errno-0.3.14 \
 		fastrand-2.3.0 \
+		find-msvc-tools-0.1.9 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		form_urlencoded-1.2.2 \
 		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
+		getrandom-0.3.4 \
 		getrandom-0.4.1 \
-		git2-0.20.4 \
-		handlebars-6.4.0 \
+		git2-0.21.0 \
+		handlebars-6.4.1 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		icu_collections-1.5.0 \
@@ -79,16 +80,16 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		indexmap-2.7.0 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.17 \
-		jiff-0.2.22 \
-		jiff-static-0.2.22 \
+		jiff-0.2.24 \
+		jiff-static-0.2.24 \
 		jiff-tzdb-0.1.5 \
 		jiff-tzdb-platform-0.1.3 \
-		jobserver-0.1.32 \
+		jobserver-0.1.34 \
 		leb128fmt-0.1.0 \
-		libc-0.2.182 \
-		libgit2-sys-0.18.3+1.9.2 \
-		libssh2-sys-0.3.0 \
-		libz-sys-1.1.20 \
+		libc-0.2.186 \
+		libgit2-sys-0.18.4+1.9.3 \
+		libssh2-sys-0.3.1 \
+		libz-sys-1.1.28 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.7.4 \
 		log-0.4.29 \
@@ -99,18 +100,19 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		objc2-0.6.4 \
 		objc2-encode-4.1.0 \
 		once_cell-1.21.3 \
-		openssl-sys-0.9.104 \
+		once_cell_polyfill-1.70.2 \
+		openssl-sys-0.9.114 \
 		percent-encoding-2.3.2 \
 		pest-2.8.6 \
 		pest_derive-2.8.6 \
 		pest_generator-2.8.6 \
 		pest_meta-2.8.6 \
-		pkg-config-0.3.31 \
+		pkg-config-0.3.33 \
 		portable-atomic-1.13.1 \
 		portable-atomic-util-0.2.4 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
-		quote-1.0.44 \
+		quote-1.0.45 \
 		r-efi-5.3.0 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
@@ -118,7 +120,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		rustix-1.1.4 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
-		semver-1.0.27 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
