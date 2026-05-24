@@ -157,6 +157,11 @@ CONFIGURE_TARGET=	${ARCH}-unknown-freebsd
 CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
 .endif
 
+.if ${ARCH} == powerpc64le && ${GHC_VERSION} == 9.6.7
+BOOT_GHC_VERSION=       9.6.7
+HADRIAN_BOOT_TARBALL=   hadrian-9.6.7-boot-powerpc64le.tar.gz
+.endif
+
 pre-configure:
 # Call the bootstrap script
 	cd ${WRKSRC} && ${BOOT_SCRIPT}
