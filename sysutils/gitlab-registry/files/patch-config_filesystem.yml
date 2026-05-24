@@ -1,0 +1,22 @@
+--- config/filesystem.yml.orig	2026-05-22 19:07:54 UTC
++++ config/filesystem.yml
+@@ -18,7 +18,7 @@ storage:
+     # Temp dir, rename if you need persistence.
+     # registry/storage/paths.go describes the structure of the data
+     # written to this directory
+-    rootdirectory: "/tmp/registry"
++    rootdirectory: "%%PREFIX%%/www/gitlab/shared/registry"
+ http:
+   # Registry API will be accessible at localhost:5000
+   addr: :5000
+@@ -31,3 +31,10 @@ http:
+       # Profiling information will be accessible at localhost:5001/debug/pprof/
+     pprof:
+       enabled: true
++auth:
++  token:
++    realm: https://<gitlab_url>/jwt/auth
++    service: container_registry
++    issuer: gitlab-issuer
++    rootcertbundle: %%PREFIX%%/www/gitlab/config/registry.crt
++
