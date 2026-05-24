@@ -39,6 +39,10 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${FLAVOR} == llvm15
+BROKEN_FreeBSD_16=	Base libc++ is now too fresh for Clang 15 to compile
+.endif
+
 .if ${FLAVOR:S/llvm//} >= 22
 DISTNAME=	llvm-project-${DISTVERSION}.src
 WRKSRC_SUBDIR=	libclc
