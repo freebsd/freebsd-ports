@@ -633,6 +633,7 @@
     SUBDIR += octave-forge-msh
     SUBDIR += octave-forge-multicore
     SUBDIR += octave-forge-mvn
+    SUBDIR += octave-forge-mysql
     SUBDIR += octave-forge-nan
     SUBDIR += octave-forge-ncarray
     SUBDIR += octave-forge-netcdf
