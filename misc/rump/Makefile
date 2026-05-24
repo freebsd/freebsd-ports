@@ -1,6 +1,6 @@
 PORTNAME=	rump
 PORTVERSION=	20170822
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -12,18 +12,22 @@ LICENSE=	BSD2CLAUSE
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only supports FreeBSD on this architecture
 
+USES=		compiler
 USE_GITHUB=	yes
 GH_ACCOUNT=	rumpkernel
 GH_PROJECT=	buildrump.sh
 GH_TAGNAME=	b914579
 GH_TUPLE=	rumpkernel:src-netbsd:82f3a69:netbsd/src
 USE_LDCONFIG=	yes
-USES=		compiler
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=strict-prototypes -Wno-error=array-parameter -Wno-error=cast-function-type-mismatch
+.endif
+
+.if ${COMPILER_VERSION} >= 211
+CFLAGS+=	-Wno-error=unterminated-string-initialization
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
