@@ -1,5 +1,3 @@
-TIMESTAMP = 1774057079
-SHA256 (ueno-ibus-skk-ibus-skk-1.4.3_GH0.tar.gz) = a5eb5fd47072dc4854a241bfa3d2394723839aea3a3474ac66fff59171e91e09
-SIZE (ueno-ibus-skk-ibus-skk-1.4.3_GH0.tar.gz) = 54844
-SHA256 (b9c00e304412c513738516a567df14a4a28e4a21.patch) = 3aca0d57efdc7adb9203070e6eb41da8ecd7911d29e8d0b936425464a95d5111
-SIZE (b9c00e304412c513738516a567df14a4a28e4a21.patch) = 1074
+TIMESTAMP = 1779587868
+SHA256 (ueno-ibus-skk-ibus-skk-1.4.4_GH0.tar.gz) = a342ce2c7f3bcdfed9d9b30bfa6ef84de4e79796881536defcfe89c4b22919df
+SIZE (ueno-ibus-skk-ibus-skk-1.4.4_GH0.tar.gz) = 54945

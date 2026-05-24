@@ -1,46 +1,35 @@
 PORTNAME=	ibus-skk
 DISTVERSIONPREFIX=	ibus-skk-
-DISTVERSION=	1.4.3
-PORTREVISION=	2
+DISTVERSION=	1.4.4
 CATEGORIES=	japanese
 
-PATCH_SITES=	https://github.com/ueno/${PORTNAME}/commit/
-PATCHFILES=	b9c00e304412c513738516a567df14a4a28e4a21.patch:-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Japanese SKK input engine for IBus
 WWW=		https://github.com/ueno/ibus-skk
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libibus-1.0.so:textproc/ibus \
 		libskk.so:japanese/libskk
+RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
 
-USES=		autoreconf gettext gmake gnome libtool pkgconfig python vala:build
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	DATADIRNAME=share
+USES=		autoreconf gettext-tools gmake gnome libtool pkgconfig \
+		vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ueno
-USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 intltool pango
+USE_GNOME=	glib20 gtk30 intltool
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext-runtime
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/skk/SKK-JISYO.L|${LOCALBASE}/share/skk/SKK-JISYO.L|' ${WRKSRC}/src/preferences.vala
+	@${REINPLACE_CMD} -e '/SKK-JISYO/s,/usr/share,${LOCALBASE}/share,' \
+		${WRKSRC}/src/preferences.vala
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

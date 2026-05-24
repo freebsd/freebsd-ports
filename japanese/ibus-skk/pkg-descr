@@ -1,7 +1,3 @@
-ibus-skk -- a Japanese SKK input engine for IBus
-
 ibus-skk is an implementation of the SKK (Simple Kana-Kanji) input
-method on the IBus input method framework. To learn about SKK, see:
-
-http://openlab.jp/skk/
-https://secure.wikimedia.org/wikipedia/ja/wiki/SKK
+method on the IBus input method framework. Note that SKK works quite
+differently from other Japanese input methods.
