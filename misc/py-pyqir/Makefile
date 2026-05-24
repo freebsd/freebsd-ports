@@ -1,6 +1,6 @@
 PORTNAME=	pyqir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.4
+DISTVERSION=	0.12.5
 PORTREVISION=	0
 CATEGORIES=	misc python # quantum-computing
 #MASTER_SITES=	PYPI # no tarballs
