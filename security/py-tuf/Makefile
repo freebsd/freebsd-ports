@@ -1,5 +1,5 @@
 PORTNAME=	tuf
-DISTVERSION=	6.0.0
+DISTVERSION=	7.0.0
 CATEGORIES=	security devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.13.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.19.1:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}securesystemslib>=1.0:security/py-securesystemslib@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.29.0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}securesystemslib>=1.0:security/py-securesystemslib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
