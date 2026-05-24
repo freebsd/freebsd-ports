@@ -5335,3 +5335,4 @@ www/py-pyjwt1|www/py-pyjwt|2026-05-31|Has expired: Obsoleted. Use www/py-pyjwt i
 net/rubygem-gitaly-proto||2026-05-31|Has expired: gitaly-proto has been deprecated
 www/redmine51||2026-05-31|Has expired: Please migrate to newer version. Ruby 3.2 has been removed from the ports tree
 graphics/tippecanoe||2026-05-31|Broken for months
+games/minetestmapper||2026-05-31|Broken for months
