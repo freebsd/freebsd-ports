@@ -91,6 +91,7 @@ share/man/man1/suricatasc.1.gz
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Third_Party_Installation_Guides.txt
 %%DATADIR%%/rules/app-layer-events.rules
+%%DATADIR%%/rules/bittorrent-events.rules
 %%DATADIR%%/rules/decoder-events.rules
 %%DATADIR%%/rules/dhcp-events.rules
 %%DATADIR%%/rules/dnp3-events.rules
@@ -114,6 +115,7 @@ share/man/man1/suricatasc.1.gz
 %%DATADIR%%/rules/rfb-events.rules
 %%DATADIR%%/rules/smb-events.rules
 %%DATADIR%%/rules/smtp-events.rules
+%%DATADIR%%/rules/snmp-events.rules
 %%DATADIR%%/rules/ssh-events.rules
 %%DATADIR%%/rules/stream-events.rules
 %%DATADIR%%/rules/tls-events.rules
