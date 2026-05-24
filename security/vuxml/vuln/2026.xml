@@ -29,6 +29,39 @@
     </dates>
   </vuln>
 
+  <vuln vid="5f7c686c-558e-11f1-b38d-9be2e6022e28">
+    <topic>putty -- multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>putty</name> <range><lt>0.84</lt></range>
+      </package>
+      <package>
+	<name>putty-nogtk</name> <range><lt>0.84</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote cite="https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html">
+	  <p>These features are new in PuTTY 0.84:</p>
+	  <ul>
+	    <li>Security issue: fixed a remotely triggerable double-free in RSA key exchange. (We don't know of any way it is exploitable to execute code.)</li>
+	    <li>Minor security issue: fixed a remotely triggerable crash in NIST ECDSA signature verification. (An assertion failure – definitely not exploitable to execute code.)</li>
+	    <li>Minor security issue: fixed marking of Telnet and Rlogin session data with a trust sigil after you authenticated to a proxy (possibly allowing a server to spoof a repeat proxy password prompt).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.tartarus.org/pipermail/putty-announce/2026/000042.html</url>
+      <url>https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html</url>
+    </references>
+    <dates>
+      <discovery>2026-05-22</discovery>
+      <entry>2026-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea4c5b9d-55f7-11f1-915c-8974b59277b5">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
