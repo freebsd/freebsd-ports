@@ -1,4 +1,4 @@
-TIMESTAMP = 1773252776
+TIMESTAMP = 1779576179
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -569,5 +569,5 @@ SHA256 (rust/crates/zerovec-0.11.5.crate) = 6c28719294829477f525be0186d13efa9a3c
 SIZE (rust/crates/zerovec-0.11.5.crate) = 119620
 SHA256 (rust/crates/zerovec-derive-0.11.2.crate) = eadce39539ca5cb3985590102671f2567e659fca9666581ad3411d59207951f3
 SIZE (rust/crates/zerovec-derive-0.11.2.crate) = 21421
-SHA256 (altsem-gitu-v0.41.0_GH0.tar.gz) = eba1cd649339ee1c6f02c39bcd9fc3092df8e374bfbcd194750a966b09cb5e55
-SIZE (altsem-gitu-v0.41.0_GH0.tar.gz) = 3981540
+SHA256 (altsem-gitu-v0.42.0_GH0.tar.gz) = f7071a88344262df5642a62188e332a703f28b746224578962914e874cc84778
+SIZE (altsem-gitu-v0.42.0_GH0.tar.gz) = 3992566
