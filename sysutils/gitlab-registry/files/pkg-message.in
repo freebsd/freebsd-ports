@@ -1,0 +1,18 @@
+[
+{
+  message: <<EOM
+===========================================================================
+gitlab-registry has been successfully installed.
+
+1. edit %%PREFIX%%/etc/gitlab-registry/config.yml and define in realm
+   your gitlab domain
+
+2. Enable and start the service:
+   sysrc gitlab_registry_enable="YES"
+   service gitlab_registry start
+===========================================================================
+EOM
+  type: install
+}
+]
+

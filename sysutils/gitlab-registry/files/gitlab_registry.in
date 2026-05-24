@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: gitlab_registry
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="gitlab_registry"
+rcvar="gitlab_registry_enable"
+
+load_rc_config $name
+
+: ${gitlab_registry_enable:="NO"}
+: ${gitlab_registry_user:="git"}
+: ${gitlab_registry_group:="git"}
+: ${gitlab_registry_command:="%%PREFIX%%/bin/registry"}
+: ${gitlab_registry_config:="%%PREFIX%%/etc/gitlab-registry/config.yml"}
+
+logfile="/var/log/${name}.log"
+pidfile="/var/run/${name}/${name}.pid"
+
+command="/usr/sbin/daemon"
+# -r = restart on exit
+# -f = stay in foreground (rc handles it)
+# -P = write pidfile
+# -u = run as user
+# -o = log output
+command_args="-H -r -f -o ${logfile} -P ${pidfile} -t ${name} \
+	/bin/sh -c '${gitlab_registry_command} serve ${gitlab_registry_config}'"
+
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+
+gitlab_registry_precmd() {
+	echo "Preparing ${name} environment..."
+
+	# Create required directories
+	install -d -o ${gitlab_registry_user} -g ${gitlab_registry_group} /var/run/${name}
+
+	# Ensure log file exists and is writeable
+	touch ${logfile}
+	chown ${gitlab_registry_user}:${gitlab_registry_group} ${logfile}
+}
+
+gitlab_registry_start() {
+	echo "Starting ${name}"
+	su -m ${gitlab_registry_user} -c "${command} ${command_args}"
+}
+
+run_rc_command "$1"
+
