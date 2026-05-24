@@ -5313,3 +5313,4 @@ deskutils/gnome-shell-extension-trash||2026-05-18|Marked broken and abandoned up
 deskutils/gnome-shell-extension-panel-osd||2026-05-18|Marked broken and abandoned upstream
 deskutils/gnome-shell-extension-mediaplayer||2026-05-18|Marked broken and upstream repo is archived
 devel/rubygem-rugged17|devel/rubygem-rugged|2026-05-24|Use devel/rubygem-rugged instead
+www/rubygem-deckar01-task_list-gitlab|www/rubygem-deckar01-task_list|2026-05-24|Use www/rubygem-deckar01-task_list instead
