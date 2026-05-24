@@ -3,7 +3,7 @@ DISTVERSION=	0.28
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Algorithms and Framework for Nonnegative Matrix Factorization
 WWW=		https://cran.r-project.org/web/packages/NMF/
 
