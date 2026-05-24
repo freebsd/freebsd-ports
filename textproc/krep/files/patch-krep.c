@@ -1,9 +1,9 @@
---- krep.c.orig	2026-03-18 19:36:12 UTC
+--- krep.c.orig	2026-05-19 07:06:16 UTC
 +++ krep.c
-@@ -4503,6 +4503,27 @@ uint64_t memchr_short_search(const search_params_t *pa
- }
- 
- #ifdef __ARM_NEON
+@@ -4925,6 +4925,27 @@ uint64_t memchr_short_search(const search_params_t *pa
+ // Handles case-sensitive patterns of any length.
+ // Uses 2x 16-byte loads per iteration with fast mask extraction via
+ // vshrn/vmovn instead of store-to-memory.
 +
 +#ifdef __aarch64__
 +static inline bool
@@ -28,12 +28,3 @@
  uint64_t neon_search(const search_params_t *params,
                       const char *text_start,
                       size_t text_len,
-@@ -4541,7 +4562,7 @@ uint64_t neon_search(const search_params_t *params,
- 
-         // Check if any match found
-         // vmaxvq_u8 returns the maximum value across the vector. If any byte matched (0xFF), result is 0xFF.
--        if (vmaxvq_u8(cmp) != 0)
-+        if (is_nonzero(cmp))
-         {
-             // Extract mask to find exact positions
-             // Since NEON doesn't have a direct movemask, we simulate it or iterate.
