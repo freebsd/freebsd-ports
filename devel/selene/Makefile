@@ -1,6 +1,5 @@
 PORTNAME=	selene
-DISTVERSION=	0.30.1
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +56,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		flate2-1.0.25 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
-		full_moon-2.1.1 \
+		full_moon-2.2.0 \
 		full_moon_derive-0.11.0 \
 		generator-0.7.2 \
 		getrandom-0.2.8 \
