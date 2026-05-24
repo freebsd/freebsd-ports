@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2026-05-08 13:54:01 UTC
+--- electron/spec/api-app-spec.ts.orig	2026-05-19 01:17:05 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -146,11 +146,11 @@ describe('app module', () => {
    });
@@ -94,8 +94,8 @@
 +    ifdescribe(process.platform === 'linux' || process.platform === 'freebsd')('on Linux with mocked XDG dirs', () => {
        const fixtureApp = path.join(fixturesPath, 'api', 'protocol-name');
        const desktopFileId = 'mock-browser.desktop';
-       const mockScheme = 'mockproto';
-@@ -1607,7 +1607,7 @@ describe('app module', () => {
+       const mockDisplayName = 'Mock Browser';
+@@ -1623,7 +1623,7 @@ describe('app module', () => {
      });
    });
  
@@ -104,7 +104,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(app.getApplicationInfoForProtocol('bogus-protocol://')).to.eventually.be.rejectedWith(
          'Unable to retrieve installation path to app'
-@@ -1628,7 +1628,7 @@ describe('app module', () => {
+@@ -1644,7 +1644,7 @@ describe('app module', () => {
      });
    });
  
@@ -113,7 +113,7 @@
      const protocol = 'electron-test-linux';
      const desktopFileId = 'electron-test.desktop';
      const protocolMimeType = `x-scheme-handler/${protocol}`;
-@@ -1767,7 +1767,7 @@ describe('app module', () => {
+@@ -1783,7 +1783,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -122,7 +122,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1849,7 +1849,7 @@ describe('app module', () => {
+@@ -1865,7 +1865,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -131,7 +131,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1918,7 +1918,7 @@ describe('app module', () => {
+@@ -1934,7 +1934,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -140,7 +140,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1942,7 +1942,7 @@ describe('app module', () => {
+@@ -1958,7 +1958,7 @@ describe('app module', () => {
      });
    });
  

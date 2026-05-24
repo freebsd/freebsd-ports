@@ -1,4 +1,4 @@
---- electron/shell/common/node_bindings.cc.orig	2026-05-08 13:54:01 UTC
+--- electron/shell/common/node_bindings.cc.orig	2026-05-19 01:17:05 UTC
 +++ electron/shell/common/node_bindings.cc
 @@ -53,7 +53,7 @@
  #include "third_party/electron_node/src/module_wrap.h"
@@ -27,7 +27,7 @@
    electron::crash_keys::SetCrashKey("electron.v8-oom.is_heap_oom",
                                      base::NumberToString(details.is_heap_oom));
    if (location) {
-@@ -683,7 +683,7 @@ void NodeBindings::Initialize(v8::Isolate* const isola
+@@ -684,7 +684,7 @@ void NodeBindings::Initialize(v8::Isolate* const isola
    TRACE_EVENT0("electron", "NodeBindings::Initialize");
    // Open node's error reporting system for browser process.
  
