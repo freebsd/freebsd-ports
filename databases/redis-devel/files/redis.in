@@ -28,11 +28,13 @@ pidfile="%%REDIS_RUNDIR%%/$name.pid"
 # read configuration and set defaults
 load_rc_config "$name"
 : ${redis_enable="NO"}
+: ${redis_group="%%REDIS_GROUP%%"}
 : ${redis_user="%%REDIS_USER%%"}
 : ${redis_config="%%PREFIX%%/etc/$name.conf"}
 
 command_args="${redis_config}"
 required_files="${redis_config}"
+start_precmd="${name}_prestart"
 
 _profile_exists() {
 	for _p in ${redis_profiles}; do
@@ -63,5 +65,9 @@ elif [ -n "${redis_profiles}" ]; then
 	done
 	exit 0
 fi
+
+redis_prestart() {
+	install -d -m 755 -o "${redis_user}" -g "${redis_group}" "${pidfile%/*}"
+}
 
 run_rc_command "$1"
