@@ -1,7 +1,8 @@
 PORTNAME=	HTTP-Daemon
-PORTVERSION=	6.16
+PORTVERSION=	6.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OALDERS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,7 +20,7 @@ RUN_DEPENDS=	p5-HTTP-Date>=6:www/p5-HTTP-Date \
 TEST_DEPENDS=	p5-Test-Needs>=0:devel/p5-Test-Needs
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
 
