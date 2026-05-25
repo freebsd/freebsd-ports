@@ -1,8 +1,7 @@
 PORTNAME=	tsduck
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.43
-DISTVERSIONSUFFIX=	-4549
-PORTREVISION=	5
+DISTVERSION=	3.44
+DISTVERSIONSUFFIX=	-4676
 CATEGORIES=	multimedia
 
 MAINTAINER=	thierry@lelegard.fr
@@ -40,11 +39,6 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	docs-html
-.endif
+DOCS_VARS=	ALL_TARGET+=docs-html
 
 .include <bsd.port.mk>
