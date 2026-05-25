@@ -1,5 +1,5 @@
 PORTNAME=	highlight
-DISTVERSION=	4.19
+DISTVERSION=	4.20
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://andre-simon.de/zip/
@@ -34,7 +34,7 @@ GUI_ALL_TARGET=	gui
 GUI_INSTALL_TARGET=	install-gui
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,lua5.3,lua-${LUA_VER},' ${WRKSRC}/src/makefile
+	@${REINPLACE_CMD} -e 's,lua5.3,lua-${LUA_VER},g' ${WRKSRC}/src/makefile
 
 post-patch-GUI-on:
 	@${REINPLACE_CMD} -e '/PKGCONFIG/s,lua,&-${LUA_VER}, ; \
