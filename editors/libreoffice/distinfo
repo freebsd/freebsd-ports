@@ -1,8 +1,8 @@
-TIMESTAMP = 1774484131
-SHA256 (libreoffice/libreoffice-26.2.2.2.tar.xz) = e5af29abc1f1c8961787700ff50bc62a3d69b7293e20a968c4a352fd32155fd7
-SIZE (libreoffice/libreoffice-26.2.2.2.tar.xz) = 291588336
-SHA256 (libreoffice/libreoffice-help-26.2.2.2.tar.xz) = bb4474e012c8eb1ba1ab83eb01aa6c29489f441c36a39a41d18440854106046b
-SIZE (libreoffice/libreoffice-help-26.2.2.2.tar.xz) = 58403080
+TIMESTAMP = 1777729451
+SHA256 (libreoffice/libreoffice-26.2.3.2.tar.xz) = 254a641e0eec939364e157e2d9ddf4a55e1a42b5c688c22ce8e4945e97230a31
+SIZE (libreoffice/libreoffice-26.2.3.2.tar.xz) = 292522960
+SHA256 (libreoffice/libreoffice-help-26.2.3.2.tar.xz) = ac8d393005d9c588feb057f3a2e32707e8cd332505aa1a3a7bc1245f56bd5e57
+SIZE (libreoffice/libreoffice-help-26.2.3.2.tar.xz) = 58404048
 SHA256 (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140
 SIZE (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = 207992
 SHA256 (libreoffice/afdko-4.0.3.tar.gz) = 5feed7c2468e25b25fce0479c04af07f4ed2680bc9251bb4c4aef9ec2fba5720
