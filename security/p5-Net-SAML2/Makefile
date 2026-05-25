@@ -1,7 +1,8 @@
 PORTNAME=	Net-SAML2
-PORTVERSION=	0.82
+PORTVERSION=	0.85
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:TIMLEGGE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,11 +14,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
-		p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
-		p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
+RUN_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
 		p5-Crypt-OpenSSL-Verify>=0:security/p5-Crypt-OpenSSL-Verify \
 		p5-Crypt-OpenSSL-X509>=0:security/p5-Crypt-OpenSSL-X509 \
+		p5-CryptX>=0:security/p5-CryptX \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-XSD>=0:devel/p5-DateTime-Format-XSD \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
@@ -37,7 +37,7 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 		p5-XML-Enc>=0.13:textproc/p5-XML-Enc \
 		p5-XML-Generator>=1.13:textproc/p5-XML-Generator \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-XML-Sig>=0.66:textproc/p5-XML-Sig \
+		p5-XML-Sig>=0.67:textproc/p5-XML-Sig \
 		p5-libwww>=0:www/p5-libwww \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 TEST_DEPENDS=	p5-Import-Into>=0:devel/p5-Import-Into \
