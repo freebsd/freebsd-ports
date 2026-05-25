@@ -2844,9 +2844,6 @@
 %%DATADIR%%/crt/shaders/crt-super-xbr/super-xbr-pass1.slang
 %%DATADIR%%/crt/shaders/crt-super-xbr/super-xbr-pass2.slang
 %%DATADIR%%/crt/shaders/crt-super-xbr/threshold.slang
-%%DATADIR%%/crt/shaders/crt-yah/blur-horizontal.slang
-%%DATADIR%%/crt/shaders/crt-yah/blur-vertical.slang
-%%DATADIR%%/crt/shaders/crt-yah/blur.layout.h
 %%DATADIR%%/crt/shaders/crt-yah/blur.stage-f.core.h
 %%DATADIR%%/crt/shaders/crt-yah/blur.stage-f.h
 %%DATADIR%%/crt/shaders/crt-yah/blur.stage-v.h
@@ -2870,6 +2867,9 @@
 %%DATADIR%%/crt/shaders/crt-yah/crt-yah.stage-v.core.h
 %%DATADIR%%/crt/shaders/crt-yah/crt-yah.stage-v.h
 %%DATADIR%%/crt/shaders/crt-yah/deconverge.slang
+%%DATADIR%%/crt/shaders/crt-yah/halation-blur-horizontal.slang
+%%DATADIR%%/crt/shaders/crt-yah/halation-blur-vertical.slang
+%%DATADIR%%/crt/shaders/crt-yah/halation-blur.layout.h
 %%DATADIR%%/crt/shaders/crt-yah/lut.slang
 %%DATADIR%%/crt/shaders/crt-yah/lut/ntsc-lut.png
 %%DATADIR%%/crt/shaders/crt-yah/lut/trinitron-lut.png
@@ -2898,6 +2898,9 @@
 %%DATADIR%%/crt/shaders/crt-yah/presets/pure-mask.slangp
 %%DATADIR%%/crt/shaders/crt-yah/presets/pure-ntsc.slangp
 %%DATADIR%%/crt/shaders/crt-yah/presets/pure-scanlines.slangp
+%%DATADIR%%/crt/shaders/crt-yah/sharp-blur-horizontal.slang
+%%DATADIR%%/crt/shaders/crt-yah/sharp-blur-vertical.slang
+%%DATADIR%%/crt/shaders/crt-yah/sharp-blur.layout.h
 %%DATADIR%%/crt/shaders/crt-yo6/KV-M1420B.png
 %%DATADIR%%/crt/shaders/crt-yo6/crt-yo6-flat-trinitron-tv.slang
 %%DATADIR%%/crt/shaders/crt-yo6/crt-yo6-native-resolution.slang
@@ -3484,12 +3487,15 @@
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale3x.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale3xSFX.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-graph.slang
-%%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-rasterizer.slang
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-rasterizer-multi-aa.slang
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-rasterizer-single-aa.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/init-positions.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/optimize-energy.slang
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/pack-positions.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/resolve-crossings.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/similarity-graph.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/update-tjunction.slang
+%%DATADIR%%/edge-smoothing/vectorscale/vectorscale-single-aa.slangp
 %%DATADIR%%/edge-smoothing/vectorscale/vectorscale.slangp
 %%DATADIR%%/edge-smoothing/xbr/README.md
 %%DATADIR%%/edge-smoothing/xbr/hybrid-jinc2-xbr-lv2.slangp
