@@ -176,6 +176,8 @@ FreeCAD/Mod/BIM/ArchAxisSystem.py
 FreeCAD/Mod/BIM/ArchBuildingPart.py
 FreeCAD/Mod/BIM/ArchCommands.py
 FreeCAD/Mod/BIM/ArchComponent.py
+FreeCAD/Mod/BIM/ArchCovering.py
+FreeCAD/Mod/BIM/ArchCoveringGui.py
 FreeCAD/Mod/BIM/ArchCurtainWall.py
 FreeCAD/Mod/BIM/ArchCutPlane.py
 FreeCAD/Mod/BIM/ArchEquipment.py
@@ -204,6 +206,7 @@ FreeCAD/Mod/BIM/ArchSpace.py
 FreeCAD/Mod/BIM/ArchSql.py
 FreeCAD/Mod/BIM/ArchStairs.py
 FreeCAD/Mod/BIM/ArchStructure.py
+FreeCAD/Mod/BIM/ArchTessellation.py
 FreeCAD/Mod/BIM/ArchTruss.py
 FreeCAD/Mod/BIM/ArchVRM.py
 FreeCAD/Mod/BIM/ArchWall.py
@@ -234,6 +237,7 @@ FreeCAD/Mod/BIM/bimcommands/BimCommon.py
 FreeCAD/Mod/BIM/bimcommands/BimCompound.py
 FreeCAD/Mod/BIM/bimcommands/BimConvert.py
 FreeCAD/Mod/BIM/bimcommands/BimCopy.py
+FreeCAD/Mod/BIM/bimcommands/BimCovering.py
 FreeCAD/Mod/BIM/bimcommands/BimCurtainwall.py
 FreeCAD/Mod/BIM/bimcommands/BimCut.py
 FreeCAD/Mod/BIM/bimcommands/BimCutPlane.py
@@ -309,6 +313,8 @@ FreeCAD/Mod/BIM/bimtests/TestArchBaseGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchBuildingPart.py
 FreeCAD/Mod/BIM/bimtests/TestArchBuildingPartGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchComponent.py
+FreeCAD/Mod/BIM/bimtests/TestArchCovering.py
+FreeCAD/Mod/BIM/bimtests/TestArchCoveringGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchCurtainWall.py
 FreeCAD/Mod/BIM/bimtests/TestArchEquipment.py
 FreeCAD/Mod/BIM/bimtests/TestArchFence.py
@@ -341,6 +347,7 @@ FreeCAD/Mod/BIM/bimtests/TestWebGLExportGui.py
 FreeCAD/Mod/BIM/bimtests/fixtures/BimFixtures.py
 FreeCAD/Mod/BIM/bimtests/fixtures/FC_site_simple-102.FCStd
 FreeCAD/Mod/BIM/bimtests/fixtures/__init__.py
+FreeCAD/Mod/BIM/bimtests/test_roof_subtraction.brep
 FreeCAD/Mod/BIM/generated_sql_parser.py
 FreeCAD/Mod/BIM/importers/Sample.sh3d
 FreeCAD/Mod/BIM/importers/__init__.py
@@ -386,6 +393,7 @@ FreeCAD/Mod/CAM/CAMTests/FilePathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/Fixtures/OpHelix_v0-21.FCStd
 FreeCAD/Mod/CAM/CAMTests/PathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/PostTestMocks.py
+FreeCAD/Mod/CAM/CAMTests/TestAreaOperations.py
 FreeCAD/Mod/CAM/CAMTests/TestCAMSanity.py
 FreeCAD/Mod/CAM/CAMTests/TestCentroidLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestCentroidPost.py
@@ -399,6 +407,7 @@ FreeCAD/Mod/CAM/CAMTests/TestGenericPost.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblPost.py
 FreeCAD/Mod/CAM/CAMTests/TestLinkingGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4LegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4Post.py
@@ -422,12 +431,19 @@ FreeCAD/Mod/CAM/CAMTests/TestPathHelixGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelpers.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLanguage.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLog.py
+FreeCAD/Mod/CAM/CAMTests/TestPathLogNew.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpDeburr.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpUtil.py
 FreeCAD/Mod/CAM/CAMTests/TestPathPocket.py
 FreeCAD/Mod/CAM/CAMTests/TestPathPreferences.py
 FreeCAD/Mod/CAM/CAMTests/TestPathProfile.py
 FreeCAD/Mod/CAM/CAMTests/TestPathPropertyBag.py
+FreeCAD/Mod/CAM/CAMTests/TestPathRotaryGenerators.py
+FreeCAD/Mod/CAM/CAMTests/TestPathRotaryParallel.py
+FreeCAD/Mod/CAM/CAMTests/TestPathRotaryPostRegression.py
+FreeCAD/Mod/CAM/CAMTests/TestPathRotaryRings.py
+FreeCAD/Mod/CAM/CAMTests/TestPathRotarySurface.py
+FreeCAD/Mod/CAM/CAMTests/TestPathRotaryWrap.py
 FreeCAD/Mod/CAM/CAMTests/TestPathRotationGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathSetupSheet.py
 FreeCAD/Mod/CAM/CAMTests/TestPathSpiralGenerator.py
@@ -508,6 +524,11 @@ FreeCAD/Mod/CAM/Path/Base/Generator/drill.py
 FreeCAD/Mod/CAM/Path/Base/Generator/facing_common.py
 FreeCAD/Mod/CAM/Path/Base/Generator/helix.py
 FreeCAD/Mod/CAM/Path/Base/Generator/linking.py
+FreeCAD/Mod/CAM/Path/Base/Generator/rotary_dropcutter.py
+FreeCAD/Mod/CAM/Path/Base/Generator/rotary_parallel.py
+FreeCAD/Mod/CAM/Path/Base/Generator/rotary_rings.py
+FreeCAD/Mod/CAM/Path/Base/Generator/rotary_spiral.py
+FreeCAD/Mod/CAM/Path/Base/Generator/rotary_wrap.py
 FreeCAD/Mod/CAM/Path/Base/Generator/rotation.py
 FreeCAD/Mod/CAM/Path/Base/Generator/spiral.py
 FreeCAD/Mod/CAM/Path/Base/Generator/spiral_facing.py
@@ -607,6 +628,7 @@ FreeCAD/Mod/CAM/Path/Op/Gui/PocketBase.py
 FreeCAD/Mod/CAM/Path/Op/Gui/PocketShape.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Probe.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Profile.py
+FreeCAD/Mod/CAM/Path/Op/Gui/RotarySurface.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Selection.py
 FreeCAD/Mod/CAM/Path/Op/Gui/SimpleCopy.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Slot.py
@@ -625,6 +647,7 @@ FreeCAD/Mod/CAM/Path/Op/PocketBase.py
 FreeCAD/Mod/CAM/Path/Op/PocketShape.py
 FreeCAD/Mod/CAM/Path/Op/Probe.py
 FreeCAD/Mod/CAM/Path/Op/Profile.py
+FreeCAD/Mod/CAM/Path/Op/RotarySurface.py
 FreeCAD/Mod/CAM/Path/Op/Slot.py
 FreeCAD/Mod/CAM/Path/Op/Surface.py
 FreeCAD/Mod/CAM/Path/Op/SurfaceSupport.py
@@ -1164,6 +1187,8 @@ FreeCAD/Mod/Fem/femexamples/boxanalysis_frequency.py
 FreeCAD/Mod/Fem/femexamples/boxanalysis_static.py
 FreeCAD/Mod/Fem/femexamples/buckling_lateraltorsionalbuckling.py
 FreeCAD/Mod/Fem/femexamples/buckling_platebuckling.py
+FreeCAD/Mod/Fem/femexamples/ccx_1D_fluid_network.py
+FreeCAD/Mod/Fem/femexamples/ccx_axisymm_shaft.py
 FreeCAD/Mod/Fem/femexamples/ccx_buckling_flexuralbuckling.py
 FreeCAD/Mod/Fem/femexamples/ccx_cantilever_base_edge.py
 FreeCAD/Mod/Fem/femexamples/ccx_cantilever_base_face.py
@@ -1184,6 +1209,7 @@ FreeCAD/Mod/Fem/femexamples/ccx_cantilever_nodeload.py
 FreeCAD/Mod/Fem/femexamples/ccx_cantilever_prescribeddisplacement.py
 FreeCAD/Mod/Fem/femexamples/ccx_disc_cyclic_symm_centrif.py
 FreeCAD/Mod/Fem/femexamples/ccx_pipe_pressure_2D.py
+FreeCAD/Mod/Fem/femexamples/ccx_plane_stress_plate.py
 FreeCAD/Mod/Fem/femexamples/ccx_rigid_body.py
 FreeCAD/Mod/Fem/femexamples/constraint_centrif.py
 FreeCAD/Mod/Fem/femexamples/constraint_contact_shell_shell.py
@@ -1843,6 +1869,7 @@ FreeCAD/Mod/Part/parttests/BRep_tests.py
 FreeCAD/Mod/Part/parttests/ColorPerFaceTest.py
 FreeCAD/Mod/Part/parttests/ColorTransparencyTest.py
 FreeCAD/Mod/Part/parttests/Geom2d_tests.py
+FreeCAD/Mod/Part/parttests/TaskFaceAppearancesTest.py
 FreeCAD/Mod/Part/parttests/TestPartMirror.py
 FreeCAD/Mod/Part/parttests/TestTangentMode3-0.21.FCStd
 FreeCAD/Mod/Part/parttests/TopoShapeListTest.py
@@ -2332,6 +2359,15 @@ FreeCAD/include/OndselSolver/ZRotation.h
 FreeCAD/include/OndselSolver/ZTranslation.h
 FreeCAD/include/OndselSolver/enum.h
 FreeCAD/include/OndselSolver/resource.h
+FreeCAD/include/clipper2/clipper.core.h
+FreeCAD/include/clipper2/clipper.engine.h
+FreeCAD/include/clipper2/clipper.export.h
+FreeCAD/include/clipper2/clipper.h
+FreeCAD/include/clipper2/clipper.minkowski.h
+FreeCAD/include/clipper2/clipper.offset.h
+FreeCAD/include/clipper2/clipper.rectclip.h
+FreeCAD/include/clipper2/clipper.triangulation.h
+FreeCAD/include/clipper2/clipper.version.h
 FreeCAD/lib/AssemblyApp.so
 FreeCAD/lib/AssemblyGui.so
 FreeCAD/lib/CAMSimulator.so
@@ -2381,7 +2417,12 @@ FreeCAD/lib/cmake/E57Format/E57Format-export-%%CMAKE_BUILD_TYPE%%.cmake
 FreeCAD/lib/cmake/E57Format/E57Format-export.cmake
 FreeCAD/lib/cmake/E57Format/e57format-config-version.cmake
 FreeCAD/lib/cmake/E57Format/e57format-config.cmake
+FreeCAD/lib/cmake/clipper2/Clipper2Config.cmake
+FreeCAD/lib/cmake/clipper2/Clipper2ConfigVersion.cmake
+FreeCAD/lib/cmake/clipper2/Clipper2Targets-%%CMAKE_BUILD_TYPE%%.cmake
+FreeCAD/lib/cmake/clipper2/Clipper2Targets.cmake
 FreeCAD/lib/flatmesh.so
+FreeCAD/lib/libClipper2Z.a
 FreeCAD/lib/libDriver.so
 FreeCAD/lib/libDriverDAT.so
 FreeCAD/lib/libDriverSTL.so
@@ -2399,6 +2440,7 @@ FreeCAD/lib/libSMESH.so
 FreeCAD/lib/libSMESHDS.so
 FreeCAD/lib/libStdMeshers.so
 FreeCAD/lib/libarea-native.so
+FreeCAD/lib/pkgconfig/Clipper2Z.pc
 FreeCAD/lib/tsp_solver.so
 FreeCAD/share/3Dconnexion/3DConnexion.xml
 FreeCAD/share/Gui/PreferencePackTemplates/Arch_Colors.cfg
