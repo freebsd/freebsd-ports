@@ -1,7 +1,8 @@
 PORTNAME=	PDL-LinearAlgebra
-PORTVERSION=	0.433
+PORTVERSION=	0.436
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
 		p5-ExtUtils-F77>=1.26:lang/p5-ExtUtils-F77 \
 		p5-PkgConfig>=0:devel/p5-PkgConfig \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-PDL>=2.096:math/p5-PDL
+RUN_DEPENDS=	p5-PDL>=2.104:math/p5-PDL
 
 USES=		blaslapack perl5
 USE_PERL5=	configure
