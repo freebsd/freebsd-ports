@@ -39,6 +39,7 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-19-1.html
 %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-19-3.html
 %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-19-4.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-20-6.html
 %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-full.html
 %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/home.png
 %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/index.html
@@ -102,6 +103,7 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%NLS%%share/locale/ka/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/lo/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libxfce4windowing.mo
