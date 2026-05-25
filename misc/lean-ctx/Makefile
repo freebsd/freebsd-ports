@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.16
+DISTVERSION=	3.6.17
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -144,7 +144,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fastrand-2.4.1 \
 		fiat-crypto-0.2.9 \
 		filedescriptor-0.8.3 \
-		filetime-0.2.27 \
+		filetime-0.2.29 \
 		find-msvc-tools-0.1.9 \
 		finl_unicode-1.4.0 \
 		fixedbitset-0.4.2 \
@@ -295,7 +295,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pin-project-lite-0.2.17 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.33 \
-		plain-0.2.3 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
@@ -334,7 +333,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.4 \
 		redox_users-0.4.6 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
