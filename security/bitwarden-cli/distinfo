@@ -1,7 +1,7 @@
-TIMESTAMP = 1778465242
+TIMESTAMP = 1779708604
 SHA256 (node-v22.15.1.tar.gz) = 38aea029f8818f7783f273fbc70dcf930f9ef54bdd49c5f90c0152caec7a57be
 SIZE (node-v22.15.1.tar.gz) = 100310295
-SHA256 (bitwarden-cli-2026.4.1-node-modules.tar.gz) = 95b05da6e7735809325389cb4a4358913a6bbd94dcf26a1a4c28216c3122a8a4
-SIZE (bitwarden-cli-2026.4.1-node-modules.tar.gz) = 344923411
-SHA256 (bitwarden-clients-cli-v2026.4.1_GH0.tar.gz) = 4cf5dc06c2193afe55e7d3118a393716898b49be8828f69f64f1eab555be594a
-SIZE (bitwarden-clients-cli-v2026.4.1_GH0.tar.gz) = 37339708
+SHA256 (bitwarden-cli-2026.4.2-node-modules.tar.gz) = 63377ff4bf5fc86024f2c3af69c80616429f07a54f2a3097d734ed2003ee421d
+SIZE (bitwarden-cli-2026.4.2-node-modules.tar.gz) = 331260888
+SHA256 (bitwarden-clients-cli-v2026.4.2_GH0.tar.gz) = 5797d89a1553460b6363b3726c5a592bbe8c0591df7aa40485c42dde2f1d01b9
+SIZE (bitwarden-clients-cli-v2026.4.2_GH0.tar.gz) = 38056482
