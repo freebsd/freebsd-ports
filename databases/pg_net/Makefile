@@ -1,14 +1,14 @@
 PORTNAME=	pg_net
-PORTVERSION=	0.20.2
+PORTVERSION=	0.20.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	lukas.engelhardt@gmx.de
+MAINTAINER=	develuke@gmx.de
 COMMENT=	PostgreSQL extension to trigger web services via postgresql
 WWW=		https://supabase.github.io/pg_net/
 
-LICENSE=	PostgreSQL
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	curl:ftp/curl
 LIB_DEPENDS=	libcurl.so:ftp/curl
