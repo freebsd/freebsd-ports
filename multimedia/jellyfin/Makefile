@@ -68,6 +68,7 @@ DISTFILES+=		${FILE_AMD64}:prefetch ${FILE_ARM64}:prefetch
 EXTRACT_ONLY+=		${FILE_AMD64}
 .elif ${ARCH} == aarch64
 EXTRACT_ONLY+=		${FILE_ARM64}
+MAKE_ENV+=		NODE_OPTIONS="--max-old-space-size=3072"
 .endif
 
 # We need NODEJS_VERSION to be expanded before assigning it
