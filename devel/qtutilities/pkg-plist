@@ -36,7 +36,7 @@ include/qtutilities/widgets/iconbutton.h
 include/qtutilities/widgets/pathselection.h
 lib/libqtutilities.so
 lib/libqtutilities.so.6
-lib/libqtutilities.so.6.21.1
+lib/libqtutilities.so.6.21.2
 libdata/pkgconfig/qtutilities.pc
 %%DATADIR%%/cmake/modules/QtConfig.cmake
 %%DATADIR%%/cmake/modules/QtGuiConfig.cmake
