@@ -1,7 +1,8 @@
 PORTNAME=	Term-Choose
-PORTVERSION=	1.777
+PORTVERSION=	1.782
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:KUERBIS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,7 +23,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	XS
 OPTIONS_DEFAULT=XS
 
-XS_BUILD_DEPENDS=	p5-Term-Choose-LineFold-XS>=0.004:devel/p5-Term-Choose-LineFold-XS
-XS_RUN_DEPENDS=		p5-Term-Choose-LineFold-XS>=0.004:devel/p5-Term-Choose-LineFold-XS
+XS_BUILD_DEPENDS=	p5-Term-Choose-LineFold-XS>=0.005:devel/p5-Term-Choose-LineFold-XS
+XS_RUN_DEPENDS=		p5-Term-Choose-LineFold-XS>=0.005:devel/p5-Term-Choose-LineFold-XS
 
 .include <bsd.port.mk>
