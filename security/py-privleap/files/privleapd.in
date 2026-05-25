@@ -14,10 +14,24 @@ load_rc_config "${name}"
 
 : ${privleapd_enable:=NO}
 
+leapctl_cmd="%%PREFIX%%/bin/leapctl"
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command_interpreter="%%PYTHON_CMD%%"
 command="/usr/sbin/daemon"
 command_args="-cS -l authpriv -t \"${desc}\" -T \"${name}\" -p \"${pidfile}\" \"${procname}\""
+extra_commands="reload"
+reload_precmd="${name}_checkconf"
+reload_cmd="${name}_reload"
+
+privleapd_checkconf()
+{
+    "${procname}" --check-config
+}
+
+privleapd_reload()
+{
+    "${leapctl_cmd}" --reload
+}
 
 run_rc_command "$1"
