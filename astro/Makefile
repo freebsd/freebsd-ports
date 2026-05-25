@@ -8,6 +8,7 @@
     SUBDIR += celestia
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
+    SUBDIR += cspice
     SUBDIR += erfa
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
