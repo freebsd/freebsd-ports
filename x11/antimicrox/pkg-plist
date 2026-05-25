@@ -34,13 +34,13 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_vi.qm
 %%DATADIR%%/translations/antimicrox_zh_CN.qm
 share/applications/io.github.antimicrox.antimicrox.desktop
-share/icons/breeze/48x48/apps/antimicrox_trayicon.png
+share/icons/breeze/48x48/apps/io.github.antimicrox.antimicrox.trayicon.png
 share/icons/hicolor/128x128/apps/io.github.antimicrox.antimicrox.png
 share/icons/hicolor/16x16/apps/io.github.antimicrox.antimicrox.png
 share/icons/hicolor/24x24/apps/io.github.antimicrox.antimicrox.png
 share/icons/hicolor/32x32/apps/io.github.antimicrox.antimicrox.png
-share/icons/hicolor/48x48/apps/antimicrox_trayicon.png
 share/icons/hicolor/48x48/apps/io.github.antimicrox.antimicrox.png
+share/icons/hicolor/48x48/apps/io.github.antimicrox.antimicrox.trayicon.png
 share/icons/hicolor/64x64/apps/io.github.antimicrox.antimicrox.png
 share/icons/hicolor/scalable/apps/io.github.antimicrox.antimicrox.svg
 share/man/man1/antimicrox.1.gz
