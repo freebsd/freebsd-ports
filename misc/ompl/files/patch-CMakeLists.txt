@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2020-06-02 18:39:48 UTC
+--- CMakeLists.txt.orig	2026-04-06 19:55:53 UTC
 +++ CMakeLists.txt
-@@ -179,7 +179,7 @@ find_program(R_EXEC R)
- add_subdirectory(src)
- add_subdirectory(py-bindings)
+@@ -92,7 +92,7 @@ add_subdirectory(tests)
+ enable_testing()
  add_subdirectory(tests)
+ 
 -add_subdirectory(demos)
 +#add_subdirectory(demos)
  add_subdirectory(scripts)
