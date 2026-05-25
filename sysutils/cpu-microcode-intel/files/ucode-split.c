@@ -50,6 +50,19 @@ struct microcode_update_header {
 	uint32_t reserved[3];
 };
 
+/* SDM (March 2026) vol 3A 12.11.2 Optional Extended Signature Table. */
+struct ucode_intel_extsig_table {
+	uint32_t signature_count;
+	uint32_t checksum;
+	uint32_t reserved[3];
+};
+
+struct ucode_intel_extsig {
+	uint32_t processor_signature;
+	uint32_t processor_flags;
+	uint32_t checksum;
+};
+
 /*
  * SDM vol 2A CPUID EAX = 01h Returns Model, Family, Stepping Information.
  * Caller must free the returned string.
@@ -107,6 +120,38 @@ dump_header(const struct microcode_update_header *hdr)
 }
 
 static void
+copy_entry(int ifd, off_t entry_start, uint32_t total_size,
+    const char *output_file, char *buf, bool vflag)
+{
+	off_t off;
+	size_t len, resid;
+	ssize_t rv;
+	int ofd;
+
+	ofd = open(output_file, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	if (ofd < 0)
+		err(1, "open");
+
+	resid = total_size;
+	off = entry_start;
+	while (resid > 0) {
+		len = resid < bufsize ? resid : bufsize;
+		rv = pread(ifd, buf, len, off);
+		if (rv < 0)
+			err(1, "pread");
+		else if (rv < (ssize_t)len)
+			errx(1, "truncated microcode data");
+		if (write(ofd, buf, len) < (ssize_t)len)
+			err(1, "write");
+		resid -= len;
+		off += len;
+	}
+	if (vflag)
+		printf("written to %s\n", output_file);
+	close(ofd);
+}
+
+static void
 usage(void)
 {
 
@@ -118,10 +163,13 @@ int
 main(int argc, char *argv[])
 {
 	struct microcode_update_header hdr;
+	struct ucode_intel_extsig_table etbl;
+	struct ucode_intel_extsig extsig;
 	char *buf, *output_file, *sig_str;
-	size_t len, resid;
+	off_t entry_start;
+	uint32_t data_size, total_size, i;
 	ssize_t rv;
-	int c, ifd, ofd;
+	int c, ifd;
 	bool vflag;
 
 	vflag = false;
@@ -149,6 +197,10 @@ main(int argc, char *argv[])
 		err(1, "malloc");
 
 	for (;;) {
+		entry_start = lseek(ifd, 0, SEEK_CUR);
+		if (entry_start < 0)
+			err(1, "lseek");
+
 		/* Read header. */
 		rv = read(ifd, &hdr, sizeof(hdr));
 		if (rv < 0) {
@@ -164,40 +216,68 @@ main(int argc, char *argv[])
 		if (vflag)
 			dump_header(&hdr);
 
+		data_size = hdr.data_size != 0 ? hdr.data_size : 2000;
+		total_size = hdr.total_size != 0 ? hdr.total_size : 2048;
+
+		/* Arbitrarily chosen maximum size. */
+		if (total_size - sizeof(hdr) > 1 << 24)
+			errx(1, "header total_size too large");
+
+		/* Write primary output file. */
 		sig_str = format_signature(hdr.processor_signature);
 		asprintf(&output_file, "%s.%02x", sig_str,
 		    hdr.processor_flags & 0xff);
 		free(sig_str);
 		if (output_file == NULL)
 			err(1, "asprintf");
-		ofd = open(output_file, O_WRONLY | O_CREAT | O_TRUNC, 0600);
-		if (ofd < 0)
-			err(1, "open");
+		copy_entry(ifd, entry_start, total_size, output_file, buf, vflag);
+		free(output_file);
 
-		/* Write header. */
-		rv = write(ofd, &hdr, sizeof(hdr));
-		if (rv < (ssize_t)sizeof(hdr))
-			err(1, "write");
-
-		/* Copy data. */
-		resid = (hdr.total_size != 0 ? hdr.total_size : 2048) -
-		    sizeof(hdr);
-		if (resid > 1 << 24) /* Arbitrary chosen maximum size. */
-			errx(1, "header total_size too large");
-		while (resid > 0) {
-			len = resid < bufsize ? resid : bufsize;
-			rv = read(ifd, buf, len);
+		/*
+		 * Process the extended signature table, if present.  Each
+		 * entry names an additional processor signature and platform
+		 * flags combination covered by this microcode blob, so write
+		 * a copy of the blob for each.
+		 */
+		if (total_size > data_size + sizeof(hdr)) {
+			if (lseek(ifd, entry_start + sizeof(hdr) + data_size,
+			    SEEK_SET) < 0)
+				err(1, "lseek");
+			rv = read(ifd, &etbl, sizeof(etbl));
 			if (rv < 0)
 				err(1, "read");
-			else if (rv < (ssize_t)len)
-				errx(1, "truncated microcode data");
-			if (write(ofd, buf, len) < (ssize_t)len)
-				err(1, "write");
-			resid -= len;
+			else if (rv < (ssize_t)sizeof(etbl))
+				errx(1, "truncated extended signature table");
+
+			for (i = 0; i < etbl.signature_count; i++) {
+				rv = read(ifd, &extsig, sizeof(extsig));
+				if (rv < 0)
+					err(1, "read");
+				else if (rv < (ssize_t)sizeof(extsig))
+					errx(1, "truncated extended signature "
+					    "entry %u", i);
+
+				sig_str = format_signature(
+				    extsig.processor_signature);
+				asprintf(&output_file, "%s.%02x", sig_str,
+				    extsig.processor_flags & 0xff);
+				free(sig_str);
+				if (output_file == NULL)
+					err(1, "asprintf");
+
+				copy_entry(ifd, entry_start, total_size,
+				    output_file, buf, vflag);
+				free(output_file);
+			}
 		}
+
 		if (vflag)
-			printf("written to %s\n\n", output_file);
-		close(ofd);
-		free(output_file);
+			printf("\n");
+
+		/* Advance to the next entry. */
+		if (lseek(ifd, entry_start + total_size, SEEK_SET) < 0)
+			err(1, "lseek");
 	}
+	free(buf);
+	close(ifd);
 }
