@@ -74,6 +74,7 @@ include/libr/r_types_overflow.h
 include/libr/r_userconf.h
 include/libr/r_util.h
 include/libr/r_util/bplist.h
+include/libr/r_util/libc.h
 include/libr/r_util/pj.h
 include/libr/r_util/r_alloc.h
 include/libr/r_util/r_asn1.h
@@ -451,6 +452,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-darwin.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-iokit.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-linux.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-windows.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-macos-64.sdb
@@ -642,6 +644,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/magic/freebsd
 %%DATADIR%%/%%PORTVERSION%%/magic/gimp
 %%DATADIR%%/%%PORTVERSION%%/magic/gpg
+%%DATADIR%%/%%PORTVERSION%%/magic/hermes
 %%DATADIR%%/%%PORTVERSION%%/magic/html
 %%DATADIR%%/%%PORTVERSION%%/magic/images
 %%DATADIR%%/%%PORTVERSION%%/magic/java
@@ -691,14 +694,17 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/opcodes/propeller.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/riscv.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/s390.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/sbpf.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sh.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sm5xx.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/snes.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sparc.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/stm8.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/tms320.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/tricore.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/v810.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/v850.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/vax.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/x86.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/xtensa.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/z80.sdb

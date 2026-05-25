@@ -1,6 +1,6 @@
-TIMESTAMP = 1779053657
-SHA256 (radareorg-radare2-6.0.2_GH0.tar.gz) = 5879969ca502fff91ec255cd016e0b0840476f5edd490c75a64c0a1ffc8a7dca
-SIZE (radareorg-radare2-6.0.2_GH0.tar.gz) = 11446989
+TIMESTAMP = 1779649889
+SHA256 (radareorg-radare2-6.0.4_GH0.tar.gz) = 2aadf26066c396961949656f304cb5d99b76c88adbe30ad923db4e98b10f3bbc
+SIZE (radareorg-radare2-6.0.4_GH0.tar.gz) = 11670531
 SHA256 (radareorg-sdb-2.2.0_GH0.tar.gz) = 05b6fda41727e2d634bc0cdea0bccdc186b48cc9136b2367ab2a7358145fa8b4
 SIZE (radareorg-sdb-2.2.0_GH0.tar.gz) = 309395
 SHA256 (quickjs-ng-quickjs-7238ee64dbc2fbdea044555cda8cda78785a93ed_GH0.tar.gz) = 7c1adc7aa7b1ab0a7f0b0a9aaa24fd3c7a0691d8a6ba8cae886f29834f1bee02
