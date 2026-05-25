@@ -267,7 +267,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-lib-profiler.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-lib-ui.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-modules-appui.xml
-%%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-modules-nashorn-jdk15.xml
+%%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-modules-killapp.xml
+%%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-nashorn-jdk15.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-pluginimporter.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-profiler.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-profiling.xml
@@ -302,7 +303,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/lib/deployed/jdk16/windows/profilerinterface.map
 %%DATADIR%%/visualvm/lib/jfluid-server-15.jar
 %%DATADIR%%/visualvm/lib/jfluid-server.jar
-%%DATADIR%%/visualvm/modules/ext/asm-util-9.5.jar
+%%DATADIR%%/visualvm/modules/ext/asm-util-9.7.jar
 %%DATADIR%%/visualvm/modules/ext/common-8.3.1.jar
 %%DATADIR%%/visualvm/modules/ext/encoder-1.2.3.jar
 %%DATADIR%%/visualvm/modules/ext/flightrecorder-8.3.1.jar
@@ -350,7 +351,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-lib-profiler.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-lib-ui.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-modules-appui.jar
-%%DATADIR%%/visualvm/modules/org-graalvm-visualvm-modules-nashorn-jdk15.jar
+%%DATADIR%%/visualvm/modules/org-graalvm-visualvm-modules-killapp.jar
+%%DATADIR%%/visualvm/modules/org-graalvm-visualvm-nashorn-jdk15.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-pluginimporter.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-profiler.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-profiling.jar
@@ -395,7 +397,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-lib-profiler.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-lib-ui.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-appui.xml
-%%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-nashorn-jdk15.xml
+%%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-killapp.xml
+%%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-nashorn-jdk15.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-startup.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-pluginimporter.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-profiler.xml
