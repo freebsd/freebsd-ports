@@ -1,7 +1,8 @@
 PORTNAME=	HTML-Form
-PORTVERSION=	6.12
+PORTVERSION=	6.13
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OALDERS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
-		p5-HTTP-Message>=6.03:www/p5-HTTP-Message \
+		p5-HTTP-Message>=7.01:www/p5-HTTP-Message \
 		p5-URI>=1.10:net/p5-URI
 TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
