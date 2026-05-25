@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	4
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -30,7 +30,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		gsed:textproc/gsed \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		coreutils>=8.23:sysutils/coreutils \
-		flex>=0.26:textproc/flex \
 		frozen>=1:devel/frozen
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libapr-1.so:devel/apr1 \
@@ -335,7 +334,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
-		FLEX=${LOCALBASE}/bin/flex \
 		CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		GNUTAR="${TAR}" \
 		GPERF=${LOCALBASE}/bin/gperf \
