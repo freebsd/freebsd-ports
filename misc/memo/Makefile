@@ -1,6 +1,6 @@
 PORTNAME=	memo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.0
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-cli-tool
 
@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=7.4.3:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html2text>0:textproc/py-html2text@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mistune>=3.2.0:textproc/py-mistune@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=2.6.3:net/py-urllib3@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mistune>=3.2.1:textproc/py-mistune@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=2.7.0:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 noflavors autoplist
