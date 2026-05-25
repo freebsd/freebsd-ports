@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Django 4.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2026. Upgrade to a later Django version. See https://www.djangoproject.com/download/
-EXPIRATION_DATE=2026-05-31
+EXPIRATION_DATE=2026-08-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
