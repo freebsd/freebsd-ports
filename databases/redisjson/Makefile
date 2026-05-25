@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Requires 64-bit architecture
+
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
