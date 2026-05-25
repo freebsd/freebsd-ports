@@ -1,6 +1,5 @@
 PORTNAME=	wildfly
-DISTVERSION=	39.0.1
-PORTREVISION=	2
+DISTVERSION=	40.0.0
 CATEGORIES=	java www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -12,7 +11,7 @@ WWW=		https://wildfly.org/
 LICENSE=	GPLv2
 
 USES=		java
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 USE_RC_SUBR=	wildfly
 
 NO_BUILD=	yes
