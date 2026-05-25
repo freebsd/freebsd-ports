@@ -1,9 +1,8 @@
 PORTNAME=	Module-Path-More
-PORTVERSION=	0.34.0
+PORTVERSION=	0.340
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Module-Path-More-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get path to locally installed Perl module
