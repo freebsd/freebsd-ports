@@ -10,6 +10,8 @@ WWW=		https://github.com/phaag/nfdump
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
+BROKEN=		fails to build with rrdtool 1.10+
+
 USES=		autoreconf compiler:c11 cpe libtool pkgconfig
 CPE_VENDOR=	nfdump_project
 USE_CSTD=	gnu89
