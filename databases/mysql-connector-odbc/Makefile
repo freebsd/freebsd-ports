@@ -25,13 +25,13 @@ iodbc_PKGNAMESUFFIX=		-iodbc
 unixodbc_PKGNAMESUFFIX=		-unixodbc
 
 USES=		cmake localbase:ldflags mysql ssl
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=		-DINSTALL_DOCDIR=${DOCSDIR} \
 				-DINSTALL_TESTDIR=${DATADIR}/test
 CMAKE_ON=		DISABLE_GUI
 .if ${FLAVOR:U} == unixodbc
+USE_GCC=	yes
 CMAKE_ON+=		WITH_UNIXODBC
 .elif ${FLAVOR:U} == iodbc
 CMAKE_OFF+=		WITH_UNIXODBC
