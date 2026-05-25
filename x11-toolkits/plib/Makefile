@@ -4,7 +4,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable library for joystick/sound/OpenGL GUI/3D math
 WWW=		https://plib.sourceforge.net/
 
@@ -12,8 +12,8 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gl gmake localbase:ldflags xorg
-USE_CXXSTD=	c++14
 CPE_VENDOR=	${PORTNAME}_project
+USE_CXXSTD=	c++14
 USE_GL=		glu
 USE_XORG=	xt xi xmu xext x11
 
