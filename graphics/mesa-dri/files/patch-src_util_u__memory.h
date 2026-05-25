@@ -1,4 +1,4 @@
---- src/util/u_memory.h.orig	2023-11-29 19:30:57 UTC
+--- src/util/u_memory.h.orig	2026-04-15 14:20:41 UTC
 +++ src/util/u_memory.h
 @@ -84,7 +84,7 @@ mem_dup(const void *src, size_t size)
  }
