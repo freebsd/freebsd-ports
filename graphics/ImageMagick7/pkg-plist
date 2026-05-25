@@ -612,6 +612,7 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/images/t-shirt.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wand.ico
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wand.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/wand.svg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/white-highlight.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wizard.png
