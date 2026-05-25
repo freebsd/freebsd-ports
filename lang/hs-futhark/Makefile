@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.1
+DISTVERSION=	0.26.2
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,13 +15,13 @@ USES=		cabal
 USE_CABAL=	Diff-1.0.2 \
 		Glob-0.10.2_3 \
 		ListLike-4.7.8.4 \
-		OneTuple-0.4.2.1 \
+		OneTuple-0.4.3 \
 		Only-0.1_2 \
 		QuickCheck-2.18.0.0 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.4 \
-		aeson-2.2.4.1 \
+		aeson-2.2.5.0 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.4.2 \
 		ansi-terminal-1.1.5 \
@@ -29,20 +29,20 @@ USE_CABAL=	Diff-1.0.2 \
 		assoc-1.1.1_2 \
 		async-2.2.6 \
 		attoparsec-0.14.4_6 \
-		attoparsec-aeson-2.2.2.0 \
+		attoparsec-aeson-2.2.2.0_1 \
 		base-compat-0.15.0 \
 		base-compat-batteries-0.15.0_1 \
 		base-orphans-0.9.4 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		bifunctors-5.6.3_1 \
-		binary-orphans-1.0.5.1 \
+		binary-orphans-1.0.6 \
 		bitvec-1.1.6.0 \
 		blaze-builder-0.4.4.1 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		bmp-1.2.6.4 \
-		boring-0.2.2_1 \
+		boring-0.2.2.1 \
 		bytestring-to-vector-0.3.0.1 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
@@ -83,7 +83,7 @@ USE_CABAL=	Diff-1.0.2 \
 		free-5.2_8 \
 		futhark-data-1.1.4.0 \
 		futhark-manifest-1.8.0.0 \
-		futhark-server-1.4.0.0 \
+		futhark-server-1.4.1.0 \
 		generic-arbitrary-1.0.1.2 \
 		generic-deriving-1.14.7 \
 		generic-lens-2.3.0.0 \
@@ -97,7 +97,7 @@ USE_CABAL=	Diff-1.0.2 \
 		haskell-src-meta-0.8.15_1 \
 		hsc2hs-0.68.10_5 \
 		indexed-profunctors-0.1.1.1 \
-		indexed-traversable-0.1.4_2 \
+		indexed-traversable-0.1.5 \
 		indexed-traversable-instances-0.1.2.1 \
 		integer-conversion-0.1.1_2 \
 		integer-logarithms-1.0.5 \
@@ -143,7 +143,7 @@ USE_CABAL=	Diff-1.0.2 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.8.1 \
-		semialign-1.3.1.1 \
+		semialign-1.4 \
 		semigroupoids-6.0.2_1 \
 		semirings-0.7 \
 		some-1.0.6_3 \
