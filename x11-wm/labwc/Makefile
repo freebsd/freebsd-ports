@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.9.7
+DISTVERSION=	0.20.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.39:graphics/wayland-protocols
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
-		libwlroots-0.19.so:x11-toolkits/wlroots019 \
+		libwlroots-0.20.so:x11-toolkits/wlroots020 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
@@ -22,6 +22,7 @@ USE_GITLAB=	nodefault
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
 GL_TUPLE=	https://gitlab.freedesktop.org:vyivel:libsfdo:v0.1.4:libsfdo/subprojects/libsfdo-basedir
+MESON_DISABLED=	systemd-session
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/lab-sensible-terminal \
 		bin/labnag \
@@ -74,6 +75,7 @@ NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/it/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ja/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ka/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/kab/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/kk/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ko/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/lt/LC_MESSAGES/${PORTNAME}.mo \
@@ -85,6 +87,7 @@ NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ru/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sk/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/sr_Latn/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/uk/LC_MESSAGES/${PORTNAME}.mo \
