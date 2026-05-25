@@ -375,6 +375,7 @@
     SUBDIR += lua-resty-lrucache
     SUBDIR += lua-resty-session
     SUBDIR += lua-resty-session3
+    SUBDIR += lua-stream-nginx-module
     SUBDIR += luakit
     SUBDIR += luakit-devel
     SUBDIR += lubelogger
