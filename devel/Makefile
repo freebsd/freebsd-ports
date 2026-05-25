@@ -4346,6 +4346,7 @@
     SUBDIR += picprog
     SUBDIR += pijul
     SUBDIR += pika
+    SUBDIR += pinact
     SUBDIR += pipelight
     SUBDIR += pipestatus
     SUBDIR += pire
