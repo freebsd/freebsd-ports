@@ -1,6 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.7.0
-PORTREVISION=	3
+DISTVERSION=	1.7.1
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,8 +28,9 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 do-test:
 	@${RM} ${WRKSRC}/test/*.py
 	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFREEBSD_BUILS_WITH_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFREEBSD_BUILD_WITH_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
+# tests as of 1.7.1: all 7 tests passed
 .include <bsd.port.mk>
