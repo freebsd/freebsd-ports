@@ -1,3 +1,36 @@
+  <vuln vid="87ff1d7e-6b24-4a5b-9825-90dcda5ee119">
+    <topic>jellyfin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jellyfin</name>
+	<range><lt>10.11.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Jellyfin project reports:</p>
+	<blockquote cite="https://github.com/jellyfin/jellyfin/releases/tag/v10.11.10">
+	  <p>Jellyfin Server 10.11.10 fixes three security vulnerabilities:</p>
+	  <ul>
+	    <li>GHSA-f47c-m7gr-q92j: (details pending disclosure)</li>
+	    <li>GHSA-jg92-mrxq-vv75: (details pending disclosure)</li>
+	    <li>GHSA-wwwm-px48-fpvq: (details pending disclosure)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/jellyfin/jellyfin/security/advisories/GHSA-f47c-m7gr-q92j</url>
+      <url>https://github.com/jellyfin/jellyfin/security/advisories/GHSA-jg92-mrxq-vv75</url>
+      <url>https://github.com/jellyfin/jellyfin/security/advisories/GHSA-wwwm-px48-fpvq</url>
+      <url>https://github.com/jellyfin/jellyfin/releases/tag/v10.11.10</url>
+    </references>
+    <dates>
+      <discovery>2026-05-24</discovery>
+      <entry>2026-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8777bc2-5758-11f1-8607-8447094a420f">
     <topic>Roundcube Webmail -- Multiple vulnerabilities</topic>
     <affects>
