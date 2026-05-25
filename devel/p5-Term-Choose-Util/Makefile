@@ -1,7 +1,8 @@
 PORTNAME=	Term-Choose-Util
-PORTVERSION=	0.146
+PORTVERSION=	0.149
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:KUERBIS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Encode-Locale>=0:converters/p5-Encode-Locale \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
-		p5-Term-Choose>=1.775:devel/p5-Term-Choose
+		p5-Term-Choose>=1.782:devel/p5-Term-Choose
 
 USES=		perl5
 USE_PERL5=	configure
