@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# PROVIDE: privleapd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=privleapd
+desc="Limited Privilege Escalation Framework"
+rcvar="${name}_enable"
+
+load_rc_config "${name}"
+
+: ${privleapd_enable:=NO}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command_interpreter="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-cS -l authpriv -t \"${desc}\" -T \"${name}\" -p \"${pidfile}\" \"${procname}\""
+
+run_rc_command "$1"

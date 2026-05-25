@@ -1030,6 +1030,7 @@
     SUBDIR += py-pnu-vuxml
     SUBDIR += py-policyuniverse
     SUBDIR += py-potr
+    SUBDIR += py-privleap
     SUBDIR += py-pwntools
     SUBDIR += py-pyaes
     SUBDIR += py-pyaff4

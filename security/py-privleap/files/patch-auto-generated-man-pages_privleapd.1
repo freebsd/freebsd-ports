@@ -1,0 +1,11 @@
+--- auto-generated-man-pages/privleapd.1.orig	2026-05-24 21:15:07 UTC
++++ auto-generated-man-pages/privleapd.1
+@@ -6,7 +6,7 @@
+ .SH "SYNOPSIS"
+ \fBprivleapd [\-C|\-\-check\-config] [\-h|\-\-help|\-?]\fR
+ .SH "DESCRIPTION"
+-The backend server for privleap\. Runs predefined code snippets as root when requested by an authorized client\. privleapd listens for connections on UNIX sockets under \fB/run/privleapd\fR, it does not send or receive information over a network\.
++The backend server for privleap\. Runs predefined code snippets as root when requested by an authorized client\. privleapd listens for connections on UNIX sockets under \fB/var/run/privleapd\fR, it does not send or receive information over a network\.
+ .P
+ You usually will not need to run this directly \- if \fBprivleap\fR was installed from your distribution's repository, it should be pre\-configured to start on boot\. The one time you usually will want to run it is when ensuring that all configuration is valid before restarting privleapd\.
+ .SH "OPTIONS"

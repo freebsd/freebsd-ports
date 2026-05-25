@@ -1,0 +1,12 @@
+privleap is a privilege escalation framework similar in purpose to
+sudo and doas, but very different conceptually. It is designed to
+allow user-level applications to run very specific operations as
+root without allowing full root control of the machine. Unlike
+directly executable privilege escalation frameworks like sudo,
+privleap runs as a background service that listens for signals from
+other applications. Each signal can request a particular, pre-configured
+action to be taken. Signals are authenticated, and each action is
+taken only if the signal passes authentication. Any console output
+from the action is then returned to the caller. This system allows
+privleap to function without being SUID-root, and avoids a lot of
+the potential pitfalls of sudo, doas, run0, etc.

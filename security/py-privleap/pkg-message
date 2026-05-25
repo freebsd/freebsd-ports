@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+pam_exec(8) could be used to call leapctl(8) to create the
+communication socket required by leaprun(8) by simply adding
+the following to a PAM policy file:
+
+  session    optional    pam_exec.so    /usr/local/libexec/privleap/pam_create_socket.sh
+EOM
+}
+]
