@@ -69,14 +69,13 @@ share/metainfo/md.obsidian.obsidian.appdata.xml
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/obsidian
+%%DATADIR%%/obsidian-cli
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/app.asar
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/binding.node
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/build/Release/binding.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/index.js
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/package.json
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/binding.node
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/build/Release/binding.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/fontsMac.mm
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/index.js
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/package.json
