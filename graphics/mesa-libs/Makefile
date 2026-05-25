@@ -15,6 +15,7 @@ BUILD_DEPENDS=	libglvnd>=0:graphics/libglvnd \
 		libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 		spirv-tools>0:graphics/spirv-tools \
 		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 
@@ -59,7 +60,6 @@ MESON_ARGS+=	-Dgallium-drivers=${GALLIUM_DRIVERS:ts,}
 MESON_ARGS+=	-Dvulkan-drivers=""
 
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
-		-Dgallium-vdpau=disabled \
 		-Dgallium-va=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \

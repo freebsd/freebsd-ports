@@ -42,15 +42,11 @@ llvmpipe_DESC=		Software Rasterizer
 panfrost_DESC=		ARM Midgard and Bifrost
 r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
-r600_BUILD_DEPENDS=	libva>=0:multimedia/libva \
-			libvdpau>=0:multimedia/libvdpau
-r600_MESON_ON=		-Dgallium-va=enabled \
-			-Dgallium-vdpau=enabled
+r600_BUILD_DEPENDS=	libva>=0:multimedia/libva
+r600_MESON_ON=		-Dgallium-va=enabled
 radeonsi_DESC=		AMD/ATI Southern Islands and newer
-radeonsi_BUILD_DEPENDS=	libva>=0:multimedia/libva \
-			libvdpau>=0:multimedia/libvdpau
-radeonsi_MESON_ON=	-Dgallium-va=enabled \
-			-Dgallium-vdpau=enabled
+radeonsi_BUILD_DEPENDS=	libva>=0:multimedia/libva
+radeonsi_MESON_ON=	-Dgallium-va=enabled
 svga_DESC=		VMWare Virtual GPU
 zink_DESC=		OpenGL on top of Khronos’ Vulkan API
 
@@ -92,7 +88,8 @@ LDFLAGS_i386=		-Wl,-znotext
 
 .if ${PORT_OPTIONS:MX11}
 MESA_PLATFORMS+=	x11
-USE_XORG+=		xcb xorgproto xrandr x11 xdamage xext xfixes xshmfence xv
+USE_XORG+=		x11 xcb xdamage xext xfixes xorgproto xrandr xshmfence \
+			xv xxf86vm
 .else
 MESON_ARGS+=		-Dxlib-lease=disabled
 .endif
@@ -118,8 +115,7 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dvalgrind=disabled
 
 .if !${PORT_OPTIONS:Mr600} && !${PORT_OPTIONS:Mradeonsi}
-MESON_ARGS+=	-Dgallium-va=disabled \
-		-Dgallium-vdpau=disabled
+MESON_ARGS+=	-Dgallium-va=disabled
 .endif
 
 .if ${ARCH} != amd64
@@ -134,7 +130,7 @@ PLIST_SUB+=	${_gd}="@comment "
 . endif
 .endfor
 
-PLIST_SUB += ARCH=${ARCH:S/amd/x86_/}
+PLIST_SUB+= ARCH=${ARCH:S/amd/x86_/}
 .for _vd in ${OPTIONS_GROUP_VULKAN}
 . if defined(VULKAN_DRIVERS) && ${VULKAN_DRIVERS:M${_vd}}
 PLIST_SUB+=	${_vd}=""
