@@ -1,0 +1,6 @@
+SpiceyPy is a Python wrapper for the NAIF C SPICE Toolkit (CSPICE).
+It provides a Pythonic interface to the underlying CSPICE library,
+enabling space geometry calculations, ephemeris computations, and
+other astrodynamics operations from Python.
+
+This package is a dependency of pykep for SPICE kernel support.

@@ -115,6 +115,7 @@
     SUBDIR += py-skyfield
     SUBDIR += py-skyfield-data
     SUBDIR += py-spacetrack
+    SUBDIR += py-spiceypy
     SUBDIR += py-spktype01
     SUBDIR += py-spktype21
     SUBDIR += py-sunpy
