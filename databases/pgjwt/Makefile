@@ -3,7 +3,7 @@ PORTVERSION=	0.2.0.20230302
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	lukas.engelhardt@gmx.de
+MAINTAINER=	develuke@gmx.de
 COMMENT=	PostgreSQL implementation of JSON Web Tokens
 WWW=		https://github.com/michelp/pgjwt
 

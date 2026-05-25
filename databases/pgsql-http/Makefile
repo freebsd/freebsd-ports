@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	lukas.engelhardt@gmx.de
+MAINTAINER=	develuke@gmx.de
 COMMENT=	PostgreSQL extension to trigger web services
 WWW=		https://github.com/pramsey/pgsql-http
 

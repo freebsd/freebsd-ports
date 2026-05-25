@@ -3,7 +3,7 @@ PORTVERSION=	1.5
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	lukas.engelhardt@gmx.de
+MAINTAINER=	develuke@gmx.de
 COMMENT=	PostgreSQL extension to block unconditional UPDATE/DELETE
 
 LICENSE=	PostgreSQL
