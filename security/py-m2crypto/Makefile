@@ -1,5 +1,5 @@
 PORTNAME=	m2crypto
-PORTVERSION=	0.47.0
+PORTVERSION=	0.48.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 WWW=		https://m2crypto.readthedocs.io/en/latest/ \
-		https://gitlab.com/m2crypto/m2crypto
+		https://codeberg.org/mcepl/m2crypto
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSES/BSD-2-Clause.txt
