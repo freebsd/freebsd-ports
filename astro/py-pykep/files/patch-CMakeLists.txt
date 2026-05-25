@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2026-05-25 05:18:48 UTC
++++ CMakeLists.txt
+@@ -35,6 +35,8 @@ option(kep3_BUILD_PYTHON_BINDINGS "Build Python bindin
+ option(kep3_BUILD_BENCHMARKS "Build benchmarks." OFF)
+ option(kep3_BUILD_PYTHON_BINDINGS "Build Python bindings." OFF)
+ 
++if(kep3_BUILD_CPP_LIBRARY)
++
+ # NOTE: on Unix systems, the correct library installation path
+ # could be something other than just "lib", such as "lib64",
+ # "lib32", etc., depending on platform/configuration. Apparently,
+@@ -266,6 +268,8 @@ if(kep3_BUILD_BENCHMARKS)
+ 
+ if(kep3_BUILD_BENCHMARKS)
+     add_subdirectory(benchmark)
++
++endif()
+ 
+ endif()
+ 
