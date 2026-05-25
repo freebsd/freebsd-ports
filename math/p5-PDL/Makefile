@@ -1,7 +1,8 @@
 PORTNAME=	PDL
-PORTVERSION=	2.100
+PORTVERSION=	2.104
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,7 +22,6 @@ RUN_DEPENDS=	p5-Astro-FITS-Header>=2.1:astro/p5-Astro-FITS-Header \
 		p5-File-Map>=0.57:devel/p5-File-Map \
 		p5-Inline>=0.83:devel/p5-Inline \
 		p5-Inline-C>=0.62:devel/p5-Inline-C \
-		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
 		p5-Term-ReadKey>=2.34:devel/p5-Term-ReadKey
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
