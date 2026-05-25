@@ -1,4 +1,4 @@
-TIMESTAMP = 1777536083
+TIMESTAMP = 1779618599
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aead-0.5.2.crate) = d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0
@@ -1127,5 +1127,5 @@ SHA256 (whisperfish-libsignal-service-rs-782c0d6bf0c4a6ab52f98d7b6d950a13f28f302
 SIZE (whisperfish-libsignal-service-rs-782c0d6bf0c4a6ab52f98d7b6d950a13f28f3020_GH0.tar.gz) = 109222
 SHA256 (gferon-sqlx-53c3a26c1b484175f3beb21853a1061b488bf7af_GH0.tar.gz) = 2f2fd3db2ae5c406b779f67c03928df0405111f0fa9a3b149e2d03bea963ca20
 SIZE (gferon-sqlx-53c3a26c1b484175f3beb21853a1061b488bf7af_GH0.tar.gz) = 1015291
-SHA256 (flare-0.20.4.tar.bz2) = 73de1639c8aef0cd3726afb93b37c5a5770e113a3851545ba2a793a90769fb22
-SIZE (flare-0.20.4.tar.bz2) = 536702
+SHA256 (flare-0.20.5.tar.bz2) = 71e1a043b2bbcda097a58b340b354c0643cb39d7262104215fe4baff2c18d165
+SIZE (flare-0.20.5.tar.bz2) = 538115
