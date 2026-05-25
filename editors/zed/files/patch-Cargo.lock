@@ -1,4 +1,4 @@
---- Cargo.lock.orig	2026-05-21 13:20:32 UTC
+--- Cargo.lock.orig	2026-05-21 21:47:55 UTC
 +++ Cargo.lock
 @@ -9069,21 +9069,21 @@ name = "ipc-channel"
  
@@ -30,7 +30,7 @@
  ]
  
  [[package]]
-@@ -20855,16 +20855,6 @@ name = "windows"
+@@ -20857,16 +20857,6 @@ name = "windows"
  
  [[package]]
  name = "windows"
@@ -47,7 +47,7 @@
  version = "0.61.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "9babd3a767a4c1aef6900409f85f5d53ce2544ccdfaa86dad48c91782c6d6893"
-@@ -20957,19 +20947,6 @@ name = "windows-core"
+@@ -20959,19 +20949,6 @@ name = "windows-core"
  
  [[package]]
  name = "windows-core"
@@ -67,7 +67,7 @@
  version = "0.61.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "c0fdd3ddb90610c7638aa2b3a3ab2904fb9e5cdbecc643ddb3647212781c4ae3"
-@@ -21040,17 +21017,6 @@ name = "windows-implement"
+@@ -21042,17 +21019,6 @@ name = "windows-implement"
  
  [[package]]
  name = "windows-implement"
@@ -85,7 +85,7 @@
  version = "0.60.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "053e2e040ab57b9dc951b72c264860db7eb3b0200ba345b4e4c3b14f67855ddf"
-@@ -21084,17 +21050,6 @@ name = "windows-interface"
+@@ -21086,17 +21052,6 @@ name = "windows-interface"
  
  [[package]]
  name = "windows-interface"
@@ -103,7 +103,7 @@
  version = "0.59.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "3f316c4a2570ba26bbec722032c4099d8c8bc095efccdc15688708623367e358"
-@@ -21180,15 +21135,6 @@ name = "windows-result"
+@@ -21182,15 +21137,6 @@ name = "windows-result"
  
  [[package]]
  name = "windows-result"
@@ -119,7 +119,7 @@
  version = "0.3.4"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "56f42bd332cc6c8eac5af113fc0c1fd6a8fd2aa08a0119358686e5160d0586c6"
-@@ -21203,16 +21149,6 @@ dependencies = [
+@@ -21205,16 +21151,6 @@ dependencies = [
  checksum = "7781fa89eaf60850ac3d2da7af8e5242a5ea78d1a11c49bf2910bb5a73853eb5"
  dependencies = [
   "windows-link 0.2.1",
