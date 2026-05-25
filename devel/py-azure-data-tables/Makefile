@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.29.4:devel/py-azure-core@${PY_
 		${PYTHON_PKGNAMEPREFIX}yarl>=1.0:www/py-yarl@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517 pytest  # tests fail
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
