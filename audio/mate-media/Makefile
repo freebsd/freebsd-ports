@@ -1,9 +1,8 @@
 PORTNAME=	mate-media
-PORTVERSION=	1.28.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.28.1
+PORTREVISION=	2
 CATEGORIES=	audio mate
-MASTER_SITES=	MATE
-DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the MATE desktop
@@ -21,8 +20,10 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool localbase mate \
-		pkgconfig tar:xz xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	mate-desktop
+USES=		autoreconf gettext gmake gnome libtool localbase mate \
+		pkgconfig xorg
 USE_MATE=	desktop mixer panel
 USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11
