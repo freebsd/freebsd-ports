@@ -1,7 +1,8 @@
 PORTNAME=	Geo-Address-Formatter
-PORTVERSION=	1.998.2
+PORTVERSION=	1.999.2
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:EDF
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Geo-Address-Formatter-${PORTVERSION:R}${PORTVERSION:E}
 
@@ -11,15 +12,15 @@ WWW=		https://metacpan.org/release/Geo-Address-Formatter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Clone>=0.46:devel/p5-Clone \
+RUN_DEPENDS=	p5-Clone>=0.47:devel/p5-Clone \
 		p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
 		p5-Ref-Util>=0.204:devel/p5-Ref-Util \
 		p5-Text-Hogan>=2.03:textproc/p5-Text-Hogan \
 		p5-Try-Catch>=0:lang/p5-Try-Catch \
-		p5-YAML-LibYAML>=0.86:textproc/p5-YAML-LibYAML
+		p5-YAML-LibYAML>=0.904.0:textproc/p5-YAML-LibYAML
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
