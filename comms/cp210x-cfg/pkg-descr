@@ -1,0 +1,18 @@
+CLI utility for programming CP210x USB<->UART bridges
+
+Intended as a scriptable alternative to the official Silicon Labs CP21xx
+Customization Utility. Tested with CP2102 and CP2105 chips.
+
+Supported fields that can be programmed:
+
+- Vendor ID
+- Product ID
+- Product Name string
+- Serial string
+- Buffer flush bitmap
+- SCI/ECI gpio/modem mode
+
+CAUTION!
+
+Programming a CP210x config field is a write-once operation. It's perfectly
+possible to write bad values. The consequences are yours, and yours alone.

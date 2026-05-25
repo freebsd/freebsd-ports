@@ -18,6 +18,7 @@
     SUBDIR += bpl+
     SUBDIR += chirp
     SUBDIR += conserver-com
+    SUBDIR += cp210x-cfg
     SUBDIR += cqrlog
     SUBDIR += cubicsdr
     SUBDIR += cutecom
