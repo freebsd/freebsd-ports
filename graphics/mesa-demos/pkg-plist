@@ -20,7 +20,6 @@ bin/clear-undefined
 bin/clearspd
 bin/convolutions
 bin/copypix
-bin/copytex
 bin/createwin
 bin/cubemap
 bin/cuberender
@@ -41,18 +40,17 @@ bin/draw2arrays
 bin/drawarrays
 bin/drawelements
 bin/drawelements-large
-bin/drawoverhead
 bin/drawpix
 bin/drawrange
+bin/eglgears_x11
 bin/eglinfo
+bin/egltri_x11
 bin/engine
 bin/es2_info
 bin/es2gears_x11
 bin/es2tri
 bin/fbo_firecube
-bin/fbobind
 bin/fbotexture
-bin/fill
 bin/fire
 bin/flat-clip
 bin/fogcoord
@@ -65,7 +63,6 @@ bin/gamma
 bin/gearbox
 bin/gears
 bin/geartrain
-bin/genmipmap
 bin/geom-outlining-130
 bin/geom-outlining-150
 bin/geom-sprites
@@ -73,8 +70,6 @@ bin/geom-stipple-lines
 bin/geom-wide-lines
 bin/glinfo
 bin/gloss
-bin/glsl-compile-time
-bin/glslstateschange
 bin/glsync
 bin/gltestperf
 bin/glthreads
@@ -89,7 +84,6 @@ bin/glxpbdemo
 bin/glxpixmap
 bin/glxsnoop
 bin/glxswapcontrol
-bin/gs-tri
 bin/gsraytrace
 bin/identity
 bin/ipers
@@ -131,6 +125,7 @@ bin/overlay
 bin/paltex
 bin/pbdemo
 bin/pbinfo
+bin/peglgears
 bin/pgon-mode
 bin/pixeltest
 bin/point
@@ -190,7 +185,6 @@ bin/spectex
 bin/spriteblast
 bin/stex3d
 bin/sub-tex
-bin/swapbuffers
 bin/teapot
 bin/terrain
 bin/tessdemo
@@ -199,7 +193,6 @@ bin/texaaline
 bin/texcyl
 bin/texdemo1
 bin/texenv
-bin/teximage
 bin/texture_from_pixmap
 bin/textures
 bin/toyball
@@ -281,7 +274,6 @@ bin/tunnel
 bin/tunnel2
 bin/twoside
 bin/vao_demo
-bin/vbo
 bin/vbo-drawarrays
 bin/vbo-drawarrays-2101010
 bin/vbo-drawelements
@@ -290,7 +282,7 @@ bin/vbo-noninterleaved
 bin/vbo-tri
 bin/vert-or-frag-only
 bin/vert-tex
-bin/vertexrate
+bin/vkgears
 bin/vp-array
 bin/vp-array-hf
 bin/vp-array-int
@@ -308,6 +300,8 @@ bin/vp-unfilled
 bin/vsraytrace
 bin/wincopy
 bin/winpos
+bin/xeglgears
+bin/xeglthreads
 bin/xfont
 bin/xrotfontdemo
 %%DATADIR%%/arch.rgb
