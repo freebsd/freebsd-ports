@@ -9,6 +9,7 @@ include/gpgme++/engineinfo.h
 include/gpgme++/error.h
 include/gpgme++/eventloopinteractor.h
 include/gpgme++/exception.h
+include/gpgme++/flags.h
 include/gpgme++/global.h
 include/gpgme++/gpgaddexistingsubkeyeditinteractor.h
 include/gpgme++/gpgadduserideditinteractor.h
@@ -48,5 +49,5 @@ lib/cmake/Gpgmepp/GpgmeppTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Gpgmepp/GpgmeppTargets.cmake
 lib/libgpgmepp.so
 lib/libgpgmepp.so.7
-lib/libgpgmepp.so.7.0.0
+lib/libgpgmepp.so.7.1.0
 libdata/pkgconfig/gpgmepp.pc
