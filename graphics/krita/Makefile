@@ -1,9 +1,11 @@
 PORTNAME=	krita
-DISTVERSION=	5.2.14
-PORTREVISION=	4
+DISTVERSION=	5.2.16
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
+
+PATCH_SITES+=	https://invent.kde.org/graphics/krita/-/commit/
+PATCHFILES+=	cc113e991c90cd612e394b0b670cf035256a94f1.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sketching and painting program
