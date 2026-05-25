@@ -1,8 +1,12 @@
 PORTNAME=	gowall
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3
-PORTREVISION=	10
+DISTVERSION=	0.2.4
 CATEGORIES=	graphics
+
+# Pull the patches that aren't upstreamed yet from my own fork
+# Ongoing PR: https://github.com/Achno/gowall/pull/87
+PATCH_SITES=	https://github.com/hpesojxn/gowall
+PATCHFILES=	fdf8f677cbc3b5931df3527e1dbd218625f49e7e.patch:-p1
 
 MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Versatile tool to process images
@@ -25,24 +29,27 @@ TESTING_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFAULT=		PNGQUANT PREVIEW UPSCALE
+OPTIONS_DEFAULT=		ONNX PNGQUANT PREVIEW UPSCALE
 OPTIONS_GROUP=			COMPRESSION FEATURES OCR
 OPTIONS_GROUP_COMPRESSION=	PNGQUANT
-OPTIONS_GROUP_FEATURES=		PREVIEW UPSCALE
+OPTIONS_GROUP_FEATURES=		ONNX PREVIEW UPSCALE
 OPTIONS_GROUP_OCR=		TESSERACT
 
+ONNX_DESC=	Install onnxruntime for background removal with AI models
 PNGQUANT_DESC=	Install pngquant PNG image compression method
 PREVIEW_DESC=	Install chafa for image previewing support in terminal
 TESSERACT_DESC=	Install Tesseract OCR Engine for extracting text from an image or pdf
 UPSCALE_DESC=	Install upscaler for upscaling and enhancing images
 
+ONNX_RUN_DEPENDS=	onnxruntime>=0:misc/onnxruntime
 PNGQUANT_RUN_DEPENDS=	pngquant:graphics/pngquant
 PREVIEW_RUN_DEPENDS=	chafa:graphics/chafa
 TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 UPSCALE_RUN_DEPENDS=	upscaler:graphics/upscaler
 
 post-patch:
-	@${REINPLACE_CMD} -e '23s,([^()]*),("${LOCALBASE}/bin"),g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/internal/backends/onnx/setup.go \
 		${WRKSRC}/internal/image/upscale.go
 
 .include <bsd.port.options.mk>

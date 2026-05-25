@@ -1,5 +1,7 @@
-TIMESTAMP = 1760285357
-SHA256 (go/graphics_gowall/gowall-v0.2.3/v0.2.3.mod) = 7a4f2e628182dc4e3bec87f4f1fef9f399fa8d744220297b7b17dfe6835f338c
-SIZE (go/graphics_gowall/gowall-v0.2.3/v0.2.3.mod) = 2289
-SHA256 (go/graphics_gowall/gowall-v0.2.3/v0.2.3.zip) = 3bdff68aad21129c387d7720fc5f7474fd89b8e20d514e10141dae20e6873342
-SIZE (go/graphics_gowall/gowall-v0.2.3/v0.2.3.zip) = 3410684
+TIMESTAMP = 1779731147
+SHA256 (go/graphics_gowall/gowall-v0.2.4/v0.2.4.mod) = fc3a1535416ceb02476217e9781db9350ac612bf1ae8f0efa0375c348fa943d9
+SIZE (go/graphics_gowall/gowall-v0.2.4/v0.2.4.mod) = 2634
+SHA256 (go/graphics_gowall/gowall-v0.2.4/v0.2.4.zip) = 55be33e8fd3c26ff73d57b59b6aed2212e10ae633a63e441849c6040afefd221
+SIZE (go/graphics_gowall/gowall-v0.2.4/v0.2.4.zip) = 3449397
+SHA256 (go/graphics_gowall/gowall-v0.2.4/fdf8f677cbc3b5931df3527e1dbd218625f49e7e.patch) = 3b79fa283bfe19a470328f1d6708c74f5ec84544cd02218aa0e0109e347309f0
+SIZE (go/graphics_gowall/gowall-v0.2.4/fdf8f677cbc3b5931df3527e1dbd218625f49e7e.patch) = 2982
