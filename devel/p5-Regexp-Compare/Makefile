@@ -1,7 +1,8 @@
 PORTNAME=	Regexp-Compare
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:VBAR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,8 +20,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 503900
-BROKEN=		only supports Perl 5.34 to 5.38
+.if ${PERL_LEVEL} >= 504300
+BROKEN=		requires at least perl 5.38, supporting perl 5.42.x
 .endif
 
 .include <bsd.port.post.mk>
