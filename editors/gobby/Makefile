@@ -2,11 +2,12 @@ PORTNAME=	gobby
 DISTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://releases.0x539.de/gobby/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Free collaborative editor
-WWW=		http://gobby.0x539.de
+WWW=		https://gobby.github.io/ \
+		https://github.com/gobby/gobby
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
