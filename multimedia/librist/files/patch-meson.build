@@ -2,18 +2,18 @@
 - code uses the c11 feature stdatomic.h while it uses --std=c99
 - add FreeBSD TUN support: include src/tun_freebsd.c in the platform build
 
---- meson.build.orig	2026-04-25 03:38:38 UTC
+--- meson.build.orig	2026-05-15 04:48:53 UTC
 +++ meson.build
 @@ -5,7 +5,7 @@ project('libRIST', 'c',
  
  project('libRIST', 'c',
- 	version: '0.2.14',
+ 	version: '0.2.15',
 -	default_options: ['c_std=c99', 'warning_level=3', 'libdir=lib'],
 +	default_options: ['c_std=c11', 'warning_level=3', 'libdir=lib'],
          meson_version: '>= 0.51.0')
  
  cc = meson.get_compiler('c')
-@@ -156,6 +156,8 @@ void test(void) {
+@@ -157,6 +157,8 @@ void test(void) {
  		platform_files += 'src/tun_darwin.c'
  		test_args += '-D_DARWIN_C_SOURCE'
  		add_project_arguments('-D_DARWIN_C_SOURCE', language: 'c')
@@ -22,7 +22,7 @@
  	elif host_machine.system() == 'gnu'
  		test_args += '-D_GNU_SOURCE'
  		add_project_arguments('-D_GNU_SOURCE', language: 'c')
-@@ -391,7 +393,7 @@ if get_option('static_analyze')
+@@ -393,7 +395,7 @@ if get_option('static_analyze')
  if get_option('static_analyze')
  	run_target('cppcheck', command : ['cppcheck',
  									  '--quiet',
