@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 
 # Pull the patches that aren't upstreamed yet from my own fork
 # Ongoing PR: https://github.com/Achno/gowall/pull/87
-PATCH_SITES=	https://github.com/hpesojxn/gowall
+PATCH_SITES=	https://github.com/hpesojxn/gowall/commit/
 PATCHFILES=	fdf8f677cbc3b5931df3527e1dbd218625f49e7e.patch:-p1
 
 MAINTAINER=	nxjoseph@FreeBSD.org
