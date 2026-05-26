@@ -1,8 +1,9 @@
 PORTNAME=	Time-Moment
 DISTVERSION=	0.46
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=CPAN:CHANSEN
+MASTER_SITE_SUBDIR=	CPAN:CHANSEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
@@ -20,5 +21,8 @@ USES=		perl5
 USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Time/Moment/Moment.so
 
 .include <bsd.port.mk>
