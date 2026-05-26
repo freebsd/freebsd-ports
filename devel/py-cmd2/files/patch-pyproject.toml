@@ -17,12 +17,3 @@
  classifiers = [
      "Development Status :: 5 - Production/Stable",
      "Environment :: Console",
-@@ -31,7 +30,7 @@ dependencies = [
- dependencies = [
-     "backports.strenum; python_version == '3.10'",
-     "gnureadline>=8; platform_system == 'Darwin'",
--    "pyperclip>=1.8.2",
-+    "pyperclip>=1.7",
-     "pyreadline3>=3.4; platform_system == 'Windows'",
-     "rich>=15.0.0",
-     "rich-argparse>=1.7.2",
