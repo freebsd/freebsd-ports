@@ -1,7 +1,6 @@
 PORTNAME=	librashader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
-PORTREVISION=	2
+DISTVERSION=	0.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	bsdcode@disroot.org
@@ -16,13 +15,16 @@ LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	patchelf>0:sysutils/patchelf
 
 USES=		cargo
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	SnowflakePowered
 GH_TAGNAME=	${DISTNAME}
+
 USE_LDCONFIG=	yes
 
-CARGO_FEATURES=		--no-default-features runtime-opengl runtime-vulkan \
-			stable
+CARGO_FEATURES=		--no-default-features \
+			runtime-opengl \
+			runtime-vulkan
 CARGO_BUILD_ARGS=	--package librashader-capi
 CARGO_TEST=		no
 
