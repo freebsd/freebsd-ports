@@ -12,6 +12,7 @@
     SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += awka
+    SUBDIR += babashka
     SUBDIR += bas2tap
     SUBDIR += basic256
     SUBDIR += bend

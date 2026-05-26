@@ -1,0 +1,3 @@
+Babashka is a native, fast-starting Clojure interpreter for scripting.
+It uses GraalVM native-image to produce a self-contained binary that starts
+instantly, making Clojure practical for shell scripting and command-line tools.
