@@ -11,6 +11,8 @@ WWW=		https://github.com/electronic-structure/SIRIUS/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_16=	fails to compile: clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=295597
+
 LIB_DEPENDS=	libcosta.so:math/costa \
 		libfmt.so:devel/libfmt \
 		libgsl.so:math/gsl \
