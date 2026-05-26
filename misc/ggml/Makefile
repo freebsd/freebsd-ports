@@ -1,6 +1,6 @@
 PORTNAME=	ggml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.13.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,6 +45,6 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-# tests as of 0.11.0: 100% tests passed, 0 tests failed out of 21
+# tests as of 0.13.0: 90% tests passed, 2 tests failed out of 21
 
 .include <bsd.port.mk>
