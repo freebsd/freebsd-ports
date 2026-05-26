@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "1.2.0"
+  message: <<EOD
+BREAKING CHANGE: The ping_exporter configuration file format has changed.
+Please refer to https://github.com/czerwonk/ping_exporter/releases/tag/v1.2.0
+for details on how to migrate.
+EOD
+}
+]
