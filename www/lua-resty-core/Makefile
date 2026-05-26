@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.32
 CATEGORIES=	www
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 # ALT_MAINTAINERS	flo@freebsd.org, osa@freebsd.org, joneum@freebsd.org
 # This port must be kept in sync with www/nginx/* lua module
 COMMENT=	New FFI-based Lua API for OpenResty NGINX Lua modules
