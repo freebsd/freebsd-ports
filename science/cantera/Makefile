@@ -1,7 +1,6 @@
 PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
-PORTREVISION=	7
+DISTVERSION=	3.2.0
 CATEGORIES=	science # chemistry physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,19 +14,24 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 BUILD_DEPENDS=	googletest>0:devel/googletest \
 		${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs \
 		highfive>0:science/highfive \
-		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
+		doxygen:devel/doxygen \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
+
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		compiler:c++17-lang eigen:3 gettext-runtime localbase scons
+USES=		compiler:c++17-lang eigen:3 gettext-runtime localbase python scons
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cantera
 GH_TUPLE=	LLNL:sundials:887af43:sundials/ext/sundials # bundled sundials is only needed for the Octave option
-GH_TUPLE+=	cantera:cantera-example-data:1a5d27e:example_data/data/example_data
+GH_TUPLE+=	cantera:cantera-example-data:b9e0731:example_data/data/example_data
 
 NO_CCACHE=	yes # ccache breaks scons build for some reason
 
@@ -35,6 +39,8 @@ MAKE_ARGS=	system_eigen='y' \
 		system_sundials='n' \
 		system_fmt='y' \
 		system_yamlcpp='y' \
+		system_highfive='y' \
+		f90_interface='n' \
 		googletest='system' \
 		sundials_include='${LOCALBASE}/include/sundials' \
 		extra_inc_dirs="${LOCALBASE}/include:${LOCALBASE}/include/eigen3" \
@@ -59,11 +65,9 @@ OCTAVE_SUB_FILES=	pkg-message-octave
 OCTAVE_USES=		octave:env
 OCTAVE_BROKEN=		Octave support needs to be updated
 
-PYTHON_USES=		python
-PYTHON_USES_OFF=	python:env
 PYTHON_USE=		PYTHON=cython
-PYTHON_MAKE_ARGS=	python_cmd=${PYTHON_CMD} python_package=full
-PYTHON_MAKE_ARGS_OFF=	python_package="none"
+PYTHON_MAKE_ARGS=	python_cmd=${PYTHON_CMD} python_package=y
+PYTHON_MAKE_ARGS_OFF=	python_package="n"
 PYTHON_BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 			${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
