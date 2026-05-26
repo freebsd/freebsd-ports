@@ -112,6 +112,8 @@ include/arrow/device_allocation_type_set.h
 %%JSON%%include/arrow/extension/fixed_shape_tensor.h
 %%JSON%%include/arrow/extension/json.h
 %%JSON%%include/arrow/extension/opaque.h
+%%JSON%%include/arrow/extension/parquet_variant.h
+%%JSON%%include/arrow/extension/variable_shape_tensor.h
 %%JSON%%include/arrow/extension/uuid.h
 include/arrow/extension_type.h
 %%FILESYSTEM%%include/arrow/filesystem/api.h
@@ -293,7 +295,6 @@ include/arrow/util/rows_to_batches.h
 include/arrow/util/secure_string.h
 include/arrow/util/simd.h
 include/arrow/util/small_vector.h
-include/arrow/util/span.h
 include/arrow/util/string.h
 include/arrow/util/string_util.h
 include/arrow/util/task_group.h
@@ -336,7 +337,8 @@ include/arrow/vendored/pcg/pcg_extras.hpp
 include/arrow/vendored/pcg/pcg_random.hpp
 include/arrow/vendored/pcg/pcg_uint128.hpp
 include/arrow/vendored/portable-snippets/debug-trap.h
-include/arrow/vendored/portable-snippets/safe-math.h
+include/arrow/vendored/safeint/safe_math.h
+include/arrow/vendored/safeint/safe_math_impl.h
 include/arrow/vendored/strptime.h
 include/arrow/vendored/xxhash.h
 include/arrow/vendored/xxhash/xxhash.h
@@ -426,6 +428,7 @@ include/arrow/visitor_generate.h
 %%PARQUET%%include/parquet/benchmark_util.h
 %%PARQUET%%include/parquet/bloom_filter.h
 %%PARQUET%%include/parquet/bloom_filter_reader.h
+%%PARQUET%%include/parquet/bloom_filter_writer.h
 %%PARQUET%%include/parquet/column_page.h
 %%PARQUET%%include/parquet/column_reader.h
 %%PARQUET%%include/parquet/column_scanner.h
@@ -453,6 +456,7 @@ include/arrow/visitor_generate.h
 %%PARQUET%%include/parquet/file_writer.h
 %%PARQUET%%include/parquet/geospatial/statistics.h
 %%PARQUET%%include/parquet/hasher.h
+%%PARQUET%%include/parquet/index_location.h
 %%PARQUET%%include/parquet/level_comparison.h
 %%PARQUET%%include/parquet/level_comparison_inc.h
 %%PARQUET%%include/parquet/level_conversion.h
@@ -471,6 +475,7 @@ include/arrow/visitor_generate.h
 %%PARQUET%%include/parquet/test_util.h
 %%PARQUET%%include/parquet/type_fwd.h
 %%PARQUET%%include/parquet/types.h
+%%PARQUET%%include/parquet/visit_type_inline.h
 %%PARQUET%%include/parquet/windows_compatibility.h
 %%PARQUET%%include/parquet/windows_fixup.h
 %%PARQUET%%include/parquet/xxhasher.h
