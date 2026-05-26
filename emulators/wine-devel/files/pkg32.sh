@@ -30,8 +30,8 @@ run_pkg32_old()
     shift
 
     # Show what we're going to do, then do it.
-    echo pkg -o ABI="FreeBSD:14:i386" -o OSVERSION=1403000 -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@";
-    pkg -o ABI="FreeBSD:14:i386" -o OSVERSION=1403000 -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@";
+    echo pkg -o ABI="FreeBSD:14:i386" -o OSVERSION=1404000 -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@";
+    pkg -o ABI="FreeBSD:14:i386" -o OSVERSION=1404000 -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@";
 }
 
 if [ $# -gt 0 ]; then

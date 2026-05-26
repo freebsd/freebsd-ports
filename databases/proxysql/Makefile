@@ -38,12 +38,6 @@ GROUPS=		${PORTNAME}
 
 GH_ACCOUNT=	sysown
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 1400000 && ${SSL_DEFAULT} == "base")
-IGNORE=		requires OpenSSL 3.x or greater
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/,${ETCDIR}/,g' ${WRKSRC}/lib/ProxySQL_GloVars.cpp
 	@${REINPLACE_CMD} \
@@ -82,4 +76,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/proxysql.cfg \
 		${STAGEDIR}${ETCDIR}/proxysql.cfg.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

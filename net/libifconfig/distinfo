@@ -1,8 +1,6 @@
 TIMESTAMP = 1780133032
 SHA256 (libifconfig-454322c08b8a.tar.gz) = c4c5534db09d55a1f06d1aaa310f5f0fe86d76c93b1b9f1f03cbfaad3f6b4e77
 SIZE (libifconfig-454322c08b8a.tar.gz) = 27283
-SHA256 (libifconfig-14.3_0.tar.gz) = 04069eacdf7ec216fad6769ab5fdc2d7e781cbb8e09f3d4356691984880f5fc7
-SIZE (libifconfig-14.3_0.tar.gz) = 23709
 SHA256 (libifconfig-14.4_0.tar.gz) = ebc3fc680b9afd7cdc146e17f2b5fa65cf950135ca34b1e3792b665274f82ebf
 SIZE (libifconfig-14.4_0.tar.gz) = 23714
 SHA256 (libifconfig-15.0_0.tar.gz) = 75e8a9ff81a2e08c14d662a1016fa3b665cf35f49e4f8306f3f53fe1dae272ec

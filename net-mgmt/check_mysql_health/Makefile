@@ -32,11 +32,4 @@ NAGIOSDIR?=	/var/spool/nagios
 
 PLIST_FILES=	libexec/nagios/check_mysql_health
 
-.include <bsd.port.options.mk>
-
-# Change regexp for older awk
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-plugins-scripts_subst.in
-.endif
-
 .include <bsd.port.mk>

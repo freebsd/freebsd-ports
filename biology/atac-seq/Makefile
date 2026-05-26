@@ -15,6 +15,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		fastq-trim>0:biology/fastq-trim \
 		fastqc>0:biology/fastqc \
+		${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR} \
 		biolibc-tools>0:biology/biolibc-tools \
 		bwa>0:biology/bwa \
@@ -28,11 +29,5 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		curl>0:ftp/curl
 
 USES=		metaport python
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} != FreeBSD || ${OSVERSION} >= 1302509
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR}
-.endif
 
 .include <bsd.port.mk>

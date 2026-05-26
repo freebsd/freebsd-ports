@@ -101,10 +101,10 @@ DISTFILES_${FWDRV}= \
 DISTFILES_${FWDRV}_lic=
 ### <<< main, stable/15, 15.0, 15.1
 
-### >>> 14.3, 14.4, stable/14
+### >>> 14.4, stable/14
 DISTFILES_bz+= \
 	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-92.ucode${DISTURL_SUFFIX}
-### <<< 14.3, 14.4, stable/14
+### <<< 14.4, stable/14
 
 ### >>> iwx(4)
 DISTFILES_22000+= \
