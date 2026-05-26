@@ -13,6 +13,9 @@ WWW=		https://www.sqlalchemy.org/
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream makred EOL in Release Status
+EXPIRATION_DATE=2026-05-31
+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
