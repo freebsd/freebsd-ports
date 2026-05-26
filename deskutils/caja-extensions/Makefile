@@ -1,9 +1,8 @@
 PORTNAME=	caja-extensions
-PORTVERSION=	1.28.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.28.0
+PORTREVISION=	2
 CATEGORIES=	deskutils mate
-MASTER_SITES=	MATE
-DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Set of extensions for Caja
@@ -19,8 +18,10 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 
 PORTSCOUT=	limitw:1,even
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	mate-desktop
 USES=		autoreconf compiler:c11 gettext gmake gnome libtool \
-		localbase mate pkgconfig tar:xz gstreamer
+		localbase mate pkgconfig gstreamer
 USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes
