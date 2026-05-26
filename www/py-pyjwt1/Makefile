@@ -13,6 +13,9 @@ WWW=		https://github.com/progrium/pyjwt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsoleted. Use www/py-pyjwt instead
+EXPIRATION_DATE=2026-05-31
+
 # Some tests are skipped without pycrypto, but its not
 # referenced as a requirement anymore.
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
