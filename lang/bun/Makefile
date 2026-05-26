@@ -33,11 +33,11 @@ ONLY_FOR_ARCHS_REASON=	bootstrap binary is only available for amd64 for now
 FETCH_DEPENDS=	${LOCALBASE}/bin/npm:www/npm-node24 \
 		git:devel/git \
 		cargo:lang/rust \
-		${LOCALBASE}/llvm21/bin/clang++:devel/llvm21 \
+		${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:devel/llvm${LLVM_VER} \
 		cmake:devel/cmake-core \
 		ninja:devel/ninja \
 		${LOCALBASE}/bin/node:www/node24
-BUILD_DEPENDS=	${LOCALBASE}/llvm21/bin/clang++:devel/llvm21 \
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:devel/llvm${LLVM_VER} \
 		cmake:devel/cmake-core \
 		git:devel/git \
 		ninja:devel/ninja \
@@ -53,6 +53,8 @@ GH_ACCOUNT=	oven-sh
 GH_TUPLE=	simdutf:simdutf:v${SIMDUTF_VERSION}:simdutf_src
 
 SHEBANG_FILES=	test/regression/issue/18239/data-generator.sh
+
+LLVM_VER=	21 # build fails with llvm-19: error: unknown warning option '-Wno-character-conversion'
 
 # WebKit/JavaScriptCore FreeBSD prebuilt
 WEBKIT_VERSION=	bdf6aab38a9c6f99df3fd1486406ab6b74180fbb
@@ -259,7 +261,7 @@ post-extract:
 	@_SDTmp=$$(mktemp -d /tmp/bun-simdutf.XXXXXX) && \
 	bsdtar xzf ${DD}/simdutf-simdutf-v${SIMDUTF_VERSION}_GH0.tar.gz \
 		-C $$_SDTmp --strip-components 1 && \
-	${LOCALBASE}/llvm21/bin/clang++ \
+	${LOCALBASE}/llvm${LLVM_VER}/bin/clang++ \
 		-std=c++17 -march=nehalem -O2 \
 		-ffunction-sections -fdata-sections \
 		-fno-exceptions -fno-rtti \
@@ -268,10 +270,10 @@ post-extract:
 		-I$$_SDTmp/include -I$$_SDTmp/src \
 		-c $$_SDTmp/src/simdutf.cpp \
 		-o $$_SDTmp/SIMDUTF.cpp.o && \
-	${LOCALBASE}/llvm21/bin/llvm-ar d \
+	${LOCALBASE}/llvm${LLVM_VER}/bin/llvm-ar d \
 		${BUN_CACHE_DIR}/webkit-${WEBKIT_SHORT}-freebsd/lib/libWTF.a \
 		SIMDUTF.cpp.o && \
-	${LOCALBASE}/llvm21/bin/llvm-ar r \
+	${LOCALBASE}/llvm${LLVM_VER}/bin/llvm-ar r \
 		${BUN_CACHE_DIR}/webkit-${WEBKIT_SHORT}-freebsd/lib/libWTF.a \
 		$$_SDTmp/SIMDUTF.cpp.o && \
 	${RM} -rf $$_SDTmp
@@ -293,7 +295,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} PATH=${LOCALBASE}/llvm21/bin:${LOCALBASE}/bin:/usr/bin:/bin \
+		${SETENV} PATH=${LOCALBASE}/llvm${LLVM_VER}/bin:${LOCALBASE}/bin:/usr/bin:/bin \
 		BUN_ZIG_PATH=${BUN_ZIG_DIR}/bootstrap-x86_64-linux-musl \
 		BUN_HOST_OS=freebsd \
 		FREEBSD_SYSROOT=/ \
