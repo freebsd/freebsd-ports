@@ -1,21 +1,23 @@
 PORTNAME=	h2
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	HTTP/2 State-Machine based protocol implementation
-WWW=		https://hyper.rtfd.org/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Pure-Python HTTP/2 protocol implementation
+WWW=		https://python-hyper.org/projects/hyper-h2/en/stable/ \
+		https://github.com/python-hyper/h2
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hyperframe>=6.0:www/py-hyperframe@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hpack>=4.0<5:www/py-hpack@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hpack>=4.1<5:www/py-hpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hyperframe>=6.1<7:www/py-hyperframe@${PY_FLAVOR}
 
 USES?=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
