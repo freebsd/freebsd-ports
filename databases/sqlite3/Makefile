@@ -51,6 +51,8 @@ INSTALL_TARGET=	tcl_install
 .endif
 TEST_TARGET=	test
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
 # The default numeric file permissions for newly created database files under unix.
 # If not specified, the default is 0644 which means that the files is globally
 # readable but only writable by the creator.
@@ -293,13 +295,12 @@ post-install-STRIP-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlite3 ${STAGEDIR}${PREFIX}/lib/libsqlite3.so
 .endif
 .if ${PORT_OPTIONS:MTCL}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/sqlite3/libtclsqlite3.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/sqlite${PORTVERSION}/libsqlite${PORTVERSION}.so
 .endif
 
 post-install-TCL-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/sqlite3_analyzer ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/mann
-	${INSTALL_MAN} ${WRKSRC}/autoconf/tea/doc/sqlite3.n ${STAGEDIR}${PREFIX}/share/man/mann/sqlite3.tcl${TCL_VER:S/.//g}.n
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${WRKSRC}/contrib/sqlitecon.tcl ${STAGEDIR}${EXAMPLESDIR}

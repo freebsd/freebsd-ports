@@ -10,8 +10,7 @@
 %%NO_TEA%%lib/libsqlite3.so.%%DISTVERSION%%
 %%NO_TEA%%libdata/pkgconfig/sqlite3.pc
 %%NO_TEA%%share/man/man1/sqlite3.1.gz
-%%TCL%%share/man/mann/sqlite3.%%TCLSUF%%.n.gz
-%%TCL%%lib/%%TCLVER%%/sqlite3/libtclsqlite3.so
-%%TCL%%lib/%%TCLVER%%/sqlite3/pkgIndex.tcl
+%%TCL%%lib/%%TCLVER%%/sqlite%%PORTVERSION%%/libsqlite%%PORTVERSION%%.so
+%%TCL%%lib/%%TCLVER%%/sqlite%%PORTVERSION%%/pkgIndex.tcl
 %%TCL%%%%EXAMPLES%%share/examples/sqlite3/example.tcl
 %%TCL%%%%EXAMPLES%%share/examples/sqlite3/sqlitecon.tcl
