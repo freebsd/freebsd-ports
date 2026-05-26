@@ -1,5 +1,6 @@
 PORTNAME=	mycli
 PORTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=2.2.1:devel/py-cli-helpers@${PY
 		${PYTHON_PKGNAMEPREFIX}pyfzf>=0.3.1:textproc/py-pyfzf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymysql>=0.9.2:databases/py-pymysql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0:devel/py-pyperclip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.8.1:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlglot>=5.1.3:databases/py-sqlglot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0<0.6.0:databases/py-sqlparse@${PY_FLAVOR}
 
