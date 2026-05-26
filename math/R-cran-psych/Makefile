@@ -14,6 +14,7 @@ RUN_DEPENDS=	R-cran-GPArotation>0:math/R-cran-GPArotation \
 		R-cran-mnormt>0:math/R-cran-mnormt
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-lme4>0:math/R-cran-lme4 \
+		R-cran-psychTools>0:math/R-cran-psychTools \
 		R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
