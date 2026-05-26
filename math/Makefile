@@ -128,6 +128,7 @@
     SUBDIR += R-cran-prodlim
     SUBDIR += R-cran-proxy
     SUBDIR += R-cran-psych
+    SUBDIR += R-cran-psychTools
     SUBDIR += R-cran-pwr
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-qualityTools

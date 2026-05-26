@@ -1,0 +1,3 @@
+Support functions, data sets, and vignettes for the 'psych' package. Contains
+several of the biggest data sets for the 'psych' package as well as four
+vignettes. A few helper functions for file manipulation are included as well.
