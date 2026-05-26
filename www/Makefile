@@ -303,6 +303,7 @@
     SUBDIR += ikiwiki
     SUBDIR += ilias
     SUBDIR += imaginary
+    SUBDIR += iocaine
     SUBDIR += iridium
     SUBDIR += janus
     SUBDIR += jericho-html

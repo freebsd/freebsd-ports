@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+
+Thank you for installing Iocaine, the deadliest poison known to AI.
+
+To enable iocaine, set 'iocaine_enable="YES"' in rc.conf
+
+Configuration files are located at %%ETCDIR%%/iocaine/
+For configuration details please check the official documentation at
+https://iocaine.madhouse-project.org/configuration/
+
+
+Iocaine should run behind a web server acting as a reverse-proxy. For
+this iocaine by default listens on localhost (127.0.0.1) port 42069.
+
+An example configuration for nginx can be found at
+https://iocaine.madhouse-project.org/documentation/3/reverse-proxies/nginx/
+EOM
+}
+]

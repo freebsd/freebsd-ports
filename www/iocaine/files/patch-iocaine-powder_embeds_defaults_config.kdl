@@ -1,0 +1,12 @@
+--- iocaine-powder/embeds/defaults/config.kdl.orig	2026-03-20 18:56:28 UTC
++++ iocaine-powder/embeds/defaults/config.kdl
+@@ -8,4 +8,8 @@ http-server default {
+     use handler-from=default
+ }
+ 
+-declare-handler default language=roto
++declare-handler default language=roto {
++   ai-robots-txt-path "%%ETCDIR%%/etc/robots.json"
++}
++
++state-directory "/var/db/iocaine"

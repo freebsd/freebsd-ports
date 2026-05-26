@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# PROVIDE: iocaine
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# FreeBSD rc.d script for iocaine
+#
+
+# The iocaine service has the following rc.conf options:
+#
+# iocaine_enable (bool):	Set to YES to enable iocaine
+# 				Default: NO
+# iocaine_user (str):		The user to run iocaine as
+# 				Default: iocaine
+# iocaine_group (str):		The group to run iocaine as
+# 				Default: iocaine
+# iocaine_datadir (str):	The directory where iocaine's config is stored
+# 				Default: %%ETCDIR%%/config.toml
+# iocaine_restart (bool):	Set to YES if iocaine should be automatically
+# 				restarted after it crashes.
+# 				Default: NO
+
+. /etc/rc.subr
+
+name=iocaine
+desc="iocaine service"
+rcvar=iocaine_enable
+
+load_rc_config $name
+
+: ${iocaine_enable:=NO}
+: ${iocaine_user:=%%IOCAINE_USER%%}
+: ${iocaine_group:=%%IOCAINE_GROUP%%}
+: ${iocaine_datadir:=%%IOCAINE_DATADIR%%}
+: ${iocaine_statdir:=/var/db/iocaine}
+: ${iocaine_restart=NO}
+: ${iocaine_piddir=/var/run/iocaine}
+
+pidfile="${iocaine_piddir}/${name}.pid"
+
+command=/usr/sbin/daemon
+extra_commands="reload"
+command_args="-f -H \
+                -P ${pidfile} -t ${name} -T ${name} \
+                ${_restartargs} \
+                %%PREFIX%%/bin/iocaine -c ${iocaine_datadir}/config.kdl"
+
+start_precmd="[ -d ${iocaine_piddir} ] || install -d -o ${iocaine_user} -g ${iocaine_group} ${iocaine_piddir}; \
+    [ -d ${iocaine_statdir} ] || install -d -o ${iocaine_user} -g ${iocaine_group} ${iocaine_piddir}"
+
+
+# If iocaine_restart is YES, then restart iocaine when it crashes, otherwise
+# daemon(8) will exit.
+if checkyesno iocaine_restart; then
+	_restartargs="-r"
+else
+	_restartargs=""
+fi
+
+run_rc_command "$1"
