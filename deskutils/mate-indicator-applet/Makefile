@@ -1,9 +1,8 @@
 PORTNAME=	mate-indicator-applet
-PORTVERSION=	1.26.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.26.0
+PORTREVISION=	3
 CATEGORIES=	deskutils mate
-MASTER_SITES=	MATE
-DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applet to display information from various applications in the panel
@@ -20,8 +19,10 @@ RUN_DEPENDS=	mate-applets>=1.22.0:x11/mate-applets \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
- 		pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	mate-desktop
+USES=		autoreconf compiler:c11 gettext gmake gnome libtool localbase mate \
+		pkgconfig
 USE_CSTD=	c11
 
 USE_MATE=	panel
