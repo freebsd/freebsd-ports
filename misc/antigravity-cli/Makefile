@@ -1,10 +1,11 @@
 PORTNAME=	antigravity-cli
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.2
 CATEGORIES=	misc # machine-learning
-MASTER_SITES=	https://storage.googleapis.com/antigravity-public/antigravity-cli/${DISTVERSION}-5288553236791296/linux-x64/:amd64 \
-		https://storage.googleapis.com/antigravity-public/antigravity-cli/${DISTVERSION}-5288553236791296/linux-arm/:aarch64
+MASTER_SITES=	https://storage.googleapis.com/antigravity-public/antigravity-cli/${DISTVERSION}-6109799369277440/linux-x64/:amd64 \
+		https://storage.googleapis.com/antigravity-public/antigravity-cli/${DISTVERSION}-6109799369277440/linux-arm/:aarch64
 DISTFILES=	cli_linux_x64.tar.gz:amd64 \
 		cli_linux_arm64.tar.gz:aarch64
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CLI for Google Antigravity AI platform
