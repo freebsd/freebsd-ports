@@ -1,6 +1,15 @@
---- src/CMakeLists.txt.orig	2026-02-24 00:20:30 UTC
+--- src/CMakeLists.txt.orig	2026-05-26 08:34:15 UTC
 +++ src/CMakeLists.txt
-@@ -517,7 +517,7 @@ endif()
+@@ -384,7 +384,7 @@ endif()
+   endif()
+ endif()
+ 
+-include_directories(${CMAKE_BINARY_DIR}/include)
++include_directories(BEFORE ${CMAKE_BINARY_DIR}/include)
+ 
+ # Pick up `llvm-config` to setup LLVM flags.
+ if(LLVM)
+@@ -526,7 +526,7 @@ endif()
    string(APPEND LEAN_EXTRA_LINKER_FLAGS " -lm")
  endif()
  
@@ -9,7 +18,7 @@
    if(BSYMBOLIC)
      string(APPEND LEANC_SHARED_LINKER_FLAGS " -Wl,-Bsymbolic")
      string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -Wl,-Bsymbolic")
-@@ -530,6 +530,19 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+@@ -539,6 +539,19 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
      " -Wl,--whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export -Wl,--no-whole-archive"
    )
    string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=$ORIGIN/../lib:$ORIGIN/../lib/lean")
@@ -29,7 +38,7 @@
  elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
    string(APPEND CMAKE_CXX_FLAGS " -ftls-model=initial-exec")
    string(APPEND INIT_SHARED_LINKER_FLAGS " -install_name @rpath/libInit_shared.dylib")
-@@ -653,6 +666,9 @@ string(APPEND LEANC_OPTS " -I${CMAKE_BINARY_DIR}/inclu
+@@ -694,6 +707,9 @@ string(APPEND LEANC_OPTS " -I${CMAKE_BINARY_DIR}/inclu
  # Lean code only needs this one include
  string(APPEND LEANC_OPTS " -I${CMAKE_BINARY_DIR}/include")
  
@@ -39,7 +48,7 @@
  # Use CMake profile C++ flags for building Lean libraries, but do not embed in `leanc`
  string(TOUPPER "${CMAKE_BUILD_TYPE}" uppercase_CMAKE_BUILD_TYPE)
  string(APPEND LEANC_OPTS " ${CMAKE_CXX_FLAGS_${uppercase_CMAKE_BUILD_TYPE}}")
-@@ -939,7 +955,7 @@ install(
+@@ -1004,7 +1020,7 @@ install(
  
  install(
    DIRECTORY "${CMAKE_SOURCE_DIR}/"
