@@ -1,0 +1,5 @@
+lua-nginx-module embeds Lua into nginx and provides a powerful scripting
+environment for nginx HTTP request processing.
+
+It is part of the OpenResty ecosystem and is commonly used together with
+lua-resty-core and ngx_devel_kit.
