@@ -61,7 +61,7 @@ do-test:
 ${VUXML_FLAT_NAME}: ${VUXML_FILE} vuln/*.xml
 	xmllint -noent ${.ALLSRC:[1]} > ${.TARGET}
 
-validate: tidy
+validate: tidy check-portepoch
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FLAT_FILE}"
 	@${ECHO_MSG} Checking if tidy differs...
 	@if ${DIFF} -u "${VUXML_FLAT_FILE}" "${VUXML_FILE}.tidy"; \
@@ -95,6 +95,9 @@ tidy: ${VUXML_FLAT_NAME}
 		exit 1; \
 	fi
 	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FLAT_FILE}" > "${VUXML_FILE}.tidy"
+
+check-portepoch:
+	${PYTHON_CMD} ${FILESDIR}/check_vuln_portepoch.py ${VUXML_CURRENT_FILE}
 
 newentry:
 	@${ECHO_CMD}
