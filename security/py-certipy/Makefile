@@ -1,5 +1,5 @@
 PORTNAME=	certipy
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest certipy/test/ -v
 
-# tests as of 0.2.2: 7 passed, 1 warning in 8.94s
+# tests as of 0.2.3: 7 passed, 1 warning in 2.79s
 
 .include <bsd.port.mk>
