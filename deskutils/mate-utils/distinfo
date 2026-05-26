@@ -1,3 +1,5 @@
-TIMESTAMP = 1710084217
-SHA256 (mate/mate-utils-1.28.0.tar.xz) = 58449d7a0d1d900ff03b78ca9f7e98c21e97f47fc26bee7ff1c61834f22f88d3
-SIZE (mate/mate-utils-1.28.0.tar.xz) = 7986440
+TIMESTAMP = 1779795940
+SHA256 (mate-desktop-mate-utils-v1.28.0_GH0.tar.gz) = 17e36b6df50f58286d35cd0742623427e5d7b99923b861f9d400341d49a96a7d
+SIZE (mate-desktop-mate-utils-v1.28.0_GH0.tar.gz) = 10258702
+SHA256 (mate-desktop-mate-submodules-54fff1b_GH0.tar.gz) = 66cde56dacbd15b7134f51c0f80e6567ee7af05157711ce3ef49973718433b7b
+SIZE (mate-desktop-mate-submodules-54fff1b_GH0.tar.gz) = 33344
