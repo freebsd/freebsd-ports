@@ -1,12 +1,12 @@
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
-PORTREVISION=	3
+DISTVERSION=	2.9.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed Block Compressed Sparse Row matrix library
-WWW=		https://www.cp2k.org/dbcsr
+WWW=		https://www.cp2k.org/dbcsr \
+		https://github.com/cp2k/dbcsr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -55,5 +55,7 @@ CMAKE_ARGS+=	-DCMAKE_Fortran_FLAGS="${FFLAGS} -fallow-argument-mismatch" # -fall
 .  else
 CMAKE_ARGS+=	-DCMAKE_Fortran_FLAGS="${FFLAGS}"
 .  endif
+
+# tests as of 2.9.1: 100% tests passed, 0 tests failed out of 19
 
 .include <bsd.port.post.mk>
