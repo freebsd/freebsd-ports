@@ -1,6 +1,5 @@
 PORTNAME=	purescript-language-server
-PORTVERSION=	0.18.4
-PORTREVISION=	1
+PORTVERSION=	0.18.5
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/nwolverson/${PORTNAME}/releases/download/v${PORTVERSION}/${PORTNAME}.js?dummy=/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
