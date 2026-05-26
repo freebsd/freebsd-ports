@@ -1,6 +1,5 @@
 PORTNAME=	texinfo
-PORTVERSION=	7.2
-PORTREVISION=	6
+PORTVERSION=	7.3
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
@@ -34,7 +33,8 @@ CONFIGURE_ARGS=	--enable-perl-api-texi-build \
 		--enable-xs-perl-libintl \
 		--with-external-libintl-perl \
 		--with-external-Text-Unidecode \
-		--with-external-Unicode-EastAsianWidth
+		--with-external-Unicode-EastAsianWidth \
+		--without-swig
 CONFIGURE_ENV=	PERL_EXT_CC="${CC}"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip install-tex
