@@ -19,6 +19,9 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/AF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/AGG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/AGG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/AHYP.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/AINTCAT-.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/AINTCAT.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/AINTRVL.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ALAGG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ALAGG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ALGEBRA-.fasl
@@ -68,6 +71,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/ATUNIKN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ATVCWC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/AUTOMOR.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BALFACT.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/BASFILE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BASTYPE-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BASTYPE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BBTREE.fasl
@@ -82,6 +86,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/BINARY.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BITS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BITST.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BJOIN.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/BKAFILE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BLAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BMEET.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BMODULE.fasl
@@ -94,6 +99,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/BPADICRT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BRAGG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BRAGG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BRILL.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/BRINFO.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BSTREE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BTAGG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/BTAGG.fasl
@@ -119,8 +125,10 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/CHAINC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHAR.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHARNZ.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHARPOL.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/CHARPOL0.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHARPOL2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHARPOL3.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/CHARPOL4.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHARZ.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CHVAR.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CINTSLPE.fasl
@@ -168,7 +176,6 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/CYCLOT2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DBASE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DBLRESP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DCPO.fasl
-lib/fricas/target/%%HOST_ARCH%%/algebra/DDFACT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DECIMAL.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DEFINTEF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DEFINTRF.fasl
@@ -258,11 +265,13 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/EP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/EQ.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/EQ2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/EQTBL.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/ERRIND.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ERROR.fasl
-lib/fricas/target/%%HOST_ARCH%%/algebra/ES-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ES.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ES1.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ES2.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/ESC2-.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/ESC2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/EUCDOM-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/EUCDOM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/EVALAB-.fasl
@@ -302,6 +311,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FDIV.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FDIV2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FDIVCAT-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FDIVCAT.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FELEM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FELFUN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FEVALAB-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FEVALAB.fasl
@@ -336,6 +346,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FIELD-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FIELD.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FILE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FILECAT.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FILSER.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FINAALG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FINAALG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FINGEN.fasl
@@ -357,6 +368,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FLIOUFUN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FLOAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FLOATCP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FLOATRP.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FLOOPS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FM2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FMAGMA.fasl
@@ -387,6 +399,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FORTCAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FORTFN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FORTFORM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FORTRAN.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FOUT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FPARFRAC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FPATMAB.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FPC-.fasl
@@ -411,7 +424,6 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FRNAAF2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FRNAALG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FRNAALG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FRUTIL.fasl
-lib/fricas/target/%%HOST_ARCH%%/algebra/FS-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FS2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FS2EXPXP.fasl
@@ -420,6 +432,8 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FS2UPS2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSAGG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSAGG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSAGG2.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FSC2-.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FSC2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSCINT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSCINTA.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSERIES.fasl
@@ -735,13 +749,14 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/MATCAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATCAT2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATHSYM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATLIN.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/MATOP32.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/MATOPC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATRIX.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATSTOR.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MCALCFN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MCDEN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MCMPLX.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MDAGG.fasl
-lib/fricas/target/%%HOST_ARCH%%/algebra/MDDFACT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MEETLAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MESH.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MEVAL1.fasl
@@ -838,6 +853,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/NUMFMT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/NUMODE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/NUMQUAD.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/NUMTUBE.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/OAGROUP-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/OAGROUP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/OAMON.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/OAMONS.fasl
@@ -887,7 +903,6 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/ORDCOMP2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ORDFIN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ORDFUNS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ORDMON.fasl
-lib/fricas/target/%%HOST_ARCH%%/algebra/ORDRING-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ORDRING.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ORDSET-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ORDSET.fasl
@@ -906,6 +921,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/OUTFORM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/OVAR.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/OWP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/PADE.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/PADECF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/PADEPAC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/PADIC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/PADICCT.fasl
@@ -1223,7 +1239,9 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/STREAM3.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/STRICAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/STRING.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/STRTBL.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/STTAYLO2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/STTAYLOR.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/STTAYOC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/STTF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/STTFNC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/SUBRESP.fasl
@@ -1264,7 +1282,10 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/TESTCNT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TESTUNIT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TEX.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TEX1.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/TEXPARSE.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/TEXSCAN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TEXTFILE.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/TEXTREE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TIMEOUT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TMFORM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TOOLSIGN.fasl
@@ -1392,7 +1413,6 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/ZMOD.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/browse.daase
 lib/fricas/target/%%HOST_ARCH%%/algebra/category.daase
 lib/fricas/target/%%HOST_ARCH%%/algebra/comdb.text
-lib/fricas/target/%%HOST_ARCH%%/algebra/compress.daase
 lib/fricas/target/%%HOST_ARCH%%/algebra/exposed.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/glossdef.text
 lib/fricas/target/%%HOST_ARCH%%/algebra/glosskey.text
@@ -1921,6 +1941,7 @@ lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/basic.ht
 lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/bmcat.ht
 lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/coverex.ht
 lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/coverex.pht
+lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/enum.ht
 lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/evalex.ht
 lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/exdiff.ht
 lib/fricas/target/%%HOST_ARCH%%/share/hypertex/pages/exdiff.pht
@@ -2672,6 +2693,7 @@ lib/fricas/target/%%HOST_ARCH%%/share/viewports/ugProblemNumericPage32.VIEW/imag
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/acplot.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/aggcat.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/aggcat2.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/ainterval.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/alg_top.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/algcat.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/algext.spad
@@ -2711,7 +2733,6 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/curve.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/cycles.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/cyclo.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/cyldec.spad
-lib/fricas/target/%%HOST_ARCH%%/src/algebra/ddfact.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/defaults.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/defintef.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/defintrf.spad
@@ -2748,6 +2769,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/ffdoms.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fffg.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/files.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/float.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/flopak.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fmod.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fmt.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fmt1d.spad
@@ -2757,6 +2779,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/fmtlatex.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fmtmathjax.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fname.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fnla.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/fops.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fortcat.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fortmac.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/fortout.spad
@@ -2795,6 +2818,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/groebsol.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/gseries.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/hashstate.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/html.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/hypertex.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/ideal.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/idecomp.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/indexedp.spad
@@ -2851,7 +2875,6 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/mfinfact.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/mkfunc.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/mkrecord.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/mlift.spad
-lib/fricas/target/%%HOST_ARCH%%/src/algebra/moddfact.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/modgcd.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/modhpsol.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/modmon.spad
@@ -2898,6 +2921,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/out.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/outform.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/outform2.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/pade.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/padecf.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/padic.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/padiclib.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/paramete.spad
@@ -2989,6 +3013,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/tableau.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/taylor.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/tensor.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/tex.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/texd.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/texmacs.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/timeout.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/transsolve.spad
