@@ -1,5 +1,5 @@
 PORTNAME=	red-arrow
-PORTVERSION=	21.0.0
+PORTVERSION=	24.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libarrow.so:databases/arrow \
 		libarrow-glib.so:databases/arrow-glib
 RUN_DEPENDS=	rubygem-bigdecimal>=3.1.0:math/rubygem-bigdecimal \
 		rubygem-csv>=0:devel/rubygem-csv \
-		rubygem-extpp>=0.1.1:devel/rubygem-extpp \
+		rubygem-extpp>=0.1.2:devel/rubygem-extpp \
 		rubygem-gio2>=4.2.3:devel/rubygem-gio2 \
 		rubygem-pkg-config>=0:devel/rubygem-pkg-config \
 
