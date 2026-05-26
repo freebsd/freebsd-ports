@@ -35,5 +35,5 @@ lib/cmake/s-dftd3/s-dftd3-targets.cmake
 lib/cmake/s-dftd3/s-dftd3-utils.cmake
 lib/libs-dftd3.so
 lib/libs-dftd3.so.1
-lib/libs-dftd3.so.1.3.1
+lib/libs-dftd3.so.1.4.0
 libdata/pkgconfig/s-dftd3.pc
