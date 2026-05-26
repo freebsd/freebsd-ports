@@ -1,6 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.53.0
+DISTVERSION=	0.54.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,6 +53,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-1.3.2 \
 		bitflags-2.11.1 \
 		block-buffer-0.10.4 \
+		block-buffer-0.12.0 \
 		blocking-1.6.2 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
@@ -62,7 +63,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cap-0.1.2 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.2.60 \
+		cc-1.2.61 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -87,6 +88,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		core-foundation-sys-0.8.7 \
 		cov-mark-2.2.0 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
 		crc-3.4.0 \
 		crc-catalog-2.4.0 \
 		crc32fast-1.5.0 \
@@ -104,13 +106,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crosstermion-0.16.0 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
+		crypto-common-0.2.1 \
 		curl-0.4.49 \
 		curl-sys-0.4.87+curl-8.19.0 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		dashmap-6.1.0 \
-		data-encoding-2.10.0 \
+		data-encoding-2.11.0 \
 		defer-0.2.1 \
 		deranged-0.5.8 \
 		derive_arbitrary-1.4.2 \
@@ -118,6 +121,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		derive_more-impl-2.1.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
+		digest-0.11.2 \
 		displaydoc-0.2.5 \
 		dissimilar-1.0.11 \
 		document-features-0.2.12 \
@@ -181,7 +185,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
-		human_format-1.2.1 \
+		human_format-1.1.0 \
+		hybrid-array-0.4.11 \
 		hyper-1.9.0 \
 		hyper-rustls-0.27.9 \
 		hyper-tls-0.6.0 \
@@ -213,8 +218,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.23 \
-		jiff-static-0.2.23 \
+		jiff-0.2.24 \
+		jiff-static-0.2.24 \
 		jiff-tzdb-0.1.6 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.21.1 \
@@ -232,7 +237,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		layout-rs-0.1.3 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.185 \
+		libc-0.2.186 \
 		libredox-0.1.16 \
 		libsqlite3-sys-0.37.0 \
 		libz-sys-1.1.28 \
@@ -270,11 +275,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		open-5.3.4 \
-		openssl-0.10.78 \
+		openssl-0.10.79 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.114 \
+		openssl-sys-0.9.115 \
 		page_size-0.6.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
@@ -331,10 +336,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.38 \
-		rustls-ffi-0.15.2 \
+		rustls-0.23.39 \
+		rustls-ffi-0.15.3 \
 		rustls-native-certs-0.8.3 \
-		rustls-pki-types-1.14.0 \
+		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.6.2 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
@@ -358,7 +363,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serial_test_derive-3.4.0 \
 		sha1-0.10.6 \
 		sha1-checked-0.10.0 \
-		sha2-0.10.9 \
+		sha2-0.11.0 \
 		sharded-slab-0.1.7 \
 		shell-words-1.1.1 \
 		shlex-1.3.0 \
