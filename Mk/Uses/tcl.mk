@@ -179,13 +179,6 @@ TK_LIBDIR:=	${LOCALBASE}/lib/tk${TK_VER}
 TK_INCLUDEDIR:=	${LOCALBASE}/include/tk${TK_VER}
 .  endif
 
-#
-# Dependencies
-#
-_TCLTK_BUILD_DEPENDS=
-_TCLTK_RUN_DEPENDS=
-_TCLTK_LIB_DEPENDS=
-
 # Construct the correct dependency lines (wrapper)
 .  if ${tcl_ARGS:Mwrapper}
 .    if ${_TCLTK_PORT} == "tcl"
@@ -205,19 +198,23 @@ _TCLTK_LIB_LINE=	libtk${TK_SHLIB_VER}.so:x11-toolkits/tk${_TCLTK_WANTED_VERSION}
 			libtcl${TCL_SHLIB_VER}.so:lang/tcl${_TCLTK_WANTED_VERSION}
 .  endif
 
+.undef _TCLTK_DEPENDS_FOUND
 .  if ${tcl_ARGS:Mbuild}
-BUILD_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
-		${_TCLTK_EXE_LINE}
-.  elif ${tcl_ARGS:Mrun}
-RUN_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
-		${_TCLTK_EXE_LINE}
-.  elif ${tcl_ARGS:Mtest}
-TEST_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
-		${_TCLTK_EXE_LINE}
-.  else
+BUILD_DEPENDS+=		${_TCLTK_WRAPPER_PORT} ${_TCLTK_EXE_LINE}
+_TCLTK_DEPENDS_FOUND=	yes
+.  endif
+.  if ${tcl_ARGS:Mrun}
+RUN_DEPENDS+=		${_TCLTK_WRAPPER_PORT} ${_TCLTK_EXE_LINE}
+_TCLTK_DEPENDS_FOUND=	yes
+.  endif
+.  if ${tcl_ARGS:Mtest}
+TEST_DEPENDS+=		${_TCLTK_WRAPPER_PORT} ${_TCLTK_EXE_LINE}
+.  endif
+.  if !defined(_TCLTK_DEPENDS_FOUND)
 RUN_DEPENDS+=	${_TCLTK_WRAPPER_PORT}
 LIB_DEPENDS+=	${_TCLTK_LIB_LINE}
 .  endif
+.undef _TCLTK_DEPENDS_FOUND
 
 # Setup TEA stuff
 .  if ${tcl_ARGS:Mtea}
