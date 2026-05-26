@@ -14,13 +14,11 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python shebangfix
-USE_PYTHON=	allflavors concurrent distutils
+USE_PYTHON=	allflavors autoplist concurrent distutils
 
 SHEBANG_FILES=	examples/pamtest.py
 
 WRKSRC=		${WRKDIR}/python-pam-${DISTVERSION}
-
-PLIST_FILES=	${PYTHON_SITELIBDIR}/PAM${PYTHON_TAG}.so
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -31,6 +29,6 @@ do-install-EXAMPLES-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/pamtest.py ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/PAM${PYTHON_TAG}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/PAM${PYTHON_SOABI}.so
 
 .include <bsd.port.mk>
