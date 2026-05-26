@@ -1,3 +1,4 @@
+bin/llama
 %%EXAMPLES%%bin/llama-batched
 %%EXAMPLES%%bin/llama-batched-bench
 %%EXAMPLES%%bin/llama-bench
@@ -31,7 +32,6 @@
 %%EXAMPLES%%bin/llama-quantize
 %%EXAMPLES%%bin/llama-results
 %%EXAMPLES%%bin/llama-retrieval
-%%EXAMPLES%%bin/llama-save-load-state
 %%EXAMPLES%%bin/llama-server
 %%EXAMPLES%%bin/llama-simple
 %%EXAMPLES%%bin/llama-simple-chat
@@ -47,9 +47,17 @@ include/mtmd-helper.h
 include/mtmd.h
 lib/cmake/llama/llama-config.cmake
 lib/cmake/llama/llama-version.cmake
+lib/libllama-batched-bench-impl.so
+lib/libllama-bench-impl.so
+lib/libllama-cli-impl.so
 lib/libllama-common.so
 lib/libllama-common.so.0
 lib/libllama-common.so.0.0.%%DISTVERSION%%
+lib/libllama-completion-impl.so
+lib/libllama-fit-params-impl.so
+lib/libllama-perplexity-impl.so
+lib/libllama-quantize-impl.so
+lib/libllama-server-impl.so
 lib/libllama.so
 lib/libllama.so.0
 lib/libllama.so.0.0.%%DISTVERSION%%

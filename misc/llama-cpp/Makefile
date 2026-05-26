@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	9222
+DISTVERSION=	9331
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://huggingface.co/buckets/ggml-org/llama-ui/resolve/${DISTVERSIONPREFIX}${DISTVERSION}/:webui
 DISTFILES=	index.html:webui \
