@@ -1,7 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.13.1
-PORTREVISION=	1
+PORTVERSION=	1.14.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -11,7 +10,8 @@ WWW=		https://github.com/alonsobsd/bhyvemgr
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	virt-viewer>0:net-mgmt/virt-viewer
+RUN_DEPENDS=	tigervnc-viewer>0:net/tigervnc-viewer \
+		swtpm>0:sysutils/swtpm
 
 ONLY_FOR_ARCHS?=amd64
 
@@ -32,10 +32,6 @@ QEMU-TOOLS_RUN_DEPENDS=	qemu-img:emulators/qemu@tools
 
 .if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000)
 ONLY_FOR_ARCHS=	aarch64 amd64
-.endif
-
-.if ${OPSYS} == FreeBSD
-RUN_DEPENDS+=	swtpm>0:sysutils/swtpm
 .endif
 
 .if ${ARCH} == "aarch64"

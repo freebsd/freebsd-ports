@@ -41,9 +41,11 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/almalinux.png
 %%DATADIR%%/images/systems/alpinelinux.png
 %%DATADIR%%/images/systems/archlinux.png
+%%DATADIR%%/images/systems/artix.png
 %%DATADIR%%/images/systems/cachyos.png
 %%DATADIR%%/images/systems/category.png
 %%DATADIR%%/images/systems/debian.png
+%%DATADIR%%/images/systems/devuan.png
 %%DATADIR%%/images/systems/dragonflybsd.png
 %%DATADIR%%/images/systems/endeavouros.png
 %%DATADIR%%/images/systems/fedora.png
