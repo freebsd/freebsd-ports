@@ -1,7 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.12.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +10,6 @@ WWW=		https://arbor-sim.org/ \
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-#BROKEN_armv7=	compilation fails: unknown type name 'float64x2_t'
 
 BUILD_DEPENDS=	bash:shells/bash \
 		libfmt>0:devel/libfmt \
@@ -31,12 +28,12 @@ USES=		cmake compiler:c++20-lang localbase pkgconfig python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
-GH_TUPLE=	cpm-cmake:CPM.cmake:v0.39.0:cpm
+GH_TUPLE=	cpm-cmake:CPM.cmake:v0.39.0:cpm \
+		martinus:unordered_dense:v4.5.0:unordered_dense/external/unordered_dense
 
 SHEBANG_FILES=	scripts/arbor-build-catalogue
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	ARB_USE_BUNDLED_UNITS
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 CONFIGURE_ENV=	CPM_REPO=${WRKSRC_cpm}

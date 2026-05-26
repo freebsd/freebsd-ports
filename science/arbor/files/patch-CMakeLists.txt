@@ -1,5 +1,16 @@
---- CMakeLists.txt.orig	2025-04-24 10:33:03 UTC
+-- Lower CMake requirement to 3.31.10
+-- Disable -march=native
+-- Use system libraries for nlohmann_json, random123, tinyopt, and googletest
+-- Use bundled unordered_dense
+
+--- CMakeLists.txt.orig	2026-05-26 02:41:15 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 4.0.0)
++cmake_minimum_required(VERSION 3.31.10)
+ include(CMakeDependentOption)
+ include(CheckIPOSupported)
+ 
 @@ -60,7 +60,7 @@ check_cxx_compiler_flag("-march=native" CXX_HAS_NATIVE
  
  # Specify target architecture.
@@ -9,16 +20,66 @@
      set(ARB_DEFAULT_ARCH "native")
  else()
      set(ARB_DEFAULT_ARCH "none")
-@@ -302,11 +302,7 @@ install(TARGETS ext-hwloc EXPORT arbor-targets)
+@@ -302,22 +302,16 @@ install(TARGETS ext-hwloc EXPORT arbor-targets)
  endif()
  install(TARGETS ext-hwloc EXPORT arbor-targets)
  
--CPMFindPackage(NAME json
--              GITHUB_REPOSITORY nlohmann/json
--              VERSION 3.12.0
--              OPTIONS "CMAKE_SUPPRESS_DEVELOPER_WARNINGS ON")
--install(TARGETS nlohmann_json EXPORT arbor-targets)
+-CPMFindPackage(NAME nlohmann_json
+-               GITHUB_REPOSITORY nlohmann/json
+-               VERSION 3.12.0)
 +find_package(nlohmann_json REQUIRED)
+ add_library(ext-json INTERFACE)
+ target_link_libraries(ext-json INTERFACE nlohmann_json::nlohmann_json)
+ install(TARGETS ext-json EXPORT arbor-targets)
+-if(nlohmann_json_ADDED)
+-    install(TARGETS nlohmann_json EXPORT arbor-targets)
+-endif()
+ 
  
  add_library(ext-random123 INTERFACE)
- CPMFindPackage(NAME random123
+-CPMFindPackage(NAME random123
+-               DOWNLOAD_ONLY YES
+-               GITHUB_REPOSITORY DEShawResearch/random123
+-               VERSION 1.14.0)
++set(random123_SOURCE_DIR /usr/local)
++set(random123_ADDED TRUE)
++
+ if(random123_ADDED)
+     target_include_directories(ext-random123 INTERFACE $<BUILD_INTERFACE:${random123_SOURCE_DIR}/include>)
+ else()
+@@ -360,10 +354,8 @@ if (BUILD_TESTING)
+                   GITHUB_REPOSITORY google/benchmark
+                   VERSION 1.8.3
+                   OPTIONS "BENCHMARK_ENABLE_TESTING OFF" "CMAKE_BUILD_TYPE release" "BUILD_SHARED_LIBS OFF")
+-    CPMFindPackage(NAME googletest
+-                  GITHUB_REPOSITORY google/googletest
+-                  VERSION 1.17.0
+-                  OPTIONS "INSTALL_GTEST OFF" "BUILD_GMOCK OFF")
++    find_package(GTest REQUIRED)
++set(googletest_ADDED FALSE)
+     if(benchmark_ADDED)
+         target_link_libraries(ext-bench INTERFACE benchmark)
+     else()
+@@ -395,16 +387,13 @@ list(APPEND arbor_export_dependencies units)
+ endif()
+ list(APPEND arbor_export_dependencies units)
+ 
+-CPMFindPackage(NAME unordered_dense
+-               GITHUB_REPOSITORY martinus/unordered_dense
+-               VERSION 4.5.0
+-               SYSTEM YES
+-               EXCLUDE_FROM_ALL YES)
++set(unordered_dense_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/unordered_dense)
++set(unordered_dense_ADDED TRUE)
+ 
+-CPMFindPackage(NAME tinyopt
+-               GITHUB_REPOSITORY halfflat/tinyopt
+-               GIT_TAG 7e6d707d49c6cb4be27ebd253856be65293288df
+-               DOWNLOAD_ONLY YES)
++
++set(tinyopt_SOURCE_DIR /usr/local)
++set(tinyopt_ADDED TRUE)
++
+ 
+ add_library(ext-tinyopt INTERFACE)
+ if(tinyopt_ADDED)

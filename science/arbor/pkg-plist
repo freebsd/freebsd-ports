@@ -1,6 +1,7 @@
 bin/arbor-build-catalogue
 bin/lmorpho
 bin/modcc
+include/arbor/adex_cell.hpp
 include/arbor/arb_types.h
 include/arbor/arb_types.hpp
 include/arbor/arb_types.inc
@@ -90,7 +91,6 @@ include/arbor/util/handle_set.hpp
 include/arbor/util/hash_def.hpp
 include/arbor/util/pp_util.hpp
 include/arbor/util/scope_exit.hpp
-include/arbor/util/typed_map.hpp
 include/arbor/util/uninitialized.hpp
 include/arbor/util/unique_any.hpp
 include/arbor/util/visibility.hpp
