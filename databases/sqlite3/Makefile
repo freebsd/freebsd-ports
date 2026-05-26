@@ -1,9 +1,8 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.50.4
+DISTVERSION=	3.53.1
 # SECURITY WARNING: when updating this port, also file vuxml entry
 # for ports/databases/linux-c7-sqlite3 (but mind it has a different EPOCH)
 # and coordinate with ports/emulators/linux_base which also ships sqlite3.
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -12,7 +11,7 @@ PKGNAMEPREFIX=	tcl-
 .endif
 DISTNAME=	sqlite-src-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
-MAINTAINER=	pavelivolkov@gmail.com
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQL database engine in a C library
 .if ${FLAVOR:U} == icu
 COMMENT+=	(ICU flavor)
@@ -226,7 +225,7 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 .include <bsd.port.options.mk>
 
 # _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-_YEAR=	2025
+_YEAR=	2026
 
 # Recommended options
 # https://sqlite.org/compile.html#strict_subtype
