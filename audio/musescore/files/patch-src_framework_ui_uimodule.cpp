@@ -1,16 +1,10 @@
---- src/framework/ui/uimodule.cpp.orig	2025-12-01 12:36:11 UTC
+--- src/framework/ui/uimodule.cpp.orig	2026-05-18 12:36:14 UTC
 +++ src/framework/ui/uimodule.cpp
-@@ -49,6 +49,7 @@
- #include "view/mainwindowbridge.h"
- #else
- #include "internal/platform/stub/stubplatformtheme.h"
-+#include "internal/windowscontroller.h"
- #include "view/mainwindowbridge.h"
- #endif
- 
-@@ -109,6 +110,7 @@ void UiModule::registerExports()
+@@ -87,8 +87,8 @@ void UiModule::registerExports()
+     m_platformTheme = std::make_shared<LinuxPlatformTheme>();
      m_windowsController = std::make_shared<WindowsController>();
      #else
+-    m_windowsController = std::make_shared<WindowsController>();
      m_platformTheme = std::make_shared<StubPlatformTheme>();
 +    m_windowsController = std::make_shared<WindowsController>();
      #endif
