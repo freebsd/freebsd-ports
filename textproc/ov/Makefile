@@ -1,6 +1,6 @@
 PORTNAME=	ov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.0
+DISTVERSION=	0.53.0
 CATEGORIES=	textproc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,18 +12,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.25+,modules
 
-_BUILD_VERSION=		${DISTVERSIONFULL}
-_BUILD_REVISION=	c1e6c81
+_BUILD_VERSION=		${DISTVERSION}
+_BUILD_REVISION=	5abf424
 
 GO_MODULE=	github.com/noborus/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags "\
-		-s -w \
+GO_LDFLAGS=	-w \
 		-X main.Version=${_BUILD_VERSION} \
-		-X main.Revision=${_BUILD_REVISION}"
+		-X main.Revision=${_BUILD_REVISION}
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
-PORTEXAMPLES=	${PORTNAME}-disable-default.yaml ${PORTNAME}-less.yaml \
+PORTEXAMPLES=	${PORTNAME}-disable-default.yaml \
+		${PORTNAME}-less.yaml \
 		${PORTNAME}.yaml
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
