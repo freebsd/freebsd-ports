@@ -1,5 +1,5 @@
 PORTNAME=	libsoup
-PORTVERSION=	3.6.6
+PORTVERSION=	3.7.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -24,7 +24,8 @@ BUILD_DEPENDS=	glib-networking>0:net/glib-networking \
 
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libnghttp2.so:www/libnghttp2 \
-		libpsl.so:dns/libpsl
+		libpsl.so:dns/libpsl \
+		libzstd.so:archivers/zstd
 
 RUN_DEPENDS=	glib-networking>0:net/glib-networking
 
