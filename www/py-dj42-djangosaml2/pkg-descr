@@ -1,0 +1,4 @@
+A Django application that builds a Fully Compliant
+SAML2 Service Provider on top of PySAML2 library.
+Djangosaml2 protects your project with a SAML2 SSO
+Authentication.

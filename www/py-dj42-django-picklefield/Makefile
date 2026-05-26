@@ -2,15 +2,18 @@ PORTNAME=	django-picklefield
 PORTVERSION=	3.4.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj42-
 DISTNAME=	django_picklefield-${PORTVERSION}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Pickled object field for Django
 WWW=		https://github.com/gintas/django-picklefield
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
+EXPIRATION_DATE=2026-08-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
@@ -20,8 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
-NO_ARCH=	yes
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*django-picklefield
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
