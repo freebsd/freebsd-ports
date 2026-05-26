@@ -1,5 +1,5 @@
 PORTNAME=	red-arrow-dataset
-PORTVERSION=	21.0.0
+PORTVERSION=	24.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
