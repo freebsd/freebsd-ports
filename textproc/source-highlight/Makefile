@@ -18,7 +18,7 @@ USES=		compiler:c++11-lang gmake pathfix libtool localbase
 USE_CXXSTD=	gnu++11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--with-bash-completion
+CONFIGURE_ARGS=	--with-bash-completion --with-boost=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
