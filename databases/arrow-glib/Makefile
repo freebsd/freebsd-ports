@@ -1,5 +1,5 @@
 PORTNAME=	arrow
-PORTVERSION=	21.0.0
+PORTVERSION=	24.0.0
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/arrow/arrow-${PORTVERSION}/
 PKGNAMESUFFIX=	-glib
@@ -8,7 +8,7 @@ DISTNAME=	apache-arrow-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API wrapper library for Arrow C++
 WWW=		https://arrow.apache.org/ \
-		https://github.com/apache/arrow/tree/master/c_glib
+		https://github.com/apache/arrow/tree/main/c_glib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
