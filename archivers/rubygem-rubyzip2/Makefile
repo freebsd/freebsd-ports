@@ -9,6 +9,9 @@ WWW=		https://rubygems.org/gems/rubyzip2
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Outdated. Upstream disappeared
+EXPIRATION_DATE=2026-05-31
+
 USES=		cpe gem
 CPE_VENDOR=	rubyzip_project
 CPE_PRODUCT=	rubyzip
