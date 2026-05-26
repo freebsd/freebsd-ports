@@ -1,5 +1,6 @@
 PORTNAME=	lmfit
 DISTVERSION=	10.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://jugit.fz-juelich.de/mlz/${PORTNAME}/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}

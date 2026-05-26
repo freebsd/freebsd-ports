@@ -1,5 +1,5 @@
 PORTNAME=	libheinz
-DISTVERSION=	3.0.0
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://jugit.fz-juelich.de/mlz/${PORTNAME}/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
@@ -19,10 +19,11 @@ NO_ARCH=	yes
 
 PLIST_FILES=	lib/cmake/LibHeinz/LibHeinzConfig.cmake \
 		lib/cmake/LibHeinz/LibHeinzConfigVersion.cmake \
+		lib/cmake/LibHeinz/LibHeinzTargets.cmake \
 		include/heinz/Complex.h \
 		include/heinz/Rotations3D.h \
 		include/heinz/Vectors3D.h
 
-# tests as of 3.0.0: 100% tests passed, 0 tests failed out of 3
+# tests as of 4.0.0: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
