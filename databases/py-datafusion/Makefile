@@ -19,7 +19,7 @@ BROKEN_i386=	rustc-LLVM ERROR: out of memory
 
 BUILD_DEPENDS=	protoc:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}maturin>=1.8.1:devel/py-maturin@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=16.0.0:databases/py-pyarrow@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=22.0.0:databases/py-pyarrow@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517 pytest
