@@ -1,3 +1,266 @@
+  <vuln vid="9bcc3279-5901-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- Grafana MSSQL Data Source Plugin: Restriction Bypass Leading to OOM DoS</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>11.6.0</ge><lt>11.6.14</lt></range>
+	<range><ge>12.1.0</ge><lt>12.1.10</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.8</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.6</lt></range>
+	<range><ge>12.4.0</ge><lt>12.4.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-33375 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-33375">
+	  <p>The Grafana MSSQL data source plugin contains a logic flaw that
+	  allows a low-privileged user (Viewer) to bypass API restrictions
+	  and trigger a catastrophic Out-Of-Memory (OOM) memory exhaustion,
+	  crashing the host container.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-33375</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-33375</url>
+    </references>
+    <dates>
+      <discovery>2026-03-26</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62717c0f-5901-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- Grafana Testdata datasource can issue unbounded memory allocations</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>8.1.0</ge><lt>11.6.14</lt></range>
+	<range><ge>12.0.0</ge><lt>12.1.10</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.8</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.6</lt></range>
+	<range><ge>12.4.0</ge><lt>12.4.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-28375 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-28375">
+	  <p>A testdata data-source can be used to trigger out-of-memory crashes in Grafana.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-28375</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-28375</url>
+    </references>
+    <dates>
+      <discovery>2026-03-27</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="138319f3-5901-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- OpenFeature evaluation API reads input data with no bounds</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>12.1.0</ge><lt>12.1.10</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.8</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.6</lt></range>
+	<range><ge>12.4.0</ge><lt>12.4.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-27880 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-27880">
+	  <p>The OpenFeature feature toggle evaluation endpoint reads unbounded
+	  values into memory, which can cause out-of-memory crashes.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27880</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-27880</url>
+    </references>
+    <dates>
+      <discovery>2026-03-27</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c079e809-5900-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- Query resampling can cause unbounded memory allocations</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>11.6.14</lt></range>
+	<range><ge>12.0.0</ge><lt>12.1.10</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.8</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.6</lt></range>
+	<range><ge>12.4.0</ge><lt>12.4.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-27879 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-27879">
+	  <p>A resample query can be used to trigger out-of-memory crashes in Grafana.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27879</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-27879</url>
+    </references>
+    <dates>
+      <discovery>2026-03-27</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6b2bf8e9-5900-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- Public dashboards discloses all direct mode datasources</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>9.3.0</ge><lt>11.6.14</lt></range>
+	<range><ge>12.0.0</ge><lt>12.1.10</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.8</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.6</lt></range>
+	<range><ge>12.4.0</ge><lt>12.4.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-27877 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-27877">
+	  <p>When using public dashboards and direct data-sources, all direct
+	  data-sources' passwords are exposed despite not being used in dashboards.
+
+	  No passwords of proxied data-sources are exposed.  We encourage all
+	  direct data-sources to be converted to proxied data-sources as far
+	  as possible to improve your deployments' security.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27877</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-27877</url>
+    </references>
+    <dates>
+      <discovery>2026-03-27</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f45ad940-58ff-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- RCE on Grafana via sqlExpressions</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>11.6.0</ge><lt>11.6.14</lt></range>
+	<range><ge>12.0.0</ge><lt>12.1.10</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.8</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.6</lt></range>
+	<range><ge>12.4.0</ge><lt>12.4.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-27876 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-27876">
+	  <p>A chained attack via SQL Expressions and a Grafana Enterprise plugin
+	  can lead to a remote arbitrary code execution impact (RCE).  This
+	  is enabled by a feature in Grafana (OSS), so all users are always
+	  recommended to update to avoid future attack vectors going this
+	  path.
+
+	  Only instances with the sqlExpressions feature toggle enabled are
+	  vulnerable.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27876</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-27876</url>
+    </references>
+    <dates>
+      <discovery>2026-03-27</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83cd53f7-58ff-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- Public Dashboards time range restriction on annotations can be bypassed</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>9.3.0</ge><lt>11.6.10</lt></range>
+	<range><ge>12.0.0</ge><lt>12.1.6</lt></range>
+	<range><ge>12.2.0</ge><lt>12.2.4</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2026-21722 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2026-21722">
+	  <p>Public dashboards with annotations enabled did not limit their
+	  annotation timerange to the locked timerange of the public dashboard.
+	  This means one could read the entire history of annotations visible
+	  on the specific dashboard, even those outside the locked timerange.
+
+	  This did not leak any annotations that would not otherwise be visible
+	  on the public dashboard.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-21722</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-21722</url>
+    </references>
+    <dates>
+      <discovery>2026-02-12</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6cc28c49-58fe-11f1-b525-3c7c3fba4204">
+    <topic>Grafana -- XSS in Grafana Explore stack trace</topic>
+    <affects>
+    <package>
+	<name>grafana</name>
+	<range><ge>12.2.0</ge><lt>12.2.4</lt></range>
+	<range><ge>12.3.0</ge><lt>12.3.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://grafana.com/security/security-advisories/cve-2025-41117 reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2025-41117">
+	  <p>Stack traces in Grafana's Explore Traces view can be rendered as
+	  raw HTML, and thus inject malicious JavaScript in the browser.  This
+	  would require malicious JavaScript to be entered into the stack
+	  trace field.
+
+	  Only datasources with the Jaeger HTTP API appear to be affected;
+	  Jaeger gRPC and Tempo do not appear affected whatsoever.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-41117</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-41117</url>
+    </references>
+    <dates>
+      <discovery>2026-02-12</discovery>
+      <entry>2026-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="87ff1d7e-6b24-4a5b-9825-90dcda5ee119">
     <topic>jellyfin -- multiple vulnerabilities</topic>
     <affects>
