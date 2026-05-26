@@ -53,6 +53,7 @@ include/diplib/neighborlist.h
 include/diplib/nonlinear.h
 include/diplib/overload.h
 include/diplib/pixel_table.h
+include/diplib/polygon.h
 include/diplib/private/constfor.h
 include/diplib/private/pcg_extras.hpp
 include/diplib/private/pcg_random.hpp
