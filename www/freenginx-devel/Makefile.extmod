@@ -195,7 +195,7 @@ KEYVAL_VARS=		DSO_EXTMODS+=keyval
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LUA_GH_TUPLE=		openresty:lua-nginx-module:41ed26b:lua \
+LUA_GH_TUPLE=		openresty:lua-nginx-module:48d5628:lua \
 			openresty:lua-resty-core:fb7710e:luarc \
 			openresty:lua-resty-lrucache:1c7cf6b:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
