@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-server
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Server)
 WWW=		https://github.com/haiwen/seafile-server
 

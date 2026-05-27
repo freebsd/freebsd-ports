@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-server
 PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web frontend for Seafile
 WWW=		https://github.com/haiwen/seahub
 

@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj42-
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper for generating Javascript catalog to static files
 WWW=		https://github.com/zyegfryed/django-statici18n
 

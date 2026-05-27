@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj42-
 DISTNAME=	django_picklefield-${PORTVERSION}
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pickled object field for Django
 WWW=		https://github.com/gintas/django-picklefield
 

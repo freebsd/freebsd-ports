@@ -4,7 +4,7 @@ DISTVERSION=	9.0.6
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Client)
 WWW=		https://github.com/haiwen/seafile
 

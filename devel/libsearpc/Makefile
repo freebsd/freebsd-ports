@@ -4,7 +4,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple RPC framework based on GObject System in C
 WWW=		https://github.com/haiwen/libsearpc
 

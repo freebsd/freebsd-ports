@@ -4,7 +4,7 @@ DISTVERSION=	3.11
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Django app to monitor and send mail asynchronously
 WWW=		https://github.com/ui/django-post_office
 

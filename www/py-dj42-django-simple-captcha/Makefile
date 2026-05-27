@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj42-
 DISTNAME=	django_simple_captcha-${PORTVERSION}
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, yet powerful, Django captcha application
 WWW=		https://pypi.org/project/django-simple-captcha/
 

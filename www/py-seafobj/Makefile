@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-server
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for accessing seafile data model
 WWW=		https://github.com/haiwen/seafobj
 
