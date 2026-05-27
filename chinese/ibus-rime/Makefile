@@ -1,5 +1,5 @@
 PORTNAME=	ibus-rime
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	chinese
 
 MAINTAINER=	eric@camachat.org
@@ -15,11 +15,12 @@ LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
 		librime.so:chinese/librime
 RUN_DEPENDS=	${_SCHEMA_DEPENDS}
 
-USES=		cmake gnome pkgconfig
+USES=		cmake gettext-runtime gnome pkgconfig
 USE_CSTD=	c99
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
+USE_GNOME=	gdkpixbuf glib20
 
 _SCHEMA_DEPENDS=	\
 	${LOCALBASE}/share/rime-data/luna_pinyin.schema.yaml:chinese/rime-luna-pinyin	\
