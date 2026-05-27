@@ -1,7 +1,3 @@
-TIMESTAMP = 1770384591
-SHA256 (quotient-im-libQuotient-0.9.5_GH0.tar.gz) = 24366dd59aca7b991756e45c3c8823c43fc6a8fdb161ea6dcce5b666c6300766
-SIZE (quotient-im-libQuotient-0.9.5_GH0.tar.gz) = 780007
-SHA256 (ea83157eed37ff97ab275a5d14c971f0a5a70595.patch) = cb90b4fe80d84c07edf022e54061ab04ae249a2e5eb1620722ff42fe2031594b
-SIZE (ea83157eed37ff97ab275a5d14c971f0a5a70595.patch) = 1381
-SHA256 (cbf984531426e9bd533dbae9dd15944271c1012e.patch) = f24dc08451daff9dc4d9f6ef2773e55091430c8513a019b6095adcf593f275db
-SIZE (cbf984531426e9bd533dbae9dd15944271c1012e.patch) = 932
+TIMESTAMP = 1779287058
+SHA256 (quotient-im-libQuotient-0.9.6.1_GH0.tar.gz) = ac0fe5df480fa893d3e16da626bf5028c944e9b41f504f6fe0fe49273247d636
+SIZE (quotient-im-libQuotient-0.9.6.1_GH0.tar.gz) = 781157

@@ -166,6 +166,8 @@ lib/cmake/QuotientQt6/QuotientQt6Config.cmake
 lib/cmake/QuotientQt6/QuotientQt6ConfigVersion.cmake
 lib/cmake/QuotientQt6/QuotientQt6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QuotientQt6/QuotientQt6Targets.cmake
-lib/libQuotientQt6.a
+lib/libQuotientQt6.so
+lib/libQuotientQt6.so.%%API_VER%%
+lib/libQuotientQt6.so.%%SHLIB_VER%%
 libdata/pkgconfig/QuotientQt6.pc
 share/ndk-modules/Android.mk
