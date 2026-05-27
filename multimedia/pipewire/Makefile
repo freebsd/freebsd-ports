@@ -1,10 +1,13 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.6
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Server and user space API to deal with multimedia pipelines
 WWW=		https://pipewire.org/
+
+PATCH_SITES=	https://gitlab.freedesktop.org/pipewire/pipewire/-/commit/
+PATCHFILES=	db8bb8d489c55f9e8993c1c77c11e11268ef55dc.patch:-p1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
