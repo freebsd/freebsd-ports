@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mate-desktop-item-edit:x11/mate-panel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mate-desktop
-USES=		gettext-tools gmake gnome localbase mate pkgconfig \
+USES=		autoreconf gettext-tools gmake gnome localbase mate pkgconfig \
 		python
 USE_GNOME=	gtk30 intltool pygobject3
 USE_MATE=	menus
