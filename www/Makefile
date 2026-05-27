@@ -2778,6 +2778,7 @@
     SUBDIR += youtube
     SUBDIR += yt-dlp
     SUBDIR += yuicompressor
+    SUBDIR += zen
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
     SUBDIR += zgrab2

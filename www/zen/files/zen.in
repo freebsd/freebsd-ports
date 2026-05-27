@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: zen
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Zen in /etc/rc.conf
+#
+# zen_enable (bool):         Enable Zen. (default=NO)
+# zen_runas (str):           User to run Zen as. (default=%%USER%%)
+# zen_env_file (str):        Path containing the environment variables.
+#
+
+. /etc/rc.subr
+
+name="zen"
+desc="Lightweight self-hosted notes application"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${zen_enable:="NO"}
+: ${zen_runas:="%%USER%%"}
+
+zen_chdir="/var/db/${name}"
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-S -u \"${zen_runas}\" -T \"${name}\" -p \"${pidfile}\" -t \"${desc}\" \"${procname}\""
+
+run_rc_command "$1"

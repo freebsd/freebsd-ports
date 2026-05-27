@@ -1,0 +1,7 @@
+TIMESTAMP = 1779913521
+SHA256 (zen-1.5.0.frontend.tar.gz) = f2560d63ebb67477384367b5b8072acccb797eb9ee14a63c1bdb4ceac292c33b
+SIZE (zen-1.5.0.frontend.tar.gz) = 409775
+SHA256 (zen-1.5.0.vendor.tar.gz) = cb5a04329f780f188944515caba2254c1251552fb2e1bb83242dba7fa143cae9
+SIZE (zen-1.5.0.vendor.tar.gz) = 2641524
+SHA256 (sheshbabu-zen-1.5.0_GH0.tar.gz) = 075b106d378f9c6a4b9eb134a2c9495b0532642f0502e6b6d1729bc04095506b
+SIZE (sheshbabu-zen-1.5.0_GH0.tar.gz) = 649959
