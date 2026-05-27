@@ -12,7 +12,7 @@ WWW=		https://homepage.univie.ac.at/norbert.haider/cheminf/cmmm.html
 
 LICENSE=	GPLv2+
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 NO_WRKSUBDIR=	yes
 
