@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.136
+DISTVERSION=	0.9.137
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -87,7 +87,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		color-spantrace-0.3.0 \
 		colorchoice-1.0.3 \
 		combine-4.6.7 \
-		config-0.15.22 \
+		config-0.15.23 \
 		console-0.16.3 \
 		console-api-0.9.0 \
 		console-subscriber-0.5.0 \
@@ -189,7 +189,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		globset-0.4.18 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
-		guppy-0.17.25 \
+		guppy-0.17.26 \
 		guppy-workspace-hack-0.1.0 \
 		h2-0.4.10 \
 		hashbrown-0.15.5 \
@@ -213,7 +213,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		id-arena-2.3.0 \
-		iddqd-0.4.0 \
+		iddqd-0.4.2 \
 		idna-1.1.0 \
 		idna_adapter-1.0.0 \
 		ignore-0.4.23 \
@@ -235,7 +235,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.33 \
 		js-sys-0.3.91 \
-		jsonschema-0.46.4 \
+		jsonschema-0.46.5 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nested-0.1.1 \
 		newtype-uuid-1.3.2 \
 		nix-0.29.0 \
-		nix-0.31.2 \
+		nix-0.31.3 \
 		nom-7.1.3 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
@@ -350,7 +350,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		referencing-0.46.4 \
+		referencing-0.46.5 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
@@ -427,10 +427,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		syn-1.0.109 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.2 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		target-lexicon-0.13.3 \
 		target-spec-3.6.0 \
-		target-spec-miette-0.4.6 \
+		target-spec-miette-0.4.8 \
 		tempfile-3.20.0 \
 		terminal_size-0.4.3 \
 		terminfo-0.9.0 \
@@ -576,7 +576,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-1.0.2 \
+		winnow-1.0.3 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rt-0.39.0 \
