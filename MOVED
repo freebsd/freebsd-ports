@@ -5314,3 +5314,5 @@ deskutils/gnome-shell-extension-mediaplayer||2026-05-18|Marked broken and upstre
 devel/rubygem-rugged17|devel/rubygem-rugged|2026-05-24|Use devel/rubygem-rugged instead
 www/rubygem-deckar01-task_list-gitlab|www/rubygem-deckar01-task_list|2026-05-24|Use www/rubygem-deckar01-task_list instead
 biology/p5-TrimGalore|biology/TrimGalore|2026-05-24|After V2.0 Trim Galore was rewrite in rust
+multimedia/mediaelch@qt5||2026-05-27|Unflavorize, remove Qt5 flavor
+multimedia/mediaelch@qt6|multimedia/mediaelch|2026-05-27|Unflavorize
