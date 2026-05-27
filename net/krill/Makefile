@@ -11,7 +11,7 @@ WWW=		https://github.com/NLnetLabs/krill
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 USES=		cargo ssl
