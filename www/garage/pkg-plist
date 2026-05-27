@@ -477,3 +477,18 @@ bin/garage
 %%PORTDOCS%%%%DOCSDIR%%/talks/assets/timeline-22-24.svg
 %%PORTDOCS%%%%DOCSDIR%%/talks/assets/tl.drawio.png
 %%PORTDOCS%%%%DOCSDIR%%/talks/shell.nix
+%%PORTDOCS%%%%DOCSDIR%%/book/reference-manual/known-issues.md
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/AGPLv3_Logo.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/Garage Web Admin - Bucket details page@2x.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/Garage Web Admin - Dashboard@2x.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/community-ui.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/compatibility.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/endpoint-latency-dc.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/%%USER%%-stats.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/%%USER%%uses.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/location-aware.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/map.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/minio.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/assets/rust_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/talks/2026-01-31-fosdem/talk.tex
