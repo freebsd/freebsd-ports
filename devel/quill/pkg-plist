@@ -1,11 +1,15 @@
 include/quill/Backend.h
 include/quill/BackendTscClock.h
+include/quill/BinaryDataDeferredFormatCodec.h
 include/quill/CsvWriter.h
 include/quill/DeferredFormatCodec.h
 include/quill/DirectFormatCodec.h
 include/quill/Frontend.h
+include/quill/HelperMacros.h
+include/quill/LogFunctions.h
 include/quill/LogMacros.h
 include/quill/Logger.h
+include/quill/SimpleSetup.h
 include/quill/StopWatch.h
 include/quill/StringRef.h
 include/quill/UserClockSource.h
@@ -57,6 +61,7 @@ include/quill/core/PatternFormatterOptions.h
 include/quill/core/QuillError.h
 include/quill/core/Rdtsc.h
 include/quill/core/SinkManager.h
+include/quill/core/SourceLocation.h
 include/quill/core/Spinlock.h
 include/quill/core/ThreadContextManager.h
 include/quill/core/TimeUtilities.h
