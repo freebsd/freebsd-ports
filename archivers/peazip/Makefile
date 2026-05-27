@@ -11,7 +11,7 @@ WWW=		https://peazip.github.io
 
 LICENSE=	LGPL3
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 USES=		cpe desktop-file-utils dos2unix fpc lazarus:flavors zip xorg
 USE_XORG=	x11
