@@ -1,9 +1,7 @@
 PORTNAME=	pluma
+DISTVERSIONPREFIX=	v
 DISTVERSION=	1.28.1
 CATEGORIES=	editors mate
-MASTER_SITES=	MATE \
-		https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
-DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for MATE Desktop Environment
@@ -13,19 +11,24 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		iso-codes>=0:misc/iso-codes
+		iso-codes>=0:misc/iso-codes \
+		autoconf-archive>=0:devel/autoconf-archive \
+		yelp-tools>=0:textproc/yelp-tools
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libpeas-gtk-1.0.so:devel/libpeas1
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome libtool localbase \
-		pathfix pkgconfig python shebangfix tar:xz xorg mate
+USE_GITHUB=	yes
+GH_ACCOUNT=	mate-desktop
+GH_TUPLE=	mate-desktop:mate-submodules:54fff1b:submodules/pluma/mate-submodules
+USES=		autoreconf compiler:c11 desktop-file-utils gettext-tools gmake gnome libtool localbase \
+		pathfix pkgconfig python shebangfix xorg mate
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gdkpixbuf gnomeprefix gtk30 gtksourceview4 \
 		intltool introspection libxml2
-USE_MATE=	desktop
+USE_MATE=	desktop common:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

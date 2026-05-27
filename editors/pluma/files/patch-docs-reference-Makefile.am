@@ -1,0 +1,10 @@
+--- docs/reference/Makefile.am.orig
++++ docs/reference/Makefile.am
+@@ -80,7 +80,6 @@ GTKDOC_LIBS=	\
+ 	$(PLUMA_LIBS)
+
+-# This includes the standard gtk-doc make rules, copied by gtkdocize.
+-include $(top_srcdir)/gtk-doc.make
++# gtk-doc disabled
+
+ # Other files to distribute
