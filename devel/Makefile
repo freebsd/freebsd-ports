@@ -359,6 +359,7 @@
     SUBDIR += bustle
     SUBDIR += byacc
     SUBDIR += byaccj
+    SUBDIR += c-stdaux
     SUBDIR += c2mdoc
     SUBDIR += c4core
     SUBDIR += calibrator
