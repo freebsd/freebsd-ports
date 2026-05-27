@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-05-07 15:21:42 UTC
++++ Makefile
+@@ -27,6 +27,8 @@ lisp:
+ 
+ lisp:
+ 	@$(MAKE) -C lisp lisp
++autoloads:
++	@$(MAKE) -C lisp autoloads
+ redo:
+ 	@$(MAKE) -C lisp clean lisp
+ 

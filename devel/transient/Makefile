@@ -1,7 +1,11 @@
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.3
+DISTVERSION=	0.13.4
 CATEGORIES=	devel elisp
+MASTER_SITES=	https://raw.githubusercontent.com/magit/magit.vc/${_ASSETS_VER}/assets/:assets
+DISTFILES=	${_ASSETS:@.a.@${.a.}:assets@}
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	Emacs key and popup interface for complex keybindings
@@ -10,14 +14,18 @@ WWW=		https://github.com/magit/transient
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-_BR_DEPENDS=	compat.el>=30.1.0.0:misc/compat.el \
-		cond-let>=0.2:devel/cond-let
+_BR_DEPENDS=	compat.el>=31.0.0.0:misc/compat.el \
+		cond-let>=1.0.0:devel/cond-let
 BUILD_DEPENDS=	${_BR_DEPENDS}
 RUN_DEPENDS=	${_BR_DEPENDS}
 
 USES=		emacs:build gmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
+
+MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	autoloads
 
 CONFLICTS_INSTALL=	transient-emacs_*
 
@@ -25,38 +33,35 @@ NO_ARCH=	yes
 
 PLIST_FILES=	${ELISPDIR}/transient-autoloads.el \
 		${ELISPDIR}/transient.el
-PORTDOCS=	CHANGELOG README.org transient.html
+PORTDOCS=	CHANGELOG README.org transient.html ${_ASSETS:@.a.@assets/${.a.}@}
 
 ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS INFO PDF
 OPTIONS_DEFAULT=	INFO
 
-PDF_DESC=	Build and install PDF document
+PDF_DESC=		Build and install PDF documentation
 
-DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_USES=		makeinfo
+DOCS_ALL_TARGET=	html
 
-INFO_BUILD_DEPENDS=	gsed:textproc/gsed
+INFO_ALL_TARGET=	info
 INFO_INFO=		transient
 
-PDF_BUILD_DEPENDS=	gsed:textproc/gsed \
-			texi2pdf:print/texinfo
+PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
 PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
+PDF_ALL_TARGET=		pdf
 PDF_PLIST_FILES=	${DOCSDIR}/transient.pdf
 
-do-build:
-	cd ${WRKSRC}/lisp && ${MAKE_CMD} autoloads
-
-do-build-DOCS-on:
-	cd ${WRKSRC}/docs && SED=gsed ${MAKE_CMD} html
-
-do-build-INFO-on:
-	cd ${WRKSRC} && SED=gsed ${MAKE_CMD} info
-
-do-build-PDF-on:
-	cd ${WRKSRC}/docs && SED=gsed ${MAKE_CMD} pdf
+_ASSETS=	magit_alt1.ico \
+		page.css \
+		themes/black-on-white.css \
+		themes/default-high-contrast.css \
+		themes/default.css \
+		themes/solarized-dark-xterm.css \
+		js/simple-css-switch.js
+_ASSETS_VER=	66bd1a1fa6a05e6905b556929516929d41b53784 # 2025-11-16
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
@@ -64,9 +69,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/${ELISPDIR}
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/assets/js ${STAGEDIR}${DOCSDIR}/assets/themes
 	${INSTALL_DATA} ${WRKSRC}/README.org ${WRKSRC}/CHANGELOG \
 		${WRKSRC}/docs/transient.html ${STAGEDIR}${DOCSDIR}
+.for a in ${_ASSETS}
+	${INSTALL_DATA} ${_DISTDIR}/${a} ${STAGEDIR}${DOCSDIR}/assets/${a}
+.endfor
 
 do-install-INFO-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.info \
