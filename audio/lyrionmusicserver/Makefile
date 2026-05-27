@@ -10,7 +10,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License.txt
 # Contains non-redistributable firmware, documentation, and images
 
-ONLY_FOR_ARCHS=		aarch64 amd64 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Only tested on these archs, set ARCHNAME to value of perl -V:archname for other platforms
 
 BUILD_DEPENDS=	nasm:devel/nasm \
@@ -102,6 +102,14 @@ ARCHNAME=	amd64-freebsd-thread-multi
 
 .if ${ARCH} == "aarch64"
 ARCHNAME=	aarch64-freebsd-thread-multi
+.endif
+
+.if ${ARCH} == "powerpc64"
+ARCHNAME=	powerpc64-freebsd-thread-multi
+.endif
+
+.if ${ARCH} == "powerpc64le"
+ARCHNAME=	powerpc64le-freebsd-thread-multi
 .endif
 
 do-build:
