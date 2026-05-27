@@ -45,7 +45,7 @@ include/wireplumber-0.5/wp/wpversion.h
 %%DOXYGEN%%lib/girepository-1.0/Wp-0.5.typelib
 lib/libwireplumber-0.5.so
 lib/libwireplumber-0.5.so.0
-lib/libwireplumber-0.5.so.0.513.0
+lib/libwireplumber-0.5.so.0.514.0
 lib/wireplumber-0.5/libwireplumber-module-dbus-connection.so
 lib/wireplumber-0.5/libwireplumber-module-default-nodes-api.so
 lib/wireplumber-0.5/libwireplumber-module-file-monitor-api.so
@@ -160,8 +160,9 @@ share/pipewire/pipewire.conf.d/10-wireplumber.conf
 %%DATADIR%%/scripts/linking/link-target.lua
 %%DATADIR%%/scripts/linking/mpris-pause.lua
 %%DATADIR%%/scripts/linking/prepare-link.lua
-%%DATADIR%%/scripts/linking/rescan.lua
 %%DATADIR%%/scripts/linking/rescan-media-role-links.lua
+%%DATADIR%%/scripts/linking/rescan-on-linkable.lua
+%%DATADIR%%/scripts/linking/rescan.lua
 %%DATADIR%%/scripts/metadata.lua
 %%DATADIR%%/scripts/monitors/alsa-midi.lua
 %%DATADIR%%/scripts/monitors/alsa.lua
