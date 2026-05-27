@@ -1,5 +1,5 @@
 PORTNAME=	mod_http2
-DISTVERSION=	2.0.39
+DISTVERSION=	2.0.40
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/icing/mod_h2/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
