@@ -16,7 +16,7 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.libs
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		gtkdocize:textproc/gtk-doc \
 		autoconf-archive>=0:devel/autoconf-archive \
-		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
+		yelp-tools>=0:textproc/yelp-tools
 
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
