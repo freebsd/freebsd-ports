@@ -1,6 +1,6 @@
 PORTNAME=	edk2
 PORTVERSION=	g202508
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -53,6 +53,8 @@ GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 
 # Heavily dependent on bsd.port.pre.mk definitions for lang/gcc* details:
 BINARY_ALIAS=	make=${GMAKE} \
+		ar=${AR} \
+		dtc=${LOCALBASE}/bin/dtc \
 		gcc=${LOCALBASE}/bin/${CC} \
 		g++=${LOCALBASE}/bin/${CXX} \
 		gcc-nm=${LOCALBASE}/bin/${CC:S/gcc/&-nm/} \
