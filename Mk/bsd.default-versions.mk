@@ -47,7 +47,11 @@ EBUR128_DEFAULT?=	legacy
 # Possible values: full canna nox wayland devel_full devel_nox (default: nox)
 #EMACS_DEFAULT?=	nox
 # Possible values: 3.0, 4.0
+.  if ${ARCH} == powerpc64le
+FIREBIRD_DEFAULT?=	4.0
+.  else
 FIREBIRD_DEFAULT?=	3.0
+.  endif
 # Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.2.3, 3.3.1
