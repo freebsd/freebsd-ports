@@ -1,0 +1,15 @@
+The octave-forge package is the result of The GNU Octave Repository project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is octave_boost.
+
+ A comprehensive open-source high performance processing package for GNU Octave
+based on Boost C++ Libraries. Provides direct access to Boost.Accumulators
+statistical accumulators for online computation of count, covariance, density,
+error of mean, extended P^2 quantiles, kurtosis, max/min, mean, median, moments,
+P^2 cumulative distribution, P^2 quantile, peaks over threshold, POT quantile,
+POT tail mean, skewness, sum, and tail statistics, as well as Boost.Chrono for
+high-resolution timing and Boost.Date_Time for date and time manipulation and
+Boost.Thread for multithreading support.
