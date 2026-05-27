@@ -1,12 +1,12 @@
 PORTNAME=	grimoirelab-panels
-DISTVERSION=	1.1.2
+DISTVERSION=	1.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
-# Ask clusteradm@ before removal
-MAINTAINER=	ports@FreeBSD.org
+# Ask clusteradm@ before removal of this port if it becomes unmaintained
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Generic Dashboards for GrimoireLab
 WWW=		https://github.com/chaoss/grimoirelab-sigils
 

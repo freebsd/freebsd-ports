@@ -1,12 +1,12 @@
 PORTNAME=	perceval-mozilla
-DISTVERSION=	1.0.11
+DISTVERSION=	1.2.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
-# Ask clusteradm@ before removal
-MAINTAINER=	ports@FreeBSD.org
+# Ask clusteradm@ before removal of this port if it becomes unmaintained
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Bundle of Perceval backends for Mozilla ecosystem
 WWW=		https://github.com/chaoss/grimoirelab-perceval-mozilla
 
@@ -15,14 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}grimoirelab-toolkit>=1.0.9:devel/py-grimoirelab-toolkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}perceval>=1.1.1:devel/py-perceval@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grimoirelab-toolkit>=0.3:devel/py-grimoirelab-toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}perceval>=0.19:devel/py-perceval@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpretty>0:www/py-httpretty@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent pep517 unittest2
+USE_PYTHON=	autoplist concurrent pep517 pytest
 SHEBANG_GLOB=	*.py
 
 NO_ARCH=	yes

@@ -1,11 +1,11 @@
 PORTNAME=	kidash
-DISTVERSION=	1.0.10
+DISTVERSION=	1.1.8
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-# Ask clusteradm@ before removal
-MAINTAINER=	ports@FreeBSD.org
+# Ask clusteradm@ before removal of this port if it becomes unmaintained
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	GrimoireLab script to manage Kibana dashboards from the command line
 WWW=		https://github.com/chaoss/grimoirelab-kidash
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>2.8.2:devel/py-python-dateut
 		${PYTHON_PKGNAMEPREFIX}urllib3>=2.2:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent pep517 unittest2
+USE_PYTHON=	autoplist concurrent pep517 pytest
 SHEBANG_GLOB=	*.py
 
 NO_ARCH=	yes
