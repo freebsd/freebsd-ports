@@ -16,12 +16,12 @@ share/metainfo/io.github.martchus.syncthingtray.metainfo.xml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/FullRepresentation.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/IconLabel.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/RecentChangesPage.qml
+%%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/SectionHeader.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/StatisticsView.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TabButton.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TinyButton.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ToolBar.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ToolButton.qml
-%%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ToolTipTrigger.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ToolTipView.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TopLevelItem.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TopLevelView.qml

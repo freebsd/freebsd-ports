@@ -1,6 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -19,8 +19,8 @@ USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
 		${GH_ACCOUNT}:cpp-utilities:v5.34.1:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.21.1:qtutilities/../qtutilities \
-		${GH_ACCOUNT}:qtforkawesome:v0.3.2:qtforkawesome/../qtforkawesome \
+		${GH_ACCOUNT}:qtutilities:v6.21.2:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:qtforkawesome:v0.3.3:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
 		${GH_ACCOUNT}:subdirs:9fb173e:subdirs/../subdirs
 
