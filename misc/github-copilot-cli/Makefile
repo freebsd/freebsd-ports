@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	1.0.48
+DISTVERSION=	1.0.48 # can't be updated before https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=295629 is resolved
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}-x # -x is to see if it would fix checksum errors
