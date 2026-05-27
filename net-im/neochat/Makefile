@@ -1,5 +1,6 @@
 PORTNAME=	neochat
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,11 +10,10 @@ WWW=		https://invent.kde.org/network/neochat
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
-# Quotient is a static lib, doesn't need to be in RUN_DEPENDS
-BUILD_DEPENDS=	libquotient>=0.9.3:net-im/libquotient \
-		kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor
+BUILD_DEPENDS=	kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor
 LIB_DEPENDS=	libKUnifiedPush.so:devel/kunifiedpush \
 		libQCoro6Core.so:devel/qcoro \
+		libQuotientQt6.so:net-im/libquotient \
 		libcmark.so:textproc/cmark \
 		libqt6keychain.so:security/qtkeychain@qt6 \
 		libdbus-1.so:devel/dbus \
