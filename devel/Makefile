@@ -5431,6 +5431,7 @@
     SUBDIR += py-nbformat
     SUBDIR += py-nbval
     SUBDIR += py-nest-asyncio
+    SUBDIR += py-nest-asyncio2
     SUBDIR += py-ninja
     SUBDIR += py-node-semver
     SUBDIR += py-nodeenv
