@@ -154,18 +154,18 @@
 %%WWWDIR%%/assets/images/logo-transparent.svg
 %%WWWDIR%%/assets/images/logo.svg
 %%WWWDIR%%/assets/public/admin.css
-%%WWWDIR%%/assets/public/assets/autocomplete.es-Bm0-o7bk.js
-%%WWWDIR%%/assets/public/assets/autocomplete.es-Bm0-o7bk.js.map
-%%WWWDIR%%/assets/public/assets/bootstrap-DiRCdOSa.js
-%%WWWDIR%%/assets/public/assets/bootstrap-DiRCdOSa.js.map
+%%WWWDIR%%/assets/public/assets/autocomplete.es-TPvvooqG.js
+%%WWWDIR%%/assets/public/assets/autocomplete.es-TPvvooqG.js.map
+%%WWWDIR%%/assets/public/assets/bootstrap-C6O5Pzjy.js
+%%WWWDIR%%/assets/public/assets/bootstrap-C6O5Pzjy.js.map
 %%WWWDIR%%/assets/public/assets/chart-uGFcfnRt.js
 %%WWWDIR%%/assets/public/assets/chart-uGFcfnRt.js.map
-%%WWWDIR%%/assets/public/assets/jodit-DidQIHSI.js
-%%WWWDIR%%/assets/public/assets/jodit-DidQIHSI.js.map
-%%WWWDIR%%/assets/public/assets/password-BXfI06Ub.js
-%%WWWDIR%%/assets/public/assets/password-BXfI06Ub.js.map
-%%WWWDIR%%/assets/public/assets/theme-switcher--vV5z1WW.js
-%%WWWDIR%%/assets/public/assets/theme-switcher--vV5z1WW.js.map
+%%WWWDIR%%/assets/public/assets/jodit-BephP-_k.js
+%%WWWDIR%%/assets/public/assets/jodit-BephP-_k.js.map
+%%WWWDIR%%/assets/public/assets/password-Diq5Gysq.js
+%%WWWDIR%%/assets/public/assets/password-Diq5Gysq.js.map
+%%WWWDIR%%/assets/public/assets/theme-switcher-Cm_GEonn.js
+%%WWWDIR%%/assets/public/assets/theme-switcher-Cm_GEonn.js.map
 %%WWWDIR%%/assets/public/backend.js
 %%WWWDIR%%/assets/public/backend.js.map
 %%WWWDIR%%/assets/public/bootstrap-icons.css
@@ -349,6 +349,7 @@
 %%WWWDIR%%/assets/templates/default/password.twig
 %%WWWDIR%%/assets/templates/default/register.twig
 %%WWWDIR%%/assets/templates/default/request-removal.twig
+%%WWWDIR%%/assets/templates/default/resetpw.twig
 %%WWWDIR%%/assets/templates/default/search.twig
 %%WWWDIR%%/assets/templates/default/show.twig
 %%WWWDIR%%/assets/templates/default/sitemap.twig
@@ -412,6 +413,7 @@
 %%WWWDIR%%/privacy.php
 %%WWWDIR%%/register.php
 %%WWWDIR%%/request-removal.php
+%%WWWDIR%%/resetpw.php
 %%WWWDIR%%/robots.txt.php
 %%WWWDIR%%/search.php
 %%WWWDIR%%/services/azure/callback.php
@@ -1350,6 +1352,7 @@
 %%WWWDIR%%/src/libs/guzzlehttp/promises/CHANGELOG.md
 %%WWWDIR%%/src/libs/guzzlehttp/promises/LICENSE
 %%WWWDIR%%/src/libs/guzzlehttp/promises/README.md
+%%WWWDIR%%/src/libs/guzzlehttp/promises/UPGRADING.md
 %%WWWDIR%%/src/libs/guzzlehttp/promises/composer.json
 %%WWWDIR%%/src/libs/guzzlehttp/promises/src/AggregateException.php
 %%WWWDIR%%/src/libs/guzzlehttp/promises/src/CancellationException.php
@@ -1370,6 +1373,7 @@
 %%WWWDIR%%/src/libs/guzzlehttp/psr7/CHANGELOG.md
 %%WWWDIR%%/src/libs/guzzlehttp/psr7/LICENSE
 %%WWWDIR%%/src/libs/guzzlehttp/psr7/README.md
+%%WWWDIR%%/src/libs/guzzlehttp/psr7/UPGRADING.md
 %%WWWDIR%%/src/libs/guzzlehttp/psr7/composer.json
 %%WWWDIR%%/src/libs/guzzlehttp/psr7/src/AppendStream.php
 %%WWWDIR%%/src/libs/guzzlehttp/psr7/src/BufferStream.php
@@ -2013,6 +2017,7 @@
 %%WWWDIR%%/src/libs/nette/utils/src/Utils/Json.php
 %%WWWDIR%%/src/libs/nette/utils/src/Utils/ObjectHelpers.php
 %%WWWDIR%%/src/libs/nette/utils/src/Utils/Paginator.php
+%%WWWDIR%%/src/libs/nette/utils/src/Utils/Process.php
 %%WWWDIR%%/src/libs/nette/utils/src/Utils/Random.php
 %%WWWDIR%%/src/libs/nette/utils/src/Utils/Reflection.php
 %%WWWDIR%%/src/libs/nette/utils/src/Utils/ReflectionMethod.php
@@ -3637,6 +3642,7 @@
 %%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/CheckCircularReferencesPass.php
 %%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/CheckDefinitionValidityPass.php
 %%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/CheckExceptionOnInvalidReferenceBehaviorPass.php
+%%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/CheckFactoryBuilderCircularReferencePass.php
 %%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/CheckReferenceValidityPass.php
 %%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/CheckTypeDeclarationsPass.php
 %%WWWDIR%%/src/libs/symfony/dependency-injection/Compiler/Compiler.php
@@ -6065,6 +6071,7 @@
 %%WWWDIR%%/src/libs/symfony/service-contracts/Attribute/Required.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/Attribute/SubscribedService.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/CHANGELOG.md
+%%WWWDIR%%/src/libs/symfony/service-contracts/ContainerAwareInterface.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/LICENSE
 %%WWWDIR%%/src/libs/symfony/service-contracts/README.md
 %%WWWDIR%%/src/libs/symfony/service-contracts/ResetInterface.php
@@ -6250,6 +6257,7 @@
 %%WWWDIR%%/src/libs/symfony/yaml/Inline.php
 %%WWWDIR%%/src/libs/symfony/yaml/LICENSE
 %%WWWDIR%%/src/libs/symfony/yaml/Parser.php
+%%WWWDIR%%/src/libs/symfony/yaml/ParserState.php
 %%WWWDIR%%/src/libs/symfony/yaml/README.md
 %%WWWDIR%%/src/libs/symfony/yaml/Resources/bin/yaml-lint
 %%WWWDIR%%/src/libs/symfony/yaml/Tag/TaggedValue.php
@@ -6258,6 +6266,7 @@
 %%WWWDIR%%/src/libs/symfony/yaml/composer.json
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/CHANGELOG.TXT
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/LICENSE.TXT
+%%WWWDIR%%/src/libs/tecnickcom/tcpdf/Makefile
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/README.md
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/VERSION
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/composer.json
@@ -6361,6 +6370,7 @@
 %%WWWDIR%%/src/libs/twig/twig/src/Node/CheckSecurityCallNode.php
 %%WWWDIR%%/src/libs/twig/twig/src/Node/CheckSecurityNode.php
 %%WWWDIR%%/src/libs/twig/twig/src/Node/CheckToStringNode.php
+%%WWWDIR%%/src/libs/twig/twig/src/Node/CoercesChildrenToStringInterface.php
 %%WWWDIR%%/src/libs/twig/twig/src/Node/DeprecatedNode.php
 %%WWWDIR%%/src/libs/twig/twig/src/Node/DoNode.php
 %%WWWDIR%%/src/libs/twig/twig/src/Node/EmbedNode.php
