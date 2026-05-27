@@ -66,6 +66,7 @@
     SUBDIR += bsmtrace3
     SUBDIR += bumblebee
     SUBDIR += bzrtp
+    SUBDIR += c-siphash
     SUBDIR += ca_root_nss
     SUBDIR += caesarcipher
     SUBDIR += caldera

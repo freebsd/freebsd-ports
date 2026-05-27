@@ -1,0 +1,5 @@
+include/c-siphash.h
+lib/libcsiphash-1.a
+lib/libcsiphash-1.so
+lib/libcsiphash-1.so.0
+libdata/pkgconfig/libcsiphash-1.pc
