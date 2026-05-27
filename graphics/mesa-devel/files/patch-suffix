@@ -31,15 +31,29 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  with_gallium_xa = get_option('gallium-xa') \
---- src/amd/vulkan/meson.build.orig	2024-03-20 22:46:44 UTC
+--- src/amd/vulkan/meson.build.orig	2026-05-27 20:30:38 UTC
 +++ src/amd/vulkan/meson.build
-@@ -207,7 +207,7 @@ libvulkan_radeon = shared_library(
+@@ -38,11 +38,11 @@ radv_drirc = custom_target(
+     '--import-path', join_paths(dir_source_root, 'src/util'),
+     '--drirc-src', '@OUTPUT0@',
+     '--drirc-hdr', '@OUTPUT1@',
+-    '--validate', join_paths(dir_source_root, 'src/util/00-radv-defaults.conf'),
++    '--validate', join_paths(dir_source_root, 'src/util/00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix'))),
+   ],
+   depend_files : files(
+     join_paths(dir_source_root, 'src/util/drirc_gen.py'),
+-    join_paths(dir_source_root, 'src/util/00-radv-defaults.conf'),
++    join_paths(dir_source_root, 'src/util/00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix'))),
+   ),
+ )
+ 
+@@ -252,7 +252,7 @@ libvulkan_radeon = shared_library(
  endif
  
  libvulkan_radeon = shared_library(
 -  'vulkan_radeon',
 +  'vulkan_radeon' + get_option('egl-lib-suffix'),
-   [libradv_files, radv_entrypoints, sha1_h, radix_sort_spv, bvh_spv, radv_annotate_layer],
+   [libradv_files, radv_entrypoints, radv_drirc, sha1_h, radix_sort_spv, bvh_spv, radv_annotate_layer],
    vs_module_defs : vulkan_api_def,
    include_directories : [
 --- src/egl/meson.build.orig	2020-12-03 22:36:27 UTC
@@ -101,9 +115,18 @@ Library selection is handled by libglvnd and/or libmap.conf.
    gl_lib_version = '0.0.0'
    files_libglx += files(
      'g_glxglvnddispatchfuncs.c',
---- src/intel/vulkan/meson.build.orig	2024-12-06 19:52:50 UTC
+--- src/intel/vulkan/meson.build.orig	2026-05-27 20:30:38 UTC
 +++ src/intel/vulkan/meson.build
-@@ -264,7 +264,7 @@ libvulkan_intel = shared_library(
+@@ -102,7 +102,7 @@ libanv_drirc_files = custom_target(
+              libanv_drirc_args,
+              '--drirc-src', '@OUTPUT0@',
+              '--drirc-hdr', '@OUTPUT1@',
+-             '--validate', join_paths(dir_source_root, 'src/util/00-mesa-defaults.conf')],
++             '--validate', join_paths(dir_source_root, 'src/util/00-mesa@-defaults.conf'.format(get_option('egl-lib-suffix')))],
+ )
+ 
+ libanv_drirc = static_library(
+@@ -302,7 +302,7 @@ libvulkan_intel = shared_library(
  )
  
  libvulkan_intel = shared_library(
