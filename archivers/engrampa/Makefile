@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		${LOCALBASE}/share/aclocal/ax_require_defined.m4:devel/autoconf-archive \
+		autoconf-archive>=0:devel/autoconf-archive \
 		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:archivers/gtar \
