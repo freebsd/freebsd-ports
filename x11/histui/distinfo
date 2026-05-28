@@ -1,5 +1,5 @@
-TIMESTAMP = 1774609273
-SHA256 (go/x11_histui/histui-v0.0.10/v0.0.10.mod) = 05a4599079bd29e9e0ef127477f6c83f885b8317028f6c2093ed11ccfeb7552c
-SIZE (go/x11_histui/histui-v0.0.10/v0.0.10.mod) = 3891
-SHA256 (go/x11_histui/histui-v0.0.10/v0.0.10.zip) = 6d2f15ba7779d4e9b369320450829d535b26aac57e67cf75d715a24afc71a853
-SIZE (go/x11_histui/histui-v0.0.10/v0.0.10.zip) = 3356907
+TIMESTAMP = 1779962177
+SHA256 (go/x11_histui/histui-v0.0.11/v0.0.11.mod) = cc7d8ef43efe265484507dbff38091998307939409ab65a4668fb5a7e3a359ae
+SIZE (go/x11_histui/histui-v0.0.11/v0.0.11.mod) = 3852
+SHA256 (go/x11_histui/histui-v0.0.11/v0.0.11.zip) = f50f9ace8a4c13c72a17e6041395e8f92b1a309a3758bbcea2c8a458d24ef10b
+SIZE (go/x11_histui/histui-v0.0.11/v0.0.11.zip) = 3432034
