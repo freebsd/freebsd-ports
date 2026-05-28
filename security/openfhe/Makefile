@@ -1,6 +1,6 @@
 PORTNAME=	openfhe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -55,5 +55,7 @@ OPENMP_BROKEN=		OpenMP isn't enabled on this architecture
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/openfhe/core/math/hal/intnat/ubintnat.h.orig
+
+# tests as of 1.5.1: End 78 cases 78 passed 0 failed
 
 .include <bsd.port.mk>

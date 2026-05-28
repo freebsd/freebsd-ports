@@ -335,6 +335,7 @@ include/openfhe/pke/schemerns/rns-advancedshe.h
 include/openfhe/pke/schemerns/rns-cryptoparameters.h
 include/openfhe/pke/schemerns/rns-fhe.h
 include/openfhe/pke/schemerns/rns-leveledshe.h
+include/openfhe/pke/schemerns/rns-modulus-limits.h
 include/openfhe/pke/schemerns/rns-multiparty.h
 include/openfhe/pke/schemerns/rns-parametergeneration.h
 include/openfhe/pke/schemerns/rns-pke.h
@@ -357,10 +358,10 @@ lib/OpenFHE/OpenFHETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OpenFHE/OpenFHETargets.cmake
 lib/libOPENFHEbinfhe.so
 lib/libOPENFHEbinfhe.so.1
-lib/libOPENFHEbinfhe.so.1.5.0
+lib/libOPENFHEbinfhe.so.1.5.1
 lib/libOPENFHEcore.so
 lib/libOPENFHEcore.so.1
-lib/libOPENFHEcore.so.1.5.0
+lib/libOPENFHEcore.so.1.5.1
 lib/libOPENFHEpke.so
 lib/libOPENFHEpke.so.1
-lib/libOPENFHEpke.so.1.5.0
+lib/libOPENFHEpke.so.1.5.1
