@@ -1,5 +1,5 @@
 PORTNAME=	roundcube
-DISTVERSION=	1.6.15
+DISTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -11,7 +11,7 @@ COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 WWW=		https://roundcube.net/
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE.md
 
 USES=		cpe php:web,flavors
 
@@ -19,9 +19,9 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}mail-${DISTVERSION}
 
-RCUBECOMP=	SQL config .htaccess index.php installer logs \
+RCUBECOMP=	SQL config index.php installer logs \
 		plugins program public_html skins temp vendor
-PORTDOCS=	CHANGELOG.md INSTALL README.md UPGRADING
+PORTDOCS=	CHANGELOG.md INSTALL.md README.md UPGRADING.md
 
 CPE_PRODUCT=	webmail
 CPE_VENDOR=	roundcube
@@ -55,6 +55,7 @@ SUB_FILES=	newsyslog.conf
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
+
 do-install:
 	-${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${STAGEDIR}${WWWDIR}
@@ -74,9 +75,10 @@ do-install-NSC-on:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/INSTALL.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/UPGRADING.md ${STAGEDIR}${DOCSDIR}/
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
