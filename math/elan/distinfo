@@ -1,4 +1,4 @@
-TIMESTAMP = 1776747779
+TIMESTAMP = 1779992472
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -541,5 +541,5 @@ SHA256 (rust/crates/zstd-safe-7.2.4.crate) = 8f49c4d5f0abb602a93fb8736af2a4f4dd9
 SIZE (rust/crates/zstd-safe-7.2.4.crate) = 29350
 SHA256 (rust/crates/zstd-sys-2.0.15+zstd.1.5.7.crate) = eb81183ddd97d0c74cedf1d50d85c8d08c1b8b68ee863bdee9e706eedba1a237
 SIZE (rust/crates/zstd-sys-2.0.15+zstd.1.5.7.crate) = 774847
-SHA256 (leanprover-elan-v4.2.1_GH0.tar.gz) = 637cf1d0746d05979ec9f97f577ac57f38f1606fc5c596d10579b9b367a3157d
-SIZE (leanprover-elan-v4.2.1_GH0.tar.gz) = 103249
+SHA256 (leanprover-elan-v4.2.2_GH0.tar.gz) = b1f151659be6f2a9c840049ec40bff126847de0fcceef7c42da04627e34b1712
+SIZE (leanprover-elan-v4.2.2_GH0.tar.gz) = 107107
