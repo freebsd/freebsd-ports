@@ -1187,6 +1187,7 @@
     SUBDIR += root-tail
     SUBDIR += rovclock
     SUBDIR += rpi-firmware
+    SUBDIR += rpi-usbboot
     SUBDIR += rset
     SUBDIR += rshim-user-space
     SUBDIR += rsnapshot
