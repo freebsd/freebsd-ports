@@ -1,3 +1,135 @@
+  <vuln vid="93576148-5a54-11f1-b886-4c526214c986">
+    <topic>Erlang/OTP -- TLS hostname verification bypass via Subject CommonName fallback and name constraints</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><ge>19.3</ge><lt>26.2.5.21,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.12</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.1</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-22cw-4ph4-6447 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-22cw-4ph4-6447">
+	  <p>Erlang/OTP's TLS hostname verification implements a legacy
+	  RFC 6125 fallback that checks the Subject CommonName when the
+	  Subject Alternative Name (SAN) extension is absent, rather
+	  than following RFC 9525 which requires validation to fail
+	  without SAN. Combined with weak handling of X.509 Name
+	  Constraints, this enables man-in-the-middle attacks when an
+	  attacker controls a DNS-constrained sub-CA and can intercept
+	  network traffic, allowing forgery of certificates for
+	  unauthorized domains.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42790</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-22cw-4ph4-6447</url>
+    </references>
+    <dates>
+      <discovery>2026-05-27</discovery>
+      <entry>2026-05-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9357a450-5a54-11f1-b886-4c526214c986">
+    <topic>Erlang/OTP -- public_key accepts non-CA certificate as intermediate issuer</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><ge>17.0</ge><lt>26.2.5.21,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.12</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.1</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-c99q-jmpx-v8qq reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-c99q-jmpx-v8qq">
+	  <p>Erlang/OTP's public_key application contains a
+	  path-validation flaw where non-CA certificates lacking
+	  keyUsage extensions can be accepted as intermediate issuers.
+	  An attacker with an end-entity certificate issued by a
+	  trusted CA can exploit this to forge arbitrary leaf
+	  certificates, allowing public_key:pkix_path_validation/3 to
+	  validate fraudulent certificate chains and potentially
+	  compromise systems relying on SSL/TLS validation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42789</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-c99q-jmpx-v8qq</url>
+    </references>
+    <dates>
+      <discovery>2026-05-27</discovery>
+      <entry>2026-05-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9357d6fb-5a54-11f1-b886-4c526214c986">
+    <topic>Erlang/OTP -- OCSP responder certificate accepted after expiry in public_key</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.12</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.1</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-cjxj-wj6x-3fff reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-cjxj-wj6x-3fff">
+	  <p>Erlang/OTP's public_key application fails to validate the
+	  validity period of OCSP responder certificates during
+	  response verification. An attacker possessing an expired
+	  OCSP responder's private key can forge responses that the
+	  system accepts as valid, potentially allowing acceptance of
+	  revoked TLS certificates in OCSP stapling scenarios or
+	  authentication bypass in applications using the
+	  public_key:pkix_ocsp_validate/5 API directly.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42791</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-cjxj-wj6x-3fff</url>
+    </references>
+    <dates>
+      <discovery>2026-05-27</discovery>
+      <entry>2026-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bcc3279-5901-11f1-b525-3c7c3fba4204">
     <topic>Grafana -- Grafana MSSQL Data Source Plugin: Restriction Bypass Leading to OOM DoS</topic>
     <affects>
