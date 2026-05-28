@@ -2,6 +2,7 @@ bin/xwaylandvideobridge
 etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
 share/applications/org.kde.xwaylandvideobridge.desktop
 share/icons/hicolor/scalable/apps/xwaylandvideobridge.svg
+share/locale/ar/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/ca/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/ca@valencia/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/cs/LC_MESSAGES/xwaylandvideobridge.mo
@@ -22,11 +23,13 @@ share/locale/nn/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/pl/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/pt/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/pt_BR/LC_MESSAGES/xwaylandvideobridge.mo
+share/locale/ro/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/sk/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/sl/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/sv/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/tr/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/uk/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/zh_CN/LC_MESSAGES/xwaylandvideobridge.mo
+share/locale/zh_TW/LC_MESSAGES/xwaylandvideobridge.mo
 share/metainfo/org.kde.xwaylandvideobridge.appdata.xml
 share/qlogging-categories6/xwaylandvideobridge.categories
