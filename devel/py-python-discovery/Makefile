@@ -1,5 +1,5 @@
 PORTNAME=	python-discovery
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.5.0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.15.4:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.9.2:devel/py-platformdirs@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
