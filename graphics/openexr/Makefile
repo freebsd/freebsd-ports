@@ -1,5 +1,5 @@
 PORTNAME?=	openexr
-DISTVERSION?=	3.4.11 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
+DISTVERSION?=	3.4.12 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
@@ -70,7 +70,7 @@ LDFLAGS+=	-pthread
 
 _MAJORVER=	3_4
 _VER=		33
-_REL=		${PORTVERSION}
+_REL=		${PORTVERSION:C/\.r.*//}
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
 		VER=${_VER} \
 		REL=${_REL}
