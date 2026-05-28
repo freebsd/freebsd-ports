@@ -9,7 +9,7 @@ WWW=		https://maolan.github.io
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libjack.so:audio/jack \
