@@ -16,6 +16,8 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
+PIE_UNSAFE=	yes
+
 post-extract:
 	${MV} ${WRKDIR}/gumbo-parser ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
