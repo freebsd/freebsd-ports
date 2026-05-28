@@ -4764,6 +4764,7 @@
     SUBDIR += py-cmd2
     SUBDIR += py-cmdtest
     SUBDIR += py-cmeel
+    SUBDIR += py-cmeel-eigen
     SUBDIR += py-cobble
     SUBDIR += py-codegen
     SUBDIR += py-cogapp

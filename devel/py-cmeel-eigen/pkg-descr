@@ -1,0 +1,5 @@
+cmeel-eigen is a distribution of the Eigen C++ template library for linear
+algebra (matrices, vectors, numerical solvers, and related algorithms),
+packaged for use within the cmeel ecosystem. It installs the Eigen3 headers
+under the cmeel prefix, making them discoverable by CMake projects that use
+the cmeel build system.
