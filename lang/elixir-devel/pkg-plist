@@ -730,7 +730,7 @@ lib/elixir/lib/mix/lib/mix/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/remixicon-ZWU5GQ4X.woff2
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-779FABF3.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-8C1F625A.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/sidebar_items-47BFC7F4.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/index.html
@@ -1023,8 +1023,8 @@ lib/elixir/lib/mix/lib/mix/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-ZWU5GQ4X.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-AD3A3C9B.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-621E3F2D.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-86CD62B0.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-695AD0B7.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.md
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
@@ -1157,7 +1157,7 @@ lib/elixir/lib/mix/lib/mix/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-ZWU5GQ4X.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-00E5A605.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-CAC16011.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-0C63173E.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/index.html
@@ -1187,7 +1187,7 @@ lib/elixir/lib/mix/lib/mix/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/remixicon-ZWU5GQ4X.woff2
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-5051E126.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-5D38394C.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-7BDEC9D4.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/index.html
@@ -1215,7 +1215,7 @@ lib/elixir/lib/mix/lib/mix/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/remixicon-ZWU5GQ4X.woff2
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/search_data-F419EC3F.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/search_data-4D5F8292.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items-C3902E7F.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/index.html
@@ -1371,7 +1371,7 @@ lib/elixir/lib/mix/lib/mix/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/remixicon-ZWU5GQ4X.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-437403B8.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-9243ED24.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-DAD121EB.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
