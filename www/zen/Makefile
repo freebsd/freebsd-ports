@@ -1,11 +1,12 @@
 PORTNAME=	zen
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.0.20260429
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
 #   https://github.com/DtxdF/port-assets-makejails/tree/main/zen
-DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets \
-		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.vendor${EXTRACT_SUFX}:assets
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-${GH_TAGNAME}.frontend${EXTRACT_SUFX}:assets \
+		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-${GH_TAGNAME}.vendor${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Lightweight self-hosted notes application
@@ -18,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/license.md
 USES=		go:1.25+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sheshbabu
+GH_TAGNAME=	c8e14d70de7de631cd9d4cda55daccf227283d92
 
 USE_RC_SUBR=	${PORTNAME}
 
