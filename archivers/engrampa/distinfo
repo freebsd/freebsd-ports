@@ -1,5 +1,3 @@
-TIMESTAMP = 1779757390
-SHA256 (mate-desktop-engrampa-v1.28.2_GH0.tar.gz) = 65a490c37ac2b92e491d247b62e96104a6b2c404c834c689256be7d68769bc0b
-SIZE (mate-desktop-engrampa-v1.28.2_GH0.tar.gz) = 3791622
-SHA256 (mate-desktop-mate-submodules-54fff1b_GH0.tar.gz) = 66cde56dacbd15b7134f51c0f80e6567ee7af05157711ce3ef49973718433b7b
-SIZE (mate-desktop-mate-submodules-54fff1b_GH0.tar.gz) = 33344
+TIMESTAMP = 1780006747
+SHA256 (engrampa-1.28.2.tar.xz) = 1e9977c23745bf8843a37f315171d9af97814a0971aeac3d774f017650ac09ef
+SIZE (engrampa-1.28.2.tar.xz) = 1729320
