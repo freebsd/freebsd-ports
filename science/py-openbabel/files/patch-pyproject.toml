@@ -1,0 +1,14 @@
+-- Remove the [project.scripts] entry that installs 'obabel' — that binary is
+-- already provided by science/openbabel (a required LIB_DEPENDS), so installing
+-- it here would conflict with that package.
+--- pyproject.toml.orig	2026-05-27 21:58:16 UTC
++++ pyproject.toml
+@@ -41,8 +41,6 @@ Documentation = "https://openbabel.org/docs/"
+ Repository = "https://github.com/openbabel/openbabel"
+ Documentation = "https://openbabel.org/docs/"
+ 
+-[project.scripts]
+-obabel = "openbabel.executable:obabel"
+ 
+ [tool.scikit-build]
+ minimum-version = "0.11"

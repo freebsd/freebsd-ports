@@ -1,0 +1,19 @@
+-- On FreeBSD, Python loads extension modules with RTLD_LOCAL, which prevents
+-- plugin .so files (in BABEL_LIBDIR) from resolving symbols from libopenbabel.so.8
+-- when they are dlopen'd by the plugin loader.  Pre-loading libopenbabel.so.8 with
+-- RTLD_GLOBAL fixes symbol resolution for all subsequently loaded plugins.
+--- scripts/python/openbabel/__init__.py.in.orig	2026-05-27 20:44:02 UTC
++++ scripts/python/openbabel/__init__.py.in
+@@ -13,6 +13,12 @@ if "${BUILD_BY_PIP}" == "ON":
+ if "${BUILD_BY_PIP}" == "ON":
+     os.environ["BABEL_LIBDIR"] = os.path.join(base_dir, "lib", "openbabel", __version__)
+     os.environ["BABEL_DATADIR"] = os.path.join(base_dir, "share", "openbabel", __version__)
++    # Load libopenbabel.so with RTLD_GLOBAL so that plugin .so files can resolve
++    # its symbols when they are dlopen'd by the plugin loader.
++    import ctypes as _ctypes
++    _libob = os.path.join(base_dir, "lib", "libopenbabel.so.8")
++    if os.path.exists(_libob):
++        _ctypes.CDLL(_libob, _ctypes.RTLD_GLOBAL)
+ 
+ from . import openbabel
+ 
