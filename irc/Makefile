@@ -29,6 +29,7 @@
     SUBDIR += irc
     SUBDIR += irc2dc
     SUBDIR += ircII
+    SUBDIR += irccat
     SUBDIR += ircd-hybrid
     SUBDIR += ircd-ratbox
     SUBDIR += ircproxy

@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: irccat
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# irccat_enable (bool):	Set to NO by default.
+#			Set it to YES to enable irccat.
+# irccat_user (str):	Set user to run irccat as.
+#			Default is "uucp".
+# irccat_group (str):	Set group to run irccat as.
+#			Default is "uucp".
+# irccat_config (str):	Path to the irccat configuration file.
+#			Default is "%%ETCDIR%%/irccat.yaml".
+# irccat_flags (str):	Extra flags passed to irccat.
+
+. /etc/rc.subr
+
+name=irccat
+rcvar=irccat_enable
+
+load_rc_config $name
+
+: ${irccat_enable:="NO"}
+: ${irccat_user:="uucp"}
+: ${irccat_group:="uucp"}
+: ${irccat_config:="%%ETCDIR%%/irccat.yaml"}
+
+piddir="/var/run/${name}"
+pidfile="${piddir}/${name}.pid"
+daemon_pidfile="${piddir}/${name}_daemon.pid"
+required_files="${irccat_config}"
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -P ${daemon_pidfile} -p ${pidfile} -t ${name} ${procname} -config ${irccat_config} ${irccat_flags}"
+
+start_precmd="${name}_prestart"
+
+irccat_prestart()
+{
+	if [ ! -d "${piddir}" ]; then
+		install -d -o "${irccat_user}" -g "${irccat_group}" -m 0755 \
+			"${piddir}" || return 1
+	else
+		chown "${irccat_user}:${irccat_group}" "${piddir}" || return 1
+	fi
+	return 0
+}
+
+run_rc_command "$1"
