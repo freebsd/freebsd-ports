@@ -5315,3 +5315,4 @@ www/rubygem-deckar01-task_list-gitlab|www/rubygem-deckar01-task_list|2026-05-24|
 biology/p5-TrimGalore|biology/TrimGalore|2026-05-24|After V2.0 Trim Galore was rewrite in rust
 multimedia/mediaelch@qt5||2026-05-27|Unflavorize, remove Qt5 flavor
 multimedia/mediaelch@qt6|multimedia/mediaelch|2026-05-27|Unflavorize
+www/py-dj52-django-treenode|www/py-django-treenode|2026-05-28|Renamed after all Django consumers were switched from Django 4.2 to Django 5.2 to have a consistent naming scheme
