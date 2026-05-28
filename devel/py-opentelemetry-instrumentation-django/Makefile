@@ -1,5 +1,6 @@
 PORTNAME=	opentelemetry-instrumentation-django
 PORTVERSION=	0.63b1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +33,6 @@ ASGI_DESC=		Asynchronous Server Gateway Interface support
 INSTRUMENTS_DESC=	Instrumentation library
 
 ASGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-instrumentation-asgi>=${PORTVERSION}<${PORTVERSION}_99:devel/py-opentelemetry-instrumentation-asgi@${PY_FLAVOR}
-INSTRUMENTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}django42>=2.0:www/py-django42@${PY_FLAVOR}
+INSTRUMENTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}django52>=2.0:www/py-django52@${PY_FLAVOR}
 
 .include <bsd.port.mk>

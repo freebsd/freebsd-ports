@@ -1,6 +1,6 @@
 PORTNAME=	django-multiselectfield
 PORTVERSION=	0.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://github.com/goinnn/django-multiselectfield
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=2.2:www/py-django42@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=2.2:www/py-django52@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

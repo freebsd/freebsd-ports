@@ -1,5 +1,6 @@
 PORTNAME=	django-filer
 DISTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=3.2:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-easy-thumbnails>0:graphics/py-django-easy-thumbnails@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-polymorphic<5:www/py-django-polymorphic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svglib>=1.5.1:converters/py-svglib@${PY_FLAVOR}

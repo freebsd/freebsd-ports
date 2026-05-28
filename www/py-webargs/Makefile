@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>2.15.2:devel/py-marshmallow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django42@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}falcon>=2.0:www/py-falcon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=0.12.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \

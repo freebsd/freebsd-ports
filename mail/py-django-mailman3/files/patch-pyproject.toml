@@ -1,0 +1,17 @@
+Add Django 5.2 support
+
+Obtained from:
+
+https://gitlab.com/mailman/django-mailman3/-/commit/465c1ffc77556bb8a80a678f53a40f16b9766cc6
+
+--- pyproject.toml.orig	2026-05-11 11:32:13 UTC
++++ pyproject.toml
+@@ -19,7 +19,7 @@ dependencies = [
+ dependencies = [
+     "django-allauth[socialaccount,openid]>=0.63",
+     "django-gravatar2 >= 1.0.6",
+-    "django>=4.2,<5.1",
++    "django>=4.2,<5.3",
+     "mailmanclient>=3.3.3",
+ ]
+ requires-python = ">=3.9"

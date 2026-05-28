@@ -1,5 +1,6 @@
 PORTNAME=	django-allauth
 PORTVERSION=	65.17.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${P
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.8.1:www/py-asgiref@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django42>=4.2.16:www/py-django42@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django52>=4.2.16:www/py-django52@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

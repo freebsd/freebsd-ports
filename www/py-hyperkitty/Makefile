@@ -1,6 +1,6 @@
 PORTNAME=	hyperkitty
 PORTVERSION=	1.3.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django_compressor>=1.3:www/py-django_compres
 		${PYTHON_PKGNAMEPREFIX}django-gravatar2>=1.0.6:www/py-django-gravatar2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-haystack>=2.8.0:www/py-django-haystack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-q2>=1.0.0:www/py-django-q2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django52>=4.2<5.3:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.13:mail/py-django-mailman3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.0.0:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flufl.lock>=4.0:devel/py-flufl.lock@${PY_FLAVOR} \

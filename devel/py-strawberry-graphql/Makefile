@@ -1,5 +1,6 @@
 PORTNAME=	strawberry-graphql
 DISTVERSION=	0.315.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,7 +57,7 @@ DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>0:devel/py-libcst@${PY_FLAVOR}
 # NB: www/py-channels (via CHANNELS) options depends on www/py-djangoXX, which
 # should be taken into account when creating a port for a specific Django version.
 DJANGO_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}django52>=3.2:www/py-django52@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pytest-django>0:devel/py-pytest-django@${PY_FLAVOR}
 FASTAPI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.0:www/py-fastapi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR}
