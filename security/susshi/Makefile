@@ -1,6 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.9
+DISTVERSION=	0.15.12
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,7 +41,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_builder-4.6.0 \
 		clap_derive-4.6.1 \
 		clap_lex-1.0.0 \
-		clap_mangen-0.2.33 \
+		clap_mangen-0.3.0 \
 		clipboard-win-5.4.1 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
@@ -170,7 +170,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_yaml_ng-0.10.0 \
 		sha2-0.10.9 \
 		shellexpand-3.1.2 \
