@@ -1,3 +1,31 @@
+  <vuln vid="7ae38fde-5ab6-11f1-a242-10ffe07f9334">
+    <topic>mail/mailpit -- memory-exhaustion DoS via unbounded JSON body</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.30.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.30.1">
+	  <p>Sibling-endpoint memory-exhaustion DoS via unbounded
+	  JSON body on /api/v1/messages, /api/v1/tags, and
+	  /api/v1/message/{id}/release</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48824</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-28pq-6qxg-wg5r</url>
+    </references>
+    <dates>
+      <discovery>2026-05-28</discovery>
+      <entry>2026-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca91c020-5820-11f1-b38d-9be2e6022e28">
     <topic>OpenEXR -- 3.4.12 fixes multiple vulnerabilities</topic>
     <affects>
