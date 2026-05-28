@@ -3211,7 +3211,7 @@ clean-wrkdir:
 .    if !target(do-extract)
 do-extract: ${EXTRACT_WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
-		if ! (cd ${EXTRACT_WRKDIR} && ${EXTRACT_ENV} ${EXTRACT_CMD} \
+		if ! (cd ${EXTRACT_WRKDIR} && ${SETENV} ${EXTRACT_ENV} ${EXTRACT_CMD} \
 		    ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
 			${ECHO_MSG} "===>  Failed to extract \"${_DISTDIR}/$$file\"."; \
