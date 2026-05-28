@@ -245,6 +245,7 @@
     SUBDIR += idea
     SUBDIR += identify
     SUBDIR += imds-filterd
+    SUBDIR += infisical-cli
     SUBDIR += intel-ipsec-mb
     SUBDIR += interactsh
     SUBDIR += ipfmeta
