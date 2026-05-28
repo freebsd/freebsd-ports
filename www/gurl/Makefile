@@ -1,7 +1,6 @@
 PORTNAME=	gurl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	17
+DISTVERSION=	1.1.0
 CATEGORIES=	www
 
 MAINTAINER=	dch@FreeBSD.org
@@ -13,6 +12,8 @@ LICENSE=	APACHE20
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	skunkwerks
+
+GO_BUILDFLAGS=	-ldflags="-X github.com/skunkwerks/gurl/version.Version=${DISTVERSIONPREFIX}${DISTVERSION}"
 
 PLIST_FILES=	bin/gurl
 
