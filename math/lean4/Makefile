@@ -1,6 +1,7 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.30.0
+PORTREVISION=	1
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,27 +16,23 @@ BROKEN_armv7=	compilation fails: ../../.build/stage1/lib/temp/Init/Coe.depend: N
 BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
 
 BUILD_DEPENDS=	bash:shells/bash \
-		cadical:math/cadical
+		cadical:math/cadical \
+		leantar:math/leangz
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	cadical:math/cadical
+RUN_DEPENDS=	cadical:math/cadical \
+		leantar:math/leangz
 
 USES=		cmake:noninja,testing compiler:c++14-lang gmake pkgconfig python:build # ninja fails + gmake scripts are included in the project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover
 
-# leantar: a helper binary used by lake; fetched as a pre-built static linux binary
-# (works on FreeBSD/amd64 and aarch64 as a statically-linked musl binary)
-LEANTAR_VERSION=	0.1.19
-_LEANTAR_ARCH_amd64=	x86_64-unknown-linux-musl
-_LEANTAR_ARCH_aarch64=	aarch64-unknown-linux-musl
-MASTER_SITES_leantar=	https://github.com/digama0/leangz/releases/download/v${LEANTAR_VERSION}/
-
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 
-CMAKE_OFF=	USE_MIMALLOC
+CMAKE_OFF=	USE_MIMALLOC \
+		INSTALL_LEANTAR
 
 #MAKE_ARGS+=	V=1 VERBOSE=1
 MAKE_ENV=	LD_LIBRARY_PATH=${BUILD_WRKSRC}/stage0/lib/lean
@@ -44,11 +41,7 @@ BINARY_ALIAS=	make=${GMAKE} python=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 
-.if defined(_LEANTAR_ARCH_${ARCH})
-LEANTAR_ARCH=	${_LEANTAR_ARCH_${ARCH}}
-DISTFILES+=	leantar-v${LEANTAR_VERSION}-${LEANTAR_ARCH}.tar.gz:leantar
-CMAKE_ARGS+=	-DLEANTAR=${WRKDIR}/leantar-v${LEANTAR_VERSION}-${LEANTAR_ARCH}/leantar
-.endif
+CMAKE_ARGS+=	-DLEANTAR=${LOCALBASE}/bin/leantar
 
 pre-everything::
 	@${ECHO_MSG} ""

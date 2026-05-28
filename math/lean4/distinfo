@@ -1,7 +1,3 @@
-TIMESTAMP = 1779810797
+TIMESTAMP = 1779943497
 SHA256 (leanprover-lean4-v4.30.0_GH0.tar.gz) = c11edd040d77be85865e41b4a37a77d14f824c07d8642434eb3561163f2afa5d
 SIZE (leanprover-lean4-v4.30.0_GH0.tar.gz) = 70389698
-SHA256 (leantar-v0.1.19-aarch64-unknown-linux-musl.tar.gz) = 4f41a671bca685074dabef2dec5605c2431d177b471010f96ec322b5366136fe
-SIZE (leantar-v0.1.19-aarch64-unknown-linux-musl.tar.gz) = 1105618
-SHA256 (leantar-v0.1.19-x86_64-unknown-linux-musl.tar.gz) = 81bb25e431791535597448f487e6a6321a1ba0c66e0846c07abc12adba139a39
-SIZE (leantar-v0.1.19-x86_64-unknown-linux-musl.tar.gz) = 1156919

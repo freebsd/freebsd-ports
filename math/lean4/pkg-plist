@@ -2309,7 +2309,6 @@ bin/leanc
 bin/leanchecker
 bin/leanir
 bin/leanmake
-bin/leantar
 include/lean/config.h
 include/lean/lean.h
 include/lean/lean_gmp.h
