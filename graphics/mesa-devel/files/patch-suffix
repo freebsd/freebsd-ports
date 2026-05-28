@@ -122,7 +122,7 @@ Library selection is handled by libglvnd and/or libmap.conf.
               '--drirc-src', '@OUTPUT0@',
               '--drirc-hdr', '@OUTPUT1@',
 -             '--validate', join_paths(dir_source_root, 'src/util/00-mesa-defaults.conf')],
-+             '--validate', join_paths(dir_source_root, 'src/util/00-mesa@-defaults.conf'.format(get_option('egl-lib-suffix')))],
++             '--validate', join_paths(dir_source_root, 'src/util/00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix')))],
  )
  
  libanv_drirc = static_library(
