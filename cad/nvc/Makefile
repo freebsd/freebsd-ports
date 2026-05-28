@@ -1,5 +1,5 @@
 PORTNAME=	nvc
-DISTVERSION=	1.20.1
+DISTVERSION=	1.21.0
 CATEGORIES=	cad
 MASTER_SITES=	https://www.nickg.me.uk/files/
 
