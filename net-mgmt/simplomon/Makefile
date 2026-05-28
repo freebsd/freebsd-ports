@@ -1,5 +1,6 @@
 PORTNAME=	simplomon
 DISTVERSION=	g20250224
+PORTREVISION=	1
 CATEGORIES=	net-mgmt dns net
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Simple network status and uptime monitoring tool
@@ -28,7 +29,6 @@ GH_TUPLE=	berthubert:sqlitewrite:a2c2ee:sqlitewrite \
 USE_RC_SUBR=	simplomon
 
 MESON_ARGS+=	--default-library=static \
-		--prefer-static \
 		--strip \
 		--wrap-mode=nodownload
 
