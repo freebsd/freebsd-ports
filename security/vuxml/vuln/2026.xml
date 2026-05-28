@@ -1,3 +1,38 @@
+  <vuln vid="ca91c020-5820-11f1-b38d-9be2e6022e28">
+    <topic>OpenEXR -- 3.4.12 fixes multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openexr</name>
+	<range><lt>3.4.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.12">
+	  <p>[The OpenEXR 3.4.12] release addresses the following security vulnerabilities:</p>
+	  <ul>
+	    <li>CVE-2026-45696 OpenEXR ht_undo_impl heap-buffer-overflow READ via codestream/channel width mismatch in HTJ2K decode</li>
+	    <li>CVE-2026-44663 Integer overflow in HTJ2K decoder ( ht_undo_impl ) leading to heap-buffer-overflow</li>
+	    <li>OSS-Fuzz 512895184 Null-dereference WRITE in Imf_4_0::TileProcess::run_decode</li>
+	    <li>OSS-fuzz 512314697 Direct-leak in internal_exr_add_part</li>
+	    <li>OSS-fuzz 508362159 Heap-buffer-overflow in DwaCompressor_uncompress</li>
+	    <li>OSS-fuzz 507413960 Heap-buffer-overflow in generic_unpack</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45696</cvename>
+      <cvename>CVE-2026-44663</cvename>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.12</url>
+    </references>
+    <dates>
+      <discovery>2026-05-25</discovery>
+      <entry>2026-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93576148-5a54-11f1-b886-4c526214c986">
     <topic>Erlang/OTP -- TLS hostname verification bypass via Subject CommonName fallback and name constraints</topic>
     <affects>
