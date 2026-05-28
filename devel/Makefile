@@ -6173,6 +6173,7 @@
     SUBDIR += py-super-collections
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
+    SUBDIR += py-swig
     SUBDIR += py-sybil
     SUBDIR += py-synr
     SUBDIR += py-syrupy

@@ -1,0 +1,6 @@
+This Python package provides a thin wrapper around the SWIG code generation
+tool, making it available as a Python console script and module. It delegates
+to the system-installed swig binary from devel/swig.
+
+SWIG is a software development tool that connects programs written in C and
+C++ with a variety of high-level programming languages.

@@ -1,0 +1,63 @@
+-- Switch build backend from scikit-build-core to setuptools to avoid
+-- the complex CMake build that tries to download SWIG, PCRE2, and Bison
+-- from the internet. Instead, we use the system swig from devel/swig.
+
+--- pyproject.toml.orig	2022-11-09 12:37:21 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["scikit-build-core"]
+-build-backend = "scikit_build_core.build"
++requires = ["setuptools>=61", "wheel"]
++build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "swig"
+@@ -21,42 +21,15 @@ dynamic = ["version"]
+ ]
+ dynamic = ["version"]
+ 
++[tool.setuptools]
++package-dir = {"" = "src"}
++packages = {find = {where = ["src"]}}
+ 
+-[tool.scikit-build]
+-wheel.py-api = "py3"
+-wheel.expand-macos-universal-tags = true
+-metadata.version.provider = "scikit_build_core.metadata.setuptools_scm"
+-sdist.include = ["src/swig/_version.py"]
+-wheel.install-dir = "swig/data"
++[tool.setuptools.dynamic]
++version = {attr = "swig._version.__version__"}
+ 
+-[tool.cibuildwheel]
+-archs = ["auto64", "auto32"]
+-build = "cp39-*"
+-test-command = [
+-  "swig -version",
+-  "swig -pcreversion",
+-  "swig -help",
+-]
+-environment.PIP_ONLY_BINARY = ":all:"
+-
+-[tool.cibuildwheel.linux]
+-manylinux-x86_64-image = "quay.io/pypa/manylinux2010_x86_64:2022-08-05-4535177"
+-manylinux-i686-image = "quay.io/pypa/manylinux2010_i686:2022-08-05-4535177"
+-manylinux-aarch64-image = "manylinux2014"
+-manylinux-ppc64le-image = "manylinux2014"
+-manylinux-s390x-image = "manylinux2014"
+-manylinux-riscv64-image = "ghcr.io/mayeut/manylinux_2_31:2025.07.25-1"
+-
+-
+-[project.scripts]
+-swig = "swig:swig"
+-"swig4.0" = "swig:swig"
+-
+ [project.urls]
+ Homepage = "https://swig.org/"
+ Download = "https://swig.org/download.html"
+ "Source Code" = "https://github.com/nightlark/swig-pypi"
+ "Bug Tracker" = "https://github.com/nightlark/swig-pypi/issues"
+-
+-[tool.setuptools_scm]
+-version_file = "src/swig/_version.py"
