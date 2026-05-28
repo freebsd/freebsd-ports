@@ -615,7 +615,6 @@
     SUBDIR += desed
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
-    SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuzzer
     SUBDIR += dia2code
