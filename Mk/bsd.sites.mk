@@ -45,12 +45,7 @@ MASTER_SITE_AFTERSTEP+= \
 
 .if !defined(IGNORE_MASTER_SITE_APACHE)
 MASTER_SITE_APACHE+= \
-	https://dlcdn.apache.org/%SUBDIR%/ \
-	https://ftp.wayne.edu/apache/%SUBDIR%/ \
-	https://mirror.its.dal.ca/apache/%SUBDIR%/ \
-	http://mirror.cogentco.com/pub/apache/%SUBDIR%/ \
-	http://mirror.navercorp.com/apache/%SUBDIR%/ \
-	http://miroir.univ-lorraine.fr/apache/%SUBDIR%/
+	https://dlcdn.apache.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_APACHE_COMMONS_BINARIES)
