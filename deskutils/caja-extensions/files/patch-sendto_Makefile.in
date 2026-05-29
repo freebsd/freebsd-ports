@@ -1,0 +1,11 @@
+--- sendto/Makefile.in.orig	2026-05-29 10:45:04 UTC
++++ sendto/Makefile.in
+@@ -466,7 +466,7 @@ NULL = 
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ NULL = 
+-SUBDIRS = . docs plugins
++SUBDIRS = . plugins
+ AM_CPPFLAGS = \
+ 	$(DISABLE_DEPRECATED_CPPFLAGS)		\
+ 	-DDATADIR=\"$(datadir)\"		\
