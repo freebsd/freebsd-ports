@@ -1,6 +1,5 @@
 PORTNAME=	dra
-DISTVERSION=	0.10.1
-PORTREVISION=	2
+DISTVERSION=	0.10.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +38,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		cfg_aliases-0.2.1 \
 		clap-4.5.53 \
 		clap_builder-4.5.53 \
-		clap_complete-4.5.61 \
+		clap_complete-4.5.64 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.0 \
@@ -169,7 +168,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
-		uuid-1.18.1 \
+		uuid-1.19.0 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
