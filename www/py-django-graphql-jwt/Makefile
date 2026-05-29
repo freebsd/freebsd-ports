@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	JSON Web Token for Django GraphQL
 WWW=		https://github.com/flavors/django-graphql-jwt
 
