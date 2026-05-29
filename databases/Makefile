@@ -909,6 +909,7 @@
     SUBDIR += redis84
     SUBDIR += redis_exporter
     SUBDIR += redisjson
+    SUBDIR += redisjson86
     SUBDIR += retcl
     SUBDIR += rocksdb
     SUBDIR += rocksdb-jni
