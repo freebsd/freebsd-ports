@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.15
+DISTVERSION=	2026.5.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -66,7 +66,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		async-spooled-tempfile-0.1.0 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
-		autocfg-1.5.0 \
+		autocfg-1.5.1 \
 		aws-config-1.8.14 \
 		aws-credential-types-1.2.13 \
 		aws-lc-fips-sys-0.13.14 \
@@ -119,8 +119,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		blowfish-0.9.1 \
 		bs58-0.5.1 \
 		bstr-1.12.1 \
-		built-0.8.0 \
-		bumpalo-3.20.2 \
+		built-0.8.1 \
+		bumpalo-3.20.3 \
 		bytecheck-0.8.2 \
 		bytecheck_derive-0.8.2 \
 		bytecount-0.6.9 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.15 \
 		cipher-0.4.4 \
-		cipher-0.5.1 \
+		cipher-0.5.2 \
 		clang-sys-1.8.1 \
 		clap-4.6.1 \
 		clap-sort-1.0.3 \
@@ -204,7 +204,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.7 \
-		crypto-common-0.2.1 \
+		crypto-common-0.2.2 \
 		ctor-1.0.6 \
 		ctr-0.9.2 \
 		ctutils-0.4.2 \
@@ -240,7 +240,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		dyn-clone-1.0.20 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.2.0 \
-		either-1.15.0 \
+		either-1.16.0 \
 		elsa-1.11.2 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
@@ -440,8 +440,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.24 \
-		jiff-static-0.2.24 \
+		jiff-0.2.25 \
+		jiff-static-0.2.25 \
 		jiff-tzdb-0.1.6 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
@@ -449,14 +449,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.98 \
+		js-sys-0.3.99 \
 		json-patch-4.2.0 \
 		jsonptr-0.7.1 \
 		junction-2.0.0 \
 		kdl-6.5.0 \
 		known-folders-1.4.2 \
 		kstring-2.0.2 \
-		landlock-0.4.4 \
+		landlock-0.4.5 \
 		lazy-regex-3.6.0 \
 		lazy-regex-proc_macros-3.6.0 \
 		lazy_static-1.5.0 \
@@ -467,14 +467,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
-		link-section-0.17.1 \
+		link-section-0.17.2 \
 		linktime-proc-macro-0.1.0 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.29 \
+		log-0.4.30 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		loom-0.5.6 \
@@ -484,7 +484,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		luajit-src-210.6.6+707c12b \
 		lzma-rs-0.3.0 \
 		lzma-rust-0.1.7 \
-		lzma-rust2-0.16.2 \
+		lzma-rust2-0.16.3 \
 		lzma-sys-0.1.20 \
 		matchers-0.2.0 \
 		maybe-async-0.2.11 \
@@ -521,7 +521,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		num-bigint-0.4.6 \
 		num-bigint-dig-0.8.6 \
 		num-complex-0.4.6 \
-		num-conv-0.2.1 \
+		num-conv-0.2.2 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
 		num-rational-0.4.2 \
@@ -548,7 +548,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		parse-zoneinfo-0.3.1 \
-		pastey-0.2.2 \
+		pastey-0.2.3 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
 		path_resolver-0.2.10 \
@@ -647,7 +647,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rend-0.5.3 \
 		reqwest-0.12.28 \
 		reqwest-0.13.3 \
-		resolvo-0.10.2 \
+		resolvo-0.10.3 \
 		retry-policies-0.5.2 \
 		ring-0.17.14 \
 		rkyv-0.8.16 \
@@ -708,7 +708,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
 		serde_ignored-0.1.14 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_json_canonicalizer-0.3.2 \
 		serde_plain-1.0.2 \
 		serde_regex-1.1.0 \
@@ -788,7 +788,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tabled_derive-0.11.0 \
 		tap-1.0.1 \
 		taplo-0.14.0 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		tempfile-3.27.0 \
 		tera-1.20.1 \
 		termcolor-1.4.1 \
@@ -826,7 +826,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tough-0.22.0 \
 		tower-0.5.3 \
-		tower-http-0.6.10 \
+		tower-http-0.6.11 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
@@ -882,18 +882,18 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.121 \
-		wasm-bindgen-futures-0.4.71 \
-		wasm-bindgen-macro-0.2.121 \
-		wasm-bindgen-macro-support-0.2.121 \
-		wasm-bindgen-shared-0.2.121 \
+		wasm-bindgen-0.2.122 \
+		wasm-bindgen-futures-0.4.72 \
+		wasm-bindgen-macro-0.2.122 \
+		wasm-bindgen-macro-support-0.2.122 \
+		wasm-bindgen-shared-0.2.122 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
 		wasm-streams-0.5.0 \
 		wasmparser-0.244.0 \
 		wasmtimer-0.4.3 \
-		web-sys-0.3.98 \
+		web-sys-0.3.99 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
 		webpki-roots-1.0.7 \
