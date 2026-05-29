@@ -1,13 +1,13 @@
 PORTNAME=	jsonpickle
-DISTVERSION=	4.1.1
-PORTREVISION=	1
+DISTVERSION=	4.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library for serializing any arbitrary object graph into JSON
-WWW=		https://jsonpickle.github.io/
+WWW=		https://jsonpickle.github.io/ \
+		https://github.com/jsonpickle/jsonpickle
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -43,5 +43,7 @@ USE_PYTHON=	pep517 autoplist pytest # 10 tests fail, see https://github.com/json
 CPE_VENDOR=	${PORTNAME}_project
 
 NO_ARCH=	yes
+
+# tests as of 4.1.2: 5 failed, 415 passed, 2 skipped, 651 warnings in 9.21s, see https://github.com/jsonpickle/jsonpickle/issues/601
 
 .include <bsd.port.mk>
