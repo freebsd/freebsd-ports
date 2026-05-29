@@ -31,3 +31,5 @@ SHA256 (ghc-9.6.7-boot-powerpc64le-freebsd.tar.xz) = 0090b3a8d2420af339b94d8df14
 SIZE (ghc-9.6.7-boot-powerpc64le-freebsd.tar.xz) = 142326376
 SHA256 (hadrian-9.6.7-boot-powerpc64le.tar.gz) = 46b51e5929b3cd1f7c0a30ad5d4fd689d4d10fe555cb6350df80e1dcd78e2e19
 SIZE (hadrian-9.6.7-boot-powerpc64le.tar.gz) = 1500047
+SHA256 (ghc-9.6.7-boot-powerpc64-freebsd.tar.xz) = d2f09f4fbd06169891664d7598e51d4615003c2879eec92d0f022e25e99c5cc0
+SIZE (ghc-9.6.7-boot-powerpc64-freebsd.tar.xz) = 136217048

@@ -2,9 +2,10 @@
 +++ rts/StgCRunAsm.S
 @@ -6,7 +6,7 @@
  #if !defined(USE_MINIINTERPRETER)
- 
- #if defined(powerpc64le_HOST_ARCH)
+
+-#if defined(powerpc64le_HOST_ARCH)
 -# if defined(linux_HOST_OS)
++#if defined(powerpc64le_HOST_ARCH) || defined(powerpc64_HOST_ARCH)
 +# if defined(linux_HOST_OS) || defined(freebsd_HOST_OS)
  /* 64-bit PowerPC ELF V2 ABI Revision 1.4
   *
