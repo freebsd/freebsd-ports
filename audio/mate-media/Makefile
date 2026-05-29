@@ -1,8 +1,9 @@
 PORTNAME=	mate-media
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.28.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio mate
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the MATE desktop
@@ -18,19 +19,18 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libstartup-notification-1.so:x11/startup-notification \
 		libunique-3.0.so:x11-toolkits/libunique3
 
-PORTSCOUT=	limitw:1,even
-
-USE_GITHUB=	yes
+USES=		gettext gmake gnome libtool localbase mate pkgconfig tar:xz \
+		xorg
+USE_GITHUB=	nodefault
 GH_ACCOUNT=	mate-desktop
-USES=		autoreconf gettext gmake gnome libtool localbase mate \
-		pkgconfig xorg
 USE_MATE=	desktop mixer panel
 USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
+
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>
