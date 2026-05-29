@@ -56,8 +56,8 @@ POST_PLIST=	fix-plist
 PORTDOCS=	PKG-INFO README.md
 
 # GDRIVE option removed due to expired security/py-oauth2client
-OPTIONS_DEFINE=		CALIBRE COMICS DOCS GMAIL GREADS KOBO LDAP METADATA \
-			OAUTH
+# GREADS option removed due to expired devel/py-goodreads and goodreads API EOL
+OPTIONS_DEFINE=		CALIBRE COMICS DOCS GMAIL KOBO LDAP METADATA OAUTH
 OPTIONS_DEFAULT=	IMAGICK7_X11 SQLA20
 
 OPTIONS_SINGLE=		IMAGICK SQLA
@@ -67,7 +67,6 @@ OPTIONS_SINGLE_SQLA=	SQLA14 SQLA20
 CALIBRE_DESC=		Calibre Desktop Conversion and Metadata Editing
 COMICS_DESC=		Comic Metadata Support
 GMAIL_DESC=		GMail
-GREADS_DESC=		Goodreads API
 IMAGICK6_NOX11_DESC=	ImageMagick6 without X11 support
 IMAGICK6_X11_DESC=	ImageMagick6 with X11 support
 IMAGICK7_NOX11_DESC=	ImageMagick7 without X11 support
@@ -86,8 +85,6 @@ COMICS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comicapi>=0:archivers/py-comicapi@${P
 			${PYTHON_PKGNAMEPREFIX}natsort>=0:devel/py-natsort@${PY_FLAVOR}
 GMAIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=0:www/py-google-api-python-client@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}google-auth-oauthlib>=0:security/py-google-auth-oauthlib@${PY_FLAVOR}
-GREADS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}goodreads>=0:devel/py-goodreads@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}levenshtein>=0:devel/py-levenshtein@${PY_FLAVOR}
 IMAGICK6_NOX11_USES=	magick:6,run,nox11
 IMAGICK6_X11_USES=	magick:6,run
 IMAGICK7_NOX11_USES=	magick:7,run,nox11
