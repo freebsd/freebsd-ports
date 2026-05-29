@@ -1,4 +1,4 @@
-TIMESTAMP = 1779281020
+TIMESTAMP = 1780041228
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
@@ -449,5 +449,5 @@ SHA256 (rust/crates/wit-parser-0.244.0.crate) = ecc8ac4bc1dc3381b7f59c34f00b67e1
 SIZE (rust/crates/wit-parser-0.244.0.crate) = 159371
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (tlipinski-rura-v1.1.1_GH0.tar.gz) = 56c909d07cf8baa4dcded2665d4cff881232a0d7ff0bf2685b05071cb5ac4ed1
-SIZE (tlipinski-rura-v1.1.1_GH0.tar.gz) = 51660
+SHA256 (tlipinski-rura-v1.3.0_GH0.tar.gz) = 6479a584b202f05f584ee2660e0717cd8d4ed1fb13b9fd1e9383daed61413d5e
+SIZE (tlipinski-rura-v1.3.0_GH0.tar.gz) = 54757
