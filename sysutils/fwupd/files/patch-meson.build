@@ -1,6 +1,6 @@
---- meson.build.orig	2026-03-12 10:08:33 UTC
+--- meson.build.orig	2026-05-29 14:57:39 UTC
 +++ meson.build
-@@ -471,7 +471,7 @@ if get_option('default_library') != 'static'
+@@ -475,7 +475,7 @@ if get_option('default_library') != 'static'
      platform_deps += cc.find_library('shlwapi')
    endif
    if host_machine.system() == 'freebsd'

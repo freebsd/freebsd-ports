@@ -1,5 +1,5 @@
 PORTNAME=	fwupd
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -8,7 +8,6 @@ COMMENT=	Update firmware automatically, safely, and reliably
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	blkid:filesystems/libblkid \
-		flashrom>0:sysutils/flashrom \
 		help2man:misc/help2man \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		noto-sans>0:x11-fonts/noto-sans \
@@ -25,14 +24,12 @@ LIB_DEPENDS=	libcbor.so:devel/libcbor \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgusb.so:devel/libgusb \
-		libjcat.so:textproc/libjcat \
 		libjson-glib-1.0.so:devel/json-glib \
 		libprotobuf-c.so:devel/protobuf-c \
 		libxmlb.so:textproc/libxmlb
 RUN_DEPENDS=	blkid:filesystems/libblkid \
 		bsdisks:sysutils/bsdisks \
 		dbus-daemon:devel/dbus \
-		flashrom>0:sysutils/flashrom \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		valgrind>0:devel/valgrind
 

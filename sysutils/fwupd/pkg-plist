@@ -2,6 +2,7 @@ bin/dbxtool
 bin/fwupdmgr
 bin/fwupdtool
 %%ETCDIR%%/fwupd.conf
+%%ETCDIR%%/remotes.d/lvfs-embargo.conf
 %%ETCDIR%%/remotes.d/lvfs-testing.conf
 %%ETCDIR%%/remotes.d/lvfs.conf
 %%ETCDIR%%/remotes.d/vendor-directory.conf
@@ -12,6 +13,10 @@ etc/pki/fwupd/LVFS-CA.pem
 include/fwupd-3/fwupd.h
 include/fwupd-3/libfwupd/fwupd-bios-setting-struct.h
 include/fwupd-3/libfwupd/fwupd-bios-setting.h
+include/fwupd-3/libfwupd/fwupd-build-glib-2-70.h
+include/fwupd-3/libfwupd/fwupd-build-glib-2-72.h
+include/fwupd-3/libfwupd/fwupd-build-glib-2-76.h
+include/fwupd-3/libfwupd/fwupd-build-glib-2-80.h
 include/fwupd-3/libfwupd/fwupd-build.h
 include/fwupd-3/libfwupd/fwupd-client-struct.h
 include/fwupd-3/libfwupd/fwupd-client-sync.h
@@ -47,11 +52,11 @@ include/fwupd-3/libfwupd/fwupd-request-struct.h
 include/fwupd-3/libfwupd/fwupd-request.h
 include/fwupd-3/libfwupd/fwupd-security-attr-struct.h
 include/fwupd-3/libfwupd/fwupd-security-attr.h
+include/fwupd-3/libfwupd/fwupd-variant.h
 include/fwupd-3/libfwupd/fwupd-version.h
-lib/fwupd-2.1.3/libfu_plugin_flashrom.so
-lib/fwupd-2.1.3/libfwupdengine.so
-lib/fwupd-2.1.3/libfwupdplugin.so
-lib/fwupd-2.1.3/libfwupdutil.so
+lib/fwupd-2.1.4/libfwupdengine.so
+lib/fwupd-2.1.4/libfwupdplugin.so
+lib/fwupd-2.1.4/libfwupdutil.so
 lib/girepository-1.0/Fwupd-2.0.typelib
 lib/libfwupd.so
 lib/libfwupd.so.3
@@ -120,7 +125,6 @@ libexec/fwupd/fwupd
 %%TEST%%libexec/installed-tests/fwupd/uefi-mok-self-test
 %%TEST%%libexec/installed-tests/fwupd/vli-self-test
 %%TEST%%libexec/installed-tests/fwupd/wacom-usb-self-test
-%%TEST%%libexec/installed-tests/libjcat/jcat-self-test
 share/dbus-1/interfaces/org.freedesktop.fwupd.xml
 share/dbus-1/system-services/org.freedesktop.fwupd.service
 share/dbus-1/system.d/org.freedesktop.fwupd.conf
@@ -415,6 +419,12 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupd/func.strerror.html
 %%PORTDOCS%%share/doc/libfwupd/func.update_state_from_string.html
 %%PORTDOCS%%share/doc/libfwupd/func.update_state_to_string.html
+%%PORTDOCS%%share/doc/libfwupd/func.variant_from_hash_kv.html
+%%PORTDOCS%%share/doc/libfwupd/func.variant_get_boolean.html
+%%PORTDOCS%%share/doc/libfwupd/func.variant_get_double.html
+%%PORTDOCS%%share/doc/libfwupd/func.variant_get_int32.html
+%%PORTDOCS%%share/doc/libfwupd/func.variant_get_string.html
+%%PORTDOCS%%share/doc/libfwupd/func.variant_get_strv.html
 %%PORTDOCS%%share/doc/libfwupd/func.variant_get_uint32.html
 %%PORTDOCS%%share/doc/libfwupd/func.variant_get_uint64.html
 %%PORTDOCS%%share/doc/libfwupd/func.version_format_from_string.html
@@ -957,8 +967,10 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.has_flag.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.load_signature.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.load_signature_bytes.html
+%%PORTDOCS%%share/doc/libfwupd/method.Remote.load_user_secrets.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.needs_refresh.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.remove_flag.html
+%%PORTDOCS%%share/doc/libfwupd/method.Remote.save_user_secrets.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.set_agreement.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.set_checksum_sig.html
 %%PORTDOCS%%share/doc/libfwupd/method.Remote.set_filename_cache.html
@@ -1574,6 +1586,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_BASEBOARD_PRODUCT.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_BIOS_MAJOR_RELEASE.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_BIOS_MINOR_RELEASE.html
+%%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_BIOS_RELEASE_DATE.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_BIOS_VENDOR.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_BIOS_VERSION.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.HWIDS_KEY_ENCLOSURE_KIND.html
@@ -1942,7 +1955,6 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.UsbDeviceClaimFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.UtfConvertFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ZipFlags.html
-%%PORTDOCS%%share/doc/libfwupdplugin/flashrom-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/focal-fp-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/focal-touch-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/fonts.css
@@ -1973,6 +1985,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.bytes_new_offset.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.bytes_pad.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.bytes_set_contents.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.bytes_set_contents_full.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.bytes_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.cab_compression_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.cbor_special_value_to_string.html
@@ -2148,6 +2161,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.memcpy_safe.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.memdup_safe.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.memmem_safe.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.memread_string_safe.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.memread_uint16.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.memread_uint16_safe.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.memread_uint24.html
@@ -2178,6 +2192,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_mkdir.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_mkdir_parent.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_rmtree.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.path_sanitize_basename.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_verify_safe.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.plugin_add_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.plugin_get_flags.html
@@ -4504,6 +4519,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/snapd-uefi-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/solarized-dark.css
 %%PORTDOCS%%share/doc/libfwupdplugin/solarized-light.css
+%%PORTDOCS%%share/doc/libfwupdplugin/starlabs-coreboot-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/steelseries-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.CborItem.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.ErrorConvertEntry.html
@@ -5005,6 +5021,11 @@ share/icons/hicolor/64x64/apps/org.freedesktop.fwupd.png
 share/icons/hicolor/scalable/apps/org.freedesktop.fwupd.svg
 %%TEST%%share/installed-tests/fwupd/UEFI
 %%TEST%%share/installed-tests/fwupd/build-certs.py
+%%TEST%%share/installed-tests/fwupd/colorhug/firmware.bin
+%%TEST%%share/installed-tests/fwupd/colorhug/firmware.bin.asc
+%%TEST%%share/installed-tests/fwupd/colorhug/firmware.bin.p7b
+%%TEST%%share/installed-tests/fwupd/colorhug/firmware.bin.p7c
+%%TEST%%share/installed-tests/fwupd/colorhug/firmware.bin.sha256.p7c
 %%TEST%%share/installed-tests/fwupd/device-tests/8bitdo-nes30pro.json
 %%TEST%%share/installed-tests/fwupd/device-tests/8bitdo-sf30pro.json
 %%TEST%%share/installed-tests/fwupd/device-tests/8bitdo-sfc30.json
@@ -5165,6 +5186,7 @@ share/icons/hicolor/scalable/apps/org.freedesktop.fwupd.svg
 %%TEST%%share/installed-tests/fwupd/fwupd-tests.xml
 %%TEST%%share/installed-tests/fwupd/fwupd.sh
 %%TEST%%share/installed-tests/fwupd/fwupd.test
+%%TEST%%share/installed-tests/fwupd/fwupd/remotes.d/lvfs.conf
 %%TEST%%share/installed-tests/fwupd/fwupdmgr-online.sh
 %%TEST%%share/installed-tests/fwupd/fwupdmgr-online.test
 %%TEST%%share/installed-tests/fwupd/fwupdmgr-p2p.sh
@@ -5178,6 +5200,8 @@ share/icons/hicolor/scalable/apps/org.freedesktop.fwupd.svg
 %%TEST%%share/installed-tests/fwupd/fwupdx64.efi.signed
 %%TEST%%share/installed-tests/fwupd/grub.cfg
 %%TEST%%share/installed-tests/fwupd/lsan-suppressions.txt
+%%TEST%%share/installed-tests/fwupd/pki/LVFS-CA.pem
+%%TEST%%share/installed-tests/fwupd/pki/test.pem
 %%TEST%%share/installed-tests/fwupd/test.quirk
 %%TEST%%share/installed-tests/fwupd/tests/America/New_York
 %%TEST%%share/installed-tests/fwupd/tests/HSIStatus-nx-disabled
@@ -5311,20 +5335,6 @@ share/icons/hicolor/scalable/apps/org.freedesktop.fwupd.svg
 %%TEST%%share/installed-tests/fwupd/tests/zip-compressed.builder.xml
 %%TEST%%share/installed-tests/fwupd/tests/zip.builder.xml
 %%TEST%%share/installed-tests/fwupd/uefi-update-info.builder.xml
-%%TEST%%share/installed-tests/libjcat/colorhug/firmware.bin
-%%TEST%%share/installed-tests/libjcat/colorhug/firmware.bin.asc
-%%TEST%%share/installed-tests/libjcat/colorhug/firmware.bin.ed25519
-%%TEST%%share/installed-tests/libjcat/colorhug/firmware.bin.p7b
-%%TEST%%share/installed-tests/libjcat/colorhug/firmware.bin.p7c
-%%TEST%%share/installed-tests/libjcat/colorhug/firmware.bin.sha256.p7c
-%%TEST%%share/installed-tests/libjcat/libjcat.test
-%%TEST%%share/installed-tests/libjcat/pki/GPG-KEY-Linux-Vendor-Firmware-Service
-%%TEST%%share/installed-tests/libjcat/pki/LVFS-CA.pem
-%%TEST%%share/installed-tests/libjcat/pki/test.ed25519
-%%TEST%%share/installed-tests/libjcat/pki/test.pem
-%%TEST%%share/installed-tests/libjcat/secret.ed25519
-%%TEST%%share/installed-tests/libjcat/test.btcheckpoint
-%%TEST%%share/installed-tests/libjcat/test.btverifier
 share/locale/af/LC_MESSAGES/fwupd.mo
 share/locale/ar/LC_MESSAGES/fwupd.mo
 share/locale/ast/LC_MESSAGES/fwupd.mo
@@ -5369,6 +5379,7 @@ share/locale/sl/LC_MESSAGES/fwupd.mo
 share/locale/sq/LC_MESSAGES/fwupd.mo
 share/locale/sr/LC_MESSAGES/fwupd.mo
 share/locale/sv/LC_MESSAGES/fwupd.mo
+share/locale/tr/LC_MESSAGES/fwupd.mo
 share/locale/uk/LC_MESSAGES/fwupd.mo
 share/locale/zh_CN/LC_MESSAGES/fwupd.mo
 share/locale/zh_TW/LC_MESSAGES/fwupd.mo

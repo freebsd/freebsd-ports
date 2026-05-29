@@ -15,7 +15,7 @@
 -	struct efi_get_table_ioc table = {.uuid = EFI_TABLE_ESRT};
 +	struct efi_get_table_ioc table = {0};
 +	efi_guid_t esrt_uuid = EFI_TABLE_ESRT;
- 	gint efi_fd;
+ 	g_autofd gint efi_fd = -1;
  	struct efi_esrt_entry_v1 *entries;
  	g_autofree struct efi_esrt_table *esrt = NULL;
 +
