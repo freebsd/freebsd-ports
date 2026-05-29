@@ -1,1 +1,12 @@
-Utilities for processing high-throughput sequencing experiments.
+hits is a suite of Python utilities designed for processing high-throughput
+sequencing experiments.
+
+Key features include:
+- Tools for read name standardization
+- Sequence alignment
+- Data visualization
+
+It is specifically tailored to handle experiments such as ribosome profiling
+(Ribo-seq) and RNA-seq, facilitating efficient data analysis and interpretation.
+The package streamlines the workflow from raw sequencing data to biological
+insights through robust processing pipelines.
