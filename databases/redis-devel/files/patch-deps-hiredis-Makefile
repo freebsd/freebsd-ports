@@ -1,8 +1,8 @@
---- deps/hiredis/Makefile.orig	2025-05-28 09:43:59 UTC
+--- deps/hiredis/Makefile.orig	2026-04-30 13:38:25 UTC
 +++ deps/hiredis/Makefile
 @@ -15,7 +15,7 @@ HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h |
  HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
-
+ 
  # Installation related variables and target
 -PREFIX?=/usr/local
 +PREFIX?=${PREFIX}
@@ -19,7 +19,7 @@
 -REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS) $(HIREDIS_CFLAGS)
 +REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS) $(HIREDIS_CFLAGS)
  REAL_LDFLAGS=$(LDFLAGS) $(HIREDIS_LDFLAGS)
-
+ 
  DYLIBSUFFIX=so
 @@ -127,7 +125,16 @@ endif
  else
