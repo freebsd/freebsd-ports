@@ -1,5 +1,5 @@
 PORTNAME=	libjcat
-DISTVERSION=	0.2.5
+DISTVERSION=	0.2.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/hughsie/${PORTNAME}/releases/download/${DISTVERSION}/
 
