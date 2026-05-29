@@ -909,6 +909,7 @@
     SUBDIR += redis84
     SUBDIR += redis86
     SUBDIR += redis_exporter
+    SUBDIR += redisbloom
     SUBDIR += redisjson
     SUBDIR += redisjson86
     SUBDIR += retcl
