@@ -1,10 +1,11 @@
 PORTNAME=	openresty
 PORTVERSION=	1.29.2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://openresty.org/download/
 
 MAINTAINER=	joneum@FreeBSD.org
-COMMENT=	OpenResty a powerful web app server by extending nginx
+COMMENT=	Powerful web application server extending nginx
 WWW=		https://openresty.org/
 
 LICENSE=	BSD2CLAUSE MIT
@@ -12,7 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 
 USES=		cpe gmake perl5 ssl
 
@@ -28,13 +29,15 @@ CONFIGURE_ARGS=	--group=${WWWGRP} \
 		--with-luajit=${LOCALBASE}
 
 OPTIONS_DEFINE=		ARRAYVAR AUTHREQ COOLKIT DRIZZLE ECHO ENCSESSION \
-			HEADERSMORE ICONV LUACJSON LUARDS LUAREDISPARS \
-			LUARESTYDNS LUARESTYMEM LUARESTYMYSQL LUARESTYREDIS \
-			LUARESTYSTRING LUARESTYUPLOAD MEMC MISC NDK POSTGRES \
-			RDSCSV RDSJSON REDIS REDIS2 SRCACHE XSS
-OPTIONS_DEFAULT=	ARRAYVAR AUTHREQ COOLKIT ECHO ENCSESSION HEADERMORE \
-			ICONV MEMC MISC NDK PORTGRES RDSCSV RDSJSON REDIS \
-			REDIS2 SRCACHE XSS
+			HEADERSMORE HTTPV2 HTTPV3 ICONV LUACJSON LUARDS \
+			LUAREDISPARS LUARESTYDNS LUARESTYMEM LUARESTYMYSQL \
+			LUARESTYREDIS LUARESTYSTRING LUARESTYUPLOAD MEMC \
+			MISC NDK POSTGRES RDSCSV RDSJSON REDIS REDIS2 \
+			SRCACHE XSS
+
+OPTIONS_DEFAULT=	ARRAYVAR AUTHREQ COOLKIT ECHO ENCSESSION HEADERSMORE \
+			HTTPV2 HTTPV3 ICONV MEMC MISC NDK RDSCSV RDSJSON \
+			REDIS REDIS2 SRCACHE XSS
 
 OPTIONS_SUB=	yes
 
@@ -45,6 +48,8 @@ DRIZZLE_DESC=		Module for talking to MySQL and Drizzle
 ECHO_DESC=		Brings echo/sleep/time and more shell-style
 ENCSESSION_DESC=	Encrypt and decrypt nginx variable values
 HEADERSMORE_DESC=	Set and clear input and output headers
+HTTPV2_DESC=		HTTP/2 protocol support
+HTTPV3_DESC=		HTTP/3 QUIC protocol support
 ICONV_DESC=		Iconv support
 LUACJSON_DESC=		Lua cjson library
 LUARDS_DESC=		Lua rds library
@@ -58,9 +63,9 @@ LUARESTYUPLOAD_DESC=	Lua resty upload library
 MEMC_DESC=		An extended memcached module
 MISC_DESC=		Various set_xxx directives added
 NDK_DESC=		Nginx Development Kit
-POSTGRES_DESC=		Module for talking to Postgeres
+POSTGRES_DESC=		Module for talking to PostgreSQL
 RDSCSV_DESC=		Output filter module to convert CSV
-RDSJSON_DESC=		An output filter that formats Resty
+RDSJSON_DESC=		Output filter that formats Resty DBD streams as JSON
 REDIS2_DESC=		Module for the Redis 2.0 protocol
 REDIS_DESC=		HTTP redis module
 SRCACHE_DESC=		Transparent subrequest-based caching layout
@@ -74,6 +79,9 @@ DRIZZLE_CONFIGURE_ON=		--with-http_drizzle_module
 ECHO_CONFIGURE_OFF=		--without-http_echo_module
 ENCSESSION_CONFIGURE_OFF=	--without-http_encrypted_session_module
 HEADERSMORE_CONFIGURE_OFF=	--without-http_headers_more_module
+HTTPV2_CONFIGURE_ON=		--with-http_v2_module
+HTTPV3_CONFIGURE_ON=		--with-http_v3_module
+ICONV_USES=			iconv
 ICONV_CONFIGURE_ON=		--with-http_iconv_module
 LUACJSON_CONFIGURE_OFF=		--without-lua_cjson
 LUARDS_CONFIGURE_OFF=		--without-lua_rds_parser
