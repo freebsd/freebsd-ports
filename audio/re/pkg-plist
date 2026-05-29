@@ -89,5 +89,5 @@ lib/cmake/re/re-config.cmake
 lib/libre.a
 lib/libre.so
 lib/libre.so.42
-lib/libre.so.42.8.0
+lib/libre.so.42.8.1
 libdata/pkgconfig/libre.pc
