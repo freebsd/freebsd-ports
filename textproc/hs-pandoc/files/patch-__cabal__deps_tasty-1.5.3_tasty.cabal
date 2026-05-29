@@ -1,0 +1,11 @@
+--- _cabal_deps/tasty-1.5.3/tasty.cabal.orig	2026-05-29 10:05:13 UTC
++++ _cabal_deps/tasty-1.5.3/tasty.cabal
+@@ -69,7 +69,7 @@ library
+     ansi-terminal        >= 0.9  && < 1.2
+ 
+   -- No reason to depend on unbounded-delays on 64-bit architecture
+-  if(!arch(x86_64) && !arch(aarch64) && !arch(ppc64) && !arch(s390x) && !arch(riscv64))
++  if(!arch(x86_64) && !arch(aarch64) && !arch(ppc64le) && !arch(ppc64) && !arch(s390x) && !arch(riscv64))
+     build-depends:
+       unbounded-delays >= 0.1 && < 0.2
+ 
