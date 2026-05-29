@@ -1,0 +1,14 @@
+--- tests/modules/Makefile.orig	2025-12-02 10:24:24 UTC
++++ tests/modules/Makefile
+@@ -34,6 +34,11 @@ endif
+ endif
+ endif
+
++ifeq ($(uname_S),FreeBSD)
++	LD = cc
++	CC = cc
++endif
++
+ # OS X 11.x doesn't have /usr/lib/libSystem.dylib and needs an explicit setting.
+ ifeq ($(uname_S),Darwin)
+ ifeq ("$(wildcard /usr/lib/libSystem.dylib)","")
