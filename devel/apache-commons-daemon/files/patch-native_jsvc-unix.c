@@ -1,32 +1,5 @@
 --- native/jsvc-unix.c.orig	2025-12-11 12:00:00 UTC
 +++ native/jsvc-unix.c
-@@ -608,11 +608,12 @@ retry:
-                 return 122;
-             }
-         }
--        lseek(fd, SEEK_SET, 0);
--        pidf = fdopen(fd, "r+");
--        fprintf(pidf, "%d\n", (int)getpid());
--        fflush(pidf);
--        fclose(pidf);
-+        char buf[32];
-+        int len = snprintf(buf, sizeof(buf), "%d\n", (int)getpid());
-+        lseek(fd, 0, SEEK_SET);
-+        ftruncate(fd, 0);
-+        write(fd, buf, len);
-+        fsync(fd);
-         if (lockf(fd, F_ULOCK, 0)) {
-             log_error("check_pid: Failed to unlock PID file [%s] with file descriptor [%d] after reading due to [%d]",
-                     args->pidf, fd, errno);
-@@ -673,7 +674,7 @@ static int get_pidf(arg_data *args, bool quiet)
-     int i;
-     char buff[80];
- 
--    fd = open(args->pidf, O_RDONLY, 0);
-+    fd = open(args->pidf, O_RDWR, 0);
-     if (!quiet)
-         log_debug("get_pidf: %d in %s", fd, args->pidf);
-     if (fd < 0) {
 @@ -755,18 +756,13 @@ static int wait_child(arg_data *args, int pid)
   */
  static int wait_child(arg_data *args, int pid)
@@ -48,15 +21,6 @@
      while (count > 0) {
          sleep(1);
          /* check if the controler is still running */
-@@ -778,7 +774,7 @@ static int wait_child(arg_data *args, int pid)
-         }
- 
-         /* check if the pid file process exists */
--        fd = open(args->pidf, O_RDONLY);
-+        fd = open(args->pidf, O_RDWR);
-         if (fd < 0 && havejvm) {
-             /* something has gone wrong the JVM has stopped */
-             return 1;
 @@ -812,7 +808,6 @@ static int wait_child(arg_data *args, int pid)
                  }
              }
