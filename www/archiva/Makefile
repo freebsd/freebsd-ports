@@ -9,6 +9,9 @@ MAINTAINER=	freebsd@dussan.org
 COMMENT=	Extensible repository management software
 WWW=		https://archiva.apache.org
 
+DEPRECATED=	Not updated for years and moved to Apache Attic in 2024-05: https://issues.apache.org/jira/browse/ATTIC-221
+EXPIRATION_DATE=	2026-08-31
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
