@@ -1,6 +1,5 @@
 PORTNAME=	nibabel
-DISTVERSION=	5.3.2
-PORTREVISION=	2
+DISTVERSION=	5.4.2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=17:devel/py-packaging@${PY_FLAVOR}
-py311_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.1.0:devel/py-importlib-resources@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6:devel/py-typing-extensions@${PY_FLAVOR}
+py311_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5.12:devel/py-importlib-resources@${PY_FLAVOR}
 py312_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-doctestplus>0:devel/py-pytest-doctestplus@${PY_FLAVOR} \
@@ -37,6 +35,6 @@ post-install:
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nibabel/cmdline/diff.py  \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nibabel/cmdline/ls.py 
 
-# tests as of 5.3.2: 2 failed, 5414 passed, 50 skipped, 37 xfailed, 5 xpassed, 500 warnings, 1 error in 318.54s (0:05:18)
+# tests as of 5.4.2: 5905 passed, 48 skipped, 37 xfailed, 7 xpassed, 27004 warnings in 64.30s (0:01:04)
 
 .include <bsd.port.mk>
