@@ -11,6 +11,9 @@ WWW=		https://github.com/sefakilic/goodreads/
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream is unmaintained, and the API is no longer available as of 2020-12-08
+EXPIRATION_DATE=	2026-06-29
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rauth>=0:devel/py-rauth@${PY_FLAVOR} \
