@@ -1,6 +1,6 @@
 PORTNAME=	sra-tools
 DISTVERSION=	3.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -21,7 +21,7 @@ RUN_DEPENDS=	hdf5>0:science/hdf5
 
 USES=		bison cmake java shebangfix
 USE_GITHUB=	yes
-USE_LDCONFIG=	${PREFIX}/lib64
+USE_LDCONFIG=	yes
 
 # Builds with earlier versions, but ngs-doc plist differs if jdk17 is present
 JAVA_VERSION=	17
@@ -57,7 +57,7 @@ pre-configure:
 # Just hack the version out for now.  Not sure we even need javadoc installed.
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/*.${DISTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.${DISTVERSION}
 
 post-stage-EXAMPLES-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
