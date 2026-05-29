@@ -1,6 +1,6 @@
 PORTNAME=	pinact
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.1
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.26+,modules
 
-GO_MODULE=	github.com/suzuki-shunsuke/${PORTNAME}/v3
+GO_MODULE=	github.com/suzuki-shunsuke/${PORTNAME}/v4
 GO_TARGET=	./cmd/pinact
 GO_LDFLAGS=	-w -X main.version=${DISTVERSION}
 
