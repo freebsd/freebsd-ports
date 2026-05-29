@@ -139,7 +139,7 @@ eval "_flags=\${${name}_flags}"
 jail_topology="/topology_dir/`basename ${_topology}`"
 jail_config="/config_dir/`basename ${_config}`"
 jail_socket="/socket/`basename ${_socket}`"
-jail_args="name=${name}_jail exec.jail_user=cardano exec.system_jail_user host=inherit"
+jail_args="name=${name}_jail exec.jail_user=cardano exec.system_jail_user host=inherit allow.mlock"
 jail_command=/bin/cardano-node
 
 jail_root="${_home}/jail"
