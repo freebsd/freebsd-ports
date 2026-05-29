@@ -9,9 +9,6 @@ WWW=		https://arcan-fe.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Fails to build, error: call to undeclared function 'arcan_timemillis'
-EXPIRATION_DATE=2026-05-31
-
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libarcan_shmif_ext.so:multimedia/arcan \
@@ -46,6 +43,11 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/100dpi/ \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/_FBDEV_H_/ { x; \
+		s/^/unsigned long long arcan_timemillis();/; G; }' \
+			${WRKSRC}/hw/kdrive/arcan/arcan.h
 
 do-install:
 # XXX Prevent Meson from installing unrelated files
