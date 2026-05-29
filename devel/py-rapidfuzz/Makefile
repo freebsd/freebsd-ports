@@ -1,6 +1,5 @@
 PORTNAME=	rapidfuzz
-DISTVERSION=	3.14.0
-PORTREVISION=	2
+DISTVERSION=	3.14.5
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,9 +23,10 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python
-USE_PYTHON=	pep517 autoplist pytest
+USES=		compiler:c++14-lang python pytest # PYTEST_ARGS is not respected by USE_PYTHON=pytest, so we set it here instead
+USE_PYTHON=	pep517 autoplist
 
+PYTEST_ARGS=	-p no:randomly -p no:ruff
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
@@ -37,6 +37,6 @@ post-install:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
-# tests as of 3.14.0: 388 passed in 90.91s (0:01:30)
+# tests as of 3.14.5: 388 passed, 2 warnings in 13.45s
 
 .include <bsd.port.mk>

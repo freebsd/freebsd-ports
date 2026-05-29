@@ -1,1 +1,13 @@
-Rapid fuzzy string matching in Python using various string metrics.
+RapidFuzz is a fast string matching library for Python and C++, which is
+designed to be a drop-in replacement for FuzzyWuzzy. It is written in C++ and
+provides significant performance improvements for string matching tasks.
+
+Key features:
+* Fast performance: significantly faster than FuzzyWuzzy and other similar
+  libraries.
+* MIT license: unlike FuzzyWuzzy, which is GPL licensed.
+* Compatibility: provides the same interface as FuzzyWuzzy.
+* Algorithmic improvements: fixes multiple bugs in FuzzyWuzzy's algorithms.
+* Wide range of string metrics: includes Levenshtein, Hamming, Jaro-Winkler,
+  and many more.
+* Specialized 'process' module for efficient processing of large datasets.
