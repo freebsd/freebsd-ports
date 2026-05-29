@@ -1,3 +1,45 @@
+  <vuln vid="20d59b47-5ba3-11f1-bf1b-b42e991fc52e">
+    <topic>www/gohugo -- CWE-79: XSS vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>gohugo</name>
+	<range><lt>0.162.0,1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://go.dev/issue/78913 reports:</p>
+	<blockquote cite="https://go.dev/issue/78913">
+	<p>
+	CVE-2026-27142 fixed a vulnerability in which URLs were
+	not correctly escaped inside of a &lt;meta&gt; tag's
+	&lt;content&gt; attribute. If the URL content were to
+	insert ASCII whitespaces around the '=' rune inside of the
+	&lt;content&gt; attribute, the escaper would fail to
+	similarly escape it, leading to XSS.
+	</p>
+	<p>
+	If a trusted template author were to write a &lt;script&gt;
+	tag containing an empty 'type' attribute or a 'type'
+	attribute with an ASCII whitespace, the execution of the
+	template would incorrectly escape any data passed into the
+	&lt;script&gt; block.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-39823</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-39823</url>
+      <cvename>CVE-2026-39826</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-39826</url>
+    </references>
+    <dates>
+      <discovery>2026-05-07</discovery>
+      <entry>2026-05-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2eb8a9ab-5b5d-11f1-8607-8447094a420f">
     <topic>MariaDB -- Multiple vulnerabilities</topic>
     <affects>
