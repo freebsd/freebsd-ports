@@ -1,11 +1,10 @@
 PORTNAME=	qownnotes
-DISTVERSION=	26.3.7
-PORTREVISION=	1
+DISTVERSION=	26.5.16
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/pbek/QOwnNotes/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Markdown note taking program with cloud integration
+COMMENT=	Markdown note-taking program with cloud integration
 WWW=		https://www.qownnotes.org/
 
 LICENSE=	GPLv2
