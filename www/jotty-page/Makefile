@@ -1,5 +1,5 @@
 PORTNAME=	jotty-page
-DISTVERSION=	1.23.0
+DISTVERSION=	1.24.0
 CATEGORIES=	www
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -45,6 +45,7 @@ _JOTTYPAGE_ACTION_KEY!=	printf '%s' '${PORTNAME}-${DISTVERSION}' | \
 			/usr/bin/openssl enc -base64 -A
 
 MAKE_ENV+=	JOTTY_FREEBSD=1 \
+		JOTTY_BODY_SIZE_LIMIT=100mb \
 		NEXT_TELEMETRY_DISABLED=1 \
 		HOME=${WRKDIR} \
 		YARN_CACHE_FOLDER=${WRKDIR}/.yarn-cache \
@@ -58,12 +59,6 @@ SUB_LIST+=	JOTTYPAGE_USER=${JOTTYPAGE_USER} \
 
 PLIST_SUB+=	JOTTYPAGE_USER=${JOTTYPAGE_USER} \
 		JOTTYPAGE_GROUP=${JOTTYPAGE_GROUP}
-
-# This port installs hundreds of Node.js modules.  The pkg-plist currently
-# covers only the explicitly managed entries (rc script, env sample,
-# data/cache directories, and the data symlink).  After the first successful
-# "make stage", run "make makeplist" to generate the complete file list and
-# replace pkg-plist in the port tree.
 
 # do-build ----------------------------------------------------------------
 # Steps mirror the Docker builder stage:
