@@ -347,7 +347,6 @@
     SUBDIR += knc
     SUBDIR += knxd
     SUBDIR += kontactinterface
-    SUBDIR += kpeoplevcard
     SUBDIR += kpimtextedit
     SUBDIR += krakend-ce
     SUBDIR += krdc
