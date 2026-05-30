@@ -1009,6 +1009,7 @@
     SUBDIR += py-pycairo
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
+    SUBDIR += py-pydeck
     SUBDIR += py-pydot
     SUBDIR += py-pydotplus
     SUBDIR += py-pyepsg
