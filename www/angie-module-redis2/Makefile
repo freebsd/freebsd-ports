@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-redis2
 MODULE_VERSION=	0.15
-MODULE_PORTREVISION=	4
+MODULE_PORTREVISION=	5
 GH_TUPLE=	openresty:redis2-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie redis2 dynamic module
