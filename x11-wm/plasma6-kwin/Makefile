@@ -1,6 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, Wayland Compositor
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libinput.so:x11/libinput \
 		liblcms2.so:graphics/lcms2 \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient@qt6 \
+		libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient \
 		libudev.so:devel/libudev-devd \
 		libwayland-client.so:graphics/wayland \
 		libxcb-icccm.so:x11/xcb-util-wm \

@@ -1,7 +1,7 @@
 PORTNAME=	como
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -54,7 +54,7 @@ DOCS_USE=		KDE=doctools:build
 DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF6DocTools
 
 QA11Y_DESC=		Accessibility (focus tracking) for Zoom effect
-QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient@qt6
+QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient
 QA11Y_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_QAccessibilityClient6
 
 post-patch:

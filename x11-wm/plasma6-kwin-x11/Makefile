@@ -1,5 +1,6 @@
 PORTNAME=	kwin-x11
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, X Window Manager
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libfreetype.so:print/freetype2 \
 		liblcms2.so:graphics/lcms2 \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient@qt6 \
+		libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient \
 		libudev.so:devel/libudev-devd \
 		libwayland-client.so:graphics/wayland \
 		libxcb-cursor.so:x11/xcb-util-cursor \
