@@ -37,11 +37,17 @@ CMAKE_OFF=	USE_MIMALLOC \
 #MAKE_ARGS+=	V=1 VERBOSE=1
 MAKE_ENV=	LD_LIBRARY_PATH=${BUILD_WRKSRC}/stage0/lib/lean
 
-BINARY_ALIAS=	make=${GMAKE} python=${PYTHON_CMD}
+BINARY_ALIAS=	make=${GMAKE} \
+		python=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 
 CMAKE_ARGS+=	-DLEANTAR=${LOCALBASE}/bin/leantar
+
+# fails to build on 14 w/out this:
+.if ${OSREL:R} <= 14
+BINARY_ALIAS+=	ar=llvm-ar
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
