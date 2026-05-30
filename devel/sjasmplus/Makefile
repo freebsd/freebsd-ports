@@ -1,8 +1,7 @@
 PORTNAME=	sjasmplus
-DISTVERSION=	1.20.3
+DISTVERSION=	1.23.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/z00m128/sjasmplus/releases/download/v${DISTVERSION}/
-EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	otis@FreeBSD.org
