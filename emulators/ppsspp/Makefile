@@ -34,8 +34,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	libretro:libretro-common:76a3d54feb0ee0ce9d59b90aa24694f3782063d3:libretrocommon/libretro/libretro-common \
 		Kingcom:armips:v0.11.0-195-ga8d71f0:armips/ext/armips \
-                hrydgard:glslang:2.3-3991-g50e0708e:glslang/ext/glslang \
-                KhronosGroup:SPIRV-Cross:4212eef67ed0ca048cb726a6767185504e7695e5:SPIRVCross/ext/SPIRV-Cross \
+		hrydgard:glslang:2.3-3991-g50e0708e:glslang/ext/glslang \
+		KhronosGroup:SPIRV-Cross:4212eef67ed0ca048cb726a6767185504e7695e5:SPIRVCross/ext/SPIRV-Cross \
 		unknownbrackets:ppsspp-debugger:9776332f720c854ef26f325a0cf9e32c02115a9c:ppssppdebugger/assets/debugger \
 		google:cpu_features:v0.4.1-211-gfd4ffc1:cpu_features/ext/cpu_features \
 		RetroAchievements:rcheevos:v12.3.0-8-gebfe8ca:rcheevos/ext/rcheevos \
