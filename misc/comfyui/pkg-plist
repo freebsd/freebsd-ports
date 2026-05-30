@@ -13,6 +13,10 @@ bin/comfyui
 %%DATADIR%%/alembic_db/versions/0001_assets.py
 %%DATADIR%%/alembic_db/versions/0002_merge_to_asset_references.py
 %%DATADIR%%/alembic_db/versions/0003_add_metadata_job_id.py
+%%DATADIR%%/comfy_api_nodes/apis/krea.py
+%%DATADIR%%/comfy_api_nodes/apis/openrouter.py
+%%DATADIR%%/comfy_api_nodes/nodes_krea.py
+%%DATADIR%%/comfy_api_nodes/nodes_openrouter.py
 %%DATADIR%%/api_server/__init__.py
 %%DATADIR%%/api_server/routes/__init__.py
 %%DATADIR%%/api_server/routes/internal/README.md
