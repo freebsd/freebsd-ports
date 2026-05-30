@@ -103,7 +103,7 @@ BERKELEYDB_CONFIGURE_ON=	--with-bdb-include=${BDB_INCLUDE_DIR} \
 				--with-bdb-lib=${LOCALBASE}/lib \
 				--with-bdb=${LOCALBASE}
 
-.if ${BRANCH:U} == 2.8 && ${OSVERSION:U} >= 1500000
+.if ${BRANCH:U} == 2.8
 BLOCKLISTD_CONFIGURE_WITH=	blocklist
 .else
 BLOCKLISTD_CONFIGURE_WITH=	blacklist
@@ -168,14 +168,7 @@ post-patch:
 .if ${PORT_OPTIONS:MBERKELEYDB}
 	@${REINPLACE_CMD} -e 's!-ldb!-ldb-${BDB_VER}!' ${WRKSRC}/configure
 .endif
-.if ${BRANCH:U} == 2.8
-.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
-	@${FIND} ${WRKSRC} -type f -exec ${SED} -i '' \
-		-e 's/BLOCKLIST/BLACKLIST/g' \
-		-e 's/Blocklist/Blacklist/g' \
-		-e 's/blocklist/blacklist/g' {} +
-.  endif
-.else
+.if ${BRANCH:U} == 2.7
 .  if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
 	@${FIND} ${WRKSRC} -type f -exec ${SED} -i '' \
 		-e 's/BLACKLIST/BLOCKLIST/g' \
