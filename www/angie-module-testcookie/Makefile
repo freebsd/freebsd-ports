@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-testcookie
-GH_TUPLE=	kyprizel:testcookie-nginx-module:64137c2f7e66e8866f56fdecaaf09ac10a034da9:module
+GH_TUPLE=	kyprizel:testcookie-nginx-module:7d263d4322b7de6b99b486e5e10ecaf0295890ad:module
 
 COMMENT=	Angie testcookie dynamic module
 WWW=		https://github.com/kyprizel/testcookie-nginx-module/
