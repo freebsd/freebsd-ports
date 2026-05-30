@@ -1,5 +1,5 @@
 PORTNAME?=	guile
-DISTVERSION=	3.0.10
+DISTVERSION=	3.0.11
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX?=	3
@@ -74,12 +74,6 @@ THREADS_LIB_DEPENDS_OFF=libgc.so:devel/boehm-gc
 THREADS_CONFIGURE_ON=	--with-bdw-gc=bdw-gc-threaded
 THREADS_CONFIGURE_OFF=	--with-bdw-gc=bdw-gc
 THREADS_CONFIGURE_WITH=	threads
-
-# Upstream bugfixes: these aren't optional because the release version
-# has a broken (spawn*) function, which breaks guile-config, which
-# breaks builds of some dependent ports.
-
-# EXTRA_PATCHES=	${PATCHDIR}/extra-patch-upstream-fixes.patch
 
 # The prebuilt bytecode files are reported not to work on powerpc.
 
