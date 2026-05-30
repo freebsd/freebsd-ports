@@ -10,7 +10,10 @@ WWW=		https://pixman.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe meson pkgconfig tar:xz
+USES=		cpe ${USES_LLVM_${ARCH}} meson pkgconfig tar:xz
+# Newer Clang does not permit MMX without SSE, see PR 295268
+USES_LLVM_i386=	llvm:max=19
+
 MESON_ARGS=	-Dloongson-mmi=disabled \
 		-Dgtk=disabled \
 		-Ddemos=disabled \
