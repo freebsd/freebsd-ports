@@ -12,4 +12,13 @@ Please refer to the module documentation for further details:
 https://github.com/nginx-modules/ngx_cache_purge
 EOM
 }
+{ type: upgrade
+  maximum_version: "3.0.0"
+  message: <<EOM
+
+3.0.0 is major release. Contains breaking internal changes.
+Review the updated README before upgrading:
+https://github.com/nginx-modules/ngx_cache_purge/blob/3.0.2/README.md
+EOM
+}
 ]
