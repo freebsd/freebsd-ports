@@ -23,11 +23,10 @@ USES=		compiler:c11 desktop-file-utils localbase meson pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yshui
-GH_PROJECT=	picom
 
 USE_XORG=	pixman x11 xcb xext
 
-MESON_ARGS=	-Dcompton=false -Dunittest=true
+MESON_ARGS=	-Dcompton=false -Dgit=false -Dunittest=true
 TEST_TARGET=	test
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-inspect \
