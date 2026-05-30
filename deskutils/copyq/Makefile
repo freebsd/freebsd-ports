@@ -1,8 +1,8 @@
 PORTNAME=	copyq
-DISTVERSION=	15.0.0
+DISTVERSION=	16.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
-DISTNAME=	Copyq-${DISTVERSION}
+DISTNAME=	CopyQ-${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Qt6 based clipboard manager
