@@ -152,7 +152,7 @@
     <affects>
       <package>
 	<name>erlang</name>
-	<range><ge>19.3</ge><lt>26.2.5.21,4</lt></range>
+	<range><ge>19.3,3</ge><lt>26.2.5.21,4</lt></range>
       </package>
       <package>
 	<name>erlang-runtime27</name>
@@ -198,7 +198,7 @@
     <affects>
       <package>
 	<name>erlang</name>
-	<range><ge>17.0</ge><lt>26.2.5.21,4</lt></range>
+	<range><ge>17.0,3</ge><lt>26.2.5.21,4</lt></range>
       </package>
       <package>
 	<name>erlang-runtime27</name>
@@ -1378,7 +1378,7 @@
   </vuln>
 
   <vuln vid="ecca89eb-54e6-11f1-bc4a-40b034429ecf">
-    <topic>ner/rsync -- multiple vulnerabilities</topic>
+    <topic>net/rsync -- multiple vulnerabilities</topic>
     <affects>
       <package>
     <name>rsync</name>
@@ -1391,18 +1391,18 @@
 	<blockquote cite="https://download.samba.org/pub/rsync/NEWS#3.4.3">
 	  <p>Six CVEs are fixed in this release. All six are assigned by VulnCheck as CNA.
 	    Affected versions are 3.4.2 and earlier in every case.</p>
-      <p>In addition to the six CVE fixes, this release adds defence-in-depth
-		hardening on several adjacent paths: bounded wire-supplied counts and
-		lengths in flist/io/acls/xattrs, a guard against length underflow in
-		cumulative snprintf() callers, a parent block-index bounds check on the
-		receiver, a NULL check in read_delay_line(), a lower ceiling on
-		MAX_WIRE_DEL_STAT to avoid signed-int overflow in the read_del_stats()
-		accumulator, rejection of hyphen-prefixed remote-shell hostnames
-		(defence-in-depth against argv-injection in tooling that forwards untrusted
-		input into the hostspec position; reported by Aisle Research via Michal
-		Ruprich), and a NULL-check on localtime_r() in timestring() to keep a
-		malicious server from crashing the client by advertising a file with an
-		out-of-range modtime.</p>
+	  <p>In addition to the six CVE fixes, this release adds defence-in-depth
+	    hardening on several adjacent paths: bounded wire-supplied counts and
+	    lengths in flist/io/acls/xattrs, a guard against length underflow in
+	    cumulative snprintf() callers, a parent block-index bounds check on the
+	    receiver, a NULL check in read_delay_line(), a lower ceiling on
+	    MAX_WIRE_DEL_STAT to avoid signed-int overflow in the read_del_stats()
+	    accumulator, rejection of hyphen-prefixed remote-shell hostnames
+	    (defence-in-depth against argv-injection in tooling that forwards untrusted
+	    input into the hostspec position; reported by Aisle Research via Michal
+	    Ruprich), and a NULL-check on localtime_r() in timestring() to keep a
+	    malicious server from crashing the client by advertising a file with an
+	    out-of-range modtime.</p>
 	</blockquote>
 	</body>
     </description>
@@ -2491,7 +2491,7 @@
     <affects>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.2</lt></range>
+	<range><lt>140.10.2,2</lt></range>
     </package>
     </affects>
     <description>
@@ -2552,7 +2552,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.2</lt></range>
+	<range><lt>140.10.2,2</lt></range>
     </package>
     </affects>
     <description>
@@ -2587,7 +2587,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.1</lt></range>
+	<range><lt>140.10.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -2624,7 +2624,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.2</lt></range>
+	<range><lt>140.10.2,2</lt></range>
     </package>
     </affects>
     <description>
@@ -3094,7 +3094,7 @@ filepath can use ../ to reach a parent directory.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.1</lt></range>
+	<range><lt>140.10.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -3446,8 +3446,8 @@ affected.</p>
 	<range><lt>150.0.0,2</lt></range>
     </package>
     <package>
-	<name>firefox</name>
-	<range><lt>140.10.1</lt></range>
+	<name>firefox-esr</name>
+	<range><lt>140.10.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -3484,7 +3484,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     </affects>
     <description>
@@ -3519,7 +3519,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.1</lt></range>
+	<range><lt>140.10.1,2</lt></range>
     </package>
     </affects>
     <description>
@@ -3583,7 +3583,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.1</lt></range>
+	<range><lt>140.10.1,2</lt></range>
     </package>
     </affects>
     <description>
@@ -3616,7 +3616,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -3655,7 +3655,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -3914,7 +3914,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4044,7 +4044,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4081,7 +4081,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4115,7 +4115,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4149,7 +4149,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4183,7 +4183,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4217,7 +4217,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4251,7 +4251,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4288,7 +4288,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4322,7 +4322,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4359,7 +4359,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4393,7 +4393,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4427,7 +4427,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4491,7 +4491,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4555,7 +4555,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4619,7 +4619,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4653,7 +4653,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4687,7 +4687,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4721,7 +4721,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4757,7 +4757,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4791,7 +4791,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4828,7 +4828,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4865,7 +4865,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -4899,7 +4899,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.10.0</lt></range>
+	<range><lt>140.10.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -5177,7 +5177,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.8.0</lt></range>
+	<range><lt>140.8.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -5424,7 +5424,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.9.1</lt></range>
+	<range><lt>140.9.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -5620,10 +5620,10 @@ affected.</p>
   <vuln vid="099423d1-3815-11f1-a284-589cfc10a551">
     <topic>xwayland -- Multiple vulnerabilities</topic>
     <affects>
-<package>
-<name>xwayland</name>
-<range><lt>24.1.10</lt></range>
-</package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>24.1.10,1</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -5652,10 +5652,10 @@ affected.</p>
   <vuln vid="7b6463c6-3813-11f1-a284-589cfc10a551">
     <topic>xorg-server -- Multiple vulnerabilities</topic>
     <affects>
-<package>
-<name>xorg-server</name>
-<range><lt>21.1.22</lt></range>
-</package>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>21.1.22,2</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -6203,7 +6203,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.9.1</lt></range>
+	<range><lt>140.9.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -6276,7 +6276,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.9.1</lt></range>
+	<range><lt>140.9.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -6895,7 +6895,7 @@ affected.</p>
       </package>
       <package>
 	<name>firefox-esr</name>
-	<range><lt>140.9.0</lt></range>
+	<range><lt>140.9.0,2</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -7624,7 +7624,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.8.0</lt></range>
+	<range><lt>140.8.0,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -7926,7 +7926,7 @@ affected.</p>
       </package>
       <package>
       <name>firefox-esr</name>
-      <range><lt>140.8.0</lt></range>
+      <range><lt>140.8.0,2</lt></range>
       </package>
       <package>
       <name>thunderbird</name>
@@ -8268,7 +8268,7 @@ affected.</p>
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.7.1</lt></range>
+	<range><lt>140.7.1,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -9020,10 +9020,10 @@ affected.</p>
   <vuln vid="232e16cc-fd83-11f0-981a-98b78501ef2a">
     <topic>xrdp -- remote code execution</topic>
     <affects>
-<package>
-<name>xrdp</name>
-<range><lt>0.10.5</lt></range>
-</package>
+      <package>
+	<name>xrdp</name>
+	<range><lt>0.10.5,1</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -9195,10 +9195,6 @@ affected.</p>
       <package>
 	<name>openssl36</name>
 	<range><lt>3.6.1</lt></range>
-      </package>
-      <package>
-	<name>openssl</name>
-	<range><lt>3.0.19</lt></range>
       </package>
     </affects>
     <description>
@@ -9509,7 +9505,7 @@ issue has been fixed in version 0.46.2.</p>
       </package>
       <package>
 	<name>firefox-esr</name>
-	<range><lt>140.7.0</lt></range>
+	<range><lt>140.7.0,2</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -9555,7 +9551,7 @@ issue has been fixed in version 0.46.2.</p>
       </package>
       <package>
 	<name>firefox-esr</name>
-	<range><lt>140.7</lt></range>
+	<range><lt>140.7.0,2</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -9907,10 +9903,10 @@ has been patched in version 20.36.1.</p>
   <vuln vid="e2cd20fd-eb10-11f0-a1c0-0050569f0b83">
     <topic>net-mgmt/net-snmp -- Remote Code Execution (snmptrapd)</topic>
     <affects>
-<package>
-<name>net-snmp</name>
-<range><lt>5.9.5</lt></range>
-</package>
+      <package>
+	<name>net-snmp</name>
+	<range><lt>5.9.5,1</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
