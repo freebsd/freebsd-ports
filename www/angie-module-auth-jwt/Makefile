@@ -1,7 +1,9 @@
 PORTNAME=	angie-module-auth-jwt
-MODULE_VERSION=	0.11.0
+MODULE_VERSION=	0.13.1
 MODULE_PORTREVISION=	0
 GH_TUPLE=	kjdev:nginx-auth-jwt:${MODULE_VERSION}:module
+GH_TUPLE+=	kjdev:nxe-json:0.5.0:nxe_json/../nginx-auth-jwt-${MODULE_VERSION}/nxe-json
+GH_TUPLE+=	kjdev:nxe-jwx:0.1.0:nxe_jwx/../nginx-auth-jwt-${MODULE_VERSION}/nxe-jwx
 
 COMMENT=	Angie auth-jwt dynamic module
 WWW=		https://github.com/kjdev/nginx-auth-jwt/
