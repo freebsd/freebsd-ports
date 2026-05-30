@@ -1,7 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.17
-PORTREVISION=	6
+DISTVERSION=	5.0.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -19,9 +18,9 @@ USES=		cpe go:modules gmake
 CPE_VENDOR=	pydio
 USE_RC_SUBR=	${PORTNAME}
 
-GO_MODULE=	github.com/pydio/cells/v4
-GO_BUILDFLAGS=	-ldflags "-X github.com/pydio/cells/v4/common.version=${DISTVERSION}\
-		-X github.com/pydio/cells/v4/common.BuildStamp=1970-01-01T00:00:00"
+GO_MODULE=	github.com/pydio/cells/v5
+GO_BUILDFLAGS=	-ldflags "-X github.com/pydio/cells/v5/common.version=${DISTVERSION}\
+		-X github.com/pydio/cells/v5/common.BuildStamp=1970-01-01T00:00:00"
 
 USERS=		pydio
 GROUPS=		pydio
