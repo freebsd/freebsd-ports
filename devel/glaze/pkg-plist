@@ -35,6 +35,12 @@ include/glaze/beve/size.hpp
 include/glaze/beve/skip.hpp
 include/glaze/beve/wrappers.hpp
 include/glaze/beve/write.hpp
+include/glaze/bson.hpp
+include/glaze/bson/bson_to_json.hpp
+include/glaze/bson/header.hpp
+include/glaze/bson/read.hpp
+include/glaze/bson/skip.hpp
+include/glaze/bson/write.hpp
 include/glaze/cbor.hpp
 include/glaze/cbor/cbor_to_json.hpp
 include/glaze/cbor/header.hpp
@@ -76,6 +82,7 @@ include/glaze/core/seek.hpp
 include/glaze/core/std_error_code.hpp
 include/glaze/core/streaming_state.hpp
 include/glaze/core/to.hpp
+include/glaze/core/traits.hpp
 include/glaze/core/wrapper_traits.hpp
 include/glaze/core/wrappers.hpp
 include/glaze/core/write.hpp
@@ -87,6 +94,7 @@ include/glaze/csv/write.hpp
 include/glaze/eetf.hpp
 include/glaze/eetf/cmp.hpp
 include/glaze/eetf/defs.hpp
+include/glaze/eetf/eetf_to_json.hpp
 include/glaze/eetf/ei.hpp
 include/glaze/eetf/opts.hpp
 include/glaze/eetf/read.hpp
@@ -99,6 +107,7 @@ include/glaze/exceptions/core_exceptions.hpp
 include/glaze/exceptions/csv_exceptions.hpp
 include/glaze/exceptions/json_exceptions.hpp
 include/glaze/exceptions/json_schema_exceptions.hpp
+include/glaze/exceptions/jsonb_exceptions.hpp
 include/glaze/exceptions/msgpack_exceptions.hpp
 include/glaze/ext/README.md
 include/glaze/ext/cli_menu.hpp
@@ -112,14 +121,17 @@ include/glaze/file/raw_or_file.hpp
 include/glaze/file/read_directory.hpp
 include/glaze/file/write_directory.hpp
 include/glaze/format/format_to.hpp
+include/glaze/forward.hpp
 include/glaze/glaze.hpp
 include/glaze/glaze_exceptions.hpp
 include/glaze/hardware/volatile_array.hpp
 include/glaze/hash/sweethash.hpp
 include/glaze/json.hpp
 include/glaze/json/escape_unicode.hpp
+include/glaze/json/flatten_map.hpp
 include/glaze/json/float_format.hpp
 include/glaze/json/generic.hpp
+include/glaze/json/generic_fwd.hpp
 include/glaze/json/invoke.hpp
 include/glaze/json/jmespath.hpp
 include/glaze/json/json_concepts.hpp
@@ -140,6 +152,13 @@ include/glaze/json/skip.hpp
 include/glaze/json/study.hpp
 include/glaze/json/wrappers.hpp
 include/glaze/json/write.hpp
+include/glaze/jsonb.hpp
+include/glaze/jsonb/header.hpp
+include/glaze/jsonb/jsonb_to_json.hpp
+include/glaze/jsonb/read.hpp
+include/glaze/jsonb/skip.hpp
+include/glaze/jsonb/text_decode.hpp
+include/glaze/jsonb/write.hpp
 include/glaze/msgpack.hpp
 include/glaze/msgpack/common.hpp
 include/glaze/msgpack/read.hpp
@@ -197,8 +216,6 @@ include/glaze/util/bit_array.hpp
 include/glaze/util/buffer_pool.hpp
 include/glaze/util/compare.hpp
 include/glaze/util/convert.hpp
-include/glaze/util/dragonbox.hpp
-include/glaze/util/dtoa.hpp
 include/glaze/util/dump.hpp
 include/glaze/util/env.hpp
 include/glaze/util/expected.hpp
@@ -212,6 +229,7 @@ include/glaze/util/itoa_40kb.hpp
 include/glaze/util/key_transformers.hpp
 include/glaze/util/memory_pool.hpp
 include/glaze/util/murmur.hpp
+include/glaze/util/nullable_traits.hpp
 include/glaze/util/parse.hpp
 include/glaze/util/primes_64.hpp
 include/glaze/util/progress_bar.hpp
@@ -219,9 +237,10 @@ include/glaze/util/simple_float.hpp
 include/glaze/util/string_literal.hpp
 include/glaze/util/tuple.hpp
 include/glaze/util/type_traits.hpp
-include/glaze/util/utility.hpp
+include/glaze/util/uuid.hpp
 include/glaze/util/validate.hpp
 include/glaze/util/variant.hpp
+include/glaze/util/zmij.hpp
 include/glaze/version.hpp
 include/glaze/yaml.hpp
 include/glaze/yaml/common.hpp
