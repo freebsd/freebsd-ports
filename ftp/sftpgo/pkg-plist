@@ -59,8 +59,6 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/fonts/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2
 %%DATADIR%%/static/vendor/fonts/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2
 %%DATADIR%%/static/vendor/fonts/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2
-%%DATADIR%%/static/vendor/glightbox/glightbox.min.css
-%%DATADIR%%/static/vendor/glightbox/glightbox.min.js
 %%DATADIR%%/static/vendor/humanize-duration/humanize-duration.min.js
 %%DATADIR%%/static/vendor/i18next/i18next.min.js
 %%DATADIR%%/static/vendor/i18next/i18nextBrowserLanguageDetector.min.js
@@ -68,6 +66,8 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/i18next/i18nextHttpBackend.min.js
 %%DATADIR%%/static/vendor/i18next/i18nextLocalStorageBackend.min.js
 %%DATADIR%%/static/vendor/i18next/jquery-i18next.min.js
+%%DATADIR%%/static/vendor/imageviewer/imageviewer.css
+%%DATADIR%%/static/vendor/imageviewer/imageviewer.js
 %%DATADIR%%/static/vendor/papaparse/papaparse.min.js
 %%DATADIR%%/static/vendor/pdfobject/pdfobject.min.js
 %%DATADIR%%/templates/common/base.html
