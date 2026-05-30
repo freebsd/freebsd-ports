@@ -5319,3 +5319,5 @@ www/py-dj52-django-treenode|www/py-django-treenode|2026-05-28|Renamed after all 
 devel/devhelp|devel/manuals|2026-05-28|Has expired: Discontinued, use devel/manuals
 math/hs-syfco||2026-05-30|Has expired: Depends on a deprecated compiler version
 lang/ghc94||2026-05-30|Has expired: Old version
+graphics/kcolorpicker@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
+graphics/kcolorpicker@qt6|graphics/kcolorpicker|2026-05-30|Unflavorize
