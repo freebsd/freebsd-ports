@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-04-28 22:10:05 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@
+ # limitations under the License.
+ 
+ [build-system]
+-requires = ["setuptools>=65.5.1", "wheel"]
++requires = ["setuptools>=63.1.0", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -23,7 +23,7 @@ readme = "README.md"
+ # Note: README.md is in the repo root. The build process copies it to lib/
+ # before building. See .github/workflows/release.yml.
+ readme = "README.md"
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ requires-python = ">=3.10"
+ authors = [{ name = "Snowflake Inc", email = "hello@streamlit.io" }]
+ classifiers = [
