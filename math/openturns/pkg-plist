@@ -103,8 +103,6 @@ include/openturns/ComplexMatrix.hxx
 include/openturns/ComplexMatrixImplementation.hxx
 include/openturns/ComplexTensor.hxx
 include/openturns/ComplexTensorImplementation.hxx
-include/openturns/ComposedCopula.hxx
-include/openturns/ComposedDistribution.hxx
 include/openturns/ComposedEvaluation.hxx
 include/openturns/ComposedFunction.hxx
 include/openturns/ComposedGradient.hxx
@@ -113,6 +111,8 @@ include/openturns/Composite.hxx
 include/openturns/CompositeDistribution.hxx
 include/openturns/CompositeProcess.hxx
 include/openturns/CompositeRandomVector.hxx
+include/openturns/CompoundDistribution.hxx
+include/openturns/CompoundRandomVector.hxx
 include/openturns/ConditionedGaussianProcess.hxx
 include/openturns/ConstantBasisFactory.hxx
 include/openturns/ConstantEvaluation.hxx
@@ -138,8 +138,6 @@ include/openturns/CumulativeDistributionNetwork.hxx
 include/openturns/Curve.hxx
 include/openturns/DatabaseEvaluation.hxx
 include/openturns/DatabaseFunction.hxx
-include/openturns/DeconditionedDistribution.hxx
-include/openturns/DeconditionedRandomVector.hxx
 include/openturns/Description.hxx
 include/openturns/DesignProxy.hxx
 include/openturns/DickeyFullerTest.hxx
@@ -220,6 +218,7 @@ include/openturns/FejerExperiment.hxx
 include/openturns/Field.hxx
 include/openturns/FieldFunction.hxx
 include/openturns/FieldFunctionImplementation.hxx
+include/openturns/FieldFunctionalChaosAlgorithm.hxx
 include/openturns/FieldFunctionalChaosResult.hxx
 include/openturns/FieldFunctionalChaosSobolIndices.hxx
 include/openturns/FieldImplementation.hxx
@@ -236,6 +235,9 @@ include/openturns/FiniteDifferenceGradient.hxx
 include/openturns/FiniteDifferenceHessian.hxx
 include/openturns/FiniteDifferenceStep.hxx
 include/openturns/FiniteDifferenceStepImplementation.hxx
+include/openturns/FiniteDiscreteDistribution.hxx
+include/openturns/FiniteDiscreteDistributionFactory.hxx
+include/openturns/FiniteOrthogonalFunctionFactory.hxx
 include/openturns/FisherSnedecor.hxx
 include/openturns/FisherSnedecorFactory.hxx
 include/openturns/FittingAlgorithm.hxx
@@ -279,6 +281,7 @@ include/openturns/GaussianProcessFitterResult.hxx
 include/openturns/GaussianProcessGradient.hxx
 include/openturns/GaussianProcessRandomVector.hxx
 include/openturns/GaussianProcessRegression.hxx
+include/openturns/GaussianProcessRegressionCrossValidation.hxx
 include/openturns/GaussianProcessRegressionResult.hxx
 include/openturns/GeneralLinearModelAlgorithm.hxx
 include/openturns/GeneralLinearModelResult.hxx
@@ -329,6 +332,7 @@ include/openturns/HermiteFactory.hxx
 include/openturns/HermitianMatrix.hxx
 include/openturns/Hessian.hxx
 include/openturns/HessianImplementation.hxx
+include/openturns/HiGHS.hxx
 include/openturns/Histogram.hxx
 include/openturns/HistogramFactory.hxx
 include/openturns/HistogramPolynomialFactory.hxx
@@ -446,6 +450,7 @@ include/openturns/LevelSet.hxx
 include/openturns/LevelSetMesher.hxx
 include/openturns/LineSampling.hxx
 include/openturns/LinearBasisFactory.hxx
+include/openturns/LinearCombinationDistribution.hxx
 include/openturns/LinearCombinationEvaluation.hxx
 include/openturns/LinearCombinationFunction.hxx
 include/openturns/LinearCombinationGradient.hxx
@@ -462,6 +467,7 @@ include/openturns/LinearModelResult.hxx
 include/openturns/LinearModelStepwiseAlgorithm.hxx
 include/openturns/LinearModelTest.hxx
 include/openturns/LinearModelValidation.hxx
+include/openturns/LinearProblem.hxx
 include/openturns/LinearProfile.hxx
 include/openturns/LinearTaylor.hxx
 include/openturns/Log.hxx
@@ -511,7 +517,7 @@ include/openturns/MetropolisHastings.hxx
 include/openturns/MetropolisHastingsImplementation.hxx
 include/openturns/MinCopula.hxx
 include/openturns/MinimumVolumeClassifier.hxx
-include/openturns/MixedHistogramUserDefined.hxx
+include/openturns/MixedHistogramFiniteDiscreteDistribution.hxx
 include/openturns/Mixture.hxx
 include/openturns/MixtureClassifier.hxx
 include/openturns/MonomialFunction.hxx
@@ -726,7 +732,6 @@ include/openturns/QuantileMatchingFactory.hxx
 include/openturns/RandomDirection.hxx
 include/openturns/RandomGenerator.hxx
 include/openturns/RandomGeneratorState.hxx
-include/openturns/RandomMixture.hxx
 include/openturns/RandomVector.hxx
 include/openturns/RandomVectorImplementation.hxx
 include/openturns/RandomVectorMetropolisHastings.hxx
@@ -879,9 +884,7 @@ include/openturns/UniformMuSigma.hxx
 include/openturns/UniformOrderStatistics.hxx
 include/openturns/UniformOverMesh.hxx
 include/openturns/UnionEvent.hxx
-include/openturns/UserDefined.hxx
 include/openturns/UserDefinedCovarianceModel.hxx
-include/openturns/UserDefinedFactory.hxx
 include/openturns/UserDefinedMetropolisHastings.hxx
 include/openturns/UserDefinedSpectralModel.hxx
 include/openturns/UserDefinedStationaryCovarianceModel.hxx
@@ -1122,6 +1125,10 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/CompositeRandomVector.i
 %%PYTHON%%include/openturns/swig/CompositeRandomVector_doc.i
 %%PYTHON%%include/openturns/swig/Composite_doc.i
+%%PYTHON%%include/openturns/swig/CompoundDistribution.i
+%%PYTHON%%include/openturns/swig/CompoundDistribution_doc.i
+%%PYTHON%%include/openturns/swig/CompoundRandomVector.i
+%%PYTHON%%include/openturns/swig/CompoundRandomVector_doc.i
 %%PYTHON%%include/openturns/swig/ConditionedGaussianProcess.i
 %%PYTHON%%include/openturns/swig/ConditionedGaussianProcess_doc.i
 %%PYTHON%%include/openturns/swig/ConstantBasisFactory.i
@@ -1172,10 +1179,6 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/DatabaseEvaluation_doc.i
 %%PYTHON%%include/openturns/swig/DatabaseFunction.i
 %%PYTHON%%include/openturns/swig/DatabaseFunction_doc.i
-%%PYTHON%%include/openturns/swig/DeconditionedDistribution.i
-%%PYTHON%%include/openturns/swig/DeconditionedDistribution_doc.i
-%%PYTHON%%include/openturns/swig/DeconditionedRandomVector.i
-%%PYTHON%%include/openturns/swig/DeconditionedRandomVector_doc.i
 %%PYTHON%%include/openturns/swig/Description.i
 %%PYTHON%%include/openturns/swig/Description_doc.i
 %%PYTHON%%include/openturns/swig/DesignProxy.i
@@ -1329,6 +1332,8 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/FieldFunctionImplementation.i
 %%PYTHON%%include/openturns/swig/FieldFunctionImplementation_doc.i
 %%PYTHON%%include/openturns/swig/FieldFunction_doc.i
+%%PYTHON%%include/openturns/swig/FieldFunctionalChaosAlgorithm.i
+%%PYTHON%%include/openturns/swig/FieldFunctionalChaosAlgorithm_doc.i
 %%PYTHON%%include/openturns/swig/FieldFunctionalChaosResult.i
 %%PYTHON%%include/openturns/swig/FieldFunctionalChaosResult_doc.i
 %%PYTHON%%include/openturns/swig/FieldFunctionalChaosSobolIndices.i
@@ -1360,6 +1365,12 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/FiniteDifferenceStepImplementation.i
 %%PYTHON%%include/openturns/swig/FiniteDifferenceStepImplementation_doc.i
 %%PYTHON%%include/openturns/swig/FiniteDifferenceStep_doc.i
+%%PYTHON%%include/openturns/swig/FiniteDiscreteDistribution.i
+%%PYTHON%%include/openturns/swig/FiniteDiscreteDistributionFactory.i
+%%PYTHON%%include/openturns/swig/FiniteDiscreteDistributionFactory_doc.i
+%%PYTHON%%include/openturns/swig/FiniteDiscreteDistribution_doc.i
+%%PYTHON%%include/openturns/swig/FiniteOrthogonalFunctionFactory.i
+%%PYTHON%%include/openturns/swig/FiniteOrthogonalFunctionFactory_doc.i
 %%PYTHON%%include/openturns/swig/FisherSnedecor.i
 %%PYTHON%%include/openturns/swig/FisherSnedecorFactory.i
 %%PYTHON%%include/openturns/swig/FisherSnedecorFactory_doc.i
@@ -1434,6 +1445,8 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/GaussianProcessRandomVector.i
 %%PYTHON%%include/openturns/swig/GaussianProcessRandomVector_doc.i
 %%PYTHON%%include/openturns/swig/GaussianProcessRegression.i
+%%PYTHON%%include/openturns/swig/GaussianProcessRegressionCrossValidation.i
+%%PYTHON%%include/openturns/swig/GaussianProcessRegressionCrossValidation_doc.i
 %%PYTHON%%include/openturns/swig/GaussianProcessRegressionResult.i
 %%PYTHON%%include/openturns/swig/GaussianProcessRegressionResult_doc.i
 %%PYTHON%%include/openturns/swig/GaussianProcessRegression_doc.i
@@ -1534,6 +1547,8 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/HessianImplementation.i
 %%PYTHON%%include/openturns/swig/HessianImplementation_doc.i
 %%PYTHON%%include/openturns/swig/Hessian_doc.i
+%%PYTHON%%include/openturns/swig/HiGHS.i
+%%PYTHON%%include/openturns/swig/HiGHS_doc.i
 %%PYTHON%%include/openturns/swig/Histogram.i
 %%PYTHON%%include/openturns/swig/HistogramFactory.i
 %%PYTHON%%include/openturns/swig/HistogramFactory_doc.i
@@ -1738,6 +1753,8 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/LineSampling_doc.i
 %%PYTHON%%include/openturns/swig/LinearBasisFactory.i
 %%PYTHON%%include/openturns/swig/LinearBasisFactory_doc.i
+%%PYTHON%%include/openturns/swig/LinearCombinationDistribution.i
+%%PYTHON%%include/openturns/swig/LinearCombinationDistribution_doc.i
 %%PYTHON%%include/openturns/swig/LinearCombinationEvaluation.i
 %%PYTHON%%include/openturns/swig/LinearCombinationFunction.i
 %%PYTHON%%include/openturns/swig/LinearCombinationFunction_doc.i
@@ -1767,6 +1784,8 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/LinearModelTest_doc.i
 %%PYTHON%%include/openturns/swig/LinearModelValidation.i
 %%PYTHON%%include/openturns/swig/LinearModelValidation_doc.i
+%%PYTHON%%include/openturns/swig/LinearProblem.i
+%%PYTHON%%include/openturns/swig/LinearProblem_doc.i
 %%PYTHON%%include/openturns/swig/LinearProfile.i
 %%PYTHON%%include/openturns/swig/LinearProfile_doc.i
 %%PYTHON%%include/openturns/swig/LinearTaylor.i
@@ -1857,8 +1876,8 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/MinCopula_doc.i
 %%PYTHON%%include/openturns/swig/MinimumVolumeClassifier.i
 %%PYTHON%%include/openturns/swig/MinimumVolumeClassifier_doc.i
-%%PYTHON%%include/openturns/swig/MixedHistogramUserDefined.i
-%%PYTHON%%include/openturns/swig/MixedHistogramUserDefined_doc.i
+%%PYTHON%%include/openturns/swig/MixedHistogramFiniteDiscreteDistribution.i
+%%PYTHON%%include/openturns/swig/MixedHistogramFiniteDiscreteDistribution_doc.i
 %%PYTHON%%include/openturns/swig/Mixture.i
 %%PYTHON%%include/openturns/swig/MixtureClassifier.i
 %%PYTHON%%include/openturns/swig/MixtureClassifier_doc.i
@@ -2123,8 +2142,6 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/RandomGeneratorState.i
 %%PYTHON%%include/openturns/swig/RandomGeneratorState_doc.i
 %%PYTHON%%include/openturns/swig/RandomGenerator_doc.i
-%%PYTHON%%include/openturns/swig/RandomMixture.i
-%%PYTHON%%include/openturns/swig/RandomMixture_doc.i
 %%PYTHON%%include/openturns/swig/RandomVector.i
 %%PYTHON%%include/openturns/swig/RandomVectorImplementation.i
 %%PYTHON%%include/openturns/swig/RandomVectorImplementation_doc.i
@@ -2303,6 +2320,7 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/SubsetSamplingResult_doc.i
 %%PYTHON%%include/openturns/swig/SubsetSampling_doc.i
 %%PYTHON%%include/openturns/swig/SymbolicEvaluation.i
+%%PYTHON%%include/openturns/swig/SymbolicEvaluation_doc.i
 %%PYTHON%%include/openturns/swig/SymbolicFunction.i
 %%PYTHON%%include/openturns/swig/SymbolicFunction_doc.i
 %%PYTHON%%include/openturns/swig/SymbolicGradient.i
@@ -2415,18 +2433,14 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/Uniform_doc.i
 %%PYTHON%%include/openturns/swig/UnionEvent.i
 %%PYTHON%%include/openturns/swig/UnionEvent_doc.i
-%%PYTHON%%include/openturns/swig/UserDefined.i
 %%PYTHON%%include/openturns/swig/UserDefinedCovarianceModel.i
 %%PYTHON%%include/openturns/swig/UserDefinedCovarianceModel_doc.i
-%%PYTHON%%include/openturns/swig/UserDefinedFactory.i
-%%PYTHON%%include/openturns/swig/UserDefinedFactory_doc.i
 %%PYTHON%%include/openturns/swig/UserDefinedMetropolisHastings.i
 %%PYTHON%%include/openturns/swig/UserDefinedMetropolisHastings_doc.i
 %%PYTHON%%include/openturns/swig/UserDefinedSpectralModel.i
 %%PYTHON%%include/openturns/swig/UserDefinedSpectralModel_doc.i
 %%PYTHON%%include/openturns/swig/UserDefinedStationaryCovarianceModel.i
 %%PYTHON%%include/openturns/swig/UserDefinedStationaryCovarianceModel_doc.i
-%%PYTHON%%include/openturns/swig/UserDefined_doc.i
 %%PYTHON%%include/openturns/swig/UsualRandomVector.i
 %%PYTHON%%include/openturns/swig/UsualRandomVector_doc.i
 %%PYTHON%%include/openturns/swig/ValueFunction.i
@@ -2491,6 +2505,7 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/experiment_module.i
 %%PYTHON%%include/openturns/swig/experimental_module.i
 %%PYTHON%%include/openturns/swig/fittingtest_module.i
+%%PYTHON%%include/openturns/swig/func2_module.i
 %%PYTHON%%include/openturns/swig/func_module.i
 %%PYTHON%%include/openturns/swig/geom_module.i
 %%PYTHON%%include/openturns/swig/graph_module.i
@@ -2498,6 +2513,7 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/iterative_statistics_module.i
 %%PYTHON%%include/openturns/swig/linearmodeltest_module.i
 %%PYTHON%%include/openturns/swig/metamodel_module.i
+%%PYTHON%%include/openturns/swig/model_copula2_module.i
 %%PYTHON%%include/openturns/swig/model_copula_module.i
 %%PYTHON%%include/openturns/swig/model_process_module.i
 %%PYTHON%%include/openturns/swig/normalitytest_module.i
@@ -2515,14 +2531,15 @@ include/openturns/ZipfMandelbrot.hxx
 %%PYTHON%%include/openturns/swig/uncertainty_module.i
 %%PYTHON%%include/openturns/swig/visualtest_module.i
 %%PYTHON%%include/openturns/swig/weightedexperiment_module.i
+include/openturns/swigpyrun_once.h
 lib/cmake/openturns/OpenTURNS-Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/openturns/OpenTURNS-Targets.cmake
 lib/cmake/openturns/OpenTURNSConfig.cmake
 lib/cmake/openturns/OpenTURNSConfigVersion.cmake
 lib/libOT.so
-lib/libOT.so.0.26
-lib/libOT.so.0.26.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.25.1.dist-info/METADATA
+lib/libOT.so.0.28
+lib/libOT.so.0.28.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.27.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/DistFunc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/FittingTest.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/HypothesisTest.py
@@ -2551,11 +2568,13 @@ lib/libOT.so.0.26.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_experiment.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_experimental.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_func.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_func2.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_geom.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_graph.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_iterative_statistics.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_metamodel.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_model_copula.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_model_copula2.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_model_process.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_optim.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_orthogonalbasis.so
@@ -2584,12 +2603,14 @@ lib/libOT.so.0.26.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/experiment.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/experimental.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/func.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/func2.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/geom.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/iterative_statistics.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/memoryview.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/metamodel.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/model_copula.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/model_copula2.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/model_process.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/optim.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/orthogonalbasis.py
@@ -2634,4 +2655,4 @@ lib/libOT.so.0.26.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/wooster.csv
 %%PYTHON_SITELIBDIR%%/openturns/viewer.py
 %%PYTHON_SITELIBDIR%%/openturns/weightedexperiment.py
-share/gdb/auto-load/usr/local/lib/libOT.so.0.26.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libOT.so.0.28.0-gdb.py

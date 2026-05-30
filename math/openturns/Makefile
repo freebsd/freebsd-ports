@@ -1,7 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.1
-PORTREVISION=	3
+DISTVERSION=	1.27
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,10 +36,12 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libglog.so:devel/glog \
 		libgmp.so:math/gmp \
 		libhdf5_cpp.so:science/hdf5 \
+		libhighs.so:math/highs \
 		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
+		libmuparser.so:math/muparser \
 		libnlopt.so:math/nlopt \
 		libOsi.so:math/osi \
 		libpagmo.so:science/pagmo2 \
