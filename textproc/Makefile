@@ -549,6 +549,7 @@
     SUBDIR += opensearch219
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
+    SUBDIR += openvpn-status-parser
     SUBDIR += or-aspell
     SUBDIR += otree
     SUBDIR += ov
