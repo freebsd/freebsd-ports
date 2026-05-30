@@ -81,15 +81,11 @@ OPTIONS_DEFINE=		BERKELEYDB BLOCKLISTD CANLOCK DOCS EXAMPLES GNUPG \
 OPTIONS_DEFAULT=	BERKELEYDB BLOCKLISTD CANLOCK GNUPG KEYWORDS \
 			LARGE_FILES OPENSSL PYTHON SETGID_INEWS SQLITE \
 			UUCP_RNEWS
-.if ${BRANCH:U} == 2.8
-OPTIONS_DEFINE+=	EXPERIMENTAL
-.endif
 OPTIONS_SUB=		yes
 
 BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
 BLOCKLISTD_DESC=	Enable blocklistd support
 CANLOCK_DESC=		Enable Cancel-Lock support via libcanlock
-EXPERIMENTAL_DESC=	Experimental upstream patches (ovsqlite, bloom filter)
 GNUPG_DESC=		GnuPG support (for pgpverify control message)
 KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
 KEYWORDS_DESC=		Automatic keyword generation support
@@ -162,19 +158,9 @@ TAGGED_HASH_PLIST_SUB_OFF=	WITH_TAGGED_HASH="@comment " \
 UUCP_RNEWS_RUN_DEPENDS=		uucp:net/freebsd-uucp
 UUCP_RNEWS_CONFIGURE_ENABLE=	uucp-rnews
 
-EXPERIMENTAL_EXTRA_PATCHES=	${PKGDIR}/files/pr337.patch \
-				${PKGDIR}/files/pr338.patch \
-				${PKGDIR}/files/pr339.patch \
-				${PKGDIR}/files/pr340.patch
-EXPERIMENTAL_PLIST_SUB=		EXPERIMENTAL=""
-EXPERIMENTAL_PLIST_SUB_OFF=	EXPERIMENTAL="@comment "
-
 .include <bsd.port.pre.mk>
 
 GID?=		${.MAKE.GID}
-
-post-extract-EXPERIMENTAL-on:
-	@${CP} ${PKGDIR}/files/gitignore ${WRKSRC}/.gitignore
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
