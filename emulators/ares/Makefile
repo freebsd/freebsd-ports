@@ -1,16 +1,10 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
-DISTVERSION=	147
-PORTREVISION=	5
+DISTVERSION=	148
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}-source
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
-
-# fixes linker error when building PCE core without MD core, see also
-# https://github.com/ares-emulator/ares/pull/2329
-PATCH_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/commit/
-PATCHFILES=	adfc78f9523adce9fef1d7ac282e08ab7fc66dd4.patch:-p1
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Multi-system emulator
