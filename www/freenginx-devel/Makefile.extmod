@@ -2,7 +2,7 @@
 
 OPTIONS_GROUP+=	THIRDPARTYGRP
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_THIRDPARTYGRP=	AJP BROTLI CACHE_PURGE \
+OPTIONS_GROUP_THIRDPARTYGRP=	AJP AUTH_JWT BROTLI CACHE_PURGE \
 	DEVEL_KIT ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
 	FIPS_CHECK FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST \
 	HTTP_AUTH_JWT HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT \
@@ -21,6 +21,15 @@ AJP_VARS=		DSO_EXTMODS+=ajp
 ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.06:arrayvar
 ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
+
+AUTH_JWT_VERSION=	0.13.1
+AUTH_JWT_GH_TUPLE=	kjdev:nginx-auth-jwt:${AUTH_JWT_VERSION}:auth_jwt \
+			kjdev:nxe-json:0.5.0:nxe_json \
+			kjdev:nxe-jwx:0.1.0:nxe_jwx
+AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson
+AUTH_JWT_PREVENTS=	HTTP_AUTH_JWT
+AUTH_JWT_PREVENTS_MSG=	choose auth_jwt or http_auth_jwt module
+AUTH_JWT_VARS=		DSO_EXTMODS+=auth_jwt
 
 BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
 BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
@@ -73,11 +82,13 @@ HTTP_ACCEPT_LANGUAGE_VARS=	DSO_EXTMODS+=accept_language
 HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:ac91c88:auth_digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
-HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:2.4.0:auth_jwt
+HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:2.4.0:http_auth_jwt
+HTTP_AUTH_JWT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_jwt_module.c
 HTTP_AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson \
 				libjwt.so:www/libjwt
-HTTP_AUTH_JWT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_jwt_module.c
-HTTP_AUTH_JWT_VARS=		DSO_EXTMODS+=auth_jwt
+HTTP_AUTH_JWT_PREVENTS=		AUTH_JWT
+HTTP_AUTH_JWT_PREVENTS_MSG=	choose auth_jwt or http_auth_jwt module
+HTTP_AUTH_JWT_VARS=		DSO_EXTMODS+=http_auth_jwt
 
 HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v1.1.3:auth_krb5
 HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config

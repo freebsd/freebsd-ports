@@ -9,6 +9,7 @@
 @sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
 @sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
 %%DSO%%%%AJP%%libexec/freenginx/ngx_http_ajp_module.so
+%%DSO%%%%AUTH_JWT%%libexec/freenginx/ngx_http_auth_jwt_module.so
 %%DSO%%%%ARRAYVAR%%libexec/freenginx/ngx_http_array_var_module.so
 %%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_static_module.so

@@ -1,4 +1,5 @@
 AJP_DESC=			3rd party ajp module
+AUTH_JWT_DESC=			3rd party auth_jwt module
 ARRAYVAR_DESC=			3rd party array_var module
 BROTLI_DESC=			3rd party brotli module
 CACHE_PURGE_DESC=		3rd party cache_purge module
