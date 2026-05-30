@@ -1,8 +1,9 @@
 PORTNAME=	mate-indicator-applet
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.26.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils mate
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applet to display information from various applications in the panel
@@ -17,17 +18,17 @@ BUILD_DEPENDS=	libindicator>=12.10.1:devel/libindicator
 RUN_DEPENDS=	mate-applets>=1.22.0:x11/mate-applets \
 		libindicator>=12.10.1:devel/libindicator
 
-PORTSCOUT=	limitw:1,even
-
-USE_GITHUB=	yes
+USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
+		pkgconfig tar:xz
+USE_GITHUB=	nodefault
 GH_ACCOUNT=	mate-desktop
-USES=		autoreconf compiler:c11 gettext gmake gnome libtool localbase mate \
-		pkgconfig
 USE_CSTD=	c11
 
 USE_MATE=	panel
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>
