@@ -1,6 +1,6 @@
---- chrome/browser/glic/public/features.cc.orig	2026-04-28 21:06:17 UTC
+--- chrome/browser/glic/public/features.cc.orig	2026-05-18 23:17:45 UTC
 +++ chrome/browser/glic/public/features.cc
-@@ -44,7 +44,7 @@ BASE_FEATURE(kGlicLiveMode,
+@@ -46,7 +46,7 @@ BASE_FEATURE(kGlicLiveMode,
  BASE_FEATURE(kGlicCreateTabAdjacent, base::FEATURE_ENABLED_BY_DEFAULT);
  
  BASE_FEATURE(kGlicLiveMode,

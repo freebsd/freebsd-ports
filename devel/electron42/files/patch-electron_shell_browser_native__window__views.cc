@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2026-05-08 13:54:01 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2026-05-26 16:24:13 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -58,7 +58,7 @@
  #include "ui/wm/core/shadow_types.h"
@@ -180,7 +180,7 @@
    return true;
  #endif
  }
-@@ -1943,7 +1943,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
+@@ -1935,7 +1935,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
  #endif
  }
  
@@ -189,7 +189,7 @@
  LinuxFrameLayout* NativeWindowViews::GetLinuxFrameLayout() {
    auto* ncv = widget()->non_client_view();
    if (!ncv)
-@@ -1963,7 +1963,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1955,7 +1955,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -198,7 +198,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -1982,7 +1982,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
+@@ -1974,7 +1974,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
    // Alt+Click should not toggle menu bar.
    root_view_.ResetAltState();
  
