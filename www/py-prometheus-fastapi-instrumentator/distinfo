@@ -1,3 +1,3 @@
-TIMESTAMP = 1775500352
-SHA256 (prometheus_fastapi_instrumentator-7.1.0.tar.gz) = be7cd61eeea4e5912aeccb4261c6631b3f227d8924542d79eaf5af3f439cbe5e
-SIZE (prometheus_fastapi_instrumentator-7.1.0.tar.gz) = 20220
+TIMESTAMP = 1780115589
+SHA256 (prometheus_fastapi_instrumentator-8.0.0.tar.gz) = c31ed192db077e75467b28b2fe5055362517f53369b798cb8dac9ff85f3f1c38
+SIZE (prometheus_fastapi_instrumentator-8.0.0.tar.gz) = 20357
