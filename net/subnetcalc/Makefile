@@ -1,5 +1,5 @@
 PORTNAME=	subnetcalc
-DISTVERSION=	2.6.6
+DISTVERSION=	2.7.1
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/subnetcalc/download/
 
@@ -10,13 +10,20 @@ WWW=		https://www.nntb.no/~dreibh/subnetcalc/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake gettext tar:xz
+LIB_DEPENDS=	libidn2.so:dns/libidn2
 
-PLIST_FILES=	bin/subnetcalc \
-		share/bash-completion/completions/subnetcalc \
-		share/locale/de/LC_MESSAGES/subnetcalc.mo \
-		share/locale/ka/LC_MESSAGES/subnetcalc.mo \
-		share/locale/nb/LC_MESSAGES/subnetcalc.mo \
-		share/man/man1/subnetcalc.1.gz
+USES=		cmake tar:xz
+
+OPTIONS_DEFINE=		GEOIP NLS
+OPTIONS_DEFAULT=	GEOIP
+OPTIONS_SUB=		yes
+
+GEOIP_DESC=		Build with GeoIP support
+
+GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
+GEOIP_CMAKE_BOOL=	WITH_GEOIP
+
+NLS_USES=		gettext
+NLS_CMAKE_BOOL=		WITH_I18N
 
 .include <bsd.port.mk>
