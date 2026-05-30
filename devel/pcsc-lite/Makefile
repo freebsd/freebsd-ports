@@ -1,5 +1,5 @@
 PORTNAME=	pcsc-lite
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -10,7 +10,8 @@ WWW=		https://pcsclite.apdu.fr/
 
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv3+ =		${WRKSRC}/GPL-3.0.txt
 
 USES=		meson perl5 pkgconfig python:env shebangfix tar:xz
 USE_LDCONFIG=	yes

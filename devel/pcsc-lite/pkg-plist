@@ -12,6 +12,8 @@ lib/libpcsclite_real.so
 lib/libpcsclite_real.so.1
 lib/libpcscspy.so
 lib/libpcscspy.so.0
+@comment lib/systemd/user/pcscd.service
+@comment lib/systemd/user/pcscd.socket
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
 %%PORTDOCS%%%%DOCSDIR%%/setup_spy.sh
@@ -22,5 +24,6 @@ share/man/man5/reader.conf.5.gz
 share/man/man8/pcscd.8.gz
 share/metainfo/fr.apdu.pcsclite.metainfo.xml
 %%POLKIT%%share/polkit-1/actions/org.debian.pcsc-lite.policy
-@dir lib/pcsc/services
+@comment sysusers.d/pcscd-sysusers.conf
 @dir lib/pcsc/drivers
+@dir lib/pcsc/services
