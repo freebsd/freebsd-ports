@@ -38,6 +38,7 @@
 %%DATADIR%%/dba/patches/1.3.3.sql
 %%DATADIR%%/dba/patches/1.3.4.sql
 %%DATADIR%%/dba/patches/1.3.5.sql
+%%DATADIR%%/dba/patches/1.3.6.sql
 %%DATADIR%%/dba/rrule_functions-8.1.sql
 %%DATADIR%%/dba/rrule_functions.sql
 %%DATADIR%%/dba/rrule_tests.sql
@@ -61,7 +62,6 @@
 %%WWWDIR%%/htdocs/admin.php
 %%WWWDIR%%/htdocs/always.php
 %%WWWDIR%%/htdocs/caldav.php
-%%WWWDIR%%/htdocs/caldav.php.orig
 %%WWWDIR%%/htdocs/css/browse.css
 %%WWWDIR%%/htdocs/css/edit.css
 %%WWWDIR%%/htdocs/davical.css
@@ -130,10 +130,8 @@
 %%WWWDIR%%/inc/check_UTF8.php
 %%WWWDIR%%/inc/csrf_tokens.php
 %%WWWDIR%%/inc/davical_configuration_missing.php
-%%WWWDIR%%/inc/drivers_imap_pam.php
 %%WWWDIR%%/inc/drivers_ldap.php
 %%WWWDIR%%/inc/drivers_pwauth_pam.php
-%%WWWDIR%%/inc/drivers_rimap.php
 %%WWWDIR%%/inc/drivers_squid_pam.php
 %%WWWDIR%%/inc/external-fetch.php
 %%WWWDIR%%/inc/freebusy-functions.php
