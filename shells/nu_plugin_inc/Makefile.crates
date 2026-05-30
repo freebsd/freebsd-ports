@@ -45,7 +45,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
-		doctest-file-1.0.0 \
 		document-features-0.2.12 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
@@ -67,7 +66,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		indexmap-2.14.0 \
-		interprocess-2.4.2 \
 		intl-memoizer-0.5.3 \
 		intl_pluralrules-7.0.2 \
 		inventory-0.3.22 \
@@ -99,17 +97,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		nom-7.1.3 \
 		ntapi-0.4.3 \
 		nu-ansi-term-0.50.3 \
-		nu-derive-value-0.113.0 \
-		nu-engine-0.113.0 \
-		nu-experimental-0.113.0 \
-		nu-glob-0.113.0 \
-		nu-path-0.113.0 \
-		nu-plugin-0.113.0 \
-		nu-plugin-core-0.113.0 \
-		nu-plugin-protocol-0.113.0 \
-		nu-protocol-0.113.0 \
-		nu-system-0.113.0 \
-		nu-utils-0.113.0 \
+		nu-derive-value-0.113.1 \
+		nu-engine-0.113.1 \
+		nu-experimental-0.113.1 \
+		nu-glob-0.113.1 \
+		nu-path-0.113.1 \
+		nu-plugin-0.113.1 \
+		nu-plugin-core-0.113.1 \
+		nu-plugin-protocol-0.113.1 \
+		nu-protocol-0.113.1 \
+		nu-system-0.113.1 \
+		nu-utils-0.113.1 \
 		num-format-0.4.4 \
 		num-traits-0.2.19 \
 		objc2-core-foundation-0.3.2 \
@@ -131,7 +129,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pure-rust-locales-0.8.2 \
 		pwd-1.4.0 \
 		quote-1.0.45 \
-		recvmsg-1.0.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
@@ -199,7 +196,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-bindgen-macro-support-0.2.114 \
 		wasm-bindgen-shared-0.2.114 \
 		web-time-1.1.0 \
-		widestring-1.2.1 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \

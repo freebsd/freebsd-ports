@@ -1,5 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.113.0
+DISTVERSION=	0.113.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -225,10 +225,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fax_derive-0.2.0 \
 		fd-lock-4.0.4 \
 		fdeflate-0.3.7 \
-		fff-grep-0.8.1 \
+		fff-grep-0.8.4 \
 		fff-notify-debouncer-full-0.9.4 \
-		fff-query-parser-0.8.1 \
-		fff-search-0.8.1 \
+		fff-query-parser-0.8.4 \
+		fff-search-0.8.4 \
 		file-id-0.2.3 \
 		filedescriptor-0.8.3 \
 		filesize-0.2.0 \
