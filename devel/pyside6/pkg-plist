@@ -316,7 +316,7 @@ share/PySide6/glue/qtstatemachine.cpp
 share/PySide6/glue/qttest.cpp
 share/PySide6/glue/qtuitools.cpp
 %%WEBENGINE%%share/PySide6/glue/qtwebenginecore.cpp
-share/PySide6/glue/qtwebview.cpp
+%%WEBVIEW%%share/PySide6/glue/qtwebview.cpp
 share/PySide6/glue/qtwidgets.cpp
 share/PySide6/glue/qtxml.cpp
 share/PySide6/typesystems/common.xml
