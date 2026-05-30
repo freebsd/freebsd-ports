@@ -1,7 +1,6 @@
 PORTNAME=	ksnip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1
-PORTREVISION=	2
+DISTVERSION=	1.11.0.g20260518
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,16 +10,18 @@ WWW=		https://github.com/ksnip/ksnip
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libkColorPicker-Qt5.so:graphics/kcolorpicker@qt5 \
-		libkImageAnnotator-Qt5.so:graphics/kimageannotator@qt5
+LIB_DEPENDS=	libkColorPicker-Qt6.so:graphics/kcolorpicker \
+		libkImageAnnotator-Qt6.so:graphics/kimageannotator
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 xorg
+USES=		cmake compiler:c++17-lang desktop-file-utils kde:6 qt:6 xorg
 USE_GITHUB=	yes
 USE_KDE=	ecm:build
-USE_QT=		concurrent core dbus gui network printsupport svg \
-		widgets x11extras xml \
-		buildtools:build linguisttools:build qmake:build testlib:build
+USE_QT=		base svg tools:build
 USE_XORG=	x11 xcb
+
+GH_TAGNAME=	7db6c85325c9e74d878aee23dd0ed366d6592254
+
+CMAKE_ON=	BUILD_WITH_QT6
 
 PORTSCOUT=	limit:^[0-9]
 
