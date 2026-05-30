@@ -7,6 +7,7 @@ include/libheif/heif.h
 include/libheif/heif_aux_images.h
 include/libheif/heif_brands.h
 include/libheif/heif_color.h
+include/libheif/heif_components.h
 include/libheif/heif_context.h
 include/libheif/heif_cxx.h
 include/libheif/heif_decoding.h
@@ -18,6 +19,7 @@ include/libheif/heif_image_handle.h
 include/libheif/heif_items.h
 include/libheif/heif_library.h
 include/libheif/heif_metadata.h
+include/libheif/heif_omaf.h
 include/libheif/heif_plugin.h
 include/libheif/heif_properties.h
 include/libheif/heif_regions.h
