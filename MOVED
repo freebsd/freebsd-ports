@@ -5317,3 +5317,4 @@ multimedia/mediaelch@qt5||2026-05-27|Unflavorize, remove Qt5 flavor
 multimedia/mediaelch@qt6|multimedia/mediaelch|2026-05-27|Unflavorize
 www/py-dj52-django-treenode|www/py-django-treenode|2026-05-28|Renamed after all Django consumers were switched from Django 4.2 to Django 5.2 to have a consistent naming scheme
 devel/devhelp|devel/manuals|2026-05-28|Has expired: Discontinued, use devel/manuals
+math/hs-syfco||2026-05-30|Has expired: Depends on a deprecated compiler version

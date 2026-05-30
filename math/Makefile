@@ -408,7 +408,6 @@
     SUBDIR += hpipm
     SUBDIR += hptt
     SUBDIR += hs-Agda
-    SUBDIR += hs-syfco
     SUBDIR += hsl
     SUBDIR += hydrogen
     SUBDIR += hyperdeal
