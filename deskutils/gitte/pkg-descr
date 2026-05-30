@@ -1,0 +1,4 @@
+Gitte is a GTK4/libadwaita Git client for the GNOME desktop, written in
+Rust. It is heavily inspired by Git Tower and Magit. It allows you to
+browse and clone repositories, view diffs, manage branches, tags, stashes,
+and remotes, and work with staged and unstaged changes.

@@ -70,6 +70,7 @@
     SUBDIR += gcal
     SUBDIR += genius
     SUBDIR += glabels
+    SUBDIR += gitte
     SUBDIR += gnome-calendar
     SUBDIR += gnome-characters
     SUBDIR += gnome-clocks

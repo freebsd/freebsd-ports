@@ -1,0 +1,11 @@
+bin/gitte
+libexec/gitte/gitte-askpass
+share/applications/de.wwwtech.gitte.desktop
+share/dbus-1/services/de.wwwtech.gitte.service
+%%DATADIR%%/gitte.gresource
+share/icons/hicolor/scalable/apps/de.wwwtech.gitte.svg
+share/icons/hicolor/symbolic/apps/de.wwwtech.gitte-symbolic.svg
+share/locale/de/LC_MESSAGES/gitte.mo
+share/locale/kw/LC_MESSAGES/gitte.mo
+share/locale/uk/LC_MESSAGES/gitte.mo
+share/metainfo/de.wwwtech.gitte.metainfo.xml
