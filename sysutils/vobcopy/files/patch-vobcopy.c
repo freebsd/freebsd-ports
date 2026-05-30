@@ -1,6 +1,6 @@
---- vobcopy.c.orig	2026-04-19 12:31:47 UTC
+--- vobcopy.c.orig	2026-05-18 12:42:51 UTC
 +++ vobcopy.c
-@@ -160,7 +160,7 @@ and potentially fatal."  - Thanks Leigh!*/
+@@ -185,7 +185,7 @@ and potentially fatal."  - Thanks Leigh!*/
  #if defined( __gettext__ )
    setlocale(LC_ALL, "");
    textdomain("vobcopy");
