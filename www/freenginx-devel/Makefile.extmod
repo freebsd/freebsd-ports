@@ -27,7 +27,7 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
-CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:2.5.5:cache_purge
+CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.2:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:b0f344b:echo
@@ -195,8 +195,8 @@ KEYVAL_VARS=		DSO_EXTMODS+=keyval
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LUA_GH_TUPLE=		openresty:lua-nginx-module:48d5628:lua \
-			openresty:lua-resty-core:fb7710e:luarc \
+LUA_GH_TUPLE=		openresty:lua-nginx-module:4b21d8f:lua \
+			openresty:lua-resty-core:e68e857:luarc \
 			openresty:lua-resty-lrucache:1c7cf6b:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
@@ -204,8 +204,8 @@ LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:78713f0:luastream \
-			openresty:lua-resty-core:fb7710e:luarc \
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:421ed88:luastream \
+			openresty:lua-resty-core:e68e857:luarc \
 			openresty:lua-resty-lrucache:1c7cf6b:luarl
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
