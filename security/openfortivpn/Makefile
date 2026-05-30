@@ -1,6 +1,6 @@
 PORTNAME=	openfortivpn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.0
+DISTVERSION=	1.24.1
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	atanubiswas484@gmail.com
