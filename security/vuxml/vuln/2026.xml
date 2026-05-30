@@ -87,11 +87,13 @@
     <references>
       <cvename>CVE-2026-48165</cvename>
       <cvename>CVE-2026-48163</cvename>
+      <cvename>CVE-2026-49261</cvename>
       <url>https://mariadb.com/docs/release-notes/community-server/11.8/11.8.8</url>
     </references>
     <dates>
       <discovery>2026-05-28</discovery>
       <entry>2026-05-29</entry>
+      <modified>2026-06-30</modified>
     </dates>
   </vuln>
 
