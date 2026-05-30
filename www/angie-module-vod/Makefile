@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-vod
 MODULE_VERSION=	1.33
-MODULE_PORTREVISION=	4
+MODULE_PORTREVISION=	5
 GH_TUPLE=	kaltura:nginx-vod-module:${MODULE_VERSION}:module
 
 COMMENT=	VOD dynamic module for Angie
