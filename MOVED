@@ -5321,3 +5321,5 @@ math/hs-syfco||2026-05-30|Has expired: Depends on a deprecated compiler version
 lang/ghc94||2026-05-30|Has expired: Old version
 graphics/kcolorpicker@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
 graphics/kcolorpicker@qt6|graphics/kcolorpicker|2026-05-30|Unflavorize
+graphics/kimageannotator@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
+graphics/kimageannotator@qt6|graphics/kimageannotator|2026-05-30|Unflavorize
