@@ -596,6 +596,7 @@ bin/find_variance_lines.tcsh
 bin/float_scan
 bin/from3d
 bin/gen_cluster_table
+bin/gen_cluster_table.py
 bin/gen_epi_review.py
 bin/gen_group_command.py
 bin/gen_ss_review_scripts.py
@@ -866,6 +867,8 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_pbar.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_tool.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cdiflist.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cluster_rois.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cluster_table.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_csv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_decay_timing.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_dti_sundry.py
@@ -876,6 +879,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gssrt.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gtkyd.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_info_items.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_plot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_tableize.py
