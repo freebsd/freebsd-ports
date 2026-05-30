@@ -1,6 +1,7 @@
 PORTNAME=	ksnip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.11.0.g20260518
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,5 +25,9 @@ GH_TAGNAME=	7db6c85325c9e74d878aee23dd0ed366d6592254
 CMAKE_ON=	BUILD_WITH_QT6
 
 PORTSCOUT=	limit:^[0-9]
+
+post-patch:
+	${REINPLACE_CMD} '/^Exec=/s,/usr/bin/,,' \
+		${WRKSRC}/desktop/org.ksnip.ksnip.desktop
 
 .include <bsd.port.mk>
