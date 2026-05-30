@@ -1,6 +1,6 @@
---- base/system/sys_info_freebsd.cc.orig	2026-02-15 10:01:45 UTC
+--- base/system/sys_info_freebsd.cc.orig	2026-05-30 12:46:06 UTC
 +++ base/system/sys_info_freebsd.cc
-@@ -10,21 +10,75 @@
+@@ -10,21 +10,73 @@
  
  #include "base/notreached.h"
  #include "base/numerics/safe_conversions.h"
@@ -42,7 +42,7 @@
  
 +ByteSize SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
 +  int page_size, r = 0;
-+  unsigned int pgfree, pginact, pgcache;
++  unsigned int pgfree, pginact;
 +  size_t size = sizeof(page_size);
 +  size_t szpg = sizeof(pgfree);
 +
@@ -52,15 +52,13 @@
 +    r = sysctlbyname("vm.stats.vm.v_free_count", &pgfree, &szpg, NULL, 0);
 +  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_inactive_count", &pginact, &szpg, NULL, 0);
-+  if (r == 0)
-+    r = sysctlbyname("vm.stats.vm.v_cache_count", &pgcache, &szpg, NULL, 0);
 +
 +  if (r == -1) {
 +    NOTREACHED();
 +    return ByteSize(0);
 +  }
 +
-+  return ByteSize((pgfree + pginact + pgcache) * checked_cast<unsigned>(page_size));
++  return ByteSize((pgfree + pginact) * checked_cast<unsigned>(page_size));
 +}
 +
  // static
@@ -80,7 +78,7 @@
  uint64_t SysInfo::MaxSharedMemorySize() {
    size_t limit;
    size_t size = sizeof(limit);
-@@ -32,6 +86,18 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -32,6 +84,18 @@ uint64_t SysInfo::MaxSharedMemorySize() {
      NOTREACHED();
    }
    return static_cast<uint64_t>(limit);
