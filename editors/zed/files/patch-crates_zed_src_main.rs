@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-05-20 14:31:42 UTC
+--- crates/zed/src/main.rs.orig	2026-05-28 17:58:20 UTC
 +++ crates/zed/src/main.rs
 @@ -23,6 +23,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -51,7 +51,7 @@
          reliability::init(client.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -850,6 +858,7 @@ fn main() {
+@@ -851,6 +859,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  

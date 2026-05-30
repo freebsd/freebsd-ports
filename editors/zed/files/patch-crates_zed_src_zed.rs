@@ -1,6 +1,6 @@
---- crates/zed/src/zed.rs.orig	2026-05-13 17:09:47 UTC
+--- crates/zed/src/zed.rs.orig	2026-05-28 17:58:20 UTC
 +++ crates/zed/src/zed.rs
-@@ -102,8 +102,10 @@ use zed_actions::{
+@@ -103,8 +103,10 @@ use zed_actions::{
      OpenZedUrl, Quit,
  };
  
@@ -11,7 +11,7 @@
  impl gpui::Global for CrashHandler {}
  
  actions!(
-@@ -523,6 +525,7 @@ pub fn initialize_workspace(app_state: Arc<AppState>, 
+@@ -524,6 +526,7 @@ pub fn initialize_workspace(app_state: Arc<AppState>, 
          if let Some(specs) = window.gpu_specs() {
              log::info!("Using GPU: {:?}", specs);
              show_software_emulation_warning_if_needed(specs.clone(), window, cx);
