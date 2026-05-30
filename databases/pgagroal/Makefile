@@ -1,5 +1,5 @@
 PORTNAME=	pgagroal
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/agroal/${PORTNAME}/releases/download/${DISTVERSION}/
 
