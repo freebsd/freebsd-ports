@@ -1,0 +1,8 @@
+Modesetting must be enabled to use nvidia-drm.ko for graphics. This can be done
+by setting the modeset sysctl, the equivalent of the modeset kernel parameter
+on Linux.
+
+hw.nvidiadrm.modeset=1
+
+This must be set before loading nvidia-drm.ko, most easily done by placing the
+above in /boot/loader.conf.
