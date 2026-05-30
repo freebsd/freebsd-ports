@@ -1,6 +1,6 @@
---- media/gpu/chromeos/gl_image_processor_backend.cc.orig	2026-04-15 11:25:12 UTC
+--- media/gpu/chromeos/gl_image_processor_backend.cc.orig	2026-05-30 12:46:06 UTC
 +++ media/gpu/chromeos/gl_image_processor_backend.cc
-@@ -27,6 +27,10 @@
+@@ -28,6 +28,10 @@
  #include "ui/ozone/public/ozone_platform.h"
  #include "ui/ozone/public/surface_factory_ozone.h"
  
