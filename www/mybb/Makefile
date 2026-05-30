@@ -1,28 +1,25 @@
 PORTNAME=	mybb
-DISTVERSION=	1.8.39
+DISTVERSION=	1.8.40
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	PHP-based bulletin board / discussion forum system
-WWW=		https://mybboard.net/
+WWW=		https://mybb.com/
 
 LICENSE=	GPLv3
 
-USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1839
-
 USES=		cpe mysql php:web
-NO_BUILD=	yes
+USE_GITHUB=	yes
+GH_TAGNAME=	${PORTNAME}_${DISTVERSION:S|.||g}
+USE_PHP=	gd iconv mysqli xml xsl
+
 NO_ARCH=	yes
-USE_PHP=	xsl mysqli iconv gd xml
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
-WWWDIR?=	${PREFIX}/www/${PORTNAME}
 PLIST_SUB=	WWWOWN=${WWWOWN}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
-#	${TOUCH} ${STAGEDIR}${WWWDIR}/inc/config.php.sample
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	${MV} ${STAGEDIR}${WWWDIR}/inc/settings.php \
 		${STAGEDIR}${WWWDIR}/inc/settings.php.sample
 
