@@ -308,14 +308,15 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/modules/ext/encoder-1.2.3.jar
 %%DATADIR%%/visualvm/modules/ext/flightrecorder-8.3.1.jar
 %%DATADIR%%/visualvm/modules/ext/locale/updater_visualvm.jar
-%%DATADIR%%/visualvm/modules/ext/lz4-java-1.8.0.jar
-%%DATADIR%%/visualvm/modules/ext/nashorn-core-15.4.jar
+%%DATADIR%%/visualvm/modules/ext/lz4-java-1.10.3.jar
+%%DATADIR%%/visualvm/modules/ext/nashorn-core-15.6.jar
 %%DATADIR%%/visualvm/modules/ext/profilerprobe.jar
 %%DATADIR%%/visualvm/modules/ext/stagent.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core_visualvm.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-modules-autoupdate-ui_visualvm.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
+%%DATADIR%%/visualvm/modules/locale/org-netbeans-swing-laf-flatlaf_visualvm.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-api-caching.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-application-views.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-application.jar
