@@ -5323,3 +5323,5 @@ graphics/kcolorpicker@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
 graphics/kcolorpicker@qt6|graphics/kcolorpicker|2026-05-30|Unflavorize
 graphics/kimageannotator@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
 graphics/kimageannotator@qt6|graphics/kimageannotator|2026-05-30|Unflavorize
+accessibility/libqaccessibilityclient@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
+accessibility/libqaccessibilityclient@qt6|accessibility/libqaccessibilityclient|2026-05-30|Unflavorize
