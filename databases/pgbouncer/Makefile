@@ -1,5 +1,6 @@
 PORTNAME=	pgbouncer
 DISTVERSION=	1.25.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.pgbouncer.org/downloads/files/${DISTVERSION}/
 
@@ -10,7 +11,6 @@ WWW=		https://www.pgbouncer.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		cpe gmake pkgconfig python:build shebangfix ssl
@@ -26,21 +26,29 @@ PORTSCOUT=	site:https://pgbouncer.github.io/downloads/
 SUB_FILES=	pkg-message
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 
+PGBOUNCER_USER?=	${PORTNAME}
+PGBOUNCER_GROUP?=	${PORTNAME}
+.if ${PGBOUNCER_USER} == ${PORTNAME}
 USERS=		${PGBOUNCER_USER}
+.endif
+.if ${PGBOUNCER_GROUP} == ${PORTNAME}
 GROUPS=		${PGBOUNCER_GROUP}
+.endif
 
 PLIST_SUB+=	PGBOUNCER_GROUP="${GROUPS}" \
 		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}" \
 		PGBOUNCER_USER="${USERS}"
 
-OPTIONS_DEFINE=	CARES
+OPTIONS_DEFINE=		CARES MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_CONFIGURE_WITH=	cares
 
-PGBOUNCER_GROUP?=	pgbouncer
-PGBOUNCER_USER?=	pgbouncer
+MANPAGES_BUILD_DEPENDS=		pandoc:textproc/hs-pandoc
+MANPAGES_CONFIGURE_ENV_OFF=	ac_cv_prog_PANDOC=${TRUE}
 
 PGBOUNCER_RUNDIR?=	/var/run/pgbouncer
 PGBOUNCER_LOGDIR?=	/var/log/pgbouncer
@@ -55,13 +63,15 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbouncer ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.1 ${STAGEDIR}${PREFIX}/share/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 	${INSTALL_DATA} ${WRKSRC}/etc/pgbouncer.ini \
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/userlist.txt \
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.users.sample
 	@${MKDIR} ${STAGEDIR}${PGBOUNCER_RUNDIR} \
 		${STAGEDIR}${PGBOUNCER_LOGDIR}
+
+do-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>
