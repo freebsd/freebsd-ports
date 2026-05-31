@@ -16,7 +16,7 @@ USES=		zip cpe gmake uidfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CPE_VENDOR=	mp3gain_project
+CPE_VENDOR=	glensawyer
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mp3gain
