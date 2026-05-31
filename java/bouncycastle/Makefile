@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
 USES=		cpe java:ant,run
 CPE_VENDOR=	${PORTNAME}
-CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
+CPE_PRODUCT=	bc-java
 
 MAKE_ARGS=	-f \
 		ant/jdk${JDKNVERSION}+.xml
