@@ -19,7 +19,7 @@ RUN_DEPENDS=	gnome-keyring:security/gnome-keyring \
 		${PYTHON_PKGNAMEPREFIX}pylast>0:audio/py-pylast@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-pyxdg@${PY_FLAVOR}
 
-USES=	pkgconfig:run python gnome gstreamer meson ninja gettext shebangfix
+USES=	pkgconfig:run python gnome gstreamer meson ninja gettext shebangfix cpe
 
 USE_GITHUB=	yes
 USE_GNOME=	glib20
@@ -28,6 +28,8 @@ USE_GSTREAMER=	core good bad soup
 GLIB_SCHEMAS=	io.github.Pithos.gschema.xml
 
 SHEBANG_FILES=	bin/pithos.in docs/conf.py meson_post_install.py
+
+CPE_VENDOR=	${PORTNAME}_project
 
 post-patch:
 	${REINPLACE_CMD} -i '' -e \

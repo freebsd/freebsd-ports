@@ -20,7 +20,7 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++17-lang cmake localbase:ldflags llvm:min=${LLVM_VER},lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
+USES=		compiler:c++17-lang cmake cpe localbase:ldflags llvm:min=${LLVM_VER},lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++17
 
@@ -59,6 +59,8 @@ HTTPD_LIB_CMAKE_BOOL=	INCLUDE_HTTP HTTPDYNAMIC
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
+
+CPE_VENDOR=		grame
 
 post-patch:
 	# change qmake (5) -> qmake6

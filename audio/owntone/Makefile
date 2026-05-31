@@ -29,7 +29,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libuuid.so:misc/libuuid
 
 USES=		tar:xz localbase libtool iconv:wchar_t pkgconfig gnome gmake \
-		gperf sqlite gnome
+		gperf sqlite gnome cpe
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
@@ -77,6 +77,8 @@ WEBINTERFACE_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
 
 NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
+
+CPE_VENDOR=			${PORTNAME}_project
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/owntone/owntone-sqlext.so

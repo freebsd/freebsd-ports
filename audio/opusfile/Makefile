@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libopus.so:audio/opus
 
-USES=		autoreconf libtool pkgconfig ssl
+USES=		autoreconf cpe libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -31,6 +31,8 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 CONFIGURE_ARGS+=	--disable-examples
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	xiph
 
 .include <bsd.port.pre.mk>
 

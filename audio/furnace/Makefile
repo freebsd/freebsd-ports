@@ -19,7 +19,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libportaudio.so:audio/portaudio \
 		librtmidi.so:audio/rtmidi \
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gl \
+USES=		cmake compiler:c++14-lang cpe desktop-file-utils gl \
 		localbase:ldflags pkgconfig sdl shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	tildearrow
@@ -58,6 +58,8 @@ JACK_CMAKE_BOOL=	WITH_JACK
 
 NLS_USES=	gettext-runtime
 NLS_CMAKE_BOOL=	WITH_LOCALE
+
+CPE_VENDOR=	${GH_ACCOUNT}
 
 post-install:
 	${INSTALL_DATA} \
