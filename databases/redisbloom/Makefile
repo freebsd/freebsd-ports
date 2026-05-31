@@ -1,6 +1,7 @@
 PORTNAME=	redisbloom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.8.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -39,11 +40,11 @@ MODULE_SRCS=	deps/bloom/bloom.c deps/murmur2/MurmurHash2.c deps/rmutil/util.c \
 
 do-build:
 	@cd ${WRKSRC} && for s in ${MODULE_SRCS}; do \
-		echo "  CC $$s"; ${CC} ${CFLAGS} -c $$s -o $${s%.c}.o || exit 1; \
+		echo "  CC $$s"; ${SETENVI} ${CC} ${CFLAGS} -c $$s -o $${s%.c}.o || exit 1; \
 	done
-	@cd ${WRKSRC} && ${CC} -shared ${LDFLAGS} -o redisbloom.so ${MODULE_SRCS:.c=.o}
+	@cd ${WRKSRC} && ${SETENVI} ${CC} -shared ${LDFLAGS} -o redisbloom.so ${MODULE_SRCS:.c=.o}
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/redisbloom.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL} -m 0755 ${WRKSRC}/redisbloom.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
