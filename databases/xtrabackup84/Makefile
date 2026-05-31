@@ -28,6 +28,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	qpress:archivers/qpress
 
 USES=		bison cmake compiler:c++14-lang cpe pkgconfig ssl
+CPE_PRODUCT=	xtrabackup
 CPE_VENDOR=	percona
 CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release \
 		-DWITHOUT_COMPONENT_KEYRING_KMIP:STRING=yes \
