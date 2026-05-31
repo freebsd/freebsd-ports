@@ -1,0 +1,19 @@
+--- deps/VectorSimilarity/deps/ScalableVectorSearch/CMakeLists.txt.orig	2026-05-30 14:27:46 UTC
++++ deps/VectorSimilarity/deps/ScalableVectorSearch/CMakeLists.txt
+@@ -124,6 +124,8 @@ set(LIB_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cm
+ # Location of auxiliary generated cmake files to help consumers of this package.
+ set(LIB_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/svs")
+ 
++option(SVS_INSTALL "Install SVS targets" OFF)
++if(SVS_INSTALL)
+ # Install headers and target information.
+ install(
+     TARGETS svs_export svs_devel svs_compile_options svs_native_options svs_x86_options_base
+@@ -140,6 +142,7 @@ install(
+     NAMESPACE "svs::"
+     DESTINATION "${LIB_CONFIG_INSTALL_DIR}"
+ )
++endif()
+ 
+ #####
+ ##### Config File
