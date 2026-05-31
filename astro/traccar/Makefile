@@ -10,7 +10,7 @@ WWW=		https://www.traccar.org/
 
 LICENSE=	APACHE20
 
-USES=		java zip
+USES=		cpe java zip
 JAVA_VERSION=	17+
 USE_RC_SUBR=	traccar
 
