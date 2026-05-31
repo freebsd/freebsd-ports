@@ -9,6 +9,9 @@ MAINTAINER=	lantw44@gmail.com
 COMMENT=	Bridge between UFOs and FontTools
 WWW=		https://github.com/googlefonts/ufo2ft
 
+DEPRECATED=	Depends on expired x11-font/py-cu2qu
+EXPIRATION_DATE=2026-08-31
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
