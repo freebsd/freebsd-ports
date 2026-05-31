@@ -12,6 +12,12 @@ share/icons/hicolor/64x64/apps/teams.png
 share/icons/hicolor/96x96/apps/teams.png
 %%DATADIR%%/resources/app-update.yml
 %%DATADIR%%/resources/app.asar
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/cbor-extract/LICENSE
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/cbor-extract/bin/download-prebuilds.js
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/cbor-extract/build/Release/extract.node
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/cbor-extract/index.js
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/cbor-extract/package.json
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/cbor-extract/src/extract.cpp
 %%DATADIR%%/resources/assets/sounds/meeting_started.wav
 %%DATADIR%%/resources/assets/sounds/new_message.wav
 %%DATADIR%%/resources/default_app.asar
