@@ -113,6 +113,7 @@
     SUBDIR += gtk-pipe-viewer
     SUBDIR += gtk-youtube-viewer
     SUBDIR += guvcview
+    SUBDIR += hana
     SUBDIR += handbrake
     SUBDIR += haruna
     SUBDIR += harvid
