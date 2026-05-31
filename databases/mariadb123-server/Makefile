@@ -1,6 +1,6 @@
 PORTNAME?=	mariadb
 PORTVERSION=	12.3.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	\
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	\
 		https://espejito.fder.edu.uy/${SITESDIR}/ \
 		https://ftp.osuosl.org/pub/${SITESDIR}/ \
 		https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/
-PKGNAMESUFFIX?=	118-server
+PKGNAMESUFFIX?=	123-server
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -161,7 +161,7 @@ SUB_FILES+=	my.cnf.sample client.cnf.sample
 
 .else # ! ${PKGNAMESUFFIX:M*-client}
 # MySQL-Server part
-USES+=		mysql:118m
+USES+=		mysql:123m
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
