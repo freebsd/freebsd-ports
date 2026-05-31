@@ -1,3 +1,5 @@
-TIMESTAMP = 1756292988
+TIMESTAMP = 1744609789
 SHA256 (astroidmail-astroid-v0.17_GH0.tar.gz) = dd419d4e11d1efa95979472e17cca5066799a5c64a595d5cea2b9e8d9f60f9c8
 SIZE (astroidmail-astroid-v0.17_GH0.tar.gz) = 3371728
+SHA256 (ad5b290816c57cae153ebf2dfbd64e8c7924344c.patch) = 006cfbc7e20fdeb4e7b6c78d2a43b6cd2e3424c4fa7947bb19b13f91a4fbaa30
+SIZE (ad5b290816c57cae153ebf2dfbd64e8c7924344c.patch) = 1223
