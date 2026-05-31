@@ -16,7 +16,7 @@ nox11_PKGNAMESUFFIX=	-nox11
 
 USES=		cpe
 
-CPE_VENDOR=	gifsicle_project
+CPE_VENDOR=	lcdf
 
 GNU_CONFIGURE=	yes
 
