@@ -17,10 +17,12 @@ GH_PROJECT=	KDiskMark SingleApplication:sa
 GH_TAGNAME=	f1e1508:sa
 GH_SUBDIR=	src/singleapplication:sa
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5
+USES=		cmake compiler:c++11-lang cpe kde:5 qt:5
 USE_QT=		buildtools:build linguisttools:build qmake:build \
 		dbus core gui network widgets
 USE_KDE=	ecm:build auth coreaddons
+
+CPE_VENDOR=	${PORTNAME}_project
 
 post-patch:
 	@${REINPLACE_CMD} -e '/--ioengine=/s,libaio,posixaio,' \
