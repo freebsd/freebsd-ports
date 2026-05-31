@@ -63,7 +63,7 @@ RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}apsw>=3.50.4.0:databases/py-apsw@${PY_FLAVO
 			pdftohtml:graphics/poppler-utils \
 			xdg-open:devel/xdg-utils
 
-USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
+USES=		cpe desktop-file-utils gettext-runtime:build gl localbase:ldflags \
 		pkgconfig pyqt:6 python:3.11+ qt:6 shared-mime-info shebangfix sqlite ssl \
 		tar:xz xorg
 USE_GITHUB=	nodefault
@@ -95,6 +95,8 @@ MAKE_ENV=	CALIBRE_CONFIG_DIRECTORY=${WRKDIR}/calibre-config \
 SUB_LIST=	PYTHON_VERSION=${PYTHON_VERSION}
 
 ISOCODESWRKSRC_CMD=	${BSDMAKE} -C ${.CURDIR}/../../misc/iso-codes -V WRKSRC
+
+CPE_VENDOR=	calibre-ebook
 
 post-extract:
 	@${CP} ${FILESDIR}/user-agent-data.json ${WRKSRC}/resources

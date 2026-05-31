@@ -25,11 +25,13 @@ LIB_DEPENDS=	libgeocode-glib-2.so:net/geocode-glib2 \
 		libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig tar:xz
+USES=		cpe desktop-file-utils gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo glib20 gtk40 introspection:build libadwaita \
 		libxml2 librsvg2
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.Maps.gschema.xml
+
+CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>

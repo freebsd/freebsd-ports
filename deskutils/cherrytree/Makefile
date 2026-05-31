@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libspdlog.so:devel/spdlog \
 		libuchardet.so:textproc/uchardet
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gnome \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils gnome \
 		pkgconfig python:build sqlite tar:xz
 USE_GNOME=	gtkmm30 gtksourceview4 libxml++26
 
@@ -36,6 +36,8 @@ NLS_CMAKE_OFF=	-DUSE_NLS:BOOL=OFF
 VTE_DESC=	Virtual terminal support
 VTE_USE=	GNOME=vte3
 VTE_CMAKE_OFF=	-DUSE_VTE:BOOL=OFF
+
+CPE_VENDOR=	${PORTNAME}_project
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

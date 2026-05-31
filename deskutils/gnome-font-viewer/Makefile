@@ -18,9 +18,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gnome localbase meson \
+USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase meson \
 		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk40 libadwaita
+
+CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>

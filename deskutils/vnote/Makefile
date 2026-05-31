@@ -13,7 +13,7 @@ BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 		pkgconf>0:devel/pkgconf
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
-USES=		compiler:c++17-lang cmake desktop-file-utils gl qt:6 xorg
+USES=		compiler:c++17-lang cmake cpe desktop-file-utils gl qt:6 xorg
 USE_GL=		opengl
 USE_QT=		5compat base declarative imageformats pdf positioning \
 		sqldriver-sqlite:run svg webchannel webengine
@@ -29,6 +29,8 @@ GH_SUBDIR=	libs/QHotkey:qhk libs/vtextedit:vte \
 		libs/vtextedit/libs/syntax-highlighting:shl
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DATADIR=${DATADIR}
+
+CPE_VENDOR=	${PORTNAME}_project
 
 post-patch:
 	@${REINPLACE_CMD} -E '/add_subdirectory\((demo|tests)\)/d' \

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfuse3.so:filesystems/fusefs-libs3 \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libportal.so:deskutils/libportal
 
-USES=		gettext-tools gmake gnome gstreamer meson pkgconfig \
+USES=		cpe gettext-tools gmake gnome gstreamer meson pkgconfig \
 		python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
@@ -36,6 +36,8 @@ OPTIONS_SUB=	yes
 
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man-pages
+
+CPE_VENDOR=	flatpak
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
