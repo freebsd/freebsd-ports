@@ -1,6 +1,5 @@
 PORTNAME=	halloy
-DISTVERSION=	2026.6
-PORTREVISION=	1
+DISTVERSION=	2026.7
 CATEGORIES=	irc
 
 MAINTAINER=	pokeysquirrel@gmail.com
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libzstd.so:archivers/zstd
 
-USES=		cargo desktop-file-utils ssl xorg
+USES=		cargo desktop-file-utils xorg
 USE_XORG=	xcb
 
 USE_GITHUB=	yes
