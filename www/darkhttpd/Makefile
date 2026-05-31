@@ -11,7 +11,7 @@ LICENSE=	ISCL
 
 USES=		cpe
 
-CPE_VENDOR=	darkhttpd_project
+CPE_VENDOR=	unix4lyfe
 
 USE_RC_SUBR=	darkhttpd
 USE_GITHUB=	yes
