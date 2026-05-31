@@ -1,0 +1,11 @@
+--- tpool/CMakeLists.txt.orig	2025-11-04 17:38:14 UTC
++++ tpool/CMakeLists.txt
+@@ -8,7 +8,7 @@ SET(COMMON_SOURCES
+   wait_notification.cc
+ )
+ 
+-
++ADD_DEFINITIONS(-fPIC)
+ IF(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
+   ADD_LIBRARY(tpool OBJECT ${COMMON_SOURCES}  aio_simulated.cc)
+   IF(WIN32)
