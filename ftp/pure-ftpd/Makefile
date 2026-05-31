@@ -1,5 +1,6 @@
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.54
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://download.pureftpd.org/pub/pure-ftpd/releases/
 

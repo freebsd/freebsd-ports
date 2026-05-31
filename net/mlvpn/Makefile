@@ -1,5 +1,6 @@
 PORTNAME=	mlvpn
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	net net-vpn
 
 MAINTAINER=	olivier@FreeBSD.org
