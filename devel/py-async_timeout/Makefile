@@ -1,9 +1,8 @@
 PORTNAME=	async_timeout
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-#DISTNAME=	async-timeout-${DISTVERSIONFULL}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Timeout context manager for asyncio programs
