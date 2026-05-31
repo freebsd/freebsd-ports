@@ -13,7 +13,7 @@ BUILD_DEPENDS=	htslib>=1.22:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase ncurses perl5 python:env shebangfix
+USES=		autoreconf cpe gmake localbase ncurses perl5 python:env shebangfix
 
 USE_GITHUB=	yes
 
@@ -25,5 +25,7 @@ SHEBANG_FILES=	misc/*.pl misc/plot-bamstats test/test.pl
 CONFIGURE_ARGS=	--with-htslib=system
 
 TEST_TARGET=	test
+
+CPE_VENDOR=	htslib
 
 .include <bsd.port.mk>

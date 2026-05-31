@@ -12,7 +12,7 @@ WWW=		https://sbml.org/software/libsbml/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cmake:testing iconv:build
+USES=		cmake:testing cpe iconv:build
 
 CMAKE_OFF=	EXIT_ON_ERROR \
 		LIBSBML_SKIP_SHARED_LIBRARY \
@@ -68,6 +68,8 @@ RUBY_CMAKE_BOOL=	WITH_RUBY
 RUBY_USES=		ruby
 XERCES_CMAKE_BOOL=	WITH_XERCES
 XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
+
+CPE_VENDOR=		${PORTNAME}_project
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
