@@ -15,7 +15,7 @@ BUILD_DEPENDS=	fast_float>0:math/fast_float
 LIB_DEPENDS=	libzip.so:archivers/libzip
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		compiler:c++17-lang cmake:testing localbase:ldflags pathfix \
+USES=		compiler:c++17-lang cmake:testing cpe localbase:ldflags pathfix \
 		pkgconfig python
 USE_LDCONFIG=	yes
 
@@ -46,5 +46,7 @@ CMAKE_OFF=	USE_INCLUDED_LIBZIP \
 		USE_INCLUDED_ZLIB \
 		USE_INCLUDED_SSL \
 		LIB3MF_TESTS
+
+CPE_VENDOR=	3mf
 
 .include <bsd.port.mk>
