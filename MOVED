@@ -5332,3 +5332,4 @@ archivers/rubygem-rubyzip2|archivers/rubygem-rubyzip|2026-05-31|Has expired: Out
 japanese/p5-2chproxy||2026-05-31|Has expired: Abandoned, it is not compatible with the current servers, migrate to proxy2ch
 www/py-azure-storage||2026-05-31|Has expired: Deprecated by upstream. Use other py-azure-storage-* ports instead
 www/py-pyjwt1|www/py-pyjwt|2026-05-31|Has expired: Obsoleted. Use www/py-pyjwt instead
+net/rubygem-gitaly-proto||2026-05-31|Has expired: gitaly-proto has been deprecated
