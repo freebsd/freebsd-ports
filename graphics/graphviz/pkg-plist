@@ -3,7 +3,6 @@ bin/bcomps
 bin/ccomps
 bin/circo
 bin/cluster
-bin/diffimg
 bin/dijkstra
 bin/dot
 bin/dot2gxl
@@ -229,7 +228,6 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/circo.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/cluster.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/cpl1.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/diffimg.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/dijkstra.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/dot.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/dot2gxl.1.pdf
@@ -464,7 +462,6 @@ share/man/man1/bcomps.1.gz
 share/man/man1/ccomps.1.gz
 share/man/man1/circo.1.gz
 share/man/man1/cluster.1.gz
-share/man/man1/diffimg.1.gz
 share/man/man1/dijkstra.1.gz
 share/man/man1/dot.1.gz
 share/man/man1/dot2gxl.1.gz
