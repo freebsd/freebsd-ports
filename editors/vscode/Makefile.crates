@@ -27,7 +27,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		atomic_refcell-0.1.13 \
 		auto_impl-1.2.0 \
 		autocfg-1.4.0 \
-		autocfg-1.5.0 \
+		autocfg-1.5.1 \
 		backtrace-0.3.75 \
 		backtrace-ext-0.2.1 \
 		base64-0.22.1 \
@@ -70,7 +70,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		castaway-0.2.3 \
 		cbor4ii-1.2.2 \
 		cc-1.2.46 \
-		cc-1.2.62 \
+		cc-1.2.63 \
 		cfg-if-1.0.4 \
 		chrono-0.4.42 \
 		ciborium-0.2.2 \
@@ -128,7 +128,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cssparser-macros-0.6.1 \
 		ctor-0.1.26 \
 		ctor-0.4.1 \
-		ctor-1.0.6 \
+		ctor-1.0.7 \
 		ctor-proc-macro-0.0.5 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
@@ -165,6 +165,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-tag-0.3.0 \
 		enum-tag-macro-0.3.0 \
 		equivalent-1.0.1 \
+		equivalent-1.0.2 \
 		errno-0.3.10 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
@@ -221,7 +222,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
+		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
+		hashbrown-0.17.1 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -252,6 +255,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		if_chain-1.0.2 \
 		image-0.25.10 \
 		indexmap-2.12.1 \
+		indexmap-2.14.0 \
 		indicatif-0.18.3 \
 		indoc-2.0.7 \
 		inotify-0.11.0 \
@@ -294,6 +298,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		litemap-0.8.1 \
 		lock_api-0.4.14 \
 		log-0.4.22 \
+		log-0.4.30 \
 		loom-0.7.2 \
 		lru-0.16.2 \
 		mach2-0.4.2 \
@@ -302,7 +307,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		maybe-owned-0.3.4 \
 		md4-0.10.2 \
 		memchr-2.7.6 \
-		memchr-2.8.0 \
+		memchr-2.8.1 \
 		memfd-0.6.4 \
 		micromegas-perfetto-0.9.0 \
 		miette-7.6.0 \
@@ -331,6 +336,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nodejs-built-in-modules-1.0.0 \
 		nohash-hasher-0.2.0 \
 		nom-7.1.3 \
+		nom-8.0.0 \
 		normpath-0.2.0 \
 		notify-8.2.0 \
 		notify-types-2.0.0 \
@@ -380,6 +386,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pathdiff-0.2.3 \
 		percent-encoding-2.3.2 \
 		petgraph-0.7.1 \
+		petgraph-0.8.3 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
@@ -476,6 +483,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
+		shlex-2.0.1 \
 		signal-hook-0.3.18 \
 		signal-hook-registry-1.4.5 \
 		simd-abstraction-0.7.1 \
@@ -622,6 +630,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-subscriber-0.3.22 \
 		tracy-client-0.18.4 \
 		tracy-client-sys-0.26.0 \
+		tree_magic_mini-3.2.2 \
 		triomphe-0.1.14 \
 		trybuild-1.0.114 \
 		typenum-1.17.0 \
@@ -678,7 +687,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wast-35.0.2 \
 		wayland-backend-0.3.15 \
 		wayland-client-0.31.14 \
-		wayland-clipboard-listener-0.3.1 \
+		wayland-clipboard-listener-0.6.1 \
 		wayland-protocols-0.32.12 \
 		wayland-protocols-wlr-0.3.12 \
 		wayland-scanner-0.31.10 \
@@ -746,6 +755,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winx-0.36.4 \
 		wit-bindgen-rt-0.39.0 \
 		witx-0.9.1 \
+		wl-clipboard-rs-0.9.3 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		writeable-0.6.2 \
@@ -760,10 +770,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		yoke-derive-0.8.1 \
 		zerocopy-0.7.35 \
 		zerocopy-0.8.25 \
-		zerocopy-0.8.48 \
+		zerocopy-0.8.50 \
 		zerocopy-derive-0.7.35 \
 		zerocopy-derive-0.8.25 \
-		zerocopy-derive-0.8.48 \
+		zerocopy-derive-0.8.50 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zerotrie-0.2.3 \

@@ -2,9 +2,9 @@ https://github.com/eclipse/openvsx/issues/543
 https://github.com/termux/termux-packages/issues/24739
 https://github.com/termux/termux-packages/pull/24757
 
---- package.json.orig	2026-05-22 07:29:33 UTC
+--- package.json.orig	2026-05-29 07:25:37 UTC
 +++ package.json
-@@ -135,6 +135,7 @@
+@@ -139,6 +139,7 @@
      "minimist": "^1.2.8",
      "native-is-elevated": "0.9.0",
      "native-keymap": "^3.3.5",

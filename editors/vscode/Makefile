@@ -65,7 +65,7 @@ USES=		cargo desktop-file-utils display:test electron:39,build,test \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 # See ${WRKSRC}/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/package.json for node-clipboard-rs version
-GH_TUPLE=	Teddy-Zhu:node-clipboard-rs:v0.0.5:node_clipboard_rs/node-clipboard-rs
+GH_TUPLE=	Teddy-Zhu:node-clipboard-rs:v0.0.10:node_clipboard_rs/node-clipboard-rs
 # See ${WRKSRC}/build/rspack/node_modules/@rspack/binding/package.json for rspack version
 GH_TUPLE+=	web-infra-dev:rspack:v1.7.10:rspack/rspack
 
@@ -228,10 +228,16 @@ pre-build:
 # copy rg binary file to @vscode/ripgrep node module directory
 	@${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin \
 		${WRKSRC}/build/node_modules/@vscode/ripgrep/bin \
-		${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin \
+		${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 # copy rg binary file to @github/copilot node modules directory
 	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/node_modules/@github/copilot-sdk/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH} \

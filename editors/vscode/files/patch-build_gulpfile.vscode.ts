@@ -1,6 +1,6 @@
---- build/gulpfile.vscode.ts.orig	2026-05-12 20:17:22 UTC
+--- build/gulpfile.vscode.ts.orig	2026-05-29 07:25:37 UTC
 +++ build/gulpfile.vscode.ts
-@@ -307,6 +307,7 @@ function packageTask(platform: string, arch: string, s
+@@ -304,6 +304,7 @@ function packageTask(platform: string, arch: string, s
  				json.date = readISODate(out);
  				json.checksums = checksums;
  				json.version = version;

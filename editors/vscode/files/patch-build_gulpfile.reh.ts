@@ -1,6 +1,6 @@
---- build/gulpfile.reh.ts.orig	2026-04-29 14:36:44 UTC
+--- build/gulpfile.reh.ts.orig	2026-05-29 07:25:37 UTC
 +++ build/gulpfile.reh.ts
-@@ -27,7 +27,7 @@ import rceditCallback from 'rcedit';
+@@ -22,7 +22,7 @@ import rceditCallback from 'rcedit';
  import glob from 'glob';
  import { promisify } from 'util';
  import rceditCallback from 'rcedit';
@@ -9,7 +9,7 @@
  import { cleanExtensionsBuildTask, compileNonNativeExtensionsBuildTask, compileNativeExtensionsBuildTask, compileExtensionMediaBuildTask, compileCopilotExtensionBuildTask } from './gulpfile.extensions.ts';
  import { vscodeWebResourceIncludes, createVSCodeWebFileContentMapper } from './gulpfile.vscode.web.ts';
  import * as cp from 'child_process';
-@@ -327,7 +327,7 @@ function packageTask(type: string, platform: string, a
+@@ -321,7 +321,7 @@ function packageTask(type: string, platform: string, a
  
  		let productJsonContents = '';
  		const productJsonStream = gulp.src(['product.json'], { base: '.' })
@@ -18,8 +18,8 @@
  			.pipe(es.through(function (file) {
  				productJsonContents = file.contents.toString();
  				this.emit('data', file);
-@@ -533,7 +533,7 @@ function tweakProductForServerWeb(product: typeof impo
- 			gulp.task(serverTaskCI);
+@@ -564,7 +564,7 @@ function tweakProductForServerWeb(product: typeof impo
+ 			task.task(serverTaskCI);
  
  			const serverTask = task.define(`vscode-${type}${dashed(platform)}${dashed(arch)}${dashed(minified)}`, task.series(
 -				compileBuildWithManglingTask,
