@@ -5328,3 +5328,4 @@ accessibility/libqaccessibilityclient@qt6|accessibility/libqaccessibilityclient|
 net/kpeoplevcard||2026-05-30|Removed, not needed anymore
 shells/agsh|shells/meka|2026-05-30|Project renamed upstream
 graphics/kdiagram||2026-05-31|Removed, not needed anymore
+archivers/rubygem-rubyzip2|archivers/rubygem-rubyzip|2026-05-31|Has expired: Outdated. Upstream disappeared
