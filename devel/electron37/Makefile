@@ -34,7 +34,7 @@ PATCH_DEPENDS=	git:devel/git \
 BUILD_DEPENDS=	gperf:devel/gperf \
 		bindgen:devel/rust-bindgen-cli \
 		yasm:devel/yasm \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
 		rustc:lang/rust \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION} \

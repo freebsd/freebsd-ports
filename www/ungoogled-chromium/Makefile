@@ -38,7 +38,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 		${LOCALBASE}/include/va/va.h:multimedia/libva \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
 		${LOCALBASE}/libdata/pkgconfig/Qt5Core.pc:devel/qt5-core \
 		${LOCALBASE}/libdata/pkgconfig/Qt5Widgets.pc:x11-toolkits/qt5-widgets
 
