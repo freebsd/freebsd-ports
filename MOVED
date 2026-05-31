@@ -5326,3 +5326,4 @@ graphics/kimageannotator@qt6|graphics/kimageannotator|2026-05-30|Unflavorize
 accessibility/libqaccessibilityclient@qt5||2026-05-30|Unflavorize, remove Qt5 flavor
 accessibility/libqaccessibilityclient@qt6|accessibility/libqaccessibilityclient|2026-05-30|Unflavorize
 net/kpeoplevcard||2026-05-30|Removed, not needed anymore
+shells/agsh|shells/meka|2026-05-30|Project renamed upstream

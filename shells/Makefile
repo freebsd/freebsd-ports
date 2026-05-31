@@ -1,7 +1,6 @@
     COMMENT = Shells
 
     SUBDIR += 44bsd-csh
-    SUBDIR += agsh
     SUBDIR += anongitssh
     SUBDIR += antibody
     SUBDIR += ast-ksh
@@ -33,6 +32,7 @@
     SUBDIR += ksh-devel
     SUBDIR += ksh93
     SUBDIR += libpowershell-native
+    SUBDIR += meka
     SUBDIR += mksh
     SUBDIR += modernish
     SUBDIR += murex

@@ -1,11 +1,11 @@
-PORTNAME=	agsh
-DISTVERSION=	0.26.2
+PORTNAME=	meka
+DISTVERSION=	0.27.1
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General-purpose AI agent runtime
-WWW=		https://docs.agsh.sh/ \
-		https://github.com/k4yt3x/agsh
+WWW=		https://docs.meka.so/ \
+		https://github.com/k4yt3x/meka
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +15,19 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	k4yt3x
 
+# Point utoipa-swagger-ui to pre-downloaded distfile for offline builds
+MASTER_SITES+=	https://github.com/swagger-api/swagger-ui/archive/refs/tags/:swaggerui
+DISTFILES+=	v5.17.14.zip:swaggerui
+
+post-extract:
+	@${CP} ${DISTDIR}/v5.17.14.zip ${WRKDIR}/
+
+MAKE_ENV+=	SWAGGER_UI_DOWNLOAD_URL=file:${WRKDIR}/v5.17.14.zip
+
 CARGO_CRATES=	adler2-2.0.1 \
+		agent-client-protocol-0.12.1 \
+		agent-client-protocol-derive-0.11.1 \
+		agent-client-protocol-schema-0.13.2 \
 		aho-corasick-1.1.4 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
@@ -27,13 +39,24 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
+		arbitrary-1.4.2 \
+		async-channel-2.5.0 \
 		async-compression-0.4.42 \
+		async-io-2.6.0 \
+		async-lock-3.4.2 \
+		async-process-2.5.0 \
+		async-signal-0.2.14 \
+		async-stream-0.3.6 \
+		async-stream-impl-0.3.6 \
+		async-task-4.7.1 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
 		auto_encoder-0.2.3 \
 		autocfg-1.5.0 \
 		aws-lc-rs-1.16.3 \
 		aws-lc-sys-0.40.0 \
+		axum-0.8.9 \
+		axum-core-0.5.6 \
 		base64-0.22.1 \
 		bincode-1.3.3 \
 		bit-set-0.8.0 \
@@ -42,8 +65,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-2.11.1 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.0 \
+		blocking-1.6.2 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
+		bs58-0.5.1 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
 		bytemuck-1.25.0 \
@@ -65,6 +90,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		combine-4.6.7 \
 		compression-codecs-0.4.38 \
 		compression-core-0.4.32 \
+		concurrent-queue-2.5.0 \
 		const-oid-0.10.2 \
 		convert_case-0.10.0 \
 		cookie-0.18.1 \
@@ -97,6 +123,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		deranged-0.5.8 \
+		derive_arbitrary-1.4.2 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		digest-0.10.7 \
@@ -115,6 +142,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		encoding_rs_io-0.1.7 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
+		event-listener-5.4.1 \
+		event-listener-strategy-0.5.4 \
 		eventsource-stream-0.2.3 \
 		exr-1.74.0 \
 		fallible-iterator-0.3.0 \
@@ -127,6 +156,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fd-lock-4.0.4 \
 		fdeflate-0.3.7 \
 		find-msvc-tools-0.1.9 \
+		fixedbitset-0.5.7 \
 		flate2-1.1.9 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
@@ -135,9 +165,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fs_extra-1.3.0 \
 		futures-0.3.32 \
 		futures-channel-0.3.32 \
+		futures-concurrency-7.7.1 \
 		futures-core-0.3.32 \
 		futures-executor-0.3.32 \
 		futures-io-0.3.32 \
+		futures-lite-2.6.1 \
 		futures-macro-0.3.32 \
 		futures-sink-0.3.32 \
 		futures-task-0.3.32 \
@@ -153,16 +185,22 @@ CARGO_CRATES=	adler2-2.0.1 \
 		grep-searcher-0.1.16 \
 		h2-0.4.13 \
 		half-2.7.1 \
+		hashbrown-0.12.3 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
+		hermit-abi-0.5.2 \
+		hex-0.4.3 \
 		html5ever-0.39.0 \
 		http-1.4.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
+		httpdate-1.0.3 \
+		humantime-2.3.0 \
+		humantime-serde-1.1.1 \
 		hybrid-array-0.4.11 \
 		hyper-1.9.0 \
 		hyper-rustls-0.27.9 \
@@ -182,6 +220,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		idna_adapter-1.2.2 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
+		indexmap-1.9.3 \
 		indexmap-2.14.0 \
 		infer-0.19.0 \
 		ipnet-2.12.0 \
@@ -197,6 +236,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.97 \
+		jsonrpcmsg-0.1.2 \
 		jsonwebtoken-10.3.0 \
 		lazy-regex-3.6.0 \
 		lazy-regex-proc_macros-3.6.0 \
@@ -215,9 +255,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lru-slab-0.1.2 \
 		markup5ever-0.39.0 \
 		matchers-0.2.0 \
+		matchit-0.8.4 \
 		memchr-2.8.0 \
 		memmap2-0.9.10 \
 		mime-0.3.17 \
+		mime_guess-2.0.5 \
 		minimad-0.14.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -237,6 +279,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		open-5.3.4 \
 		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
+		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.2 \
@@ -252,10 +295,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		phf_macros-0.13.1 \
 		phf_shared-0.11.3 \
 		phf_shared-0.13.1 \
+		pin-project-1.1.13 \
+		pin-project-internal-1.1.13 \
 		pin-project-lite-0.2.17 \
+		piper-0.2.5 \
 		pkg-config-0.3.33 \
 		plist-1.8.0 \
 		png-0.18.1 \
+		polling-3.11.0 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
@@ -295,6 +342,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rmcp-1.7.0 \
 		rmcp-macros-1.7.0 \
 		rusqlite-0.37.0 \
+		rust-embed-8.11.0 \
+		rust-embed-impl-8.11.0 \
+		rust-embed-utils-8.11.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
@@ -308,6 +358,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
 		schannel-0.1.29 \
+		schemars-0.9.0 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
 		scopeguard-1.2.0 \
@@ -322,14 +373,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.149 \
+		serde_norway-0.9.42 \
 		serde_path_to_error-0.1.20 \
 		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.34+deprecated \
+		serde_with-3.20.0 \
+		serde_with_macros-3.20.0 \
 		servo_arc-0.4.3 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
 		sharded-slab-0.1.7 \
+		shell-words-1.1.1 \
 		shlex-1.3.0 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
@@ -351,7 +405,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
+		strum-0.28.0 \
 		strum_macros-0.26.4 \
+		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.2 \
@@ -403,12 +459,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
-		unsafe-libyaml-0.2.11 \
+		unsafe-libyaml-norway-0.2.15 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
 		utf-8-0.7.6 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
+		utoipa-5.5.0 \
+		utoipa-gen-5.5.0 \
+		utoipa-swagger-ui-9.0.2 \
 		uuid-1.23.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
@@ -491,7 +550,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
+		zip-3.0.0 \
+		zlib-rs-0.6.3 \
 		zmij-1.0.21 \
+		zopfli-0.8.3 \
 		zune-core-0.5.1 \
 		zune-inflate-0.2.54 \
 		zune-jpeg-0.5.15 \

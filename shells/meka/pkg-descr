@@ -1,4 +1,4 @@
-agsh is a general-purpose AI agent runtime that provides Large Language
+meka is a general-purpose AI agent runtime that provides Large Language
 Models (LLMs) with tools like web search, shell execution, and file
 editing to perform complex tasks.
 
