@@ -1,6 +1,6 @@
 PORTNAME=	carapace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.6
+DISTVERSION=	1.7.0
 CATEGORIES=	shells
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/carapace-sh/carapace-bin
 GO_TARGET=	./cmd/carapace
-GO_BUILDFLAGS=	-ldflags "-s -w -X main.version=${DISTVERSION}"
+GO_LDFLAGS=	-w -X main.version=${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
