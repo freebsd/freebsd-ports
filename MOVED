@@ -5333,3 +5333,4 @@ japanese/p5-2chproxy||2026-05-31|Has expired: Abandoned, it is not compatible wi
 www/py-azure-storage||2026-05-31|Has expired: Deprecated by upstream. Use other py-azure-storage-* ports instead
 www/py-pyjwt1|www/py-pyjwt|2026-05-31|Has expired: Obsoleted. Use www/py-pyjwt instead
 net/rubygem-gitaly-proto||2026-05-31|Has expired: gitaly-proto has been deprecated
+www/redmine51||2026-05-31|Has expired: Please migrate to newer version. Ruby 3.2 has been removed from the ports tree
