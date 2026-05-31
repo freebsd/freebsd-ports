@@ -412,7 +412,6 @@
     SUBDIR += kdegraphics-mobipocket
     SUBDIR += kdegraphics-svgpart
     SUBDIR += kdegraphics-thumbnailers
-    SUBDIR += kdiagram
     SUBDIR += kdiagram-qt6
     SUBDIR += kealib
     SUBDIR += kf5-kimageformats

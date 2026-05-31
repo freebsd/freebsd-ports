@@ -5327,3 +5327,4 @@ accessibility/libqaccessibilityclient@qt5||2026-05-30|Unflavorize, remove Qt5 fl
 accessibility/libqaccessibilityclient@qt6|accessibility/libqaccessibilityclient|2026-05-30|Unflavorize
 net/kpeoplevcard||2026-05-30|Removed, not needed anymore
 shells/agsh|shells/meka|2026-05-30|Project renamed upstream
+graphics/kdiagram||2026-05-31|Removed, not needed anymore
