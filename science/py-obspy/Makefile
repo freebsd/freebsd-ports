@@ -11,6 +11,9 @@ WWW=		https://www.obspy.org/
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Depends on expired databases/py-sqlalchemy10
+EXPIRATION_DATE=2026-08-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.12.4:devel/py-future@${PY_FLAVOR} \
