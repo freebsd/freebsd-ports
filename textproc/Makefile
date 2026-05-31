@@ -1804,6 +1804,7 @@
     SUBDIR += redisearch
     SUBDIR += redisearch20
     SUBDIR += redisearch22
+    SUBDIR += redisearch24
     SUBDIR += redland
     SUBDIR += redland-bindings
     SUBDIR += refdb
