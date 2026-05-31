@@ -1,23 +1,23 @@
 PORTNAME=	lua
-DISTVERSION=	5.4.8
+DISTVERSION=	5.5.0
 CATEGORIES=	lang
 MASTER_SITES=	https://www.lua.org/ftp/
 PKGNAMESUFFIX=	${LUA_VER_STR}
 
-MAINTAINER=	andrew@tao11.riddles.org.uk
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
 WWW=		https://www.lua.org/
 
 LICENSE=	MIT
 
-USES=		cpe lua:core,54
+USES=		cpe lua:core,55
 USE_LDCONFIG=	yes
 
 # using the "bsd" target rather than "freebsd" saves patching out the
 # assumption of using base libedit in order to make it configurable. "bsd"
 # is "generic" plus the POSIX and DLOPEN options, plus -Wl,-E at link time;
 # it doesn't set CC either, which makes it easier for us to control that too.
-ALL_TARGET=bsd
+ALL_TARGET=	bsd
 
 LUA_LIB_STATIC=	liblua-${LUA_VER}.a
 LUA_LIB_SHARED=	liblua-${LUA_VER}.so
@@ -28,7 +28,7 @@ CFLAGS+=	-fPIC
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=235211
 LIBS+=		-pthread
 
-WITHOUT_NO_STRICT_ALIASING=yes
+WITHOUT_NO_STRICT_ALIASING=	yes
 
 MAKE_ARGS+=	CC="${CC}" \
 		CMCFLAGS="" \
@@ -74,7 +74,7 @@ OPTIONS_GROUP_DEBUGGRP=	ASSERT APICHECK
 OPTIONS_GROUP_DOCSGRP=	DOCS
 
 OPTIONS_SINGLE=		EDITGRP
-OPTIONS_SINGLE_EDITGRP=	EDITNONE LIBEDIT_DL LIBEDIT READLINE
+OPTIONS_SINGLE_EDITGRP=	EDITNONE LIBEDIT LIBEDIT_DL READLINE READLINE_DL
 
 # Option descriptions
 
@@ -85,11 +85,12 @@ DEBUGGRP_DESC=	Debugging options
 DOCSGRP_DESC=	Documentation options
 DOCS_DESC=	Install language and API reference (HTML, ~400kB)
 
-EDITGRP_DESC=	Interactive command-line editing
-EDITNONE_DESC=	No command-line editing
-LIBEDIT_DESC=	Use libedit (breaks lcurses)
-LIBEDIT_DL_DESC=Use dynamically loaded libedit (recommended)
-READLINE_DESC=	Use GNU Readline (breaks lcurses)
+EDITGRP_DESC=		Interactive command-line editing
+EDITNONE_DESC=		No command-line editing
+LIBEDIT_DESC=		Use libedit (breaks lcurses)
+LIBEDIT_DL_DESC=	Use dynamically loaded libedit (recommended)
+READLINE_DESC=		Use GNU Readline (breaks lcurses)
+READLINE_DL_DESC=	Use dynamically loaded GNU readline
 
 # Option implementations
 
@@ -103,12 +104,17 @@ LIBEDIT_CPPFLAGS=	-DLUA_USE_READLINE
 LIBEDIT_LIBS=		-ledit
 
 LIBEDIT_DL_USES=	libedit
-LIBEDIT_DL_CPPFLAGS=	-DLUA_USE_READLINE_DL
-LIBEDIT_DL_EXTRA_PATCHES=${PATCHDIR}/extra-patch-libedit-dl
+LIBEDIT_DL_CPPFLAGS=	-DLUA_USE_DLOPEN \
+			-DLUA_READLINELIB='\"${LOCALBASE}/lib/libedit.so\"'
+LIBEDIT_DL_EXTRA_PATCHES=${PATCHDIR}/extra-patch-dlopen
 
 READLINE_USES=		readline
 READLINE_CPPFLAGS=	-DLUA_USE_READLINE
 READLINE_LIBS=		-lreadline
+
+READLINE_DL_USES=	readline
+READLINE_DL_CPPFLAGS=	-DLUA_USE_DLOPEN \
+			-DLUA_READLINELIB='\"${LOCALBASE}/lib/libreadline.so\"'
 
 # end of option vars
 
@@ -121,11 +127,6 @@ post-patch:
 post-patch-LIBEDIT-on:
 	@${REINPLACE_CMD} -e "s,readline/,editline/,g ; \
 		/history\.h/d" ${WRKSRC}/src/lua.c
-
-post-patch-LIBEDIT_DL-on:
-	@${REINPLACE_CMD} \
-		-e "/^#def.*LUA_READLINE_LIBPATH/s,/usr/local,${LOCALBASE}," \
-		${WRKSRC}/src/lua.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${LUA_LIB_SHARED}

@@ -1,11 +1,11 @@
---- src/Makefile.orig	2020-04-15 13:00:29 UTC
+--- src/Makefile.orig	2025-07-07 00:19:14 UTC
 +++ src/Makefile
-@@ -7,11 +7,12 @@
+@@ -7,11 +7,12 @@ CC= gcc -std=gnu99
  PLAT= guess
  
  CC= gcc -std=gnu99
--CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_3 $(SYSCFLAGS) $(MYCFLAGS)
-+CFLAGS= -Wall -Wextra -DLUA_COMPAT_5_3 $(SYSCFLAGS) $(MYCFLAGS)
+-CFLAGS= -O2 -Wall -Wextra $(SYSCFLAGS) $(MYCFLAGS)
++CFLAGS= -Wall -Wextra $(SYSCFLAGS) $(MYCFLAGS)
  LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
  LIBS= -lm $(SYSLIBS) $(MYLIBS)
 +SOLIBS= -lm
@@ -15,7 +15,7 @@
  RANLIB= ranlib
  RM= rm -f
  UNAME= uname
-@@ -39,12 +40,13 @@ BASE_O= $(CORE_O) $(LIB_O) $(MYOBJS)
+@@ -39,12 +40,13 @@ LUA_O=	lua.o
  
  LUA_T=	lua
  LUA_O=	lua.o
@@ -30,7 +30,7 @@
  ALL_A= $(LUA_A)
  
  # Targets start here.
-@@ -56,8 +58,11 @@ o:	$(ALL_O)
+@@ -56,8 +58,11 @@ a:	$(ALL_A)
  
  a:	$(ALL_A)
  

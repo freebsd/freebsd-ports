@@ -180,6 +180,7 @@
     SUBDIR += lua52
     SUBDIR += lua53
     SUBDIR += lua54
+    SUBDIR += lua55
     SUBDIR += luajit
     SUBDIR += luajit-openresty
     SUBDIR += malbolge

@@ -105,7 +105,7 @@ LINUX_DEFAULT?=		rl9
 .  endif
 # Possible values: 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, -devel (to be used when non-base compiler is required)
 LLVM_DEFAULT?=		19
-# Possible values: 5.1, 5.2, 5.3, 5.4
+# Possible values: 5.1, 5.2, 5.3, 5.4, 5.5
 LUA_DEFAULT?=		5.4
 # Possible values: luajit, luajit-openresty
 .  if ${ARCH:Mpowerpc64*}
