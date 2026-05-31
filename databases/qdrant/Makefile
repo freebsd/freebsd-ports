@@ -20,7 +20,7 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	librocksdb.so:databases/rocksdb \
 		libzstd.so:archivers/zstd
 
-USES=		cargo gmake llvm:min=13 perl5 pkgconfig
+USES=		cargo cpe gmake llvm:min=13 perl5 pkgconfig
 USE_GITHUB=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	qdrant

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake compiler:c++20-lang localbase pkgconfig python:build,test
+USES=		cmake compiler:c++20-lang cpe localbase pkgconfig python:build,test
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault
@@ -192,6 +192,8 @@ TESTING_LIB_DEPENDS=		libgtest.so:devel/googletest
 OPTIONS_DEFAULT+=	${opt}
 .  endif
 .endfor
+
+CPE_VENDOR=	apache
 
 .include <bsd.port.options.mk>
 

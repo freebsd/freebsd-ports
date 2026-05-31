@@ -11,7 +11,7 @@ WWW=		https://soci.sourceforge.net/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake compiler:c++14-lang cpe
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SOCI
@@ -53,5 +53,7 @@ PGSQL_CMAKE_BOOL=	SOCI_POSTGRESQL
 
 SQLITE_USES=		sqlite
 SQLITE_CMAKE_BOOL=	SOCI_SQLITE3
+
+CPE_VENDOR=		${PORTNAME}_project
 
 .include <bsd.port.mk>

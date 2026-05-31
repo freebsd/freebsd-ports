@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
 		libmongoc-1.0.so:devel/mongo-c-driver
 
-USES=		cmake python:build ssl
+USES=		cmake cpe python:build ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
@@ -24,5 +24,7 @@ CMAKE_ARGS=	-DBUILD_VERSION=${DISTVERSION} \
 CMAKE_ON=	USE_SHARED_LIBBSON
 CMAKE_OFF=	BUILD_TESTING ENABLE_ONLINE_TESTS \
 		MONGOCRYPT_ENABLE_DECIMAL128
+
+CPE_VENDOR=	${GH_ACCOUNT}
 
 .include <bsd.port.mk>

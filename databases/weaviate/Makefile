@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	port seems to not support 32 bit platforms
 
-USES=		go:1.26,modules
+USES=		cpe go:1.26,modules
 
 GO_MODULE=	github.com/weaviate/weaviate
 GO_TARGET=	./cmd/weaviate-server

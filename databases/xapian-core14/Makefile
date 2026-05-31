@@ -12,7 +12,7 @@ WWW=		https://xapian.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang libtool tar:xz
+USES=		compiler:c++11-lang cpe libtool tar:xz
 
 CONFIGURE_ARGS=	ac_cv_func_snprintf=snprintf
 GNU_CONFIGURE=	yes
@@ -28,6 +28,8 @@ OPTIONS_DEFINE=	DOCS SSE2
 SSE2_DESC=	Use SSE2 for floating point
 
 SSE2_CONFIGURE_ENABLE=	sse
+
+CPE_VENDOR=	xapian
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xapian-inspect ${STAGEDIR}${PREFIX}/bin/xapian-inspect

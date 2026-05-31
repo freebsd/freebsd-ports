@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake:testing compiler:c++11-lang ssl
+USES=		cmake:testing compiler:c++11-lang cpe ssl
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		duckdb:duckdb-avro:7f423d69709045e38f8431b3470e0395fce1a595:avro/extension/avro \

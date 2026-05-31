@@ -35,7 +35,7 @@ icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
 .endif
 
-USES=	libtool ncurses zip
+USES=	cpe libtool ncurses zip
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
@@ -223,6 +223,9 @@ UNLOCK_NOTIFY_CPPFLAGS=	-DSQLITE_ENABLE_UNLOCK_NOTIFY=1
 UPDATE_LIMIT_CONFIGURE_ON=	--update-limit
 URI_CPPFLAGS=	-DSQLITE_USE_URI=1
 URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
+
+CPE_VENDOR=	sqlite
+CPE_PRODUCT=	sqlite
 
 .include <bsd.port.options.mk>
 

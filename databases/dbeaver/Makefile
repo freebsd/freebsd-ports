@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	maven39>0:devel/maven39
 
-USES=		dos2unix java
+USES=		cpe dos2unix java
 DOS2UNIX_GLOB=	*.MF *.css *.exsd *.java *.properties *.txt *.xml
 USE_GITHUB=	yes
 GH_TUPLE=	dbeaver:dbeaver-common:1379027:common/../dbeaver-common \
