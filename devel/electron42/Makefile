@@ -33,7 +33,7 @@ BUILD_DEPENDS=	esbuild:devel/esbuild \
 		gperf:devel/gperf \
 		bindgen:devel/rust-bindgen-cli \
 		yasm:devel/yasm \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION} \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
