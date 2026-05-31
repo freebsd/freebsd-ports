@@ -1,6 +1,6 @@
---- src/backend/Headless.cpp.orig	2026-04-28 23:16:54 UTC
+--- src/backend/Headless.cpp.orig	2026-05-30 08:40:42 UTC
 +++ src/backend/Headless.cpp
-@@ -219,7 +219,7 @@ void Aquamarine::CHeadlessBackend::updateTimerFD() {
+@@ -231,7 +231,7 @@ void Aquamarine::CHeadlessBackend::updateTimerFD() {
  
      auto       secs = std::chrono::time_point_cast<std::chrono::seconds>(soonestTimer);
      auto       ns   = std::chrono::time_point_cast<std::chrono::nanoseconds>(soonestTimer) - std::chrono::time_point_cast<std::chrono::nanoseconds>(secs);
