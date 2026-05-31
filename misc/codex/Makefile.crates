@@ -99,6 +99,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bitflags-2.10.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
+		block-buffer-0.12.0 \
 		block-padding-0.3.3 \
 		block2-0.6.2 \
 		blocking-1.6.2 \
@@ -130,6 +131,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
+		chacha20-0.10.0 \
 		chacha20poly1305-0.10.1 \
 		chardetng-0.1.17 \
 		chrono-0.4.43 \
@@ -144,6 +146,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		clipboard-win-5.4.1 \
 		clru-0.6.3 \
 		cmake-0.1.57 \
+		cmov-0.5.3 \
 		cmp_any-0.8.1 \
 		codespan-reporting-0.13.1 \
 		color-eyre-0.6.5 \
@@ -174,6 +177,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		coreaudio-sys-0.2.17 \
 		cpal-0.15.3 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
 		crc-3.4.0 \
 		crc-catalog-2.4.0 \
 		crc32fast-1.5.0 \
@@ -187,6 +191,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crunchy-0.2.4 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.7 \
+		crypto-common-0.2.2 \
 		crypto_box-0.9.1 \
 		crypto_secretbox-0.1.1 \
 		csv-1.4.0 \
@@ -194,6 +199,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ctor-0.1.26 \
 		ctor-0.6.3 \
 		ctor-proc-macro-0.0.7 \
+		ctutils-0.4.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		cxx-1.0.194 \
@@ -235,6 +241,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		difflib-0.4.0 \
 		diffy-0.4.2 \
 		digest-0.10.7 \
+		digest-0.11.3 \
 		diplomat-0.15.0 \
 		diplomat-runtime-0.15.1 \
 		diplomat_core-0.15.0 \
@@ -278,7 +285,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		erased-serde-0.3.31 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
-		etcetera-0.8.0 \
+		etcetera-0.11.0 \
 		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
 		eventsource-stream-0.2.3 \
@@ -305,7 +312,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fluent-bundle-0.15.3 \
 		fluent-langneg-0.13.1 \
 		fluent-syntax-0.11.1 \
-		flume-0.11.1 \
 		flume-0.12.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
@@ -318,16 +324,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fsevent-sys-4.1.0 \
 		fslock-0.2.1 \
 		futures-0.3.31 \
-		futures-channel-0.3.31 \
-		futures-core-0.3.31 \
-		futures-executor-0.3.31 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
+		futures-executor-0.3.32 \
 		futures-intrusive-0.5.0 \
-		futures-io-0.3.31 \
+		futures-io-0.3.32 \
 		futures-lite-2.6.1 \
-		futures-macro-0.3.31 \
-		futures-sink-0.3.31 \
-		futures-task-0.3.31 \
-		futures-util-0.3.31 \
+		futures-macro-0.3.32 \
+		futures-sink-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
 		fxhash-0.2.1 \
 		generator-0.8.8 \
 		generic-array-0.14.7 \
@@ -335,6 +341,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
+		getrandom-0.4.2 \
 		gif-0.14.1 \
 		gimli-0.32.3 \
 		gio-sys-0.21.5 \
@@ -406,7 +413,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		hashlink-0.10.0 \
+		hashlink-0.11.0 \
 		headers-0.4.1 \
 		headers-core-0.3.0 \
 		heapless-0.8.0 \
@@ -417,7 +424,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hickory-proto-0.25.2 \
 		hickory-resolver-0.25.2 \
 		hkdf-0.12.4 \
+		hkdf-0.13.0 \
 		hmac-0.12.1 \
+		hmac-0.13.0 \
 		home-0.5.12 \
 		hostname-0.4.2 \
 		http-0.2.12 \
@@ -428,6 +437,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		http-range-header-0.4.2 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
+		hybrid-array-0.4.12 \
 		hyper-1.8.1 \
 		hyper-rustls-0.27.7 \
 		hyper-timeout-0.5.2 \
@@ -454,6 +464,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		icu_properties-2.2.0 \
 		icu_properties_data-2.2.0 \
 		icu_provider-2.2.0 \
+		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
@@ -510,12 +521,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		landlock-0.4.4 \
 		language-tags-0.3.2 \
 		lazy_static-1.5.0 \
+		leb128fmt-0.1.0 \
 		libc-0.2.182 \
 		libdbus-sys-0.2.7 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
-		libsqlite3-sys-0.30.1 \
+		libsqlite3-sys-0.37.0 \
 		libz-sys-1.1.23 \
 		link-cplusplus-1.0.12 \
 		linked-hash-map-0.5.6 \
@@ -542,7 +554,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		matchit-0.8.4 \
 		matchit-0.9.1 \
 		maybe-async-0.2.10 \
-		md-5-0.10.6 \
+		md-5-0.11.0 \
 		md5-0.8.0 \
 		memchr-2.7.6 \
 		memmap2-0.9.10 \
@@ -574,7 +586,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nu-ansi-term-0.50.3 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
-		num-bigint-dig-0.8.6 \
 		num-complex-0.4.6 \
 		num-conv-0.2.0 \
 		num-derive-0.4.2 \
@@ -656,7 +667,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		piper-0.2.4 \
-		pkcs1-0.7.5 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.32 \
 		plist-1.8.0 \
@@ -704,6 +714,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		quinn-udp-0.5.14 \
 		quote-1.0.44 \
 		r-efi-5.3.0 \
+		r-efi-6.0.0 \
 		radix_trie-0.2.1 \
 		radix_trie-0.3.0 \
 		rama-core-0.3.0-alpha.4 \
@@ -724,10 +735,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rama-utils-0.3.0-alpha.4 \
 		rand-0.8.5 \
 		rand-0.9.3 \
+		rand-0.10.1 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
+		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
 		ratatui-macros-0.6.0 \
 		rayon-1.11.0 \
@@ -751,7 +764,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ring-0.17.14 \
 		rmcp-0.15.0 \
 		rmcp-macros-0.15.0 \
-		rsa-0.9.10 \
 		rtrb-0.3.3 \
 		rust-embed-8.11.0 \
 		rust-embed-impl-8.11.0 \
@@ -825,9 +837,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serial_test-3.3.1 \
 		serial_test_derive-3.3.1 \
 		sha1-0.10.6 \
+		sha1-0.11.0 \
 		sha1-checked-0.10.0 \
 		sha1_smol-1.0.1 \
 		sha2-0.10.9 \
+		sha2-0.11.0 \
 		sharded-slab-0.1.7 \
 		shared_library-0.1.9 \
 		shell-words-1.1.1 \
@@ -849,13 +863,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		socket2-0.6.2 \
 		spin-0.9.8 \
 		spki-0.7.3 \
-		sqlx-0.8.6 \
-		sqlx-core-0.8.6 \
-		sqlx-macros-0.8.6 \
-		sqlx-macros-core-0.8.6 \
-		sqlx-mysql-0.8.6 \
-		sqlx-postgres-0.8.6 \
-		sqlx-sqlite-0.8.6 \
+		sqlx-0.9.0 \
+		sqlx-core-0.9.0 \
+		sqlx-macros-0.9.0 \
+		sqlx-macros-core-0.9.0 \
+		sqlx-mysql-0.9.0 \
+		sqlx-postgres-0.9.0 \
+		sqlx-sqlite-0.9.0 \
 		sse-stream-0.2.1 \
 		stable_deref_trait-1.2.1 \
 		starlark-0.13.0 \
@@ -962,7 +976,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ts-rs-macros-11.1.0 \
 		two-face-0.5.1 \
 		type-map-0.5.1 \
-		typenum-1.19.0 \
+		typenum-1.20.0 \
 		uds_windows-1.1.0 \
 		uname-0.1.1 \
 		unarray-0.1.4 \
@@ -1005,13 +1019,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasite-0.1.0 \
 		wasm-bindgen-0.2.108 \
 		wasm-bindgen-futures-0.4.58 \
 		wasm-bindgen-macro-0.2.108 \
 		wasm-bindgen-macro-support-0.2.108 \
 		wasm-bindgen-shared-0.2.108 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
+		wasmparser-0.244.0 \
 		wayland-backend-0.3.12 \
 		wayland-client-0.31.12 \
 		wayland-protocols-0.32.10 \
@@ -1022,12 +1040,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		web-time-1.1.0 \
 		webbrowser-1.0.6 \
 		webpki-root-certs-1.0.5 \
-		webpki-roots-0.26.11 \
 		webpki-roots-1.0.5 \
 		weezl-0.1.12 \
 		which-6.0.3 \
 		which-8.0.0 \
 		whoami-1.6.1 \
+		whoami-2.1.2 \
 		widestring-1.2.1 \
 		wildcard-0.3.0 \
 		wildmatch-2.6.1 \
@@ -1103,6 +1121,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winsplit-0.1.0 \
 		wiremock-0.6.5 \
 		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
 		wl-clipboard-rs-0.9.3 \
 		writeable-0.6.2 \
 		x11rb-0.13.2 \
