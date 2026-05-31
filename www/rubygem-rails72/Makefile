@@ -69,7 +69,7 @@ USES=		cpe gem
 NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
-CPE_PRODUCT=	ruby_on_rails
+CPE_PRODUCT=	rails
 
 PORTSCOUT=	limit:^7\.2\.
 
