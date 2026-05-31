@@ -2720,6 +2720,8 @@
 %%QT_EXAMPLEDIR%%/positioning/weatherinfo/weatherinfo.qrc
 %%QT_EXAMPLEDIR%%/purchasing/purchasing.pro
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/android/build.gradle
+%%QT_EXAMPLEDIR%%/purchasing/qthangman/android/gradle.properties
+%%QT_EXAMPLEDIR%%/purchasing/qthangman/android/gradle/wrapper/gradle-wrapper.properties
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/doc/images/qthangman-example.png
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/doc/images/qthangman-store-example.png
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/doc/src/qthangman.qdoc

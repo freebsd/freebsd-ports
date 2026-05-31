@@ -120,11 +120,11 @@ DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
 _KDE_3d=		0
-_KDE_base=		109
+_KDE_base=		96
 _KDE_charts=		0
-_KDE_connectivity=	1
+_KDE_connectivity=	0
 _KDE_datavis3d=		0
-_KDE_declarative=	22
+_KDE_declarative=	23
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
 _KDE_imageformats=	2
