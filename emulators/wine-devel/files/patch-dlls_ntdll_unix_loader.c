@@ -1,6 +1,6 @@
---- dlls/ntdll/unix/loader.c.orig	2026-03-06 20:41:46 UTC
+--- dlls/ntdll/unix/loader.c.orig	2026-05-29 20:04:32 UTC
 +++ dlls/ntdll/unix/loader.c
-@@ -418,6 +418,24 @@ char *get_alternate_wineloader( WORD machine )
+@@ -415,6 +415,24 @@ char *get_alternate_wineloader( WORD machine )
      BOOL force_wow64 = (arch = getenv( "WINEARCH" )) && !strcmp( arch, "wow64" );
      char *ret = NULL;
  

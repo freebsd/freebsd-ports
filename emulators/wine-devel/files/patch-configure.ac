@@ -1,6 +1,6 @@
---- configure.ac.orig	2026-03-06 20:41:46 UTC
+--- configure.ac.orig	2026-05-29 20:04:32 UTC
 +++ configure.ac
-@@ -1552,14 +1552,35 @@ then
+@@ -1587,14 +1587,35 @@ then
  dnl **** Check for libusb ****
  if test "x$with_usb" != "xno"
  then

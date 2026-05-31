@@ -371,6 +371,8 @@ include/wine/windows/crtrow.idl
 include/wine/windows/cryptdlg.h
 include/wine/windows/cryptuiapi.h
 include/wine/windows/cryptxml.h
+include/wine/windows/ctffunc.h
+include/wine/windows/ctffunc.idl
 include/wine/windows/ctfutb.h
 include/wine/windows/ctfutb.idl
 include/wine/windows/ctxtcall.h
@@ -924,6 +926,9 @@ include/wine/windows/natupnp.h
 include/wine/windows/natupnp.idl
 include/wine/windows/nb30.h
 include/wine/windows/ncrypt.h
+include/wine/windows/ndattrib.h
+include/wine/windows/ndattrib.idl
+include/wine/windows/ndfapi.h
 include/wine/windows/ndrtypes.h
 include/wine/windows/netcfgx.h
 include/wine/windows/netcfgx.idl
@@ -1084,6 +1089,8 @@ include/wine/windows/rstupd.idl
 include/wine/windows/rstvw.idl
 include/wine/windows/rstxsc.idl
 include/wine/windows/rtlsupportapi.h
+include/wine/windows/rtscom.h
+include/wine/windows/rtscom.idl
 include/wine/windows/rtutils.h
 include/wine/windows/rtworkq.h
 include/wine/windows/rtworkq.idl
@@ -1184,6 +1191,7 @@ include/wine/windows/tmschema.h
 include/wine/windows/tom.h
 include/wine/windows/tom.idl
 include/wine/windows/tpcshrd.h
+include/wine/windows/tpcshrd.idl
 include/wine/windows/traffic.h
 include/wine/windows/transact.h
 include/wine/windows/transact.idl
@@ -1487,6 +1495,7 @@ include/wine/windows/winsnmp.h
 include/wine/windows/winsock.h
 include/wine/windows/winsock2.h
 include/wine/windows/winspool.h
+include/wine/windows/winsqlite/winsqlite3.h
 include/wine/windows/winstring.h
 include/wine/windows/winsvc.h
 include/wine/windows/winsxs.h
@@ -1826,9 +1835,11 @@ lib/wine/%%WINEARCH%%-unix/libwininet.a
 lib/wine/%%WINEARCH%%-unix/libwinmm.a
 lib/wine/%%WINEARCH%%-unix/libwinnls32.a
 lib/wine/%%WINEARCH%%-unix/libwinspool.a
+lib/wine/%%WINEARCH%%-unix/libwinsqlite3.a
 lib/wine/%%WINEARCH%%-unix/libwintab32.a
 lib/wine/%%WINEARCH%%-unix/libwintrust.a
 lib/wine/%%WINEARCH%%-unix/libwintypes.a
+lib/wine/%%WINEARCH%%-unix/libwkscli.a
 lib/wine/%%WINEARCH%%-unix/libwlanapi.a
 lib/wine/%%WINEARCH%%-unix/libwldap32.a
 lib/wine/%%WINEARCH%%-unix/libwmcodecdspuuid.a
@@ -2405,9 +2416,11 @@ lib/wine/%%WINEARCH%%-windows/libwininet.a
 lib/wine/%%WINEARCH%%-windows/libwinmm.a
 lib/wine/%%WINEARCH%%-windows/libwinnls32.a
 lib/wine/%%WINEARCH%%-windows/libwinspool.a
+lib/wine/%%WINEARCH%%-windows/libwinsqlite3.a
 lib/wine/%%WINEARCH%%-windows/libwintab32.a
 lib/wine/%%WINEARCH%%-windows/libwintrust.a
 lib/wine/%%WINEARCH%%-windows/libwintypes.a
+lib/wine/%%WINEARCH%%-windows/libwkscli.a
 lib/wine/%%WINEARCH%%-windows/libwlanapi.a
 lib/wine/%%WINEARCH%%-windows/libwldap32.a
 lib/wine/%%WINEARCH%%-windows/libwmcodecdspuuid.a
@@ -2555,6 +2568,7 @@ lib/wine/%%WINEARCH%%-windows/msxml6.dll
 lib/wine/%%WINEARCH%%-windows/mtxdm.dll
 lib/wine/%%WINEARCH%%-windows/ncrypt.dll
 lib/wine/%%WINEARCH%%-windows/nddeapi.dll
+lib/wine/%%WINEARCH%%-windows/ndfapi.dll
 lib/wine/%%WINEARCH%%-windows/ndis.sys
 lib/wine/%%WINEARCH%%-windows/net.exe
 lib/wine/%%WINEARCH%%-windows/netapi32.dll
@@ -2728,6 +2742,7 @@ lib/wine/%%WINEARCH%%-windows/tdh.dll
 lib/wine/%%WINEARCH%%-windows/tdi.sys
 lib/wine/%%WINEARCH%%-windows/termsv.exe
 lib/wine/%%WINEARCH%%-windows/threadpoolwinrt.dll
+lib/wine/%%WINEARCH%%-windows/thumbcache.dll
 lib/wine/%%WINEARCH%%-windows/timeout.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/toolhelp.dll16
 lib/wine/%%WINEARCH%%-windows/traffic.dll
@@ -2872,6 +2887,7 @@ lib/wine/%%WINEARCH%%-windows/winnls32.dll
 lib/wine/%%WINEARCH%%-windows/winprint.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winsock.dll16
 lib/wine/%%WINEARCH%%-windows/winspool.drv
+lib/wine/%%WINEARCH%%-windows/winsqlite3.dll
 lib/wine/%%WINEARCH%%-windows/winsta.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wintab.dll16
 lib/wine/%%WINEARCH%%-windows/wintab32.dll
@@ -2879,6 +2895,7 @@ lib/wine/%%WINEARCH%%-windows/wintrust.dll
 lib/wine/%%WINEARCH%%-windows/wintypes.dll
 lib/wine/%%WINEARCH%%-windows/winusb.dll
 lib/wine/%%WINEARCH%%-windows/winver.exe
+lib/wine/%%WINEARCH%%-windows/wkscli.dll
 lib/wine/%%WINEARCH%%-windows/wlanapi.dll
 lib/wine/%%WINEARCH%%-windows/wlanui.dll
 lib/wine/%%WINEARCH%%-windows/wldap32.dll
