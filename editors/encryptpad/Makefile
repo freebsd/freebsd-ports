@@ -1,7 +1,7 @@
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -19,11 +19,9 @@ USES=		compiler:c++11-lang desktop-file-utils gl gmake pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	evpo
 GH_PROJECT=	EncryptPad
-GH_TAGNAME=	a0360d132b1367a9ba5328253a1c4d402266b4bd # qt6 branch (plus botan3 support) 20250623
+GH_TAGNAME=	8e8dcb8626fcc8458f43f1a188d5b1fd6a1ee956 # qt6 (and botan3) branch; 20260529
 USE_GL=		opengl
 USE_QT=		base svg
-
-BINARY_ALIAS=	python3=${PYTHON_CMD} qmake=${QMAKE}
 
 PORTDOCS=	*
 
@@ -46,7 +44,7 @@ post-patch:
 .endif
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./configure.py ${CONFIGURE_ARGS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ./configure.py ${CONFIGURE_ARGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/release/* ${STAGEDIR}${PREFIX}/bin
