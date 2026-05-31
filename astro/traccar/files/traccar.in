@@ -36,6 +36,7 @@ command_args="-frP ${pidfile} --user traccar %%PREFIX%%/bin/java -jar tracker-se
 traccar_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)
 	rc_flags=""
+	export JAVA_VERSION="21+"
 	cd ${traccar_home}
 }
 
