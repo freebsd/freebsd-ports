@@ -58,14 +58,5 @@ bin/mu
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-view.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-window.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e.el
-%%GUILE%%lib/guile/%%GUILE_VER%%/extensions/libguile-mu.so
-%%GUILE%%%%GUILE_SITE%%/mu.scm
-%%GUILE%%%%GUILE_SITE%%/mu/message.scm
-%%GUILE%%%%GUILE_SITE%%/mu/plot.scm
-%%GUILE%%%%GUILE_SITE%%/mu/script.scm
-%%GUILE%%%%GUILE_SITE%%/mu/stats.scm
 %%GUILE%%%%DATADIR%%/scm/mu-scm-repl.scm
 %%GUILE%%%%DATADIR%%/scm/mu-scm.scm
-%%GUILE%%%%DATADIR%%/scripts/find-dups.scm
-%%GUILE%%%%DATADIR%%/scripts/histogram.scm
-%%GUILE%%%%DATADIR%%/scripts/msgs-count.scm
