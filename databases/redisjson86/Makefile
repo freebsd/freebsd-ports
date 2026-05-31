@@ -1,6 +1,7 @@
 PORTNAME=	redisjson
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.6.0
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	86
 
@@ -33,6 +34,6 @@ PORTSCOUT=	limit:^8\.6\.
 PLIST_FILES=	lib/librejson.so
 
 do-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/librejson.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL} -m 0755 ${CARGO_TARGET_DIR}/*/librejson.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
