@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for editing RD files
 WWW=		https://github.com/uwabami/rdtool
 
+DEPRECATED=	Depends on expired textproc/ruby-rdtool
+EXPIRATION_DATE=2026-08-31
+
 BUILD_DEPENDS=	${NONEXISTENT}:textproc/ruby-rdtool:patch
 
 USES=	ruby
