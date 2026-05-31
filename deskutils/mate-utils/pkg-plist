@@ -1,4 +1,5 @@
 bin/mate-dictionary
+bin/mate-disk-image-mounter
 bin/mate-disk-usage-analyzer
 bin/mate-panel-screenshot
 bin/mate-screenshot
@@ -24,6 +25,7 @@ lib/libmatedict.so.6.0.7
 libdata/pkgconfig/mate-dict.pc
 libexec/mate-dictionary-applet
 share/applications/mate-dictionary.desktop
+share/applications/mate-disk-image-mounter.desktop
 share/applications/mate-disk-usage-analyzer.desktop
 share/applications/mate-screenshot.desktop
 share/applications/mate-search-tool.desktop
