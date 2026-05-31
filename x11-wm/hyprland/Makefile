@@ -1,7 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.54.3
-PORTREVISION=	4
+DISTVERSION=	0.55.2
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
@@ -15,16 +14,18 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		glaze>=7.0.0<8.0.0:devel/glaze \
+		glaze>=7.2.0<8.0.0:devel/glaze \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
+		glslang>0:graphics/glslang \
 		hyprland-protocols>=0.6.4:graphics/hyprland-protocols \
-		wayland-protocols>=1.45:graphics/wayland-protocols
+		wayland-protocols>=1.47:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libhyprwire.so:devel/hyprwire \
 		libre2.so:devel/re2 \
 		libtomlplusplus.so:devel/tomlplusplus \
 		libhyprgraphics.so:graphics/hyprgraphics \
+		liblcms2.so:graphics/lcms2 \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libmuparser.so:math/muparser \
@@ -34,8 +35,10 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hyprland-dialog:x11/hyprland-guiutils
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++23-lang gl gnome pkgconfig xorg
+USES=		cmake:testing compiler:c++23-lang gl gnome lua:55 pkgconfig \
+		python:build xorg
 
 USE_GL=		egl gbm opengl
 USE_GNOME=	cairo glib20 pango

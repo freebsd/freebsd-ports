@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260531:
+  AFFECTS: Users of x11-wm/hyprland
+  AUTHOR: tagattie@FreeBSD.org
+
+  Starting from version 0.55.0, Hyprland supports Lua-based
+  configuration syntax. The old hyprlang-based configuration is
+  deprecated and will be supported for a few more releases. After
+  that, old configuration will be dropped. Users are encouraged to
+  migrate from the hyprlang-based configuration to the Lua-based
+  one. For more details, please visit the following URLs:
+
+  https://hypr.land/news/26_lua/
+  https://wiki.hypr.land/Configuring/
+
 20260515:
   AFFECTS: Users of net/rsync
   AUTHOR: rodrigo@FreeBSD.org
@@ -28,7 +42,7 @@ you update your ports collection, before attempting any port upgrades.
 
   To successfully migrate your world, you must relocate /var/db/minecraft
   content in /usr/local/minecraft/world, then launch 'minecraft-server'
-  as usual. 
+  as usual.
   When 'world' upgrade is finished, stop 'minecraft-server' then relocate
   your world in initial folder /var/db/minecraft-server.
 

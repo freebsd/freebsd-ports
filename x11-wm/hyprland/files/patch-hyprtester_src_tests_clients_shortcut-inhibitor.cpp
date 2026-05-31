@@ -1,10 +1,10 @@
---- hyprtester/src/tests/clients/shortcut-inhibitor.cpp.orig	2026-03-02 07:56:10 UTC
+--- hyprtester/src/tests/clients/shortcut-inhibitor.cpp.orig	2026-05-31 08:23:05 UTC
 +++ hyprtester/src/tests/clients/shortcut-inhibitor.cpp
-@@ -7,6 +7,7 @@
- #include <hyprutils/os/FileDescriptor.hpp>
- #include <hyprutils/os/Process.hpp>
+@@ -8,6 +8,7 @@
  
-+#include <unistd.h>
+ #include <optional>
  #include <sys/poll.h>
++#include <unistd.h>
  #include <csignal>
  #include <thread>
+ #include <filesystem>
