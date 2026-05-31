@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 
 USES=		cpe
 
-CPE_VENDOR=	miniaudio_project
+CPE_VENDOR=	mackron
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mackron
