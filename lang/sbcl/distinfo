@@ -7,3 +7,5 @@ SHA256 (sbcl-1.2.7-x86-freebsd-binary.tar.bz2) = cf68bfab780a14964d9593f5b47fa3e
 SIZE (sbcl-1.2.7-x86-freebsd-binary.tar.bz2) = 10322926
 SHA256 (sbcl-1.2.7-x86-64-dragonfly-binary.tar.bz2) = 4d8d589909d1b003afc5d58276affe2202f4a75d3760737f2ac6ce046a1f905c
 SIZE (sbcl-1.2.7-x86-64-dragonfly-binary.tar.bz2) = 10586301
+SHA256 (sbcl-2.5.7-powerpc64le-freebsd-binary.tar.bz2) = 3dc17885caa57fc10d972729dca6a5a1414a3043d3af406e8907659ac8ea856a
+SIZE (sbcl-2.5.7-powerpc64le-freebsd-binary.tar.bz2) = 9973076
