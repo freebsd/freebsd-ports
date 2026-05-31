@@ -144,7 +144,7 @@ LUA_NONE_MESON_FALSE=	lua
 
 LIBS+=		-lexecinfo -lm
 CPE_PRODUCT=	gimp
-CPE_VENDOR=	gnu
+CPE_VENDOR=	gimp
 
 SHEBANG_FILES=	plug-ins/python/*.py \
 		plug-ins/python/python-console/*.py \
