@@ -11,6 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NEXTCLOUD_RUN_DEPENDS=	30
 
-USES=		nextcloud php:flavors
+USES=		cpe nextcloud php:flavors
+
+CPE_VENDOR=	nextcloud
 
 .include <bsd.port.mk>
