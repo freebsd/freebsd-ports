@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 RUN_DEPENDS+=	iso-codes>=0:misc/iso-codes
 
 USES+=		meson cpe gettext gnome gstreamer pathfix pkgconfig python:build tar:xz
-CPE_VENDOR=	gstreamer_project
+CPE_VENDOR=	gstreamer
 CPE_PRODUCT=	gstreamer
 USE_GNOME+=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
