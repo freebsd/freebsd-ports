@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libcurl.so:ftp/curl
 
-USES=		localbase:ldflags meson pkgconfig
+USES=		cpe localbase:ldflags meson pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

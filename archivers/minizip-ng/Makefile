@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libz-ng.so:archivers/zlib-ng \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing iconv pkgconfig ssl
+USES=		cmake:testing cpe iconv pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	zlib-ng
 # CMakeList.txt: clone_repo(ppmd https://github.com/ip7z/7zip "26.00")
@@ -37,6 +37,8 @@ EXTRACT_AFTER_ARGS=	--exclude 7zip-${7ZIP_VER}/[ABD-Z]* \
 			--no-same-owner --no-same-permissions
 
 PLIST_SUB=	VERSION="${DISTVERSION}"
+
+CPE_VENDOR=	zlib-ng
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/mz_compat.h \

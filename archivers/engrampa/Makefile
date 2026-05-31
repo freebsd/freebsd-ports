@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:archivers/gtar \
 		${LOCALBASE}/bin/unzip:archivers/unzip
 
-USES=		desktop-file-utils gettext gmake gnome libtool localbase \
+USES=		cpe desktop-file-utils gettext gmake gnome libtool localbase \
 		mate pkgconfig tar:xz
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	mate-desktop
@@ -31,6 +31,8 @@ INSTALL_TARGET=	install-strip
 PORTSCOUT=	limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.engrampa.gschema.xml
+
+CPE_VENDOR=	mate-desktop
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
