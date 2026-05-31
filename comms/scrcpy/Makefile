@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 RUN_DEPENDS=	adb:devel/android-tools
 
-USES=		compiler:c++11-lang meson pkgconfig sdl
+USES=		compiler:c++11-lang cpe meson pkgconfig sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genymobile
@@ -40,6 +40,8 @@ PORTDOCS=	FAQ.md README.md
 OPTIONS_DEFINE=	DOCS
 
 SERVER_FILE=	${PORTNAME}-server-${DISTVERSIONFULL}
+
+CPE_VENDOR=	Genymotion
 
 post-extract:
 	${CP} ${DISTDIR}/${SERVER_FILE} ${WRKSRC}

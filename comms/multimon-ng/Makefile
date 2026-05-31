@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	EliasOenal
 
-USES=		cmake:insource
+USES=		cmake:insource cpe
 
 OPTIONS_DEFINE=	PULSEAUDIO X11
 
@@ -25,6 +25,8 @@ X11_USE=	XORG=ice,sm,x11,xext
 X11_CMAKE_BOOL=	X11_SUPPORT
 
 PLIST_FILES=	bin/multimon-ng
+
+CPE_VENDOR=	${PORTNAME}_project
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multimon-ng ${STAGEDIR}${PREFIX}/bin
