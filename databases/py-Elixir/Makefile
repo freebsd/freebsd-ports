@@ -12,6 +12,9 @@ WWW=		http://elixir.ematia.de/
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expired databases/py-sqlalchemy10
+EXPIRATION_DATE=2026-08-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.4.0:databases/py-sqlalchemy10@${PY_FLAVOR}
 
 USES=		python
