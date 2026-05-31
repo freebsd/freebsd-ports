@@ -1,6 +1,6 @@
 PORTNAME=	qtconsole
 DISTVERSION=	5.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,8 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=4.1:devel/py-ipykernel@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-qt>0:devel/py-pytest-qt@${PY_FLAVOR}
 
-USES=		pyqt:5 python
-USE_PYQT=	pyqt5
+USES=		pyqt:6 python
+USE_PYQT=	pyqt6
 USE_PYTHON=	autoplist distutils pytest
 
 NO_ARCH=	yes
