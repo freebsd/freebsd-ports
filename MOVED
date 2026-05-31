@@ -5330,3 +5330,4 @@ shells/agsh|shells/meka|2026-05-30|Project renamed upstream
 graphics/kdiagram||2026-05-31|Removed, not needed anymore
 archivers/rubygem-rubyzip2|archivers/rubygem-rubyzip|2026-05-31|Has expired: Outdated. Upstream disappeared
 japanese/p5-2chproxy||2026-05-31|Has expired: Abandoned, it is not compatible with the current servers, migrate to proxy2ch
+www/py-azure-storage||2026-05-31|Has expired: Deprecated by upstream. Use other py-azure-storage-* ports instead
