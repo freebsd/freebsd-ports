@@ -1,6 +1,5 @@
 PORTNAME=	yapet
-DISTVERSION=	2.3
-PORTREVISION=	2
+DISTVERSION=	2.6
 CATEGORIES=	security
 MASTER_SITES=	https://yapet.guengel.ch/downloads/
 
