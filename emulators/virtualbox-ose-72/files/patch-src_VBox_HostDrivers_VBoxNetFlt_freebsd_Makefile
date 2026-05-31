@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile.orig	2025-08-13 19:51:11 UTC
+--- src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile.orig	2026-04-18 10:20:25 UTC
 +++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile
 @@ -36,7 +36,7 @@ KMOD = vboxnetflt
  
@@ -9,3 +9,12 @@
  
  .if (${MACHINE_ARCH} == "i386")
   CFLAGS += -DRT_ARCH_X86
+@@ -51,7 +51,7 @@ SRCS = \
+ 	SUPR0IdcClient.c \
+ 	SUPR0IdcClientComponent.c
+ 
+-SRCS += device_if.h bus_if.h opt_netgraph.h
++SRCS += device_if.h bus_if.h opt_netgraph.h vnode_if.h
+ 
+ .include <bsd.kmod.mk>
+ 
