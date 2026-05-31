@@ -795,13 +795,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so.13
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.13.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.13.0.1
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.14
-%%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.14.0.0
+%%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.14.0.1
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.15
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.15.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.14
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.14.1.1
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so.1
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so.1.0.1
@@ -1058,6 +1058,8 @@ share/metainfo/org.octave.Octave.metainfo.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug52614A.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug52614B.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug55766.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug59775A.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug59775B.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug66930A.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug66930B.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/classdef.tst

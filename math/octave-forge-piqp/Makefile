@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-piqp
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/PREDICT-EPFL/piqp/releases/download/v0.5.0/
 DISTNAME=	piqp-octave

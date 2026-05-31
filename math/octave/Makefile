@@ -1,11 +1,7 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	6
 CATEGORIES=	math java
 MASTER_SITES=	GNU
-
-PATCH_SITES=	https://github.com/gnu-octave/octave/commit/
-PATCHFILES=	e21b1898cb6507dff38679c25b4db7fde44de883.patch:-p1
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
