@@ -35,7 +35,7 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 USES=		cpe perl5 tar:tgz shebangfix
 SHEBANG_FILES=	${PORTNAME}
 
-CPE_VENDOR=	gilles_lamiral
+CPE_VENDOR=	imapsync_project
 NO_BUILD=	yes
 NO_ARCH=	yes
 
