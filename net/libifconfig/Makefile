@@ -1,5 +1,5 @@
 PORTNAME=	libifconfig
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/MainKt/freebsd-ports/releases/download/libifconf/
 
@@ -9,13 +9,15 @@ WWW=		https://cgit.freebsd.org/src/tree/lib/libifconfig
 
 LICENSE=	BSD3CLAUSE
 
+USE_LDCONFIG=	yes
+
 MAKE_ARGS=	PREFIX=${PREFIX}
 
 CFLAGS+=	-Wno-pointer-sign
 
 WRKSRC=		${WRKDIR}/libifconfig
 
-_LIBIFCONFIG_HASH=	b670c9bafc0e
+_LIBIFCONFIG_HASH=	454322c08b8a
 _LIBIFCONFIG_REV=	0
 
 PLIST_FILES=	include/libifconfig.h \
@@ -26,11 +28,18 @@ PLIST_FILES=	include/libifconfig.h \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} == "15.0"
+.if !exists(${SRC_BASE}/tools/lua/template.lua)
+IGNORE+=	requires FreeBSD sources (or set SRC_BASE)
+.endif
+
+.if ${OSVERSION} >= 1600000 && ${OSVERSION} < 1700000
 DISTFILES=	libifconfig-${_LIBIFCONFIG_HASH}.tar.gz
 .else
 DISTFILES=	libifconfig-${OSREL}_${_LIBIFCONFIG_REV}.tar.gz
 .endif
+
+post-patch:
+	   ${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
@@ -41,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${h} ${STAGEDIR}${PREFIX}/include
 .endfor
 
-_ALL_VERSIONS=	13.5 14.3
+_ALL_VERSIONS=	14.3 14.4 15.0 15.1
 .if make(makesum)
 DISTFILES=	libifconfig-${_LIBIFCONFIG_HASH}.tar.gz
 .for version in ${_ALL_VERSIONS}
@@ -50,7 +59,7 @@ DISTFILES+=	libifconfig-${version}_${_LIBIFCONFIG_REV}.tar.gz
 .endif
 
 .if defined(MAINTAINER_MODE)
-upload:
+_upload_dist:
 	for version in ${_ALL_VERSIONS}; \
 	do \
 		cd /usr/src/lib && \
