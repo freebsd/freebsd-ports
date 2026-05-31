@@ -697,6 +697,7 @@
     SUBDIR += openvkl
     SUBDIR += openxr
     SUBDIR += optar
+    SUBDIR += optiimage
     SUBDIR += optipng
     SUBDIR += osg
     SUBDIR += ospray
