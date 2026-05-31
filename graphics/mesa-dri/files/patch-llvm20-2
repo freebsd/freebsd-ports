@@ -1,0 +1,82 @@
+From 8a453669e2bd44651cacdeac1c372d6e80cab0a7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Kai=20Wasserb=C3=A4ch?= <kai@dev.carbon-project.org>
+Date: Mon, 2 Dec 2024 18:29:19 +0100
+Subject: [PATCH] fix(FTBFS): clc/clover: pass a VFS instance explicitly
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+This just replicates what upstream did before breaking mesa with commit
+df9a14d7bbf and requiring a VFS instance.
+
+Reported-by: @Lone_Wolf
+Reference: <https://github.com/llvm/llvm-project/commit/df9a14d7bbf1180e4f1474254c9d7ed6bcb4ce55>
+Closes: <https://gitlab.freedesktop.org/mesa/mesa/-/issues/12223>
+Signed-off-by: Kai Wasserbäch <kai@dev.carbon-project.org>
+Tested-by: Dieter Nützel <Dieter@nuetzel-hh.de>
+Reviewed-by: Karol Herbst <kherbst@redhat.com>
+Part-of: <https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/32439>
+---
+ src/compiler/clc/clc_helpers.cpp                 | 10 +++++++++-
+ src/gallium/frontends/clover/llvm/invocation.cpp | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+
+diff --git src/compiler/clc/clc_helpers.cpp src/compiler/clc/clc_helpers.cpp
+index f3f884b21809..ce0563d7f4fd 100644
+--- src/compiler/clc/clc_helpers.cpp
++++ src/compiler/clc/clc_helpers.cpp
+@@ -56,6 +56,10 @@
+ #include <spirv-tools/linker.hpp>
+ #include <spirv-tools/optimizer.hpp>
+ 
++#if LLVM_VERSION_MAJOR >= 20
++#include <llvm/Support/VirtualFileSystem.h>
++#endif
++
+ #include "util/macros.h"
+ #include "glsl_types.h"
+ 
+@@ -841,7 +845,11 @@ clc_compile_to_llvm_module(LLVMContext &llvm_ctx,
+    // http://www.llvm.org/bugs/show_bug.cgi?id=19735
+    c->getDiagnosticOpts().ShowCarets = false;
+ 
+-   c->createDiagnostics(new clang::TextDiagnosticPrinter(
++   c->createDiagnostics(
++#if LLVM_VERSION_MAJOR >= 20
++                   *llvm::vfs::getRealFileSystem(),
++#endif
++                   new clang::TextDiagnosticPrinter(
+                            diag_log_stream,
+                            &c->getDiagnosticOpts()));
+ 
+diff --git src/gallium/frontends/clover/llvm/invocation.cpp src/gallium/frontends/clover/llvm/invocation.cpp
+index d2e238c880bd..3cbb05baecf6 100644
+--- src/gallium/frontends/clover/llvm/invocation.cpp
++++ src/gallium/frontends/clover/llvm/invocation.cpp
+@@ -40,6 +40,10 @@
+ #include <clang/Frontend/TextDiagnosticPrinter.h>
+ #include <clang/Basic/TargetInfo.h>
+ 
++#if LLVM_VERSION_MAJOR >= 20
++#include <llvm/Support/VirtualFileSystem.h>
++#endif
++
+ // We need to include internal headers last, because the internal headers
+ // include CL headers which have #define's like:
+ //
+@@ -305,7 +309,11 @@ namespace {
+                                 ::llvm::Triple(target.triple),
+                                 get_language_version(opts, device_clc_version));
+ 
+-      c->createDiagnostics(new clang::TextDiagnosticPrinter(
++      c->createDiagnostics(
++#if LLVM_VERSION_MAJOR >= 20
++                           *llvm::vfs::getRealFileSystem(),
++#endif
++                           new clang::TextDiagnosticPrinter(
+                               *new raw_string_ostream(r_log),
+                               &c->getDiagnosticOpts(), true));
+ 
+-- 
+GitLab
+
