@@ -912,6 +912,7 @@ lib/libnetxms.so.%%SONUM%%.0.0
 %%SERVER%%%%DATADIR%%/prompts/ai-data-storage.md
 %%SERVER%%%%DATADIR%%/prompts/overview.md
 %%SERVER%%%%DATADIR%%/radius.dict
+%%SERVER%%%%DATADIR%%/skills/alarm-management.md
 %%SERVER%%%%DATADIR%%/skills/data-collection.md
 %%SERVER%%%%DATADIR%%/skills/device-backup.md
 %%SERVER%%%%DATADIR%%/skills/event-processing.md
@@ -937,6 +938,7 @@ lib/libnetxms.so.%%SONUM%%.0.0
 %%SERVER%%%%DATADIR%%/templates/apc.xml
 %%SERVER%%%%DATADIR%%/templates/brocade_icx.xml
 %%SERVER%%%%DATADIR%%/templates/cisco_gsm.xml
+%%SERVER%%%%DATADIR%%/templates/cisco_performance.json
 %%SERVER%%%%DATADIR%%/templates/cyberpower.xml
 %%SERVER%%%%DATADIR%%/templates/dell_hw.xml
 %%SERVER%%%%DATADIR%%/templates/dell_idrac.xml
@@ -1068,6 +1070,8 @@ lib/libnetxms.so.%%SONUM%%.0.0
 %%SERVER%%lib/netxms/ncdrv/websms.ncd
 %%SERVER%%lib/netxms/ndd/at.ndd
 %%SERVER%%lib/netxms/ndd/avaya.ndd
+%%SERVER%%lib/netxms/ndd/bdcom.ndd
+%%SERVER%%lib/netxms/ndd/bulat.ndd
 %%SERVER%%lib/netxms/ndd/cambium.ndd
 %%SERVER%%lib/netxms/ndd/cisco.ndd
 %%SERVER%%lib/netxms/ndd/dell-pwc.ndd
@@ -1082,11 +1086,13 @@ lib/libnetxms.so.%%SONUM%%.0.0
 %%SERVER%%lib/netxms/ndd/huawei.ndd
 %%SERVER%%lib/netxms/ndd/ignitenet.ndd
 %%SERVER%%lib/netxms/ndd/juniper.ndd
+%%SERVER%%lib/netxms/ndd/lenovo.ndd
 %%SERVER%%lib/netxms/ndd/mds.ndd
 %%SERVER%%lib/netxms/ndd/mikrotik.ndd
 %%SERVER%%lib/netxms/ndd/moxa.ndd
 %%SERVER%%lib/netxms/ndd/net-snmp.ndd
 %%SERVER%%lib/netxms/ndd/netonix.ndd
+%%SERVER%%lib/netxms/ndd/origo.ndd
 %%SERVER%%lib/netxms/ndd/ping3.ndd
 %%SERVER%%lib/netxms/ndd/planet.ndd
 %%SERVER%%lib/netxms/ndd/qtech.ndd

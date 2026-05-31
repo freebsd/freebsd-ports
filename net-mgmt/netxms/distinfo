@@ -1,5 +1,3 @@
-TIMESTAMP = 1776452714
-SHA256 (netxms-6.1.1.tar.gz) = 7e278fb2a3edfe41b4773dcbf5881d5781d708a38fa5996d2dff4a83a99a379b
-SIZE (netxms-6.1.1.tar.gz) = 27421974
-SHA256 (nxmc-6.1.1-standalone.jar) = 32ac06ae77215832714a66a1369756fd7b995ab4e848f3a3c740e27756d19533
-SIZE (nxmc-6.1.1-standalone.jar) = 65587706
+TIMESTAMP = 1780156393
+SHA256 (netxms-6.1.3.tar.gz) = 7b873f1174fc957f1d6490521ad4e87f48df2ea845be311b05f2f0c7121801a5
+SIZE (netxms-6.1.3.tar.gz) = 27571568
