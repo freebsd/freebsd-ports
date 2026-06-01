@@ -1,5 +1,5 @@
 PORTNAME=	audacious
-DISTVERSION=	4.5.1
+DISTVERSION=	4.6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
@@ -72,11 +72,9 @@ PLIST_SUB=	GTK="" \
 		QT="@comment "
 .endif
 
-OPTIONS_DEFINE=		EXECINFO LIBARCHIVE NLS
-OPTIONS_DEFAULT=	EXECINFO
+OPTIONS_DEFINE=		LIBARCHIVE NLS
 OPTIONS_SUB=		yes
 
-EXECINFO_DESC=		Build with libexecinfo support
 LIBARCHIVE_DESC=	Build with libarchive support
 
 LIBARCHIVE_USES=	libarchive
@@ -84,18 +82,12 @@ LIBARCHIVE_MESON_TRUE=	libarchive
 
 NLS_USES=	gettext-runtime
 
-post-patch-EXECINFO-on:
-	@${REINPLACE_CMD} 's|-lm |-lm -lexecinfo |' \
-		${WRKSRC}/src/audacious/Makefile
-	@${REINPLACE_CMD} 's|-laudcore|-laudcore -lexecinfo|' \
-		${WRKSRC}/audacious.pc.in
-
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
-	${INSTALL_DATA} ${WRKSRC}/contrib/audacious.appdata.xml \
+	${INSTALL_DATA} ${WRKSRC}/audacious.metainfo.xml \
 		${STAGEDIR}${PREFIX}/share/metainfo/
 
 .include <bsd.port.mk>
