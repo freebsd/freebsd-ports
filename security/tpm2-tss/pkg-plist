@@ -4,11 +4,11 @@
 @dir /var/lib
 @dir /var/run/tpm2-tss/eventlog
 @dir /var/run/tpm2-tss
-etc/sysusers.d/tpm2-tss.conf
-etc/tmpfiles.d/tpm2-tss-fapi.conf
 %%ETCDIR%%/fapi-config.json
 %%ETCDIR%%/fapi-profiles/P_ECCP256SHA256.json
+%%ETCDIR%%/fapi-profiles/P_ECCP384SHA384.json
 %%ETCDIR%%/fapi-profiles/P_RSA2048SHA256.json
+%%ETCDIR%%/fapi-profiles/P_RSA3072SHA384.json
 include/tss2/tss2_common.h
 include/tss2/tss2_esys.h
 include/tss2/tss2_fapi.h
@@ -19,6 +19,7 @@ include/tss2/tss2_sys.h
 include/tss2/tss2_tcti.h
 include/tss2/tss2_tcti_cmd.h
 include/tss2/tss2_tcti_device.h
+include/tss2/tss2_tcti_i2c_helper.h
 include/tss2/tss2_tcti_mssim.h
 include/tss2/tss2_tcti_pcap.h
 include/tss2/tss2_tcti_spi_helper.h
@@ -45,6 +46,10 @@ lib/libtss2-rc.a
 lib/libtss2-rc.so
 lib/libtss2-rc.so.0
 lib/libtss2-rc.so.0.0.0
+lib/libtss2-tcti-i2c-helper.a
+lib/libtss2-tcti-i2c-helper.so
+lib/libtss2-tcti-i2c-helper.so.0
+lib/libtss2-tcti-i2c-helper.so.0.0.0
 lib/libtss2-tcti-spi-helper.a
 lib/libtss2-tcti-spi-helper.so
 lib/libtss2-tcti-spi-helper.so.0
@@ -85,6 +90,7 @@ libdata/pkgconfig/tss2-rc.pc
 libdata/pkgconfig/tss2-sys.pc
 libdata/pkgconfig/tss2-tcti-cmd.pc
 libdata/pkgconfig/tss2-tcti-device.pc
+libdata/pkgconfig/tss2-tcti-i2c-helper.pc
 libdata/pkgconfig/tss2-tcti-mssim.pc
 libdata/pkgconfig/tss2-tcti-pcap.pc
 libdata/pkgconfig/tss2-tcti-spi-helper.pc
@@ -101,6 +107,12 @@ share/man/man5/fapi-config.5.gz
 share/man/man5/fapi-profile.5.gz
 share/man/man7/tss2-tcti-cmd.7.gz
 share/man/man7/tss2-tcti-device.7.gz
+share/man/man7/tss2-tcti-i2c-ftdi.7.gz
+share/man/man7/tss2-tcti-i2c-helper.7.gz
 share/man/man7/tss2-tcti-mssim.7.gz
+share/man/man7/tss2-tcti-spi-ftdi.7.gz
+share/man/man7/tss2-tcti-spi-helper.7.gz
+share/man/man7/tss2-tcti-spi-ltt2go.7.gz
+share/man/man7/tss2-tcti-spidev.7.gz
 share/man/man7/tss2-tcti-swtpm.7.gz
 share/man/man7/tss2-tctildr.7.gz
