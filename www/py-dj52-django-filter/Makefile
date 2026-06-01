@@ -12,6 +12,9 @@ WWW=		https://github.com/carltongibson/django-filter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=     Obsolete, please use www/py-django-filter instead
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 

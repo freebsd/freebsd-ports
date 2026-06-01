@@ -12,6 +12,9 @@ WWW=		http://github.com/django/channels_redis/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-channels-redis instead
+EXPIRATION_DATE=2026-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=5.0.1:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=1:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asgiref>=3.7.2:www/py-asgiref@${PY_FLAVOR} \

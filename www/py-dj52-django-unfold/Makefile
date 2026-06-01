@@ -14,6 +14,9 @@ WWW=		https://unfoldadmin.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=     Obsolete, please use www/py-django-unfold instead
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.1:www/py-django52@${PY_FLAVOR}
 

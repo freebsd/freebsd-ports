@@ -12,6 +12,9 @@ WWW=		https://github.com/goinnn/django-multiselectfield
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPLv3
 
+DEPRECATED=	Obsolete, please use www/py-django-multiselectfield instead
+EXPIRATION_DATE=2026-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 
 USES=		python

@@ -12,6 +12,9 @@ WWW=		https://github.com/jazzband/sorl-thumbnail
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use graphics/py-sorl-thumbnail instead
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>:devel/py-wheel@${PY_FLAVOR}

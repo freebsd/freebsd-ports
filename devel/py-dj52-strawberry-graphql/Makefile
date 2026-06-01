@@ -12,6 +12,9 @@ WWW=		https://github.com/strawberry-graphql/strawberry
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use devel/py-strawberry-graphql instead
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.10.10<0.12:devel/py-uv-build@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cross-web>=0.6.0:www/py-cross-web@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphql-core>=3.2.0<3.4.0:devel/py-graphql-core@${PY_FLAVOR} \

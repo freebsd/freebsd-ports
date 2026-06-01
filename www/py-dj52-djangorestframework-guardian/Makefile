@@ -11,6 +11,9 @@ WWW=		https://github.com/rpkilby/django-rest-framework-guardian
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-djangorestframework-guardian instead
+EXPIRATION_DATE=2026-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.16.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-guardian>=2.4.0:www/py-dj52-django-guardian@${PY_FLAVOR}
