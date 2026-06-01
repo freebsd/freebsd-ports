@@ -120,6 +120,7 @@ include/math/constants/double_constants.hpp
 include/math/constants/float_constants.hpp
 include/math/constants/ieee754_constants.hpp
 include/math/constants/longdouble_constants.hpp
+include/math/constants/reference_constants.hpp
 include/math/constexpr_math.hpp
 include/math/constexpr_math/detail.hpp
 include/math/constexpr_math/exp.hpp
@@ -458,6 +459,14 @@ include/universal/number/einteger/einteger_impl.hpp
 include/universal/number/einteger/exceptions.hpp
 include/universal/number/einteger/manipulators.hpp
 include/universal/number/einteger/numeric_limits.hpp
+include/universal/number/elreal/block.hpp
+include/universal/number/elreal/block_eft.hpp
+include/universal/number/elreal/block_manipulators.hpp
+include/universal/number/elreal/elreal.hpp
+include/universal/number/elreal/elreal_fwd.hpp
+include/universal/number/elreal/threeAdd.hpp
+include/universal/number/elreal/zbcl.hpp
+include/universal/number/elreal/zbcl_helpers.hpp
 include/universal/number/erational/attributes.hpp
 include/universal/number/erational/erational.hpp
 include/universal/number/erational/erational_fwd.hpp
@@ -1036,6 +1045,8 @@ include/universal/verification/blocksignificand_test_suite.hpp
 include/universal/verification/blocktriple_test_status.hpp
 include/universal/verification/cfloat_test_suite.hpp
 include/universal/verification/cfloat_test_suite_mathlib.hpp
+include/universal/verification/dyadic_exact.hpp
+include/universal/verification/ereal_test_support.hpp
 include/universal/verification/fixpnt_test_suite.hpp
 include/universal/verification/fixpnt_test_suite_mathlib.hpp
 include/universal/verification/integer_test_suite.hpp
