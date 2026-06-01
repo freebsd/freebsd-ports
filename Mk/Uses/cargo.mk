@@ -172,6 +172,7 @@ CARGO_BUILD_ARGS?=
 CARGO_INSTALL_ARGS?=
 CARGO_INSTALL_PATH?=	.
 CARGO_TEST_ARGS?=
+CARGO_TEST_AFTER_ARGS?=
 CARGO_UPDATE_ARGS?=
 
 # Use module targets ?
@@ -364,13 +365,18 @@ do-install:
 .    endfor
 .  endif
 
+.  if !empty(CARGO_TEST_AFTER_ARGS)
+_CARGO_TEST_AFTER_ARGS=	-- ${CARGO_TEST_AFTER_ARGS}
+.  endif
+
 .  if !target(do-test) && ${CARGO_TEST:tl} == "yes"
 do-test:
 	@${CARGO_CARGO_RUN} test \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--verbose \
 		--verbose \
-		${CARGO_TEST_ARGS}
+		${CARGO_TEST_ARGS} \
+		${_CARGO_TEST_AFTER_ARGS}
 .  endif
 
 #
