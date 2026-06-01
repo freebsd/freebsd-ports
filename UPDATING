@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260601:
+  AFFECTS: Users of security/lego
+  AUTHOR: matt@matthoran.com
+
+  To migrate from lego v4 to v5 run
+
+  $ lego migrate --path PREFIX/etc/ssl/lego
+
+  as the LEGO_USER user. This command migrates to a new file structure and
+  outputs configuration that can be used as the basis for ETCDIR/lego.yml. See
+  https://go-acme.github.io/lego/references/ref-file/index.html for more
+  details on the configuration file format.
+
+  ETCDIR/lego.sh will need to be updated as well, as the renew command has been
+  removed. The script can also be simplified when a configuration file is used.
+  See ETCDIR/lego.sh.sample for an example.
+
 20260531:
   AFFECTS: Users of x11-wm/hyprland
   AUTHOR: tagattie@FreeBSD.org
