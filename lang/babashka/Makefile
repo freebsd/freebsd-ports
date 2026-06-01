@@ -17,6 +17,7 @@ ONLY_FOR_ARCHS_REASON=	upstream only provides Linux binaries for amd64 and aarch
 USES=		linux:rl9
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+STRIP=
 
 OPTIONS_DEFINE=	JAVA
 OPTIONS_DEFAULT=	JAVA
