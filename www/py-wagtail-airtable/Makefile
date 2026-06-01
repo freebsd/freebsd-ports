@@ -1,6 +1,6 @@
 PORTNAME=	wagtail-airtable
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.11.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.0,1:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyairtable2>=2.3<3:devel/py-pyairtable2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wagtail>=5.2:www/py-wagtail@${PY_FLAVOR}
 
