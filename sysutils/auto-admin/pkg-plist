@@ -54,6 +54,7 @@ bin/auto-ssh-reverse-authorize
 bin/auto-update-manager
 bin/auto-update-pkgsrc
 bin/auto-using-dreckly
+bin/auto-using-pkgbase
 bin/auto-using-pkgsrc
 bin/auto-wacom-map-display
 sbin/auto-add-fdesc-mount
@@ -198,3 +199,4 @@ share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
+share/man/man8/auto-using-pkgbase.8.gz
