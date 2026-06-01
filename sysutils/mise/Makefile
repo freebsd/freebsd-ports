@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.16
+DISTVERSION=	2026.5.18
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -674,7 +674,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.102.8 \
 		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
@@ -739,14 +738,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signal-hook-0.4.4 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
-		sigstore-bundle-0.7.0 \
-		sigstore-crypto-0.7.0 \
-		sigstore-merkle-0.7.0 \
-		sigstore-rekor-0.7.0 \
-		sigstore-trust-root-0.7.0 \
-		sigstore-tsa-0.7.0 \
-		sigstore-types-0.7.0 \
-		sigstore-verify-0.7.0 \
+		sigstore-bundle-0.8.0 \
+		sigstore-crypto-0.8.0 \
+		sigstore-merkle-0.8.0 \
+		sigstore-rekor-0.8.0 \
+		sigstore-trust-root-0.8.0 \
+		sigstore-tsa-0.8.0 \
+		sigstore-types-0.8.0 \
+		sigstore-verify-0.8.0 \
 		simd-adler32-0.3.9 \
 		simd-json-0.17.0 \
 		simd_cesu8-1.1.1 \
@@ -864,7 +863,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ureq-proto-0.6.0 \
 		url-2.5.8 \
 		urlencoding-2.1.3 \
-		usage-lib-3.3.0 \
+		usage-lib-3.4.0 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
