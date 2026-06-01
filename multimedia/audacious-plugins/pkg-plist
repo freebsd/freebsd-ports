@@ -25,6 +25,8 @@ lib/audacious/Effect/voice_removal.so
 %%GTK%%%%AOSD%%lib/audacious/General/aosd.so
 %%CDDA%%lib/audacious/General/cd-menu-items.so
 lib/audacious/General/delete-files.so
+%%GTK%%%%FILEBROWSER%%lib/audacious/General/filebrowser.so
+%%QT%%%%FILEBROWSER%%lib/audacious/General/filebrowser-qt.so
 %%GTK%%lib/audacious/General/gtkui.so
 %%GTK%%lib/audacious/General/hotkey.so
 %%LIRC%%lib/audacious/General/lirc.so
@@ -32,6 +34,7 @@ lib/audacious/General/delete-files.so
 %%QT%%lib/audacious/General/lyrics-qt.so
 %%MPRIS%%lib/audacious/General/mpris2.so
 %%NOTIFY%%lib/audacious/General/notify.so
+%%GTK%%lib/audacious/General/playback-history.so
 %%QT%%lib/audacious/General/playback-history-qt.so
 %%GTK%%lib/audacious/General/playlist-manager.so
 %%QT%%lib/audacious/General/playlist-manager-qt.so
