@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+
+You need to install the port cad/qcadjsapi .
+
+EOM
+}
+]

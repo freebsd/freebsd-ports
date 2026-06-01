@@ -1,0 +1,11 @@
+--- src/entity/CMakeLists.txt.orig	2026-05-06 14:27:07 UTC
++++ src/entity/CMakeLists.txt
+@@ -121,7 +121,7 @@ target_link_libraries(qcadentity PUBLIC
+     Qt::Svg
+     Qt::Xml
+     qcadcore
+-    opennurbs
++    OpenNURBS
+ )
+ 
+ if(win32-msvc2010)

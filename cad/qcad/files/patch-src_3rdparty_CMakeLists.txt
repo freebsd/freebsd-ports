@@ -1,0 +1,10 @@
+--- src/3rdparty/CMakeLists.txt.orig	2026-05-06 14:27:07 UTC
++++ src/3rdparty/CMakeLists.txt
+@@ -5,7 +5,6 @@ add_subdirectory(dxflib)
+ project(3rdparty VERSION 1.0 LANGUAGES CXX C)
+ 
+ add_subdirectory(dxflib)
+-add_subdirectory(opennurbs)
+ add_subdirectory(spatialindexnavel)
+ add_subdirectory(stemmer)
+ 

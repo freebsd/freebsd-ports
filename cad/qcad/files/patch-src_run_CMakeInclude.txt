@@ -1,0 +1,13 @@
+--- src/run/CMakeInclude.txt.orig	2026-05-06 14:27:07 UTC
++++ src/run/CMakeInclude.txt
+@@ -110,8 +110,8 @@ if(NOT r_no_opennurbs)
+ 
+ if(NOT r_no_opennurbs)
+     target_link_libraries(${PROJECT_NAME} PRIVATE
+-        zlib
+-        opennurbs
++        z
++        OpenNURBS
+     )
+ endif()
+ 
