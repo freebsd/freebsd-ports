@@ -167,6 +167,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/arm_Neoverse-N1.xml
 %%DATADIR%%/cpu_map/arm_Neoverse-N2.xml
 %%DATADIR%%/cpu_map/arm_Neoverse-V1.xml
+%%DATADIR%%/cpu_map/arm_Neoverse-V2.xml
 %%DATADIR%%/cpu_map/arm_Tengyun-S2500.xml
 %%DATADIR%%/cpu_map/arm_ThunderX299xx.xml
 %%DATADIR%%/cpu_map/arm_a64fx.xml
@@ -203,6 +204,8 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server-v5.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server.xml
 %%DATADIR%%/cpu_map/x86_ClearwaterForest-v1.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest-v2.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest-v3.xml
 %%DATADIR%%/cpu_map/x86_ClearwaterForest.xml
 %%DATADIR%%/cpu_map/x86_Conroe-v1.xml
 %%DATADIR%%/cpu_map/x86_Conroe.xml
@@ -216,6 +219,8 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Dhyana-v1.xml
 %%DATADIR%%/cpu_map/x86_Dhyana-v2.xml
 %%DATADIR%%/cpu_map/x86_Dhyana.xml
+%%DATADIR%%/cpu_map/x86_DiamondRapids-v1.xml
+%%DATADIR%%/cpu_map/x86_DiamondRapids.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa.xml
@@ -241,6 +246,8 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v1.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v2.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v3.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids-v4.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids-v5.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
@@ -291,10 +298,14 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v2.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v3.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v4.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids-v5.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids-v6.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids.xml
 %%DATADIR%%/cpu_map/x86_SierraForest-v1.xml
 %%DATADIR%%/cpu_map/x86_SierraForest-v2.xml
 %%DATADIR%%/cpu_map/x86_SierraForest-v3.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v4.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v5.xml
 %%DATADIR%%/cpu_map/x86_SierraForest.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
