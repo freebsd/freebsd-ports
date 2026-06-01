@@ -1,0 +1,5 @@
+TIMESTAMP = 1779563525
+SHA256 (go/sysutils_loki3/grafana-loki-v3.7.2_GH0/go.mod) = 2ecfa91936a42156d785cb3de6828023ed1e0318fcbeaa08df4d9c11151b8644
+SIZE (go/sysutils_loki3/grafana-loki-v3.7.2_GH0/go.mod) = 26942
+SHA256 (go/sysutils_loki3/grafana-loki-v3.7.2_GH0/grafana-loki-v3.7.2_GH0.tar.gz) = f91b7737cc0ca352dfb99e9307bc2f6a67135d6827922374ab4a31676d280790
+SIZE (go/sysutils_loki3/grafana-loki-v3.7.2_GH0/grafana-loki-v3.7.2_GH0.tar.gz) = 110315122

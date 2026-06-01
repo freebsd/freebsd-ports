@@ -680,6 +680,7 @@
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += loki
+    SUBDIR += loki3
     SUBDIR += lookat
     SUBDIR += lr
     SUBDIR += lsblk
