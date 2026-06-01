@@ -151,6 +151,7 @@
     SUBDIR += hs-koka
     SUBDIR += hs-unlambda
     SUBDIR += huc
+    SUBDIR += idris2
     SUBDIR += inko
     SUBDIR += intercal
     SUBDIR += io
