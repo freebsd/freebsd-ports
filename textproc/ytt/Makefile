@@ -1,6 +1,6 @@
 PORTNAME=	ytt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.0
+DISTVERSION=	0.55.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://carvel.dev/ytt/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/carvel-dev/ytt
 GO_TARGET=	./cmd/ytt/
