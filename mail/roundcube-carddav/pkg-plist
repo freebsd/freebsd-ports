@@ -164,6 +164,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/package-lock.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Client.php
@@ -261,10 +262,10 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/actions/setup/action.yml
-%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/baikal/initdb.sql
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/radicale/config/config
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/radicale/config/rights
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/radicale/config/users
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/scripts/createBaikalUser.sh
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/scripts/createabook.sh
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/scripts/deployBaikal.sh
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/workflows/ci.yml
@@ -325,6 +326,7 @@
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/tests/Unit/FilterTest.php
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/tests/Unit/HttpClientAdapterGuzzleTest.php
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/tests/Unit/phpunit.xml
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/vendor-bin/psalm/composer.json
 %%WWWDIR%%/vendor/psr/http-client/CHANGELOG.md
 %%WWWDIR%%/vendor/psr/http-client/LICENSE
 %%WWWDIR%%/vendor/psr/http-client/README.md
@@ -484,10 +486,8 @@
 %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata/windowszones.php
 %%WWWDIR%%/vendor/sabre/vobject/resources/schema/xcal.rng
 %%WWWDIR%%/vendor/sabre/vobject/resources/schema/xcard.rng
-%%WWWDIR%%/vendor/sabre/xml/.php-cs-fixer.dist.php
 %%WWWDIR%%/vendor/sabre/xml/LICENSE
 %%WWWDIR%%/vendor/sabre/xml/README.md
-%%WWWDIR%%/vendor/sabre/xml/bin/.empty
 %%WWWDIR%%/vendor/sabre/xml/composer.json
 %%WWWDIR%%/vendor/sabre/xml/lib/ContextStackTrait.php
 %%WWWDIR%%/vendor/sabre/xml/lib/Deserializer/functions.php
@@ -507,7 +507,7 @@
 %%WWWDIR%%/vendor/sabre/xml/lib/Writer.php
 %%WWWDIR%%/vendor/sabre/xml/lib/XmlDeserializable.php
 %%WWWDIR%%/vendor/sabre/xml/lib/XmlSerializable.php
-%%WWWDIR%%/vendor/symfony/deprecation-contracts/.gitignore
+%%WWWDIR%%/vendor/sabre/xml/rector.php
 %%WWWDIR%%/vendor/symfony/deprecation-contracts/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/deprecation-contracts/LICENSE
 %%WWWDIR%%/vendor/symfony/deprecation-contracts/README.md
