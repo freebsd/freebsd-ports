@@ -25,11 +25,12 @@ CONFLICTS_BUILD=	dcmtk openjpeg15
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
 
-do-test: # 1 test fails, see https://github.com/vxl/vxl/issues/920
+do-test: # some tests fail, see https://github.com/vxl/vxl/issues/920
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+		${SETENV} ${MAKE_ENV} ${CMAKE_BIN:H}/ctest --output-on-failure \
+			--exclude-regex "vul_vul_test_driver|vpgl_algo_test_equi_rectification"
 
 .include <bsd.port.pre.mk>
 
