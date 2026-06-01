@@ -131,6 +131,7 @@
     SUBDIR += qmls
     SUBDIR += qrouter
     SUBDIR += qspeakers
+    SUBDIR += qtjsapi
     SUBDIR += qucs-s
     SUBDIR += qucsator
     SUBDIR += repsnapper

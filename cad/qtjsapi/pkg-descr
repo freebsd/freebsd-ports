@@ -1,0 +1,4 @@
+QtJSAPI replaces the Qt Script based qtscriptgenerator for Qt 5 which was made
+obsolete when the Qt Script module was declared deprecated.
+
+It is required by QCAD.
