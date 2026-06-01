@@ -30,7 +30,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libOsiClp.so:math/clp \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2
-TEST_DEPENDS=	googletest>0:devel/googletest
+TEST_DEPENDS=	benchmark>0:devel/benchmark \
+		googletest>0:devel/googletest
 
 USES=		blaslapack cmake:testing compiler:c++17-lang eigen:3 pkgconfig
 USE_LDCONFIG=	yes
@@ -43,6 +44,7 @@ CMAKE_OFF=	BUILD_PYTHON BUILD_DEPS INSTALL_BUILD_DEPS \
 CMAKE_ON=	BUILD_CXX \
 		USE_PDLP
 CMAKE_TESTING_ON=	BUILD_TESTING BUILD_EXAMPLES BUILD_CXX_EXAMPLES
+CMAKE_TESTING_OFF=	USE_fuzztest BUILD_fuzztest
 
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
 
@@ -71,5 +73,9 @@ post-install:
 # Tests cxx_cpp_linear_programming and cxx_cpp_integer_programming abort: https://github.com/google/or-tools/issues/4555
 # 13 tests fail whuke running the math_opt_solvers_cp_sat_solver_test test executable: https://github.com/google/or-tools/issues/4556
 # The test SimpleMaxFlowTest.ProblematicProblemWithMaxCapacity (graph_max_flow_test) fails to find test data when it is built outsource: https://github.com/google/or-tools/issues/4557
+do-test:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${CMAKE_BIN:H}/ctest \
+		--output-on-failure \
+		--exclude-regex "cxx_math_opt_solvers_cp_sat_solver_test|cxx_math_opt_solvers_highs_solver_test"
 
 .include <bsd.port.mk>
