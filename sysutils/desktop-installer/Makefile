@@ -1,6 +1,5 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	1.1.1-31
-DISTVERSIONSUFFIX=	-gc5e9eb6
+DISTVERSION=	1.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/outpaddling/desktop-installer
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.8.4.22:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.8.5:sysutils/auto-admin
 
 USES=		desktop-file-utils
 USE_GITHUB=	yes
@@ -21,6 +20,7 @@ NO_ARCH=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME}-xlibre ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/battery-shutdown.sh ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/FreeBSD/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
