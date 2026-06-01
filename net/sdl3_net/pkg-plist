@@ -5,5 +5,5 @@ lib/cmake/SDL3_net/SDL3_netConfig.cmake
 lib/cmake/SDL3_net/SDL3_netConfigVersion.cmake
 lib/libSDL3_net.so
 lib/libSDL3_net.so.0
-lib/libSDL3_net.so.0.1.0
+lib/libSDL3_net.so.%%LIBVERSION%%
 libdata/pkgconfig/sdl3-net.pc
