@@ -125,6 +125,7 @@
     SUBDIR += py-vunit-hdl
     SUBDIR += python-gdsii
     SUBDIR += qcad
+    SUBDIR += qcadjsapi
     SUBDIR += qcsxcad
     SUBDIR += qelectrotech
     SUBDIR += qflow

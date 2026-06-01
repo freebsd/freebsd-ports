@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2026-05-05 14:30:13 UTC
++++ CMakeLists.txt
+@@ -145,5 +145,5 @@ target_link_libraries(qcadjsapi PRIVATE
+     qcadspatialindex
+     qcadstemmer
+     qtjsapi
+-    opennurbs
++    OpenNURBS
+ )
