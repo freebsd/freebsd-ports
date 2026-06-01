@@ -1,5 +1,5 @@
 PORTNAME=	dq
-PORTVERSION=	20250201
+PORTVERSION=	20260601
 CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -7,7 +7,7 @@ COMMENT=	Recursive DNS/DNSCurve server
 WWW=		https://github.com/janmojzis/dq
 
 LICENSE=	CC0
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_NAME=	Creative Commons Zero v1.0 Universal
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
