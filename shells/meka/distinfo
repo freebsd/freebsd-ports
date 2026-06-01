@@ -1,4 +1,6 @@
-TIMESTAMP = 1780185599
+TIMESTAMP = 1780337375
+SHA256 (v5.17.14.zip) = 481244d0812097b11fbaeef79f71d942b171617f9c9f9514e63acbe13e71ccdc
+SIZE (v5.17.14.zip) = 4388280
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/agent-client-protocol-0.12.1.crate) = 4361ba6627e51de955b10f3c77fb9eb959c85191a236c1c2c84e32f4ff240faf
@@ -1067,7 +1069,5 @@ SHA256 (rust/crates/zune-jpeg-0.5.15.crate) = 27bc9d5b815bc103f142aa054f561d9187
 SIZE (rust/crates/zune-jpeg-0.5.15.crate) = 88879
 SHA256 (wtfbbqhax-reedline-3a457ff1dab28c9021db116f2575eed5116bed88_GH0.tar.gz) = 230d72d027f872c232333c57e6a96e1c02d339b359a2e0d5c7e415279f5455cd
 SIZE (wtfbbqhax-reedline-3a457ff1dab28c9021db116f2575eed5116bed88_GH0.tar.gz) = 164902
-SHA256 (k4yt3x-meka-0.27.1_GH0.tar.gz) = 254eebeb501ae6f7881210ac444ff3dfc5f67b9462ee9669e4c43ace2b497119
-SIZE (k4yt3x-meka-0.27.1_GH0.tar.gz) = 787317
-SHA256 (v5.17.14.zip) = 481244d0812097b11fbaeef79f71d942b171617f9c9f9514e63acbe13e71ccdc
-SIZE (v5.17.14.zip) = 4388280
+SHA256 (k4yt3x-meka-0.27.2_GH0.tar.gz) = 5b3a083ac5dfc8db764293239c9c70f5d413dcdb4b02a484bc4ac124aaa85907
+SIZE (k4yt3x-meka-0.27.2_GH0.tar.gz) = 808766
