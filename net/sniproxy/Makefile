@@ -1,6 +1,6 @@
 PORTNAME=	sniproxy
 DISTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	krion@FreeBSD.org
@@ -21,6 +21,7 @@ GH_ACCOUNT=	dlundquist
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	sniproxy
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-dns
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	"@sample etc/sniproxy.conf.sample" \
