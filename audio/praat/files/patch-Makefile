@@ -1,0 +1,16 @@
+--- Makefile.orig	2026-06-10 21:32:39 UTC
++++ Makefile
+@@ -145,6 +145,13 @@ $(info ARCHITECTURE: given as "$(PRAAT_ARCH)", resolve
+ endif
+ $(info ARCHITECTURE: given as "$(PRAAT_ARCH)", resolved as "$(ARCH_COMPILER_FLAGS)")
+ 
++INC = $(LOCALBASE)/include
++CPPFLAGS += -DUNIX -I$(INC)
++CPPFLAGS += -I$(INC)/gtk-3.0 -I$(INC)/glib-2.0 -I$(LOCALBASE)/lib/glib-2.0/include -I$(INC)/pango-1.0 -I$(INC)/harfbuzz -I$(INC)/cairo -I$(INC)/gdk-pixbuf-2.0 -I$(INC)/atk-1.0
++EXECUTABLE_FILE = praat
++LINKER_COMMAND = $(CXX)
++GRAPHICS_LINKER_FLAGS := `pkg-config --libs gtk+-3.0`
++NON_PRAAT_LIBRARIES = -L$(LOCALBASE) $(GRAPHICS_LINKER_FLAGS) -lpthread
+ ifeq ($(OS_IS_FREEBSD),1)
+   # by Paul Boersma, Jason Bacon, Adriaan de Groot
+ 
