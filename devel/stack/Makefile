@@ -227,7 +227,7 @@ CABAL_PROJECT=	remove
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != powerpc64
+.if !${ARCH:Mpowerpc64*}
 LIB_DEPENDS+=	libncursesw.so.8:misc/compat12x
 .endif
 
