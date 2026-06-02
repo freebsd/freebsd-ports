@@ -5336,3 +5336,4 @@ net/rubygem-gitaly-proto||2026-05-31|Has expired: gitaly-proto has been deprecat
 www/redmine51||2026-05-31|Has expired: Please migrate to newer version. Ruby 3.2 has been removed from the ports tree
 graphics/tippecanoe||2026-05-31|Broken for months
 games/minetestmapper||2026-05-31|Broken for months
+devel/rye||2026-06-02|Has expired: Rye is no longer developed. All users should migrate to uv, the successor project from the same maintainers, which is actively maintained and much more widely used

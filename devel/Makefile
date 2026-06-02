@@ -8477,7 +8477,6 @@
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += rxcpp
-    SUBDIR += rye
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += samurai
