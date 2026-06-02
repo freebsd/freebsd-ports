@@ -147,6 +147,7 @@ include/mozjs-%%SP_VER%%/js/experimental/LoggingInterface.h
 include/mozjs-%%SP_VER%%/js/experimental/PCCountProfiling.h
 include/mozjs-%%SP_VER%%/js/experimental/SourceHook.h
 include/mozjs-%%SP_VER%%/js/experimental/TypedData.h
+include/mozjs-%%SP_VER%%/js/friend/CycleCollector.h
 include/mozjs-%%SP_VER%%/js/friend/DOMProxy.h
 include/mozjs-%%SP_VER%%/js/friend/DumpFunctions.h
 include/mozjs-%%SP_VER%%/js/friend/ErrorMessages.h
