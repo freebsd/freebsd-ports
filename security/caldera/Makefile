@@ -12,6 +12,9 @@ CONFLICTS=	caldera4
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired www/npm-node20
+EXPIRATION_DATE=2026-09-02
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	npm-node20>0:www/npm-node20
