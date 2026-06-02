@@ -1,5 +1,5 @@
 PORTNAME=	tanglet
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.9
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/tanglet/
 
@@ -15,12 +15,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools gl \
 USE_GL=		opengl
 USE_QT=		base tools:build
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} CREDITS ChangeLog README \
-		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

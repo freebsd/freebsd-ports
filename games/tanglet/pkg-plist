@@ -1,8 +1,5 @@
 bin/tanglet
 share/applications/tanglet.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/1024x1024/apps/tanglet.png
 share/icons/hicolor/128x128/apps/tanglet.png
 share/icons/hicolor/16x16/apps/tanglet.png
