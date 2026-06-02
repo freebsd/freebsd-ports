@@ -1,6 +1,6 @@
 PORTNAME=	psi4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10
+DISTVERSION=	1.10.1
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -34,7 +34,8 @@ USE_GITHUB=	yes
 CMAKE_ARGS=	-DLibxc_DIR=${LOCALBASE} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER} \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
-		-DPYMOD_INSTALL_LIBDIR=${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/lib||}
+		-DPYMOD_INSTALL_LIBDIR=${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/lib||} \
+		-DCMAKE_INSIST_FIND_PACKAGE_Libint2=ON
 CONFIGURE_ENV=	FREEBSD_PYTHON_VER=${PYTHON_VER}
 
 LDFLAGS+=	-lexecinfo # for backtrace_symbols
@@ -54,7 +55,7 @@ NATIVE_CMAKE_BOOL=	ENABLE_XHOST
 post-patch:
 	# correct the default data dir
 	@${REINPLACE_CMD} \
-		-E 's|%%DATADIR%%|${DATADIR}|' \
+		-e 's|/usr/local/share/psi4|${DATADIR}|' \
 		${WRKSRC}/psi4/run_psi4.py
 
 do-install: # project fails to install itself into a stage directory due to a convoluted cmake code structure (DESTDIR isn't handled correctly)
@@ -77,8 +78,8 @@ do-install: # project fails to install itself into a stage directory due to a co
 	# psi4 sometimes fails to print its version: https://github.com/psi4/psi4/issues/2831
 
 do-test:
-	# 2 tests fail, see https://github.com/psi4/psi4/issues/3014
-	# 1.9: many tests fail: https://github.com/psi4/psi4/issues/3099
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest # tests can run without this target too, but this way tests output is more concise and it looks more appealing
+
+# tests as of 1.10.1: 27 failed, 6072 passed, 1380 skipped, 51 xfailed in 6365.46s (1:46:05), see https://github.com/psi4/psi4/issues/3421
 
 .include <bsd.port.mk>

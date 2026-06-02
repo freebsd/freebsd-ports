@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2026-04-20 17:47:33 UTC
+--- CMakeLists.txt.orig	2026-05-29 03:12:24 UTC
 +++ CMakeLists.txt
 @@ -221,7 +221,7 @@ set(Python_ADDITIONAL_VERSIONS 3.13 3.12 3.11 3.10)  #
  # * library: not at all
@@ -17,7 +17,7 @@
     CMAKE_CACHE_ARGS -DCMAKE_PREFIX_PATH:PATH=${_cmake_CMAKE_PREFIX_PATH}
                -DCMAKE_C_COMPILER_ARG1:STRING=${CMAKE_C_COMPILER_ARG1}
                -DCMAKE_CXX_COMPILER_ARG1:STRING=${CMAKE_CXX_COMPILER_ARG1}
-@@ -356,8 +357,8 @@ ExternalProject_Add(psi4-core
+@@ -356,21 +357,10 @@ ExternalProject_Add(psi4-core
                 # CMAKE_<lang>_COMPILER_ARG1 vars pass args thru when CMAKE_<lang>_COMPILER set as "compiler --vital-args"
                -DOpenMP_C_LIB_NAMES:STRING=${OpenMP_C_LIB_NAMES}
                -DOpenMP_CXX_LIB_NAMES:STRING=${OpenMP_CXX_LIB_NAMES}
@@ -28,3 +28,16 @@
  
  add_subdirectory(external/downstream)
  add_subdirectory(doc)
+ include(ConfigTesting)
+ 
+-# <<<  Install  >>>
+-
+-install(DIRECTORY ${STAGED_INSTALL_PREFIX}/
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}
+-        USE_SOURCE_PERMISSIONS
+-        PATTERN "*.pyc" EXCLUDE)
+-
+-install(DIRECTORY samples
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/psi4
+-        USE_SOURCE_PERMISSIONS
+-        PATTERN "example_psi4rc_file" EXCLUDE)
