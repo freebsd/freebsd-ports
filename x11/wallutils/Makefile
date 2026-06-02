@@ -11,6 +11,8 @@ WWW=		https://github.com/xyproto/wallutils
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with libheif 1.22.2 # See also: https://github.com/xyproto/wallutils/issues/58
+
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libX11.so:x11/libX11
 
