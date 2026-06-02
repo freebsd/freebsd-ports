@@ -1,11 +1,11 @@
 PORTNAME=	pglogical
 DISTVERSIONPREFIX=	REL
-DISTVERSION=	2_4_6
+DISTVERSION=	2_4_7
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Logical replication system as a PostgreSQL extension
-WWW=		https://www.2ndquadrant.com/en/resources-old/pglogical/
+WWW=		https://www.enterprisedb.com/docs/supported-open-source/pglogical2/
 
 LICENSE=	PostgreSQL
 
