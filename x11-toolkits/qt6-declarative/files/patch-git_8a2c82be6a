@@ -1,0 +1,100 @@
+From: Richard Moe Gustavsen <richard.gustavsen@qt.io>
+Date: Mon, 27 Apr 2026 08:23:44 +0000 (+0200)
+Subject: QQmlTableInstanceModel: refactor QModelIndex calculation out of QQuickTableView
+X-Git-Url: https://codereview.qt-project.org/gitweb?p=qt%2Fqtdeclarative.git;a=commitdiff_plain;h=8a2c82be6ad90e3f2a0760d8bab1e3a8cdb2473a;hp=dd14fc268005d99978baa66053381085df9aab36
+
+QQmlTableInstanceModel: refactor QModelIndex calculation out of QQuickTableView
+
+The QQmlTableInstanceModel can derive the QModelIndex itself from the
+flat index, so there is no need for a separate object(QModelIndex)
+overload.
+
+Amends de4b7283c978ca384f6c8bf9f27387158804b601
+
+Change-Id: I9dfff8026ef0acca660f1211b0e453c46562985f
+Reviewed-by: SanthoshKumar Selvaraj <santhosh.kumar.selvaraj@qt.io>
+(cherry picked from commit e635da3faf6dac654b2591204162a217a6f02766)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+
+diff --git a/src/qmlmodels/qqmltableinstancemodel.cpp b/src/qmlmodels/qqmltableinstancemodel.cpp
+index dc73a17b784..5bc35a11900 100644
+--- src/qmlmodels/qqmltableinstancemodel.cpp
++++ src/qmlmodels/qqmltableinstancemodel.cpp
+@@ -165,26 +165,21 @@ QObject *QQmlTableInstanceModel::object(int index, QQmlIncubator::IncubationMode
+ {
+     Q_ASSERT(m_delegate);
+ 
+-    QQmlDelegateModelItem *modelItem = resolveModelItem(index, QModelIndex());
+-    if (!modelItem)
+-        return nullptr;
+-
+-    // Return the incubated object, or start an async incubation task and return nullptr for now
+-    return incubateModelItemIfNeeded(modelItem, incubationMode);
+-}
+-
+-QObject *QQmlTableInstanceModel::object(const QModelIndex &modelIndex, QQmlIncubator::IncubationMode incubationMode)
+-{
+-    Q_ASSERT(m_delegate);
+-    Q_ASSERT(m_adaptorModel.adaptsAim());
++    QModelIndex modelIndex;
++    if (const QAbstractItemModel *aim = abstractItemModel()) {
++        // A valid QModelIndex is needed for resolveModelItem() to match
++        // items in the release cache rather than just delegate type alone.
++        const int row = m_adaptorModel.rowAt(index);
++        const int column = m_adaptorModel.columnAt(index);
++        modelIndex = aim->index(row, column);
++    }
+ 
+-    const int flatIndex = m_adaptorModel.indexAt(modelIndex.row(), modelIndex.column());
+-    QQmlDelegateModelItem *modelItem = resolveModelItem(flatIndex, modelIndex);
+-    if (!modelItem)
+-        return nullptr;
++    if (QQmlDelegateModelItem *modelItem = resolveModelItem(index, modelIndex)) {
++        // Return the incubated object, or start an async incubation task and return nullptr for now
++        return incubateModelItemIfNeeded(modelItem, incubationMode);
++    }
+ 
+-    // Return the incubated object, or start an async incubation task and return nullptr for now
+-    return incubateModelItemIfNeeded(modelItem, incubationMode);
++    return nullptr;
+ }
+ 
+ QObject *QQmlTableInstanceModel::incubateModelItemIfNeeded(QQmlDelegateModelItem *modelItem, QQmlIncubator::IncubationMode incubationMode)
+diff --git a/src/qmlmodels/qqmltableinstancemodel_p.h b/src/qmlmodels/qqmltableinstancemodel_p.h
+index 23b6ef15972..a890b16a43b 100644
+--- src/qmlmodels/qqmltableinstancemodel_p.h
++++ src/qmlmodels/qqmltableinstancemodel_p.h
+@@ -86,7 +86,6 @@ public:
+     const QAbstractItemModel *abstractItemModel() const override;
+ 
+     QObject *object(int index, QQmlIncubator::IncubationMode incubationMode = QQmlIncubator::AsynchronousIfNested) override;
+-    QObject *object(const QModelIndex &index, QQmlIncubator::IncubationMode incubationMode = QQmlIncubator::AsynchronousIfNested);
+     QObject *incubateModelItemIfNeeded(QQmlDelegateModelItem *modelItem, QQmlIncubator::IncubationMode incubationMode);
+     void restoreFromReleasedItemsCache(QQmlDelegateModelItem *item, int newFlatIndex);
+     void commitReleasedItems();
+diff --git a/src/quick/items/qquicktableview.cpp b/src/quick/items/qquicktableview.cpp
+index fa73aab9fca..962403aec5c 100644
+--- src/quick/items/qquicktableview.cpp
++++ src/quick/items/qquicktableview.cpp
+@@ -2826,19 +2826,11 @@ FxTableItem *QQuickTableViewPrivate::createFxTableItem(const QPoint &cell, QQmlI
+     Q_Q(QQuickTableView);
+ 
+     bool ownItem = false;
+-    QObject* object = nullptr;
+-    const QAbstractItemModel *aim = model->abstractItemModel();
+     const int modelRow = isTransposed ? logicalColumnIndex(cell.y()) : logicalRowIndex(cell.y());
+     const int modelColumn = isTransposed ? logicalRowIndex(cell.x()) : logicalColumnIndex(cell.x());
+     const int modelIndex = modelIndexAtCell(QPoint(modelColumn, modelRow));
+ 
+-    if (tableModel && aim) {
+-        // Prefer loading via QModelIndex so that QQmlTableInstanceModel can also
+-        // match recently released items by model index, not just by delegate type.
+-        object = tableModel->object(aim->index(modelRow, modelColumn), incubationMode);
+-    } else {
+-        object = model->object(modelIndex, incubationMode);
+-    }
++    QObject *object = model->object(modelIndex, incubationMode);
+ 
+     if (!object) {
+         if (model->incubationStatus(modelIndex) == QQmlIncubator::Loading) {
