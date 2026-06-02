@@ -1,6 +1,5 @@
 sbin/step-ca
 @dir etc/step
-%%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/CHANGELOG.md
 %%DOCSDIR%%/CONTRIBUTING.md
 %%DOCSDIR%%/README.md
