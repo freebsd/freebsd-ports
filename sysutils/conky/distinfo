@@ -1,6 +1,6 @@
-TIMESTAMP = 1779821212
-SHA256 (brndnmtthws-conky-v1.23.0_GH0.tar.gz) = 039bdc6d14a355586b462cb0a6ffdeb3e2f9b354a5348dd88f8ad22d4538b783
-SIZE (brndnmtthws-conky-v1.23.0_GH0.tar.gz) = 2285190
+TIMESTAMP = 1780375521
+SHA256 (brndnmtthws-conky-v1.24.0_GH0.tar.gz) = f921ac714ea519c25bf20d7b47aaf939a63c48859e6a90d2e39d946e1b5466e2
+SIZE (brndnmtthws-conky-v1.24.0_GH0.tar.gz) = 2297597
 SHA256 (e99ea4174dbafe753ac002567f0d6dbf2356a279.patch) = caff9cd7286a202131c1614f45e484ca38e312503b52304478d8fec8f0179938
 SIZE (e99ea4174dbafe753ac002567f0d6dbf2356a279.patch) = 2062
 SHA256 (cd1e291560ddc5e6ad52e9ca227ee8ffa1f32d4a.patch) = c1faaf79aced1e0f19c2bcb7dd291ff4faf557897872ee75b2294bf9d882dfd3

@@ -1,11 +1,7 @@
 PORTNAME=	conky
-PORTVERSION=	1.23.0
+PORTVERSION=	1.24.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/brndnmtthws/conky/commit/
-PATCHFILES=	e99ea4174dbafe753ac002567f0d6dbf2356a279.patch:-p1 \
-		cd1e291560ddc5e6ad52e9ca227ee8ffa1f32d4a.patch:-p1
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT?=	Advanced, highly configurable system monitor for X11
