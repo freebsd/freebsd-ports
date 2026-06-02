@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-doctest
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
