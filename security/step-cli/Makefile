@@ -1,7 +1,6 @@
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
-PORTREVISION=	6
+DISTVERSION=	0.30.2
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -17,16 +16,18 @@ SHEBANG_FILES=	autocomplete/bash_autocomplete
 
 GO_MODULE=	github.com/smallstep/cli
 GO_TARGET=	./cmd/step
-GO_BUILDFLAGS=	-ldflags "-w -X main.Version=${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags "-w -X main.Version=${DISTVERSION}"
 
 PLIST_FILES=	bin/step \
 		etc/bash_completion.d/step-completion.bash \
 		share/zsh/site-functions/_step
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${CP} ${WRKSRC}/autocomplete/bash_autocomplete ${STAGEDIR}${PREFIX}/etc/bash_completion.d/step-completion.bash
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${CP} ${WRKSRC}/autocomplete/zsh_autocomplete ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_step
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		 ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/autocomplete/bash_autocomplete \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/step-completion.bash
+	${INSTALL_DATA} ${WRKSRC}/autocomplete/zsh_autocomplete \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_step
 
 .include <bsd.port.mk>
