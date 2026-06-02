@@ -1,6 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.16.3
+DISTVERSION=	6.16.8
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -73,8 +73,6 @@ post-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of : 93% tests passed, 5 tests failed out of 73
-# * https://github.com/dartsim/dart/issues/2369: 2 tests fail with the error: Unknown URDF Shape type
-# * https://github.com/dartsim/dart/issues/2370: 3 tests fail with various messages: test_Collision, test_Collision, test_DartLoader
+# tests as of 6.16.8: 100% tests passed, 0 tests failed out of 86
 
 .include <bsd.port.mk>
