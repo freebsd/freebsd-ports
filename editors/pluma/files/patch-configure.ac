@@ -1,8 +1,0 @@
---- configure.ac.orig
-+++ configure.ac
-@@ -42,8 +42,6 @@ LT_PREREQ([2.2.6])
- LT_INIT(disable-static)
-
--GTK_DOC_CHECK([1.0],[--flavour=no-tmpl])
--
- AC_CHECK_LIB(m, floor)
