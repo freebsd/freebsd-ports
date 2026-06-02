@@ -5338,3 +5338,4 @@ graphics/tippecanoe||2026-05-31|Broken for months
 games/minetestmapper||2026-05-31|Broken for months
 devel/rye||2026-06-02|Has expired: Rye is no longer developed. All users should migrate to uv, the successor project from the same maintainers, which is actively maintained and much more widely used
 x11/hamclock||2026-06-02|Has expired: Upstream programmer is deceased upstream server discontinued in June
+devel/twiggy||2026-06-02|Archived upstream, no longer maintained, and has an unclear latest release number

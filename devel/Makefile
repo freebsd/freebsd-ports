@@ -8709,7 +8709,6 @@
     SUBDIR += truc
     SUBDIR += tup
     SUBDIR += tvision
-    SUBDIR += twiggy
     SUBDIR += typeshare
     SUBDIR += ua_parser-core
     SUBDIR += uclcmd
