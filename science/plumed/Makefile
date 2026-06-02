@@ -1,19 +1,20 @@
 PORTNAME=	plumed
-DISTVERSION=	2.9.3
-PORTREVISION=	2
+DISTVERSION=	2.10.0
 CATEGORIES=	science graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}2/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PLUgin for MolEcular Dynamics
-WWW=		https://www.plumed.org/
+WWW=		https://www.plumed.org/ \
+		https://github.com/plumed/plumed2
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BROKEN_i386=	undefined reference to `__atomic_load'
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		bash-completion>0:shells/bash-completion
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		libgsl.so:math/gsl \
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	gawk:lang/gawk
 
-USES=		autoreconf compiler:c++11-lang gmake localbase pkgconfig shebangfix tar:tgz
+USES=		autoreconf compiler:c++11-lang fortran gmake localbase pkgconfig shebangfix tar:tgz
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh
@@ -32,12 +33,13 @@ SHEBANG_FILES=	src/maketools/makecmd \
 		regtest/scripts/what
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --disable-python
+CONFIGURE_ARGS=	--enable-shared --disable-python # see https://github.com/plumed/plumed2/issues/1422
 
 TEST_TARGET=	check # the 'installcheck' target checks installed version
 # 1 test is known to fail: https://github.com/plumed/plumed2/issues/782
 
 BINARY_ALIAS=	make=${GMAKE} # only needed for tests
+BINARY_ALIAS+=	python3=false # Python bindings should be in a separate port, see https://github.com/plumed/plumed2/issues/1422
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#! /bin/bash|#! ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/lib/Makefile
@@ -47,5 +49,6 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/plumed lib/plumed/plumed-runtime lib/libplumed.so lib/libplumedKernel.so
 
 # tests as of 2.9.3: 277 tests performed, 352 tests not applicable
+# tests as of 2.10.0: many tests fail due to compilation issues, see https://github.com/plumed/plumed2/issues/1421
 
 .include <bsd.port.mk>
