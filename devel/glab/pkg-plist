@@ -166,6 +166,8 @@
 %%MANPAGES%%share/man/man1/glab-repo-mirror.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-publish-catalog.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-publish.1.gz
+%%MANPAGES%%share/man/man1/glab-repo-remote-add.1.gz
+%%MANPAGES%%share/man/man1/glab-repo-remote.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-search.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-transfer.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-update.1.gz
@@ -221,6 +223,7 @@
 %%MANPAGES%%share/man/man1/glab-stack-amend.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-create.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-first.1.gz
+%%MANPAGES%%share/man/man1/glab-stack-infer.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-last.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-list.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-move.1.gz
