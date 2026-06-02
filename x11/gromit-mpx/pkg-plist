@@ -1,6 +1,5 @@
 bin/gromit-mpx
 @sample %%ETCDIR%%/gromit-mpx.cfg.sample
-share/man/man1/gromit-mpx.1.gz
 share/applications/net.christianbeier.Gromit-MPX.desktop
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.active.svg
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.svg
@@ -9,7 +8,15 @@ share/locale/es/LC_MESSAGES/gromit-mpx.mo
 share/locale/fa/LC_MESSAGES/gromit-mpx.mo
 share/locale/he/LC_MESSAGES/gromit-mpx.mo
 share/locale/it/LC_MESSAGES/gromit-mpx.mo
+share/locale/ka/LC_MESSAGES/gromit-mpx.mo
 share/locale/pt_BR/LC_MESSAGES/gromit-mpx.mo
+share/locale/zh_CN/LC_MESSAGES/gromit-mpx.mo
+share/locale/zh_HK/LC_MESSAGES/gromit-mpx.mo
+share/locale/zh_SG/LC_MESSAGES/gromit-mpx.mo
+share/locale/zh_TW/LC_MESSAGES/gromit-mpx.mo
+share/man/man1/gromit-mpx.1.gz
 share/metainfo/net.christianbeier.Gromit-MPX.appdata.xml
 share/pixmaps/net.christianbeier.Gromit-MPX.active.png
+share/pixmaps/net.christianbeier.Gromit-MPX.erase_cursor.png
+share/pixmaps/net.christianbeier.Gromit-MPX.paint_cursor.png
 share/pixmaps/net.christianbeier.Gromit-MPX.png
