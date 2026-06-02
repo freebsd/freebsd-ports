@@ -24,6 +24,7 @@
     SUBDIR += cooledit
     SUBDIR += cpeditor
     SUBDIR += cream
+    SUBDIR += croft
     SUBDIR += cudatext
     SUBDIR += deforaos-editor
     SUBDIR += dhex
