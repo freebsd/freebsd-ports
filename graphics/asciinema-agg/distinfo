@@ -1,4 +1,4 @@
-TIMESTAMP = 1779216365
+TIMESTAMP = 1780362312
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -587,5 +587,5 @@ SHA256 (rust/crates/zune-core-0.4.12.crate) = 3f423a2c17029964870cfaabb1f13dfab7
 SIZE (rust/crates/zune-core-0.4.12.crate) = 17355
 SHA256 (rust/crates/zune-jpeg-0.4.21.crate) = 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
 SIZE (rust/crates/zune-jpeg-0.4.21.crate) = 68268
-SHA256 (asciinema-agg-v1.8.1_GH0.tar.gz) = 9a2a7e6ca2748befb6a4c1c3eff437ae6029fde99ec882a951b3671aa30eacdb
-SIZE (asciinema-agg-v1.8.1_GH0.tar.gz) = 44634423
+SHA256 (asciinema-agg-v1.9.0_GH0.tar.gz) = 8170119502ad2c1c697e5cd4d050d87c425ecee726c5f6c3c2140703bcb31bb3
+SIZE (asciinema-agg-v1.9.0_GH0.tar.gz) = 44648771
