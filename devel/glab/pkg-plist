@@ -145,6 +145,7 @@
 %%MANPAGES%%share/man/man1/glab-orbit-remote-status.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-remote-tools.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-remote.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-setup.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit.1.gz
 %%MANPAGES%%share/man/man1/glab-release-create.1.gz
 %%MANPAGES%%share/man/man1/glab-release-delete.1.gz
