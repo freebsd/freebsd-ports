@@ -1,5 +1,5 @@
 PORTNAME=	viewvc
-DISTVERSION=	1.3.0-20251023
+DISTVERSION=	1.4.0-20260528
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -14,7 +14,7 @@ USES=		cpe python
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	viewvc
-GH_TAGNAME=	f743be3d4f0aeee2ca7ae05e24e17a6620b5c06e
+GH_TAGNAME=	f9e5718b4ee1d359cc01ef82e0f04ec7d2bd872f
 USE_RC_SUBR=	viewvc
 
 NO_BUILD=		yes
@@ -26,12 +26,12 @@ OPTIONS_SINGLE=		APMOD WEBSRV
 OPTIONS_SINGLE_WEBSRV=	APACHE LIGHTTPD
 OPTIONS_SINGLE_APMOD=	MODWSGI
 
-WEBSRV_DESC=		Enable web server support
-APMOD_DESC=		depend on Apache module
+WEBSRV_DESC=	Enable web server support
+APMOD_DESC=	depend on Apache module
 
-HTPASSWD_DESC=		Use htpasswd feature on standalone server
-MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
-APACHE_USES=		apache:run
+HTPASSWD_DESC=	Use htpasswd feature on standalone server
+MODWSGI_DESC=	Add mod_wsgi to the list of package dependencies
+APACHE_USES=	apache:run
 
 HTPASSWD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=1.7.0:security/py-passlib@${PY_FLAVOR}
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
@@ -43,20 +43,23 @@ SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subver
 SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${PY_FLAVOR}
 .endif
 
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}pygments>=1.1:textproc/py-pygments@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.1:textproc/py-pygments@${PY_FLAVOR}
 
-CONFLICTS_INSTALL=	viewvc-1.[12].[0-9]*
+CONFLICTS_INSTALL=	viewvc-1.[1-3].[0-9]*
 
 .include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
-		ECHO=${ECHO} EGREP=${EGREP} TOUCH=${TOUCH} \
-		CHOWN=${CHOWN} RM=${RM:Q}
+SUB_LIST=	CHOWN=${CHOWN} \
+		ECHO=${ECHO} \
+		EGREP=${EGREP} \
+		PYTHON_CMD=${PYTHON_CMD} \
+		RM=${RM:Q} \
+		TOUCH=${TOUCH}
 
 pre-everything::
 .if ${PORT_OPTIONS:MAPMOD} && !${PORT_OPTIONS:MAPACHE}
-IGNORE=	apache module needs Apache server, please re-run 'make config' then choose WEBSRV and APACHE
+IGNORE=		apache module needs Apache server, please re-run 'make config' then choose WEBSRV and APACHE
 .endif
 
 post-patch:
