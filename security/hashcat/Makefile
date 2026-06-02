@@ -1,7 +1,7 @@
 PORTNAME=	hashcat
 PORTVERSION=	7.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -17,6 +17,9 @@ NOT_FOR_ARCHS_REASON=	highly optimized for specific CPUs
 
 BUILD_DEPENDS=	minizip:archivers/minizip \
 		rustc:lang/${RUST_DEFAULT}
+.if ${ARCH} == arm64
+BUILD_DEPENDS+=	sse2neon>=1:devel/sse2neon
+.endif
 LIB_DEPENDS=	libiconv.so:converters/libiconv
 
 USES=		cargo compiler:c++11-lang gmake iconv localbase \
