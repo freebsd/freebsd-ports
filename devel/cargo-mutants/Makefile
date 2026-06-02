@@ -1,7 +1,7 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	27.0.0
-PORTREVISION=	2
+DISTVERSION=	27.1.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -67,7 +67,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		fastrand-2.3.0 \
-		filetime-0.2.25 \
+		filetime-0.2.27 \
 		flickzeug-0.4.5 \
 		float-cmp-0.10.0 \
 		fnv-1.0.7 \
@@ -77,13 +77,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		globset-0.4.16 \
 		guppy-workspace-hack-0.1.0 \
 		hashbrown-0.12.3 \
-		hashbrown-0.15.2 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
 		ignore-0.4.23 \
 		indexmap-1.9.3 \
-		indexmap-2.7.1 \
+		indexmap-2.14.0 \
 		indoc-2.0.0 \
 		insta-1.12.0 \
 		is_terminal_polyfill-1.70.1 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.149 \
-		serde_spanned-0.6.8 \
+		serde_spanned-1.1.1 \
 		serde_yaml-0.8.26 \
 		sharded-slab-0.1.7 \
 		similar-2.1.0 \
@@ -174,9 +174,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		thiserror-2.0.17 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.8 \
-		toml-0.8.0 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.20.7 \
+		toml-1.1.2+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
+		toml_writer-1.1.1+spec-1.1.0 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.28 \
 		tracing-core-0.1.33 \
@@ -215,7 +216,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.5.40 \
+		winnow-1.0.3 \
 		wit-bindgen-0.46.0 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
