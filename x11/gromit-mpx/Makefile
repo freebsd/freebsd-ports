@@ -1,24 +1,25 @@
 PORTNAME=	gromit-mpx
-DISTVERSION=	1.7.0
+DISTVERSION=	1.9.0
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Desktop annotation tool, multi-pointer port of Gromit
 WWW=		https://github.com/bk138/gromit-mpx
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
-		libappindicator3.so:devel/libappindicator
+LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
+		libayatana-ido3-0.4.so:devel/ayatana-ido \
+		libayatana-indicator3.so:devel/libayatana-indicator \
+		libdbusmenu-glib.so:devel/libdbusmenu \
+		liblz4.so:archivers/liblz4
 
 USES=		cmake gettext gnome pkgconfig xorg
-USE_CSTD=	gnu99
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf gtk30
-USE_XORG=	x11 xi
 GH_ACCOUNT=	bk138
-LDFLAGS+=	-Wl,--as-needed # atk, dbusmenu, pango
+USE_GNOME=	gtk30
+USE_XORG=	x11 xi
 
 post-patch:
 # Let @sample handle default files under etc/
