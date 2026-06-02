@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.26
+DISTVERSION=	3.7.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -157,6 +157,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
+		fs2-0.4.3 \
 		fs_extra-1.3.0 \
 		futures-0.3.32 \
 		futures-channel-0.3.32 \
