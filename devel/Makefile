@@ -4407,6 +4407,7 @@
     SUBDIR += py-PYB11Generator
     SUBDIR += py-PeachPy
     SUBDIR += py-PyExecJS
+    SUBDIR += py-PyGObject-stubs
     SUBDIR += py-PyGithub
     SUBDIR += py-PyLD
     SUBDIR += py-PyPubSub
