@@ -1,0 +1,5 @@
+Python interface to PLUMED.
+
+PLUMED is an open-source library for free-energy calculations in molecular
+systems which can be used in combination with many different molecular
+dynamics engines.
