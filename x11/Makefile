@@ -126,7 +126,6 @@
     SUBDIR += guake
     SUBDIR += gxkb
     SUBDIR += habak
-    SUBDIR += hamclock
     SUBDIR += hhpc
     SUBDIR += histui
     SUBDIR += hs-xmobar
