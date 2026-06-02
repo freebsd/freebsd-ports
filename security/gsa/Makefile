@@ -9,6 +9,9 @@ WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 
+DEPRECATED=	Depends on expired www/npm-node20
+EXPIRATION_DATE=2026-09-02
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	npm-node20>0:www/npm-node20
