@@ -1,9 +1,8 @@
 PORTNAME=	spidermonkey
-DISTVERSION=	115.31.0
-PORTREVISION=	3
+DISTVERSION=	115.36.0
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
-		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source
+		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
 PKGNAMESUFFIX=	${SP_VER}
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
@@ -19,6 +18,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	EOL upstream except to support older Windows
+EXPIRATION_DATE=2026-06-30
 
 BUILD_DEPENDS=	gm4:devel/m4 \
 		${RUST_DEFAULT}>=1.81:lang/${RUST_DEFAULT} \
