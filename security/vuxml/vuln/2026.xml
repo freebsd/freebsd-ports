@@ -5987,7 +5987,7 @@ affected.</p>
     <affects>
       <package>
 	<name>xorg-server</name>
-	<range><lt>21.1.22,2</lt></range>
+	<range><lt>21.1.22,1</lt></range>
       </package>
     </affects>
     <description>
