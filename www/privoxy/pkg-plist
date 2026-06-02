@@ -69,4 +69,7 @@ sbin/privoxy
 %%EXAMPLESDIR%%/match-all.action
 %%EXAMPLESDIR%%/trust
 %%EXAMPLESDIR%%/user.action
+%%PRIVOXY_TOOLS%%share/man/man1/privoxy-log-parser.1.gz
+%%PRIVOXY_TOOLS%%share/man/man1/privoxy-regression-test.1.gz
+%%PRIVOXY_TOOLS%%share/man/man1/uagen.1.gz
 share/man/man8/privoxy.8.gz
