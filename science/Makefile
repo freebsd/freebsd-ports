@@ -192,6 +192,7 @@
     SUBDIR += molgif
     SUBDIR += molscript
     SUBDIR += molsketch
+    SUBDIR += moltui
     SUBDIR += mopac
     SUBDIR += mp2d
     SUBDIR += mpb
