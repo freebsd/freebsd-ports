@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_data_manager_impl.h.orig	2025-12-10 15:04:57 UTC
+--- content/browser/gpu/gpu_data_manager_impl.h.orig	2026-06-02 06:11:14 UTC
 +++ content/browser/gpu/gpu_data_manager_impl.h
-@@ -224,7 +224,7 @@ class CONTENT_EXPORT GpuDataManagerImpl : public GpuDa
+@@ -233,7 +233,7 @@ class CONTENT_EXPORT GpuDataManagerImpl : public GpuDa
    void OnDisplayMetricsChanged(const display::Display& display,
                                 uint32_t changed_metrics) override;
  
