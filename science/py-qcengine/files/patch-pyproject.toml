@@ -1,0 +1,21 @@
+-- Remove license-files from [project] section and lower setuptools requirement
+-- Older setuptools (like 63.1.0 in FreeBSD) do not support license-files in [project]
+-- and we don't have setuptools 77.0 yet.
+
+--- pyproject.toml.orig	2026-05-25 06:16:56 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0", "setuptools-scm>=8.0"]
++requires = ["setuptools>=61.0", "setuptools-scm>=8.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project.urls]
+@@ -16,7 +16,6 @@ authors = [
+ authors = [
+   { name="The QCArchive Development Team", email="qcarchive@molssi.org" },
+ ]
+-license-files = ["LICENSE"]
+ readme = "README.md"
+ classifiers = [
+     "Development Status :: 4 - Beta",
