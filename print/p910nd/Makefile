@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		gmake
 
+DEPRECATED=	Repo archived upstream as of 2026-03-01
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	kenyapcomau
 
