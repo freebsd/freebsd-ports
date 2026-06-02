@@ -1,5 +1,5 @@
 PORTNAME=	loaders-update
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
@@ -9,13 +9,14 @@ WWW=		https://github.com/emrion/uploaders/
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Utility is specific to amd64's boot code
+ONLY_FOR_ARCHS=	amd64 arm64
+ONLY_FOR_ARCHS_REASON=	Upstream has not tested on other architectures
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emrion
 GH_PROJECT=	uploaders
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/${PORTNAME} \
