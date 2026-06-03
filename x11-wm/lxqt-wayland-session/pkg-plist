@@ -10,7 +10,7 @@ bin/startlxqtwayland
 %%LXQT_SHAREDIR%%/wayland/labwc/rc.xml
 %%LXQT_SHAREDIR%%/wayland/labwc/themerc
 %%LXQT_SHAREDIR%%/wayland/labwc/themerc-override
-%%LXQT_SHAREDIR%%/wayland/lxqt-hyprland.conf
+%%LXQT_SHAREDIR%%/wayland/lxqt-hyprland.lua
 %%LXQT_SHAREDIR%%/wayland/lxqt-niri.kdl
 %%LXQT_SHAREDIR%%/wayland/lxqt-niri.kdl.full
 %%LXQT_SHAREDIR%%/wayland/lxqt-river-init
