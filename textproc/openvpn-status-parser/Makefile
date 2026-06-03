@@ -1,5 +1,6 @@
 PORTNAME=	openvpn-status-parser
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 

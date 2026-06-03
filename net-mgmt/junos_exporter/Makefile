@@ -1,6 +1,7 @@
 PORTNAME=	junos_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	moggie@elasticmind.net

@@ -1,6 +1,7 @@
 PORTNAME=	go-librespot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ale@biancalanas.net

@@ -1,5 +1,6 @@
 PORTNAME=	devtui
 DISTVERSION=	0.34.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vidar@karlsen.tech

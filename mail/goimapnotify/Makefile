@@ -1,5 +1,6 @@
 PORTNAME=	goimapnotify
 DISTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	juw@posteo.de
