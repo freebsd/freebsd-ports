@@ -22,7 +22,7 @@
  	$(AR) $(ARFLAGS) $@ $^
 +
 +libstemmer.so: libstemmer/libstemmer.o $(RUNTIME_OBJECTS) $(C_LIB_OBJECTS)
-+	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname,libstemmer.so.3,-version-script,libstemmer/symbol.map -o $@.3.1.0 $^
++	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname,libstemmer.so.3,-version-script,libstemmer/symbol.map -o $@.3.1.1 $^
  
  examples/%.o: examples/%.c
  	$(CC) $(CFLAGS) $(INCLUDES) $(CPPFLAGS) -c -o $@ $<
