@@ -4,7 +4,6 @@ bin/diakonos
 %%RUBY_SITELIBDIR%%/diakonos.rb
 %%RUBY_SITELIBDIR%%/diakonos/about.rb
 %%RUBY_SITELIBDIR%%/diakonos/bookmark.rb
-%%RUBY_SITELIBDIR%%/diakonos/buffer-hash.rb
 %%RUBY_SITELIBDIR%%/diakonos/buffer-management.rb
 %%RUBY_SITELIBDIR%%/diakonos/buffer.rb
 %%RUBY_SITELIBDIR%%/diakonos/buffer/bookmarking.rb
@@ -75,6 +74,12 @@ bin/diakonos
 %%RUBY_SITELIBDIR%%/diakonos/vendor/fuzzy_file_finder.rb
 %%RUBY_SITELIBDIR%%/diakonos/version.rb
 %%RUBY_SITELIBDIR%%/diakonos/window.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/lsp.rb
+%%RUBY_SITELIBDIR%%/diakonos/lsp.rb
+%%RUBY_SITELIBDIR%%/diakonos/lsp/diagnostic.rb
+%%RUBY_SITELIBDIR%%/diakonos/lsp/server.rb
+%%RUBY_SITELIBDIR%%/diakonos/lsp/session.rb
+%%RUBY_SITELIBDIR%%/diakonos/lsp/transport.rb
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.rdoc
 %%PORTDOCS%%%%DOCSDIR%%/help/about-help.dhf

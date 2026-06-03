@@ -1,10 +1,9 @@
 PORTNAME=	diakonos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7
-PORTREVISION=	1
+DISTVERSION=	0.10.0
 CATEGORIES=	editors ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	Console editor for the masses
 WWW=		https://github.com/Pistos/diakonos
 
