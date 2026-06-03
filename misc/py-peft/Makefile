@@ -1,6 +1,5 @@
 PORTNAME=	peft
-DISTVERSION=	0.19.0
-PORTREVISION=	1
+DISTVERSION=	0.19.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accelerate>=0.21.0:misc/py-accelerate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.25.0:misc/py-huggingface-hub@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.17:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>=1.13.0:misc/py-pytorch@${PY_FLAVOR} \
