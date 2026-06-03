@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
 USES=		cpe java:run
-CPE_PRODUCT=	xml_security_for_java
+CPE_PRODUCT=	santuario_xml_security_for_java
 CPE_VENDOR=	apache
 
 NO_BUILD=	yes
