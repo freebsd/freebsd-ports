@@ -1,6 +1,5 @@
 PORTNAME=	lwjgl
-DISTVERSION=	3.3.6
-PORTREVISION=	6
+DISTVERSION=	3.4.1.g20260203
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
@@ -21,6 +20,10 @@ DISTFILES=	maven2/com/beust/jcommander/1.78/jcommander-1.78.jar:source1 \
 		maven2/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:source1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	cfbba981b7ed955dae9b1b1dee57b59df8e93e28.patch:-p1 \
+		b800ccffab14396fc529ddb6c931b7c5c5226763.patch:-p1
+
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Lightweight Java Game Library
 WWW=		https://www.lwjgl.org
@@ -38,12 +41,16 @@ LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libdbus-1.so:devel/dbus \
 			libhwloc.so:devel/hwloc2 \
 			libffi.so:devel/libffi \
+			libOpenCL.so:devel/ocl-icd \
 			libbgfx.so:graphics/bgfx \
 			libglfw.so:graphics/glfw \
+			libglslang.so:graphics/glslang@shared \
+			libglslang-default-resource-limits.so:graphics/glslang@shared \
 			libktx.so:graphics/khronos-texture \
 			libopenxr_loader.so:graphics/openxr \
 			libshaderc_shared.so:graphics/shaderc \
 			libspirv-cross-c-shared.so:graphics/spirv-cross \
+			libSPIRV-Tools-shared.so:graphics/spirv-tools \
 			libassimp.so:multimedia/assimp \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
@@ -52,18 +59,19 @@ USES=		gl gnome java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
+GH_TAGNAME=	6818ff9
 USE_GL=		gl
 USE_GNOME=	glib20 gtk30
-JAVA_VERSION=	17+
+JAVA_VERSION=	25+
 
 MAKE_ARGS=	-Dbuild.offline=true \
 		-Djavadoc.skip=true \
 		-Duse.libffi.so=true \
 		-Dlibffi.path=${LOCALBASE}/lib \
 		-Dlocal.kotlin=${LOCALBASE}/share/kotlin
-MAKE_ENV+=	JAVA8_HOME=${LOCALBASE}/openjdk8
+MAKE_ENV=	JAVA8_HOME=${LOCALBASE}/openjdk8
 
-PLIST_SUB+=	MAJORVERSION=${PKGNAMESUFFIX}
+PLIST_SUB=	MAJORVERSION=${PKGNAMESUFFIX}
 
 LIBSDIR=	${WRKSRC}/bin/libs/native/freebsd/*/org/lwjgl
 
@@ -107,8 +115,7 @@ post-extract:
 		${WRKSRC}/bin/libs/java/jquery.jar
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/config/freebsd/build.xml \
-		${WRKSRC}/modules/lwjgl/cuda/src/main/java/org/lwjgl/cuda/CUDA.java
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/config/freebsd/build.xml
 
 do-install:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${ANT} release ${MAKE_ARGS}

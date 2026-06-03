@@ -1,6 +1,6 @@
---- modules/lwjgl/jemalloc/src/generated/java/org/lwjgl/system/jemalloc/JEmalloc.java.orig	2023-12-18 14:22:59 UTC
+--- modules/lwjgl/jemalloc/src/generated/java/org/lwjgl/system/jemalloc/JEmalloc.java.orig	2026-02-02 10:58:56 UTC
 +++ modules/lwjgl/jemalloc/src/generated/java/org/lwjgl/system/jemalloc/JEmalloc.java
-@@ -40,27 +40,27 @@ public class JEmalloc {
+@@ -30,27 +30,27 @@ public class JEmalloc {
  
          /** Function address. */
          public static final long
@@ -49,9 +49,9 @@
  
      }
  
-@@ -105,11 +105,16 @@ public class JEmalloc {
-     /** Use as arena index in "stats.arenas.&lt;i&gt;.*" mallctl interfaces to select destroyed arenas. */
-     public static final int MALLCTL_ARENAS_DESTROYED = 0x1001;
+@@ -77,11 +77,16 @@ public class JEmalloc {
+         MALLCTL_ARENAS_ALL       = 0x1000,
+         MALLCTL_ARENAS_DESTROYED = 0x1001;
  
 +    private static String functionNamePrefix = "je_";
 +
