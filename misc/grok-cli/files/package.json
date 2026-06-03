@@ -1,0 +1,7 @@
+{
+  "name": "@vibe-kit/grok-cli-installer",
+  "version": "1.0.0",
+  "dependencies": {
+    "@vibe-kit/grok-cli": "^0.0.34"
+  }
+}

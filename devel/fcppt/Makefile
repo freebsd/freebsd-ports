@@ -1,5 +1,5 @@
 PORTNAME=	fcppt
-DISTVERSION=	4.6.0
+DISTVERSION=	5.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,5 +21,7 @@ GH_ACCOUNT=	cpreh
 
 CMAKE_OFF=		ENABLE_EXAMPLES
 CMAKE_TESTING_ON=	ENABLE_TEST ENABLE_CATCH
+
+# tests as of 5.1.0: 100% tests passed, 0 tests failed out of 457
 
 .include <bsd.port.mk>

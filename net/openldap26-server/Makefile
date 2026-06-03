@@ -1,5 +1,5 @@
 PORTNAME=		openldap
-DISTVERSION=		2.6.10
+DISTVERSION=		2.6.13
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
@@ -47,7 +47,7 @@ GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	2
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	0.200
 
@@ -90,8 +90,9 @@ OPTIONS_GROUP_OVLYS+=	HOMEDIR
 OPTIONS_GROUP_OVLYS+=	LASTBIND
 OPTIONS_GROUP_OVLYS+=	LASTMOD
 OPTIONS_GROUP_OVLYS+=	MEMBEROF
-OPTIONS_GROUP_OVLYS+=	NOPS
 OPTIONS_GROUP_OVLYS+=	NESTGROUP
+OPTIONS_GROUP_OVLYS+=	NOPS
+OPTIONS_GROUP_OVLYS+=	NSSOV
 OPTIONS_GROUP_OVLYS+=	OTP
 OPTIONS_GROUP_OVLYS+=	PROXYCACHE
 OPTIONS_GROUP_OVLYS+=	PPOLICY
@@ -115,8 +116,10 @@ OPTIONS_DEFINE+=	PBKDF2
 OPTIONS_DEFINE+=	OUTLOOK
 OPTIONS_DEFINE+=	ARGON2
 OPTIONS_DEFINE+=	LLOADD
+OPTIONS_DEFINE+=	NETWORKING
 
 OPTIONS_EXCLUDE_FreeBSD_15=	SMBPWD	# Only works with Heimdal
+OPTIONS_EXCLUDE_FreeBSD_16=	SMBPWD	# Only works with Heimdal
 
 OPTIONS_DEFAULT+=	${BKNDS_DEFAULTS}
 OPTIONS_DEFAULT+=	${OPTIONS_GROUP_OVLYS}
@@ -128,6 +131,7 @@ ACI_DESC=		Per-object ACI (experimental)
 ARGON2_DESC=		Argon2 password hashing module
 DYNACL_DESC=		Run-time loadable ACL (experimental)
 LLOADD_DESC=		Enable load balancer
+NETWORKING_DESC=	Require full network configuration (NETWORKING) before slapd starts
 OUTLOOK_DESC=		Force caseIgnoreOrderingMatch on name attribute (experimental)
 RLOOKUPS_DESC=		With reverse lookups of client hostnames
 SLAPI_DESC=		With Netscape SLAPI plugin API (experimental)
@@ -155,6 +159,7 @@ HOMEDIR_DESC=		With Home Directory Management overlay
 MEMBEROF_DESC=		With Reverse Group Membership overlay
 NESTGROUP_DESC=		With nestgroup overlay
 NOPS_DESC=		With nops overlay
+NSSOV_DESC=		With NSS/PAM overlay [baked in nslcd(8)]
 OTP_DESC=		With OTP 2-factor authentication overlay
 PPOLICY_DESC=		With Password Policy overlay
 PROXYCACHE_DESC=	With Proxy Cache overlay
@@ -267,6 +272,12 @@ SUB_LIST+=		RC_DIR=${PREFIX} \
 			LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR}
 
+.if ${PORT_OPTIONS:MNETWORKING}
+SUB_LIST+=		SLAPD_REQUIRE=NETWORKING
+.else
+SUB_LIST+=		SLAPD_REQUIRE=FILESYSTEMS
+.endif
+
 USERS=			ldap
 GROUPS=			ldap
 LDAP_USER?=		ldap
@@ -306,6 +317,7 @@ SUB_LIST+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			LDAP_GROUP=${LDAP_GROUP} \
 			BACKUPDIR=${BACKUPDIR} \
 			DATABASEDIR=${DATABASEDIR} \
+			NSLCD_VARDIR=${NSLCD_VARDIR} \
 			PORTNAME=${PORTNAME} \
 			PKGNAME=${PKGNAME} \
 			PKGNAMESUFFIX=${PKGNAMESUFFIX}
@@ -365,6 +377,12 @@ CONTRIB_CLEANFILES+=	lastmod.a
 CONTRIB_MODULES+=	slapd-modules/nops
 CONTRIB_CLEANFILES+=	nops.a
 .endif
+.if ${PORT_OPTIONS:MNSSOV}
+CONTRIB_MODULES+=	slapd-modules/nssov
+CONTRIB_CLEANFILES+=	nssov.a
+NSLCD_VARDIR!=		${MAKE} -C ../nss-pam-ldapd -V NSLCD_VARDIR
+NSLCD_SOCKET!=		${MAKE} -C ../nss-pam-ldapd -V NSLCD_SOCKET
+.endif
 .if ${PORT_OPTIONS:MTRACE}
 CONTRIB_MODULES+=	slapd-modules/trace
 CONTRIB_CLEANFILES+=	trace.a
@@ -400,6 +418,14 @@ post-patch:
 		-e '/ldap_dump_(connection|requests_and_responses);/d' \
 		${WRKSRC}/libraries/libldap/ldap.map
 .endif
+
+post-patch-NSSOV-on:
+	@${REINPLACE_CMD} -E \
+		-e 's|^(#define[[:space:]]+NSLCD_PATH).*|\1	"${NSLCD_VARDIR}"|' \
+		-e 's|^(#define[[:space:]]+NSLCD_SOCKET).*|\1	"${NSLCD_SOCKET}"|' \
+		${WRKSRC}/contrib/slapd-modules/nssov/nssov.h
+	@${REINPLACE_CMD} -e 's|0555|0755|' \
+		${WRKSRC}/contrib/slapd-modules/nssov/nssov.c
 
 pre-configure:
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf)
@@ -450,6 +476,9 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/slapd
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/openldap
 .endif # defined(CLIENT_ONLY)
+
+post-install-NSSOV-on:
+	${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/nssov/ldapns.schema ${STAGEDIR}${ETCDIR}/schema/ldapns.schema.sample
 
 post-install-SLAPI-on:
 	for library in slapi; do \

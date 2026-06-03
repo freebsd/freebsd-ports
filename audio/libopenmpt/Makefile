@@ -1,5 +1,5 @@
 PORTNAME=	libopenmpt
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.7
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmpg123.so:audio/mpg123 \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c++17-lang cpe gmake libtool pkgconfig
+USES=		compiler:c++23-lang cpe libtool pathfix pkgconfig
 CPE_VENDOR=	openmpt
 USE_LDCONFIG=	yes
 

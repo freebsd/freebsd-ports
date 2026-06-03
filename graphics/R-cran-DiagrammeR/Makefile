@@ -1,5 +1,5 @@
 PORTNAME=	DiagrammeR
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-glue>=1.5.0:devel/R-cran-glue \
 		R-cran-htmltools>=0.5.2:textproc/R-cran-htmltools \
 		R-cran-htmlwidgets>=1.5:www/R-cran-htmlwidgets \
-		R-cran-igraph>=1.4.0:math/R-cran-igraph \
+		R-cran-igraph>=2.0.0:math/R-cran-igraph \
 		R-cran-magrittr>=1.5:devel/R-cran-magrittr \
 		R-cran-purrr>=0.3.4:devel/R-cran-purrr \
 		R-cran-RColorBrewer>=1.1.2:graphics/R-cran-RColorBrewer \

@@ -1,7 +1,11 @@
 PORTNAME=	muffin
 DISTVERSION=	6.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm gnome
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	760e2a3046e13610c4fda1291a9a28e589d2bd93.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon

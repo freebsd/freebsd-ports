@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server-terminals
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server_terminals/releases/download/v${PORTVERSION}/
@@ -8,7 +8,8 @@ DISTNAME=	jupyter_server_terminals-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jupyter Server Extension Providing Terminals
-WWW=		https://github.com/jupyter-server/jupyter_server_terminals
+WWW=		https://jupyter-server-terminals.readthedocs.io/en/latest/ \
+		https://github.com/jupyter-server/jupyter_server_terminals
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

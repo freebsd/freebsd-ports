@@ -483,6 +483,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/colortables/slope.png
 %%GRASS_INST_DIR%%/docs/html/colortables/soilmoisture.png
 %%GRASS_INST_DIR%%/docs/html/colortables/srtm.png
+%%GRASS_INST_DIR%%/docs/html/colortables/srtm_percent.png
 %%GRASS_INST_DIR%%/docs/html/colortables/srtm_plus.png
 %%GRASS_INST_DIR%%/docs/html/colortables/terrain.png
 %%GRASS_INST_DIR%%/docs/html/colortables/viridis.png
@@ -2594,6 +2595,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/colors/slope
 %%GRASS_INST_DIR%%/etc/colors/soilmoisture
 %%GRASS_INST_DIR%%/etc/colors/srtm
+%%GRASS_INST_DIR%%/etc/colors/srtm_percent
 %%GRASS_INST_DIR%%/etc/colors/srtm_plus
 %%GRASS_INST_DIR%%/etc/colors/terrain
 %%GRASS_INST_DIR%%/etc/colors/viridis

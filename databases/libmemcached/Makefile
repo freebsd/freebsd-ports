@@ -15,7 +15,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 TEST_DEPENDS=	memcached:databases/memcached \
 		onetbb>=0:devel/onetbb
 
-USES=		bison compiler:c++11-lang pkgconfig ssl
+USES=		bison compiler:c++11-lang cpe pkgconfig ssl
 
 CMAKE_OFF=	BUILD_DOCSONLY \
 		BUILD_DOCS_MANGZ \
@@ -49,5 +49,7 @@ MANPAGES_USES_OFF=	cmake:testing
 MURMUR_CMAKE_BOOL=	ENABLE_HASH_MURMUR
 SASL_CMAKE_BOOL=	ENABLE_SASL
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+
+CPE_VENDOR=		awesome
 
 .include <bsd.port.mk>

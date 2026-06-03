@@ -1,0 +1,21 @@
+{
+  "name": "web-tree-sitter-installer",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "web-tree-sitter-installer",
+      "version": "1.0.0",
+      "dependencies": {
+        "web-tree-sitter": "^0.26.7"
+      }
+    },
+    "node_modules/web-tree-sitter": {
+      "version": "0.26.7",
+      "resolved": "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.26.7.tgz",
+      "integrity": "sha512-KiZhelTvBA/ziUHEO7Emb75cGVAq8iGZNabYaZm53Zpy50NsXyOW+xSHlwHt5CVg/TRPZBfeVLTTobF0LjFJ1w==",
+      "license": "MIT"
+    }
+  }
+}

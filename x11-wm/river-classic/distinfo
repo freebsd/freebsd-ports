@@ -1,0 +1,11 @@
+TIMESTAMP = 1775054366
+SHA256 (zig/river-classic-0.3.15.tar.gz) = bda4fffb70aed0a3d35e0b27fa248aacdc03bd208abfa3e0464cb37896b2128d
+SIZE (zig/river-classic-0.3.15.tar.gz) = 178643
+SHA256 (zig/pixman-0.3.0.tar.gz) = cd7fe3415d4d58685a94fdedd308e9994a37f012828940cfb603461de7f2c6ad
+SIZE (zig/pixman-0.3.0.tar.gz) = 7966
+SHA256 (zig/wayland-0.4.0.tar.gz) = 907fdd18c7ede1ab1f249c618ba5dce3b8a72c26e50090b4ae7010033a419ba9
+SIZE (zig/wayland-0.4.0.tar.gz) = 111219
+SHA256 (zig/wlroots-0.20.0.tar.gz) = 75af3510386c639582693d01788579abde4dca9ce1ae6703c1e877ec8123d106
+SIZE (zig/wlroots-0.20.0.tar.gz) = 63670
+SHA256 (zig/xkbcommon-0.3.0.tar.gz) = 1e185423e6b23ed9729614e66751ab7522db4487df4e0dcc7a2b06375aacda23
+SIZE (zig/xkbcommon-0.3.0.tar.gz) = 22730

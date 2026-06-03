@@ -1,12 +1,6 @@
 bin/wcm
-share/applications/wayfire-config-manager.desktop
-share/icons/hicolor/128x128/apps/wcm.png
-share/icons/hicolor/160x160/apps/wcm.png
-share/icons/hicolor/192x192/apps/wcm.png
-share/icons/hicolor/48x48/apps/wcm.png
-share/icons/hicolor/64x64/apps/wcm.png
-share/icons/hicolor/72x72/apps/wcm.png
-share/icons/hicolor/96x96/apps/wcm.png
+share/applications/wcm.desktop
+share/icons/wcm.svg
 %%DATADIR%%/icons/plugin-alpha.svg
 %%DATADIR%%/icons/plugin-animate.svg
 %%DATADIR%%/icons/plugin-annotate.svg
@@ -63,4 +57,4 @@ share/icons/hicolor/96x96/apps/wcm.png
 %%DATADIR%%/icons/plugin-workspace-names.svg
 %%DATADIR%%/icons/plugin-wrot.svg
 %%DATADIR%%/icons/plugin-zoom.svg
-%%DATADIR%%/icons/wcm.png
+%%DATADIR%%/icons/wcm.svg

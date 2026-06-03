@@ -23,6 +23,7 @@ include/onnx/defs/data_type_utils.h
 include/onnx/defs/function.h
 include/onnx/defs/generator/utils.h
 include/onnx/defs/math/utils.h
+include/onnx/defs/nn/utils.h
 include/onnx/defs/operator_sets.h
 include/onnx/defs/operator_sets_ml.h
 include/onnx/defs/operator_sets_preview.h
@@ -31,6 +32,7 @@ include/onnx/defs/parser.h
 include/onnx/defs/printer.h
 include/onnx/defs/reduction/utils.h
 include/onnx/defs/schema.h
+include/onnx/defs/sequence/utils.h
 include/onnx/defs/shape_inference.h
 include/onnx/defs/tensor/utils.h
 include/onnx/defs/tensor_proto_util.h
@@ -38,7 +40,6 @@ include/onnx/defs/tensor_util.h
 include/onnx/defs/traditionalml/utils.h
 include/onnx/inliner/inliner.h
 include/onnx/onnx-data.pb.h
-include/onnx/onnx-data_pb.h
 include/onnx/onnx-ml.pb.h
 include/onnx/onnx-operators-ml.pb.h
 include/onnx/onnx-operators_pb.h
@@ -49,6 +50,7 @@ include/onnx/shape_inference/attribute_binder.h
 include/onnx/shape_inference/implementation.h
 include/onnx/string_utils.h
 include/onnx/version_converter/BaseConverter.h
+include/onnx/version_converter/adapters/Attention_24_23.h
 include/onnx/version_converter/adapters/adapter.h
 include/onnx/version_converter/adapters/axes_attribute_to_input.h
 include/onnx/version_converter/adapters/axes_input_to_attribute.h
@@ -79,6 +81,7 @@ include/onnx/version_converter/adapters/scan_9_8.h
 include/onnx/version_converter/adapters/scatter_10_11.h
 include/onnx/version_converter/adapters/slice_9_10.h
 include/onnx/version_converter/adapters/softmax_12_13.h
+include/onnx/version_converter/adapters/softmax_13_12.h
 include/onnx/version_converter/adapters/split_12_13.h
 include/onnx/version_converter/adapters/split_13_12.h
 include/onnx/version_converter/adapters/split_17_18.h

@@ -1,3 +1,5 @@
-TIMESTAMP = 1617915645
+TIMESTAMP = 1774912591
 SHA256 (olegkapitonov-Kapitonov-Plugins-Pack-1.2.1_GH0.tar.gz) = 056c152ee72c5a0cfd45ca0cd848ff13b098c8f58b14c26ad06d7ef49c792b40
 SIZE (olegkapitonov-Kapitonov-Plugins-Pack-1.2.1_GH0.tar.gz) = 9618525
+SHA256 (0163b53ac942435645db5ccf9c2512cf2d2d7466.patch) = e965aa5905550c5a9ef4c4afec76b50ce65c99d3a97a13532bba1f0fbf61ca20
+SIZE (0163b53ac942435645db5ccf9c2512cf2d2d7466.patch) = 583

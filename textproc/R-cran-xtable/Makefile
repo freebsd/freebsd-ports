@@ -1,6 +1,5 @@
 PORTNAME=	xtable
-DISTVERSION=	1.8-4
-PORTREVISION=	3
+DISTVERSION=	1.8-8
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/xtable/
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

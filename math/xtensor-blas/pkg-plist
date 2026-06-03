@@ -1369,4 +1369,5 @@ include/xtensor-blas/xlinalg.hpp
 lib/cmake/xtensor-blas/xtensor-blasConfig.cmake
 lib/cmake/xtensor-blas/xtensor-blasConfigVersion.cmake
 lib/cmake/xtensor-blas/xtensor-blasTargets.cmake
+share/pkgconfig/xtensor-blas.pc
 @dir include/xflens/cxxblas/netlib

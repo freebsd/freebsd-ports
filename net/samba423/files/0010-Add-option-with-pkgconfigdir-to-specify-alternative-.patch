@@ -1,0 +1,54 @@
+From 5b0d17a5b7849f40f59fb0daedd62e8f5a1b0fba Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:16:37 +0200
+Subject: [PATCH 10/28] Add option --with-pkgconfigdir, to specify alternative
+ location.
+
+Override name of the config file.
+
+Remove code that doesn't allow direct install into /usr
+
+Substitution: yes
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ dynconfig/wscript | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/dynconfig/wscript b/dynconfig/wscript
+index c62afa25399..29cacf1b92c 100644
+--- a/dynconfig/wscript
++++ b/dynconfig/wscript
+@@ -151,6 +151,8 @@ dynconfig = {
+     'PKGCONFIGDIR' : {
+          'STD-PATH':  '${LIBDIR}/pkgconfig',
+          'FHS-PATH':  '${LIBDIR}/pkgconfig',
++         'OPTION':    '--with-pkgconfigdir',
++         'HELPTEXT':  'Where to put .pc files',
+     },
+     'CODEPAGEDIR' : {
+          'STD-PATH':  '${DATADIR}/codepages',
+@@ -257,8 +259,8 @@ dynconfig = {
+          'DELAY':     True,
+     },
+     'CONFIGFILE' : {
+-         'STD-PATH':  '${CONFIGDIR}/smb.conf',
+-         'FHS-PATH':  '${CONFIGDIR}/smb.conf',
++         'STD-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
++         'FHS-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
+          'DELAY':     True,
+     },
+     'LMHOSTSFILE' : {
+@@ -317,9 +319,6 @@ def configure(conf):
+         flavor = 'FHS-PATH'
+     else:
+         flavor = 'STD-PATH'
+-        if conf.env.PREFIX == '/usr' or conf.env.PREFIX == '/usr/local':
+-           Logs.error("Don't install directly under /usr or /usr/local without using the FHS option (--enable-fhs)")
+-           raise Errors.WafError("ERROR: invalid --prefix=%s value" % (conf.env.PREFIX))
+ 
+     explicit_set ={}
+ 
+-- 
+2.37.1
+

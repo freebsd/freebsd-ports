@@ -1,6 +1,6 @@
-TIMESTAMP = 1736277063
-SHA256 (arp242-uni-v2.8.0_GH0.tar.gz) = 627a8aebe8d72bad5a462b8efc8b96dc96794b926b094de3f1e5b9965e44a678
-SIZE (arp242-uni-v2.8.0_GH0.tar.gz) = 638998
+TIMESTAMP = 1766501179
+SHA256 (arp242-uni-v2.9.0_GH0.tar.gz) = dc595807a0ab875111dafd55be9f3de116cbea652216f9d0082d03dddb3d83be
+SIZE (arp242-uni-v2.9.0_GH0.tar.gz) = 646632
 SHA256 (arp242-runewidth-v0.1.0_GH0.tar.gz) = e79d5b059f1b4845ee83a5d9bd4421cf660c2e82edd11ea4363390815952e10e
 SIZE (arp242-runewidth-v0.1.0_GH0.tar.gz) = 16419
 SHA256 (arp242-termtext-v1.5.0_GH0.tar.gz) = 6ae65441d005e1fa833c95cb5095746324dc2de581b780396dfd6f5f6ac59f39

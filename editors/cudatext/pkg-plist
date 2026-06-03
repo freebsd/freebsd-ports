@@ -32,16 +32,19 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_asciidoc.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_assembly.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_astro.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_audio.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_autohotkey.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_autoit.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_awk.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_babel.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_ballerina.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_bat.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_bazel.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_bicep.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_binary.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_blade.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_c.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_c3.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_cfm.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_cheader.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_clojure.png
@@ -75,6 +78,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_fsproj.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gcode.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gdscript.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gleam.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_glsl.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gnuplot.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_go.png
@@ -182,6 +186,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_velocity.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_verilog.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vhdl.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_video.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vim.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vlang.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vscode.png
@@ -205,6 +210,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/Batch files.lcf
 %%DATADIR%%/data/lexlib/CSS.cuda-lexmap
 %%DATADIR%%/data/lexlib/CSS.lcf
+%%DATADIR%%/data/lexlib/Diff.cuda-lexmap
+%%DATADIR%%/data/lexlib/Diff.lcf
 %%DATADIR%%/data/lexlib/HTML style.cuda-lexmap
 %%DATADIR%%/data/lexlib/HTML style.lcf
 %%DATADIR%%/data/lexlib/HTML.cuda-lexmap
@@ -230,6 +237,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/aliases.ini
 %%DATADIR%%/data/lexlib/reStructuredText.cuda-lexmap
 %%DATADIR%%/data/lexlib/reStructuredText.lcf
+%%DATADIR%%/data/lexliblite/Config-RC.cuda-litelexer
 %%DATADIR%%/data/lexliblite/Ini files.cuda-litelexer
 %%DATADIR%%/data/lexliblite/JSON.cuda-litelexer
 %%DATADIR%%/data/lexliblite/Log files.cuda-litelexer
@@ -352,8 +360,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/themes/sub.cuda-theme-ui
 %%DATADIR%%/data/themes/syn.cuda-theme-syntax
 %%DATADIR%%/data/themes/syn.cuda-theme-ui
-%%DATADIR%%/data/themes/white.cuda-theme-syntax
-%%DATADIR%%/data/themes/white.cuda-theme-ui
 %%DATADIR%%/data/toolbaricons/default_24x24/case.png
 %%DATADIR%%/data/toolbaricons/default_24x24/comment.png
 %%DATADIR%%/data/toolbaricons/default_24x24/e_copy.png
@@ -398,7 +404,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_addonman/work_tempdir.py
 %%DATADIR%%/py/cuda_comments/__init__.py
 %%DATADIR%%/py/cuda_comments/cd_comments.py
-%%DATADIR%%/py/cuda_comments/cd_plug_lib.py
 %%DATADIR%%/py/cuda_comments/install.inf
 %%DATADIR%%/py/cuda_insert_time/__init__.py
 %%DATADIR%%/py/cuda_insert_time/install.inf
@@ -457,7 +462,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_snippet_panel/clips/Quote selection/quote.txt
 %%DATADIR%%/py/cuda_snippet_panel/clips/Special characters/List.txt
 %%DATADIR%%/py/cuda_snippet_panel/install.inf
-%%DATADIR%%/py/cuda_snippet_panel/readme/history.txt
 %%DATADIR%%/py/cuda_snippet_panel/readme/readme.txt
 %%DATADIR%%/py/cuda_snippet_panel/snips.py
 %%DATADIR%%/py/cuda_snippet_panel/utils.py
@@ -616,96 +620,10 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/license.idna.txt
 %%DATADIR%%/readme/license.requests.txt
 %%DATADIR%%/readme/license.urllib3.txt
-%%DATADIR%%/readme/tutorials/LexerConfig.odt
-%%DATADIR%%/readme/tutorials/LexerIndentFolding.odt
-%%DATADIR%%/readme/tutorials/TutorialLexer1.odt
-%%DATADIR%%/readme/tutorials/TutorialLexer2.odt
-%%DATADIR%%/readme/tutorials/TutorialLexer3.odt
-%%DATADIR%%/readme/tutorials/TutorialLexer4.odt
-%%DATADIR%%/readme/tutorials/TutorialLexerLig.odt
-%%DATADIR%%/readme/wiki/atsynedit-carets.gif
-%%DATADIR%%/readme/wiki/atsynedit-sel.gif
-%%DATADIR%%/readme/wiki/atsynedit_ide_defines.png
-%%DATADIR%%/readme/wiki/atsynedit_tree.png
-%%DATADIR%%/readme/wiki/controls_autosizes.png
-%%DATADIR%%/readme/wiki/cudatext-breadcrumbs.png
-%%DATADIR%%/readme/wiki/cudatext-charmap.png
-%%DATADIR%%/readme/wiki/cudatext-cjk-len1024.png
-%%DATADIR%%/readme/wiki/cudatext-click-link.png
-%%DATADIR%%/readme/wiki/cudatext-color-text.png
-%%DATADIR%%/readme/wiki/cudatext-color-underline.png
-%%DATADIR%%/readme/wiki/cudatext-column-sel-cjk.png
-%%DATADIR%%/readme/wiki/cudatext-column-sel-weird.png
-%%DATADIR%%/readme/wiki/cudatext-complete-filenames.png
-%%DATADIR%%/readme/wiki/cudatext-complete-fileuri.png
-%%DATADIR%%/readme/wiki/cudatext-complete-from-text.png
-%%DATADIR%%/readme/wiki/cudatext-complete-pics.png
-%%DATADIR%%/readme/wiki/cudatext-config-toolbar.png
-%%DATADIR%%/readme/wiki/cudatext-console.png
-%%DATADIR%%/readme/wiki/cudatext-dynamic-hi.png
-%%DATADIR%%/readme/wiki/cudatext-editing-context-menu.png
-%%DATADIR%%/readme/wiki/cudatext-embedded-editor.png
-%%DATADIR%%/readme/wiki/cudatext-fenced-blocks.png
-%%DATADIR%%/readme/wiki/cudatext-find-dlg.png
-%%DATADIR%%/readme/wiki/cudatext-find-markers.png
-%%DATADIR%%/readme/wiki/cudatext-findinfiles-intabs.png
-%%DATADIR%%/readme/wiki/cudatext-fmt-onsave.png
-%%DATADIR%%/readme/wiki/cudatext-fold-comments.png
-%%DATADIR%%/readme/wiki/cudatext-folding-gutter-ctx-menu.png
-%%DATADIR%%/readme/wiki/cudatext-hex-chars.png
-%%DATADIR%%/readme/wiki/cudatext-insert-pics.png
-%%DATADIR%%/readme/wiki/cudatext-lexer-editor-dlg.png
-%%DATADIR%%/readme/wiki/cudatext-lexer-library.png
-%%DATADIR%%/readme/wiki/cudatext-line-states_.png
-%%DATADIR%%/readme/wiki/cudatext-lsp-hover_.png
-%%DATADIR%%/readme/wiki/cudatext-lsp-refs.png
-%%DATADIR%%/readme/wiki/cudatext-macro-border.png
-%%DATADIR%%/readme/wiki/cudatext-macro-menu.png
-%%DATADIR%%/readme/wiki/cudatext-markers-html.png
-%%DATADIR%%/readme/wiki/cudatext-menu-colorsetup.png
-%%DATADIR%%/readme/wiki/cudatext-micromap-on-scrollbar.png
-%%DATADIR%%/readme/wiki/cudatext-micromap_.png
-%%DATADIR%%/readme/wiki/cudatext-minimap.png
-%%DATADIR%%/readme/wiki/cudatext-project-icons.png
-%%DATADIR%%/readme/wiki/cudatext-project-seldir.png
-%%DATADIR%%/readme/wiki/cudatext-runner-thread.gif
-%%DATADIR%%/readme/wiki/cudatext-snippets-add-vscode.png
-%%DATADIR%%/readme/wiki/cudatext-snippets-editor.png
-%%DATADIR%%/readme/wiki/cudatext-tab-colors.png
-%%DATADIR%%/readme/wiki/cudatext-tab-icons.png
-%%DATADIR%%/readme/wiki/cudatext-tab-switcher-cudaext.png
-%%DATADIR%%/readme/wiki/cudatext-tab-switcher.png
-%%DATADIR%%/readme/wiki/cudatext-tabs-flat.png
-%%DATADIR%%/readme/wiki/cudatext-tabs-layout.png
-%%DATADIR%%/readme/wiki/cudatext-tabs-left_.png
-%%DATADIR%%/readme/wiki/cudatext-tabs-multiline.png
-%%DATADIR%%/readme/wiki/cudatext-tabs-path-suffix.png
-%%DATADIR%%/readme/wiki/cudatext-tabs-red-marker.png
-%%DATADIR%%/readme/wiki/cudatext-toolbar.png
-%%DATADIR%%/readme/wiki/cudatext-tools-and-projects-config.png
-%%DATADIR%%/readme/wiki/cudatext-tools-and-projects.png
-%%DATADIR%%/readme/wiki/cudatext-tools-mainlexertool.png
-%%DATADIR%%/readme/wiki/cudatext-tools-menuitem.png
-%%DATADIR%%/readme/wiki/cudatext-tools-props.png
-%%DATADIR%%/readme/wiki/cudatext-tree-css-colors.png
-%%DATADIR%%/readme/wiki/cudatext-ui-elements.png
-%%DATADIR%%/readme/wiki/cudatext-viewer-asking.png
-%%DATADIR%%/readme/wiki/cudatext-viewer-hex.png
-%%DATADIR%%/readme/wiki/cudatext-viewer-modes.png
-%%DATADIR%%/readme/wiki/cudatext-zip-install-prompt.png
-%%DATADIR%%/readme/wiki/cudatext.png
-%%DATADIR%%/readme/wiki/cudatext.wiki
-%%DATADIR%%/readme/wiki/cudatext_all_icons.png
-%%DATADIR%%/readme/wiki/cudatext_api.wiki
-%%DATADIR%%/readme/wiki/cudatext_files_formats.wiki
-%%DATADIR%%/readme/wiki/cudatext_options_editor.png
-%%DATADIR%%/readme/wiki/cudatext_plugins.wiki
-%%DATADIR%%/readme/wiki/cudatext_snippets_menu.png
-%%DATADIR%%/readme/wiki/cudatext_vs_other_editors.wiki
 %%DATADIR%%/settings_default/default.json
-%%DATADIR%%/settings_default/lexer Assembly.json
 %%DATADIR%%/settings_default/lexer Bash script.json
 %%DATADIR%%/settings_default/lexer CSS.json
+%%DATADIR%%/settings_default/lexer HTML.json
 %%DATADIR%%/settings_default/lexer JSON.json
 %%DATADIR%%/settings_default/lexer JavaScript.json
 %%DATADIR%%/settings_default/lexer Python.json

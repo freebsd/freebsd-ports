@@ -1,6 +1,6 @@
 PORTNAME=	albumentations
 DISTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	graphics python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}albucore>=0.0.23:graphics/py-albucore@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.9.2:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.3.2:science/py-scikit-learn@${PY_FLAVOR} \

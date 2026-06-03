@@ -1,0 +1,286 @@
+--- ctm/ctm.h.ORI	2023-12-29 08:53:14.808809000 +0100
++++ ctm/ctm.h	2023-12-29 08:53:14.827122000 +0100
+@@ -25,6 +25,7 @@
+ #include <sys/file.h>
+ #include <sys/time.h>
+ #include <stdint.h>
++#include <limits.h>
+ 
+ #define VERSION "2.0"
+ 
+@@ -43,6 +44,7 @@
+ #define CTM_F_Bytes		0x07
+ #define CTM_F_Release		0x08
+ #define CTM_F_Forward		0x09
++#define CTM_F_Targetname	0x0a
+ 
+ /* The qualifiers... */
+ #define CTM_Q_MASK		0xff00
+@@ -51,6 +53,7 @@
+ #define CTM_Q_Name_New		0x0400
+ #define CTM_Q_Name_Subst	0x0800
+ #define CTM_Q_Name_Svnbase	0x1000
++#define CTM_Q_Name_Link		0x2000
+ #define CTM_Q_MD5_After		0x0100
+ #define CTM_Q_MD5_Before	0x0200
+ #define CTM_Q_MD5_Chunk		0x0400
+--- ctm/ctm_syntax.c.ORI	2023-12-29 08:53:14.816487000 +0100
++++ ctm/ctm_syntax.c	2023-12-29 08:59:53.103142000 +0100
+@@ -68,6 +68,13 @@
+ static int ctmSV[] = /* Forward to svnadmin load */
+     { Name|Dir|Svnbase, Release, Count, Forward|SVN, 0 };
+ 
++static int ctmLM[] = /* Link Make */
++    { Name|CTM_Q_Name_Link|New, Uid, Gid, Mode, CTM_F_Targetname, 0 };
++
++static int ctmLR[] = /* Link Remove */
++    { Name|CTM_Q_Name_Link, 0 };
++
++
+ struct CTM_Syntax Syntax[] = {
+     { "FM",  	ctmFM },
+     { "FS",  	ctmFS },
+@@ -79,4 +86,6 @@
+     { "DR",  	ctmDR },
+     { "TR",  	ctmTR },
+     { "SV",  	ctmSV },
++    { "LM",  	ctmLM },
++    { "LR",  	ctmLR },
+     { 0,    	0} };
+--- ctm/ctm_pass1.c.ORI	2023-12-29 08:53:14.811803000 +0100
++++ ctm/ctm_pass1.c	2023-12-29 08:53:14.827382000 +0100
+@@ -27,6 +27,7 @@
+     int i,j,sep;
+     intmax_t cnt, rel;
+     u_char *md5=0,*name=0,*trash=0;
++    u_char* targetname = NULL;
+     struct CTM_Syntax *sp;
+     int slashwarn=0, match=0, total_matches=0;
+     unsigned current;
+@@ -71,6 +72,7 @@
+ 	Delete(md5);
+ 	Delete(name);
+ 	Delete(trash);
++	Delete( targetname );
+ 	cnt = -1;
+ 	/* if a filter list is defined we assume that all pathnames require
+ 	   an action opposite to that requested by the first filter in the
+@@ -224,6 +226,9 @@
+ 			return Exit_Garbage;
+ 		    }
+ 		    GETFORWARD(cnt,NULL);
++		    break;
++		case CTM_F_Targetname:
++		    GETFIELDCOPY( targetname, sep );
+ 		    break;
+ 		default:
+ 			fprintf(stderr,"List = 0x%x\n",j);
+--- ctm/ctm_pass2.c.ORI	2023-12-29 08:53:14.823718000 +0100
++++ ctm/ctm_pass2.c	2023-12-29 08:53:14.827299000 +0100
+@@ -117,14 +117,14 @@
+ 			if( strcmp( LastRemoved, name ) != 0 )
+ 
+ 			/* XXX Check DR FR rec's for item */
+-			if(-1 != stat(name,&st)) {
++			if(-1 != lstat(name,&st)) {
+ 			    fprintf(stderr,"  %s: %s exists.\n",
+ 				sp->Key,name);
+ 			    ret |= Exit_Forcible;
+ 			}
+ 			break;
+ 		    }
+-		    if(-1 == stat(name,&st)) {
++		    if(-1 == lstat(name,&st)) {
+ 			fprintf(stderr,"  %s: %s doesn't exist.\n",
+ 			    sp->Key,name);
+ 		        if (sp->Key[1] == 'R')
+@@ -173,10 +173,18 @@
+ 			}
+ 			break;
+ 		    }
++		    if( j & CTM_Q_Name_Link ) {
++		      if( ( st.st_mode & S_IFMT ) != S_IFLNK ) {
++			fprintf( stderr, "  %s: %s exist, but isn't link.\n", sp->Key,name );
++			ret |= Exit_NotOK;
++		      }
++		      break;
++		    }
+ 		    break;
+ 		case CTM_F_Uid:
+ 		case CTM_F_Gid:
+ 		case CTM_F_Mode:
++		case CTM_F_Targetname:
+ 		    GETFIELD(p,sep);
+ 		    break;
+ 		case CTM_F_MD5:
+--- ctm/ctm_pass3.c.ORI	2023-12-29 08:53:14.814984000 +0100
++++ ctm/ctm_pass3.c	2023-12-29 08:59:08.227903000 +0100
+@@ -23,7 +23,7 @@
+ settime(const char *name, const struct timeval *times)
+ {
+ 	if (SetTime)
+-	    if (utimes(name,times)) {
++	    if (lutimes(name,times)) {
+ 		warn("utimes(): %s", name);
+ 		return -1;
+ 	    }
+@@ -33,7 +33,7 @@
+ int
+ setmodefromchar(const char *name, const u_char *mode)
+ {
+-	return chmod(name, strtol(mode, NULL, 8));
++	return lchmod(name, strtol(mode, NULL, 8));
+ }
+ 
+ int
+@@ -45,6 +45,7 @@
+     intmax_t cnt,rel;
+     char *svn_command = NULL;
+     u_char *md5=0,*md5before=0,*trash=0,*name=0,*uid=0,*gid=0,*mode=0;
++    u_char* targetname = NULL;
+     struct CTM_Syntax *sp;
+     FILE *ed=0, *fd_to;
+     struct stat st;
+@@ -124,6 +125,7 @@
+ 	Delete(md5before);
+ 	Delete(trash);
+ 	Delete(name);
++	Delete( targetname );
+ 	cnt = -1;
+ 
+ 	GETFIELD(p,' ');
+@@ -198,6 +200,10 @@
+ 			}
+ 		    }
+ 		    break;
++		case CTM_F_Targetname:
++		  //GETNAMECOPY( targetname, sep, j, Verbose );
++		  GETFIELDCOPY( targetname, sep );
++		  break;
+ 		default: WRONG
+ 		}
+ 	    }
+@@ -337,6 +343,70 @@
+ 	}
+ 	if(!strcmp(sp->Key,"TR") || !strcmp(sp->Key,"SV"))
+ 	    continue;
++
++
++	if( strcmp( sp->Key, "LR" ) == 0 ) {
++
++	  if( KeepIt ) {
++	    if( Verbose > 1 )
++	      printf( " <%s> not removed\n", name );
++
++	  } else {
++	    if( unlink( name )) {
++	      fprintf( stderr, "unlink %s: %s\n", name, strerror( errno ));
++	      WRONG
++	    }
++	  }
++
++	  continue;
++	}
++
++
++	if( strcmp( sp->Key, "LM" ) == 0 ) {
++
++	  char* bn;				// basename
++	  char  cwd[ PATH_MAX ];
++
++	  if( getcwd( cwd, sizeof cwd ) == NULL ) {
++	    fprintf( stderr, "getcwd: %s\n", strerror( errno ) );
++	    WRONG
++	  }
++
++	  if( (bn = strrchr( name, '/' )) == NULL )	// no path component
++	    bn = name;					// basename
++
++	  else {					// have path component
++	    *bn++ = '\0';				// terminate path component
++	    if( chdir( name )) {
++	      fprintf( stderr, "chdir %s: %s\n", name, strerror( errno ));
++	      WRONG
++	    }
++	  }
++
++	  if( symlink( targetname, bn )) {
++	    fprintf( stderr, "symlink %s to %s: %s\n", targetname, bn, strerror( errno ));
++	    WRONG
++	  }
++
++	  if( chdir( cwd )) {				// go back
++	    fprintf( stderr, "chdir %s: %s\n", cwd, strerror( errno ));
++	    WRONG
++	  }
++
++	  *--bn = '/';					// restore name with path
++	  if( lstat( name, &st )) {
++	    fprintf( stderr, "stat %s: %s\n", name, strerror( errno ));
++	    WRONG
++	  } else if( (st.st_mode & S_IFMT) != S_IFLNK ) {
++	    fprintf( stderr, "%s: no link\n", name );
++	    WRONG
++	  }
++
++	  if( settime( name, times )) WRONG
++	  if( setmodefromchar( name, mode )) WRONG
++	  continue;
++	}
++
+ 	WRONG
+     }
+ 
+--- ctm/ctm_passb.c.ORI	2023-04-25 21:04:20.000000000 +0200
++++ ctm/ctm_passb.c	2023-12-29 09:03:07.551061000 +0100
+@@ -26,6 +26,7 @@
+     MD5_CTX ctx;
+     int i,j,sep,cnt;
+     u_char *md5=0,*md5before=0,*trash=0,*name=0,*uid=0,*gid=0,*mode=0;
++    u_char* targetname = NULL;
+     struct CTM_Syntax *sp;
+     FILE *b = 0;	/* backup command */
+     u_char buf[BUFSIZ];
+@@ -57,6 +58,7 @@
+ 	Delete(md5before);
+ 	Delete(trash);
+ 	Delete(name);
++	Delete( targetname );
+ 	cnt = -1;
+ 
+ 	GETFIELD(p,' ');
+@@ -90,6 +92,7 @@
+ 		    break;
+ 		case CTM_F_Count: GETBYTECNT(cnt,sep); break;
+ 		case CTM_F_Bytes: GETDATA(trash,cnt); break;
++		case CTM_F_Targetname: GETFIELDCOPY( targetname, sep ); break;
+ 		default: WRONG
+ 		}
+ 	    }
+@@ -98,7 +101,7 @@
+ 	if(name[j] == '/') name[j] = '\0';
+ 
+ 	if (KeepIt && 
+-	    (!strcmp(sp->Key,"DR") || !strcmp(sp->Key,"FR")))
++	    (!strcmp(sp->Key,"DR") || !strcmp(sp->Key,"LR") || !strcmp(sp->Key,"FR")))
+ 	    continue;
+ 		
+ 	/* match the name against the elements of the filter list.  The
+@@ -113,7 +116,9 @@
+ 	if (CTM_FILTER_DISABLE == match)
+ 		continue;
+ 
++	// Do we have to backup symlinks???
+ 	if (!strcmp(sp->Key,"FS") || !strcmp(sp->Key,"FN") ||
++	    !strcmp(sp->Key,"LR") || 
+ 	    !strcmp(sp->Key,"AS") || !strcmp(sp->Key,"DR") || 
+ 	    !strcmp(sp->Key,"FR")) {
+ 	    /* send name to the archiver for a backup */
+@@ -135,6 +140,7 @@
+     Delete(md5before);
+     Delete(trash);
+     Delete(name);
++    Delete( targetname );
+ 
+     q = MD5End (&ctx,md5_1);
+     GETFIELD(p,'\n');			/* <MD5> */

@@ -1,0 +1,7 @@
+lazyarray is a Python package that provides a lazily-evaluated numerical
+array class, larray, based on and compatible with NumPy arrays.
+
+Lazy evaluation means that any operations on the array (potentially including
+array construction) are not performed immediately, but are delayed until
+evaluation is specifically requested. Evaluation of only parts of the array
+is also possible.

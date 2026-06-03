@@ -62,7 +62,7 @@ SRC_LIBXC = libxcifc_stub.f90
 # To enable Libxc first download and compile version 5.x of the library. Next
 # copy the files libxcf90.a and libxc.a to the elk/src directory and uncomment
 # the following lines.
-LIB_LIBXC = -lxcf90 -lxc
+LIB_LIBXC = -lxcf03 -lxc
 SRC_LIBXC = libxcf03.f90 libxcifc.f90
 #-------------------------------------------------------------------------------
 
@@ -90,11 +90,10 @@ SRC_W90S = w90_stub.f90
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
-# GNU Fortran compiler with MKL.
+# GNU Fortran compiler with system BLAS/LAPACK and FFTW.
 F90 =
 F90_OPTS = $(FFLAGS) -Ofast -fomit-frame-pointer -fopenmp -ffpe-summary=none -fallow-argument-mismatch
 F90_LIB = -llapack -lblas -lfftw3 -lfftw3f -pthread
-SRC_MKL =
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------

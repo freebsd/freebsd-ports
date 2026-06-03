@@ -1,4 +1,4 @@
---- base/process/process_iterator_openbsd.cc.orig	2025-05-07 06:48:23 UTC
+--- base/process/process_iterator_openbsd.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/process/process_iterator_openbsd.cc
 @@ -6,6 +6,9 @@
  

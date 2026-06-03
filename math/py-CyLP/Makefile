@@ -1,13 +1,15 @@
 PORTNAME=	CyLP
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.92.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interface to CLP, CBC, and CGL to solve LPs and MIPs
 WWW=		https://github.com/coin-or/CyLP
+
+BROKEN=		fails to build with NumPy 2.x
 
 LICENSE=	CPL10
 LICENSE_NAME=	Common Public License Version 1.0
@@ -16,7 +18,7 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libCbc.so:math/cbc \
@@ -25,11 +27,11 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCoinUtils.so:math/coinutils \
 		liblapack.so:math/lapack \
 		libOsi.so:math/osi
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.10.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	autoplist cython3 pep517 pytest
+USE_PYTHON=	autoplist cython pep517 pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or

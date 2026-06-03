@@ -1,3 +1,3 @@
-TIMESTAMP = 1703611007
-SHA256 (azure-mgmt-containerservice-28.0.0.tar.gz) = b55605a44515f6fd0e3a4dc22bfa0f440f3e7e1625ebaf06ab3eb06bf35a6cdb
-SIZE (azure-mgmt-containerservice-28.0.0.tar.gz) = 5737088
+TIMESTAMP = 1779222932
+SHA256 (azure_mgmt_containerservice-41.2.0.tar.gz) = b88026a528414de7c77c9f1ddb933475d4c3be5d5c3dfe2959e73b7513134ad9
+SIZE (azure_mgmt_containerservice-41.2.0.tar.gz) = 212577

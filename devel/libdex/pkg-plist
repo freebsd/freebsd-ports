@@ -18,6 +18,7 @@ include/libdex-1/dex-platform.h
 include/libdex-1/dex-promise.h
 include/libdex-1/dex-scheduler.h
 include/libdex-1/dex-static-future.h
+include/libdex-1/dex-thread.h
 include/libdex-1/dex-thread-pool-scheduler.h
 include/libdex-1/dex-timeout.h
 include/libdex-1/dex-unix-signal.h

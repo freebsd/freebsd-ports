@@ -1,6 +1,6 @@
---- regex.h.orig	2020-12-28 19:24:49 UTC
+--- regex.h.orig	2026-01-27 18:52:19 UTC
 +++ regex.h
-@@ -30,7 +30,7 @@ extern "C" {
+@@ -29,7 +29,7 @@ extern "C" {
  
  /* Define __USE_GNU to declare GNU extensions that violate the
     POSIX name space rules.  */

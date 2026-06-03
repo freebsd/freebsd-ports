@@ -1,0 +1,6 @@
+Deprecated: This module only receives security fixes. The recommended
+successor is Icinga DB Web.
+
+The monitoring module provides an intuitive user interface for monitoring
+with Icinga 2. There are lots of list and detail views (e.g. for hosts and
+services) you can sort and filter depending on what you want to see.

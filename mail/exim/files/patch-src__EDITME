@@ -1,6 +1,6 @@
---- src/EDITME.orig	2021-09-28 10:24:46.000000000 +0200
-+++ src/EDITME	2021-09-29 19:38:22.776161000 +0200
-@@ -99,7 +99,7 @@
+--- src/EDITME.orig	2025-12-14 13:38:51.000000000 +0100
++++ src/EDITME	2025-12-18 03:31:28.070641000 +0100
+@@ -104,7 +104,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
  
@@ -9,7 +9,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -115,7 +115,7 @@
+@@ -120,7 +120,7 @@
  # don't exist. It will also install a default runtime configuration if this
  # file does not exist.
  
@@ -18,7 +18,7 @@
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
-@@ -132,7 +132,7 @@
+@@ -137,7 +137,7 @@
  # deliveries. (Local deliveries run as various non-root users, typically as the
  # owner of a local mailbox.) Specifying these values as root is not supported.
  
@@ -27,7 +27,7 @@
  
  # If you specify EXIM_USER as a name, this is looked up at build time, and the
  # uid number is built into the binary. However, you can specify that this
-@@ -153,7 +153,7 @@
+@@ -158,7 +158,7 @@
  # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
  # you want to use a group other than the default group for the given user.
  
@@ -36,7 +36,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -451,6 +451,7 @@
+@@ -476,6 +476,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -44,9 +44,9 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -491,9 +492,10 @@
- #
- # You do not need to use this for any lookup information added via pkg-config.
+@@ -524,9 +525,10 @@
+ # LSEARCH, DSEARCH & CDB have no external library needs.
+ # DNSDB needs the resolver library which the core uses anyway.
  
 -# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
 -# LOOKUP_INCLUDE +=-I /usr/local/include
@@ -56,17 +56,17 @@
 +LOOKUP_LIBS=XX_MYSQL_LIBS_XX XX_PGSQL_LIBS_XX XX_LDAP_LIBS_XX XX_LMDB_LIBS_XX
 +DBMLIB=XX_DB_LIBS_XX
  
- 
- #------------------------------------------------------------------------------
-@@ -633,6 +635,7 @@
- # Uncomment the following line to add queuefile transport support
- # EXPERIMENTAL_QUEUEFILE=yes
+ # LOOKUP_LIBS=-L/usr/local/lib -lldap -llber
+ # Some platforms may need this for LOOKUP_NIS:
+@@ -715,6 +717,7 @@
+ # Uncomment the following line to add XCLIENT support
+ # EXPERIMENTAL_XCLIENT=yes
  
 +# EXPERIMENTAL_DCC=yes
  ###############################################################################
  #                 THESE ARE THINGS YOU MIGHT WANT TO SPECIFY                  #
  ###############################################################################
-@@ -700,6 +703,7 @@
+@@ -809,6 +812,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -74,7 +74,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -802,7 +806,7 @@
+@@ -917,7 +921,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -83,7 +83,16 @@
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -898,7 +902,7 @@
+@@ -950,6 +954,8 @@
+ #
+ # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
+ # as well.
++CFLAGS=XX_CFLAGS_XX XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX XX_SQLITE_FLAGS_XX
++EXTRALIBS=XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX XX_DMARC_LIBS_XX XX_REDIS_LIBS_XX XX_DYNAMIC_LDFLAGS_XX XX_IDN_LIBS_XX
+ #
+ # nb: FreeBSD as of 4.89 defines LIBICONV_PLUG to pick up the system iconv
+ # more reliably.  If you explicitly want the libiconv Port then as well
+@@ -1013,7 +1019,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -92,7 +101,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -911,7 +915,7 @@
+@@ -1026,7 +1032,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -101,7 +110,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -993,7 +997,7 @@
+@@ -1114,7 +1120,7 @@
  # that the local_scan API is made available by the linker. You may also need
  # to add -ldl to EXTRALIBS so that dlopen() is available to Exim.
  
@@ -110,18 +119,9 @@
  
  
  #------------------------------------------------------------------------------
-@@ -1130,6 +1134,8 @@
- #
- # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
- # as well.
-+CFLAGS=XX_CFLAGS_XX XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX XX_SQLITE_FLAGS_XX
-+EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX XX_DMARC_LIBS_XX XX_REDIS_LIBS_XX XX_DYNAMIC_LDFLAGS_XX XX_IDN_LIBS_XX
- #
- # To use a name other than exim in the tcpwrappers config file,
- # e.g. if you're running multiple daemons with different access lists,
-@@ -1138,7 +1144,15 @@
- #
- # TCP_WRAPPERS_DAEMON_NAME="exim"
+@@ -1180,7 +1186,15 @@
+ # CFLAGS  += -I/usr/local/include
+ # LDFLAGS += -lspf2
  
 +# IPv6 is coming. Exim has experimental support that has been tried out on
 +# one or two OS. See the file README.IPV6 for the current status of this
@@ -133,9 +133,9 @@
 +
 +
  #------------------------------------------------------------------------------
- # The default action of the exim_install script (which is run by "make
- # install") is to install the Exim binary with a unique name such as
-@@ -1424,7 +1438,7 @@
+ # Support for authentication via Radius is also available. The Exim support,
+ # which is intended for use in conjunction with the SMTP AUTH facilities,
+@@ -1534,7 +1548,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  

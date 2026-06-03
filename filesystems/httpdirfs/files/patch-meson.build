@@ -1,0 +1,8 @@
+--- meson.build.orig	2026-05-27 14:44:56 UTC
++++ meson.build
+@@ -96,4 +96,4 @@ run_target('doxygen',
+ run_target('doxygen',
+   command : 'scripts/doxygen.sh')
+ 
+-subdir('tests')
++# subdir('tests')

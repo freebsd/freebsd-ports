@@ -1,0 +1,10 @@
+--- configure.ac.orig	2021-05-31 18:18:38 UTC
++++ configure.ac
+@@ -5,6 +5,7 @@ AC_INIT([pam_pkcs11],[0.6.12])
+ 
+ # Process this file with autoconf to produce a configure script.
+ AC_INIT([pam_pkcs11],[0.6.12])
++AC_CONFIG_MACRO_DIRS([aclocal])
+ AC_CONFIG_SRCDIR([src/pam_pkcs11/pam_pkcs11.c])
+ AC_CANONICAL_HOST
+ AM_INIT_AUTOMAKE

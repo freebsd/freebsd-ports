@@ -1,0 +1,2 @@
+lib/libngtcp2_crypto_boringssl.a
+libdata/pkgconfig/libngtcp2_crypto_boringssl.pc

@@ -1,5 +1,5 @@
 PORTNAME=	glvis
-DISTVERSION=	4.3.2
+DISTVERSION=	4.5
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://glvis.github.io/releases/
@@ -18,13 +18,15 @@ BUILD_DEPENDS=	glm>0:math/glm \
 		xxd:editors/vim
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libgcc_s.so.1:lang/gcc14 \
 		libHYPRE.so:science/hypre \
 		libmetis.so:math/metis \
 		libmfem.so:math/mfem \
+		libopenblas.so:math/openblas \
 		libpng.so:graphics/png
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR}
 
-USES=		cmake:testing gl python:test sdl tar:tgz
+USES=		cmake:testing gl mpi:mpich python:test sdl tar:tgz
 USE_GL=		gl glew
 USE_SDL=	sdl2
 

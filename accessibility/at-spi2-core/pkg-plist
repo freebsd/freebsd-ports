@@ -15,7 +15,6 @@
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-editabletext.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-enum-types.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-event-listener.h
-%%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-gmain.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-hyperlink.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-hypertext.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-image.h
@@ -75,13 +74,14 @@ lib/girepository-1.0/Atk-1.0.typelib
 %%NO_ATKONLY%%lib/gtk-2.0/modules/libatk-bridge.so
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
-lib/libatk-1.0.so.0.25612.1
+lib/libatk-1.0.so.0.26013.1
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so.0
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so.0.0.0
 %%NO_ATKONLY%%lib/libatspi.so
 %%NO_ATKONLY%%lib/libatspi.so.0
 %%NO_ATKONLY%%lib/libatspi.so.0.0.1
+%%NO_ATKONLY%%%%PYTHON_SITELIBDIR%%/gi/overrides/Atspi.py
 %%NO_ATKONLY%%libdata/pkgconfig/atk-bridge-2.0.pc
 libdata/pkgconfig/atk.pc
 %%NO_ATKONLY%%libdata/pkgconfig/atspi-2.pc
@@ -147,6 +147,7 @@ share/locale/kn/LC_MESSAGES/at-spi2-core.mo
 share/locale/ko/LC_MESSAGES/at-spi2-core.mo
 share/locale/ku/LC_MESSAGES/at-spi2-core.mo
 share/locale/li/LC_MESSAGES/at-spi2-core.mo
+share/locale/lo/LC_MESSAGES/at-spi2-core.mo
 share/locale/lt/LC_MESSAGES/at-spi2-core.mo
 share/locale/lv/LC_MESSAGES/at-spi2-core.mo
 share/locale/mai/LC_MESSAGES/at-spi2-core.mo
@@ -186,6 +187,7 @@ share/locale/tr/LC_MESSAGES/at-spi2-core.mo
 share/locale/tt/LC_MESSAGES/at-spi2-core.mo
 share/locale/ug/LC_MESSAGES/at-spi2-core.mo
 share/locale/uk/LC_MESSAGES/at-spi2-core.mo
+share/locale/uz/LC_MESSAGES/at-spi2-core.mo
 share/locale/uz@cyrillic/LC_MESSAGES/at-spi2-core.mo
 share/locale/vi/LC_MESSAGES/at-spi2-core.mo
 share/locale/wa/LC_MESSAGES/at-spi2-core.mo

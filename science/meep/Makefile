@@ -1,7 +1,7 @@
 PORTNAME=	meep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.0
-PORTREVISION=	6
+DISTVERSION=	1.33.0
+PORTREVISION=	2
 CATEGORIES=	science cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,7 @@ PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}autograd>0:math/py-autograd@${PY_FLA
 				${PYTHON_PKGNAMEPREFIX}jax>0:math/py-jax@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}jupyter-rfb>0:devel/py-jupyter-rfb@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-				${PYNUMPY} \
+				${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \

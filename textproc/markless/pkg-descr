@@ -1,0 +1,10 @@
+Markless is a terminal markdown viewer and editor with image support.
+It focuses on fast navigation and clear rendering for lengthy documents.
+
+Features include:
+- Markdown rendering with syntax highlighting
+- Image support in terminal
+- Mermaid diagram rendering
+- LaTeX math rendering via Typst
+- CSV table rendering
+- File watching for live updates

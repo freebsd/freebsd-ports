@@ -1,5 +1,5 @@
 PORTNAME=	Coin
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -9,10 +9,9 @@ WWW=		https://github.com/coin3d
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
-USES=		cmake gl openal:al libtool pathfix xorg
+USES=		cmake gl openal:al pathfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d

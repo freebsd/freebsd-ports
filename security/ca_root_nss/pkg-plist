@@ -2,6 +2,3 @@
 @sample etc/ssl/cert.pem.sample
 %%ETCSYMLINK%%openssl/cert.pem
 %%ETCSYMLINK%%/etc/ssl/cert.pem
-@postexec certctl rehash
-@postunexec certctl rehash
-@postexec [ ! -e %%LOCALBASE%%/bin/cert-sync ] || %%LOCALBASE%%/bin/cert-sync --quiet %%PREFIX%%/share/certs/ca-root-nss.crt

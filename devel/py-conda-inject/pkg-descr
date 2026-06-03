@@ -1,0 +1,3 @@
+conda-inject provides helper functions for injecting a conda environment
+into the current Python environment by modifying sys.path, without
+actually changing the current Python environment.

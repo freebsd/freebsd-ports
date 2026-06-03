@@ -1,5 +1,5 @@
 PORTNAME=	libmicrohttpd
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.5
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -10,7 +10,7 @@ WWW=		https://www.gnu.org/software/libmicrohttpd/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool localbase pathfix
+USES=		cpe libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnu
 
@@ -20,11 +20,12 @@ INFO=		libmicrohttpd libmicrohttpd-tutorial
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-examples
+CONFIGURE_ARGS=	--disable-examples \
+		--disable-static
 
 OPTIONS_DEFINE=		GNUTLS TESTCURL
 OPTIONS_DEFAULT=	GNUTLS
+
 TESTCURL_DESC=		Use curl when running unit tests
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls

@@ -1,0 +1,3 @@
+KeepSecret is a Password manager GUI intended to be a client for a Secret
+Service compatible provider.  It can be used with KWallet, but also other
+systems such as oo7, Gnome-keyring or KeepassXC.

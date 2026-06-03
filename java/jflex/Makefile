@@ -1,5 +1,6 @@
 PORTNAME=	jflex
 PORTVERSION=	1.8.1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/jflex-de/jflex/releases/download/v${PORTVERSION}/
 

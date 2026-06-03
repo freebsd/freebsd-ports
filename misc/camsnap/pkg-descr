@@ -1,0 +1,7 @@
+camsnap is a CLI to access a variety of hardware capturing devices
+compliant with RTSP/ONVIF, like IP cameras.
+
+It allows to
+* grab frames
+* get clips
+* motion alerts.

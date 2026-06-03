@@ -17,12 +17,12 @@ RUN_DEPENDS=	rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:deve
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	active_job
 
-PORTSCOUT=	limit:^7\.1\.
+NO_ARCH=	yes
+
+PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>

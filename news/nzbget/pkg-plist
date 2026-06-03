@@ -11,14 +11,18 @@ bin/nzbget
 %%DATADIR%%/webui/fasttable.js
 %%DATADIR%%/webui/feed.js
 %%DATADIR%%/webui/history.js
+%%DATADIR%%/webui/img/discord.svg
 %%DATADIR%%/webui/img/download-16.ico
 %%DATADIR%%/webui/img/download-anim-green-2x.png
 %%DATADIR%%/webui/img/download-anim-orange-2x.png
 %%DATADIR%%/webui/img/favicon-256x256-opaque.png
 %%DATADIR%%/webui/img/favicon-256x256.png
 %%DATADIR%%/webui/img/favicon.ico
+%%DATADIR%%/webui/img/github.svg
 %%DATADIR%%/webui/img/icons-2x.png
 %%DATADIR%%/webui/img/icons.png
+%%DATADIR%%/webui/img/nzbget.svg
+%%DATADIR%%/webui/img/reddit.svg
 %%DATADIR%%/webui/img/transmit-file.gif
 %%DATADIR%%/webui/img/transmit-reload-2x.gif
 %%DATADIR%%/webui/img/transmit.gif
@@ -39,6 +43,7 @@ bin/nzbget
 %%DATADIR%%/webui/statistics.js
 %%DATADIR%%/webui/status.js
 %%DATADIR%%/webui/style.css
+%%DATADIR%%/webui/system-health.js
 %%DATADIR%%/webui/system-info.js
 %%DATADIR%%/webui/upload.js
 %%DATADIR%%/webui/util.js

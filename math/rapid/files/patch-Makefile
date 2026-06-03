@@ -1,9 +1,0 @@
---- Makefile.orig	1997-07-03 16:54:09 UTC
-+++ Makefile
-@@ -1,5 +1,5 @@
- 
--CC = CC -O
-+CC = $(CXX) -O
- 
- CFLAGS		= -I. -I..
- 

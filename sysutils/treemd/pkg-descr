@@ -1,0 +1,14 @@
+Treemd is a modern markdown viewer that combines the structural clarity of the
+tree command with powerful interactive navigation. Whether you're exploring
+large documentation files, analyzing markdown structure, or reading comfortably
+in your terminal, treemd provides both CLI tools for scripting and a beautiful
+TUI for interactive exploration.
+
+Use it to:
+
+  - Navigate large documents by collapsing/expanding heading sections
+  - Search headings or full document content with highlighted matches
+  - Edit tables, toggle checkboxes, and follow links-all without leaving the
+    terminal
+  - Extract specific sections or query markdown elements with a jq-like syntax
+  - Pipe markdown from stdin for shell-scripted workflows

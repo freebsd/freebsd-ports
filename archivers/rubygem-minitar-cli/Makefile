@@ -1,5 +1,6 @@
 PORTNAME=	minitar-cli
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/docs/bsdl.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/docs/ruby.txt
 
-RUN_DEPENDS=	rubygem-minitar>=${PORTVERSION}<1.1:archivers/rubygem-minitar \
+RUN_DEPENDS=	rubygem-minitar>=${PORTVERSION}<2:archivers/rubygem-minitar \
 		rubygem-powerbar>=1.0<2:devel/rubygem-powerbar
 
 USES=		gem

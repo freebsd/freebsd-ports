@@ -2,4 +2,3 @@
 sbin/ser2net
 share/man/man5/ser2net.yaml.5.gz
 share/man/man8/ser2net.8.gz
-

@@ -1,0 +1,50 @@
+--- src/ucm/Makefile.am.orig	2026-02-04 09:52:46 UTC
++++ src/ucm/Makefile.am
+@@ -21,8 +21,6 @@ noinst_HEADERS = \
+ 
+ noinst_HEADERS = \
+ 	event/event.h \
+-	malloc/malloc_hook.h \
+-	malloc/allocator.h \
+ 	mmap/mmap.h \
+ 	util/khash_safe.h \
+ 	util/replace.h \
+@@ -38,7 +36,6 @@ libucm_la_SOURCES = \
+ 
+ libucm_la_SOURCES = \
+ 	event/event.c \
+-	malloc/malloc_hook.c \
+ 	mmap/install.c \
+ 	util/replace.c \
+ 	util/log.c \
+@@ -50,6 +47,17 @@ libucm_la_SOURCES = \
+ 	bistro/bistro_ppc64.c \
+ 	bistro/bistro_rv64.c
+ 
++if HAVE_UCM_MALLOC_HOOKS
++noinst_HEADERS += \
++	malloc/malloc_hook.h \
++	malloc/allocator.h
++
++libucm_la_SOURCES += \
++	malloc/malloc_hook.c
++else
++libucm_la_SOURCES += \
++        malloc/malloc_hook_stub.c
++
+ if HAVE_UCM_PTMALLOC286
+ libucm_la_CPPFLAGS += \
+     -fno-strict-aliasing \
+@@ -61,5 +69,12 @@ noinst_HEADERS += \
+ 
+ noinst_HEADERS += \
+     ptmalloc286/malloc-2.8.6.h
++endif
++endif
++
++if HAVE_BRK_SBRK
++else
++libucm_la_SOURCES += \
++        malloc/brk_sbrk_override_stub.c
+ endif
+ 

@@ -34,10 +34,10 @@ PLIST_SUB=	BANKDATA_START_DATE=${BANKDATA_START_DATE}
 KBCD_DATE=		20250515
 # Custom: This is the date when the bank data is officially recocognized and
 # supported.
-BANKDATA_START_DATE=	20250609
+BANKDATA_START_DATE=	20251208
 # Custom: This is the date when the bank data is officially void and can no
 # longer be relied upon.
-BANKDATA_END_DATE=	20250907
+BANKDATA_END_DATE=	20260308
 
 post-extract:
 # Out of an abundance of caution, remove the pre-built DBs and shipped SEPA data.

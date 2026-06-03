@@ -1,6 +1,30 @@
---- content/browser/BUILD.gn.orig	2025-06-19 07:37:57 UTC
+--- content/browser/BUILD.gn.orig	2026-05-11 13:57:04 UTC
 +++ content/browser/BUILD.gn
-@@ -2571,6 +2571,14 @@ source_set("browser") {
+@@ -102,6 +102,7 @@ source_set("browser") {
+   frameworks = []
+   ldflags = []
+ 
++  # Iridium / node dep fixes
+   deps = [
+     ":child_process_security_policy_impl",
+     "//base",
+@@ -117,6 +118,7 @@ source_set("browser") {
+     "//cc/animation",
+     "//cc/mojo_embedder",
+     "//cc/paint",
++    "//chrome/common:buildflags",
+     "//components/attribution_reporting:data_host_mojom",
+     "//components/attribution_reporting:mojom",
+     "//components/back_forward_cache:enum",
+@@ -148,6 +150,7 @@ source_set("browser") {
+     "//components/optimization_guide/core",
+     "//components/optimization_guide/core:features",
+     "//components/optimization_guide/public/mojom",
++    "//components/paint_preview/buildflags:buildflags",
+     "//components/payments/content/icon",
+     "//components/payments/mojom",
+     "//components/performance_manager/scenario_api",
+@@ -2648,6 +2651,14 @@ source_set("browser") {
      ]
    }
  
@@ -15,7 +39,7 @@
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2616,6 +2624,15 @@ source_set("browser") {
+@@ -2697,6 +2708,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]
@@ -30,4 +54,4 @@
 +    ]
    }
  
-   if (is_chromeos) {
+   if (is_p2p_enabled) {

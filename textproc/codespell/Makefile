@@ -1,5 +1,5 @@
 PORTNAME=	codespell
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 
@@ -14,12 +14,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
+
+SHEBANG_FILES=	tools/gen_OX.sh
 
 .include <bsd.port.mk>

@@ -1,0 +1,27 @@
+From 0000000000000000000000000000000000000001 Mon Sep 17 00:00:00 2001
+From: FreeBSD Ports Collection <ports@FreeBSD.org>
+Date: Wed, 01 Apr 2026 22:00:00 -0700
+Subject: [PATCH] FreeBSD: include byteswap.h for bswap_64 support
+
+FreeBSD ships a glibc-compatible <byteswap.h> (since FreeBSD 15) that
+defines bswap_64(x) as __bswap64(x).  Without this include, msgpack
+falls through to the `#elif defined(bswap_64)` path which relies on
+a macro that is not defined on FreeBSD, causing build failures.
+
+---
+ include/msgpack/sysdep.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/msgpack/sysdep.hpp b/include/msgpack/sysdep.hpp
+index 1234567..abcdef0 100644
+--- a/include/msgpack/sysdep.hpp
++++ b/include/msgpack/sysdep.hpp
+@@ -88,7 +88,7 @@
+ #elif defined(unix) || defined(__unix) || defined(__APPLE__) || defined(__OpenBSD__)
+
+ #include <arpa/inet.h>  /* __BYTE_ORDER */
+-#   if defined(linux) || defined(__linux__)
++#   if defined(linux) || defined(__linux__) || defined(__FreeBSD__)
+ #       include <byteswap.h>
+ #   endif
+

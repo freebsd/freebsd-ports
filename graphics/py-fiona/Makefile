@@ -1,6 +1,6 @@
 PORTNAME=	fiona
 DISTVERSION=	1.10.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cligj>=0.5:devel/py-cligj@${PY_FLAVOR} \
 LIB_DEPENDS+=	libgdal.so:graphics/gdal
 
 USES=		compiler python
-USE_PYTHON=	autoplist pep517 cython3
+USE_PYTHON=	autoplist cython pep517
 
 CONFLICTS_INSTALL=	fio
 

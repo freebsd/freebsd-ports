@@ -37,7 +37,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  elif ${linux_ARGS} == rl9
-LINUX_DIST_VER?=	9.6
+LINUX_DIST_VER?=	9.7
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
@@ -246,9 +246,12 @@ MASTER_SITES=		${MASTER_SITE_ROCKY_LINUX}
 MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/BaseOS/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/AppStream/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/BaseOS/x86_64/os/Packages/:DEFAULT,amd64 \
+			${LINUX_DIST_VER}/CRB/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/AppStream/x86_64/os/Packages/:DEFAULT,amd64 \
+			${LINUX_DIST_VER}/CRB/x86_64/os/Packages/:DEFAULT,amd64 \
 			${LINUX_DIST_VER}/BaseOS/source/tree/Packages/:SOURCE \
-			${LINUX_DIST_VER}/AppStream/source/tree/Packages/:SOURCE
+			${LINUX_DIST_VER}/AppStream/source/tree/Packages/:SOURCE \
+			${LINUX_DIST_VER}/CRB/source/tree/Packages/:SOURCE
 .      endif
 DIST_SUBDIR?=		rocky
 .    endif # ${linux_ARGS} == *
@@ -303,7 +306,9 @@ DISTFILES_aarch64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mamd64)) \
  && empty(NOT_FOR_ARCHS:Mamd64)
 .      ifndef DISTFILES_amd64
-.        if ${linux_ARGS} == c7
+.        if ${linux_ARGS} == c7 \
+   && !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mi386)) \
+   && empty(NOT_FOR_ARCHS:Mi386)
 DISTFILES_amd64=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 			${LIB_DISTNAMES_i386:S/$/${EXTRACT_SUFX_i386}:amd64,i386/}
 .        endif

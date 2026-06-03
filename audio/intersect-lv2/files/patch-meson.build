@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-11-07 23:43:21 UTC
++++ meson.build
+@@ -11,7 +11,7 @@ else
+ 		'tests=disabled',
+ 	]).get_variable('hwy_dep')
+ else
+-	hwy_dep = dependency('libhwy', version: '1.3.0', default_options: [
++	hwy_dep = dependency('libhwy', version: '>=1.3.0', default_options: [
+ 		'contrib=disabled',
+ 		'examples=disabled',
+ 		'tests=disabled',

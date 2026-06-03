@@ -1,8 +1,8 @@
 PORTNAME=	yquake2
-PORTVERSION=	8.10
+DISTVERSION=	8.70
 CATEGORIES=	games
 MASTER_SITES=	https://deponie.yamagi.org/quake2/
-DISTNAME=	quake2-${PORTVERSION}
+DISTNAME=	quake2-${DISTVERSION}
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Improved version of Icculus Quake II
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/curl/curl.h:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/lib/libcurl.so:ftp/curl
 
-USES=		gmake openal gl sdl tar:xz
+USES=		gl gmake openal pkgconfig sdl tar:xz
 USE_GL=		gl
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 MAKE_ARGS=	VERBOSE=1 WITH_SYSTEMWIDE=yes \
 		WITH_SYSTEMDATADIR="${Q2DIR}" \
 		WITH_SYSTEMLIBDIR="${PREFIX}/lib/${PORTNAME}"

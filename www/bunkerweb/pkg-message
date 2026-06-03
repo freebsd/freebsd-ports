@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+BunkerWeb has been installed.
+
+BunkerWeb uses OpenResty as its web server runtime.
+
+Enable the services at boot time with:
+
+  sysrc bunkerweb_scheduler_enable=YES
+  sysrc bunkerweb_api_enable=YES
+  sysrc bunkerweb_ui_enable=YES
+  sysrc bunkerweb_enable=YES
+
+Start the services in the following order:
+
+  service bunkerweb_scheduler start
+  service bunkerweb_api start
+  service bunkerweb_ui start
+  service bunkerweb start
+
+Configuration files are installed under:
+
+  /usr/local/etc/bunkerweb/
+  /usr/local/etc/nginx/
+
+The web interface is available on port 7000 and the API on port 8888.
+EOM
+}
+]

@@ -1,0 +1,14 @@
+ComfyUI is a powerful and modular stable diffusion GUI with a
+graph/nodes/flowchart based interface. It allows users to design and execute
+advanced stable diffusion pipelines without needing to code.
+
+Key features include:
+- Node/graph/flowchart interface for complex workflows
+- Support for multiple image models (SD1.x, SD2.x, SDXL, SD3, Flux, etc.)
+- Video models support (Stable Video Diffusion, Mochi, LTX-Video, etc.)
+- Audio models support (Stable Audio, ACE Step)
+- Asynchronous queue system
+- Smart memory management with automatic GPU offloading
+- Works with as low as 1GB VRAM
+- Support for LoRAs, hypernetworks, ControlNet, and upscaling models
+- Fully offline operation

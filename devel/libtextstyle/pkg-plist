@@ -1,11 +1,10 @@
 include/textstyle.h
-include/textstyle/stdbool.h
 include/textstyle/version.h
 include/textstyle/woe32dll.h
 lib/libtextstyle.a
 lib/libtextstyle.so
 lib/libtextstyle.so.0
-lib/libtextstyle.so.0.2.3
+lib/libtextstyle.so.0.2.7
 %%PORTDOCS%%%%DOCSDIR%%/libtextstyle_1.html
 %%PORTDOCS%%%%DOCSDIR%%/libtextstyle_2.html
 %%PORTDOCS%%%%DOCSDIR%%/libtextstyle_3.html

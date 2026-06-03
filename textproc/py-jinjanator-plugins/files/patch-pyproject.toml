@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-18 11:26:02 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = [
+ requires = [
+   "hatch-fancy-pypi-readme",
+   "hatch-vcs",
+-  "hatchling<1.27",
++  "hatchling<=1.29",
+ ]
+ 
+ [project]

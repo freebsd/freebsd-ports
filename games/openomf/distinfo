@@ -1,8 +1,5 @@
+TIMESTAMP = 1750522810
 SHA256 (omf2097.rar) = bc2ce50b8ea282b61e9685e883436e9cb4bcf7bacec0a58f0a685f20289f8a13
 SIZE (omf2097.rar) = 6345106
-SHA256 (omf2097-openomf-0.6.5-c36c421_GH0.tar.gz) = e8837884e6813f42c4fc0b7864f65c343f8831f1e66247cb82e7bfcb2cc06f08
-SIZE (omf2097-openomf-0.6.5-c36c421_GH0.tar.gz) = 259458
-SHA256 (omf2097-libShadowDive-b2c34a6_GH0.tar.gz) = 47e33af4f03539c39045eba2ad150ff88195f326c8d8f82d31b82738da5731da
-SIZE (omf2097-libShadowDive-b2c34a6_GH0.tar.gz) = 113591
-SHA256 (kode54-dumb-238f23c_GH0.tar.gz) = d49d1a211b5eb3fd446bcd4a7ba7710b056e0579ad7bfa1d7a7ea99956f79c91
-SIZE (kode54-dumb-238f23c_GH0.tar.gz) = 178894
+SHA256 (omf2097-openomf-0.8.3_GH0.tar.gz) = f31bce32acef44af214a194730968e4f71b83765c0d339b7170494917a7dfdcb
+SIZE (omf2097-openomf-0.8.3_GH0.tar.gz) = 812837

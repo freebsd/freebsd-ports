@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# PROVIDE: wireproxy
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable wireproxy:
+# wireproxy_enable (bool):	Set to "NO" by default.
+#		Set it to "YES" to enable wireproxy.
+# wireproxy_checkconfig (bool):	Set to "YES" by default.
+#		Set it to "YES" to check configuration when starting.
+# wireproxy_configfile (str):	Set to "%%PREFIX%%/etc/wireproxy.conf" by default.
+#		Path to configuration file.
+# wireproxy_logfile (str):	Set to "/var/log/wireproxy.log" by default.
+#		Path to log file.
+# wireproxy_user (str):		Set to "nobody" by default.
+#		User to run wireproxy.
+# wireproxy_flags (str):	Set to "" by default.
+#		Extra flags passed to start command.
+
+. /etc/rc.subr
+
+name=wireproxy
+rcvar=wireproxy_enable
+desc="WireGuard client that exposes itself as a SOCKS5/HTTP proxy"
+
+load_rc_config ${name}
+
+: ${wireproxy_enable:=NO}
+: ${wireproxy_checkconfig=YES}
+: ${wireproxy_configfile="%%PREFIX%%/etc/wireproxy.conf"}
+: ${wireproxy_logfile=/var/log/wireproxy.log}
+: ${wireproxy_user=nobody}
+
+procname="%%PREFIX%%/bin/wireproxy"
+pidfile="/var/run/${name}.pid"
+daemonpidfile="/var/run/daemon_${name}.pid"
+required_files="${wireproxy_configfile}"
+command=/usr/sbin/daemon
+command_args="-f -H -o ${wireproxy_logfile} -p ${pidfile} -P ${daemonpidfile} ${procname} -c ${wireproxy_configfile}"
+
+start_precmd="${name}_precmd"
+stop_postcmd="rm -f ${pidfile} ${daemonpidfile}"
+configtest_cmd="${name}_configtest"
+extra_commands=configtest
+
+wireproxy_precmd()
+{
+	/usr/bin/install -m 600 -o ${wireproxy_user} /dev/null ${pidfile}
+	/usr/bin/install -m 600 -o ${wireproxy_user} /dev/null ${daemonpidfile}
+	/usr/bin/install -m 640 -o ${wireproxy_user} /dev/null ${wireproxy_logfile}
+
+	if checkyesno wireproxy_checkconfig; then
+		wireproxy_configtest
+	fi
+}
+
+wireproxy_configtest()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	${procname} --configtest --config ${wireproxy_configfile}
+}
+
+run_rc_command "$1"

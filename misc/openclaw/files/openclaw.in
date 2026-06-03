@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: openclaw
+# REQUIRE: LOGIN
+# KEYWORDS: shutdown
+
+# Add the following lines to /etc/rc.conf to enable openclaw:
+# openclaw_enable="YES"
+#
+# openclaw_enable (bool):    Set to YES to enable openclaw
+#                            Default: NO
+# openclaw_user (str):       User to run openclaw as
+#                            Default: root
+# openclaw_log (str):        Log file for openclaw
+#                            Default: "/var/log/openclaw.log"
+# openclaw_pidfile (str):    PID file for openclaw
+#                            Default: "/var/run/openclaw.pid"
+
+. /etc/rc.subr
+
+name="openclaw"
+rcvar=openclaw_enable
+
+load_rc_config $name
+
+: ${openclaw_enable:="NO"}
+: ${openclaw_user:="root"}
+: ${openclaw_log:="/var/log/openclaw.log"}
+: ${openclaw_pidfile:="/var/run/openclaw.pid"}
+
+run_command="%%PREFIX%%/bin/openclaw"
+procname="%%PREFIX%%/bin/node" # node in order to be stopped properly by the framework (instead of "${run_command}")
+pidfile=${openclaw_pidfile}
+command=/usr/sbin/daemon
+command_args="-f -t ${name} -p ${pidfile} -o ${openclaw_log} ${run_command} gateway run"
+
+start_precmd="openclaw_precmd"
+
+openclaw_precmd()
+{
+	export HOME=$(eval echo "~${openclaw_user}")
+	touch ${openclaw_log} ${pidfile}
+	chown ${openclaw_user} ${openclaw_log} ${pidfile}
+	chmod 640 ${openclaw_log}
+}
+
+run_rc_command "$1"

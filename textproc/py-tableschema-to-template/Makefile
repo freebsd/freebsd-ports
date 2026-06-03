@@ -1,6 +1,6 @@
 PORTNAME=	tableschema-to-template
 PORTVERSION=	0.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=1.0.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=1.2.8:textproc/py-xlsxwriter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=1.2.8:textproc/py-xlsxwriter@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

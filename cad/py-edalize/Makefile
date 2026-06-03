@@ -1,5 +1,5 @@
 PORTNAME=	edalize
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.5
 CATEGORIES=	cad python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-Jinja2>0:devel/py-types-Jinja2@${PY_FLAVOR} \
 		gmake:devel/gmake \
 		yosys:cad/yosys
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vunit-hdl>0:cad/py-vunit-hdl@${PY_FLAVOR}

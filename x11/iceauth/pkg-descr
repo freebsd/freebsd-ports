@@ -1,2 +1,5 @@
-This package contains iceauth, an ICE authority file utility for the X
-Window System.
+The iceauth program is used to edit and display the authorization
+information used in connecting with ICE (the X11 Inter-Client Exchange
+protocol). This program is usually used to extract authorization
+records from one machine and merge them in on another (as is the case
+when using remote logins or granting access to other users).

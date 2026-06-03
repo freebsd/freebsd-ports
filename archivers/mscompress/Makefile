@@ -3,7 +3,7 @@ DISTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	archivers
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 WWW=		https://github.com/stapelberg/mscompress
 

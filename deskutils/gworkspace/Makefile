@@ -1,5 +1,6 @@
 PORTNAME=	gworkspace
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	GNUSTEP/usr-apps
 

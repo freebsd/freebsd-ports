@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/v8/src/base/platform/platform-freebsd.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-135.1.0/v8/src/base/platform/platform-freebsd.cc
+--- cargo-crates/v8-147.4.0/v8/src/base/platform/platform-freebsd.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-147.4.0/v8/src/base/platform/platform-freebsd.cc
 @@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache() {
    return new PosixDefaultTimezoneCache();
  }
@@ -20,7 +20,7 @@
              lib_name = std::string(path);
            }
            result.push_back(SharedLibraryAddress(
-+#if defined(__i386__) || defined(OS_FREEBSD)
++#if defined(__arm__) || defined(__i386__) || defined(OS_FREEBSD)
 +              lib_name, static_cast<uintptr_t>(map->kve_start),
 +              static_cast<uintptr_t>(map->kve_end)));
 +#else

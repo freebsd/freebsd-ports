@@ -12,7 +12,7 @@ WWW=		https://cunit.sourceforge.net/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool ncurses pathfix tar:bzip2
+USES=		autoreconf gmake libtool ncurses tar:bzip2
 
 CONFIGURE_ARGS=	--enable-automated --enable-basic --enable-console --enable-curses --enable-debug --enable-memtrace --enable-test
 GNU_CONFIGURE=	yes

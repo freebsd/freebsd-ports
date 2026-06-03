@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-04-28 08:51:52 UTC
++++ pyproject.toml
+@@ -1,8 +1,5 @@
+ [build-system]
+-requires = [
+-    "setuptools >= 77.0.3",
+-    "wheel"
+-]
++requires = ["setuptools >=61"]
+ 
+ build-backend = "setuptools.build_meta"
+ 
+@@ -11,7 +8,7 @@ dynamic = ["version"]
+ name = "pyotp2289"
+ description = "A pure Python implementation of 'A One-Time Password System'"
+ dynamic = ["version"]
+-license = "BSD-2-Clause"
++license = { text = "BSD-2-Clause" }
+ authors = [{name = "Simeon Simeonov"}]
+ readme = "README.md"
+ requires-python = ">= 3.10"

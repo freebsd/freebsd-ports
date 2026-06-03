@@ -10,6 +10,9 @@ WWW=		https://github.com/CESNET/libyang
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer maintained
+EXPIRATION_DATE=2026-06-30
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 

@@ -1,0 +1,13 @@
+Relax version requirements.
+
+--- pyproject.toml.orig	2025-12-12 14:33:27 UTC
++++ pyproject.toml
+@@ -25,7 +25,7 @@ dependencies = [
+     # which requires system-level libraries and fails to install in the container.
+     # This can be removed once the issue is resolved.
+     # See: https://github.com/deeplook/svglib/issues/421
+-    "svglib~=1.5.1"
++    "svglib>=1.5.1"
+ ]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

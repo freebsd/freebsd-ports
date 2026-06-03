@@ -1,20 +1,20 @@
 PORTNAME?=	arcanist
-PORTVERSION?=	20220518
-PORTREVISION?=	7
+PORTVERSION?=	20230530
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
-COMMENT?=	Libraries for the command line interface for Phabricator
+COMMENT?=	Phabricator Arcanist libraries
 WWW?=		https://secure.phabricator.com/book/arcanist/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:cli,flavors python:env shebangfix
+IGNORE_WITH_PHP=	85
 USE_GITHUB=	yes
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	85c953e
+GH_TAGNAME=	e50d1bc
 USE_PHP=	curl dom simplexml zlib
 
 SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \
@@ -41,12 +41,19 @@ ENCODINGS_USE=		PHP=mbstring
 
 .else # link only
 
-RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>0:devel/arcanist-lib@${PHP_FLAVOR}
+RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=${PORTVERSION}_${PORTREVISION}:devel/arcanist-lib@${PHP_FLAVOR}
 
 CONFLICTS=	arc arcanist-php??
 
 PLIST_FILES=	bin/arc
 
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} >= 83
+post-patch:
+	@${REINPLACE_CMD} -e 's/ | E_STRICT//' ${WRKSRC}/support/init/init-script.php
 .endif
 
 do-install:
@@ -82,4 +89,4 @@ do-install:
 	${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/bin/arc shell-complete --generate
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	7.0.9
+DISTVERSION=	8.0.8
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -12,11 +12,12 @@ LICENSE=	CC-BY-4.0
 BUILD_DEPENDS=	bison>=3.3:devel/bison \
 		flex>=2.6:textproc/flex \
 		swig>=4.0.2:devel/swig
-LIB_DEPENDS=	libcares.so:dns/c-ares
+LIB_DEPENDS=	libcares.so:dns/c-ares \
+		libzmq.so:net/libzmq4
 RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares
 
-USES=           bison cmake compiler:c++17-lang cpe perl5 python \
-		shebangfix ssl
+USES=		bison cmake compiler:c++17-lang cpe gettext-runtime perl5 \
+		python:3.9+ shebangfix ssl
 
 USE_LDCONFIG=	yes
 
@@ -81,8 +82,10 @@ CMAKE_ARGS=	-DCARES_ROOT_DIR:PATH=${PREFIX} \
 		-DINSTALL_ZKG:BOOL=OFF \
 		-DPY_MOD_INSTALL_DIR:PATH=${PREFIX}/lib/zeekctl \
 		-DZEEK_ETC_INSTALL_DIR:PATH=${PREFIX}/etc \
+		-DZEEK_LOG_DIR:PATH=/var/log/zeek \
 		-DZEEK_ROOT_DIR:PATH=${PREFIX} \
-		-DZEEK_SCRIPT_INSTALL_PATH:PATH=${PREFIX}/share/zeek
+		-DZEEK_SCRIPT_INSTALL_PATH:PATH=${PREFIX}/share/zeek \
+		-DZEEK_SPOOL_DIR:PATH=/var/spool/zeek
 
 ZEEKUSER?=	zeek
 ZEEKGROUP?=	zeek
@@ -157,25 +160,30 @@ STRIP=
 USE_RC_SUBR=	zeek
 .endif
 
-post-install-ZEEKCTL-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/logs
-	${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp
-	${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
-	${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
-.for F in zeekctl.cfg networks.cfg node.cfg
-	${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.sample
-.endfor
-	${RM} ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
-	${LN} -s ../../../spool/zeekctl-config.sh \
-	    ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
-	${RM} ${STAGEDIR}${PREFIX}/lib/broctl
-	${LN} -s zeek/python/zeekctl ${STAGEDIR}${PREFIX}/lib/broctl
+# Let crash-diag find gdb (when installed)
+post-patch:
+	${REINPLACE_CMD} -e "2s,^\#,export PATH=${LOCALBASE}/bin"':$${PATH}', \
+	    ${WRKSRC}/auxil/zeekctl/bin/crash-diag
 
 post-install:
 	${MV} ${STAGEDIR}${DATADIR}/site/local.zeek \
 	    ${STAGEDIR}${DATADIR}/site/local.zeek.sample
-	@${RM} -rf ${STAGEDIR}${PREFIX}/var
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zeek-cut
+	@${RM} ${STAGEDIR}${PREFIX}/share/zeek/tests
+	${LN} -s ../btest/data ${STAGEDIR}${PREFIX}/share/zeek/tests
+
+post-install-ZEEKCTL-on:
+	${MKDIR} ${STAGEDIR}/var/spool/zeek/installed-scripts-do-not-touch/auto
+	${MKDIR} ${STAGEDIR}/var/spool/zeek/installed-scripts-do-not-touch/site
+.for F in zeekctl.cfg networks.cfg node.cfg
+	${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.sample
+.endfor
+	# Do this here because later zeek won't be running as root
+	${RM} ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
+	${LN} -s ../../../../../var/spool/zeek/zeekctl-config.sh \
+	    ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
+	${RM} ${STAGEDIR}${PREFIX}/lib/broctl
+	${LN} -s zeek/python/zeekctl ${STAGEDIR}${PREFIX}/lib/broctl
 
 post-install-SPICY-on:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/include/hilti/rt/3rdparty/SafeInt/Archive

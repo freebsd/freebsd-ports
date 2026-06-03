@@ -1,12 +1,12 @@
 PORTNAME=	dos2unix
-DISTVERSION=	7.5.2
+DISTVERSION=	7.5.5
 CATEGORIES=	converters
 MASTER_SITES=	SF \
-		https://waterlan.home.xs4all.nl/dos2unix/
+		https://waterlander.net/dos2unix/files/
 
 MAINTAINER=	dim@FreeBSD.org
 COMMENT=	DOS/Mac to Unix and vice versa text file format converter
-WWW=		https://waterlan.home.xs4all.nl/dos2unix.html
+WWW=		https://waterlander.net/dos2unix/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

@@ -1,0 +1,3 @@
+Official ComfyUI workflow templates and subgraph blueprints. This package
+provides ready-to-use workflow templates for various stable diffusion tasks
+and reusable node components.

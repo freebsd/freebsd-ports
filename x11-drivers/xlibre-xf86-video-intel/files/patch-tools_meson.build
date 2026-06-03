@@ -1,0 +1,11 @@
+--- tools/meson.build.orig	2025-08-15 11:34:41 UTC
++++ tools/meson.build
+@@ -21,7 +21,7 @@ if with_tools
+ 	     install : true)
+ 
+   configure_file(input : 'intel-virtual-output.man',
+-		 output : 'intel-virtual-output.4',
++		 output : 'intel-virtual-output.4x',
+ 		 command : [
+ 		 'sed',
+ 		 '-e',

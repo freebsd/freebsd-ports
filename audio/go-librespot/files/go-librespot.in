@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: go_librespot
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/go-librespot to enable this service:
+#
+# go_librespot_enable (bool):       Set to NO by default.
+#                               Set it to "YES" to enable go-librespot.
+# go_librespot_config_dir (str):        Set to %%PREFIX%%/etc/go-librespot by default.
+#                               Path to configuration file.
+# go_librespot_user (str):          Set to "nobody" by default.
+#                               User to run go-librespot
+
+. /etc/rc.subr
+
+name=go_librespot
+rcvar=go_librespot_enable
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${go_librespot_enable:="NO"}
+: ${go_librespot_config_dir:="%%PREFIX%%/etc/go-librespot"}
+: ${go_librespot_user:="nobody"}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%PREFIX%%/bin/go-librespot"
+command="/usr/sbin/daemon"
+command_args="-S -m 3 -s info -l daemon -p ${pidfile} ${procname} --config_dir ${go_librespot_config_dir}"
+
+go_librespot_precmd()
+{
+	/usr/bin/install -d -m 0755 -o ${go_librespot_user} ${go_librespot_config_dir}
+	/usr/bin/install -d -m 0755 -o ${go_librespot_user} /var/run/${name}
+}
+
+run_rc_command "$1"

@@ -1,0 +1,3 @@
+CORS handling as a cherrypy tool.
+
+Provides cross-origin resource sharing (CORS) support for CherryPy apps.

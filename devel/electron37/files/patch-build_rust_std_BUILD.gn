@@ -1,6 +1,14 @@
---- build/rust/std/BUILD.gn.orig	2025-06-30 07:04:30 UTC
+--- build/rust/std/BUILD.gn.orig	2025-08-25 14:15:51 UTC
 +++ build/rust/std/BUILD.gn
-@@ -50,13 +50,20 @@ if (toolchain_has_rust) {
+@@ -42,7 +42,6 @@ if (toolchain_has_rust) {
+     "rustc_demangle",
+     "std_detect",
+     "test",
+-    "unicode_width",
+     "unwind",
+   ]
+ 
+@@ -50,13 +49,20 @@ if (toolchain_has_rust) {
      # These are no longer present in the Windows toolchain.
      stdlib_files += [
        "addr2line",
@@ -22,7 +30,7 @@
    }
  
    if (toolchain_for_rust_host_build_tools) {
-@@ -76,7 +83,6 @@ if (toolchain_has_rust) {
+@@ -76,7 +82,6 @@ if (toolchain_has_rust) {
    # don't need to pass to the C++ linker because they're used for specialized
    # purposes.
    skip_stdlib_files = [

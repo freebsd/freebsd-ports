@@ -1,0 +1,17 @@
+# Makefile for defining variables used by other kakoune related ports.
+
+KAKPKGNAMEPREFIX?=	kakoune-
+KAKDIR?=		${LOCALBASE}/share/kak
+
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${KAKPKGNAMEPREFIX} && \
+	defined(OPTIONSMKINCLUDED)
+.  error include before <bsd.port.options.mk> if using KAKPKGNAMEPREFIX
+.endif
+
+MAKE_ENV+=	KAKDIR="${KAKDIR}"
+PLIST_SUB+=	KAKDIR="${KAKDIR:S/${LOCALBASE}\///}"
+SUB_LIST+=	KAKDIR="${KAKDIR}"
+
+.if ${PORTNAME} != "kakoune"
+RUN_DEPENDS+=	kakoune>0:editors/kakoune
+.endif

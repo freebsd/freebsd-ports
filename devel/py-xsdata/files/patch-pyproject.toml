@@ -1,0 +1,28 @@
+--- pyproject.toml.orig	2026-02-15 16:13:07 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.0"]
++requires = ["setuptools>=61.0.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.packages.find]
+@@ -9,8 +9,7 @@ authors = [{name = "Christodoulos Tsoulloftas", email 
+ name = "xsdata"
+ description = "Python XML Binding"
+ authors = [{name = "Christodoulos Tsoulloftas", email = "chris@komposta.net"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ classifiers = [
+     "Intended Audience :: Developers",
+     "Operating System :: OS Independent",
+@@ -48,7 +47,7 @@ cli = [
+ cli = [
+     "click>=8.0.0",
+     "jinja2>=3.0.0",
+-    "toposort>=1.9",
++    "toposort>=1.5",
+     "ruff>=0.9.8"
+ ]
+ docs = [

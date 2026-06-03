@@ -11,7 +11,7 @@ WWW=		https://github.com/json-c/json-c/wiki
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing compiler:c11 cpe pathfix
+USES=		cmake:testing compiler:c11 cpe
 
 CMAKE_OFF=	BUILD_TESTING \
 		DISABLE_BSYMBOLIC \

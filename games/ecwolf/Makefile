@@ -1,12 +1,8 @@
 PORTNAME=	ecwolf
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://maniacsvault.net/ecwolf/files/ecwolf/1.x/
-
-PATCH_SITES=	https://bitbucket.org/ecwolf/ecwolf/commits/400aaf96a36a14ab8eab18a670ba6439046f3bb0/
-PATCHFILES=	raw:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Source port for Wolfenstein 3D, Spear of Destiny

@@ -1,8 +1,0 @@
---- src/session/budgie-desktop.in.orig	2023-01-29 15:27:27 UTC
-+++ src/session/budgie-desktop.in
-@@ -13,4 +13,4 @@ if [ -z $XDG_CURRENT_DESKTOP ]; then
-   export XDG_CURRENT_DESKTOP
- fi
- 
--exec gnome-session --builtin --session=org.buddiesofbudgie.BudgieDesktop $*
-+exec gnome-session --builtin --disable-acceleration-check --session=org.buddiesofbudgie.BudgieDesktop $*

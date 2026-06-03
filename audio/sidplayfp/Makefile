@@ -1,5 +1,5 @@
 PORTNAME=	sidplayfp
-DISTVERSION=	2.15.0
+DISTVERSION=	3.0.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/lib${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -14,6 +14,8 @@ LIB_DEPENDS=	libstilview.so:audio/libsidplayfp
 
 USES=		compiler:c++17-lang localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
+
+LDFLAGS+=	-pthread
 
 PLIST_FILES=	bin/sidplayfp \
 		bin/stilview \

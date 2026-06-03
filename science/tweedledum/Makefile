@@ -10,7 +10,9 @@ WWW=		https://github.com/boschmitt/tweedledum
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
+USES=		cmake:testing compiler:c++17-lang python:env
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boschmitt

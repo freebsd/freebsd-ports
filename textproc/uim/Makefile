@@ -1,5 +1,6 @@
 PORTNAME=	uim
 PORTVERSION=	1.9.6
+PORTREVISION?=	0
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11

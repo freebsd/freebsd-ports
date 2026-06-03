@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.7
+DISTVERSION=	0.6.2
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,10 @@ WWW=		https://ollama.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.27.0<1:www/py-httpx@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.27:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.9:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.23.2:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1:devel/py-pytest-cov@${PY_FLAVOR} \
@@ -29,7 +31,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-post-patch: # workaround for https://github.com/ollama/ollama-python/issues/249
-	@${REINPLACE_CMD} -e 's|version = "0.0.0"|version = "${PORTVERSION}"|' ${WRKSRC}/pyproject.toml
+post-patch: # workaround: hatch-vcs can't detect version without git repo
+	@${REINPLACE_CMD} -e "s|dynamic = \[ 'version' \]|version = '${PORTVERSION}'|" ${WRKSRC}/pyproject.toml
+	@${REINPLACE_CMD} -e '/\[tool.hatch.version\]/,/^$$/d' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

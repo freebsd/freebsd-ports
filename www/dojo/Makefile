@@ -1,36 +1,36 @@
-PORTNAME=		dojo
-DISTVERSION=		1.12.3
-CATEGORIES=		www
-MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/
-DISTNAME=		dojo-release-${PORTVERSION}
+PORTNAME=	dojo
+DISTVERSION=	1.15.6
+CATEGORIES=	www
+MASTER_SITES=	https://download.dojotoolkit.org/release-${PORTVERSION}/
+DISTNAME=	dojo-release-${PORTVERSION}
 
-MAINTAINER=		bofh@FreeBSD.org
-COMMENT=		Open-source DHTML toolkit written in JavaScript
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Open-source DHTML toolkit written in JavaScript
 WWW=		https://dojotoolkit.org/
 
-LICENSE=		BSD3CLAUSE
+LICENSE=	BSD3CLAUSE
 
-USES=			cpe
-CPE_VENDOR=		linuxfoundation
+USES=		cpe
+CPE_VENDOR=	linuxfoundation
 
-NO_ARCH=		yes
-NO_BUILD=		yes
-SHAREOWN=		www
-SHAREGRP=		www
+NO_ARCH=	yes
+NO_BUILD=	yes
+SHAREOWN=	www
+SHAREGRP=	www
 
-OPTIONS_DEFINE=		APACHE
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	APACHE
+OPTIONS_SUB=	yes
 
-APACHE_USES=		apache:run cpe
+APACHE_USES=	apache:run cpe
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-CONFDIR=		${PREFIX}/${CONFDIR_REL}
-CONFDIR_REL=		${APACHEETCDIR}/Includes
-PLIST_SUB+=		CONFDIR=${CONFDIR_REL}
-CONF=			dojo.conf
-SUB_FILES+=		pkg-message ${CONF}
+CONFDIR=	${PREFIX}/${CONFDIR_REL}
+CONFDIR_REL=	${APACHEETCDIR}/Includes
+PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
+CONF=		dojo.conf
+SUB_FILES+=	pkg-message ${CONF}
 .endif
 
 do-install:

@@ -1,3 +1,4 @@
+include/dune-fem-config.hh
 include/dune/fem/common/bindguard.hh
 include/dune/fem/common/coordinate.hh
 include/dune/fem/common/explicitfieldvector.hh
@@ -10,6 +11,7 @@ include/dune/fem/common/localcontribution.hh
 include/dune/fem/common/memory.hh
 include/dune/fem/common/referencevector.hh
 include/dune/fem/common/stackallocator.hh
+include/dune/fem/common/staticlistofint.hh
 include/dune/fem/common/tupletypetraits.hh
 include/dune/fem/common/tupleutility.hh
 include/dune/fem/common/typeindexedtuple.hh
@@ -70,6 +72,7 @@ include/dune/fem/gridpart/common/compositegeometry.hh
 include/dune/fem/gridpart/common/deaditerator.hh
 include/dune/fem/gridpart/common/defaultgridpartentity.hh
 include/dune/fem/gridpart/common/entitysearch.hh
+include/dune/fem/gridpart/common/extendedentity.hh
 include/dune/fem/gridpart/common/gridpart.hh
 include/dune/fem/gridpart/common/gridpart2gridview.hh
 include/dune/fem/gridpart/common/gridpartadapter.hh
@@ -77,7 +80,6 @@ include/dune/fem/gridpart/common/gridview2gridpart.hh
 include/dune/fem/gridpart/common/indexset.hh
 include/dune/fem/gridpart/common/localfunctiongeometry.hh
 include/dune/fem/gridpart/common/metatwistutility.hh
-include/dune/fem/gridpart/common/nonadaptiveindexset.hh
 include/dune/fem/gridpart/common/persistentindexset.hh
 include/dune/fem/gridpart/common/policies.hh
 include/dune/fem/gridpart/common/sharedgeometry.hh
@@ -280,6 +282,7 @@ include/dune/fem/quadrature/integrator.hh
 include/dune/fem/quadrature/interpolationquadrature.hh
 include/dune/fem/quadrature/intersectionquadrature.hh
 include/dune/fem/quadrature/lumpingquadrature.hh
+include/dune/fem/quadrature/modifiednewtoncotes_implementation.hh
 include/dune/fem/quadrature/pardgsimplexquadrature.hh
 include/dune/fem/quadrature/pyramidpoints.hh
 include/dune/fem/quadrature/quadprovider.hh
@@ -297,6 +300,7 @@ include/dune/fem/schemes/femscheme.hh
 include/dune/fem/schemes/galerkin.hh
 include/dune/fem/schemes/integrands.hh
 include/dune/fem/schemes/linearized.hh
+include/dune/fem/schemes/masslumping.hh
 include/dune/fem/schemes/molgalerkin.hh
 include/dune/fem/solver/cginverseoperator.hh
 include/dune/fem/solver/communication/fem.hh
@@ -304,6 +308,7 @@ include/dune/fem/solver/communication/hierarchical.hh
 include/dune/fem/solver/communication/owneroverlapcopy.hh
 include/dune/fem/solver/diagonalpreconditioner.hh
 include/dune/fem/solver/eigen.hh
+include/dune/fem/solver/fempreconditioning.hh
 include/dune/fem/solver/inverseoperatorinterface.hh
 include/dune/fem/solver/istl.hh
 include/dune/fem/solver/istlinverseoperators.hh
@@ -318,9 +323,12 @@ include/dune/fem/solver/odesolver.hh
 include/dune/fem/solver/odesolverinterface.hh
 include/dune/fem/solver/oemsolver.hh
 include/dune/fem/solver/parameter.hh
+include/dune/fem/solver/parameterdoc.hh
 include/dune/fem/solver/pardginverseoperators.hh
+include/dune/fem/solver/petscavailable.hh
 include/dune/fem/solver/petscinverseoperators.hh
 include/dune/fem/solver/preconditionedinverseoperator.hh
+include/dune/fem/solver/preconditionfunctionwrapper.hh
 include/dune/fem/solver/rungekutta/basicimplicit.hh
 include/dune/fem/solver/rungekutta/basicrow.hh
 include/dune/fem/solver/rungekutta/butchertable.hh
@@ -513,7 +521,8 @@ include/dune/fem/storage/subvector.hh
 include/dune/fem/version.hh
 lib/cmake/dune-fem/dune-fem-config-version.cmake
 lib/cmake/dune-fem/dune-fem-config.cmake
-lib/cmake/dune-fem/dune-fem-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dune-fem/dune-fem-scoped-targets-%%DUNE_FEM_CMAKE_HASH%%-release.cmake
+lib/cmake/dune-fem/dune-fem-scoped-targets-%%DUNE_FEM_CMAKE_HASH%%.cmake
 lib/cmake/dune-fem/dune-fem-targets.cmake
 lib/dunecontrol/dune-fem/dune.module
 lib/libdunefem.so

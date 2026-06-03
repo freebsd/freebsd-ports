@@ -1,6 +1,7 @@
 PORTNAME=	hfsexplorer
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	2021.10.9
+PORTREVISION=	2
 CATEGORIES=	filesystems sysutils java
 
 MAINTAINER=	ports@FreeBSD.org

@@ -5,7 +5,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.irori.org/dl/tool/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Handy utility to show codepoint information of given characters
 WWW=		https://www.irori.org/tool/kcode.html
 

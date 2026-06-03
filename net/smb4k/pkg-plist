@@ -12,6 +12,7 @@ share/dbus-1/system.d/org.kde.smb4k.mounthelper.conf
 share/doc/HTML/ca/smb4k/index.cache.bz2
 share/doc/HTML/ca/smb4k/index.docbook
 share/doc/HTML/en/smb4k/bookmarks_add_bookmark_dialog.png
+share/doc/HTML/en/smb4k/bookmarks_add_bookmark_dialog_input_widget.png
 share/doc/HTML/en/smb4k/bookmarks_editor.png
 share/doc/HTML/en/smb4k/bookmarks_editor_popup_menu.png
 share/doc/HTML/en/smb4k/bookmarks_editor_with_input_widget.png
@@ -69,6 +70,8 @@ share/doc/HTML/nl/smb4k/index.cache.bz2
 share/doc/HTML/nl/smb4k/index.docbook
 share/doc/HTML/pt_BR/smb4k/index.cache.bz2
 share/doc/HTML/pt_BR/smb4k/index.docbook
+share/doc/HTML/ru/smb4k/index.cache.bz2
+share/doc/HTML/ru/smb4k/index.docbook
 share/doc/HTML/sv/smb4k/index.cache.bz2
 share/doc/HTML/sv/smb4k/index.docbook
 share/doc/HTML/uk/smb4k/index.cache.bz2
@@ -134,6 +137,7 @@ share/locale/fi/LC_MESSAGES/smb4k.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
 share/locale/fr/LC_MESSAGES/smb4k-core.mo
 share/locale/fr/LC_MESSAGES/smb4k.mo
+share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
 share/locale/ga/LC_MESSAGES/smb4k-core.mo
 share/locale/ga/LC_MESSAGES/smb4k.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
@@ -221,7 +225,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
 share/locale/zh_TW/LC_MESSAGES/smb4k-core.mo
 share/locale/zh_TW/LC_MESSAGES/smb4k.mo
 share/metainfo/org.kde.smb4k.appdata.xml
-share/metainfo/org.kde.smb4kqml.appdata.xml
 share/plasma/plasmoids/org.kde.smb4kqml/contents/config/main.xml
 share/plasma/plasmoids/org.kde.smb4kqml/contents/ui/BookmarkItemDelegate.qml
 share/plasma/plasmoids/org.kde.smb4kqml/contents/ui/BookmarksPage.qml

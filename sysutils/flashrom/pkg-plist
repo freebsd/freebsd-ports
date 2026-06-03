@@ -4,5 +4,6 @@ lib/libflashrom.so
 lib/libflashrom.so.1
 lib/libflashrom.so.1.0.0
 libdata/pkgconfig/flashrom.pc
-share/man/man8/flashrom.8.gz
 sbin/flashrom
+share/bash-completion/completions/flashrom.bash
+%%MANPAGES%%share/man/man8/flashrom.8.gz

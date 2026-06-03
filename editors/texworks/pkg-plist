@@ -1,0 +1,10 @@
+bin/texworks
+%%LUA%%lib/texworks/libTWLuaPlugin.so
+%%PYTHON%%lib/texworks/libTWPythonPlugin.so
+share/applications/org.tug.texworks.desktop
+share/icons/hicolor/128x128/apps/TeXworks.png
+share/icons/hicolor/48x48/apps/TeXworks.png
+share/icons/hicolor/512x512/apps/TeXworks.png
+share/icons/hicolor/64x64/apps/TeXworks.png
+share/man/man1/texworks.1.gz
+share/metainfo/org.tug.texworks.metainfo.xml

@@ -1,11 +1,12 @@
 [
-{ type: install
+{ type: install, upgrade
   message: <<EOM
-Before lauch 'lollypop', define your music path directory.
+You can define your own music path directory:
 
-Replace PUTYOURMUSICDIR by your music path directory.
+    pkg install xdg-user-dirs
 
-gsettings set org.gnome.Lollypop music-path "['PUTYOURMUSICDIR']"
+    gsettings set org.gnome.Lollypop music-uris \
+        "['$(xdg-user-dir MUSIC | xargs printf 'file://%s')']"
 EOM
 }
 ]

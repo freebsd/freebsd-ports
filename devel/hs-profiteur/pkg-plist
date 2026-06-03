@@ -11,4 +11,4 @@
 %%DATADIR%%/data/js/tree-map.js
 %%DATADIR%%/data/js/unicode.js
 %%DATADIR%%/data/js/zoom.js
-%%DATADIR%%/jquery-3.3.1.min.js
+%%DATADIR%%/jquery-3.7.1.min.js

@@ -1,9 +1,9 @@
 PORTNAME=	fwup
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0
+DISTVERSION=	1.16.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurable embedded Linux firmware update creator and runner
 WWW=		https://github.com/fhunleth/fwup
 
@@ -15,15 +15,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/autogen:devel/autogen \
 		${LOCALBASE}/bin/help2man:misc/help2man \
 		${LOCALBASE}/bin/mdir:filesystems/mtools \
 		${LOCALBASE}/bin/zip:archivers/zip
-LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
-		libsodium.so:security/libsodium
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
-USES=		autoreconf libarchive libtool pkgconfig shebangfix
+USES=		autoreconf gettext-runtime libarchive libtool pkgconfig \
+		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	fhunleth
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SHEBANG_FILES=	img2fwup scripts/*.sh
 
@@ -37,10 +37,12 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 pre-configure:
-	@(cd ${WRKSRC} && ./autogen.sh)
+	@(cd ${WRKSRC} && \
+		./autogen.sh)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

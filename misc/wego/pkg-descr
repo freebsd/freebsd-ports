@@ -1,1 +1,22 @@
 wego is a weather client for the terminal.
+
+Features:
+* show forecast for 1 to 7 days
+* multiple backends: `openweathermap`, `weatherapi`, `open-meteo`, `smhi`,
+  `caiyun`, `worldweatheronline`, `pirateweather`, and `json`
+* multiple frontends: `ascii-art-table` (default), `emoji`, `markdown`,
+  and `json`
+* displayed info:
+  * temperature range ([felt](https://en.wikipedia.org/wiki/Wind_chill)
+    and measured)
+  * windspeed and direction
+  * viewing distance
+  * precipitation amount and probability
+  * humidity
+* unit systems: `metric`, `imperial`, `si`, `metric-ms`
+* disk caching of weather data with configurable TTL (`--cache-ttl`)
+* multi language support
+* config file for default location which can be overridden by commandline
+* automatic config management with [ingo](https://github.com/schachmat/ingo)
+* built-in man page (`wego --man`)
+* composable via JSON: pipe data between the `json` backend and `json` frontend

@@ -1,24 +1,28 @@
---- src/sn_data.h.orig	2020-04-20 01:57:30 UTC
+--- src/sn_data.h.orig	2025-09-22 23:50:28 UTC
 +++ src/sn_data.h
-@@ -38,9 +38,9 @@ int HEADSIZE[]={0    ,14};		/* ppp: 4 or 0 or nothing 
- char *NETDEV[]={"ppp","ed"};
- int HEADSIZE[]={4    ,14};
- */
+@@ -32,15 +32,10 @@ int HEADSIZE[]={0    ,14};		/* ppp: 4 or 0 or nothing 
+ int HEADSIZE[]={0    ,14};		/* ppp: 4 or 0 or nothing */
+ #endif
+ 
+-#ifdef FREEBSD				/* ppp: 4 or 0 ? */
+-/*
+-#define NETDEV_NR      2
+-char *NETDEV[]={"ppp","ed"};
+-int HEADSIZE[]={4    ,14};
+-*/
 -#define NETDEV_NR      1
 -char *NETDEV[]={"ed"};
 -int HEADSIZE[]={14};
-++#define NETDEV_NR      6
-++char *NETDEV[]={"fxp","re","em","ppp","tun","lo"};
-++int HEADSIZE[]={14   ,14  ,14  ,4    ,4    ,4   };
++#ifdef __FreeBSD__				/* ppp: 4 or 0 ? */
++#define NETDEV_NR      6
++char *NETDEV[]={"fxp","re","em","ppp","tun","lo"};
++int HEADSIZE[]={14   ,14  ,14  ,4    ,4    ,4   };
  #endif
  
  #ifdef BSDI				/* ppp: 4 or 0 ? */
-@@ -155,7 +155,7 @@ char *SHARED, *connection_data, *timing, *running_conn
- 						  *logged_connections;
- int *LISTlength, *DATAlength, memory_id;
- unsigned int  *TCP_nr_of_packets, *ICMP_nr_of_packets, *UDP_nr_of_packets;
--extern unsigned int  *IP_nr_of_packets;
-+unsigned int  *IP_nr_of_packets;
- unsigned long *TCP_bytes_in_packets, *UDP_bytes_in_packets;
- int *DESC_LEN;
- 
+@@ -203,5 +198,3 @@ unsigned int debug_cnt=0;
+ FILE *debug_dev;
+ unsigned int debug_cnt=0;
+ #endif
+-
+-

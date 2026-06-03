@@ -1,5 +1,5 @@
 PORTNAME=	DBIx-Class-Storage-TxnEndHook
-PORTVERSION=	0.01
+DISTVERSION=	0.02
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
-USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

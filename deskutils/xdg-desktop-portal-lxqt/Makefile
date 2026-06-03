@@ -1,13 +1,14 @@
 PORTNAME=	xdg-desktop-portal-lxqt
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	lxqt@FreeBSD.org
-COMMENT=	Portal frontend service for LXQT
+COMMENT=	Portal frontend service for LXQt
 WWW=		https://github.com/lxqt/xdg-desktop-portal-lxqt
 
 LICENSE=	LGPL21
+
+RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
 USES=		cmake kde:6 lxqt:2 pkgconfig qt:6 tar:xz
 USE_KDE=	windowsystem

@@ -1,14 +1,56 @@
+# unbundle sdsl-lite
+
 --- CMakeLists.txt.orig	2023-04-19 15:25:32 UTC
 +++ CMakeLists.txt
-@@ -256,9 +256,9 @@ target_link_libraries(seqwish
-   "${sdsl-lite_LIB}/libsdsl.a"
-   "${sdsl-lite-divsufsort_LIB}/libdivsufsort.a"
-   "${sdsl-lite-divsufsort_LIB}/libdivsufsort64.a"
+@@ -79,18 +79,15 @@ include_directories("${PROJECT_SOURCE_DIR}")
+ # Add external projects
+ include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
+ 
+-# sdsl-lite (full build using its cmake config)
+-ExternalProject_Add(sdsl-lite
+-  SOURCE_DIR "${CMAKE_SOURCE_DIR}/deps/sdsl-lite"
+-  CMAKE_ARGS "${CMAKE_ARGS};-DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>"
+-  UPDATE_COMMAND ""
+-  INSTALL_COMMAND "")
+-ExternalProject_Get_property(sdsl-lite INSTALL_DIR)
+-set(sdsl-lite_INCLUDE "${INSTALL_DIR}/src/sdsl-lite-build/include")
+-set(sdsl-lite-divsufsort_INCLUDE "${INSTALL_DIR}/src/sdsl-lite-build/external/libdivsufsort/include")
+-set(sdsl-lite_LIB "${INSTALL_DIR}/src/sdsl-lite-build/lib")
+-set(sdsl-lite-divsufsort_LIB "${INSTALL_DIR}/src/sdsl-lite-build/external/libdivsufsort/lib")
++# sdsl-lite - use system library
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(SDSL REQUIRED sdsl-lite)
++pkg_check_modules(DIVSUFSORT REQUIRED libdivsufsort)
++pkg_check_modules(DIVSUFSORT64 REQUIRED libdivsufsort64)
++set(sdsl-lite_INCLUDE "${SDSL_INCLUDE_DIRS}")
++set(sdsl-lite-divsufsort_INCLUDE "${DIVSUFSORT_INCLUDE_DIRS}")
++link_directories(${SDSL_LIBRARY_DIRS} ${DIVSUFSORT_LIBRARY_DIRS} ${DIVSUFSORT64_LIBRARY_DIRS})
+ 
+ # taywee's C++ args library, header only
+ ExternalProject_Add(tayweeargs
+   SOURCE_DIR "${CMAKE_SOURCE_DIR}/deps/args"
+@@ -227,7 +224,6 @@ add_executable(seqwish
+   ${CMAKE_SOURCE_DIR}/src/version.cpp
+   )
+ add_dependencies(seqwish tayweeargs)
+-add_dependencies(seqwish sdsl-lite)
+ add_dependencies(seqwish gzipreader)
+ add_dependencies(seqwish mmmulti)
+ add_dependencies(seqwish iitii)
+@@ -253,11 +249,11 @@ target_include_directories(seqwish PUBLIC
+   "${paryfor_INCLUDE}"
+   "${mio_INCLUDE}")
+ target_link_libraries(seqwish
+-  "${sdsl-lite_LIB}/libsdsl.a"
+-  "${sdsl-lite-divsufsort_LIB}/libdivsufsort.a"
+-  "${sdsl-lite-divsufsort_LIB}/libdivsufsort64.a"
 -  "-latomic"
++  ${SDSL_LIBRARIES}
++  ${DIVSUFSORT_LIBRARIES}
++  ${DIVSUFSORT64_LIBRARIES}
 +  #"-latomic"
    Threads::Threads
 -  jemalloc
 +  #jemalloc
    z)
  if (BUILD_STATIC)
-   #set(CMAKE_EXE_LINKER_FLAGS "-static")

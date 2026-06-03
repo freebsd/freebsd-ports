@@ -1,6 +1,6 @@
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05.20170719
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	java devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,7 +35,7 @@ SUB_FILES=	jhindexer \
 		jhsearch
 
 post-patch:
-	${REINPLACE_CMD} '/javac.source/s,4,6,;/javac.target/s,4,6,' \
+	${REINPLACE_CMD} '/javac.source/s,4,8,;/javac.target/s,4,8,' \
 		${WRKSRC}/*/nbproject/project.properties
 
 do-install:

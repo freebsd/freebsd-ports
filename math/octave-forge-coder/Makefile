@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-coder
 DISTVERSIONPREFIX=	coder-
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,12 +17,5 @@ GH_ACCOUNT=	shsajjadi
 GH_PROJECT=	OctaveCoder
 
 OCTAVE_SRC=		${GH_PROJECT}-coder-${DISTVERSION}
-
-WRKSRC=		${WRKDIR}/${OCTAVE_SRC}
-
-do-build:
-	cd ${WRKSRC} && \
-	octave-cli -W -H -q --no-site-file --eval "pre_install" && \
-	${RM} pre_install.m
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	link-grammar
-DISTVERSION=	5.10.5
-PORTREVISION=	2
+DISTVERSION=	5.13.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.gnucash.org/${PORTNAME}/downloads/${PORTVERSION}/
 
@@ -10,6 +10,8 @@ WWW=		https://opencog.github.io/link-grammar-website/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c++11-lib dos2unix gmake libtool localbase ncurses \
 		pathfix pkgconfig sqlite
@@ -21,12 +23,10 @@ CONFIGURE_ARGS=	--disable-maintainer-mode \
 
 INSTALL_TARGET=	install-strip
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
-
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_SUB=		yes
-OPTIONS_DEFINE=		EDITLINE JAVA PERL SAT_SOLVER PYTHON
+OPTIONS_DEFINE=		EDITLINE JAVA PERL SAT_SOLVER
 OPTIONS_DEFAULT=	EDITLINE HUNSPELL SAT_SOLVER
 
 OPTIONS_MULTI=			SPELL
@@ -53,8 +53,5 @@ PERL_USES=			perl5
 SAT_SOLVER_CONFIGURE_ENABLE=	sat-solver
 SAT_SOLVER_DESC=		Use boolean SAT parser
 SAT_SOLVER_LIB_DEPENDS=		libminisat.so:math/minisat
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblink-grammar.so.${DISTVERSION}  # see https://github.com/opencog/link-grammar/issues/645
 
 .include <bsd.port.mk>

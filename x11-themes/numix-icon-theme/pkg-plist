@@ -7779,6 +7779,7 @@ share/icons/Numix/16/mimetypes/application-msword.svg
 share/icons/Numix/16/mimetypes/application-music-blank.svg
 share/icons/Numix/16/mimetypes/application-music-playlist-blank.svg
 share/icons/Numix/16/mimetypes/application-mxf.svg
+share/icons/Numix/16/mimetypes/application-netcdf.svg
 share/icons/Numix/16/mimetypes/application-octet-stream.svg
 share/icons/Numix/16/mimetypes/application-ogg.svg
 share/icons/Numix/16/mimetypes/application-pdf.svg
@@ -7830,6 +7831,7 @@ share/icons/Numix/16/mimetypes/application-vnd.coffeescript.svg
 share/icons/Numix/16/mimetypes/application-vnd.comicbook+zip.svg
 share/icons/Numix/16/mimetypes/application-vnd.corel-draw.svg
 share/icons/Numix/16/mimetypes/application-vnd.cups-ppd.svg
+share/icons/Numix/16/mimetypes/application-vnd.dbf.svg
 share/icons/Numix/16/mimetypes/application-vnd.debian.binary-package.svg
 share/icons/Numix/16/mimetypes/application-vnd.efi.img.svg
 share/icons/Numix/16/mimetypes/application-vnd.fai.igc.svg
@@ -7978,6 +7980,7 @@ share/icons/Numix/16/mimetypes/application-x-bzdvi.svg
 share/icons/Numix/16/mimetypes/application-x-bzip-compressed-tar.svg
 share/icons/Numix/16/mimetypes/application-x-bzip-compressed.svg
 share/icons/Numix/16/mimetypes/application-x-bzip.svg
+share/icons/Numix/16/mimetypes/application-x-bzip2.svg
 share/icons/Numix/16/mimetypes/application-x-bzpdf.svg
 share/icons/Numix/16/mimetypes/application-x-bzpostscript.svg
 share/icons/Numix/16/mimetypes/application-x-cb7.svg
@@ -8124,6 +8127,7 @@ share/icons/Numix/16/mimetypes/application-x-lzpdf.svg
 share/icons/Numix/16/mimetypes/application-x-m4.svg
 share/icons/Numix/16/mimetypes/application-x-mathematica.svg
 share/icons/Numix/16/mimetypes/application-x-matroska.svg
+share/icons/Numix/16/mimetypes/application-x-mif.svg
 share/icons/Numix/16/mimetypes/application-x-mimearchive.svg
 share/icons/Numix/16/mimetypes/application-x-mobi8-ebook.svg
 share/icons/Numix/16/mimetypes/application-x-mobipocket-ebook.svg
@@ -8143,6 +8147,7 @@ share/icons/Numix/16/mimetypes/application-x-navi-animation.svg
 share/icons/Numix/16/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/16/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/16/mimetypes/application-x-nes-rom.svg
+share/icons/Numix/16/mimetypes/application-x-netcdf.svg
 share/icons/Numix/16/mimetypes/application-x-nintendo-ds-rom.svg
 share/icons/Numix/16/mimetypes/application-x-nintendo-switch-xci.svg
 share/icons/Numix/16/mimetypes/application-x-nx-xci.svg
@@ -8176,6 +8181,9 @@ share/icons/Numix/16/mimetypes/application-x-pyspread-spreadsheet.svg
 share/icons/Numix/16/mimetypes/application-x-python-bytecode.svg
 share/icons/Numix/16/mimetypes/application-x-qet-element.svg
 share/icons/Numix/16/mimetypes/application-x-qet-project.svg
+share/icons/Numix/16/mimetypes/application-x-qgis-composer-template.svg
+share/icons/Numix/16/mimetypes/application-x-qgis-project-container.svg
+share/icons/Numix/16/mimetypes/application-x-qgis-project.svg
 share/icons/Numix/16/mimetypes/application-x-qtiplot.svg
 share/icons/Numix/16/mimetypes/application-x-quattropro.svg
 share/icons/Numix/16/mimetypes/application-x-quemu-disk.svg
@@ -8567,6 +8575,7 @@ share/icons/Numix/16/mimetypes/image-generic.svg
 share/icons/Numix/16/mimetypes/image-gif.svg
 share/icons/Numix/16/mimetypes/image-heif.svg
 share/icons/Numix/16/mimetypes/image-ico.svg
+share/icons/Numix/16/mimetypes/image-jp2.svg
 share/icons/Numix/16/mimetypes/image-jpeg.svg
 share/icons/Numix/16/mimetypes/image-jpeg2000.svg
 share/icons/Numix/16/mimetypes/image-jxl.svg
@@ -8789,6 +8798,7 @@ share/icons/Numix/16/mimetypes/text-x-crystal.svg
 share/icons/Numix/16/mimetypes/text-x-csharp.svg
 share/icons/Numix/16/mimetypes/text-x-csrc.svg
 share/icons/Numix/16/mimetypes/text-x-css.svg
+share/icons/Numix/16/mimetypes/text-x-dockerfile.svg
 share/icons/Numix/16/mimetypes/text-x-dsrc.svg
 share/icons/Numix/16/mimetypes/text-x-dtd.svg
 share/icons/Numix/16/mimetypes/text-x-emacs-lisp.svg
@@ -8826,6 +8836,7 @@ share/icons/Numix/16/mimetypes/text-x-meson.svg
 share/icons/Numix/16/mimetypes/text-x-microdvd.svg
 share/icons/Numix/16/mimetypes/text-x-nfo.svg
 share/icons/Numix/16/mimetypes/text-x-nim.svg
+share/icons/Numix/16/mimetypes/text-x-nix.svg
 share/icons/Numix/16/mimetypes/text-x-objchdr.svg
 share/icons/Numix/16/mimetypes/text-x-objcsrc.svg
 share/icons/Numix/16/mimetypes/text-x-ocaml.svg
@@ -13235,6 +13246,7 @@ share/icons/Numix/22/mimetypes/application-msword.svg
 share/icons/Numix/22/mimetypes/application-music-blank.svg
 share/icons/Numix/22/mimetypes/application-music-playlist-blank.svg
 share/icons/Numix/22/mimetypes/application-mxf.svg
+share/icons/Numix/22/mimetypes/application-netcdf.svg
 share/icons/Numix/22/mimetypes/application-octet-stream.svg
 share/icons/Numix/22/mimetypes/application-ogg.svg
 share/icons/Numix/22/mimetypes/application-pdf.svg
@@ -13286,6 +13298,7 @@ share/icons/Numix/22/mimetypes/application-vnd.coffeescript.svg
 share/icons/Numix/22/mimetypes/application-vnd.comicbook+zip.svg
 share/icons/Numix/22/mimetypes/application-vnd.corel-draw.svg
 share/icons/Numix/22/mimetypes/application-vnd.cups-ppd.svg
+share/icons/Numix/22/mimetypes/application-vnd.dbf.svg
 share/icons/Numix/22/mimetypes/application-vnd.debian.binary-package.svg
 share/icons/Numix/22/mimetypes/application-vnd.efi.img.svg
 share/icons/Numix/22/mimetypes/application-vnd.fai.igc.svg
@@ -13434,6 +13447,7 @@ share/icons/Numix/22/mimetypes/application-x-bzdvi.svg
 share/icons/Numix/22/mimetypes/application-x-bzip-compressed-tar.svg
 share/icons/Numix/22/mimetypes/application-x-bzip-compressed.svg
 share/icons/Numix/22/mimetypes/application-x-bzip.svg
+share/icons/Numix/22/mimetypes/application-x-bzip2.svg
 share/icons/Numix/22/mimetypes/application-x-bzpdf.svg
 share/icons/Numix/22/mimetypes/application-x-bzpostscript.svg
 share/icons/Numix/22/mimetypes/application-x-cb7.svg
@@ -13580,6 +13594,7 @@ share/icons/Numix/22/mimetypes/application-x-lzpdf.svg
 share/icons/Numix/22/mimetypes/application-x-m4.svg
 share/icons/Numix/22/mimetypes/application-x-mathematica.svg
 share/icons/Numix/22/mimetypes/application-x-matroska.svg
+share/icons/Numix/22/mimetypes/application-x-mif.svg
 share/icons/Numix/22/mimetypes/application-x-mimearchive.svg
 share/icons/Numix/22/mimetypes/application-x-mobi8-ebook.svg
 share/icons/Numix/22/mimetypes/application-x-mobipocket-ebook.svg
@@ -13599,6 +13614,7 @@ share/icons/Numix/22/mimetypes/application-x-navi-animation.svg
 share/icons/Numix/22/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/22/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/22/mimetypes/application-x-nes-rom.svg
+share/icons/Numix/22/mimetypes/application-x-netcdf.svg
 share/icons/Numix/22/mimetypes/application-x-nintendo-ds-rom.svg
 share/icons/Numix/22/mimetypes/application-x-nintendo-switch-xci.svg
 share/icons/Numix/22/mimetypes/application-x-nx-xci.svg
@@ -13632,6 +13648,9 @@ share/icons/Numix/22/mimetypes/application-x-pyspread-spreadsheet.svg
 share/icons/Numix/22/mimetypes/application-x-python-bytecode.svg
 share/icons/Numix/22/mimetypes/application-x-qet-element.svg
 share/icons/Numix/22/mimetypes/application-x-qet-project.svg
+share/icons/Numix/22/mimetypes/application-x-qgis-composer-template.svg
+share/icons/Numix/22/mimetypes/application-x-qgis-project-container.svg
+share/icons/Numix/22/mimetypes/application-x-qgis-project.svg
 share/icons/Numix/22/mimetypes/application-x-qtiplot.svg
 share/icons/Numix/22/mimetypes/application-x-quattropro.svg
 share/icons/Numix/22/mimetypes/application-x-quemu-disk.svg
@@ -14023,6 +14042,7 @@ share/icons/Numix/22/mimetypes/image-generic.svg
 share/icons/Numix/22/mimetypes/image-gif.svg
 share/icons/Numix/22/mimetypes/image-heif.svg
 share/icons/Numix/22/mimetypes/image-ico.svg
+share/icons/Numix/22/mimetypes/image-jp2.svg
 share/icons/Numix/22/mimetypes/image-jpeg.svg
 share/icons/Numix/22/mimetypes/image-jpeg2000.svg
 share/icons/Numix/22/mimetypes/image-jxl.svg
@@ -14245,6 +14265,7 @@ share/icons/Numix/22/mimetypes/text-x-crystal.svg
 share/icons/Numix/22/mimetypes/text-x-csharp.svg
 share/icons/Numix/22/mimetypes/text-x-csrc.svg
 share/icons/Numix/22/mimetypes/text-x-css.svg
+share/icons/Numix/22/mimetypes/text-x-dockerfile.svg
 share/icons/Numix/22/mimetypes/text-x-dsrc.svg
 share/icons/Numix/22/mimetypes/text-x-dtd.svg
 share/icons/Numix/22/mimetypes/text-x-emacs-lisp.svg
@@ -14282,6 +14303,7 @@ share/icons/Numix/22/mimetypes/text-x-meson.svg
 share/icons/Numix/22/mimetypes/text-x-microdvd.svg
 share/icons/Numix/22/mimetypes/text-x-nfo.svg
 share/icons/Numix/22/mimetypes/text-x-nim.svg
+share/icons/Numix/22/mimetypes/text-x-nix.svg
 share/icons/Numix/22/mimetypes/text-x-objchdr.svg
 share/icons/Numix/22/mimetypes/text-x-objcsrc.svg
 share/icons/Numix/22/mimetypes/text-x-ocaml.svg
@@ -18418,6 +18440,7 @@ share/icons/Numix/24/mimetypes/application-msword.svg
 share/icons/Numix/24/mimetypes/application-music-blank.svg
 share/icons/Numix/24/mimetypes/application-music-playlist-blank.svg
 share/icons/Numix/24/mimetypes/application-mxf.svg
+share/icons/Numix/24/mimetypes/application-netcdf.svg
 share/icons/Numix/24/mimetypes/application-octet-stream.svg
 share/icons/Numix/24/mimetypes/application-ogg.svg
 share/icons/Numix/24/mimetypes/application-pdf.svg
@@ -18466,6 +18489,7 @@ share/icons/Numix/24/mimetypes/application-vnd.coffeescript.svg
 share/icons/Numix/24/mimetypes/application-vnd.comicbook+zip.svg
 share/icons/Numix/24/mimetypes/application-vnd.corel-draw.svg
 share/icons/Numix/24/mimetypes/application-vnd.cups-ppd.svg
+share/icons/Numix/24/mimetypes/application-vnd.dbf.svg
 share/icons/Numix/24/mimetypes/application-vnd.debian.binary-package.svg
 share/icons/Numix/24/mimetypes/application-vnd.efi.img.svg
 share/icons/Numix/24/mimetypes/application-vnd.fai.igc.svg
@@ -18591,6 +18615,7 @@ share/icons/Numix/24/mimetypes/application-x-bzdvi.svg
 share/icons/Numix/24/mimetypes/application-x-bzip-compressed-tar.svg
 share/icons/Numix/24/mimetypes/application-x-bzip-compressed.svg
 share/icons/Numix/24/mimetypes/application-x-bzip.svg
+share/icons/Numix/24/mimetypes/application-x-bzip2.svg
 share/icons/Numix/24/mimetypes/application-x-bzpdf.svg
 share/icons/Numix/24/mimetypes/application-x-bzpostscript.svg
 share/icons/Numix/24/mimetypes/application-x-cb7.svg
@@ -18733,6 +18758,7 @@ share/icons/Numix/24/mimetypes/application-x-lzpdf.svg
 share/icons/Numix/24/mimetypes/application-x-m4.svg
 share/icons/Numix/24/mimetypes/application-x-mathematica.svg
 share/icons/Numix/24/mimetypes/application-x-matroska.svg
+share/icons/Numix/24/mimetypes/application-x-mif.svg
 share/icons/Numix/24/mimetypes/application-x-mobi8-ebook.svg
 share/icons/Numix/24/mimetypes/application-x-mobipocket-ebook.svg
 share/icons/Numix/24/mimetypes/application-x-mono-develop.svg
@@ -18749,6 +18775,7 @@ share/icons/Numix/24/mimetypes/application-x-navi-animation.svg
 share/icons/Numix/24/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/24/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/24/mimetypes/application-x-nes-rom.svg
+share/icons/Numix/24/mimetypes/application-x-netcdf.svg
 share/icons/Numix/24/mimetypes/application-x-nintendo-ds-rom.svg
 share/icons/Numix/24/mimetypes/application-x-nintendo-switch-xci.svg
 share/icons/Numix/24/mimetypes/application-x-nx-xci.svg
@@ -18778,6 +18805,9 @@ share/icons/Numix/24/mimetypes/application-x-powershell.svg
 share/icons/Numix/24/mimetypes/application-x-pyspread-bz-spreadsheet.svg
 share/icons/Numix/24/mimetypes/application-x-pyspread-spreadsheet.svg
 share/icons/Numix/24/mimetypes/application-x-python-bytecode.svg
+share/icons/Numix/24/mimetypes/application-x-qgis-composer-template.svg
+share/icons/Numix/24/mimetypes/application-x-qgis-project-container.svg
+share/icons/Numix/24/mimetypes/application-x-qgis-project.svg
 share/icons/Numix/24/mimetypes/application-x-qtiplot.svg
 share/icons/Numix/24/mimetypes/application-x-quattropro.svg
 share/icons/Numix/24/mimetypes/application-x-quemu-disk.svg
@@ -19162,6 +19192,7 @@ share/icons/Numix/24/mimetypes/image-generic.svg
 share/icons/Numix/24/mimetypes/image-gif.svg
 share/icons/Numix/24/mimetypes/image-heif.svg
 share/icons/Numix/24/mimetypes/image-ico.svg
+share/icons/Numix/24/mimetypes/image-jp2.svg
 share/icons/Numix/24/mimetypes/image-jpeg.svg
 share/icons/Numix/24/mimetypes/image-jpeg2000.svg
 share/icons/Numix/24/mimetypes/image-jxl.svg
@@ -19379,6 +19410,7 @@ share/icons/Numix/24/mimetypes/text-x-crystal.svg
 share/icons/Numix/24/mimetypes/text-x-csharp.svg
 share/icons/Numix/24/mimetypes/text-x-csrc.svg
 share/icons/Numix/24/mimetypes/text-x-css.svg
+share/icons/Numix/24/mimetypes/text-x-dockerfile.svg
 share/icons/Numix/24/mimetypes/text-x-dsrc.svg
 share/icons/Numix/24/mimetypes/text-x-emacs-lisp.svg
 share/icons/Numix/24/mimetypes/text-x-erlang.svg
@@ -19413,6 +19445,7 @@ share/icons/Numix/24/mimetypes/text-x-meson.svg
 share/icons/Numix/24/mimetypes/text-x-microdvd.svg
 share/icons/Numix/24/mimetypes/text-x-nfo.svg
 share/icons/Numix/24/mimetypes/text-x-nim.svg
+share/icons/Numix/24/mimetypes/text-x-nix.svg
 share/icons/Numix/24/mimetypes/text-x-objchdr.svg
 share/icons/Numix/24/mimetypes/text-x-objcsrc.svg
 share/icons/Numix/24/mimetypes/text-x-ocaml.svg
@@ -23516,6 +23549,7 @@ share/icons/Numix/32/mimetypes/application-msword.svg
 share/icons/Numix/32/mimetypes/application-music-blank.svg
 share/icons/Numix/32/mimetypes/application-music-playlist-blank.svg
 share/icons/Numix/32/mimetypes/application-mxf.svg
+share/icons/Numix/32/mimetypes/application-netcdf.svg
 share/icons/Numix/32/mimetypes/application-octet-stream.svg
 share/icons/Numix/32/mimetypes/application-ogg.svg
 share/icons/Numix/32/mimetypes/application-pdf.svg
@@ -23567,6 +23601,7 @@ share/icons/Numix/32/mimetypes/application-vnd.coffeescript.svg
 share/icons/Numix/32/mimetypes/application-vnd.comicbook+zip.svg
 share/icons/Numix/32/mimetypes/application-vnd.corel-draw.svg
 share/icons/Numix/32/mimetypes/application-vnd.cups-ppd.svg
+share/icons/Numix/32/mimetypes/application-vnd.dbf.svg
 share/icons/Numix/32/mimetypes/application-vnd.debian.binary-package.svg
 share/icons/Numix/32/mimetypes/application-vnd.efi.img.svg
 share/icons/Numix/32/mimetypes/application-vnd.fai.igc.svg
@@ -23715,6 +23750,7 @@ share/icons/Numix/32/mimetypes/application-x-bzdvi.svg
 share/icons/Numix/32/mimetypes/application-x-bzip-compressed-tar.svg
 share/icons/Numix/32/mimetypes/application-x-bzip-compressed.svg
 share/icons/Numix/32/mimetypes/application-x-bzip.svg
+share/icons/Numix/32/mimetypes/application-x-bzip2.svg
 share/icons/Numix/32/mimetypes/application-x-bzpdf.svg
 share/icons/Numix/32/mimetypes/application-x-bzpostscript.svg
 share/icons/Numix/32/mimetypes/application-x-cb7.svg
@@ -23861,6 +23897,7 @@ share/icons/Numix/32/mimetypes/application-x-lzpdf.svg
 share/icons/Numix/32/mimetypes/application-x-m4.svg
 share/icons/Numix/32/mimetypes/application-x-mathematica.svg
 share/icons/Numix/32/mimetypes/application-x-matroska.svg
+share/icons/Numix/32/mimetypes/application-x-mif.svg
 share/icons/Numix/32/mimetypes/application-x-mimearchive.svg
 share/icons/Numix/32/mimetypes/application-x-mobi8-ebook.svg
 share/icons/Numix/32/mimetypes/application-x-mobipocket-ebook.svg
@@ -23880,6 +23917,7 @@ share/icons/Numix/32/mimetypes/application-x-navi-animation.svg
 share/icons/Numix/32/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/32/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/32/mimetypes/application-x-nes-rom.svg
+share/icons/Numix/32/mimetypes/application-x-netcdf.svg
 share/icons/Numix/32/mimetypes/application-x-nintendo-ds-rom.svg
 share/icons/Numix/32/mimetypes/application-x-nintendo-switch-xci.svg
 share/icons/Numix/32/mimetypes/application-x-nx-xci.svg
@@ -23913,6 +23951,9 @@ share/icons/Numix/32/mimetypes/application-x-pyspread-spreadsheet.svg
 share/icons/Numix/32/mimetypes/application-x-python-bytecode.svg
 share/icons/Numix/32/mimetypes/application-x-qet-element.svg
 share/icons/Numix/32/mimetypes/application-x-qet-project.svg
+share/icons/Numix/32/mimetypes/application-x-qgis-composer-template.svg
+share/icons/Numix/32/mimetypes/application-x-qgis-project-container.svg
+share/icons/Numix/32/mimetypes/application-x-qgis-project.svg
 share/icons/Numix/32/mimetypes/application-x-qtiplot.svg
 share/icons/Numix/32/mimetypes/application-x-quattropro.svg
 share/icons/Numix/32/mimetypes/application-x-quemu-disk.svg
@@ -24304,6 +24345,7 @@ share/icons/Numix/32/mimetypes/image-generic.svg
 share/icons/Numix/32/mimetypes/image-gif.svg
 share/icons/Numix/32/mimetypes/image-heif.svg
 share/icons/Numix/32/mimetypes/image-ico.svg
+share/icons/Numix/32/mimetypes/image-jp2.svg
 share/icons/Numix/32/mimetypes/image-jpeg.svg
 share/icons/Numix/32/mimetypes/image-jpeg2000.svg
 share/icons/Numix/32/mimetypes/image-jxl.svg
@@ -24526,6 +24568,7 @@ share/icons/Numix/32/mimetypes/text-x-crystal.svg
 share/icons/Numix/32/mimetypes/text-x-csharp.svg
 share/icons/Numix/32/mimetypes/text-x-csrc.svg
 share/icons/Numix/32/mimetypes/text-x-css.svg
+share/icons/Numix/32/mimetypes/text-x-dockerfile.svg
 share/icons/Numix/32/mimetypes/text-x-dsrc.svg
 share/icons/Numix/32/mimetypes/text-x-dtd.svg
 share/icons/Numix/32/mimetypes/text-x-emacs-lisp.svg
@@ -24563,6 +24606,7 @@ share/icons/Numix/32/mimetypes/text-x-meson.svg
 share/icons/Numix/32/mimetypes/text-x-microdvd.svg
 share/icons/Numix/32/mimetypes/text-x-nfo.svg
 share/icons/Numix/32/mimetypes/text-x-nim.svg
+share/icons/Numix/32/mimetypes/text-x-nix.svg
 share/icons/Numix/32/mimetypes/text-x-objchdr.svg
 share/icons/Numix/32/mimetypes/text-x-objcsrc.svg
 share/icons/Numix/32/mimetypes/text-x-ocaml.svg
@@ -25984,6 +26028,7 @@ share/icons/Numix/48/mimetypes/application-msword.svg
 share/icons/Numix/48/mimetypes/application-music-blank.svg
 share/icons/Numix/48/mimetypes/application-music-playlist-blank.svg
 share/icons/Numix/48/mimetypes/application-mxf.svg
+share/icons/Numix/48/mimetypes/application-netcdf.svg
 share/icons/Numix/48/mimetypes/application-octet-stream.svg
 share/icons/Numix/48/mimetypes/application-ogg.svg
 share/icons/Numix/48/mimetypes/application-pdf.svg
@@ -26032,6 +26077,7 @@ share/icons/Numix/48/mimetypes/application-vnd.coffeescript.svg
 share/icons/Numix/48/mimetypes/application-vnd.comicbook+zip.svg
 share/icons/Numix/48/mimetypes/application-vnd.corel-draw.svg
 share/icons/Numix/48/mimetypes/application-vnd.cups-ppd.svg
+share/icons/Numix/48/mimetypes/application-vnd.dbf.svg
 share/icons/Numix/48/mimetypes/application-vnd.debian.binary-package.svg
 share/icons/Numix/48/mimetypes/application-vnd.efi.img.svg
 share/icons/Numix/48/mimetypes/application-vnd.fai.igc.svg
@@ -26157,6 +26203,7 @@ share/icons/Numix/48/mimetypes/application-x-bzdvi.svg
 share/icons/Numix/48/mimetypes/application-x-bzip-compressed-tar.svg
 share/icons/Numix/48/mimetypes/application-x-bzip-compressed.svg
 share/icons/Numix/48/mimetypes/application-x-bzip.svg
+share/icons/Numix/48/mimetypes/application-x-bzip2.svg
 share/icons/Numix/48/mimetypes/application-x-bzpdf.svg
 share/icons/Numix/48/mimetypes/application-x-bzpostscript.svg
 share/icons/Numix/48/mimetypes/application-x-cb7.svg
@@ -26299,6 +26346,7 @@ share/icons/Numix/48/mimetypes/application-x-lzpdf.svg
 share/icons/Numix/48/mimetypes/application-x-m4.svg
 share/icons/Numix/48/mimetypes/application-x-mathematica.svg
 share/icons/Numix/48/mimetypes/application-x-matroska.svg
+share/icons/Numix/48/mimetypes/application-x-mif.svg
 share/icons/Numix/48/mimetypes/application-x-mobi8-ebook.svg
 share/icons/Numix/48/mimetypes/application-x-mobipocket-ebook.svg
 share/icons/Numix/48/mimetypes/application-x-mono-develop.svg
@@ -26315,6 +26363,7 @@ share/icons/Numix/48/mimetypes/application-x-navi-animation.svg
 share/icons/Numix/48/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/48/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/48/mimetypes/application-x-nes-rom.svg
+share/icons/Numix/48/mimetypes/application-x-netcdf.svg
 share/icons/Numix/48/mimetypes/application-x-nintendo-ds-rom.svg
 share/icons/Numix/48/mimetypes/application-x-nintendo-switch-xci.svg
 share/icons/Numix/48/mimetypes/application-x-nx-xci.svg
@@ -26344,6 +26393,9 @@ share/icons/Numix/48/mimetypes/application-x-powershell.svg
 share/icons/Numix/48/mimetypes/application-x-pyspread-bz-spreadsheet.svg
 share/icons/Numix/48/mimetypes/application-x-pyspread-spreadsheet.svg
 share/icons/Numix/48/mimetypes/application-x-python-bytecode.svg
+share/icons/Numix/48/mimetypes/application-x-qgis-composer-template.svg
+share/icons/Numix/48/mimetypes/application-x-qgis-project-container.svg
+share/icons/Numix/48/mimetypes/application-x-qgis-project.svg
 share/icons/Numix/48/mimetypes/application-x-qtiplot.svg
 share/icons/Numix/48/mimetypes/application-x-quattropro.svg
 share/icons/Numix/48/mimetypes/application-x-quemu-disk.svg
@@ -26729,6 +26781,7 @@ share/icons/Numix/48/mimetypes/image-generic.svg
 share/icons/Numix/48/mimetypes/image-gif.svg
 share/icons/Numix/48/mimetypes/image-heif.svg
 share/icons/Numix/48/mimetypes/image-ico.svg
+share/icons/Numix/48/mimetypes/image-jp2.svg
 share/icons/Numix/48/mimetypes/image-jpeg.svg
 share/icons/Numix/48/mimetypes/image-jpeg2000.svg
 share/icons/Numix/48/mimetypes/image-jxl.svg
@@ -26946,6 +26999,7 @@ share/icons/Numix/48/mimetypes/text-x-crystal.svg
 share/icons/Numix/48/mimetypes/text-x-csharp.svg
 share/icons/Numix/48/mimetypes/text-x-csrc.svg
 share/icons/Numix/48/mimetypes/text-x-css.svg
+share/icons/Numix/48/mimetypes/text-x-dockerfile.svg
 share/icons/Numix/48/mimetypes/text-x-dsrc.svg
 share/icons/Numix/48/mimetypes/text-x-emacs-lisp.svg
 share/icons/Numix/48/mimetypes/text-x-erlang.svg
@@ -26980,6 +27034,7 @@ share/icons/Numix/48/mimetypes/text-x-meson.svg
 share/icons/Numix/48/mimetypes/text-x-microdvd.svg
 share/icons/Numix/48/mimetypes/text-x-nfo.svg
 share/icons/Numix/48/mimetypes/text-x-nim.svg
+share/icons/Numix/48/mimetypes/text-x-nix.svg
 share/icons/Numix/48/mimetypes/text-x-objchdr.svg
 share/icons/Numix/48/mimetypes/text-x-objcsrc.svg
 share/icons/Numix/48/mimetypes/text-x-ocaml.svg
@@ -28442,6 +28497,7 @@ share/icons/Numix/64/mimetypes/application-msword.svg
 share/icons/Numix/64/mimetypes/application-music-blank.svg
 share/icons/Numix/64/mimetypes/application-music-playlist-blank.svg
 share/icons/Numix/64/mimetypes/application-mxf.svg
+share/icons/Numix/64/mimetypes/application-netcdf.svg
 share/icons/Numix/64/mimetypes/application-octet-stream.svg
 share/icons/Numix/64/mimetypes/application-ogg.svg
 share/icons/Numix/64/mimetypes/application-pdf.svg
@@ -28493,6 +28549,7 @@ share/icons/Numix/64/mimetypes/application-vnd.coffeescript.svg
 share/icons/Numix/64/mimetypes/application-vnd.comicbook+zip.svg
 share/icons/Numix/64/mimetypes/application-vnd.corel-draw.svg
 share/icons/Numix/64/mimetypes/application-vnd.cups-ppd.svg
+share/icons/Numix/64/mimetypes/application-vnd.dbf.svg
 share/icons/Numix/64/mimetypes/application-vnd.debian.binary-package.svg
 share/icons/Numix/64/mimetypes/application-vnd.efi.img.svg
 share/icons/Numix/64/mimetypes/application-vnd.fai.igc.svg
@@ -28641,6 +28698,7 @@ share/icons/Numix/64/mimetypes/application-x-bzdvi.svg
 share/icons/Numix/64/mimetypes/application-x-bzip-compressed-tar.svg
 share/icons/Numix/64/mimetypes/application-x-bzip-compressed.svg
 share/icons/Numix/64/mimetypes/application-x-bzip.svg
+share/icons/Numix/64/mimetypes/application-x-bzip2.svg
 share/icons/Numix/64/mimetypes/application-x-bzpdf.svg
 share/icons/Numix/64/mimetypes/application-x-bzpostscript.svg
 share/icons/Numix/64/mimetypes/application-x-cb7.svg
@@ -28787,6 +28845,7 @@ share/icons/Numix/64/mimetypes/application-x-lzpdf.svg
 share/icons/Numix/64/mimetypes/application-x-m4.svg
 share/icons/Numix/64/mimetypes/application-x-mathematica.svg
 share/icons/Numix/64/mimetypes/application-x-matroska.svg
+share/icons/Numix/64/mimetypes/application-x-mif.svg
 share/icons/Numix/64/mimetypes/application-x-mimearchive.svg
 share/icons/Numix/64/mimetypes/application-x-mobi8-ebook.svg
 share/icons/Numix/64/mimetypes/application-x-mobipocket-ebook.svg
@@ -28806,6 +28865,7 @@ share/icons/Numix/64/mimetypes/application-x-navi-animation.svg
 share/icons/Numix/64/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/64/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/64/mimetypes/application-x-nes-rom.svg
+share/icons/Numix/64/mimetypes/application-x-netcdf.svg
 share/icons/Numix/64/mimetypes/application-x-nintendo-ds-rom.svg
 share/icons/Numix/64/mimetypes/application-x-nintendo-switch-xci.svg
 share/icons/Numix/64/mimetypes/application-x-nx-xci.svg
@@ -28839,6 +28899,9 @@ share/icons/Numix/64/mimetypes/application-x-pyspread-spreadsheet.svg
 share/icons/Numix/64/mimetypes/application-x-python-bytecode.svg
 share/icons/Numix/64/mimetypes/application-x-qet-element.svg
 share/icons/Numix/64/mimetypes/application-x-qet-project.svg
+share/icons/Numix/64/mimetypes/application-x-qgis-composer-template.svg
+share/icons/Numix/64/mimetypes/application-x-qgis-project-container.svg
+share/icons/Numix/64/mimetypes/application-x-qgis-project.svg
 share/icons/Numix/64/mimetypes/application-x-qtiplot.svg
 share/icons/Numix/64/mimetypes/application-x-quattropro.svg
 share/icons/Numix/64/mimetypes/application-x-quemu-disk.svg
@@ -29230,6 +29293,7 @@ share/icons/Numix/64/mimetypes/image-generic.svg
 share/icons/Numix/64/mimetypes/image-gif.svg
 share/icons/Numix/64/mimetypes/image-heif.svg
 share/icons/Numix/64/mimetypes/image-ico.svg
+share/icons/Numix/64/mimetypes/image-jp2.svg
 share/icons/Numix/64/mimetypes/image-jpeg.svg
 share/icons/Numix/64/mimetypes/image-jpeg2000.svg
 share/icons/Numix/64/mimetypes/image-jxl.svg
@@ -29452,6 +29516,7 @@ share/icons/Numix/64/mimetypes/text-x-crystal.svg
 share/icons/Numix/64/mimetypes/text-x-csharp.svg
 share/icons/Numix/64/mimetypes/text-x-csrc.svg
 share/icons/Numix/64/mimetypes/text-x-css.svg
+share/icons/Numix/64/mimetypes/text-x-dockerfile.svg
 share/icons/Numix/64/mimetypes/text-x-dsrc.svg
 share/icons/Numix/64/mimetypes/text-x-dtd.svg
 share/icons/Numix/64/mimetypes/text-x-emacs-lisp.svg
@@ -29489,6 +29554,7 @@ share/icons/Numix/64/mimetypes/text-x-meson.svg
 share/icons/Numix/64/mimetypes/text-x-microdvd.svg
 share/icons/Numix/64/mimetypes/text-x-nfo.svg
 share/icons/Numix/64/mimetypes/text-x-nim.svg
+share/icons/Numix/64/mimetypes/text-x-nix.svg
 share/icons/Numix/64/mimetypes/text-x-objchdr.svg
 share/icons/Numix/64/mimetypes/text-x-objcsrc.svg
 share/icons/Numix/64/mimetypes/text-x-ocaml.svg

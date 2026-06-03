@@ -1,11 +1,14 @@
 bin/bcftools
 bin/color-chrs
+bin/gff2gff
 bin/gff2gff.py
 bin/guess-ploidy
 bin/plot-roh
 bin/plot-vcfstats
+bin/roh-viz
 bin/run-roh
 bin/vcfutils
+bin/vrfs-variances
 libexec/bcftools/GTisec.so
 libexec/bcftools/GTsubset.so
 libexec/bcftools/ad-bias.so

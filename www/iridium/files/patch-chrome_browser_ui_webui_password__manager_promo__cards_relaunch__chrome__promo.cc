@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.cc
-@@ -37,7 +37,7 @@ std::u16string RelaunchChromePromo::GetTitle() const {
+@@ -36,7 +36,7 @@ std::u16string RelaunchChromePromo::GetTitle() const {
    return l10n_util::GetStringUTF16(
  #if BUILDFLAG(IS_MAC)
        IDS_PASSWORD_MANAGER_UI_RELAUNCH_CHROME_PROMO_CARD_TITLE
@@ -9,7 +9,7 @@
        IDS_PASSWORD_MANAGER_UI_RELAUNCH_CHROME_PROMO_CARD_TITLE_LINUX
  #endif
    );
-@@ -47,7 +47,7 @@ std::u16string RelaunchChromePromo::GetDescription() c
+@@ -46,7 +46,7 @@ std::u16string RelaunchChromePromo::GetDescription() c
    return l10n_util::GetStringUTF16(
  #if BUILDFLAG(IS_MAC)
        IDS_PASSWORD_MANAGER_UI_RELAUNCH_CHROME_PROMO_CARD_DESCRIPTION

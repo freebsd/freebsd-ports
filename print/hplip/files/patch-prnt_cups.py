@@ -1,6 +1,6 @@
---- prnt/cups.py.orig	2022-02-23 07:41:04 UTC
+--- prnt/cups.py.orig	2025-11-18 10:05:47 UTC
 +++ prnt/cups.py
-@@ -224,7 +224,7 @@ def isfamilydrv(ppds):
+@@ -226,7 +226,7 @@ def isfamilydrv(ppds):
       #   for m in models.FAMILY_CLASSES:
        #       if m in f:
         #          family_check=1
@@ -9,7 +9,7 @@
      file_conf = open(filename_config,'r')
      for line in file_conf:
          if 'class-driver' in line:
-@@ -236,8 +236,8 @@ def isfamilydrv(ppds):
+@@ -238,8 +238,8 @@ def getPPDPath(addtional_paths=None):
                  
  def getPPDPath(addtional_paths=None):
      """
@@ -20,7 +20,7 @@
      """
      if addtional_paths is None:
          addtional_paths = []
-@@ -254,7 +254,7 @@ def getPPDPath1(addtional_paths=None):
+@@ -257,7 +257,7 @@ def getPPDPath1(addtional_paths=None):
          return path for hplip ppds. 
      """
     
@@ -29,7 +29,7 @@
      file_conf = open(filename_config,'r')
      for line in file_conf:
          if 'ppd=' in line:
-@@ -267,16 +267,16 @@ def getPPDPath1(addtional_paths=None):
+@@ -271,16 +271,16 @@ def getAllowableMIMETypes():
  
  def getAllowableMIMETypes():
      """
@@ -52,32 +52,30 @@
          files.extend(glob.glob(path))
      for f in files:
 @@ -337,11 +337,11 @@ def getSystemPPDs():
-     else: # 1.2.x
+     else:  # CUPS 1.2.x or later
          log.debug("(CUPS 1.2.x) Getting list of PPDs using CUPS_GET_PPDS...")
          ppd_dict = cupsext.getPPDList()
--        cups_ppd_path = getPPDPath() # usually /usr/share/cups/model
+-        cups_ppd_path = getPPDPath()  # usually /usr/share/cups/model
 -        foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '/usr/share/ppd')
-+        cups_ppd_path = getPPDPath() # usually /usr/local/share/cups/model
++        cups_ppd_path = getPPDPath()  # usually /usr/local/share/cups/model
 +        foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '/usr/local/share/ppd')
- 
+  
          if not foomatic_ppd_path or not os.path.exists(foomatic_ppd_path):
 -            foomatic_ppd_path = '/usr/share/ppd'
 +            foomatic_ppd_path = '/usr/local/share/ppd'
- 
+  
          log.debug("CUPS PPD base path = %s" % cups_ppd_path)
          log.debug("Foomatic PPD base path = %s" % foomatic_ppd_path)
-@@ -360,8 +360,8 @@ def getSystemPPDs():
-                         'gutenprint' in ppd):
- 
-                     # PPD files returned by CUPS_GET_PPDS (and by lpinfo -m)
--                    # can be relative to /usr/share/ppd/ or to
--                    # /usr/share/cups/model/. Not sure why this is.
-+                    # can be relative to /usr/local/share/ppd/ or to
-+                    # /usr/local/share/cups/model/. Not sure why this is.
-                     # Here we will try both and see which one it is...
- 
-                     if os.path.exists(ppd):
-@@ -699,7 +699,7 @@ def getFaxPPDFile(mq, model):
+@@ -378,7 +378,7 @@ def getSystemPPDs():
+                                     path = ppd
+  
+                 # Separate drv and model ppds
+-                if path.startswith("/usr/share/cups/model/hp/"):
++                if path.startswith("/usr/local/share/cups/model/hp/"):
+                     model_ppds.append((path, desc))
+                 elif path.startswith("drv:///"):
+                     drv_ppds.append((path, desc))
+@@ -709,7 +709,7 @@ def getErrorLogLevel():
  
  
  def getErrorLogLevel():

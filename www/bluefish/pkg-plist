@@ -3,14 +3,12 @@ lib/bluefish/about.so
 lib/bluefish/charmap.so
 lib/bluefish/entities.so
 lib/bluefish/htmlbar.so
-lib/bluefish/infbrowser.so
 lib/bluefish/snippets.so
 lib/bluefish/zencoding.so
-share/man/man1/bluefish.1.gz
-share/metainfo/bluefish.appdata.xml
 share/applications/bluefish.desktop
 %%DATADIR%%/bflang/JQuery.bfinc
 %%DATADIR%%/bflang/ada.bflang2
+%%DATADIR%%/bflang/all-css.bfinc
 %%DATADIR%%/bflang/all-html.bfinc
 %%DATADIR%%/bflang/all-html5.bfinc
 %%DATADIR%%/bflang/all-javascript.bfinc
@@ -128,6 +126,11 @@ share/applications/bluefish.desktop
 %%DATADIR%%/templates/PHP
 %%DATADIR%%/templates/XHTML_1.0
 %%DATADIR%%/ui/bluefish_menu_ui.xml
+%%DATADIR%%/ui_dev.png
+%%DATADIR%%/ui_everything.png
+%%DATADIR%%/ui_experienced.png
+%%DATADIR%%/ui_minimal.png
+%%DATADIR%%/ui_webdev.png
 %%PORTDOCS%%%%DOCSDIR%%/bflang/sample.bflang2
 share/icons/hicolor/128x128/apps/bluefish.png
 share/icons/hicolor/128x128/mimetypes/application-x-bluefish-project.png
@@ -160,7 +163,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish.mo
@@ -168,7 +170,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish.mo
@@ -176,7 +177,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bluefish.mo
@@ -184,7 +184,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/cs/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bluefish.mo
@@ -192,7 +191,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/da/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/da/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bluefish.mo
@@ -200,7 +198,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/de/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/de/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish.mo
@@ -208,7 +205,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/en/LC_MESSAGES/bluefish.mo
@@ -216,7 +212,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish.mo
@@ -224,7 +219,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/bluefish.mo
@@ -232,7 +226,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/eu/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/bluefish.mo
@@ -240,7 +233,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/fa/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/fa/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bluefish.mo
@@ -248,7 +240,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bluefish.mo
@@ -256,7 +247,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/fr/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/bluefish.mo
@@ -264,7 +254,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/gl/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/bluefish.mo
@@ -272,7 +261,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bluefish.mo
@@ -280,7 +268,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/it/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/it/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bluefish.mo
@@ -288,7 +275,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/bluefish.mo
@@ -296,7 +282,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ko/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bluefish.mo
@@ -304,7 +289,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/nb/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bluefish.mo
@@ -312,7 +296,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/nl/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/bluefish.mo
@@ -320,7 +303,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/nn/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/nn/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bluefish.mo
@@ -328,7 +310,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/bluefish.mo
@@ -336,7 +317,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/pt/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish.mo
@@ -344,7 +324,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bluefish.mo
@@ -352,7 +331,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ro/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bluefish.mo
@@ -360,7 +338,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bluefish.mo
@@ -368,7 +345,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/sk/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bluefish.mo
@@ -376,7 +352,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/sr/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bluefish.mo
@@ -384,7 +359,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/bluefish.mo
@@ -392,7 +366,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/ta/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/ta/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bluefish.mo
@@ -400,7 +373,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/bluefish.mo
@@ -408,7 +380,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish.mo
@@ -416,7 +387,6 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish.mo
@@ -424,9 +394,10 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_htmlbar.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_zencoding.mo
+share/man/man1/bluefish.1.gz
+share/metainfo/bluefish.appdata.xml
 share/mime/packages/bluefish.xml
 share/pixmaps/application-x-bluefish-project.png
 share/pixmaps/bluefish.png

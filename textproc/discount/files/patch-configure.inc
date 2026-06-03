@@ -1,10 +1,12 @@
---- configure.inc.orig	2020-08-24 05:45:49 UTC
+--- configure.inc.orig	2025-09-07 21:27:45 UTC
 +++ configure.inc
-@@ -1501,7 +1501,6 @@ install)$PROG_INSTALL -c \$FULLNAME "\$1"
+@@ -1501,9 +1501,6 @@ EOF
  	$PROG_LN_S -f \$FULLNAME \$1/\$LIBNAME.\$MAJOR
  	$PROG_LN_S -f \$FULLNAME \$1/\$LIBNAME
  EOF
--    test "$LDCONFIG" && echo '	'$LDCONFIG '"$1"' >> librarian.sh
+-    if [ "$LDCONFIG" -a -z "$CONTAINER" ]; then
+-	echo '	'$LDCONFIG '"$1"' >> librarian.sh
+-    fi
+     
      cat >> librarian.sh << EOF
  	;;
- esac

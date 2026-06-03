@@ -42,4 +42,7 @@ include/polytope/polytope_write_OOGL.hh
 include/polytope/removeElements.hh
 include/polytope/simplifyPLCfacets.hh
 include/polytope/snapToBoundary.hh
+lib/cmake/polytope-config.cmake
+lib/cmake/polytope-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/polytope-targets.cmake
 lib/libpolytope.so

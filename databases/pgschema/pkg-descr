@@ -1,0 +1,11 @@
+pgschema is a Terraform-style, declarative schema migration workflow for
+PostgreSQL databases. It enables you to manage database schema changes
+through code with a declarative approach that tracks schema state and applies
+only necessary changes.
+
+Key features:
+- Declarative schema management similar to Terraform
+- Supports PostgreSQL versions 14, 15, 16, and 17
+- Tracks schema state and applies incremental changes
+- Provides table creation with LIKE syntax
+- Clean, code-driven database migration workflow

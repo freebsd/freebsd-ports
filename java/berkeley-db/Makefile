@@ -1,6 +1,6 @@
 PORTNAME=	je
 PORTVERSION=	7.5.11
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\

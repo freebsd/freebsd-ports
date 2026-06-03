@@ -2,7 +2,7 @@ PORTNAME=	cenon
 # Per r492056, 4.0.2 is the last version which actually works with GNUstep,
 # the later ones use XCode >= 5 .xib files which GNUstep cannot parse.
 PORTVERSION=	4.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.cenon.zone/download/source/

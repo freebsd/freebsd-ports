@@ -1,7 +1,14 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	5995
+DISTVERSION=	9426
 CATEGORIES=	misc # machine-learning
+MASTER_SITES=	https://huggingface.co/buckets/ggml-org/llama-ui/resolve/${DISTVERSIONPREFIX}${DISTVERSION}/:webui
+DISTFILES=	index.html:webui \
+		bundle.js:webui \
+		bundle.css:webui \
+		loading.html:webui
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Facebook's LLaMA model in C/C++ # '
@@ -13,17 +20,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
 BROKEN_i386=	compilation fails, see https://github.com/ggerganov/llama.cpp/issues/9545
 
-USES=		cmake:testing compiler:c++11-lang python:run shebangfix
+LIB_DEPENDS=	libggml-base.so:misc/ggml
+
+USES=		cmake:testing compiler:c++11-lang python:run shebangfix ssl
+
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggerganov
 GH_PROJECT=	llama.cpp
-GH_TUPLE=	nomic-ai:kompute:4565194:kompute/kompute
 
 SHEBANG_GLOB=	*.py
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		LLAMA_USE_SYSTEM_GGML
 CMAKE_OFF=	GGML_NATIVE \
 		FREEBSD_ALLOW_ADVANCED_CPU_FEATURES \
 		LLAMA_BUILD_TESTS
@@ -33,25 +43,23 @@ CMAKE_TESTING_ON=	LLAMA_BUILD_TESTS
 USER=		nobody
 SUB_LIST=	USER=${USER}
 
-OPTIONS_DEFINE=		CURL EXAMPLES VULKAN
-OPTIONS_DEFAULT=	CURL VULKAN
-OPTIONS_SUB=		yes
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
-CURL_DESCR=		Use libcurl to download model from an URL
-CURL_CMAKE_BOOL=	LLAMA_CURL
-CURL_USES=		localbase
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_DEFAULT=	EXAMPLES
+OPTIONS_SUB=		yes
 
 EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
-VULKAN_DESC=		Vulkan GPU offload support
-VULKAN_CMAKE_BOOL=	GGML_VULKAN
-VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
-			vulkan-headers>0:graphics/vulkan-headers
-VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-
 BINARY_ALIAS=	git=false \
 		python=${PYTHON_CMD} # for tests
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/build/tools/ui/dist
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/index.html ${WRKSRC}/build/tools/ui/dist/index.html
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/bundle.js ${WRKSRC}/build/tools/ui/dist/bundle.js
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/bundle.css ${WRKSRC}/build/tools/ui/dist/bundle.css
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/loading.html ${WRKSRC}/build/tools/ui/dist/loading.html
 
 post-patch: # set version in the code
 	@${REINPLACE_CMD} \

@@ -1,0 +1,11 @@
+Bun is a fast JavaScript runtime, bundler, transpiler, and
+package manager -- all in one.
+
+Key features:
+- Up to 4x faster startup time than Node.js
+- Native TypeScript and JSX support (no separate transpilation step)
+- Built-in package manager (npm-compatible) with global caching
+- Built-in test runner, bundler, and transpiler
+- Web-standard APIs: fetch, WebSocket, ReadableStream, etc.
+- Node.js compatibility: most Node.js built-in modules work out of the box
+- Zig, C++, and Rust -- for maximum performance

@@ -1,0 +1,11 @@
+--- client/meson.build.orig	2025-09-15 15:53:57 UTC
++++ client/meson.build
+@@ -33,7 +33,7 @@ symbol_map = join_paths(meson.current_source_dir(), 's
+ ]
+ 
+ symbol_map = join_paths(meson.current_source_dir(), 'symbol.map')
+-ldflags = cc.get_supported_link_arguments('-Wl,--version-script,@0@'.format(symbol_map))
++ldflags = '-Wl,--version-script,@0@'.format(symbol_map)
+ 
+ libdconf = shared_library(
+   'dconf',

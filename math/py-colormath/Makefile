@@ -1,6 +1,6 @@
 PORTNAME=	colormath
 PORTVERSION=	3.0.0
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/colormath/
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2,1:math/py-numpy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=1.9.1:math/py-networkx@${PY_FLAVOR}
 
 USES=		python

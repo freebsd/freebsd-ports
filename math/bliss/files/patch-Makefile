@@ -13,3 +13,22 @@
  #CFLAGS += -DBLISS_DEBUG
  CFLAGS += -fPIC
  
+@@ -20,7 +20,7 @@ AR = ar
+ CC = g++
+ RANLIB = ranlib
+ AR = ar
+-BLISSLIB = libbliss.a
++BLISSLIB = libbliss.so
+ 
+ gmp:	LIB += -lgmp
+ gmp:	CFLAGS += -DBLISS_USE_GMP
+@@ -36,8 +36,7 @@ lib: $(OBJS)
+ 
+ lib: $(OBJS)
+ 	rm -f $(BLISSLIB)
+-	$(AR) cr $(BLISSLIB) $(OBJS)
+-	$(RANLIB) $(BLISSLIB)
++	$(CC) -shared $(LDFLAGS) -o $(BLISSLIB) $(OBJS)
+ 
+ lib_gmp: $(GMPOBJS)
+ 	rm -f $(BLISSLIB)

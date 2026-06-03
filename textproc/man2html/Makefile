@@ -1,5 +1,5 @@
 PORTNAME=	man2html
-DISTVERSION=	3.1.20240105
+DISTVERSION=	3.1.20251206
 CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-island.net/archives/man2html/
 DISTNAME=	man2html-${DISTVERSION:E}

@@ -1,5 +1,6 @@
 PORTNAME=	elasticsearch-api
 PORTVERSION=	7.17.11
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,7 +12,7 @@ WWW=		https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-ap
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-multi_json-gitlab>=0:devel/rubygem-multi_json-gitlab
 
 USES=		gem
 

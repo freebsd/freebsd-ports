@@ -1,10 +1,9 @@
 PORTNAME=	stixfonts
-PORTVERSION=	2.14
-DISTVERSIONPREFIX=	v
+DISTVERSION=	2.13b171
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
-DISTNAME=	fonts
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://github.com/stipub/stixfonts/raw/refs/tags/v${DISTVERSION}/zipfiles/
+DISTNAME=	STIX2_13-all
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	OpenType Unicode fonts for Scientific, Technical, and Math texts
@@ -12,29 +11,23 @@ WWW=		https://www.stixfonts.org/
 
 LICENSE=	OFL11
 
-USES=		fonts zip
-USE_XORG=	x11
+USES=		fonts
 
-#USE_GITHUB=	yes
-GH_ACCOUNT=	stipub
+EXTRACT_SUFX=	.zip
+EXTRACT_AFTER_ARGS=	--strip-components 1 \
+			--exclude *.woff* \
+			--exclude *wght* \
+			--no-same-owner --no-same-permissions
 
-WRKSRC=		${WRKDIR}/fonts
+NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-FONTNAME=	STIX
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	README.md
-
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC} &&	${FIND} STIXTwoMath STIXTwoText -type file ! -name .DS_Store	\
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${FONTSDIR} \;
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.otf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

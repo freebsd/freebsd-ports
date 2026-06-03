@@ -1,0 +1,18 @@
+Obtained from:	https://github.com/typhoeus/ethon/commit/4a1700c2856de9e139cbd2c91a787c1ff88edd36
+Reference:	https://github.com/typhoeus/typhoeus/issues/739
+
+--- lib/ethon/easy/callbacks.rb.orig	2025-10-05 21:07:34 UTC
++++ lib/ethon/easy/callbacks.rb
+@@ -37,10 +37,10 @@ module Ethon
+       # @return [ Proc ] The callback.
+       def body_write_callback
+         @body_write_callback ||= proc do |stream, size, num, object|
+-          headers
++          headers_user_callback_result = headers
+           result = body(chunk = stream.read_string(size * num))
+           @response_body << chunk if result == :unyielded
+-          result != :abort ? size * num : -1
++          (result != :abort && headers_user_callback_result != :abort) ? size * num : -1
+         end
+       end
+ 

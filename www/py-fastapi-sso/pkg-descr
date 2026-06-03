@@ -1,0 +1,7 @@
+FastAPI plugin to enable SSO to most common providers (such as
+Facebook login, Google login and login via Microsoft Office 365
+account).
+
+This allows you to implement the famous Login with
+Google/Facebook/Microsoft buttons functionality on your backend very
+easily.

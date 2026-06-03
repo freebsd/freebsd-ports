@@ -1,5 +1,5 @@
 PORTVERSION=		2.1.7
-PORTREVISION=		5
+PORTREVISION=		6
 PKGNAMESUFFIX=		2
 
 WWW=		https://www.clusterlabs.org/pacemaker/
@@ -16,7 +16,8 @@ LIB_DEPENDS+=		libffi.so:devel/libffi \
 	libp11-kit.so:security/p11-kit \
 	libpcre.so:devel/pcre \
 	libtasn1.so:security/libtasn1 \
-	libunistring.so:devel/libunistring
+	libunistring.so:devel/libunistring \
+	libxml2.so:textproc/libxml2
 
 USES+=	gettext
 

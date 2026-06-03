@@ -1,0 +1,10 @@
+-- Remove version constraint on setuptools to be compatible with the port.
+--- pyproject.toml.orig	2026-05-01 13:31:12 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]

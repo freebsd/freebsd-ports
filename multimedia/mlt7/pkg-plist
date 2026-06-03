@@ -7,6 +7,7 @@ include/mlt-7/framework/mlt_chain.h
 include/mlt-7/framework/mlt_consumer.h
 include/mlt-7/framework/mlt_deque.h
 include/mlt-7/framework/mlt_events.h
+include/mlt-7/framework/mlt_export.h
 include/mlt-7/framework/mlt_factory.h
 include/mlt-7/framework/mlt_field.h
 include/mlt-7/framework/mlt_filter.h
@@ -71,15 +72,16 @@ lib/libmlt-7.so.7
 lib/libmlt-7.so.%%MLT_VERSION%%
 %%AVFORMAT%%lib/mlt-7/libmltavformat.so
 lib/mlt-7/libmltcore.so
-%%DECKLINK%%lib/mlt-7/libmltdecklink.so
 %%FREI0R%%lib/mlt-7/libmltfrei0r.so
 %%GDK%%lib/mlt-7/libmltgdk.so
 %%JACKRACK%%lib/mlt-7/libmltjackrack.so
 %%KDENLIVE%%lib/mlt-7/libmltkdenlive.so
+%%JACKRACK%%lib/mlt-7/libmltladspa.so
 %%MOVIT%%lib/mlt-7/libmltmovit.so
 %%NORMALIZE%%lib/mlt-7/libmltnormalize.so
 %%OLDFILM%%lib/mlt-7/libmltoldfilm.so
 %%OPENCV%%lib/mlt-7/libmltopencv.so
+%%OPENFX%%lib/mlt-7/libmltopenfx.so
 %%PLUS%%lib/mlt-7/libmltplus.so
 %%PLUSGPL%%lib/mlt-7/libmltplusgpl.so
 %%RESAMPLE%%lib/mlt-7/libmltresample.so
@@ -99,9 +101,11 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_avcolour_space.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_avdeinterlace.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_swresample.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_sws_colortransform.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_swscale.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/link_avdeinterlace.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/link_swresample.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat-novalidate.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/resolution_scale.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/yuv_only.txt
@@ -118,6 +122,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/filter_brightness.yml
 %%DATADIR%%/core/filter_channelcopy.yml
 %%DATADIR%%/core/filter_choppy.yml
+%%DATADIR%%/core/filter_color_transform.yml
 %%DATADIR%%/core/filter_crop.yml
 %%DATADIR%%/core/filter_fieldorder.yml
 %%DATADIR%%/core/filter_gamma.yml
@@ -154,9 +159,8 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/transition_luma.yml
 %%DATADIR%%/core/transition_matte.yml
 %%DATADIR%%/core/transition_mix.yml
-%%DECKLINK%%%%DATADIR%%/decklink/consumer_decklink.yml
-%%DECKLINK%%%%DATADIR%%/decklink/producer_decklink.yml
 %%FREI0R%%%%DATADIR%%/frei0r/aliases.yaml
+%%FREI0R%%%%DATADIR%%/frei0r/alpha_only.txt
 %%FREI0R%%%%DATADIR%%/frei0r/blacklist.txt
 %%FREI0R%%%%DATADIR%%/frei0r/filter_cairoblend_mode.yml
 %%FREI0R%%%%DATADIR%%/frei0r/not_thread_safe.txt
@@ -165,12 +169,14 @@ share/man/man1/melt-7.1.gz
 %%GDK%%%%DATADIR%%/gdk/filter_rescale.yml
 %%GDK%%%%DATADIR%%/gdk/producer_pango.yml
 %%GDK%%%%DATADIR%%/gdk/producer_pixbuf.yml
+%%JACKRACK%%%%DATADIR%%/jackrack/blacklist.txt
 %%JACKRACK%%%%DATADIR%%/jackrack/consumer_jack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_jack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_jackrack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_ladspa.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_lv2.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_vst2.yml
+%%JACKRACK%%%%DATADIR%%/jackrack/lv2blacklist.txt
 %%JACKRACK%%%%DATADIR%%/jackrack/producer_ladspa.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/producer_lv2.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/producer_vst2.yml
@@ -179,6 +185,8 @@ share/man/man1/melt-7.1.gz
 %%KDENLIVE%%%%DATADIR%%/kdenlive/filter_wave.yml
 %%KDENLIVE%%%%DATADIR%%/kdenlive/producer_framebuffer.yml
 %%DATADIR%%/metaschema.yaml
+%%MOVIT%%%%DATADIR%%/movit/consumer_xgl.yml
+%%MOVIT%%%%DATADIR%%/movit/filter_glsl_manager.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_blur.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_convert.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_crop.yml
@@ -189,6 +197,7 @@ share/man/man1/melt-7.1.gz
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_lift_gamma_gain.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_mirror.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_opacity.yml
+%%MOVIT%%%%DATADIR%%/movit/filter_movit_overlay_mode.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_rect.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_resample.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_resize.yml
@@ -218,6 +227,7 @@ share/man/man1/melt-7.1.gz
 %%OLDFILM%%%%DATADIR%%/oldfilm/tcolor.svg
 %%OLDFILM%%%%DATADIR%%/oldfilm/vignette.svg
 %%OPENCV%%%%DATADIR%%/opencv/filter_opencv_tracker.yml
+%%OPENFX%%%%DATADIR%%/openfx/filter_openfx.yml
 %%PLUS%%%%DATADIR%%/plus/consumer_blipflash.yml
 %%PLUS%%%%DATADIR%%/plus/filter_affine.yml
 %%PLUS%%%%DATADIR%%/plus/filter_charcoal.yml
@@ -248,11 +258,14 @@ share/man/man1/melt-7.1.gz
 %%PLUS%%%%DATADIR%%/plus/producer_blipflash.yml
 %%PLUS%%%%DATADIR%%/plus/producer_count.yml
 %%PLUS%%%%DATADIR%%/plus/producer_pgm.yml
+%%PLUS%%%%DATADIR%%/plus/producer_subtitle.yml
 %%PLUS%%%%DATADIR%%/plus/transition_affine.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/consumer_cbrts.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/filter_burningtv.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/filter_lumaliftgaingamma.yml
+%%PLUSGPL%%%%DATADIR%%/plusgpl/filter_outline.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/filter_rotoscoping.yml
+%%PLUSGPL%%%%DATADIR%%/plusgpl/filter_telecide.yml
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/AAC
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ALAC
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/AV1
@@ -342,6 +355,8 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes 444
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes HQ
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/SVT-AV1
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/vp9-eac3-mp4
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/vp9-opus-webm
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/x264-high10
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/x265-main10
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/vp9

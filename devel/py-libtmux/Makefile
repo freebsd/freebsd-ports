@@ -1,5 +1,5 @@
 PORTNAME=	libtmux
-PORTVERSION=	0.46.2
+PORTVERSION=	0.58.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	tmux:sysutils/tmux
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

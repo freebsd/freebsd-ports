@@ -1,5 +1,6 @@
 PORTNAME=	jetty
 PORTVERSION=	10.0.25
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/${PORTVERSION}/
 PKGNAMESUFFIX=	10

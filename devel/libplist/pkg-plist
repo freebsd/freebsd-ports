@@ -16,11 +16,11 @@ include/plist/plist.h
 lib/libplist++-2.0.a
 lib/libplist++-2.0.so
 lib/libplist++-2.0.so.4
-lib/libplist++-2.0.so.4.6.0
+lib/libplist++-2.0.so.4.7.0
 lib/libplist-2.0.a
 lib/libplist-2.0.so
 lib/libplist-2.0.so.4
-lib/libplist-2.0.so.4.6.0
+lib/libplist-2.0.so.4.7.0
 libdata/pkgconfig/libplist++-2.0.pc
 libdata/pkgconfig/libplist-2.0.pc
 share/man/man1/plistutil.1.gz

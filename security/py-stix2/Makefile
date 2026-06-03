@@ -1,8 +1,7 @@
 PORTNAME=	stix2
-PORTVERSION=	2.1.0
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	3.0.2
 CATEGORIES=	security python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -12,18 +11,16 @@ WWW=		https://github.com/oasis-open/cti-python-stix2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}stix2-patterns>=0:security/py-stix2-patterns@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}stix2-patterns>=2.1.2:security/py-stix2-patterns@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	oasis-open
-GH_PROJECT=	cti-python-stix2
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-USES=		python
-USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

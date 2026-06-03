@@ -1,33 +1,38 @@
---- core/src/qt-tray-monitor/CMakeLists.txt	2024-12-16 09:10:50.000000000 -0800
-+++ core/src/qt-tray-monitor/CMakeLists.txt	2024-12-22 23:44:53.885128000 -0800
-@@ -28,22 +28,19 @@
- set(CMAKE_AUTOUIC ON)
- set(CMAKE_AUTORCC ON)
- 
--find_package(Qt6 COMPONENTS Core Widgets)
--if(Qt6Widgets_FOUND)
--  message(STATUS "Found QT6Widgets")
-+if(bat-qt6)
-+  find_package(Qt6 COMPONENTS Core Widgets)
-+  if(Qt6Widgets_FOUND)
-+    message(STATUS "Found QT6Widgets")
-+  else()
-+    message(FATAL_ERROR "QT6Widgets NOT found, cannot build tray-monitor")
-+  endif()
+--- core/src/qt-tray-monitor/CMakeLists.txt	2025-12-04 05:19:30.000000000 -0800
++++ core/src/qt-tray-monitor/CMakeLists.txt	2025-12-17 23:29:03.682687000 -0800
+@@ -40,19 +40,7 @@
+ if(Qt6Widgets_FOUND)
+   message(STATUS "Found QT6Widgets")
  else()
 -  message(STATUS "QT6Widgets NOT found, checking for Qt5 ...")
-   find_package(Qt5 COMPONENTS Core Widgets)
-   if(Qt5Widgets_FOUND)
-     message(STATUS "Found QT5Widgets")
-   else()
+-  find_package(Qt5 QUIET COMPONENTS Core Widgets)
+-  if(Qt5Widgets_FOUND)
+-    message(STATUS "Found QT5Widgets")
+-  else()
 -    message(STATUS "QT5Widgets NOT found, checking for Qt4 ...")
 -    find_package(Qt4)
 -    if(NOT Qt4_FOUND)
 -      message(
--        FATAL_ERROR "Both Qt5 and Qt4 not found, cannot build tray-monitor"
+-        FATAL_ERROR "None of Qt6, Qt5 or Qt4 found, cannot build tray-monitor."
 -      )
 -    endif()
-+    message(STATUS "QT5Widgets NOT found, cannot build tray-monitor")
-   endif()
+-  endif()
++  message(STATUS "QT6Widgets NOT found ...")
  endif()
  
+ if(HAVE_WIN32)
+@@ -82,14 +70,6 @@
+ endif()
+ 
+ target_link_libraries(bareos-tray-monitor PRIVATE Bareos::Lib CLI11::CLI11)
+-
+-if(TARGET Qt4::QtGui)
+-  target_link_libraries(bareos-tray-monitor PRIVATE Qt4::QtGui)
+-endif()
+-
+-if(TARGET Qt5::Widgets)
+-  target_link_libraries(bareos-tray-monitor PRIVATE Qt5::Widgets)
+-endif()
+ 
+ if(TARGET Qt6::Widgets)
+   target_link_libraries(bareos-tray-monitor PRIVATE Qt6::Widgets)

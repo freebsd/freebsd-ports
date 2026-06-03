@@ -15,7 +15,6 @@ USES=		compiler:c11 gmake libtool:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmind
 GH_TAGNAME=	e73407c
-WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes
 MAKE_ENV=	DESTDIR=${STAGEDIR}${PREFIX} \
 		INCDIR=${LOCALBASE}/include \
@@ -23,10 +22,8 @@ MAKE_ENV=	DESTDIR=${STAGEDIR}${PREFIX} \
 		MANDIR=${LOCALBASE}/man
 TEST_TARGET=	tests
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500006
 CFLAGS_i386=	-Wno-error=sync-alignment
-.endif
+
+WRKSRC_SUBDIR=	src
 
 .include <bsd.port.mk>

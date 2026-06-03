@@ -1,0 +1,13 @@
+--- Makefile.am.orig	2026-02-05 12:41:56 UTC
++++ Makefile.am
+@@ -59,8 +59,10 @@ SUBDIRS += \
+ 	cmake \
+ 	config
+ 
++if BUILD_GTEST
+ if HAVE_GTEST
+ SUBDIRS += test/gtest
++endif
+ endif
+ 
+ if HAVE_MPICC

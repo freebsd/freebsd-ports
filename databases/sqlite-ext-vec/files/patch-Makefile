@@ -1,0 +1,73 @@
+--- Makefile.orig	2026-03-31 07:59:06 UTC
++++ Makefile
+@@ -62,22 +62,28 @@ TARGET_STATIC=$(prefix)/libsqlite_vec0.a
+ 
+ TARGET_LOADABLE=$(prefix)/vec0.$(LOADABLE_EXTENSION)
+ TARGET_STATIC=$(prefix)/libsqlite_vec0.a
++TARGET_SHARED=$(prefix)/libsqlite_vec0.so
+ TARGET_STATIC_H=$(prefix)/sqlite-vec.h
+ TARGET_CLI=$(prefix)/sqlite3
+ 
+ loadable: $(TARGET_LOADABLE)
+ static: $(TARGET_STATIC)
++shared: $(TARGET_SHARED)
+ cli: $(TARGET_CLI)
+ 
+ all: loadable static cli
+ 
+ OBJS_DIR=$(prefix)/.objs
++OBJS_DIR_SHARED=$(prefix)/.objs-shared
+ LIBS_DIR=$(prefix)/.libs
+ BUILD_DIR=$(prefix)/.build
+ 
+ $(OBJS_DIR): $(prefix)
+ 	mkdir -p $@
+ 
++$(OBJS_DIR_SHARED): $(prefix)
++	mkdir -p $@
++
+ $(LIBS_DIR): $(prefix)
+ 	mkdir -p $@
+ 
+@@ -87,24 +93,29 @@ $(TARGET_LOADABLE): sqlite-vec.c sqlite-vec.h $(prefix
+ 
+ $(TARGET_LOADABLE): sqlite-vec.c sqlite-vec.h $(prefix)
+ 	$(CC) \
++		$(CFLAGS) \
+ 		-fPIC -shared \
+ 		-Wall -Wextra \
+ 		-Ivendor/ \
+-		-O3 \
+ 		$(CFLAGS) \
+ 		$< -o $@
+ 
+ $(TARGET_STATIC): sqlite-vec.c sqlite-vec.h $(prefix) $(OBJS_DIR)
+ 	$(CC) -Ivendor/ $(CFLAGS) -DSQLITE_CORE -DSQLITE_VEC_STATIC \
+-	-O3 -c  $< -o $(OBJS_DIR)/vec.o
++	-c  $< -o $(OBJS_DIR)/vec.o
+ 	$(AR) rcs $@ $(OBJS_DIR)/vec.o
+ 
++$(TARGET_SHARED): sqlite-vec.c sqlite-vec.h $(prefix) $(OBJS_DIR_SHARED)
++	$(CC) -fPIC -Ivendor/ $(CFLAGS) -DSQLITE_CORE -DSQLITE_VEC_STATIC \
++	-c  $< -o $(OBJS_DIR_SHARED)/vec.o
++	$(CC) -shared $(LDFLAGS) -o $@ $(OBJS_DIR_SHARED)/vec.o
++
+ $(TARGET_STATIC_H): sqlite-vec.h $(prefix)
+ 	cp $< $@
+ 
+ 
+ $(OBJS_DIR)/sqlite3.o: vendor/sqlite3.c $(OBJS_DIR)
+-	$(CC) -c -g3 -O3 -DSQLITE_EXTRA_INIT=core_init -DSQLITE_CORE -DSQLITE_ENABLE_STMT_SCANSTATUS -DSQLITE_ENABLE_BYTECODE_VTAB -DSQLITE_ENABLE_EXPLAIN_COMMENTS -I./vendor $< -o $@
++	$(CC) $(CFLAGS) -c -g3 -DSQLITE_EXTRA_INIT=core_init -DSQLITE_CORE -DSQLITE_ENABLE_STMT_SCANSTATUS -DSQLITE_ENABLE_BYTECODE_VTAB -DSQLITE_ENABLE_EXPLAIN_COMMENTS -I./vendor $< -o $@
+ 
+ $(LIBS_DIR)/sqlite3.a: $(OBJS_DIR)/sqlite3.o $(LIBS_DIR)
+ 	$(AR) rcs $@ $<
+@@ -113,7 +124,7 @@ $(OBJS_DIR)/shell.o: $(BUILD_DIR)/shell-new.c $(OBJS_D
+ 	sed 's/\/\*extra-version-info\*\//EXTRA_TODO/g' $< > $@
+ 
+ $(OBJS_DIR)/shell.o: $(BUILD_DIR)/shell-new.c $(OBJS_DIR)
+-	$(CC) -c -g3 -O3 \
++	$(CC) $(CFLAGS) -c \
+ 		-I./vendor \
+ 		-DSQLITE_ENABLE_STMT_SCANSTATUS -DSQLITE_ENABLE_BYTECODE_VTAB -DSQLITE_ENABLE_EXPLAIN_COMMENTS \
+ 		-DEXTRA_TODO="\"CUSTOMBUILD:sqlite-vec\n\"" \

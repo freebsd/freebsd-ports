@@ -1,5 +1,6 @@
 PORTNAME=	sdr++
 DISTVERSION=	20250105 # rolling (nightly) release is the current release model (see README)
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org

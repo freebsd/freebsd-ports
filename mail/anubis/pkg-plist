@@ -6,7 +6,6 @@ sbin/anubisadm
 %%GUILE%%share/anubis/remailer.scm
 %%GUILE%%share/anubis/rot-13.scm
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/anubis/anubis-mode.el
-%%EMACS%%%%EMACS_SITE_LISPDIR%%/anubis/anubis-mode.elc
 %%NLS%%share/locale/da/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/de/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/es/LC_MESSAGES/anubis.mo

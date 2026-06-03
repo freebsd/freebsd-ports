@@ -1,12 +1,11 @@
 PORTNAME=	gbutils
-DISTVERSION=	0.5
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Utilities for Simulation, Plots, Quantile Functions and Programming
-WWW=		https://github.com/GeoBosh/gbutils
+WWW=		https://cran.r-project.org/package=gbutils
 
 LICENSE=	GPLv2+
 

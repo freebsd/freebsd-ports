@@ -1,0 +1,55 @@
+--- CMakeLists.txt.orig	2025-11-10 21:36:14 UTC
++++ CMakeLists.txt
+@@ -23,33 +23,33 @@ ENABLE_TESTING()
+ 
+ ENABLE_TESTING()
+ 
+-if (PROFILING STREQUAL "ON")
++#if (PROFILING STREQUAL "ON")
+ 
+-else(PROFILING STREQUAL "ON")
++#else(PROFILING STREQUAL "ON")
+ 
+-endif(PROFILING STREQUAL "ON")
++#endif(PROFILING STREQUAL "ON")
+ 
+-if (DEBUG STREQUAL "ON")
++#if (DEBUG STREQUAL "ON")
+ # Debug mode
+-ADD_DEFINITIONS(-DOF_DEBUG)
+-set(CMAKE_BUILD_TYPE Debug)
+-message(STATUS "Debug mode ON" )
++#ADD_DEFINITIONS(-DOF_DEBUG)
++#set(CMAKE_BUILD_TYPE Debug)
++#message(STATUS "Debug mode ON" )
+ 
+-else(DEBUG STREQUAL "ON")
++#else(DEBUG STREQUAL "ON")
+ # Release mode
+-set(CMAKE_BUILD_TYPE Release)
+-set(OPTIMIZE "3" CACHE STRING "Set optimization level (0-3 or DEFAULT)")
+-if (NOT OPTIMIZE STREQUAL "DEFAULT")
+-  string(REGEX REPLACE "(-O[A-Za-z0-9]+)" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+-  string(REGEX REPLACE "(-O[A-Za-z0-9]+)" "" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
+-  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O${OPTIMIZE}")
+-endif()
+-message(STATUS "Debug mode OFF")
+-message(STATUS "Optimization level ${OPTIMIZE}")
++#set(CMAKE_BUILD_TYPE Release)
++#set(OPTIMIZE "3" CACHE STRING "Set optimization level (0-3 or DEFAULT)")
++#if (NOT OPTIMIZE STREQUAL "DEFAULT")
++#  string(REGEX REPLACE "(-O[A-Za-z0-9]+)" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
++#  string(REGEX REPLACE "(-O[A-Za-z0-9]+)" "" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
++#  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O${OPTIMIZE}")
++#endif()
++#message(STATUS "Debug mode OFF")
++#message(STATUS "Optimization level ${OPTIMIZE}")
+ 
+-endif (DEBUG STREQUAL "ON")
++#endif (DEBUG STREQUAL "ON")
+ 
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -Wno-unused-result")
++set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-result")
+ 
+ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}
+   CACHE STRING "output path for libraries")

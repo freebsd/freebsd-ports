@@ -1,7 +1,8 @@
 PORTNAME=	blueprint-compiler
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.20.4
 CATEGORIES=	devel
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Markup language for GTK user interfaces
@@ -12,10 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	gtk4>0:x11-toolkits/gtk40
 
-USES=		gnome meson python shebangfix
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	jwestman
+USES=		gnome meson python shebangfix tar:xz
 USE_GNOME=	pygobject3
 SHEBANG_FILES=	${PORTNAME}.py docs/collect-sections.py
 NO_ARCH=	yes

@@ -1,12 +1,14 @@
 PORTNAME=	motif
 PORTVERSION=	2.3.4
 DISTVERSIONSUFFIX=	-14.el7_5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://motif.ics.com/
+
+LICENSE=	LGPL21
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

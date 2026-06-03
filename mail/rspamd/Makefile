@@ -1,5 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.12.1
+PORTVERSION=	4.0.0
 PORTREVISION=	1
 CATEGORIES=	mail
 
@@ -78,11 +78,19 @@ LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51+
 LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
+.include <bsd.port.options.mk>
+
+.if ${OPTIONS_DEFINE:NHYPERSCAN}
+PLIST_SUB+=	HYPERSCAN="@comment "
+.endif
+
 post-install:
 	@${MKDIR} \
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \
 		${STAGEDIR}/var/run/rspamd
+	${RM} ${STAGEDIR}${DATADIR}/www/ARCHITECTURE.md
+	${RM} ${STAGEDIR}${DATADIR}/www/README.md
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.conf.sample
 	# Linux specific
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf

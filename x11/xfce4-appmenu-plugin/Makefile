@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-appmenu-plugin
 DISTVERSION=	0.7.6
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -34,5 +34,11 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	vala-panel-project
 GL_PROJECT=	vala-panel-appmenu
 GL_TAGNAME=	4e362c22ab3a23c98f13fb379c782786ee057cf6
+
+post-install: # fix https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=294789
+	# remove all *.mo files from the state directory, as they conflict with appmenu-registrar
+	@${FIND} ${STAGEDIR}${PREFIX}/share/locale -type f -name "*.mo" -delete
+	# remove empty directories too
+	@${FIND} ${STAGEDIR}${PREFIX}/share/locale -type d -empty -delete
 
 .include <bsd.port.mk>

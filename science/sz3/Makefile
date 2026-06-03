@@ -1,6 +1,7 @@
 PORTNAME=	sz3
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,15 +14,18 @@ LICENSE_FILE=	${WRKSRC}/copyright-and-BSD-license.txt
 
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libzstd.so:archivers/zstd
+TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake pkgconfig
+USES=		cmake:testing pkgconfig
 
 CMAKE_OFF=	BUILD_H5Z_FILTER \
 		BUILD_MDZ \
+		BUILD_TESTING \
 		SZ3_DEBUG_TIMINGS \
 		SZ3_USE_BUNDLED_ZSTD
 CMAKE_ON=	BUILD_SHARED_LIBS \
-		BUILD_STATIC_LIBS
+		BUILD_STATIC_LIBS \
+		SZ3_USE_SKA_HASH
 
 DATADIR=	${PREFIX}/share/SZ3
 

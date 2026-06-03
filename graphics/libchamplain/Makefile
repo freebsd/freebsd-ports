@@ -23,7 +23,7 @@ USE_GL=		egl
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS= -Dlibsoup3=true
+MESON_ARGS=	-Dlibsoup3=true
 
 PLIST_SUB=	VERSION=0.12
 

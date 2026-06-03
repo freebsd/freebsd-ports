@@ -33,6 +33,7 @@ bin/hello
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/scn/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/hello.mo

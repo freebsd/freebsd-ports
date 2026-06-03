@@ -1,5 +1,6 @@
 PORTNAME=	pywavelets
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,14 +12,14 @@ WWW=		https://github.com/PyWavelets/pywt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}meson-python>=0.16:devel/meson-python@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:3.10+ shebangfix
-USE_PYTHON=	autoplist cython3 pep517
+USES=		python
+USE_PYTHON=	autoplist cython pep517
 
-SHEBANG_FILES=	pywt/data/create_dat.py
+BINARY_ALIAS=	cython=cython-${PYTHON_VER}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pywt/_extensions/*.so

@@ -1,0 +1,6 @@
+Require Hooks is a library providing universal interface for injecting custom
+code into the Ruby's loading mechanism. It works on MRI, JRuby, and
+TruffleRuby.
+
+Require hooks allows you to interfere with Kernel#require
+(incl. Kernel#require_relative) and Kernel#load.

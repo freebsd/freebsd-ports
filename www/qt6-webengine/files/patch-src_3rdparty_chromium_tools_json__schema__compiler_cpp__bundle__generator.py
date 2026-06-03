@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/tools/json_schema_compiler/cpp_bundle_generator.py.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/tools/json_schema_compiler/cpp_bundle_generator.py.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/tools/json_schema_compiler/cpp_bundle_generator.py
-@@ -145,7 +145,7 @@ class CppBundleGenerator(object):
-         # BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(IS_CHROMEOS_LACROS).
-         ifdefs.append('BUILDFLAG(IS_CHROMEOS_LACROS)')
+@@ -140,7 +140,7 @@ class CppBundleGenerator(object):
+       elif platform == Platforms.DESKTOP_ANDROID:
+         ifdefs.append('BUILDFLAG(IS_DESKTOP_ANDROID)')
        elif platform == Platforms.LINUX:
 -        ifdefs.append('BUILDFLAG(IS_LINUX)')
 +        ifdefs.append('BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)')

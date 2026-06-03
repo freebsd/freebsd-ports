@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-03-20 08:36:15 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = 'setuptools.build_meta'
+ [build-system]
+ build-backend = 'setuptools.build_meta'
+-requires = ['setuptools>=77.0.3']
++requires = ['setuptools>=63']
+ 
+ [project]
+ name = 'networkx'
+@@ -17,8 +17,8 @@ keywords = [
+     'discrete mathematics',
+     'math',
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text="BSD-3-Clause"}
++#license-files = ["LICENSE.txt"]
+ classifiers = [
+     'Development Status :: 5 - Production/Stable',
+     'Intended Audience :: Developers',

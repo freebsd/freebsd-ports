@@ -1,5 +1,5 @@
 PORTNAME=	Xapian
-PORTVERSION=	1.4.29.0
+PORTVERSION=	2.0.0.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION:R}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-USES=		compiler:c++11-lang libtool perl5 tar:xz
+USES=		compiler:c++17-lang libtool perl5 tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE -lperl
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 
 PORTSCOUT=	limitw:1,even
 

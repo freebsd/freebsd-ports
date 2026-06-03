@@ -13,6 +13,7 @@ COMMENT=	Full featured floating point expression evaluator
 
 USES=		lha readline
 
+CPPFLAGS+=	-DWANT_OBSOLETE_TYPEDEFS
 WRKSRC=		${WRKDIR}/Eval/source
 
 PLIST_FILES=	bin/Eval

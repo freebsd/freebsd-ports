@@ -1,5 +1,5 @@
 PORTNAME=	shapelib
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	devel geography
 MASTER_SITES=	https://download.osgeo.org/shapelib/ \
 		https://github.com/OSGeo/shapelib/releases/download/v${PORTVERSION}/
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSE-LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		libtool localbase pathfix
+USES=		libtool localbase
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes

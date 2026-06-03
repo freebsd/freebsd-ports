@@ -1,15 +1,14 @@
 PORTNAME=	xstatic-bootstrap-scss
-PORTVERSION=	3.4.1.0
-PORTREVISION=	2
+PORTVERSION=	3.4.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Bootstrap-SCSS-${PORTVERSION}
+DISTNAME=	xstatic_bootstrap_scss-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Bootstrap-SCSS (XStatic packaging standard)
-WWW=		https://github.com/openstack/xstatic-bootstrap-scss \
-		https://github.com/twbs/bootstrap-sass
+COMMENT=	Bootstrap-SCSS ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-bootstrap-scss \
+		https://github.com/openstack/xstatic-bootstrap-scss
 
 LICENSE=	MIT
 

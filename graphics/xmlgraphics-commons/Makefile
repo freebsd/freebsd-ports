@@ -1,5 +1,6 @@
 PORTNAME=	xmlgraphics-commons
 DISTVERSION=	2.11
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	graphics textproc java
 MASTER_SITES=	APACHE/xmlgraphics/commons/binaries \

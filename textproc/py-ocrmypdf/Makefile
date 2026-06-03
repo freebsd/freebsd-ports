@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	16.10.4
+DISTVERSION=	16.11.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,12 +28,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.36.0:devel/py-hypothesis@${PY
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.6.8:print/py-reportlab@${PY_FLAVOR}
 
-USES=		ghostscript:run python:3.10+ shebangfix
+USES=		ghostscript:run python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 pytest
 # Skip some checks as they yield wrong results if run with the root account
+# "test_watcher" requires additional deps used by the "watcher" feature
 PYTEST_IGNORED_TESTS=	test_chmod \
 			test_input_file_not_readable \
-			test_malformed_docinfo # leads to an internal pytest error
+			test_watcher
 
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		src/ocrmypdf/pdfinfo/__init__.py

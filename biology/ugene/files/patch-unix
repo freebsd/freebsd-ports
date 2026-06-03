@@ -1,0 +1,37 @@
+--- src/libs_3rdparty/QSpec/src/drivers/GTKeyboardDriverLinux.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/libs_3rdparty/QSpec/src/drivers/GTKeyboardDriverLinux.cpp
+@@ -21,14 +21,14 @@
+ 
+ #include "GTKeyboardDriver.h"
+ 
+-#if defined __linux__
++#if defined(Q_OS_UNIX)
+ #    include <X11/extensions/XTest.h>
+ #    include <X11/keysym.h>
+ #endif
+ 
+ namespace HI {
+ 
+-#if defined __linux__
++#if defined(Q_OS_UNIX)
+ 
+ void GTKeyboardDriver::releasePressedKeys() {
+     GTKeyboardDriver::keyRelease(Qt::Key_Control);
+--- src/libs_3rdparty/QSpec/src/drivers/GTMouseDriverLinux.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/libs_3rdparty/QSpec/src/drivers/GTMouseDriverLinux.cpp
+@@ -24,13 +24,13 @@
+ #include <QByteArray>
+ 
+ #include "GTMouseDriver.h"
+-#ifdef __linux__
++#ifdef Q_OS_UNIX
+ #    include <X11/extensions/XTest.h>
+ #endif
+ 
+ namespace HI {
+ 
+-#ifdef __linux__
++#ifdef Q_OS_UNIX
+ 
+ #    define DELAY_ON_EVERY_N_PX 16
+ /**

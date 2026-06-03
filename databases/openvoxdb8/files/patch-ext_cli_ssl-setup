@@ -1,6 +1,6 @@
---- ext/cli/ssl-setup.orig	2016-03-17 04:17:10 UTC
+--- ext/cli/ssl-setup.orig	2025-08-08 17:49:06 UTC
 +++ ext/cli/ssl-setup
-@@ -230,7 +230,7 @@ else
+@@ -243,7 +243,7 @@ else
    user=puppetdb
    group=puppetdb
  

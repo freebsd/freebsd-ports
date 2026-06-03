@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# PROVIDE: syncthingrelaypoolsrv
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# syncthingrelaypoolsrv_enable (bool):      Set to NO by default.
+#                                           Set it to YES to enable syncthing-relaypoolsrv.
+# syncthingrelaypoolsrv_user (user):        Set user to run syncthing-relaypoolsrv.
+#                                           Default is "syncthing".
+# syncthingrelaypoolsrv_group (group):      Set group to run syncthing-relaypoolsrv.
+#                                           Default is "syncthing".
+# syncthingrelaypoolsrv_dir (dir):          Set dir to run syncthing-relaypoolsrv in.
+#                                           Default is "/var/db/syncthing-relaypoolsrv".
+# syncthingrelaypoolsrv_log_file (path):    Syncthing log file
+#                                           Default: /var/log/syncthing-relaypoolsrv.log
+# syncthingrelaypoolsrv_args (string):      Extra args to pass to syncthing-relaypoolsrv
+#                                           Default is ""
+
+. /etc/rc.subr
+
+name=syncthingrelaypoolsrv
+rcvar=syncthingrelaypoolsrv_enable
+
+load_rc_config $name
+
+: ${syncthingrelaypoolsrv_enable:="NO"}
+: ${syncthingrelaypoolsrv_user:="syncthing"}
+: ${syncthingrelaypoolsrv_group:="syncthing"}
+: ${syncthingrelaypoolsrv_dir:="/var/db/syncthing-relaypoolsrv"}
+: ${syncthingrelaypoolsrv_log_file=/var/log/syncthing-relaypoolsrv.log}
+
+export STNORESTART=true
+
+pidfile=/var/run/syncthingrelaypoolsrv.pid
+procname="%%PREFIX%%/bin/strelaypoolsrv"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} ${procname} -keys ${syncthingrelaypoolsrv_dir} ${syncthingrelaypoolsrv_args} >> ${syncthingrelaypoolsrv_log_file} 2>&1"
+
+start_precmd=syncthingrelaypoolsrv_startprecmd
+
+syncthingrelaypoolsrv_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${syncthingrelaypoolsrv_user} -g ${syncthingrelaypoolsrv_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${syncthingrelaypoolsrv_dir} ]; then
+                install -d -o ${syncthingrelaypoolsrv_user} -g ${syncthingrelaypoolsrv_group} ${syncthingrelaypoolsrv_dir}
+        fi
+        if [ ! -e ${syncthingrelaypoolsrv_log_file} ]; then
+                install -o ${syncthingrelaypoolsrv_user} -g ${syncthingrelaypoolsrv_group} /dev/null ${syncthingrelaypoolsrv_log_file};
+        fi
+}
+
+run_rc_command "$1"

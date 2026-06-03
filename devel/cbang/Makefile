@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS
 DEBUG_BUILD_DEPENDS=	gnulibiberty>0:devel/gnulibiberty
-DEBUG_LIB_DEPENDS=	libbfd.so:devel/libbfd
+DEBUG_LIB_DEPENDS=	libbfd.so:devel/binutils
 
 MAKE_ARGS+=	cc="${CC}"	\
 		cxx="${CXX}"	\

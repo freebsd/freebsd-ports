@@ -1,6 +1,5 @@
 PORTNAME=	objfw
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://objfw.nil.im/downloads/
 
@@ -9,6 +8,7 @@ COMMENT=	Portable, lightweight framework for the Objective-C language
 WWW=		https://objfw.nil.im/
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BROKEN_armv6=	test suite fails
 BROKEN_armv7=	test suite fails
@@ -31,10 +31,9 @@ GNUTLS_USES=		pkgconfig
 GNUTLS_CONFIGURE_ON=	--with-tls=gnutls
 GNUTLS_PLIST_SUB=	TLS=""
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls3
+MBEDTLS_USES=		localbase:ldflags
 MBEDTLS_CONFIGURE_ON=	--with-tls=mbedtls
-MBEDTLS_CPPFLAGS=	-I${PREFIX}/include
-MBEDTLS_LDFLAGS=	-L${PREFIX}/lib
 MBEDTLS_PLIST_SUB=	TLS=""
 
 NOTLS_CONFIGURE_ON=	--without-tls

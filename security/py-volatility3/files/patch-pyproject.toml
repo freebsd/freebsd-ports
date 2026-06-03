@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-04-30 19:29:02 UTC
++++ pyproject.toml
+@@ -97,5 +97,5 @@ ignore = [
+ ]
+ 
+ [build-system]
+-requires = ["setuptools>=68"]
++requires = ["setuptools>=63"]
+ build-backend = "setuptools.build_meta"

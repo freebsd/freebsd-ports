@@ -1,7 +1,7 @@
 PORTNAME=	gnudatalanguage
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	4
 CATEGORIES=	science lang
 MASTER_SITES=	https://github.com/${PORTNAME}/gdl/releases/download/v${PORTVERSION}/
 .if defined(BUILD_PYTHON_MODULE)
@@ -93,8 +93,8 @@ NETCDF_CMAKE_ON=	-DNETCDF:BOOL=YES -DHDF:BOOL=NO
 NETCDF_CMAKE_OFF=	-DNETCDF:BOOL=NO
 
 PYTHON_USES=		python
-PYTHON_BUILD_DEPENDS=	${PYNUMPY}
-PYTHON_RUN_DEPENDS=	${PYNUMPY} \
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
@@ -126,20 +126,6 @@ do-install:
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/testsuite
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/testsuite/)
-.endif
-
-.if defined(MAINTAINER_MODE)
-regression-test:	install
-. if defined(BUILD_PYTHON_MODULE)
-	@${ECHO_CMD} 'import GDL' > ${WRKDIR}/testgdl.py
-	@${ECHO_CMD} 'print GDL.function("sin",(1,))' >> ${WRKDIR}/testgdl.py
-	${PYTHON_CMD} ${WRKDIR}/testgdl.py
-. else
-	@${ECHO_CMD} ".RUN ${EXAMPLESDIR}/testsuite/test_suite.pro"	\
-		> ${WRKDIR}/testgdl
-	@${ECHO_CMD} "exit" >> ${WRKDIR}/testgdl
-	${PREFIX}/bin/gdl < ${WRKDIR}/testgdl
-. endif
 .endif
 
 .include <bsd.port.mk>

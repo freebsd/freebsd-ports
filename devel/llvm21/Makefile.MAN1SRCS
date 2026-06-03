@@ -1,0 +1,76 @@
+LLVM_MAN1SRCS= \
+	bugpoint.1 \
+	clang-tblgen.1 \
+	dsymutil.1 \
+	llc.1 \
+	lldb-tblgen.1 \
+	lli.1 \
+	llvm-addr2line.1 \
+	llvm-ar.1 \
+	llvm-as.1 \
+	llvm-bcanalyzer.1 \
+	llvm-cgdata.1 \
+	llvm-config.1 \
+	llvm-cov.1 \
+	llvm-cxxfilt.1 \
+	llvm-cxxmap.1 \
+	llvm-debuginfo-analyzer.1 \
+	llvm-diff.1 \
+	llvm-dis.1 \
+	llvm-dwarfdump.1 \
+	llvm-dwarfutil.1 \
+	llvm-exegesis.1 \
+	llvm-extract.1 \
+	llvm-ifs.1 \
+	llvm-install-name-tool.1 \
+	llvm-lib.1 \
+	llvm-libtool-darwin.1 \
+	llvm-lipo.1 \
+	llvm-link.1 \
+	llvm-locstats.1 \
+	llvm-mc.1 \
+	llvm-mca.1 \
+	llvm-nm.1 \
+	llvm-objcopy.1 \
+	llvm-objdump.1 \
+	llvm-opt-report.1 \
+	llvm-otool.1 \
+	llvm-pdbutil.1 \
+	llvm-profdata.1 \
+	llvm-profgen.1 \
+	llvm-ranlib.1 \
+	llvm-readelf.1 \
+	llvm-readobj.1 \
+	llvm-reduce.1 \
+	llvm-remarkutil.1 \
+	llvm-size.1 \
+	llvm-stress.1 \
+	llvm-strings.1 \
+	llvm-strip.1 \
+	llvm-symbolizer.1 \
+	llvm-tblgen.1 \
+	llvm-test-mustache-spec.1 \
+	llvm-tli-checker.1 \
+	mlir-tblgen.1 \
+	opt.1 \
+	tblgen.1
+
+CLANG_MAN1SRCS= \
+	clang.1 \
+	diagtool.1 \
+	scan-build.1
+
+EXTRAS_MAN1SRCS= \
+	extraclangtools.1
+
+FLANG_MAN1SRCS= \
+	flang.1
+
+LIT_MAN1SRCS= \
+	lit.1 \
+	FileCheck.1
+
+OPENMP_MAN1SRCS=
+
+POLLY_MAN1SRCS= \
+	polly.1

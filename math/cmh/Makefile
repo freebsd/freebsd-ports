@@ -2,11 +2,11 @@ PORTNAME=	cmh
 DISTVERSION=	1.1.1
 PORTREVISION=	4
 CATEGORIES=	math
-MASTER_SITES=	http://www.multiprecision.org/downloads/
+MASTER_SITES=	https://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute Igusa class polynomials
-WWW=		https://www.multiprecision.org/cmh/home.html
+WWW=		https://www.multiprecision.org/cmh/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

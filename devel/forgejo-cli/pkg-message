@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+To authenticate with a Forgejo instance, see:
+  fj auth --help
+
+For instances that support OAuth (such as codeberg.org):
+  fj -H <instance> auth login
+
+For other instances, generate an application token at
+https://<instance>/user/settings/applications, then:
+  fj -H <instance> auth add-key <user>
+EOM
+}
+]

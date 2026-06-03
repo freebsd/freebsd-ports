@@ -1,13 +1,13 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.92test16 # remember to bump PORTEPOCH when going from test to rc!
+DISTVERSION=	2.93rc3 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
-PORTEPOCH=	6
+PORTEPOCH=	8
 CATEGORIES=	dns
-#MASTER_SITES=	LOCAL/mandree/ \
-#		https://www.thekelleys.org.uk/dnsmasq/release-candidates/
 MASTER_SITES=	LOCAL/mandree/ \
-		https://www.thekelleys.org.uk/dnsmasq/test-releases/
+		https://www.thekelleys.org.uk/dnsmasq/release-candidates/
+#MASTER_SITES=	LOCAL/mandree/ \
+#		https://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -16,9 +16,9 @@ WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Short-lived test branch, to be removed after v2.92 release
+DEPRECATED=	Short-lived test branch, to be removed after v2.93 release
 
-USES=		cpe shebangfix tar:xz
+USES=		compiler cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
 
 SHEBANG_FILES=	contrib/dnslist/dnslist.pl \
@@ -30,11 +30,33 @@ MAKE_ARGS=	CC="${CC}" \
 		LIBS="${LDFLAGS}" \
 		PREFIX="${PREFIX}" \
 		RPM_OPT_FLAGS="${CPPFLAGS}"
-CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
-		-Wno-unused-value -Wno-unused-variable
+CFLAGS+=	-Wall
+# https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
+# Note there are ${ARCH}-dependent options below after .include <bsd.port.pre.mk>
+# Note that these are enforced for now (2025-09-16), and we can't subject them to PIE/FORTIFY/SSP_UNSAFE or WITHOUT_ options for now.
+CFLAGS+=	-Wall -Wformat -Wformat=2 \
+		-Werror=format-security \
+		-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 \
+		-fstrict-flex-arrays=3 \
+		-fstack-clash-protection -fstack-protector-strong \
+		-fno-delete-null-pointer-checks -fno-strict-overflow \
+		-fno-strict-aliasing -ftrivial-auto-var-init=zero
+LDFLAGS+=	-Wl,-z,nodlopen -Wl,-z,noexecstack \
+		-Wl,-z,relro -Wl,-z,now \
+		-Wl,--as-needed -Wl,--no-copy-dt-needed-entries
+CFLAGS+=	-fPIE
+LDFLAGS+=	-pie
+# error on obsolete C constructs
+CFLAGS+=	-Werror=implicit -Werror=incompatible-pointer-types \
+		-Werror=int-conversion
+# tune down harmless warnings due to coding style
+CFLAGS+=	-Wno-unused-function -Wno-unused-parameter \
+		-Wno-unused-value -Wno-unused-variable -Wno-format-nonliteral
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	dnsmasq-2*
+
+PATCH_STRIP=	-p1
 
 SUB_FILES=	pkg-message
 
@@ -101,6 +123,17 @@ LIB_DEPENDS+=	libgmp.so:math/gmp \
 USE_RC_SUBR=	dnsmasq
 
 .include <bsd.port.pre.mk>
+
+# https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fcf-protection=full
+.endif
+.if ${ARCH} == "aarch64"
+CFLAGS+=	-mbranch-protection=standard
+.endif
+.if ${CHOSEN_COMPILER_TYPE} == "gcc"
+CFLAGS+=	-Wtrampolines
+.endif
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
 

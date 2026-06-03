@@ -71,8 +71,7 @@ LLVM_COMMANDS=	\
 		llvm-xray \
 		nvptx-arch \
 		opt \
-		sancov \
-		split-file
+		sancov
 
 CLANG_COMMANDS=	\
 		analyze-build \
@@ -83,6 +82,7 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-include-cleaner \
 		clang-linker-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \

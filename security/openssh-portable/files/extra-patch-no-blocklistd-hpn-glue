@@ -1,0 +1,27 @@
+--- sshd-auth.c.orig	2026-04-26 20:56:18.236716000 -0700
++++ sshd-auth.c	2026-04-26 20:58:14.385157000 -0700
+@@ -167,6 +167,12 @@ static struct ssh_sandbox *box;
+ #ifndef HAVE_PLEDGE
+ static struct ssh_sandbox *box;
+ #endif
++
++/*
++ * This is compiled WITHOUT blocklistd support. This is done for patch
++ * glue in ports.
++ */
++#define BLACKLIST_NOTIFY(...)
+ 
+ /* XXX stub */
+ int
+@@ -812,8 +818,10 @@ do_ssh2_kex(struct ssh *ssh)
+ 	free(hkalgs);
+ 
+ 	if ((r = kex_exchange_identification(ssh, -1,
+-	    options.version_addendum)) != 0)
++	    options.version_addendum)) != 0) {
++		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
+ 		sshpkt_fatal(ssh, r, "banner exchange");
++	}
+ 	mm_sshkey_setcompat(ssh); /* tell monitor */
+ 
+ 	if ((ssh->compat & SSH_BUG_NOREKEY))

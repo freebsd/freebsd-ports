@@ -1,6 +1,5 @@
 PORTNAME=	xed
-PORTVERSION=	3.8.2
-PORTREVISION=	3
+PORTVERSION=	3.8.9
 CATEGORIES=	editors gnome
 DIST_SUBDIR=	gnome
 
@@ -24,7 +23,7 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 gtksourceview4 intltool \
-		introspection pango
+		introspection pango pygobject3
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.x.editor.gschema.xml \

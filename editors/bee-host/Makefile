@@ -1,5 +1,5 @@
 PORTNAME=	bee-host
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.2
 CATEGORIES=	editors www
 
 MAINTAINER=	thierry@FreeBSD.org

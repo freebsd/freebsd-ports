@@ -1,0 +1,11 @@
+--- doc/Makefile.orig	2025-11-23 02:57:58 UTC
++++ doc/Makefile
+@@ -123,7 +123,7 @@ ifdef CONFIG_MANPAGES
+ endif
+ 
+ ifdef CONFIG_MANPAGES
+-install-progs-$(CONFIG_DOC): install-man
++#install-progs-$(CONFIG_DOC): install-man
+ 
+ install-man: $(MANPAGES)
+ 	$(Q)mkdir -p "$(MANDIR)/man1"

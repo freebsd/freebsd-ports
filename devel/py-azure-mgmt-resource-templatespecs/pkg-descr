@@ -1,0 +1,3 @@
+This is the Microsoft Azure Resource Templatespecs Management Client Library.
+This package has been tested with Python 3.9+. For a more complete view of Azure
+libraries, see the azure sdk python release.

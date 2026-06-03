@@ -3,7 +3,7 @@ DISTVERSION=	0.3.5
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://git.tuxfamily.org/ctpl/ctpl.git/snapshot/
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	C Template (Parser) Library
 WWW=		https://ctpl.tuxfamily.org/
 

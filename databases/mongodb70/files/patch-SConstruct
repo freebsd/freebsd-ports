@@ -1,31 +1,6 @@
---- SConstruct.orig	2025-05-13 16:37:03 UTC
+--- SConstruct.orig	2025-11-03 12:58:46 UTC
 +++ SConstruct
-@@ -23,7 +23,6 @@ import SCons.Script
- 
- import SCons
- import SCons.Script
--from mongo_tooling_metrics.lib.top_level_metrics import SConsToolingMetrics
- from site_scons.mongo import build_profiles
- 
- # This must be first, even before EnsureSConsVersion, if
-@@ -1653,16 +1652,6 @@ env.AddMethod(lambda env, name, **kwargs: add_option(n
- del envDict
- env.AddMethod(lambda env, name, **kwargs: add_option(name, **kwargs), 'AddOption')
- 
--# The placement of this is intentional. Here we setup an atexit method to store tooling metrics.
--# We should only register this function after env, env_vars and the parser have been properly initialized.
--SConsToolingMetrics.register_metrics(
--    utc_starttime=datetime.utcnow(),
--    artifact_dir=env.Dir('$BUILD_DIR').get_abspath(),
--    env_vars=env_vars,
--    env=env,
--    parser=_parser,
--)
--
- if get_option('build-metrics'):
-     env['BUILD_METRICS_ARTIFACTS_DIR'] = '$BUILD_ROOT/$VARIANT_DIR'
-     env.Tool('build_metrics')
-@@ -1801,7 +1790,7 @@ if unknown_vars:
+@@ -1798,7 +1798,7 @@ if unknown_vars:
  
  unknown_vars = env_vars.UnknownVariables()
  if unknown_vars:
@@ -34,20 +9,3 @@
  
  install_actions.setup(env, get_option('install-action'))
  
-@@ -3013,7 +3002,7 @@ if env.TargetOSIs('posix'):
-             # If runtime hardening is requested, then build anything
-             # destined for an executable with the necessary flags for PIE.
-             env.AppendUnique(
--                PROGCCFLAGS=['-fPIE'],
-+                PROGCCFLAGS=['-fpic'],
-                 PROGLINKFLAGS=['-pie'],
-             )
- 
-@@ -3021,7 +3010,6 @@ if env.TargetOSIs('posix'):
-     env.Append(
-         CCFLAGS=[
-             "-fasynchronous-unwind-tables",
--            "-g2" if not env.TargetOSIs('emscripten') else "-g",
-             "-Wall",
-             "-Wsign-compare",
-             "-Wno-unknown-pragmas",

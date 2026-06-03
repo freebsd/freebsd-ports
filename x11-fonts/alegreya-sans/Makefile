@@ -5,7 +5,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Humanist sans serif font with a calligraphic feeling
 WWW=		https://www.huertatipografica.com/fonts/alegreya-sans-ht
 

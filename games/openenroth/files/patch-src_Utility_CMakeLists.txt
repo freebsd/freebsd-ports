@@ -1,0 +1,10 @@
+--- src/Utility/CMakeLists.txt.orig	2025-09-07 22:10:00 UTC
++++ src/Utility/CMakeLists.txt
+@@ -62,6 +62,7 @@ endif()
+ 
+ add_library(utility STATIC ${UTILITY_SOURCES} ${UTILITY_HEADERS})
+ target_check_style(utility)
++find_package(fmt REQUIRED)
+ target_link_libraries(utility
+         PUBLIC
+         fmt::fmt

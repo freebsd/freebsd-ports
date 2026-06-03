@@ -1,5 +1,6 @@
 PORTNAME=	powerdns
-DISTVERSION=	4.9.7
+DISTVERSION=	5.0.4
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -14,7 +15,8 @@ NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libsodium.so:security/libsodium
 
 USES=		autoreconf compiler:c++11-lib cpe gmake libtool \
 		localbase:ldflags pathfix pkgconfig ssl tar:bzip2
@@ -28,7 +30,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}" \
 		--with-dynmodules="pipe bind ${MODULES}" \
-		--with-libsodium=no \
+		--with-libsodium=yes \
 		--with-modules=""
 
 SCRIPTS_ENV=	CURDIR2="${.CURDIR}" \

@@ -1,5 +1,7 @@
 lib/aspell-%%VER%%/pt_PT.dat
 lib/aspell-%%VER%%/pt_PT_affix.dat
 lib/aspell-%%VER%%/pt_PT_repl.dat
-share/aspell/pt_PT.multi
-share/aspell/pt_PT.rws
+%%DATADIR%%/portugues.alias
+%%DATADIR%%/portuguese.alias
+%%DATADIR%%/pt_PT.multi
+%%DATADIR%%/pt_PT.rws

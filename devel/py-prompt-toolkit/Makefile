@@ -1,5 +1,5 @@
 PORTNAME=	prompt-toolkit
-PORTVERSION=	3.0.51
+PORTVERSION=	3.0.52
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	prompt_toolkit-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for building powerful interactive command lines in Python
-WWW=		https://python-prompt-toolkit.readthedocs.io/en/master/ \
+WWW=		https://python-prompt-toolkit.readthedocs.io/en/stable/ \
 		https://github.com/prompt-toolkit/python-prompt-toolkit
 
 LICENSE=	BSD3CLAUSE

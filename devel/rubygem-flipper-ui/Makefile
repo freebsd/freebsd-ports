@@ -1,5 +1,5 @@
 PORTNAME=	flipper-ui
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://www.flippercloud.io/ \
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-erubi>=1.0.0<2.0.0:www/rubygem-erubi \
-		rubygem-flipper>=${PORTVERSION}<1.4:devel/rubygem-flipper \
+		rubygem-flipper>=${PORTVERSION}<1.5:devel/rubygem-flipper \
 		rubygem-rack>=1.4,3<4,3:www/rubygem-rack \
 		rubygem-rack-protection>=1.5.3<5.0.0:www/rubygem-rack-protection \
 		rubygem-rack-session>=1.0.2<3.0.0:www/rubygem-rack-session \

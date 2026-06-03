@@ -94,10 +94,10 @@ COMMAND_CONF=		${COMMAND_CONF_DIR}/command.conf.sample
 RULES_DIR=		${OSSEC_DIR}/rules
 
 .if empty(USER)
-USER=$$(${ID} -un)
+USER!=id -un
 .endif
 .if empty(GROUP)
-GROUP=$$(${ID} -gn)
+GROUP!=id -gn
 .endif
 
 OSSEC_USER=	ossec

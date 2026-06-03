@@ -1,0 +1,6 @@
+evcc is an extensible EV Charge Controller and home energy management system.
+
+evcc optimizes charging your electric vehicle with self-generated solar energy
+or low-cost electricity tariffs. The software works across manufacturers with
+hundreds of wallboxes, solar systems, and vehicles. evcc runs locally on a
+Raspberry Pi or NAS - no cloud required.

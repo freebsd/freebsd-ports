@@ -1,6 +1,6 @@
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://download.filesystems.org/am-utils/ \
@@ -44,11 +44,19 @@ OPTIONS_SUB=	yes
 USE_RC_SUBR=	amd
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${RM} ${WRKSRC}/doc/am-utils.info*
+
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500059)
+post-configure:
+	@${ECHO_CMD} '#undef HAVE_RPC_AUTH_DES_H' >> ${WRKSRC}/config.h
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

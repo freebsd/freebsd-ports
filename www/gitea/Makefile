@@ -1,13 +1,13 @@
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.2
+DISTVERSION=	1.26.1
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		https://dl.gitea.io/gitea/${DISTVERSION}/
 DISTNAME=	gitea-src-${DISTVERSION}
 
-MAINTAINER=	stb@lassitu.de
+MAINTAINER=	ports@foss-daily.org
 COMMENT=	Compact self-hosted Git service
 WWW=		https://gitea.com/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:no_targets
+USES=		cpe gmake go:1.26+,no_targets
 USE_RC_SUBR=	gitea
 
 EXTRACT_AFTER_ARGS=	--strip-components 1 # since 1.17.0, archive includes gitea-src-VERSION directory

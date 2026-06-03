@@ -1,6 +1,5 @@
 PORTNAME=	py2bit
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	1.0.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
+# Can't switch to pep517 yet: Requires setuptools>=74.1
 USE_PYTHON=	autoplist distutils
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/py2bit.cpython-311.so
 
 .include <bsd.port.mk>

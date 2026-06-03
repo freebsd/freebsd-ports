@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-06-12 15:29:53 UTC
+--- pyproject.toml.orig	2026-05-05 16:33:54 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -17,12 +17,19 @@
  authors = [
    { name = "Wagtail core team + contributors", email = "hello@wagtail.org" },
  ]
-@@ -50,7 +49,7 @@ dependencies = [
-   "anyascii>=0.1.5",
-   "telepath>=0.3.1,<1",
-   "laces>=0.1,<0.2",
--  "django-tasks>=0.7,<0.8",
-+  "django-tasks>=0.7",
- ]
+@@ -114,15 +113,6 @@ include = ["wagtail*"]
  
- [project.urls]
+ "wagtail" = ["**/*"]
+ "*" = [".dockerignore"]
+-
+-[tool.setuptools.data-files]
+-"." = [
+-  "AGENTS.md",
+-  "CHANGELOG.txt",
+-  "CODE_OF_CONDUCT.md",
+-  "CONTRIBUTORS.md",
+-  "SPONSORS.md",
+-]
+ 
+ [tool.setuptools.exclude-package-data]
+ "wagtail" = [

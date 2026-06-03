@@ -1,5 +1,6 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.2.1
+DISTVERSION=	3.4.1
+PORTREVISION=	3
 CATEGORIES=	biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,10 +21,10 @@ RUN_DEPENDS=	hdf5>0:science/hdf5
 
 USES=		bison cmake java shebangfix
 USE_GITHUB=	yes
-USE_LDCONFIG=	${PREFIX}/lib64
+USE_LDCONFIG=	yes
 
 # Builds with earlier versions, but ngs-doc plist differs if jdk17 is present
-JAVA_VERSION=	17+
+JAVA_VERSION=	17
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -35,6 +36,8 @@ GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
+# Prevent cmake from using a later Java version, if present
+CMAKE_ARGS+=	-DJAVA_HOME:PATH=${JAVA_HOME}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -54,9 +57,7 @@ pre-configure:
 # Just hack the version out for now.  Not sure we even need javadoc installed.
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/*.${DISTVERSION}
-	${MV} ${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery-[0-9]*.min.js \
-		${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery.min.js
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.${DISTVERSION}
 
 post-stage-EXAMPLES-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}

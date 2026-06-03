@@ -44,6 +44,7 @@ include/janus/sdp-utils.h
 include/janus/text2pcap.h
 include/janus/transports/transport.h
 include/janus/utils.h
+libdata/pkgconfig/janus-gateway.pc
 libexec/janus/events/libjanus_gelfevh.so
 libexec/janus/events/libjanus_gelfevh.so.2
 libexec/janus/events/libjanus_gelfevh.so.%%SOVERSION%%

@@ -1,5 +1,5 @@
 PORTNAME=	repl_type_completor
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-prism>=1.0<2:textproc/rubygem-prism \
-		rubygem-rbs>=2.7.0<4.0.0:devel/rubygem-rbs
+		rubygem-rbs>=2.7.0:devel/rubygem-rbs
 
 USES=		gem
 

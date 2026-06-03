@@ -1,7 +1,7 @@
-TIMESTAMP = 1627698011
-SHA256 (el/eternallands-data_1.9.5.9-1.zip) = 00f105ce44998b939bb92361c113961f2220afa0a3b21e53beed35968ae23ae4
-SIZE (el/eternallands-data_1.9.5.9-1.zip) = 66147974
-SHA256 (el/eternallands-sound_1.9.5.9.zip) = 13a030bf5aca4e9e881707216f269df5826ff00345c93afac94a3f58455af542
-SIZE (el/eternallands-sound_1.9.5.9.zip) = 42907788
+TIMESTAMP = 1775590097
+SHA256 (el/eternallands-data_1.9.7.zip) = 2ab4d5549ee66da6bdb10bc86d9dd4ac7ca578aafb291111b330fae8d4c77f98
+SIZE (el/eternallands-data_1.9.7.zip) = 107608413
 SHA256 (el/eternallands-music_1.9.5.9.zip) = 1ea4de25081034ac684aaebf127ab6ca8524ba5367532863d84d63837dd631ec
 SIZE (el/eternallands-music_1.9.5.9.zip) = 65511882
+SHA256 (el/eternallands-sound_1.9.6.1.zip) = e8dc68698b42256cb3c69935f892336e2c5de4002b9bef2c21af2124a5274e3f
+SIZE (el/eternallands-sound_1.9.6.1.zip) = 42907816

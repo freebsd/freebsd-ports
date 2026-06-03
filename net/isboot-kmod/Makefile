@@ -9,6 +9,7 @@ WWW=		https://github.com/jnielsendotnet/isboot
 LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386
+CONFLICTS_INSTALL= isboot-kmod-devel
 
 USES=		kmod uidfix
 USE_GITHUB=	yes

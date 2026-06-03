@@ -1,11 +1,11 @@
 PORTNAME=	skypat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.1
+DISTVERSION=	3.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ unit and performance testing framework
-WWW=		https://skypat.skymizer.com/
+WWW=		https://github.com/skymizer/SkyPat
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,12 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf compiler:c++11-lang gmake libtool
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-dependency-tracking
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	skymizer
 GH_PROJECT=	SkyPat
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-dependency-tracking
 
 OPTIONS_DEFINE=	EXAMPLES
 

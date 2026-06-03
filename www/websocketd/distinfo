@@ -1,5 +1,5 @@
-TIMESTAMP = 1729240328
+TIMESTAMP = 1757120560
 SHA256 (joewalnes-websocketd-v0.4.1_GH0.tar.gz) = 6b8fe0fad586d794e002340ee597059b2cfc734ba7579933263aef4743138fe5
 SIZE (joewalnes-websocketd-v0.4.1_GH0.tar.gz) = 46366
-SHA256 (gorilla-websocket-v1.4.0_GH0.tar.gz) = 2b5743c72bd0930c5a80e49c0138b5b7d27fa7c085efd0c86805cccfa7220c9d
-SIZE (gorilla-websocket-v1.4.0_GH0.tar.gz) = 50228
+SHA256 (gorilla-websocket-v1.5.3_GH0.tar.gz) = 707f217e9a46c516c289b71c45a4e51b11b5e0fcec54c1fbfecde47b8a001799
+SIZE (gorilla-websocket-v1.5.3_GH0.tar.gz) = 54884

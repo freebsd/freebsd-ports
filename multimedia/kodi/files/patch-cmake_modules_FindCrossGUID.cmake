@@ -1,20 +1,20 @@
---- cmake/modules/FindCrossGUID.cmake.orig	2024-03-04 21:39:38 UTC
+--- cmake/modules/FindCrossGUID.cmake.orig	2026-03-20 17:18:29 UTC
 +++ cmake/modules/FindCrossGUID.cmake
-@@ -45,7 +45,7 @@ if(NOT TARGET CrossGUID::CrossGUID)
-       set(CROSSGUID_VERSION ${PC_CROSSGUID_VERSION})
-     endif()
+@@ -58,7 +58,7 @@ if(NOT TARGET ${APP_NAME_LC}::${CMAKE_FIND_PACKAGE_NAM
+       get_target_property(_crossguid_include_dir PkgConfig::${${CMAKE_FIND_PACKAGE_NAME}_SEARCH_NAME} INTERFACE_INCLUDE_DIRECTORIES)
  
--    find_path(CROSSGUID_INCLUDE_DIR NAMES crossguid/guid.hpp guid.h
-+    find_path(CROSSGUID_INCLUDE_DIR NAMES guid.hpp guid.h
-                                     HINTS ${DEPENDS_PATH}/include ${PC_CROSSGUID_INCLUDEDIR}
-                                     ${${CORE_PLATFORM_LC}_SEARCH_CONFIG}
-                                     NO_CACHE)
-@@ -59,7 +59,7 @@ if(NOT TARGET CrossGUID::CrossGUID)
-                                          NO_CACHE)
+       # NEW_CROSSGUID >= 0.2.0 release
+-      if(EXISTS "${_crossguid_include_dir}/crossguid/guid.hpp")
++      if(EXISTS "${_crossguid_include_dir}/guid.hpp")
+         list(APPEND ${${CMAKE_FIND_PACKAGE_NAME}_MODULE}_COMPILE_DEFINITIONS HAVE_NEW_CROSSGUID)
+       endif()
+     elseif(TARGET crossguid AND NOT TARGET ${${${CMAKE_FIND_PACKAGE_NAME}_MODULE}_BUILD_NAME})
+@@ -67,7 +67,7 @@ if(NOT TARGET ${APP_NAME_LC}::${CMAKE_FIND_PACKAGE_NAM
+       get_target_property(_crossguid_include_dir crossguid INTERFACE_INCLUDE_DIRECTORIES)
  
-     # NEW_CROSSGUID >= 0.2.0 release
--    if(EXISTS "${CROSSGUID_INCLUDE_DIR}/crossguid/guid.hpp")
-+    if(EXISTS "${CROSSGUID_INCLUDE_DIR}/guid.hpp")
-       list(APPEND _crossguid_definitions HAVE_NEW_CROSSGUID)
-     endif()
-   endif()
+       # NEW_CROSSGUID >= 0.2.0 release
+-      if(EXISTS "${_crossguid_include_dir}/crossguid/guid.hpp")
++      if(EXISTS "${_crossguid_include_dir}/guid.hpp")
+         list(APPEND ${${CMAKE_FIND_PACKAGE_NAME}_MODULE}_COMPILE_DEFINITIONS HAVE_NEW_CROSSGUID)
+       endif()
+     else()

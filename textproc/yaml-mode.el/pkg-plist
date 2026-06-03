@@ -1,4 +1,3 @@
-%%EMACS_VERSION_SITE_LISPDIR%%/yaml-mode.el
-%%EMACS_VERSION_SITE_LISPDIR%%/yaml-mode.elc
+%%EMACS_SITE_LISPDIR%%/yaml-mode.el
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/README

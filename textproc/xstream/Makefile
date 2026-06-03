@@ -1,5 +1,6 @@
 PORTNAME=	xstream
 PORTVERSION=	1.4.21
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-distribution-${PORTVERSION}-bin${EXTRACT_SUFX}

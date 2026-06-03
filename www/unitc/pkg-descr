@@ -1,3 +1,0 @@
-The unitc tool provides a command-line interface as a wrapper for curl(1)
-for daily configuration and management of NGINX Unit instances.  It aims
-to minimize typing effort and shield the users from exotic curl(1) options.

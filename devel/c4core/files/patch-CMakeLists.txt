@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2022-01-06 20:06:58 UTC
+--- CMakeLists.txt.orig	2025-04-10 19:49:39 UTC
 +++ CMakeLists.txt
-@@ -60,7 +60,6 @@ set(C4CORE_SRC_FILES
-     c4/windows.hpp
+@@ -69,7 +69,6 @@ set(C4CORE_SRC_FILES
+     c4/version.cpp
      c4/windows_pop.hpp
      c4/windows_push.hpp
 -    c4/c4core.natvis

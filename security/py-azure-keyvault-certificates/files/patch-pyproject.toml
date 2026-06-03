@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-05-05 15:45:39 UTC
++++ pyproject.toml
+@@ -93,7 +93,7 @@ dev = [
+     "azure-identity",
+     "azure-keyvault-nspkg",
+     "azure-sdk-tools",
+-    "cryptography>=44.0.2,<47.0.0",
++    "cryptography>=44.0.2,<49.0.0",
+     "parameterized>=0.7.3",
+     "pyopenssl",
+     "python-dateutil>=2.8.0",

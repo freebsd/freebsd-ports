@@ -3,6 +3,9 @@ Android tools for FreeBSD. Tools include:
  * adb
  * fastboot
  * mke2fs.android (required by fastboot)
- * simg2img, img2simg, append2simg
+ * simg2img, img2simg, append2simg, ext2simg
+ * e2fsdroid
  * lpdump, lpmake, lpadd, lpflash, lpunpack
+ * make_f2fs, sload_f2fs
  * mkbootimg, unpack_bootimg, repack_bootimg
+ * avbtool, mkdtboimg

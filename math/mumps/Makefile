@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-edf
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver for Code_Aster
-WWW=		https://graal.ens-lyon.fr/MUMPS/
+WWW=		https://mumps-solver.org/
 
 LICENSE=	CeCILL_C
 LICENSE_NAME=	CeCILL-C

@@ -1,6 +1,6 @@
 PORTNAME=	mle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
+DISTVERSION=	1.8.1
 CATEGORIES=	editors
 
 MAINTAINER=	as@php.net
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c11 gmake localbase:ldflags shebangfix lua:54
+USES=		compiler:c11 gmake localbase:ldflags lua:54 shebangfix
 SHEBANG_FILES=	tests/func/*.sh tests/run.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	adsr

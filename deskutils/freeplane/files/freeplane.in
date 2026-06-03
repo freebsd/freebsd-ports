@@ -6,4 +6,6 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
     export _JAVA_AWT_WM_NONREPARENTING=1
 fi
 
+export FREEPLANE_JAVA_HOME=%%JAVA_HOME%%
+
 exec %%DATADIR%%/freeplane.sh "$@"

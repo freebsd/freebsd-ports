@@ -68,6 +68,7 @@
     SUBDIR += lxqt-wayland-session
     SUBDIR += lxsession
     SUBDIR += magpie
+    SUBDIR += mango
     SUBDIR += marco
     SUBDIR += mcwm
     SUBDIR += metacity
@@ -93,6 +94,7 @@
     SUBDIR += qtile
     SUBDIR += ratpoison
     SUBDIR += river
+    SUBDIR += river-classic
     SUBDIR += rubygem-uh-layout
     SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
@@ -112,6 +114,7 @@
     SUBDIR += vtwm
     SUBDIR += wayfire
     SUBDIR += wayfire-plugins-extra
+    SUBDIR += wideriver
     SUBDIR += windowmaker
     SUBDIR += wlmaker
     SUBDIR += wm2

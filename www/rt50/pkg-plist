@@ -760,6 +760,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/5.0.3/indexes
 %%DOCSDIR%%/upgrade/5.0.3/schema.Pg
 %%DOCSDIR%%/upgrade/5.0.4/acl.Pg
+%%DOCSDIR%%/upgrade/5.0.4/backcompat-preinit
 %%DOCSDIR%%/upgrade/5.0.4/content
 %%DOCSDIR%%/upgrade/5.0.4/schema.Oracle
 %%DOCSDIR%%/upgrade/5.0.4/schema.Pg
@@ -1050,7 +1051,6 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Elements/ShowPeople
 %%DATADIR%%/html/Asset/Elements/ShowRoleMembers
 %%DATADIR%%/html/Asset/Elements/ShowSummary
-%%DATADIR%%/html/Asset/Elements/TSVExport
 %%DATADIR%%/html/Asset/Helpers/CreateLinkedTicket
 %%DATADIR%%/html/Asset/History.html
 %%DATADIR%%/html/Asset/Modify.html
@@ -1605,6 +1605,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/de.po
 %%DATADIR%%/po/el.po
 %%DATADIR%%/po/en.po
+%%DATADIR%%/po/en_CA.po
 %%DATADIR%%/po/en_GB.po
 %%DATADIR%%/po/es.po
 %%DATADIR%%/po/et.po
@@ -1618,6 +1619,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/is.po
 %%DATADIR%%/po/it.po
 %%DATADIR%%/po/ja.po
+%%DATADIR%%/po/lo.po
 %%DATADIR%%/po/lt.po
 %%DATADIR%%/po/lv.po
 %%DATADIR%%/po/nb.po

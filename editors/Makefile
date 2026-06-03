@@ -2,7 +2,6 @@
 
     SUBDIR += 2bsd-vi
     SUBDIR += abiword
-    SUBDIR += abiword-docs
     SUBDIR += ad
     SUBDIR += aee
     SUBDIR += aewan
@@ -21,6 +20,7 @@
     SUBDIR += calligra
     SUBDIR += calligraplan
     SUBDIR += chexedit
+    SUBDIR += consult.el
     SUBDIR += cooledit
     SUBDIR += cpeditor
     SUBDIR += cream
@@ -32,6 +32,7 @@
     SUBDIR += dkns
     SUBDIR += drjava
     SUBDIR += dte
+    SUBDIR += dz6
     SUBDIR += e3
     SUBDIR += e93
     SUBDIR += ecce
@@ -46,6 +47,7 @@
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += focuswriter
+    SUBDIR += fresh
     SUBDIR += fxite
     SUBDIR += gedit
     SUBDIR += gedit-plugins
@@ -55,15 +57,18 @@
     SUBDIR += gnome-text-editor
     SUBDIR += gobby
     SUBDIR += gomate
+    SUBDIR += gram
     SUBDIR += gummi
     SUBDIR += helix
     SUBDIR += heme
+    SUBDIR += hexapoda
     SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexer
     SUBDIR += hexpert
     SUBDIR += hnb
     SUBDIR += hte
+    SUBDIR += hxavi
     SUBDIR += imhex
     SUBDIR += jed
     SUBDIR += jedit
@@ -201,7 +206,10 @@
     SUBDIR += linux-wps-office
     SUBDIR += lite
     SUBDIR += lite-xl
+    SUBDIR += marginalia.el
     SUBDIR += marker
+    SUBDIR += markmywords
+    SUBDIR += marknote
     SUBDIR += mg
     SUBDIR += mickey
     SUBDIR += micro
@@ -225,11 +233,13 @@
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
     SUBDIR += orbiton
+    SUBDIR += orderless.el
     SUBDIR += ox
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
     SUBDIR += parinfer-rust
+    SUBDIR += perspective.el
     SUBDIR += pico-alpine
     SUBDIR += picpas
     SUBDIR += pluma
@@ -240,11 +250,12 @@
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-babi
+    SUBDIR += py-editor
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
-    SUBDIR += quilter
     SUBDIR += rehex
+    SUBDIR += remarkable
     SUBDIR += retext
     SUBDIR += rubygem-neovim
     SUBDIR += sam
@@ -278,6 +289,7 @@
     SUBDIR += uhex
     SUBDIR += uzap
     SUBDIR += ved
+    SUBDIR += vertico.el
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
@@ -287,14 +299,13 @@
     SUBDIR += vscode
     SUBDIR += web-mode
     SUBDIR += with-editor
-    SUBDIR += with-editor-devel
-    SUBDIR += wordgrinder
     SUBDIR += wxhexeditor
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yudit
+    SUBDIR += zed
     SUBDIR += zile
 
 .include <bsd.port.subdir.mk>

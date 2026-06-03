@@ -1,7 +1,7 @@
 usr/lib64/libjxl.so.0.7
-usr/lib64/libjxl.so.0.7.0
+usr/lib64/libjxl.so.0.7.2
 usr/lib64/libjxl_threads.so.0.7
-usr/lib64/libjxl_threads.so.0.7.0
+usr/lib64/libjxl_threads.so.0.7.2
 usr/share/licenses/libjxl/LICENSE
 usr/share/mime/packages/image-jxl.xml
 usr/share/thumbnailers/jxl.thumbnailer

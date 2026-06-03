@@ -1,0 +1,11 @@
+--- Makefile.in.orig   2026-04-08 20:13:55 UTC
++++ Makefile.in
+@@ -80,7 +80,7 @@ am__ELCFILES = $(am__ELFILES:.el=.elc)
+       navi2ch-thumbnail.el navi2ch-util.el navi2ch-vars.el \
+       navi2ch-version.el navi2ch-xmas.el navi2ch.el
+ am__ELCFILES = $(am__ELFILES:.el=.elc)
+-ELCFILES = $(LISP:.el=.elc)
++ELCFILES =
+ elisp_comp = $(top_srcdir)/elisp-comp
+ lispDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(lisp_DATA)

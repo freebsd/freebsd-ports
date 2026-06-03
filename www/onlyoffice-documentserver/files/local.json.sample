@@ -25,19 +25,35 @@
         }
       },
       "secret": {
+        "browser": {
+          "string": "JWTsecretstring"
+        },
         "inbox": {
-          "string": "secret"
+          "string": "JWTsecretstring"
         },
         "outbox": {
-          "string": "secret"
+          "string": "JWTsecretstring"
         },
         "session": {
-          "string": "secret"
+          "string": "JWTsecretstring"
         }
       }
     }
   },
+  "openpgpjs": {
+    "_comment": "https://helpcenter.onlyoffice.com/docs/installation/docs-developer-configuring.aspx#openpgpprotocol_block"
+    "encrypt": {
+      "passwords": ["PGPguardsecretstring"]
+    },
+    "decrypt": {
+      "passwords": ["PGPguardsecretstring"]
+    }
+  },
+  "aesEncrypt": {
+    "_comment": "https://helpcenter.onlyoffice.com/docs/installation/docs-developer-configuring.aspx#aes256gcmalgorithm_block"
+    "secret": "docpasswordsecretstring"
+  },
   "rabbitmq": {
-    "url": "amqp://guest:guest@localhost"
+    "url": "amqp://onlyoffice:password@localhost"
   }
 }

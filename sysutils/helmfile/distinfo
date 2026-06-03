@@ -1,5 +1,5 @@
-TIMESTAMP = 1750774421
-SHA256 (go/sysutils_helmfile/helmfile-v1.1.2/v1.1.2.mod) = 00d47557c4b86b15c9bdfd243c2fda36db2690aa3760057469a5e936674dba34
-SIZE (go/sysutils_helmfile/helmfile-v1.1.2/v1.1.2.mod) = 16373
-SHA256 (go/sysutils_helmfile/helmfile-v1.1.2/v1.1.2.zip) = 0ab5240598a8f30c3c2b8d09f8a9a6b43018f57dd33bff63ecf3536e256ea356
-SIZE (go/sysutils_helmfile/helmfile-v1.1.2/v1.1.2.zip) = 1397785
+TIMESTAMP = 1766769356
+SHA256 (go/sysutils_helmfile/helmfile-v1.2.3/v1.2.3.mod) = 19c6f524979a43b52d13e039b866dc787d6b17bfb1d6ba5926562b70c5fd2045
+SIZE (go/sysutils_helmfile/helmfile-v1.2.3/v1.2.3.mod) = 18025
+SHA256 (go/sysutils_helmfile/helmfile-v1.2.3/v1.2.3.zip) = 3cded8dbfdddd523b3fb74fe9b050e58108ee85287f18dcfec1415d6a84172c3
+SIZE (go/sysutils_helmfile/helmfile-v1.2.3/v1.2.3.zip) = 1481849

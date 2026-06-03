@@ -1,2 +1,7 @@
-SHA256 (tomenet-4.6.0.tar.bz2) = bd1cbf05fe8cb4c8af5e658ede622cf12b54aae42c640af12677e4067902673f
-SIZE (tomenet-4.6.0.tar.bz2) = 3039894
+TIMESTAMP = 1777810758
+SHA256 (tomenet-4.9.3.tar.bz2) = 0f088bfaf1c02f598a107f653bc755f33da4681ca61acb13103edad7e8879e84
+SIZE (tomenet-4.9.3.tar.bz2) = 7802220
+SHA256 (tomenet-soundpack-1.0a.tar.gz) = 58f8d1b8435f5270c14fb79ae7cd4c7ac458ffc3994adf7822e234c15c785b0c
+SIZE (tomenet-soundpack-1.0a.tar.gz) = 9775741
+SHA256 (TomenetGame-tomenet-soundpack-v1.0a_GH0.tar.gz) = 58f8d1b8435f5270c14fb79ae7cd4c7ac458ffc3994adf7822e234c15c785b0c
+SIZE (TomenetGame-tomenet-soundpack-v1.0a_GH0.tar.gz) = 9775741

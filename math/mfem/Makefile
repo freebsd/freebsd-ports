@@ -1,6 +1,6 @@
 PORTNAME=	mfem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7
+DISTVERSION=	4.9
 PORTREVISION=	1
 CATEGORIES=	math
 
@@ -12,11 +12,13 @@ WWW=		https://mfem.org \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang
+LIB_DEPENDS=	libgcc_s.so.1:lang/gcc14
+
+USES=		blaslapack:openblas cmake:testing compiler:c++11-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS MFEM_USE_LAPACK
 CMAKE_TESTING_ON=	MFEM_ENABLE_TESTING # tests are broken, see https://github.com/mfem/mfem/issues/3163
 CMAKE_TESTING_TARGET=	exec test
 

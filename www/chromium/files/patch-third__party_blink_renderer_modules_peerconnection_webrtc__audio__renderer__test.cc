@@ -1,4 +1,4 @@
---- third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc.orig	2025-07-02 06:08:04 UTC
+--- third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc.orig	2026-01-14 08:33:23 UTC
 +++ third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc
 @@ -382,7 +382,7 @@ TEST_F(WebRtcAudioRendererTest, DISABLED_VerifySinkPar
    SetupRenderer(kDefaultOutputDeviceId);

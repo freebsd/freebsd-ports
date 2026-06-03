@@ -1,0 +1,27 @@
+--- media/audio/BUILD.gn.orig	2025-09-10 14:33:47 UTC
++++ media/audio/BUILD.gn
+@@ -290,9 +290,23 @@ source_set("audio") {
+     deps += [ "//media/base/android:media_jni_headers" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "linux/audio_manager_linux.cc" ]
+   }
++
++  if (is_bsd) {
++    sources += [ "sndio/audio_manager_sndio.cc" ]
++  }
++
++  if (use_sndio) {
++    libs += [ "sndio" ]
++    sources += [
++      "sndio/sndio_input.cc",
++      "sndio/sndio_input.h",
++      "sndio/sndio_output.cc",
++      "sndio/sndio_output.h"
++    ]
++   }
+ 
+   if (use_alsa) {
+     libs += [ "asound" ]

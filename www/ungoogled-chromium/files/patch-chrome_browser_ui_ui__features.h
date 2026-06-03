@@ -1,15 +1,24 @@
---- chrome/browser/ui/ui_features.h.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/ui/ui_features.h.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -28,7 +28,7 @@ BASE_DECLARE_FEATURE(kAllowEyeDropperWGCScreenCapture)
+@@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(kBrowserWidgetCacheThemeService);
  
- BASE_DECLARE_FEATURE(kCloseOmniboxPopupOnInactiveAreaClick);
+ BASE_DECLARE_FEATURE(kCreateNewTabGroupAppMenuTopLevel);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_DECLARE_FEATURE(kDseIntegrity);
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
+@@ -68,7 +68,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
+ BASE_DECLARE_FEATURE_PARAM(int, kSeparateDefaultAndPinPromptMessageVersion);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
-@@ -214,7 +214,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // When enabled, user may see the session restore UI flow.
+ BASE_DECLARE_FEATURE(kSessionRestoreInfobar);
+ 
+@@ -257,7 +257,7 @@ BASE_DECLARE_FEATURE(kWebUITabStripContextMenuAfterTap
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

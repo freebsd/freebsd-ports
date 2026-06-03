@@ -1,5 +1,6 @@
 PORTNAME=	gitg
 DISTVERSION=	44
+PORTREVISION=	1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -7,6 +8,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
 WWW=		https://wiki.gnome.org/Apps/Gitg
+
+BROKEN=		Fails to build, error: typedef redefinition with different types ('struct _GIBaseInfoStub' vs 'struct _GIBaseInfo')
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,7 +24,9 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libpeas-1.0.so:devel/libpeas1 \
 		libgspell-1.so:textproc/gspell \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
-		libsecret-1.so:security/libsecret
+		libsecret-1.so:security/libsecret \
+		libgpgme.so:security/gpgme \
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even

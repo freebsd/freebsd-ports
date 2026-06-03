@@ -28,9 +28,9 @@ _COMMON_DISTS=		3d base charts connectivity datavis3d declarative \
 			wayland webchannel webengine websockets webview
 _QT5_DISTS=		gamepad graphicaleffects quickcontrols quickcontrols2 \
 			script webglplugin x11extras xmlpatterns
-_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver \
-			lottie mqtt positioning quick3dphysics quickeffectmaker \
-			shadertools
+_QT6_DISTS=		5compat canvaspainter coap doc graphs grpc httpserver \
+			languageserver lottie mqtt openapi positioning \
+			quick3dphysics quickeffectmaker shadertools tasktree
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
 
@@ -84,6 +84,11 @@ _QT5_MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/su
 # Qt6 specific master sites
 _QT6_MASTER_SITES=		${MASTER_SITE_QT}
 _QT6_MASTER_SITE_SUBDIR=	${_QT6_RELEASE_TYPE}_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules
+# devel/qt6-openapi needs an offline archive of the maven deps
+# which we supply locally.
+.  if ${_QT_DIST} == openapi && !defined(QTOPENAPI_MAINTAINER_MODE)
+_QT6_MASTER_SITES+=		LOCAL/kde/KDE/Qt/${_QT_VERSION}:maven
+.  endif
 
 # Qt5 specific distnames
 .  if ${_QT_DIST} == webengine
@@ -102,17 +107,24 @@ MASTER_SITES=			${_QT${_QT_VER}_MASTER_SITES${_KDE_${_QT_DIST}:D_kde}}
 MASTER_SITE_SUBDIR=		${_QT${_QT_VER}_MASTER_SITE_SUBDIR${_KDE_${_QT_DIST}:D_kde}}
 DISTNAME=			${_QT${_QT_VER}_DISTNAME${_KDE_${_QT_DIST}:D_kde}}
 DISTFILES=			${DISTNAME:S,$,${EXTRACT_SUFX},}
+# devel/qt6-openapi needs an offline archive of the maven deps.
+# When QTOPENAPI_MAINTAINER_MODE is defined, this allows the
+# qtopenapi-create-maven-deps target to function without
+# trying to download a non-existent distfile.
+.    if ${_QT_DIST} == openapi && !defined(QTOPENAPI_MAINTAINER_MODE)
+DISTFILES+=			${DISTNAME:S|everywhere-src|maven-deps|:S|$|${EXTRACT_SUFX}|}:maven
+.    endif
 .  endif
 DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
 _KDE_3d=		0
-_KDE_base=		123
+_KDE_base=		96
 _KDE_charts=		0
-_KDE_connectivity=	2
+_KDE_connectivity=	0
 _KDE_datavis3d=		0
-_KDE_declarative=	21
+_KDE_declarative=	23
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
 _KDE_imageformats=	2
@@ -136,7 +148,7 @@ _KDE_svg=		5
 _KDE_tools=		3
 _KDE_translations=	0
 _KDE_virtualkeyboard=	0
-_KDE_wayland=		57
+_KDE_wayland=		55
 _KDE_webchannel=	3
 # We track the 5.15 branch for www/qt5-webengine to make it easier to
 # stay on top of Chromium security patches.
@@ -189,21 +201,22 @@ EXTRACT_AFTER_ARGS?=	${DISTNAME:S,$,/examples,:S,^,--exclude ,} \
 
 # Build setup for Qt6
 .  if ${_QT_VER:M6}
-CMAKE_ARGS+=		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-			-DINSTALL_BINDIR=${PREFIX}/${QT_BINDIR_REL} \
-			-DINSTALL_PUBLICBINDIR=${PREFIX}/bin \
-			-DINSTALL_LIBDIR=${PREFIX}/${QT_LIBDIR_REL} \
-			-DINSTALL_LIBEXECDIR=${PREFIX}/${QT_LIBEXECDIR_REL} \
-			-DINSTALL_DOCDIR=${PREFIX}/${QT_DOCDIR_REL} \
-			-DINSTALL_ARCHDATADIR=${PREFIX}/${QT_ARCHDIR_REL} \
-			-DINSTALL_DATADIR=${PREFIX}/${QT_DATADIR_REL} \
-			-DINSTALL_INCLUDEDIR=${PREFIX}/${QT_INCDIR_REL} \
-			-DINSTALL_MKSPECSDIR=${PREFIX}/${QT_MKSPECDIR_REL} \
-			-DINSTALL_EXAMPLESDIR=${PREFIX}/${QT_EXAMPLEDIR_REL} \
-			-DINSTALL_DESCRIPTIONSDIR=${PREFIX}/${QT_DESCRIPTIONSDIR_REL} \
+CMAKE_ARGS+=		-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+			-DINSTALL_BINDIR="${PREFIX}/${QT_BINDIR_REL}" \
+			-DINSTALL_PUBLICBINDIR="${PREFIX}/bin" \
+			-DINSTALL_LIBDIR="${PREFIX}/${QT_LIBDIR_REL}" \
+			-DINSTALL_LIBEXECDIR="${PREFIX}/${QT_LIBEXECDIR_REL}" \
+			-DINSTALL_DOCDIR="${PREFIX}/${QT_DOCDIR_REL}" \
+			-DINSTALL_ARCHDATADIR="${PREFIX}/${QT_ARCHDIR_REL}" \
+			-DINSTALL_DATADIR="${PREFIX}/${QT_DATADIR_REL}" \
+			-DINSTALL_INCLUDEDIR="${PREFIX}/${QT_INCDIR_REL}" \
+			-DINSTALL_MKSPECSDIR="${PREFIX}/${QT_MKSPECDIR_REL}" \
+			-DINSTALL_EXAMPLESDIR="${PREFIX}/${QT_EXAMPLEDIR_REL}" \
+			-DINSTALL_DESCRIPTIONSDIR="${PREFIX}/${QT_DESCRIPTIONSDIR_REL}" \
 			-DQT_QMAKE_TARGET_MKSPEC:String=freebsd-clang \
-			-DQT_SBOM_GENERATE_JSON:BOOL=OFF \
-			-DQT_SBOM_VERIFY:BOOL=OFF \
+			-DQT_SBOM_FORCE_USE_PYTHON_INTERP:BOOL=ON \
+			-DQT_SBOM_PYTHON_INTERP="${PYTHON_CMD}" \
+			-DQT_SBOM_VERIFY_SPDX_V2:BOOL=OFF \
 			--log-level=TRACE
 .  endif
 
@@ -265,7 +278,7 @@ _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_fe
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_common_bsd_bsd.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-clang_qmake.conf
-.    if ${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang))
+.    if ${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)
 _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-g++_qmake.conf

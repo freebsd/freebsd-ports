@@ -79,6 +79,7 @@
 %%DATADIR%%/copyright_and_licenses.csv
 %%DATADIR%%/cz_cuzk_CR-2005.tif
 %%DATADIR%%/cz_cuzk_README.txt
+%%DATADIR%%/cz_cuzk_table_-y-x_3_v1710.tif
 %%DATADIR%%/de_adv_BETA2007.tif
 %%DATADIR%%/de_adv_README.txt
 %%DATADIR%%/de_bkg_README.txt
@@ -169,6 +170,7 @@
 %%DATADIR%%/fr_ign_ggker08v2.tif
 %%DATADIR%%/fr_ign_ggm00v2.tif
 %%DATADIR%%/fr_ign_ggm04v1.tif
+%%DATADIR%%/fr_ign_ggm23v2.tif
 %%DATADIR%%/fr_ign_ggpf02-Bora.tif
 %%DATADIR%%/fr_ign_ggpf02-Huahine.tif
 %%DATADIR%%/fr_ign_ggpf02-Maiao.tif
@@ -227,8 +229,10 @@
 %%DATADIR%%/no_kv_CD_above_Ell_ETRS89_v2023b.tif
 %%DATADIR%%/no_kv_ETRS89NO_NGO48_TIN.json
 %%DATADIR%%/no_kv_HREF2018B_NN2000_EUREF89.tif
+%%DATADIR%%/no_kv_HREF2018B_NN54_NN2000.tif
 %%DATADIR%%/no_kv_NKGETRF14_EPSG7922_2000.tif
 %%DATADIR%%/no_kv_README.txt
+%%DATADIR%%/no_kv_Svalbard_EUREF89_SVD2024.tif
 %%DATADIR%%/no_kv_arcgp-2006-sk.tif
 %%DATADIR%%/no_kv_href2008a.tif
 %%DATADIR%%/nz_linz_README.txt
@@ -302,6 +306,7 @@
 %%DATADIR%%/se_lantmateriet_SWEN17_RH2000.tif
 %%DATADIR%%/si_gurs_README.txt
 %%DATADIR%%/si_gurs_SLO-VRP2016-Koper.tif
+%%DATADIR%%/si_gurs_SLO-VTP2024.tif
 %%DATADIR%%/sk_gku_JTSK03_to_JTSK.tif
 %%DATADIR%%/sk_gku_README.txt
 %%DATADIR%%/sk_gku_Slovakia_ETRS89h_to_Baltic1957.tif

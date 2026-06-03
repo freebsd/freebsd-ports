@@ -1,5 +1,5 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.6.14
+DISTVERSION=		2.7.4
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -16,6 +16,8 @@ LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka \
 			rst2man:textproc/py-docutils@${PY_FLAVOR}
 
+TEST_DEPENDS=		fping:net/fping
+
 USES=			cpe libtool localbase:ldflags pkgconfig python:build shebangfix ssl
 USE_RC_SUBR=		openvpn
 
@@ -26,7 +28,7 @@ SHEBANG_FILES=		sample/sample-scripts/auth-pam.pl \
 
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS+=	--enable-strict --with-crypto-library=openssl
+CONFIGURE_ARGS+=	--with-crypto-library=openssl
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
@@ -43,7 +45,6 @@ PORTEXAMPLES=		*
 OPTIONS_DEFINE=		ASYNC_PUSH DCO DOCS EASYRSA EXAMPLES LZ4 LZO PKCS11 SMALL \
 			TEST UNITTESTS X509ALTUSERNAME
 OPTIONS_DEFAULT=	DCO EASYRSA LZ4 LZO PKCS11 TEST
-OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 
 ASYNC_PUSH_DESC=	Enable async-push support
 DCO_DESC=		Data Channel Offload/ovpn(4) support->README.dco.md
@@ -54,7 +55,6 @@ SMALL_DESC=		Build a smaller executable with fewer features
 UNITTESTS_DESC=		Enable unit tests
 X509ALTUSERNAME_DESC=	Enable --x509-username-field
 
-ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
 ASYNC_PUSH_CONFIGURE_ENABLE=	async-push
 
 DCO_CONFIGURE_ENABLE=	dco
@@ -93,6 +93,13 @@ IGNORE_SSL_REASON=OpenVPN does not have permission to include LZO with LibreSSL.
 
 .if ! ${PORT_OPTIONS:MLZ4} && ! ${PORT_OPTIONS:MLZO}
 CONFIGURE_ARGS+=	--enable-comp-stub
+.endif
+
+# FreeBSD 15 added Linux-compatible inotify support
+.if ${PORT_OPTIONS:MASYNC_PUSH}
+. if "${OPSYS}" != "FreeBSD" || ${OSVERSION} < 1500068
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+. endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -149,8 +156,6 @@ post-build:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.up ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.down ${STAGEDIR}${PREFIX}/libexec/openvpn-client.down
 	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 

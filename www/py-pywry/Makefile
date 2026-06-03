@@ -1,6 +1,6 @@
 PORTNAME=	pywry
 DISTVERSION=	0.6.2
-PORTREVISION=	15
+PORTREVISION=	22
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}maturin>0:devel/py-maturin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		rust188>0:lang/rust188
 LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		cargo gnome python
 USE_PYTHON=	pep517 autoplist
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30
+
+CARGO_BUILDDEP=	no
 
 # workaround for the problem that the ports framework doesn't add PYPI-related file to DISTFILES due to DISTFILES?= in Mk/bsd.port.mk
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}

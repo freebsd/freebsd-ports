@@ -3,7 +3,7 @@ with 63.x.
 
 [1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
 
---- pyproject.toml.orig	2025-05-16 11:58:37 UTC
+--- pyproject.toml.orig	2025-12-06 11:51:43 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  # The project configuration for sip.
@@ -20,7 +20,7 @@ with 63.x.
  urls.homepage = "https://github.com/Python-SIP/sip"
 -dependencies = ["packaging>=24.2", "setuptools>=75.8.1", "tomli; python_version<'3.11'"]
 +dependencies = ["packaging>=24.2", "setuptools>=63", "tomli; python_version<'3.11'"]
- requires-python = ">=3.9"
+ requires-python = ">=3.10"
 -license = "BSD-2-Clause"
 -license-files = ["LICENSE"]
 +license = {file = "LICENSE"}

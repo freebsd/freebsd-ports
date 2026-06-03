@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2016-10-19 20:07:32 UTC
-+++ src/Makefile.am
-@@ -1,15 +1,16 @@
+--- src/Makefile.am.orig	2026-01-07 15:00:22.589270000 +0100
++++ src/Makefile.am	2026-01-07 15:02:24.650819000 +0100
+@@ -1,15 +1,16 @@ WC=-Wc,"$(CFLAGS)"
  AUTOMAKE_OPTIONS = foreign
  WC=-Wc,"$(CFLAGS)"
 +WL=-Wl,"$(LDFLAGS)"
@@ -15,7 +15,7 @@
  
  install-exec-local: module
 -	$(APXS) -i -a -n maxminddb .libs/mod_maxminddb.so
-+	$(APXS) -S LIBEXECDIR=%%LIBEXECDEST%% -i -a -n maxminddb mod_maxminddb.la ### maxminddb .libs/mod_maxminddb.so
++	$(APXS) -S LIBEXECDIR=%%LIBEXECDEST%% -i -n maxminddb mod_maxminddb.la
  
  CLEANFILES=         *.la *.lo *.o *.so *.slo .libs/*
  

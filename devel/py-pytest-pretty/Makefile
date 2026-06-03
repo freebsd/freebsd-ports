@@ -1,6 +1,6 @@
 PORTNAME=	pytest-pretty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samuelcolvin
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 1.3.0: 2 failed (pytester inprocess tests fail when plugin not installed, environment issue)
 
 NO_ARCH=	yes
 

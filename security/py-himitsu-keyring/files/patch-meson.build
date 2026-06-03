@@ -1,0 +1,8 @@
+--- meson.build.orig	2026-04-12 20:33:22 UTC
++++ meson.build
+@@ -8,4 +8,4 @@ subdir('himitsu_gtk')
+ subdir('data')
+ subdir('himitsu_gtk')
+ 
+-meson.add_install_script('build-aux/meson/postinstall.py')
++#meson.add_install_script('build-aux/meson/postinstall.py')

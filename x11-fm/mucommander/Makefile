@@ -1,5 +1,6 @@
 PORTNAME=	mucommander
 DISTVERSION=	1.5.2-1
+PORTREVISION=	2
 CATEGORIES=	x11-fm java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	entangle
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.entangle-photo.org/download/sources/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>0:devel/py-libpeas1@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gnome gstreamer meson pkgconfig python tar:xz xorg
-USE_GNOME=	cairo gtk30 intltool introspection
+USE_GNOME=	cairo gtk30 intltool
 USE_GSTREAMER=	core
 USE_XORG=	xext
 GLIB_SCHEMAS=	org.entangle-photo.manager.gschema.xml

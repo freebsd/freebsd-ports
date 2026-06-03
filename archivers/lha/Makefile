@@ -2,12 +2,13 @@ PORTNAME=	lha
 PORTVERSION=	1.14i
 PORTREVISION=	10
 CATEGORIES=	archivers
-MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/ \
+		https://ftp.dinoex.de/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
-WWW=		http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
+WWW=		https://web.archive.org/web/20200221013928/http://www2m.biglobe.ne.jp/~dolphin/lha/lha-unix.htm
 
 LICENSE=	LHA
 LICENSE_NAME=	License of lha

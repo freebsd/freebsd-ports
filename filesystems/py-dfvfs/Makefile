@@ -1,5 +1,5 @@
 PORTNAME=	dfvfs
-PORTVERSION=	20240505
+PORTVERSION=	20260411
 CATEGORIES=	filesystems security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -41,7 +41,7 @@ RUN_DEPENDS=	libbde>=a:filesystems/libbde \
 		libvslvm>=e:devel/libvslvm \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dtfabric>=0:devel/py-dtfabric@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytsk3>=0:sysutils/py-pytsk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}

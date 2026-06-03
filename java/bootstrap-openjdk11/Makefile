@@ -1,5 +1,6 @@
 PORTNAME=	openjdk11
 PORTVERSION=	11.0.5.10.1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk11 \
 		LOCAL/pkubaj

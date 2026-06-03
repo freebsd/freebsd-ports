@@ -1,0 +1,10 @@
+--- src/meson.build.orig	2025-09-13 00:58:35 UTC
++++ src/meson.build
+@@ -20,7 +20,6 @@ manuals_deps = [
+ manuals_deps = [
+   adw_dep,
+   dex_dep,
+-  flatpak_dep,
+   foundry_dep,
+   glib_dep,
+   gom_dep,

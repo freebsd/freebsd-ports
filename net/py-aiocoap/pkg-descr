@@ -1,9 +1,6 @@
 The aiocoap package is an implementation of CoAP, the Constrained Application
-Protocol.
+Protocol. It facilitates writing applications that talk to network enabled
+embedded ("IoT" / "Internet of Things") devices.
 
 It is written in Python 3 using its native asyncio methods to facilitate
 concurrent operations while maintaining an easy to use interface.
-
-aiocoap is originally based on txThings. If you want to use CoAP in your
-existing Twisted application, or can not migrate to Python 3 yet, that is
-probably more useful to you than aiocoap.

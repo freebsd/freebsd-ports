@@ -1,0 +1,6 @@
+Spandrel is a library for loading and running pre-trained PyTorch models.
+
+It automatically detects the model architecture and hyperparameters from model
+files, and provides a unified interface for running models. This is particularly
+useful for super resolution models (ESRGAN, SwinIR, HAT, etc.) and other image
+processing models.

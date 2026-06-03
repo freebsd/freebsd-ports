@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=PekWM
+Comment=Lightweight and highly configurable window manager
+Exec=%%PREFIX%%/bin/pekwm
+TryExec=%%PREFIX%%/bin/pekwm
+Type=Application
+DesktopNames=PekWM

@@ -1,4 +1,4 @@
---- build/config/linux/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- build/config/linux/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ build/config/linux/BUILD.gn
 @@ -41,7 +41,7 @@ config("runtime_library") {
    }

@@ -1,4 +1,4 @@
---- third_party/ipcz/src/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- third_party/ipcz/src/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ third_party/ipcz/src/BUILD.gn
 @@ -7,7 +7,7 @@ import("//build_overrides/ipcz.gni")
  import("//testing/libfuzzer/fuzzer_test.gni")

@@ -1,0 +1,6 @@
+--- data/sessions/gnome-flashback.session.in.orig	2025-09-28 09:52:06 UTC
++++ data/sessions/gnome-flashback.session.in
+@@ -1,2 +1,3 @@ Name=GNOME Flashback (@NAME@)
+ [GNOME Session]
+ Name=GNOME Flashback (@NAME@)
++RequiredComponents=@REQUIRED_COMPONENTS@;

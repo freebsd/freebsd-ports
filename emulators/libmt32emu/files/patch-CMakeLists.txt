@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-12-26 14:07:56 UTC
++++ CMakeLists.txt
+@@ -378,7 +378,7 @@ install(FILES
+ 
+ install(FILES
+   AUTHORS.txt COPYING.txt COPYING.LESSER.txt NEWS.txt README.md TODO.txt
+-  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/munt/${PROJECT_NAME}
++  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/${PROJECT_NAME}
+ )
+ 
+ # Facilitates usage of the library in another project either through

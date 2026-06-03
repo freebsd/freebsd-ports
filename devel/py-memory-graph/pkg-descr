@@ -1,0 +1,14 @@
+memory-graph is a Python library that creates visual memory graphs for teaching
+and debugging purposes. It helps visualize object references, mutable data
+types, and the differences between shallow and deep copying in Python.
+
+Key features:
+* Generate visual representations of Python object references
+* Illustrate memory layouts and object relationships
+* Educational tool for understanding Python memory model
+* Debugging aid for complex data structures
+* Support for various data types including lists, dictionaries, and custom
+  objects
+
+The library uses Graphviz to create clear, graphical representations that make
+it easier to understand how Python manages memory and references.

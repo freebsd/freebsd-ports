@@ -1,13 +1,9 @@
 PORTNAME=	frobby
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
-PORTREVISION=	3
+DISTVERSION=	0.9.7
 CATEGORIES=	math
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	5b9e4ac4057f5693f53c321eeb5bfb387f6b69fb.patch:-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jishanalam9128@gmail.com
 COMMENT=	Software system and project for computations with monomial ideals
 WWW=		https://github.com/Macaulay2/frobby
 
@@ -20,7 +16,6 @@ USES=		gmake localbase:ldflags shebangfix
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	Macaulay2
-
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	test/latticeFormats/runtest* test/runSplitTests test/runTests \
@@ -34,29 +29,18 @@ OPTIONS_DEFINE=		DOCS LIBDOCS STATIC TEST
 OPTIONS_DEFAULT=	STATIC
 OPTIONS_SUB=		yes
 LIBDOCS_DESC=		Build and install documentation for frobby library
-DOCS_BUILD_DEPENDS=	dvips:print/tex-dvipsk \
-			latex:print/tex-formats
-LIBDOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			dvips:print/tex-dvipsk \
-			epstopdf:print/texlive-base \
-			latex:print/tex-formats
+DOCS_USES=		tex
+DOCS_USE=		TEX=dvipsk:build,latex:build
+LIBDOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+LIBDOCS_USES=		tex
+LIBDOCS_USE=		TEX=base:build,dvipsk:build,latex:build
 TEST_BUILD_DEPENDS=	bash:shells/bash
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-PLIST_SUB+=	LIBRARY="" \
-		NO_LIBRARY="@comment "
-.else
-PLIST_SUB+=	LIBRARY="@comment " \
-		NO_LIBRARY=""
-.endif
 
 # The following variables should be defined to the same values
 # that can be found in ${WRKSRC}/Makefile
 FROBBY_SOVERSION=	1
 FROBBY_AGE=		0
-FROBBY_REVISION=	0
+FROBBY_REVISION=	2
 FROBBY_VERSION=		${FROBBY_SOVERSION}.${FROBBY_AGE}.${FROBBY_REVISION}
 
 do-build-DOCS-on:
@@ -78,24 +62,23 @@ post-build-TEST-on:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/release/frobby ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/frobby.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/bin/libfrobby.so.${FROBBY_VERSION} ${STAGEDIR}${PREFIX}/lib/libfrobby.so.${FROBBY_VERSION}
-	cd ${STAGEDIR}${PREFIX}/lib && \
-		${RLN} libfrobby.so.${FROBBY_VERSION} ${STAGEDIR}${PREFIX}/lib/libfrobby.so && \
-		${RLN} libfrobby.so.${FROBBY_VERSION} ${STAGEDIR}${PREFIX}/lib/libfrobby.so.${FROBBY_SOVERSION}
-
-do-install-STATIC-on:
-	${INSTALL_DATA} ${WRKSRC}/src/frobby.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/bin/libfrobby.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/bin/libfrobby.so.${FROBBY_VERSION} ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libfrobby.so.${FROBBY_VERSION} \
+		${STAGEDIR}${PREFIX}/lib/libfrobby.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libfrobby.so.${FROBBY_VERSION} \
+		${STAGEDIR}${PREFIX}/lib/libfrobby.so.${FROBBY_SOVERSION}
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/bin/manual.ps ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/bin/manual.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/manual.ps \
+		${WRKSRC}/bin/manual.pdf ${STAGEDIR}${DOCSDIR}
 
 do-install-LIBDOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/bin/develDoc/develDoc.ps ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/bin/develDoc/develDoc.pdf ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/bin/develDoc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/bin/develDoc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/bin/develDoc/develDoc.ps \
+		${WRKSRC}/bin/develDoc/develDoc.pdf ${STAGEDIR}${DOCSDIR}
+
+do-install-STATIC-on:
+	${INSTALL_DATA} ${WRKSRC}/bin/libfrobby.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

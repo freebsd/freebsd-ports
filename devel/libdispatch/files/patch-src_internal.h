@@ -1,6 +1,16 @@
---- src/internal.h.orig	2021-09-17 04:54:52 UTC
+--- src/internal.h.orig	2025-03-07 00:50:44 UTC
 +++ src/internal.h
-@@ -475,12 +475,10 @@ struct dispatch_unote_class_s;
+@@ -277,6 +277,9 @@ upcast(dispatch_object_t dou)
+ #include <sys/sysctl.h>
+ #include <sys/queue.h>
+ #endif
++#if defined(__FreeBSD__)
++#include <sys/eventfd.h>
++#endif // __FreeBSD__
+ #include <sys/socket.h>
+ #include <sys/time.h>
+ #include <sys/mman.h>
+@@ -475,12 +478,10 @@ struct dispatch_unote_class_s;
  
  struct dispatch_unote_class_s;
  

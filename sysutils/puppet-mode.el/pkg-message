@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-You should add the following line to your ~/.emacs:
+You should add the following line to your Emacs configuration:
 
 ;;
 ;; Setup puppet-mode for autoloading

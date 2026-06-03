@@ -1,0 +1,15 @@
+--- MODULE.bazel.orig	2026-04-04 05:02:14 UTC
++++ MODULE.bazel
+@@ -92,6 +92,12 @@ local_path_override(
+     path = "./third_party/remoteapis",
+ )
+ 
++single_version_override(
++    module_name = "rules_python",
++    patch_strip = 1,
++    patches = ["//toolchain_local:rules_python_freebsd.patch"],
++)
++
+ # The following Bazel modules are not direct dependencies for building Bazel,
+ # but are required for visibility from DIST_ARCHIVE_REPOS in repositories.bzl
+ bazel_dep(name = "rules_apple", version = "3.16.0")

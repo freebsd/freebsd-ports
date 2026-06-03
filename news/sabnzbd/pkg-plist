@@ -17,8 +17,8 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/emailer.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/encoding.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/filesystem.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/get_addrinfo.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/getipaddress.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/happyeyeballs.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/internetspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
@@ -27,9 +27,12 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/notifier.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/nzb/__init__.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/nzb/article.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/nzb/file.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/nzb/object.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbparser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbqueue.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/panic.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/par2file.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
@@ -51,7 +54,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pybonjour.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pystone.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarvolinfo.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/sleepless.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssdp.py

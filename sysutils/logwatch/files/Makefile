@@ -110,6 +110,7 @@ install:
 	autorpm \
 	barracuda \
 	bfd \
+	chronyd \
 	cisco \
 	citadel \
 	clam-update \
@@ -120,6 +121,7 @@ install:
 	denyhosts \
 	dhcpd \
 	dirsrv \
+	dnf5 \
 	dnf-automatic \
 	dnf-rpm \
 	dnssec \

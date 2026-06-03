@@ -1,12 +1,12 @@
-- workaround for https://github.com/rstudio/rstudio/issues/12611
+- Add missing Boost posix_time header for compilation with newer Boost
 
---- src/cpp/core/include/core/Thread.hpp.orig	2023-01-22 20:42:46 UTC
+--- src/cpp/core/include/core/Thread.hpp.orig	2025-11-30 07:29:32 UTC
 +++ src/cpp/core/include/core/Thread.hpp
-@@ -17,6 +17,7 @@
- #define CORE_THREAD_HPP
- 
- #include <queue>
-+#include <set>
+@@ -23,6 +23,7 @@
  
  #include <boost/utility.hpp>
  #include <boost/function.hpp>
++#include <boost/date_time/posix_time/posix_time.hpp>
+ 
+ #include <shared_core/Error.hpp>
+ 

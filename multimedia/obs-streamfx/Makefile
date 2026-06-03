@@ -10,10 +10,13 @@ WWW=		https://github.com/Xaymar/obs-StreamFX
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Does not build with ffmpeg > 6
+
 NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	plugin requires a lot of memory for many of the filters to even run, physical or virtual memory can exceed 4GB
 
-BUILD_DEPENDS=	${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
+BUILD_DEPENDS=	${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
+		simde>0:devel/simde
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libobs.so:multimedia/obs-studio

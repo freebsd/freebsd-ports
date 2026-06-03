@@ -31,6 +31,7 @@ load_rc_config $name
 command=%%PREFIX%%/sbin/pure-ftpd
 procname=pure-ftpd
 pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
+: ${pureftpd_flags:=$pureftpd_config}
 pureftpd_enable=${pureftpd_enable:-"no"}
 pureftpd_pidfile=${pureftpd_pidfile:-"/var/run/pure-ftpd.pid"}
 required_files=${pureftpd_config}
@@ -46,8 +47,6 @@ pidfile_uploadscript=${pidfile_uploadscript:-"/var/run/pure-uploadscript.pid"}
 pureftpd_upload_enable=${pureftpd_upload_enable:-"no"}
 pureftpd_uploadscript=${pureftpd_uploadscript:-"/usr/bin/touch"}
 # command_args
-flags="${pureftpd_config}"
-command_args="${pureftpd_flags}"
 command_authd_args="-B -p ${pidfile_authd} -r ${pureftpd_authdscript} -s ${pureftpd_authsocket}"
 command_upload_args="-B -p ${pidfile_uploadscript} -r ${pureftpd_uploadscript}"
 

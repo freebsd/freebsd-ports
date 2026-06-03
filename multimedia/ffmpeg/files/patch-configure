@@ -1,30 +1,11 @@
---- configure.orig	2024-08-01 23:22:54 UTC
+--- configure.orig	2025-12-24 07:09:43 UTC
 +++ configure
-@@ -3956,13 +3956,7 @@ host_os=$target_os_default
- host_os=$target_os_default
+@@ -7667,7 +7667,7 @@ if enabled proper_dce; then
+ EOF
  
- # machine
--if test "$target_os_default" = aix; then
--    arch_default=$(uname -p)
--    strip_default="strip -X32_64"
--    nm_default="nm -g -X32_64"
--else
--    arch_default=$(uname -m)
--fi
-+arch_default=$(uname -p)
- cpu="generic"
- intrinsics="none"
- 
-@@ -6715,10 +6709,10 @@ enabled libglslang && { check_lib spirv_compiler glsla
- enabled libfribidi        && require_pkg_config libfribidi fribidi fribidi.h fribidi_version_info
- enabled libharfbuzz       && require_pkg_config libharfbuzz harfbuzz hb.h hb_buffer_create
- enabled libglslang && { check_lib spirv_compiler glslang/Include/glslang_c_interface.h glslang_initialize_process \
--                            -lglslang -lMachineIndependent -lOSDependent -lHLSL -lOGLCompiler -lGenericCodeGen \
-+                            -lglslang -lMachineIndependent -lOSDependent -lGenericCodeGen \
-                             -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++ -lm ||
-                         require spirv_compiler glslang/Include/glslang_c_interface.h glslang_initialize_process \
--                            -lglslang -lOSDependent -lHLSL -lOGLCompiler \
-+                            -lglslang -lOSDependent \
-                             -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++ -lm; }
- enabled libgme            && { check_pkg_config libgme libgme gme/gme.h gme_new_emu ||
-                                require libgme gme/gme.h gme_new_emu -lgme -lstdc++; }
+ if enabled proper_dce; then
+-    echo "X { local: *; };" > $TMPV
++    echo "X { global: environ; __progname; local: *; };" > $TMPV
+     if test_ldflags -Wl,${version_script},$TMPV; then
+         append SHFLAGS '-Wl,${version_script},\$(SUBDIR)lib\$(NAME).ver'
+         quotes='""'

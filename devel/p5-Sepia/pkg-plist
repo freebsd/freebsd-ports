@@ -13,6 +13,3 @@ bin/sepl
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-tree.el
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-w3m.el
 %%EMACS_SITE_LISPDIR%%/sepia/sepia.el
-%%EMACS_SITE_LISPDIR%%/sepia/sepia-cpan.elc
-%%EMACS_SITE_LISPDIR%%/sepia/sepia-ido.elc
-%%EMACS_SITE_LISPDIR%%/sepia/sepia-tree.elc

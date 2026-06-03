@@ -1,5 +1,4 @@
 bin/celluloid
-share/man/man1/celluloid.1.gz
 share/applications/io.github.celluloid_player.Celluloid.desktop
 share/dbus-1/services/io.github.celluloid_player.Celluloid.service
 share/icons/hicolor/scalable/apps/io.github.celluloid_player.Celluloid.svg
@@ -18,6 +17,8 @@ share/locale/eu/LC_MESSAGES/celluloid.mo
 share/locale/fa/LC_MESSAGES/celluloid.mo
 share/locale/fi/LC_MESSAGES/celluloid.mo
 share/locale/fr/LC_MESSAGES/celluloid.mo
+share/locale/ga/LC_MESSAGES/celluloid.mo
+share/locale/hi/LC_MESSAGES/celluloid.mo
 share/locale/hr/LC_MESSAGES/celluloid.mo
 share/locale/hu/LC_MESSAGES/celluloid.mo
 share/locale/id/LC_MESSAGES/celluloid.mo
@@ -26,7 +27,9 @@ share/locale/is/LC_MESSAGES/celluloid.mo
 share/locale/it/LC_MESSAGES/celluloid.mo
 share/locale/ja/LC_MESSAGES/celluloid.mo
 share/locale/ka/LC_MESSAGES/celluloid.mo
+share/locale/kk/LC_MESSAGES/celluloid.mo
 share/locale/ko/LC_MESSAGES/celluloid.mo
+share/locale/kw/LC_MESSAGES/celluloid.mo
 share/locale/lt/LC_MESSAGES/celluloid.mo
 share/locale/lv/LC_MESSAGES/celluloid.mo
 share/locale/ms/LC_MESSAGES/celluloid.mo
@@ -48,6 +51,8 @@ share/locale/te/LC_MESSAGES/celluloid.mo
 share/locale/tr/LC_MESSAGES/celluloid.mo
 share/locale/uk/LC_MESSAGES/celluloid.mo
 share/locale/ur/LC_MESSAGES/celluloid.mo
+share/locale/uz/LC_MESSAGES/celluloid.mo
 share/locale/zh_CN/LC_MESSAGES/celluloid.mo
 share/locale/zh_TW/LC_MESSAGES/celluloid.mo
+share/man/man1/celluloid.1.gz
 share/metainfo/io.github.celluloid_player.Celluloid.appdata.xml

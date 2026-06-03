@@ -1,6 +1,6 @@
---- src/OpenCL.cpp.orig	2019-06-12 22:15:19 UTC
+--- src/OpenCL.cpp.orig	2023-02-06 15:09:28 UTC
 +++ src/OpenCL.cpp
-@@ -785,7 +785,7 @@ OpenCL<net_t>::OpenCL(int gpu, bool silent) {
+@@ -787,7 +787,7 @@ OpenCL<net_t>::OpenCL(const int gpu, const bool silent
              bool preferred = (gpu == id);
  
              if (((this_score > best_score)

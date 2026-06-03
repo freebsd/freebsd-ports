@@ -1,10 +1,7 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
+DISTVERSION=	1.14.2
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	01c7e647388f9e23fc828059a3fd9c61b43c0740.patch:-p1 # FreeBSD compatibility patch, https://github.com/facebookresearch/faiss/pull/4316
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for efficient similarity search & clustering of dense vectors
@@ -28,11 +25,12 @@ USES=		cmake:testing compiler:c++11-lang localbase:ldflags # tests fail to compi
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookresearch
 
-#LDFLAGS+=	-lgtest #-pthread
-
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING FAISS_ENABLE_GPU FAISS_ENABLE_PYTHON
 
-# tests as of 1.11.0: 99% tests passed, 1 tests failed out of 132, TestMemoryLeak.ivfflat (Timeout)
+post-extract: # workaround for https://github.com/facebookresearch/faiss/issues/3913
+	@${LN} -s ${WRKSRC} ${WRKDIR}/faiss
+
+# tests as of 1.13.1: 100% tests passed, 0 tests failed out of 138
 
 .include <bsd.port.mk>

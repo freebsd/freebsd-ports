@@ -1,0 +1,5 @@
+Oxyde is an asynchronous Python ORM with a Django-inspired API, Pydantic
+models, and support for PostgreSQL, SQLite, and MySQL.
+
+It delegates SQL generation and execution to the companion oxyde-core Rust
+extension for improved performance.

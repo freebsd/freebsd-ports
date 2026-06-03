@@ -1,5 +1,5 @@
 PORTNAME=	fmt
-PORTVERSION=	10.2.1
+PORTVERSION=	12.1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -12,7 +12,7 @@ WWW=		https://fmt.dev/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang cpe pathfix zip
+USES=		cmake:testing compiler:c++11-lang cpe zip
 
 CMAKE_OFF=	FMT_CUDA_TEST \
 		FMT_DOC \
@@ -24,7 +24,9 @@ CMAKE_OFF=	FMT_CUDA_TEST \
 		FMT_WERROR
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		FMT_OS
-CMAKE_TESTING_ON=	FMT_TEST
+CMAKE_TESTING_ON=	\
+		FMT_FUZZ_LINKMAIN \
+		FMT_TEST
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

@@ -4,11 +4,9 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for handling messages
-WWW=		https://github.com/KDE/messagelib
+WWW=		https://invent.kde.org/pim/messagelib
 
 LICENSE=	LGPL21
-
-IGNORE_FreeBSD_13=	is not supported on systems with OpenSSL 1.1.1
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 LIB_DEPENDS=	libassuan.so:security/libassuan \

@@ -1,8 +1,9 @@
-bin/librest-demo
+%%EXAMPLES%%bin/librest-demo
 include/rest-1.0/rest-extras/flickr-proxy-call.h
 include/rest-1.0/rest-extras/flickr-proxy.h
 include/rest-1.0/rest-extras/lastfm-proxy-call.h
 include/rest-1.0/rest-extras/lastfm-proxy.h
+include/rest-1.0/rest-extras/rest-extras.h
 include/rest-1.0/rest-extras/youtube-proxy.h
 include/rest-1.0/rest/rest-enum-types.h
 include/rest-1.0/rest/rest-oauth2-proxy-call.h
@@ -27,7 +28,7 @@ lib/librest-extras-1.0.so.0
 lib/librest-extras-1.0.so.0.0.0
 libdata/pkgconfig/rest-1.0.pc
 libdata/pkgconfig/rest-extras-1.0.pc
-share/applications/org.gnome.RestDemo.desktop
+%%EXAMPLES%%share/applications/org.gnome.RestDemo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1.0/RedHatDisplay-Black.woff
 %%PORTDOCS%%%%DOCSDIR%%-1.0/RedHatDisplay-Black.woff2
 %%PORTDOCS%%%%DOCSDIR%%-1.0/RedHatDisplay-BlackItalic.woff
@@ -79,6 +80,7 @@ share/applications/org.gnome.RestDemo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.Proxy.new_with_authentication.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.XmlParser.new.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/enum.MemoryUse.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/error.OAuth2Error.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/error.ProxyCallError.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/error.ProxyError.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/fonts.css
@@ -183,6 +185,8 @@ share/applications/org.gnome.RestDemo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.XmlNode.set_content.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.XmlNode.unref.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.XmlParser.parse_from_data.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/migration.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/opensearch.xml
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.OAuth2Proxy.access-token.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.OAuth2Proxy.auth-url.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.OAuth2Proxy.client-id.html

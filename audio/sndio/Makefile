@@ -1,5 +1,6 @@
 PORTNAME=	sndio
 DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://sndio.org/
 

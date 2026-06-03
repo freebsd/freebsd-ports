@@ -1,0 +1,16 @@
+diff --git a/src/pthreads.c b/src/pthreads.c
+--- a/src/pthreads.c
++++ b/src/pthreads.c
+@@ -77,8 +77,12 @@
+ #if defined(_MSC_VER)
+ #include <malloc.h>
+ #define alloca _alloca
+ #elif !defined(alloca) && defined(__GNUC__)
+ #define alloca(s) __builtin_alloca(s)
+ #else
++#if defined(__FreeBSD__)
++/* alloca already defined in <stdlib.h> via __builtin_alloca on FreeBSD */
++#else
+ #include <alloca.h>
++#endif
+ #endif

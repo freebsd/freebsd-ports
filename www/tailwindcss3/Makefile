@@ -1,5 +1,6 @@
 PORTNAME=	tailwindcss3
 DISTVERSION=	3.4.17
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/dch/${PORTNAME}/:npm
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npm
@@ -10,6 +11,7 @@ WWW=		https://tailwindcss.com/
 
 LICENSE=	MIT
 
+ONLY_FOR_ARCHS=	amd64 aarch64 # causes runaway builds in pkg cluster
 BUILD_DEPENDS=	npm:www/npm
 USES=		nodejs:run tar:txz
 

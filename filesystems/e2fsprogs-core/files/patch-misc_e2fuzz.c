@@ -1,6 +1,6 @@
---- misc/e2fuzz.c.orig	2020-03-23 08:29:36 UTC
+--- misc/e2fuzz.c.orig	2026-03-06 17:17:36 UTC
 +++ misc/e2fuzz.c
-@@ -278,8 +278,8 @@ static int process_fs(const char *fsname)
+@@ -277,8 +277,8 @@ static int process_fs(const char *fsname)
  			c |= 0x80;
  		if (verbose)
  			printf("Corrupting byte %lld in block %lld to 0x%x\n",

@@ -1,5 +1,5 @@
 PORTNAME=	quarto # quarto also requires some Linux base to be installed, for example linux_base-rl9
-DISTVERSION=	1.7.30
+DISTVERSION=	1.10.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -25,7 +25,8 @@ RUN_DEPENDS=	bash:shells/bash \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pipenv>0:devel/py-pipenv@${PY_FLAVOR} \
 		${JULIA_RUN_DEPENS} \
 		${R_RUN_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		okular:graphics/okular
 
 USES=		python
 
@@ -67,6 +68,12 @@ post-patch:
 		${WRKSRC}/repo/tests/run-tests.sh
 	# replace python3 with the real python executable path
 	${REINPLACE_CMD} -i '' -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/bin/quarto.js
+	# treat FreeBSD as Linux in quarto.js for platform detection
+	${REINPLACE_CMD} -i '' \
+		-e 's|isLinux = Deno.build.os === "linux";|isLinux = Deno.build.os === "linux" \|\| Deno.build.os === "freebsd";|' \
+		-e 's|else if (platform2 === "linux") this._platform = "linux";|else if (platform2 === "linux" \|\| platform2 === "freebsd") this._platform = "linux";|' \
+		-e 's|"linux-x86_64": "linux64",|"linux-x86_64": "linux64",\n    "freebsd-x86_64": "linux64",|' \
+		${WRKSRC}/bin/quarto.js
 
 do-install:
 	# copy files from the tarball
@@ -98,7 +105,7 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass
 	${LN} -s \
-		${LOCALBASE}/lib/ruby/gems/3.2/gems/dartsass-1.49.8/exe/linux/sass \
+		${LOCALBASE}/lib/ruby/gems/*/gems/dartsass-*/exe/linux/sass \
 		${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass/sass
 
 do-test: # tests fail to run with: RuntimeError: Failed to lock Pipfile.lock!
@@ -109,6 +116,7 @@ do-test: # tests fail to run with: RuntimeError: Failed to lock Pipfile.lock!
 test-quick: install
 .for test in py-line-plot-on-a-polar-axis r-airquality julia-fig-parametric
 	@cd ${TEST_WRKSRC} && \
+		${ECHO} "===> Running test: ${test}" && \
 		${CP} ${FILESDIR}/example-${test}.qmd . && \
 		${PORTNAME} render example-${test}.qmd --to pdf && \
 		okular example-${test}.pdf

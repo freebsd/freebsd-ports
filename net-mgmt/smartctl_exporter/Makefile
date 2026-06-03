@@ -1,6 +1,7 @@
 PORTNAME=		smartctl_exporter
 PORTVERSION=		0.14.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	7
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		delphij@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=			https://github.com/prometheus-community/smartctl_exporter
 
 LICENSE=		APACHE20
 
-USES=			go:1.23,modules
+USES=			go:modules
 USE_GITHUB=		yes
 GH_ACCOUNT=		prometheus-community
 

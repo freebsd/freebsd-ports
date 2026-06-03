@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Put the expression below into your ~/.emacs.
+Put the expression below into your Emacs configuration:
 
 (autoload 'mpg123 "mpg123" "A Front-end to mpg123" t)
 EOM

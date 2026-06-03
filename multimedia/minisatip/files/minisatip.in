@@ -20,7 +20,7 @@ load_rc_config $name
 : ${minisatip_enable:=NO}
 
 pidfile="/var/run/${name}.pid"
-command="%%PREFIX%%/sbin/minisatip"
+command="%%PREFIX%%/bin/minisatip"
 command_args="-g -R %%PREFIX%%/share/minisatip/html"
 
 run_rc_command "$1"

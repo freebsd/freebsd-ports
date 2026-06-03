@@ -1,0 +1,5 @@
+GtkSpell provides MSWord-style highlighting of misspelled words in a GtkText
+widget. Also, right-clicking a misspelled word pops up a menu of suggested
+replacements.
+
+GtkSpell can easily be added to Gtk projects.

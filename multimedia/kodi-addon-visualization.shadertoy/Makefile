@@ -1,6 +1,6 @@
 PORTNAME=	visualization.shadertoy
-PORTVERSION=	21.0.0.20240219
-DISTVERSIONSUFFIX=	-Omega
+PORTVERSION=	22.0.1.20260227
+DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -15,7 +15,7 @@ USES=		cmake compiler:c++14-lang gl kodi localbase
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_TAGNAME=	364132b12b6da78e281b6a1d678155d43aace83f
+GH_TAGNAME=	f310bea8e606ff7fdb7053b2ce0eed7e2a12664d
 USE_GL=		egl gl glu
 
 PLIST_SUB=	SOVERSION=${PORTVERSION}

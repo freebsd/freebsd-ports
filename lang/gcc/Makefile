@@ -9,9 +9,7 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Meta-port for the default version of the GNU Compiler Collection
 WWW=		https://gcc.gnu.org
 
-# Once GCC 4.8 isn't an option any longer, we can simply use GCC_DEFAULT
-# below. (The expression rewrites 4.8 to 48.)
-RUN_DEPENDS=	gcc${GCC_DEFAULT:S/.//}:lang/gcc${GCC_DEFAULT:S/.//}
+RUN_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		cpe
 CPE_VENDOR=	gnu

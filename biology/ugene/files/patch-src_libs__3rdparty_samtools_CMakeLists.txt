@@ -1,0 +1,70 @@
+--- src/libs_3rdparty/samtools/CMakeLists.txt.orig	2026-03-01 18:44:47 UTC
++++ src/libs_3rdparty/samtools/CMakeLists.txt
+@@ -21,45 +21,6 @@ file(GLOB SRCS
+ #endif ()
+ 
+ file(GLOB SRCS
+-        src/samtools_core/htslib/cram/cram_codecs.c
+-        src/samtools_core/htslib/cram/cram_decode.c
+-        src/samtools_core/htslib/cram/cram_encode.c
+-        src/samtools_core/htslib/cram/cram_external.c
+-        src/samtools_core/htslib/cram/cram_index.c
+-        src/samtools_core/htslib/cram/cram_io.c
+-        src/samtools_core/htslib/cram/cram_stats.c
+-        src/samtools_core/htslib/cram/mFILE.c
+-        src/samtools_core/htslib/cram/open_trace_file.c
+-        src/samtools_core/htslib/cram/pooled_alloc.c
+-        src/samtools_core/htslib/cram/string_alloc.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/arith_dynamic.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/fqzcomp_qual.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/htscodecs.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/pack.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/rANS_static.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/rANS_static4x16pr.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/rANS_static32x16pr.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/rle.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/tokenise_name3.c
+-        src/samtools_core/htslib/htscodecs/htscodecs/utils.c
+-        src/samtools_core/htslib/bgzf.c
+-        src/samtools_core/htslib/errmod.c
+-        src/samtools_core/htslib/header.c
+-        src/samtools_core/htslib/hfile.c
+-        src/samtools_core/htslib/hts.c
+-        src/samtools_core/htslib/hts_expr.c
+-        src/samtools_core/htslib/hts_os.c
+-        src/samtools_core/htslib/kstring.c
+-        src/samtools_core/htslib/md5.c
+-        src/samtools_core/htslib/multipart.c
+-        src/samtools_core/htslib/probaln.c
+-        src/samtools_core/htslib/realn.c
+-        src/samtools_core/htslib/region.c
+-        src/samtools_core/htslib/sam.c
+-        src/samtools_core/htslib/sam_mods.c
+-        src/samtools_core/htslib/tbx.c
+-        src/samtools_core/htslib/textutils.c
+-        src/samtools_core/htslib/thread_pool.c
+         src/samtools_core/bam.c
+         src/samtools_core/bam_aux.c
+         src/samtools_core/bam_lpileup.c
+@@ -233,13 +194,19 @@ endif ()
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w")
+ endif ()
+ 
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(HTSLIB REQUIRED htslib)
++
+ add_library(samtools STATIC ${SRCS})
+ 
++target_include_directories(samtools PRIVATE ${HTSLIB_INCLUDE_DIRS})
++target_compile_options(samtools PRIVATE ${HTSLIB_CFLAGS_OTHER})
+ target_link_libraries(samtools
++	${HTSLIB_LIBRARIES}
+         Qt5::Core
+ #        U2Core
+         zlib)
+ 
+ #target_compile_options(samtools PRIVATE
+ #        /we4013         # Treat implicit declarations as errors
+-#)
+\ No newline at end of file
++#)

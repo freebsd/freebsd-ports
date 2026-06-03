@@ -47,6 +47,9 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/FFT/fftn.h
 %%SITE_ARCH%%/PDL/Func.pm
 %%SITE_ARCH%%/PDL/Graphics.pod
+%%SITE_ARCH%%/PDL/Guide/Migration/MATLAB.pod
+%%SITE_ARCH%%/PDL/Guide/Migration/NumPy.pod
+%%SITE_ARCH%%/PDL/Guide/Migration/Scilab.pod
 %%SITE_ARCH%%/PDL/IO.pod
 %%SITE_ARCH%%/PDL/IO/Dumper.pm
 %%SITE_ARCH%%/PDL/IO/FITS.pm
@@ -71,7 +74,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Internals.pod
 %%SITE_ARCH%%/PDL/Lite.pm
 %%SITE_ARCH%%/PDL/LiteF.pm
-%%SITE_ARCH%%/PDL/MATLAB.pod
 %%SITE_ARCH%%/PDL/Math.pm
 %%SITE_ARCH%%/PDL/Math/NOTES
 %%SITE_ARCH%%/PDL/Math/cpoly.h
@@ -106,7 +108,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Primitive.pm
 %%SITE_ARCH%%/PDL/QuickStart.pod
 %%SITE_ARCH%%/PDL/Reduce.pm
-%%SITE_ARCH%%/PDL/Scilab.pod
 %%SITE_ARCH%%/PDL/Slices.pm
 %%SITE_ARCH%%/PDL/Tips.pod
 %%SITE_ARCH%%/PDL/Transform.pm
@@ -171,6 +172,9 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::FAQ.3.gz
 %%PERL5_MAN3%%/PDL::Func.3.gz
 %%PERL5_MAN3%%/PDL::Graphics.3.gz
+%%PERL5_MAN3%%/PDL::Guide::Migration::MATLAB.3.gz
+%%PERL5_MAN3%%/PDL::Guide::Migration::NumPy.3.gz
+%%PERL5_MAN3%%/PDL::Guide::Migration::Scilab.3.gz
 %%PERL5_MAN3%%/PDL::IO.3.gz
 %%PERL5_MAN3%%/PDL::IO::Dumper.3.gz
 %%PERL5_MAN3%%/PDL::IO::FITS.3.gz
@@ -186,7 +190,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Internals.3.gz
 %%PERL5_MAN3%%/PDL::Lite.3.gz
 %%PERL5_MAN3%%/PDL::LiteF.3.gz
-%%PERL5_MAN3%%/PDL::MATLAB.3.gz
 %%PERL5_MAN3%%/PDL::Matrix.3.gz
 %%PERL5_MAN3%%/PDL::Modules.3.gz
 %%PERL5_MAN3%%/PDL::NiceSlice.3.gz
@@ -200,7 +203,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Philosophy.3.gz
 %%PERL5_MAN3%%/PDL::QuickStart.3.gz
 %%PERL5_MAN3%%/PDL::Reduce.3.gz
-%%PERL5_MAN3%%/PDL::Scilab.3.gz
 %%PERL5_MAN3%%/PDL::Tips.3.gz
 %%PERL5_MAN3%%/PDL::Transform::Cartography.3.gz
 %%PERL5_MAN3%%/PDL::Tutorials.3.gz

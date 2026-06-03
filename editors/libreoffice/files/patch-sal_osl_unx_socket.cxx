@@ -1,10 +1,11 @@
---- sal/osl/unx/socket.cxx.orig	2023-11-23 12:14:48 UTC
+--- sal/osl/unx/socket.cxx.orig	2026-02-05 22:14:25 UTC
 +++ sal/osl/unx/socket.cxx
-@@ -39,6 +39,7 @@
- #include <arpa/inet.h>
+@@ -40,7 +40,7 @@
  #include <fcntl.h>
  #include <netdb.h>
+ #ifdef FREEBSD
+-#include <netinet/ip.h>
 +#include <netinet/in.h>
+ #endif
  #include <netinet/tcp.h>
  #include <poll.h>
- #include <unistd.h>

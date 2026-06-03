@@ -3,6 +3,7 @@
     SUBDIR += GxSwitchlessWah-lv2
     SUBDIR += HVSC-Update
     SUBDIR += Maaate
+    SUBDIR += TonieToolbox
     SUBDIR += a2jmidid
     SUBDIR += abcde
     SUBDIR += abcselect
@@ -22,6 +23,7 @@
     SUBDIR += alsa-sndio
     SUBDIR += alsa-utils
     SUBDIR += alure
+    SUBDIR += amarok
     SUBDIR += amb-plugins
     SUBDIR += amberol
     SUBDIR += ampache
@@ -60,6 +62,7 @@
     SUBDIR += bjumblr-lv2
     SUBDIR += bliss
     SUBDIR += blop
+    SUBDIR += blucli
     SUBDIR += boca
     SUBDIR += boops-lv2
     SUBDIR += bristol
@@ -73,6 +76,7 @@
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
     SUBDIR += cardinal
+    SUBDIR += carla
     SUBDIR += cava
     SUBDIR += cd-discid
     SUBDIR += cddb-bundle
@@ -198,6 +202,7 @@
     SUBDIR += ft2-clone
     SUBDIR += ft2play
     SUBDIR += furnace
+    SUBDIR += g4music
     SUBDIR += ganv
     SUBDIR += gbsplay
     SUBDIR += geonkick-lv2
@@ -214,6 +219,7 @@
     SUBDIR += gnupod
     SUBDIR += gnuspeechsa
     SUBDIR += gnustep-cdplayer
+    SUBDIR += go-librespot
     SUBDIR += goattracker
     SUBDIR += gogglesmm
     SUBDIR += gonic
@@ -280,6 +286,7 @@
     SUBDIR += icecast
     SUBDIR += icegenerator
     SUBDIR += ices
+    SUBDIR += id3edit
     SUBDIR += id3el
     SUBDIR += id3lib
     SUBDIR += id3mtag
@@ -333,8 +340,10 @@
     SUBDIR += libbpm
     SUBDIR += libbs2b
     SUBDIR += libcanberra
+    SUBDIR += libcanberra-gstreamer
     SUBDIR += libcanberra-gtk2
     SUBDIR += libcanberra-gtk3
+    SUBDIR += libcanberra-pulse
     SUBDIR += libcdaudio
     SUBDIR += libconvolve
     SUBDIR += libcoverart
@@ -351,7 +360,6 @@
     SUBDIR += libid3tag
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
-    SUBDIR += libkcompactdisc
     SUBDIR += libkeyfinder
     SUBDIR += liblastfm
     SUBDIR += liblo
@@ -373,7 +381,6 @@
     SUBDIR += liboggz
     SUBDIR += libopenmpt
     SUBDIR += libopenshot-audio
-    SUBDIR += libopenspc
     SUBDIR += libopusenc
     SUBDIR += libremidi
     SUBDIR += libsamplerate
@@ -423,11 +430,6 @@
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
-    SUBDIR += logitechmediaserver
-    SUBDIR += logitechmediaserver-dynamicplaylist
-    SUBDIR += logitechmediaserver-lazysearch
-    SUBDIR += logitechmediaserver-sqlplaylist
-    SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
     SUBDIR += lpcnet
     SUBDIR += lsp-plugins-lv2
@@ -438,12 +440,14 @@
     SUBDIR += lv2lint
     SUBDIR += lv2proc
     SUBDIR += lvtk
+    SUBDIR += lyrionmusicserver
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay
     SUBDIR += madronalib
     SUBDIR += malint
     SUBDIR += mamba
+    SUBDIR += maolan
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
     SUBDIR += mda-lv2
@@ -513,6 +517,7 @@
     SUBDIR += ncspot
     SUBDIR += netease-music-tui
     SUBDIR += neuralrack-lv2
+    SUBDIR += noctavox
     SUBDIR += noise-repellent-lv2
     SUBDIR += noise-suppression-for-voice-lv2
     SUBDIR += normalize
@@ -582,7 +587,6 @@
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
     SUBDIR += pavumeter
-    SUBDIR += pc-mixer
     SUBDIR += pcaudiolib
     SUBDIR += pd
     SUBDIR += pd-cyclone
@@ -630,6 +634,8 @@
     SUBDIR += py-auditok
     SUBDIR += py-discid
     SUBDIR += py-discogs-client
+    SUBDIR += py-edge-tts
+    SUBDIR += py-espeakng-loader
     SUBDIR += py-essentia
     SUBDIR += py-eyed3
     SUBDIR += py-fmoo-audiotools
@@ -649,6 +655,7 @@
     SUBDIR += py-pydub
     SUBDIR += py-pyjacklib
     SUBDIR += py-pylast
+    SUBDIR += py-pyliblo3
     SUBDIR += py-pymad
     SUBDIR += py-pyogg
     SUBDIR += py-pyradio
@@ -682,6 +689,7 @@
     SUBDIR += qtractor
     SUBDIR += quimup
     SUBDIR += qxgedit
+    SUBDIR += radiotrope
     SUBDIR += ratatouille-lv2
     SUBDIR += raul
     SUBDIR += rawrec
@@ -708,6 +716,7 @@
     SUBDIR += rubygem-ruby-ogginfo
     SUBDIR += rubygem-ruby-shout
     SUBDIR += s3mod
+    SUBDIR += sag
     SUBDIR += samplv1-lv2
     SUBDIR += sayonara
     SUBDIR += sbagen
@@ -739,6 +748,7 @@
     SUBDIR += somafm-cli
     SUBDIR += sonata
     SUBDIR += songrec
+    SUBDIR += songsee
     SUBDIR += sonic-visualiser
     SUBDIR += sonicradio
     SUBDIR += sonivox
@@ -762,7 +772,6 @@
     SUBDIR += spiralsynthmodular
     SUBDIR += spotify-player
     SUBDIR += spotify-qt
-    SUBDIR += spotify-tui
     SUBDIR += spotifyd
     SUBDIR += squash
     SUBDIR += squeezelite
@@ -776,6 +785,7 @@
     SUBDIR += streamtranscoder
     SUBDIR += string-machine-lv2
     SUBDIR += stymulator
+    SUBDIR += subtui
     SUBDIR += suil
     SUBDIR += supercollider
     SUBDIR += surge-synthesizer-lv2
@@ -809,7 +819,6 @@
     SUBDIR += tkeca
     SUBDIR += toccata-lv2
     SUBDIR += tosha
-    SUBDIR += traverso
     SUBDIR += triceratops-lv2
     SUBDIR += tse3
     SUBDIR += tta
@@ -826,7 +835,10 @@
     SUBDIR += vgmtools
     SUBDIR += vimpc
     SUBDIR += virtual_oss
+    SUBDIR += virtual_oss_bluetooth
     SUBDIR += virtual_oss_ctl
+    SUBDIR += virtual_oss_equalizer
+    SUBDIR += virtual_oss_sndio
     SUBDIR += visp-go
     SUBDIR += vitunes
     SUBDIR += vm-lv2
@@ -843,6 +855,7 @@
     SUBDIR += wasabi
     SUBDIR += wavbreaker
     SUBDIR += wavegain
+    SUBDIR += waves
     SUBDIR += wavetral
     SUBDIR += wavpack
     SUBDIR += wavplay
@@ -850,6 +863,7 @@
     SUBDIR += webrtc-audio-processing0
     SUBDIR += webrtc-audio-processing2
     SUBDIR += welle.io
+    SUBDIR += whisper.cpp
     SUBDIR += whysynth
     SUBDIR += wildmidi
     SUBDIR += wmix

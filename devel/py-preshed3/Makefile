@@ -1,5 +1,5 @@
 PORTNAME=	preshed
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.13
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/preshed/releases/download/release-v${PORTVERSION}/
@@ -25,7 +25,7 @@ USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 TEST_WRKSRC=	${STAGEDIR}${PYTHON_SITELIBDIR}
 
-PORTSCOUT=	limit^3\.
+PORTSCOUT=	skipv:4.0.0
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

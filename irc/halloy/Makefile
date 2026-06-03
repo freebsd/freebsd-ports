@@ -1,6 +1,5 @@
 PORTNAME=	halloy
-DISTVERSION=	2025.6
-PORTREVISION=	1
+DISTVERSION=	2026.7
 CATEGORIES=	irc
 
 MAINTAINER=	pokeysquirrel@gmail.com
@@ -13,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libzstd.so:archivers/zstd
 
-USES=		cargo desktop-file-utils ssl
+USES=		cargo desktop-file-utils xorg
+USE_XORG=	xcb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	squidowl
@@ -26,4 +26,11 @@ post-install:
 		$${f%org.squidowl.halloy.png}halloy.png; done && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icons/hicolor)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
+.include <bsd.port.post.mk>

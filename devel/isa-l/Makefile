@@ -1,5 +1,5 @@
 PORTNAME=	isa-l
-PORTVERSION=	2.31.1
+PORTVERSION=	2.32.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
-USES=		autoreconf gmake libtool pathfix
+USES=		autoreconf gmake libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

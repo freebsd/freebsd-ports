@@ -1,0 +1,16 @@
+NekoBox is a Qt-based cross-platform GUI proxy utility empowered by Sing-Box.
+
+It provides a user-friendly interface for managing proxy configurations and
+connections. NekoBox supports a wide variety of protocols including SOCKS,
+HTTP(S), Shadowsocks, Trojan, VMess, VLESS, Hysteria, TUIC, Wireguard,
+Tailscale, SSH, Tor, and many others.
+
+Key Features:
+- Clean Qt6-based GUI for easy proxy management
+- Support for multiple subscription formats
+- Built-in subscription group management
+- Traffic statistics and monitoring
+- Proxy auto-detection and testing
+- Keyboard shortcut customization
+- Multi-language support
+- Powered by the Sing-Box proxy engine

@@ -1,0 +1,8 @@
+bin/ndi
+include/ndi/ndi.h
+include/ndi/packet.h
+include/ndi/recv.h
+lib/libndi.so
+lib/libndi.so.0
+lib/libndi.so.0.1.0
+libdata/pkgconfig/libndi.pc

@@ -1,5 +1,5 @@
 PORTNAME=	exams
-DISTVERSION=	2.4-2
+DISTVERSION=	2.4-3
 CATEGORIES=	deskutils education
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -21,12 +21,16 @@ RUN_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-tinytex>0:print/R-cran-tinytex \
 		R-cran-tth>0:textproc/R-cran-tth \
-		R-cran-xml2>0:textproc/R-cran-xml2
+		R-cran-xml2>0:textproc/R-cran-xml2 \
+		zip>0:archivers/zip
 TEST_DEPENDS=	pdftex:print/tex-formats \
 		R-cran-clipr>0:devel/R-cran-clipr \
 		R-cran-qpdf>0:graphics/R-cran-qpdf \
 		tex-dvipsk>0:print/tex-dvipsk
 
 USES=		cran:auto-plist
+
+MAKE_ENV=	LC_ALL=C.UTF-8 \
+		R_ZIPCMD=${LOCALBASE}/bin/zip
 
 .include <bsd.port.mk>

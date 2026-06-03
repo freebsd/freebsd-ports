@@ -1,5 +1,5 @@
 PORTNAME=	par2cmdline-turbo
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/animetosho/par2cmdline-turbo
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	untested on other archs
 
 USES=		autoreconf compiler:c++11-lang
@@ -22,9 +22,6 @@ GH_ACCOUNT=	animetosho
 
 PORTDOCS=	README.md
 CONFLICTS=	par2cmdline
-
-PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify \
-	share/man/man1/par2.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

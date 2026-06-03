@@ -1,10 +1,10 @@
 PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	print java
 
-MAINTAINER=	andreas@bilke.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool for doing everyday things with PDF documents
 WWW=		https://gitlab.com/pdftk-java/pdftk
 

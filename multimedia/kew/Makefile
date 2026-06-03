@@ -1,6 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
+DISTVERSION=	4.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/ravachol/kew
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	compilation fails with incompatible pointer, see https://github.com/ravachol/kew/issues/118
 
 LIB_DEPENDS=	libchafa.so:graphics/chafa \
 		libcurl.so:ftp/curl \
@@ -30,9 +28,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ravachol
 
 MAKE_ARGS=	CC=${CC} PREFIX=${PREFIX}
-
-PLIST_FILES=	bin/kew \
-		share/man/man1/kew.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kew

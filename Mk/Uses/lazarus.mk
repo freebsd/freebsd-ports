@@ -84,7 +84,11 @@ LAZARUS_ARCH=		${ARCH:S/amd64/x86_64/}
 LAZARUS_PROJECT_FILES?=	# empty
 LAZARUS_DIR?=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
-.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
+. if ${ARCH} == powerpc64le
+LAZARUS_ARCH=	powerpc64
+. endif
+
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc*}
 FPC_DEVELSUFFIX=	-devel
 .  else
 FPC_DEVELSUFFIX=	#
@@ -97,7 +101,7 @@ MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
 			${MKINSTDIR}/utils-lexyacc.fpm:lang/fpc${FPC_DEVELSUFFIX}
 
-.  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
+.  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc*}
 LAZARUS_DEVELSUFFIX=	-devel
 LAZARUS_FLAVORS=	gtk2 gtk3 qt5 qt6
 .  else

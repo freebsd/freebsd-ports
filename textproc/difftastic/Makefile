@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.64.0
-PORTREVISION=	1
+DISTVERSION=	0.69.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,13 +24,13 @@ CARGO_CRATES=	ahash-0.8.11 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		assert_cmd-2.0.8 \
+		assert_cmd-2.0.17 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.16.0 \
-		cc-1.2.7 \
+		cc-1.2.54 \
 		cfg-if-1.0.0 \
 		clap-4.5.23 \
 		clap_builder-4.5.23 \
@@ -50,8 +49,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		env_logger-0.10.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
+		find-msvc-tools-0.1.8 \
 		fixedbitset-0.4.2 \
-		float-cmp-0.9.0 \
+		float-cmp-0.10.0 \
 		fnv-1.0.7 \
 		glob-0.3.1 \
 		globset-0.4.15 \
@@ -64,7 +64,6 @@ CARGO_CRATES=	ahash-0.8.11 \
 		indexmap-2.2.6 \
 		is-terminal-0.4.12 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.10.5 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
 		libc-0.2.169 \
@@ -80,84 +79,108 @@ CARGO_CRATES=	ahash-0.8.11 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.19 \
 		once_cell-1.19.0 \
-		owo-colors-3.5.0 \
+		owo-colors-4.2.3 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		petgraph-0.6.4 \
-		predicates-2.1.5 \
+		predicates-3.1.3 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		pretty_assertions-1.4.1 \
 		pretty_env_logger-0.5.0 \
-		proc-macro2-1.0.79 \
+		proc-macro2-1.0.101 \
 		quote-1.0.35 \
 		radix-heap-0.4.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-syntax-0.8.5 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-syntax-0.8.8 \
 		rustc-hash-2.0.0 \
 		rustix-0.38.34 \
 		rustversion-1.0.14 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.145 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.1 \
 		smallvec-1.13.2 \
 		streaming-iterator-0.1.9 \
-		strsim-0.10.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
-		syn-2.0.55 \
+		syn-2.0.106 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
 		termtree-0.4.1 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.0 \
-		tree-sitter-0.24.5 \
-		tree-sitter-bash-0.23.3 \
-		tree-sitter-c-0.23.4 \
+		tree-sitter-0.26.3 \
+		tree-sitter-ada-0.1.0 \
+		tree-sitter-asm-0.24.0 \
+		tree-sitter-bash-0.25.1 \
+		tree-sitter-c-0.24.1 \
 		tree-sitter-c-sharp-0.23.1 \
+		tree-sitter-clojure-orchard-0.2.5 \
+		tree-sitter-cmake-0.7.1 \
+		tree-sitter-commonlisp-0.4.1 \
 		tree-sitter-cpp-0.23.4 \
-		tree-sitter-css-0.23.1 \
+		tree-sitter-css-0.25.0 \
+		tree-sitter-dart-orchard-0.3.2 \
+		tree-sitter-devicetree-0.14.1 \
+		tree-sitter-elisp-1.6.1 \
 		tree-sitter-elixir-0.3.4 \
-		tree-sitter-erlang-0.13.0 \
-		tree-sitter-fsharp-0.1.0 \
-		tree-sitter-go-0.23.4 \
+		tree-sitter-elm-5.8.0 \
+		tree-sitter-erlang-0.16.0 \
+		tree-sitter-fortran-0.5.1 \
+		tree-sitter-fsharp-0.3.0 \
+		tree-sitter-gleam-1.0.0 \
+		tree-sitter-go-0.25.0 \
 		tree-sitter-haskell-0.23.1 \
+		tree-sitter-hcl-1.1.0 \
 		tree-sitter-html-0.23.2 \
 		tree-sitter-java-0.23.4 \
-		tree-sitter-javascript-0.23.1 \
+		tree-sitter-javascript-0.25.0 \
 		tree-sitter-json-0.24.8 \
 		tree-sitter-julia-0.23.1 \
-		tree-sitter-language-0.1.3 \
-		tree-sitter-lua-0.2.0 \
+		tree-sitter-language-0.1.6 \
+		tree-sitter-lua-0.5.0 \
 		tree-sitter-make-1.1.1 \
-		tree-sitter-nix-0.0.2 \
+		tree-sitter-newick-1.1.0 \
+		tree-sitter-nix-0.3.0 \
 		tree-sitter-objc-3.0.2 \
-		tree-sitter-ocaml-0.23.2 \
+		tree-sitter-ocaml-0.24.2 \
 		tree-sitter-pascal-0.10.0 \
 		tree-sitter-php-0.23.11 \
-		tree-sitter-python-0.23.5 \
+		tree-sitter-proto-0.2.0 \
+		tree-sitter-python-0.25.0 \
+		tree-sitter-qmljs-0.3.0 \
+		tree-sitter-r-1.2.0 \
+		tree-sitter-racket-0.24.7 \
 		tree-sitter-ruby-0.23.1 \
-		tree-sitter-rust-0.23.2 \
-		tree-sitter-scala-0.23.3 \
-		tree-sitter-swift-0.7.0 \
+		tree-sitter-rust-orchard-0.16.6 \
+		tree-sitter-scala-0.26.0 \
+		tree-sitter-scheme-0.24.7 \
+		tree-sitter-sequel-0.3.11 \
+		tree-sitter-sfapex-2.4.0 \
+		tree-sitter-solidity-1.2.13 \
+		tree-sitter-swift-0.7.1 \
 		tree-sitter-toml-ng-0.7.0 \
 		tree-sitter-typescript-0.23.2 \
 		tree-sitter-verilog-1.0.3 \
+		tree-sitter-vhdl-1.4.0 \
 		tree-sitter-xml-0.7.0 \
-		tree-sitter-yaml-0.7.0 \
+		tree-sitter-yaml-0.7.2 \
+		tree-sitter-zig-1.1.2 \
 		tree_magic_mini-3.1.6 \
+		ts-parser-perl-1.0.1 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.11 \

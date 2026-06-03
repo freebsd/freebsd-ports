@@ -1,7 +1,6 @@
 PORTNAME=	libfaketime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.10
-PORTREVISION=	1
+DISTVERSION=	0.9.12
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,13 +10,15 @@ WWW=		https://github.com/wolfcw/libfaketime
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_15=	ld: error: version script assignment of 'GLIBC_2.2' to symbol 'timer_gettime' failed: symbol not defined
+RUN_DEPENDS=	coreutils>=0:sysutils/coreutils
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		gmake shebangfix
+USES=		gmake perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolfcw
-GH_TAGNAME=	da77808
+USE_GCC=	yes
 USE_LDCONFIG=	yes
+USE_PERL5=	test
 
 SHEBANG_FILES=	test/functests/common.inc test/testframe.sh
 
@@ -27,6 +28,7 @@ SHEBANG_FILES=	test/functests/common.inc test/testframe.sh
 MAKE_ENV+=	FEATS="-DFAKE_SLEEP -DFAKE_TIMERS -DFAKE_INTERNAL_CALLS" \
 		WARNS="-Wall"
 TEST_TARGET=	test
+TESTING_UNSAFE=	The functests/test_exclude_mono.sh:get_monotonic_time() test hangs
 
 PLIST_FILES=	bin/faketime \
 		lib/faketime/libfaketime.so.1 \
@@ -34,6 +36,10 @@ PLIST_FILES=	bin/faketime \
 		share/doc/faketime/NEWS \
 		share/doc/faketime/README \
 		share/man/man1/faketime.1.gz
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-lcompat|-lcompat -lutil|' \
+		${WRKSRC}/test/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faketime \

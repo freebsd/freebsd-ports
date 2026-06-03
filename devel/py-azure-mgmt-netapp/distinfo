@@ -1,3 +1,3 @@
-TIMESTAMP = 1696202332
-SHA256 (azure-mgmt-netapp-10.1.0.zip) = 7898964ce0a4d82efd268b64bbd6ca96edef53a1fcd34e215ab5fe87be8c8d03
-SIZE (azure-mgmt-netapp-10.1.0.zip) = 530515
+TIMESTAMP = 1778096610
+SHA256 (azure_mgmt_netapp-16.0.0.tar.gz) = fed70ed7ea4831c0767be4f57f60a51f12e34b3aafd0f85ead33cc808d76fc16
+SIZE (azure_mgmt_netapp-16.0.0.tar.gz) = 215022

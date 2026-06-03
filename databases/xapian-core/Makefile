@@ -1,5 +1,5 @@
 PORTNAME=	xapian-core
-PORTVERSION=	1.4.29
+PORTVERSION=	2.0.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -12,15 +12,15 @@ WWW=		https://xapian.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang libtool tar:xz
+USES=		compiler:c++17-lang cpe libtool tar:xz
 
 CONFIGURE_ARGS=	ac_cv_func_snprintf=snprintf
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	xapian-core12 # include/xapian.h
+CONFLICTS_INSTALL=	xapian-core14
 
 PORTSCOUT=	limitw:1,even
 
@@ -28,6 +28,8 @@ OPTIONS_DEFINE=	DOCS SSE2
 SSE2_DESC=	Use SSE2 for floating point
 
 SSE2_CONFIGURE_ENABLE=	sse
+
+CPE_VENDOR=	xapian
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xapian-inspect ${STAGEDIR}${PREFIX}/bin/xapian-inspect

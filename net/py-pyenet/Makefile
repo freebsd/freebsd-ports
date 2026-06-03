@@ -15,7 +15,7 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/enet/LICENSE
 
 USES=		python
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython0 distutils
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/enet*.so

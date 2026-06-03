@@ -1,0 +1,11 @@
+--- docs/config.toml.orig	2026-03-04 17:59:55 UTC
++++ docs/config.toml
+@@ -7,7 +7,7 @@ ui.color = "auto" # the default
+ ui.color = "auto" # the default
+ # ui.color = never # no color
+ 
+-ui.editor = "nano" # the default on Unix
++ui.editor = "vi" # the default on Unix
+ # ui.editor = "vim"
+ 
+ ui.diff-editor = ":builtin" # default, internal TUI tool

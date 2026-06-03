@@ -6,6 +6,7 @@ bin/lasindex
 bin/lasinfo
 bin/lasmerge
 bin/lasprecision
+bin/lasvalidate
 bin/laszip
 bin/txt2las
 include/LASlib/arithmeticdecoder.hpp
@@ -80,6 +81,8 @@ include/LASlib/laswriter_txt.hpp
 include/LASlib/laswriter_wrl.hpp
 include/LASlib/laswritercompatible.hpp
 include/LASlib/laszip.hpp
+include/LASlib/laszip_api_version.h
+include/LASlib/laszip_common.h
 include/LASlib/laszip_common_v1.hpp
 include/LASlib/laszip_common_v2.hpp
 include/LASlib/laszip_common_v3.hpp

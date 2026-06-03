@@ -1,5 +1,6 @@
 bin/ojph_compress
 bin/ojph_expand
+bin/ojph_stream_expand
 include/openjph/ojph_arch.h
 include/openjph/ojph_arg.h
 include/openjph/ojph_base.h
@@ -16,6 +17,6 @@ lib/cmake/openjph/openjph-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/openjph/openjph-targets.cmake
 lib/libopenjph.so
 lib/libopenjph.so.0
-lib/libopenjph.so.0.21
+lib/libopenjph.so.0.27
 lib/libopenjph.so.%%PORTVERSION%%
 libdata/pkgconfig/openjph.pc

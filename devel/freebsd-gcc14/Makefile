@@ -1,5 +1,6 @@
 PORTNAME=	gcc
-DISTVERSION=	14.1.0
+DISTVERSION=	14.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpc.so:math/mpc
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR}
 
-FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 riscv64
+FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le riscv64
 TARGETARCH=	${FLAVOR}
 
 USES=		compiler:c++11-lang cpe gmake iconv libtool makeinfo tar:xz

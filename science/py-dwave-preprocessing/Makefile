@@ -1,6 +1,6 @@
 PORTNAME=	dwave-preprocessing
-DISTVERSION=	0.6.6
-PORTREVISION=	1
+DISTVERSION=	0.6.11
+PORTREVISION=	2
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,11 +12,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.6:science/py-dimod@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.6:science/py-dimod@${PY_FLAVOR} \
-		${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.20:science/py-dimod@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		localbase:ldflags python
-USE_PYTHON=	cython3 distutils unittest # 1 test fails, see https://github.com/dwavesystems/dwave-preprocessing/issues/74
+USE_PYTHON=	cython distutils unittest # 1 test fails, see https://github.com/dwavesystems/dwave-preprocessing/issues/74
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems

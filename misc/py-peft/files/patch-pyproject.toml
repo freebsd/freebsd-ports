@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-04-14 13:46:22 UTC
++++ pyproject.toml
+@@ -34,14 +34,16 @@ known-first-party = ["peft"]
+ lines-after-imports = 2
+ known-first-party = ["peft"]
+ 
+-[tool.pytest]
++[tool.pytest.ini_options]
+ doctest_optionflags = [
+     "NORMALIZE_WHITESPACE",
+     "ELLIPSIS",
+     "NUMBER",
+ ]
+ 
+-addopts = ["--cov=src/peft", "--cov-report=term-missing", "--durations=10"]
++addopts = ["--durations=10"]
++testpaths = ["tests"]
++pythonpath = ["."]
+ 
+ markers = [
+     "single_gpu_tests: tests that run on a single GPU",

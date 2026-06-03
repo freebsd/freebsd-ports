@@ -1,11 +1,11 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.4
+DISTVERSION=	3.1.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT, GBM)
-WWW=		https://xgboost.ai \ \
+WWW=		https://xgboost.ai \
 		https://xgboost.readthedocs.io/en/stable/ \
 		https://github.com/dmlc/xgboost
 

@@ -18,11 +18,11 @@ CPE_VENDOR=	apache
 USE_LDCONFIG=	yes
 
 # For C++ support, use devel/thrift-cpp
-# For C glib support, use devel/thrift-c_glib.
-# For Perl support, use devel/p5-Thrift.
-# For Python support, use devel/py-thrift.
-# For Ruby support, use devel/rubygem-thrift.
-# For nodejs support, use devel/node-thrift.
+# For C glib support, use devel/thrift-c_glib
+# For Perl support, use devel/p5-Thrift
+# For Python support, use devel/py-thrift
+# For Ruby support, use devel/rubygem-thrift
+# For nodejs support, use devel/node-thrift
 # Other languages are not yet supported, please feel free to contribute
 # using one of the leaf ports as an example.
 CMAKE_OFF=	BUILD_CPP BUILD_C_GLIB BUILD_JAVA BUILD_JAVASCRIPT BUILD_NODEJS BUILD_PYTHON BUILD_HASKELL

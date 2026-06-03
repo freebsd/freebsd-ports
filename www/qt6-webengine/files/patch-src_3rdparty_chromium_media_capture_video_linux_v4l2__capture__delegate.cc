@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc
-@@ -5,8 +5,10 @@
+@@ -10,8 +10,10 @@
  #include "media/capture/video/linux/v4l2_capture_delegate.h"
  
  #include <fcntl.h>
@@ -11,7 +11,7 @@
  #include <poll.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -29,17 +31,19 @@
+@@ -35,17 +37,19 @@
  #include "media/capture/video/blob_utils.h"
  #include "media/capture/video/linux/video_capture_device_linux.h"
  
@@ -32,7 +32,7 @@
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
-@@ -49,6 +53,14 @@ using media::mojom::MeteringMode;
+@@ -55,6 +59,14 @@ using media::mojom::MeteringMode;
  #define V4L2_PIX_FMT_INVZ v4l2_fourcc('I', 'N', 'V', 'Z')
  #endif
  
@@ -47,7 +47,7 @@
  namespace media {
  
  namespace {
-@@ -268,7 +280,7 @@ bool V4L2CaptureDelegate::IsBlockedControl(int control
+@@ -274,7 +286,7 @@ bool V4L2CaptureDelegate::IsBlockedControl(int control
  // static
  bool V4L2CaptureDelegate::IsControllableControl(
      int control_id,
@@ -56,7 +56,7 @@
    const int special_control_id = GetControllingSpecialControl(control_id);
    if (!special_control_id) {
      // The control is not controlled by a special control thus the control is
-@@ -324,7 +336,7 @@ V4L2CaptureDelegate::V4L2CaptureDelegate(
+@@ -330,7 +342,7 @@ V4L2CaptureDelegate::V4L2CaptureDelegate(
        is_capturing_(false),
        timeout_count_(0),
        rotation_(rotation) {
@@ -65,16 +65,16 @@
    use_gpu_buffer_ = switches::IsVideoCaptureUseGpuMemoryBufferEnabled();
  #endif  // BUILDFLAG(IS_LINUX)
  }
-@@ -451,7 +463,7 @@ void V4L2CaptureDelegate::AllocateAndStart(
+@@ -457,7 +469,7 @@ void V4L2CaptureDelegate::AllocateAndStart(
  
    client_->OnStarted();
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (use_gpu_buffer_) {
-     v4l2_gpu_helper_ = std::make_unique<V4L2CaptureDelegateGpuHelper>(
-         std::move(gmb_support_test_));
-@@ -801,7 +813,7 @@ void V4L2CaptureDelegate::SetGPUEnvironmentForTesting(
+     v4l2_gpu_helper_ = std::make_unique<V4L2CaptureDelegateGpuHelper>();
+   }
+@@ -801,7 +813,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -128,7 +128,7 @@
    // Dequeue events if the driver has filled in some.
    if (device_pfd.revents & POLLPRI) {
      bool controls_changed = false;
-@@ -1102,6 +1121,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1100,6 +1119,7 @@ void V4L2CaptureDelegate::DoCapture() {
        client_->OnCaptureConfigurationChanged();
      }
    }
@@ -136,7 +136,7 @@
  
    // Deenqueue, send and reenqueue a buffer if the driver has filled one in.
    if (device_pfd.revents & POLLIN) {
-@@ -1155,7 +1175,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1153,7 +1173,7 @@ void V4L2CaptureDelegate::DoCapture() {
        // workable on Linux.
  
        // See http://crbug.com/959919.
@@ -145,7 +145,7 @@
        if (use_gpu_buffer_) {
          v4l2_gpu_helper_->OnIncomingCapturedData(
              client_.get(), buffer_tracker->start(),
-@@ -1228,7 +1248,7 @@ void V4L2CaptureDelegate::SetErrorState(VideoCaptureEr
+@@ -1227,7 +1247,7 @@ void V4L2CaptureDelegate::SetErrorState(VideoCaptureEr
    client_->OnError(error, from_here, reason);
  }
  

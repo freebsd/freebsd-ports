@@ -1,5 +1,5 @@
---- core/DesktopEditor/doctrenderer/hash.cpp.orig	2023-06-14 12:14:26.656325000 +0200
-+++ core/DesktopEditor/doctrenderer/hash.cpp	2023-06-14 14:23:39.149523000 +0200
+--- core/DesktopEditor/doctrenderer/hash.cpp.orig	2025-08-02 18:33:34 UTC
++++ core/DesktopEditor/doctrenderer/hash.cpp
 @@ -4,12 +4,12 @@
  #include "../common/Base64.h"
  #endif

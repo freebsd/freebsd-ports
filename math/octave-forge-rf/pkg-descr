@@ -1,0 +1,15 @@
+The octave-forge package is the result of The GNU Octave Repository project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is rf.
+
+ RF and microwave network-parameter utilities for GNU Octave. Provides
+S-parameter conversions (ST, SZ, SY, SABCD, SH, SG), cascading, de-embedding,
+port reordering, renormalization, mixed-mode conversion for differential
+pairs, and Touchstone I/O. Function signatures match the MATLAB RF Toolbox,
+so the same user code runs in both environments. Cross-validated against
+MATLAB R2025b, MATLAB R2020b (backwards-compatibility), and scikit-rf 1.11.0
+to floating-point precision — 144/144 pair-wise tests pass across all four
+comparison pairs.

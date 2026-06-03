@@ -1,0 +1,80 @@
+--- CMakeLists.txt.orig	2024-09-24 11:37:21 UTC
++++ CMakeLists.txt
+@@ -1876,7 +1876,7 @@ IF(WITH_AUTHENTICATION_LDAP)
+ ENDIF()
+ 
+ IF(WITH_AUTHENTICATION_LDAP)
+-  IF(LINUX AND KNOWN_CUSTOM_LIBRARIES)
++  IF(LINUX OR FREEBSD AND KNOWN_CUSTOM_LIBRARIES)
+     # LDAP / SASL / KERBEROS / SSL must all be "system" or "custom", not a mix.
+     IF(WITH_LDAP STREQUAL "system" OR
+         WITH_SASL STREQUAL "system" OR
+@@ -1927,6 +1927,7 @@ ENDIF()
+   ENDIF()
+ ENDIF()
+ 
++IF(NOT WITHOUT_TOOLS)
+ # Add system/bundled editline.
+ MYSQL_CHECK_EDITLINE()
+ SET(EDITLINE_WARN_GIVEN)
+@@ -1937,6 +1938,7 @@ ENDIF()
+     "You can use -DWITH_EDITLINE=bundled instead."
+     )
+ ENDIF()
++ENDIF(NOT WITHOUT_TOOLS)
+ 
+ # Add lz4 library
+ MYSQL_CHECK_LZ4()
+@@ -2239,7 +2241,9 @@ ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
+ ADD_DEPENDENCIES(clang_tidy_prerequisites protobuf_generated_all)
+ ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
+ 
+-ADD_SUBDIRECTORY(include)
++IF(NOT WITHOUT_CLIENTLIBS)
++  ADD_SUBDIRECTORY(include)
++ENDIF(NOT WITHOUT_CLIENTLIBS)
+ ADD_SUBDIRECTORY(strings)
+ ADD_SUBDIRECTORY(vio)
+ ADD_SUBDIRECTORY(mysys)
+@@ -2289,12 +2293,15 @@ ENDIF()
+   ADD_SUBDIRECTORY(unittest/mytap/t)
+ ENDIF()
+ 
+-ADD_SUBDIRECTORY(client)
++IF(NOT WITHOUT_TOOLS)
++  ADD_SUBDIRECTORY(client)
++ENDIF(NOT WITHOUT_TOOLS)
++
+ ADD_SUBDIRECTORY(utilities)
+-ADD_SUBDIRECTORY(share)
+ ADD_SUBDIRECTORY(libservices)
+ 
+ IF(NOT WITHOUT_SERVER)
++  ADD_SUBDIRECTORY(share)
+   ADD_SUBDIRECTORY(testclients)
+   ADD_SUBDIRECTORY(sql)
+ ENDIF()
+@@ -2372,11 +2379,11 @@ ADD_SUBDIRECTORY(scripts)
+ # scripts/mysql_config depends on client and server targets loaded above.
+ # It is referenced by some of the directories below, so we insert it here.
+ ADD_SUBDIRECTORY(scripts)
++ADD_SUBDIRECTORY(support-files)
+ 
+ IF(NOT WITHOUT_SERVER)
+   ADD_SUBDIRECTORY(mysql-test)
+   ADD_SUBDIRECTORY(mysql-test/lib/My/SafeProcess)
+-  ADD_SUBDIRECTORY(support-files)
+   IF(WITH_INTERNAL)
+     ADD_SUBDIRECTORY(internal)
+   ENDIF()
+@@ -2403,8 +2410,10 @@ ENDIF()
+   INCLUDE(fastcov)
+ ENDIF()
+ 
++IF(FALSE)
+ IF(UNIX)
+   ADD_SUBDIRECTORY(man)
++ENDIF()
+ ENDIF()
+ 
+ IF(LINUX AND NOT WITHOUT_SERVER)

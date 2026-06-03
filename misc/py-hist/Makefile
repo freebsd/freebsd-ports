@@ -1,6 +1,7 @@
 PORTNAME=	hist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.9.2
+PORTREVISION=	2
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.3.1:misc/py-boost-histogram@${PY_FLAVOR} \
-		${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.5:misc/py-boost-histogram@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}histoprint>=2.2.0:misc/py-histoprint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>=2022:devel/py-dask@${PY_FLAVOR} \

@@ -192,6 +192,9 @@ gitlab_init(){
     fi
   fi
 
+  # Generate gitlab registry key
+  generate_registry_key
+
   # Switch to the app_user if it is not he/she who is running the script.
   if [ "$USER" != "$app_user" ]; then
     # Regenerate the Gemfile.lock for all related products
@@ -215,6 +218,21 @@ gitlab_init(){
   # We use the pids in so many parts of the script it makes sense to always check them.
   # Only after start() is run should the pids change. Sidekiq sets its own pid.
   check_pids
+}
+
+## Generate keys used for gitlab registry
+generate_registry_key() {
+  if [ ! -f "${app_root}/config/registry.key" ]; then
+    echo "GitLab Registry Key missing. Generating..."
+    openssl req -nodes -newkey rsa:4096 \
+	    -keyout "${app_root}/config/registry.key" \
+	    -out "${app_root}/config/registry.crt" \
+	    -x509 -days 3650 \
+	    -subj "/CN=gitlab-issuer"
+    chown git:git "${app_root}/config/registry.key" "${app_root}/config/registry.crt"
+    chmod 600 "${app_root}/config/registry.key"
+    chmod 644 "${app_root}/config/registry.crt"
+  fi
 }
 
 ## Called when we have started the two processes and are waiting for their pid files.

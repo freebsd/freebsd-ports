@@ -1,7 +1,7 @@
 PORTNAME=	mypaint
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.1
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/garynthompson/${PORTNAME}/commit/
@@ -17,13 +17,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	swig:devel/swig \
 		mypaint-brushes2>0:graphics/mypaint-brushes2 \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libmypaint.so:graphics/libmypaint
 RUN_DEPENDS=	mypaint-brushes2>0:graphics/mypaint-brushes2 \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
 		pkgconfig python tar:xz

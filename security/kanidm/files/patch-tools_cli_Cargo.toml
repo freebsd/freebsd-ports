@@ -1,0 +1,11 @@
+--- tools/cli/Cargo.toml.orig	2026-02-24 05:46:34 UTC
++++ tools/cli/Cargo.toml
+@@ -81,7 +81,7 @@ features = ["win10"]
+ workspace = true
+ features = ["win10"]
+ 
+-[target."cfg(any(target_os = \"linux\",target_os = \"macos\"))".dependencies.webauthn-authenticator-rs]
++[target."cfg(any(target_os = \"freebsd\",target_os = \"linux\",target_os = \"macos\"))".dependencies.webauthn-authenticator-rs]
+ workspace = true
+ features = ["u2fhid"]
+ 

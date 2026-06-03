@@ -1,5 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	8.17
+PORTVERSION=	9.1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -32,8 +32,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-liblz4 \
-		--enable-pthread \
-		--mandir=${PREFIX}/share/man
+		--enable-pthread
 
 CONFLICTS=	racket
 
@@ -87,13 +86,32 @@ CHEZ_MACHTYPE=	tarm64fb
 CHEZ_MACHTYPE=	ti3fb
 .elif ${ARCH} == "powerpc"
 CHEZ_MACHTYPE=	tppc32fb
+.elif ${ARCH} == "powerpc64"
+CHEZ_MACHTYPE=	tpb64b
+.elif ${ARCH} == "powerpc64le"
+CHEZ_MACHTYPE=	tpb64l
+.endif
+
+.if ${ARCH:Mpowerpc64*}
+CONFIGURE_ARGS+=	--enable-pb
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/ChezScheme/configure ${WRKSRC}/bc/configure ${WRKSRC}/cs/c/configure
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
+# Base strip on 14.x lacks --keep-section, but also leaves .rackboot intact.
+.if ${OSVERSION} >= 1500000
+	${STRIP_CMD} --keep-section=.rackboot ${STAGEDIR}${PREFIX}/lib/racket/gracket
+.else
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/racket/gracket
+.endif
+
+post-stage:
+	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} etc include lib share/doc share/racket \
+			\( -type f -o -type l \) | \
+		${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>

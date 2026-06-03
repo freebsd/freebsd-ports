@@ -1,0 +1,10 @@
+--- ogr/ogrsf_frmts/xodr/ogr_xodr.h.orig	2025-07-12 10:33:49 UTC
++++ ogr/ogrsf_frmts/xodr/ogr_xodr.h
+@@ -15,7 +15,6 @@
+ #include "ogr_api.h"
+ #include <iostream>
+ #include <OpenDriveMap.h>
+-#include <pugixml/pugixml.hpp>
+ #include <vector>
+ 
+ struct RoadElements

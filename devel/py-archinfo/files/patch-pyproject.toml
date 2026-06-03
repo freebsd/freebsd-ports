@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2025-11-25 17:09:08 UTC
++++ pyproject.toml
+@@ -5,8 +5,8 @@ description = "Classes with architecture-specific info
+ [project]
+ name = "archinfo"
+ description = "Classes with architecture-specific information useful to other projects."
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
++#license-files = ["LICENSE"]
+ classifiers = [
+     "Programming Language :: Python :: 3",
+     "Programming Language :: Python :: 3 :: Only",

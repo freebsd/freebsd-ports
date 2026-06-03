@@ -23,13 +23,13 @@ desc="Lightweight DICOM server for healthcare and medical research"
 load_rc_config $name
 
 : ${orthanc_enable:=NO}
-: ${orthanc_flags="%%ETCDIR%%/orthanc.json"}
+: ${orthanc_config="%%ETCDIR%%/orthanc.json"}
 
 start_precmd=orthanc_prestart
 pidfile=/var/run/orthanc.pid
 procname=%%PREFIX%%/sbin/Orthanc
 command=/usr/sbin/daemon
-command_args=" -f -p ${pidfile} -u orthanc ${procname} ${orthanc_flags}"
+command_args=" --output-file /var/log/orthanc --sighup --child-pidfile ${pidfile} --user orthanc ${procname} ${orthanc_flags} ${orthanc_config}"
 
 orthanc_prestart()
 {

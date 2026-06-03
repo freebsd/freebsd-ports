@@ -1,0 +1,5 @@
+A public domain JSON parser focused on correctness, ANSI C99
+compliance, full Unicode (UTF-8) support, minimal memory footprint,
+and a simple API. As a streaming API, arbitrary large JSON could
+be processed with a small amount of memory (the size of the largest
+string in the JSON).

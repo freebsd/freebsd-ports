@@ -1,5 +1,6 @@
 PORTNAME=	domination
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game \
 		http://domination.sourceforge.net/maps/
@@ -8,14 +9,14 @@ DISTFILES=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}:game \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	Board game that is a bit like the well known game Risk
 WWW=		https://domination.sourceforge.net/
 
 LICENSE=	GPLv3
 
 USES=		dos2unix java zip:infozip
-DOS2UNIX_GLOB=	*.txt *.ini *.cards *.map
+DOS2UNIX_GLOB=	*.cards *.ini *.map *.txt
 
 NO_BUILD=	yes
 
@@ -27,16 +28,15 @@ MAPS=		solar bigeurope google europass europe artic sudamerica \
 		spain swiss france austria austria-hungary eire haiti brasil \
 		benelux canada germany northeurope germany1871 \
 		Deutsches_Reich_1871 eesti estonia mexico serbia fletzmap \
-		greece North_of_Italy bayern berlin navarra Illes_Balears \
-		calw wuppertal kerzell ennepe-ruhr-kreis cologne saarland \
-		andorra catalunya astadt dortmund rio_de_janeiro caribbean \
-		Nuremberg_Public_Transit discworld aztec GTA_SAN_AN \
-		middleearth LOTR2 wow randland Riskopoly SuperRiskopoly \
-		trivia chutes sudoku conquest chrono_trigger startrek usa8 \
-		civilwar usa hawaii ohio nyc zertina fortress estlandr \
-		periodictable sylsia troisdorf wolken castle naerr cow \
-		westfalenhalle union rub gymnasium simpsons_world simpsons \
-		germany2
+		greece North_of_Italy bayern berlin navarra Illes_Balears calw \
+		wuppertal kerzell ennepe-ruhr-kreis cologne saarland andorra \
+		catalunya astadt dortmund rio_de_janeiro caribbean \
+		Nuremberg_Public_Transit discworld aztec GTA_SAN_AN middleearth \
+		LOTR2 wow randland Riskopoly SuperRiskopoly trivia chutes \
+		sudoku conquest chrono_trigger startrek usa8 civilwar usa \
+		hawaii ohio nyc zertina fortress estlandr periodictable sylsia \
+		troisdorf wolken castle naerr cow westfalenhalle union rub \
+		gymnasium simpsons_world simpsons germany2
 
 PORTDOCS=	ChangeLog.txt ReadMe.txt commands.txt
 OPTIONS_DEFINE=	DOCS
@@ -44,11 +44,14 @@ OPTIONS_DEFINE=	DOCS
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-FlashGUI ${PORTNAME}-Increment1GUI \
-		${PORTNAME}-SimpleGUI ${PORTNAME}-SwingGUI \
-		pkg-message
+		${PORTNAME}-SimpleGUI ${PORTNAME}-SwingGUI pkg-message
 
-DESKTOP_ENTRIES="Domination" "" "${PORTNAME}" \
-		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" ""
+DESKTOP_ENTRIES=	"Domination" \
+			"" \
+			"${PORTNAME}" \
+			"${PORTNAME}-SwingGUI" \
+			"Game;StrategyGame;" \
+			""
 
 .include <bsd.port.options.mk>
 
@@ -56,6 +59,7 @@ post-extract-script:
 .for f in ${MAPS:S/$/.zip/}
 	@${UNZIP_CMD} -qo -d ${WRKSRC}/maps ${_DISTDIR}/${f}
 .endfor
+	@${FIND} ${WRKSRC}/  -type f -name '._*' -delete
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \

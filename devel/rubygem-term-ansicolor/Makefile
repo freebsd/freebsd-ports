@@ -1,5 +1,5 @@
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -9,9 +9,9 @@ WWW=		https://flori.github.io/term-ansicolor/ \
 		https://github.com/flori/term-ansicolor
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-tins>=1.0<2:devel/rubygem-tins
+RUN_DEPENDS=	rubygem-tins>=1<2:devel/rubygem-tins
 
 USES=		gem
 

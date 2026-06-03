@@ -1,11 +1,11 @@
---- content/browser/gpu/gpu_data_manager_impl.h.orig	2025-05-06 12:23:00 UTC
+--- content/browser/gpu/gpu_data_manager_impl.h.orig	2026-05-30 12:46:06 UTC
 +++ content/browser/gpu/gpu_data_manager_impl.h
-@@ -225,7 +225,7 @@ class CONTENT_EXPORT GpuDataManagerImpl : public GpuDa
+@@ -233,7 +233,7 @@ class CONTENT_EXPORT GpuDataManagerImpl : public GpuDa
    void OnDisplayMetricsChanged(const display::Display& display,
                                 uint32_t changed_metrics) override;
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    bool IsGpuMemoryBufferNV12Supported();
-   void SetGpuMemoryBufferNV12Supported(bool supported);
  #endif  // BUILDFLAG(IS_LINUX)
+ 

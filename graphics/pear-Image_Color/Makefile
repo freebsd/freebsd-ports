@@ -1,5 +1,5 @@
 PORTNAME=	Image_Color
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

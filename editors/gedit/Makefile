@@ -1,7 +1,7 @@
 PORTNAME=	gedit
-PORTVERSION=	48.1
+DISTVERSION=	50.0
+PORTREVISION=	1
 CATEGORIES=	editors gnome
-MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,20 +19,16 @@ LIB_DEPENDS=	libgspell-1.so:textproc/gspell \
 		libgedit-gfls-1.so:filesystems/libgedit-gfls \
 		libgedit-amtk-5.so:x11-toolkits/amtk \
 		libgedit-tepl-6.so:x11-toolkits/tepl6
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>0:devel/py-libpeas1@${PY_FLAVOR}
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase \
-		meson pkgconfig python tar:xz vala:build xorg
-USE_CSTD=	c11
-USE_GNOME=	glib20 gtk30 introspection libxml2 \
-		pygobject3
-USE_XORG=	sm x11
-USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION=${DISTVERSION}
-MESON_ARGS=	-Dgtk_doc=false
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+		meson pkgconfig tar:xz vala:build
 CPE_VENDOR=	gnome
-
+USE_CSTD=	c11
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	World/gedit
+GL_TUPLE=	GNOME:libgd:3cccf992:libgd/subprojects/libgd
+USE_GNOME=	glib20 gtk30 introspection
 GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.gschema.xml \
 		org.gnome.gedit.plugins.filebrowser.enums.xml \
@@ -40,5 +36,8 @@ GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.plugins.spell.gschema.xml \
 		org.gnome.gedit.plugins.time.enums.xml \
 		org.gnome.gedit.plugins.time.gschema.xml
+
+MESON_ARGS=	-Dgtk_doc=false
+PLIST_SUB=	VERSION=50
 
 .include <bsd.port.mk>

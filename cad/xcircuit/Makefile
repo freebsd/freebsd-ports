@@ -1,37 +1,38 @@
 PORTNAME=	xcircuit
-PORTVERSION=	3.10.30
-PORTREVISION=	2
+DISTVERSION=	3.10.44
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
-		http://fossies.org/unix/misc/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	X11 circuit schematics drawing program
 WWW=		http://opencircuitdesign.com/xcircuit/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		ghostscript:x11,run gmake gnome pkgconfig tar:tgz tk:tea xorg
+USES=		ghostscript:x11,run gmake gnome pkgconfig tk:tea xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	RTimothyEdwards
+GH_PROJECT=	XCircuit
 
-OPTIONS_DEFINE=	EXAMPLES
-
-USE_XORG=	ice sm x11 xpm xscrnsaver xt
 USE_GNOME=	cairo
+USE_XORG=	ice sm x11 xpm xscrnsaver xt
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
 DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/${PORTNAME}.gif" \
 		"${PORTNAME}" "" false
-
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
+
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
@@ -41,12 +42,11 @@ post-patch:
 		 s|-fpic|-fPIC|g' ${WRKSRC}/configure
 
 post-install:
-	cd ${STAGEDIR}${PREFIX}/share/xcircuit && ${STRIP_CMD} xcircuit.so xcircexec xcircdnull
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.lps ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.sim ${STAGEDIR}/${EXAMPLESDIR}
+	cd ${STAGEDIR}${DATADIR} && ${STRIP_CMD} xcircdnull xcircexec xcircuit.so
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_DATA} \
+		*.lgf *.lps *.ps *.sim .xcircuitrc ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

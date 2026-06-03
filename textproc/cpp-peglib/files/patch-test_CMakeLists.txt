@@ -1,0 +1,26 @@
+--- test/CMakeLists.txt.orig	2026-03-14 22:29:05 UTC
++++ test/CMakeLists.txt
+@@ -1,14 +1,7 @@ project(test)
+ cmake_minimum_required(VERSION 3.14)
+ project(test)
+ 
+-include(FetchContent)
+-FetchContent_Declare(
+-  googletest
+-  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+-)
+-# For Windows: Prevent overriding the parent project's compiler/linker settings
+-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+-FetchContent_MakeAvailable(googletest)
++find_package(GTest REQUIRED)
+ 
+ enable_testing()
+ 
+@@ -31,6 +24,7 @@ target_include_directories(peglib-test-main PRIVATE ..
+ )
+ 
+ target_include_directories(peglib-test-main PRIVATE ..)
++target_link_libraries(peglib-test-main PRIVATE gtest)
+ 
+ include(GoogleTest)
+ gtest_discover_tests(peglib-test-main)

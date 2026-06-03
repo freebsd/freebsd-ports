@@ -1,5 +1,5 @@
-TIMESTAMP = 1734337150
-SHA256 (orc-2.0.3.tar.gz) = 082cba862b5a8a0d14c225404d0b51cd8d1b64ca81b8f1e500322ce8922cb86d
-SIZE (orc-2.0.3.tar.gz) = 13353259
-SHA256 (orc-format-1.0.0.tar.gz) = 739fae5ff94b1f812b413077280361045bf92e510ef04b34a610e23a945d8cd5
-SIZE (orc-format-1.0.0.tar.gz) = 52569
+TIMESTAMP = 1759131441
+SHA256 (orc-2.2.0.tar.gz) = b15aca45a7e73ffbd1bbc36a78cd1422d41f07721092a25f43448e6e16f4763b
+SIZE (orc-2.2.0.tar.gz) = 13433904
+SHA256 (orc-format-1.1.0.tar.gz) = d4a7ac76c5442abf7119e2cb84e71b677e075aff53518aa866055e2ead0450d7
+SIZE (orc-format-1.1.0.tar.gz) = 706048

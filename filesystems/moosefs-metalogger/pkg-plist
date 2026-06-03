@@ -1,0 +1,5 @@
+@sample etc/mfs/mfsmetalogger.cfg.sample
+sbin/mfsmetalogger
+share/man/man5/mfsmetalogger.cfg.5.gz
+share/man/man8/mfsmetalogger.8.gz
+@dir(%%USER%%,%%GROUP%%,) %%MFS_WORKDIR%%/mfs

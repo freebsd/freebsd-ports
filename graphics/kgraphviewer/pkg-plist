@@ -57,6 +57,8 @@ share/doc/HTML/it/kgraphviewer/index.cache.bz2
 share/doc/HTML/it/kgraphviewer/index.docbook
 share/doc/HTML/nl/kgraphviewer/index.cache.bz2
 share/doc/HTML/nl/kgraphviewer/index.docbook
+share/doc/HTML/pt_BR/kgraphviewer/index.cache.bz2
+share/doc/HTML/pt_BR/kgraphviewer/index.docbook
 share/doc/HTML/sl/kgraphviewer/index.cache.bz2
 share/doc/HTML/sl/kgraphviewer/index.docbook
 share/doc/HTML/sv/kgraphviewer/index.cache.bz2
@@ -113,6 +115,7 @@ share/locale/km/LC_MESSAGES/kgraphviewer.mo
 share/locale/ko/LC_MESSAGES/kgraphviewer.mo
 share/locale/ku/LC_MESSAGES/kgraphviewer.mo
 share/locale/lt/LC_MESSAGES/kgraphviewer.mo
+share/locale/lv/LC_MESSAGES/kgraphviewer.mo
 share/locale/mai/LC_MESSAGES/kgraphviewer.mo
 share/locale/mr/LC_MESSAGES/kgraphviewer.mo
 share/locale/nb/LC_MESSAGES/kgraphviewer.mo

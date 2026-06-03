@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	7.10.3
+SSPVERSION=	7.12.2
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -35,6 +35,7 @@ LIB_DEPENDS+=	libsuitesparseconfig.so:math/suitesparse-config
 .endif
 .if ${MPORTNAME} != config &&	\
 	${MPORTNAME} != BTF &&	\
+	${MPORTNAME} != Example &&	\
 	${MPORTNAME} != ssget
 OPTIONS_DEFINE+=DEMOS
 .endif

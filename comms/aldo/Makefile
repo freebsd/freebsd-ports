@@ -3,7 +3,7 @@ DISTVERSION=	0.7.8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://git.savannah.nongnu.org/cgit/${PORTNAME}.git/snapshot/
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Morse code training program
 WWW=		https://www.nongnu.org/aldo/ \
 		https://savannah.nongnu.org/projects/aldo/

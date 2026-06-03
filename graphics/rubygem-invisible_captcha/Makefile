@@ -1,6 +1,5 @@
 PORTNAME=	invisible_captcha
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

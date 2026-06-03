@@ -1,6 +1,30 @@
---- configure.ac.orig	2022-08-25 15:32:21.256937000 -0700
-+++ configure.ac	2022-08-25 15:37:36.166445000 -0700
-@@ -802,7 +802,7 @@
+diff -u configure.ac.orig configure.ac
+index 8919d01..9f454f9 100644
+--- configure.ac.orig
++++ configure.ac
+@@ -531,13 +531,6 @@ AS_IF([test -n "`${PROBE_OS_GROUP} nogroup`" && test -z "`${PROBE_OS_GROUP} \"${
+ 	[RUN_AS_GROUP="nogroup"]
+ )
+ 
+-dnl Last hit wins, user and groups accounts separately
+-for TOKEN in upsmon nutmon ups nut; do
+-	AS_IF([test -n "`${PROBE_OS_USER} ${TOKEN}`"], [RUN_AS_USER="${TOKEN}"])
+-	AS_IF([test -n "`${PROBE_OS_GROUP} ${TOKEN}`"], [RUN_AS_GROUP="${TOKEN}"])
+-done
+-unset TOKEN
+-
+ dnl NOTE: NUT legacy default, keep as is for least surprise
+ dnl Distributions are however welcome to specify the option to use tmpfs
+ AS_CASE([${target_os}],
+@@ -1965,7 +1958,6 @@ AC_CHECK_DECLS(uu_lock, [
+ 	AC_DEFINE(HAVE_UU_LOCK, 1, [Use uu_lock for locking (FreeBSD)])
+ 	SERLIBS="-lutil"
+ 	dnl put in some better defaults for FreeBSD
+-	RUN_AS_USER="uucp"
+ ], [
+ 	SERLIBS=""
+ ], [
+@@ -2940,7 +2932,7 @@ NUT_CHECK_LIBGLIB
  
  dnl A Python GUI client application for the sysadmin desktop
  dnl (not necessarily on the NUT server itself):
@@ -9,9 +33,9 @@
  NUT_ARG_WITH([pynut], [install the PyNUT module files (yes, no, app, auto)], [auto])
  dnl Note: we did NUT_CHECK_PYTHON2 NUT_CHECK_PYTHON3 etc above,
  dnl and if at all possible, we generate the files from .in templates
-@@ -1301,7 +1301,7 @@
+@@ -3675,7 +3667,7 @@ if test x"${nut_with_nut_monitor}" != xno ; then
      dnl Can we satisfy any NUT-Monitor installation request?
-     if test -n "${nut_with_nut_monitor_py2gtk2}${nut_with_nut_monitor_py3qt5}" ; then
+     if test -n "${nut_with_nut_monitor_py2gtk2}${nut_with_nut_monitor_py3qt5}${nut_with_nut_monitor_py3qt6}" ; then
          case "${nut_with_nut_monitor}" in
 -            "auto") nut_with_nut_monitor="yes" ;;
 +            "auto") nut_with_nut_monitor="no" ;;

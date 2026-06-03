@@ -1,14 +1,14 @@
---- build_tools/scripts/core_common/modules/v8.py.orig	2024-02-07 10:44:24.000000000 +0100
-+++ build_tools/scripts/core_common/modules/v8.py	2024-03-01 10:40:07.626578000 +0100
-@@ -9,6 +9,7 @@ def clean():
+--- build_tools/scripts/core_common/modules/v8.py.orig	2025-08-05 15:06:08 UTC
++++ build_tools/scripts/core_common/modules/v8.py
+@@ -9,6 +9,7 @@ import subprocess
  import v8_89
  
  def clean():
 +  return
    if base.is_dir("depot_tools"):
-     base.delete_dir_with_access_error("depot_tools");
+     base.delete_dir_with_access_error("depot_tools")
      base.delete_dir("depot_tools")
-@@ -26,6 +27,8 @@ def is_main_platform():
+@@ -26,6 +27,8 @@ def clean():
  def is_main_platform():
    if (config.check_option("platform", "win_64") or config.check_option("platform", "win_32")):
      return True
@@ -44,7 +44,7 @@
    if not base.is_dir("v8"):
 @@ -121,8 +109,8 @@ def make():
        base.delete_dir_with_access_error("v8/buildtools/win")
-       base.cmd("git", ["config", "--system", "core.longpaths", "true"])
+       base.cmd("git", ["config", "--system", "core.longpaths", "true"], True)
        base.cmd("gclient", ["sync", "--force"], True)
 -    else:
 -      base.cmd("gclient", ["sync"], True) 

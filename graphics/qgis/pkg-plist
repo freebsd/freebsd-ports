@@ -3838,12 +3838,10 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_cs.qm
 %%DATADIR%%/i18n/qgis_da.qm
 %%DATADIR%%/i18n/qgis_de.qm
-%%DATADIR%%/i18n/qgis_el.qm
 %%DATADIR%%/i18n/qgis_en_US.qm
 %%DATADIR%%/i18n/qgis_es.qm
 %%DATADIR%%/i18n/qgis_et.qm
 %%DATADIR%%/i18n/qgis_eu.qm
-%%DATADIR%%/i18n/qgis_fa.qm
 %%DATADIR%%/i18n/qgis_fi.qm
 %%DATADIR%%/i18n/qgis_fr.qm
 %%DATADIR%%/i18n/qgis_gl.qm
@@ -3852,7 +3850,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_it.qm
 %%DATADIR%%/i18n/qgis_ja.qm
 %%DATADIR%%/i18n/qgis_ko.qm
-%%DATADIR%%/i18n/qgis_ky.qm
 %%DATADIR%%/i18n/qgis_lt.qm
 %%DATADIR%%/i18n/qgis_lv.qm
 %%DATADIR%%/i18n/qgis_nb.qm
@@ -3865,11 +3862,13 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_sc.qm
 %%DATADIR%%/i18n/qgis_sk.qm
 %%DATADIR%%/i18n/qgis_sv.qm
+%%DATADIR%%/i18n/qgis_ta.qm
 %%DATADIR%%/i18n/qgis_tr.qm
 %%DATADIR%%/i18n/qgis_uk.qm
 %%DATADIR%%/i18n/qgis_vi.qm
 %%DATADIR%%/i18n/qgis_zh-Hans.qm
 %%DATADIR%%/i18n/qgis_zh-Hant.qm
+%%DATADIR%%/i18n/qgis_zh_TW.qm
 %%DATADIR%%/images/icons/qbrowser-icon.png
 %%DATADIR%%/images/icons/qgis-full.png
 %%DATADIR%%/images/icons/qgis-icon-16x16.png
@@ -4433,6 +4432,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qgis/PyQt/QtMultimedia.py
 %%DATADIR%%/python/qgis/PyQt/QtNetwork.py
 %%DATADIR%%/python/qgis/PyQt/QtPrintSupport.py
+%%DATADIR%%/python/qgis/PyQt/QtQuick.py
 %%DATADIR%%/python/qgis/PyQt/QtQuickWidgets.py
 %%DATADIR%%/python/qgis/PyQt/QtSerialPort.py
 %%DATADIR%%/python/qgis/PyQt/QtSql.py
@@ -10076,6 +10076,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/symbology-style.xml
 %%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-down-disabled.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-down.svg
+%%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-up-disabled.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-up.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/caret-down.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/caret-right.svg
@@ -10099,6 +10100,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/themes/Blend of Gray/variables.qss
 %%DATADIR%%/resources/themes/Night Mapping/icons/arrow-down-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/arrow-down.svg
+%%DATADIR%%/resources/themes/Night Mapping/icons/arrow-up-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/arrow-up.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/caret-down.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/caret-right.svg

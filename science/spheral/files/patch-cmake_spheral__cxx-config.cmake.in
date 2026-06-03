@@ -1,0 +1,13 @@
+--- cmake/spheral_cxx-config.cmake.in.orig	2026-04-01 08:49:15 UTC
++++ cmake/spheral_cxx-config.cmake.in
+@@ -45,8 +45,8 @@ if(NOT SPHERAL_FOUND)
+       set(MPI_Fortran_COMPILER "@MPI_Fortran_COMPILER@" CACHE PATH "")
+     endif()
+   endif()
+-  include("${SPHERAL_CXX_INSTALL_PREFIX}/lib/cmake/spheral_cxx-targets.cmake")
+-  include("${SPHERAL_CXX_INSTALL_PREFIX}/lib/cmake/BLTSetupTargets.cmake")
++  include("${SPHERAL_CXX_INSTALL_PREFIX}/lib/cmake/spheral_cxx/spheral_cxx-targets.cmake")
++  include("${SPHERAL_CXX_INSTALL_PREFIX}/lib/cmake/spheral_cxx/BLTSetupTargets.cmake")
+   set_property(TARGET Spheral_CXX
+     APPEND PROPERTY
+     INTERFACE_INCLUDE_DIRECTORIES ${SPHERAL_CXX_INCLUDE_DIRS})

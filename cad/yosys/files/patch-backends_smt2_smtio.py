@@ -1,6 +1,6 @@
---- backends/smt2/smtio.py.orig	2023-01-04 19:51:15 UTC
+--- backends/smt2/smtio.py.orig	2025-09-21 17:50:33 UTC
 +++ backends/smt2/smtio.py
-@@ -182,9 +182,9 @@ class SmtIo:
+@@ -199,9 +199,9 @@ class SmtIo:
                  self.noincr = True
  
              if self.noincr:

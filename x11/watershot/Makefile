@@ -1,10 +1,10 @@
 PORTNAME=	watershot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
-PORTREVISION=	16
+PORTREVISION=	23
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Wayland-native screenshot tool
 WWW=		https://github.com/Kirottu/watershot
 

@@ -47,12 +47,12 @@
     SUBDIR += edyvalue
     SUBDIR += eijiro-fpw
     SUBDIR += epwutil
-    SUBDIR += eterm
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
     SUBDIR += fcitx-skk
     SUBDIR += fcitx5-anthy
     SUBDIR += fcitx5-cskk
+    SUBDIR += fcitx5-skk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += font-aozoramincho
@@ -92,9 +92,7 @@
     SUBDIR += font-moralerspace
     SUBDIR += font-moralerspace-hw
     SUBDIR += font-moralerspace-hwjpdoc
-    SUBDIR += font-moralerspace-hwnf
     SUBDIR += font-moralerspace-jpdoc
-    SUBDIR += font-moralerspace-nf
     SUBDIR += font-motoya-al
     SUBDIR += font-mplus-bitmap
     SUBDIR += font-mplus-ipa
@@ -191,7 +189,6 @@
     SUBDIR += ngraph-fonts
     SUBDIR += nkf
     SUBDIR += open_jtalk
-    SUBDIR += p5-2chproxy
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
     SUBDIR += p5-DateTime-Calendar-Japanese-Era
@@ -223,10 +220,12 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn-ps
+    SUBDIR += proxy2ch
     SUBDIR += py-SudachiPy
     SUBDIR += py-fugashi
     SUBDIR += py-ipadic
     SUBDIR += py-jaconv
+    SUBDIR += py-mojimoji
     SUBDIR += py-unidic
     SUBDIR += qkc
     SUBDIR += qolibri

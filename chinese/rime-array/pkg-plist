@@ -1,3 +1,10 @@
+share/rime-data/array30_emoji.dict.yaml
+share/rime-data/array30_main.dict.yaml
+share/rime-data/array30_phrases.dict.yaml
+share/rime-data/array30_query.dict.yaml
+share/rime-data/array30_query.schema.yaml
+share/rime-data/array30_wsymbols.dict.yaml
+share/rime-data/array30_wsymbols.schema.yaml
 share/rime-data/array30.dict.yaml
 share/rime-data/array30.schema.yaml
 share/rime-data/build/array30.prism.bin

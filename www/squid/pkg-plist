@@ -1,6 +1,5 @@
-sbin/squidclient
+etc/periodic/weekly/900.squid-rotate-log
 sbin/squid
-sbin/purge
 share/man/man8/url_lfs_rewrite.8.gz
 share/man/man8/storeid_file_rewrite.8.gz
 share/man/man8/squid.8.gz
@@ -11,21 +10,17 @@ share/man/man8/ext_unix_group_acl.8.gz
 share/man/man8/ext_file_userip_acl.8.gz
 share/man/man8/ext_delayer_acl.8.gz
 share/man/man8/digest_file_auth.8.gz
-share/man/man8/cachemgr.cgi.8.gz
 share/man/man8/basic_radius_auth.8.gz
 share/man/man8/basic_pop3_auth.8.gz
 share/man/man8/basic_pam_auth.8.gz
 share/man/man8/basic_ncsa_auth.8.gz
 share/man/man8/basic_getpwnam_auth.8.gz
 share/man/man8/basic_db_auth.8.gz
-share/man/man1/squidclient.1.gz
-share/man/man1/purge.1.gz
 libexec/squid/url_lfs_rewrite
 libexec/squid/url_fake_rewrite.sh
 libexec/squid/url_fake_rewrite
 libexec/squid/storeid_file_rewrite
 libexec/squid/security_fake_certverify
-libexec/squid/ntlm_smb_lm_auth
 libexec/squid/ntlm_fake_auth
 libexec/squid/log_file_daemon
 libexec/squid/log_db_daemon
@@ -34,8 +29,6 @@ libexec/squid/ext_unix_group_acl
 libexec/squid/ext_file_userip_acl
 libexec/squid/ext_delayer_acl
 libexec/squid/digest_file_auth
-libexec/squid/cachemgr.cgi
-libexec/squid/basic_smb_lm_auth
 libexec/squid/basic_radius_auth
 libexec/squid/basic_pop3_auth
 libexec/squid/basic_pam_auth
@@ -178,7 +171,6 @@ libexec/squid/basic_db_auth
 @sample %%ETCDIR%%/squid.conf.sample
 @sample %%ETCDIR%%/mime.conf.sample
 @sample %%ETCDIR%%/errorpage.css.sample
-@sample %%ETCDIR%%/cachemgr.conf.sample
 @dir(squid,squid,750) /var/squid/cache
 @dir(squid,squid,750) /var/squid
 @dir(squid,squid,750) /var/run/squid

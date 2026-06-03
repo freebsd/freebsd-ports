@@ -1,6 +1,14 @@
---- src/rw-touch.c.orig	2022-08-10 16:08:24 UTC
+--- src/rw-touch.c.orig	2021-04-23 23:22:53 UTC
 +++ src/rw-touch.c
-@@ -10,7 +10,7 @@
+@@ -2,6 +2,7 @@
+ #include <sys/time.h>
+ #include <errno.h>
+ 
++#include <skalibs/exec.h>
+ #include <skalibs/stddjb.h>
+ #include "prjlibs-include/constants.h"
+ #include "prjlibs-include/diewarn.h"
+@@ -10,7 +11,7 @@ int main(int argc, char** argv) {
  char const* PROG="rw-touch";
  
  int main(int argc, char** argv) {

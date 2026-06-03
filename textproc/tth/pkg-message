@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-  Please read the license in %%PREFIX%%/share/doc/tth/license.txt.
-EOM
-}
-]

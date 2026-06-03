@@ -1,6 +1,6 @@
 PORTNAME=	aqualung
 DISTVERSION=	1.2
-PORTREVISION=	8
+PORTREVISION=	11
 CATEGORIES=	audio
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -69,5 +69,8 @@ post-patch:
 # Remove unused duplicate global symbols (-fno-common)
 	@${REINPLACE_CMD} -E '/^g?char command/d' \
 		${WRKSRC}/src/gui_main.c
+# avcodec_close deprecated in ffmpeg 4
+	@${REINPLACE_CMD} -e 's/avcodec_close/avcodec_free_context/g' \
+		${WRKSRC}/src/decoder/dec_lavc.c
 
 .include <bsd.port.mk>

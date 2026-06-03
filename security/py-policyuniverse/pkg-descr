@@ -1,0 +1,3 @@
+Parse and Process AWS IAM Policies, Statements, ARNs, and wildcards.
+
+Provides tools for analyzing and interpreting AWS IAM policy documents.

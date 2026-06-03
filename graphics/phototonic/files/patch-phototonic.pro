@@ -1,4 +1,4 @@
---- phototonic.pro.orig	2025-01-27 11:05:39 UTC
+--- phototonic.pro.orig	2025-09-11 08:50:50 UTC
 +++ phototonic.pro
 @@ -19,7 +19,7 @@ INCLUDEPATH += .
  TEMPLATE = app
@@ -18,7 +18,7 @@
  QT += widgets openglwidgets
  QMAKE_CXXFLAGS += $$(CXXFLAGS)
  QMAKE_CFLAGS += $$(CFLAGS)
-@@ -57,22 +57,22 @@ RESOURCES += phototonic.qrc
+@@ -53,25 +53,25 @@ RESOURCES += phototonic.qrc
  
  RESOURCES += phototonic.qrc
  
@@ -45,5 +45,9 @@
 -metainfo.path = /usr/share/metainfo
 +metainfo.path = %%PREFIX%%/share/metainfo
  
- INSTALLS += target icon icon16 iconPixmaps desktop metainfo
+ translation.files = translations/*.qm
+-translation.path = /usr/share/qt6/translations
++translation.path = %%PREFIX%%/share/qt6/translations
+ 
+ INSTALLS += target icon icon16 iconPixmaps desktop metainfo translation
  

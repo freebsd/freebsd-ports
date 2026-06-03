@@ -1,0 +1,3 @@
+Core helpers for ComfyUI workflow templates. This package provides the
+fundamental utilities and helper functions used by ComfyUI workflow template
+modules.

@@ -1,6 +1,5 @@
 PORTNAME=	pytest-shutil
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +24,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
-PORTSCOUT=	skipv:1.8.1
 
 .include <bsd.port.mk>

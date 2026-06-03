@@ -35,3 +35,67 @@
  /* no SSE4.2 kernel on x86-64, part of regular kernel */
  #    ifdef WITH_KERNEL_AVX2
  #      define WITH_CYCLES_OPTIMIZED_KERNEL_AVX2
+--- source/blender/blenlib/BLI_bit_span_to_index_ranges.hh.orig	2025-12-24 21:09:10 UTC
++++ source/blender/blenlib/BLI_bit_span_to_index_ranges.hh
+@@ -111,7 +111,12 @@ inline void bits_to_index_ranges(const BitSpan bits, I
+       /* Loads the next 128 bit. */
+       const __m128i group = _mm_loadu_si128(reinterpret_cast<const __m128i *>(start + int_i));
+       /* Checks if all the 128 bits are zero. */
++#if BLI_HAVE_SSE4
+       const bool group_is_zero = _mm_testz_si128(group, group);
++#else
++      __m128i tmp = _mm_and_si128(group, group);
++      const bool group_is_zero = (_mm_movemask_epi8(tmp) == 0);
++#endif
+       if (group_is_zero) {
+         continue;
+       }
+--- source/blender/blenlib/intern/math_half.cc.orig	2025-12-24 21:19:17 UTC
++++ source/blender/blenlib/intern/math_half.cc
+@@ -271,6 +271,32 @@ void blender::math::float_to_half_array(const float *s
+   }
+ }
+ 
++#ifndef __SSE4_1__
++static inline __m128i srai_epi8_sse2(__m128i x, int imm)
++{
++    // Sign-extend bytes to 16-bit
++    __m128i sign = _mm_cmpgt_epi8(_mm_setzero_si128(), x); // 0xFF where x < 0
++    __m128i lo = _mm_unpacklo_epi8(x, sign);
++    __m128i hi = _mm_unpackhi_epi8(x, sign);
++
++    // Arithmetic shift right on 16-bit lanes
++    lo = _mm_srai_epi16(lo, imm);
++    hi = _mm_srai_epi16(hi, imm);
++
++    // Pack back to 8-bit (signed saturation)
++    return _mm_packs_epi16(lo, hi);
++}
++
++static inline __m128i blendv_epi8_sse2(__m128i a, __m128i b, __m128i mask)
++{
++    mask = srai_epi8_sse2(mask, 7);
++    return _mm_or_si128(
++        _mm_and_si128(mask, b),
++        _mm_andnot_si128(mask, a)
++    );
++}
++#endif
++
+ void blender::math::float_to_half_make_finite_array(const float *src, uint16_t *dst, size_t length)
+ {
+   size_t i = 0;
+@@ -320,8 +346,13 @@ void blender::math::float_to_half_make_finite_array(co
+       __m128i inf_res = _mm_or_si128(signbits, _mm_set1_epi16(0x7bffu)); /* +/- 65504 */
+       __m128i nan_res = signbits;                                        /* +/- 0 */
+       /* Select final result. */
++#if __SSE4_1__
+       h4 = _mm_blendv_epi8(h4, inf_res, is_inf);
+       h4 = _mm_blendv_epi8(h4, nan_res, is_nan);
++#else
++      h4 = blendv_epi8_sse2(h4, inf_res, is_inf);
++      h4 = blendv_epi8_sse2(h4, nan_res, is_nan);
++#endif
+       h4 = _mm_and_si128(h4, _mm_set1_epi32(0xffff));
+       h4 = _mm_or_si128(h4, hi_part);
+     }

@@ -4,8 +4,8 @@
          {
              throw new FSWriteError(e, getPath());
          }
--        NativeLibrary.trySkipCache(fd, startMarker, nextMarker, logFile.getAbsolutePath());
-+//        NativeLibrary.trySkipCache(fd, startMarker, nextMarker, logFile.getAbsolutePath());
+-        NativeLibrary.trySkipCache(fd, startMarker, nextMarker, logFile.absolutePath());
++//        NativeLibrary.trySkipCache(fd, startMarker, nextMarker, logFile.absolutePath());
      }
  
      @Override

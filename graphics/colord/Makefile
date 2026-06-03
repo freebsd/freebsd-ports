@@ -1,6 +1,6 @@
 PORTNAME=	colord
-PORTVERSION=	1.4.7
-PORTREVISION=	3
+PORTVERSION=	1.4.8
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
@@ -21,7 +21,7 @@ USERS=		colord
 GROUPS=		colord
 
 USES=		gettext gnome localbase meson pathfix pkgconfig sqlite tar:xz
-USE_GNOME=	glib20 intlhack introspection:build
+USE_GNOME=	glib20 introspection:build
 
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -29,8 +29,6 @@ MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
 MESON_ARGS=	-Dsystemd=false -Dudev_rules=false \
 		-Ddaemon_user=colord -Dlibcolordcompat=true \
 		-Dpnp_ids=${LOCALBASE}/share/hwdata/pnp.ids
-
-INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
@@ -58,6 +56,7 @@ COMPLETION_BUILD_DEPENDS=	bash-completion>=2.0:shells/bash-completion
 DOCS_BUILD_DEPENDS=		gtkdoc-scan:textproc/gtk-doc
 POLKIT_LIB_DEPENDS=		libpolkit-gobject-1.so:sysutils/polkit
 POLKIT_CONFIGURE_ENABLE=	polkit
+PPROFILES_BUILD_DEPENDS=	colprof:graphics/argyllcms
 MANPAGES_BUILD_DEPENDS=		xsltproc:textproc/libxslt \
 				docbook-xsl-ns>0:textproc/docbook-xsl-ns
 SANE_LIB_DEPENDS=		libsane.so:graphics/sane-backends

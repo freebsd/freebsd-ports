@@ -1,0 +1,30 @@
+--- class/Makefile.orig	1996-11-07 03:08:38 UTC
++++ class/Makefile
+@@ -1,4 +1,4 @@
+-LKV	 = ./LKV/
++LKV	 = LKV
+ 
+ CPPFLAGS += -fno-implicit-templates -Wall -Wconversion -Wno-unused \
+ 	    -DNO_LAZY_ALLOC -I$(LKV) $(CLASS_OPTS)
+@@ -6,15 +6,15 @@ COMMON   = NibStr.o SourceLine.o fp_support.o object.o
+ 
+ LDXX = g++
+ 
+-all:	lib class$(EXE) clld$(EXE)
++all:	class$(EXE) clld$(EXE)
+ 
+-class$(EXE): $(COMMON) class.o class_templates.o
+-	$(LDXX) -o $@ $^ -L$(LKV) -lLKV -lm $(LDFLAGS)
++class$(EXE): $(COMMON) class.o class_templates.o $(LKV)/libLKV.a
++	$(LDXX) -o $@ $^ -lm $(LDFLAGS)
+ 
+-clld$(EXE): $(COMMON) clld.o clld_templates.o resolve.o
+-	$(LDXX) -o $@ $^ -L$(LKV) -lLKV -lm $(LDFLAGS)
++clld$(EXE): $(COMMON) clld.o clld_templates.o resolve.o $(LKV)/libLKV.a
++	$(LDXX) -o $@ $^ -lm $(LDFLAGS)
+ 
+-lib:
++$(LKV)/libLKV.a:
+ 	$(MAKE) -C $(LKV) CPPFLAGS="$(CPPFLAGS)"
+ 
+ clean:

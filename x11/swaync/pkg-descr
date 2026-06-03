@@ -2,18 +2,26 @@ A simple notification daemon with a GTK gui for notifications and the
 control center
 
 Features:
+- Grouped notifications
 - Keyboard shortcuts
 - Notification body markup with image support
+- Inline replies
 - A panel to view previous notifications
 - Show album art for notifications like Spotify
 - Do not disturb
+- Inhibiting notifications through DBUS or client
+- Restores previous Do not disturb value after restart
 - Click notification to execute default action
 - Show alternative notification actions
+- Copy detected 2FA codes to clipboard
 - Customization through a CSS file
 - Trackpad/mouse gesture to close notification
 - The same features as any other basic notification daemon
 - Basic configuration through a JSON config file
 - Hot-reload config through swaync-client
+- Customizable widgets
+- Select the preferred monitor to display on (with swaync-client
+  command for scripting)
 
 Planned Features:
 - Slick animations

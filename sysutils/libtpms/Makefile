@@ -1,6 +1,6 @@
 PORTNAME=	libtpms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -18,5 +18,6 @@ GH_ACCOUNT=	stefanberger
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

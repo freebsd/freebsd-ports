@@ -49,9 +49,10 @@ share/knsrcfiles/ksirk.knsrc
 %%DATADIR%%/skins/default/Sounds/crash.wav
 %%DATADIR%%/skins/default/Sounds/roll.wav
 %%DATADIR%%/skins/skinsdir
-%%DATADIR%%skineditor/cross.png
-%%DATADIR%%skineditor/target.png
+share/ksirkskineditor/cross.png
+share/ksirkskineditor/target.png
 share/locale/ar/LC_MESSAGES/ksirk.mo
+share/locale/ar/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ast/LC_MESSAGES/ksirk.mo
 share/locale/ast/LC_MESSAGES/ksirkskineditor.mo
 share/locale/be/LC_MESSAGES/ksirk.mo

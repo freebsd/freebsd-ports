@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project basedir="." name="apache-cassandra-rat-tasks"
+     xmlns:rat="antlib:org.apache.rat.anttasks">
+
+    <!--
+      License audit tool
+    -->
+
+    <target name="_rat_init" depends="resolver-init">
+        <typedef uri="antlib:org.apache.rat.anttasks" classpathref="rat.classpath"/>
+    </target>
+
+    <target name="_build_ratinclude" depends="_rat_init">
+        <exec executable="git" failifexecutionfails="false" failonerror="false" resultproperty="git.success" output="${build.dir}/.ratinclude">
+            <arg line="ls-tree -r HEAD --name-only"/>
+        </exec>
+        <condition property="rat.skip" value="true">
+            <not>
+                <equals arg1="${git.success}" arg2="0"/>
+            </not>
+        </condition>
+    </target>
+
+    <target name="rat-check" depends="_build_ratinclude" unless="rat.skip" description="License checks on source" >
+        <rat:report reportFile="${build.dir}/rat.txt">
+            <fileset dir="." includesfile="${build.dir}/.ratinclude">
+                 <!-- Config files with not much creativity -->
+                 <exclude name=".asf.yaml"/>
+                 <exclude name=".snyk"/>
+                 <exclude name="**/cassandra*.yaml"/>
+                 <exclude NAME="doc/antora.yml"/>
+                 <exclude name="ide/**/*"/>
+                 <exclude name="**/*.json"/>
+                 <exclude name="pylib/cqlshlib/test/config/sslhandling*.config"/>
+                 <exclude NAME="src/resources/org/apache/cassandra/cql3/reserved_keywords.txt"/>
+                 <exclude NAME="src/resources/org/apache/cassandra/index/sasi/analyzer/filter/*.txt"/>
+                 <exclude name="test/conf/cdc.yaml"/>
+                 <exclude name="test/conf/commitlog*.yaml"/>
+                 <exclude name="test/conf/system_keyspaces_directory.yaml"/>
+                 <exclude name="test/conf/sstableloader_with_encryption.yaml"/>
+                 <exclude name="test/conf/unit-test-conf/test-native-port.yaml"/>
+                 <exclude name="test/resources/data/config/YamlConfigurationLoaderTest/*.yaml"/>
+                 <exclude name="tools/cqlstress-*.yaml"/>
+                 <!-- test data -->
+                 <exclude name="pylib/cqlshlib/test/test_authproviderhandling_config/*"/>
+                 <exclude name="test/**/cassandra*.conf"/>
+                 <exclude name="test/**/*.csv"/>
+                 <exclude name="test/**/*.txt"/>
+                 <exclude name="test/data/**/*.adler32"/>
+                 <exclude name="test/data/**/*.crc32"/>
+                 <exclude name="test/data/**/CommitLog-*.log"/>
+                 <exclude name="test/data/**/*.bin"/>
+                 <exclude name="test/data/**/*.db"/>
+                 <exclude name="test/data/**/*.sha1"/>
+                 <exclude name="test/data/CASSANDRA-15313/lz4-jvm-crash-failure.txt"/>
+                 <exclude name="test/data/jmxdump/cassandra-*-jmx.yaml"/>
+                 <!-- Documentation files -->
+                 <exclude name=".github/pull_request_template.md"/>
+                 <exclude name=".github/workflows/code-check.yaml"/>
+                 <exclude NAME="doc/modules/**/*"/>
+                 <exclude NAME="src/java/**/*.md"/>
+                 <exclude NAME="**/README*"/>
+                 <exclude NAME="CHANGES.txt"/>
+                 <exclude NAME="CASSANDRA-14092.txt"/>
+                 <exclude NAME="debian/TODO"/>
+                 <!-- legal files -->
+                 <exclude NAME="NOTICE.txt"/>
+                 <exclude NAME="LICENSE.txt"/>
+                 <!-- misc -->
+                 <exclude NAME="**/*.patch"/>
+                 <exclude NAME="**/*.diff"/>
+                 <exclude NAME="debian/cassandra.bash-completion"/>
+                 <exclude NAME="debian/cassandra-sysctl.conf"/>
+                 <exclude NAME="debian/cassandra.install"/>
+                 <exclude NAME="debian/cassandra-tools.install"/>
+                 <exclude NAME="debian/compat"/>
+                 <exclude NAME="debian/control"/>
+                 <exclude NAME="debian/dirs"/>
+                 <exclude NAME="debian/patches/series"/>
+            </fileset>
+        </rat:report>
+        <exec executable="grep" outputproperty="rat.failed.files" failifexecutionfails="false">
+            <arg line="-A5 'Unapproved licenses' ${build.dir}/rat.txt"/>
+        </exec>
+        <fail message="Some files have missing or incorrect license information. Check RAT report in ${build.dir}/rat.txt for more details! \n ${rat.failed.files}">
+            <condition>
+                <and>
+                    <not>
+                        <resourcecontains resource="${build.dir}/rat.txt" substring="0 Unknown Licenses" casesensitive="false" />
+                    </not>
+                </and>
+            </condition>
+        </fail>
+    </target>
+</project>

@@ -1,5 +1,6 @@
 PORTNAME=	dnsperf
 DISTVERSION=	2.14.0
+PORTREVISION=	1
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 

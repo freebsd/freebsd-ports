@@ -1,3 +1,3 @@
-TIMESTAMP = 1751617145
-SHA256 (python/django-5.2.4.tar.gz) = a1228c384f8fa13eebc015196db7b3e08722c5058d4758d20cb287503a540d8f
-SIZE (python/django-5.2.4.tar.gz) = 10831909
+TIMESTAMP = 1778096686
+SHA256 (python/django-5.2.14.tar.gz) = 58a63ba841662e5c686b57ba1fec52ddd68c0b93bd96ac3029d55728f00bf8a2
+SIZE (python/django-5.2.14.tar.gz) = 10895118

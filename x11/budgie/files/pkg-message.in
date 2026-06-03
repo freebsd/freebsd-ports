@@ -1,13 +1,16 @@
 [
 { type: install
   message: <<EOM
-Copy 'xprofile' into your home directory:
+In order to launch your session. Copy 'xprofile' into your home directory:
   cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
 
-More information, https://codeberg.org/olivierd/freebsd-ports-budgie/wiki
+Create or edit /var/db/AccountsService/users/YOURLOGIN file:
+  [User]
+  Language=fr_FR.UTF-8 # e.g. for French users
+  Session=budgie-desktop
+  SystemAccount=false
 
-If you want to launch new session from a console (without login manager)
-  cp %%EXAMPLESDIR%%/xinitrc ~/.xinitrc
+Replace YOURLOGIN by your login.
 EOM
 }
 ]

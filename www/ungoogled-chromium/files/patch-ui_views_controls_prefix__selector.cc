@@ -1,6 +1,6 @@
---- ui/views/controls/prefix_selector.cc.orig	2025-01-25 09:34:31 UTC
+--- ui/views/controls/prefix_selector.cc.orig	2025-09-10 13:22:16 UTC
 +++ ui/views/controls/prefix_selector.cc
-@@ -192,7 +192,7 @@ bool PrefixSelector::ShouldDoLearning() {
+@@ -193,7 +193,7 @@ bool PrefixSelector::ShouldDoLearning() {
    return false;
  }
  

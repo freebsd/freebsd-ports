@@ -1,5 +1,5 @@
 PORTNAME=	imapsync
-PORTVERSION=	2.290
+PORTVERSION=	2.314
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://imapsync.lamiral.info/dist/
 
@@ -35,7 +35,7 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 USES=		cpe perl5 tar:tgz shebangfix
 SHEBANG_FILES=	${PORTNAME}
 
-CPE_VENDOR=	gilles_lamiral
+CPE_VENDOR=	imapsync_project
 NO_BUILD=	yes
 NO_ARCH=	yes
 

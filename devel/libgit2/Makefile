@@ -5,13 +5,13 @@
 
 PORTNAME=	libgit2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.4
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Portable, pure C implementation of the Git core
 WWW=		https://libgit2.org \
-		https://libgit2.github.com/
+		https://github.com/libgit2/libgit2
 
 LICENSE=	GPLv2
 

@@ -1,6 +1,6 @@
---- test/Makefile.am.orig	2022-04-08 23:59:40 UTC
+--- test/Makefile.am.orig	2026-04-17 12:26:48 UTC
 +++ test/Makefile.am
-@@ -5,22 +5,22 @@ test_xor_hd_code_SOURCES = \
+@@ -5,27 +5,27 @@ test_xor_hd_code_CPPFLAGS = -I$(top_srcdir)/include -I
  	builtin/xor_codes/test_xor_hd_code.c \
  	builtin/xor_codes/test_xor_hd_code.h
  test_xor_hd_code_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/include/erasurecode -I$(top_srcdir)/include/xor_codes  @GCOV_FLAGS@
@@ -20,6 +20,12 @@
 +liberasurecode_test_LDFLAGS = @GCOV_LDFLAGS@ $(top_builddir)/src/liberasurecode.la -lpthread -lz
  check_PROGRAMS += liberasurecode_test
  
+ liberasurecode_threaded_test_SOURCES = liberasurecode_threaded_test.c
+ liberasurecode_threaded_test_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/include/erasurecode  @GCOV_FLAGS@
+-liberasurecode_threaded_test_LDFLAGS = @GCOV_LDFLAGS@ $(top_builddir)/src/liberasurecode.la -ldl -lpthread -lz
++liberasurecode_threaded_test_LDFLAGS = @GCOV_LDFLAGS@ $(top_builddir)/src/liberasurecode.la -lpthread -lz
+ check_PROGRAMS += liberasurecode_threaded_test
+ 
  libec_slap_SOURCES = libec_slap.c
  libec_slap_CPPFLAGS = -I. -I$(top_srcdir)/include -I$(top_srcdir)/include/erasurecode  @GCOV_FLAGS@
 -libec_slap_LDFLAGS = @GCOV_LDFLAGS@ $(top_builddir)/src/liberasurecode.la -ldl -lpthread
@@ -27,3 +33,12 @@
  check_PROGRAMS += libec_slap
  
  rs_galois_test_SOURCES = builtin/rs_vand/rs_galois_test.c
+@@ -40,7 +40,7 @@ liberasurecode_rs_isal_stress_test_CPPFLAGS = -I$(top_
+ 
+ liberasurecode_rs_isal_stress_test_SOURCES = liberasure_rs_isal_stress_test.c
+ liberasurecode_rs_isal_stress_test_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/include/erasurecode  @GCOV_FLAGS@
+-liberasurecode_rs_isal_stress_test_LDFLAGS = @GCOV_LDFLAGS@ $(top_builddir)/src/liberasurecode.la -ldl -lpthread -lz
++liberasurecode_rs_isal_stress_test_LDFLAGS = @GCOV_LDFLAGS@ $(top_builddir)/src/liberasurecode.la -lpthread -lz
+ check_PROGRAMS += liberasurecode_rs_isal_stress_test
+ MOSTLYCLEANFILES = *.gcda *.gcno *.gcov \
+                    ./builtin/xor_codes/*.gcda ./builtin/xor_codes/*.gcno ./builtin/xor_codes/*.gcov \

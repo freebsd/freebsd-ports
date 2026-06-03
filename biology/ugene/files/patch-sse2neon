@@ -1,0 +1,40 @@
+--- src/plugins_3rdparty/hmm2/src/u_search/uhmmsearch_sse.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/plugins_3rdparty/hmm2/src/u_search/uhmmsearch_sse.cpp
+@@ -1,5 +1,9 @@
+ #include <assert.h>
++#if defined(__i386__) || defined(__amd64__)
+ #include <emmintrin.h>
++#else
++#include <sse2neon.h>
++#endif
+ #include <hmmer2/funcs.h>
+ 
+ #include <U2Core/SequenceWalkerTask.h>
+--- src/plugins/smith_waterman/src/SmithWatermanAlgorithmSSE2.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/plugins/smith_waterman/src/SmithWatermanAlgorithmSSE2.cpp
+@@ -23,7 +23,11 @@ U2_DISABLE_WARNINGS
+  * MA 02110-1301, USA.
+  */
+ 
++#if defined(__i386__) || defined(__amd64__)
+ #include <emmintrin.h>
++#else
++#include <sse2neon.h>
++#endif
+ #include <iostream>
+ 
+ #include "SmithWatermanAlgorithmSSE2.h"
+--- src/plugins/smith_waterman/src/SmithWatermanAlgorithmSSE2.h.orig	2026-03-01 18:44:47 UTC
++++ src/plugins/smith_waterman/src/SmithWatermanAlgorithmSSE2.h
+@@ -21,7 +21,11 @@
+ 
+ #pragma once
+ 
++#if defined(__i386__) || defined(__amd64__)
+ #include <emmintrin.h>
++#else
++#include <sse2neon.h>
++#endif
+ 
+ #include "SmithWatermanAlgorithm.h"
+ 

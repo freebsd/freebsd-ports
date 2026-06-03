@@ -1,0 +1,3 @@
+openai-harmony provides OpenAI response format compatibility for gpt-oss
+open-weight model series. It implements the OpenAI API response structure
+for open-weight language models.

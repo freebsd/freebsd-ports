@@ -1,0 +1,5 @@
+jamo is Hangul syllable and jamo analyzer for Korean language processing.
+
+jamo provides functions to decompose Korean Hangul syllables into individual
+jamo (consonants and vowels) and compose them back. Useful for Korean text
+processing and normalization.

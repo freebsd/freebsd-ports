@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# PROVIDE: vikunja
+# REQUIRE: LOGIN networking
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=vikunja
+rcvar=vikunja_enable
+
+load_rc_config $name
+
+vikunja_user="www"
+vikunja_env="VIKUNJA_SERVICE_ROOTPATH=/var/db/vikunja"
+
+vikunja_command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${vikunja_command}"
+
+run_rc_command "$1"

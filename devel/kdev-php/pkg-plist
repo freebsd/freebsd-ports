@@ -24,6 +24,7 @@ lib/libkdevphpparser.so
 share/kdevappwizard/templates/simple_phpapp.tar.bz2
 share/kdevphpsupport/phpfunctions.php
 share/kdevphpsupport/phpunitdeclarations.php
+share/locale/ar/LC_MESSAGES/kdevphp.mo
 share/locale/bs/LC_MESSAGES/kdevphp.mo
 share/locale/ca/LC_MESSAGES/kdevphp.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevphp.mo

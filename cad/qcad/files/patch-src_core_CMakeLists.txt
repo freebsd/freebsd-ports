@@ -1,0 +1,11 @@
+--- src/core/CMakeLists.txt.orig	2026-05-06 14:27:07 UTC
++++ src/core/CMakeLists.txt
+@@ -248,7 +248,7 @@ target_link_libraries(qcadcore PUBLIC
+     Qt::Svg
+     Qt::Xml
+     Qt::Qml
+-    zlib
++    z
+     OpenNURBS
+ )
+ 

@@ -1,0 +1,7 @@
+TIMESTAMP = 1775576082
+SHA256 (opencv-opencv-python-4.13.0.92-92_GH0.tar.gz) = 049293f56726a3ebb01bb7508b973e14e62752a4a0e067ac6af4e371d6aa30d3
+SIZE (opencv-opencv-python-4.13.0.92-92_GH0.tar.gz) = 1130133
+SHA256 (opencv-opencv-b4c5ec4042f097e2a5b386b9d413ec7333d0a184_GH0.tar.gz) = 4f2a381ce3377e6f22d0718fe7101e97a21968a21c81f0356f2787bb21024dc4
+SIZE (opencv-opencv-b4c5ec4042f097e2a5b386b9d413ec7333d0a184_GH0.tar.gz) = 95448014
+SHA256 (opencv-opencv_contrib-d99ad2a188210cc35067c2e60076eed7c2442bc3_GH0.tar.gz) = 8d2f5665a4f47fd6763eb75f5017676cbcdeb813074b32a9fda72c25d52abdd4
+SIZE (opencv-opencv_contrib-d99ad2a188210cc35067c2e60076eed7c2442bc3_GH0.tar.gz) = 55518735

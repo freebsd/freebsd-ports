@@ -1,0 +1,10 @@
+--- TARGETS_CONS_FREEBSD_VT.dat.orig	2025-09-14 12:43:51 UTC
++++ TARGETS_CONS_FREEBSD_VT.dat
+@@ -19,6 +19,6 @@
+ # The default is the entire list of sizes up to size 40. If you want
+ # more or less, change the following line accordingly:
+
+-SIZES_CONS_FREEBSD_VT = 11 12 13 14 15 16 17 18 22 30 40
++SIZES_CONS_FREEBSD_VT = 11 12 13 14 15 16 17 18 22 30 40 60 80
+
+ # **********************************************************************

@@ -57,7 +57,7 @@ pidfile="%%RUNDIR%%/daemon.pid"
 
 command="/usr/sbin/daemon"
 
-command_args="-f -c -t ${name} -r -R 5 -P ${pidfile} -p ${app_pidfile} -o %%LOGDIR%%/daemon.log ${reposilite_java_home}/bin/java -Dtinylog.configuration=${reposilite_tinylog_config} ${reposilite_java_opts} -jar %%JARFILE%% -wd %%WORKDIR%% -lcm none -lc ${reposilite_config} ${reposilite_args}"
+command_args="-f -c -t ${name} -r -R 5 -P ${pidfile} -p ${app_pidfile} -o %%LOGDIR%%/daemon.log ${reposilite_java_home}/bin/java -Dtinylog.configuration=${reposilite_tinylog_config} ${reposilite_java_opts} -jar %%JARFILE%% --no-color --disable-it -wd %%WORKDIR%% -lcm none -lc ${reposilite_config} ${reposilite_args}"
 
 required_files="${reposilite_config}"
 

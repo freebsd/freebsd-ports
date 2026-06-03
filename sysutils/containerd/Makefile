@@ -1,6 +1,6 @@
 PORTNAME=	containerd
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.1.3
+DISTVERSION=	2.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cpe gmake go:1.23,modules,no_targets
+USES=		cpe gmake go:1.26+,modules,no_targets
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/containerd/containerd
 
@@ -21,7 +21,7 @@ CPE_VENDOR=	linuxfoundation
 USE_RC_SUBR=	containerd
 
 MAKE_ENV=	${GO_ENV} \
-		GOFLAGS="${GO_BUILDFLAGS}" \
+		GO_BUILD_FLAGS="${GO_BUILDFLAGS}" \
 		VERSION="${DISTVERSION}"
 
 PLIST_FILES=	bin/containerd \

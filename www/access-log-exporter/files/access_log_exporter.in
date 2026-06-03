@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# PROVIDE: access_log_exporter
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# access_log_exporter_enable (bool):         Set to NO by default.
+#                                            Set it to YES to enable access_log_exporter.
+# access_log_config (string):                Set to %%ETCDIR%%/config.yaml
+#                                            Set it to the path of desired config file
+# access_log_exporter_user (string):         Set user that access_log_exporter will run under
+#                                            Default is "www".
+# access_log_exporter_group (string):        Set group that access_log_exporter will run under
+#                                            Default is "www".
+# access_log_exporter_syslog_priority (str): Set to "info" by default.
+#                                            Set it to priority to be used by syslog
+# access_log_exporter_syslog_facility (str): Set to "daemon" by default.
+#                                            Set it to facility to be used by syslog
+# access_log_exporter_syslog_tag (str):      Set to "access-log-exporter" by default.
+#                                            Set it to tag to be used by syslog
+
+. /etc/rc.subr
+
+name=access_log_exporter
+desc="Prometheus exporter of webserver logs into metrics"
+rcvar=access_log_exporter_enable
+
+load_rc_config $name
+
+: ${access_log_exporter_enable:=NO}
+: ${access_log_exporter_config:=%%ETCDIR%%/config.yaml}
+: ${access_log_exporter_user:=www}
+: ${access_log_exporter_group:=www}
+: ${access_log_exporter_syslog_priority=info}
+: ${access_log_exporter_syslog_facility=daemon}
+: ${access_log_exporter_syslog_tag=access-log-exporter}
+
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/access-log-exporter"
+command_args="-S -m 3 \
+	-l ${access_log_exporter_syslog_facility} \
+	-s ${access_log_exporter_syslog_priority} \
+	-t ${name} \
+	-T ${access_log_exporter_syslog_tag} \
+	-p ${pidfile} \
+	/usr/bin/env ${procname} \
+		--config ${access_log_exporter_config} \
+		${access_log_exporter_args}"
+
+start_precmd=${name}_startprecmd
+extra_commands=reload
+
+access_log_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${access_log_exporter_user} \
+            -g ${access_log_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+run_rc_command "$1"

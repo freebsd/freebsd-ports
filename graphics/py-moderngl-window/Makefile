@@ -1,5 +1,6 @@
 PORTNAME=	moderngl-window
 DISTVERSION=	3.1.0
+PORTREVISION=	3
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}moderngl<6:graphics/py-moderngl@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pyglet>=2.0.0:graphics/py-pyglet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyglm>=2.7.0:graphics/py-pyglm@${PY_FLAVOR} \

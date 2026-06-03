@@ -1,0 +1,11 @@
+--- source/asmc/makefile.orig	2026-03-12 15:53:40 UTC
++++ source/asmc/makefile
+@@ -2,7 +2,7 @@
+ # Makefile for Asmc
+ #
+ 
+-flags = -Cs -Iinc -I../../include
++flags = -Cs -Iinc -I../../include -Bl/usr/bin/cc
+ ifdef SUBVERSION
+ flags += -DSUBVERSION=$(SUBVERSION)
+ endif

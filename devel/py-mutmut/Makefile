@@ -1,6 +1,5 @@
 PORTNAME=	mutmut
-DISTVERSION=	3.2.3
-PORTREVISION=	1
+DISTVERSION=	3.3.1
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}junit-xml>=1.8:textproc/py-junit-xml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}parso>0:textproc/py-parso@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libcst>=1.7.0:devel/py-libcst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textual>0:textproc/py-textual@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
@@ -34,6 +33,6 @@ NO_ARCH=	yes
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-# tests as of 3.2.3: 102 passed in 1.74s
+# tests as of 3.3.1: 170 passed, 1 skipped, 18 warnings in 3.77s
 
 .include <bsd.port.mk>

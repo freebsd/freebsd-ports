@@ -1,0 +1,8 @@
+App::Yath::Script provides the initial entry point for the yath script. It
+handles script discovery, configuration loading, version detection, and
+delegation to version-specific script modules (App::Yath::Script::V{X}).
+
+During the BEGIN phase, do_begin() locates .yath.rc and .yath.user.rc
+configuration files, determines the harness version to use, and delegates to the
+appropriate App::Yath::Script::V{X} module. At runtime, do_runtime() hands off
+execution to that module.

@@ -1,6 +1,6 @@
 PORTNAME=	zbackup
 PORTVERSION=	1.4.4
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		liblzo2.so:archivers/lzo2
 
-USES=		alias cmake:insource compiler:c++17-lang ssl
+USES=		cmake:insource compiler:c++17-lang ssl
 USE_GITHUB=	yes
 
 CXXFLAGS+=	-Wno-dynamic-exception-spec

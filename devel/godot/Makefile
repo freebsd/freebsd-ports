@@ -1,5 +1,5 @@
 PORTNAME=	godot
-DISTVERSION=	4.4.1
+DISTVERSION=	4.6.1
 DISTVERSIONSUFFIX=	-stable
 PORTREVISION?=	0
 CATEGORIES=	devel games
@@ -14,68 +14,122 @@ LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	yasm:devel/yasm
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2 \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libharfbuzz.so:print/harfbuzz \
-		libpcre2-8.so:devel/pcre2 \
+		libmbedtls.so:security/mbedtls3 \
+		libminiupnpc.so:net/miniupnpc \
+		libogg.so:audio/libogg \
+		libpcre2-32.so:devel/pcre2 \
 		libpng.so:graphics/png \
-		libvpx.so:multimedia/libvpx
+		libRecast.so:graphics/recastnavigation \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libwebp.so:graphics/webp \
+		libwslay_shared.so:www/wslay \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		xdg-user-dir:devel/xdg-user-dirs \
 		xmessage:x11/xmessage
 
-USES=		compiler:c++17-lang cpe gl pkgconfig scons xorg
+USES=		compiler:c++17-lang cpe gl pkgconfig scons sdl
+
 CPE_VENDOR=	godotengine
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
-
 USE_GL=		gl glew glu
-USE_XORG=	x11 xcursor xext xi xinerama xrandr xrender
+USE_SDL=	sdl3
 
-MAKE_ARGS+=		platform=linuxbsd builtin_freetype=False \
-			builtin_graphite=False builtin_harfbuzz=False \
-			builtin_libpng=False builtin_libvpx=False \
-			builtin_pcre2=False builtin_zlib=False verbose=True
-MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
-MAKE_ARGS_clang=	use_llvm=True linker=lld
+# enabling builtin_openxr results in an uncaught exception during init
+MAKE_ARGS+=	platform=linuxbsd \
+		dbus=True \
+		brotli=True \
+		builtin_brotli=False \
+		builtin_freetype=False \
+		builtin_graphite=False \
+		builtin_harfbuzz=False \
+		builtin_libogg=False \
+		builtin_libpng=False \
+		builtin_libtheora=False \
+		builtin_libvorbis=False \
+		builtin_libwebp=False \
+		builtin_mbedtls=False \
+		builtin_miniupnpc=False \
+		builtin_pcre2=False \
+		builtin_recastnavigation=False \
+		builtin_sdl=False \
+		builtin_wslay=False \
+		builtin_zlib=False \
+		builtin_zstd=False \
+		fontconfig=True \
+		opengl3=True \
+		use_sowrap=True \
+		verbose=True \
+		disable_path_overrides=False \
+		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
+MAKE_ARGS_clang=	use_llvm=True
+
 CXXFLAGS_i386=		${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_i386_gcc=	-march=i586
 
 GODOTFILE=	${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	bin/${GODOTFILE}
 
-OPTIONS_DEFINE=		EXAMPLES TEST TOOLS UDEV
-OPTIONS_DEFAULT=	ALSA UDEV
+OPTIONS_DEFINE=		EXAMPLES MOLD TEST TOOLS UDEV WAYLAND X11
+OPTIONS_DEFAULT=	ALSA UDEV WAYLAND X11
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 # Moved to devel/godot-tools
 OPTIONS_EXCLUDE?=	EXAMPLES TOOLS
 
 AUDIO_DESC=	Audio support
+MOLD_DESC=	Use mold linker for faster compilation
 TOOLS_DESC=	Include development tools (IDE)
 UDEV_DESC=	Libudev support (Joystick)
 
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=			alsa=True
 ALSA_MAKE_ARGS_OFF=		alsa=False
-# master head at 6/3 - no branch made for 4.4 yet
-EXAMPLES_GH_TUPLE=		godotengine:godot-demo-projects:fdb2f50a2088:DEMOS
+
+# master head at 20/2 - no branch made for 4.6 yet
+EXAMPLES_GH_TUPLE=		godotengine:godot-demo-projects:f228ea632391:DEMOS
 EXAMPLES_PORTEXAMPLES=		*
+
+MOLD_BUILD_DEPENDS=		mold:devel/mold
+MOLD_MAKE_ARGS=			linker=mold
+MOLD_MAKE_ARGS_OFF=		linker=lld
+
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=		pulseaudio=True
 PULSEAUDIO_MAKE_ARGS_OFF=	pulseaudio=False
+
 TEST_MAKE_ARGS=			tests=True
+
 TOOLS_MAKE_ARGS=		target=editor
 TOOLS_MAKE_ARGS_OFF=		target=template_release
-TOOLS_DESKTOP_ENTRIES=	"Godot" "${COMMENT}" "${GODOTFILE}" \
-			"${GODOTFILE}" "Development;IDE;" ""
-TOOLS_PLIST_FILES=		share/pixmaps/${GODOTFILE}.png \
-				share/pixmaps/${GODOTFILE}.svg
+TOOLS_DESKTOP_ENTRIES=		"Godot Engine" "${COMMENT}" "${GODOTFILE}" \
+				"${GODOTFILE}" "Development;IDE;" ""
+TOOLS_PLIST_FILES=		share/icons/hicolor/256x256/apps/${GODOTFILE}.png \
+				share/icons/hicolor/scalable/apps/${GODOTFILE}.svg
+
 UDEV_BUILD_DEPENDS=		${PREFIX}/include/linux/input.h:devel/evdev-proto
 UDEV_LIB_DEPENDS=		libudev.so:devel/libudev-devd
 UDEV_MAKE_ARGS=			udev=True
 UDEV_MAKE_ARGS_OFF=		udev=False
+
+WAYLAND_BUILD_DEPENDS=		wayland-protocols>0:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
+				libxkbcommon.so:x11/libxkbcommon
+WAYLAND_MAKE_ARGS=		wayland=True libdecor=True
+WAYLAND_MAKE_ARGS_OFF=		wayland=False
+
+X11_USES=			xorg
+X11_USE=			XORG=x11,xcursor,xext,xi,xinerama,xrandr,xrender
+X11_MAKE_ARGS=			x11=True
+X11_MAKE_ARGS_OFF=		x11=False
 
 .ifmake makesum
 # Always include optional distfiles
@@ -84,7 +138,7 @@ UDEV_MAKE_ARGS_OFF=		udev=False
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*} || ${ARCH:Mriscv64*}
+.if ${ARCH} == powerpc || ${ARCH:Mriscv64*}
 MAKE_ARGS+=	module_embree_enabled=no \
 		module_raycast_enabled=no \
 		module_webm_enabled=no
@@ -107,10 +161,12 @@ do-install-EXAMPLES-on:
 		${STAGEDIR}${EXAMPLESDIR})
 
 do-install-TOOLS-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps \
+		  ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/icon.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${GODOTFILE}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/${GODOTFILE}.png
 	${INSTALL_DATA} ${WRKSRC}/icon.svg \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${GODOTFILE}.svg
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${GODOTFILE}.svg
 
 .if ${PORT_OPTIONS:MTEST}
 do-test:

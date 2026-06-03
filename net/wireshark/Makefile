@@ -1,5 +1,5 @@
 PORTNAME=	wireshark
-DISTVERSION=	4.4.8
+DISTVERSION=	4.6.6
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -17,23 +17,25 @@ WWW=		https://www.wireshark.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libcares.so:dns/c-ares \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
 		libnghttp3.so:www/libnghttp3 \
-		libbrotlidec.so:archivers/brotli \
+		libpcre2-8.so:devel/pcre2 \
 		libsnappy.so:archivers/snappy \
-		libcares.so:dns/c-ares \
-		libzstd.so:archivers/zstd \
-		libspeexdsp.so:audio/speexdsp
+		libspeexdsp.so:audio/speexdsp \
+		libxxhash.so:devel/xxhash \
+		libzstd.so:archivers/zstd
 
 FLAVORS=	default nox11
 FLAVOR?=	${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=	-nox11
 
-USES=		cmake compiler:c++11-lang cpe gettext-runtime:build gnome \
-		localbase pathfix perl5 pkgconfig python ssl tar:xz
+USES=		cmake compiler:c++11-lang cpe gettext-runtime:build \
+		gettext-tools:build gnome localbase pathfix perl5 pkgconfig \
+		python ssl tar:xz
 USE_GNOME=	glib20 libxml2
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -79,7 +81,7 @@ GSSAPI_BASE_USES=	gssapi
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
-GSSAPI_NONE_CMAKE_BOOL=	ENABLE_KERBEROS
+GSSAPI_NONE_CMAKE_BOOL_OFF=	ENABLE_KERBEROS
 
 GUI_USES=		desktop-file-utils shared-mime-info qt:6
 GUI_USE=		qt=5compat,base,multimedia,tools

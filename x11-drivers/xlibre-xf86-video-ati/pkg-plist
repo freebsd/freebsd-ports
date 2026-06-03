@@ -1,0 +1,5 @@
+%%MODULEDIR%%/drivers/ati_drv.so
+%%MODULEDIR%%/drivers/radeon_drv.so
+share/man/man4/ati.4x.gz
+share/man/man4/radeon.4x.gz
+share/X11/xorg.conf.d/10-radeon.conf

@@ -1,12 +1,12 @@
 PORTNAME=	anndata
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.16
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Annotated data
-WWW=		https://anndata.readthedocs.io/en/latest/ \
+WWW=		https://anndata.readthedocs.io/en/stable/ \
 		https://github.com/scverse/anndata
 
 LICENSE=	BSD3CLAUSE
@@ -20,8 +20,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}array-api-compat>=1.7.1:devel/py-array-api-c
 		${PYTHON_PKGNAMEPREFIX}natsort>=0:devel/py-natsort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.2:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=2.1.0,1:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.11:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=2.1.0,1<3,1:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pooch>=0:devel/py-pooch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.12:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scverse-misc>=0.0.3:devel/py-scverse-misc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zarr>=2.18.4:devel/py-zarr@${PY_FLAVOR}
 
 USES=		python:3.11+

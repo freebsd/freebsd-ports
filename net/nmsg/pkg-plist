@@ -51,6 +51,7 @@ lib/libnmsg.so.8
 lib/libnmsg.so.8.3.0
 lib/nmsg/nmsg_flt1_sample.so
 lib/nmsg/nmsg_msg9_base.so
+lib/nmsg/nmsg_stats1_sample.so
 libdata/pkgconfig/libnmsg.pc
 %%MANPAGES%%share/man/man1/nmsgtool.1.gz
 %%DATADIR%%/base/dns.proto

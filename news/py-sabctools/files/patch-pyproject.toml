@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-05-05 17:23:13 UTC
++++ pyproject.toml
+@@ -11,8 +11,7 @@ requires-python = ">=3.9"
+     {name = "Safihre", email = "safihre@sabnzbd.org"},
+ ]
+ requires-python = ">=3.9"
+-license = "GPL-2.0-or-later"
+-license-files = ["LICENSE.md"]
++license = {file = "LICENSE.md"}
+ classifiers = [
+     "Programming Language :: Python",
+     "Programming Language :: Python :: 3 :: Only",

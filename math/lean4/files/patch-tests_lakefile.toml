@@ -1,0 +1,10 @@
+--- tests/lakefile.toml.orig	2026-01-20 14:00:20 UTC
++++ tests/lakefile.toml
+@@ -1,5 +1,7 @@ name = "tests"
+ name = "tests"
+ 
++weakLeancArgs = ["-fPIC"]
++
+ [[lean_lib]]
+ name = "Tests"
+ globs = ["lean.*"]

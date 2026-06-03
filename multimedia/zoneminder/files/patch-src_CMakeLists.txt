@@ -1,0 +1,13 @@
+--- src/CMakeLists.txt.orig	2026-02-16 23:32:05 UTC
++++ src/CMakeLists.txt
+@@ -198,9 +198,7 @@ if(${ZM_JWT_BACKEND} STREQUAL "jwt_cpp")
+ endif()
+ 
+ if(${ZM_JWT_BACKEND} STREQUAL "jwt_cpp")
+-  target_link_libraries(zm
+-    PUBLIC
+-      jwt-cpp::jwt-cpp)
++  find_package(jwt-cpp CONFIG)
+ elseif(${ZM_JWT_BACKEND} STREQUAL "libjwt")
+   target_link_libraries(zm
+     PUBLIC

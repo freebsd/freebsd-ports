@@ -1,6 +1,6 @@
 PORTNAME=	sqlfluff
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	4.2.1
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click<=8.3.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click<8.4.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}diff-cover>=2.5.0:devel/py-diff-cover@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_F
 		${PYTHON_PKGNAMEPREFIX}tblib>=0:devel/py-tblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes

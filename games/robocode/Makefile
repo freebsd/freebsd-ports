@@ -1,5 +1,6 @@
 PORTNAME=	robocode
 PORTVERSION=	1.9.5.2
+PORTREVISION=	2
 CATEGORIES=	games education java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
@@ -14,7 +15,6 @@ LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/license/epl-v10.html
 
 USES=		cpe dos2unix java:extract,run zip:infozip
-CPE_VENDOR=	${PORTNAME}_project
 DOS2UNIX_GLOB=	*.css *.team *.properties package-list MANIFEST.MF
 
 NO_WRKSUBDIR=	yes

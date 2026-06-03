@@ -1,10 +1,10 @@
 PORTNAME=	afl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.33c
+DISTVERSION=	4.35c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Fast instrumented fuzzer
 WWW=		https://aflplus.plus/
 
@@ -30,10 +30,11 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	AFLplusplus
 GH_PROJECT=	AFLplusplus
-SHEBANG_FILES=	afl-persistent-config
+SHEBANG_FILES=	afl-cmin.py afl-persistent-config
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	${${ARCH} != amd64 && ${ARCH} != i386:?AFL_NO_X86=1:} \
+MAKE_ARGS=	AFL_NO_X86=1 AFL_NO_TEST_BUILD=1 \
+		NO_FRIDA=1 NO_UNICORN=1 NO_QEMU=1 \
 		PREFIX="${PREFIX}/${PKGBASE}"
 .if ${FLAVOR} == llvm
 CFLAGS_riscv64=	-mno-relax

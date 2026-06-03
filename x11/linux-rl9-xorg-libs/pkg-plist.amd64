@@ -914,6 +914,7 @@ usr/share/libwacom/cintiq-pro-17.tablet
 usr/share/libwacom/cintiq-pro-22.tablet
 usr/share/libwacom/cintiq-pro-24-p.tablet
 usr/share/libwacom/cintiq-pro-24-pt.tablet
+usr/share/libwacom/cintiq-pro-27.tablet
 usr/share/libwacom/cintiq-pro-32.tablet
 usr/share/libwacom/dell-canvas-27.tablet
 usr/share/libwacom/dtf-720.tablet
@@ -1211,6 +1212,7 @@ usr/share/libwacom/layouts/cintiq-companion.svg
 usr/share/libwacom/layouts/cintiq-pro-16-2.svg
 usr/share/libwacom/layouts/cintiq-pro-17.svg
 usr/share/libwacom/layouts/cintiq-pro-22.svg
+usr/share/libwacom/layouts/cintiq-pro-27.svg
 usr/share/libwacom/layouts/dth-2242.svg
 usr/share/libwacom/layouts/dth-2452.svg
 usr/share/libwacom/layouts/dti-520.svg
@@ -1264,6 +1266,9 @@ usr/share/libwacom/layouts/kamvas-pro-13.svg
 usr/share/libwacom/layouts/mobilestudio-pro-13.svg
 usr/share/libwacom/layouts/mobilestudio-pro-16.svg
 usr/share/libwacom/layouts/movink-13.svg
+usr/share/libwacom/layouts/wacom-intuos-pro-3-l.svg
+usr/share/libwacom/layouts/wacom-intuos-pro-3-m.svg
+usr/share/libwacom/layouts/wacom-intuos-pro-3-s.svg
 usr/share/libwacom/layouts/xp-pen-star03.svg
 usr/share/libwacom/letsketch-wp9620.tablet
 usr/share/libwacom/libwacom.stylus
@@ -1282,6 +1287,9 @@ usr/share/libwacom/serial-wacf004.tablet
 usr/share/libwacom/surface-go-2.tablet
 usr/share/libwacom/surface-go.tablet
 usr/share/libwacom/volito-4x5.tablet
+usr/share/libwacom/wacom-intuos-pro-3-l.tablet
+usr/share/libwacom/wacom-intuos-pro-3-m.tablet
+usr/share/libwacom/wacom-intuos-pro-3-s.tablet
 usr/share/libwacom/wacom-one-12.tablet
 usr/share/libwacom/wacom-one-13.tablet
 usr/share/libwacom/wacom-one-pen-m.tablet

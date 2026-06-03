@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.14.1
+DISTVERSION=	1.15.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libinput.so:x11/libinput
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
-USES=		compiler:c11 gmake localbase pkgconfig
+USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alex-courtis
 MAKEFILE=	GNUmakefile

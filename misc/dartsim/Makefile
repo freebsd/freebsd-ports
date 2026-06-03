@@ -1,7 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.15.0
-PORTREVISION=	7
+DISTVERSION=	6.16.8
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	pagmo2>0:science/pagmo2 \
 		pybind11>0:devel/pybind11
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libccd.so:math/libccd \
 		libconsole_bridge.so:devel/ros-console_bridge \
 		libfcl.so:math/fcl \
@@ -33,7 +32,8 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libpagmo.so:science/pagmo2 \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
-TEST_DEPENDS=	googletest>0:devel/googletest
+TEST_DEPENDS=	benchmark>0:devel/benchmark \
+		googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
 		pkgconfig python xorg
@@ -47,7 +47,7 @@ GH_PROJECT=	dart
 
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
-CMAKE_ON=	BUILD_SHARED_LIBS DART_USE_SYSTEM_GOOGLETEST # DART_VERBOSE
+CMAKE_ON=	BUILD_SHARED_LIBS DART_USE_SYSTEM_GOOGLETEST DART_USE_SYSTEM_GOOGLEBENCHMARK # DART_VERBOSE
 CMAKE_OFF=	BUILD_TESTING
 CMAKE_OFF+=	DART_TREAT_WARNINGS_AS_ERRORS # workaround for https://github.com/dartsim/dart/issues/1799
 CMAKE_ARGS=	-DODE_DIR=${LOCALBASE} \
@@ -69,8 +69,10 @@ PORTDOCS=	*
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
-post-test: # run tests: 8 tests fail, see https://github.com/dartsim/dart/issues/1797#issuecomment-2191988407
+post-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 6.16.8: 100% tests passed, 0 tests failed out of 86
 
 .include <bsd.port.mk>

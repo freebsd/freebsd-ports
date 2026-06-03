@@ -48,7 +48,10 @@ start_precmd=${name}_precmd
         export DOTNET_SYSTEM_NET_DISABLEIPV6=1
     fi
 
-    if [ `uname -K` -ge 1400092 ]; then
+    USERLAND_VERSION=`uname -U`
+    if [ ${USERLAND_VERSION} -ge 1500068 ]; then
+        export CLR_OPENSSL_VERSION_OVERRIDE=35
+    elif [ ${USERLAND_VERSION} -ge 1400092 ]; then
         export CLR_OPENSSL_VERSION_OVERRIDE=30
     fi
 

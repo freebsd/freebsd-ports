@@ -1,3 +1,4 @@
+include/dune-curvedgeometry-config.hh
 include/dune/curvedgeometry/curvedgeometry.hh
 include/dune/curvedgeometry/localfunctiongeometry.hh
 include/dune/curvedgeometry/localgeometry.hh
@@ -7,7 +8,8 @@ include/dune/localfunctions/lagrange/lfecache.hh
 include/dune/vtk/datacollectors/curvedgeometrydatacollector.hh
 lib/cmake/dune-curvedgeometry/dune-curvedgeometry-config-version.cmake
 lib/cmake/dune-curvedgeometry/dune-curvedgeometry-config.cmake
+lib/cmake/dune-curvedgeometry/dune-curvedgeometry-scoped-targets-%%DUNE_CURVEDGEOMETRY_CMAKE_HASH%%.cmake
+lib/cmake/dune-curvedgeometry/dune-curvedgeometry-targets.cmake
 lib/dunecontrol/dune-curvedgeometry/dune.module
 libdata/pkgconfig/dune-curvedgeometry.pc
 %%DATADIR%%/config.h.cmake
-share/dune/cmake/modules/DuneCurvedgeometryMacros.cmake

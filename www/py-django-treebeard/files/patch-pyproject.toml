@@ -1,0 +1,20 @@
+Enable build with older versions of py-setuptools.
+
+--- pyproject.toml.orig	2025-12-10 11:50:47 UTC
++++ pyproject.toml
+@@ -12,7 +12,7 @@ readme = "README.md"
+ name = "django-treebeard"
+ description = "Efficient tree implementations for Django"
+ readme = "README.md"
+-license = "Apache-2.0"
++license = { text="Apache-2.0" }
+ requires-python = ">=3.10"
+ dynamic = ["version"]
+ classifiers = [
+@@ -53,4 +53,4 @@ lint.select = [
+     "I",    # isort
+     "F",    # pyflakes
+     "E",    # pycodestyle errors
+-]
+\ No newline at end of file
++]

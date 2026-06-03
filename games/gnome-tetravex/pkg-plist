@@ -1,5 +1,4 @@
 bin/gnome-tetravex
-share/man/man6/gnome-tetravex.6.gz
 share/applications/org.gnome.Tetravex.desktop
 share/dbus-1/services/org.gnome.Tetravex.service
 share/help/C/gnome-tetravex/figures/gnome-tetravex-logo.png
@@ -65,6 +64,15 @@ share/help/es/gnome-tetravex/move.page
 share/help/es/gnome-tetravex/size.page
 share/help/es/gnome-tetravex/usage.page
 share/help/es/gnome-tetravex/winning.page
+share/help/eu/gnome-tetravex/figures/gnome-tetravex-logo.png
+share/help/eu/gnome-tetravex/figures/gnome-tetravex-video.ogv
+share/help/eu/gnome-tetravex/hint.page
+share/help/eu/gnome-tetravex/index.page
+share/help/eu/gnome-tetravex/license.page
+share/help/eu/gnome-tetravex/move.page
+share/help/eu/gnome-tetravex/size.page
+share/help/eu/gnome-tetravex/usage.page
+share/help/eu/gnome-tetravex/winning.page
 share/help/fr/gnome-tetravex/figures/gnome-tetravex-logo.png
 share/help/fr/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/fr/gnome-tetravex/hint.page
@@ -110,6 +118,15 @@ share/help/it/gnome-tetravex/move.page
 share/help/it/gnome-tetravex/size.page
 share/help/it/gnome-tetravex/usage.page
 share/help/it/gnome-tetravex/winning.page
+share/help/ko/gnome-tetravex/figures/gnome-tetravex-logo.png
+share/help/ko/gnome-tetravex/figures/gnome-tetravex-video.ogv
+share/help/ko/gnome-tetravex/hint.page
+share/help/ko/gnome-tetravex/index.page
+share/help/ko/gnome-tetravex/license.page
+share/help/ko/gnome-tetravex/move.page
+share/help/ko/gnome-tetravex/size.page
+share/help/ko/gnome-tetravex/usage.page
+share/help/ko/gnome-tetravex/winning.page
 share/help/pl/gnome-tetravex/figures/gnome-tetravex-logo.png
 share/help/pl/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/pl/gnome-tetravex/hint.page
@@ -137,6 +154,15 @@ share/help/ro/gnome-tetravex/move.page
 share/help/ro/gnome-tetravex/size.page
 share/help/ro/gnome-tetravex/usage.page
 share/help/ro/gnome-tetravex/winning.page
+share/help/ru/gnome-tetravex/figures/gnome-tetravex-logo.png
+share/help/ru/gnome-tetravex/figures/gnome-tetravex-video.ogv
+share/help/ru/gnome-tetravex/hint.page
+share/help/ru/gnome-tetravex/index.page
+share/help/ru/gnome-tetravex/license.page
+share/help/ru/gnome-tetravex/move.page
+share/help/ru/gnome-tetravex/size.page
+share/help/ru/gnome-tetravex/usage.page
+share/help/ru/gnome-tetravex/winning.page
 share/help/sl/gnome-tetravex/figures/gnome-tetravex-logo.png
 share/help/sl/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/sl/gnome-tetravex/hint.page
@@ -193,6 +219,7 @@ share/help/zh_CN/gnome-tetravex/usage.page
 share/help/zh_CN/gnome-tetravex/winning.page
 share/icons/hicolor/scalable/apps/org.gnome.Tetravex-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Tetravex.svg
+share/locale/ab/LC_MESSAGES/gnome-tetravex-gui.mo
 share/locale/af/LC_MESSAGES/gnome-tetravex-gui.mo
 share/locale/am/LC_MESSAGES/gnome-tetravex-gui.mo
 share/locale/an/LC_MESSAGES/gnome-tetravex-gui.mo
@@ -283,4 +310,5 @@ share/locale/xh/LC_MESSAGES/gnome-tetravex-gui.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tetravex-gui.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-tetravex-gui.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tetravex-gui.mo
+share/man/man6/gnome-tetravex.6.gz
 share/metainfo/org.gnome.Tetravex.appdata.xml

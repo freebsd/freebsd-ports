@@ -1,6 +1,6 @@
 PORTNAME=	retroarch-assets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.0
+DISTVERSION=	1.22.0
 CATEGORIES=	games
 
 MAINTAINER=	tilde@ultros.pro

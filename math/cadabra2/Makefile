@@ -1,21 +1,18 @@
 PORTNAME=	cadabra2
-DISTVERSION=	2.5.8
-PORTREVISION=	3
+DISTVERSION=	2.5.14-p1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system for solving field theory problems
-WWW=		https://cadabra.science/
+WWW=		https://cadabra.science/ \
+		https://github.com/kpeeters/cadabra2
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-BROKEN=		fails to build with Boost>=1.87
-BROKEN_FreeBSD_15=	compilation fails with clang-17, see https://github.com/kpeeters/cadabra2/issues/285
-
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	${PY_BOOST} \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libpcrecpp.so:devel/pcre \
@@ -38,6 +35,9 @@ DOS2UNIX_FILES=	cmake/version.cmake
 
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP USE_PYTHON_3 # OFF doesn't work, still links to python3: https://github.com/kpeeters/cadabra2/issues/76
 CMAKE_OFF=	ENABLE_MATHEMATICA
+CMAKE_ARGS=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
+		-DPYTHON_LIBRARY=${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so \
+		-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR}
 CXXFLAGS+=	-I${LOCALBASE}/include/jsoncpp
 LDFLAGS+=	-ljsoncpp
 
@@ -55,5 +55,11 @@ _PY_SONAME=	${PYTHON_TAG}
 
 post-extract: # unbundle
 	@${RM} -r ${WRKSRC}/libs/jsoncpp ${WRKSRC}/libs/websocketpp
+
+post-patch:
+	@${REINPLACE_CMD} -e '/COMPONENTS/s|system|thread|' \
+		${WRKSRC}/client_server/CMakeLists.txt \
+		${WRKSRC}/frontend/common/CMakeLists.txt \
+		${WRKSRC}/frontend/gtkmm/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@
 #				Default: %%ETCDIR%%/fluent-bit.conf
 # fluent_bit_flags (str):	Extra flags passed to fluent-bit
 # fluent_bit_user (str):	Default run as user nobody
+# fluent_bit_group (str):	Default run as group nogroup
 
 . /etc/rc.subr
 
@@ -28,16 +29,22 @@ load_rc_config $name
 pidfile=/var/run/${name}.pid
 procname="%%PREFIX%%/bin/fluent-bit"
 command="/usr/sbin/daemon"
-command_args="-H -p ${pidfile} -o /var/log/${name}/${name}.log ${procname} --quiet --config ${fluent_bit_config} ${fluent_bit_flags}"
+command_args="-H -p ${pidfile} -o /var/log/${name}/${name}.log -t ${name} ${procname} --quiet --config ${fluent_bit_config} ${fluent_bit_flags}"
 
-start_precmd=fluent_bit_startprecmd
+start_precmd="${name}_startprecmd"
+stop_postcmd="${name}_stoppostcmd"
 
 fluent_bit_startprecmd()
 {
 	install -o ${fluent_bit_user} -g ${fluent_bit_group} -d /var/log/${name}
 	if [ ! -e ${pidfile} ]; then
-		install -o ${fluent_bit_user} -g ${fluent_bit_group} /dev/null ${pidfile};
+		install -m 0600 -o ${fluent_bit_user} -g ${fluent_bit_group} /dev/null ${pidfile}
 	fi
+}
+
+fluent_bit_stoppostcmd()
+{
+	rm -f ${pidfile}
 }
 
 run_rc_command "$1"

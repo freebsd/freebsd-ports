@@ -1,4 +1,9 @@
-mlmmj-archiver is a program which will generates HTML archives out of mlmmj archives
-mlmmj-archiver uses the clearsilver templating system in order to allow maximum configurability
-mlmmj-archiver uses SQLite for its database cache
-mlmmj-archiver runs in a capsicum sandbox
+mlmmj-archiver generates HTML archives from mlmmj mailing list archives
+
+Features:
+-  Generates per-mail HTML pages with threading (references/replies)
+-  Monthly indexes by date, author, and threaded subject
+-  Mbox export support
+-  Mustache-style templates (ucltpl) for full layout customization
+-  SQLite database cache for incremental archive updates
+-  Capsicum sandboxing on FreeBSD

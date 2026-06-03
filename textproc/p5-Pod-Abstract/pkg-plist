@@ -8,6 +8,7 @@ bin/paf
 %%PERL5_MAN3%%/Pod::Abstract::Filter::find.3.gz
 %%PERL5_MAN3%%/Pod::Abstract::Filter::number_sections.3.gz
 %%PERL5_MAN3%%/Pod::Abstract::Filter::overlay.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::ptree.3.gz
 %%PERL5_MAN3%%/Pod::Abstract::Filter::sort.3.gz
 %%PERL5_MAN3%%/Pod::Abstract::Filter::summary.3.gz
 %%PERL5_MAN3%%/Pod::Abstract::Filter::uncut.3.gz
@@ -26,6 +27,7 @@ bin/paf
 %%SITE_PERL%%/Pod/Abstract/Filter/find.pm
 %%SITE_PERL%%/Pod/Abstract/Filter/number_sections.pm
 %%SITE_PERL%%/Pod/Abstract/Filter/overlay.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/ptree.pm
 %%SITE_PERL%%/Pod/Abstract/Filter/sort.pm
 %%SITE_PERL%%/Pod/Abstract/Filter/summary.pm
 %%SITE_PERL%%/Pod/Abstract/Filter/uncut.pm

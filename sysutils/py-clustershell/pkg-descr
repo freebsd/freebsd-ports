@@ -1,0 +1,3 @@
+ClusterShell is a Python framework for efficient cluster administration,
+used to run commands and copy files in parallel and to manipulate cluster
+node sets (NodeSet).

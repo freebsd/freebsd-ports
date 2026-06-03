@@ -1,6 +1,5 @@
 PORTNAME=	gource
-PORTVERSION=	0.51
-PORTREVISION=	11
+PORTVERSION=	0.55
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/acaudwell/Gource/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -11,8 +10,6 @@ WWW=		https://gource.io/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with boost-1.85+
-
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre.so:devel/pcre \
@@ -20,10 +17,13 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 
-USES=		compiler:c++0x cpe gl gmake pkgconfig sdl
+USES=		autoreconf compiler:c++0x cpe gl gmake pkgconfig sdl
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GL=		glew gl glu
 USE_SDL=	image2 sdl2
+
+post-patch:
+	@${REINPLACE_CMD} -e '/AX_BOOST_SYSTEM/d' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

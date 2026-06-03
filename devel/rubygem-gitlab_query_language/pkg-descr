@@ -1,0 +1,4 @@
+Ruby bindings for the GitLab Query Language (GLQL) compiler.
+
+This gem provides a native Ruby interface to compile GLQL queries into GraphQL,
+powered by Rust through native extensions.

@@ -1,0 +1,52 @@
+PORTNAME=	libmt32emu
+DISTVERSION=	2_8_2
+CATEGORIES=	emulators
+
+MAINTAINER=	bsdcode@disroot.org
+COMMENT=	Emulate Roland MT-32, CM-32L and LAPC-I synthesiser modules
+WWW=		https://munt.sourceforge.net
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER.txt
+
+TEST_DEPENDS=	doctest>0:devel/doctest
+
+USES=		cmake:testing
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	munt
+GH_PROJECT=	munt
+GH_TAGNAME=	${PORTNAME}_${DISTVERSION}
+
+USE_LDCONFIG=	yes
+
+CMAKE_OFF=		BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING \
+			${PORTNAME}_TESTS_DETAILED
+
+EXTRACT_AFTER_ARGS=	--include ${GH_PROJECT}-${GH_TAGNAME}/mt32emu \
+			--no-same-owner --no-same-permissions
+
+WRKSRC_SUBDIR=	mt32emu
+
+PLIST_SUB=	SOVERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=			DOCS
+OPTIONS_DEFAULT=		LIBSOXR
+OPTIONS_RADIO=			RESAMPLER
+OPTIONS_RADIO_RESAMPLER=	INTERNAL LIBSAMPLERATE LIBSOXR
+
+INTERNAL_DESC=		Built-in samplerate conversion
+LIBSAMPLERATE_DESC=	Build with libsamplerate support
+LIBSOXR_DESC=		Build with libsoxr support
+
+INTERNAL_CMAKE_BOOL=	libmt32emu_WITH_INTERNAL_RESAMPLER
+
+LIBSAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
+LIBSAMPLERATE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SampleRate
+
+LIBSOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
+LIBSOXR_USES=		pkgconfig
+LIBSOXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SOXR
+
+.include <bsd.port.mk>

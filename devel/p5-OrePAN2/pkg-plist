@@ -10,8 +10,10 @@ bin/orepan2-merge-index
 %%SITE_PERL%%/OrePAN2/Index.pm
 %%SITE_PERL%%/OrePAN2/Indexer.pm
 %%SITE_PERL%%/OrePAN2/Injector.pm
+%%SITE_PERL%%/OrePAN2/Logger.pm
 %%SITE_PERL%%/OrePAN2/Repository.pm
 %%SITE_PERL%%/OrePAN2/Repository/Cache.pm
+%%SITE_PERL%%/OrePAN2/Role/HasLogger.pm
 %%PERL5_MAN1%%/orepan2-audit.1.gz
 %%PERL5_MAN1%%/orepan2-gc.1.gz
 %%PERL5_MAN1%%/orepan2-indexer.1.gz

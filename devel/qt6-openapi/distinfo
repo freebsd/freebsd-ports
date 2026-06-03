@@ -1,0 +1,5 @@
+TIMESTAMP = 1778671778
+SHA256 (KDE/Qt/6.11.1/qtopenapi-everywhere-src-6.11.1.tar.xz) = 440d04bec92de754df3dc0861fb5a9ec26f0b332fb67b35c35cdad5b7849f45b
+SIZE (KDE/Qt/6.11.1/qtopenapi-everywhere-src-6.11.1.tar.xz) = 482976
+SHA256 (KDE/Qt/6.11.1/qtopenapi-maven-deps-6.11.1.tar.xz) = 07486b406ed9752ddff5576a519547204542ad3eb84cf6a5fa5fb690be381679
+SIZE (KDE/Qt/6.11.1/qtopenapi-maven-deps-6.11.1.tar.xz) = 35541048

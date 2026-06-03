@@ -5,7 +5,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://vollkorn-typeface.com/download/
 DISTNAME=	vollkorn-${PORTVERSION:S|.|-|}
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and healthy typeface for bread and butter use
 WWW=		http://vollkorn-typeface.com/
 

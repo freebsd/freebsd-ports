@@ -1,5 +1,5 @@
 PORTNAME=	Hash-Case
-PORTVERSION=	1.030
+PORTVERSION=	1.070
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -15,9 +15,11 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Report>=0.26:devel/p5-Log-Report
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

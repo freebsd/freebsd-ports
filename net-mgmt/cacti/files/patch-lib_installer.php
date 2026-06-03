@@ -1,5 +1,5 @@
---- lib/installer.php.orig	2021-06-01 00:15:30.652736000 +0000
-+++ lib/installer.php	2021-06-01 00:16:32.509002000 +0000
+--- lib/installer.php.orig	2021-06-01 00:15:30 UTC
++++ lib/installer.php	2021-06-01 00:16:32 UTC
 @@ -3404,7 +3404,7 @@
  
  		$page_nr = 1;

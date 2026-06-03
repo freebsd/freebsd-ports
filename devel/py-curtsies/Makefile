@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blessed>=1.5:devel/py-blessed@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cwcwidth>=0:devel/py-cwcwidth@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyte>=0:devel/py-pyte@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes

@@ -1,11 +1,12 @@
 PORTNAME=	qrouter
-DISTVERSION=	1.4.88
+DISTVERSION=	1.4.90
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/${PORTNAME}/archive/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool to generate metal layers and vias
-WWW=		http://opencircuitdesign.com/qrouter/
+WWW=		http://opencircuitdesign.com/qrouter/ \
+		https://github.com/RTimothyEdwards/qrouter/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

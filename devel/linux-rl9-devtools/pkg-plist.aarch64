@@ -130,12 +130,14 @@ usr/include/bfd_stdint.h
 usr/include/bfdlink.h
 usr/include/bits/a.out.h
 usr/include/bits/argp-ldbl.h
+usr/include/bits/atomic_wide_counter.h
 usr/include/bits/byteswap.h
 usr/include/bits/cmathcalls.h
 usr/include/bits/confname.h
 usr/include/bits/cpu-set.h
 usr/include/bits/dirent.h
 usr/include/bits/dirent_ext.h
+usr/include/bits/dl_find_object.h
 usr/include/bits/dlfcn.h
 usr/include/bits/elfclass.h
 usr/include/bits/endian.h
@@ -1158,6 +1160,7 @@ usr/include/dirent.h
 usr/include/dis-asm.h
 usr/include/dlfcn.h
 usr/include/drm/amdgpu_drm.h
+usr/include/drm/amdxdna_accel.h
 usr/include/drm/armada_drm.h
 usr/include/drm/drm.h
 usr/include/drm/drm_fourcc.h
@@ -1203,6 +1206,8 @@ usr/include/fpu_control.h
 usr/include/fstab.h
 usr/include/fts.h
 usr/include/ftw.h
+usr/include/fwctl/fwctl.h
+usr/include/fwctl/mlx5.h
 usr/include/gconv.h
 usr/include/getopt.h
 usr/include/glob.h
@@ -1359,6 +1364,7 @@ usr/include/linux/errqueue.h
 usr/include/linux/erspan.h
 usr/include/linux/ethtool.h
 usr/include/linux/ethtool_netlink.h
+usr/include/linux/ethtool_netlink_generated.h
 usr/include/linux/eventfd.h
 usr/include/linux/eventpoll.h
 usr/include/linux/f2fs.h
@@ -1541,6 +1547,7 @@ usr/include/linux/mroute6.h
 usr/include/linux/mrp_bridge.h
 usr/include/linux/msdos_fs.h
 usr/include/linux/msg.h
+usr/include/linux/mshv.h
 usr/include/linux/mtio.h
 usr/include/linux/nbd-netlink.h
 usr/include/linux/nbd.h
@@ -1550,6 +1557,7 @@ usr/include/linux/neighbour.h
 usr/include/linux/net.h
 usr/include/linux/net_dropmon.h
 usr/include/linux/net_namespace.h
+usr/include/linux/net_shaper.h
 usr/include/linux/net_tstamp.h
 usr/include/linux/netconf.h
 usr/include/linux/netdev.h
@@ -2121,6 +2129,7 @@ usr/include/sound/asound_fm.h
 usr/include/sound/compress_offload.h
 usr/include/sound/compress_params.h
 usr/include/sound/emu10k1.h
+usr/include/sound/fcp.h
 usr/include/sound/firewire.h
 usr/include/sound/hdsp.h
 usr/include/sound/hdspm.h

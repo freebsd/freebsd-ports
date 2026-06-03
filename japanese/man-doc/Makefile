@@ -11,6 +11,9 @@ DISTFILES=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translation of FreeBSD manual pages
 
+DEPRECATED=	Abandoned, this manual is over 20 years old
+EXPIRATION_DATE=2026-06-30
+
 RUN_DEPENDS=	jman:japanese/man
 
 USES=		uidfix

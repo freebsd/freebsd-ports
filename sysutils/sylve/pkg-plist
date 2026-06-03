@@ -1,0 +1,3 @@
+@sample %%ETCDIR%%/config.json.sample
+sbin/sylve
+@dir(root,wheel,0700) /var/db/sylve

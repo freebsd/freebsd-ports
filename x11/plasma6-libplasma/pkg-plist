@@ -47,11 +47,11 @@ lib/cmake/PlasmaQuick/PlasmaQuickConfigVersion.cmake
 lib/cmake/PlasmaQuick/PlasmaQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PlasmaQuick/PlasmaQuickTargets.cmake
 lib/libPlasma.so
-lib/libPlasma.so.6
 lib/libPlasma.so.%%KDE_PLASMA_VERSION%%
+lib/libPlasma.so.7
 lib/libPlasmaQuick.so
-lib/libPlasmaQuick.so.6
 lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
+lib/libPlasmaQuick.so.7
 %%QT_PLUGINDIR%%/kf6/kirigami/platform/KirigamiPlasmaStyle.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/plasma_applet.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/plasma_containmentactions.so
@@ -125,6 +125,10 @@ lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components/private/RoundShadow.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/private/TextFieldFocus.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/configuration/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/plasma/configuration/libplasmaconfigplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/configuration/plasmaconfigplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/plasma/configuration/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/core/DefaultToolTip.qml
 %%QT_QMLDIR%%/org/kde/plasma/core/DialogBackground.qml
 %%QT_QMLDIR%%/org/kde/plasma/core/corebindingsplugin.qmltypes
@@ -156,10 +160,13 @@ lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/extras/plasmaextracomponentsplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/extras/private/BackgroundMetrics.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/libplasmoidplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/plasmoidplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/qmldir
 share/kdevappwizard/templates/cpp-plasmoid6.tar.bz2
 share/kdevappwizard/templates/plasma6-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/plasma6-wallpaper.tar.bz2
-share/kdevappwizard/templates/qml-plasmoid6-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid6.tar.bz2
 share/locale/ar/LC_MESSAGES/libplasma6.mo
 share/locale/ast/LC_MESSAGES/libplasma6.mo
@@ -180,6 +187,7 @@ share/locale/et/LC_MESSAGES/libplasma6.mo
 share/locale/eu/LC_MESSAGES/libplasma6.mo
 share/locale/fi/LC_MESSAGES/libplasma6.mo
 share/locale/fr/LC_MESSAGES/libplasma6.mo
+share/locale/ga/LC_MESSAGES/libplasma6.mo
 share/locale/gd/LC_MESSAGES/libplasma6.mo
 share/locale/gl/LC_MESSAGES/libplasma6.mo
 share/locale/he/LC_MESSAGES/libplasma6.mo

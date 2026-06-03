@@ -1,6 +1,6 @@
 PORTNAME=	v_sim
-DISTVERSION=	3.8.0
-PORTREVISION=	13
+DISTVERSION=	3.9.1
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,17 +15,21 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML	\
 		libarchive>0:archivers/libarchive	\
 		xcrysden:science/xcrysden	\
-		bash:shells/bash
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
+		bash:shells/bash			\
+		gtkdocize:textproc/gtk-doc
+LIB_DEPENDS=	libgdkglext-x11-1.0.so:x11-toolkits/gtkglext	\
+		libfontconfig.so:x11-fonts/fontconfig	\
 		libopenbabel.so:science/openbabel	\
 		libfreetype.so:print/freetype2	\
+		libepoxy.so:graphics/libepoxy	\
 		libharfbuzz.so:print/harfbuzz	\
 		libyaml.so:textproc/libyaml	\
 		libnetcdf.so:science/netcdf	\
 		libmsym.so:science/libmsym	\
+		libpng16.so:graphics/png	\
 		libftgl.so:graphics/ftgl	\
 		libxc.so:science/libxc
-RUN_DEPENDS=	${PYNUMPY}	\
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
 		xcrysden:science/xcrysden	\
 		libarchive>0:archivers/libarchive	\
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
@@ -39,7 +43,7 @@ USE_GNOME=	cairo gtk30 gdkpixbuf intltool introspection pygobject3:run
 USE_GL=		gl glu
 USE_GITLAB=	yes
 GL_ACCOUNT=	l_sim
-GL_TAGNAME=	9dc8e5a0b2f4e7237ac50a922b87d234ff56a6e5
+GL_TAGNAME=	f96c25a8aa1f4a149dd45fcb52de7216e65996a9
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=${LOCALBASE}/bin/bash
@@ -47,9 +51,11 @@ CONFIGURE_ARGS=	--htmldir=${PREFIX}/share/doc --with-openbabel		\
 		--with-netcdf=${LOCALBASE} --with-etsf-file-format	\
 		--with-xsf --with-cube --with-msym=${LOCALBASE}		\
 		--with-msym-inc=-I${LOCALBASE}/include/libmsym		\
-		--with-libxc=${LOCALBASE} --enable-python-module
+		--with-libxc=${LOCALBASE} --enable-python-module	\
+		--disable-gtk-doc
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	${CFLAGS}
+LDFLAGS+=	-lm
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
@@ -96,7 +102,11 @@ pre-configure-EXAMPLES-off:
 		${WRKSRC}/lib/python/Makefile.am
 
 post-install:
+.if !defined(WITH_DEBUG)
 	${FIND} ${STAGEDIR}${PREFIX}/lib -type f -name "lib*.so.8.0.0" | \
 		${XARGS} ${STRIP_CMD}
+.endif
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} lib/${PYTHON_VERSION} -type f -or -type l >> ${TMPPLIST}
 
 .include <bsd.port.mk>

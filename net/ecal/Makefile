@@ -1,7 +1,7 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.13.3
-PORTREVISION=	7
+DISTVERSION=	6.0.1
+PORTREVISION=	2
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,10 +38,13 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eclipse-ecal
-GH_TUPLE=	eclipse-ecal:tcp_pubsub:b0393e4:tcp_pubsub/thirdparty/tcp_pubsub/tcp_pubsub \
+GH_TUPLE=	eclipse-ecal:tcp_pubsub:352e711:tcp_pubsub/thirdparty/tcp_pubsub/tcp_pubsub \
 		brofield:simpleini:9b3ed7e:simpleini/thirdparty/simpleini/simpleini \
-		steinwurf:recycle:c542570:recycle/thirdparty/recycle/recycle \
-		xguerin:tclap:349170a:tclap/thirdparty/tclap/tclap
+		steinwurf:recycle:3f3d27e:recycle/thirdparty/recycle/recycle \
+		xguerin:tclap:349170a:tclap/thirdparty/tclap/tclap \
+		eclipse-ecal:ecaludp:96e29b8:ecaludp/thirdparty/ecaludp/ecaludp \
+		wjakob:nanobind:9b3afa9:nanobind/thirdparty/nanobind/nanobind \
+		Tessil:robin-map:4ec1bf1:robin_map/thirdparty/tsl-robin-map/tsl-robin-map
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_SAMPLES \
@@ -54,7 +57,8 @@ CMAKE_ARGS=	-DGIT_REVISION_MAJOR=${DISTVERSION:R:R} \
 		-DGIT_REVISION_PATCH=${DISTVERSION:E} \
 		-Dasio_INCLUDE_DIR=${LOCALBASE}/include \
 		-Dqwt_INCLUDE_DIR=${LOCALBASE}/include/qt5/qwt6 \
-		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt.so
+		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt.so \
+		-Dtclap_INCLUDE_DIR=${WRKSRC}/thirdparty/tclap/tclap/include
 
 CXXFLAGS+=	-pthread # see https://github.com/eclipse-ecal/ecal/issues/933
 LDFLAGS+=	-labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_spinlock_wait
@@ -63,8 +67,5 @@ USE_CXXSTD=	c++17
 PLIST_SUB=	VERSION=${DISTVERSION}
 
 CONFLICTS_BUILD=	tclap simpleini # epub isn't compatible with tclap-1.4rc1, epub isn't compatible with simpleini, because some header isn't installed
-
-post-install: # not sure why isn't this installed automatically
-	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/libsys_core.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

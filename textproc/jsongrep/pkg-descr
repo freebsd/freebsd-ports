@@ -1,0 +1,11 @@
+Path query language over JSON documents.
+
+The jsongrep package provides the `jg` command-line tool, a fast and expressive
+query engine for JSON data. It supports JSONPath and JMESPath style expressions,
+allowing you to filter, transform, and extract data from large JSON files or
+streams. Features include:
+
+* Efficient in-memory querying with optional streaming support
+* Regex matching, logical predicates, and projections
+* JSON output formatting (pretty, compact)
+* Cross-platform (Linux, FreeBSD, macOS)

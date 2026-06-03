@@ -1,0 +1,16 @@
+--- a/build_defs.bzl
++++ b/build_defs.bzl
+@@ -188,6 +188,12 @@ def xnnpack_std_c_defines():
+     We need this for things like `struct timespec` that are not in c99, but
+     are part of POSIX 1003.1b-1993."""
+ 
+-    return ["_DARWIN_C_SOURCE=1", "_POSIX_C_SOURCE=199309L"]
++    # On FreeBSD the default visibility already exposes all needed symbols;
++    # setting _POSIX_C_SOURCE hides __BSD_VISIBLE and breaks MAP_ANONYMOUS,
++    # lrintf, FP_NAN and other C99/BSD extensions.
++    return ["_DARWIN_C_SOURCE=1"] + select({
++        "@platforms//os:freebsd": [],
++        "//conditions:default": ["_POSIX_C_SOURCE=199309L"],
++    })
+ 
+ def xnnpack_test_deps_for_library():

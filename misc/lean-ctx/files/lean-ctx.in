@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: lean_ctx
+# REQUIRE: LOGIN
+# KEYWORDS: shutdown
+
+# Add the following lines to /etc/rc.conf to enable lean-ctx:
+# lean_ctx_enable="YES"
+#
+# lean_ctx_enable (bool):    Set to YES to enable lean-ctx
+#                            Default: NO
+# lean_ctx_user (str):       User to run lean-ctx as
+#                            Default: root
+# lean_ctx_ip (str):         IP address to listen on
+#                            Default: 127.0.0.1
+# lean_ctx_port (int):       Port to listen on
+#                            Default: 8080
+# lean_ctx_args (str):       Additional arguments for lean-ctx serve
+#                            Default: ""
+# lean_ctx_log (str):        Log file for lean-ctx
+#                            Default: "/var/log/lean-ctx.log"
+# lean_ctx_pidfile (str):    PID file for lean-ctx
+#                            Default: "/var/run/lean-ctx.pid"
+
+. /etc/rc.subr
+
+name="lean_ctx"
+rcvar=lean_ctx_enable
+
+load_rc_config $name
+
+: ${lean_ctx_enable:="NO"}
+: ${lean_ctx_user:="root"}
+: ${lean_ctx_ip:="127.0.0.1"}
+: ${lean_ctx_port:="8080"}
+: ${lean_ctx_args:=""}
+: ${lean_ctx_log:="/var/log/lean-ctx.log"}
+: ${lean_ctx_pidfile:="/var/run/lean-ctx.pid"}
+
+run_command="%%PREFIX%%/bin/lean-ctx"
+procname="${run_command}"
+pidfile=${lean_ctx_pidfile}
+command=/usr/sbin/daemon
+command_args="-f -t ${name} -p ${pidfile} -o ${lean_ctx_log} ${run_command} serve --host ${lean_ctx_ip} --port ${lean_ctx_port} ${lean_ctx_args}"
+
+start_precmd="lean_ctx_precmd"
+
+lean_ctx_precmd()
+{
+	export HOME=$(eval echo "~${lean_ctx_user}")
+	touch ${lean_ctx_log} ${pidfile}
+	chown ${lean_ctx_user} ${lean_ctx_log} ${pidfile}
+	chmod 640 ${lean_ctx_log}
+}
+
+run_rc_command "$1"

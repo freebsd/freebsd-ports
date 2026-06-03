@@ -5,7 +5,7 @@ CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Full-text search system intended for easy use
 WWW=		http://www.namazu.org/
 

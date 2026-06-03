@@ -1,2 +1,3 @@
-SHA256 (ipsc_0.4.3.orig.tar.gz) = b05fedb22ed5ea6a3bfab0862c37f6f7a9ab7b35a371678cd13789f8da0ca398
-SIZE (ipsc_0.4.3.orig.tar.gz) = 24349
+TIMESTAMP = 1761844259
+SHA256 (ipsc-0.4.4.tar.gz) = dd298249e0a6ae453fe5d9014d4868a7ab162ad5474577cdd6172e14d67f08ad
+SIZE (ipsc-0.4.4.tar.gz) = 25068

@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-DISTVERSION=	22.5.0
+DISTVERSION=	22.9.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -63,13 +63,13 @@ GROUPS=	${ASTERISK_GROUP} dahdi
 
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
-				SPANDSP SRTP SYSINFO URIPARSER XMLDOC XMPP
+				SPANDSP SRTP SYSINFO UNBOUND URIPARSER XMLDOC XMPP
 OPTIONS_DEFINE_aarch64=		GEOLOCATION
 OPTIONS_DEFINE_amd64=		DAHDI GEOLOCATION
 OPTIONS_DEFINE_i386=		DAHDI GEOLOCATION
-OPTIONS_DEFINE_powerpc=		DAHDI
-OPTIONS_DEFINE_powerpc64=	DAHDI
-OPTIONS_DEFINE_powerpc64le=	DAHDI
+OPTIONS_DEFINE_powerpc=		DAHDI GEOLOCATION
+OPTIONS_DEFINE_powerpc64=	DAHDI GEOLOCATION
+OPTIONS_DEFINE_powerpc64le=	DAHDI GEOLOCATION
 OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MP3PLAYER NEWT ODBC OPUS MYSQL PGSQL \
 				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP URIPARSER \
 				VORBIS XMLDOC
@@ -104,6 +104,7 @@ OPUS_DESC=	Opus Codec
 PJSIP_DESC=	Build the PJSIP based SIP channel
 SRTP_DESC=	SecureRTP support
 SYSINFO_DESC=	Use devel/libsysinfo to get system information
+UNBOUND_DESC=	Use dns/unbound resolver
 URIPARSER_DESC=	Use RFC 3986 compliant uriparser library
 XMLDOC_DESC=	Build and install XML documentation
 XMPP_DESC=	XMPP/GTALK support
@@ -142,7 +143,12 @@ LUA_CONFIGURE_WITH=	lua
 LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 
+MP3PLAYER_MASTER_SITES=	LOCAL/vvd:mp3
+MP3PLAYER_DISTFILES=	${PORTNAME}-mp3-204${EXTRACT_SUFX}:mp3
+MP3PLAYER_EXTRACT_ONLY=	${PORTNAME}-mp3-204${EXTRACT_SUFX}
 MP3PLAYER_RUN_DEPENDS=	mpg123:audio/mpg123
+MP3PLAYER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-addons_mp3_interface.c
+MP3PLAYER_VARS=		WRKSRC_MP3=${WRKDIR}/${PORTNAME}-mp3-204
 
 MYSQL_LIB_DEPENDS=	libzstd.so:archivers/zstd \
 			libunwind.so:devel/libunwind
@@ -194,6 +200,9 @@ SRTP_CONFIGURE_WITH=	srtp
 
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
+UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound
+UNBOUND_CONFIGURE_WITH=	unbound
+
 URIPARSER_LIB_DEPENDS=	liburiparser.so:net/uriparser
 URIPARSER_CONFIGURE_WITH=	uriparser
 
@@ -212,17 +221,17 @@ ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 ASTERISK_USER=	asterisk
 ASTERISK_GROUP=	asterisk
 
-PJSIP_VERSION=	2.15.1
+PJSIP_VERSION=	2.16
 
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500026
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-third-party_pjproject_Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-third-party_pjproject_Makefile
 .endif
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base) || \
+.if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || \
 	${SSL_DEFAULT:Mopenssl3*}
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
@@ -252,6 +261,12 @@ LLD_EMULATION=	elf_i386
 LLD_EMULATION=	elf_x86_64
 .elif ${ARCH} == aarch64
 LLD_EMULATION=	aarch64elf
+.elif ${ARCH} == powerpc64le
+LLD_EMULATION=	elf64lppc
+.elif ${ARCH} == powerpc64
+LLD_EMULATION=	elf64ppc
+.elif ${ARCH} == powerpc
+LLD_EMULATION=	elf32ppc
 .endif
 .endif
 
@@ -261,6 +276,9 @@ post-extract:
 post-extract-G729-on:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
+
+post-extract-MP3PLAYER-on:
+	${MV} ${WRKSRC_MP3} ${WRKSRC}/addons/mp3
 
 post-extract-OPUS-on:
 	${CP} ${WRKSRC_opus}/include/asterisk/* ${WRKSRC}/include/asterisk
@@ -294,6 +312,9 @@ post-configure-GEOLOCATION-on:
 
 post-configure-GEOLOCATION-off:
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_geolocation menuselect.makeopts
+
+post-configure-MP3PLAYER-on:
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable format_mp3 menuselect.makeopts
 
 post-configure-MYSQL-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts

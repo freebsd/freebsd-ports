@@ -1,9 +1,9 @@
 PORTNAME=	Zonemaster-GUI
-DISTVERSION=	4.4.0
+DISTVERSION=	5.0.0
 CATEGORIES=	www dns perl5
 MASTER_SITES=	https://github.com/zonemaster/zonemaster-gui/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	p5-
-DISTFILES=	zonemaster_web_gui.zip
+DISTFILES=	zonemaster_web_gui_v${DISTVERSION}.zip
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Perl Web Front End for Zonemaster DNS testing
@@ -23,6 +23,9 @@ NO_BUILD=	yes
 USERS=		zonemaster
 GROUPS=		zonemaster
 
+post-extract:
+	${MV} ${WRKDIR}/dist/config.json ${WRKDIR}/config.json.sample
+
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} \
 		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
@@ -30,6 +33,8 @@ do-install:
 		${WRKDIR}/zonemaster.conf-example
 	${INSTALL_DATA} ${WRKDIR}/zonemaster.conf-example \
 		${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes/zonemaster.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/config.json.sample \
+		${STAGEDIR}${WWWDIR}/config.json.sample
 	(cd ${WRKDIR}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

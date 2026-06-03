@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-10-07 21:08:35 UTC
++++ pyproject.toml
+@@ -14,8 +14,6 @@ readme = "README.rst"
+ authors = [{ name = "pymc-devs", email = "pymc.devs@gmail.com" }]
+ description = "Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs."
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
+ classifiers = [
+     "Development Status :: 6 - Mature",
+     "Intended Audience :: Education",
+@@ -47,7 +45,6 @@ dependencies = [
+     "differentiation",
+ ]
+ dependencies = [
+-    "setuptools>=59.0.0",
+     "scipy>=1,<2",
+     "numpy>=1.17.0",
+     "filelock>=3.15",

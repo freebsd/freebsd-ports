@@ -1,8 +1,8 @@
 PORTNAME=	libquotient
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.6.1
 CATEGORIES=	net-im
 
-MAINTAINER=	adridg@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Matrix IM support library using Qt technologies
 WWW=		https://github.com/quotient-im/libQuotient
 
@@ -18,7 +18,9 @@ GH_ACCOUNT=	quotient-im
 GH_PROJECT=	libQuotient
 USE_QT=		base
 CMAKE_OFF=	Quotient_INSTALL_TESTS
+CMAKE_ON=	BUILD_SHARED_LIBS
 
-CONFLICTS=	libqmatrixclient\*
+PLIST_SUB=	API_VER=0.9 \
+		SHLIB_VER=${DISTVERSION}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	DAV
 PORTVERSION=	1.3.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,12 +12,12 @@ LICENSE=	GPLv3
 USES=		cabal
 
 USE_CABAL=	OneTuple-0.4.2_1 \
-		QuickCheck-2.15.0.1_1 \
+		QuickCheck-2.16.0.0 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.3 \
-		aeson-2.2.3.0_3 \
-		ansi-terminal-1.1.2 \
-		ansi-terminal-types-1.1 \
+		aeson-2.2.3.0_4 \
+		ansi-terminal-1.1.4 \
+		ansi-terminal-types-1.1.3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
@@ -31,26 +31,27 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		basement-0.0.16 \
 		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
-		blaze-builder-0.4.2.3 \
+		blaze-builder-0.4.4.1 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		byteorder-1.0.4 \
-		cabal-doctest-1.0.11 \
+		cabal-doctest-1.0.12 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.10.0_2 \
+		cborg-0.2.10.0_3 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		colour-2.3.6 \
 		comonad-5.0.9_1 \
 		conduit-1.3.6.1 \
-		conduit-extra-1.3.7 \
+		conduit-extra-1.3.8_1 \
 		contravariant-1.5.5 \
 		cookie-0.5.1 \
 		crypton-1.0.4 \
-		crypton-connection-0.4.4 \
+		crypton-connection-0.4.5 \
+		crypton-socks-0.6.2 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.10 \
+		crypton-x509-store-1.6.12_1 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.14 \
 		data-default-0.8.0.1 \
@@ -62,7 +63,7 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		file-embed-0.0.16.0 \
 		free-5.2_7 \
 		generically-0.1.1_4 \
-		half-0.3.2 \
+		half-0.3.3_1 \
 		hashable-1.5.0.0_1 \
 		hourglass-0.2.12_1 \
 		hpke-0.0.0 \
@@ -76,24 +77,23 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		integer-logarithms-1.0.4 \
 		invariant-0.6.4_1 \
 		iproute-1.7.15 \
-		kan-extensions-5.2.6_1 \
-		lens-5.3.4 \
+		kan-extensions-5.2.7 \
+		lens-5.3.5_1 \
 		memory-0.18.0_1 \
 		mime-types-0.1.2.0 \
 		mono-traversable-1.0.21.0 \
-		network-3.2.7.0 \
+		network-3.2.8.0 \
 		network-byte-order-0.1.7 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
-		optparse-applicative-0.18.1.0_1 \
-		os-string-2.0.7 \
-		parallel-3.2.2.0_9 \
+		optparse-applicative-0.19.0.0 \
+		parallel-3.3.0.0 \
 		pem-0.2.4 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.1.0 \
-		profunctors-5.6.2_3 \
+		profunctors-5.6.3 \
 		random-1.3.1 \
 		reflection-2.1.9_1 \
 		resourcet-1.3.0 \
@@ -101,15 +101,14 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		semialign-1.3.1_2 \
 		semigroupoids-6.0.1_2 \
 		semigroups-0.20 \
-		serialise-0.2.6.1_4 \
-		shakespeare-2.1.0.1 \
-		socks-0.6.1 \
+		serialise-0.2.6.1_5 \
+		shakespeare-2.2.0 \
 		split-0.2.5 \
-		splitmix-0.1.1 \
-		streaming-commons-0.2.3.0 \
+		splitmix-0.1.3.1 \
+		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
-		tagged-0.8.9 \
-		tasty-1.5.3_1 \
+		tagged-0.8.10 \
+		tasty-1.5.3_2 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
 		th-abstraction-0.7.1.0_1 \
@@ -117,24 +116,24 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		th-lift-0.8.6 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		tls-2.1.9 \
+		tls-2.1.13 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.13.0 \
-		unix-time-0.4.16 \
+		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_4 \
+		unordered-containers-0.2.21_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
-		vector-0.13.2.0_1 \
+		vector-0.13.2.0_2 \
 		vector-algorithms-0.9.1.0 \
-		vector-stream-0.1.0.1_3 \
-		void-0.7.3 \
+		vector-stream-0.1.0.1_4 \
+		void-0.7.4 \
 		witherable-0.5_1 \
-		xml-conduit-1.10.0.0 \
-		xml-hamlet-0.5.0.2 \
+		xml-conduit-1.10.1.0 \
+		xml-hamlet-0.5.0.3 \
 		xml-types-0.3.8 \
-		zlib-0.7.1.0_2
+		zlib-0.7.1.1
 
 CABAL_EXECUTABLES=	hdav
 

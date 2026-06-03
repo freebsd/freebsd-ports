@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -21,5 +21,5 @@
+ "Homepage" = "https://github.com/youknowone/python-deadlib"
+
+ [build-system]
+-requires = ["setuptools>=75.0"]
++requires = ["setuptools>=43.0.0"]
+ build-backend = "setuptools.build_meta"

@@ -1,10 +1,11 @@
---- ui/gl/BUILD.gn.orig	2025-07-02 06:08:04 UTC
+--- ui/gl/BUILD.gn.orig	2026-01-14 08:33:23 UTC
 +++ ui/gl/BUILD.gn
-@@ -569,7 +569,6 @@ test("gl_unittests") {
+@@ -389,7 +389,7 @@ component("gl") {
+     ]
+   }
  
-   data_deps = [
-     "//testing/buildbot/filters:gl_unittests_filters",
--    "//third_party/mesa_headers",
-   ]
- 
-   if (is_win) {
+-  if (is_android || is_chromeos || is_linux) {
++  if ((is_android || is_chromeos || is_linux) && !is_bsd) {
+     # Windows doesn't support base::FileDescriptor.
+     # libsync isn't supported or needed on MacOSX.
+     # Fuchsia is excluded due to a libsync dependency and because it's

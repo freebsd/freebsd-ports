@@ -1,0 +1,21 @@
+{
+  "name": "sqlite-vec-installer",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "sqlite-vec-installer",
+      "version": "1.0.0",
+      "dependencies": {
+        "sqlite-vec": "^0.1.9"
+      }
+    },
+    "node_modules/sqlite-vec": {
+      "version": "0.1.9",
+      "resolved": "https://registry.npmjs.org/sqlite-vec/-/sqlite-vec-0.1.9.tgz",
+      "integrity": "sha512-L7XJWRIBNvR9O5+vh1FQ+IGkh/3D2AzVksW5gdtk28m78Hy8skFD0pqReKH1Yp0/BUKRGcffgKvyO/EON5JXpA==",
+      "license": "MIT OR Apache"
+    }
+  }
+}

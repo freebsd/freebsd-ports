@@ -1,0 +1,5 @@
+Tkrzw is a C++ library implementing DBM with various algorithms. It
+features high degrees of performance, concurrency, scalability and
+durability.
+
+Tkrzw is a successor of Kyoto Cabinet.

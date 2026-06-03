@@ -1,6 +1,5 @@
 PORTNAME=	relatorio
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,23 +12,26 @@ WWW=		https://docs.tryton.org/relatorio/latest/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-tryton>=0:devel/py-hatch-tryton@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:textproc/py-genshi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>=2.0:devel/py-lxml5@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.0:devel/py-lxml@${PY_FLAVOR}
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
+
+SHEBANG_FILES=	relatorio/render.py
 
 OPTIONS_DEFINE=	CHART FODT
 OPTIONS_DEFAULT=CHART FODT
 CHART_DESC=	Chart support
 FODT_DESC=	OpenDocument support
 
-CHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycha>=0.4.0:graphics/py-pycha@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
+CHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=0:graphics/py-pycairo@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pycha>=0.4.0:graphics/py-pycha@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR}
 FODT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-magic>=0:devel/py-python-magic@${PY_FLAVOR}
 
 .include <bsd.port.mk>

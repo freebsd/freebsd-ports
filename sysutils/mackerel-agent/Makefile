@@ -1,7 +1,7 @@
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.85.0
-PORTREVISION=	3
+DISTVERSION=	0.86.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://mackerel.io
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.24
+USES=		go:modules
 USE_RC_SUBR=	mackerel_agent
 GO_MODULE=	github.com/mackerelio/mackerel-agent
 

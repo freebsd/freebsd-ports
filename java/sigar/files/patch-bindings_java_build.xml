@@ -1,0 +1,20 @@
+--- bindings/java/build.xml.orig	2021-07-15 16:45:22 UTC
++++ bindings/java/build.xml
+@@ -94,7 +94,7 @@
+   <target name="compile">
+     <mkdir dir="${build}/classes"/>
+     <javac destdir="${build}/classes"
+-           source="1.6" target="1.6"
++           source="8" target="8"
+            sourcepath=""
+            debug="true"
+            classpathref="libjars">
+@@ -109,7 +109,7 @@
+   <target name="compile-tests">
+     <mkdir dir="${build}/classes"/>
+     <javac destdir="${build}/classes"
+-           source="1.6" target="1.6"
++           source="8" target="8"
+            sourcepath=""
+            debug="true"
+            classpathref="testjars">

@@ -1,8 +1,11 @@
 PORTNAME=	newsx
 PORTVERSION=	1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	news
 MASTER_SITES=	LOCAL/thierry
+
+PATCH_SITES=	https://src.fedoraproject.org/rpms/newsx/raw/rawhide/f/
+PATCHFILES=	newsx-stack.patch:-p1
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Program to fetch news from and post news to a remote NNTP server

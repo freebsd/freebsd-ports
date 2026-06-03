@@ -1,0 +1,10 @@
+QTads is a so called "interpreter" for games created with the Text
+Adventure Development System, or "Tads" for short, a C-like object
+oriented programming language for authoring Interactive Fiction
+(similar to the Infocom or Legend Entertainment games, like "Zork").
+
+The Tads compiler creates executables for the Tads Virtual Machine (the
+"Tads VM").  QTads is an implementation of this Virtual Machine; it
+runs Tads VM programs.
+
+Both Tads 2 as well as Tads 3 games are supported.

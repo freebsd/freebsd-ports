@@ -17,7 +17,7 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 BUILD_DEPENDS=	netcdf>=4.9.0:science/netcdf
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		fortran gmake libtool localbase makeinfo pathfix
+USES=		fortran gmake libtool localbase makeinfo
 
 CPPFLAGS+=	-fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes

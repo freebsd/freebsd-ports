@@ -1,6 +1,6 @@
 PORTNAME=	recordmydesktop
 DISTVERSION=	0.3.8.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -10,7 +10,8 @@ WWW=		http://recordmydesktop.sourceforge.net/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libtheora.so:multimedia/libtheora
+LIB_DEPENDS=	libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis
 
 USES=		xorg
 USE_XORG=	ice sm x11 xdamage xext xfixes

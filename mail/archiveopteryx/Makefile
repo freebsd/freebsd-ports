@@ -1,23 +1,27 @@
 PORTNAME=	archiveopteryx
-PORTVERSION=	3.2.0
-PORTREVISION=	10
+PORTVERSION=	3.2.0.20260429
+PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://archiveopteryx.org/download/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 WWW=		https://www.archiveopteryx.org/
 
-LICENSE=	MIT
+LICENSE=	PostgreSQL
+LICENSE_FILE=	${WRKSRC}/doc/readme/license.txt
 
-BUILD_DEPENDS=	jam:devel/jam
+BUILD_DEPENDS=	jam:devel/jam \
+		idnkit2>0:dns/idnkit2
 
-USES=		compiler perl5 ssl tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	aox
+GH_PROJECT=	aox
+GH_TAGNAME=	1f9a987
+
+PORTDOCS=	COPYING README
+
+USES=		compiler perl5 ssl
 USE_PERL5=	build
-
-CONFLICTS_INSTALL=	archiveopteryx-devel # bin/aox bin/aoxdeliver bin/aoxexport bin/aoximport
-
-PORTDOCS=	COPYING README bsd.txt
 
 SUB_FILES=	pkg-message
 
@@ -29,7 +33,6 @@ PLIST_SUB+=	USERS="${USERS}"
 PLIST_SUB+=	GROUPS="${GROUPS}"
 
 JAM?=		${LOCALBASE}/bin/jam
-JAMARG+=	-dx
 
 OPTIONS_DEFINE=	DOCS
 
@@ -50,10 +53,9 @@ post-patch:
 		${WRKSRC}/Jamsettings
 	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
 		${WRKSRC}/server/Jamfile
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-	@${REINPLACE_CMD} -e 's|-Werror|-Werror -DOPENSSL_API_COMPAT=0x10100000L|g' \
-		${WRKSRC}/Jamsettings
-.endif
+	# copy some PORTDOCS to WRKSRC like in a normal release
+	${CP} ${WRKSRC}/doc/readme/COPYING ${WRKSRC}/
+	${CP} ${WRKSRC}/doc/readme/README ${WRKSRC}/
 
 do-build:
 	@cd ${WRKSRC} && ${JAM} ${JAMARG}

@@ -1,4 +1,4 @@
---- src/names/eth_resolv.c.orig	2017-03-18 16:11:42 UTC
+--- src/names/eth_resolv.c.orig	2025-09-09 13:34:51 UTC
 +++ src/names/eth_resolv.c
 @@ -26,8 +26,9 @@
  #include <stdlib.h>
@@ -11,7 +11,7 @@
  
  #include <glib.h>
  
-@@ -48,8 +49,8 @@ static int ether_tree_cmp(gconstpointer ga, gconstpoin
+@@ -50,8 +51,8 @@ static int ether_tree_cmp(gconstpointer ga, gconstpoin
    const struct ether_addr *a = ga;
    const struct ether_addr *b = gb;
  

@@ -1,11 +1,11 @@
---- setup.py.orig	2023-01-11 16:06:27 UTC
+--- setup.py.orig	2026-03-30 22:16:48 UTC
 +++ setup.py
-@@ -23,7 +23,7 @@ dependencies = [
- version = "0.2.5"
- release_status = "Development Status :: 4 - Beta"
- dependencies = [
--    "protobuf>=3.19.5,<5.0.0dev,!=3.20.0,!=3.20.1,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5",
-+    "protobuf>=3.19.5,<6.0.0dev,!=3.20.0,!=3.20.1,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5",
-     "googleapis-common-protos >= 1.56.2, < 2.0dev",
- ]
- 
+@@ -58,7 +58,7 @@ setuptools.setup(
+     long_description_content_type="text/markdown",
+     install_requires=dependencies,
+     license="Apache-2.0",
+-    packages=find_namespace_packages(exclude=("tests*", "testing*")),
++    packages=find_namespace_packages(exclude=("docs", "docs.*", "tests*", "testing*")),
+     python_requires=">=3.9",
+     url="https://github.com/googleapis/python-audit-log",
+     include_package_data=True,

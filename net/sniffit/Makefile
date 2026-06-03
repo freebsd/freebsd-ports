@@ -1,5 +1,5 @@
 PORTNAME=	sniffit
-PORTVERSION=	0.6
+DISTVERSION=	0.7
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net security
 
@@ -17,13 +17,6 @@ GH_ACCOUNT=	resurrecting-open-source-projects
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=int-conversion
-CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sniffit ${STAGEDIR}${PREFIX}/sbin

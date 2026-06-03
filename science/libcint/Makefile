@@ -1,6 +1,6 @@
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.2
+DISTVERSION=	6.1.3
 PORTREVISION=	2
 CATEGORIES=	science
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/sunqm/libcint
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYNUMPY} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscf>0:science/py-pyscf@${PY_FLAVOR}
 
 USES=		cmake blaslapack:openblas python:test
@@ -24,7 +24,7 @@ PLIST_FILES=	include/cint.h \
 		include/cint_funcs.h \
 		lib/libcint.so \
 		lib/libcint.so.${PORTVERSION:R:R} \
-		lib/libcint.so.6.1.1 # see https://github.com/sunqm/libcint/issues/106
+		lib/libcint.so.${PORTVERSION}
 		#lib/libcint.so.${PORTVERSION}
 
 post-patch:
@@ -38,5 +38,7 @@ do-test: # needs science/py-pyscf, pending https://github.com/pyscf/pyscf/issues
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 6.1.3: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>

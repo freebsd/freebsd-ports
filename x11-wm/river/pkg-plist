@@ -1,0 +1,9 @@
+bin/river
+%%MANPAGES%%share/man/man1/river.1.gz
+share/pkgconfig/river-protocols.pc
+share/river-protocols/stable/river-input-management-v1.xml
+share/river-protocols/stable/river-layer-shell-v1.xml
+share/river-protocols/stable/river-libinput-config-v1.xml
+share/river-protocols/stable/river-window-management-v1.xml
+share/river-protocols/stable/river-xkb-bindings-v1.xml
+share/river-protocols/stable/river-xkb-config-v1.xml

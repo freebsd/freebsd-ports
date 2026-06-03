@@ -1,15 +1,13 @@
 PORTNAME=	xstatic-jquery-ui
-PORTVERSION=	1.13.0.1
-PORTREVISION=	2
+PORTVERSION=	1.13.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-jquery-ui-${PORTVERSION}
+DISTNAME=	xstatic_jquery_ui-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	jquery-ui (XStatic packaging standard)
-WWW=		https://jqueryui.com/ \
-		https://github.com/xstatic-py/xstatic-jquery_ui
+COMMENT=	jquery-ui ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://github.com/xstatic-py/xstatic-jquery_ui
 
 LICENSE=	MIT
 

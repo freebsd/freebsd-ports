@@ -1,6 +1,6 @@
 PORTNAME=	outcome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.12
+DISTVERSION=	2.2.15
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,8 @@ USES=		cmake:testing compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ned14
-GH_TUPLE=	ned14:status-code:85a75b7:status_code/include/outcome/experimental/status-code
+GH_TUPLE=	ned14:status-code:937b0fc:status_code/include/outcome/experimental/status-code \
+		ned14:wg14_result:f34e89b:wg14_result/include/outcome/experimental/wg14_result
 
 CMAKE_OFF=	BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING OUTCOME_ENABLE_DEPENDENCY_SMOKE_TEST
@@ -36,6 +37,6 @@ pre-configure:
 	${FIND} ${WRKDIR} \( -name \*.hpp -o -name \*.h \) -exec ${REINPLACE_CMD} -e 's,@progbits,%progbits,' {} +
 .endif
 
-# tests as of 2.2.12: 100% tests passed, 0 tests failed out of 4
+# tests as of 2.2.15: 100% tests passed, 0 tests failed out of 4
 
 .include <bsd.port.post.mk>

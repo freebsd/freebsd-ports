@@ -1,0 +1,5 @@
+junos_exporter is a Prometheus exporter for Juniper device metrics.
+
+This exporter also supports Prometheus' multi-target scraping pattern, which
+enables a single running instance of the exporter to collect metrics from
+multiple Juniper devices.

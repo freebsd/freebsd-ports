@@ -10,9 +10,7 @@ WWW=		https://www.gnu.org/software/libffcall/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv7=	no rule to make target 'avcall-armhf-old.lo', needed by 'avcall.lo'
-
-USES=		gmake libtool
+USES=		autoreconf gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

@@ -1,6 +1,6 @@
---- dic/phono/newjis.kpdef.orig	2014-05-25 12:27:08.000000000 +0900
-+++ dic/phono/newjis.kpdef	2014-05-25 12:27:27.000000000 +0900
-@@ -70,7 +70,7 @@
+--- dic/phono/newjis.kpdef.orig	2025-05-09 16:04:53 UTC
++++ dic/phono/newjis.kpdef
+@@ -70,7 +70,7 @@ +	¤æ
  O	¤ä
  #ifndef ASCII
  +	¤æ

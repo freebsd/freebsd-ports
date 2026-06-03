@@ -9,7 +9,7 @@ WWW=		https://apps.kde.org/categories/utilities/
 USES=		kde:6 metaport
 
 OPTIONS_DEFINE=	KMAG KMOUSETOOL KMOUTH
-OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 KMAG_DESC=		Install Screen magnifier
 KMAG_RUN_DEPENDS=	${KDE_PREFIX}/bin/kmag:accessibility/kmag

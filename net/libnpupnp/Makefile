@@ -1,5 +1,5 @@
 PORTNAME=	libnpupnp
-DISTVERSION=	6.2.1
+DISTVERSION=	6.3.0
 CATEGORIES=	net
 MASTER_SITES=	https://www.lesbonscomptes.com/upmpdcli/downloads/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dunspecified_server=false \
-		-Dtestmains=false
+MESON_ARGS=	-Dexpat=enabled
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	rust-mode
 DISTVERSION=	1.0.5-58
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g9c26dc1
 CATEGORIES=	devel
 
@@ -10,7 +11,6 @@ WWW=		https://github.com/rust-lang/
 LICENSE=	APACHE20
 
 USES=			emacs
-EMACS_NO_DEPENDS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang

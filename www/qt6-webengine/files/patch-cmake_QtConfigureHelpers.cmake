@@ -1,6 +1,6 @@
---- cmake/QtConfigureHelpers.cmake.orig	2025-02-21 12:29:33 UTC
+--- cmake/QtConfigureHelpers.cmake.orig	2026-02-26 14:39:03 UTC
 +++ cmake/QtConfigureHelpers.cmake
-@@ -191,7 +191,7 @@ function(qt_webengine_configure_check_for_ulimit)
+@@ -209,7 +209,7 @@ function(qt_webengine_configure_check_for_ulimit)
  
  function(qt_webengine_configure_check_for_ulimit)
      message(STATUS "Checking 'ulimit -n'")
@@ -9,7 +9,7 @@
          OUTPUT_VARIABLE ulimit_output
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimit_output}")
-@@ -200,7 +200,7 @@ function(qt_webengine_configure_check_for_ulimit)
+@@ -218,7 +218,7 @@ function(qt_webengine_configure_check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(STATUS "Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh

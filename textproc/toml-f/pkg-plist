@@ -1,3 +1,5 @@
+include/test-drive/GNU-14.2.0/testdrive.mod
+include/test-drive/GNU-14.2.0/testdrive_version.mod
 include/toml-f/modules/tomlf.mod
 include/toml-f/modules/tomlf_all.mod
 include/toml-f/modules/tomlf_build.mod
@@ -33,11 +35,19 @@ include/toml-f/modules/tomlf_utils.mod
 include/toml-f/modules/tomlf_utils_io.mod
 include/toml-f/modules/tomlf_utils_sort.mod
 include/toml-f/modules/tomlf_version.mod
+lib/cmake/test-drive/test-drive-config-version.cmake
+lib/cmake/test-drive/test-drive-config.cmake
+lib/cmake/test-drive/test-drive-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/test-drive/test-drive-targets.cmake
 lib/cmake/toml-f/toml-f-config-version.cmake
 lib/cmake/toml-f/toml-f-config.cmake
 lib/cmake/toml-f/toml-f-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/toml-f/toml-f-targets.cmake
+lib/libtest-drive.so
+lib/libtest-drive.so.0
+lib/libtest-drive.so.0.5.0
 lib/libtoml-f.so
 lib/libtoml-f.so.0
-lib/libtoml-f.so.0.4.2
+lib/libtoml-f.so.0.5.0
+libdata/pkgconfig/test-drive.pc
 libdata/pkgconfig/toml-f.pc

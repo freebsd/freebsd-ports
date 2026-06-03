@@ -1,4 +1,4 @@
---- components/viz/service/display_embedder/software_output_surface.cc.orig	2025-02-19 07:43:18 UTC
+--- components/viz/service/display_embedder/software_output_surface.cc.orig	2026-04-09 06:05:42 UTC
 +++ components/viz/service/display_embedder/software_output_surface.cc
 @@ -115,7 +115,7 @@ void SoftwareOutputSurface::SwapBuffersCallback(base::
    base::TimeTicks now = base::TimeTicks::Now();
@@ -9,7 +9,7 @@
    if (needs_swap_size_notifications_)
      client_->DidSwapWithSize(pixel_size);
  #endif
-@@ -142,7 +142,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
+@@ -143,7 +143,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
    return gfx::OVERLAY_TRANSFORM_NONE;
  }
  

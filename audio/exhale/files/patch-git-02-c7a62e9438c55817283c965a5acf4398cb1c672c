@@ -1,0 +1,117 @@
+From c7a62e9438c55817283c965a5acf4398cb1c672c Mon Sep 17 00:00:00 2001
+From: "Christian R. Helmrich" <c.helmrich@ecodis.de>
+Date: Tue, 30 Dec 2025 09:59:59 +0000
+Subject: [PATCH] fix two LUFS issues
+
+---
+ src/app/exhaleApp.cpp     | 29 +++++++++++++++++++++++++----
+ src/app/loudnessEstim.cpp |  8 ++++----
+ 2 files changed, 29 insertions(+), 8 deletions(-)
+
+diff --git a/src/app/exhaleApp.cpp b/src/app/exhaleApp.cpp
+index 01f3705..5e8db4f 100644
+--- src/app/exhaleApp.cpp
++++ src/app/exhaleApp.cpp
+@@ -905,8 +905,12 @@ int main (const int argc, char* argv[])
+     else // start coding loop, show progress
+     {
+       const unsigned sampleRate  = (wavReader.getSampleRate () << resampShift) / resampRatio;
+-      const bool userIndepPeriod = (argc >= 5 && argv[3][0] > '0' && argv[3][0] <= '9' && argv[3][1] >= '0' && argv[3][1] <= '9' && argv[3][2] == 0);
+-      const unsigned indepPeriod = (userIndepPeriod ? 10 * (argv[3][0] - 48) + (argv[3][1] - 48) : (sampleRate < 48000 ? sampleRate - 320u : 50u << 10u) / frameLength);
++#if !RESTRICT_TO_AAC
++      const bool noiseFillingOff = (argc >= 5 && (argv[2][0] == 'n' || argv[2][0] == 'N') && argv[2][1] == 0);
++#endif
++      const bool userIndepPeriod = (argc >= 5 && argv[3][0] > '0' && argv[3][0] <= '9' && (argv[3][1] == 0 || (argv[3][1] >= '0' && argv[3][1] <= '9' && argv[3][2] == 0)));
++      const uint16_t  autoPeriod = (sampleRate < 48000 ? sampleRate - 320u : 50u << 10u) / frameLength;
++      const unsigned indepPeriod = (userIndepPeriod ? (argv[3][1] == 0 ? argv[3][0] - 48 : 10 * (argv[3][0] - 48) + (argv[3][1] - 48)) : autoPeriod);
+ #if ENABLE_STDOUT_LOAS
+       const unsigned mod3Percent = (writeStdout ? 0 : unsigned ((expectLength * (3 + (coreSbrFrameLengthIndex & 3))) >> 17));
+       uint32_t byteCount = 0, bw = (numChannels < 7 ? loudStats | (writeStdout ? 0x4A0022CB /*-23 LUFS*/ : 0) : 0);
+@@ -926,7 +930,7 @@ int main (const int argc, char* argv[])
+ #endif
+                                 + (enableUpsampler && (variableCoreBitRateMode < 9) ? 1 : 0)
+ #if !RESTRICT_TO_AAC
+-                              , !(argc >= 5 && (argv[2][0] == 'n' || argv[2][0] == 'N') && argv[2][1] == 0), compatibleExtensionFlag > 0
++                               , !noiseFillingOff, compatibleExtensionFlag > 0
+ #endif
+                                 );
+       BasicMP4Writer mp4Writer; // .m4a file
+@@ -1226,6 +1230,8 @@ int main (const int argc, char* argv[])
+ #else
+       const unsigned flushLength = (inFileLength - resampDelay) % inFrmLength;
+ #endif
++      const float   trgtLoudOffs = (argc >= 5 && argv[2][0] >= '0' && argv[2][0] <= '9' && argv[2][1] == 0 && !enableLufsLevel ? EA_LOUD_NORM - (argv[2][0] - 48) : EA_LOUD_NORM);
++
+       if ((flushLength + ((startLength * resampRatio) >> resampShift) - inFrmLength + resampDelay
+         - (resampDelay >> 6)/*rnd*/+ wavReader.getSampleRate () / 200 > inFrmLength
+         - ((2 + sbrEncDelay * 3) >> 2)) || (flushLength == 0))  // flush last frame
+@@ -1325,7 +1331,7 @@ int main (const int argc, char* argv[])
+ #endif
+       {
+         // quantize for loudnessInfo() reset
+-        const uint32_t qLoud = uint32_t (enableLufsLevel ? 139/* -23 LUFS */ : 4.0f * __max (0.0f, (loudStats >> 16) / 512.f + EA_LOUD_NORM) + 0.5f);
++        const uint32_t qLoud = uint32_t (enableLufsLevel ? 139/* -23 LUFS */ : 4.0f * __max (0.0f, (loudStats >> 16) / 512.f + trgtLoudOffs) + 0.5f);
+         const uint32_t qPeak = uint32_t (32.0f * (20.0f - 20.0f * log10 (__max (EA_PEAK_MIN, float (loudStats & USHRT_MAX))) - EA_PEAK_NORM) + 0.5f);
+         // NOTE: In case of enableLufsLevel, the input peak is also the approximate
+         // target peak - just as the -23.0 LUFS is the approximate target loudness.
+@@ -1368,6 +1374,21 @@ int main (const int argc, char* argv[])
+       {
+         fprintf_s (stdout, " Done, actual average %.1f kbit/s\n\n", (float) br * 0.001f);
+       }
++      if (zeroDelayForSbrEncoding || enableLufsLevel || trgtLoudOffs != EA_LOUD_NORM ||
++#if !RESTRICT_TO_AAC
++          noiseFillingOff ||
++#endif
++          userIndepPeriod)
++      {
++        fprintf_s (stdout, " Expert settings:   Target loudness %.0f LUFS,\tIF period %d frames", EA_LOUD_NORM - trgtLoudOffs - 23.f, indepPeriod);
++        if (!userIndepPeriod) fprintf_s (stdout, " (auto)");
++        if (enableLufsLevel) fprintf_s (stdout, ",\tmode L");
++        if (zeroDelayForSbrEncoding) fprintf_s (stdout, ",\tmode S");
++#if !RESTRICT_TO_AAC
++        if (noiseFillingOff) fprintf_s (stdout, ",\tmode N");
++#endif
++        fprintf_s (stdout, "\n\n");
++      }
+       if (numChannels < 7)
+       {
+         fprintf_s (stdout, " Input statistics:  File loudness %.2f LUFS,\tsample peak level %.2f dBFS\n\n",
+diff --git a/src/app/loudnessEstim.cpp b/src/app/loudnessEstim.cpp
+index 4927ab6..200e212 100644
+--- src/app/loudnessEstim.cpp
++++ src/app/loudnessEstim.cpp
+@@ -1,11 +1,11 @@
+ /* loudnessEstim.cpp - source file for class with ITU-R BS.1770-4 loudness level estimation
+- * written by C. R. Helmrich, last modified in 2020 - see License.htm for legal notices
++ * written by C. R. Helmrich, last modified in 2025 - see License.htm for legal notices
+  *
+  * The copyright in this software is being made available under the exhale Copyright License
+  * and comes with ABSOLUTELY NO WARRANTY. This software may be subject to other third-
+  * party rights, including patent rights. No such rights are granted under this License.
+  *
+- * Copyright (c) 2018-2021 Christian R. Helmrich, project ecodis. All rights reserved.
++ * Copyright (c) 2018-2025 Christian R. Helmrich, project ecodis. All rights reserved.
+  */
+ 
+ #include "exhaleAppPch.h"
+@@ -87,7 +87,6 @@ uint32_t LoudnessEstimator::addNewPcmData (const unsigned samplesPerChannel)
+         i[3] = i[2];   i[2] = i[1];   i[1] = i[0];   i[0] = xi; // update
+         o[3] = o[2];   o[2] = o[1];   o[1] = o[0];   o[0] = yi; // memory
+ #else
+-        // simplified K-filter, including 500-Hz high-pass pre-processing
+         const int32_t xi = *(chSig++);
+         const int32_t yi = xi - m_filterMemoryI[ch] + ((128 + m_filterFactor * m_filterMemoryO[ch]) >> 8);
+         const uint32_t a = abs (xi);
+@@ -108,7 +107,8 @@ uint32_t LoudnessEstimator::addNewPcmData (const unsigned samplesPerChannel)
+ 
+       for (ch = 0; ch < m_inputChannels; ch++)  // sum 64-sample averages
+       {
+-        zij = (m_powerValue[0][ch] + m_powerValue[1][ch] + m_powerValue[2][ch] + newQuarterPower[ch] + (1u << 5)) >> 6;
++        zij = ((m_powerValue[0][ch] + m_powerValue[1][ch] + (1u << 5)) >> 6) + // avoid over-
++              ((m_powerValue[2][ch] + newQuarterPower[ch] + (1u << 5)) >> 6); // flow @ 0dBFS
+         zj += (ch > 2 ? (16u + 45 * zij) >> 5 : zij); // weighting by G_i
+       }
+ 
+-- 
+GitLab
+

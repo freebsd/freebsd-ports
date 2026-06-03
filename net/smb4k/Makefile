@@ -1,5 +1,5 @@
 PORTNAME=	smb4k
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.6
 CATEGORIES=	net kde
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION}
 
@@ -17,11 +17,11 @@ RUN_DEPENDS=	rsync:net/rsync
 
 USES=		cmake compiler:c++17-lang cpe gettext-tools gl kde:6 qt:6 \
 		samba tar:xz xorg
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	smb4k_project
 USE_GL=		gl opengl # GLX
-USE_KDE=	auth colorscheme completion config configwidgets coreaddons \
-		crash dbusaddons dnssd i18n iconthemes jobwidgets kirigami2 \
-		kio libplasma notifications service solid statusnotifieritem \
+USE_KDE=	auth completion config configwidgets coreaddons crash \
+		dbusaddons dnssd i18n iconthemes jobwidgets kio kirigami2 \
+		libplasma notifications solid statusnotifieritem \
 		wallet widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		base declarative

@@ -1,0 +1,16 @@
+--- src/xpdev/CMakeLists.txt.orig	2026-04-18 20:39:40 UTC
++++ src/xpdev/CMakeLists.txt
+@@ -276,6 +276,13 @@ else()
+ if(WITHOUT_CRYPTLIB)
+ 	target_compile_definitions(xpdev PUBLIC WITHOUT_CRYPTLIB)
+ else()
++	if(NOT TARGET cl)
++		add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../3rdp/build cryptlib EXCLUDE_FROM_ALL)
++	endif()
+ 	target_compile_definitions(xpdev PUBLIC WITH_CRYPTLIB)
+ 	target_link_libraries(xpdev cl)
++	get_target_property(_CL_INC cl INTERFACE_INCLUDE_DIRECTORIES)
++	if(_CL_INC)
++		target_include_directories(xpdev PRIVATE ${_CL_INC})
++	endif()
+ endif()

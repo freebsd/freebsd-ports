@@ -1,24 +1,29 @@
 PORTNAME=	hevea
-PORTVERSION=	2.36
+DISTVERSION=	2.38
 CATEGORIES=	textproc
-MASTER_SITES=	http://moscova.inria.fr/~maranget/${PORTNAME}/distri/
+MASTER_SITES=	https://hevea.inria.fr/distri/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Convert LaTeX to HTML
-WWW=		http://para.inria.fr/~maranget/hevea/
+MAINTAINER=	alven@FreeBSD.org
+COMMENT=	Quite complete and fast LaTeX to HTML translator
+WWW=		https://hevea.inria.fr/ \
+		https://github.com/maranget/hevea/
+
+LICENSE=	QPL-1.0
+LICENSE_NAME=	Q Public License 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
-PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
-
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-DOCS_DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.pdf \
-			${PORTNAME}-${PORTVERSION}-manual.tar.gz
+DOCS_DISTFILES+=	${PORTNAME}-${DISTVERSION}-manual.pdf \
+			${PORTNAME}-${DISTVERSION}-manual.tar.gz
 
 .include <bsd.port.options.mk>
 
@@ -27,14 +32,15 @@ USE_BINUTILS=	yes
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/esponja
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bibhva
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hevea
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hacha
+	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} bibhva esponja hacha hevea
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/hevea
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.pdf ${STAGEDIR}${PREFIX}/share/doc/hevea
-	(cd ${STAGEDIR}${PREFIX}/share/doc/hevea; ${TAR} xvfz ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.tar.gz)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${DISTVERSION}-manual.pdf ${STAGEDIR}${DOCSDIR}
+	${TAR} xvfz ${DISTDIR}/${PORTNAME}-${DISTVERSION}-manual.tar.gz -C ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${LN} -sfv ${PREFIX}/lib/hevea/hevea.sty ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

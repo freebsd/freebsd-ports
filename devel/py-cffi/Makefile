@@ -1,12 +1,12 @@
 PORTNAME=	cffi
-PORTVERSION=	1.17.1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Foreign Function Interface for Python calling C code
-WWW=		https://cffi.readthedocs.io/en/latest/ \
+WWW=		https://cffi.readthedocs.io/en/stable/ \
 		https://github.com/python-cffi/cffi
 
 LICENSE=	MIT

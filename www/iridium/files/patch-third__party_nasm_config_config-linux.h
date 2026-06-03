@@ -1,4 +1,4 @@
---- third_party/nasm/config/config-linux.h.orig	2025-06-19 07:37:57 UTC
+--- third_party/nasm/config/config-linux.h.orig	2025-12-10 15:04:57 UTC
 +++ third_party/nasm/config/config-linux.h
 @@ -209,7 +209,7 @@
  #define HAVE_DECL_STRSEP 1

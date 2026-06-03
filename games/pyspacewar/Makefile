@@ -1,12 +1,12 @@
 PORTNAME=	pyspacewar
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Game loosely based on the original Spacewar!
 WWW=		https://pypi.org/project/pyspacewar \
 		https://github.com/mgedmin/pyspacewar

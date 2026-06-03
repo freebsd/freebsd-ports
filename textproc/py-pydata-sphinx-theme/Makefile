@@ -1,5 +1,5 @@
 PORTNAME=	pydata-sphinx-theme
-PORTVERSION=	0.16.1
+PORTVERSION=	0.18.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		LOCAL/sunpoet:static
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accessible-pygments>=0:textproc/py-accessibl
 		${PYTHON_PKGNAMEPREFIX}sphinx>=5,1:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

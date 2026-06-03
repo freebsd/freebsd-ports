@@ -1,6 +1,7 @@
 bin/dateparse
 %%SITE_PERL%%/DateTime/Format/Natural.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Calc.pm
+%%SITE_PERL%%/DateTime/Format/Natural/Calendar.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Compat.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Duration.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Duration/Checks.pm
@@ -17,6 +18,7 @@ bin/dateparse
 %%PERL5_MAN1%%/dateparse.1.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Calc.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Calendar.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Compat.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Duration.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Duration::Checks.3.gz

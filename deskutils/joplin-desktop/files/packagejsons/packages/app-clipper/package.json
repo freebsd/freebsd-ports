@@ -1,0 +1,12 @@
+{
+  "name": "@joplin/app-clipper",
+  "private": true,
+  "scripts": {
+    "build": "cd popup && npm install"
+  },
+  "version": "1.0.8",
+  "description": "Joplin Web Clipper",
+  "main": "main.js",
+  "author": "Laurent Cozic",
+  "license": "AGPL-3.0-or-later"
+}

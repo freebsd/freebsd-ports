@@ -1,0 +1,2 @@
+pgrx is a framework for developing PostgreSQL extensions in Rust and strives
+to be as idiomatic and safe as possible.

@@ -1,0 +1,11 @@
+--- stb_image.h.orig	2026-02-21 14:14:41 UTC
++++ stb_image.h
+@@ -1448,7 +1448,7 @@ STBIDEF stbi_uc *stbi_load_gif_from_memory(stbi_uc con
+    stbi__start_mem(&s,buffer,len);
+ 
+    result = (unsigned char*) stbi__load_gif_main(&s, delays, x, y, z, comp, req_comp);
+-   if (stbi__vertically_flip_on_load) {
++   if (stbi__vertically_flip_on_load && result) {
+       int channels = req_comp ? req_comp : *comp;
+       stbi__vertical_flip_slices( result, *x, *y, *z, channels );
+    }

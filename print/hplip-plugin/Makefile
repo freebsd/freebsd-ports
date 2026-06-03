@@ -1,7 +1,7 @@
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.24.4
+PORTVERSION=	3.25.8
 CATEGORIES=	print
-MASTER_SITES=	https://developers.hp.com/sites/default/files/ \
+MASTER_SITES=	https://developers.hp.com/sites/default/files/2025-11/ \
 		https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run
@@ -41,6 +41,12 @@ LINARCH=	x86_64
 .elif ${ARCH} == "i386"
 LINARCH=	x86_32
 .endif
+
+do-fetch:
+	@[ -e ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ] \
+	|| for s in ${MASTER_SITES}; do ${SETENV} ${FETCH_ENV} ${FETCH_CMD} \
+		--user-agent="Mozilla/5.0 (FreeBSD x86_64) Firefox/145.0" \
+		-o ${DISTDIR} $${s}${DISTNAME}${EXTRACT_SUFX} && break; done
 
 do-extract:
 	@${SH} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \

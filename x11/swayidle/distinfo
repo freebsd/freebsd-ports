@@ -1,9 +1,3 @@
-TIMESTAMP = 1670163481
-SHA256 (swaywm-swayidle-1.8.0_GH0.tar.gz) = 0fba74c520a2bd64acd00bc3bce7bc8c7b84a2609c0f66329d72dfb33cca03d7
-SIZE (swaywm-swayidle-1.8.0_GH0.tar.gz) = 13610
-SHA256 (28950f787813.patch) = 76301a36ce8a6acdd7f7466ec8079ae8cb3099560649b4e7e02f31139a81b6b1
-SIZE (28950f787813.patch) = 658
-SHA256 (26e192a5f1b2.patch) = 36fa718d512e6955daa3764b46fe4e6aeb901b67f86cbff0cae87d17b9d88514
-SIZE (26e192a5f1b2.patch) = 7047
-SHA256 (f2f7e4d0a7c8.patch) = c027af1e7255fac2d9410d3db16f0234fa7213c0f5e05d6ebcb7c29ee916ab46
-SIZE (f2f7e4d0a7c8.patch) = 4483
+TIMESTAMP = 1762419920
+SHA256 (swaywm-swayidle-v1.9.0_GH0.tar.gz) = 161f5827b8c79bc486a472d27690e98d75da6615bb2dee9f24393cbbb13af656
+SIZE (swaywm-swayidle-v1.9.0_GH0.tar.gz) = 12818

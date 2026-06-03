@@ -1,5 +1,5 @@
 PORTNAME=	libsemigroups
-PORTVERSION=	3.0.3
+PORTVERSION=	3.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -9,13 +9,14 @@ WWW=		https://libsemigroups.readthedocs.io/en/latest/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	HPCombi>0:math/hpcombi
+BUILD_DEPENDS=	HPCombi>0:math/hpcombi	\
+		eigen5>0:math/eigen5
 LIB_DEPENDS=	libfmt.so:devel/libfmt
+TEST_DEPENDS=	eigen5>0:math/eigen5
 
 USE_GITHUB=	yes
 
-USES=		autoreconf compiler:c++11-lang eigen:3,build \
-		libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++17-lang libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-fmt=yes	\

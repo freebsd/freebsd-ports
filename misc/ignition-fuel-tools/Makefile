@@ -1,6 +1,6 @@
 PORTNAME=	ignition-fuel-tools
 DISTVERSION=	1.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -11,7 +11,7 @@ WWW=		https://ignitionrobotics.org/home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake
+BUILD_DEPENDS=	ignition-cmake>=2:devel/ignition-cmake
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libignition-common3.so:devel/ignition-common \
 		libjsoncpp.so:devel/jsoncpp \

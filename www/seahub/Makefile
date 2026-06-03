@@ -2,26 +2,30 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-server
+PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web frontend for Seafile
 WWW=		https://github.com/haiwen/seahub
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	The update of net-mgmt/seafile-server to a newer version is more difficult than expected, and the current version of www/seahub only runs on Django 4.2
+EXPIRATION_DATE=2026-08-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR}
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
 		${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-statici18n>=2.3:www/py-django-statici18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-webpack-loader>=1.7:www/py-django-webpack-loader@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-picklefield>=3.1:www/py-django-picklefield@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django_statici18n>=2.3:www/py-dj42-django_statici18n@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-webpack-loader>=1.7:www/py-dj42-django-webpack-loader@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-picklefield>=3.1:www/py-dj42-django-picklefield@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-formtools>=2.3:www/py-django-formtools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangosaml2>=1.5:www/py-djangosaml2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.14:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-djangosaml2>=1.5:www/py-dj42-djangosaml2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.14:www/py-dj42-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.6:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.20:security/py-pycryptodome@${PY_FLAVOR} \
@@ -36,12 +40,13 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.2:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=5.1:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=1.15:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-simple-captcha>=0.5:www/py-django-simple-captcha@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-simple-captcha>=0.5:www/py-dj42-django-simple-captcha@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=5.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ldap>=3.4:net/py-python-ldap@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=3.4:devel/py-setuptools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>=3.4:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=3.4:devel/py-pytz@${PY_FLAVOR}
 
 		#${PYTHON_PKGNAMEPREFIX}captcha>=0.4:www/py-captcha@${PY_FLAVOR} \
 

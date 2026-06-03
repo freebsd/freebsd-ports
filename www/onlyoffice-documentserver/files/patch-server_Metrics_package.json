@@ -1,0 +1,10 @@
+--- server/Metrics/package.json.orig	2026-02-24 18:13:24 UTC
++++ server/Metrics/package.json
+@@ -5,6 +5,7 @@
+   "private": true,
+   "bin": "node_modules/statsd/bin/statsd",
+   "dependencies": {
++    "patch-package": "^8.0.0",
+     "statsd": "0.9.0"
+   },
+   "pkg": {

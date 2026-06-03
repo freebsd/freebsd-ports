@@ -1,0 +1,2 @@
+snakemake-interface-storage-plugins provides a stable interface for
+interactions between Snakemake and its storage plugins.

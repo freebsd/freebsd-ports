@@ -1,5 +1,5 @@
 PORTNAME=	artifacts
-PORTVERSION=	20240518
+PORTVERSION=	20260421
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
@@ -17,8 +17,10 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
+SHEBANG_FILES=	artifacts/scripts/stats.py \
+		artifacts/scripts/validator.py
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
 

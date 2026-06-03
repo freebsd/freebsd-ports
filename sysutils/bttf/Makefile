@@ -1,0 +1,132 @@
+PORTNAME=	bttf
+DISTVERSION=	0.1.4
+CATEGORIES=	sysutils
+
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Command-line utility for datetime arithmetic, parsing and formatting
+WWW=		https://github.com/BurntSushi/bttf
+
+LICENSE=	MIT UNLICENSE
+LICENSE_COMB=	dual
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	BurntSushi
+
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		anstyle-1.0.14 \
+		anyhow-1.0.102 \
+		bitflags-2.11.1 \
+		bstr-1.12.1 \
+		calendrical_calculations-0.2.4 \
+		cfg-if-1.0.4 \
+		console-0.16.3 \
+		core_maths-0.1.1 \
+		displaydoc-0.2.6 \
+		either-1.16.0 \
+		encode_unicode-1.0.0 \
+		equivalent-1.0.2 \
+		errno-0.3.14 \
+		fastrand-2.4.1 \
+		fixed_decimal-0.7.2 \
+		flume-0.12.0 \
+		foldhash-0.1.5 \
+		getrandom-0.4.2 \
+		hashbrown-0.15.5 \
+		hashbrown-0.17.1 \
+		heck-0.5.0 \
+		icu_calendar-2.2.1 \
+		icu_calendar_data-2.2.0 \
+		icu_collections-2.2.0 \
+		icu_datetime-2.2.0 \
+		icu_datetime_data-2.2.0 \
+		icu_decimal-2.2.0 \
+		icu_decimal_data-2.2.0 \
+		icu_locale-2.2.0 \
+		icu_locale_core-2.2.0 \
+		icu_locale_data-2.2.0 \
+		icu_pattern-0.4.2 \
+		icu_plurals-2.2.0 \
+		icu_plurals_data-2.2.0 \
+		icu_provider-2.2.0 \
+		icu_time-2.2.0 \
+		icu_time_data-2.2.0 \
+		id-arena-2.3.0 \
+		indexmap-2.14.0 \
+		insta-1.47.2 \
+		itoa-1.0.18 \
+		ixdtf-0.6.5 \
+		jiff-0.2.27 \
+		jiff-icu-0.2.2 \
+		jiff-static-0.2.27 \
+		jiff-tzdb-0.1.6 \
+		jiff-tzdb-platform-0.1.3 \
+		leb128fmt-0.1.0 \
+		lexopt-0.3.2 \
+		libc-0.2.186 \
+		libm-0.2.16 \
+		linux-raw-sys-0.12.1 \
+		litemap-0.8.2 \
+		lock_api-0.4.14 \
+		log-0.4.30 \
+		memchr-2.8.1 \
+		memmap2-0.9.10 \
+		once_cell-1.21.4 \
+		portable-atomic-1.13.1 \
+		portable-atomic-util-0.2.7 \
+		potential_utf-0.1.5 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.106 \
+		quote-1.0.45 \
+		r-efi-6.0.0 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		rustix-1.1.4 \
+		scopeguard-1.2.0 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.150 \
+		similar-2.7.0 \
+		smallvec-1.15.1 \
+		spin-0.9.8 \
+		stable_deref_trait-1.2.1 \
+		syn-2.0.117 \
+		synstructure-0.13.2 \
+		tempfile-3.27.0 \
+		textwrap-0.16.2 \
+		tinystr-0.8.3 \
+		unicode-ident-1.0.24 \
+		unicode-xid-0.2.6 \
+		utf8_iter-1.0.4 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		windows-link-0.2.1 \
+		windows-sys-0.61.2 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		writeable-0.6.3 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerofrom-0.1.8 \
+		zerofrom-derive-0.1.7 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3 \
+		zmij-1.0.21
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

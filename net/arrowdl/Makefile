@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	4.0.2
+PORTVERSION=	4.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -7,7 +7,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-protocol standalone download manager
 WWW=		https://www.arrow-dl.com/
 
-LICENSE=	LGPL21+
+LICENSE=	LGPL21+ # https://github.com/setvisible/ArrowDL/issues/246
 
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar2
 
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/${GH_PROJECT} \
 		share/pixmaps/${GH_PROJECT}.png
 
 post-extract:
-	@${RM} -r ${WRKSRC}/3rd/libtorrent-rasterbar
+	@cd ${WRKSRC}/3rd && ${RM} -r libtorrent-rasterbar qtwebengine yt-dlp
 	@${RM} ${WRKSRC}/cmake/Modules/FindLibtorrentRasterbar.cmake
 
 do-install:

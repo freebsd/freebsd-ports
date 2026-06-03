@@ -5,6 +5,7 @@ bin/domination-SwingGUI
 %%DATADIR%%/ChangeLog.txt
 %%DATADIR%%/CommandLine.sh
 %%DATADIR%%/Domination.jar
+%%DATADIR%%/Domination4ME.jar
 %%DATADIR%%/GameGUI.sh
 %%DATADIR%%/Increment1GUI.sh
 %%DATADIR%%/ReadMe.txt
@@ -66,8 +67,11 @@ bin/domination-SwingGUI
 %%DATADIR%%/lib/TranslationTool.jar
 %%DATADIR%%/lib/httpcore-4.1.2.jar
 %%DATADIR%%/lib/httpmime-4.1.2.jar
+%%DATADIR%%/lib/jlayer-1.0.1.4.jar
 %%DATADIR%%/lib/m3gbasic.jar
 %%DATADIR%%/lib/midletrunner.jar
+%%DATADIR%%/lib/mp3spi-1.9.5.4.jar
+%%DATADIR%%/lib/tritonus-share-0.3.7.4.jar
 %%DATADIR%%/maps/Andorra.cards
 %%DATADIR%%/maps/Andorra.map
 %%DATADIR%%/maps/Andorra_map.gif

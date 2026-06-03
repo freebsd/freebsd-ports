@@ -1,0 +1,2 @@
+High performance container data types such as queues, stacks,
+deques, dicts, and ordered dicts. Implemented in C for speed.

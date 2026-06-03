@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Greaseweazle devices require firmware with CLEAR_FEATURE(ENDPOINT_HALT)
+support to work reliably on FreeBSD. Without this fix, the device will
+stop responding after the first use until physically unplugged.
+
+See https://github.com/keirf/greaseweazle-firmware/pull/18
+This fix may be included in firmware version 1.7 or later.
+
+Update your device firmware with: gw update
+EOM
+}
+]

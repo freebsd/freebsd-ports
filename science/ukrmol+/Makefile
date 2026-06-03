@@ -1,6 +1,6 @@
 PORTNAME=	ukrmol+
 DISTVERSION=	3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science # chemistry, physics
 MASTER_SITES=	https://zenodo.org/record/5799134/files/:out \
 		https://zenodo.org/record/5799110/files/:in # the project is a sum of two projects, "in" and "out"
@@ -9,7 +9,7 @@ DISTFILES=	ukrmol-out-${DISTVERSION}${EXTRACT_SUFX}:out \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code to compute electron and positron scattering from molecules
-WWW=		https://zenodo.org/record/5799134 #.Yo1lCknMKV4
+WWW=		https://zenodo.org/record/5799134
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

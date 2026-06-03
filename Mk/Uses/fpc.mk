@@ -46,11 +46,13 @@ PPNAME=			ppc386
 PPNAME=			ppcx64
 .  elif ${ARCH} == "aarch64"
 PPNAME=			ppca64
+.  elif ${ARCH} == "powerpc64" || "powerpc64le"
+PPNAME=			ppcppc64
 .  else
 PPNAME=			ppc_not_yet_ported
 .  endif
 
-.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc64*}
 FPC_DEVELSUFFIX=	-devel
 .  else
 FPC_DEVELSUFFIX=	#

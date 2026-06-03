@@ -1,5 +1,5 @@
 PORTNAME=	cfn-lint
-DISTVERSION=	1.32.0
+DISTVERSION=	1.50.1
 CATEGORIES=	devel python textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-sam-translator>=1.95.0:devel/py-aws-sam-translator@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-sam-translator>=1.97.0:devel/py-aws-sam-translator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jschema-to-python>=1.2.3:devel/py-jschema-to-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0<5:devel/py-jsonschema@${PY_FLAVOR} \

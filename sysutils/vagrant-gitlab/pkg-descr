@@ -1,0 +1,4 @@
+Vagrant is a tool for building and distributing virtualized development
+environments.
+
+This version can be installed and used together with gitlab on the same host.

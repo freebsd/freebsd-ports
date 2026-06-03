@@ -1,3 +1,5 @@
-TIMESTAMP = 1738088808
+TIMESTAMP = 1758119606
 SHA256 (google-fruit-v3.7.1_GH0.tar.gz) = ed4c6b7ebfbf75e14a74e21eb74ce2703b8485bfc9e660b1c36fb7fe363172d0
 SIZE (google-fruit-v3.7.1_GH0.tar.gz) = 240459
+SHA256 (dab5bdfe01eb9f90a2b688c7f3be177a9bd8d5c6.patch) = b6c7616f278b2792c9608fab507372c3f6e661ff9491344dfb05f31f8000c90d
+SIZE (dab5bdfe01eb9f90a2b688c7f3be177a9bd8d5c6.patch) = 1607

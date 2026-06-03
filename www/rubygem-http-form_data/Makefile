@@ -1,5 +1,5 @@
 PORTNAME=	http-form_data
-PORTVERSION=	2.3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

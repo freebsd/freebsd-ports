@@ -24,7 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION},1:security/py-acme@${P
 		${PYTHON_PKGNAMEPREFIX}josepy>=2.0.0:security/py-josepy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parsedatetime>=2.4:devel/py-parsedatetime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyrfc3339>=0:devel/py-pyrfc3339@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2019.3,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=41.6.0:devel/py-setuptools@${PY_FLAVOR}
 
 USES=		python
@@ -45,12 +44,6 @@ MANPAGES_BUILD_DEPENDS=	${RUN_DEPENDS} \
 MANPAGES_PLIST_FILES=	share/man/man1/certbot.1.gz \
 			share/man/man7/certbot.7.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.6.1:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/certbot/compat/misc.py ${WRKSRC}/src/certbot/_internal/tests/cli_test.py
 
@@ -67,4 +60,4 @@ post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 .include "${.CURDIR}/../py-acme/version.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

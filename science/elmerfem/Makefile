@@ -1,29 +1,23 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	9.0
-PORTREVISION=	22
+DISTVERSION=	26.2.1
+PORTREVISION=	1
 CATEGORIES=	science
 
-PATCH_SITES=	https://github.com/ElmerCSC/${PORTNAME}/commit/
-PATCHFILES=	48e9430c.patch:-p1 # https://github.com/ElmerCSC/elmerfem/pull/294
-
-MAINTAINER=	henrik@gulbra.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Multiphysical simulation software
 WWW=		https://www.elmerfem.org/blog/
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build with vtk-9.5.0, see https://github.com/ElmerCSC/elmerfem/issues/677
-
-LIB_DEPENDS=	libblas.so:math/blas \
-		libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
-		libmpich.so:net/mpich \
 		libnetcdf.so:science/netcdf \
-		libopenblas.so:math/openblas \
-		libparpack.so:math/arpack-ng
+		libparpack.so:math/arpack-ng@mpich \
+		libcholmod.so:math/suitesparse-cholmod \
+	        libumfpack.so:math/suitesparse-umfpack
 
-USES=		cmake compiler:c++11-lang fortran
+USES=		blaslapack:openblas cmake compiler:c++11-lang fortran localbase mpi
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
@@ -32,22 +26,25 @@ USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 CMAKE_ARGS=	-DELMER_FEM_REVISION:STRING=${GH_TAGNAME}
 
 ALL_TARGET=	# empty
+TESTING_UNSAFE=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PORTSCOUT=	limit:^release-[1-9]
-
-CMAKE_ARGS+=	-DHAVE_INTTYPES_H=ON
+CMAKE_ARGS+=	-DHAVE_INTTYPES_H:BOOL=ON	\
+		-DEXTERNAL_ARPACK:BOOL=ON	\
+		-DEXTERNAL_PARPACK:BOOL=ON	\
+		-DEXTERNAL_UMFPACK:BOOL=ON
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
 .endif
 
-OPTIONS_DEFINE=		GUI OCC
+OPTIONS_DEFINE=		DOCS GUI OCC
 OPTIONS_DEFAULT=	GUI OCC
 OPTIONS_SUB=		yes
 
 GUI_DESC=		Build with ElmerGUI (Graphical User Interface)
 OCC_DESC=		Use OpenCASCADE for CAD import in ElmerGUI
+
+DOCS_USES=		tex
+DOCS_USE=		tex=pdftex:build
 
 GUI_LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt6@qt5
 GUI_USES=		gl jpeg qt:5 xorg
@@ -64,6 +61,7 @@ OCC_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png \
 			libpython${_PYVERSION}.so:lang/python${PYTHON_SUFFIX} \
+			libboost_thread.so:devel/boost-libs \
 			libtiff.so:graphics/tiff \
 			libTKernel.so:cad/opencascade \
 			libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R}
@@ -77,6 +75,8 @@ _PYVERSION=	${PYTHON_VER}${PYTHON_ABIVER}
 _QT5_LIBS=	buildtools:build core declarative gui network opengl \
 		printsupport qmake:build script sql svg widgets xml
 
+SUB_FILES=	pkg-message
+
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.pre.mk>
 
@@ -87,27 +87,33 @@ FCFLAGS+=	-fPIC
 FFLAGS+=	-fPIC
 .endif
 
+PDFS=	elmerice/Solvers/Documentation/m1qn3.pdf	\
+	elmerice/Solvers/Documentation/poroussolver.pdf	\
+	elmerice/Solvers/Documentation/siasolver.pdf	\
+	elmerice/UserFunctions/Documentation/usf_damage.pdf	\
+	fem/src/modules/contrib/ShellMultiSolver/ShellMutiSolverUserGuide.pdf
+PORTDOCS=	*
+
 .if ${GCC_DEFAULT} >= 10
 # workaround for Type mismatch between actual argument at (1) and actual argument at (2) (REAL(8)/COMPLEX(8)).
 # in theory, this should set FCFLAGS, but the port does not conform
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-post-patch:
-	@${RM} ${WRKSRC}/cmake/Modules/CMakeParseArguments.cmake
-	@${RM} -r ${WRKSRC}/elmergrid/src/metis-5.1.0
-	@${REINPLACE_CMD} -e 's,"metis.*/metis\.h",<metis.h>,' \
+pre-configure:
+	${RM} ${WRKSRC}/cmake/Modules/CMakeParseArguments.cmake
+	${RM} -r ${WRKSRC}/elmergrid/src/metis-5.1.0
+	${REINPLACE_CMD} -e 's,"metis.*/metis\.h",<metis.h>,' \
 		${WRKSRC}/elmergrid/src/egparallel.c
+
+pre-configure-DOCS-off:
+	${REINPLACE_CMD} -e '/doc/s|ADD_SUB|#ADD_SUB|' ${WRKSRC}/fhutiter/CMakeLists.txt
 
 pre-configure-OCC-on:
 	${REINPLACE_CMD} -e "s|\$${VERSION}|`${PKG_QUERY} '%v' opencascade`|" \
 		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
 	${REINPLACE_CMD} -e 's|$${INCLUDE}|${LOCALBASE}/include/OpenCASCADE|' \
 		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
-
-post-configure:
-	# workaround for https://github.com/ElmerCSC/elmerfem/issues/334
-	@${REINPLACE_CMD} -e 's| -lMPI::MPI_C | |' ${BUILD_WRKSRC}/ElmerGUI/Application/CMakeFiles/ElmerGUI.dir/link.txt
 
 post-install:
 	${LN} -sf ElmerSolver_mpi ${STAGEDIR}${PREFIX}/bin/ElmerSolver
@@ -116,6 +122,10 @@ post-install:
 	${LN} -sf libmatc.so ${_LIBSTAGEDIR}/libmatc.so.0
 	${LN} -sf libmpi_stubs.so ${_LIBSTAGEDIR}/libmpi_stubs.so.0
 	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/ElmerGrid
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PDFS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}

@@ -1,9 +1,8 @@
 PORTNAME=	objconv
-DISTVERSION=	2.54_1
+DISTVERSION=	2.57
 CATEGORIES=	devel
 MASTER_SITES=	http://fuz.su/pub/objconv/ \
-		https://www.agner.org/optimize/objconv.zip?dummy=/ \
-		https://archive.org/download/objconv/
+		https://www.agner.org/optimize/objconv.zip?dummy=/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Agner Fog's object file converter
@@ -11,7 +10,7 @@ WWW=		https://www.agner.org/optimize
 
 LICENSE=	GPLv1
 
-NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	source/maindef.h:71:5: This machine has big-endian memory organization. Objconv program will not work
 
 USES=		dos2unix zip

@@ -1,9 +1,9 @@
 PORTNAME=	openmpi
-DISTVERSION=	5.0.8
+DISTVERSION=	5.0.10
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${DISTVERSION:R}/
 
-MAINTAINER=	laurent.chardon@gmail.com
+MAINTAINER=	laurent@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
 WWW=		https://www.open-mpi.org/
 
@@ -11,11 +11,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
-NOT_FOR_ARCHS_REASON=	Not supported on 32-bits - see net/openmpi4
+NOT_FOR_ARCHS_REASON=	Not supported on 32-bits
 
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
 		libevent.so:devel/libevent \
-		libmunge.so:security/munge
+		libmunge.so:security/munge \
+		libpmix.so:net/pmix \
+		libprrte.so:net/prrte
 
 # :keepla because port uses lt_dlopen
 USES=		compiler:c11 fortran gmake libtool:keepla localbase perl5 \
@@ -36,11 +38,13 @@ CONFIGURE_ARGS+=	--program-prefix= \
 			--without-ofi \
 			--enable-mpi-fortran=usempif08 \
 			--with-libevent=external \
-			--with-pmix=internal \
+			--with-pmix=${LOCALBASE} \
+			--with-prrte=${LOCALBASE} \
 			--enable-mca-no-build=verbs,btl_openib,oob_ud \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 TEST_TARGET=		check
 CFLAGS+=		${CFLAGS_F2018}
+LDFLAGS+=		-lpthread
 PIE_UNSAFE=		yes
 CONFLICTS_INSTALL=	openmpi4-4*
 
@@ -51,13 +55,11 @@ PLIST_SUB+=	MPIDIR=${MPIDIR}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=			AVX DEBUG DOCS IPV6 ROMIO SLURM
-OPTIONS_DEFAULT=		ROMIO
+OPTIONS_DEFAULT=		ROMIO SLURM
 OPTIONS_EXCLUDE_aarch64=	AVX
 OPTIONS_EXCLUDE_armv6=		AVX SLURM
 OPTIONS_EXCLUDE_armv7=		AVX SLURM
 OPTIONS_EXCLUDE_i386=		SLURM
-OPTIONS_EXCLUDE_mips=		AVX SLURM
-OPTIONS_EXCLUDE_mips64=		AVX
 OPTIONS_EXCLUDE_powerpc=	AVX SLURM
 OPTIONS_EXCLUDE_powerpc64=	AVX
 OPTIONS_EXCLUDE_powerpc64le=	AVX
@@ -81,8 +83,9 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 ROMIO_CONFIGURE_OFF=	--disable-io-romio
 
-SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 SLURM_CONFIGURE_WITH=	slurm
+# Slurm integration in OpenMPI is handled through the PMIx interface
+#SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 
 .include <bsd.port.pre.mk>
 

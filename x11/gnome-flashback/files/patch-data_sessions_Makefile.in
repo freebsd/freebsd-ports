@@ -1,0 +1,57 @@
+--- data/sessions/Makefile.in.orig	2025-09-28 09:53:09 UTC
++++ data/sessions/Makefile.in
+@@ -389,6 +389,40 @@ NULL = 
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ NULL = 
++required_components_gsd = \
++	org.gnome.SettingsDaemon.A11ySettings \
++	org.gnome.SettingsDaemon.Color \
++	org.gnome.SettingsDaemon.Keyboard \
++	org.gnome.SettingsDaemon.MediaKeys \
++	org.gnome.SettingsDaemon.Power \
++	org.gnome.SettingsDaemon.PrintNotifications \
++	org.gnome.SettingsDaemon.ScreensaverProxy \
++	org.gnome.SettingsDaemon.Sharing \
++	org.gnome.SettingsDaemon.Smartcard \
++	org.gnome.SettingsDaemon.Sound \
++	org.gnome.SettingsDaemon.XSettings \
++	$(NULL)
++
++required_components_common = \
++	gnome-flashback \
++	gnome-panel \
++	$(NULL)
++
++required_components_compiz = \
++	compiz \
++	$(required_components_common) \
++	$(required_components_gsd) \
++	$(NULL)
++
++required_components_metacity = \
++	metacity \
++	$(required_components_common) \
++	$(required_components_gsd) \
++	$(NULL)
++
++space = $(NULL) $(NULL)
++compiz = $(subst $(space),;,$(strip $(required_components_compiz)))
++metacity = $(subst $(space),;,$(strip $(required_components_metacity)))
+ sessions = gnome-flashback-metacity.session $(NULL) $(am__append_1)
+ sessiondir = $(datadir)/gnome-session/sessions
+ session_DATA = $(sessions)
+@@ -622,11 +656,13 @@ gnome-flashback-metacity.session: Makefile.am gnome-fl
+ gnome-flashback-metacity.session: Makefile.am gnome-flashback.session.in
+ 	$(AM_V_GEN) sed \
+ 		-e 's,[@]NAME[@],Metacity,g' \
++		-e 's,[@]REQUIRED_COMPONENTS[@],$(metacity),g' \
+ 		< $(srcdir)/gnome-flashback.session.in > $@
+ 
+ @WITH_COMPIZ_SESSION_TRUE@gnome-flashback-compiz.session: Makefile.am gnome-flashback.session.in
+ @WITH_COMPIZ_SESSION_TRUE@	$(AM_V_GEN) sed \
+ @WITH_COMPIZ_SESSION_TRUE@		-e 's,[@]NAME[@],Compiz,g' \
++@WITH_COMPIZ_SESSION_TRUE@		-e 's,[@]REQUIRED_COMPONENTS[@],$(compiz),g' \
+ @WITH_COMPIZ_SESSION_TRUE@		< $(srcdir)/gnome-flashback.session.in > $@
+ 
+ -include $(top_srcdir)/git.mk

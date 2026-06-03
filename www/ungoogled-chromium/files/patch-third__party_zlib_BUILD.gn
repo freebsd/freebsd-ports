@@ -1,6 +1,6 @@
---- third_party/zlib/BUILD.gn.orig	2024-07-31 14:19:23 UTC
+--- third_party/zlib/BUILD.gn.orig	2026-02-15 10:01:45 UTC
 +++ third_party/zlib/BUILD.gn
-@@ -128,7 +128,7 @@ if (use_arm_neon_optimizations) {
+@@ -123,7 +123,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]
      if (is_android) {
        defines += [ "ARMV8_OS_ANDROID" ]
@@ -9,7 +9,7 @@
        defines += [ "ARMV8_OS_LINUX" ]
      } else if (is_mac) {
        defines += [ "ARMV8_OS_MACOS" ]
-@@ -138,6 +138,10 @@ if (use_arm_neon_optimizations) {
+@@ -133,6 +133,10 @@ if (use_arm_neon_optimizations) {
        defines += [ "ARMV8_OS_FUCHSIA" ]
      } else if (is_win) {
        defines += [ "ARMV8_OS_WINDOWS" ]
@@ -20,12 +20,12 @@
      } else {
        assert(false, "Unsupported ARM OS")
      }
-@@ -413,7 +417,7 @@ static_library("minizip") {
+@@ -414,7 +418,7 @@ static_library("minizip") {
      ]
    }
  
--  if (is_apple || is_android || is_nacl) {
-+  if (is_apple || is_android || is_nacl || is_bsd) {
+-  if (is_apple || is_android) {
++  if (is_apple || is_android || is_bsd) {
      # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
      # use fopen, ftell, and fseek instead on these systems.
      defines = [ "USE_FILE32API" ]

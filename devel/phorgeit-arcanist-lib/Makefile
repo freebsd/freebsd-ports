@@ -1,12 +1,12 @@
 PORTNAME?=	arcanist
-PORTVERSION?=	2025.18
+PORTVERSION?=	2025.51
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	phorgeit-
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
-COMMENT?=	Libraries for the command line interface for Phorge.it
+COMMENT?=	Phorge.it Arcanist libraries
 WWW?=		https://we.phorge.it/book/arcanist/
 
 LICENSE=	APACHE20
@@ -16,7 +16,7 @@ USES=		php:cli,flavors python:env shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
 USE_PHP=	curl dom simplexml zlib
-IGNORE_WITH_PHP=	84 85
+IGNORE_WITH_PHP=	85
 
 PHP_DESTDIR=	lib/php/arcanist
 SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \

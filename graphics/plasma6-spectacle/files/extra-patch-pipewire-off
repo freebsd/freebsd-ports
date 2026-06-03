@@ -10,7 +10,7 @@
 +    find_package(KPipeWire REQUIRED)
 +    set(PIPEWIRE_FOUND 1)
 +endif()
- find_package(OpenCV REQUIRED core imgproc)
+ find_package(OpenCV 4.7 REQUIRED core imgproc)
  
  set_package_properties(KPipeWire PROPERTIES DESCRIPTION
      "Used to record pipewire streams into a file"

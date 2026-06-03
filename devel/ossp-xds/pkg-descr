@@ -1,8 +1,0 @@
-The OSSP xds library is generic and extensible encoding and decoding
-framework for the serialization of arbitrary ISO C data types.  OSSP
-xds consists of three components: the generic encoding and decoding
-framework, a set of shipped engines to encode and decode values in
-certain existing formats (Sun RPC/XDR and XDS/XML are currently
-provided), and a run-time context, which is used to manage buffers,
-registered engines, etc.  The library is designed to allow fully
-recursive and efficient encoding/decoding of arbitrary nested data.

@@ -34,12 +34,6 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-# XXX Drop after FreeBSD 13 EOL around 2026-04-30
-.if !exists(/usr/include/sys/timerfd.h)
-CFLAGS+=	`pkg-config --cflags epoll-shim`
-LDFLAGS+=	`pkg-config --libs epoll-shim`
-.endif
-
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/run/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/doc/data/configs/udp2json.xml \

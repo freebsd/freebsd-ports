@@ -1,5 +1,6 @@
 PORTNAME=	mailfromd
-PORTVERSION=	9.0
+PORTVERSION=	9.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -21,7 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog-async
 CONFIGURE_ENV=	DEFAULT_STATE_DIR="${DATABASEDIR}" \
 		DEFAULT_SOCKET="unix:${MFD_RUN_DIR}/${PORTNAME}.sock" \
-		DEFAULT_USER=mailnull
+		DEFAULT_USER=mailnull \
+		ac_cv_prog_EMACS=no
 USE_RC_SUBR=	calloutd ${PORTNAME}
 TEST_TARGET=	check
 
@@ -36,19 +38,17 @@ SUB_LIST+=	MFD_RUN_DIR=${MFD_RUN_DIR}
 INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
-OPTIONS_DEFINE=		DOCS DSPAM NLS
-OPTIONS_DEFAULT=	GDBM
+OPTIONS_DEFINE=		DOCS EMACS NLS
+OPTIONS_DEFAULT=	GDBM EMACS
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM
 OPTIONS_SUB=		yes
 
-BDB_DESC=		Berkeley DB v4.8 support (last working one)
+BDB_DESC=		Berkeley DB v4.8 (last working one) support
 DB_DESC=		Database configuration
 
-DSPAM_DESC=		DSPAM spam filter library support
-DSPAM_LIB_DEPENDS=	libdspam.so:mail/dspam
-DSPAM_USES=		pkgconfig
-DSPAM_CONFIGURE_WITH=	dspam
+EMACS_DESC=		Install Emacs Lisp *-mode files
+EMACS_USES=		emacs
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -65,15 +65,15 @@ GDBM_CONFIGURE_WITH=	gdbm
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^mfmodnew_LDADD =/s,),& $$(INTLLIBS),' \
-		${WRKSRC}/mfmod/Makefile.in
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATABASEDIR} ${STAGEDIR}${MFD_RUN_DIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EMACS-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/elisp/*.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 .include <bsd.port.mk>

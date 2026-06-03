@@ -1,4 +1,4 @@
---- v8/src/diagnostics/perf-jit.h.orig	2025-06-19 07:37:57 UTC
+--- v8/src/diagnostics/perf-jit.h.orig	2025-12-10 15:04:57 UTC
 +++ v8/src/diagnostics/perf-jit.h
 @@ -31,7 +31,7 @@
  #include "include/v8config.h"

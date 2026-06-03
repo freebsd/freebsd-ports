@@ -1,6 +1,6 @@
---- dvd.c.orig	2022-05-03 19:55:34 UTC
+--- dvd.c.orig	2026-05-18 12:42:51 UTC
 +++ dvd.c
-@@ -176,7 +176,7 @@ int get_device( char *path, char *device )
+@@ -177,7 +177,7 @@ int get_device( char *path, char *device )
         if( !strcmp( path, buf.f_mntonname ) )
           {
             mounted = TRUE;
@@ -9,7 +9,7 @@
            strcpy(device, buf.f_mntfromname);
  #else
  	   strcpy(device, "/dev/r");
-@@ -294,7 +294,7 @@ this is the code for the other-OSs, not solaris*/
+@@ -307,7 +307,7 @@ this is the code for the other-OSs, not solaris*/
  #endif
  
      
@@ -18,7 +18,7 @@
        {
  	strcpy( tmp_path, path );
  	strcat( tmp_path, " " ); /* otherwise it would detect that e.g. 
-@@ -346,7 +346,7 @@ this is the code for the other-OSs, not solaris*/
+@@ -359,7 +359,7 @@ this is the code for the other-OSs, not solaris*/
  
  		if( ( k = strstr( tmp_bufferin, "/dev/" ) ) == NULL )
  		  {
@@ -27,7 +27,7 @@
  		    return -1;
  		  }
  		l=0;
-@@ -404,7 +404,8 @@ int get_device_on_your_own( char *path, char *device )
+@@ -417,7 +417,8 @@ int get_device_on_your_own( char *path, char *device )
    struct statvfs *mntbuf;
  #endif
  
@@ -37,7 +37,7 @@
      {
        for( i = 0; i < n; i++ )
          {
-@@ -412,7 +413,7 @@ int get_device_on_your_own( char *path, char *device )
+@@ -425,7 +426,7 @@ int get_device_on_your_own( char *path, char *device )
              {
                dvd_count++;
                strcpy( path, mntbuf[i].f_mntonname );
@@ -46,7 +46,7 @@
               strcat(device, mntbuf[i].f_mntfromname);
  #else
  	      strcpy(device, "/dev/r");
-@@ -495,14 +496,14 @@ int get_device_on_your_own( char *path, char *device )
+@@ -508,14 +509,14 @@ int get_device_on_your_own( char *path, char *device )
     *read the device out of /etc/mtab
     */
  
@@ -64,7 +64,7 @@
             strstr( tmp_bufferin, "udf" )     || 
             strstr( tmp_bufferin, "cdrom" )   || 
             strstr( tmp_bufferin, "dvd" ) )
-@@ -514,7 +515,7 @@ int get_device_on_your_own( char *path, char *device )
+@@ -527,7 +528,7 @@ int get_device_on_your_own( char *path, char *device )
  
  	   if( ( k = strstr( tmp_bufferin, "/dev/" ) ) == NULL )
  	     {
@@ -73,7 +73,7 @@
  	       dvd_count--;
  	       continue;
  	     }
-@@ -544,8 +545,17 @@ int get_device_on_your_own( char *path, char *device )
+@@ -557,8 +558,17 @@ int get_device_on_your_own( char *path, char *device )
  	   */
  	     
  
@@ -92,7 +92,7 @@
  	   /*traverse the gap*/
  
  	   if( isgraph( (int) *(k) ))
-@@ -680,21 +690,6 @@ off_t get_vob_size( int title, char *provided_input_di
+@@ -693,21 +703,6 @@ off_t get_vob_size( int title, char *provided_input_di
     	   return ( off_t ) vob_size;
  	}
     

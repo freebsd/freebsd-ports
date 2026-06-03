@@ -1,6 +1,6 @@
 PORTNAME=	algopy
 DISTVERSION=	0.5.7
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://pythonhosted.org/algopy/
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

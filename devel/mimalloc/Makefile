@@ -1,6 +1,6 @@
 PORTNAME=	mimalloc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.5
+DISTVERSION=	3.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,5 +22,7 @@ CMAKE_TESTING_ON=	MI_BUILD_TESTS
 
 # ci pipeline creates transient tags
 PORTSCOUT=	ignore:1
+
+PLIST_SUB=	MIMALLOC_LIBVER=${DISTVERSION:R}
 
 .include <bsd.port.mk>

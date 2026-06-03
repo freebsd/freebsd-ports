@@ -1,9 +1,12 @@
 PORTNAME=	angie-module-lua
-GH_TUPLE=	openresty:lua-nginx-module:v0.10.28:lua
-GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.16:lua_stream
+MODULE_VERSION=	0.10.29.2
+MODULE_PORTREVISION=	1
+GH_TUPLE=	openresty:lua-nginx-module:v${MODULE_VERSION:S|.2$|R2|}:lua
+GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.17R4:lua_stream
 GH_TUPLE+=	vision5:ngx_devel_kit:v0.3.4:ndk
 
 COMMENT=	Angie Lua dynamic module
+WWW=		https://github.com/openresty/lua-nginx-module/
 
 LICENSE_FILE=	${WRKSRC_lua}/README.markdown
 
@@ -16,24 +19,24 @@ CONFIGURE_ADD=	--add-dynamic-module=${WRKSRC_lua} \
 CONFIGURE_ENV=	LUAJIT_INC=${LUAJIT_INCDIR} \
 		LUAJIT_LIB=${LOCALBASE}/lib
 
-RUN_DEPENDS=	angie-module-ndk==${PKGVERSION}:www/angie-module-ndk \
-		lua-resty-core>=0.1.29:www/lua-resty-core
+RUN_DEPENDS=	angie-module-ndk>=0.3.4,1:www/angie-module-ndk \
+		lua-resty-core>=0.1.32:www/lua-resty-core
 
 USES= 		luajit:luajit-openresty
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
-.for i in ngx_http_lua_module ngx_stream_lua_module
-	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
-.endfor
+	${INSTALL_LIB}  ${WRKSRC}/objs/ngx_http_lua_module.so \
+			${WRKSRC}/objs/ngx_stream_lua_module.so \
+		${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_lua}/README.markdown \
+	${INSTALL_DATA} ${WRKSRC_lua}/README.markdown \
 		${STAGEDIR}${DOCSDIR}/README.lua-nginx-module.markdown
-	${INSTALL_MAN} ${WRKSRC_lua_stream}/README.md \
+	${INSTALL_DATA} ${WRKSRC_lua_stream}/README.md \
 		${STAGEDIR}${DOCSDIR}/README.stream-lua-nginx-module.md
 
 do-install-DEBUG-on:

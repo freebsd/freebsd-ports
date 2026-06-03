@@ -1,5 +1,6 @@
 PORTNAME=	skinlf
 PORTVERSION=	6.7
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-20060722
 CATEGORIES=	x11-toolkits java
 MASTER_SITES=	https://skinlf.dev.java.net/files/documents/66/37801/ \

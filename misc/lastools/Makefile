@@ -1,6 +1,6 @@
 PORTNAME=	LAStools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 CONFLICTS_INSTALL=	liblas
 
-EXECUTABLES=	lasindex las2txt las2las txt2las lasdiff lasinfo laszip lasmerge lasprecision
+EXECUTABLES=	lasindex las2txt las2las txt2las lasdiff lasinfo lasmerge lasprecision lasvalidate laszip
 
 xpre-install:
 	${MV} ${WRKSRC}/LASlib/src/LASlib-config.cmake ${WRKSRC}/LASlib/src/laslib-config.cmake

@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths_linux.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/common/chrome_paths_linux.cc.orig	2025-12-12 07:44:27 UTC
 +++ chrome/common/chrome_paths_linux.cc
 @@ -95,7 +95,7 @@ bool GetDefaultUserDataDirectory(base::FilePath* resul
  #elif BUILDFLAG(GOOGLE_CHROME_BRANDING)

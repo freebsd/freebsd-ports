@@ -1,6 +1,6 @@
 PORTNAME=	tflite-support
 DISTVERSION=	0.1.0a1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://www.tensorflow.org/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}absl-py>=0.7.0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR}
 

@@ -1,15 +1,15 @@
---- chrome/browser/ui/signin/signin_view_controller.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/ui/signin/signin_view_controller.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/ui/signin/signin_view_controller.cc
-@@ -444,7 +444,7 @@ void SigninViewController::ShowModalSyncConfirmationDi
+@@ -524,7 +524,7 @@ void SigninViewController::ShowModalSyncConfirmationDi
        GetOnModalDialogClosedCallback());
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- void SigninViewController::ShowModalHistorySyncOptInDialog() {
-   CHECK(base::FeatureList::IsEnabled(switches::kEnableHistorySyncOptin));
-   CloseModalSignin();
-@@ -457,7 +457,7 @@ void SigninViewController::ShowModalHistorySyncOptInDi
+ void SigninViewController::ShowModalHistorySyncOptInDialog(
+     bool should_close_modal_dialog,
+     HistorySyncOptinHelper::FlowCompletedCallback callback) {
+@@ -541,7 +541,7 @@ void SigninViewController::ShowModalHistorySyncOptInDi
  void SigninViewController::ShowModalManagedUserNoticeDialog(
      std::unique_ptr<signin::EnterpriseProfileCreationDialogParams>
          create_param) {

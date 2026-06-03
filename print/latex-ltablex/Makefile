@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/rakuco/latex
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	latex
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combines the features of both the tabularx and longtable packages
 WWW=		https://ctan.org/tex-archive/macros/latex/contrib/ltablex/
 

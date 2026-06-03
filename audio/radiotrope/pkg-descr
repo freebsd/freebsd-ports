@@ -1,0 +1,15 @@
+Radiotrope is a GUI and CLI internet radio player. It’s an AI agent-enabled
+player built with Rust, Slint, and MCP.
+
+Features
+
+  - MCP server - AI agents (Claude, etc.) can play stations, control volume,
+    and query status through natural language
+  - 10-band equalizer - 14 presets, per-band gain control, preamp
+  - Desktop GUI - built with Slint, dark/light themes, user-selectable accent
+    color, real-time spectrum visualization, stream statistics
+  - Terminal player - lightweight TUI with ratatui for headless/SSH use
+  - Resilient streaming - automatic reconnection with exponential backoff,
+    stall detection, health monitoring
+  - Wide format support - MP3, AAC, HE-AAC, Vorbis, Opus, FLAC over ICY, HLS,
+    and HTTP

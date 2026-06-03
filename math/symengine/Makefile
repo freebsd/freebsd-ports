@@ -1,7 +1,7 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libgmp.so:math/gmp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++14-lang llvm:min=15,max=15
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
@@ -42,9 +42,8 @@ ECM_LIB_DEPENDS=	libecm.so:math/gmp-ecm
 
 LLVM_DESC=		Build with LLVM
 LLVM_CMAKE_BOOL=	WITH_LLVM
-LLVM_CMAKE_ON=		-DLLVM_INCLUDE_DIRS:STRING=${LOCALBASE}/llvm${LLVM_VERSION}/include \
-			-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}
-LLVM_BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
+LLVM_CMAKE_ON=		-DLLVM_DIR:STRING=${LOCALBASE}/llvm${LLVM_VERSION}/lib/cmake/llvm
+LLVM_USES=		llvm:${LLVM_VERSION},lib
 
 MPC_DESC=		Build with MPC
 MPC_CMAKE_BOOL=		WITH_MPC
@@ -79,6 +78,13 @@ PIRANHA_DESC=		piranha
 PIRANHA_CMAKE_ON=	-DINTEGER_CLASS:STRING=piranha
 PIRANHA_BUILD_DEPENDS=	piranha>0:math/piranha
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1600017 || (${PORT_OPTIONS:MLLVM} && ${LLVM_VERSION} >= 20)
+post-patch:
+	${REINPLACE_CMD} -e s/getDeclaration/getOrInsertDeclaration/ ${WRKSRC}/symengine/llvm_double.cpp
+.endif
+
 do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
@@ -87,4 +93,4 @@ do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 
 # tests as of 0.14.0: 100% tests passed, 0 tests failed out of 66
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

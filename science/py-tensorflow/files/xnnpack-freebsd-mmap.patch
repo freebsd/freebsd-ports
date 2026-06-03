@@ -1,0 +1,68 @@
+diff --git a/build_defs.bzl b/build_defs.bzl
+--- a/build_defs.bzl
++++ b/build_defs.bzl
+@@ -188,7 +188,10 @@
+     We need this for things like `struct timespec` that are not in c99, but
+     are part of POSIX 1003.1b-1993."""
+ 
+-    return ["_DARWIN_C_SOURCE=1", "_POSIX_C_SOURCE=199309L"]
++    return select({
++        "@platforms//os:freebsd": [],
++        "//conditions:default": ["_DARWIN_C_SOURCE=1", "_POSIX_C_SOURCE=199309L"],
++    })
+ 
+ def xnnpack_test_deps_for_library():
+     """Depencies needed for a library to use gunit."""
+@@ -349,6 +352,7 @@
+         }),
+         copts = copts + select({
+             "//build_config:linux_k8": gcc_x86_copts,
++            "//build_config:freebsd_x86_64": gcc_x86_copts,
+             "//build_config:linux_arm": aarch32_copts,
+             "//build_config:linux_armeabi": aarch32_copts,
+             "//build_config:linux_armhf": aarch32_copts,
+diff --git a/src/memory.c b/src/memory.c
+--- a/src/memory.c
++++ b/src/memory.c
+@@ -28,6 +28,10 @@
+ #include <errno.h>
+ #if XNN_HAS_MMAP
+ #include <sys/mman.h>
++#endif
++/* FreeBSD uses MAP_ANON; provide MAP_ANONYMOUS alias for portability. */
++#if defined(__FreeBSD__) && !defined(MAP_ANONYMOUS)
++#define MAP_ANONYMOUS MAP_ANON
+ #endif
+ #include <unistd.h>
+ #endif  // XNN_PLATFORM_WINDOWS
+diff --git a/build_config/BUILD.bazel b/build_config/BUILD.bazel
+--- a/build_config/BUILD.bazel
++++ b/build_config/BUILD.bazel
+@@ -351,6 +351,11 @@
+     ],
+ )
+ 
++config_setting(
++    name = "freebsd_x86_64",
++    values = {"cpu": "freebsd"},
++)
++
+ selects.config_setting_group(
+     name = "x86",
+     match_any = [
+@@ -358,6 +363,7 @@
+         ":android_x86_64",
+         ":ios_x86_64",
+         ":linux_k8",
++        ":freebsd_x86_64",
+         ":macos_x86_64",
+         ":macos_x86_64_legacy",
+         ":tvos_x86_64",
+@@ -376,6 +382,7 @@
+         ":android_x86_64",
+         ":ios_x86_64",
+         ":linux_k8",
++        ":freebsd_x86_64",
+         ":macos_x86_64",
+         ":macos_x86_64_legacy",
+         ":tvos_x86_64",

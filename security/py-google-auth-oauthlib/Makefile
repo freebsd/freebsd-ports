@@ -1,20 +1,21 @@
 PORTNAME=	google-auth-oauthlib
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	google_auth_oauthlib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Authentication Library
-WWW=		https://github.com/googleapis/google-auth-library-python-oauthlib
+WWW=		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-auth-oauthlib \
+		https://github.com/googleapis/google-cloud-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.15.0:security/py-google-auth@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.15.0<3.0.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR}
 
 USES=		python

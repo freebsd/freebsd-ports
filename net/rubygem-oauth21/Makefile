@@ -1,5 +1,6 @@
 PORTNAME=	oauth2
 PORTVERSION=	1.4.11
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-faraday>=0.17.3<3.0:www/rubygem-faraday \
-		rubygem-jwt>=1.0<3.0:www/rubygem-jwt \
+		rubygem-jwt2>=1.0<3.0:www/rubygem-jwt2 \
 		rubygem-multi_json>=1.3<2:devel/rubygem-multi_json \
 		rubygem-multi_xml>=0.5<1:textproc/rubygem-multi_xml \
 		rubygem-rack>=1.2,3<4,3:www/rubygem-rack

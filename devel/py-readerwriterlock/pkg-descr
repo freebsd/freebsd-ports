@@ -1,0 +1,5 @@
+Reader Writer Lock provides a python implementation of a solution for the three
+Reader-Writer problems.
+
+Not only does it implement the reader-writer problems, it is also compliant with
+the python lock interface which among others include support for timeout.

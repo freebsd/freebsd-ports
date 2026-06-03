@@ -1,6 +1,6 @@
 PORTNAME=	sanoid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	hartzell@alerce.com
@@ -16,7 +16,7 @@ RUN_DEPENDS=	lzop:archivers/lzop \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles
 
-USES=		shebangfix perl5
+USES=		perl5 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
@@ -26,8 +26,8 @@ SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
 
 CONFLICTS_INSTALL=	sanoid-devel # bin/findoid
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 # line 19:  my %args = ("configdir" => "/etc/sanoid");
 post-patch:

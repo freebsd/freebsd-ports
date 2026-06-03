@@ -1,0 +1,13 @@
+Remove bash-ism from configure script
+
+--- configure.orig	2025-10-07 03:17:25 UTC
++++ configure
+@@ -22303,7 +22303,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+ 
+   if test "X$flag_ok" = Xyes ; then
+ 
+-                  CYTHON_CFLAGS+=" -Wno-cast-function-type"
++                  CYTHON_CFLAGS="$CYTHON_CFLAGS -Wno-cast-function-type"
+ 
+ 
+ 

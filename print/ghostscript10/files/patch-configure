@@ -1,6 +1,6 @@
---- configure.orig	2022-04-04 13:48:49 UTC
+--- configure.orig	2025-09-09 09:36:39 UTC
 +++ configure
-@@ -13383,7 +13383,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -13615,7 +13615,12 @@ then :
          DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *bsd*)
@@ -14,3 +14,4 @@
          DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
          X11_DEVS=""
          OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"
+ 

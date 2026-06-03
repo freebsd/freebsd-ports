@@ -1,8 +1,10 @@
 bin/_check-module-version
 bin/check-module-version
 %%SITE_PERL%%/Module/CheckVersion.pm
-%%SITE_PERL%%/Module/CheckVersion/cpan.pm
+%%SITE_PERL%%/Module/CheckVersion/AuthorityScheme/cpan.pm
+%%SITE_PERL%%/Module/CheckVersion/AuthorityScheme/darkpan.pm
 %%PERL5_MAN1%%/_check-module-version.1.gz
 %%PERL5_MAN1%%/check-module-version.1.gz
 %%PERL5_MAN3%%/Module::CheckVersion.3.gz
-%%PERL5_MAN3%%/Module::CheckVersion::cpan.3.gz
+%%PERL5_MAN3%%/Module::CheckVersion::AuthorityScheme::cpan.3.gz
+%%PERL5_MAN3%%/Module::CheckVersion::AuthorityScheme::darkpan.3.gz

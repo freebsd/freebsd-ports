@@ -7,6 +7,6 @@ lib/cmake/primecount/primecountShared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/primecount/primecountShared.cmake
 lib/libprimecount.so
 lib/libprimecount.so.%%VER%%
-lib/libprimecount.so.7
+lib/libprimecount.so.8
 libdata/pkgconfig/primecount.pc
 share/man/man1/primecount.1.gz

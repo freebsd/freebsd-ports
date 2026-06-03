@@ -3,12 +3,13 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.5.6
+DISTVERSION=	2.6.5
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
-		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
+		SF/${PORTNAME}/${PORTNAME}/1.2.7:binaries \
+		LOCAL/pkubaj:binaries
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	krion@FreeBSD.org
@@ -19,7 +20,7 @@ LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
@@ -34,8 +35,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
-OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS LINKABLE_RUNTIME QSHOW SAFEPOINT SIMD \
-			THREADS UNICODE XREF
+OPTIONS_DEFINE=		COMPRESSION DOCS GARBAGE_COLLECTOR LINKABLE_RUNTIME \
+			QSHOW SAFEPOINT SIMD THREADS UNICODE XREF
 OPTIONS_DEFAULT=	COMPRESSION SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -99,7 +100,6 @@ UNICODE_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-unicode"
 XREF_VARS=	MAKE_SH_ARGS+="--with-sb-xref-for-internals"
 XREF_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-xref-for-internals"
 
-BOOTVERSION=	1.2.7
 CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency sb-cover \
 		sb-executable sb-gmp sb-grovel sb-introspect sb-md5 sb-mpfr \
 		sb-posix sb-queue sb-rotate-byte sb-rt sb-simple-streams \
@@ -110,8 +110,8 @@ MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
 .if defined(DYNAMIC_SPACE_SIZE)
 MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 .endif
-SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd ${BOOTVERSION}-x86-freebsd \
-		${BOOTVERSION}-x86-64-dragonfly
+SBCL_BOOT_LIST=	1.2.7-x86-64-freebsd 1.2.7-x86-freebsd 1.2.7-x86-64-dragonfly \
+		2.5.7-powerpc64le-freebsd
 
 .include <bsd.port.options.mk>
 
@@ -183,4 +183,10 @@ post-install-DOCS-on:
 check regression-test test: build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1500000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
+.endif
+
+.include <bsd.port.post.mk>

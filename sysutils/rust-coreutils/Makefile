@@ -1,6 +1,5 @@
 PORTNAME=	rust-coreutils
-DISTVERSION=	0.1.0
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -20,6 +19,11 @@ GH_PROJECT=	coreutils
 CARGO_FEATURES=	unix
 BINPREFIX=	uu-
 PLIST_SUB=	BINPREFIX=${BINPREFIX}
+
+# The French locale translation tests are flaky across distributions.
+CARGO_TEST_AFTER_ARGS=	--skip test_error_messages_french_translation \
+			--skip test_french_colored_error_messages \
+			--skip test_help_messages_french_translation
 
 post-build:
 	${INSTALL_SCRIPT} ${FILESDIR}/symlink-install-helper.sh.in ${CARGO_TARGET_DIR}/symlink-install-helper.sh

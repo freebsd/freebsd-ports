@@ -1,5 +1,0 @@
-Serve self-contained distribution builds of Swagger UI and Redoc with Django
-either via runserver or collectstatic.
-
-This Django app is an optional addition to drf-spectacular, but does not depend
-on it. It may also be used independently.

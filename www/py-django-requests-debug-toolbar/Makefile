@@ -1,8 +1,7 @@
 PORTNAME=	django-requests-debug-toolbar
-PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTVERSION=	0.0.8
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,5 +19,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	marceltschoppch
 
 .include <bsd.port.mk>

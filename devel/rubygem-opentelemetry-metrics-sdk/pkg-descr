@@ -1,0 +1,3 @@
+The opentelemetry-metrics-sdk is an alpha implementation of the OpenTelemetry
+Metrics SDK for Ruby. It should be used in conjunction with the
+opentelemetry-sdk to collect, analyze and export metrics.

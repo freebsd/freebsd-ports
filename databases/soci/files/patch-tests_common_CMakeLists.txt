@@ -1,0 +1,10 @@
+--- tests/common/CMakeLists.txt.orig	2026-03-16 02:42:38 UTC
++++ tests/common/CMakeLists.txt
+@@ -31,6 +31,7 @@ target_link_libraries(soci_tests_common
+ 
+ target_link_libraries(soci_tests_common
+   PUBLIC
++    pthread
+     soci_compiler_interface
+     SOCI::Core
+ )

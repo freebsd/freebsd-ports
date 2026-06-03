@@ -1,6 +1,6 @@
 PORTNAME=	rmilter
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -10,9 +10,6 @@ WWW=		https://github.com/vstakhov/rmilter
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
-
-NOT_FOR_ARCHS=		mips
-NOT_FOR_ARCHS_REASON=	fails to compile: error: Unsupported word size
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov

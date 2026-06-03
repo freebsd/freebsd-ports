@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	jetty-v
 DISTVERSION=		3.14_00
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-upgrade-4.00.01.jar
-PORTREVISION=		0
+PORTREVISION=		2
 CATEGORIES=		security www java
 #MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v3.14.0/

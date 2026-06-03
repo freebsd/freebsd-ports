@@ -24,7 +24,6 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.profile
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.rhosts
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.shrc
-%%DATADIR%%/cbsd-profile/skel/usr/local/etc/sudoers
 %%DATADIR%%/cbsd-profile/system/clone-local.d/placeholder
 %%DATADIR%%/cbsd-profile/system/clone.d/placeholder
 %%DATADIR%%/cbsd-profile/system/create.d/placeholder
@@ -71,6 +70,7 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/scripts/export.sh
 %%DATADIR%%/scripts/get-config.sh
 %%DATADIR%%/scripts/get-ip.sh
+%%DATADIR%%/scripts/helpers.sh
 %%DATADIR%%/scripts/host-init.sh
 %%DATADIR%%/scripts/import.sh
 %%DATADIR%%/scripts/init.sh
@@ -119,9 +119,7 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/templates/cloud-init/user-data
 %%DATADIR%%/templates/cloud-initial.sh
 %%DATADIR%%/templates/devfs.rules
-%%DATADIR%%/templates/dhcpd-hook.sh
-%%DATADIR%%/templates/dhcpd.conf
-%%DATADIR%%/templates/dhcpd6.conf
+%%DATADIR%%/templates/domain.zone
 %%DATADIR%%/templates/export-ports.sh
 %%DATADIR%%/templates/freebsd-update.conf
 %%DATADIR%%/templates/gitignore
@@ -129,6 +127,12 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/templates/initenv.conf
 %%DATADIR%%/templates/install-packages.sh
 %%DATADIR%%/templates/ip-by-mac.sh
+%%DATADIR%%/templates/kea-dhcp-ddns.conf
+%%DATADIR%%/templates/kea-dhcp4.conf
+%%DATADIR%%/templates/kea-dhcp6.conf
+%%DATADIR%%/templates/kea.sh
+%%DATADIR%%/templates/keactrl.conf
+%%DATADIR%%/templates/knot.conf
 %%DATADIR%%/templates/linux.conf.tpl
 %%DATADIR%%/templates/master.conf
 %%DATADIR%%/templates/master.fstab
@@ -136,16 +140,14 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/templates/netif
 %%DATADIR%%/templates/network
 %%DATADIR%%/templates/network-jail.conf
-%%DATADIR%%/templates/nsd.conf
 %%DATADIR%%/templates/pf-jail.conf
 %%DATADIR%%/templates/pf.conf
 %%DATADIR%%/templates/pkg.conf
-%%DATADIR%%/templates/reggae-register.sh
 %%DATADIR%%/templates/resolvconf.conf
+%%DATADIR%%/templates/reverse.zone
 %%DATADIR%%/templates/rtadvd.conf
 %%DATADIR%%/templates/rtsold
 %%DATADIR%%/templates/setup-vm.sh
-%%DATADIR%%/templates/sudoers
 %%DATADIR%%/templates/unbound.conf
 %%DATADIR%%/templates/unbound_control.conf
 %%DATADIR%%/templates/unbound_reggae.conf

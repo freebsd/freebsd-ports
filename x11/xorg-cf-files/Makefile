@@ -1,19 +1,16 @@
 PORTNAME=	xorg-cf-files
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+DISTVERSION=	1.0.9
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.org cf files for use with imake builds
+COMMENT=	Imake configuration files & templates
+WWW=		https://gitlab.freedesktop.org/xorg/util/cf
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:util
+USES=		tar:xz xorg-cat:util,meson
 
 NO_ARCH=	yes
-
-post-patch:
-		@${REINPLACE_CMD} 's|\(define ExtraXaw[^ ]*\) [$$].*|\1 /**/|' \
-			${WRKSRC}/X11.tmpl
 
 .include <bsd.port.mk>

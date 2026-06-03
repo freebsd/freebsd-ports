@@ -15,6 +15,7 @@ CONFLICTS=	devtodo
 
 USES=		readline
 
+CFLAGS+=	-DWANT_OBSOLETE_TYPEDEFS
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${PREFIX}/share/man \

@@ -1,6 +1,6 @@
---- docs/_build/man/barman.5.orig	2024-11-23 11:45:54 UTC
+--- docs/_build/man/barman.5.orig	2026-01-07 14:55:50 UTC
 +++ docs/_build/man/barman.5
-@@ -44,13 +44,13 @@ barman system, such as the main directory, system user
+@@ -45,7 +45,7 @@ barman system, such as the main directory, system user
  .sp
  1. \fBGlobal Configuration\fP: It comprises one file with a set of configurations for the
  barman system, such as the main directory, system user, log file, and other general
@@ -9,6 +9,17 @@
  level by \fB~/.barman.conf\fP or by specifying a \fB\&.conf\fP file using the \fB\-c\fP /
  \fB\-\-config\fP with the \fI\%barman command\fP directly in the CLI.
  .sp
+@@ -55,14 +55,14 @@ it finds. The search order is as follows:
+ .IP \(bu 2
+ \fB~/.barman.conf\fP \- per\-user configuration file.
+ .IP \(bu 2
+-\fB/etc/barman.conf\fP \- main global configuration file.
++\fB%%PREFIX%%/etc/barman.conf\fP \- main global configuration file.
+ .IP \(bu 2
+-\fB/etc/barman/barman.conf\fP \- alternative global configuration file.
++\fB%%PREFIX%%/etc/barman/barman.conf\fP \- alternative global configuration file.
+ .UNINDENT
+ .sp
  2. \fBServer Configuration\fP: It comprises one or more files with a set of
  configurations for a Postgres server that you want to keep track and interact for
 -backup, recovery and/or replication. Default location is \fB/etc/barman.d\fP and must use
@@ -16,7 +27,7 @@
  the \fB\&.conf\fP suffix. You may have one or multiple files for servers. You can override the
  default location by setting the \fBconfiguration_files_directory\fP option in the global
  configuration file and placing the files in that particular location.
-@@ -58,7 +58,7 @@ the model. These overrides can be implemented using th
+@@ -70,7 +70,7 @@ the model. These overrides can be implemented using th
  3. \fBModel Configuration\fP: It comprises one or more files with a set of
  configurations overrides that can be applied to Barman servers within the same cluster as
  the model. These overrides can be implemented using the barman \fBconfig\-switch\fP command.
@@ -25,7 +36,7 @@
  \fBconfiguration_files_directory\fP override option from the server configuration applies for
  models. You may have one or multiple files for models.
  .sp
-@@ -175,7 +175,7 @@ Scope: Global / Server / Model.
+@@ -187,7 +187,7 @@ Scope: Global / Server / Model.
  .sp
  \fBbarman_home\fP
  .sp
@@ -34,7 +45,7 @@
  .sp
  Scope: Global.
  .sp
-@@ -255,7 +255,7 @@ Designates the directory where server/model configurat
+@@ -241,7 +241,7 @@ Designates the directory where server/model configurat
  \fBconfiguration_files_directory\fP
  .sp
  Designates the directory where server/model configuration files will be read by Barman.

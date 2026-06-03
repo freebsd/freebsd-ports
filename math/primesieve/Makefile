@@ -1,6 +1,6 @@
 PORTNAME=	primesieve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.9
+DISTVERSION=	12.14
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -20,6 +20,6 @@ GH_ACCOUNT=	kimwalisch
 CMAKE_OFF=	BUILD_STATIC_LIBS
 CMAKE_TESTING_ON=	BUILD_TESTS
 
-# tests as of 12.9: 100% tests passed, 0 tests failed out of 34
+# tests as of 12.14: 100% tests passed, 0 tests failed out of 34
 
 .include <bsd.port.mk>

@@ -1,0 +1,20 @@
+--- tth_man.html.orig	2025-11-03 23:36:21 UTC
++++ tth_man.html
+@@ -1271,7 +1271,7 @@ without alteration of the original <span class="roman"
+  An example using the <tt>-p</tt> switch might be
+ 
+ <pre>
+-tth&nbsp;&#62;file.html&nbsp;&lt;file.tex&nbsp;-p/usr/local/tthinputs:~/mytthinputs
++tth&nbsp;&#62;file.html&nbsp;&lt;file.tex&nbsp;-p%%DATADIR%%/tthinputs:~/mytthinputs
+ 
+ </pre>
+ 
+@@ -1617,7 +1617,7 @@ the extra command:
+ <div class="p"><!----></div>
+ 
+ <pre>
+-\input&nbsp;/usr/local/tth/tthprep.sty
++\input&nbsp;%%DATADIR%%/styles/tthprep.sty
+ 
+ </pre>
+ 

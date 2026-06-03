@@ -1,6 +1,7 @@
 %%ETCDIR%%.d/README.conf
 include/lldp-const.h
 include/lldpctl.h
+include/lldpctl.hpp
 lib/liblldpctl.a
 lib/liblldpctl.so
 lib/liblldpctl.so.4

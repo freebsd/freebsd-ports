@@ -1,13 +1,12 @@
 PORTNAME=	sagittarius
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.13
 CATEGORIES=	lang
-MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
-		LOCAL/ashish
+MASTER_SITES=	https://github.com/ktakashi/sagittarius-scheme/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	R6RS/R7RS Scheme system
-WWW=		https://bitbucket.org/ktakashi/sagittarius-scheme/wiki/Home
+WWW=		https://github.com/ktakashi/sagittarius-scheme
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,6 @@
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	2
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libkImageAnnotator-Qt6.so:graphics/kimageannotator@qt6 \
+		libkImageAnnotator-Qt6.so:graphics/kimageannotator \
 		libwayland-client.so:graphics/wayland
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext jpeg \
@@ -21,7 +22,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext jpeg \
 USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		configwidgets coreaddons filemetadata guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets \
-		kimageformats kio libkdcraw notifications parts phonon \
+		kimageformats kio libkdcraw notifications parts \
 		purpose service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build

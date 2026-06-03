@@ -1,6 +1,20 @@
---- src/CrashHandler.cpp.orig	2023-03-27 18:48:43 UTC
+--- src/CrashHandler.cpp.orig	2026-04-02 23:34:37 UTC
 +++ src/CrashHandler.cpp
-@@ -204,14 +204,14 @@ void CrashHandler::printStackTrace(FILE *out, unsigned
+@@ -189,8 +189,12 @@ void CrashHandler::printStackTrace(FILE *out, unsigned
+ #else
+     // Linux and Mac stack unwinding
+ 	// Storage array for stack trace address data
+-	void* addrlist[max_frames+1];
++	void* addrlist[63+1];
+ 
++	if (sizeof( addrlist ) / sizeof( void* ) < max_frames+1) {
++		ZmqLogger::Instance()->LogToFile("  Allocated addrlist size is smaller than the size requested by the caller.\n");
++	}
++
+ 	// Retrieve current stack addresses
+ 	unsigned int addrlen = backtrace( addrlist, sizeof( addrlist ) / sizeof( void* ));
+ 
+@@ -204,14 +208,14 @@ void CrashHandler::printStackTrace(FILE *out, unsigned
  	// Resolve addresses into strings containing "filename(function+address)",
  	// Actually it will be ## program address function + offset
  	// this array must be free()-ed

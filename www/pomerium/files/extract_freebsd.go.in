@@ -1,0 +1,22 @@
+//go:build freebsd
+
+package envoy
+
+import (
+	"os"
+
+	"github.com/pomerium/pomerium/pkg/envoy/files"
+)
+
+// envoyBinaryPath is the path to the system-installed envoy binary.
+var envoyBinaryPath = "%%PREFIX%%/libexec/pomerium-envoy"
+
+func init() {
+	// rawBinary is nil; checksum and version are informational only.
+	files.SetFiles(nil, "freebsd-system-envoy _", "system")
+}
+
+// extract creates a symlink at dstName pointing to the system envoy binary.
+func extract(dstName string) error {
+	return os.Symlink(envoyBinaryPath, dstName)
+}

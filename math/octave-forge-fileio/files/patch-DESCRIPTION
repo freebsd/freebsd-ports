@@ -1,0 +1,9 @@
+--- DESCRIPTION.orig	2026-04-05 16:06:25 UTC
++++ DESCRIPTION
+@@ -1,5 +1,5 @@ name: fileio
+ name: fileio
+-version: 1.2.3
++version: 1.2.4
+ date: 2023-07-05
+ author: Tibor Auer <tibor.auer@gmail.com>
+ maintainer: Tibor Auer <tibor.auer@gmail.com>

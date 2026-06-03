@@ -1,0 +1,15 @@
+--- pyproject.toml.orig	2025-03-27 02:34:12 UTC
++++ pyproject.toml
+@@ -1,11 +1,9 @@
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77.0"]
++requires = ["setuptools"]
+ 
+ [project]
+ name = "pyserial-asyncio-fast"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt", "CREDITS.rst"]
+ description = "Python Serial Port Extension - Asynchronous I/O support"
+ readme = "README.rst"
+ authors = [{ name = "pySerial-team" }]

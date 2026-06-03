@@ -1,3 +1,4 @@
+%%i386%%@preexec clang </dev/null -m32 -E - -march=native -### 2>&1 | tr ' ' $'\n' | grep -q +sse2 || { echo >&2 "This port requires a CPU with SSE2 instruction set extension." ; exit 1; }
 bin/exr2aces
 bin/exrenvmap
 bin/exrheader
@@ -34,6 +35,7 @@ include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
 include/OpenEXR/ImfBoxAttribute.h
+include/OpenEXR/ImfBytesAttribute.h
 include/OpenEXR/ImfCRgbaFile.h
 include/OpenEXR/ImfChannelList.h
 include/OpenEXR/ImfChannelListAttribute.h
@@ -79,6 +81,7 @@ include/OpenEXR/ImfFramesPerSecond.h
 include/OpenEXR/ImfGenericInputFile.h
 include/OpenEXR/ImfGenericOutputFile.h
 include/OpenEXR/ImfHeader.h
+include/OpenEXR/ImfHTCompressor.h
 include/OpenEXR/ImfHuf.h
 include/OpenEXR/ImfIDManifest.h
 include/OpenEXR/ImfIDManifestAttribute.h

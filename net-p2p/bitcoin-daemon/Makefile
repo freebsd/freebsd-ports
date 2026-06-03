@@ -1,4 +1,3 @@
-PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
@@ -8,6 +7,7 @@ SLAVE_PORT=	yes
 USE_RC_SUBR=	bitcoind
 
 CMAKE_ARGS=	-DBUILD_DAEMON=ON \
+		-DBUILD_BITCOIN_BIN=OFF \
 		-DBUILD_CLI=OFF \
 		-DBUILD_GUI=OFF \
 		-DBUILD_SHARED_LIBS=OFF \
@@ -22,10 +22,11 @@ GROUPS=		bitcoin
 
 PLIST_FILES=	"@sample %%ETCDIR%%.conf.sample" \
 		bin/bitcoind \
+		libexec/bitcoin-node \
 		share/man/man1/bitcoind.1.gz
 
-OPTIONS_DEFINE=		DEBUG HARDENING TESTS WALLET ZMQ
-OPTIONS_DEFAULT=	HARDENING WALLET ZMQ
+OPTIONS_DEFINE=		DEBUG TESTS WALLET ZMQ
+OPTIONS_DEFAULT=	WALLET ZMQ
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bitcoin.conf ${STAGEDIR}${PREFIX}/etc/bitcoin.conf.sample

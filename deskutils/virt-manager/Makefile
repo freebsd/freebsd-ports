@@ -1,6 +1,5 @@
 PORTNAME=	virt-manager
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTVERSION=	5.1.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
@@ -27,7 +26,7 @@ USES=		desktop-file-utils gettext gnome meson tar:xz python
 USE_GNOME=	gtksourceview4 introspection:run intltool librsvg2 pygobject3
 GLIB_SCHEMAS=	org.virt-manager.virt-manager.gschema.xml
 
-CONFIGURE_ARGS=	-Dtests=disabled
+MESON_ARGS=	-Dtests=disabled
 
 NO_ARCH=	yes
 

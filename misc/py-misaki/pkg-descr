@@ -1,0 +1,8 @@
+Misaki is a grapheme-to-phoneme (G2P) engine with a modular architecture
+that separates its core functionality from language-specific features.
+
+It supports multiple languages including English, Japanese, Chinese, Korean,
+Vietnamese, and Hebrew through optional language-specific modules.
+
+The core package provides basic G2P conversion functionality with enhanced
+data structures (via addict) and improved regular expressions (via regex).

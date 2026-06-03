@@ -1,6 +1,6 @@
---- salt/modules/config.py.orig	2025-01-17 15:15:13 UTC
+--- salt/modules/config.py.orig	2026-02-23 20:07:08 UTC
 +++ salt/modules/config.py
-@@ -17,13 +17,7 @@ from salt.loader.context import LoaderContext
+@@ -17,13 +17,7 @@
  import salt.utils.sdb as sdb
  from salt.loader.context import LoaderContext
  

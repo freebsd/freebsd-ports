@@ -1,6 +1,5 @@
 PORTNAME=	kea
-DISTVERSION=	2.6.3
-PORTREVISION=	1
+DISTVERSION=	3.0.3
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${DISTVERSION}
 
@@ -11,11 +10,13 @@ WWW=		https://kea.isc.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+BUILD_DEPENDS=	googletest>0:devel/googletest \
+		rst2man:textproc/py-docutils@${PY_FLAVOR}
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
-USES=		autoreconf compiler:c++11-lang cpe iconv libtool pathfix ssl
-
+USES=		cmake:indirect compiler:c++11-lang cpe iconv meson pathfix \
+		pkgconfig python shebangfix ssl tar:xz
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}
 .if ${DISTVERSION:M*-*}
@@ -24,37 +25,45 @@ CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost-include=${LOCALBASE}/include \
-		--with-boost-lib-dir=${LOCALBASE}/lib \
-		--with-log4cplus=${LOCALBASE} \
-		--with-openssl=${OPENSSLBASE} \
-		--without-werror
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+
+SHEBANG_GLOB=	*.py *.in
+python_OLD_CMD+=@PYTHON@
+
+MESON_ARGS=	--auto-features=disabled \
+		-Dcrypto=openssl \
+		-Dnetconf=disabled
 
 PORTDOCS=	AUTHORS CONTRIBUTING.md COPYING ChangeLog README SECURITY.md \
 		code_of_conduct.md examples platforms.rst
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL SHELL
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
 
-SHELL_DESC=	Install kea-shell(8) (Python)
-
 MYSQL_USES=		mysql
-MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
-MYSQL_CONFIGURE_OFF=	--without-mysql
+MYSQL_MESON_ENABLED=	mysql
 MYSQL_SUB_LIST=		REQ_MYSQL=mysql
 MYSQL_SUB_LIST_OFF=	REQ_MYSQL=""
 
 PGSQL_USES=		pgsql
-PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}/bin/pg_config
-PGSQL_CONFIGURE_OFF=	--without-pgsql
+PGSQL_MESON_ENABLED=	postgresql
 PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 PGSQL_VARS=		WANT_PGSQL=client
 
-SHELL_USES=		python
-SHELL_CONFIGURE_ON=	--enable-shell
+post-build:
+	(cd ${WRKSRC}/doc/sphinx/man; \
+	for i in *.8.rst; do \
+		${REINPLACE_CMD} -e 's|iscman::||' \
+			-e 's|:manpage:||g' -e 's|:program:||' $$i; \
+		rst2man $$i > $$(basename $$i .rst); \
+	done)
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/db/kea ${STAGEDIR}/var/run/kea
+	${INSTALL_MAN} ${WRKSRC}/doc/sphinx/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	@(cd ${WRKSRC}/_build/src/bin/keactrl; \
+	for i in *.conf; do \
+		${INSTALL_DATA} $$i ${STAGEDIR}${ETCDIR}/$$i.sample; \
+	done)
 
 .include <bsd.port.mk>

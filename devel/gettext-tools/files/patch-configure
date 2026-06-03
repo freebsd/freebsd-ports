@@ -1,0 +1,16 @@
+--- configure.orig	2026-01-28 23:37:49 UTC
++++ configure
+@@ -124004,13 +124004,8 @@ printf "%s\n" "$gt_libcurl_found" >&6; }
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_libcurl_found" >&5
+ printf "%s\n" "$gt_libcurl_found" >&6; }
+ 
+- if test -n "$LIBJSON_C" && test -n "$LIBCURL"; then
+-  BUILD_SPIT_IN_C_TRUE=
+-  BUILD_SPIT_IN_C_FALSE='#'
+-else
+   BUILD_SPIT_IN_C_TRUE='#'
+   BUILD_SPIT_IN_C_FALSE=
+-fi
+ 
+ 
+ 

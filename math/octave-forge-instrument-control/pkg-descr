@@ -1,0 +1,10 @@
+The octave-forge package is the result of The GNU Octave Repository project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is instrument-control.
+
+ Low level I/O functions for serial, i2c, parallel, tcp, gpib, udp
+and usbtmc interfaces.  Not vxi11 as there doesn't seem to be FreeBSD
+support.

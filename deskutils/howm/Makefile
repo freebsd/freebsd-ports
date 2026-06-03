@@ -1,9 +1,8 @@
 PORTNAME=	howm
 PORTVERSION=	1.4.8
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Write fragmentarily and read collectively
@@ -13,21 +12,19 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		emacs
-EMACS_FLAVORS_EXCLUDE=devel_full devel_nox # Debugger entered--Lisp error: (wrong-type-argument stringp nil)
 
-GNU_CONFIGURE=	yes
+CONFLICTS_INSTALL=	howm-emacs_*
 
-CONFLICTS_INSTALL=	howm howm-emacs_* # share/doc/howm/README-j.html
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 PORTDOCS=	*.html *.png
 PORTEXAMPLES=	en/0000-00-00-000000.txt ja/0000-00-00-000000.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_ARCH=	yes
-
 do-install:
-	cd ${WRKSRC} && ${INSTALL_DATA} *.el *.elc \
+	cd ${WRKSRC} && ${INSTALL_DATA} *.el \
 		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 do-install-DOCS-on:

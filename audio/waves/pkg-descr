@@ -1,0 +1,21 @@
+Waves is a keyboard-driven terminal music player with Soulseek downloads,
+MusicBrainz tagging, Last.fm scrobbling, and radio mode.
+
+Features:
+
+  - Browser: Browse music by Artist > Album > Track hierarchy
+  - File Browser: Navigate filesystem with file/folder deletion
+  - Playlists: Create, organize, and manage playlists with folder hierarchy
+  - Favorites: Quick-access playlist with heart icon display
+  - Playing Queue: Persistent queue with multi-selection, reordering, and
+    undo/redo
+  - Audio Playback: MP3, FLAC, OPUS/OGG, and M4A/AAC support with seeking
+  - Album Art: Display album art in expanded player bar, auto-fetch during
+    import
+  - Full-Text Search: SQLite FTS5 search across library, files, and playlists
+  - Download Manager: Search and download from Soulseek via slskd integration
+  - Import System: MusicBrainz tagging, file renaming, and library integration
+  - Last.fm Scrobbling: Track your listening history with offline queue support
+  - Radio Mode: Endless playback with Last.fm similar artists and intelligent
+    track selection
+  - And more...

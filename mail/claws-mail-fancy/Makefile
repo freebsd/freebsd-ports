@@ -3,16 +3,9 @@ PORTNAME=	fancy
 COMMENT=	Webkit based HTML renderer plugin for Claws Mail
 WWW=		https://www.claws-mail.org/plugins.php
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
-
-.include "../claws-mail/Makefile.ver"
-
-.if ${MASTER_OPTIONS:MGTK2}
-IGNORE=		depends on www/webkit-gtk2, which has been removed
-.endif
-.if ${MASTER_OPTIONS:MGTK3}
-LIB_DEPENDS+=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
-.endif
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsoup-3.0.so:devel/libsoup3 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 
 CLAWS_PLUGINS_BUILD=	${PORTNAME}
 

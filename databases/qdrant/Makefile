@@ -1,13 +1,13 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.1
-PORTREVISION=	1
+DISTVERSION=	1.18.1
 PORTEPOCH=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vector search engine and database for the next gen AI applications
-WWW=		https://qdrant.tech
+WWW=		https://qdrant.tech \
+		https://github.com/qdrant/qdrant
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,10 +20,12 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	librocksdb.so:databases/rocksdb \
 		libzstd.so:archivers/zstd
 
-USES=		cargo gmake llvm:min=13 perl5 pkgconfig
+USES=		cargo cpe gmake llvm:min=13 perl5 pkgconfig
 USE_GITHUB=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	qdrant
+
+MAKE_ENV=	AWS_LC_SYS_NO_JITTER_ENTROPY=1 # workaround for https://github.com/aws/aws-lc-rs/issues/1097
 
 QDRANT_DBDIR?=	/var/db/qdrant
 QDRANT_USER?=	nobody

@@ -1,0 +1,4 @@
+lib/compat/libtpool.so.2
+lib/compat/libuutil.so.2
+%%COMPAT32%%lib32/compat/libtpool.so.2
+%%COMPAT32%%lib32/compat/libuutil.so.2

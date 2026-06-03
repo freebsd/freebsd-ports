@@ -11,7 +11,7 @@ WWW=		https://cheriot.org
 
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
 
-NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
+NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc
 NOT_FOR_ARCHS_REASON=	No one will develop CHERI from 32-bit
 
 LLVM_SUFFIX=	-cheriot
@@ -239,7 +239,6 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/Basic/Target/MSP430/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/Basic/Target/
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/CIRFrontendAction
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \

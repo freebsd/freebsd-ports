@@ -1,6 +1,6 @@
---- Makefile.am.orig	2022-05-03 19:55:34 UTC
+--- Makefile.am.orig	2026-04-19 12:31:47 UTC
 +++ Makefile.am
-@@ -15,7 +15,7 @@ dist_doc_DATA = alternative_programs.txt Changelog REA
+@@ -12,7 +12,7 @@ intl/de/vobcopy.1: vobcopy.1.de
  
  intl/de/vobcopy.1: vobcopy.1.de
  	$(MKDIR_P) intl/de

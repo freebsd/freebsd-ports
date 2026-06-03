@@ -12,9 +12,9 @@ share/man/man1/softhsm2-keyconv.1.gz
 %%MIGRATE%%share/man/man1/softhsm2-migrate.1.gz
 share/man/man1/softhsm2-util.1.gz
 share/man/man5/softhsm2.conf.5.gz
+share/p11-kit/modules/softhsm2.module
+@dir share/p11-kit/modules
+@dir share/p11-kit
 @dir /var/lib/softhsm/tokens
 @dir /var/lib/softhsm
 @dir /var/lib
-@dir share/p11-kit/modules
-@dir share
-share/p11-kit/modules/softhsm2.module

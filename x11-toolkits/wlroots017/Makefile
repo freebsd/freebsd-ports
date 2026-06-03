@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.17.4
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	017
 
@@ -27,7 +27,8 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
+MESON_FALSE=	examples
+MESON_ARGS=	-Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 PLIST_SUB=	SUFFIX=-${DISTVERSION:R}
 
 PORTSCOUT=	limit:^0\.17\.
@@ -54,7 +55,8 @@ VULKAN_DESC=		Vulkan renderer
 VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-VULKAN_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
+VULKAN_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri \
+			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_VARS=		RENDERERS+=vulkan
 
 X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \

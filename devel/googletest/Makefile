@@ -11,7 +11,7 @@ WWW=		https://google.github.io/googletest/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang pathfix python:test
+USES=		cmake:testing compiler:c++17-lang python:test
 
 CMAKE_OFF=	GTEST_HAS_ABSL \
 		gmock_build_tests \
@@ -25,7 +25,6 @@ CMAKE_ON=	BUILD_GMOCK \
 CMAKE_TESTING_ON=	\
 		gmock_build_tests \
 		gtest_build_tests
-PATHFIX_CMAKELISTSTXT=	internal_utils.cmake
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 

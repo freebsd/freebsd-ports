@@ -9,7 +9,8 @@ lib/cmake/Belr/BelrConfig.cmake
 lib/cmake/Belr/BelrConfigVersion.cmake
 lib/cmake/Belr/BelrTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Belr/BelrTargets.cmake
-lib/libbelr.a
+lib/libbelr.so
+lib/libbelr.so.1
 %%DATADIR%%-tester/res/basicgrammar.txt
 %%DATADIR%%-tester/res/register.txt
 %%DATADIR%%-tester/res/response.txt

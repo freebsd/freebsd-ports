@@ -1,0 +1,11 @@
+--- src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk.orig	2025-08-13 19:51:11 UTC
++++ src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk
+@@ -337,7 +337,7 @@ ifeq ($(KBUILD_TARGET),freebsd)
+ 	$(QUIET)$(RM) -f -- $@
+ 	$(QUIET)$(CP) -f $< $@
+  ifndef VBOX_WITH_HARDENING
+-	$(QUIET)$(SED) -e "s;VBOX_WITH_HARDENING;;g" --output $@.tmp $@
++	$(QUIET)$(SED) -e "s;-DVBOX_WITH_HARDENING;;g" --output $@.tmp $@
+ 	${QUIET}$(MV) -f $@.tmp $@
+  endif
+  ifndef VBOX_WITH_NETFLT_VIMAGE

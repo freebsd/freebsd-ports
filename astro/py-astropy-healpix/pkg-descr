@@ -1,0 +1,4 @@
+HEALPix (Hierarchical Equal Area isoLatitude Pixelisation) is an algorithm for
+pixellizing a sphere that is sometimes used in Astronomy to store data from
+all-sky surveys, but the general algorithm can apply to any field that has to
+deal with representing data on a sphere.

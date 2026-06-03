@@ -5,7 +5,7 @@ CATEGORIES=	net
 PKGNAMEPREFIX=	realtek-
 PKGNAMESUFFIX=	-kmod198
 
-MAINTAINER=	meta@FreeBSD.org
+MAINTAINER=	george@m5p.com
 COMMENT=	Kernel driver for Realtek PCIe Ethernet Controllers
 WWW=		https://github.com/alexdupre/rtl_bsd_drv
 

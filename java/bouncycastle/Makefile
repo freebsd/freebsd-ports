@@ -1,6 +1,6 @@
 PORTNAME=	bouncycastle
 DISTVERSION=	1.71
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
 USES=		cpe java:ant,run
 CPE_VENDOR=	${PORTNAME}
-CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
+CPE_PRODUCT=	bc-java
 
 MAKE_ARGS=	-f \
 		ant/jdk${JDKNVERSION}+.xml
@@ -41,9 +41,10 @@ ZIPSRC_ALL_TARGET=	zip-src
 
 ARTIFACTSDIR=	${WRKSRC}/build/artifacts/jdk${JDKMVERSION}
 DVERSION=	${PORTVERSION:S/.//}
-JDKMVERSION=	1.5
-JDKNVERSION=	15
-JARSUFFIX=	-jdk${JDKNVERSION}to18-${DVERSION}.jar
+JDKMVERSION=	1.8
+JDKNVERSION=	18
+# matches target.prefix property in WRKSRC/ant/jdk18+.xml
+JARSUFFIX=	-jdk${JDKNVERSION}on-${DVERSION}.jar
 
 .include <bsd.port.options.mk>
 

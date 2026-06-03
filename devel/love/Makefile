@@ -1,6 +1,6 @@
 PORTNAME=	love
 PORTVERSION=	11.5
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/love2d/love/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
@@ -12,7 +12,7 @@ WWW=		https://www.love2d.org/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Hashing not yet implemented for big endian
 
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
@@ -35,8 +35,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS LUAJIT GME
-OPTIONS_DEFAULT_i386=	LUAJIT
-OPTIONS_DEFAULT_amd64=	LUAJIT
+OPTIONS_DEFAULT=	LUAJIT
+OPTIONS_EXCLUDE_riscv64=LUAJIT
 
 LUAJIT_DESC=		Use luajit
 LUAJIT_USES=		luajit

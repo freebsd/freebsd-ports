@@ -1,7 +1,7 @@
 PORTNAME=	libzmq4
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.5
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/zeromq/libzmq/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -51,6 +51,7 @@ NORM_LIB_DEPENDS=		libnorm.so:net/norm
 NORM_CONFIGURE_WITH=		norm=${PREFIX}
 PGM_LIB_DEPENDS=		libpgm.so:net/openpgm
 PGM_CONFIGURE_WITH=		pgm
+PGM_CFLAGS=			-Drestrict=__restrict
 
 STATIC_CONFIGURE_OFF=		--disable-static
 

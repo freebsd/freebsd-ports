@@ -32,4 +32,9 @@ GLIB_SCHEMAS=	org.gnome.crypto.cache.gschema.xml
 
 SUB_FILES=	pkg-message
 
+.if !exists(/usr/bin/ssh)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ssh:security/openssh-portable
+RUN_DEPENDS+=	${LOCALBASE}/bin/ssh:security/openssh-portable
+.endif
+
 .include <bsd.port.mk>

@@ -16,5 +16,20 @@ See examples in %%ETCDIR%%/pkg_replace.conf.sample.
 If you want to use those features,
 edit "%%ETCDIR%%/pkg_replace.conf".
 EOM
+},
+{ type: upgrade
+  message: <<EOM
+To clean cache files in the PKG_REPLACE_DB_DIR,
+you should execute the following command.
+
+  pkg_replace --cleandb
+EOM
+},
+{ type: remove
+  message: <<EOM
+To really remove the pkg_replace port,
+please remove the the PKG_REPLACE_DB_DIR.
+Default: PKG_REPLACE_DB_DIR=/var/db/pkg_replace
+EOM
 }
 ]

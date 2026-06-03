@@ -1,0 +1,12 @@
+grizzly is a CLI for interacting with Bear notes via Bear's x-callback-url
+scheme.
+
+Environment variables:
+* GRIZZLY_TOKEN_FILE path to a file containing your Bear API token (one line)
+* GRIZZLY_CALLBACK_URL custom x-success/x-error callback URL (enables callbacks)
+* GRIZZLY_TIMEOUT timeout for callbacks when enabled (Go duration, e.g. 5s, 2m)
+
+Token usage:
+Some Bear actions require a token to return data. You can provide a token
+via --token-file, --token-stdin, GRIZZLY_TOKEN_FILE, or token_file in the
+config. Tokens should not be passed via flags.

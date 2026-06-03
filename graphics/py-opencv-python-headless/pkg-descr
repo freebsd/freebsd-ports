@@ -1,0 +1,5 @@
+opencv-python-headless is a wrapper package for OpenCV python bindings.
+
+OpenCV (Open Source Computer Vision Library) is a free, open-source library
+featuring over 2,500 algorithms for real-time computer vision, image processing,
+and machine learning

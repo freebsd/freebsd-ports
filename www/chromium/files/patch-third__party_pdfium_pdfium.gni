@@ -1,4 +1,4 @@
---- third_party/pdfium/pdfium.gni.orig	2024-02-23 21:04:38 UTC
+--- third_party/pdfium/pdfium.gni.orig	2026-04-09 06:05:42 UTC
 +++ third_party/pdfium/pdfium.gni
 @@ -42,7 +42,7 @@ declare_args() {
    # PDFium will use PartitionAlloc partitions to separate strings, scalars,
@@ -7,5 +7,5 @@
 -  pdf_use_partition_alloc = pdf_use_partition_alloc_override
 +  pdf_use_partition_alloc = pdf_use_partition_alloc_override && use_partition_alloc_as_malloc
  
-   # Build PDFium to use Skia (experimental) for all PDFium graphics.
-   # If enabled, coexists in build with AGG graphics and the default
+   # Build PDFium to use AGG (fully supported).
+   pdf_use_agg = true

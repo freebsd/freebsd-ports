@@ -1,8 +1,10 @@
 PORTNAME=	homepage
-DISTVERSION=	1.3.2
+DISTVERSION=	1.12.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/homepage
+DISTFILES=	${PORTNAME}-v${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Highly customizable homepage with service API integrations
@@ -38,6 +40,5 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.env ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.env
 	@${MKDIR} ${STAGEDIR}${HOMEPAGE_CONFIGDIR}
 	@${MKDIR} ${STAGEDIR}${HOMEPAGE_CONFIGDIR}/logs
-	@cd ${FILESDIR}/config && ${COPYTREE_SHARE} . ${STAGEDIR}${HOMEPAGE_CONFIGDIR}
 
 .include <bsd.port.mk>

@@ -13,6 +13,22 @@ Some features found on Windows, macOS and Linux are not implemented:
 - TCP fast open
 - `about:networking#networkid` (requires link state notification)
 
+## Cursors
+
+From Firefox 142 on, this port defaults to using the new (themed)
+cursor selection. On the upside, this makes Firefox respect the
+desktop environment's theme, on the downside this breaks compatibility
+with the legacy X cursor names. If you experience issues (i.e. the
+mouse cursor not changing to the pointer ("hand") when hovering over
+links), your desktop environment is most likely still set to the legacy
+default/builtin "theme". To remedy this, either
+- set about:config variable "widget.gtk.legacy-cursors.enabled" to "true"
+  to re-enable the legacy cursors, or
+- use the Xcursor framework to set a cursor theme (e.g. X resource
+  item Xcursor.theme), see Xcursor(3) for details. The Adwaita theme
+  will have been installed as a dependency of gtk3 and does work.
+The latter option is only available for X environments.
+
 ## Audio backend
 
 Currently used audio backend can be inspected on `about:support` page.

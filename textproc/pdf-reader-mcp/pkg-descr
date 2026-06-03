@@ -1,0 +1,4 @@
+pdf-reader-mcp is an MCP server providing tools to read PDF files.
+
+This server allows MCP clients to parse and extract text and images from PDF
+documents, enabling AI models to interact with PDF content efficiently.

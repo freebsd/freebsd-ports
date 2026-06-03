@@ -1,56 +1,61 @@
 PORTNAME=	pan
-PORTVERSION=	0.145
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.164
 CATEGORIES=	news gnome
-MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Threaded GTK newsreader based on Agent for Windows
-WWW=		https://pan.rebelbase.com/
+WWW=		https://gitlab.gnome.org/GNOME/pan/-/blob/master/README.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libenchant.so:textproc/enchant \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libgmime-2.6.so:mail/gmime26
+LIB_DEPENDS=	libgmime-3.0.so:mail/gmime30 \
+		libenchant-2.so:textproc/enchant2 \
+		libp11-kit.so:security/p11-kit
 
-USES=		compiler:c++11-lang desktop-file-utils gettext-tools:build \
-		gmake gnome iconv localbase pathfix pkgconfig tar:bzip2
-USE_CXXSTD=	c++14
-USE_GNOME=	cairo gdkpixbuf intlhack
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools:build \
+		gnome iconv pkgconfig tar:bzip2
+USE_GNOME=	gtk30
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	GNOME
 
-LDFLAGS+=	${ICONV_LIB}
+CMAKE_ON=	WANT_GMIME_CRYPTO
 
-OPTIONS_DEFINE=		GTKSPELL GNUTLS NLS
-OPTIONS_DEFAULT=	GTKSPELL GNUTLS GTK2
-OPTIONS_RADIO=		GTK
-OPTIONS_RADIO_GTK=	GTK2 GTK3
+OPTIONS_DEFINE=		DBUS DOCS GNOME_KEYRING GNUTLS GSPELL NLS \
+			NOTIFY WEBKITGTK
+OPTIONS_DEFAULT=	DBUS GNOME_KEYRING GNUTLS GSPELL NOTIFY
 OPTIONS_SUB=		yes
 
-GTKSPELL_DESC=		Spell checking support (gtk+2 only)
+DBUS_DESC=	DBus support
+GNOME_KEYRING_DESC=	Credential storage via libsecret
+GSPELL_DESC=	Spellcheck via GSpell
+NOTIFY_DESC=	Notification support
+WEBKITGTK_DESC=	WebKitGTK support (experimental, broken)
 
+DBUS_CMAKE_BOOL=	WANT_DBUS
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+
+DOCS_CMAKE_BOOL=	ENABLE_MANUAL
+DOCS_BUILD_DEPENDS=	itstool:textproc/itstool
+
+GNOME_KEYRING_CMAKE_BOOL=	WANT_GKR
+GNOME_KEYRING_LIB_DEPENDS=	libsecret-1.so:security/libsecret \
+				libgcr-base-3.so:security/gcr3
+
+GNUTLS_CMAKE_BOOL=	WANT_GNUTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_WITH=	gnutls
-GTK2_USE=		gnome=gtk20
-GTK3_PREVENTS=		GTKSPELL
-GTK3_USE=		gnome=gtk30
-GTK3_CONFIGURE_WITH=	gtk3
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
-GTKSPELL_CONFIGURE_WITH=gtkspell
-NLS_USES=	gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
 
-post-patch:
-	${REINPLACE_CMD} -e 's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e '98s|const std|std|' ${WRKSRC}/pan/general/string-view.h
+GSPELL_CMAKE_BOOL=	WANT_GSPELL
+GSPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
+
+NOTIFY_CMAKE_BOOL=	WANT_NOTIFY
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+
+WEBKITGTK_CMAKE_BOOL=	WANT_WEBKIT
+WEBKITGTK_LIB_DEPENDS=	libwebkitgtk-6.0.so:www/webkit2-gtk
 
 .include <bsd.port.mk>

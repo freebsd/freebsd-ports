@@ -1,0 +1,11 @@
+--- linphone-app/cmake_builder/linphone_package/CMakeLists.txt.orig	2025-11-12 12:55:13 UTC
++++ linphone-app/cmake_builder/linphone_package/CMakeLists.txt
+@@ -26,7 +26,7 @@ include("${CMAKE_CURRENT_SOURCE_DIR}/../../application
+ endif()
+ include("${CMAKE_CURRENT_SOURCE_DIR}/../../application_info.cmake")
+ 
+-find_package(Git)
++#find_package(Git)
+ #Policy set to allow link from other directory (cmake 3.13)
+ if (POLICY CMP0079)
+   cmake_policy(SET CMP0079 NEW)

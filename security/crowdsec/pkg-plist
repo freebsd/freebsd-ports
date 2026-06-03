@@ -8,6 +8,7 @@ libexec/crowdsec/upgrade-hub
 @sample %%ETCDIR%%/local_api_credentials.yaml.sample
 @sample %%ETCDIR%%/online_api_credentials.yaml.sample
 @sample %%ETCDIR%%/notifications/email.yaml.sample
+@sample %%ETCDIR%%/notifications/file.yaml.sample
 @sample %%ETCDIR%%/notifications/http.yaml.sample
 @sample %%ETCDIR%%/notifications/sentinel.yaml.sample
 @sample %%ETCDIR%%/notifications/slack.yaml.sample
@@ -44,6 +45,7 @@ libexec/crowdsec/upgrade-hub
 etc/cron.d/crowdsec
 @mode 0755
 lib/crowdsec/plugins/notification-email
+lib/crowdsec/plugins/notification-file
 lib/crowdsec/plugins/notification-http
 lib/crowdsec/plugins/notification-sentinel
 lib/crowdsec/plugins/notification-slack

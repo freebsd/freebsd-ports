@@ -1,6 +1,6 @@
 PORTNAME=	xNetHack
 DISTVERSIONPREFIX=	xnh
-DISTVERSION=	9.0
+DISTVERSION=	9.1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -19,7 +19,7 @@ qt_PKGNAMESUFFIX=	-qt
 
 BUILD_DEPENDS=	nroff:textproc/groff
 
-USES=		alias compiler:c11 gmake ncurses tar:tgz lua:54
+USES=		compiler:c11 gmake ncurses tar:tgz lua:54
 USE_GITHUB=	yes
 GH_ACCOUNT=	copperwater
 

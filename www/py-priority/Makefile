@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure-Python implementation of the HTTP/2 priority tree
-WWW=		https://github.com/python-hyper/priority
+WWW=		https://python-hyper.org/projects/priority/en/stable/ \
+		https://github.com/python-hyper/priority
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

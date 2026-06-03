@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
 CATEGORIES=	net
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Simple CLI for retrieving your public IP address
 WWW=		https://github.com/pcarrier/ident.me \
 		https://www.ident.me

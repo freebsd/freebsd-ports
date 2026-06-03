@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl
-USE_KDE=	config coreaddons i18n itemmodels \
+USE_KDE=	config coreaddons i18n itemmodels windowsystem \
 		ecm:build
 USE_QT=		base declarative
 

@@ -1,6 +1,5 @@
 PORTNAME=	pyacoustid
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +11,7 @@ WWW=		https://github.com/beetbox/pyacoustid
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}audioread>=0:audio/py-audioread@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}

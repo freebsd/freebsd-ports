@@ -1,19 +1,17 @@
 PORTNAME=	lfacme
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	security www
+MASTER_SITES=	https://www.le-fay.org/files/lfacme/
 
 MAINTAINER=	ivy@FreeBSD.org
 COMMENT=	Simple ACME client based on uacme
-WWW=		https://github.com/llfw/lfacme
+WWW=		https://www.le-fay.org/lfacme/
 
 LICENSE=	PD
 
 RUN_DEPENDS=	uacme:security/uacme
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	llfw
-GH_PROJECT=	lfacme
+USES=		tar:Z
 
 SUB_FILES=	pkg-message
 

@@ -1,5 +1,5 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.526
+DISTVERSION=	8.3.632
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
@@ -14,19 +14,22 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake gnome gl localbase:ldflags python:build shebangfix tar:tgz tk:tea xorg
+USES=		gl gmake gnome localbase:ldflags python:build shebangfix \
+		tar:tgz tk:tea xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo
 USE_XORG=	ice sm x11 xext xi xmu
 
-SHEBANG_FILES=	scripts/preproc.py tcltk/magic.sh.in tcltk/ext2sim.sh.in tcltk/ext2spice.sh.in
+SHEBANG_FILES=	scripts/preproc.py tcltk/ext2sim.sh.in tcltk/ext2spice.sh.in \
+		tcltk/magic.sh.in
 
-CONFIGURE_ARGS=	--with-opengl \
-		--enable-modular # --enable-modular should fix build on 15, when failures were due to missing symbols defined in *.sym but not in code
+CONFIGURE_ARGS=	--enable-modular \
+		--with-opengl # --enable-modular should fix build on 15, when failures were due to missing symbols defined in *.sym but not in code
 
 ALL_TARGET=	tcllibrary
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} # this is needed, see https://github.com/RTimothyEdwards/magic/issues/173#issuecomment-1200065429
+BINARY_ALIAS=	git=${FALSE} \
+		python3=${PYTHON_CMD} # this is needed, see https://github.com/RTimothyEdwards/magic/issues/173#issuecomment-1200065429
 
 DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
@@ -56,10 +59,12 @@ post-patch:
 		's|^#!.*|#!${WISH}|' ${WRKSRC}/tcltk/tkshell.tcl
 
 pre-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} database/database.h
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} database/database.h
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX}/lib/magic/tcl && ${STRIP_CMD} magicexec magicdnull tclmagic.so
+	@cd ${STAGEDIR}${PREFIX}/lib/magic/tcl && \
+		${STRIP_CMD} magicexec magicdnull tclmagic.so
 
 .include <bsd.port.post.mk>

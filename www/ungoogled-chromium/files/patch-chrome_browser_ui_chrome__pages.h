@@ -1,6 +1,6 @@
---- chrome/browser/ui/chrome_pages.h.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/ui/chrome_pages.h.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/ui/chrome_pages.h
-@@ -39,7 +39,7 @@ namespace signin {
+@@ -37,7 +37,7 @@ namespace signin {
  enum class ConsentLevel;
  }  // namespace signin
  
@@ -9,12 +9,12 @@
  namespace web_app {
  enum class AppSettingsPageEntryPoint;
  }  // namespace web_app
-@@ -174,7 +174,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
-                                   const std::string& category);
- #endif
+@@ -161,7 +161,7 @@ void ShowSharedTabGroupActivity(Profile* profile);
+ void ShowEnterpriseManagementPageInTabbedBrowser(
+     BrowserWindowInterface* browser);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Show chrome://app-settings/<app-id> page.
- void ShowWebAppSettings(Browser* browser,
+ void ShowWebAppSettings(BrowserWindowInterface* browser,
                          const std::string& app_id,

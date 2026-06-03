@@ -1,221 +1,189 @@
-PORTNAME?=		inn
-PORTVERSION?=		2.7.3
-PORTREVISION?=		0
-CATEGORIES=		news
-MASTER_SITES=		ISC
+PORTNAME?=	inn
+PORTVERSION?=	2.7.3
+PORTREVISION?=	3
+CATEGORIES=	news
+MASTER_SITES=	ISC
 MASTER_SITE_SUBDIR?=	${PORTNAME}
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 WWW=		https://www.eyrie.org/~eagle/software/inn/
 
+LICENSE=	GPLv2 ISCL
+LICENSE_COMB=	multi
+LICENSE_FILE_ISCL=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_RC_SUBR=	innd
-SUB_FILES=	pkg-install
-
 USES=		cpe gmake libtool perl5 uidfix
 CPE_VENDOR=	isc
+USE_RC_SUBR=	innd nnrpd
 
-CONFLICTS?=	inn-current
-
-OPTIONS_DEFINE=		BERKELEYDB BLACKLISTD GNUPG KERBEROS PYTHON SASL \
-			SQLITE KEYWORDS LARGE_FILES OPENSSL SETGID_INEWS \
-			TAGGED_HASH UUCP_RNEWS DOCS EXAMPLES
-OPTIONS_DEFAULT=	BERKELEYDB BLACKLISTD GNUPG PYTHON SQLITE KEYWORDS \
-			OPENSSL LARGE_FILES SETGID_INEWS UUCP_RNEWS
-OPTIONS_SUB=		yes
-
-KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
-PYTHON_DESC=		Enable support for embedded Python
-SASL_DESC=		Enable SASL (for imapfeed authentication)
-SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
-TAGGED_HASH_DESC=	Use tagged hash table for history
-LARGE_FILES_DESC=	Support for files larger than 2GB
-KEYWORDS_DESC=		Automatic keyword generation support
-BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
-BLACKLISTD_DESC=	Enable blacklistd support
-OPENSSL_DESC=		Enable OpenSSL (for NNTP over TLS/SSL support)
-GNUPG_DESC=		GnuPG support (for pgpverify control message)
-UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
-SETGID_INEWS_DESC=	Enable posting articles locally for all users
-
-BLACKLISTD_CONFIGURE_WITH=	blacklist
-
-.if ${BRANCH:U} == 2.8
-PLIST_SUB+=		SNAPSHOT=""
-.else
-PLIST_SUB+=		SNAPSHOT="@comment "
-.endif
-
+.ifnmake portclippy
 VARBASE?=	/var
+.endif
 
 .include "Makefile.layout"
 
-HAS_CONFIGURE=		yes
+GNU_CONFIGURE=		yes
+GNU_CONFIGURE_PREFIX=	${INN_NEWSBASE}
+# Point to base system mailwrapper to avoid configure failure in jails
+CONFIGURE_ARGS+=	--datarootdir=${INN_SHAREDIR} \
+			--sysconfdir=${INN_CONFDIR} \
+			--with-db-dir=${INN_DBDIR} \
+			--with-log-dir=${INN_LOGDIR} \
+			--with-perl \
+			--with-run-dir=${INN_RUNDIR} \
+			--with-sendmail=/usr/sbin/sendmail \
+			--with-spool-dir=${INN_NEWSSPOOL} \
+			--with-tmp-dir=${INN_TMPDIR}
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 CONFIGURE_ENV+=		ac_cv_prog_AWK="${AWK}"
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man		\
-			--prefix=${INN_NEWSBASE}		\
-			--with-spool-dir=${INN_NEWSSPOOL}	\
-			--with-log-dir=${INN_LOGDIR}		\
-			--with-tmp-dir=${INN_TMPDIR}		\
-			--sysconfdir=${INN_CONFDIR}		\
-			--with-run-dir=${INN_RUNDIR}		\
-			--with-db-dir=${INN_DBDIR}		\
-			--datarootdir=${INN_SHAREDIR}		\
-			--with-perl
 
-UUCP_RNEWS_RUN_DEPENDS=	uucp:net/freebsd-uucp
+CONFLICTS?=	inn-current
+
+SUB_FILES=	pkg-install
+SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
 
 INNLIB_LONG?=		9.0.2
 LIBVER_LONG?=		3.0.9
 LIBSTORAGEVER_LONG?=	3.1.3
-PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG} \
-			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG} \
-			LIBSTORAGEVER=${LIBSTORAGEVER_LONG:R:R} LIBSTORAGEVER_LONG=${LIBSTORAGEVER_LONG}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSQLITE}
-USES+=			sqlite
-CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
-PLIST_SUB+=		SQLITE=""
-
-TO_BE_STRIPPED+=	bin/ovsqlite-server
-CONFIG_FILES+=		ovsqlite.conf
-.else
-CONFIGURE_ARGS+=	--without-sqlite3
-PLIST_SUB+=		SQLITE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBERKELEYDB}
-USES+=			bdb
-CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE} \
-			--with-bdb-lib=${LOCALBASE}/lib \
-			--with-bdb-include=${BDB_INCLUDE_DIR}
-.endif
-
-.if ${PORT_OPTIONS:MKERBEROS}
-.    if exists(${LOCALBASE}/bin/krb5-config)
-LIB_DEPENDS+=		libgssapi_krb5.so:security/krb5
-CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
-.    else
-CONFIGURE_ARGS+=	--with-krb5=/usr
-.    endif
-CONFIGURE_ENV+=		ac_cv_search_krb5_parse_name="-lcrypt -lcrypto -lkrb5 -lasn1 -lroken -lhx509"
-CONFIGURE_ENV+=		ac_cv_func_krb5_init_ets=yes
-.else
-CONFIGURE_ARGS+=	--without-krb5
-.endif
-
-.if ${PORT_OPTIONS:MKEYWORDS}
-CONFIGURE_ARGS+=	--enable-keywords
-.endif
-
-.if ${PORT_OPTIONS:MLARGE_FILES}
-CONFIGURE_ARGS+=	--enable-largefiles
-.    if ${PORT_OPTIONS:MTAGGED_HASH}
-IGNORE=			cannot be compiled with both LARGE_FILES and TAGGED_HASH: please re-run make config
-.    endif
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=			python
-CONFIGURE_ARGS+=	--with-python
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
-LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
-.endif
-
-.if ${PORT_OPTIONS:MTAGGED_HASH}
-CONFIGURE_ARGS+=	--enable-tagged-hash
-DBZ_FILES=		dir pag
-PLIST_SUB+=		WITH_TAGGED_HASH=""
-PLIST_SUB+=		WITHOUT_TAGGED_HASH="@comment "
-.else
-DBZ_FILES=		dir hash index
-PLIST_SUB+=		WITH_TAGGED_HASH="@comment "
-PLIST_SUB+=		WITHOUT_TAGGED_HASH=""
-.endif
-SUB_LIST+=		DBZ_FILES="${DBZ_FILES}"
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USES+=		ssl
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.endif
-
-.if ${PORT_OPTIONS:MGNUPG}
-# Although pgpverify needs gpgv/gpgv2,
-# checking 'gpg' is the shortest way to check any version of GnuPG installed.
-BUILD_DEPENDS+=		gpg:security/gnupg
-RUN_DEPENDS+=		gpg:security/gnupg
-.endif
-
-.if ${PORT_OPTIONS:MSETGID_INEWS}
-PLIST_SUB+=		MODE_INEWS="2555"
-.else
-PLIST_SUB+=		MODE_INEWS=""
-.endif
-PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
-
-TO_BE_STRIPPED+=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
-	bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/auth/resolv/domain \
-	bin/auth/resolv/ident bin/batcher bin/buffchan bin/buffindexed_d \
-	bin/convdate bin/ctlinnd bin/cvtbatch bin/expire bin/expireover \
-	bin/fastrm bin/filechan bin/getlist bin/grephistory bin/imapfeed \
-	bin/inews bin/innbind bin/innconfval bin/innd bin/inndf bin/innfeed \
-	bin/innxbatch bin/innxmit bin/makedbz bin/makehistory bin/ninpaths \
-	bin/nnrpd bin/nntpget bin/ovdb_init bin/ovdb_monitor bin/ovdb_server \
-	bin/ovdb_stat bin/overchan bin/prunehistory bin/rnews \
-	bin/rnews.libexec/decode bin/rnews.libexec/encode bin/shlock \
-	bin/shrinkfile bin/sm bin/tdx-util bin/tinyleaf \
-	lib/libinn.so.${INNLIB_LONG} lib/libinnhist.so.${LIBVER_LONG} \
-	lib/libstorage.so.${LIBSTORAGEVER_LONG}
 
 CONFIG_FILES+=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
-	control.ctl.local cycbuff.conf distrib.pats distributions expire.ctl \
-	localgroups incoming.conf inn.conf innfeed.conf innreport.conf \
-	innshellvars.local innshellvars.pl.local innshellvars.tcl.local \
-	innwatch.ctl moderators news2mail.cf newsfeeds nocem.ctl nnrpd.track \
-	nntpsend.ctl ovdb.conf passwd.nntp readers.conf send-uucp.cf \
-	storage.conf subscriptions
+		control.ctl.local cycbuff.conf distrib.pats distributions \
+		expire.ctl inn-radius.conf inn-secrets.conf incoming.conf \
+		inn.conf innfeed.conf innreport.conf innshellvars.local \
+		innshellvars.pl.local innshellvars.tcl.local innwatch.ctl \
+		localgroups moderators news2mail.cf newsfeeds nocem.ctl \
+		nnrpd.track nntpsend.ctl ovdb.conf passwd.nntp readers.conf \
+		send-uucp.cf storage.conf subscriptions
 
-SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
-PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
+.if ${BRANCH:U} == 2.8
+PLIST_SUB+=	SNAPSHOT=""
+.else
+PLIST_SUB+=	SNAPSHOT="@comment "
+.endif
+PLIST_SUB+=	ETCFILES="${CONFIG_FILES}" \
+		INNLIB=${INNLIB_LONG:R:R} \
+		INNLIB_LONG=${INNLIB_LONG} \
+		LIBSTORAGEVER=${LIBSTORAGEVER_LONG:R:R} \
+		LIBSTORAGEVER_LONG=${LIBSTORAGEVER_LONG} \
+		LIBVER=${LIBVER_LONG:R:R} \
+		LIBVER_LONG=${LIBVER_LONG}
+PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
+
+OPTIONS_DEFINE=		BERKELEYDB BLOCKLISTD CANLOCK DOCS EXAMPLES GNUPG \
+			KERBEROS KEYWORDS LARGE_FILES OPENSSL PYTHON SASL \
+			SETGID_INEWS SQLITE TAGGED_HASH UUCP_RNEWS
+OPTIONS_DEFAULT=	BERKELEYDB BLOCKLISTD CANLOCK GNUPG KEYWORDS \
+			LARGE_FILES OPENSSL PYTHON SETGID_INEWS SQLITE \
+			UUCP_RNEWS
+OPTIONS_SUB=		yes
+
+BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
+BLOCKLISTD_DESC=	Enable blocklistd support
+CANLOCK_DESC=		Enable Cancel-Lock support via libcanlock
+GNUPG_DESC=		GnuPG support (for pgpverify control message)
+KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
+KEYWORDS_DESC=		Automatic keyword generation support
+LARGE_FILES_DESC=	Support for files larger than 2GB
+OPENSSL_DESC=		Enable OpenSSL (for NNTP over TLS/SSL support)
+PYTHON_DESC=		Enable support for embedded Python
+SASL_DESC=		Enable SASL (for imapfeed authentication)
+SETGID_INEWS_DESC=	Enable posting articles locally for all users
+SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
+TAGGED_HASH_DESC=	Use tagged hash table for history
+UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
+
+BERKELEYDB_USES=		bdb
+BERKELEYDB_CONFIGURE_ON=	--with-bdb-include=${BDB_INCLUDE_DIR} \
+				--with-bdb-lib=${LOCALBASE}/lib \
+				--with-bdb=${LOCALBASE}
+
+.if ${BRANCH:U} == 2.8
+BLOCKLISTD_CONFIGURE_WITH=	blocklist
+.else
+BLOCKLISTD_CONFIGURE_WITH=	blacklist
+.endif
+
+CANLOCK_LIB_DEPENDS=	libcanlock.so:news/libcanlock
+CANLOCK_CONFIGURE_ON=	--with-canlock=${LOCALBASE}
+CANLOCK_CONFIGURE_OFF=	--without-canlock
+
+# Although pgpverify needs gpgv/gpgv2,
+# checking 'gpg' is the shortest way to check any version of GnuPG installed.
+GNUPG_BUILD_DEPENDS=	gpg:security/gnupg
+GNUPG_RUN_DEPENDS=	gpg:security/gnupg
+
+KERBEROS_USES=		gssapi
+KERBEROS_CONFIGURE_ON=	--with-krb5=${GSSAPIBASEDIR}
+KERBEROS_CONFIGURE_OFF=	--without-krb5
+
+KEYWORDS_CONFIGURE_ENABLE=	keywords
+
+LARGE_FILES_PREVENTS=		TAGGED_HASH
+LARGE_FILES_PREVENTS_MSG=	cannot be compiled with both LARGE_FILES and \
+				TAGGED_HASH
+LARGE_FILES_CONFIGURE_ENABLE=	largefiles
+
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
+
+PYTHON_USES=		gettext-runtime python
+PYTHON_CONFIGURE_ON=	--with-python
+
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
+
+SETGID_INEWS_CONFIGURE_ENABLE=	setgid-inews
+SETGID_INEWS_PLIST_SUB=		MODE_INEWS="2555"
+SETGID_INEWS_PLIST_SUB_OFF=	MODE_INEWS=""
+
+SQLITE_USES=		sqlite
+SQLITE_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+SQLITE_CONFIGURE_OFF=	--without-sqlite3
+SQLITE_VARS=		CONFIG_FILES+=ovsqlite.conf
+
+TAGGED_HASH_CONFIGURE_ENABLE=	tagged-hash
+TAGGED_HASH_SUB_LIST=		DBZ_FILES="dir pag"
+TAGGED_HASH_SUB_LIST_OFF=	DBZ_FILES="dir hash index"
+TAGGED_HASH_PLIST_SUB=		WITH_TAGGED_HASH="" \
+				WITHOUT_TAGGED_HASH="@comment "
+TAGGED_HASH_PLIST_SUB_OFF=	WITH_TAGGED_HASH="@comment " \
+				WITHOUT_TAGGED_HASH=""
+
+UUCP_RNEWS_RUN_DEPENDS=		uucp:net/freebsd-uucp
+UUCP_RNEWS_CONFIGURE_ENABLE=	uucp-rnews
 
 .include <bsd.port.pre.mk>
 
-GID?=	${.MAKE.GID}
+GID?=		${.MAKE.GID}
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
 	                  ${WRKSRC}/site/Makefile
-	@${REINPLACE_CMD} -e '/^#pragma/d' ${WRKSRC}/*/*.c
 .if ${PORT_OPTIONS:MBERKELEYDB}
 	@${REINPLACE_CMD} -e 's!-ldb!-ldb-${BDB_VER}!' ${WRKSRC}/configure
 .endif
-	@${ECHO_CMD} '/^$$D$$(PATH_HISTORY)' >  ${WRKDIR}/ex.script
-	@${ECHO_CMD} '+'                     >> ${WRKDIR}/ex.script
-	@${ECHO_CMD} 'mark t'                >> ${WRKDIR}/ex.script
-	@${ECHO_CMD} '/^$$'                  >> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "'t, d"                 >> ${WRKDIR}/ex.script
-	@${ECHO_CMD} 'wq!'                   >> ${WRKDIR}/ex.script
-	@cd ${WRKDIR} && ex ${WRKSRC}/site/Makefile < ex.script > /dev/null
+.if ${BRANCH:U} == 2.7
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+	@${FIND} ${WRKSRC} -type f -exec ${SED} -i '' \
+		-e 's/BLACKLIST/BLOCKLIST/g' \
+		-e 's/Blacklist/Blocklist/g' \
+		-e 's/blacklist/blocklist/g' {} +
+.  endif
+.endif
 
 pre-install:
-#	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${STAGEDIR}${INN_DBDIR} \
 		${STAGEDIR}${EXAMPLESDIR} \
 		${STAGEDIR}${EXAMPLESDIR}/db
-	@${REINPLACE_CMD} -e '/^RUNASUSER	*=/s/news/${UID}/'	\
-		-e '/^RUNASGROUP	*=/s/news/${GID}/'	\
-		-e '/^RNEWSGROUP	*=/s/news/${GID}/'	\
+	@${REINPLACE_CMD} -e '/^RUNASUSER	*=/s/=.*/=	${UID}/'	\
+		-e '/^RUNASGROUP	*=/s/=.*/=	${GID}/'	\
+		-e '/^RNEWSGROUP	*=/s/=.*/=	${GID}/'	\
 		${WRKSRC}/Makefile.global
 
 post-build:
@@ -223,19 +191,31 @@ post-build:
 	    | ${XARGS} ${REINPLACE_CMD} -e 's/^pathhost:.*/pathhost:               host.example.com/'
 
 post-install:
-.for FILE in ${TO_BE_STRIPPED}
-	-${TEST} -f ${STAGEDIR}${INN_NEWSBASE}/${FILE} && \
-		${STRIP_CMD} ${STAGEDIR}${INN_NEWSBASE}/${FILE}
-.endfor
+	${FIND} ${STAGEDIR}${INN_NEWSBASE} -type f \
+	    \( -perm +111 -o -name '*.so.*' \) ! -name '*.a' \
+	    -exec ${STRIP_CMD} {} + 2>/dev/null || ${TRUE}
 	${MKDIR} ${STAGEDIR}${INN_NEWSSPOOL}
 	${MKDIR} ${STAGEDIR}${INN_CONFDIR}
 .for FILE in ${CONFIG_FILES}
 	${CP} -p ${STAGEDIR}${EXAMPLESDIR}/${FILE} ${STAGEDIR}${INN_CONFDIR}/${FILE}.sample
 .endfor
 	${MKDIR} ${STAGEDIR}${INN_DBDIR}
-.for FILE in active active.times newsgroups
+.for FILE in active active.times history newsgroups
 	${MV} ${STAGEDIR}${INN_DBDIR}/${FILE} \
 		${STAGEDIR}${INN_DBDIR}/${FILE}.sample
+.endfor
+	${TOUCH} ${STAGEDIR}${INN_DBDIR}/history.dir.sample
+.if ${PORT_OPTIONS:MTAGGED_HASH}
+	${TOUCH} ${STAGEDIR}${INN_DBDIR}/history.pag.sample
+.else
+	${TOUCH} ${STAGEDIR}${INN_DBDIR}/history.hash.sample
+	${TOUCH} ${STAGEDIR}${INN_DBDIR}/history.index.sample
+.endif
+.for FILE in filter_innd.pl filter_innd.py filter_nnrpd.pl nnrpd_access.pl \
+	nnrpd_access.py nnrpd_auth.pl nnrpd_auth.py nnrpd_dynamic.py \
+	startup_innd.pl
+	${MV} ${STAGEDIR}${INN_NEWSBASE}/bin/filter/${FILE} \
+		${STAGEDIR}${INN_NEWSBASE}/bin/filter/${FILE}.sample
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}

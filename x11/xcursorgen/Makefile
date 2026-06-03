@@ -1,9 +1,10 @@
 PORTNAME=	xcursorgen
 DISTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Create an X cursor file from a collection of PNG images
+COMMENT=	Create an X cursor theme from PNG images
 WWW=		https://gitlab.freedesktop.org/xorg/app/xcursorgen
 
 LICENSE=	MIT

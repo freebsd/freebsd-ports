@@ -1,6 +1,6 @@
 PORTNAME=	ncmpcpp
 DISTVERSION=	0.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	yamagi@yamagi.org
@@ -49,12 +49,6 @@ TAGLIB_CONFIGURE_WITH=		taglib
 VISUALIZER_LIB_DEPENDS=		libfftw3.so:math/fftw3
 VISUALIZER_CONFIGURE_ENABLE=	visualizer
 VISUALIZER_CONFIGURE_WITH=	fftw
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS}_${OSREL:R} == FreeBSD_13
-CONFIGURE_ENV=	ncursesw_CFLAGS="-L${NCURSESLIB}" ncursesw_LIBS="-lncursesw"
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${STAGEDIR}${PREFIX}/bin/

@@ -1,5 +1,5 @@
 PORTNAME=	pkg
-DISTVERSION=	2.2.99.1
+DISTVERSION=	2.7.99.2
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-devel
@@ -12,13 +12,14 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_TAGNAME=	3f6b36f19
+GH_TAGNAME=	ee453993f
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 HAS_CONFIGURE=	yes
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
-CONFIGURE_ARGS=	--prefix="${PREFIX}"
+CONFIGURE_ARGS=	--prefix="${PREFIX}" \
+		--mandir="${PREFIX}/share/man"
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
@@ -39,7 +40,7 @@ CONFIGURE_ARGS+=	--with-asan --with-ubsan
 .endif
 
 # TODO: activate in april 2021
-#.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
+#.if ${OPSYS} == FreeBSD
 #CONFIGURE_ARGS+=	--default-format=tzst
 #.endif
 
@@ -67,6 +68,7 @@ post-build:
 .endif
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/src/pkg.conf.sample ${STAGEDIR}${PREFIX}/etc/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS

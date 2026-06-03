@@ -1,0 +1,18 @@
+--- vendor/CMakeLists.txt	2024-08-29 19:46:57.000000000 +0200
++++ vendor/CMakeLists.txt	2026-03-21 14:09:16.768573000 +0100
+@@ -41,6 +41,15 @@
+ # 32-bit glibc platforms this is not the case by default.
+ add_compile_definitions(_FILE_OFFSET_BITS=64 _LARGEFILE64_SOURCE)
+ 
++# On FreeBSD, _XOPEN_SOURCE (used by some sub-targets) hides BSD extensions
++# like getprogname(). Ensure BSD visibility is preserved.
++# Also provide compat macros for 64-bit functions that don't exist on FreeBSD
++# (off_t is always 64-bit on FreeBSD).
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	add_compile_definitions(__BSD_VISIBLE=1)
++	add_compile_definitions(lseek64=lseek ftruncate64=ftruncate mmap64=mmap pread64=pread pwrite64=pwrite off64_t=off_t)
++endif()
++
+ set(android-vendored
+ 	avb
+ 	adb

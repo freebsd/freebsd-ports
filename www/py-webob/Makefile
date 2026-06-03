@@ -1,10 +1,8 @@
 PORTNAME=	webob
-PORTVERSION=	1.8.7
-PORTREVISION=	1
+PORTVERSION=	1.8.9
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	WebOb-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	WSGI request and response Python object
@@ -18,9 +16,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 
 USES=		python
 
+BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons-sphinx-themes>=0:textproc/py-pylons-sphinx-themes@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=1.7.5,1:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_VARS=	PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
@@ -28,14 +27,28 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 NO_ARCH=	yes
-USE_PYTHON=	distutils autoplist
+SUB_FILES=	pyproject.toml
+SUB_LIST=	PORTVERSION=${PORTVERSION}
+USE_PYTHON=	autoplist pep517
+
+pre-configure:
+	[ ! -e ${WRKSRC}/pyproject.toml ] && cp ${WRKDIR}/pyproject.toml ${WRKSRC}
+
+post-build-DOCS-on:
+	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -E ${WRKSRC}/docs ${WRKSRC}/build/sphinx/html
 
 post-extract-DOCS-on:
 	@(cd ${WRKSRC} && \
-	${LN} -s src/WebOb.egg-info .)
+	${LN} -s src/webob.egg-info .)
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC}/build/sphinx/html && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -name objectiv.inv")
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}legacy-cgi>=0:www/py-legacy-cgi@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

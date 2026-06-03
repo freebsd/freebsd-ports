@@ -1,6 +1,5 @@
 PORTNAME=	csvkit
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,10 +39,4 @@ NO_ARCH=	yes
 
 PYTEST_BROKEN_TESTS=	test_query_text test_decimal_format
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=   ${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

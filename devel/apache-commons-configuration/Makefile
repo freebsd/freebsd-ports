@@ -1,6 +1,6 @@
 PORTNAME=	commons-configuration
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
@@ -11,6 +11,9 @@ COMMENT=	Java package for the reading of configuration/preferences files
 WWW=		https://commons.apache.org/proper/commons-configuration/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	'The 1.x codebase no longer receives updates. Denial of service issues...', no maintainer, no users in the ports tree, https://commons.apache.org/proper/commons-configuration/\#Commons_Configuration_1.x_and_2.x
+EXPIRATION_DATE=	2026-07-26
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils \
 		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \

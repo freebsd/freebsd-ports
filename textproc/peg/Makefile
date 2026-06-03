@@ -12,6 +12,8 @@ LICENSE=	MIT
 
 USES=		gmake
 
+PORTSCOUT=	skipv:0.1.20
+
 PLIST_FILES=	bin/leg \
 		bin/peg \
 		share/man/man1/peg.1.gz

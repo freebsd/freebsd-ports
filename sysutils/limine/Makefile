@@ -1,10 +1,10 @@
 PORTNAME=	limine
-DISTVERSION=	9.5.0
+DISTVERSION=	12.3.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/Limine-Bootloader/Limine/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	mintsuki@protonmail.com
-COMMENT=	Modern, advanced, portable, multiprotocol bootloader and boot manager
+COMMENT=	Modern, secure, portable, multiprotocol bootloader and boot manager
 WWW=		https://limine-bootloader.org/
 
 LICENSE=	BSD2CLAUSE
@@ -23,12 +23,11 @@ MAKEFILE=	GNUmakefile
 
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	3RDPARTY.md CONFIG.md FAQ.md PROTOCOL.md USAGE.md
+PORTDOCS=	3RDPARTY.md CONFIG.md FAQ.md USAGE.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/GNUmakefile.in
-	@${REINPLACE_CMD} -e '/LICENSES/d' ${WRKSRC}/GNUmakefile.in
+	@${REINPLACE_CMD} -e '/COPYING/d; /LICENSES/d' ${WRKSRC}/GNUmakefile.in
 
 .include <bsd.port.mk>

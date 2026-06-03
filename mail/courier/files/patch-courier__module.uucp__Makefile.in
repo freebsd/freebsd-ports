@@ -1,0 +1,11 @@
+--- courier/module.uucp/Makefile.in.orig	2025-05-10 16:20:56.345335000 +0200
++++ courier/module.uucp/Makefile.in	2025-05-10 16:21:12.492588000 +0200
+@@ -1145,7 +1145,7 @@
+ 	chmod 755 $(DESTDIR)$(moduledir)
+ 	@test `id -u` = 0 || exit 0 ; cd $(DESTDIR)$(moduledir) || exit 1 ; chown @mailuser@ . ; chgrp @mailgroup@ .
+ 	rm -f $(DESTDIR)$(sbindir)/makeuucpneighbors ; \
+-		$(LN_S) `realpath --relative-to $(sbindir) -m $(datadir)/makeuucpneighbors` \
++		$(LN_S) $(datadir)/makeuucpneighbors \
+ 			$(DESTDIR)$(sbindir)/makeuucpneighbors
+ 
+ 	rm -f $(DESTDIR)$(man8dir)/makeuucpneighbors.8

@@ -1,0 +1,10 @@
+--- a/src/pthreads.c
++++ b/src/pthreads.c
+@@ -79,6 +79,6 @@
+ #define alloca _alloca
+ #elif !defined(alloca) && defined(__GNUC__)
+ #define alloca(s) __builtin_alloca(s)
+-#else
++#elif !defined(alloca)
+ #include <alloca.h>
+ #endif

@@ -1,4 +1,4 @@
---- base/base_paths_posix.cc.orig	2025-02-20 09:59:21 UTC
+--- base/base_paths_posix.cc.orig	2025-12-12 07:44:27 UTC
 +++ base/base_paths_posix.cc
 @@ -15,6 +15,7 @@
  #include <ostream>

@@ -1,0 +1,1 @@
+uv-build is a slimmed down version of uv containing only the build backend.

@@ -1,6 +1,6 @@
 PORTNAME=	libftdi
 PORTVERSION=	0.20
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -22,7 +22,7 @@ OPTIONS_DEFAULT=BOOST PYTHON
 OPTIONS_SUB=	yes
 
 BOOST_DESC=		C++ bindings (requires Boost)
-BOOST_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+BOOST_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 BOOST_CMAKE_BOOL=	FTDIPP
 BOOST_CXXFLAGS=		-I${LOCALBASE}/include
 

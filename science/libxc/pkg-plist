@@ -1,7 +1,7 @@
 bin/xc-info
 include/xc.h
+include/xc_f03_funcs_m.mod
 include/xc_f03_lib_m.mod
-include/xc_f90_lib_m.mod
 include/xc_funcs.h
 include/xc_funcs_removed.h
 include/xc_funcs_worker.h
@@ -13,11 +13,9 @@ lib/cmake/Libxc/LibxcTargets-C.cmake
 lib/cmake/Libxc/LibxcTargets-Fortran-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Libxc/LibxcTargets-Fortran.cmake
 lib/libxc.so
-lib/libxc.so.12
+lib/libxc.so.15
 lib/libxcf03.so
-lib/libxcf03.so.12
-lib/libxcf90.so
-lib/libxcf90.so.12
+lib/libxcf03.so.15
 %%PYTHON_SITELIBDIR%%/pylibxc/__init__.py
 %%PYTHON_SITELIBDIR%%/pylibxc/core.py
 %%PYTHON_SITELIBDIR%%/pylibxc/flags.py
@@ -28,4 +26,3 @@ lib/libxcf90.so.12
 %%PYTHON_SITELIBDIR%%/pylibxc/version.py
 libdata/pkgconfig/libxc.pc
 libdata/pkgconfig/libxcf03.pc
-libdata/pkgconfig/libxcf90.pc

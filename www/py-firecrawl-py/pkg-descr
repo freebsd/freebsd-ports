@@ -1,0 +1,5 @@
+Official Python SDK for the Firecrawl API.
+
+Firecrawl turns websites into LLM-ready data. This SDK exposes the crawl,
+scrape, search, extract, and map endpoints with both synchronous and
+asynchronous interfaces.

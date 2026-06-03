@@ -1,5 +1,5 @@
 PORTNAME=	par2cmdline
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -18,9 +18,6 @@ GH_ACCOUNT=	Parchive
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-turbo
-
-PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify \
-	share/man/man1/par2.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

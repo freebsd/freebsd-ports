@@ -1,6 +1,7 @@
 PORTNAME=	connect
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.61.0
+DISTVERSION=	4.90.3
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	redpanda-
 
@@ -30,19 +31,24 @@ ETCDIR=		${PREFIX}/etc/${PKGNAMEPREFIX}${PORTNAME}
 USERS=		benthos
 GROUPS=		benthos
 
-PLIST_FILES=	"@dir(,,755) %%ETCDIR%%" \
-		"@sample %%ETCDIR%%/config.yaml.sample" \
+PLIST_FILES=	"@dir(,,755) ${ETCDIR}" \
+		"@sample ${ETCDIR}/config.yaml.sample" \
 		bin/redpanda-connect
 
 OPTIONS_DEFINE=		ENTERPRISE
 ENTERPRISE_DESC=	Enable connectors under the RCL license
 
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MENTERPRISE}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-public_components_all_package.go
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if !${PORT_OPTIONS:MENTERPRISE}
-	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/remove-enterprise-connectors.patch
-.endif
+	@${CP} ${WRKSRC}/vendor/github.com/AthenZ/athenz/libs/go/sia/util/os_util_linux.go \
+		${WRKSRC}/vendor/github.com/AthenZ/athenz/libs/go/sia/util/os_util_freebsd.go
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

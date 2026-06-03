@@ -1,0 +1,19 @@
+Wasmtime is a standalone, open-source runtime for WebAssembly (Wasm), the
+WebAssembly System Interface (WASI), and the Component Model. Developed by the
+Bytecode Alliance, it is designed to run WebAssembly code outside of a web
+browser, either as a command-line utility or as a library embedded within
+larger applications.
+
+Core Features:
+* Performance: Built on the Cranelift optimizing code generator, Wasmtime
+  quickly generates high-quality machine code using either Just-In-Time (JIT)
+  or Ahead-Of-Time (AOT) compilation.
+* Security: It prioritizes correctness and security, leveraging Rust's safety
+  guarantees and undergoing continuous 24/7 fuzzing.
+* Standards Compliance: Wasmtime passes the official WebAssembly test suite
+  and implements the WebAssembly C API.
+* Configurability: While it uses sensible defaults, it allows fine-grained
+  control over resource consumption, such as CPU and memory limits.
+
+Related port: devel/libwasmtime. It is the same Wasmtime run-time built
+as a C/C++ library.

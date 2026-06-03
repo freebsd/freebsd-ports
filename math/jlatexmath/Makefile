@@ -1,5 +1,6 @@
 PORTNAME=	jlatexmath
 PORTVERSION=	1.0.7
+PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/scilab/forge/jlatexmath/${PORTVERSION}/:0 \
 		https://repo1.maven.org/maven2/org/scilab/forge/jlatexmath-fop/${PORTVERSION}/:1

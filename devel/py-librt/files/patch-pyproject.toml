@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-05-10 17:48:00 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0.3"]
++requires = ["setuptools >= 61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -20,7 +20,7 @@ version = "0.11.0"
+     {name = "Ivan Levkivskyi", email = "levkivskyi@gmail.com"},
+ ]
+ version = "0.11.0"
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+   "Development Status :: 3 - Alpha",
+   "Environment :: Console",

@@ -1,5 +1,6 @@
 PORTNAME=	SparseBitSet
 PORTVERSION=	1.3
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/zaxxer/${PORTNAME}/${PORTVERSION}/
 EXTRACT_SUFX=	.jar

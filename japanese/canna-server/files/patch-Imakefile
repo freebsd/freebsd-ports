@@ -1,6 +1,6 @@
---- Imakefile.orig	2004-05-20 00:39:22.000000000 +0900
-+++ Imakefile	2009-04-13 02:58:31.905200512 +0900
-@@ -121,9 +121,9 @@
+--- Imakefile.orig	2025-06-05 14:35:46 UTC
++++ Imakefile
+@@ -121,9 +121,9 @@ CANNAROOT = .
  	$(CANNAROOT)/confwrapper mkenv CFLAGS $(PURE_CFLAGS) >> $@
  
  CANNAROOT = .

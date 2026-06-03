@@ -1,8 +1,7 @@
 PORTNAME=	migemo.el
 PORTVERSION=	1.9.2
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	japanese elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Japanese incremental search tool for Emacs
@@ -18,7 +17,8 @@ GH_ACCOUNT=	emacs-jp
 GH_PROJECT=	migemo
 GH_TAGNAME=	e4744ef
 
-CONFLICTS=	ja-migemo-emacs
+CONFLICTS_INSTALL=	ja-migemo.el-emacs_*
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/migemo.el

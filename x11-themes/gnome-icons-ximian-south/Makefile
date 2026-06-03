@@ -6,7 +6,7 @@ PORTNAME=	ximian-south
 PORTVERSION=	1.3.6
 PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
+MASTER_SITES=	https://download.gnome.org/teams/art.gnome.org/archive/themes/icon/
 DISTNAME=	ICON-Ximian-South-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

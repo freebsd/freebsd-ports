@@ -1,0 +1,16 @@
+[
+{
+	message: <<EOD
+To enable modules for bash(1), ksh(1), or zsh(1):
+
+  . %%PREFIX%%/etc/profile.d/module.sh
+
+For csh(1) or tcsh(1):
+
+  source %%PREFIX%%/etc/profile.d/module.csh
+
+This step is not needed for sh(1).
+EOD,
+	type: install
+}
+]

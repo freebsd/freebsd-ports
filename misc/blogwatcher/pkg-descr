@@ -1,0 +1,11 @@
+BlogWatcher is a Go CLI tool to track blog articles, detect new posts,
+and manage read/unread status. Supports both RSS/Atom feeds and HTML scraping
+as fallback.
+
+Features:
+* Dual Source Support - Tries RSS feeds first, falls back to HTML scraping
+* Automatic Feed Discovery - Detects RSS/Atom URLs from blog homepages
+* Read/Unread Management - Track which articles you've read
+* Blog Filtering - View articles from specific blogs
+* Duplicate Prevention - Never tracks the same article twice
+* Colored CLI Output - User-friendly terminal interface

@@ -1,5 +1,6 @@
 sbin/battery-shutdown.sh
 sbin/desktop-installer
+sbin/desktop-installer-xlibre
 %%DATADIR%%/CDE/cde.desktop
 %%DATADIR%%/CDE/xinitrc
 %%DATADIR%%/CINNAMON/xinitrc

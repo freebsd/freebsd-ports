@@ -1,0 +1,37 @@
+--- build_files/cmake/macros.cmake.orig	2024-06-05 11:47:55 UTC
++++ build_files/cmake/macros.cmake
+@@ -546,7 +546,7 @@ macro(TEST_SSE_SUPPORT
+ 
+   # message(STATUS "Detecting SSE support")
+   if(CMAKE_COMPILER_IS_GNUCC OR (CMAKE_C_COMPILER_ID MATCHES "Clang"))
+-    set(${_sse42_flags} "-march=x86-64-v2")
++#    set(${_sse42_flags} "-march=x86-64-v2")
+   elseif(MSVC)
+     # msvc has no specific build flags for SSE42, but when using intrinsics it will
+     # generate the right instructions.
+--- intern/cycles/kernel/device/cpu/kernel.cpp.orig	2024-06-05 11:47:56 UTC
++++ intern/cycles/kernel/device/cpu/kernel.cpp
+@@ -10,9 +10,11 @@
+ #if defined(__x86_64__) || defined(_M_X64)
++/*
+ #  define __KERNEL_SSE__
+ #  define __KERNEL_SSE2__
+ #  define __KERNEL_SSE3__
+ #  define __KERNEL_SSSE3__
+ #  define __KERNEL_SSE42__
++*/
+ #endif
+ 
+ /* When building kernel for native machine detect kernel features from the flags
+--- intern/cycles/util/optimization.h.orig	2024-06-05 11:47:56 UTC
++++ intern/cycles/util/optimization.h
+@@ -26,7 +26,9 @@
+ #  elif defined(__x86_64__) || defined(_M_X64)
+ 
+ /* SSE4.2 is our minimum requirement for x86-64 CPUs, so auto enable */
++/*
+ #    define __KERNEL_SSE42__
++*/
+ /* no SSE4.2 kernel on x86-64, part of regular kernel */
+ #    ifdef WITH_KERNEL_AVX2
+ #      define WITH_CYCLES_OPTIMIZED_KERNEL_AVX2

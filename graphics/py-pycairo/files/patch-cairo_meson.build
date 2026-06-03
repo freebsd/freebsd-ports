@@ -1,0 +1,27 @@
+--- cairo/meson.build.orig	2025-11-11 19:01:50 UTC
++++ cairo/meson.build
+@@ -55,16 +55,15 @@ pyext = python.extension_module('_cairo', sources,
+   c_args: pyext_c_args + main_c_args,
+ )
+ 
+-if not for_wheel
+-  pkg = import('pkgconfig')
++pkg = import('pkgconfig')
+ 
+-  pkg.generate(
+-    name: 'py3cairo',
+-    description: 'Python 3 bindings for cairo',
+-    subdirs: 'pycairo',
+-    requires: ['cairo'],
+-  )
+-endif
++pkg.generate(
++  name: 'py3cairo',
++  description: 'Python 3 bindings for cairo',
++  subdirs: 'pycairo',
++  requires: ['cairo'],
++  install_dir: '{datadir}/libdata/pkgconfig',
++)
+ 
+ pycairo_dep = declare_dependency(
+   version: pycairo_version,

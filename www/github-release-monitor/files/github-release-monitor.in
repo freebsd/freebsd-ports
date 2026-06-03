@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: github_release_monitor
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Github Release Monitor in /etc/rc.conf
+#
+# github_release_monitor_enable (bool):        Enable Github Release Monitor.
+# github_release_monitor_log (str):            Log output.
+# github_release_monitor_runas (str):          User to run Github Release Monitor as.
+#
+
+. /etc/rc.subr
+
+name="github_release_monitor"
+desc="Self-hostable application to monitor GitHub repository releases"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${github_release_monitor_enable:="NO"}
+: ${github_release_monitor_env_file:="%%PREFIX%%/etc/github-release-monitor.env"}
+: ${github_release_monitor_log:="/var/log/github_release_monitor.log"}
+: ${github_release_monitor_runas:="%%USER%%"}
+
+github_release_monitor_chdir="%%HOMEDIR%%"
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/node"
+command="/usr/sbin/daemon"
+command_args="-u '${github_release_monitor_runas}' -p '${pidfile}' -t '${desc}' -o '${github_release_monitor_log}' '${procname}' server.js"
+
+run_rc_command "$1"

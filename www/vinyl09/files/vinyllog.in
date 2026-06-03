@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: vinyllog
+# REQUIRE: DAEMON vinyld
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable vinyllog:
+#
+# vinyllog_enable="YES"
+#
+# Configuration variables and their default values:
+#
+# vinyllog_pidfile - full path to the PID file.
+#	default: "/var/run/vinyllog.pid"
+#
+# vinyllog_file - full path to the log file.
+#	default: "/var/log/vinyl.log"
+#
+# vinyllog_flags - command line arguments.
+#	default: "-t off -P ${vinyllog_pidfile} -D -a -A -w ${vinyllog_file}"
+#
+# Add the following line to /etc/newsyslog.conf to rotate the log file
+# once a day:
+#
+# /var/log/vinyl.log vinyllog:vinyl 640 7 * @T00 JB /var/run/vinyllog.pid
+#
+# See vinyllog(1) for a detailed overview of command-line options.
+#
+
+. /etc/rc.subr
+
+name=vinyllog
+rcvar=vinyllog_enable
+
+load_rc_config ${name}
+: ${vinyllog_enable:=NO}
+: ${vinyllog_pidfile=/var/run/${name}.pid}
+: ${vinyllog_file=/var/log/vinyl.log}
+: ${vinyllog_flags="-t off -P ${vinyllog_pidfile} -D -a -A -w ${vinyllog_file}"}
+
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -u vinyllog ${procname} ${vinyllog_flags}"
+pidfile=${vinyllog_pidfile}
+start_precmd=precmd
+
+precmd()
+{
+        # vinyllog_flags gets applied too early if we don't do this.
+        rc_flags=""
+
+	if [ ! -e ${pidfile} ]; then
+		install -o vinyllog -g vinyl -m 644 /dev/null ${pidfile};
+	fi
+
+	if [ ! -e ${vinyllog_file} ]; then
+		install -o vinyllog -g vinyl -m 640 /dev/null ${vinyllog_file};
+	fi
+}
+
+run_rc_command "$1"

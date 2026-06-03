@@ -51,6 +51,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/awk.kak
 %%DATADIR%%/rc/filetype/c-family.kak
 %%DATADIR%%/rc/filetype/cabal.kak
+%%DATADIR%%/rc/filetype/capnp.kak
 %%DATADIR%%/rc/filetype/clojure.kak
 %%DATADIR%%/rc/filetype/cmake.kak
 %%DATADIR%%/rc/filetype/coffee.kak
@@ -94,7 +95,9 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/hare.kak
 %%DATADIR%%/rc/filetype/haskell.kak
 %%DATADIR%%/rc/filetype/hbs.kak
+%%DATADIR%%/rc/filetype/hjson.kak
 %%DATADIR%%/rc/filetype/html.kak
+%%DATADIR%%/rc/filetype/hyprlang.kak
 %%DATADIR%%/rc/filetype/i3.kak
 %%DATADIR%%/rc/filetype/ini.kak
 %%DATADIR%%/rc/filetype/janet.kak
@@ -102,10 +105,13 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/javascript.kak
 %%DATADIR%%/rc/filetype/jinja.kak
 %%DATADIR%%/rc/filetype/json.kak
+%%DATADIR%%/rc/filetype/json5.kak
 %%DATADIR%%/rc/filetype/julia.kak
 %%DATADIR%%/rc/filetype/just.kak
 %%DATADIR%%/rc/filetype/kakrc.kak
+%%DATADIR%%/rc/filetype/kdl.kak
 %%DATADIR%%/rc/filetype/kickstart.kak
+%%DATADIR%%/rc/filetype/kitty.kak
 %%DATADIR%%/rc/filetype/kotlin.kak
 %%DATADIR%%/rc/filetype/latex.kak
 %%DATADIR%%/rc/filetype/ledger.kak
@@ -138,6 +144,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/r.kak
 %%DATADIR%%/rc/filetype/ragel.kak
 %%DATADIR%%/rc/filetype/restructuredtext.kak
+%%DATADIR%%/rc/filetype/ron.kak
 %%DATADIR%%/rc/filetype/ruby.kak
 %%DATADIR%%/rc/filetype/rust.kak
 %%DATADIR%%/rc/filetype/sass.kak
@@ -146,7 +153,9 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/scss.kak
 %%DATADIR%%/rc/filetype/sh.kak
 %%DATADIR%%/rc/filetype/sml.kak
+%%DATADIR%%/rc/filetype/snakefile.kak
 %%DATADIR%%/rc/filetype/sql.kak
+%%DATADIR%%/rc/filetype/sshconfig.kak
 %%DATADIR%%/rc/filetype/svelte.kak
 %%DATADIR%%/rc/filetype/swift.kak
 %%DATADIR%%/rc/filetype/systemd.kak
@@ -167,6 +176,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/tools/autorestore.asciidoc
 %%DATADIR%%/rc/tools/autorestore.kak
 %%DATADIR%%/rc/tools/autowrap.kak
+%%DATADIR%%/rc/tools/blocking-editor-in-client
 %%DATADIR%%/rc/tools/clang.kak
 %%DATADIR%%/rc/tools/comment.kak
 %%DATADIR%%/rc/tools/ctags.kak
@@ -190,9 +200,11 @@ libexec/kak/kak
 %%DATADIR%%/rc/tools/spell.kak
 %%DATADIR%%/rc/windowing/appleterminal.kak
 %%DATADIR%%/rc/windowing/detection.kak
+%%DATADIR%%/rc/windowing/hyprland.kak
 %%DATADIR%%/rc/windowing/iterm.kak
 %%DATADIR%%/rc/windowing/kitty.kak
 %%DATADIR%%/rc/windowing/new-client.kak
+%%DATADIR%%/rc/windowing/niri.kak
 %%DATADIR%%/rc/windowing/repl/dtach.kak
 %%DATADIR%%/rc/windowing/repl/kitty.kak
 %%DATADIR%%/rc/windowing/repl/tmux.kak

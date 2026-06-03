@@ -1,0 +1,13 @@
+Bookokrat is terminal EPUB/PDF/DJVU reader focused on speed, smooth navigation,
+and Vim-style workflows.
+
+Features:
+
+  - EPUB, PDF, and DJVU support in one TUI app
+  - Split layout: library/TOC on the left, reader on the right
+  - Fast PDF/DJVU pipeline with Kitty SHM image transfer in supported terminals
+  - Search, bookmarks, jump list history, reading stats
+  - Inline comments/annotations with persistent storage and Markdown export
+  - Image rendering, link handling, and external viewer handoff
+  - Theme selection, adjustable margins, zen mode
+  - Vim-style keybindings and normal mode

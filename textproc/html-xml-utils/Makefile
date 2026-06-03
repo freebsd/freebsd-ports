@@ -5,7 +5,7 @@ MASTER_SITES=	https://www.w3.org/Tools/HTML-XML-utils/
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Utilities for manipulating HTML and XML files
-WWW=		https://www.w3.org/Status.html#HTML-XML-utils
+WWW=		https://www.w3.org/Status.html\#HTML-XML-utils
 
 LICENSE=	W3C
 LICENSE_GROUPS=	FSF GPL OSI

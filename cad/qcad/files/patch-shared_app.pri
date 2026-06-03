@@ -6,7 +6,7 @@
      LIBS += \
 -        -lopennurbs \
 -        -lzlib
-+        -lopenNURBS \
++        -lOpenNURBS \
 +        -lz
  }
  

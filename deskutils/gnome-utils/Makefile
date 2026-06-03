@@ -1,5 +1,6 @@
 PORTNAME=	gnome-utils
 PORTVERSION=	42
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 

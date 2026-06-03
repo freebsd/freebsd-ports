@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-04-25 18:21:08 UTC
+--- CMakeLists.txt.orig	2025-08-30 03:55:56 UTC
 +++ CMakeLists.txt
-@@ -141,14 +141,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BIN
+@@ -172,14 +172,14 @@ if (SURELOG_WITH_PYTHON)
  
  # Python
  if (SURELOG_WITH_PYTHON)
@@ -17,12 +17,12 @@
    message(STATUS "Python3_EXECUTABLE = ${Python3_EXECUTABLE}")
  endif()
  
-@@ -231,7 +231,7 @@ add_custom_command(
-           ${PROJECT_SOURCE_DIR}/src/Cache/preproc.fbs)
+@@ -278,7 +278,7 @@ add_custom_command(
+ )
  
  # Java
 -find_package(Java 11 REQUIRED COMPONENTS Runtime)
 +find_package(Java ${FREEBSD_JAVA_VERSION} REQUIRED COMPONENTS Runtime)
  message(STATUS "Java_JAVA_EXECUTABLE = ${Java_JAVA_EXECUTABLE}")
  
- add_custom_target(GenerateParser DEPENDS
+ set(surelog_grammars

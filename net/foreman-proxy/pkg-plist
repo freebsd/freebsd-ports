@@ -66,6 +66,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/error.rb
 %%DATADIR%%/lib/proxy/file_lock.rb
 %%DATADIR%%/lib/proxy/helpers.rb
+%%DATADIR%%/lib/proxy/hsts_middleware.rb
 %%DATADIR%%/lib/proxy/http_download.rb
 %%DATADIR%%/lib/proxy/kerberos.rb
 %%DATADIR%%/lib/proxy/log.rb

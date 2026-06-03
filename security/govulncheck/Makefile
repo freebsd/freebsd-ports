@@ -1,7 +1,7 @@
 PORTNAME=	govulncheck
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.4
-PORTREVISION=	2
+DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	einar@isnic.is
@@ -32,7 +32,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%GO_CMD%%|${GO_CMD}|g' ${WRKSRC}/vendor/golang.org/x/tools/go/packages/packagestest/export.go
 	@${REINPLACE_CMD} -e 's|%%GO_CMD%%|${GO_CMD}|g' ${WRKSRC}/vendor/golang.org/x/tools/internal/gcimporter/exportdata.go
 	@${REINPLACE_CMD} -e 's|%%GO_CMD%%|${GO_CMD}|g' ${WRKSRC}/vendor/golang.org/x/tools/internal/gocommand/invoke.go
-	@${REINPLACE_CMD} -e 's|%%GO_CMD%%|${GO_CMD}|g' ${WRKSRC}/vendor/golang.org/x/tools/internal/goroot/importcfg.go
 	@${REINPLACE_CMD} -e 's|%%GO_CMD%%|${GO_CMD}|g' ${WRKSRC}/vendor/golang.org/x/tools/internal/testenv/testenv.go
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
-TIMESTAMP = 1752863677
-SHA256 (langchain_text_splitters-0.3.8.tar.gz) = 116d4b9f2a22dda357d0b79e30acf005c5518177971c66a9f1ab0edfdb0f912e
-SIZE (langchain_text_splitters-0.3.8.tar.gz) = 42128
+TIMESTAMP = 1780265652
+SHA256 (langchain_text_splitters-1.1.2.tar.gz) = 782a723db0a4746ac91e251c7c1d57fd23636e4f38ed733074e28d7a86f41627
+SIZE (langchain_text_splitters-1.1.2.tar.gz) = 293580

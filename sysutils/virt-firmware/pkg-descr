@@ -1,0 +1,4 @@
+This is a small collection of tools for edk2 firmware images.
+They support decoding and printing the content of firmware volumes.
+Variable stores (OVMF_VARS.fd) can be modified, for example
+to enroll secure boot certificates.

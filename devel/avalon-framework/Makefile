@@ -1,6 +1,6 @@
 PORTNAME=	avalon-framework
 PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/avalon/${PORTNAME}/binaries/
 

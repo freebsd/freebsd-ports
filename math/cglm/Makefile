@@ -1,6 +1,6 @@
 PORTNAME=	cglm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.6
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,5 +22,7 @@ pre-test:
 		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dbuild_tests=true"; \
 		${TOUCH} ${WRKDIR}/.meson_build_testing; \
 	fi
+
+# tests as of 0.9.6: 1/1 cglm.tests        OK              0.10s
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	xdebug
-DISTVERSION=	3.4.4
+DISTVERSION=	3.5.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -10,8 +10,6 @@ LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl,zend tar:tgz
-
-IGNORE_WITH_PHP=	85
 
 CONFIGURE_ARGS=	--enable-xdebug
 

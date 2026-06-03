@@ -119,7 +119,6 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 %%CAJA%%share/caja/extensions/libatril-properties-page.caja-extension
 %%DBUS%%share/dbus-1/services/org.mate.atril.Daemon.service
-share/glib-2.0/schemas/org.mate.Atril.gschema.xml
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html

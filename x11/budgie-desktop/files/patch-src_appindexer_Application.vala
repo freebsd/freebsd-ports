@@ -1,6 +1,6 @@
---- src/appindexer/Application.vala.orig	2023-01-29 15:27:27 UTC
+--- src/appindexer/Application.vala.orig	2025-09-07 12:35:19 UTC
 +++ src/appindexer/Application.vala
-@@ -41,8 +41,6 @@ namespace Budgie {
+@@ -42,8 +42,6 @@ namespace Budgie {
  		 */
  		public signal void launch_failed(string startup_notify_id);
  
@@ -9,7 +9,7 @@
  		/**
  		* Create a new application from a `DesktopAppInfo`.
  		*/
-@@ -71,7 +69,6 @@ namespace Budgie {
+@@ -73,7 +71,6 @@ namespace Budgie {
  		}
  
  		construct {
@@ -17,7 +17,7 @@
  		}
  
  		/**
-@@ -125,9 +122,6 @@ namespace Budgie {
+@@ -127,9 +124,6 @@ namespace Budgie {
  					context.launch_failed.connect((startup_id) => {
  						this.launch_failed(startup_id);
  					});

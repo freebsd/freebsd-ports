@@ -32,7 +32,7 @@ include/PoseLib/solvers/p2p1ll.h
 include/PoseLib/solvers/p2p2pl.h
 include/PoseLib/solvers/p3ll.h
 include/PoseLib/solvers/p3p.h
-include/PoseLib/solvers/p3p_ding.h
+include/PoseLib/solvers/p3p_lambdatwist.h
 include/PoseLib/solvers/p4pf.h
 include/PoseLib/solvers/p5lp_radial.h
 include/PoseLib/solvers/p6lp.h

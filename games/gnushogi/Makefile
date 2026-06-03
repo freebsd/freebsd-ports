@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	GNU version of Shogi
 WWW=		https://www.gnu.org/software/gnushogi/
 

@@ -1,28 +1,24 @@
 PORTNAME=	libxspf
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.2.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/libspiff/Sources/${PORTVERSION}
+MASTER_SITES=	SF/libspiff/Sources/${DISTVERSION}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	XSPF parsing library
 WWW=		https://libspiff.sourceforge.net/
 
-LIB_DEPENDS=	libexpat.so:textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		liburiparser.so:net/uriparser
 
-# We need 0.7.5, which uses pkg-config
-BUILD_DEPENDS=	uriparser>=0.7.5:net/uriparser
-RUN_DEPENDS=	uriparser>=0.7.5:net/uriparser
+LICENSE=	BSD3CLAUSE
+
+USES=		libtool localbase:ldflags pkgconfig tar:bzip2
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-expat=${LOCALBASE} --disable-test
 
-USES=		libtool pkgconfig tar:bzip2
-USE_LDCONFIG=	yes
-LIBS+=		-L${LOCALBASE}/lib -luriparser
-
-post-patch:
-	@${REINPLACE_CMD} 's|$$(libdir)/pkgconfig|$$(libdir)data/pkgconfig|' \
-	    ${WRKSRC}/Makefile.in
+CONFIGURE_ARGS=	--disable-static \
+		--disable-test \
+		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
 .include <bsd.port.mk>

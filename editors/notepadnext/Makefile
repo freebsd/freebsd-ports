@@ -1,6 +1,6 @@
 PORTNAME=	notepadnext
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12
+DISTVERSION=	0.14
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +10,12 @@ WWW=		https://github.com/dail8859/NotepadNext
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuchardet.so:textproc/uchardet
+LIB_DEPENDS=	libuchardet.so:textproc/uchardet \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		desktop-file-utils gl qmake qt:5 xorg
-USE_QT=		core gui network printsupport widgets buildtools:build linguisttools:build
+USES=		cmake desktop-file-utils gl localbase:ldflags qt:6 xorg
+USE_GL=		gl opengl
+USE_QT=		base 5compat tools:build
 USE_GL=		gl
 USE_XORG=	xcb
 
@@ -27,14 +29,20 @@ GH_TUPLE=	alex-spataru:QSimpleUpdater:3cc832c:alex_spataru_QSimpleUpdater/src/QS
 		githubuser0xFFFF:Qt-Advanced-Docking-System:df1fa27:githubuser0xFFFF_Qt_Advanced_Docking_System/src/ads \
 		itay-grudev:SingleApplication:8c48163:itay_grudev_SingleApplication/src/singleapplication
 
-QMAKE_SOURCE_PATH=	${WRKSRC}/src/NotepadNext.pro
-
-CXXFLAGS+=	-I${LOCALBASE}/include/uchardet
+CXXFLAGS+=	-I${LOCALBASE}/include/uchardet \
+		-I${WRKSRC}/src/ads/src \
+		-I${WRKSRC}/src/editorconfig-core-qt
 LDFLAGS+=	-luchardet
 
 PLIST_FILES=	bin/NotepadNext \
 		share/applications/NotepadNext.desktop \
 		share/icons/hicolor/scalable/apps/NotepadNext.svg \
 		share/icons/hicolor/scalable/mimetypes/NotepadNext.svg
+
+post-extract: # fix wrong handling of IPC keys in singleapplication.cpp
+	@${REINPLACE_CMD} \
+		-e "s/QSharedMemory( QNativeIpcKey( d->blockServerName ) );/QSharedMemory( QNativeIpcKey( d->blockServerName, QNativeIpcKey::legacyDefaultTypeForOs() ) );/" \
+		${WRKSRC}/src/singleapplication/singleapplication.cpp
+
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- src/abg-tools-utils.cc.orig	2021-03-07 00:11:55 UTC
+--- src/abg-tools-utils.cc.orig	2025-06-10 09:13:49 UTC
 +++ src/abg-tools-utils.cc
-@@ -1713,6 +1713,16 @@ struct malloced_char_star_deleter
+@@ -2143,6 +2143,16 @@ struct malloced_char_star_deleter
    {free(ptr);}
  };
  

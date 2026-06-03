@@ -1,0 +1,44 @@
+PORTNAME=	tsduck
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.44
+DISTVERSIONSUFFIX=	-4676
+CATEGORIES=	multimedia
+
+MAINTAINER=	thierry@lelegard.fr
+COMMENT=	Reference framework for MPEG transport streams
+WWW=		https://tsduck.io
+
+LICENSE=	BSD2CLAUSE
+
+BUILD_DEPENDS=	bash:shells/bash \
+		coreutils>0:sysutils/coreutils \
+		dos2unix:converters/unix2dos \
+		gnugrep>0:textproc/gnugrep \
+		gsed:textproc/gsed \
+		rubygem-asciidoctor-pdf>0:textproc/rubygem-asciidoctor-pdf \
+		rubygem-asciidoctor>0:textproc/rubygem-asciidoctor \
+		rubygem-rouge>0:textproc/rubygem-rouge \
+		str>0:devel/str
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcsclite.so:devel/pcsc-lite \
+		librist.so:multimedia/librist \
+		libsrt.so:www/srt
+
+USES=		dos2unix gmake java:build libedit python shebangfix ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	tsduck
+
+MAKE_ENV=	CXXFLAGS_EXTRA="-isystem ${LOCALBASE}/include" \
+		GPROF= \
+		LDFLAGS_EXTRA="-L${LOCALBASE}/lib" \
+		SYSROOT=${STAGEDIR}
+ALL_TARGET=	default
+TEST_TARGET=	test
+BINARY_ALIAS=	python=${PYTHON_CMD}
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+DOCS_VARS=	ALL_TARGET+=docs-html
+
+.include <bsd.port.mk>

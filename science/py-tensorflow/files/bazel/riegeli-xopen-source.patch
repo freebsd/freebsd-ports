@@ -1,0 +1,160 @@
+--- a/riegeli/bytes/cfile_handle.cc
++++ b/riegeli/bytes/cfile_handle.cc
+@@ -13,10 +13,12 @@
+ // limitations under the License.
+ 
+ // Make `O_CLOEXEC` available on Darwin.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 700
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 700
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 700
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 700
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ #include "riegeli/bytes/cfile_handle.h"
+ 
+
+--- a/riegeli/bytes/cfile_reader.cc
++++ b/riegeli/bytes/cfile_reader.cc
+@@ -15,10 +15,12 @@
+ #ifndef _WIN32
+ 
+ // Make `fseeko()` and `ftello()` available.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 500
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 500
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 500
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 500
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ // Make `off_t` 64-bit even on 32-bit systems.
+ #undef _FILE_OFFSET_BITS
+
+--- a/riegeli/bytes/cfile_writer.cc
++++ b/riegeli/bytes/cfile_writer.cc
+@@ -15,10 +15,12 @@
+ #ifndef _WIN32
+ 
+ // Make `fseeko()` and `ftello()` available.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 500
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 500
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 500
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 500
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ // Make `off_t` 64-bit even on 32-bit systems.
+ #undef _FILE_OFFSET_BITS
+
+--- a/riegeli/bytes/fd_handle.cc
++++ b/riegeli/bytes/fd_handle.cc
+@@ -13,10 +13,12 @@
+ // limitations under the License.
+ 
+ // Make `openat()` available.
+-#if !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200809
+-#undef _POSIX_C_SOURCE
+-#define _POSIX_C_SOURCE 200809
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200809
++#undef _POSIX_C_SOURCE
++#define _POSIX_C_SOURCE 200809
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ #include "riegeli/bytes/fd_handle.h"
+ 
+
+--- a/riegeli/bytes/fd_internal.cc
++++ b/riegeli/bytes/fd_internal.cc
+@@ -15,10 +15,12 @@
+ #ifndef _WIN32
+ 
+ // Make `readlink()` available, and make `O_CLOEXEC` available on Darwin.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 700
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 700
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 700
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 700
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ #endif
+ 
+
+--- a/riegeli/bytes/fd_mmap_reader.cc
++++ b/riegeli/bytes/fd_mmap_reader.cc
+@@ -15,10 +15,12 @@
+ #ifndef _WIN32
+ 
+ // Make `posix_fadvise()` available.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 600
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 600
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 600
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 600
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ // Make `off_t` 64-bit even on 32-bit systems.
+ #undef _FILE_OFFSET_BITS
+
+--- a/riegeli/bytes/fd_reader.cc
++++ b/riegeli/bytes/fd_reader.cc
+@@ -15,10 +15,12 @@
+ #ifndef _WIN32
+ 
+ // Make `pread()` and `posix_fadvise()` available.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 600
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 600
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 600
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 600
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ // Make `off_t` 64-bit even on 32-bit systems.
+ #undef _FILE_OFFSET_BITS
+
+--- a/riegeli/bytes/fd_writer.cc
++++ b/riegeli/bytes/fd_writer.cc
+@@ -15,10 +15,12 @@
+ #ifndef _WIN32
+ 
+ // Make `pwrite()` and `ftruncate()` available.
+-#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 500
+-#undef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 500
+-#endif
++#if !defined(__FreeBSD__)
++#if !defined(_XOPEN_SOURCE) || _XOPEN_SOURCE < 500
++#undef _XOPEN_SOURCE
++#define _XOPEN_SOURCE 500
++#endif
++#endif  /* !__FreeBSD__ */
+ 
+ // Make `off_t` 64-bit even on 32-bit systems.
+ #undef _FILE_OFFSET_BITS
+

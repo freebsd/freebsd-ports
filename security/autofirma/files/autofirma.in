@@ -1,0 +1,5 @@
+#!/bin/sh
+export AFIRMA_NSS_HOME_ENV=%%LOCALBASE%%/lib/
+JAVA_OPTS="-Djdk.tls.maxHandshakeMessageSize=65536 \
+		   -Des.gob.afirma.keystores.mozilla.UseEnvironmentVariables=true"
+%%JAVA%% ${JAVA_OPTS} -jar %%JAVAJARDIR%%/autofirma.jar "$@"

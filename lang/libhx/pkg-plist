@@ -17,8 +17,9 @@ include/libHX/proc.h
 include/libHX/scope.hpp
 include/libHX/socket.h
 include/libHX/string.h
+include/libHX/tie.hpp
 include/libHX/wx_helper.hpp
 lib/libHX.so
-lib/libHX.so.32
-lib/libHX.so.32.8.0
+lib/libHX.so.43
+lib/libHX.so.43.0.0
 libdata/pkgconfig/libHX.pc

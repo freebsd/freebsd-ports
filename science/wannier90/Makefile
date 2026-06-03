@@ -21,7 +21,7 @@ SHEBANG_FILES=	test-suite/run_tests test-suite/clean_tests	\
 		utility/k_mapper.py utility/gw2wannier90.py
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	FCOPTS="-fPIC -O3"
+MAKE_ARGS=	FCOPTS="-fPIC -O3" LDOPTS="-L${LOCALBASE}/lib"
 
 TEST_TARGET=	tests # most tests using --numprocs=4 fail: https://github.com/wannier-developers/wannier90/issues/351
 
@@ -32,7 +32,7 @@ PLIST_FILES=	bin/postw90.x \
 		lib/libwannier.so.0
 
 post-patch:
-	@${REINPLACE_CMD} 's|F90 = gfortran|&${GCC_DEFAULT}|' ${WRKSRC}/config/make.inc.gfort
+	@${REINPLACE_CMD} 's|F90 = gfortran|F90 = ${FC}|' ${WRKSRC}/config/make.inc.gfort
 	@${RLN} ${WRKSRC}/config/make.inc.gfort ${WRKSRC}/make.inc
 	@${REINPLACE_CMD} 's|make|${GMAKE}|' ${WRKSRC}/test-suite/run_tests
 

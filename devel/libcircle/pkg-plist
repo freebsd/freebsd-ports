@@ -1,0 +1,11 @@
+include/libcircle.h
+%%STATIC%%lib/libcircle.a
+%%SHARED%%lib/libcircle.so
+%%SHARED%%lib/libcircle.so.2
+%%SHARED%%lib/libcircle.so.2.1.1
+libdata/pkgconfig/libcircle.pc
+%%DOXYGEN%%share/man/man3/CIRCLE_handle.3.gz
+%%DOXYGEN%%share/man/man3/lib.c.3.gz
+%%DOXYGEN%%share/man/man3/queue.c.3.gz
+%%DOXYGEN%%share/man/man3/token.c.3.gz
+%%DOXYGEN%%share/man/man3/worker.c.3.gz

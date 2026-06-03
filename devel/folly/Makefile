@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.07.21.00
+DISTVERSION=	2026.06.01.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/facebook/folly
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	compilation fails: use of undeclared identifier 'clearenv'
+BROKEN_aarch64=	install fails: cannot find ... libfolly_external_aor_memcpy_aarch64-use.so, see https://github.com/facebook/folly/issues/2652
 BROKEN_i386=	error: use of undeclared identifier 'DCHECK': https://github.com/facebook/folly/issues/1168
 BROKEN_powerpc=		compilation fails: Big endian requires a redesigned table (assert in folly/detail/base64_detail/Base64SWAR.cpp:107)
 BROKEN_powerpc64=	compilation fails: Big endian requires a redesigned table (assert in folly/detail/base64_detail/Base64SWAR.cpp:107)

@@ -1,0 +1,11 @@
+doorkeeper-i18n provides internationalization (i18n) support for the Doorkeeper
+OAuth 2 provider gem. It includes translation files for multiple languages to
+localize Doorkeeper's user interface elements, error messages, and other text
+strings.
+
+Supported languages include: English, German, Spanish, French, Italian,
+Portuguese, Japanese, Chinese (Simplified and Traditional), Russian, Dutch,
+Swedish, Polish, and many others.
+
+This gem is designed to work seamlessly with Ruby on Rails applications that
+use Doorkeeper for OAuth 2 authentication and authorization.

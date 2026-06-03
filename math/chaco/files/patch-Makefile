@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Oct  2 12:23:22 1997
-+++ Makefile	Mon May  1 22:19:06 2006
-@@ -1,11 +1,13 @@
+--- Makefile.orig	1997-10-02 17:23:22 UTC
++++ Makefile
+@@ -1,11 +1,13 @@ DEST=		${DEST_DIR}/chaco
  DEST_DIR = 	../exec
  DEST=		${DEST_DIR}/chaco
 -CC = 		gcc
@@ -18,7 +18,7 @@
  		submain/balance.c submain/divide.c submain/submain.c \
  		input/input_assign.c \
  		input/check_input.c input/input.c input/input_geom.c \
-@@ -87,11 +89,20 @@
+@@ -87,11 +89,20 @@ FILES.c=	main/user_params.c main/interface.c main/main
  		util/update.c  util/vecout.c util/vecran.c \
                  util/vecscale.c 
  
@@ -27,9 +27,9 @@
  FILES.o=	$(FILES.c:.c=.o) 
  
 +libFILES.o=	$(libFILES.c:.c=.o)
-+
-+all: ${DEST} ${DEST_DIR}/libchaco.a
  
++all: ${DEST} ${DEST_DIR}/libchaco.a
++
  ${DEST}:	${FILES.o} Makefile
  		${CC} ${OFLAGS} ${FILES.o} -lm -o ${DEST}
 +

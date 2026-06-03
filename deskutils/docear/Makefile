@@ -1,6 +1,6 @@
 PORTNAME=	docear
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	3
 _suffix=	_stable
 CATEGORIES=	deskutils education java
 MASTER_SITES=	http://docear.org/downloads/${DISTVERSION}${_suffix}/ \

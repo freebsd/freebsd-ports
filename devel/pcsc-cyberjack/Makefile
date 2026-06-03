@@ -1,7 +1,7 @@
 PORTNAME=	pcsc-cyberjack
-DISTVERSION=	3.99.5final.SP16
+DISTVERSION=	3.99.5final.SP17
 CATEGORIES=	devel security
-MASTER_SITES=	https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP16/
+MASTER_SITES=	https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP17/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Reiner SCT cyberJack card reader PCSC driver

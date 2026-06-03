@@ -1,6 +1,6 @@
---- src/crispy/read_selector.h.orig	2025-06-02 12:31:49 UTC
+--- src/crispy/read_selector.h.orig	2026-01-06 17:41:07 UTC
 +++ src/crispy/read_selector.h
-@@ -108,7 +108,7 @@ class posix_read_selector
+@@ -107,7 +107,7 @@ class posix_read_selector
          if (timeout.has_value())
          {
              tv = std::make_unique<timeval>(

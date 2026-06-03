@@ -1,0 +1,11 @@
+--- himitsu_gtk/meson.build.orig	2026-04-12 20:41:44 UTC
++++ himitsu_gtk/meson.build
+@@ -12,7 +12,7 @@ conf = configuration_data()
+ python = import('python')
+ 
+ conf = configuration_data()
+-conf.set('PYTHON', python.find_installation('python3').path())
++conf.set('PYTHON', '%%PYTHON_CMD%%')
+ conf.set('VERSION', meson.project_version())
+ conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
+ conf.set('pkgdatadir', pkgdatadir)

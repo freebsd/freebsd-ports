@@ -1,11 +1,11 @@
 PORTNAME=	afew
 DISTVERSION=	3.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Initial tagging script for Notmuch mail
 WWW=		https://github.com/afewmail/afew
 

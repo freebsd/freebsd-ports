@@ -1,22 +1,16 @@
---- third_party/perfetto/src/base/unix_socket.cc.orig	2025-06-19 07:37:57 UTC
+--- third_party/perfetto/src/base/unix_socket.cc.orig	2026-05-11 13:57:04 UTC
 +++ third_party/perfetto/src/base/unix_socket.cc
-@@ -45,7 +45,7 @@
- #include <unistd.h>
- #endif
- 
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
-+#if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) || defined(__FreeBSD__)
- #include <sys/ucred.h>
- #endif
- 
-@@ -1031,9 +1031,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
-   int res = getpeereid(fd, &peer_uid_, nullptr);
+@@ -1073,9 +1073,15 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+   ignore_result(peer_gid);
    PERFETTO_CHECK(res == 0);
    // There is no pid when obtaining peer credentials for QNX
 -#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#elif !defined(__FreeBSD__) && PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
-+#if PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
+-    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
++#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++    PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD) || \
++    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
++#if PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
 +  struct sockpeercred user_cred;
 +#else
    struct ucred user_cred;

@@ -1,2 +1,3 @@
-SHA256 (io-like-0.3.0.20130301.tar.gz) = aa83c964b18be21fa51d4ae04d1284e4751babb9827022f2fa486830fa5fd5ce
-SIZE (io-like-0.3.0.20130301.tar.gz) = 81450
+TIMESTAMP = 1767157787
+SHA256 (rubygem/io-like-0.4.0.gem) = 808994312907b3d59c548e75215183ccd950e63101ad08800c4df4188a2a0211
+SIZE (rubygem/io-like-0.4.0.gem) = 37376

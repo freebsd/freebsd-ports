@@ -1,5 +1,6 @@
 PORTNAME=	pgloader
 PORTVERSION=	3.6.9
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 MASTER_SITES=	https://beta.quicklisp.org/archive/alexandria/2023-10-21/:alexandria \
@@ -241,6 +242,10 @@ post-extract:
 	${RLN} ${WRKDIR}/uuid-20200715-git ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/yason-20230214-git ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/zs3-1.3.3 ${WRKSRC}/${MY_QL_SW}
+
+post-patch:
+	@${REINPLACE_CMD} "s|(if reader-fn|(if (and reader-fn (not (eql reader-fn 0)))|" \
+		${WRKDIR}/named-readtables-20231021-git/src/cruft.lisp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/pgloader ${STAGEDIR}${PREFIX}/bin/pgloader

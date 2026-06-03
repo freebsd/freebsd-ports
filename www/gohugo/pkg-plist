@@ -32,7 +32,6 @@ bin/hugo
 %%MANPAGES%%share/man/man1/hugo-mod-vendor.1.gz
 %%MANPAGES%%share/man/man1/hugo-mod-verify.1.gz
 %%MANPAGES%%share/man/man1/hugo-mod.1.gz
-%%MANPAGES%%share/man/man1/hugo-new-site.1.gz
 %%MANPAGES%%share/man/man1/hugo-new-theme.1.gz
 %%MANPAGES%%share/man/man1/hugo-new.1.gz
 %%MANPAGES%%share/man/man1/hugo-server.1.gz

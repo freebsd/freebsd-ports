@@ -2,7 +2,7 @@
 +++ setup.py
 @@ -21,7 +21,7 @@ setup_kwargs = {
      'package_data': package_data,
-     'python_requires': '>=3.7,<4.0',
+     'python_requires': '>=3.9',
  }
 -from build import *
 +from build_cython import *

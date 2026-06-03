@@ -1,5 +1,5 @@
-lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
-lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
+share/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
+share/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
 %%DATADIR%%/appmenu.xml
 %%DATADIR%%/blur.xml
 %%DATADIR%%/contrast.xml

@@ -1,31 +1,31 @@
 PORTNAME=	mew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.10
+DISTVERSION=	6.11
 DISTVERSIONSUFFIX=
 CATEGORIES=	mail elisp
-PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	t.masub@gmail.com
 COMMENT=	Messaging in the Emacs World for emacs (Development Version)
 WWW=		https://www.Mew.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		emacs
+USES=		emacs:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	kazu-yamamoto
 GH_PROJECT=	Mew
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mew \
-		--with-etcdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mew/etc
+CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew \
+		--with-etcdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew/etc
 
 # target name for make build and install
 ALL_TARGET=	all info jinfo
 INSTALL_TARGET=	install install-jinfo
 
-CONFLICTS_INSTALL=	mew mew-devel-emacs_* mew-emacs_* # bin/cmew bin/incm
+CONFLICTS_INSTALL=	mew mew-devel-emacs_*
 
 SUB_FILES=	pkg-message
 

@@ -1,0 +1,38 @@
+--- Makefile.in.orig	2025-03-28 08:56:00 UTC
++++ Makefile.in
+@@ -1,5 +1,5 @@
+ CC = @CC@
+-CFLAGS = @CFLAGS@ @AFS_INCLUDES@ @TIRPC_CFLAGS@ -D_GNU_SOURCE -I.
++CFLAGS = @CFLAGS@ @AFS_INCLUDES@ -D_GNU_SOURCE -I.
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ VERSION = @PACKAGE_VERSION@
+@@ -12,7 +12,7 @@
+        md5.o mount.o nfs.o password.o readdir.o user.o xdr.o winsupport.o
+ CONFOBJ = Config/lib.a
+ EXTRAOBJ = @EXTRAOBJ@
+-LDFLAGS = @LDFLAGS@ @LIBS@ @AFS_LIBS@ @TIRPC_LIBS@
++LDFLAGS = @LDFLAGS@ @LIBS@ @AFS_LIBS@
+ EXEEXT = @EXEEXT@
+ 
+ srcdir = @srcdir@
+@@ -29,17 +29,16 @@
+ 
+ VPATH = $(srcdir)
+ 
+-.PHONY: FORCE
+ 
+ all: unfsd$(EXEEXT)
+ 
+ unfsd$(EXEEXT): $(OBJS) $(CONFOBJ) $(EXTRAOBJ)
+ 	$(CC) -o $@ $(OBJS) $(CONFOBJ) $(EXTRAOBJ) $(LDFLAGS)
+ 
+-$(CONFOBJ): FORCE
++$(CONFOBJ):
+ 	$(MAKE) -C $(@D)
+ 
+-$(EXTRAOBJ): FORCE
++$(EXTRAOBJ):
+ 	$(MAKE) -C $(@D)
+ 
+ install:

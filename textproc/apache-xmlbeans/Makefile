@@ -1,6 +1,6 @@
 PORTNAME=	xmlbeans
 DISTVERSION=	5.3.0 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/poi/xmlbeans/release/bin/
 PKGNAMEPREFIX=	apache-

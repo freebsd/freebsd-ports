@@ -1,0 +1,13 @@
+# github.com/dustin/go-humanize v1.0.1
+## explicit; go 1.16
+github.com/dustin/go-humanize
+# github.com/go-resty/resty/v2 v2.17.2
+## explicit; go 1.23.0
+github.com/go-resty/resty/v2
+github.com/go-resty/resty/v2/shellescape
+# github.com/hako/durafmt v0.0.0-20210608085754-5c1018a4e16b
+## explicit; go 1.11
+github.com/hako/durafmt
+# golang.org/x/net v0.53.0
+## explicit; go 1.25.0
+golang.org/x/net/publicsuffix

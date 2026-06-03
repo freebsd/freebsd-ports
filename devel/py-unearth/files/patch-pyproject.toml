@@ -1,6 +1,18 @@
---- pyproject.toml.orig	2024-06-04 10:06:37 UTC
+--- pyproject.toml.orig	2025-10-13 02:26:38 UTC
 +++ pyproject.toml
-@@ -62,7 +62,7 @@ test = [
+@@ -10,10 +10,7 @@ authors = [
+ authors = [
+     { name = "Frost Ming", email = "me@frostming.com" },
+ ]
+-license = "MIT"
+-license-files = [
+-    "LICENSE",
+-]
++license = { text = "MIT" }
+ readme = "README.md"
+ requires-python = ">=3.9"
+ dependencies = [
+@@ -64,7 +61,7 @@ test = [
      "flask>=2.1.2",
      "requests-wsgi-adapter>=0.4.1",
      "trustme>=0.9.0; python_version < \"3.13\"",

@@ -1,5 +1,6 @@
 PORTNAME=	quantities
-DISTVERSION=	0.16.2
+DISTVERSION=	0.16.4
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ WWW=		https://github.com/python-quantities/python-quantities
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/python-quantities/python-quantities/issues/224
@@ -20,6 +21,6 @@ TEST_WRKSRC=	${WRKSRC}/quantities/tests
 
 NO_ARCH=	yes
 
-# tests as of 0.16.2: 175 passed, 3 xfailed in 30.81s
+# tests as of 0.16.4: 179 passed, 3 xfailed in 3.23s
 
 .include <bsd.port.mk>

@@ -1,0 +1,37 @@
+PORTNAME=	xapian-core
+PORTVERSION=	1.4.31
+CATEGORIES=	databases
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
+		LOCAL/sunpoet
+PKGNAMESUFFIX=	14
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Probabilistic text search database engine
+WWW=		https://xapian.org/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		compiler:c++11-lang cpe libtool tar:xz
+
+CONFIGURE_ARGS=	ac_cv_func_snprintf=snprintf
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_CXXSTD=	c++11
+USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	xapian-core
+
+PORTSCOUT=	limit:^1\.4\.
+
+OPTIONS_DEFINE=	DOCS SSE2
+SSE2_DESC=	Use SSE2 for floating point
+
+SSE2_CONFIGURE_ENABLE=	sse
+
+CPE_VENDOR=	xapian
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/xapian-inspect ${STAGEDIR}${PREFIX}/bin/xapian-inspect
+
+.include <bsd.port.mk>

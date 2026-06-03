@@ -1,11 +1,11 @@
 PORTNAME=	ansible-compat
-PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTVERSION=	26.3.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	ansible_compat-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Ansible compatibility goodies
 WWW=		https://github.com/ansible-community/ansible-compat
 
@@ -26,17 +26,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-plus>0:devel/py-pytest-plus@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
+
+WRKSRC=		${WRKDIR}/ansible_compat-${PORTVERSION}
 
 TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

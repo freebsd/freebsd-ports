@@ -1,7 +1,4 @@
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/connection.el
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/connection.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/dictionary-init.el
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/dictionary.el
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/dictionary.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/link.el
-%%EMACS_VERSION_SITE_LISPDIR%%/dictionary/link.elc
+%%EMACS_SITE_LISPDIR%%/dictionary/connection.el
+%%EMACS_SITE_LISPDIR%%/dictionary/dictionary-init.el
+%%EMACS_SITE_LISPDIR%%/dictionary/dictionary.el
+%%EMACS_SITE_LISPDIR%%/dictionary/link.el

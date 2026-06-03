@@ -1,4 +1,6 @@
-This is the Microsoft Azure Batch AI Management Client Library.
-
-Azure Resource Manager (ARM) is the next generation of management APIs that
-replace the old Azure Service Management (ASM).
+This package has been deprecated and will no longer be maintained after
+10-31-2024. This package will only receive security fixes until 10-31-2024. To
+receive updates on new features and non-security bug fixes, upgrade to the
+replacement package, azureml-core. Refer to the migration guide
+(https://learn.microsoft.com/previous-versions/azure/batch-ai/how-to-migrate)
+for guidance on upgrading.

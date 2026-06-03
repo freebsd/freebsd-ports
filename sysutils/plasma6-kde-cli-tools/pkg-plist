@@ -269,11 +269,14 @@ share/locale/fy/LC_MESSAGES/kdesu.mo
 share/locale/fy/LC_MESSAGES/kioclient.mo
 share/locale/fy/LC_MESSAGES/kmimetypefinder.mo
 share/locale/fy/LC_MESSAGES/kstart.mo
+share/locale/ga/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/ga/LC_MESSAGES/kcm_filetypes.mo
+share/locale/ga/LC_MESSAGES/kde-inhibit.mo
 share/locale/ga/LC_MESSAGES/kdesu.mo
 share/locale/ga/LC_MESSAGES/kioclient.mo
 share/locale/ga/LC_MESSAGES/kmimetypefinder.mo
 share/locale/ga/LC_MESSAGES/kstart.mo
+share/locale/ga/LC_MESSAGES/plasma-open-settings.mo
 share/locale/gl/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/gl/LC_MESSAGES/kcm_filetypes.mo
 share/locale/gl/LC_MESSAGES/kde-inhibit.mo

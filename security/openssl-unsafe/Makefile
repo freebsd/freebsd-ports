@@ -31,7 +31,7 @@ CFLAGS+=	-fPIC -DPIC
 SUB_FILES=	pkg-message
 PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "mips64el"
+.if ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ARGS+=	enable-ec_nistp_64_gcc_128
 .endif
 

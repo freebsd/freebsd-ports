@@ -1,4 +1,4 @@
---- Makefile.in.orig	2025-03-25 14:38:49 UTC
+--- Makefile.in.orig	2026-03-24 16:49:54 UTC
 +++ Makefile.in
 @@ -99,7 +99,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
  	mf-nowin$(EXEEXT) mflua$(EXEEXT) mflua-nowin$(EXEEXT) \
@@ -33,3 +33,12 @@
  nodist_man_MANS = 
  TEST_EXTENSIONS = .pl .test
  #
+@@ -3724,7 +3724,7 @@ bin_links = $(am__append_5) $(am__append_14) $(am__app
+ 	$(am__append_63) $(am__append_70) $(am__append_78)
+ bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
+ 	$(am__append_24) $(am__append_33) $(am__append_41) \
+-	$(am__append_49) $(am__append_54) $(am__append_68) \
++	$(am__append_49) $(am__append_54) \
+ 	$(am__append_74) $(am__append_75) $(am__append_76) \
+ 	$(am__append_90) $(am__append_95) $(am__append_100) \
+ 	$(am__append_105)

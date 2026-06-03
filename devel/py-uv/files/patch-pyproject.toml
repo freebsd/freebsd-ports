@@ -1,0 +1,94 @@
+--- pyproject.toml.orig	2026-05-18 19:20:44 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["maturin>=1.0,<2.0"]
+-build-backend = "maturin"
++requires = ["setuptools>0", "wheel"]
++build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "uv"
+@@ -11,8 +11,6 @@ keywords = [
+ keywords = [
+   "uv", "requirements", "packaging"
+ ]
+-license="MIT OR Apache-2.0"
+-license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+   "Environment :: Console",
+@@ -42,59 +40,6 @@ Discord = "https://discord.gg/astral-sh"
+ Releases = "https://github.com/astral-sh/uv/releases"
+ Discord = "https://discord.gg/astral-sh"
+ 
+-[tool.maturin]
+-bindings = "bin"
+-editable-profile = "dev"
+-manifest-path = "crates/uv/Cargo.toml"
+-module-name = "uv"
+-python-source = "python"
+-strip = true
+-include = [
+-    { path = "rust-toolchain.toml", format = "sdist" },
+-    # this one isn't discovered by maturin because it's behind a feature flag
+-    { path = "crates/uv-performance-memory-allocator/**/*", format = "sdist" },
+-    { path = "crates/uv-trampoline-builder/trampolines/*", format = "sdist" },
+-    # https://github.com/rust-lang/cargo/issues/5933
+-    { path = "LICENSE-APACHE", format = "sdist" },
+-    { path = "LICENSE-MIT", format = "sdist" },
+-]
+-
+-[tool.rooster]
+-changelog-contributors = false  # We exclude contributors from the CHANGELOG file
+-major-labels = []  # We do not use the major version number yet
+-minor-labels = ["breaking"]
+-ignore-labels = ["internal", "ci", "testing"]
+-version_files = [
+-  "README.md",
+-  "pyproject.toml",
+-  "crates/uv/Cargo.toml",
+-  "crates/uv-version/Cargo.toml",
+-  "crates/uv-build/Cargo.toml",
+-  "crates/uv-build/pyproject.toml",
+-  { target = "crates/uv-static/src/env_vars.rs", replace = "next release" },
+-  "docs/getting-started/installation.md",
+-  "docs/guides/integration/docker.md",
+-  "docs/guides/integration/pre-commit.md",
+-  "docs/guides/integration/github.md",
+-  "docs/guides/integration/gitlab.md",
+-  "docs/guides/integration/aws-lambda.md",
+-  "docs/concepts/build-backend.md",
+-  "docs/concepts/projects/init.md",
+-  "docs/concepts/projects/workspaces.md",
+-  { target = "docs/reference/environment.md", replace = "next release" },
+-]
+-
+-[tool.rooster.section-labels]
+-"Breaking changes" = ["breaking"]
+-"Enhancements" = ["enhancement", "compatibility", "error messages"]
+-"Preview features" = ["preview"]
+-"Configuration" = ["configuration"]
+-"Performance" = ["performance"]
+-"Bug fixes" = ["bug"]
+-"Rust API" = ["rustlib"]
+-"Documentation" = ["documentation"]
+-"Other changes" = ["__unknown__"]
+-
+ [dependency-groups]
+ docs = [
+   "black>=23.10.0",
+@@ -119,6 +64,13 @@ cache-keys = [
+     { file = "crates/**/*.rs" },
+     { file = "crates/**/Cargo.toml" },
+ ]
++
++[tool.setuptools]
++packages = ["uv"]
++package-dir = {"" = "python"}
++
++[tool.setuptools.package-data]
++uv = ["py.typed"]
+ 
+ [tool.uv.dependency-groups]
+ docs = { requires-python = ">=3.12" }

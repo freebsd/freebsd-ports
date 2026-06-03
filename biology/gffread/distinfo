@@ -1,5 +1,5 @@
-TIMESTAMP = 1636511584
-SHA256 (gpertea-gffread-v0.12.7_GH0.tar.gz) = 6f3417090b3beb74f435bf5d462c87475b3c704a8a0d71821f6c1321c47dbbbe
-SIZE (gpertea-gffread-v0.12.7_GH0.tar.gz) = 403734
-SHA256 (gpertea-gclib-v0.12.7_GH0.tar.gz) = 9c74db64c4ee1fb93a6c02fa227258baafc337303f26ce3ba0cf37dfc1ba687f
-SIZE (gpertea-gclib-v0.12.7_GH0.tar.gz) = 259314
+TIMESTAMP = 1776080973
+SHA256 (gpertea-gffread-v0.12.9_GH0.tar.gz) = 92eb4a52fdd14c5fd3684041ef2d040c44d7414d076467a326eea2efa087a085
+SIZE (gpertea-gffread-v0.12.9_GH0.tar.gz) = 408710
+SHA256 (gpertea-gclib-v0.12.8_GH0.tar.gz) = a8dea4d273d6802f77f26a5394b1d66dfc1aba46a725c61e4c7399b756fb75e3
+SIZE (gpertea-gclib-v0.12.8_GH0.tar.gz) = 262545

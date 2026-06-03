@@ -1,5 +1,6 @@
 PORTNAME=	dns-crawler
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_F
 		${PYTHON_PKGNAMEPREFIX}idna>=2.10:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaml>=21.10.1:textproc/py-pyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyicu>=2.13.1:devel/py-pyicu@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=23.1.1,1:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>=23.1.1,1:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-magic>=0.4.27:devel/py-python-magic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=4.5.4:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.23.0:www/py-requests@${PY_FLAVOR} \

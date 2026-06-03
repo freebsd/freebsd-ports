@@ -1,11 +1,10 @@
 [
 { type: install
   message: <<EOM
-To use this port, write below to your ~/.emacs:
+To use this port, add the following to your Emacs startup configuration:
 
   ;(setq howm-menu-lang 'ja)
   (global-set-key "\C-c,," 'howm-menu)
-  (autoload 'howm-menu "howm-mode" "Hitori Otegaru Wiki Modoki" t)
 EOM
 }
 ]

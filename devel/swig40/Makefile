@@ -11,6 +11,9 @@ WWW=		https://www.swig.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
+DEPRECATED=	Outdated. Use devel/swig instead
+EXPIRATION_DATE=2026-06-30
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		lua:build

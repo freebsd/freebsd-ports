@@ -1,7 +1,8 @@
 PORTNAME=	nextcloud
-PORTVERSION=	31.0.6
+PORTVERSION=	33.0.4
 CATEGORIES=	www
-MASTER_SITES=	https://download.nextcloud.com/server/releases/
+MASTER_SITES=	https://github.com/nextcloud-releases/server/releases/download/v${PORTVERSION}/ \
+		https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -71,7 +72,6 @@ post-patch:
 		${WRKSRC}/config/config.documented.php
 	@${RM} ${WRKSRC}/config/config.documented.php.* \
 		 ${WRKSRC}/updater/updater.phar
-	@${RMDIR} ${WRKSRC}/apps/suspicious_login/vendor/amphp/*/docs/.shared
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
 
 do-install:

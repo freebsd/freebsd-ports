@@ -1,0 +1,23 @@
+--- a/python/private/autodetecting_toolchain.bzl
++++ b/python/private/autodetecting_toolchain.bzl
+@@ -34,7 +34,7 @@
+     py_runtime(
+         name = "_autodetecting_py3_runtime",
+         interpreter = "//python/private:autodetecting_toolchain_interpreter.sh",
+         python_version = "PY3",
+-        stub_shebang = "#!/usr/bin/env python3",
++        stub_shebang = "#!%%PYTHON_CMD%%",
+         visibility = ["//visibility:private"],
+     )
+
+--- a/python/private/common/py_executable_bazel.bzl
++++ b/python/private/common/py_executable_bazel.bzl
+@@ -535,7 +535,7 @@
+             runtime_details = runtime_details,
+             is_for_zip = True,
+         )
+     else:
+-        ctx.actions.write(prelude, "#!/usr/bin/env python3\n")
++        ctx.actions.write(prelude, "#!%%PYTHON_CMD%%\n")
+
+     ctx.actions.run_shell(

@@ -1,5 +1,5 @@
 PORTNAME=	libvalkey
-DISTVERSION=	0.1.0
+DISTVERSION=	0.5.0
 CATEGORIES=	databases
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -20,14 +20,15 @@ ALL_TARGET=	dynamic
 
 OPTIONS_DEFINE=		TLS
 OPTIONS_DEFAULT=	TLS
+OPTIONS_SUB=		yes
 
 TLS_USES=	ssl
 TLS_MAKE_ARGS=	USE_TLS=1
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvalkey.so.0.1.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvalkey.so.${DISTVERSION}
 
 post-install-TLS-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvalkey_tls.so.0.1.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvalkey_tls.so.${DISTVERSION}
 
 .include <bsd.port.mk>

@@ -1,1 +1,5 @@
 A friendly interface for the construction of regular expressions.
+
+Regular expressions are very powerful feature, however they are often difficult
+to interpret. Rex allows you to build complex regular expressions from human
+readable expressions.

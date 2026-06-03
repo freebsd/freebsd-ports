@@ -27,6 +27,7 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/features-available/mainlog.conf.sample
 @sample %%ETCDIR%%/features-available/notification.conf.sample
 @sample %%ETCDIR%%/features-available/opentsdb.conf.sample
+@sample %%ETCDIR%%/features-available/otlpmetrics.conf.sample
 @sample %%ETCDIR%%/features-available/perfdata.conf.sample
 @sample %%ETCDIR%%/features-available/syslog.conf.sample
 %%ETCDIR%%/features-enabled/checker.conf
@@ -38,15 +39,15 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
 %%MYSQL%%lib/icinga2/libmysql_shim.so
-%%MYSQL%%lib/icinga2/libmysql_shim.so.2.15.0
+%%MYSQL%%lib/icinga2/libmysql_shim.so.2.16.1
 %%PGSQL%%lib/icinga2/libpgsql_shim.so
-%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.15.0
+%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.16.1
 lib/icinga2/sbin/icinga2
 libexec/nagios/check_nscp_api
 sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/01-about.md
@@ -170,6 +171,7 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib.d/network-services.conf
 %%DATADIR%%/include/plugins-contrib.d/operating-system.conf
 %%DATADIR%%/include/plugins-contrib.d/raid-controller.conf
+%%DATADIR%%/include/plugins-contrib.d/smart-advanced.conf
 %%DATADIR%%/include/plugins-contrib.d/smart-attributes.conf
 %%DATADIR%%/include/plugins-contrib.d/storage.conf
 %%DATADIR%%/include/plugins-contrib.d/systemd.conf

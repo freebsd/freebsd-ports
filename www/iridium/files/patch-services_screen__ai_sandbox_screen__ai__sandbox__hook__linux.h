@@ -1,4 +1,4 @@
---- services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h.orig	2025-05-07 06:48:23 UTC
+--- services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h.orig	2025-12-10 15:04:57 UTC
 +++ services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h
 @@ -6,7 +6,13 @@
  #define SERVICES_SCREEN_AI_SANDBOX_SCREEN_AI_SANDBOX_HOOK_LINUX_H_

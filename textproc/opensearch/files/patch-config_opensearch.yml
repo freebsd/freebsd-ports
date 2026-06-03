@@ -1,4 +1,4 @@
---- config/opensearch.yml.orig	2021-07-02 23:22:08 UTC
+--- config/opensearch.yml.orig  2021-07-02 23:22:08 UTC
 +++ config/opensearch.yml
 @@ -31,10 +31,12 @@
  # Path to directory where to store the data (separate multiple locations by comma):
@@ -13,3 +13,10 @@
  #
  # ----------------------------------- Memory -----------------------------------
  #
+@@ -122,3 +124,7 @@
+ #
+ #opensearch.experimental.optimization.datetime_formatter_caching.enabled: false
++
++# Disable unsupported AVX2, https://github.com/opensearch-project/k-NN/issues/2788
++knn.faiss.avx2.disabled: true
++knn.faiss.avx512_spr.disabled: true

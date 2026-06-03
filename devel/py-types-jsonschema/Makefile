@@ -1,5 +1,5 @@
 PORTNAME=       types-jsonschema
-PORTVERSION=    4.25.0.20250720
+PORTVERSION=    4.26.0.20260518
 CATEGORIES=     devel python
 MASTER_SITES=   PYPI
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,10 @@ WWW=            https://pypi.org/project/types-jsonschema/
 LICENSE=        APACHE20
 
 USES=           python
-USE_PYTHON=     autoplist distutils
+USE_PYTHON=     autoplist pep517
 NO_ARCH=        yes
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 .include <bsd.port.mk>

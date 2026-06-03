@@ -1,7 +1,7 @@
 PORTNAME=	gettext-po-mode
-PORTREVISION=	9
+PORTREVISION=	1
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU gettext po-mode for emacs
 WWW=		https://www.gnu.org/software/gettext/
 
@@ -13,19 +13,19 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 BUILD_DEPENDS=	libtextstyle>=${PORTVERSION}:devel/libtextstyle
 LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
 
-USES=		cpe emacs:build tar:xz
+USES=		cpe emacs tar:xz
 
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	gettext
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-emacs --without-git ac_cv_lib_rt_sched_yield=no
-INSTALL_TARGET=	install
+NO_ARCH=	yes
+NO_BUILD=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/emacs
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
 WRKSRC_SUBDIR=	gettext-tools
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION}
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/emacs/*.el \
+	${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 .include <bsd.port.mk>

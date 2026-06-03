@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements.  See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership.  The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License.  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<project basedir="." name="apache-cassandra-owasp-tasks"
+         xmlns:unless="ant:unless"
+         xmlns:if="ant:if">
+    <property name="dependency-check.version" value="12.1.6"/>
+    <property name="dependency-check.home" value="${tmp.dir}/dependency-check-ant-${dependency-check.version}"/>
+    <property name="dependency-check.archive.dir" value="${local.repository}/org/owasp/dependency-check-ant/${dependency-check.version}"/>
+    <property name="dependency-check.archive.name" value="dependency-check-ant-${dependency-check.version}-release.zip"/>
+    <property name="dependency-check.report.dir" value="${build.dir}/owasp"/>
+
+    <condition property="dependency-check-ant.archive.present">
+        <available file="${dependency-check.archive.dir}/${dependency-check.archive.name}" type="file" />
+    </condition>
+
+    <target name="-dependency-check-download"
+            description="Fetch OWASP Dependency checker"
+            unless="dependency-check-ant.archive.present">
+
+        <mkdir dir="${dependency-check.archive.dir}"/>
+        <get src="https://github.com/dependency-check/DependencyCheck/releases/download/v${dependency-check.version}/${dependency-check.archive.name}"
+             dest="${dependency-check.archive.dir}/${dependency-check.archive.name}" retries="3"/>
+    </target>
+
+    <target name="-dependency-check-init" depends="-dependency-check-download">
+        <delete dir="${dependency-check.home}" includeemptydirs="true" failonerror="false"/>
+        <mkdir dir="${dependency-check.home}"/>
+        <unzip src="${dependency-check.archive.dir}/${dependency-check.archive.name}" dest="${dependency-check.home}"/>
+    </target>
+
+    <target name="-run-owasp-scan" description="Dependency-Check Analysis"
+            depends="-dependency-check-init,resolver-dist-lib">
+        <property name="nvd.api.key" value="dummy" if:set="env.NVD_DATAFEED_URL" />
+        <fail unless:set="nvd.api.key">
+            Please set the nvd.api.key property to your NVD API key. It is recommended to put that property into your
+            ~/.ant/build.properties file. You can get your API key from https://nvd.nist.gov/developers/request-an-api-key
+        </fail>
+
+        <echo unless:set="nvd.data.dir">
+            Since the NVD database is pretty large, you should consider storing it in some persistent location to reuse
+            it between builds. You can do that by setting the nvd.data.dir property to a directory of your choice,
+            such as ~/.cache/ant/owasp/database for Linux or ~/Library/Caches/Ant/owasp/database for MacOS.
+            Putting that property into your ~/.ant/build.properties file is recommended.
+        </echo>
+
+        <property name="nvd.data.dir" value="${tmp.dir}/owasp/database"/>
+        <property name="nvd.validity.hours" value="4"/>
+
+        <path id="dependency-check.path">
+            <fileset dir="${dependency-check.home}/dependency-check-ant/lib">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+
+        <taskdef resource="dependency-check-taskdefs.properties">
+            <classpath refid="dependency-check.path" />
+        </taskdef>
+
+        <!--
+            default value for nvdValidForHours is 4 after which sync is done again
+
+            failBuildOnCVSS is by default 11 so build would never fail,
+            the table categorising vulnerabilities is here (1), so by setting
+            "failBuildOnCVSS" to 1, we will fail the build on any CVE found
+            if it is not suppressed already owasp/dependency-check-suppressions.xml
+
+            If a vendor provides no details about a vulnerability,
+            NVD will score that vulnerability as 10.0 (the highest rating translating to critical).
+
+            (1) https://nvd.nist.gov/vuln-metrics/cvss
+        -->
+        <condition property="nvdDatafeedUrl" value="${env.NVD_DATAFEED_URL}" else="">
+            <isset property="env.NVD_DATAFEED_URL" />
+        </condition>
+        <dependency-check projectname="Apache Cassandra"
+                          nvdApiKey="${nvd.api.key}"
+                          reportoutputdirectory="${dependency-check.report.dir}"
+                          reportformat="ALL"
+                          prettyPrint="true"
+                          nvdValidForHours="${nvd.validity.hours}"
+                          centralAnalyzerUseCache="true"
+                          nodeAuditAnalyzerUseCache="true"
+                          failBuildOnCVSS="1"
+                          assemblyAnalyzerEnabled="false"
+                          dataDirectory="${nvd.data.dir}"
+                          suppressionFile="${build.helpers.dir}/owasp/dependency-check-suppressions.xml"
+                          nvdDatafeedUrl="${nvdDatafeedUrl}">
+            <fileset refid="dependencies_to_check"/>
+        </dependency-check>
+    </target>
+
+    <target name="dependency-check" depends="resolver-dist-lib,generate-snyk-file">
+        <fileset dir="lib" id="dependencies_to_check">
+            <include name="**/*.jar"/>
+        </fileset>
+        <antcall target="-run-owasp-scan" inheritrefs="true" inheritall="true"/>
+    </target>
+
+    <target name="generate-snyk-file" unless="ant.gen-snyk.skip">
+        <exec executable="python3" failonerror="true"><arg value="${basedir}/.build/generate-snyk-file"/></exec>
+    </target>
+</project>

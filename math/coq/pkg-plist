@@ -25,12 +25,6 @@ bin/votour
 %%PORTDOCS%%%%DATADIR%%/coq.png
 %%PORTDOCS%%%%DATADIR%%/coq_style.xml
 @comment %%PORTDOCS%%%%DOCSDIR%%/FAQ-CoqIde
-@comment %%EMACS_SITE_LISPDIR%%/coq/coq-font-lock.el
-@comment %%EMACS_SITE_LISPDIR%%/coq/coq-inferior.el
-@comment %%EMACS_SITE_LISPDIR%%/coq/gallina-db.el
-@comment %%EMACS_SITE_LISPDIR%%/coq/gallina-syntax.el
-@comment %%EMACS_SITE_LISPDIR%%/coq/gallina.el
-@comment %%PORTDOCS%%%%EMACS_SITE_LISPDIR%%/coqdoc.sty
 %%DATADIR%%/default.bindings
 share/doc/ocaml/coq-core/LICENSE
 share/doc/ocaml/coq-core/README.md

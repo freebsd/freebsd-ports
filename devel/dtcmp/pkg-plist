@@ -1,0 +1,6 @@
+include/dtcmp.h
+%%STATIC%%lib/libdtcmp.a
+%%SHARED%%lib/libdtcmp.so
+%%SHARED%%lib/libdtcmp.so.0
+%%SHARED%%lib/libdtcmp.so.0.0.0
+libdata/pkgconfig/libdtcmp.pc

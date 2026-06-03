@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-01-28 12:11:06 UTC
+--- CMakeLists.txt.orig	2025-05-26 08:12:33 UTC
 +++ CMakeLists.txt
-@@ -122,7 +122,7 @@ endif()
+@@ -100,7 +100,7 @@ endif()
  	endif()
  endif()
  
@@ -9,11 +9,3 @@
  
  if(WIN32)
  	install(FILES cmake/mrc-config.cmake DESTINATION cmake)
-@@ -132,6 +132,6 @@ endif()
- 	install(FILES doc/mrc.1 DESTINATION share/man/man1)
- endif()
- 
--install(DIRECTORY examples DESTINATION share/doc/mrc/)
-+#install(DIRECTORY example DESTINATION share/doc/mrc/)
- 
- # add_subdirectory(examples/simple)

@@ -22,7 +22,7 @@ load_rc_config "$name"
 
 : ${sssd_enable:=NO}
 : ${sssd_conf="%%PREFIX%%/etc/sssd/sssd.conf"}
-: ${sssd_flags="-D"}
+: ${sssd_flags="-D --logger=files"}
 
 command="%%PREFIX%%/sbin/$name"
 pidfile="/var/run/$name.pid"

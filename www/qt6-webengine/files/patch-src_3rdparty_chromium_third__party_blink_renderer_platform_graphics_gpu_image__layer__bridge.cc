@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc.orig	2025-05-05 10:57:53 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc
-@@ -49,7 +49,7 @@ scoped_refptr<StaticBitmapImage> MakeAccelerated(
+@@ -47,7 +47,7 @@ scoped_refptr<StaticBitmapImage> MakeAccelerated(
+ 
    const auto paint_image = source->PaintImageForCurrentFrame();
-   const auto image_info = paint_image.GetSkImageInfo().makeWH(
-       source->Size().width(), source->Size().height());
+   const auto image_info = paint_image.GetSkImageInfo();
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // TODO(b/330865436): On Linux, CanvasResourceProvider doesn't always check

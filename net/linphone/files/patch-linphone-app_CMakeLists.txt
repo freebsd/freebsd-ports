@@ -1,0 +1,93 @@
+--- linphone-app/CMakeLists.txt.orig	2025-11-12 12:55:13 UTC
++++ linphone-app/CMakeLists.txt
+@@ -24,7 +24,7 @@ cmake_minimum_required(VERSION 3.22)
+ 
+ 
+ #Linphone targets
+-set(LINPHONE_PACKAGES LinphoneCxx Mediastreamer2 Belcard LibLinphone)
++set(LINPHONE_PACKAGES LinphoneCxx Mediastreamer2 BelCard LibLinphone jsoncpp)
+ 
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+@@ -40,6 +40,7 @@ set(metadata )
+ set(version_patch)
+ set(identifiers )
+ set(metadata )
++include(${LINPHONEAPP_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/BCToolbox/cmake/BCToolboxCMakeUtils.cmake)
+ bc_parse_full_version("${LINPHONEAPP_VERSION}" version_major version_minor version_patch identifiers metadata)
+ 
+ 
+@@ -63,7 +64,7 @@ list(APPEND CMAKE_MODULE_PATH "${LINPHONE_OUTPUT_DIR}/
+ endif()
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../cmake")
+ list(APPEND CMAKE_MODULE_PATH "${LINPHONE_OUTPUT_DIR}/cmake")
+-list(APPEND CMAKE_MODULE_PATH "${LINPHONE_OUTPUT_DIR}/lib64/cmake")
++# list(APPEND CMAKE_MODULE_PATH "${LINPHONE_OUTPUT_DIR}/lib64/cmake")
+ list(APPEND CMAKE_MODULE_PATH "${LINPHONE_OUTPUT_DIR}/lib/cmake")
+ 
+ list(APPEND CMAKE_PREFIX_PATH "${QTKEYCHAIN_OUTPUT_DIR}/lib/cmake")
+@@ -115,7 +116,7 @@ set(APP_TARGETS ${LinphoneCxx_TARGET}
+ set(APP_TARGETS ${LinphoneCxx_TARGET}
+ 				${BCToolbox_TARGET}#Logger/App
+ 				${Mediastreamer2_TARGET}#MediastreamerUtils
+-				${Belcard_TARGET}#VCard Model
++				${BelCard_TARGET}#VCard Model
+ 				${LibLinphone_TARGET})#MediastreamerUtils
+ 
+ ####################################
+@@ -198,11 +199,11 @@ endif()
+ if(ENABLE_VIDEO)
+ 	add_definitions(-DENABLE_VIDEO)
+ endif()
+-if( ENABLE_QT_KEYCHAIN)
++if(ENABLE_QT_KEYCHAIN)
+ 	if(NOT QTKEYCHAIN_TARGET_NAME)
+ 		set(QTKEYCHAIN_TARGET_NAME "Qt5Keychain")
+ 	endif()
+-	list(APPEND APP_TARGETS ${QTKEYCHAIN_TARGET_NAME})
++	# list(APPEND APP_TARGETS ${QTKEYCHAIN_TARGET_NAME})
+ endif()
+ if(NOT APPLE AND NOT WIN32)
+ 	list(APPEND APP_TARGETS ${ISPELL_TARGET_NAME})
+@@ -734,6 +735,7 @@ include_directories("${LINPHONE_OUTPUT_DIR}/include/")
+ include_directories(src/)
+ include_directories("${LINPHONE_OUTPUT_DIR}/include/OpenGL")
+ include_directories("${LINPHONE_OUTPUT_DIR}/include/")
++include_directories("${CMAKE_SOURCE_DIR}/linphone-app/include/")
+ include_directories("${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/")
+ include_directories("${QTKEYCHAIN_OUTPUT_DIR}/include/")
+ if(NOT APPLE AND NOT WIN32)
+@@ -819,13 +821,18 @@ foreach(T ${PLUGIN_TARGETS})
+ 
+ foreach(T ${PLUGIN_TARGETS})
+ 	target_include_directories(${APP_PLUGIN} SYSTEM PUBLIC  $<TARGET_PROPERTY:${T},INTERFACE_INCLUDE_DIRECTORIES>)
++	target_link_directories(${APP_PLUGIN} PUBLIC $<TARGET_PROPERTY:${T},INTERFACE_LINK_DIRECTORIES>)
+ 	target_link_libraries(${APP_PLUGIN} ${T})
+ endforeach()
+ 
+ foreach(T ${APP_TARGETS})
+ 	target_include_directories(${APP_LIBRARY} SYSTEM PUBLIC  $<TARGET_PROPERTY:${T},INTERFACE_INCLUDE_DIRECTORIES>)
++	target_link_directories(${TARGET_NAME} PUBLIC $<TARGET_PROPERTY:${T},INTERFACE_LINK_DIRECTORIES>)
+ 	target_link_libraries(${TARGET_NAME} ${T})
+ endforeach()
++target_include_directories(${TARGET_NAME} SYSTEM PUBLIC ${QTKEYCHAIN_INCLUDE_DIRS})
++target_link_directories(${TARGET_NAME} PUBLIC ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
++target_link_libraries(${TARGET_NAME} Qt5Keychain::Qt5Keychain)
+ 
+ if (APPLE)
+ 	target_link_libraries(${TARGET_NAME} "-framework Cocoa" "-framework IOKit" "-framework AVFoundation" "-framework ScreenCaptureKit")
+@@ -857,10 +864,10 @@ set(LINPHONE_BUILDER_SIGNING_IDENTITY ${LINPHONE_BUILD
+ set(TOOLS_DIR "${CMAKE_BINARY_DIR}/programs")
+ set(LINPHONE_BUILDER_SIGNING_IDENTITY ${LINPHONE_BUILDER_SIGNING_IDENTITY})
+ 
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/include/" "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/")
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_LINKER_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
++# add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
++# add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/include/" "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/")
++# add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
++# add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_LINKER_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
+ #add_custom_command(TARGET ${TARGET_NAME} PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/include/LinphoneApp/*" "${CMAKE_INSTALL_PREFIX}/include/LinphoneApp/")
+ 
+ #configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/*" "${CMAKE_INSTALL_PREFIX}/include/LinphoneApp/" COPYONLY)

@@ -1,0 +1,31 @@
+Relax version requirements of py-setuptools and enable build for older versions
+of it.
+
+--- pyproject.toml.orig	2025-11-08 12:01:13 UTC
++++ pyproject.toml
+@@ -1,14 +1,12 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=64", "setuptools-scm>=8"]
++requires = ["setuptools", "setuptools-scm>=8"]
+ 
+ [project]
+ name = "mkdocs-rss-plugin"
+ description = "MkDocs plugin to generate RSS and JSON feeds using Mkdocs site configuration, git log and Mkdocs pages'meta."
+ dynamic = ["version"]
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
+ requires-python = ">=3.10"
+ authors = [{ name = "Julien Moura", email = "dev@ingeoveritas.com" }]
+ maintainers = [{ name = "Julien Moura", email = "dev@ingeoveritas.com" }]
+@@ -44,6 +42,9 @@ dependencies = [
+     "requests>=2.32.5,<3",
+     "tzdata==2024.* ; sys_platform == 'win32'",
+ ]
++
++[project.license]
++text = "MIT"
+ 
+ [project.optional-dependencies]
+ dev = [

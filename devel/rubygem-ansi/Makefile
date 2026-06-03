@@ -1,16 +1,17 @@
 PORTNAME=	ansi
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem enabling ANSI code based colorization and stylization of output
-WWW=		https://rubyworks.github.io/ansi/
+WWW=		https://github.com/rubyworks/ansi
 
 LICENSE=	BSD2CLAUSE
-
-NO_ARCH=	yes
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=		moosefs3
-DISTVERSION=		3.0.117
+DISTVERSION=		3.0.118
 DISTVERSIONSUFFIX=	1
-PORTREVISION=		2
+PORTREVISION?=		0
 CATEGORIES=		filesystems sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
@@ -13,10 +13,12 @@ WWW=			https://moosefs.com/
 
 LICENSE=		GPLv2
 
+DEPRECATED=		3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
+EXPIRATION_DATE=	2026-06-30
+
 USES=			python:build
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-WRKSRC=			${WRKDIR}/moosefs-${PORTVERSION}
+WRKSRC=			${WRKDIR}/moosefs-${DISTVERSION}
 PLIST=			${.CURDIR}/pkg-plist
 DESCR=			${.CURDIR}/pkg-descr
 
@@ -32,7 +34,7 @@ CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
 			--with-default-user=${MFS_USER} \
 			--with-default-group=${MFS_GROUP}
 
-CONFLICTS=		moosefs2-${MFS_COMPONENT}
+CONFLICTS=		moosefs-*
 
 .if ${MFS_COMPONENT} == cgi
 MFS_CGIDIR=		${PREFIX}/share/mfscgi

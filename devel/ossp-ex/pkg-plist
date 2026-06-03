@@ -1,7 +1,0 @@
-bin/ex-config
-include/ex.h
-lib/libex.a
-lib/libex.so
-lib/libex.so.10
-lib/libex.so.10.0.26
-share/man/man3/ex.3.gz

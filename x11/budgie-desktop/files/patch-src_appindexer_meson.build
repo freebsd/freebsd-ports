@@ -1,6 +1,6 @@
---- src/appindexer/meson.build.orig	2023-01-29 15:27:27 UTC
+--- src/appindexer/meson.build.orig	2025-09-07 12:35:19 UTC
 +++ src/appindexer/meson.build
-@@ -2,8 +2,7 @@ appindexer_sources = [
+@@ -4,8 +4,7 @@ appindexer_sources = [
      'AppIndex.vala',
      'Application.vala',
      'Category.vala',

@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	0163b53ac942435645db5ccf9c2512cf2d2d7466.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Kapitonov LV2 Plugins Pack (KPP)
 WWW=		https://github.com/olegkapitonov/Kapitonov-Plugins-Pack

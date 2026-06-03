@@ -1,23 +1,22 @@
 PORTNAME=	tt-rss
-DISTVERSION=	g20250704
+DISTVERSION=	g20260501
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/meta
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
-WWW=		https://tt-rss.org/
+WWW=		https://github.com/tt-rss/tt-rss/
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
+RUN_DEPENDS=	git:devel/git
 
 USES=		gettext-tools php:cli,web,flavors shebangfix
 
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.tt-rss.org
-GL_TAGNAME=	46e05583a991f2d3355cbd062d9932ccee1ea25a
+USE_GITHUB=	yes
+GH_TAGNAME=	f88091ccc0f3dc5e6d9f703995356f3ffb287bef
 # phe json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring pcntl pdo \
 		pdo_pgsql phar posix session simplexml sockets sodium tokenizer \
@@ -26,13 +25,14 @@ USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php
 
-REINPLACE_ARGS=	-i ""
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-SUB_FILES=	config.php httpd-tt-rss.conf pkg-message
+SUB_FILES=	config.php httpd-tt-rss.conf pkg-message start.sh
 SUB_LIST=	WWWOWN=${WWWOWN}
+
+USERS=		ttrssd
+GROUPS=		ttrssd
 
 PLIST_SUB=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
@@ -52,15 +52,32 @@ do-install:
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} \
-		"! -name LICENSE ! -name .empty ! -name Jenkinsfile")
-	${RM} -r ${STAGEDIR}${WWWDIR}/debian
+		"! -name LICENSE ! -name .empty ! -name docker-compose.yml")
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
-	${ECHO} "${OPSYS}:${PORTVERSION}:${GL_TAGNAME:C/^(.{11}).*$/\1/W}}" > \
+	${ECHO} "${OPSYS}:${PORTVERSION}:${GH_TAGNAME:C/^(.{11}).*$/\1/W}" > \
 		"${STAGEDIR}${WWWDIR}/version_static.txt"
 	${RM} ${STAGEDIR}${WWWDIR}/config.php-dist
 	${INSTALL_DATA} ${WRKDIR}/config.php \
 		${STAGEDIR}${WWWDIR}/config.php.sample
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.sample \
 		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/start.sh ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}/var/log/ttrssd
+	${MKDIR} ${STAGEDIR}/var/run/ttrssd
+
+	${MKDIR} ${STAGEDIR}/var/tt-rss
+	${MV}	${STAGEDIR}${WWWDIR}/cache \
+		${STAGEDIR}${WWWDIR}/lock \
+			${STAGEDIR}/var/tt-rss
+
+	${MKDIR} ${STAGEDIR}/var/tt-rss/local/
+	${MV}	${STAGEDIR}${WWWDIR}/plugins.local \
+		${STAGEDIR}${WWWDIR}/templates.local \
+		${STAGEDIR}${WWWDIR}/themes.local \
+			${STAGEDIR}/var/tt-rss/local
+
+	${MKDIR} ${STAGEDIR}/var/tt-rss/local/plugins/af_comics
+	${MV} ${STAGEDIR}${WWWDIR}/plugins/af_comics/filters.local \
+		${STAGEDIR}/var/tt-rss/local/plugins/af_comics
 
 .include <bsd.port.mk>

@@ -1,0 +1,48 @@
+--- j3d-core/src/native/build.xml.orig	2008-02-28 20:17:58 UTC
++++ j3d-core/src/native/build.xml
+@@ -3,6 +3,19 @@
+ <!-- Ant file for building native files -->
+ <project name="j3d-core native" default="compile-opt">
+ 
++  <target name="nativeSetup-debug-freebsd" if="isFreeBSD">
++	<property name="bldFlag" value="-g -DDEBUG"/>
++	<property name="coreLibDependency" value="lib/${os.arch}/libj3dcore-ogl.so"/>
++        <property name="osNativeConfigTemplate3D" value="X11NativeConfigTemplate3D"/>
++        <property name="osNativeScreenInfo" value="X11NativeScreenInfo"/>
++  </target>
++  <target name="nativeSetup-opt-freebsd" if="isFreeBSD">
++	<property name="bldFlag" value="-O2"/>
++	<property name="coreLibDependency" value="lib/${os.arch}/libj3dcore-ogl.so"/>
++        <property name="osNativeConfigTemplate3D" value="X11NativeConfigTemplate3D"/>
++        <property name="osNativeScreenInfo" value="X11NativeScreenInfo"/>
++  </target>
++
+   <target name="nativeSetup-debug-solaris" if="isSolarisOnSparc">
+ 	<property name="bldFlag" value="-g -DDEBUG"/>
+ 	<property name="coreLibDependency" value="lib/sparc/libj3dcore-ogl.so"/>
+@@ -62,7 +75,7 @@
+         <property name="osNativeScreenInfo" value="Win32NativeScreenInfo"/>
+   </target>
+ 
+-  <target name="nativeSetup-debug" depends="nativeSetup-debug-solaris, nativeSetup-debug-solaris-x86, nativeSetup-debug-linux, nativeSetup-debug-linux-amd64, nativeSetup-debug-linux-ia64, nativeSetup-debug-linux-ppc, nativeSetup-debug-win32, nativeSetup-debug-winamd64">
++  <target name="nativeSetup-debug" depends="nativeSetup-debug-freebsd, nativeSetup-debug-solaris, nativeSetup-debug-solaris-x86, nativeSetup-debug-linux, nativeSetup-debug-linux-amd64, nativeSetup-debug-linux-ia64, nativeSetup-debug-linux-ppc, nativeSetup-debug-win32, nativeSetup-debug-winamd64">
+ 	<property name="bldType" value="debug"/>
+ 	<property name="javahCoreSrc"     
+ 	 location="${src}/classes/share/javax/media/j3d"/>
+@@ -128,7 +141,7 @@
+         <property name="osNativeScreenInfo" value="Win32NativeScreenInfo"/>
+   </target>
+ 
+-  <target name="nativeSetup-opt" depends="nativeSetup-opt-solaris, nativeSetup-opt-solaris-x86, nativeSetup-opt-linux, nativeSetup-opt-linux-amd64, nativeSetup-opt-linux-ia64, nativeSetup-opt-linux-ppc, nativeSetup-opt-win32, nativeSetup-opt-winamd64">
++  <target name="nativeSetup-opt" depends="nativeSetup-opt-freebsd, nativeSetup-opt-solaris, nativeSetup-opt-solaris-x86, nativeSetup-opt-linux, nativeSetup-opt-linux-amd64, nativeSetup-opt-linux-ia64, nativeSetup-opt-linux-ppc, nativeSetup-opt-win32, nativeSetup-opt-winamd64">
+ 	<property name="bldType" value="opt"/>
+ 	<property name="javahCoreSrc"     
+ 	 location="${src}/classes/share/javax/media/j3d"/>
+@@ -347,6 +360,7 @@
+     <javah destdir="${javahCoreTarget}" force="yes">
+ 	<classpath>
+ 	    <pathelement path="${build}/${platform}/${bldType}/classes"/>
++	    <pathelement path="${vecmath_home}/build/opt/lib/ext/vecmath.jar"/>
+ 	</classpath>
+ 	
+ 	<class name="javax.media.j3d.Background"/>

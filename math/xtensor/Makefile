@@ -1,5 +1,5 @@
 PORTNAME=	xtensor
-DISTVERSION=	0.25.0
+DISTVERSION=	0.27.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ TEST_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		doctest>0:devel/doctest \
 		googletest>0:devel/googletest
 
-USES=		cmake:testing # 2 tests fail, see https://github.com/xtensor-stack/xtensor/issues/2722
+USES=		cmake:testing
 USE_GITHUB=	yes
 GH_ACCOUNT=	xtensor-stack
 
@@ -26,5 +26,7 @@ CMAKE_TESTING_ON=	BUILD_TESTS
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+# tests as of 0.27.1: 100% tests passed, 0 tests failed out of 81
 
 .include <bsd.port.mk>

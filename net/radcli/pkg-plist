@@ -6,8 +6,8 @@ include/radcli/radcli.h
 include/radcli/version.h
 lib/libradcli.a
 lib/libradcli.so
-lib/libradcli.so.6
-lib/libradcli.so.6.3.0
+lib/libradcli.so.10
+lib/libradcli.so.10.0.0
 libdata/pkgconfig/radcli.pc
 share/man/man3/radcli.h.3.gz
 share/man/man3/rc_aaa.3.gz
@@ -74,9 +74,3 @@ share/man/man3/rc_setdebug.3.gz
 share/man/man3/rc_test_config.3.gz
 share/man/man3/rc_tls_fd.3.gz
 %%DATADIR%%/dictionary
-%%DATADIR%%/dictionary.ascend
-%%DATADIR%%/dictionary.compat
-%%DATADIR%%/dictionary.merit
-%%DATADIR%%/dictionary.microsoft
-%%DATADIR%%/dictionary.roaringpenguin
-%%DATADIR%%/dictionary.sip

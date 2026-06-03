@@ -1,6 +1,5 @@
 bin/btop
 share/applications/btop.desktop
-%%DATADIR%%/README.md
 %%DATADIR%%/themes/HotPurpleTrafficLight.theme
 %%DATADIR%%/themes/adapta.theme
 %%DATADIR%%/themes/adwaita-dark.theme
@@ -14,12 +13,16 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/everforest-light-medium.theme
 %%DATADIR%%/themes/flat-remix-light.theme
 %%DATADIR%%/themes/flat-remix.theme
+%%DATADIR%%/themes/flexoki-dark.theme
+%%DATADIR%%/themes/flexoki-light.theme
+%%DATADIR%%/themes/gotham.theme
 %%DATADIR%%/themes/greyscale.theme
 %%DATADIR%%/themes/gruvbox_dark.theme
 %%DATADIR%%/themes/gruvbox_dark_v2.theme
 %%DATADIR%%/themes/gruvbox_light.theme
 %%DATADIR%%/themes/gruvbox_material_dark.theme
 %%DATADIR%%/themes/horizon.theme
+%%DATADIR%%/themes/kanagawa-dragon.theme
 %%DATADIR%%/themes/kanagawa-lotus.theme
 %%DATADIR%%/themes/kanagawa-wave.theme
 %%DATADIR%%/themes/kyli0x.theme
@@ -28,6 +31,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/night-owl.theme
 %%DATADIR%%/themes/nord.theme
 %%DATADIR%%/themes/onedark.theme
+%%DATADIR%%/themes/orange.theme
 %%DATADIR%%/themes/paper.theme
 %%DATADIR%%/themes/phoenix-night.theme
 %%DATADIR%%/themes/solarized_dark.theme
@@ -35,7 +39,9 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/tokyo-night.theme
 %%DATADIR%%/themes/tokyo-storm.theme
 %%DATADIR%%/themes/tomorrow-night.theme
+%%DATADIR%%/themes/twilight.theme
 %%DATADIR%%/themes/whiteout.theme
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 share/icons/hicolor/48x48/apps/btop.png
 share/icons/hicolor/scalable/apps/btop.svg
 share/man/man1/btop.1.gz

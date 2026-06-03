@@ -1,0 +1,6 @@
+Suika3 is a 2D game and visual novel engine.
+It aims to be portable and easy to use for creators, supporting
+various platforms including FreeBSD, Linux, Windows, macOS, etc.
+
+This engine is designed for high performance and low resource
+consumption, making it ideal for both modern and legacy systems.

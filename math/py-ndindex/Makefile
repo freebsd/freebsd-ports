@@ -1,5 +1,6 @@
 PORTNAME=	ndindex
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/Quansight-Labs/ndindex/releases/download/${PORTVERSION}/
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 OPTIONS_DEFINE=	ARRAYS

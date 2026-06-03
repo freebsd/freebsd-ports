@@ -19,6 +19,7 @@ PORTSCOUT=	limitw:0,even
 
 CPE_VENDOR=	gnome
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc:graphics/cairo
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
@@ -51,13 +52,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|file,cups|file,cups,lpr|' \
 		${WRKSRC}/gtk/Makefile.in
-
-pre-configure:
-# .if !exists() evaluates too early before cairo has a chance to be installed
-	@if ! pkg-config --exists cairo-xlib; then \
-		${ECHO_MSG} "${PKGNAME}: Needs cairo with X11 support enabled."; \
-		${FALSE}; \
-	fi
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules

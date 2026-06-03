@@ -1,0 +1,12 @@
+%%X11%%bin/VBoxClient
+%%X11%%bin/VBoxClient-all
+%%X11%%etc/xdg/autostart/vboxclient.desktop
+lib/pam_vbox.so
+%%X11%%lib/xorg/modules/drivers/vboxvideo_drv.so
+%%X11%%lib/xorg/modules/input/vboxmouse_drv.so
+sbin/VBoxControl
+sbin/VBoxService
+sbin/mount_vboxvfs
+%%X11%%share/autostart/vboxclient.desktop
+/%%KMODDIR%%/vboxguest.ko
+/%%KMODDIR%%/vboxvfs.ko

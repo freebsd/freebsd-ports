@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-07-08 20:59:08 UTC
++++ configure.ac
+@@ -26,7 +26,7 @@ AC_FUNC_MEMCMP
+ #AC_CHECK_FUNC([memset], :, [AC_CHECK_LIB([libc], [libc])])
+ 
+ # Checks for libusb.
+-AC_SEARCH_LIBS(libusb_init, usb-1.0,, [AC_MSG_ERROR([libusb 1.0 not found])])
++AC_SEARCH_LIBS(libusb_init, usb,, [AC_MSG_ERROR([libusb 1.0 not found])])
+ 
+ AC_CONFIG_FILES(fedora/dfu-programmer.spec Makefile docs/Makefile src/Makefile)
+ AC_OUTPUT

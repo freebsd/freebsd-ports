@@ -1,5 +1,6 @@
 PORTNAME=	svn2git
 DISTVERSION=	1.0.20
+PORTREVISION=	1
 CATEGORIES=	devel kde
 
 MAINTAINER=	uzsolt@FreeBSD.org
@@ -21,10 +22,10 @@ LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
 RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion
 .endif
 
-USES=		compiler:c++11-lang qmake qt:5
+USES=		compiler:c++11-lang qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	svn-all-fast-export
-USE_QT=		core
+USE_QT=		5compat base
 QMAKE_ARGS=	APR_INCLUDE=${LOCALBASE}/include/apr-1 \
 		SVN_INCLUDE=${LOCALBASE}/include/subversion-1 \
 		SVN_LIBDIR=${LOCALBASE}/lib

@@ -22,6 +22,7 @@ bin/galenectl
 %%DATADIR%%/third-party/contextual/LICENSE
 %%DATADIR%%/third-party/contextual/contextual.css
 %%DATADIR%%/third-party/contextual/contextual.js
+%%DATADIR%%/third-party/fontawesome/LICENSE.txt
 %%DATADIR%%/third-party/fontawesome/css/all.min.css
 %%DATADIR%%/third-party/fontawesome/css/brands.min.css
 %%DATADIR%%/third-party/fontawesome/css/fontawesome.min.css

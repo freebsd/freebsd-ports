@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/System/Linux/MemFd.cpp.orig	2025-05-07 06:48:23 UTC
+--- third_party/swiftshader/src/System/Linux/MemFd.cpp.orig	2025-12-10 15:04:57 UTC
 +++ third_party/swiftshader/src/System/Linux/MemFd.cpp
 @@ -25,6 +25,7 @@
  #	define MFD_CLOEXEC 0x0001U

@@ -42,3 +42,4 @@
 %%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/INSTALLER
 %%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/licenses/LICENSE

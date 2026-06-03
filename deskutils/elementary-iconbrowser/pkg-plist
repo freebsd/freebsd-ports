@@ -16,10 +16,13 @@ share/locale/ca/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/en_GB/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/fr/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/ja/LC_MESSAGES/io.elementary.iconbrowser.mo
+share/locale/ka/LC_MESSAGES/io.elementary.iconbrowser.mo
+share/locale/mr/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/nb/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/pt/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/ru/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/sk/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/uk/LC_MESSAGES/io.elementary.iconbrowser.mo
+share/locale/zh_CN/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/zh_Hant/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/metainfo/io.elementary.iconbrowser.appdata.xml

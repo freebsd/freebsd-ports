@@ -1,5 +1,5 @@
 PORTNAME=	rbs
-PORTVERSION=	3.9.4
+PORTVERSION=	4.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
+RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-prism>=1.6.0:textproc/rubygem-prism \
+		rubygem-tsort>=0:devel/rubygem-tsort
 
 USES=		gem
 

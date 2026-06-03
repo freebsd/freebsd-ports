@@ -1,6 +1,6 @@
 PORTNAME=	game.libretro.genplus
-PORTVERSION=	1.7.4.62
-DISTVERSIONSUFFIX=	-Nexus
+PORTVERSION=	1.7.4.74.20260311
+DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -19,6 +19,7 @@ NO_ARCH=	yes
 USES=		kodi
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-game
+GH_TAGNAME=	2db2e84f8704038ac30bd65ef3de9b528a222733
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib

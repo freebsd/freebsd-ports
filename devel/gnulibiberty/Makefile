@@ -1,5 +1,5 @@
 PORTNAME=	gnulibiberty
-PORTVERSION=	2.44
+PORTVERSION=	2.46.0
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 DISTNAME=	binutils-${PORTVERSION}
@@ -14,6 +14,7 @@ USES=		gmake tar:lz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libiberty --disable-multilib
+TEST_TARGET=	check
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/libiberty
 

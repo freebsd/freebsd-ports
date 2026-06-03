@@ -27,8 +27,8 @@ bin/verifysmtp
 bin/webmlmd
 bin/webmlmd.rc
 etc/courier/aliases/system
-%%WITHSYSTEMALIASES%%@postexec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
-%%WITHEMPTYALIASES%%@postexec true > %D/etc/courier/aliases/system
+%%SYSTEMALIASES%%@postexec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
+%%EMPTYALIASES%%@postexec true > %D/etc/courier/aliases/system
 @sample etc/courier/courierd.sample
 etc/courier/crontab
 etc/courier/dsndelayed.txt
@@ -46,23 +46,23 @@ etc/courier/esmtp.authpam
 @sample etc/courier/esmtpd-ssl.sample
 @sample etc/courier/esmtpd.cnf.sample
 @sample etc/courier/esmtpd.sample
-%%WITHFAX%%@sample etc/courier/faxcoverpage.tr.sample
-%%WITHFAX%%@sample etc/courier/faxnotifyrc.sample
-%%WITHFAX%%@sample etc/courier/faxrc.sample
+%%SENDFAX%%@sample etc/courier/faxcoverpage.tr.sample
+%%SENDFAX%%@sample etc/courier/faxnotifyrc.sample
+%%SENDFAX%%@sample etc/courier/faxrc.sample
 @sample etc/courier/imapd-ssl.sample
 etc/courier/imapd.authpam
 @sample etc/courier/imapd.cnf.sample
 @sample etc/courier/imapd.sample
 @sample etc/courier/ldapaddressbook.sample
-%%WITHLDAP%%@sample etc/courier/ldapaliasrc.sample
+%%LDAP%%@sample etc/courier/ldapaliasrc.sample
 etc/courier/locallowercase
 etc/courier/maildrop
 etc/courier/maildropfilter
 etc/courier/module.dsn
 etc/courier/module.esmtp
-%%WITHFAX%%etc/courier/module.fax
+%%SENDFAX%%etc/courier/module.fax
 etc/courier/module.local
-%%WITHUUCP%%etc/courier/module.uucp
+%%UUCP%%etc/courier/module.uucp
 @sample etc/courier/pop3d-ssl.sample
 etc/courier/pop3d.authpam
 @sample etc/courier/pop3d.cnf.sample
@@ -85,10 +85,10 @@ libexec/courier/makedatprog
 @(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp/addcr
 @(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp/courieresmtp
 @(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp/courieresmtpd
-%%WITHFAX%%@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/fax/courierfax
+%%SENDFAX%%@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/fax/courierfax
 @(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/local/courierdeliver
 @(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/local/courierlocal
-%%WITHUUCP%%@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/uucp/courieruucp
+%%UUCP%%@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/uucp/courieruucp
 libexec/courier/pcpd
 libexec/courier/sqwebmaild
 @(%%MAILOWN%%,%%MAILGRP%%,2555) libexec/courier/sqwebpasswd
@@ -134,11 +134,13 @@ share/man/man7/maildropfilter.7.gz
 share/man/man7/maildropgdbm.7.gz
 share/man/man8/aliaslookup.8.gz
 share/man/man8/courier.8.gz
+%%SENDFAX%%share/man/man8/courierfax.8.gz
 share/man/man8/courierfilter.8.gz
-%%WITHLDAP%%share/man/man8/courierldapaliasd.8.gz
+%%LDAP%%share/man/man8/courierldapaliasd.8.gz
 share/man/man8/courierperlfilter.8.gz
 share/man/man8/courierpop3d.8.gz
 share/man/man8/courierpop3login.8.gz
+%%UUCP%%share/man/man8/courieruucp.8.gz
 share/man/man8/deliverquota.8.gz
 share/man/man8/dupfilter.8.gz
 share/man/man8/esmtpd-msa.8.gz
@@ -152,6 +154,7 @@ share/man/man8/makeimapaccess.8.gz
 share/man/man8/makepercentrelay.8.gz
 share/man/man8/makesmtpaccess-msa.8.gz
 share/man/man8/makesmtpaccess.8.gz
+%%UUCP%%share/man/man8/makeuucpneighbors.8.gz
 share/man/man8/mkdhparams.8.gz
 share/man/man8/mkesmtpdcert.8.gz
 share/man/man8/mkimapdcert.8.gz
@@ -166,7 +169,7 @@ sbin/aliaslookup
 sbin/courier
 sbin/courieresmtpd
 sbin/courierfilter
-%%WITHLDAP%%sbin/courierldapaliasd
+%%LDAP%%sbin/courierldapaliasd
 sbin/couriertcpd
 sbin/esmtpd
 sbin/esmtpd-msa
@@ -181,7 +184,7 @@ sbin/makeimapaccess
 sbin/makepercentrelay
 sbin/makesmtpaccess
 sbin/makesmtpaccess-msa
-%%WITHUUCP%%sbin/makeuucpneighbors
+%%UUCP%%sbin/makeuucpneighbors
 sbin/mkdhparams
 sbin/mkesmtpdcert
 sbin/mkimapdcert
@@ -298,15 +301,15 @@ sbin/webmaild
 %%DATADIR%%/courierwebadmin/webadmin.pm
 %%DATADIR%%/esmtpd
 %%DATADIR%%/esmtpd-ssl
-%%WITHFAX%%%%DATADIR%%/faxmail/application-pdf.filter
-%%WITHFAX%%%%DATADIR%%/faxmail/application-postscript.filter
-%%WITHFAX%%%%DATADIR%%/faxmail/coverpage
-%%WITHFAX%%%%DATADIR%%/faxmail/image-gif.filter
-%%WITHFAX%%%%DATADIR%%/faxmail/image-jpeg.filter
-%%WITHFAX%%%%DATADIR%%/faxmail/image-png.filter
-%%WITHFAX%%%%DATADIR%%/faxmail/init
-%%WITHFAX%%%%DATADIR%%/faxmail/new_fax
-%%WITHFAX%%%%DATADIR%%/faxmail/text-plain.filter
+%%SENDFAX%%%%DATADIR%%/faxmail/application-pdf.filter
+%%SENDFAX%%%%DATADIR%%/faxmail/application-postscript.filter
+%%SENDFAX%%%%DATADIR%%/faxmail/coverpage
+%%SENDFAX%%%%DATADIR%%/faxmail/image-gif.filter
+%%SENDFAX%%%%DATADIR%%/faxmail/image-jpeg.filter
+%%SENDFAX%%%%DATADIR%%/faxmail/image-png.filter
+%%SENDFAX%%%%DATADIR%%/faxmail/init
+%%SENDFAX%%%%DATADIR%%/faxmail/new_fax
+%%SENDFAX%%%%DATADIR%%/faxmail/text-plain.filter
 %%DATADIR%%/filterctl
 %%DATADIR%%/imapd
 %%DATADIR%%/imapd-ssl
@@ -317,7 +320,7 @@ sbin/webmaild
 %%DATADIR%%/makeimapaccess
 %%DATADIR%%/makepercentrelay
 %%DATADIR%%/makesmtpaccess
-%%WITHUUCP%%%%DATADIR%%/makeuucpneighbors
+%%UUCP%%%%DATADIR%%/makeuucpneighbors
 %%DATADIR%%/mkdhparams
 %%DATADIR%%/mkesmtpdcert
 %%DATADIR%%/mkimapdcert
@@ -470,15 +473,15 @@ sbin/webmaild
 %%PORTDOCS%%%%DOCSDIR%%/html/courier.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierdsn.html
-%%WITHFAX%%%%PORTDOCS%%%%DOCSDIR%%/html/courierfax.html
+%%SENDFAX%%%%PORTDOCS%%%%DOCSDIR%%/html/courierfax.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierfilter.html
-%%WITHLDAP%%%%PORTDOCS%%%%DOCSDIR%%/html/courierldapaliasd.html
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/html/courierldapaliasd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/couriermlm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierperlfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierpop3d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/couriertcpd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/couriertls.html
-%%WITHUUCP%%%%PORTDOCS%%%%DOCSDIR%%/html/courieruucp.html
+%%UUCP%%%%PORTDOCS%%%%DOCSDIR%%/html/courieruucp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/deliverquota.html
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-courier.html
@@ -546,7 +549,7 @@ sbin/webmaild
 %%PORTDOCS%%%%DOCSDIR%%/html/testmxlookup.html
 %%PORTDOCS%%%%DOCSDIR%%/html/verifyfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/webmlmd.html
-%%WITHCERTSDIR%%@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/.pem
+%%CERTSDIR%%@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/.pem
 @dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/aliasdir
 @dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/aliases
 @dir etc/courier/esmtpacceptmailfor.dir
@@ -573,4 +576,5 @@ etc/courier/webadmin/restartauthcmd
 @dir(%%MAILOWN%%,%%MAILGRP%%,770) %%LOCALSTATEDIR%%/tmp
 @dir(%%MAILOWN%%,%%MAILGRP%%,755) %%LOCALSTATEDIR%%/track
 @dir %%LOCALSTATEDIR%%
+%%SENDFAX%%@dir %%LOCALSTATEDIR%%/faxtmp
 @dir %%CACHEDIR%%

@@ -1,5 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20250726
+PORTVERSION=	s20260527
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -10,8 +10,8 @@ WWW=		https://veloren.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	https://github.com/bytecodealliance/wasmtime/issues/7924
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+BROKEN_aarch64=	https://github.com/bytecodealliance/wasmtime/issues/5499
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	unsupported platform by https://github.com/wasmerio/wasmer
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
@@ -25,8 +25,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_TAGNAME=	v0.17.0-897-g8e02bae8f3 # git describe --match='v[0-9]*' weekly
-CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
+GL_TAGNAME=	v0.18.0-240-g7c77697000 # git describe --long --match='v[0-9]*' weekly
+GL_DATE=	$$(${AWK} '/TIMESTAMP/ { print $$3 }' ${DISTINFO_FILE})
+CARGO_ENV=	VELOREN_GIT_VERSION=${GL_TAGNAME:C,(.*)-.*-g(.{8}).*,\1/\2,}/${GL_DATE} \
+		VELOREN_USERDATA_STRATEGY=system \
+		SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
 		share/applications/net.veloren.veloren.desktop \
@@ -36,10 +39,6 @@ PORTDATA=	*
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
-.if ${MACHINE_ARCH} == i386
-# https://github.com/rust-lang/rust/issues/85598
-CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
-.endif
 # Fixes error "Instruction does not dominate all uses!"
 WITHOUT_LTO=	yes # XXX bug 277333
 
@@ -49,14 +48,6 @@ CARGO_ENV+=		RUSTC_BOOTSTRAP=1
 CARGO_INSTALL_PATH=	server-cli voxygen
 
 post-patch:
-# .git/ directory is missing, so don't abort if git binary is also missing
-	@${REINPLACE_CMD} -e 's/"git"/"${TRUE}"/' \
-		${WRKSRC}/common/build.rs
-# Extract (snapshot) version from the port instead of empty file
-	@${REINPLACE_CMD} -e '/GIT_HASH/s/=.*/= "${GL_TAGNAME:C/.*-g(.{8}).*/\1/}";/' \
-		-e "/GIT_DATE.*static/s/=.*/= \"$$(date -ur $$(${AWK} '/TIMESTAMP/ { print $$3 }' \
-			${DISTINFO_FILE}) +'%Y-%m-%d-%H:%M')\";/" \
-		${WRKSRC}/common/src/util/mod.rs
 # Respect PREFIX != /usr/local for system assets
 	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/common/assets/src/lib.rs

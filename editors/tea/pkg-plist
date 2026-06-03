@@ -1,0 +1,10 @@
+bin/tea
+share/applications/tea.desktop
+%%PORTDOCS%%%%DOCSDIR%%/en.html
+%%PORTDOCS%%%%DOCSDIR%%/pl.html
+%%PORTDOCS%%%%DOCSDIR%%/ru.html
+share/icons/hicolor/128x128/apps/tea.png
+share/icons/hicolor/32x32/apps/tea.png
+share/icons/hicolor/48x48/apps/tea.png
+share/icons/hicolor/64x64/apps/tea.png
+share/icons/hicolor/scalable/apps/tea.svg

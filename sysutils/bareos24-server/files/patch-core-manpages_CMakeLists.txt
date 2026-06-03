@@ -1,0 +1,26 @@
+--- core/manpages/CMakeLists.txt	2024-12-16 09:10:50.000000000 -0800
++++ cire/manpages/CMakeLists.txt	2024-12-22 23:07:01.552605000 -0800
+@@ -18,10 +18,8 @@
+ #   02110-1301, USA.
+ message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
+ 
+-set(MAN8 bareos-fd.8 btraceback.8)
+-
+ if(NOT client-only)
+-  set(MAN1-server bconsole.1 bsmtp.1 bareos-tray-monitor.1 bwild.1 bregex.1)
++  set(MAN1-server bwild.1 bregex.1)
+ 
+   set(MAN8-server
+       bareos-dir.8
+@@ -39,7 +37,10 @@
+ 
+   set(MAN1 "${MAN1-server}")
+   set(MAN8 "${MAN8};${MAN8-server}")
+-
++else()
++  set(MAN8 bareos-fd.8 btraceback.8)
++  set(MAN1 bconsole.1 bsmtp.1 bareos-tray-monitor.1)
+ endif()
++
+ install(FILES ${MAN1} DESTINATION "${mandir}/man1")
+ install(FILES ${MAN8} DESTINATION "${mandir}/man8")

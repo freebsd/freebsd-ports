@@ -1,0 +1,30 @@
+--- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2025-08-13 19:51:09 UTC
++++ src/VBox/HostDrivers/Support/freebsd/Makefile
+@@ -93,6 +93,7 @@ SRCS += \
+ 	assert.c \
+ 	handletable.c \
+ 	handletablectx.c \
++	handletablesimple.c \
+ 	once.c \
+ 	term.c \
+ 	thread.c
+@@ -117,7 +118,8 @@ SRCS += \
+ 	strprintf2-ellipsis.c \
+ 	strtonum.c \
+ 	memchr.c \
+-	stringalloc.c
++	stringalloc.c \
++	utf-8.c 
+ 
+ .PATH:	${.CURDIR}/common/rand
+ SRCS += \
+@@ -163,7 +165,8 @@ SRCS += \
+ 	rtStrFormatKernelAddress-generic.c \
+ 	errvars-generic.c \
+ 	mppresent-generic.c \
+-	timer-generic.c
++	timer-generic.c \
++	system-page-size-generic.c
+ 
+ .PATH:	${.CURDIR}/r0drv
+ SRCS += \

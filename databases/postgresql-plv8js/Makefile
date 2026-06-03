@@ -1,5 +1,5 @@
 PORTNAME=	plv8
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
@@ -22,7 +22,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 CXXFLAGS+=	-std=c++17 -fno-rtti
 # Only for 64-bit architectures
-.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != powerpc && ${ARCH} != powerpcspe
+.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc && ${ARCH} != powerpcspe
 CXXFLAGS+=	-DV8_COMPRESS_POINTERS=1 -DV8_31BIT_SMIS_ON_64BIT_ARCH=1
 .endif
 MAKE_ARGS=	CUSTOM_CC=${CXX} CCFLAGS="${CXXFLAGS}"

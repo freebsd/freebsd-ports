@@ -1,0 +1,9 @@
+Apache bRPC is an Industrial-grade RPC framework using C++ Language,
+which is often used in high performance systems such as Search, Storage,
+Machine Learning, Advertisement, Recommendation etc.
+
+bRPC includes:
+- brpc: RPC framework with rich protocols (HTTP/2, gRPC, Thrift, etc.)
+- bthread: M:N threading library with work-stealing scheduler
+- bvar: Multi-threaded counters and statistics
+- butil: Utility library (logging, containers, synchronization)

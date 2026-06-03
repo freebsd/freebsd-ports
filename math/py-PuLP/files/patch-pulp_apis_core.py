@@ -1,12 +1,9 @@
---- pulp/apis/core.py.orig	2020-06-16 01:55:06 UTC
+--- pulp/apis/core.py.orig2025-04-25 18:37:16 UTC
 +++ pulp/apis/core.py
-@@ -149,6 +149,9 @@ elif sys.platform in ['darwin']:
-     operating_system = "osx"
-     arch = '64'
-     PULPCFGFILE += ".osx"
-+elif sys.platform in ['freebsd']:
-+    operating_system = "freebsd"
-+    PULPCFGFILE += ".freebsd"
- else:
-     operating_system = "linux"
-     PULPCFGFILE += ".linux"
+@@ -42,6 +42,8 @@ def get_operating_system():
+         return "win"
+     if sys.platform in ["darwin"]:
+         return "osx"
++    if sys.platform in ["freebsd"]:
++        return "freebsd"
+     return "linux"

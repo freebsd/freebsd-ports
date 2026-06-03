@@ -1,3 +1,4 @@
+PORTREVISION=	1
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-anthy-unicode-nox11

@@ -1,0 +1,64 @@
+--- src/corelibs/U2Algorithm/src/registry/SubstMatrixRegistry.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/corelibs/U2Algorithm/src/registry/SubstMatrixRegistry.cpp
+@@ -30,7 +30,7 @@ SubstMatrixRegistry::SubstMatrixRegistry(QObject* pOwn
+ namespace U2 {
+ 
+ SubstMatrixRegistry::SubstMatrixRegistry(QObject* pOwn)
+-    : QObject(pOwn), mutex(QMutex::Recursive) {
++    : QObject(pOwn), mutex() {
+     readMatrices();
+ }
+ 
+--- src/corelibs/U2Algorithm/src/registry/SubstMatrixRegistry.h.orig	2026-03-01 18:44:47 UTC
++++ src/corelibs/U2Algorithm/src/registry/SubstMatrixRegistry.h
+@@ -53,7 +53,7 @@ class U2ALGORITHM_EXPORT SubstMatrixRegistry : public 
+     void readMatrices();
+     static SMatrix parseMatrix(const QString& name, const QByteArray& text, QString& error);
+ 
+-    mutable QMutex mutex;
++    mutable QRecursiveMutex mutex;
+     QMap<QString, SMatrix> matrixByName;
+ };
+ 
+--- src/plugins/annotator/src/CollocationsDialogController.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/plugins/annotator/src/CollocationsDialogController.cpp
+@@ -313,7 +313,7 @@ CollocationSearchTask::CollocationSearchTask(const QLi
+ //////////////////////////////////////////////////////////////////////////
+ // task
+ CollocationSearchTask::CollocationSearchTask(const QList<AnnotationTableObject*>& table, const QSet<QString>& names, const CollocationsAlgorithmSettings& cfg)
+-    : Task(tr("Search for annotated regions"), TaskFlag_None), cfg(cfg), lock(QMutex::Recursive), keepSourceAnns(false) {
++    : Task(tr("Search for annotated regions"), TaskFlag_None), cfg(cfg), lock(), keepSourceAnns(false) {
+     GCOUNTER(cvar, "CollocationSearchTask");
+     assert(cfg.distance >= 0);
+     assert(!names.isEmpty());
+@@ -342,7 +342,7 @@ CollocationSearchTask::CollocationSearchTask(const QLi
+ }
+ 
+ CollocationSearchTask::CollocationSearchTask(const QList<SharedAnnotationData>& table, const QSet<QString>& names, const CollocationsAlgorithmSettings& cfg, bool _keepSourceAnns)
+-    : Task(tr("Search for annotated regions"), TaskFlag_None), cfg(cfg), lock(QMutex::Recursive), keepSourceAnns(_keepSourceAnns) {
++    : Task(tr("Search for annotated regions"), TaskFlag_None), cfg(cfg), lock(), keepSourceAnns(_keepSourceAnns) {
+     assert(cfg.distance >= 0);
+     assert(!names.isEmpty());
+     foreach (const QString& name, names) {
+--- src/plugins/annotator/src/CollocationsDialogController.h.orig	2026-03-01 18:44:47 UTC
++++ src/plugins/annotator/src/CollocationsDialogController.h
+@@ -105,7 +105,7 @@ class CollocationSearchTask : public Task, public Coll
+     QMap<QString, CollocationsAlgorithmItem> items;
+     CollocationsAlgorithmSettings cfg;
+     QVector<U2Region> results;
+-    QMutex lock;
++    QRecursiveMutex lock;
+ 
+     const bool keepSourceAnns;
+     QList<SharedAnnotationData> sourceAnns;
+--- src/plugins/dna_export/src/ExportSequenceTask.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/plugins/dna_export/src/ExportSequenceTask.cpp
+@@ -46,7 +46,7 @@ static const qint64 MAX_CHUNK_LENGTH = 4194305;  // (4
+ 
+ static const qint64 MAX_CHUNK_LENGTH = 4194305;  // (4 MiB + 1) chunk. Remainder of the division by 3 is 2.
+ 
+-static QMutex seqRefGuard(QMutex::NonRecursive);
++static QMutex seqRefGuard;
+ 
+ namespace U2 {
+ 

@@ -1,32 +1,28 @@
 PORTNAME=	rhash
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-PATCH_SITES=	https://github.com/rhash/RHash/commit/
-PATCHFILES+=	c804982d1b24c6533118b3068d2cfdca685076f3.patch:-p1
-PATCHFILES+=	9ef90b958b7ae50aeeb5c269468034d73d6e2efe.patch:-p1
-PATCHFILES+=	b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch:-p1
-
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility and library for computing and checking of file hashes
-WWW=		https://rhash.sourceforge.net/
+WWW=		https://rhash.sourceforge.io/
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/share/man" \
-		--pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
-		--enable-lib-static --enable-openssl-runtime \
-		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
-INSTALL_TARGET=	install install-lib-so-link install-pkg-config
-
 USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix="${PREFIX}" \
+		--pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
+		--enable-lib-static --enable-openssl-runtime \
+		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
+MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_SHARED="${INSTALL_LIB}"
+INSTALL_TARGET=	install install-lib-so-link install-pkg-config
+TEST_TARGET=	test-full
 
 WRKSRC=		${WRKDIR}/RHash-${PORTVERSION}
 
@@ -46,8 +42,5 @@ post-patch:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-
-do-test:
-	cd ${WRKSRC}/tests && ${SH} test_rhash.sh --full --shared
 
 .include <bsd.port.mk>

@@ -11,8 +11,6 @@ WWW=		http://www.csm.ornl.gov/pvm/
 
 LICENSE=	MIT
 
-BROKEN_mips=		fails to compile: 'SIGCLD' undeclared (first use in this function)
-BROKEN_mips64=		fails to compile: 'SIGCLD' undeclared (first use in this function)
 BROKEN_riscv64=		fails to build: grep: pvm3/conf/UNKNOWN.def: No such file or directory
 
 USES=		tar:tgz

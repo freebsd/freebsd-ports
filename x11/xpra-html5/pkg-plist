@@ -100,9 +100,6 @@ share/xpra/www/js/OffscreenDecodeWorker.js.gz
 share/xpra/www/js/OffscreenDecodeWorkerHelper.js
 share/xpra/www/js/OffscreenDecodeWorkerHelper.js.br
 share/xpra/www/js/OffscreenDecodeWorkerHelper.js.gz
-share/xpra/www/js/PaintWorker.js
-share/xpra/www/js/PaintWorker.js.br
-share/xpra/www/js/PaintWorker.js.gz
 share/xpra/www/js/Protocol.js
 share/xpra/www/js/Protocol.js.br
 share/xpra/www/js/Protocol.js.gz

@@ -1,11 +1,8 @@
 PORTNAME=	keama
-ISCVERSION=	4.4.3-P1
-PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	1
+PORTVERSION=	4.5.0
 CATEGORIES=	net
-MASTER_SITES=	ISC/${PORTNAME}/${PORTVERSION:S/P/-P/g} \
+MASTER_SITES=	ISC/${PORTNAME}/${PORTVERSION} \
 		ZI
-DISTNAME=	dhcp-${ISCVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Kea migration assistant
@@ -31,8 +28,7 @@ SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
-PLIST_FILES=	sbin/keama share/man/man8/keama.8.gz \
-		%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md \
+PLIST_FILES=	bin/keama share/man/man8/keama.8.gz \
 		%%PORTDOCS%%%%DOCSDIR%%/README.md \
 
 do-install:

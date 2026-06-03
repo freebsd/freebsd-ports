@@ -1,0 +1,10 @@
+--- test/CMakeLists.txt.orig
++++ test/CMakeLists.txt
+@@ -19,6 +19,7 @@
+ 
+ #-------------------------------------------------------------------------------
+ # Load testsweeper if needed
++find_package( OpenMP )
+ if( BUILD_BLASPP_TESTS OR BUILD_LAPACKPP_TESTS )
+   find_package( testsweeper 2021 QUIET )
+   if( NOT testsweeper_FOUND )

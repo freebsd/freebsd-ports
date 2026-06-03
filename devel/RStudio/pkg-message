@@ -11,14 +11,31 @@ proc /proc procfs rw 0 0
 and then run this command as root:
 # mount /proc
 
-In order to enable RStudio Server service at startup and start it please run:
+=== Desktop Flavor ===
+The desktop flavor provides a native GUI using Electron. Simply run:
+% rstudio
+
+=== Server Flavor ===
+To enable RStudio Server service at startup:
 # sysrc rstudio_server_enable="YES"
 # service rstudio-server start
-and then navigate to http://localhost:8787/ in your browser.
+
+Then navigate to http://localhost:8787/ in your browser.
 
 You can also start the RStudio Server service once with:
 # service rstudio-server onestart
-and then navigate to http://localhost:8787/ in your browser.
+
+=== COPILOT option ===
+In order to use this (default) option you need to be
+logged into your GitHub copilot account. 
+
+You can log into GitHub copilot using GitHub's CLI gh,
+or directly from the GitHub copilot application 'copilot'
+installed by misc/github-copilot-cli.
+
+The gh and copilot executables are not required to use the
+COPILOT option. You only need one of them to log into your
+GitHub account.
 
 EOM
 }

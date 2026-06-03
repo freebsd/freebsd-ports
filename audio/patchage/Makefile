@@ -1,6 +1,6 @@
 PORTNAME=	patchage
 DISTVERSION=	1.0.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 

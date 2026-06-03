@@ -1,7 +1,6 @@
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.6
-PORTREVISION=	1
+DISTVERSION=	2.5.10
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -12,9 +11,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ldc2:lang/ldc
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libinotify.so:devel/libinotify
+LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/sbin/logrotate:sysutils/logrotate
+
+.if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+.endif
 
 USES=		autoreconf gmake pkgconfig sqlite
 USE_GITHUB=	yes

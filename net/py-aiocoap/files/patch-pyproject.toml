@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2025-11-05 01:21:23 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ # SPDX-License-Identifier: MIT
+ 
+ [build-system]
+-requires = [ "setuptools >= 77.0" ]
++requires = [ "setuptools >= 61.0" ]
+ build-backend = "setuptools.build_meta"
+  
+ [project]
+@@ -13,10 +13,7 @@ authors = [
+     { name = "Christian Amsüss", email = "chrysn@fsfe.org" },
+     { name = "the aiocoap contributors" },
+ ]
+-license = "MIT AND BSD-3-Clause"
+-license-files = [
+-    "LICENSES/*",
+-]
++license = { text = "MIT AND BSD-3-Clause" }
+ keywords = [ "coap", "asyncio", "iot" ]
+ classifiers= [
+     "Development Status :: 5 - Production/Stable",

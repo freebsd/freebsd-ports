@@ -1,6 +1,6 @@
---- Makefile.common.orig	2023-09-27 02:22:20 UTC
+--- Makefile.common.orig	2025-07-19 20:40:49 UTC
 +++ Makefile.common
-@@ -29,8 +29,13 @@ else
+@@ -28,8 +28,13 @@ else
  ifeq ($(OS_NAME),Mac)
  ENDIANESS:="Little Endian"
  else
@@ -15,16 +15,16 @@
  
  # Windows uses different path separators
  ifeq ($(OS_NAME),Windows)
-@@ -51,7 +56,7 @@ endif
+@@ -50,7 +55,7 @@ endif
  # os=Default is meant to be generic unix/linux
  
  # To support new CPU architecture, add a new target name here
--known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-android-aarch64 Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 Mac-aarch64 FreeBSD-x86_64 Windows-x86 Windows-x86_64 Windows-aarch64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64 Linux-riscv Linux-riscv64
-+known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-android-aarch64 Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 Mac-aarch64 FreeBSD-arm FreeBSD-aarch64 FreeBSD-ppc FreeBSD-ppc64 FreeBSD-ppc64le FreeBSD-x86 FreeBSD-x86_64 Windows-x86 Windows-x86_64 Windows-aarch64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64 Linux-riscv Linux-riscv64
+-known_os_archs := Linux-x86_64-musl Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-android-aarch64 Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 Mac-aarch64 FreeBSD-x86_64 Windows-x86 Windows-x86_64 Windows-aarch64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64 Linux-riscv Linux-riscv64 Linux-loongarch Linux-loongarch64
++known_os_archs := Linux-x86_64-musl Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-android-aarch64 Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 Mac-aarch64 FreeBSD-arm FreeBSD-aarch64 FreeBSD-ppc FreeBSD-ppc64 FreeBSD-ppc64le FreeBSD-x86 FreeBSD-x86_64 Windows-x86 Windows-x86_64 Windows-aarch64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64 Linux-riscv Linux-riscv64 Linux-loongarch Linux-loongarch64
  os_arch := $(OS_NAME)-$(OS_ARCH)
  IBM_JDK_7 := $(findstring IBM, $(shell $(JAVA) -version 2>&1 | grep IBM | grep "JRE 1.7"))
  
-@@ -262,6 +267,48 @@ Mac-x86_64_SNAPPY_FLAGS  :=
+@@ -272,6 +277,48 @@ Mac-x86_64_SNAPPY_FLAGS  :=
  Mac-x86_64_LINKFLAGS := -dynamiclib
  Mac-x86_64_LIBNAME   := libsnappyjava.dylib
  Mac-x86_64_SNAPPY_FLAGS  :=

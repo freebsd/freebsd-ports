@@ -1,9 +1,9 @@
 PORTNAME=	netxms
-PORTVERSION=	3.9.420
+DISTVERSION=	6.1.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
+MASTER_SITES=	https://www.netxms.org/download/releases/${DISTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	Network monitoring system
 WWW=		https://www.netxms.org/
 
@@ -13,13 +13,15 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libjansson.so:devel/jansson \
-		libpcre.so:devel/pcre \
-		libtre.so:textproc/libtre \
-		libmosquitto.so:net/mosquitto
+		libmosquitto.so:net/mosquitto \
+		libpcre2-8.so:devel/pcre2 \
+		libtre.so:textproc/libtre
 
-USES=		gmake iconv libtool localbase perl5 ssl
-USE_CXXSTD=	c++11
+USES=		gmake iconv libedit libtool localbase perl5 shebangfix sqlite \
+		ssl
 USE_LDCONFIG=	yes
+
+SHEBANG_GLOB=	*.sh *asan*
 
 GNU_CONFIGURE=	yes
 
@@ -32,11 +34,11 @@ GROUPS=		netxms
 
 PLIST_SUB=	SONUM=${SONUM}
 
-OPTIONS_DEFINE=	SERVER CLIENT AGENT SSH
-OPTIONS_DEFAULT=	CLIENT AGENT SSH
-OPTIONS_SINGLE=	SERVER
-OPTIONS_SINGLE_SERVER=	MYSQL PGSQL ODBC
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		AGENT CLIENT SERVER SSH
+OPTIONS_DEFAULT=	AGENT CLIENT SSH
+OPTIONS_MULTI=		SERVER
+OPTIONS_MULTI_SERVER=	MYSQL ODBC PGSQL
+OPTIONS_SUB=		yes
 
 AGENT_DESC=	Install NetXMS agent
 CLIENT_DESC=	Install NetXMS client
@@ -50,11 +52,12 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_ON=	--with-odbc
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql
+SERVER_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 SERVER_CONFIGURE_ON=	--with-server
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_OFF=	--disable-ssh
 
-SONUM=	39
+SONUM=		61
 
 .include <bsd.port.options.mk>
 

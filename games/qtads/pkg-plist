@@ -1,0 +1,16 @@
+bin/qtads
+share/applications/nikos.chantziaras.qtads.desktop
+%%ICONS%%share/icons/hicolor/128x128/mimetypes/application-x-t3vm-image.png
+%%ICONS%%share/icons/hicolor/128x128/mimetypes/application-x-tads.png
+%%ICONS%%share/icons/hicolor/16x16/mimetypes/application-x-t3vm-image.png
+%%ICONS%%share/icons/hicolor/16x16/mimetypes/application-x-tads.png
+share/icons/hicolor/256x256/apps/qtads.png
+%%ICONS%%share/icons/hicolor/32x32/mimetypes/application-x-t3vm-image.png
+%%ICONS%%share/icons/hicolor/32x32/mimetypes/application-x-tads.png
+share/icons/hicolor/48x48/apps/qtads.png
+%%ICONS%%share/icons/hicolor/48x48/mimetypes/application-x-t3vm-image.png
+%%ICONS%%share/icons/hicolor/48x48/mimetypes/application-x-tads.png
+share/icons/hicolor/72x72/apps/qtads.png
+share/man/man6/qtads.6.gz
+share/metainfo/nikos.chantziaras.qtads.appdata.xml
+share/mime/packages/qtads.xml

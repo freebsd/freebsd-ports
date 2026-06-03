@@ -1,7 +1,6 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.3
-PORTREVISION=	2
+DISTVERSION=	5.0.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -9,9 +8,6 @@ COMMENT=	Fast and lightweight data forwarder
 WWW=		https://fluentbit.io/
 
 LICENSE=	APACHE20
-
-BROKEN_mips=	fails to build: conflicting types for 'restrict'
-BROKEN_mips64=	fails to build: conflicting types for 'restrict'
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 

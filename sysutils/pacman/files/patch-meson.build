@@ -1,6 +1,6 @@
---- meson.build.orig	2024-03-04 03:07:58 UTC
+--- meson.build.orig	2025-11-01 11:05:29 UTC
 +++ meson.build
-@@ -197,7 +197,7 @@ if conf.has('HAVE_GETMNTINFO')
+@@ -198,7 +198,7 @@ if conf.has('HAVE_GETMNTINFO')
    else
        conf.set('FSSTATSTYPE', 'struct statfs')
    endif
@@ -9,7 +9,7 @@
    conf.set('FSSTATSTYPE', 'struct statvfs')
  elif conf.has('HAVE_STRUCT_STATFS_F_FLAGS')
    conf.set('FSSTATSTYPE', 'struct statfs')
-@@ -416,25 +416,25 @@ configure_file(
+@@ -417,19 +417,19 @@ configure_file(
  
  configure_file(
    input : 'etc/makepkg.conf.in',
@@ -31,6 +31,8 @@
 +  output : 'rust.conf.sample',
    configuration : substs,
    install_dir : join_paths(SYSCONFDIR, 'makepkg.conf.d/'))
+ 
+@@ -437,7 +437,7 @@ configure_file(
  
  configure_file(
    input : 'etc/pacman.conf.in',

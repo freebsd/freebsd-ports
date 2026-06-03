@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=	--enable-debug \
 .endif
 
 # Only for 64-bit architectures
-.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && \
+.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && \
 	${ARCH} != powerpc && ${ARCH} != powerpcspe
 _LDB_LIBS_64=	lib/ldb/libldb-mdb-int.so lib/shared-modules/ldb/mdb.so
 .endif

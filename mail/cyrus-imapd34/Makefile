@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.4.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
@@ -128,7 +128,7 @@ OPTIONS_DEFAULT+=		GSSAPI_BASE
 .endif
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}"
-.if exists(/usr/libexec/krb5kdc)
+.if exists(/usr/libdata/pkgconfig/mit-krb5.pc)
 GSSAPI_BASE_CONFIGURE_ON+=	--with-gss_impl=mit
 .else
 GSSAPI_BASE_CONFIGURE_ON+=	--with-gss_impl=heimdal

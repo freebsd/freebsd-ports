@@ -11,8 +11,10 @@ share/icons/hicolor/48x48/apps/obconf-qt.png
 %%DATADIR%%/translations/obconf-qt_da.qm
 %%DATADIR%%/translations/obconf-qt_de.qm
 %%DATADIR%%/translations/obconf-qt_el.qm
+%%DATADIR%%/translations/obconf-qt_en_GB.qm
 %%DATADIR%%/translations/obconf-qt_es.qm
 %%DATADIR%%/translations/obconf-qt_et.qm
+%%DATADIR%%/translations/obconf-qt_eu.qm
 %%DATADIR%%/translations/obconf-qt_fi.qm
 %%DATADIR%%/translations/obconf-qt_fr.qm
 %%DATADIR%%/translations/obconf-qt_gl.qm
@@ -23,6 +25,8 @@ share/icons/hicolor/48x48/apps/obconf-qt.png
 %%DATADIR%%/translations/obconf-qt_is.qm
 %%DATADIR%%/translations/obconf-qt_it.qm
 %%DATADIR%%/translations/obconf-qt_ja.qm
+%%DATADIR%%/translations/obconf-qt_ka.qm
+%%DATADIR%%/translations/obconf-qt_kab.qm
 %%DATADIR%%/translations/obconf-qt_kk.qm
 %%DATADIR%%/translations/obconf-qt_ko.qm
 %%DATADIR%%/translations/obconf-qt_lg.qm
@@ -42,3 +46,4 @@ share/icons/hicolor/48x48/apps/obconf-qt.png
 %%DATADIR%%/translations/obconf-qt_tr.qm
 %%DATADIR%%/translations/obconf-qt_uk.qm
 %%DATADIR%%/translations/obconf-qt_zh_CN.qm
+%%DATADIR%%/translations/obconf-qt_zh_TW.qm

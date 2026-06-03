@@ -1,4 +1,4 @@
---- remoting/signaling/ftl_host_device_id_provider.cc.orig	2025-05-07 06:48:23 UTC
+--- remoting/signaling/ftl_host_device_id_provider.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/signaling/ftl_host_device_id_provider.cc
 @@ -16,7 +16,7 @@ constexpr char kDeviceIdPrefix[] = "crd-win-host-";
  constexpr char kDeviceIdPrefix[] = "crd-mac-host-";

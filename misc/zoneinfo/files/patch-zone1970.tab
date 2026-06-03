@@ -1,12 +1,14 @@
---- zone1970.tab.orig	2019-06-22 19:39:01 UTC
+--- zone1970.tab.orig	2025-08-30 06:13:30 UTC
 +++ zone1970.tab
-@@ -9,7 +9,8 @@
+@@ -7,9 +7,10 @@
+ # civil timestamps have agreed since 1970.  Columns are separated by
+ # a single tab.  Lines beginning with ‘#’ are comments.  All text uses
  # UTF-8 encoding.  The columns of the table are as follows:
- #
+-#
++
  # 1.  The countries that overlap the timezone, as a comma-separated list
--#     of ISO 3166 2-character country codes.  See the file 'iso3166.tab'.
-+#     of ISO 3166 2-character country codes.
+ #     of ISO 3166 2-character country codes.
 +#     See the file '/usr/share/misc/iso3166'.
- # 2.  Latitude and longitude of the timezone's principal location
+ # 2.  Latitude and longitude of the timezone’s principal location
  #     in ISO 6709 sign-degrees-minutes-seconds format,
  #     either ±DDMM±DDDMM or ±DDMMSS±DDDMMSS,

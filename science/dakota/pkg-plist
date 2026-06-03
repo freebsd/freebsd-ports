@@ -138,6 +138,7 @@ include/DakotaApproximation.hpp
 include/DakotaBuildInfo.hpp
 include/DakotaConstraints.hpp
 include/DakotaEnvironment.hpp
+include/DakotaExtPythonMethod.hpp
 include/DakotaFieldApproximation.hpp
 include/DakotaGraphics.hpp
 include/DakotaInterface.hpp
@@ -755,6 +756,7 @@ include/NonDGlobalInterval.hpp
 include/NonDGlobalReliability.hpp
 include/NonDGlobalSingleInterval.hpp
 include/NonDHierarchSampling.hpp
+include/NonDImportPoints.hpp
 include/NonDIntegration.hpp
 include/NonDInterval.hpp
 include/NonDLHSEvidence.hpp
@@ -896,6 +898,7 @@ include/ProbabilityTransformation.hpp
 include/ProblemConfig.hpp
 include/ProblemConfig.hpp.inl
 include/ProblemDescDB.hpp
+include/ProblemDescDBUtils.hpp
 include/ProcessApplicInterface.hpp
 include/ProcessHandleApplicInterface.hpp
 include/ProgramOptions.hpp
@@ -1931,6 +1934,7 @@ include/UniformOffsetMutator.hpp
 include/UniformOffsetMutator.hpp.inl
 include/UniformRandomVariable.hpp
 include/UsageTracker.hpp
+include/UserModes.hpp
 include/UtilDataScaler.hpp
 include/UtilLinearSolvers.hpp
 include/VPSApproximation.hpp
@@ -2102,6 +2106,7 @@ include/dakota_tabular_io.hpp
 include/ddace_fortran.h
 include/decorator_log.hpp
 include/default_types.hpp
+include/delete_study_components.hpp
 include/dream.hpp
 include/dream_user.hpp
 include/entries.hpp
@@ -2235,6 +2240,7 @@ include/pr_queue.h
 include/pr_queue_k.h
 include/predator_prey.hpp
 include/proto.h
+include/python_utils.hpp
 include/registry.hpp
 include/registry.hpp.inl
 include/rnglib.hpp

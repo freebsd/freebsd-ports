@@ -9,7 +9,7 @@ i386 target on BSDs doesn't include SSE2 by default
 +find_package(OpenSSL REQUIRED)
  find_package(BCToolbox 5.3.0 REQUIRED)
 +find_package(ZLIB REQUIRED)
-+set(CMAKE_PREFIX_PATH "/usr/local/ffmpeg4;/usr/local/ffmpeg4/libexec")
++set(CMAKE_PREFIX_PATH "%%LOCALBASE%%/ffmpeg4;%%LOCALBASE%%/ffmpeg4/libexec")
  find_package(Mediastreamer2 5.3.0 REQUIRED)
  
  find_library(LIBM NAMES m)

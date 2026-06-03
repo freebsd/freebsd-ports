@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-02-10 12:41:57 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@ authors = [
+ authors = [
+     {name = "Inada Naoki", email = "songofacandy@gmail.com"}
+ ]
+-license = "GPL-2.0-or-later"
++license = {text = "GNU General Public License v2 or later (GPLv2+)"}
+ keywords = ["MySQL"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

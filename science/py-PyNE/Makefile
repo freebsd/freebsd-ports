@@ -1,6 +1,6 @@
 PORTNAME=	PyNE
 DISTVERSION=	0.7.8
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	science # physics
 MASTER_SITES=	https://raw.githubusercontent.com/pyne/data/master/:decay \
 		https://raw.githubusercontent.com/pyne/data/master/:cram \
@@ -27,7 +27,7 @@ BROKEN_armv7=	clang runs out of memory
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progress>0:devel/py-progress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \

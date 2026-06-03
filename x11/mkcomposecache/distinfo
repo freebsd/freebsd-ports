@@ -1,2 +1,3 @@
-SHA256 (xorg/app/mkcomposecache-1.2.1.tar.bz2) = c9ee54d18cb9a8a0c5fcd8d2dd08ed8ed869f3a538af46caff08ca9bc9cf2caf
-SIZE (xorg/app/mkcomposecache-1.2.1.tar.bz2) = 97359
+TIMESTAMP = 1776581500
+SHA256 (xorg/app/mkcomposecache-1.2.3.tar.xz) = 2860d7317ec9a9365705cb25410c308ddc34422394d9b91d499b1ddd453c7d39
+SIZE (xorg/app/mkcomposecache-1.2.3.tar.xz) = 125152

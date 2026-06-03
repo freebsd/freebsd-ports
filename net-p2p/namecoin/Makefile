@@ -1,7 +1,7 @@
 PORTNAME=	namecoin
 DISTVERSIONPREFIX=	nc
 DISTVERSION=	24.0
-PORTREVISION=	17
+PORTREVISION=	20
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 MASTER_SITES+=	https://same.name/static/:icon
@@ -108,7 +108,7 @@ post-install:
 .endif
 
 regression-test: build
-	# To use this sucessfully, remove --without-daemon and --without-utils
+	# To use this successfully, remove --without-daemon and --without-utils
 	# from CONFIGURE_ARGS above.
 
 	@cd ${WRKSRC} && ${GMAKE} check

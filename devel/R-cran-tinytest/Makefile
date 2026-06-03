@@ -1,12 +1,11 @@
 PORTNAME=	tinytest
-DISTVERSION=	1.4.1
-PORTREVISION=	1
+DISTVERSION=	1.4.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Lightweight and Feature Complete Unit Testing Framework
-WWW=		https://github.com/markvanderloo/tinytest
+WWW=		https://cran.r-project.org/package=tinytest
 
 LICENSE=	GPLv3
 

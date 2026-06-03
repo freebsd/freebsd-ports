@@ -1,7 +1,1 @@
 Firmware files for Realtek WiFi NICs supported by the rtw88 driver.
-
-Currently supported chipsets:
-- RTL8822BE
-- RTL8821CE
-- RTL8822CE
-- RTL8723DE

@@ -1,0 +1,11 @@
+Red Arrow Flight SQL is the Ruby bindings of Apache Arrow Flight SQL. Red Arrow
+Flight SQL is based on GObject Introspection.
+
+Apache Arrow Flight SQL is one of Apache Arrow components to interact with SQL
+databases using the Apache Arrow in-memory format and Apache Arrow Flight.
+
+GObject Introspection is a middleware for language bindings of C library.
+GObject Introspection can generate language bindings automatically at runtime.
+
+Red Arrow Flight SQL uses Apache Arrow Flight SQL GLib and gobject-introspection
+gem to generate Ruby bindings of Apache Arrow Flight SQL.

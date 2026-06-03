@@ -1,4 +1,4 @@
---- invoke/config.py.orig	2023-07-12 18:04:20 UTC
+--- invoke/config.py.orig	2025-10-13 23:49:45 UTC
 +++ invoke/config.py
 @@ -440,16 +440,16 @@ class Config(DataProxy):
  
@@ -13,16 +13,17 @@
 -        # Else, assume Unix, most distros of which have /bin/bash available.
 +        # Else, assume Unix, most distros of which have /bin/sh available.
          # TODO: consider an automatic fallback to /bin/sh for systems lacking
-         # /bin/bash; however users may configure run.shell quite easily, so...
+-        # /bin/bash; however users may configure run.shell quite easily, so...
++        # /bin/sh; however users may configure run.shell quite easily, so...
          else:
--            shell = "/bin/bash"
-+            shell = "/bin/sh"
+-            shell = "bash"
++            shell = "sh"
  
          return {
              # TODO: we document 'debug' but it's not truly implemented outside
---- invoke/runners.py.orig	2023-05-23 15:52:36 UTC
+--- invoke/runners.py.orig	2026-04-05 23:27:54 UTC
 +++ invoke/runners.py
-@@ -335,7 +335,7 @@ class Runner:
+@@ -342,7 +342,7 @@ class Runner:
              Default: ``False``.
  
          :param str shell:
@@ -31,25 +32,25 @@
              ``COMSPEC`` or ``cmd.exe`` on Windows.)
  
          :param timeout:
---- tests/config.py.orig	2023-07-12 18:04:20 UTC
+--- tests/config.py.orig	2025-10-14 01:23:47 UTC
 +++ tests/config.py
 @@ -107,7 +107,7 @@ class Config_:
                      "out_stream": None,
                      "pty": False,
                      "replace_env": False,
--                    "shell": "/bin/bash",
-+                    "shell": "/bin/sh",
+-                    "shell": "bash",
++                    "shell": "sh",
                      "warn": False,
                      "watchers": [],
                  },
---- tests/runners.py.orig	2023-05-02 02:12:54 UTC
+--- tests/runners.py.orig	2026-04-05 23:27:54 UTC
 +++ tests/runners.py
 @@ -81,7 +81,7 @@ def _expect_platform_shell(shell):
      if WINDOWS:
          assert shell.endswith("cmd.exe")
      else:
--        assert shell == "/bin/bash"
-+        assert shell == "/bin/sh"
+-        assert shell == "bash"
++        assert shell == "sh"
  
  
  def _make_tcattrs(cc_is_ints=True, echo=False):

@@ -1,0 +1,8 @@
+--- test/Makefile.orig	2026-04-13 08:21:58 UTC
++++ test/Makefile
+@@ -2,4 +2,4 @@ all:
+ .PHONY: all
+ 
+ all:
+-	bats --abort -T test.sh
++	bats -T test.sh

@@ -1,7 +1,9 @@
 [
 { type: install
   message: <<EOM
-To use clojure-mode in Emacs, add the following lines to your ~/.emacs:
+
+To use clojure-mode in Emacs, add the following lines to your Emacs
+configuration:
 
   (autoload 'clojure-mode "clojure-mode" "A mode for clojure lisp" t)
   (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))

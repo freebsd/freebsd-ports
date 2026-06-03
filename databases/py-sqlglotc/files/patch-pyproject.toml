@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-05-13 08:38:03 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ authors = [{ name = "Toby Mao", email = "toby.mao@gmai
+ dynamic = ["version"]
+ description = "mypyc-compiled extensions for sqlglot"
+ authors = [{ name = "Toby Mao", email = "toby.mao@gmail.com" }]
+-license = "MIT"
++license = { text = "MIT" }
+ requires-python = ">= 3.10"
+ 
+ [project.optional-dependencies]
+@@ -19,7 +19,6 @@ requires = [
+     "setuptools_scm",
+     "sqlglot-mypy >= 1.20.0.post6",
+     "types-python-dateutil",
+-    "sqlglot",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

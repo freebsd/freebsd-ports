@@ -1,0 +1,26 @@
+export GRIST_SESSION_SECRET="set_secret_min_36_characters"
+
+#export GRIST_DB_TYPE="postgres"
+#export GRIST_DB_HOST="127.0.0.1"
+#export GRIST_DB_NAME="grist"
+#export GRIST_DB_USER="grist"
+#export GRIST_DB_PASSWORD="very_secret_password"
+
+export GRIST_SERVE_STATIC="true"
+export GRIST_HOST="0.0.0.0"
+export GRIST_PORT="8484"
+
+export APP_HOME_URL="https://grist.set-to-your-domain"
+
+# admin user
+export GRIST_DEFAULT_EMAIL="email of your admin user"
+
+export GRIST_SINGLE_ORG="main"
+
+# Auth using authelia
+#export GRIST_AUTH_TYPE="forward"
+#export GRIST_TRUST_PROXY="1"
+#export GRIST_FORWARD_AUTH_HEADER="X-Forwarded-Email"
+
+# Path to store documents
+export GRIST_DATA_DIR="/var/db/grist"

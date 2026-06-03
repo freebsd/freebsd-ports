@@ -1,10 +1,10 @@
 bin/pure-pw
 bin/pure-pwconvert
 bin/pure-statsdecode
-etc/pure-ftpd.conf.sample
-etc/pureftpd-ldap.conf.sample
-etc/pureftpd-mysql.conf.sample
-etc/pureftpd-pgsql.conf.sample
+@sample etc/pure-ftpd.conf.sample
+@sample etc/pureftpd-ldap.conf.sample
+@sample etc/pureftpd-mysql.conf.sample
+@sample etc/pureftpd-pgsql.conf.sample
 sbin/pure-alwaysfail
 sbin/pure-authd
 sbin/pure-certd

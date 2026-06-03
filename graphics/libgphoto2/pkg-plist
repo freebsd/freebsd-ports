@@ -20,7 +20,7 @@ include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
 lib/libgphoto2.so
 lib/libgphoto2.so.6
-lib/libgphoto2.so.6.3.0
+lib/libgphoto2.so.6.4.0
 lib/libgphoto2/%%VERSION%%/ax203.so
 lib/libgphoto2/%%VERSION%%/canon.so
 lib/libgphoto2/%%VERSION%%/digigr8.so
@@ -34,6 +34,7 @@ lib/libgphoto2/%%VERSION%%/kodak_dc240.so
 lib/libgphoto2/%%VERSION%%/mars.so
 lib/libgphoto2/%%VERSION%%/pentax.so
 lib/libgphoto2/%%VERSION%%/ptp2.so
+lib/libgphoto2/%%VERSION%%/quicktake1x0.so
 lib/libgphoto2/%%VERSION%%/ricoh_g3.so
 lib/libgphoto2/%%VERSION%%/sierra.so
 lib/libgphoto2/%%VERSION%%/sonix.so
@@ -123,16 +124,20 @@ libdata/pkgconfig/libgphoto2_port.pc
 %%NLS%%share/locale/fi/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgphoto2_port-12.mo
+%%NLS%%share/locale/fur/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libgphoto2_port-12.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/libgphoto2-6.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libgphoto2_port-12.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2_port-12.mo

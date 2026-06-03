@@ -1,9 +1,9 @@
 PORTNAME=	arcan
-DISTVERSION=	0.7.0.1
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	multimedia
+MASTER_SITES=	https://codeberg.org/letoram/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	hoanga@gmail.com	
+MAINTAINER=	hoanga@gmail.com
 COMMENT=	Display Server, Multimedia Framework, Game Engine
 WWW=		https://arcan-fe.com/
 
@@ -15,15 +15,15 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC:H}/data/distr/LICENSE.LGPL
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libdisplay-info.so:sysutils/libdisplay-info
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
 USES=		cmake compiler:c11 gl iconv openal pkgconfig sqlite
-USE_GITHUB=	yes
-USE_GL=		egl gbm gl
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	letoram
+USE_GL=		egl gbm gl
 WRKSRC_SUBDIR=	src
+WRKSRC=		${WRKDIR}/arcan
 CMAKE_ON=	HYBRID_HEADLESS
 CMAKE_OFF=	STATIC_LIBUVC
 CMAKE_ARGS=	-DDISTR_TAG:STRING="portbld" \
@@ -89,6 +89,8 @@ post-patch:
 		${WRKSRC}/frameserver/terminal/default/cli_builtin.c \
 		${WRKSRC}/platform/posix/paths.c \
 		${WRKSRC}/shmif/arcan_shmif_debugif.c
+	@${REINPLACE_CMD} -e '/static void audio_flush/s,long,int64_t,' \
+		${WRKSRC}/frameserver/decode/default/decode_av.c
 
 pre-configure-MANPAGES-on:
 	@${RUBY} -C ${WRKSRC:H}/doc -Ku docgen.rb mangen 2>/dev/null

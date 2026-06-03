@@ -43,7 +43,7 @@ upgrade Document Server to a new version and all your changes will be lost.
   # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` add_user onlyoffice password
   # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_user_tags onlyoffice administrator
   # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_permissions -p / onlyoffice ".*" ".*" ".*"
-  and change it in %%ETCDIR%%/documentserver/local.json accordingly.
+  and update the rabbitmq:url object in %%ETCDIR%%/documentserver/local.json: "amqp://onlyoffice:password@localhost"
 
 4. Set up supervisord in order to execute documentserver services:
   - let supervisord.conf load files contained in this directory by adding to
@@ -59,16 +59,31 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
       include %%ETCDIR%%/documentserver/nginx/ds.conf;
 
 NOTE: documentserver-update-securelink.sh will only update ./nginx/ds.conf and local.json under %%ETCDIR%%/documentserver/!
-  - run documentserver-update-securelink.sh once for creationg a verysecretstring 
+  - run documentserver-update-securelink.sh once for creating a verysecretstring
 
   - start nginx:
     # service nginx start
 
-6. Follow the following doc If you want to use Onlyoffice with Nextcloud:
-  - https://api.onlyoffice.com/editors/nextcloud
+6. Install OnlyOffice plugins (you'll need internet):
+   # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
 
-7. Install OnlyOffice plugins (you'll need internet):
-  # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
+7. Set up Onlyoffice with Nextcloud, if desired:
+  - JWT is mandated within Onlyoffice Nextcloud app, requiring edits to %%ETCDIR%%/documentserver/local.json:
+      In the token:enable section, set the browser, request:inbox and request:outbox objects to "true"
+
+  - create a secure JWT secret (Base64 avoids issues with JSON/PHP character escaping)
+    # openssl rand -base64 48
+
+  - store the JWT secret in %%ETCDIR%%/documentserver/local.json:
+      In the services:Coauthoring:secret section, enter the JWT secret in the browser, inbox, outbox and session objects
+
+  - restart Onlyoffice:
+    # service supervisord restart
+
+  - specify the JWT secret in the Nextcloud administrative configuration for Onlyoffice app
+
+  - see the following for more info:
+      https://api.onlyoffice.com/editors/nextcloud
 
 8. Enjoy.
 EOM
@@ -94,6 +109,23 @@ you need to update the database schema:
     psql -U postgres -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev720.sql
   For MySQL:
     mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev720.sql
+EOM
+}
+{ type: upgrade
+  minimum_version: 9.1.0
+  maximum_version: 9.1.0_1
+  message: <<EOM
+NOTICE: The Admin Panel has been made closed source as of version 9.3.0.
+It is no longer included in the community edition and is now only available
+in the Developer and Enterprise editions of ONLYOFFICE Docs.
+
+Attempts to access the Admin Panel URL (http://host/admin) will fail.
+All configuration remains fully available through %%ETCDIR%%/documentserver/local.json
+as before, with no loss of functionality for the community edition.
+
+You may safely remove any Admin Panel logs and configuration files:
+  # rm -rf /var/log/onlyoffice/documentserver/adminpanel
+  # rm -f %%ETCDIR%%/documentserver/supervisor/adminpanel.conf
 EOM
 }
 ]

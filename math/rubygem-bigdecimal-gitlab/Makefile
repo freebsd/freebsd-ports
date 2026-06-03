@@ -1,0 +1,17 @@
+PORTNAME=	bigdecimal
+PORTVERSION=	3.3.1
+CATEGORIES=	math rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	-gitlab
+
+MAINTAINER=	mfechner@FreeBSD.org
+COMMENT=	Arbitrary-precision decimal floating-point number class
+WWW=		https://github.com/ruby/bigdecimal
+
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
+
+USES=		gem
+
+.include <bsd.port.mk>

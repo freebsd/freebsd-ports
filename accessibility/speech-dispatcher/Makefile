@@ -1,5 +1,6 @@
 PORTNAME=	speech-dispatcher
 DISTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 
@@ -129,9 +130,9 @@ post-test:
 
 .else
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR}
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR}
 
 USES+=		python shebangfix
 USE_PYTHON=	flavors

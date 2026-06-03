@@ -1,5 +1,6 @@
 PORTNAME=	devilutionX
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
@@ -23,8 +24,8 @@ DOS2UNIX_GLOB=	*.cpp *.h CMakeLists.txt Dependencies.cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
 GH_PROJECT=	DevilutionX
-GH_TUPLE=	diasurgical:libsmackerdec:91e732bb6953489077430572f43fc802bf2c75b2:libsmackerdec/_deps/libsmackerdec-src \
-		diasurgical:libmpq:b78d66c6fee6a501cc9b95d8556a129c68841b05:libmpq/_deps/libmpq-src
+GH_TUPLE=	diasurgical:libsmackerdec:0aaaf8c94a097b009d844db0d44dd7cd0ff81922:libsmackerdec/_deps/libsmackerdec-src \
+		diasurgical:libmpq:7c2924d4553513eba1a70bbdb558198dd8c2726a:libmpq/_deps/libmpq-src
 USE_SDL=	sdl2 image2
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \
@@ -55,10 +56,10 @@ ZEROTIER_DESC=		ZeroTier multiplayer option (broken)
 ZEROTIER_BROKEN=	does not build: fatal error: 'sys/appleapiopts.h' file not found
 ZEROTIER_CMAKE_BOOL_OFF=DISABLE_ZERO_TIER
 ZEROTIER_IMPLIES=	NETWORK
-ZEROTIER_GH_TUPLE=	diasurgical:libzt:d6c6a069a5041a3e89594c447ced3f15d77618b8:libzt/_deps/libzt-src \
-			diasurgical:ZeroTierOne:b1350ac91118d1bd6bb71c0c41be5f4a30196838:ZeroTierOne/_deps/libzt-src/ext/ZeroTierOne \
-			diasurgical:lwip:1bf7e011caf4e992ad139f6cb8c9818a9c1fbe1b:lwip/_deps/libzt-src/ext/lwip \
-			diasurgical:lwip-contrib:1f9e26e221a41542563834222c4ec8399be1908f:lwipcontrib/_deps/libzt-src/ext/lwip-contrib
+ZEROTIER_GH_TUPLE=	diasurgical:libzt:1a9d83b8c4c2bdcd7ea6d8ab1dd2771b16eb4e13:libzt/_deps/libzt-src \
+			diasurgical:ZeroTierOne:7369b928017ce2716d689f922fa4c7872bd000f6:ZeroTierOne/_deps/libzt-src/ext/ZeroTierOne \
+			diasurgical:lwip:32708c0a8b140efb545cc35101ee5fdeca6d6489:lwip/_deps/libzt-src/ext/lwip \
+			diasurgical:lwip-contrib:91deef22e6519f94e0b07327fc778816e384eb7d:lwipcontrib/_deps/libzt-src/ext/lwip-contrib
 
 ENCRYPTION_DESC=	Encrypt network packets
 ENCRYPTION_CMAKE_BOOL=	PACKET_ENCRYPTION

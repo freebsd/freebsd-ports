@@ -6,6 +6,7 @@
 %%SITE_PERL%%/URI/Split.pm
 %%SITE_PERL%%/URI/URL.pm
 %%SITE_PERL%%/URI/WithBase.pm
+%%SITE_PERL%%/URI/_emailauth.pm
 %%SITE_PERL%%/URI/_foreign.pm
 %%SITE_PERL%%/URI/_generic.pm
 %%SITE_PERL%%/URI/_idna.pm
@@ -55,6 +56,7 @@
 %%SITE_PERL%%/URI/sip.pm
 %%SITE_PERL%%/URI/sips.pm
 %%SITE_PERL%%/URI/smb.pm
+%%SITE_PERL%%/URI/smtp.pm
 %%SITE_PERL%%/URI/snews.pm
 %%SITE_PERL%%/URI/ssh.pm
 %%SITE_PERL%%/URI/telnet.pm
@@ -62,6 +64,8 @@
 %%SITE_PERL%%/URI/urn.pm
 %%SITE_PERL%%/URI/urn/isbn.pm
 %%SITE_PERL%%/URI/urn/oid.pm
+%%SITE_PERL%%/URI/ws.pm
+%%SITE_PERL%%/URI/wss.pm
 %%PERL5_MAN3%%/URI.3.gz
 %%PERL5_MAN3%%/URI::Escape.3.gz
 %%PERL5_MAN3%%/URI::Heuristic.3.gz
@@ -78,3 +82,5 @@
 %%PERL5_MAN3%%/URI::ldap.3.gz
 %%PERL5_MAN3%%/URI::otpauth.3.gz
 %%PERL5_MAN3%%/URI::smb.3.gz
+%%PERL5_MAN3%%/URI::ws.3.gz
+%%PERL5_MAN3%%/URI::wss.3.gz

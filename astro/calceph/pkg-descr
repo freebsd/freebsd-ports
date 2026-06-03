@@ -1,0 +1,5 @@
+CALCEPH Library is designed to access the binary planetary ephemeris
+files, such INPOPxx and JPL DExxx ephemeris files, (called 'original
+JPL binary' or 'INPOP 2.0 or 3.0 binary' ephemeris files in the next
+sections) and the SPICE kernel files (called 'SPICE' ephemeris files
+in the next sections).

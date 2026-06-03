@@ -1,0 +1,11 @@
+--- cargo-crates/substrait-0.62.2/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/substrait-0.62.2/Cargo.toml
+@@ -51,7 +51,7 @@ parse = [
+     "dep:thiserror",
+     "semver",
+ ]
+-protoc = ["dep:protobuf-src"]
++protoc = []
+ semver = ["dep:semver"]
+ serde = [
+     "dep:pbjson",

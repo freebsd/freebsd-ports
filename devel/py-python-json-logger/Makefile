@@ -1,5 +1,5 @@
 PORTNAME=	python-json-logger
-PORTVERSION=	3.3.0
+PORTVERSION=	4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/nhairs/python-json-logger/releases/download/v${PORTVERSION}/
@@ -21,10 +21,4 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

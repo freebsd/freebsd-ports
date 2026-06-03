@@ -1,0 +1,3 @@
+Simple, keyboard-driven TUI for time-tracking that allows you to quickly
+add time blocks and automatically group time if same task was done in
+different sessions Built with Rust and ratatui for efficient time management.

@@ -1,0 +1,4 @@
+twill is a simple scripting language for Web browsing.
+It can be used to automate Web tests, fill out forms, and generally
+interact with Web sites programmatically.
+It's built on top of httpx and lxml.

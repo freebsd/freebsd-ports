@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-10-16 01:09:53 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@
+ # --------------------------------------------------------------------------
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.3", "wheel"]
++requires = ["setuptools>=61", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -15,7 +15,7 @@ description = "Microsoft Corporation Azure Batch Clien
+   { name = "Microsoft Corporation", email = "azpysdkhelp@microsoft.com" },
+ ]
+ description = "Microsoft Corporation Azure Batch Client Library for Python"
+-license = "MIT"
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Programming Language :: Python",

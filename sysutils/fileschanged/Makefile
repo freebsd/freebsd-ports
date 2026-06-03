@@ -8,7 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered
 WWW=		https://fileschanged.sourceforge.net/
 
-LIB_DEPENDS=	libargp.so:devel/argp-standalone
+LIB_DEPENDS=	libargp.so:devel/argp-standalone \
+		libfam.so.0:devel/gamin
 BUILD_DEPENDS=	help2man:misc/help2man
 
 LICENSE=	GPLv2
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		fam gmake localbase
+USES=		gmake localbase
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
 
 LIBS+=		-largp

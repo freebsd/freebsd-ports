@@ -1,0 +1,34 @@
+PORTNAME=	gol
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.35
+PORTREVISION=	7
+CATEGORIES=	sysutils
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/gol
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.vendor${EXTRACT_SUFX}
+
+MAINTAINER=	dtxdf@FreeBSD.org
+COMMENT=	All-in-one log viewer in browser
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go:modules
+USE_GITHUB=	yes
+GH_ACCOUNT=	kevincobain2000
+USE_RC_SUBR=	${PORTNAME}
+
+GO_TARGET=	./frontend/main.go:${PORTNAME}
+
+SUB_LIST=	USER=${GOL_USER}
+
+PLIST_FILES=	bin/${PORTNAME}
+
+GOL_USER=	www
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/vendor
+	@cd ${WRKDIR}/${PORTNAME}-vendor && ${COPYTREE_SHARE} . ${WRKSRC}/vendor
+
+.include <bsd.port.mk>

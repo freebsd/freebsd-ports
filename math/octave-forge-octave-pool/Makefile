@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-octave-pool
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
 PORTREVISION=	2
 CATEGORIES=	math
 
@@ -18,6 +18,7 @@ GH_ACCOUNT=	reprostat
 GH_PROJECT=	octave-pool
 
 OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${OCTAVE_SRC}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

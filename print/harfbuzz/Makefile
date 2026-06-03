@@ -1,8 +1,8 @@
 PORTNAME=	harfbuzz
-DISTVERSION=	10.3.0
+DISTVERSION=	13.2.1
 PORTREVISION?=	0
 CATEGORIES=	print
-MASTER_SITES=	https://github.com/harfbuzz/harfbuzz/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	OpenType text shaping engine
@@ -12,18 +12,21 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libgraphite2.so:graphics/graphite2
+		libgraphite2.so:graphics/graphite2 \
+		libpng16.so:graphics/png
 
 USES=		compiler:c++11-lib cpe gnome meson \
 		pkgconfig python:build shebangfix tar:xz
+CPE_VENDOR=	harfbuzz_project
+SHEBANG_GLOB=	*.py
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-SHEBANG_GLOB=	*.py
-CPE_VENDOR=	harfbuzz_project
 
-MESON_ARGS=	-Dgraphite2=enabled -Dchafa=disabled -Dtests=disabled
+MESON_ARGS=	-Dgraphite2=enabled \
+		-Dchafa=disabled \
+		-Dtests=disabled
 
-PLIST_SUB+=	LIBVER=0.61030.0
+PLIST_SUB+=	LIBVER=0.6${DISTVERSION:S|.||g}.0
 
 HARFBUZZ_SLAVE?=	no
 
@@ -31,21 +34,26 @@ HARFBUZZ_SLAVE?=	no
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc \
+			help2man:misc/help2man
 DOCS_MESON_ENABLED=	docs
 .endif
 
 .if ${HARFBUZZ_SLAVE} == no
-MESON_ARGS+=	-Dicu=disabled -Dcairo=disabled
+MESON_ARGS+=	-Dicu=disabled \
+		-Dcairo=disabled
 .elif ${HARFBUZZ_SLAVE} == icu
-MESON_ARGS+=	-Dicu=enabled -Dcairo=disabled -Ddocs=disabled
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu
-
+MESON_ARGS+=	-Dicu=enabled \
+		-Dcairo=disabled \
+		-Ddocs=disabled
 .elif ${HARFBUZZ_SLAVE} == cairo
-MESON_ARGS+=	-Dcairo=enabled -Dicu=disabled -Ddocs=disabled
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USE_GNOME+=	cairo
+MESON_ARGS+=	-Dcairo=enabled \
+		-Dicu=disabled \
+		-Ddocs=disabled
 .endif
 
 pre-test:

@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-12-16 01:53:13 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -17,7 +17,7 @@ urls.Download = "https://pypi.org/project/roman-numera
+ ]
+ urls.Code = "https://github.com/AA-Turner/roman-numerals/"
+ urls.Download = "https://pypi.org/project/roman-numerals-py/"
+-license = "0BSD or CC0-1.0"
++license = {text = "0BSD or CC0-1.0"}
+ requires-python = ">=3.10"
+ 
+ [[project.authors]]

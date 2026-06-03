@@ -13,4 +13,10 @@
   "interval": 300,
   "debug_info": false,
   "run_once": false
+  "web_panel": {
+    "enabled": false,
+    "addr": "0.0.0.0:9000",
+    "username": "admin",
+    "password": "changemepassword"
+  }
 }

@@ -1,0 +1,11 @@
+TIMESTAMP = 1771470480
+SHA256 (CFiggers-janet-lsp-v0.0.12_GH0.tar.gz) = 1e31d91b870df8fa8b341b0ced27851389ec688514074cfd73bae3873ab5da8a
+SIZE (CFiggers-janet-lsp-v0.0.12_GH0.tar.gz) = 33733
+SHA256 (CFiggers-cmd-b0a34d6_GH0.tar.gz) = e5ed4f760d2d0beb607e554ed928232d908643bf5d1051a3d8e12fe9160e561c
+SIZE (CFiggers-cmd-b0a34d6_GH0.tar.gz) = 22306
+SHA256 (CFiggers-jayson-4f54041_GH0.tar.gz) = 2f88178be3f8cb44dad5cda8f140c85f010acb28820400998208ea3d292883c8
+SIZE (CFiggers-jayson-4f54041_GH0.tar.gz) = 3864843
+SHA256 (ianthehenry-judge-3b92185_GH0.tar.gz) = 904208053f675844d3e7cc18d21d893ecef356603df4ce1bdf6cd0933090163b
+SIZE (ianthehenry-judge-3b92185_GH0.tar.gz) = 31792
+SHA256 (janet-lang-spork-3bdcf58_GH0.tar.gz) = 1ecfd038f12afb147755b4ead3d9b3688e0cded493b47c6b784555f417e8decb
+SIZE (janet-lang-spork-3bdcf58_GH0.tar.gz) = 681721

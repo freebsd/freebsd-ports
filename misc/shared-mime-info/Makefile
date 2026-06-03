@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gnome localbase meson pathfix pkgconfig python:build shebangfix \
 		tar:xz trigger
-CONFIGURE_ARGS=	-Dupdate-mimedb=false \
+MESON_ARGS=	-Dupdate-mimedb=false \
 		-Dxdgmime-path=${WRKSRC}/src/xdgmime
 USE_GNOME=	glib20 libxml2
 USE_GITLAB=	YES

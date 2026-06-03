@@ -19,10 +19,9 @@ ZEROREGS_Include_MAINTAINER=	netchild@FreeBSD.org
 
 ZEROREGS_TYPE?=	used
 
-#.  if !defined(ZEROREGS_UNSAFE) && !empty(${ARCH:Mriscv*}) && \
-#	!empty(${ARCH:Mpower*}) && !empty(${ARCH:Marmv7*})
+.  if !defined(ZEROREGS_UNSAFE)
 CFLAGS+=	-fzero-call-used-regs=${ZEROREGS_TYPE}
 CXXFLAGS+=	-fzero-call-used-regs=${ZEROREGS_TYPE}
-#.  endif
+.  endif
 .endif
 

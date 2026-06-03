@@ -1,5 +1,5 @@
 PORTNAME=	spotify-qt
-PORTVERSION=	4.0.1
+DISTVERSION=	4.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/kraxarn/spotify-qt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license
 
-RUN_DEPENDS=	spotifyd:audio/spotifyd
+RUN_DEPENDS=	librespot:multimedia/librespot
 
 USES=		cmake compiler:c++11-lang qt:6
 USE_GITHUB=	yes

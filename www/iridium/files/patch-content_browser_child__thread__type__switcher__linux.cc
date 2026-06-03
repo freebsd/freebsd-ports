@@ -1,6 +1,14 @@
---- content/browser/child_thread_type_switcher_linux.cc.orig	2025-05-07 06:48:23 UTC
+--- content/browser/child_thread_type_switcher_linux.cc.orig	2026-03-24 16:59:08 UTC
 +++ content/browser/child_thread_type_switcher_linux.cc
-@@ -20,6 +20,9 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
+@@ -6,6 +6,7 @@
+ 
+ #include "base/linux_util.h"
+ #include "base/logging.h"
++#include "base/notimplemented.h"
+ #include "base/process/process_handle.h"
+ #include "base/task/single_thread_task_runner.h"
+ #include "base/threading/platform_thread.h"
+@@ -20,6 +21,9 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
                                     base::ThreadType thread_type) {
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
  
@@ -10,15 +18,15 @@
    bool ns_pid_supported = false;
    pid_t peer_tid =
        base::FindThreadID(peer_pid, ns_tid.raw(), &ns_pid_supported);
-@@ -41,6 +44,7 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
-   base::PlatformThread::SetThreadType(peer_pid,
-                                       base::PlatformThreadId(peer_tid),
-                                       thread_type, base::IsViaIPC(true));
+@@ -41,6 +45,7 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
+ 
+   base::PlatformThread::SetThreadType(
+       peer_pid, base::PlatformThreadId(peer_tid), thread_type);
 +#endif
  }
  
  }  // namespace
-@@ -69,7 +73,7 @@ void ChildThreadTypeSwitcher::SetPid(base::ProcessId c
+@@ -69,7 +74,7 @@ void ChildThreadTypeSwitcher::SetPid(base::ProcessId c
    }
  }
  

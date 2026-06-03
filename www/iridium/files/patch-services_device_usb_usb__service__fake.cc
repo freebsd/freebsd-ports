@@ -1,4 +1,4 @@
---- services/device/usb/usb_service_fake.cc.orig	2025-05-07 06:48:23 UTC
+--- services/device/usb/usb_service_fake.cc.orig	2026-03-24 16:59:08 UTC
 +++ services/device/usb/usb_service_fake.cc
 @@ -0,0 +1,49 @@
 +// Copyright 2014 The Chromium Authors
@@ -15,8 +15,8 @@
 +#include <utility>
 +
 +#include "base/barrier_closure.h"
-+#include "base/containers/contains.h"
 +#include "base/location.h"
++#include "base/notimplemented.h"
 +#include "base/memory/ref_counted_memory.h"
 +#include "base/memory/weak_ptr.h"
 +#include "base/strings/string_number_conversions.h"

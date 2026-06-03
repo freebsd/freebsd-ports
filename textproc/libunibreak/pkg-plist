@@ -5,8 +5,7 @@ include/linebreakdef.h
 include/unibreakbase.h
 include/unibreakdef.h
 include/wordbreak.h
-lib/libunibreak.a
 lib/libunibreak.so
-lib/libunibreak.so.6
-lib/libunibreak.so.6.0.1
+lib/libunibreak.so.7
+lib/libunibreak.so.7.0.0
 libdata/pkgconfig/libunibreak.pc

@@ -1,6 +1,6 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org

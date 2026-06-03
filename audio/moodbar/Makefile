@@ -1,5 +1,6 @@
 PORTNAME=	moodbar
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/exaile/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -11,7 +12,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
-TEST_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang gnome gstreamer meson pkgconfig python:test \
 		shebangfix tar:xz

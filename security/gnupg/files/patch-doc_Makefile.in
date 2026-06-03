@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2024-10-29 12:52:23 UTC
+--- doc/Makefile.in.orig	2025-05-14 12:51:22 UTC
 +++ doc/Makefile.in
-@@ -521,14 +521,14 @@ myman_sources = gnupg7.texi gpg.texi gpgsm.texi gpg-ag
+@@ -519,14 +519,14 @@ myman_sources = gnupg7.texi gpg.texi gpgsm.texi gpg-ag
  	        dirmngr.texi scdaemon.texi tools.texi wks.texi \
                  gpg-card.texi
  
@@ -17,12 +17,3 @@
                  gpg-agent.1.html dirmngr.8.html scdaemon.1.html \
                  watchgnupg.1.html gpgconf.1.html addgnupghome.8.html \
                  gpg-preset-passphrase.1.html \
-@@ -538,7 +538,7 @@ myhtmlman_pages = \
-                 gpg-wks-server.1.html \
- 		dirmngr-client.1.html gpg-card.1.html gpg-check-pattern.1.html
- 
--man_MANS = $(myman_pages) gnupg.7 gnupg.7.html
-+man_MANS = $(myman_pages) gnupg.7
- watchgnupg_SOURCE = gnupg.texi
- CLEANFILES = yat2m mkdefsinc defs.inc
- DISTCLEANFILES = gnupg.tmp gnupg.ops yat2m-stamp.tmp yat2m-stamp \

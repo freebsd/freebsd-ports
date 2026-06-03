@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	${GIT_SRC_DATE}
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	cad
 
 #PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -59,6 +59,10 @@ CMAKE_ARGS+=	-DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTI
 .include "Makefile.git_rev"
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/find_package/s| system||' \
+		${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}

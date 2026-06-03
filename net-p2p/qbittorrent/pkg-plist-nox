@@ -1,6 +1,7 @@
 bin/qbittorrent-nox
 share/man/man1/qbittorrent-nox.1.gz
 share/man/ru/man1/%%USER%%-nox.1.gz
+share/metainfo/org.%%USER%%.qBittorrent-nox.metainfo.xml
 @owner %%USER%%
 @group %%GROUP%%
 @dir /var/db/qbittorrent/conf

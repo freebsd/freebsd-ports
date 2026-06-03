@@ -10,10 +10,11 @@ WWW=		https://www.nongnu.org/libntlm/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool pathfix pkgconfig
+USES=		cpe libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
 CPE_VENDOR=	nongnu
 
 .include <bsd.port.mk>

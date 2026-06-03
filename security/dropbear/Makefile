@@ -1,5 +1,6 @@
 PORTNAME=	dropbear
-PORTVERSION=	2025.88
+PORTVERSION=	2025.89
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -82,7 +83,8 @@ LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
-		s,/usr/bin/X11/,${LOCALBASE}/,g" ${WRKSRC}/src/default_options.h
+		s,/usr/bin/X11/,${LOCALBASE}/,g; s,/usr/bin/dbclient,${LOCALBASE}/bin/dbclient,g" \
+		${WRKSRC}/src/default_options.h
 
 post-patch-SMALL_CODE-off:
 	@${ECHO} "#define DROPBEAR_SMALL_CODE 0" >> ${WRKSRC}/localoptions.h
@@ -120,8 +122,8 @@ post-patch-ECDH-off:
 post-patch-GROUP1-off:
 	@${ECHO} "#define DROPBEAR_DH_GROUP1 0" >> ${WRKSRC}/localoptions.h
 
-post-patch-GROUP14_SHA1-off:
-	@${ECHO} "#define DROPBEAR_DH_GROUP14_SHA1 0" >> ${WRKSRC}/localoptions.h
+post-patch-GROUP14_SHA1-on:
+	@${ECHO} "#define DROPBEAR_DH_GROUP14_SHA1 1" >> ${WRKSRC}/localoptions.h
 
 post-patch-GROUP14_SHA256-off:
 	@${ECHO} "#define DROPBEAR_DH_GROUP14_SHA256 0" >> ${WRKSRC}/localoptions.h
@@ -132,8 +134,8 @@ post-patch-GROUP16-on:
 post-patch-RSA-off:
 	@${ECHO} "#define DROPBEAR_RSA 0" >> ${WRKSRC}/localoptions.h
 
-post-patch-RSA_SHA1-off:
-	@${ECHO} "#define DROPBEAR_RSA_SHA1 0" >> ${WRKSRC}/localoptions.h
+post-patch-RSA_SHA1-on:
+	@${ECHO} "#define DROPBEAR_RSA_SHA1 1" >> ${WRKSRC}/localoptions.h
 
 post-patch-ECDSA-off:
 	@${ECHO} "#define DROPBEAR_ECDSA 0" >> ${WRKSRC}/localoptions.h
@@ -147,8 +149,8 @@ post-patch-MD5-on:
 post-patch-MLKEM768-off:
 	@${ECHO} "#define DROPBEAR_MLKEM768 0" >> ${WRKSRC}/localoptions.h
 
-post-patch-SHA1-off:
-	@${ECHO} "#define DROPBEAR_SHA1_HMAC 0" >> ${WRKSRC}/localoptions.h
+post-patch-SHA1-on:
+	@${ECHO} "#define DROPBEAR_SHA1_HMAC 1" >> ${WRKSRC}/localoptions.h
 
 post-patch-SHA1_96-off:
 	@${ECHO} "#define DROPBEAR_SHA1_96_HMAC 0" >> ${WRKSRC}/localoptions.h

@@ -1,6 +1,6 @@
 PORTNAME=	networkx
-DISTVERSION=	3.5
-PORTREVISION=	1
+DISTVERSION=	3.6
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
@@ -32,7 +32,7 @@ OPTIONS_GROUP_RENDER=	MPL GRAPHVIZ
 OPTIONS_DEFAULT=	NUMPY SCIPY MPL GDAL GRAPHVIZ LXML PANDAS PYDOT YAML
 
 NUMPY_DESC=	Matrix representation of graphs
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.20.0,1:math/py-numpy@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.20.0:math/py-numpy@${PY_FLAVOR}
 
 SCIPY_DESC=	Sparse matrix representation of graphs
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=1.8:science/py-scipy@${PY_FLAVOR} \
@@ -48,7 +48,7 @@ GRAPHVIZ_DESC=	Additional graph layout and rendering algorithms
 GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:graphics/py-pygraphviz@${PY_FLAVOR}
 
 LXML_DESC=	Binding for the libxml2 and libxslt libraries
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=0:devel/py-lxml5@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 PANDAS_DESC=	Data analysis
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.3:math/py-pandas@${PY_FLAVOR}

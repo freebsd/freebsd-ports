@@ -1,10 +1,10 @@
---- frontend/applets/Makefile.in.orig	2020-03-04 20:08:42 UTC
+--- frontend/applets/Makefile.in.orig	2025-02-16 12:01:58 UTC
 +++ frontend/applets/Makefile.in
-@@ -438,7 +438,7 @@ top_build_prefix = @top_build_prefix@
+@@ -446,7 +446,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  MAINTAINERCLEANFILES = Makefile.in
--SUBDIRS = win32 common gnome3 indicator gnome-shell cinnamon xfce mate
+-SUBDIRS = win32 common gnome3 indicator gnome-shell gnome-shell-45 cinnamon xfce mate
 +SUBDIRS = win32 common gnome3 indicator xfce mate
  all: all-recursive
  

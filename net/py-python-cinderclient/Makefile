@@ -1,5 +1,6 @@
 PORTNAME=	python-cinderclient
 PORTVERSION=	9.6.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystoneauth1>=5.0.0:devel/py-keystoneauth1@
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=5.0.1:devel/py-oslo.i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=4.8.0:devel/py-oslo.utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=5.5.0:devel/py-pbr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prettytable0>=0.7.2:devel/py-prettytable0@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prettytable>=0.7.2:devel/py-prettytable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=3.3.0:devel/py-stevedore@${PY_FLAVOR}
 

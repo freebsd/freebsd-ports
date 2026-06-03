@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig	2025-05-07 06:48:23 UTC
+--- third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
 @@ -159,6 +159,10 @@ std::string MinidumpMiscInfoDebugBuildString() {
    static constexpr char kOS[] = "win";

@@ -1,0 +1,11 @@
+--- plugins/impstats/Makefile.am.orig	2026-02-16 13:33:21 UTC
++++ plugins/impstats/Makefile.am
+@@ -34,7 +34,7 @@ remote.pb-c.c remote.pb-c.h: remote.proto
+ BUILT_SOURCES = remote.pb-c.c remote.pb-c.h
+ 
+ remote.pb-c.c remote.pb-c.h: remote.proto
+-	$(PROTOC_C) --proto_path=$(srcdir) --c_out=. $<
++	$(PROTOC_C) --c_out=. $>
+ 
+ CLEANFILES = remote.pb-c.c remote.pb-c.h
+ endif

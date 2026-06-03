@@ -1,5 +1,5 @@
 PORTNAME=	cavezofphear
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

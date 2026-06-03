@@ -14,7 +14,7 @@ USE_XORG=	ice sm x11 xcb xext
 USE_GL=		egl gl opengl
 USE_KDE=	activities archive colorscheme completion config configwidgets \
 		coreaddons globalaccel guiaddons i18n iconthemes jobwidgets \
-		kcmutils kio kirigami2 notifications package \
+		kio kirigami2 notifications package \
 		plasma-wayland-protocols service solid svg widgetsaddons \
 		windowsystem \
 		ecm:build

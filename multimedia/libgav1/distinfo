@@ -1,5 +1,5 @@
-TIMESTAMP = 1732349680
-SHA256 (libgav1_0.19.0.orig.tar.xz) = d73f413b9e71ad354c6f3893ae492f5d589072fb70648bc0e18f2c52a10cf2f8
-SIZE (libgav1_0.19.0.orig.tar.xz) = 757740
+TIMESTAMP = 1766891890
+SHA256 (libgav1_0.20.0.orig.tar.xz) = 953f98a5147f556f358ef986601fda7804cfaaa634302aa9b842fea889aa7e6c
+SIZE (libgav1_0.20.0.orig.tar.xz) = 758912
 SHA256 (googletest-1.15.2.tar.gz) = 7b42b4d6ed48810c5362c265a17faebe90dc2373c885e5216439d37927f02926
 SIZE (googletest-1.15.2.tar.gz) = 872667

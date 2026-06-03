@@ -1,0 +1,2 @@
+throttler is a zero-dependency Python package for easy throttling with
+asyncio support. It enables rate limiting for async and sync code.

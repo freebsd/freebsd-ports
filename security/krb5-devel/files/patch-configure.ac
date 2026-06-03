@@ -1,6 +1,11 @@
---- configure.ac.orig	2023-08-07 11:38:21.000000000 -0700
-+++ configure.ac	2023-08-09 14:49:19.833149000 -0700
-@@ -1356,8 +1356,12 @@
+--- configure.ac.orig	2026-02-13 01:44:19 UTC
++++ configure.ac
+@@ -1,3 +1,4 @@
++define(autoreconf2.73_looks_for, [AC_INIT])
+ K5_AC_INIT([aclocal.m4])
+ 
+ # If $runstatedir isn't set by autoconf (<2.70), set it manually.
+@@ -1373,8 +1374,12 @@ if test "x$with_libedit" != xno; then
      AC_DEFINE([HAVE_LIBEDIT], 1, [Define if building with libedit.])
      AC_MSG_NOTICE([Using libedit for readline support])
    elif test "x$with_libedit" = xyes; then

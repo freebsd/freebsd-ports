@@ -1,0 +1,9 @@
+LubeLogger is a self-hosted, open source, vehicle maintenance record system and
+fuel mileage tracker written in .NET.
+
+It supports the following features:
+- Breaking down recorded vehicle expenses by year, month, and category
+- Recording planned maintenance to-dos
+- Uploading invoices and receipts
+- Tracking the fuel economy of your fleet
+- Signaling reminders for scheduled routine maintenance

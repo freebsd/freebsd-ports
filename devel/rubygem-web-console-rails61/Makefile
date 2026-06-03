@@ -20,6 +20,8 @@ USES=		cpe gem
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^4\.2\.
+
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	web_console
 

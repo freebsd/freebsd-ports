@@ -5,7 +5,7 @@ CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/libraries
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 library
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d

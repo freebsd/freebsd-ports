@@ -10,7 +10,7 @@ WWW=		https://www.udo-richter.de/vdr/naludump.en.html
 
 LICENSE=	GPLv2
 
-USES=		alias gmake iconv:wchar_t localbase tar:tgz
+USES=		gmake iconv:wchar_t localbase tar:tgz
 USE_CXXSTD=	c++14
 
 MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"

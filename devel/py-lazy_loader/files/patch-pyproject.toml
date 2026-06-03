@@ -1,0 +1,15 @@
+-- pyproject.toml uses PEP 639 SPDX license string format ("BSD-3-Clause") which
+-- requires setuptools >= 68.x. Use the older {text = ...} format to support
+-- the currently installed setuptools version.
+
+--- pyproject.toml.orig	2026-04-28 08:57:30 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ readme = "README.md"
+ requires-python = ">=3.9"
+ authors = [{name = "Scientific Python Developers"}]
+ readme = "README.md"
+-license = "BSD-3-Clause"
++license = {text = "BSD-3-Clause"}
+ dynamic = ['version']
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",

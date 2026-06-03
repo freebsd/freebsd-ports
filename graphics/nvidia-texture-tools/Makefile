@@ -3,7 +3,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Texture Tools with support for DirectX 10 texture formats
+COMMENT=	Texture Tools with support for DirectX 10 formats
 WWW=		https://github.com/castano/nvidia-texture-tools
 
 LICENSE=	MIT

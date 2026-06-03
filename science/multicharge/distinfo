@@ -1,3 +1,5 @@
-TIMESTAMP = 1725080939
-SHA256 (grimme-lab-multicharge-v0.3.0_GH0.tar.gz) = 2fcc1f80871f404f005e9db458ffaec95bb28a19516a0245278cd3175b63a6b2
-SIZE (grimme-lab-multicharge-v0.3.0_GH0.tar.gz) = 45784
+TIMESTAMP = 1774776785
+SHA256 (grimme-lab-multicharge-v0.5.0_GH0.tar.gz) = 6b137db34c89ab73f8cc8f2849db1679b2efa1fdec255cd77fca672d7fc8ea5c
+SIZE (grimme-lab-multicharge-v0.5.0_GH0.tar.gz) = 70088
+SHA256 (dab74514e5af03aba9eb8a84a9f1028fe31756f4.patch) = c4c3cecf127787594c90e99b63738925db46aa849f71dc88483367bcb808bf77
+SIZE (dab74514e5af03aba9eb8a84a9f1028fe31756f4.patch) = 3386

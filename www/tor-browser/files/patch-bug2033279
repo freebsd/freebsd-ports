@@ -1,0 +1,15 @@
+https://bugzilla.mozilla.org/show_bug.cgi?id=2033279
+
+error[E0599]: no method named `select` found for struct `Mask<T, N>` in the current scope
+  --> third_party/rust/encoding_rs/src/x_user_defined.rs:23:56
+
+--- third_party/rust/encoding_rs/src/x_user_defined.rs.orig	2026-04-20 10:54:51 UTC
++++ third_party/rust/encoding_rs/src/x_user_defined.rs
+@@ -16,6 +16,7 @@ cfg_if! {
+         use simd_funcs::*;
+         use core::simd::u16x8;
+         use core::simd::cmp::SimdPartialOrd;
++        use core::simd::Select;
+ 
+         #[inline(always)]
+         fn shift_upper(unpacked: u16x8) -> u16x8 {

@@ -1,6 +1,6 @@
 --- git-annex.cabal.orig	2001-09-09 01:46:40 UTC
 +++ git-annex.cabal
-@@ -565,7 +565,7 @@ Executable git-annex
+@@ -479,7 +479,7 @@ Executable git-annex
              Other-Modules: Utility.DirWatcher.Kqueue
    
    if flag(Dbus)

@@ -1,6 +1,5 @@
 PORTNAME=	shiboken2
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@$
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
 USES=		cmake compiler:c++11-lang gnome llvm:lib,noexport \
-		python:3.9-3.11 qt:5 shebangfix tar:xz
+		python:3.10-3.12 qt:5 shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors

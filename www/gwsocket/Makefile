@@ -11,7 +11,7 @@ WWW=		https://gwsocket.io
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias compiler:c11 pkgconfig
+USES=		compiler:c11 pkgconfig
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 

@@ -1,6 +1,6 @@
---- editors/awk.c.orig	2021-11-28 21:53:43 UTC
+--- editors/awk.c.orig	2026-04-17 15:44:06 UTC
 +++ editors/awk.c
-@@ -3238,7 +3238,7 @@ static var *evaluate(node *op, var *res)
+@@ -3398,7 +3398,7 @@ static var *evaluate(node *op, var *res)
  				if (op1)
  					syntax_error("Too many arguments");
  			{

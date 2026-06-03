@@ -1,3 +1,5 @@
-TIMESTAMP = 1630554026
-SHA256 (AbiWord/abiword-3.0.5.tar.gz) = 1257247e9970508d6d1456d3e330cd1909c4b42b25e0f0a1bc32526d6f3a21b4
-SIZE (AbiWord/abiword-3.0.5.tar.gz) = 11084159
+TIMESTAMP = 1772390992
+SHA256 (AbiWord/AbiWord-release-3.0.8.tar.bz2) = ef2fdc2cb66a54a58185e7008bd349ce858e59648e18571913d5a3e2b43abf37
+SIZE (AbiWord/AbiWord-release-3.0.8.tar.bz2) = 7884596
+SHA256 (AbiWord/ae05e92d.patch) = b1681d56056b216ae250d442bd6f3eadd161b7f5b7705ec53c0d8221449bd457
+SIZE (AbiWord/ae05e92d.patch) = 1876

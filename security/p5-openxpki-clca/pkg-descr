@@ -1,0 +1,16 @@
+Command Line Certificate Authority (clca) is a collection of tools (written in
+Bash and Perl atop of OpenSSL or LibreSSL) that allow for basic PKI operations
+such as Sub CA certificate issuance (signing certificate requests), certificate
+revocation and CRL issuance. Originally designed to be used for a Root CA, it
+may also be used for lower level CAs or even end entity certificates as well.
+
+Ideal solution for off-line low-traffic CA, residing on a notebook, which is
+most of the time kept in a vault.
+
+CA private keys can be held either in encrypted files (encrypted either with
+a simple passphrase or using Shamir's Secret Sharing) or stored in an HSM.
+
+Port security/p5-openxpki-clca is an overly lightweight command-line
+alternative to its elder brother, a full-featured server-born port
+security/p5-openxpki designed for universal PKI solutions. These two ports are
+mutually independent and can coexist on the same host.

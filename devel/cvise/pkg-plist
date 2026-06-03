@@ -36,11 +36,14 @@ libexec/cvise/topformflat
 %%DATADIR%%/tests/test_ifs.py
 %%DATADIR%%/tests/test_ints.py
 %%DATADIR%%/tests/test_line_markers.py
+%%DATADIR%%/tests/test_lines.py
 %%DATADIR%%/tests/test_nestedmatcher.py
 %%DATADIR%%/tests/test_peep.py
 %%DATADIR%%/tests/test_special.py
 %%DATADIR%%/tests/test_ternary.py
+%%DATADIR%%/tests/test_test_manager.py
 %%DATADIR%%/tests/testabstract.py
+%%DATADIR%%/utils/externalprograms.py
 %%DATADIR%%/utils/__init__.py
 %%DATADIR%%/utils/error.py
 %%DATADIR%%/utils/misc.py

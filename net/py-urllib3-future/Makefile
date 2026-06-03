@@ -1,5 +1,5 @@
 PORTNAME=	urllib3-future
-PORTVERSION=	2.12.922
+PORTVERSION=	2.20.907
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/urllib3.future/releases/download/${PORTVERSION}/
@@ -23,11 +23,15 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	BROTLI SOCKS WS ZSTD
+OPTIONS_DEFINE=	BROTLI QH3 RTLS SOCKS WS ZSTD
+QH3_DESC=	QUIC and HTTP/3 support
+RTLS_DESC=	Rustls-backed TLS support
 WS_DESC=	WebSockets support
 
 BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR}
-SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-socks>=2.0<2.6.1_99:net/py-python-socks@${PY_FLAVOR}
+SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-socks>=2.0<2.8.1_99:net/py-python-socks@${PY_FLAVOR}
+QH3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qh3>=1.5.4<2.0.0:www/py-qh3@${PY_FLAVOR}
+RTLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rtls>=0:security/py-rtls@${PY_FLAVOR}
 WS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsproto>=1.2<2:net/py-wsproto@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>

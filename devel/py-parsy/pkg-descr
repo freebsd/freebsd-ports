@@ -1,0 +1,17 @@
+Parsy is an easy and elegant way to parse text in Python by combining small
+parsers into complex, larger parsers. If it means anything to you, it's a
+monadic parser combinator library for LL(infinity) grammars in the spirit of
+Parsec, Parsnip, and Parsimmon. But don't worry, it has really good
+documentation and it doesn't say things like that!
+
+For a good example of the kind of clear, declarative code you can create using
+parsy, see the SQL SELECT statement example or JSON parser.
+
+The project:
+- has zero dependencies outside stdlib.
+- is highly mature and stable, with few-to-none backwards incompatibilities over
+  the past 10 years.
+- is essentially complete, with no rewrites planned. Widely useful improvements
+  that don't break compatibility will still be considered, however.
+- is implemented in a single module with less than 800LOC, which you could
+  vendor easily if required.

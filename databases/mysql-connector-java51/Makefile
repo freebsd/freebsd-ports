@@ -1,5 +1,6 @@
 PORTNAME=	mysql-connector-java
 PORTVERSION=	5.1.49
+PORTREVISION=	3
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 PKGNAMESUFFIX=	51
@@ -10,19 +11,21 @@ WWW=		https://dev.mysql.com/downloads/connector/j/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Superseded by mysql-connector-j, no users in the tree.
+EXPIRATION_DATE=	2026-07-24
+
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j
 
 # 8.0.x is now the GA release, but drops support for java 1.6 and 1.7
 PORTSCOUT=	limit:^5\.1\..*
 
-USES=		cpe java
+USES=		cpe java:build
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	mysql_connector_j
 
 CONFLICTS_INSTALL=	mysql-connector-java # share/java/classes/mysql-connector-java.jar
 
 NO_ARCH=	yes
-JAVA_VERSION=	8
 BUILDDIR=	${WRKDIR}/${DISTNAME}
 APIDOCSDIR=	${STAGEDIR}${DOCSDIR}/javadoc
 SRCDIR=		${WRKDIR}/${DISTNAME}/src
@@ -50,6 +53,7 @@ do-build-DOCS-on:
 	@${MKDIR} ${JAVADOCDIR} && (cd ${SRCDIR};               \
 	    ${JAVADOC} -quiet -breakiterator -encoding utf8     \
 	    -d ${JAVADOCDIR} -package -classpath ${JDCLASSPATH}	\
+	    -Xdoclint:none \
 	    com.mysql.jdbc org.gjt.mm.mysql)
 .endif
 

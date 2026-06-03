@@ -1,6 +1,0 @@
-include/statgrab0.h
-lib/libstatgrab0.a
-lib/libstatgrab0.so
-lib/libstatgrab0.so.6
-lib/libstatgrab0.so.6.2.3
-libdata/pkgconfig/libstatgrab0.pc

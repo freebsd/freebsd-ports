@@ -1,9 +1,8 @@
 PORTNAME=	vimb
-DISTVERSION=	3.7.0
-PORTREVISION=	4
+DISTVERSION=	3.7.1
 CATEGORIES=	www
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Vim like browser
 WWW=		https://fanglingsu.github.io/vimb/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 
-USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig
+USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu
 USE_GNOME=	glib20 gtk30
@@ -31,6 +30,7 @@ OPTIONS_DEFINE=	GSTREAMER
 GSTREAMER_USES=	gstreamer
 GSTREAMER_USE=	GSTREAMER=good,libav
 
+# Create version.h before building to eliminate the need for MAKE_JOBS_UNSAFE=yes.
 post-patch:
 	${ECHO_CMD} "#define VERSION \"${DISTVERSION}\"" > ${WRKSRC}/version.h
 

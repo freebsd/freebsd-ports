@@ -1,6 +1,15 @@
---- ui/gl/gl_context.cc.orig	2025-01-25 09:34:31 UTC
+--- ui/gl/gl_context.cc.orig	2026-02-15 10:01:45 UTC
 +++ ui/gl/gl_context.cc
-@@ -516,7 +516,7 @@ bool GLContext::MakeVirtuallyCurrent(
+@@ -153,7 +153,7 @@ bool GLContext::MakeCurrent(GLSurface* surface) {
+     recorded_max_gles_version_if_feasible = true;
+   }
+ #elif (BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-       BUILDFLAG(IS_WIN))
++       BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD))
+   static bool recorded_emulated_gles_version = false;
+   if (!recorded_emulated_gles_version) {
+     base::UmaHistogramBoolean("GPU.ANGLECanEmulateGLES3",
+@@ -431,7 +431,7 @@ bool GLContext::MakeVirtuallyCurrent(
    DCHECK(virtual_context->IsCurrent(surface));
  
    if (switched_real_contexts || virtual_context != current_virtual_context_) {

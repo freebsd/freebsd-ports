@@ -1,5 +1,5 @@
 PORTNAME=	xtxf
-DISTVERSION=	0.11.3
+DISTVERSION=	0.11.5
 CATEGORIES=	games
 
 MAINTAINER=	slowdive@me.com
@@ -9,14 +9,13 @@ WWW=		https://github.com/charlesrocket/xtxf
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	git>=2:devel/git \
-		zig>=0.14:lang/zig
+BUILD_DEPENDS=	zig015>=0.15.1:lang/zig015
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	charlesrocket
 GH_TUPLE=	termbox:termbox2:9c9281a:zig_termbox/../.cache/zig/p/N-V-__8AAOfjBAD89_CGaCDSoVLTnCjzs3NRNGCkfL9zNuNo \
-		00JCIV00:cova:4c56696:zig_cova/../.cache/zig/p/cova-0.10.1-AAAAAPqeBAAThnQ-eGLXG9tyPsBRehaw8ySs8nEPwMUy \
-		charlesrocket:ghext:0.7.2:zig_ghext/../.cache/zig/p/ghext-0.7.2-dKaQN31QAABGONiBUrG8LuTUWwpEbiXF4syy_NmTdizp
+		00JCIV00:cova:3fa729c:zig_cova/../.cache/zig/p/cova-0.10.1-_OE4Rw-xBAB9zj1dPhUxLKnar89L5nouEmYY6Q1S23jU \
+		charlesrocket:ghext:0.7.4:zig_ghext/../.cache/zig/p/ghext-0.7.4-dKaQN8JPAAA7IjZbcuelgCivahSMKsFGrvE5LLM3RJyl
 
 BUILD_ARGS=	--prefix ${PREFIX} ${WITH_DEBUG:U-Doptimize=ReleaseFast} \
 		${WITH_PIE:D-Dpie} -Dcpu=${CPUTYPE:Ubaseline} --verbose
@@ -24,7 +23,7 @@ BUILD_ARGS=	--prefix ${PREFIX} ${WITH_DEBUG:U-Doptimize=ReleaseFast} \
 MAKE_ENV=	DESTDIR=${STAGEDIR}
 
 PLIST_FILES=	bin/xtxf \
-		share/man/man1/xtxf.1.gz
+		share/man/man6/xtxf.6.gz
 
 OPTIONS_DEFAULT=		BASH ZSH
 OPTIONS_GROUP=			COMPLETION
@@ -43,8 +42,8 @@ post-build:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/cova_generator_xtxf
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/meta/help_docs/manpages/xtxf.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/meta/help_docs/manpages/xtxf.6 \
+		${STAGEDIR}${PREFIX}/share/man/man6
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xtxf

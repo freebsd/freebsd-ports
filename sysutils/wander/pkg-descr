@@ -1,0 +1,7 @@
+Wander is a terminal user interface for HashiCorp Nomad. It provides an
+interactive way to browse jobs, allocations and tasks; tail logs; manage
+events; execute commands in running tasks; and view resource utilization
+metrics.
+
+Built on the Charm bubbletea framework, it also supports running as an SSH
+server so that operators can share a session with their Nomad cluster.

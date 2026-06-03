@@ -2,7 +2,7 @@ PORTNAME=	SFML
 DISTVERSION=	2.6.2
 CATEGORIES=	devel
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 WWW=		https://www.sfml-dev.org/ \
 		https://github.com/SFML/SFML

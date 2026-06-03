@@ -1,0 +1,22 @@
+Enable build for older versions of py-setuptools
+
+--- pyproject.toml.orig	2026-03-17 12:26:32 UTC
++++ pyproject.toml
+@@ -9,7 +9,6 @@ maintainers = [
+     { name = "Philippe Ombredanne", email = "pombredanne@gmail.com" },
+     { name = "SPDX group at the Linux Foundation and others" },
+ ]
+-license = "Apache-2.0"
+ description = "SPDX parser and tools."
+ readme = "README.md"
+ classifiers = [
+@@ -41,6 +40,9 @@ dynamic = ["version"]
+     "xmltodict",
+ ]
+ dynamic = ["version"]
++
++[project.license]
++text = "Apache-2.0"
+ 
+ [project.optional-dependencies]
+ test = ["pyshacl", "pytest", "tzdata"]

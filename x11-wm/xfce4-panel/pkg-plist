@@ -11,7 +11,6 @@ include/xfce4/libxfce4panel-2.0/libxfce4panel/xfce-arrow-button.h
 include/xfce4/libxfce4panel-2.0/libxfce4panel/xfce-panel-convenience.h
 include/xfce4/libxfce4panel-2.0/libxfce4panel/xfce-panel-image.h
 include/xfce4/libxfce4panel-2.0/libxfce4panel/xfce-panel-macros.h
-include/xfce4/libxfce4panel-2.0/libxfce4panel/xfce-panel-plugin-provider.h
 include/xfce4/libxfce4panel-2.0/libxfce4panel/xfce-panel-plugin.h
 %%GIR%%lib/girepository-1.0/Libxfce4panel-2.0.typelib
 lib/libxfce4panel-2.0.so
@@ -185,6 +184,7 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.windowmenu.svg
 %%NLS%%share/locale/te/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/th/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/tt/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-panel.mo

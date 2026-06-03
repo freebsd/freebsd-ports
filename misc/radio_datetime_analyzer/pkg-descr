@@ -1,9 +1,16 @@
-Analyzer for log files of time stations.
+Analyzer for log files of time stations
 
-The program takes two parameters:
+The program takes a minimum of two parameters:
+
 - the station name of the file to analyze (as argument to the -s option)
 - the name of the file to analyze (as argument to the -f option)
+The -h option provides a short help message.
 
-Currently supported stations are DCF77 and MSF.
+Currently supported stations are dcf77 and msf. DCF77 is the German time
+station at 77.5 kHz, and MSF is the British time station at 60 kHz. Some
+information these stations can be found at:
+
+- https://en.wikipedia.org/wiki/DCF77
+- https://en.wikipedia.org/wiki/Time_from_NPL_(MSF)
 
 See the enclosed README.md for more information.

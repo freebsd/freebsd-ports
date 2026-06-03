@@ -1,6 +1,5 @@
 PORTNAME=	pacman
-DISTVERSION=	7.0.0
-PORTREVISION=	1
+DISTVERSION=	7.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.archlinux.org/${PORTNAME}/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 
@@ -37,6 +36,13 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PACMAN_ROOT="${PACMAN_ROOT}" PREFIX="${PREFIX}"
 PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C,^${PREFIX}/,,}"
+PLIST_DIRS=	%%PACMAN_ROOT%%/var/cache/pacman/pkg \
+		%%PACMAN_ROOT%%/var/cache/pacman \
+		%%PACMAN_ROOT%%/var/cache \
+		%%PACMAN_ROOT%%/var/lib/pacman \
+		%%PACMAN_ROOT%%/var/lib \
+		%%PACMAN_ROOT%%/var \
+		%%PACMAN_ROOT%%
 
 PORTEXAMPLES=	*
 PKGMESSAGE=	${PKGDIR}/pkg-message-${FLAVOR:U}
@@ -60,15 +66,13 @@ GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 NLS_USES=		gettext-runtime gettext-tools
 NLS_MESON_TRUE=	i18n
 
-.if ${FLAVOR:U} == default
-PACMAN_ROOT=	${PREFIX}/pacman
-.elif ${FLAVOR:U} == archlinux
+.if ${FLAVOR:U} == archlinux
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Arch Linux itself only supports amd64
 PACMAN_ROOT=	/compat/archlinux
-PLIST_DIRS+=	%%PACMAN_ROOT%%/var/cache \
-		%%PACMAN_ROOT%%/var \
-		/compat
+PLIST_DIRS+=	/compat
+.else
+PACMAN_ROOT=	${PREFIX}/pacman
 .endif
 
 .include <bsd.port.pre.mk>

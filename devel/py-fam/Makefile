@@ -13,7 +13,9 @@ WWW=		https://python-fam.sourceforge.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python fam
+LIB_DEPENDS=	libfam.so.0:devel/gamin
+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>

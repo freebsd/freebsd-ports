@@ -1,5 +1,5 @@
 PORTNAME=	resolv-replace
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/ruby/resolv-replace
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-resolv>=0:dns/rubygem-resolv
 

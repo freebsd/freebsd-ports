@@ -1,8 +1,8 @@
---- liblua/Makefile.orig	2016-07-02 17:02:27 UTC
+--- liblua/Makefile.orig	2025-04-30 19:58:18 UTC
 +++ liblua/Makefile
-@@ -6,8 +6,8 @@
+@@ -6,8 +6,8 @@ PLAT= guess
  # Your platform. See PLATS for possible values.
- PLAT= none
+ PLAT= guess
  
 -CC= gcc -std=gnu99
 -CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_3 $(SYSCFLAGS) $(MYCFLAGS)

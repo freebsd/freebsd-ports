@@ -1,6 +1,0 @@
-The library contains functions for memory allocation,
-bit arrays, configuration files, comparing standard
-C types for qsort and bsearch, error messages, expression
-parsing and evaluation, filenames, hash tables, integer
-sets, log files, the Linux Software Map, NNTP, priority
-queues, normal queues, editor buffers, stacks, and strings.

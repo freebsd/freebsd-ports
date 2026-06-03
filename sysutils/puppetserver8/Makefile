@@ -1,5 +1,6 @@
 PORTNAME=	puppetserver
 PORTVERSION=	8.7.0
+PORTREVISION=	3
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	8
@@ -10,16 +11,18 @@ WWW=		https://docs.puppetlabs.com/puppetserver/latest/services_master_puppetserv
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Discontinued, use sysutils/openvox-server8
+EXPIRATION_DATE=2026-07-01
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=Bundled JNI only support some architectures
 
 RUN_DEPENDS=	bash>=0:shells/bash \
 		puppet8>=8.0:sysutils/puppet8 \
 		rubygem-puppetserver-ca>=1:sysutils/rubygem-puppetserver-ca \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
-		sudo>=1:security/sudo
+		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
-USES=		ruby java shebangfix
+USES=		ruby java shebangfix sudo
 JAVA_VERSION=	11+
 USE_RC_SUBR=	puppetserver
 
@@ -73,6 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/web-routes.conf ${STAGEDIR}${ETCDIR}/conf.d/web-routes.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/webserver.conf ${STAGEDIR}${ETCDIR}/conf.d/webserver.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/auth.conf ${STAGEDIR}${ETCDIR}/conf.d/auth.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/ca.conf ${STAGEDIR}${ETCDIR}/conf.d/ca.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/metrics.conf ${STAGEDIR}${ETCDIR}/conf.d/metrics.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/services.d/ca.cfg ${STAGEDIR}${ETCDIR}/services.d/ca.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/system-config/services.d/bootstrap.cfg ${STAGEDIR}${ETCDIR}/services.d/bootstrap.cfg.sample

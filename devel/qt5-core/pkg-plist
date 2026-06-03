@@ -538,6 +538,7 @@
 %%QT_INCDIR%%/QtCore/QtPlugin
 %%QT_INCDIR%%/QtCore/QtPluginInstanceFunction
 %%QT_INCDIR%%/QtCore/QtPluginMetaDataFunction
+%%QT_INCDIR%%/QtCore/QtStdLibDetection
 %%QT_INCDIR%%/QtCore/qabstractanimation.h
 %%QT_INCDIR%%/QtCore/qabstracteventdispatcher.h
 %%QT_INCDIR%%/QtCore/qabstractitemmodel.h
@@ -695,6 +696,7 @@
 %%QT_INCDIR%%/QtCore/qstandardpaths.h
 %%QT_INCDIR%%/QtCore/qstate.h
 %%QT_INCDIR%%/QtCore/qstatemachine.h
+%%QT_INCDIR%%/QtCore/qstdlibdetection.h
 %%QT_INCDIR%%/QtCore/qstorageinfo.h
 %%QT_INCDIR%%/QtCore/qstring.h
 %%QT_INCDIR%%/QtCore/qstringalgorithms.h

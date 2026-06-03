@@ -1,0 +1,3 @@
+model-hosting-container-standards provides standards and utilities for
+hosting machine learning models in containers. It includes FastAPI-based
+server definitions and container lifecycle management utilities.

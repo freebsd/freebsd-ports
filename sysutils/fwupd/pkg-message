@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+ Warning: fwupd is highly experimental and DANGEROUS
+
+ PLEASE do not attempt to flash any devices yet!
+
+ If you want to help testing use those non-destructive commands:
+
+   fwupdmgr get-devices
+   fwupdmgr verify [DEVICE-ID|GUID]
+EOM
+}
+]

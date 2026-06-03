@@ -1,6 +1,7 @@
 include/xgboost/base.h
 include/xgboost/c_api.h
 include/xgboost/cache.h
+include/xgboost/collective/poll_utils.h
 include/xgboost/collective/result.h
 include/xgboost/collective/socket.h
 include/xgboost/context.h
@@ -28,6 +29,7 @@ include/xgboost/task.h
 include/xgboost/tree_model.h
 include/xgboost/tree_updater.h
 include/xgboost/version_config.h
+include/xgboost/windefs.h
 lib/cmake/xgboost/XGBoostTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xgboost/XGBoostTargets.cmake
 lib/cmake/xgboost/xgboost-config-version.cmake

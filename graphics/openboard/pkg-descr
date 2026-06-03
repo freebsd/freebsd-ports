@@ -1,0 +1,7 @@
+OpenBoard is an open source interactive whiteboard application designed
+primarily for use in schools. It was originally forked from Open-Sankore,
+which was itself based on Uniboard.
+
+It supports digital pens, virtual keyboards, PDF import, web browsing, video
+playback, and screen annotations. It can be used standalone or with an
+interactive whiteboard device.

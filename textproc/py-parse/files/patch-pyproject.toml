@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-02-19 02:16:19 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ description = "parse() is the opposite of format()"
+ dynamic = ["version"]
+ readme = "README.rst"
+ description = "parse() is the opposite of format()"
+-license = "MIT"
++license = {file = "LICENSE"}
+ classifiers = [
+     "Environment :: Web Environment",
+     "Intended Audience :: Developers",

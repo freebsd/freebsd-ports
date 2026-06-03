@@ -1,11 +1,11 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-plugins-${SLAVE_PORT:tl}
+PKGNAMESUFFIX=	-plugins-${EXTRA_PLUGINS:tl}
 
-COMMENT=	Frei0r ${SLAVE_PORT} plugins
+COMMENT=	Frei0r ${EXTRA_PLUGINS} plugins
 
 MASTERDIR=	${.CURDIR}/../frei0r
 PLIST=		${.CURDIR}/pkg-plist
 
-SLAVE_PORT=	cairo
+EXTRA_PLUGINS=	cairo
 
 .include "${MASTERDIR}/Makefile"

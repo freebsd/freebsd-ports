@@ -24,4 +24,7 @@ USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	${REINPLACE_CMD} "s,/bin/bash,/bin/sh," ${WRKSRC}/apps/lib/exec_inspect.sh
+
 .include <bsd.port.mk>

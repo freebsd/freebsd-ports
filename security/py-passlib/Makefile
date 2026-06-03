@@ -5,7 +5,7 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive password hashing framework supporting over 30 schemes
 WWW=		https://bitbucket.org/ecollins/passlib
 

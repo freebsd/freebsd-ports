@@ -1,5 +1,5 @@
 PORTNAME=	bibtexconv
-DISTVERSION=	2.0.3
+DISTVERSION=	2.2.2
 CATEGORIES=	converters
 MASTER_SITES=	https://www.nntb.no/~dreibh/bibtexconv/download/
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	pdfinfo:graphics/poppler-utils \
 		zip:archivers/zip
 
-USES=		bison cmake python:3.9+ shebangfix ssl tar:xz
+USES=		bison cmake python shebangfix ssl tar:xz
 
 SHEBANG_FILES=	src/get-author-url src/ietf2bibtex
 
@@ -24,6 +24,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 # Remove trailing subdir from CMAKE_INSTALL_DOCDIR
 post-patch:
-	@${REINPLACE_CMD} -e 's|/examples||' ${WRKSRC}/src/CMakeLists.txt ${WRKSRC}/src/Images/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|/examples||' \
+		${WRKSRC}/src/CMakeLists.txt \
+		${WRKSRC}/src/Images/CMakeLists.txt
 
 .include <bsd.port.mk>

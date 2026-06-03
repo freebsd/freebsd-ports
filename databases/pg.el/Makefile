@@ -1,10 +1,9 @@
 PORTNAME=	pg.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55
+DISTVERSION=	0.66
 CATEGORIES=	databases elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	PostgreSQL Elisp interface
 WWW=		https://github.com/emarsden/pg-el
 
@@ -16,9 +15,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	emarsden
 GH_PROJECT=	pg-el
 
-CONFLICTS_INSTALL=	pg.el pg.el-emacs_* # share/doc/pg.el/README
+CONFLICTS_INSTALL=	pg.el-emacs_*
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_SUB+=	ELISPDIR=${ELISPDIR}
 
@@ -26,16 +26,11 @@ PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
-ELISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-
-do-build:
-	(cd ${WRKSRC} \
-	&& ${EMACS_CMD} -Q -batch -L . -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
-	-f batch-byte-compile *.el)
+ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.el* \
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.el \
 	    ${STAGEDIR}${PREFIX}/${ELISPDIR})
 
 do-install-DOCS-on:

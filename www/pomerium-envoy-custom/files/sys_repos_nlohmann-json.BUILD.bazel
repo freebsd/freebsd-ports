@@ -1,0 +1,11 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+# includes = ["include", ""] supports both:
+#   #include "nlohmann/json.hpp"       (via -Iinclude)
+#   #include "include/nlohmann/json.hpp" (via -I.)
+cc_library(
+    name = "json",
+    hdrs = glob(["include/nlohmann/**/*.hpp"]),
+    includes = ["include", ""],
+    visibility = ["//visibility:public"],
+)

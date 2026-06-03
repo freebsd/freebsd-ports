@@ -1,11 +1,12 @@
 PORTNAME=	nagios-plugins
 DISTVERSION=	2.4.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
 		LOCAL/mat/${PORTNAME}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Nagios
 WWW=		https://nagios-plugins.org/
 

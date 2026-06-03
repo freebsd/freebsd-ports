@@ -1,12 +1,12 @@
---- Makefile.orig	2024-03-10 21:00:36 UTC
+--- Makefile.orig	2026-01-29 17:00:40 UTC
 +++ Makefile
-@@ -114,6 +114,13 @@ supportedsites:
+@@ -146,6 +146,13 @@ supportedsites:
  supportedsites:
  	$(PYTHON) devscripts/make_supportedsites.py supportedsites.md
  
 +freebsd-install-all-files:
 +	mkdir -p $(PYTHON_SITELIBDIR)
-+	for d in $(CODE_FOLDERS) ; do \
++	for d in $(PY_CODE_FOLDERS) ; do \
 +	  mkdir -p $(PYTHON_SITELIBDIR)/$$d ;\
 +	  cp -pPR $$d/*.py $(PYTHON_SITELIBDIR)/$$d/ ;\
 +	done

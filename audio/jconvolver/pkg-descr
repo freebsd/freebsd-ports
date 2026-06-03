@@ -4,7 +4,7 @@ to the most efficient size further on. It can perform zero-delay processing with
 moderate CPU load. Jconvolver uses the convolution engine designed for Aella, a
 convolution application for reverberation processing (to be announced later).
 This distributes the calculation over up to five threads, one for each partition
-size, running at priorities just below the the one of JACK's processing thread.
+size, running at priorities just below the one of JACK's processing thread.
 This engine is a separate library that will be documented as soon as I can find
 the time.
 

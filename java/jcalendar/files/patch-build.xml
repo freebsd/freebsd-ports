@@ -1,0 +1,10 @@
+--- build.xml.orig	2026-04-08 20:26:56 UTC
++++ build.xml
+@@ -73,7 +73,6 @@
+ 		       debug="off"
+ 		       deprecation="on"
+ 		       optimize="on"
+-		       source="1.4"
+ 		/>
+ 	</target>
+ 

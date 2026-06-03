@@ -34,7 +34,9 @@ include/ebml/ebml_internal.h
 include/matroska/matroska.h
 include/matroska/matroska_internal.h
 include/matroska/matroska_sem.h
-lib/libbcmatroska2.a
+lib/libbcmatroska2.so
+lib/libbcmatroska2.so.0
+lib/libbcmatroska2.so.0.0.0
 share/BCMatroska2/cmake/BCMatroska2Config.cmake
 share/BCMatroska2/cmake/BCMatroska2ConfigVersion.cmake
 share/BCMatroska2/cmake/BCMatroska2Targets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -1,0 +1,155 @@
+;;; default.el --- Site-wide Initialization -*- lexical-binding: t -*-
+
+;; Installed by editors/emacs and editors/emacs-devel.
+;;
+;; This file depends on variables defined in site-start.el, and is loaded after
+;; the user's init file in the Emacs initialization sequence.
+;;
+;; FreeBSD elisp (USES=emacs) ports only install .el source files under
+;; %%PREFIX%%/share/emacs/site-lisp/.  This file arranges for those files to be
+;; compiled and cached per-user, following the same pattern used by ELPA.  No
+;; root privileges are required after package installation.
+;;
+;; For Emacs builds with native compilation: .eln files are cached in
+;; ~/.emacs.d/eln-cache/ by Emacs's existing machinery.
+;;
+;; For Emacs builds without native compilation: .elc files are cached in
+;; ~/.emacs.d/freebsd-elc-cache/, with the cache directory prepended to
+;; load-path so compiled files take precedence over .el source.
+;;
+;; To disable native compilation of all third-party elisp, including FreeBSD
+;; ports elisp and ELPA packages, set `native-comp-jit-compilation' to nil.
+;;
+;; To disable byte-compilation of ports elisp (non-native-compilation builds
+;; only), set `freebsd-inhibit-byte-compile' to t.
+
+;;; Code:
+
+(defun freebsd--elc-cache-dest (el-file)
+  "Map EL-FILE under `freebsd-site-lisp-dir' to its cache path.
+The subdirectory structure of `freebsd-site-lisp-dir' is mirrored
+under `freebsd-elc-cache-dir' to avoid filename collisions across
+ports and to allow per-subdirectory load-path entries."
+  (let* ((relative (file-relative-name el-file freebsd-site-lisp-dir))
+         (dest-el  (expand-file-name relative freebsd-elc-cache-dir)))
+    (concat (file-name-sans-extension dest-el) ".elc")))
+
+(defun freebsd--elc-cache-valid-p ()
+  "Return non-nil if the elc cache was built by the current Emacs version.
+Reads a version stamp file from `freebsd-elc-cache-dir' and compares
+it to `emacs-version'.  If missing or mismatched, the cache is
+considered stale and is cleared."
+  (let ((stamp (expand-file-name "emacs-version" freebsd-elc-cache-dir)))
+    (if (file-exists-p stamp)
+        (string= (with-temp-buffer
+                   (insert-file-contents stamp)
+                   (buffer-string))
+                 emacs-version)
+      nil)))
+
+(defun freebsd--elc-cache-clear ()
+  "Remove all .elc files from `freebsd-elc-cache-dir'."
+  (when (file-directory-p freebsd-elc-cache-dir)
+    (dolist (elc (directory-files-recursively
+                  freebsd-elc-cache-dir "\\.elc\\'"))
+      (delete-file elc))))
+
+(defun freebsd--elc-cache-write-stamp ()
+  "Write the current Emacs version to the cache stamp file."
+  (let ((stamp (expand-file-name "emacs-version" freebsd-elc-cache-dir)))
+    (with-temp-file stamp
+      (insert emacs-version))))
+
+(defun freebsd--setup-byte-compile-cache ()
+  "Set up the byte-compilation cache and prepend it to `load-path'.
+Creates `freebsd-elc-cache-dir' mirroring the subdirectory structure
+of `freebsd-site-lisp-dir', then prepends the cache root and all
+subdirectories to `load-path' so cached .elc files take precedence
+over .el source files."
+  (make-directory freebsd-elc-cache-dir t)
+  (when (file-directory-p freebsd-site-lisp-dir)
+    (dolist (dir (directory-files freebsd-site-lisp-dir t "^[^.]"))
+      (when (file-directory-p dir)
+        (make-directory
+         (expand-file-name
+          (file-relative-name dir freebsd-site-lisp-dir)
+          freebsd-elc-cache-dir)
+         t))))
+  (add-to-list 'load-path freebsd-elc-cache-dir)
+  (let ((default-directory freebsd-elc-cache-dir))
+    (normal-top-level-add-subdirs-to-load-path)))
+
+(defun freebsd--byte-compile-site-lisp ()
+  "Byte-compile FreeBSD ports elisp into `freebsd-elc-cache-dir'.
+Runs once on an idle timer to avoid blocking Emacs startup.  First
+removes any stale .elc files whose corresponding .el source no longer
+exists in `freebsd-site-lisp-dir', then recompiles any .el files that
+are newer than their cached .elc, following the same pattern used
+by ELPA."
+  (run-with-idle-timer
+   3 nil
+   (lambda ()
+     (unless (freebsd--elc-cache-valid-p)
+       (freebsd--elc-cache-clear))
+     (freebsd--elc-cache-write-stamp)
+     (when (file-directory-p freebsd-elc-cache-dir)
+       (dolist (elc (directory-files-recursively
+                     freebsd-elc-cache-dir "\\.elc\\'"))
+         (let* ((relative (file-relative-name elc freebsd-elc-cache-dir))
+                (el (expand-file-name
+                     (concat (file-name-sans-extension relative) ".el")
+                     freebsd-site-lisp-dir)))
+           (unless (file-exists-p el)
+             (delete-file elc)))))
+     (dolist (el (directory-files-recursively
+                  freebsd-site-lisp-dir "\\.el\\'"))
+       (let ((base (file-name-nondirectory el)))
+         (unless (member base '("site-start.el" "subdirs.el"))
+           (let ((elc (freebsd--elc-cache-dest el)))
+             (when (or (not (file-exists-p elc))
+                       (file-newer-than-file-p el elc))
+               (let ((byte-compile-log-level 0)
+                     (byte-compile-dest-file-function
+                      #'freebsd--elc-cache-dest))
+                 (byte-compile-file el))))))))))
+
+(defun freebsd--load-autoloads ()
+  "Load all autoloads files installed by FreeBSD elisp ports.
+This mirrors what package.el does for ELPA packages, ensuring
+that autoloaded functions are available without requiring users
+to explicitly load each package."
+  (when (file-directory-p freebsd-site-lisp-dir)
+    (dolist (autoloads (directory-files-recursively
+                        freebsd-site-lisp-dir
+                        ".*-autoloads\\.el\\'"))
+      (load autoloads t t))))
+
+(defun freebsd--clean-stale-eln-dirs ()
+  "Remove eln-cache subdirectories from previous Emacs builds.
+Emacs native compilation writes .eln files into a hash-named subdirectory
+of eln-cache specific to the running binary.  Old subdirectories from
+previous builds are never cleaned up automatically.  This function removes
+all subdirectories that do not match `comp-native-version-dir'."
+  (let ((cache-dir (expand-file-name "eln-cache" user-emacs-directory))
+        (current-dir comp-native-version-dir))
+    (when (file-directory-p cache-dir)
+      (dolist (dir (directory-files cache-dir t "\\`[^.]"))
+        (when (and (file-directory-p dir)
+                   (not (string= (file-name-nondirectory dir) current-dir)))
+          (delete-directory dir t))))))
+
+;;; Entry point
+
+;; When running in batch mode (e.g. during port builds), skip all
+;; compilation machinery to avoid interference with the build environment.
+(unless noninteractive
+  (freebsd--load-autoloads)
+  (if (native-comp-available-p)
+      (when native-comp-jit-compilation
+        (freebsd--clean-stale-eln-dirs)
+        (native-compile-async freebsd-site-lisp-dir 'recursively))
+    (unless freebsd-inhibit-byte-compile
+      (freebsd--setup-byte-compile-cache)
+      (freebsd--byte-compile-site-lisp))))
+
+;;; default.el ends here

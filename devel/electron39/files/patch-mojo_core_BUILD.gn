@@ -1,0 +1,11 @@
+--- mojo/core/BUILD.gn.orig	2025-08-26 20:49:50 UTC
++++ mojo/core/BUILD.gn
+@@ -161,7 +161,7 @@ source_set("impl_for_embedder") {
+       "channel_posix.h",
+     ]
+ 
+-    if (is_linux || is_chromeos || is_android) {
++    if ((is_linux || is_chromeos || is_android) && !is_bsd) {
+       sources += [
+         "channel_linux.cc",
+         "channel_linux.h",

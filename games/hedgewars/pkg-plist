@@ -1,0 +1,10 @@
+bin/hedgewars
+bin/hwengine
+%%VIDEOREC%%lib/libavwrapper.so
+%%VIDEOREC%%lib/libavwrapper.so.1.0
+lib/libphyslayer.so
+lib/libphyslayer.so.1.0
+share/appdata/hedgewars.appdata.xml
+share/applications/hedgewars.desktop
+share/pixmaps/hedgewars.png
+share/pixmaps/hedgewars.xpm

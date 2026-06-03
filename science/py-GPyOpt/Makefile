@@ -1,6 +1,6 @@
 PORTNAME=	GPyOpt # the upstream repository was archived but this packages seems to be ok and is useful
 DISTVERSION=	1.2.6
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ WWW=		https://sheffieldml.github.io/GPyOpt/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.16:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GPy>=1.8:science/py-GPy@${PY_FLAVOR}
 

@@ -1,3 +1,5 @@
-TIMESTAMP = 1746664252
-SHA256 (zlib-ng-minizip-ng-4.0.10_GH0.tar.gz) = c362e35ee973fa7be58cc5e38a4a6c23cc8f7e652555daf4f115a9eb2d3a6be7
-SIZE (zlib-ng-minizip-ng-4.0.10_GH0.tar.gz) = 773269
+TIMESTAMP = 1777317777
+SHA256 (zlib-ng-minizip-ng-4.2.1_GH0.tar.gz) = 3cc35c2cb925dbe67cc801e3234b31b0f30197812a99377352fa1b551ab3d011
+SIZE (zlib-ng-minizip-ng-4.2.1_GH0.tar.gz) = 610659
+SHA256 (ip7z-7zip-26.00_GH0.tar.gz) = 07eafed75d661282d402dc2a3edf17e1dbb36fb813f4fbf5a2bad4f6b722aed5
+SIZE (ip7z-7zip-26.00_GH0.tar.gz) = 2226105

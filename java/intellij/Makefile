@@ -3,7 +3,7 @@
 
 PORTNAME=	intellij
 PORTVERSION=	2020.2.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIC-${PORTVERSION}-no-jbr

@@ -4,5 +4,5 @@ modifications.
 This driver is read-only and cannot write to or damage the target
 filesystem in any way.
 
-hfsfuse also includes a standalone tool, hfsdump, to inspect the
-contents of an HFS+ volume without FUSE.
+hfsfuse also includes two standalone tools, hfsdump and hfstar,
+which can be used in an HFS+ volume without FUSE.

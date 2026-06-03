@@ -1,10 +1,9 @@
-PORTNAME=	nginx
-PORTVERSION=	1.26.0
-PORTREVISION?=	21
+PORTNAME=	freenginx
+PORTVERSION=	1.30.0
+PORTREVISION?=	2
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
-PKGNAMEPREFIX=	free
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	joneum@FreeBSD.org
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	nginx nginx-devel
 
-PORTSCOUT=	limit:^1\.26\.[0-9]*
+PORTSCOUT=	limit:^1\.28\.[0-9]*
 
 USES=		cpe
 
@@ -71,8 +70,7 @@ OPTIONS_GROUP_HTTPGRP=	GOOGLE_PERFTOOLS HTTP HTTP_ADDITION HTTP_AUTH_REQ \
 	HTTP_CACHE HTTP_DAV HTTP_DEGRADATION HTTP_FLV HTTP_GUNZIP_FILTER \
 	HTTP_GZIP_STATIC HTTP_IMAGE_FILTER HTTP_MP4 HTTP_PERL \
 	HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK HTTP_SLICE HTTP_SSL \
-	HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV3 HTTPV3_BORING HTTPV3_LSSL \
-	HTTPV3_QTLS
+	HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV3 HTTPV3_BORING HTTPV3_LSSL
 
 OPTIONS_GROUP_MAILGRP=	MAIL MAIL_IMAP MAIL_POP3 MAIL_SMTP MAIL_SSL
 
@@ -173,15 +171,11 @@ HTTPV3_CONFIGURE_ON=		--with-http_v3_module
 HTTPV3_BORING_BUILD_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
 HTTPV3_BORING_RUN_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
 HTTPV3_BORING_IMPLIES=		HTTPV3
-HTTPV3_BORING_PREVENTS=		HTTPV3_LSSL HTTPV3_QTLS
+HTTPV3_BORING_PREVENTS=		HTTPV3_LSSL
 HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_RUN_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_IMPLIES=		HTTPV3
-HTTPV3_LSSL_PREVENTS=		HTTPV3_BORING HTTPV3_QTLS
-HTTPV3_QTLS_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
-HTTPV3_QTLS_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
-HTTPV3_QTLS_IMPLIES=		HTTPV3
-HTTPV3_QTLS_PREVENTS=		HTTPV3_BORING HTTPV3_LSSL
+HTTPV3_LSSL_PREVENTS=		HTTPV3_BORING
 MAIL_VARS=			DSO_BASEMODS+=mail
 MAIL_IMAP_CONFIGURE_OFF=	--without-mail_imap_module
 MAIL_POP3_CONFIGURE_OFF=	--without-mail_pop3_module
@@ -245,11 +239,12 @@ CFLAGS+=	-DNDEBUG
 CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .endif
 
-.if empty(PORT_OPTIONS:MMODSECURITY3) && empty(PORT_OPTIONS:MPASSENGER)
+.if empty(PORT_OPTIONS:MMODSECURITY3)
 CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib"
 .else
-CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
-LIB_DEPENDS+=		libpcre.so:devel/pcre
+
+ONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre2-8"
+IB_DEPENDS+=		libpcre2-8.so:devel/pcre2
 .endif
 
 .if ${PORT_OPTIONS:MNJS} && empty(PORT_OPTIONS:MNJS_XML)
@@ -330,6 +325,11 @@ post-patch-SFLOW-on:
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
+pre-configure-LUASTREAM-on:
+	@${RM} -rf ${WRKSRC_luastream}
+	@cd ${LOCALBASE}/share/nginx/modules/lua-stream-nginx-module && \
+		${COPYTREE_SHARE} . ${WRKSRC_luastream}
+
 do-configure-NJS-on:
 	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )
 
@@ -376,9 +376,9 @@ post-install:
 	${CAT} ${WRKSRC}/conf/nginx.conf >> ${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
 post-install-WWW-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/nginx-dist
-	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/nginx-dist && \
-	${TOUCH} ${STAGEDIR}${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING)
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/freenginx-dist
+	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/freenginx-dist && \
+	${TOUCH} ${STAGEDIR}${PREFIX}/www/freenginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING)
 .endif
 
 .include <bsd.port.post.mk>

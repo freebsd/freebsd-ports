@@ -1,0 +1,76 @@
+https://github.com/Netflix/vmaf/issues/1481
+
+--- src/feature/integer_adm.c.orig	2026-04-02 18:41:56 UTC
++++ src/feature/integer_adm.c
+@@ -2646,7 +2646,9 @@ static int init(VmafFeatureExtractor *fex, enum VmafPi
+         s->i4_adm_csf = i4_adm_csf_avx2;
+         s->i4_adm_cm = i4_adm_cm_avx2;
+         s->adm_decouple = adm_decouple_avx2;
++#if ARCH_X86_64
+         s->adm_decouple_s123 = adm_decouple_s123_avx2;
++#endif
+     }
+ #if HAVE_AVX512
+     if (flags & VMAF_X86_CPU_FLAG_AVX512) {
+@@ -2660,7 +2662,9 @@ static int init(VmafFeatureExtractor *fex, enum VmafPi
+         s->i4_adm_csf = i4_adm_csf_avx512;
+         s->i4_adm_cm = i4_adm_cm_avx512;
+         s->adm_decouple = adm_decouple_avx512;
++#if ARCH_X86_64
+         s->adm_decouple_s123 = adm_decouple_s123_avx512;
++#endif
+     }
+ #endif
+ #elif ARCH_AARCH64
+--- src/feature/x86/adm_avx2.c.orig	2026-04-02 18:41:56 UTC
++++ src/feature/x86/adm_avx2.c
+@@ -16,6 +16,7 @@
+  *
+  */
+ 
++#include "config.h"
+ #include "feature/integer_adm.h"
+ #include <immintrin.h>
+ 
+@@ -1352,6 +1353,7 @@ static inline __m256i sra_epi64(__m256i a, __m256i mas
+     return _mm256_or_si256(rl_shift, signmask);
+ }
+ 
++#if ARCH_X86_64
+ // No lzcnt in avx2
+ void adm_decouple_s123_avx2(AdmBuffer *buf, int w, int h, int stride,
+                               double adm_enhn_gain_limit, int32_t* adm_div_lookup)
+@@ -1879,6 +1881,7 @@ void adm_decouple_s123_avx2(AdmBuffer *buf, int w, int
+         }
+     }
+ }
++#endif
+ 
+ /*
+  * lambda = 0 (finest scale), 1, 2, 3 (coarsest scale);
+--- src/feature/x86/adm_avx512.c.orig	2026-04-02 18:41:56 UTC
++++ src/feature/x86/adm_avx512.c
+@@ -16,6 +16,7 @@
+  *
+  */
+ 
++#include "config.h"
+ #include "feature/integer_adm.h"
+ #include "adm_avx512.h"
+ #include <immintrin.h>
+@@ -1115,6 +1116,7 @@ angle_flag = ((((float)ot_dp / 4096.0) >= 0.0f) && \
+                     cos_1deg_sq * ((float)o_mag_sq / 4096.0) * ((float)t_mag_sq / 4096.0))); \
+ } \
+ 
++#if ARCH_X86_64
+ void adm_decouple_s123_avx512(AdmBuffer *buf, int w, int h, int stride,
+                               double adm_enhn_gain_limit, int32_t* adm_div_lookup)
+ {
+@@ -1534,6 +1536,7 @@ void adm_decouple_s123_avx512(AdmBuffer *buf, int w, i
+         }
+     }
+ }
++#endif
+ 
+ 
+ 

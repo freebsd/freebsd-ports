@@ -1,0 +1,11 @@
+--- kcms/cpu/main.cpp.orig	2026-03-03 09:30:53 UTC
++++ kcms/cpu/main.cpp
+@@ -16,7 +16,7 @@ class KCMCPU : public KQuickConfigModule (public)
+     explicit KCMCPU(QObject *parent, const KPluginMetaData &data)
+         : KQuickConfigModule(parent, data)
+     {
+-        m_outputContext = new CommandOutputContext(QStringLiteral("lscpu"), {QStringLiteral("--hierarchic=always")}, parent);
++        m_outputContext = new CommandOutputContext(QStringLiteral("lscpu"), {}, parent);
+     }
+     CommandOutputContext *outputContext() const
+     {

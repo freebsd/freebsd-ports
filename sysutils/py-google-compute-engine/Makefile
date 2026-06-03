@@ -1,6 +1,6 @@
 PORTNAME=	google-compute-engine
 DISTVERSION=	2.8.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,10 +15,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
-		google_oslogin_control:sysutils/google-compute-engine-oslogin \
-		sudo:security/sudo
+		google_oslogin_control:sysutils/google-compute-engine-oslogin
 
-USES=		python shebangfix
+USES=		python shebangfix sudo
 USE_PYTHON=	autoplist concurrent distutils
 
 WRKSRC_SUBDIR=	packages/python-google-compute-engine

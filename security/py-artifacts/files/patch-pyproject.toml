@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-04-21 05:22:57 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ maintainers = [
+ maintainers = [
+     { name = "Forensic artifacts", email = "forensicartifacts@googlegroups.com" },
+ ]
+-license = "Apache-2.0"
+-license-files = ["ACKNOWLEDGEMENTS", "AUTHORS", "LICENSE"]
++license = {text = "Apache-2.0"}
+ readme = "README.md"
+ classifiers = [
+     "Development Status :: 3 - Alpha",

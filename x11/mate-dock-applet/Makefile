@@ -1,6 +1,6 @@
 PORTNAME=	mate-dock-applet
 PORTVERSION=	21.10.0
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	x11 mate
 DIST_SUBDIR=	mate
 
@@ -8,16 +8,17 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Application dock applet for the MATE panel
 WWW=		https://github.com/ubuntu-mate/mate-dock-applet
 
+
 LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=0:graphics/py-pycairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xlib>=0:x11-toolkits/py-python-xlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyxdg>=0:devel/py-pyxdg@${PY_FLAVOR}
 
 USES=		python autoreconf gettext gmake gnome libtool localbase \
 		pkgconfig shebangfix tar:xz

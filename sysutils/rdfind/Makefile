@@ -1,5 +1,5 @@
 PORTNAME=	rdfind
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://rdfind.pauldreik.se/
 

@@ -1,0 +1,18 @@
+Textual-textarea is a text area (multi-line input) with syntax highlighting for
+Textual.
+
+It offers a full-featured text editor experience with VS-Code-like bindings, in
+your Textual App:
+
+  - Syntax highlighting and support for Pygments themes.
+  - Move cursor and scroll with mouse or keys (including ctrl+arrow, PgUp/Dn,
+    ctrl+Home/End).
+  - Open (ctrl+o) and save (ctrl+s) files.
+  - Cut (ctrl+x), copy (ctrl+c), paste (ctrl+u/v), optionally using the system
+    clipboard.
+  - Comment selections with ctrl+/.
+  - Indent and dedent (optionally for a multiline selection) to tab stops with
+    Tab and shift+Tab.
+  - Automatic completions of quotes and brackets.
+  - Select text by double-, triple-, or quadruple-clicking.
+  - Quit with ctrl+q.

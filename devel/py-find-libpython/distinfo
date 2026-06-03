@@ -1,3 +1,3 @@
-TIMESTAMP = 1712349885
-SHA256 (find_libpython-0.4.0.tar.gz) = 46f9cdcd397ddb563b2d7592ded3796a41c1df5222443bd9d981721c906c03e6
-SIZE (find_libpython-0.4.0.tar.gz) = 8979
+TIMESTAMP = 1777365941
+SHA256 (find_libpython-0.5.1.tar.gz) = 12a0fb39ff8dcc64ad0fd554b1bd142ea4a8c4c18e5da6043a547ce7b25559fe
+SIZE (find_libpython-0.5.1.tar.gz) = 9402

@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2026-03-10 12:45:20 UTC
++++ Cargo.toml
+@@ -23,7 +23,7 @@ codegen-units = 16
+ codegen-units = 16
+ 
+ [features]
+-default = ["vendored-protoc"]
++default = []
+ tokio-console = ["dep:console-subscriber"]
+ failpoints = ["dep:fail"]
+ vendored-protoc = ["dep:protobuf-src"]

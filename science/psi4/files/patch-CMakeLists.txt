@@ -1,24 +1,26 @@
---- CMakeLists.txt.orig	2023-12-06 06:01:19 UTC
+--- CMakeLists.txt.orig	2026-05-29 03:12:24 UTC
 +++ CMakeLists.txt
-@@ -211,7 +211,7 @@ message(STATUS "Psi4 install: ${CMAKE_INSTALL_PREFIX}"
+@@ -221,7 +221,7 @@ set(Python_ADDITIONAL_VERSIONS 3.13 3.12 3.11 3.10)  #
  # * library: not at all
  
- set(Python_ADDITIONAL_VERSIONS 3.12 3.11 3.10 3.9 3.8)  # adjust with CMake minimum FindPythonInterp
--find_package(Python 3.8 COMPONENTS Interpreter Development NumPy REQUIRED)
+ set(Python_ADDITIONAL_VERSIONS 3.13 3.12 3.11 3.10)  # adjust with CMake minimum FindPythonInterp
+-find_package(Python 3.10 COMPONENTS Interpreter Development NumPy REQUIRED)
 +find_package(Python $ENV{FREEBSD_PYTHON_VER} COMPONENTS Interpreter Development NumPy REQUIRED)
- message(STATUS "${Cyan}Found Python ${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}${ColourReset}: ${Python_EXECUTABLE} (found version ${Python_VERSION})")
- 
+ message(STATUS "${Cyan}Found Python ${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}${ColourReset}: ${Python_EXECUTABLE} (found version ${Python_VERSION}; NumPy version: ${Python_NumPy_VERSION})")
  set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage)
-@@ -325,13 +325,14 @@ ExternalProject_Add(psi4-core
+ message(STATUS "Psi4 staging: ${STAGED_INSTALL_PREFIX}")
+@@ -349,6 +349,7 @@ ExternalProject_Add(psi4-core
                -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
                -DENABLE_CYTHONIZE=${ENABLE_CYTHONIZE}
                -Dpsi4_SHGSHELL_ORDERING=${psi4_SHGSHELL_ORDERING}
 +	      -DFREEBSD_PYTHON_VER=${FREEBSD_PYTHON_VER}
-    CMAKE_CACHE_ARGS -DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}
+    CMAKE_CACHE_ARGS -DCMAKE_PREFIX_PATH:PATH=${_cmake_CMAKE_PREFIX_PATH}
                -DCMAKE_C_COMPILER_ARG1:STRING=${CMAKE_C_COMPILER_ARG1}
                -DCMAKE_CXX_COMPILER_ARG1:STRING=${CMAKE_CXX_COMPILER_ARG1}
-               -DCMAKE_Fortran_COMPILER_ARG1:STRING=${CMAKE_Fortran_COMPILER_ARG1}
+@@ -356,21 +357,10 @@ ExternalProject_Add(psi4-core
                 # CMAKE_<lang>_COMPILER_ARG1 vars pass args thru when CMAKE_<lang>_COMPILER set as "compiler --vital-args"
+               -DOpenMP_C_LIB_NAMES:STRING=${OpenMP_C_LIB_NAMES}
+               -DOpenMP_CXX_LIB_NAMES:STRING=${OpenMP_CXX_LIB_NAMES}
 -   USES_TERMINAL_BUILD 1
 -   BUILD_ALWAYS 1)
 +   #USES_TERMINAL_BUILD 1
@@ -26,3 +28,16 @@
  
  add_subdirectory(external/downstream)
  add_subdirectory(doc)
+ include(ConfigTesting)
+ 
+-# <<<  Install  >>>
+-
+-install(DIRECTORY ${STAGED_INSTALL_PREFIX}/
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}
+-        USE_SOURCE_PERMISSIONS
+-        PATTERN "*.pyc" EXCLUDE)
+-
+-install(DIRECTORY samples
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/psi4
+-        USE_SOURCE_PERMISSIONS
+-        PATTERN "example_psi4rc_file" EXCLUDE)

@@ -37,6 +37,17 @@
 %%HTML%%%%DOCBASE%%/en/articles/vinum/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vm-design/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vpn-ipsec/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/blindness/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/book/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/colors/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/development/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/help/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/lowvision/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/parti/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/partii/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/preface/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/virtual-terminal/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/bibliography/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/boot/index.html
@@ -520,9 +531,11 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/alexey.key
 %%HTML%%%%DOCBASE%%/pgpkeys/alfredo.key
 %%HTML%%%%DOCBASE%%/pgpkeys/allanjude.key
+%%HTML%%%%DOCBASE%%/pgpkeys/alven.key
 %%HTML%%%%DOCBASE%%/pgpkeys/anchie.key
 %%HTML%%%%DOCBASE%%/pgpkeys/anders.key
 %%HTML%%%%DOCBASE%%/pgpkeys/andreas.key
+%%HTML%%%%DOCBASE%%/pgpkeys/andy.key
 %%HTML%%%%DOCBASE%%/pgpkeys/anholt.key
 %%HTML%%%%DOCBASE%%/pgpkeys/anray.key
 %%HTML%%%%DOCBASE%%/pgpkeys/antoine.key
@@ -652,6 +665,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/eduardo.key
 %%HTML%%%%DOCBASE%%/pgpkeys/egypcio.key
 %%HTML%%%%DOCBASE%%/pgpkeys/ehaupt.key
+%%HTML%%%%DOCBASE%%/pgpkeys/emaste.key
 %%HTML%%%%DOCBASE%%/pgpkeys/emax.key
 %%HTML%%%%DOCBASE%%/pgpkeys/erj.key
 %%HTML%%%%DOCBASE%%/pgpkeys/eugen.key
@@ -707,6 +721,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/ivy.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jacula.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jadawin.key
+%%HTML%%%%DOCBASE%%/pgpkeys/jaeyoon.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jah.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jamie.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jbo.key
@@ -743,7 +758,9 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/jon.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jonathan.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jpaetzel.key
+%%HTML%%%%DOCBASE%%/pgpkeys/jrhall.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jrm.key
+%%HTML%%%%DOCBASE%%/pgpkeys/js.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jsa.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jwb.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jylefort.key
@@ -757,6 +774,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/kbowling.key
 %%HTML%%%%DOCBASE%%/pgpkeys/kd.key
 %%HTML%%%%DOCBASE%%/pgpkeys/ken.key
+%%HTML%%%%DOCBASE%%/pgpkeys/kenrap.key
 %%HTML%%%%DOCBASE%%/pgpkeys/kensmith.key
 %%HTML%%%%DOCBASE%%/pgpkeys/keramida.key
 %%HTML%%%%DOCBASE%%/pgpkeys/kevans.key
@@ -774,6 +792,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/kris.key
 %%HTML%%%%DOCBASE%%/pgpkeys/kuriyama.key
 %%HTML%%%%DOCBASE%%/pgpkeys/landonf.key
+%%HTML%%%%DOCBASE%%/pgpkeys/laurent.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lawrance.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lbartoletti.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lbr.key
@@ -816,6 +835,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/max.key
 %%HTML%%%%DOCBASE%%/pgpkeys/maxim.key
 %%HTML%%%%DOCBASE%%/pgpkeys/mbr.key
+%%HTML%%%%DOCBASE%%/pgpkeys/mce.key
 %%HTML%%%%DOCBASE%%/pgpkeys/mckusick.key
 %%HTML%%%%DOCBASE%%/pgpkeys/melifaro.key
 %%HTML%%%%DOCBASE%%/pgpkeys/meta.key
@@ -863,6 +883,8 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/nsouch.key
 %%HTML%%%%DOCBASE%%/pgpkeys/nwhitehorn.key
 %%HTML%%%%DOCBASE%%/pgpkeys/nyan.key
+%%HTML%%%%DOCBASE%%/pgpkeys/nxjoseph.key
+%%HTML%%%%DOCBASE%%/pgpkeys/obiwac.key
 %%HTML%%%%DOCBASE%%/pgpkeys/obraun.key
 %%HTML%%%%DOCBASE%%/pgpkeys/obrien.key
 %%HTML%%%%DOCBASE%%/pgpkeys/oh.key
@@ -897,6 +919,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/pkubaj.key
 %%HTML%%%%DOCBASE%%/pgpkeys/pluknet.key
 %%HTML%%%%DOCBASE%%/pgpkeys/portmgr-secretary.key
+%%HTML%%%%DOCBASE%%/pgpkeys/pouria.key
 %%HTML%%%%DOCBASE%%/pgpkeys/pstef.key
 %%HTML%%%%DOCBASE%%/pgpkeys/rafan.key
 %%HTML%%%%DOCBASE%%/pgpkeys/rajeshasp.key
@@ -954,8 +977,10 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/shaun.key
 %%HTML%%%%DOCBASE%%/pgpkeys/sheldonh.key
 %%HTML%%%%DOCBASE%%/pgpkeys/simon.key
+%%HTML%%%%DOCBASE%%/pgpkeys/siva.key
 %%HTML%%%%DOCBASE%%/pgpkeys/sjg.key
 %%HTML%%%%DOCBASE%%/pgpkeys/skozlov.key
+%%HTML%%%%DOCBASE%%/pgpkeys/smyru.key
 %%HTML%%%%DOCBASE%%/pgpkeys/snb.key
 %%HTML%%%%DOCBASE%%/pgpkeys/sobomax.key
 %%HTML%%%%DOCBASE%%/pgpkeys/sson.key
@@ -977,6 +1002,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/thierry.key
 %%HTML%%%%DOCBASE%%/pgpkeys/thomas.key
 %%HTML%%%%DOCBASE%%/pgpkeys/thompsa.key
+%%HTML%%%%DOCBASE%%/pgpkeys/tiga.key
 %%HTML%%%%DOCBASE%%/pgpkeys/timur.key
 %%HTML%%%%DOCBASE%%/pgpkeys/tmclaugh.key
 %%HTML%%%%DOCBASE%%/pgpkeys/tmm.key
@@ -984,6 +1010,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/tobez.key
 %%HTML%%%%DOCBASE%%/pgpkeys/tobik.key
 %%HTML%%%%DOCBASE%%/pgpkeys/tota.key
+%%HTML%%%%DOCBASE%%/pgpkeys/tpearson.key
 %%HTML%%%%DOCBASE%%/pgpkeys/trevor.key
 %%HTML%%%%DOCBASE%%/pgpkeys/trhodes.key
 %%HTML%%%%DOCBASE%%/pgpkeys/trociny.key
@@ -996,12 +1023,13 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/uzsolt.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vanilla.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vd.key
-%%HTML%%%%DOCBASE%%/pgpkeys/vexeduxr.key
 %%HTML%%%%DOCBASE%%/pgpkeys/versus.key
+%%HTML%%%%DOCBASE%%/pgpkeys/vexeduxr.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vg.key
 %%HTML%%%%DOCBASE%%/pgpkeys/viny.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vishwin.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vkashyap.key
+%%HTML%%%%DOCBASE%%/pgpkeys/vladlen.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vmaffione.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vs.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vsevolod.key
@@ -1073,6 +1101,7 @@
 %%PDF%%%%DOCBASE%%/en/articles/vinum/vinum_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vm-design/vm-design_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vpn-ipsec/vpn-ipsec_en.pdf
+%%PDF%%%%DOCBASE%%/en/books/accessibility/accessibility_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/arch-handbook/arch-handbook_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/design-44bsd/design-44bsd_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/dev-model/dev-model_en.pdf

@@ -43,6 +43,8 @@ librenms_precmd()
 {
 	[ -f /var/log/$name/$name-service.log ] || install -g $librenms_group -o $librenms_user -m 644 /dev/null /var/log/$name/$name-service.log
 	[ -f /var/log/$name/$name.log ]         || install -g $librenms_group -o $librenms_user -m 644 /dev/null /var/log/$name/$name.log
+	# Make sure the service runs out of %%WWWDIR%% in order to find all the includes.
+	cd %%WWWDIR%%
 }
 
 command_args="$librenms_daemonflags -p $pidfile $procname %%WWWDIR%%/librenms-service.py"

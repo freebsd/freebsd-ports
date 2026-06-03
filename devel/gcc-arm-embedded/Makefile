@@ -1,6 +1,6 @@
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	${FULL_VERSION:S/.rel/r/}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu/${FULL_VERSION}/srcrel/:src
 DISTFILES=	arm-gnu-toolchain-src-snapshot-${FULL_VERSION}.tar.xz:src
@@ -12,7 +12,7 @@ WWW=		https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-NOT_FOR_ARCHS=		arm armv6 armv7 mips mips64 mips64el mipsel mipsn32
+NOT_FOR_ARCHS=		arm armv6 armv7
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
 BUILD_DEPENDS=	bash:shells/bash	\
@@ -71,6 +71,12 @@ PLIST_SUB+=	GCC_VERSION=${GCC_VERSION} FULL_VERSION=${FULL_VERSION} TARGET=${TAR
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH:Mpowerpc64*}
+GMP_ABI=		ABI="mode64"
+.else
+GMP_ABI=
+.endif
+
 .if ${PORT_OPTIONS:MPYGDB}
 PYGDB_BUILD_OPT=	--enable-gdb-with-python=${PYTHON_CMD}
 .else
@@ -95,6 +101,8 @@ post-extract:
 	@${MV} ${WRKSRC}/gnu-devtools-for-arm-${GL_TAGNAME_tools} ${WRKSRC}/gnu-devtools-for-arm
 
 do-build:
+	${GMP_ABI}							\
+	CC="${CC}"							\
 	PATH=${WRKSRC}/gnu-devtools-for-arm:${PATH}			\
 	installdir=${WRKDIR}/${DIR_NAME}				\
 	LOCALBASE="${LOCALBASE}"					\
@@ -118,6 +126,6 @@ do-install:
 	@cd ${WRKDIR} && ${PAX} -l -r -w ${DIR_NAME} ${STAGEDIR}${PREFIX}
 
 post-install-SYMLINK-on:
-	@${LN} -s ${PKGNAME} ${STAGEDIR}${PREFIX}/${PORTNAME}${PKGNAMESUFFIX}
+	@${LN} -s ${PORTNAME}-${FULL_VERSION} ${STAGEDIR}${PREFIX}/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>

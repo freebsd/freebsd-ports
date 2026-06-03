@@ -1,6 +1,6 @@
 PORTNAME=	jai
 DISTVERSION=	1_1_3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	java graphics
 MASTER_SITES=	http://download.java.net/media/${PORTNAME}/builds/release/${PORTVERSION:S/./_/g}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-lib

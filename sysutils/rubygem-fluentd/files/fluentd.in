@@ -27,6 +27,7 @@ load_rc_config $name
 : ${fluentd_user="%%USER%%"}
 : ${fluentd_group="%%GROUP%%"}
 : ${fluentd_flags:=""}
+: ${fluentd_env:="FLUENT_CONF_INCLUDE_DIR=${fluentd_dir}/conf.d"}
 
 start_precmd="fluentd_start_precmd"
 

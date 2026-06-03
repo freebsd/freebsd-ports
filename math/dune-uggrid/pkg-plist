@@ -1,4 +1,4 @@
-include/dune/uggrid/domain/domain.h
+include/dune-uggrid-config.hh
 include/dune/uggrid/domain/std_domain.h
 include/dune/uggrid/gm/algebra.h
 include/dune/uggrid/gm/cw.h
@@ -13,16 +13,14 @@ include/dune/uggrid/gm/rm.h
 include/dune/uggrid/gm/shapes.h
 include/dune/uggrid/gm/ugm.h
 include/dune/uggrid/initug.h
+include/dune/uggrid/low/architecture.h
 include/dune/uggrid/low/debug.h
 include/dune/uggrid/low/dimension.h
 include/dune/uggrid/low/fileopen.h
 include/dune/uggrid/low/heaps.h
 include/dune/uggrid/low/misc.h
 include/dune/uggrid/low/namespace.h
-include/dune/uggrid/low/scan.h
 include/dune/uggrid/low/ugenv.h
-include/dune/uggrid/low/ugstruct.h
-include/dune/uggrid/low/ugtimer.h
 include/dune/uggrid/low/ugtypes.h
 include/dune/uggrid/parallel/ddd/basic/lowcomm.h
 include/dune/uggrid/parallel/ddd/basic/notify.h
@@ -45,7 +43,8 @@ include/dune/uggrid/parallel/ppif/ppiftypes.hh
 include/dune/uggrid/ugdevices.h
 lib/cmake/dune-uggrid/dune-uggrid-config-version.cmake
 lib/cmake/dune-uggrid/dune-uggrid-config.cmake
-lib/cmake/dune-uggrid/dune-uggrid-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dune-uggrid/dune-uggrid-scoped-targets-%%DUNE_UGGRID_CMAKE_HASH%%.cmake
+lib/cmake/dune-uggrid/dune-uggrid-scoped-targets-%%DUNE_UGGRID_CMAKE_HASH%%-release.cmake
 lib/cmake/dune-uggrid/dune-uggrid-targets.cmake
 lib/dunecontrol/dune-uggrid/dune.module
 lib/libduneuggrid.so

@@ -1,0 +1,20 @@
+--- repo/package/scripts/common/quarto.orig	2025-11-09 18:33:45 UTC
++++ repo/package/scripts/common/quarto
+@@ -143,6 +143,8 @@ if [[ $OSTYPE == 'darwin'* ]]; then
+     UNAME_ARCH=$(uname -m)
+     if [[ $UNAME_ARCH == "x86_64" ]]; then
+       ARCH_DIR=x86_64
++    elif [[ $UNAME_ARCH == "amd64" ]]; then
++      ARCH_DIR=amd64
+     elif [[ $UNAME_ARCH == "arm64" ]]; then
+       ARCH_DIR=aarch64
+     else
+@@ -155,6 +157,8 @@ else
+   NIXARCH=$(uname -m)
+   if [[ $NIXARCH == "x86_64" ]]; then
+     ARCH_DIR=x86_64
++  elif [[ $NIXARCH == "amd64" ]]; then
++    ARCH_DIR=amd64
+   elif [[ $NIXARCH == "aarch64" ]]; then
+     ARCH_DIR=aarch64
+   else

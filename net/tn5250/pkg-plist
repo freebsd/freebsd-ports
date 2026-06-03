@@ -30,6 +30,7 @@ lib/lib5250.a
 lib/lib5250.so
 lib/lib5250.so.0
 lib/lib5250.so.0.0.0
+libdata/pkgconfig/tn5250.pc
 %%DATADIR%%/README
 %%DATADIR%%/XTerm
 %%DATADIR%%/sample.termcap

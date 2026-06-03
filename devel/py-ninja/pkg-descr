@@ -1,0 +1,3 @@
+This Python package provides access to the Ninja build system from Python.
+It installs the ninja binary and the ninja_syntax module for programmatically
+generating Ninja build files.

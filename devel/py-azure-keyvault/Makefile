@@ -1,23 +1,25 @@
 PORTNAME=	azure-keyvault
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@FreeBSD.org
-COMMENT=	Microsoft Azure Key Vault Client Library for Python
-WWW=		https://pypi.org/project/azure-keyvault/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Microsoft Azure Key Vault Client Libraries for Python
+WWW=		https://azure.github.io/azure-sdk-for-python/ \
+		https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/keyvault/azure-keyvault \
+		https://github.com/Azure/azure-sdk-for-python
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.5.0:net-mgmt/py-msrest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.4.32:net-mgmt/py-msrestazure@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.18.4:www/py-requests@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-keyvault-certificates>=4.4<5:security/py-azure-keyvault-certificates@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-keyvault-keys>=4.5<5:security/py-azure-keyvault-keys@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-keyvault-secrets>=4.4<5:security/py-azure-keyvault-secrets@${PY_FLAVOR}
 
-USES=		azurepy python zip
-USE_PYTHON=	autoplist concurrent cryptography distutils
+USES=		python zip
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

@@ -1,11 +1,11 @@
---- Makefile.orig	2015-08-17 20:06:47 UTC
+--- Makefile.orig	2024-03-22 13:38:35 UTC
 +++ Makefile
-@@ -42,7 +42,7 @@ VPATH = $(SRCDIR)
+@@ -43,7 +43,7 @@ include $(SRCDIR)/Make.defaults
  
  include $(SRCDIR)/Make.defaults
  
 -SUBDIRS = lib gnuefi inc apps
 +SUBDIRS = lib gnuefi inc
- gnuefi: lib
  
  all:	check_gcc $(SUBDIRS)
+ 

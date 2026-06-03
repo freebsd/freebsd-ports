@@ -55,6 +55,9 @@ include/KF6/NetworkManagerQt/NetworkManagerQt/VlanSetting
 include/KF6/NetworkManagerQt/NetworkManagerQt/VpnConnection
 include/KF6/NetworkManagerQt/NetworkManagerQt/VpnPlugin
 include/KF6/NetworkManagerQt/NetworkManagerQt/VpnSetting
+include/KF6/NetworkManagerQt/NetworkManagerQt/WifiP2PDevice
+include/KF6/NetworkManagerQt/NetworkManagerQt/WifiP2PPeer
+include/KF6/NetworkManagerQt/NetworkManagerQt/WifiP2PSetting
 include/KF6/NetworkManagerQt/NetworkManagerQt/WimaxDevice
 include/KF6/NetworkManagerQt/NetworkManagerQt/WimaxNsp
 include/KF6/NetworkManagerQt/NetworkManagerQt/WimaxSetting
@@ -124,6 +127,9 @@ include/KF6/NetworkManagerQt/networkmanagerqt/vlansetting.h
 include/KF6/NetworkManagerQt/networkmanagerqt/vpnconnection.h
 include/KF6/NetworkManagerQt/networkmanagerqt/vpnplugin.h
 include/KF6/NetworkManagerQt/networkmanagerqt/vpnsetting.h
+include/KF6/NetworkManagerQt/networkmanagerqt/wifip2pdevice.h
+include/KF6/NetworkManagerQt/networkmanagerqt/wifip2ppeer.h
+include/KF6/NetworkManagerQt/networkmanagerqt/wifip2psetting.h
 include/KF6/NetworkManagerQt/networkmanagerqt/wimaxdevice.h
 include/KF6/NetworkManagerQt/networkmanagerqt/wimaxnsp.h
 include/KF6/NetworkManagerQt/networkmanagerqt/wimaxsetting.h

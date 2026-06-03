@@ -18,8 +18,8 @@ CONFLICTS=	nut-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	networkupstools
-GH_TAGNAME=	8916ac8d1
-NUT_COMMIT_DATE=	2025.06.25
+GH_TAGNAME=	db633d1bd
+NUT_COMMIT_DATE=	2026.05.25
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
@@ -45,7 +45,6 @@ OPTIONS_DEFAULT_powerpc=	FREEIPMI
 OPTIONS_DEFAULT_powerpc64=	FREEIPMI
 OPTIONS_DEFAULT_powerpc64le=	FREEIPMI
 OPTIONS_DEFAULT_riscv64=	FREEIPMI
-OPTIONS_DEFAULT_riscv64sf=	FREEIPMI
 OPTIONS_DEFINE=	SERIAL USB SNMP NEON PDU MODBUS CGI BASH AVAHI IPMIPSU FREEIPMI DOCS MANPAGES DEV
 OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	SSL_OFF OPENSSL NSS
@@ -88,7 +87,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-python3=${PYTHON_CMD} \
 		--without-nut_monitor \
 		--with-ltdl --with-nut-scanner \
-		--without-augeas-lenses-dir
+		--without-augeas-lenses-dir \
+		--enable-extapi-enphase=no
 
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
@@ -113,6 +113,7 @@ CGI_CONFIGURE_ON=	--with-cgipath=${CGIDIR} \
 SERIAL_CONFIGURE_WITH=	serial
 
 USB_CONFIGURE_WITH=	usb=auto
+USB_LIB_DEPENDS=	libgio-2.0.so:devel/glib20
 
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	snmp

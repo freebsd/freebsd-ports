@@ -5,7 +5,7 @@ include/tickit.h
 lib/libtickit.a
 lib/libtickit.so
 lib/libtickit.so.3
-lib/libtickit.so.3.0.0
+lib/libtickit.so.3.0.1
 libdata/pkgconfig/tickit.pc
 share/man/man3/tickit_build.3.gz
 share/man/man3/tickit_ctl_lookup.3.gz

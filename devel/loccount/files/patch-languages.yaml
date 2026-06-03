@@ -1,0 +1,14 @@
+-- Fix YAML syntax error: unquoted URL containing '?' in a flow mapping is
+-- invalid YAML. PyYAML's strict parser treats '?' as a complex mapping key
+-- indicator inside flow mappings, causing a ParserError at build time.
+--- languages.yaml.orig	2026-06-02 15:51:53 UTC
++++ languages.yaml
+@@ -2776,7 +2776,7 @@ languages:
+       units, coordinate format, aperture shapes, drawing and flash
+       operations, regions, polarity, and optional attributes that identify
+       layer function and manufacturing intent.
+-    links: {Specification: https://www.ucamco.com/files/downloads/file_en/554/gerber-layer-format-specification-revision-2026-05_en.pdf?eac6410808ad1d0b3f977429ddaab7d0=, File Formats: https://www.ucamco.com/en/file-formats}
++    links: {Specification: "https://www.ucamco.com/files/downloads/file_en/554/gerber-layer-format-specification-revision-2026-05_en.pdf?eac6410808ad1d0b3f977429ddaab7d0=", File Formats: https://www.ucamco.com/en/file-formats}
+     source:
+       Ext: [.gbr]
+       Bc: [[G04, '*']]

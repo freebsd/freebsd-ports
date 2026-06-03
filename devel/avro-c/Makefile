@@ -1,5 +1,5 @@
 PORTNAME=	avro
-PORTVERSION=	1.12.0
+PORTVERSION=	1.12.1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/avro/avro-${PORTVERSION}/c
 PKGNAMESUFFIX=	-c
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libsnappy.so:archivers/snappy
 
-USES=		cmake cpe pathfix pkgconfig shebangfix
+USES=		cmake cpe pkgconfig shebangfix
 
 USE_LDCONFIG=	yes
 

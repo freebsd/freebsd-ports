@@ -1,12 +1,15 @@
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Rand MH mail handling system + Japanese patches
+
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/READ-ME
 
 BUILD_DEPENDS=	jless:japanese/less
 RUN_DEPENDS=	jless:japanese/less

@@ -6,7 +6,7 @@ CATEGORIES=	graphics pear
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PECL extension for generate qrcode
-WWW=		https://github.com/vanillahsu/pecl-qrencode
+WWW=		https://github.com/embark-systems/pecl-qrencode
 
 LICENSE=	BSD2CLAUSE
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libqrencode.so:graphics/libqrencode \
 
 USES=		php:pecl
 USE_GITHUB=	yes
-GH_ACCOUNT=	vanillahsu
+GH_ACCOUNT=	embark-systems
 GH_PROJECT=	pecl-qrencode
 
 .include <bsd.port.mk>

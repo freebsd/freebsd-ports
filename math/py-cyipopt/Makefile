@@ -1,7 +1,7 @@
 PORTNAME=	cyipopt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,11 +11,11 @@ WWW=		https://github.com/matthias-k/cyipopt
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		fortran python pkgconfig # fortran because ipopt's pkg-config returns gcc libs

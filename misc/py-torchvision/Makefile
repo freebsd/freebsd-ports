@@ -1,6 +1,6 @@
 PORTNAME=	torchvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.27.0
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng16.so:graphics/png \
 		libwebp.so:graphics/webp
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=5.3.0:graphics/py-pillow@${PY_FLAVOR} # image backend
@@ -25,9 +25,13 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 BUILD_DEPENDS+=	ninja:devel/ninja # build uses the C compiler for C++ files w/out ninja, and fails
 RUN_DEPENDS=	${PY_DEPENDS}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}onnxruntime>0:misc/py-onnxruntime@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang jpeg python
 USE_PYTHON=	pep517 autoplist pytest # tests run in a very high memory ; in 0.17.1 tests fail to run, see https://github.com/pytorch/vision/issues/8278
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch

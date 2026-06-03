@@ -5,13 +5,13 @@
    // raw DICOM instances). Backslashes must be either escaped by
    // doubling them, or replaced by forward slashes "/".
 -  "StorageDirectory" : "OrthancStorage",
-+  "StorageDirectory" : "/var/db/orthanc/db-v5",
++  "StorageDirectory" : "/var/db/orthanc/db/db-v5",
  
    // Path to the directory that holds the SQLite index (if unset, the
    // value of StorageDirectory is used). This index could be stored on
    // a RAM-drive or a SSD device for performance reasons.
 -  "IndexDirectory" : "OrthancStorage",
-+  "IndexDirectory" : "/var/db/orthanc/db-v5",
++  "IndexDirectory" : "/var/db/orthanc/db/db-v5",
  
    // Path to the directory where Orthanc stores its large temporary
    // files. The content of this folder can be safely deleted once

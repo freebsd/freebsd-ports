@@ -1,0 +1,9 @@
+PORTREVISION=	0
+DISTNAME=	FiraCode
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

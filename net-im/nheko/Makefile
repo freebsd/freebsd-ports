@@ -1,7 +1,11 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	net-im
+
+PATCH_SITES=	https://github.com/Nheko-Reborn/nheko/commit/
+PATCHFILES+=	af2ca72030deb14a920a888e807dc732d93e3714.patch:-p1 # Fix configure with Qt 6.10
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM client based on Qt technologies
@@ -27,18 +31,11 @@ LIB_DEPENDS=	\
 
 USES=		cmake compiler:c++20-lang desktop-file-utils \
 		localbase:ldflags pkgconfig qt:6 ssl tar:xz
-USE_QT=		base declarative multimedia \
-		svg \
+USE_GITHUB=	yes
+GH_ACCOUNT=	Nheko-Reborn
+GH_TUPLE=	hoytech:lmdbxx:029fb681213af3020f5e3a86045445552bd024c5:lmdb/deps/lmdb
+USE_QT=		base declarative multimedia svg \
 		tools:build translations:build
-
-OPTIONS_DEFINE=	VOIP
-OPTIONS_DEFAULT=
-
-VOIP_DESC=	Enable VOIP calls (experimental)
-VOIP_CMAKE_BOOL=	VOIP
-VOIP_USES=	gstreamer gettext-runtime xorg gnome
-VOIP_USE=	gstreamer=bad,dtls,srtp,webrtc xorg=xcb gnome=glib20
-VOIP_LIB_DEPENDS=	libnice.so:net-im/libnice
 
 # There is one external dependency: lmdb++
 #  - lmdb++ is a single header file, it just needs to be included
@@ -47,8 +44,13 @@ CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb \
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
 LDFLAGS+=	-L${LOCALBASE}/lib -lfmt
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Nheko-Reborn
-GH_TUPLE=	hoytech:lmdbxx:029fb681213af3020f5e3a86045445552bd024c5:lmdb/deps/lmdb
+OPTIONS_DEFINE=	VOIP
+OPTIONS_DEFAULT=
+
+VOIP_DESC=	Enable VOIP calls (experimental)
+VOIP_LIB_DEPENDS=	libnice.so:net-im/libnice
+VOIP_USES=	gstreamer gettext-runtime xorg gnome
+VOIP_USE=	gstreamer=bad,dtls,srtp,webrtc xorg=xcb gnome=glib20
+VOIP_CMAKE_BOOL=	VOIP
 
 .include <bsd.port.mk>

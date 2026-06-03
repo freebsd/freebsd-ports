@@ -1,6 +1,5 @@
 PORTNAME=	fusefs-libs3
-DISTVERSION=	3.17.1
-PORTREVISION=	1
+DISTVERSION=	3.18.1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 DISTNAME=	fuse-${DISTVERSION}
@@ -22,9 +21,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1400014
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-test_meson.build
-.endif
 .if ${OPSYS} == DragonFly
 IGNORE=	fusefs has not been implemented on DragonFly
 .endif

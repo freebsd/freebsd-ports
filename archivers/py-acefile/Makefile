@@ -1,6 +1,5 @@
 PORTNAME=	acefile
-PORTVERSION=	0.6.13
-PORTREVISION=	1
+PORTVERSION=	0.6.14
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,10 @@ WWW=		https://www.roe.ch/acefile
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	pep517 autoplist concurrent
 
 .include <bsd.port.mk>

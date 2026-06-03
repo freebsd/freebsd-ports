@@ -1,30 +1,23 @@
 PORTNAME=	gladtex
-PORTVERSION=	1.3
-PORTREVISION=	5
+DISTVERSION=	1.4.2
 CATEGORIES=	textproc math www
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Program to replace LaTeX formulas in HTML files with images
 WWW=		https://gladtex.sourceforge.net/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-USES=		perl5 tex
-USE_TEX=	latex dvipsk
+USES=		cmake perl5 shebangfix tex
+USE_TEX=	dvipsk:run latex:run
 
-BINPATH=	${PREFIX}/bin
-INCPATH=	"-I${LOCALBASE}/include"
-LIBPATH=	"-L${LOCALBASE}/lib"
+SHEBANG_FILES=	gladtex
 
-MAKE_ENV+=	BINPATH=${BINPATH} INCPATH="${INCPATH}" LIBPATH="${LIBPATH}"
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${BINPATH}; \
-	${INSTALL_PROGRAM} ${WRKSRC}/eqn2img ${STAGEDIR}${BINPATH}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+CONFLICTS_INSTALL=	py-gladtex
 
 .include <bsd.port.mk>

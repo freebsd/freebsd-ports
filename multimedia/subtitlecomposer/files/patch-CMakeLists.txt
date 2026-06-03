@@ -1,0 +1,19 @@
+commit b3f158cb1c82a47bdfb8593f3cb3e56dce3ddcf9
+Author: Mladen Milinkovic <maxrd2@smoothware.net>
+Date:   Tue Nov 4 22:14:00 2025 +0100
+
+    Change CMAKE_MODULE_PATH order
+    
+    Prefer "${CMAKE_CURRENT_SOURCE_DIR}/cmake" over "${ECM_MODULE_PATH}"
+
+--- CMakeLists.txt.orig	2025-09-14 20:00:57 UTC
++++ CMakeLists.txt
+@@ -19,7 +19,7 @@ find_package(ECM REQUIRED NO_MODULE)
+ set(CMAKE_CXX_STANDARD 17)
+ 
+ find_package(ECM REQUIRED NO_MODULE)
+-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
++set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
+ 
+ include(KDEInstallDirs)
+ include(KDECMakeSettings)

@@ -1,0 +1,270 @@
+The changes necessary to use the newer MiniXML version.
+Tested against mxml-3.3.1.
+
+	-mi
+
+--- namedc/namedc.c	2026-02-09 17:25:54.000000000 -0500
++++ namedc/namedc.c	2026-04-25 22:37:10.093787000 -0400
+@@ -120,10 +120,10 @@
+ static mxml_type_t
+ type_cb(mxml_node_t *node) {
+-	const char *name = node->value.element.name;
++	const char *name = mxmlGetElement(node);
+ 	mxml_node_t *parent = mxmlGetParent(node);
+ 	const char *pname = NULL;
+ 
+ 	if (parent != NULL)
+-		pname = parent->value.element.name;
++		pname = mxmlGetElement(parent);
+ 
+ //	printf("~1 type_cb got node named '%s', parent '%s'\n",name,pname);
+@@ -345,7 +345,7 @@
+ 		return p->errc = 1;
+ 	}
+-	name = cxf->value.element.name;
++	name = mxmlGetElement(cxf);
+ 
+-	if ((attr = strchr(cxf->value.element.name, ':')) != NULL) {
++	if ((attr = strchr(name, ':')) != NULL) {
+ 		int len = attr - name;
+ 		if (len > 99)
+@@ -390,5 +390,5 @@
+ 	/* Grab the description */
+ 	if (cxf2) {
+-		if ((node = mxmlFindPathNode(cxf, pfxp(p,"Palette"))) == NULL
++		if ((node = mxmlFindPath(cxf, pfxp(p, "Palette"))) == NULL
+ 		 || (name = mxmlElementGetAttr(node, "PaletteName")) == NULL)
+ 			name = NULL;
+@@ -407,5 +407,5 @@
+ 	
+ 	} else {	/* else cxf3 */
+-		if ((node = mxmlFindPathNode(cxf, pfxp(p,"FileInformation/Description"))) == NULL)
++		if ((node = mxmlFindPath(cxf, pfxp(p,"FileInformation/Description"))) == NULL)
+ 			name = NULL;
+ 		else
+@@ -425,7 +425,7 @@
+ 
+ 	/* Look through the color specifications and see if there are spectral details */
+-	pnode = mxmlFindPathNode(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification/WavelengthRange"));
++	pnode = mxmlFindPath(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification/WavelengthRange"));
+ 	if (pnode == NULL)
+-		pnode = mxmlFindPathNode(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification/MeasurementSpec/WavelengthRange"));
++		pnode = mxmlFindPath(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification/MeasurementSpec/WavelengthRange"));
+ 	while (pnode != NULL) {
+ 		name = mxmlElementGetAttr(pnode, "StartWL");
+@@ -454,5 +454,5 @@
+ 		if (cxf2) {
+ 			/* Locate the Palette/ColorSet node */
+-			if ((pnode = mxmlFindPathNode(cxf, pfxp(p,"Palette/ColorSet"))) == NULL) {
++			if ((pnode = mxmlFindPath(cxf, pfxp(p,"Palette/ColorSet"))) == NULL) {
+ 				snprintf(p->err, NAMEDC_ERRL, "Failed to find Resources/ObjectCollection in '%s'",p->filename);
+ 				a1logd(p->log, 1, "read_cxf: %s\n",p->err);
+@@ -468,5 +468,5 @@
+ 		} else {
+ 			/* Locate the Resources/ObjectCollection node */
+-			if ((pnode = mxmlFindPathNode(cxf, pfxp(p,"Resources/ObjectCollection"))) == NULL) {
++			if ((pnode = mxmlFindPath(cxf, pfxp(p,"Resources/ObjectCollection"))) == NULL) {
+ 				snprintf(p->err, NAMEDC_ERRL, "Failed to find Resources/ObjectCollection in '%s'",p->filename);
+ 				a1logd(p->log, 1, "read_cxf: %s\n",p->err);
+@@ -500,7 +500,8 @@
+ 				goto next;
+ 			}
+-			a1logd(p->log, DEB6, "read_cxf: read node '%s'\n",node->value.element.name);
++			a1logd(p->log, DEB6, "read_cxf: read node '%s'\n", name);
+ 
+-			if (strcmp(node->value.element.name, pfx(p,SampleKey)) != 0) {
++			name = mxmlGetElement(node);
++			if (strcmp(name, pfx(p,SampleKey)) != 0) {
+ 				a1logd(p->log, DEB6, "read_cxf: skipping non %s node\n",SampleKey);
+ 				goto next; 
+@@ -776,5 +777,5 @@
+ 		if (cxf2) {
+ 			/* Grab the creator */
+-			if ((node = mxmlFindPathNode(cxf, pfxp(p,"Preamble/Header/Creator"))) == NULL)
++			if ((node = mxmlFindPath(cxf, pfxp(p, "Preamble/Header/Creator"))) == NULL)
+ 				name = NULL;
+ 			else
+@@ -792,5 +793,5 @@
+ 
+ 			/* Grab the illuminant type */
+-			if ((node = mxmlFindPathNode(cxf, pfxp(p,"Palette/ColorSet/CollectionColorSpaceSpecification/ColorSpaceSpecificationSpectrumTristimulus/IlluminationOptions/Illuminant"))) == NULL
++			if ((node = mxmlFindPath(cxf, pfxp(p, "Palette/ColorSet/CollectionColorSpaceSpecification/ColorSpaceSpecificationSpectrumTristimulus/IlluminationOptions/Illuminant"))) == NULL
+ 			 || (name = mxmlGetOpaque(node)) == NULL) {
+ 				a1logd(p->log, 2, "read_cxf: failed to locate Illuminant - assuming D50\n");
+@@ -815,5 +816,5 @@
+ 
+ 			/* Grab the observer type */
+-			if ((node = mxmlFindPathNode(cxf, pfxp(p,"Palette/ColorSet/CollectionColorSpaceSpecification/ColorSpaceSpecificationSpectrumTristimulus/FieldOfView"))) == NULL
++			if ((node = mxmlFindPath(cxf, pfxp(p,"Palette/ColorSet/CollectionColorSpaceSpecification/ColorSpaceSpecificationSpectrumTristimulus/FieldOfView"))) == NULL
+ 			 || (name = mxmlGetOpaque(node)) == NULL) {
+ 				a1logd(p->log, 2, "read_cxf: failed to locate FieldOfView - assuming 2 degree\n");
+@@ -835,5 +836,5 @@
+ 
+ 			/* Grab the creator */
+-			if ((node = mxmlFindPathNode(cxf, pfxp(p,"FileInformation/Creator"))) == NULL)
++			if ((node = mxmlFindPath(cxf, pfxp(p,"FileInformation/Creator"))) == NULL)
+ 				name = NULL;
+ 			else
+@@ -856,5 +857,5 @@
+ 			/* Look through the color specifications and find the one that matches */
+ 			/* the Lab or XYZ color specification */
+-			pnode = mxmlFindPathNode(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification"));
++			pnode = mxmlFindPath(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification"));
+ 			while (pnode != NULL) {
+ 				name = mxmlElementGetAttr(pnode, "Id");
+@@ -866,5 +867,5 @@
+ 
+ 					/* Grab the illuminant type */
+-					if ((node = mxmlFindPathNode(pnode, pfxp(p,"TristimulusSpec/Illuminant"))) == NULL
++					if ((node = mxmlFindPath(pnode, pfxp(p,"TristimulusSpec/Illuminant"))) == NULL
+ 					 || (name = mxmlGetOpaque(node)) == NULL) {
+ 						a1logd(p->log, 2, "read_cxf: failed to locate Illuminant - assuming D50\n");
+@@ -889,5 +890,5 @@
+ 		
+ 					/* Grab the first observer type */
+-					if ((node = mxmlFindPathNode(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification/TristimulusSpec/Observer"))) == NULL
++					if ((node = mxmlFindPath(cxf, pfxp(p,"Resources/ColorSpecificationCollection/ColorSpecification/TristimulusSpec/Observer"))) == NULL
+ 					 || (name = mxmlGetOpaque(node)) == NULL) {
+ 						a1logd(p->log, 2, "read_cxf: failed to locate Observer - assuming 2 degree\n");
+--- profile/cxf2ti3.c	2026-02-09 17:25:29.000000000 -0500
++++ profile/cxf2ti3.c	2026-04-26 00:23:21.375782000 -0400
+@@ -88,10 +88,10 @@
+ static mxml_type_t
+ type_cb(mxml_node_t *node) {
+-	const char *name = node->value.element.name;
++	const char *name = mxmlGetElement(node);
+ 	mxml_node_t *parent = mxmlGetParent(node);
+ 	const char *pname = NULL;
+ 
+ 	if (parent != NULL)
+-		pname = parent->value.element.name;
++		pname = mxmlGetElement(parent);
+ 
+ //	printf("~1 type_cb got node named '%s', parent '%s'\n",name,pname);
+@@ -425,7 +425,7 @@
+ 			error("Top element is not type MXML_ELEMENT in '%s'",inname);
+ 	}
+-	name = cxf->value.element.name;
++	name = mxmlGetElement(cxf);
+ 
+-	if ((attr = strchr(cxf->value.element.name, ':')) != NULL) {
++	if ((attr = strchr(name, ':')) != NULL) {
+ 		int len = attr - name;
+ 		if (len > 99)
+@@ -471,5 +471,5 @@
+ 
+ 	/* Copy the description */
+-	if ((node = mxmlFindPathNode(cxf, pfxp(&ctx,"FileInformation/Description"))) != NULL) {
++	if ((node = mxmlFindPath(cxf, pfxp(&ctx,"FileInformation/Description"))) != NULL) {
+ 		name = mxmlGetOpaque(node);
+ 		a1logd(g_log, 2, "cxf2ti3: got description '%s'\n",name);
+@@ -479,5 +479,5 @@
+ 		
+ 	/* Grab the creator */
+-	if ((node = mxmlFindPathNode(cxf, pfxp(&ctx,"FileInformation/Creator"))) != NULL) {
++	if ((node = mxmlFindPath(cxf, pfxp(&ctx,"FileInformation/Creator"))) != NULL) {
+ 		name = mxmlGetOpaque(node);
+ 		a1logd(g_log, 2, "cxf2ti3: got creator '%s'\n",name);
+@@ -486,5 +486,5 @@
+ 	}
+ 
+-	if ((node = mxmlFindPathNode(cxf, pfxp(&ctx,"FileInformation/CreationDate"))) != NULL) {
++	if ((node = mxmlFindPath(cxf, pfxp(&ctx,"FileInformation/CreationDate"))) != NULL) {
+ 		name = mxmlGetOpaque(node);
+ 		a1logd(g_log, 2, "cxf2ti3: got creation date '%s'\n",name);
+@@ -495,12 +495,12 @@
+ 	/* Look through the color specifications and see if there are spectral details */
+ 	a1logd(g_log, 4, "cxf2ti3: Looking through color specifications for spectral details\n");
+-	pnode = mxmlFindPathNode(cxf, pfxp(&ctx,"Resources/ColorSpecificationCollection/ColorSpecification/WavelengthRange"));
++	pnode = mxmlFindPath(cxf, pfxp(&ctx,"Resources/ColorSpecificationCollection/ColorSpecification/WavelengthRange"));
+ 	if (pnode == NULL)
+-		pnode = mxmlFindPathNode(cxf, pfxp(&ctx,"Resources/ColorSpecificationCollection/ColorSpecification/MeasurementSpec/WavelengthRange"));
++		pnode = mxmlFindPath(cxf, pfxp(&ctx,"Resources/ColorSpecificationCollection/ColorSpecification/MeasurementSpec/WavelengthRange"));
+ 
+ 	if (pnode == NULL)
+-		pnode = mxmlFindPathNode(cxf, pfxp(&ctx,"Resources/ColourSpecificationCollection/ColourSpecification/WavelengthRange"));
++		pnode = mxmlFindPath(cxf, pfxp(&ctx,"Resources/ColourSpecificationCollection/ColourSpecification/WavelengthRange"));
+ 	if (pnode == NULL)
+-		pnode = mxmlFindPathNode(cxf, pfxp(&ctx,"Resources/ColourSpecificationCollection/ColourSpecification/MeasurementSpec/WavelengthRange"));
++		pnode = mxmlFindPath(cxf, pfxp(&ctx,"Resources/ColourSpecificationCollection/ColourSpecification/MeasurementSpec/WavelengthRange"));
+ 
+ 	if (pnode == NULL)
+@@ -540,5 +540,5 @@
+ 
+ 		/* Locate the Resources/ObjectCollection node */
+-		if ((pnode = mxmlFindPathNode(cxf, pfxp(&ctx,"Resources/ObjectCollection"))) == NULL) {
++		if ((pnode = mxmlFindPath(cxf, pfxp(&ctx,"Resources/ObjectCollection"))) == NULL) {
+ 			error("Failed to find Resources/ObjectCollection in '%s'",inname);
+ 		}
+@@ -564,7 +564,8 @@
+ 				goto next;
+ 			}
+-			a1logd(g_log, 6, "cxf2ti3: read node '%s'\n",node->value.element.name);
++			name = mxmlGetElement(node);
++			a1logd(g_log, 6, "cxf2ti3: read node '%s'\n", name);
+ 
+-			if (strcmp(node->value.element.name, pfx(&ctx,"Object")) != 0) {
++			if (strcmp(name, pfx(&ctx, "Object")) != 0) {
+ 				a1logd(g_log, 6, "cxf2ti3: skipping non %s node\n","Object");
+ 				goto next; 
+--- profile/ls2ti3.c	2026-02-09 17:25:29.000000000 -0500
++++ profile/ls2ti3.c	2026-04-26 00:28:35.173791000 -0400
+@@ -59,10 +59,11 @@
+ 	mxml_node_t *parent = mxmlGetParent(node);
+ 	const char *pname;
+-	const char *name = node->value.element.name;
++	const char *name;
+ 
+ 	if (parent == NULL)
+ 		return MXML_TEXT;
+ 
+-	pname = parent->value.element.name;
++	name = mxmlGetElement(node);
++	pname = mxmlGetElement(parent);
+ 
+ //	printf("~1 type_cb got pnode '%s' node '%s'\n",pname, name);
+@@ -185,5 +186,5 @@
+ 		error("Failed to find top element in '%s'",inname);
+ 
+-	if (strcmp(top->value.element.name, "builder_color_space") != 0)
++	if (strcmp(mxmlGetElement(top), "builder_color_space") != 0)
+ 		error("'%s' doesn't seem to be a LightSpace .bcs file ?",inname);
+ 
+@@ -238,5 +239,5 @@
+ 			goto next;
+ 		}
+-		a1logd(g_log, DEB, "read node '%s'\n",node->value.element.name);
++		a1logd(g_log, DEB, "read node '%s'\n", mxmlGetElement(node));
+ 
+ 		if ((attr = mxmlElementGetAttr(node, "frame")) == NULL) {
+--- profile/Jamfile	2026-02-09 17:25:29.000000000 -0500
++++ profile/Jamfile	2026-04-26 01:02:04.153120000 -0400
+@@ -36,4 +36,5 @@
+ 
+ LINKFLAGS += $(GUILINKFLAGS) ;
++LINKFLAGS += -lmxml ;
+ 
+ # Simple profile generator
+@@ -53,8 +54,8 @@
+ 
+ #CxF to Argyll CGATS format
+-Main cxf2ti3 : cxf2ti3.c : : : ../xml : : ../xml/libmxml ;
++Main cxf2ti3 : cxf2ti3.c ;
+ 
+ #LightSpace to Argyll CGATS format
+-Main ls2ti3 : ls2ti3.c : : : ../xml : : ../xml/libmxml ;
++Main ls2ti3 : ls2ti3.c ;
+ 
+ #Split a .ti3 into two pieces randomly
+--- namedc/Jamfile	2026-02-09 17:25:54.000000000 -0500
++++ namedc/Jamfile	2026-04-26 01:04:05.783387000 -0400
+@@ -12,7 +12,8 @@
+ 
+ LINKLIBS = ./libnamedc ../xicc/libxicc ../spectro/libconv ../icc/libicc ../cgats/libcgats
+-           ../plot/libplot ../numlib/libui ../numlib/libnum ../xml/libmxml ;
++           ../plot/libplot ../numlib/libui ../numlib/libnum ;
+ 
+ LINKFLAGS += $(GUILINKFLAGS) ;
++LINKFLAGS += -lmxml ;
+ 
+ # Individual stand alone test of namedc

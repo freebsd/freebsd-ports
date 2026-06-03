@@ -1,0 +1,5 @@
+OpenClaw is a multi-channel AI gateway with extensible messaging integrations.
+It acts as a personal AI assistant that works across platforms, supporting
+multiple AI providers (Anthropic Claude, OpenAI, Google Gemini, AWS Bedrock,
+and others) and communication channels (Telegram, Discord, Slack, WhatsApp,
+Matrix, and more).

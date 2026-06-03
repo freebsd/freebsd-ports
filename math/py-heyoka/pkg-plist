@@ -5,9 +5,11 @@
 %%PYTHON_SITELIBDIR%%/heyoka/_test_batch_integrator.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_celmec.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_cfunc.py
+%%PYTHON_SITELIBDIR%%/heyoka/_test_diskcache.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_dtens.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_elp2000.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_ensemble.py
+%%PYTHON_SITELIBDIR%%/heyoka/_test_eop_data.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_expression.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_lagham.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_memcache.py
@@ -17,6 +19,7 @@
 %%PYTHON_SITELIBDIR%%/heyoka/_test_real128.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_scalar_integrator.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_sgp4_propagator.py
+%%PYTHON_SITELIBDIR%%/heyoka/_test_sw_data.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_sympy.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_var_integrator.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_var_ode_sys.py

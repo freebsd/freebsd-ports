@@ -1,6 +1,6 @@
+share/man/man6/ja2.6.gz
 share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 share/applications/ja2-stracciatella.desktop
-share/man/man6/ja2.6.gz
 bin/ja2-resource-pack
 bin/ja2-launcher
 bin/ja2
@@ -20,6 +20,9 @@ bin/ja2
 %%DATADIR%%/mods/test-json-dialogs/readme.txt
 %%DATADIR%%/mods/test-json-dialogs/manifest.json
 %%DATADIR%%/mods/test-json-dialogs/data/mercedt/009.edt.json
+%%DATADIR%%/mods/test-json-dialogs/data/binarydata/mercbios.edt.json
+%%DATADIR%%/mods/test-json-dialogs/data/binarydata/help.edt.json
+%%DATADIR%%/mods/test-json-dialogs/data/binarydata/aimbios.edt.json
 %%DATADIR%%/mods/simplified-chinese-localization/manifest.json
 %%DATADIR%%/mods/simplified-chinese-localization/data/npcdata/L12.EDT
 %%DATADIR%%/mods/simplified-chinese-localization/data/npcdata/L11.EDT
@@ -307,7 +310,7 @@ bin/ja2
 %%DATADIR%%/mods/o-fortuna/manifest.json
 %%DATADIR%%/mods/o-fortuna/license.txt
 %%DATADIR%%/mods/o-fortuna/data/music/o-fortuna.mp3
-%%DATADIR%%/mods/o-fortuna/data/music.json
+%%DATADIR%%/mods/o-fortuna/data/music.patch.json
 %%DATADIR%%/mods/imp-quiz-honest-answers/manifest.json
 %%DATADIR%%/mods/imp-quiz-honest-answers/data/Binarydata/IMPTEXT.EDT
 %%DATADIR%%/mods/imp-quiz-honest-answers/IMP quiz honest answers mod.txt
@@ -417,8 +420,11 @@ bin/ja2
 %%DATADIR%%/externalized/sti/interface/inventory/inventory-graphic-not-found-small-sp.sti
 %%DATADIR%%/externalized/sti/interface/inventory/inventory-graphic-not-found-small-bp.sti
 %%DATADIR%%/externalized/sti/interface/inventory/inventory-graphic-not-found-big.sti
+%%DATADIR%%/externalized/smoke-effects.json
 %%DATADIR%%/externalized/shipping-destinations.json
 %%DATADIR%%/externalized/scripts/enums.lua
+%%DATADIR%%/externalized/script-records-control.json
+%%DATADIR%%/externalized/script-records-NPCs.json
 %%DATADIR%%/externalized/resource_packs/steam_jagged_alliance_2_classic_ru.json
 %%DATADIR%%/externalized/resource_packs/steam_jagged_alliance_2_classic_pl.json
 %%DATADIR%%/externalized/resource_packs/steam_jagged_alliance_2_classic_fr.json
@@ -427,6 +433,7 @@ bin/ja2
 %%DATADIR%%/externalized/readme.txt
 %%DATADIR%%/externalized/music.json
 %%DATADIR%%/externalized/mercs-rpc-small-faces.json
+%%DATADIR%%/externalized/mercs-relations.json
 %%DATADIR%%/externalized/mercs-profile-info.json
 %%DATADIR%%/externalized/mercs-MERC-listings.json
 %%DATADIR%%/externalized/magazines.json
@@ -435,6 +442,9 @@ bin/ja2
 %%DATADIR%%/externalized/items.json
 %%DATADIR%%/externalized/imp.json
 %%DATADIR%%/externalized/game.json
+%%DATADIR%%/externalized/explosives.json
+%%DATADIR%%/externalized/explosive-calibres.json
+%%DATADIR%%/externalized/explosion-animations.json
 %%DATADIR%%/externalized/dealers.json
 %%DATADIR%%/externalized/dealer-inventory-tony.json
 %%DATADIR%%/externalized/dealer-inventory-sam.json
@@ -463,4 +473,5 @@ bin/ja2
 %%DATADIR%%/externalized/army-gun-choice-extended.json
 %%DATADIR%%/externalized/army-garrison-groups.json
 %%DATADIR%%/externalized/army-compositions.json
+%%DATADIR%%/externalized/armours.json
 %%DATADIR%%/externalized/ammo-types.json

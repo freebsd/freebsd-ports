@@ -1,0 +1,32 @@
+-- Mark proxygen_hq_logger_helper, proxygen_hq_server and proxygen_hq_samples as
+-- EXCLUDE_FROM_MONOLITH so each builds as its own shared library.
+-- Same root cause as patch-proxygen_httpserver_CMakeLists.txt: the monolithic
+-- libproxygen.so is assembled before the httpserver/samples/hq subtree is
+-- processed, so these objects would otherwise be absent from any shared library,
+-- resulting in undefined-symbol errors in the hq binary.
+--- proxygen/httpserver/samples/hq/CMakeLists.txt.orig	2026-05-12 20:06:06 UTC
++++ proxygen/httpserver/samples/hq/CMakeLists.txt
+@@ -10,6 +10,7 @@ proxygen_add_library(proxygen_hq_logger_helper
+ # auto-generated dep names to these clean names.
+ 
+ proxygen_add_library(proxygen_hq_logger_helper
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     HQLoggerHelper.cpp
+   EXPORTED_DEPS
+@@ -23,6 +24,7 @@ proxygen_add_library(proxygen_hq_server
+ )
+ 
+ proxygen_add_library(proxygen_hq_server
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     FizzContext.cpp
+     HQParams.cpp
+@@ -58,6 +60,7 @@ proxygen_add_library(proxygen_hq_samples
+ )
+ 
+ proxygen_add_library(proxygen_hq_samples
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     H2Server.cpp
+     HQClient.cpp

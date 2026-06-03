@@ -1,0 +1,44 @@
+From 14ebecd78711804bc60f56cc53632bfab9d375df Mon Sep 17 00:00:00 2001
+From: Karol Herbst <kherbst@redhat.com>
+Date: Mon, 2 Sep 2024 16:57:08 +0200
+Subject: [PATCH] clc: fix compilation error with llvm-20
+
+LLVM commit:
+https://github.com/llvm/llvm-project/commit/924a7d83b4287b3b85dd1ca29d2d3e1f0a10ea68
+
+Cc: mesa-stable
+Closes: https://gitlab.freedesktop.org/mesa/mesa/-/issues/11814
+Reviewed-by: Jesse Natalie <jenatali@microsoft.com>
+Reviewed-by: David Heidelberg <david@ixit.cz>
+Part-of: <https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/30980>
+---
+ src/compiler/clc/clc_helpers.cpp | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git src/compiler/clc/clc_helpers.cpp src/compiler/clc/clc_helpers.cpp
+index 8da3a8fc5e85..24bc7914a13f 100644
+--- src/compiler/clc/clc_helpers.cpp
++++ src/compiler/clc/clc_helpers.cpp
+@@ -886,10 +886,16 @@ clc_compile_to_llvm_module(LLVMContext &llvm_ctx,
+       return {};
+    }
+ 
+-   // GetResourcePath is a way to retrive the actual libclang resource dir based on a given binary
++   // GetResourcePath is a way to retrieve the actual libclang resource dir based on a given binary
+    // or library.
+-   auto clang_res_path =
+-      fs::path(Driver::GetResourcesPath(std::string(clang_path), CLANG_RESOURCE_DIR)) / "include";
++   auto tmp_res_path =
++#if LLVM_VERSION_MAJOR >= 20
++      Driver::GetResourcesPath(std::string(clang_path));
++#else
++      Driver::GetResourcesPath(std::string(clang_path), CLANG_RESOURCE_DIR);
++#endif
++   auto clang_res_path = fs::path(tmp_res_path) / "include";
++
+    free(clang_path);
+ 
+    c->getHeaderSearchOpts().UseBuiltinIncludes = true;
+-- 
+GitLab
+

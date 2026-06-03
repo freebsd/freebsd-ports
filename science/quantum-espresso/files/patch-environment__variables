@@ -1,4 +1,4 @@
---- environment_variables.orig	2024-02-29 10:18:05 UTC
+--- environment_variables.orig	2025-08-19 09:57:12 UTC
 +++ environment_variables
 @@ -66,12 +66,16 @@
  #  For this reason, a plain "diff" of your results against the reference
@@ -12,7 +12,7 @@
  # $PREFIX is the root of the Quantum ESPRESSO source tree.
  BIN_DIR=$PREFIX/bin
 -PSEUDO_DIR=$PREFIX/pseudo
-+PSEUDO_DIR=$PREFIX/share/quantum-espresso/pseudo
++PSEUDO_DIR=$PREFIX/share/quantum-espresso
 +ESPRESSO_PSEUDO=/tmp
  # Beware: everything in $TMP_DIR will be destroyed !
 -TMP_DIR=$PREFIX/tempdir

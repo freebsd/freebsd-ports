@@ -1,10 +1,9 @@
 PORTNAME=	unfs3
 DISTVERSIONPREFIX=	unfs3-
-DISTVERSION=	0.9.23
-PORTREVISION=	1
+DISTVERSION=	0.11.0
 CATEGORIES=	net
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	User-space implementation of the NFSv3 server specification
 WWW=		https://unfs3.github.io/
 
@@ -25,8 +24,8 @@ PLIST_FILES=	sbin/unfsd \
 		share/man/man7/tags.7.gz \
 		share/man/man8/unfsd.8.gz
 
-OPTIONS_DEFINE=	CLUSTER_EXT
-CLUSTER_EXT_DESC=	include clustering extensions
+OPTIONS_DEFINE=			CLUSTER_EXT
+CLUSTER_EXT_DESC=		include clustering extensions
 CLUSTER_EXT_CONFIGURE_ON=	--enable-cluster
 
 .include <bsd.port.mk>

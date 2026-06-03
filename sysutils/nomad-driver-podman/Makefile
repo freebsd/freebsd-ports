@@ -1,6 +1,7 @@
 PORTNAME=	nomad-driver-podman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	grembo@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	nomad:sysutils/nomad \
 		podman:sysutils/podman
 
-USES=		go:1.23,modules
+USES=		go:1.25+,modules
 GO_MODULE=	github.com/hashicorp/nomad-driver-podman
 GO_TARGET=	:${PREFIX}/libexec/nomad/plugins/nomad-driver-podman
 

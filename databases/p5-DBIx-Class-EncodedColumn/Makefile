@@ -1,5 +1,6 @@
 PORTNAME=	DBIx-Class-EncodedColumn
 PORTVERSION=	0.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -15,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:databases/p5-DBIx-Class \
-		p5-SQL-Translator>=0.09.003:databases/p5-SQL-Translator \
-		p5-Sub-Name>=0.04:devel/p5-Sub-Name
+		p5-Sub-Name>=0.04:devel/p5-Sub-Name \
+		p5-Crypt-URandom-Token>=0:security/p5-Crypt-URandom-Token
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-Dir-Self>=0:devel/p5-Dir-Self \
 		p5-Test-Exception>=0:devel/p5-Test-Exception

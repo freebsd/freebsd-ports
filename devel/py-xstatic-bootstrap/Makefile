@@ -1,13 +1,12 @@
 PORTNAME=	xstatic-bootstrap
-DISTVERSION=	4.5.3.1
-PORTREVISION=	1
+DISTVERSION=	5.3.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Bootstrap-${DISTVERSION}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	Bootstrap 4.5.3 (XStatic packaging standard)
+COMMENT=	Bootstrap 5.X (XStatic packaging standard)
 WWW=		https://getbootstrap.com/
 
 LICENSE=	MIT

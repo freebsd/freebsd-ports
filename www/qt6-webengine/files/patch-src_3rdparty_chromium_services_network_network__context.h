@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/network/network_context.h.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/services/network/network_context.h.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/services/network/network_context.h
-@@ -698,7 +698,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkContext
+@@ -739,7 +739,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkContext
     public:
      explicit NetworkContextHttpAuthPreferences(NetworkService* network_service);
      ~NetworkContextHttpAuthPreferences() override;

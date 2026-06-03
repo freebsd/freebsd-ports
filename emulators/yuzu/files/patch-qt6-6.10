@@ -1,0 +1,28 @@
+Qt 6.10+ does not automatically provide Qt6::GuiPrivate target for the
+QPA API which is not guaranteed to be compatible between releases.
+
+--- CMakeLists.txt.orig	2025-11-17 11:12:45 UTC
++++ CMakeLists.txt
+@@ -396,6 +396,9 @@ if(ENABLE_QT)
+     set_yuzu_qt_components()
+     if (ENABLE_QT6)
+         find_package(Qt6 ${QT6_VERSION} COMPONENTS ${YUZU_QT_COMPONENTS})
++        if (Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++             find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
++        endif()
+     endif()
+     if (Qt6_FOUND)
+         message(STATUS "yuzu/CMakeLists.txt: Qt6Widgets_VERSION ${Qt6Widgets_VERSION}, setting QT_VERSION")
+--- src/yuzu/CMakeLists.txt.orig	2024-03-01 07:57:00 UTC
++++ src/yuzu/CMakeLists.txt
+@@ -453,6 +453,10 @@ endif()
+     copy_yuzu_Qt5_deps(yuzu)
+ endif()
+ 
++if (Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++    target_link_libraries(yuzu PRIVATE Qt6::GuiPrivate)
++endif()
++
+ if (ENABLE_SDL2)
+     target_link_libraries(yuzu PRIVATE SDL2::SDL2)
+     target_compile_definitions(yuzu PRIVATE HAVE_SDL2)

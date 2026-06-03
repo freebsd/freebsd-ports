@@ -1,0 +1,16 @@
+-- Ignore FutureWarning from wheel bdist_wheel when using setuptools < 70.1
+-- The 'wheel' package is deprecated as the canonical location for bdist_wheel,
+-- but we need to support older setuptools versions that don't have the integrated version.
+-- This warning should not cause test failures.
+-- See: https://github.com/scikit-build/scikit-build/issues/1124
+
+--- pyproject.toml.orig	2026-04-30 15:21:38 UTC
++++ pyproject.toml
+@@ -184,6 +184,7 @@ filterwarnings = [
+   'default:subprocess .* is still running:ResourceWarning',
+   'ignore:pkg_resources is deprecated as an API:DeprecationWarning',
+   'ignore:onerror argument is deprecated, use onexc instead:DeprecationWarning',  # Caused by wheel and Python 3.12
++  'ignore:The .wheel. package is no longer the canonical location.*:FutureWarning',  # Caused by wheel and old setuptools
+   'ignore:(ast.Str|Attribute s|ast.NameConstant|ast.Num) is deprecated:DeprecationWarning:_pytest',
+  ]
+  log_level = "INFO"

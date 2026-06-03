@@ -15,7 +15,7 @@ case "$weekly_lego_enable" in
 	echo "Checking Let's Encrypt certificate status:"
 
 	if [ -x "$weekly_lego_renewscript" ] ; then
-		echo "$weekly_lego_renewscript" | su -fm _lego || exit 3
+		echo "$weekly_lego_renewscript" | su -fm %%LEGO_USER%% || exit 3
 	fi
 
 	if [ -n "$weekly_lego_deployscript" ] ; then

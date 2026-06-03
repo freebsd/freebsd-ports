@@ -1,10 +1,11 @@
 PORTNAME=	swe
-PORTVERSION=	2.10.03
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.10.3
+DISTVERSIONSUFFIX=	final
 PORTEPOCH=	1
 CATEGORIES=	astro devel
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Precision Ephemeris Developed By Astrodienst
 WWW=		https://www.astro.com/swisseph/
 

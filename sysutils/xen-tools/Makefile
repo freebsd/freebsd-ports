@@ -1,18 +1,21 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-DISTVERSION=	4.19.1.20250217
-PORTREVISION=	1
+DISTVERSION=	4.21.0.20260212
 CATEGORIES=	sysutils emulators
+DIST_SUBDIR=	xen/${PORTVERSION}
 
+# Fetch from Gitlab so we can build from the stable branches and avoid having
+# to manually pick up security fixes on top of the tarball.
 USE_GITLAB=	yes
 GL_ACCOUNT=	xen-project
-GL_TAGNAME=	93302bb88855c5f308f1e67ac2cd84271aa2d73a
-GL_TUPLE=	qemu-project:qemu:v8.0.4:qemu \
-		qemu-project:dtc:b6910bec:dtc \
-		qemu-project:meson:3a9b285a:meson \
-		qemu-project:keycodemapdb:f5772a62:keycodemapdb \
-		qemu-project:berkeley-testfloat-3:40619cbb:testfloat \
-		qemu-project:berkeley-softfloat-3:b64af41c:softfloat
+GL_TAGNAME=	afaf4e7b503ad3e79602b39064e58d6488d10f3d
+
+# Fetch QEMU from the release distribution files, building QEMU from git
+# requires dealing with submodules and extra magic actions that cause pain when
+# updating.  Any extra changes wanted for QEMU will be picked up as patches.
+QEMU_VERSION=	9.1.0
+MASTER_SITES+=	https://download.qemu.org/:qemu
+DISTFILES+=	qemu-${QEMU_VERSION}.tar.xz:qemu
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Xen Hypervisor management tools
@@ -21,11 +24,14 @@ WWW=		https://www.xenproject.org/
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libyajl.so:devel/yajl \
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		liblzo2.so:archivers/lzo2 \
 		libpixman-1.so:x11/pixman \
 		libargp.so:devel/argp-standalone \
-		libgnutls.so:security/gnutls
+		libgnutls.so:security/gnutls \
+		libinotify.so:devel/libinotify \
+		libzstd.so:archivers/zstd \
+		libfdt.so:sysutils/dtc
 BUILD_DEPENDS=	seabios>0:misc/seabios \
 		${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd:sysutils/edk2@xen_x64 \
 		bash>0:shells/bash
@@ -37,7 +43,6 @@ OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
 
 SPICE_DESC=		Enable SPICE protocol for QEMU
-SPICE_CONFIGURE_WITH=	extra-qemuu-configure-args="--enable-spice"
 SPICE_BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 SPICE_LIB_DEPENDS=	libspice-server.so:devel/libspice-server
 
@@ -48,7 +53,7 @@ USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
 		pkgconfig python shebangfix iconv bison ninja:build
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
-USE_PYTHON=	py3kplist
+USE_PYTHON=	py3kplist distutils
 HAS_CONFIGURE=	yes
 # Set ARCH=x86_64 in order to overwrite the environment ARCH=amd64
 MAKE_ARGS=	clang=y ARCH=x86_64
@@ -58,7 +63,8 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 CONFIGURE_ARGS+=	--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin \
 			--with-system-ovmf=${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd \
 			--mandir=${PREFIX}/share/man \
-			--disable-golang
+			--disable-golang \
+			--with-extra-qemuu-configure-args="${QEMU_CONFIGURE_EXTRA}"
 
 SHEBANG_FILES=	tools/misc/xencov_split \
 		tools/python/scripts/convert-legacy-stream \
@@ -76,18 +82,16 @@ DOCS_INSTALL_TARGET=	install-docs
 IGNORE=		only supported on FreeBSD
 .endif
 
+.if ${PORT_OPTIONS:MSPICE}
+QEMU_CONFIGURE_EXTRA+=	--enable-spice
+.endif
+QEMU_CONFIGURE_EXTRA+=	--extra-ldflags=-L${LOCALBASE}/lib
+QEMU_CONFIGURE_EXTRA+=	--extra-cflags=-I${LOCALBASE}/include
+QEMU_CONFIGURE_EXTRA+=	--enable-fdt=system
+
 post-extract:
-	${MV} ${WRKSRC_qemu} ${WRKSRC}/tools/qemu-xen
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/dtc
-	${MV} ${WRKSRC_dtc} ${WRKSRC}/tools/qemu-xen/dtc
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/meson
-	${MV} ${WRKSRC_meson} ${WRKSRC}/tools/qemu-xen/meson
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/ui/keycodemapdb
-	${MV} ${WRKSRC_keycodemapdb} ${WRKSRC}/tools/qemu-xen/ui/keycodemapdb
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-testfloat-3
-	${MV} ${WRKSRC_testfloat} ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-testfloat-3
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-softfloat-3
-	${MV} ${WRKSRC_softfloat} ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-softfloat-3
+	# Move QEMU into the directory expected by the build system
+	${MV} ${WRKDIR}/qemu-${QEMU_VERSION} ${WRKSRC}/tools/qemu-xen
 
 post-patch:
 	@for p in `ls ${FILESDIR}/*qemuu*.patch 2>/dev/null`; do \

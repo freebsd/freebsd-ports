@@ -2,13 +2,16 @@ PORTNAME=	sqlitejdbc
 PORTVERSION=	056
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	java databases
 MASTER_SITES=	http://files.zentus.com/sqlitejdbc/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Java JDBC driver for SQLite
 WWW=		http://web.archive.org/web/20120721075310/http://www.zentus.com/sqlitejdbc/
+
+DEPRECATED=	Dead old upstream, replaced by databases/sqlite-jdbc
+EXPIRATION_DATE=	2026-07-28
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
@@ -18,6 +21,8 @@ JAVA_VERSION=	8
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native
+
+CONFLICTS=	sqlite-jdbc
 
 PLIST_FILES=	${JAVAJARDIR}/sqlitejdbc-native.jar lib/libsqlitejdbc.so
 

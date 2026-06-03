@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: nnrpd
+# REQUIRE: DAEMON innd
+# KEYWORD: shutdown
+
+# innd usually handles port 119 itself and spawns nnrpd for reader
+# connections.  This rc script is primarily for running nnrpd as a
+# standalone TLS daemon on port 563.
+
+. /etc/rc.subr
+
+name=nnrpd
+rcvar=nnrpd_enable
+
+load_rc_config ${name}
+
+: ${nnrpd_enable:="NO"}
+: ${nnrpd_user:="news"}
+: ${nnrpd_port:="563"}
+: ${nnrpd_flags:="-D -p ${nnrpd_port} -S"}
+
+extra_commands="reload"
+
+# nnrpd writes its pidfile as nnrpd.pid on the default NNTP port and
+# nnrpd-<port>.pid otherwise.
+if [ "${nnrpd_port}" = "119" ]; then
+	pidfile="%%RUNDIR%%/${name}.pid"
+else
+	pidfile="%%RUNDIR%%/${name}-${nnrpd_port}.pid"
+fi
+command="%%NEWSBASE%%/bin/${name}"
+command_user="${nnrpd_user}"
+
+stop_postcmd="rm -f ${pidfile}"
+
+run_rc_command "$1"

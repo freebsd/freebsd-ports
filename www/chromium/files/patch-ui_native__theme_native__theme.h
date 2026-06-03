@@ -1,7 +1,7 @@
---- ui/native_theme/native_theme.h.orig	2025-05-05 10:57:53 UTC
+--- ui/native_theme/native_theme.h.orig	2026-01-14 08:33:23 UTC
 +++ ui/native_theme/native_theme.h
-@@ -61,7 +61,7 @@ class COMPONENT_EXPORT(NATIVE_THEME) NativeTheme {
-   // The part to be painted / sized.
+@@ -64,7 +64,7 @@ class COMPONENT_EXPORT(NATIVE_THEME) NativeTheme {
+   // A part being sized or painted.
    enum Part {
      kCheckbox,
 -#if BUILDFLAG(IS_LINUX)

@@ -1,6 +1,5 @@
 PORTNAME=	aiodns
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,13 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycares>4.0.0:dns/py-pycares@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uvloop>0:devel/py-uvloop@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycares>=5.0.0:dns/py-pycares@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>0:devel/py-anyio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-tornasync>0:devel/py-pytest-tornasync@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-trio>0:devel/py-pytest-trio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-twisted>0:devel/py-pytest-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
-TEST_TARGET=	tests.py
-DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
+USE_PYTHON=	autoplist concurrent pep517 pytest
+TEST_ARGS=	-W ignore::DeprecationWarning
 NO_ARCH=	yes
 
 PORTDOCS=	README.rst

@@ -226,7 +226,7 @@ def _impl(ctx):
     else:
         features = [supports_dynamic_linker_feature, supports_pic_feature]
     if (is_bsd):
-        cxx_builtin_include_directories = ["/usr/lib/clang", "/usr/include/c++/v1", "/usr/local/include", "/usr/include"]
+        cxx_builtin_include_directories = ["/usr/lib/clang", "/usr/include/c++/v1", "/usr/local/include", "/usr/include", "%%NUMPY_INCLUDEDIR%%"]
     else:
         cxx_builtin_include_directories = []
     if is_bsd:

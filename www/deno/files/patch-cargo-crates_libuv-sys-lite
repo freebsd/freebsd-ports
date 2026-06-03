@@ -1,0 +1,35 @@
+--- cargo-crates/libuv-sys-lite-1.48.3/Cargo.toml.orig	2026-04-08 10:43:47.906533000 +0200
++++ cargo-crates/libuv-sys-lite-1.48.3/Cargo.toml	2026-04-08 10:43:26.354203000 +0200
+@@ -47,4 +47,4 @@ optional = true
+ optional = true
+ 
+ [build-dependencies.bindgen]
+-version = "0.70.1"
++version = "0.72.1"
+
+--- cargo-crates/libuv-sys-lite-1.48.3/Cargo.lock.orig	2026-04-08 10:39:35.964655000 +0200
++++ cargo-crates/libuv-sys-lite-1.48.3/Cargo.lock	2026-04-08 10:40:34.565467000 +0200
+@@ -13,9 +13,9 @@ name = "bindgen"
+ 
+ [[package]]
+ name = "bindgen"
+-version = "0.70.1"
++version = "0.72.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "f49d8fed880d473ea71efb9bf597651e77201bdd4893efe54c9e5d65ae04ce6f"
++checksum = "993776b509cfb49c750f11b8f07a46fa23e0a1386ffc01fb1e7d343efc387895"
+ dependencies = [
+  "bitflags",
+  "cexpr",
+@@ -195,9 +195,9 @@ name = "rustc-hash"
+ 
+ [[package]]
+ name = "rustc-hash"
+-version = "1.1.0"
++version = "2.1.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
++checksum = "94300abf3f1ae2e2b8ffb7b58043de3d399c73fa6f4b73826402a5c457614dbe"
+ 
+ [[package]]
+ name = "shlex"

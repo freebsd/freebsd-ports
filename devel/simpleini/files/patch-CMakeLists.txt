@@ -1,10 +1,11 @@
---- CMakeLists.txt.orig	2023-12-29 02:44:28 UTC
+--- CMakeLists.txt.orig	2025-11-13 10:32:32 UTC
 +++ CMakeLists.txt
-@@ -34,6 +34,7 @@ add_library(${EXPORT_NAMESPACE}${PROJECT_NAME} ALIAS $
+@@ -80,7 +80,7 @@ install(FILES
+ )
  
- add_library(${PROJECT_NAME} INTERFACE)
- add_library(${EXPORT_NAMESPACE}${PROJECT_NAME} ALIAS ${PROJECT_NAME})
-+target_compile_definitions(${PROJECT_NAME} INTERFACE SI_NO_CONVERSION)
- 
- include(GNUInstallDirs)
- 
+ # only build tests when top level and testing enabled
+-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
++if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND SIMPLEINI_BUILD_TESTS)
+ 	include(CTest)
+ 	if(BUILD_TESTING)
+ 		add_subdirectory(tests)

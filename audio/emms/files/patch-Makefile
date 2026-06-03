@@ -1,6 +1,6 @@
 --- Makefile.orig	2023-05-25 21:02:56 UTC
 +++ Makefile
-@@ -37,7 +37,7 @@
+@@ -37,7 +37,7 @@ PREFIX=$(DESTDIR)/usr/local
  
  DESTDIR=
  PREFIX=$(DESTDIR)/usr/local
@@ -9,7 +9,7 @@
  MAN1DIR=$(PREFIX)/share/man/man1
  BINDIR=$(PREFIX)/bin
  SITELISP=$(PREFIX)/share/emacs/site-lisp/emms
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ GINSTALLINFO = /usr/bin/ginstall-info --info-dir=$(INF
  
  GINSTALLINFO = /usr/bin/ginstall-info --info-dir=$(INFODIR)
  # For systems without ginstall-info
@@ -18,3 +18,11 @@
  CHANGELOG_CMD = git log --pretty=medium --no-merges
  
  # The currently released version of EMMS (no longer in use)
+@@ -91,7 +91,6 @@ install:
+ 	test -d $(SITELISP) || mkdir -p $(SITELISP)
+ 	test -d $(INFODIR) || install -d $(INFODIR)
+ 	install -m 644 $(ALLSOURCE) $(SITELISP)
+-	install -m 644 $(ALLCOMPILED) $(SITELISP)
+ 	install -m 0644 $(DOCDIR)emms.info $(INFODIR)/emms.info
+ 	for p in $(MAN1PAGES) ; do $(GZIP) -9c $$p > $(MAN1DIR)/$$p.gz ; done
+ 	if [ -x /usr/bin/ginstall-info ]; then \

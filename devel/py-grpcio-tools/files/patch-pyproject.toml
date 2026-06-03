@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-02-16 00:40:53 UTC
++++ pyproject.toml
+@@ -22,7 +22,7 @@ name = "grpcio-tools"
+ 
+ [project]
+ name = "grpcio-tools"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ description = "Protobuf code generator for gRPC"
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+ authors = [{name = "The gRPC Authors", email = "grpc-io@googlegroups.com"}]

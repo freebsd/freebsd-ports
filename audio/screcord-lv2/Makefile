@@ -1,6 +1,6 @@
 PORTNAME=	screcord
-DISTVERSION=	g20171206
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -18,11 +18,21 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	${PORTNAME}.lv2
-GH_TAGNAME=	36fbff9
+BUILD_WRKSRC=	${WRKSRC}/screcord
+ALL_TARGET=	nogui
 
 PLIST_FILES=	lib/lv2/sc_record.lv2/manifest.ttl \
 		lib/lv2/sc_record.lv2/sc_record.so \
 		lib/lv2/sc_record.lv2/sc_record.ttl
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lv2/sc_record.lv2
+	${INSTALL_DATA} ${WRKSRC}/screcord/manifest.ttl \
+		${STAGEDIR}${PREFIX}/lib/lv2/sc_record.lv2/
+	${INSTALL_DATA} ${WRKSRC}/screcord/sc_record.ttl \
+		${STAGEDIR}${PREFIX}/lib/lv2/sc_record.lv2/
+	${INSTALL_LIB} ${WRKSRC}/screcord/sc_record.so \
+		${STAGEDIR}${PREFIX}/lib/lv2/sc_record.lv2/
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/sc_record.lv2/sc_record.so

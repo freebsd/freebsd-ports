@@ -21,6 +21,9 @@ Navidrome is configured to scan for music under "%%DATADIR%%/music".
 This can be changed in the configuration file or by adding "--musicfolder <path>" 
 to "navidrome_flags".
 
+For transcoding to work, you must install multimedia/ffmpeg@default or
+multimedia/ffmpeg@nox11.
+
 EOM
 }
 ]

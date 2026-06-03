@@ -1,6 +1,6 @@
 PORTNAME=	go
 DISTVERSION=	${GO_DEFAULT}
-PORTREVISION=	10
+PORTREVISION=	20
 PORTEPOCH=	2
 CATEGORIES=	lang
 MASTER_SITES=	# not applicable
@@ -9,6 +9,12 @@ DISTFILES=	# not applicable
 MAINTAINER=	go@FreeBSD.org
 COMMENT=	Meta-port for the default version of the Go programming language
 WWW=		https://golang.org
+
+LICENSE=	NA
+LICENSE_COMB=	single
+LICENSE_NAME=	Non applicable
+LICENSE_TEXT=	No licenses are applicable to metaports
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 RUN_DEPENDS=	go${GO_SUFFIX}:lang/go${GO_SUFFIX}
 

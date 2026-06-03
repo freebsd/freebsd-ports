@@ -1,1 +1,3 @@
-This package contains the X Extension library.
+Xinerama is a simple library designed to interface the Xinerama
+Extension for retrieving information about physical output devices
+which may be combined into a single logical X screen.

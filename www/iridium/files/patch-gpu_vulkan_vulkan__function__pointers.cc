@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_function_pointers.cc.orig	2025-05-07 06:48:23 UTC
+--- gpu/vulkan/vulkan_function_pointers.cc.orig	2025-12-10 15:04:57 UTC
 +++ gpu/vulkan/vulkan_function_pointers.cc
 @@ -1297,7 +1297,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }

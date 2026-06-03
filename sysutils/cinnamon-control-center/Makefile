@@ -1,5 +1,5 @@
 PORTNAME=	cinnamon-control-center
-DISTVERSION=	6.4.1
+DISTVERSION=	6.4.2
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome
 
@@ -47,7 +47,7 @@ COLORD_LIB_DEPENDS=	libcolord.so:graphics/colord
 COLORD_MESON_TRUE=	color
 
 WACOM_LIB_DEPENDS=	libwacom.so:x11/libwacom
-WACOM_USE=		XORG=xi
+WACOM_USE=		xorg=xi
 WACOM_MESON_TRUE=	wacom
 
 .include <bsd.port.mk>

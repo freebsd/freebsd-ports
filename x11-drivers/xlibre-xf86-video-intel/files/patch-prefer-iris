@@ -1,0 +1,31 @@
+Chase https://gitlab.freedesktop.org/mesa/mesa/-/commit/adaa3583f507
+Chase https://gitlab.freedesktop.org/mesa/mesa/-/commit/cdde031ac2c8
+
+--- src/sna/sna_dri2.c.orig	2021-01-15 20:59:05 UTC
++++ src/sna/sna_dri2.c
+@@ -3707,8 +3707,10 @@ static const char *dri_driver_name(struct sna *sna)
+ 			return has_i830_dri() ? "i830" : "i915";
+ 		else if (sna->kgem.gen < 040)
+ 			return "i915";
++		else if (sna->kgem.gen < 0100)
++			return "crocus";
+ 		else
+-			return "i965";
++			return "iris";
+ 	}
+ 
+ 	return s;
+--- src/uxa/intel_dri.c.orig	2021-01-15 20:59:05 UTC
++++ src/uxa/intel_dri.c
+@@ -1540,8 +1540,10 @@ static const char *dri_driver_name(intel_screen_privat
+ 			return has_i830_dri() ? "i830" : "i915";
+ 		else if (INTEL_INFO(intel)->gen < 040)
+ 			return "i915";
++		else if (INTEL_INFO(intel)->gen < 0100)
++			return "crocus";
+ 		else
+-			return "i965";
++			return "iris";
+ 	}
+ 
+ 	return s;

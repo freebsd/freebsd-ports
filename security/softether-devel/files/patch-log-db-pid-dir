@@ -1,3 +1,5 @@
+# Copyright (c) 2019, Koichiro Iwao <meta@FreeBSD.org> (https://github.com/metalefty)
+# SPDX-License-Identifier: Apache-2.0
 --- src/Cedar/Admin.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Admin.c
 @@ -11482,7 +11482,7 @@ void SiReadLocalLogFile(SERVER *s, char *filepath, UIN

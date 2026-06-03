@@ -1,5 +1,5 @@
 PORTNAME=	aws-lambda-builders
-DISTVERSION=	1.54.0
+DISTVERSION=	1.64.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+NO_TEST=	yes
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	sendmail
-PORTVERSION=	8.18.1.10
-PORTREVISION=	1
+PORTVERSION=	8.19.0.0
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
@@ -47,11 +47,11 @@ BASEMAIL=	/usr/libexec/sendmail/sendmail
 MILTER_SOVER?=	6
 
 OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS DANE SASL SASLAUTHD LDAP \
-			BDB GDBM SOCKETMAP CYRUSLOOKUP BLACKLISTD SMTPUTF8 \
+			BDB GDBM SOCKETMAP CYRUSLOOKUP BLOCKLISTD SMTPUTF8 \
 			PICKY_HELO_CHECK MILTER MTA_STS \
 			TLS_CERT_CHAIN DOCS
 OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS DANE SASL SASLAUTHD BDB1 \
-			BLACKLISTD PICKY_HELO_CHECK MILTER
+			BLOCKLISTD PICKY_HELO_CHECK MILTER
 NO_OPTIONS_SORT=yes
 SHMEM_DESC=		System V shared memory support
 LA_DESC=		load averages support
@@ -61,7 +61,7 @@ SASLAUTHD_DESC=		SASLAUTHD support
 BDB_DESC=		Berkeley DB version 4+ support
 GDBM_DESC=		GNU dbm library support (option COMPAT needed)
 SOCKETMAP_DESC=		Enable socketmap feature
-BLACKLISTD_DESC=	Enable blacklistd support
+BLOCKLISTD_DESC=	Enable blocklistd support
 CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
 MILTER_DESC=		Enable milter support
@@ -82,6 +82,7 @@ CYRUSLOOKUP_IMPLIES=	SOCKETMAP
 SMTPUTF8_LIB_DEPENDS=	libidn2.so:dns/libidn2 libicui18n.so:devel/icu
 MTA_STS_IMPLIES=	SOCKETMAP TLS
 TLS_CERT_CHAIN_IMPLIES=	TLS
+BLOCKLISTD_EXTRA_PATCHES= ${FILESDIR}/extra-patch-proto.m4
 
 .include <bsd.port.options.mk>
 
@@ -137,8 +138,8 @@ SITE+=	${FILESDIR}/site.config.m4.sasl2
 .if ${PORT_OPTIONS:MLDAP}
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
-.if ${PORT_OPTIONS:MBLACKLISTD}
-SITE+=	${FILESDIR}/site.config.m4.blacklistd
+.if ${PORT_OPTIONS:MBLOCKLISTD}
+SITE+=	${FILESDIR}/site.config.m4.blocklistd
 .endif
 .if ${PORT_OPTIONS:MSMTPUTF8}
 SITE+=	${FILESDIR}/site.config.m4.smtputf8
@@ -163,6 +164,17 @@ SED_SCRIPT+=	-e "s;-DNIS ;;"
 
 post-patch:
 	@cd ${WRKSRC} && ${FIND} cf -type f -name "*.orig" -print0 | ${XARGS} -0 ${RM}
+.if ${PORT_OPTIONS:MBLOCKLISTD}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+	${REINPLACE_CMD} \
+		-e 's|#include <blocklist.h>|#include <blacklist.h>|' \
+		-e 's|struct blocklist|struct blacklist|' \
+		-e 's|blocklist_open|blacklist_open|' \
+		-e 's|blocklist_r|blacklist_r|' \
+		${WRKSRC}/sendmail/blocklist.c \
+		${WRKSRC}/sendmail/sendmail.h
+.endif
+.endif
 
 do-configure:
 .if ${PORT_OPTIONS:MGDBM}
@@ -175,6 +187,13 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
+.if ${PORT_OPTIONS:MBLOCKLISTD}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+	${REINPLACE_CMD} \
+		-e 's|-lblocklist|-lblacklist|' \
+		${WCONF}/site.config.m4
+.endif
+.endif
 .if ${PORT_OPTIONS:MBDB}
 	${ECHO_CMD} \
 	 'APPENDDEF(`confENVDEF'\'', `-I${BDB_INCLUDE_DIR}'\'')' \

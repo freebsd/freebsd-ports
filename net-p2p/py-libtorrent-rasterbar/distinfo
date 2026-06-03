@@ -1,3 +1,9 @@
-TIMESTAMP = 1738128465
-SHA256 (arvidn-libtorrent-v1.2.20_GH0.tar.gz) = 6243d87e54c8d3c9336af1f8ef3fedf7b54e03c2be105a9914f07ec5059e4743
-SIZE (arvidn-libtorrent-v1.2.20_GH0.tar.gz) = 3639643
+TIMESTAMP = 1776793869
+SHA256 (arvidn-libtorrent-v2.0.12_GH0.tar.gz) = 475b5a9f1c9f62b0b9af2e53b1d77a8b7f002aec9d6db5de681bcd951bc30401
+SIZE (arvidn-libtorrent-v2.0.12_GH0.tar.gz) = 4326223
+SHA256 (arvidn-try_signal-105cce5_GH0.tar.gz) = a33b30e5066f8d8f53ec4be8b639569cd685fc2c7e90c16736907fa1a21939e5
+SIZE (arvidn-try_signal-105cce5_GH0.tar.gz) = 8020
+SHA256 (arvidn-libsimulator-66ac6cc_GH0.tar.gz) = f4847c878f6f48926021169f612d68e8503f3f3de14e76c81ce95580fa3671d0
+SIZE (arvidn-libsimulator-66ac6cc_GH0.tar.gz) = 146484
+SHA256 (paullouisageneau-boost-asio-gnutls-a57d4d3_GH0.tar.gz) = f6ceb4638cad0a5dd474ceef62e4bb07aab460af609cc87242292331c6c2616d
+SIZE (paullouisageneau-boost-asio-gnutls-a57d4d3_GH0.tar.gz) = 14644

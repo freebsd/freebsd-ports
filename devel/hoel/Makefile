@@ -11,7 +11,7 @@ WWW=		https://babelouest.github.io/hoel/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake pathfix
+USES=		cmake
 
 BUILD_DEPENDS=	jansson>=2.4:devel/jansson \
 		orcania>=2.3.2:devel/orcania \
@@ -48,5 +48,8 @@ PGSQL_CMAKE_BOOL=	WITH_PGSQL
 PGSQL_USES=		pgsql
 SQLITE3_CMAKE_BOOL=	WITH_SQLITE3
 SQLITE3_USES=		sqlite
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

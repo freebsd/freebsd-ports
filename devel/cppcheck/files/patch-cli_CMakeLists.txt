@@ -1,0 +1,11 @@
+--- cli/CMakeLists.txt.orig	2025-12-21 12:48:14 UTC
++++ cli/CMakeLists.txt
+@@ -23,7 +23,7 @@ if (BUILD_CLI)
+     endif()
+ 
+     add_executable(cppcheck ${cppcheck_SOURCES})
+-    target_link_libraries(cppcheck cppcheck-core cli tinyxml2 simplecpp)
++    target_link_libraries(cppcheck cppcheck-core cli tinyxml2 simplecpp execinfo)
+     if (WIN32 AND NOT BORLAND)
+         if(NOT MINGW)
+             target_link_libraries(cppcheck Shlwapi.lib)

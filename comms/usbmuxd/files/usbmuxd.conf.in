@@ -10,7 +10,7 @@ notify 100 {
 	match "subsystem"	"DEVICE";
 	match "type"		"ATTACH";
 	match "vendor"		"0x05ac";
-	match "product"		"(0x12[9a][0-9a-f]|0x8600)";
+	match "product"		"(0x12[9a][0-9a-f]|0x190[1-5]|0x8600)";
 	action "chgrp %%GROUPS%% /dev/$cdev; chmod g+rw /dev/$cdev";
 	action "%%PREFIX%%/sbin/usbmuxd -U %%USERS%% -z";
 };
@@ -20,7 +20,7 @@ notify 100 {
 	match "subsystem"	"DEVICE";
 	match "type"		"DETACH";
 	match "vendor"		"0x05ac";
-	match "product"		"(0x12[9a][0-9a-f]|0x8600)";
+	match "product"		"(0x12[9a][0-9a-f]|0x190[1-5]|0x8600)";
 	action "%%PREFIX%%/sbin/usbmuxd -x";
 	action "sleep 5";
 };

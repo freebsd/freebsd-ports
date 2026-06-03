@@ -1,0 +1,11 @@
+--- ThirdParty/eigen/vtkeigen/eigen/Core.orig	2021-08-18 20:41:58 UTC
++++ ThirdParty/eigen/vtkeigen/eigen/Core
+@@ -346,7 +346,7 @@ using std::ptrdiff_t;
+ #include "src/Core/CoreIterators.h"
+ #include "src/Core/ConditionEstimator.h"
+ 
+-#if defined(EIGEN_VECTORIZE_ALTIVEC) || defined(EIGEN_VECTORIZE_VSX)
++#if defined(EIGEN_VECTORIZE_VSX)
+   #include "src/Core/arch/AltiVec/MatrixProduct.h"
+ #elif defined EIGEN_VECTORIZE_NEON
+   #include "src/Core/arch/NEON/GeneralBlockPanelKernel.h"

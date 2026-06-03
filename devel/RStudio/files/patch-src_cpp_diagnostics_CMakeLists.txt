@@ -1,3 +1,5 @@
+- Link procstat library required on FreeBSD
+
 --- src/cpp/diagnostics/CMakeLists.txt.orig	2021-05-24 22:22:25 UTC
 +++ src/cpp/diagnostics/CMakeLists.txt
 @@ -57,6 +57,7 @@ add_stripped_executable(diagnostics

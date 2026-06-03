@@ -1,12 +1,10 @@
---- CMakeLists.txt.orig	2020-03-14 17:27:33 UTC
+--- CMakeLists.txt.orig	2024-01-01 00:00:00 UTC
 +++ CMakeLists.txt
-@@ -21,7 +21,9 @@ include(DuneMacros)
- dune_project()
+@@ -36,7 +36,9 @@ dune_default_include_directories(dunegeometry PUBLIC)
  
  add_subdirectory("dune")
 +if (FREEBSD_INSTALL_DOCS)
  add_subdirectory("doc")
 +endif()
- add_subdirectory("lib")
  
- # finalize the dune project, e.g. generating config.h etc.
+ # if Python bindings are enabled, include necessary sub directories.

@@ -1,3 +1,3 @@
-TIMESTAMP = 1679792839
-SHA256 (azure-mgmt-servicebus-8.2.0.zip) = 8be9208f141d9a789f68db8d219754ff78069fd8f9390e9f7644bb95a3be9ec2
-SIZE (azure-mgmt-servicebus-8.2.0.zip) = 1003735
+TIMESTAMP = 1772028803
+SHA256 (azure_mgmt_servicebus-10.0.0b1.tar.gz) = bbbc6db9c4bc067fb08271f8eda356129d6051c4538977a8f375120f4e63f79c
+SIZE (azure_mgmt_servicebus-10.0.0b1.tar.gz) = 105514

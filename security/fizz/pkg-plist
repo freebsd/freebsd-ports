@@ -8,10 +8,12 @@ include/fizz/backend/openssl/OpenSSL.h
 include/fizz/backend/openssl/Properties.h
 include/fizz/backend/openssl/certificate/CertUtils-inl.h
 include/fizz/backend/openssl/certificate/CertUtils.h
+include/fizz/backend/openssl/certificate/OpenSSLCertificateVerifier.h
 include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl-inl.h
 include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl.h
 include/fizz/backend/openssl/certificate/OpenSSLSelfCertImpl-inl.h
 include/fizz/backend/openssl/certificate/OpenSSLSelfCertImpl.h
+include/fizz/backend/openssl/certificate/X509ChainWithPkey.h
 include/fizz/backend/openssl/crypto/ECCurve.h
 include/fizz/backend/openssl/crypto/OpenSSL.h
 include/fizz/backend/openssl/crypto/OpenSSLKeyUtils.h
@@ -28,6 +30,7 @@ include/fizz/client/CertManager.h
 include/fizz/client/ClientExtensions.h
 include/fizz/client/ClientProtocol.h
 include/fizz/client/ECHPolicy.h
+include/fizz/client/ECHRetryCallback.h
 include/fizz/client/EarlyDataRejectionPolicy.h
 include/fizz/client/FizzClient-inl.h
 include/fizz/client/FizzClient.h
@@ -84,6 +87,7 @@ include/fizz/experimental/ktls/AsyncKTLSSocket.h
 include/fizz/experimental/ktls/FizzKTLSCallback.h
 include/fizz/experimental/ktls/KTLS.h
 include/fizz/experimental/ktls/LinuxKTLS.h
+include/fizz/experimental/psp/PSP.h
 include/fizz/experimental/util/CertExtraction.h
 include/fizz/extensions/clientpadding/PaddingClientExtension.h
 include/fizz/extensions/clientpadding/Types.h
@@ -110,8 +114,9 @@ include/fizz/extensions/tokenbinding/Validator.h
 include/fizz/fizz-config.h
 include/fizz/protocol/Actions.h
 include/fizz/protocol/AsyncFizzBase.h
-include/fizz/protocol/CertManagerBase.h
+include/fizz/protocol/CertMatch.h
 include/fizz/protocol/Certificate.h
+include/fizz/protocol/CertificateBase.h
 include/fizz/protocol/CertificateVerifier.h
 include/fizz/protocol/DefaultCertificateVerifier.h
 include/fizz/protocol/DefaultFactory.h
@@ -146,14 +151,13 @@ include/fizz/protocol/test/Matchers.h
 include/fizz/protocol/test/Mocks.h
 include/fizz/protocol/test/ProtocolTest.h
 include/fizz/protocol/test/TestUtil.h
+include/fizz/record/Alerts.h
 include/fizz/record/BufAndPaddingPolicy.h
 include/fizz/record/EncryptedRecordLayer.h
 include/fizz/record/Extensions-inl.h
 include/fizz/record/Extensions.h
 include/fizz/record/PlaintextRecordLayer.h
 include/fizz/record/RecordLayer.h
-include/fizz/record/RecordLayerUtils-inl.h
-include/fizz/record/RecordLayerUtils.h
 include/fizz/record/Types-inl.h
 include/fizz/record/Types.h
 include/fizz/record/test/ExtensionTestsBase.h
@@ -168,6 +172,7 @@ include/fizz/server/AsyncSelfCert.h
 include/fizz/server/CertManager.h
 include/fizz/server/CookieCipher.h
 include/fizz/server/CookieTypes.h
+include/fizz/server/DefaultCertManager.h
 include/fizz/server/DualTicketCipher.h
 include/fizz/server/FizzServer-inl.h
 include/fizz/server/FizzServer.h
@@ -194,10 +199,13 @@ include/fizz/test/LocalTransport.h
 include/fizz/tool/CertificateVerifiers.h
 include/fizz/tool/Commands.h
 include/fizz/tool/FizzCommandCommon.h
+include/fizz/util/Exceptions.h
 include/fizz/util/FizzUtil.h
 include/fizz/util/KeyLogWriter.h
+include/fizz/util/Logging.h
 include/fizz/util/Parse-inl.h
 include/fizz/util/Parse.h
+include/fizz/util/Status.h
 include/fizz/util/Tracing.h
 include/fizz/util/Variant.h
 include/fizz/util/Workarounds.h

@@ -1,0 +1,14 @@
+--- Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ Cargo.toml
+@@ -144,7 +144,11 @@ version = ">=0.12, <0.13"
+ 
+ [dependencies.reqwest]
+ version = ">=0.12, <0.13"
++default-features = false
+ features = [
++    "rustls-tls",
++    "charset",
++    "http2",
+     "hickory-dns",
+     "stream",
+ ]

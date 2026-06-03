@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+HeidiSQL was installed
+
+1) HeidiSQL needs client library to connect to a supported database. Well
+   supported databases are MySQL/MariaDB, PostgreSQL and SQLite.
+
+   # pkg search -x "^(mysql|mariadb)[0-9].*-client-*"
+   # pkg search -x "^postgresql.*-client-*"
+   # pkg search -x "^(sqlite|sqlite3)-[2|3]" 
+
+2) Do not forget install client library. E.g. an user wants use postgresql from
+   HeidiSQL.
+  
+   # pkg install postgresql17-client
+
+3) HeidiSQL can be compiled and installed with supports for gtk2, qt5 or qt6
+   graphic interfaces.
+
+   # pkg install heidisql-qt6
+
+4) Enjoy it!
+EOM
+}
+]

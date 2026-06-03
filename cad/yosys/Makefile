@@ -1,6 +1,6 @@
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52
+DISTVERSION=	0.66
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	abc:cad/abc \
 		gawk:lang/gawk
 LIB_DEPENDS=	libffi.so:devel/libffi
 RUN_DEPENDS=	bash:shells/bash \
+		vcd2fst:cad/gtkwave \
 		xdot:x11/py-xdot@${PY_FLAVOR}
 
 TEST_DEPENDS=	iverilog:cad/iverilog
@@ -59,6 +60,8 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yosys
+.for f in yosys yosys-filterlib
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$f
+.endfor
 
 .include <bsd.port.mk>

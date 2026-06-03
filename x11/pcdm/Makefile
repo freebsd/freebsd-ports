@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	jt@obs-sec.com
-COMMENT=	QT5 based display manager for FreeBSD
+COMMENT=	Qt5 based display manager for FreeBSD
 WWW=		https://github.com/trueos/pcdm
 
 LICENSE=	BSD2CLAUSE

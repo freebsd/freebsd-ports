@@ -1,3 +1,0 @@
-Light-weight XML encoding library for Java. It fills the gap
-between a light-weight parser like SAX, and a heavy-weight XML
-output library, like JDOM.

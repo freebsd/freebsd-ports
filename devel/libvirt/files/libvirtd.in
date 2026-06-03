@@ -32,4 +32,6 @@ command_args="--daemon --pid-file=${pidfile}"
 
 PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
 
+extra_commands="reload"
+
 run_rc_command "$1"

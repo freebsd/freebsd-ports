@@ -53,13 +53,6 @@ NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
 If you experience "Network: write Failed: Cannot allocate memory" errors
 try to increase net.graph.maxdata in /boot/loader.conf
 
-If you are using AIO, then increase these limits (https://bugs.freebsd.org/168298):
-vfs.aio.max_buf_aio=8192
-vfs.aio.max_aio_queue_per_proc=65536
-vfs.aio.max_aio_per_proc=8192
-vfs.aio.max_aio_queue=65536
-To check if AIO is used use: kldstat -v | grep aio
-
 If you are experiencing VMs freezes with an error in VBox.log such as:
 "
 00:01:29.590192 AssertLogRel /usr/ports/emulators/virtualbox-ose/work/VirtualBox-6.1.44
@@ -104,17 +97,6 @@ configured to use it from starting.
 When upgrading from a previous version please reconfigure any virtual
 machines using the Pulseaudio host audio driver to use another
 supported one.
-EOM
-}
-{ type: upgrade
-  minimum_version: 6.1.26
-  maximum_version: 6.1.32_1
-  message: <<EOM
-To comply to hier(7) requirements, networks.conf's location changed
-to %%VBOX_ETC%%/networks.conf.
-
-In case /etc/vbox/networks.conf exists, it needs to be moved to
-%%VBOX_ETC%% and /etc/vbox should be deleted.
 EOM
 }
 ]

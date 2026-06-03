@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: singbox
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable sing-box:
+#
+# singbox_enable (bool):	Set it to "YES" to enable sing-box
+# singbox_configfile (str):	Path to config file
+# singbox_dbdir (str):		Path to runtime data directory
+# singbox_pidfile (str):	Path to PID file
+#
+
+. /etc/rc.subr
+
+name=singbox
+rcvar=singbox_enable
+
+set_rcvar singbox_configfile "%%PREFIX%%/etc/sing-box.json"
+set_rcvar singbox_dbdir "/var/db/sing-box/" "Path to runtime data directory"
+set_rcvar singbox_pidfile "/var/run/sing-box.pid" "Path to PID file"
+
+load_rc_config $name
+
+command=/usr/sbin/daemon
+actual_command="%%PREFIX%%/bin/sing-box"
+pidfile=${singbox_pidfile}
+command_args="-c -P ${pidfile} ${actual_command} run -D ${singbox_dbdir} -c ${singbox_configfile}"
+
+start_precmd=singbox_startprecmd
+singbox_startprecmd()
+{
+	if [ ! -d ${singbox_dbdir} ]; then
+		install -d ${singbox_dbdir}
+	fi
+}
+
+run_rc_command "$1"

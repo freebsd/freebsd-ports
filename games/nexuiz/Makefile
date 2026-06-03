@@ -1,6 +1,6 @@
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
 		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
@@ -42,8 +42,10 @@ SDL_CLIENT_DESC=Build SDL client
 DEDICATED_DESC=	Build dedicated server
 
 CLIENT_LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
+			libogg.so:audio/libogg \
 			libpng.so:graphics/png \
-			libtheora.so:multimedia/libtheora
+			libtheora.so:multimedia/libtheora \
+			libvorbis.so:audio/libvorbis
 SDL_CLIENT_LIB_DEPENDS=	${CLIENT_LIB_DEPENDS}
 MAPPACK_DISTFILES=	nexmappack_r2${EXTRACT_SUFX}:mappack
 

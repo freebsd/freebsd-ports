@@ -2,10 +2,6 @@ PORTNAME=	kget
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net kde kde-applications
 
-PATCH_SITES=	https://invent.kde.org/network/kget/-/commit/
-PATCHFILES+=	6254c0cefa17fe82f44842bc21f5e5c241f66aec.patch:-p1 # Prep for Qgpgme 2.0.0
-PATCHFILES+=	a9aa30e58ca3281285a3ba64d1da6c22fe0ab31a.patch:-p1 # Prep for Qgpgme 2.0.0
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE download manager
 

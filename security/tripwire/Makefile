@@ -1,6 +1,6 @@
 PORTNAME=	tripwire
 PORTVERSION=	2.4.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
@@ -180,7 +180,11 @@ create-database:
 .endif
 .endif
 
-post-install:	install-config-files create-database make-pkg-install
+install-twtest:
+	@ cd ${WRKSRC}/src/twtest && DESTDIR=${STAGEDIR} ${MAKE_CMD} install
+
+post-install:	install-twtest install-config-files create-database make-pkg-install
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	@ ${RMDIR} ${STAGEDIR}${PREFIX}/man || ${TRUE}
 
 .include <bsd.port.post.mk>

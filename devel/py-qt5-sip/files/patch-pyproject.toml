@@ -3,9 +3,9 @@ with 63.x.
 
 [1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
 
---- pyproject.toml.orig	2024-12-12 10:01:35 UTC
+--- pyproject.toml.orig	2025-10-08 08:47:54 UTC
 +++ pyproject.toml
 @@ -1,2 +1,2 @@
  [build-system]
--requires = ["setuptools >=69.5"]
+-requires = ["setuptools >=75.8.1"]
 +requires = ["setuptools >=63"]

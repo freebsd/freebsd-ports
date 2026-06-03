@@ -1,6 +1,5 @@
 PORTNAME=	pycosat
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.6
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpicosat.so:math/picosat
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext \

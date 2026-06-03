@@ -1,0 +1,18 @@
+OpenUpgrade Framework is a technical module that contains a number
+of monkeypatches to improve the behaviour of Odoo when migrating
+your database using the OpenUpgrade migration scripts:
+
+- Prevent dropping columns or tables in the database when fields
+  or models are obsoleted in the Odoo data model of the target release.
+- When data records are deleted during the migration (such as views or
+  other system records), this is done in a secure mode. If the deletion
+  fails because of some unforeseen dependency, the deletion will be
+  cancelled and a message is logged, after which the migration continues.
+- Prevent a number of log messages that do not apply when using OpenUpgrade.
+- Suppress log messages about failed view validation, which are to be expected
+  during a migration.
+- Run migration scripts for modules that are installed as new dependencies of
+  upgraded modules (when there are such scripts for those particular modules)
+- Production databases generated with demo data, will be transformed to
+  non-demo ones. If you want to avoid that, you have to pass through the
+  environment variable OPENUPGRADE_USE_DEMO, the value "yes".

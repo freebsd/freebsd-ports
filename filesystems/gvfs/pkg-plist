@@ -26,7 +26,7 @@ libexec/gvfsd-metadata
 %%MTP%%libexec/gvfsd-mtp
 libexec/gvfsd-network
 %%NFS%%libexec/gvfsd-nfs
-%%GOA%%libexec/gvfsd-onedrive
+%%ONEDRIVE%%libexec/gvfsd-onedrive
 libexec/gvfsd-recent
 libexec/gvfsd-sftp
 %%SMB%%libexec/gvfsd-smb
@@ -62,7 +62,7 @@ share/glib-2.0/schemas/org.gnome.system.wsdd.gschema.xml
 %%MTP%%%%DATADIR%%/mounts/mtp.mount
 %%DATADIR%%/mounts/network.mount
 %%NFS%%%%DATADIR%%/mounts/nfs.mount
-%%GOA%%%%DATADIR%%/mounts/onedrive.mount
+%%ONEDRIVE%%%%DATADIR%%/mounts/onedrive.mount
 %%DATADIR%%/mounts/recent.mount
 %%DATADIR%%/mounts/sftp.mount
 %%SMB%%%%DATADIR%%/mounts/smb-browse.mount

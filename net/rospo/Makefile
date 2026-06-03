@@ -1,7 +1,7 @@
 PORTNAME=	rospo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
-PORTREVISION=	1
+DISTVERSION=	0.15.3
+PORTREVISION=	4
 CATEGORIES=	net net-vpn sysutils
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/ferama/rospo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 GO_MODULE=	github.com/ferama/rospo
 GO_BUILDFLAGS=	-ldflags="-X github.com/ferama/rospo/cmd.Version=${PKGVERSION} ${STRIP}"
 

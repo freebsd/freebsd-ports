@@ -1,5 +1,5 @@
 PORTNAME=	version_gem
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

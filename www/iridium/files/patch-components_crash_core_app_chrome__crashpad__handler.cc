@@ -1,4 +1,4 @@
---- components/crash/core/app/chrome_crashpad_handler.cc.orig	2025-05-07 06:48:23 UTC
+--- components/crash/core/app/chrome_crashpad_handler.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/crash/core/app/chrome_crashpad_handler.cc
 @@ -6,5 +6,9 @@
  extern "C" int CrashpadHandlerMain(int argc, char* argv[]);

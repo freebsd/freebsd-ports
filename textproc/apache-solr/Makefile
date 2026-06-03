@@ -1,5 +1,6 @@
 PORTNAME=	apache-solr
-PORTVERSION=	9.9.0
+PORTVERSION=	10.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
@@ -16,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cpe java tar:tgz
 CPE_VENDOR=	apache
 CPE_PRODUCT=	solr
-JAVA_VERSION=	11+
+JAVA_VERSION=	21+
 USE_RC_SUBR=	solr
 
 NO_ARCH=	yes
@@ -41,8 +42,8 @@ JTS_RUN_DEPENDS=	jts>0:math/jts
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
+	#${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
+	#${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_DATA} ${WRKSRC}/bin/solr.in.sh ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} '' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
@@ -63,6 +64,8 @@ do-install-JTS-on:
 post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/${CPE_PRODUCT} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/ui/composeResources/com.arkivanov.decompose.extensions_compose.generated.resources" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/ui/composeResources/components.resources.library.generated.resources" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(solr,solr) /var/db/solr" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(solr,solr) /var/log/solr" >> ${TMPPLIST}
 	@${ECHO_CMD} "@sample etc/solr.in.sh.sample" >> ${TMPPLIST}

@@ -1,5 +1,5 @@
 PORTNAME=	latexdiff
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.0
 CATEGORIES=	print perl5
 MASTER_SITES=	https://github.com/ftilmann/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -12,8 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
 USE_PERL5=	run
+
 NO_ARCH=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 .for i in latexdiff-fast latexdiff-so latexdiff-vc latexrevise

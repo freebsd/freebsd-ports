@@ -1,3 +1,1 @@
 .include "${.PARSEDIR}/../llvm-cheri/Makefile.MAN1SRCS"
-
-LLVM_MAN1SRCS:=	${LLVM_MAN1SRCS:Nllvm-debuginfo-analyzer.1:Nllvm-mc.1:Nllvm-opt-report.1:Nllvm-reduce.1:Nllvm-remarkutil.1}

@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-03-31 15:26:37 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ [build-system]
+ # setuptools 77.0.3 is when support for plain text values for `license` key,
+ # used below, is supported.
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -12,8 +12,6 @@ authors = [
+ authors = [
+   { name = "Ryan Dale", email = "ryan.dale@nih.gov" },
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
+ requires-python = ">=3.8"
+ dependencies = [
+   "pyfaidx>=0.5.5.2",

@@ -14,10 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote \
-		sudo:security/sudo
+RUN_DEPENDS=	p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote
 
-USES=		perl5
+USES=		perl5 sudo
 USE_PERL5=	configure
 
 NO_ARCH=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	htmldoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.20
+DISTVERSION=	1.9.23
 CATEGORIES=	textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://michaelrsweet.github.io/htmldoc
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_mips=	complains about expecting ) before png_ptr
 
 LIB_DEPENDS=	libcups.so:print/cups \
 		libpng16.so:graphics/png

@@ -1,7 +1,7 @@
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.0
-PORTREVISION=	11
+DISTVERSION=	0.26.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libonig.so:devel/oniguruma
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		cargo cpe
 CPE_VENDOR=	${PORTNAME}_project

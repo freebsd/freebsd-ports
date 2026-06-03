@@ -1,0 +1,10 @@
+sag is a TTS (text-to-speech) tool that works like macOS's built-in `say`
+command, but uses ElevenLabs for synthesis instead.
+
+Features:
+- Stream to speakers by default
+- List available voices
+- Save audio files
+- Natural language speech synthesis with ElevenLabs
+
+Requires the ElevenLabs API key ELEVENLABS_API_KEY.

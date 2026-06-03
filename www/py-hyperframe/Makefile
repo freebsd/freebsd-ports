@@ -1,18 +1,21 @@
 PORTNAME=	hyperframe
-PORTVERSION=	6.0.0
-PORTREVISION=	1
+PORTVERSION=	6.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	Python module that decodes binary streams into HTTP/2 frames
-WWW=		https://hyper.rtfd.org/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Pure-Python HTTP/2 framing
+WWW=		https://python-hyper.org/projects/hyperframe/en/stable/ \
+		https://github.com/python-hyper/hyperframe
 
 LICENSE=	MIT
 
-USES?=		python
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

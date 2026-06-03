@@ -1,8 +1,10 @@
 PORTNAME=	sequoia-chameleon-gnupg
-DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.1
-PORTREVISION=	1
+PORTREVISION=	9
 CATEGORIES=	security
+MASTER_SITES=	CRATESIO
+# XXX Teach USES=cargo to have proper default
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Reimplementation of gpg using Sequoia
@@ -17,9 +19,6 @@ TEST_DEPENDS=	sq:security/sequoia-sq \
 		gpg2:security/gnupg
 
 USES=	cargo llvm sqlite ssl
-
-USE_GITLAB=	yes
-GL_ACCOUNT=	sequoia-pgp
 
 CARGO_ENV+=	ASSET_OUT_DIR=${CARGO_TARGET_DIR}
 TEST_ENV=	REAL_GPG_BIN=${LOCALBASE}/bin/gpg2 \
@@ -62,4 +61,11 @@ post-install-ZSH-on:
 	${CARGO_TARGET_DIR}/shell-completions/_gpgv-sq.ps1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
+.include <bsd.port.post.mk>

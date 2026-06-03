@@ -11,11 +11,3 @@ Features:
 * Support various dictionary types including file dictionary (such as
   SKK-JISYO.[SML]), user dictionary, skkserv, and CDB format dictionary.
 * GObject based API with gobject-introspection support.
-* Experimental support for intelligent kana-to-kanji conversion based
-  on Viterbi algorithm.
-
-Documentation:
-
-* file:tests/context.c for basic usage
-* http://du-a.org/docs/libskk/libskk/ for Vala binding reference
-* http://du-a.org/docs/gtk-doc/libskk/html/ for C binding reference

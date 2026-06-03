@@ -1,13 +1,38 @@
---- CMakeLists.txt.orig	2020-07-30 13:27:35 UTC
-+++ CMakeLists.txt
-@@ -568,8 +568,8 @@ endif()
- if(ODE_WITH_LIBCCD)
- 	if(ODE_WITH_LIBCCD_SYSTEM)
- 		find_package(ccd)
--		target_compile_definitions(ode PRIVATE -DdLIBCCD_ENABLED -DdLIBCCD_SYSTEM)
--		target_link_libraries(ODE ccd::ccd)
-+		target_compile_definitions(ODE PRIVATE -DdLIBCCD_ENABLED -DdLIBCCD_SYSTEM)
-+		target_link_libraries(ODE ccd)
- 	else()
- 		target_compile_definitions(ODE PRIVATE -DdLIBCCD_ENABLED -DdLIBCCD_INTERNAL)
- 		target_include_directories(
+--- CMakeLists.txt.orig	2025-01-16 14:48:49.000000000 -0800
++++ CMakeLists.txt	2025-11-22 17:13:28.892206000 -0800
+@@ -43,6 +43,7 @@
+ option(ODE_WITH_TESTS "Builds the unit test application." ON)
+ option(ODE_WIN32_LIB_OUTPUT_NAME_BASED_ON_FLOAT_SIZE "The output name of the library will be based on the size of float, on Windows." ON)
+ option(ODE_WIN32_INSTALL_STATIC_LIBS_PDB "Install the PDB files for the static libraries (.lib) on Windows." OFF)
++option(ODE_DOUBLE_PRECISION "Use double-precision math." OFF)
+ 
+ cmake_dependent_option(ODE_WITH_LIBCCD_BOX_CYL "Use libccd for box-cylinder." ON "ODE_WITH_LIBCCD" OFF)
+ cmake_dependent_option(ODE_WITH_LIBCCD_CAP_CYL "Use libccd for capsule-cylinder." ON "ODE_WITH_LIBCCD" OFF)
+@@ -54,12 +55,6 @@
+ cmake_dependent_option(ODE_WITH_LIBCCD_CONVEX_SPHERE "Use libccd for convex-sphere." ON "ODE_WITH_LIBCCD" OFF)
+ cmake_dependent_option(ODE_WITH_LIBCCD_SYSTEM "Use system libccd." OFF "ODE_WITH_LIBCCD" OFF)
+ 
+-if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+-	option(ODE_DOUBLE_PRECISION "Use double-precision math." OFF)
+-else()
+-	option(ODE_DOUBLE_PRECISION "Use double-precision math." ON)
+-endif()
+-
+ set(ODE_WIN32_STATIC_LIB_POSTFIX_DEBUG "sd" CACHE STRING "The postfix to use when building the library as a static .lib on Windows in DEBUG.")
+ set(ODE_WIN32_STATIC_LIB_POSTFIX_MINSIZEREL "s" CACHE STRING "The postfix to use when building the library as a static .lib on Windows in MINSIZEREL.")
+ set(ODE_WIN32_STATIC_LIB_POSTFIX_RELEASE "s" CACHE STRING "The postfix to use when building the library as a static .lib on Windows in RELEASE.")
+@@ -757,12 +752,12 @@
+ 
+ file(RELATIVE_PATH PACKAGE_RELATIVE_PATH "${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig" "${CMAKE_INSTALL_PREFIX}")
+ string(REGEX REPLACE "/$" "" PACKAGE_RELATIVE_PATH "${PACKAGE_RELATIVE_PATH}")
+-set(prefix "\${pcfiledir}/${PACKAGE_RELATIVE_PATH}")
++set(prefix "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "\${prefix}")
+ set(libdir "\${exec_prefix}/${CMAKE_INSTALL_LIBDIR}")
+ set(includedir "\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}")
+ configure_file(ode.pc.in ode.pc @ONLY)
+-set(prefix "\$(cd \"\$(dirname \"\$0\")\"; pwd -P)/..")
++set(prefix "${CMAKE_INSTALL_PREFIX}")
+ configure_file(ode-config.in ode-config @ONLY)
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ode.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig COMPONENT development)

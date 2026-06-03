@@ -1,0 +1,12 @@
+The LangChain Agent Protocol is a framework-agnostic specification for
+serving Large Language Model (LLM) agents in production. It defines
+standardized APIs for executing agents (Runs), managing multi-turn
+interactions (Threads), and handling long-term memory (Store).
+
+The protocol includes a thread-centric streaming layer for observing and
+controlling live agent executions, featuring support for message deltas,
+tool lifecycle events, and human-in-the-loop interactions.
+
+This package provides the Python bindings and server stubs for the
+protocol, enabling developers to build and interact with interoperable
+agentic applications using strongly typed payloads.

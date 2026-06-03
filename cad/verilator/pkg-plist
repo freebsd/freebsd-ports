@@ -77,6 +77,7 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_cov_key.h
 %%DATADIR%%/include/verilated_dpi.cpp
 %%DATADIR%%/include/verilated_dpi.h
+%%DATADIR%%/include/verilated_force.h
 %%DATADIR%%/include/verilated_fst_c.cpp
 %%DATADIR%%/include/verilated_fst_c.h
 %%DATADIR%%/include/verilated_fst_sc.cpp

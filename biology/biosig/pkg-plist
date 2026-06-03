@@ -17,17 +17,6 @@ lib/libbiosig.so
 lib/libbiosig.so.3
 lib/libphysicalunits.a
 libdata/pkgconfig/libbiosig.pc
-share/man/man1/bin2rec.1.gz
-share/man/man1/biosig2gdf.1.gz
-share/man/man1/biosig_fhir.1.gz
-share/man/man1/heka2itx.1.gz
-share/man/man1/mexSLOAD.1.gz
-share/man/man1/physicalunits.1.gz
-share/man/man1/rec2bin.1.gz
-share/man/man1/save2aecg.1.gz
-share/man/man1/save2gdf.1.gz
-share/man/man1/save2scp.1.gz
-share/man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/Contents.m
 %%DATADIR%%/matlab/INDEX
 %%DATADIR%%/matlab/INSTALL
@@ -51,6 +40,7 @@ share/man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/demo/demo9.m
 %%DATADIR%%/matlab/demo/make_cc7.m
 %%DATADIR%%/matlab/demo/scptest.m
+%%DATADIR%%/matlab/demo/select_sweeps.m
 %%DATADIR%%/matlab/demo/simulate_epsp.m
 %%DATADIR%%/matlab/demo/slope_evaluation.m
 %%DATADIR%%/matlab/doc/11073-10102-AnnexB.txt
@@ -232,7 +222,6 @@ share/man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/t400_Classification/Contents.m
 %%DATADIR%%/matlab/t400_Classification/classify.m
 %%DATADIR%%/matlab/t400_Classification/covm.m
-%%DATADIR%%/matlab/t400_Classification/covm_mex.cpp
 %%DATADIR%%/matlab/t400_Classification/decovm.m
 %%DATADIR%%/matlab/t400_Classification/fc0.m
 %%DATADIR%%/matlab/t400_Classification/findclassifier.m
@@ -241,7 +230,6 @@ share/man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/t400_Classification/getclassifier.m
 %%DATADIR%%/matlab/t400_Classification/perm.m
 %%DATADIR%%/matlab/t400_Classification/sumskipnan.m
-%%DATADIR%%/matlab/t400_Classification/sumskipnan_mex.cpp
 %%DATADIR%%/matlab/t400_Classification/test_sc.m
 %%DATADIR%%/matlab/t400_Classification/train_lda_sparse.m
 %%DATADIR%%/matlab/t400_Classification/train_sc.m
@@ -296,8 +284,8 @@ share/man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/t501_VisualizeCoupling/locs_247
 %%DATADIR%%/matlab/t501_VisualizeCoupling/main.m
 %%DATADIR%%/matlab/t501_VisualizeCoupling/mk_sensors_plane.m
+%%DATADIR%%/matlab/t501_VisualizeCoupling/plot_coherence.m
 %%DATADIR%%/matlab/t501_VisualizeCoupling/plot_coherence_dots.m
-%%DATADIR%%/matlab/t501_VisualizeCoupling/plot_coherence_rand.m
 %%DATADIR%%/matlab/t501_VisualizeCoupling/plot_coupling.m
 %%DATADIR%%/matlab/t501_VisualizeCoupling/select_chans.m
 %%DATADIR%%/matlab/t501_VisualizeCoupling/sensor3d2sensor2d.m
@@ -323,3 +311,14 @@ share/man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/viewer/utils/sviewer_fileinfo.fig
 %%DATADIR%%/matlab/viewer/utils/sviewer_fileinfo.m
 %%DATADIR%%/matlab/viewer/viewedf.m
+share/man/man1/bin2rec.1.gz
+share/man/man1/biosig2gdf.1.gz
+share/man/man1/biosig_fhir.1.gz
+share/man/man1/heka2itx.1.gz
+share/man/man1/mexSLOAD.1.gz
+share/man/man1/physicalunits.1.gz
+share/man/man1/rec2bin.1.gz
+share/man/man1/save2aecg.1.gz
+share/man/man1/save2gdf.1.gz
+share/man/man1/save2scp.1.gz
+share/man/man1/sigviewer.1.gz

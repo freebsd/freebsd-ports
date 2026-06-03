@@ -1,6 +1,6 @@
 PORTNAME=	pyelliptic
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/radfish/pyelliptic
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopenssl>=0:security/py-pyopenssl@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

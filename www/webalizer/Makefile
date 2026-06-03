@@ -2,15 +2,16 @@ PORTNAME=	webalizer
 PORTVERSION=	2.23.8
 PORTREVISION=	18
 CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
-		http://flags.blogpotato.de/zip/:flags
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/webalizer/ \
+		https://ftp.dinoex.de/pub/webalizer/ \
+		https://ftp.dinoex.org/pub/webalizer/
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-2.23-08-src
-DISTFILES=	${DISTNAME}.tgz:main
+DISTFILES=	${DISTNAME}.tgz
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	Web server log file analysis program
-WWW=		http://www.mrunix.net/webalizer/
+WWW=		https://webalizer.net/
 
 LICENSE=	GPLv2
 
@@ -68,7 +69,7 @@ IP_AS_HOSTNAME_CFLAGS=		-DUSE_IP_AS_HOSTNAME
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-flags.tgz:main
+DISTFILES+=	webalizer-flags.tgz
 .endif
 
 # slave ports override with languages specific gd

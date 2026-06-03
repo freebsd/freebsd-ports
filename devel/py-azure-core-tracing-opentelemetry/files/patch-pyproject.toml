@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-04-30 23:58:21 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3", "wheel"]
++requires = ["setuptools>=61", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,7 +10,7 @@ requires-python = ">=3.10"
+ description = "Microsoft Azure Core OpenTelemetry plugin Library for Python"
+ keywords = ["azure", "azure sdk"]
+ requires-python = ">=3.10"
+-license = "MIT"
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Programming Language :: Python",

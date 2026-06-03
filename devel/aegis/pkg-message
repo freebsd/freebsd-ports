@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Aegis has been installed.
-
-If you want more development tools, check "devel/cook" and "devel/fhist".
-EOM
-}
-]

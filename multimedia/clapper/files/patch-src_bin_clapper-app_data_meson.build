@@ -1,0 +1,11 @@
+--- src/bin/clapper-app/data/meson.build.orig	2025-12-26 09:26:01 UTC
++++ src/bin/clapper-app/data/meson.build
+@@ -30,7 +30,7 @@ install_subdir('metainfo',
+   install_dir: join_paths(prefix, datadir)
+ )
+
+-is_linux = ['linux'].contains(host_machine.system())
++is_linux = ['linux','freebsd'].contains(host_machine.system())
+ is_windows = ['windows'].contains(host_machine.system())
+
+ if is_linux

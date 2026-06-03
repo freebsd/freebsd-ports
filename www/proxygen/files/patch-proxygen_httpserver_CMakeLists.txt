@@ -1,0 +1,26 @@
+-- Mark proxygen_httpserver_decompression_filter and proxygen_httpserver as
+-- EXCLUDE_FROM_MONOLITH so they build as separate shared libraries
+-- (libproxygen_httpserver.so, libproxygen_httpserver_decompression_filter.so)
+-- instead of INTERFACE targets pointing at the monolithic libproxygen.so.
+-- The monolithic library is created in proxygen/lib/CMakeLists.txt before
+-- httpserver/ is processed, so httpserver object code would otherwise not be
+-- included in any shared library, causing undefined-symbol linker errors in
+-- the sample binaries (proxygen_push, proxygen_echo, proxygen_static, etc.).
+--- proxygen/httpserver/CMakeLists.txt.orig	2026-05-12 20:06:06 UTC
++++ proxygen/httpserver/CMakeLists.txt
+@@ -21,6 +21,7 @@ proxygen_add_library(proxygen_httpserver_decompression
+ )
+ 
+ proxygen_add_library(proxygen_httpserver_decompression_filter
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     filters/DecompressionFilter.cpp
+   DEPS
+@@ -31,6 +32,7 @@ proxygen_add_library(proxygen_httpserver
+ )
+ 
+ proxygen_add_library(proxygen_httpserver
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     HTTPServer.cpp
+     HTTPServerAcceptor.cpp

@@ -1,11 +1,13 @@
---- configure.ac.orig	2023-05-05 08:11:07 UTC
+Can be removed in FreeBSD 15
+
+--- configure.ac.orig	2025-06-24 10:24:24 UTC
 +++ configure.ac
-@@ -46,8 +46,6 @@ AC_CONFIG_HEADER(config.h)
- AC_CHECK_HEADERS([stdatomic.h],,AC_MSG_ERROR([C11 atomic types are not supported]))
- AC_CONFIG_HEADER(config.h)
+@@ -118,6 +118,8 @@ AC_CHECK_FUNC([timegm], [], [AC_MSG_ERROR([timegm() fu
+ # Check for the timegm() function (not part of POSIX / Open Group specs)
+ AC_CHECK_FUNC([timegm], [], [AC_MSG_ERROR([timegm() function not found])])
  
--AC_CHECK_TYPES([errno_t], [], [], [[#include <errno.h>]])
--
- m4_include([src/build_macros.m4])
- BUILD_WITH_SHARED_BUILD_DIR
++AC_CHECK_FUNCS([clearenv])
++
+ # Check for endian headers
+ AC_CHECK_HEADERS([endian.h sys/endian.h byteswap.h])
  

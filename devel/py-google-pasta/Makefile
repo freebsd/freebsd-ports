@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amzo1337@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to refactor python code through AST manipulation
 WWW=		https://github.com/google/pasta
 

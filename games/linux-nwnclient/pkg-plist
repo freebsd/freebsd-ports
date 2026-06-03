@@ -57,9 +57,7 @@ bin/nwn
 %%DIAMOND%%%%DATADIR%%/nwm/XP2_Chapter2.nwm
 %%DIAMOND%%%%DATADIR%%/nwm/XP2_Chapter3.nwm
 %%DATADIR%%/nwmain
-%%NWMOVIES%%%%DATADIR%%/nwmovies.pl
-%%NWMOVIES%%%%DATADIR%%/nwmovies/BinkPlayer
-%%NWMOVIES%%%%DATADIR%%/nwmovies/binklib.so
+%%NWMOVIES%%%%DATADIR%%/nwmovies.sh
 %%NWMOVIES%%%%DATADIR%%/nwmovies/libX11.so
 %%NWMOVIES%%%%DATADIR%%/nwmovies/libdis/libdisasm.so
 %%NWMOVIES%%%%DATADIR%%/nwmovies/nwmovies.so

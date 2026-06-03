@@ -1,6 +1,6 @@
 PORTNAME=	GPy
 DISTVERSION=	1.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,8 @@ COMMENT=	Gaussian process toolbox
 WWW=		https://sheffieldml.github.io/GPy/ \
 		https://github.com/SheffieldML/GPy
 
+BROKEN=		fails to build with NumPy 2.x
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
@@ -17,8 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.3.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramz>=0.9.6:science/py-paramz@${PY_FLAVOR} \

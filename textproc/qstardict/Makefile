@@ -3,7 +3,7 @@ DISTVERSION=	4.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://qstardict.ylsoftware.com/files/
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Qt based dictionary program (stardict clone)
 WWW=		https://qstardict.ylsoftware.com/
 

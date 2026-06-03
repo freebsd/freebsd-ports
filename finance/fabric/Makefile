@@ -1,20 +1,21 @@
 PORTNAME=	fabric
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	6
+DISTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-hyperledger
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Enterprise-grade permissioned distributed ledger framework
-WWW=		https://wiki.hyperledger.org/display/fabric
+WWW=		https://wiki.hyperledger.org/display/fabric \
+		https://github.com/hyperledger/fabric
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # compilation fails on non-64-bit systems: fabric-amcl/core/FP256BN/FP.go:111:19: cannot convert MConst (constant 30564559323915749 of type Chunk) to type int
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc # compilation fails on non-64-bit systems: fabric-amcl/core/FP256BN/FP.go:111:19: cannot convert MConst (constant 30564559323915749 of type Chunk) to type int
 
-USES=		go:1.23,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyperledger
 
@@ -126,6 +127,8 @@ GH_TUPLE=	\
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
+GO_ENV+=	GOTOOLCHAIN=local+path
+
 PROGS=		configtxgen \
 		configtxlator \
 		cryptogen \
@@ -143,5 +146,8 @@ post-extract:
 	@${RLN} ${WRKSRC_moby_sys_sequential}/sequential ${WRKSRC}/vendor/github.com/moby/sys/sequential
 	@${MKDIR} ${WRKSRC}/vendor/github.com/spf13
 	@${RLN} ${WRKSRC_fsnotify_fsnotify} ${WRKSRC}/vendor/github.com/spf13/cast
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^go 1\.26\.0$$|go 1.25.0|' ${WRKSRC}/go.mod
 
 .include <bsd.port.mk>

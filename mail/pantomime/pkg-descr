@@ -1,3 +1,5 @@
 Mail/MIME handling library for GNUstep.
-
-LICENSE: LGPL2 or later
+The Pantomime framework supports the major mail protocols: POP3, IMAP,
+and SMTP.
+Pantomime provides a set of Objective-C classes that model a mail
+system.

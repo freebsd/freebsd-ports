@@ -1,5 +1,5 @@
 PORTNAME=	drf-spectacular-sidecar
-DISTVERSION=	2025.7.1
+DISTVERSION=	2026.5.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj52-
@@ -12,11 +12,14 @@ WWW=		https://github.com/tfranzel/drf-spectacular
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=     Obsolete, please use www/py-drf-spectacular-sidecar instead
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=2.2:www/py-django52@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}

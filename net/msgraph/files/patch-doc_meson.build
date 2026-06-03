@@ -1,0 +1,18 @@
+--- doc/meson.build.orig	2025-01-27 07:09:59 UTC
++++ doc/meson.build
+@@ -14,7 +14,7 @@ msgraph_docs = custom_target(
+ msgraph_docs = custom_target(
+   'msgraph-docs',
+   input: [msg_toml, msgraph_gir[0]],
+-  output: msgraph_basename,
++  output: meson.project_name(),
+   command: [
+     gidocgen,
+     'generate',
+@@ -30,4 +30,4 @@ msgraph_docs = custom_target(
+   build_by_default: true,
+   install: true,
+   install_dir: get_option('datadir') / 'doc',
+-)
+\ No newline at end of file
++)

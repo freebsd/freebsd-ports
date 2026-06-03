@@ -1,0 +1,8 @@
+Maki is an efficient AI coding agent with a native Rust TUI.
+It features immediate startup, 60 FPS performance, and low memory usage.
+
+Maki can:
+- Execute bash commands
+- Edit files
+- Search codebases
+- Run a Python-based sandbox (monty) for complex tasks

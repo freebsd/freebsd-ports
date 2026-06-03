@@ -1,11 +1,20 @@
---- generate.c.orig	2025-01-16 13:10:40 UTC
+--- generate.c.orig	2025-10-20 22:42:33 UTC
 +++ generate.c
-@@ -151,7 +151,7 @@ fatal(const char *s,...)
- {
-     va_list         argptr;
+@@ -422,7 +422,7 @@ expand(const char *src, STACK *pre_param)
+                 {
+                     char           workbuf[48];
  
--    if (infile) fprintf(stderr, "generate: file %s line %ld: ", infile->name, infile->xline);
-+    if (infile) fprintf(stderr, "generate: file %s line %zu: ", infile->name, infile->xline);
-     else fprintf(stderr, "generate: ");
+-                    sprintf(workbuf, "%zu", (unsigned long) strlen(ptr));
++                    sprintf(workbuf, "%zu", strlen(ptr));
+                     dst = MEM_extend(dst, workbuf);
+                     break;
+                 }
+@@ -758,7 +758,7 @@ get_input(void)
  
-     va_start(argptr, s);
+         if (!*xbuf) continue;
+         p = (*xbuf == '!') ? xbuf + 1 : xbuf;
+-        sprintf(cur_line_str, "%zu", (unsigned long) infile->xline);
++        sprintf(cur_line_str, "%zu", infile->xline);
+ 
+         if (*p != '@')
+         {

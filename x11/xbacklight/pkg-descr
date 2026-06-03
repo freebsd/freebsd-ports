@@ -1,2 +1,4 @@
-The xbacklight program adjusts backlight brightness
-using RandR extension.
+Xbacklight is used to adjust the backlight brightness where supported.
+It uses the RandR extension to find all outputs on the X server
+supporting backlight brightness control and changes them all in the
+same way.

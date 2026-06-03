@@ -1,0 +1,3 @@
+QCManyBody provides tools for the many-body expansion and related methods
+used in quantum chemistry, including BIM and MBE schemes for molecular
+clusters.

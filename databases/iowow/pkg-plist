@@ -14,6 +14,7 @@ include/iowow/iwhmap.h
 include/iowow/iwini.h
 include/iowow/iwjson.h
 include/iowow/iwjson_internal.h
+include/iowow/iwjsreg.h
 include/iowow/iwkv.h
 include/iowow/iwlog.h
 include/iowow/iwp.h
@@ -29,6 +30,7 @@ include/iowow/iwutils.h
 include/iowow/iwuuid.h
 include/iowow/iwxstr.h
 include/iowow/murmur3.h
+include/iowow/pthread_spin_lock_shim.h
 include/iowow/utf8proc.h
 include/iowow/wyhash.h
 include/iowow/wyhash32.h
@@ -37,8 +39,8 @@ lib/libiowow.so
 lib/libiowow.so.1
 lib/libiowow.so.%%VERSION%%
 libdata/pkgconfig/libiowow.pc
-share/man/man3/iowow.3.gz
 %%DATADIR%%/iowow-exports-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/iowow-exports.cmake
 %%DATADIR%%/iowow-static-exports-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/iowow-static-exports.cmake
+share/man/man3/iowow.3.gz

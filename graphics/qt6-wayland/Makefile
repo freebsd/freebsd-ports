@@ -1,20 +1,27 @@
 PORTNAME=	wayland
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics wayland
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt6 wrapper for Wayland
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>0:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.8.3:misc/py-spdx-tools@${PY_FLAVOR} \
+		vulkan-headers>=1.4:graphics/vulkan-headers
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++17-lang gl pkgconfig \
-		qt-dist:6
+USES=		cmake compiler:c++17-lang gl pkgconfig python:build qt-dist:6
 USE_GL=		opengl egl
-USE_QT=		base declarative svg
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+USE_QT=		base declarative svg
+
+pre-configure:
+	@(if [ ! -e ${QT_LIBDIR}/libQt6WaylandClient.so ] ; then \
+	${ECHO_MSG} "Error: this module requires devel/qt6-base to be built with the WAYLAND option enabled." ; \
+	exit 1; \
+	fi)
 
 .include <bsd.port.mk>

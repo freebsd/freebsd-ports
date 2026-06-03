@@ -1,5 +1,5 @@
 PORTNAME=	chrony
-DISTVERSION=	4.7
+DISTVERSION=	4.8
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://chrony-project.org/releases/ \

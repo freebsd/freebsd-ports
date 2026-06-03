@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.0.3
+DISTVERSION=	8.8.0
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -15,22 +15,24 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c11 cpe gmake tcl:test
+USES=		compiler:c11 cpe gmake localbase:ldflags pkgconfig tcl:test
 CPE_VENDOR=	redislabs
 USE_RC_SUBR=	redis sentinel
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-LDFLAGS+=	-lpthread -lm -lexecinfo
-PIE_UNSAFE=	ld: error: relocation R_X86_64_32 cannot be used against local \
-		symbol; recompile with -fPIC
+#PIE_UNSAFE=	ld: error: relocation R_X86_64_32 cannot be used against local \
+#		symbol; recompile with -fPIC
 
-CONFLICTS_INSTALL=	redis-devel redis62 redis72 redis74
+CONFLICTS_INSTALL=	redis-devel redis[0-9]*
 
+BINARY_ALIAS=	gmd5sum=md5sum
+PORTSCOUT=	limit:^[0-9\.]*$$
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} \
 		REDIS_DBDIR=${REDIS_DBDIR} \
+		REDIS_GROUP=${GROUPS} \
 		REDIS_LOGDIR=${REDIS_LOGDIR} \
 		REDIS_RUNDIR=${REDIS_RUNDIR} \
 		REDIS_USER=${USERS}
@@ -46,12 +48,18 @@ PLIST_SUB=	REDIS_DBDIR=${REDIS_DBDIR} \
 
 OPTIONS_DEFINE=		JEMALLOC TLS
 OPTIONS_DEFAULT=	TLS
+OPTIONS_GROUP=		MODULES
+OPTIONS_GROUP_MODULES=		REDISBLOOM REDISJSON
 OPTIONS_SUB=		yes
 
 JEMALLOC_DESC=	Use jemalloc
+REDISBLOOM_DESC=	RedisBLOOM module
+REDISJSON_DESC=		RedisJSON module
 TLS_DESC=	Use TLS (openssl req.)
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
+REDISBLOOM_LIB_DEPENDS=		redisbloom.so>=0:databases/redisbloom
+REDISJSON_LIB_DEPENDS=		librejson.so>=0:databases/redisjson
 TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 

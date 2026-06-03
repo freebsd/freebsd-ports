@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signin/enterprise_signin_service.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/enterprise/signin/enterprise_signin_service.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/signin/enterprise_signin_service.h
 @@ -9,7 +9,7 @@
  

@@ -1,0 +1,160 @@
+Build against the stock yajl instead of the bundled copy.
+
+	-mi
+--- ccast/ccast.c	2026-02-09 17:25:54.000000000 -0500
++++ ccast/ccast.c	2026-04-25 23:11:46.141616000 -0400
+@@ -30,8 +30,12 @@
+ #include "conv.h"
+ #include "base64.h"
+-#include "yajl.h"
++#include <yajl/yajl_tree.h>
+ #include "ccpacket.h"
+ #include "ccmes.h"
+ #include "ccast.h"
++
++#define yajl_tree_get_first(parent, key, type) \
++    yajl_tree_get((parent), (const char *[]){ (key), NULL }, (type))
++#define YAJL_GET_STRINGDUP(v) (YAJL_IS_STRING(v) ? strdup((v)->u.string) : NULL)
+ 
+ #undef DEBUG				/* [und] */
+--- ccast/ccmes.c	2026-02-09 17:25:54.000000000 -0500
++++ ccast/ccmes.c	2026-04-25 23:08:23.822112000 -0400
+@@ -37,5 +37,5 @@
+ #endif
+ 
+-#include "yajl.h"
++#include <yajl/yajl_tree.h>
+ #include "conv.h"
+ #include "ccpacket.h"
+@@ -45,4 +45,8 @@
+ #undef LOWVERBTRACE		/* [und] Low verboseness message trace */
+ #undef DEBUG			/* [und] Full message trace + debug */
++
++
++#define yajl_tree_get_first(parent, key, type) \
++    yajl_tree_get((parent), (const char *[]){ (key), NULL }, (type))
+ 
+ /* ------------------------------------------------------------------- */
+--- ccast/dpat.c	2026-02-09 17:25:54.000000000 -0500
++++ ccast/dpat.c	2026-04-25 23:15:25.315648000 -0400
+@@ -48,8 +48,6 @@
+ #include "conv.h"
+ #include "base64.h"
+-#include "yajl.h"
+ #include "ccmdns.h"
+ #include "ccpacket.h"
+-#include "ccmes.h"
+ #include "ccast.h"
+ 
+--- jcnf/jcnf.c	2026-02-09 17:25:31.000000000 -0500
++++ jcnf/jcnf.c	2026-04-25 23:30:25.626608000 -0400
+@@ -48,7 +48,7 @@
+ #include <time.h>
+ 
+-#include "yajl_common.h"
+-#include "yajl_gen.h"
+-#include "yajl_parse.h"
++#include <yajl/yajl_common.h>
++#include <yajl/yajl_gen.h>
++#include <yajl/yajl_parse.h>
+ 
+ #include "jcnf.h"
+@@ -466,5 +466,5 @@
+ }
+ 
+-static int jcnf_yajl_integer(void *ctx, longlong integerVal) {
++static int jcnf_yajl_integer(void *ctx, long long integerVal) {
+ 	jcnf *p = (jcnf *)ctx;
+ 	char *t1;
+@@ -714,17 +714,15 @@
+ 
+ static yajl_callbacks callbacks = {
+-    jcnf_yajl_null,
+-    jcnf_yajl_boolean,
+-    jcnf_yajl_integer,
+-    jcnf_yajl_double,
+-	NULL,				/* number */
+-    jcnf_yajl_string,
+-    jcnf_yajl_c_comment,
+-    jcnf_yajl_cpp_comment,
+-    jcnf_yajl_start_map,
+-    jcnf_yajl_map_key,
+-    jcnf_yajl_end_map,
+-    jcnf_yajl_start_array,
+-    jcnf_yajl_end_array
++    .yajl_null = jcnf_yajl_null,
++    .yajl_boolean = jcnf_yajl_boolean,
++    .yajl_integer = jcnf_yajl_integer,
++    .yajl_double = jcnf_yajl_double,
++    .yajl_number = NULL,
++    .yajl_string = jcnf_yajl_string,
++    .yajl_start_map = jcnf_yajl_start_map,
++    .yajl_map_key = jcnf_yajl_map_key,
++    .yajl_end_map = jcnf_yajl_end_map,
++    .yajl_start_array = jcnf_yajl_start_array,
++    .yajl_end_array = jcnf_yajl_end_array
+ };
+ 
+@@ -960,5 +958,5 @@
+ 			for (cc = dc; *cc != '\000' && *cc != '/'; cc++)
+ 				;
+-			yajl_gen_string(g, dc, cc-dc);
++			yajl_gen_string(g, (const unsigned char *)dc, cc-dc);
+ 			if (*cc != '\000')
+ 				dc = cc + 1;
+@@ -986,5 +984,5 @@
+ 			
+ 			case jc_string:
+-				yajl_gen_string(g, (char *)p->keys[i]->data, p->keys[i]->dataSize-1);
++				yajl_gen_string(g, (const unsigned char *)p->keys[i]->data, p->keys[i]->dataSize-1);
+ 				break;
+ 
+@@ -995,10 +993,4 @@
+ 		}
+ 
+-		if (p->keys[i]->cpp_comment != NULL) {
+-			yajl_gen_cpp_comment(g, p->keys[i]->cpp_comment, strlen(p->keys[i]->cpp_comment));
+-		}
+-		if (p->keys[i]->c_comment != NULL) {
+-			yajl_gen_c_comment(g, p->keys[i]->c_comment, strlen(p->keys[i]->c_comment), 1);
+-		}
+ 
+ #ifdef NEVER
+--- spectro/Jamfile	2026-02-09 17:25:23.000000000 -0500
++++ spectro/Jamfile	2026-04-26 00:56:23.196919000 -0400
+@@ -69,5 +69,5 @@
+ 	# Micro Unix CMM for handling monitor profile association
+ 	CMMHDRS = ../ucmm ;
+-	CMMLIBS = ../ucmm/libucmm ../jcnf/libjcnf ../yajl/libyajl ;
++	CMMLIBS = ../ucmm/libucmm ../jcnf/libjcnf ;
+ }
+ 
+@@ -172,5 +174,5 @@
+            ../rspl/librspl ../cgats/libcgats
+            ../icc/libicc ../plot/libplot ../plot/libvrml
+-		   ../ccast/libccast $(SSLLIB) ../yajl/libyajl
++		   ../ccast/libccast $(SSLLIB)
+            $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIB)
+            ../numlib/libui libconv ../numlib/libnum
+@@ -189,4 +191,5 @@
+ 
+ LINKFLAGS += $(GUILINKFLAGS) ;
++LINKFLAGS += -lyajl ;
+ 
+ # General target reader program
+--- jcnf/Jamfile	2026-02-09 17:25:31.000000000 -0500
++++ jcnf/Jamfile	2026-04-26 01:05:42.007296000 -0400
+@@ -17,11 +17,10 @@
+ #InstallLib  $(DESTDIR)$(PREFIX)/lib : $(Libraries) ;
+ 
+-HDRS = ../yajl ;
+-
+ # config parser based on yajl 
+ Library libjcnf : jcnf.c ;
+ 
+ # Link all utilities here with libicc
+-LINKLIBS = libjcnf ../yajl/libyajl ../numlib/libnum ;
++LINKLIBS = libjcnf ../numlib/libnum ;
++LINKFLAGS += -lyajl ;
+ 
+ # All utils are made from a single source file 

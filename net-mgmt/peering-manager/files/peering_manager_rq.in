@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# This sample rc script starts the RQ worker background service which is
+# required for Webhooks and various automation tasks.
+
+#
+# PROVIDE: peering_manager_rq
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable peering_manager-rq:
+#
+# peering_manager_rq_enable (bool):		Set to NO by default.
+#					Set it to YES to enable peering_manager_rq.
+#
+# peering_manager_rq_user (str):		User to run worker as.
+#										Defaults to www.
+
+. /etc/rc.subr
+
+name=peering_manager_rq
+rcvar=peering_manager_rq_enable
+
+load_rc_config $name
+
+: ${peering_manager_rq_enable:=NO}
+: ${peering_manager_rq_user:=www}
+: ${peering_manager_rq_workers:=1}
+
+start_cmd="peering_manager_rq_start"
+start_precmd="peering_manager_rq_precmd"
+command="%%PYTHON_CMD%%"
+command_args="%%WWWDIR%%/manage.py rqworker"
+_pidprefix="/var/run/%%PORTNAME%%"
+
+peering_manager_rq_precmd()
+{
+	install -d -o ${peering_manager_rq_user} ${_pidprefix}
+}
+
+peering_manager_rq_start()
+{
+	echo "Starting peering_manager_rq."
+	for i in `jot - 1 $peering_manager_rq_workers`; do
+		/usr/sbin/daemon -cf -p ${_pidprefix}/${name}-${i}.pid -u ${peering_manager_rq_user} ${command} ${command_args} --name peering-manager@${i}
+	done
+}
+
+run_rc_command "$1"

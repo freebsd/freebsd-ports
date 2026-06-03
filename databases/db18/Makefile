@@ -1,5 +1,6 @@
 PORTNAME=	db18
 PORTVERSION=	18.1.40
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/yasuhirokimura/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX?=
@@ -8,7 +9,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, Release ${BDBVER}
 WWW=		https://www.oracle.com/database/berkeley-db/
 
@@ -18,8 +19,6 @@ LICENSE_NAME_UPL10=	The Universal Permissive License (UPL), Version 1.0
 LICENSE_FILE_UPL10=	${WRKSRC}/../EXAMPLES-LICENSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS_UPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN_mips64=	no usable MUTEX implementation, assy works only for MIPS32, POSIX mutexes are unshared
 
 USES=		gmake libtool ssl
 USE_LDCONFIG=	yes

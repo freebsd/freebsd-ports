@@ -1,0 +1,18 @@
+--- src/CMakeLists.txt.orig	2025-08-04 16:27:57 UTC
++++ src/CMakeLists.txt
+@@ -13,7 +13,15 @@ add_executable( ${TARGET} )
+ set( CMAKE_ENABLE_EXPORTS ON )
+ 
+ add_executable( ${TARGET} )
++# Handle locale option
++cmd_option(
++   ${_OPT}locale
++   "Native Language Support [on, off]"
++   ON
++)
++if( ${_OPT}locale )
+ add_dependencies( ${TARGET} locale )
++endif()
+ add_dependencies( ${TARGET} nyquist )
+ add_dependencies( ${TARGET} plug-ins )
+ 

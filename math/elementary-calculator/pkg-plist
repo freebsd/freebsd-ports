@@ -30,6 +30,7 @@ share/locale/el/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/en_AU/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/en_CA/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/en_GB/LC_MESSAGES/io.elementary.calculator.mo
+share/locale/en_ZA/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/eo/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/es/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/et/LC_MESSAGES/io.elementary.calculator.mo
@@ -66,6 +67,7 @@ share/locale/mr/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/ms/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/my/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/nb/LC_MESSAGES/io.elementary.calculator.mo
+share/locale/nb_NO/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/nl/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/nn/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/pa/LC_MESSAGES/io.elementary.calculator.mo

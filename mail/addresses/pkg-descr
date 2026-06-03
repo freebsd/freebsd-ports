@@ -1,5 +1,8 @@
- Addresses for GNUstep is a versatile address book application for
+Addresses for GNUstep is a versatile address book application for
 managing contact information. It stores addresses, phone numbers,
 pictures, instant messaging information, email, homepages and whatever.
 
-LICENSE: LGPL2 or later
+Addresses is also a framework that allows access to the addresses
+database in a way that is sourcecode-compatible with Apple's
+AddressBook.framework. It also contains a view framework to facilitate
+the construction of applications that use the contact database.

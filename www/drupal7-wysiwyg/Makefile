@@ -1,8 +1,8 @@
 PORTNAME=	wysiwyg
-DISTVERSION=	7.x-2.9
+DISTVERSION=	7.x-2.10
 CATEGORIES=	www
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 WWW=		https://www.drupal.org/project/wysiwyg
 

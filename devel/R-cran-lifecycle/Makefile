@@ -1,5 +1,5 @@
 PORTNAME=	lifecycle
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,9 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/lifecycle/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-glue>0:devel/R-cran-glue \
-		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
-		R-cran-cli>3.4.0:devel/R-cran-cli
+RUN_DEPENDS=	R-cran-cli>3.4.0:devel/R-cran-cli \
+		R-cran-rlang>=1.1.0:devel/R-cran-rlang
 
 USES=		cran:auto-plist
 

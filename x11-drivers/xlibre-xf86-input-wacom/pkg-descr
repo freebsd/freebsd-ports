@@ -1,0 +1,2 @@
+An XLibre driver for Wacom tablets. It communicates with a character
+device provided by Linux kernel driver in webcamd.

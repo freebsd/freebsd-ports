@@ -1,12 +1,13 @@
 PORTNAME=	dftd4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
+DISTVERSION=	4.2.0
 PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Atomic-charge dependent london dispersion correction computation
-WWW=		https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dftd4/
+WWW=		https://dftd4.readthedocs.io/en/latest/ \
+		https://github.com/dftd4/dftd4
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -26,5 +27,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
+
+# tests as of 4.2.0: 100% tests passed, 0 tests failed out of 6
 
 .include <bsd.port.mk>

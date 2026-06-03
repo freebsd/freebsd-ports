@@ -1,5 +1,6 @@
 PORTNAME=	tlwg-ttf
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/thai-ttf/ \
 		ftp://linux.thai.net/pub/thailinux/software/thai-ttf/
@@ -207,12 +208,12 @@ do-install:
 	@for F in ${INSTALLFONTS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${F} \
 			${FONTDEST}; \
-		${LN} -s ${XFONTS}/$${F} ${FONTLINKS}; \
+		${LN} -s ${PREFIX}/${XFONTS}/$${F} ${FONTLINKS}; \
 	done
 	@for C in ${INSTALLCONFS}; do \
 		${INSTALL_DATA} ${WRKSRC}/${FONTSCONF}/$${C} \
 			${CONFDEST}; \
-		${LN} -s ${FONTSCONF}/$${C} ${CONFLINKS}; \
+		${LN} -s ${PREFIX}/${FONTSCONF}/$${C} ${CONFLINKS}; \
 	done
 
 #	@if [ ${PORT_OPTIONS:MTLW_MO} ]; then \

@@ -1,0 +1,3 @@
+The py-key-value library provides a pluggable interface for key-value stores
+with support for multiple backends, TTL handling, type safety, and extensible
+wrappers.

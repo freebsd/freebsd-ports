@@ -1,6 +1,7 @@
 PORTNAME=	zogftw
 DISTVERSION=	2025-02-23
 DISTVERSIONSUFFIX=	-48a7d58
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.fabiankeil.de/sourcecode/zogftw/
 
@@ -11,11 +12,10 @@ WWW=		https://www.fabiankeil.de/gehacktes/zogftw/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	mbuffer:misc/mbuffer \
-		sudo:security/sudo
-TEST_DEPENDS=	atf-sh:devel/atf \
-		kyua:devel/kyua
+RUN_DEPENDS=	mbuffer:misc/mbuffer
+TEST_DEPENDS=	atf-sh:devel/atf
 
+USES=		sudo
 NO_BUILD=	yes
 PORTSCOUT=	ignore:1
 
@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/zogftw.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-test:
-	${SETENV} HOME=${WRKDIR} ${LOCALBASE}/bin/kyua test --kyuafile ${WRKSRC}/tests/Kyuafile
+	${SETENV} HOME=${WRKDIR} /usr/bin/kyua test --kyuafile ${WRKSRC}/tests/Kyuafile
 
 .include <bsd.port.mk>

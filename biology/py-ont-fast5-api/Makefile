@@ -1,7 +1,7 @@
 PORTNAME=	ont-fast5-api
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	4.0.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libvbz_hdf_plugin.so:archivers/vbz-compression
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.2.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${PY_FLAVOR}

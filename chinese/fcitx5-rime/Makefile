@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-rime
-DISTVERSION=	5.1.10
+DISTVERSION=	5.1.12
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 

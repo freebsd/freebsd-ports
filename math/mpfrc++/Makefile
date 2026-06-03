@@ -1,11 +1,12 @@
 PORTNAME=	mpfrc++
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	3.7.1
+DISTVERSION=	3.7.2
 CATEGORIES=	math devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance C++ interface for MPFR library
-WWW=		http://www.holoborodko.com/pavel/mpfr/
+WWW=		http://www.holoborodko.com/pavel/mpfr/ \
+		https://github.com/advanpix/mpreal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/copying.txt

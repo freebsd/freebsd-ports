@@ -1,16 +1,29 @@
---- content/browser/service_host/utility_sandbox_delegate.cc.orig	2025-04-15 08:30:07 UTC
+--- content/browser/service_host/utility_sandbox_delegate.cc.orig	2026-01-16 13:40:34 UTC
 +++ content/browser/service_host/utility_sandbox_delegate.cc
-@@ -77,7 +77,7 @@ UtilitySandboxedProcessLauncherDelegate::
- #if BUILDFLAG(IS_FUCHSIA)
+@@ -24,7 +24,7 @@
+ #include "sandbox/policy/sandbox_type.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "media/gpu/buildflags.h"
+ #include "media/media_buildflags.h"
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+@@ -72,10 +72,10 @@ UtilitySandboxedProcessLauncherDelegate::
+       sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
+       sandbox_type_ == sandbox::mojom::Sandbox::kCdm ||
+       sandbox_type_ == sandbox::mojom::Sandbox::kPrintCompositor ||
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kVideoCapture ||
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+       sandbox_type_ == sandbox::mojom::Sandbox::kShapeDetection ||
+ #if BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -90,14 +90,14 @@ UtilitySandboxedProcessLauncherDelegate::
- #endif  // BUILDFLAG(ENABLE_CROS_LIBASSISTANT)
+@@ -90,11 +90,11 @@ UtilitySandboxedProcessLauncherDelegate::
+       sandbox_type_ == sandbox::mojom::Sandbox::kNearby ||
  #endif  // BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
@@ -18,35 +31,27 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
        sandbox_type_ == sandbox::mojom::Sandbox::kPrintBackend ||
  #endif
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       sandbox_type_ == sandbox::mojom::Sandbox::kVideoEffects ||
- #endif
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
  #endif
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
-@@ -144,7 +144,7 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
-   // process upon startup.
-   if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
+@@ -151,15 +151,15 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+       sandbox_type_ == sandbox::mojom::Sandbox::kNearby ||
+ #endif  // BUILDFLAG(IS_CHROMEOS)
+       sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+       sandbox_type_ == sandbox::mojom::Sandbox::kShapeDetection ||
+ #endif
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+       sandbox_type_ == sandbox::mojom::Sandbox::kPrintBackend ||
+       sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
+ #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -158,11 +158,11 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
- #endif  // BUILDFLAG(IS_CHROMEOS)
-       sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
- #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
--    BUILDFLAG(IS_WIN)
-+    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-       sandbox_type_ == sandbox::mojom::Sandbox::kPrintBackend ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
- #endif
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       sandbox_type_ == sandbox::mojom::Sandbox::kVideoEffects ||
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
- #endif  // BUILDFLAG(IS_LINUX)
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+       sandbox_type_ == sandbox::mojom::Sandbox::kSpeechRecognition) {

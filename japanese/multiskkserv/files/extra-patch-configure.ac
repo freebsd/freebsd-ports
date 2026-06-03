@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-10-28 08:55:54 UTC
++++ configure.ac
+@@ -118,7 +118,7 @@ else
+       CDB_DIR="$with_cdb"
+       CDB_INCLUDES="-I$with_cdb"
+       available_cdb="yes"
+-      for j in cdb.a buffer.a unix.a byte.a alloc.a; do
++      for j in cdb.a buffer.a unix.a byte.a; do
+         if test -f "$with_cdb/$j"; then
+           LIBADD_CDB="$LIBADD_CDB $with_cdb/$j"
+         else

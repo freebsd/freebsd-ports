@@ -1,5 +1,5 @@
 PORTNAME=	oj-introspect
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/meinac/oj-introspect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-MY_DEPENDS=	rubygem-oj>=3.16.10:devel/rubygem-oj
+MY_DEPENDS=	rubygem-oj-gitlab>=3.16.16:devel/rubygem-oj-gitlab
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 

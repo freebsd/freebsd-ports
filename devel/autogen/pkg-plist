@@ -38,10 +38,12 @@ libdata/pkgconfig/autoopts.pc
 %%DATADIR%%/lgplv2.lic
 %%DATADIR%%/libopts-42.1.17.tar.gz
 %%DATADIR%%/liboptschk.m4
+%%DATADIR%%/man2man
 %%DATADIR%%/man2mdoc
 %%DATADIR%%/man2texi
 %%DATADIR%%/mbsd.lic
 %%DATADIR%%/mdoc2man
+%%DATADIR%%/mdoc2mdoc
 %%DATADIR%%/mdoc2texi
 %%DATADIR%%/optcode.tlib
 %%DATADIR%%/opthead.tlib
@@ -57,6 +59,7 @@ libdata/pkgconfig/autoopts.pc
 %%DATADIR%%/strings.tpl
 %%DATADIR%%/texi2man
 %%DATADIR%%/texi2mdoc
+%%DATADIR%%/texi2texi
 %%DATADIR%%/tpl-config.tlib
 %%DATADIR%%/usage.tlib
 share/man/man1/autogen.1.gz

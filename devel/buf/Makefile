@@ -1,12 +1,12 @@
 PORTNAME=	buf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.1
-PORTREVISION=	8
+DISTVERSION=	1.70.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CLI tool for working with Protocol Buffers
-WWW=		https://buf.build/
+WWW=		https://buf.build/ \
+		https://github.com/bufbuild/buf
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

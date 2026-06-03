@@ -1,0 +1,8 @@
+jsonschema-rs provides a high-performance JSON Schema validator for Python.
+
+Highlights:
+- Full support for popular JSON Schema drafts
+- Remote reference fetching (network/file)
+- Custom keywords and format validators
+- Meta-schema validation for schema documents
+- Schema bundling into Compound Schema Documents

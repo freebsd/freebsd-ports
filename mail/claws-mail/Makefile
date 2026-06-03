@@ -1,5 +1,4 @@
 PORTNAME=	claws-mail
-PORTREVISION=	1
 CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK based e-mail and news client
@@ -23,15 +22,11 @@ CPPFLAGS+=	-DGDK_DISABLE_DEPRECATION_WARNINGS
 
 OPTIONS_DEFINE=		COMPFACE DEBUG DOCS ENCHANT IPV6 LDAP NLS STARTUP \
 			THEMES
-OPTIONS_DEFAULT=	COMPFACE ENCHANT GTK2 STARTUP THEMES
-OPTIONS_RADIO=		BRANCH
-OPTIONS_RADIO_BRANCH=	GTK2 GTK3
+OPTIONS_DEFAULT=	COMPFACE ENCHANT STARTUP THEMES
 OPTIONS_SUB=		yes
 
 COMPFACE_DESC=	X-Face support
 ENCHANT_DESC=	Spell checking support
-GTK2_DESC=	Build GTK2+ release
-GTK3_DESC=	Build GTK3+ release
 STARTUP_DESC=	Startup notification support
 THEMES_DESC=	Additional themes
 
@@ -48,13 +43,14 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 LDAP_USES=		ldap
 LDAP_CONFIGURE_ENABLE=	ldap
 
+NLS_USES=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
+
 STARTUP_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
 STARTUP_CONFIGURE_ENABLE=	startup-notification
 
 THEMES_RUN_DEPENDS=	claws-mail-themes>0:x11-themes/claws-mail-themes
 
-.include <bsd.port.options.mk>
-MASTER_OPTIONS=	${PORT_OPTIONS}
 .include "Makefile.claws"
 
 post-patch:

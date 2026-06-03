@@ -1,10 +1,11 @@
 PORTNAME=	lyra
-DISTVERSION=	1.6.1
+DISTVERSION=	1.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line parser for C++11
-WWW=		https://www.bfgroup.xyz/Lyra/
+WWW=		https://www.bfgroup.xyz/Lyra/ \
+		https://github.com/bfgroup/Lyra
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -19,7 +20,7 @@ GH_PROJECT=	Lyra
 
 NO_ARCH=	yes
 
-do-test: # one test fails: https://github.com/bfgroup/Lyra/issues/57
+do-test: # tests aren't run, see https://github.com/bfgroup/Lyra/issues/114
 	@cd ${WRKSRC}/tests && b2 toolset=clang
 
 .include <bsd.port.mk>

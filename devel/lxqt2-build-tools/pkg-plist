@@ -27,6 +27,7 @@ share/cmake/lxqt2-build-tools/modules/LXQtPreventInSourceBuilds.cmake
 share/cmake/lxqt2-build-tools/modules/LXQtQueryQt.cmake
 share/cmake/lxqt2-build-tools/modules/LXQtTranslate.cmake
 share/cmake/lxqt2-build-tools/modules/LXQtTranslateDesktop.cmake
+share/cmake/lxqt2-build-tools/modules/LXQtTranslateDesktop.sh
 share/cmake/lxqt2-build-tools/modules/LXQtTranslateDesktopYaml.pl
 share/cmake/lxqt2-build-tools/modules/LXQtTranslateTs.cmake
 share/cmake/lxqt2-build-tools/modules/LXQtTranslationLoader.cmake

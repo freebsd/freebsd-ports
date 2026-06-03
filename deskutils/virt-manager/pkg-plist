@@ -210,6 +210,7 @@ share/metainfo/virt-manager.appdata.xml
 %%DATADIR%%/virtinst/devices/memballoon.py
 %%DATADIR%%/virtinst/devices/memory.py
 %%DATADIR%%/virtinst/devices/panic.py
+%%DATADIR%%/virtinst/devices/pstore.py
 %%DATADIR%%/virtinst/devices/redirdev.py
 %%DATADIR%%/virtinst/devices/rng.py
 %%DATADIR%%/virtinst/devices/shmem.py

@@ -1,0 +1,5 @@
+include/accesskit-c-%%API_VER%%/accesskit.h
+lib/libaccesskit-c-%%API_VER%%.so
+lib/libaccesskit-c-%%API_VER%%.so.0
+lib/libaccesskit-c-%%API_VER%%.so.%%API_VER%%.1
+libdata/pkgconfig/accesskit-c-%%API_VER%%.pc

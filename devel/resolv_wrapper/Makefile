@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka \
 		socket_wrapper>=0:devel/socket_wrapper
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing
 
 CMAKE_OFF=	PICKY_DEVELOPER \
 		UNIT_TESTING

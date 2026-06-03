@@ -7,9 +7,9 @@ COMMENT=	Handy timer for steeping tea
 WWW=		https://www.kde.org/
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons crash doctools \
-		i18n iconthemes notifications notifyconfig sonnet textwidgets \
-		widgetsaddons xmlgui \
+USE_KDE=	config coreaddons crash doctools guiaddons \
+		i18n iconthemes notifications notifyconfig \
+		statusnotifieritem textwidgets xmlgui \
 		ecm:build
 USE_QT=		base
 

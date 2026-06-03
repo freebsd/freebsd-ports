@@ -3,6 +3,7 @@
 libexec/overlord/safe-exc.sh
 libexec/overlord/vm-install-from-appjail-image.sh
 libexec/overlord/vm-install-from-components.sh
+libexec/overlord/vm-install-from-pkgbase.sh
 libexec/overlord/vm-start.sh
 libexec/overlord/create.py
 share/man/man1/overlord.1.gz
@@ -82,6 +83,8 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/serve%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/spec%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/spec%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/template%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/template%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/token%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/token%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/watch%%PYTHON_TAG%%.opt-1.pyc
@@ -95,6 +98,7 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/commands/poll.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/serve.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/spec.py
+%%PYTHON_SITELIBDIR%%/overlord/commands/template.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/token.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/watch.py
 %%PYTHON_SITELIBDIR%%/overlord/config.py
@@ -132,3 +136,4 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/util.py
 %%PYTHON_SITELIBDIR%%/overlord/version.py
 %%PYTHON_SITELIBDIR%%/overlord/vm.py
+%%DATADIR%%/files/pkgbase/base.conf

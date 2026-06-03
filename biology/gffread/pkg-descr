@@ -1,2 +1,7 @@
 GFF/GTF utility providing format conversions, filtering, FASTA sequence
-extraction and more.
+extraction and more.  The program gffread can be used to validate,
+filter, convert and perform various other operations on GFF files.
+Because the program shares the same GFF parser code with Cufflinks,
+Stringtie, and gffcompare, it could be used to verify that a GFF file
+from a certain annotation source is correctly "understood" by these
+programs.

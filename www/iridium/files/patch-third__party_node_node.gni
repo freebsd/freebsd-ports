@@ -1,6 +1,6 @@
---- third_party/node/node.gni.orig	2025-05-07 06:48:23 UTC
+--- third_party/node/node.gni.orig	2026-03-24 16:59:08 UTC
 +++ third_party/node/node.gni
-@@ -22,7 +22,7 @@ template("node") {
+@@ -23,7 +23,7 @@ template("node") {
  
      # When use_remoteexec=true, node actions may run on remote
      # Linux worker. So it should include linux node binary in inputs.
@@ -9,21 +9,3 @@
        inputs += [ "//third_party/node/linux/node-linux-x64/bin/node" ]
      }
      if (is_win && host_os == "win") {
-@@ -34,17 +34,6 @@ template("node") {
-       } else {
-         inputs += [ "//third_party/node/mac/node-darwin-x64/bin/node" ]
-       }
--    }
--
--    # Automatically add a dependency to ":check_version" to ensure NodeJS is
--    # always running the expected version, except when the ':check_version'
--    # target itself is running in which case it shouldn't depend on itself.
--    if (get_label_info(":" + target_name, "label_no_toolchain") !=
--        "//third_party/node:check_version") {
--      if (!defined(deps)) {
--        deps = []
--      }
--      deps += [ "//third_party/node:check_version" ]
-     }
-   }
- }

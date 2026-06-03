@@ -1,0 +1,19 @@
+--- j3d-core/src/classes/build.xml.orig	2008-02-28 20:17:18 UTC
++++ j3d-core/src/classes/build.xml
+@@ -95,6 +95,7 @@
+    <javac srcdir="${src}/classes/share:${src}/classes/${wstype}:${jogl.pipeline.srcdir}:${core_utils_src}/classes/share:${build-opt-gen}/classes"            destdir="${build}/${platform}/opt/classes"
+            source="1.5"
+            target="1.5"
++		   fork="yes" memoryMaximumSize="128m"
+            debug="true"
+            debuglevel="lines,source"
+            deprecation="off"
+@@ -318,7 +319,7 @@
+              excludepackagenames="com.sun.j3d.utils.scenegraph.io.retained,
+ 			   com.sun.j3d.exp.swing.impl,
+ 			   com.sun.j3d.utils.scenegraph.io.state.*"
+-             maxmemory="128m"
++             maxmemory="256m"
+              destdir="${build}/${platform}/javadocs/docs-public"
+ 	     bottom="${javadoc.bottom}"
+              windowtitle="${build.javadoc.name} ${version}">

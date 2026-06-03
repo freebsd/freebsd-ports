@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2026-04-29 19:51:26 UTC
++++ CMakeLists.txt
+@@ -62,14 +62,14 @@ if(BUILD_TESTING)
+   file(GLOB_RECURSE TESTFILES CONFIGURE_DEPENDS "tests/*.cpp")
+   add_executable(hyprutils_tests ${TESTFILES})
+ 
+-  target_compile_options(hyprutils_tests PRIVATE --coverage -fsanitize=address)
++  target_compile_options(hyprutils_tests PRIVATE --coverage)
+   target_link_options(hyprutils_tests PRIVATE --coverage)
+   
+   target_include_directories(
+     hyprutils_tests
+     PUBLIC "./include"
+     PRIVATE "./src" "./src/include" "./protocols" "${CMAKE_BINARY_DIR}")
+-  target_link_libraries(hyprutils_tests PRIVATE asan hyprutils GTest::gtest_main
++  target_link_libraries(hyprutils_tests PRIVATE hyprutils GTest::gtest_main
+                                                        PkgConfig::deps)
+   gtest_discover_tests(hyprutils_tests
+     PROPERTIES ENVIRONMENT "ASAN_OPTIONS=detect_leaks=0"

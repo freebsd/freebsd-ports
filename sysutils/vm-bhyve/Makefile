@@ -1,10 +1,9 @@
 PORTNAME=	vm-bhyve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
-PORTREVISION=	1
-CATEGORIES=	sysutils
+DISTVERSION=	1.7.3
+CATEGORIES=		sysutils
 
-MAINTAINER=	driesm@FreeBSD.org
+MAINTAINER=	vm-bhyve@FreeBSD.org
 COMMENT=	Management system for bhyve virtual machines
 WWW=		https://github.com/freebsd/vm-bhyve
 
@@ -32,6 +31,7 @@ TMUX_RUN_DEPENDS=		tmux:sysutils/tmux
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vm ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/vm ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/vm_network ${STAGEDIR}${PREFIX}/etc/rc.d
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vm-bhyve)
 	(cd ${WRKSRC}/sample-templates/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_MAN} ${WRKSRC}/vm.8 ${STAGEDIR}${PREFIX}/share/man/man8

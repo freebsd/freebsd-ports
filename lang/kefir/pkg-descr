@@ -1,0 +1,12 @@
+Kefir is an independent compiler for the C17/C23 programming language,
+developed by Jevgenij Protopopov.  Kefir has been validated with a test
+suite of 80 software projects, among which are GNU core- and binutils,
+Curl, Nginx, OpenSSL, Perl, Postgresql, Tcl and many others.  The
+compiler targets x86_64 architecture and System-V AMD64 ABI, supporting
+Linux, FreeBSD, NetBSD an OpenBSD.  While the primary priority is
+compatibility and compliance, Kefir also features conservative SSA-based
+optimization pipeline, debug information generation,
+position-independent code, and implements bit-identical bootstrap.
+Kefir focuses on C source code translation to assembly, and integrates
+with the rest of system toolchain (assembler, linker, standard library)
+for other tasks.

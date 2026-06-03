@@ -1,6 +1,6 @@
---- chessx.pro.orig	2023-05-08 20:22:12 UTC
+--- chessx.pro.orig	2026-01-29 10:50:39 UTC
 +++ chessx.pro
-@@ -67,18 +67,26 @@ unix|!macx {
+@@ -55,18 +55,26 @@ unix|!macx {
      BINDIR = $$PREFIX/bin
      DATADIR = $$PREFIX/share
  
@@ -31,12 +31,17 @@
 +
      binfiles.files = release/chessx
      binfiles.path = $$BINDIR
- }
-@@ -532,6 +540,7 @@ win32 {
-   INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
-   win32-g++:LIBS += -lz
- }
-+
  
- UI_DIR = src/generated
- MOC_DIR = src/generated
+@@ -609,10 +617,10 @@ PRE_TARGETDEPS += compiler_TSQM_make_all
+ PRE_TARGETDEPS += compiler_TSQM_make_all
+ 
+ # Automatically run lupdate when building
+-updateqm.commands = lupdate $$PWD/$$TARGET.pro && lrelease $$PWD/i18n/*.ts
++updateqm.commands = lupdate-qt5 $$PWD/$$TARGET.pro && lrelease $$PWD/i18n/*.ts
+ QMAKE_EXTRA_TARGETS += updateqm
+ 
+-update_translations.commands = lupdate $$PWD -ts $$TRANSLATIONS
++update_translations.commands = lupdate-qt5 $$PWD -ts $$TRANSLATIONS
+ QMAKE_EXTRA_TARGETS += update_translations
+ PRE_TARGETDEPS += update_translations  # Optional: Run before build
+ 

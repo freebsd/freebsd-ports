@@ -1,7 +1,8 @@
 [
 { type: install
   message: <<EOM
-To use riece, you should add the following line to your .emacs file:
+
+To use riece, add the following line to your Emacs configuration:
 
 (autoload 'riece "riece" "Start Riece" t)
 

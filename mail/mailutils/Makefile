@@ -1,5 +1,5 @@
 PORTNAME=	mailutils
-PORTVERSION=	3.19
+PORTVERSION=	3.21
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
 
@@ -56,8 +56,7 @@ GUILE_CONFIGURE_WITH=	guile
 
 MH_CONFIGURE_ENV=	ac_cv_prog_EMACS=no
 MH_CONFIGURE_ENABLE=	mh
-MH_USES=		emacs:noflavors
-MH_VARS=		EMACS_NO_DEPENDS=yes
+MH_USES=		emacs
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -96,8 +95,6 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/MU_AUTHLIBS=/s,-lldap,-llber &,' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/chown/,+1s|ch|#&|' \
 		${WRKSRC}/dotlock/Makefile.in ${WRKSRC}/mda/mda/Makefile.in
 	@${REINPLACE_CMD} -e 's,-E,& -P,' ${WRKSRC}/libmu_scm/Makefile.in

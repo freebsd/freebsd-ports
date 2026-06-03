@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon-screensaver
-DISTVERSION=	6.4.0
-PORTREVISION=	1
+DISTVERSION=	6.4.1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -18,13 +18,13 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libxdo.so:x11/xdotool
 RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xapp>0:x11/py-python-xapp@${PY_FLAVOR} \
 		${LOCALBASE}/libexec/unix-selfauth-helper:security/unix-selfauth-helper \
 		pidof:sysutils/pidof
 
-USES=		gnome meson pkgconfig python shebangfix xorg localbase:ldflags
+USES=		gnome localbase:ldflags meson pkgconfig python shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
@@ -48,7 +48,7 @@ SETRES_DESC=	Use setresuid/setresgid in the setuid.c helper
 
 LOCKING_MESON_TRUE=	locking
 SETRES_MESON_TRUE=	setres
-XINERAMA_USE=		XORG=xinerama
+XINERAMA_USE=		xorg=xinerama
 XINERAMA_MESON_TRUE=	xinerama
 
 post-patch:

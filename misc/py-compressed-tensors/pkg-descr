@@ -1,0 +1,3 @@
+compressed-tensors is a library for storing and loading compressed
+PyTorch models. It provides a unified format for various compression
+methods including quantization and sparsity.

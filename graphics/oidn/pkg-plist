@@ -18,6 +18,5 @@ lib/libOpenImageDenoise_device_cpu.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/readme.pdf
 %%PORTDOCS%%%%DOCSDIR%%/third-party-programs-DPCPP.txt
-%%PORTDOCS%%%%DOCSDIR%%/third-party-programs-oneDNN.txt
 %%PORTDOCS%%%%DOCSDIR%%/third-party-programs-oneTBB.txt
 %%PORTDOCS%%%%DOCSDIR%%/third-party-programs.txt

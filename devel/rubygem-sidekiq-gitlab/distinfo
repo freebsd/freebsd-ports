@@ -1,3 +1,7 @@
-TIMESTAMP = 1744953470
+TIMESTAMP = 1766936480
 SHA256 (rubygem/sidekiq-7.3.9.gem) = 1108712e1def89002b28e3545d5ae15d4a57ffd4d2c25d97bb1360988826b5a7
 SIZE (rubygem/sidekiq-7.3.9.gem) = 302592
+SHA256 (rubygem/0001-Update-zrange-calls-to-be-Redis-6.0-compatible.patch) = c0c09b0f0e173213533d4dba594499e490dcb71a6c811338b889c4dc8af32091
+SIZE (rubygem/0001-Update-zrange-calls-to-be-Redis-6.0-compatible.patch) = 4291
+SHA256 (rubygem/0003-Add-support-for-configuring-Web-UI-asset-paths.patch) = d97b29e2de88bf5fa20019c8359788e393c72d2f4c9a4c64ce277021973b8fbf
+SIZE (rubygem/0003-Add-support-for-configuring-Web-UI-asset-paths.patch) = 1764

@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2024-01-23 23:51:19 UTC
+--- CMakeLists.txt.orig	2026-03-22 18:12:56 UTC
 +++ CMakeLists.txt
-@@ -11,7 +11,9 @@ cmake_policy(SET CMP0094 NEW)
- cmake_policy(SET CMP0094 NEW)
+@@ -9,7 +9,9 @@ set(PYBIND11_FINDPYTHON ON)
+ set(PYBIND11_FINDPYTHON ON)
  
  # adds the external dependencies
 -add_subdirectory(external)
@@ -11,16 +11,16 @@
  
  pybind11_add_module(python-samplerate src/samplerate.cpp)
  
-@@ -25,7 +27,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
+@@ -23,7 +25,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
  if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
      CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR
      (CMAKE_CXX_COMPILER_ID MATCHES "Intel" AND NOT WIN32))
--    target_compile_options(python-samplerate PRIVATE -std=c++14 -O3 -Wall -Wextra)
-+    target_compile_options(python-samplerate PRIVATE -std=c++14 -Wall -Wextra)
+-    target_compile_options(python-samplerate PRIVATE -std=c++14 -O3 -Wall -Wextra -fPIC)
++    target_compile_options(python-samplerate PRIVATE -std=c++14 -Wall -Wextra -fPIC)
  endif()
  
  ### stick the package and libsamplerate version into the module
-@@ -43,4 +45,9 @@ set_target_properties(
+@@ -41,4 +43,9 @@ set_target_properties(
          LINKER_LANGUAGE C
      )
  

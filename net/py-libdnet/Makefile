@@ -21,7 +21,7 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/dnet${PYTHON_TAG}.so \
 
 LIBDNET_SLAVE=	yes
 
-USE_PYTHON=	cython flavors
+USE_PYTHON=	cython0 flavors
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}
 
 .if defined(MAINTAINER_MODE)

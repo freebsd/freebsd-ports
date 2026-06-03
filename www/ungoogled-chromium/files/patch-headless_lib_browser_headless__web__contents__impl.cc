@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_web_contents_impl.cc.orig	2025-04-15 08:30:07 UTC
+--- headless/lib/browser/headless_web_contents_impl.cc.orig	2026-03-15 18:32:51 UTC
 +++ headless/lib/browser/headless_web_contents_impl.cc
-@@ -70,7 +70,7 @@ BASE_FEATURE(kPrerender2InHeadlessMode,
+@@ -74,7 +74,7 @@ BASE_FEATURE(kPrerender2InHeadlessMode, base::FEATURE_
  namespace {
  
  void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {

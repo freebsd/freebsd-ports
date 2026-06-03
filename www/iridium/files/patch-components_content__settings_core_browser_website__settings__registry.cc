@@ -1,4 +1,4 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2025-05-07 06:48:23 UTC
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/content_settings/core/browser/website_settings_registry.cc
 @@ -66,7 +66,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
  #if BUILDFLAG(IS_WIN)

@@ -1,7 +1,7 @@
 bin/activemq
 bin/activemq-diag
-@owner activemq
-@group activemq
+@owner %%AMQUSER%%
+@group %%AMQGROUP%%
 @sample %%ETCDIR%%/activemq.xml.sample
 @sample %%ETCDIR%%/broker.ks.sample
 @sample %%ETCDIR%%/broker.ts.sample
@@ -9,7 +9,6 @@ bin/activemq-diag
 @sample %%ETCDIR%%/credentials.properties.sample
 @sample %%ETCDIR%%/groups.properties.sample
 @sample %%ETCDIR%%/java.security.sample
-@sample %%ETCDIR%%/jetty-realm.properties.sample
 @sample %%ETCDIR%%/jetty.xml.sample
 @sample %%ETCDIR%%/jmx.access.sample
 @sample %%ETCDIR%%/jmx.password.sample

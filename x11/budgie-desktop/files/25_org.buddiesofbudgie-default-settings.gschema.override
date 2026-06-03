@@ -7,12 +7,12 @@ menu-icon='budgie-menu-symbolic'
 
 [org.gnome.desktop.interface:Budgie]
 cursor-theme='Adwaita'
-gtk-theme='Qogir-Dark'
+gtk-theme='Matcha-sea'
 icon-theme='Tela'
 color-scheme='prefer-dark'
 
 [org.gnome.desktop.wm.preferences:Budgie]
-theme='Qogir-Dark'
+theme='Matcha-sea'
 
 [org.gnome.desktop.screensaver]
 lock-enabled=false
@@ -30,6 +30,3 @@ default-zoom-level='small'
 
 [org.freedesktop.ibus.panel:Budgie]
 show-icon-on-systray=true
-
-[org.gnome.desktop.background:Budgie]
-show-desktop-icons=true

@@ -1,0 +1,2 @@
+ngx_stream_lua_module embeds Lua into the NGINX stream subsystem,
+allowing Lua code to run in TCP and UDP stream processing phases.

@@ -1,7 +1,6 @@
 PORTNAME=	lr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6
-PORTREVISION=	6
+DISTVERSION=	2.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -29,7 +28,6 @@ VIM_DESC=	Vim plugin
 CONTRIB_RUN_DEPENDS=	xe:sysutils/xe
 
 EMACS_USES=	emacs
-EMACS_VARS=	EMACS_NO_DEPENDS=yes
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lr

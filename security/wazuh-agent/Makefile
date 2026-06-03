@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.12.0
+DISTVERSION=	4.14.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/40/libraries/sources/:wazuh_sources
+MASTER_SITES=	https://packages.wazuh.com/deps/51/libraries/sources/:wazuh_sources
 PKGNAMESUFFIX=	-agent
 DISTFILES=	${EXTERNAL_DISTFILES}
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
@@ -15,19 +15,19 @@ WWW=		https://github.com/wazuh/wazuh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
+LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
+		libepoll-shim.so:devel/libepoll-shim
 
 USES=		cmake:indirect cpe gmake perl5 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
-GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh
+GH_ACCOUNT=	alonsobsd
+GH_PROJECT=	wazuh-freebsd
+GH_TAGNAME=	22e254c6366d51a38792163162dd019a45a00c55
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=agent
-
-WAZUH_EXTRAFILE=	alonsobsd-${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME}_GH0${EXTRACT_SUFX}
-WAZUH_EXTRAFILE_TAGNAME=cd0051b
 
 EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
 			curl.tar.gz:wazuh_sources \
@@ -51,7 +51,6 @@ EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
 OPTIONS_DEFAULT=	INOTIFY
 OPTIONS_DEFINE=		INOTIFY PRELUDE ZEROMQ
 
-INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 PRELUDE_LIB_DEPENDS=	libprelude.so:security/libprelude
 ZEROMQ_LIB_DEPENDS=	libczmq.so:net/czmq
 
@@ -61,8 +60,9 @@ ZEROMQ_DESC=	ZeroMQ support
 
 ZEROMQ_MAKE_ENV=	USE_ZEROMQ=yes
 PRELUDE_MAKE_ENV=	USE_PRELUDE=yes
-INOTIFY_MAKE_ENV=	USE_INOTIFY=yes
-INOTIFY_USES=	pkgconfig
+INOTIFY_MAKE_ENV=	USE_INOTIFY=yes \
+			INOTIFY_LIB=${INOTIFY_LIB}
+INOTIFY_USES=	pkgconfig inotify
 
 WAZUH_USER=	wazuh
 WAZUH_GROUP=	wazuh
@@ -90,14 +90,24 @@ WAZUHMOD770=	/etc/shared/default /logs /queue/alerts /queue/fim \
 
 WAZUHPREFIX=	/var/ossec
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+MAKE_ENV+=	OSSL_TARGET=BSD-ppc64
+.elif ${ARCH} == powerpc64le
+MAKE_ENV+=	OSSL_TARGET=BSD-ppc64le
+.elif ${ARCH} == riscv64
+MAKE_ENV+=	OSSL_TARGET=BSD-riscv64
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_MAJOR_VERSION=13
-.elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
+.if ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
 FBSD_MAJOR_VERSION=14
-.elif ${OSVERSION} >= 1500000
+.elif ${OSVERSION} >= 1500000 && ${OSVERSION} < 1600000
 FBSD_MAJOR_VERSION=15
+.elif ${OSVERSION} >= 1600000
+FBSD_MAJOR_VERSION=16
 .else
 IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
@@ -106,10 +116,6 @@ post-extract:
 .for FILE in ${EXTERNAL_DISTFILES}
 	@cd ${WRKSRC}/src/external && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_sources//} ${EXTRACT_AFTER_ARGS}
 .endfor
-	@${MKDIR} ${WRKSRC}/ruleset/sca/freebsd
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_EXTRAFILE} ${EXTRACT_AFTER_ARGS}
-	@${MV} ${WRKDIR}/${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME} ${WRKDIR}/wazuh-freebsd
-	@cd ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/sca && ${CP} *.yml ${WRKSRC}/ruleset/sca/freebsd/
 
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile

@@ -9,8 +9,10 @@ share/locale/an/LC_MESSAGES/sushi.mo
 share/locale/ar/LC_MESSAGES/sushi.mo
 share/locale/as/LC_MESSAGES/sushi.mo
 share/locale/ast/LC_MESSAGES/sushi.mo
+share/locale/az/LC_MESSAGES/sushi.mo
 share/locale/be/LC_MESSAGES/sushi.mo
 share/locale/bg/LC_MESSAGES/sushi.mo
+share/locale/bn/LC_MESSAGES/sushi.mo
 share/locale/bn_IN/LC_MESSAGES/sushi.mo
 share/locale/bs/LC_MESSAGES/sushi.mo
 share/locale/ca/LC_MESSAGES/sushi.mo
@@ -27,6 +29,7 @@ share/locale/et/LC_MESSAGES/sushi.mo
 share/locale/eu/LC_MESSAGES/sushi.mo
 share/locale/fa/LC_MESSAGES/sushi.mo
 share/locale/fi/LC_MESSAGES/sushi.mo
+share/locale/fil/LC_MESSAGES/sushi.mo
 share/locale/fr/LC_MESSAGES/sushi.mo
 share/locale/fur/LC_MESSAGES/sushi.mo
 share/locale/gd/LC_MESSAGES/sushi.mo
@@ -36,6 +39,7 @@ share/locale/he/LC_MESSAGES/sushi.mo
 share/locale/hi/LC_MESSAGES/sushi.mo
 share/locale/hr/LC_MESSAGES/sushi.mo
 share/locale/hu/LC_MESSAGES/sushi.mo
+share/locale/ia/LC_MESSAGES/sushi.mo
 share/locale/id/LC_MESSAGES/sushi.mo
 share/locale/ie/LC_MESSAGES/sushi.mo
 share/locale/is/LC_MESSAGES/sushi.mo
@@ -46,6 +50,7 @@ share/locale/kab/LC_MESSAGES/sushi.mo
 share/locale/kk/LC_MESSAGES/sushi.mo
 share/locale/kn/LC_MESSAGES/sushi.mo
 share/locale/ko/LC_MESSAGES/sushi.mo
+share/locale/kw/LC_MESSAGES/sushi.mo
 share/locale/lt/LC_MESSAGES/sushi.mo
 share/locale/lv/LC_MESSAGES/sushi.mo
 share/locale/mjw/LC_MESSAGES/sushi.mo
@@ -55,6 +60,7 @@ share/locale/ms/LC_MESSAGES/sushi.mo
 share/locale/nb/LC_MESSAGES/sushi.mo
 share/locale/ne/LC_MESSAGES/sushi.mo
 share/locale/nl/LC_MESSAGES/sushi.mo
+share/locale/nn/LC_MESSAGES/sushi.mo
 share/locale/oc/LC_MESSAGES/sushi.mo
 share/locale/or/LC_MESSAGES/sushi.mo
 share/locale/pa/LC_MESSAGES/sushi.mo
@@ -75,12 +81,13 @@ share/locale/th/LC_MESSAGES/sushi.mo
 share/locale/tr/LC_MESSAGES/sushi.mo
 share/locale/ug/LC_MESSAGES/sushi.mo
 share/locale/uk/LC_MESSAGES/sushi.mo
+share/locale/uz/LC_MESSAGES/sushi.mo
 share/locale/uz@cyrillic/LC_MESSAGES/sushi.mo
 share/locale/vi/LC_MESSAGES/sushi.mo
 share/locale/zh_CN/LC_MESSAGES/sushi.mo
 share/locale/zh_HK/LC_MESSAGES/sushi.mo
 share/locale/zh_TW/LC_MESSAGES/sushi.mo
-share/metainfo/org.gnome.NautilusPreviewer.appdata.xml
+share/metainfo/org.gnome.NautilusPreviewer.metainfo.xml
 %%DATADIR%%/gir-1.0/Sushi-1.0.gir
 %%DATADIR%%/gtksourceview-4/styles/builder-dark.style-scheme.xml
 %%DATADIR%%/org.gnome.NautilusPreviewer.data.gresource

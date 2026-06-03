@@ -17,6 +17,13 @@
 #               Set it to the config file location.
 # opensearch_java_home (path): Set to %%JAVA_HOME%% by default.
 #               Set it to the root of the JDK to use.
+# opensearch_flags (): Set to "" by default.
+#               Configure temporary startup flags 
+#               Format: "-Enetwork.host=0.0.0.0 -Ediscovery.type=single-node"
+#               See: docs.opensearch.org/latest/install-and-configure/configuring-opensearch/index/ 
+# opensearch_env (): Set to "" by default.
+#               Configure environment 
+#               Format: "OPENSEARCH_INITIAL_ADMIN_PASSWORD=Secret!Password1"
 #
 . /etc/rc.subr
 
@@ -31,6 +38,8 @@ load_rc_config ${name}
 : ${opensearch_config=%%PREFIX%%/etc/opensearch}
 : ${opensearch_login_class=root}
 : ${opensearch_java_home="%%JAVA_HOME%%"}
+: ${opensearch_flags=""}
+: ${opensearch_env=""}
 
 required_files="${opensearch_config}/opensearch.yml"
 _pidprefix=/var/run/opensearch/opensearch
@@ -45,6 +54,10 @@ command_args="-d --pidfile=${pidfile}"
 
 export OPENSEARCH_PATH_CONF=${opensearch_config}
 export JAVA_HOME=${opensearch_java_home}
+
+if [ -n "${opensearch_env}" ]; then
+    export ${opensearch_env}
+fi
 
 opensearch_precmd()
 {

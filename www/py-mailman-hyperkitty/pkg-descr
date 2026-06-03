@@ -1,0 +1,4 @@
+Mailman archiver plugin for HyperKitty
+
+This module contains a Mailman archiver plugin which sends emails to HyperKitty,
+the web archiver.

@@ -1,0 +1,15 @@
+rdp2tcp is a tunneling tool on top of remote desktop protocol (RDP).
+It uses RDP virtual channel capabilities to multiplex several ports
+forwarding over an already established rdesktop or FreeRDP session.
+
+Available features:
+ - tcp port forwarding
+ - reverse tcp port forwarding
+ - process stdin/out forwarding
+ - SOCKS5 minimal support
+
+The code is splitted into 2 parts:
+ - the client running on the rdesktop or FreeRDP client side
+ - the server running on the Terminal Server side
+
+This port only contains client and tools.

@@ -1,6 +1,6 @@
 bin/archiver
 include/libarchiveqt.h
-lib/libarchiveqt5.a
-lib/libarchiveqt5.so
-lib/libarchiveqt5.so.2
-lib/libarchiveqt5.so.2.0.4
+lib/libarchiveqt6.a
+lib/libarchiveqt6.so
+lib/libarchiveqt6.so.2
+lib/libarchiveqt6.so.2.0.4

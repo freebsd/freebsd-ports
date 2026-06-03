@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Locale/Messages.pm
+%%SITE_PERL%%/Locale/Messages/Debug.pm
 %%SITE_PERL%%/Locale/Recode.pm
 %%SITE_PERL%%/Locale/Recode/_Aliases.pm
 %%SITE_PERL%%/Locale/Recode/_Conversions.pm
@@ -150,6 +151,7 @@
 %%SITE_PERL%%/Locale/libintlFAQ.pod
 %%NLS%%%%SITE_ARCH%%/auto/Locale/gettext_xs/gettext_xs.so
 %%PERL5_MAN3%%/Locale::Messages.3.gz
+%%PERL5_MAN3%%/Locale::Messages::Debug.3.gz
 %%PERL5_MAN3%%/Locale::Recode.3.gz
 %%PERL5_MAN3%%/Locale::Recode::_Aliases.3.gz
 %%PERL5_MAN3%%/Locale::Recode::_Conversions.3.gz

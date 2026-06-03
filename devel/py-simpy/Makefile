@@ -1,6 +1,5 @@
 PORTNAME=	simpy
-PORTVERSION=	3.0.13
-PORTREVISION=	1
+PORTVERSION=	4.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +10,12 @@ WWW=		https://simpy.readthedocs.org/en/latest/
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 OPTIONS_DEFINE=	TKINTER DOCS
 TKINTER_DESC=	py-tkinter for plot

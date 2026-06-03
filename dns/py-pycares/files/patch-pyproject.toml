@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-01-01 12:01:25 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@ requires-python = ">=3.9"
+ description = "Python interface for c-ares"
+ readme = {file = "PYPIREADME.rst", content-type = "text/x-rst"}
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [
+     {name = "Saúl Ibarra Corretgé", email = "s@saghul.net"}
+ ]
+@@ -52,6 +52,8 @@ version = {attr = "pycares._version.__version__"}
+ 
+ [tool.setuptools.dynamic]
+ version = {attr = "pycares._version.__version__"}
++
++[tool.setuptools_scm]
+ 
+ [tool.cibuildwheel]
+ build = "cp3*"

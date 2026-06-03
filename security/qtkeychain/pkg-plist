@@ -10,6 +10,8 @@ lib/libqt%%QT_VER%%keychain.so.1
 %%QT_MKSPECDIR%%/modules/qt_Qt%%QT_VER%%Keychain.pri
 %%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_de.qm
 %%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_fr.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_ka.qm
 %%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_ro.qm
 %%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_ru.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_sv.qm
 %%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_zh.qm

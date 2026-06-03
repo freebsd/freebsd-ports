@@ -1,12 +1,23 @@
---- build.xml.orig	2007-10-28 09:00:18.000000000 +0100
-+++ build.xml	2007-10-28 09:00:37.000000000 +0100
-@@ -184,13 +184,13 @@
+--- build.xml.orig	2007-08-18 09:02:14 UTC
++++ build.xml
+@@ -179,24 +179,33 @@ -->
+           description="Compile shareable components">
+     <javac srcdir      ="${source.home}/java"
+            destdir     ="${build.home}/classes"
++           encoding    ="ISO-8859-1"
++           source      ="8"
++           target      ="8"
+            debug       ="${compile.debug}"
+            deprecation ="${compile.deprecation}"
             optimize    ="${compile.optimize}">
        <classpath refid="compile.classpath"/>
      </javac>
 -    <javac srcdir      ="${source.home}/examples"
 +    <!--javac srcdir      ="${source.home}/examples"
             destdir     ="${build.home}/examples"
++           encoding    ="ISO-8859-1"
++           source      ="8"
++           target      ="8"
             debug       ="${compile.debug}"
             deprecation ="${compile.deprecation}"
             optimize    ="${compile.optimize}">
@@ -16,3 +27,20 @@
    </target>
  
    <target name="compile.tests" depends="compile"
+           description="Compile unit test cases">
+     <javac srcdir      ="${test.home}"
+            destdir     ="${build.home}/tests"
++           encoding    ="ISO-8859-1"
++           source      ="8"
++           target      ="8"
+            debug       ="${compile.debug}"
+            deprecation ="${compile.deprecation}"
+            optimize    ="${compile.optimize}">
+@@ -248,6 +257,7 @@ -->
+              doctitle     ="&lt;h1&gt;${component.title}&lt;/h1&gt;"
+              windowtitle  ="${component.title} (Version ${component.version})"
+              bottom       ="Copyright (c) 1999-2005 - Apache Software Foundation"
++             encoding     ="ISO-8859-1"
+     >
+       <classpath refid="test.classpath"/>
+       <link href="${javadoc.j2sdk.link}"/>

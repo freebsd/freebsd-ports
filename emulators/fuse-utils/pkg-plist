@@ -15,6 +15,9 @@ bin/tape2pulses
 bin/tape2wav
 bin/tapeconv
 bin/tzxlist
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/man/man1/audio2tape.1.gz
 share/man/man1/createhdf.1.gz
 share/man/man1/fmfconv.1.gz
@@ -33,6 +36,3 @@ share/man/man1/tape2pulses.1.gz
 share/man/man1/tape2wav.1.gz
 share/man/man1/tapeconv.1.gz
 share/man/man1/tzxlist.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README

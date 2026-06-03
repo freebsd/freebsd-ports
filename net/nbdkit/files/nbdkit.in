@@ -1,0 +1,136 @@
+#!/bin/sh
+
+# PROVIDE: nbdkit
+# REQUIRE: NETWORKING
+#
+# Configuration settings for nbdkit in /etc/rc.conf:
+#
+# nbdkit_enable (bool):                Enable nbdkit. (default=NO)
+# nbdkit_flags (str):                  Arguments used by all profiles.
+# nbdkit_profiles (list):              Profiles.
+# nbdkit_<profile>_flags (str):        Per profile arguments.
+
+. /etc/rc.subr
+
+name="nbdkit"
+desc="Network Block Device server toolkit with stable ABI and permissive license"
+rcvar="${name}_enable"
+start_precmd="nbdkit_prestart"
+start_cmd="nbdkit_start"
+stop_cmd="nbdkit_stop"
+restart_cmd="nbdkit_restart"
+status_cmd="nbdkit_status"
+nbdkit_bin="%%PREFIX%%/sbin/${name}"
+sig_stop=SIGTERM
+pid_directory="/var/run/${name}"
+
+load_rc_config $name
+
+: ${nbdkit_enable:="NO"}
+
+nbdkit_check_pidfile()
+{
+    local profile
+    profile="$1"
+
+    local pidfile
+    pidfile="${pid_directory}/${profile}.pid"
+
+    local rc_pid
+    rc_pid=$(check_pidfile "${pidfile}" "${nbdkit_bin}")
+
+    echo "${rc_pid}"
+}
+
+nbdkit_prestart()
+{
+    if [ ! -d "${pid_directory}" ]; then
+        mkdir -p -- "${pid_directory}"
+    fi
+}
+
+nbdkit_start()
+{
+    local profile
+    profile="$1"
+
+    local rc_pid
+    rc_pid=$(nbdkit_check_pidfile "${profile}")
+
+    if [ -n "${rc_pid}" ]; then
+        echo 1>&2 "nbdkit profile '${profile}' already running? (pid=${rc_pid})"
+        return 1
+    fi
+
+    startmsg "Starting nbdkit profile '${profile}'."
+
+    local flags
+
+    eval flags="\${nbdkit_${profile}_flags}"
+
+    local pidfile
+    pidfile="${pid_directory}/${profile}.pid"
+
+    eval "${nbdkit_bin}" --pidfile "${pidfile}" ${nbdkit_flags} ${flags}
+}
+
+nbdkit_stop()
+{
+    local profile
+    profile="$1"
+
+    local rc_pid
+    rc_pid=$(nbdkit_check_pidfile "${profile}")
+
+    local pidfile
+    pidfile="${pid_directory}/${profile}.pid"
+
+    if [ -z "${rc_pid}" ]; then
+        echo 1>&2 "nbdkit profile '${profile}' not running? (check ${pidfile})"
+        return 1
+    fi
+
+    echo "Stopping nbdkit profile '${profile}'."
+
+    kill -${sig_stop} "${rc_pid}"
+    wait_for_pids "${rc_pid}"
+}
+
+nbdkit_restart()
+{
+    nbdkit_stop "$1"
+    nbdkit_start "$1"
+}
+
+nbdkit_status()
+{
+    local profile
+    profile="$1"
+
+    local rc_pid
+    rc_pid=$(nbdkit_check_pidfile "${profile}")
+
+    if [ -n "${rc_pid}" ]; then
+        echo "nbdkit profile '${profile}' is running as pid ${rc_pid}"
+    else
+        echo "nbdkit profile '${profile}' is not running."
+    fi
+}
+
+cmd="$1"
+
+if [ $# -gt 0 ]; then
+    shift
+fi
+
+if [ -n "$1" ]; then
+    nbdkit_profiles="$1"
+fi
+
+if [ -z "${nbdkit_profiles}" ]; then
+    warn "No profiles are configured, configure one to make this rc script useful!"
+fi
+
+for profile in ${nbdkit_profiles}; do
+    run_rc_command "${cmd}" "${profile}"
+done

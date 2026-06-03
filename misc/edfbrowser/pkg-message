@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+In version 2.13, the settings are moved from ~/.EDFbrowser/ to
+~/.config/EDFbrowser/.
+EOM
+}
+]

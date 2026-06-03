@@ -12,11 +12,13 @@ share/icons/hicolor/48x48/apps/org.fcitx.Fcitx5.fcitx-chewing.png
 share/locale/ca/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/da/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/de/LC_MESSAGES/fcitx5-chewing.mo
+share/locale/fr/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/he/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/ja/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/ko/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/ru/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/tr/LC_MESSAGES/fcitx5-chewing.mo
+share/locale/vi/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-chewing.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-chewing.mo
 share/metainfo/org.fcitx.Fcitx5.Addon.Chewing.metainfo.xml

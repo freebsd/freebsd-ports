@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2026-02-11 02:10:03 UTC
++++ doc/Makefile.in
+@@ -469,7 +469,7 @@ ITSTOOLWRAPPER = $(abs_top_srcdir)/tools/itstoolwrappe
+ HELP_ID = gnumeric
+ REALITSTOOL = @ITSTOOL@
+ ITSTOOLWRAPPER = $(abs_top_srcdir)/tools/itstoolwrapper
+-HELP_LINGUAS = de es sv
++HELP_LINGUAS = es sv
+ HELP_FILES = gnumeric.xml
+ HELP_EXTRA = \
+ 	gnumeric.xml				\

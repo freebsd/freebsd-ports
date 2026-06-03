@@ -1,0 +1,29 @@
+From: Roland Rosenfeld <roland@debian.org>
+Date: Mon, 12 Jul 2021 13:34:10 +0200
+Forwarded: https://lists.xymon.com/archive/2024-February/048287.html
+Subject: Fix Snapshort and Availability Report on Firefox
+
+Bug-Debian: https://bugs.debian.org/990989
+
+--- web/report.c
++++ web/report.c
+@@ -204,7 +204,7 @@ int main(int argc, char *argv[])
+ 	int argi, newargi;
+ 	char *envarea = NULL;
+ 	char *useragent = NULL;
+-	int usemultipart = 1;
++	int usemultipart = 0;
+ 
+ 	SBUF_MALLOC(outdir, PATH_MAX+1024);
+ 	SBUF_MALLOC(xymonwebenv, PATH_MAX+1024);
+--- web/snapshot.c
++++ web/snapshot.c
+@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
+ 	int argi, newargi;
+ 	char *envarea = NULL;
+ 	char *useragent;
+-	int usemultipart = 1;
++	int usemultipart = 0;
+ 
+ 	SBUF_MALLOC(xymongencmd, 2048+PATH_MAX);
+ 	SBUF_MALLOC(xymonwebenv, 4096);

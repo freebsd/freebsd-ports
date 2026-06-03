@@ -1,9 +1,0 @@
-amazon-qldb-shell provides an interface to send PartiQL statements to
-Amazon Quantum Ledger Database (QLDB).
-
-This tool is not intended to be incorporated into an application or adopted
-for production purposes.
-
-The objective of the tool is to give developers, devops, database
-administrators, and anyone else interested the opportunity for rapid
-experimentation with QLDB and PartiQL.

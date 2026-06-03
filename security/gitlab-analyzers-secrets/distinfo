@@ -1,0 +1,9 @@
+TIMESTAMP = 1763217291
+SHA256 (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/secret-detection-rules-v0.20.1.zip) = a437defac99235166816b9d1b15e673524ea672a81de0fb3089b905a66496e8c
+SIZE (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/secret-detection-rules-v0.20.1.zip) = 78238
+SHA256 (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/start.sh) = 7c651c5fae95d29e9cddfb8df492218378f86789b49c4564eb25cbb97f12297d
+SIZE (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/start.sh) = 2904
+SHA256 (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/go.mod) = 4e33dfef63cada7f5073ccea83c0cd949878d20ce0067966de79f3bb01e79176
+SIZE (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/go.mod) = 2208
+SHA256 (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/secrets-v7.20.1.tar.bz2) = 99fe22f193b02f5a850a95c4a1aa3f2675d5af92ebb0073c780ff2cf573b18dc
+SIZE (go/security_gitlab-analyzers-secrets/secrets-v7.20.1/secrets-v7.20.1.tar.bz2) = 195376

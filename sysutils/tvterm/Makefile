@@ -1,25 +1,25 @@
 PORTNAME=	tvterm
-PORTVERSION=	g20250324
+PORTVERSION=	g20251031
 CATEGORIES=	sysutils
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Terminal emulator powered by Turbo Vision
 WWW=		https://github.com/magiblot/tvterm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libvterm.so:devel/libvterm
+LIB_DEPENDS=	libtvision.so:devel/tvision \
+		libvterm.so:devel/libvterm
 
 USES=		cmake ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magiblot
-GH_PROJECT=	tvision:tv
-GH_SUBDIR=	deps/tvision:tv
-GH_TAGNAME=	feedbf7 d9bc009:tv
+GH_TAGNAME=	8d12913
 
-CMAKE_ON=	TVTERM_USE_SYSTEM_LIBVTERM \
-		BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		TVTERM_USE_SYSTEM_LIBVTERM \
+		TVTERM_USE_SYSTEM_TVISION
 
 .include <bsd.port.mk>

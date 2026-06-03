@@ -1,0 +1,12 @@
+--- crates/service/Cargo.toml.orig	2026-01-30 17:20:31 UTC
++++ crates/service/Cargo.toml
+@@ -4,9 +4,6 @@ version.workspace = true
+ 
+ version.workspace = true
+ 
+-[features]
+-vendored = ["reqwest/native-tls-vendored"]
+-
+ [dependencies]
+ # Crates
+ autopulse-database = { workspace = true }

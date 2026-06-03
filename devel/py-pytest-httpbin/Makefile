@@ -1,15 +1,16 @@
 PORTNAME=	pytest-httpbin
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_httpbin-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Easily test your HTTP library against a local copy of httpbin.org
 WWW=		https://github.com/kevin1024/pytest-httpbin
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}

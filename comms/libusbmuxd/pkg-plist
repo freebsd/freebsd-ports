@@ -5,7 +5,7 @@ include/usbmuxd.h
 lib/libusbmuxd-2.0.a
 lib/libusbmuxd-2.0.so
 lib/libusbmuxd-2.0.so.7
-lib/libusbmuxd-2.0.so.7.0.0
+lib/libusbmuxd-2.0.so.7.0.1
 libdata/pkgconfig/libusbmuxd-2.0.pc
 share/man/man1/inetcat.1.gz
 share/man/man1/iproxy.1.gz

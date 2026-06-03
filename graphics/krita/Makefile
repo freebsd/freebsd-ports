@@ -1,9 +1,11 @@
 PORTNAME=	krita
-DISTVERSION=	5.2.9
-PORTREVISION=	3
+DISTVERSION=	5.2.16
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
+
+PATCH_SITES+=	https://invent.kde.org/graphics/krita/-/commit/
+PATCHFILES+=	cc113e991c90cd612e394b0b670cf035256a94f1.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sketching and painting program
@@ -33,6 +35,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libheif.so:graphics/libheif \
 		libjson-c.so:devel/json-c \
 		libjxl.so:graphics/libjxl \
+		libKF5KDcraw.so:graphics/libkdcraw-qt5 \
 		liblcms2.so:graphics/lcms2 \
 		libmypaint.so:graphics/libmypaint \
 		libopenjp2.so:graphics/openjpeg \
@@ -50,7 +53,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils eigen:3 gettext \
 		sdl shared-mime-info tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	completion config coreaddons crash guiaddons i18n \
-		itemmodels itemviews libkdcraw service widgetsaddons \
+		itemmodels itemviews service widgetsaddons \
 		windowsystem ecm:build
 USE_QT=		concurrent core dbus gui network \
 		printsupport sql svg widgets x11extras xml \

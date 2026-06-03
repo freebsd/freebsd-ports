@@ -1,0 +1,7 @@
+Protovalidate is the semantic validation library for Protobuf. It provides
+standard annotations to validate common rules on messages and fields, as well as
+the ability to use CEL to write custom rules. It's the next generation of
+protoc-gen-validate.
+
+With Protovalidate, you can annotate your Protobuf messages with both standard
+and custom validation rules.

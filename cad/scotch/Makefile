@@ -1,6 +1,6 @@
 PORTNAME=	scotch
 DISTVERSION=	6.0.4-aster7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -28,6 +28,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 TEST_WRKSRC=	${BUILD_WRKSRC}
 ALL_TARGET=	esmumps
 TEST_TARGET=	check
+CFLAGS=		-Wno-implicit-function-declaration
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX} mandir=${STAGEDIR}${PREFIX}/share/man	\
 		-DSCOTCH_PTHREAD_NUMBER=2
 USE_LDCONFIG=	yes

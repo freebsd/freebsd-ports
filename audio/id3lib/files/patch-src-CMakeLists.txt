@@ -1,9 +1,0 @@
---- src/CMakeLists.txt.orig	2024-01-14 15:07:45 UTC
-+++ src/CMakeLists.txt
-@@ -45,5 +45,5 @@ install(FILES ${CMAKE_BINARY_DIR}/id3lib.pc
- configure_file(${CMAKE_SOURCE_DIR}/id3lib.pc.in
-     ${CMAKE_BINARY_DIR}/id3lib.pc @ONLY)
- install(FILES ${CMAKE_BINARY_DIR}/id3lib.pc
--    DESTINATION share/pkgconfig
-+    DESTINATION libdata/pkgconfig
-     PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)

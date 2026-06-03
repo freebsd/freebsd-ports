@@ -1,0 +1,25 @@
+From 35374509096d108c0b1d960e21867c7779532790 Mon Sep 17 00:00:00 2001
+From: FreeBSD Ports <ports@FreeBSD.org>
+Date: Sun, 29 Mar 2026 22:29:33 -0700
+Subject: [PATCH] FreeBSD: add netinet/in.h and sys/socket.h for socket types
+
+---
+ validate/validate.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/validate/validate.h b/validate/validate.h
+index d6cf6c9..37fac5e 100644
+--- a/validate/validate.h
++++ b/validate/validate.h
+@@ -11,6 +11,8 @@
+ 
+ #if !defined(_WIN32)
+ #include <arpa/inet.h>
++#include <netinet/in.h>
++#include <sys/socket.h>
+ #else
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+-- 
+2.53.0
+

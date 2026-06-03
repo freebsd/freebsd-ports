@@ -1,18 +1,11 @@
---- Makefile.orig	2015-09-10 23:58:50.499075000 -0700
-+++ Makefile	2015-09-11 00:01:10.958396000 -0700
-@@ -55,7 +55,14 @@
+--- Makefile.orig	2025-12-11 16:03:19 UTC
++++ Makefile
+@@ -55,7 +55,7 @@ apidoc:
  # Create the API Documentation
  #
  apidoc:
 -	$(JDK)/bin/javadoc -public -classpath src/java/ -quiet -d "doc/us/API" $(DOC_CLASSES)
-+	case $(JDK) in \
-+		*openjdk8*) \
-+			$(JDK)/bin/javadoc -Xdoclint:none -public -classpath src/java/ -quiet -d "doc/us/API" $(DOC_CLASSES) \
-+			;; \
-+		*) \
-+			$(JDK)/bin/javadoc -public -classpath src/java/ -quiet -d "doc/us/API" $(DOC_CLASSES) \
-+			;; \
-+	esac
++	$(JDK)/bin/javadoc -Xdoclint:none -public -classpath src/java/ -quiet -d "doc/us/API" $(DOC_CLASSES)
  
  #
  # Build .c files.

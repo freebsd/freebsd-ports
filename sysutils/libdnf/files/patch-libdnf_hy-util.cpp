@@ -1,6 +1,6 @@
---- libdnf/hy-util.cpp.orig	2020-09-20 22:48:40 UTC
+--- libdnf/hy-util.cpp.orig	2025-10-20 13:41:49 UTC
 +++ libdnf/hy-util.cpp
-@@ -111,10 +111,12 @@ hy_detect_arch(char **arch)
+@@ -127,10 +127,12 @@ hy_detect_arch(char **arch)
          char *modifier = un.machine + 5;
          while(isdigit(*modifier)) /* keep armv7, armv8, armv9, armv10, armv100, ... */
              modifier++;

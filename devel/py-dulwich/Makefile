@@ -1,6 +1,5 @@
 PORTNAME=	dulwich
-PORTVERSION=	0.22.8
-PORTREVISION=	3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,13 +17,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=0:devel/py-setuptools-rust@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.25,1:net/py-urllib3@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=2.2.2,1:net/py-urllib3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastimport>=0:devel/py-fastimport@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}geventhttpclient>=0:devel/py-geventhttpclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=17.1:devel/py-setuptools@${PY_FLAVOR}
 
-USES=		cargo cpe python:3.9+ shebangfix
+USES=		cargo cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 unittest
 
 CARGO_BUILD=	no
@@ -34,12 +33,22 @@ CPE_VENDOR=	dulwich_project
 
 SHEBANG_FILES=	examples/*.py
 
-OPTIONS_DEFINE=	DOCS EXAMPLES FASTIMPORT PARAMIKO
+OPTIONS_DEFINE=	AIOHTTP DOCS EXAMPLES FASTIMPORT HYPOTHESIS PARAMIKO
+AIOHTTP_DESC=	Asynchronous HTTP client/server support
 FASTIMPORT_DESC=Git fastimport support
+HYPOTHESIS_DESC=Hypothesis support
 PARAMIKO_DESC=	SSH2 support
 
+AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR}
 FASTIMPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastimport>=0:devel/py-fastimport@${PY_FLAVOR}
+HYPOTHESIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6:devel/py-hypothesis@${PY_FLAVOR}
 PARAMIKO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6.0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
@@ -52,4 +61,4 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

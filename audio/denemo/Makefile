@@ -10,8 +10,6 @@ WWW=		http://www.denemo.org/
 
 LICENSE=	GPLv3+
 
-BROKEN_mips=	fails to package: tar: Pathname cannot be converted from UTF-8 to current locale
-
 LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \

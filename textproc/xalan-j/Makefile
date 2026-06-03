@@ -1,5 +1,6 @@
 PORTNAME=	xalan-j
 PORTVERSION=	2.7.2
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xalan/xalan-j/binaries
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-bin

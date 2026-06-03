@@ -3,7 +3,7 @@ DISTVERSION=	0.1.0.2
 PORTREVISION=	1
 CATEGORIES=	misc
 
-MAINTAINER=	nsonack@outlook.com
+MAINTAINER=	nsonack@herrhotzenplotz.de
 COMMENT=	Tiny Lambda Calculus interpreter
 WWW=		https://gitlab.com/herrhotzenplotz/tlci
 

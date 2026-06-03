@@ -1,5 +1,5 @@
 PORTNAME=	dry-types
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/dry-rb/dry-types
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-bigdecimal>=3.0<4:math/rubygem-bigdecimal \
+RUN_DEPENDS=	rubygem-bigdecimal>=3.0:math/rubygem-bigdecimal \
 		rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-dry-core>=1.0<2:devel/rubygem-dry-core \
 		rubygem-dry-inflector>=1.0<2:devel/rubygem-dry-inflector \

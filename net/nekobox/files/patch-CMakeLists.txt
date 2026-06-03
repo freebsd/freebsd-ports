@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2026-05-02 21:54:00 UTC
++++ CMakeLists.txt
+@@ -345,10 +345,16 @@ if(NOT ACL_LIB)
+ find_library(ACL_LIB acl)
+ 
+ if(NOT ACL_LIB)
+-    message(FATAL_ERROR "libacl not found. Install libacl-devel.")
++    if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++        message(FATAL_ERROR "libacl not found. Install libacl-devel.")
++    else()
++        message(STATUS "libacl not found on FreeBSD, continuing without it")
++    endif()
+ endif()
+ 
+-target_link_libraries(nekobox PRIVATE ${ACL_LIB})
++if(ACL_LIB)
++    target_link_libraries(nekobox PRIVATE ${ACL_LIB})
++endif()
+ endif()
+ 
+ # Target Link
+@@ -426,7 +432,9 @@ if (UNIX)
+ download_srslist()
+ 
+-remove_rpath(nekobox)
++if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    remove_rpath(nekobox)
++endif()
+ 
+ set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")

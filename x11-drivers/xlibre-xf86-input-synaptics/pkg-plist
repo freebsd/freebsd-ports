@@ -1,0 +1,8 @@
+bin/synclient
+bin/syndaemon
+include/xorg/synaptics-properties.h
+%%MODULEDIR%%/input/synaptics_drv.so
+share/man/man1/synclient.1.gz
+share/man/man1/syndaemon.1.gz
+share/man/man4/synaptics.4x.gz
+share/X11/xorg.conf.d/70-synaptics.conf

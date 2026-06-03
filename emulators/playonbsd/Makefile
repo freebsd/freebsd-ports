@@ -1,6 +1,6 @@
 PORTNAME=	playonbsd
 PORTVERSION=	4.2.10
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	emulators games
 
 MAINTAINER=	Clockwork6400@protonmail.com
@@ -18,12 +18,11 @@ RUN_DEPENDS=	7z:archivers/7-zip \
 		gsed:textproc/gsed \
 		icotool:graphics/icoutils \
 		jq:textproc/jq \
-		sudo:security/sudo \
 		wget:ftp/wget \
 		xdg-open:devel/xdg-utils \
 		xterm:x11/xterm
 
-USES=		perl5 python:run shebangfix
+USES=		perl5 python:run shebangfix sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Clockwork6400
 GH_PROJECT=	POL-FreeBSD-4
@@ -31,6 +30,11 @@ USE_WX=		3.2
 WX_COMPS=	python:run
 SHEBANG_FILES=	bash/expert/* lib/*
 SHEBANG_GLOB=	*.py
+
+EXTRACT_AFTER_ARGS=	--exclude \
+			${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/python/*__pycache__* \
+			--no-same-owner --no-same-permissions
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		GECKO MONO NLS

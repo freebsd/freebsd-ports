@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Before starting forgejo for the first time, you must set a number of
+secrets in the configuration file. For your convenience, a sample file
+has been copied to %%PREFIX%%/etc/forgejo/conf/app.ini.
+
+You need to replace every occurence of CHANGE_ME in the file with
+sensible values. Please refer to the official documentation at
+https://forgejo.org for details.
+
+You will also likely need to create directories for persistent storage.
+Run
+    su -m git -c 'forgejo doctor check'
+to check if all prerequisites have been met.
+EOM
+}
+]

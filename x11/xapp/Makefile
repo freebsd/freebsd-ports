@@ -1,6 +1,5 @@
 PORTNAME=	xapp
-DISTVERSION=	2.8.9
-PORTREVISION=	1
+DISTVERSION=	3.2.2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -12,7 +11,8 @@ LICENSE=	LGPL3
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		xapp-symbolic-icons>0:x11-themes/xapp-symbolic-icons
 
 USES=		gettext-tools gnome meson pkgconfig python shebangfix xorg
 USE_GITHUB=	yes
@@ -24,10 +24,9 @@ GLIB_SCHEMAS=	org.x.apps.gschema.xml
 SHEBANG_FILES=	data schemas scripts status-applets test-scripts
 
 PLIST_SUB+=	LIBVERSION=${PORTVERSION}
+MESON_ARGS=	"-Dpython_target=['${PYTHON_VERSION}']"
 
 PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
-
-BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		DOCS INTROSPECTION MATE STATUS VAPI XFCE
 OPTIONS_DEFAULT=	INTROSPECTION MATE STATUS VAPI XFCE
@@ -46,7 +45,6 @@ MATE_MESON_TRUE=	mate
 STATUS_DESC=		Build the XApp StatusNotifier service
 STATUS_MESON_TRUE=	status-notifier
 
-VAPI_DESC=		Enable Vala bindings
 VAPI_MESON_TRUE=	vapi
 VAPI_USES=		vala:build
 VAPI_IMPLIES=		INTROSPECTION

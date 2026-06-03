@@ -8,6 +8,7 @@ bin/ff-pkg-download
 bin/ffglut
 bin/ffmaster
 bin/ffmedit
+bin/md2edp
 lib/ff++/%%VER%%/bin/ff-get-dep
 lib/ff++/%%VER%%/bin/ff-pkg-download
 lib/ff++/%%VER%%/%%ETCDIR%%.pref
@@ -120,7 +121,6 @@ lib/ff++/%%VER%%/include/endian.hpp
 lib/ff++/%%VER%%/include/environment.hpp
 lib/ff++/%%VER%%/include/error.hpp
 lib/ff++/%%VER%%/include/fem.hpp
-lib/ff++/%%VER%%/include/fem3.hpp
 lib/ff++/%%VER%%/include/ff++.hpp
 lib/ff++/%%VER%%/include/ffapi.hpp
 lib/ff++/%%VER%%/include/ffstack.hpp

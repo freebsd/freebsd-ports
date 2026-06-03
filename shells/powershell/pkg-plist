@@ -390,6 +390,7 @@ lib/powershell/pwsh.dll
 lib/powershell/pwsh.pdb
 lib/powershell/pwsh.runtimeconfig.json
 lib/powershell/pwsh.xml
+lib/powershell/ref
 lib/powershell/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/powershell/ru/Microsoft.CodeAnalysis.resources.dll
 lib/powershell/ru/System.Private.ServiceModel.resources.dll

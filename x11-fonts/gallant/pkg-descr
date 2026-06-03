@@ -1,0 +1,19 @@
+This is the Gallant font, as used by the Sun Microsystems SPARCstation
+console, extended with glyphs for many Unicode blocks. It is a raster
+font with a 22x12 pixel character cell, descent 5 and ascent 17.
+
+This project currently provides more than 4500 glyphs. Major additions:
+
+* Greek
+* Cyrillic
+* International Phonetic Association Extensions
+* Extended Latin characters
+* Zapf Dingbats
+* Tons of arrows
+* Tons of mathematical symbols
+* Letter-like symbols and enclosed alphanumerics
+* Pixel-perfect box drawing
+* Currency symbols
+* More punctuation
+* Just enough Katakana to say KO N NI CHI HA
+* Powerline glyphs in the Private Use Area at U+e0a0

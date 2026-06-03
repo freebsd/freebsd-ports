@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2026-03-22 17:56:38 UTC
++++ CMakeLists.txt
+@@ -375,7 +375,7 @@ endif ()
+     endif ()
+ endif ()
+ 
+-if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+     find_package(PkgConfig REQUIRED)
+ 
+     if (CMAKE_VERSION VERSION_LESS "3.1")
+@@ -583,7 +583,7 @@ set(Boost_NO_SYSTEM_PATHS TRUE)
+   cmake_policy(SET CMP0167 NEW)
+ endif()
+ set(Boost_NO_SYSTEM_PATHS TRUE)
+-find_package(Boost 1.83.0 REQUIRED COMPONENTS system filesystem thread log log_setup locale regex chrono atomic date_time iostreams program_options nowide)
++find_package(Boost 1.83.0 REQUIRED COMPONENTS filesystem thread log log_setup locale regex chrono atomic date_time iostreams program_options nowide)
+ 
+ add_library(boost_libs INTERFACE)
+ add_library(boost_headeronly INTERFACE)

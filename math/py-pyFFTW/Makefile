@@ -1,6 +1,6 @@
 PORTNAME=	pyFFTW
 DISTVERSION=	0.15.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ WWW=		https://hgomersall.github.io/pyFFTW/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask>=1.0.0:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.2.0:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python localbase:ldflags
-USE_PYTHON=	autoplist cython3 distutils pytest # tests fail with "attempted relative import with no known parent package", see https://github.com/pyFFTW/pyFFTW/issues/405
+USE_PYTHON=	autoplist cython distutils pytest # tests fail with "attempted relative import with no known parent package", see https://github.com/pyFFTW/pyFFTW/issues/405
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests

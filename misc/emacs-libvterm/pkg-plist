@@ -1,0 +1,5 @@
+%%EMACS_SITE_LISPDIR%%/etc/emacs-vterm-bash.sh
+%%EMACS_SITE_LISPDIR%%/etc/emacs-vterm-zsh.sh
+%%EMACS_SITE_LISPDIR%%/etc/emacs-vterm.fish
+%%EMACS_SITE_LISPDIR%%/vterm/vterm-module.so
+%%EMACS_SITE_LISPDIR%%/vterm/vterm.el

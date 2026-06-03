@@ -1,0 +1,5 @@
+Kanbanapp is a simple desktop program written with Qt that allows one to
+organize notes (cards) in lists, similar to a Kanban board.
+
+It is an offline system as it saves files on the computer in JSON format
+which integrates nicely with version control systems.

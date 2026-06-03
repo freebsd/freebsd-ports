@@ -1,0 +1,5 @@
+include/c-stdaux-generic.h
+include/c-stdaux-gnuc.h
+include/c-stdaux-unix.h
+include/c-stdaux.h
+libdata/pkgconfig/libcstdaux-1.pc

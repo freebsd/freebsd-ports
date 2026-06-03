@@ -6,6 +6,7 @@ operator:*:5:amanda
 mail:*:6:postfix,clamav
 ftp:*:14:
 smmsp:*:25:
+audio:*:43:
 video:*:44:lightdm
 bind:*:53:
 rdfdb:*:55:
@@ -313,24 +314,24 @@ neo4j:*:369:
 _wsdd:*:370:
 reposilite:*:371:
 beam:*:372:
-# free: 373
-# free: 374
-# free: 375
-# free: 376
+mautrix-whatsapp:*:373:
+traccar:*:374:
+unpackerr:*:375:
+athens:*:376:
 hostd:*:377:
 walletd:*:378:
 renterd:*:379:
 spoofdpi:*:380:
 hydroxide:*:381:
 _tlsrpt:*:382:
-# free: 383
-# free: 384
-# free: 385
-# free: 386
-# free: 387
-# free: 388
+cascade:*:383:
+omada:*:384:
+mtail:*:385:
+zoraxy:*:386:
+goimapnotify:*:387:
+autopulse:*:388:
 ldap:*:389:
-# free: 390
+bunkerweb:*:390:
 # free: 391
 # free: 392
 # free: 393
@@ -340,7 +341,7 @@ ldap:*:389:
 rtorrent:*:397:
 tiarra:*:398:
 # free: 399
-# free: 400
+evcc:*:400:
 # free: 401
 # free: 402
 # free: 403
@@ -371,7 +372,7 @@ drweb:*:426:
 # free: 428
 varnish:*:429:
 # free: 430
-# free: 431
+vinyl:*:431:
 # free: 432
 # free: 433
 # free: 434
@@ -423,8 +424,8 @@ alertmanager:*:479:
 datadog:*:480:
 promxy:*:481:
 openbao:*:482:
-# free: 483
-# free: 484
+garage:*:483:
+stalwart:*:484:
 # free: 485
 # free: 486
 # free: 487
@@ -490,7 +491,7 @@ ejabberd:*:543:
 # free: 547
 # free: 548
 # free: 549
-# free: 550
+grist:*:550:
 # free: 551
 kresd:*:552:
 knot:*:553:
@@ -512,7 +513,7 @@ polkitd:*:565:
 # free: 568
 # free: 569
 # free: 570
-# free: 571
+ttrssd:*:571:
 # free: 572
 # free: 573
 # free: 574
@@ -779,7 +780,7 @@ pocket-id:*:834:
 filebrowser:*:835:
 tinyauth:*:836:
 homebox:*:837:
-# free: 838
+opksshuser:*:838:
 shiori:*:839:
 netdisco:*:840:
 tcpcryptd:*:841:
@@ -797,8 +798,8 @@ p0f:*:852:
 _geodns:*:853:
 ebusd:*:854:
 opensearch:*:855:
-# free: 856
-# free: 857
+lubelogger:*:856:
+kanidmd:*:857:
 umurmur:*:858:
 kanidm:*:859:
 plocate:*:860:

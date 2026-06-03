@@ -1,5 +1,5 @@
 PORTNAME=	raylib
-DISTVERSION=	5.5
+DISTVERSION=	6.0
 CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -9,20 +9,16 @@ WWW=		https://www.raylib.com/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# https://bugs.freebsd.org/279369
-BROKEN_armv7=	fails to build: error: implicit declaration of function 'vld1q_f16' is invalid in C99
-
-LIB_DEPENDS=	libglfw.so:graphics/glfw
-
-USES=		cmake gl localbase:ldflags xorg
+USES=		cmake localbase:ldflags sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	raysan5
-USE_GL=		glu opengl
 USE_LDCONFIG=	yes
+USE_SDL=	sdl3
 USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr xxf86vm
 
-CMAKE_ON=	BUILD_SHARED_LIBS USE_EXTERNAL_GLFW
-CMAKE_OFF=	BUILD_EXAMPLES BUILD_GAMES STATIC
+CMAKE_ARGS=	-DPLATFORM=SDL
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_EXAMPLES
 
 post-install:
 # Install all parts for raylib

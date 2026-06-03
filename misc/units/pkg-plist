@@ -13,3 +13,5 @@ lib/cmake/units/unitsConfigVersion.cmake
 lib/cmake/units/unitsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/units/unitsTargets.cmake
 lib/libunits.so
+lib/libunits.so.0
+lib/libunits.so.0.13.1

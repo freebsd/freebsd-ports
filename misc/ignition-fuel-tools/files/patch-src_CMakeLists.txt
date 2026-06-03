@@ -1,11 +1,25 @@
---- src/CMakeLists.txt.orig	2018-11-20 20:11:32 UTC
+-- Replace deprecated ign_add_library() with ign_create_core_library()
+-- because ignition-cmake2 now treats ign_add_library() as a hard error.
+-- No upstream issue reference found.
+--- src/CMakeLists.txt.orig	2026-05-18 05:23:45 UTC
 +++ src/CMakeLists.txt
-@@ -61,7 +61,7 @@ ign_install_library()
+@@ -35,10 +35,9 @@ endif()
+ endif()
+ 
+ # Create the library target.
+-ign_add_library(${PROJECT_LIBRARY_TARGET_NAME} ${sources})
++ign_create_core_library(SOURCES ${sources} CXX_STANDARD 11)
+ 
+ # Turn on C++11 support for the library.
+-ign_set_project_public_cxx_standard(11)
+ 
+ # Link the libraries that we always need.
+ target_link_libraries(${PROJECT_LIBRARY_TARGET_NAME}
+@@ -56,7 +55,6 @@ ign_target_interface_include_directories(${PROJECT_LIB
+ 
+ # Create installation instructions for the library target. This must be called
+ # in the same scope that the target is created.
+-ign_install_library()
+ 
  # Build the unit tests.
  ign_build_tests(TYPE UNIT
-                 SOURCES ${gtest_sources}
--                LIB_DEPS ignition-common1::ignition-common1
-+                LIB_DEPS ignition-common3::ignition-common3
- )
- 
- # Command line support.

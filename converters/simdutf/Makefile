@@ -1,6 +1,6 @@
 PORTNAME=	simdutf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.3.3
+DISTVERSION=	9.0.0
 CATEGORIES=	converters textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -35,5 +35,7 @@ ICONV_USES=	iconv
 ICONV_CMAKE_BOOL=	SIMDUTF_ICONV
 
 TOOLS_CMAKE_BOOL=	SIMDUTF_TOOLS
+
+CXXFLAGS_powerpc64=	-mpower8-vector
 
 .include <bsd.port.mk>

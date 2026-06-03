@@ -7,18 +7,19 @@ bin/declone
 bin/extract_d3pkg
 bin/extract_dfqshared.pm
 bin/extract_dxhog
-bin/extract_f3pod
 bin/extract_qupak
 bin/fxterm
 bin/gh-trim-workflowruns
 bin/git-author-stat
 bin/git-blame-stats
 bin/git-forest
+bin/git-logsortbychgsize
 bin/git-revert-stats
 bin/git-track
 bin/gpsh
 bin/gxxdm
 bin/hcdplay
+bin/make_qupak
 bin/man2html
 bin/mkvappend
 bin/mod2opus
@@ -34,6 +35,7 @@ bin/qpdecode
 bin/qplay
 bin/qtar
 bin/rot13
+bin/selective-preprocess
 bin/spec-beautifier
 bin/ssa2srt
 bin/su1
@@ -64,9 +66,11 @@ libexec/hxtools/vcsaview
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/git-deconstruct
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc4
 %%DATADIR%%/amber.theme
+%%DATADIR%%/breeze.theme
 %%DATADIR%%/gdbearlyinit
 %%DATADIR%%/gdbinit
 %%DATADIR%%/gitconfig
+%%DATADIR%%/gnome.theme
 %%DATADIR%%/hxloginpref.conf
 %%DATADIR%%/hxtools_bashrc.bash
 %%DATADIR%%/hxtools_dircolors
@@ -76,6 +80,8 @@ libexec/hxtools/vcsaview
 %%DATADIR%%/neon.theme
 %%DATADIR%%/rfc2307bis-utf8.schema
 %%DATADIR%%/ru-phonde.mim
+%%DATADIR%%/solarized.theme
+%%DATADIR%%/tango.theme
 %%DATADIR%%/vga.theme
 %%DATADIR%%/white.theme
 share/kbd/consolefonts/A1.fnt
@@ -135,4 +141,3 @@ share/man/man7/hxtools.7.gz
 share/man/man8/hxnetload.8.gz
 share/man/man8/logontime.8.gz
 share/man/man8/vcsaview.8.gz
-share/man/man8/xfs_irecover.8.gz

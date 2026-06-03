@@ -10,6 +10,7 @@ bin/scan-perl-prereqs-nqlite
 %%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/ClassAutouse.pm
 %%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/ClassLoad.pm
 %%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/Core.pm
+%%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/FeatureCompatClass.pm
 %%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/Inline.pm
 %%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/KeywordDeclare.pm
 %%SITE_PERL%%/Perl/PrereqScanner/NotQuiteLite/Parser/Later.pm
@@ -48,6 +49,7 @@ bin/scan-perl-prereqs-nqlite
 %%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::ClassAutouse.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::ClassLoad.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::Core.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::FeatureCompatClass.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::Inline.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::KeywordDeclare.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::NotQuiteLite::Parser::Later.3.gz

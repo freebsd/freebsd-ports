@@ -18,6 +18,7 @@ lib/cloudcompare/libQCC_IO_LIB.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQHPR_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQM3C2_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQPCV_PLUGIN.so
+%%PLUGINS%%lib/cloudcompare/plugins/libQPDAL_IO_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQPHOTOSCAN_IO_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQRANSAC_SD_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQSRA_PLUGIN.so
@@ -30,6 +31,9 @@ share/applications/cloudcompare.desktop
 %%DATADIR%%/shaders/Bilateral/bilateral.frag
 %%DATADIR%%/shaders/Bilateral/bilateral.vert
 %%DATADIR%%/shaders/ColorRamp/color_ramp.frag
+%%DATADIR%%/shaders/DrawNormals/DrawNormals.fs
+%%DATADIR%%/shaders/DrawNormals/DrawNormals.gs
+%%DATADIR%%/shaders/DrawNormals/DrawNormals.vs
 %%PLUGINS%%%%DATADIR%%/shaders/EDL/edl_mix.frag
 %%PLUGINS%%%%DATADIR%%/shaders/EDL/edl_mix.vert
 %%PLUGINS%%%%DATADIR%%/shaders/EDL/edl_shade.frag
@@ -41,7 +45,7 @@ share/applications/cloudcompare.desktop
 %%DATADIR%%/translations/CloudCompare_es_AR.qm
 %%DATADIR%%/translations/CloudCompare_fr.qm
 %%DATADIR%%/translations/CloudCompare_ja.qm
-%%DATADIR%%/translations/CloudCompare_kr.qm
+%%DATADIR%%/translations/CloudCompare_ko.qm
 %%DATADIR%%/translations/CloudCompare_pt.qm
 %%DATADIR%%/translations/CloudCompare_ru.qm
 %%DATADIR%%/translations/CloudCompare_zh.qm

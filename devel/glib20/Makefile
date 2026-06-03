@@ -1,6 +1,5 @@
 PORTNAME=	glib
-DISTVERSION=	2.84.1
-PORTREVISION=	3
+DISTVERSION=	2.86.4
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -14,7 +13,6 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libffi.so:devel/libffi \
-		libinotify.so:devel/libinotify \
 		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	dbus-uuidgen:devel/dbus \
@@ -32,7 +30,7 @@ bootstrap_PKGNAMESUFFIX=	-bootstrap
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
+USES=		compiler:c11 cpe gettext-runtime gnome iconv:wchar_t localbase:ldflags \
 		meson perl5 pkgconfig python tar:xz ${${FLAVOR}_USES}
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -40,7 +38,6 @@ TRIGGERS=	gio-modules glib-schemas
 MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
 		-Dinstalled_tests=false \
-		-Dlibelf=disabled \
 		-Dlibmount=disabled \
 		-Druntime_dir=/var/run \
 		-Dselinux=disabled \
@@ -56,7 +53,7 @@ CONFLICTS_INSTALL=	p5-Giovanni
 _LIBVERSION=	0.${DISTVERSION:R:E}00.${DISTVERSION:E}
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
-OPTIONS_DEFINE=		DOCS FAM_ALTBACKEND MANPAGES NLS TEST
+OPTIONS_DEFINE=		DOCS MANPAGES NLS TEST
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
@@ -64,10 +61,11 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${P
 DOCS_IMPLIES=		MANPAGES TEST
 DOCS_MESON_TRUE=	documentation
 
-FAM_ALTBACKEND_DESC=	Alternate file monitor backend
-
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man-pages
+
+NLS_USES=	gettext-tools
+NLS_MESON_ENABLED=	nls
 
 TEST_MESON_TRUE=	tests
 
@@ -75,10 +73,10 @@ TEST_MESON_TRUE=	tests
 MESON_ARGS+=	-Ddtrace=disabled
 
 .if ${FLAVOR:U} == bootstrap
-MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled
+MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled -Dnls=disabled
 OPTIONS_DEFINE=
 PREFIX=		${LOCALBASE}/glib-bootstrap
-PLIST_SUB+=	PORTDOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
+PLIST_SUB+=	DOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
 .else
 BINARY_ALIAS+=	g-ir-scanner=${LOCALBASE}/gobject-introspection-bootstrap/bin/g-ir-scanner
 MESON_ARGS+=	-Dintrospection=enabled
@@ -87,6 +85,7 @@ MESON_ARGS+=	-Dintrospection=enabled
 .if exists(/usr/include/sys/inotify.h)
 MESON_ARGS+=	-Dfile_monitor_backend='inotify'
 .else
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
 MESON_ARGS+=	-Dfile_monitor_backend='libinotify-kqueue'
 .endif
 
@@ -95,15 +94,6 @@ post-extract:
 	${CP} -r ${LOCALBASE}/gobject-introspection-bootstrap/libdata/pkgconfig ${PKGCONFIG_LINKDIR}
 	${CP} ${LOCALBASE}/glib-bootstrap/libdata/pkgconfig/* ${PKGCONFIG_LINKDIR}
 .endif
-
-pre-configure-FAM_ALTBACKEND-on:
-	@${REINPLACE_CMD} -e 's|kqueue-helper.c|kqueue_fnm.c|g ; \
-		s|.*kqueue-missing.c.*||g ; \
-		s|.*dep-list.c.*||g' \
-		${WRKSRC}/gio/kqueue/meson.build
-	@${CP} -f ${FILESDIR}/gkqueuefilemonitor.c ${WRKSRC}/gio/kqueue/gkqueuefilemonitor.c
-	@${CP} ${FILESDIR}/kqueue_fnm.c ${WRKSRC}/gio/kqueue/kqueue_fnm.c
-	@${CP} ${FILESDIR}/kqueue_fnm.h ${WRKSRC}/gio/kqueue/kqueue_fnm.h
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
@@ -117,14 +107,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/gio/xdgmime/xdgmime.c \
 		${WRKSRC}/glib/gutils.c \
-		${WRKSRC}/glib/tests/utils.c
+		${WRKSRC}/glib/tests/utils-unisolated.c
 
 CODEGENDIR=	${PREFIX}/share/glib-2.0/codegen
-
-post-install-DOCS-on:
-# this doc file gets created conditionally, so instead of adding another
-# PLIST_SUB item just create an empty file if it is missing
-	${TOUCH} ${STAGEDIR}${DOCSDIR}-2.0/const.VA_COPY_AS_ARRAY.html
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings

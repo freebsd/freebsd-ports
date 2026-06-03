@@ -1,0 +1,6 @@
+AI Model Dynamic Offloader (AIMDO) is a PyTorch VRAM allocator that implements
+on-demand offloading of model weights when the primary PyTorch VRAM allocator
+comes under pressure.
+
+This enables running larger models on GPUs with limited VRAM by intelligently
+managing memory and offloading weights to system RAM when needed.

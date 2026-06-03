@@ -1,0 +1,4 @@
+mcp-server-filesystem is a Model Context Protocol (MCP) server that provides
+standardized filesystem access to LLM-based tools. It allows reading, writing,
+and searching files within a defined scope, enabling models to interact
+securely with a local or remote filesystem.

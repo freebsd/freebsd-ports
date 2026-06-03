@@ -1,0 +1,10 @@
+bin/himitsu-keyring
+share/applications/nl.brixit.Keyring.desktop
+share/icons/hicolor/scalable/apps/nl.brixit.Keyring.svg
+share/keyring/himitsu_gtk/__init__.py
+share/keyring/himitsu_gtk/__main__.py
+share/keyring/himitsu_gtk/himitsu.py
+share/keyring/himitsu_gtk/key.py
+share/keyring/himitsu_gtk/window.py
+share/keyring/keyring.gresource
+share/metainfo/nl.brixit.Keyring.appdata.xml

@@ -18,5 +18,7 @@ include/odbc/StatementBase.h
 include/odbc/StringConverter.h
 include/odbc/Types.h
 include/odbc/Util.h
-lib/libodbccpp.a
+lib/cmake/odbccpp/odbccppConfig.cmake
+lib/cmake/odbccpp/odbccppTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/odbccpp/odbccppTargets.cmake
 lib/libodbccpp.so

@@ -1,6 +1,6 @@
 PORTNAME=	a2ps
-PORTVERSION=	4.15.7
-PORTREVISION=	0
+PORTVERSION=	4.15.8
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
@@ -38,15 +38,13 @@ I18N_DESC=Enable I18N support
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-EMACS_USES=		emacs:noflavors
+EMACS_USES=		emacs
 EMACS_CONFIGURE_ON=	--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
 EMACS_CONFIGURE_OFF=	--without-emacs --without-lispdir
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MEMACS}
 CONFIGURE_ENV+=	EMACS=no
-.endif
 
 .if ${PORT_OPTIONS:MI18N} || make(makesum) || defined(FETCH_ALL)
 #DISTFILES+=	${I18N_PACKAGE}${EXTRACT_SUFX}:i18n
@@ -71,9 +69,9 @@ post-configure:
 post-install:
 .if ${PORT_OPTIONS:MEMACS}
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
+	${LN} -sf ${PREFIX}/${EMACS_SITE_LISPDIR}/a2ps-print.el \
 		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps.el \
+	${LN} -sf ${PREFIX}/${EMACS_SITE_LISPDIR}/a2ps.el \
 		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps.el
 .endif
 	cd ${WRKSRC}/doc && \

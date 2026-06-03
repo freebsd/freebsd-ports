@@ -1,0 +1,5 @@
+bin/vikunja
+/var/db/vikunja/config.yml.sample
+@dir(www,www) /var/db/vikunja
+@dir(www,www) /var/run/vikunja
+@dir(www,www) /var/log/vikunja

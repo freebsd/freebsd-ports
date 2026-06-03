@@ -1,8 +1,12 @@
 PORTNAME=	qgis
-DISTVERSION=	3.40.9
+DISTVERSION=	3.40.15
+PORTREVISION=	6
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
+
+PATCH_SITES=	https://github.com/qgis/QGIS/commit/
+PATCHFILES=	ac1443a90bb295cfb179de969b07b885c64e6252.patch:-p1
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Free and Open Source Geographic Information System
@@ -51,12 +55,10 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
 		libqca-qt5.so:devel/qca@qt5 \
-		libqjson-qt5.so:devel/qjson \
 		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
 		librttopo.so:devel/librttopo \
-		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
 		libxerces-c.so:textproc/xerces-c3 \
@@ -83,7 +85,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}netCDF4>=1.6.2:science/py-netCDF4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.8.8:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>=3.7:textproc/py-nltk@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}OWSLib>=0.27.2:graphics/py-OWSLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.5.0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=5.10.0:devel/py-pbr@${PY_FLAVOR} \
@@ -134,9 +136,14 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
+# [2025-10-25] Use internal spatialindex, as the one in the ports is too new:
+# -- Found Spatialindex: /usr/local/lib/libspatialindex.so (2.1.0)
+# CMake Error at CMakeLists.txt:460 (message):
+#   Cannot build QGIS using libspatialindex >= 2.1, see
+#   https://github.com/libspatialindex/libspatialindex/issues/276
 CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT WITH_INTERNAL_LAZPERF \
-		WITH_POSTGRESQL WITH_QTWEBENGINE
+		WITH_POSTGRESQL WITH_QTWEBENGINE WITH_INTERNAL_SPATIALINDEX
 CMAKE_OFF=	ENABLE_TESTS USE_CCACHE WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis

@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2023-02-11 12:58:35 UTC
+--- src/Makefile.am.orig	2026-04-14 15:53:55 UTC
 +++ src/Makefile.am
-@@ -32,7 +32,7 @@ liberasurecode_la_SOURCES = \
+@@ -33,7 +33,7 @@ liberasurecode_la_SOURCES = \
  		backends/shss/shss.c \
  		backends/phazrio/libphazr.c
  

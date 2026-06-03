@@ -21,12 +21,12 @@ diff --git a/crypto/async/arch/async_posix.h b/crypto/async/arch/async_posix.h
 index a17c6b8e68af..2d97ec3acc9b 100644
 --- crypto/async/arch/async_posix.h
 +++ crypto/async/arch/async_posix.h
-@@ -18,7 +18,7 @@
- # include <unistd.h>
+@@ -19,7 +19,7 @@
+ #include <unistd.h>
  
- # if _POSIX_VERSION >= 200112L \
--     && (_POSIX_VERSION < 200809L || defined(__GLIBC__))
-+     && (_POSIX_VERSION < 200809L || defined(__GLIBC__) || defined(__FreeBSD__))
+ #if _POSIX_VERSION >= 200112L \
+-    && (_POSIX_VERSION < 200809L || defined(__GLIBC__))
++    && (_POSIX_VERSION < 200809L || defined(__GLIBC__) || defined(__FreeBSD__))
  
- # include <pthread.h>
+ #include <pthread.h>
  

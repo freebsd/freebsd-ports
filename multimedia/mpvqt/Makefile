@@ -1,5 +1,5 @@
 PORTNAME=	mpvqt
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
@@ -19,7 +19,7 @@ USE_GL=		gl opengl
 USE_KDE=	ecm:build
 USE_QT=		base declarative
 
-PLIST_SUB=	SHLIB_VER=2 \
+PLIST_SUB=	SHLIB_VER=3 \
 		SHLIB_VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

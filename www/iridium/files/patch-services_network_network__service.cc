@@ -1,6 +1,6 @@
---- services/network/network_service.cc.orig	2025-06-19 07:37:57 UTC
+--- services/network/network_service.cc.orig	2026-05-11 13:57:04 UTC
 +++ services/network/network_service.cc
-@@ -103,11 +103,11 @@
+@@ -105,11 +105,11 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -23,7 +23,7 @@
  void NetworkService::SetGssapiLibraryLoadObserver(
      mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
          gssapi_library_load_observer) {
-@@ -1143,7 +1143,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
+@@ -1183,7 +1183,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
    );
  }
  

@@ -1,6 +1,8 @@
 LIB=	ipv6
 SRCS=	libipv6.c
 
+CFLAGS+=	-fPIC
+
 .PATH: ${.CURDIR}/../tools
 
 install:

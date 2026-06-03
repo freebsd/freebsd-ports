@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# PROVIDE: osqueryd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable osqueryd:
+#
+# osqueryd_enable="YES"
+#
+# osqueryd_flagfile (path): Path to osquery flagfile.
+#   Default: %%PREFIX%%/etc/osquery/osquery.flags
+# osqueryd_config    (path): Path to osquery config file.
+#   Default: %%PREFIX%%/etc/osquery/osquery.conf
+# osqueryd_pidfile   (path): Path to pidfile.
+#   Default: /var/run/osqueryd.pid
+# osqueryd_database_path (path): Path to RocksDB state.
+#   Default: /var/db/osquery/osquery.db
+# osqueryd_logger_path (path): Directory for result/status logs.
+#   Default: /var/log/osquery
+# osqueryd_user      (user): Run as this user.  osqueryd needs root for many
+#   tables (processes, openbsm, devd, kernel_info, etc.); the default is
+#   "root" and changing it will silently disable a large fraction of tables.
+#   Default: root
+# osqueryd_flags     (str):  Extra command-line flags appended to osqueryd.
+
+. /etc/rc.subr
+
+name="osqueryd"
+rcvar="osqueryd_enable"
+
+load_rc_config "${name}"
+
+: ${osqueryd_enable:="NO"}
+: ${osqueryd_flagfile:="%%PREFIX%%/etc/osquery/osquery.flags"}
+: ${osqueryd_config:="%%PREFIX%%/etc/osquery/osquery.conf"}
+: ${osqueryd_pidfile:="/var/run/osqueryd.pid"}
+: ${osqueryd_database_path:="/var/db/osquery/osquery.db"}
+: ${osqueryd_logger_path:="/var/log/osquery"}
+: ${osqueryd_user:="root"}
+: ${osqueryd_flags:=""}
+
+pidfile="${osqueryd_pidfile}"
+command="%%PREFIX%%/bin/osqueryd"
+start_precmd="osqueryd_prestart"
+
+osqueryd_prestart()
+{
+	if [ ! -d "${osqueryd_logger_path}" ]; then
+		install -d -o "${osqueryd_user}" -m 0750 \
+		    "${osqueryd_logger_path}"
+	fi
+	if [ ! -d "$(dirname "${osqueryd_database_path}")" ]; then
+		install -d -o "${osqueryd_user}" -m 0750 \
+		    "$(dirname "${osqueryd_database_path}")"
+	fi
+	return 0
+}
+
+# Compose command_args.  Flagfile / config are appended only when present so
+# the daemon starts cleanly on a fresh install before the operator has
+# populated them.
+command_args="--pidfile ${osqueryd_pidfile} \
+    --database_path ${osqueryd_database_path} \
+    --logger_path ${osqueryd_logger_path} \
+    --daemonize"
+
+if [ -r "${osqueryd_flagfile}" ]; then
+	command_args="${command_args} --flagfile ${osqueryd_flagfile}"
+fi
+if [ -r "${osqueryd_config}" ]; then
+	command_args="${command_args} --config_path ${osqueryd_config}"
+fi
+command_args="${command_args} ${osqueryd_flags}"
+
+run_rc_command "$1"

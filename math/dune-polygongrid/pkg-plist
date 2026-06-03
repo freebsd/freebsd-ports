@@ -1,3 +1,4 @@
+include/dune-polygongrid-config.hh
 include/dune/polygongrid/capabilities.hh
 include/dune/polygongrid/declaration.hh
 include/dune/polygongrid/dgf.hh
@@ -20,7 +21,8 @@ include/dune/polygongrid/multivector.hh
 include/dune/polygongrid/subentity.hh
 lib/cmake/dune-polygongrid/dune-polygongrid-config-version.cmake
 lib/cmake/dune-polygongrid/dune-polygongrid-config.cmake
-lib/cmake/dune-polygongrid/dune-polygongrid-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dune-polygongrid/dune-polygongrid-scoped-targets-%%DUNE_POLYGONGRID_CMAKE_HASH%%-release.cmake
+lib/cmake/dune-polygongrid/dune-polygongrid-scoped-targets-%%DUNE_POLYGONGRID_CMAKE_HASH%%.cmake
 lib/cmake/dune-polygongrid/dune-polygongrid-targets.cmake
 lib/dunecontrol/dune-polygongrid/dune.module
 lib/libdunepolygongrid.so

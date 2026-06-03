@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$2" = "POST-INSTALL" ]; then
-    if fgrep -q battery-shutdown.sh /etc/rc.local; then
+    if fgrep -q battery-shutdown.sh /etc/rc.local 2> /dev/null; then
         printf "Converting battery-shutdown service to cron job...\n"
         sed -i '' -e 's|^/.*battery-shutdown.sh|# &|' /etc/rc.local
         mkdir -p ${PKG_PREFIX}/etc/cron.d

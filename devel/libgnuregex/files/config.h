@@ -11,3 +11,5 @@
 #define	HAVE_ALLOCA	1
 #define	HAVE_STDBOOL_H	1
 #define	HAVE_STDINT_H	1
+#define _GL_CONFIG_H_INCLUDED 1
+#define _GL_ATTRIBUTE_FALLTHROUGH __attribute__((fallthrough));

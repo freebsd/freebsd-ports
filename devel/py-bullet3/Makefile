@@ -1,6 +1,6 @@
 PORTNAME=	bullet3
 DISTVERSION=	3.25
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://pybullet.org/wordpress/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gym>0:math/py-gym@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gl localbase python

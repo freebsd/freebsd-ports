@@ -1,6 +1,5 @@
 PORTNAME=	pinot
-PORTVERSION=	1.22
-PORTREVISION=	4
+PORTVERSION=	1.24
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -37,9 +36,9 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
 
-USES=		compiler:c++11-lang autoreconf gettext gnome libarchive	\
-		libtool pkgconfig python shebangfix sqlite:3 ssl xorg
-USE_CXXSTD=	c++11
+USES=		compiler:c++17-lang autoreconf gettext gnome libarchive	\
+		libtool localbase pkgconfig python shebangfix sqlite:3 ssl xorg
+USE_CXXSTD=	c++17
 USE_XORG=	pixman
 USE_GNOME=	atkmm cairo cairomm gdkpixbuf glibmm gtk30 gtkmm30	\
 		libsigc++20 libxml2 pangomm
@@ -50,8 +49,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 		--enable-mempool=no --enable-libnotify
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
 OPTIONS_DEFINE=	DEBUG CHMLIB DOCS
 OPTIONS_SUB=	yes
@@ -64,6 +61,7 @@ CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:misc/chmlib
 
 INSTALL_TARGET=	install-strip
+
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		Core/pinot-index.cpp Core/pinot-index.1 Makefile.am	\
@@ -71,6 +69,10 @@ LM2FIX=		Core/pinot-index.cpp Core/pinot-index.1 Makefile.am	\
 		textcat_conf.txt textcat32_conf.txt
 SHR2FIX=	Core/pinot-search.1
 UL2FIX=		Utils/xdgmime/xdgmime.c
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CURLPROXY_|(curl_proxytype)CURLPROXY_|g' \
+		${WRKSRC}/Collect/CurlDownloader.cpp
 
 pre-configure:
 	${REINPLACE_CMD} -e \

@@ -1,0 +1,3 @@
+Schema Annotations for Linked Avro Data (SALAD) is a schema language for
+describing structured linked data documents. It is used to define the Common
+Workflow Language (CWL) standards.

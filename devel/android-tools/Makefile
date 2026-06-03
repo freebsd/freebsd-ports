@@ -1,40 +1,31 @@
 PORTNAME=	android-tools
-PORTVERSION=	31.0.3p2.0
-PORTREVISION=	35
+PORTVERSION=	35.0.2
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	https://github.com/nmeum/android-tools/releases/download/${PORTVERSION}/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Android debugging tools
-WWW=		https://github.com/neelchauhan/freebsd-android-tools
+WWW=		https://github.com/nmeum/android-tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	ld: error: undefined symbol: OPENSSL_cpuid_setup
-
+BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
-		libgmock.so:devel/googletest \
+		libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libpcre2-8.so:devel/pcre2 \
 		libprotobuf.so:devel/protobuf \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang go:no_targets localbase:ldflags perl5 python shebangfix
+USES=		cmake compiler:c++20-lang localbase:ldflags pkgconfig python shebangfix tar:xz
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	neelchauhan
-GH_PROJECT=	freebsd-${PORTNAME}
-GH_TAGNAME=	271d7a26c8daf4b9fe412d360a2edfaca327efdd
-
-SHEBANG_FILES=	vendor/mkbootimg/repack_bootimg.py \
+SHEBANG_FILES=	vendor/avb/avbtool.py \
+		vendor/libufdt/utils/src/mkdtboimg.py \
 		vendor/mkbootimg/mkbootimg.py \
+		vendor/mkbootimg/repack_bootimg.py \
 		vendor/mkbootimg/unpack_bootimg.py
 
-MAKE_ENV+=	GOFLAGS=-mod=vendor \
-		GOPATH=${WRKSRC}/vendor/boringssl/vendor \
-		GOPROXY=off
-
-LDFLAGS+=	-labsl_status
+CMAKE_ARGS=	-DANDROID_TOOLS_PATCH_VENDOR:BOOL=OFF
 
 .include <bsd.port.mk>

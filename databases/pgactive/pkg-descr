@@ -1,0 +1,2 @@
+pgactive is a PostgreSQL replication extension for creating
+an active-active database.

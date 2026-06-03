@@ -1,5 +1,5 @@
 PORTNAME=	proj
-DISTVERSION=	9.6.0
+DISTVERSION=	9.8.1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/OSGeo/PROJ/releases/download/${DISTVERSION}/ \
@@ -10,7 +10,7 @@ COMMENT=	Cartographic Projections library
 WWW=		https://github.com/OSGeo/PROJ
 
 LICENSE=	MIT
-#LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -22,10 +22,11 @@ USES=		compiler:c++17-lang cmake:testing cpe pathfix pkgconfig sqlite
 CPE_VENDOR=	proj_project
 USE_LDCONFIG=	yes
 
+CMAKE_OFF=	BUILD_TESTING
+CMAKE_TESTING_OFF=	TESTING_USE_NETWORK
 CMAKE_TESTING_ON=	BUILD_TESTING \
 			USE_EXTERNAL_GTEST
-CMAKE_TESTING_OFF=	TESTING_USE_NETWORK
 
-CMAKE_OFF=	BUILD_TESTING
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

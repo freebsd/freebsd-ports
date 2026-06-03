@@ -55,7 +55,7 @@ additional compilers in order to create/remove compiler links.
 
 --
 
-Ccache's default cache size is 1GB and this is larger than the default size of
+Ccache's default cache size is 5GB and this is larger than the default size of
 the root partition (/) on FreeBSD. To over come this you may specify a new
 cache location on a different partition with the following examples.
 

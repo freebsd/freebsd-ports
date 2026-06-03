@@ -1,1 +1,11 @@
-An easy way to get access to ColorBrewer schemes from within a Python program.
+ColorBrewer is a set of color schemes for cartography and data
+visualization, created by Cynthia Brewer. This Python package provides
+these color schemes as a library for easy use in applications.
+
+The color schemes are divided into three types:
+* Sequential: for ordered data that progresses from low to high.
+* Diverging: for data with a critical midpoint, like a zero value.
+* Qualitative: for representing categorical data.
+
+All color schemes are designed to be colorblind-safe and effective
+for various display environments.

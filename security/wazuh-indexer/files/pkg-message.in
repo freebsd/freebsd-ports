@@ -33,7 +33,7 @@ Wazuh indexer components were installed
    Hash password can be generated using opensearch-security hash script tool
 
    # cd %%PREFIX%%/lib/opensearch/plugins/opensearch-security/tools/
-   # sh -c "OPENSEARCH_JAVA_HOME=%%PREFIX%%/openjdk11 ./hash.sh -p adminpass"
+   # sh -c "OPENSEARCH_JAVA_HOME=%%PREFIX%%/openjdk21 ./hash.sh -p adminpass"
    $2y$12$XaEXmp4kGQpd6t8kNH03quyvpHDQZh.nywLLp9.b0NF2DxGl8FpJK
 
 7) Add OpenSearch to /etc/rc.conf
@@ -47,7 +47,7 @@ Wazuh indexer components were installed
 9) Finally you must initialize opensearch cluster
 
   # cd %%PREFIX%%/lib/opensearch/plugins/opensearch-security/tools/
-  # sh -c "OPENSEARCH_JAVA_HOME=%%PREFIX%%/openjdk11 ./securityadmin.sh \
+  # sh -c "OPENSEARCH_JAVA_HOME=%%PREFIX%%/openjdk21 ./securityadmin.sh \
     -cd %%PREFIX%%/etc/opensearch/opensearch-security/ -cacert %%PREFIX%%/etc/opensearch/certs/root-ca.pem \
     -cert %%PREFIX%%/etc/opensearch/certs/admin.pem -key %%PREFIX%%/etc/opensearch/certs/admin-key.pem -h 10.0.0.10 -p 9200 -icl -nhnv"
 

@@ -1,0 +1,8 @@
+Neo is a package for representing electrophysiology data in Python, together
+with support for reading a wide range of neurophysiology file formats.
+
+The goal of Neo is to improve interoperability between Python tools for
+analyzing, visualizing and generating electrophysiology data, by providing
+a common, shared object model. In order to be as lightweight a dependency
+as possible, Neo is deliberately limited to representation of data, with
+no functions for data analysis or visualization.

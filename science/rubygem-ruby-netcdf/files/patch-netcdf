@@ -1,0 +1,11 @@
+--- ext/numru/extconf.rb.orig	2026-04-30 17:48:26 UTC
++++ ext/numru/extconf.rb
+@@ -51,7 +51,7 @@ ncver = ncversion.gsub(/\./,'')
+ 
+ ncver0 = ncversion[0..0]  # "3" or "4"
+ ncver = ncversion.gsub(/\./,'')
+-unless /^\d\d\d$/ =~ ncver   # 3 digits
++unless /^\d{3,4}$/ =~ ncver  # 3 or 4 digits
+   raise("Invalid netcdf version: #{ncversion}. Use --with-netcdf-version=") 
+ end
+ $CFLAGS += ' -DNCVER='+ncver

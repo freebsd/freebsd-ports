@@ -1,1 +1,2 @@
-Thin wrapper around the mock package for easier use with py.test.
+This plugin provides a mocker fixture which is a thin-wrapper around the
+patching API provided by the mock package.

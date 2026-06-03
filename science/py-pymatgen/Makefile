@@ -1,6 +1,7 @@
 PORTNAME=	pymatgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.6.14
+DISTVERSION=	2026.5.4
+PORTREVISION=	1
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,27 +15,17 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bibtexparser>=1.4.0:textproc/py-bibtexparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}joblib>=1:devel/py-joblib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.8:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}monty>=2025.1.9:devel/py-monty@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=2.7:math/py-networkx@${PY_FLAVOR} \
-		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}orjson>=3.10:devel/py-orjson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}palettable>=3.3.3:misc/py-palettable@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=2:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plotly>=5.0.0:graphics/py-plotly@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybtex>=0.24.0:textproc/py-pybtex@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.0:devel/py-ruamel.yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.13.0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spglib>=2.5:science/py-spglib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>=1.3:math/py-sympy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9:devel/py-tabulate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=4.60:misc/py-tqdm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.1.4:math/py-uncertainties@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymatgen-core>=2026.3.9:science/py-pymatgen-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2024.8.30:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.4.0:textproc/py-charset-normalizer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}idna>=3.10:dns/py-idna@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0.2.12:devel/py-ruamel.yaml.clib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.10:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tenacity>=9.0.0:devel/py-tenacity@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tzdata>=2024.2:devel/py-tzdata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=2.6.3:net/py-urllib3@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ase>=3.23.0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=3.11.0:science/py-h5py@${PY_FLAVOR} \
@@ -49,18 +40,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	materialsproject
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
-		PMG_TEST_FILES_DIR=${WRKSRC}/tests/files \
-		DISPLAY=${DISPLAY} \
-		XAUTHORITY=${XAUTHORITY}
+		PMG_TEST_FILES_DIR=${WRKSRC}/test-files \
+		MPLBACKEND=Agg
 TEST_WRKSRC=	${WRKSRC}/tests
 
-post-install: # strip binaries
-	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} && ${STRIP_CMD} \
-		optimization/linear_assignment*.so \
-		optimization/neighbors*.so \
-		util/coord_cython*.so
+post-patch:
+	# Remove files owned by py-pymatgen-core (both packages install these from shared namespace)
+	@${RM} ${WRKSRC}/src/pymatgen/analysis/chempot_diagram.py \
+		${WRKSRC}/src/pymatgen/analysis/phase_diagram.py \
+		${WRKSRC}/src/pymatgen/analysis/reaction_calculator.py
 
 # tests as of 2025.2.18: 56 failed, 2912 passed, 149 skipped, 1980 warnings in 11080.55s (3:04:40), see https://github.com/materialsproject/pymatgen/issues/4264
 # tests as of 2025.5.28: 56 failed, 3015 passed, 161 skipped, 131 warnings, 7 errors in 5700.13s (1:35:00)
+# tests as of 2026.3.23: 0 failed (2 spglib-version-sensitive tests patched), 719 passed, 275 skipped, 7 xfailed, 1 xpassed
 
 .include <bsd.port.mk>

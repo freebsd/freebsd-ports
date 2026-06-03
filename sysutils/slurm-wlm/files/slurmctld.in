@@ -8,36 +8,133 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# slurmctld_enable (bool):   Set to NO by default.
-#               Set it to YES to enable slurmctld.
+# slurmctld_enable (bool):     Set to NO by default.
+#                              Set it to YES to enable slurmctld.
+#
+# Common knobs (honoured by slurmctld and slurmd):
+#   slurm_user (str):          User to run Slurm daemons as (default: slurm)
+#   slurm_group (str):         Group to run Slurm daemons as (default: slurm)
+#   slurm_conf (str):          Path to slurm.conf, exported as SLURM_CONF
+#                              (default: %%ETCDIR%%/slurm.conf)
+#   slurm_logdir (str):        Log directory (default: /var/log/slurm)
+#   slurm_rundir (str):        Runtime directory (default: /var/run/slurm)
+#
+# Service-specific knobs:
+#   slurmctld_flags (str):     Extra arguments passed to slurmctld.
+#   slurmctld_pidfile (str):   PID file path
+#                              (default: ${slurm_rundir}/slurmctld.pid)
+#   slurmctld_logfile (str):   Log file path
+#                              (default: ${slurm_logdir}/slurmctld.log)
 #
 
 . /etc/rc.subr
 
 name="slurmctld"
-rcvar=slurmctld_enable
-
-pidfile=/var/run/$name.pid
+rcvar="slurmctld_enable"
 
 load_rc_config $name
 
-: ${slurmctld_enable="NO"}
+# Common defaults (shared conceptual contract with slurmd)
+: ${slurm_user:="slurm"}
+: ${slurm_group:="slurm"}
+: ${slurm_conf:="%%ETCDIR%%/slurm.conf"}
+: ${slurm_logdir:="/var/log/slurm"}
+: ${slurm_rundir:="/var/run/slurm"}
 
-start_cmd=slurmctld_start
-stop_cmd=slurmctld_stop
+# Service defaults
+: ${slurmctld_enable:="NO"}
+: ${slurmctld_flags:=""}
+: ${slurmctld_pidfile:="${slurm_rundir}/slurmctld.pid"}
+: ${slurmctld_logfile:="${slurm_logdir}/slurmctld.log"}
 
-slurmctld_start() {
-    checkyesno slurmctld_enable && echo "Starting $name." && \
-	%%PREFIX%%/sbin/$name $slurmctld_flags
+pidfile="${slurmctld_pidfile}"
+
+# We run slurmctld under daemon(8) for pidfile/log management.
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/sbin/${name}"
+command_args="-P ${pidfile} -o ${slurmctld_logfile} ${procname} -D ${slurmctld_flags}"
+
+extra_commands="reload"
+start_precmd="${name}_prestart"
+reload_cmd="${name}_reload"
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
+
+slurmctld_prestart()
+{
+	# Ensure log and run directories exist with correct ownership/modes.
+	/usr/bin/install -d -o "${slurm_user}" -g "${slurm_group}" -m 0750 "${slurm_logdir}" || return 1
+	/usr/bin/install -d -o "root" -g "wheel" -m 0755 "${slurm_rundir}" || return 1
+
+	# Export SLURM_CONF if not already provided in the environment.
+	if [ -z "${SLURM_CONF}" ]; then
+		export SLURM_CONF="${slurm_conf}"
+	fi
 }
 
-slurmctld_stop() {
-    if [ -e $pidfile ]; then
-        checkyesno slurmctld_enable && echo "Stopping $name." && \
-	    kill `cat $pidfile`
-    else
-	killall $name
-    fi
+slurmctld_reload()
+{
+	if [ ! -r "${pidfile}" ]; then
+		echo "${name} not running? (pidfile not found)"
+		return 1
+	fi
+	echo "Reloading ${name} configuration."
+	kill -HUP "$(cat "${pidfile}")"
+}
+
+slurmctld_status()
+{
+	if [ ! -r "${pidfile}" ]; then
+		echo "${name} is not running (no pidfile)."
+		return 1
+	fi
+	if ! check_pidfile "${pidfile}" "${procname}"; then
+		echo "${name} is not running (stale pidfile)."
+		return 1
+	fi
+	echo "${name} is running as pid $(cat "${pidfile}")."
+}
+
+slurmctld_stop()
+{
+	if [ ! -r "${pidfile}" ]; then
+		echo "${name} not running? (no pidfile)."
+		return 1
+	fi
+
+	if ! check_pidfile "${pidfile}" "${procname}"; then
+		echo "${name} not running? (stale pidfile: ${pidfile})."
+		rm -f "${pidfile}"
+		return 1
+	fi
+
+	pid="$(cat "${pidfile}" 2>/dev/null || true)"
+	if [ -z "${pid}" ]; then
+		echo "${name} not running? (empty pidfile: ${pidfile})."
+		rm -f "${pidfile}"
+		return 1
+	fi
+
+	echo "Stopping ${name} (pid ${pid})."
+	kill -TERM "${pid}" 2>/dev/null || true
+
+	# Allow a short grace period for clean shutdown and helper cleanup.
+	i=0
+	while [ $i -lt 5 ]; do
+		if ! check_pidfile "${pidfile}" "${procname}"; then
+			rm -f "${pidfile}"
+			return 0
+		fi
+		i=$((i + 1))
+		sleep 1
+	done
+
+	echo "${name} did not exit on SIGTERM; sending SIGKILL to controller and its helpers."
+	# Kill children (e.g. slurmscriptd) first, then the controller itself.
+	pkill -KILL -P "${pid}" 2>/dev/null || true
+	kill -KILL "${pid}" 2>/dev/null || true
+
+	rm -f "${pidfile}"
 }
 
 run_rc_command "$1"

@@ -1,20 +1,29 @@
 - disable override of port-defined CMAKE_BUILD_TYPE and CXXFLAGS
 
---- src/CMakeLists.txt.orig	2022-09-11 04:00:10 UTC
+--- src/CMakeLists.txt.orig	2026-02-14 16:53:10 UTC
 +++ src/CMakeLists.txt
-@@ -263,6 +263,7 @@ else()
+@@ -272,6 +272,7 @@ endif ()
+     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -DNDEBUG ")
  endif ()
- set (CMAKE_CXX_FLAGS "${OurCxxFlags} ${CMAKE_CXX_FLAGS}")
  
 +if (FALSE)
  if (BuildForDebug)
      set (CMAKE_BUILD_TYPE "Debug")
-     set (CMAKE_CXX_FLAGS_DEBUG ${BuildOptionsDebug})
-@@ -271,6 +272,7 @@ else()
-     set (CMAKE_BUILD_TYPE "Release")
-     set (CMAKE_CXX_FLAGS_RELEASE ${BuildOptionsRelease})
+     set (CMAKE_CXX_FLAGS_DEBUG ${BuildOptions_Debug})
+@@ -281,6 +282,7 @@ endif ()
+     set (CMAKE_CXX_FLAGS_RELEASE ${BuildOptions_Release})
      message (STATUS "RELEASE Build, flags: ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_RELEASE}")
-+endif ()
  endif ()
++endif ()
  
  configure_file(
+     "${CMAKE_CURRENT_SOURCE_DIR}/../desktop/yoshimi.desktop.in"
+@@ -548,8 +550,6 @@ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/../desktop/
+ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/../desktop/yoshimi_alt.svg
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/scalable/apps)
+ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/../desktop/metainfo/yoshimi.metainfo.xml
+-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
+-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/../desktop/metainfo/yoshimi.appdata.xml
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
+ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/../desktop/yoshimi.1
+     DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)

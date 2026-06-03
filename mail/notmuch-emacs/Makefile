@@ -1,6 +1,6 @@
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	mail elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX:S/^$/-emacs/}
+PKGNAMESUFFIX=	-emacs
 COMMENT=	Emacs major-mode for the Notmuch email search and tagging application
 WWW=		https://notmuchmail.org/notmuch-emacs/
 
@@ -8,10 +8,13 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	notmuch:mail/notmuch
 
-USES=		emacs gmake
+USES=		emacs:build gmake
 
 INSTALL_TARGET=	install-emacs
 MASTERDIR=	${.CURDIR}/../notmuch
+
+CONFLICTS_INSTALL=	notmuch-emacs_*
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DESKTOP DOCS MANPAGES
@@ -60,6 +63,7 @@ do-configure:
 		> ${WRKSRC}/sphinx.config
 
 post-install:
+	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR} -name "*.elc" -delete
 	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/*.el
 
 # keep poudriere testport happy
@@ -70,6 +74,6 @@ post-install-MANPAGES-on:
 	@${FIND} ${STAGEDIR}${PREFIX}/share/man ! -type d ! -name notmuch-emacs-mua.1.gz -delete
 
 # modify what Mk/Uses/emacs.mk set
-MAKE_ARGS+=	EMACS+=--quick
+MAKE_ARGS+=	EMACS=EMACS+=--quick
 
 .include "${MASTERDIR}/Makefile"

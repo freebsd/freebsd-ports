@@ -70,7 +70,7 @@ do-patch:
 
 do-configure:
 .if !empty(COMPAT32_CFLAGS_${ARCH})
-	@(cd ${WRKSRC32} && ${AUTORECONF} -f -i && ${SETENV} \
+	@(cd ${WRKSRC32} && ${AUTORECONF} -f -i && ${SETENVI} ${WRK_ENV} \
 		PATH=${LINUXBASE}/usr/bin ./configure CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS:N-march=*} ${COMPAT32_CFLAGS_${ARCH}}" \
 		LDFLAGS="${LDFLAGS}" MAKE="${MAKE_CMD}" \
@@ -78,7 +78,7 @@ do-configure:
 		PKG_CONFIG_PATH=${LINUXBASE}/usr/lib/pkgconfig \
 		${CONFIG_ARGS})
 .endif
-	@(cd ${WRKSRC} && ${AUTORECONF} -f -i && ${SETENV} \
+	@(cd ${WRKSRC} && ${AUTORECONF} -f -i && ${SETENVI} ${WRK_ENV} \
 		PATH=${LINUXBASE}/usr/bin ./configure CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS:N-march=*}" LDFLAGS="${LDFLAGS}" \
 		MAKE="${MAKE_CMD}" MKDIR_P="${MKDIR}" \
@@ -88,17 +88,19 @@ do-configure:
 
 do-build:
 .if !empty(COMPAT32_CFLAGS_${ARCH})
-	@(cd ${WRKSRC32} && ${SETENV} PATH=${LINUXBASE}/usr/bin ${MAKE_CMD})
+	@(cd ${WRKSRC32} && ${SETENVI} ${WRK_ENV} PATH=${LINUXBASE}/usr/bin \
+		${MAKE_CMD})
 .endif
-	@(cd ${WRKSRC} && ${SETENV} PATH=${LINUXBASE}/usr/bin ${MAKE_CMD})
+	@(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} PATH=${LINUXBASE}/usr/bin \
+		${MAKE_CMD})
 
 do-install:
 .if !empty(COMPAT32_CFLAGS_${ARCH})
-	@(cd ${WRKSRC32} && ${SETENV} PATH=${LINUXBASE}/usr/bin \
+	@(cd ${WRKSRC32} && ${SETENVI} ${WRK_ENV} PATH=${LINUXBASE}/usr/bin \
 		${MAKE_CMD} install-strip DESTDIR=${STAGEDIR}${LINUXBASE})
 	${RM} -r ${STAGEDIR}${LINUXBASE}/usr/lib/alsa-lib/*.la
 .endif
-	@(cd ${WRKSRC} && ${SETENV} PATH=${LINUXBASE}/usr/bin \
+	@(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} PATH=${LINUXBASE}/usr/bin \
 		${MAKE_CMD} install-strip DESTDIR=${STAGEDIR}${LINUXBASE})
 	${RM} -r ${STAGEDIR}${LINUXBASE}${LIBDIR_${ARCH}}/alsa-lib/*.la
 	${LN} -sf ../../../usr/share/alsa/alsa.conf.d/50-oss.conf \

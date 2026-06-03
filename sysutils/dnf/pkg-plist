@@ -8,6 +8,7 @@ etc/bash_completion.d/dnf-3
 %%ETCDIR%%/dnf-strict.conf
 %%ETCDIR%%/dnf.conf
 %%ETCDIR%%/protected.d/yum.conf
+@dir %%ETCDIR%%/usr-drift-protected-paths.d
 %%PYTHON_SITELIBDIR%%/dnf/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/automatic/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/automatic/emitter.py
@@ -93,7 +94,7 @@ etc/bash_completion.d/dnf-3
 %%PYTHON_SITELIBDIR%%/dnf/yum/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/yum/misc.py
 %%PYTHON_SITELIBDIR%%/dnf/yum/rpmtrans.py
-%%PYTHON_SITELIBDIR%%/dnf-4.22.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/dnf-4.24.0.dist-info/METADATA
 share/locale/ar/LC_MESSAGES/dnf.mo
 share/locale/be/LC_MESSAGES/dnf.mo
 share/locale/bg/LC_MESSAGES/dnf.mo

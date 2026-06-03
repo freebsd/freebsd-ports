@@ -1,0 +1,11 @@
+--- scripts/common/vm-support.orig	2025-06-19 04:05:18 UTC
++++ scripts/common/vm-support
+@@ -397,7 +397,7 @@ banner "Collecting support information..."
+ # Common stuff that we gather for all OSes.
+ runcmd "/tmp/vm-support-version.txt" echo vm-support version: $VER
+ 
+-addfiles /etc/vmware-tools
++addfiles %%PREFIX%%/etc/vmware-tools
+ addfiles /var/log/boot*
+ addfiles /var/log/secure*
+ addfiles /var/log/messages*

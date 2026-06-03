@@ -1,5 +1,5 @@
 PORTNAME=	lcms2
-PORTVERSION=	2.17
+PORTVERSION=	2.19.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mm2/Little-CMS/releases/download/lcms${PORTVERSION}/
 
@@ -11,7 +11,7 @@ WWW=		https://www.littlecms.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe libtool localbase:ldflags pathfix
+USES=		cpe libtool localbase:ldflags
 
 CONFIGURE_ARGS=	--with-fastfloat --with-threaded
 GNU_CONFIGURE=	yes
@@ -19,7 +19,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 CPE_VENDOR=	littlecms
 CPE_PRODUCT=	little_cms_color_engine

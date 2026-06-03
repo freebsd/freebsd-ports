@@ -1,5 +1,5 @@
 PORTNAME=	libstrophe
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/strophe/${PORTNAME}/releases/download/${DISTVERSION}/
 

@@ -1,16 +1,17 @@
 PORTNAME=		jinja2-cli
-PORTVERSION=		0.8.2
-PORTREVISION=	2
+PORTVERSION=		1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=		textproc python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		otis@FreeBSD.org
 COMMENT=		Jinja2 CLI tool
-WWW=		https://github.com/mattrobenolt/jinja2-cli
+WWW=			https://github.com/mattrobenolt/jinja2-cli
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=		${PTYHON_PKGNAMEPREFIX}uv-build:devel/py-uv-build@${PY_FLAVOR}
 RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 TEST_DEPENDS=		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
@@ -29,7 +30,7 @@ YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
 
-USE_PYTHON=		autoplist concurrent distutils
+USE_PYTHON=		autoplist concurrent pep517
 USE_GITHUB=		yes
 GH_ACCOUNT=		mattrobenolt
 .if ${PORT_OPTIONS:MTEST}
@@ -38,7 +39,7 @@ TEST_TARGET=		test
 
 NO_ARCH=		yes
 
-TEST_ENV=	       TMPDIR=${WRKDIR}
+TEST_ENV=		TMPDIR=${WRKDIR}
 
 do-test:
 	@cd ${WRKSRC} && \

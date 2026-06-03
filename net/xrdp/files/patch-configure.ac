@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-12-27 14:40:24 UTC
+--- configure.ac.orig	2026-04-17 14:22:02 UTC
 +++ configure.ac
-@@ -159,11 +159,35 @@ AC_CHECK_FUNC(dlopen, [],
+@@ -250,11 +250,35 @@ AC_SUBST(DLOPEN_LIBS)
  AC_SUBST(DLOPEN_LIBS)
  
  # checking for openssl
@@ -37,4 +37,4 @@
 -OPENSSL_BIN=`$PKG_CONFIG --variable=exec_prefix openssl`/bin
  AC_PATH_PROGS([OPENSSL], [openssl], [:], [$OPENSSL_BIN:$PATH])
  
- # checking for pam variation
+ # checking for PAM variation

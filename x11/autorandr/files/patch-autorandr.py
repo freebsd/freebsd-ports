@@ -1,6 +1,6 @@
---- autorandr.py.orig	2021-12-22 12:28:03 UTC
+--- autorandr.py.orig	2024-03-03 12:37:50 UTC
 +++ autorandr.py
-@@ -121,6 +121,8 @@ Usage: autorandr [options]
+@@ -150,6 +150,8 @@ def is_closed_lid(output):
  def is_closed_lid(output):
      if not re.match(r'(eDP(-?[0-9]\+)*|LVDS(-?[0-9]\+)*)', output):
          return False
@@ -9,7 +9,7 @@
      lids = glob.glob("/proc/acpi/button/lid/*/state")
      if len(lids) == 1:
          state_file = lids[0]
-@@ -1114,7 +1116,7 @@ def exec_scripts(profile_path, script_name, meta_infor
+@@ -1212,7 +1214,7 @@ def exec_scripts(profile_path, script_name, meta_infor
      if profile_path:
          candidate_directories.append(profile_path)
      candidate_directories.append(user_profile_path)
@@ -18,16 +18,16 @@
          candidate_directories.append(os.path.join(config_dir, "autorandr"))
  
      for folder in candidate_directories:
-@@ -1191,6 +1193,8 @@ def dispatch_call_to_sessions(argv):
-             sys.exit(1)
-         os.waitpid(child_pid, 0)
+@@ -1299,6 +1301,8 @@ def dispatch_call_to_sessions(argv):
+     if 'AUTORANDR_UID_MIN' in os.environ:
+       uid_min = int(os.environ['AUTORANDR_UID_MIN'])
  
 +    print("/proc is not supported on FreeBSD; aborting.", file=sys.stderr)
 +    sys.exit(1)
      for directory in os.listdir("/proc"):
          directory = os.path.join("/proc/", directory)
          if not os.path.isdir(directory):
-@@ -1321,7 +1325,7 @@ def main(argv):
+@@ -1453,7 +1457,7 @@ def main(argv):
      try:
          # Load profiles from each XDG config directory
          # The XDG spec says that earlier entries should take precedence, so reverse the order

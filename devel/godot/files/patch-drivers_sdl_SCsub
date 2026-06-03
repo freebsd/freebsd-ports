@@ -1,0 +1,34 @@
+--- drivers/sdl/SCsub.orig	2025-10-13 19:05:40 UTC
++++ drivers/sdl/SCsub
+@@ -1,5 +1,6 @@ from misc.utility.scons_hints import *
+ #!/usr/bin/env python
+ from misc.utility.scons_hints import *
++import sys
+ 
+ Import("env")
+ 
+@@ -120,7 +121,15 @@ if env["builtin_sdl"]:
+ 
+     if env["platform"] == "linuxbsd":
+         # TODO: Check support for BSD systems.
+-        env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_LINUX"])
++        if sys.platform.startswith("linux"):
++            env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_LINUX"])
++        elif sys.platform.startswith("freebsd") or sys.platform.startswith("dragonfly"):
++            env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_FREEBSD"])
++        elif sys.platform.startswith("openbsd"):
++            env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_OPENBSD"])
++        elif sys.platform.startswith("netbsd"):
++            env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_NETBSD"])
++
+         thirdparty_sources += [
+             "core/linux/SDL_dbus.c",
+             "core/linux/SDL_evdev.c",
+@@ -132,6 +141,7 @@ if env["builtin_sdl"]:
+             "core/unix/SDL_poll.c",
+             "haptic/linux/SDL_syshaptic.c",
+             "joystick/linux/SDL_sysjoystick.c",
++            "joystick/bsd/SDL_bsdjoystick.c",
+             "loadso/dlopen/SDL_sysloadso.c",
+             "thread/pthread/SDL_syscond.c",
+             "thread/pthread/SDL_sysmutex.c",

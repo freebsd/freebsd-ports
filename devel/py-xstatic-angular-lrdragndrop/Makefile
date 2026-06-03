@@ -1,16 +1,17 @@
 PORTNAME=	xstatic-angular-lrdragndrop
-PORTVERSION=	1.0.2.6
-PORTREVISION=	1
+PORTVERSION=	1.0.2.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Angular-lrdragndrop-${PORTVERSION}
+DISTNAME=	xstatic_angular_lrdragndrop-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Angular-lrdragndrop (XStatic packaging standard)
-WWW=		https://github.com/openstack/xstatic-angular-lrdragndrop
+COMMENT=	Angular-lrdragndrop ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-angular-lrdragndrop \
+		https://github.com/openstack/xstatic-angular-lrdragndrop
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}

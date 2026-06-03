@@ -356,8 +356,6 @@ share/man/man1/lp2.1.gz
 share/man/man1/fixps.1.gz
 share/man/man1/pdiff.1.gz
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.el
-%%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.elc
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.el
-%%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.elc
 %%EMACS%%lib/xemacs/site-lisp/a2ps-print.el
 %%EMACS%%lib/xemacs/site-lisp/a2ps.el

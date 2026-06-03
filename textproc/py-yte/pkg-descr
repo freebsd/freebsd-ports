@@ -1,0 +1,3 @@
+yte is a YAML template engine with Python expressions. It enables
+embedding Python expressions in YAML files, which are evaluated during
+rendering to produce the final YAML output.

@@ -1,3 +1,3 @@
-TIMESTAMP = 1725559787
-SHA256 (oslo.vmware-4.5.0.tar.gz) = cf6cb4b6e3446ab80e46be02ee05a35e6a003eed445ac1d9667837f741c5514f
-SIZE (oslo.vmware-4.5.0.tar.gz) = 596959
+TIMESTAMP = 1779455605
+SHA256 (oslo_vmware-4.9.0.tar.gz) = 5804c7ed3b04c92de25d7933a6d0188e9ae6bb82f23c56d7aca9ea94b827c16b
+SIZE (oslo_vmware-4.9.0.tar.gz) = 594801

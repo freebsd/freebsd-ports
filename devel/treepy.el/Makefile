@@ -1,10 +1,8 @@
 PORTNAME=	treepy.el
-DISTVERSION=	0.1.2
-PORTREVISION=	14
+DISTVERSION=	0.1.3
 CATEGORIES=	devel elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Generic tree traversing tools for Emacs Lisp
 WWW=		https://github.com/volrath/treepy.el
 
@@ -15,22 +13,21 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	volrath
 
+CONFLICTS_INSTALL=	treepy.el-emacs_*
+
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/treepy.el \
-		${EMACS_VERSION_SITE_LISPDIR}/treepy.elc
-
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/treepy.el
 
 PORTDOCS=	README.md
 
-do-build:
-	(cd ${WRKSRC} ; ${EMACS_CMD} -batch -q -f batch-byte-compile treepy.el)
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/treepy.el* \
-		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/treepy.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

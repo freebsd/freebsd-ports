@@ -1,7 +1,7 @@
 PORTNAME=	ddh
-DISTVERSIONPREFIX=	win
-DISTVERSION=	64
-PORTREVISION=	23
+DISTVERSION=	0.13.0
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,42 +16,47 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	darakian
 
-CARGO_CRATES=	ansi_term-0.12.1 \
-		atty-0.2.14 \
-		autocfg-1.1.0 \
+CARGO_CRATES=	atty-0.2.14 \
+		autocfg-1.0.1 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		clap-2.34.0 \
-		crossbeam-channel-0.5.6 \
-		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.13 \
-		crossbeam-utils-0.8.14 \
-		either-1.8.0 \
+		clap-4.0.23 \
+		clap_derive-4.0.21 \
+		clap_lex-0.3.0 \
+		crossbeam-channel-0.5.2 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.6 \
+		crossbeam-utils-0.8.12 \
+		either-1.6.1 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
-		itoa-1.0.5 \
-		libc-0.2.139 \
-		memoffset-0.7.1 \
-		nohash-hasher-0.1.3 \
-		num_cpus-1.15.0 \
-		proc-macro2-1.0.49 \
-		quote-1.0.23 \
-		rayon-1.6.1 \
-		rayon-core-1.10.1 \
-		ryu-1.0.12 \
+		itoa-1.0.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.113 \
+		memoffset-0.6.5 \
+		nohash-hasher-0.2.0 \
+		num_cpus-1.13.1 \
+		once_cell-1.16.0 \
+		os_str_bytes-6.0.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.47 \
+		quote-1.0.21 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
+		ryu-1.0.9 \
 		scopeguard-1.1.0 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
-		siphasher-0.3.10 \
-		strsim-0.8.0 \
-		syn-1.0.107 \
-		textwrap-0.11.0 \
-		unicode-ident-1.0.6 \
-		unicode-width-0.1.10 \
-		vec_map-0.8.2 \
+		serde-1.0.135 \
+		serde_json-1.0.78 \
+		siphasher-0.3.9 \
+		strsim-0.10.0 \
+		syn-1.0.103 \
+		termcolor-1.1.2 \
+		unicode-ident-1.0.5 \
+		version_check-0.9.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}

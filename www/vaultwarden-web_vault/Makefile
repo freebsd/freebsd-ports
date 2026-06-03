@@ -1,16 +1,21 @@
 PORTNAME=	vaultwarden
-PORTVERSION=	2025.5.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	${BW_WEB_VERSION}${BW_WEB_BUILD:S/+build//}
 CATEGORIES=	www security
-MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${BW_WEB_VERSION}${BW_WEB_BUILD}/
 PKGNAMESUFFIX=	_web-vault
-DISTNAME=	bw_web_${DISTVERSIONPREFIX}${DISTVERSION}
+DISTFILES=	bw_web_v${BW_WEB_VERSION}${BW_WEB_BUILD}.tar.gz
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Vaultwarden WebUI
 WWW=		https://github.com/dani-garcia/bw_web_builds
 
 LICENSE=	GPLv3
+
+# Ugly hack to prevent confusion "build" as "beta"
+# 2025.12.1 > 2025.12.1+b3/2025.12.1+build.3
+# Comment out BW_WEB_BUILD when no build suffix is needed
+BW_WEB_VERSION=	2026.4.1
+#BW_WEB_BUILD=   +build.3
 
 WRKSRC=		${WRKDIR}/web-vault
 

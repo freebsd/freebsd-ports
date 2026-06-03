@@ -1,0 +1,3 @@
+pytest-postgresql is a pytest plugin that enables you to test code relying on a
+running PostgreSQL database. It provides fixtures for managing both the
+PostgreSQL process and the client connections.

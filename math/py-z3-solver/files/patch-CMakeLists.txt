@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-10-07 22:51:28 UTC
+--- CMakeLists.txt.orig	2026-02-18 22:57:51 UTC
 +++ CMakeLists.txt
-@@ -1,4 +1,27 @@ message(STATUS "Emitting rules to build Z3 python bind
+@@ -1,4 +1,38 @@ message(STATUS "Emitting rules to build Z3 python bind
  message(STATUS "Emitting rules to build Z3 python bindings")
 +
 +## portion of src/CMakeLists.txt
@@ -24,6 +24,17 @@
 +  endif()
 +endforeach()
 +
++## Define libz3 as an imported target pointing to the pre-installed library
++if (NOT TARGET libz3)
++  find_library(LIBZ3_LIBRARY NAMES z3 libz3)
++  if (NOT LIBZ3_LIBRARY)
++    message(FATAL_ERROR "Could not find libz3 library")
++  endif()
++  add_library(libz3 SHARED IMPORTED)
++  set_target_properties(libz3 PROPERTIES
++    IMPORTED_LOCATION "${LIBZ3_LIBRARY}"
++  )
++endif()
 +
  ###############################################################################
  # Add target to build python bindings for the build directory

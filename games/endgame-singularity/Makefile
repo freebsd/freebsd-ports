@@ -1,6 +1,6 @@
 PORTNAME=	singularity
 PORTVERSION=	1.00
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	endgame-
@@ -29,7 +29,7 @@ LICENSE_PERMS_MEMESBRUH03=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polib>=0:devel/py-polib@${PY_FLAVOR}
 
 USES=		python sdl shebangfix

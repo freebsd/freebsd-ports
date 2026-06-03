@@ -1,5 +1,6 @@
 PORTNAME=	jgnash
 PORTVERSION=	2.21.0
+PORTREVISION=	2
 CATEGORIES=	finance java
 MASTER_SITES=	SF/jgnash/Active%20Stable%202.x
 DISTNAME=	jgnash-${PORTVERSION}-bin

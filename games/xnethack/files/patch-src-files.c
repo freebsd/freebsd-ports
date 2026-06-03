@@ -1,6 +1,6 @@
---- src/files.c.orig	2025-03-15 15:02:36 UTC
+--- src/files.c.orig	2026-02-28 22:45:03 UTC
 +++ src/files.c
-@@ -50,6 +50,7 @@ const
+@@ -76,6 +76,7 @@ const
  
  #if defined(UNIX) && defined(SELECTSAVED)
  #include <sys/types.h>

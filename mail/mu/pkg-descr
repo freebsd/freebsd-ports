@@ -1,4 +1,9 @@
-mu is a tool for dealing with e-mail messages stored in the
-Maildir-format, on Unix-like systems. mu's main purpose is to help you
-to find the messages you need, quickly; in addition, it allows you to
-view messages, extract attachments, create new maildirs, ...
+mu is a set of command-line tools for dealing with e-mail messages
+stored in the Maildir-format. mu's goal is to help you to quickly find
+the messages you need, view them, extract attachments, create new
+maildirs, and so on.
+
+Built on top of mu are some extensions (included in this package):
+
+- mu4e: a full-featured e-mail client that runs inside emacs
+- mu-scm: bindings for the Guile/Scheme programming language

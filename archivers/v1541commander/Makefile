@@ -3,7 +3,7 @@ PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers emulators
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual 1541 disk commander
 WWW=		https://github.com/excess-c64/v1541commander
 

@@ -1,0 +1,4 @@
+MCP Inspector is a developer tool for testing and debugging MCP servers.
+
+It combines a browser-based interface with an MCP proxy so developers can
+inspect servers that use stdio, SSE, or streamable HTTP transports.

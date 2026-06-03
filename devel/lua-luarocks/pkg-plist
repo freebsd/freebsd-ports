@@ -1,6 +1,9 @@
 bin/luarocks
 bin/luarocks-admin
 @sample %%ETCDIR%%/config-%%LUA_VER%%.lua.sample
+%%LUAJIT%%%%LUA_MODSHAREDIR%%/compat53/file_mt.lua
+%%LUAJIT%%%%LUA_MODSHAREDIR%%/compat53/init.lua
+%%LUAJIT%%%%LUA_MODSHAREDIR%%/compat53/module.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/cache.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/cmd/add.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/cmd/make_manifest.lua

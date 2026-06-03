@@ -1,0 +1,21 @@
+# See https://go-acme.github.io/lego/references/ref-file/index.html
+
+storage: %%PREFIX%%/etc/ssl/lego
+
+accounts:
+  example:
+    email: foo@example.com
+    acceptsTermsOfService: true
+
+challenges:
+  http-webroot:
+    http:
+      webroot: %%WWWDIR%%
+
+certificates:
+  example.com:
+    challenge: http-webroot
+    account: example
+    domains:
+      - example.com
+      - '*.example.com'

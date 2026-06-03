@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-03-23 08:45:44 UTC
++++ CMakeLists.txt
+@@ -252,7 +252,7 @@ if(ENABLE_TUNTAP)
+ 
+     elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+         include(CheckIncludeFile)
+-        cm_check_include("net/if_tun.h" HAVE_NET_IF_TUN_H)
++        cm_check_include("net/if.h;net/if_tun.h" HAVE_NET_IF_TUN_H)
+         if(HAVE_NET_IF_TUN_H)
+             add_definitions(-DHAVE_TUNTAP=1)
+         else()

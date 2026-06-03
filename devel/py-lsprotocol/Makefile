@@ -1,5 +1,5 @@
 PORTNAME=	lsprotocol
-PORTVERSION=	2023.0.1
+PORTVERSION=	2025.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,11 +19,5 @@ USES=		python
 USE_PYTHON=	pep517 autoplist concurrent
 
 NO_ARCH=	yes
-
-pre-configure:
-	@( \
-		${ECHO} "from setuptools import setup" && \
-		${ECHO} "setup()" \
-	) > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

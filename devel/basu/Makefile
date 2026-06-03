@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL2.1
 USES=		compiler:c11 gperf meson python:build shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/basic/generate-gperfs.py
-MESON_ARGS=	-Daudit=disabled -Dlibcap=disabled
+MESON_DISABLED=	audit libcap
 
 .include <bsd.port.mk>

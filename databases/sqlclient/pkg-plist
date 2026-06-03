@@ -26,6 +26,7 @@ GNUstep/System/Library/Documentation/SQLClient/OrderedSymbolDeclarations.plist
 GNUstep/System/Library/Documentation/SQLClient/SQLClient.gsdoc
 GNUstep/System/Library/Documentation/SQLClient/SQLClient.html
 GNUstep/System/Library/Documentation/SQLClient/SQLClient.igsdoc
+GNUstep/System/Library/Documentation/SQLClient/default-styles.css
 GNUstep/System/Library/Documentation/SQLClient/dependencies
 GNUstep/System/Library/Headers/SQLClient/SQLClient.h
 GNUstep/System/Library/Libraries/libSQLClient.so

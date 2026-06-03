@@ -1,16 +1,29 @@
---- SKK-MK.orig	2024-03-17 07:41:31 UTC
+--- SKK-MK.orig	2026-03-29 13:17:07 UTC
 +++ SKK-MK
-@@ -229,11 +229,13 @@ This version of SKK requires MULE features"))
-		skk-inline
-		skk-isearch
-		skk-jisx0201
+@@ -234,11 +234,13 @@ This version of SKK requires MULE features"))
+ 		skk-inline
+ 		skk-isearch
+ 		skk-jisx0201
 +		skk-jisx0213
-		skk-jisyo-edit-mode
-		skk-kakasi
-		skk-kcode
-		skk-leim
-		skk-look
+ 		skk-jisyo-edit-mode
+ 		skk-kakasi
+ 		skk-kcode
+ 		skk-leim
+ 		skk-look
 +		skk-lookup
-		skk-macs
-		skk-num
-                skk-search-web
+ 		skk-macs
+ 		skk-num
+                 skk-search-web
+@@ -409,11 +411,7 @@ This version of SKK requires MULE features"))
+ 
+ (defun SKK-MK-compile ()
+   (let (enable-local-eval)
+-    (SKK-MK-generate-autoloads-el)
+-    ;; (load (expand-file-name "skk-autoloads.el"))
+-    ;; (require 'skk (expand-file-name "skk.el"))
+-    (compile-elisp-modules SKK_MODULES
+-			   (expand-file-name "."))))
++    (SKK-MK-generate-autoloads-el)))
+ 
+ (defun SKK-MK-compile-info ()
+   (when (and SKK_INFO

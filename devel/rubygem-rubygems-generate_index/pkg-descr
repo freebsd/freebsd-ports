@@ -1,0 +1,6 @@
+rubygems-generate_index generates the index files for a gem server directory.
+
+The generate_index command creates a set of indexes for serving gems statically.
+The command expects a 'gems' directory under the path given to the --directory
+option. The given directory will be the directory you serve as the gem
+repository.

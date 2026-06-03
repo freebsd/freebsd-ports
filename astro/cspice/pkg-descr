@@ -1,0 +1,5 @@
+The NAIF C SPICE Toolkit provides a comprehensive set of
+subroutines and functions for computing many common geometry
+calculations and manipulations used in planning and analyzing
+space science observations. It is used by the spiceypy Python
+wrapper and other astrodynamics packages.

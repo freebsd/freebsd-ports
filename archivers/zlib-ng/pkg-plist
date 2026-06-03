@@ -3,8 +3,8 @@ include/zlib-ng.h
 include/zlib_name_mangling-ng.h
 lib/cmake/zlib-ng/zlib-ng-config-version.cmake
 lib/cmake/zlib-ng/zlib-ng-config.cmake
-lib/cmake/zlib-ng/zlib-ng-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/zlib-ng/zlib-ng.cmake
+lib/cmake/zlib-ng/zlib-ng-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/zlib-ng/zlib-ng-targets.cmake
 lib/libz-ng.a
 lib/libz-ng.so
 lib/libz-ng.so.2

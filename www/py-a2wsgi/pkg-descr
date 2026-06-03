@@ -1,0 +1,9 @@
+Convert WSGI app to ASGI app or ASGI app to WSGI app.
+
+Pure Python. Only depend on the standard library.
+
+Compared with other converters, the advantage is that a2wsgi
+will not accumulate the requested content or response content
+in the memory, so you don't have to worry about the memory
+limit caused by a2wsgi. This problem exists in converters
+implemented by uvicorn/startlette or hypercorn.

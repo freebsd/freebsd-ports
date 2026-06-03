@@ -28,7 +28,6 @@
     SUBDIR += fcitx-cloudpinyin
     SUBDIR += fcitx-configtool
     SUBDIR += fcitx-libpinyin
-    SUBDIR += fcitx-rime
     SUBDIR += fcitx-table-extra
     SUBDIR += fcitx-ui-light
     SUBDIR += fcitx5-chewing
@@ -90,6 +89,7 @@
     SUBDIR += pcmanx
     SUBDIR += php-opencc
     SUBDIR += phpbb3-tw
+    SUBDIR += py-rjieba
     SUBDIR += pycangjie
     SUBDIR += pyzy
     SUBDIR += qe

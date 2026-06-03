@@ -1,5 +1,5 @@
 PORTNAME=	frozenlist
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expandvars>=0:devel/py-expandvars@${PY_FLA
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		gettext-runtime python
-USE_PYTHON=	autoplist concurrent cython3 pep517 pytest
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

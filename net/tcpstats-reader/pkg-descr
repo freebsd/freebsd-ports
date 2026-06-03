@@ -1,0 +1,10 @@
+Command-line tool for reading TCP socket statistics from the tcpstats
+kernel module on FreeBSD.
+
+Reads fixed-size 320-byte records from /dev/tcpstats containing per-connection
+TCP metrics including addresses, ports, TCP state, congestion control parameters
+(cwnd, ssthresh), RTT measurements, retransmit counts, ECN statistics, and
+process attribution.  Supports JSON Lines, pretty-printed JSON, and protobuf
+output formats with configurable collection intervals.
+
+Requires the tcpstats-kmod port to be installed and loaded.

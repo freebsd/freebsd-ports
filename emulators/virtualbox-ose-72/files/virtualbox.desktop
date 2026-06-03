@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Oracle VM VirtualBox
+GenericName=Virtual Machine
+Type=Application
+Exec=VirtualBox
+TryExec=VirtualBox
+Icon=VBox
+Categories=Emulator;System;
+Comment=Run several virtual systems on a single host computer
+Comment[de]=Windows und andere Betriebssysteme unter FreeBSD ausführen
+Comment[it]=Esegui più macchine virtuali su un singolo computer
+Comment[ko]=가상 머신
+Comment[pl]=Uruchamianie wielu systemów wirtualnych na jednym komputerze gospodarza
+Comment[ru]=Запуск нескольких виртуальных машин на одном компьютере
+Comment[sv]=Kör flera virtuella system på en enda värddator

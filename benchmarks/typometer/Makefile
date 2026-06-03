@@ -1,5 +1,6 @@
 PORTNAME=	typometer
 PORTVERSION=	1.0.1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	benchmarks java
 # Not USE_GITHUB because we want to grab the binary release (it's Java)

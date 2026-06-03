@@ -1,0 +1,6 @@
+U-Boot loader and related files for the u-boot-bananapi-r2-pro
+
+To install this bootloader on an sdcard just do:
+
+dd if=/usr/local/share/u-boot/u-boot-bananapi-r2-pro/idbloader.img of=/path/to/sdcarddevice seek=64 conv=sync
+dd if=/usr/local/share/u-boot/u-boot-bananapi-r2-pro/u-boot.itb of=/path/to/sdcarddevice seek=16384 bs=512 conv=sync

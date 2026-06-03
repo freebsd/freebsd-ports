@@ -23,6 +23,7 @@ lib/mariadb/plugin/caching_sha2_password.so
 lib/mariadb/plugin/client_ed25519.so
 lib/mariadb/plugin/dialog.so
 lib/mariadb/plugin/mysql_clear_password.so
+lib/mariadb/plugin/parsec.so
 lib/mariadb/plugin/remote_io.so
 lib/mariadb/plugin/sha256_password.so
 lib/mariadb/plugin/zstd.so

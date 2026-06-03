@@ -1,4 +1,4 @@
-From db2e99cab015e03711542f8d97b6cd9654aa1b0a Mon Sep 17 00:00:00 2001
+From 82354c9f2431a1c35bc12297697b8ab48f206f27 Mon Sep 17 00:00:00 2001
 From: David Woodhouse <dwmw@amazon.co.uk>
 Date: Fri, 10 Jan 2025 10:35:30 +0100
 Subject: [PATCH 1/2] hw/xen: Add xs_node_read() helper function
@@ -23,16 +23,17 @@ Reviewed-by: Anthony PERARD <anthony.perard@vates.tech>
  3 files changed, 32 insertions(+)
 
 diff --git a/hw/xen/trace-events b/hw/xen/trace-events
-index 55c9e1df680b..53df1b9ba968 100644
+index d1b27f6c11b0..ae90c270914d 100644
 --- a/hw/xen/trace-events
 +++ b/hw/xen/trace-events
-@@ -39,5 +39,6 @@ xs_node_create(const char *node) "%s"
+@@ -39,6 +39,7 @@ xs_node_create(const char *node) "%s"
  xs_node_destroy(const char *node) "%s"
  xs_node_vprintf(char *path, char *value) "%s %s"
  xs_node_vscanf(char *path, char *value) "%s %s"
 +xs_node_read(const char *path, const char *value) "%s %s"
  xs_node_watch(char *path) "%s"
  xs_node_unwatch(char *path) "%s"
+ 
 diff --git a/hw/xen/xen-bus-helper.c b/hw/xen/xen-bus-helper.c
 index b2b2cc9c5d5e..22fd2f6c1ac5 100644
 --- a/hw/xen/xen-bus-helper.c
@@ -87,5 +88,5 @@ index d8dcc2f0107d..e9911115b326 100644
  struct qemu_xs_watch *xs_node_watch(struct qemu_xs_handle *h, const char *node,
                                      const char *key, xs_watch_fn fn,
 -- 
-2.46.0
+2.51.0
 

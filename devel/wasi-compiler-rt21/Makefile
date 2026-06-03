@@ -1,0 +1,7 @@
+# must sync with devel/llvm21
+DISTVERSION=	21.1.8
+PORTREVISION=	1
+
+MASTERDIR=	${.CURDIR}/../wasi-compiler-rt
+
+.include "${MASTERDIR}/Makefile"

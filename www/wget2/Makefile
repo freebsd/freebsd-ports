@@ -1,6 +1,6 @@
 PORTNAME=	wget2
-DISTVERSION=	2.2.0
-PORTREVISION=	1
+DISTVERSION=	2.2.1
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	GNU/wget
 
@@ -110,6 +110,8 @@ BZIP2_CONFIGURE_WITH=	bzip2
 PROXY_DESC=		Systemwide proxy configuration through libproxy
 PROXY_CONFIGURE_ENABLE=	libproxy
 PROXY_LIB_DEPENDS=      libproxy.so:net/libproxy
+PROXY_PREVENTS=		IDN
+PROXY_PREVENTS_MSG=	IDN self-tests break if PROXY option enabled
 
 .include <bsd.port.pre.mk>
 

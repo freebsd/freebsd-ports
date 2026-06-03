@@ -1,5 +1,5 @@
 PORTNAME=	atompaw
-DISTVERSION=	4.2.0.3
+DISTVERSION=	4.2.0.5
 PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://users.wfu.edu/natalie/papers/pwpaw/
@@ -11,11 +11,11 @@ WWW=		https://users.wfu.edu/natalie/papers/pwpaw/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblapack.so:math/lapack \
-		libblas.so:math/blas
-
-USES=		fortran gmake libtool
+USES=		blaslapack:openblas fortran gmake libtool
+MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-linalg-prefix=${LOCALBASE}	\
+		--with-linalg-libs=${BLASLIB}
 
 OPTIONS_DEFINE=		DOCS LIBXC
 OPTIONS_DEFAULT=	LIBXC
@@ -27,6 +27,6 @@ LIBXC_LIB_DEPENDS=	libxc.so:science/libxc
 PORTDOCS=	*
 
 PLIST_FILES=	bin/atompaw \
-		bin/graphatom
+		bin/atompaw_aeonly
 
 .include <bsd.port.mk>

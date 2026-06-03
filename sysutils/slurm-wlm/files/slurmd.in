@@ -8,36 +8,111 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# slurmd_enable (bool):   Set to NO by default.
-#               Set it to YES to enable slurmd.
+# slurmd_enable (bool):       Set to NO by default.
+#                             Set it to YES to enable slurmd.
+#
+# Common knobs (honoured by slurmd and slurmctld):
+#   slurm_user (str):         User to run Slurm daemons as (default: slurm)
+#   slurm_group (str):        Group to run Slurm daemons as (default: slurm)
+#   slurm_conf (str):         Path to slurm.conf, exported as SLURM_CONF
+#                             (default: %%ETCDIR%%/slurm.conf)
+#   slurm_logdir (str):       Log directory (default: /var/log/slurm)
+#   slurm_rundir (str):       Runtime directory (default: /var/run/slurm)
+#
+# Service-specific knobs:
+#   slurmd_flags (str):       Extra arguments passed to slurmd.
+#   slurmd_pidfile (str):     PID file path
+#                             (default: ${slurm_rundir}/slurmd.pid)
+#   slurmd_logfile (str):     Log file path
+#                             (default: ${slurm_logdir}/slurmd.log)
 #
 
 . /etc/rc.subr
 
 name="slurmd"
-rcvar=slurmd_enable
-
-pidfile=/var/run/$name.pid
+rcvar="slurmd_enable"
 
 load_rc_config $name
 
-: ${slurmd_enable="NO"}
+# Common defaults (shared conceptual contract with slurmctld)
+: ${slurm_user:="slurm"}
+: ${slurm_group:="slurm"}
+: ${slurm_conf:="%%ETCDIR%%/slurm.conf"}
+: ${slurm_logdir:="/var/log/slurm"}
+: ${slurm_rundir:="/var/run/slurm"}
 
-start_cmd=slurmd_start
-stop_cmd=slurmd_stop
+# Service defaults
+: ${slurmd_enable:="NO"}
+: ${slurmd_flags:=""}
+: ${slurmd_pidfile:="${slurm_rundir}/slurmd.pid"}
+: ${slurmd_logfile:="${slurm_logdir}/slurmd.log"}
 
-slurmd_start() {
-    checkyesno slurmd_enable && echo "Starting $name." && \
-	%%PREFIX%%/sbin/$name $slurmd_flags
+pidfile="${slurmd_pidfile}"
+
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/sbin/${name}"
+command_args="-P ${pidfile} -o ${slurmd_logfile} ${procname} -D ${slurmd_flags}"
+
+extra_commands="reload"
+start_precmd="${name}_prestart"
+reload_cmd="${name}_reload"
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
+
+slurmd_prestart()
+{
+	# Ensure log and run directories exist with correct ownership/modes.
+	/usr/bin/install -d -o "${slurm_user}" -g "${slurm_group}" -m 0750 "${slurm_logdir}" || return 1
+	/usr/bin/install -d -o "root" -g "wheel" -m 0755 "${slurm_rundir}" || return 1
+
+	# Export SLURM_CONF if not already provided in the environment.
+	if [ -z "${SLURM_CONF}" ]; then
+		export SLURM_CONF="${slurm_conf}"
+	fi
 }
 
-slurmd_stop() {
-    if [ -e $pidfile ]; then
-        checkyesno slurmd_enable && echo "Stopping $name." && \
-	    kill `cat $pidfile`
-    else
-        killall $name
-    fi
+slurmd_reload()
+{
+	if [ ! -r "${pidfile}" ]; then
+		echo "${name} not running? (pidfile not found)"
+		return 1
+	fi
+	echo "Reloading ${name} configuration."
+	kill -HUP "$(cat "${pidfile}")"
+}
+
+slurmd_status()
+{
+	if [ ! -r "${pidfile}" ]; then
+		echo "${name} is not running (no pidfile)."
+		return 1
+	fi
+	if ! check_pidfile "${pidfile}" "${procname}"; then
+		echo "${name} is not running (stale pidfile)."
+		return 1
+	fi
+	echo "${name} is running as pid $(cat "${pidfile}")."
+}
+
+slurmd_stop()
+{
+	if [ ! -r "${pidfile}" ]; then
+		echo "${name} not running? (no pidfile)."
+		return 1
+	fi
+
+	if ! check_pidfile "${pidfile}" "${procname}"; then
+		echo "${name} not running? (stale pidfile: ${pidfile})."
+		rm -f "${pidfile}"
+		return 1
+	fi
+
+	echo "Stopping ${name}."
+	kill -TERM "$(cat "${pidfile}")" 2>/dev/null || true
+
+	if check_pidfile "${pidfile}" "${procname}"; then
+		rm -f "${pidfile}"
+	fi
 }
 
 run_rc_command "$1"

@@ -66,6 +66,7 @@ include/soplex/sol.h
 include/soplex/solbase.h
 include/soplex/solverational.hpp
 include/soplex/solvereal.hpp
+include/soplex/soplex_interface.h
 include/soplex/sorter.h
 include/soplex/spxalloc.h
 include/soplex/spxautopr.h
@@ -159,6 +160,7 @@ include/soplex/vector.h
 include/soplex/vectorbase.h
 include/soplex/wallclocktimer.h
 include/soplex_interface.h
+%%MPFR%%lib/cmake/soplex/FindMPFR.cmake
 lib/cmake/soplex/soplex-config-version.cmake
 lib/cmake/soplex/soplex-config.cmake
 lib/cmake/soplex/soplex-targets-%%CMAKE_BUILD_TYPE%%.cmake

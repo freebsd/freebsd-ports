@@ -14,7 +14,7 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libdjvulibre.so:graphics/djvulibre \
 		libepub.so:textproc/ebook-tools \
 		libfreetype.so:print/freetype2 \
-		libQMobipocket6.so:graphics/kdegraphics-mobipocket@qt6 \
+		libQMobipocket6.so:graphics/kdegraphics-mobipocket \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
 		libqca-qt6.so:devel/qca@qt6 \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext jpeg \
 		kde:6 pkgconfig qt:6 tar:xz xorg
 USE_KDE=	activities archive auth bookmarks codecs completion config \
-		iconthemes itemmodels itemviews jobwidgets kio libkexiv2 parts \
+		iconthemes itemmodels jobwidgets kio libkexiv2 parts \
 		phonon pty service solid sonnet textwidgets threadweaver \
 		wallet widgetsaddons windowsystem xmlgui \
 		ecm:build

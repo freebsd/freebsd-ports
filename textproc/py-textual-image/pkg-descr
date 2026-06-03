@@ -1,0 +1,13 @@
+textual-image renders images directly in your terminal using Textual and Rich.
+
+textual-image offers both Rich renderables and Textual Widgets that leverage the
+Terminal Graphics Protocol (TGP) and Sixel protocols to display images in your
+terminal. For terminals that don't support these protocols, fallback rendering
+using Unicode characters is available.
+
+Supported Terminals:
+- Terminal Graphics Protocol (TGP): Initially introduced by the Kitty terminal
+  emulator. While support is partially available in other terminals, it doesn't
+  seem to be really usable there.
+- Sixel Graphics: Supported by various terminal emulators including xterm and a
+  lot of others.

@@ -1,0 +1,10 @@
+--- cargo-crates/extism-convert-1.21.0/Cargo.toml.orig
++++ cargo-crates/extism-convert-1.21.0/Cargo.toml
+@@ -33,7 +33,6 @@
+ default = [
+     "msgpack",
+     "prost",
+-    "raw",
+ ]
+ extism-path = ["extism-convert-macros/extism-path"]
+ extism-pdk-path = ["extism-convert-macros/extism-pdk-path"]

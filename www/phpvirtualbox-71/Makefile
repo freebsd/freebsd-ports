@@ -1,14 +1,17 @@
 PORTNAME=	phpvirtualbox
-DISTVERSION=	7.1-1
+DISTVERSION=	7.1-2
 CATEGORIES=	www
 SUFFIX=		-71
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
-WWW=		https://sourceforge.net/projects/phpvirtualbox-7-0/
+WWW=		https://github.com/phpvirtualbox/phpvirtualbox/
 
 LICENSE=	GPLv3
+
+DEPRECATED=		Upstream EOL reaches on 2026-04-21, use www/phpvirtualbox-72 instead
+EXPIRATION_DATE=	2026-12-31
 
 USES=		php:flavors
 USE_GITHUB=	yes
@@ -16,7 +19,9 @@ USE_PHP=	session simplexml soap xml
 
 ETCDIR=		${WWWDIR}
 WWWDIR=		${PREFIX}/www/${PORTNAME}${SUFFIX}
-EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
+EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox-72/files/patch-endpoints_lib_config.php \
+		${.CURDIR}/../phpvirtualbox-72/files/patch-endpoints_lib_vboxconnector.php \
+		${.CURDIR}/../phpvirtualbox-72/files/patch-panes_mediumEncryptionPasswords.html
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^7\.1\.
@@ -26,7 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#Alias /phpvirtualbox#Alias /phpvirtualbox${SUFFIX}#' \
 		-e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \
 		${WRKSRC}/phpvirtualbox${SUFFIX}.conf
-	@${REINPLACE_CMD} -e 's#\r#\n#g' ${WRKSRC}/languages/zh_tw.xml
+	@${REINPLACE_CMD} -e 's#7.1-1#${DISTVERSION}#' \
+		${WRKSRC}/endpoints/lib/config.php
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

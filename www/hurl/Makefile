@@ -1,6 +1,5 @@
 PORTNAME=	hurl
-DISTVERSION=	6.1.1
-PORTREVISION=	5
+DISTVERSION=	8.0.1
 CATEGORIES=	www
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -10,9 +9,11 @@ WWW=		https://hurl.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	bindgen test for libxml binding fail
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cargo gnome ssl
+USES=		cargo gnome llvm ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Orange-OpenSource
 USE_GNOME=	libxml2

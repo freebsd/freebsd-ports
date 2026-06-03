@@ -1,0 +1,36 @@
+-- Remove build-time version pins for numpy and setuptools that are too new
+-- for the versions available in FreeBSD ports.
+-- Fix version to match the release tag (upstream bug: tag is v2026.5.18 but
+-- version in pyproject.toml is 2026.5.17).
+-- Remove the pmg CLI entry point which requires pymatgen (not just pymatgen-core).
+--- pyproject.toml.orig	2026-05-19 06:56:20 UTC
++++ pyproject.toml
+@@ -3,8 +3,8 @@ requires = [
+     "Cython>=0.29.23",
+     # Building against NPY2 will support both NPY1 and NPY2
+     # https://numpy.org/devdocs/dev/depending_on_numpy.html#build-time-dependency
+-    "numpy>=2.1.0",
+-    "setuptools>=65.0.0",
++    "numpy",
++    "setuptools",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -77,7 +77,7 @@ dependencies = [
+     "tqdm>=4.67.3",
+     "uncertainties>=3.1",
+ ]
+-version = "2026.5.17"
++version = "2026.5.18"
+ 
+ [project.urls]
+ Homepage = "https://pymatgen.org"
+@@ -112,8 +112,6 @@ zeopp = ["pyzeo; platform_system != 'Windows'"]  # Not
+ tblite = ["tblite[ase]>=0.3.0; platform_system=='Linux' and python_version<'3.12'"]
+ zeopp = ["pyzeo; platform_system != 'Windows'"]  # Note: requires Voro++ and Zeo++ to be installed
+ 
+-[project.scripts]
+-pmg = "pymatgen.cli.pmg:main"
+ 
+ [tool.setuptools]
+ include-package-data = false

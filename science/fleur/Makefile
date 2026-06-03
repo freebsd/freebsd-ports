@@ -1,6 +1,6 @@
 PORTNAME=	fleur
-DISTVERSION=	7.2
-PORTREVISION=	4
+DISTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ USE_GNOME=	libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://iffgit.fz-juelich.de
-GL_TAGNAME=	447eed3b7ec3de5fcdfbd232cd1eda4caefb51d3
+GL_TAGNAME=	37fc75f41f56787c99e7635a2f7a909a6488a1e9
 
 FFLAGS=		-I${LOCALBASE}/include
 LDFLAGS+=	-llapack -lopenblas -lxml2 # to fix missing symbols, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/670

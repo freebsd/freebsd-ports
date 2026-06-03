@@ -1,6 +1,5 @@
 PORTNAME=	pyopencl
-PORTVERSION=	2018.2
-PORTREVISION=	10
+PORTVERSION=	2026.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,31 +12,20 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
-		${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
-LIB_DEPENDS=	${PY_BOOST} \
-		libOpenCL.so:devel/ocl-icd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}decorator>=3.2.0:devel/py-decorator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mako>=0.3.6:textproc/py-mako@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytools>=2017.6:devel/py-pytools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}nanobind>0:devel/py-nanobind@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.9.3:devel/py-scikit-build-core@${PY_FLAVOR}
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.2:devel/py-platformdirs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytools>=2025.1.6:devel/py-pytools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang localbase python
-USE_PYTHON=	autoplist pep517
+USES=		cmake:indirect compiler:c++17-lang gl localbase python
+USE_GL=		opengl
+USE_PYTHON=	autoplist pep517 pytest
 
-CONFIGURE_ARGS=	BOOST_INC_DIR="${LOCALBASE}/include" \
-		BOOST_LIB_DIR="${LOCALBASE}/lib" \
-		BOOST_PYTHON_LIBNAME=${PY_BOOST_LIB} \
-		CL_INC_DIR="${LOCALBASE}/include" \
-		CL_LIB_DIR="${LOCALBASE}/lib" \
-		USE_SHIPPED_BOOST=False
-
-do-configure:
-	@cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
+MAKE_ENV=	PYOPENCL_ENABLE_GL=ON
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +

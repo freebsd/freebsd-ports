@@ -1,6 +1,6 @@
 PORTNAME=	spktype21
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/whiskie14142/spktype21
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY}	\
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}jplephem>0:astro/py-jplephem@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spktype01>0:astro/py-spktype01@${PY_FLAVOR} \
 		py.test:devel/py-pytest@${PY_FLAVOR}

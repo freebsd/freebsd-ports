@@ -1,18 +1,18 @@
 PORTNAME=	drawio
-PORTVERSION=	26.2.15
-PORTREVISION=	9
+PORTVERSION=	29.6.6
+PORTREVISION=	6
 DISTVERSIONPREFIX=	x86_64-
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jgraph/drawio-desktop/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	x636808@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Diagramming and whiteboarding desktop app
 WWW=		https://drawio.com/
 
 LICENSE=	APACHE20
 
-USES=		desktop-file-utils electronfix:35 shared-mime-info
+USES=		desktop-file-utils electronfix:40 shared-mime-info
 
 NO_BUILD=	yes
 SUB_FILES=	drawio

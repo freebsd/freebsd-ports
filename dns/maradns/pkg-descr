@@ -1,4 +1,4 @@
-MaraDNS is a package that implements the Domain Name Service (DNS), an
-essential internet service.
+MaraDNS implements the Domain Name System (DNS), an essential internet service.
+
 People like MaraDNS because it's small, lightweight, easy to set up, and
 remarkably secure.

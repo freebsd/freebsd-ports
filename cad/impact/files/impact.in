@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%%
-"%%LOCALBASE%%/bin/java" -Xmx1000m -Xss1m -cp .:doc:bin run.Impact "$@"
-cd -

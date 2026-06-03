@@ -1,20 +1,20 @@
---- chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc.orig	2026-04-15 11:25:12 UTC
 +++ chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc
-@@ -34,7 +34,7 @@
- #include "extensions/buildflags/buildflags.h"
- #include "services/network/public/cpp/shared_url_loader_factory.h"
+@@ -41,7 +41,7 @@
+ #include "chrome/browser/enterprise/reporting/reporting_delegate_factory_desktop.h"
+ #endif
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/enterprise/reporting/saas_usage/saas_usage_reporting_delegate_factory_desktop.h"
+ #include "components/enterprise/browser/reporting/reporting_features.h"
+ #include "components/enterprise/browser/reporting/saas_usage/saas_usage_report_scheduler.h"
+@@ -122,7 +122,7 @@ void CloudProfileReportingService::CreateReportSchedul
+ #endif
+   report_scheduler_ = std::make_unique<ReportScheduler>(std::move(params));
  
-@@ -113,7 +113,7 @@ void CloudProfileReportingService::CreateReportSchedul
-   params.profile_request_generator =
-       std::make_unique<ChromeProfileRequestGenerator>(
-           profile_->GetPath(), &delegate_factory,
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-           enterprise_signals::SignalsAggregatorFactory::GetForProfile(
-               profile_));
- #else
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (base::FeatureList::IsEnabled(kSaasUsageReporting)) {
+     auto saas_usage_reporting_delegate_factory =
+         SaasUsageReportingDelegateFactoryDesktop::CreateForProfile(profile_);

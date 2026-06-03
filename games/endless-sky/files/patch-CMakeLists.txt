@@ -1,8 +1,18 @@
---- CMakeLists.txt.orig	2023-10-21 20:01:54 UTC
+--- CMakeLists.txt.orig	2025-06-28 19:11:31 UTC
 +++ CMakeLists.txt
-@@ -259,19 +259,21 @@ elseif(WIN32)
- 	install(FILES changelog DESTINATION .)
- 	install(FILES license.txt DESTINATION .)
+@@ -100,8 +100,7 @@ else()
+ 		find_package(PkgConfig REQUIRED PkgConfig PkgConf)
+ 		pkg_check_modules(MINIZIP REQUIRED minizip)
+ 	else()
+-		cmake_pkg_config(EXTRACT minizip REQUIRED)
+-		set(MINIZIP_LIBRARIES "minizip")
++		find_library(MINIZIP_LIBRARIES NAMES minizip)
+ 	endif()
+ endif()
+ 
+@@ -311,19 +310,21 @@ elseif(UNIX)
+ 		"RMDir /r $INSTDIR")
+ 	include(CPack)
  elseif(UNIX)
 +	include(GNUInstallDirs)
 +
@@ -26,7 +36,7 @@
  			RENAME endless-sky.png)
  	endforeach()
  
-@@ -283,15 +285,15 @@ elseif(UNIX)
+@@ -335,18 +336,18 @@ elseif(UNIX)
  		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
  		VERBATIM)
  	target_sources(EndlessSky PRIVATE endless-sky.6.gz)
@@ -36,6 +46,7 @@
  	# Install the resource files.
 -	install(DIRECTORY data DESTINATION share/games/endless-sky)
 -	install(DIRECTORY images DESTINATION share/games/endless-sky)
+-	install(DIRECTORY shaders DESTINATION share/games/endless-sky)
 -	install(DIRECTORY sounds DESTINATION share/games/endless-sky)
 -	install(FILES credits.txt DESTINATION share/games/endless-sky)
 -	install(FILES keys.txt DESTINATION share/games/endless-sky)
@@ -44,6 +55,7 @@
 -	install(FILES license.txt DESTINATION share/doc/endless-sky)
 +	install(DIRECTORY data DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
 +	install(DIRECTORY images DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
++	install(DIRECTORY shaders DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
 +	install(DIRECTORY sounds DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
 +	install(FILES credits.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
 +	install(FILES keys.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
@@ -51,3 +63,5 @@
 +	install(FILES changelog DESTINATION ${CMAKE_INSTALL_DOCDIR}/endless-sky)
 +	#install(FILES license.txt DESTINATION ${CMAKE_INSTALL_DOCDIR}/endless-sky)
  endif()
+ 
+ # Create symlink to compile_commands.json from build/ so it's LSP-discoverable.

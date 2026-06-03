@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		alias gmake shebangfix
+USES=		gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	andikleen
 

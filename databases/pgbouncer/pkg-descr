@@ -30,4 +30,4 @@ below for incompatible features.
 
 Most aggressive method. This is transaction pooling with a twist:
 Multi-statement transactions are disallowed. This is meant to enforce
-“autocommit” mode on the client, mostly targeted at PL/Proxy.
+"autocommit" mode on the client, mostly targeted at PL/Proxy.

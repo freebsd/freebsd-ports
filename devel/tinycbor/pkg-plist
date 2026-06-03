@@ -1,10 +1,13 @@
 bin/cbordump
 bin/json2cbor
 include/tinycbor/cbor.h
-include/tinycbor/cborjson.h
+include/tinycbor/tinycbor-export.h
 include/tinycbor/tinycbor-version.h
-lib/libtinycbor.a
+lib/cmake/tinycbor/TinyCBOR-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/tinycbor/TinyCBOR-targets.cmake
+lib/cmake/tinycbor/tinycbor-config-version.cmake
+lib/cmake/tinycbor/tinycbor-config.cmake
 lib/libtinycbor.so
 lib/libtinycbor.so.0
-lib/libtinycbor.so.%%PORTVERSION%%
+lib/libtinycbor.so.0.%%PORTVERSION%%
 libdata/pkgconfig/tinycbor.pc

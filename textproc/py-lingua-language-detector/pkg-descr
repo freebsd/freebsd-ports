@@ -1,0 +1,12 @@
+Lingua is an accurate natural language detection library for Python,
+suitable for both short snippets and long texts.  It detects 75 languages
+and goes beyond simple rule-based or statistical approaches by using a
+rich set of language models.
+
+Features:
+- Supports 75 languages
+- High accuracy for short and ambiguous texts
+- Distinction between similar languages (e.g., Norwegian Bokmal and Nynorsk)
+- Confidence values for each detected language
+- Optional filtering to a subset of supported languages
+- Fast detection performance

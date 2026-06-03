@@ -1,24 +1,22 @@
 PORTNAME=	xstatic-autosize
-DISTVERSION=	1.17.2.1
-PORTREVISION=	1
+PORTVERSION=	6.0.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-autosize-${DISTVERSION}
+DISTNAME=	xstatic_autosize-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	autosize 1.17.2 (XStatic packaging standard)
-WWW=		https://www.jacklmoore.com/autosize/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	autosize ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://github.com/xstatic-py/xstatic-autosize
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|xs.PACKAGE_NAME|'xstatic-autosize'|g" \
-		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

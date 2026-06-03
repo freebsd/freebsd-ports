@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: ollama
+# REQUIRE: LOGIN
+# KEYWORDS: shutdown
+
+# Add the following lines to /etc/rc.conf to enable ollama
+# ollama_enable="YES"
+#
+# ollama_enable (bool):    Set to YES to enable ollama
+#                          Default: NO
+# ollama_user (str):       Ollama daemon user
+#                          Default: root
+# ollama_args (str):       Additional arguments for ollama
+#                          Default: ""
+# ollama_log (str):        Log file for ollama
+#                          Default: "/var/log/ollama-$user.log"
+# ollama_pidfile (str):    PID file for ollama
+#                          Default: "/var/run/ollama-$user.pid"
+# ollama_context_length (int): Context length for ollama (OLLAMA_CONTEXT_LENGTH)
+#                          Default: 65536
+# ollama_use_vulkan (int): Use Vulkan (OLLAMA_VULKAN)
+#                          Default: 1, 0 to disable
+
+. /etc/rc.subr
+
+name="ollama"
+rcvar=ollama_enable
+
+load_rc_config $name
+
+: ${ollama_enable:="NO"}
+: ${ollama_user:="root"} # the user nobody doesn't have a home directory and ollama needs one to store the models
+: ${ollama_args:="serve"}
+: ${ollama_log:="/var/log/ollama-${ollama_user}.log"}
+: ${ollama_pidfile:="/var/run/${name}-${ollama_user}.pid"}
+: ${ollama_context_length:="65536"}
+: ${ollama_use_vulkan:="1"}
+
+run_command="%%PREFIX%%/bin/ollama"
+procname="${run_command}"
+pidfile=${ollama_pidfile}
+command=/usr/sbin/daemon
+command_args="-f -t ${name} -p ${pidfile} -o ${ollama_log} ${run_command} ${ollama_args}"
+
+start_precmd="ollama_precmd"
+ollama_chdir=/tmp
+
+ollama_precmd()
+{
+    # set environment variables for the ollama server
+    export OLLAMA_CONTEXT_LENGTH=${ollama_context_length}
+    export HOME=$(eval echo "~${ollama_user}")
+    if [ "$ollama_use_vulkan" != "0" ]; then
+        export OLLAMA_VULKAN=1
+    else
+        export OLLAMA_VULKAN=0
+    fi
+    # ensure log file exists
+    touch ${ollama_log} ${pidfile}
+    chown ${ollama_user} ${ollama_log} ${pidfile}
+    chmod 640 ${ollama_log}
+}
+
+run_rc_command "$1"

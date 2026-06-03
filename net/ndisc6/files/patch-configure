@@ -1,4 +1,4 @@
---- configure.orig	2022-07-11 16:50:06 UTC
+--- configure.orig	2024-01-27 12:55:04 UTC
 +++ configure
 @@ -6355,7 +6355,7 @@ fi
                  if test "X$additional_includedir" = "X/usr/local/include"; then

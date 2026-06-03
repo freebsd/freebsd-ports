@@ -1,15 +1,15 @@
---- chrome/browser/browser_process_impl.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -262,7 +262,7 @@
+@@ -271,7 +271,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
  #include "chrome/browser/browser_features.h"
- #include "components/os_crypt/async/browser/fallback_linux_key_provider.h"
  #include "components/os_crypt/async/browser/freedesktop_secret_key_provider.h"
-@@ -274,7 +274,7 @@
+ #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
+@@ -290,7 +290,7 @@ void OnLocalStatePrefsLoaded();
  #include "chrome/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
@@ -18,25 +18,25 @@
  // How often to check if the persistent instance of Chrome needs to restart
  // to install an update.
  static const int kUpdateCheckIntervalHours = 6;
-@@ -1181,7 +1181,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
-                                 GoogleUpdateSettings::GetCollectStatsConsent());
+@@ -1311,7 +1311,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
+   registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingEnabled, false);
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1446,7 +1446,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
-           local_state())));
+@@ -1561,7 +1561,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+           local_state(), /*force_protection_level=*/std::nullopt)));
  #endif  // BUILDFLAG(IS_WIN)
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
-   if (cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore) !=
-       "basic") {
-@@ -1730,7 +1730,7 @@ void BrowserProcessImpl::Unpin() {
+   const auto password_store =
+       cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore);
+@@ -1895,7 +1895,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

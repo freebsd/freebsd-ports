@@ -1,0 +1,6 @@
+Nitro is a tiny process supervisor that also can be used as PID 1 on
+Unix-like systems.
+
+It can run as an unprivileged supervision daemon on POSIX systems.
+Nitro is configured by a directory of scripts, defaulting to /etc/nitro
+or the first command line argument.

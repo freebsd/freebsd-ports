@@ -1,11 +1,11 @@
---- src/multimedia/CMakeLists.txt.orig	2025-05-04 13:16:35 UTC
+--- src/multimedia/CMakeLists.txt.orig	2025-08-15 19:16:13 UTC
 +++ src/multimedia/CMakeLists.txt
-@@ -136,7 +136,7 @@ qt_internal_extend_target(Multimedia
+@@ -156,7 +156,7 @@ qt_internal_extend_target(Multimedia
  )
  
  qt_internal_extend_target(Multimedia
--    CONDITION LINUX OR ANDROID
-+    CONDITION UNIX OR ANDROID
+-    CONDITION (LINUX OR ANDROID) AND QT_FEATURE_library
++    CONDITION (UNIX OR ANDROID) AND QT_FEATURE_library
      SOURCES qsymbolsresolveutils.cpp qsymbolsresolveutils_p.h)
  
  qt_internal_add_simd_part(Multimedia SIMD sse2

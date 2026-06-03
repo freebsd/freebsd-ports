@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2026-05-31 08:25:44 UTC
++++ CMakeLists.txt
+@@ -699,12 +699,12 @@ if(BUILD_TESTING OR WITH_TESTS)
+   # Enable coverage in main hyprland lib
+   target_compile_options(hyprland_lib PRIVATE --coverage)
+   target_link_options(hyprland_lib PRIVATE --coverage)
+-  target_link_libraries(hyprland_lib PUBLIC gcov)
++  # target_link_libraries(hyprland_lib PUBLIC gcov)
+ 
+   # Enable coverage in hyprland exe
+   target_compile_options(Hyprland PRIVATE --coverage)
+   target_link_options(Hyprland PRIVATE --coverage)
+-  target_link_libraries(Hyprland gcov)
++  # target_link_libraries(Hyprland gcov)
+ endif()
+ 
+ if(BUILD_TESTING)

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2025-04-17 19:28:45 UTC
++++ CMakeLists.txt
+@@ -298,9 +298,6 @@ LIST(APPEND libmfu_srcs
+   mpifileutils/src/common/mfu_progress.c
+   mpifileutils/src/common/mfu_util.c
+   mpifileutils/src/common/strmap.c
+-  ${lwgrp_srcs}
+-  ${dtcmp_srcs}
+-  ${libcircle_srcs}
+   )
+ IF(ENABLE_LIBARCHIVE)
+   LIST(APPEND libmfu_srcs
+@@ -328,7 +325,3 @@ INSTALL(TARGETS mfu-static DESTINATION ${CMAKE_INSTALL
+ 
+ # some projects require a "make install" command to work,
+ # so define at least a basic INSTALL function
+-INSTALL(FILES lwgrp/README lwgrp/LICENSE.TXT DESTINATION share/lwgrp)
+-INSTALL(FILES dtcmp/README.md dtcmp/LICENSE.TXT DESTINATION share/dtcmp)
+-INSTALL(FILES libcircle/COPYING DESTINATION share/libcircle)
+-INSTALL(FILES mpifileutils/LICENSE mpifileutils/NOTICE DESTINATION share/mpifileutils)

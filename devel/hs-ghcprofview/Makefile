@@ -9,6 +9,7 @@ WWW=		https://github.com/portnov/ghcprofview-hs
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 

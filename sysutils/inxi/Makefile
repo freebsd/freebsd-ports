@@ -40,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == riscv64 || ${ARCH} == riscv64sf
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == riscv64
 RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 

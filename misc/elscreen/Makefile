@@ -1,8 +1,7 @@
 PORTNAME=	elscreen
 PORTVERSION=	1.4.6.20180320
-PORTREVISION=	17
+PORTREVISION=	19
 CATEGORIES=	misc elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs utility similar to GNU Screen
@@ -10,7 +9,7 @@ WWW=		https://github.com/TakaakiFuruse/elscreen
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
+RUN_DEPENDS=	apel>0:editors/apel
 
 USES=		emacs
 USE_GITHUB=	yes
@@ -18,6 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	TakaakiFuruse
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	329b438
+
+CONFLICTS_INSTALL=	elscreen-emacs_*
 
 NO_ARCH=	yes
 NO_BUILD=	YES

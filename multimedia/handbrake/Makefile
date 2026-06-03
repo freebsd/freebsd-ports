@@ -1,6 +1,5 @@
 PORTNAME=	handbrake
-DISTVERSION=	1.9.2
-PORTREVISION=	3
+DISTVERSION=	1.11.1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -13,10 +12,11 @@ MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Versatile DVD ripper and video transcoder
 WWW=		https://handbrake.fr/
 
-LICENSE=		GPLv2
+LICENSE=		GPLv2 FDK_AAC
+LICENSE_COMB=		multi
 LICENSE_NAME_FDK_AAC=	Software License for The Fraunhofer FDK AAC Codec Library for Android
 LICENSE_FILE_FDK_AAC=	${WRKDIR}/${DISTFILES:Mfdk*:R:R}/NOTICE
-LICENSE_FILE=		${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_PERMS_FDK_AAC=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le
@@ -25,9 +25,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
 		cmake:devel/cmake-core \
 		meson:devel/meson \
+		appstreamcli:devel/appstream \
 		git:devel/git@lite
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libass.so:multimedia/libass \
 		libspeex.so:audio/speex \
@@ -45,16 +45,16 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:build
 
-CONTRIB_FILES=	SVT-AV1-v2.3.0.tar.gz \
+CONTRIB_FILES=	SVT-AV1-v4.0.1.tar.gz \
 		fdk-aac-2.0.3.tar.gz \
-		ffmpeg-7.1.tar.bz2 \
-		libbluray-1.3.4.tar.bz2 \
-		libdvdnav-6.1.1.tar.bz2 \
-		libdvdread-6.1.3.tar.bz2 \
-		dav1d-1.5.1.tar.bz2 \
-		dovi_tool-libdovi-3.1.2.tar.gz \
-		x265_4.1.tar.gz \
-		zimg-3.0.5.tar.gz
+		ffmpeg-8.0.1.tar.bz2 \
+		libbluray-1.4.0.tar.xz \
+		libdvdnav-7.0.0.tar.bz2 \
+		libdvdread-7.0.1.tar.bz2 \
+		dav1d-1.5.3.tar.bz2 \
+		dovi_tool-libdovi-3.3.2.tar.gz \
+		x265-snapshot-20260216-13309.tar.gz \
+		zimg-snapshot-20250624.tar.gz
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
@@ -100,10 +100,8 @@ VPL_LIB_DEPENDS=	libvpl.so:multimedia/onevpl \
 			libva-drm.so:multimedia/libva
 VPL_CONFIGURE_ON=	--enable-qsv
 
-X11_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
-X11_USES=		gettext desktop-file-utils gnome gstreamer
-X11_USE=		gstreamer=gdkpixbuf,libav \
-			gnome=gtk40,intltool,cairo,gdkpixbuf,libxml2
+X11_USES=		gettext desktop-file-utils gnome
+X11_USE=		gnome=gtk40,intltool,gdkpixbuf,libxml2
 X11_CONFIGURE_OFF=	--disable-gtk
 X11_CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 X11_MAKE_ENV=		COMPILER_PATH=${LOCALBASE}/bin
@@ -118,9 +116,15 @@ pre-configure:
 	    ${INSTALL_DATA} ${CONTRIB_FILES} \
 	    ${WRKSRC}/download
 
-# for powerpc64
-# picked from multimedia/ffmpeg/files/patch-libswscale_ppc_yuv2rgb__altivec.c
-	${CP} ${FILESDIR}/P02-freebsd-ppc-libswscale.patch ${WRKSRC}/contrib/ffmpeg
+# Some unbundled software uses a hardcoded  `lib/pkgconfig` directory for .pc
+# files. But the unbundled software built by Meson correctly places the .pc
+# file in `libdata/pkgconfig` in the FreeBSD way. To handle these two kinds of
+# build systems, merge `lib` and `libdata` into the same directory. All the
+# unbundled software is linked statically. The library path is used at compile
+# time, not at runtime.
+post-configure:
+	${MKDIR} ${WRKSRC}/build/contrib/libdata
+	${LN} -s ${WRKSRC}/build/contrib/libdata ${WRKSRC}/build/contrib/lib
 
 post-install-X11-on:
 	${LN} -sf ghb ${STAGEDIR}${PREFIX}/bin/HandBrake

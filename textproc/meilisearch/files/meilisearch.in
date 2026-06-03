@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# PROVIDE: meilisearch
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable meilisearch:
+# meilisearch_enable (bool):    Set to "NO" by default.
+#                               Set it to "YES" to enable meilisearch.
+# meilisearch_user (user):      Set to "www" by default.
+#                               User to run meilisearch as.
+# meilisearch_group (group):    Set to "www" by default.
+#                               Group to run meilisearch as.
+# meilisearch_args (str):       Set to "" by default.
+#                               Extra flags passed to meilisearch.
+
+. /etc/rc.subr
+
+name=meilisearch
+rcvar=meilisearch_enable
+
+load_rc_config $name
+
+: ${meilisearch_enable:="NO"}
+: ${meilisearch_dir:="/var/db/meilisearch"}
+: ${meilisearch_config:="%%PREFIX%%/etc/meilisearch/meilisearch.toml"}
+: ${meilisearch_user:="www"}
+: ${meilisearch_group:="www"}
+: ${meilisearch_args:="--db-path ${meilisearch_dir} --dump-dir ${meilisearch_dir}/dumps"}
+: ${meilisearch_chdir:="${meilisearch_dir}"}
+
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
+procname="%%PREFIX%%/bin/meilisearch"
+command="/usr/sbin/daemon"
+command_args="-f -c -R 5 -r -T ${name} -p ${pidfile} -P ${daemon_pidfile} ${procname} ${meilisearch_args}"
+
+required_dirs="${meilisearch_dir}"
+required_files="${meilisearch_config}"
+
+start_precmd=meilisearch_startprecmd
+stop_postcmd=meilisearch_stoppostcmd
+
+meilisearch_startprecmd()
+{
+	if [ ! -e ${daemon_pidfile} ]; then
+		install -o ${meilisearch_user} -g ${meilisearch_group} /dev/null ${daemon_pidfile};
+	fi
+	if [ ! -e ${pidfile} ]; then
+		install -o ${meilisearch_user} -g ${meilisearch_group} /dev/null ${pidfile};
+	fi
+}
+
+
+meilisearch_stoppostcmd()
+{
+	if [ -f "${daemon_pidfile}" ]; then
+		pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		[ ${_err} -eq 0 ] && kill -9 ${pids}
+	fi
+}
+
+run_rc_command "$1"
+

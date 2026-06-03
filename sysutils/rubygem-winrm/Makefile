@@ -3,8 +3,8 @@ DISTVERSION=	2.3.9
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Library for Windows Remote Management
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Ruby library for Windows Remote Management
 WWW=		https://github.com/WinRb/WinRM
 
 LICENSE=	APACHE20

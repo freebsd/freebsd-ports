@@ -1,0 +1,11 @@
+bin/river
+bin/riverctl
+bin/rivertile
+%%MANPAGES%%share/man/man1/river.1.gz
+%%MANPAGES%%share/man/man1/riverctl.1.gz
+%%MANPAGES%%share/man/man1/rivertile.1.gz
+share/pkgconfig/river-protocols.pc
+share/bash-completion/completions/riverctl
+share/fish/vendor_completions.d/riverctl.fish
+share/river-protocols/river-layout-v3.xml
+share/zsh/site-functions/_riverctl

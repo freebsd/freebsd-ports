@@ -190,7 +190,7 @@ webcamd_start_instances()
     fi
 
     # check if valid flags are present
-    if [ ! "$(webcamd_grep_instance_flags '-d|-D|-N|-S')" ]; then
+    if [ ! "$(webcamd_grep_instance_flags '-c|-d|-D|-N|-S')" ]; then
       continue
     fi
 

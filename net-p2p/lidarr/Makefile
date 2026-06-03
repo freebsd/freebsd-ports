@@ -1,5 +1,5 @@
 PORTNAME=	lidarr
-DISTVERSION=	2.11.2.4629
+DISTVERSION=	3.1.0.4875
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Lidarr.master.${DISTVERSION}.freebsd-core-x64
@@ -52,5 +52,7 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
+	@${ECHO_CMD} "e_sqlite3.so libsqlite3.so" \
+		>${STAGEDIR}${PREFIX}/etc/libmap.d/Lidarr.conf
 
 .include <bsd.port.mk>

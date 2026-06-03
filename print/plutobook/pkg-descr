@@ -1,0 +1,3 @@
+PlutoBook is a robust HTML rendering library tailored for paged media. It takes
+HTML or XML as input, applies CSS stylesheets, and lays out elements across one
+or more pages, which can then be rendered as Bitmap images or PDF documents.

@@ -37,6 +37,9 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/demo_graphics1.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/demo_graphics2.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/demo_graphics3.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/dlm/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/dlm/testmodule.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/dlm/testmodule.dlm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/errors_add.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/errors_cumul.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/errors_reset.pro
@@ -63,6 +66,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/hdf5-struct-test.h5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/idl.xdr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/indgen_sample.sav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/interactive_tests/example_event_handling.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/interactive_tests/test_all_projs.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/interactive_tests/test_axis.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/interactive_tests/test_besel.pro
@@ -111,15 +115,12 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_file_info.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_point_lun.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_ps_decomposed.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_readf.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_skip_lun.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_spawn_unit.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_step.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/spawn_is_dangerous/test_zip.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/string.h5
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test-read_ascii.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test-read_ascii.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test-swap_endian.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_ac_correlate.pro.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_all_basic_functions.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_angles.pro
@@ -147,7 +148,6 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3061072.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3081887.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3085858.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3086851.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3091599.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3091610.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3100945.pro
@@ -161,7 +161,6 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3189072.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3199465.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3285659.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3286031.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3290532.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3296360.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3298378.pro
@@ -175,7 +174,6 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3559291.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3572473.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3595172.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_573.tmp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_635.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_635.f90
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_635.pro
@@ -221,6 +219,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_erfs.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_erode.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_execute.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_expand_path.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_expint.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_extra_keywords.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_factorial.pro
@@ -269,6 +268,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_idl_validname.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_idlneturl.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_image_statistics.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_imsl_zeropoly.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_indepth_basic_functions.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_indgen.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_interpol.pro
@@ -340,7 +340,9 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_qromb.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_qromo.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_r_correlate.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_read_ascii.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_read_jpeg.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_readf.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_readf_with_crlf.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_reads.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_rebin.pro
@@ -374,6 +376,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_struct_assign.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_structures.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_suite.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_swap_endian.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_systime.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_tag_names.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_tic_toc.pro
@@ -400,13 +403,13 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_xmlsax.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_xyztick_get.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_zero_divide.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_zeropoly.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/tiff/24bit_color.tif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/tiff/24bit_color.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/tiff/8bit_gray_geo.tif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/tiff/8bit_gray_geo.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/tiff/8bit_gray_tiled.tif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/tiff/8bit_gray_tiled.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/vlen_strings.h5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/wrong/test_sem.pro
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/README
@@ -438,6 +441,7 @@ bin/gdl
 %%DATADIR%%/lib/cvttobm.pro
 %%DATADIR%%/lib/cw_bgroup.pro
 %%DATADIR%%/lib/cw_bgroup_donotuseyet.pro
+%%DATADIR%%/lib/cw_field.pro
 %%DATADIR%%/lib/define_msgblk.pro
 %%DATADIR%%/lib/define_msgblk_from_file.pro
 %%DATADIR%%/lib/delvar.pro
@@ -497,10 +501,10 @@ bin/gdl
 %%DATADIR%%/lib/loadct.pro
 %%DATADIR%%/lib/make_dll.pro
 %%DATADIR%%/lib/map/gdl_map_proj_init_common.pro
-%%DATADIR%%/lib/map/gdl_set_map_limits.pro
 %%DATADIR%%/lib/map/gdlcommon_mapprojections_common.pro
 %%DATADIR%%/lib/map/gdldrawshapecompound.pro
 %%DATADIR%%/lib/map/gdldrawshapefile.pro
+%%DATADIR%%/lib/map/griddata.pro
 %%DATADIR%%/lib/map/map_adjlon.pro
 %%DATADIR%%/lib/map/map_clip_set.pro
 %%DATADIR%%/lib/map/map_continents.pro
@@ -651,6 +655,7 @@ bin/gdl
 %%DATADIR%%/lib/utilities/app_user_dir.pro
 %%DATADIR%%/lib/utilities/app_user_dir_query.pro
 %%DATADIR%%/lib/utilities/color2color.pro
+%%DATADIR%%/lib/utilities/dlm_register.pro
 %%DATADIR%%/lib/utilities/funct.pro
 %%DATADIR%%/lib/utilities/gdl_gaussfunct.pro
 %%DATADIR%%/lib/utilities/gdl_implied_print.pro
@@ -740,3 +745,4 @@ bin/gdl
 %%DATADIR%%/resource/maps/projections.ods
 %%DATADIR%%/resource/randomgenerators_parallel.cpp
 share/man/man1/gdl.1.gz
+@dir %%DATADIR%%/dlm

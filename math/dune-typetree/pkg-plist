@@ -1,3 +1,4 @@
+include/dune-typetree-config.hh
 include/dune/typetree/accumulate_static.hh
 include/dune/typetree/childextraction.hh
 include/dune/typetree/compositenode.hh
@@ -27,6 +28,8 @@ include/dune/typetree/utility.hh
 include/dune/typetree/visitor.hh
 lib/cmake/dune-typetree/dune-typetree-config-version.cmake
 lib/cmake/dune-typetree/dune-typetree-config.cmake
+lib/cmake/dune-typetree/dune-typetree-scoped-targets-%%DUNE_TYPETREE_CMAKE_HASH%%.cmake
+lib/cmake/dune-typetree/dune-typetree-targets.cmake
 lib/dunecontrol/dune-typetree/dune.module
 libdata/pkgconfig/dune-typetree.pc
 %%DATADIR%%/config.h.cmake

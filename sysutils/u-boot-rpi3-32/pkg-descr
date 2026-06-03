@@ -1,3 +1,7 @@
 U-Boot loader and related files for the RPi3
 
+This version builds build a 32-bit version of u-boot.  This is useful
+for using the camera hardware, as misc/raspberrypi-userland does not
+support aarch64.
+
 For general information about U-Boot see WWW: https://www.denx.de/wiki/U-Boot

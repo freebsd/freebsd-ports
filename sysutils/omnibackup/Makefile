@@ -1,6 +1,6 @@
 PORTNAME=	omnibackup
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	info@babaei.net
@@ -48,7 +48,7 @@ PLIST_FILES+=	${DOCSDIR}/README.md
 .if ${PORT_OPTIONS:MOPENLDAP} \
 	|| ${PORT_OPTIONS:MPGSQL} \
 	|| ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	sudo:security/sudo
+USES+=	sudo
 .if ${PORT_OPTIONS:MOPENLDAP}
 RUN_DEPENDS+=	slapcat:net/openldap${OPENLDAP_VER}-server
 .endif

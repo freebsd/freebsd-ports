@@ -1,4 +1,6 @@
 bin/ruqola
+lib/libcmark-rc-copy.so.0
+lib/libcmark-rc-copy.so.0.31.0
 lib/librocketchatrestapi-qt.so.0
 lib/librocketchatrestapi-qt.so.%%SO_VER%%
 lib/libruqolacore.so.0
@@ -8,8 +10,10 @@ lib/libruqolawidgets.so.%%SO_VER%%
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_githubauthenticationplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_gitlabauthenticationplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_passwordauthenticationplugin.so
+%%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_personalaccesstokenauthenticationplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_sharetextplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_webshortcuttextplugin.so
+%%QT_PLUGINDIR%%/ruqolaplugins/toolsplugins/ruqola_grabscreenplugin.so
 share/applications/org.kde.ruqola.desktop
 share/doc/HTML/en/ruqola/index.cache.bz2
 share/doc/HTML/en/ruqola/index.docbook
@@ -18,16 +22,21 @@ share/icons/hicolor/22x22/apps/ruqola.png
 share/icons/hicolor/32x32/apps/ruqola.png
 share/icons/hicolor/48x48/apps/ruqola.png
 share/knotifications6/ruqola.notifyrc
+share/locale/ar/LC_MESSAGES/ruqola.mo
+share/locale/ast/LC_MESSAGES/ruqola.mo
 share/locale/ca/LC_MESSAGES/ruqola.mo
 share/locale/ca@valencia/LC_MESSAGES/ruqola.mo
 share/locale/cs/LC_MESSAGES/ruqola.mo
 share/locale/de/LC_MESSAGES/ruqola.mo
 share/locale/en_GB/LC_MESSAGES/ruqola.mo
+share/locale/eo/LC_MESSAGES/ruqola.mo
 share/locale/es/LC_MESSAGES/ruqola.mo
 share/locale/et/LC_MESSAGES/ruqola.mo
 share/locale/eu/LC_MESSAGES/ruqola.mo
 share/locale/fi/LC_MESSAGES/ruqola.mo
 share/locale/fr/LC_MESSAGES/ruqola.mo
+share/locale/gl/LC_MESSAGES/ruqola.mo
+share/locale/hu/LC_MESSAGES/ruqola.mo
 share/locale/ia/LC_MESSAGES/ruqola.mo
 share/locale/it/LC_MESSAGES/ruqola.mo
 share/locale/ja/LC_MESSAGES/ruqola.mo
@@ -45,6 +54,7 @@ share/locale/tr/LC_MESSAGES/ruqola.mo
 share/locale/uk/LC_MESSAGES/ruqola.mo
 share/locale/zh_CN/LC_MESSAGES/ruqola.mo
 share/locale/zh_TW/LC_MESSAGES/ruqola.mo
+share/messageviewer/openurlwith/ruqola.openurl
 share/metainfo/org.kde.ruqola.appdata.xml
 share/qlogging-categories6/ruqola.categories
 share/qlogging-categories6/ruqola.renamecategories

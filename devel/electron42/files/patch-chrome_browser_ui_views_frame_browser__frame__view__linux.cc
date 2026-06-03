@@ -1,0 +1,20 @@
+--- chrome/browser/ui/views/frame/browser_frame_view_linux.cc.orig	2026-04-28 21:06:17 UTC
++++ chrome/browser/ui/views/frame/browser_frame_view_linux.cc
+@@ -72,7 +72,7 @@ void BrowserFrameViewLinux::PaintRestoredFrameBorder(
+ 
+ void BrowserFrameViewLinux::PaintRestoredFrameBorder(
+     gfx::Canvas* canvas) const {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   const bool tiled = browser_widget()->tiled();
+ #else
+   const bool tiled = false;
+@@ -127,7 +127,7 @@ float BrowserFrameViewLinux::GetRestoredCornerRadiusDi
+ }
+ 
+ float BrowserFrameViewLinux::GetRestoredCornerRadiusDip() const {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   const bool tiled = browser_widget()->tiled();
+ #else
+   const bool tiled = false;

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/ozone/platform/x11/x11_window.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/ui/ozone/platform/x11/x11_window.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/ui/ozone/platform/x11/x11_window.cc
-@@ -1504,7 +1504,7 @@ void X11Window::OnXWindowStateChanged() {
+@@ -1508,7 +1508,7 @@ void X11Window::OnXWindowStateChanged() {
    WindowTiledEdges tiled_state = GetTiledState();
    if (tiled_state != tiled_state_) {
      tiled_state_ = tiled_state;

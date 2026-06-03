@@ -1,6 +1,6 @@
 PORTNAME=	simsmith
 PORTVERSION=	9.9
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	science hamradio
 MASTER_SITES=	http://ae6ty.com/Smith_Charts_files/ \
 		LOCAL/shurd

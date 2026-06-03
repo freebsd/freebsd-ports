@@ -1,5 +1,6 @@
 PORTNAME=	data-prepper
 DISTVERSION=	2.12.0
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.opensearch.org/${PORTNAME}/${DISTVERSION}/

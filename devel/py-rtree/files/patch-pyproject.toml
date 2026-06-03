@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-18 02:15:23 UTC
++++ pyproject.toml
+@@ -15,7 +15,7 @@ keywords = ["gis", "spatial", "index", "r-tree"]
+ readme = "README.md"
+ requires-python = ">=3.9"
+ keywords = ["gis", "spatial", "index", "r-tree"]
+-license = "MIT"
++license = {text="MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

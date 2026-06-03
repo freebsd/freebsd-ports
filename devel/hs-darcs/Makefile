@@ -10,6 +10,8 @@ WWW=		https://darcs.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98
+
 USES=		cabal pkgconfig
 
 USE_CABAL=	OneTuple-0.4.2_1 \

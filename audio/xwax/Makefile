@@ -1,11 +1,12 @@
 PORTNAME=	xwax
-DISTVERSION=	1.9
+DISTVERSION=	1.10
 CATEGORIES=	audio
 MASTER_SITES=	https://www.xwax.co.uk/releases/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source vinyl emulation software
-WWW=		https://wiki.xwax.org/
+WWW=		https://wiki.xwax.org/ \
+		https://github.com/xwax/xwax
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,7 +16,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USES=		compiler:c++11-lang gmake iconv localbase:ldflags sdl shebangfix
-USE_SDL=	sdl ttf
+USE_SDL=	sdl2 ttf2
 
 SHEBANG_FILES=	scan
 
@@ -23,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-jack \
 		--enable-oss
 
+CFLAGS+=	-I${LOCALBASE}/include/SDL
 LDFLAGS+=	-liconv -lm
 
 PLIST_FILES=	bin/xwax \

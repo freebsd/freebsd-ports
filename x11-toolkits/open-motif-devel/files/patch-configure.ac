@@ -1,6 +1,6 @@
---- configure.ac.orig	2012-10-22 16:50:39.000000000 +0200
-+++ configure.ac	2014-01-27 22:38:58.000000000 +0100
-@@ -164,7 +164,7 @@
+--- configure.ac.orig	2023-02-16 00:42:34 UTC
++++ configure.ac
+@@ -164,7 +164,7 @@ then
  if test x$GCC = xyes
  then
      CFLAGS="$CFLAGS -Wall -g -fno-strict-aliasing -Wno-unused -Wno-comment"

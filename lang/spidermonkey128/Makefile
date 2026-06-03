@@ -1,6 +1,6 @@
 PORTNAME=	spidermonkey
-DISTVERSION=	128.12.0
-PORTREVISION=	1
+DISTVERSION=	128.14.0
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source

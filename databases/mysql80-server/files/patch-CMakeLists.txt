@@ -77,12 +77,4 @@
    IF(WITH_INTERNAL)
      ADD_SUBDIRECTORY(internal)
    ENDIF()
-@@ -2336,7 +2345,7 @@ ENDIF()
-   INCLUDE(fastcov)
- ENDIF()
- 
--IF(UNIX)
-+IF(FALSE)
-   ADD_SUBDIRECTORY(man)
- ENDIF()
  

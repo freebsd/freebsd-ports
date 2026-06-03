@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-10-28 19:24:41 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools > 77.0.3"]
++requires = ["setuptools > 61.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,8 +10,7 @@ readme = "README.rst"
+ authors = [
+     {name = "Matthew Barnett", email = "regex@mrabarnett.plus.com"},
+ ]
+-license = "Apache-2.0 AND CNRI-Python"
+-license-files = ["LICENSE.txt"]
++license = {file = "LICENSE.txt"}
+ 
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

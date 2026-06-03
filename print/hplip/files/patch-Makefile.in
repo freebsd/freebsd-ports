@@ -1,4 +1,4 @@
---- Makefile.in.orig	2023-06-02 08:11:21 UTC
+--- Makefile.in.orig	2025-11-13 11:37:11 UTC
 +++ Makefile.in
 @@ -113,8 +113,7 @@ DIST_COMMON = $(am__configure_deps) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_5 = io/hpmud/musb_libusb01.c 
@@ -26,7 +26,7 @@
  PROGRAMS = $(bin_PROGRAMS) $(dat2drv_PROGRAMS) $(hp_PROGRAMS) \
  	$(hpcdmfax_PROGRAMS) $(hpcups_PROGRAMS) $(hpcupsfax_PROGRAMS) \
  	$(hpps_PROGRAMS) $(locatedriver_PROGRAMS) $(noinst_PROGRAMS)
-@@ -4837,7 +4834,7 @@ dist_unrel_DATA = 
+@@ -4956,7 +4953,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_2)
  #libhpdiscovery_la_SOURCES = protocol/discovery/mdns.c protocol/discovery/mdns.h
  @HPLIP_BUILD_TRUE@@NETWORK_BUILD_TRUE@libhpdiscovery_la_SOURCES = protocol/discovery/avahiDiscovery.c protocol/discovery/avahiDiscovery.h
@@ -35,7 +35,7 @@
  @HPLIP_BUILD_TRUE@@NETWORK_BUILD_TRUE@libhpdiscovery_la_LDFLAGS = -version-info 0:1:0 -L$(libdir)
  @HPLIP_BUILD_TRUE@@NETWORK_BUILD_TRUE@libhpdiscovery_la_LIBADD = -l$(SNMPLIB) -lcrypto -lavahi-client -lavahi-core -lavahi-common $(DBUS_LIBS)
  
-@@ -4897,7 +4894,7 @@ dist_unrel_DATA = 
+@@ -5016,7 +5013,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
  
  # hplip.conf
@@ -44,7 +44,7 @@
  @HPLIP_BUILD_TRUE@hplip_conf_DATA = hplip.conf
  
  #pstotiff filter
-@@ -5128,7 +5125,6 @@ dist_unrel_DATA = 
+@@ -5245,7 +5242,6 @@ dist_unrel_DATA = 
  @RIP_INSTALL_TRUE@dist_rip_SCRIPTS = prnt/hpijs/foomatic-rip-hplip
  
  # apdk
@@ -52,7 +52,7 @@
  libapdk_la_SOURCES = prnt/hpijs/models.cpp prnt/hpijs/breaks_open.cpp \
  	prnt/hpijs/dj9xxvip.cpp prnt/hpijs/dj9xx.cpp prnt/hpijs/capture.cpp prnt/hpijs/colormatch.cpp prnt/hpijs/colormatcher_open.cpp \
  	prnt/hpijs/compression.cpp prnt/hpijs/context2.cpp prnt/hpijs/create_so.cpp prnt/hpijs/creator.cpp \
-@@ -5219,7 +5215,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5336,7 +5332,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -61,7 +61,7 @@
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -9951,7 +9947,7 @@ install-data-am: install-apparmor_abstractionDATA \
+@@ -10068,7 +10064,7 @@ install-data-am: install-apparmor_abstractionDATA \
  	install-dist_basepexpectDATA install-dist_cmdSCRIPTS \
  	install-dist_copierDATA install-dist_faxDATA \
  	install-dist_fax_filtersDATA install-dist_filterDATA \
@@ -70,7 +70,7 @@
  	install-dist_homeDATA install-dist_hpcupsfaxppdDATA \
  	install-dist_hpfaxSCRIPTS install-dist_hpijsfaxppdDATA \
  	install-dist_hplipSCRIPTS install-dist_hplip_stateDATA \
-@@ -9969,7 +9965,6 @@ install-data-am: install-apparmor_abstractionDATA \
+@@ -10086,7 +10082,6 @@ install-data-am: install-apparmor_abstractionDATA \
  	install-dist_policykit_policyDATA install-dist_postscriptDATA \
  	install-dist_ppdDATA install-dist_printpluginsDATA \
  	install-dist_prntDATA install-dist_ripSCRIPTS \
@@ -78,8 +78,26 @@
  	install-dist_scanDATA install-dist_selinuxDATA \
  	install-dist_ui4DATA install-dist_ui5DATA install-dist_uiDATA \
  	install-dist_unrelDATA install-dist_www0DATA \
-@@ -10207,14 +10202,8 @@ install-data-hook:
- @HPLIP_BUILD_TRUE@	fi
+@@ -10308,40 +10303,12 @@ install-data-hook:
+ 
+ 
+ install-data-hook:
+-@HPLIP_BUILD_TRUE@	if [ \( "$(UNAME)" = "x86_64" -a  -d "$(libdir)/" \) ]; then \
+-@HPLIP_BUILD_TRUE@		cp prnt/hpcups/libImageProcessor-x86_64.so $(libdir)/ ; \
+-@HPLIP_BUILD_TRUE@		chmod 775 $(libdir)/libImageProcessor-x86_64.so ; \
+-@HPLIP_BUILD_TRUE@		ln -sf $(libdir)/libImageProcessor-x86_64.so $(libdir)/libImageProcessor.so ; \
+-@HPLIP_BUILD_TRUE@	fi; \
+-@HPLIP_BUILD_TRUE@	if [ \( \( "$(UNAME)" = "i686" -o "$(UNAME)" = "i386" \) -a -d "$(libdir)/" \) ]; then \
+-@HPLIP_BUILD_TRUE@		cp prnt/hpcups/libImageProcessor-x86_32.so $(libdir)/ ; \
+-@HPLIP_BUILD_TRUE@		chmod 775 $(libdir)/libImageProcessor-x86_32.so ; \
+-@HPLIP_BUILD_TRUE@		ln -sf $(libdir)/libImageProcessor-x86_32.so $(libdir)/libImageProcessor.so ; \
+-@HPLIP_BUILD_TRUE@	fi
+-@HPLIP_BUILD_TRUE@	if [ -d "/usr/share/ipp-usb/quirks/" ]; then \
+-@HPLIP_BUILD_TRUE@		echo "ipp-usb directory exists"; \
+-@HPLIP_BUILD_TRUE@		cp prnt/ipp-usb/HPLIP.conf /usr/share/ipp-usb/quirks/ ; \
+-@HPLIP_BUILD_TRUE@	fi
++@HPLIP_BUILD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(datadir)/ipp-usb/quirks
++@HPLIP_BUILD_TRUE@	$(INSTALL_DATA) prnt/ipp-usb/HPLIP.conf $(DESTDIR)$(datadir)/ipp-usb/quirks
  #	   If scanner build, add hpaio entry to sane dll.conf.
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	if [ "$(scan_build)" = "yes" ]; then \
 -@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
@@ -90,8 +108,18 @@
 -@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@		  echo "Adding hpaio entry to /etc/sane.d/dll.conf." ; \
 -@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@		  echo hpaio >>$(DESTDIR)/etc/sane.d/dll.conf ; \
 -@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   fi; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@ 	   if [ \( "$(UNAME)" = "x86_64" -a  -d "$(libdir)/x86_64-linux-gnu/sane" \) ]; then \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	  	ln -sf $(libdir)/sane/libsane-hpaio.so $(libdir)/x86_64-linux-gnu/sane/ ; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	  	ln -sf $(libdir)/sane/libsane-hpaio.so.1 $(libdir)/x86_64-linux-gnu/sane/ ; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   fi; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   if [ \( \( "$(UNAME)" = "i686" -o "$(UNAME)" = "i386" \) -a -d "$(libdir)/i386-linux-gnu" \) ]; then \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	      ln -sf $(libdir)/libhpmud.so.0.0.6  $(libdir)/i386-linux-gnu/libhpmud.so ; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	      ln -sf $(libdir)/libhpmud.so.0.0.6  $(libdir)/i386-linux-gnu/libhpmud.so.0 ; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	      ln -sf $(libdir)/sane/libsane-hpaio.so.1.0.0 $(libdir)/i386-linux-gnu/sane/libsane-hpaio.so.1 ; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	      ln -sf $(libdir)/sane/libsane-hpaio.so.1.0.0 $(libdir)/i386-linux-gnu/sane/libsane-hpaio.so ; \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   fi \
 +@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/sane.d/dll.d; \
 +@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   echo hpaio > $(DESTDIR)$(sysconfdir)/sane.d/dll.d/hpaio ; \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@ 	   if [ \( "$(UNAME)" = "x86_64" -a  -d "$(libdir)/x86_64-linux-gnu/sane" \) ]; then \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	  	ln -sf $(libdir)/sane/libsane-hpaio.so $(libdir)/x86_64-linux-gnu/sane/ ; \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	  	ln -sf $(libdir)/sane/libsane-hpaio.so.1 $(libdir)/x86_64-linux-gnu/sane/ ; \
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	fi
+ #	   Create hp-xxx commands in bindir.
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(mkinstalldirs) $(DESTDIR)$(bindir)

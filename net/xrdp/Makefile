@@ -1,5 +1,5 @@
 PORTNAME=	xrdp
-DISTVERSION=	0.10.4.1
+DISTVERSION=	0.10.6
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
-RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
-		xterm:x11/xterm
+RUN_DEPENDS=	xterm:x11/xterm
 
 USES=		autoreconf:build compiler:c11 cpe jpeg libtool localbase \
 		pkgconfig ssl xorg
@@ -26,6 +25,7 @@ USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_XORG=	ice pixman sm x11 xfixes xrandr
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-jpeg \
 		--enable-painter \
@@ -58,7 +58,7 @@ OPUS_DESC=			Enable Opus for audio redirection
 DEBUG_CONFIGURE_ENABLE=		devel-debug devel-logging
 FDKAAC_LIB_DEPENDS=		libfdk-aac.so:audio/fdk-aac
 FDKAAC_CONFIGURE_ENABLE=	fdkaac
-FUSE_USES=			fuse
+FUSE_USES=			fuse:3
 FUSE_CONFIGURE_ENABLE=		fuse
 IPV6_CONFIGURE_ENABLE=		ipv6
 MP3LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
@@ -69,8 +69,6 @@ OPUS_LIB_DEPENDS=		libopus.so:audio/opus
 OPUS_CONFIGURE_ENABLE=		opus
 X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
 X264_CONFIGURE_ENABLE=		x264
-
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 GROUP=		_xrdp
 USER=		_xrdp
@@ -90,6 +88,13 @@ pre-configure:
 
 post-patch:
 	${REINPLACE_CMD} -e "s|^param=Xorg|param=${LOCALBASE}/libexec/Xorg|" \
+		${WRKSRC}/sesman/sesman.ini.in
+	${REINPLACE_CMD} \
+		-e "s|^#runtime_user=xrdp|#runtime_user=_xrdp|" \
+		-e "s|^#runtime_group=xrdp|#runtime_group=_xrdp|" \
+		${WRKSRC}/xrdp/xrdp.ini.in
+	${REINPLACE_CMD} \
+		-e "s|^#SessionSockdirGroup=xrdp|#SessionSockdirGroup=_xrdp|" \
 		${WRKSRC}/sesman/sesman.ini.in
 
 post-install:

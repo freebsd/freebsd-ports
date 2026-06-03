@@ -1,12 +1,7 @@
 PORTNAME=	msitools
-DISTVERSION=	0.101
-PORTREVISION=	4
+DISTVERSION=	0.106
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/msitools/-/commit/
-PATCHFILES=	b08275d549bb12a09a420ef9ccaeb0974e00008a.patch:-p1 \
-		25c4353cf173cddeb76c0a2dd6621bcb753cabf8.patch:-p1
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Inspect and build Windows Installer (.MSI) files

@@ -1,10 +1,8 @@
 PORTNAME=	noto
-PORTVERSION=	2.006
+PORTVERSION=	3.000
 CATEGORIES=	x11-fonts
-#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansSinhala-v${PORTVERSION}/fonts/ \
-#		https://github.com/notofonts/notofonts.github.io/raw/NotoSansSinhala-v${PORTVERSION}/fonts/NotoSansSinhala/hinted/ttf/:fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-23.2.1/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-23.2.1/fonts/NotoSansSinhala/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansSinhala-v${PORTVERSION}/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/NotoSansSinhala-v${PORTVERSION}/fonts/NotoSansSinhala/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans-sinhala
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}

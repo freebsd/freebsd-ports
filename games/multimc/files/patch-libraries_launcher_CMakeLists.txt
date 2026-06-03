@@ -1,0 +1,11 @@
+--- libraries/launcher/CMakeLists.txt.orig	2026-01-05 15:45:36 UTC
++++ libraries/launcher/CMakeLists.txt
+@@ -4,7 +4,7 @@ set(CMAKE_JAVA_JAR_ENTRY_POINT org.multimc.EntryPoint)
+ 
+ include(UseJava)
+ set(CMAKE_JAVA_JAR_ENTRY_POINT org.multimc.EntryPoint)
+-set(CMAKE_JAVA_COMPILE_FLAGS -target 1.6 -source 1.6 -Xlint:deprecation -Xlint:unchecked)
++set(CMAKE_JAVA_COMPILE_FLAGS -Xlint:deprecation -Xlint:unchecked)
+ 
+ set(SRC
+     org/multimc/EntryPoint.java

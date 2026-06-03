@@ -43,6 +43,7 @@ include/efi/protocol/vgaclass.h
 include/efi/romload.h
 lib/libefi.a
 lib/libgnuefi.a
+libdata/pkgconfig/gnu-efi.pc
 @comment Architecture Specific Packages List, amd64
 %%ARCH_amd64%%include/efi/x86_64/efibind.h
 %%ARCH_amd64%%include/efi/x86_64/efilibplat.h

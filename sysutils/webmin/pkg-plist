@@ -1119,6 +1119,7 @@ lib/webmin/authentic-theme/images/modules/at/icon.gif
 lib/webmin/authentic-theme/images/modules/backup-config/icon.gif
 lib/webmin/authentic-theme/images/modules/bandwidth/icon.gif
 lib/webmin/authentic-theme/images/modules/bind8/A.gif
+lib/webmin/authentic-theme/images/modules/bind8/AAAA.gif
 lib/webmin/authentic-theme/images/modules/bind8/ALL.gif
 lib/webmin/authentic-theme/images/modules/bind8/CNAME.gif
 lib/webmin/authentic-theme/images/modules/bind8/HINFO.gif
@@ -1158,6 +1159,7 @@ lib/webmin/authentic-theme/images/modules/bind8/slaves.gif
 lib/webmin/authentic-theme/images/modules/bind8/soa.gif
 lib/webmin/authentic-theme/images/modules/bind8/stub.gif
 lib/webmin/authentic-theme/images/modules/bind8/text.gif
+lib/webmin/authentic-theme/images/modules/bind8/tls.gif
 lib/webmin/authentic-theme/images/modules/bind8/view.gif
 lib/webmin/authentic-theme/images/modules/bind8/whois.gif
 lib/webmin/authentic-theme/images/modules/bind8/zonedef.gif
@@ -2027,6 +2029,12 @@ lib/webmin/authentic-theme/unauthenticated/css/palettes/teal.min.css
 lib/webmin/authentic-theme/unauthenticated/css/palettes/white.min.css
 lib/webmin/authentic-theme/unauthenticated/css/photoswipe.min.css
 lib/webmin/authentic-theme/unauthenticated/css/photoswipe.min.css.gz
+lib/webmin/authentic-theme/unauthenticated/css/rounded-content.min.css
+lib/webmin/authentic-theme/unauthenticated/css/rounded-content.min.css.gz
+lib/webmin/authentic-theme/unauthenticated/css/rounded-menu.min.css
+lib/webmin/authentic-theme/unauthenticated/css/rounded-menu.min.css.gz
+lib/webmin/authentic-theme/unauthenticated/css/rounded-slider.min.css
+lib/webmin/authentic-theme/unauthenticated/css/rounded-slider.min.css.gz
 lib/webmin/authentic-theme/unauthenticated/fonts/KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2
 lib/webmin/authentic-theme/unauthenticated/fonts/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2
 lib/webmin/authentic-theme/unauthenticated/fonts/KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2
@@ -2072,7 +2080,6 @@ lib/webmin/authentic-theme/unauthenticated/js/bundle.min.js
 lib/webmin/authentic-theme/unauthenticated/js/bundle.min.js.gz
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/build-config.js
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/build-config.js.gz
-lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor-custom.min.css
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor-custom.min.css.gz
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor.js
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor.js.gz
@@ -3046,18 +3053,21 @@ lib/webmin/bind8/hint_form.cgi
 lib/webmin/bind8/images/A.gif
 lib/webmin/bind8/images/AAAA.gif
 lib/webmin/bind8/images/ALL.gif
+lib/webmin/bind8/images/CAA.gif
 lib/webmin/bind8/images/CNAME.gif
 lib/webmin/bind8/images/DMARC.gif
 lib/webmin/bind8/images/HINFO.gif
 lib/webmin/bind8/images/KEY.gif
 lib/webmin/bind8/images/LOC.gif
 lib/webmin/bind8/images/MX.gif
+lib/webmin/bind8/images/NAPTR.gif
 lib/webmin/bind8/images/NS.gif
 lib/webmin/bind8/images/NSEC3PARAM.gif
 lib/webmin/bind8/images/PTR.gif
 lib/webmin/bind8/images/RP.gif
 lib/webmin/bind8/images/SPF.gif
 lib/webmin/bind8/images/SRV.gif
+lib/webmin/bind8/images/SSHFP.gif
 lib/webmin/bind8/images/SSHFS.gif
 lib/webmin/bind8/images/TLSA.gif
 lib/webmin/bind8/images/TXT.gif
@@ -8261,6 +8271,7 @@ lib/webmin/firewalld/config.info.de
 lib/webmin/firewalld/config.info.fr
 lib/webmin/firewalld/config.info.no
 lib/webmin/firewalld/config.info.pl
+lib/webmin/firewalld/config_info.pl
 lib/webmin/firewalld/create_zone.cgi
 lib/webmin/firewalld/default_zone.cgi
 lib/webmin/firewalld/delete_rules.cgi
@@ -13474,7 +13485,8 @@ lib/webmin/mysql/config-aix
 lib/webmin/mysql/config-cobalt-linux
 lib/webmin/mysql/config-coherent-linux
 lib/webmin/mysql/config-debian-linux
-lib/webmin/mysql/config-debian-linux-10.0-ALL
+lib/webmin/mysql/config-debian-linux-10.0-12.0
+lib/webmin/mysql/config-debian-linux-13.0-ALL
 lib/webmin/mysql/config-debian-linux-2.2-9.0
 lib/webmin/mysql/config-freebsd
 lib/webmin/mysql/config-freebsd-8-ALL
@@ -16060,6 +16072,7 @@ lib/webmin/proc/lang/cs
 lib/webmin/proc/lang/cs.auto
 lib/webmin/proc/lang/da.auto
 lib/webmin/proc/lang/de
+lib/webmin/proc/lang/de.auto
 lib/webmin/proc/lang/el
 lib/webmin/proc/lang/el.auto
 lib/webmin/proc/lang/en
@@ -19206,6 +19219,7 @@ lib/webmin/spam/edit_setup.cgi
 lib/webmin/spam/edit_simple.cgi
 lib/webmin/spam/edit_user.cgi
 lib/webmin/spam/edit_white.cgi
+lib/webmin/spam/help/help.zip
 lib/webmin/spam/images/awl.gif
 lib/webmin/spam/images/db.gif
 lib/webmin/spam/images/header.gif
@@ -19854,7 +19868,6 @@ lib/webmin/status/alive-monitor.pl
 lib/webmin/status/apache-monitor.pl
 lib/webmin/status/backup_config.pl
 lib/webmin/status/bind8-monitor.pl
-lib/webmin/status/cfengine-monitor.pl
 lib/webmin/status/cgi_args.pl
 lib/webmin/status/change-monitor.pl
 lib/webmin/status/config
@@ -19893,7 +19906,6 @@ lib/webmin/status/delete_mons.cgi
 lib/webmin/status/delete_tmpls.cgi
 lib/webmin/status/dhcpd-monitor.pl
 lib/webmin/status/dns-monitor.pl
-lib/webmin/status/dnsadmin-monitor.pl
 lib/webmin/status/dovecot-monitor.pl
 lib/webmin/status/du-monitor.pl
 lib/webmin/status/edit_mon.cgi
@@ -19920,7 +19932,6 @@ lib/webmin/status/imap-monitor.pl
 lib/webmin/status/index.cgi
 lib/webmin/status/inetd-monitor.pl
 lib/webmin/status/init-monitor.pl
-lib/webmin/status/jabber-monitor.pl
 lib/webmin/status/lang/ar.auto
 lib/webmin/status/lang/bg.auto
 lib/webmin/status/lang/ca
@@ -20043,8 +20054,8 @@ lib/webmin/status/mon-monitor.pl
 lib/webmin/status/monitor.pl
 lib/webmin/status/mysql-monitor.pl
 lib/webmin/status/nfs-monitor.pl
-lib/webmin/status/nut-monitor.pl
 lib/webmin/status/oldfile-monitor.pl
+lib/webmin/status/phpini-monitor.pl
 lib/webmin/status/ping-monitor.pl
 lib/webmin/status/portsentry-monitor.pl
 lib/webmin/status/postfix-monitor.pl

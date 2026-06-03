@@ -1,7 +1,7 @@
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.82.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -23,12 +23,11 @@ USE_GL=		gl
 USE_SDL=	sdl2 net2
 USE_GITHUB=	yes
 
-MESON_ARGS=	-Dunit_tests=disabled \
-		-Duse_mt32emu=false
+MESON_ARGS=	-Dunit_tests=disabled
 LDFLAGS+=	-pthread
 
-OPTIONS_DEFINE=	ALSA DOCS FLUIDSYNTH
-OPTIONS_DEFAULT=	FLUIDSYNTH
+OPTIONS_DEFINE=		ALSA DOCS FLUIDSYNTH MT32EMU
+OPTIONS_DEFAULT=	FLUIDSYNTH MT32EMU
 
 ALSA_DESC=		ALSA midi support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -36,6 +35,10 @@ ALSA_MESON_TRUE=	use_alsa
 
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_MESON_TRUE=	use_fluidsynth
+
+MT32EMU_DESC=		MIDI playback support via mt32emu
+MT32EMU_LIB_DEPENDS=	libmt32emu.so:emulators/libmt32emu
+MT32EMU_MESON_TRUE=	use_mt32emu
 
 .if defined(PACKAGE_BUILDING)
 # Disable SIMD autodetection

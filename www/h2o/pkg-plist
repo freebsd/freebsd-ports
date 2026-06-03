@@ -1,5 +1,8 @@
 @dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
 @sample %%ETCDIR%%/h2o.conf.sample
+%%DATADIR%%/acme/lego-loader
+%%DATADIR%%/acme/loading.crt
+%%DATADIR%%/acme/loading.key
 %%DATADIR%%/annotate-backtrace-symbols
 %%DATADIR%%/ca-bundle.crt
 %%DATADIR%%/fastcgi-cgi
@@ -79,13 +82,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/search/oktavia-jquery-ui.js
 %%PORTDOCS%%%%DOCSDIR%%/search/searchindex.js
 bin/h2o
+bin/h2olog
 include/h2o.h
 include/h2o/absprio.h
 include/h2o/balancer.h
-include/h2o/cache_digests.h
 include/h2o/cache.h
+include/h2o/cache_digests.h
 include/h2o/configurator.h
-include/h2o/ebpf.h
 include/h2o/file.h
 include/h2o/filecache.h
 include/h2o/header.h
@@ -93,21 +96,23 @@ include/h2o/hiredis_.h
 include/h2o/hostinfo.h
 include/h2o/hpack.h
 include/h2o/http1.h
+include/h2o/http2.h
 include/h2o/http2_casper.h
 include/h2o/http2_common.h
 include/h2o/http2_internal.h
 include/h2o/http2_scheduler.h
-include/h2o/http2.h
 include/h2o/http3_common.h
 include/h2o/http3_internal.h
 include/h2o/http3_server.h
 include/h2o/httpclient.h
+include/h2o/io_uring.h
 include/h2o/linklist.h
 include/h2o/memcached.h
 include/h2o/memory.h
 include/h2o/mruby_.h
 include/h2o/multithread.h
 include/h2o/openssl_backport.h
+include/h2o/pipe_sender.h
 include/h2o/qpack.h
 include/h2o/rand.h
 include/h2o/redis.h
@@ -120,8 +125,8 @@ include/h2o/socketpool.h
 include/h2o/string_.h
 include/h2o/time_.h
 include/h2o/timerwheel.h
-include/h2o/token_table.h
 include/h2o/token.h
+include/h2o/token_table.h
 include/h2o/url.h
 include/h2o/version.h
 include/h2o/websocket.h
@@ -150,7 +155,6 @@ include/quicly/ranges.h
 include/quicly/rate.h
 include/quicly/recvstate.h
 include/quicly/remote_cid.h
-include/quicly/retire_cid.h
 include/quicly/sendstate.h
 include/quicly/sentmap.h
 include/quicly/streambuf.h
@@ -158,3 +162,5 @@ libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
 share/man/man5/h2o.conf.5.gz
 share/man/man8/h2o.8.gz
+@comment @dir var/h2o/acme/certificates
+@comment @dir var/h2o/acme/webroot

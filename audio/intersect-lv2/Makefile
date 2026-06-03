@@ -1,5 +1,5 @@
 PORTNAME=	intersect
-PORTVERSION=	1.3
+PORTVERSION=	2.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/GPLv3.txt
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
-LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
+LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
+		libhwy.so:devel/highway
 
 USES=		meson pkgconfig
 USE_GITHUB=	yes

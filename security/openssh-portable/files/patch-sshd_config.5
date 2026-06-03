@@ -1,6 +1,6 @@
---- sshd_config.5.orig	2022-02-11 18:50:00.822679000 +0000
-+++ sshd_config.5	2022-02-11 19:09:05.162504000 +0000
-@@ -701,7 +701,9 @@
+--- sshd_config.5.orig	2026-04-25 16:05:26.905238000 -0700
++++ sshd_config.5	2026-04-25 16:16:59.050604000 -0700
+@@ -789,7 +789,9 @@ This was formerly named HostbasedAcceptedKeyTypes.
  .Qq ssh -Q HostbasedAcceptedAlgorithms .
  This was formerly named HostbasedAcceptedKeyTypes.
  .It Cm HostbasedAuthentication
@@ -11,7 +11,16 @@
  with successful public key client host authentication is allowed
  (host-based authentication).
  The default is
-@@ -1416,6 +1434,15 @@
+@@ -1489,7 +1491,7 @@ The default is
+ or
+ .Cm no .
+ The default is
+-.Cm prohibit-password .
++.Cm no .
+ .Pp
+ If this option is set to
+ .Cm prohibit-password
+@@ -1535,6 +1537,15 @@ The default is
  .Cm ethernet .
  The default is
  .Cm no .
@@ -27,7 +36,7 @@
  .Pp
  Independent of this setting, the permissions of the selected
  .Xr tun 4
-@@ -1774,12 +1801,19 @@
+@@ -2062,12 +2073,19 @@ The default is
  .Xr sshd 8
  as a non-root user.
  The default is
@@ -48,12 +57,3 @@
  .It Cm X11DisplayOffset
  Specifies the first display number available for
  .Xr sshd 8 Ns 's
-@@ -1793,7 +1827,7 @@
- or
- .Cm no .
- The default is
--.Cm no .
-+.Cm yes .
- .Pp
- When X11 forwarding is enabled, there may be additional exposure to
- the server and to client displays if the

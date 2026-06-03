@@ -1,5 +1,5 @@
 PORTNAME=	libgnome-games-support
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
-USES=		gettext gnome meson pkgconfig tar:xz vala:build
+USES=		gettext-tools gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 gtk40
 
 .include <bsd.port.options.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	WordNet
 PORTVERSION=	3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	http://wordnetcode.princeton.edu/${PORTVERSION}/:code \
 		http://wordnetcode.princeton.edu/:dict
@@ -10,11 +10,15 @@ MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
 WWW=		https://wordnet.princeton.edu/
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 EXTRACT_ONLY=	${DISTFILES:M*code:S/:code//}
 EXTRACT_AFTER_ARGS=--exclude dict
 USES=		tcl uidfix tar:bzip2
 SCRIPTS_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
 MAKE_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION} STAGEDIR="${STAGEDIR}"
+MAKE_ENV+=	LOCALBASE="${LOCALBASE}" TCL_INCLUDEDIR="${TCL_INCLUDEDIR}"
 PLIST_SUB+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
 REINPLACE_ARGS=	-i ""
 USE_LDCONFIG=	yes
@@ -22,7 +26,7 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	TCL_VER=${TCL_VER}
 
 # Fix build on recent current
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon -Wno-parentheses
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
@@ -33,7 +37,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${TAR} -C ${STAGEDIR}${DATADIR} -x --no-same-owner	\
 	    --strip-components 1	\
-	    -f ${_DISTDIR}${DISTFILES:M*dict:S/:dict//}	\
+	    -f ${_DISTDIR}/${DISTFILES:M*dict:S/:dict//}	\
 	    `${SED} -n -e '/\.xbm/d' -e 's,^%%DATADIR%%/,dict/,p' ${PLIST}`
 
 .include <bsd.port.mk>

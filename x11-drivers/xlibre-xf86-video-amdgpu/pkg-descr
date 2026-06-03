@@ -1,0 +1,7 @@
+This package contains the XLibre xf86-video-amdgpu driver.
+
+The amdgpu driver supports AMD Radeon chipsets: OLAND, HAINAN, TAHITI, PITCAIRN,
+VERDE, BONAIRE, KABINI, MULLINS, KAVERI, HAWAII, TOPAZ, TONGA, CARRIZO, FIJI,
+STONEY, POLARIS11, POLARIS10
+
+On FreeBSD requires amdgpu KMS driver from graphics/drm-kmod.

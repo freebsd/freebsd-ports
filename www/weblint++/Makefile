@@ -28,8 +28,9 @@ TEST_DEPENDS=	p5-Test-Manifest>0.91:devel/p5-Test-Manifest \
 		p5-Test-Pod>=0.90:devel/p5-Test-Pod \
 		p5-Test-File>0:devel/p5-Test-File
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

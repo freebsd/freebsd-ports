@@ -16,20 +16,19 @@
 name=sniproxy
 rcvar=sniproxy_enable
 
-command=%%PREFIX%%/sbin/sniproxy
-
-pidfile=${sniproxy_pidfile:-"/var/run/sniproxy.pid"}
+load_rc_config ${name}
 
 sniproxy_enable=${sniproxy_enable:-"NO"}
 sniproxy_conf=${sniproxy_conf:-"%%PREFIX%%/etc/sniproxy.conf"}
 
-stop_postcmd="rm -f $pidfile"
-sig_reload="HUP"
-
-load_rc_config ${name}
+pidfile=${sniproxy_pidfile:-"/var/run/${name}.pid"}
+procname=%%PREFIX%%/sbin/${name}
+command=/usr/sbin/daemon
+command_args="-c -p ${pidfile} -t ${name} -- ${procname} -f -c ${sniproxy_conf}"
 
 required_files=${sniproxy_conf}
 
-command_args="-c ${sniproxy_conf}"
-run_rc_command "$1"
+extra_commands="reload"
+sig_reload="HUP"
 
+run_rc_command "$1"

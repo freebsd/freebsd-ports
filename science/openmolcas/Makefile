@@ -1,5 +1,6 @@
 PORTNAME=	openmolcas
-DISTVERSION=	24.06
+DISTVERSION=	26.02
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,13 +25,13 @@ USE_GCC=	yes # see https://gitlab.com/Molcas/OpenMolcas/-/issues/351
 USE_GITLAB=	yes
 GL_ACCOUNT=	Molcas
 GL_PROJECT=	OpenMolcas
-GL_TAGNAME=	ff0b5d1cb86ae8766625b9018d18260f07e46f52
+GL_TAGNAME=	3cb6f2cd61a5d482611d85c47dcb61f8d51d50ba
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	Reference-LAPACK:lapack:aa631b4b:lapack/External/lapack \
+GH_TUPLE=	Reference-LAPACK:lapack:04b044e0:lapack/External/lapack \
 		ilyak:libefp:7d1ff5fd:libefp/External/efp \
 		mcodev31:libmsym:0e0b831c:libmsym/External/libmsym \
-		libwfa:libwfa:5a9954ba:libwfa/External/libwfa
+		libwfa:libwfa:a44aca25:libwfa/External/libwfa
 
 SHEBANG_FILES=	sbin/help_doc sbin/help_func sbin/help_basis sbin/setup sbin/verify sbin/version
 SHEBANG_GLOB=	*.py

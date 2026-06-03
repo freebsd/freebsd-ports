@@ -1,33 +1,105 @@
---- bin/solr.orig	2024-08-06 17:02:34 UTC
-+++ bin/solr
-@@ -2027,13 +2027,20 @@ function start_solr() {
+--- bin/solr.orig	2026-01-02 20:59:41.000000000 +0000
++++ bin/solr	2026-03-22 17:27:21.259092000 +0000
+@@ -49,6 +49,13 @@
+ SOLR_SCRIPT="$0"
+ verbose=false
+ THIS_OS=$(uname -s)
++
++SOLR_PORT_PID_TOOL=""
++if [ "$THIS_OS" == "FreeBSD" ] && command -v sockstat > /dev/null 2>&1; then
++  SOLR_PORT_PID_TOOL="sockstat"
++elif command -v lsof > /dev/null 2>&1 && lsof -v 2>&1 | grep -q revision; then
++  SOLR_PORT_PID_TOOL="lsof"
++fi
+ 
+ # What version of Java is required to run this version of Solr.
+ JAVA_VER_REQ=21
+@@ -475,15 +482,36 @@
+   fi
+ }
+ 
+-# extract the value of the -Dsolr.port.listen parameter from a running Solr process
++# given a port, find the pid of a process that is actively listening on it
++function listening_pid_by_port() {
++  local the_port="$1"
++  local listening_pid=""
++
++  if [ "$SOLR_PORT_PID_TOOL" == "sockstat" ]; then
++    listening_pid=$(
++      {
++        sockstat -4 -l -P tcp -p "$the_port" 2>/dev/null || :
++        sockstat -6 -l -P tcp -p "$the_port" 2>/dev/null || :
++      } | awk '$1 != "USER" { print $3; exit }'
++    )
++  elif [ "$SOLR_PORT_PID_TOOL" == "lsof" ]; then
++    listening_pid=$(lsof -t -PniTCP:"$the_port" -sTCP:LISTEN 2>/dev/null | sed -n '1p' || :)
++  fi
++
++  if [ -n "${listening_pid:-}" ]; then
++    echo "$listening_pid"
++  fi
++}
++
++# extract the value of the listening port parameter from a running Solr process
+ function solr_port_listen() {
+   SOLR_PID="$1"
+-  SOLR_PROC=$(ps -fww -p "$SOLR_PID" | grep start\.jar | grep solr\.port\.listen)
++  SOLR_PROC=$(ps -fww -p "$SOLR_PID" | grep start\.jar | grep -E 'solr\.port\.listen|jetty\.port')
+   IFS=' ' read -a proc_args <<< "$SOLR_PROC"
+   for arg in "${proc_args[@]}"
+     do
+       IFS='=' read -a pair <<< "$arg"
+-      if [ "${pair[0]}" == "-Dsolr.port.listen" ]; then
++      if [ "${pair[0]}" == "-Dsolr.port.listen" ] || [ "${pair[0]}" == "-Djetty.port" ]; then
+         local solr_port="${pair[1]}"
+         break
+       fi
+@@ -983,8 +1011,8 @@
+   SOLR_PID=$(solr_pid_by_port "$SOLR_PORT_LISTEN")
+ 
+   if [ -z "${SOLR_PID:-}" ]; then
+-    # not found using the pid file ... but use ps to ensure not found
+-    SOLR_PID=$(ps auxww | grep start\.jar | awk "/\-Dsolr\.port\.listen=$SOLR_PORT_LISTEN/"' {print $2}' | sort -r)
++    # not found using the pid file ... but check if any process is already listening on the port
++    SOLR_PID=$(listening_pid_by_port "$SOLR_PORT_LISTEN")
+   fi
+ 
+   if [ -n "${SOLR_PID:-}" ]; then
+@@ -1351,14 +1379,13 @@
+       fi
      fi
  
-     # no lsof on cygwin though
-+    check_command=""
-     if lsof -v 2>&1 | grep -q revision; then
-+      check_command="lsof -t -PniTCP:$SOLR_PORT -sTCP:LISTEN"
-+    elif which -s sockstat; then
-+      check_command="sockstat -q46lp$SOLR_PORT"
-+    fi
-+    
-+    if [[ "${check_command}" != "" ]]; then
-       echo -n "Waiting up to $SOLR_START_WAIT seconds to see Solr running on port $SOLR_PORT"
+-    # no lsof on cygwin though
+-    if lsof -v 2>&1 | grep -q revision; then
++    if [ -n "$SOLR_PORT_PID_TOOL" ]; then
+       echo -n "Waiting up to $SOLR_START_WAIT seconds to see Solr running on port $SOLR_PORT_LISTEN"
        # Launch in a subshell to show the spinner
        (loops=0
        while true
        do
--        running=$(lsof -t -PniTCP:$SOLR_PORT -sTCP:LISTEN || :)
-+        running=$(${check_command} || :)
+-        running=$(lsof -t -PniTCP:$SOLR_PORT_LISTEN -sTCP:LISTEN || :)
++        running=$(listening_pid_by_port "$SOLR_PORT_LISTEN")
          if [ -z "${running:-}" ]; then
            slept=$((loops * 2))
            if [ $slept -lt $SOLR_START_WAIT ]; then
-@@ -2052,7 +2059,7 @@ function start_solr() {
+@@ -1370,14 +1397,18 @@
+             exit # subshell!
+           fi
+         else
+-          SOLR_PID=$(ps auxww | grep start\.jar | awk "/\-Dsolr\.port\.listen=$SOLR_PORT_LISTEN/"' {print $2}' | sort -r)
++          SOLR_PID="$running"
+           echo -e "\nStarted Solr server on port $SOLR_PORT_LISTEN (pid=$SOLR_PID). Happy searching!\n"
+           exit # subshell!
+         fi
        done) &
        spinner $!
      else
--      echo -e "NOTE: Please install lsof as this script needs it to determine if Solr is listening on port $SOLR_PORT."
-+      echo -e "NOTE: Please install lsof or sockstat as this script needs it to determine if Solr is listening on port $SOLR_PORT."
+-      echo -e "NOTE: Please install lsof as this script needs it to determine if Solr is listening on port $SOLR_PORT_LISTEN."
++      if [ "$THIS_OS" == "FreeBSD" ]; then
++        echo -e "NOTE: This script needs sockstat available in PATH to determine if Solr is listening on port $SOLR_PORT_LISTEN."
++      else
++        echo -e "NOTE: Please install lsof as this script needs it to determine if Solr is listening on port $SOLR_PORT_LISTEN."
++      fi
        sleep 10
-       SOLR_PID=$(ps auxww | grep start\.jar | awk "/\-Djetty\.port=$SOLR_PORT/"' {print $2}' | sort -r)
-       echo -e "\nStarted Solr server on port $SOLR_PORT (pid=$SOLR_PID). Happy searching!\n"
+       SOLR_PID=$(ps auxww | grep start\.jar | awk "/\-Dsolr\.port\.listen=$SOLR_PORT_LISTEN/"' {print $2}' | sort -r)
+       echo -e "\nStarted Solr server on port $SOLR_PORT_LISTEN (pid=$SOLR_PID). Happy searching!\n"

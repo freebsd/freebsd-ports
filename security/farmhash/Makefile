@@ -1,5 +1,5 @@
 PORTNAME=	farmhash
-DISTVERSION=	g20190513
+DISTVERSION=	1.1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		autoreconf compiler:c++11-lib gmake libtool
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	0d859a8
+GH_TAGNAME=	0d859a811870d10f53a594927d0d0b97573ad06d
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

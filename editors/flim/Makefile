@@ -1,8 +1,8 @@
 PORTNAME=	flim
 PORTVERSION=	1.14.9.${SNAPDATE}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Message representation or encoding elisp library for emacs
@@ -10,30 +10,31 @@ WWW=		https://github.com/wanderlust/flim
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
-RUN_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
+BUILD_DEPENDS=	apel>0:editors/apel
+RUN_DEPENDS=	apel>0:editors/apel
 
-USES=		cpe emacs iconv makeinfo
+USES=		cpe emacs:build iconv makeinfo
+CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	wanderlust
-GH_TAGNAME=	f14c8bf
+GH_TAGNAME=	392c29d
 
-SNAPDATE=	20250506
-CPE_VENDOR=	gnu
-NO_ARCH=	yes
-
-ALL_TARGET=	elc
+SNAPDATE=	20251030
 
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}" \
-		LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}" \
-		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}" \
+		LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}" \
 		PACKAGE_LISPDIR=NONE
+
+CONFLICTS_INSTALL=	flim-emacs_*
+
+NO_ARCH=	yes
 
 INFO=		mime-en mime-ja
 
 OPTIONS_DEFINE=	DOCS
 
-post-build:
+do-build:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.texi mime-ja.texi; do \
 		${MAKEINFO} --no-split --no-validate $${i} ; \

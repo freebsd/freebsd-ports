@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2025-05-07 06:48:23 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"

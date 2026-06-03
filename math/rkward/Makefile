@@ -1,6 +1,5 @@
 PORTNAME=	rkward
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -13,7 +12,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libR.so:math/R	\
 		libcups.so:print/cups	\
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon	\
+		libxcb-cursor.so:x11/xcb-util-cursor
 RUN_DEPENDS=	kbibtex:databases/kbibtex	\
 		hs-pandoc>0:textproc/hs-pandoc	\
 		${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
@@ -24,8 +24,8 @@ TEST_DEPENDS=	${LR_MOD_DIR}/FAdist/INDEX:science/R-cran-FAdist	\
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl fortran	\
 		kde:6 localbase php:cli qt:6 shared-mime-info xorg
 USE_GL=		opengl
-USE_QT=		5compat base declarative positioning webchannel webengine
-USE_XORG=	ice x11 xext
+USE_QT=		base declarative positioning webchannel webengine websockets webview
+USE_XORG=	ice x11 xcb xext
 USE_KDE=	archive bookmarks breeze-icons colorscheme completion config	\
 		configwidgets coreaddons crash ecm doctools guiaddons i18n	\
 		itemviews jobwidgets kio notifications parts service solid	\
@@ -59,8 +59,8 @@ RUN_DEPENDS+=	${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
 		${LR_MOD_DIR}/pwr/INDEX:math/R-cran-pwr			\
 		${LR_MOD_DIR}/hdrcde/INDEX:math/R-cran-hdrcde		\
 		${LR_MOD_DIR}/devtools/INDEX:devel/R-cran-devtools	\
+		${LR_MOD_DIR}/XLConnect/INDEX:math/R-cran-XLConnect	\
 		${LR_MOD_DIR}/exactRankTests/INDEX:math/R-cran-exactRankTests
-#RUN_DEPENDS+=	${LR_MOD_DIR}/XLConnect/INDEX:math/R-cran-XLConnect
 .endif
 
 .if ${PORT_OPTIONS:MINSTTEST}

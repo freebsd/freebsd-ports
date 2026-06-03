@@ -1,0 +1,19 @@
+--- configure.orig	2025-11-20 03:31:02 UTC
++++ configure
+@@ -20400,16 +20400,6 @@ printf "%s\n" "$version (too old, only 3.3 or newer is
+       PYTHON3_INC=`$PYTHON3 -c 'import os,sysconfig;print(sysconfig.get_path("include").replace(os.sep,"/"))' 2>/dev/null`
+ 
+ 
+-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for python3 sphinx module" >&5
+-printf %s "checking for python3 sphinx module... " >&6; }
+-      if $PYTHON3 -c 'import sphinx' >&5 2>&5 ; then
+-	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf "%s\n" "yes" >&6; }
+-      else
+-	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no (try installing package python3-sphinx" >&5
+-printf "%s\n" "no (try installing package python3-sphinx" >&6; }
+-	python3_ok=no
+-      fi
+     fi
+     if test yes = "$python3_ok" ; then
+                   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $PYTHON3_INC/Python.h" >&5

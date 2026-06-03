@@ -1,5 +1,6 @@
 PORTNAME=	jax
 PORTVERSION=	0.4.38
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.2.0:math/py-ml-dtypes@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}opt-einsum>=0:math/py-opt-einsum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.11.1:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

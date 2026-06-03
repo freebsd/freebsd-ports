@@ -1,6 +1,6 @@
 PORTNAME=		sogo2
 PORTVERSION=		2.4.3
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -11,7 +11,6 @@ WWW?=			https://sogo.nu/
 
 LICENSE=		GPLv2
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
 
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \

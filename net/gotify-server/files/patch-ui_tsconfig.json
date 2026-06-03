@@ -1,6 +1,6 @@
---- ui/tsconfig.json.orig	2024-10-11 13:53:39 UTC
+--- ui/tsconfig.json.orig	1979-11-29 23:00:00 UTC
 +++ ui/tsconfig.json
-@@ -38,7 +38,8 @@
+@@ -32,7 +32,8 @@
      "acceptance-tests",
      "webpack",
      "jest",

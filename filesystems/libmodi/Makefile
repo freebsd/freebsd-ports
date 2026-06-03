@@ -1,6 +1,6 @@
 PORTNAME=	libmodi
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20240507
+DISTVERSION=	experimental-20251121
 CATEGORIES=	filesystems devel
 MASTER_SITES=	https://github.com/libyal/libmodi/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -13,6 +13,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcaes.so:security/libcaes
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

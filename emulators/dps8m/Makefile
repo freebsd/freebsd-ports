@@ -1,12 +1,14 @@
 PORTNAME=	dps8m
 DISTVERSIONPREFIX=	R
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1.0
 PORTREVISION=	1
 CATEGORIES=	emulators
 
-MAINTAINER=	gspurki@gmail.com
-COMMENT=	SIMH based simulator for the Honeywell h6180/dps8m Multics processor
-WWW=		https://dps8m.gitlab.io/dps8m
+MAINTAINER=	alven@FreeBSD.org
+COMMENT=	Simulator of the 36-bit GE/Honeywell/Bull 600/6000-series mainframes
+WWW=		https://dps8m.gitlab.io/dps8m/ \
+		https://gitlab.com/dps8m/dps8m/ \
+		https://multics-wiki.swenson.org/index.php/Main_Page
 
 LICENSE=	ICU
 LICENSE_NAME=	ICU license
@@ -21,21 +23,20 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		gmake
 USE_GITLAB=	yes
 
+MAKEFILE=	GNUmakefile
+MAKE_ARGS=	NO_LTO=1 V=1
+
 CFLAGS_powerpc64=	-Datomic_testandset_64=atomic_testandset_long
 CFLAGS_powerpc64le=	-Datomic_testandset_64=atomic_testandset_long
 CFLAGS_riscv64=		-Datomic_testandset_64=atomic_testandset_long
-
-MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/dps8 \
 		bin/prt2pdf \
 		bin/punutil
 
-MAKE_ARGS=	V=1 NO_LTO=1
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dps8/dps8 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/prt2pdf/prt2pdf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/punutil/punutil ${STAGEDIR}${PREFIX}/bin
+.for f in dps8/dps8 prt2pdf/prt2pdf punutil/punutil
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>

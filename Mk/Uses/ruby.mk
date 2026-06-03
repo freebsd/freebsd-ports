@@ -15,7 +15,7 @@
 # [variables that a user may define]
 #
 # RUBY_VER		- (See below)
-# RUBY_DEFAULT_VER	- Set to (e.g.) "3.2" if you want to refer to "ruby32"
+# RUBY_DEFAULT_VER	- Set to (e.g.) "3.3" if you want to refer to "ruby33"
 #			  just as "ruby".
 # RUBY_ARCH		- (See below)
 #
@@ -47,10 +47,7 @@
 #			  ruby-gdbm, etc.).
 # RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby,
 #			  ruby-gdbm, etc.).
-# RUBY_PORTREVISION	- PORTREVISION for the standard ruby ports.
 # RUBY_PORTEPOCH	- PORTEPOCH for the standard ruby ports.
-# RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the
-#			  basename of the ruby distribution tarball.
 # RUBY_PATCHFILES	- PATCHFILES for the standard ruby ports, i.e. the
 #			  basename of the ruby distribution tarball.
 # MASTER_SITE_SUBDIR_RUBY	- MASTER_SITE_SUBDIR for the ruby distfiles.
@@ -143,35 +140,23 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 .    if defined(RUBY_VER)
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.      if ${RUBY_VER} == 3.2
-#
-# Ruby 3.2
-#
-RUBY_DISTVERSION=	3.2.9
-RUBY_PORTREVISION=	0
-
-.      elif ${RUBY_VER} == 3.3
+.      if ${RUBY_VER} == 3.3
 #
 # Ruby 3.3
 #
-RUBY_DISTVERSION=	3.3.8
-RUBY_PORTREVISION=	0
-
+RUBY_DISTVERSION=	3.3.11
 
 .      elif ${RUBY_VER} == 3.4
 #
 # Ruby 3.4
 #
-RUBY_DISTVERSION=	3.4.5
-RUBY_PORTREVISION=	0
+RUBY_DISTVERSION=	3.4.9
 
-
-.      elif ${RUBY_VER} == 3.5
+.      elif ${RUBY_VER} == 4.0
 #
-# Ruby 3.5
+# Ruby 4.0
 #
-RUBY_DISTVERSION=	3.5.0-preview1
-RUBY_PORTREVISION=	0
+RUBY_DISTVERSION=	4.0.5
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
@@ -179,7 +164,7 @@ RUBY_PORTREVISION=	0
 #
 # Other versions
 #
-IGNORE=	Only ruby 3,2, 3.3, 3.4 and 3.5 are supported
+IGNORE=	Only ruby 3.3, 3.4 and 4.0 are supported
 _INVALID_RUBY_VER=	1
 .      endif
 RUBY_PORTEPOCH=		1
@@ -188,10 +173,9 @@ RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 
 .    if !defined(_INVALID_RUBY_VER)
 
-RUBY32?=		"@comment "
 RUBY33?=		"@comment "
 RUBY34?=		"@comment "
-RUBY35?=		"@comment "
+RUBY40?=		"@comment "
 
 .      if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
 .        if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
@@ -223,7 +207,6 @@ RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
 RUBY_PORTVERSION?=	${RUBY_DISTVERSION:tl:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
 MASTER_SITE_SUBDIR_RUBY?=	${RUBY_VER}
-RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_RELVERSION_CODE?=	${RUBY_RELVERSION:S/.//g}
 RUBY_VERSION_CODE?=	${RUBY_VERSION:S/.//g}

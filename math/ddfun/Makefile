@@ -19,10 +19,16 @@ BUILD_WRKSRC=	${WRKSRC}/fortran
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.pre.mk>
+
 pre-configure:
 .for f in gnu-complib-dd.scr gnu-complink-dd.scr
 	${REINPLACE_CMD} -e 's|-O3|${FFLAGS}|' ${BUILD_WRKSRC}/${f}
 .endfor
+.if ${FORTRAN_DEFAULT} == flang
+# https://github.com/llvm/llvm-project/issues/158436
+	${REINPLACE_CMD} -e 's|-fno-expensive-optimizations||g' ${BUILD_WRKSRC}/gnu-complib-dd.scr
+.endif
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ./gnu-complib-dd.scr
@@ -51,4 +57,4 @@ do-install-DOCS-on:
 do-test:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ./gnu-ddfun-tests.scr
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- Makefile.bsd.orig	2021-04-11 19:03:51 UTC
-+++ Makefile.bsd
-@@ -2,23 +2,25 @@
+--- Makefile.bsd.orig	2024-12-04 12:34:01.000000000 -0800
++++ Makefile.bsd	2026-03-09 22:09:45.668531000 -0700
+@@ -5,23 +5,25 @@
  
  -include make.conf
  
@@ -19,10 +19,10 @@
  
  PNG_SCREENSHOT_LIBS = -lpng
 -LDFLAGS=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
-+LDFLAGS+=$(shell sdl2-config --libs) $(shell xml2-config --libs) -lSDL2_net -lSDL2_image -lSDL2_ttf -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
++LDFLAGS+=$(shell sdl2-config --libs) $(shell xml2-config --libs) -lSDL2_net -lSDL2_image -lSDL2_ttf -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile -lcrypto -lssl\
  	$(foreach FEATURE, $(FEATURES), $($(FEATURE)_LIBS))
 -_LDFLAGS=$(XDIR) -lGL -lpthread -lstdc++
-+_LDFLAGS=$(XDIR) -lGL -pthread
++_LDFLAGS=$(XDIR) -lGL -pthread -lcrypto -lssl
  
  # This works on Ubuntu 8.04 (LTS) at least
  # Install these packages in addition to those required for a standard build
@@ -33,7 +33,30 @@
  
  # the objects we need
  ENCYCLOPEDIA_COBJ = books/fontdef.o books/parser.o books/symbol.o books/typesetter.o sort.o symbol_table.o
-@@ -85,16 +87,16 @@ HEADER_DIRS = . books eye_candy io pawn fsaa engine xz
+@@ -30,6 +32,7 @@
+ 	pawn/amxfloat.o pawn/amxstring.o pawn/elpawn.o
+ CUSTOM_UPDATE_COBJ = custom_update.o new_update.o
+ FSAA_COBJ = fsaa/fsaa_glx.o fsaa/fsaa.o
++PACKET_COMPRESSION_COBJ = ext_protocol_shared.o
+ COBJS=2d_objects.o 3d_objects.o \
+ 	actor_scripts.o actors.o alphamap.o asc.o astrology.o \
+ 	bbox_tree.o buddy.o buffs.o bags.o \
+@@ -60,11 +63,12 @@
+ 	$(foreach FEATURE, $(FEATURES), $($(FEATURE)_COBJ))
+ 
+ JSON_FILES_CXXOBJ = json_io.o
+-CXXOBJS=achievements.o actor_init.o books.o cal3d_wrapper.o command_queue.o \
++USE_SSL_CXXOBJ = connection.o ipaddress.o socket.o
++CXXOBJS=actors_list.o achievements.o actor_init.o books.o cal3d_wrapper.o command_queue.o \
+ 	context_menu.o cppwindows.o elloggingwrapper.o engine/logging.o exceptions/extendedexception.o \
+ 	font.o hud_indicators.o hud_timer.o icon_window.o invasion_window.o io/cal3d_io_wrapper.o item_info.o item_lists.o \
+ 	named_colours.o password_manager.o optimizer.o quest_log.o select.o \
+-	sendvideoinfo.o trade_log.o user_menus.o xml/xmlhelper.o eye_candy_wrapper.o \
++	sendvideoinfo.o textpopup.o trade_log.o user_menus.o xml/xmlhelper.o eye_candy_wrapper.o \
+ 	engine/hardwarebuffer.o xor_cipher.o \
+ 	eye_candy/eye_candy.o eye_candy/math_cache.o eye_candy/effect_lamp.o \
+ 	eye_candy/effect_candle.o \
+@@ -88,16 +92,16 @@
  DEP_FILES=$(foreach OBJ, $(COBJS), .deps/$(OBJ).P) $(foreach OBJ, $(CXXOBJS), .deps/$(OBJ).P)
  #(shell echo $OBJ |sed s/\.o/\.P/))
  

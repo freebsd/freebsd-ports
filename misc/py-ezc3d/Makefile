@@ -1,6 +1,7 @@
 PORTNAME=	ezc3d
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1.5.19
+DISTVERSION=	1.6.3
+PORTREVISION=	2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,15 +12,16 @@ WWW=		https://github.com/pyomeca/ezc3d
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		cmake:devel/cmake-core \
 		swig:devel/swig
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # autoplist is broken due to https://github.com/pyomeca/ezc3d/issues/258 ; 3 tests fail, see https://github.com/pyomeca/ezc3d/issues/291
+USE_PYTHON=	pep517 autoplist pytest # autoplist is broken due to https://github.com/pyomeca/ezc3d/issues/258 ; 3 tests fail, see https://github.com/pyomeca/ezc3d/issues/291
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pyomeca

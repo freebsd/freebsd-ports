@@ -1,6 +1,6 @@
 PORTNAME=	narcissu2
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.neechin.net/file_download/22/:game \
 		http://www.neechin.net/file_download/27/:script \

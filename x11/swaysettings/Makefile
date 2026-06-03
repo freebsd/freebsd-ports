@@ -1,10 +1,10 @@
 PORTNAME=	swaysettings
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for setting Sway wallpaper, default apps, GTK themes, etc.
 WWW=		https://github.com/ErikReider/SwaySettings
 

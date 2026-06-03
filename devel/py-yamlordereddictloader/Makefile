@@ -12,6 +12,9 @@ WWW=		https://pypi.python.org/pypi/yamlordereddictloader
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Deprecated by upstream and no longer actively maintained, please use devel/py-yamlloader instead
+EXPIRATION_DATE=2026-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python

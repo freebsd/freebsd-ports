@@ -1,12 +1,12 @@
 PORTNAME=	ai-ml-env
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	science linux
 MASTER_SITES=	https://arrowd.name/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	miniconda3.tar.gz
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	voxnod@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Linux Python environment for running Stable Diffusion models and PyTorch CUDA examples
 
 ONLY_FOR_ARCHS=	amd64
@@ -16,11 +16,10 @@ LICENSE_NAME=	Multiple licenses
 LICENSE_TEXT=	The package contains multiple packages with different licenses
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-FETCH_DEPENDS=	linux_base-rl9>=9.2:emulators/linux_base-rl9
-BUILD_DEPENDS=	linux-rl9-devtools>=0:devel/linux-rl9-devtools
-RUN_DEPENDS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
-		linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
-		nvidia-driver>=0:x11/nvidia-driver
+BUILD_DEPENDS=	gmd5sum:sysutils/coreutils \
+		linux-rl9-devtools>=0:devel/linux-rl9-devtools
+RUN_DEPENDS=	linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
+		${NVIDIA_DEPS}
 
 USES=		linux:rl9
 USE_LINUX_PREFIX=	yes
@@ -30,39 +29,66 @@ GH_PROJECT=	examples:examples
 GH_TAGNAME=	5dfeb46902baf444010f2f54bcf4dfbea109ae4d:examples
 
 WRKSRC=		${WRKSRC_examples}
+MAKEDIST_WRKSRC=${WRKDIR}/makedist
+
+BINARY_ALIAS=	md5sum=gmd5sum
 
 SUB_FILES=	ai-ml-env-bash \
 		ai-ml-env-python
 SUB_LIST=	LOCALBASE=${LOCALBASE} \
 		LINUXBASE=${LINUXBASE}
 
-PLIST_SUB+=     PYTHON_SUFFIX=${PYTHON_SUFFIX} \
+PLIST_SUB=	PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 
-CONDA_VERSION=	py39_25.1.1-2
+CONDA_VERSION=	py${PYTHON_SUFFIX}_25.9.1-1
 CONDA_SCRIPT=	Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh
 PYTHON_SUFFIX=	39
 PYTHON_VER=	3.9
 DATA_DIR=	${LOCALBASE}/share/${PORTNAME}
 
-create-distfile:
-	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		fetch -a -v https://repo.anaconda.com/miniconda/${CONDA_SCRIPT}
-	@if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/miniconda3/envs/pytorch" ]; then \
-		${ECHO_MSG} "Miniconda environment 'pytorch' not found. Setting up..."; \
-		${SETENV} HOME=${DISTDIR}/${DIST_SUBDIR} ${SH} ${DISTDIR}/${DIST_SUBDIR}/${CONDA_SCRIPT} -b -s; \
-		${DISTDIR}/${DIST_SUBDIR}/miniconda3/bin/conda create --name pytorch python=${PYTHON_VER} -y; \
-		${LINUXBASE}/bin/bash -c "source ${DISTDIR}/${DIST_SUBDIR}/miniconda3/etc/profile.d/conda.sh && \
-			conda activate pytorch && \
-			pip install -r ${FILESDIR}/requirements.txt"; \
-	fi
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		tar -czf miniconda3.tar.gz miniconda3
-	${MAKE} makesum
+OPTIONS_DEFINE=	NVIDIA_DEVEL
+
+NVIDIA_DEVEL_DESC=	Depend on x11/nvidia-driver-devel instead of the stable version
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNVIDIA_DEVEL}
+NVIDIA_DEPS=	linux-nvidia-libs-devel>=0:x11/linux-nvidia-libs-devel \
+		nvidia-driver-devel>=0:x11/nvidia-driver-devel
+.else
+NVIDIA_DEPS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
+		nvidia-driver>=0:x11/nvidia-driver
+.endif
+
+makedist: create-binary-alias
+	@${MKDIR} ${MAKEDIST_WRKSRC}
+	@${ECHO_MSG} "Setting up Miniconda 'pytorch' environment"
+	cd ${MAKEDIST_WRKSRC} && \
+		${FETCH_CMD} -a -v https://repo.anaconda.com/miniconda/${CONDA_SCRIPT}
+
+	${SETENV} HOME=${MAKEDIST_WRKSRC} PATH=${PATH} CONDA_OVERRIDE_GLIBC=2.28 \
+		${SH} ${MAKEDIST_WRKSRC}/${CONDA_SCRIPT} -b -s
+
+	${SETENV} HOME=${MAKEDIST_WRKSRC} ${SH} -c \
+		"${MAKEDIST_WRKSRC}/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+		${MAKEDIST_WRKSRC}/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r && \
+		${MAKEDIST_WRKSRC}/miniconda3/bin/conda create --name pytorch python=${PYTHON_VER} -y"
+
+	${LINUXBASE}/bin/bash -c \
+		"source ${MAKEDIST_WRKSRC}/miniconda3/etc/profile.d/conda.sh && \
+		conda activate pytorch && \
+		pip install -r ${FILESDIR}/requirements.txt"
+
+	cd ${MAKEDIST_WRKSRC} && \
+		tar -czf /tmp/miniconda3.tar.gz miniconda3
+	@cd /tmp \
+		&& sha256 miniconda3.tar.gz \
+		&& ${ECHO_CMD} -n "SIZE (${DIST_SUBDIR}/miniconda3.tar.gz) = " \
+		&& ${STAT} -f %z miniconda3.tar.gz
 
 do-build:
-	/compat/linux/bin/cc --sysroot=/compat/linux -m64 -std=c99 -Wall -ldl -fPIC -shared -o ${WRKDIR}/dummy-uvm.so ${FILESDIR}/uvm_ioctl_override.c
+	${LINUXBASE}/bin/cc --sysroot=/compat/linux -m64 -std=c99 -Wall -ldl -fPIC -shared -o ${WRKDIR}/dummy-uvm.so ${FILESDIR}/uvm_ioctl_override.c
 
 do-install:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete

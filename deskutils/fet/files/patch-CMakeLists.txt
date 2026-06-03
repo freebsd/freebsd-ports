@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-01-20 12:24:20 UTC
++++ CMakeLists.txt
+@@ -101,7 +101,7 @@ install(FILES ${qm_files} DESTINATION "${CMAKE_INSTALL
+ endif()
+ 
+ install(FILES ${qm_files} DESTINATION "${CMAKE_INSTALL_DATADIR}/${fetdir}/translations")
+-install(DIRECTORY examples DESTINATION "${CMAKE_INSTALL_DATADIR}/${fetdir}")
++install(DIRECTORY examples DESTINATION "${CMAKE_INSTALL_DATADIR}/examples/${fetdir}")
+ install(DIRECTORY licenses DESTINATION "${CMAKE_INSTALL_DATADIR}/${docfetdir}")
+ install(DIRECTORY doc/adding-new-translations DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/${fetdir}")
+ install(DIRECTORY doc/algorithm DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/${fetdir}")

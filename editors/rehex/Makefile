@@ -1,5 +1,5 @@
 PORTNAME=	rehex
-DISTVERSION=	0.63.2
+DISTVERSION=	0.64.0
 CATEGORIES=	editors
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libbotan-3.so:security/botan3 \
 		libjansson.so:devel/jansson \
 		libunistring.so:devel/libunistring
 
-USES=		compiler:c++11-lang gmake gnome lua:53 perl5 pkgconfig
+USES=		compiler:c++11-lang gmake gnome lua:54 perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	solemnwarning
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango

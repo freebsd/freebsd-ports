@@ -1,6 +1,6 @@
 PORTNAME=	GroopM
 DISTVERSION=	0.3.4
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 
@@ -11,7 +11,7 @@ WWW=		https://ecogenomics.github.io/GroopM/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.10.1:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>=2.3:devel/py-tables@${PY_FLAVOR}

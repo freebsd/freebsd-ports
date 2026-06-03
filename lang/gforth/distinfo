@@ -1,2 +1,7 @@
+TIMESTAMP = 1402700282
 SHA256 (gforth-0.7.3.tar.gz) = 2f62f2233bf022c23d01c920b1556aa13eab168e3236b13352ac5e9f18542bb0
 SIZE (gforth-0.7.3.tar.gz) = 2523433
+SHA256 (gforth-git-e664cb01.patch) = 93ec083e7ceac20b1cae6337a5a88531a29e0a43c99eda9403c90a3ab7a918b8
+SIZE (gforth-git-e664cb01.patch) = 4890
+SHA256 (gforth-git-4284a265.patch) = c96dadad88135ff7c2e4783ce58a0c4b7869fc7dbb57de733fd599971fd40265
+SIZE (gforth-git-4284a265.patch) = 716

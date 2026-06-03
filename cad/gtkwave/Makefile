@@ -1,5 +1,5 @@
 PORTNAME=	gtkwave
-DISTVERSION=	3.3.124
+DISTVERSION=	3.3.127
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${DISTNAME}
 DISTNAME=	${PORTNAME}-gtk3-${DISTVERSION}
@@ -12,8 +12,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+RUN_DEPENDS=	gdk-pixbuf-extra>0:graphics/gdk-pixbuf-extra
 
-USES=		desktop-file-utils gettext-runtime gmake gnome gperf pkgconfig \
+USES=		cpe desktop-file-utils gettext-runtime gmake gnome gperf pkgconfig \
 		shared-mime-info
 USE_GNOME=	cairo gdkpixbuf gtk30
 
@@ -31,6 +32,8 @@ TCL_USES=		tcl tk
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR} \
 			--with-tk=${TK_LIBDIR}
 TCL_CONFIGURE_OFF=	--disable-tcl
+
+CPE_VENDOR=		tonybybell
 
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} '/^SUBDIRS/s|examples||' ${WRKSRC}/Makefile.in

@@ -1,5 +1,6 @@
 PORTNAME=	jruby
 PORTVERSION=	9.2.17.0
+PORTREVISION=	2
 DISTVERSIONPREFIX=	bin-
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/

@@ -1,5 +1,6 @@
 PORTNAME=	ktorrent
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +20,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd i18n iconthemes itemviews \
 		jobwidgets kcmutils kio notifications notifyconfig parts \
-		phonon plotting service solid sonnet statusnotifieritem \
+		plotting service solid sonnet statusnotifieritem \
 		syndication textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		base

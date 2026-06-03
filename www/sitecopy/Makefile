@@ -1,6 +1,6 @@
 PORTNAME=	sitecopy
-PORTVERSION=	0.16.6
-PORTREVISION=	9
+DISTVERSION=	0.16.6
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/
 
@@ -11,35 +11,33 @@ WWW=		https://www.manyfish.co.uk/sitecopy/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Fails to build with neon 0.32+, configure: incompatible neon library version 0.34.0: wanted 0.24 25 26 27 28 29 30 31 32
-
 LIB_DEPENDS=	libneon.so:www/neon
+# Depending on www/neon, this port may be linked against the following
+# libraries: libexpat.so:textproc/expat2, libxml2.so:textproc/libxml2,
+# libproxy.so:net/libproxy.
+# Bump this port if the SONAME of the using library has been bumped.
 
-USES=		gmake gnome localbase
-USE_GNOME=	libxml2
+USES=		gettext-runtime gmake localbase
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-neon --with-libxml2
+CONFIGURE_ARGS=	--with-neon
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
-NLS_USES=	gettext
+NLS_USES=		gettext-tools
 NLS_CONFIGURE_OFF=	--disable-nls
-NLS_LIBS=	-lintl
 
 .include <bsd.port.options.mk>
 
 .ifndef WITHOUT_SSL
-USES+=	ssl
+USES+=			ssl
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|;;|;|g' \
-		${WRKSRC}/src/sitestore.c
-	@${REINPLACE_CMD} -e 's|25 26 27 28|& 29 30 31 32|g' \
+	@${REINPLACE_CMD} -e 's|25 26 27 28|& 29 [3-][0-9]|g' \
 		${WRKSRC}/configure
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e '/#define ksize_t /d' \

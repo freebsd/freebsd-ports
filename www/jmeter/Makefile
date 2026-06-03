@@ -1,6 +1,6 @@
 PORTNAME=	apache-jmeter
 DISTVERSION=	5.6.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	https://archive.apache.org/dist/jmeter/binaries/
 

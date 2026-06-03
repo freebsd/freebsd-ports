@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You can run this program in these two methods:
+ 1. Use the rc.d service to run it as a daemon after editing the configuration file in %%ETCDIR%%/goimapnotify.yaml.
+    # sudo edit %%ETCDIR%%/goimapnotify.yaml # replace edit with your choice of editor, by default: ee
+    # service goimapnotify enable
+    # service goimapnotify start
+    NOTE: the log file will be in /var/log/goimapnotify.log.
+ 2. Copy the configuration file from %%ETCDIR%% to your home directory, edit it as appropriate and run the program in your terminal.
+    # mkdir -p $HOME/.config/goimapnotify
+    # cp %%ETCDIR%%/goimapnotify.yaml $HOME/.config/goimapnotify
+EOM
+}
+]

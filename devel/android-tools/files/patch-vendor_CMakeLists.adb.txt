@@ -1,0 +1,16 @@
+--- vendor/CMakeLists.adb.txt	2024-08-29 19:46:57.000000000 +0200
++++ vendor/CMakeLists.adb.txt	2026-03-21 19:24:21.380567000 +0100
+@@ -43,9 +43,12 @@
+ if(APPLE)
+ 	list(APPEND libadb_SOURCES
+ 		adb/client/usb_osx.cpp)
+-else()
++elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	list(APPEND libadb_SOURCES
+ 		adb/client/usb_linux.cpp)
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	list(APPEND libadb_SOURCES
++		adb/client/usb_freebsd.cpp)
+ endif()
+ 
+ add_library(libadb STATIC ${libadb_SOURCES})

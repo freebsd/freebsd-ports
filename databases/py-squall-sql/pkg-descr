@@ -1,0 +1,2 @@
+Squall-sql is a SQLite viewer and editor that runs in your terminal. Squall is
+written in Python and uses the Textual package.

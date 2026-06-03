@@ -1,6 +1,6 @@
 PORTNAME=	ppower4
 PORTVERSION=	0.9.4
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	textproc java
 MASTER_SITES=	TEX/support/${PORTNAME}
 DISTFILES=	pp4sty.zip pp4p.jar manual.pdf leveldemo.zip

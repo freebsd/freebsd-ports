@@ -1,5 +1,6 @@
 PORTNAME=	spyder-kernels
 DISTVERSION=	3.0.5
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}ipyparallel>0:devel/py-ipyparallel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=8.13.0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.4.9:devel/py-jupyter-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=24.0.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.14.3:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wurlitzer>=1.0.3:misc/py-wurlitzer@${PY_FLAVOR}
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAV
 # 100 passed, 7 skipped, 4 warnings
 # 1 failure may occur, see https://github.com/spyder-ide/spyder-kernels/issues/501
 # test_django_settings fail if www/djangoXX not installed
-#TEST_DEPENDS=	${PYNUMPY} \
+#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}dask>0:devel/py-dask@${PY_FLAVOR} \

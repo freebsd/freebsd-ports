@@ -1,5 +1,5 @@
---- build_tools/scripts/core_common/modules/iwork.py.orig	2025-03-08 16:01:52.467009000 +0100
-+++ build_tools/scripts/core_common/modules/iwork.py	2025-03-08 16:19:57.046228000 +0100
+--- build_tools/scripts/core_common/modules/iwork.py.orig	2025-08-05 15:06:08 UTC
++++ build_tools/scripts/core_common/modules/iwork.py
 @@ -30,9 +30,9 @@ def make(use_gperf = True):
    if use_gperf:
      cmd_args.append("--gperf")

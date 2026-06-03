@@ -1,0 +1,5 @@
+mf2py is a Python library for parsing microformats2,
+microformats1, and experimental metaformats from HTML documents.
+It provides a robust and flexible way to extract structured data
+from web pages, enabling applications to understand and utilize
+semantic information embedded in web content.

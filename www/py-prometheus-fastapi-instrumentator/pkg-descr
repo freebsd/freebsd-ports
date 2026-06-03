@@ -1,0 +1,3 @@
+prometheus-fastapi-instrumentator is a Python library for automatically
+instrumentating FastAPI applications with Prometheus metrics. It provides
+request duration, size, and count metrics out of the box.

@@ -1,5 +1,6 @@
 PORTNAME=	softether
 DISTVERSION=	5.02.5185
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
@@ -63,8 +64,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 # devel/cpu_features not available on these archs, see devel/cpu_features/Makefile
-.if (${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || \
-     ${ARCH} == mips || ${ARCH} == mips64)
+.if (${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7)
 # skip cpu_features when devel/cpu_features is not available
 CMAKE_ARGS+=	-DSKIP_CPU_FEATURES=1
 .else

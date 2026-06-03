@@ -1031,7 +1031,9 @@
 %%MARKDOWN%%%%WWWDIR%%/bundler.d/markdown.rb
 %%RMAGIC%%%%WWWDIR%%/bundler.d/mini_magick.rb
 %%MYSQL%%%%WWWDIR%%/bundler.d/mysql.rb
-%%POSTGRESQL%%%%WWWDIR%%/bundler.d/pg.rb
+%%PGSQL%%%%WWWDIR%%/bundler.d/pg.rb
+%%SQLITE%%%%WWWDIR%%/bundler.d/sqlite3.rb
+%%SQL%%%%WWWDIR%%/bundler.d/sql.rb
 %%PUMA%%%%WWWDIR%%/bundler.d/puma.rb
 %%WWWDIR%%/config.ru
 %%WWWDIR%%/config/additional_environment.rb.example
@@ -1675,6 +1677,8 @@
 %%WWWDIR%%/test/fixtures/files/configuration/no_default.yml
 %%WWWDIR%%/test/fixtures/files/configuration/overrides.yml
 %%WWWDIR%%/test/fixtures/files/hello.js
+%%WWWDIR%%/test/fixtures/files/hello.pdf
+%%WWWDIR%%/test/fixtures/files/hello.ps
 %%WWWDIR%%/test/fixtures/files/hg-export.diff
 %%WWWDIR%%/test/fixtures/files/import_dates.csv
 %%WWWDIR%%/test/fixtures/files/import_dates_ja.csv
@@ -1698,6 +1702,7 @@
 %%WWWDIR%%/test/fixtures/files/testfile.textile
 %%WWWDIR%%/test/fixtures/files/testfile.txt
 %%WWWDIR%%/test/fixtures/files/unclosed_quoted_field.csv
+%%WWWDIR%%/test/fixtures/files/with_pdf_magic.ps
 %%WWWDIR%%/test/fixtures/groups_users.yml
 %%WWWDIR%%/test/fixtures/issue_categories.yml
 %%WWWDIR%%/test/fixtures/issue_relations.yml
@@ -1999,6 +2004,7 @@
 %%WWWDIR%%/test/system/keyboard_shortcuts_test.rb
 %%WWWDIR%%/test/system/messages_test.rb
 %%WWWDIR%%/test/system/my_page_test.rb
+%%WWWDIR%%/test/system/query_test.rb
 %%WWWDIR%%/test/system/quick_jump_test.rb
 %%WWWDIR%%/test/system/repositories_test.rb
 %%WWWDIR%%/test/system/sudo_mode_test.rb
@@ -2092,6 +2098,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/search_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/syntax_highlighting/rouge_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/themes_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/thumbnail_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/json_test.rb
@@ -2162,6 +2169,7 @@
 @dir %%WWWDIR%%/app/views/previews
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/files
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/log
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/public/assets
 @dir %%WWWDIR%%/public/help/ar
 @dir %%WWWDIR%%/public/help/az
 @dir %%WWWDIR%%/public/help/bg
@@ -2216,8 +2224,10 @@
 @dir %%WWWDIR%%/test/fixtures/mailer
 @dir %%WWWDIR%%/test/mocks/development
 @dir %%WWWDIR%%/test/mocks/test
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/cache
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/imports
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sessions
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sockets
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test

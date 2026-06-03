@@ -1,6 +1,6 @@
---- base/debug/debugger_posix.cc.orig	2025-06-19 07:37:57 UTC
+--- base/debug/debugger_posix.cc.orig	2026-01-16 14:21:21 UTC
 +++ base/debug/debugger_posix.cc
-@@ -42,6 +42,10 @@
+@@ -39,6 +39,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -100,33 +104,52 @@ bool BeingDebugged() {
+@@ -97,33 +101,52 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.

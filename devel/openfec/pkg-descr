@@ -1,0 +1,19 @@
+OpenFEC is a library that provides Application-Level Forward Erasure
+Correction (AL-FEC) codes, also known as Upper-Layers FEC (UL-FEC). The
+core purpose is to add redundancy to data in order to recover from
+erasures during transmission without requiring retransmission.
+Implemented as high-performance C-language software codecs, OpenFEC
+provides IPR-free, open AL-FEC codes positioned in the communication
+stack for robust transmission and distributed storage applications.
+
+The library serves as a platform for developers and researchers who need
+to integrate forward error correction capabilities into their
+applications, offering ready-to-use codecs, performance evaluation
+environments, and documentation. It's designed for applications where
+data loss during transmission needs to be recovered automatically,
+making it suitable for reliable communication systems, streaming
+applications, and distributed storage solutions where retransmission is
+not feasible.
+
+This package is a fork by the roc-streaming project with additional
+bugfixes. The original project is hosted at https://openfec.inrialpes.fr

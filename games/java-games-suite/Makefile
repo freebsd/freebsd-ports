@@ -1,6 +1,6 @@
 PORTNAME=	java-games-suite
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	SF/javagamessuite
 

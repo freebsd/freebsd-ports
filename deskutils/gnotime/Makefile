@@ -1,6 +1,6 @@
 PORTNAME=	gnotime
 DISTVERSION=	g20231022
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	truckman@FreeBSD.org
@@ -10,8 +10,8 @@ WWW=		https://github.com/GnoTime/gnotime
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive \
-		scrollkeeper-config:textproc/rarian
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
+BUILD_DEPENDS+=	scrollkeeper-config:textproc/rarian
 LIB_DEPENDS=	libqof.so:databases/qof \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libdbus-1.so:devel/dbus \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libqof.so:databases/qof \
 		libharfbuzz.so:print/harfbuzz \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
-USES=		autoreconf desktop-file-utils gettext gmake gnome libtool pkgconfig xorg
+USES=		autoreconf desktop-file-utils gettext-tools gmake gnome libtool pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	GnoTime
 GH_PROJECT=	gnotime
@@ -31,7 +31,6 @@ USE_GNOME=	cairo gconf2 gdkpixbuf glib20 gtk30 libxml2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
-INSTALLS_OMF=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

@@ -1245,6 +1245,10 @@
 %%FONTSDIR%%/GemunuLibre-Medium.ttf
 %%FONTSDIR%%/GemunuLibre-Regular.ttf
 %%FONTSDIR%%/GemunuLibre-SemiBold.ttf
+%%FONTSDIR%%/GenBasB.ttf
+%%FONTSDIR%%/GenBasBI.ttf
+%%FONTSDIR%%/GenBasI.ttf
+%%FONTSDIR%%/GenBasR.ttf
 %%FONTSDIR%%/GenBkBasB.ttf
 %%FONTSDIR%%/GenBkBasBI.ttf
 %%FONTSDIR%%/GenBkBasI.ttf
@@ -2520,6 +2524,16 @@
 %%FONTSDIR%%/OleoScript-Regular.ttf
 %%FONTSDIR%%/OleoScriptSwashCaps-Bold.ttf
 %%FONTSDIR%%/OleoScriptSwashCaps-Regular.ttf
+%%FONTSDIR%%/OpenSans-Bold.ttf
+%%FONTSDIR%%/OpenSans-BoldItalic.ttf
+%%FONTSDIR%%/OpenSans-ExtraBold.ttf
+%%FONTSDIR%%/OpenSans-ExtraBoldItalic.ttf
+%%FONTSDIR%%/OpenSans-Italic.ttf
+%%FONTSDIR%%/OpenSans-Light.ttf
+%%FONTSDIR%%/OpenSans-LightItalic.ttf
+%%FONTSDIR%%/OpenSans-Regular.ttf
+%%FONTSDIR%%/OpenSans-SemiBold.ttf
+%%FONTSDIR%%/OpenSans-SemiBoldItalic.ttf
 %%FONTSDIR%%/OpenSansCondensed-Bold.ttf
 %%FONTSDIR%%/OpenSansCondensed-Light.ttf
 %%FONTSDIR%%/OpenSansCondensed-LightItalic.ttf
@@ -4448,6 +4462,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/gelasio/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/gemunulibre/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/gemunulibre/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/gentiumbasic/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/gentiumbasic/FONTLOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/gentiumbasic/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/gentiumbookbasic/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/gentiumbookbasic/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/gentiumbookbasic/OFL.txt
@@ -5216,6 +5233,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/oleoscriptswashcaps/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/oleoscriptswashcaps/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/oleoscriptswashcaps/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/opensans/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/opensans/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/opensanscondensed/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/opensanscondensed/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/opensanshebrew/DESCRIPTION.en_us.html

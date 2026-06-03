@@ -1,6 +1,5 @@
 PORTNAME=	gscan2pdf
-PORTVERSION=	2.13.4
-PORTREVISION=	3
+PORTVERSION=	2.13.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -55,7 +54,7 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 
 NO_ARCH=	yes
 
-USES=		desktop-file-utils gettext gmake gnome magick:6,build,run perl5 tar:xz
+USES=		desktop-file-utils gettext gmake gnome magick:build,run perl5 tar:xz
 USE_GNOME=	gtk30 librsvg2
 USE_PERL5=	configure
 

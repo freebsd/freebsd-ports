@@ -1,0 +1,4 @@
+Mmdr is a fast native Rust Mermaid diagram renderer. No browser required. Mmdr
+renders diagrams 100–1400x faster than mermaid-cli by eliminating browser
+overhead. With the built-in font cache (warm after first run), tiny diagrams
+reach 500–900x (and --fastText exceeds 1600x).

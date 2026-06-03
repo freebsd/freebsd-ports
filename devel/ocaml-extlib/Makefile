@@ -12,8 +12,6 @@ WWW=		https://github.com/ygrek/ocaml-extlib
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BROKEN_mips=	depends on Ocaml(not available for mips)
-
 BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 
 USES=		gmake ocaml:camlp4,findplist

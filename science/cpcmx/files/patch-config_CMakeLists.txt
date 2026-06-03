@@ -1,0 +1,11 @@
+--- config/CMakeLists.txt.orig	2025-03-13 13:29:31 UTC
++++ config/CMakeLists.txt
+@@ -14,7 +14,7 @@
+ # You should have received a copy of the GNU Lesser General Public License
+ # along with CPCM-X.  If not, see <https://www.gnu.org/licenses/>.
+ 
+-if(NOT DEFINED "${PROJECT_NAME}-dependeny-method")
++if(NOT DEFINED "${PROJECT_NAME}-dependency-method")
+   set(
+  "${PROJECT_NAME}-dependency-method"
+     "subproject" "cmake" "pkgconf" "fetch"

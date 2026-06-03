@@ -90,6 +90,8 @@ share/locale/fi/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/fi/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/fr/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/fr/LC_MESSAGES/userfeedbackprovider6_qt.qm
+share/locale/ga/LC_MESSAGES/userfeedbackconsole6_qt.qm
+share/locale/ga/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/gl/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/gl/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/he/LC_MESSAGES/userfeedbackconsole6_qt.qm
@@ -102,6 +104,7 @@ share/locale/ia/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/ia/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/id/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/id/LC_MESSAGES/userfeedbackprovider6_qt.qm
+share/locale/is/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/it/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/it/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/ja/LC_MESSAGES/userfeedbackconsole6_qt.qm
@@ -135,6 +138,8 @@ share/locale/sl/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/sl/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/sv/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/sv/LC_MESSAGES/userfeedbackprovider6_qt.qm
+share/locale/ta/LC_MESSAGES/userfeedbackconsole6_qt.qm
+share/locale/ta/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/tr/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/tr/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/uk/LC_MESSAGES/userfeedbackconsole6_qt.qm

@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-02-18 09:05:11 UTC
++++ pyproject.toml
+@@ -8,8 +8,7 @@ requires-python = ">=3.10"
+ description = "A lightweight template library"
+ readme = { file = "README.md", content-type = "text/markdown" }
+ requires-python = ">=3.10"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [{ name = "Andriy Kornatskyy", email = "andriy.kornatskyy@live.com" }]
+ keywords = ["html", "markup", "template", "preprocessor"]
+ classifiers = [

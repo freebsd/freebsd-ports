@@ -1,9 +1,11 @@
 PORTNAME=	apache-openoffice
-PORTVERSION=	${AOOVERSION}
-PORTREVISION=	6
+PORTVERSION=	${AOOVERSION}${AOORCN:?.p${AOORCN}:}
+PORTREVISION=	3
 CATEGORIES=	editors java
+#MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
 MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
-		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source/ \
+		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source
+MASTER_SITES+=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:extsrc \
 		SF/oooextras.mirror/:sf
@@ -115,18 +117,24 @@ USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbuf gdkpixbuf2xlib gtk20 libxslt glib20
 JAVA_VENDOR=	openjdk
+JAVA_VERSION=	8
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
 
+# ftp/curl uses OpenSSL by default. However, curl 8.18.0 drops OpenSSL 1.x support
+# which is used in FreeBSD 13 base system. Therefore, we change the curl defaults to
+# wolfSSL instead.
+BROKEN_FreeBSD_13=	OpenOffice requires ftp/curl to be built with OpenSSL
 CONFLICTS_INSTALL=	apache-openoffice-devel
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	15
+AOOVERSION3=	16
+#AOORCN=		3
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO4115m2\(Build:9813\)
-GITREVISION=	5f13fa0070
+AOOTAG=		AOO4116m3\(Build:9816\)
+GITREVISION=	277251aa7e
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -196,6 +204,11 @@ WITH=	SDK
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+# nm: '../unxfbsdi.pro/slo/b2dcubicbezier.o': Invalid argument
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nm
+.endif
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-symbols
 .else
@@ -206,6 +219,7 @@ CONFIGURE_ARGS+=	--enable-strip-solver
 
 PYTHON_DISTFILE=	38c84292658ed4456157195f1c9bcbe1-Python-2.7.18.tgz
 GCC_EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
+			e3738abd0d3ce1870dc1fd1f22bba5b1-icu4c-4_2_1-src.tgz \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
 
 .if ${CHOSEN_COMPILER_TYPE} == clang

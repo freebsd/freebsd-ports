@@ -1,0 +1,10 @@
+sonoscli is a modern Go CLI to control Sonos speakers over your local network
+using UPnP/SOAP protocols.
+
+Features:
+- Reliable SSDP discovery with topology awareness and subnet scan fallback
+- Coordinator-aware control (commands automatically route to group coordinator)
+- Playback controls (play, pause, stop, next, previous)
+- Support for play-uri, line-in, and TV input modes
+- Grouping management (join, unjoin, party mode, dissolve groups, solo rooms)
+- Fast and efficient room inspection

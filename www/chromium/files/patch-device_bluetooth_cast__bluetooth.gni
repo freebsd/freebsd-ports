@@ -1,6 +1,6 @@
---- device/bluetooth/cast_bluetooth.gni.orig	2022-08-31 12:19:35 UTC
+--- device/bluetooth/cast_bluetooth.gni.orig	2025-08-07 06:57:29 UTC
 +++ device/bluetooth/cast_bluetooth.gni
-@@ -2,5 +2,5 @@ import("//build/config/features.gni")
+@@ -6,5 +6,5 @@ import("//build/config/features.gni")
  
  declare_args() {
    force_cast_bluetooth = false

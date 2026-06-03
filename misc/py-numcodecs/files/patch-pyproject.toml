@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2025-11-21 02:38:15 UTC
++++ pyproject.toml
+@@ -33,12 +33,7 @@ maintainers = [
+ maintainers = [
+     { name = "Alistair Miles", email = "alimanfoo@googlemail.com" },
+ ]
+-license = "MIT"
+-license-files = [
+-    "LICENSE.txt",
+-    "c-blosc/LICENSE.txt",
+-    "c-blosc/LICENSES/*",
+-]
++license = { text = "MIT" }
+ 
+ [project.urls]
+ "Bug Tracker" = "https://github.com/zarr-developers/numcodecs/issues"

@@ -1,6 +1,5 @@
 PORTNAME=	salt
-PORTVERSION=	3006.9
-PORTREVISION=	6
+PORTVERSION=	3006.25
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
@@ -27,7 +26,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}looseversion>0:devel/py-looseversion@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}croniter>0:sysutils/py-croniter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}frozenlist>0:devel/py-frozenlist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}timelib>0:devel/py-timelib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}immutables>0:devel/py-immutables@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.text>=4.0.0:devel/py-jaraco.text@${PY_FLAVOR}
 
 USES=		cpe python
 
@@ -36,7 +42,7 @@ CPE_PRODUCT=	salt
 USE_PYTHON=	autoplist cryptography distutils
 NO_ARCH=	yes
 
-CONFLICTS=	py[0-9]*-salt-2019*
+CONFLICTS=	py[0-9]*-salt-300*
 
 # we must pass these options before the target name, and python.mk has no
 # early-arguments variable, so we have to manipulate the target
@@ -75,7 +81,6 @@ ZEROMQ_DESC=	Install dependencies required for ZeroMQ transport
 
 # AWS dependencies (Note: the devel/py-botocore port is updated very frequently)
 AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}boto>=2.32.1:devel/py-boto@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${PY_FLAVOR}
 
 TCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodomex>=3.9.7:security/py-pycryptodomex@${PY_FLAVOR}
@@ -99,7 +104,7 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_salt
 post-patch:
 .for file in conf/minion conf/master doc/man/salt-key.1 \
 	doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
-	doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.7 doc/man/salt.1 \
+	doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.1 \
 	doc/man/salt-call.1 salt/modules/mysql.py salt/modules/tls.py salt/modules/postgres.py
 	@${REINPLACE_CMD} -e 's|/etc/salt|${ETCDIR}|' \
 		-e 's|/srv/salt|${ETCDIR}/states|' \
@@ -110,7 +115,7 @@ post-patch:
 
 do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
-	${INSTALL_DATA} ${WRKSRC}/pkg/common/salt.bash \
+	${INSTALL_DATA} ${WRKSRC}/pkg/rpm/salt.bash \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/salt
 
 do-install-FISH-on:

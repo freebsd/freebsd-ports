@@ -1,8 +1,7 @@
 PORTNAME=	htpdate
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
-		http://twekkel.home.xs4all.nl/htp/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Time synchronization over http utility
@@ -11,6 +10,7 @@ WWW=		https://github.com/twekkel/htpdate
 LICENSE=	GPLv2+
 
 GH_ACCOUNT=	twekkel
+USE_GITHUB=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

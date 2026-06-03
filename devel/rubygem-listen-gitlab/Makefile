@@ -1,0 +1,25 @@
+PORTNAME=	listen
+PORTVERSION=	3.10.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	-gitlab
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Listen to file modifications and notify about the changes
+WWW=		https://github.com/guard/listen
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	rubygem-logger-gitlab>=0:devel/rubygem-logger-gitlab \
+		rubygem-rb-fsevent>=0.10.3<1:devel/rubygem-rb-fsevent \
+		rubygem-rb-inotify>=0.9.10<1:devel/rubygem-rb-inotify \
+		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
+
+USES=		gem
+
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/listen
+
+.include <bsd.port.mk>

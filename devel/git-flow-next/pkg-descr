@@ -1,0 +1,5 @@
+A modern reimplementation of git-flow in Go that offers greater flexibility
+while maintaining backward compatibility with the original git-flow
+and git-flow-avh.
+It is built with Go, focusing on reliability, extensibility, and developer
+experience.

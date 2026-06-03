@@ -1,6 +1,6 @@
 PORTNAME=	xarray-simlab
 DISTVERSION=	0.5.0-5
-PORTREVISION=	2
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-g33a4c83
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ GH_ACCOUNT=	xarray-contrib
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask>0:devel/py-dask@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray>=0.10.0:devel/py-xarray@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zarr>=2.3.0:devel/py-zarr@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}distributed>0:devel/py-distributed@${PY_FLAVOR} # extra dep for devel/py-dask

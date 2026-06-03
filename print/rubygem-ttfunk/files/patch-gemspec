@@ -1,0 +1,11 @@
+--- ttfunk.gemspec.orig	2025-12-29 04:22:42 UTC
++++ ttfunk.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<bigdecimal>.freeze, ["~> 3.1".freeze])
++  s.add_runtime_dependency(%q<bigdecimal>.freeze, [">= 3.1".freeze, "< 5".freeze])
+   s.add_development_dependency(%q<prawn-dev>.freeze, ["~> 0.4.0".freeze])
+ end
+ 

@@ -1,6 +1,6 @@
 PORTNAME=	jcalendar
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	java misc
 MASTER_SITES=	http://www.toedter.com/download/
 
@@ -9,7 +9,6 @@ COMMENT=	Java Date Chooser
 WWW=		https://www.toedter.com/en/jcalendar/
 
 USES=		java:ant,run zip
-JAVA_VERSION=	8
 
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \

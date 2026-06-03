@@ -1,5 +1,6 @@
 PORTNAME=	kalarm
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 shebangfix tar:xz \
 USE_KDE=	auth bookmarks colorscheme codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kio notifications \
-		notifyconfig parts phonon service solid sonnet \
+		notifyconfig parts service solid sonnet \
 		statusnotifieritem texttemplate textwidgets unitconversion wallet \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build

@@ -1,6 +1,7 @@
 PORTNAME=	html-query
 DISTVERSIONPREFIX=	html-query-v
 DISTVERSION=	1.2.2
+PORTREVISION=	7
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org

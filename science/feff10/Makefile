@@ -26,11 +26,15 @@ WRKSRC_SUBDIR=	src
 
 SHEBANG_GLOB=	*.script
 
-FFLAGS+=	-ffree-line-length-512 -fallow-argument-mismatch
-
 MAKE_ARGS=	FLAGS="${FFLAGS}"
 
 BINARY_ALIAS=	make=${GMAKE} ifort=${FC}
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} != flang
+FFLAGS=	-ffree-line-length-512 -fallow-argument-mismatch
+.endif
 
 do-install:
 	for f in ${WRKSRC}/../bin/Seq/*; do \
@@ -41,4 +45,4 @@ do-install:
 		fi \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

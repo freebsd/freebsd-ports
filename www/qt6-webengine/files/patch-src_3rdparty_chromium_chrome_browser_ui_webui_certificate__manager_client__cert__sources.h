@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2025-03-05 08:14:56 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/certificate_manager/client_cert_sources.h
-@@ -18,7 +18,7 @@ CreatePlatformClientCertSource(
+@@ -19,7 +19,7 @@ CreatePlatformClientCertSource(
          remote_client,
      Profile* profile);
  
@@ -9,3 +9,12 @@
  std::unique_ptr<CertificateManagerPageHandler::CertSource>
  CreateProvisionedClientCertSource(Profile* profile);
  #endif
+@@ -29,7 +29,7 @@ std::unique_ptr<CertificateManagerPageHandler::CertSou
+ CreateExtensionsClientCertSource(Profile* profile);
+ #endif
+ 
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ class ClientCertManagementAccessControls {
+  public:
+   enum KeyStorage {

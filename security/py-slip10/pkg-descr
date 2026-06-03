@@ -1,0 +1,8 @@
+slip10 is a reference implementation of the SLIP-0010 specification,
+which generalizes BIP-0032 hierarchical deterministic key derivation for
+multiple curves, including secp256k1, NIST P-256, ed25519, and
+curve25519.
+
+It supports deriving extended private and public keys along standard
+paths and can operate from either seed material or serialized extended
+keys.

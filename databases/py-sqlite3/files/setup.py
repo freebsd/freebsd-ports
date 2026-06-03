@@ -5,7 +5,8 @@ import sysconfig
 from setuptools import setup, Extension
 
 prefix = sysconfig.get_config_var('prefix')
-inc_dirs = [prefix + "/include", "Modules/_sqlite"]
+inc_dirs = [sysconfig.get_path('include') + "/internal",
+            prefix + "/include"]
 lib_dirs = [prefix + "/lib"]
 libs = ["sqlite3"]
 macros = [('MODULE_NAME', '"sqlite3"')]

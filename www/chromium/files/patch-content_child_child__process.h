@@ -1,6 +1,6 @@
---- content/child/child_process.h.orig	2024-07-30 11:12:21 UTC
+--- content/child/child_process.h.orig	2025-10-30 15:44:36 UTC
 +++ content/child/child_process.h
-@@ -79,7 +79,7 @@ class CONTENT_EXPORT ChildProcess {
+@@ -81,7 +81,7 @@ class CONTENT_EXPORT ChildProcess {
      return io_thread_runner_.get();
    }
  

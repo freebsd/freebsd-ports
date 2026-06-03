@@ -1,6 +1,5 @@
 PORTNAME=	pyintelowl
-DISTVERSION=	4.4.2
-PORTREVISION=	1
+DISTVERSION=	5.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,5 +22,8 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+
+post-extract:
+	${MV} ${WRKSRC}/tests ${WRKSRC}/pyintelowl/
 
 .include <bsd.port.mk>

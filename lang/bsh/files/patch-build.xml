@@ -1,0 +1,44 @@
+--- build.xml.orig	2026-04-08 19:21:08 UTC
++++ build.xml
+@@ -178,8 +178,8 @@ -->
+ 			debug="on"
+ 			includes="**/*.java"
+ 			excludes="${excludes},**/bak/**"
+-			source="1.6"
+-			target="1.6"
++			source="8"
++			target="8"
+ 		>
+ 			<classpath>
+ 				<fileset refid="lib-fileset"/>
+@@ -213,8 +213,8 @@ -->
+ 			debug="on"
+ 			includes="**/*.java"
+ 			excludes="${excludes},**/bak/**"
+-			source="1.6"
+-			target="1.6"
++			source="8"
++			target="8"
+ 		>
+ 			<classpath>
+ 				<fileset refid="lib-fileset"/>
+@@ -255,7 +255,7 @@ -->
+ 			 destdir="${javadoc-dir}"
+ 			 author="true"
+ 			 version="true"
+-			 source="1.6"
++			 source="8"
+ 			 use="true"
+ 			 windowtitle="BeanShell ${version}"
+ 			 doctitle="&lt;h1&gt;BeanShell ${version}&lt;h1&gt;"
+@@ -680,8 +680,8 @@ -->
+ 				destdir="${build-dir}"
+ 				debug="on"
+ 				debuglevel="lines,vars,source"
+-				source="1.6"
+-				target="1.6"
++				source="8"
++				target="8"
+ 			  >
+ 		 <classpath>
+ 			<path refid="test-classpath"/>

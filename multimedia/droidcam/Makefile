@@ -1,9 +1,9 @@
 PORTNAME=	droidcam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.5
 CATEGORIES=	multimedia
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Turn your mobile device(s) into a wireless/usb webcam
 WWW=		https://github.com/dev47apps/droidcam-linux-client
 
@@ -47,6 +47,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icon2.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
+		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

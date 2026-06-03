@@ -1,6 +1,6 @@
---- dao/cdrdao.man.orig	2018-05-16 10:46:39 UTC
+--- dao/cdrdao.man.orig	2025-12-05 11:17:35 UTC
 +++ dao/cdrdao.man
-@@ -798,15 +798,11 @@ following locations. The files will be read on startup
+@@ -799,15 +799,11 @@ in that order:
  .I cdrdao
  in that order:
  
@@ -18,7 +18,7 @@
  Command line options will overwrite the loaded settings.
  The settings file contains name - value pairs separated by a
  colon. String values must be enclosed by ". The file is
-@@ -876,7 +872,7 @@ Directory where temporary WAV files will be created fr
+@@ -877,7 +873,7 @@ If the program is terminated during the write/simulati
  .LP
  .SH BUGS
  If the program is terminated during the write/simulation process used IPC
@@ -27,7 +27,7 @@
  .SH AUTHOR
  .ft CW
  .nf
-@@ -886,4 +882,4 @@ resources may not be released. Use ipcs(8) and ipcrm(8
+@@ -887,4 +883,4 @@ resources may not be released. Use ipcs(8) and ipcrm(8
  .ft R
  .fi
  .SH SEE ALSO

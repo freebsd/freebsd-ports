@@ -1,11 +1,11 @@
---- sql/mdl_context_backup.h.orig	2024-07-12 19:15:25 UTC
+--- sql/mdl_context_backup.h.orig	2025-08-19 10:30:31 UTC
 +++ sql/mdl_context_backup.h
-@@ -47,7 +47,7 @@ class MDL_context_backup_manager {
-   /**
+@@ -49,7 +49,7 @@ class MDL_context_backup_manager {
      Key for uniquely identifying MDL_context in the MDL_context_backup map.
    */
--  typedef std::basic_string<uchar> MDL_context_backup_key;
-+  typedef std::vector<uchar> MDL_context_backup_key;
+   using MDL_context_backup_key =
+-      std::basic_string<uchar, my_char_traits<uchar>>;
++      std::vector<uchar>;
  
    class MDL_context_backup;
  

@@ -1,9 +1,9 @@
 PORTNAME=	color_diff
-PORTVERSION=	0.1
+DISTVERSION=	0.2
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Calculate RGB color distances using CIEDE2000 formula
 WWW=		https://github.com/hansondr/color_diff
 

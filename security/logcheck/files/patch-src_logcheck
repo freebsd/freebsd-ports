@@ -1,4 +1,4 @@
---- src/logcheck.orig	2025-05-03 23:35:17 UTC
+--- src/logcheck.orig	2025-08-10 23:32:15 UTC
 +++ src/logcheck
 @@ -24,16 +24,16 @@ if [ "$(id -u)" = 0 ]; then
  
@@ -43,16 +43,16 @@
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
  # Defaults for options
-@@ -92,7 +92,7 @@ SYSLOGSUMMARY=0
- SORTUNIQ=0
- SUPPORT_CRACKING_IGNORE=0
- SYSLOGSUMMARY=0
--LOCKDIR=/run/lock/logcheck
-+LOCKDIR=/var/run/logcheck
+@@ -99,7 +99,7 @@ else
+ elif [ -d "$TMPDIR" ] && [ -w "$TMPDIR" ]; then
+ 	LOCKDIR="$TMPDIR/logcheck"
+ else
+-	LOCKDIR="/tmp/logcheck"
++	LOCKDIR=/var/run/logcheck
+ fi
  LOCKFILE="$LOCKDIR/logcheck"
  
- # Allow globs to return zero files
-@@ -183,8 +183,8 @@ logfiles specified in;
+@@ -191,8 +191,8 @@ logfiles specified in;
  }
  - verify that the logcheck user can read all
  logfiles specified in;
@@ -63,7 +63,7 @@
  - check the system has enough space; (df -h output follows):
  $(df -h 2>&1|| :)
  - check the settings (environment follows):
-@@ -237,7 +237,7 @@ cleanrules() {
+@@ -245,7 +245,7 @@ cleanrules() {
  								error "Could not read $x"
  						fi
  				done
@@ -72,7 +72,7 @@
  						rulefile="$(basename "$rulefile")"
  						if [ -f "${dir}/${rulefile}" ]; then
  								debug "cleanrules: ${dir}/${rulefile} -> $cleaned/$rulefile"
-@@ -503,7 +503,7 @@ logoutput() {
+@@ -511,7 +511,7 @@ logoutput() {
  										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
  								echo "Only recent entries (from the last 5 hours) will be checked" \
  										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
@@ -81,7 +81,7 @@
  										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
  								offsettime="--since=-5h"
  						fi
-@@ -589,7 +589,7 @@ if [ -r "$CONFFILE" ]; then
+@@ -597,7 +597,7 @@ if [ -r "$CONFFILE" ]; then
  
  # Now source the config file - before things that should not be changed
  if [ -r "$CONFFILE" ]; then
@@ -90,7 +90,7 @@
  		. "$CONFFILE"
  elif [ -f "$CONFFILE" ]; then
  		error  "Config file $CONFFILE could not be read"
-@@ -620,9 +620,9 @@ if [ "$FQDN" -eq 1 ]; then
+@@ -628,9 +628,9 @@ if [ "$FQDN" -eq 1 ]; then
  
  # HOSTNAME is either 'fully qualified' or 'short'
  if [ "$FQDN" -eq 1 ]; then
@@ -102,7 +102,7 @@
  fi
  
  # Now check for the other options
-@@ -727,8 +727,8 @@ fi
+@@ -735,8 +735,8 @@ fi
  fi
  
  # Create a secure temporary working directory (or exit)

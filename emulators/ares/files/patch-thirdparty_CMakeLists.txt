@@ -1,0 +1,71 @@
+--- thirdparty/CMakeLists.txt.orig	2026-05-28 12:42:30 UTC
++++ thirdparty/CMakeLists.txt
+@@ -7,55 +7,9 @@ if(ARES_ENABLE_CHD)
+ option(ARES_ENABLE_CHD "Enable CHD format support via libchdr" ON)
+ 
+ if(ARES_ENABLE_CHD)
+-  # lzma
+-  add_subdirectory(libchdr/deps/lzma-25.01 EXCLUDE_FROM_ALL)
+-  list(APPEND CHDR_INCLUDES lzma)
+-
+-  # miniz
+-  add_subdirectory(libchdr/deps/miniz-3.1.1 EXCLUDE_FROM_ALL)
+-  set_target_properties(
+-    miniz
+-    PROPERTIES POSITION_INDEPENDENT_CODE ON FOLDER thirdparty PREFIX ""
+-  )
+-  list(APPEND CHDR_LIBS miniz)
+-  
+-  # zstd
+-  option(ZSTD_BUILD_SHARED "BUILD SHARED LIBRARIES" OFF)
+-  option(ZSTD_BUILD_PROGRAMS "BUILD PROGRAMS" OFF)
+-  add_subdirectory(libchdr/deps/zstd-1.5.7 EXCLUDE_FROM_ALL)
+-  list(APPEND CHDR_LIBS zstd)
+-  #--------------------------------------------------
+-  # chdr
+-  #--------------------------------------------------
+-
+-  set(
+-    CHDR_SOURCES
+-    libchdr/src/libchdr_bitstream.c
+-    libchdr/src/libchdr_cdrom.c
+-    libchdr/src/libchdr_chd.c
+-    libchdr/src/libchdr_flac.c
+-    libchdr/src/libchdr_huffman.c
+-    libchdr/src/libchdr_codec_cdfl.c
+-    libchdr/src/libchdr_codec_cdlz.c
+-    libchdr/src/libchdr_codec_cdzl.c
+-    libchdr/src/libchdr_codec_cdzs.c
+-    libchdr/src/libchdr_codec_flac.c
+-    libchdr/src/libchdr_codec_huff.c
+-    libchdr/src/libchdr_codec_lzma.c
+-    libchdr/src/libchdr_codec_zlib.c
+-    libchdr/src/libchdr_codec_zstd.c
+-    libchdr/deps/lzma-25.01/src/LzmaDec.c
+-  )
+-
+-  list(APPEND CHDR_INCLUDES ${CMAKE_CURRENT_BINARY_DIR}/libchdr/include)
+-
+-  add_library(chdr-static STATIC ${CHDR_SOURCES})
+-  target_include_directories(chdr-static PUBLIC ${CHDR_INCLUDES} PUBLIC libchdr/include)
+-  target_link_libraries(chdr-static PRIVATE ${CHDR_LIBS} ${PLATFORM_LIBS})
+-  target_compile_options(
+-    chdr-static
+-    PRIVATE $<$<CXX_COMPILER_ID:Clang,AppleClang>:-Wno-unreachable-code -Wno-unused-function>
+-  )
++  find_package(PkgConfig REQUIRED)
++  pkg_check_modules(libchdr REQUIRED IMPORTED_TARGET GLOBAL libchdr)
++  add_library(chdr-static ALIAS PkgConfig::libchdr)
+ endif()
+ 
+ add_library(
+@@ -108,9 +62,4 @@ set_target_properties(sljit PROPERTIES FOLDER thirdpar
+ set_target_properties(ymfm PROPERTIES FOLDER thirdparty PREFIX "")
+ set_target_properties(tzxfile PROPERTIES FOLDER thirdparty PREFIX "")
+ set_target_properties(sljit PROPERTIES FOLDER thirdparty PREFIX "")
+-if(ARES_ENABLE_CHD)
+-  set_target_properties(chdr-static PROPERTIES FOLDER thirdparty PREFIX "")
+-  set_target_properties(miniz PROPERTIES FOLDER thirdparty PREFIX "")
+-  set_target_properties(zstd PROPERTIES FOLDER thirdparty PREFIX "")
+-endif()
+ set_target_properties(qon PROPERTIES FOLDER thirdparty PREFIX "")

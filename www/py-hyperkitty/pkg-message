@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+There are a few tasks in HyperKitty that need to be run at regular intervals.
+The example_project directory contains an example crontab file that you can
+put in your /etc/cron.d directory.
+
+To improve performance, HyperKitty uses a distributed task queue that offloads long operations to separate processes called “workers”. 
+To run the workers on startup, add hyperkitty_qcluster_enable="yes"
+in your /etc/rc.conf. These options must also be configured in rc.conf:
+
+- hyperkitty_qcluster_dir:  Path to directory where hyperkitty setup.py is located
+- hyperkitty_qcluster_user: The user that should run the asynchronous workers
+ 
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+HyperKitty has been upgraded, you need to run the commands that will update the
+database schemas. Before updating any of those databases, it is recommended to
+shut down the webserver which serves HyperKitty (Apache HTTPd for example).
+
+To update the HyperKitty database, run:
+
+django-admin migrate --pythonpath example_project --settings settings
+After this command complete, your database will be updated, you can start your webserver again.
+
+EOM
+}
+]

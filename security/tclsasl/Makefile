@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OPSYS} == FreeBSD
 CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

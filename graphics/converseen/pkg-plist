@@ -17,6 +17,7 @@ share/metainfo/converseen.appdata.xml
 %%DATADIR%%/loc/converseen_hu_HU.qm
 %%DATADIR%%/loc/converseen_it_IT.qm
 %%DATADIR%%/loc/converseen_ja_JP.qm
+%%DATADIR%%/loc/converseen_ko_KR.qm
 %%DATADIR%%/loc/converseen_pl_PL.qm
 %%DATADIR%%/loc/converseen_pt_BR.qm
 %%DATADIR%%/loc/converseen_ru_RU.qm

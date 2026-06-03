@@ -12,7 +12,6 @@ share/applications/hatariui.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CMakeLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/bugs.txt
-%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/coding.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/debugger.html
@@ -80,7 +79,6 @@ share/applications/hatariui.desktop
 %%DATADIR%%/hconsole/example-debugger
 %%DATADIR%%/hconsole/example.py
 %%DATADIR%%/hconsole/hconsole.py
-%%DATADIR%%/tos.img
 share/icons/hicolor/128x128/apps/hatari.png
 share/icons/hicolor/128x128/mimetypes/application-vnd.fastcopy-disk-image.png
 share/icons/hicolor/128x128/mimetypes/application-vnd.msa-disk-image.png

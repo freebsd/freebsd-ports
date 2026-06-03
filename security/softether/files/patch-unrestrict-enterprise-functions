@@ -1,3 +1,5 @@
+# Copyright (c) 2019, Koichiro Iwao <meta@FreeBSD.org> (https://github.com/metalefty)
+# SPDX-License-Identifier: Apache-2.0
 --- src/Cedar/Server.c.orig	2016-04-24 14:49:31 UTC
 +++ src/Cedar/Server.c
 @@ -10822,23 +10822,7 @@ bool SiCheckCurrentRegion(CEDAR *c, char

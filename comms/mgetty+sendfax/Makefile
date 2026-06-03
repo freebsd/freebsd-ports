@@ -12,7 +12,6 @@ WWW=		http://mgetty.greenie.net/
 LICENSE=	GPLv2
 
 BROKEN_aarch64=		fails to compile: error: initializer element is not a compile-time constant
-BROKEN_mips64=		fails to compile: error: initializer element is not a compile-time constant
 BROKEN_riscv64=		fails to compile: error: initializer element is not a compile-time constant
 
 USES=		cpe makeinfo perl5 shebangfix

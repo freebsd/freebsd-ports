@@ -1,0 +1,34 @@
+In file included from lib/SPIRV/OCLTypeToSPIRV.cpp:44:
+In file included from lib/SPIRV/OCLUtil.h:42:
+In file included from lib/SPIRV/SPIRVInternal.h:43:
+In file included from lib/SPIRV/libSPIRV/SPIRVEnum.h:44:
+In file included from lib/SPIRV/libSPIRV/SPIRVOpCode.h:45:
+lib/SPIRV/libSPIRV/spirv_internal.hpp:120:31: error: constexpr variable 'FunctionControlOptNoneINTELMask' must be initialized by a constant expression
+  120 | constexpr FunctionControlMask FunctionControlOptNoneINTELMask =
+      |                               ^
+  121 |     static_cast<FunctionControlMask>(IFunctionControlOptNoneINTELMask);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+lib/SPIRV/libSPIRV/spirv_internal.hpp:121:5: note: integer value 65536 is outside the valid range of values [0, 15] for the enumeration type 'FunctionControlMask'
+  121 |     static_cast<FunctionControlMask>(IFunctionControlOptNoneINTELMask);
+      |     ^
+
+--- lib/SPIRV/libSPIRV/spirv.hpp.orig	2024-03-21 14:16:00 UTC
++++ lib/SPIRV/libSPIRV/spirv.hpp
+@@ -742,7 +742,7 @@ enum FunctionControlShift {
+     FunctionControlMax = 0x7fffffff,
+ };
+ 
+-enum FunctionControlMask {
++enum FunctionControlMask : uint32_t {
+     FunctionControlMaskNone = 0,
+     FunctionControlInlineMask = 0x00000001,
+     FunctionControlDontInlineMask = 0x00000002,
+@@ -805,7 +805,7 @@ enum MemoryAccessShift {
+     MemoryAccessMax = 0x7fffffff,
+ };
+ 
+-enum MemoryAccessMask {
++enum MemoryAccessMask : uint32_t {
+     MemoryAccessMaskNone = 0,
+     MemoryAccessVolatileMask = 0x00000001,
+     MemoryAccessAlignedMask = 0x00000002,

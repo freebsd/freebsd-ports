@@ -1,8 +1,8 @@
 PORTNAME=	tablist
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0-13
-PORTREVISION=	10
 DISTVERSIONSUFFIX=	-gfaab7a0
+PORTREVISION=	12
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -17,18 +17,15 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	politza
 
-NO_ARCH=	yes
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/tablist.el \
-		${EMACS_SITE_LISPDIR}/tablist.elc \
-		${EMACS_SITE_LISPDIR}/tablist-filter.el \
-		${EMACS_SITE_LISPDIR}/tablist-filter.elc
+CONFLICTS_INSTALL=	tablist-emacs_*
 
-do-build:
-	${EMACS_CMD} -Q --batch -L ${WRKSRC} -f batch-byte-compile ${WRKSRC}/*.el
+NO_ARCH=	yes
+NO_BUILD=	yes
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/tablist-filter.el \
+		${EMACS_SITE_LISPDIR}/tablist.el
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 .include <bsd.port.mk>

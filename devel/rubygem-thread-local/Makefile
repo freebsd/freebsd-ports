@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide a class-level mixin to make thread local state easy
-WWW=		https://github.com/socketry/thread-local
+WWW=		https://socketry.github.io/thread-local/ \
+		https://github.com/socketry/thread-local
 
 LICENSE=	MIT
 

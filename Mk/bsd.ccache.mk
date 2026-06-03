@@ -103,14 +103,13 @@ ${WRKDIR}/.ccache: ${WRKDIR}
 	@${LN} -sf ${CCACHE_DIR} ${WRKDIR}/.ccache
 ccache-wrkdir-link: ${WRKDIR}/.ccache .PHONY
 post-extract: ccache-wrkdir-link
-.  endif
 
 # enable ccache in case of USES=llvm and cmake
-.  if ${CCACHE_ENABLED} == yes && \
-      defined(_INCLUDE_USES_LLVM_MK) && \
-      defined(_INCLUDE_USES_CMAKE_MK)
-CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=ccache \
-				-DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+.    if defined(_INCLUDE_USES_LLVM_MK) && \
+        defined(_INCLUDE_USES_CMAKE_MK)
+CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${CCACHE_BIN} \
+              -DCMAKE_CXX_COMPILER_LAUNCHER=${CCACHE_BIN}
+.    endif
 .  endif
 
 .endif

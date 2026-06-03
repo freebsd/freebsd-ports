@@ -11,9 +11,6 @@ WWW=		https://metacpan.org/release/Crypt-Curve25519
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BROKEN_mips=	fails to build: -m32 flag is not supported by this configuration
-BROKEN_mips64=	fails to build: -m32 flag is not supported by this configuration
-
 USES=		perl5 ssl
 USE_PERL5=	configure
 

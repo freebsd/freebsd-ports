@@ -1,17 +1,5 @@
 include/libint2.h
 include/libint2.hpp
-include/libint2/GenericContract.h
-include/libint2/GenericGaussDeriv.h
-include/libint2/GenericGaussDeriv.impl.h
-include/libint2/GenericScale.h
-include/libint2/ITR_xs_xs.h
-include/libint2/OSVRR_sx_sx.h
-include/libint2/OSVRR_sx_sx_deriv.h
-include/libint2/OSVRR_xs_xs.h
-include/libint2/OSVRR_xs_xs_deriv.h
-include/libint2/VRR_GTG_1d_xx_xx.h
-include/libint2/VRR_GTG_1d_xx_xx_vec.h
-include/libint2/VRR_r12kg12_xs_xs.h
 include/libint2/atom.h
 include/libint2/basis.h
 include/libint2/boys.h
@@ -25,7 +13,6 @@ include/libint2/cgshellinfo.h
 include/libint2/chemistry/elements.h
 include/libint2/chemistry/sto3g_atomic_density.h
 include/libint2/config.h
-include/libint2/config2.h
 include/libint2/cxxapi.h
 include/libint2/deriv_iter.h
 include/libint2/deriv_map.h
@@ -36,7 +23,6 @@ include/libint2/initialize.h
 include/libint2/lcao/1body.h
 include/libint2/lcao/molden.h
 include/libint2/libint2_iface.h
-include/libint2/libint2_iface_internal.h
 include/libint2/libint2_params.h
 include/libint2/libint2_types.h
 include/libint2/numeric.h
@@ -47,7 +33,6 @@ include/libint2/statics_definition.h
 include/libint2/tenno_cheb.h
 include/libint2/tenno_cheb15.h
 include/libint2/tensor.h
-include/libint2/tests/unit/fixture.h
 include/libint2/util/any.h
 include/libint2/util/array_adaptor.h
 include/libint2/util/compressed_pair.h
@@ -68,22 +53,20 @@ include/libint2/util/type_traits.h
 include/libint2/util/vector.h
 include/libint2/util/vector_ppc.h
 include/libint2/util/vector_x86.h
-include/libint2/util_types.h
-lib/cmake/libint2/FindEigen3.cmake
 lib/cmake/libint2/libint2-config-version.cmake
 lib/cmake/libint2/libint2-config.cmake
-lib/cmake/libint2/libint2-targets-shared-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/libint2/libint2-targets-shared.cmake
-lib/libint2-cxx.so
-lib/libint2-cxx.so.2
+lib/cmake/libint2/libint2-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libint2/libint2-targets.cmake
 lib/libint2.so
-lib/libint2.so.2
 libdata/pkgconfig/libint2.pc
 share/libint/%%VER%%/basis/3-21g.g94
-share/libint/%%VER%%/basis/6-311g_d_p_.g94
+share/libint/%%VER%%/basis/6-311g**.g94
+share/libint/%%VER%%/basis/6-311gss.g94
+share/libint/%%VER%%/basis/6-31g**.g94
+share/libint/%%VER%%/basis/6-31g*.g94
 share/libint/%%VER%%/basis/6-31g.g94
-share/libint/%%VER%%/basis/6-31g_d_.g94
-share/libint/%%VER%%/basis/6-31g_d_p_.g94
+share/libint/%%VER%%/basis/6-31gs.g94
+share/libint/%%VER%%/basis/6-31gss.g94
 share/libint/%%VER%%/basis/ano-rcc.g94
 share/libint/%%VER%%/basis/aug-cc-pv5z-cabs.g94
 share/libint/%%VER%%/basis/aug-cc-pvdz-cabs.g94
@@ -161,7 +144,3 @@ share/libint/%%VER%%/basis/def2-tzvppd.g94
 share/libint/%%VER%%/basis/mini.g94
 share/libint/%%VER%%/basis/sto-3g.g94
 share/libint/%%VER%%/basis/sto-6g.g94
-@dir include/libint2/fortran
-@dir include/libint2/tests/eri
-@dir include/libint2/tests/fortran
-@dir include/libint2/tests/hartree-fock

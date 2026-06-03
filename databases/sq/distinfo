@@ -1,7 +1,7 @@
-TIMESTAMP = 1752020539
-SHA256 (go/databases_sq/neilotoole-sq-v0.48.5_GH0/v0.48.5.mod) = 438cd2aa3b98e2401dfab7e002b37c6f9d3bb861cfe43a87ac9c77da97abfed3
-SIZE (go/databases_sq/neilotoole-sq-v0.48.5_GH0/v0.48.5.mod) = 4051
-SHA256 (go/databases_sq/neilotoole-sq-v0.48.5_GH0/v0.48.5.zip) = 1ba7cf722a5678b789dff9d6f22ffc47435b1c328c5dd7d91ef049ed6b66136f
-SIZE (go/databases_sq/neilotoole-sq-v0.48.5_GH0/v0.48.5.zip) = 63203565
-SHA256 (go/databases_sq/neilotoole-sq-v0.48.5_GH0/neilotoole-sq-v0.48.5_GH0.tar.gz) = 4ed9cef836e66174b6e01c8d410cd393aeae7f7069a428a7ab2adcd1e282cf68
-SIZE (go/databases_sq/neilotoole-sq-v0.48.5_GH0/neilotoole-sq-v0.48.5_GH0.tar.gz) = 62450246
+TIMESTAMP = 1768899654
+SHA256 (go/databases_sq/neilotoole-sq-v0.48.11_GH0/v0.48.11.mod) = 5652bb978027e32fb996261c186a3ad1b5e2c3f4876defa25146be7f8df719f7
+SIZE (go/databases_sq/neilotoole-sq-v0.48.11_GH0/v0.48.11.mod) = 4953
+SHA256 (go/databases_sq/neilotoole-sq-v0.48.11_GH0/v0.48.11.zip) = b8b1cbdf2ad19a86f9f928e77f254219ca58dd8ea2b5f71d5f43f67a8fb26cd3
+SIZE (go/databases_sq/neilotoole-sq-v0.48.11_GH0/v0.48.11.zip) = 63227556
+SHA256 (go/databases_sq/neilotoole-sq-v0.48.11_GH0/neilotoole-sq-v0.48.11_GH0.tar.gz) = dab57e0f3e6f98fcea390be721e1cdc2d26a894fdc89a2821ada04fa14df3eb5
+SIZE (go/databases_sq/neilotoole-sq-v0.48.11_GH0/neilotoole-sq-v0.48.11_GH0.tar.gz) = 62510874

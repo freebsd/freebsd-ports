@@ -2,7 +2,3 @@ GNU/Linux port of the FAR Manager v2 (http://farmanager.com/) which also
 works on macOS and *BSD systems.  Short for File and ARchive Manager, it
 is one of the most prominent Norton Commander clones, or implementations
 of the classic, orthodox two-panel file manager idea.
-
-Plugins that currently work: NetRocks (SFTP/SCP/FTP/FTPS/SMB/NFS/WebDAV),
-colorer, multiarc, tmppanel, align, autowrap, drawline, editcase,
-SimpleIndent, Python (optional scripting support).

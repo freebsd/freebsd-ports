@@ -1,5 +1,6 @@
 PORTNAME=	phmdoctest
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=7.1.1:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}CommonMark>=0.9.1:textproc/py-CommonMark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}monotable>=2.1.1:devel/py-monotable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=1.0.0:textproc/py-tomli@${PY_FLAVOR}
+		${PY_TOMLI}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest

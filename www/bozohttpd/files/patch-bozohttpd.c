@@ -1,15 +1,6 @@
---- bozohttpd.c.orig	2021-02-28 05:20:51 UTC
+--- bozohttpd.c.orig	2024-02-04 05:55:04 UTC
 +++ bozohttpd.c
-@@ -240,7 +240,7 @@ bozo_set_pref(bozohttpd_t *httpd, bozoprefs_t *bozopre
- }
- 
- static void
--bozo_clear_prefs(bozohttpd_t *httpd, bozoprefs_t *prefs)
-+bozo_clear_prefs(bozoprefs_t *prefs)
- {
- 	size_t	i;
- 
-@@ -2197,22 +2197,22 @@ http_errors_long(int code)
+@@ -2203,22 +2203,22 @@ http_errors_long(int code)
  	return (help);
  }
  
@@ -37,7 +28,7 @@
  
  /* the follow functions and variables are used in handling HTTP errors */
  int
-@@ -2317,18 +2317,18 @@ bozo_http_error(bozohttpd_t *httpd, int code, bozo_htt
+@@ -2323,18 +2323,18 @@ bozo_http_error(bozohttpd_t *httpd, int code, bozo_htt
  		bozo_printf(httpd, "%s", httpd->errorbuf);
  	bozo_flush(httpd, stdout);
  
@@ -60,12 +51,3 @@
  
  	return code;
  }
-@@ -2714,7 +2714,7 @@ bozo_setup(bozohttpd_t *httpd, bozoprefs_t *prefs, con
- void
- bozo_cleanup(bozohttpd_t *httpd, bozoprefs_t *prefs)
- {
--	bozo_clear_prefs(httpd, prefs);
-+	bozo_clear_prefs(prefs);
- 
- 	free(httpd->virthostname);
- 	free(httpd->errorbuf);

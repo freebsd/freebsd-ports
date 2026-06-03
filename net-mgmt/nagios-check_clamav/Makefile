@@ -5,7 +5,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://ftp.bsdserwis.com/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin that verifies ClamAV local signature database revision
 WWW=		https://exchange.nagios.org/directory/Plugins/Anti-2DVirus/ClamAV/ClamAV-check-plugin/details
 

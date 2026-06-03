@@ -1,5 +1,5 @@
 PORTNAME=	capybara-screenshot
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.27
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

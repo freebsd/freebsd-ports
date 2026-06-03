@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: mcast_bridge
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mcast_bridge_enable (bool):	Set to NO by default.
+#				Set it to YES to enable mcast-bridge.
+# mcast_bridge_config (path):	Set to %%PREFIX%%/etc/mcast-bridge.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=mcast_bridge
+rcvar=mcast_bridge_enable
+
+load_rc_config $name
+
+: ${mcast_bridge_enable:=NO}
+: ${mcast_bridge_config=%%PREFIX%%/etc/mcast-bridge.conf}
+
+command=%%PREFIX%%/bin/mcast-bridge
+pidfile=/var/run/${name}.pid
+
+command_args="-s -p $pidfile -c $mcast_bridge_config"
+
+run_rc_command "$1"

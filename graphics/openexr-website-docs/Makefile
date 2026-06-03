@@ -1,7 +1,7 @@
 PORTNAME=	openexr-website-docs
-PORTVERSION=	3.3.5
+DISTVERSION=	3.4.12
 PORTREVISION=	0
-MASTER_SITES=	https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
+MASTER_SITES=	https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${DISTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/main/:website \
 		LOCAL/mandree/openexr/:DEFAULT \
 		LOCAL/mandree/openexr/:website
@@ -130,7 +130,7 @@ ALL_TARGET=	website
 MASTERDIR=	${.CURDIR}/../../graphics/openexr
 PATCHDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
-WRKSRC=		${WRKDIR}/openexr-${PORTVERSION}
+WRKSRC=		${WRKDIR}/openexr-${DISTVERSION}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

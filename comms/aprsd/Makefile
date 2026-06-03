@@ -1,6 +1,6 @@
 PORTNAME=	aprsd
 PORTVERSION=	2.2.515
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.2.5-15
 DISTNAME=	aprsd-2.2.5-15
@@ -39,7 +39,6 @@ pre-install:
 	${MKDIR} ${STAGEDIR}"/var/log/aprsd"
 
 post-install:
-	@cd ${WRKSRC}/admin
 .for	f in INIT.TNC RESTORE.TNC aprsd.conf welcome.txt user.deny
 	${INSTALL_DATA} ${WRKSRC}/admin/$f ${STAGEDIR}${PREFIX}/etc/aprsd/$f.samp
 .endfor

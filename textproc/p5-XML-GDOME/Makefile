@@ -12,14 +12,14 @@ WWW=		https://metacpan.org/release/XML-GDOME
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BROKEN=		Fails to build with libxml2 2.14, error: unknown type name 'xmlChar'
+USE_GNOME=	glib20 libxml2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
-USES=		perl5 pkgconfig
+USES=		gettext-runtime gnome perl5 pkgconfig
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -21,8 +21,10 @@ shlib_PLIST=			${MASTERDIR}/pkg-plist-shlib
 USES=		compiler:c11 gmake libtool ncurses readline autoreconf pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cider # xspice, readline, osdi are now standard
-
+CONFIGURE_ARGS_armv7=	--disable-openmp
+# xspice, readline, osdi are now standard
+CONFIGURE_ARGS=	--enable-cider \
+		${CONFIGURE_ARGS_${ARCH}}
 OPTIONS_DEFINE=	DEBUG
 
 .if ${FLAVOR:U} ==	shlib

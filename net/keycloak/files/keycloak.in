@@ -9,12 +9,16 @@
 # Add these following line to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# %%PORTNAME%%_enable (bool):         Set it to YES to enable keycloak on startup.
-#                                 Default: NO
-# %%PORTNAME%%_user (string):         User account to run with.
-#                                 Default: www
-# %%PORTNAME%%_flags (string):        Additional flags for the startup script.
-#                                 Default: start
+# %%PORTNAME%%_enable (bool):	Set it to YES to enable keycloak on startup.
+#				Default: NO
+# %%PORTNAME%%_user (string):	User account to run with.
+#				Default: %%USER%%
+# %%PORTNAME%%_group (string):	Group for %%LOG_DIR%% and %%RUN_DIR%%.
+#				Default: %%GROUP%%
+# %%PORTNAME%%_flags (string):	Additional flags for the startup script.
+#				Default: start
+# %%PORTNAME%%_java_home (string):	JAVA_HOME to run with.
+#				Default: %%JAVA_HOME%%
 #
 
 . /etc/rc.subr
@@ -25,11 +29,12 @@ desc="Identity and access management solution"
 
 load_rc_config $name
 
-: ${%%PORTNAME%%_enable:=NO}
-: ${%%PORTNAME%%_user:=%%USER%%}
-: ${%%PORTNAME%%_group:=%%GROUP%%}
+: ${%%PORTNAME%%_enable:="NO"}
+: ${%%PORTNAME%%_user:="%%USER%%"}
+: ${%%PORTNAME%%_group:="%%GROUP%%"}
 : ${%%PORTNAME%%_flags="start"}
 : ${%%PORTNAME%%_java_home="%%JAVA_HOME%%"}
+%%PORTNAME%%_env="${%%PORTNAME%%_env} JAVA_HOME=${%%PORTNAME%%_java_home}"
 
 pidfile=%%RUN_DIR%%/%%PORTNAME%%.pid
 command=/usr/sbin/daemon
@@ -39,18 +44,16 @@ start_cmd="%%PORTNAME%%_start"
 stop_cmd="%%PORTNAME%%_stop"
 build_cmd="%%PORTNAME%%_build"
 
-export JAVA_HOME=${%%PORTNAME%%_java_home}
-
 %%PORTNAME%%_start()
 {
 	if [ ! -d "%%LOG_DIR%%" ]; then
-		install -d -o ${%%PORTNAME%%_user} %%LOG_DIR%%
+		install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} %%LOG_DIR%%
 	fi
 	if [ ! -d "%%RUN_DIR%%" ]; then
-		install -d -o ${%%PORTNAME%%_user} %%RUN_DIR%%
+		install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} %%RUN_DIR%%
 	fi
 
-	chown -R ${%%PORTNAME%%_user} %%LOG_DIR%%
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} %%LOG_DIR%% %%RUN_DIR%%
 
 	echo "Starting %%PORTNAME%%."
         ${command} ${command_args} \

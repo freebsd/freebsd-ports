@@ -1,5 +1,5 @@
 PORTNAME=	prowlarr
-DISTVERSION=	1.37.0.5076
+DISTVERSION=	2.3.5.5327
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Prowlarr/Prowlarr/releases/download/v${DISTVERSION}/
 DISTNAME=	Prowlarr.master.${DISTVERSION}.freebsd-core-x64
@@ -48,5 +48,7 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
+	@${ECHO_CMD} "e_sqlite3.so libsqlite3.so" \
+		>${STAGEDIR}${PREFIX}/etc/libmap.d/Prowlarr.conf
 
 .include <bsd.port.mk>

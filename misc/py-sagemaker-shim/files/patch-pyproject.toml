@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-10-23 07:40:05 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ license = {text = "Apache-2.0"}
+     {name = "James Meakin"},
+ ]
+ license = {text = "Apache-2.0"}
+-requires-python = "==3.12.*"
++requires-python = ">=3.11"
+ dependencies = [
+     "fastapi!=0.89.0",
+     "uvicorn",
+@@ -74,3 +74,7 @@ package = true
+ 
+ [tool.uv]
+ package = true
++
++[build-system]
++requires = ["setuptools", "wheel"]
++build-backend = "setuptools.build_meta"

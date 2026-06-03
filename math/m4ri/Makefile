@@ -1,6 +1,5 @@
 PORTNAME=	M4RI
-DISTVERSIONPREFIX=	release-
-DISTVERSION=	20240729
+DISTVERSION=	20260122
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +9,7 @@ WWW=		https://bitbucket.org/malb/m4ri/src/master/
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:graphics/png
+#		libpapi.so:devel/papi	# BROKEN ATM
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	malb

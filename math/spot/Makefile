@@ -1,5 +1,6 @@
 PORTNAME=	spot
-DISTVERSION=	2.12.1
+DISTVERSION=	2.14.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -10,7 +11,7 @@ WWW=		https://spot.lrde.epita.fr
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	${PYNUMPY} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		syfco:math/hs-syfco
 
@@ -34,5 +35,16 @@ PORTDOCS=	tl.pdf
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
+# ============================================================================
+# Testsuite summary for spot 2.14.5
+# ============================================================================
+# TOTAL: 211
+# PASS:  189
+# SKIP:  20
+# XFAIL: 0
+# FAIL:  2
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>

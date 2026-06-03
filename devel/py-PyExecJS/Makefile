@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run JavaScript code from Python
 WWW=		https://pypi.org/project/PyExecJS/
 
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 OPTIONS_GROUP=		RUNTIME
 OPTIONS_GROUP_RUNTIME=	NODE SPIDERMONKEY

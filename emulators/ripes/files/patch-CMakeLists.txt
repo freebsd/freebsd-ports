@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-04-21 07:38:19 UTC
++++ CMakeLists.txt
+@@ -66,7 +66,6 @@ qt5_add_resources(FONTS_SRC ${CMAKE_SOURCE_DIR}/resour
+ ######################################################################
+ 
+ # Header-only libraries used in the project must be included from top CMakeLists.txt file
+-include_directories(${RIPES_LIB} SYSTEM PUBLIC external/VSRTL/external/cereal/include)
+ include_directories(${RIPES_LIB} PUBLIC external/VSRTL/external)
+ include_directories(SYSTEM external/ELFIO)
+ include_directories(SYSTEM external/VSRTL/external/Signals)

@@ -11,7 +11,7 @@ DIST_SUBDIR=	subversion/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl script to load directories into a Subversion repository
-WWW=		https://svn.apache.org/repos/asf/subversion/branches/scons-build-system/www/tools_contrib.html #svn_load_dirs_pl
+WWW=		https://svn.apache.org/repos/asf/subversion/branches/scons-build-system/www/tools_contrib.html\#svn_load_dirs_pl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

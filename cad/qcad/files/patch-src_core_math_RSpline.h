@@ -1,11 +1,11 @@
---- src/core/math/RSpline.h.orig	2025-02-10 09:29:49 UTC
+--- src/core/math/RSpline.h.orig	2026-05-06 14:27:07 UTC
 +++ src/core/math/RSpline.h
-@@ -33,7 +33,7 @@ class RSplineProxy;
- class RSplineProxy;
+@@ -34,7 +34,7 @@ class RSplineProxy;
  
  #ifndef R_NO_OPENNURBS
+ #if QT_VERSION >= 0x060000
 -#include "opennurbs/opennurbs.h"
-+#include <openNURBS/opennurbs.h>
++#include <OpenNURBS/opennurbs.h>
+ #else
+ #include "legacy/opennurbs/opennurbs.h"
  #endif
- 
- #ifndef RDEFAULT_MIN1

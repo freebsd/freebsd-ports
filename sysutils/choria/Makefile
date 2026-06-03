@@ -1,7 +1,7 @@
 PORTNAME=	choria
 PORTVERSION=	0.29.4
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://choria.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	choria-io

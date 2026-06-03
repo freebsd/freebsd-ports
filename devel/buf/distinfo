@@ -1,5 +1,5 @@
-TIMESTAMP = 1716350516
-SHA256 (go/devel_buf/buf-v1.32.1/v1.32.1.mod) = 7ffff26e114671de7a91308f5830ddaeeef8a4d68d7163fb48d1fd626e7f3a4b
-SIZE (go/devel_buf/buf-v1.32.1/v1.32.1.mod) = 4181
-SHA256 (go/devel_buf/buf-v1.32.1/v1.32.1.zip) = d264460ba7751ee9b6152563ea59ce33a5069dbed9a18287b1e417ab6945b877
-SIZE (go/devel_buf/buf-v1.32.1/v1.32.1.zip) = 2851179
+TIMESTAMP = 1779772952
+SHA256 (go/devel_buf/buf-v1.70.0/v1.70.0.mod) = e387e61fb5e9bba25fd9b727e63c9754b0f0a93890c07b3b78f89b5529565306
+SIZE (go/devel_buf/buf-v1.70.0/v1.70.0.mod) = 4580
+SHA256 (go/devel_buf/buf-v1.70.0/v1.70.0.zip) = a34fc09b8b3dd3bcf49da66d93b45a29876d26881b36aff37dae5f1eae8c2234
+SIZE (go/devel_buf/buf-v1.70.0/v1.70.0.zip) = 3570365

@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2024-04-20 19:20:01 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=63", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -53,8 +53,9 @@ doc = [
+ "Bug Reports" = "https://github.com/chezou/tdworkflow/issues"
+ "Funding" = "https://github.com/sponsors/chezou"
+ 
+-[tool.setuptools.packages]
+-find = {}
++[tool.setuptools.packages.find]
++include = ["tdworkflow*"]
++exclude = ["tests*", "docs*"]
+ 
+ [tool.setuptools_scm]
+ 

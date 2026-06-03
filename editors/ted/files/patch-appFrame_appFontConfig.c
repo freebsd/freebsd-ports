@@ -1,6 +1,6 @@
---- appFrame/appFontConfig.c.orig	2013-12-13 10:45:38.000000000 +0100
-+++ appFrame/appFontConfig.c	2013-12-13 10:46:24.000000000 +0100
-@@ -889,7 +889,7 @@
+--- appFrame/appFontConfig.c.orig	2013-02-01 12:11:08 UTC
++++ appFrame/appFontConfig.c
+@@ -889,7 +889,7 @@ static const char * appFtErrorStr( int e )
  
      static const n2s xftn2s[]=
      {

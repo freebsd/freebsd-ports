@@ -1,0 +1,5 @@
+Memo is a Python CLI for managing Apple Notes and Apple Reminders from the
+terminal. It is built for a keyboard-driven workflow, so you can browse, read,
+edit, move, export, and complete items without leaving your shell.
+
+Memo is also used by OpenClaw.

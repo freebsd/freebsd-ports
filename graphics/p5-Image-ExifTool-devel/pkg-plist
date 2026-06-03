@@ -63,6 +63,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/DJI.pm
 %%SITE_PERL%%/Image/ExifTool/DNG.pm
 %%SITE_PERL%%/Image/ExifTool/DPX.pm
+%%SITE_PERL%%/Image/ExifTool/DSF.pm
 %%SITE_PERL%%/Image/ExifTool/DV.pm
 %%SITE_PERL%%/Image/ExifTool/DarwinCore.pm
 %%SITE_PERL%%/Image/ExifTool/DjVu.pm
@@ -83,11 +84,13 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GIMP.pm
 %%SITE_PERL%%/Image/ExifTool/GM.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
+%%SITE_PERL%%/Image/ExifTool/Garmin.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
 %%SITE_PERL%%/Image/ExifTool/Geolocation.dat
 %%SITE_PERL%%/Image/ExifTool/Geolocation.pm
 %%SITE_PERL%%/Image/ExifTool/Geotag.pm
 %%SITE_PERL%%/Image/ExifTool/GoPro.pm
+%%SITE_PERL%%/Image/ExifTool/Google.pm
 %%SITE_PERL%%/Image/ExifTool/H264.pm
 %%SITE_PERL%%/Image/ExifTool/HP.pm
 %%SITE_PERL%%/Image/ExifTool/HTML.pm
@@ -106,6 +109,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/JSON.pm
 %%SITE_PERL%%/Image/ExifTool/JVC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
+%%SITE_PERL%%/Image/ExifTool/Kandao.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
 %%SITE_PERL%%/Image/ExifTool/LIF.pm
@@ -222,6 +226,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
 %%SITE_PERL%%/Image/ExifTool/WPG.pm
 %%SITE_PERL%%/Image/ExifTool/WTV.pm
+%%SITE_PERL%%/Image/ExifTool/WavPack.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
 %%SITE_PERL%%/Image/ExifTool/WriteIPTC.pl
@@ -270,6 +275,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::DJI.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DNG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DPX.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::DSF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DV.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DarwinCore.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DjVu.3.gz
@@ -290,10 +296,12 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::GIMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GPS.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Garmin.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GeoTiff.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geolocation.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geotag.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GoPro.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Google.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::H264.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HTML.3.gz
@@ -312,6 +320,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::JSON.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JVC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Jpeg2000.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Kandao.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Kodak.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::KyoceraRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::LIF.3.gz
@@ -427,6 +436,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Vorbis.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WPG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WTV.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::WavPack.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteCanonRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteExif.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteIPTC.3.gz

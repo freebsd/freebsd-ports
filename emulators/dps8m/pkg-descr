@@ -1,7 +1,6 @@
-SIMH based simulator for the Honeywell h6180/dps8m Multics processor.
+DPS8M is a simulator of the 36‑bit GE Large Systems / Honeywell / Bull
+600/6000‑series mainframe computers (Honeywell 6180, Honeywell Series‑60 ∕
+Level‑68, and Honeywell ∕ Bull DPS‑8/M) descended from the GE‑645 and engineered
+to support the Multics operating system.
+
 Capable of booting Multics MR12.5, MR12.6f, MR12.7 and MR12.8.
-
-The fastest way to your running Multics-system is the
-Quickstart Image, downloadable from:
-
-https://multics-wiki.swenson.org/index.php/Main_Page

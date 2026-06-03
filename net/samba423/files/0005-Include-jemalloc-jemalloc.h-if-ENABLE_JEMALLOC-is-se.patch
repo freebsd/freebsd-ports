@@ -1,0 +1,26 @@
+From 3cc67018c560d32b98523618d16902c1a670ed40 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:33:51 +0200
+Subject: [PATCH 05/28] Include jemalloc/jemalloc.h if ENABLE_JEMALLOC is set.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/include/includes.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/source3/include/includes.h b/source3/include/includes.h
+index 510a0b96539..94a076de11e 100644
+--- a/source3/include/includes.h
++++ b/source3/include/includes.h
+@@ -326,6 +326,8 @@ typedef char fstring[FSTRING_LEN];
+  * the *bottom* of include files so as not to conflict. */
+ #ifdef ENABLE_DMALLOC
+ #  include <dmalloc.h>
++#elif ENABLE_JEMALLOC
++#  include <jemalloc/jemalloc.h>
+ #endif
+ 
+ 
+-- 
+2.37.1
+

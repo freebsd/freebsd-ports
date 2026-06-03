@@ -1,6 +1,5 @@
 PORTNAME=	zathura-pdf-mupdf
-DISTVERSION=	0.4.4
-PORTREVISION=	4
+DISTVERSION=	2026.05.10
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/
 
@@ -11,15 +10,13 @@ WWW=		https://pwmt.org/projects/zathura-pdf-mupdf/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		zathura:graphics/zathura
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libgirara-gtk3.so:x11-toolkits/girara \
+LIB_DEPENDS=	libgirara.so:x11-toolkits/girara \
 		libmupdf.so:graphics/mupdf
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		compiler:c++17-lang desktop-file-utils gnome jpeg localbase \
-		meson pkgconfig tar:xz
+USES=		compiler:c17 desktop-file-utils gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo glib20
 
 CONFLICTS_INSTALL=	zathura-pdf-poppler
@@ -33,7 +30,5 @@ PLIST_FILES=	lib/zathura/libpdf-mupdf.so \
 post-patch:
 	${REINPLACE_CMD} "s@\(cc.find_library(.*\))@\1,dirs:'${PREFIX}/lib')@" \
 		${WRKSRC}/meson.build
-	${REINPLACE_CMD} "s@join_paths(datadir, \
-		'metainfo')@join_paths(datadir, 'appdata')@" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

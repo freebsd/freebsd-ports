@@ -1,4 +1,4 @@
---- meson.build.orig	2025-02-28 03:58:18 UTC
+--- meson.build.orig	2025-08-28 03:55:28 UTC
 +++ meson.build
 @@ -138,10 +138,8 @@ add_project_arguments(
  )
@@ -11,3 +11,15 @@
  
      '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
      '-DGMENU_I_KNOW_THIS_IS_UNSTABLE',
+@@ -284,11 +282,6 @@ endif
+     ],
+   )
+ endif
+-
+-install_data(
+-  'README.md',
+-  install_dir: join_paths(get_option('datadir'), 'doc', 'plank-reloaded'),
+-)
+ 
+ # Dist script to include additional files
+ meson.add_dist_script(

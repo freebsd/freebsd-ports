@@ -1,5 +1,6 @@
 PORTNAME=	django-unfold
-PORTVERSION=	0.62.0
+PORTVERSION=	0.89.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,15 +9,16 @@ DISTNAME=	django_unfold-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modern Django admin theme for seamless interface development
 WWW=		https://unfoldadmin.com/ \
+		https://unfoldadmin.com/docs/ \
 		https://github.com/unfoldadmin/django-unfold
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

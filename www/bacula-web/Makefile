@@ -1,6 +1,6 @@
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.7.0
+DISTVERSION=	9.8.0
 CATEGORIES=	www sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -13,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
 
-USES=		php:web,flavors
-USE_PHP=	dom gd gettext posix session simplexml tokenizer xml xmlwriter
+USES=		php:flavors,web
 USE_GITHUB=	yes
-NO_BUILD=	yes
+USE_PHP=	dom gd gettext posix session simplexml tokenizer xml xmlwriter
+
 NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		MYSQL PGSQL SQLITE
@@ -35,7 +36,7 @@ USE_PHP+=		pdo_mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USES+=	pgsql
+USES+=			pgsql
 CONFIGURE_ARGS+=	--with-postgresql=yes
 SUB_LIST+=		REQ_PGSQL=postgresql
 USE_PHP+=		pdo_pgsql
@@ -51,6 +52,7 @@ do-install:
 	# Maybe we should delete some files
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${ECHO} "Installing in ${WWWDIR}"
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/${PORTNAME})
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/${PORTNAME})
 
 .include <bsd.port.mk>

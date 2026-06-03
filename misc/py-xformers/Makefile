@@ -1,6 +1,6 @@
 PORTNAME=	xformers
 DISTVERSION=	0.0.25
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}pytorch>=2.1:misc/py-pytorch@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.1:misc/py-pytorch@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang localbase python
 USE_PYTHON=	distutils autoplist pytest # tests fail, see https://github.com/facebookresearch/xformers/issues/1003

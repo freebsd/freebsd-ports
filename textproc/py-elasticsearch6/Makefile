@@ -1,6 +1,6 @@
 PORTNAME=	elasticsearch
 PORTVERSION=	6.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +8,8 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official Python low-level client for Elasticsearch
-WWW=		https://github.com/elastic/elasticsearch-py
+WWW=		https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html \
+		https://github.com/elastic/elasticsearch-py
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -29,6 +30,8 @@ USE_PYTHON=	autoplist concurrent nose pep517
 NO_ARCH=	yes
 
 CPE_VENDOR=	elastic
+
+PORTSCOUT=	limit:^6\.
 
 OPTIONS_DEFINE=	REQUESTS
 OPTIONS_DEFAULT=REQUESTS

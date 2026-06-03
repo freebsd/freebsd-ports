@@ -2532,7 +2532,7 @@
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The GitLab Team reports:</p>
 	<blockquote cite="https://about.gitlab.com/2019/09/30/security-release-gitlab-12-dot-3-dot-2-released/">
 	  <p>XSS in Markdown Preview Using Mermaid</p>
 	  <p>Bypass Email Verification using Salesforce Authentication</p>
@@ -3964,7 +3964,7 @@ directly evident from logs.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>Frederic Cambus reports:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2019-13207">
 	  <p>nsd-checkzone in NLnet Labs NSD 4.2.0 has a Stack-based Buffer
 	    Overflow in the dname_concatenate() function in dname.c.</p>
@@ -4134,7 +4134,7 @@ or the current user.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The Apache Team reports:</p>
 	<blockquote cite="http://www.apache.org/dist/httpd/CHANGES_2.4">
 	  <h1>SECURITY: CVE-2019-10081</h1>
 	  <p>mod_http2: HTTP/2 very early pushes, for example configured with "H2PushResource",

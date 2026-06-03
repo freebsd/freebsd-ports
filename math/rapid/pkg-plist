@@ -1,9 +1,0 @@
-include/RAPID/RAPID.H
-include/RAPID/RAPID_private.H
-include/RAPID/RAPID_version.H
-include/RAPID/matvec.H
-include/RAPID/moments.H
-include/RAPID/obb.H
-include/RAPID/overlap.H
-lib/libRAPID.a
-share/man/man1/rapid.1.gz

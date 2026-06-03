@@ -1,9 +1,6 @@
 bin/gottet
 share/applications/gottet.desktop
 share/man/man6/gottet.6.gz
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%%%DATADIR%%/translations/gottet_ca.qm
 %%NLS%%%%DATADIR%%/translations/gottet_cs.qm
 %%NLS%%%%DATADIR%%/translations/gottet_de.qm

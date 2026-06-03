@@ -1,32 +1,51 @@
---- CMakeLists.txt.orig	2025-06-14 21:33:28 UTC
+Build with system wx workaround:
+https://github.com/aardappel/treesheets/issues/1083
+
+--- CMakeLists.txt.orig	2026-03-22 09:59:32 UTC
 +++ CMakeLists.txt
-@@ -4,7 +4,7 @@ string(TIMESTAMP TimeStamp "%y%m%d.%H%M" UTC)
- 
- string(TIMESTAMP TimeStamp "%y%m%d.%H%M" UTC)
+@@ -11,7 +11,7 @@ endif()
+     message(STATUS "User-defined version: ${TREESHEETS_VERSION}")
+ endif()
  
 -project(TreeSheets
 +project(treesheets
      DESCRIPTION "A free-form hierarchical data organizer"
      HOMEPAGE_URL "https://github.com/aardappel/treesheets"
-     VERSION ${TimeStamp})
-@@ -174,11 +174,11 @@ target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_
+     VERSION "${TREESHEETS_VERSION}")
+@@ -41,15 +41,6 @@ include(FetchContent)
  
- ## Platform specific installation paths
+ include(FetchContent)
  
--if(LINUX)
-+if(LINUX OR BSD)
-     OPTION(TREESHEETS_RELOCATABLE_INSTALLATION "Install data relative to the TreeSheets binary, instead of respecting the Filesystem Hierarchy Standard" OFF)
- endif()
+-FetchContent_Declare(
+-    wxwidgets
+-    GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets
+-    GIT_TAG v3.2.10
+-    GIT_SHALLOW ON
+-    FIND_PACKAGE_ARGS 3.2.10 NAMES wxWidgets
+-)
+-FetchContent_MakeAvailable(wxwidgets)
+-
+ if(ENABLE_LOBSTER)
+     FetchContent_Declare(
+         lobster
+@@ -137,7 +128,12 @@ endif(ENABLE_LOBSTER)
+ if(ENABLE_LOBSTER)
+     target_link_libraries(TreeSheets PRIVATE lobster-impl)
+ endif(ENABLE_LOBSTER)
+-target_link_libraries(TreeSheets PRIVATE wx::aui wx::adv wx::core wx::xml wx::net)
++find_package(wxWidgets REQUIRED COMPONENTS aui adv core xml net)
++set(TREESHEETS_LIBS ${wxWidgets_LIBRARIES} lobster-impl)
++target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_LIBS})
++target_include_directories(TreeSheets PRIVATE ${wxWidgets_INCLUDE_DIRS})
++target_compile_definitions(TreeSheets PRIVATE ${wxWidgets_DEFINITIONS})
++# https://github.com/aardappel/treesheets/issues/1083
  
--if(LINUX AND NOT TREESHEETS_RELOCATABLE_INSTALLATION)
-+if((LINUX OR BSD) AND NOT TREESHEETS_RELOCATABLE_INSTALLATION)
-     include(GNUInstallDirs)
+ ### Installation
  
-     set(TREESHEETS_BINDIR ${CMAKE_INSTALL_BINDIR})
-@@ -211,7 +211,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
- install(TARGETS TreeSheets DESTINATION ${TREESHEETS_BINDIR})
+@@ -192,7 +188,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
- install(FILES TS/readme.html DESTINATION ${TREESHEETS_DOCDIR})
+ file(GLOB treesheets_readme_files "TS/readme*.html")
+ install(FILES ${treesheets_readme_files} DESTINATION ${TREESHEETS_DOCDIR})
 -install(DIRECTORY TS/examples DESTINATION ${TREESHEETS_DOCDIR})
 +install(DIRECTORY TS/examples DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/${CMAKE_PROJECT_NAME})
  

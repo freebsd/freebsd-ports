@@ -1,7 +1,0 @@
---- requirements/main.txt.orig	2024-11-30 19:17:07 UTC
-+++ requirements/main.txt
-@@ -1,3 +1,3 @@ deprecated>=1.2
- deprecated>=1.2
--packaging>=21,<25
-+packaging>=21,<26
- typing_extensions

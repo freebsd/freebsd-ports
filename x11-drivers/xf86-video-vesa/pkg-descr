@@ -1,1 +1,3 @@
 This package contains the X.Org xf86-video-vesa driver.
+
+The vesa driver supports most VESA-compatible video cards.

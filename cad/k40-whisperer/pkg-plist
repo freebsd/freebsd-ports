@@ -1,7 +1,7 @@
 bin/%%WHISPERER_COMMAND%%
-%%PORTDOCS%%%%DOCSDIR%%/Change_Log.txt
-%%PORTDOCS%%%%DOCSDIR%%/README_Linux.txt
-%%PORTDOCS%%%%DOCSDIR%%/README_MacOS.md
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Change_Log.txt
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/README_Linux.txt
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/README_MacOS.md
 %%DATADIR%%/LaserSpeed.py
 %%DATADIR%%/bezmisc.py
 %%DATADIR%%/convex_hull.py

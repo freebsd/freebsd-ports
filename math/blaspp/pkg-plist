@@ -4,6 +4,7 @@ include/blas/axpy.hh
 include/blas/batch_common.hh
 include/blas/config.h
 include/blas/copy.hh
+include/blas/counter.hh
 include/blas/defines.h
 include/blas/device.hh
 include/blas/device_blas.hh
@@ -42,8 +43,10 @@ include/blas/trsm.hh
 include/blas/trsv.hh
 include/blas/util.hh
 include/blas/wrappers.hh
-lib/blaspp/blasppConfig.cmake
-lib/blaspp/blasppConfigVersion.cmake
-lib/blaspp/blasppTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/blaspp/blasppTargets.cmake
+lib/cmake/blaspp/blasppConfig.cmake
+lib/cmake/blaspp/blasppConfigVersion.cmake
+lib/cmake/blaspp/blasppTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/blaspp/blasppTargets.cmake
 lib/libblaspp.so
+lib/libblaspp.so.2
+lib/libblaspp.so.2.0.0

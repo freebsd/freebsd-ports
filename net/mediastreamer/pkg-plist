@@ -78,8 +78,8 @@ include/mediastreamer2/stun.h
 include/mediastreamer2/upnp_igd.h
 include/mediastreamer2/x11_helper.h
 include/mediastreamer2/zrtp.h
-lib/libmediastreamer2.a
-lib/mediastreamer/plugins/libmsqogl.a
+lib/libmediastreamer2.so
+lib/mediastreamer/plugins/libmsqogl.so
 share/Mediastreamer2/cmake/FindFFMpeg.cmake
 share/Mediastreamer2/cmake/FindGSM.cmake
 share/Mediastreamer2/cmake/FindOpus.cmake

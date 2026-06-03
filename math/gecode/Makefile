@@ -11,7 +11,7 @@ WWW=		https://www.gecode.org/
 LICENSE=	BSL MIT
 LICENSE_COMB=	multi
 
-NOT_FOR_ARCHS=		armv6 armv7 mips mips64
+NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	needs code written to specify rounding control mechanism in Boost.Numeric.Interval
 
 USES=		bison:build compiler:c++11-lang gmake perl5

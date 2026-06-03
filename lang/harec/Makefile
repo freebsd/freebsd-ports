@@ -1,6 +1,5 @@
 PORTNAME=	harec
-DISTVERSION=	0.25.2
-PORTREVISION=	1
+DISTVERSION=	0.26.0
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -11,7 +10,7 @@ WWW=		https://harelang.org/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 # aarch64 riscv64
+ONLY_FOR_ARCHS=	amd64 aarch64 riscv64
 
 BUILD_DEPENDS=	as:devel/binutils \
 		qbe:devel/qbe

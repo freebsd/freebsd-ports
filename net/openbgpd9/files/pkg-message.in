@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+OpenBGPD has been successfully installed.
+
+Configuration file must be created at %%PREFIX%%/etc/bgpd.conf
+and permission set to 0600.
+EOM
+}
+]

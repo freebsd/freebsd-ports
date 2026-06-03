@@ -1,8 +1,9 @@
 PORTNAME=	lebiniou-data
-DISTVERSION=	3.66.0
+DISTVERSIONPREFIX=	version-
+DISTVERSION=	3.67.0
 CATEGORIES=	multimedia graphics
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Data for lebiniou
 WWW=		https://gitlab.com/lebiniou/lebiniou-data
 
@@ -13,7 +14,6 @@ USES=		autoreconf
 
 USE_GITLAB=	YES
 GL_ACCOUNT=	lebiniou
-GL_TAGNAME=	18949ea967b3616d251ea7eeac7f2409991a9030
 
 GNU_CONFIGURE=	YES
 

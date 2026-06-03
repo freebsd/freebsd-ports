@@ -1,17 +1,21 @@
 PORTNAME=	qiskit
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.1
+PORTREVISION=	7
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source SDK for working with quantum computers
-WWW=		https://github.com/Qiskit/qiskit
+WWW=		https://www.ibm.com/quantum/qiskit \
+		https://github.com/Qiskit/qiskit
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails: error[E0277]: the trait bound `u64: Index` is not satisfied, see https://codeberg.org/sarah-quinones/faer/issues/283
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}symengine>0.11:math/py-symengine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rustworkx>=0.15.0:math/py-rustworkx@${PY_FLAVOR} \

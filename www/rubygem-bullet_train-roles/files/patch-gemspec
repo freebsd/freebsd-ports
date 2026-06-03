@@ -1,0 +1,11 @@
+--- bullet_train-roles.gemspec.orig	2025-12-16 15:38:03 UTC
++++ bullet_train-roles.gemspec
+@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
+   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0".freeze])
+   s.add_development_dependency(%q<standard>.freeze, ["~> 1.5.0".freeze])
+   s.add_development_dependency(%q<simplecov>.freeze, [">= 0".freeze])
+-  s.add_runtime_dependency(%q<active_hash>.freeze, ["~> 3.3.1".freeze])
++  s.add_runtime_dependency(%q<active_hash>.freeze, [">= 3.3.1".freeze])
+   s.add_runtime_dependency(%q<activesupport>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<cancancan>.freeze, [">= 0".freeze])
+ end

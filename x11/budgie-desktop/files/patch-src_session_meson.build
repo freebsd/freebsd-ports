@@ -1,38 +1,24 @@
---- src/session/meson.build.orig	2023-01-29 15:27:27 UTC
+--- src/session/meson.build.orig	2025-09-07 12:35:19 UTC
 +++ src/session/meson.build
-@@ -11,19 +11,15 @@ gnome_session_components = [
- 
- gnome_session_324_components = [
-     'org.gnome.SettingsDaemon.A11ySettings',
--    'org.gnome.SettingsDaemon.Color',
--    'org.gnome.SettingsDaemon.Datetime',
-     'org.gnome.SettingsDaemon.Housekeeping',
-     'org.gnome.SettingsDaemon.Keyboard',
-     'org.gnome.SettingsDaemon.MediaKeys',
-     'org.gnome.SettingsDaemon.Power',
-     'org.gnome.SettingsDaemon.PrintNotifications',
--    'org.gnome.SettingsDaemon.Rfkill',
-     'org.gnome.SettingsDaemon.ScreensaverProxy',
-     'org.gnome.SettingsDaemon.Sharing',
-     'org.gnome.SettingsDaemon.Smartcard',
-     'org.gnome.SettingsDaemon.Sound',
--    'org.gnome.SettingsDaemon.Wacom',
-     'org.gnome.SettingsDaemon.XSettings',
- ]
- 
-@@ -113,15 +109,6 @@ custom_target('desktop-file-xsession',
-     install_dir : join_paths(datadir, 'xsessions'),
- )
- 
--
--# Merge + install nm-applet
--custom_target('desktop-file-nm-applet',
--    input : 'budgie-desktop-nm-applet.desktop.in',
--    output : 'org.buddiesofbudgie.BudgieDesktopNmApplet.desktop',
--    command : [intltool, '--desktop-style', podir, '@INPUT@', '@OUTPUT@'],
+@@ -9,11 +9,8 @@ budgie_session_324_components = [
+ budgie_session_324_components = [
+     'org.buddiesofbudgie.SettingsDaemon.A11ySettings',
+     'org.buddiesofbudgie.SettingsDaemon.Color',
+-    'org.buddiesofbudgie.SettingsDaemon.Datetime',
+-    'org.buddiesofbudgie.SettingsDaemon.Housekeeping',
+     'org.buddiesofbudgie.SettingsDaemon.Keyboard',
+     'org.buddiesofbudgie.SettingsDaemon.PrintNotifications',
+-    'org.buddiesofbudgie.SettingsDaemon.Rfkill',
+     'org.buddiesofbudgie.SettingsDaemon.ScreensaverProxy',
+     'org.buddiesofbudgie.SettingsDaemon.Sharing',
+     'org.buddiesofbudgie.SettingsDaemon.Smartcard',
+@@ -114,8 +111,7 @@ custom_target('desktop-file-nm-applet',
+     input : 'budgie-desktop-nm-applet.desktop.in',
+     output : 'org.buddiesofbudgie.BudgieDesktopNmApplet.desktop',
+     command : [intltool, '--desktop-style', podir, '@INPUT@', '@OUTPUT@'],
 -    install : true,
 -    install_dir : xdg_appdir,
--)
++    install : false,
+ )
  
  # Write the budgie-desktop-screensaver.in file from the appropriate .in.in
- if with_gnome_screensaver == true

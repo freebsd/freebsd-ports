@@ -1,12 +1,3 @@
---- source/common/arm/blockcopy8.S	2024-09-30 08:38:43.172350000 +0200
-+++ source/common/arm/blockcopy8.S	2024-09-30 09:13:08.635457000 +0200
-@@ -833,5 +833,5 @@
-     vmov.u32        r0, d0[0]
-     uasx            r0, r0, r0
--    mov             r0, r0, lsr 16
-+    lsr             r0, r0, #16
-     rsb             r0, #1024
-     bx              lr
 --- source/common/arm/asm.S	2024-04-04 11:39:50.000000000 +0200
 +++ source/common/arm/asm.S	2024-09-30 19:45:33.295896000 +0200
 @@ -85,4 +85,9 @@

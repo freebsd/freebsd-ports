@@ -1,7 +1,7 @@
 PORTNAME=	openfx-arena
 PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	Natron-
-PORTREVISION=	21
+PORTREVISION=	24
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -9,6 +9,8 @@ COMMENT=	Extra OpenFX plugins for Natron
 WWW=		https://github.com/NatronGitHub/openfx-arena
 
 LICENSE=	GPLv2
+
+BROKEN=		Fails to build, ld: error: unable to find library -l-lpthread
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 BUILD_DEPENDS=	opencl>=0:devel/opencl

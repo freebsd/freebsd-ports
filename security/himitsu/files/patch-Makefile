@@ -1,0 +1,11 @@
+--- Makefile.orig	2025-08-03 09:24:07 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ PREFIX=/usr/local
+ 
+ DESTDIR=
+ PREFIX=/usr/local
+-SRCDIR=$(PREFIX)/src
++SRCDIR=$(PREFIX)/share
+ SHAREDIR=$(PREFIX)/share
+ MANDIR=$(SHAREDIR)/man
+ HARESRCDIR=$(SRCDIR)/hare

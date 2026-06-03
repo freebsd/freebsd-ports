@@ -11,11 +11,10 @@ WWW=		https://www.veracrypt.fr/
 
 BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
-RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
 
 LICENSE_FILE=	${DOCSDIR}/LICENSE
 
-USES=		compiler:c++11-lang cpe desktop-file-utils fuse gmake iconv pkgconfig tar:bz2
+USES=		compiler:c++11-lang cpe desktop-file-utils fuse gmake iconv pkgconfig sudo tar:bz2
 CPE_VENDOR=	idrix
 USE_CXXSTD=	c++11
 USE_WX=		3.0+

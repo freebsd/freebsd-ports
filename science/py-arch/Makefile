@@ -1,5 +1,6 @@
 PORTNAME=	arch
-DISTVERSION=	6.3.0
+DISTVERSION=	8.0.0
+PORTREVISION=	1
 CATEGORIES=	science finance python # economics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +12,17 @@ WWW=		https://github.com/bashtage/arch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-PY_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=1.1:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}property-cached>=1.6.4:devel/py-property-cached@${PY_FLAVOR}  \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.5:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.12:math/py-statsmodels@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=1.4.0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}property-cached>=1.6.4:devel/py-property-cached@${PY_FLAVOR}  \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.8:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.13.0:math/py-statsmodels@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/bashtage/arch/issues/668

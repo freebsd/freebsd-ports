@@ -1,5 +1,0 @@
-Eterm is a color vt102 terminal emulator for X Window system.
-It supports pixmap and pseudo-transparent background. It also
-supports Japanese input with XIM (X Input Method) protocol.
-If you want to input Japanese, use "--input-method" and
-"--preedit-type" option.

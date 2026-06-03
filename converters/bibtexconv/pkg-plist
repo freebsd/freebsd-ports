@@ -15,6 +15,7 @@ share/bash-completion/completions/ietf2bibtex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authors-fix.list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authors.list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get-author-url
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/md-example.export
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/odt-example.export
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/publication-list-treeview.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text-example.export

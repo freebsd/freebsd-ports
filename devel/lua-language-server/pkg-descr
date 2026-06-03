@@ -1,0 +1,16 @@
+The Sumneko Lua Language Server is a comprehensive Lua development
+server. It functions as an LSP client, supporting:
+
+* Over 20 supported annotations for documenting your code
+* Go to definition
+* Dynamic type checking
+* Find references
+* Diagnostics/Warnings
+* Syntax checking
+* Element renaming
+* Hover to view details on variables, functions, and more
+* Autocompletion
+* Support for libraries
+* Code formatting
+* Spell checking
+* Custom plugins

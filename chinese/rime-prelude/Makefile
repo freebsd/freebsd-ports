@@ -1,8 +1,8 @@
 PORTNAME=	rime-prelude
-DISTVERSION=	g20211023
+DISTVERSION=	g20251229
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Essential files for building up your Rime configuration
 WWW=		https://github.com/rime/rime-prelude
 
@@ -14,7 +14,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	4001edf96791bbb5663573ba79ba4b1e9c0b8626
+GH_TAGNAME=	db691d2420b8e656a79692a94f9db0fb3e7aa12b
 
 NO_BUILD=	yes
 NO_ARCH=	yes

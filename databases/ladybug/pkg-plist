@@ -1,0 +1,7 @@
+bin/lbug
+include/lbug.h
+include/lbug.hpp
+lib/liblbug.a
+lib/liblbug.so
+lib/liblbug.so.0
+lib/liblbug.so.%%VERSION%%

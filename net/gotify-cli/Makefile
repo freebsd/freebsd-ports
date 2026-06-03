@@ -1,7 +1,7 @@
 PORTNAME=	gotify
 PORTVERSION=	2.3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	10
 CATEGORIES=	net
 PKGNAMESUFFIX=	-cli
 DISTNAME=	cli
@@ -12,7 +12,7 @@ WWW=		https://github.com/gotify/cli
 
 LICENSE=	MIT
 
-USES=		go:modules,1.22
+USES=		go:modules
 GO_MODULE=	github.com/gotify/cli/v2
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")

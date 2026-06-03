@@ -1,0 +1,14 @@
+pypdfium2 is a set of Python bindings to PDFium, the open-source PDF
+rendering engine developed by Google and used in Chromium.
+
+It provides a comprehensive API for working with PDF files including:
+- Rendering PDF pages to images (Pillow, NumPy arrays, or raw bytes)
+- Text extraction with character-level metadata
+- Table of contents access
+- Form field handling
+- PDF attachment access
+- Page object model (paths, images, text)
+
+NOTE: This port uses the PDFium shared library bundled with LibreOffice
+(editors/libreoffice).  A dedicated graphics/pdfium port is not yet
+available in the FreeBSD ports tree.

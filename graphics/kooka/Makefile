@@ -1,6 +1,5 @@
 PORTNAME=	kooka
-DISTVERSION=	0.61-323
-PORTREVISION=	5
+DISTVERSION=	6.90.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 
@@ -14,17 +13,21 @@ LIB_DEPENDS=	libpaper.so:print/libpaper \
 		libsane.so:graphics/sane-backends \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons i18n iconthemes itemviews jobwidgets kio service \
-		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
+USES=		cmake gettext-tools kde:6 pkgconfig qt:6 xorg
+USE_KDE=	configwidgets coreaddons crash i18n \
+		iconthemes kio purpose service sonnet \
+		textwidgets widgetsaddons xmlgui \
 		doctools:build ecm:build
-USE_QT=		concurrent core dbus gui network printsupport widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
+USE_LDCONFIG=	yes
 
-KDE_INVENT=	3ed25fb9a1a62b88240a4f0f403b1ad49cf0adeb
+KDE_INVENT=	ef10c8cff98c7ad8b2f81b85cd0968bcfb0dd5af
 
-PORTSCOUT=	limit:^0\.
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} 's,"VERSION","${PORTVERSION} GIT ef10c8cff9",' \
+		${WRKSRC}/app/main.cpp
 
 .include <bsd.port.mk>

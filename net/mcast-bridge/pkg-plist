@@ -1,0 +1,3 @@
+bin/mcast-bridge
+bin/mcast-sr
+@sample etc/mcast-bridge.conf.sample

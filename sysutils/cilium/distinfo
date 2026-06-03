@@ -1,5 +1,5 @@
-TIMESTAMP = 1738464966
-SHA256 (go/sysutils_cilium/cilium-v0.16.24/v0.16.24.mod) = 7691be98ae6470ddb59724f51c2aec37a2a74c9594f83c1e275c3248f064192c
-SIZE (go/sysutils_cilium/cilium-v0.16.24/v0.16.24.mod) = 11521
-SHA256 (go/sysutils_cilium/cilium-v0.16.24/v0.16.24.zip) = 40302c39ba9e1aa4d66c5c990b30b2d2c954996b4f90fc8eb8d2a3ac59e330e1
-SIZE (go/sysutils_cilium/cilium-v0.16.24/v0.16.24.zip) = 106472
+TIMESTAMP = 1762064653
+SHA256 (go/sysutils_cilium/cilium-v0.18.8/v0.18.8.mod) = 2b61dbad3b40472dc9c445219975410f473ed0e0b70a8f6450e1bfe8d64d7a85
+SIZE (go/sysutils_cilium/cilium-v0.18.8/v0.18.8.mod) = 11376
+SHA256 (go/sysutils_cilium/cilium-v0.18.8/v0.18.8.zip) = f2e9b5d9c8c8dcbf7530b5b6ac6b76d40f14381775e1d431f457cf8032fb1590
+SIZE (go/sysutils_cilium/cilium-v0.18.8/v0.18.8.zip) = 69184

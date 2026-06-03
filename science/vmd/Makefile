@@ -1,6 +1,6 @@
 PORTNAME=	vmd
 DISTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	a57
 CATEGORIES=	science graphics python tcl tk
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b6/:tachyon \
@@ -22,11 +22,11 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfltk.so:x11-toolkits/fltk \
 		libnetcdf.so:science/netcdf
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		gl gmake perl5 python shebangfix sqlite tcl tk xorg
 SHEBANG_FILES=	${WRKDIR}/plugins/topotools/*.tcl \

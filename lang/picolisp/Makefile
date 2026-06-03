@@ -1,5 +1,5 @@
 PORTNAME=	picolisp
-PORTVERSION=	25.6
+PORTVERSION=	26.3
 CATEGORIES=	lang
 MASTER_SITES=	https://software-lab.de/
 DISTNAME=	picoLisp-${PORTVERSION}
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		gmake llvm:min=11,lib pkgconfig readline ssl tar:tgz
+USES=		gmake llvm:lib pkgconfig readline ssl tar:tgz
 
 WRKSRC=		${WRKDIR}/pil21/src
 
@@ -34,6 +34,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/picolisp
+	${RM} ${WRKSRC}/../soTest.c
 	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/picolisp "! -name '*.bak'"
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/picolisp/src
 	${FIND} ${STAGEDIR}${PREFIX}/lib/picolisp/bin -exec ${CHMOD} a+x {} \;

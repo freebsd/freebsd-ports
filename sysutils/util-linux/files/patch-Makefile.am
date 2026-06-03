@@ -1,0 +1,27 @@
+--- Makefile.am.orig	2025-05-05 08:28:44 UTC
++++ Makefile.am
+@@ -84,7 +84,7 @@ DISTCLEANFILES =
+ CLEANFILES =
+ DISTCLEANFILES =
+ 
+-SUBDIRS = po
++SUBDIRS = 
+ 
+ RCS_FIND_IGNORE = \( -name SCCS -o -name BitKeeper -o -name .svn -o \
+ 		-name CVS -o -name .pc -o -name .hg -o -name .git \) -prune -o
+@@ -95,7 +95,6 @@ EXTRA_DIST += \
+ 	.version \
+ 	autogen.sh \
+ 	Documentation \
+-	po/update-potfiles \
+ 	README.licensing
+ 
+ include tools/Makemodule.am
+@@ -120,7 +119,6 @@ include man-common/Makemodule.am
+ include pam_lastlog2/Makemodule.am
+ include bash-completion/Makemodule.am
+ include man-common/Makemodule.am
+-include po-man/Makemodule.am
+ 
+ include Documentation/Makemodule.am
+ include tests/Makemodule.am

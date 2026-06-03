@@ -10,7 +10,7 @@ WWW=		https://lifelines.github.io/lifelines/
 
 LICENSE=	MIT
 
-USES=		autoreconf bison gmake iconv ncurses
+USES=		autoreconf bison gettext-tools gmake iconv ncurses
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC="bison -y"
@@ -35,7 +35,7 @@ BUILDDOCS_BUILD_DEPENDS=	dblatex:textproc/dblatex \
 				xmlto:textproc/xmlto
 BUILDDOCS_CONFIGURE_WITH=	docs
 
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 pre-patch:

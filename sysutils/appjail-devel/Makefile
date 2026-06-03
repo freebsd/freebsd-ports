@@ -1,5 +1,5 @@
 PORTNAME=	appjail
-DISTVERSION=	4.1.0.20250707
+DISTVERSION=	4.12.0.20260430
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ CONFLICTS=	appjail
 USE_GITHUB=	yes
 GH_ACCOUNT=	DtxdF
 GH_PROJECT=	AppJail
-GH_TAGNAME=	4f27673ecffdc7122c0d79241e0c0ec5eae363d8
+GH_TAGNAME=	2274c856694fd2f6db37155b2217d97e0bbb2920
 
 MAKE_ARGS=	APPJAIL_VERSION=${DISTVERSION}+${GH_TAGNAME}
 ALL_TARGET=	utils-strip
@@ -25,17 +25,27 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=			DEBOOTSTRAP DOAS DOCS GIT OCI
+OPTIONS_DEFINE=		DEBOOTSTRAP DOAS DOCS GIT OCI PKGBASE X11
+OPTIONS_DEFAULT=	OCI PKGBASE
 
-DEBOOTSTRAP_DESC=		Support for Debian and Ubuntu jails
-DOAS_DESC=			Add support for unprivileged users
-OCI_DESC=			Add support for OCI
+DEBOOTSTRAP_DESC=	Support for Debian and Ubuntu jails
+DOAS_DESC=		Add support for unprivileged users
+OCI_DESC=		Add support for OCI
+PKGBASE_DESC=		Add support for pkgbase
+X11_DESC=		Add support for x11
 
 DEBOOTSTRAP_RUN_DEPENDS=	debootstrap>0:sysutils/debootstrap
 DOAS_RUN_DEPENDS=		doas>0:security/doas
 GIT_RUN_DEPENDS=		git>0:devel/git
 OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
 				jq>0:textproc/jq
+PKGBASE_RUN_DEPENDS=		${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
+X11_RUN_DEPENDS=		su-exec:security/su-exec \
+				xauth:x11/xauth \
+				xdotool:x11/xdotool \
+				Xephyr:x11-servers/xorg-server@xephyr \
+				xev:x11/xev \
+				xseticon:x11/xseticon
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}

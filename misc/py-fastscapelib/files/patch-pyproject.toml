@@ -1,10 +1,12 @@
---- pyproject.toml.orig	2023-10-10 18:00:46 UTC
+--- pyproject.toml.orig	2025-06-25 14:33:51 UTC
 +++ pyproject.toml
-@@ -4,7 +4,7 @@ requires = [
-     "pybind11",
-     # TODO: replace by "numpy>=1.25.0,<2" when dropping py3.8 support.
-     # https://github.com/scipy/oldest-supported-numpy/issues/76
--    "oldest-supported-numpy",
+@@ -4,8 +4,8 @@ requires = [
+     # pybind11 2.12 added support for numpy 2.0
+     # pybind11 doesn't require numpy at build time, but xtensor-python does!
+     # packages built with numpy 2.x are compatible with numpy 1.xx
+-    "pybind11>=2.12,<3",
+-    "numpy>=2.0,<3",
++    "pybind11",
 +    "numpy",
  ]
  build-backend = "scikit_build_core.build"

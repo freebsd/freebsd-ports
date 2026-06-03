@@ -1,1 +1,5 @@
-This package contains the X Pixmap library.
+This package contains the X PixMap (XPM) library.
+XPM is a format for storing and retrieving X pixmaps to and from files.
+
+This package also contains the cxpm(1) tool for checking XPM files and
+the sxpm(1) tool for viewing and converting XPM files.

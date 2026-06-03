@@ -1,0 +1,32 @@
+--- server/DocService/patches/sharp+0.32.6.patch.orig	2026-03-12 00:43:48 UTC
++++ server/DocService/patches/sharp+0.32.6.patch
+@@ -0,0 +1,29 @@
++diff --git a/node_modules/sharp/lib/sharp.js b/node_modules/sharp/lib/sharp.js
++index a41e83d..80226dc 100644
++--- a/node_modules/sharp/lib/sharp.js
+++++ b/node_modules/sharp/lib/sharp.js
++@@ -2,12 +2,22 @@
++ // SPDX-License-Identifier: Apache-2.0
++ 
++ 'use strict';
++-
+++const path = require('path');
++ const platformAndArch = require('./platform')();
++ 
++ /* istanbul ignore next */
++ try {
++-  module.exports = require(`../build/Release/sharp-${platformAndArch}.node`);
+++  // FreeBSD port: load native binding from fixed path next to pkg binary
+++  const fs = require('fs');
+++  const external = path.join(
+++    path.dirname(process.execPath),
+++    'sharp',
+++    `sharp-${process.platform}-${process.arch}.node`
+++  );
+++  if (fs.existsSync(external)) {
+++    module.exports = require(external);
+++    return;
+++  }
++ } catch (err) {
++   // Bail early if bindings aren't available
++   const help = ['', 'Something went wrong installing the "sharp" module', '', err.message, '', 'Possible solutions:'];

@@ -1,0 +1,19 @@
+--- thirdparty/CMakeLists.txt.orig	2025-09-07 22:10:00 UTC
++++ thirdparty/CMakeLists.txt
+@@ -21,8 +21,6 @@ add_subdirectory(sol2 EXCLUDE_FROM_ALL)
+ target_compile_definitions(sol2 INTERFACE SOL_EXCEPTIONS_ALWAYS_UNSAFE=1) # Make sure sol2 doesn't propagate C++ exceptions to luajit.
+ 
+ # fmt
+-add_subdirectory(fmt EXCLUDE_FROM_ALL)
+-target_compile_definitions(fmt INTERFACE FMT_USE_NONTYPE_TEMPLATE_ARGS) # Enable _cf literals.
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+     target_compile_definitions(fmt INTERFACE FMT_CONSTEVAL=) # MSVC chokes on fmt consteval formatting, so we define FMT_CONSTEVAL=<empty>.
+ endif()
+@@ -51,7 +49,6 @@ set(SPDLOG_DISABLE_DEFAULT_LOGGER ON)
+ if(OE_BUILD_PLATFORM STREQUAL "windows")
+     set(SPDLOG_WCHAR_SUPPORT ON) # Use unicode APIs on Windows.
+ endif()
+-add_subdirectory(spdlog EXCLUDE_FROM_ALL)
+ 
+ # googletest
+ if(OE_BUILD_TESTS)

@@ -1,6 +1,0 @@
-etc/rc.d/hastmon
-sbin/hastmon
-sbin/hastmonctl
-share/man/man5/hastmon.conf.5.gz
-share/man/man8/hastmon.8.gz
-share/man/man8/hastmonctl.8.gz

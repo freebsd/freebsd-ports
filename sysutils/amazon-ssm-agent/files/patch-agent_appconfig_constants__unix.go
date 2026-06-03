@@ -1,20 +1,36 @@
---- agent/appconfig/constants_unix.go.orig	2019-05-08 20:19:03 UTC
+--- agent/appconfig/constants_unix.go.orig	2025-12-22 20:08:01 UTC
 +++ agent/appconfig/constants_unix.go
-@@ -53,7 +53,7 @@ const (
- 	DownloadRoot = "/var/log/amazon/ssm/download/"
+@@ -29,7 +29,7 @@ var (
+ var (
  
- 	// DefaultDataStorePath represents the directory for storing system data
--	DefaultDataStorePath = "/var/lib/amazon/ssm/"
-+	DefaultDataStorePath = "/var/run/amazon/ssm/"
+ 	// AgentExtensions specified the root folder for various kinds of downloaded content
+-	AgentData = "/var/lib/amazon/ssm/"
++	AgentData = "/var/run/amazon/ssm/"
+ 
+ 	// PackageRoot specifies the directory under which packages will be downloaded and installed
+ 	PackageRoot = AgentData + "packages"
+@@ -62,10 +62,10 @@ var (
+ 	DefaultDataStorePath = AgentData
  
  	// EC2ConfigDataStorePath represents the directory for storing ec2 config data
- 	EC2ConfigDataStorePath = "/var/lib/amazon/ec2config/"
-@@ -95,7 +95,7 @@ const (
+-	EC2ConfigDataStorePath = "/var/lib/amazon/ec2config/"
++	EC2ConfigDataStorePath = "/var/run/amazon/ec2config/"
+ 
+ 	// EC2ConfigSettingPath represents the directory for storing ec2 config settings
+-	EC2ConfigSettingPath = "/var/lib/amazon/ec2configservice/"
++	EC2ConfigSettingPath = "/var/run/amazon/ec2configservice/"
+ 
+ 	// UpdaterArtifactsRoot represents the directory for storing update related information
+ 	UpdaterArtifactsRoot = AgentData + "update/"
+@@ -120,9 +120,9 @@ var PowerShellPluginCommandName string
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
 -var DefaultProgramFolder = "/etc/amazon/ssm/"
 +var DefaultProgramFolder = "/usr/local/etc/amazon/ssm/"
- var DefaultDocumentWorker = "/usr/bin/ssm-document-worker"
- var DefaultSessionWorker = "/usr/bin/ssm-session-worker"
- var DefaultSessionLogger = "/usr/bin/ssm-session-logger"
+ 
+-var defaultWorkerPath = "/usr/bin/"
++var defaultWorkerPath = "/usr/local/sbin/"
+ var DefaultSSMAgentBinaryPath = defaultWorkerPath + "amazon-ssm-agent"
+ var DefaultSSMAgentWorker = defaultWorkerPath + "ssm-agent-worker"
+ var DefaultDocumentWorker = defaultWorkerPath + "ssm-document-worker"

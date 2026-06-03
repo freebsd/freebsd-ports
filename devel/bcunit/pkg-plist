@@ -8,7 +8,8 @@ include/BCUnit/MyMem.h
 include/BCUnit/TestDB.h
 include/BCUnit/TestRun.h
 include/BCUnit/Util.h
-lib/libbcunit.a
+lib/libbcunit.so
+lib/libbcunit.so.1.0.1
 libdata/pkgconfig/bcunit.pc
 share/BCUnit/BCUnit-List.dtd
 share/BCUnit/BCUnit-List.xsl

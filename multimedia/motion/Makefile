@@ -1,7 +1,7 @@
 # PORTNAME block
 PORTNAME=	motion
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.7.0
+DISTVERSION=	4.7.1
 CATEGORIES=	multimedia
 
 # Maintainer block
@@ -43,7 +43,7 @@ PWCBSD_DESC=		PWCBSD based Webcams
 VIDEO_DESC=		Video capture driver (Netcam support only if none selected)
 WEBCAMD_DESC=		Webcams using webcamd
 
-FFMPEG_LIB_DEPENDS=	libavformat.so.60:multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_WITH=	ffmpeg
 
 MYSQL_USES=		mysql

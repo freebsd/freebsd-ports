@@ -1,6 +1,23 @@
---- pyproject.toml.orig	2024-06-21 19:10:43 UTC
+--- pyproject.toml.orig	2026-02-22 16:40:06 UTC
 +++ pyproject.toml
-@@ -22,7 +22,6 @@ dependencies = [
+@@ -1,9 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+-	"setuptools>=77",
++	"setuptools>=61",
+ 	"setuptools_scm[toml]>=3.4.1",
+-	# jaraco/skeleton#174
+-	"coherent.licensed",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -22,12 +20,11 @@ requires-python = ">=3.9"
+ 	"Framework :: Sphinx :: Extension",
+ ]
+ requires-python = ">=3.9"
+-license = "MIT"
++license = { text = "MIT" }
+ dependencies = [
  	# virtualenv extra due to pypa/build#266
  	"build[virtualenv]",
  	"jaraco.context",

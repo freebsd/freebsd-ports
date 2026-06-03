@@ -1,5 +1,5 @@
 PORTNAME=	find-libpython
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +22,7 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 0.5.1: 1 passed, 1 skipped (Linux-only test)
 
 .include <bsd.port.mk>

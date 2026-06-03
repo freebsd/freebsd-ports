@@ -1,11 +1,13 @@
 PORTNAME=	btop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Monitor of resources
 WWW=		https://github.com/aristocratos/btop
+
+OPTIONS_DEFINE=	DOCS
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

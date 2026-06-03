@@ -1,10 +1,9 @@
 PORTNAME=	bozohttpd
-PORTVERSION=	20210227
-PORTREVISION=	1
+DISTVERSION=	20240126
 CATEGORIES=	www
 MASTER_SITES=	http://eterna23.net/bozohttpd/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bozotic HTTP server from NetBSD
 WWW=		http://eterna23.net/bozohttpd/
 
@@ -62,7 +61,7 @@ USER_CFLAGS_OFF=	-DNO_USER_SUPPORT
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
 CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
 .endif
 

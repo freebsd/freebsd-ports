@@ -1,7 +1,0 @@
-This is a collection of stopgap replacements for standard math
-functions missing from libm in various supported versions of
-FreeBSD. The functions are slower than the existing libm
-functions, but are more accurate than many naive replacements.
-Exceptions are largely ignored.  N. Beebe's extended C version
-of the ELEFUNT package is used to provide regression tests for
-some of the real-valued functions.

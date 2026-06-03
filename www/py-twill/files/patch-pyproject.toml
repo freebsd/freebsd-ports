@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-01-19 23:00:00 UTC
++++ pyproject.toml
+@@ -222,5 +222,5 @@ disable = [
+ ]
+ 
+ [build-system]
+-requires = ["setuptools >=69"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"

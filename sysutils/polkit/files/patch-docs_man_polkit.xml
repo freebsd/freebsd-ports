@@ -1,22 +1,26 @@
---- docs/man/polkit.xml.orig	2018-01-20 14:00:19 UTC
+--- docs/man/polkit.xml.orig	2025-12-17 16:14:53 UTC
 +++ docs/man/polkit.xml
-@@ -104,12 +104,12 @@ System Context         |                        |
+@@ -104,17 +104,15 @@ +------------------+          |
  +------------------+          |
            ^                   |
-           |            +--------------------------------------+
--          |            | /usr/share/polkit-1/actions/*.policy |
-+          |            | %%LOCALBASE%%/share/polkit-1/actions/*.policy |
-           |            +--------------------------------------+
+           |            +--------------------------------------------+
+-          |            | /etc/polkit-1/actions/*.policy             |
++          |            | %%LOCALBASE%%/etc/polkit-1/actions/*.policy             |
+           |            | /run/polkit-1/actions/*.policy             |
+           |            | /usr/local/share/polkit-1/actions/*.policy |
+-          |            | /usr/share/polkit-1/actions/*.policy       |
+           |            +--------------------------------------------+
            |
-    +--------------------------------------+
--   | /etc/polkit-1/rules.d/*.rules        |
--   | /usr/share/polkit-1/rules.d/*.rules  |
-+   | %%LOCALBASE%%/etc/polkit-1/rules.d/*.rules        |
-+   | %%LOCALBASE%%/share/polkit-1/rules.d/*.rules  |
-    +--------------------------------------+
+    +--------------------------------------------+
+-   | /etc/polkit-1/rules.d/*.rules              |
++   | %%LOCALBASE%%/etc/polkit-1/rules.d/*.rules              |
+    | /run/polkit-1/rules.d/*.rules              |
+    | /usr/local/share/polkit-1/rules.d/*.rules  |
+-   | /usr/share/polkit-1/rules.d/*.rules        |
+    +--------------------------------------------+
  ]]></programlisting>
        </textobject>
-@@ -217,7 +217,7 @@ System Context         |                        |
+@@ -222,7 +220,7 @@ +-----------------------------------------------------
        order to use polkit. Actions correspond to operations that
        clients can request the mechanism to carry out and are defined
        in XML files that the mechanism installs into the <filename
@@ -25,37 +29,31 @@
        directory.
      </para>
  
-@@ -473,21 +473,21 @@ System Context         |                        |
+@@ -481,10 +479,9 @@ +-----------------------------------------------------
+       directories in this order:
+     </para>
+     <itemizedlist mark='opencircle' spacing='compact'>
+-      <listitem><para><filename>/etc/polkit-1/rules.d</filename></para></listitem>
++      <listitem><para><filename>%%LOCALBASE%%/etc/polkit-1/rules.d</filename></para></listitem>
+       <listitem><para><filename>/run/polkit-1/rules.d</filename></para></listitem>
+       <listitem><para><filename>/usr/local/share/polkit-1/rules.d</filename></para></listitem>
+-      <listitem><para><filename>/usr/share/polkit-1/rules.d</filename></para></listitem>
+     </itemizedlist>
      <para>
-       <command>polkitd</command> reads
-       <filename class='extension'>.rules</filename> files from the
--      <filename class='directory'>/etc/polkit-1/rules.d</filename> and
--      <filename class='directory'>/usr/share/polkit-1/rules.d</filename>
-+      <filename class='directory'>%%LOCALBASE%%/etc/polkit-1/rules.d</filename> and
-+      <filename class='directory'>%%LOCALBASE%%/share/polkit-1/rules.d</filename>
-       directories by sorting the files in lexical order based on the
-       basename on each file (if there's a tie, files in
--      <filename class='directory'>/etc</filename>
-+      <filename class='directory'>%%LOCALBASE%%/etc</filename>
-       are processed before files in
--      <filename class='directory'>/usr</filename>).
-+      <filename class='directory'>%%LOCALBASE%%/share</filename>).
-       For example, for the following four
-       files, the order is
+       These directories are processed in lexical order based on the basename
+@@ -493,10 +490,9 @@ +-----------------------------------------------------
+       files, the order is:
      </para>
      <itemizedlist mark='opencircle' spacing='compact'>
 -      <listitem><para><filename>/etc/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
--      <listitem><para><filename>/usr/share/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
--      <listitem><para><filename>/etc/polkit-1/rules.d/15-auth.rules</filename></para></listitem>
--      <listitem><para><filename>/usr/share/polkit-1/rules.d/20-auth.rules</filename></para></listitem>
 +      <listitem><para><filename>%%LOCALBASE%%/etc/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
-+      <listitem><para><filename>%%LOCALBASE%%/share/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
-+      <listitem><para><filename>%%LOCALBASE%%/etc/polkit-1/rules.d/15-auth.rules</filename></para></listitem>
-+      <listitem><para><filename>%%LOCALBASE%%/share/polkit-1/rules.d/20-auth.rules</filename></para></listitem>
+       <listitem><para><filename>/run/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
+       <listitem><para><filename>/usr/local/share/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
+-      <listitem><para><filename>/usr/share/polkit-1/rules.d/10-auth.rules</filename></para></listitem>
      </itemizedlist>
      <para>
-       Both directories are monitored so if a rules file is changed,
-@@ -567,7 +567,7 @@ System Context         |                        |
+       All of these directories are monitored, so if a rules file is changed,
+@@ -576,7 +572,7 @@ +-----------------------------------------------------
          called in the order they have been added until one of the
          functions returns a value. Hence, to add an authorization rule
          that is processed before other rules, put it in a file in
@@ -64,18 +62,18 @@
          with a name that sorts before other rules files, for example
          <filename>00-early-checks.rules</filename>. Each function should
          return a value from <literal>polkit.Result</literal>
-@@ -683,8 +683,8 @@ polkit.addRule(function(action, subject) {
+@@ -692,8 +688,8 @@ polkit.addRule(function(action, subject) {
          will produce the following when the user runs 'pkexec -u bateman bash -i' from a shell:
        </para>
        <programlisting><![CDATA[
 -May 24 14:28:50 thinkpad polkitd[32217]: /etc/polkit-1/rules.d/10-test.rules:3: action=[Action id='org.freedesktop.policykit.exec' command_line='/usr/bin/bash -i' program='/usr/bin/bash' user='bateman' user.gecos='Patrick Bateman' user.display='Patrick Bateman (bateman)']
 -May 24 14:28:50 thinkpad polkitd[32217]: /etc/polkit-1/rules.d/10-test.rules:4: subject=[Subject pid=1352 user='davidz' groups=davidz,wheel, seat='seat0' session='1' local=true active=true]
-+May 24 14:28:50 thinkpad polkitd[32217]: %%LOCALBASE%%/etc/polkit-1/rules.d/10-test.rules:3: action=[Action id='org.freedesktop.policykit.exec' command_line='/usr/bin/bash -i' program='/usr/bin/bash' user='bateman' user.gecos='Patrick Bateman' user.display='Patrick Bateman (bateman)']
++May 24 14:28:50 thinkpad polkitd[32217]: %%LOCALBASE%%/etc/polkit-1/rules.d/10-test.rules:3: action=[Action id='org.freedesktop.policykit.exec' command_line='%%LOCALBASE%%/bin/bash -i' program='%%LOCALBASE%%/bin/bash' user='bateman' user.gecos='Patrick Bateman' user.display='Patrick Bateman (bateman)']
 +May 24 14:28:50 thinkpad polkitd[32217]: %%LOCALBASE%%/etc/polkit-1/rules.d/10-test.rules:4: subject=[Subject pid=1352 user='davidz' groups=davidz,wheel, seat='seat0' session='1' local=true active=true]
  ]]></programlisting>
  
      </refsect2>
-@@ -916,7 +916,7 @@ polkit.addRule(function(action, subject) {
+@@ -960,7 +956,7 @@ polkit.addRule(function(action, subject) {
        <programlisting><![CDATA[
  polkit.addRule(function(action, subject) {
      if (action.id == "org.freedesktop.policykit.exec" &&

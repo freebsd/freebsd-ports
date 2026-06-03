@@ -1,5 +1,6 @@
 PORTNAME=	xmlsec
 DISTVERSION=	3.0.5
+PORTREVISION=	2
 CATEGORIES=	security java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/apache/santuario/xmlsec/${DISTVERSION}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.jar

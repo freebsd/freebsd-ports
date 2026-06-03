@@ -1,0 +1,5 @@
+Set of GVL instrumentation tools
+
+GVLTools uses the GVL instrumentation API added in Ruby 3.2.0.
+To make it easier to use, on older Rubies the gem will install and expose the
+same methods, but they won't have any effect and all metrics will report 0.

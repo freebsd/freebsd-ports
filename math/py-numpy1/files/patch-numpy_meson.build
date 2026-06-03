@@ -1,0 +1,10 @@
+--- numpy/meson.build.orig	2024-02-05 21:17:48 UTC
++++ numpy/meson.build
+@@ -215,6 +215,7 @@ python_sources = [
+   '__init__.pxd',
+   '__init__.py',
+   '__init__.pyi',
++  '_configtool.py',
+   '_distributor_init.py',
+   '_globals.py',
+   '_pytesttester.py',

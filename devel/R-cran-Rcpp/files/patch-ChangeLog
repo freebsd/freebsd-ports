@@ -1,0 +1,17 @@
+--- ChangeLog.orig	2026-04-23 14:11:05 UTC
++++ ChangeLog
+@@ -10,6 +10,14 @@
+ 	* Rcpp/inst/include/Rcpp/Function.h: Idem, from PR 1469 for switch to
+ 	R_getRegisteredNamespace, a very last-minute R change
+ 
++2026-01-12  Dirk Eddelbuettel  <edd@debian.org>
++
++	* DESCRIPTION (Version, Date): Roll micro version and date
++	* inst/include/Rcpp/config.h: Idem
++
++	* inst/include/Rcpp/exceptions_impl.h: Combine previous and current
++	methods enabling when 'execinfo.h' is found on selected platforms
++
+ 2026-01-08  Dirk Eddelbuettel  <edd@debian.org>
+ 
+         * DESCRIPTION (Date, Version): Release 1.1.1

@@ -1,0 +1,3 @@
+Pick is an option in the terminal with a simple GUI.
+Pick provides a simple way to create a curses-based interactive selection
+list in the terminal.

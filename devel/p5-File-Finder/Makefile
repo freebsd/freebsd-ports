@@ -1,6 +1,5 @@
 PORTNAME=	File-Finder
-PORTVERSION=	0.53
-PORTREVISION=	2
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +13,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-Glob>0:textproc/p5-Text-Glob
+TEST_DEPENDS=	p5-File-Find-Rule>0:devel/p5-File-Find-Rule
 
 USES=		perl5
 USE_PERL5=	configure

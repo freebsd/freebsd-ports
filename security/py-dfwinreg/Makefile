@@ -1,5 +1,5 @@
 PORTNAME=	dfwinreg
-PORTVERSION=	20240316
+PORTVERSION=	20260411
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine

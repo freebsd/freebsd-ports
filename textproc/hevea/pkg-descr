@@ -1,4 +1,15 @@
-HEVEA is a quite complete and fast LATEX to HTML translator.
+HeVeA is a LaTeX to HTML translator. The input language is a fairly complete
+subset of LaTeX 2e (old LaTeX style is also accepted) and the output language is
+HTML that is (hopefully) correct with respect to version 5 [HTML-5a, HTML-5b].
 
-Stephen Montgomery-Smith
-stephen@math.missouri.edu
+HeVeA understands LaTeX macro definitions. Simple user style files are
+understood with little or no modifications. Furthermore, HeVeA customization is
+done by writing LaTeX code.
+
+HeVeA is written in Objective Caml, as many lexers. It is quite fast and
+flexible. Using HeVeA it is possible to translate large documents such as
+manuals, books, etc. very quickly. All documents are translated as one single
+HTML file. Then, the output file can be cut into smaller files, using the
+companion program HaChA.
+
+HeVeA can also be instructed to output plain text or info files.

@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SigOpt Python API client
-WWW=		https://sigopt.org/
+WWW=		https://sigopt.org/ \
+		https://github.com/sigopt/sigopt-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

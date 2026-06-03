@@ -1,5 +1,5 @@
 PORTNAME=	lazarus
-DISTVERSION=	4.2
+DISTVERSION=	4.6
 PKGNAMESUFFIX?=  -gtk2
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -15,14 +15,14 @@ CONFLICTS?=	lazarus-gtk2-devel lazarus-gtk3-devel lazarus-qt5 lazarus-qt5-devel 
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		gmake:devel/gmake \
-		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
+		${LOCALBASE}/share/fpc${FPC_DEVELSUFFIX}-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64le powerpc64
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	e98683ddc052e8db4d0a046af5e04e365324ee4f
+GL_COMMIT=	ea0e03a16c8fcf2f219d2d349a456b7ca2bc187c
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
@@ -40,7 +40,7 @@ OPTIONS_DEFAULT=	GDB
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
-LAZARUS_BASE=	4.2
+LAZARUS_BASE=	4.6
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_PLATFORM?=	gtk2
@@ -73,6 +73,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|startlazarus|${PORTNAME}|g' ${WRKSRC}/install/${PORTNAME}.desktop
+	@${REINPLACE_CMD} \
+		-e 's|powerpc64-linux powerpc64-darwin|powerpc64-linux powerpc64-freebsd powerpc64-darwin|' \
+		-e 's|ifeq ($$(CPU_OS_TARGET),powerpc64-linux)|ifneq ($$(filter $$(CPU_OS_TARGET),powerpc64-linux powerpc64-freebsd),)|g' \
+		${WRKSRC}/lcl/interfaces/*/Makefile
 
 do-build:
 	@cd ${WRKSRC} && \

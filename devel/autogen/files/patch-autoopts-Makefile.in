@@ -1,0 +1,14 @@
+--- autoopts/Makefile.in.orig	2018-08-26 17:44:45 UTC
++++ autoopts/Makefile.in
+@@ -480,8 +480,9 @@ nodist_pkgdata_DATA = $(libsrc) \
+     strneqvcmp.3                  strtransform.3
+ 
+ nodist_pkgdata_DATA = $(libsrc) \
+-    tpl/man2mdoc        tpl/man2texi        tpl/mdoc2man \
+-    tpl/mdoc2texi       tpl/texi2man        tpl/texi2mdoc \
++    tpl/man2man         tpl/man2mdoc        tpl/man2texi \
++    tpl/mdoc2man        tpl/mdoc2mdoc       tpl/mdoc2texi \
++    tpl/texi2man        tpl/texi2mdoc       tpl/texi2texi \
+     tpl/tpl-config.tlib
+ 
+ nodist_libdata_DATA = tpl/tpl-config.tlib

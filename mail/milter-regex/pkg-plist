@@ -1,3 +1,3 @@
 libexec/milter-regex
 share/man/man8/milter-regex.8.gz
-@dir(mailnull,mail,750) %%SPOOLDIR%%
+@dir(%%MAILUSER%%,%%MAILGROUP%%,750) %%SPOOLDIR%%

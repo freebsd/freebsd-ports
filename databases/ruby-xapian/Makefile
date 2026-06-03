@@ -1,5 +1,5 @@
 PORTNAME=	xapian
-PORTVERSION=	1.4.29
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	rubygem-rdoc>=0:devel/rubygem-rdoc \
 		xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-USES=		compiler:c++11-lang libtool ruby tar:xz
+USES=		compiler:c++17-lang libtool ruby tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--without-tcl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 
 CONFLICTS_INSTALL=	xapian-bindings12
 

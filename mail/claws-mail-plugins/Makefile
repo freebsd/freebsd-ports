@@ -1,4 +1,5 @@
 PORTNAME=	claws-mail-plugins
+DISTVERSION=	${CLAWSVERSION}
 CATEGORIES=	mail news
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -7,8 +8,8 @@ WWW=		https://www.claws-mail.org/plugins.php
 
 USES=		metaport
 
-.include "${.CURDIR}/../claws-mail/Makefile.ver"
-.include "${.CURDIR}/../claws-mail/Makefile.claws.plugins"
+.include "../claws-mail/Makefile.ver"
+.include "../claws-mail/Makefile.claws.plugins"
 
 # pgpcore, pgpinline, pgpmime, smime
 CLAWS_PLUGINS+=	pgp
@@ -22,6 +23,7 @@ ${_addon:tu}_DESC!=	${MAKE} -C ../claws-mail-${_addon} -V COMMENT
 .  endif
 . endif
 .endfor
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 .include <bsd.port.options.mk>
 

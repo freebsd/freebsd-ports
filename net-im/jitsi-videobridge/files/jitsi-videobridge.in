@@ -40,7 +40,7 @@ jitsi_videobridge_start()
 {
 	daemon -u ${jitsi_videobridge_user} -p ${pidfile} -o /var/log/jitsi-videobridge.log \
 		${command} -Xmx${jitsi_videobridge_maxmem} \
-		-XX:+UseConcMarkSweepGC \
+		-XX:+UseG1GC \
 		-XX:+HeapDumpOnOutOfMemoryError \
 		-XX:HeapDumpPath=/tmp \
 		-Djava.util.logging.config.file=${jitsi_videobridge_logging_config} \

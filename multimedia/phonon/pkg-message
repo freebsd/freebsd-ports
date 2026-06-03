@@ -2,7 +2,8 @@
 { type: install
   message: <<EOM
 Please, consider installing backends for Phonon:
-- multimedia/phonon-vlc		VLC backend
+- multimedia/phonon-mpv		mpv backend (Qt6)
+- multimedia/phonon-vlc		VLC backend (Qt5)
 EOM
 }
 ]

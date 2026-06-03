@@ -1,12 +1,8 @@
 PORTNAME=	fish
-DISTVERSION=	4.0.2
-PORTREVISION=	2
+DISTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/fish-shell/fish-shell/pull/
-# https://github.com/fish-shell/fish-shell/pull/11486
-PATCHFILES+=	11486.patch:-p1
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	User friendly command line shell
@@ -39,12 +35,12 @@ OPTIONS_DEFINE=		DOCS MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES NLS
 OPTIONS_SUB=		yes
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_CMAKE_BOOL=	BUILD_DOCS
-DOCS_VARS=		MAKE_JOBS_UNSAFE=yes
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_CMAKE_BOOL=	WITH_DOCS
+MANPAGES_VARS=		MAKE_JOBS_UNSAFE=yes
 
 NLS_USES=	gettext
-NLS_CMAKE_BOOL=	WITH_GETTEXT
+NLS_CMAKE_BOOL=	WITH_MESSAGE_LOCALIZATION
 
 .include <bsd.port.pre.mk>
 

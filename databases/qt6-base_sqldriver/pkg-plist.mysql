@@ -4,4 +4,5 @@ lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfigVersion.cmake
 lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargetsPrecheck.cmake
 %%QT_PLUGINDIR%%/sqldrivers/libqsqlmysql.so

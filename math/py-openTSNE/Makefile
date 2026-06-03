@@ -1,5 +1,6 @@
 PORTNAME=	openTSNE
 DISTVERSION=	1.0.2
+PORTREVISION=	2
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +13,10 @@ WWW=		https://github.com/pavlin-policar/openTSNE
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libfftw3.so:math/fftw3
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.20:science/py-scikit-learn@${PY_FLAVOR}
 

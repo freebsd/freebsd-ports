@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2025-11-11 06:22:58 UTC
++++ pyproject.toml
+@@ -51,8 +51,8 @@ issues = 'https://github.com/beancount/beanquery/issue
+ homepage = 'https://github.com/beancount/beanquery'
+ issues = 'https://github.com/beancount/beanquery/issues'
+ 
+-[tool.setuptools.packages]
+-find = {}
++[tool.setuptools.packages.find]
++exclude = ["docs", "docs.*"]
+ 
+ [tool.coverage.run]
+ branch = true

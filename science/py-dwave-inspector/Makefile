@@ -1,6 +1,6 @@
 PORTNAME=	dwave-inspector
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.5.5
+PORTREVISION=	2
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,15 +12,15 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.10.0:science/py-dimod@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.11.0:science/py-dwave-cloud-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.13.0:science/py-dwave-cloud-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-system>=1.3.0:science/py-dwave-system@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=2.2:www/py-flask@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.10.0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	distutils cython unittest # few tests fail, see https://github.com/dwavesystems/dwave-inspector/issues/151
 
 USE_GITHUB=	yes

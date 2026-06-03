@@ -20,7 +20,6 @@ include/lfcbase/ListT.h
 include/lfcbase/Logger.h
 include/lfcbase/Matcher.h
 include/lfcbase/Screen.h
-include/lfcbase/Screen2.h
 include/lfcbase/NanoTimer.h
 include/lfcbase/Net.h
 include/lfcbase/NetHandler.h

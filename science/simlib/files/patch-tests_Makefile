@@ -1,0 +1,41 @@
+--- tests/Makefile.orig	2026-02-20 12:35:22 UTC
++++ tests/Makefile
+@@ -4,7 +4,7 @@
+ #
+ 
+ # C++ compiler flags
+-CXXFLAGS = -Wall
++CXXFLAGS += -Wall
+ CXXFLAGS += -std=c++11
+ CXXFLAGS += -O2 # add optimization level
+ CXXFLAGS += -g  # add debug info
+@@ -17,23 +17,23 @@ all:
+ 
+ #################################################################
+ all:
+-	CXXFLAGS="$(CXXFLAGS)" gmake -j3 -f $(MAKEFILE)
++	CXXFLAGS="$(CXXFLAGS)" $(MAKE) -f $(MAKEFILE)
+ 
+ # special versions for 32/64bit version, do "make clean" first
+ 32:
+-	CXXFLAGS="$(CXXFLAGS) -m32" gmake -j3 -f $(MAKEFILE)
++	CXXFLAGS="$(CXXFLAGS) -m32" $(MAKE) -f $(MAKEFILE)
+ 
+ 64:
+-	CXXFLAGS="$(CXXFLAGS) -m64" gmake -j3 -f $(MAKEFILE)
++	CXXFLAGS="$(CXXFLAGS) -m64" $(MAKE) -f $(MAKEFILE)
+ 
+ #################################################################
+ clean:
+-	gmake -f $(MAKEFILE) clean-all
++	$(MAKE) -f $(MAKEFILE) clean-all
+ 
+ run: all
+-	gmake -f $(MAKEFILE) run
++	$(MAKE) -f $(MAKEFILE) run
+ 
+ pack: clean
+-	gmake -f $(MAKEFILE) pack
++	$(MAKE) -f $(MAKEFILE) pack
+ 
+ #################################################################

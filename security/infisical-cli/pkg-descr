@@ -1,0 +1,8 @@
+The Infisical CLI is a powerful command-line tool for secret management
+that allows you to:
+
+- Inject secrets into applications and development workflows
+- Scan for secret leaks in your codebase and git history
+- Export secrets to various formats (dotenv, JSON, YAML)
+- Authenticate with Infisical Cloud or self-hosted instances
+- Integrate with CI/CD pipelines and Docker containers

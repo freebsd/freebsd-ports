@@ -1,12 +1,13 @@
 PORTNAME=	mongoengine
-PORTVERSION=	0.29.1
+PORTVERSION=	0.29.3
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Object-Document-Mapper for working with MongoDB
-WWW=		http://mongoengine.org/ \
+WWW=		https://mongoengine.org/ \
+		https://mongoengine-odm.readthedocs.io/ \
 		https://github.com/MongoEngine/mongoengine
 
 LICENSE=	MIT

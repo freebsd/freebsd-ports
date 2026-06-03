@@ -1,0 +1,8 @@
+The pkgsite program extracts and generates documentation for Go projects.
+
+Example usage:
+
+$ cd myproject
+$ pkgsite -open .
+
+For more information, see the pkgsite documentation.

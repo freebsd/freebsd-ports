@@ -1,15 +1,13 @@
 PORTNAME=	xstatic-term.js
-PORTVERSION=	0.0.7.0
-PORTREVISION=	4
+PORTVERSION=	0.0.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-term.js-${PORTVERSION}
+DISTNAME=	xstatic_term_js-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	term.js (XStatic packaging standard)
-WWW=		https://github.com/openstack-archive/deb-python-xstatic-term.js \
-		https://github.com/chjj/term.js
+COMMENT=	term.js ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://github.com/takluyver/XStatic-termjs
 
 LICENSE=	MIT
 

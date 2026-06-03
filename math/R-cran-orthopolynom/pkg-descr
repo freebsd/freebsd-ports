@@ -1,0 +1,3 @@
+A collection of functions to construct sets of orthogonal polynomials and their
+recurrence relations. Additional functions are provided to calculate the
+derivative, integral, value and roots of lists of polynomial objects.

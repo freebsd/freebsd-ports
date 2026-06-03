@@ -23,13 +23,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 31000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-python310
-.endif
-
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest2 -v
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

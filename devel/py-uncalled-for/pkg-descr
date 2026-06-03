@@ -1,0 +1,3 @@
+uncalled-for is an asynchronous dependency injection library for Python
+functions. It allows for easy management of dependencies in asynchronous
+applications, making it simpler to inject and resolve components as needed.

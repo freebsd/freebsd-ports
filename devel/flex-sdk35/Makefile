@@ -1,6 +1,6 @@
 PORTNAME=	flex-sdk
 PORTVERSION=	3.5.0.12683
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex3/
 DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip

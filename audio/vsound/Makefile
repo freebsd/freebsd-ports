@@ -12,12 +12,10 @@ WWW=		http://web.archive.org/web/20210502033331/http://www.vsound.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_riscv64=		fails to compile: vsound.c:101:4: Endian guess seems incorrect.
-
 BUILD_DEPENDS=	sox:audio/sox
 RUN_DEPENDS=	sox:audio/sox
 
-USES=		alias libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

@@ -1,0 +1,13 @@
+oyo is a terminal diff viewer that combines a classic scrollable diff with a
+step-through way to review changes.
+
+This tool has different diff modes, such as a dual mode for scrolling through
+diffs or stepping incrementally, a unified mode where code transforms in one
+pane, a split  mode for side-by-side old and new versions, has an evolution
+mode with deletions fading out and a blame mode for Git annotations per line.
+
+Other features of oyo include handling hunk navigation to jump between change
+groups, multi-file support, regex search across diffs, a command palette for
+quick actions, syntax highlighting, word-level diff marking, animated steps,
+line wrapping, Git integration as a difftool, autoplay at set speeds and
+helpful keyboard bindings.

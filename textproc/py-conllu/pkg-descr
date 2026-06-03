@@ -1,0 +1,11 @@
+CoNLL-U format parser for Python.
+
+The conllu library is a lightweight, dependency-free parser for the
+CoNLL-U format. It provides a simple API to parse CoNLL-U formatted
+strings into Python data structures.
+
+CoNLL is a family of plain text file formats to annotate natural language.
+
+CoNLL-U is a plain text file format used by the Universal Dependencies project
+to annotate natural language, with each sentence's words or tokens represented
+by a line of 10 tab-separated fields.

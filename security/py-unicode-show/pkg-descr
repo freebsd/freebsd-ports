@@ -1,0 +1,5 @@
+unicode-show is a utility that reads text input (from standard input
+or files) and highlights suspicious Unicode characters, such as
+those outside the safe ASCII range. This tool is useful for identifying
+potentially malicious or misleading Unicode characters in source
+code, logs, or user input.

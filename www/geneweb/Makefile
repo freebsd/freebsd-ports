@@ -4,7 +4,7 @@ DISTVERSION=	6-08
 PORTREVISION=	3
 CATEGORIES=	www
 
-MAINTAINER=	alex@stangl.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced genealogy software
 WWW=		https://opensource.geneanet.org/projects/geneweb/
 

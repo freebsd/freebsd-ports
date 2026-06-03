@@ -3,7 +3,7 @@ DISTVERSION=	0.8
 CATEGORIES=	x11
 MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Plain X11 emoji keyboard
 WWW=		https://github.com/Zirias/xmoji
 
@@ -23,7 +23,9 @@ USES=		compiler:c11 gmake pkgconfig tar:xz xorg
 USE_XORG=	xcb
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	BUNDLED_POSER=off
+MAKE_ARGS=	BUNDLED_POSER=off \
+		WITH_INOTIFY=off \
+		WITH_KQUEUE=on
 
 OPTIONS_DEFINE=		DOCS NLS SVG TRACE
 OPTIONS_DEFAULT=	SVG

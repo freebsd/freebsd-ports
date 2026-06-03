@@ -1,3 +1,23 @@
-Yosys is a framework for Verilog RTL synthesis.  It currently has
-extensive Verilog-2005 support and provides a basic set of synthesis
-algorithms for various application domains.
+Silice is an easy-to-learn, powerful hardware description language, that allows
+both to prototype ideas quickly and then refine designs to be compact and
+efficient.
+
+Silice achieves this by offering a few, carefully designed high level design
+primitives atop a low level description language. In particular, Silice allows
+to write and combine algorithms, pipelines and per-cycle logic in a coherent,
+unified way. It features a powerful instantiation-time pre-processor, making it
+easy to describe parametric designs.
+
+Silice offers a ready-to-go design environment, supporting many FPGA boards,
+both open-source and proprietary. It natively supports simulation and formal
+verification.
+
+Silice syntax is simple, explicit and easy to read, and should feel familiar to
+C programmers and Verilog designers alike. Silice comes with a ton of examples.
+
+The build system already supports many popular boards such as the IceBreaker,
+de10-nano, ULX3S, Fomu and IceStick. Silice works great with the open-source
+FPGA toolchain (yosys/nextpnr/icestorm), see our Ice40 and ECP5 examples.
+
+You do not need an FPGA to start with Silice: designs and their outputs
+(e.g. VGA signals) can be simulated and visualized.

@@ -1,7 +1,12 @@
-Packit is a network auditing tool. Its value is derived from
-its ability to customize, inject, monitor, and manipulate IP
-traffic. By allowing you to define (spoof) nearly all TCP, UDP,
-ICMP, IP, ARP, RARP, and Ethernet header options, Packit can be
-useful in testing firewalls, intrusion detection systems, port
-scanning, simulating network traffic, and general TCP/IP
-auditing. Packit is also an excellent tool for learning TCP/IP.
+Packit is a network auditing and packet crafting tool designed for
+testing and analysis of TCP/IP networks. It allows users to customize,
+inject, monitor, and manipulate IP traffic by defining nearly all TCP,
+UDP, ICMP, IP, ARP, RARP, and Ethernet header fields.
+
+Packit can be used to test firewalls, intrusion detection systems, port
+scanning techniques, and to simulate network traffic patterns.  It is
+also useful as an educational tool for learning low level network
+protocols and packet structures.
+
+This version is a refactored and modernized implementation, updated to
+work with current libraries, toolchains, and compiler versions.

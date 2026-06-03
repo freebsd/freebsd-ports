@@ -1,10 +1,10 @@
 PORTNAME=	highlight
-PORTVERSION=	4.16
+DISTVERSION=	4.20
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 WWW=		http://andre-simon.de/
 
@@ -13,29 +13,32 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_array.hpp:devel/boost-libs
 
-USES=		gmake lua pkgconfig tar:bzip2
+USES=		compiler:c++17-lang gmake lua pkgconfig tar:bzip2
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
-		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
+		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	all # cli
 INSTALL_TARGET=	install
 
+PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_SUB=	yes
 
-GUI_USES=	qt:5
-GUI_USE=	QT=buildtools:build,qmake:build,core,gui,widgets
+GUI_USES=	gl qt:6,qmake
+GUI_USE=	GL=opengl QT=tools:build,base
 GUI_MAKE_ENV=	QMAKE="${QMAKE}"
 GUI_ALL_TARGET=	gui
 GUI_INSTALL_TARGET=	install-gui
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,lua5.3,lua-${LUA_VER},g' ${WRKSRC}/src/makefile
+
+post-patch-GUI-on:
 	@${REINPLACE_CMD} -e '/PKGCONFIG/s,lua,&-${LUA_VER}, ; \
-		/LIBS/s,-llua,&-${LUA_VER},' \
-			${WRKSRC}/src/gui-qt/highlight.pro
+		/LIBS/s,-llua,&-${LUA_VER},' ${WRKSRC}/src/gui-qt/highlight.pro
 
 post-install:
 .for cfg in filetypes lsp

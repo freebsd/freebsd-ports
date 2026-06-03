@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sure>0:devel/py-sure@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython0 distutils
 
 OPTIONS_DEFINE=	LIBEV MURMUR3
 LIBEV_DESC=	Use devel/libev for event loop

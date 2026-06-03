@@ -1,6 +1,6 @@
 PORTNAME=	gimp
 DISTVERSION=	2.10.38
-PORTREVISION=	5
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -13,7 +13,7 @@ WWW=		https://www.gimp.org/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		gtkdocize:textproc/gtk-doc \
 		glib-networking>=0:net/glib-networking \
 		mypaint-brushes>0:graphics/mypaint-brushes
@@ -40,7 +40,7 @@ LIB_DEPENDS_i386=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		glib-networking>=0:net/glib-networking \
 		mypaint-brushes>0:graphics/mypaint-brushes
 

@@ -1,5 +1,6 @@
 PORTNAME=	klystrack
 PORTVERSION=	1.7.8
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org

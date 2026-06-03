@@ -1,6 +1,6 @@
 PORTNAME=	tagsoup
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc java
 MASTER_SITES=	http://vrici.lojban.org/~cowan/tagsoup/
 EXTRACT_SUFX=	.jar

@@ -1,1 +1,2 @@
-Sushi is a new GNOME 3.2 tool similar to Gloobus Preview that provides quick file previews.
+Sushi is a file previewer for the GNOME desktop environment. It is an
+independent component that integrates with GNOME Files (Nautilus).

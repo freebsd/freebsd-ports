@@ -1,0 +1,3 @@
+mt32emu is part of the Munt project. It represents a C/C++ library named
+libmt32emu which allows to emulate (approximately) the Roland MT-32, CM-32L and
+LAPC-I synthesiser modules.

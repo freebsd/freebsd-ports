@@ -1,0 +1,13 @@
+Fix path of pkgconfig files passed to gpgrt-config.
+
+--- configure.orig	2024-01-25 10:09:44 UTC
++++ configure
+@@ -8428,7 +8428,7 @@ fi
+     # Get the prefix of gpgrt-config assuming it's something like:
+     #   <PREFIX>/bin/gpgrt-config
+     gpgrt_prefix=${GPGRT_CONFIG%/*/*}
+-    possible_libdir1=${gpgrt_prefix}/lib
++    possible_libdir1=${gpgrt_prefix}/libdata
+     # Determine by using system libdir-format with CC, it's like:
+     #   Normal style: /usr/lib
+     #   GNU cross style: /usr/<triplet>/lib

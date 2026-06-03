@@ -30,7 +30,8 @@ share/postgresql/extension/orafce--4.11--4.12.sql
 share/postgresql/extension/orafce--4.12--4.13.sql
 share/postgresql/extension/orafce--4.13--4.14.sql
 share/postgresql/extension/orafce--4.14--4.15.sql
-share/postgresql/extension/orafce--4.15.sql
+share/postgresql/extension/orafce--4.15--4.16.sql
+share/postgresql/extension/orafce--4.16.sql
 share/postgresql/extension/orafce--4.2--4.3.sql
 share/postgresql/extension/orafce--4.3--4.4.sql
 share/postgresql/extension/orafce--4.4--4.5.sql

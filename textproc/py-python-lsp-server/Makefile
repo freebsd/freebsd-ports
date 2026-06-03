@@ -1,5 +1,6 @@
 PORTNAME=	python-lsp-server
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,7 +48,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}rope>0:devel/py-rope@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whatthepatch>0:textproc/py-whatthepatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 ### Test core dumps at
 # python_lsp_server-1.12.0/test/plugins/test_autoimport.py:l277ff

@@ -34,6 +34,7 @@ bin/gcov2perl
 %%SITE_ARCH%%/Devel/Cover/Report/Html_minimal.pm
 %%SITE_ARCH%%/Devel/Cover/Report/Html_subtle.pm
 %%SITE_ARCH%%/Devel/Cover/Report/Json.pm
+%%SITE_ARCH%%/Devel/Cover/Report/Nvim.pm
 %%SITE_ARCH%%/Devel/Cover/Report/Sort.pm
 %%SITE_ARCH%%/Devel/Cover/Report/Text.pm
 %%SITE_ARCH%%/Devel/Cover/Report/Text2.pm
@@ -82,6 +83,7 @@ bin/gcov2perl
 %%PERL5_MAN3%%/Devel::Cover::Report::Html_minimal.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Html_subtle.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Json.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Nvim.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Sort.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Text.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Text2.3.gz

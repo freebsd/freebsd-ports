@@ -1,5 +1,6 @@
 PORTNAME=	libgeotiff
 PORTVERSION=	1.7.4
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/OSGeo/libgeotiff/releases/download/${PORTVERSION}/ \
 		https://download.osgeo.org/geotiff/libgeotiff/
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff
 
-USES=		jpeg libtool pathfix
+USES=		jpeg libtool
 
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-chi \

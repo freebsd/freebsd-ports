@@ -1,5 +1,6 @@
-Provides convenient access to the Anthropic REST API from any Python application.
-It includes type definitions for all request params and response fields, and
-offers both synchronous and asynchronous clients powered by httpx.
+The Anthropic Python library provides convenient access to the Anthropic
+REST API from any Python application. It includes type definitions for all
+request params and response fields, and offers both synchronous and
+asynchronous clients powered by httpx.
 
 The REST API documentation can be found on docs.anthropic.com.

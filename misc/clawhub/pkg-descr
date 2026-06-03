@@ -1,0 +1,11 @@
+ClawHub CLI — install, update, search, and publish agent skills and
+OpenClaw packages.
+
+It connects to the ClawHub skill directory (https://clawhub.ai) and lets you
+manage OpenClaw agent skills from the command line.
+
+Features:
+- Search, install, update, and publish agent skills.
+- Sync local skills to the ClawHub directory.
+- Explore and inspect OpenClaw packages.
+- Authenticate with the ClawHub registry.

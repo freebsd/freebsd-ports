@@ -27,10 +27,11 @@ include/ode/threading.h
 include/ode/threading_impl.h
 include/ode/timer.h
 include/ode/version.h
-lib/cmake/ode-0.16.2/ode-config-version.cmake
-lib/cmake/ode-0.16.2/ode-config.cmake
-lib/cmake/ode-0.16.2/ode-export-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/ode-0.16.2/ode-export.cmake
+lib/cmake/ode-0.16.6/ode-config-version.cmake
+lib/cmake/ode-0.16.6/ode-config.cmake
+lib/cmake/ode-0.16.6/ode-export-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ode-0.16.6/ode-export.cmake
 lib/libode.so
-lib/libode.so.0.16.2
+lib/libode.so.8
+lib/libode.so.8.2.0
 libdata/pkgconfig/ode.pc

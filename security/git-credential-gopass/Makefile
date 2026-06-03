@@ -1,6 +1,7 @@
 PORTNAME=	git-credential-gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.16
+DISTVERSION=	1.16.1
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/gopasspw/git-credential-gopass
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
 

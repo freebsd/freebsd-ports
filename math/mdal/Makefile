@@ -1,7 +1,7 @@
 PORTNAME=	mdal
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.2.0
-PORTREVISION=	5
+DISTVERSION=	1.3.1
+PORTREVISION=	2
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
@@ -14,12 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/gtest/gtest.h:devel/googletest
 LIB_DEPENDS=	libpdalcpp.so:math/pdal \
 		libnetcdf.so:science/netcdf \
-		libsqlite3.so:databases/sqlite3 \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec
 
-USES=		cmake gnome localbase
+USES=		cmake gnome localbase sqlite
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

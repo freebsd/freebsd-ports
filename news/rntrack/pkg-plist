@@ -1,4 +1,4 @@
-%%ETCDIR%%/rntrack.cfg-dist
+@sample %%ETCDIR%%/rntrack.cfg.sample
 %%ETCDIR%%/tbl/alt2koi.tbl
 %%ETCDIR%%/tbl/koi2alt.tbl
 %%ETCDIR%%/test.pl
@@ -6,7 +6,6 @@
 %%ETCDIR%%/tpl/badfrom.tpl
 %%ETCDIR%%/tpl/badto.tpl
 %%ETCDIR%%/tpl/loop.tpl
-share/man/man1/rntrack.1.gz
 sbin/rntrack
 %%PORTDOCS%%%%DOCSDIR%%/FAQ_en
 %%PORTDOCS%%%%DOCSDIR%%/FAQ_ru
@@ -23,3 +22,4 @@ sbin/rntrack
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/point.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/point2.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/traflog.tpl
+share/man/man1/rntrack.1.gz

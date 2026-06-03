@@ -1,14 +1,15 @@
 PORTNAME=	pango
-PORTVERSION=	1.56.1
+DISTVERSION=	1.56.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open-source framework for the layout and rendering of i18n text
-WWW=		https://www.pango.org/
+WWW=		https://www.gtk.org/docs/architecture/pango
 
-LICENSE=	LGPL20
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
@@ -26,19 +27,21 @@ PORTSCOUT=	limit:^1\.[^9]
 
 PLIST_SUB=	LIBVERSION=0.${PORTVERSION:R:E}00.${PORTVERSION:E}
 
+TESTING_UNSAFE=	ERROR:../tests/test-font-data.c:153:test_boxes_font_metrics: assertion failed (metrics->approximate_char_width == boxes_unhinted_metrics.approximate_char_width): (46201 == 49273)
+
 OPTIONS_DEFINE=		DOCS LANG_TH MANPAGES X11
 OPTIONS_DEFAULT=	LANG_TH MANPAGES X11
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen \
-			rst2man:textproc/py-docutils
+			rst2html5:textproc/py-docutils
 DOCS_MESON_TRUE=	documentation
 
 LANG_TH_LIB_DEPENDS=	libthai.so:devel/libthai
 LANG_TH_MESON_ENABLED=	libthai
 
+MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_TRUE=	man-pages
-MANPAGES_IMPLIES=	DOCS
 
 X11_USES=		xorg
 X11_USE=		XORG=x11,xft,xrender

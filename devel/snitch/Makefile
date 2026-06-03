@@ -46,6 +46,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/doc/snitch \
 		${STAGEDIR}${PREFIX}/doc
 
-# many tests fail, see https://github.com/snitch-org/snitch/issues/206
+# tests as of 1.3.2:
+# [doctest] test cases:    3 |    3 passed | 0 failed | 0 skipped
+# [doctest] assertions: 3407 | 3407 passed | 0 failed |
+# [doctest] Status: SUCCESS!
 
 .include <bsd.port.mk>

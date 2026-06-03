@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

@@ -29,6 +29,7 @@
 @sample %%ETCDIR%%/cel_tds.conf.sample
 @sample %%ETCDIR%%/chan_dahdi.conf.sample
 @sample %%ETCDIR%%/chan_mobile.conf.sample
+@sample %%ETCDIR%%/chan_websocket.conf.sample
 @sample %%ETCDIR%%/cli.conf.sample
 @sample %%ETCDIR%%/cli_aliases.conf.sample
 @sample %%ETCDIR%%/cli_permissions.conf.sample
@@ -248,6 +249,7 @@ include/asterisk/refer.h
 include/asterisk/res_aeap.h
 include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
+include/asterisk/res_cdrel_custom.h
 include/asterisk/res_fax.h
 include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
@@ -261,6 +263,7 @@ include/asterisk/res_pjsip_cli.h
 include/asterisk/res_pjsip_outbound_publish.h
 include/asterisk/res_pjsip_presence_xml.h
 include/asterisk/res_pjsip_pubsub.h
+include/asterisk/res_pjsip_redirect.h
 include/asterisk/res_pjsip_session.h
 include/asterisk/res_pjsip_session_caps.h
 include/asterisk/res_prometheus.h
@@ -275,6 +278,7 @@ include/asterisk/security_events_defs.h
 include/asterisk/select.h
 include/asterisk/sem.h
 include/asterisk/serializer.h
+include/asterisk/serializer_shutdown_group.h
 include/asterisk/sha1.h
 include/asterisk/silk.h
 include/asterisk/sip_api.h
@@ -310,6 +314,7 @@ include/asterisk/stringfields.h
 include/asterisk/strings.h
 include/asterisk/stun.h
 include/asterisk/syslog.h
+include/asterisk/taskpool.h
 include/asterisk/taskprocessor.h
 include/asterisk/tcptls.h
 include/asterisk/tdd.h

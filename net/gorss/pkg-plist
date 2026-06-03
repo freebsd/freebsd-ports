@@ -1,0 +1,10 @@
+bin/gorss
+%%DATADIR%%/gorss.conf
+%%DATADIR%%/themes/default.theme
+%%DATADIR%%/themes/dracula.theme
+%%DATADIR%%/themes/gruvbox.theme
+%%DATADIR%%/themes/irssi.theme
+%%DATADIR%%/themes/monokai.theme
+%%DATADIR%%/themes/night.theme
+%%DATADIR%%/themes/nord.theme
+%%DATADIR%%/themes/tokyo-night.theme

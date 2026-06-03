@@ -135,6 +135,7 @@ share/games/colobot/fonts/dvu_sans_bold.ttf
 share/games/colobot/fonts/dvu_sans_italic.ttf
 share/games/colobot/fonts/dvu_sans_mono.ttf
 share/games/colobot/fonts/dvu_sans_mono_bold.ttf
+share/games/colobot/fonts/fonts.ini
 share/games/colobot/help/B/authors.txt
 share/games/colobot/help/B/battles.txt
 share/games/colobot/help/B/cbot.txt
@@ -2591,6 +2592,8 @@ share/games/colobot/levels/missions/chapter003/level005/scene.txt
 share/games/colobot/levels/missions/chapter003/planet.txt
 share/games/colobot/levels/missions/chapter003/terrain.txt
 share/games/colobot/levels/missions/chapter004/chaptertitle.txt
+share/games/colobot/levels/missions/chapter004/clear.txt
+share/games/colobot/levels/missions/chapter004/foggy.txt
 share/games/colobot/levels/missions/chapter004/level001/help/help.B.txt
 share/games/colobot/levels/missions/chapter004/level001/help/help.C.txt
 share/games/colobot/levels/missions/chapter004/level001/help/help.D.txt
@@ -3261,6 +3264,8 @@ share/games/colobot/levels/plus/chapter003/level003/scene.txt
 share/games/colobot/levels/plus/chapter003/planet.txt
 share/games/colobot/levels/plus/chapter003/terrain.txt
 share/games/colobot/levels/plus/chapter004/chaptertitle.txt
+share/games/colobot/levels/plus/chapter004/clear.txt
+share/games/colobot/levels/plus/chapter004/foggy.txt
 share/games/colobot/levels/plus/chapter004/level001/help/help.B.txt
 share/games/colobot/levels/plus/chapter004/level001/help/help.C.txt
 share/games/colobot/levels/plus/chapter004/level001/help/help.D.txt
@@ -4236,6 +4241,7 @@ share/games/colobot/textures/res12.png
 share/games/colobot/textures/res13.png
 share/games/colobot/textures/res14.png
 share/games/colobot/textures/res15.png
+share/games/colobot/textures/res16.png
 share/games/colobot/textures/resae.png
 share/games/colobot/textures/resas.png
 share/games/colobot/textures/roca2.png
@@ -4256,5 +4262,6 @@ share/locale/fr/LC_MESSAGES/colobot.mo
 share/locale/pl/LC_MESSAGES/colobot.mo
 share/locale/pt/LC_MESSAGES/colobot.mo
 share/locale/ru/LC_MESSAGES/colobot.mo
+share/man/fr/man6/colobot.6.gz
 share/man/man6/colobot.6.gz
 share/metainfo/info.colobot.Colobot.appdata.xml

@@ -4,7 +4,7 @@ CATEGORIES=	devel education python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	kenrap@kennethraplee.com
+MAINTAINER=	kenrap@FreeBSD.org
 COMMENT=	Python IDE for beginners
 WWW=		https://thonny.org/
 
@@ -25,6 +25,8 @@ RUN_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR} \
 
 USES=		python desktop-file-utils
 USE_PYTHON=	distutils
+
+NO_ARCH=	yes
 
 ICON_SIZES=	16 22 32 48 64 128 192 256
 

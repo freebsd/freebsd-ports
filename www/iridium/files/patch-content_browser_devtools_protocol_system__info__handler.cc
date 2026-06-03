@@ -1,4 +1,4 @@
---- content/browser/devtools/protocol/system_info_handler.cc.orig	2025-05-07 06:48:23 UTC
+--- content/browser/devtools/protocol/system_info_handler.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/devtools/protocol/system_info_handler.cc
 @@ -52,7 +52,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
  // 1046598, and 1153667.

@@ -1,0 +1,7 @@
+A small C program that retrieves all information about DPI (dots per inch)
+of the available displays in X11.
+Information from both the core protocol and the XRANDR extension is presented.
+Xinerama information (which lacks physical dimensions,
+and is thus not directly useful to determine output DPI) is also presented.
+If an XSETTINGS daemon is found, the reported (scaled and raw) Xft/DPI value is
+presented.

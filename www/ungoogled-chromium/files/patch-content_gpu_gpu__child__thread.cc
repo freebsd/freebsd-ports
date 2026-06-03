@@ -1,4 +1,4 @@
---- content/gpu/gpu_child_thread.cc.orig	2025-02-20 09:59:21 UTC
+--- content/gpu/gpu_child_thread.cc.orig	2026-03-15 18:32:51 UTC
 +++ content/gpu/gpu_child_thread.cc
 @@ -57,7 +57,7 @@
  #include "third_party/skia/include/ports/SkFontConfigInterface.h"

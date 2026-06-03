@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-07-30 07:11:08 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77",
++    "setuptools>=61",
+     "setuptools_scm[toml]>=6.2",
+     "cffi>=1.0.1; python_version < '3.14'",
+     "cffi>=2.0.0b1; python_version >= '3.14'",
+@@ -15,8 +15,7 @@ requires-python = ">=3.9"
+ readme = { content-type = "text/markdown", file = "README.md" }
+ authors = [{ name = "Hynek Schlawack", email = "hs@ox.cx" }]
+ requires-python = ">=3.9"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ keywords = ["password", "hash", "hashing", "security", "bindings", "cffi"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

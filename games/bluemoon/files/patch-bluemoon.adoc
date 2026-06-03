@@ -1,0 +1,31 @@
+--- bluemoon.adoc.orig	2026-04-01 17:55:44 UTC
++++ bluemoon.adoc
+@@ -1,13 +1,9 @@
+-= bluemoon(6) =
+-:doctype: manpage
+-
+ == NAME ==
+ bluemoon - the Blue Moon solitaire
+ 
+ == SYNOPSIS ==
+ *bluemoon*
+ 
+-[[description]]
+ == DESCRIPTION ==
+ 
+ This 52-card solitaire starts with the entire deck shuffled and
+@@ -28,14 +24,9 @@ poor.  
+ poor.  
+ 
+ 
+-[[authors]]
+ == AUTHORS ==
+ 
+-// spellcheck: add ncurses
+ Originally written by Tim Lister.  Visual user interface and color
+ support by Eric S. Raymond <esr@snark.thyrsus.com>. The ncurses
+ version was written in November 1994.  See http://www.catb.org/~esr/
+ for updates, also other software and resources by ESR.
+-
+-
+-// end

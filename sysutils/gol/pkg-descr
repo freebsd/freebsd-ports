@@ -1,0 +1,3 @@
+gol is a fast and lightweight log viewer that allows you to view
+logs in real time from different sources (files, Docker logs, remote
+via SSH, piped inputs, etc.) from a web browser.

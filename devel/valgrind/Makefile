@@ -1,5 +1,5 @@
 PORTNAME=	valgrind
-DISTVERSION=	3.25.1
+DISTVERSION=	3.27.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/valgrind
@@ -8,13 +8,13 @@ MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
 WWW=		https://www.valgrind.org/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix \
-		python:3.9+,run tar:bz2
+		python:run tar:bz2
 USE_PERL5=	build
 SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in \
 		cachegrind/cg_merge.in cachegrind/cg_diff.in \

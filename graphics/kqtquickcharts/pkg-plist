@@ -1,6 +1,6 @@
-include/KF5/kqtquickcharts_version.h
+include/KF6/kqtquickcharts_version.h
 lib/cmake/KQtQuickCharts/KQtQuickChartsConfig.cmake
-lib/cmake/KQtQuickCharts/KQtQuickChartsVersion.cmake
+lib/cmake/KQtQuickCharts/KQtQuickChartsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/charts/BarChart.qml
 %%QT_QMLDIR%%/org/kde/charts/Label.qml
 %%QT_QMLDIR%%/org/kde/charts/LegendItem.qml

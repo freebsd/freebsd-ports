@@ -1,0 +1,10 @@
+--- advent.adoc.orig	2026-03-22 14:43:05 UTC
++++ advent.adoc
+@@ -2,7 +2,6 @@
+ :doctype: manpage
+ // SPDX-FileCopyrightText: (C) Eric S. Raymond <esr@thyrsus.com>
+ // SPDX-License-Identifier: CC-BY-4.0
+-
+ // spellcheck: add advent logfile savefile roleplaying Gillogly PDP Ctrl-D
+ // spellcheck: add EOF autosave endianness wumpus zork nethack
+ 

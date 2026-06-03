@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: victoria_logs
+# REQUIRE: NETWORKING
+# BEFORE: DAEMON
+
+. /etc/rc.subr
+
+name="victoria_logs"
+desc="Fast and easy-to-use, open source logs solution"
+rcvar="${name}_enable"
+
+load_rc_config ${name}
+
+: ${victoria_logs_enable:="NO"}
+: ${victoria_logs_args:="-storageDataPath=%%VICTORIA_DATA%% -retentionPeriod=1 -httpListenAddr=:9428"}
+
+pidfile="%%VICTORIA_RUN%%/${name}.pid"
+daemon_pidfile="%%VICTORIA_RUN%%/${name}-daemon.pid"
+logfile="%%VICTORIA_LOGS%%/${name}.log"
+victoria_logs_user="%%VICTORIA_USER%%"
+victoria_logs_group="%%VICTORIA_GROUP%%"
+procname="%%PREFIX%%/bin/victoria-logs"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -P ${daemon_pidfile} -o ${logfile} -t ${name} ${procname} ${victoria_logs_args}"
+
+
+run_rc_command "$1"

@@ -1,7 +1,6 @@
 PORTNAME=	syncthing
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.0
-PORTREVISION=	2
+DISTVERSION=	2.1.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-source-${DISTVERSIONFULL}
@@ -24,7 +23,8 @@ BINS=		syncthing stdiscosrv strelaysrv strelaypoolsrv
 MAKE_ENV+=	BUILD_HOST=freebsd \
 		BUILD_USER=ports
 
-NO_CCACHE=	yes
+CONFLICTS_INSTALL=	syncthing1
+
 NO_WRKSUBDIR=	yes
 
 USERS=		syncthing
@@ -40,10 +40,10 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@( cd ${WRKSRC}/${PORTNAME} ; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build ; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build stdiscosrv; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build strelaysrv; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build strelaypoolsrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run -x build.go -version v${DISTVERSION} -no-upgrade build ; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run -x build.go -version v${DISTVERSION} -no-upgrade build stdiscosrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run -x build.go -version v${DISTVERSION} -no-upgrade build strelaysrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run -x build.go -version v${DISTVERSION} -no-upgrade build strelaypoolsrv; \
 		)
 
 do-install:
@@ -59,6 +59,6 @@ do-install:
 
 do-test:
 	@( cd ${WRKSRC}/${PORTNAME} ; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade test ; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run -x build.go -version v${DISTVERSION} -no-upgrade test ; \
 		)
 .include <bsd.port.mk>

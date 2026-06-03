@@ -1,7 +1,8 @@
 PORTNAME=	ExtUtils-Builder
-DISTVERSION=	0.017
+DISTVERSION=	0.020
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:LEONT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -12,7 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MY_DEPENDS=	p5-ExtUtils-Config>=0.009:devel/p5-ExtUtils-Config
+MY_DEPENDS=	p5-ExtUtils-Config>=0.009:devel/p5-ExtUtils-Config \
+		p5-ExtUtils-Helpers>=0.027:devel/p5-ExtUtils-Helpers
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 

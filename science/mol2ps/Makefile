@@ -1,6 +1,6 @@
 PORTNAME=	mol2ps
 PORTVERSION=	0.4c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/mol2ps/
 DISTNAME=	${PORTNAME}
@@ -13,7 +13,7 @@ WWW=		https://homepage.univie.ac.at/norbert.haider/cheminf/mol2ps.html
 
 LICENSE=	GPLv2+
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 NO_WRKSUBDIR=	yes
 

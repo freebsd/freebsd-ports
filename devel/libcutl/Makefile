@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.codesynthesis.com/download/xsd/4.2/
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ utility library with generic and independent components
 WWW=		https://www.codesynthesis.com/projects/libcutl/
 

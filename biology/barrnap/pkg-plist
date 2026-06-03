@@ -1,5 +1,4 @@
 bin/barrnap
-%%DATADIR%%/db/arc.hmm
-%%DATADIR%%/db/bac.hmm
-%%DATADIR%%/db/euk.hmm
-%%DATADIR%%/db/mito.hmm
+%%DATADIR%%/db/arc/database.yml
+%%DATADIR%%/db/bac/database.yml
+%%DATADIR%%/db/fun/database.yml

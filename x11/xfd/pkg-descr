@@ -1,2 +1,2 @@
-This package contains xfd, an applications used for displying all
-characters in an X font.
+This package contains xfd, an application used to display all
+characters in a font using either the X11 core protocol or libXft2.

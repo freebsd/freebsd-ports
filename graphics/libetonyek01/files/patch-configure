@@ -1,0 +1,22 @@
+--- configure.orig	2024-11-26 10:12:06 UTC
++++ configure
+@@ -1552,8 +1552,8 @@ Optional Packages:
+ Optional Packages:
+   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+-  --with-mdds=2.1|2.0|1.5|1.4|1.2|1.0|0.x
+-                          Specify which version of mdds to use (2.1 is the
++  --with-mdds=3.1|3.0|2.1|2.0|1.5|1.4|1.2|1.0|0.x
++                          Specify which version of mdds to use (3.1 is the
+                           default)
+   --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
+                           both]
+@@ -3741,7 +3741,7 @@ else $as_nop
+ then :
+   withval=$with_mdds;
+ else $as_nop
+-  with_mdds="2.1"
++  with_mdds="3.1"
+ fi
+ 
+ 

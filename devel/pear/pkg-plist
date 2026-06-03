@@ -127,7 +127,6 @@ bin/pecl
 %%DATADIR%%/tests/Console_Getopt/tests/bug11068.phpt
 %%DATADIR%%/tests/Console_Getopt/tests/bug13140.phpt
 %%DATADIR%%/tests/Structures_Graph/tests/AcyclicTestTest.php
-%%DATADIR%%/tests/Structures_Graph/tests/AllTests.php
 %%DATADIR%%/tests/Structures_Graph/tests/BasicGraphTest.php
 %%DATADIR%%/tests/Structures_Graph/tests/TopologicalSorterTest.php
 %%DATADIR%%/tests/Structures_Graph/tests/helper.inc

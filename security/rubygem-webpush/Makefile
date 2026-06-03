@@ -1,5 +1,6 @@
 PORTNAME=	webpush
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hkdf0>=0.2<1:security/rubygem-hkdf0 \
-		rubygem-jwt>=2.0<3:www/rubygem-jwt
+		rubygem-jwt2>=2.0<3:www/rubygem-jwt2
 
 USES=		gem
 

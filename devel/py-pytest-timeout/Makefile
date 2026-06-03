@@ -1,9 +1,9 @@
 PORTNAME=	pytest-timeout
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Pytest plugin to abort hanging tests
@@ -12,7 +12,7 @@ WWW=		https://github.com/pytest-dev/pytest-timeout
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=5.0.0:devel/py-pytest@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=7.0.0:devel/py-pytest@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
 

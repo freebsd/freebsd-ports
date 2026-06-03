@@ -1,6 +1,6 @@
 PORTNAME=	faketty
-DISTVERSION=	1.0.18
-PORTREVISION=	9
+DISTVERSION=	1.0.20
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,40 +16,33 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtolnay
 
-CARGO_CRATES=	anstream-0.6.15 \
-		anstyle-1.0.8 \
-		anstyle-parse-0.2.5 \
-		anstyle-query-1.1.1 \
-		anstyle-wincon-3.0.4 \
-		bitflags-2.6.0 \
-		cfg-if-1.0.0 \
+CARGO_CRATES=	anstream-0.6.21 \
+		anstyle-1.0.13 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		bitflags-2.11.0 \
+		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.16 \
-		clap_builder-4.5.15 \
-		clap_derive-4.5.13 \
-		clap_lex-0.7.2 \
-		colorchoice-1.0.2 \
+		clap-4.5.60 \
+		clap_builder-4.5.60 \
+		clap_derive-4.5.55 \
+		clap_lex-1.0.0 \
+		colorchoice-1.0.4 \
 		heck-0.5.0 \
-		is_terminal_polyfill-1.70.1 \
-		libc-0.2.157 \
-		nix-0.29.0 \
-		proc-macro2-1.0.86 \
-		quote-1.0.36 \
-		scratch-1.0.7 \
+		is_terminal_polyfill-1.70.2 \
+		libc-0.2.183 \
+		nix-0.31.2 \
+		once_cell_polyfill-1.70.2 \
+		proc-macro2-1.0.106 \
+		quote-1.0.45 \
+		scratch-1.0.9 \
 		strsim-0.11.1 \
-		syn-2.0.75 \
-		unicode-ident-1.0.12 \
+		syn-2.0.117 \
+		unicode-ident-1.0.24 \
 		utf8parse-0.2.2 \
-		windows-sys-0.52.0 \
-		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.52.6 \
-		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.52.6
+		windows-link-0.2.1 \
+		windows-sys-0.61.2
 
 PLIST_FILES=	bin/${PORTNAME}
 

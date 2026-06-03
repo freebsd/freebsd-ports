@@ -18,9 +18,37 @@ The environment variables UV_NO_BUILD_ISOLATION=1 and UV_OFFLINE=1 are also
 required to run "uv" in offline mode and to make use of the Python packages
 outside of the pseudo-venv.
 
---- build/configure/src/python.rs.orig	2025-07-07 16:49:54 UTC
+--
+
+Also don't do type checking (via mypy and related) downstream.
+Mypy-protobuf generates mypy stub files from protobuf specs and should
+therefore be stripped.
+
+Obtained from:
+
+https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/community/anki/strip-type-checking-deps.patch
+
+--- build/configure/src/python.rs.orig	2025-09-17 06:50:13 UTC
 +++ build/configure/src/python.rs
-@@ -119,11 +119,19 @@ impl BuildAction for BuildWheel {
+@@ -81,9 +81,7 @@ impl BuildAction for GenPythonProto {
+ impl BuildAction for GenPythonProto {
+     fn command(&self) -> &str {
+         "$protoc $
+-        --plugin=protoc-gen-mypy=$protoc-gen-mypy $
+         --python_out=$builddir/pylib $
+-        --mypy_out=$builddir/pylib $
+         -Iproto $in"
+     }
+ 
+@@ -101,7 +99,6 @@ impl BuildAction for GenPythonProto {
+             .collect();
+         build.add_inputs("in", &self.proto_files);
+         build.add_inputs("protoc", inputs![":protoc_binary"]);
+-        build.add_inputs("protoc-gen-mypy", inputs![":pyenv:protoc-gen-mypy"]);
+         build.add_outputs("", python_outputs);
+     }
+ 
+@@ -119,11 +116,19 @@ impl BuildAction for BuildWheel {
  
  impl BuildAction for BuildWheel {
      fn command(&self) -> &str {

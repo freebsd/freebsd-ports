@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-08-04 17:44:32 UTC
+--- CMakeLists.txt.orig	2025-07-07 07:42:12 UTC
 +++ CMakeLists.txt
-@@ -24,6 +24,8 @@ set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
+@@ -28,6 +28,8 @@ set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
  # add CMakeLists.txt in subdirectories
  set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
  

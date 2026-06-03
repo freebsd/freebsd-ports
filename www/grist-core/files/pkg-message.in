@@ -1,0 +1,52 @@
+[
+{
+  message: <<EOM
+Grist was installed successfully.
+
+WARNING:
+********
+I highly recommend to install grist in a jail!
+Grist calls python to calculate formulars in the sheet.
+Grist on FreeBSD does not use a sandboxed python so use the jail as the sandbox.
+********
+
+Please configure grist using export commands in:
+%%PREFIX%%/etc/grist.conf
+
+for more details check the configuration options (some useful ones are already define or must be changed):
+https://github.com/gristlabs/grist-core/tree/main#environment-variables
+
+To enable grist on startup:
+sysrc grist_enable="YES"
+
+You should put a reverse proxy like nginx in front of it.
+In the default configuration grist listens on is http://localhost:8484/
+A sample nginx configuration can be found here:
+https://support.getgrist.com/self-managed/#how-do-i-run-grist-on-a-server
+
+You must have a SSL certificate available (like letsencrypt).
+How to do this is not explained here.
+
+To start grist:
+service grist start
+
+Logfile are on:
+/var/log/grist/grist.log
+
+To authenticate with the boot key (you can find in the log file) access:
+https://grist.your-domain/boot
+
+EOM
+  type: install
+}
+{
+  message: <<EOM
+To apply required python lib upgrade, restart grist:
+
+service grist restart
+
+EOM
+  type: upgrade
+}
+]
+

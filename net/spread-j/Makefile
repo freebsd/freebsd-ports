@@ -1,6 +1,6 @@
 PORTNAME=	spread
 PORTVERSION=	3.17.3
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/
 PKGNAMESUFFIX=	-j
@@ -16,6 +16,7 @@ BROKEN_armv6=		fails to package: java/docs/*.html: No such file or directory
 BROKEN_armv7=		fails to package: java/docs/*.html: No such file or directory
 
 USES=		java
+JAVA_VERSION=	8 11
 
 PKGMESSAGE=	${WRKSRC}/../license.txt
 

@@ -1,0 +1,2 @@
+Pure python module for (de)serialization to and from
+VDF that works just like json.

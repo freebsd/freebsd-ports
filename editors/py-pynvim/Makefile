@@ -1,6 +1,5 @@
 PORTNAME=	pynvim
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.5.0:devel/py-msgpack@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.4.0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	concurrent distutils flavors autoplist
+USE_PYTHON=	autoplist concurrent distutils flavors
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

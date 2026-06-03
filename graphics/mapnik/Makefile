@@ -1,7 +1,7 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
-PORTREVISION=	1
+DISTVERSION=	4.2.2
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	hummeltech@sherpaguru.com
@@ -15,31 +15,29 @@ BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		protozero>0:devel/protozero
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libicuuc.so:devel/icu
 RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mapnik
-GH_PROJECT=	mapnik
-GH_TUPLE=	mapbox:geometry.hpp:c83a2ab:geometry_hpp/deps/mapbox/geometry \
-		mapbox:polylabel:51f09d0:polylabel/deps/mapbox/polylabel \
+GH_TUPLE=	catchorg:Catch2:v2.13.10:catch2/test/catch2 \
+		mapbox:geometry.hpp:c83a2ab:geometry_hpp/deps/mapbox/geometry \
+		mapbox:polylabel:0121820:polylabel/deps/mapbox/polylabel \
 		mapbox:variant:a2a4858:variant/deps/mapbox/variant \
 		mapnik:mapnik-vector-tile:5a0cfbb:mapnik_vector_tile/deps/mapbox/mapnik-vector-tile \
-		catchorg:Catch2:v2.13.10:catch2/test/catch2 \
-		mapnik:test-data:41c4cee:test_data/test/data
+		mapnik:test-data:5716a27:test_data/test/data
 
 USES=		compiler:c++20-lang cmake:testing gnome pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DFONTS_INSTALL_DIR:PATH=share/fonts/dejavu
+CMAKE_OFF=	CMAKE_CXX_SCAN_FOR_MODULES
 CMAKE_ON=	USE_EXTERNAL_MAPBOX_PROTOZERO
 
-OPTIONS_DEFINE=		CAIRO DOCS JPEG PNG PROJ TIFF WEBP
-OPTIONS_DEFAULT=	CAIRO JPEG PNG PROJ TIFF WEBP \
+OPTIONS_DEFINE=		CAIRO DOCS JPEG PNG PROJ TIFF WEBP AVIF
+OPTIONS_DEFAULT=	CAIRO JPEG PNG PROJ TIFF WEBP AVIF \
 			GDAL OGR PGRASTER POSTGIS SQLITE3 \
 			TESTING \
 			GEOMETRY_TO_WKB MAPNIK_INDEX MAPNIK_RENDER PGSQL2SQLITE SHAPEINDEX SVG2PNG
@@ -49,6 +47,8 @@ OPTIONS_GROUP_TESTS=	BENCHMARK DEMO_CPP DEMO_VIEWER TESTING
 OPTIONS_GROUP_UTILS=	GEOMETRY_TO_WKB MAPNIK_INDEX MAPNIK_RENDER OGRINDEX PGSQL2SQLITE SHAPEINDEX SVG2PNG
 OPTIONS_SUB=		yes
 
+AVIF_CMAKE_BOOL=	USE_AVIF
+AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
 JPEG_CMAKE_BOOL=	USE_JPEG
 JPEG_USES=		jpeg
 PNG_CMAKE_BOOL=		USE_PNG
@@ -99,28 +99,18 @@ POSTGIS_USES=		pgsql
 SQLITE3_CMAKE_BOOL=	USE_PLUGIN_INPUT_SQLITE
 SQLITE3_USES=		sqlite:3
 
-BENCHMARK_CMAKE_BOOL= 	BUILD_BENCHMARK
-DEMO_CPP_CMAKE_BOOL= 	BUILD_DEMO_CPP
+BENCHMARK_CMAKE_BOOL=	BUILD_BENCHMARK
+DEMO_CPP_CMAKE_BOOL=	BUILD_DEMO_CPP
 DEMO_VIEWER_CMAKE_BOOL=	BUILD_DEMO_VIEWER
 TESTING_CMAKE_BOOL=	BUILD_TESTING
 
-GEOMETRY_TO_WKB_CMAKE_BOOL= 	BUILD_UTILITY_GEOMETRY_TO_WKB
-MAPNIK_INDEX_CMAKE_BOOL= 	BUILD_UTILITY_MAPNIK_INDEX
-MAPNIK_RENDER_CMAKE_BOOL= 	BUILD_UTILITY_MAPNIK_RENDER
-OGRINDEX_CMAKE_BOOL= 		BUILD_UTILITY_OGRINDEX
-PGSQL2SQLITE_CMAKE_BOOL= 	BUILD_UTILITY_PGSQL2SQLITE
-SHAPEINDEX_CMAKE_BOOL= 		BUILD_UTILITY_SHAPEINDEX
-SVG2PNG_CMAKE_BOOL= 		BUILD_UTILITY_SVG2PNG
-
-# MB/PMTiles input plugin (added in 4.1.0) will not compile on i386 without a patch
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386
-CMAKE_OFF=	USE_PLUGIN_INPUT_TILES
-PLIST_SUB+=	NOTI386="@comment "
-.else
-PLIST_SUB+=	NOTI386=""
-.endif
+GEOMETRY_TO_WKB_CMAKE_BOOL=	BUILD_UTILITY_GEOMETRY_TO_WKB
+MAPNIK_INDEX_CMAKE_BOOL=	BUILD_UTILITY_MAPNIK_INDEX
+MAPNIK_RENDER_CMAKE_BOOL=	BUILD_UTILITY_MAPNIK_RENDER
+OGRINDEX_CMAKE_BOOL=		BUILD_UTILITY_OGRINDEX
+PGSQL2SQLITE_CMAKE_BOOL=	BUILD_UTILITY_PGSQL2SQLITE
+SHAPEINDEX_CMAKE_BOOL=		BUILD_UTILITY_SHAPEINDEX
+SVG2PNG_CMAKE_BOOL=		BUILD_UTILITY_SVG2PNG
 
 pre-configure-SQLITE3-on:
 	@if ! ${LOCALBASE}/bin/sqlite3 :memory: 'create virtual table foo using rtree(pkid, xmin, xmax, ymin, ymax)' > /dev/null 2>&1; then \

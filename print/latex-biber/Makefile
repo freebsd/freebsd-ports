@@ -2,7 +2,7 @@ PORTNAME=	biber
 # https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/development/documentation/biber.pdf/download
 # Keep this in-sync with biblatex.sty (currently at 3.20).
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20
+DISTVERSION=	2.21
 PORTEPOCH=	2
 CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
@@ -12,8 +12,8 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	BibTeX replacement for users of BibLaTeX
 WWW=		https://biblatex-biber.sourceforge.net/
 
-LICENSE=		ART10 GPLv1+
-LICENSE_COMB=		dual
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 __DEPENDS=	\

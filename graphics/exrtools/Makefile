@@ -1,6 +1,5 @@
 PORTNAME=	exrtools
-DISTVERSION=	0.4
-PORTREVISION=	36
+DISTVERSION=	0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		LOCAL/ehaupt
@@ -21,8 +20,20 @@ GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<values\.h>|<float.h>|' \
+		${WRKSRC}/src/exrlmspptm.c \
+		${WRKSRC}/src/exrluminance.c \
+		${WRKSRC}/src/exrppnew.c \
+		${WRKSRC}/src/exrhistogram.c \
+		${WRKSRC}/src/exrxyz.c \
 		${WRKSRC}/src/exrnormalize.c \
+		${WRKSRC}/src/exrclip.c \
+		${WRKSRC}/src/exrexpand.c \
+		${WRKSRC}/src/exrbiggstm.c \
+		${WRKSRC}/src/exrcompare.c \
+		${WRKSRC}/src/exriptpp.c \
 		${WRKSRC}/src/exrpptm.c \
-		${WRKSRC}/src/exrstats.c
+		${WRKSRC}/src/exrstats.c \
+		${WRKSRC}/src/exrbiggsrev.c \
+		${WRKSRC}/src/exraverage.c
 
 .include <bsd.port.mk>

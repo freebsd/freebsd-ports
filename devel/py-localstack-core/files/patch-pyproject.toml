@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-02-26 10:14:23 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ # LocalStack project configuration
+ [build-system]
+-requires = ['setuptools>=64', 'wheel', 'setuptools_scm>=8.1']
++requires = ['setuptools>=61', 'wheel', 'setuptools_scm>=8.1']
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -9,7 +9,7 @@ description = "The core library and runtime of LocalSt
+     { name = "LocalStack Contributors", email = "info@localstack.cloud" }
+ ]
+ description = "The core library and runtime of LocalStack"
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ requires-python = ">=3.10"
+ dependencies = [
+     "asn1crypto>=1.5.1",

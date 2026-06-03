@@ -1,4 +1,3 @@
-%%PORTDOCS%%%%DOCSDIR%%/givaro.html
 bin/givaro-config
 include/givaro-config.h
 include/givaro/StaticElement.h
@@ -82,6 +81,7 @@ include/givaro/givpoly1factor.inl
 include/givaro/givpoly1gcd.inl
 include/givaro/givpoly1io.inl
 include/givaro/givpoly1kara.inl
+include/givaro/givpoly1midmul.inl
 include/givaro/givpoly1misc.inl
 include/givaro/givpoly1muldiv.inl
 include/givaro/givpoly1padic.h
@@ -226,6 +226,7 @@ include/recint/rutools.h
 lib/libgivaro.a
 lib/libgivaro.so
 lib/libgivaro.so.9
-lib/libgivaro.so.9.2.0
+lib/libgivaro.so.9.2.1
 libdata/pkgconfig/givaro.pc
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/givaro.html
 %%DATADIR%%/givaro-makefile

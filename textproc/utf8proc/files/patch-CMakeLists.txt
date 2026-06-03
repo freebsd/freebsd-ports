@@ -1,11 +1,13 @@
---- CMakeLists.txt.orig	2021-12-17 21:31:08 UTC
+--- CMakeLists.txt.orig	2025-11-15 10:14:38 UTC
 +++ CMakeLists.txt
-@@ -62,7 +62,7 @@ if (UTF8PROC_INSTALL)
-     RUNTIME DESTINATION "${CMAKE_INSTALL_FULL_BINDIR}"
-   )
-   configure_file(libutf8proc.pc.cmakein libutf8proc.pc @ONLY)
--  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libutf8proc.pc" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig")
-+  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libutf8proc.pc" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}data/pkgconfig")
- endif()
- 
- if(UTF8PROC_ENABLE_TESTING)
+@@ -86,8 +86,8 @@ if(UTF8PROC_ENABLE_TESTING)
+   enable_testing()
+   file(MAKE_DIRECTORY data)
+   set(UNICODE_VERSION 17.0.0)
+-  file(DOWNLOAD https://www.unicode.org/Public/${UNICODE_VERSION}/ucd/NormalizationTest.txt ${CMAKE_BINARY_DIR}/data/NormalizationTest.txt SHOW_PROGRESS)
+-  file(DOWNLOAD https://www.unicode.org/Public/${UNICODE_VERSION}/ucd/auxiliary/GraphemeBreakTest.txt ${CMAKE_BINARY_DIR}/data/GraphemeBreakTest.txt SHOW_PROGRESS)
++#  file(DOWNLOAD https://www.unicode.org/Public/${UNICODE_VERSION}/ucd/NormalizationTest.txt ${CMAKE_BINARY_DIR}/data/NormalizationTest.txt SHOW_PROGRESS)
++#  file(DOWNLOAD https://www.unicode.org/Public/${UNICODE_VERSION}/ucd/auxiliary/GraphemeBreakTest.txt ${CMAKE_BINARY_DIR}/data/GraphemeBreakTest.txt SHOW_PROGRESS)
+   add_executable(case test/tests.h test/tests.c utf8proc.h test/case.c)
+   target_link_libraries(case utf8proc)
+   add_executable(custom test/tests.h test/tests.c utf8proc.h test/custom.c)

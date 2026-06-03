@@ -1,5 +1,6 @@
 PORTNAME=	ob-rust
 PORTVERSION=	g20220824
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	pat@patmaddox.com
@@ -12,7 +13,6 @@ RUN_DEPENDS=	${PREFIX}/${EMACS_SITE_LISPDIR}/rust-mode.el:devel/rust-mode \
 		rust-script:devel/rust-script
 
 USES=			emacs
-EMACS_NO_DEPENDS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	micanzhang

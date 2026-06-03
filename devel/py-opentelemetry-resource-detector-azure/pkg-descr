@@ -1,0 +1,5 @@
+This library contains OpenTelemetry Resource Detectors for the following Azure
+resources:
+- Azure App Service
+- Azure Virtual Machines
+- Azure Functions (Experimental)

@@ -1,6 +1,5 @@
 PORTNAME=	endless-sky
-PORTVERSION=	0.10.10
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -15,17 +14,19 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmad.so:audio/libmad \
-		libuuid.so:misc/libuuid
+		libuuid.so:misc/libuuid \
+		libminizip.so:archivers/minizip \
+		libavif.so:graphics/libavif \
+		libFLAC++.so:audio/flac
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c++11-lang gl jpeg openal sdl
+USES=		cmake compiler:c++11-lang gl jpeg openal pkgconfig sdl
 USE_SDL=	sdl2
 USE_GL=		gl glew
-CMAKE_OFF=	ES_USE_VCPKG CMAKE_CXX_SCAN_FOR_MODULES
+CMAKE_OFF=	ES_USE_VCPKG \
+		CMAKE_CXX_SCAN_FOR_MODULES
 CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR="${DOCSDIR}"
-# https://github.com/endless-sky/endless-sky/issues/10714#issuecomment-2448722018
-TEST_ENV=	ASAN_OPTIONS=detect_container_overflow=0
 
 LDFLAGS_i386=	-Wl,-znotext
 

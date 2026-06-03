@@ -1,16 +1,14 @@
---- core/Common/3dParty/icu/icu.pri.orig	2021-09-30 12:13:32 UTC
+--- core/Common/3dParty/icu/icu.pri.orig	2025-10-13 15:33:25 UTC
 +++ core/Common/3dParty/icu/icu.pri
-@@ -8,6 +8,13 @@ core_windows {
-     }
- 
-     LIBS        += -L$$PWD/$$CORE_BUILDS_PLATFORM_PREFIX/build -licuuc
-+}
-+
-+core_freebsd {
-+    INCLUDEPATH += %%LOCALBASE%%/include
-+
-+    LIBS        += %%LOCALBASE%%/lib/libicuuc.so
-+    LIBS        += %%LOCALBASE%%/lib/libicudata.so
+@@ -25,6 +25,11 @@
+     LIBS        += $$PWD/$$CORE_BUILDS_PLATFORM_PREFIX/build/libicudata.so.$$ICU_MAJOR_VER
  }
  
- core_linux {
++core_freebsd {
++    INCLUDEPATH += %%LOCALBASE%%/include
++    LIBS        += -L%%LOCALBASE%%/lib -licudata -licuuc
++}
++
+ core_mac {
+     INCLUDEPATH += $$PWD/$$CORE_BUILDS_PLATFORM_PREFIX/build/include
+ 

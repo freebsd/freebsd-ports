@@ -26,6 +26,8 @@ MAKE_ENV=	HOST_CC=${CC}
 
 CONFLICTS=	zaptel
 
+PIE_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g'\
 		${WRKSRC}/dahdi_cfg.c ${WRKSRC}/fxotune.c\

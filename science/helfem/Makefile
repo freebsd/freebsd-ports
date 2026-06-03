@@ -1,10 +1,7 @@
 PORTNAME=	helfem
-DISTVERSION=	g20210912
-PORTREVISION=	10
+DISTVERSION=	g20251026
+PORTREVISION=	2
 CATEGORIES=	science # chemistry
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	4c0196c3ef3f254a22030eda787105c8a48df919.patch:-p1 # https://github.com/susilehtola/HelFEM/pull/7
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite element methods for electronic structure calculations
@@ -20,11 +17,12 @@ LIB_DEPENDS=	libarmadillo.so:math/armadillo \
 		libxc.so:science/libxc
 
 USES=		cmake fortran
+USE_CXXSTD=	c++14
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
 GH_PROJECT=	HelFEM
-GH_TAGNAME=	21461e9
+GH_TAGNAME=	ca3fa54
 
 CMAKE_ON=	HELFEM_FIND_DEPS BUILD_SHARED_LIBS
 

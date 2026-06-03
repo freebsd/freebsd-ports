@@ -1,5 +1,5 @@
 PORTNAME=	lupa
-PORTVERSION=	2.5
+PORTVERSION=	2.8
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI \
 		https://github.com/scoder/lupa/releases/download/lupa-${PORTVERSION}/
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		lua pkgconfig python
-USE_PYTHON=	autoplist concurrent cython3 pep517 unittest
+USE_PYTHON=	autoplist concurrent cython pep517 unittest
 
 MAKE_ARGS=	--no-bundle --with-cython --with-lua-checks
 TEST_ARGS=	lupa.tests.test

@@ -1,0 +1,11 @@
+--- configure.ac.orig	2026-04-19 08:40:17 UTC
++++ configure.ac
+@@ -642,7 +642,7 @@ if test x$use_curl = xtrue; then
+     PKG_CHECK_MODULES([LIBCURL], [libcurl >= 7],
+     AC_DEFINE(LIBCURL_PROTOCOL_HTTP, 1, [Define if you have libcurl and it supports http]) dnl not technically accurate... but we are using that define in the source.
+     CPPFLAGS="$CPPFLAGS $LIBCURL_CFLAGS"
+-    LIBS=$"$LIBS $LIBCURL_LIBS",
++    LIBS="$LIBS $LIBCURL_LIBS",
+     AC_MSG_ERROR([libcurl not found. Either provide it or disable it (with `configure --disable-curl`)])
+     )
+ fi

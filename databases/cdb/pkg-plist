@@ -1,3 +1,10 @@
+bin/cdb64dump
+bin/cdb64get
+bin/cdb64make
+bin/cdb64make-12
+bin/cdb64make-sv
+bin/cdb64stats
+bin/cdb64test
 bin/cdbdump
 bin/cdbget
 bin/cdbmake

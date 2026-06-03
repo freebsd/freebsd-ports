@@ -1,10 +1,12 @@
 PORTNAME=	video-trimmer
-DISTVERSIONPREFIX=	v
-DISTVERSION=	25.03
+DISTVERSION=	26.03
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
+MASTER_SITES=	https://gitlab.gnome.org/-/project/11135/uploads/6d29ff2c8ff5ba5ba676a03f2b8a0b64/
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Trim videos quickly without re-encoding and sacrificing video quality
 WWW=		https://gitlab.gnome.org/YaLTeR/video-trimmer
 
@@ -16,10 +18,7 @@ LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		cargo desktop-file-utils gettext-tools gnome gstreamer meson \
-		pkgconfig
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	YaLTeR
+		pkgconfig tar:xz
 USE_GNOME=	gtk40 libadwaita pango
 GLIB_SCHEMAS=	org.gnome.gitlab.YaLTeR.VideoTrimmer.gschema.xml
 USE_GSTREAMER=	good libav

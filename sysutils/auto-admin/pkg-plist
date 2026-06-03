@@ -54,6 +54,7 @@ bin/auto-ssh-reverse-authorize
 bin/auto-update-manager
 bin/auto-update-pkgsrc
 bin/auto-using-dreckly
+bin/auto-using-pkgbase
 bin/auto-using-pkgsrc
 bin/auto-wacom-map-display
 sbin/auto-add-fdesc-mount
@@ -76,6 +77,7 @@ sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
+sbin/auto-chromium+widevine-install
 sbin/auto-clean-disk
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
@@ -122,6 +124,7 @@ sbin/auto-ldap-client-setup
 sbin/auto-ldap-lookup
 sbin/auto-lock-local-pw
 sbin/auto-lock-user
+sbin/auto-ly-enable
 sbin/auto-mark-install-from-source
 sbin/auto-mark-package-critical
 sbin/auto-mount-any
@@ -151,6 +154,7 @@ sbin/auto-restore-user
 sbin/auto-root-check
 sbin/auto-secure-directory
 sbin/auto-security-manager
+sbin/auto-select-sound-device
 sbin/auto-service-enabled
 sbin/auto-services-manager
 sbin/auto-set-conf-var
@@ -188,8 +192,11 @@ sbin/auto-xdm-toggle
 share/man/man8/auto-add-swap.8.gz
 share/man/man8/auto-admin.8.gz
 share/man/man8/auto-change-login-class.8.gz
+share/man/man8/auto-chromium+widevine-install.1.gz
 share/man/man8/auto-image2dev.8.gz
+share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
+share/man/man8/auto-using-pkgbase.8.gz

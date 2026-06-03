@@ -1,7 +1,7 @@
---- edfbrowser.pro.orig	2022-06-20 06:49:59 UTC
+--- edfbrowser.pro.orig	2025-09-08 04:14:01 UTC
 +++ edfbrowser.pro
-@@ -284,35 +284,35 @@ win32 {
- QMAKE_CXXFLAGS += -Wextra -Wshadow -Wformat -Wformat-nonliteral -Wformat-security -Wtype-limits -Wfatal-errors -Wdeprecated-declarations
+@@ -320,35 +320,35 @@ unix {
+ }
  
  unix {
 -target.path = /usr/bin
@@ -44,7 +44,7 @@
  mime.files += install/edfbrowser.xml
  INSTALLS += mime
  }
-@@ -323,10 +323,10 @@ mac {
+@@ -359,10 +359,10 @@ mac {
   QMAKE_APPLICATION_BUNDLE_NAME = EDFbrowser
   QMAKE_TARGET_BUNDLE_PREFIX = net.teuniz
   icns.target = edf.icns

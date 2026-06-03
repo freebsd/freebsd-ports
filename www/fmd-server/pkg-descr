@@ -1,0 +1,15 @@
+FMD ("Find My Device") web server written in Go
+Privacy-preserving mobile device location
+
+FMD allows you to locate and remotely control your Android device.
+This is useful if you have lost or misplaced it. FMD is decentralised, and
+users remain in full control of their data.
+
+With FMD, you can send commands to your phone: to locate it via GPS, to locate
+it via nearby cell towers, to take a picture, to lock it, to let it ring, or to
+factory-reset it. Commands can be sent over multiple transport channels: over
+SMS, over third-party messaging apps like Signal or Matrix (that post
+a notification to the Android notification tray), or over the "FMD Server"
+(a self-hostable server providing a web interface to control your device).
+
+For full self-hosted mode, use toghether with sysutils/go-ntfy

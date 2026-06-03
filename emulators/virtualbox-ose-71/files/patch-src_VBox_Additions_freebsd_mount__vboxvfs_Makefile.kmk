@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk.orig	2025-05-11 03:54:13 UTC
+--- src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk.orig	2025-10-24 13:49:31 UTC
 +++ src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk
 @@ -0,0 +1,28 @@
 +# $Id: Makefile.kmk $
@@ -18,7 +18,7 @@
 +CFLAGS+=-I$(MOUNT)
 +
 +PROGRAMS                += mount_vboxvfs
-+mount_vboxvfs_TEMPLATE    = NewVBoxGuestR3Exe
++mount_vboxvfs_TEMPLATE    = VBoxGuestR3Exe
 +mount_vboxvfs_SOURCES     = mount_vboxvfs.c
 +
 +ifdef HAVE_MNTOPTS_IN_LIBUTIL

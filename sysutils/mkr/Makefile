@@ -1,6 +1,6 @@
 PORTNAME=	mkr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.61.0
+DISTVERSION=	0.64.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -11,13 +11,12 @@ WWW=		https://github.com/mackerelio/mkr
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/mackerelio/mkr
 GO_BUILDFLAGS=	-ldflags="-s -w"
 
 PLIST_FILES=	bin/${PORTNAME}
-
 PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS

@@ -1,0 +1,4 @@
+Fully DBI-compliant C++ interface to PostgreSQL using the cpp11
+package. This is the modern replacement for RPostgreSQL, providing
+better performance, more complete DBI support, and active maintenance
+by the r-dbi team.

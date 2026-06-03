@@ -1,10 +1,10 @@
 PORTNAME?=	openexr
-PORTVERSION?=	3.3.5 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
+DISTVERSION?=	3.4.12 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
 MASTER_SITES=	https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/v1.0/:testimages \
-		https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
+		https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${DISTVERSION}/:DEFAULT \
 		LOCAL/mandree/openexr/:DEFAULT \
 		LOCAL/mandree/openexr/:testimages
 DISTFILES=	${EXTRACT_ONLY}:DEFAULT
@@ -26,7 +26,7 @@ DISTFILES+=	v2/LeftView/Balls.exr:testimages
 DISTFILES+=	v2/Stereo/Trunks.exr:testimages
 .endif
 DIST_SUBDIR=	openexr # hardcode - not using ${PORTNAME} - so we can share the distdir with openexr-website-docs, avoiding double download of ...
-EXTRACT_ONLY=	openexr-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	openexr-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -34,15 +34,20 @@ WWW=		https://www.openexr.com/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS?=	help2man:misc/help2man
+BUILD_DEPENDS?=	help2man:misc/help2man \
+		openjph>=0.23.0:graphics/openjph
 # exact libImath version required to avoid hard-to-debug issues
-LIB_DEPENDS?=	libImath-3_1.so.29:math/Imath \
-		libdeflate.so:archivers/libdeflate
+# but this is due to Imath and OpenEXR being close in terms of their
+# release engineering, no other port should version pin Imath
+# or OpenEXR without extremely good reason
+LIB_DEPENDS?=	libImath-3_2.so.30:math/Imath \
+		libdeflate.so:archivers/libdeflate \
+		libopenjph.so:graphics/openjph
 
 USES?=		cmake:testing compiler:c++14-lang cpe pathfix pkgconfig
 
 #USE_GITHUB=	yes
-#GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
+#GH_TUPLE=	AcademySoftwareFoundation:openexr:v${DISTVERSION}
 
 USE_LDCONFIG=	yes
 
@@ -58,13 +63,14 @@ CMAKE_TESTING_ON=	BUILD_TESTING \
 			OPENEXR_TEST_PYTHON \
 			OPENEXR_TEST_TOOLS
 
-CPPFLAGS+=	-I.
-# must be linked with -l{thr|pthread} explicitly
-LDFLAGS+=	-lpthread
+TEST_ENV+=	CTEST_OUTPUT_ON_FAILURE=TRUE
 
-_MAJORVER=	3_3
-_VER=		32
-_REL=		${PORTVERSION}
+CPPFLAGS+=	-I.
+LDFLAGS+=	-pthread
+
+_MAJORVER=	3_4
+_VER=		33
+_REL=		${PORTVERSION:C/\.r.*//}
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
 		VER=${_VER} \
 		REL=${_REL}
@@ -80,6 +86,15 @@ DOCS_CMAKE_BOOL=OPENEXR_INSTALL_DOCS INSTALL_DOCS
 _DOCSRCDIR1=	${WRKSRC}
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
+
+.include <bsd.port.options.mk>
+
+# use conditional i386-specific lines in main pkg-plist file:
+.if ${ARCH} != i386
+PLIST_SUB+=	i386="@comment "
+.else
+PLIST_SUB+=	i386=""
+.endif
 
 # too many reports about compilation failures, so
 # sanity check we are using the same C++ standard library

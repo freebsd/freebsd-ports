@@ -1,3 +1,4 @@
+bin/kfr_src
 include/kfr/all.hpp
 include/kfr/base.hpp
 include/kfr/base/basic_expressions.hpp

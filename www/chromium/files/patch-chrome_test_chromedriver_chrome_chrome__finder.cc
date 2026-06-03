@@ -1,6 +1,6 @@
---- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2026-04-09 06:05:42 UTC
 +++ chrome/test/chromedriver/chrome/chrome_finder.cc
-@@ -59,7 +59,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* l
+@@ -58,7 +58,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* l
          installation_locations[i].Append(L"Chromium\\Application"));
    }
  }
@@ -9,7 +9,7 @@
  void GetApplicationDirs(std::vector<base::FilePath>* locations) {
    // TODO: Respect users' PATH variables.
    // Until then, we use an approximation of the most common defaults.
-@@ -126,7 +126,7 @@ std::vector<base::FilePath> GetChromeProgramNames() {
+@@ -125,7 +125,7 @@ std::vector<base::FilePath> GetChromeProgramNames() {
              chrome::kGoogleChromeForTestingBrowserProcessExecutablePath),
          base::FilePath(chrome::kGoogleChromeBrowserProcessExecutablePath),
          base::FilePath(chrome::kChromiumBrowserProcessExecutablePath),
@@ -18,7 +18,7 @@
      base::FilePath(chrome::kBrowserProcessExecutablePath),
          base::FilePath("chrome"),  // Chrome for Testing or Google Chrome
          base::FilePath("google-chrome"), base::FilePath("chromium"),
-@@ -142,7 +142,7 @@ std::vector<base::FilePath> GetHeadlessShellProgramNam
+@@ -141,7 +141,7 @@ std::vector<base::FilePath> GetHeadlessShellProgramNam
    return {
  #if BUILDFLAG(IS_WIN)
      base::FilePath(FILE_PATH_LITERAL("chrome-headless-shell.exe")),

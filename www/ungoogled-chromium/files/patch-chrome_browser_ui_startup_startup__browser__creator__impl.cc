@@ -1,15 +1,42 @@
---- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator_impl.cc
-@@ -76,7 +76,7 @@
- #include "components/app_restore/full_restore_utils.h"
+@@ -68,7 +68,7 @@
+ #include "content/public/browser/storage_partition.h"
+ #include "content/public/common/content_switches.h"
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/display/screen.h"
+ #endif
+ 
+@@ -90,7 +90,7 @@
+ #include "chrome/browser/ui/browser_window/public/profile_browser_collection.h"
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/search_integrity/search_integrity.h"
+ #include "chrome/browser/search_integrity/search_integrity_factory.h"
  #include "chrome/browser/ui/webui/whats_new/whats_new_fetcher.h"
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+@@ -159,7 +159,7 @@ Browser* GetExistingBrowserForOpenBehavior(
+       BrowserCollection::Order::kActivation);
+ #endif
  
-@@ -208,7 +208,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   const bool match_original_profiles =
+       process_startup == chrome::startup::IsProcessStartup::kYes;
+   display::Screen* const screen = display::Screen::Get();
+@@ -246,7 +246,7 @@ void StartupBrowserCreatorImpl::Launch(
+   DCHECK(profile);
+   profile_ = profile;
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Check for DSE integrity if flag is enabled.
+   if (base::FeatureList::IsEnabled(features::kDseIntegrity)) {
+     if (auto* search_integrity_service =
+@@ -317,7 +317,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
      // at the state of the MessageLoop.
      Browser::CreateParams params = Browser::CreateParams(profile_, false);
      params.creation_source = Browser::CreationSource::kStartupCreator;
@@ -18,7 +45,7 @@
      params.startup_id =
          command_line_->GetSwitchValueASCII("desktop-startup-id");
  #endif
-@@ -238,7 +238,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
+@@ -347,7 +347,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
        continue;
      }
  

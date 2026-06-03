@@ -1,5 +1,5 @@
 PORTNAME=	clearlooks-phenix
-PORTVERSION=	7.0.1
+PORTVERSION=	7.1
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 

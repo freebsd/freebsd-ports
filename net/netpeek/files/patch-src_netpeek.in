@@ -1,0 +1,13 @@
+--- src/netpeek.in.orig	2025-08-30 12:38:25 UTC
++++ src/netpeek.in
+@@ -31,8 +31,8 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
+ 
+ sys.path.insert(1, pkgdatadir)
+ signal.signal(signal.SIGINT, signal.SIG_DFL)
+-locale.bindtextdomain('netpeek', localedir)
+-locale.textdomain('netpeek')
++gettext.bindtextdomain('netpeek', localedir)
++gettext.textdomain('netpeek')
+ gettext.install('netpeek', localedir)
+ 
+ if __name__ == '__main__':

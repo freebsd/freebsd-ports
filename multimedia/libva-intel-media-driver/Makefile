@@ -1,32 +1,28 @@
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	23.4.3
-PORTREVISION=	1
+DISTVERSION=	26.1.5
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	d54347296.patch:-p1 #https://github.com/intel/media-driver/pull/1785
+PATCHFILES=	d54347296.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	7e26e598e.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	6e1f5e635.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	7485cf796.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	3297302d8.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	0f3012331.patch:-p1 #https://github.com/intel/media-driver/pull/1785
-PATCHFILES+=	695b56fe0.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	be6bd904b.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	daaa7172e.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	59c560101.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	2933bb51e.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	4ec9b2bd6.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	17d384458.patch:-p1 #https://github.com/intel/media-driver/pull/1785
-PATCHFILES+=	abb792cad.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	7d261abf2.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	67961a267.patch:-p1 #https://github.com/intel/media-driver/pull/1785
-PATCHFILES+= 	4461a2703.patch:-p1 #https://github.com/intel/media-driver/commit/4461a2703eae517f678ed8d8270ff14f356b9b19
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tmp386@live.com
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
-WWW=		https://01.org/intel-media-for-linux
+WWW=		https://github.com/intel/media-driver/
 
 LICENSE=	MIT BSD3CLAUSE
 LICENSE_COMB=	multi
@@ -35,8 +31,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
-BUILD_DEPENDS=	gmmlib>=19.3.1:multimedia/gmmlib \
-		libva>=2.7.0:multimedia/libva
+BUILD_DEPENDS=	gmmlib>=22.10.0:multimedia/gmmlib \
+		libva>=2.23.0:multimedia/libva
 LIB_DEPENDS=	libigdgmm.so:multimedia/gmmlib \
 		libva.so:multimedia/libva
 
@@ -63,7 +59,7 @@ post-patch:
 		${WRKSRC}/media_driver/cmake/linux/media_compile_flags_linux.cmake
 
 post-patch-X11-off:
-	@${REINPLACE_CMD} -i .nox11 '/find_package.*X11/d' \
+	@${REINPLACE_CMD} '/find_package.*X11/d' \
 		${WRKSRC}/media_driver/media_top_cmake.cmake
 
 .include <bsd.port.mk>

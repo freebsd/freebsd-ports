@@ -16,4 +16,13 @@ ensure that fiche hands out URLs prefixed with https://:
 sysrc fiche_flags="-S"
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.9.1_4"
+  message: <<EOM
+The service was updated to drop privileges to the user specified in $fiche_user
+(defaults to fiche) as intended, instead of running as root.
+You might need to change owner of the log file and $fiche_output,
+so that fiche can write those.
+EOM
+}
 ]

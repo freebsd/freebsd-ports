@@ -1,0 +1,215 @@
+PORTNAME=	py-spy # despite its name this is NOT a Python package, but a Rust-based profiler for Python program
+PORTVERSION=	0.4.2
+PORTREVISION=	1
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITE_PYPI}
+MASTER_SITE_SUBDIR=	source/p/py_spy
+DISTFILES=	${PORTNAME:S/-/_/}-${DISTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Sampling profiler for Python programs
+WWW=		https://github.com/benfred/py-spy
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	fails to compile: attempt to compute `16_usize - 20_usize`, which would overflow
+
+USES=		cargo llvm
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}
+
+CARGO_CRATES=	addr2line-0.26.1 \
+		adler2-2.0.1 \
+		ahash-0.8.12 \
+		aho-corasick-1.1.4 \
+		allocator-api2-0.2.21 \
+		android_system_properties-0.1.5 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		anyhow-1.0.102 \
+		arrayvec-0.7.6 \
+		autocfg-1.5.0 \
+		bindgen-0.70.1 \
+		bindgen-0.72.1 \
+		bitflags-2.11.1 \
+		block2-0.6.2 \
+		bumpalo-3.20.2 \
+		bytemuck-1.25.0 \
+		cc-1.2.60 \
+		cexpr-0.6.0 \
+		cfg-if-1.0.4 \
+		cfg_aliases-0.2.1 \
+		chrono-0.4.44 \
+		clang-sys-1.8.1 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_complete-4.6.2 \
+		clap_derive-4.6.1 \
+		clap_lex-1.1.0 \
+		colorchoice-1.0.5 \
+		console-0.16.3 \
+		core-foundation-sys-0.8.7 \
+		cpp_demangle-0.5.1 \
+		crc32fast-1.5.0 \
+		crossbeam-channel-0.5.15 \
+		crossbeam-utils-0.8.21 \
+		ctrlc-3.5.2 \
+		dashmap-6.1.0 \
+		dispatch2-0.3.1 \
+		either-1.15.0 \
+		encode_unicode-1.0.0 \
+		env_filter-1.0.1 \
+		env_logger-0.11.10 \
+		equivalent-1.0.2 \
+		errno-0.3.14 \
+		fallible-iterator-0.3.0 \
+		fastrand-2.4.1 \
+		find-msvc-tools-0.1.9 \
+		flate2-1.1.9 \
+		foldhash-0.1.5 \
+		foldhash-0.2.0 \
+		getrandom-0.3.4 \
+		getrandom-0.4.2 \
+		gimli-0.33.0 \
+		glob-0.3.3 \
+		goblin-0.10.5 \
+		hashbrown-0.14.5 \
+		hashbrown-0.15.5 \
+		hashbrown-0.17.0 \
+		heck-0.5.0 \
+		iana-time-zone-0.1.65 \
+		iana-time-zone-haiku-0.1.2 \
+		id-arena-2.3.0 \
+		indexmap-2.14.0 \
+		indicatif-0.18.4 \
+		inferno-0.12.6 \
+		is_terminal_polyfill-1.70.2 \
+		itertools-0.13.0 \
+		itoa-1.0.18 \
+		jiff-0.2.23 \
+		jiff-static-0.2.23 \
+		js-sys-0.3.95 \
+		lazy_static-1.5.0 \
+		leb128fmt-0.1.0 \
+		libc-0.2.185 \
+		libloading-0.8.9 \
+		libm-0.2.16 \
+		libproc-0.14.11 \
+		linux-raw-sys-0.12.1 \
+		lock_api-0.4.14 \
+		log-0.4.29 \
+		lru-0.17.0 \
+		mach-0.3.2 \
+		mach2-0.4.3 \
+		mach_o_sys-0.1.1 \
+		memchr-2.8.0 \
+		memmap2-0.9.10 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.8.9 \
+		nix-0.31.2 \
+		nom-7.1.3 \
+		num-format-0.4.4 \
+		num-traits-0.2.19 \
+		objc2-0.6.4 \
+		objc2-encode-4.1.0 \
+		object-0.39.1 \
+		once_cell-1.21.4 \
+		once_cell_polyfill-1.70.2 \
+		page_size-0.6.0 \
+		parking_lot_core-0.9.12 \
+		plain-0.2.3 \
+		portable-atomic-1.13.1 \
+		portable-atomic-util-0.2.7 \
+		ppv-lite86-0.2.21 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.106 \
+		proc-maps-0.4.0 \
+		py-spy-testdata-0.1.0 \
+		quick-xml-0.39.2 \
+		quote-1.0.45 \
+		r-efi-5.3.0 \
+		r-efi-6.0.0 \
+		rand-0.9.4 \
+		rand_chacha-0.9.0 \
+		rand_core-0.9.5 \
+		rand_distr-0.5.1 \
+		read-process-memory-0.1.6 \
+		redox_syscall-0.5.18 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		remoteprocess-0.5.2 \
+		rgb-0.8.53 \
+		rustc-demangle-0.1.27 \
+		rustc-hash-1.1.0 \
+		rustc-hash-2.1.2 \
+		rustix-1.1.4 \
+		rustversion-1.0.22 \
+		ruzstd-0.8.2 \
+		scopeguard-1.2.0 \
+		scroll-0.13.0 \
+		scroll_derive-0.13.1 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
+		shlex-1.3.0 \
+		simd-adler32-0.3.9 \
+		smallvec-1.15.1 \
+		stable_deref_trait-1.2.1 \
+		str_stack-0.1.0 \
+		strsim-0.11.1 \
+		syn-2.0.117 \
+		tempfile-3.27.0 \
+		terminal_size-0.4.4 \
+		termios-0.3.3 \
+		twox-hash-2.1.2 \
+		typed-arena-2.0.2 \
+		unicode-ident-1.0.24 \
+		unicode-width-0.2.2 \
+		unicode-xid-0.2.6 \
+		unit-prefix-0.5.2 \
+		utf8parse-0.2.2 \
+		version_check-0.9.5 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-bindgen-0.2.118 \
+		wasm-bindgen-macro-0.2.118 \
+		wasm-bindgen-macro-support-0.2.118 \
+		wasm-bindgen-shared-0.2.118 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		web-time-1.1.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.62.2 \
+		windows-implement-0.60.2 \
+		windows-interface-0.59.3 \
+		windows-link-0.2.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
+		windows-sys-0.61.2 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		zerocopy-0.8.48 \
+		zerocopy-derive-0.8.48 \
+		zmij-1.0.21
+
+MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib \
+		LLVM_CONFIG_PATH=${LLVM_CONFIG}
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

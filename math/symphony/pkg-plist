@@ -6,10 +6,10 @@ include/coin/SymWarmStart.hpp
 include/coin/symphony.h
 lib/libOsiSym.so
 lib/libOsiSym.so.3
-lib/libOsiSym.so.3.7.2
+lib/libOsiSym.so.3.7.3
 lib/libSym.so
 lib/libSym.so.3
-lib/libSym.so.3.7.2
+lib/libSym.so.3.7.3
 libdata/pkgconfig/osi-sym.pc
 libdata/pkgconfig/symphony-app.pc
 libdata/pkgconfig/symphony.pc

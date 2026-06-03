@@ -1,2 +1,7 @@
-Deep Learning library for Python. Convnets, recurrent neural networks, and
-more. Runs on Theano and TensorFlow.
+Keras is a high-level, multi-backend deep learning API that allows you
+to run the same code on JAX, PyTorch, or TensorFlow.
+
+It is designed for human beings, not machines. Keras follows best
+practices for reducing cognitive load: it offers consistent & simple
+APIs, it minimizes the number of user actions required for common use
+cases, and it provides clear & actionable error messages.

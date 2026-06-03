@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.4
 CATEGORIES=	japanese
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Aozora Bunko Text Viewer
 WWW=		https://azelpg.gitlab.io/azsky2/soft/aobook.html
 

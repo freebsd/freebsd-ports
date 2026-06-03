@@ -1,5 +1,5 @@
 PORTNAME=	tela-icon-theme
-DISTVERSION=	2023-06-25
+DISTVERSION=	2025-02-10
 CATEGORIES=	x11-themes
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -11,12 +11,12 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	hicolor-icon-theme>0:misc/hicolor-icon-theme \
 		adwaita-icon-theme>0:x11-themes/adwaita-icon-theme
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	vinceliuice
 GH_PROJECT=	${PORTNAME:C/t/T/1}
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 ICONSDIR=	${PREFIX}/share/icons
 THEME_NAME=	Tela

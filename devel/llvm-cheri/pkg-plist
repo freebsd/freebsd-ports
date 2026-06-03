@@ -71,7 +71,6 @@ bin/llvm-xray%%COMMAND_SUFFIX%%
 bin/nvptx-arch%%COMMAND_SUFFIX%%
 bin/opt%%COMMAND_SUFFIX%%
 bin/sancov%%COMMAND_SUFFIX%%
-bin/split-file%%COMMAND_SUFFIX%%
 %%CLANG%%bin/analyze-build%%COMMAND_SUFFIX%%
 %%CLANG%%bin/c-index-test%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang%%COMMAND_SUFFIX%%
@@ -80,6 +79,7 @@ bin/split-file%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-cpp%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-extdef-mapping%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-format%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-include-cleaner%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-linker-wrapper%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-offload-packager%%COMMAND_SUFFIX%%

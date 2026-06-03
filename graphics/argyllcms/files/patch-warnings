@@ -1,0 +1,275 @@
+--- render/render.c	2026-02-09 17:25:30.000000000 -0500
++++ render/render.c	2026-04-25 21:57:54.964993000 -0400
+@@ -317,9 +317,9 @@
+ #ifdef RENDER_TIFF
+ 	TIFF *wh = NULL;
+-	uint16 samplesperpixel = 0, bitspersample = 0;
+-	uint16 extrasamples = 0;	/* Extra "alpha" samples */
+-	uint16 extrainfo[MXCH2D];	/* Info about extra samples */
+-	uint16 photometric = 0;
+-	uint16 inkset = 0xffff;
++	uint16_t samplesperpixel = 0, bitspersample = 0;
++	uint16_t extrasamples = 0;	/* Extra "alpha" samples */
++	uint16_t extrainfo[MXCH2D];	/* Info about extra samples */
++	uint16_t photometric = 0;
++	uint16_t inkset = 0xffff;
+ 	char *inknames = NULL;
+ #endif
+--- ucmm/ucmm.c	2026-02-09 17:25:31.000000000 -0500
++++ ucmm/ucmm.c	2026-04-25 23:53:58.581849000 -0400
+@@ -438,5 +438,7 @@
+ 			if (ii > recno)		/* Track biggest, so we know what to create next */
+ 				recno = ii;
+-			if ((pp = jc_get_nth_elem(key, 3)) != NULL && strcmp(pp, mname) == 0 && type == jc_string && strcmp(data, mval) == 0) {
++			if ((pp = jc_get_nth_elem(key, 3)) != NULL &&
++			    strcmp(pp, mname) == 0 && type == jc_string &&
++			    strcmp((char *)data, mval) == 0) {
+ 				/* Found matching record */
+ 				free(pp);
+@@ -472,5 +474,5 @@
+ 				debug2((errout,"jcnf locate/get_key failed with error %d\n",ev));
+ 			}
+-			if ((xprofile = strdup(data)) == NULL) {
++			if ((xprofile = strdup((char *)data)) == NULL) {
+ 				debug2((errout,"jcnf get_key malloc failed\n"));
+ 			}
+@@ -481,6 +483,6 @@
+ 		sprintf(keyn1, "devices/display/%d/%s", recno, mname);
+ 		sprintf(keyn2, "devices/display/%d/ICC_PROFILE", recno);
+-		if ((ev = jc->set_key(jc, -1, keyn1, jc_string, mval, strlen(mval)+1, NULL)) != jc_ok
+-		 || (ev = jc->set_key(jc, -1, keyn2, jc_string, data_name, strlen(data_name)+1, NULL)) != jc_ok) {
++		if ((ev = jc->set_key(jc, -1, keyn1, jc_string, (unsigned char *)mval, strlen(mval)+1, NULL)) != jc_ok
++		 || (ev = jc->set_key(jc, -1, keyn2, jc_string, (unsigned char *)data_name, strlen(data_name)+1, NULL)) != jc_ok) {
+ 			debug2((errout,"jcnf set_key failed with error %d\n",ev));
+ 			free(mval);
+@@ -515,5 +517,5 @@
+ 				if (strcmp(pp,"ICC_PROFILE") != 0
+ 				 || type != jc_string
+-				 || strcmp(data, xprofile) != 0) {
++				 || strcmp((char *)data, xprofile) != 0) {
+ 					free(pp);
+ 					continue;
+@@ -698,5 +700,5 @@
+ 				 && strcmp(pp, mname) == 0
+ 				 && type == jc_string
+-				 && strcmp(data, mval) == 0) {
++				 && strcmp((char *)data, mval) == 0) {
+ 					/* Found matching record */
+ 					free(pp);
+@@ -729,5 +731,5 @@
+ 				return ucmm_access_config;
+ 			}
+-			if ((*pprofile = strdup(data)) == NULL) {
++			if ((*pprofile = strdup((char *)data)) == NULL) {
+ 				debug2((errout,"jcnf get_key malloc failed\n"));
+ 				jc->del(jc);
+@@ -766,5 +768,6 @@
+ 	int recno = -1;
+ 	int ix;
+-	ucmm_error ev = ucmm_ok;
++	ucmm_error uev;
++	jc_error ev;
+ 
+ 	if (edid != NULL)
+@@ -774,7 +777,7 @@
+ 
+ 	/* Locate the config record containing the config file entry. */
+-	if ((ev = ucmm_get_monitor_config(&dprof, &recno, &jc, edid, edid_len, display_name,
++	if ((uev = ucmm_get_monitor_config(&dprof, &recno, &jc, edid, edid_len, display_name,
+ 		                                                 jc_modify, scope)) != ucmm_ok) {
+-		return ev;
++		return uev;
+ 	}
+ 
+@@ -828,5 +831,5 @@
+ 		if (strcmp(pp,"ICC_PROFILE") != 0
+ 		 || type != jc_string
+-		 || strcmp(data, dprof) != 0) {
++		 || strcmp((char *)data, dprof) != 0) {
+ 			free(pp);
+ 			continue;
+--- xicc/tiffgamut.c	2026-02-09 17:25:22.000000000 -0500
++++ xicc/tiffgamut.c	2026-04-25 23:59:53.426553000 -0400
+@@ -329,6 +329,8 @@
+ 		case JCS_YCCK:
+ 			return "YCCK";
++		default:
++			snprintf(buf, sizeof(buf) - 1,
++			    "Unknown JPEG colorspace %d", cspace);
+ 	}
+-	sprintf(buf,"Unknown JPEG colorspace %d",cspace);
+ 	return buf;
+ }
+@@ -384,12 +386,12 @@
+ 	TIFF *rh = NULL;
+ 	int x, y, width, height;					/* Size of image */
+-	uint16 samplesperpixel, bitspersample;
+-	uint16 pconfig, photometric, pmtc;
++	uint16_t samplesperpixel, bitspersample;
++	uint16_t pconfig, photometric, pmtc;
+ 	tdata_t *inbuf;
+ 	int inbpix = 0;               					/* Number of pixels in jpeg in buf */
+ 	void (*cvt)(double *out, double *in) = NULL;	/* TIFF conversion function, NULL if none */
+ 	icColorSpaceSignature tcs = 0;				/* TIFF colorspace */
+-	uint16 extrasamples = 0;					/* Extra "alpha" samples */
+-	uint16 *extrainfo = NULL;					/* Info about extra samples */
++	uint16_t extrasamples = 0;					/* Extra "alpha" samples */
++	uint16_t *extrainfo = NULL;					/* Info about extra samples */
+ 	int sign_mask = 0;							/* Handling of encoding sign */
+ 
+--- xicc/tiffgmts.c	2026-02-09 17:25:22.000000000 -0500
++++ xicc/tiffgmts.c	2026-04-26 00:02:06.008046000 -0400
+@@ -314,13 +314,13 @@
+ 	TIFF *rh = NULL;
+ 	int x, y, width, height;					/* Size of image */
+-	uint16 samplesperpixel, bitspersample;
+-	uint16 pconfig, photometric, pmtc;
+-	uint16 resunits;
++	uint16_t samplesperpixel, bitspersample;
++	uint16_t pconfig, photometric, pmtc;
++	uint16_t resunits;
+ 	float resx, resy;
+ 	tdata_t *inbuf;
+ 	void (*cvt)(double *out, double *in);		/* TIFF conversion function, NULL if none */
+ 	icColorSpaceSignature tcs;					/* TIFF colorspace */
+-	uint16 extrasamples;						/* Extra "alpha" samples */
+-	uint16 *extrainfo;							/* Info about extra samples */
++	uint16_t extrasamples;						/* Extra "alpha" samples */
++	uint16_t *extrainfo;							/* Info about extra samples */
+ 	int sign_mask;								/* Handling of encoding sign */
+ 
+--- imdi/greytiff.c	2026-02-09 17:25:27.000000000 -0500
++++ imdi/greytiff.c	2026-04-26 00:04:18.213233000 -0400
+@@ -205,7 +205,7 @@
+ 	TIFF *rh = NULL, *wh = NULL;
+ 	int x, y, width, height;					/* Size of image */
+-	uint16 samplesperpixel, bitspersample;
+-	uint16 pconfig, photometric, pmtc;
+-	uint16 resunits;
++	uint16_t samplesperpixel, bitspersample;
++	uint16_t pconfig, photometric, pmtc;
++	uint16_t resunits;
+ 	float resx, resy;
+ 	tdata_t *inbuf, *outbuf, *checkbuf;
+--- imdi/cctiff.c	2026-02-09 17:25:26.000000000 -0500
++++ imdi/cctiff.c	2026-04-26 00:05:58.493232000 -0400
+@@ -351,5 +351,5 @@
+ int
+ ColorSpaceSignature2TiffPhotometric(
+-uint16 tags[10],				/* Pointer to return array, up to 10 */
++uint16_t tags[10],				/* Pointer to return array, up to 10 */
+ icColorSpaceSignature cspace	/* Input ICC colorspace */
+ ) {
+@@ -969,6 +969,8 @@
+ 		case JCS_YCCK:
+ 			return "YCCK";
++		default:
++			snprintf(buf, sizeof(buf) - 1,
++			    "Unknown JPEG colorspace %d", cspace);
+ 	}
+-	sprintf(buf,"Unknown JPEG colorspace %d",cspace);
+ 	return buf;
+ }
+@@ -1007,13 +1009,13 @@
+ 
+ 	int x, y, width, height;					/* Common size of image */
+-	uint16 bitspersample;						/* Bits per sample */
+-	uint16 resunits;
++	uint16_t bitspersample;						/* Bits per sample */
++	uint16_t resunits;
+ 	float resx, resy;
+-	uint16 pconfig;								/* Planar configuration */
++	uint16_t pconfig;								/* Planar configuration */
+ 
+-	uint16 rsamplesperpixel, wsamplesperpixel;	/* Channels per sample */
+-	uint16 rphotometric, wphotometric;			/* Photometrics */
+-	uint16 rextrasamples, wextrasamples;		/* Extra "alpha" samples */
+-	uint16 *rextrainfo, wextrainfo[MAX_CHAN];	/* Info about extra samples */
++	uint16_t rsamplesperpixel, wsamplesperpixel;	/* Channels per sample */
++	uint16_t rphotometric, wphotometric;			/* Photometrics */
++	uint16_t rextrasamples, wextrasamples;		/* Extra "alpha" samples */
++	uint16_t *rextrainfo, wextrainfo[MAX_CHAN];	/* Info about extra samples */
+ 	char *rdesc = NULL;							/* Existing description */
+ 	char *ddesc = "[ Color corrected by ArgyllCMS ]";	/* Default description */
+@@ -1691,5 +1693,5 @@
+ 		{
+ 			int no_pmtc;					/* Number of possible photometrics */
+-			uint16 pmtc[10];				/* Photometrics of output file */
++			uint16_t pmtc[10];				/* Photometrics of output file */
+ 			if ((no_pmtc = ColorSpaceSignature2TiffPhotometric(pmtc,
+ 			                                    last_colorspace)) == 0)
+--- target/filmtarg.c	2026-02-09 17:25:27.000000000 -0500
++++ target/filmtarg.c	2026-04-26 00:11:20.962318000 -0400
+@@ -194,7 +194,5 @@
+ 
+ int
+-main(argc,argv)
+-int argc;
+-char *argv[];
++main(int argc, char *argv[])
+ {
+ 	int fa,nfa;				/* current argument we're looking at */
+--- target/ifarp.c	2026-02-09 17:25:27.000000000 -0500
++++ target/ifarp.c	2026-04-26 00:12:58.354474000 -0400
+@@ -831,7 +831,5 @@
+ 
+ int
+-main(argc,argv)
+-int argc;
+-char *argv[];
++main(int argc, char *argv[])
+ {
+ 	int npoints = 500;
+--- target/ofps.c	2026-02-09 17:25:27.000000000 -0500
++++ target/ofps.c	2026-04-26 00:13:44.527466000 -0400
+@@ -8526,7 +8526,5 @@
+ 
+ int
+-main(argc,argv)
+-int argc;
+-char *argv[];
++main(int argc, char *argv[])
+ {
+ 	int npoints = 55;
+--- target/simplat.c	2026-02-09 17:25:27.000000000 -0500
++++ target/simplat.c	2026-04-26 00:15:13.359774000 -0400
+@@ -911,7 +911,5 @@
+ 
+ int
+-main(argc,argv)
+-int argc;
+-char *argv[];
++main(int argc, char *argv[])
+ {
+ 	int npoints = 50;
+--- target/simdlat.c	2026-02-09 17:25:27.000000000 -0500
++++ target/simdlat.c	2026-04-26 00:16:29.160795000 -0400
+@@ -879,7 +879,5 @@
+ 
+ int
+-main(argc,argv)
+-int argc;
+-char *argv[];
++main(int argc, char *argv[])
+ {
+ 	int npoints = 50;
+--- scanin/scanin.c	2026-02-09 17:25:28.000000000 -0500
++++ scanin/scanin.c	2026-04-26 00:17:29.075659000 -0400
+@@ -168,11 +168,11 @@
+ 
+ 	TIFF *rh = NULL, *wh = NULL;
+-	uint16 depth, bps;			/* Useful depth, bits per sample */
+-	uint16 tdepth;				/* Total depth including alpha */
+-	uint16 pconfig, photometric;
+-	uint16 rextrasamples;		/* Extra "alpha" samples */
+-	uint16 *rextrainfo;			/* Info about extra samples */
++	uint16_t depth, bps;			/* Useful depth, bits per sample */
++	uint16_t tdepth;				/* Total depth including alpha */
++	uint16_t pconfig, photometric;
++	uint16_t rextrasamples;		/* Extra "alpha" samples */
++	uint16_t *rextrainfo;			/* Info about extra samples */
+ 	int gotres = 0;
+-	uint16 resunits;
++	uint16_t resunits;
+ 	float resx, resy;
+ 

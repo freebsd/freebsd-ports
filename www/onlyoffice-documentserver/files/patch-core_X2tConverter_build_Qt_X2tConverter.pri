@@ -5,7 +5,7 @@
      LIBS += -lAdvapi32
  }
 +core_freebsd {
-+    LIBS += -liconv -lharfbuzz
++    LIBS += -L%%LOCALBASE%%/lib -liconv -lharfbuzz
 +    QMAKE_CXXFLAGS += -Wno-narrowing
 +}
  ########################################################

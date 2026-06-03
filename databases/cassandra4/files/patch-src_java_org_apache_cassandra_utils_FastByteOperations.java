@@ -1,6 +1,6 @@
---- src/java/org/apache/cassandra/utils/FastByteOperations.java.orig	2020-12-18 17:35:13 UTC
+--- src/java/org/apache/cassandra/utils/FastByteOperations.java.orig	2026-03-17 23:20:36 UTC
 +++ src/java/org/apache/cassandra/utils/FastByteOperations.java
-@@ -205,6 +205,20 @@ public class FastByteOperations
+@@ -210,6 +210,20 @@ public class FastByteOperations
  
          static final boolean BIG_ENDIAN = ByteOrder.nativeOrder().equals(ByteOrder.BIG_ENDIAN);
  
@@ -21,7 +21,7 @@
          public int compare(byte[] buffer1, int offset1, int length1, byte[] buffer2, int offset2, int length2)
          {
              return compareTo(buffer1, BYTE_ARRAY_BASE_OFFSET + offset1, length1,
-@@ -228,7 +242,7 @@ public class FastByteOperations
+@@ -233,7 +247,7 @@ public class FastByteOperations
              else
              {
                  obj1 = null;
@@ -30,7 +30,7 @@
              }
  
              return compareTo(obj1, offset1, length1, buffer2, BYTE_ARRAY_BASE_OFFSET + offset2, length2);
-@@ -249,7 +263,7 @@ public class FastByteOperations
+@@ -254,7 +268,7 @@ public class FastByteOperations
              if (src.hasArray())
                  System.arraycopy(src.array(), src.arrayOffset() + srcPosition, trg, trgPosition, length);
              else
@@ -39,7 +39,7 @@
          }
  
          public void copy(byte[] src, int srcPosition, ByteBuffer trg, int trgPosition, int length)
-@@ -272,7 +286,7 @@ public class FastByteOperations
+@@ -277,7 +291,7 @@ public class FastByteOperations
              else
              {
                  src = null;
@@ -48,7 +48,7 @@
              }
              copy(src, srcOffset + srcPosition, trgBuf, trgPosition, length);
          }
-@@ -282,7 +296,7 @@ public class FastByteOperations
+@@ -287,7 +301,7 @@ public class FastByteOperations
              if (trgBuf.hasArray())
                  copy(src, srcOffset, trgBuf.array(), trgBuf.arrayOffset() + trgPosition, length);
              else
@@ -57,7 +57,7 @@
          }
  
          public static void copy(Object src, long srcOffset, byte[] trg, int trgPosition, int length)
-@@ -290,7 +304,7 @@ public class FastByteOperations
+@@ -295,7 +309,7 @@ public class FastByteOperations
              if (length <= MIN_COPY_THRESHOLD)
              {
                  for (int i = 0 ; i < length ; i++)
@@ -66,7 +66,7 @@
              }
              else
              {
-@@ -329,7 +343,7 @@ public class FastByteOperations
+@@ -334,7 +348,7 @@ public class FastByteOperations
              else
              {
                  obj1 = null;
@@ -75,7 +75,7 @@
              }
              offset1 += buffer1.position();
              length1 = buffer1.remaining();
-@@ -352,7 +366,7 @@ public class FastByteOperations
+@@ -357,7 +371,7 @@ public class FastByteOperations
              else
              {
                  obj2 = null;
@@ -84,7 +84,7 @@
              }
              int length2 = limit - position;
              offset2 += position;
-@@ -385,8 +399,8 @@ public class FastByteOperations
+@@ -390,8 +404,8 @@ public class FastByteOperations
              int wordComparisons = minLength & ~7;
              for (int i = 0; i < wordComparisons ; i += Longs.BYTES)
              {
@@ -95,7 +95,7 @@
  
                  if (lw != rw)
                  {
-@@ -399,8 +413,8 @@ public class FastByteOperations
+@@ -404,8 +418,8 @@ public class FastByteOperations
  
              for (int i = wordComparisons ; i < minLength ; i++)
              {

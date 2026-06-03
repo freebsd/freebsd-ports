@@ -1,8 +1,11 @@
 bin/simage-config
 include/simage.h
+lib/cmake/simage-%%VERSION%%/simage-config-version.cmake
+lib/cmake/simage-%%VERSION%%/simage-config.cmake
+lib/cmake/simage-%%VERSION%%/simage-export-release.cmake
+lib/cmake/simage-%%VERSION%%/simage-export.cmake
 lib/libsimage.so
 lib/libsimage.so.20
-lib/libsimage.so.20.7.0
+lib/libsimage.so.20.8.4
 libdata/pkgconfig/simage.pc
 share/Coin/conf/simage-default.cfg
-share/aclocal/simage.m4

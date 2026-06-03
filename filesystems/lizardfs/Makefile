@@ -1,7 +1,7 @@
 PORTNAME=	lizardfs
 PORTVERSION=	3.12.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	25
+PORTREVISION=	28
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		spdlog>=1.4.2:devel/spdlog
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfmt.so:devel/libfmt
 
 USES=	cmake compiler:c11 fuse python shebangfix

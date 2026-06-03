@@ -10,7 +10,7 @@ WWW=		https://www.gnu.org/software/lightning/
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 mips powerpc powerpc64 powerpc64le powerpcspe riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le powerpcspe riscv64
 
 USES=		cpe libtool pathfix
 CPE_VENDOR=	gnu

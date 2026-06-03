@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Device/Modbus.pm
+%%SITE_PERL%%/Device/Modbus/ADU.pm
+%%SITE_PERL%%/Device/Modbus/Client.pm
+%%SITE_PERL%%/Device/Modbus/Exception.pm
+%%SITE_PERL%%/Device/Modbus/Request.pm
+%%SITE_PERL%%/Device/Modbus/Response.pm
+%%SITE_PERL%%/Device/Modbus/Server.pm
+%%SITE_PERL%%/Device/Modbus/Unit.pm
+%%SITE_PERL%%/Device/Modbus/Unit/Route.pm
+%%PERL5_MAN3%%/Device::Modbus.3.gz
+%%PERL5_MAN3%%/Device::Modbus::Client.3.gz
+%%PERL5_MAN3%%/Device::Modbus::Request.3.gz
+%%PERL5_MAN3%%/Device::Modbus::Server.3.gz

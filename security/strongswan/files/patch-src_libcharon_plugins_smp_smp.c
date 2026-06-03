@@ -1,15 +1,15 @@
---- src/libcharon/plugins/smp/smp.c.orig	2024-03-19 10:25:55 UTC
+--- src/libcharon/plugins/smp/smp.c.orig	2025-11-07 19:05:36 UTC
 +++ src/libcharon/plugins/smp/smp.c
-@@ -745,7 +745,7 @@ plugin_t *smp_plugin_create()
+@@ -743,7 +743,7 @@ PLUGIN_DEFINE(smp)
   */
- plugin_t *smp_plugin_create()
+ PLUGIN_DEFINE(smp)
  {
 -	struct sockaddr_un unix_addr = { AF_UNIX, IPSEC_PIDDIR "/charon.xml"};
 +	struct sockaddr_un unix_addr;
  	private_smp_t *this;
  	mode_t old;
  
-@@ -773,6 +773,11 @@ plugin_t *smp_plugin_create()
+@@ -771,6 +771,11 @@ PLUGIN_DEFINE(smp)
  		free(this);
  		return NULL;
  	}

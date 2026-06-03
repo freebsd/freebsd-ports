@@ -1,85 +1,184 @@
-DISTFILES+=	platforms-0.0.6.tar.gz:platforms \
-		apple_support.1.1.0.tar.gz:apple \
-		bazel-skylib-1.3.0.tar.gz:skylib \
-		8c717f8258cd5f6c7a45b97d974292755852b658.tar.gz:toolchain \
-		v0.1.1.zip:buildrules \
-		rules_apple.1.0.1.tar.gz:applerules \
-		081771d4a0e9d7d3aa0eed2ef389fa4700dfb23e.tar.gz:rulescc \
-		308b05b2419edb5c8ee0471b67a40403df940149.tar.gz:closure \
-		0.7.1.tar.gz:rulesforeigncc \
-		7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip:java \
-		4.3.zip:jvm \
-		rules_pkg-0.7.1.tar.gz:pkg \
-		11bf7c25e666dd7ddacbcd4d4c4a9de7a25175f8.tar.gz:protolib \
-		rules_python-0.0.1.tar.gz:pythonrules \
-		rules_swift.1.0.0.tar.gz:swift \
-		9351cf542ab478499294864ff3acfdab5c8c5f3d.tar.gz:dlpack \
-		f7547e29ccaed7b64ef4f7495ecfff1c9f6f3d03.tar.gz:benchmark \
-		0d859a811870d10f53a594927d0d0b97573ad06d.tar.gz:farmhash \
-		e844ffd17118c1e17d94e1ba4354c075a4577b88.zip:gemmlowp \
-		c13d28517a4db259d738ea4886b1f00352a3cc33.tar.gz:highwayhash \
-		a276a8c738735a0fe45a6ee590fe2df69bcf4502.tar.gz:re2 \
-		3286a34cc8de6149ac6844107dfdffac91531e72.zip:ruy \
-		835a7d7b1ee3bc83e575e302a985c66ec4b65249.tar.gz:sobol \
-		openmp-10.0.1.src.tar.xz:llvmorg \
-		131.1.0.tar.gz:kiss \
-		v2.7.3.tar.gz:onednn \
-		43d81c6883ade82052920bd367c61f9e52f09954.zip:openxla \
-		v1.0.tar.gz:ooura \
-		2c4932ed6f6204f1656e245838f4f5eae69d2e29.tar.gz:pybindabseil \
-		72cbbf1fbc830e487e3012862b7b720001b70672.tar.gz:pybindbazel \
-		80f3440cd8fee124e077e2e47a8a17b78b451363.zip:pybindprotobuf \
-		fa1c679da8d19e1d87f20175ae1ec10995cd3dd3.zip:cpuinfo \
-		7d879c8b161085a4374ea481b93a52adb19c0529.tar.gz:runtime \
-		eigen-b0f877f8e01e90a5b0f3a79d46ea234899f8b499.tar.gz:eigen \
-		b9d4073a6913891ce9cbd8965c8d506075d2a45a.zip:xnnpack \
-		b8374f80e42010941bda6c85b0e3f1a1bd77a1e0.zip:pthread \
-		4dfe081cf6bcd15db339cf2680b9281b8451eeb3.zip:fp16 \
-		63058eff77e11aa15bf531df5dd34395ec3017c8.zip:fxdiv \
-		dc275fd03254d67d29cc70a5a0569acf24d2280d.tar.gz:llvm \
-		6b3fdcea8bc5398be4e7e9930c693f0ea09316a0.tar.gz:apis \
-		v23.1.21.tar.gz:flatbuffer \
-		a15b489e1222b2087007546b4912e21293ea86ff.tar.gz:neon
+DISTFILES+=platforms-0.0.11.tar.gz:platforms \
+apple_support.1.24.5.tar.gz:apple \
+bazel-skylib-1.7.1.tar.gz:skylib \
+8c717f8258cd5f6c7a45b97d974292755852b658.tar.gz:toolchain \
+v0.1.1.zip:buildrules \
+rules_apple.3.5.1.tar.gz:applerules \
+rules_swift.1.18.0.tar.gz:swift \
+308b05b2419edb5c8ee0471b67a40403df940149.tar.gz:closure \
+4.3.zip:jvm \
+rules_pkg-0.7.1.tar.gz:pkg \
+0.7.1.tar.gz:foreign_cc \
+rules_java-7.6.1.tar.gz:rules_java \
+rules_license-0.0.7.tar.gz:rlic \
+bazel_features-v1.25.0.tar.gz:bfeatures \
+rules_shell-v0.4.1.tar.gz:rshell \
+d8cb9c2c168cd64000eaa6eda0781a9615a26ffe.tar.gz:mlchain \
+f7547e29ccaed7b64ef4f7495ecfff1c9f6f3d03.tar.gz:benchmark \
+0d859a811870d10f53a594927d0d0b97573ad06d.tar.gz:farmhash \
+16e8662c34917be0065110bfcd9cc27d30f52fdf.zip:gemmlowp \
+c13d28517a4db259d738ea4886b1f00352a3cc33.tar.gz:highwayhash \
+03da4fc0857c285e3a26782f6bc8931c4c950df4.tar.gz:re2 \
+3286a34cc8de6149ac6844107dfdffac91531e72.zip:ruy \
+835a7d7b1ee3bc83e575e302a985c66ec4b65249.tar.gz:sobol \
+openmp-10.0.1.src.tar.xz:llvmorg \
+131.1.0.tar.gz:kiss \
+v3.7.3.tar.gz:onednn \
+127d2f238010589ac96f2f402a27afc9dccbb7ab.zip:openxla \
+v1.0.tar.gz:ooura \
+13d4f99d5309df3d5afa80fe2ae332d7a2a64c6b.tar.gz:pybindabseil \
+v2.13.6.tar.gz:pybindbazel \
+f02a2b7653bc50eb5119d125842a3870db95d251.zip:pybindprotobuf \
+8a9210069b5a37dd89ed118a783945502a30a4ae.zip:cpuinfo \
+4ecc3a44a32c832b748328bed3f9a599f795ca8d.tar.gz:runtime \
+eigen-dcbaf2d608f306450f1e74949eb87e9a22a7ef4b.tar.gz:eigen \
+25b42dfddb0ee22170d73ff0d4b333ea1e6edfeb.zip:xnnpack \
+0e6ca13779b57d397a5ba6bfdcaa8a275bc8ea2e.zip:pthread \
+4dfe081cf6bcd15db339cf2680b9281b8451eeb3.zip:fp16 \
+63058eff77e11aa15bf531df5dd34395ec3017c8.zip:fxdiv \
+909041e4802c4b9a2223ca04099f35bf1dbbd460.tar.gz:llvm \
+6b3fdcea8bc5398be4e7e9930c693f0ea09316a0.tar.gz:apis \
+v25.9.23.tar.gz:flatbuffer \
+a15b489e1222b2087007546b4912e21293ea86ff.tar.gz:neon \
+v2.11.0.tar.gz:nanobind \
+v1.1.tar.gz:dlpack \
+d38452e1ee03523a208362186fd42248ff2609f6.tar.gz:absl \
+11bf7c25e666dd7ddacbcd4d4c4a9de7a25175f8.tar.gz:protolib \
+63205aa90afa6803d8f58bc3081b69288e9f1906.zip:kleidiai \
+v3.10.5.tar.gz:nlohmann \
+9effcbcb27f0a665f9f345030188c0b291e32482.tar.gz:upb \
+a37c3dbdd5d2a15113d363c7a7c41c30453e482f.zip:riegeli \
+v1.5.7.zip:net_zstd \
+rules_go-v0.34.0.zip:rules_go \
+rules_python-1.6.0.tar.gz:rules_python \
+0.1.0.tar.gz:rules_cc \
+v6.31.1.zip:protobuf6 \
+v2.1.0.tar.gz:absl_py \
+ducc-aa46a4c21e440b3d416c16eca3c96df19c74f316.tar.gz:ducc \
+ml_dtypes-00d98cd92ade342fef589c0470379abb27baebe9.tar.gz:ml_dtypes \
+v1.2.0.tar.gz:brotli_new \
+v0.11.1.tar.gz:libjxl \
+c695e43eba127a74a67263775ab611bded7fba34.zip:xprof \
+1.3.0.tar.gz:highway \
+2025_09_16.tar.gz:skcms \
+v1.4.0.tar.gz:libwebp \
+2afe84b39f0d097ecd70fc44a9e0e39782cee6a3.zip:slinky \
+v1.3.0.tar.gz:robin_map \
+3ea912eb05a4ce1bf598834eb67dbd74e426b882.zip:shardy \
+nvshmem_src_3.1.7-1.txz:nvshmem \
+clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz:clang18 \
+x86_64_ubuntu18_gcc8.4-0.2.1.tar.xz:gcc_sysroot \
+cpython-3.11.13+20250808-x86_64-unknown-linux-gnu-install_only.tar.gz:cpython311 \
+libtinfo.so.5:libtinfo \
+copyright.txt:libtinfo_cp \
+v1.74.0.tar.gz:grpc_src \
+28e9d1f26771c6517c3b4be10254887673c940189.zip:googletest_src \
+4de3c74cf21a9958c1cf26d8993c55c6e0d28b49.tar.gz:envoy_api_src \
+v1.2.1.zip:protoc_gen_validate_src \
+bazel-gazelle-v0.37.0.tar.gz:bazel_gazelle_src \
+rules_java-8.7.0.tar.gz:rules_java_870 \
+7.0.2.tar.gz:rules_proto_702 \
+v2.35.0.tar.gz:google_cloud_cpp_src \
+d198303a4319092ab31895c4b98d64174ebe8872.tar.gz:bazel_compdb_src \
+6360e96b5cf8e5980c887ce58ef727e53d77243a.tar.gz:c_ares_src \
+3a472e524827f72d1ad621c4983dd5af54c46776.tar.gz:cncf_xds_src \
+12235e24652fc7f809373e7c11a5f73c5763fc4c.tar.gz:benchmark \
+1f95f8083066f5b38fd2db172e7e7f9aa7c49d2d.tar.gz:libprotobuf_mutator_src \
+5501a1a255805e0be83a41348bb5f2630d5ed6b3.tar.gz:opencensus_cpp_src \
+ced79860f8c8a091a2eabfee6d47783f828a9b59.tar.gz:opentelemetry_cpp_src \
+v0.3.0.tar.gz:opencensus_proto_src \
+rules_cc-0.0.17.tar.gz:rules_cc_017 \
+rules_shell-v0.3.0.tar.gz:rules_shell_030 \
+0.8.0.tar.gz:yaml_cpp_src
 
-MASTER_SITES+=	https://github.com/bazelbuild/platforms/releases/download/0.0.6/:platforms \
-		https://github.com/bazelbuild/apple_support/releases/download/1.1.0/:apple \
-		https://github.com/bazelbuild/bazel-skylib/releases/download/1.3.0/:skylib \
-		https://github.com/bazelbuild/bazel-toolchains/archive/:toolchain \
-		https://github.com/bazelbuild/rules_android/archive/:buildrules \
-		https://github.com/bazelbuild/rules_apple/releases/download/1.0.1/:applerules \
-		https://github.com/bazelbuild/rules_cc/archive/:rulescc \
-		https://github.com/bazelbuild/rules_closure/archive/:closure \
-		https://github.com/bazelbuild/rules_foreign_cc/archive/:rulesforeigncc \
-		https://github.com/bazelbuild/rules_java/archive/:java \
-		https://github.com/bazelbuild/rules_jvm_external/archive/:jvm \
-		https://github.com/bazelbuild/rules_pkg/releases/download/0.7.1/:pkg \
-		https://github.com/bazelbuild/rules_proto/archive/:protolib \
-		https://github.com/bazelbuild/rules_python/releases/download/0.0.1/:pythonrules \
-		https://github.com/bazelbuild/rules_swift/releases/download/1.0.0/:swift \
-		https://github.com/dmlc/dlpack/archive/:dlpack \
-		https://github.com/google/benchmark/archive/:benchmark \
-		https://github.com/google/farmhash/archive/:farmhash \
-		https://github.com/google/gemmlowp/archive/:gemmlowp \
-		https://github.com/google/highwayhash/archive/:highwayhash \
-		https://github.com/google/re2/archive/:re2 \
-		https://github.com/google/ruy/archive/:ruy \
-		https://github.com/joe-kuo/sobol_data/archive/:sobol \
-		https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/:llvmorg \
-		https://github.com/mborgerding/kissfft/archive/refs/tags/:kiss \
-		https://github.com/oneapi-src/oneDNN/archive/refs/tags/:onednn \
-		https://github.com/openxla/stablehlo/archive/:openxla \
-		https://github.com/petewarden/OouraFFT/archive/:ooura \
-		https://github.com/pybind/pybind11_abseil/archive/:pybindabseil \
-		https://github.com/pybind/pybind11_bazel/archive/:pybindbazel \
-		https://github.com/pybind/pybind11_protobuf/archive/:pybindprotobuf \
-		https://github.com/pytorch/cpuinfo/archive/:cpuinfo \
-		https://github.com/tensorflow/runtime/archive/:runtime \
-		https://gitlab.com/libeigen/eigen/-/archive/b0f877f8e01e90a5b0f3a79d46ea234899f8b499/:eigen \
-		https://github.com/google/XNNPACK/archive/:xnnpack \
-		https://github.com/Maratyszcza/pthreadpool/archive/:pthread \
-		https://github.com/Maratyszcza/FP16/archive/:fp16 \
-		https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
-		https://github.com/llvm/llvm-project/archive/:llvm \
-		https://github.com/googleapis/googleapis/archive/:apis \
-		https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/flatbuffers/archive/:flatbuffer \
-		https://github.com/intel/ARM_NEON_2_x86_SSE/archive/:neon
+MASTER_SITES+=https://github.com/bazelbuild/platforms/releases/download/0.0.11/:platforms \
+https://github.com/bazelbuild/apple_support/releases/download/1.24.5/:apple \
+https://github.com/bazelbuild/bazel-skylib/releases/download/1.7.1/:skylib \
+https://github.com/bazelbuild/bazel-toolchains/archive/:toolchain \
+https://github.com/bazelbuild/rules_android/archive/:buildrules \
+https://github.com/bazelbuild/rules_apple/releases/download/3.5.1/:applerules \
+https://github.com/bazelbuild/rules_swift/releases/download/1.18.0/:swift \
+https://github.com/bazelbuild/rules_closure/archive/:closure \
+https://github.com/bazelbuild/rules_jvm_external/archive/:jvm \
+https://github.com/bazelbuild/rules_pkg/releases/download/0.7.1/:pkg \
+https://github.com/bazel-contrib/rules_foreign_cc/archive/:foreign_cc \
+https://github.com/bazelbuild/rules_java/releases/download/7.6.1/:rules_java \
+https://github.com/bazelbuild/rules_license/releases/download/0.0.7/:rlic \
+https://github.com/bazel-contrib/bazel_features/releases/download/v1.25.0/:bfeatures \
+https://github.com/bazelbuild/rules_shell/releases/download/v0.4.1/:rshell \
+https://github.com/google-ml-infra/rules_ml_toolchain/archive/:mlchain \
+https://github.com/google/benchmark/archive/:benchmark \
+https://github.com/google/farmhash/archive/:farmhash \
+https://github.com/google/gemmlowp/archive/:gemmlowp \
+https://github.com/google/highwayhash/archive/:highwayhash \
+https://github.com/google/re2/archive/:re2 \
+https://github.com/google/ruy/archive/:ruy \
+https://github.com/joe-kuo/sobol_data/archive/:sobol \
+https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/:llvmorg \
+https://github.com/mborgerding/kissfft/archive/refs/tags/:kiss \
+https://github.com/oneapi-src/oneDNN/archive/refs/tags/:onednn \
+https://github.com/openxla/stablehlo/archive/:openxla \
+https://github.com/petewarden/OouraFFT/archive/:ooura \
+https://github.com/pybind/pybind11_abseil/archive/:pybindabseil \
+https://github.com/pybind/pybind11_bazel/archive/:pybindbazel \
+https://github.com/pybind/pybind11_protobuf/archive/:pybindprotobuf \
+https://github.com/pytorch/cpuinfo/archive/:cpuinfo \
+https://github.com/tensorflow/runtime/archive/:runtime \
+https://gitlab.com/libeigen/eigen/-/archive/dcbaf2d608f306450f1e74949eb87e9a22a7ef4b/:eigen \
+https://github.com/google/XNNPACK/archive/:xnnpack \
+https://github.com/Maratyszcza/pthreadpool/archive/:pthread \
+https://github.com/Maratyszcza/FP16/archive/:fp16 \
+https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
+https://github.com/llvm/llvm-project/archive/:llvm \
+https://github.com/googleapis/googleapis/archive/:apis \
+https://github.com/google/flatbuffers/archive/refs/tags/:flatbuffer \
+https://github.com/intel/ARM_NEON_2_x86_SSE/archive/:neon \
+https://github.com/wjakob/nanobind/archive/refs/tags/:nanobind \
+https://github.com/dmlc/dlpack/archive/refs/tags/:dlpack \
+https://github.com/abseil/abseil-cpp/archive/:absl \
+https://github.com/bazelbuild/rules_proto/archive/:protolib \
+https://github.com/ARM-software/kleidiai/archive/:kleidiai \
+https://github.com/nlohmann/json/archive/:nlohmann \
+https://github.com/protocolbuffers/upb/archive/:upb \
+https://github.com/google/riegeli/archive/:riegeli \
+https://github.com/facebook/zstd/archive/:net_zstd \
+https://github.com/bazelbuild/rules_go/releases/download/v0.34.0/:rules_go \
+https://github.com/bazelbuild/rules_python/releases/download/1.6.0/:rules_python \
+https://github.com/bazelbuild/rules_cc/archive/refs/tags/:rules_cc \
+https://github.com/protocolbuffers/protobuf/archive/refs/tags/:protobuf6 \
+https://github.com/abseil/abseil-py/archive/refs/tags/:absl_py \
+https://gitlab.mpcdf.mpg.de/mtr/ducc/-/archive/aa46a4c21e440b3d416c16eca3c96df19c74f316/:ducc \
+https://github.com/jax-ml/ml_dtypes/archive/00d98cd92ade342fef589c0470379abb27baebe9/:ml_dtypes \
+https://github.com/google/brotli/archive/refs/tags/:brotli_new \
+https://github.com/libjxl/libjxl/archive/refs/tags/:libjxl \
+https://storage.googleapis.com/mirror.tensorflow.org/github.com/openxla/xprof/archive/:xprof \
+https://github.com/google/highway/archive/refs/tags/:highway \
+https://github.com/google/skcms/archive/refs/tags/:skcms \
+https://github.com/webmproject/libwebp/archive/:libwebp \
+https://github.com/dsharlet/slinky/archive/:slinky \
+https://github.com/Tessil/robin-map/archive/refs/tags/:robin_map \
+https://github.com/openxla/shardy/archive/:shardy \
+https://developer.download.nvidia.com/compute/redist/nvshmem/3.1.7/source/:nvshmem \
+https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/:clang18 \
+https://storage.googleapis.com/ml-sysroot-testing/x86_64/:gcc_sysroot \
+https://github.com/astral-sh/python-build-standalone/releases/download/20250808/:cpython311 \
+https://storage.googleapis.com/ml-sysroot-testing/libtinfo/:libtinfo \
+https://storage.googleapis.com/ml-sysroot-testing/libtinfo/:libtinfo_cp \
+https://github.com/grpc/grpc/archive/refs/tags/:grpc_src \
+https://github.com/google/googletest/archive/:googletest_src \
+https://github.com/envoyproxy/data-plane-api/archive/:envoy_api_src \
+https://github.com/bufbuild/protoc-gen-validate/archive/refs/tags/:protoc_gen_validate_src \
+https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.37.0/:bazel_gazelle_src \
+https://github.com/bazelbuild/rules_java/releases/download/8.7.0/:rules_java_870 \
+https://github.com/bazelbuild/rules_proto/archive/refs/tags/:rules_proto_702 \
+https://github.com/googleapis/google-cloud-cpp/archive/refs/tags/:google_cloud_cpp_src \
+https://github.com/grailbio/bazel-compilation-database/archive/:bazel_compdb_src \
+https://github.com/c-ares/c-ares/archive/:c_ares_src \
+https://github.com/cncf/xds/archive/:cncf_xds_src \
+https://github.com/google/libprotobuf-mutator/archive/:libprotobuf_mutator_src \
+https://github.com/census-instrumentation/opencensus-cpp/archive/:opencensus_cpp_src \
+https://github.com/open-telemetry/opentelemetry-cpp/archive/:opentelemetry_cpp_src \
+https://github.com/census-instrumentation/opencensus-proto/archive/refs/tags/:opencensus_proto_src \
+https://github.com/bazelbuild/rules_cc/releases/download/0.0.17/:rules_cc_017 \
+https://github.com/bazelbuild/rules_shell/releases/download/v0.3.0/:rules_shell_030 \
+https://github.com/jbeder/yaml-cpp/archive/refs/tags/:yaml_cpp_src

@@ -1,9 +1,9 @@
 PORTNAME=	clojure-mode.el
-PORTVERSION=	5.11.0
-PORTREVISION=	16
+PORTVERSION=	5.21.0
+PORTREVISION=	1
 PORTEPOCH=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	lang elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Clojure language
@@ -15,6 +15,8 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	clojure-emacs
 GH_PROJECT=	clojure-mode
+
+CONFLICTS_INSTALL=	clojure-mode.el-emacs_*
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -3,14 +3,17 @@
   message: <<EOM
 If the game is installed with movie support (NWMovies), there is a way
 to skip various movies, especially the five introduction movies at the
-start of the game:  create a skip file ($HOME/.nwn/nwmovies.skip) and
-list the movies (case-insensitive) you wish to skip.  The following
-are the introduction movies, at least in the Diamond edition:
+start of the game:  create a skip file (${HOME}/.nwn/nwmovies.skip) and
+list the movies (case-insensitive, no extension) you wish to skip.  The
+following are the introduction movies, at least in the Diamond edition:
 AtariLogo
 BiowareLogo
 WotcLogo
 fge_logo_black
 NWNIntro
+
+Although there is mention of skipping movies by adding options to the
+${HOME}/.nwn/nwn.ini) file under [Display Options], these do not work.
 
 There is a known issue due to the use of NWMovies.  As written in
 the NWMovies README file:
@@ -18,6 +21,25 @@ the NWMovies README file:
     The main menu music does not work after starting NWN w/ NWMovies.
     Entering the game, and backing out to the main menu, the music
     works.  Known issue, no known cause, nor resolution.
+
+NWN may show a black screen when at the resolution of the monitor if
+it uses xrandr.  This is possibly only present with multiple monitors
+under Zaphod mode.  Set SDL_VIDEO_X11_XRANDR=0 in the environment
+prior to running nwn to work around this.
+
+If the resolution is higher than what the actual monitor provides,
+SDL12COMPAT_MAX_VIDMODE can be set in the environment to fix it.  For
+example, SDL12COMPAT_MAX_VIDMODE=1920x1080 for 1920x1080 maximum
+resolution.
+
+If the game window appears shifted upwards a few pixels, disabling
+decoration of the window should fix it.  Also, to remove a possible
+flicker upon start, raise the layer for the window.  For example with
+Fluxbox, add the following to ${HOME}/.fluxbox/apps:
+    [app] (class=nwmain)
+      [Deco]        {NONE}
+      [Layer]       {2}
+    [end]
 EOM
 }
 ]

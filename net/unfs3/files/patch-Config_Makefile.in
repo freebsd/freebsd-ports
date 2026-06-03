@@ -1,0 +1,9 @@
+--- Config/Makefile.in.orig	2026-03-22 15:36:09 UTC
++++ Config/Makefile.in
+@@ -1,5 +1,5 @@
+ CC = @CC@
+-CFLAGS = @CFLAGS@ @TIRPC_CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)
++CFLAGS = @CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)
+ AR = @AR@
+ RM = rm -f
+ LEX = @LEX@

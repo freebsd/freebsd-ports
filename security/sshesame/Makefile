@@ -1,6 +1,7 @@
 PORTNAME=	sshesame
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.39
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	skozlov@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/jaksi/sshesame
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 USE_RC_SUBR=	${PORTNAME}
 
 USERS=		sshesame

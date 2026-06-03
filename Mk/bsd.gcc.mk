@@ -22,10 +22,10 @@
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
-#   USE_GCC=	12 			# port requires GCC 12.
+#   USE_GCC=	13 			# port requires GCC 13.
 #   USE_GCC=	yes:build	# port requires a current version of GCC at
 #							# build time only.
-#   USE_GCC=	12:build	# port requires GCC 12 at build time only.
+#   USE_GCC=	13:build	# port requires GCC 13 at build time only.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
@@ -35,7 +35,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # All GCC versions supported by this framework.
 #
 # When updating this, keep Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	11 12 13 14 15 16
+GCCVERSIONS=	12 13 14 15 16 17
 
 # No configurable parts below this. ####################################
 #
@@ -85,7 +85,7 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 # A concrete version has been selected. Set proper ports dependencies,
 # CC, CXX, CPP, and flags.
 V:=			${_USE_GCC:S/.//}
-.  if ${V} == 16
+.  if ${V} == 17
 _GCC_PORT:=		gcc${V}-devel
 .  else
 _GCC_PORT:=		gcc${V}

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-12 03:28:22 UTC
++++ pyproject.toml
+@@ -18,8 +18,6 @@ classifiers = [
+   "Topic :: Text Processing",
+   "Programming Language :: Python :: 3",
+ ]
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
+ keywords = ["junit", "xunit", "xml", "parser"]
+ 
+ [project.urls]

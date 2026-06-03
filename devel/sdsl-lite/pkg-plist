@@ -68,6 +68,7 @@ include/sdsl/rank_support_scan.hpp
 include/sdsl/rank_support_v.hpp
 include/sdsl/rank_support_v5.hpp
 include/sdsl/raster_img.hpp
+include/sdsl/rle_vector.hpp
 include/sdsl/rmq_succinct_sada.hpp
 include/sdsl/rmq_succinct_sct.hpp
 include/sdsl/rmq_support.hpp
@@ -81,6 +82,7 @@ include/sdsl/select_support.hpp
 include/sdsl/select_support_mcl.hpp
 include/sdsl/select_support_scan.hpp
 include/sdsl/sfstream.hpp
+include/sdsl/simple_sds.hpp
 include/sdsl/sorted_int_stack.hpp
 include/sdsl/sorted_multi_stack_support.hpp
 include/sdsl/sorted_stack_support.hpp
@@ -116,7 +118,7 @@ lib/libdivsufsort64.so
 lib/libdivsufsort64.so.3
 lib/libdivsufsort64.so.3.0.1
 lib/libsdsl.so
-lib/libsdsl.so.2.1.0
+lib/libsdsl.so.2.3.1
 lib/libsdsl.so.3
 libdata/pkgconfig/libdivsufsort.pc
 libdata/pkgconfig/libdivsufsort64.pc

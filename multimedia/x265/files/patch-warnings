@@ -331,12 +331,19 @@
 +
      // skip -- prefix if provided
      if (name[0] == '-' && name[1] == '-')
---- source/common/cudata.cpp	2024-09-13 09:02:55.000000000 -0400
-+++ source/common/cudata.cpp	2024-09-24 00:04:19.872724000 -0400
-@@ -74,5 +74,5 @@
- inline bool isEqualRowOrCol(int addrA, int addrB)
- {
--    return isEqualCol(addrA, addrB) | isEqualRow(addrA, addrB);
-+    return isEqualCol(addrA, addrB) || isEqualRow(addrA, addrB);
- }
+--- source/encoder/level.cpp	2024-11-22 07:07:34.000000000 -0500
++++ source/encoder/level.cpp	2025-11-01 20:29:50.066886000 -0400
+@@ -61,13 +61,4 @@
+ };
  
+-static inline int _confirm(x265_param* param, bool bflag, const char* message)
+-{
+-    if (!bflag)
+-        return 0;
+-
+-    x265_log(param, X265_LOG_ERROR, "%s\n", message);
+-    return 1;
+-}
+-
+ /* determine minimum decoder level required to decode the described video */
+ void determineLevel(const x265_param &param, VPS& vps)

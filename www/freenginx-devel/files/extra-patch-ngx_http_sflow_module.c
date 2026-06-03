@@ -1,5 +1,5 @@
---- ../nginx-sflow-module-543c72a/ngx_http_sflow_module.c.orig	2014-09-24 18:20:41.000000000 -0400
-+++ ../nginx-sflow-module-543c72a/ngx_http_sflow_module.c	2016-08-06 21:26:24.515559000 -0400
+--- ../nginx-sflow-module-f15c87f/ngx_http_sflow_module.c.orig	2017-10-16 17:39:14.000000000 -0400
++++ ../nginx-sflow-module-f15c87f/ngx_http_sflow_module.c	2025-02-04 16:15:53.466117000 -0500
 @@ -8,9 +8,6 @@
  #include <ngx_http.h>
  #include <nginx.h>
@@ -15,9 +15,9 @@
      ngx_log_t *log;
  
 -#if (NGX_THREADS)
--    ngx_mutex_t *mut;
--#define SFWB_LOCK(_s) ngx_mutex_lock((_s)->mut)
--#define SFWB_UNLOCK(_s) ngx_mutex_unlock((_s)->mut)
+-    ngx_thread_mutex_t *mut;
+-#define SFWB_LOCK(_s) ngx_thread_mutex_lock((_s)->mut, (_s)->log)
+-#define SFWB_UNLOCK(_s) ngx_thread_mutex_unlock((_s)->mut, (_s)->log)
 -#define SFWB_INC_CTR(_c) ngx_atomic_fetch_add(&(_c), 1)
 -#define SFWB_COUNTDOWN(_c) (ngx_atomic_fetch_add(&(_c), -1) == 1)
 -#else
@@ -29,7 +29,7 @@
  
      /* skip countdown is handled per-worker to reduce lock contention.
       * If all processes sample at 1:N it's the same as having only one
-@@ -645,13 +634,8 @@
+@@ -645,10 +634,6 @@
  {
      sm->random_seed  = ((sm->random_seed * 32719) + 3) % 32749;
      ngx_atomic_t next_skip = (sm->random_seed % ((2 * sm->sampling_rate) - 1)) + 1;
@@ -39,11 +39,8 @@
 -#else
      sm->sflow_skip = next_skip;
      return next_skip;
--#endif
- }
- 
- /*_________________---------------------------__________________
-@@ -864,13 +848,6 @@
+ #endif
+@@ -864,13 +849,6 @@
  {
      ngx_log_debug0(NGX_LOG_DEBUG_HTTP, cf->log, 0, "sflow: sfwb_init()");
  
@@ -52,7 +49,7 @@
 -     * is more that one worker thread - right now it seems like threads are not even
 -     * an option in the configure script)
 -     */
--    sm->mut = ngx_mutex_init(cf->log, 0);
+-    ngx_thread_mutex_create(sm->mut, cf->log);
 -#endif
  
      /* look up some vars by name and cache the index numbers -- see ngx_http_variables.c */

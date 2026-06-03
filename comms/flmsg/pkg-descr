@@ -1,1 +1,9 @@
-Forms management editor for Amateur Radio standard message formats.
+FLMSG is a simple forms management editor for the amateur radio supported
+standard message formats. Form data can be transferred between computers either
+using standard internet email or via radio frequency broadcasts typically made
+by an amateur radio operator on your behalf. FLMSG forms can be very complex and
+include embedded images and other controls that make data entry less error to
+prone. The template information is not transferred between computers, only the
+volatile information contained in the form entry controls. The form template
+must reside on each flmsg computer that will be used to create, edit, or review
+the data.

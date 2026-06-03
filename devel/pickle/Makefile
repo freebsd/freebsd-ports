@@ -1,7 +1,8 @@
 PORTNAME=	pickle
-PORTVERSION=	4.20
+DISTVERSION=	5.01
+PORTREVISION=	6
 CATEGORIES=	devel
-MASTER_SITES=	http://wiki.kewl.org/downloads/
+MASTER_SITES=	LOCAL/bofh/devel/${PORTNAME}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Programs Microchip PICs using ICSP
@@ -12,32 +13,28 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		invokes x86 assembler
 BROKEN_armv7=		invokes x86 assembler
-BROKEN_mips=		invokes x86 assembler
-BROKEN_mips64=		invokes x86 assembler
 
 USES=		gmake tar:tgz
 
-ALL_TARGET=	build
+ALL_TARGET=	freebsd
+
+CFLAGS+=	-Wno-gnu-line-marker
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	${BIN_SYMLINKS} \
-		bin/pctrl  \
-		bin/${PORTNAME} \
-		bin/pio \
-		bin/pload \
-		bin/ptest
+		bin/${PORTNAME}
 
 BIN_SYMLINKS=	bin/n14 \
 		bin/n16 \
 		bin/p12 \
 		bin/p14 \
-		bin/p16 \
-		bin/p24 \
-		bin/p32
+		bin/p16
 
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=		llvm:max=14
+USES+=		llvm:max=20
 .endif
 
 post-patch:
@@ -47,9 +44,8 @@ post-patch:
 		 s|-ggdb||' ${WRKSRC}/src/Makefile
 
 do-install:
-.for i in ${PORTNAME} pio ptest pctrl pload
-	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin/${i})
-.endfor
+	(cd ${WRKSRC}/src && \
+		${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME})
 .for i in ${BIN_SYMLINKS}
 	${RLN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/${i}
 .endfor

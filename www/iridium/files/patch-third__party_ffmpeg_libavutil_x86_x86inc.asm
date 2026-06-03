@@ -1,4 +1,4 @@
---- third_party/ffmpeg/libavutil/x86/x86inc.asm.orig	2025-05-07 06:48:23 UTC
+--- third_party/ffmpeg/libavutil/x86/x86inc.asm.orig	2025-12-10 15:04:57 UTC
 +++ third_party/ffmpeg/libavutil/x86/x86inc.asm
 @@ -46,6 +46,12 @@
      %endif

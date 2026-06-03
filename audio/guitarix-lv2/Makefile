@@ -1,12 +1,13 @@
 PORTNAME=	guitarix
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.46.0
-PORTREVISION=	2
+DISTVERSION=	0.47.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
-WWW=		https://guitarix.org/
+WWW=		https://guitarix.org/ \
+		https://github.com/brummer10/guitarix
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		sassc:textproc/sassc \
 		ladspa>0:audio/ladspa # https://sourceforge.net/p/guitarix/bugs/61/
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libfftw3f.so:math/fftw3-float \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -48,7 +49,7 @@ USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, s
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_TUPLE=	enyojs:bootplate:a11645b:bootplate/webui/bootplate \
-		sdatkinson:NeuralAmpModelerCore:74a07ce222fac3e681e7c2c2cb515d53c4e272b4:namc/src/NAM/NeuralAmpModelerCore \
+		sdatkinson:NeuralAmpModelerCore:e181f61:namc/src/NAM/NeuralAmpModelerCore \
 		jatinchowdhury18:RTNeural:0b0e5d0:rtn/src/RTNeural/RTNeural
 
                 #xtensor-stack:xsimd:a00c81f7b9e808a42aedcf7da2fbb1f9a636da34:xtensor_stack_xsimd/trunk/src/RTNeural/RTNeural/modules/xsimd \
@@ -75,6 +76,9 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 NLS_USE=	GNOME=intltool:build
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/boost_system/boost_thread/' ${WRKSRC}/wscript
 
 post-install:
 	# strip, see https://sourceforge.net/p/guitarix/bugs/60/

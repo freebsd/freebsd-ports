@@ -1,6 +1,6 @@
---- chrome/browser/component_updater/iwa_key_distribution_component_installer.h.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/component_updater/iwa_key_distribution_component_installer.h.orig	2026-01-14 08:33:23 UTC
 +++ chrome/browser/component_updater/iwa_key_distribution_component_installer.h
-@@ -27,7 +27,7 @@ class IwaKeyDistributionInfoProvider;
+@@ -26,7 +26,7 @@ class IwaKeyDistributionInfoProvider;
  
  namespace component_updater {
  

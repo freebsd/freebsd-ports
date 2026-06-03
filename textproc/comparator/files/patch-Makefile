@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-02-28 14:41:28 UTC
++++ Makefile
+@@ -15,7 +15,7 @@ SOURCES = $(CODE) $(SCRIPTS) $(DOCS) $(EXTRAS) $(TEST)
+ EXTRAS  = shredtree.py shredcompare.py
+ TEST    = test
+ SOURCES = $(CODE) $(SCRIPTS) $(DOCS) $(EXTRAS) $(TEST) Makefile
+-CFLAGS  = -O3 -Wall -Wextra -Werror -fstack-protector-strong -fno-strict-aliasing -DLARGEFILES
++CFLAGS  += -O3 -Wall -Wextra -fstack-protector-strong -fno-strict-aliasing -DLARGEFILES
+ LDFLAGS = 
+ 
+ VERSION=$(shell sed -n <NEWS.adoc '/^[0-9]/s/:.*//p' | head -1)

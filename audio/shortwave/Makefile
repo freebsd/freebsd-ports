@@ -1,6 +1,6 @@
 PORTNAME=	shortwave
-DISTVERSION=	5.0.0
-PORTREVISION=	2
+DISTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	decke@FreeBSD.org
@@ -11,11 +11,12 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libgraphene-1.0.so:graphics/graphene \
 		libshumate-1.0.so:x11-toolkits/libshumate
 
 USES=		cargo desktop-file-utils gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
-USE_GNOME=	gdkpixbuf gtk40 libadwaita
+USE_GNOME=	gtk40 libadwaita
 USE_GSTREAMER=	good libav soup vorbis
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World

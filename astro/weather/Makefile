@@ -11,7 +11,7 @@ WWW=		http://fungi.yuggoth.org/weather/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.9+ shebangfix tar:xz
+USES=		python shebangfix tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes

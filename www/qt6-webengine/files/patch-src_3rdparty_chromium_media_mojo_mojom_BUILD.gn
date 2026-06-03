@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/media/mojo/mojom/BUILD.gn.orig	2025-09-06 10:01:20 UTC
++++ src/3rdparty/chromium/media/mojo/mojom/BUILD.gn
+@@ -962,7 +962,7 @@ source_set("test_support") {
+   sources = []
+   deps = []
+ 
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     sources += [
+       "buffer_handle_test_util.cc",
+       "buffer_handle_test_util.h",

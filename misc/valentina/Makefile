@@ -1,30 +1,29 @@
 PORTNAME=	valentina
-DISTVERSION=	0.7.53
+DISTVERSION=	1.0.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
-WWW=		https://smart-pattern.com.ua/en/
+WWW=		https://smart-pattern.com.ua/en/ \
+		https://gitlab.com/smart-pattern/valentina
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
-USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qmake qt:5
-USE_QT=		buildtools:build concurrent core gui linguisttools:build network \
-		opengl printsupport svg testlib:build widgets xml xmlpatterns
+BUILD_DEPENDS=	qbs:devel/qbs
+
+LIB_DEPENDS=	libxerces-c-3.3.so:textproc/xerces-c3
+
+USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qt:6
+USE_QT=		base tools:build svg
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
-GL_TAGNAME=	f9b773e2eab0a6051e34614a6b6bf7060cb9752a
+GL_TAGNAME=	d4386130f4017c499c92b5a41a378f6c8a9db65f
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
-
-QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath" PREFIX=${PREFIX}
-.if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)
-QMAKE_ARGS+=	CONFIG+="no_ccache"
-.endif
 
 BINARY_ALIAS=	hg=/usr/bin/true git=/usr/bin/false
 
@@ -33,5 +32,18 @@ BINARY_ALIAS=	hg=/usr/bin/true git=/usr/bin/false
 .if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
 LLD_UNSAFE=	yes
 .endif
+
+do-build:
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} qbs build -f ${PORTNAME}.qbs --no-install \
+		qbs.installPrefix:${PREFIX} \
+		moduleProviders.Qt.qmakeFilePaths:${LOCALBASE}/bin/qmake6
+
+do-install:
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} qbs install -f ${PORTNAME}.qbs \
+		qbs.installPrefix:${PREFIX} \
+		moduleProviders.Qt.qmakeFilePaths:${LOCALBASE}/bin/qmake6 && \
+		${CP} -r ${WRKSRC}/default/install-root/usr/local/* ${STAGEDIR}${PREFIX}/
 
 .include <bsd.port.mk>

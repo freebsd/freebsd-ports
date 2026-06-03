@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		alias compiler:c11 cpe perl5 ssl
+USES=		compiler:c11 cpe perl5 ssl
 CPE_VENDOR=	isync_project
 USE_PERL5=	build
 

@@ -18,7 +18,6 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-loongarch64
 %%NO_X86_TARGETS%%bin/qemu-system-m68k
 %%NO_X86_TARGETS%%bin/qemu-system-microblaze
-%%NO_X86_TARGETS%%bin/qemu-system-microblazeel
 %%NO_X86_TARGETS%%bin/qemu-system-mips
 %%NO_X86_TARGETS%%bin/qemu-system-mips64
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
@@ -53,10 +52,16 @@ include/qemu-plugin.h
 @sample etc/qemu-ifdown.sample
 %%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/QEMU,cgthree.bin
+%%DATADIR%%/ast27x0_bootrom.bin
 %%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios-microvm.bin
 %%DATADIR%%/bios.bin
-%%DATADIR%%/canyonlands.dtb
+%%DATADIR%%/dtb/bamboo.dtb
+%%DATADIR%%/dtb/canyonlands.dtb
+%%DATADIR%%/dtb/pegasos1.dtb
+%%DATADIR%%/dtb/pegasos2.dtb
+%%DATADIR%%/dtb/petalogix-ml605.dtb
+%%DATADIR%%/dtb/petalogix-s3adsp1800.dtb
 %%DATADIR%%/edk2-aarch64-code.fd
 %%DATADIR%%/edk2-arm-code.fd
 %%DATADIR%%/edk2-arm-vars.fd
@@ -122,9 +127,7 @@ include/qemu-plugin.h
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
-%%DATADIR%%/linuxboot.bin
 %%LINUXBOOT_DMA%%%%DATADIR%%/linuxboot_dma.bin
-%%DATADIR%%/multiboot.bin
 %%DATADIR%%/multiboot_dma.bin
 %%DATADIR%%/npcm7xx_bootrom.bin
 %%DATADIR%%/npcm8xx_bootrom.bin
@@ -134,7 +137,6 @@ include/qemu-plugin.h
 %%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.bin
 %%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
 %%DATADIR%%/palcode-clipper
-%%DATADIR%%/petalogix-ml605.dtb
 %%DATADIR%%/pnv-pnor.bin
 %%DATADIR%%/pxe-e1000.rom
 %%DATADIR%%/pxe-eepro100.rom
@@ -147,7 +149,7 @@ include/qemu-plugin.h
 %%DATADIR%%/qemu_vga.ndrv
 %%DATADIR%%/s390-ccw.img
 %%DATADIR%%/slof.bin
-%%DATADIR%%/u-boot-sam460-20100605.bin
+%%DATADIR%%/u-boot-sam460.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-ati.bin
 %%DATADIR%%/vgabios-cirrus.bin
@@ -157,8 +159,6 @@ include/qemu-plugin.h
 %%DATADIR%%/vgabios-vmware.bin
 %%DATADIR%%/skiboot.lid
 %%DATADIR%%/trace-events-all
-%%DATADIR%%/petalogix-s3adsp1800.dtb
-%%DATADIR%%/bamboo.dtb
 %%DATADIR%%/kvmvapic.bin
 %%DATADIR%%/u-boot.e500
 %%DATADIR%%/pvh.bin

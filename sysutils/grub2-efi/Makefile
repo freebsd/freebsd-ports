@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 
 ONLY_FOR_ARCHS=	amd64
 USES=		autoreconf:build bison cpe gettext gmake python tar:xz
+USE_CSTD=	gnu11
 
 WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/grub-core

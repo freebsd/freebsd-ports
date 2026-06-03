@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20251111:
+AUTHOR: kiwi@FreeBSD.org
+
+  USES=sudo has been added into ports, to allow depending on a
+  different sudo flavor. Ports depending on sudo were updated
+  to use and introduced USES.
+
+  You can update make.conf to use sssd version of sudo with:
+
+        DEFAULT_VERSIONS+=sudo=sssd
+
 20250619:
 AUTHOR: python@FreeBSD.org
 

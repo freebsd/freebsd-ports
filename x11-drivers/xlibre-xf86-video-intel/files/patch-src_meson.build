@@ -1,0 +1,10 @@
+--- src/meson.build.orig	2025-08-13 22:04:23 UTC
++++ src/meson.build
+@@ -147,7 +147,6 @@ shared_module('intel_drv',
+ 	      dependencies : intel_drv_deps,
+ 	      link_with : intel_drv_libs,
+ 	      c_args : [
+-		'-DMAJOR_IN_SYSMACROS',
+ 		'-Wno-unused-parameter',
+ 		'-Wno-sign-compare',
+ 	      ],

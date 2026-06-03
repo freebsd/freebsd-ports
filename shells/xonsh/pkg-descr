@@ -1,6 +1,3 @@
-xonsh is a Python-powered, cross-platform, Unix-gazing shell language and
-command prompt.
-
-The language is a superset of Python 3.6+ with additional shell primitives.
-xonsh (pronounced conch) is meant for the daily use of experts and novices
-alike.
+Xonsh (sounds like "consh") is a full-featured and cross-platform Python-based
+shell. The language is a superset of Python 3 with seamless integration of
+shell functionality and commands.

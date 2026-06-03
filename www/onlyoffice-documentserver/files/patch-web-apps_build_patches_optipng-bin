@@ -1,18 +1,53 @@
---- web-apps/build/patches/optipng-bin+5.1.0.patch.orig	2022-01-07 14:58:52 UTC
+--- web-apps/build/patches/optipng-bin+5.1.0.patch.orig	2025-11-05 01:40:01 UTC
 +++ web-apps/build/patches/optipng-bin+5.1.0.patch
-@@ -0,0 +1,15 @@
+@@ -0,0 +1,50 @@
++diff --git a/node_modules/optipng-bin/lib/index.js b/node_modules/optipng-bin/lib/index.js
++index a8d3ee5..4bc4578 100644
++--- a/node_modules/optipng-bin/lib/index.js
+++++ b/node_modules/optipng-bin/lib/index.js
++@@ -3,16 +3,6 @@ const path = require('path');
++ const BinWrapper = require('bin-wrapper');
++ const pkg = require('../package.json');
++ 
++-const url = `https://raw.githubusercontent.com/imagemin/optipng-bin/v${pkg.version}/vendor/`;
++-
++ module.exports = new BinWrapper()
++-	.src(`${url}macos/optipng`, 'darwin')
++-	.src(`${url}linux/x86/optipng`, 'linux', 'x86')
++-	.src(`${url}linux/x64/optipng`, 'linux', 'x64')
++-	.src(`${url}freebsd/x86/optipng`, 'freebsd', 'x86')
++-	.src(`${url}freebsd/x64/optipng`, 'freebsd', 'x64')
++-	.src(`${url}sunos/x86/optipng`, 'sunos', 'x86')
++-	.src(`${url}sunos/x64/optipng`, 'sunos', 'x64')
++-	.src(`${url}win/optipng.exe`, 'win32')
++-	.dest(path.resolve(__dirname, '../vendor'))
++-	.use(process.platform === 'win32' ? 'optipng.exe' : 'optipng');
+++	.dest('%%LOCALBASE%%/bin')
+++	.use('optipng');
 +diff --git a/node_modules/optipng-bin/lib/install.js b/node_modules/optipng-bin/lib/install.js
-+index 2d1db3a..643f075 100644
++index 2d1db3a..2226956 100644
 +--- a/node_modules/optipng-bin/lib/install.js
 ++++ b/node_modules/optipng-bin/lib/install.js
-+@@ -10,8 +10,8 @@ bin.run(['--version']).then(() => {
-+ 	log.warn('optipng pre-build test failed');
-+ 	log.info('compiling from source');
++@@ -1,21 +1,9 @@
++ 'use strict';
++-const binBuild = require('bin-build');
++ const log = require('logalot');
++ const bin = require('.');
 + 
++ bin.run(['--version']).then(() => {
++ 	log.success('optipng pre-build test passed successfully');
++ }).catch(error => {
++-	log.warn(error.message);
++-	log.warn('optipng pre-build test failed');
++-	log.info('compiling from source');
++-
 +-	binBuild.url('https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.7/optipng-0.7.7.tar.gz', [
 +-		`./configure --with-system-zlib --prefix="${bin.dest()}" --bindir="${bin.dest()}"`,
-++	binBuild.file('%%DISTDIR%%/optipng-0.7.8.tar.gz', [
-++		`./configure --with-system-zlib --with-system-libpng --prefix="${bin.dest()}" --bindir="${bin.dest()}"`,
-+ 		'make install'
-+ 	]).then(() => {
-+ 		log.success('optipng built successfully');
++-		'make install'
++-	]).then(() => {
++-		log.success('optipng built successfully');
++-	}).catch(error => {
++-		log.error(error.stack);
++-	});
+++	log.error('optipng not found at system path:', error.message);
++ });

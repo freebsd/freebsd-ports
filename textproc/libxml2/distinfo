@@ -1,3 +1,3 @@
-TIMESTAMP = 1752591655
-SHA256 (gnome/libxml2-2.14.5.tar.xz) = 03d006f3537616833c16c53addcdc32a0eb20e55443cba4038307e3fa7d8d44b
-SIZE (gnome/libxml2-2.14.5.tar.xz) = 2327528
+TIMESTAMP = 1777159137
+SHA256 (gnome/libxml2-2.15.3.tar.xz) = 78262a6e7ac170d6528ebfe2efccdf220191a5af6a6cd61ea4a9a9a5042c7a07
+SIZE (gnome/libxml2-2.15.3.tar.xz) = 3152452

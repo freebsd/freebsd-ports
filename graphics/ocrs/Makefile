@@ -1,7 +1,7 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.10.3
-PORTREVISION=	2
+DISTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,81 +19,114 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	robertknight
 
 CARGO_CRATES=	adler2-2.0.0 \
-		anyhow-1.0.98 \
+		anyhow-1.0.102 \
+		arboard-3.6.1 \
 		autocfg-1.1.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
+		bitflags-2.9.4 \
 		bumpalo-3.14.0 \
 		bytemuck-1.14.0 \
 		byteorder-lite-0.1.0 \
-		bytes-1.10.0 \
+		bytes-1.11.1 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
+		clipboard-win-5.4.1 \
 		crc32fast-1.3.2 \
 		crossbeam-deque-0.8.4 \
 		crossbeam-epoch-0.9.17 \
 		crossbeam-utils-0.8.18 \
+		crunchy-0.2.4 \
+		dispatch2-0.3.0 \
 		either-1.9.0 \
+		errno-0.3.14 \
+		error-code-3.3.2 \
 		fastrand-2.3.0 \
+		fax-0.2.6 \
+		fax_derive-0.2.0 \
 		fdeflate-0.3.3 \
 		flatbuffers-24.3.25 \
 		flate2-1.0.35 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
+		gethostname-1.1.0 \
 		getrandom-0.2.11 \
+		half-2.7.1 \
 		hermit-abi-0.3.9 \
-		home-0.5.11 \
+		home-0.5.12 \
 		http-1.2.0 \
 		httparse-1.10.0 \
 		idna-1.0.3 \
 		idna_adapter-1.0.0 \
-		image-0.25.5 \
+		image-0.25.9 \
 		image-webp-0.2.0 \
 		itoa-1.0.10 \
-		lexopt-0.3.0 \
-		libc-0.2.151 \
+		lexopt-0.3.2 \
+		libc-0.2.180 \
+		linux-raw-sys-0.11.0 \
+		lock_api-0.4.14 \
 		log-0.4.25 \
 		memchr-2.7.4 \
 		miniz_oxide-0.8.0 \
+		moxcms-0.7.7 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
+		objc2-0.6.3 \
+		objc2-app-kit-0.3.2 \
+		objc2-core-foundation-0.3.2 \
+		objc2-core-graphics-0.3.2 \
+		objc2-encode-4.1.0 \
+		objc2-foundation-0.3.2 \
+		objc2-io-surface-0.3.2 \
 		once_cell-1.19.0 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
 		percent-encoding-2.3.1 \
-		png-0.17.16 \
+		png-0.18.1 \
 		proc-macro2-1.0.89 \
+		pxfm-0.1.25 \
 		quick-error-2.0.1 \
 		quote-1.0.35 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		redox_syscall-0.5.18 \
 		ring-0.17.7 \
-		rten-0.18.0 \
-		rten-imageproc-0.18.0 \
-		rten-simd-0.18.0 \
-		rten-tensor-0.18.0 \
-		rten-vecmath-0.18.0 \
+		rten-0.24.0 \
+		rten-base-0.24.0 \
+		rten-gemm-0.24.0 \
+		rten-imageproc-0.24.0 \
+		rten-model-file-0.24.0 \
+		rten-onnx-0.24.0 \
+		rten-shape-inference-0.24.0 \
+		rten-simd-0.24.0 \
+		rten-tensor-0.24.0 \
+		rten-vecmath-0.24.0 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.0 \
+		rustix-1.1.3 \
 		rustls-0.23.22 \
-		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
 		rustls-webpki-0.102.8 \
 		rustversion-1.0.19 \
-		ryu-1.0.16 \
+		scopeguard-1.2.0 \
 		semver-1.0.20 \
-		serde-1.0.194 \
-		serde_derive-1.0.194 \
-		serde_json-1.0.140 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
 		simd-adler32-0.3.7 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
 		syn-2.0.87 \
-		thiserror-2.0.12 \
-		thiserror-impl-2.0.12 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		tiff-0.10.3 \
+		typeid-1.0.3 \
 		unicode-ident-1.0.12 \
 		untrusted-0.9.0 \
-		ureq-3.0.5 \
-		ureq-proto-0.3.0 \
+		ureq-3.2.0 \
+		ureq-proto-0.5.3 \
 		url-2.5.4 \
 		utf-8-0.7.6 \
 		utf8_iter-1.0.4 \
@@ -103,29 +136,39 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
-		webpki-roots-0.26.8 \
+		webpki-roots-1.0.2 \
+		weezl-0.1.12 \
+		windows-link-0.2.1 \
 		windows-sys-0.48.0 \
-		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
+		windows-sys-0.61.2 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.6 \
+		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.6 \
-		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnu-0.53.1 \
+		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.1 \
+		x11rb-0.13.2 \
+		x11rb-protocol-0.13.2 \
+		zerocopy-0.8.27 \
+		zerocopy-derive-0.8.27 \
 		zeroize-1.7.0 \
+		zmij-1.0.7 \
 		zune-core-0.4.12 \
-		zune-jpeg-0.4.13
+		zune-core-0.5.0 \
+		zune-jpeg-0.4.21 \
+		zune-jpeg-0.5.5
 
 PLIST_FILES=	bin/${PORTNAME}
 

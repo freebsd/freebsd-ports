@@ -1,0 +1,24 @@
+# Fix pyproject.toml license field format for PEP 621 compliance
+#
+# The original pyproject.toml uses deprecated license field format:
+#   license = "BSD-2-Clause" 
+#   license-files = ["LICENSE.txt"]
+# 
+# Modern setuptools (used in pep517 builds) requires PEP 621 compliant format:
+#   license = {text = "BSD-2-Clause"}
+#
+# This change enables successful pep517 builds by using the standard license
+# object format and removing the conflicting license-files field.
+#
+--- pyproject.toml.orig	2025-10-04 11:48:10.241408000 -0700
++++ pyproject.toml	2025-10-04 11:48:10.243444000 -0700
+@@ -9,8 +9,7 @@
+ authors = [
+     {name = "Bas Terwijn", email = "bterwijn@gmail.com"}
+ ]
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-2-Clause"}
+ readme = "README.md"
+ requires-python = ">=3.7"
+ classifiers = [

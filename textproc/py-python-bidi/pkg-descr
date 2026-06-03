@@ -1,2 +1,6 @@
-Bi-directional (BiDi) layout implementation in pure python.
-It contains library and command line utility pybidi.
+The python-bidi library provides bi-directional (BiDi) layout algorithms
+for Python. It offers a wrapper for the unicode-bidi Rust crate.
+
+This library is used to correctly display text that mixes left-to-right
+and right-to-left scripts. It also includes a command-line utility called
+`pybidi` for running the display algorithm.

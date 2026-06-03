@@ -11,8 +11,6 @@ WWW=		https://wolkykim.github.io/qdecoder/ \
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

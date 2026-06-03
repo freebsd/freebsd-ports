@@ -1,7 +1,7 @@
-PORTNAME=		ooni-probe-cli
+PORTNAME=	ooni-probe-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.26.0
-CATEGORIES=		net www benchmarks
+DISTVERSION=	3.29.1
+CATEGORIES=	net www benchmarks
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Next generation OONI Probe CLI
@@ -12,11 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		go:1.23,modules
+USES=		go:modules
 
-GO_BUILDFLAGS=	-ldflags '-s -w -extldflags "-static"'
 GO_MODULE=	github.com/ooni/probe-cli/v3
 GO_TARGET=	./cmd/ooniprobe
+GO_BUILDFLAGS=	-ldflags '-s -w -extldflags "-static"'
+
+PIE_UNSAFE=	yes
 
 PLIST_FILES=	bin/ooniprobe
 

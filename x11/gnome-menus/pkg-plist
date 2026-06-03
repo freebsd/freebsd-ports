@@ -23,6 +23,7 @@ share/desktop-directories/X-GNOME-SystemSettings.directory
 share/desktop-directories/X-GNOME-Utilities.directory
 share/desktop-directories/X-GNOME-WebApplications.directory
 share/gir-1.0/GMenu-3.0.gir
+share/locale/ab/LC_MESSAGES/gnome-menus.mo
 share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ak/LC_MESSAGES/gnome-menus.mo
 share/locale/an/LC_MESSAGES/gnome-menus.mo
@@ -74,6 +75,7 @@ share/locale/hu/LC_MESSAGES/gnome-menus.mo
 share/locale/hy/LC_MESSAGES/gnome-menus.mo
 share/locale/ia/LC_MESSAGES/gnome-menus.mo
 share/locale/id/LC_MESSAGES/gnome-menus.mo
+share/locale/ie/LC_MESSAGES/gnome-menus.mo
 share/locale/ig/LC_MESSAGES/gnome-menus.mo
 share/locale/io/LC_MESSAGES/gnome-menus.mo
 share/locale/is/LC_MESSAGES/gnome-menus.mo
@@ -99,6 +101,7 @@ share/locale/ml/LC_MESSAGES/gnome-menus.mo
 share/locale/mn/LC_MESSAGES/gnome-menus.mo
 share/locale/mr/LC_MESSAGES/gnome-menus.mo
 share/locale/ms/LC_MESSAGES/gnome-menus.mo
+share/locale/my/LC_MESSAGES/gnome-menus.mo
 share/locale/nb/LC_MESSAGES/gnome-menus.mo
 share/locale/nds/LC_MESSAGES/gnome-menus.mo
 share/locale/ne/LC_MESSAGES/gnome-menus.mo
@@ -129,6 +132,7 @@ share/locale/th/LC_MESSAGES/gnome-menus.mo
 share/locale/tr/LC_MESSAGES/gnome-menus.mo
 share/locale/ug/LC_MESSAGES/gnome-menus.mo
 share/locale/uk/LC_MESSAGES/gnome-menus.mo
+share/locale/uz/LC_MESSAGES/gnome-menus.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-menus.mo
 share/locale/vi/LC_MESSAGES/gnome-menus.mo
 share/locale/xh/LC_MESSAGES/gnome-menus.mo

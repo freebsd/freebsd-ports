@@ -1,5 +1,5 @@
 PORTNAME=	bangr
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.4
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -22,7 +22,8 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BAngr
-GH_TUPLE=	sjaehn:BWidgets:9416adc:BWidgets/src/BWidgets
+GH_TUPLE=	sjaehn:BWidgets:e04aede:BWidgets/src/BWidgets \
+		lv2:pugl:9b5a0871c1a8771dbe204e60f437653a67abd42a:pugl/src/BWidgets/pugl
 
 MAKEFILE=	makefile
 

@@ -1,5 +1,6 @@
 PORTNAME=	bazel
 DISTVERSION=	5.4.1 # please make sure that science/py-tensorflow builds before updating
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/bazelbuild/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	bazel-${DISTVERSION}-dist

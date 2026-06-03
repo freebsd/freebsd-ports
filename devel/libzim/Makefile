@@ -1,6 +1,6 @@
 PORTNAME=	libzim
 DISTVERSION=	9.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://download.openzim.org/release/libzim/
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # must be present as soon as configure time.
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libxapian.so:databases/xapian-core \
+		libxapian.so:databases/xapian-core14 \
 		libzstd.so:archivers/zstd
 
 # Python is necessary for the build against Xapian and for Meson's 'test' target

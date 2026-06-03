@@ -1,5 +1,6 @@
 PORTNAME=	obs-multi-rtmp
-DISTVERSION=	0.7.2
+DISTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -9,6 +10,7 @@ WWW=		https://github.com/sorayuki/obs-multi-rtmp/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	simde>0:devel/simde
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 
 USES=		cmake gl qt:6
@@ -19,6 +21,10 @@ USE_QT=		base
 
 CMAKE_ON=	ENABLE_QT
 CMAKE_OFF=	CMAKE_COMPILE_WARNING_AS_ERROR
+
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${MKDIR} \

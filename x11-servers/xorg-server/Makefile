@@ -1,5 +1,5 @@
 PORTNAME=	xorg
-PORTVERSION=	21.1.18
+PORTVERSION=	21.1.23
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -52,6 +52,7 @@ MESON_ARGS+=	-Dxwin=false \
 		-Dfallback_input_driver=libinput \
 		-Ddocs=false \
 		-Dxcsecurity=true \
+		-Dsecure-rpc=false \
 		-D${FLAVOR}=true
 
 .for f in ${FLAVORS:N${FLAVOR}}

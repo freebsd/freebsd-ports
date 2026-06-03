@@ -1,3 +1,0 @@
-Arachne-pnr implements the place and route step of the hardware
-compilation process for FPGAs.  It currently targets the Lattice
-Semiconductor iCE40 family of FPGAs.

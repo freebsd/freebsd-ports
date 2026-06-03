@@ -5,7 +5,7 @@
      ],
      python_requires=">=3.8",
 -    setup_requires=["setuptools_scm>=8.1.0,<8.2"],
-+    setup_requires=["setuptools_scm>=8.0.4,<8.2"],
++    setup_requires=["setuptools_scm>=8.1.0"],
      install_requires=[
          "requests",
          "setuptools",

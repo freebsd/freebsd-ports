@@ -19,9 +19,6 @@ LICENSE_NAME=	UrbanTerror
 LICENSE_TEXT=	The mod files may not be sold or distributed on physical media unless with permission from id Software.
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_mips=		Fails to install: runaway process
-BROKEN_mips64=		Fails to install: runaway process
-
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/quake3

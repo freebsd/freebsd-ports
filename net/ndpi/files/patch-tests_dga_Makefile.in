@@ -1,18 +1,18 @@
---- tests/dga/Makefile.in.orig	2023-02-01 17:29:59 UTC
+--- tests/dga/Makefile.in.orig	2025-11-17 08:11:53 UTC
 +++ tests/dga/Makefile.in
-@@ -4,10 +4,7 @@ SRCHOME=../../src
+@@ -10,10 +10,7 @@ SRCHOME=$(top_srcdir)/src
  
- SRCHOME=../../src
+ SRCHOME=$(top_srcdir)/src
  
 -ifneq ($(OS),Windows_NT)
 -CFLAGS+=-fPIC -DPIC
 -endif
--CFLAGS+=-g -I$(SRCHOME)/include @NDPI_CFLAGS@
-+CFLAGS+=-fPIC -DPIC -g -I$(SRCHOME)/include @CFLAGS@ @NDPI_CFLAGS@
- LIBNDPI=$(SRCHOME)/lib/libndpi.a
+-CFLAGS+=-g -I$(SRCHOME)/include -I$(top_builddir)/src/include @NDPI_CFLAGS@
++CFLAGS+=-fPIC -DPIC -g -I$(SRCHOME)/include -I$(top_builddir)/src/include @NDPI_CFLAGS@
+ LIBNDPI=$(top_builddir)/src/lib/libndpi.a
  LIBS=$(LIBNDPI) @ADDITIONAL_LIBS@ -lpthread @LIBS@
  LDFLAGS+=@NDPI_LDFLAGS@
-@@ -18,7 +15,7 @@ EXECUTABLE_SOURCES := dga_evaluate.c
+@@ -24,7 +21,7 @@ EXECUTABLE_SOURCES := dga_evaluate.c
  all: dga_evaluate$(EXE_SUFFIX)
  
  EXECUTABLE_SOURCES := dga_evaluate.c

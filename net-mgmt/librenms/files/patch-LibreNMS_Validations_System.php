@@ -1,12 +1,12 @@
---- LibreNMS/Validations/System.php.orig	2023-08-21 20:59:01 UTC
+--- LibreNMS/Validations/System.php.orig	2025-11-17 19:04:56 UTC
 +++ LibreNMS/Validations/System.php
-@@ -40,19 +40,12 @@ class System extends BaseValidation
+@@ -41,19 +41,12 @@ class System extends BaseValidation
      {
          $install_dir = $validator->getBaseDir();
  
--        $lnms = str_replace('lnms:', '', rtrim(`whereis -b lnms 2>/dev/null`));
+-        $lnms = str_replace('lnms:', '', rtrim((string) `whereis -b lnms 2>/dev/null`));
 +        $lnms = rtrim(`/usr/bin/find %%LOCALBASE%%/bin -name lnms`);
-         $path = rtrim(`echo "\$PATH"`);
+         $path = rtrim((string) `echo "\$PATH"`);
  
          // if couldn't find lnms and we have PATH
          if (empty($lnms) && ! empty($path)) {

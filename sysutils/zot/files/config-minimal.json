@@ -1,0 +1,13 @@
+{
+    "distSpecVersion": "1.1.1",
+    "storage": {
+        "rootDirectory": "/var/db/zot"
+    },
+    "http": {
+        "address": "127.0.0.1",
+        "port": "8080"
+    },
+    "log": {
+        "level": "debug"
+    }
+}

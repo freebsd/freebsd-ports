@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=	GAMMA LAYERSHELL SCREENCOPY VIRTUALINPUT X11
 GAMMA_DESC=		Include gammacontrol protocol (required by, e.g., Redshift)
 LAYERSHELL_DESC=	Include layer_shell protocol (required by, e.g., waybar)
 SCREENCOPY_DESC=	Include screenshot protocol (required by, e.g., grim)
-VIRTUALINPUT_DESC=	needed for VNC support (requiered by e.g. wayvnc)
+VIRTUALINPUT_DESC=	needed for VNC support (required by e.g. wayvnc)
 
 GAMMA_MAKE_ARGS=	WITH_GAMMACONTROL=YES
 LAYERSHELL_MAKE_ARGS=	WITH_LAYERSHELL=YES

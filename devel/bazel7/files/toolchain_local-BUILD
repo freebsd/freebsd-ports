@@ -1,0 +1,43 @@
+load("@rules_python//python:py_runtime.bzl", "py_runtime")
+load("@rules_python//python:py_runtime_pair.bzl", "py_runtime_pair")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["rules_python_freebsd.patch"])
+
+config_setting(
+    name = "remotejdk_21_setting",
+    values = {"java_runtime_version": "remotejdk_21"},
+)
+
+toolchain(
+    name = "local_jdk_21_runtime",
+    target_settings = [":remotejdk_21_setting"],
+    toolchain_type = "@bazel_tools//tools/jdk:runtime_toolchain_type",
+    toolchain = "@local_jdk//:jdk",
+)
+
+toolchain(
+    name = "local_jdk_21_bootstrap",
+    target_settings = [":remotejdk_21_setting"],
+    toolchain_type = "@bazel_tools//tools/jdk:bootstrap_runtime_toolchain_type",
+    toolchain = "@local_jdk//:jdk",
+)
+
+py_runtime(
+    name = "freebsd_py3_runtime",
+    interpreter_path = "%%PYTHON_CMD%%",
+    python_version = "PY3",
+    stub_shebang = "#!%%PYTHON_CMD%%",
+)
+
+py_runtime_pair(
+    name = "freebsd_py_runtime_pair",
+    py3_runtime = ":freebsd_py3_runtime",
+)
+
+toolchain(
+    name = "freebsd_python3_toolchain",
+    toolchain = ":freebsd_py_runtime_pair",
+    toolchain_type = "@rules_python//python:toolchain_type",
+)

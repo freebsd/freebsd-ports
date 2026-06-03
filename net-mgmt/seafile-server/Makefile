@@ -1,16 +1,19 @@
 PORTNAME=	seafile-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAFILE_VER}
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-server
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Server)
 WWW=		https://github.com/haiwen/seafile-server
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	The update to a newer version is more difficult than expected, and the current version of the web backend, www/seahub, only runs on Django 4.2
+EXPIRATION_DATE=2026-08-31
 
 LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevhtp.so:www/libevhtp \

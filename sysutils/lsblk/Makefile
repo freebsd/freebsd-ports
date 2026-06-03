@@ -1,5 +1,6 @@
 PORTNAME=	lsblk
-DISTVERSION=	4.0
+DISTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/vermaden/lsblk/raw/master/release/:source \
 		https://github.com/vermaden/lsblk/raw/master/:license
@@ -18,10 +19,11 @@ LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
 NO_ARCH=	YES
 NO_BUILD=	YES
 
-PLIST_FILES=	sbin/${PORTNAME}
+PLIST_FILES=	sbin/${PORTNAME} \
+		share/man/man8/${PORTNAME}.8.gz
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/lsblk.sh \
-	${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/lsblk ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/lsblk.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	hfsfuse
-DISTVERSION=	0.242
+DISTVERSION=	0.289
 CATEGORIES=	filesystems
 MASTER_SITES=	https://github.com/0x09/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	fusefs-
@@ -9,18 +9,20 @@ COMMENT=	FUSE driver for HFS+ filesystems
 WWW=		https://github.com/0x09/hfsfuse
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/src/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libublio.so:devel/libublio \
-		libutf8proc.so:textproc/utf8proc
+		libutf8proc.so:textproc/utf8proc \
+		liblzfse.so:archivers/lzfse
 
-USES=		fuse gmake
+USES=		fuse gmake libarchive
 USE_CSTD=	gnu11
 
 ALL_TARGET=	config all
 
 PLIST_FILES=	bin/hfsdump \
-		bin/hfsfuse
+		bin/hfsfuse \
+		bin/hfstar
 
 PORTDOCS=	README.md
 
@@ -33,6 +35,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hfsdump ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/hfsfuse ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/hfstar ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

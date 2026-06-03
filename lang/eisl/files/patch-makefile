@@ -1,29 +1,60 @@
---- makefile.orig	2023-03-05 08:53:07 UTC
+-- Fix build on FreeBSD.
+-- Use port's CC and CURSES flags, and respect LDFLAGS.
+
+--- makefile.orig	2026-05-10 07:33:30 UTC
 +++ makefile
-@@ -1,7 +1,7 @@
- .POSIX:
- .DELETE_ON_ERROR:
+@@ -6,11 +6,11 @@ USE_GDB ?= 0
+ USE_FLTO ?= 0
+ USE_GDB ?= 0
  
--CC := cc
-+#CC := cc
- DC := ldc2
- LD := $(CC)
- ifneq  ($(shell uname),Darwin)
-@@ -67,7 +67,7 @@ ifeq ($(DEBUG),1)
- 		LDFLAGS += -fsanitize=undefined
- 	endif
- else
--	CFLAGS += -O3 -flto -DNDEBUG=1 -DWITHOUT_NANA=1
-+	CFLAGS += -O3 -DNDEBUG=1 -DWITHOUT_NANA=1
- 	SRC_CII += cii/src/mem.c
+-CC := gcc
++#CC := gcc
+ LIBS := -lm -ldl -lpthread -lncurses
+ INCS := 
+-CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
+-CURSES_LIBS := $(shell ncursesw6-config --libs)
++#CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
++#CURSES_LIBS := $(shell ncursesw6-config --libs)
+ 
+ 
+ CFLAGS += $(INCS) -Wall $(CURSES_CFLAGS) 
+@@ -29,17 +29,17 @@ SRC_LISP := library/bit.lsp \
+ 		library/plot.lsp \
+ 		library/unistd.lsp 
+ 
+-CFLAGS += -O3
++#CFLAGS += -O3
+ 
+ ifeq ($(USE_FLTO),1)
+-CFLAGS += -O3 -flto
++#CFLAGS += -flto
  endif
- OBJ_CII := $(SRC_CII:.c=.o)
-@@ -85,7 +85,7 @@ ifeq  ($(shell uname -n),raspberrypi)
- 	CFLAGS += -D__rpi__
+ ifeq ($(USE_GDB),1)
+-CFLAGS += -O0 -g
++CFLAGS += -g
+ endif 
+ 
+ ifeq  ($(shell uname -n),raspberrypi)
+-CFLAGS += -O3
++#CFLAGS += -O3
  endif
- ifneq ($(DEBUG),1)
--	LDFLAGS += -flto
-+	#LDFLAGS += -flto
- 	ifeq  ($(shell uname),Darwin)
- 		LDFLAGS += -Wl,-S,-x
- 	else
+ 
+ OBJ_LISP := $(SRC_LISP:.lsp=.o)
+@@ -98,7 +98,7 @@ eisl: $(EISL_OBJS) 
+ all: $(TARGETS)
+ 
+ eisl: $(EISL_OBJS) 
+-	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) 
++	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) $(LDFLAGS) 
+ 
+ %.o: %.c eisl.h ffi.h term.h
+ 	$(CC) $(CFLAGS) -c $< -o $@
+@@ -125,7 +125,7 @@ edlis: edlis.o syn_highlight.o 
+ 
+ 
+ edlis: edlis.o syn_highlight.o 
+-	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS)
++	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS) $(LDFLAGS)
+ 
+ edlis.o: edlis.c edlis.h term.h
+ 	$(CC) $(CFLAGS) -c edlis.c

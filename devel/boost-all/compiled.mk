@@ -46,8 +46,7 @@ MAKE_ARGS+=	pch=off
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && \
-	((${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017) || \
-	${PORT_OPTIONS:MLLVM_FROM_PORTS})
+	${PORT_OPTIONS:MLLVM_FROM_PORTS}
 USES+=	llvm:build
 USES:=	${USES:Ncompiler\:*} # XXX avoid warnings
 CHOSEN_COMPILER_TYPE=	clang

@@ -1,5 +1,6 @@
 PORTNAME=	groovy
 DISTVERSION=	2.4.21
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	http://dl.bintray.com/groovy/maven/
 DISTFILES=	apache-groovy-binary-${PORTVERSION}${EXTRACT_SUFX}

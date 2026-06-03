@@ -21,9 +21,7 @@ Date:   2023-08-17T13:50:11-07:00
     Auto-Submit: Andrey Kosyakov <caseq@chromium.org>
     Cr-Commit-Position: refs/heads/main@{#89559}
 
-diff --git deps/v8/src/inspector/string-16.cc deps/v8/src/inspector/string-16.cc
-index a8b786a8166..6df9963e970 100644
---- core/Common/3dParty/v8_89/v8/src/inspector/string-16.cc
+--- core/Common/3dParty/v8_89/v8/src/inspector/string-16.cc.orig	2021-04-12 21:00:33 UTC
 +++ core/Common/3dParty/v8_89/v8/src/inspector/string-16.cc
 @@ -27,7 +27,7 @@ bool isSpaceOrNewLine(UChar c) {
    return isASCII(c) && c <= ' ' && (c == ' ' || (c <= 0xD && c >= 0x9));
@@ -34,7 +32,7 @@ index a8b786a8166..6df9963e970 100644
                              bool* ok = nullptr) {
    std::vector<char> buffer;
    buffer.reserve(length + 1);
-@@ -50,6 +50,8 @@ int64_t charactersToInteger(const UChar* characters, size_t length,
+@@ -50,6 +50,8 @@ int64_t charactersToInteger(const UChar* characters, s
  
  String16::String16(const UChar* characters, size_t size)
      : m_impl(characters, size) {}
@@ -43,21 +41,18 @@ index a8b786a8166..6df9963e970 100644
  
  String16::String16(const UChar* characters) : m_impl(characters) {}
  
-@@ -241,6 +243,10 @@ String16 String16::fromUTF16LE(const UChar* stringStart, size_t length) {
+@@ -231,6 +233,10 @@ String16 String16::fromUTF16LE(const UChar* stringStar
+   // No need to do anything on little endian machines.
+   return String16(stringStart, length);
  #endif  // V8_TARGET_BIG_ENDIAN
- }
- 
-+String16 String16::fromUTF16LE(const uint16_t* stringStart, size_t length) {
-+  return fromUTF16LE(reinterpret_cast<const UChar*>(stringStart), length);
 +}
 +
- std::string String16::utf8() const {
-   return UTF16ToUTF8(m_impl.data(), m_impl.size());
++String16 String16::fromUTF16LE(const uint16_t* stringStart, size_t length) {
++  return fromUTF16LE(reinterpret_cast<const UChar*>(stringStart), length);
  }
-
-diff --git deps/v8/src/inspector/string-16.h deps/v8/src/inspector/string-16.h
-index 1678ffb2e1e..d9f6c466ab1 100644
---- core/Common/3dParty/v8_89/v8/src/inspector/string-16.h
+ 
+ std::string String16::utf8() const {
+--- core/Common/3dParty/v8_89/v8/src/inspector/string-16.h.orig	2021-04-12 21:00:33 UTC
 +++ core/Common/3dParty/v8_89/v8/src/inspector/string-16.h
 @@ -6,6 +6,7 @@
  #define V8_INSPECTOR_STRING_16_H_
@@ -67,7 +62,7 @@ index 1678ffb2e1e..d9f6c466ab1 100644
  #include <cctype>
  #include <climits>
  #include <cstring>
-@@ -17,7 +18,7 @@ namespace v8_inspector {
+@@ -17,7 +18,7 @@
  
  namespace v8_inspector {
  
@@ -104,10 +99,7 @@ index 1678ffb2e1e..d9f6c466ab1 100644
                                          size_t length);
  
    std::size_t hash() const {
-
-diff --git deps/v8/src/inspector/v8-string-conversions.cc deps/v8/src/inspector/v8-string-conversions.cc
-index 0c75e66b972..8cf19be816c 100644
---- core/Common/3dParty/v8_89/v8/src/inspector/v8-string-conversions.cc
+--- core/Common/3dParty/v8_89/v8/src/inspector/v8-string-conversions.cc.orig	2021-04-12 21:00:33 UTC
 +++ core/Common/3dParty/v8_89/v8/src/inspector/v8-string-conversions.cc
 @@ -12,7 +12,7 @@
  
@@ -118,7 +110,7 @@ index 0c75e66b972..8cf19be816c 100644
  using UChar32 = uint32_t;
  
  bool isASCII(UChar c) { return !(c & ~0x7F); }
-@@ -386,7 +386,7 @@ std::string UTF16ToUTF8(const UChar* stringStart, size_t length) {
+@@ -389,7 +389,7 @@ std::string UTF16ToUTF8(const UChar* stringStart, size
  
  std::basic_string<UChar> UTF8ToUTF16(const char* stringStart, size_t length) {
    if (!stringStart || !length) return std::basic_string<UChar>();
@@ -127,7 +119,7 @@ index 0c75e66b972..8cf19be816c 100644
    UChar* bufferStart = buffer.data();
  
    UChar* bufferCurrent = bufferStart;
-@@ -395,7 +395,7 @@ std::basic_string<UChar> UTF8ToUTF16(const char* stringStart, size_t length) {
+@@ -398,7 +398,7 @@ std::basic_string<UChar> UTF8ToUTF16(const char* strin
                           reinterpret_cast<const char*>(stringStart + length),
                           &bufferCurrent, bufferCurrent + buffer.size(), nullptr,
                           true) != conversionOK)
@@ -136,9 +128,7 @@ index 0c75e66b972..8cf19be816c 100644
    size_t utf16Length = bufferCurrent - bufferStart;
    return std::basic_string<UChar>(bufferStart, bufferStart + utf16Length);
  }
-diff --git deps/v8/src/inspector/v8-string-conversions.h deps/v8/src/inspector/v8-string-conversions.h
-index eb33c6816a5..1126255dac2 100644
---- core/Common/3dParty/v8_89/v8/src/inspector/v8-string-conversions.h
+--- core/Common/3dParty/v8_89/v8/src/inspector/v8-string-conversions.h.orig	2021-04-12 21:00:33 UTC
 +++ core/Common/3dParty/v8_89/v8/src/inspector/v8-string-conversions.h
 @@ -5,13 +5,15 @@
  #ifndef V8_INSPECTOR_V8_STRING_CONVERSIONS_H_
@@ -158,7 +148,7 @@ index eb33c6816a5..1126255dac2 100644
  }  // namespace v8_inspector
  
  #endif  // V8_INSPECTOR_V8_STRING_CONVERSIONS_H_
---- core/Common/3dParty/v8_89/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc
+--- core/Common/3dParty/v8_89/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc.orig	2021-04-12 21:00:33 UTC
 +++ core/Common/3dParty/v8_89/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc
 @@ -11,13 +11,16 @@
  namespace v8_crdtp {

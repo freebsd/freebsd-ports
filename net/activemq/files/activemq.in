@@ -11,10 +11,10 @@
 # activemq_enable (bool):   Set to NO by default.
 #               Set it to YES to enable activemq.
 #
-# activemq_user (username): Set to activemq by default.
+# activemq_user (username): Set to %%AMQUSER%% by default.
 #               Set it to required username.
 #
-# activemq_group (group):   Set to activemq by default.
+# activemq_group (group):   Set to %%AMQGROUP%% by default.
 #               Set it to required group.
 #
 # activemq_classpath (path):   Set to %%DATADIR%% by default.
@@ -30,7 +30,7 @@
 #               Set the timeout in seconds to shutdown.
 #
 # activemq_java_home (path): Set the path to the jvm to use.
-#		Set to openJDK18 by default.
+#		Set to %%JAVA_HOME%%/bin/java by default.
 #
 # activemq_debug_precmd (bool): Give java command line that
 #		will be run, when started for debugging outside
@@ -53,8 +53,8 @@ load_rc_config $name
 
 # Set defaults
 : ${activemq_enable:=NO}
-: ${activemq_user:=activemq}
-: ${activemq_group:=activemq}
+: ${activemq_user:=%%AMQUSER%%}
+: ${activemq_group:=%%AMQGROUP%%}
 : ${activemq_classpath:=%%ETCDIR%%}
 : ${activemq_conf:=%%ETCDIR%%}
 : ${activemq_data:=/var/db/activemq}
@@ -63,7 +63,7 @@ load_rc_config $name
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
 : ${activemq_stop_timeout:="10"}
 : ${activemq_hostname:=`/bin/hostname`}
-: ${activemq_java_home:='%%LOCALBASE%%/openjdk18/bin/java'}
+: ${activemq_java_home:='%%JAVA_HOME%%/bin/java'}
 : ${activemq_debug_precmd:=NO}
 : ${activemq_audit_log:=YES}
 

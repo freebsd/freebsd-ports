@@ -1,6 +1,6 @@
 PORTNAME=	seda
 PORTVERSION=	3.0
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-release-${VERSION_DATE}
@@ -9,7 +9,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Architecture for Highly Concurrent Server Applications
 WWW=		http://www.eecs.harvard.edu/~mdw/proj/seda/
 
+DEPRECATED=	old, no users in the ports tree, unmaintained, uses long deprecated code removed in jdk25
+EXPIRATION_DATE=	2026-06-26
+
 USES=		java:ant,run
+JAVA_VERSION=	8 11 17 21
 
 ALL_TARGET=	dist
 NO_ARCH=	yes

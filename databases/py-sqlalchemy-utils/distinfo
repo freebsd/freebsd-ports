@@ -1,3 +1,3 @@
-TIMESTAMP = 1711466112
-SHA256 (SQLAlchemy-Utils-0.41.2.tar.gz) = bc599c8c3b3319e53ce6c5c3c471120bd325d0071fb6f38a10e924e3d07b9990
-SIZE (SQLAlchemy-Utils-0.41.2.tar.gz) = 138017
+TIMESTAMP = 1768625631
+SHA256 (sqlalchemy_utils-0.42.1.tar.gz) = 881f9cd9e5044dc8f827bccb0425ce2e55490ce44fc0bb848c55cc8ee44cc02e
+SIZE (sqlalchemy_utils-0.42.1.tar.gz) = 130789

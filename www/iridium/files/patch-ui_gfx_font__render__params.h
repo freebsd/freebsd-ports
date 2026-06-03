@@ -1,4 +1,4 @@
---- ui/gfx/font_render_params.h.orig	2025-05-07 06:48:23 UTC
+--- ui/gfx/font_render_params.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/gfx/font_render_params.h
 @@ -115,7 +115,7 @@ COMPONENT_EXPORT(GFX)
  FontRenderParams GetFontRenderParams(const FontRenderParamsQuery& query,

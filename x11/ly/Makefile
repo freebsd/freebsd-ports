@@ -1,64 +1,49 @@
 PORTNAME=	ly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	1.4.1
 CATEGORIES=	x11
+MASTER_SITES=	https://codeberg.org/fairyglade/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0edb0012abb52ce13d1e9157e7a25557cda01195.patch:-p1
-PATCHFILES+=	42bf929756675f1e6cb922f721665d581574fdc6.patch:-p1
-PATCHFILES+=	2ca870cfc5cd6611bb1fd52dcd67ef40895ad787.patch:-p1
-
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	kenrap@FreeBSD.org
 COMMENT=	TUI (ncurses-like) display manager for X and Wayland
-WWW=		https://github.com/fairyglade/ly
+WWW=		https://codeberg.org/fairyglade/ly
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/license.md
 
-USES=		gmake localbase xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	fairyglade
-GH_TUPLE=	nullgemm:argoat:36c41f09ecc2a10c9acf35e4194e08b6fa10cf45:argoat/sub/argoat \
-		nullgemm:configator:8227b3a835bf4c7e50a57e4ad6aff620ba0dc349:configator/sub/configator \
-		nullgemm:dragonfail:6b40d1f8b7f6dda9746e688666af623dfbcceb94:dragonfail/sub/dragonfail \
-		nullgemm:termbox_next:2312da153e44face7bb45aa2798ec284289c17ca:termbox_next/sub/termbox_next
+USES=		zig pkgconfig xorg
 USE_XORG=	xcb
-
-MAKEFILE=	makefile
-MAKE_ARGS=	CC="${CC}" \
-		DISTVERSIONFULL="${DISTVERSIONFULL}"
-ALL_TARGET=	final
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-_GITDIR=	${WRKDIR}/${GH_PROJECT}-git
+USE_GITHUB=	yes
 
-post-patch:
-	# Note to maintainers: patches can be regenerated with
-	# "make clean extract do-patch makepatch" (YMMV).
-	@${REINPLACE_CMD} "s|%%ETCDIR%%|${ETCDIR}|g" ${WRKSRC}/src/config.c
-	@${REINPLACE_CMD} -e "s|%%ETCDIR%%|${ETCDIR}|g" \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKSRC}/res/config.ini
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKSRC}/res/xsetup.sh
+ZIG_ARGS=	-Dprefix_directory="${PREFIX}" \
+		-Dconfig_directory="${PREFIX}/etc" \
+		-Dinit_system=freebsd
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ly
-.for _f in config.ini xsetup.sh wsetup.sh
-	@${MV} ${STAGEDIR}${ETCDIR}/${_f} \
-		${STAGEDIR}${ETCDIR}/${_f}.sample
-.endfor
-
-# Target for maintainers. Use this target to regenerate GH_TUPLE for Git
-# submodules used by the project (and project's dependencies).
-_git-submodules-to-gh-tuple:
-	${RM} -r ${_GITDIR}
-	git clone https://github.com/${GH_ACCOUNT}/${GH_PROJECT} ${_GITDIR}
-	git -C ${_GITDIR} checkout ${GH_TAGNAME}
-	${REINPLACE_CMD} 's/make github/${MAKE_CMD} github/g' ${_GITDIR}/makefile
-	${MAKE_CMD} -C ${_GITDIR} github
-	git -C ${_GITDIR} submodule status --recursive | cut -c 2- | \
-		${AWK} -f ${FILESDIR}/git-submodules-to-gh-tuple.awk
+	${REINPLACE_CMD} 's,$$PREFIX_DIRECTORY,${PREFIX},g ; s,$$EXECUTABLE_NAME,ly,g' \
+		${WRKSRC}/res/ly-freebsd-wrapper
+	${INSTALL_SCRIPT} ${WRKSRC}/res/ly-freebsd-wrapper ${STAGEDIR}${PREFIX}/bin/ly_wrapper
+	${INSTALL_DATA} ${WRKSRC}/res/pam.d/ly-freebsd ${STAGEDIR}${PREFIX}/etc/pam.d/ly
+	${INSTALL_DATA} ${WRKSRC}/res/pam.d/ly-freebsd-autologin ${STAGEDIR}${PREFIX}/etc/pam.d/ly-autologin
+	${MKDIR} ${STAGEDIR}${ETCDIR}/lang
+	${INSTALL_DATA} ${WRKSRC}/res/lang/*.ini ${STAGEDIR}${ETCDIR}/lang/
+	${MKDIR} ${STAGEDIR}${ETCDIR}/custom-sessions
+	${INSTALL_DATA} ${WRKSRC}/res/custom-sessions/README ${STAGEDIR}${ETCDIR}/custom-sessions
+	${REINPLACE_CMD} 's,$$PREFIX_DIRECTORY,${PREFIX},g; \
+		s,$$CONFIG_DIRECTORY,${PREFIX}/etc,g ; \
+		s,^brightness_down_cmd = .*,brightness_down_cmd = /usr/bin/backlight - 10, ; \
+		s,^brightness_up_cmd = .*,brightness_up_cmd = /usr/bin/backlight + 10, ; \
+		s,$$PLATFORM_SHUTDOWN_ARG,-p,g' \
+		${WRKSRC}/res/config.ini
+	${INSTALL_DATA} ${WRKSRC}/res/config.ini ${STAGEDIR}${ETCDIR}/config.ini.sample
+	${REINPLACE_CMD} 's,"$$CONFIG_DIRECTORY"/profile,/etc/profile,g ; \
+		s,$$CONFIG_DIRECTORY/csh.login,/etc/csh.login,g ; \
+		s,"$$CONFIG_DIRECTORY",${PREFIX}/etc,g ;' \
+		${WRKSRC}/res/setup.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/res/setup.sh ${STAGEDIR}${ETCDIR}/setup.sh.sample
 
 .include <bsd.port.mk>

@@ -64,6 +64,8 @@ lib/librsb.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
+%%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/html/example_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/folderclosed.png

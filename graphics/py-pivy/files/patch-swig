@@ -1,0 +1,26 @@
+commit b52888ddf6a97f866b0f700b74a2be2da582f193
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    fix build with swig 4.4.0+
+    
+    Adapted from
+    commit 574e4a8ec8532fa8b78d21a27c27586a6ed9748a
+    Author: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+    Date:   Thu Jan 15 19:45:00 2026 +0800
+
+diff --git interfaces/soqt.i interfaces/soqt.i
+index 466250c..db1ab3a 100644
+--- interfaces/soqt.i
++++ interfaces/soqt.i
+@@ -52,7 +52,11 @@ static int init_file_emulator(void)
+ %init %{
+ #if PY_MAJOR_VERSION >= 3
+ if (init_file_emulator() < 0) {
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+ }
+ #endif
+ %}

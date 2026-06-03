@@ -1,7 +1,7 @@
 PORTNAME=	app-builder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.2
-PORTREVISION=	13
+PORTREVISION=	25
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -67,6 +67,8 @@ GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e
 GO_BUILDFLAGS+=	-ldflags="-s -w"
 
 CONFLICTS_INSTALL=	${PORTNAME}-devel
+
+PORTSCOUT=	skipv:4.2.0
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	readme.md

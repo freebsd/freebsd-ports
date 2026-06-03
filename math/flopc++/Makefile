@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for solving Linear Optimization Problems in C++
-WWW=		https://projects.coin-or.org/FlopC++
+WWW=		https://github.com/coin-or/FlopCpp
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

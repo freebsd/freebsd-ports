@@ -1,0 +1,2 @@
+torchsummary is a Python module that produces model summary in PyTorch similar
+to `model.summary()` in Keras.

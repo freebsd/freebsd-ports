@@ -1,6 +1,6 @@
 PORTNAME=	jupyter
 DISTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI # the jupyter project installs a file conflicting with jupyter_core, see https://github.com/jupyter/jupyter_core/issues/405
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

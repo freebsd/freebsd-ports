@@ -1,0 +1,228 @@
+--- solenv/inc/_tg_lib.mk.bak	2020-10-06 07:16:31.000000000 -0700
++++ solenv/inc/_tg_lib.mk	2025-08-16 22:07:15.548302000 -0700
+@@ -84,7 +84,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB1TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB1TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB1TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -191,7 +191,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB2TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB2TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB2TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -298,7 +298,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB3TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB3TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB3TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -405,7 +405,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB4TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB4TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB4TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -512,7 +512,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB5TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB5TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB5TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -619,7 +619,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB6TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB6TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB6TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -726,7 +726,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB7TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB7TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB7TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -833,7 +833,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB8TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB8TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB8TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -940,7 +940,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB9TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB9TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB9TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+@@ -1047,7 +1047,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB10TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB10TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB10TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+--- solenv/inc/_tg_shl.mk.bak	2021-04-02 05:57:59.000000000 -0700
++++ solenv/inc/_tg_shl.mk	2025-08-16 22:07:15.553521000 -0700
+@@ -132,7 +132,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL1OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL1OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL1OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL1OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL1LIBS:s/.lib/.dump/) >> $@.dump
+@@ -672,7 +672,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL2OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL2OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL2OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL2OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL2LIBS:s/.lib/.dump/) >> $@.dump
+@@ -1212,7 +1212,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL3OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL3OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL3OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL3OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL3LIBS:s/.lib/.dump/) >> $@.dump
+@@ -1752,7 +1752,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL4OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL4OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL4OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL4OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL4LIBS:s/.lib/.dump/) >> $@.dump
+@@ -2292,7 +2292,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL5OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL5OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL5OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL5OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL5LIBS:s/.lib/.dump/) >> $@.dump
+@@ -2832,7 +2832,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL6OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL6OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL6OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL6OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL6LIBS:s/.lib/.dump/) >> $@.dump
+@@ -3372,7 +3372,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL7OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL7OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL7OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL7OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL7LIBS:s/.lib/.dump/) >> $@.dump
+@@ -3912,7 +3912,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL8OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL8OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL8OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL8OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL8LIBS:s/.lib/.dump/) >> $@.dump
+@@ -4452,7 +4452,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL9OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL9OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL9OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL9OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL9LIBS:s/.lib/.dump/) >> $@.dump
+@@ -4992,7 +4992,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL10OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL10OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL10OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL10OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL10LIBS:s/.lib/.dump/) >> $@.dump
+--- solenv/inc/tg_lib.mk.bak	2020-10-06 07:16:31.000000000 -0700
++++ solenv/inc/tg_lib.mk	2025-08-16 22:07:15.557770000 -0700
+@@ -89,7 +89,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(LIB$(TNR)TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(LIB$(TNR)TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(LIB$(TNR)TARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ 
+ .ELIF "$(GUI)"=="OS2"
+--- solenv/inc/tg_obj.mk.bak	2020-10-06 07:16:31.000000000 -0700
++++ solenv/inc/tg_obj.mk	2025-08-16 22:07:15.561499000 -0700
+@@ -48,7 +48,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(OBJTARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(OBJTARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(OBJTARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ .ENDIF			# "$(GUI)"=="UNX"
+ .ENDIF			# "$(OBJTARGET)"!=""
+--- solenv/inc/tg_shl.mk.bak	2021-04-02 05:57:59.000000000 -0700
++++ solenv/inc/tg_shl.mk	2025-08-16 22:07:15.565476000 -0700
+@@ -137,7 +137,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm $(SHL$(TNR)OBJS:s/.obj/.o/) > $@.dump
+ .ELSE
+-	@nm $(SHL$(TNR)OBJS:s/.obj/.o/) > $@.dump
++	@llvm-nm $(SHL$(TNR)OBJS:s/.obj/.o/) > $@.dump
+ .ENDIF
+ .ENDIF			# "$(SHL$(TNR)OBJS)!"=""
+ 	@$(TYPE) /dev/null $(SHL$(TNR)LIBS:s/.lib/.dump/) >> $@.dump
+--- solenv/inc/tg_slo.mk.bak	2020-10-06 07:16:32.000000000 -0700
++++ solenv/inc/tg_slo.mk	2025-08-16 22:07:15.569405000 -0700
+@@ -55,7 +55,7 @@
+ .IF "$(OS)"=="MACOSX"
+ 	@-nm `cat $(SLOTARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ELSE
+-	@nm `cat $(SLOTARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
++	@llvm-nm `cat $(SLOTARGET) | sed s\#'^'$(ROUT)\#$(PRJ)/$(ROUT)\#g` > $(@:d)$(@:b).dump
+ .ENDIF
+ .ENDIF			# "$(GUI)"=="UNX"
+ .ENDIF			# "$(SLOTARGET)"!=""

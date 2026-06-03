@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GNU/gnushogi
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Japanese chess-like game for X Window System
 WWW=		https://www.gnu.org/software/gnushogi/
 

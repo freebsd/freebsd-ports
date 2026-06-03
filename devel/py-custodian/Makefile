@@ -1,5 +1,5 @@
 PORTNAME=	custodian
-DISTVERSION=	2024.10.16
+DISTVERSION=	2025.12.14
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 2024.10.16: 1 failed, 12 passed, 1 warning in 34.66s, see https://github.com/materialsproject/custodian/issues/359
+# tests as of 2025.12.14: 16 passed, 1 warning in 42.39s
 
 .include <bsd.port.mk>

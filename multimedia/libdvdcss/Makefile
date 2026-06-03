@@ -1,8 +1,6 @@
 PORTNAME=	libdvdcss
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5.0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
-		https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
@@ -15,19 +13,23 @@ LICENSE_TEXT_DMCA=	CSS code may violate the DMCA
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_PERMS_DMCA=	auto-accept
 
-USES=		libtool pathfix tar:bzip2
-
-GNU_CONFIGURE=	yes
+USES=		meson pkgconfig
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
-PORTDOCS=	*
+USE_GITLAB=	yes
+GL_SITE=	https://code.videolan.org/
+GL_ACCOUNT=	videolan
+
+PORTDOCS=	AUTHORS COPYING NEWS README.md
+
+MESON_ARGS=	-Ddefault_library=shared
 
 OPTIONS_DEFINE=	DOXYGEN DOCS
+OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_CONFIGURE_ENABLE=	doc
-DOXYGEN_USES=		gmake
+DOXYGEN_MESON_ON=	-Denable_docs=true
+DOXYGEN_MESON_OFF=	-Denable_docs=false
 
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

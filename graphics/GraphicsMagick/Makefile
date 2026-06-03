@@ -1,6 +1,5 @@
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.43
-PORTREVISION=	3
+PORTVERSION=	1.3.47
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
@@ -12,7 +11,7 @@ WWW=		https://graphicsmagick.sourceforge.io/ \
 
 LICENSE=	MIT
 
-USES=		cpe libtool localbase:ldflags pathfix pkgconfig tar:xz
+USES=		cpe libtool localbase:ldflags pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
@@ -34,7 +33,7 @@ USES+=		xorg
 CONFIGURE_ARGS+=--without-x ac_cv_lib_ICE_IceConnectionNumber=no
 .endif
 
-PORTSCOUT=	limit:^[0-9]\.[0-9]\.[1-9][0-9\]$$
+PORTSCOUT=	limit:^[0-9]\.[0-9]\.[1-9][0-9]$$
 
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts

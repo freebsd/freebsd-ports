@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2025-12-09 14:31:42 UTC
++++ pyproject.toml
+@@ -10,8 +10,7 @@ readme = "README.md"
+ ]
+ description = "Open source alternative for Epic Games Launcher, using Legendary"
+ readme = "README.md"
+-license = "GPL-3.0-or-later"
+-license-files = ["LICENSE"]
++license = { text = "GPL-3.0-or-later" }
+ classifiers = [
+     "Programming Language :: Python :: 3.10",
+     "Programming Language :: Python :: 3.11",
+@@ -80,9 +79,6 @@ namespaces = true
+ [tool.setuptools.package-data]
+ "rare.resources.images" = [ "Rare.ico", "Rare.icns", "Rare.png", "Rare.svg", "cover.png", "epic.png", "logo.png" ]
+ "rare.resources.languages" = [ "rare_*.qm" ]
+-
+-[tool.setuptools.dynamic]
+-version = { attr = "rare.__version__" }
+ 
+ [tool.setuptools_scm]
+ # use only annotated tags ( omit `--tags` argument from `git describe`)

@@ -1,6 +1,6 @@
 PORTNAME=	sfcgal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 PORTREVISION=	1
 CATEGORIES=	databases math graphics
 
@@ -14,7 +14,7 @@ WWW=		https://oslandia.gitlab.io/SFCGAL/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 

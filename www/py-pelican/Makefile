@@ -1,10 +1,9 @@
 PORTNAME=	pelican
-DISTVERSION=	4.11.0
-PORTREVISION=	1
+DISTVERSION=	4.12.0
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	andreas@bilke.org
+MAINTAINER=	rikka.goering@outlook.de
 COMMENT=	Static site generator written in Python
 WWW=		https://docs.getpelican.com/
 
@@ -31,28 +30,25 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.9:www/py-beautifulsoup@${P
 		${PYTHON_PKGNAMEPREFIX}flake8>=3.8:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}invoke>=1.3:devel/py-invoke@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=5.2:devel/py-isort@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>=4.3:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=4.3:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>2.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typogrify>=2.1:textproc/py-typogrify@${PY_FLAVOR} \
 		git>0:devel/git \
 		hs-pandoc>:textproc/hs-pandoc
 
-USES=		python shebangfix
+USES=		python:3.11+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	getpelican
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 SHEBANG_FILES=	pelican/tools/*.py \
 		pelican/tools/templates/pelicanconf.py.jinja2 \
 		pelican/tools/templates/publishconf.py.jinja2
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
 do-test:
-		cd ${WRKSRC} && ${SETENV} \
-			PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} \
-			${PYTHON_CMD} -m pytest -v pelican/tests/
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} \
+		${PYTHON_CMD} -m pytest -v pelican/tests/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

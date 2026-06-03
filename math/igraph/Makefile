@@ -1,8 +1,7 @@
 PORTNAME=	igraph
-DISTVERSION=	0.10.12
-PORTREVISION=	4
+DISTVERSION=	1.0.1
+PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
@@ -12,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libcxsparse.so:math/suitesparse-cxsparse \
 		libglpk.so:math/glpk \
 		libgmp.so:math/gmp \
@@ -21,6 +20,8 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 USES=		bison cmake cpe gnome pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING

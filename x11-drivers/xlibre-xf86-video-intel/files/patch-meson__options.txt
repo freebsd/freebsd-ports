@@ -1,0 +1,13 @@
+--- meson_options.txt.orig	2025-08-14 09:55:22 UTC
++++ meson_options.txt
+@@ -40,5 +40,8 @@ option('xorg-module-dir', type : 'string', value : '@l
+        description : 'Enable use of asynchronous swaps (experimental)')
+ option('internal-debug', type : 'combo', value : 'no', choices : [ 'no', 'sync', 'memory', 'pixmap', 'full' ],
+        description : 'Enable internal debugging')
+-option('xorg-module-dir', type : 'string', value : '@libdir@/xorg/modules',
+-       description : 'Default xorg module directory')
++option('xorg-module-dir', type: 'string', value: '',
++  description: 'Directory to install the driver in [default=from xorg-server pkgconf]'
++)
++option('udev', type : 'combo', choices:['true','false','auto'], value : 'true',
++       description : 'Enable udev support.')

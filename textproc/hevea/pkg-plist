@@ -118,9 +118,11 @@ lib/hevea/mappings/windows-1252.map
 lib/hevea/mappings/windows-1257.map
 lib/hevea/mathjax.sty
 lib/hevea/mathop.hva
+lib/hevea/mathtools.hva
 lib/hevea/moreverb.hva
 lib/hevea/multibib.hva
 lib/hevea/multind.hva
+lib/hevea/nameref.hva
 lib/hevea/natbib-common.hva
 lib/hevea/next_motif.gif
 lib/hevea/next_motif.svg

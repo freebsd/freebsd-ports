@@ -11,9 +11,6 @@ WWW=		http://www.gnucap.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=	defined in discarded section
-BROKEN_mips64=	defined in discarded section
-
 USES=		gmake
 USE_LDCONFIG=	yes
 

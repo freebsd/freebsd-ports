@@ -19,7 +19,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme
 
-USES=		gmake pkgconfig python:3.9+ tar:bzip2
+USES=		gmake pkgconfig python tar:bzip2
 USE_PYTHON=	autoplist pep517
 
 GNU_CONFIGURE=	yes

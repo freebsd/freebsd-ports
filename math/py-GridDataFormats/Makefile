@@ -1,6 +1,6 @@
 PORTNAME=	GridDataFormats
 DISTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/MDAnalysis/GridDataFormats
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mrcfile>0:biology/py-mrcfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 

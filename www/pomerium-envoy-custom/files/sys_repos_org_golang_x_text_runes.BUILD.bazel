@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "runes",
+    srcs = [
+        "cond.go",
+        "runes.go",
+    ],
+    importpath = "golang.org/x/text/runes",
+    visibility = ["//visibility:public"],
+    deps = ["@org_golang_x_text//transform"],
+)
+
+alias(
+    name = "go_default_library",
+    actual = ":runes",
+    visibility = ["//visibility:public"],
+)

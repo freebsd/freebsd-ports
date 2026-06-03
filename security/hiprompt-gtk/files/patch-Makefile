@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-04-12 19:01:18 UTC
++++ Makefile
+@@ -1,7 +1,7 @@ PREFIX?=/usr/local
+ DESTDIR?=/
+ PREFIX?=/usr/local
+ 
+-LIBS=$(shell pkg-config --libs-only-l gtk4 gmodule-export-2.0 libadwaita-1 gtk4-layer-shell-0)
++LIBS=$(shell pkg-config --libs-only-L --libs-only-l gtk4 gmodule-export-2.0 libadwaita-1 gtk4-layer-shell-0)
+ GIO=$(shell pkg-config --cflags gio-2.0)
+ GTK=$(shell pkg-config --cflags gtk4)
+ ADWAITA=$(shell pkg-config --cflags libadwaita-1)

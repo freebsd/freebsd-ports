@@ -1,8 +1,7 @@
 PORTNAME=	puppet-mode.el
 PORTVERSION=	0.2
-PORTREVISION=	21
+PORTREVISION=	23
 CATEGORIES=	sysutils elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Simple mode for editing puppet manifests
@@ -16,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 GH_PROJECT=	puppet-syntax-emacs
 GH_TAGNAME=	be5d708
+
+CONFLICTS_INSTALL=	puppet-mode.el-emacs_*
 
 NO_ARCH=	yes
 NO_BUILD=	yes

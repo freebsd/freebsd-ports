@@ -19,16 +19,12 @@ bin/mfplain
 bin/mft
 bin/mpost
 bin/patgen
-bin/pbibtex
 bin/pdvitomp
-bin/pdvitype
 bin/pktogf
 bin/pktype
 bin/pltotf
 bin/pmpost
 bin/pooltype
-bin/ppltotf
-bin/ptftopl
 bin/r-mpost
 bin/r-pmpost
 bin/r-upmpost

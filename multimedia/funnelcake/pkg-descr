@@ -1,0 +1,14 @@
+funnelcake is a SIMD-accelerated YUV image scaler and HDR/SDR tonemapper
+written in C. It produces multiple downscaled outputs from a single
+input frame in one fused pass, which avoids the redundant memory
+traffic of running an external scaler per output size.
+
+Features:
+- Power-of-two and thirds (1/2, 1/3, 1/4, 2/3, ...) downscale ratios
+  and integer upscale, all in a single pass over the source.
+- 8-bit SDR (I420, NV12) and 10-bit HDR (I010, P010, I210, P210)
+  pixel formats.
+- HDR-to-SDR tonemapping with PQ (SMPTE 2084) and HLG transfer curves,
+  and a custom-LUT path for application-supplied curves.
+- Hand-tuned SIMD kernels: AVX2 on amd64, NEON on aarch64.
+  Detection is at runtime; falls back to a portable scalar path.

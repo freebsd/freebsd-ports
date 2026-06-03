@@ -1,2 +1,4 @@
 Vagrant is a tool for building and distributing virtualized development
 environments.
+
+If you want to use vagrant together with an installed gitlab on the same host, use vagrant-gitlab.

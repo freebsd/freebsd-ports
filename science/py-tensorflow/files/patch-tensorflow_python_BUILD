@@ -1,10 +1,48 @@
---- tensorflow/python/BUILD.orig	2023-09-12 16:46:28 UTC
+--- tensorflow/python/BUILD.orig	2026-03-04 21:33:50 UTC
 +++ tensorflow/python/BUILD
-@@ -5043,7 +5043,6 @@ tf_python_pybind_extension(
-     features = ["-layering_check"],
-     deps = [
-         ":pywrap_densor_device_headers",
--        "//tensorflow/dtensor/proto:layout_proto_cc",
-         "//tensorflow/python/lib/core:pybind11_lib",
-         "//tensorflow/python/lib/core:pybind11_status_headers",
-         "//third_party/python_runtime:headers",  # buildcleaner: keep
+@@ -1479,6 +1479,21 @@ pybind_extension(
+         "//tensorflow/distribute/experimental/rpc/kernels:rpc_ops",
+         "//tensorflow/dtensor/cc:tensor_layout",
+         "@xla//xla/backends/profiler/cpu:python_tracer",
++        # Shardy dialect deps: ensure these archives are included in libtensorflow_cc.so.2
++        # via the pywrap split-library mechanism (they would otherwise be filtered out as
++        # starlark_only, since pywrap_quantization is starlark_only=True).
++        "@shardy//shardy/common:file_utils",
++        "@shardy//shardy/common:logging",
++        "@shardy//shardy/dialect/sdy/ir:axis_list_ref",
++        "@shardy//shardy/dialect/sdy/ir:dialect",
++        "@shardy//shardy/dialect/sdy/transforms/common:op_properties",
++        "@shardy//shardy/dialect/sdy/transforms/common:sharding_walker",
++        "@shardy//shardy/dialect/sdy/transforms/import:passes",
++        "@shardy//shardy/dialect/sdy/transforms/propagation:op_sharding_rule_builder",
++        "@shardy//shardy/dialect/sdy/transforms/propagation:op_sharding_rule_registry",
++        "@shardy//shardy/dialect/sdy/transforms/propagation:sharding_projection",
++        "@shardy//shardy/dialect/sdy/transforms/propagation:utils",
++        "@shardy//shardy/dialect/sdy/transforms/propagation/debugging:source_sharding",
+     ],
+ )
+ 
+@@ -1577,6 +1592,11 @@ pywrap_library(
+                 "-ldl",
+                 "-lm",
+             ],
++            "//tensorflow:freebsd": [
++                "-lpthread",
++                "-ldl",
++                "-lm",
++            ],
+             "//conditions:default": [
+                 "-z defs",
+                 "-lpthread",
+@@ -1593,6 +1613,11 @@ pywrap_library(
+                 "-DEFAULTLIB:ntdll.lib",
+             ],
+             "//tensorflow:macos": [
++                "-lpthread",
++                "-ldl",
++                "-lm",
++            ],
++            "//tensorflow:freebsd": [
+                 "-lpthread",
+                 "-ldl",
+                 "-lm",

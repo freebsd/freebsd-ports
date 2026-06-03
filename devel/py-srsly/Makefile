@@ -1,5 +1,5 @@
 PORTNAME=	srsly
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/srsly/releases/download/release-v${PORTVERSION}/
@@ -16,8 +16,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.3<2.1.0:devel/py-catalogue@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
+
+PORTSCOUT=	skipv:3.0.0
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

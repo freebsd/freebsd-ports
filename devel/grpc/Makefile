@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.73.1
+PORTVERSION=	1.80.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	abseil>=20240116.0:devel/abseil \
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libbenchmark.so:devel/benchmark \
 		libcares.so:dns/c-ares \
-		libopentelemetry_common.so:devel/opentelemetry-cpp \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2
 
@@ -33,7 +32,6 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_SSL_PROVIDER=package \
 		-DgRPC_ZLIB_PROVIDER=package
 CMAKE_OFF=	CMAKE_CXX_EXTENSIONS \
-		gRPC_BUILD_GRPCPP_OTEL_PLUGIN \
 		gRPC_BUILD_TESTS \
 		gRPC_DOWNLOAD_ARCHIVES
 CMAKE_ON=	BUILD_SHARED_LIBS \
@@ -56,11 +54,18 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
 
 USE_GITHUB=	yes
-GH_TUPLE=	envoyproxy:data-plane-api:d9c5e84:envoyproxy_data_plane_api/third_party/envoy-api \
-		googleapis:googleapis:4667a43:googleapis_googleapis/third_party/googleapis \
+GH_TUPLE=	envoyproxy:data-plane-api:84e8436:envoyproxy_data_plane_api/third_party/envoy-api \
+		googleapis:googleapis:785537c:googleapis_googleapis/third_party/googleapis \
 		census-instrumentation:opencensus-proto:1664cc9:census_instrumentation_opencensus_proto/third_party/opencensus-proto \
-		bufbuild:protoc-gen-validate:v1.2.1:bufbuild_protoc_gen_validate/third_party/protoc-gen-validate \
-		cncf:xds:2ac532f:cncf_xds/third_party/xds
+		bufbuild:protoc-gen-validate:v1.3.3:bufbuild_protoc_gen_validate/third_party/protoc-gen-validate \
+		cncf:xds:dba9d58:cncf_xds/third_party/xds
+
+OPTIONS_DEFINE=	OPENTELEMETRY
+OPTIONS_SUB=	yes
+OPENTELEMETRY_DESC=	Build grpcpp_otel_plugin
+
+OPENTELEMETRY_CMAKE_BOOL=	gRPC_BUILD_GRPCPP_OTEL_PLUGIN
+OPENTELEMETRY_LIB_DEPENDS=	libopentelemetry_common.so:devel/opentelemetry-cpp
 
 # Clean up bundled libraries
 .if !defined(MAINTAINER_MODE)

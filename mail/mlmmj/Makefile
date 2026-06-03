@@ -1,7 +1,8 @@
 PORTNAME=	mlmmj
-PORTVERSION=	1.6.0
+PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION}/
+MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION:C/\./_/g}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple and slim mailing list manager
@@ -12,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe iconv shebangfix tar:xz pkgconfig
 SHEBANG_FILES=	contrib/web/perl-user/mlmmj.cgi
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-receive-strip
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-receive-strip --mandir=${PREFIX}/share/man
 
 CPPFLAGS+=	-I${ICONV_INCLUDE_PATH}
 LDFLAGS+=	${ICONV_LIB_PATH}
@@ -27,8 +27,7 @@ PERL_RUN_DEPENDS=	p5-URI>0:net/p5-URI \
 			p5-HTML-Parser>0:www/p5-HTML-Parser
 PHP_USES=		php:web
 
-TEST_DEPENDS=		kyua:devel/kyua \
-			atf-sh:devel/atf
+TEST_DEPENDS=		atf-sh:devel/atf
 TEST_TARGET=		check
 
 post-install-DOCS-on:

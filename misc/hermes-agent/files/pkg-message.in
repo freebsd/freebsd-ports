@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Hermes stores its working set under ${HOME}/.hermes/.  Before the first
+run, bootstrap that directory and configure API keys with:
+
+  hermes setup
+
+The bundled skill templates live under %%DATADIR%%/skills/ and
+%%DATADIR%%/optional-skills/; Hermes copies the ones it needs into
+${HOME}/.hermes/skills/ on demand.
+
+To run Hermes as a service, enable one or both of the rc(8) scripts:
+
+sysrc hermes_gateway_enable="YES"
+sysrc hermes_gateway_user="<account whose ~/.hermes is used>"
+
+sysrc hermes_dashboard_enable="YES"
+sysrc hermes_dashboard_user="<account whose ~/.hermes is used>"
+
+See %%PREFIX%%/etc/rc.d/hermes_gateway and hermes_dashboard for all
+tunables (host, port, profile, extra flags).
+EOM
+}
+]

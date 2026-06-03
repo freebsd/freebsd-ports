@@ -9,8 +9,8 @@
     SUBDIR += alertmanager
     SUBDIR += andwatch
     SUBDIR += ap-utils
-    SUBDIR += argus3
-    SUBDIR += argus3-clients
+    SUBDIR += argus
+    SUBDIR += argus-clients
     SUBDIR += arpscan
     SUBDIR += arpwatch
     SUBDIR += arts++
@@ -73,6 +73,7 @@
     SUBDIR += fastnetmon
     SUBDIR += fence-agents
     SUBDIR += fetchconfig
+    SUBDIR += fli
     SUBDIR += flow-tools
     SUBDIR += flowd
     SUBDIR += flowviewer
@@ -85,7 +86,6 @@
     SUBDIR += grok_exporter
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
-    SUBDIR += hastmon
     SUBDIR += icinga-ipl-i18n
     SUBDIR += icinga-php-library
     SUBDIR += icinga-php-thirdparty
@@ -105,6 +105,7 @@
     SUBDIR += icingaweb2-module-incubator
     SUBDIR += icingaweb2-module-jira
     SUBDIR += icingaweb2-module-map
+    SUBDIR += icingaweb2-module-monitoring
     SUBDIR += icingaweb2-module-pdfexport
     SUBDIR += icingaweb2-module-reactbundle
     SUBDIR += icingaweb2-module-reporting
@@ -128,6 +129,7 @@
     SUBDIR += irrtoolset
     SUBDIR += isic
     SUBDIR += jnettop
+    SUBDIR += junos_exporter
     SUBDIR += kapacitor
     SUBDIR += kf6-networkmanager-qt
     SUBDIR += kismet
@@ -151,7 +153,6 @@
     SUBDIR += mtrace
     SUBDIR += mysql-snmp
     SUBDIR += mysqld_exporter
-    SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula13
@@ -191,8 +192,6 @@
     SUBDIR += netbox
     SUBDIR += netbox-agent
     SUBDIR += netdata
-    SUBDIR += netdata-go
-    SUBDIR += netdisco
     SUBDIR += netdisco-mibs
     SUBDIR += netleak
     SUBDIR += netmagis-common
@@ -227,6 +226,7 @@
     SUBDIR += ocsinventory-agent
     SUBDIR += ocsinventory-ocsreports
     SUBDIR += ocsinventory-server
+    SUBDIR += omada5
     SUBDIR += omping
     SUBDIR += openbmp
     SUBDIR += openlldp
@@ -297,9 +297,9 @@
     SUBDIR += pandorafms_agent
     SUBDIR += pandorafms_console
     SUBDIR += pandorafms_server
+    SUBDIR += peering-manager
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
-    SUBDIR += php81-snmp
     SUBDIR += php82-snmp
     SUBDIR += php83-snmp
     SUBDIR += php84-snmp
@@ -344,6 +344,7 @@
     SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang
     SUBDIR += py-pyeapi
+    SUBDIR += py-pyixapi
     SUBDIR += py-pynetbox
     SUBDIR += py-pynxos
     SUBDIR += py-pypowerwall
@@ -388,6 +389,7 @@
     SUBDIR += seafile-server
     SUBDIR += semaphore
     SUBDIR += sendip
+    SUBDIR += simplomon
     SUBDIR += sipcalc
     SUBDIR += sjitter
     SUBDIR += smartctl_exporter
@@ -408,6 +410,7 @@
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
+    SUBDIR += unifi10
     SUBDIR += unifi9
     SUBDIR += victoria-logs
     SUBDIR += victoria-metrics

@@ -293,6 +293,8 @@ share/icons/hicolor/scalable/apps/com.github.elth0r0.iqpuzzle.svg
 %%DATADIR%%/boards/animals/whale.png
 %%DATADIR%%/boards/animals/wolf.conf
 %%DATADIR%%/boards/animals/wolf.png
+%%DATADIR%%/boards/calendar/calendar_day.conf
+%%DATADIR%%/boards/calendar/calendar_month_day.conf
 %%DATADIR%%/boards/chess/bishop.conf
 %%DATADIR%%/boards/chess/bishop.png
 %%DATADIR%%/boards/chess/king.conf

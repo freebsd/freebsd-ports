@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2026-04-09 04:24:46 UTC
++++ CMakeLists.txt
+@@ -55,13 +55,6 @@ ENDIF(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
+     ecm_find_qmlmodule(org.kde.kirigami REQUIRED)
+ ENDIF(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
+ 
+-IF(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+-        QQC2DesktopStyle
+-    )
+-    ecm_find_qmlmodule(org.kde.desktop REQUIRED)
+-ENDIF(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-
+ include_directories(${minuet_SOURCE_DIR}/src/ ${minuet_BINARY_DIR}/src/)
+ 
+ add_subdirectory(src)

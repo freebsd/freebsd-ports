@@ -14,7 +14,7 @@ WWW=		https://mediaarea.net/en/MediaInfo \
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../../../License.txt
 
-USES=		compiler:c++11-lang dos2unix libtool pathfix tar:xz
+USES=		compiler:c++11-lang dos2unix libtool tar:xz
 
 CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
@@ -23,6 +23,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
 
-MEDIAINFO_VERSION=	25.04
+MEDIAINFO_VERSION=	26.05
 
 .include <bsd.port.mk>

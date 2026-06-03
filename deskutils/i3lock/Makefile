@@ -1,5 +1,5 @@
 PORTNAME=	i3lock
-PORTVERSION=	2.15
+PORTVERSION=	2.16
 CATEGORIES=	deskutils x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
@@ -31,6 +31,7 @@ USE_XORG=	x11 xcb xt xorgproto xext
 USE_CSTD=	c99
 
 CONFLICTS_INSTALL=	i3lock-color
+ALL_TARGET=
 
 PORTDOCS=	CHANGELOG README.md
 

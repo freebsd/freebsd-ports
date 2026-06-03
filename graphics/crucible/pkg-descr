@@ -1,0 +1,7 @@
+Crucible is a Vulkan test suite developed under the Mesa project. It runs
+headlessly (no window system required), executes each test in an isolated
+process or thread for reproducibility, and compares rendered output against
+PNG reference images.
+
+Crucible is intended as a developer tool for testing Vulkan drivers,
+particularly Mesa's Vulkan implementations.

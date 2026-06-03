@@ -1,5 +1,5 @@
 PORTNAME=	stdman
-DISTVERSION=	2022.07.30
+DISTVERSION=	2024.07.05
 CATEGORIES=	devel docs
 
 MAINTAINER=	jbo@FreeBSD.org
@@ -9,15 +9,13 @@ WWW=		https://github.com/jeaye/stdman
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash
-
-USES=		gmake
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeaye
 
-HAS_CONFIGURE=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+do-install:
+	${INSTALL_MAN} ${WRKSRC}/man/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>

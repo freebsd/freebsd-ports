@@ -1,7 +1,10 @@
 PORTNAME=	faac
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.31.1
+DISTVERSION=	1.50
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ecd5a10122a9ce698516bb587b6036efab0a787d.patch:-p1 # disables LTO, breaks static lib
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
@@ -13,13 +16,12 @@ LICENSE_NAME_ISO=	ISO/IEC14496
 LICENSE_FILE_ISO=	${WRKSRC}/README
 LICENSE_PERMS_ISO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf compiler:c11 gmake libtool
+USES=		compiler:c11 meson
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	knik0
 
-GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

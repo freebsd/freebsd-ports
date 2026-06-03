@@ -1,6 +1,6 @@
 PORTNAME=	sundials
-DISTVERSION=	7.2.1
-PORTREVISION=	4
+DISTVERSION=	7.5.0
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
 
@@ -82,5 +82,7 @@ PETSC_BROKEN=		ERROR: PETSc not functional due to index size mismatch: SUNDIALS_
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/sundials/LICENSE
+
+# tests as of 7.5.0: 97% tests passed, 5 tests failed out of 190, see https://github.com/LLNL/sundials/issues/792
 
 .include <bsd.port.mk>

@@ -1,8 +1,10 @@
+include/dune-geometry-config.hh
 include/dune/geometry/affinegeometry.hh
 include/dune/geometry/axisalignedcubegeometry.hh
-include/dune/geometry/deprecated_topology.hh
 include/dune/geometry/dimension.hh
 include/dune/geometry/generalvertexorder.hh
+include/dune/geometry/localfiniteelementgeometry.hh
+include/dune/geometry/mappedgeometry.hh
 include/dune/geometry/multilineargeometry.hh
 include/dune/geometry/quadraturerules.hh
 include/dune/geometry/quadraturerules/compositequadraturerule.hh
@@ -13,6 +15,7 @@ include/dune/geometry/quadraturerules/gaussradaurightquadrature.hh
 include/dune/geometry/quadraturerules/jacobi1quadrature.hh
 include/dune/geometry/quadraturerules/jacobi2quadrature.hh
 include/dune/geometry/quadraturerules/jacobiNquadrature.hh
+include/dune/geometry/quadraturerules/numberfromstring.hh
 include/dune/geometry/quadraturerules/pointquadrature.hh
 include/dune/geometry/quadraturerules/prismquadrature.hh
 include/dune/geometry/quadraturerules/simplexquadrature.hh
@@ -31,12 +34,16 @@ include/dune/geometry/test/checkgeometry.hh
 include/dune/geometry/topologyfactory.hh
 include/dune/geometry/type.hh
 include/dune/geometry/typeindex.hh
+include/dune/geometry/utility/algorithms.hh
+include/dune/geometry/utility/convergence.hh
+include/dune/geometry/utility/defaultmatrixhelper.hh
 include/dune/geometry/utility/typefromvertexcount.hh
 include/dune/geometry/virtualrefinement.cc
 include/dune/geometry/virtualrefinement.hh
 lib/cmake/dune-geometry/dune-geometry-config-version.cmake
 lib/cmake/dune-geometry/dune-geometry-config.cmake
-lib/cmake/dune-geometry/dune-geometry-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dune-geometry/dune-geometry-scoped-targets-%%DUNE_GEOMETRY_CMAKE_HASH%%.cmake
+lib/cmake/dune-geometry/dune-geometry-scoped-targets-%%DUNE_GEOMETRY_CMAKE_HASH%%-release.cmake
 lib/cmake/dune-geometry/dune-geometry-targets.cmake
 lib/dunecontrol/dune-geometry/dune.module
 lib/libdunegeometry.so

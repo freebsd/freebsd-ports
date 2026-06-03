@@ -1,5 +1,6 @@
 PORTNAME=	topcom
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.wm.uni-bayreuth.de/de/team/rambau_joerg/TOPCOM-Downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION:S/./_/g}

@@ -1,6 +1,6 @@
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	SF/spiralmodular/spiralmodular/${PORTVERSION}%20%28Latest%20Version%29
 DISTNAME=	spiralmodular-${PORTVERSION}
@@ -9,19 +9,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented modular softsynth/sequencer/sampler
 WWW=		https://www.pawfal.org/Software/SSM/
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
-		jackd:audio/jack
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libjack.so:audio/jack \
 		libsndfile.so:audio/libsndfile
 
-USES=		xorg
-USE_XORG=	x11
+USES=		localbase xorg
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/spiralmodular-0.2.2
+WRKSRC=		${WRKDIR}/spiralmodular-${PORTVERSION:C|[a-z]+||}
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
@@ -35,8 +37,6 @@ post-patch:
 		s|^SpiralSound/Plugins/MidiPlugin/Makefile||; \
 		s|MidiPlugin||' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|-I/usr/X11R6/include|-I${LOCALBASE}/include|' \
-		${WRKSRC}/SpiralSound/Plugins/LADSPAPlugin/Makefile.in
 	@${REINPLACE_CMD} -e 's|O_SYNC|O_FSYNC|' \
 		${WRKSRC}/SpiralSound/Midi.C
 	@${REINPLACE_CMD} -e 's|True|true|; s|False|false|' \
@@ -58,7 +58,7 @@ post-patch:
 		s|fl_file_chooser.H|Fl_File_Chooser.H|g'
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/SpiralPlugins/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/lib/SpiralPlugins/*.so
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	wireplumber
-DISTVERSION=	0.5.8
-PORTREVISION=	1
+DISTVERSION=	0.5.14
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -26,7 +25,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			g-ir-scanner:devel/gobject-introspection \
 			sphinx-build:textproc/py-sphinx \
 			${PYTHON_PKGNAMEPREFIX}breathe>0:devel/py-breathe@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOXYGEN_MESON_ENABLED=	doc introspection
 DOXYGEN_IMPLIES=	DOCS
@@ -43,9 +42,7 @@ OPTIONS_SUB=	yes
 
 PORTDOCS=	*
 
-post-patch:
-	${REINPLACE_CMD} -e "s|'python3'|'python${PYTHON_VER}'|" \
-		${WRKSRC}/docs/meson.build
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pipewire/pipewire.conf.d

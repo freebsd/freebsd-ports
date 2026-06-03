@@ -3,7 +3,7 @@ PORTVERSION=	20140329	# GH_TAGNAME's commit date.
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Humanist sans-serif font
 WWW=		https://www.theleagueofmoveabletype.com/junction
 

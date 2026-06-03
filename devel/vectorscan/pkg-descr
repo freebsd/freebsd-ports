@@ -1,0 +1,12 @@
+Vectorscan is a portable fork of Intel's Hyperscan, a high-performance multiple
+regex matching library. It follows the regular expression syntax of the
+commonly-used libpcre library, yet functions as a standalone library with its
+own API written in C.
+
+Vectorscan uses hybrid automata techniques to allow simultaneous matching of
+large numbers (up to tens of thousands) of regular expressions, as well as
+matching of regular expressions across streams of data.
+
+This portable fork extends support beyond x86 to additional architectures
+including ARM NEON/ASIMD and Power VSX, making it suitable for a wider range
+of platforms while maintaining API compatibility with Hyperscan 5.4.

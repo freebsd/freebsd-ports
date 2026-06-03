@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+You installed Antigraviry CLI: Google's Antigravity CLI.
+
+The binary agy requires a working FreeDesktop Secret Service.
+
+In case agy would keep asking you to log in during each startup
+you'd need to re-create your keyring(s) in
+~/.local/share/keyrings/ for example by removing all files there
+and launching a browser and logging into some website that requires
+a password.
+
+EOM
+}
+]

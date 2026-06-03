@@ -1,5 +1,6 @@
 PORTNAME=	juk
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons globalaccel i18n iconthemes \
-		itemviews jobwidgets kio notifications phonon service solid \
+		itemviews jobwidgets kio notifications service solid \
 		sonnet statusnotifieritem textwidgets wallet widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build

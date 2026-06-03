@@ -1,0 +1,13 @@
+--- configure.orig	2020-12-04 15:00:00 UTC
++++ configure
+@@ -339,8 +339,8 @@ fc_check_lib libjpeg "libjpeg" "" "-ljpeg" "stdio.h jp
+ fc_check_lib x11 "x11" "" "-lX11" "X11/Xlib.h" "" "libx11-dev or libX11-devel or libx11"
+ fc_check_lib xext "xext" "" "-lXext" "X11/Xlib.h X11/extensions/XShm.h" "" "libxext-dev or libXext-devel or libxext"
+ fc_check_lib xinput "xi" "" "-lXi" "X11/Xlib.h X11/extensions/XInput2.h" "" "libxi-dev or libXi-devel or libxi"
+-fc_check_lib fontconfig "fontconfig" "" "-lfontconfig -lfreetype" "fontconfig/fontconfig.h" "/usr/include/freetype2 /usr/local/include/freetype2 /opt/X11/include/freetype2" "libfontconfig1-dev or libfontconfig-devel or fontconfig"
+-fc_check_lib freetype2 "freetype2" "" "" "ft2build.h" "" "libfreetype6-dev or libfreetype6-devel or freetype2"
++fc_check_lib fontconfig "fontconfig" "" "-lfontconfig" "fontconfig/fontconfig.h" "/usr/include/freetype2 /usr/local/include/freetype2 /opt/X11/include/freetype2" "libfontconfig1-dev or libfontconfig-devel or fontconfig"
++fc_check_lib freetype2 "freetype2" "" "-lfreetype" "ft2build.h" "" "libfreetype6-dev or libfreetype6-devel or freetype2"
+ 
+ #------------------
+ # Makefile

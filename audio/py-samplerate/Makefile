@@ -1,5 +1,5 @@
 PORTNAME=	samplerate
-DISTVERSION=	0.2.1
+DISTVERSION=	0.2.4
 CATEGORIES=	audio
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		pybind11>0:devel/pybind11 \
 		cmake:devel/cmake-core
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake compiler:c++14-lang pkgconfig python
 USE_PYTHON=	flavors pytest
@@ -29,5 +29,7 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/samplerate${PYTHON_TAG}.so
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${INSTALL_LIB} ${BUILD_WRKSRC}/samplerate${PYTHON_TAG}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 0.2.4: 134 passed
 
 .include <bsd.port.mk>

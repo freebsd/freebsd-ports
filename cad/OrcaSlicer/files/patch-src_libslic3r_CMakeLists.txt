@@ -1,0 +1,43 @@
+--- src/libslic3r/CMakeLists.txt.orig	2026-03-22 17:56:38 UTC
++++ src/libslic3r/CMakeLists.txt
+@@ -496,7 +496,7 @@ find_package(CGAL REQUIRED)
+ cmake_policy(PUSH)
+ cmake_policy(SET CMP0011 NEW)
+ find_package(CGAL REQUIRED)
+-find_package(OpenCV REQUIRED core)
++find_package(OpenCV REQUIRED core imgcodecs imgproc)
+ cmake_policy(POP)
+ 
+ add_library(libslic3r_cgal STATIC 
+@@ -535,6 +535,7 @@ target_include_directories(libslic3r SYSTEM PUBLIC ${E
+ target_compile_definitions(libslic3r PUBLIC -DUSE_TBB -DTBB_USE_CAPTURED_EXCEPTION=0)
+ target_include_directories(libslic3r PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+ target_include_directories(libslic3r SYSTEM PUBLIC ${EXPAT_INCLUDE_DIRS})
++target_include_directories(libslic3r SYSTEM PUBLIC ${OpenCV_INCLUDE_DIRS})
+ 
+ # Find the OCCT and related libraries
+ set(OpenCASCADE_DIR "${CMAKE_PREFIX_PATH}/lib/cmake/occt")
+@@ -545,11 +546,9 @@ set(OCCT_LIBS
+ find_package(draco REQUIRED)
+ 
+ set(OCCT_LIBS
+-    TKXDESTEP
+-    TKSTEP
+-    TKSTEP209
+-    TKSTEPAttr
+-    TKSTEPBase
++    -L${CMAKE_INSTALL_PREFIX}/lib
++    TKXSDRAWSTEP
++    TKDESTEP
+     TKXCAF
+     TKXSBase
+     TKVCAF
+@@ -579,7 +578,7 @@ target_link_libraries(libslic3r
+         libigl
+         libnest2d
+         miniz
+-        opencv_world
++        ${OpenCV_LIBS}
+     PRIVATE
+         ${CMAKE_DL_LIBS}
+         ${EXPAT_LIBRARIES}

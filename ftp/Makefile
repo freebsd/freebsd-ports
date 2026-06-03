@@ -22,7 +22,6 @@
     SUBDIR += ftpfind
     SUBDIR += ftplib
     SUBDIR += ftpproxy
-    SUBDIR += ftpsesame
     SUBDIR += ftpsync
     SUBDIR += gftp
     SUBDIR += gnustep-ftp
@@ -36,7 +35,6 @@
     SUBDIR += linux-rl9-wget
     SUBDIR += mirror
     SUBDIR += ncftp3
-    SUBDIR += net2ftp
     SUBDIR += netdumpd
     SUBDIR += ocaml-ocurl
     SUBDIR += oftpd
@@ -53,8 +51,6 @@
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
     SUBDIR += pget
-    SUBDIR += php81-curl
-    SUBDIR += php81-ftp
     SUBDIR += php82-curl
     SUBDIR += php82-ftp
     SUBDIR += php83-curl

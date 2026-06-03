@@ -1,0 +1,10 @@
+--- cargo-crates/native-tls-0.2.14/Cargo.toml.orig	2026-01-30 17:15:25 UTC
++++ cargo-crates/native-tls-0.2.14/Cargo.toml
+@@ -56,7 +56,6 @@ alpn = ["security-framework/alpn"]
+ 
+ [features]
+ alpn = ["security-framework/alpn"]
+-vendored = ["openssl/vendored"]
+ 
+ [target.'cfg(not(any(target_os = "windows", target_vendor = "apple")))'.dependencies.log]
+ version = "0.4.5"

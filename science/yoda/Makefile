@@ -1,5 +1,6 @@
 PORTNAME=	yoda
 DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	bash:shells/bash \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gettext-runtime gmake libtool shebangfix

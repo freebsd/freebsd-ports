@@ -1,0 +1,17 @@
+-- Fix configure failure with CMake 3.27+ due to CMP0148 policy removing FindPythonInterp.
+-- cmake_minimum_required(VERSION 3.10...4.0) enables CMP0148=NEW, which makes
+-- include(FindPythonInterp) in QuickCppLibSetupProject.cmake fail with an error.
+-- Set CMP0148=OLD before including QuickCppLibSetupProject to restore old behavior.
+--- CMakeLists.txt.orig	2026-04-28 16:27:10 UTC
++++ CMakeLists.txt
+@@ -48,6 +48,10 @@ set(PROJECT_NAMESPACE)
+ set(PROJECT_NAMESPACE)
+ 
+ # Setup this cmake environment for this project
++# CMP0148: FindPythonInterp removed in CMake 3.27+, used by QuickCppLibSetupProject
++if(POLICY CMP0148)
++  cmake_policy(SET CMP0148 OLD)
++endif()
+ include(QuickCppLibSetupProject)
+ 
+ option(OUTCOME_BUNDLE_EMBEDDED_QUICKCPPLIB "Whether to bundle an embedded copy of QuickCppLib with Outcome. Used by various package managers such as vcpkg." OFF)

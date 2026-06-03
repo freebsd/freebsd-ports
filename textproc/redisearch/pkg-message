@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+This version of redisearch is compatible only with the version
+ coresponding to the version of databases/redis. Do not try to
+use this version with any other versions of redis. If you need
+any other versions of redisearch please check other redisearch
+ports or request the maintainer for other versions.
+EOM
+}
+]

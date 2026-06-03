@@ -1,6 +1,6 @@
 PORTNAME=	pyqubo
 DISTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.10:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dimod>=0.9.14:science/py-dimod@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-neal>=0.5.7:science/py-dwave-neal@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.15.0:devel/py-six@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nbsphinx>=0.8.3:textproc/py-nbsphinx@${PY_FLAVOR} \

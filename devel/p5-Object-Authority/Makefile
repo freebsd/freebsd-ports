@@ -16,4 +16,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	configure
 
+# Remove old, broken, bundled Scalar::Util
+post-extract:
+	${RM} -rf ${WRKSRC}/inc/Scalar
+
 .include <bsd.port.mk>

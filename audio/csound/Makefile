@@ -16,7 +16,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
-USES=		alias bison cmake compiler:c++11-lib cpe eigen:3 localbase ncurses python:build # is python needed: https://github.com/csound/csound/issues/1437 ?
+USES=		bison cmake compiler:c++11-lib cpe eigen:3 localbase ncurses python:build # is python needed: https://github.com/csound/csound/issues/1437 ?
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
@@ -99,7 +99,6 @@ JACK_CMAKE_BOOL=	BUILD_JACK_OPCODES USE_JACK
 
 LINALG_DESC=		Build the linear algebra opcodes
 LINALG_CMAKE_BOOL=	BUILD_LINEAR_ALGEBRA_OPCODES
-LINALG_CXXFLAGS=	-DGMM_VERSION=x # workaround based on https://github.com/csound/csound/issues/1069#issuecomment-439648756
 
 LUA_DESC=		Build Lua Interface and module
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit

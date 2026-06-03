@@ -1,0 +1,7 @@
+The OpenTelemetry Trilogy Ruby gem provides instrumentation for Trilogy and was
+COPY+PASTE+MODIFIED from the OpenTelemetry MySQL gem.
+
+Some key differences in this instrumentation are:
+- Trilogy does not expose MySql#query_options, therefore there is limited
+  support for database semantic conventions.
+- SQL Obfuscation is enabled by default to mitigate restricted data leaks.

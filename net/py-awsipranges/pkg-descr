@@ -1,0 +1,4 @@
+awsipranges is a package to ork with the AWS IP address ranges in native Python.
+
+AwsIpRanges provides a Pythonic interface to the AWS IP address
+ranges published at https://ip-ranges.amazonaws.com/ip-ranges.json.

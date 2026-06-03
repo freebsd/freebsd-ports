@@ -10,9 +10,12 @@
     SUBDIR += ant-dracula-theme
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
+    SUBDIR += bibata-cursor-theme
     SUBDIR += budgie-backgrounds
     SUBDIR += canta-gtk-themes
     SUBDIR += canta-icon-theme
+    SUBDIR += catppuccin-cursor-theme
+    SUBDIR += catppuccin-gtk-theme
     SUBDIR += chicago95
     SUBDIR += classiclooks
     SUBDIR += claws-mail-themes
@@ -126,6 +129,7 @@
     SUBDIR += metacity-themes
     SUBDIR += mint-themes
     SUBDIR += mojave-gtk-themes
+    SUBDIR += morewaita-icon-theme
     SUBDIR += nordic-theme
     SUBDIR += numix-gtk-theme
     SUBDIR += numix-icon-theme
@@ -141,6 +145,7 @@
     SUBDIR += plasma6-plasma-workspace-wallpapers
     SUBDIR += plasma6-qqc2-breeze-style
     SUBDIR += plata-theme
+    SUBDIR += pocillo-gtk-themes
     SUBDIR += pop-gtk-themes
     SUBDIR += pop-icon-theme
     SUBDIR += qgnomeplatform
@@ -166,6 +171,7 @@
     SUBDIR += wallpapers-freebsd-kde
     SUBDIR += win98se-icon-theme
     SUBDIR += wpgtk
+    SUBDIR += xapp-symbolic-icons
     SUBDIR += xcursor-themes
     SUBDIR += xfce-icons-elementary
     SUBDIR += yaru-gtk-themes

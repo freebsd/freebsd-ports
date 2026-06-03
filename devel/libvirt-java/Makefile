@@ -1,5 +1,5 @@
 PORTNAME=	libvirt-java
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel java
 MASTER_SITES=	http://libvirt.org/sources/java/ \
 		ftp://libvirt.org/libvirt/java/

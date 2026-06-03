@@ -2,24 +2,56 @@
 { type: upgrade
   maximum_version: "1.2.0"
   message: <<EOM
-  Garage now supports logging to syslog. To log to syslog, please specify in rc.conf(5):
+Garage now supports logging to syslog. To log to syslog, please specify in rc.conf(5):
 
-     garage_log_file=syslog
+  garage_log_file=syslog
 EOM
 }
 { type: upgrade
   maximum_version: "0.9"
   message: <<EOM
-  To upgrade from 0.8.x to 0.9.0, please refer to the upgrade instructions at:
+To upgrade from 0.8.x to 0.9.0, please refer to the upgrade instructions at:
 
-    https://garagehq.deuxfleurs.fr/documentation/working-documents/migration-09/
+  https://garagehq.deuxfleurs.fr/documentation/working-documents/migration-09/
 EOM
 }
 { type: install
   message: <<EOM
-  To get started, refer to the documentation at:
+To get started, refer to the documentation at:
 
-    %%DOCSDIR%%/book/src/quick_start/index.md
+  %%DOCSDIR%%/book/src/quick_start/index.md
+
+Please configure Garage in %%PREFIX%%/etc/garage.toml before starting the service.
+
+And if you want to run Garage as a user other than '%%USER%%':
+
+  sysrc garage_runas="your-user"
+  chown :your-group %%PREFIX%%/etc/garage.toml
+  chown -Rh your-user:your-group %%DBDIR%%
+EOM
+}
+{ type: upgrade
+  maximum_version: "2.2.0"
+  message: <<EOM
+Garage now runs as an unprivileged user (%%USER%%) with a
+preconfigured storage location at %%DBDIR%%.
+
+Existing installations need to change storage location and configuration file
+permissions to ensure the service continues to function correctly:
+
+  service garage stop
+  chown :%%GROUP%% %%PREFIX%%/etc/garage.toml
+  chown -Rh %%USER%%:%%GROUP%% /path/to/existing/storage/location/
+  service garage start
+
+Or, if you prefer to run Garage as a different user, set 'garage_runas'
+to your preferred value.
+
+  sysrc garage_runas="your-user"
+
+You can continue to run Garage as root (the previous user), for example,
+but existing installations are encouraged to switch to a non-privileged
+user.
 EOM
 }
 ]

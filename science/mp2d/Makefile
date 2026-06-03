@@ -1,5 +1,5 @@
 PORTNAME=	mp2d
-DISTVERSION=	f20190610
+DISTVERSION=	g20250131
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,6 @@ USES=		cmake:testing
 USE_GITHUB=	yes
 GH_ACCOUNT=	Chandemonium
 GH_PROJECT=	MP2D
-GH_TAGNAME=	c6c7f86
+GH_TAGNAME=	cf2213f
 
 .include <bsd.port.mk>

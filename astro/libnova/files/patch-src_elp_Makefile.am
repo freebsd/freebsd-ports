@@ -1,0 +1,10 @@
+--- src/elp/Makefile.am.orig	2019-11-20 19:29:37 UTC
++++ src/elp/Makefile.am
+@@ -1,6 +1,6 @@ noinst_LTLIBRARIES = libelp.la
+ noinst_LTLIBRARIES = libelp.la
+ 
+-AM_CFLAGS = -I ../ -Wall -O3 $(AVX_CFLAGS)
++AM_CFLAGS = -I ../ $(AVX_CFLAGS)
+ 
+ libelp_la_SOURCES = \
+ 	elp1.c \

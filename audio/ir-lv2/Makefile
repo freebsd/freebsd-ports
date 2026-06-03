@@ -1,15 +1,13 @@
 PORTNAME=	ir
-DISTVERSION=	1.3.4
-PORTREVISION=	4
+DISTVERSION=	1.4.0
 CATEGORIES=	audio
+MASTER_SITES=	https://git.hq.sig7.se/ir.lv2.git/snapshot/${IR_COMMIT}?dummy=/
 PKGNAMESUFFIX=	-lv2
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	001904135bafa8931e4cf67402e0fa332feb857d.patch:-p1 # Fixing build for lv2 >= 1.18.0: https://github.com/tomszilagyi/ir.lv2/pull/20/
+DISTNAME=	ir.lv2-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 impulse response plugin for reverb and cabinet simulation
-WWW=		https://github.com/tomszilagyi/ir.lv2
+WWW=		https://tomscii.sig7.se/plugins/ir.lv2/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,12 +21,12 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gmake gnome pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	tomszilagyi
-GH_PROJECT=	ir.lv2
 USE_GNOME=	glib20 gtk20 gdkpixbuf cairo
 
 MAKE_ENV=	INSTDIR=${STAGEDIR}${PREFIX}/lib/lv2
+WRKSRC=		${WRKDIR}/ir.lv2-${IR_COMMIT:C/^(.......).*/\1/}
+
+IR_COMMIT=	1d4a4f9b1aad6223d541ebb0c16d85d527478222
 
 PLIST_FILES=	lib/lv2/ir.lv2/ir.so lib/lv2/ir.lv2/ir.ttl \
 		lib/lv2/ir.lv2/ir_gui.so lib/lv2/ir.lv2/manifest.ttl

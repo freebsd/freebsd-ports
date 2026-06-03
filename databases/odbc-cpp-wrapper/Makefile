@@ -1,5 +1,5 @@
 PORTNAME=	odbc-cpp-wrapper
-PORTVERSION=	1.1
+PORTVERSION=	1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -11,8 +11,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
+TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake compiler:c++11-lang localbase
+USES=		cmake:testing compiler:c++11-lang localbase
+
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SAP

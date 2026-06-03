@@ -44,7 +44,7 @@ include/mfgr.h
 include/mfhdf.h
 include/netcdf.h
 include/vg.h
-%%JAVA%%lib/jarhdf-4.2.17-1.jar
+%%JAVA%%lib/jarhdf-%%PORTVERSION%%.jar
 lib/libdf.a
 lib/libdf.so
 lib/libdf.so.2

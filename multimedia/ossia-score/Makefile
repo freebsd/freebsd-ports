@@ -1,6 +1,5 @@
 PORTNAME=	ossia-score # uses -mcx16
-DISTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.8.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/ossia/score/releases/download/v${DISTVERSION}/
 DISTFILES=	ossia.score-${DISTVERSION}-src${EXTRACT_SUFX}
@@ -13,7 +12,8 @@ WWW=		https://ossia.io/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_i386=	compilation fails, see https://github.com/ossia/score/issues/1608
+NOT_FOR_ARCHS=		armv6 armv7 i386
+NOT_FOR_ARCHS_REASON=	configure fails: score depends on kfrlib which only supports 64-bit systems (coming from cmake/ScoreConfiguration.cmake:137)
 
 BUILD_DEPENDS=	rapidfuzz-cpp>0:devel/rapidfuzz-cpp \
 		rapidjson>0:devel/rapidjson \
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	rapidfuzz-cpp>0:devel/rapidfuzz-cpp \
 #BUILD_DEPENDS+=	concurrentqueue>0:devel/concurrentqueue # broken, see https://github.com/ossia/score/issues/1720
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavcodec.so:multimedia/ffmpeg \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libfaust.so:audio/faust \
 		libfftw3.so:math/fftw3 \
 		libfmt.so:devel/libfmt \
@@ -40,7 +40,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		cmake gl localbase:ldflags llvm:19 pkgconfig qt:6 sdl tar:xz
 USE_GL=		gl opengl
-USE_QT=		base declarative scxml serialport shadertools svg websockets
+USE_QT=		base declarative networkauth quick3d scxml serialport shadertools svg websockets webview
 USE_SDL=	sdl2
 
 CMAKE_ON=	SCORE_USE_SYSTEM_LIBRARIES \
@@ -54,17 +54,24 @@ CXXFLAGS+=	-fexperimental-library # to fix libossia/src/ossia/detail/jthread.hpp
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-PLIST_FILES=	lib/libkfr_dft_avx.a \
-		lib/libkfr_dft_avx2.a \
-		lib/libkfr_dft_avx512.a \
-		lib/libkfr_dft_sse2.a \
-		lib/libkfr_dft_sse41.a \
-		lib/libkfr_dsp_avx.a \
-		lib/libkfr_dsp_avx2.a \
-		lib/libkfr_dsp_avx512.a \
-		lib/libkfr_dsp_sse2.a \
-		lib/libkfr_dsp_sse41.a
-.endif
+#.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+#PLIST_FILES=	lib/libkfr_dft_avx.a \
+#		lib/libkfr_dft_avx2.a \
+#		lib/libkfr_dft_avx512.a \
+#		lib/libkfr_dft_sse2.a \
+#		lib/libkfr_dft_sse41.a \
+#		lib/libkfr_dsp_avx.a \
+#		lib/libkfr_dsp_avx2.a \
+#		lib/libkfr_dsp_avx512.a \
+#		lib/libkfr_dsp_sse2.a \
+#		lib/libkfr_dsp_sse41.a
+#.endif
+
+post-install: # workaaround for https://github.com/ossia/score/issues/1977: ossia-score installs many projects that it depends on: Eigen, xtensor, xtl, xsimd, and https://github.com/ossia/score/issues/2047
+	@${RM} -r \
+		${STAGEDIR}${LOCALBASE}/etc \
+		${STAGEDIR}${LOCALBASE}/include \
+		${STAGEDIR}${LOCALBASE}/lib \
+		${STAGEDIR}${LOCALBASE}/share
 
 .include <bsd.port.post.mk>

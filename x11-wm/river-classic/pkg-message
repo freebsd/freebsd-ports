@@ -1,0 +1,17 @@
+[
+{
+  type: install
+  message: <<EOM
+x11-wm/river-classic is a maintained fork of river 0.3 intended for users
+that are happy with how river 0.3 works and do not wish to deal with the
+breaking changes planned for the river 0.4.0+.
+
+Please use x11-wm/river if you want to stay up-to-date with the latest
+improvements, as it tracks stable upstream releases for river 0.4.0+.
+
+For more info, see https://isaacfreund.com/blog/river-window-management/
+
+EOM
+}
+]
+

@@ -1,0 +1,2 @@
+Scripts for the FreeBSD periodic(8) system from michaelo@FreeBSD.org such as
+updating Git repositories with gitup(1) or building FreeBSD from source.

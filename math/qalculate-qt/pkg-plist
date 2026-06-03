@@ -13,6 +13,7 @@ share/metainfo/io.github.Qalculate.qalculate-qt.metainfo.xml
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_en.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_es.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_fr.qm
+%%NLS%%%%DATADIR%%/translations/qalculate-qt_ka.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_nl.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_pt_PT.qm
@@ -20,3 +21,4 @@ share/metainfo/io.github.Qalculate.qalculate-qt.metainfo.xml
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_sl.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_sv.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_zh_CN.qm
+%%NLS%%%%DATADIR%%/translations/qalculate-qt_zh_TW.qm

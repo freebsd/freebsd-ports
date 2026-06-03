@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-1.2-
 DISTVERSION=	20171118
 CATEGORIES=	converters
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Code Converter on TTY
 WWW=		https://github.com/vmi/cocot
 

@@ -1,2 +1,11 @@
-The set of command-line programs providing a simple interface
-to file system events to shell scripts.
+inotify-tools is a set of command-line utilities that provides a simple
+interface to the inotify kernel subsystem. It allows users to monitor and react
+to changes in files and directories in real-time.
+
+The package includes two main utilities:
+- inotifywait: for continuous monitoring and real-time output of
+  filesystem events. It is often used in shell scripts to trigger
+  actions like deployments, backups, or log monitoring.
+- inotifywatch: gathers filesystem access statistics and outputs a
+  summary count of events received on each file or directory. It is
+  suitable for short-term monitoring to collect event statistics.

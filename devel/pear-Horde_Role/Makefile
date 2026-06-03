@@ -14,7 +14,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${HORDE_DIR}
 	@${TOUCH} ${STAGEDIR}${PREFIX}/${HORDE_DIR}/.keep_me
 	@${ECHO_CMD} "${HORDE_DIR}/.keep_me" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${HORDE_DIR} 2>/dev/null || true" >> \
+	@${ECHO_CMD} "@postunexec rmdir %D/${HORDE_DIR} 2>/dev/null || true" >> \
 		${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+prefix=%%PREFIX%%
+includedir=${prefix}/include/stb
+
+Name: stb
+Description: Single-file public domain libraries for C/C++
+Version: %%DISTVERSION%%
+Cflags: -I${includedir}

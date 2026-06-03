@@ -13,7 +13,7 @@
 # llama_server_user (str):	llama_server daemon user
 #				Default: %%USER%%
 # llama_server_model (str):	AI model that llama-server will use
-#				Default: "" (required)
+#				Default: "" (not required)
 # llama_server_args (str):	Additional arguments for llama-server
 #				Default: "" (optional)
 # llama_server_log (str):	Log file that llama-server will write log to
@@ -38,25 +38,24 @@ run_command="%%PREFIX%%/bin/llama-server"
 procname="${run_command}"
 pidfile=${llama_server_pidfile}
 command=/usr/sbin/daemon
-command_args="-f -t ${name} -p ${pidfile} -o ${llama_server_log} ${run_command} -m ${llama_server_model} ${llama_server_args}"
+command_args="-f -t ${name} -p ${pidfile} -o ${llama_server_log} ${run_command} ${llama_server_args}"
 start_precmd="llama_server_precmd"
 llama_server_chdir=/tmp
 
 llama_server_precmd()
 {
 	# check model
-	if [ -z "${llama_server_model}" ]; then
-		echo "llama_server_model isn't set, it is required"
-		exit 1
-	fi
-	if [ ! -f "${llama_server_model}" ]; then
-		echo "llama_server_model isn't a file"
-		exit 1
+	if [ -n "${llama_server_model}" ]; then
+		if [ ! -f "${llama_server_model}" ]; then
+			echo "llama_server_model isn't a file"
+			exit 1
+		fi
+		command_args="${command_args} -m ${llama_server_model}"
 	fi
 
 	# ensure that the log file exists and has right permissions
-	touch ${llama_server_log}
-	chown ${llama_server_user} ${llama_server_log}
+	touch ${llama_server_log} ${pidfile}
+	chown ${llama_server_user} ${llama_server_log} ${pidfile}
 	chmod 640 ${llama_server_log}
 }
 

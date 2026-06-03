@@ -1,6 +1,7 @@
 PORTNAME=	scikit-sparse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.16
+PORTREVISION=	4
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # missing files under tests/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack	\
 		libcholmod.so:math/suitesparse-cholmod
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.19:science/py-scipy@${PY_FLAVOR}
 
 USES=		fortran python

@@ -1,5 +1,0 @@
-The mod_wsgi adapter is an Apache module that provides a WSGI compliant
-interface for hosting Python based web applications within Apache. The
-adapter is written completely in C code against the Apache C runtime and
-for hosting WSGI applications within Apache has a lower overhead than using
-existing WSGI adapters for mod_python or CGI.

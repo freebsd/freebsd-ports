@@ -1,6 +1,5 @@
 PORTNAME=	m4
-PORTVERSION=	1.4.19
-PORTREVISION=	1
+PORTVERSION=	1.4.21
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -37,7 +36,6 @@ NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^* M4: / s|M4|G&|' ${WRKSRC}/doc/m4.texi
-	@${REINPLACE_CMD} -e '/^install-exec-am: / s| .*||' ${WRKSRC}/lib/Makefile.in
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

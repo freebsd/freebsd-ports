@@ -47,6 +47,9 @@ post-install-lua: <<EOS
   end
   if not pkg.stat(target_file) then
     pkg.copy(sample_file, target_file)
+    if pkg_metalog ~= nil and pkg.metalog_copy ~= nil then
+      pkg.metalog_copy(sample_file, target_file)
+    end
   end
 EOS
 

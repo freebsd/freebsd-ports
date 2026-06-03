@@ -1,3 +1,13 @@
+include/KirigamiAddons/App/KirigamiApp
+include/KirigamiAddons/App/KirigamiAppDefaults
+include/KirigamiAddons/App/kirigamiapp.h
+include/KirigamiAddons/App/kirigamiapp_export.h
+include/KirigamiAddons/App/kirigamiapp_version.h
+include/KirigamiAddons/App/kirigamiappdefaults.h
+include/KirigamiAddons/Components/NameUtils
+include/KirigamiAddons/Components/kirigamiaddonscomponents_export.h
+include/KirigamiAddons/Components/kirigamiaddonscomponents_version.h
+include/KirigamiAddons/Components/nameutils.h
 include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication
 include/KirigamiAddonsStatefulApp/KirigamiActionCollection
 include/KirigamiAddonsStatefulApp/abstractkirigamiapplication.h
@@ -8,9 +18,15 @@ lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfigVersion.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsMacros.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
+lib/libKirigamiAddonsComponents.so
+lib/libKirigamiAddonsComponents.so.%%SHLIB_VER%%
+lib/libKirigamiAddonsComponents.so.6
 lib/libKirigamiAddonsStatefulApp.so
 lib/libKirigamiAddonsStatefulApp.so.%%SHLIB_VER%%
 lib/libKirigamiAddonsStatefulApp.so.6
+lib/libKirigamiApp.so
+lib/libKirigamiApp.so.%%SHLIB_VER%%
+lib/libKirigamiApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/Avatar.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/AvatarButton.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/Banner.qml
@@ -180,6 +196,7 @@ share/locale/es/LC_MESSAGES/kirigami-addons6.mo
 share/locale/eu/LC_MESSAGES/kirigami-addons6.mo
 share/locale/fi/LC_MESSAGES/kirigami-addons6.mo
 share/locale/fr/LC_MESSAGES/kirigami-addons6.mo
+share/locale/ga/LC_MESSAGES/kirigami-addons6.mo
 share/locale/gl/LC_MESSAGES/kirigami-addons6.mo
 share/locale/he/LC_MESSAGES/kirigami-addons6.mo
 share/locale/hi/LC_MESSAGES/kirigami-addons6.mo

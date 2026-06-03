@@ -1,10 +1,6 @@
-This project is the Python filesystem library for Azure Data Lake Store.
+A pure-python interface to the Azure Data-lake Storage Gen 1 system, providing
+pythonic file-system and file objects, seamless transition between Windows and
+POSIX remote paths, high-performance up- and down-loader.
 
-Azure Data Lake Storage Gen2 is a highly scalable and cost-effective data lake
-solution for big data analytics. It combines the power of a high-performance
-file system with massive scale and economy to help you speed your time to
-insight. Data Lake Storage Gen2 extends Azure Blob Storage capabilities and is
-optimized for analytics workloads. Store data once and access it via existing
-Blob Storage and HDFS-compliant file system interfaces with no programming
-changes or data copying. Data Lake Storage Gen2 is the most comprehensive data
-lake available.
+This software is under active development and not yet recommended for general
+use.

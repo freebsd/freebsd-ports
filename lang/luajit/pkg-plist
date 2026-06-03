@@ -11,7 +11,6 @@ lib/libluajit-5.1.so
 lib/libluajit-5.1.so.2
 lib/libluajit-5.1.so.%%SOVERSION%%
 libdata/pkgconfig/luajit.pc
-share/man/man1/luajit.1.gz
 %%DATADIR%%-%%VERSION%%/jit/bc.lua
 %%DATADIR%%-%%VERSION%%/jit/bcsave.lua
 %%DATADIR%%-%%VERSION%%/jit/dis_arm.lua
@@ -31,3 +30,4 @@ share/man/man1/luajit.1.gz
 %%DATADIR%%-%%VERSION%%/jit/v.lua
 %%DATADIR%%-%%VERSION%%/jit/vmdef.lua
 %%DATADIR%%-%%VERSION%%/jit/zone.lua
+share/man/man1/luajit.1.gz

@@ -1,6 +1,6 @@
---- lib/perfdata/CMakeLists.txt.orig	2021-09-09 09:49:26.077173000 +0200
-+++ lib/perfdata/CMakeLists.txt	2021-09-09 09:51:19.916439000 +0200
-@@ -34,37 +34,37 @@ set_target_properties (
+--- lib/perfdata/CMakeLists.txt.orig	2026-04-22 09:29:50 UTC
++++ lib/perfdata/CMakeLists.txt
+@@ -57,44 +57,44 @@ install_if_not_exists(
  )
  
  install_if_not_exists(
@@ -38,6 +38,14 @@
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/opentsdb.conf.sample
    ${ICINGA2_CONFIGDIR}/features-available
  )
+ 
+ if(ICINGA2_WITH_OPENTELEMETRY)
+   install_if_not_exists(
+-    ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/otlpmetrics.conf
++    ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/otlpmetrics.conf.sample
+     ${ICINGA2_CONFIGDIR}/features-available
+   )
+ endif()
  
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/perfdata.conf

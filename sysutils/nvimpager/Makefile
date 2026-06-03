@@ -1,5 +1,5 @@
 PORTNAME=	nvimpager
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lucc
 
 MAKEFILE=	makefile
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.mk>

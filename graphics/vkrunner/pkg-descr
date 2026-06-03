@@ -1,0 +1,3 @@
+VkRunner is a Vulkan shader tester based on shader_runner in Piglit.
+The goal is to make it be able to test scripts as similar to Piglit’s
+shader_test format as possible.

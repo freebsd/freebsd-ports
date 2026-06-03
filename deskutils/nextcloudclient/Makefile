@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.16.6
+PORTVERSION=	33.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -11,6 +11,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	inkscape:graphics/inkscape
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
+		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
 		libqt6keychain.so:security/qtkeychain@qt6 \
 		libxkbcommon.so:x11/libxkbcommon \
 		libp11.so:security/libp11
@@ -20,7 +21,7 @@ USES=		cmake:noninja compiler:c++20-lang desktop-file-utils gl gmake \
 		sqlite ssl
 USE_CXXSTD=	c++20
 USE_GL=		opengl
-USE_KDE=	archive
+USE_KDE=	archive ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		5compat base declarative positioning svg websockets
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
@@ -32,7 +33,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nextcloud
 GH_PROJECT=	desktop
 
-OPTIONS_DEFINE=			DOCS DEBUG GNOME GUIADDONS KDE WEBENGINE
+OPTIONS_DEFINE=			DEBUG GNOME GUIADDONS KDE WEBENGINE
 OPTIONS_DEFAULT=		GNOME GUIADDONS
 OPTIONS_DEFAULT_aarch64=	WEBENGINE
 OPTIONS_DEFAULT_amd64=		WEBENGINE
@@ -43,13 +44,6 @@ OPTIONS_SUB=	yes
 GUIADDONS_DESC=		Use KDE guiaddons (implies KDE)
 KDE_DESC=		KDE desktop environment support
 WEBENGINE_DESC=		Use Webengine to provide web login flow
-
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
-			doxygen:devel/doxygen
-DOCS_USES=		tex
-DOCS_USE=		TEX=dvipsk:build,latex:build
-DOCS_CMAKE_BOOL=	WITH_DOC
-DOCS_VARS=		PORTDOCS=*
 
 GNOME_CMAKE_BOOL=	BUILD_SHELL_INTEGRATION_NAUTILUS
 
@@ -80,9 +74,5 @@ post-patch-GUIADDONS-off:
 
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sync-exclude.lst ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

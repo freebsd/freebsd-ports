@@ -1,5 +1,6 @@
 PORTNAME=	ox-gfm.el
 PORTVERSION=	1.0p20231215.1901
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	pat@patmaddox.com
@@ -9,7 +10,6 @@ WWW=		https://github.com/larstvei/ox-gfm
 LICENSE=	GPLv3+
 
 USES=			emacs
-EMACS_NO_DEPENDS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	larstvei

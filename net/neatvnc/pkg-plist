@@ -1,5 +1,5 @@
 include/neatvnc.h
 lib/libneatvnc.so
-lib/libneatvnc.so.0
-lib/libneatvnc.so.0.0.0
+lib/libneatvnc.so.1
+lib/libneatvnc.so.1.0.0
 libdata/pkgconfig/neatvnc.pc

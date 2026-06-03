@@ -1,0 +1,2 @@
+flexcache provides a robust and extensible package to cache on disk the result
+of expensive calculations.

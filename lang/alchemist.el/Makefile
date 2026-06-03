@@ -1,9 +1,8 @@
 PORTNAME=	alchemist.el
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	19
+PORTREVISION=	21
 CATEGORIES=	lang
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Elixir Tooling Integration Into Emacs
@@ -11,11 +10,13 @@ WWW=		https://github.com/tonini/alchemist.el
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	elixir-mode.el${EMACS_PKGNAMESUFFIX}>=0:lang/elixir-mode.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	elixir-mode.el>=0:lang/elixir-mode.el
 
 USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	tonini
+
+CONFLICTS_INSTALL=	alchemist.el-emacs_*
 
 NO_ARCH=	yes
 NO_BUILD=	yes

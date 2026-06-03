@@ -4,9 +4,9 @@ conflict, rename the PipeWire init function into "pipewire_init".
 
 Upstream issue: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 
---- src/pipewire/pipewire.c.orig	2022-04-27 17:59:21 UTC
+--- src/pipewire/pipewire.c.orig	2026-03-16 11:54:17 UTC
 +++ src/pipewire/pipewire.c
-@@ -580,7 +580,7 @@ SPA_EXPORT
+@@ -484,7 +484,7 @@ SPA_EXPORT
   * This function can be called multiple times.
   */
  SPA_EXPORT
@@ -15,7 +15,7 @@ Upstream issue: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
  {
  	const char *str;
  	struct spa_dict_item items[6];
-@@ -683,7 +683,7 @@ SPA_EXPORT
+@@ -599,7 +599,7 @@ SPA_EXPORT
   * used again after being deinitialized with a new pw_init() call.
   */
  SPA_EXPORT
@@ -24,7 +24,7 @@ Upstream issue: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
  {
  	struct support *support = &global_support;
  	struct registry *registry = &support->registry;
-@@ -712,6 +712,21 @@ done:
+@@ -624,6 +624,21 @@ done:
  	pthread_mutex_unlock(&init_lock);
  
  }
@@ -46,9 +46,9 @@ Upstream issue: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
  
  /** Check if a debug category is enabled
   *
---- src/pipewire/pipewire.h.orig	2022-04-27 17:59:21 UTC
+--- src/pipewire/pipewire.h.orig	2026-03-16 11:54:17 UTC
 +++ src/pipewire/pipewire.h
-@@ -69,9 +69,12 @@ void
+@@ -53,9 +53,12 @@ void
   * \{
   */
  void

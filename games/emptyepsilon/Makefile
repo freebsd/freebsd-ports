@@ -16,7 +16,11 @@ LICENSE_FILE_GPLv2=				${WRKSRC}/LICENSE
 LICENSE_FILE_AngryFly-Royalty-Free-License=	${WRKSRC}/packs/License.txt
 LICENSE_PERMS_AngryFly-Royalty-Free-License=	auto-accept dist-mirror pkg-mirror
 
-BUILD_DEPENDS=	glm>0:math/glm
+# BUILD_DEPENDS for glm is commented out because the system glm (1.0.x) is
+# incompatible with EmptyEpsilon's code. The bundled glm 0.9.9.8 is used instead
+# via git submodule to avoid API incompatibilities (missing radians, degrees,
+# u8vec4, vec3 functions/types in newer glm versions).
+#BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libsfml-system.so:devel/sfml \
 		libmeshoptimizer.so:misc/meshoptimizer \
@@ -30,10 +34,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	daid
 GH_PROJECT=	EmptyEpsilon
 GH_TUPLE=	daid:SeriousProton:${DISTVERSIONFULL}:sproton/sproton \
-		BinomialLLC:basis_universal:v1_15_update2:basis/SeriousProton/externals/basis
+		BinomialLLC:basis_universal:v1_15_update2:basis/SeriousProton/externals/basis \
+		g-truc:glm:0.9.9.8:glm/sproton/libs/glm
 
 CMAKE_ARGS=	-DSERIOUS_PROTON_DIR="${WRKSRC}/sproton" \
-		-DWITH_OPUS=system
+		-DWITH_OPUS=system \
+		-DWITH_GLM=bundled
 CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL
 
 post-patch:

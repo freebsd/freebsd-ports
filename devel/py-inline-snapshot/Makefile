@@ -1,5 +1,5 @@
 PORTNAME=	inline-snapshot
-DISTVERSION=	0.20.8
+DISTVERSION=	0.33.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +15,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.0.5:devel/py-asttokens@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}executing>=2.2.0:devel/py-executing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=8.3.4:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.7.1:textproc/py-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PY_TOMLI}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.75.5:devel/py-hypothesis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isort>0:devel/py-isort@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy>=1.2.0:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=1:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyright>=1.1.359:devel/py-pyright@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-freezer>=0.4.9:devel/py-pytest-freezer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10.0:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.6.1,1:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist pep517 pytest
+# These tests require www/node
+PYTEST_IGNORED_TESTS=	test_compare test_typing_args[pyright] test_typing_call[pyright]
 
 NO_ARCH=	yes
 

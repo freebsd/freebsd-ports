@@ -1,6 +1,6 @@
 PORTNAME=	jna
 PORTVERSION=	5.15.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@markdixon.name

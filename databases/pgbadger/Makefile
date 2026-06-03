@@ -1,5 +1,5 @@
 PORTNAME=	pgbadger
-PORTVERSION=	13.1
+PORTVERSION=	13.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -8,8 +8,6 @@ COMMENT=	Very competent log analyzer for PostgreSQL
 WWW=		http://dalibo.github.com/pgbadger/
 
 LICENSE=	PostgreSQL
-
-BUILD_DEPENDS=	gsed:textproc/gsed
 
 USES=		gmake perl5
 

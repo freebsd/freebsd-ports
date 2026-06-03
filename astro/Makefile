@@ -1,13 +1,14 @@
     COMMENT = Astronomical ports
 
-    SUBDIR += R-cran-maptools
     SUBDIR += accrete
     SUBDIR += astrometry
     SUBDIR += astroterm
+    SUBDIR += calceph
     SUBDIR += calcmysky
     SUBDIR += celestia
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
+    SUBDIR += cspice
     SUBDIR += erfa
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
@@ -40,7 +41,6 @@
     SUBDIR += merkaartor
     SUBDIR += mkgmap
     SUBDIR += mkgmap-splitter
-    SUBDIR += mymoon
     SUBDIR += nightfall
     SUBDIR += opencpn
     SUBDIR += openuniverse
@@ -82,12 +82,15 @@
     SUBDIR += phoon
     SUBDIR += pngphoon
     SUBDIR += pp3
+    SUBDIR += py-alerce
     SUBDIR += py-astlib
     SUBDIR += py-astral
     SUBDIR += py-astroML
     SUBDIR += py-astropy
+    SUBDIR += py-astropy-healpix
     SUBDIR += py-astropy-helpers
     SUBDIR += py-astropy-iers-data
+    SUBDIR += py-astroquery
     SUBDIR += py-ephem
     SUBDIR += py-extension-helpers
     SUBDIR += py-fitsio
@@ -102,12 +105,17 @@
     SUBDIR += py-pymeeus
     SUBDIR += py-pymetar
     SUBDIR += py-pysofa
+    SUBDIR += py-pysolar
+    SUBDIR += py-pytest-astropy
+    SUBDIR += py-pytest-astropy-header
+    SUBDIR += py-pyvo
     SUBDIR += py-pywapi
     SUBDIR += py-ro
     SUBDIR += py-sgp4
     SUBDIR += py-skyfield
     SUBDIR += py-skyfield-data
     SUBDIR += py-spacetrack
+    SUBDIR += py-spiceypy
     SUBDIR += py-spktype01
     SUBDIR += py-spktype21
     SUBDIR += py-sunpy
@@ -130,6 +138,7 @@
     SUBDIR += sunclock
     SUBDIR += sunwait
     SUBDIR += swe
+    SUBDIR += traccar
     SUBDIR += viking
     SUBDIR += wcslib
     SUBDIR += weather

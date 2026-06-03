@@ -1,5 +1,5 @@
 PORTNAME=	guard-minitest
-PORTVERSION=	2.4.6
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-guard-compat>=1.2<2:sysutils/rubygem-guard-compat \
-		rubygem-minitest>=3.0:devel/rubygem-minitest
+		rubygem-minitest>=5.0.4<7.0:devel/rubygem-minitest
 
 USES=		gem
 

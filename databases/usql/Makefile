@@ -1,7 +1,7 @@
 PORTNAME=	usql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.18
-PORTREVISION=	2
+DISTVERSION=	0.21.4
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ BROKEN_i386=	fails to find resvg_xx symbols, see https://github.com/xo/usql/issu
 
 LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
 
-USES=		go:1.23,modules
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/xo/usql
 

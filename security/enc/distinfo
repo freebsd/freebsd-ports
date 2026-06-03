@@ -1,5 +1,5 @@
-TIMESTAMP = 1749363497
-SHA256 (go/security_enc/life4-enc-1.1.4_GH0/go.mod) = 7ead3713a3192b4dd5615c2a23c7c4a8004c6bd84cc17c6451d2333558254f10
-SIZE (go/security_enc/life4-enc-1.1.4_GH0/go.mod) = 621
-SHA256 (go/security_enc/life4-enc-1.1.4_GH0/life4-enc-1.1.4_GH0.tar.gz) = 6488fe90413eafb1905d7cd9d26b0da8fb210ffa4636a49d16badbd5eb85cf70
-SIZE (go/security_enc/life4-enc-1.1.4_GH0/life4-enc-1.1.4_GH0.tar.gz) = 21934
+TIMESTAMP = 1766093438
+SHA256 (go/security_enc/life4-enc-1.1.5_GH0/go.mod) = f98a1d196d5848b28433334418b043ab9e00394c2a84e090a2e6b73001021f38
+SIZE (go/security_enc/life4-enc-1.1.5_GH0/go.mod) = 623
+SHA256 (go/security_enc/life4-enc-1.1.5_GH0/life4-enc-1.1.5_GH0.tar.gz) = 19c9aa1e2bba71be37c1aa786418c6607cc19345963bc8aaa83e6cf153b87029
+SIZE (go/security_enc/life4-enc-1.1.5_GH0/life4-enc-1.1.5_GH0.tar.gz) = 22589

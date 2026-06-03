@@ -27,8 +27,6 @@ ERROR_ADDRESS=root@localhost
 # Location of ports tree and source trees
 export BASEDIR=/a/tindex
 export PORTSDIR=${BASEDIR}/ports
-export SRCDIR12=${BASEDIR}/src.12
-export SRCDIR13=${BASEDIR}/src.13
 export SRCDIR14=${BASEDIR}/src.14
 export OUTDIR=${BASEDIR}/out
 
@@ -84,7 +82,7 @@ indexfail() {
     echo "Committers on the hook:"
     tr -s '\n' ' ' < ${PORTSDIR}/hook
     echo
-    echo 
+    echo
     echo "Most recent Git update was:";
     (IFS=""; echo ${commits})
   ) | mail -s "INDEX build failed for ${BRANCH}" ${REPORT_ADDRESS}
@@ -113,17 +111,11 @@ export INDEX_JOBS=3
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-${SVN} -q up ${SRCDIR12}/sys/sys
-OSVERSION12=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
-
-${GIT} -C ${SRCDIR13} pull --rebase -q
-OSVERSION13=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR13}/sys/sys/param.h)
-
 ${GIT} -C ${SRCDIR14} pull --rebase -q
 OSVERSION14=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR14}/sys/sys/param.h)
 
 cd ${PORTSDIR}
-for ver in 12 13 14; do
+for ver in 14; do
 	rm -f INDEX-${ver} INDEX-${ver}.bz2 INDEX-${ver}.xz INDEX-${ver}.zst
 done
 
@@ -134,7 +126,7 @@ if ! ${GIT} pull --ff-only > git.log 2>&1 ; then
     exit 1
 fi
 
-for branch in 12.x 13.x 14.x; do
+for branch in 14.x; do
     release=$(echo $branch | sed -e 's,.x,,')
 
     eval _osver=\$OSVERSION${release}

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2025-05-06 12:23:00 UTC
+--- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-05-09 18:09:27 UTC
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc
-@@ -429,7 +429,7 @@ void RecordPrerenderActivationSignalDelay(const String
+@@ -405,7 +405,7 @@ void RecordPrerenderActivationSignalDelay(const String
  #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_WIN)
  SkFontHinting RendererPreferencesToSkiaHinting(
      const blink::RendererPreferences& prefs) {
@@ -9,7 +9,7 @@
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -3421,7 +3421,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3615,7 +3615,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
    WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
@@ -18,3 +18,12 @@
    if (!renderer_preferences_.system_font_family_name.empty()) {
      WebFontRenderStyle::SetSystemFontFamily(blink::WebString::FromUTF8(
          renderer_preferences_.system_font_family_name));
+@@ -3759,7 +3759,7 @@ void WebViewImpl::UpdateRendererPreferences(
+       renderer_preferences_.selection_clipboard_buffer_available);
+ #endif  // BUILDFLAG(IS_OZONE)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   GetSettings()->SetMiddleClickPasteAllowed(
+       renderer_preferences_.middle_click_paste_allowed);
+ #endif  // BUILDFLAG(IS_LINUX)

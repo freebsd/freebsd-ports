@@ -1,0 +1,11 @@
+--- tools/python/python_bootstrap_template.txt.orig	2026-04-04 05:35:35 UTC
++++ tools/python/python_bootstrap_template.txt
+@@ -76,7 +76,7 @@ def SearchPath(name):
+ 
+ def SearchPath(name):
+   """Finds a file in a given search path."""
+-  search_path = os.getenv('PATH', os.defpath).split(os.pathsep)
++  search_path = os.getenv('PATH', os.defpath + ":%%PREFIX%%/bin").split(os.pathsep)
+   for directory in search_path:
+     if directory:
+       path = os.path.join(directory, name)

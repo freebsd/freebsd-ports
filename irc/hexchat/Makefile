@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Repo archived upstream as of 2024-02-10
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libproxy.so:net/libproxy \
 		libfontconfig.so:x11-fonts/fontconfig \

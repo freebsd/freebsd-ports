@@ -1,6 +1,6 @@
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc devel
 MASTER_SITES=	http://www.mirrorservice.org/sites/vectorlinux.com/veclinux-6.0/source/extra/x-apps/xdelta/1.1.4/src/
 

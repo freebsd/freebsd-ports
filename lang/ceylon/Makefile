@@ -1,6 +1,6 @@
 PORTNAME=	ceylon
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang java
 MASTER_SITES=	http://downloads.ceylon-lang.org/cli/
 

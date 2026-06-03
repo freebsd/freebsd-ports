@@ -12,4 +12,6 @@ WWW=		https://metacpan.org/release/HTML-Entities-Numbered
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

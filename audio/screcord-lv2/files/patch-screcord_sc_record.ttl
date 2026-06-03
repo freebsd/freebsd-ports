@@ -1,0 +1,53 @@
+--- screcord/sc_record.ttl.orig	2019-10-15 12:26:28 UTC
++++ screcord/sc_record.ttl
+@@ -23,7 +23,6 @@
+ @prefix lv2: <http://lv2plug.in/ns/lv2core#> .
+ @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+ @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix guiext: <http://lv2plug.in/ns/extensions/ui#>.
+ 
+ <https://github.com/brummer10#me>
+ 	a foaf:Person ;
+@@ -43,8 +42,6 @@
+     lv2:minorVersion 0;
+     lv2:microVersion 1;
+ 
+-  guiext:ui <https://github.com/brummer10/screcord_ui#mono_record>;
+-
+     lv2:port [
+         a lv2:InputPort ,
+             lv2:ControlPort ;
+@@ -106,13 +103,6 @@
+         lv2:name "In" ;
+     ].
+ 
+-<https://github.com/brummer10/screcord_ui#mono_record>
+-  a guiext:X11UI;
+-  guiext:binary <sc_record_ui.so>;
+-        lv2:extensionData guiext::idle ; 
+-        lv2:requiredFeature guiext:makeResident;
+-  .
+-
+ <https://github.com/brummer10/screcord#stereo_record>
+     a lv2:Plugin ,
+         lv2:UtilityPlugin ;
+@@ -125,8 +115,6 @@
+     lv2:minorVersion 0;
+     lv2:microVersion 1;
+ 
+-  guiext:ui <https://github.com/brummer10/screcord_ui#stereo_record>;
+-
+     lv2:port [
+         a lv2:InputPort ,
+             lv2:ControlPort ;
+@@ -206,9 +194,3 @@
+         lv2:symbol "in1" ;
+         lv2:name "In1" ;
+     ].
+-
+-<https://github.com/brummer10/screcord_ui#stereo_record>
+-  a guiext:X11UI;
+-  guiext:binary <sc_record_ui.so>;
+-        lv2:extensionData guiext::idle ; 
+-        lv2:requiredFeature guiext:makeResident;
+-  .

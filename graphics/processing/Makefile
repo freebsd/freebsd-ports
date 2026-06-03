@@ -1,5 +1,6 @@
 PORTNAME=	processing
 PORTVERSION=	1.5.1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics cad java
 MASTER_SITES=	http://download.processing.org/
@@ -15,6 +16,7 @@ RUN_DEPENDS=	jikes>=1.22:java/jikes \
 		${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx
 
 USES=		cpe java tar:tgz
+JAVA_VERSION=	8
 
 NO_BUILD=	yes
 

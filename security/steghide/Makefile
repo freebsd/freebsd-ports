@@ -1,6 +1,6 @@
 PORTNAME=	steghide
 PORTVERSION=	0.5.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -10,6 +10,9 @@ WWW=		https://steghide.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	This version is over 22 years old and has vulnerability
+EXPIRATION_DATE=2026-06-30
 
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
 		libmhash.so:security/mhash

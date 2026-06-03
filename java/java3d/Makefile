@@ -1,6 +1,6 @@
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
-PORTREVISION=	8
+PORTREVISION=	13
 CATEGORIES=	java graphics games devel
 MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 
@@ -18,9 +18,9 @@ BROKEN_armv7=		fails to compile: build.xml: Compile failed; see the compiler err
 USES=		compiler:c11 gl java:ant,run tar:bzip2 xorg
 JAVA_VERSION=	8
 USE_GL=		gl
-USE_XORG=	xt
+USE_XORG=	x11 xext xt
 JAVA_VENDOR=	openjdk
-LLD_UNSAFE=	yes
+NO_SHLIB_REQUIRES_GLOB=	libjawt.so libjvm.so
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}
 
@@ -36,18 +36,20 @@ post-patch:
 		${WRKSRC}/j3d-core/src/native/ogl/build-freebsd.xml
 
 do-build:
-	cd ${WRKSRC}/vecmath && ${SETENV} ${MAKE_ENV} ${ANT} dist
+	cd ${WRKSRC}/vecmath && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${ANT} dist
 	cd ${WRKSRC}/j3d-core \
-		&& ${SETENV} ${MAKE_ENV} ${ANT} -Dbuild.type=fcs \
-						-Dis${OPSYS}=yes \
-						-Dports.localbase=${LOCALBASE} \
-						jar-opt
+		&& ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${ANT} \
+			-Dbuild.type=fcs \
+			-Dis${OPSYS}=yes \
+			-Dports.localbase=${LOCALBASE} \
+			jar-opt
 
 post-build-DOCS-on:
 	cd ${WRKSRC}/j3d-core \
-		&& ${SETENV} ${MAKE_ENV} ${ANT} -Dbuild.type=fcs \
-						-Dis${OPSYS}=yes \
-						docs-public
+		&& ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${ANT} \
+			-Dbuild.type=fcs \
+			-Dis${OPSYS}=yes \
+			docs-public
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/ext
@@ -57,7 +59,7 @@ do-install:
 		${WRKSRC}/j3d-core/build/default/opt/lib/ext/j3dutils.jar \
 		${STAGEDIR}${JAVA_HOME}/jre/lib/ext
 	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
-	${INSTALL} \
+	${INSTALL_LIB} \
 		${WRKSRC}/j3d-core/build/default/opt/native/libj3dcore-ogl.so \
 		${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
 

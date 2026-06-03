@@ -1,0 +1,24 @@
+--- pyproject.toml.orig	2025-09-14 20:35:55 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@ authors = [
+ authors = [
+     { name = "Gregory Szorc", email = "gregory.szorc@gmail.com" },
+ ]
+-license = "BSD-3-Clause"
++license = {text = "BSD-3-Clause"}
+ requires-python = ">=3.9"
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -35,10 +35,10 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "cffi~=1.17; platform_python_implementation != 'PyPy' and python_version < '3.14'",
++    "cffi>=1.17; platform_python_implementation != 'PyPy' and python_version < '3.14'",
+     "cffi>=2.0.0b; platform_python_implementation != 'PyPy' and python_version >= '3.14'",
+     "packaging",
+-    "setuptools>=77.0.0",
++    "setuptools",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

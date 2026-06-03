@@ -1,6 +1,6 @@
 PORTNAME=	unpaper
 DISTVERSION=	7.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		https://www.flameeyes.eu/files/

@@ -1,2 +1,7 @@
-This package contains editres, a dynamic resource editor for X Toolkit
-Applications.
+Editres is a tool that allows users and application developers to view
+the full widget hierarchy of any Xt Toolkit application that speaks the
+Editres protocol. In addition, editres will help the user construct
+resource specifications, allow the user to apply the resource to the
+application and view the results dynamically. Once the user is happy
+with a resource specification editres will append the resource string to
+the user's X Resources file.

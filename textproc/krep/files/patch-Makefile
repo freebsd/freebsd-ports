@@ -1,0 +1,30 @@
+--- Makefile.orig	2026-04-15 10:01:25 UTC
++++ Makefile
+@@ -5,11 +5,15 @@ BINDIR = $(PREFIX)/bin
+ PREFIX ?= /usr/local
+ BINDIR = $(PREFIX)/bin
+ 
+-CC = gcc
+-CFLAGS = -Wall -Wextra -O3 -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
++CC ?= gcc
++CFLAGS ?= -Wall -Wextra -O3 -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
+          -flto -funroll-loops -finline-functions
+-LDFLAGS = -pthread -flto
++LDFLAGS += -pthread -flto
+ 
++# All SIMD "hacks/detection" should be disabled as we have CPUTYPE and the current
++# approach is also broken as host might not share the same CPU features as target.
++ifeq (0, 1)
++
+ # Build mode: set NATIVE=1 for maximum performance on local machine
+ # Example: make NATIVE=1
+ ifdef NATIVE
+@@ -46,6 +50,8 @@ else ifeq ($(ARCH), aarch64)
+ else ifeq ($(ARCH), aarch64)
+     # Enable NEON for aarch64 Linux
+     CFLAGS += -D__ARM_NEON
++endif
++
+ endif
+ 
+ # Source files

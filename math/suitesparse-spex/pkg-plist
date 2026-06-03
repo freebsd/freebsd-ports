@@ -6,6 +6,8 @@ lib/cmake/SPEX/SPEXConfig.cmake
 lib/cmake/SPEX/SPEXConfigVersion.cmake
 lib/cmake/SPEX/SPEXTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPEX/SPEXTargets.cmake
+lib/cmake/SPEX/SPEXTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SPEX/SPEXTargets_static.cmake
 lib/libspex.a
 lib/libspex.so
 lib/libspex.so.3

@@ -1,7 +1,7 @@
 PORTNAME=	opentimelineio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,10 +12,10 @@ WWW=		https://github.com/PixarAnimationStudios/OpenTimelineIO
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libImath-3_1.so:math/Imath
+LIB_DEPENDS=	libImath.so:math/Imath
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 
-USES=		cmake:indirect compiler:c++14-lang python
+USES=		cmake:indirect compiler:c++14-lang python:3.11+
 USE_PYTHON=	distutils concurrent # autoplist is broken, see https://github.com/PixarAnimationStudios/OpenTimelineIO/issues/1205
 
 USE_GITHUB=	yes

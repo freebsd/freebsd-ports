@@ -2,13 +2,11 @@ PORTNAME=	squeak
 PORTVERSION=	4.10.2
 PORTREVISION=	15
 CATEGORIES=	lang
-MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
-		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
-		ftp://squeak.org/${IMAGE_VERSION}/:sqsrc \
-		http://squeak.610t.org/patches/:mainsrc
+MASTER_SITES=	http://squeakvm.org/unix/release/:vmsrc \
+		http://ftp.squeak.org/${IMAGE_VERSION}/:src
 DISTFILES=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:vmsrc \
 		Squeak${IMAGE_FULL_VERSION}.zip:src \
-		${SQUEAK_SRC}.zip:sqsrc
+		${SQUEAK_SRC}.zip:src
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 

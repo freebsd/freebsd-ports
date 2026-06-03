@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2026-03-04 16:26:38 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3", "setuptools_scm[toml]>=3.4.3"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=3.4.3"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "tabulate"
+ authors = [{name = "Sergey Astanin", email = "s.astanin@gmail.com"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ description = "Pretty-print tabular data"
+ readme = "README.md"
+ classifiers = [

@@ -11,7 +11,8 @@ WWW=		https://github.com/pothosware/SoapySDR
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/../LICENSE_1_0.txt
 
-BUILD_DEPENDS=	swig:devel/swig
+BUILD_DEPENDS=	swig:devel/swig \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr
 
 USES=		cmake compiler:c++11-lang gettext-runtime python

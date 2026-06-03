@@ -1,0 +1,14 @@
+GuardPost is a Python framework designed to handle authentication and
+authorization in web applications. It provides a flexible and extensible
+system for managing user permissions, roles, and access control.
+
+Key features:
+* Authentication and authorization framework
+* Support for role-based access control (RBAC)
+* Extensible permission system
+* Integration with dependency injection
+* JWT token support with optional cryptography
+* Clean API for defining access policies
+
+GuardPost is particularly useful for building secure web APIs and
+applications that require fine-grained access control.

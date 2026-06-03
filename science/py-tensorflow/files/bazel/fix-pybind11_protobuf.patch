@@ -1,116 +1,79 @@
-diff --git a/pybind11_protobuf/BUILD b/pybind11_protobuf/BUILD
-index b62eb91..1856ad3 100644
 --- a/pybind11_protobuf/BUILD
 +++ b/pybind11_protobuf/BUILD
-@@ -61,9 +61,11 @@ pybind_library(
-         "@com_google_absl//absl/container:flat_hash_map",
+@@ -46,7 +46,6 @@
          "@com_google_absl//absl/strings",
          "@com_google_absl//absl/types:optional",
--        "@com_google_protobuf//:proto_api",
          "@com_google_protobuf//:protobuf",
--    ],
-+    ] + select({
-+        ":enable_pyproto_api_setting": ["@com_google_protobuf//:proto_api"],
-+        "//conditions:default": [],
-+    }),
+-        "@com_google_protobuf//python:proto_api",
+     ],
  )
  
- pybind_library(
-diff --git a/pybind11_protobuf/proto_cast_util.cc b/pybind11_protobuf/proto_cast_util.cc
-index 52c57c9..771e688 100644
---- a/pybind11_protobuf/proto_cast_util.cc
-+++ b/pybind11_protobuf/proto_cast_util.cc
-@@ -14,9 +14,12 @@
+@@ -75,7 +74,6 @@
+         "@com_google_absl//absl/synchronization",
+         "@com_google_absl//absl/types:optional",
+         "@com_google_protobuf//:protobuf",
+-        "@com_google_protobuf//python:proto_api",
+     ],
+ )
  
- #include "google/protobuf/descriptor.pb.h"
- #include "google/protobuf/descriptor.h"
-+#include "google/protobuf/descriptor_database.h"
- #include "google/protobuf/dynamic_message.h"
+--- a/pybind11_protobuf/check_unknown_fields.h
++++ b/pybind11_protobuf/check_unknown_fields.h
+@@ -6,7 +6,11 @@
+ #include "absl/strings/string_view.h"
+ #include "absl/types/optional.h"
  #include "google/protobuf/message.h"
-+#if defined(PYBIND11_PROTOBUF_ENABLE_PYPROTO_API)
++#if __has_include("python/google/protobuf/proto_api.h")
+ #include "python/google/protobuf/proto_api.h"
++#else
++namespace google::protobuf::python { struct PyProto_API; }
++#endif
+ 
+ namespace pybind11_protobuf::check_unknown_fields {
+ 
+--- a/pybind11_protobuf/check_unknown_fields.cc
++++ b/pybind11_protobuf/check_unknown_fields.cc
+@@ -15,7 +15,9 @@
+ #include "google/protobuf/descriptor.h"
+ #include "google/protobuf/message.h"
+ #include "google/protobuf/unknown_field_set.h"
++#if __has_include("python/google/protobuf/proto_api.h")
  #include "python/google/protobuf/proto_api.h"
 +#endif
- #include "absl/container/flat_hash_map.h"
- #include "absl/strings/numbers.h"
- #include "absl/strings/str_replace.h"
-@@ -35,8 +38,12 @@ using ::google::protobuf::FileDescriptor;
- using ::google::protobuf::FileDescriptorProto;
- using ::google::protobuf::Message;
- using ::google::protobuf::MessageFactory;
-+#if defined(PYBIND11_PROTOBUF_ENABLE_PYPROTO_API)
- using ::google::protobuf::python::PyProto_API;
- using ::google::protobuf::python::PyProtoAPICapsuleName;
-+#else
-+struct PyProto_API;
-+#endif
  
- namespace pybind11_protobuf {
+ namespace pybind11_protobuf::check_unknown_fields {
  namespace {
-@@ -321,6 +328,7 @@ py::object GlobalState::PyMessageInstance(const Descriptor* descriptor) {
-                        module_name + "?");
- }
+@@ -103,11 +105,16 @@
+     unknown_field_number = unknown_field_set.field(0).number();
  
-+#if defined(PYBIND11_PROTOBUF_ENABLE_PYPROTO_API)
- std::pair<py::object, Message*> GlobalState::PyFastCppProtoMessageInstance(
-     const Descriptor* descriptor) {
-   assert(descriptor != nullptr);
-@@ -361,6 +369,7 @@ std::pair<py::object, Message*> GlobalState::PyFastCppProtoMessageInstance(
-   }
-   return {std::move(result), message};
- }
-+#endif
- 
- // Create C++ DescriptorPools based on Python DescriptorPools.
- // The Python pool will provide message definitions when they are needed.
-@@ -500,6 +509,7 @@ class PythonDescriptorPoolWrapper {
-    private:
-     bool CopyToFileDescriptorProto(py::handle py_file_descriptor,
-                                    FileDescriptorProto* output) {
-+#if defined(PYBIND11_PROTOBUF_ENABLE_PYPROTO_API)
-       if (GlobalState::instance()->py_proto_api()) {
-         try {
-           py::object c_proto = py::reinterpret_steal<py::object>(
-@@ -518,6 +528,7 @@ class PythonDescriptorPoolWrapper {
-           PyErr_Print();
-         }
-       }
-+#endif
- 
-       py::object wire = py_file_descriptor.attr("serialized_pb");
-       const char* bytes = PYBIND11_BYTES_AS_STRING(wire.ptr());
-@@ -561,6 +572,9 @@ void ImportProtoDescriptorModule(const Descriptor* descriptor) {
- 
- const Message* PyProtoGetCppMessagePointer(py::handle src) {
-   assert(PyGILState_Check());
-+#ifndef PYBIND11_PROTOBUF_ENABLE_PYPROTO_API
-+  return nullptr;
+     // Stop only if the extension is known by Python.
++#if __has_include("python/google/protobuf/proto_api.h")
+     if (py_proto_api->GetDefaultDescriptorPool()->FindExtensionByNumber(
+             unknown_field_parent_descriptor, unknown_field_number)) {
+       field_fqn_parts.resize(depth);
+       return true;
+     }
 +#else
-   if (!GlobalState::instance()->py_proto_api()) return nullptr;
-   auto* ptr =
-       GlobalState::instance()->py_proto_api()->GetMessagePointer(src.ptr());
-@@ -571,6 +585,7 @@ const Message* PyProtoGetCppMessagePointer(py::handle src) {
-     return nullptr;
-   }
-   return ptr;
++    field_fqn_parts.resize(depth);
++    return true;
 +#endif
- }
+   }
  
- absl::optional<std::string> PyProtoDescriptorName(py::handle py_proto) {
-@@ -732,6 +747,9 @@ py::handle GenericPyProtoCast(Message* src, py::return_value_policy policy,
- 
- py::handle GenericFastCppProtoCast(Message* src, py::return_value_policy policy,
-                                    py::handle parent, bool is_const) {
-+#ifndef PYBIND11_PROTOBUF_ENABLE_PYPROTO_API
-+  throw std::logic_error("Not implemented");
+   // If this message does not include submessages which allow extensions,
+@@ -184,6 +191,9 @@
+ absl::optional<std::string> CheckRecursively(
+     const ::google::protobuf::python::PyProto_API* py_proto_api,
+     const ::google::protobuf::Message* message) {
++#if !__has_include("python/google/protobuf/proto_api.h")
++  return absl::nullopt;
 +#else
-   assert(policy != pybind11::return_value_policy::automatic);
-   assert(policy != pybind11::return_value_policy::automatic_reference);
-   assert(src != nullptr);
-@@ -802,6 +820,7 @@ py::handle GenericFastCppProtoCast(Message* src, py::return_value_policy policy,
-       std::string message("pybind11_protobuf unhandled return_value_policy::");
-       throw py::cast_error(message + ReturnValuePolicyName(policy));
+   const auto* root_descriptor = message->GetDescriptor();
+   HasUnknownFields search{py_proto_api, root_descriptor};
+   if (!search.FindUnknownFieldsRecursive(message, 0u)) {
+@@ -194,6 +204,7 @@
+     return absl::nullopt;
    }
+   return search.BuildErrorMessage();
 +#endif
  }
  
- py::handle GenericProtoCast(Message* src, py::return_value_policy policy,
+ }  // namespace pybind11_protobuf::check_unknown_fields

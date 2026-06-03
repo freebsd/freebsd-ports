@@ -1,5 +1,5 @@
 PORTNAME=	chewy
-PORTVERSION=	7.6.0
+PORTVERSION=	8.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/toptal/chewy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activesupport60>=4.0:devel/rubygem-activesupport60 \
-		rubygem-elasticsearch7>=7.14.0<8:textproc/rubygem-elasticsearch7 \
+RUN_DEPENDS=	rubygem-activesupport81>=7.2:devel/rubygem-activesupport81 \
+		rubygem-elasticsearch8>=8.14<9.0:textproc/rubygem-elasticsearch8 \
 		rubygem-elasticsearch-dsl>=0:textproc/rubygem-elasticsearch-dsl
 
 USES=		gem

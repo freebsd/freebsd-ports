@@ -1,10 +1,11 @@
---- src/host/BUILD.toolchain.gn.in.orig	2022-11-08 21:18:48 UTC
+--- src/host/BUILD.toolchain.gn.in.orig	2026-05-08 07:54:08 UTC
 +++ src/host/BUILD.toolchain.gn.in
-@@ -6,7 +6,9 @@ gcc_toolchain("@GN_TOOLCHAIN@") {
+@@ -6,8 +6,9 @@ gcc_toolchain("@GN_TOOLCHAIN@") {
    ld = "@CMAKE_CXX_COMPILER@"
    ar = "@CMAKE_AR@"
    nm = "@CMAKE_NM@"
--  extra_cppflags = ""
+-  extra_cppflags = "@GN_EXTRA_CXX_FLAGS@"
+-  extra_cflags = "@GN_EXTRA_C_FLAGS@"
 +  extra_cppflags = "%%CPPFLAGS%%"
 +  extra_cxxflags = "%%CXXFLAGS%%"
 +  extra_ldflags = "%%LDFLAGS%%"

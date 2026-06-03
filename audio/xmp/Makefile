@@ -1,6 +1,5 @@
 PORTNAME=	xmp
-DISTVERSION=	4.2.0
-PORTREVISION=	3
+DISTVERSION=	4.3.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/libxmp/xmp-cli/releases/download/${PORTNAME}-${PORTVERSION}/

@@ -1,0 +1,7 @@
+A Prometheus exporter that receives web server access logs via syslog and
+converts them into metrics.
+
+access-log-exporter processes logs from multiple web servers and has undergone
+testing with Nginx and Apache HTTP Server 2.4. It supports flexible metric
+configuration through presets and provides comprehensive monitoring
+capabilities for web traffic analysis.

@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>=0.9.6_1:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-PyYAML>=6.0.12.12:devel/py-types-PyYAML@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}types-pyyaml>=6.0.12.12:devel/py-types-pyyaml@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest

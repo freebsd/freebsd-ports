@@ -5,7 +5,7 @@
  
  [build-system]
 -requires = ["setuptools>=74.1.0", "setuptools_scm[toml]>=8.1.0"]
-+requires = ["setuptools>=61", "setuptools_scm[toml]>=8.0.4"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=8.1.0"]
  build-backend = "setuptools.build_meta"
  
  [tool.setuptools.packages.find]

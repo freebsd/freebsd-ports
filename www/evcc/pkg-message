@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+To run evcc on startup, execute:
+sysrc evcc_enable="YES"
+
+To start evcc directly:
+service evcc start
+
+evcc listen by default on port 127.0.0.1:7070, but a reverse proxy like nginx before:
+location / {
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header Host $http_host;
+
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection "upgrade";
+
+  proxy_redirect off;
+  proxy_read_timeout 240s;
+
+  proxy_http_version 1.1;
+
+  proxy_pass http://127.0.0.1:7070;
+}
+
+After this access evcc via browser and set your admin password.
+evcc is using database only mode, so no need to modify any configuration file.
+
+Check the manual for more information:
+https://docs.evcc.io/docs/Home
+
+EOM
+}
+]

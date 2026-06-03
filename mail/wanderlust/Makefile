@@ -1,7 +1,7 @@
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	mail elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Mail and news system for Emacs
@@ -10,22 +10,24 @@ WWW=		https://github.com/wanderlust/wanderlust
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
-		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR} \
-		x-face-e21${EMACS_PKGNAMESUFFIX}>0:mail/x-face-e21@${EMACS_FLAVOR}
-RUN_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
-		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR}
+BUILD_DEPENDS=	emacs-w3m>0:www/emacs-w3m \
+		semi>0:editors/semi \
+		x-face-e21>0:mail/x-face-e21
+RUN_DEPENDS=	emacs-w3m>0:www/emacs-w3m \
+		semi>0:editors/semi
 
-USES=		emacs
+USES=		emacs:build
 USE_GITHUB=	yes
-GH_TAGNAME=	a346378
+GH_TAGNAME=	06ec9fa
+
+CONFLICTS_INSTALL=	wanderlust-emacs_*
 
 NO_ARCH=	yes
-SNAPDATE=	20250506
+SNAPDATE=	20251029
 
 MAKE_ARGS+=	EMACS=${EMACS_CMD} \
 		FLAGS="-batch -q -no-site-file" \
-		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
+		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR} \
 		INFODIR=${STAGEDIR}${PREFIX}/${INFO_PATH} \
 		PACKAGE_LISPDIR=NONE \
 		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/wl/icons
@@ -41,13 +43,16 @@ post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
 
 post-install:
-	${INSTALL} -d ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl \
+	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/wl \
+	-name "*.elc" -delete
+
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/wl \
 		${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/wanderlust-startup.el \
-		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 	${INSTALL_DATA} \
 		${WRKSRC}/elmo/elmo-shimbun.el \
-		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/wl
 	${INSTALL_DATA} ${WRKSRC}/etc/ja.Emacs ${STAGEDIR}${DATADIR}
 
 post-install-DOCS-on:

@@ -1,6 +1,6 @@
 PORTNAME=	openpaperwork-gtk
 DISTVERSION=	2.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpaperwork-core>0:misc/py-openpaperwork-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		pygobject-common>=0:devel/pygobject-common
 BUILD_DEPENDS=	${PY_DEPENDS}

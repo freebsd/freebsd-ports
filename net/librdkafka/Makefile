@@ -10,9 +10,6 @@ WWW=		https://github.com/edenhill/librdkafka/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips=		fails to build: undefined reference to __sync_add_and_fetch_4
-BROKEN_mips64=		fails to build: undefined reference to __sync_add_and_fetch_4
-
 BUILD_DEPENDS=	bash:shells/bash \
 	${LOCALBASE}/include/rapidjson/schema.h:devel/rapidjson
 LIB_DEPENDS=	libcurl.so:ftp/curl \

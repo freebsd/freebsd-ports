@@ -1,5 +1,5 @@
 PORTNAME=	flake8-pyi
-PORTVERSION=	25.5.0
+PORTVERSION=	26.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=6.0.0<8.0.0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=2.1.1:devel/py-pyflakes@${PY_FLAVOR} \
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

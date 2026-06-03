@@ -1,5 +1,6 @@
 PORTNAME=	zile
 DISTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -10,8 +11,7 @@ WWW=		https://www.gnu.org/software/zile/
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:misc/help2man
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libgnuregex.so:devel/libgnuregex
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
 USES=		compiler:c++11-lang gmake gnome localbase:ldflags ncurses perl5 \
 		pkgconfig vala:build
@@ -20,7 +20,7 @@ USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 
-LDFLAGS+=	-lgnuregex
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz

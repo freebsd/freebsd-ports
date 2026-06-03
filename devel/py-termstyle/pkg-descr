@@ -1,3 +1,0 @@
-Termstyle is a simple python library for adding coloured output to terminal
-(console) programs. The definitions come from ECMA-048, the "Control Functions
-for Coded Character Sets" standard.

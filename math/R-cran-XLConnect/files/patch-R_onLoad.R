@@ -1,11 +1,12 @@
---- R/onLoad.R.orig	2025-04-29 09:58:50 UTC
+--- R/onLoad.R.orig	2025-10-07 15:45:48 UTC
 +++ R/onLoad.R
-@@ -55,50 +55,7 @@
+@@ -55,50 +55,21 @@
      repo <- "https://repo1.maven.org/maven2"
    }
    apachePrefix <- paste0(repo, "/org/apache")
 -  sharedPaths <- tryCatch({
--    c(
++  sharedPaths <-
+     c(
 -      xlcEnsureDependenciesFor(
 -      paste0(apachePrefix, "/poi/poi-ooxml-full/5.4.1/poi-ooxml-full-5.4.1.jar"), "poi-ooxml-full.jar", 
 -      "5.4.1",  libname, pkgname),
@@ -42,13 +43,24 @@
 -    xlcEnsureDependenciesFor(
 -      paste0(repo, "/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar"), "SparseBitSet.jar",
 -      "1\\.([2-9]|[1-9][0-9]).*",  libname, pkgname)
--    )
++      "JAVALIBDIR/poi-ooxml-full.jar",
++      "JAVALIBDIR/poi-ooxml.jar",
++      "JAVALIBDIR/poi.jar",
++      "JAVALIBDIR/commons-compress.jar",
++      "JAVALIBDIR/commons-lang3.jar",
++      "JAVALIBDIR/xmlbeans.jar",
++      "JAVALIBDIR/commons-collections4.jar",
++      "JAVALIBDIR/commons-math.jar",
++      "JAVALIBDIR/log4j-api.jar",
++      "JAVALIBDIR/commons-codec.jar",
++      "JAVALIBDIR/commons-io.jar",
++      "JAVALIBDIR/SparseBitSet.jar"
+     )
 -  },
 -  error=function(e) {
 -          e
 -        }
 -  )
-+  sharedPaths <- ""
    .jpackage(name = pkgname, jars = "*", morePaths = sharedPaths, own.loader=TRUE)  
    # Perform general XLConnect settings - pass package description
    XLConnectSettings(packageDescription(pkgname))

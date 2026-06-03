@@ -9,6 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Empire text client
 WWW=		https://www.stack.nl/~marcolz/empire/
 
+CPPFLAGS+=	-DWANT_OBSOLETE_TYPEDEFS
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		ncurses readline shebangfix

@@ -1,6 +1,6 @@
 PORTNAME=	metpy
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.5.0:math/py-matplotlib@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.0.5:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray>=0.21.0:devel/py-xarray@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

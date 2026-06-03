@@ -35,7 +35,7 @@ load_rc_config $name
 pidfile=/var/run/syncthing.pid
 procname="%%PREFIX%%/bin/syncthing"
 command="/usr/sbin/daemon"
-command_args="-cf -p ${pidfile} ${procname} ${syncthing_home:+-home=${syncthing_home}} ${syncthing_log_file:+-logfile=${syncthing_log_file}} -no-browser ${syncthing_args}"
+command_args="-cf -p ${pidfile} ${procname} ${syncthing_home:+--home=${syncthing_home}} ${syncthing_log_file:+--logfile=${syncthing_log_file}} --no-browser ${syncthing_args}"
 
 start_precmd=syncthing_startprecmd
 

@@ -1,6 +1,6 @@
 PORTNAME=	opsin
 DISTVERSION=	3.0.20190223
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	science java
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${PORTNAME}/get/${BB_COMMIT}${EXTRACT_SUFX}?dummy=/:src
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:src
@@ -12,10 +12,11 @@ WWW=		https://bitbucket.org/dan2097/opsin/src/default/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		java
-JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=29730, tid=0x000000000002d236 guarantee(val < (1U << nbits)) failed: Field too big for insn
+
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
 NO_ARCH=	yes
 

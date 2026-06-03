@@ -1,5 +1,6 @@
 PORTNAME=	ganttproject
 DISTVERSION=	3.2.3240
+PORTREVISION=	3
 CATEGORIES=	deskutils java
 MASTER_SITES=	https://github.com/bardsoftware/ganttproject/releases/download/ganttproject-${DISTVERSION}/ \
 		https://dl.ganttproject.biz/ganttproject-3.2.3240/
@@ -16,7 +17,7 @@ RUN_DEPENDS=	openjfx14>=14:java/openjfx14
 USES=		desktop-file-utils java shebangfix zip
 JAVA_VERSION=	11+
 SHEBANG_FILES=	ganttproject
-bash_CMD=	/bin/sh
+bash_CMD=	${SH}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

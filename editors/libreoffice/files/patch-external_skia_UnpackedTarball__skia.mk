@@ -1,11 +1,10 @@
---- external/skia/UnpackedTarball_skia.mk.orig	2024-11-22 20:05:31 UTC
+--- external/skia/UnpackedTarball_skia.mk.orig	2025-05-10 18:09:26 UTC
 +++ external/skia/UnpackedTarball_skia.mk
-@@ -41,6 +41,8 @@ skia_patches := \
-     help-msvc-analyzer.patch \
-     always_inline_and_multiversioning_conflict.patch.1 \
-     windows-define-conflict.patch.1 \
+@@ -45,6 +45,7 @@ skia_patches := \
+     msvc-unknown-attributes.patch.1 \
+ 	fix-semaphore-include.patch.1 \
+ 	fix-xputimage-depth.patch.1 \
 +    freebsd-limits.h.patch.0 \
-+    powerpc64le-skia.patch.0 \
  
- $(eval $(call gb_UnpackedTarball_set_patchlevel,skia,1))
- 
+ ifneq ($(MSYSTEM),)
+ # use binary flag so patch from git-bash won't choke on mixed line-endings in patches

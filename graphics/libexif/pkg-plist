@@ -17,6 +17,7 @@ lib/libexif.so
 lib/libexif.so.12
 lib/libexif.so.12.3.4
 libdata/pkgconfig/libexif.pc
+%%NLS%%share/locale/ar/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/be/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/libexif-12.mo

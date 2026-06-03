@@ -2,7 +2,7 @@ PORTNAME=	dmenu-translate
 DISTVERSION=	g20230526
 CATEGORIES=	textproc
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Quick text translation with dmenu
 WWW=		https://github.com/NikitaIvanovV/dmenu-translate
 

@@ -1,7 +1,7 @@
 PORTNAME=	punchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	26
+PORTREVISION=	33
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,6 +11,9 @@ WWW=		https://fishfolk.org/games/punchy/
 LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 LICENSE_DISTFILES_CC-BY-NC-4.0=	${DISTNAME}${EXTRACT_SUFX}
+
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	bundled v8 only supported on these
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd

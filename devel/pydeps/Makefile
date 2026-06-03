@@ -1,6 +1,5 @@
 PORTNAME=	pydeps
-DISTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSION=	3.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 
@@ -11,7 +10,8 @@ WWW=		https://github.com/thebjorn/pydeps
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdlib-list>0:devel/py-stdlib-list@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdlib-list>0:devel/py-stdlib-list@${PY_FLAVOR} \
+		xdg-open:devel/xdg-utils
 
 USES=		python
 USE_PYTHON=	distutils autoplist

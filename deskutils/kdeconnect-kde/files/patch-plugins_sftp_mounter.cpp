@@ -1,6 +1,6 @@
---- plugins/sftp/mounter.cpp.orig	2023-12-18 22:14:59 UTC
+--- plugins/sftp/mounter.cpp.orig	2025-12-03 23:06:29 UTC
 +++ plugins/sftp/mounter.cpp
-@@ -128,7 +128,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
+@@ -102,7 +102,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
                        << QStringLiteral("-o") << QStringLiteral("gid=") + QString::number(getgid())
                        << QStringLiteral("-o") << QStringLiteral("reconnect")
                        << QStringLiteral("-o") << QStringLiteral("ServerAliveInterval=30")
@@ -9,7 +9,7 @@
      // clang-format on
  
      m_proc->setProgram(program, arguments);
-@@ -137,8 +137,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
+@@ -111,8 +111,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
      m_proc->start();
  
      // qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();

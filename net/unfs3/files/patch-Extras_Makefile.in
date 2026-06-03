@@ -1,0 +1,9 @@
+--- Extras/Makefile.in.orig	2026-03-22 15:37:30 UTC
++++ Extras/Makefile.in
+@@ -1,5 +1,5 @@
+ CC = @CC@
+-CFLAGS = @CFLAGS@ @TIRPC_CFLAGS@
++CFLAGS = @CFLAGS@
+ AR = ar
+ RM = rm -f
+ 

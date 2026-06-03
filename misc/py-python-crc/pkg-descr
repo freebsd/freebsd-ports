@@ -1,0 +1,12 @@
+Pure Python CRC library.
+
+Calculate CRC checksums, verify CRC checksum, predefined CRC configurations,
+and custom CRC configurations.
+
+Features:
+* Calculate CRC8, CRC16, CRC32, and CRC64 checksums
+* Verify CRC checksums
+* Pre-defined configurations for common CRC algorithms (CCITT, XMODEM, etc.)
+* Custom configurations support
+* Optimized table-based calculations for speed
+* Command-line interface for CRC calculations

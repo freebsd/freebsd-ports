@@ -1,5 +1,5 @@
 PORTNAME=	rack-session
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

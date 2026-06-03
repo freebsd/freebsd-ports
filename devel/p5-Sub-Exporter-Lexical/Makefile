@@ -1,7 +1,8 @@
 PORTNAME=	Sub-Exporter-Lexical
-PORTVERSION=	1.000
+PORTVERSION=	1.001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://metacpan.org/release/Sub-Exporter-Lexical
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0:devel/p5-B-Hooks-EndOfScope \
@@ -23,10 +24,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503700
-RUN_DEPENDS+=	p5-Lexical-Var>=0.10:devel/p5-Lexical-Var
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

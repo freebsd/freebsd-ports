@@ -1,4 +1,4 @@
---- net/http/http_auth_preferences.h.orig	2025-05-07 06:48:23 UTC
+--- net/http/http_auth_preferences.h.orig	2025-12-10 15:04:57 UTC
 +++ net/http/http_auth_preferences.h
 @@ -49,7 +49,7 @@ class NET_EXPORT HttpAuthPreferences {
  #if BUILDFLAG(IS_ANDROID)

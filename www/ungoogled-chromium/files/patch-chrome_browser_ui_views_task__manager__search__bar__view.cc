@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/task_manager_search_bar_view.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/ui/views/task_manager_search_bar_view.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/ui/views/task_manager_search_bar_view.cc
-@@ -27,7 +27,7 @@ TaskManagerSearchBarView::TaskManagerSearchBarView(
+@@ -29,7 +29,7 @@ TaskManagerSearchBarView::TaskManagerSearchBarView(
      const gfx::Insets& margins,
      Delegate& delegate)
      : delegate_(delegate)

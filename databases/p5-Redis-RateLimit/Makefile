@@ -1,5 +1,6 @@
 PORTNAME=	Redis-RateLimit
 PORTVERSION=	1.0002
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +12,7 @@ WWW=		https://metacpan.org/pod/Redis::RateLimit
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Carp>=1.50:devel/p5-Carp \
-		p5-Digest-SHA1>=2.13:security/p5-Digest-SHA1 \
+RUN_DEPENDS=	p5-Digest-SHA1>=2.13:security/p5-Digest-SHA1 \
 		p5-File-Share>=0.25:devel/p5-File-Share \
 		p5-File-Slurp-Tiny>=0.004:devel/p5-File-Slurp-Tiny \
 		p5-JSON-MaybeXS>=1.004002:converters/p5-JSON-MaybeXS \
@@ -24,6 +24,7 @@ RUN_DEPENDS=	p5-Carp>=1.50:devel/p5-Carp \
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+Kamal Proxy is a tiny HTTP proxy, designed to make it easy to coordinate
+zero-downtime deployments. By running your web applications behind Kamal Proxy,
+you can deploy changes to them without interrupting any of the traffic that's in
+progress. No particular cooperation from an application is required for this to
+work.
+
+Kamal Proxy is designed to work as part of Kamal, which provides a complete
+deployment experience including container packaging and provisioning. However,
+Kamal Proxy could also be used standalone or as part of other deployment
+tooling.

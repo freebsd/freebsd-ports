@@ -1,6 +1,6 @@
 PORTNAME=	game.libretro.beetle-psx
-PORTVERSION=	0.9.44.61
-DISTVERSIONSUFFIX=	-Nexus
+PORTVERSION=	0.9.44.77.20260416
+DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -19,6 +19,7 @@ NO_ARCH=	yes
 USES=		kodi
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-game
+GH_TAGNAME=	6c16fc4200f18a7588bcfef3719ddbc071d8ad76
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib

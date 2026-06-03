@@ -1,16 +1,15 @@
-First hunk fixes build in presence of evdev-proto
-
---- CMakeLists.txt.orig	2020-02-10 02:03:00 UTC
+--- CMakeLists.txt.orig	2024-12-29 03:52:10 UTC
 +++ CMakeLists.txt
-@@ -475,7 +475,6 @@ endif(NOT ALLEGRO_BIG_ENDIAN AND NOT ALLEGRO_LITTLE_EN
+@@ -927,6 +927,8 @@ set(PLATFORM_LIBS)
+ # Libraries that we always need to link against on this platform.
+ set(PLATFORM_LIBS)
  
- check_include_files(dirent.h ALLEGRO_HAVE_DIRENT_H)
- check_include_files(inttypes.h ALLEGRO_HAVE_INTTYPES_H)
--check_include_files(linux/input.h ALLEGRO_HAVE_LINUX_INPUT_H)
- check_include_files(stdbool.h ALLEGRO_HAVE_STDBOOL_H)
- check_include_files(stdint.h ALLEGRO_HAVE_STDINT_H)
- check_include_files(sys/io.h ALLEGRO_HAVE_SYS_IO_H)
-@@ -1155,7 +1154,7 @@ if(INSTALL_PKG_CONFIG_FILES)
++list(APPEND PLATFORM_LIBS inotify)
++
+ if(ALLEGRO_UNIX) # not MACOSX
+     list(APPEND LIBRARY_SOURCES ${ALLEGRO_SRC_UNIX_FILES})
+     list(APPEND PLATFORM_LIBS m ${CMAKE_THREAD_LIBS_INIT})
+@@ -1227,7 +1229,7 @@ if(INSTALL_PKG_CONFIG_FILES)
                  @ONLY
                  )
              install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${outname}

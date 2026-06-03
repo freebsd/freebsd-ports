@@ -1,0 +1,7 @@
+Amazon EFS Utils is a collection of tools that make it easier to mount and use
+Amazon Elastic File System (EFS).
+
+It provides:
+ - mount.efs: an EFS-aware NFS mount helper
+ - amazon-efs-mount-watchdog: a watchdog daemon that monitors EFS mounts
+ - efs-proxy: a high-performance Rust proxy for EFS connections (TLS/FIPS)

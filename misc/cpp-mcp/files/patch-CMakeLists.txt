@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2025-08-28 05:34:14 UTC
++++ CMakeLists.txt
+@@ -46,7 +46,9 @@ add_subdirectory(src)
+ add_subdirectory(src)
+ 
+ # Add examples
++if (CPP_MCP_BUILD_EXAMPLES)
+ add_subdirectory(examples)
++endif()
+ 
+ # Add test directory
+ option(MCP_BUILD_TESTS "Build the tests" OFF)

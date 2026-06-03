@@ -1,11 +1,11 @@
 PORTNAME=	libadwaita
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.5.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Building blocks for modern GNOME applications
-WWW=		https://www.gtk.org/
+COMMENT=	Building blocks for modern adaptive GNOME applications
+WWW=		https://gitlab.gnome.org/GNOME/libadwaita
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,12 +15,15 @@ LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libfribidi.so:converters/fribidi \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		gettext gnome meson ninja pkgconfig tar:xz vala:build
+USES=		gettext-tools gnome meson ninja pkgconfig python:build \
+		shebangfix tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf gtk40 introspection:build
+USE_LDCONFIG=	yes
+SHEBANG_FILES=	src/gen-public-types.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
-DOCS_MESON_TRUE=	gtk_doc
+DOCS_MESON_TRUE=	documentation
 
 .include <bsd.port.mk>

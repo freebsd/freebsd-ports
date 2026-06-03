@@ -1,10 +1,10 @@
 PORTNAME=	luakit
 DISTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
 WWW=		https://luakit.github.io
 

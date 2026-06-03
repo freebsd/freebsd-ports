@@ -1,8 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.18.38
-PORTREVISION=	0
+DISTVERSION=	9.18.49
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
 PKGNAMESUFFIX=	918
@@ -11,10 +10,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 WWW=		https://www.isc.org/bind/
 
-# Uncomment when bind920 comes of age. +3 years if ESV, +1year otherwise, see
-# https://kb.isc.org/docs/aa-00896
-# DEPRECATED=	End of life, please migrate to a newer version of BIND9
-# EXPIRATION_DATE=	2025-12-31
+DEPRECATED=	End of life, please migrate to a newer version of BIND9
+EXPIRATION_DATE=	2026-06-30
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -58,8 +55,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN LARGE_FILE LMDB \
 			OVERRIDECACHE QUERYTRACE START_LATE TCP_FASTOPEN
-OPTIONS_DEFAULT=	DNSTAP GSSAPI_NONE IDN LMDB STATS_JSON STATS_XML \
-			TCP_FASTOPEN
+OPTIONS_DEFAULT=	DNSTAP ${${OSREL:R} < 15:?GSSAPI_NONE:GSSAPI_BASE} IDN \
+			LMDB STATS_JSON STATS_XML TCP_FASTOPEN
 
 OPTIONS_GROUP=		STATS
 OPTIONS_GROUP_STATS=	STATS_JSON STATS_XML
@@ -71,7 +68,7 @@ OPTIONS_SUB=	yes
 
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
-GSSAPI_BASE_DESC=	Using Heimdal in base (nsupdate is broken)
+GSSAPI_BASE_DESC=	Using ${${OSREL:R} < 15:?Heimdal in base (nsupdate is broken):MIT in base}
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal (nsupdate is broken)
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
@@ -174,6 +171,13 @@ post-patch:
 		${WRKSRC}/bin/${FILE}
 .endfor
 
+regen-patches:
+	cd ${.CURDIR} ; \
+		make clean ; \
+		mv files/extrapatch-bind-min-override-ttl files/patch-bind-min-override-ttl ; \
+		make extract do-patch makepatch BATCH= NO_IGNORE= PATCH_DEBUG=yes EXTRA_PATCHES= || : ; \
+		mv files/patch-bind-min-override-ttl files/extrapatch-bind-min-override-ttl
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
 	${MKDIR} ${STAGEDIR}${ETCDIR}
@@ -187,6 +191,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${ETCDIR}/primary
 	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.dist.sample
 	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.local.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.local.dist.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so ${STAGEDIR}${PREFIX}/lib/bind/*.so
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm

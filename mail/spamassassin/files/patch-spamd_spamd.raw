@@ -1,0 +1,11 @@
+--- spamd/spamd.raw.orig	2025-08-27 06:17:51.000000000 -0700
++++ spamd/spamd.raw	2026-04-20 07:30:51.485319000 -0700
+@@ -3109,7 +3109,7 @@
+ 
+ sub daemonize {
+   # bug 8036 - ensure ps legacy name shows up as spamd even if command line call was perl path_to_spamd
+-  $0 = 'spamd' unless would_log("dbg");
++  $0 = 'spamd';
+ 
+   # be a nice daemon and chdir to the root so we don't block any
+   # unmount attempts

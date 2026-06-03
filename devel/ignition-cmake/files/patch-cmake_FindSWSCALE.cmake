@@ -1,8 +1,9 @@
---- cmake/FindSWSCALE.cmake.orig	2023-04-25 18:35:25 UTC
+-- Help cmake find swscale from multimedia/ffmpeg4, which installs to %%LOCALBASE%%/ffmpeg4
+--- cmake/FindSWSCALE.cmake.orig	2024-01-01 00:00:00 UTC
 +++ cmake/FindSWSCALE.cmake
 @@ -16,4 +16,5 @@
  ########################################
  # Find libswscale format
- include(IgnPkgConfig)
+ include(GzPkgConfig)
 +set(CMAKE_PREFIX_PATH "%%LOCALBASE%%/ffmpeg4;%%LOCALBASE%%/ffmpeg4/libexec")
- ign_pkg_check_modules(SWSCALE libswscale)
+ gz_pkg_check_modules_quiet(SWSCALE libswscale)

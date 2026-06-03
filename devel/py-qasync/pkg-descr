@@ -1,2 +1,14 @@
-qasync allows coroutines to be used in PyQt/PySide applications by providing an
-implementation of the PEP 3156 event-loop.
+qasync allows coroutines to be used in PyQt/PySide applications by providing
+an implementation of the PEP 3156 event loop.
+
+With qasync, you can use asyncio functionalities directly inside Qt app's
+event loop, in the main thread. Using async functions for Python tasks can
+be much easier and cleaner than using threading.Thread or QThread.
+
+If you need some CPU-intensive tasks to be executed in parallel, qasync also
+provides QEventLoop.run_in_executor which is functionally identical to that
+of asyncio. By default QThreadExecutor is used, but any class implementing
+the concurrent.futures.Executor interface will work.
+
+qasync is a fork of asyncqt, which is a fork of quamash. qasync was created
+because those are no longer maintained.

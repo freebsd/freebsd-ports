@@ -1,3 +1,4 @@
+include/dune-spgrid-config.hh
 include/dune/common/iostream.hh
 include/dune/grid/extensions/superentityiterator.hh
 include/dune/grid/spgrid.hh
@@ -51,6 +52,8 @@ include/dune/grid/test/checkseiterator.hh
 include/dune/grid/test/checktree.hh
 lib/cmake/dune-spgrid/dune-spgrid-config-version.cmake
 lib/cmake/dune-spgrid/dune-spgrid-config.cmake
+lib/cmake/dune-spgrid/dune-spgrid-scoped-targets-%%DUNE_SPGRID_CMAKE_HASH%%.cmake
+lib/cmake/dune-spgrid/dune-spgrid-targets.cmake
 lib/dunecontrol/dune-spgrid/dune.module
 libdata/pkgconfig/dune-spgrid.pc
 %%DATADIR%%/config.h.cmake

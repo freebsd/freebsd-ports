@@ -1,21 +1,18 @@
 PORTNAME=	libXpm
-PORTVERSION=	3.5.17
-PORTREVISION=	1
+DISTVERSION=	3.5.19
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X Pixmap library
-WWW=		https://www.freedesktop.org/Software/xlibs
+COMMENT=	X Pixmap (XPM) image file format library
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libxpm
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe localbase:ldflags tar:xz xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xext xt
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 CPE_VENDOR=	libxpm_project
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=		NLS
 NLS_USES=		gettext

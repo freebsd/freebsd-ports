@@ -1,0 +1,20 @@
+@comment | Allows editors/neovim, when configured to use lua-language-server,
+@comment | to check against the correct version of lua and find neovim specific
+@comment | symbols for its own lua configuration.
+{
+  "schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime": {
+    "version": "LuaJIT",
+     "path": [
+       "?.lua",
+       "?/init.lua"
+     ],
+  },
+  "workspace": {
+    "library": [
+      "$VIMRUNTIME",
+      "${3rd}/luv/library",
+    ],
+    "checkThirdParty": false
+  }
+}

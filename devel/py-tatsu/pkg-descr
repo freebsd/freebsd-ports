@@ -1,0 +1,4 @@
+TatSu is a tool that takes grammars in extended EBNF as input, and outputs
+memoizing (Packrat) PEG parsers in Python. The classic variations of EBNF
+(Tomassetti, EasyExtend, Wirth) and ISO EBNF are supported as input grammar
+formats.

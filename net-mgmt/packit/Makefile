@@ -1,11 +1,11 @@
 PORTNAME=	packit
-DISTVERSION=	1.8.1
+DISTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Network auditing tool
-WWW=		https://github.com/eribertomota/packit
+COMMENT=	Modern network auditing and packet crafting tool
+WWW=		https://github.com/Obsidian-Covenant/packit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,12 +14,12 @@ LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		autoreconf localbase
 USE_GITHUB=	yes
-GH_ACCOUNT=	eribertomota
+GH_ACCOUNT=	Obsidian-Covenant
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	share/man/man8/packit.8.gz \
-		sbin/packit
+PLIST_FILES=	bin/packit \
+		share/man/man8/packit.8.gz
 
 OPTIONS_DEFINE=		CAPTURE INJECTION
 OPTIONS_DEFAULT=	CAPTURE INJECTION

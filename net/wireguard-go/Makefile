@@ -1,11 +1,12 @@
 PORTNAME=	wireguard-go
 PORTVERSION=	0.0.20250522
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WireGuard implementation in Go
 WWW=		https://www.wireguard.com
 

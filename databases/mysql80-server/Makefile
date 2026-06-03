@@ -1,5 +1,5 @@
 PORTNAME?=		mysql
-PORTVERSION=		8.0.42
+PORTVERSION=		8.0.46
 PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
@@ -11,6 +11,9 @@ COMMENT?=		Multithreaded SQL database (server)
 WWW=		https://www.mysql.com/
 
 LICENSE=		GPLv2
+
+DEPRECATED=	EOLed upstream, switch to newer version
+EXPIRATION_DATE=2026-12-31
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 

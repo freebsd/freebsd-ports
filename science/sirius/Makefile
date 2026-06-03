@@ -1,6 +1,6 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.7.0
+DISTVERSION=	7.11.1
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
@@ -11,9 +11,10 @@ WWW=		https://github.com/electronic-structure/SIRIUS/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
+BROKEN_FreeBSD_16=	fails to compile: clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=295597
 
 LIB_DEPENDS=	libcosta.so:math/costa \
+		libfmt.so:devel/libfmt \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
@@ -22,12 +23,16 @@ LIB_DEPENDS=	libcosta.so:math/costa \
 		libspla.so:math/spla \
 		libsymspg.so:science/spglib \
 		libxc.so:science/libxc
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:testing compiler:c++14-lang eigen:3,test fortran pkgconfig
+USES=		cmake:testing compiler:c++14-lang eigen:3,test fortran pkgconfig shebangfix
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	electronic-structure
 GH_PROJECT=	SIRIUS
-USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	ci/mpi-ctest.sh
 
 CMAKE_OFF=	SIRIUS_USE_MEMORY_POOL # depends on umpire - not yet ported
 
@@ -48,5 +53,6 @@ OPENMPI_USES=		mpi:openmpi
 # pre-7.4.0: many tests fail, see https://github.com/electronic-structure/SIRIUS/issues/760
 # 7.6.0: several tests fail: Can't divide 1 ranks into groups of size 4
 # 7.7.0: tests fail to compile, see https://github.com/electronic-structure/SIRIUS/issues/1070
+# 7.11.0: tests hang in the middle or run forever
 
 .include <bsd.port.mk>

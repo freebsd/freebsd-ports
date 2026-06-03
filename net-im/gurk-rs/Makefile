@@ -1,7 +1,7 @@
 PORTNAME=	gurk-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
-PORTREVISION=	3
+PORTREVISION=	10
 CATEGORIES=	net-im
 
 MAINTAINER=	bsd@orsolic.org
@@ -29,6 +29,7 @@ PLIST_FILES=	bin/gurk \
 # avoid address space exhaustion on armv7
 .if ${ARCH:Marmv?}
 LTO_UNSAFE=	yes
+CARGO_PROFILE_RELEASE_LTO=	"false"
 .endif
 
 post-patch:

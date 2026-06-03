@@ -1,0 +1,11 @@
+bin/grunzip
+bin/grzcat
+bin/grzdiff
+bin/grzgrep
+bin/grzip
+bin/grzmore
+bin/grztar
+include/grzip.h
+lib/libgrzip.so
+lib/libgrzip.so.0
+%%NLS%%share/locale/fr/LC_MESSAGES/grzip.mo

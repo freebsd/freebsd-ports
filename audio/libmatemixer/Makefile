@@ -1,9 +1,9 @@
 PORTNAME=	libmatemixer
-PORTVERSION=	1.28.0
-PORTREVISION=	1
+DISTVERSION=	1.28.0
+PORTREVISION=	3
 CATEGORIES=	audio mate
-MASTER_SITES=	MATE
-DIST_SUBDIR=	mate
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mixer library for MATE desktop
@@ -14,6 +14,8 @@ LICENSE=	LGPL21
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome libtool pkgconfig tar:xz
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	mate-desktop
 USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-null \

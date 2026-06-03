@@ -11,18 +11,16 @@ WWW=		https://metacpan.org/release/IO-KQueue
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${_BUILD_RUN_DEPENDS}
-RUN_DEPENDS=	${_BUILD_RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
 
 USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	EXAMPLES
 
-_BUILD_RUN_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
-
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/IO/KQueue/KQueue.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/IO/KQueue/KQueue.so
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

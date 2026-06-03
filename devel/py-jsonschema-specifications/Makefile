@@ -1,5 +1,5 @@
 PORTNAME=	jsonschema-specifications
-PORTVERSION=	2025.4.1
+PORTVERSION=	2025.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/jsonschema-specifications/releases/download/v${PORTVERSION}/

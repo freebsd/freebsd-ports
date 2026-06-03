@@ -1,11 +1,11 @@
---- document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4.orig	2023-06-20 13:51:11 UTC
+--- document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4.orig	2026-02-23 08:17:20 UTC
 +++ document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4
-@@ -1,35 +1,33 @@
+@@ -1,17 +1,16 @@
 -#!/bin/bash
 +#!/bin/sh
  
--[ $(id -u) -ne 0 ] && { echo "Root privileges required"; exit 1; }
-+[ "$(id -u)" -ne 0 ] && { echo "Root privileges required"; exit 1; }
+-[ $(id -u) -ne 0 ] && [ $(id -u) -ne 101 ]  && { echo "Root or UID 101 privileges required"; exit 1; }
++[ "$(id -u)" -ne 0 ] && [ "$(id -u)" -ne 101 ]  && { echo "Root or UID 101 privileges required"; exit 1; }
  
 -while [ "$1" != "" ]; do
 +while [ $# -gt 0 ]; do
@@ -19,7 +19,14 @@
  			fi
 +			shift
  		;;
--		
+-
+ 		-k | --k8s )
+ 			if [ "$2" != "" ]; then
+ 				K8S_CONTAINER=$2
+@@ -19,26 +18,23 @@
+ 			fi
+ 		;;
+ 		
 -		* ) args+=("$1");
 +		*)
 +			break
@@ -33,13 +40,15 @@
  
 -PLUGIN_MANAGER="/var/www/M4_DS_PREFIX/server/tools/pluginsmanager"
 -PLUGIN_DIR="/var/www/M4_DS_PREFIX/sdkjs-plugins/"
-+PLUGIN_MANAGER="%%LOCALBASE%%/www/M4_DS_PREFIX/server/tools/pluginsmanager"
-+PLUGIN_DIR="%%LOCALBASE%%/www/M4_DS_PREFIX/sdkjs-plugins/"
++PLUGIN_MANAGER="/%%LOCALBASE%%/www/M4_DS_PREFIX/server/tools/pluginsmanager"
++PLUGIN_DIR="/%%LOCALBASE%%/www/M4_DS_PREFIX/sdkjs-plugins/"
  
 -"${PLUGIN_MANAGER}" --directory=\"${PLUGIN_DIR}\" "${args[@]}"
 +"${PLUGIN_MANAGER}" --directory=\"${PLUGIN_DIR}\" "$@"
  
--chown -R ds:ds "${PLUGIN_DIR}"
+-if [ "${K8S_CONTAINER}" != "true" ]; then
+-  chown -R ds:ds "${PLUGIN_DIR}"
+-fi
 +chown -R onlyoffice:onlyoffice "${PLUGIN_DIR}"
  
  if [ "$RESTART_CONDITION" != "false" ]; then

@@ -1,0 +1,4 @@
+arviz-base provides base ArviZ features and converters. It includes
+functions for data loading, converters from various probabilistic
+programming frameworks, and core data structures for Bayesian model
+analysis.

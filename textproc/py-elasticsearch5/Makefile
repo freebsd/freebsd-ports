@@ -1,6 +1,6 @@
 PORTNAME=	elasticsearch
 PORTVERSION=	5.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	5
@@ -11,6 +11,9 @@ WWW=		https://elasticsearch-py.readthedocs.org/en/master/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	5.x reached EoL, last version was in 2018 - use textproc/py-elasticsearch 9.3.0 instead
+EXPIRATION_DATE=	2026-06-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.8.2:net/py-urllib3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \

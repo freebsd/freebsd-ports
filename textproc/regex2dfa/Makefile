@@ -10,6 +10,8 @@ WWW=		https://github.com/kpdyer/regex2dfa
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		./../include/fst/bi-table.h:356:31: error: no member named 's_' in 'VectorHashBiTable<I, T, S, FP, H, HS>'
+
 USES=		compiler:c++11-lang gmake libtool
 USE_GITHUB=	yes
 

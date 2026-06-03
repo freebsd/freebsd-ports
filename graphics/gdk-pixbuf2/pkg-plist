@@ -3,7 +3,6 @@ bin/gdk-pixbuf-pixdata
 bin/gdk-pixbuf-query-loaders
 bin/gdk-pixbuf-thumbnailer
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
-include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h
@@ -117,6 +116,7 @@ libdata/pkgconfig/gdk-pixbuf-2.0.pc
 %%DOCS%%%%DOCSDIR%%/flags.PixbufFormatFlags.html
 %%DOCS%%%%DOCSDIR%%/fonts.css
 %%DOCS%%%%DOCSDIR%%/func.PIXBUF_CHECK_VERSION.html
+%%DOCS%%%%DOCSDIR%%/func.PIXBUF_DEPRECATED_IN_2_44_FOR.html
 %%DOCS%%%%DOCSDIR%%/fzy.js
 %%DOCS%%%%DOCSDIR%%/gdk-pixbuf.devhelp2
 %%DOCS%%%%DOCSDIR%%/gnome-gmush-1.png

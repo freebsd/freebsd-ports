@@ -1,0 +1,8 @@
+libcircle provides an API for distributing embarrassingly parallel workloads
+across MPI ranks using a distributed work queue.
+
+Applications register callbacks to create and process work items, while the
+library handles load balancing, termination detection, and optional global
+reductions. It is commonly used on large HPC filesystems to traverse directory
+trees and perform file operations in parallel on hundreds or thousands of
+processes.

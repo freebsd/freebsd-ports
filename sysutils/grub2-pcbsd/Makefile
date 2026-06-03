@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 
 ONLY_FOR_ARCHS=	amd64
 USES=		autoreconf:build bison cpe gettext gmake makeinfo pkgconfig python tar:xz
+USE_CSTD=	gnu11
 
 WRKSRC=		${WRKDIR}/grub-2.02
 CONFLICTS=	grub2-2*

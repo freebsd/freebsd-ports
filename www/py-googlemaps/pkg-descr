@@ -1,0 +1,15 @@
+This library brings the Google Maps Platform Web Services to your Python
+application.
+
+The Python Client for Google Maps Services is a Python Client library for the
+following Google Maps APIs:
+- Directions API
+- Distance Matrix API
+- Elevation API
+- Geocoding API
+- Geolocation API
+- Time Zone API
+- Roads API
+- Places API
+- Maps Static API
+- Address Validation API

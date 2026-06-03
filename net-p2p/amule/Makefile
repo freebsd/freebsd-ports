@@ -1,6 +1,6 @@
 PORTNAME=	amule
 PORTVERSION=	2.3.3
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -66,7 +66,8 @@ AMULEDAEMON_USE=	RC_SUBR=amuled
 AMULEGUI_CONFIGURE_ENABLE=	amule-gui
 
 BOOST_CONFIGURE_WITH=	boost
-BOOST_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+BOOST_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+BOOST_USES=		autoreconf
 
 CAS_CONFIGURE_ENABLE=	cas
 CAS_LIB_DEPENDS=	libgd.so:graphics/gd

@@ -1,0 +1,3 @@
+waitforssh is a lightweight utility, written in POSIX shell, that
+waits for a target to be up and running via SSH and, if so, executes
+a command.

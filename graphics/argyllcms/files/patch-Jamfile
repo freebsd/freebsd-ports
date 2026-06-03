@@ -1,0 +1,17 @@
+The purpose of the com.argyllcms.metainfo.xml is unclear, it claims the
+license to be MIT -- rather than AGPLv3 stated elsewhere -- and it
+certainly does not belong in bin/
+
+Just disabling it for now.
+
+	-mi
+
+--- Jamfile	2026-02-09 17:25:03.000000000 -0500
++++ Jamfile	2026-04-26 01:31:03.587297000 -0400
+@@ -19,5 +19,5 @@
+ 
+ #Install
+-InstallFile $(DESTDIR)$(PREFIX)/bin : com.argyllcms.metainfo.xml ;
++# InstallFile $(DESTDIR)$(PREFIX)/bin : com.argyllcms.metainfo.xml ;
+ 
+ # Need compile date ?

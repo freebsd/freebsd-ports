@@ -1,5 +1,5 @@
 PORTNAME=	snowballstemmer
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -23,15 +23,15 @@ PLIST_FILES=	bin/stemwords \
 		include/libstemmer.h \
 		lib/libstemmer.so \
 		lib/libstemmer.so.3 \
-		lib/libstemmer.so.3.0.1
+		lib/libstemmer.so.3.1.0
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stemwords ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/libstemmer.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libstemmer.so.3.0.1 ${STAGEDIR}${PREFIX}/lib
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libstemmer.so.3.0.1 \
+	${INSTALL_LIB} ${WRKSRC}/libstemmer.so.3.1.0 ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libstemmer.so.3.1.0 \
 		${STAGEDIR}${PREFIX}/lib/libstemmer.so.3
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libstemmer.so.3.0.1 \
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libstemmer.so.3.1.0 \
 		${STAGEDIR}${PREFIX}/lib/libstemmer.so
 
 .include <bsd.port.mk>

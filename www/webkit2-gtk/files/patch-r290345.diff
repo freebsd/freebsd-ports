@@ -1,0 +1,137 @@
+commit 9c6d843b1dc094b677f052ddd9e6c4e9f39c87cc
+Author: Yijia Huang <yijia_huang@apple.com>
+Date:   2025-02-13T10:08:47-08:00
+
+    [WTF] Refactor EnumTraits to improve constexpr evaluation and handling of signed enums
+    https://bugs.webkit.org/show_bug.cgi?id=287370
+    rdar://144487521
+    
+    Reviewed by Keith Miller.
+    
+    This patch:
+    1. Removed unnecessary forConstexpr, replacing it with std::index_sequence for
+       better compile-time performance.
+    2. Improved handling of signed enums by introducing enumNamesMin and enumNamesMax,
+       ensuring min and max values are within the valid range of the underlying type.
+    3. Optimized the computation of enumNamesSize to prevent overflow and ensure
+       correctness for signed and unsigned enums.
+    4. Updated enumName lookup logic to correctly compute indices for signed enums
+       using unsigned arithmetic.
+    5. Added new test cases to cover signed and unsigned enums, including cases with
+       negative values, large gaps, and out-of-range lookups.
+    
+    This change ensures robust handling of enums with various underlying types, prevents
+    unexpected overflows, and enhances overall constexpr evaluation efficiency.
+    
+    * Source/WTF/wtf/EnumTraits.h:
+    (WTF::enumName):
+    (WTF::enumNames): Deleted.
+    * Tools/TestWebKitAPI/Tests/WTF/EnumTraits.cpp:
+    (TestWebKitAPI::TEST(WTF_EnumTraits, EnumNameArgument)):
+    
+    Canonical link: https://commits.webkit.org/290345@main
+
+diff --git Source/WTF/wtf/EnumTraits.h Source/WTF/wtf/EnumTraits.h
+index 9a9b53eb9ff9..c8d1c9a5b0be 100644
+--- Source/WTF/wtf/EnumTraits.h
++++ Source/WTF/wtf/EnumTraits.h
+@@ -215,38 +215,78 @@ constexpr std::span<const char> enumName()
+     return result;
+ }
+ 
+-namespace detail {
+-
+-template<size_t i, size_t end>
+-constexpr void forConstexpr(const auto& func)
++template<typename E>
++constexpr std::underlying_type_t<E> enumNamesMin()
+ {
+-    if constexpr (i < end) {
+-        func(std::integral_constant<size_t, i>());
+-        forConstexpr<i + 1, end>(func);
+-    }
++    using Underlying = std::underlying_type_t<E>;
++
++    if constexpr (requires { { EnumTraits<E>::min } -> std::same_as<Underlying>; })
++        return EnumTraits<E>::min;
++
++    // Default for both signed and unsigned enums.
++    return 0;
+ }
+ 
++template<typename E>
++constexpr std::underlying_type_t<E> enumNamesMax()
++{
++    using Underlying = std::underlying_type_t<E>;
++
++    if constexpr (requires { { EnumTraits<E>::max } -> std::same_as<Underlying>; })
++        return EnumTraits<E>::max;
++
++    constexpr Underlying defaultMax = std::is_signed_v<Underlying> ? INT8_MAX : UINT8_MAX;
++    constexpr Underlying computedMax = (sizeof(E) > 1) ? static_cast<Underlying>(defaultMax << 1) : defaultMax;
++    return computedMax;
+ }
+ 
+-template<typename E, size_t limit = 256>
+-constexpr std::array<std::span<const char>, limit> enumNames()
++template<typename E>
++constexpr size_t enumNamesSize()
+ {
+-    std::array<std::span<const char>, limit> names;
++    using Underlying = std::underlying_type_t<E>;
++    using Unsigned = std::make_unsigned_t<Underlying>;
+ 
+-    detail::forConstexpr<0, limit>([&] (auto i) {
+-        names[i] = enumName<static_cast<E>(static_cast<unsigned>(i))>();
+-    });
+-    return names;
++    constexpr Underlying min = enumNamesMin<E>();
++    constexpr Underlying max = enumNamesMax<E>();
++    static_assert(min <= max, "Invalid enum range: min must be <= max.");
++    return static_cast<size_t>(static_cast<Unsigned>(max - min)) + 1;
+ }
+ 
+-
+-template<typename T>
+-constexpr std::span<const char> enumName(T v)
++template<typename E, size_t... Is>
++constexpr auto makeEnumNames(std::index_sequence<Is...>)
+ {
+-    constexpr auto names = enumNames<std::decay_t<T>>();
+-    if (static_cast<size_t>(v) >= names.size())
++    constexpr auto min = enumNamesMin<E>();
++    return std::array<std::span<const char>, sizeof...(Is)> {
++        enumName<static_cast<E>(static_cast<std::underlying_type_t<E>>(Is) + min)>()...
++    };
++}
++
++template<typename E>
++constexpr auto enumNames()
++{
++    constexpr size_t size = enumNamesSize<E>();
++    return makeEnumNames<E>(std::make_index_sequence<size> { });
++}
++
++template<typename E>
++constexpr std::span<const char> enumName(E v)
++{
++    static_assert(std::is_enum_v<E>, "enumName can only be used with enum types.");
++
++    using Underlying = std::underlying_type_t<E>;
++    using Unsigned = std::make_unsigned_t<Underlying>;
++
++    constexpr auto names = enumNames<E>();
++    constexpr Underlying min = enumNamesMin<E>();
++    constexpr Underlying max = enumNamesMax<E>();
++
++    Underlying value = static_cast<Underlying>(v);
++    if (value < min || value > max)
+         return { "enum out of range" };
+-    return names[static_cast<uint8_t>(v)];
++
++    // Compute index safely using unsigned extension.
++    size_t index = static_cast<size_t>(static_cast<Unsigned>(value - min));
++    return names[index];
+ }
+ 
+ #if COMPILER(CLANG)

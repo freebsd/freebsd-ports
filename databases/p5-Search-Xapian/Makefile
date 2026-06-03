@@ -1,6 +1,5 @@
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.25.5
-PORTREVISION=	1
+PORTVERSION=	1.2.25.6
 CATEGORIES=	databases perl5
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
@@ -14,7 +13,7 @@ WWW=		https://metacpan.org/release/Search-Xapian
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libxapian.so:databases/xapian-core
+LIB_DEPENDS=	libxapian.so:databases/xapian-core14
 TEST_DEPENDS=	p5-Devel-Leak>=0:devel/p5-Devel-Leak \
 		p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage

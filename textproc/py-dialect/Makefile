@@ -1,5 +1,5 @@
 PORTNAME=	dialect
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -43,10 +43,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-IGNORE=		requires Python 3.10+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

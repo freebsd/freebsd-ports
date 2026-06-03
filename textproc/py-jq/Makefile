@@ -1,10 +1,12 @@
 PORTNAME=	jq
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.11.0
+PORTREVISION=	0
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI LOCAL/mandree:mandree
+#MASTER_SITES=	PYPI LOCAL/mandree:mandree
+#MASTER_SITES=	LOCAL/mandree
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+#DISTFILES=	${PORTVERSION}${EXTRACT_SUFX}/1.10.2.tar.gz
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	jq.py: a lightweight and flexible JSON processor
@@ -25,7 +27,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 MAKE_ENV+=	JQPY_USE_SYSTEM_LIBS=1
 
 USES=		localbase python
-USE_PYTHON=	autoplist distutils
+USE_GITHUB=	yes
+USE_PYTHON=	autoplist cython distutils
+
+GH_ACCOUNT=	mwilliamson
+GH_PROJECT=	jq.py
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jq*.so

@@ -13,8 +13,8 @@
          $filename = $device['os'] . '-' . $device['hostname'] . '.snmpwalk';
          break;
      case 'discovery':
--        $cmd = ['php', \App\Facades\LibrenmsConfig::get('install_dir') . '/discovery.php', '-h', $hostname, '-d'];
-+        $cmd = ['%%LOCALBASE%%/bin/php', \App\Facades\LibrenmsConfig::get('install_dir') . '/discovery.php', '-h', $hostname, '-d'];
+-        $cmd = ['php', \App\Facades\LibrenmsConfig::get('install_dir') . '/lnms', 'device:discover', $hostname, '-vv'];
++        $cmd = ['%%LOCALBASE%%/bin/php', \App\Facades\LibrenmsConfig::get('install_dir') . '/lnms', 'device:discover', $hostname, '-vv'];
          $filename = "discovery-$hostname.txt";
          break;
      default:

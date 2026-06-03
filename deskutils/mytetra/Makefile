@@ -1,10 +1,10 @@
 PORTNAME=	mytetra
-PORTVERSION=	1.44.183
+PORTVERSION=	1.44.232
 DISTVERSIONPREFIX=	v.
 CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Smart manager for information collecting
+COMMENT=	Personal information manager
 WWW=		https://webhamster.ru/site/page/index/articles/projectcode/138
 
 LICENSE=	GPLv3

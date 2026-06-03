@@ -1,5 +1,5 @@
 PORTNAME=	nuitka
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toml>=0:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ordered-set>=4.1.0:devel/py-ordered-set@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.15:archivers/py-zstandard@${PY_FLAVOR}

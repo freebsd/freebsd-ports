@@ -1,0 +1,5 @@
+bin/nvtop
+share/applications/nvtop.desktop
+share/icons/hicolor/scalable/apps/nvtop.svg
+share/man/man1/nvtop.1.gz
+share/metainfo/io.github.syllo.nvtop.metainfo.xml

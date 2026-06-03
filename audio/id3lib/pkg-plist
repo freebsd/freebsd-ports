@@ -22,8 +22,8 @@ include/id3/writer.h
 include/id3/writers.h
 lib/libid3.so
 lib/libid3.so.3.8.3
-libdata/pkgconfig/id3lib.pc
 share/man/man1/id3convert.1.gz
 share/man/man1/id3cp.1.gz
 share/man/man1/id3info.1.gz
 share/man/man1/id3tag.1.gz
+share/pkgconfig/id3lib.pc

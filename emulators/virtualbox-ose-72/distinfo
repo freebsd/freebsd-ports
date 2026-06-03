@@ -1,0 +1,7 @@
+TIMESTAMP = 1777000000
+SHA256 (VirtualBox-7.2.8.tar.bz2) = 0642ed4a12b7204cd30c0abbc2c10c1cc7ad55ce1756a01e86a16d4b6b066592
+SIZE (VirtualBox-7.2.8.tar.bz2) = 207408458
+SHA256 (VirtualBox-docs-7.2.8.tar.bz2) = 6b26d9398ac4ba0023a126bd3edaf3d5eb9dbb01245aeced875835673ca02fa2
+SIZE (VirtualBox-docs-7.2.8.tar.bz2) = 9139789
+SHA256 (VBoxGuestAdditions_7.2.8.iso) = 169acb9361ade42d32500f51b48ad366fdfdb094b5e3fb422d640c1416a6b216
+SIZE (VBoxGuestAdditions_7.2.8.iso) = 53442560

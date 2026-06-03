@@ -1,6 +1,6 @@
---- src/corelib/CMakeLists.txt.orig	2025-02-19 13:05:34 UTC
+--- src/corelib/CMakeLists.txt.orig	2026-01-13 10:18:17 UTC
 +++ src/corelib/CMakeLists.txt
-@@ -402,6 +402,10 @@ endif()
+@@ -416,6 +416,10 @@ endif()
      target_link_libraries(Platform INTERFACE Threads::Threads)
  endif()
  

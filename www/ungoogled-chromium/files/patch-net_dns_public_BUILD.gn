@@ -1,6 +1,6 @@
---- net/dns/public/BUILD.gn.orig	2024-05-23 20:04:36 UTC
+--- net/dns/public/BUILD.gn.orig	2026-05-09 18:09:27 UTC
 +++ net/dns/public/BUILD.gn
-@@ -78,7 +78,7 @@ source_set("tests") {
+@@ -79,7 +79,7 @@ source_set("tests") {
      "doh_provider_entry_unittest.cc",
    ]
  

@@ -1,0 +1,11 @@
+--- src/Makefile.Linux.orig	2026-02-20 12:30:56 UTC
++++ src/Makefile.Linux
+@@ -8,7 +8,7 @@ CXX?=g++
+ CXX?=g++
+ 
+ # C++ compiler flags
+-CXXFLAGS = -Wall -fPIC ### basic flags (always needed)
++CXXFLAGS += -Wall -fPIC ### basic flags (always needed)
+ CXXFLAGS += $(EXTRA_CXXFLAGS) ### external setting
+ CXXFLAGS += -std=c++11
+ CXXFLAGS += -O2

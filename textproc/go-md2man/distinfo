@@ -1,5 +1,5 @@
-TIMESTAMP = 1723988917
-SHA256 (go/textproc_go-md2man/go-md2man-v2.0.4/v2.0.4.mod) = 14c3afa2ef623555c1b4834d1f88b14df77549afee85e5750c19102465b78aba
-SIZE (go/textproc_go-md2man/go-md2man-v2.0.4/v2.0.4.mod) = 100
-SHA256 (go/textproc_go-md2man/go-md2man-v2.0.4/v2.0.4.zip) = 9adbaa17f17dbe36ae464d8062acbbfb9cf853bfebed424435a834a2b0bed910
-SIZE (go/textproc_go-md2man/go-md2man-v2.0.4/v2.0.4.zip) = 13136
+TIMESTAMP = 1751121308
+SHA256 (go/textproc_go-md2man/go-md2man-v2.0.7/v2.0.7.mod) = bb81a9e2d14d9a586f0591853bdaad230d8cdf0d8d6ffa71dddae249ad573cc9
+SIZE (go/textproc_go-md2man/go-md2man-v2.0.7/v2.0.7.mod) = 100
+SHA256 (go/textproc_go-md2man/go-md2man-v2.0.7/v2.0.7.zip) = 9ad5f2cbc644c0bb648a9b182d6b70f92e7ac4dfab5cf0ef746bbeef944fda59
+SIZE (go/textproc_go-md2man/go-md2man-v2.0.7/v2.0.7.zip) = 15041

@@ -1,5 +1,6 @@
 PORTNAME=	bcel
 PORTVERSION=	6.4.1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	https://archive.apache.org/dist/commons/${PORTNAME}/binaries/
 PKGNAMEPREFIX=	apache-

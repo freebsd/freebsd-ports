@@ -1,0 +1,11 @@
+--- courier/filters/Makefile.in.orig	2025-05-10 16:36:14.144694000 +0200
++++ courier/filters/Makefile.in	2025-05-10 16:36:42.732908000 +0200
+@@ -1441,7 +1441,7 @@
+ 	-$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	chmod 500 $(DESTDIR)$(datadir)/filterctl
+ 	rm -f $(DESTDIR)$(sbindir)/filterctl
+-	$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/filterctl` $(DESTDIR)$(sbindir)/filterctl
++	$(LN_S) $(datadir)/filterctl $(DESTDIR)$(sbindir)/filterctl
+ 	chmod 755 $(DESTDIR)$(filterbindir)
+ 	chmod 750 $(DESTDIR)$(filtersocketdir)
+ 	chmod 750 $(DESTDIR)$(allfiltersocketdir)

@@ -6,6 +6,7 @@ bin/rnano
 %%PORTDOCS%%%%DOCSDIR%%/nanorc.5.html
 %%PORTDOCS%%%%DOCSDIR%%/rnano.1.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.nanorc
+%%NLS%%share/locale/ar/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/nano.mo
@@ -25,6 +26,7 @@ bin/rnano
 %%NLS%%share/locale/it/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/nano.mo
@@ -55,7 +57,6 @@ share/man/man5/nanorc.5.gz
 %%DATADIR%%/cmake.nanorc
 %%DATADIR%%/css.nanorc
 %%DATADIR%%/default.nanorc
-%%DATADIR%%/elisp.nanorc
 %%DATADIR%%/email.nanorc
 %%DATADIR%%/extra/ada.nanorc
 %%DATADIR%%/extra/fortran.nanorc

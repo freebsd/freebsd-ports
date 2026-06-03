@@ -28,6 +28,9 @@ GH_ACCOUNT=	Boolector
 
 SHEBANG_GLOB=	*.sh
 
+CFLAGS+=	-I${LOCALBASE}/include/cadical
+CXXFLAGS+=	-I${LOCALBASE}/include/cadical
+
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		USE_GMP
 CMAKE_OFF=	TESTING

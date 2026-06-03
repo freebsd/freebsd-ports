@@ -8,7 +8,7 @@ DISTNAME=	bass-cd-1.2
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
-WWW=		https://www.scummvm.org/games/ #games-sky
+WWW=		https://www.scummvm.org/games/\#games-sky:sky
 
 LICENSE=	BASS
 LICENSE_NAME=	Beneath a Steel Sky License

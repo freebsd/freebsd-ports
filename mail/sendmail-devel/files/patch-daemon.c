@@ -1,10 +1,10 @@
---- sendmail/daemon.c.orig	2023-10-27 05:47:26 UTC
+--- sendmail/daemon.c.orig	2026-03-09 16:19:10 UTC
 +++ sendmail/daemon.c
-@@ -782,6 +782,8 @@ getrequests(e)
+@@ -781,6 +781,8 @@ getrequests(ENVELOPE *e)
  						anynet_ntoa(&RealHostAddr));
  			}
  
-+			BLACKLIST_INIT();
++			BLOCKLIST_INIT();
 +
  			if (pipefd[0] != -1)
  			{

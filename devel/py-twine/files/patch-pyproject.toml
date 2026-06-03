@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-09-04 15:40:12 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ # pyproject.toml
+ [build-system]
+-requires = ["setuptools>=77.0.3", "setuptools_scm[toml]>=6.0"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=6.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -9,8 +9,7 @@ description = "Collection of utilities for publishing 
+ 	{ name = "Donald Stufft and individual contributors", email = "donald@stufft.io" },
+ ]
+ description = "Collection of utilities for publishing packages on PyPI"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ classifiers = [
+ 	"Intended Audience :: Developers",
+ 	"Natural Language :: English",

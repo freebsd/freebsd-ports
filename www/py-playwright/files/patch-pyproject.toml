@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2025-09-02 18:47:12 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools==80.9.0", "setuptools-scm==8.3.1", "wheel==0.45.1", "auditwheel==6.2.0"]
++requires = ["setuptools", "setuptools-scm", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -9,7 +9,6 @@ readme = "README.md"
+     {name = "Microsoft Corporation"}
+ ]
+ readme = "README.md"
+-license = "Apache-2.0"
+ dynamic = ["version"]
+ requires-python = ">=3.9"
+ # Please when changing dependencies run the following commands to update requirements.txt:

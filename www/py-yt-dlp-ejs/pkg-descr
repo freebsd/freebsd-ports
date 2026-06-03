@@ -1,0 +1,7 @@
+yt-dlp-ejs provides the external JavaScript (EJS) scripts that yt-dlp
+uses to interact with YouTube's player logic. These scripts enable
+full support for YouTube by solving JavaScript-based challenges,
+such as signature and throttle parameter decryption.
+
+A JavaScript runtime is required at runtime to execute these scripts.
+Supported runtimes include Deno, Node.js, Bun, and QuickJS.

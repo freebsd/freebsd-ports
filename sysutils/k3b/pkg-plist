@@ -306,6 +306,7 @@ share/knsrcfiles/k3btheme.knsrc
 share/konqsidebartng/virtual_folders/services/videodvd.desktop
 share/locale/ar/LC_MESSAGES/k3b.mo
 share/locale/ar/LC_MESSAGES/kio_videodvd.mo
+share/locale/ar/LC_MESSAGES/libk3b.mo
 share/locale/ar/LC_MESSAGES/libk3bdevice.mo
 share/locale/be/LC_MESSAGES/k3b.mo
 share/locale/be/LC_MESSAGES/kio_videodvd.mo

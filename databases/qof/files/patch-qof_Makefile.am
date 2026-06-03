@@ -1,0 +1,10 @@
+--- qof/Makefile.am.orig	2025-09-13 17:59:28 UTC
++++ qof/Makefile.am
+@@ -100,6 +100,7 @@ libqof_la_LIBADD = \
+   -DDATADIR=\""$(datadir)"\"
+ 
+ libqof_la_LIBADD = \
++ -L${top_builddir}/lib/libsql @SQL_PKG_LIB@ \
+   ${GMODULE_LIBS} \
+   ${GOBJECT_LIBS} \
+   ${GLIB_LIBS} \

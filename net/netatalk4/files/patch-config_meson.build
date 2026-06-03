@@ -1,13 +1,10 @@
---- config/meson.build.orig	2025-04-13 22:12:29 UTC
+--- config/meson.build.orig	2025-08-05 13:56:32 UTC
 +++ config/meson.build
-@@ -4,79 +4,23 @@ afp_conf = configure_file(
+@@ -4,76 +4,23 @@ afp_conf = configure_file(
      configuration: cdata,
  )
  
--if (
--    fs.exists(pkgconfdir / 'afp.conf')
--    and not get_option('with-overwrite')
--)
+-if (fs.exists(pkgconfdir / 'afp.conf') and not get_option('with-overwrite'))
 -    message('will not replace existing', pkgconfdir / 'afp.conf')
 -else
 -    install_data(afp_conf, install_dir: pkgconfdir)
@@ -38,7 +35,10 @@
 -        fs.exists(dbus_sysconfpath / 'netatalk-dbus.conf')
 -        and not get_option('with-overwrite')
 -    )
--        message('will not replace existing', dbus_sysconfpath / 'netatalk-dbus.conf')
+-        message(
+-            'will not replace existing',
+-            dbus_sysconfpath / 'netatalk-dbus.conf',
+-        )
 -    else
 -        install_data('netatalk-dbus.conf', install_dir: dbus_sysconfpath)
 -    endif
@@ -55,7 +55,7 @@
 -
 -if get_option('with-cups-libdir-path') != ''
 -    cups_libdir = get_option('with-cups-libdir-path')
--elif host_os in ['netbsd']
+-elif host_os == 'netbsd'
 -    cups_libdir = '/usr/pkg/libexec'
 -else
 -    cups_libdir = '/usr/lib'
@@ -72,10 +72,7 @@
 -endif
 -
 -foreach file : static_conf_files
--    if (
--        fs.exists(pkgconfdir / file)
--        and not get_option('with-overwrite')
--    )
+-    if (fs.exists(pkgconfdir / file) and not get_option('with-overwrite'))
 -        message('will not replace existing', pkgconfdir / file)
 -    else
 -        install_data(file, install_dir: pkgconfdir)
@@ -83,5 +80,5 @@
 -endforeach
 +install_data('extmap.conf', rename: 'extmap.conf.sample', install_dir: pkgconfdir)
  
- if (
-     fs.exists('/etc/ld.so.conf.d')
+ if (fs.exists('/etc/ld.so.conf.d') and get_option('with-ldsoconf'))
+     configure_file(

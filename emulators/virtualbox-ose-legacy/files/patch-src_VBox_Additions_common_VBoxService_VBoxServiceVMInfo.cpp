@@ -1,4 +1,4 @@
---- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2017-03-08 17:15:20 UTC
+--- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2020-07-09 16:50:08 UTC
 +++ src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp
 @@ -71,8 +71,8 @@
  # include <net/if.h>
@@ -11,7 +11,7 @@
  # endif
  # ifdef RT_OS_OS2
  #  include <net/if_dl.h>
-@@ -531,7 +531,7 @@ static void vgsvcVMInfoWriteFixedPropert
+@@ -531,7 +531,7 @@ static void vgsvcVMInfoWriteFixedProperties(void)
  }
  
  
@@ -69,3 +69,19 @@
  
      Assert(RT_FAILURE(rc) || cUsersInList == 0 || (pszUserList && *pszUserList));
  
+@@ -1152,6 +1146,15 @@ static int vgsvcVMInfoWriteNetwork(void)
+ 
+             RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Status", cIfsReported);
+             VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, pIfCurr->ifa_flags & IFF_UP ? "Up" : "Down");
++
++# ifdef RT_OS_FREEBSD /** @todo Check the other guests. */
++            RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Name", cIfsReported);
++            int rc2 = RTStrValidateEncoding(pIfCurr->ifa_name);
++            if (RT_SUCCESS(rc2))
++                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, "%s", pIfCurr->ifa_name);
++            else
++                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, NULL);
++# endif
+ 
+             cIfsReported++;
+         }

@@ -1,6 +1,6 @@
 PORTNAME=	mdp
 PORTVERSION=	3.5
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	science python
 MASTER_SITES=	SF/${PORTNAME}-toolkit/${PORTNAME}-toolkit/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://mdp-toolkit.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

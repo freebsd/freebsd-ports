@@ -1,6 +1,6 @@
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.15.1.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel
 MASTER_SITES=	https://dr-download.ti.com/software-development/driver-or-library/MD-4vnqcP1Wk4/${PORTVERSION}/ \
 		LOCAL/lev:doc1 \
@@ -40,6 +40,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/DLL430_v3/src/TI/DLL430 \
 		\( -name '*.cpp' -o -name '*.h' \) -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|[io]fstream|std::&|; s|std::std::|std::|'
+	@${REINPLACE_CMD} -e 's/-lboost_system //' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libmsp430.so ${STAGEDIR}${PREFIX}/lib/libmsp430.so

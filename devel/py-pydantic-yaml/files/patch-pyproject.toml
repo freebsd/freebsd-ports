@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-08 21:00:34 UTC
++++ pyproject.toml
+@@ -28,7 +28,7 @@ dependencies = [
+ ]
+ dependencies = [
+     "pydantic>=1.8",               # including pydantic>=2.0.0!
+-    "ruamel.yaml>=0.17.0,<0.19.0", # recommended ~=0.18.x
++    "ruamel.yaml>=0.17.0,<0.20.0", # recommended ~=0.18.x
+     "typing_extensions>=4.5.0",
+ ]
+ 

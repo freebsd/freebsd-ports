@@ -1,5 +1,9 @@
 bin/ntp-ctl
 bin/ntp-daemon
 bin/ntp-metrics-exporter
+%%MANPAGES%%share/man/man5/ntp.toml.5.gz
+%%MANPAGES%%share/man/man8/ntp-ctl.8.gz
+%%MANPAGES%%share/man/man8/ntp-daemon.8.gz
+%%MANPAGES%%share/man/man8/ntp-metrics-exporter.8.gz
 @sample %%ETCDIR%%/ntp.server.toml.sample
 @sample %%ETCDIR%%/ntp.toml.sample

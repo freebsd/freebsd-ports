@@ -1,5 +1,5 @@
 PORTNAME=	foreman-proxy
-DISTVERSION=	3.13.0
+DISTVERSION=	3.18.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -23,21 +23,16 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		curl:ftp/curl
 
 USES=		ruby shebangfix tar:bzip2
-
-OPTIONS_DEFINE=	BMC
-BMC_DESC=	Depend on rubyipmi and redfish_client for BMC support
+USE_RC_SUBR=	foreman-proxy
+SHEBANG_FILES=	extra/foreman-debug-proxy
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	foreman-proxy
 
 FOREMAN_PROXY_USER?=	foreman_proxy
 FOREMAN_PROXY_GROUP?=	foreman_proxy
 FOREMAN_PROXY_LOGDIR?=	${DESTDIR}/var/log/foreman-proxy
 FOREMAN_PROXY_RUNDIR?=	${DESTDIR}/var/run/foreman-proxy
-
-USERS=		${FOREMAN_PROXY_USER}
-GROUPS=		${FOREMAN_PROXY_GROUP}
 
 SUB_LIST=	RUBY="${RUBY}" \
 		FOREMAN_PROXY_USER="${FOREMAN_PROXY_USER}" \
@@ -45,10 +40,17 @@ SUB_LIST=	RUBY="${RUBY}" \
 		FOREMAN_PROXY_RUNDIR="${FOREMAN_PROXY_RUNDIR}" \
 		FOREMAN_PROXY_LOGDIR="${FOREMAN_PROXY_LOGDIR}"
 
+.if ${FOREMAN_PROXY_USER} == foreman_proxy
+USERS=		${FOREMAN_PROXY_USER}
+.endif
+.if ${FOREMAN_PROXY_GROUP} == foreman_proxy
+GROUPS=		${FOREMAN_PROXY_GROUP}
+.endif
+
 PLIST_SUB=	${SUB_LIST} MKDIR="${MKDIR}"
 
-SHEBANG_FILES=	extra/foreman-debug-proxy
-
+OPTIONS_DEFINE=		BMC
+BMC_DESC=		Depend on rubyipmi and redfish_client for BMC support
 BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi \
 			rubygem-redfish_client>=0.5.1:sysutils/rubygem-redfish_client
 
@@ -71,31 +73,30 @@ post-patch:
 		${WRKSRC}/lib/proxy/http_download.rb
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d
-	${MKDIR} ${STAGEDIR}${DATADIR}/extra
-	${LN} -s ${PREFIX}/etc/foreman-proxy ${STAGEDIR}${DATADIR}/config
+	${MKDIR} ${STAGEDIR}${ETCDIR}/settings.d \
+		 ${STAGEDIR}${DATADIR}/extra
+	${RLN} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DATADIR}/config
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/smart-proxy \
 		${STAGEDIR}${PREFIX}/sbin/smart-proxy
-.for file in CHANGELOG Contributors Gemfile LICENSE README.md \
-	smart_proxy.gemspec VERSION bundler.d config.ru lib modules
-	${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
-.endfor
-	${LN} -s Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
-.for script in dhcpd_config_check.rb foreman-debug-proxy \
-	migrate_settings.rb puppet_sign.rb query.rb register_service.rb
-	${INSTALL_SCRIPT} ${WRKSRC}/extra/${script} \
-		${STAGEDIR}${DATADIR}/extra/${script}
-.endfor
-	${CP} -r ${WRKSRC}/extra/migrations ${STAGEDIR}${DATADIR}/extra
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} "CHANGELOG Contributors Gemfile LICENSE README.md \
+			smart_proxy.gemspec VERSION bundler.d config.ru lib modules" \
+			${STAGEDIR}${DATADIR})
+	${RLN} ${STAGEDIR}${DATADIR}/Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
+	${INSTALL_SCRIPT} ${dhcpd_config_check.rb foreman-debug-proxy \
+		migrate_settings.rb puppet_sign.rb query.rb register_service.rb \
+		:L:S|^|${WRKSRC}/extra/|} \
+		${STAGEDIR}${DATADIR}/extra
+	(cd ${WRKSRC}/extra && ${COPYTREE_SHARE} migrations ${STAGEDIR}${DATADIR}/extra)
 	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
-		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
+		${STAGEDIR}${ETCDIR}/settings.yml.sample
 .for cfg in bmc dhcp_isc dhcp_libvirt dhcp_native_ms dhcp dns_dnscmd \
 	dns_libvirt dns_nsupdate_gss dns_nsupdate dns facts httpboot logs \
 	puppet_proxy_puppet_api puppet puppetca_hostname_whitelisting \
 	puppetca_http_api puppetca_token_whitelisting puppetca realm_freeipa \
 	realm registration templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
-		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
+		${STAGEDIR}${ETCDIR}/settings.d/${cfg}.yml.sample
 .endfor
 	${MKDIR} -m 0700 ${STAGEDIR}${FOREMAN_PROXY_LOGDIR} \
 		${STAGEDIR}${FOREMAN_PROXY_RUNDIR}

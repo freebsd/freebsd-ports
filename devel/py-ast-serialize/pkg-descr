@@ -1,0 +1,4 @@
+ast_serialize is a fast Python extension for parsing Python files and
+serializing the AST using the native binary format used by mypy. This will
+eventually replace the current mypy parser, which uses the Python stdlib ast
+module for parsing.

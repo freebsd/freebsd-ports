@@ -1,0 +1,5 @@
+The jmore(8) is FreeBSD Jails listing and managing utility.
+
+Covers classic and VNET Jails - also BastilleBSD ones.
+
+Displays IP(s)/interfaces/CPU/RAM/dir/... etc.

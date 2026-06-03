@@ -1,6 +1,7 @@
 PORTNAME=	cdk
 DISTVERSIONPREFIX=	cdk-
 DISTVERSION=	2.7.1
+PORTREVISION=	3
 CATEGORIES=	science java
 PKGNAMESUFFIX=	-chemistry
 
@@ -11,11 +12,13 @@ WWW=		https://cdk.github.io/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 
 USES=		java
 USE_GITHUB=	yes
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=68892, tid=0x000000000002b995 guarantee(val < (1U << nbits)) failed: Field too big for insn
+
+MAKE_ENV+=      JAVA_HOME=${JAVA_HOME}
 
 NO_ARCH=	yes
 

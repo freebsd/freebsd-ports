@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: bunkerweb_api
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="bunkerweb_api"
+rcvar="${name}_enable"
+
+load_rc_config "$name"
+
+: ${bunkerweb_api_enable:="NO"}
+: ${bunkerweb_api_python:="/usr/local/bin/python3.11"}
+: ${bunkerweb_api_pidfile:="/var/run/${name}.pid"}
+: ${bunkerweb_api_logfile:="/var/log/bunkerweb/api.log"}
+: ${bunkerweb_api_env:=""}
+
+pidfile="${bunkerweb_api_pidfile}"
+command="/usr/sbin/daemon"
+procname="${bunkerweb_api_python}"
+
+command_args="-f -p ${pidfile} -o ${bunkerweb_api_logfile} /usr/bin/env ${bunkerweb_api_env} PYTHONPATH=/usr/local/share/bunkerweb/deps/python:/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/api:/usr/local/share/bunkerweb/api:/usr/local/share/bunkerweb/common/db ${bunkerweb_api_python} -m gunicorn --chdir /usr/local/share/bunkerweb/api --logger-class utils.logger.APILogger --config /usr/local/share/bunkerweb/api/utils/gunicorn.conf.py"
+
+start_precmd="${name}_prestart"
+
+bunkerweb_api_prestart()
+{
+	/bin/mkdir -p /var/log/bunkerweb /var/run/bunkerweb /var/tmp/bunkerweb/api /var/lib/bunkerweb
+}
+
+run_rc_command "$1"

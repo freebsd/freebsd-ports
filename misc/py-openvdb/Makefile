@@ -1,7 +1,7 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.0.1
-PORTREVISION=	1
+DISTVERSION=	13.0.0
+PORTREVISION=	2
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,11 +14,11 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
 BUILD_DEPENDS=	nanobind>0:devel/nanobind \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libopenvdb.so:misc/openvdb \
 		libtbb.so:devel/onetbb
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
 USE_LDCONFIG=	yes

@@ -20,6 +20,15 @@
  #-------------------------------------------------------------------------------
  # Before we go searching, check whether a boost cmake package is available, unless
  # the user specifically asked NOT to search for one.
+@@ -2170,7 +2177,7 @@ if(Boost_VERSION_STRING AND Boost_FIND_COMPONENTS)
+ # On versions < 1.35, remove the System library from the considered list
+ # since it wasn't added until 1.35.
+ if(Boost_VERSION_STRING AND Boost_FIND_COMPONENTS)
+-  if(Boost_VERSION_STRING VERSION_LESS 1.35.0)
++  if(Boost_VERSION_STRING VERSION_LESS 1.35.0 OR Boost_VERSION_STRING VERSION_GREATER_EQUAL 1.71.0)
+     list(REMOVE_ITEM Boost_FIND_COMPONENTS system)
+   endif()
+ endif()
 @@ -2196,10 +2202,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)

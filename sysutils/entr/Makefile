@@ -1,5 +1,5 @@
 PORTNAME=	entr
-PORTVERSION=	5.7
+PORTVERSION=	5.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://eradman.com/entrproject/code/
 
@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MAKEFILE=	Makefile.freebsd
 TEST_TARGET=	test
 PLIST_FILES=	bin/entr share/man/man1/entr.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|5\.7|${PORTVERSION}|g' ${WRKSRC}/Makefile.bsd
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/entr

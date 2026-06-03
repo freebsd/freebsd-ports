@@ -1,0 +1,3 @@
+Jinxed is a pure-Python implementation of a subset of the Python curses library.
+It provides low-level terminal interaction capabilities including terminfo
+functions on all platforms using a virtual terminfo database.

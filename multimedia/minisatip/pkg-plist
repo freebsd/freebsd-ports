@@ -1,4 +1,4 @@
-sbin/minisatip
+bin/minisatip
 %%DATADIR%%/html/dLAN.xml
 %%DATADIR%%/html/dvbc.png
 %%DATADIR%%/html/dvbc2.png

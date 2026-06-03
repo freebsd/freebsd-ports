@@ -11,9 +11,9 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	git:devel/git \
 		portlint:ports-mgmt/portlint \
-		sudo:security/sudo \
 		ydiff:textproc/ydiff
 
+USES=		sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	skreuzer
 

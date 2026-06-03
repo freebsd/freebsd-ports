@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Reddit/Client/SubReddit.pm
 %%SITE_PERL%%/Reddit/Client/Thing.pm
 %%SITE_PERL%%/Reddit/Client/VotableThing.pm
+%%SITE_PERL%%/Reddit/Client/changelog
 %%PERL5_MAN3%%/Reddit::Client.3.gz
 %%PERL5_MAN3%%/Reddit::Client::Account.3.gz
 %%PERL5_MAN3%%/Reddit::Client::Comment.3.gz

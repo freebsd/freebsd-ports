@@ -1,6 +1,6 @@
 PORTNAME=	jdictionary
 DISTVERSION=	1_8
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/jdictionary/jDictionary/jDictionary%20version%20${PORTVERSION}
 

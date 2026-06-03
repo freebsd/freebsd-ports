@@ -6,10 +6,14 @@ PKGNAMEPREFIX=	qt6-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibilty features for Qt6
 
-USES=		cmake compiler:c++17-lang gl pkgconfig qt-dist:6
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>0:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.8.3:misc/py-spdx-tools@${PY_FLAVOR} \
+		vulkan-headers>=1.4:graphics/vulkan-headers
+
+USES=		cmake compiler:c++17-lang gl pkgconfig python:build qt-dist:6
 USE_GL=		opengl
-USE_QT=		base declarative multimedia
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+USE_QT=		base declarative multimedia
 
 OPTIONS_DEFINE=		ALSA
 OPTIONS_DEFAULT=	SPEECHD

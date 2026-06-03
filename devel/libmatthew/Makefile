@@ -1,6 +1,6 @@
 PORTNAME=	libmatthew
 DISTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.matthew.ath.cx/projects/java/
 DISTNAME=	${PORTNAME}-java-${DISTVERSION}
@@ -14,7 +14,7 @@ LICENSE_NAME=	Expat License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake java localbase:ldconfig
+USES=		gmake java:build localbase:ldconfig
 USE_LDCONFIG=	yes
 
 MAKE_ENV=	JARDIR=${JAVAJARDIR} \

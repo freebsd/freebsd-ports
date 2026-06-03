@@ -1,0 +1,3 @@
+pytest-astropy is a meta-package that pulls in the dependencies that are used by
+astropy and some affiliated packages for testing. It can also be used for
+testing packages that are not affiliated with the Astropy project.

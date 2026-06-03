@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 WWW=		https://umix.sourceforge.net/
 
-USES=		alias ncurses
+USES=		ncurses
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 

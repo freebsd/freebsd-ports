@@ -1,13 +1,5 @@
 bin/vnote
-bin/vnote_extra.rcc
-lib/libVSyntaxHighlighting.so
-lib/libVSyntaxHighlighting.so.1
-lib/libVSyntaxHighlighting.so.1.0
-lib/libVSyntaxHighlighting.so.1.0.0
 lib/libVTextEdit.so
-lib/libVTextEdit.so.1
-lib/libVTextEdit.so.1.0
-lib/libVTextEdit.so.1.0.0
 share/applications/vnote.desktop
 share/icons/hicolor/128x128/apps/vnote.png
 share/icons/hicolor/16x16/apps/vnote.png
@@ -16,3 +8,10 @@ share/icons/hicolor/32x32/apps/vnote.png
 share/icons/hicolor/48x48/apps/vnote.png
 share/icons/hicolor/64x64/apps/vnote.png
 share/icons/hicolor/scalable/apps/vnote.svg
+%%DATADIR%%/translations/qdialogbuttonbox_zh_CN.qm
+%%DATADIR%%/translations/qtbase_ja.qm
+%%DATADIR%%/translations/qtbase_zh_CN.qm
+%%DATADIR%%/translations/qtv_ja.qm
+%%DATADIR%%/translations/qtv_zh_CN.qm
+%%DATADIR%%/translations/qwebengine_zh_CN.qm
+%%DATADIR%%/vnote_extra.rcc

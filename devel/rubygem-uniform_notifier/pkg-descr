@@ -1,0 +1,18 @@
+uniform_notifier is a Ruby gem that provides a unified interface for sending
+notifications across multiple channels and methods. It supports various
+notification backends including Rails logger, customized logger, JavaScript
+alert, JavaScript console, and XMPP.
+
+The gem is designed to provide a consistent API for different notification
+methods, making it easy to switch between or combine multiple notification
+channels in Ruby applications.
+
+Supported notification methods:
+- Rails logger
+- Custom logger
+- JavaScript alert
+- JavaScript console
+- XMPP messaging
+- Slack notifications
+- File output
+- Airbrake integration

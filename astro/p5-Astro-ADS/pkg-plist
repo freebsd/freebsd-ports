@@ -1,9 +1,11 @@
 %%SITE_PERL%%/Astro/ADS.pm
+%%SITE_PERL%%/Astro/ADS/Metrics.pm
 %%SITE_PERL%%/Astro/ADS/Paper.pm
 %%SITE_PERL%%/Astro/ADS/Result.pm
 %%SITE_PERL%%/Astro/ADS/Role/ResultMapper.pm
 %%SITE_PERL%%/Astro/ADS/Search.pm
 %%PERL5_MAN3%%/Astro::ADS.3.gz
+%%PERL5_MAN3%%/Astro::ADS::Metrics.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Paper.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Result.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Role::ResultMapper.3.gz

@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	3.0.17
+PORTVERSION=	3.0.20
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 #EXPIRATION_DATE=	2026-09-07
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl111 openssl3* openssl*-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl[134]*
 
 USES=		cpe perl5
 USE_PERL5=	build
@@ -44,8 +44,6 @@ OPTIONS_DEFAULT=ASM ASYNC CT DES EC FIPS GOST KTLS MAN3 MD4 NEXTPROTONEG \
 		RFC3779 RC2 RC4 RMD160 SCTP SHARED SSE2 THREADS TLS1 TLS1_1 TLS1_2
 
 .if ${MACHINE_ARCH} == "amd64"
-OPTIONS_GROUP_OPTIMIZE+=	EC
-.elif ${MACHINE_ARCH} == "mips64el"
 OPTIONS_GROUP_OPTIMIZE+=	EC
 .endif
 

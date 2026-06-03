@@ -1,0 +1,18 @@
+--- configure.ac.orig	2016-03-17 00:15:34 UTC
++++ configure.ac
+@@ -11,6 +11,7 @@ AC_CONFIG_AUX_DIR(build/autotools)
+ AC_PREREQ(2.50)
+ AC_REVISION([for lifelines, built with autoconf] AC_ACVERSION)
+ AC_CONFIG_AUX_DIR(build/autotools)
++AC_CONFIG_MACRO_DIRS([build/autotools])
+ AC_CANONICAL_HOST
+ 
+ dnl Use 'foreign' to avoid requiring GNU files in top-level.
+@@ -48,6 +49,7 @@ AM_GNU_GETTEXT(,need-ngettext)
+ dnl These languages should be a copy of po/LINGUAS
+ ALL_LINGUAS="da de el eo es fr it nl pl rw sv"
+ AM_GNU_GETTEXT(,need-ngettext)
++AM_GNU_GETTEXT_VERSION([0.11.5])
+ 
+ dnl codeset conversion library
+ AM_ICONV

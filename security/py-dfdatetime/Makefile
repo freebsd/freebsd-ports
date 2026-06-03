@@ -1,5 +1,5 @@
 PORTNAME=	dfdatetime
-PORTVERSION=	20240504
+PORTVERSION=	20260411
 CATEGORIES=	security devel python
 MASTER_SITES=	PYPI \
 		https://github.com/log2timeline/dfdatetime/releases/download/${PORTVERSION}/

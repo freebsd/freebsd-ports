@@ -10,8 +10,6 @@ WWW=		https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html
 
 LICENSE=	APACHE20
 
-BROKEN_mips64=	fails to link: ld: failed to merge target specific data
-
 LIB_DEPENDS=	libev.so:devel/libev \
 		libevent.so:devel/libevent \
 		libuv.so:devel/libuv

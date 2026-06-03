@@ -13,9 +13,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_MPL11=	${WRKSRC}/LICENSE-MPL-1.1
 
-NOT_FOR_ARCHS=		mips mips64
-NOT_FOR_ARCHS_REASON=	Endianness not known
-
 BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Int64>0.34:math/p5-Math-Int64

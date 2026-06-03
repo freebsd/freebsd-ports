@@ -1,0 +1,81 @@
+--- newt64-src/CMakeLists.txt.orig	2024-12-27 00:20:35 UTC
++++ newt64-src/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ #
+ # Use a single CMake setup to compile Newt/64 on all supported platforms.
+-# 
++#
+ 
+ cmake_minimum_required(VERSION 3.13)
+ 
+@@ -9,6 +9,7 @@ set (CMAKE_CXX_STANDARD 14)
+ set (CMAKE_CXX_STANDARD 14)
+ 
+ # prepare for various platforms
++set (IS_BSD FALSE)
+ if (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+ 
+ 	# MacOS
+@@ -21,9 +22,10 @@ elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+ 	# Linux
+ 	set (NEWT64_INSTALL_PREFIX "")
+ 
+-elseif (${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
++elseif (${CMAKE_SYSTEM_NAME} MATCHES ".*BSD$")
+ 
+-	# OpenBSD
++	# FreeBSD, NetBSD and OpenBSD
++    set (IS_BSD TRUE)
+ 	set (NEWT64_INSTALL_PREFIX "")
+ 
+ elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+@@ -118,7 +120,7 @@ set (headers
+ 	src/newt_core/incs/platform.h
+ 	$<$<PLATFORM_ID:Darwin>:  src/newt_core/incs/darwin/config.h src/newt_core/incs/darwin/NewtConf.h>
+ 	$<$<PLATFORM_ID:Linux>:   src/newt_core/incs/darwin/config.h src/newt_core/incs/darwin/NewtConf.h>
+-	$<$<PLATFORM_ID:OpenBSD>: src/newt_core/incs/darwin/config.h src/newt_core/incs/darwin/NewtConf.h>
++	$<$<BOOL:${IS_BSD}>:      src/newt_core/incs/darwin/config.h src/newt_core/incs/darwin/NewtConf.h>
+ 	$<$<PLATFORM_ID:Windows>: src/newt_core/incs/win/config.h src/newt_core/incs/win/NewtConf.h>
+ )
+ 
+@@ -164,21 +166,21 @@ target_include_directories (libnewt64 PUBLIC
+ 	src/
+ 	$<$<PLATFORM_ID:Darwin>:  src/newt_core/incs/darwin >
+ 	$<$<PLATFORM_ID:Linux>:   src/newt_core/incs/darwin >
+-	$<$<PLATFORM_ID:OpenBSD>:   src/newt_core/incs/darwin >
++	$<$<BOOL:${IS_BSD}>:      src/newt_core/incs/darwin >
+ 	$<$<PLATFORM_ID:Windows>: src/newt_core/incs/win >
+ )
+ 
+-target_link_libraries(libnewt64 PUBLIC 
++target_link_libraries(libnewt64 PUBLIC
+ 	$<$<PLATFORM_ID:Darwin>:  >
+ 	$<$<PLATFORM_ID:Linux>:   >
+-	$<$<PLATFORM_ID:OpenBSD>:   >
++	$<$<BOOL:${IS_BSD}>:      >
+ 	$<$<PLATFORM_ID:Windows>: shlwapi >
+ )
+ 
+ target_compile_definitions(libnewt64 PRIVATE
+ 	$<$<PLATFORM_ID:Darwin>:  TARGET_OS_DARWIN=1 >
+ 	$<$<PLATFORM_ID:Linux>:   TARGET_OS_LINUX=1 HAVE_ENDIAN_H=1>
+-	$<$<PLATFORM_ID:OpenBSD>: TARGET_OS_LINUX=1 HAVE_ENDIAN_H=1>
++	$<$<BOOL:${IS_BSD}>:      TARGET_OS_LINUX=1 HAVE_ENDIAN_H=1>
+ 	$<$<PLATFORM_ID:Windows>: TARGET_OS_WINDOWS=1 >
+ )
+ 
+@@ -209,12 +211,12 @@ target_include_directories (newt64 PUBLIC
+ 	src/
+ 	$<$<PLATFORM_ID:Darwin>:  src/newt_core/incs/darwin >
+ 	$<$<PLATFORM_ID:Linux>:   src/newt_core/incs/darwin >
+-	$<$<PLATFORM_ID:OpenBSD>: src/newt_core/incs/darwin >
++	$<$<BOOL:${IS_BSD}>:      src/newt_core/incs/darwin >
+ 	$<$<PLATFORM_ID:Windows>: src/newt_core/incs/win >
+ )
+ 
+ target_link_libraries(newt64
+-	PUBLIC 
++	PUBLIC
+ 	libnewt64
+ 	$<$<PLATFORM_ID:Linux>:dl>
+ )

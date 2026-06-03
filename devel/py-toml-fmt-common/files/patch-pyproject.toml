@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,9 @@
+ [build-system]
+-build-backend = "uv_build"
+-requires = [ "uv-build<0.8,>=0.7.22" ]
++build-backend = "hatchling.build"
++requires = [
++  "hatch-vcs>=0.5",
++  "hatchling>=1.27",
++]
+ 
+ [project]
+ name = "toml-fmt-common"

@@ -5,11 +5,13 @@ You installed ollama: the AI model runner.
 
 To run ollama, plese open 2 terminals.
 1. In the first terminal, please run:
-   $ OLLAMA_NUM_PARALLEL=1 OLLAMA_DEBUG=1 LLAMA_DEBUG=1 ollama start
+   $ ollama serve
 2. In the second terminal, please run:
+   $ ollama run gemma3
+   or
    $ ollama run mistral
 
-This will download and run the AI model "mistral".
+This will download and run the specified AI model.
 You will be able to interact with it in plain English.
 
 Please see https://ollama.com/library for the list
@@ -25,6 +27,33 @@ model flavors with different num_gpu parameters.
 ollama uses many gigabytes of disk space in your home directory,
 because advanced AI models are often very large.
 Please symlink ~/.ollama to a large disk if needed.
+
+Working examples:
+(1) Coding with the model gpt-oss:20b:
+  1. start ollama service with 'sudo service ollama start'
+     or
+     setup and start the service 'ollama'
+  2. install claude-code and run:
+     ANTHROPIC_BASE_URL=http://localhost:11434 \
+     ANTHROPIC_AUTH_TOKEN=ollama \
+     ANTHROPIC_MODEL=gpt-oss:20b \
+     ANTHROPIC_DEFAULT_SONNET_MODEL=gpt-oss:20b \
+     ANTHROPIC_DEFAULT_OPUS_MODEL=gpt-oss:20b \
+     ANTHROPIC_DEFAULT_HAIKU_MODEL=gpt-oss:20b \
+     claude
+  3. Ask it to write some program.
+
+(2) Image generation with the model x/z-image-turbo:
+  1. start ollama service with 'sudo service ollama start'
+     or
+     setup and start the service 'ollama'
+  2. run:
+     ollama run x/z-image-turbo {textual description of the desired image}
+
+There are also a lot of text-to-text models that you can chat with.
+
+You migh also want to install the 'gollama' package. gollama allows to
+run ollama models very easily.
 
 EOM
 }

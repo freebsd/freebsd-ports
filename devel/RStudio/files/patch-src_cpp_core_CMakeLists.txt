@@ -1,6 +1,9 @@
---- src/cpp/core/CMakeLists.txt.orig	2022-12-03 07:38:59 UTC
+- Link libinotify for inotify_init1 check on FreeBSD
+- Enable HAVE_PROCSELF since FreeBSD has /proc/curproc
+
+--- src/cpp/core/CMakeLists.txt.orig	2025-10-20 20:09:32 UTC
 +++ src/cpp/core/CMakeLists.txt
-@@ -161,12 +161,14 @@ if (UNIX)
+@@ -160,12 +160,14 @@ if (UNIX)
     # platform introspection
     check_symbol_exists(SA_NOCLDWAIT "signal.h" HAVE_SA_NOCLDWAIT)
     check_symbol_exists(SO_PEERCRED "sys/socket.h" HAVE_SO_PEERCRED)

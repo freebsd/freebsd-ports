@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
-CPPFLAGS+=	`net-snmp-config --cflags`
+CPPFLAGS+=	${:!net-snmp-config --cflags!:M-[IDUf]*}
 LDFLAGS+=	`net-snmp-config --libs`
 USES=		libtool mysql ssl
 

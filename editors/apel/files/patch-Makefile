@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-03-23 15:52:37 UTC
++++ Makefile
+@@ -31,7 +31,7 @@ elc:
+ 	$(EMACS) $(FLAGS) -f compile-apel \
+ 		$(PREFIX) $(LISPDIR) $(VERSION_SPECIFIC_LISPDIR)
+ 
+-install:	elc
++install:
+ 	$(EMACS) $(FLAGS) -f install-apel \
+ 		$(PREFIX) $(LISPDIR) $(VERSION_SPECIFIC_LISPDIR) # $(MAKE)
+ 

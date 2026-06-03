@@ -1,7 +1,7 @@
 PORTNAME=	zfstools
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	filesystems sysutils ruby
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
@@ -18,6 +18,8 @@ SHEBANG_FILES=	bin/*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bdrewery
+
+RUN_DEPENDS+=	rubygem-getoptlong>0:devel/rubygem-getoptlong
 
 NO_BUILD=	yes
 

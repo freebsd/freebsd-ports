@@ -1,6 +1,6 @@
 PORTNAME=	postgis
 DISTVERSION=	3.4.4
-PORTREVISION=	4
+PORTREVISION=	9
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	34
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgdal.so:graphics/gdal \
 		libpcre2-8.so:devel/pcre2
 
-USES=		alias compiler:c++11-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
+USES=		compiler:c++11-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:11+ shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build
@@ -68,6 +68,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}${DISTVERSIONSUFFIX} \
 		VER=${VER}
 
 .include <bsd.port.pre.mk>
+
+.if ${PGSQL_VER} > 17
+IGNORE=		Only supported up to pgsql 17
+.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:

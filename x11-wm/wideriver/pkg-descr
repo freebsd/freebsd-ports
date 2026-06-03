@@ -1,0 +1,11 @@
+Tiling window manager for the river wayland compositor, inspired by dwm and
+xmonad.
+
+Features:
+
+ - per-tag state
+ - master/stack(s) left, right and wide layouts
+ - monocle with alternate borders
+ - layout toggling
+ - dwindling, diminishing and even stacks
+ - inner, outer and smart gaps

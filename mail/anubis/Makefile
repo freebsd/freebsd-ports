@@ -1,6 +1,6 @@
 PORTNAME=	anubis
 PORTVERSION=	4.3
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -25,7 +25,8 @@ USE_RC_SUBR=	anubis
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--with-gnutls \
+CONFIGURE_ARGS=	--with-emacs=no \
+		--with-gnutls \
 		--with-gsasl
 
 INFO=		anubis
@@ -47,10 +48,8 @@ OPTIONS_EXCLUDE+=	LIBWRAP
 OPTIONS_EXCLUDE+=	PAM
 .endif
 
-EMACS_DESC=		Install EMACS lisp files (requires emacs)
-EMACS_USES=		emacs:build
-EMACS_CONFIGURE_ON=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/anubis
-EMACS_CONFIGURE_OFF=	--with-lispdir=no
+EMACS_DESC=		Install EMACS lisp
+EMACS_USES=		emacs
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
@@ -89,6 +88,11 @@ TEST_TEST_TARGET=	check
 # Default requirement for anubis rc script
 REQUIRE+=	mail
 SUB_LIST+=	REQUIRE="${REQUIRE}"
+
+post-install-EMACS-on::
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/anubis
+	${INSTALL_DATA} ${WRKSRC}/elisp/anubis-mode.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/anubis
 
 post-patch-TEST-off:
 	@${REINPLACE_CMD} -e 's| tests||' ${WRKSRC}/Makefile.am

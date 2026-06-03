@@ -1,0 +1,10 @@
+--- hw/xfree86/os-support/meson.build.orig	2025-07-20 14:22:32 UTC
++++ hw/xfree86/os-support/meson.build
+@@ -98,6 +98,7 @@ elif host_machine.system().endswith('bsd')
+         'bsd/bsd_bell.c',
+         'bsd/bsd_init.c',
+         'shared/drm_platform.c',
++        'misc/SlowBcopy.c',
+ 	'shared/pm_noop.c'
+     ]
+ 

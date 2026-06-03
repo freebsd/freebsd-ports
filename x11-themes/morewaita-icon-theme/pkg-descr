@@ -1,0 +1,14 @@
+An expanded Adwaita-styled companion icon theme, built largely upon
+the work of GNOME's Adwaita designers and GNOME Circle apps'
+developers, as well as inspiration from the Papirus icon theme
+designers, and a touch of tinkering from myself and a few others.
+
+The purpose of this theme is to provide third-party apps with a
+consistent look and feel in Gnome Shell.
+
+The goal of MoreWaita is to add to Adwaita, not modify it, and to do
+roughly what Breeze does for KDE. This theme does not override any
+Adwaita icons, nor any Gnome Circle apps icons, nor icons that
+generally fit into the Adwaita paradigm (like Transmission
+GTK). Currently, this theme is way less all-inclusive than many
+others, but the aim is to be on par with Papirus some day.

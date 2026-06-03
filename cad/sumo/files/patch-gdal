@@ -1,0 +1,45 @@
+Obtained from:	https://github.com/eclipse-sumo/sumo/commit/8a52e99ba9170b65e7c661e001d5028e4bba5241
+		https://github.com/eclipse-sumo/sumo/commit/bb818b0822ea730e932769d9eba4cfdb3966095c
+
+--- src/netbuild/NBHeightMapper.cpp.orig	2019-04-15 14:11:30 UTC
++++ src/netbuild/NBHeightMapper.cpp
+@@ -192,7 +192,11 @@ NBHeightMapper::loadShapeFile(const std::string& file)
+ 
+     // triangle coordinates are stored in WGS84 and later matched with network coordinates in WGS84
+     // build coordinate transformation
++#if GDAL_VERSION_MAJOR < 3
+     OGRSpatialReference* sr_src = layer->GetSpatialRef();
++#else
++    const OGRSpatialReference* sr_src = layer->GetSpatialRef();
++#endif
+     OGRSpatialReference sr_dest;
+     sr_dest.SetWellKnownGeogCS("WGS84");
+     OGRCoordinateTransformation* toWGS84 = OGRCreateCoordinateTransformation(sr_src, &sr_dest);
+--- src/netimport/NIImporter_ArcView.cpp.orig	2019-04-15 14:11:30 UTC
++++ src/netimport/NIImporter_ArcView.cpp
+@@ -139,7 +139,11 @@ NIImporter_ArcView::load() {
+     poLayer->ResetReading();
+ 
+     // build coordinate transformation
++#if GDAL_VERSION_MAJOR < 3
+     OGRSpatialReference* origTransf = poLayer->GetSpatialRef();
++#else
++    const OGRSpatialReference* origTransf = poLayer->GetSpatialRef();
++#endif
+     OGRSpatialReference destTransf;
+     // use wgs84 as destination
+     destTransf.SetWellKnownGeogCS("WGS84");
+--- src/polyconvert/PCLoaderArcView.cpp.orig	2019-04-15 14:11:30 UTC
++++ src/polyconvert/PCLoaderArcView.cpp
+@@ -102,7 +102,11 @@ PCLoaderArcView::load(const std::string& file, Options
+     poLayer->ResetReading();
+ 
+     // build coordinate transformation
++#if GDAL_VERSION_MAJOR < 3
+     OGRSpatialReference* origTransf = poLayer->GetSpatialRef();
++#else
++    const OGRSpatialReference* origTransf = poLayer->GetSpatialRef();
++#endif
+     OGRSpatialReference destTransf;
+     // use wgs84 as destination
+     destTransf.SetWellKnownGeogCS("WGS84");

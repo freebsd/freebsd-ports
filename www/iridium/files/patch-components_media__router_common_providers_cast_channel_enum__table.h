@@ -1,6 +1,6 @@
---- components/media_router/common/providers/cast/channel/enum_table.h.orig	2025-05-07 06:48:23 UTC
+--- components/media_router/common/providers/cast/channel/enum_table.h.orig	2026-04-15 12:07:04 UTC
 +++ components/media_router/common/providers/cast/channel/enum_table.h
-@@ -368,7 +368,12 @@ class EnumTable {
+@@ -364,7 +364,12 @@ class EnumTable {
  
   private:
  #ifdef ARCH_CPU_64_BITS
@@ -11,5 +11,5 @@
 +  alignas(hardware_destructive_interference_size)
 +#endif
  #endif
-       std::initializer_list<Entry> data_;
-   bool is_sorted_;
+       // Constructed from an std::initializer_list pointing at static read only
+       // data.

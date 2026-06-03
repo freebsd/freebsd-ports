@@ -1,0 +1,42 @@
+--- src/corelibs/U2Private/src/crash_handler/CrashHandler.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/corelibs/U2Private/src/crash_handler/CrashHandler.cpp
+@@ -36,7 +36,7 @@
+ 
+ #if defined(Q_OS_DARWIN)
+ #    include "CrashHandlerPrivateMac.h"
+-#elif defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
++#elif defined(Q_OS_LINUX)
+ #    include "CrashHandlerPrivateUnixNotMac.h"
+ #elif defined(Q_OS_WIN)
+ #    include "CrashHandlerPrivateWin.h"
+@@ -124,7 +124,7 @@ void CrashHandler::setupPrivateHandler() {
+     assert(crashHandlerPrivate == nullptr);
+ #if defined(Q_OS_DARWIN)
+     crashHandlerPrivate = new CrashHandlerPrivateMac;
+-#elif defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
++#elif defined(Q_OS_LINUX)
+     crashHandlerPrivate = new CrashHandlerPrivateUnixNotMac;
+ #elif defined(Q_OS_WIN)
+     crashHandlerPrivate = new CrashHandlerPrivateWin;
+--- src/corelibs/U2Private/src/crash_handler/CrashHandlerPrivateUnixNotMac.cpp.orig	2026-03-01 18:44:47 UTC
++++ src/corelibs/U2Private/src/crash_handler/CrashHandlerPrivateUnixNotMac.cpp
+@@ -20,7 +20,7 @@
+  */
+ 
+ #include <qglobal.h>
+-#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
++#if defined(Q_OS_LINUX)
+ 
+ #    include <execinfo.h>
+ 
+--- src/corelibs/U2Private/src/crash_handler/CrashHandlerPrivateUnixNotMac.h.orig	2026-03-01 18:44:47 UTC
++++ src/corelibs/U2Private/src/crash_handler/CrashHandlerPrivateUnixNotMac.h
+@@ -22,7 +22,7 @@
+ #pragma once
+ 
+ #include <qglobal.h>
+-#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
++#if defined(Q_OS_LINUX)
+ 
+ #    include <client/linux/handler/exception_handler.h>
+ 

@@ -28,22 +28,12 @@ RUN_DEPENDS=	rubygem-actioncable-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/ru
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
 
-PORTSCOUT=	limit:^7\.1\.
+NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} <= 3.1
-RUN_DEPENDS+=	rubygem-cgi>=0.3.6:www/rubygem-cgi
-.endif
-
-.if ${RUBY_VER} == 3.1
-RUN_DEPENDS+=	rubygem-error_highlight>=0.4.0:devel/rubygem-error_highlight
-.endif
+PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

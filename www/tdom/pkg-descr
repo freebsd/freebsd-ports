@@ -5,4 +5,4 @@ tDOM should be one of the fastest ways to manipulate XML with a scripting
 language and uses very few memory (for example the DOM tree of the XML
 recommendation in XML (160K) needs only about 450K in memory)!
 
-Configured for OpenACS (http://openacs.org)
+Configured for OpenACS (openacs.org)

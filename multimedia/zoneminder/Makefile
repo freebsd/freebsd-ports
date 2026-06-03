@@ -1,11 +1,8 @@
 PORTNAME=	zoneminder
-DISTVERSION=	1.36.35
+DISTVERSION=	1.38.1
 PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-
-PATCH_SITES=	https://github.com/ZoneMinder/zoneminder/commit/
-PATCHFILES=	c7975f11eded548a5e567871b00681a307ed2a97.patch:-p1
 
 MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
@@ -26,100 +23,85 @@ ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-IO-Socket-Multicast>=0:net/p5-IO-Socket-Multicast \
 		p5-Number-Bytes-Human>=0:devel/p5-Number-Bytes-Human \
-		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
-		ffmpeg:multimedia/ffmpeg
-BUILD_DEPENDS=	${ZM_DEPENDS}
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
+BUILD_DEPENDS=	${ZM_DEPENDS} \
+		${LOCALBASE}/include/jwt-cpp/jwt.h:devel/jwt-cpp \
+		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
 LIB_DEPENDS=	libx264.so:multimedia/libx264 \
 		libmp4v2.so:multimedia/mp4v2 \
-		libgcrypt.so:security/libgcrypt
+		libgcrypt.so:security/libgcrypt \
+		libavcodec.so:multimedia/ffmpeg \
+		libcurl.so:ftp/curl \
+		libunwind.so:devel/libunwind
 RUN_DEPENDS=	${ZM_DEPENDS} \
-		sudo:security/sudo \
 		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
 		p5-Bytes-Random-Secure>=0:security/p5-Bytes-Random-Secure \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		zip:archivers/zip
+		zip:archivers/zip \
+		${PECL_PKGNAMEPREFIX}APCu>0:devel/pecl-APCu@${PHP_FLAVOR}
 
-USES=		cmake:insource,noninja cpe jpeg mysql perl5 php:flavors shebangfix ssl
+USES=		cmake:insource,noninja cpe jpeg mysql perl5 php:flavors \
+		pkgconfig ssl sudo
 USE_GITHUB=	yes
 GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
-		ZoneMinder:RtspServer:eab3285:rtsp_server/dep/RtspServer
-USE_RC_SUBR=	zoneminder
+		chmike:CxxUrl:eaf46c0:CxxUrl/dep/CxxUrl \
+		ZoneMinder:RtspServer:a071599:rtsp_server/dep/RtspServer
 USE_PHP=	ctype gd intl opcache pdo_mysql session sockets sysvsem
-
-OPTIONS_DEFINE=	NLS V4L
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-SUB_FILES=	pkg-message
-
-SHEBANG_FILES=	scripts/zmaudit.pl.in \
-		scripts/zmcamtool.pl.in \
-		scripts/zmcontrol.pl.in \
-		scripts/zmdc.pl.in \
-		scripts/zmfilter.pl.in \
-		scripts/zmpkg.pl.in \
-		scripts/zmstats.pl.in \
-		scripts/zmtelemetry.pl.in \
-		scripts/zmtrack.pl.in \
-		scripts/zmtrigger.pl.in \
-		scripts/zmupdate.pl.in \
-		scripts/zmvideo.pl.in \
-		scripts/zmwatch.pl.in \
-		scripts/zmx10.pl.in \
-		scripts/zmonvif-probe.pl.in \
-		scripts/zmrecover.pl.in
+USE_RC_SUBR=	${PORTNAME}
 
 CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 		-DZM_CONFIG_DIR=${PREFIX}/etc \
-		-DZM_CONFIG_SUBDIR=${PREFIX}/etc/zoneminder \
+		-DZM_CONFIG_SUBDIR=${ETCDIR} \
 		-DZM_WEBDIR=${WWWDIR} \
 		-DZM_CGIDIR=${WWWDIR}/cgi-bin \
 		-DZM_CONTENTDIR=/var/db/zoneminder \
 		-DZM_MANPAGE_DEST_PREFIX=${PREFIX}/share/man \
 		-DHAVE_SENDFILE=0 \
-		-DZM_NO_CURL=ON \
+		-DZM_NO_CURL=OFF \
 		-DZM_NO_LIBVLC=ON \
 		-DPCRE_LIBRARIES=0 \
 		-DZM_PATH_MAP=/tmp \
 		-DGNUTLS_LIBRARIES=0 \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
+EXTRACT_AFTER_ARGS=	--exclude dep/jwt-cpp \
+			--no-same-owner --no-same-permissions
+
+SUB_FILES=	pkg-message
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+
+OPTIONS_DEFINE=		NLS V4L
+OPTIONS_SUB=		yes
+NLS_USES=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-    EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
+CFLAGS+=	-D__SKIP_GNU
 .endif
 
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-patch:
-# Avoid conflict with C++20 <version> by adding .txt suffix
-	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
-	@${REINPLACE_CMD} -i .c++20 's/"version/&.txt/' \
-		${WRKSRC}/CMakeLists.txt
-
 pre-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/temp
-	${MKDIR} ${STAGEDIR}${WWWDIR}/api/app/tmp
-	${MKDIR} ${STAGEDIR}/var/cache/zoneminder
-	${MKDIR} ${STAGEDIR}/var/db/zoneminder
-	${MKDIR} ${STAGEDIR}/var/db/zoneminder/events
-	${MKDIR} ${STAGEDIR}/var/run/zm
-	${MKDIR} ${STAGEDIR}/var/tmp/zm
-	${MKDIR} ${STAGEDIR}/var/log/zm
+	${MKDIR} ${STAGEDIR}${WWWDIR}/temp \
+		 ${STAGEDIR}${WWWDIR}/api/app/tmp \
+		 ${STAGEDIR}/var/cache/zoneminder \
+		 ${STAGEDIR}/var/db/zoneminder/events \
+		 ${STAGEDIR}/var/log/zm \
+		 ${STAGEDIR}/var/run/zm \
+		 ${STAGEDIR}/var/tmp/zm
 
-post-install: # zmsystemctl.pl is only for systend-based systems
+post-install: # zmsystemctl.pl is only for systemd-based systems
 	@cd ${STAGEDIR}${PREFIX} && \
-		${RM} \
+		${RM} -r \
 			bin/zmsystemctl.pl \
-			share/man/man8/zmsystemctl.pl.8.gz
+			share/man/man8/zmsystemctl.pl.8.gz \
+			cmake \
+			include/* \
+			lib/cmake \
+			lib/libCxxUrl.a
 
 .include <bsd.port.post.mk>

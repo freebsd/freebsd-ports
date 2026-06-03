@@ -1,0 +1,12 @@
+Surge is a high-performance download manager designed for power users.
+It operates as a terminal user interface (TUI), background daemon, or CLI
+tool.
+
+Features include:
+- Parallel downloading with multiple simultaneous connections
+- Pause/resume downloads seamlessly
+- Real-time progress with speed graphs and ETA
+- Auto-retry on connection failures
+- Batch download support
+- Browser extension integration
+- Single-instance design with client/server architecture

@@ -7,6 +7,7 @@ share/icons/hicolor/256x256/apps/ghostwriter.png
 share/icons/hicolor/32x32/apps/ghostwriter.png
 share/icons/hicolor/64x64/apps/ghostwriter.png
 share/icons/hicolor/scalable/apps/ghostwriter.svg
+share/locale/ar/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/ca/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/cs/LC_MESSAGES/ghostwriter_qt.qm
@@ -18,6 +19,7 @@ share/locale/es/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/eu/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/fi/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/fr/LC_MESSAGES/ghostwriter_qt.qm
+share/locale/ga/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/gl/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/he/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/hi/LC_MESSAGES/ghostwriter_qt.qm
@@ -28,6 +30,7 @@ share/locale/ja/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/ka/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/ko/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/lt/LC_MESSAGES/ghostwriter_qt.qm
+share/locale/lv/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/nl/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/pl/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/pt/LC_MESSAGES/ghostwriter_qt.qm
@@ -46,8 +49,10 @@ share/man/es/man1/ghostwriter.1.gz
 share/man/it/man1/ghostwriter.1.gz
 share/man/man1/ghostwriter.1.gz
 share/man/nl/man1/ghostwriter.1.gz
+share/man/pt_BR/man1/ghostwriter.1.gz
 share/man/ru/man1/ghostwriter.1.gz
 share/man/sl/man1/ghostwriter.1.gz
 share/man/sv/man1/ghostwriter.1.gz
+share/man/tr/man1/ghostwriter.1.gz
 share/man/uk/man1/ghostwriter.1.gz
 share/metainfo/org.kde.ghostwriter.metainfo.xml

@@ -2,11 +2,11 @@ PORTNAME=	opendkim
 DISTVERSIONPREFIX=	rel-opendkim-
 DISTVERSION=	2.11.0-Beta2-48
 DISTVERSIONSUFFIX=	-g551ab382
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DKIM library and milter implementation
 WWW=		http://opendkim.org/
 

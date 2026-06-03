@@ -5,7 +5,7 @@ MASTER_SITES=	https://hiawatha.leisink.net/files/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	monitor-${DISTVERSION}
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	Monitoring tool for the Hiawatha web server
 WWW=		https://hiawatha.leisink.net/monitor
 

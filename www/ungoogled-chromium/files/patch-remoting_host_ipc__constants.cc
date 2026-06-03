@@ -1,20 +1,47 @@
---- remoting/host/ipc_constants.cc.orig	2024-11-16 12:20:41 UTC
+--- remoting/host/ipc_constants.cc.orig	2026-05-09 18:09:27 UTC
 +++ remoting/host/ipc_constants.cc
-@@ -17,7 +17,7 @@ namespace remoting {
+@@ -13,7 +13,7 @@
+ #include "mojo/public/cpp/platform/named_platform_channel.h"
+ #include "remoting/base/username.h"
  
- namespace {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/nix/xdg_util.h"
+ #include "remoting/base/file_path_util_linux.h"
+ #endif
+@@ -46,7 +46,7 @@ constexpr char kAgentProcessBrokerIpcName[] =
+ 
+ #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  
  #if !defined(NDEBUG)
- // Use a different IPC name for debug builds so that we can run the host
-@@ -81,7 +81,7 @@ GetChromotingHostServicesServerName() {
-   static const base::NoDestructor<mojo::NamedPlatformChannel::ServerName>
-       server_name(
-           named_mojo_ipc_server::WorkingDirectoryIndependentServerNameFromUTF8(
+ constexpr char kLoginSessionReporterIpcName[] =
+@@ -63,7 +63,7 @@ constexpr char kLoginSessionServerIpcName[] =
+ #endif
+ 
+ mojo::NamedPlatformChannel::ServerName GetServerName(std::string_view name) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-               // Linux host creates the socket file in /tmp, and it won't be
-               // deleted until reboot, so we put username in the path in case
-               // the user switches the host owner.
+   return GetVarLibDir().Append(name).value();
+ #else
+   return mojo::NamedPlatformChannel::ServerNameFromUTF8(name);
+@@ -105,7 +105,7 @@ GetChromotingHostServicesServerName() {
+   return *server_name;
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ const mojo::NamedPlatformChannel::ServerName&
+ GetLegacyChromotingHostServicesServerName() {
+   static const base::NoDestructor<mojo::NamedPlatformChannel::ServerName>
+@@ -137,7 +137,7 @@ GetAgentProcessBrokerServerName() {
+ 
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ 
+ const char kLoginSessionReporterMessagePipeId[] = "login-session-reporter";
+ 

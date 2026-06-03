@@ -1,0 +1,8 @@
+Client library and SDK for the Qdrant vector search engine.
+
+Library contains type definitions for all Qdrant API and allows to make both
+Sync and Async requests.
+
+Client allows calls for all Qdrant API methods directly. It also provides some
+additional helper methods for frequently required operations, e.g. initial
+collection uploading.

@@ -1,0 +1,5 @@
+bin/zoraxy
+@dir etc/zoraxy
+@dir /var/db/zoraxy
+@dir share/zoraxy/plugins
+@dir share/zoraxy/www

@@ -24,7 +24,7 @@ GL_ACCOUNT=	accounts-sso
 GL_TAGNAME=	7f9f10a2e7533b74eaf027b26de48818326a1dcf
 CFLAGS+=	-Wno-error
 
-CONFIGURE_ARGS=	-Dtests=false
+MESON_ARGS=	-Dtests=false
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes

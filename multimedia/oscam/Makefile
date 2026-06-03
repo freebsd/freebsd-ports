@@ -26,12 +26,6 @@ MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-ef7f844
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mmips*}
-USE_GCC=	yes
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Distribution/oscam ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1/
@@ -41,4 +35,4 @@ do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/Distribution/doc/example/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

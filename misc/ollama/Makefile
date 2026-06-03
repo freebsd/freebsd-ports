@@ -1,7 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.6
-PORTREVISION=	5
+DISTVERSION=	0.24.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,49 +11,159 @@ WWW=		https://ollama.com \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	bundled patched llama-cpp is placed into the arch-specific path
+BROKEN_i386=	fails to compile: x/mlxrunner/mlx/memory.go:40:11: 1 << (4 * 10) (untyped int constant 1099511627776) overflows int
 
 BUILD_DEPENDS=	bash:shells/bash \
-		cmake:devel/cmake-core \
-		glslc:graphics/shaderc \
-		vulkan-headers>0:graphics/vulkan-headers
-LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+		${LOCALBASE}/include/miniaudio/miniaudio.h:audio/miniaudio \
+		${LOCALBASE}/include/nlohmann/json_fwd.hpp:devel/nlohmann-json \
+		${LOCALBASE}/include/stb/stb_image.h:devel/stb \
+		patchelf:sysutils/patchelf
 
-USES=		go:1.22,modules pkgconfig
+USES=		cmake:indirect go:1.26+,modules localbase pkgconfig
+USE_RC_SUBR=	ollama
 
-CONFLICTS_BUILD=	llama-cpp
-
-GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
+GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
+GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
-USE_GITHUB=	nodefault
-GH_TUPLE=	ggerganov:llama.cpp:1e6f6554aa11fa10160a5fda689e736c3c34169f:llama_cpp/llm/llama.cpp \
-		blabber:go-freebsd-sysctl:503969f:go_sysctl/vendor.x/github.com/blabber/go-freebsd-sysctl
-
-MAKE_ENV=	PATH=${PATH}:${WRKSRC}/llm/build/bsd/x86_64_static/bin # workaround to find vulkan-shaders-gen
+MLX_CORE_VERSION=	0.31.2
+MLX_C_VERSION=		fba4470b89073180056c9ea46c443051375f7399
+JSON_VERSION=		3.11.3
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/ollama-limit-gpu-layers
 
-post-patch: # workaround for https://github.com/ollama/ollama/issues/6259 (use of extenral libllama.so)
-	@${REINPLACE_CMD} \
-		-e '\
-			s| llama | llama ${LOCALBASE}/lib/libvulkan.so omp pthread |; \
-			s| llama | ${WRKSRC}/llm/build/bsd/x86_64_static/src/libllama.a |; \
-			s| ggml | ${WRKSRC}/llm/build/bsd/x86_64_static/ggml/src/libggml.a |; \
-		' \
-		${WRKSRC}/llm/ext_server/CMakeLists.txt
-	# move vendor.x to vendor
-	@(cd ${WRKSRC}/vendor.x && ${TAR} cf - .) | (cd ${WRKSRC}/vendor && ${TAR} xf -)
+XARCH!=		uname -p
 
-pre-build:
-	@${CP} ${WRKSRC}/app/store/store_linux.go ${WRKSRC}/app/store/store_bsd.go
-	@cd ${GO_WRKSRC} && \
-		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} generate ${GO_BUILDFLAGS} \
-			./...
+OPTIONS_GROUP=		BACKENDS
+OPTIONS_GROUP_BACKENDS=	CPU VULKAN MLX
+OPTIONS_DEFAULT=	CPU VULKAN MLX
+
+CPU_DESC=		Build CPU backend shared libraries for various SIMD instruction sets
+CPU_PLIST_FILES=	lib/ollama/libggml-base.so \
+			lib/ollama/libggml-base.so.0
+.if ${XARCH} == "amd64" || ${XARCH} == "i386"
+CPU_PLIST_FILES+=	lib/ollama/libggml-cpu-alderlake.so \
+			lib/ollama/libggml-cpu-haswell.so \
+			lib/ollama/libggml-cpu-icelake.so \
+			lib/ollama/libggml-cpu-sandybridge.so \
+			lib/ollama/libggml-cpu-skylakex.so \
+			lib/ollama/libggml-cpu-sse42.so \
+			lib/ollama/libggml-cpu-x64.so
+.endif
+
+VULKAN_DESC=		Build Vulkan GPU backend shared library
+VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
+			${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+VULKAN_PLIST_FILES=	lib/ollama/vulkan/libggml-vulkan.so
+
+MLX_DESC=		Build MLX backend for image generation (CPU)
+MLX_BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/fmt/fmt-config.cmake:devel/libfmt
+MLX_LIB_DEPENDS=	libopenblas.so:math/openblas
+MLX_PLIST_FILES=	lib/ollama/libmlx.so \
+			lib/ollama/libmlxc.so
+_CMAKE_FLAGS=	-DCMAKE_BUILD_TYPE=Release -DGGML_BACKEND_DL=ON -DGGML_BACKEND_DIR=${PREFIX}/lib/ollama
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMLX}
+GO_BUILDFLAGS+=	-tags mlx
+DISTFILES+=	v${MLX_CORE_VERSION}.tar.gz:mlxsrc \
+		${MLX_C_VERSION}.tar.gz:mlxcsrc \
+		json.tar.xz:jsonsrc
+MASTER_SITES+=	https://github.com/ml-explore/mlx/archive/refs/tags/:mlxsrc \
+		https://github.com/ml-explore/mlx-c/archive/:mlxcsrc \
+		https://github.com/nlohmann/json/releases/download/v${JSON_VERSION}/:jsonsrc
+.endif
+
+CONFLICTS_BUILD=	ggml
+
+post-patch:
+	# update version in go.mod and version.go
+	@${REINPLACE_CMD} -e 's|var Version string = "0.0.0"|var Version string = "${PORTVERSION}"|g' \
+		${WRKSRC}/go.mod ${WRKSRC}/version/version.go
+
+pre-build-CPU-on:
+	@${MKDIR} ${WRKSRC}/build && \
+		cd ${WRKSRC}/build && \
+		${CMAKE_BIN} ${_CMAKE_FLAGS} .. && \
+		${MAKE_CMD} ggml-base && \
+		${MAKE_CMD} ggml-cpu
+
+pre-build-VULKAN-on:
+.if !${PORT_OPTIONS:MCPU} && !${PORT_OPTIONS:MMLX}
+	@${MKDIR} ${WRKSRC}/build && \
+		cd ${WRKSRC}/build && \
+		${CMAKE_BIN} ${_CMAKE_FLAGS} ..
+.endif
+	@cd ${WRKSRC}/build && \
+		${MAKE_CMD} ggml-vulkan
+
+post-patch-MLX-on:
+	# FreeBSD compatibility fix: netinet/in.h (defines IPPROTO_TCP) is not
+	# pulled in transitively by netinet/tcp.h on FreeBSD as it is on Linux.
+	@${AWK} '/^#include <netinet\/tcp.h>/{print "#include <netinet/in.h>";print;next}1' \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/distributed/ring/ring.cpp > \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/distributed/ring/ring.cpp.new && \
+		${MV} ${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/distributed/ring/ring.cpp.new \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/distributed/ring/ring.cpp
+	# FreeBSD memory size fix: add hw.physmem sysctl query so MLX sets its
+	# memory_limit from actual RAM instead of using the 8 GB hardcoded fallback.
+	${INSTALL_DATA} ${FILESDIR}/freebsd_memory.h \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/freebsd_memory.h
+	@${AWK} '/^#elif defined\(__linux__\)/{print "#elif defined(__FreeBSD__)";print "#include \"mlx/backend/no_gpu/freebsd_memory.h\"";print;next}1' \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp > \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp.new && \
+		${MV} ${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp.new \
+		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp
+
+pre-build-MLX-on:
+	@${MKDIR} ${WRKSRC}/build && \
+		cd ${WRKSRC}/build && \
+		OLLAMA_MLX_SOURCE=${WRKDIR}/mlx-${MLX_CORE_VERSION} \
+		OLLAMA_MLX_C_SOURCE=${WRKDIR}/mlx-c-${MLX_C_VERSION} \
+		${CMAKE_BIN} ${_CMAKE_FLAGS} \
+		-DMLX_ENGINE:BOOL=ON \
+		-DFETCHCONTENT_FULLY_DISCONNECTED:BOOL=ON \
+		-DFETCHCONTENT_SOURCE_DIR_JSON:PATH=${WRKDIR}/json \
+		-DUSE_SYSTEM_FMT:BOOL=ON \
+		-DMLX_BUILD_TESTS:BOOL=OFF \
+		-DMLX_BUILD_EXAMPLES:BOOL=OFF \
+		..
+	@cd ${WRKSRC}/build && \
+		${MAKE_CMD} mlx mlxc
 
 post-install: # pending https://github.com/ollama/ollama/issues/6407
 	${INSTALL_SCRIPT} ${FILESDIR}/ollama-limit-gpu-layers ${STAGEDIR}${PREFIX}/bin
+
+post-install-CPU-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ollama
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libggml-base.so \
+		${STAGEDIR}${PREFIX}/lib/ollama/
+	# Create the SONAME symlink so that libggml-vulkan.so and libggml-cpu-*.so
+	# can resolve their NEEDED libggml-base.so.0 dependency via dlopen
+	${LN} -sf libggml-base.so ${STAGEDIR}${PREFIX}/lib/ollama/libggml-base.so.0
+	@for f in ${WRKSRC}/build/lib/ollama/libggml-cpu*.so; do \
+		${INSTALL_LIB} $$f ${STAGEDIR}${PREFIX}/lib/ollama/; \
+	done
+
+post-install-VULKAN-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ollama/vulkan
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libggml-vulkan.so \
+		${STAGEDIR}${PREFIX}/lib/ollama/vulkan/
+
+post-install-MLX-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ollama
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libmlx.so \
+		${STAGEDIR}${PREFIX}/lib/ollama/
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libmlxc.so \
+		${STAGEDIR}${PREFIX}/lib/ollama/
+	patchelf --set-rpath '$$ORIGIN' ${STAGEDIR}${PREFIX}/lib/ollama/libmlx.so
+	patchelf --set-rpath '$$ORIGIN' ${STAGEDIR}${PREFIX}/lib/ollama/libmlxc.so
+
+do-test:
+	@cd ${WRKSRC} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ./...
 
 .include <bsd.port.mk>

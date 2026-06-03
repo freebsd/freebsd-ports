@@ -1,6 +1,7 @@
 PORTNAME=	mopac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.1.2
+DISTVERSION=	23.2.5
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science # chemistry
 
@@ -12,7 +13,7 @@ WWW=		http://openmopac.net \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		blaslapack:openblas cmake:testing fortran python:test
 USE_LDCONFIG=	yes
@@ -32,5 +33,7 @@ PLIST_FILES=	bin/mopac \
 		lib/libmopac.so.2
 
 # tests as of 23.1.2: 100% tests passed, 0 tests failed out of 125
+# tests as of 23.2.2: 99% tests passed, 1 tests failed out of 125, see https://github.com/openmopac/mopac/issues/302
+# tests as of 23.2.5: 99% tests passed, 1 tests failed out of 125, 1 failure is safe to ignore
 
 .include <bsd.port.mk>

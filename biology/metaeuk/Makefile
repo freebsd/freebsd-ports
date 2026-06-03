@@ -10,7 +10,7 @@ WWW=		https://github.com/soedinglab/metaeuk
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # 32-bit platforms produce wrong results based on https://github.com/soedinglab/metaeuk/issues/85#issuecomment-1888379107
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc # 32-bit platforms produce wrong results based on https://github.com/soedinglab/metaeuk/issues/85#issuecomment-1888379107
 NOT_FOR_ARCHS+=	powerpc64 # many modules produce wrong results on big-endian architectures
 
 BUILD_DEPENDS=	xxd:editors/vim

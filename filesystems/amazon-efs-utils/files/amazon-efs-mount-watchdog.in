@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: amazon_efs_mount_watchdog
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# amazon_efs_mount_watchdog_enable (bool):	Set to NO by default.
+#						Set it to YES to enable the watchdog.
+
+. /etc/rc.subr
+
+name=amazon_efs_mount_watchdog
+rcvar=amazon_efs_mount_watchdog_enable
+desc="Amazon EFS mount watchdog"
+
+load_rc_config $name
+
+: ${amazon_efs_mount_watchdog_enable:=NO}
+
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+command_args="-c -f -P ${pidfile} -t ${name} -H \
+	%%PREFIX%%/sbin/amazon-efs-mount-watchdog"
+
+run_rc_command "$1"

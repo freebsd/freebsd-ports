@@ -1,5 +1,5 @@
 PORTNAME=	tinycols
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.6
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -29,5 +29,16 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/tinycols ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/tinycols.6 ${STAGEDIR}${PREFIX}/share/man/man6/
+
+do-test:
+	${MKDIR} ${WRKSRC}/build
+	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/build/test_tinycols \
+	    ${WRKSRC}/lib/*.c ${WRKSRC}/tests/test_tinycols.c ${WRKSRC}/src/tinycols/*.c \
+	    ${LIBS}
+	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/build/test_queue \
+	    ${WRKSRC}/lib/*.c ${WRKSRC}/tests/test_queue.c ${WRKSRC}/src/tinycols/*.c \
+	    ${WRKSRC}/src/queue.c ${LIBS}
+	${WRKSRC}/build/test_tinycols
+	${WRKSRC}/build/test_queue
 
 .include <bsd.port.mk>

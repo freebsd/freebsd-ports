@@ -1,0 +1,15 @@
+TIMESTAMP = 1767969842
+SHA256 (pranshuparmar-witr-v0.2.2_GH0.tar.gz) = cf67ed8a12649d7921dcb4da6c4765f79577eac1f84405db14f802ecbce719b1
+SIZE (pranshuparmar-witr-v0.2.2_GH0.tar.gz) = 310018
+SHA256 (cpuguy83-go-md2man-v2.0.7_GH0.tar.gz) = ca3a5b57e2c01759f5a00ad2a578d034c5370fae9aa7a6c3af5648b2fc802a92
+SIZE (cpuguy83-go-md2man-v2.0.7_GH0.tar.gz) = 11337
+SHA256 (inconshreveable-mousetrap-v1.1.0_GH0.tar.gz) = ab23e7c5cbf42564eb0190ee051b7217c04fd2599d2f26e9ebe205db75963141
+SIZE (inconshreveable-mousetrap-v1.1.0_GH0.tar.gz) = 5338
+SHA256 (russross-blackfriday-v2.1.0_GH0.tar.gz) = a13af0fc5305713f5154693feaf654d024689efea76390091a5e8c757335b4f4
+SIZE (russross-blackfriday-v2.1.0_GH0.tar.gz) = 92896
+SHA256 (spf13-cobra-v1.10.2_GH0.tar.gz) = 8ee67b82ddb730f6ed639724d19ddd874be36b65da45529ad5cacce53c310704
+SIZE (spf13-cobra-v1.10.2_GH0.tar.gz) = 201437
+SHA256 (spf13-pflag-v1.0.10_GH0.tar.gz) = 3d69f6fc641f43f3cb7bc309d083da7ca2110d11c0bbcec5d4c01036e884014f
+SIZE (spf13-pflag-v1.0.10_GH0.tar.gz) = 63154
+SHA256 (yaml-go-yaml-v3.0.4_GH0.tar.gz) = 1b3eeb663eb0c09b462dc3383fccc99164fab8f6818a7046336f2fe2c45c764b
+SIZE (yaml-go-yaml-v3.0.4_GH0.tar.gz) = 92661

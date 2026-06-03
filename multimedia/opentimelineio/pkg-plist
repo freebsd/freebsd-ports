@@ -1,4 +1,5 @@
 include/opentime/errorStatus.h
+include/opentime/export.h
 include/opentime/rationalTime.h
 include/opentime/stringPrintf.h
 include/opentime/timeRange.h
@@ -7,12 +8,14 @@ include/opentime/version.h
 include/opentimelineio/anyDictionary.h
 include/opentimelineio/anyVector.h
 include/opentimelineio/clip.h
+include/opentimelineio/color.h
 include/opentimelineio/composable.h
 include/opentimelineio/composition.h
 include/opentimelineio/deserialization.h
 include/opentimelineio/editAlgorithm.h
 include/opentimelineio/effect.h
 include/opentimelineio/errorStatus.h
+include/opentimelineio/export.h
 include/opentimelineio/externalReference.h
 include/opentimelineio/freezeFrame.h
 include/opentimelineio/gap.h
@@ -40,7 +43,11 @@ include/opentimelineio/unknownSchema.h
 include/opentimelineio/vectorIndexing.h
 include/opentimelineio/version.h
 lib/libopentime.so
+lib/libopentime.so.0.18.0
+lib/libopentime.so.18
 lib/libopentimelineio.so
+lib/libopentimelineio.so.0.18.0
+lib/libopentimelineio.so.18
 share/opentime/OpenTimeConfig.cmake
 share/opentime/OpenTimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/opentime/OpenTimeTargets.cmake

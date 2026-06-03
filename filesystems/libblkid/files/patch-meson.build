@@ -1,14 +1,5 @@
 --- meson.build.orig	2025-06-24 07:55:28 UTC
 +++ meson.build
-@@ -861,7 +861,7 @@ conf.set('HAVE_DECL_VMADDR_CID_LOCAL', have ? 1 : fals
-                             prefix : '#include <sys/socket.h>')
- conf.set('HAVE_DECL_VMADDR_CID_LOCAL', have ? 1 : false)
- 
--build_plymouth_support = (not build_plymouth_support.disabled() and 
-+build_plymouth_support = (not build_plymouth_support.disabled() and
-                           have_tiocglcktrmios and
-                           have_sock_cloexec and
-                           have_sock_nonblock and
 @@ -1868,14 +1868,7 @@ endif
    bashcompletions += ['zramctl']
  endif

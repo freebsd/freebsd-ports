@@ -1,18 +1,17 @@
 PORTNAME=	font-bh-ttf
-PORTVERSION=	1.0.3
-PORTREVISION=	5
+DISTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org Bigelow & Holmes TTF font
-WWW=		https://www.x.org/
+COMMENT=	X.Org Bigelow & Holmes Luxi TrueType font
+WWW=		https://gitlab.freedesktop.org/xorg/font/bh-ttf
 
 LICENSE=	LUXI
 LICENSE_NAME=	License of Luxi fonts
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		xorg-cat:font
+USES=		tar:xz xorg-cat:font
 
 NO_ARCH=	yes
 

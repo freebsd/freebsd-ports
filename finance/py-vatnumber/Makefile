@@ -16,4 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdnum>=1.1:devel/py-stdnum@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

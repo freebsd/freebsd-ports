@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NGINX configurations converter into JSON and back
 WWW=		https://github.com/nginxinc/crossplane
 

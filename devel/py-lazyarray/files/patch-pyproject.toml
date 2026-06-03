@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-18 00:52:02 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@ requires-python = ">=3.10"
+ description = "A Python package that provides a lazily-evaluated numerical array class, larray, based on and compatible with NumPy arrays."
+ readme = "README.rst"
+ requires-python = ">=3.10"
+-license = "BSD-3-Clause"
++license = {text="BSD-3-Clause"}
+ authors = [
+   {name = "Andrew P. Davison", email = "andrew.davison@cnrs.fr"}
+ ]

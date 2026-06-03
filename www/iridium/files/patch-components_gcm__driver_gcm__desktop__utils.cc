@@ -1,4 +1,4 @@
---- components/gcm_driver/gcm_desktop_utils.cc.orig	2025-05-07 06:48:23 UTC
+--- components/gcm_driver/gcm_desktop_utils.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/gcm_driver/gcm_desktop_utils.cc
 @@ -32,7 +32,7 @@ GCMClient::ChromePlatform GetPlatform() {
    return GCMClient::PLATFORM_ANDROID;

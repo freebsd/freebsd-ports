@@ -1,5 +1,8 @@
 PORTNAME=	data
-DISTVERSION=	1.9.5.9-1
+DISTVERSION=	1.9.7.0-4
+_DATA_VER=	${DISTVERSION:R}
+_SOUND_VER=	1.9.6.1
+_MUSIC_VER=	1.9.5.9
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/raduprv/Eternal-Lands/releases/download/${DISTVERSION}/
@@ -18,34 +21,28 @@ DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}data
-EL_DATA=	eternallands-data_${DISTVERSION}${EXTRACT_SUFX}
+EL_DATA=	eternallands-data_${_DATA_VER}${EXTRACT_SUFX}
 
 PORTDATA=	*
 
 OPTIONS_DEFINE=	ELSOUND ELMUSIC
 OPTIONS_DEFAULT=	ELSOUND ELMUSIC
 ELSOUND_DESC=	Install additional sound files
+ELSOUND_DISTFILES=	eternallands-sound_${_SOUND_VER}${EXTRACT_SUFX}
 ELMUSIC_DESC=	Install additional music files
+ELMUSIC_DISTFILES=	eternallands-music_${_MUSIC_VER}${EXTRACT_SUFX}
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MELSOUND}
-DISTFILES+=	eternallands-sound_${DISTVERSION:S/-1//}${EXTRACT_SUFX}
-.endif
-
-.if ${PORT_OPTIONS:MELMUSIC}
-DISTFILES+=	eternallands-music_${DISTVERSION:S/-1//}${EXTRACT_SUFX}
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKDIR}
 .if ${PORT_OPTIONS:MELSOUND}
-	@${UNZIP_CMD} -q ${_DISTDIR}/eternallands-sound_${DISTVERSION:S/-1//}${EXTRACT_SUFX} -d ${WRKSRC}
+	@${UNZIP_CMD} -q ${_DISTDIR}/eternallands-sound_${_SOUND_VER}${EXTRACT_SUFX} -d ${WRKSRC}
 .endif
 .if ${PORT_OPTIONS:MELMUSIC}
 	@${MKDIR} ${WRKSRC}/music
-	@${UNZIP_CMD} -q ${_DISTDIR}/eternallands-music_${DISTVERSION:S/-1//}${EXTRACT_SUFX} -d ${WRKSRC}/music
+	@${UNZIP_CMD} -q ${_DISTDIR}/eternallands-music_${_MUSIC_VER}${EXTRACT_SUFX} -d ${WRKSRC}/music
 .endif
 
 post-extract:

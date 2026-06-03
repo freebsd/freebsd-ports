@@ -1,5 +1,5 @@
 PORTNAME=	chef-vault
-PORTVERSION=	4.1.11
+PORTVERSION=	4.2.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/chef/chef-vault
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-syslog>=0.3<1:devel/rubygem-syslog
 
 USES=		gem
 

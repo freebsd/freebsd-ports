@@ -1,9 +1,9 @@
 PORTNAME=	jpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	lang
 
-MAINTAINER=	hsw@bitmark.com
+MAINTAINER=	bsd.hsw@gmail.com
 COMMENT=	Janet Project Manager tool
 WWW=		https://github.com/janet-lang/jpm
 
@@ -11,15 +11,19 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	janet>=1.17.2:lang/janet
+RUN_DEPENDS=	janet>=1.17.2:lang/janet \
+		git:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	janet-lang
-NO_BUILD=	yes
 
 # JANET_* might interfere with the install
 MAKE_ENV=	-uJANET_MODPATH \
 		-uJANET_PATH \
 		DESTDIR=${STAGEDIR}
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -37,5 +41,8 @@ do-install:
 # XXX: Something always creates /usr/local/lib/janet ?
 	@${RMDIR} ${STAGEDIR}/usr/local/lib/janet
 .endif
+
+do-test:
+	cd ${WRKSRC} && janet test/installtest.janet
 
 .include <bsd.port.post.mk>

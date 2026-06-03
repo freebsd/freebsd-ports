@@ -1,0 +1,4 @@
+JavaCPP provides efficient access to native C++ inside Java, not unlike the way
+some C/C++ compilers interact with assembly language. No need to invent new
+languages. Instead, similar to what cppyy strives to do for Python, it exploits
+the syntactic and semantic similarities between Java and C++.

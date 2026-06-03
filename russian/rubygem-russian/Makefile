@@ -1,5 +1,5 @@
 PORTNAME=	russian
-PORTVERSION=	0.6.0
+PORTVERSION=	1.0.0
 CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/yaroslav/russian
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-i18n>=0.5.0,2:devel/rubygem-i18n
+RUN_DEPENDS=	rubygem-i18n>=1.14.8,2<2,2:devel/rubygem-i18n
 
 USES=		gem
 

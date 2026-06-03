@@ -1,5 +1,5 @@
---- core/Apple/StringDocumentHandler.hxx.orig	2025-07-21 00:30:34.163412000 +0000
-+++ core/Apple/StringDocumentHandler.hxx	2025-07-21 03:02:42.802399000 +0000
+--- core/Apple/StringDocumentHandler.hxx.orig	2025-08-08 19:00:43 UTC
++++ core/Apple/StringDocumentHandler.hxx
 @@ -0,0 +1,154 @@
 +/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 +/* writerperfect

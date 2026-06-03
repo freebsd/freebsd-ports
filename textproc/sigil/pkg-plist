@@ -82,6 +82,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/python3lib/functionrep.py
 %%DATADIR%%/python3lib/functionsearch.py
 %%DATADIR%%/python3lib/gencheck.py
+%%DATADIR%%/python3lib/getcodepointname.py
 %%DATADIR%%/python3lib/metadata_utils.py
 %%DATADIR%%/python3lib/metaproc2.py
 %%DATADIR%%/python3lib/metaproc3.py
@@ -295,6 +296,8 @@ share/pixmaps/sigil.png
 %%DATADIR%%/python3lib/xmlprocessor.py
 %%DATADIR%%/python3lib/xmlsanitycheck.py
 %%DATADIR%%/translations/sigil_ar.qm
+%%DATADIR%%/translations/sigil_ca.qm
+%%DATADIR%%/translations/sigil_cs.qm
 %%DATADIR%%/translations/sigil_de.qm
 %%DATADIR%%/translations/sigil_en.qm
 %%DATADIR%%/translations/sigil_es.qm

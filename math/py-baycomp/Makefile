@@ -1,6 +1,6 @@
 PORTNAME=	baycomp
 DISTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://github.com/janezd/baycomp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.19.1:science/py-scipy@${PY_FLAVOR}
 #RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pystan>=3.4.0:math/py-pystan@${PY_FLAVOR}

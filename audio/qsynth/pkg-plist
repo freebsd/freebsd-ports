@@ -11,5 +11,6 @@ share/metainfo/org.rncbc.qsynth.metainfo.xml
 %%DATADIR%%/translations/qsynth_de.qm
 %%DATADIR%%/translations/qsynth_es.qm
 %%DATADIR%%/translations/qsynth_fr.qm
+%%DATADIR%%/translations/qsynth_ka.qm
 %%DATADIR%%/translations/qsynth_ru.qm
 %%DATADIR%%/translations/qsynth_sr.qm

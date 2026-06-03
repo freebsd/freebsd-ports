@@ -4,7 +4,7 @@
  
  static RecursiveMutex pmtxLog;
  
-+const string LOGPATH("/var/log/aprsd/");
++const string LOGPATH("%%LOGPATH%%");
  
  int WriteLog(const string& sp, const string& LogFile)
  {

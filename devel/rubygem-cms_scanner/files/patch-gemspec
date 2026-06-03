@@ -1,8 +1,11 @@
---- cms_scanner.gemspec.orig	2024-07-02 14:43:22 UTC
+--- cms_scanner.gemspec.orig	2025-10-07 17:17:42 UTC
 +++ cms_scanner.gemspec
-@@ -22,9 +22,9 @@ Gem::Specification.new do |s|
+@@ -20,11 +20,11 @@ Gem::Specification.new do |s|
  
-   s.add_runtime_dependency(%q<ethon>.freeze, [">= 0.14".freeze, "< 0.17".freeze])
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<ethon>.freeze, [">= 0.14".freeze, "< 0.17".freeze])
++  s.add_runtime_dependency(%q<ethon>.freeze, [">= 0.14".freeze])
    s.add_runtime_dependency(%q<get_process_mem>.freeze, ["~> 0.2.5".freeze])
 -  s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.11.4".freeze, "< 1.16.0".freeze])
 +  s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.11.4".freeze])

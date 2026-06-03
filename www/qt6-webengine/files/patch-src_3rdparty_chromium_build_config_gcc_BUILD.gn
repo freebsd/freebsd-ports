@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/build/config/gcc/BUILD.gn.orig	2026-02-26 14:39:03 UTC
++++ src/3rdparty/chromium/build/config/gcc/BUILD.gn
+@@ -33,7 +33,7 @@ config("symbol_visibility_hidden") {
+ # See http://gcc.gnu.org/wiki/Visibility
+ config("symbol_visibility_hidden") {
+   cflags = [ "-fvisibility=hidden" ]
+-  if (enable_tetanus) {
++  if (enable_tetanus && !is_bsd) {
+     rustflags = [ "-Zdefault-visibility=hidden" ]
+   }
+ 

@@ -1,6 +1,6 @@
---- content/child/child_process.cc.orig	2025-04-04 08:52:13 UTC
+--- content/child/child_process.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/child/child_process.cc
-@@ -31,7 +31,7 @@
+@@ -36,7 +36,7 @@
  #include "content/common/android/cpu_time_metrics.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/child/sandboxed_process_thread_type_handler.h"
  #endif
  
-@@ -177,7 +177,7 @@ void ChildProcess::set_main_thread(ChildThreadImpl* th
+@@ -204,7 +204,7 @@ void ChildProcess::set_main_thread(ChildThreadImpl* th
    main_thread_.reset(thread);
  }
  

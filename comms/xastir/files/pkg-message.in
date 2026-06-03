@@ -3,7 +3,7 @@
   message: <<EOM
 Xastir is now installed.
 
-Hop on over to http://www.xastir.org/ for details on getting
+Hop on over to https://github.com/Xastir/Xastir/wiki for details on getting
 maps and for more information on using Xastir.
 
 Your map directory is %%PREFIX%%/share/xastir/maps

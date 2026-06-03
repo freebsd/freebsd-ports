@@ -19,7 +19,7 @@ USES=		autoreconf libtool mysql ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
-CPPFLAGS+=	`net-snmp-config --cflags`
+CPPFLAGS+=	`net-snmp-config --cflags` -Wno-error=declaration-after-statement
 LDFLAGS+=	`net-snmp-config --libs` -lexecinfo
 
 CONFLICTS_INSTALL=	cacti88

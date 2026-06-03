@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# PROVIDE: zoraxy
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="zoraxy"
+rcvar="zoraxy_enable"
+
+load_rc_config $name
+
+: ${zoraxy_enable:="NO"}
+: ${zoraxy_user:="zoraxy"}
+: ${zoraxy_group:="zoraxy"}
+: ${zoraxy_port:=":8000"}
+: ${zoraxy_conf:="%%PREFIX%%/etc/zoraxy"}
+: ${zoraxy_dbdir:="/var/db/zoraxy"}
+: ${zoraxy_plugindir:="%%PREFIX%%/share/zoraxy/plugins"}
+: ${zoraxy_webroot:="%%PREFIX%%/share/zoraxy/www"}
+: ${zoraxy_flags:=""}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/zoraxy"
+
+required_files="${procname}"
+
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_poststop"
+status_cmd="${name}_status"
+
+zoraxy_prestart()
+{
+	install -d -o "${zoraxy_user}" -g "${zoraxy_group}" "${zoraxy_conf}"
+	install -d -o "${zoraxy_user}" -g "${zoraxy_group}" "${zoraxy_dbdir}"
+	install -d -o "${zoraxy_user}" -g "${zoraxy_group}" "${zoraxy_plugindir}"
+	install -d -o "${zoraxy_user}" -g "${zoraxy_group}" "${zoraxy_webroot}"
+
+	if [ ! -f "${zoraxy_dbdir}/sys.uuid" ]; then
+		/usr/bin/uuidgen > "${zoraxy_dbdir}/sys.uuid"
+		chown "${zoraxy_user}:${zoraxy_group}" "${zoraxy_dbdir}/sys.uuid"
+		chmod 0644 "${zoraxy_dbdir}/sys.uuid"
+	fi
+}
+
+zoraxy_start()
+{
+	echo "Starting ${name}."
+	${command} -f -p "${pidfile}" -u "${zoraxy_user}" \
+		/usr/bin/env HOME="${zoraxy_dbdir}" \
+		/bin/sh -c "cd '${zoraxy_dbdir}' && exec '${procname}' -port='${zoraxy_port}' ${zoraxy_flags}"
+}
+
+zoraxy_poststop()
+{
+	rm -f "${pidfile}"
+}
+
+zoraxy_status()
+{
+	if [ -f "${pidfile}" ] && /bin/kill -0 "$(cat "${pidfile}")" 2>/dev/null; then
+		echo "${name} is running as pid $(cat "${pidfile}")."
+		return 0
+	fi
+
+	echo "${name} is not running."
+	return 1
+}
+
+start_cmd="${name}_start"
+
+run_rc_command "$1"

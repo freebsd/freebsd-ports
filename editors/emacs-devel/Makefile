@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	31.0.50.20250716
+DISTVERSION=	32.0.50.20260601
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	e450a7802c5
+GH_TAGNAME=	75d8e5773de
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -63,7 +63,7 @@ CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
 
 CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
 
-SUB_FILES=	pkg-message sources.el
+SUB_FILES=	default.el pkg-message site-start.el
 SUB_LIST=	EMACS_VER=${DISTVERSION:R} \
 		NATIVECOMP_COMMENT_END=${NATIVECOMP_COMMENT_END} \
 		NATIVECOMP_COMMENT_START=${NATIVECOMP_COMMENT_START}
@@ -88,9 +88,6 @@ OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
 				HARFBUZZ JPEG KQUEUE LCMS2 MAILUTILS MODULES \
 				NATIVECOMP OSS PGTK PNG SCROLLBARS SOURCES \
 				SQLITE3 SVG THREADS TIFF TREESITTER WEBP XML
-OPTIONS_EXCLUDE_powerpc=	NATIVECOMP
-OPTIONS_EXCLUDE_powerpc64=	NATIVECOMP
-OPTIONS_EXCLUDE_powerpc64le=	NATIVECOMP
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
@@ -104,6 +101,9 @@ OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
 				XIM XPM XWIDGETS
 .endif
 OPTIONS_EXCLUDE_armv7=		NATIVECOMP
+OPTIONS_EXCLUDE_powerpc=	NATIVECOMP
+OPTIONS_EXCLUDE_powerpc64=	NATIVECOMP
+OPTIONS_EXCLUDE_powerpc64le=	NATIVECOMP
 OPTIONS_SUB=			YES
 
 ACL_DESC=		Access control list support
@@ -178,7 +178,7 @@ MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 MODULES_CONFIGURE_WITH=		modules
 MOTIF_USES=			motif
 MOTIF_CONFIGURE_ON=		--with-x-toolkit=motif
-NATIVECOMP_USE=			GCC=yes
+NATIVECOMP_USE=			GCC=13
 NATIVECOMP_CONFIGURE_WITH=	native-compilation=aot
 OSS_CONFIGURE_ON=		--with-sound=oss
 OTF_LIB_DEPENDS=		libotf.so:print/libotf
@@ -273,6 +273,7 @@ pre-configure:
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} libexec/emacs/${DISTVERSION:R}/${CONFIGURE_TARGET}/ -name emacs-*.pdmp >> ${TMPPLIST})
+	${INSTALL_DATA} ${WRKDIR}/default.el ${WRKDIR}/site-start.el ${STAGEDIR}${DATADIR}/site-lisp/
 
 post-install-MAILUTILS-on:
 	${LN} -sf ${PREFIX}/bin/movemail \
@@ -287,6 +288,5 @@ post-install-NATIVECOMP-on:
 post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${DISTVERSION:R}/src
 	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${DISTVERSION:R}/src
-	${INSTALL_DATA} ${WRKDIR}/sources.el ${STAGEDIR}${DATADIR}/${DISTVERSION:R}/site-lisp/site-start.el
 
 .include <bsd.port.mk>

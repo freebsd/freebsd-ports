@@ -1,3 +1,3 @@
-TIMESTAMP = 1732260934
-SHA256 (oslo.versionedobjects-3.5.0.tar.gz) = 42e4ac61c8c3131d862e3283f2b3fd98a6cc04320a34214b34a1d1a4128a01b0
-SIZE (oslo.versionedobjects-3.5.0.tar.gz) = 154753
+TIMESTAMP = 1779455603
+SHA256 (oslo_versionedobjects-3.10.2.tar.gz) = b26d6c364190feee11fce05c296f15f87c91834f87e8977de785fe5b32103b6b
+SIZE (oslo_versionedobjects-3.10.2.tar.gz) = 172703

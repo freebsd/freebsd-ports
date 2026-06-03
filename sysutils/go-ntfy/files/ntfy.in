@@ -22,7 +22,7 @@ load_rc_config $name
 : ${ntfy_enable:="NO"}
 : ${ntfy_log:="/var/log/ntfy.log"}
 : ${ntfy_runas:="www"}
-: ${ntfy_args="--listen-http :8080"}
+: ${ntfy_args=""}
 
 pidfile="/var/run/${name}.pid"
 procname="%%LOCALBASE%%/bin/${name}"

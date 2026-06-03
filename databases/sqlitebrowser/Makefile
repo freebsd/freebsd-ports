@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.13.1
 CATEGORIES=	databases
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Visual tool to manage SQLite databases
 WWW=		https://sqlitebrowser.org/
 

@@ -1,5 +1,5 @@
 PORTNAME=	qutip
-DISTVERSION=	5.0.4
+DISTVERSION=	5.3.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://qutip.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.9:science/py-scipy@${PY_FLAVOR}
@@ -24,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 # the optional graphics/py-mayavi dependency is omitted because it is python-2.7 -only
 
 USES=		python
-USE_PYTHON=	autoplist cython3 cython3_run pep517
+USE_PYTHON=	autoplist cython cython_run pep517
 
 post-install:
 	@${STRIP_CMD} \

@@ -1,9 +1,9 @@
 PORTNAME=	epdfview
 DISTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics print gnome
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Lightweight PDF document viewer
 WWW=		https://github.com/Flow-It/epdfview_old
 

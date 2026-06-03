@@ -1,0 +1,5 @@
+bin/nextpnr-ecp5
+bin/nextpnr-ice40
+bin/nextpnr-himbaechel
+%%DATADIR%%/himbaechel/gatemate/chipdb-CCGM1A1.bin
+%%DATADIR%%/himbaechel/gatemate/chipdb-CCGM1A2.bin

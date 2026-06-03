@@ -1,5 +1,5 @@
 PORTNAME=	vtk
-DISTVERSION=	9.5.0
+DISTVERSION=	9.6.2
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -21,7 +21,7 @@ LIB_DEPENDS=	\
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		alias cmake compiler:c++11-lang jpeg localbase xorg
+USES=		cmake compiler:c++11-lang jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm xcursor xfixes xrender
 

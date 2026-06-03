@@ -1,20 +1,11 @@
---- configure.ac.orig	2022-11-15 09:35:49 UTC
+--- configure.ac.orig	2026-01-27 09:44:03 UTC
 +++ configure.ac
-@@ -768,8 +768,6 @@ AC_DEFUN([AX_HANDLE_EXTRA_WARNING],
- 		[$1="$$1 -Wno-misleading-indentation"])
- 	# Too many false positives.
- 	# See: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88443
--	AX_CHECK_COMPILE_FLAG([-Wno-stringop-overflow],
--		[$1="$$1 -Wno-stringop-overflow"])
- fi[]dnl
- ])
- 
-@@ -780,7 +778,7 @@ if test "$my_test_COMPILEFLAGS" != set; then
- 		COMPILEFLAGS="-Wall -Wextra -Wpadded"
+@@ -938,7 +938,7 @@ if test "$my_test_COMPILEFLAGS" != set; then
+ 		COMPILEFLAGS="-Wall -Wextra"
  		AX_HANDLE_EXTRA_WARNING([COMPILEFLAGS])
  		# Enable optimizations.
 -		COMPILEFLAGS="$COMPILEFLAGS -O3"
 +		COMPILEFLAGS="$COMPILEFLAGS"
- 		if test "x$enable_profile" != xgprof; then
- 			# -pg conflicts with -fomit-frame-pointer.
- 			COMPILEFLAGS="$COMPILEFLAGS -fomit-frame-pointer"
+ 		if test "x$enable_backtrace" = xyes; then
+ 			# Keep symbols and frame pointers for easier debugging.
+ 			COMPILEFLAGS="$COMPILEFLAGS -g -fno-omit-frame-pointer"

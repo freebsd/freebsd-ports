@@ -1,0 +1,9 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -389,7 +389,6 @@ SUBDIRS = \
+ 	po                              \
+ 	libmatemixer                    \
+ 	backends                        \
+ 	data                            \
+-	docs                            \
+ 	examples

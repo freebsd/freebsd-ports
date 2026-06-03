@@ -1,0 +1,9 @@
+This library implements C++ classes with which half, single, double, quadruple
+and octuple precision IEEE 754 floating point numbers can be operated.
+
+Internally, these classes are implemented as class templates on top of
+arbitrary-precision integer class templates so that the templates are expanded
+as arbitrary precision floating-point operations by just changing the template
+parameters, rather than implementing each floating-point operation for each
+precision. The arbitrary-precision integer class templates are also included in
+this library.

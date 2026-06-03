@@ -1,6 +1,24 @@
 --- build.xml.orig	2014-10-22 19:25:23 UTC
 +++ build.xml
-@@ -200,8 +200,8 @@
+@@ -62,8 +62,6 @@
+             description="Update version numbers etc. in source code.">
+         <mkdir dir="${bin}"/>
+         <javac
+-            source="1.5"
+-            target="1.5"
+             destdir="${bin}">
+             <src path="${src}/freeguide/build"/>
+             <src path="${src}/freeguide/common/base"/>
+@@ -80,8 +78,6 @@
+         <javac srcdir="${src}"
+             destdir="${bin}"
+             deprecation="on"
+-            source="1.5"
+-            target="1.5"
+             debug="yes"
+             encoding="UTF-8">
+             <!--compilerarg value="-Xlint:unchecked"/-->
+@@ -200,8 +196,8 @@
          <mkdir dir="${install_share_dir}/applications" />
          <copy file="${install}/linux/freeguide.desktop" todir="${install_share_dir}/applications/" />
  

@@ -1,3 +1,5 @@
-TIMESTAMP = 1690571429
-SHA256 (linphone-desktop-5.0.18.tar.bz2) = 7081fb9507359ac6b5129b753f2d8018dc23ac9ab1d7866cb3364d6509e8ee1a
-SIZE (linphone-desktop-5.0.18.tar.bz2) = 2444866
+TIMESTAMP = 1766765152
+SHA256 (linphone-desktop-5.3.2.tar.bz2) = c5ef9fb3b31720da773e7cac54999311b18f254690a3117c3a4692eb936e499c
+SIZE (linphone-desktop-5.3.2.tar.bz2) = 2569523
+SHA256 (public/external-ispell-05574fe160222c3d0b6283c1433c9b087271fad1_GL0.tar.gz) = d0c3fd54a4c6e37af5ce83fae001e47403eeb113efd530d553f437766b8ffe20
+SIZE (public/external-ispell-05574fe160222c3d0b6283c1433c9b087271fad1_GL0.tar.gz) = 1562075

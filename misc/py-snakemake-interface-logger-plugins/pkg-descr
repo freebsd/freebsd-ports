@@ -1,0 +1,2 @@
+snakemake-interface-logger-plugins provides the logger plugin interface
+for Snakemake.

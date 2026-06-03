@@ -1,5 +1,6 @@
 PORTNAME=	qview
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jurplel/qView/releases/download/${PORTVERSION}/
 DISTNAME=	qView-${PORTVERSION}

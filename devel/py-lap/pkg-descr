@@ -1,0 +1,6 @@
+Lap is a linear assignment problem solver using Jonker-Volgenant algorithm
+for dense LAPJV or sparse LAPMOD matrices. Both algorithms are implemented
+from scratch based solely on the papers and the public domain Pascal
+implementation provided by A. Volgenant. The LAPMOD implementation seems to
+be faster than the LAPJV implementation for matrices with a side of more
+than ~5000 and with less than 50% finite coefficients.

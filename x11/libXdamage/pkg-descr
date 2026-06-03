@@ -1,1 +1,3 @@
-This package contains the X Damage extension library.
+This package contains the Xlib-based library for the X Damage
+extension. The X Damage Extension allows applications to track
+modified regions of drawables.

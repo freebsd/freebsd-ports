@@ -1,6 +1,6 @@
---- src/main.c.orig	2022-08-25 20:42:45 UTC
+--- src/main.c.orig	2025-09-01 12:04:54 UTC
 +++ src/main.c
-@@ -410,7 +410,7 @@ static void xa_check_available_archivers ()
+@@ -478,7 +478,7 @@ static void xa_check_available_archivers ()
  	/* GNU zip */
  
  	type = XARCHIVETYPE_GZIP;
@@ -9,7 +9,7 @@
  
  	if (path)
  		archiver[type].is_compressor = TRUE;
-@@ -906,11 +906,11 @@ static void xa_check_available_archivers ()
+@@ -1014,11 +1014,11 @@ static void xa_check_available_archivers ()
  	if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(prefs_window->prefer_unzip)) ||
  	    (!is7za && !lsar))
  	{

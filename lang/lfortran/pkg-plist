@@ -1,4 +1,5 @@
 bin/lfortran
+include/lfortran/ISO_Fortran_binding.h
 include/lfortran/impure/lfortran_intrinsics.h
 lib/lfortran_intrinsic_custom.mod
 lib/lfortran_intrinsic_ieee_arithmetic.mod

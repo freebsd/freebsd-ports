@@ -1,5 +1,5 @@
 PORTNAME=	gromacs
-DISTVERSION=	2025.0
+DISTVERSION=	2026.2
 PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
@@ -18,7 +18,8 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	liblmfit.so:math/lmfit \
-		libmuparser.so:math/muparser
+		libmuparser.so:math/muparser \
+		libtinyxml2.so:textproc/tinyxml2
 		# TODO tng
 
 USES=		cmake compiler:c++17-lang pathfix perl5 pkgconfig \
@@ -32,6 +33,7 @@ bash_CMD=	${SH}
 
 CMAKE_OFF=	GMX_USE_RDTSCP \
 		USE_PYTHON_SCRIPTS
+CMAKE_ON=	GMX_EXTERNAL_TINYXML2
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD} \
 		-DGMX_USE_MUPARSER=EXTERNAL \
@@ -125,7 +127,9 @@ post-patch:
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
 	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
 		${WRKSRC}/cmake/gmxTestdlopen.cmake
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/src/external/tinyxml2/
 
-# tests fail to compile, see https://gitlab.com/gromacs/gromacs/-/issues/5141
+# tests as of 2026.2: 100% tests passed, 0 tests failed out of 104
 
 .include <bsd.port.mk>

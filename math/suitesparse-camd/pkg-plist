@@ -3,6 +3,8 @@ lib/cmake/CAMD/CAMDConfig.cmake
 lib/cmake/CAMD/CAMDConfigVersion.cmake
 lib/cmake/CAMD/CAMDTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/CAMD/CAMDTargets.cmake
+lib/cmake/CAMD/CAMDTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CAMD/CAMDTargets_static.cmake
 lib/libcamd.a
 lib/libcamd.so
 lib/libcamd.so.3

@@ -12,6 +12,8 @@ WWW=		https://github.com/libyal/libvshadow
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 

@@ -1,8 +1,8 @@
 PORTNAME=	exult
-DISTVERSION=	1.12.0
+DISTVERSION=	1.12.1
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/exult/exult-all-versions/${DISTVERSION:R}/
+MASTER_SITES=	SF/exult/exult-all-versions/${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Engine for Ultima VII (BG, FOV, SI, SS)
@@ -48,15 +48,14 @@ FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
 
 GIMP_LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
-			libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2 \
 			libgegl-0.4.so:graphics/gegl \
 			libgegl-npd-0.4.so:graphics/gegl \
-			libgimp-2.0.so:graphics/gimp-app \
+			libgexiv2.so:graphics/gexiv2 \
+			libgimp-3.0.so:graphics/gimp3-app \
 			libharfbuzz.so:print/harfbuzz \
 			libjson-glib-1.0.so:devel/json-glib
 GIMP_USES=		gnome
-GIMP_USE=		GNOME=gtk20,pango
+GIMP_USE=		GNOME=gtk30,pango
 
 GIMP_CONFIGURE_ENABLE=	gimp-plugin
 

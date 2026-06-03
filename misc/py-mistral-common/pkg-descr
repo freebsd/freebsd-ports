@@ -1,0 +1,3 @@
+mistral-common provides common utilities for working with Mistral AI models,
+including tokenizers, conversation templates, and model-specific utilities.
+It supports all Mistral AI model families including function calling.

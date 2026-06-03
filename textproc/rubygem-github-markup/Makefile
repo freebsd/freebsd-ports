@@ -1,5 +1,5 @@
 PORTNAME=	github-markup
-PORTVERSION=	5.0.1
+PORTVERSION=	6.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

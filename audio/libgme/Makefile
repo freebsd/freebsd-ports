@@ -1,5 +1,5 @@
 PORTNAME=	libgme
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/game-music-emu/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -11,7 +11,7 @@ WWW=		https://github.com/libgme/game-music-emu
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cmake compiler:c++11-lang dos2unix
+USES=		cmake compiler:c++11-lang dos2unix pathfix
 DOS2UNIX_FILES=	${PORTDOCS}
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_SDL2

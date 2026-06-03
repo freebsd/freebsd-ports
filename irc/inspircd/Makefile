@@ -1,6 +1,7 @@
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.0
+DISTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -48,7 +49,7 @@ PLIST_SUB=	INSPIRCD_DBDIR=${_INSPIRCD_DBDIR} \
 		INSPIRCD_RUNDIR=${_INSPIRCD_RUNDIR} \
 		INSPIRCD_USER=${USERS}
 
-OPTIONS_DEFINE=		ARGON GNUTLS JSON LDAP MAXMIND MBEDTLS MYSQL OPENSSL \
+OPTIONS_DEFINE=		ARGON GNUTLS JSON LDAP MAXMIND MYSQL OPENSSL \
 			PCRE2 PGSQL POSIX RE2 SQLITE SSLREHASH SYSLOG
 OPTIONS_DEFAULT=	OPENSSL POSIX
 OPTIONS_SUB=		yes
@@ -58,7 +59,6 @@ GNUTLS_DESC=	Build m_ssl_gnutls module
 JSON_DESC=	Build m_log_json module
 LDAP_DESC=	Build m_ldap module
 MAXMIND_DESC=	Build m_geo_maxmind module
-MBEDTLS_DESC=	Build m_ssl_mbedtls module
 MYSQL_DESC=	Build m_mysql module
 OPENSSL_DESC=	Build m_ssl_openssl module
 PCRE2_DESC=	Build m_regex_pcre2 module
@@ -79,8 +79,6 @@ LDAP_USES=		ldap
 LDAP_VARS=		EXTRAS+=m_ldap.cpp
 MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 MAXMIND_VARS=		EXTRAS+=m_geo_maxmind.cpp
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
-MBEDTLS_VARS=		EXTRAS+=m_ssl_mbedtls.cpp
 MYSQL_USES=		mysql
 MYSQL_VARS=		EXTRAS+=m_mysql.cpp
 OPENSSL_USES=		ssl

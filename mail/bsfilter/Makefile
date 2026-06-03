@@ -1,6 +1,7 @@
 PORTNAME=	bsfilter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.20
+PORTREVISION=	1
 CATEGORIES=	mail ruby
 
 MAINTAINER=	nyan@FreeBSD.org
@@ -32,4 +33,12 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.4
+RUN_DEPENDS+=	rubygem-getoptlong>=0:devel/rubygem-getoptlong \
+		rubygem-nkf>=0:net/rubygem-nkf
+
+.endif
+
+.include <bsd.port.post.mk>

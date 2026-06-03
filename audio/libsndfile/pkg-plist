@@ -14,10 +14,9 @@ lib/cmake/SndFile/SndFileConfig.cmake
 lib/cmake/SndFile/SndFileConfigVersion.cmake
 lib/cmake/SndFile/SndFileTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SndFile/SndFileTargets.cmake
-%%STATIC%%lib/libsndfile.a
-%%NO_STATIC%%lib/libsndfile.so
-%%NO_STATIC%%lib/libsndfile.so.1
-%%NO_STATIC%%lib/libsndfile.so.1.0.37
+lib/libsndfile.so
+lib/libsndfile.so.1
+lib/libsndfile.so.1.0.37
 libdata/pkgconfig/sndfile.pc
 %%MANPAGES%%share/man/man1/sndfile-cmp.1.gz
 %%MANPAGES%%share/man/man1/sndfile-concat.1.gz

@@ -1,7 +1,7 @@
 PORTNAME=	mailnag
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools gnome gstreamer python shebangfix
 

@@ -1,13 +1,12 @@
 PORTNAME=	skk-jisyo
 DISTVERSIONPREFIX=	g
-DISTVERSION=	20240130
-PORTREVISION=	2
+DISTVERSION=	20260411
 CATEGORIES=	japanese
 .if defined(WITH_SKKJISYO_CDB)
 PKGNAMESUFFIX=	-cdb
 .endif
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 WWW=		http://openlab.jp/skk/dic.html
 
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/cdb:databases/tinycdb
 USE_GITHUB=	yes
 GH_ACCOUNT=	skk-dev
 GH_PROJECT=	dict
-GH_TAGNAME=	b798a46
+GH_TAGNAME=	0a164e6
 
 NO_ARCH=	yes
 

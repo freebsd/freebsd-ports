@@ -1,6 +1,8 @@
+include/minizip-ng/crypt.h
 include/minizip-ng/ioapi.h
 include/minizip-ng/mz.h
 include/minizip-ng/mz_compat.h
+include/minizip-ng/mz_config.h
 include/minizip-ng/mz_crypt.h
 include/minizip-ng/mz_os.h
 include/minizip-ng/mz_strm.h
@@ -10,6 +12,7 @@ include/minizip-ng/mz_strm_lzma.h
 include/minizip-ng/mz_strm_mem.h
 include/minizip-ng/mz_strm_os.h
 include/minizip-ng/mz_strm_pkcrypt.h
+include/minizip-ng/mz_strm_ppmd.h
 include/minizip-ng/mz_strm_split.h
 include/minizip-ng/mz_strm_wzaes.h
 include/minizip-ng/mz_strm_zlib.h
@@ -20,9 +23,10 @@ include/minizip-ng/unzip.h
 include/minizip-ng/zip.h
 lib/cmake/minizip-ng/minizip-ng-config-version.cmake
 lib/cmake/minizip-ng/minizip-ng-config.cmake
-lib/cmake/minizip-ng/minizip-ng-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/minizip-ng/minizip-ng.cmake
+lib/cmake/minizip-ng/minizip-ng-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/minizip-ng/minizip-ng-targets.cmake
 lib/libminizip-ng.so
 lib/libminizip-ng.so.1
 lib/libminizip-ng.so.%%VERSION%%
+lib/libppmd.a
 libdata/pkgconfig/minizip-ng.pc

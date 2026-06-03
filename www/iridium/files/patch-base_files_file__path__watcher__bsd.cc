@@ -1,4 +1,4 @@
---- base/files/file_path_watcher_bsd.cc.orig	2025-05-07 06:48:23 UTC
+--- base/files/file_path_watcher_bsd.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/files/file_path_watcher_bsd.cc
 @@ -0,0 +1,54 @@
 +// Copyright 2021 The Chromium Authors. All rights reserved.

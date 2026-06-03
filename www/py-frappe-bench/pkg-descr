@@ -1,5 +1,3 @@
 The bench allows you to set up Frappe / ERPNext apps on
 your local machine or a production server. You can use
 the bench to serve multiple frappe sites.
-
-WWW: https://github.com/frappe/bench

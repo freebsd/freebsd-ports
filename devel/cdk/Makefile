@@ -1,5 +1,5 @@
 PORTNAME=	cdk
-DISTVERSION=	5.0-20250116
+DISTVERSION=	5.0-20260119
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake ncurses tar:tgz
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--with-ncurses
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ncurses
 
 ALL_TARGET=	default cdkshlib
 INSTALL_TARGET=	install installCDKSHLibrary
@@ -27,8 +27,8 @@ PORTEXAMPLES=	cli demos examples
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|$$(CC)| ; \
-		 /^CDKREADME/s| COPYING||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^CDKREADME/s| COPYING||' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcdk*.so

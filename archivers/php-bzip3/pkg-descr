@@ -1,0 +1,3 @@
+This is the PHP extension for BZip3, a spiritual successor to BZip2. Compared to
+BZip2, BZip3 offers better speed as well as better compression ratios. Like its
+predecessor, BZip3 excels at compressing text or code.

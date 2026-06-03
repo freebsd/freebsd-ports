@@ -1,0 +1,3 @@
+An unofficial GUI for configuring Hyprland, built with GTK4 and
+Rust. Comes with a custom hyprparser for Hyprland's configuration
+file.

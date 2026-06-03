@@ -1,4 +1,4 @@
---- ui/gfx/x/xlib_support.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/gfx/x/xlib_support.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/gfx/x/xlib_support.cc
 @@ -39,10 +39,18 @@ void InitXlib() {
      return;

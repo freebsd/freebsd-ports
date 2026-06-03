@@ -2,8 +2,16 @@ bin/zrepl
 etc/periodic/weekly/500.zrepl
 @sample %%ETCDIR%%/zrepl.yml.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bandwidth_limit.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/empty.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/template.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/include.d/snap.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/include.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/include_directory.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/duplicate_job_names/zrepl.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/duplicate_job_names_with_include/included.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/duplicate_job_names_with_include/zrepl.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/internal_job_name/zrepl.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/local.yml
 @sample %%EXAMPLESDIR%%/newsyslog.conf etc/newsyslog.conf.d/zrepl.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pull.yml

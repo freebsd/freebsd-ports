@@ -1,6 +1,6 @@
 PORTNAME=	grubik
 PORTVERSION=	0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/Recreational/
 DISTNAME=	GRubik

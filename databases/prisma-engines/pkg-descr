@@ -1,0 +1,13 @@
+A collection of engines that power the core stack for Prisma, most prominently
+Prisma Client and Prisma Migrate.
+
+It contains four engines:
+
+- Query engine, used by the client to run database queries from Prisma Client
+- Query compiler, an actively developed replacement for the query engine, used
+  to compile Prisma Client queries into query plans containing SQL statements
+  and other operations, which the client can use to execute Prisma queries
+  entirely in JS land
+- Schema engine, used to create and run migrations and introspection
+- Prisma Format, historically used to format prisma files (hence the name), now
+  powers other LSP functionality as well

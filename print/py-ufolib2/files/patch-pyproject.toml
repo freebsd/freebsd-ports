@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-07-10 11:40:29 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "ufoLib2"
++name = "ufolib2"
+ description = "ufoLib2 is a UFO font processing library."
+ authors = [{ name = "Adrien Tétar", email = "adri-from-59@hotmail.fr" }]
+ license = { text = "Apache 2.0" }

@@ -5,7 +5,7 @@ MASTER_SITES=	http://wwwhomes.uni-bielefeld.de/achim/z80-asm/
 DISTNAME=	z80-asm-current
 DIST_SUBDIR=	z80-asm
 
-MAINTAINER=	laurent.chardon@gmail.com
+MAINTAINER=	laurent@FreeBSD.org
 COMMENT=	Z80 assembly code assembler and disassembler
 WWW=		https://wwwhomes.uni-bielefeld.de/achim/z80-asm.html
 

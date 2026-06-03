@@ -22,6 +22,15 @@ and navigate to http://localhost:8080:
 > llama_server_model=/path/to/models/llama-2-7b-chat.Q4_K_M.gguf
 > llama_server_args="--device Vulkan0 -ngl 27"
 
+In order to use the multi-model feature do not use llama_server_model.
+Instead add the argument "--models-preset /path/to/models.ini"
+Add pre-downloaded models into models.ini, for example:
+[Qwen3.5-35B-A3B-Uncensored]
+model = /path/to/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf
+
+You can switch to the CPU-only operation by choosing the port option
+VULKAN=OFF in misc/ggml (not in llama-cpp).
+
 EOM
 }
 ]

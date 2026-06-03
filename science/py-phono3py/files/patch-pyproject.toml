@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-03-01 18:48:34 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["scikit-build-core", "nanobind<2.10.0", "numpy"]
++requires = ["scikit-build-core", "nanobind", "numpy"]
+ build-backend = "scikit_build_core.build"
+ 
+ [project]

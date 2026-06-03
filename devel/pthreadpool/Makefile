@@ -1,6 +1,6 @@
 PORTNAME=	pthreadpool
-DISTVERSION=	0.1-126
-DISTVERSIONSUFFIX=	-gb8374f8
+DISTVERSION=	0.1-147
+DISTVERSIONSUFFIX=	-g560c60d
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +29,7 @@ do-test:
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DPTHREADPOOL_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>

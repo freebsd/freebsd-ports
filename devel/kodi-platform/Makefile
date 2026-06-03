@@ -1,6 +1,6 @@
 PORTNAME=	kodi-platform
-PORTVERSION=	20190726
-PORTREVISION=	11
+DISTVERSIONPREFIX=	kodiplatform-
+DISTVERSION=	20250416
 CATEGORIES=	devel
 
 MAINTAINER=	decke@FreeBSD.org
@@ -17,7 +17,6 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_TAGNAME=	809c5e9
 
 USE_LDCONFIG=	yes
 

@@ -1,6 +1,6 @@
 PORTNAME=	axom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.13.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,19 +16,20 @@ BROKEN_i386=	use of overloaded operator '[]' is ambiguous, see https://github.co
 BROKEN_powerpc=	use of overloaded operator '[]' is ambiguous, see https://github.com/LLNL/axom/issues/743
 
 LIB_DEPENDS=	libconduit.so:science/conduit \
+		libgcc_s.so.1:lang/gcc14 \
 		libhdf5.so:science/hdf5 \
 		libHYPRE.so:science/hypre \
 		libmetis.so:math/metis \
 		libsiloh5.so:science/silo
 RUN_DEPENDS=	sparsehash>0:devel/sparsehash
 
-USES=		cmake:testing,noninja compiler:c++11-lang
+USES=		cmake:testing,noninja compiler:c++17-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TUPLE=	LLNL:axom_data:1bff47e:axom_data/../data \
-		LLNL:blt:9cfe8ae:blt/cmake/blt \
-		LLNL:uberenv:e7dd3d9:uberenv/../scripts/uberenv
+GH_TUPLE=	LLNL:axom_data:34b0dae:axom_data/../data \
+		LLNL:blt:ccd6d31:blt/cmake/blt \
+		LLNL:uberenv:bec05e2:uberenv/../scripts/uberenv
 
 CMAKE_OFF=	AXOM_ENABLE_DOCS AXOM_ENABLE_EXAMPLES AXOM_ENABLE_TESTS AXOM_ENABLE_EXAMPLES
 CMAKE_ON=	BUILD_SHARED_LIBS
@@ -36,7 +37,7 @@ CMAKE_TESTING_ON=	AXOM_ENABLE_TESTS AXOM_ENABLE_EXAMPLES
 CMAKE_TESTING_TARGET=	all test
 CMAKE_ARGS=	-DCONDUIT_DIR=${LOCALBASE} \
 		-DHDF5_DIR=${LOCALBASE} \
-		-DBLT_CXX_STD=c++14 # BLT_CXX_STD=c++14 is required for LLNL/serac
+		-DBLT_CXX_STD=c++17 # BLT_CXX_STD=c++17 is required for LLNL/serac
 
 LDFLAGS+=	-lexecinfo
 

@@ -11,20 +11,16 @@ bin/mines
 bin/nbsdgames
 @(,games,2555) bin/pipes
 bin/rabbithole
-bin/redsquare
+@(,games,2555) bin/redsquare
+@(,games,2555) bin/revenge
 bin/reversi
+@(,games,2555) bin/scissor
+@(,games,2555) bin/sjump
 bin/snakeduel
 bin/sos
 bin/sudoku
+bin/trsr
 @(,games,2555) bin/tugow
-@dir(,games) /var/games/nbsdgames
-@sample(,games,0664) /var/games/nbsdgames/darrt_scores.sample
-@sample(,games,0664) /var/games/nbsdgames/fisher_scores.sample
-@sample(,games,0664) /var/games/nbsdgames/jewels_scores.sample
-@sample(,games,0664) /var/games/nbsdgames/muncher_scores.sample
-@sample(,games,0664) /var/games/nbsdgames/miketron_scores.sample
-@sample(,games,0664) /var/games/nbsdgames/pipes_scores.sample
-@sample(,games,0664) /var/games/nbsdgames/tugow_scores.sample
 share/applications/nbsdgames.desktop
 share/icons/hicolor/scalable/apps/nbsdgames.svg
 share/man/man6/battleship.6.gz
@@ -44,3 +40,15 @@ share/man/man6/reversi.6.gz
 share/man/man6/snakeduel.6.gz
 share/man/man6/sos.6.gz
 share/man/man6/sudoku.6.gz
+@sample(,games,0664)  /var/games/nbsdgames/darrt_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/fisher_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/jewels_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/miketron_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/muncher_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/pipes_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/redsquare_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/revenge_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/scissor_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/sjump_scores.sample
+@sample(,games,0664)  /var/games/nbsdgames/tugow_scores.sample
+@dir /var/games/nbsdgames

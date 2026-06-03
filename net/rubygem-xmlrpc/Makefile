@@ -1,5 +1,5 @@
 PORTNAME=	xmlrpc
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-webrick>=0:www/rubygem-webrick
+RUN_DEPENDS=	rubygem-webrick>=0:www/rubygem-webrick \
+		rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		gem
 

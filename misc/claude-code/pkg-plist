@@ -1,0 +1,8 @@
+bin/claude
+lib/node_modules/.bin/claude
+lib/node_modules/@anthropic-ai/claude-code/LICENSE.md
+lib/node_modules/@anthropic-ai/claude-code/README.md
+lib/node_modules/@anthropic-ai/claude-code/cli.js
+lib/node_modules/@anthropic-ai/claude-code/package.json
+lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts
+%%AUDIO_CAPTURE%%lib/node_modules/@anthropic-ai/claude-code/vendor/audio-capture/%%JS_ARCH%%-freebsd/audio-capture.node

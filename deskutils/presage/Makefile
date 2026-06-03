@@ -9,7 +9,8 @@ COMMENT=	Intelligent predictive text entry system
 WWW=		https://presage.sourceforge.io/
 
 BUILD_DEPENDS=	help2man:misc/help2man \
-		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \

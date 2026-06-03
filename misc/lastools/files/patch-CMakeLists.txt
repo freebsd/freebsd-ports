@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2026-05-06 05:56:16 UTC
++++ CMakeLists.txt
+@@ -24,6 +24,4 @@ add_subdirectory(LASlib/src)
+ endif()
+ 
+ add_subdirectory(LASlib/src)
+-if (NOT BUILD_SHARED_LIBS)
+ add_subdirectory(src)
+-endif()

@@ -1,14 +1,16 @@
---- salt/utils/process.py.orig	2024-07-29 07:51:58 UTC
+--- salt/utils/process.py.orig	2026-02-23 20:07:08 UTC
 +++ salt/utils/process.py
-@@ -59,7 +59,10 @@ def appendproctitle(name):
-         current = setproctitle.getproctitle()
-         if current.strip().endswith("MainProcess"):
-             current, _ = current.rsplit("MainProcess", 1)
--        setproctitle.setproctitle(f"{current.rstrip()} {name}")
-+        if len(current) > 0:
-+            setproctitle.setproctitle(f"{current.rstrip()} {name}")
-+        else:
-+            setproctitle.setproctitle(name)
-
-
- def daemonize(redirect_out=True):
+@@ -43,11 +43,7 @@
+ except ImportError:
+     pass
+ 
+-try:
+-    import setproctitle
+-
+-    HAS_SETPROCTITLE = True
+-except ImportError:
+-    HAS_SETPROCTITLE = False
++# setproctitle disabled: it breaks rc script stop/restart when procname changes
++HAS_SETPROCTITLE = False
+ 
+ # Process finalization function list

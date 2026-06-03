@@ -1,5 +1,5 @@
 PORTNAME=	libretro-mgba
-DISTVERSION=	0.20250518
+DISTVERSION=	0.20251013
 CATEGORIES=	games
 
 MAINTAINER=	tilde@ultros.pro
@@ -12,7 +12,7 @@ USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	mgba
-GH_TAGNAME=	c9bbf28b091c4c104485092279c7a6b114b2e8ff
+GH_TAGNAME=	c758314a639aa0066e7b65a8341448181b73c804
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libretro/mgba_libretro.so

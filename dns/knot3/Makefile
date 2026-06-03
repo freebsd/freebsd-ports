@@ -1,6 +1,5 @@
 PORTNAME=	knot
 DISTVERSION=	${KNOT_VERSION}
-PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb
 
-USES=		alias compiler:c11 libtool localbase pkgconfig tar:xz
+USES=		compiler:c11 libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes

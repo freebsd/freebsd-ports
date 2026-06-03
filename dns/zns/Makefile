@@ -1,17 +1,17 @@
 PORTNAME=	zns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	5
+DISTVERSION=	0.4.0
+PORTREVISION=	10
 CATEGORIES=	dns
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	CLI tool for querying DNS records with readable and colored output
 WWW=		https://github.com/znscli/zns
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/znscli/zns
 

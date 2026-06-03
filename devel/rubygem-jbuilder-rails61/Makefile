@@ -18,6 +18,8 @@ USES=		gem shebangfix
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^2\.13\.
+
 SHEBANG_FILES=	bin/test
 
 .include <bsd.port.mk>

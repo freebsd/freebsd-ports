@@ -1,5 +1,5 @@
 PORTNAME=	josm
-PORTVERSION=	19412
+PORTVERSION=	19555
 CATEGORIES=	astro java
 MASTER_SITES=	https://josm.openstreetmap.de/download/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}.jar
@@ -16,13 +16,13 @@ PORTSCOUT=	ignore:1
 NO_WRKSUBDIR=	yes
 
 USES=		java zip:infozip
-JAVA_VERSION=	11+
+JAVA_VERSION=	21  # latest supported version, see https://josm.openstreetmap.de/wiki/Download#linux
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	josm.sh
-SUB_LIST=	JARNAME=${DISTNAME}
+SUB_LIST=	JAVA=${JAVA} JARNAME=${DISTNAME}
 
 PLIST_FILES=	bin/josm \
 		${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME} \

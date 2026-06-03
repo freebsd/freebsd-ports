@@ -1,5 +1,5 @@
 PORTNAME=	cursor-dmz-aa-theme
-DISTVERSION=	0.4.5.2
+DISTVERSION=	0.4.5.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	DEBIAN/pool/main/d/dmz-cursor-theme
 DISTNAME=	dmz-cursor-theme_${DISTVERSION}

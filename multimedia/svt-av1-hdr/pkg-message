@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+SVT-AV1-HDR is ABI compatible with SVT-AV1, so if the versions match
+it's possible to switch without rebuilding consumers like FFmpeg:
+
+  $ pkg set -n svt-av1:svt-av1-hdr
+  $ pkg set -o multimedia/svt-av1:multimedia/svt-av1-hdr
+  $ pkg upgrade -f svt-av1-hdr
+  $ pkg lock svt-av1-hdr
+EOM
+}
+]

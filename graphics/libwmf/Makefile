@@ -1,8 +1,7 @@
 PORTNAME=	libwmf
-PORTVERSION=	0.2.13
-DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTVERSION=	0.2.14
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/caolanm/libwmf/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
@@ -42,15 +41,5 @@ CONFIGURE_ARGS+=--with-x=no
 CONFLICTS_INSTALL=	libwmf libwmf-nox11
 
 CPE_VENDOR=	wvware
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	caolanm
-
-OPTIONS_DEFINE=	DOCS
-OPTIONS_SUB=	yes
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/ "! -name Makefile ! -name Makefile.am ! -name Makefile.in"
 
 .include <bsd.port.mk>

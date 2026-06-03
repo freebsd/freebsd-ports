@@ -174,6 +174,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/es/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/hy/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/it/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ka/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pt_BR/LC_MESSAGES/openscad.mo

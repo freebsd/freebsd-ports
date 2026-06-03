@@ -1,5 +1,6 @@
 bin/xournalpp
 bin/xournalpp-thumbnailer
+bin/xournalpp-wrapper
 share/applications/com.github.xournalpp.xournalpp.desktop
 share/icons/hicolor/scalable/apps/com.github.xournalpp.xournalpp.svg
 share/icons/hicolor/scalable/mimetypes/application-x-xojpp.svg
@@ -15,6 +16,7 @@ share/locale/cs/LC_MESSAGES/xournalpp.mo
 share/locale/da/LC_MESSAGES/xournalpp.mo
 share/locale/de/LC_MESSAGES/xournalpp.mo
 share/locale/el/LC_MESSAGES/xournalpp.mo
+share/locale/en_GB/LC_MESSAGES/xournalpp.mo
 share/locale/eo_UY/LC_MESSAGES/xournalpp.mo
 share/locale/es/LC_MESSAGES/xournalpp.mo
 share/locale/eu/LC_MESSAGES/xournalpp.mo
@@ -54,6 +56,8 @@ share/mime/packages/com.github.xournalpp.xournalpp.xml
 share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/palettes/xournal.gpl
 %%DATADIR%%/palettes/xournalpp.gpl
+%%DATADIR%%/plugins/BeamerPresentation/main.lua
+%%DATADIR%%/plugins/BeamerPresentation/plugin.ini
 %%DATADIR%%/plugins/ColorCycle/main.lua
 %%DATADIR%%/plugins/ColorCycle/plugin.ini
 %%DATADIR%%/plugins/Example/main.lua
@@ -69,11 +73,10 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/plugins/ImageActions/plugin.ini
 %%DATADIR%%/plugins/LayerActions/main.lua
 %%DATADIR%%/plugins/LayerActions/plugin.ini
-%%DATADIR%%/plugins/MigrateFontSizes/dialog.glade
-%%DATADIR%%/plugins/MigrateFontSizes/main.lua
-%%DATADIR%%/plugins/MigrateFontSizes/plugin.ini
 %%DATADIR%%/plugins/QuickScreenshot/main.lua
 %%DATADIR%%/plugins/QuickScreenshot/plugin.ini
+%%DATADIR%%/plugins/SpaceForNotes/main.lua
+%%DATADIR%%/plugins/SpaceForNotes/plugin.ini
 %%DATADIR%%/plugins/ToggleGrid/plugin.ini
 %%DATADIR%%/plugins/ToggleGrid/togglegrid.lua
 %%DATADIR%%/plugins/luapi_application.def.lua
@@ -82,7 +85,11 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/README.md
 %%DATADIR%%/ui/about.glade
 %%DATADIR%%/ui/backgroundSelection.glade
+%%DATADIR%%/ui/crashDialog.glade
+%%DATADIR%%/ui/deviceList.glade
+%%DATADIR%%/ui/deviceTestingArea.glade
 %%DATADIR%%/ui/exportSettings.glade
+%%DATADIR%%/ui/extEdTexDialog.glade
 %%DATADIR%%/ui/goto.glade
 %%DATADIR%%/ui/iconsColor-dark/hicolor/24x24/actions/xopp-page-spinner.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/index.theme
@@ -119,6 +126,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-fullscreen.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-go-to.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-hand.svg
+%%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-laser-pointer.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-line-style-dash-dot-with-pen.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-line-style-dash-dot.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-line-style-dash-with-pen.svg
@@ -129,6 +137,8 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-line-style-plain.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-object-play.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-object-select.svg
+%%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-orientation-landscape.svg
+%%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-orientation-portrait.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-page-add.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-page-annotated-next.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-page-delete.svg
@@ -144,6 +154,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-sidebar-layer.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-sidebar-layerstack.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-sidebar-page-preview.svg
+%%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-sidebar-show.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-snapping-grid.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-snapping-rotation.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-spacer.svg
@@ -160,6 +171,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-tool-text.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-toolbars-customize.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-toolbars-manage.svg
+%%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-touch-drawing.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-transparent.svg
 %%DATADIR%%/ui/iconsColor-dark/hicolor/scalable/actions/xopp-zoom-slider.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/index.theme
@@ -172,6 +184,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-draw-line.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-draw-rect.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-draw-spline.svg
+%%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-laser-pointer.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-line-style-dash-dot-with-pen.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-line-style-dash-dot.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-line-style-dash-with-pen.svg
@@ -180,11 +193,14 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-line-style-dot.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-line-style-plain-with-pen.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-line-style-plain.svg
+%%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-orientation-landscape.svg
+%%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-orientation-portrait.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-presentation-mode.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-select-pdf-text-area.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-select-pdf-text-ht.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-sidebar-layer.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-sidebar-layerstack.svg
+%%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-sidebar-show.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-snapping-rotation.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-thickness-fine.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-thickness-finer.svg
@@ -193,6 +209,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-thickness-thicker.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-tool-math-tex.svg
 %%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-tool-text.svg
+%%DATADIR%%/ui/iconsColor-light/hicolor/scalable/actions/xopp-touch-drawing.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/24x24/actions/xopp-page-spinner.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/index.theme
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-audio-playback-pause.svg
@@ -227,6 +244,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-fullscreen.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-go-to.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-hand.svg
+%%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-laser-pointer.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-line-style-dash-dot-with-pen.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-line-style-dash-dot.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-line-style-dash-with-pen.svg
@@ -252,6 +270,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-sidebar-layer.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-sidebar-layerstack.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-sidebar-page-preview.svg
+%%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-sidebar-show.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-snapping-grid.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-snapping-rotation.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-spacer.svg
@@ -268,6 +287,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-tool-text.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-toolbars-customize.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-toolbars-manage.svg
+%%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-touch-drawing.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-transparent.svg
 %%DATADIR%%/ui/iconsLucide-dark/hicolor/scalable/actions/xopp-zoom-slider.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/index.theme
@@ -303,6 +323,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-fullscreen.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-go-to.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-hand.svg
+%%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-laser-pointer.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-line-style-dash-dot-with-pen.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-line-style-dash-dot.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-line-style-dash-with-pen.svg
@@ -328,6 +349,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-sidebar-layer.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-sidebar-layerstack.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-sidebar-page-preview.svg
+%%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-sidebar-show.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-snapping-grid.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-snapping-rotation.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-spacer.svg
@@ -344,8 +366,10 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-tool-text.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-toolbars-customize.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-toolbars-manage.svg
+%%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-touch-drawing.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-transparent.svg
 %%DATADIR%%/ui/iconsLucide-light/hicolor/scalable/actions/xopp-zoom-slider.svg
+%%DATADIR%%/ui/intEdTexDialog.glade
 %%DATADIR%%/ui/latexSettings.glade
 %%DATADIR%%/ui/main.glade
 %%DATADIR%%/ui/mainmenubar.xml
@@ -368,9 +392,7 @@ share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/ui/settings.glade
 %%DATADIR%%/ui/settingsButtonConfig.glade
 %%DATADIR%%/ui/settingsDeviceClassConfig.glade
-%%DATADIR%%/ui/settingsLanguageConfig.glade
 %%DATADIR%%/ui/sidebar.ui
-%%DATADIR%%/ui/texdialog.glade
 %%DATADIR%%/ui/toolbar.ini
 %%DATADIR%%/ui/toolbarCustomizeDialog.glade
 %%DATADIR%%/ui/toolbarManageDialog.glade

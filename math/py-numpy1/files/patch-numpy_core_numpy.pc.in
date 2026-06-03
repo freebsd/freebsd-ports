@@ -1,0 +1,10 @@
+--- numpy/core/numpy.pc.in.orig	2026-04-04 00:13:21 UTC
++++ numpy/core/numpy.pc.in
+@@ -0,0 +1,7 @@
++prefix=${pcfiledir}/../..
++includedir=${prefix}/include
++
++Name: numpy
++Description: NumPy is the fundamental package for scientific computing with Python.
++Version: @version@
++Cflags: -I${includedir}

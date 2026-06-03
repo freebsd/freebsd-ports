@@ -13,7 +13,7 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-pages
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.23
+USES=		go:modules
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org

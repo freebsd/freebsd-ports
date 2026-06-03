@@ -1,6 +1,6 @@
 PORTNAME=	mnnpy
 DISTVERSION=	0.1.9.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anndata>0:devel/py-anndata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numba>0:devel/py-numba@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
@@ -25,7 +25,11 @@ USE_PYTHON=	distutils cython autoplist
 
 post-patch:
 .if defined(CPUTYPE)
+.  if ${ARCH:Mpowerpc*}
+	@${REINPLACE_CMD} -e "s|'-march=native'|'-mcpu=${CPUTYPE}'|" ${WRKSRC}/setup.py
+.  else
 	@${REINPLACE_CMD} -e "s|'-march=native'|'-march=${CPUTYPE}'|" ${WRKSRC}/setup.py
+.  endif
 .else
 	@${REINPLACE_CMD} -e "s|'-march=native', ||" ${WRKSRC}/setup.py
 .endif

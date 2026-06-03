@@ -4,7 +4,7 @@ CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library from KDE Education project
-WWW=		https://www.kde.org/applications/education/
+WWW=		https://invent.kde.org/education/analitza
 
 LICENSE=		GFDL GPLv2
 LICENSE_COMB=		multi

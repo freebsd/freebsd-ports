@@ -1,0 +1,12 @@
+GHCup is the main installer for the general purpose language Haskell.
+It provides a command-line interface for installing, managing, and
+updating the Haskell toolchain components, including:
+
+- The Glasgow Haskell Compiler (GHC)
+- The Haskell Build Tool (Cabal-install)
+- The Haskell Language Server (HLS)
+- Stack
+- GHCup itself
+
+GHCup allows users to easily switch between different versions of these
+tools and manage sandboxed environments for Haskell development.

@@ -1,0 +1,10 @@
+--- src/Library/Logger/CMakeLists.txt.orig	2025-09-07 22:10:00 UTC
++++ src/Library/Logger/CMakeLists.txt
+@@ -22,6 +22,7 @@ set(LIBRARY_LOGGER_HEADERS
+         RotatingLogSink.h)
+ 
+ add_library(library_logger STATIC ${LIBRARY_LOGGER_SOURCES} ${LIBRARY_LOGGER_HEADERS})
++find_package(spdlog REQUIRED)
+ target_link_libraries(library_logger PUBLIC library_serialization library_filesystem_interface utility PRIVATE spdlog::spdlog)
+ target_check_style(library_logger)
+ 

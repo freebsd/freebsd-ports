@@ -1,8 +1,12 @@
 PORTNAME=	abseil
 PORTVERSION=	20250127.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/abseil/abseil-cpp/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-cpp-${PORTVERSION}
+
+PATCH_SITES=	https://github.com/abseil/abseil-cpp/commit/
+PATCHFILES+=	a4950fba03217d0ea102c98ce795c189bba50383.patch:-p1 # https://github.com/llvm/llvm-project/pull/138835
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Abseil Common Libraries (C++)

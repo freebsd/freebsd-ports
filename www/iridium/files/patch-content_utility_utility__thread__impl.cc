@@ -1,4 +1,4 @@
---- content/utility/utility_thread_impl.cc.orig	2025-05-07 06:48:23 UTC
+--- content/utility/utility_thread_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/utility/utility_thread_impl.cc
 @@ -31,7 +31,7 @@
  #include "mojo/public/cpp/bindings/pending_receiver.h"

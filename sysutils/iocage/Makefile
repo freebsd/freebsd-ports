@@ -1,11 +1,13 @@
 PORTNAME=	iocage
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 # Pull in PR #61 to unbreak default route detection on CURRENT
+# Pull in PR #107 to unbreak build (man page)
 PATCH_SITES=    https://github.com/freebsd/iocage/commit/
-PATCHFILES=	2120a86d1d4fd3d383a3f0bddfc1e92eb5a7d2e7.patch:-p1
+PATCHFILES=	2120a86d1d4fd3d383a3f0bddfc1e92eb5a7d2e7.patch:-p1 \
+		13c342c37746bffa944b5c397d51ef39cd2eb172.patch:-p1
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
@@ -25,9 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libzfs>=1.0.2:filesystems/py-libzfs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest4-cov>0:devel/py-pytest4-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-pep8>0:devel/py-pytest-pep8@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

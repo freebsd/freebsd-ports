@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-01 22:52:42 UTC
++++ pyproject.toml
+@@ -15,7 +15,7 @@ readme = "README.rst"
+     "xdis >= 6.1.0, < 6.3",
+ ]
+ readme = "README.rst"
+-license = "GPL-3.0-or-later"
++license = {text = "GPL-3.0-or-later"}
+ 
+ keywords = ["Python bytecode", "bytecode", "disassembler"]
+ classifiers = [

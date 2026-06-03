@@ -1,6 +1,6 @@
 PORTNAME=	pianobar
-PORTVERSION=	2022.04.01
-PORTREVISION=	3
+DISTVERSION=	2024.12.21
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -17,14 +17,15 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl
 
-MAKE_ENV+=	V=1
-USES=		alias gmake localbase pkgconfig tar:bzip2
-
-PLIST_FILES=	bin/pianobar \
-		share/man/man1/pianobar.1.gz
+USES=		gmake localbase pkgconfig tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PromyLOPh
+
+MAKE_ENV+=	V=1
+
+PLIST_FILES=	bin/pianobar \
+		share/man/man1/pianobar.1.gz
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pianobar

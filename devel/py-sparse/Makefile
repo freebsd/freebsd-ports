@@ -1,5 +1,6 @@
 PORTNAME=	sparse
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numba>=0.49:devel/py-numba@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.17,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

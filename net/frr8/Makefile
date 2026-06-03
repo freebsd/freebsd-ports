@@ -16,6 +16,9 @@ WWW=		https://frrouting.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	No longer maintained
+EXPIRATION_DATE=2026-06-30
+
 .if defined(PYTHONTOOLS)
 RUN_DEPENDS=	frr-reload:net/frr8
 

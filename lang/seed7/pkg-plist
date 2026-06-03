@@ -83,6 +83,7 @@ lib/seed7/lib/comp/prg_act.s7i
 lib/seed7/lib/comp/ref_act.s7i
 lib/seed7/lib/comp/rfl_act.s7i
 lib/seed7/lib/comp/sct_act.s7i
+lib/seed7/lib/comp/sel_act.s7i
 lib/seed7/lib/comp/set_act.s7i
 lib/seed7/lib/comp/soc_act.s7i
 lib/seed7/lib/comp/sql_act.s7i
@@ -155,6 +156,7 @@ lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/iobuffer.s7i
 lib/seed7/lib/jpeg.s7i
+lib/seed7/lib/json_serde.s7i
 lib/seed7/lib/json.s7i
 lib/seed7/lib/keybd.s7i
 lib/seed7/lib/keydescr.s7i
@@ -226,6 +228,7 @@ lib/seed7/lib/stdio.s7i
 lib/seed7/lib/strifile.s7i
 lib/seed7/lib/string.s7i
 lib/seed7/lib/stritext.s7i
+lib/seed7/lib/struct_elem.s7i
 lib/seed7/lib/struct.s7i
 lib/seed7/lib/subfile.s7i
 lib/seed7/lib/subrange.s7i
@@ -235,6 +238,7 @@ lib/seed7/lib/tar.s7i
 lib/seed7/lib/tdes.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
+lib/seed7/lib/tga.s7i
 lib/seed7/lib/tiff.s7i
 lib/seed7/lib/time.s7i
 lib/seed7/lib/tls.s7i

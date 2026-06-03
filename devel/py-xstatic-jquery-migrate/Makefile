@@ -1,15 +1,14 @@
 PORTNAME=	xstatic-jquery-migrate
-PORTVERSION=	3.3.2.1
-PORTREVISION=	2
+PORTVERSION=	3.3.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-JQuery-Migrate-${PORTVERSION}
+DISTNAME=	xstatic_jquery_migrate-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JQuery-Migrate (XStatic packaging standard)
-WWW=		https://github.com/openstack/xstatic-jquery-migrate \
-		https://github.com/jquery/jquery-migrate
+COMMENT=	JQuery-Migrate ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-jquery-migrate \
+		https://github.com/openstack/xstatic-jquery-migrate
 
 LICENSE=	MIT
 

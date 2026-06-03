@@ -52,6 +52,7 @@ etc/ipa/epn/expire_msg.template
 %%PYTHON_SITELIBDIR%%/ipaclient/plugins/service.py
 %%PYTHON_SITELIBDIR%%/ipaclient/plugins/stageuser.py
 %%PYTHON_SITELIBDIR%%/ipaclient/plugins/sudorule.py
+%%PYTHON_SITELIBDIR%%/ipaclient/plugins/sysaccounts.py
 %%PYTHON_SITELIBDIR%%/ipaclient/plugins/topology.py
 %%PYTHON_SITELIBDIR%%/ipaclient/plugins/trust.py
 %%PYTHON_SITELIBDIR%%/ipaclient/plugins/user.py
@@ -268,6 +269,7 @@ etc/ipa/epn/expire_msg.template
 %%PYTHON_SITELIBDIR%%/ipalib/errors.py
 %%PYTHON_SITELIBDIR%%/ipalib/facts.py
 %%PYTHON_SITELIBDIR%%/ipalib/frontend.py
+%%PYTHON_SITELIBDIR%%/ipalib/ipajson.py
 %%PYTHON_SITELIBDIR%%/ipalib/install/__init__.py
 %%PYTHON_SITELIBDIR%%/ipalib/install/certmonger.py
 %%PYTHON_SITELIBDIR%%/ipalib/install/certstore.py
@@ -277,6 +279,7 @@ etc/ipa/epn/expire_msg.template
 %%PYTHON_SITELIBDIR%%/ipalib/install/service.py
 %%PYTHON_SITELIBDIR%%/ipalib/install/sysrestore.py
 %%PYTHON_SITELIBDIR%%/ipalib/install_files.txt
+%%PYTHON_SITELIBDIR%%/ipalib/kinit.py
 %%PYTHON_SITELIBDIR%%/ipalib/krb_utils.py
 %%PYTHON_SITELIBDIR%%/ipalib/messages.py
 %%PYTHON_SITELIBDIR%%/ipalib/misc.py
@@ -325,6 +328,11 @@ etc/ipa/epn/expire_msg.template
 %%PYTHON_SITELIBDIR%%/ipaplatform/nixos/paths.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/nixos/services.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/nixos/tasks.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/opencloudos/__init__.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/opencloudos/constants.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/opencloudos/paths.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/opencloudos/services.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/opencloudos/tasks.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/osinfo.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/override.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/paths.py
@@ -351,6 +359,16 @@ etc/ipa/epn/expire_msg.template
 %%PYTHON_SITELIBDIR%%/ipaplatform/suse/services.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/suse/tasks.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/tasks.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/tencentos/__init__.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/tencentos/constants.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/tencentos/paths.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/tencentos/services.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/tencentos/tasks.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/__init__.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/constants.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/paths.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/services.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/tasks.py
 %%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
@@ -408,7 +426,9 @@ sbin/ipa-getkeytab
 sbin/ipa-join
 sbin/ipa-rmkeytab
 share/ipa/client/freeipa.template
+share/ipa/client/freeipa-realm.template
 share/ipa/client/ssh_ipa.conf.template
+share/ipa/client/unbound.conf.template
 share/ipa/client/sshd_ipa.conf.template
 share/locale/bn_IN/LC_MESSAGES/ipa.mo
 share/locale/ca/LC_MESSAGES/ipa.mo
@@ -417,6 +437,7 @@ share/locale/de/LC_MESSAGES/ipa.mo
 share/locale/en_GB/LC_MESSAGES/ipa.mo
 share/locale/es/LC_MESSAGES/ipa.mo
 share/locale/eu/LC_MESSAGES/ipa.mo
+share/locale/fa/LC_MESSAGES/ipa.mo
 share/locale/fi/LC_MESSAGES/ipa.mo
 share/locale/fr/LC_MESSAGES/ipa.mo
 share/locale/hi/LC_MESSAGES/ipa.mo

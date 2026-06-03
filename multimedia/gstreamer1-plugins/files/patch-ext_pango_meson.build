@@ -1,6 +1,6 @@
---- ext/pango/meson.build.orig	2025-03-11 20:14:44 UTC
+--- ext/pango/meson.build.orig	2025-12-25 14:44:26 UTC
 +++ ext/pango/meson.build
-@@ -36,7 +36,9 @@ if pango_dep.found()
+@@ -35,7 +35,9 @@ if pango_dep.found()
      c_args : gst_plugins_base_args,
      link_args : noseh_link_args,
      include_directories: [configinc, libsinc],

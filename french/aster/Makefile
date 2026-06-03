@@ -1,6 +1,6 @@
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		http://www.code-aster.org/
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
 
 BROKEN=	fails to build the catalog of elements
@@ -33,7 +33,7 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		bash:shells/bash				\
 		getopt>=0:misc/getopt				\
 		xterm:x11/xterm					\
-		${PYNUMPY}	\
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 #		pylupdate5:textproc/py-qt5-xml
 LIB_DEPENDS+=	libhdf5-110.so:science/hdf5-110			\
@@ -44,7 +44,7 @@ LIB_DEPENDS+=	libhdf5-110.so:science/hdf5-110			\
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		astk-serveur>0:cad/astk-serveur			\
 		xterm:x11/xterm					\
-		${PYNUMPY}	\
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
 USES=		bison blaslapack:openblas fortran gettext python qt:5 tk

@@ -1,7 +1,8 @@
 PORTNAME=	feedgenerator
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/getpelican/feedgenerator/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

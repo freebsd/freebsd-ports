@@ -1,5 +1,6 @@
 PORTNAME=	Redis-Fast
-DISTVERSION=	0.36
+DISTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +28,10 @@ TEST_DEPENDS=	p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+OPTIONS_DEFINE=		SSL
+SSL_DESC=		SSL/TLS support
+SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Redis/Fast/Fast.so

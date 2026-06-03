@@ -41,6 +41,10 @@ include/ascent/ascent_jit_kernel.hpp
 include/ascent/ascent_jit_math.hpp
 include/ascent/ascent_jit_topology.hpp
 include/ascent/ascent_logging.hpp
+include/ascent/ascent_logging_config.h
+include/ascent/ascent_logging_exports.h
+include/ascent/ascent_logging_old.hpp
+include/ascent/ascent_logging_timer.hpp
 include/ascent/ascent_main_runtime.hpp
 include/ascent/ascent_math.hpp
 include/ascent/ascent_memory_manager.hpp
@@ -58,6 +62,7 @@ include/ascent/ascent_runtime_htg_filters.hpp
 include/ascent/ascent_runtime_param_check.hpp
 include/ascent/ascent_runtime_query_filters.hpp
 include/ascent/ascent_runtime_relay_filters.hpp
+include/ascent/ascent_runtime_steering_filters.hpp
 include/ascent/ascent_runtime_trigger_filters.hpp
 include/ascent/ascent_runtime_utils.hpp
 include/ascent/ascent_runtime_vtkh_utils.hpp
@@ -92,6 +97,7 @@ lib/cmake/ascent/thirdparty/BLTSetupMPI.cmake
 lib/libascent.so
 lib/libascent_flow.so
 lib/libascent_lodepng.so
+lib/libascent_logging.so
 %%NO_NOMPI%%lib/libascent_mpi.so
 %%DATADIR%%/ascent_config.mk
 %%DATADIR%%/web_clients/ascent/index.html

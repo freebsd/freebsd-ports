@@ -1,5 +1,5 @@
 PORTNAME=	httm
-DISTVERSION=	0.48.0
+DISTVERSION=	0.49.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -18,5 +18,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kimono-koans
 
 PLIST_FILES=	bin/httm
+
+OPTIONS_DEFINE=	SCRIPTS
+OPTIONS_DEFAULT=SCRIPTS
+
+SCRIPTS_DESC=	Install example scripts
+
+SCRIPTS_RUN_DEPENDS=	bash:shells/bash
+SCRIPTS_PLIST_FILES=	bin/bowie
+
+post-install-SCRIPTS-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bowie.bash ${STAGEDIR}${PREFIX}/bin/bowie
 
 .include <bsd.port.mk>

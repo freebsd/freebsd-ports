@@ -1,7 +1,7 @@
 PORTNAME=	osm2pgrouting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.8
-PORTREVISION=	10
+DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	converters databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -11,11 +11,12 @@ WWW=		https://pgrouting.org/docs/tools/osm2pgrouting.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
-		libpqxx.so:databases/postgresql-libpqxx
+		libpqxx.so:databases/postgresql-libpqxx \
+		libpq.so:databases/postgresql18-client
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++20-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgRouting
 

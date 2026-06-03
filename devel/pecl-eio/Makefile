@@ -15,4 +15,10 @@ USES=		php:pecl
 
 CONFIGURE_ARGS=	--enable-eio
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

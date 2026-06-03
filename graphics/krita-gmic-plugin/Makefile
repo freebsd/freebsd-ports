@@ -1,6 +1,6 @@
 PORTNAME=	gmic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.3.0
+DISTVERSION=	3.6.4.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	https://github.com/vanyossi/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	krita-
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libkritaqmicinterface.so:graphics/krita \
-		libpng.so:graphics/png
+		libpng16.so:graphics/png
 
 USES=		cmake compiler:c++14-lang kde:5 pkgconfig qt:5 shebangfix xorg
 USE_KDE=	coreaddons ecm:build

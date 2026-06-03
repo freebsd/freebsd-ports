@@ -1,0 +1,11 @@
+--- smashing.gemspec.orig	2025-11-29 22:18:44 UTC
++++ smashing.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<execjs>.freeze, ["~> 2.7".freeze])
+   s.add_runtime_dependency(%q<sinatra>.freeze, ["~> 2.2".freeze])
+   s.add_runtime_dependency(%q<sinatra-contrib>.freeze, ["~> 2.0".freeze])
+-  s.add_runtime_dependency(%q<thin>.freeze, ["~> 1.7".freeze])
++  s.add_runtime_dependency(%q<thin>.freeze, [">= 1.7".freeze])
+   s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.6".freeze])
+   s.add_runtime_dependency(%q<thor>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<sprockets>.freeze, ["~> 4.0".freeze])

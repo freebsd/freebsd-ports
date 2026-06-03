@@ -1,4 +1,4 @@
---- content/browser/sandbox_host_linux.cc.orig	2025-05-07 06:48:23 UTC
+--- content/browser/sandbox_host_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/sandbox_host_linux.cc
 @@ -45,6 +45,7 @@ void SandboxHostLinux::Init() {
    // Instead, it replies on a temporary socket provided by the caller.

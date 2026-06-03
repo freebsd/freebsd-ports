@@ -45,7 +45,6 @@ lib/libzzipmmapped.so.%%SHLIB_VER%%
 lib/libzzipwrap.so
 lib/libzzipwrap.so.13
 lib/libzzipwrap.so.%%SHLIB_VER%%
-%%SDL%%libdata/pkgconfig/SDL_rwops_zzip.pc
 libdata/pkgconfig/zzipfseeko.pc
 libdata/pkgconfig/zziplib.pc
 libdata/pkgconfig/zzipmmapped.pc
@@ -123,3 +122,4 @@ share/aclocal/zziplib.m4
 %%MANPAGES%%share/man/man3/zzip_tell32.3.gz
 %%MANPAGES%%share/man/man3/zzip_telldir.3.gz
 %%MANPAGES%%share/man/man3/zzip_telldir32.3.gz
+%%SDL%%share/pkgconfig/SDL_rwops_zzip.pc

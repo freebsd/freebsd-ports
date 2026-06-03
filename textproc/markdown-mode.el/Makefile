@@ -1,8 +1,7 @@
 PORTNAME=	markdown-mode.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7
+DISTVERSION=	2.8
 CATEGORIES=	textproc elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Emacs major mode for editing Markdown-formatted text
@@ -16,18 +15,20 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jrblevin
 GH_PROJECT=	markdown-mode
 
-NO_ARCH=	yes
+CONFLICTS_INSTALL=	markdown-mode.el-emacs_*
 
-PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/markdown-mode.el \
-		${EMACS_VERSION_SITE_LISPDIR}/markdown-mode.elc
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/markdown-mode.el
 PORTDOCS=	CHANGES.md CONTRIBUTING.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc \
-		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

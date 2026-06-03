@@ -1,5 +1,5 @@
 PORTNAME=	jasper
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.9
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jasper-software/jasper/releases/download/version-${PORTVERSION}/
 
@@ -13,7 +13,7 @@ LICENSE_NAME=	JasPer License Version 2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-USES=		cmake cpe jpeg localbase pathfix
+USES=		cmake cpe jpeg localbase
 
 CMAKE_OFF=	JAS_ENABLE_32BIT \
 		JAS_ENABLE_CONFORMANCE_TESTS \

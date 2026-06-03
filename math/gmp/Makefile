@@ -31,10 +31,6 @@ INFO_INFO=		gmp
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mmips*}
-MAKE_JOBS_UNSAFE=yes
-.endif
-
 .if ! ${PORT_OPTIONS:MCPU_OPTS}
 CONFIGURE_ARGS+=--build=${CONFIGURE_TARGET}
 .elif ${ARCH:S/64//} != ${ARCH}

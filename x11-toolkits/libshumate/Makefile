@@ -1,12 +1,12 @@
 PORTNAME=	libshumate
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 CATEGORIES=	x11-toolkits geography
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK4 widget to display maps
-WWW=		https://wiki.gnome.org/Projects/libshumate
+WWW=		https://gitlab.gnome.org/GNOME/libshumate
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,10 +17,12 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-3.0.so:devel/libsoup3 \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		gettext gnome meson pkgconfig sqlite tar:xz vala:build
+USES=		gettext-tools gnome meson pkgconfig sqlite tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf gtk40 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dsysprof=disabled
+
+PORTSCOUT=	limit:^1\.4\.
 
 OPTIONS_DEFINE=	DOCS
 

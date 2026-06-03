@@ -1,0 +1,11 @@
+--- third_party/node/node.gni.orig	2025-06-30 07:04:30 UTC
++++ third_party/node/node.gni
+@@ -22,7 +22,7 @@ template("node") {
+ 
+     # When use_remoteexec=true, node actions may run on remote
+     # Linux worker. So it should include linux node binary in inputs.
+-    if (is_linux || is_chromeos || use_remoteexec) {
++    if ((is_linux || is_chromeos || use_remoteexec) && !is_bsd) {
+       inputs += [ "//third_party/node/linux/node-linux-x64/bin/node" ]
+     }
+     if (is_win && host_os == "win") {

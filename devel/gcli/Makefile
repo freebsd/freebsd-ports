@@ -1,5 +1,6 @@
 PORTNAME=	gcli
-DISTVERSION=	2.8.0
+DISTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
@@ -10,10 +11,11 @@ WWW=		https://herrhotzenplotz.de/gcli/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
-TEST_DEPENDS=	kyua:devel/kyua
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpdjson.so:textproc/pdjson
 
-USES=		libtool pathfix pkgconfig ssl tar:xz
+USES=		libtool pathfix perl5 pkgconfig ssl tar:xz
+USE_PERL5=	test
 
 HAS_CONFIGURE=	yes
 .if defined(WITH_DEBUG)

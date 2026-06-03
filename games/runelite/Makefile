@@ -1,5 +1,6 @@
 PORTNAME=	runelite
 PORTVERSION=	2.2.0
+PORTREVISION=	2
 CATEGORIES=	games java
 MASTER_SITES+=	https://github.com/runelite/launcher/releases/download/${PORTVERSION}/:game \
 		https://raw.githubusercontent.com/runelite/launcher/${PORTVERSION}/appimage/:icon \

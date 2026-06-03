@@ -363,6 +363,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/scr.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sct.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sct.so
+%%NOX11%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sf3.la
+%%NOX11%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sf3.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sfw.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sfw.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sgi.la
@@ -610,6 +612,7 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/images/t-shirt.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wand.ico
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wand.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/wand.svg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/white-highlight.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/wizard.png

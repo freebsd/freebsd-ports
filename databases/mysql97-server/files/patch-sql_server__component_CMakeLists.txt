@@ -1,0 +1,12 @@
+--- sql/server_component/CMakeLists.txt.orig	2026-05-03 19:30:00.000000000 +0200
++++ sql/server_component/CMakeLists.txt	2026-05-03 19:30:00.000000000 +0200
+@@ -100,6 +100,9 @@
+   mysql_lock_free_hash_imp.cc
+   )
+ 
++SET_SOURCE_FILES_PROPERTIES(mysql_json_encode_imp.cc
++  PROPERTIES COMPILE_FLAGS "-include stdio.h")
++
+ # This static library is used to build mysqld binary and in some unit test cases
+ ADD_LIBRARY(mysql_server_component_services STATIC
+   ${MYSQL_SERVER_COMPONENT_SOURCES})

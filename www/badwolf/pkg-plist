@@ -15,7 +15,9 @@ share/man/man1/badwolf.1.gz
 %%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/Badwolf.mo
 %%NLS%%%%DATADIR%%/locale/tr/LC_MESSAGES/Badwolf.mo
 %%NLS%%%%DATADIR%%/locale/vi/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/sr/LC_MESSAGES/Badwolf.mo
 %%NLS%%share/man/de/man1/badwolf.1.gz
 %%NLS%%share/man/fr/man1/badwolf.1.gz
 %%NLS%%share/man/tr/man1/badwolf.1.gz
 %%NLS%%share/man/vi/man1/badwolf.1.gz
+%%NLS%%share/man/sr/man1/badwolf.1.gz

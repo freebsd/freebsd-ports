@@ -6,7 +6,6 @@ share/applications/org.scummvm.scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.Apache
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.BSD
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.BSL
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.FREEFONT
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.GLAD
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.ISC
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LGPL
@@ -32,11 +31,15 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/classicmacfonts.dat
 %%XENGINES%%%%DATADIR%%/cryo.dat
 %%DATADIR%%/cryomni3d.dat
+%%DATADIR%%/darkseed.dat
 %%DATADIR%%/drascula.dat
 %%DATADIR%%/encoding.dat
 %%DATADIR%%/fonts-cjk.dat
+%%DATADIR%%/fonts-imgui.dat
 %%DATADIR%%/fonts.dat
 %%DATADIR%%/freescape.dat
+%%DATADIR%%/got.aud
+%%DATADIR%%/got.gfx
 %%DATADIR%%/grim-patch.lab
 %%DATADIR%%/gui-icons.dat
 %%XENGINES%%%%DATADIR%%/hadesch_translations.dat
@@ -72,6 +75,8 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/shaders/emi_sprite.vertex
 %%DATADIR%%/shaders/freescape_bitmap.fragment
 %%DATADIR%%/shaders/freescape_bitmap.vertex
+%%DATADIR%%/shaders/freescape_cubemap.fragment
+%%DATADIR%%/shaders/freescape_cubemap.vertex
 %%DATADIR%%/shaders/freescape_triangle.fragment
 %%DATADIR%%/shaders/freescape_triangle.vertex
 %%DATADIR%%/shaders/grim_actor.fragment
@@ -180,6 +185,10 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%XENGINES%%%%DATADIR%%/shaders/playground3d_cube.vertex
 %%XENGINES%%%%DATADIR%%/shaders/playground3d_fade.fragment
 %%XENGINES%%%%DATADIR%%/shaders/playground3d_fade.vertex
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_offset.fragment
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_offset.vertex
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_viewport.fragment
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_viewport.vertex
 %%DATADIR%%/shaders/stark_actor.fragment
 %%DATADIR%%/shaders/stark_actor.vertex
 %%DATADIR%%/shaders/stark_fade.fragment
@@ -194,8 +203,6 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/shaders/stark_surface_fill.vertex
 %%DATADIR%%/shaders/wme_fade.fragment
 %%DATADIR%%/shaders/wme_fade.vertex
-%%DATADIR%%/shaders/wme_flat_shadow_mask.fragment
-%%DATADIR%%/shaders/wme_flat_shadow_mask.vertex
 %%DATADIR%%/shaders/wme_flat_shadow_modelx.fragment
 %%DATADIR%%/shaders/wme_flat_shadow_modelx.vertex
 %%DATADIR%%/shaders/wme_geometry.fragment
@@ -204,10 +211,14 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/shaders/wme_line.vertex
 %%DATADIR%%/shaders/wme_modelx.fragment
 %%DATADIR%%/shaders/wme_modelx.vertex
+%%DATADIR%%/shaders/wme_postfilter.fragment
+%%DATADIR%%/shaders/wme_postfilter.vertex
 %%DATADIR%%/shaders/wme_shadow_mask.fragment
 %%DATADIR%%/shaders/wme_shadow_mask.vertex
 %%DATADIR%%/shaders/wme_shadow_volume.fragment
 %%DATADIR%%/shaders/wme_shadow_volume.vertex
+%%DATADIR%%/shaders/wme_simple_shadow.fragment
+%%DATADIR%%/shaders/wme_simple_shadow.vertex
 %%DATADIR%%/shaders/wme_sprite.fragment
 %%DATADIR%%/shaders/wme_sprite.vertex
 %%DATADIR%%/sky.cpt

@@ -1,9 +1,9 @@
 PORTNAME=	hockeypuck
-DISTVERSION=	2.2.4
+DISTVERSION=	2.3.3
 PORTREVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 WWW=		https://hockeypuck.github.io
 
@@ -30,5 +30,4 @@ PLIST_FILES=	bin/hockeypuck \
 		bin/hockeypuck-load \
 		bin/hockeypuck-pbuild
 
-.include "Makefile.modules"
 .include <bsd.port.mk>

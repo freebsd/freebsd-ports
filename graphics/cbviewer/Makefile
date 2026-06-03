@@ -1,6 +1,6 @@
 PORTNAME=	cbviewer
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CBViewer%200.8/ \
 		SF/nemysisfreebsdp/graphics/:icons

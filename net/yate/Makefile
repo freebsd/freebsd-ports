@@ -17,6 +17,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libspeex.so:audio/speex
 
 USES=		autoreconf bison gmake shebangfix
+USE_CSTD=	gnu11
 USE_GITHUB=	yes
 GH_ACCOUNT=	yatevoip
 GH_TAGNAME=	e0a20c4

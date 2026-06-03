@@ -1,0 +1,87 @@
+PORTNAME=	util-linux
+DISTVERSION=	2.41.2
+CATEGORIES=	sysutils
+MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Random collection of Linux utilities
+WWW=		https://github.com/util-linux/util-linux
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+IGNORE_i386=	configure: error: could not enable timestamps after mid-January 2038.
+
+# gsed/gxargs are only TEST_DEPENDS, but we need to BINARY_ALIAS them,
+# so they need to be listed in BUILD_DEPENDS instead.
+BUILD_DEPENDS=	bash:shells/bash \
+		gsed:textproc/gsed \
+		gxargs:misc/findutils
+LIB_DEPENDS=	libblkid.so:filesystems/libblkid \
+		libuuid.so:misc/libuuid
+RUN_DEPENDS=	bash:shells/bash
+
+USES=		autoreconf gettext-tools gmake libtool ncurses pkgconfig \
+		shebangfix tar:xz
+
+USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	misc-utils/getopt-example.bash \
+		tools/*.sh \
+		tools/git-tp-sync \
+		tests/run.sh \
+		tests/ts/*/*
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=	--disable-nls --disable-ipcrm --disable-ipcs \
+		--disable-makeinstall-chown --disable-makeinstall-setuid \
+		--disable-asciidoc --disable-liblastlog2 \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+
+# INSTALL_TARGET=	install-strip
+TEST_ENV=	PATH=${PATH}:${STAGEDIR}${PREFIX}/bin:${STAGEDIR}${PREFIX}/sbin
+TEST_TARGET=	check # tests fail due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=273196 - workaround use gxargs
+BINARY_ALIAS=	sed=gsed xargs=gxargs
+
+CONFLICTS_INSTALL=	heirloom-doctools
+
+OPTIONS_DEFINE=		CAL FLOCK GETOPT HARDLINK
+OPTIONS_DEFAULT=	GETOPT
+OPTIONS_SUB=		yes
+
+CAL_DESC=		Install util-linux cal(1)
+CAL_CONFIGURE_ENABLE=	cal
+
+FLOCK_DESC=		Install util-linux flock(1)
+FLOCK_RUN_DEPENDS=	flock>=2:sysutils/flock
+
+GETOPT_DESC=		Install util-linux getopt(1)
+GETOPT_RUN_DEPENDS=	getopt>=1:misc/getopt
+
+HARDLINK_DESC=		Install util-linux hardlink(1)
+HARDLINK_CONFIGURE_ENABLE=hardlink
+
+post-install: # https://github.com/karelzak/util-linux/issues/1149
+	${RM} -r ${STAGEDIR}${DOCSDIR}
+	${RM} -r ${STAGEDIR}${PREFIX}/include/blkid/
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man5/terminal-colors.d.5*
+	${MV} ${STAGEDIR}${PREFIX}/sbin/fdisk ${STAGEDIR}${PREFIX}/sbin/fdisk-linux
+	${FIND} ${STAGEDIR}${PREFIX} -name 'flock*' -delete
+	${FIND} ${STAGEDIR}${PREFIX} -name 'getopt*' -delete
+	${FIND} ${STAGEDIR}${PREFIX} -name 'blkid*' -delete
+	${FIND} ${STAGEDIR}${PREFIX} -name 'libblkid*' -delete
+	${FIND} ${STAGEDIR}${PREFIX} -name 'libuuid*' -delete
+	${FIND} ${STAGEDIR}${PREFIX} -name 'uuid*' -delete
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/lib/libfdisk.so.1.1.0 \
+		${STAGEDIR}${PREFIX}/lib/libsmartcols.so.1.1.0
+
+# tests as of 2.41.2 (see https://github.com/util-linux/util-linux/issues/3767):
+# 3 tests of 337 FAILED
+#
+#      misc/setpgid
+#      misc/whereis
+#      misc/flock
+
+.include <bsd.port.mk>

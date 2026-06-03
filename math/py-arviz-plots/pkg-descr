@@ -1,0 +1,4 @@
+arviz-plots provides ready to use and composable plots for Bayesian
+Workflow. It includes static battery included plots for posterior
+analysis, MCMC diagnostics, model comparison, and other visualizations
+for Bayesian models. Supports matplotlib, bokeh, and plotly backends.

@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2026-03-24 16:59:08 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc
 @@ -19,7 +19,7 @@
  
@@ -17,4 +17,4 @@
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return std::make_unique<LinuxKeyRotationCommand>(url_loader_factory);
  #elif BUILDFLAG(IS_MAC)
-   if (IsDTCKeyRotationUploadedBySharedAPI()) {
+   auto cloud_delegate =

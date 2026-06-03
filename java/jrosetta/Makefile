@@ -1,6 +1,6 @@
 PORTNAME=	jrosetta
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-api/${PORTVERSION}/:api \
 		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-engine/${PORTVERSION}/:engine

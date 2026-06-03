@@ -1,5 +1,5 @@
 PORTNAME=	iowow
-PORTVERSION=	1.4.17
+PORTVERSION=	1.4.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -9,7 +9,7 @@ WWW=		https://iowow.softmotions.com/
 
 LICENSE=	MIT
 
-USES=		cmake compiler:c11
+USES=		cmake compiler:c11 cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	Softmotions
 USE_LDCONFIG=	yes
@@ -21,6 +21,8 @@ OPTIONS_DEFINE=	DOCS TEST
 
 TEST_BUILD_DEPENDS=	${LOCALBASE}/include/CUnit/Basic.h:devel/cunit
 TEST_CMAKE_ON=	-DBUILD_TESTS:BOOL=ON
+
+CPE_VENDOR=	${GH_ACCOUNT}
 
 do-test-TEST-on:
 	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}

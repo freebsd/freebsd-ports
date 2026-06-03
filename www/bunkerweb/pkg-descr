@@ -1,0 +1,10 @@
+BunkerWeb is a security-focused reverse proxy and Web Application
+Firewall (WAF) built on top of OpenResty (nginx with Lua support).
+
+It integrates ModSecurity CRS, Lua-based request filtering,
+rate limiting, automated TLS handling, an API service,
+and a web management interface.
+
+BunkerWeb supports both HTTP and stream-based reverse proxying
+and can operate in standalone, containerized, or clustered
+deployments.

@@ -1,0 +1,3 @@
+The Qt CanvasPainter module provides a new imperative 2D rendering API aiming
+to combine performance, productivity, and modern features. New to Qt 6.11,
+this is a 'tech preview', so the API/ABI are not considered as stable yet.

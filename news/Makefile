@@ -9,6 +9,7 @@
     SUBDIR += diablo
     SUBDIR += fidogate
     SUBDIR += fidogate4
+    SUBDIR += flnews
     SUBDIR += golded+
     SUBDIR += gup
     SUBDIR += husky
@@ -24,6 +25,7 @@
     SUBDIR += inn-current
     SUBDIR += knews
     SUBDIR += leafnode
+    SUBDIR += libcanlock
     SUBDIR += lusernet
     SUBDIR += mail2nntp
     SUBDIR += mmail

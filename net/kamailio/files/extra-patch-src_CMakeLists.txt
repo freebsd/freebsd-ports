@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2025-01-29 11:36:50 UTC
+--- src/CMakeLists.txt.orig	2025-11-06 09:29:38 UTC
 +++ src/CMakeLists.txt
-@@ -130,12 +130,6 @@ install(
+@@ -157,13 +157,6 @@ install(
    COMPONENT kamailio-core
  )
  
@@ -8,7 +8,8 @@
 -install(
 -  FILES ${CMAKE_SOURCE_DIR}/README ${CMAKE_SOURCE_DIR}/INSTALL
 -  DESTINATION ${CMAKE_INSTALL_DOCDIR}
--  COMPONENT kamailio-docs)
+-  COMPONENT kamailio-core
+-)
 -
  # ----------
  # Create and install the man pages for kamailio

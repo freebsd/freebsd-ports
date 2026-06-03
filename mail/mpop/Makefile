@@ -3,7 +3,7 @@ DISTVERSION=	1.4.21
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Small and fast POP3 client
 WWW=		https://marlam.de/mpop/
 

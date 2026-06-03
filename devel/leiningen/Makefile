@@ -1,5 +1,6 @@
 PORTNAME=	leiningen
 DISTVERSION=	2.11.1
+PORTREVISION=	2
 CATEGORIES=	devel lisp java
 MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:standalone \
 		https://codeberg.org/leiningen/leiningen/archive/:DEFAULT

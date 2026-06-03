@@ -1,0 +1,11 @@
+Go implementation of the LocalSend v2.1 protocol for secure,
+cross-platform file sharing.
+
+* Complete LocalSend v2.1 Protocol -- Works with LocalSend apps
+* Secure -- HTTPS with certificates, optional PIN protection
+* Fast Discovery -- Multicast UDP + HTTP fallback
+* Multi-file Transfers -- Send multiple files concurrently
+* Web Share -- Share files via browser download link
+* Clipboard Integration -- Incoming text/plain transfers copied
+  to clipboard automatically
+* Metadata Preserved -- File timestamps preserved on transfer

@@ -68,7 +68,7 @@ _valid_ARGS=		indirect insource noninja run testing _internal
 
 # Reminder: devel/cmake-core, devel/cmake-doc, devel/cmake-gui, and devel/cmake-man
 # are all affected by changing _CMAKE_VERSION. Please check each of these ports.
-_CMAKE_VERSION=		3.31.7
+_CMAKE_VERSION=		3.31.12
 CMAKE_BIN=		${LOCALBASE}/bin/cmake
 
 # Sanity check
@@ -185,9 +185,9 @@ do-configure:
 .    endif
 
 .    if !target(do-test) && ${cmake_ARGS:Mtesting}
-CMAKE_TESTING_ON?=		BUILD_TESTING
-CMAKE_TESTING_PARALLEL_LEVEL?=	${MAKE_JOBS_NUMBER}
-CMAKE_TESTING_TARGET?=		test
+CMAKE_TESTING_ON?=	BUILD_TESTING
+CMAKE_TESTING_JOBS?=	${MAKE_JOBS_NUMBER}
+CMAKE_TESTING_TARGET?=	test
 
 # Use SETENV instead of SETENVI if CMAKE_TESTING_SETENV is defined
 .      if defined(CMAKE_TESTING_SETENV)
@@ -207,7 +207,7 @@ do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_TESTING_ARGS} ${CMAKE_SOURCE_PATH} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${_CMAKE_TESTING_SETENV} ${WRK_ENV} ${TEST_ENV} CTEST_PARALLEL_LEVEL=${CMAKE_TESTING_PARALLEL_LEVEL} ${MAKE_CMD} ${MAKE_ARGS} ${CMAKE_TESTING_TARGET}
+		${_CMAKE_TESTING_SETENV} ${WRK_ENV} ${TEST_ENV} CTEST_PARALLEL_LEVEL=${CMAKE_TESTING_JOBS} ${MAKE_CMD} ${MAKE_ARGS} ${CMAKE_TESTING_TARGET}
 .    endif
 .  endif
 

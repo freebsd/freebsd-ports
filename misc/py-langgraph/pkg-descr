@@ -1,0 +1,17 @@
+LangGraph is a low-level orchestration framework for building, managing, and
+deploying long-running, stateful agents.
+
+Core benefits of LangGraph include:
+- Durable execution: Build agents that persist through failures and can run
+  for extended periods, automatically resuming from exactly where they left off.
+- Human-in-the-loop: Seamlessly incorporate human oversight by inspecting and
+  modifying agent state at any point during execution.
+- Comprehensive memory: Create truly stateful agents with both short-term
+  working memory for ongoing reasoning and long-term persistent memory
+  across sessions.
+- Debugging with LangSmith: Gain deep visibility into complex agent behavior
+  with visualization tools that trace execution paths, capture state
+  transitions, and provide detailed runtime metrics.
+- Production-ready deployment: Deploy sophisticated agent systems confidently
+  with scalable infrastructure designed to handle the unique challenges of
+  stateful, long-running workflows.

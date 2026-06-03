@@ -1,0 +1,979 @@
+diff -audpNr third_party/rust/bytemuck.orig/v1/BUILD.gn third_party/rust/bytemuck/v1/BUILD.gn
+--- third_party/rust/bytemuck.orig/v1/BUILD.gn	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/bytemuck/v1/BUILD.gn	2026-04-24 21:14:56.303777000 +0900
+@@ -19,6 +19,7 @@ cargo_crate("lib") {
+     "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/anybitpattern.rs",
+     "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/checked.rs",
+     "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/contiguous.rs",
++    "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/derive.rs",
+     "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/internal.rs",
+     "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/lib.rs",
+     "//third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/must.rs",
+@@ -37,16 +38,20 @@ cargo_crate("lib") {
+   cargo_pkg_authors = "Lokathor <zefria@gmail.com>"
+   cargo_pkg_name = "bytemuck"
+   cargo_pkg_description = "A crate for mucking around with piles of bytes."
+-  cargo_pkg_version = "1.23.0"
++  cargo_pkg_version = "1.25.0"
+ 
+   allow_unsafe = true
+ 
+-  deps = [ "//third_party/rust/bytemuck_derive/v1:lib" ]
++  deps = [
++    "//third_party/rust/bytemuck_derive/v1:lib",
++    "//third_party/rust/rustversion/v1:lib",
++  ]
+   features = [
+     "bytemuck_derive",
+     "derive",
++    "extern_crate_alloc",
+     "min_const_generics",
+-    "nightly_portable_simd",
++    "rustversion",
+   ]
+ 
+   # `gnrt_config.toml` for this crate specifies `allow_unstable_features`.
+diff -audpNr third_party/rust/bytemuck.orig/v1/README.chromium third_party/rust/bytemuck/v1/README.chromium
+--- third_party/rust/bytemuck.orig/v1/README.chromium	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/bytemuck/v1/README.chromium	2026-04-24 21:14:38.709793000 +0900
+@@ -1,7 +1,8 @@ URL: https://crates.io/crates/bytemuck
+ Name: bytemuck
+ URL: https://crates.io/crates/bytemuck
+-Version: 1.23.0
+-Revision: 028ff3bec68ab9c123dc578b74a7af4a72a37609
++Version: 1.25.0
++Revision: 164cedda0eae131bc6cb67902599f4ec253642ca
++Update Mechanism: Manual (https://crbug.com/449898466)
+ License: Apache-2.0
+ License File: //third_party/rust/chromium_crates_io/vendor/bytemuck-v1/LICENSE-APACHE
+ Shipped: yes
+diff -audpNr third_party/rust/rustversion.orig/v1/BUILD.gn third_party/rust/rustversion/v1/BUILD.gn
+--- third_party/rust/rustversion.orig/v1/BUILD.gn	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/rustversion/v1/BUILD.gn	2026-04-24 21:15:08.261755000 +0900
+@@ -37,13 +37,13 @@ cargo_crate("lib") {
+   cargo_pkg_name = "rustversion"
+   cargo_pkg_description =
+       "Conditional compilation according to rustc compiler version"
+-  cargo_pkg_version = "1.0.20"
++  cargo_pkg_version = "1.0.22"
+ 
+   allow_unsafe = false
+ 
+   build_root = "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs"
+   build_sources = [ "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs" ]
+-  build_script_inputs = [ "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/../build/rustc.rs" ]
++  build_script_inputs = [ "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/../../rustversion-v1/build/rustc.rs" ]
+   build_script_outputs = [ "version.expr" ]
+ 
+   # Only for usage from third-party crates. Add the crate to
+diff -audpNr third_party/rust/rustversion.orig/v1/README.chromium third_party/rust/rustversion/v1/README.chromium
+--- third_party/rust/rustversion.orig/v1/README.chromium	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/rustversion/v1/README.chromium	2026-04-24 21:14:42.227174000 +0900
+@@ -1,7 +1,8 @@ URL: https://crates.io/crates/rustversion
+ Name: rustversion
+ URL: https://crates.io/crates/rustversion
+-Version: 1.0.20
+-Revision: 4887012bc111d034a1aa2e9a5b371680e87f1bbb
++Version: 1.0.22
++Revision: 9e86f839b6a34a7d9398f243d88bf400b7fa1f7c
++Update Mechanism: Manual (https://crbug.com/449898466)
+ License: Apache-2.0
+ License File: //third_party/rust/chromium_crates_io/vendor/rustversion-v1/LICENSE-APACHE
+ Shipped: yes
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.cargo_vcs_info.json third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.cargo_vcs_info.json
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.cargo_vcs_info.json	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.cargo_vcs_info.json	2026-04-24 21:15:22.693219000 +0900
+@@ -1,6 +1,6 @@
+ {
+   "git": {
+-    "sha1": "028ff3bec68ab9c123dc578b74a7af4a72a37609"
++    "sha1": "164cedda0eae131bc6cb67902599f4ec253642ca"
+   },
+   "path_in_vcs": ""
+ }
+\ No newline at end of file
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.github/workflows/rust.yml third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.github/workflows/rust.yml
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.github/workflows/rust.yml	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.github/workflows/rust.yml	2026-04-24 21:15:22.693392000 +0900
+@@ -19,7 +19,7 @@ jobs:
+         include:
+         # versions (all on linux-x86_64)
+         - { rust: 1.34.0, os: ubuntu-latest }
+-        - { rust: 1.61.0, os: ubuntu-latest }
++        - { rust: 1.68.0, os: ubuntu-latest }
+         - { rust: stable, os: ubuntu-latest }
+         - { rust: beta, os: ubuntu-latest }
+         - { rust: nightly, os: ubuntu-latest }
+@@ -38,19 +38,20 @@ jobs:
+     - run: cargo test --verbose --no-default-features
+     - run: cargo test --verbose
+     - run: cargo test --verbose --features derive
+-      if: matrix.rust == '1.61.0'
++      if: matrix.rust == '1.68.0'
+     - run: cargo test --verbose --all-features
+       if: matrix.rust == 'nightly'
+     - run: cargo test --verbose --manifest-path=derive/Cargo.toml --all-features
+       if: matrix.rust == 'nightly'
++    - run: cd contiguous_bitset && cargo test
++      if: matrix.rust == 'stable'
+ 
+   cross-test:
+     name: Test on ${{ matrix.target }} with cross
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        # we once had mips runners for Big-endian coverage but those got demoted to tier 3.
+-        target: [i686-unknown-linux-gnu]
++        target: [i686-unknown-linux-gnu, s390x-unknown-linux-gnu]
+     steps:
+     - uses: hecrj/setup-rust-action@v1
+       with:
+@@ -59,6 +60,7 @@ jobs:
+     - run: cargo install cross
+     - run: cross test --verbose --target=${{ matrix.target }} --no-default-features
+     - run: cross test --verbose --target=${{ matrix.target }}
++    - run: cd derive && cross test --verbose --target=${{ matrix.target }}
+     - run: cross test --verbose --target=${{ matrix.target }} --all-features
+       if: matrix.rust == 'nightly'
+     - run: cross test --verbose --target=${{ matrix.target }} --manifest-path=derive/Cargo.toml --all-features
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.gitignore third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.gitignore
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.gitignore	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.gitignore	2026-04-24 21:15:22.693196000 +0900
+@@ -1,10 +1,6 @@ Cargo.lock
+ 
+ Cargo.lock
+-/target/
+-/.vscode/
+-
+-# These are backup files generated by rustfmt
+ **/*.rs.bk
+ 
+-/derive/target/
+-/derive/.vscode/
++**/target/
++**/.vscode/
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.lock third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.lock
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.lock	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.lock	2026-04-24 21:15:22.693354000 +0900
+@@ -4,16 +4,17 @@ name = "bytemuck"
+ 
+ [[package]]
+ name = "bytemuck"
+-version = "1.23.0"
++version = "1.25.0"
+ dependencies = [
+  "bytemuck_derive",
++ "rustversion",
+ ]
+ 
+ [[package]]
+ name = "bytemuck_derive"
+-version = "1.9.3"
++version = "1.10.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7ecc273b49b3205b83d648f0690daa588925572cc5063745bfe547fe7ec8e1a1"
++checksum = "f9abbd1bc6865053c427f7198e6af43bfdedc55ab791faed4fbd361d789575ff"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -22,27 +23,33 @@ name = "proc-macro2"
+ 
+ [[package]]
+ name = "proc-macro2"
+-version = "1.0.92"
++version = "1.0.95"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "37d3544b3f2748c54e147655edb5025752e2303145b5aefb3c3ea2c78b973bb0"
++checksum = "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
+ dependencies = [
+  "unicode-ident",
+ ]
+ 
+ [[package]]
+ name = "quote"
+-version = "1.0.38"
++version = "1.0.40"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0e4dccaaaf89514f546c693ddc140f729f958c247918a13380cccc6078391acc"
++checksum = "1885c039570dc00dcb4ff087a89e185fd56bae234ddc7f056a945bf36467248d"
+ dependencies = [
+  "proc-macro2",
+ ]
+ 
+ [[package]]
++name = "rustversion"
++version = "1.0.22"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
++
++[[package]]
+ name = "syn"
+-version = "2.0.95"
++version = "2.0.101"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "46f71c0377baf4ef1cc3e3402ded576dccc315800fbc62dfc7fe04b009773b4a"
++checksum = "8ce2b7fc941b3a24138a0a7cf8e858bfc6a992e7978a068a5c760deb0ed43caf"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -51,6 +58,6 @@ name = "unicode-ident"
+ 
+ [[package]]
+ name = "unicode-ident"
+-version = "1.0.14"
++version = "1.0.18"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "adb9e6ca4f869e1180728b7950e35922a7fc6397f7b641499e8f3ef06e50dc83"
++checksum = "5a5f39404a5da50712a4c1eecf25e90dd62b613502b7e925fd4e4d19b5c96512"
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.toml third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.toml
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.toml	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.toml	2026-04-24 21:15:22.693204000 +0900
+@@ -12,10 +12,14 @@ name = "bytemuck"
+ [package]
+ edition = "2018"
+ name = "bytemuck"
+-version = "1.23.0"
++version = "1.25.0"
+ authors = ["Lokathor <zefria@gmail.com>"]
+ build = false
+-exclude = ["/pedantic.bat"]
++exclude = [
++    "/pedantic.bat",
++    "derive/",
++    "contiguous_bitset/",
++]
+ autolib = false
+ autobins = false
+ autoexamples = false
+@@ -84,7 +88,7 @@ nightly_float = []
+ must_cast_extra = ["must_cast"]
+ nightly_docs = []
+ nightly_float = []
+-nightly_portable_simd = []
++nightly_portable_simd = ["rustversion"]
+ nightly_stdsimd = []
+ pod_saturating = []
+ track_caller = []
+@@ -136,7 +140,11 @@ path = "tests/wrapper_forgets.rs"
+ path = "tests/wrapper_forgets.rs"
+ 
+ [dependencies.bytemuck_derive]
+-version = "1.4.1"
++version = "1.10.2"
++optional = true
++
++[dependencies.rustversion]
++version = "1.0.22"
+ optional = true
+ 
+ [lints.rust.unexpected_cfgs]
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/changelog.md third_party/rust/chromium_crates_io/vendor/bytemuck-v1/changelog.md
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/changelog.md	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/changelog.md	2026-04-24 21:15:22.693230000 +0900
+@@ -1,5 +1,24 @@
+ # `bytemuck` changelog
+ 
++## 1.25
++
++* [Remove extern "stdcall" fn ptr impls on non-x86-32 windows.](https://github.com/Lokathor/bytemuck/pull/333)
++* [Fix nightly_portable_simd after LaneCount removal.](https://github.com/Lokathor/bytemuck/pull/344)
++
++## 1.24
++
++* [use new stable avx512 types from rust 1.89](https://github.com/Lokathor/bytemuck/pull/322)
++* [impl AnyBitPattern for [MaybeUninit<T: AnyBitPattern>; N]](https://github.com/Lokathor/bytemuck/pull/317)
++* bump `derive` minimum version.
++
++## 1.23.2
++
++* bump `derive` minimum version.
++
++## 1.23.1
++
++* Added a windows-only `ZeroableInOption` impl for "stdcall" functions.
++
+ ## 1.23
+ 
+ * `impl_core_error` crate feature adds `core::error::Error` impl.
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/rustfmt.toml third_party/rust/chromium_crates_io/vendor/bytemuck-v1/rustfmt.toml
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/rustfmt.toml	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/rustfmt.toml	2026-04-24 21:15:22.693333000 +0900
+@@ -3,7 +3,7 @@ edition = "2018"
+ 
+ # Stable
+ edition = "2018"
+-fn_args_layout = "Compressed"
++fn_params_layout = "Compressed"
+ max_width = 80
+ tab_spaces = 2
+ use_field_init_shorthand = true
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/anybitpattern.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/anybitpattern.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/anybitpattern.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/anybitpattern.rs	2026-04-24 21:15:22.693474000 +0900
+@@ -62,3 +62,16 @@ unsafe impl<T> AnyBitPattern for core::mem::MaybeUnini
+ )]
+ unsafe impl<T> AnyBitPattern for core::mem::MaybeUninit<T> where T: AnyBitPattern
+ {}
++
++#[cfg(all(feature = "zeroable_maybe_uninit", feature = "min_const_generics"))]
++#[cfg_attr(
++  feature = "nightly_docs",
++  doc(cfg(all(
++    feature = "zeroable_maybe_uninit",
++    feature = "min_const_generics"
++  )))
++)]
++unsafe impl<T, const N: usize> AnyBitPattern for [core::mem::MaybeUninit<T>; N] where
++  T: AnyBitPattern
++{
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/derive.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/derive.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/derive.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/derive.rs	2026-04-24 21:15:22.693521000 +0900
+@@ -0,0 +1,19 @@
++//! This module contains some helpers for the derive macros.
++
++/// A trait that can be used to convert the type of a byte array to an integer
++/// type of the same size.
++pub trait EnumTagIntegerBytes {
++  type Integer;
++}
++
++macro_rules! enum_tag_integer_impls {
++  ($($ty:ty),*) => {
++    $(
++      impl EnumTagIntegerBytes for [u8; core::mem::size_of::<$ty>()] {
++        type Integer = $ty;
++      }
++    )*
++  };
++}
++
++enum_tag_integer_impls!(u8, u16, u32, u64, u128);
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/lib.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/lib.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/lib.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/lib.rs	2026-04-24 21:15:22.693506000 +0900
+@@ -5,16 +5,10 @@
+ #![allow(clippy::uninlined_format_args)]
+ #![allow(clippy::result_unit_err)]
+ #![allow(clippy::type_complexity)]
++#![allow(clippy::manual_is_multiple_of)]
+ #![cfg_attr(feature = "nightly_docs", feature(doc_cfg))]
+ #![cfg_attr(feature = "nightly_portable_simd", feature(portable_simd))]
+ #![cfg_attr(feature = "nightly_float", feature(f16, f128))]
+-#![cfg_attr(
+-  all(
+-    feature = "nightly_stdsimd",
+-    any(target_arch = "x86_64", target_arch = "x86")
+-  ),
+-  feature(stdarch_x86_avx512)
+-)]
+ 
+ //! This crate gives small utilities for casting between plain data types.
+ //!
+@@ -229,7 +223,14 @@ pub use transparent::*;
+ mod transparent;
+ pub use transparent::*;
+ 
++// This module is just an implementation detail for the derive macros. It needs
++// to be public to be usable from the macros, but it shouldn't be considered
++// part of bytemuck's public API.
+ #[cfg(feature = "derive")]
++#[doc(hidden)]
++pub mod derive;
++
++#[cfg(feature = "derive")]
+ #[cfg_attr(feature = "nightly_docs", doc(cfg(feature = "derive")))]
+ pub use bytemuck_derive::{
+   AnyBitPattern, ByteEq, ByteHash, CheckedBitPattern, Contiguous, NoUninit,
+@@ -562,7 +563,7 @@ pub fn fill_zeroes<T: Zeroable>(slice: &mut [T]) {
+     // case one of the intermediate drops does a panic.
+     slice.iter_mut().for_each(write_zeroes);
+   } else {
+-    // Otherwise we can be really fast and just fill everthing with zeros.
++    // Otherwise we can be really fast and just fill everything with zeros.
+     let len = slice.len();
+     unsafe { core::ptr::write_bytes(slice.as_mut_ptr(), 0u8, len) }
+   }
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/must.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/must.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/must.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/must.rs	2026-04-24 21:15:22.693515000 +0900
+@@ -114,7 +114,7 @@ maybe_const_fn! {
+ /// ## Failure
+ ///
+ /// * If the target type has a greater alignment requirement.
+-/// * If the target element type doesn't evenly fit into the the current element
++/// * If the target element type doesn't evenly fit into the current element
+ ///   type (eg: 3 `u16` values is 1.5 `u32` values, so that's a failure).
+ /// * Similarly, you can't convert from a non-[ZST](https://doc.rust-lang.org/nomicon/exotic-sizes.html#zero-sized-types-zsts)
+ ///   to a ZST (e.g. 3 `u8` values is not any number of `()` values).
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/no_uninit.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/no_uninit.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/no_uninit.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/no_uninit.rs	2026-04-24 21:15:22.693482000 +0900
+@@ -21,6 +21,9 @@ use core::num::{
+ /// for a type that is only [`NoUninit`], consider also implementing
+ /// [`CheckedBitPattern`][crate::CheckedBitPattern].
+ ///
++/// The rules for padding for various types and representations are documented
++/// in the Rust reference section on [type layout].
++///
+ /// # Derive
+ ///
+ /// A `#[derive(NoUninit)]` macro is provided under the `derive` feature flag
+@@ -47,8 +50,12 @@ use core::num::{
+ /// * Structs need to be `repr(C)` or `repr(transparent)`. In the case of
+ ///   `repr(C)`, the `packed` and `align` repr modifiers can be used as long as
+ ///   all other rules end up being followed.
+-/// * Enums need to have an explicit `#[repr(Int)]`
+-/// * Enums must have only fieldless variants
++/// * Enums need to be `#[repr(Int)]`, `#[repr(C)]`, or both.
++/// * Enums may have fields. If the enum has fields,
++///     * Each variant's fields must individually follow the same rules as a struct
++///     * All variants must be the same size, and require no padding-to-alignment
++///     * There must be no padding needed between the discriminant type and the
++///       "fields struct" of any variant
+ /// * It is disallowed for types to contain pointer types, `Cell`, `UnsafeCell`,
+ ///   atomics, and any other forms of interior mutability.
+ /// * More precisely: A shared reference to the type must allow reads, and
+@@ -58,6 +65,8 @@ use core::num::{
+ ///   it to deal with atomic and cells etc. We require the sharing predicate to
+ ///   be trivial and permit only read-only access.
+ /// * There's probably more, don't mess it up (I mean it).
++///
++/// [type layout]: <https://doc.rust-lang.org/reference/type-layout.html>
+ pub unsafe trait NoUninit: Sized + Copy + 'static {}
+ 
+ unsafe impl<T: Pod> NoUninit for T {}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/pod.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/pod.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/pod.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/pod.rs	2026-04-24 21:16:09.310777000 +0900
+@@ -143,6 +143,7 @@ impl_unsafe_marker_for_simd!(
+   }
+ );
+ 
++#[rustversion::before(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
+ #[cfg(feature = "nightly_portable_simd")]
+ #[cfg_attr(
+   feature = "nightly_docs",
+@@ -155,29 +156,41 @@ where
+ {
+ }
+ 
++#[rustversion::since(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
++#[cfg(feature = "nightly_portable_simd")]
++#[cfg_attr(
++  feature = "nightly_docs",
++  doc(cfg(feature = "nightly_portable_simd"))
++)]
++unsafe impl<T, const N: usize> Pod for core::simd::Simd<T, N>
++where
++  T: core::simd::SimdElement + Pod,
++{
++}
++
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86", any(feature = "nightly_stdsimd", feature = "avx512_simd")))]
++  #[cfg(all(target_arch = "x86", feature = "avx512_simd"))]
+   unsafe impl Pod for x86::{
+     __m512, __m512d, __m512i
+   }
+ );
+ 
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86_64", any(feature = "nightly_stdsimd", feature = "avx512_simd")))]
++  #[cfg(all(target_arch = "x86_64", feature = "avx512_simd"))]
+   unsafe impl Pod for x86_64::{
+     __m512, __m512d, __m512i
+   }
+ );
+ 
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86", feature = "nightly_stdsimd"))]
++    #[cfg(all(target_arch = "x86", feature = "avx512_simd"))]
+   unsafe impl Pod for x86::{
+     __m128bh, __m256bh, __m512bh
+   }
+ );
+ 
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86_64", feature = "nightly_stdsimd"))]
++    #[cfg(all(target_arch = "x86_64", feature = "avx512_simd"))]
+   unsafe impl Pod for x86_64::{
+     __m128bh, __m256bh, __m512bh
+   }
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable.rs	2026-04-24 21:16:31.070635000 +0900
+@@ -222,6 +222,7 @@ impl_unsafe_marker_for_simd!(
+     }
+ );
+ 
++#[rustversion::before(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
+ #[cfg(feature = "nightly_portable_simd")]
+ #[cfg_attr(
+   feature = "nightly_docs",
+@@ -234,29 +235,41 @@ where
+ {
+ }
+ 
++#[rustversion::since(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
++#[cfg(feature = "nightly_portable_simd")]
++#[cfg_attr(
++  feature = "nightly_docs",
++  doc(cfg(feature = "nightly_portable_simd"))
++)]
++unsafe impl<T, const N: usize> Zeroable for core::simd::Simd<T, N>
++where
++  T: core::simd::SimdElement + Zeroable,
++{
++}
++
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86", any(feature = "nightly_stdsimd", feature = "avx512_simd")))]
++  #[cfg(all(target_arch = "x86", feature = "avx512_simd"))]
+   unsafe impl Zeroable for x86::{
+     __m512, __m512d, __m512i
+   }
+ );
+ 
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86_64", any(feature = "nightly_stdsimd", feature = "avx512_simd")))]
++  #[cfg(all(target_arch = "x86_64", feature = "avx512_simd"))]
+   unsafe impl Zeroable for x86_64::{
+     __m512, __m512d, __m512i
+   }
+ );
+ 
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86", feature = "nightly_stdsimd"))]
++  #[cfg(all(target_arch = "x86",  feature = "avx512_simd"))]
+   unsafe impl Zeroable for x86::{
+     __m128bh, __m256bh, __m512bh
+   }
+ );
+ 
+ impl_unsafe_marker_for_simd!(
+-  #[cfg(all(target_arch = "x86_64", feature = "nightly_stdsimd"))]
++  #[cfg(all(target_arch = "x86_64", feature = "avx512_simd"))]
+   unsafe impl Zeroable for x86_64::{
+     __m128bh, __m256bh, __m512bh
+   }
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable_in_option.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable_in_option.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable_in_option.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable_in_option.rs	2026-04-24 21:15:22.693539000 +0900
+@@ -52,12 +52,14 @@ macro_rules! impl_for_fn {
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for unsafe extern "C" fn($($ArgTy,)*) -> R {}
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for extern "system" fn($($ArgTy,)*) -> R {}
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for unsafe extern "system" fn($($ArgTy,)*) -> R {}
++        #[cfg(all(target_os="windows", target_arch = "x86"))]
++        unsafe impl<$($ArgTy,)* R> ZeroableInOption for extern "stdcall" fn($($ArgTy,)*) -> R {}
++        #[cfg(all(target_os="windows", target_arch = "x86"))]
++        unsafe impl<$($ArgTy,)* R> ZeroableInOption for unsafe extern "stdcall" fn($($ArgTy,)*) -> R {}
+         #[cfg(feature = "zeroable_unwind_fn")]
+         impl_for_unwind_fn!($($ArgTy),*);
+     };
+ }
+-
+-
+ 
+ impl_for_fn!();
+ impl_for_fn!(A);
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/tests/std_tests.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/tests/std_tests.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/tests/std_tests.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/tests/std_tests.rs	2026-04-24 21:15:22.693255000 +0900
+@@ -58,7 +58,7 @@ fn test_try_from_box_bytes() {
+ 
+   // Different layout: target alignment is less than source alignment.
+   assert_eq!(
+-    try_from_box_bytes::<u32>(Box::new(0u64).into()).map_err(|(x, _)| x),
++    try_from_box_bytes::<u16>(Box::new(0u64).into()).map_err(|(x, _)| x),
+     Err(PodCastError::AlignmentMismatch)
+   );
+ 
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.cargo_vcs_info.json third_party/rust/chromium_crates_io/vendor/rustversion-v1/.cargo_vcs_info.json
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.cargo_vcs_info.json	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.cargo_vcs_info.json	2026-04-24 21:15:30.561360000 +0900
+@@ -1,6 +1,6 @@
+ {
+   "git": {
+-    "sha1": "4887012bc111d034a1aa2e9a5b371680e87f1bbb"
++    "sha1": "9e86f839b6a34a7d9398f243d88bf400b7fa1f7c"
+   },
+   "path_in_vcs": ""
+ }
+\ No newline at end of file
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.github/workflows/ci.yml third_party/rust/chromium_crates_io/vendor/rustversion-v1/.github/workflows/ci.yml
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.github/workflows/ci.yml	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.github/workflows/ci.yml	2026-04-24 21:15:30.561590000 +0900
+@@ -35,6 +35,9 @@ jobs:
+         run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
+         if: matrix.rust == 'nightly'
+       - run: cargo test
++      - name: RUSTFLAGS=-Zfmt-debug=none cargo test
++        run: RUSTFLAGS=${RUSTFLAGS}\ -Zfmt-debug=none cargo test
++        if: matrix.rust == 'nightly'
+       - uses: actions/upload-artifact@v4
+         if: matrix.rust == 'nightly' && always()
+         with:
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.lock third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.lock
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.lock	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.lock	2026-04-24 21:15:30.561543000 +0900
+@@ -22,15 +22,15 @@ name = "hashbrown"
+ 
+ [[package]]
+ name = "hashbrown"
+-version = "0.15.2"
++version = "0.15.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "bf151400ff0baff5465007dd2f3e717f3fe502074ca563069ce3a6629d07b289"
++checksum = "9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1"
+ 
+ [[package]]
+ name = "indexmap"
+-version = "2.7.1"
++version = "2.10.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "8c9c992b02b5b4c94ea26e32fe5bccb7aa7d9f390ab5c1221ff895bc7ea8b652"
++checksum = "fe4cd85333e22411419a0bcae1297d25e58c9443848b11dc6a86fefe8c78a661"
+ dependencies = [
+  "equivalent",
+  "hashbrown",
+@@ -44,55 +44,55 @@ name = "memchr"
+ 
+ [[package]]
+ name = "memchr"
+-version = "2.7.4"
++version = "2.7.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
++checksum = "32a282da65faaf38286cf3be983213fcf1d2e2a58700e808f83f4ea9a4804bc0"
+ 
+ [[package]]
+ name = "proc-macro2"
+-version = "1.0.94"
++version = "1.0.95"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "a31971752e70b8b2686d7e46ec17fb38dad4051d94024c88df49b667caea9c84"
++checksum = "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
+ dependencies = [
+  "unicode-ident",
+ ]
+ 
+ [[package]]
+ name = "quote"
+-version = "1.0.39"
++version = "1.0.40"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c1f1914ce909e1658d9907913b4b91947430c7d9be598b15a1912935b8c04801"
++checksum = "1885c039570dc00dcb4ff087a89e185fd56bae234ddc7f056a945bf36467248d"
+ dependencies = [
+  "proc-macro2",
+ ]
+ 
+ [[package]]
+ name = "rustversion"
+-version = "1.0.20"
++version = "1.0.22"
+ dependencies = [
+  "trybuild",
+ ]
+ 
+ [[package]]
+ name = "ryu"
+-version = "1.0.19"
++version = "1.0.20"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "6ea1a2d0a644769cc99faa24c3ad26b379b786fe7c36fd3c546254801650e6dd"
++checksum = "28d3b2b1366ec20994f1fd18c3c594f05c5dd4bc44d8bb0c1c632c8d6829481f"
+ 
+ [[package]]
+ name = "serde"
+-version = "1.0.218"
++version = "1.0.219"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "e8dfc9d19bdbf6d17e22319da49161d5d0108e4188e8b680aef6299eed22df60"
++checksum = "5f0e2c6ed6606019b4e29e69dbaba95b11854410e5347d525002456dbbb786b6"
+ dependencies = [
+  "serde_derive",
+ ]
+ 
+ [[package]]
+ name = "serde_derive"
+-version = "1.0.218"
++version = "1.0.219"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "f09503e191f4e797cb8aac08e9a4a4695c5edf6a2e70e376d961ddd5c969f82b"
++checksum = "5b0276cf7f2c73365f7157c8123c21cd9a50fbbd844757af28ca1f5925fc2a00"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -101,9 +101,9 @@ name = "serde_json"
+ 
+ [[package]]
+ name = "serde_json"
+-version = "1.0.140"
++version = "1.0.142"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "20068b6e96dc6c9bd23e01df8827e6c7e1f2fddd43c21810382803c136b99373"
++checksum = "030fedb782600dcbd6f02d479bf0d817ac3bb40d644745b769d6a96bc3afc5a7"
+ dependencies = [
+  "itoa",
+  "memchr",
+@@ -113,18 +113,18 @@ name = "serde_spanned"
+ 
+ [[package]]
+ name = "serde_spanned"
+-version = "0.6.8"
++version = "1.0.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "87607cb1398ed59d48732e575a4c28a7a8ebf2454b964fe3f224f2afc07909e1"
++checksum = "40734c41988f7306bb04f0ecf60ec0f3f1caa34290e4e8ea471dcd3346483b83"
+ dependencies = [
+  "serde",
+ ]
+ 
+ [[package]]
+ name = "syn"
+-version = "2.0.99"
++version = "2.0.104"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "e02e925281e18ffd9d640e234264753c43edc62d64b2d4cf898f1bc5e75f3fc2"
++checksum = "17b6f705963418cdb9927482fa304bc562ece2fdd4f616084c50b7023b435a40"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -148,43 +148,48 @@ name = "toml"
+ 
+ [[package]]
+ name = "toml"
+-version = "0.8.20"
++version = "0.9.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "cd87a5cdd6ffab733b2f74bc4fd7ee5fff6634124999ac278c35fc78c6120148"
++checksum = "75129e1dc5000bfbaa9fee9d1b21f974f9fbad9daec557a521ee6e080825f6e8"
+ dependencies = [
++ "indexmap",
+  "serde",
+  "serde_spanned",
+  "toml_datetime",
+- "toml_edit",
++ "toml_parser",
++ "toml_writer",
++ "winnow",
+ ]
+ 
+ [[package]]
+ name = "toml_datetime"
+-version = "0.6.8"
++version = "0.7.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0dd7358ecb8fc2f8d014bf86f6f638ce72ba252a2c3a2572f2a795f1d23efb41"
++checksum = "bade1c3e902f58d73d3f294cd7f20391c1cb2fbcb643b73566bc773971df91e3"
+ dependencies = [
+  "serde",
+ ]
+ 
+ [[package]]
+-name = "toml_edit"
+-version = "0.22.24"
++name = "toml_parser"
++version = "1.0.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "17b4795ff5edd201c7cd6dca065ae59972ce77d1b80fa0a84d94950ece7d1474"
++checksum = "b551886f449aa90d4fe2bdaa9f4a2577ad2dde302c61ecf262d80b116db95c10"
+ dependencies = [
+- "indexmap",
+- "serde",
+- "serde_spanned",
+- "toml_datetime",
+  "winnow",
+ ]
+ 
+ [[package]]
++name = "toml_writer"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "fcc842091f2def52017664b53082ecbbeb5c7731092bad69d2c63050401dfd64"
++
++[[package]]
+ name = "trybuild"
+-version = "1.0.103"
++version = "1.0.110"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b812699e0c4f813b872b373a4471717d9eb550da14b311058a4d9cf4173cbca6"
++checksum = "32e257d7246e7a9fd015fb0b28b330a8d4142151a33f03e6a497754f4b1f6a8e"
+ dependencies = [
+  "dissimilar",
+  "glob",
+@@ -198,9 +203,9 @@ name = "unicode-ident"
+ 
+ [[package]]
+ name = "unicode-ident"
+-version = "1.0.17"
++version = "1.0.18"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "00e2473a93778eb0bad35909dff6a10d28e63f792f16ed15e404fca9d5eeedbe"
++checksum = "5a5f39404a5da50712a4c1eecf25e90dd62b613502b7e925fd4e4d19b5c96512"
+ 
+ [[package]]
+ name = "winapi-util"
+@@ -286,9 +291,6 @@ name = "winnow"
+ 
+ [[package]]
+ name = "winnow"
+-version = "0.7.3"
++version = "0.7.12"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0e7f4ea97f6f78012141bcdb6a216b2609f0979ada50b20ca5b52dde2eac2bb1"
+-dependencies = [
+- "memchr",
+-]
++checksum = "f3edebf492c8125044983378ecb5766203ad3b4c2f7a922bd7dd207f6d443e95"
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.toml third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.toml
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.toml	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.toml	2026-04-24 21:15:30.561345000 +0900
+@@ -13,7 +13,7 @@ name = "rustversion"
+ edition = "2018"
+ rust-version = "1.31"
+ name = "rustversion"
+-version = "1.0.20"
++version = "1.0.22"
+ authors = ["David Tolnay <dtolnay@gmail.com>"]
+ build = "build/build.rs"
+ autolib = false
+@@ -33,6 +33,7 @@ repository = "https://github.com/dtolnay/rustversion"
+ repository = "https://github.com/dtolnay/rustversion"
+ 
+ [package.metadata.docs.rs]
++targets = ["x86_64-unknown-linux-gnu"]
+ rustdoc-args = [
+     "--generate-link-to-definition",
+     "--extern-html-root-url=core=https://doc.rust-lang.org",
+@@ -40,7 +41,6 @@ rustdoc-args = [
+     "--extern-html-root-url=std=https://doc.rust-lang.org",
+     "--extern-html-root-url=proc_macro=https://doc.rust-lang.org",
+ ]
+-targets = ["x86_64-unknown-linux-gnu"]
+ 
+ [lib]
+ name = "rustversion"
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/build/build.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/build/build.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs	2026-04-24 21:15:30.561526000 +0900
+@@ -1,4 +1,5 @@
+ #![allow(
++    clippy::elidable_lifetime_names,
+     clippy::enum_glob_use,
+     clippy::must_use_candidate,
+     clippy::single_match_else
+@@ -8,6 +9,7 @@ use std::ffi::OsString;
+ 
+ use std::env;
+ use std::ffi::OsString;
++use std::fmt::{self, Debug, Display};
+ use std::fs;
+ use std::iter;
+ use std::path::Path;
+@@ -90,7 +92,7 @@ fn main() {
+         println!("cargo:rustc-check-cfg=cfg(host_os, values(\"windows\"))");
+     }
+ 
+-    let version = format!("{:#?}\n", version);
++    let version = format!("{:#}\n", Render(&version));
+     let out_dir = env::var_os("OUT_DIR").expect("OUT_DIR not set");
+     let out_file = Path::new(&out_dir).join("version.expr");
+     fs::write(out_file, version).expect("failed to write version.expr");
+@@ -98,5 +100,15 @@ fn main() {
+     let host = env::var_os("HOST").expect("HOST not set");
+     if let Some("windows") = host.to_str().unwrap().split('-').nth(2) {
+         println!("cargo:rustc-cfg=host_os=\"windows\"");
++    }
++}
++
++// Shim Version's {:?} format into a {} format, because {:?} is unusable in
++// format strings when building with `-Zfmt-debug=none`.
++struct Render<'a>(&'a rustc::Version);
++
++impl<'a> Display for Render<'a> {
++    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
++        Debug::fmt(self.0, formatter)
+     }
+ }
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/expand.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expand.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/expand.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expand.rs	2026-04-24 21:15:30.561666000 +0900
+@@ -24,7 +24,7 @@ fn try_cfg(introducer: &str, args: TokenStream, input:
+     token::parse_end(full_args)?;
+ 
+     if expr.eval(crate::RUSTVERSION) {
+-        Ok(input)
++        Ok(allow_incompatible_msrv(input))
+     } else {
+         Ok(TokenStream::new())
+     }
+@@ -35,11 +35,11 @@ pub fn try_attr(args: attr::Args, input: TokenStream) 
+         return Ok(input);
+     }
+ 
+-    match args.then {
+-        Then::Const(const_token) => constfn::insert_const(input, const_token),
++    let output = match args.then {
++        Then::Const(const_token) => constfn::insert_const(input, const_token)?,
+         Then::Attribute(then) => {
+-            // #[cfg_attr(all(), #then)]
+-            Ok(TokenStream::from_iter(
++            TokenStream::from_iter(
++                // #[cfg_attr(all(), #then)]
+                 vec![
+                     TokenTree::Punct(Punct::new('#', Spacing::Alone)),
+                     TokenTree::Group(Group::new(
+@@ -66,7 +66,35 @@ pub fn try_attr(args: attr::Args, input: TokenStream) 
+                 ]
+                 .into_iter()
+                 .chain(input),
+-            ))
++            )
+         }
+-    }
++    };
++
++    Ok(allow_incompatible_msrv(output))
++}
++
++fn allow_incompatible_msrv(input: TokenStream) -> TokenStream {
++    TokenStream::from_iter(
++        // #[allow(clippy::incompatible_msrv)]
++        vec![
++            TokenTree::Punct(Punct::new('#', Spacing::Alone)),
++            TokenTree::Group(Group::new(
++                Delimiter::Bracket,
++                TokenStream::from_iter(vec![
++                    TokenTree::Ident(Ident::new("allow", Span::call_site())),
++                    TokenTree::Group(Group::new(
++                        Delimiter::Parenthesis,
++                        TokenStream::from_iter(vec![
++                            TokenTree::Ident(Ident::new("clippy", Span::call_site())),
++                            TokenTree::Punct(Punct::new(':', Spacing::Joint)),
++                            TokenTree::Punct(Punct::new(':', Spacing::Alone)),
++                            TokenTree::Ident(Ident::new("incompatible_msrv", Span::call_site())),
++                        ]),
++                    )),
++                ]),
++            )),
++        ]
++        .into_iter()
++        .chain(input),
++    )
+ }
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/lib.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/lib.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/lib.rs	2025-08-25 23:15:51.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/lib.rs	2026-04-24 21:15:30.561651000 +0900
+@@ -175,7 +175,7 @@
+ //!
+ //! <br>
+ 
+-#![doc(html_root_url = "https://docs.rs/rustversion/1.0.20")]
++#![doc(html_root_url = "https://docs.rs/rustversion/1.0.22")]
+ #![allow(
+     clippy::cast_lossless,
+     clippy::cast_possible_truncation,

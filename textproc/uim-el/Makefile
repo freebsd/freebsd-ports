@@ -1,7 +1,7 @@
 PORTNAME=	uim-el
 PORTVERSION=	1.9.6
+PORTREVISION=	2
 CATEGORIES=	textproc
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Emacs lisp for uim input method library
@@ -22,13 +22,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	uim
 GH_PROJECT=	uim
 
+CONFLICTS_INSTALL=	uim-el-emacs_*
+
+NO_ARCH=	yes
+
 GNU_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/emacs
 INSTALL_WRKSRC=	${WRKSRC}/emacs
 
 CONFIGURE_ARGS?=--enable-maintainer-mode --enable-emacs \
-		--with-lispdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
+		--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
 CONFIGURE_ENV=	EMACS="${EMACS_CMD}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

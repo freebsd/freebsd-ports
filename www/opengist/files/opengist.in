@@ -12,6 +12,8 @@
 #						Default is "%%WWWDIR%%".
 # opengist_user (str):				Set the user for running opengist server.
 #						Default is "opengist".
+# opengist_group (str):				Set the group for running opengist server.
+#						Default is "opengist".
 # opengist_config_file (str):			Set config file location for opengist server.
 #						Default is "%%PREFIX%%/etc/${name}/config.yml".
 # opengist_syslog_output_enable (bool):		Set it to "YES" for enabling output to syslogd(8)
@@ -30,6 +32,7 @@ load_rc_config ${name}
 
 : ${opengist_enable:="NO"}
 : ${opengist_user:="opengist"}
+: ${opengist_group:="opengist"}
 : ${opengist_files:="/var/db/opengist/"}
 : ${opengist_home:="%%WWWDIR%%"}
 : ${opengist_config_file:="%%PREFIX%%/etc/${name}/config.yml"}
@@ -52,7 +55,6 @@ fi
 pidfile=/var/run/opengist/${name}.pid
 procname="%%PREFIX%%/bin/${name}"
 
-start_cmd="${name}_start"
 start_precmd="${name}_precmd"
 
 opengist_precmd()
@@ -63,13 +65,10 @@ opengist_precmd()
 	fi
 }
 
-opengist_start() {
-	echo "Starting opengist."
-	/usr/sbin/daemon -f ${opengist_syslog_output_flags} -p ${pidfile} \
-		/usr/bin/env -i \
-		"PATH=%%PREFIX%%/bin:${PATH}" \
-		${procname} -c ${opengist_config_file}
-}
+command="/usr/sbin/daemon"
+command_args="-f ${opengist_syslog_output_flags} -p ${pidfile} \
+    /usr/bin/env -i \"PATH=%%PREFIX%%/bin:${PATH}\" \
+    ${procname} -c ${opengist_config_file}"
 
 cd ${opengist_home}
 

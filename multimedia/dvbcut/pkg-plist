@@ -1,14 +1,12 @@
 bin/dvbcut
 share/applications/dvbcut.desktop
-share/mime/packages/dvbcut.xml
-share/dvbcut/icons/icons.qrc
-share/dvbcut/icons/bookmark.png
-share/dvbcut/icons/chapter.svgz
-share/dvbcut/icons/dvbcut.svg
-share/dvbcut/icons/play.svgz
-share/dvbcut/icons/stop.png
-share/dvbcut/icons/play.png
-share/dvbcut/icons/bookmark.svgz
-share/dvbcut/icons/chapter.png
-share/dvbcut/icons/stop.svgz
+%%DATADIR%%/dvbcut.qm
+%%DATADIR%%/dvbcut_cs.html
+%%DATADIR%%/dvbcut_cs.qm
+%%DATADIR%%/dvbcut_de.html
+%%DATADIR%%/dvbcut_de.qm
+%%DATADIR%%/dvbcut_en.html
+%%DATADIR%%/icons/dvbcut.svg
 share/man/man1/dvbcut.1.gz
+share/mime/packages/dvbcut.xml
+@dir %%DATADIR%%/applications

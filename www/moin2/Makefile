@@ -1,5 +1,6 @@
 PORTNAME=	moin
 DISTVERSION=	2.0.0b3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	https://github.com/moinwiki/moin/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	2

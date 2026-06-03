@@ -1,11 +1,11 @@
 PORTNAME=	metronome
 DISTVERSION=	1.3.0
-PORTREVISION=	19
+PORTREVISION=	26
 CATEGORIES=	audio gnome
 PKGNAMEPREFIX=	gnome-
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Keep the tempo
 WWW=		https://gitlab.gnome.org/World/metronome
 

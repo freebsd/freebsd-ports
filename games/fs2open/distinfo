@@ -1,7 +1,7 @@
-TIMESTAMP = 1699052214
-SHA256 (scp-fs2open-fs2open.github.com-release_23_2_1_GH0.tar.gz) = 90e17499dc999370e6415fb56b46b755b03b187f03014cf8a983a39d3adde01b
-SIZE (scp-fs2open-fs2open.github.com-release_23_2_1_GH0.tar.gz) = 12091345
+TIMESTAMP = 1777922236
+SHA256 (scp-fs2open-fs2open.github.com-release_25_0_1_GH0.tar.gz) = a32289ff57578368e9e41f13e1652c890fd418eb2e1e480cc6aae7f41cc5e3ba
+SIZE (scp-fs2open-fs2open.github.com-release_25_0_1_GH0.tar.gz) = 11464417
 SHA256 (asarium-cmake-modules-7cef957_GH0.tar.gz) = 5d1e7954bb92c61c1509ad0bb0d2274af4863621dc864199aac85c2d43921c0e
 SIZE (asarium-cmake-modules-7cef957_GH0.tar.gz) = 267299
-SHA256 (asarium-libRocket-ecd648a_GH0.tar.gz) = 43864c375480c9eeac47643ae1c30947d9b236281e51e1d54d729c6d51cef6e4
-SIZE (asarium-libRocket-ecd648a_GH0.tar.gz) = 2417439
+SHA256 (asarium-libRocket-ae8a8d9_GH0.tar.gz) = e3cb4561dca373a9fc7bb2501820ff19ea2ef00bf1a1ad70cdca1ebbf7b2976f
+SIZE (asarium-libRocket-ae8a8d9_GH0.tar.gz) = 2417488

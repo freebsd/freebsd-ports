@@ -1,9 +1,3 @@
-===>  License MIT accepted by the user
-===>   leftwm-0.5.4 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by leftwm-0.5.4 for building
-===>  Extracting for leftwm-0.5.4
-=> SHA256 Checksum OK for leftwm-leftwm-0.5.4_GH0.tar.gz.
-===>  Moving crates to /usr/ports/x11-wm/leftwm/work/leftwm-0.5.4/cargo-crates
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \

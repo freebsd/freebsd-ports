@@ -1,6 +1,6 @@
---- meson.build.orig	2023-05-10 12:50:24 UTC
+--- meson.build.orig	2025-06-18 07:27:57 UTC
 +++ meson.build
-@@ -166,7 +166,7 @@ subdir('modulemd')
+@@ -177,7 +177,7 @@ subdir('modulemd')
  srpm_cdata.set('BUILDFLAG', '-bs')
  
  subdir('modulemd')
@@ -9,7 +9,7 @@
  
  if rpm.found()
      if with_rpmio.enabled()
-@@ -196,16 +196,16 @@ summary({'prefix': get_option('prefix'),
+@@ -207,8 +207,8 @@ summary({'prefix': get_option('prefix'),
           'bindir': get_option('bindir'),
           'libdir': get_option('libdir'),
           'datadir': get_option('datadir'),
@@ -17,9 +17,10 @@
 -         'Python 3 GObject Overrides': gobject_overrides_dir_py3,
 +         #'Python 2 GObject Overrides': gobject_overrides_dir_py2,
 +         #'Python 3 GObject Overrides': gobject_overrides_dir_py3,
+          'GTK-Doc Referred Paths': gtk_doc_referred_paths,
          }, section: 'Directories')
  
- summary({'Custom Python': get_option('python_name'),
+@@ -216,8 +216,8 @@ summary({'Custom Python': get_option('python_name'),
           'RPMIO Support': rpmio_status,
           'Generate Manual Pages': manpages_status,
           'Generate HTML Documentation': get_option('with_docs'),

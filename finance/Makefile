@@ -50,15 +50,14 @@
     SUBDIR += ledgersmb12
     SUBDIR += libbtc
     SUBDIR += libofx
-    SUBDIR += libstocks
     SUBDIR += linux-tradingview
     SUBDIR += lnd
     SUBDIR += moneymanagerex
-    SUBDIR += myphpmoney
     SUBDIR += nextcloud-cospend
     SUBDIR += odoo
     SUBDIR += odoo16
     SUBDIR += odoo17
+    SUBDIR += odoo18
     SUBDIR += ord
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
@@ -150,7 +149,6 @@
     SUBDIR += py-ystockquote
     SUBDIR += qtbitcointrader
     SUBDIR += quantlib
-    SUBDIR += quba-viewer
     SUBDIR += quickfix
     SUBDIR += rcheckbook
     SUBDIR += rubygem-money

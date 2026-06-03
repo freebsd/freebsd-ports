@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2025-05-05 10:57:53 UTC
+--- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2026-04-09 06:05:42 UTC
 +++ gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc
 @@ -20,7 +20,7 @@ namespace {
  // TODO(penghuang): verify the scanout is the right usage for video playback.
@@ -9,10 +9,10 @@
      SHARED_IMAGE_USAGE_SCANOUT |
  #endif
      SHARED_IMAGE_USAGE_GLES2_READ | SHARED_IMAGE_USAGE_GLES2_WRITE |
-@@ -121,7 +121,7 @@ bool AngleVulkanImageBackingFactory::IsGMBSupported(
-   switch (gmb_type) {
+@@ -124,7 +124,7 @@ bool AngleVulkanImageBackingFactory::IsGMBSupported(
+     // usage?
      case gfx::EMPTY_BUFFER:
-       return true;
+       return HasGLES2ReadOrWriteUsage(usage);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      case gfx::NATIVE_PIXMAP: {

@@ -1,3 +1,15 @@
 NVC is a GPLv3 VHDL compiler and simulator aiming for IEEE 1076-2002 compliance.
-See these blog posts for background information. NVC has been successfully used
-to simulate several real-world designs.
+
+- NVC supports almost all of VHDL-2008 with the exception of PSL, and it has
+been successfully used to simulate several real-world designs. Experimental
+support for Verilog and VHDL-2019 is under development.
+
+- NVC has a particular emphasis on simulation performance and uses LLVM to
+compile VHDL to native machine code.
+
+- NVC is not a synthesizer. That is, it does not output something that could be
+used to program an FPGA or ASIC. It implements only the simulation behaviour of
+the language as described by the IEEE 1076 standard.
+
+- NVC supports popular verification frameworks including OSVVM, UVVM, VUnit and
+cocotb.

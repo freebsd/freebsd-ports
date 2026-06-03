@@ -1,0 +1,8 @@
+FrobTADS is a full version of TADS for Unix, Linux, and Mac OS X, by Nikos
+Chantziaras. It includes everything you need for playing and writing TADS games,
+including a text-only TADS interpreter and the compilers for both TADS 2 and 3.
+
+The latest text-only TADS features are supported, including colored text and
+backgrounds, TADS 3 banner windows, and timed input. FrobTADS is easy to
+install, with automatic configuration on all Linux versions, a pre-built install
+package for Mac OS X, and auto configuration on most other Unix systems.

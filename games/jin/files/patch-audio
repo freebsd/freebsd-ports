@@ -1,0 +1,76 @@
+Try harder to find an audio format suitable for the bundled
+collection of 8kHz sounds... Still likely to fail on modern
+hardware, which expects much higher sampling rates...
+
+	-mi (December 2025)
+
+--- src/free/util/audio/GenericJavaxSampledAudioPlayer.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/util/audio/GenericJavaxSampledAudioPlayer.java	2025-12-15 18:39:40.763246000 -0500
+@@ -38,4 +38,5 @@
+   public void run(){
+     SourceDataLine dataLine = null;
++    DataLine.Info info = null;
+     while (true){
+       try{
+@@ -43,10 +44,12 @@
+         byte [] data = audioClip.getData();
+         AudioFormat format = getFormatForPlaying(data);
++        System.err.println("Trying autio format: " + format);
+         data = convertAudioData(data, format);
+         
+         if (dataLine == null){
+-          DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
++          info = new DataLine.Info(SourceDataLine.class, format);
+           dataLine = (SourceDataLine)AudioSystem.getLine(info);
+         }
++        System.err.println("Trying autio with: " + info);
+         
+         if (!dataLine.isOpen())
+--- src/free/util/audio/JavaxSampledAudioPlayer.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/util/audio/JavaxSampledAudioPlayer.java	2025-12-15 18:54:51.876119000 -0500
+@@ -95,19 +95,28 @@
+   protected static AudioFormat getFormatForPlaying(byte [] audioData)
+       throws UnsupportedAudioFileException, IOException{
+-    AudioFormat format = AudioSystem.getAudioFileFormat(
+-        new ByteArrayInputStream(audioData)).getFormat();
++    ByteArrayInputStream bais = new ByteArrayInputStream(audioData);
++    AudioFormat format = AudioSystem.getAudioFileFormat(bais).getFormat();
++    DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
+ 
+-    // At present, ALAW and ULAW encodings must be converted
+-    // to PCM_SIGNED before it can be played
+-    if (format.getEncoding() != AudioFormat.Encoding.PCM_SIGNED)
+-      return new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
+-          format.getSampleRate(), format.getSampleSizeInBits() * 2,
+-          format.getChannels(), format.getFrameSize() * 2,
+-          format.getFrameRate(), true);
+-    else
++    if (AudioSystem.isLineSupported(info)) {
++      System.err.println("Audio format ``" + format + "'' can be used straight");
+       return format;
+-  }
++    }
++    System.err.println("Audio format ``" + format + "'' can not be used straight");
+ 
++    AudioFormat[] possibleFormats = AudioSystem.getTargetFormats(
++      AudioFormat.Encoding.PCM_SIGNED, format);
+ 
++    for (AudioFormat newFormat : possibleFormats) {
++      info = new DataLine.Info(SourceDataLine.class, newFormat);
++      if (AudioSystem.isLineSupported(info)) {
++         System.err.println("Will try audio format " + newFormat + " instead of " + format);
++         return newFormat;
++      }
++      System.err.println("Format ``" + newFormat + "'' cannot be used");
++    }
++    throw new UnsupportedAudioFileException("No suitable audio format among " +
++      possibleFormats.length + " possibilities");
++  }
+ 
+   /**
+@@ -128,3 +137,3 @@
+   }
+ 
+-}
+\ No newline at end of file
++}

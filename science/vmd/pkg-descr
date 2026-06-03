@@ -1,2 +1,13 @@
-VMD is a molecular visualization program for displaying, animating, and
-analyzing large biomolecular systems using 3-D graphics and built-in scripting.
+VMD (Visual Molecular Dynamics) is a molecular visualization program for
+displaying, animating, and analyzing large biomolecular systems. It
+utilizes 3D graphics and built-in scripting (Tcl and Python) for
+interactive exploration.
+
+Key features include:
+- Visualization of molecular dynamics simulations.
+- Support for over 60 molecular file formats and data types.
+- Various rendering styles (licorice, ribbons, van der Waals spheres).
+- High-quality rendering, animation, and stereo display.
+- Integrated analysis tools and custom scripting for advanced analysis.
+- GPU acceleration and no inherent limits on molecular size.
+- Cross-platform availability (Windows, macOS, and Linux).

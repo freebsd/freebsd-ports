@@ -1,5 +1,5 @@
 PORTNAME=	MooseX-Types-DateTime
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -14,8 +14,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DateTime>=0.43.02:devel/p5-DateTime \
-		p5-DateTime-Locale>=0.40.01:devel/p5-DateTime-Locale \
+RUN_DEPENDS=	p5-DateTime>=0.4302:devel/p5-DateTime \
+		p5-DateTime-Locale>=0.4001:devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=0.95:devel/p5-DateTime-TimeZone \
 		p5-Moose>=0.41:devel/p5-Moose \
 		p5-MooseX-Types>=0.30:devel/p5-MooseX-Types \

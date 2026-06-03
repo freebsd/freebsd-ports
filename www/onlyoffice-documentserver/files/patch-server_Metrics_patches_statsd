@@ -1,0 +1,64 @@
+--- server/Metrics/patches/statsd+0.9.0.patch.orig	2026-04-22 04:51:23 UTC
++++ server/Metrics/patches/statsd+0.9.0.patch
+@@ -0,0 +1,61 @@
++diff --git a/node_modules/statsd/lib/config.js b/node_modules/statsd/lib/config.js
++index 11ff71c..d36abae 100644
++--- a/node_modules/statsd/lib/config.js
+++++ b/node_modules/statsd/lib/config.js
++@@ -10,7 +10,7 @@ let Configurator = function (file) {
++   let oldConfig = {};
++ 
++   this.updateConfig = function () {
++-    util.log('[' + process.pid + '] reading config file: ' + file);
+++    console.log('[' + process.pid + '] reading config file: ' + file);
++ 
++     fs.readFile(file, function (err, data) {
++       if (err) { throw err; }
++diff --git a/node_modules/statsd/lib/logger.js b/node_modules/statsd/lib/logger.js
++index 8867f82..81e2108 100644
++--- a/node_modules/statsd/lib/logger.js
+++++ b/node_modules/statsd/lib/logger.js
++@@ -22,7 +22,7 @@ Logger.prototype = {
++       if (!type) {
++         type = 'DEBUG';
++       }
++-      this.util.log(type + ": " + msg);
+++      this.console.log(type + ": " + msg);
++     } else {
++       let level;
++       if (!type) {
++@@ -35,7 +35,7 @@ Logger.prototype = {
++         throw "Undefined log level: " + level;
++       }
++ 
++-      this.util.log(this.util[level], msg);
+++      this.console.log(this.util[level], msg);
++     }
++   }
++ };
++diff --git a/node_modules/statsd/lib/process_mgmt.js b/node_modules/statsd/lib/process_mgmt.js
++index a0dcf7b..bca534c 100644
++--- a/node_modules/statsd/lib/process_mgmt.js
+++++ b/node_modules/statsd/lib/process_mgmt.js
++@@ -8,7 +8,7 @@ exports.init = function(config) {
++ 
++   process.on('SIGTERM', function() {
++    if (conf.debug) {
++-     util.log('Starting Final Flush');
+++     console.log('Starting Final Flush');
++    }
++    healthStatus = 'down';
++    process.exit();
++diff --git a/node_modules/statsd/stats.js b/node_modules/statsd/stats.js
++index 75f5741..d8fae0c 100644
++--- a/node_modules/statsd/stats.js
+++++ b/node_modules/statsd/stats.js
++@@ -442,7 +442,7 @@ config.configFile(process.argv[2], function (config) {
++     );
++ 
++     serversLoaded = true;
++-    util.log("server is up", "INFO");
+++    console.log("server is up", "INFO");
++ 
++     pctThreshold = config.percentThreshold || 90;
++     if (!Array.isArray(pctThreshold)) {

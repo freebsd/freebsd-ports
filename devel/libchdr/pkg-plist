@@ -5,9 +5,10 @@ include/libchdr/chdconfig.h
 include/libchdr/coretypes.h
 include/libchdr/flac.h
 include/libchdr/huffman.h
+include/libchdr/macros.h
 lib/libchdr-static.a
 lib/libchdr.a
 lib/libchdr.so
 lib/libchdr.so.0
-lib/libchdr.so.0.2
+lib/libchdr.so.%%SOVERSION%%
 libdata/pkgconfig/libchdr.pc

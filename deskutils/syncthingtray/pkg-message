@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "2.0.0"
+  message: <<EOM
+If you are user of net/syncthing 2.x, please control in syncthigtray's settings,
+that it uses double-dash long options, like `--no-restart`, instead of old
+single-dash, like `-no-restart`.
+EOM
+}
+]

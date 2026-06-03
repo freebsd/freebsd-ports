@@ -1,6 +1,6 @@
 PORTNAME=	frontbase
 DISTVERSION=	2.5.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	databases java
 MASTER_SITES+=	http://www.frontbase.com/download/JDBC/
 PKGNAMESUFFIX=	-jdbc

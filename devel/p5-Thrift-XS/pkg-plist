@@ -1,13 +1,3 @@
-%%SITE_ARCH%%/Thrift.pm
-%%SITE_ARCH%%/Thrift/BinaryProtocol.pm
-%%SITE_ARCH%%/Thrift/BufferedTransport.pm
-%%SITE_ARCH%%/Thrift/FramedTransport.pm
-%%SITE_ARCH%%/Thrift/HttpClient.pm
-%%SITE_ARCH%%/Thrift/MemoryBuffer.pm
-%%SITE_ARCH%%/Thrift/Protocol.pm
-%%SITE_ARCH%%/Thrift/Server.pm
-%%SITE_ARCH%%/Thrift/Socket.pm
-%%SITE_ARCH%%/Thrift/Transport.pm
 %%SITE_ARCH%%/Thrift/XS.pm
 %%SITE_ARCH%%/Thrift/XS/BinaryProtocol.pm
 %%SITE_ARCH%%/Thrift/XS/CompactProtocol.pm

@@ -1,7 +1,7 @@
 PORTNAME=	dhall
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.15
-PORTREVISION=	9
+DISTVERSION=	0.1.16
+PORTREVISION=	1
+MASTER_SITES=	PYPI
 CATEGORIES=	lang python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,9 +27,8 @@ USES=		cargo perl5 python
 USE_PYTHON=	pep517 autoplist pytest
 USE_PERL5=	build
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	s-zeng
-GH_PROJECT=	dhall-python
+# workaround for the problem that the ports framework doesn't add PYPI-related file to DISTFILES due to DISTFILES?= in Mk/bsd.port.mk
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
 CARGO_CRATES=	abnf-0.12.0 \
 		abnf-core-0.5.0 \
@@ -114,11 +113,11 @@ CARGO_CRATES=	abnf-0.12.0 \
 		num_cpus-1.13.1 \
 		once_cell-1.10.0 \
 		opaque-debug-0.2.3 \
-		openssl-0.10.54 \
+		openssl-0.10.55 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.25.2+1.1.1t \
-		openssl-sys-0.9.88 \
+		openssl-sys-0.9.90 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
 		percent-encoding-2.1.0 \
@@ -132,13 +131,13 @@ CARGO_CRATES=	abnf-0.12.0 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.24 \
 		pretty-0.11.3 \
-		proc-macro2-1.0.54 \
-		pyo3-0.19.0 \
-		pyo3-build-config-0.19.0 \
-		pyo3-ffi-0.19.0 \
-		pyo3-macros-0.19.0 \
-		pyo3-macros-backend-0.19.0 \
-		quote-1.0.26 \
+		proc-macro2-1.0.64 \
+		pyo3-0.19.1 \
+		pyo3-build-config-0.19.1 \
+		pyo3-ffi-0.19.1 \
+		pyo3-macros-0.19.1 \
+		pyo3-macros-backend-0.19.1 \
+		quote-1.0.29 \
 		redox_syscall-0.2.12 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.10 \
@@ -147,10 +146,10 @@ CARGO_CRATES=	abnf-0.12.0 \
 		scopeguard-1.1.0 \
 		security-framework-2.6.1 \
 		security-framework-sys-2.6.1 \
-		serde-1.0.164 \
-		serde_derive-1.0.164 \
+		serde-1.0.173 \
+		serde_derive-1.0.173 \
 		serde_dhall-0.12.1 \
-		serde_json-1.0.97 \
+		serde_json-1.0.103 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.8.2 \
 		sha2-0.10.2 \
@@ -159,11 +158,11 @@ CARGO_CRATES=	abnf-0.12.0 \
 		socket2-0.4.4 \
 		stable_deref_trait-1.2.0 \
 		syn-1.0.105 \
-		syn-2.0.11 \
+		syn-2.0.25 \
 		target-lexicon-0.12.3 \
 		tempfile-3.3.0 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
+		thiserror-1.0.43 \
+		thiserror-impl-1.0.43 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		tokio-1.25.0 \

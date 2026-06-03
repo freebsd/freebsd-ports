@@ -1,7 +1,6 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.22
-PORTREVISION=	6
+DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,174 +21,161 @@ GH_ACCOUNT=	hakoerber
 
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
-CARGO_CRATES=	adler2-2.0.0 \
-		aho-corasick-1.1.3 \
-		anstream-0.6.18 \
-		anstyle-1.0.10 \
-		anstyle-parse-0.2.6 \
-		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
-		autocfg-1.4.0 \
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		autocfg-1.5.0 \
 		base64-0.22.1 \
-		bitflags-2.6.0 \
-		byteorder-1.5.0 \
-		bytes-1.9.0 \
-		cc-1.2.2 \
-		cfg-if-1.0.0 \
-		clap-4.5.21 \
-		clap_builder-4.5.21 \
-		clap_derive-4.5.18 \
-		clap_lex-0.7.3 \
-		colorchoice-1.0.3 \
-		comfy-table-7.1.3 \
-		console-0.15.8 \
-		crc32fast-1.4.2 \
-		crossterm-0.28.1 \
-		crossterm_winapi-0.9.1 \
-		dirs-5.0.1 \
-		dirs-sys-0.4.1 \
+		bitflags-2.11.1 \
+		bytes-1.11.1 \
+		camino-1.2.2 \
+		cc-1.2.62 \
+		cfg-if-1.0.4 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_derive-4.6.1 \
+		clap_lex-1.1.0 \
+		colorchoice-1.0.5 \
+		comfy-table-7.2.2 \
+		console-0.16.3 \
+		cookie-0.18.1 \
+		cookie_store-0.22.0 \
+		deranged-0.5.5 \
 		displaydoc-0.2.5 \
-		encode_unicode-0.3.6 \
-		equivalent-1.0.1 \
-		errno-0.3.10 \
-		flate2-1.0.35 \
-		fnv-1.0.7 \
-		form_urlencoded-1.2.1 \
-		getrandom-0.2.15 \
-		git2-0.19.0 \
-		hashbrown-0.15.2 \
+		document-features-0.2.11 \
+		encode_unicode-1.0.0 \
+		equivalent-1.0.2 \
+		errno-0.3.14 \
+		fastrand-2.4.1 \
+		find-msvc-tools-0.1.9 \
+		form_urlencoded-1.2.2 \
+		getrandom-0.2.17 \
+		getrandom-0.3.4 \
+		git2-0.21.0 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
-		http-1.1.0 \
-		icu_collections-1.5.0 \
-		icu_locid-1.5.0 \
-		icu_locid_transform-1.5.0 \
-		icu_locid_transform_data-1.5.0 \
-		icu_normalizer-1.5.0 \
-		icu_normalizer_data-1.5.0 \
-		icu_properties-1.5.1 \
-		icu_properties_data-1.5.0 \
-		icu_provider-1.5.0 \
-		icu_provider_macros-1.5.0 \
-		idna-1.0.3 \
-		idna_adapter-1.2.0 \
-		indexmap-2.6.0 \
-		is_terminal_polyfill-1.70.1 \
-		itoa-1.0.14 \
-		jobserver-0.1.32 \
+		http-1.4.0 \
+		httparse-1.10.1 \
+		icu_collections-2.1.1 \
+		icu_locale_core-2.1.1 \
+		icu_normalizer-2.1.1 \
+		icu_normalizer_data-2.1.1 \
+		icu_properties-2.1.2 \
+		icu_properties_data-2.1.2 \
+		icu_provider-2.1.1 \
+		idna-1.1.0 \
+		idna_adapter-1.2.1 \
+		indexmap-2.14.0 \
+		is_terminal_polyfill-1.70.2 \
+		itoa-1.0.18 \
+		jobserver-0.1.34 \
 		lazy_static-1.5.0 \
-		libc-0.2.167 \
-		libgit2-sys-0.17.0+1.8.1 \
-		libredox-0.1.3 \
-		libssh2-sys-0.3.0 \
-		libz-sys-1.1.20 \
-		linux-raw-sys-0.4.14 \
-		litemap-0.7.3 \
-		lock_api-0.4.12 \
-		log-0.4.22 \
-		memchr-2.7.4 \
-		miniz_oxide-0.8.0 \
-		once_cell-1.20.2 \
-		openssl-probe-0.1.5 \
-		openssl-src-300.4.1+3.4.0 \
-		openssl-sys-0.9.104 \
-		option-ext-0.2.0 \
-		outdir-tempdir-0.2.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
-		parse_link_header-0.4.0 \
-		percent-encoding-2.3.1 \
-		pkg-config-0.3.31 \
-		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.92 \
-		quote-1.0.37 \
-		rand-0.8.5 \
-		rand_chacha-0.3.1 \
-		rand_core-0.6.4 \
-		redox_syscall-0.5.7 \
-		redox_users-0.4.6 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-syntax-0.8.5 \
-		ring-0.17.8 \
-		rustix-0.38.41 \
-		rustls-0.23.19 \
-		rustls-pki-types-1.10.0 \
-		rustls-webpki-0.102.8 \
-		rustversion-1.0.18 \
-		ryu-1.0.18 \
+		libc-0.2.186 \
+		libgit2-sys-0.18.4+1.9.3 \
+		libssh2-sys-0.3.1 \
+		libz-sys-1.1.28 \
+		linux-raw-sys-0.12.1 \
+		litemap-0.8.2 \
+		litrs-0.4.2 \
+		lock_api-0.4.13 \
+		log-0.4.29 \
+		memchr-2.8.0 \
+		num-conv-0.1.0 \
+		once_cell-1.21.4 \
+		once_cell_polyfill-1.70.2 \
+		openssl-probe-0.1.6 \
+		openssl-src-300.5.1+3.5.1 \
+		openssl-sys-0.9.116 \
+		parking_lot-0.12.4 \
+		parking_lot_core-0.9.11 \
+		parse_link_header-0.4.1 \
+		percent-encoding-2.3.2 \
+		pkg-config-0.3.33 \
+		potential_utf-0.1.5 \
+		powerfmt-0.2.0 \
+		proc-macro2-1.0.106 \
+		quote-1.0.45 \
+		r-efi-5.3.0 \
+		redox_syscall-0.5.17 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		ring-0.17.14 \
+		rustix-1.1.4 \
+		rustls-0.23.40 \
+		rustls-pki-types-1.14.1 \
+		rustls-webpki-0.103.13 \
+		ryu-1.0.20 \
 		scopeguard-1.2.0 \
-		serde-1.0.215 \
-		serde_derive-1.0.215 \
-		serde_json-1.0.133 \
-		serde_spanned-0.6.8 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
+		serde_spanned-1.1.1 \
 		serde_yaml-0.9.34+deprecated \
-		shellexpand-3.1.0 \
+		shellexpand-3.1.2 \
 		shlex-1.3.0 \
-		smallvec-1.13.2 \
-		spin-0.9.8 \
-		stable_deref_trait-1.2.0 \
-		strsim-0.11.1 \
-		strum-0.26.3 \
-		strum_macros-0.26.4 \
+		smallvec-1.15.1 \
+		stable_deref_trait-1.2.1 \
 		subtle-2.6.1 \
-		syn-2.0.90 \
-		synstructure-0.13.1 \
-		thiserror-1.0.69 \
-		thiserror-impl-1.0.69 \
-		tinystr-0.7.6 \
-		toml-0.8.19 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
-		unicode-ident-1.0.14 \
-		unicode-width-0.1.14 \
-		unicode-width-0.2.0 \
+		syn-2.0.117 \
+		synstructure-0.13.2 \
+		temp-env-0.3.6 \
+		tempfile-3.27.0 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		time-0.3.45 \
+		time-core-0.1.7 \
+		time-macros-0.2.25 \
+		tinystr-0.8.3 \
+		toml-1.1.2+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
+		toml_writer-1.1.1+spec-1.1.0 \
+		unicode-ident-1.0.24 \
+		unicode-segmentation-1.13.2 \
+		unicode-width-0.2.2 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
-		ureq-2.11.0 \
-		url-2.5.4 \
+		ureq-3.3.0 \
+		ureq-proto-0.6.0 \
+		url-2.5.8 \
 		url-escape-0.1.1 \
-		utf16_iter-1.0.5 \
+		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.11.0 \
 		vcpkg-0.2.15 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		webpki-roots-0.26.7 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.48.0 \
+		version_check-0.9.5 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		webpki-roots-1.0.7 \
+		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
-		windows-targets-0.48.5 \
+		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.20 \
-		write16-1.0.0 \
-		writeable-0.5.5 \
-		yoke-0.7.4 \
-		yoke-derive-0.7.5 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
-		zerofrom-0.1.4 \
-		zerofrom-derive-0.1.5 \
-		zeroize-1.8.1 \
-		zerovec-0.10.4 \
-		zerovec-derive-0.10.3
+		winnow-1.0.2 \
+		wit-bindgen-0.51.0 \
+		writeable-0.6.3 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerofrom-0.1.8 \
+		zerofrom-derive-0.1.7 \
+		zeroize-1.8.2 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3 \
+		zmij-1.0.21
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib

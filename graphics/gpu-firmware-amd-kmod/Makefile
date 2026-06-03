@@ -1,6 +1,5 @@
 PORTNAME=	gpu-firmware-amd-kmod
-PORTVERSION=	20230625
-PORTREVISION=	2
+PORTVERSION=	20250109
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -28,7 +27,9 @@ FLAVORS=	aldebaran \
 		dcn_3_1_6 \
 		dcn_3_2_0 \
 		dcn_3_2_1 \
+		dcn_3_5 \
 		fiji \
+		gc_9_4_3 \
 		gc_10_3_6 \
 		gc_10_3_7 \
 		gc_11_0_0 \
@@ -36,6 +37,7 @@ FLAVORS=	aldebaran \
 		gc_11_0_2 \
 		gc_11_0_3 \
 		gc_11_0_4 \
+		gc_11_5_0 \
 		hainan \
 		hawaii \
 		kabini \
@@ -53,23 +55,29 @@ FLAVORS=	aldebaran \
 		psp_13_0_0 \
 		psp_13_0_4 \
 		psp_13_0_5 \
+		psp_13_0_6 \
 		psp_13_0_7 \
 		psp_13_0_8 \
 		psp_13_0_10 \
 		psp_13_0_11 \
+		psp_14_0_0 \
 		raven \
 		raven2 \
 		renoir \
+		sdma_4_4_2 \
 		sdma_5_2_6 \
 		sdma_5_2_7 \
 		sdma_6_0_0 \
 		sdma_6_0_1 \
 		sdma_6_0_2 \
 		sdma_6_0_3 \
+		sdma_6_1_0 \
 		si58 \
 		smu_13_0_0 \
+		smu_13_0_6 \
 		smu_13_0_7 \
 		smu_13_0_10 \
+		smu_14_0_2 \
 		stoney \
 		tahiti \
 		tonga \
@@ -77,12 +85,15 @@ FLAVORS=	aldebaran \
 		vcn_3_1_2 \
 		vcn_4_0_0 \
 		vcn_4_0_2 \
+		vcn_4_0_3 \
 		vcn_4_0_4 \
+		vcn_4_0_5 \
 		vega10 \
 		vega12 \
 		vega20 \
 		vegam \
 		verde \
+		vpe_6_1_0 \
 		dimgrey_cavefish \
 		green_sardine \
 		navy_flounder \
@@ -95,7 +106,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod-firmware
-GH_TAGNAME=	20230625_8
+GH_TAGNAME=	20250109
 
 MAKE_ENV=	KMODS="amdgpukmsfw"
 MAKE_ENV+=	AMDGPUKMODS="${FLAVOR}"

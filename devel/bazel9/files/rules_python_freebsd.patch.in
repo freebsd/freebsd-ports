@@ -1,0 +1,12 @@
+--- a/python/private/py_executable.bzl
++++ b/python/private/py_executable.bzl
+@@ -903,8 +903,8 @@
+             is_for_zip = True,
+             venv = venv,
+         )
+     else:
+-        ctx.actions.write(prelude, "#!/usr/bin/env python3\n")
++        ctx.actions.write(prelude, "#!%%PYTHON_CMD%%\n")
+
+     ctx.actions.run_shell(
+         command = "cat {prelude} {zip} > {output}".format(

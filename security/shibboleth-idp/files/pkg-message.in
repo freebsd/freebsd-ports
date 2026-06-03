@@ -11,7 +11,7 @@ To get started:
     # sysrc shibboleth_idp_scope="example.com"
     # sysrc shibboleth_idp_hostname="shibboleth.example.com"
     # sysrc shibboleth_idp_entityid="shibboleth.example.com/idp/shibboleth"
-    # sysrc shibboleth-idp_enable="YES"
+    # sysrc shibboleth_idp_enable="YES"
 
 Upgrade/create the deployment by running:
     # service shibboleth-idp initupgrade

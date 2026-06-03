@@ -1,0 +1,9 @@
+%%JSON%%bin/fmp2json
+%%SQLITE%%bin/fmp2sqlite
+%%XLSX%%bin/fmp2excel
+bin/fmpdump
+include/fmp.h
+lib/libfmptools.a
+lib/libfmptools.so
+lib/libfmptools.so.0
+lib/libfmptools.so.0.0.0

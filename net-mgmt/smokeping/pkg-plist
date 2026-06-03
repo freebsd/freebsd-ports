@@ -7,7 +7,7 @@ bin/tSmoke
 @sample %%ETCDIR%%/basepage.html.sample
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/smokemail.sample
-@sample %%ETCDIR%%/smokeping_secrets.sample
+@sample(,,600) %%ETCDIR%%/smokeping_secrets.sample
 @sample %%ETCDIR%%/tmail.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.echoping
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.fping-instances

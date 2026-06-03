@@ -1,5 +1,9 @@
-TIMESTAMP = 1723003085
-SHA256 (go/devel_lets/lets-v0.0.54/v0.0.54.mod) = 1fe49789be09c333c44123d2c284fc059613a9c4fd6cbd7db54ba0221ecae1be
-SIZE (go/devel_lets/lets-v0.0.54/v0.0.54.mod) = 1107
-SHA256 (go/devel_lets/lets-v0.0.54/v0.0.54.zip) = 19a71b8361570f5dc2402ca82098b030f1ab5c3d57183dc0efe6ec6110d3a502
-SIZE (go/devel_lets/lets-v0.0.54/v0.0.54.zip) = 424769
+TIMESTAMP = 1775881088
+SHA256 (go/devel_lets/lets-v0.0.59/v0.0.59.mod) = fd52b2abd60ac99848003bb3e4a8c5ae16d002e7e782f92a873a646a9b99ef12
+SIZE (go/devel_lets/lets-v0.0.59/v0.0.59.mod) = 1997
+SHA256 (go/devel_lets/lets-v0.0.59/v0.0.59.zip) = 1cd8629c28f071918415c67ab35834c9fcfb49f5f1f72746483946b0b40dda8e
+SIZE (go/devel_lets/lets-v0.0.59/v0.0.59.zip) = 449097
+SHA256 (go/devel_lets/lets-v0.0.59/tree-sitter-grammars-tree-sitter-yaml-v0.7.0_GH0.tar.gz) = 8182760587f14d5131161dee3605613ccebe86062909f0879edf63b4bdd99d44
+SIZE (go/devel_lets/lets-v0.0.59/tree-sitter-grammars-tree-sitter-yaml-v0.7.0_GH0.tar.gz) = 159326
+SHA256 (go/devel_lets/lets-v0.0.59/tree-sitter-tree-sitter-68c1fb66bdaa720856979756d076c555a464aa00_GH0.tar.gz) = 4a0c877667d0f6ebf9c7f029cade368c734eb42d45eb82af906f6568ef864dfb
+SIZE (go/devel_lets/lets-v0.0.59/tree-sitter-tree-sitter-68c1fb66bdaa720856979756d076c555a464aa00_GH0.tar.gz) = 3025501

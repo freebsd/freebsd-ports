@@ -1,6 +1,6 @@
---- chrome/browser/ui/passwords/bubble_controllers/relaunch_chrome_bubble_controller.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/ui/passwords/bubble_controllers/relaunch_chrome_bubble_controller.cc.orig	2026-04-09 06:05:42 UTC
 +++ chrome/browser/ui/passwords/bubble_controllers/relaunch_chrome_bubble_controller.cc
-@@ -44,7 +44,7 @@ std::u16string RelaunchChromeBubbleController::GetTitl
+@@ -45,7 +45,7 @@ std::u16string RelaunchChromeBubbleController::GetTitl
  #if BUILDFLAG(IS_MAC)
            ? IDS_PASSWORD_MANAGER_RELAUNCH_CHROME_BUBBLE_TITLE_BRANDED
            : IDS_PASSWORD_MANAGER_RELAUNCH_CHROME_BUBBLE_TITLE_NON_BRANDED
@@ -9,7 +9,7 @@
            ? IDS_PASSWORD_MANAGER_RELAUNCH_CHROME_BUBBLE_TITLE_LINUX_BRANDED
            : IDS_PASSWORD_MANAGER_RELAUNCH_CHROME_BUBBLE_TITLE_LINUX_NON_BRANDED
  #endif
-@@ -57,7 +57,7 @@ std::u16string RelaunchChromeBubbleController::GetBody
+@@ -58,7 +58,7 @@ std::u16string RelaunchChromeBubbleController::GetBody
  #if BUILDFLAG(IS_MAC)
            ? IDS_PASSWORD_MANAGER_RELAUNCH_CHROME_BUBBLE_DESCRIPTION_BRANDED
            : IDS_PASSWORD_MANAGER_RELAUNCH_CHROME_BUBBLE_DESCRIPTION_NON_BRANDED

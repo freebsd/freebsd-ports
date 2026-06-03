@@ -1,0 +1,20 @@
+--- scintilla/gtk/makefile.orig	2024-03-19 04:36:37 UTC
++++ scintilla/gtk/makefile
+@@ -16,8 +16,6 @@ ifdef CLANG
+ 
+ WARNINGS = -Wpedantic -Wall
+ ifdef CLANG
+-CXX = clang++
+-CC = clang
+ WARNINGS += -Wno-deprecated-register
+ ifdef windir
+ # Turn off some warnings that occur when Clang is being used on Windows where it
+@@ -34,7 +32,7 @@ SANITIZE = address
+ # thread also need to create Position Independent Executable -> search online documentation
+ SANITIZE = address
+ #SANITIZE = undefined
+-BASE_FLAGS += -fsanitize=$(SANITIZE)
++#BASE_FLAGS += -fsanitize=$(SANITIZE)
+ endif
+ ARFLAGS = rc
+ RANLIB ?= ranlib

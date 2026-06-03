@@ -1,6 +1,6 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2025-05-31 17:16:41 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2026-04-15 11:25:12 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -112,7 +112,7 @@
+@@ -118,7 +118,7 @@
  #include "ui/accessibility/ax_features.mojom-features.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -568,7 +568,7 @@ void InitializeSDK(bool enable_v8,
+@@ -651,7 +651,7 @@ void InitializeSDK(bool enable_v8,
  
    FPDF_InitLibraryWithConfig(&config);
  

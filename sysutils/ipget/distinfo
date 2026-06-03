@@ -1,5 +1,5 @@
-TIMESTAMP = 1752557090
-SHA256 (go/sysutils_ipget/ipget-v0.11.3/v0.11.3.mod) = 365c8ab1718ede9d7ceec2d4a661599eabd9f0cc7ed27b9d25a7bc20d85354e0
-SIZE (go/sysutils_ipget/ipget-v0.11.3/v0.11.3.mod) = 12176
-SHA256 (go/sysutils_ipget/ipget-v0.11.3/v0.11.3.zip) = da4a8060f590a4f143b65b65ac804e1a11fe943b245d68d35801f786d7570652
-SIZE (go/sysutils_ipget/ipget-v0.11.3/v0.11.3.zip) = 82977
+TIMESTAMP = 1777458611
+SHA256 (go/sysutils_ipget/ipget-v0.13.1/v0.13.1.mod) = 9fef580d24ff2ce3b7ebb8b754b386645fcd58764d5921e5a926b24fa4c8a13b
+SIZE (go/sysutils_ipget/ipget-v0.13.1/v0.13.1.mod) = 12079
+SHA256 (go/sysutils_ipget/ipget-v0.13.1/v0.13.1.zip) = 20d27d27dc9b4498dd7aaff663e1ae6906137d89037fa7cd341639f2ea965319
+SIZE (go/sysutils_ipget/ipget-v0.13.1/v0.13.1.zip) = 87149

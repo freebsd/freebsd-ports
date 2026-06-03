@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/supervised_user/core/browser/supervised_user_preferences.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/browser/supervised_user_preferences.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/browser/supervised_user_preferences.cc
-@@ -147,7 +147,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry
+@@ -153,7 +153,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry
    registry->RegisterBooleanPref(prefs::kChildAccountStatusKnown, false);
    registry->RegisterStringPref(prefs::kFamilyLinkUserMemberRole, std::string());
  #if BUILDFLAG(ENABLE_EXTENSIONS) && \

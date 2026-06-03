@@ -1,0 +1,3 @@
+USE_CABAL=	regex-base-0.94.0.3 \
+		regex-compat-0.95.2.2 \
+		regex-posix-0.96.0.2

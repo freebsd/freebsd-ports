@@ -1,0 +1,5 @@
+ReFrame is a powerful Python framework for writing portable HPC regression
+tests and benchmarks. It abstracts away system- and scheduler-specific
+details so the test logic stays portable, while ReFrame handles modules/
+env switching, compile, submit, polling, sanity/perf checks, and results
+storage. CLI tool installed as `reframe`.

@@ -1,5 +1,5 @@
 PORTNAME=	tree
-DISTVERSION=	2.2.1
+DISTVERSION=	2.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://oldmanprogrammer.net/tar/tree/ \
 		https://fossies.org/linux/misc/

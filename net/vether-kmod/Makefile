@@ -12,6 +12,9 @@ LICENSE_COMB=	multi
 
 USES=		kmod uidfix
 
+BROKEN_FreeBSD_15=	if_vether.c:145:16: error: incomplete definition of type 'struct ifnet'
+BROKEN_FreeBSD_16=	if_vether.c:145:16: error: incomplete definition of type 'struct ifnet'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatyschok
 GH_PROJECT=	if_vether

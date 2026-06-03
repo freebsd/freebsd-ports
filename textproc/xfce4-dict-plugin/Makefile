@@ -12,7 +12,7 @@ WWW=		https://goodies.xfce.org/projects/applications/xfce4-dict
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gettext-tools gnome libtool meson pkgconfig \
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig \
 		tar:xz xfce xorg
 USE_GNOME=	gdkpixbuf glib20 gtk30 intltool
 USE_XFCE=	libmenu panel

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese databases www textproc
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Meta-port of Namazu and Japanese support modules
 WWW=		http://www.namazu.org/
 

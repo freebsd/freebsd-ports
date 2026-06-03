@@ -1,5 +1,5 @@
---- libbeat/autodiscover/providers/docker/docker.go.orig	2024-07-09 00:00:36.000000000 +0200
-+++ libbeat/autodiscover/providers/docker/docker.go	2024-07-13 21:40:25.908849000 +0200
+--- libbeat/autodiscover/providers/docker/docker.go.orig	2025-09-15 19:57:17 UTC
++++ libbeat/autodiscover/providers/docker/docker.go
 @@ -15,7 +15,7 @@
  // specific language governing permissions and limitations
  // under the License.
@@ -9,7 +9,7 @@
  
  package docker
  
-@@ -32,7 +32,7 @@
+@@ -32,7 +32,7 @@ import (
  	"github.com/elastic/beats/v7/libbeat/common"
  
  	"github.com/elastic/elastic-agent-autodiscover/bus"

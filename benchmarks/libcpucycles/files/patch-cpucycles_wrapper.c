@@ -1,6 +1,6 @@
---- cpucycles/wrapper.c.orig	2024-03-18 00:15:33 UTC
+--- cpucycles/wrapper.c.orig	2025-12-26 09:44:50 UTC
 +++ cpucycles/wrapper.c
-@@ -16,6 +16,12 @@
+@@ -18,6 +18,12 @@
  #include <inttypes.h>
  #include <signal.h>
  #include <setjmp.h>
@@ -13,16 +13,7 @@
  #include "cpucycles.h"
  #include "cpucycles_internal.h"
  
-@@ -26,7 +32,7 @@ void cpucycles_tracesetup(void)
-   tracesetup = 1;
- }
- 
--static jmp_buf crash_jmp;
-+static sigjmp_buf crash_jmp;
- 
- static void crash(int s)
- {
-@@ -81,6 +87,21 @@ static double osfreq(void)
+@@ -83,6 +89,21 @@ static double osfreq(void)
      if (s > 0) return result;
    }
  
@@ -44,7 +35,7 @@
    f = fopen("/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed", "r");
    if (f) {
      s = fscanf(f,"%lf",&result);
-@@ -163,6 +184,7 @@ static double osfreq(void)
+@@ -165,6 +186,7 @@ static double osfreq(void)
      pclose(f);
      if (result) return 1000000.0 * result;
    }

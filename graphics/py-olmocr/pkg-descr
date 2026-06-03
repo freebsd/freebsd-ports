@@ -1,0 +1,10 @@
+olmocr is a toolkit for converting PDFs and other image-based document formats
+into clean, readable, plain text format.
+
+Features:
+* Convert PDF, PNG, and JPEG based documents into clean Markdown
+* Support for equations, tables, handwriting, and complex formatting
+* Automatically removes headers and footers
+* Convert into text with a natural reading order, even in the presence of
+  figures, multi-column layouts, and insets
+* Efficient, less than $200 USD per million pages converted

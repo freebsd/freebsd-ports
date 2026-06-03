@@ -1,8 +1,7 @@
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.4.632.b.${SNAPDATE}
-PORTREVISION=	4
+PORTREVISION=	1
 CATEGORIES=	www elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Simple front-end to w3m for emacs
@@ -14,20 +13,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	w3m:www/w3m
 RUN_DEPENDS=	w3m:www/w3m
 
-USES=		autoreconf emacs tar:xz
+USES=		autoreconf emacs:build tar:xz
 USE_GITHUB=	yes
-GH_TAGNAME=	fc0f30f
+GH_TAGNAME=	ec18c21
 
-ALL_TARGET=	default
+ALL_TARGET=	info
 INSTALL_TARGET=	install install-icons
 
+CONFLICTS_INSTALL=	emacs-w3m-emacs_*
+
 NO_ARCH=	yes
-SNAPDATE=	20250504
+SNAPDATE=	20251229
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m \
+		--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/w3m \
 		--with-icondir=${PREFIX}/${EMACS_LIBDIR}/etc/w3m/icons \
 		--without-compress-install
 
@@ -42,11 +43,11 @@ OCTET_VIEWER_DESC=	Octet stream viewer support
 SHIMBUN_DESC=		Build and/or install Shimbun
 
 SHIMBUN_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
-SHIMBUN_BUILD_DEPENDS=	flim${EMACS_PKGNAMESUFFIX}>0:editors/flim@${EMACS_FLAVOR}
-SHIMBUN_RUN_DEPENDS=	flim${EMACS_PKGNAMESUFFIX}>0:editors/flim@${EMACS_FLAVOR}
+SHIMBUN_BUILD_DEPENDS=	flim>0:editors/flim
+SHIMBUN_RUN_DEPENDS=	flim>0:editors/flim
 
 OCTET_VIEWER_RUN_DEPENDS=\
-		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR} \
+		semi>0:editors/semi \
 		wvHtml:textproc/wv \
 		xlhtml:textproc/xlhtml
 
@@ -54,8 +55,8 @@ post-patch:
 	@${MV} ${WRKSRC}/aclocal.m4 ${WRKSRC}/acinclude.m4
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m/mew-shimbun.elc \
-	      ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m/mew-w3m.elc
+	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/w3m/ \
+	-name "*.elc" -delete
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

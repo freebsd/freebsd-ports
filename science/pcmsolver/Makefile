@@ -1,7 +1,7 @@
 PORTNAME=	pcmsolver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,9 +11,7 @@ WWW=		https://github.com/PCMSolver/pcmsolver
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	compilation is broken with clang-19, see https://github.com/PCMSolver/pcmsolver/issues/208
-
-USES=		cmake compiler:c11 fortran python
+USES=		cmake compiler:c++14-lang fortran python:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

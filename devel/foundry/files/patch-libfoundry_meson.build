@@ -1,0 +1,18 @@
+--- libfoundry/meson.build.orig	2025-10-28 23:23:12 UTC
++++ libfoundry/meson.build
+@@ -85,7 +85,6 @@ foundry_deps = [
+   dex_dep,
+   json_dep,
+   peas_dep,
+-  sysprof_dep,
+   libeggbitset_static_dep,
+ ]
+ 
+@@ -174,6 +173,6 @@ configure_file(
+          output: 'libfoundry-config.h',
+   configuration: libfoundry_config_conf,
+         install: true,
+-    install_dir: get_option('libdir') / 'libfoundry-@0@'.format(api_version) / 'include',
++    install_dir: get_option('includedir') / 'libfoundry-@0@'.format(api_version)
+ )
+ 

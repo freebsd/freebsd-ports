@@ -1,4 +1,4 @@
---- src/runtime/process.cpp.orig	2025-05-06 09:12:17 UTC
+--- src/runtime/process.cpp.orig	2026-02-24 00:20:30 UTC
 +++ src/runtime/process.cpp
 @@ -31,6 +31,10 @@ Author: Jared Roesch
  #include <sys/syscall.h>
@@ -11,7 +11,7 @@
  #include "runtime/object.h"
  #include "runtime/io.h"
  #include "runtime/array_ref.h"
-@@ -342,6 +346,8 @@ extern "C" LEAN_EXPORT obj_res lean_io_get_tid(obj_arg
+@@ -343,6 +347,8 @@ extern "C" LEAN_EXPORT uint64_t lean_io_get_tid() {
      lean_always_assert(pthread_threadid_np(NULL, &tid) == 0);
  #elif defined(LEAN_EMSCRIPTEN)
      tid = 0;

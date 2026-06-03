@@ -7,6 +7,7 @@ bin/ZamCompX2
 bin/ZamDelay
 bin/ZamDynamicEQ
 bin/ZamEQ2
+bin/ZamEcho
 bin/ZamGEQ31
 bin/ZamGate
 bin/ZamGateX2
@@ -25,6 +26,7 @@ lib/clap/ZamCompX2.clap
 lib/clap/ZamDelay.clap
 lib/clap/ZamDynamicEQ.clap
 lib/clap/ZamEQ2.clap
+lib/clap/ZamEcho.clap
 lib/clap/ZamGEQ31.clap
 lib/clap/ZamGate.clap
 lib/clap/ZamGateX2.clap
@@ -42,6 +44,7 @@ lib/ladspa/ZamCompX2-ladspa.so
 lib/ladspa/ZamDelay-ladspa.so
 lib/ladspa/ZamDynamicEQ-ladspa.so
 lib/ladspa/ZamEQ2-ladspa.so
+lib/ladspa/ZamEcho-ladspa.so
 lib/ladspa/ZamGEQ31-ladspa.so
 lib/ladspa/ZamGate-ladspa.so
 lib/ladspa/ZamGateX2-ladspa.so
@@ -101,6 +104,12 @@ lib/lv2/ZamEQ2.lv2/ZamEQ2_ui.so
 lib/lv2/ZamEQ2.lv2/ZamEQ2_ui.ttl
 lib/lv2/ZamEQ2.lv2/manifest.ttl
 lib/lv2/ZamEQ2.lv2/presets.ttl
+lib/lv2/ZamEcho.lv2/ZamEcho_dsp.so
+lib/lv2/ZamEcho.lv2/ZamEcho_dsp.ttl
+lib/lv2/ZamEcho.lv2/ZamEcho_ui.so
+lib/lv2/ZamEcho.lv2/ZamEcho_ui.ttl
+lib/lv2/ZamEcho.lv2/manifest.ttl
+lib/lv2/ZamEcho.lv2/presets.ttl
 lib/lv2/ZamGEQ31.lv2/ZamGEQ31_dsp.so
 lib/lv2/ZamGEQ31.lv2/ZamGEQ31_dsp.ttl
 lib/lv2/ZamGEQ31.lv2/ZamGEQ31_ui.so
@@ -164,6 +173,7 @@ lib/vst/ZamCompX2-vst.so
 lib/vst/ZamDelay-vst.so
 lib/vst/ZamDynamicEQ-vst.so
 lib/vst/ZamEQ2-vst.so
+lib/vst/ZamEcho-vst.so
 lib/vst/ZamGEQ31-vst.so
 lib/vst/ZamGate-vst.so
 lib/vst/ZamGateX2-vst.so

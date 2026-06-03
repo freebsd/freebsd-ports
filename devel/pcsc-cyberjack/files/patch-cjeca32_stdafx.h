@@ -1,11 +1,11 @@
---- cjeca32/stdafx.h.orig	2024-10-06 15:05:20 UTC
+--- cjeca32/stdafx.h.orig	2026-04-18 11:09:46 UTC
 +++ cjeca32/stdafx.h
-@@ -59,7 +59,7 @@
- #include "ntstatus.h"
+@@ -60,7 +60,7 @@
  
  #include "cjeca32.h"
+ 
 -#ifdef OS_LINUX
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
    #include <PCSC/reader.h>
- #endif
- 
+ #else
+   #include "PCSC10.h"

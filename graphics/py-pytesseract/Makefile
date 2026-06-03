@@ -1,6 +1,6 @@
 PORTNAME=	pytesseract
 PORTVERSION=	0.3.13
-PORTREVISION=	1
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	tesseract:graphics/tesseract \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 TEST_DEPENDS=	${RUN_DEPENDS} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 		# if py-tox cannot detect py-filelock, be sure to have version 3.4.2_1 of the latter

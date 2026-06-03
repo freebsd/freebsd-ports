@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.3:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}botocore-stubs>0:www/py-botocore-stubs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}chardet<=5.2.0,1:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \

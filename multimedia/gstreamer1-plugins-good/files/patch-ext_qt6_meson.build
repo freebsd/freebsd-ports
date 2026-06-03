@@ -1,6 +1,6 @@
---- ext/qt6/meson.build.orig	2025-03-11 20:14:44 UTC
+--- ext/qt6/meson.build.orig	2026-01-27 17:02:33 UTC
 +++ ext/qt6/meson.build
-@@ -142,7 +142,7 @@ qt6_egl = qt6_egl \
+@@ -144,7 +144,7 @@ qt6_egl = qt6_egl \
  # EGL windowing for Embedded linux (e.g. i.MX6) with or without windowing
  # support
  qt6_egl = qt6_egl \

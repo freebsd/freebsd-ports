@@ -10,12 +10,15 @@ lib/jitsi-prosody-plugins/mod_conference_duration.lua
 lib/jitsi-prosody-plugins/mod_conference_duration_component.lua
 lib/jitsi-prosody-plugins/mod_debug_traceback.lua
 lib/jitsi-prosody-plugins/mod_end_conference.lua
-lib/jitsi-prosody-plugins/mod_external_services.lua
+lib/jitsi-prosody-plugins/mod_features_identity.lua
+lib/jitsi-prosody-plugins/mod_filesharing_component.lua
 lib/jitsi-prosody-plugins/mod_filter_iq_jibri.lua
 lib/jitsi-prosody-plugins/mod_filter_iq_rayo.lua
+lib/jitsi-prosody-plugins/mod_filter_messages.lua
 lib/jitsi-prosody-plugins/mod_fmuc.lua
 lib/jitsi-prosody-plugins/mod_jibri_session.lua
 lib/jitsi-prosody-plugins/mod_jiconop.lua
+lib/jitsi-prosody-plugins/mod_jitsi_permissions.lua
 lib/jitsi-prosody-plugins/mod_jitsi_session.lua
 lib/jitsi-prosody-plugins/mod_limits_exception.lua
 lib/jitsi-prosody-plugins/mod_log_ringbuffer.lua
@@ -26,6 +29,8 @@ lib/jitsi-prosody-plugins/mod_muc_auth_ban.lua
 lib/jitsi-prosody-plugins/mod_muc_breakout_rooms.lua
 lib/jitsi-prosody-plugins/mod_muc_call.lua
 lib/jitsi-prosody-plugins/mod_muc_census.lua
+lib/jitsi-prosody-plugins/mod_muc_cleanup_backend_services.lua
+lib/jitsi-prosody-plugins/mod_muc_displayname.lua
 lib/jitsi-prosody-plugins/mod_muc_domain_mapper.lua
 lib/jitsi-prosody-plugins/mod_muc_end_meeting.lua
 lib/jitsi-prosody-plugins/mod_muc_filter_access.lua
@@ -44,7 +49,7 @@ lib/jitsi-prosody-plugins/mod_muc_rate_limit.lua
 lib/jitsi-prosody-plugins/mod_muc_size.lua
 lib/jitsi-prosody-plugins/mod_muc_wait_for_host.lua
 lib/jitsi-prosody-plugins/mod_persistent_lobby.lua
-lib/jitsi-prosody-plugins/mod_polls.lua
+lib/jitsi-prosody-plugins/mod_polls_component.lua
 lib/jitsi-prosody-plugins/mod_poltergeist_component.lua
 lib/jitsi-prosody-plugins/mod_presence_identity.lua
 lib/jitsi-prosody-plugins/mod_rate_limit.lua
@@ -55,9 +60,8 @@ lib/jitsi-prosody-plugins/mod_room_metadata_component.lua
 lib/jitsi-prosody-plugins/mod_roster_command.lua
 lib/jitsi-prosody-plugins/mod_s2s_whitelist.lua
 lib/jitsi-prosody-plugins/mod_s2sout_override.lua
-lib/jitsi-prosody-plugins/mod_s2soutinjection.lua
 lib/jitsi-prosody-plugins/mod_secure_interfaces.lua
-lib/jitsi-prosody-plugins/mod_smacks.lua
+lib/jitsi-prosody-plugins/mod_short_lived_token.lua
 lib/jitsi-prosody-plugins/mod_speakerstats.lua
 lib/jitsi-prosody-plugins/mod_speakerstats_component.lua
 lib/jitsi-prosody-plugins/mod_system_chat_message.lua
@@ -67,6 +71,7 @@ lib/jitsi-prosody-plugins/mod_turncredentials_http.lua
 lib/jitsi-prosody-plugins/mod_visitors.lua
 lib/jitsi-prosody-plugins/mod_visitors_component.lua
 lib/jitsi-prosody-plugins/poltergeist.lib.lua
+lib/jitsi-prosody-plugins/token/jwk.lib.lua
 lib/jitsi-prosody-plugins/token/util.lib.lua
 lib/jitsi-prosody-plugins/util.lib.lua
 %%EXAMPLESDIR%%/prosody.cfg.lua

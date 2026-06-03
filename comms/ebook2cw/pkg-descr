@@ -1,5 +1,5 @@
 ebook2cw is a command line program (optional GUI available) which converts
 a plain text (ISO 8859-1 or UTF-8) ebook to morse code MP3 files.
-It works on several platforms, including Windows and Linux.
+It works on several platforms, including GNU/Linux and Windows.
 
 Written by Fabian Kurz, DJ1YFK <mail@fkurz.net>

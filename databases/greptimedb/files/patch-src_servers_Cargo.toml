@@ -1,0 +1,11 @@
+--- src/servers/Cargo.toml.orig	2026-04-09 01:23:46 UTC
++++ src/servers/Cargo.toml
+@@ -138,7 +138,7 @@ zstd.workspace = true
+ vrl.workspace = true
+ zstd.workspace = true
+ 
+-[target.'cfg(not(windows))'.dependencies]
++[target.'cfg(not(any(windows, target_os = "freebsd")))'.dependencies]
+ tikv-jemalloc-ctl = { version = "0.6", features = ["use_std", "stats"] }
+ 
+ [dev-dependencies]

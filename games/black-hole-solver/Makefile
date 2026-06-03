@@ -3,7 +3,7 @@ DISTVERSION=	1.12.0
 CATEGORIES=	games
 MASTER_SITES=	https://fc-solve.shlomifish.org/downloads/fc-solve/
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Black Hole Solitaire Solver
 WWW=		https://www.shlomifish.org/open-source/projects/black-hole-solitaire-solver
 

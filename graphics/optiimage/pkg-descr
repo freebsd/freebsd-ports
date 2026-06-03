@@ -1,0 +1,13 @@
+Optimize your images with OptiImage, a useful image compressor that supports
+PNG, JPEG, WebP and SVG file types.
+
+It supports both lossless and lossy compression modes with an option whether
+to keep or not metadata of images. It additionally has a safe mode, where a
+new image is created instead of overwriting the old one.
+
+It uses the following tools:
+
+* oxipng for PNG images
+* jpegoptim for JPEG images
+* scour for SVG images
+* cwebp for WebP images

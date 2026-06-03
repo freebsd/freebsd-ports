@@ -6,23 +6,82 @@ test --verbose_test_summary --verbose_failures --noshow_loading_progress
 build --spawn_strategy=local --genrule_strategy=local
 test --spawn_strategy=local --genrule_strategy=local
 
+# tensorflow/BUILD:install_headers genrule creates a directory output (outs=["include"]).
+# Bazel 7 enables --incompatible_disallow_unsound_directory_outputs by default, which
+# rejects this old-style pattern.  Disable it to allow the legacy genrule to run.
+build --noincompatible_disallow_unsound_directory_outputs
+
 # make bazel only fetch distfiles from the cache
 fetch --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-dist/"
 build --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-dist/"
+
+# Override @pypi hub and individual @pypi_* repos with offline stubs
+# (FreeBSD has no platform wheels in requirements_lock; stubs point to system packages)
+build --override_repository=pypi=%%WRKSRC%%/bazel_pypi_hub
+fetch --override_repository=pypi=%%WRKSRC%%/bazel_pypi_hub
+build --override_repository=pypi_absl_py=%%WRKSRC%%/bazel_pypi_hub/absl_py
+build --override_repository=pypi_astunparse=%%WRKSRC%%/bazel_pypi_hub/astunparse
+build --override_repository=pypi_auditwheel=%%WRKSRC%%/bazel_pypi_hub/auditwheel
+build --override_repository=pypi_flatbuffers=%%WRKSRC%%/bazel_pypi_hub/flatbuffers
+build --override_repository=pypi_gast=%%WRKSRC%%/bazel_pypi_hub/gast
+build --override_repository=pypi_keras=%%WRKSRC%%/bazel_pypi_hub/keras
+build --override_repository=pypi_lit=%%WRKSRC%%/bazel_pypi_hub/lit
+build --override_repository=pypi_ml_dtypes=%%WRKSRC%%/bazel_pypi_hub/ml_dtypes
+build --override_repository=pypi_numpy=%%WRKSRC%%/bazel_pypi_hub/numpy
+build --override_repository=pypi_opt_einsum=%%WRKSRC%%/bazel_pypi_hub/opt_einsum
+build --override_repository=pypi_packaging=%%WRKSRC%%/bazel_pypi_hub/packaging
+build --override_repository=pypi_protobuf=%%WRKSRC%%/bazel_pypi_hub/protobuf
+build --override_repository=pypi_requests=%%WRKSRC%%/bazel_pypi_hub/requests
+build --override_repository=pypi_setuptools=%%WRKSRC%%/bazel_pypi_hub/setuptools
+build --override_repository=pypi_termcolor=%%WRKSRC%%/bazel_pypi_hub/termcolor
+build --override_repository=pypi_typing_extensions=%%WRKSRC%%/bazel_pypi_hub/typing_extensions
+build --override_repository=pypi_wheel=%%WRKSRC%%/bazel_pypi_hub/wheel
+build --override_repository=pypi_wrapt=%%WRKSRC%%/bazel_pypi_hub/wrapt
 
 build --define=PREFIX=%%LOCALBASE%%
 build --define=LIBDIR=%%LOCALBASE%%/lib
 build --define=INCLUDEDIR=%%LOCALBASE%%/include
 build --define=PROTOBUF_INCLUDE_PATH=%%LOCALBASE%%/include
 
-build --config=noaws --config=nohdfs
+build --config=nogcp --config=nonccl
 build --define tensorflow_mkldnn_contraction_kernel=0
 
 build --action_env=BAZEL_CXXOPTS="-std=c++17"
-build --incompatible_enable_cc_toolchain_resolution
 
 build --extra_toolchains=//freebsd:cc-toolchain-freebsd
+build --extra_toolchains=//freebsd:python_cc_toolchain
 build --linkopt="-lexecinfo" --toolchain_resolution_debug=//freebsd:freebsd_clang
+# backtrace() is in libexecinfo on FreeBSD; needed for both target and exec builds.
+build --host_linkopt=-L%%LOCALBASE%%/lib
+build --host_linkopt=-lexecinfo
+build --host_linkopt=-lhwloc
+
+# System and Python headers for both target and host (tool) builds.
+# copts in cc_library don't propagate to dependents so we set these globally.
+# _XOPEN_SOURCE=700 enables XSI extensions (isascii, etc.) even when per-file
+# code defines _POSIX_C_SOURCE.
+# __BSD_VISIBLE=1 enables BSD extensions (syscall, MAP_ANON, etc.).  FreeBSD's
+# _visible.h never resets __BSD_VISIBLE to 0 in the _XOPEN_SOURCE or
+# _POSIX_C_SOURCE paths (only in _ANSI_SOURCE/_C99_SOURCE paths), so the
+# command-line definition persists.
+build --host_copt=-D_XOPEN_SOURCE=700
+build --host_copt=-D__BSD_VISIBLE=1
+build --host_copt=-isystem%%LOCALBASE%%/include
+build --host_copt=-isystem%%PYTHON_INCLUDEDIR%%
+build --host_copt=-isystem%%NUMPY_INCLUDEDIR%%
+build --copt=-D_XOPEN_SOURCE=700
+build --copt=-D__BSD_VISIBLE=1
+build --copt=-isystem%%LOCALBASE%%/include
+build --copt=-isystem%%PYTHON_INCLUDEDIR%%
+build --copt=-isystem%%NUMPY_INCLUDEDIR%%
+
+# Bazel's local_execution_config_platform wrongly reports the exec platform as
+# Linux on FreeBSD, so LLVM's config.bzl selects linux_defines for [for tool]
+# builds, adding Linux-only macros that do not exist on FreeBSD.  Undefine them
+# here so the compiler falls back to the portable POSIX paths in LLVM source.
+build --host_copt=-UHAVE_GETAUXVAL
+build --host_copt=-UHAVE_MALLINFO
+build --host_copt=-UHAVE_SBRK
 
 # for python
 build --action_env=PATH=%%PATH%%
@@ -31,4 +90,9 @@ build --host_action_env=PATH=%%PATH%%
 build --action_env=KERAS_HOME="%%BAZEL_DIST%%/.keras"
 build --host_action_env=KERAS_HOME="%%BAZEL_DIST%%/.keras"
 
-build --config=freebsd
+build --repo_env=JAVA_HOME=%%JAVA_HOME%%
+build --action_env=JAVA_HOME=%%JAVA_HOME%%
+
+# Limit parallel actions to avoid OOM on large files like LLVMDialect.cpp
+build --local_ram_resources=HOST_RAM*.7
+build --local_cpu_resources=HOST_CPUS-4

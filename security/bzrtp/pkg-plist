@@ -1,5 +1,6 @@
 include/bzrtp/bzrtp.h
-lib/libbzrtp.a
+lib/libbzrtp.so
+lib/libbzrtp.so.0
 share/BZRTP/cmake/BZRTPConfig.cmake
 share/BZRTP/cmake/BZRTPConfigVersion.cmake
 share/BZRTP/cmake/BZRTPTargets-%%CMAKE_BUILD_TYPE%%.cmake

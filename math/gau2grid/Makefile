@@ -1,7 +1,7 @@
 PORTNAME=	gau2grid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	BUG: ValueError: descr is not a valid dtype descriptor: '<f16' (see https://github.com/dgasmith/gau2grid/issues/25)
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 
 USES=		cmake compiler:c11 python:build # C code build depends on python to generate some headers
 USE_GITHUB=	yes

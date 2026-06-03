@@ -1,6 +1,6 @@
 PORTNAME=	newlisp
 PORTVERSION=	10.7.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 

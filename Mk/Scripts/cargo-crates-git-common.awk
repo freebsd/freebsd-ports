@@ -73,6 +73,26 @@ function split_git_url(info, git_url,		url, path, account, project, commit, i, d
 			info["dir"] = sprintf("%s-%s", project, dir_ver)
 
 			return 1
+		} else if (url["host"] == "codeberg.org") {
+		    split(url["path"], path, "/")
+			account = path[2]
+			project = path[3]
+			sub(/\.[gG][iI][tT]$/, "", project)
+			commit = commit_from_git_url(url)
+
+			delete url
+			url["scheme"] = "https"
+			url["host"] = "codeberg.org"
+			url["path"] = sprintf("/%s/%s/archive/%s.tar.gz", account, project, commit)
+			url["query"] = "dummy"
+			url["query", "dummy"] = "/"
+			info["site"] = join_url(url)
+
+			info["filename"] = sprintf("%s-%s-%s_CB0.tar.gz", account, project, commit)
+
+			info["dir"] = sprintf("%s", project)
+
+			return 1
 		} else if (gitlab_hosts[url["host"]]) {
 			split(url["path"], path, "/")
 			account = path[2]

@@ -3,16 +3,19 @@
 # before we include bsd.port.pre.mk
 
 MPLAYER_PORT_VERSION=	1.5.0
-MPLAYER_SNAPSHOT_DATE=	2024-09-28
+MPLAYER_BASE_SNAPSHOT_DATE=	2025-08-16
+MPLAYER_SNAPSHOT_DATE=	2026-04-04
 MASTER_SITES=	LOCAL/riggs/mplayer
-DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
-WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}-${MPLAYER_SNAPSHOT_DATE:S/-//g}.patch.xz:-p1
+DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_BASE_SNAPSHOT_DATE:S/-//g}
+WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_BASE_SNAPSHOT_DATE}
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libavcodec.so.60:multimedia/ffmpeg \
+		libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2
 
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}

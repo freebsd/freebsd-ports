@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgusb.so:devel/libgusb \
 		libnss3.so:security/nss \
 		libpixman-1.so:x11/pixman
 
-USES=		gnome libtool meson pkgconfig python:env shebangfix
+USES=		gnome meson pkgconfig python:env shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 USE_GNOME=	glib20

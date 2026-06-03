@@ -1,6 +1,7 @@
 PORTNAME=	ripes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu
@@ -8,6 +9,8 @@ COMMENT=	Graphical processor simulator and assembly editor for the RISC-V ISA
 WWW=		https://github.com/mortbopet/ripes
 
 LICENSE=	MIT
+
+BUILD_DEPENDS=	${LOCALBASE}/include/cereal/cereal.hpp:devel/cereal
 
 USES=		cmake qmake qt:5
 
@@ -23,7 +26,6 @@ GH_TUPLE=	mortbopet:VSRTL:8fd0bce:VSRTL/external/VSRTL \
 		mortbopet:libelfin:49d1653:libelfin/external/libelfin \
 		yhirose:cpp-mmaplib:c517af7:cpp_mmaplib/external/libelfin/external/cpp-mmaplib \
 		pbhogan:Signals:17881fb:Signals/external/VSRTL/external/Signals \
-		USCiLab:cereal:51cbda5:cereal/external/VSRTL/external/cereal \
 		mortbopet:better-enums:52a694b:better_enums/external/VSRTL/external/better-enums
 
 PORTSCOUT=	ignore:continuous-master

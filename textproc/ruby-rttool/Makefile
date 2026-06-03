@@ -18,7 +18,7 @@ USES=		ruby:setup shebangfix
 SHEBANG_FILES=	bin/rt/* lib/rt/*
 RUBY_MODNAME=	rt
 
-BUILD_DEPENDS=	rd2:textproc/ruby-rdtool
+BUILD_DEPENDS=	rd2:textproc/rubygem-rdtool
 
 DOCS_EN=	rttool.en.html rttool.en.rd
 DOCS_JA=	rttool.ja.html rttool.ja.rd

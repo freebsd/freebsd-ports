@@ -1,6 +1,6 @@
---- document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4.orig	2024-11-05 14:03:05.897987000 +0100
+--- document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4.orig	2025-07-18 12:53:25 UTC
 +++ document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4
-@@ -24,18 +24,16 @@ HASH=${HASH:-$(date +'%Y.%m.%d-%H%M' | openssl md5 | a
+@@ -24,18 +24,16 @@ done
  HASH=${HASH:-$(date +'%Y.%m.%d-%H%M' | openssl md5 | awk '{print $2}')}
  
  # Save the hash to a variable in the configuration file

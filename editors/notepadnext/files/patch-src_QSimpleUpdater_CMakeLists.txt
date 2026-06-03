@@ -1,0 +1,36 @@
+-- Use Qt6 explicitly instead of auto-detecting between Qt5 and Qt6.
+-- Both Qt5 and Qt6 are installed in the ports build environment, and the
+-- original find_package(QT NAMES Qt6 Qt5 ...) call incorrectly picks Qt5.
+--- src/QSimpleUpdater/CMakeLists.txt.orig	2026-04-28 07:04:55 UTC
++++ src/QSimpleUpdater/CMakeLists.txt
+@@ -9,11 +9,11 @@ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
+ set(CMAKE_AUTOMOC ON)
+ 
+-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
+-find_package(Qt${QT_VERSION_MAJOR} CONFIG REQUIRED COMPONENTS Widgets Network)
++find_package(Qt6 REQUIRED COMPONENTS Widgets Network)
++find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets Network)
+ 
+ if(QSIMPLE_UPDATER_BUILD_TESTS)
+-    find_package(Qt${QT_VERSION_MAJOR} CONFIG REQUIRED COMPONENTS Test)
++    find_package(Qt6 CONFIG REQUIRED COMPONENTS Test)
+ endif()
+ 
+ add_library(QSimpleUpdater STATIC
+@@ -30,7 +30,7 @@ target_include_directories(QSimpleUpdater PUBLIC inclu
+     src/Updater.h
+ )
+ target_include_directories(QSimpleUpdater PUBLIC include)
+-target_link_libraries(QSimpleUpdater PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Widgets PRIVATE Qt${QT_VERSION_MAJOR}::Network)
++target_link_libraries(QSimpleUpdater PUBLIC Qt6::Core Qt6::Widgets PRIVATE Qt6::Network)
+ 
+ add_subdirectory(tutorial)
+ 
+@@ -44,5 +44,5 @@ if(QSIMPLE_UPDATER_BUILD_TESTS)
+         tests/Test_Downloader.h
+     )
+     add_test(NAME ApiTest COMMAND ApiTest)
+-    target_link_libraries(UnitTests PRIVATE Qt${QT_VERSION_MAJOR}::Test QSimpleUpdater)
++    target_link_libraries(UnitTests PRIVATE Qt6::Test QSimpleUpdater)
+ endif()

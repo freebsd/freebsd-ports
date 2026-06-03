@@ -1,42 +1,45 @@
 PORTNAME=	mgen
-PORTVERSION=	4.2b6
+DISTVERSION=	5.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/archive/mgen4/ \
-		LOCAL/miwi
-DISTNAME=	src-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://github.com/USNavalResearchLaboratory/${PORTNAME}/releases/download/V${DISTVERSION}/
+DISTNAME=	src-${PORTNAME}-${DISTVERSION}-protolib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	IP network performance tests and measurements
-WWW=		http://mgen.pf.itd.nrl.navy.mil/
+WWW=		https://www.nrl.navy.mil/Our-Work/Areas-of-Research/Information-Technology/NCS/MGEN/
 
-# Dumps core on 64-bit architectures. This was reported to the upstream
-# author, who promised to fix it in one of the next releases.
-ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	NRL
+LICENSE_NAME=	Naval Research Laboratory Open Source License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake tar:tgz
+USES=		gmake
+
 MAKEFILE=	Makefile.freebsd
-BUILD_WRKSRC=	${WRKSRC}/unix
 ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/mgen
-PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn
+BUILD_WRKSRC=	${WRKSRC}/makefiles
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|gcc|${CC}|; \
 		/CFLAGS =/s|$$|${CFLAGS}|' \
-		${WRKSRC}/unix/Makefile.freebsd \
-		${WRKSRC}/protolib/unix/Makefile.freebsd
+		${WRKSRC}/makefiles/Makefile.freebsd \
+		${WRKSRC}/protolib/makefiles/Makefile.freebsd
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unix/mgen ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/makefiles/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
-.endfor
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		' ! ( -name doxy-config -o -name emacs-tab-setting ) ')
+	${INSTALL_DATA} ${README.md VERSION.TXT:L:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

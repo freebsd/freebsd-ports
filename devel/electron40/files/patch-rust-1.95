@@ -1,0 +1,2942 @@
+diff -audpNr third_party/rust/bytemuck.orig/v1/BUILD.gn third_party/rust/bytemuck/v1/BUILD.gn
+--- third_party/rust/bytemuck.orig/v1/BUILD.gn	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/bytemuck/v1/BUILD.gn	2026-04-24 18:51:59.059816000 +0900
+@@ -39,16 +39,20 @@ cargo_crate("lib") {
+   cargo_pkg_name = "bytemuck"
+   cargo_pkg_description = "A crate for mucking around with piles of bytes."
+   cargo_pkg_repository = "https://github.com/Lokathor/bytemuck"
+-  cargo_pkg_version = "1.24.0"
++  cargo_pkg_version = "1.25.0"
+ 
+   allow_unsafe = true
+ 
+-  deps = [ "//third_party/rust/bytemuck_derive/v1:lib" ]
++  deps = [
++    "//third_party/rust/bytemuck_derive/v1:lib",
++    "//third_party/rust/rustversion/v1:lib",
++  ]
+   features = [
+     "bytemuck_derive",
+     "derive",
++    "extern_crate_alloc",
+     "min_const_generics",
+-    "nightly_portable_simd",
++    "rustversion",
+   ]
+ 
+   # `gnrt_config.toml` for this crate specifies `allow_unstable_features`.
+diff -audpNr third_party/rust/bytemuck.orig/v1/README.chromium third_party/rust/bytemuck/v1/README.chromium
+--- third_party/rust/bytemuck.orig/v1/README.chromium	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/bytemuck/v1/README.chromium	2026-04-24 18:51:59.059824000 +0900
+@@ -1,7 +1,7 @@ URL: https://crates.io/crates/bytemuck
+ Name: bytemuck
+ URL: https://crates.io/crates/bytemuck
+-Version: 1.24.0
+-Revision: da748163ea203f80098b6bdc754c54ebc535364c
++Version: 1.25.0
++Revision: 164cedda0eae131bc6cb67902599f4ec253642ca
+ Update Mechanism: Manual (https://crbug.com/449898466)
+ License: Apache-2.0
+ License File: //third_party/rust/chromium_crates_io/vendor/bytemuck-v1/LICENSE-APACHE
+diff -audpNr third_party/rust/rustversion.orig/v1/BUILD.gn third_party/rust/rustversion/v1/BUILD.gn
+--- third_party/rust/rustversion.orig/v1/BUILD.gn	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/rustversion/v1/BUILD.gn	2026-04-24 18:52:04.333938000 +0900
+@@ -0,0 +1,84 @@
++# Copyright 2023 The Chromium Authors
++# Use of this source code is governed by a BSD-style license that can be
++# found in the LICENSE file.
++
++# @generated from third_party/rust/chromium_crates_io/BUILD.gn.hbs by
++# tools/crates/gnrt.
++# Do not edit!
++
++import("//build/rust/cargo_crate.gni")
++
++cargo_crate("lib") {
++  crate_name = "rustversion"
++  epoch = "1"
++  crate_type = "proc-macro"
++  crate_root =
++      "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/lib.rs"
++  sources = [
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/attr.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/bound.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/constfn.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/date.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/error.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expand.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expr.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/iter.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/lib.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/release.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/time.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/token.rs",
++    "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/version.rs",
++  ]
++  inputs = []
++
++  build_native_rust_unit_tests = false
++  edition = "2018"
++  cargo_pkg_authors = "David Tolnay <dtolnay@gmail.com>"
++  cargo_pkg_name = "rustversion"
++  cargo_pkg_description =
++      "Conditional compilation according to rustc compiler version"
++  cargo_pkg_repository = "https://github.com/dtolnay/rustversion"
++  cargo_pkg_version = "1.0.22"
++
++  allow_unsafe = false
++
++  build_root = "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs"
++  build_sources = [ "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs" ]
++  build_script_inputs = [ "//third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/../../rustversion-v1/build/rustc.rs" ]
++  build_script_outputs = [ "version.expr" ]
++
++  # Only for usage from third-party crates. Add the crate to
++  # //third_party/rust/chromium_crates_io/Cargo.toml to use
++  # it from first-party code.
++  visibility = [ "//third_party/rust/*" ]
++
++  #####################################################################
++  # Tweaking which GN `config`s apply to this target.
++
++  # Config changes that apply to all `//third_party/rust` crates.
++  _configs_to_remove = [
++    # We don't need code coverage data for any `chromium_crates_io` crates.
++    "//build/config/coverage:default_coverage",
++
++    # This is third-party code, so remove `chromium_code` config.  We are not
++    # at the same time adding `//build/config/compiler:no_chromium_code`,
++    # because 1) we don't want to pull how warnings are handled by that config
++    # and 2) that config doesn't have any non-warnings-related stuff.
++    "//build/config/compiler:chromium_code",
++  ]
++  _configs_to_add = []
++
++  # Changing (if needed) which configs apply to this specific crate (based on
++  # `extra_kv.configs_to_remove` and `extra_kv.configs_to_add` from
++  # `gnrt_config.toml`).
++  _configs_to_remove += []
++  _configs_to_add += []
++
++  # Applying config changes.
++  library_configs -= _configs_to_remove
++  library_configs += _configs_to_add
++  executable_configs -= _configs_to_remove
++  executable_configs += _configs_to_add
++  proc_macro_configs -= _configs_to_remove
++  proc_macro_configs += _configs_to_add
++}
+diff -audpNr third_party/rust/rustversion.orig/v1/README.chromium third_party/rust/rustversion/v1/README.chromium
+--- third_party/rust/rustversion.orig/v1/README.chromium	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/rustversion/v1/README.chromium	2026-04-24 18:52:04.334011000 +0900
+@@ -0,0 +1,11 @@
++Name: rustversion
++URL: https://crates.io/crates/rustversion
++Version: 1.0.22
++Revision: 9e86f839b6a34a7d9398f243d88bf400b7fa1f7c
++Update Mechanism: Manual (https://crbug.com/449898466)
++License: Apache-2.0
++License File: //third_party/rust/chromium_crates_io/vendor/rustversion-v1/LICENSE-APACHE
++Shipped: yes
++Security Critical: yes
++
++Description: Conditional compilation according to rustc compiler version
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.cargo_vcs_info.json third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.cargo_vcs_info.json
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.cargo_vcs_info.json	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.cargo_vcs_info.json	2026-04-24 18:52:36.296103000 +0900
+@@ -1,6 +1,6 @@
+ {
+   "git": {
+-    "sha1": "da748163ea203f80098b6bdc754c54ebc535364c"
++    "sha1": "164cedda0eae131bc6cb67902599f4ec253642ca"
+   },
+   "path_in_vcs": ""
+ }
+\ No newline at end of file
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.github/workflows/rust.yml third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.github/workflows/rust.yml
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/.github/workflows/rust.yml	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/.github/workflows/rust.yml	2026-04-24 18:52:36.297419000 +0900
+@@ -19,7 +19,7 @@ jobs:
+         include:
+         # versions (all on linux-x86_64)
+         - { rust: 1.34.0, os: ubuntu-latest }
+-        - { rust: 1.61.0, os: ubuntu-latest }
++        - { rust: 1.68.0, os: ubuntu-latest }
+         - { rust: stable, os: ubuntu-latest }
+         - { rust: beta, os: ubuntu-latest }
+         - { rust: nightly, os: ubuntu-latest }
+@@ -38,7 +38,7 @@ jobs:
+     - run: cargo test --verbose --no-default-features
+     - run: cargo test --verbose
+     - run: cargo test --verbose --features derive
+-      if: matrix.rust == '1.61.0'
++      if: matrix.rust == '1.68.0'
+     - run: cargo test --verbose --all-features
+       if: matrix.rust == 'nightly'
+     - run: cargo test --verbose --manifest-path=derive/Cargo.toml --all-features
+@@ -51,8 +51,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        # we once had mips runners for Big-endian coverage but those got demoted to tier 3.
+-        target: [i686-unknown-linux-gnu]
++        target: [i686-unknown-linux-gnu, s390x-unknown-linux-gnu]
+     steps:
+     - uses: hecrj/setup-rust-action@v1
+       with:
+@@ -61,6 +60,7 @@ jobs:
+     - run: cargo install cross
+     - run: cross test --verbose --target=${{ matrix.target }} --no-default-features
+     - run: cross test --verbose --target=${{ matrix.target }}
++    - run: cd derive && cross test --verbose --target=${{ matrix.target }}
+     - run: cross test --verbose --target=${{ matrix.target }} --all-features
+       if: matrix.rust == 'nightly'
+     - run: cross test --verbose --target=${{ matrix.target }} --manifest-path=derive/Cargo.toml --all-features
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.lock third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.lock
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.lock	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.lock	2026-04-24 18:52:36.297141000 +0900
+@@ -4,9 +4,10 @@ name = "bytemuck"
+ 
+ [[package]]
+ name = "bytemuck"
+-version = "1.24.0"
++version = "1.25.0"
+ dependencies = [
+  "bytemuck_derive",
++ "rustversion",
+ ]
+ 
+ [[package]]
+@@ -22,27 +23,33 @@ name = "proc-macro2"
+ 
+ [[package]]
+ name = "proc-macro2"
+-version = "1.0.92"
++version = "1.0.95"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "37d3544b3f2748c54e147655edb5025752e2303145b5aefb3c3ea2c78b973bb0"
++checksum = "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
+ dependencies = [
+  "unicode-ident",
+ ]
+ 
+ [[package]]
+ name = "quote"
+-version = "1.0.38"
++version = "1.0.40"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0e4dccaaaf89514f546c693ddc140f729f958c247918a13380cccc6078391acc"
++checksum = "1885c039570dc00dcb4ff087a89e185fd56bae234ddc7f056a945bf36467248d"
+ dependencies = [
+  "proc-macro2",
+ ]
+ 
+ [[package]]
++name = "rustversion"
++version = "1.0.22"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
++
++[[package]]
+ name = "syn"
+-version = "2.0.95"
++version = "2.0.101"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "46f71c0377baf4ef1cc3e3402ded576dccc315800fbc62dfc7fe04b009773b4a"
++checksum = "8ce2b7fc941b3a24138a0a7cf8e858bfc6a992e7978a068a5c760deb0ed43caf"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -51,6 +58,6 @@ name = "unicode-ident"
+ 
+ [[package]]
+ name = "unicode-ident"
+-version = "1.0.14"
++version = "1.0.18"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "adb9e6ca4f869e1180728b7950e35922a7fc6397f7b641499e8f3ef06e50dc83"
++checksum = "5a5f39404a5da50712a4c1eecf25e90dd62b613502b7e925fd4e4d19b5c96512"
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.toml third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.toml
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/Cargo.toml	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/Cargo.toml	2026-04-24 18:52:36.295995000 +0900
+@@ -12,7 +12,7 @@ name = "bytemuck"
+ [package]
+ edition = "2018"
+ name = "bytemuck"
+-version = "1.24.0"
++version = "1.25.0"
+ authors = ["Lokathor <zefria@gmail.com>"]
+ build = false
+ exclude = [
+@@ -88,7 +88,7 @@ nightly_float = []
+ must_cast_extra = ["must_cast"]
+ nightly_docs = []
+ nightly_float = []
+-nightly_portable_simd = []
++nightly_portable_simd = ["rustversion"]
+ nightly_stdsimd = []
+ pod_saturating = []
+ track_caller = []
+@@ -141,6 +141,10 @@ version = "1.10.2"
+ 
+ [dependencies.bytemuck_derive]
+ version = "1.10.2"
++optional = true
++
++[dependencies.rustversion]
++version = "1.0.22"
+ optional = true
+ 
+ [lints.rust.unexpected_cfgs]
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/changelog.md third_party/rust/chromium_crates_io/vendor/bytemuck-v1/changelog.md
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/changelog.md	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/changelog.md	2026-04-24 18:52:36.296214000 +0900
+@@ -1,5 +1,10 @@
+ # `bytemuck` changelog
+ 
++## 1.25
++
++* [Remove extern "stdcall" fn ptr impls on non-x86-32 windows.](https://github.com/Lokathor/bytemuck/pull/333)
++* [Fix nightly_portable_simd after LaneCount removal.](https://github.com/Lokathor/bytemuck/pull/344)
++
+ ## 1.24
+ 
+ * [use new stable avx512 types from rust 1.89](https://github.com/Lokathor/bytemuck/pull/322)
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/must.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/must.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/must.rs	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/must.rs	2026-04-24 18:52:36.298235000 +0900
+@@ -114,7 +114,7 @@ maybe_const_fn! {
+ /// ## Failure
+ ///
+ /// * If the target type has a greater alignment requirement.
+-/// * If the target element type doesn't evenly fit into the the current element
++/// * If the target element type doesn't evenly fit into the current element
+ ///   type (eg: 3 `u16` values is 1.5 `u32` values, so that's a failure).
+ /// * Similarly, you can't convert from a non-[ZST](https://doc.rust-lang.org/nomicon/exotic-sizes.html#zero-sized-types-zsts)
+ ///   to a ZST (e.g. 3 `u8` values is not any number of `()` values).
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/pod.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/pod.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/pod.rs	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/pod.rs	2026-04-24 18:53:47.136049000 +0900
+@@ -143,6 +143,7 @@ impl_unsafe_marker_for_simd!(
+   }
+ );
+ 
++#[rustversion::before(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
+ #[cfg(feature = "nightly_portable_simd")]
+ #[cfg_attr(
+   feature = "nightly_docs",
+@@ -152,6 +153,18 @@ where
+ where
+   T: core::simd::SimdElement + Pod,
+   core::simd::LaneCount<N>: core::simd::SupportedLaneCount,
++{
++}
++
++#[rustversion::since(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
++#[cfg(feature = "nightly_portable_simd")]
++#[cfg_attr(
++  feature = "nightly_docs",
++  doc(cfg(feature = "nightly_portable_simd"))
++)]
++unsafe impl<T, const N: usize> Pod for core::simd::Simd<T, N>
++where
++  T: core::simd::SimdElement + Pod,
+ {
+ }
+ 
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable.rs	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable.rs	2026-04-24 18:54:39.442606000 +0900
+@@ -222,6 +222,7 @@ impl_unsafe_marker_for_simd!(
+     }
+ );
+ 
++#[rustversion::before(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
+ #[cfg(feature = "nightly_portable_simd")]
+ #[cfg_attr(
+   feature = "nightly_docs",
+@@ -230,7 +231,19 @@ where
+ unsafe impl<T, const N: usize> Zeroable for core::simd::Simd<T, N>
+ where
+   T: core::simd::SimdElement + Zeroable,
+-  core::simd::LaneCount<N>: core::simd::SupportedLaneCount,
++  core::simd::LaneCount<N>: core::simd::SupportedLaneCount, 
++{
++}
++
++#[rustversion::since(1.95)] // See https://github.com/Lokathor/bytemuck/issues/343
++#[cfg(feature = "nightly_portable_simd")]
++#[cfg_attr(
++  feature = "nightly_docs",
++  doc(cfg(feature = "nightly_portable_simd"))
++)]
++unsafe impl<T, const N: usize> Zeroable for core::simd::Simd<T, N>
++where
++  T: core::simd::SimdElement + Zeroable,
+ {
+ }
+ 
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable_in_option.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable_in_option.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/src/zeroable_in_option.rs	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/src/zeroable_in_option.rs	2026-04-24 18:52:36.298405000 +0900
+@@ -52,9 +52,9 @@ macro_rules! impl_for_fn {
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for unsafe extern "C" fn($($ArgTy,)*) -> R {}
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for extern "system" fn($($ArgTy,)*) -> R {}
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for unsafe extern "system" fn($($ArgTy,)*) -> R {}
+-        #[cfg(target_os="windows")]
++        #[cfg(all(target_os="windows", target_arch = "x86"))]
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for extern "stdcall" fn($($ArgTy,)*) -> R {}
+-        #[cfg(target_os="windows")]
++        #[cfg(all(target_os="windows", target_arch = "x86"))]
+         unsafe impl<$($ArgTy,)* R> ZeroableInOption for unsafe extern "stdcall" fn($($ArgTy,)*) -> R {}
+         #[cfg(feature = "zeroable_unwind_fn")]
+         impl_for_unwind_fn!($($ArgTy),*);
+diff -audpNr third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/tests/std_tests.rs third_party/rust/chromium_crates_io/vendor/bytemuck-v1/tests/std_tests.rs
+--- third_party/rust/chromium_crates_io/vendor/bytemuck-v1.orig/tests/std_tests.rs	2026-03-03 07:10:33.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/bytemuck-v1/tests/std_tests.rs	2026-04-24 18:52:36.296437000 +0900
+@@ -58,7 +58,7 @@ fn test_try_from_box_bytes() {
+ 
+   // Different layout: target alignment is less than source alignment.
+   assert_eq!(
+-    try_from_box_bytes::<u32>(Box::new(0u64).into()).map_err(|(x, _)| x),
++    try_from_box_bytes::<u16>(Box::new(0u64).into()).map_err(|(x, _)| x),
+     Err(PodCastError::AlignmentMismatch)
+   );
+ 
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.cargo-checksum.json third_party/rust/chromium_crates_io/vendor/rustversion-v1/.cargo-checksum.json
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.cargo-checksum.json	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.cargo-checksum.json	2026-04-24 18:52:41.796730000 +0900
+@@ -0,0 +1 @@
++{"files":{}}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.cargo_vcs_info.json third_party/rust/chromium_crates_io/vendor/rustversion-v1/.cargo_vcs_info.json
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.cargo_vcs_info.json	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.cargo_vcs_info.json	2026-04-24 18:52:41.796780000 +0900
+@@ -0,0 +1,6 @@
++{
++  "git": {
++    "sha1": "9e86f839b6a34a7d9398f243d88bf400b7fa1f7c"
++  },
++  "path_in_vcs": ""
++}
+\ No newline at end of file
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.github/FUNDING.yml third_party/rust/chromium_crates_io/vendor/rustversion-v1/.github/FUNDING.yml
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.github/FUNDING.yml	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.github/FUNDING.yml	2026-04-24 18:52:41.798222000 +0900
+@@ -0,0 +1 @@
++github: dtolnay
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.github/workflows/ci.yml third_party/rust/chromium_crates_io/vendor/rustversion-v1/.github/workflows/ci.yml
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.github/workflows/ci.yml	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.github/workflows/ci.yml	2026-04-24 18:52:41.798326000 +0900
+@@ -0,0 +1,117 @@
++name: CI
++
++on:
++  push:
++  pull_request:
++  workflow_dispatch:
++  schedule: [cron: "40 1 * * *"]
++
++permissions:
++  contents: read
++
++env:
++  RUSTFLAGS: -Dwarnings
++
++jobs:
++  pre_ci:
++    uses: dtolnay/.github/.github/workflows/pre_ci.yml@master
++
++  test:
++    name: Rust ${{matrix.rust}}
++    needs: pre_ci
++    if: needs.pre_ci.outputs.continue
++    runs-on: ubuntu-latest
++    strategy:
++      fail-fast: false
++      matrix:
++        rust: [nightly, beta, stable, 1.56.0]
++    timeout-minutes: 45
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@master
++        with:
++          toolchain: ${{matrix.rust}}
++      - name: Enable type layout randomization
++        run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
++        if: matrix.rust == 'nightly'
++      - run: cargo test
++      - name: RUSTFLAGS=-Zfmt-debug=none cargo test
++        run: RUSTFLAGS=${RUSTFLAGS}\ -Zfmt-debug=none cargo test
++        if: matrix.rust == 'nightly'
++      - uses: actions/upload-artifact@v4
++        if: matrix.rust == 'nightly' && always()
++        with:
++          name: Cargo.lock
++          path: Cargo.lock
++        continue-on-error: true
++
++  windows:
++    name: Windows
++    needs: pre_ci
++    if: needs.pre_ci.outputs.continue
++    runs-on: windows-latest
++    timeout-minutes: 45
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@stable
++      - run: cargo test
++
++  msrv:
++    name: Rust 1.31.0
++    needs: pre_ci
++    if: needs.pre_ci.outputs.continue
++    runs-on: ubuntu-latest
++    timeout-minutes: 45
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@1.31.0
++      - run: cargo check
++
++  doc:
++    name: Documentation
++    needs: pre_ci
++    if: needs.pre_ci.outputs.continue
++    runs-on: ubuntu-latest
++    timeout-minutes: 45
++    env:
++      RUSTDOCFLAGS: -Dwarnings
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@nightly
++      - uses: dtolnay/install@cargo-docs-rs
++      - run: cargo docs-rs
++
++  clippy:
++    name: Clippy
++    runs-on: ubuntu-latest
++    if: github.event_name != 'pull_request'
++    timeout-minutes: 45
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@clippy
++      - run: cargo clippy --tests -- -Dclippy::all -Dclippy::pedantic
++
++  miri:
++    name: Miri
++    needs: pre_ci
++    if: needs.pre_ci.outputs.continue
++    runs-on: ubuntu-latest
++    timeout-minutes: 45
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@miri
++      - run: cargo miri setup
++      - run: cargo miri test
++        env:
++          MIRIFLAGS: -Zmiri-strict-provenance
++
++  outdated:
++    name: Outdated
++    runs-on: ubuntu-latest
++    if: github.event_name != 'pull_request'
++    timeout-minutes: 45
++    steps:
++      - uses: actions/checkout@v4
++      - uses: dtolnay/rust-toolchain@stable
++      - uses: dtolnay/install@cargo-outdated
++      - run: cargo outdated --workspace --exit-code 1
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.gitignore third_party/rust/chromium_crates_io/vendor/rustversion-v1/.gitignore
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/.gitignore	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/.gitignore	2026-04-24 18:52:41.796543000 +0900
+@@ -0,0 +1,2 @@
++/target/
++/Cargo.lock
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.lock third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.lock
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.lock	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.lock	2026-04-24 18:52:41.798054000 +0900
+@@ -0,0 +1,296 @@
++# This file is automatically @generated by Cargo.
++# It is not intended for manual editing.
++version = 3
++
++[[package]]
++name = "dissimilar"
++version = "1.0.10"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "8975ffdaa0ef3661bfe02dbdcc06c9f829dfafe6a3c474de366a8d5e44276921"
++
++[[package]]
++name = "equivalent"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
++
++[[package]]
++name = "glob"
++version = "0.3.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "a8d1add55171497b4705a648c6b583acafb01d58050a51727785f0b2c8e0a2b2"
++
++[[package]]
++name = "hashbrown"
++version = "0.15.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1"
++
++[[package]]
++name = "indexmap"
++version = "2.10.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "fe4cd85333e22411419a0bcae1297d25e58c9443848b11dc6a86fefe8c78a661"
++dependencies = [
++ "equivalent",
++ "hashbrown",
++]
++
++[[package]]
++name = "itoa"
++version = "1.0.15"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "4a5f13b858c8d314ee3e8f639011f7ccefe71f97f96e50151fb991f267928e2c"
++
++[[package]]
++name = "memchr"
++version = "2.7.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "32a282da65faaf38286cf3be983213fcf1d2e2a58700e808f83f4ea9a4804bc0"
++
++[[package]]
++name = "proc-macro2"
++version = "1.0.95"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
++dependencies = [
++ "unicode-ident",
++]
++
++[[package]]
++name = "quote"
++version = "1.0.40"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "1885c039570dc00dcb4ff087a89e185fd56bae234ddc7f056a945bf36467248d"
++dependencies = [
++ "proc-macro2",
++]
++
++[[package]]
++name = "rustversion"
++version = "1.0.22"
++dependencies = [
++ "trybuild",
++]
++
++[[package]]
++name = "ryu"
++version = "1.0.20"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "28d3b2b1366ec20994f1fd18c3c594f05c5dd4bc44d8bb0c1c632c8d6829481f"
++
++[[package]]
++name = "serde"
++version = "1.0.219"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "5f0e2c6ed6606019b4e29e69dbaba95b11854410e5347d525002456dbbb786b6"
++dependencies = [
++ "serde_derive",
++]
++
++[[package]]
++name = "serde_derive"
++version = "1.0.219"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "5b0276cf7f2c73365f7157c8123c21cd9a50fbbd844757af28ca1f5925fc2a00"
++dependencies = [
++ "proc-macro2",
++ "quote",
++ "syn",
++]
++
++[[package]]
++name = "serde_json"
++version = "1.0.142"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "030fedb782600dcbd6f02d479bf0d817ac3bb40d644745b769d6a96bc3afc5a7"
++dependencies = [
++ "itoa",
++ "memchr",
++ "ryu",
++ "serde",
++]
++
++[[package]]
++name = "serde_spanned"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "40734c41988f7306bb04f0ecf60ec0f3f1caa34290e4e8ea471dcd3346483b83"
++dependencies = [
++ "serde",
++]
++
++[[package]]
++name = "syn"
++version = "2.0.104"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "17b6f705963418cdb9927482fa304bc562ece2fdd4f616084c50b7023b435a40"
++dependencies = [
++ "proc-macro2",
++ "quote",
++ "unicode-ident",
++]
++
++[[package]]
++name = "target-triple"
++version = "0.1.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "1ac9aa371f599d22256307c24a9d748c041e548cbf599f35d890f9d365361790"
++
++[[package]]
++name = "termcolor"
++version = "1.4.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "06794f8f6c5c898b3275aebefa6b8a1cb24cd2c6c79397ab15774837a0bc5755"
++dependencies = [
++ "winapi-util",
++]
++
++[[package]]
++name = "toml"
++version = "0.9.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "75129e1dc5000bfbaa9fee9d1b21f974f9fbad9daec557a521ee6e080825f6e8"
++dependencies = [
++ "indexmap",
++ "serde",
++ "serde_spanned",
++ "toml_datetime",
++ "toml_parser",
++ "toml_writer",
++ "winnow",
++]
++
++[[package]]
++name = "toml_datetime"
++version = "0.7.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "bade1c3e902f58d73d3f294cd7f20391c1cb2fbcb643b73566bc773971df91e3"
++dependencies = [
++ "serde",
++]
++
++[[package]]
++name = "toml_parser"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "b551886f449aa90d4fe2bdaa9f4a2577ad2dde302c61ecf262d80b116db95c10"
++dependencies = [
++ "winnow",
++]
++
++[[package]]
++name = "toml_writer"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "fcc842091f2def52017664b53082ecbbeb5c7731092bad69d2c63050401dfd64"
++
++[[package]]
++name = "trybuild"
++version = "1.0.110"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "32e257d7246e7a9fd015fb0b28b330a8d4142151a33f03e6a497754f4b1f6a8e"
++dependencies = [
++ "dissimilar",
++ "glob",
++ "serde",
++ "serde_derive",
++ "serde_json",
++ "target-triple",
++ "termcolor",
++ "toml",
++]
++
++[[package]]
++name = "unicode-ident"
++version = "1.0.18"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "5a5f39404a5da50712a4c1eecf25e90dd62b613502b7e925fd4e4d19b5c96512"
++
++[[package]]
++name = "winapi-util"
++version = "0.1.9"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
++dependencies = [
++ "windows-sys",
++]
++
++[[package]]
++name = "windows-sys"
++version = "0.59.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "1e38bc4d79ed67fd075bcc251a1c39b32a1776bbe92e5bef1f0bf1f8c531853b"
++dependencies = [
++ "windows-targets",
++]
++
++[[package]]
++name = "windows-targets"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "9b724f72796e036ab90c1021d4780d4d3d648aca59e491e6b98e725b84e99973"
++dependencies = [
++ "windows_aarch64_gnullvm",
++ "windows_aarch64_msvc",
++ "windows_i686_gnu",
++ "windows_i686_gnullvm",
++ "windows_i686_msvc",
++ "windows_x86_64_gnu",
++ "windows_x86_64_gnullvm",
++ "windows_x86_64_msvc",
++]
++
++[[package]]
++name = "windows_aarch64_gnullvm"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "32a4622180e7a0ec044bb555404c800bc9fd9ec262ec147edd5989ccd0c02cd3"
++
++[[package]]
++name = "windows_aarch64_msvc"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "09ec2a7bb152e2252b53fa7803150007879548bc709c039df7627cabbd05d469"
++
++[[package]]
++name = "windows_i686_gnu"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "8e9b5ad5ab802e97eb8e295ac6720e509ee4c243f69d781394014ebfe8bbfa0b"
++
++[[package]]
++name = "windows_i686_gnullvm"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "0eee52d38c090b3caa76c563b86c3a4bd71ef1a819287c19d586d7334ae8ed66"
++
++[[package]]
++name = "windows_i686_msvc"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "240948bc05c5e7c6dabba28bf89d89ffce3e303022809e73deaefe4f6ec56c66"
++
++[[package]]
++name = "windows_x86_64_gnu"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "147a5c80aabfbf0c7d901cb5895d1de30ef2907eb21fbbab29ca94c5b08b1a78"
++
++[[package]]
++name = "windows_x86_64_gnullvm"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "24d5b23dc417412679681396f2b49f3de8c1473deb516bd34410872eff51ed0d"
++
++[[package]]
++name = "windows_x86_64_msvc"
++version = "0.52.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
++
++[[package]]
++name = "winnow"
++version = "0.7.12"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "f3edebf492c8125044983378ecb5766203ad3b4c2f7a922bd7dd207f6d443e95"
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.toml third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.toml
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/Cargo.toml	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/Cargo.toml	2026-04-24 18:52:41.796670000 +0900
+@@ -0,0 +1,68 @@
++# THIS FILE IS AUTOMATICALLY GENERATED BY CARGO
++#
++# When uploading crates to the registry Cargo will automatically
++# "normalize" Cargo.toml files for maximal compatibility
++# with all versions of Cargo and also rewrite `path` dependencies
++# to registry (e.g., crates.io) dependencies.
++#
++# If you are reading this file be aware that the original Cargo.toml
++# will likely look very different (and much more reasonable).
++# See Cargo.toml.orig for the original contents.
++
++[package]
++edition = "2018"
++rust-version = "1.31"
++name = "rustversion"
++version = "1.0.22"
++authors = ["David Tolnay <dtolnay@gmail.com>"]
++build = "build/build.rs"
++autolib = false
++autobins = false
++autoexamples = false
++autotests = false
++autobenches = false
++description = "Conditional compilation according to rustc compiler version"
++documentation = "https://docs.rs/rustversion"
++readme = "README.md"
++categories = [
++    "development-tools::build-utils",
++    "no-std",
++    "no-std::no-alloc",
++]
++license = "MIT OR Apache-2.0"
++repository = "https://github.com/dtolnay/rustversion"
++
++[package.metadata.docs.rs]
++targets = ["x86_64-unknown-linux-gnu"]
++rustdoc-args = [
++    "--generate-link-to-definition",
++    "--extern-html-root-url=core=https://doc.rust-lang.org",
++    "--extern-html-root-url=alloc=https://doc.rust-lang.org",
++    "--extern-html-root-url=std=https://doc.rust-lang.org",
++    "--extern-html-root-url=proc_macro=https://doc.rust-lang.org",
++]
++
++[lib]
++name = "rustversion"
++path = "src/lib.rs"
++proc-macro = true
++
++[[test]]
++name = "compiletest"
++path = "tests/compiletest.rs"
++
++[[test]]
++name = "test_const"
++path = "tests/test_const.rs"
++
++[[test]]
++name = "test_eval"
++path = "tests/test_eval.rs"
++
++[[test]]
++name = "test_parse"
++path = "tests/test_parse.rs"
++
++[dev-dependencies.trybuild]
++version = "1.0.49"
++features = ["diff"]
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/LICENSE-APACHE third_party/rust/chromium_crates_io/vendor/rustversion-v1/LICENSE-APACHE
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/LICENSE-APACHE	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/LICENSE-APACHE	2026-04-24 18:52:41.798115000 +0900
+@@ -0,0 +1,176 @@
++                              Apache License
++                        Version 2.0, January 2004
++                     http://www.apache.org/licenses/
++
++TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++1. Definitions.
++
++   "License" shall mean the terms and conditions for use, reproduction,
++   and distribution as defined by Sections 1 through 9 of this document.
++
++   "Licensor" shall mean the copyright owner or entity authorized by
++   the copyright owner that is granting the License.
++
++   "Legal Entity" shall mean the union of the acting entity and all
++   other entities that control, are controlled by, or are under common
++   control with that entity. For the purposes of this definition,
++   "control" means (i) the power, direct or indirect, to cause the
++   direction or management of such entity, whether by contract or
++   otherwise, or (ii) ownership of fifty percent (50%) or more of the
++   outstanding shares, or (iii) beneficial ownership of such entity.
++
++   "You" (or "Your") shall mean an individual or Legal Entity
++   exercising permissions granted by this License.
++
++   "Source" form shall mean the preferred form for making modifications,
++   including but not limited to software source code, documentation
++   source, and configuration files.
++
++   "Object" form shall mean any form resulting from mechanical
++   transformation or translation of a Source form, including but
++   not limited to compiled object code, generated documentation,
++   and conversions to other media types.
++
++   "Work" shall mean the work of authorship, whether in Source or
++   Object form, made available under the License, as indicated by a
++   copyright notice that is included in or attached to the work
++   (an example is provided in the Appendix below).
++
++   "Derivative Works" shall mean any work, whether in Source or Object
++   form, that is based on (or derived from) the Work and for which the
++   editorial revisions, annotations, elaborations, or other modifications
++   represent, as a whole, an original work of authorship. For the purposes
++   of this License, Derivative Works shall not include works that remain
++   separable from, or merely link (or bind by name) to the interfaces of,
++   the Work and Derivative Works thereof.
++
++   "Contribution" shall mean any work of authorship, including
++   the original version of the Work and any modifications or additions
++   to that Work or Derivative Works thereof, that is intentionally
++   submitted to Licensor for inclusion in the Work by the copyright owner
++   or by an individual or Legal Entity authorized to submit on behalf of
++   the copyright owner. For the purposes of this definition, "submitted"
++   means any form of electronic, verbal, or written communication sent
++   to the Licensor or its representatives, including but not limited to
++   communication on electronic mailing lists, source code control systems,
++   and issue tracking systems that are managed by, or on behalf of, the
++   Licensor for the purpose of discussing and improving the Work, but
++   excluding communication that is conspicuously marked or otherwise
++   designated in writing by the copyright owner as "Not a Contribution."
++
++   "Contributor" shall mean Licensor and any individual or Legal Entity
++   on behalf of whom a Contribution has been received by Licensor and
++   subsequently incorporated within the Work.
++
++2. Grant of Copyright License. Subject to the terms and conditions of
++   this License, each Contributor hereby grants to You a perpetual,
++   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++   copyright license to reproduce, prepare Derivative Works of,
++   publicly display, publicly perform, sublicense, and distribute the
++   Work and such Derivative Works in Source or Object form.
++
++3. Grant of Patent License. Subject to the terms and conditions of
++   this License, each Contributor hereby grants to You a perpetual,
++   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++   (except as stated in this section) patent license to make, have made,
++   use, offer to sell, sell, import, and otherwise transfer the Work,
++   where such license applies only to those patent claims licensable
++   by such Contributor that are necessarily infringed by their
++   Contribution(s) alone or by combination of their Contribution(s)
++   with the Work to which such Contribution(s) was submitted. If You
++   institute patent litigation against any entity (including a
++   cross-claim or counterclaim in a lawsuit) alleging that the Work
++   or a Contribution incorporated within the Work constitutes direct
++   or contributory patent infringement, then any patent licenses
++   granted to You under this License for that Work shall terminate
++   as of the date such litigation is filed.
++
++4. Redistribution. You may reproduce and distribute copies of the
++   Work or Derivative Works thereof in any medium, with or without
++   modifications, and in Source or Object form, provided that You
++   meet the following conditions:
++
++   (a) You must give any other recipients of the Work or
++       Derivative Works a copy of this License; and
++
++   (b) You must cause any modified files to carry prominent notices
++       stating that You changed the files; and
++
++   (c) You must retain, in the Source form of any Derivative Works
++       that You distribute, all copyright, patent, trademark, and
++       attribution notices from the Source form of the Work,
++       excluding those notices that do not pertain to any part of
++       the Derivative Works; and
++
++   (d) If the Work includes a "NOTICE" text file as part of its
++       distribution, then any Derivative Works that You distribute must
++       include a readable copy of the attribution notices contained
++       within such NOTICE file, excluding those notices that do not
++       pertain to any part of the Derivative Works, in at least one
++       of the following places: within a NOTICE text file distributed
++       as part of the Derivative Works; within the Source form or
++       documentation, if provided along with the Derivative Works; or,
++       within a display generated by the Derivative Works, if and
++       wherever such third-party notices normally appear. The contents
++       of the NOTICE file are for informational purposes only and
++       do not modify the License. You may add Your own attribution
++       notices within Derivative Works that You distribute, alongside
++       or as an addendum to the NOTICE text from the Work, provided
++       that such additional attribution notices cannot be construed
++       as modifying the License.
++
++   You may add Your own copyright statement to Your modifications and
++   may provide additional or different license terms and conditions
++   for use, reproduction, or distribution of Your modifications, or
++   for any such Derivative Works as a whole, provided Your use,
++   reproduction, and distribution of the Work otherwise complies with
++   the conditions stated in this License.
++
++5. Submission of Contributions. Unless You explicitly state otherwise,
++   any Contribution intentionally submitted for inclusion in the Work
++   by You to the Licensor shall be under the terms and conditions of
++   this License, without any additional terms or conditions.
++   Notwithstanding the above, nothing herein shall supersede or modify
++   the terms of any separate license agreement you may have executed
++   with Licensor regarding such Contributions.
++
++6. Trademarks. This License does not grant permission to use the trade
++   names, trademarks, service marks, or product names of the Licensor,
++   except as required for reasonable and customary use in describing the
++   origin of the Work and reproducing the content of the NOTICE file.
++
++7. Disclaimer of Warranty. Unless required by applicable law or
++   agreed to in writing, Licensor provides the Work (and each
++   Contributor provides its Contributions) on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++   implied, including, without limitation, any warranties or conditions
++   of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++   PARTICULAR PURPOSE. You are solely responsible for determining the
++   appropriateness of using or redistributing the Work and assume any
++   risks associated with Your exercise of permissions under this License.
++
++8. Limitation of Liability. In no event and under no legal theory,
++   whether in tort (including negligence), contract, or otherwise,
++   unless required by applicable law (such as deliberate and grossly
++   negligent acts) or agreed to in writing, shall any Contributor be
++   liable to You for damages, including any direct, indirect, special,
++   incidental, or consequential damages of any character arising as a
++   result of this License or out of the use or inability to use the
++   Work (including but not limited to damages for loss of goodwill,
++   work stoppage, computer failure or malfunction, or any and all
++   other commercial damages or losses), even if such Contributor
++   has been advised of the possibility of such damages.
++
++9. Accepting Warranty or Additional Liability. While redistributing
++   the Work or Derivative Works thereof, You may choose to offer,
++   and charge a fee for, acceptance of support, warranty, indemnity,
++   or other liability obligations and/or rights consistent with this
++   License. However, in accepting such obligations, You may act only
++   on Your own behalf and on Your sole responsibility, not on behalf
++   of any other Contributor, and only if You agree to indemnify,
++   defend, and hold each Contributor harmless for any liability
++   incurred by, or claims asserted against, such Contributor by reason
++   of your accepting any such warranty or additional liability.
++
++END OF TERMS AND CONDITIONS
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/LICENSE-MIT third_party/rust/chromium_crates_io/vendor/rustversion-v1/LICENSE-MIT
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/LICENSE-MIT	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/LICENSE-MIT	2026-04-24 18:52:41.797828000 +0900
+@@ -0,0 +1,23 @@
++Permission is hereby granted, free of charge, to any
++person obtaining a copy of this software and associated
++documentation files (the "Software"), to deal in the
++Software without restriction, including without
++limitation the rights to use, copy, modify, merge,
++publish, distribute, sublicense, and/or sell copies of
++the Software, and to permit persons to whom the Software
++is furnished to do so, subject to the following
++conditions:
++
++The above copyright notice and this permission notice
++shall be included in all copies or substantial portions
++of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
++ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
++TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
++PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
++SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
++CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
++OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
++IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
++DEALINGS IN THE SOFTWARE.
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/README.md third_party/rust/chromium_crates_io/vendor/rustversion-v1/README.md
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/README.md	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/README.md	2026-04-24 18:52:41.798393000 +0900
+@@ -0,0 +1,167 @@
++Compiler version cfg
++====================
++
++[<img alt="github" src="https://img.shields.io/badge/github-dtolnay/rustversion-8da0cb?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/dtolnay/rustversion)
++[<img alt="crates.io" src="https://img.shields.io/crates/v/rustversion.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/rustversion)
++[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-rustversion-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/rustversion)
++[<img alt="build status" src="https://img.shields.io/github/actions/workflow/status/dtolnay/rustversion/ci.yml?branch=master&style=for-the-badge" height="20">](https://github.com/dtolnay/rustversion/actions?query=branch%3Amaster)
++
++This crate provides macros for conditional compilation according to rustc
++compiler version, analogous to [`#[cfg(...)]`][cfg] and
++[`#[cfg_attr(...)]`][cfg_attr].
++
++[cfg]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute
++[cfg_attr]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg_attr-attribute
++
++```toml
++[dependencies]
++rustversion = "1.0"
++```
++
++<br>
++
++## Selectors
++
++- <b>`#[rustversion::stable]`</b>
++  —<br>
++  True on any stable compiler.
++
++- <b>`#[rustversion::stable(1.34)]`</b>
++  —<br>
++  True on exactly the specified stable compiler.
++
++- <b>`#[rustversion::beta]`</b>
++  —<br>
++  True on any beta compiler.
++
++- <b>`#[rustversion::nightly]`</b>
++  —<br>
++  True on any nightly compiler or dev build.
++
++- <b>`#[rustversion::nightly(2025-01-01)]`</b>
++  —<br>
++  True on exactly one nightly.
++
++- <b>`#[rustversion::since(1.34)]`</b>
++  —<br>
++  True on that stable release and any later compiler, including beta and
++  nightly.
++
++- <b>`#[rustversion::since(2025-01-01)]`</b>
++  —<br>
++  True on that nightly and all newer ones.
++
++- <b>`#[rustversion::before(`</b><i>version or date</i><b>`)]`</b>
++  —<br>
++  Negative of *#[rustversion::since(...)]*.
++
++- <b>`#[rustversion::not(`</b><i>selector</i><b>`)]`</b>
++  —<br>
++  Negative of any selector; for example *#[rustversion::not(nightly)]*.
++
++- <b>`#[rustversion::any(`</b><i>selectors...</i><b>`)]`</b>
++  —<br>
++  True if any of the comma-separated selectors is true; for example
++  *#[rustversion::any(stable, beta)]*.
++
++- <b>`#[rustversion::all(`</b><i>selectors...</i><b>`)]`</b>
++  —<br>
++  True if all of the comma-separated selectors are true; for example
++  *#[rustversion::all(since(1.31), before(1.34))]*.
++
++- <b>`#[rustversion::attr(`</b><i>selector</i><b>`, `</b><i>attribute</i><b>`)]`</b>
++  —<br>
++  For conditional inclusion of attributes; analogous to `cfg_attr`.
++
++- <b>`rustversion::cfg!(`</b><i>selector</i><b>`)`</b>
++  —<br>
++  An expression form of any of the above attributes; for example
++  *if rustversion::cfg!(any(stable, beta)) { ... }*.
++
++<br>
++
++## Use cases
++
++Providing additional trait impls as types are stabilized in the standard library
++without breaking compatibility with older compilers; in this case Pin\<P\>
++stabilized in [Rust 1.33][pin]:
++
++[pin]: https://blog.rust-lang.org/2019/02/28/Rust-1.33.0.html#pinning
++
++```rust
++#[rustversion::since(1.33)]
++use std::pin::Pin;
++
++#[rustversion::since(1.33)]
++impl<P: MyTrait> MyTrait for Pin<P> {
++    /* ... */
++}
++```
++
++Similar but for language features; the ability to control alignment greater than
++1 of packed structs was stabilized in [Rust 1.33][packed].
++
++[packed]: https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1330-2019-02-28
++
++```rust
++#[rustversion::attr(before(1.33), repr(packed))]
++#[rustversion::attr(since(1.33), repr(packed(2)))]
++struct Six(i16, i32);
++
++fn main() {
++    println!("{}", std::mem::align_of::<Six>());
++}
++```
++
++Augmenting code with `const` as const impls are stabilized in the standard
++library. This use of `const` as an attribute is recognized as a special case by
++the rustversion::attr macro.
++
++```rust
++use std::time::Duration;
++
++#[rustversion::attr(since(1.32), const)]
++fn duration_as_days(dur: Duration) -> u64 {
++    dur.as_secs() / 60 / 60 / 24
++}
++```
++
++Emitting Cargo cfg directives from a build script. Note that this requires
++listing `rustversion` under `[build-dependencies]` in Cargo.toml, not
++`[dependencies]`.
++
++```rust
++// build.rs
++
++fn main() {
++    if rustversion::cfg!(since(1.36)) {
++        println!("cargo:rustc-cfg=no_std");
++    }
++}
++```
++
++```rust
++// src/lib.rs
++
++#![cfg_attr(no_std, no_std)]
++
++#[cfg(no_std)]
++extern crate alloc;
++```
++
++<br>
++
++#### License
++
++<sup>
++Licensed under either of <a href="LICENSE-APACHE">Apache License, Version
++2.0</a> or <a href="LICENSE-MIT">MIT license</a> at your option.
++</sup>
++
++<br>
++
++<sub>
++Unless you explicitly state otherwise, any contribution intentionally submitted
++for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
++be dual licensed as above, without any additional terms or conditions.
++</sub>
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/build/build.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/build/build.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/build.rs	2026-04-24 18:52:41.797936000 +0900
+@@ -0,0 +1,114 @@
++#![allow(
++    clippy::elidable_lifetime_names,
++    clippy::enum_glob_use,
++    clippy::must_use_candidate,
++    clippy::single_match_else
++)]
++
++mod rustc;
++
++use std::env;
++use std::ffi::OsString;
++use std::fmt::{self, Debug, Display};
++use std::fs;
++use std::iter;
++use std::path::Path;
++use std::process::{self, Command};
++
++fn main() {
++    println!("cargo:rerun-if-changed=build/build.rs");
++
++    let rustc = env::var_os("RUSTC").unwrap_or_else(|| OsString::from("rustc"));
++    let rustc_wrapper = env::var_os("RUSTC_WRAPPER").filter(|wrapper| !wrapper.is_empty());
++    let wrapped_rustc = rustc_wrapper.iter().chain(iter::once(&rustc));
++
++    let mut is_clippy_driver = false;
++    let mut is_mirai = false;
++    let version = loop {
++        let mut command;
++        if is_mirai {
++            command = Command::new(&rustc);
++        } else {
++            let mut wrapped_rustc = wrapped_rustc.clone();
++            command = Command::new(wrapped_rustc.next().unwrap());
++            command.args(wrapped_rustc);
++        }
++        if is_clippy_driver {
++            command.arg("--rustc");
++        }
++        command.arg("--version");
++
++        let output = match command.output() {
++            Ok(output) => output,
++            Err(e) => {
++                let rustc = rustc.to_string_lossy();
++                eprintln!("Error: failed to run `{} --version`: {}", rustc, e);
++                process::exit(1);
++            }
++        };
++
++        let string = match String::from_utf8(output.stdout) {
++            Ok(string) => string,
++            Err(e) => {
++                let rustc = rustc.to_string_lossy();
++                eprintln!(
++                    "Error: failed to parse output of `{} --version`: {}",
++                    rustc, e,
++                );
++                process::exit(1);
++            }
++        };
++
++        break match rustc::parse(&string) {
++            rustc::ParseResult::Success(version) => version,
++            rustc::ParseResult::OopsClippy if !is_clippy_driver => {
++                is_clippy_driver = true;
++                continue;
++            }
++            rustc::ParseResult::OopsMirai if !is_mirai && rustc_wrapper.is_some() => {
++                is_mirai = true;
++                continue;
++            }
++            rustc::ParseResult::Unrecognized
++            | rustc::ParseResult::OopsClippy
++            | rustc::ParseResult::OopsMirai => {
++                eprintln!(
++                    "Error: unexpected output from `rustc --version`: {:?}\n\n\
++                    Please file an issue in https://github.com/dtolnay/rustversion",
++                    string
++                );
++                process::exit(1);
++            }
++        };
++    };
++
++    if version.minor < 38 {
++        // Prior to 1.38, a #[proc_macro] is not allowed to be named `cfg`.
++        println!("cargo:rustc-cfg=cfg_macro_not_allowed");
++    }
++
++    if version.minor >= 80 {
++        println!("cargo:rustc-check-cfg=cfg(cfg_macro_not_allowed)");
++        println!("cargo:rustc-check-cfg=cfg(host_os, values(\"windows\"))");
++    }
++
++    let version = format!("{:#}\n", Render(&version));
++    let out_dir = env::var_os("OUT_DIR").expect("OUT_DIR not set");
++    let out_file = Path::new(&out_dir).join("version.expr");
++    fs::write(out_file, version).expect("failed to write version.expr");
++
++    let host = env::var_os("HOST").expect("HOST not set");
++    if let Some("windows") = host.to_str().unwrap().split('-').nth(2) {
++        println!("cargo:rustc-cfg=host_os=\"windows\"");
++    }
++}
++
++// Shim Version's {:?} format into a {} format, because {:?} is unusable in
++// format strings when building with `-Zfmt-debug=none`.
++struct Render<'a>(&'a rustc::Version);
++
++impl<'a> Display for Render<'a> {
++    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
++        Debug::fmt(self.0, formatter)
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/build/rustc.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/rustc.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/build/rustc.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/build/rustc.rs	2026-04-24 18:52:41.797988000 +0900
+@@ -0,0 +1,126 @@
++use self::Channel::*;
++use std::fmt::{self, Debug};
++
++pub enum ParseResult {
++    Success(Version),
++    OopsClippy,
++    OopsMirai,
++    Unrecognized,
++}
++
++#[cfg_attr(test, derive(PartialEq))]
++pub struct Version {
++    pub minor: u16,
++    pub patch: u16,
++    pub channel: Channel,
++}
++
++#[cfg_attr(test, derive(PartialEq))]
++pub enum Channel {
++    Stable,
++    Beta,
++    Nightly(Date),
++    Dev,
++}
++
++#[cfg_attr(test, derive(PartialEq))]
++pub struct Date {
++    pub year: u16,
++    pub month: u8,
++    pub day: u8,
++}
++
++pub fn parse(string: &str) -> ParseResult {
++    let last_line = string.lines().last().unwrap_or(string);
++    let mut words = last_line.trim().split(' ');
++
++    match words.next() {
++        Some("rustc") => {}
++        Some(word) if word.starts_with("clippy") => return ParseResult::OopsClippy,
++        Some("mirai") => return ParseResult::OopsMirai,
++        Some(_) | None => return ParseResult::Unrecognized,
++    }
++
++    parse_words(&mut words).map_or(ParseResult::Unrecognized, ParseResult::Success)
++}
++
++fn parse_words(words: &mut dyn Iterator<Item = &str>) -> Option<Version> {
++    let mut version_channel = words.next()?.split('-');
++    let version = version_channel.next()?;
++    let channel = version_channel.next();
++
++    let mut digits = version.split('.');
++    let major = digits.next()?;
++    if major != "1" {
++        return None;
++    }
++    let minor = digits.next()?.parse().ok()?;
++    let patch = digits.next().unwrap_or("0").parse().ok()?;
++
++    let channel = match channel {
++        None => Stable,
++        Some("dev") => Dev,
++        Some(channel) if channel.starts_with("beta") => Beta,
++        Some("nightly") => match words.next() {
++            Some(hash) if hash.starts_with('(') => match words.next() {
++                None if hash.ends_with(')') => Dev,
++                Some(date) if date.ends_with(')') => {
++                    let mut date = date[..date.len() - 1].split('-');
++                    let year = date.next()?.parse().ok()?;
++                    let month = date.next()?.parse().ok()?;
++                    let day = date.next()?.parse().ok()?;
++                    match date.next() {
++                        None => Nightly(Date { year, month, day }),
++                        Some(_) => return None,
++                    }
++                }
++                None | Some(_) => return None,
++            },
++            Some(_) => return None,
++            None => Dev,
++        },
++        Some(_) => return None,
++    };
++
++    Some(Version {
++        minor,
++        patch,
++        channel,
++    })
++}
++
++impl Debug for Version {
++    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
++        formatter
++            .debug_struct("crate::version::Version")
++            .field("minor", &self.minor)
++            .field("patch", &self.patch)
++            .field("channel", &self.channel)
++            .finish()
++    }
++}
++
++impl Debug for Channel {
++    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
++        match self {
++            Channel::Stable => formatter.write_str("crate::version::Channel::Stable"),
++            Channel::Beta => formatter.write_str("crate::version::Channel::Beta"),
++            Channel::Nightly(date) => formatter
++                .debug_tuple("crate::version::Channel::Nightly")
++                .field(date)
++                .finish(),
++            Channel::Dev => formatter.write_str("crate::version::Channel::Dev"),
++        }
++    }
++}
++
++impl Debug for Date {
++    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
++        formatter
++            .debug_struct("crate::date::Date")
++            .field("year", &self.year)
++            .field("month", &self.month)
++            .field("day", &self.day)
++            .finish()
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/attr.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/attr.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/attr.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/attr.rs	2026-04-24 18:52:41.798807000 +0900
+@@ -0,0 +1,35 @@
++use crate::error::{Error, Result};
++use crate::expr::{self, Expr};
++use crate::{iter, token};
++use proc_macro::{Span, TokenStream};
++
++pub struct Args {
++    pub condition: Expr,
++    pub then: Then,
++}
++
++pub enum Then {
++    Const(Span),
++    Attribute(TokenStream),
++}
++
++pub fn parse(input: TokenStream) -> Result<Args> {
++    let ref mut input = iter::new(input);
++    let condition = expr::parse(input)?;
++
++    token::parse_punct(input, ',')?;
++    if input.peek().is_none() {
++        return Err(Error::new(Span::call_site(), "expected one or more attrs"));
++    }
++
++    let const_span = token::parse_optional_keyword(input, "const");
++    let then = if let Some(const_span) = const_span {
++        token::parse_optional_punct(input, ',');
++        token::parse_end(input)?;
++        Then::Const(const_span)
++    } else {
++        Then::Attribute(input.collect())
++    };
++
++    Ok(Args { condition, then })
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/bound.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/bound.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/bound.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/bound.rs	2026-04-24 18:52:41.798959000 +0900
+@@ -0,0 +1,63 @@
++use crate::date::{self, Date};
++use crate::error::{Error, Result};
++use crate::iter::Iter;
++use crate::release::{self, Release};
++use crate::time;
++use crate::version::{Channel::*, Version};
++use proc_macro::{Group, TokenTree};
++use std::cmp::Ordering;
++
++pub enum Bound {
++    Nightly(Date),
++    Stable(Release),
++}
++
++pub fn parse(paren: Group, iter: Iter) -> Result<Bound> {
++    if let Some(TokenTree::Literal(literal)) = iter.peek() {
++        let repr = literal.to_string();
++        if repr.starts_with(|ch: char| ch.is_ascii_digit()) {
++            if repr.contains('.') {
++                return release::parse(paren, iter).map(Bound::Stable);
++            } else {
++                return date::parse(paren, iter).map(Bound::Nightly);
++            }
++        }
++    }
++    let msg = format!(
++        "expected rustc release number like 1.85, or nightly date like {}",
++        time::today(),
++    );
++    Err(Error::group(paren, msg))
++}
++
++impl PartialEq<Bound> for Version {
++    fn eq(&self, rhs: &Bound) -> bool {
++        match rhs {
++            Bound::Nightly(date) => match self.channel {
++                Stable | Beta | Dev => false,
++                Nightly(nightly) => nightly == *date,
++            },
++            Bound::Stable(release) => {
++                self.minor == release.minor
++                    && release.patch.map_or(true, |patch| self.patch == patch)
++            }
++        }
++    }
++}
++
++impl PartialOrd<Bound> for Version {
++    fn partial_cmp(&self, rhs: &Bound) -> Option<Ordering> {
++        match rhs {
++            Bound::Nightly(date) => match self.channel {
++                Stable | Beta => Some(Ordering::Less),
++                Nightly(nightly) => Some(nightly.cmp(date)),
++                Dev => Some(Ordering::Greater),
++            },
++            Bound::Stable(release) => {
++                let version = (self.minor, self.patch);
++                let bound = (release.minor, release.patch.unwrap_or(0));
++                Some(version.cmp(&bound))
++            }
++        }
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/constfn.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/constfn.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/constfn.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/constfn.rs	2026-04-24 18:52:41.798559000 +0900
+@@ -0,0 +1,58 @@
++use crate::error::{Error, Result};
++use proc_macro::{Ident, Span, TokenStream, TokenTree};
++use std::iter;
++
++#[derive(PartialOrd, PartialEq)]
++enum Qualifiers {
++    None,
++    Async,
++    Unsafe,
++    Extern,
++    Abi,
++}
++
++impl Qualifiers {
++    fn from_ident(ident: &Ident) -> Self {
++        match ident.to_string().as_str() {
++            "async" => Qualifiers::Async,
++            "unsafe" => Qualifiers::Unsafe,
++            "extern" => Qualifiers::Extern,
++            _ => Qualifiers::None,
++        }
++    }
++}
++
++pub(crate) fn insert_const(input: TokenStream, const_span: Span) -> Result<TokenStream> {
++    let ref mut input = crate::iter::new(input);
++    let mut out = TokenStream::new();
++    let mut qualifiers = Qualifiers::None;
++    let mut pending = Vec::new();
++
++    while let Some(token) = input.next() {
++        match token {
++            TokenTree::Ident(ref ident) if ident.to_string() == "fn" => {
++                let const_ident = Ident::new("const", const_span);
++                out.extend(iter::once(TokenTree::Ident(const_ident)));
++                out.extend(pending);
++                out.extend(iter::once(token));
++                out.extend(input);
++                return Ok(out);
++            }
++            TokenTree::Ident(ref ident) if Qualifiers::from_ident(ident) > qualifiers => {
++                qualifiers = Qualifiers::from_ident(ident);
++                pending.push(token);
++            }
++            TokenTree::Literal(_) if qualifiers == Qualifiers::Extern => {
++                qualifiers = Qualifiers::Abi;
++                pending.push(token);
++            }
++            _ => {
++                qualifiers = Qualifiers::None;
++                out.extend(pending.drain(..));
++                out.extend(iter::once(token));
++            }
++        }
++    }
++
++    Err(Error::new(const_span, "only allowed on a fn item"))
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/date.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/date.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/date.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/date.rs	2026-04-24 18:52:41.799010000 +0900
+@@ -0,0 +1,50 @@
++use crate::error::{Error, Result};
++use crate::iter::Iter;
++use crate::{time, token};
++use proc_macro::Group;
++use std::fmt::{self, Display};
++
++#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
++pub struct Date {
++    pub year: u16,
++    pub month: u8,
++    pub day: u8,
++}
++
++impl Display for Date {
++    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
++        write!(
++            formatter,
++            "{:04}-{:02}-{:02}",
++            self.year, self.month, self.day,
++        )
++    }
++}
++
++pub fn parse(paren: Group, iter: Iter) -> Result<Date> {
++    try_parse(iter).map_err(|()| {
++        let msg = format!("expected nightly date, like {}", time::today());
++        Error::group(paren, msg)
++    })
++}
++
++fn try_parse(iter: Iter) -> Result<Date, ()> {
++    let year = token::parse_literal(iter).map_err(drop)?;
++    token::parse_punct(iter, '-').map_err(drop)?;
++    let month = token::parse_literal(iter).map_err(drop)?;
++    token::parse_punct(iter, '-').map_err(drop)?;
++    let day = token::parse_literal(iter).map_err(drop)?;
++
++    let year = year.to_string().parse::<u64>().map_err(drop)?;
++    let month = month.to_string().parse::<u64>().map_err(drop)?;
++    let day = day.to_string().parse::<u64>().map_err(drop)?;
++    if year >= 3000 || month > 12 || day > 31 {
++        return Err(());
++    }
++
++    Ok(Date {
++        year: year as u16,
++        month: month as u8,
++        day: day as u8,
++    })
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/error.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/error.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/error.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/error.rs	2026-04-24 18:52:41.799097000 +0900
+@@ -0,0 +1,56 @@
++use proc_macro::{Delimiter, Group, Ident, Literal, Punct, Spacing, Span, TokenStream, TokenTree};
++use std::fmt::Display;
++use std::iter::FromIterator;
++
++pub type Result<T, E = Error> = std::result::Result<T, E>;
++
++pub struct Error {
++    begin: Span,
++    end: Span,
++    msg: String,
++}
++
++impl Error {
++    pub fn new(span: Span, msg: impl Display) -> Self {
++        Self::new2(span, span, msg)
++    }
++
++    pub fn new2(begin: Span, end: Span, msg: impl Display) -> Self {
++        Error {
++            begin,
++            end,
++            msg: msg.to_string(),
++        }
++    }
++
++    pub fn group(group: Group, msg: impl Display) -> Self {
++        let mut iter = group.stream().into_iter();
++        let delimiter = group.span();
++        let begin = iter.next().map_or(delimiter, |t| t.span());
++        let end = iter.last().map_or(begin, |t| t.span());
++        Self::new2(begin, end, msg)
++    }
++
++    pub fn into_compile_error(self) -> TokenStream {
++        // compile_error! { $msg }
++        TokenStream::from_iter(vec![
++            TokenTree::Ident(Ident::new("compile_error", self.begin)),
++            TokenTree::Punct({
++                let mut punct = Punct::new('!', Spacing::Alone);
++                punct.set_span(self.begin);
++                punct
++            }),
++            TokenTree::Group({
++                let mut group = Group::new(Delimiter::Brace, {
++                    TokenStream::from_iter(vec![TokenTree::Literal({
++                        let mut string = Literal::string(&self.msg);
++                        string.set_span(self.end);
++                        string
++                    })])
++                });
++                group.set_span(self.end);
++                group
++            }),
++        ])
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/expand.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expand.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/expand.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expand.rs	2026-04-24 18:52:41.798858000 +0900
+@@ -0,0 +1,100 @@
++use crate::attr::{self, Then};
++use crate::error::{Error, Result};
++use crate::{constfn, expr, iter, token};
++use proc_macro::{Delimiter, Group, Ident, Punct, Spacing, Span, TokenStream, TokenTree};
++use std::iter::FromIterator;
++
++pub fn cfg(introducer: &str, args: TokenStream, input: TokenStream) -> TokenStream {
++    try_cfg(introducer, args, input).unwrap_or_else(Error::into_compile_error)
++}
++
++fn try_cfg(introducer: &str, args: TokenStream, input: TokenStream) -> Result<TokenStream> {
++    let introducer = Ident::new(introducer, Span::call_site());
++
++    let mut full_args = TokenStream::from(TokenTree::Ident(introducer));
++    if !args.is_empty() {
++        full_args.extend(std::iter::once(TokenTree::Group(Group::new(
++            Delimiter::Parenthesis,
++            args,
++        ))));
++    }
++
++    let ref mut full_args = iter::new(full_args);
++    let expr = expr::parse(full_args)?;
++    token::parse_end(full_args)?;
++
++    if expr.eval(crate::RUSTVERSION) {
++        Ok(allow_incompatible_msrv(input))
++    } else {
++        Ok(TokenStream::new())
++    }
++}
++
++pub fn try_attr(args: attr::Args, input: TokenStream) -> Result<TokenStream> {
++    if !args.condition.eval(crate::RUSTVERSION) {
++        return Ok(input);
++    }
++
++    let output = match args.then {
++        Then::Const(const_token) => constfn::insert_const(input, const_token)?,
++        Then::Attribute(then) => {
++            TokenStream::from_iter(
++                // #[cfg_attr(all(), #then)]
++                vec![
++                    TokenTree::Punct(Punct::new('#', Spacing::Alone)),
++                    TokenTree::Group(Group::new(
++                        Delimiter::Bracket,
++                        TokenStream::from_iter(vec![
++                            TokenTree::Ident(Ident::new("cfg_attr", Span::call_site())),
++                            TokenTree::Group(Group::new(
++                                Delimiter::Parenthesis,
++                                TokenStream::from_iter(
++                                    vec![
++                                        TokenTree::Ident(Ident::new("all", Span::call_site())),
++                                        TokenTree::Group(Group::new(
++                                            Delimiter::Parenthesis,
++                                            TokenStream::new(),
++                                        )),
++                                        TokenTree::Punct(Punct::new(',', Spacing::Alone)),
++                                    ]
++                                    .into_iter()
++                                    .chain(then),
++                                ),
++                            )),
++                        ]),
++                    )),
++                ]
++                .into_iter()
++                .chain(input),
++            )
++        }
++    };
++
++    Ok(allow_incompatible_msrv(output))
++}
++
++fn allow_incompatible_msrv(input: TokenStream) -> TokenStream {
++    TokenStream::from_iter(
++        // #[allow(clippy::incompatible_msrv)]
++        vec![
++            TokenTree::Punct(Punct::new('#', Spacing::Alone)),
++            TokenTree::Group(Group::new(
++                Delimiter::Bracket,
++                TokenStream::from_iter(vec![
++                    TokenTree::Ident(Ident::new("allow", Span::call_site())),
++                    TokenTree::Group(Group::new(
++                        Delimiter::Parenthesis,
++                        TokenStream::from_iter(vec![
++                            TokenTree::Ident(Ident::new("clippy", Span::call_site())),
++                            TokenTree::Punct(Punct::new(':', Spacing::Joint)),
++                            TokenTree::Punct(Punct::new(':', Spacing::Alone)),
++                            TokenTree::Ident(Ident::new("incompatible_msrv", Span::call_site())),
++                        ]),
++                    )),
++                ]),
++            )),
++        ]
++        .into_iter()
++        .chain(input),
++    )
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/expr.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expr.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/expr.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/expr.rs	2026-04-24 18:52:41.799064000 +0900
+@@ -0,0 +1,163 @@
++use crate::bound::{self, Bound};
++use crate::date::{self, Date};
++use crate::error::{Error, Result};
++use crate::iter::{self, Iter};
++use crate::release::{self, Release};
++use crate::token;
++use crate::version::{Channel, Version};
++use proc_macro::{Ident, Span, TokenTree};
++
++pub enum Expr {
++    Stable,
++    Beta,
++    Nightly,
++    Date(Date),
++    Since(Bound),
++    Before(Bound),
++    Release(Release),
++    Not(Box<Expr>),
++    Any(Vec<Expr>),
++    All(Vec<Expr>),
++}
++
++impl Expr {
++    pub fn eval(&self, rustc: Version) -> bool {
++        use self::Expr::*;
++
++        match self {
++            Stable => rustc.channel == Channel::Stable,
++            Beta => rustc.channel == Channel::Beta,
++            Nightly => match rustc.channel {
++                Channel::Nightly(_) | Channel::Dev => true,
++                Channel::Stable | Channel::Beta => false,
++            },
++            Date(date) => match rustc.channel {
++                Channel::Nightly(rustc) => rustc == *date,
++                Channel::Stable | Channel::Beta | Channel::Dev => false,
++            },
++            Since(bound) => rustc >= *bound,
++            Before(bound) => rustc < *bound,
++            Release(release) => {
++                rustc.channel == Channel::Stable
++                    && rustc.minor == release.minor
++                    && release.patch.map_or(true, |patch| rustc.patch == patch)
++            }
++            Not(expr) => !expr.eval(rustc),
++            Any(exprs) => exprs.iter().any(|e| e.eval(rustc)),
++            All(exprs) => exprs.iter().all(|e| e.eval(rustc)),
++        }
++    }
++}
++
++pub fn parse(iter: Iter) -> Result<Expr> {
++    match &iter.next() {
++        Some(TokenTree::Ident(i)) if i.to_string() == "stable" => parse_stable(iter),
++        Some(TokenTree::Ident(i)) if i.to_string() == "beta" => Ok(Expr::Beta),
++        Some(TokenTree::Ident(i)) if i.to_string() == "nightly" => parse_nightly(iter),
++        Some(TokenTree::Ident(i)) if i.to_string() == "since" => parse_since(i, iter),
++        Some(TokenTree::Ident(i)) if i.to_string() == "before" => parse_before(i, iter),
++        Some(TokenTree::Ident(i)) if i.to_string() == "not" => parse_not(i, iter),
++        Some(TokenTree::Ident(i)) if i.to_string() == "any" => parse_any(i, iter),
++        Some(TokenTree::Ident(i)) if i.to_string() == "all" => parse_all(i, iter),
++        unexpected => {
++            let span = unexpected
++                .as_ref()
++                .map_or_else(Span::call_site, TokenTree::span);
++            Err(Error::new(span, "expected one of `stable`, `beta`, `nightly`, `since`, `before`, `not`, `any`, `all`"))
++        }
++    }
++}
++
++fn parse_nightly(iter: Iter) -> Result<Expr> {
++    let paren = match token::parse_optional_paren(iter) {
++        Some(group) => group,
++        None => return Ok(Expr::Nightly),
++    };
++
++    let ref mut inner = iter::new(paren.stream());
++    let date = date::parse(paren, inner)?;
++    token::parse_optional_punct(inner, ',');
++    token::parse_end(inner)?;
++
++    Ok(Expr::Date(date))
++}
++
++fn parse_stable(iter: Iter) -> Result<Expr> {
++    let paren = match token::parse_optional_paren(iter) {
++        Some(group) => group,
++        None => return Ok(Expr::Stable),
++    };
++
++    let ref mut inner = iter::new(paren.stream());
++    let release = release::parse(paren, inner)?;
++    token::parse_optional_punct(inner, ',');
++    token::parse_end(inner)?;
++
++    Ok(Expr::Release(release))
++}
++
++fn parse_since(introducer: &Ident, iter: Iter) -> Result<Expr> {
++    let paren = token::parse_paren(introducer, iter)?;
++
++    let ref mut inner = iter::new(paren.stream());
++    let bound = bound::parse(paren, inner)?;
++    token::parse_optional_punct(inner, ',');
++    token::parse_end(inner)?;
++
++    Ok(Expr::Since(bound))
++}
++
++fn parse_before(introducer: &Ident, iter: Iter) -> Result<Expr> {
++    let paren = token::parse_paren(introducer, iter)?;
++
++    let ref mut inner = iter::new(paren.stream());
++    let bound = bound::parse(paren, inner)?;
++    token::parse_optional_punct(inner, ',');
++    token::parse_end(inner)?;
++
++    Ok(Expr::Before(bound))
++}
++
++fn parse_not(introducer: &Ident, iter: Iter) -> Result<Expr> {
++    let paren = token::parse_paren(introducer, iter)?;
++
++    let ref mut inner = iter::new(paren.stream());
++    let expr = self::parse(inner)?;
++    token::parse_optional_punct(inner, ',');
++    token::parse_end(inner)?;
++
++    Ok(Expr::Not(Box::new(expr)))
++}
++
++fn parse_any(introducer: &Ident, iter: Iter) -> Result<Expr> {
++    let paren = token::parse_paren(introducer, iter)?;
++
++    let ref mut inner = iter::new(paren.stream());
++    let exprs = parse_comma_separated(inner)?;
++
++    Ok(Expr::Any(exprs.into_iter().collect()))
++}
++
++fn parse_all(introducer: &Ident, iter: Iter) -> Result<Expr> {
++    let paren = token::parse_paren(introducer, iter)?;
++
++    let ref mut inner = iter::new(paren.stream());
++    let exprs = parse_comma_separated(inner)?;
++
++    Ok(Expr::All(exprs.into_iter().collect()))
++}
++
++fn parse_comma_separated(iter: Iter) -> Result<Vec<Expr>> {
++    let mut exprs = Vec::new();
++
++    while iter.peek().is_some() {
++        let expr = self::parse(iter)?;
++        exprs.push(expr);
++        if iter.peek().is_none() {
++            break;
++        }
++        token::parse_punct(iter, ',')?;
++    }
++
++    Ok(exprs)
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/iter.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/iter.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/iter.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/iter.rs	2026-04-24 18:52:41.799103000 +0900
+@@ -0,0 +1,42 @@
++use proc_macro::{token_stream, Delimiter, TokenStream, TokenTree};
++
++pub type Iter<'a> = &'a mut IterImpl;
++
++pub struct IterImpl {
++    stack: Vec<token_stream::IntoIter>,
++    peeked: Option<TokenTree>,
++}
++
++pub fn new(tokens: TokenStream) -> IterImpl {
++    IterImpl {
++        stack: vec![tokens.into_iter()],
++        peeked: None,
++    }
++}
++
++impl IterImpl {
++    pub fn peek(&mut self) -> Option<&TokenTree> {
++        self.peeked = self.next();
++        self.peeked.as_ref()
++    }
++}
++
++impl Iterator for IterImpl {
++    type Item = TokenTree;
++
++    fn next(&mut self) -> Option<Self::Item> {
++        if let Some(tt) = self.peeked.take() {
++            return Some(tt);
++        }
++        loop {
++            let top = self.stack.last_mut()?;
++            match top.next() {
++                None => drop(self.stack.pop()),
++                Some(TokenTree::Group(ref group)) if group.delimiter() == Delimiter::None => {
++                    self.stack.push(group.stream().into_iter());
++                }
++                Some(tt) => return Some(tt),
++            }
++        }
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/lib.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/lib.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/lib.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/lib.rs	2026-04-24 18:52:41.798755000 +0900
+@@ -0,0 +1,282 @@
++//! [![github]](https://github.com/dtolnay/rustversion)&ensp;[![crates-io]](https://crates.io/crates/rustversion)&ensp;[![docs-rs]](https://docs.rs/rustversion)
++//!
++//! [github]: https://img.shields.io/badge/github-8da0cb?style=for-the-badge&labelColor=555555&logo=github
++//! [crates-io]: https://img.shields.io/badge/crates.io-fc8d62?style=for-the-badge&labelColor=555555&logo=rust
++//! [docs-rs]: https://img.shields.io/badge/docs.rs-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs
++//!
++//! <br>
++//!
++//! This crate provides macros for conditional compilation according to rustc
++//! compiler version, analogous to [`#[cfg(...)]`][cfg] and
++//! [`#[cfg_attr(...)]`][cfg_attr].
++//!
++//! [cfg]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute
++//! [cfg_attr]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg_attr-attribute
++//!
++//! <br>
++//!
++//! # Selectors
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::stable]</code></b>
++//!   —<br>
++//!   True on any stable compiler.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::stable(1.34)]</code></b>
++//!   —<br>
++//!   True on exactly the specified stable compiler.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::beta]</code></b>
++//!   —<br>
++//!   True on any beta compiler.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::nightly]</code></b>
++//!   —<br>
++//!   True on any nightly compiler or dev build.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::nightly(2025-01-01)]</code></b>
++//!   —<br>
++//!   True on exactly one nightly.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::since(1.34)]</code></b>
++//!   —<br>
++//!   True on that stable release and any later compiler, including beta and
++//!   nightly.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::since(2025-01-01)]</code></b>
++//!   —<br>
++//!   True on that nightly and all newer ones.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::before(</code></b><i>version or date</i><b><code style="display:inline">)]</code></b>
++//!   —<br>
++//!   Negative of <i>#[rustversion::since(...)]</i>.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::not(</code></b><i>selector</i><b><code style="display:inline">)]</code></b>
++//!   —<br>
++//!   Negative of any selector; for example <i>#[rustversion::not(nightly)]</i>.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::any(</code></b><i>selectors...</i><b><code style="display:inline">)]</code></b>
++//!   —<br>
++//!   True if any of the comma-separated selectors is true; for example
++//!   <i>#[rustversion::any(stable, beta)]</i>.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::all(</code></b><i>selectors...</i><b><code style="display:inline">)]</code></b>
++//!   —<br>
++//!   True if all of the comma-separated selectors are true; for example
++//!   <i>#[rustversion::all(since(1.31), before(1.34))]</i>.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">#[rustversion::attr(</code></b><i>selector</i><b><code style="display:inline">, </code></b><i>attribute</i><b><code style="display:inline">)]</code></b>
++//!   —<br>
++//!   For conditional inclusion of attributes; analogous to
++//!   <code style="display:inline">cfg_attr</code>.
++//!   </p>
++//!
++//! - <p style="margin-left:50px;text-indent:-50px">
++//!   <b><code style="display:inline">rustversion::cfg!(</code></b><i>selector</i><b><code style="display:inline">)</code></b>
++//!   —<br>
++//!   An expression form of any of the above attributes; for example
++//!   <i>if rustversion::cfg!(any(stable, beta)) { ... }</i>.
++//!   </p>
++//!
++//! <br>
++//!
++//! # Use cases
++//!
++//! Providing additional trait impls as types are stabilized in the standard library
++//! without breaking compatibility with older compilers; in this case Pin\<P\>
++//! stabilized in [Rust 1.33][pin]:
++//!
++//! [pin]: https://blog.rust-lang.org/2019/02/28/Rust-1.33.0.html#pinning
++//!
++//! ```
++//! # trait MyTrait {}
++//! #
++//! #[rustversion::since(1.33)]
++//! use std::pin::Pin;
++//!
++//! #[rustversion::since(1.33)]
++//! impl<P: MyTrait> MyTrait for Pin<P> {
++//!     /* ... */
++//! }
++//! ```
++//!
++//! Similar but for language features; the ability to control alignment greater than
++//! 1 of packed structs was stabilized in [Rust 1.33][packed].
++//!
++//! [packed]: https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1330-2019-02-28
++//!
++//! ```
++//! #[rustversion::attr(before(1.33), repr(packed))]
++//! #[rustversion::attr(since(1.33), repr(packed(2)))]
++//! struct Six(i16, i32);
++//!
++//! fn main() {
++//!     println!("{}", std::mem::align_of::<Six>());
++//! }
++//! ```
++//!
++//! Augmenting code with `const` as const impls are stabilized in the standard
++//! library. This use of `const` as an attribute is recognized as a special case
++//! by the rustversion::attr macro.
++//!
++//! ```
++//! use std::time::Duration;
++//!
++//! #[rustversion::attr(since(1.32), const)]
++//! fn duration_as_days(dur: Duration) -> u64 {
++//!     dur.as_secs() / 60 / 60 / 24
++//! }
++//! ```
++//!
++//! Emitting Cargo cfg directives from a build script. Note that this requires
++//! listing `rustversion` under `[build-dependencies]` in Cargo.toml, not
++//! `[dependencies]`.
++//!
++//! ```
++//! // build.rs
++//!
++//! fn main() {
++//!     if rustversion::cfg!(since(1.36)) {
++//!         println!("cargo:rustc-cfg=no_std");
++//!     }
++//! }
++//! ```
++//!
++//! ```
++//! // src/lib.rs
++//!
++//! #![cfg_attr(no_std, no_std)]
++//!
++//! #[cfg(no_std)]
++//! extern crate alloc;
++//! ```
++//!
++//! <br>
++
++#![doc(html_root_url = "https://docs.rs/rustversion/1.0.22")]
++#![allow(
++    clippy::cast_lossless,
++    clippy::cast_possible_truncation,
++    clippy::derive_partial_eq_without_eq,
++    clippy::doc_markdown,
++    clippy::enum_glob_use,
++    clippy::from_iter_instead_of_collect,
++    // https://github.com/rust-lang/rust-clippy/issues/8539
++    clippy::iter_with_drain,
++    clippy::module_name_repetitions,
++    clippy::must_use_candidate,
++    clippy::needless_doctest_main,
++    clippy::needless_pass_by_value,
++    clippy::redundant_else,
++    clippy::toplevel_ref_arg,
++    clippy::unreadable_literal
++)]
++
++extern crate proc_macro;
++
++mod attr;
++mod bound;
++mod constfn;
++mod date;
++mod error;
++mod expand;
++mod expr;
++mod iter;
++mod release;
++mod time;
++mod token;
++mod version;
++
++use crate::error::Error;
++use crate::version::Version;
++use proc_macro::TokenStream;
++
++#[cfg(not(host_os = "windows"))]
++const RUSTVERSION: Version = include!(concat!(env!("OUT_DIR"), "/version.expr"));
++
++#[cfg(host_os = "windows")]
++const RUSTVERSION: Version = include!(concat!(env!("OUT_DIR"), "\\version.expr"));
++
++#[proc_macro_attribute]
++pub fn stable(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("stable", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn beta(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("beta", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn nightly(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("nightly", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn since(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("since", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn before(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("before", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn not(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("not", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn any(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("any", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn all(args: TokenStream, input: TokenStream) -> TokenStream {
++    expand::cfg("all", args, input)
++}
++
++#[proc_macro_attribute]
++pub fn attr(args: TokenStream, input: TokenStream) -> TokenStream {
++    attr::parse(args)
++        .and_then(|args| expand::try_attr(args, input))
++        .unwrap_or_else(Error::into_compile_error)
++}
++
++#[cfg(not(cfg_macro_not_allowed))]
++#[proc_macro]
++pub fn cfg(input: TokenStream) -> TokenStream {
++    use proc_macro::{Ident, Span, TokenTree};
++    (|| {
++        let ref mut args = iter::new(input);
++        let expr = expr::parse(args)?;
++        token::parse_end(args)?;
++        let boolean = expr.eval(RUSTVERSION);
++        let ident = Ident::new(&boolean.to_string(), Span::call_site());
++        Ok(TokenStream::from(TokenTree::Ident(ident)))
++    })()
++    .unwrap_or_else(Error::into_compile_error)
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/release.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/release.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/release.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/release.rs	2026-04-24 18:52:41.798687000 +0900
+@@ -0,0 +1,34 @@
++use crate::error::{Error, Result};
++use crate::iter::Iter;
++use crate::token;
++use proc_macro::Group;
++
++#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
++pub struct Release {
++    pub minor: u16,
++    pub patch: Option<u16>,
++}
++
++pub fn parse(paren: Group, iter: Iter) -> Result<Release> {
++    try_parse(iter).map_err(|()| Error::group(paren, "expected rustc release number, like 1.31"))
++}
++
++fn try_parse(iter: Iter) -> Result<Release, ()> {
++    let major_minor = token::parse_literal(iter).map_err(drop)?;
++    let string = major_minor.to_string();
++
++    if !string.starts_with("1.") {
++        return Err(());
++    }
++
++    let minor: u16 = string[2..].parse().map_err(drop)?;
++
++    let patch = if token::parse_optional_punct(iter, '.').is_some() {
++        let int = token::parse_literal(iter).map_err(drop)?;
++        Some(int.to_string().parse().map_err(drop)?)
++    } else {
++        None
++    };
++
++    Ok(Release { minor, patch })
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/time.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/time.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/time.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/time.rs	2026-04-24 18:52:41.798908000 +0900
+@@ -0,0 +1,51 @@
++use crate::date::Date;
++use std::env;
++use std::time::{SystemTime, UNIX_EPOCH};
++
++// Timestamp of 2016-03-01 00:00:00 in UTC.
++const BASE: u64 = 1456790400;
++const BASE_YEAR: u16 = 2016;
++const BASE_MONTH: u8 = 3;
++
++// Days between leap days.
++const CYCLE: u64 = 365 * 4 + 1;
++
++const DAYS_BY_MONTH: [u8; 12] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
++
++pub fn today() -> Date {
++    let default = Date {
++        year: 2025,
++        month: 2,
++        day: 25,
++    };
++    try_today().unwrap_or(default)
++}
++
++fn try_today() -> Option<Date> {
++    if let Some(pkg_name) = env::var_os("CARGO_PKG_NAME") {
++        if pkg_name.to_str() == Some("rustversion-tests") {
++            return None; // Stable date for ui testing.
++        }
++    }
++
++    let now = SystemTime::now();
++    let since_epoch = now.duration_since(UNIX_EPOCH).ok()?;
++    let secs = since_epoch.as_secs();
++
++    let approx_days = secs.checked_sub(BASE)? / 60 / 60 / 24;
++    let cycle = approx_days / CYCLE;
++    let mut rem = approx_days % CYCLE;
++
++    let mut year = BASE_YEAR + cycle as u16 * 4;
++    let mut month = BASE_MONTH;
++    loop {
++        let days_in_month = DAYS_BY_MONTH[month as usize - 1];
++        if rem < days_in_month as u64 {
++            let day = rem as u8 + 1;
++            return Some(Date { year, month, day });
++        }
++        rem -= days_in_month as u64;
++        year += (month == 12) as u16;
++        month = month % 12 + 1;
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/token.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/token.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/token.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/token.rs	2026-04-24 18:52:41.799108000 +0900
+@@ -0,0 +1,78 @@
++use crate::error::{Error, Result};
++use crate::iter::Iter;
++use proc_macro::{Delimiter, Group, Ident, Literal, Span, TokenTree};
++
++pub fn parse_punct(iter: Iter, ch: char) -> Result<()> {
++    match iter.next() {
++        Some(TokenTree::Punct(ref punct)) if punct.as_char() == ch => Ok(()),
++        unexpected => {
++            let span = unexpected
++                .as_ref()
++                .map_or_else(Span::call_site, TokenTree::span);
++            Err(Error::new(span, format!("expected `{}`", ch)))
++        }
++    }
++}
++
++pub fn parse_optional_punct(iter: Iter, ch: char) -> Option<()> {
++    match iter.peek() {
++        Some(TokenTree::Punct(punct)) if punct.as_char() == ch => iter.next().map(drop),
++        _ => None,
++    }
++}
++
++pub fn parse_optional_keyword(iter: Iter, keyword: &str) -> Option<Span> {
++    match iter.peek() {
++        Some(TokenTree::Ident(ident)) if ident.to_string() == keyword => {
++            Some(iter.next().unwrap().span())
++        }
++        _ => None,
++    }
++}
++
++pub fn parse_literal(iter: Iter) -> Result<Literal> {
++    match iter.next() {
++        Some(TokenTree::Literal(literal)) => Ok(literal),
++        unexpected => {
++            let span = unexpected
++                .as_ref()
++                .map_or_else(Span::call_site, TokenTree::span);
++            Err(Error::new(span, "expected literal"))
++        }
++    }
++}
++
++pub fn parse_paren(introducer: &Ident, iter: Iter) -> Result<Group> {
++    match iter.peek() {
++        Some(TokenTree::Group(group)) if group.delimiter() == Delimiter::Parenthesis => {
++            match iter.next() {
++                Some(TokenTree::Group(group)) => Ok(group),
++                _ => unreachable!(),
++            }
++        }
++        Some(unexpected) => Err(Error::new(unexpected.span(), "expected `(`")),
++        None => Err(Error::new(
++            introducer.span(),
++            format!("expected `(` after `{}`", introducer),
++        )),
++    }
++}
++
++pub fn parse_optional_paren(iter: Iter) -> Option<Group> {
++    match iter.peek() {
++        Some(TokenTree::Group(group)) if group.delimiter() == Delimiter::Parenthesis => {
++            match iter.next() {
++                Some(TokenTree::Group(group)) => Some(group),
++                _ => unreachable!(),
++            }
++        }
++        _ => None,
++    }
++}
++
++pub fn parse_end(iter: Iter) -> Result<()> {
++    match iter.next() {
++        None => Ok(()),
++        Some(unexpected) => Err(Error::new(unexpected.span(), "unexpected token")),
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/version.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/version.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/src/version.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/src/version.rs	2026-04-24 18:52:41.798638000 +0900
+@@ -0,0 +1,18 @@
++#![allow(dead_code)]
++
++use crate::date::Date;
++
++#[derive(Copy, Clone, Debug, PartialEq)]
++pub struct Version {
++    pub minor: u16,
++    pub patch: u16,
++    pub channel: Channel,
++}
++
++#[derive(Copy, Clone, Debug, PartialEq)]
++pub enum Channel {
++    Stable,
++    Beta,
++    Nightly(Date),
++    Dev,
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/compiletest.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/compiletest.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/compiletest.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/compiletest.rs	2026-04-24 18:52:41.797587000 +0900
+@@ -0,0 +1,7 @@
++#[rustversion::attr(not(nightly), ignore = "requires nightly")]
++#[cfg_attr(miri, ignore = "incompatible with miri")]
++#[test]
++fn ui() {
++    let t = trybuild::TestCases::new();
++    t.compile_fail("tests/ui/*.rs");
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/test_const.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/test_const.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/test_const.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/test_const.rs	2026-04-24 18:52:41.797720000 +0900
+@@ -0,0 +1,42 @@
++#![allow(
++    clippy::semicolon_if_nothing_returned, // https://github.com/rust-lang/rust-clippy/issues/7324
++    clippy::used_underscore_items,
++)]
++
++#[rustversion::attr(all(), const)]
++fn _basic() {}
++const _BASIC: () = _basic();
++
++#[rustversion::attr(all(), const)]
++unsafe fn _unsafe() {}
++const _UNSAFE: () = unsafe { _unsafe() };
++
++macro_rules! item {
++    ($i:item) => {
++        #[rustversion::attr(all(), const)]
++        $i
++    };
++}
++
++item! {fn _item() {}}
++const _ITEM: () = _item();
++
++macro_rules! ident {
++    ($fn:ident) => {
++        #[rustversion::attr(all(), const)]
++        $fn _ident() {}
++    };
++}
++
++ident! {fn}
++const _IDENT: () = _ident();
++
++#[rustversion::attr(all(), const)]
++/// doc
++fn _doc_below() {}
++const _DOC_BELOW: () = _doc_below();
++
++/// doc
++#[rustversion::attr(all(), const)]
++fn _doc_above() {}
++const _DOC_ABOVE: () = _doc_above();
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/test_eval.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/test_eval.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/test_eval.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/test_eval.rs	2026-04-24 18:52:41.797668000 +0900
+@@ -0,0 +1,20 @@
++#[rustversion::any(
++    stable,
++    stable(1.34),
++    stable(1.34.0),
++    beta,
++    nightly,
++    nightly(2020-02-25),
++    since(1.34),
++    since(2020-02-25),
++    before(1.34),
++    before(2020-02-25),
++    not(nightly),
++    all(stable, beta, nightly),
++)]
++fn success() {}
++
++#[test]
++fn test() {
++    success();
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/test_parse.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/test_parse.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/test_parse.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/test_parse.rs	2026-04-24 18:52:41.797771000 +0900
+@@ -0,0 +1,103 @@
++#![allow(
++    clippy::derive_partial_eq_without_eq,
++    clippy::enum_glob_use,
++    clippy::must_use_candidate
++)]
++
++include!("../build/rustc.rs");
++
++#[test]
++fn test_parse() {
++    let cases = &[
++        (
++            "rustc 1.0.0 (a59de37e9 2015-05-13) (built 2015-05-14)",
++            Version {
++                minor: 0,
++                patch: 0,
++                channel: Stable,
++            },
++        ),
++        (
++            "rustc 1.18.0",
++            Version {
++                minor: 18,
++                patch: 0,
++                channel: Stable,
++            },
++        ),
++        (
++            "rustc 1.24.1 (d3ae9a9e0 2018-02-27)",
++            Version {
++                minor: 24,
++                patch: 1,
++                channel: Stable,
++            },
++        ),
++        (
++            "rustc 1.35.0-beta.3 (c13114dc8 2019-04-27)",
++            Version {
++                minor: 35,
++                patch: 0,
++                channel: Beta,
++            },
++        ),
++        (
++            "rustc 1.36.0-nightly (938d4ffe1 2019-04-27)",
++            Version {
++                minor: 36,
++                patch: 0,
++                channel: Nightly(Date {
++                    year: 2019,
++                    month: 4,
++                    day: 27,
++                }),
++            },
++        ),
++        (
++            "rustc 1.36.0-dev",
++            Version {
++                minor: 36,
++                patch: 0,
++                channel: Dev,
++            },
++        ),
++        (
++            "rustc 1.36.0-nightly",
++            Version {
++                minor: 36,
++                patch: 0,
++                channel: Dev,
++            },
++        ),
++        (
++            "warning: invalid logging spec 'warning', ignoring it
++             rustc 1.30.0-nightly (3bc2ca7e4 2018-09-20)",
++            Version {
++                minor: 30,
++                patch: 0,
++                channel: Nightly(Date {
++                    year: 2018,
++                    month: 9,
++                    day: 20,
++                }),
++            },
++        ),
++        (
++            "rustc 1.52.1-nightly (gentoo)",
++            Version {
++                minor: 52,
++                patch: 1,
++                channel: Dev,
++            },
++        ),
++    ];
++
++    for (string, expected) in cases {
++        match parse(string) {
++            ParseResult::Success(version) => assert_eq!(version, *expected),
++            ParseResult::OopsClippy | ParseResult::OopsMirai | ParseResult::Unrecognized => {
++                panic!("unrecognized: {:?}", string);
++            }
++        }
++    }
++}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-bound.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-bound.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-bound.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-bound.rs	2026-04-24 18:52:41.797516000 +0900
+@@ -0,0 +1,7 @@
++#[rustversion::since(stable)]
++struct S;
++
++#[rustversion::any(since(stable))]
++struct S;
++
++fn main() {}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-bound.stderr third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-bound.stderr
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-bound.stderr	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-bound.stderr	2026-04-24 18:52:41.797251000 +0900
+@@ -0,0 +1,11 @@
++error: expected rustc release number like 1.85, or nightly date like 2025-02-25
++ --> tests/ui/bad-bound.rs:1:22
++  |
++1 | #[rustversion::since(stable)]
++  |                      ^^^^^^
++
++error: expected rustc release number like 1.85, or nightly date like 2025-02-25
++ --> tests/ui/bad-bound.rs:4:26
++  |
++4 | #[rustversion::any(since(stable))]
++  |                          ^^^^^^
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-date.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-date.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-date.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-date.rs	2026-04-24 18:52:41.797197000 +0900
+@@ -0,0 +1,7 @@
++#[rustversion::nightly(stable)]
++struct S;
++
++#[rustversion::any(nightly(stable))]
++struct S;
++
++fn main() {}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-date.stderr third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-date.stderr
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-date.stderr	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-date.stderr	2026-04-24 18:52:41.797464000 +0900
+@@ -0,0 +1,11 @@
++error: expected nightly date, like 2025-02-25
++ --> tests/ui/bad-date.rs:1:24
++  |
++1 | #[rustversion::nightly(stable)]
++  |                        ^^^^^^
++
++error: expected nightly date, like 2025-02-25
++ --> tests/ui/bad-date.rs:4:28
++  |
++4 | #[rustversion::any(nightly(stable))]
++  |                            ^^^^^^
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-not.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-not.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-not.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-not.rs	2026-04-24 18:52:41.797303000 +0900
+@@ -0,0 +1,7 @@
++#[rustversion::any(not)]
++struct S;
++
++#[rustversion::any(not, not)]
++struct S;
++
++fn main() {}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-not.stderr third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-not.stderr
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-not.stderr	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-not.stderr	2026-04-24 18:52:41.797087000 +0900
+@@ -0,0 +1,11 @@
++error: expected `(` after `not`
++ --> tests/ui/bad-not.rs:1:20
++  |
++1 | #[rustversion::any(not)]
++  |                    ^^^
++
++error: expected `(`
++ --> tests/ui/bad-not.rs:4:23
++  |
++4 | #[rustversion::any(not, not)]
++  |                       ^
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-version.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-version.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-version.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-version.rs	2026-04-24 18:52:41.797033000 +0900
+@@ -0,0 +1,7 @@
++#[rustversion::stable(nightly)]
++struct S;
++
++#[rustversion::any(stable(nightly))]
++struct S;
++
++fn main() {}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-version.stderr third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-version.stderr
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/bad-version.stderr	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/bad-version.stderr	2026-04-24 18:52:41.797357000 +0900
+@@ -0,0 +1,11 @@
++error: expected rustc release number, like 1.31
++ --> tests/ui/bad-version.rs:1:23
++  |
++1 | #[rustversion::stable(nightly)]
++  |                       ^^^^^^^
++
++error: expected rustc release number, like 1.31
++ --> tests/ui/bad-version.rs:4:27
++  |
++4 | #[rustversion::any(stable(nightly))]
++  |                           ^^^^^^^
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/const-not-fn.rs third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/const-not-fn.rs
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/const-not-fn.rs	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/const-not-fn.rs	2026-04-24 18:52:41.797140000 +0900
+@@ -0,0 +1,4 @@
++#[rustversion::attr(all(), const)]
++pub struct S;
++
++fn main() {}
+diff -audpNr third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/const-not-fn.stderr third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/const-not-fn.stderr
+--- third_party/rust/chromium_crates_io/vendor/rustversion-v1.orig/tests/ui/const-not-fn.stderr	1970-01-01 09:00:00.000000000 +0900
++++ third_party/rust/chromium_crates_io/vendor/rustversion-v1/tests/ui/const-not-fn.stderr	2026-04-24 18:52:41.797412000 +0900
+@@ -0,0 +1,5 @@
++error: only allowed on a fn item
++ --> tests/ui/const-not-fn.rs:1:28
++  |
++1 | #[rustversion::attr(all(), const)]
++  |                            ^^^^^

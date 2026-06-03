@@ -1,7 +1,6 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,16 +13,16 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSES/BSD-3-Clause.txt
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig:devel/swig \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		swig:devel/swig \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libbabl-0.1.so:x11/babl \
 		libjsoncpp.so:devel/jsoncpp \
 		libopenshot-audio.so:audio/libopenshot-audio \
-		libpython${PYTHON_VER}${PYTHON_ABIVER}.so:lang/python${PYTHON_SUFFIX} \
 		libzmq.so:net/libzmq4
 
-USES=		cmake pkgconfig python:build qt:5
+USES=		cmake compiler:c++17-lang pkgconfig python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 USE_LDCONFIG=	yes
@@ -32,8 +31,9 @@ USE_QT=		core gui widgets buildtools:build qmake:build
 CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
 		USE_HW_ACCEL ENABLE_PYTHON\
 		CMAKE_DISABLE_FIND_PACKAGE_Catch2
-CMAKE_OFF=	ENABLE_PARALLEL_CTEST VERBOSE_TESTS ENABLE_COVERAGE\
-		APPIMAGE_BUILD BUILD_TESTING ENABLE_JAVA ENABLE_TESTS
+CMAKE_OFF=	ENABLE_IWYU ENABLE_PARALLEL_CTEST VERBOSE_TESTS\
+		ENABLE_COVERAGE APPIMAGE_BUILD ENABLE_VULKAN_BENCHMARK\
+		BUILD_TESTING ENABLE_TESTS ENABLE_JAVA ENABLE_GODOT
 DEBUG_FLAGS?=	-g
 DEBUG_FLAGS+=	-D_DEBUG -DJUCE_FORCE_DEBUG=1
 PLIST_SUB=	VERSION=${DISTVERSION}
@@ -67,9 +67,7 @@ RUBY_CMAKE_BOOL=	ENABLE_RUBY
 RUBY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Ruby
 
 .if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++17-lib
-.else
-USES+=		compiler:c++17-lang
+USE_GCC=		yes
 .endif
 
 .include <bsd.port.mk>

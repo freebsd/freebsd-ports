@@ -1,5 +1,5 @@
 PORTNAME=	pathos
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.9:devel/py-dill@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}multiprocess>=0.70.17:devel/py-multiprocess@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pox>=0.3.6:devel/py-pox@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ppft>=1.7.7:devel/py-ppft@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.4.1:devel/py-dill@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multiprocess>=0.70.19:devel/py-multiprocess@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pox>=0.3.7:devel/py-pox@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ppft>=1.7.8:devel/py-ppft@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

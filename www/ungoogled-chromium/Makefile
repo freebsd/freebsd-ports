@@ -1,13 +1,12 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	137.0.7151.103
-PORTREVISION=	2
+PORTVERSION=	148.0.7778.215
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:goo \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
-DISTFILES=	chromium-${DISTVERSION}${EXTRACT_SUFX}:goo \
+DISTFILES=	chromium-${DISTVERSION}-lite${EXTRACT_SUFX}:goo \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
 USE_GITHUB=	yes
@@ -133,15 +132,12 @@ GN_ARGS+=	enable_widevine=true \
 		ffmpeg_branding="${FFMPEG_BRAND}"
 
 # sync with flags.gni
-GN_ARGS+=	build_with_tflite_lib=false \
-		chrome_pgo_phase=0 \
+GN_ARGS+=	chrome_pgo_phase=0 \
 		clang_use_chrome_plugins=false \
 		disable_fieldtrial_testing_config=true \
 		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=false \
 		enable_mdns=false \
-		enable_nacl=false \
-		enable_reading_list=false \
 		enable_remoting=false \
 		enable_reporting=false \
 		enable_service_discovery=false \
@@ -249,7 +245,7 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-LLVM_DEFAULT=		19
+LLVM_DEFAULT=		22
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
@@ -287,11 +283,9 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 WRKSRC=		${WRKDIR}/chromium-${DISTVERSION}
 
 # rust
-RUSTC_VERSION!= rustc -V 2>/dev/null || true
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute="${LOCALBASE}" \
-		rustc_version="${RUSTC_VERSION}"
+		rust_sysroot_absolute="${LOCALBASE}"
 
 pre-everything::
 	@${ECHO_MSG}
@@ -317,7 +311,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		dav1d flac fontconfig harfbuzz-ng libdrm libpng \
+		dav1d flac fontconfig harfbuzz libdrm libpng \
 		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/media/ffmpeg && \
@@ -325,11 +319,12 @@ pre-configure:
 		--config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${MKDIR} ${FFMPEG_CDIR}
-.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+.for _e in config.h config.asm config_components.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
 	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
+		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
@@ -344,6 +339,14 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
+
+	# Setup rustc dependency
+	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin
+	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+
+	# Setup gperf dependency
+	@${MKDIR} ${WRKSRC}/third_party/gperf/cipd/bin
+	${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 
 	# Setup buildtools/freebsd
 	@${MKDIR} ${WRKSRC}/buildtools/freebsd

@@ -1,25 +1,27 @@
 PORTNAME=	openfpgaloader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	1.1.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal utility for programming FPGA
 WWW=		https://github.com/trabucayre/openFPGALoader
 
-LICENSE=	AGPLv3
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
 		libhidapi.so:comms/hidapi \
 		libudev.so:devel/libudev-devd
 
-USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang cpe localbase:ldflags pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trabucayre
 GH_PROJECT=	openFPGALoader
 
 DATADIR=	${PREFIX}/share/openFPGALoader
+
+CPE_VENDOR=	trabucayre
 
 .include <bsd.port.mk>

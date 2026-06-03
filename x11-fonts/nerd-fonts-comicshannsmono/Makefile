@@ -1,0 +1,9 @@
+PORTREVISION=	0
+DISTNAME=	ComicShannsMono
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

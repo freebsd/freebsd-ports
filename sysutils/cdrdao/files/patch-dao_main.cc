@@ -1,6 +1,6 @@
---- dao/main.cc.orig	2023-02-03 14:46:06 UTC
+--- dao/main.cc.orig	2025-12-05 11:17:35 UTC
 +++ dao/main.cc
-@@ -2450,11 +2450,7 @@ int main(int argc, char **argv)
+@@ -2382,11 +2382,7 @@ int main(int argc, char **argv)
  
      Settings* settings = new Settings;
  

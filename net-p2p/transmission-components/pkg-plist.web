@@ -3,5 +3,7 @@
 %%DATADIR%%/public_html/images/webclip-icon.png
 %%DATADIR%%/public_html/index.html
 %%DATADIR%%/public_html/transmission-app.css
+%%DATADIR%%/public_html/transmission-app.css.LEGAL.txt
+%%DATADIR%%/public_html/transmission-app.css.map
 %%DATADIR%%/public_html/transmission-app.js
 %%DATADIR%%/public_html/transmission-app.js.LEGAL.txt

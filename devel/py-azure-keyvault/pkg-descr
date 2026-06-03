@@ -1,4 +1,7 @@
-This is the Microsoft Azure Key Vault Client Library.
+This is the Microsoft Azure Key Vault libraries bundle.
 
-Use the Azure Key Vault management libraries to create key vaults, authorize
-applications, and manage permissions.
+This package does not contain any code in itself. It installs a set of packages
+that provide APIs for Key Vault operations:
+- azure-keyvault-keys v4.x
+- azure-keyvault-secrets v4.x
+- azure-keyvault-certificates v4.x

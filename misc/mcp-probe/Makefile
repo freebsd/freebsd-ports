@@ -1,5 +1,6 @@
 PORTNAME=	mcp-probe
 DISTVERSION=	0.3.0
+PORTREVISION=	7
 CATEGORIES=	misc
 
 MAINTAINER=	olgeni@FreeBSD.org

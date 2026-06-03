@@ -1,5 +1,6 @@
 PORTNAME=	mongo-c-driver
-DISTVERSION=	1.30.4
+# Note: devel/mongo-cxx-driver requires specific versions of this port
+DISTVERSION=	1.30.8
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
@@ -33,7 +34,7 @@ CMAKE_OFF=	BUILD_TESTING \
 
 OPTIONS_DEFINE=		CRYPTOPROFILE DOCS ICU MONGODBAWS RDTSCP SASL SNAPPY \
 			SRV SSL ZSTD
-OPTIONS_DEFAULT=	SSL
+OPTIONS_DEFAULT=	SRV SSL
 OPTIONS_SUB=		yes
 
 CRYPTOPROFILE_DESC=	Use system crypto profile (requires OpenSSL)
@@ -84,7 +85,7 @@ ZSTD_CMAKE_OFF=		-DENABLE_ZSTD=OFF
 CMAKE_ARGS+=	-DENABLE_SSL=LIBRESSL
 .endif
 CMAKE_ARGS+=	-DENABLE_SSL=OPENSSL
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
 CFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
 .endif
 .endif

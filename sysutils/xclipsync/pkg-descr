@@ -1,0 +1,4 @@
+xclipsync is a simple and lightweight script for synchronizing the
+clipboard between two X servers created, for example, by Xephyr(1) or
+Xnest(1), or even for synchronizing the clipboard between the host and
+another X server.

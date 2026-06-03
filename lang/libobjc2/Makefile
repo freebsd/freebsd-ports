@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=v
 DISTVERSION=	2.2.1
 CATEGORIES=	lang devel gnustep
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 LICENSE=	MIT

@@ -1,6 +1,7 @@
 PORTNAME=	3proxy
 DISTVERSION=	0.9.5
 CATEGORIES=	net
+PORTREVISION=	1
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)

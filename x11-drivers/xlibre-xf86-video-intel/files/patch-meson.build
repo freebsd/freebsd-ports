@@ -1,0 +1,35 @@
+--- meson.build.orig	2025-08-15 11:23:59 UTC
++++ meson.build
+@@ -91,9 +91,19 @@ endif
+   error('xf86-video-intel depends upon atomic operations, which were not found for your compiler/cpu. Try compiling with -march=native, or install the libatomics-op-dev package.')
+ endif
+ 
+-libudev = dependency('libudev', required : false)
++libudev = dependency('libudev', required : get_option('udev') == 'true')
+-if libudev.found()
+-  config.set('HAVE_UDEV', 1)
+-endif
++with_udev = false
++if get_option('udev') == 'auto'
++  if libudev.found()
++    with_udev = true
++  else
++    with_udev = false
++  endif
++else
++  with_udev = get_option('udev') == 'true'
++endif
++if with_udev
++  config.set('HAVE_UDEV', 1)
++endif
+ 
+ cpuid_code = '''
+@@ -183,7 +183,7 @@ man_config.set('filemansuffix', '5')
+ man_config = configuration_data()
+ man_config.set('appmansuffix', '1')
+ man_config.set('filemansuffix', '5')
+-man_config.set('drivermansuffix', '4')
++man_config.set('drivermansuffix', '4x')
+ man_config.set('miscmansuffix', '7')
+ man_config.set('xservername',
+ 	       cc.get_define('__XSERVERNAME__',

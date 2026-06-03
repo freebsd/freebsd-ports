@@ -1,4 +1,4 @@
-@sample etc/iked.conf.sample
+@sample(,,600) etc/iked.conf.sample
 @sample etc/ssl/ikeca.cnf.sample
 @sample etc/ssl/ikex509v3.cnf.sample
 sbin/ikectl

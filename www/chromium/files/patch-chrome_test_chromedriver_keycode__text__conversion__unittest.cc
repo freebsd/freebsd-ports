@@ -1,4 +1,4 @@
---- chrome/test/chromedriver/keycode_text_conversion_unittest.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/test/chromedriver/keycode_text_conversion_unittest.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/test/chromedriver/keycode_text_conversion_unittest.cc
 @@ -64,7 +64,7 @@ std::string ConvertKeyCodeToTextNoError(ui::KeyboardCo
  
@@ -6,7 +6,7 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Fails on bots: crbug.com/174962
+ // Fails on bots: crbug.com/40301345
  #define MAYBE_KeyCodeToText DISABLED_KeyCodeToText
  #else
 @@ -98,7 +98,7 @@ TEST(KeycodeTextConversionTest, MAYBE_KeyCodeToText) {
@@ -15,6 +15,6 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Fails on bots: crbug.com/174962
+ // Fails on bots: crbug.com/40301345
  #define MAYBE_CharToKeyCode DISABLED_CharToKeyCode
  #else

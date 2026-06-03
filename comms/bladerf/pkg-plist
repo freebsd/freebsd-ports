@@ -1,5 +1,7 @@
 bin/bladeRF-cli
 bin/bladeRF-fsk
+bin/bladeRF-power
+bin/bladeRF-update
 include/bladeRF1.h
 include/bladeRF2.h
 include/libbladeRF.h

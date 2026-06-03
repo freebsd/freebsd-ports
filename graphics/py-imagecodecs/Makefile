@@ -1,5 +1,6 @@
 PORTNAME=	imagecodecs
-PORTVERSION=	2024.12.30
+PORTVERSION=	2025.11.11
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ WWW=		https://github.com/cgohlke/imagecodecs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libaec.so:science/libaec \
@@ -44,11 +45,12 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		jpeg localbase python:3.9+
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USES=		jpeg localbase python:3.11+
+USE_PYTHON=	autoplist concurrent cython pep517
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jxrlib \
 		-I${LOCALBASE}/include/openjpeg-2.5
+MAKE_ENV=	CG_LIMITED_API=0
 
 OPTIONS_DEFINE=	ALL
 ALL_DESC=	All optional dependencies

@@ -1,5 +1,5 @@
 PORTNAME=	libertiff
-PORTVERSION=	0.0.0.20250111
+PORTVERSION=	0.0.0.20250612
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +19,6 @@ NO_ARCH=	yes
 PLIST_FILES=	include/libertiff.hpp
 
 USE_GITHUB=	yes
-GH_TAGNAME=	7fc74e7
+GH_TAGNAME=	fd42406
 
 .include <bsd.port.mk>

@@ -52,7 +52,7 @@
 +     ("%*D", len, ptr, " ")	-> XX XX XX XX ...
 +   */
 +  { "D",   1, STD_EXT, { T89_V,  BADLEN,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN }, "-wp",      "cR", &freebsd_ext_char_info },
-+  { "b",   0, STD_EXT, { T89_I,  BADLEN,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp",      "",   &freebsd_ext_char_info },
++  { "b",   0, STD_EXT, { T89_I,  BADLEN,   BADLEN,  T89_L,   T9L_LL,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp#",    "",   &freebsd_ext_char_info },
 +  { "ry",  0, STD_EXT, { T89_I,  BADLEN,   BADLEN,   T89_L,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp0 +#",  "i",  NULL  },
 +  { NULL,  0, STD_C89, NOLENGTHS, NULL, NULL, NULL }
 +};

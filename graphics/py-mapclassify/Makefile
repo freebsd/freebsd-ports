@@ -1,5 +1,6 @@
 PORTNAME=	mapclassify
 PORTVERSION=	2.10.0
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=3.2,1:math/py-networkx@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.1,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.4:science/py-scikit-learn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.11:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.12,1:science/py-scipy@${PY_FLAVOR}
 
 USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517

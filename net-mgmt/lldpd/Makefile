@@ -1,6 +1,5 @@
 PORTNAME=	lldpd
-DISTVERSION=	1.0.19
-PORTREVISION=	1
+DISTVERSION=	1.0.21
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		http://media.luffy.cx/files/${PORTNAME}/
@@ -64,10 +63,11 @@ PIE_CONFIGURE_ENABLE=	pie
 
 PROPRIETARY_CONFIGURE_ENABLE=	cdp edp fdp sonmp
 
+READLINE_USES=			readline
 READLINE_CONFIGURE_WITH=	readline
 
-SNMP_USES=		ssl
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_LDFLAGS=		-Wl,--as-needed
 SNMP_CONFIGURE_WITH=	snmp
 
 post-install:

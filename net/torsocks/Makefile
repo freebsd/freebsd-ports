@@ -1,5 +1,5 @@
 PORTNAME=	torsocks
-DISTVERSION=	2.4.0
+DISTVERSION=	2.5.0
 CATEGORIES=	net security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://gitlab.torproject.org/tpo/core/torsocks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-USES=		autoreconf alias gmake libtool tar:xz
+USES=		autoreconf gmake libtool tar:xz
 USE_LDCONFIG=	${PREFIX}/lib/torsocks
 
 USE_GITLAB=	yes

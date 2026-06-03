@@ -1,5 +1,6 @@
 Go is an open source programming environment that makes it easy to build
 simple, reliable, and efficient software.
 
-This is a meta port for the default version of Go, it provides symbolic links
-called go and gofmt.
+This is a meta port for the default version of Go. It provides symbolic
+links for go and gofmt that point toward the respective binaries
+installed by whichever version of Go you have selected as your default.

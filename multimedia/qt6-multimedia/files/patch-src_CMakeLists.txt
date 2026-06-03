@@ -1,9 +1,9 @@
 Prevent building spatialaudio_quick3d if quick3d is installed and the feature
 is disabled.
 
---- src/CMakeLists.txt.orig	2025-02-20 14:13:07 UTC
+--- src/CMakeLists.txt.orig	2025-08-15 19:16:13 UTC
 +++ src/CMakeLists.txt
-@@ -26,7 +26,7 @@ endif()
+@@ -27,7 +27,7 @@ endif()
  if(TARGET Qt::Quick)
      add_subdirectory(multimediaquick)
  endif()

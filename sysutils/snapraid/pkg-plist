@@ -1,0 +1,17 @@
+bin/snapraid
+%%ETCDIR%%.conf.sample
+share/man/de/man1/snapraid.1.gz
+share/man/es/man1/snapraid.1.gz
+share/man/fr/man1/snapraid.1.gz
+share/man/it/man1/snapraid.1.gz
+share/man/ja/man1/snapraid.1.gz
+share/man/ko/man1/snapraid.1.gz
+share/man/man1/snapraid.1.gz
+share/man/man1/snapraid_log.1.gz
+share/man/pl/man1/snapraid.1.gz
+share/man/pt/man1/snapraid.1.gz
+share/man/ro/man1/snapraid.1.gz
+share/man/ru/man1/snapraid.1.gz
+share/man/sv/man1/snapraid.1.gz
+share/man/uk/man1/snapraid.1.gz
+share/man/zh/man1/snapraid.1.gz

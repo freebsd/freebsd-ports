@@ -1,6 +1,6 @@
---- tests/CMakeLists.txt.orig	2021-03-01 17:31:02 UTC
+--- tests/CMakeLists.txt.orig	2025-10-20 13:41:49 UTC
 +++ tests/CMakeLists.txt
-@@ -3,7 +3,9 @@ add_subdirectory(libdnf/module)
+@@ -7,7 +7,9 @@ add_subdirectory(libdnf/sack)
  add_subdirectory(libdnf/repo)
  add_subdirectory(libdnf/transaction)
  add_subdirectory(libdnf/sack)
@@ -9,4 +9,4 @@
 +endif()
  add_subdirectory(libdnf)
  
- 
+ set(LIBDNF_TEST_SOURCES

@@ -1,11 +1,11 @@
---- libexec/pyenv.orig	2022-08-24 14:27:14 UTC
+--- libexec/pyenv.orig
 +++ libexec/pyenv
-@@ -77,7 +77,7 @@ export PYENV_DIR
- shopt -s nullglob
+@@ -81,7 +81,7 @@
  
- bin_path="$(abs_dirname "$0")"
--for plugin_bin in "${bin_path%/*}"/plugins/*/bin; do
-+for plugin_bin in "${bin_path%/*}"/libexec/pyenv-plugins/*/bin; do
+ export _PYENV_INSTALL_PREFIX
+ 
+-for plugin_bin in "${_PYENV_INSTALL_PREFIX}"/plugins/*/bin; do
++for plugin_bin in "${_PYENV_INSTALL_PREFIX}"/libexec/pyenv-plugins/*/bin; do
    PATH="${plugin_bin}:${PATH}"
  done
  # PYENV_ROOT can be set to anything, so it may happen to be equal to the base path above,

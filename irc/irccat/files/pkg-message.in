@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+To configure irccat:
+
+Modify the default config file in %%ETCDIR%%/irccat.yaml as required, setting
+at least IRC server, nick, and any required channels.
+
+See https://github.com/irccloud/irccat for full documentation.
+
+To run irccat as a daemon, enable it in /etc/rc.conf:
+
+	service irccat enable
+	service irccat start
+
+By default irccat runs as user/group "uucp". Override with
+irccat_user / irccat_group in /etc/rc.conf if you want a
+different account.
+
+Test that messages reach IRC:
+
+echo "#yourchannel Hello from irccat" | nc localhost 12345
+EOM
+}
+]

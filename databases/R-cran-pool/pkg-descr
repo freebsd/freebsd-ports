@@ -1,0 +1,6 @@
+Enables the creation of object pools for various types of objects in R,
+with a primary focus on DBI database connections. It provides a DBI
+backend that manages a shared pool of connections, automatically
+validating, creating, and destroying connections as needed. This is
+particularly useful for Shiny applications and other multi-user R
+services that need efficient database access.

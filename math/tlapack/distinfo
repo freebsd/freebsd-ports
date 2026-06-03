@@ -1,3 +1,5 @@
-TIMESTAMP = 1656961878
-SHA256 (tlapack-tlapack-g20220628-77352a9_GH0.tar.gz) = ba517844c12c6e2747ac1190f8fb42717300eccef7b0f90128fdf8d9fe44e466
-SIZE (tlapack-tlapack-g20220628-77352a9_GH0.tar.gz) = 595303
+TIMESTAMP = 1774897153
+SHA256 (tlapack-tlapack-v0.1.2_GH0.tar.gz) = 9ac29efda299b8af039c1fc2cd7e243029d43e31fca834a87a4fcba7df1a5b75
+SIZE (tlapack-tlapack-v0.1.2_GH0.tar.gz) = 504293
+SHA256 (tlapack-testBLAS-496caf7_GH0.tar.gz) = 1168605a5d4e7d9cf38e100233235e2fcbb63b576afecc03fed909711bb70f07
+SIZE (tlapack-testBLAS-496caf7_GH0.tar.gz) = 24597

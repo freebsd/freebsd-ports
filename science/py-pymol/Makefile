@@ -1,7 +1,7 @@
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_NAME=	Open-Source PyMOL Copyright
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng16.so:graphics/png
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gl gnome python tar:bz2
 USE_GL=		gl glew glu

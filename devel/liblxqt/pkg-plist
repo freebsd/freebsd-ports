@@ -95,6 +95,7 @@ share/cmake/lxqt/lxqt-targets.cmake
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sl.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sr@latin.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sr_RS.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sv.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_th_TH.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_tr.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_uk.qm

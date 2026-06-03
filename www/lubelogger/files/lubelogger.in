@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: lubelogger
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=lubelogger
+rcvar="${name}_enable"
+load_rc_config "${name}"
+pidfile="/var/run/${name}.pid"
+
+: ${lubelogger_chdir:="/var/db/${name}"}
+: ${lubelogger_user:="${name}"}
+: ${lubelogger_group:="${name}"}
+
+command=%%DATADIR%%/CarCareTracker
+
+start_precmd=lubelogger_precmd
+start_cmd=lubelogger_start
+
+lubelogger_precmd() {
+	if [ ! -d "${lubelogger_chdir}" ] ; then
+		install -d -o "${lubelogger_user}" -g "${lubelogger_user}" "${lubelogger_chdir}"
+	fi
+}
+
+lubelogger_start() {
+	check_startmsgs && echo "Starting ${name}."
+
+	/usr/sbin/daemon -p $pidfile -u ${lubelogger_user} -S -T ${name} \
+		/bin/sh -c "export DOTNET_WEBROOT=%%DATADIR%%/wwwroot; cd ${lubelogger_chdir}; exec ${command}"
+}
+
+run_rc_command "$1"

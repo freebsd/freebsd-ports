@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxxhash.so:devel/xxhash
 
-USES=		cmake compiler:c11 pathfix pkgconfig
+USES=		cmake compiler:c11 pkgconfig
 
 CMAKE_OFF=	LSQPACK_TESTS \
 		LSQPACK_XXH

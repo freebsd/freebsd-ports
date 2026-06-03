@@ -1,5 +1,5 @@
 PORTNAME=	ibus-m17n
-DISTVERSION=	1.4.35
+DISTVERSION=	1.4.39
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,8 +10,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
+		libgraphene-1.0.so:graphics/graphene \
+		libgtk-4.so:x11-toolkits/gtk40 \
+		libharfbuzz.so:print/harfbuzz \
 		libm17n.so:devel/m17n-lib \
-		libharfbuzz.so:print/harfbuzz
+		libvulkan.so:graphics/vulkan-loader
 RUN_DEPENDS=	ibus-daemon:textproc/ibus
 
 PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$

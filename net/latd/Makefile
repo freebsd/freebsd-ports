@@ -10,7 +10,7 @@ WWW=		https://linux-decnet.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		alias compiler
+USES=		compiler
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 

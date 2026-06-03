@@ -1,7 +1,7 @@
 bin/kookbook
 bin/kookbooktouch
-share/applications/kookbook.desktop
-share/applications/kookbooktouch.desktop
+share/applications/org.kde.kookbook.desktop
+share/applications/org.kde.kookbooktouch.desktop
 share/icons/hicolor/128x128/apps/kookbook.png
 share/icons/hicolor/16x16/apps/kookbook.png
 share/icons/hicolor/22x22/apps/kookbook.png
@@ -10,3 +10,4 @@ share/icons/hicolor/48x48/apps/kookbook.png
 share/icons/hicolor/64x64/apps/kookbook.png
 share/icons/hicolor/scalable/apps/kookbook.svgz
 %%DATADIR%%/doc/krecipes.py
+share/metainfo/org.kde.kookbook.appdata.xml

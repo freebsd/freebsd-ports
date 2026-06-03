@@ -5,7 +5,7 @@
  	
  	<target name="compile" depends="prepare">
 -		<javac destdir="${build}/classes" classpathref="classpath.libs" debug="on">
-+		<javac destdir="${build}/classes" source="1.5" target="1.5" classpathref="classpath.libs" debug="on">
++		<javac destdir="${build}/classes" encoding="ISO-8859-1" classpathref="classpath.libs" debug="on">
  		    <src path="${src}"/>
  		</javac>
  	</target>

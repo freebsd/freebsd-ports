@@ -1,11 +1,25 @@
 ES-DE (formerly known as EmulationStation Desktop Edition) is a frontend for
-browsing and launching games from your multi-platform collection. It comes
-preconfigured for use with a large selection of emulators, game engines, game
-managers and gaming services. It can also run locally installed games and
-applications. It's fully customizable, so you can easily expand it with support
-for additional systems and applications.
+browsing and launching games from your multi-platform collection.
 
-It features a modern and attractive user interface, full controller navigation
-support, supports over 150 different game systems, highly customizable setup, a
-built-in scraper for downloading game info and game media, full theme support
-with lots of high-quality themes.
+The goal of this project is to create a high quality frontend that is easy to
+use, requires minimal setup and configuration, looks nice, and is available
+across a wide range of operating systems.
+
+It comes preconfigured for use with a large selection of emulators, game
+engines, game managers and gaming services. It can also run locally installed
+games and applications. It's fully customizable, so you can easily expand it
+with support for additional systems and applications.
+
+Features:
+- Modern and attractive user interface
+- Full controller navigation support
+- Supports over 150 game systems
+- Ships preconfigured - minimal setup required
+- Simple to use, you'll be up and running within minutes
+- Still highly customizable if you prefer to tailor your setup
+- Built-in scraper for downloading game info and game media
+- Supports scraping of images, videos and game manuals
+- Lots of configuration options
+- Fully themeable which allows for very different looks
+- Lots of high-quality themes available for download
+- Extensive system support from all official themes

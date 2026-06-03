@@ -1,16 +1,14 @@
 PORTNAME?=	nginx
-PORTVERSION=	1.29.0
-PORTREVISION=	4
+PORTVERSION=	${NGINX_VERSION}
+.include "version.mk"
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/nginx/nginx/commit/
-PATCHFILES=	0bb7489cb2fcc60ce24fae2d5581c7441bfa0931.patch:-p1
-
-MAINTAINER?=	osa@FreeBSD.org
+MAINTAINER?=	joneum@FreeBSD.org
 COMMENT?=	Robust and small WWW server
 WWW=		https://nginx.com/
 
@@ -336,6 +334,11 @@ post-patch-SFLOW-on:
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
+
+pre-configure-LUASTREAM-on:
+	@${RM} -rf ${WRKSRC_luastream}
+	@cd ${LOCALBASE}/share/nginx/modules/lua-stream-nginx-module && \
+		${COPYTREE_SHARE} . ${WRKSRC_luastream}
 
 do-configure-NJS-on:
 	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )

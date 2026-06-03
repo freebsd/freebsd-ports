@@ -1,3 +1,3 @@
-TIMESTAMP = 1712330605
-SHA256 (pytest_jupyter-0.10.1.tar.gz) = 00df54eef9e201dd542d5471b8980def15d34b917b30587d14d7c824fc4d9e84
-SIZE (pytest_jupyter-0.10.1.tar.gz) = 15580
+TIMESTAMP = 1761446700
+SHA256 (pytest_jupyter-0.11.0.tar.gz) = a4e08ced44cfea1bce080090c626b8dc4f9d617fa5aafcd84b71405f503e9899
+SIZE (pytest_jupyter-0.11.0.tar.gz) = 15773

@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pg-data${EXTRACT_SUFX}:data
 
-MAINTAINER=	cmangin@arobas.net
+MAINTAINER=	cmanv@duck.com
 COMMENT=	Turn-based strategy engine inspired by Panzer General
 WWW=		http://lgames.sourceforge.net/index.php?project=LGeneral
 

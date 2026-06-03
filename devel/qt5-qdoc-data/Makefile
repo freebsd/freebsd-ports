@@ -5,7 +5,7 @@
 PORTNAME=	qdoc-data
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	devel textproc
-MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/submodules/
+MASTER_SITES=	QT/archive/qt/${QT5_VERSION:R}/${QT5_VERSION}/submodules/
 PKGNAMEPREFIX=	qt5-
 DISTNAME=	qtbase-everywhere-opensource-src-${QT5_VERSION}
 WRKSRC=		${WRKDIR}/qtbase-everywhere-src-${QT5_VERSION}

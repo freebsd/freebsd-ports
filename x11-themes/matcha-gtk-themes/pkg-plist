@@ -147,7 +147,6 @@ share/themes/Matcha-aliz/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-aliz/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-aliz/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-aliz/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-aliz/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-aliz/gnome-shell/assets/more-results.svg
 share/themes/Matcha-aliz/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-aliz/gnome-shell/assets/toggle-off.svg
@@ -156,6 +155,7 @@ share/themes/Matcha-aliz/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-aliz/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-aliz/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-aliz/gnome-shell/assets/window-close.svg
+share/themes/Matcha-aliz/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-aliz/gnome-shell/gnome-shell.css
 share/themes/Matcha-aliz/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-aliz/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -173,7 +173,8 @@ share/themes/Matcha-aliz/gnome-shell/icons/scalable/status/message-indicator-sym
 share/themes/Matcha-aliz/gnome-shell/no-events.svg
 share/themes/Matcha-aliz/gnome-shell/no-notifications.svg
 share/themes/Matcha-aliz/gnome-shell/pad-osd.css
-share/themes/Matcha-aliz/gnome-shell/process-working.svg
+share/themes/Matcha-aliz/gnome-shell/process-working-dark.svg
+share/themes/Matcha-aliz/gnome-shell/process-working-light.svg
 share/themes/Matcha-aliz/gtk-2.0/apps.rc
 share/themes/Matcha-aliz/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-aliz/gtk-2.0/assets/arrow-down-prelight.png
@@ -848,7 +849,6 @@ share/themes/Matcha-azul/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-azul/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-azul/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-azul/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-azul/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-azul/gnome-shell/assets/more-results.svg
 share/themes/Matcha-azul/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-azul/gnome-shell/assets/toggle-off.svg
@@ -857,6 +857,7 @@ share/themes/Matcha-azul/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-azul/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-azul/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-azul/gnome-shell/assets/window-close.svg
+share/themes/Matcha-azul/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-azul/gnome-shell/gnome-shell.css
 share/themes/Matcha-azul/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-azul/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -874,7 +875,8 @@ share/themes/Matcha-azul/gnome-shell/icons/scalable/status/message-indicator-sym
 share/themes/Matcha-azul/gnome-shell/no-events.svg
 share/themes/Matcha-azul/gnome-shell/no-notifications.svg
 share/themes/Matcha-azul/gnome-shell/pad-osd.css
-share/themes/Matcha-azul/gnome-shell/process-working.svg
+share/themes/Matcha-azul/gnome-shell/process-working-dark.svg
+share/themes/Matcha-azul/gnome-shell/process-working-light.svg
 share/themes/Matcha-azul/gtk-2.0/apps.rc
 share/themes/Matcha-azul/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-azul/gtk-2.0/assets/arrow-down-prelight.png
@@ -1553,7 +1555,6 @@ share/themes/Matcha-dark-aliz/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-dark-aliz/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/more-results.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-dark-aliz/gnome-shell/assets/toggle-off.svg
@@ -1562,6 +1563,7 @@ share/themes/Matcha-dark-aliz/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/window-close.svg
+share/themes/Matcha-dark-aliz/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-dark-aliz/gnome-shell/gnome-shell.css
 share/themes/Matcha-dark-aliz/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-dark-aliz/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -1579,7 +1581,8 @@ share/themes/Matcha-dark-aliz/gnome-shell/icons/scalable/status/message-indicato
 share/themes/Matcha-dark-aliz/gnome-shell/no-events.svg
 share/themes/Matcha-dark-aliz/gnome-shell/no-notifications.svg
 share/themes/Matcha-dark-aliz/gnome-shell/pad-osd.css
-share/themes/Matcha-dark-aliz/gnome-shell/process-working.svg
+share/themes/Matcha-dark-aliz/gnome-shell/process-working-dark.svg
+share/themes/Matcha-dark-aliz/gnome-shell/process-working-light.svg
 share/themes/Matcha-dark-aliz/gtk-2.0/apps.rc
 share/themes/Matcha-dark-aliz/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-dark-aliz/gtk-2.0/assets/arrow-down-prelight.png
@@ -2258,7 +2261,6 @@ share/themes/Matcha-dark-azul/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-dark-azul/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/more-results.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-dark-azul/gnome-shell/assets/toggle-off.svg
@@ -2267,6 +2269,7 @@ share/themes/Matcha-dark-azul/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/window-close.svg
+share/themes/Matcha-dark-azul/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-dark-azul/gnome-shell/gnome-shell.css
 share/themes/Matcha-dark-azul/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-dark-azul/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -2284,7 +2287,8 @@ share/themes/Matcha-dark-azul/gnome-shell/icons/scalable/status/message-indicato
 share/themes/Matcha-dark-azul/gnome-shell/no-events.svg
 share/themes/Matcha-dark-azul/gnome-shell/no-notifications.svg
 share/themes/Matcha-dark-azul/gnome-shell/pad-osd.css
-share/themes/Matcha-dark-azul/gnome-shell/process-working.svg
+share/themes/Matcha-dark-azul/gnome-shell/process-working-dark.svg
+share/themes/Matcha-dark-azul/gnome-shell/process-working-light.svg
 share/themes/Matcha-dark-azul/gtk-2.0/apps.rc
 share/themes/Matcha-dark-azul/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-dark-azul/gtk-2.0/assets/arrow-down-prelight.png
@@ -2963,7 +2967,6 @@ share/themes/Matcha-dark-pueril/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-dark-pueril/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/more-results.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-dark-pueril/gnome-shell/assets/toggle-off.svg
@@ -2972,6 +2975,7 @@ share/themes/Matcha-dark-pueril/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-dark-pueril/gnome-shell/assets/window-close.svg
+share/themes/Matcha-dark-pueril/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-dark-pueril/gnome-shell/gnome-shell.css
 share/themes/Matcha-dark-pueril/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-dark-pueril/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -2989,7 +2993,8 @@ share/themes/Matcha-dark-pueril/gnome-shell/icons/scalable/status/message-indica
 share/themes/Matcha-dark-pueril/gnome-shell/no-events.svg
 share/themes/Matcha-dark-pueril/gnome-shell/no-notifications.svg
 share/themes/Matcha-dark-pueril/gnome-shell/pad-osd.css
-share/themes/Matcha-dark-pueril/gnome-shell/process-working.svg
+share/themes/Matcha-dark-pueril/gnome-shell/process-working-dark.svg
+share/themes/Matcha-dark-pueril/gnome-shell/process-working-light.svg
 share/themes/Matcha-dark-pueril/gtk-2.0/apps.rc
 share/themes/Matcha-dark-pueril/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-dark-pueril/gtk-2.0/assets/arrow-down-prelight.png
@@ -3668,7 +3673,6 @@ share/themes/Matcha-dark-sea/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-dark-sea/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/more-results.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-dark-sea/gnome-shell/assets/toggle-off.svg
@@ -3677,6 +3681,7 @@ share/themes/Matcha-dark-sea/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/window-close.svg
+share/themes/Matcha-dark-sea/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-dark-sea/gnome-shell/gnome-shell.css
 share/themes/Matcha-dark-sea/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-dark-sea/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -3694,7 +3699,8 @@ share/themes/Matcha-dark-sea/gnome-shell/icons/scalable/status/message-indicator
 share/themes/Matcha-dark-sea/gnome-shell/no-events.svg
 share/themes/Matcha-dark-sea/gnome-shell/no-notifications.svg
 share/themes/Matcha-dark-sea/gnome-shell/pad-osd.css
-share/themes/Matcha-dark-sea/gnome-shell/process-working.svg
+share/themes/Matcha-dark-sea/gnome-shell/process-working-dark.svg
+share/themes/Matcha-dark-sea/gnome-shell/process-working-light.svg
 share/themes/Matcha-dark-sea/gtk-2.0/apps.rc
 share/themes/Matcha-dark-sea/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-dark-sea/gtk-2.0/assets/arrow-down-prelight.png
@@ -4373,7 +4379,6 @@ share/themes/Matcha-light-aliz/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-light-aliz/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/more-results.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-light-aliz/gnome-shell/assets/toggle-off.svg
@@ -4382,6 +4387,7 @@ share/themes/Matcha-light-aliz/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/window-close.svg
+share/themes/Matcha-light-aliz/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-light-aliz/gnome-shell/gnome-shell.css
 share/themes/Matcha-light-aliz/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-light-aliz/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -4399,7 +4405,8 @@ share/themes/Matcha-light-aliz/gnome-shell/icons/scalable/status/message-indicat
 share/themes/Matcha-light-aliz/gnome-shell/no-events.svg
 share/themes/Matcha-light-aliz/gnome-shell/no-notifications.svg
 share/themes/Matcha-light-aliz/gnome-shell/pad-osd.css
-share/themes/Matcha-light-aliz/gnome-shell/process-working.svg
+share/themes/Matcha-light-aliz/gnome-shell/process-working-dark.svg
+share/themes/Matcha-light-aliz/gnome-shell/process-working-light.svg
 share/themes/Matcha-light-aliz/gtk-2.0/apps.rc
 share/themes/Matcha-light-aliz/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-light-aliz/gtk-2.0/assets/arrow-down-prelight.png
@@ -5078,7 +5085,6 @@ share/themes/Matcha-light-azul/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-light-azul/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/more-results.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-light-azul/gnome-shell/assets/toggle-off.svg
@@ -5087,6 +5093,7 @@ share/themes/Matcha-light-azul/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/window-close.svg
+share/themes/Matcha-light-azul/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-light-azul/gnome-shell/gnome-shell.css
 share/themes/Matcha-light-azul/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-light-azul/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -5104,7 +5111,8 @@ share/themes/Matcha-light-azul/gnome-shell/icons/scalable/status/message-indicat
 share/themes/Matcha-light-azul/gnome-shell/no-events.svg
 share/themes/Matcha-light-azul/gnome-shell/no-notifications.svg
 share/themes/Matcha-light-azul/gnome-shell/pad-osd.css
-share/themes/Matcha-light-azul/gnome-shell/process-working.svg
+share/themes/Matcha-light-azul/gnome-shell/process-working-dark.svg
+share/themes/Matcha-light-azul/gnome-shell/process-working-light.svg
 share/themes/Matcha-light-azul/gtk-2.0/apps.rc
 share/themes/Matcha-light-azul/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-light-azul/gtk-2.0/assets/arrow-down-prelight.png
@@ -5783,7 +5791,6 @@ share/themes/Matcha-light-pueril/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-light-pueril/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/more-results.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-light-pueril/gnome-shell/assets/toggle-off.svg
@@ -5792,6 +5799,7 @@ share/themes/Matcha-light-pueril/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-light-pueril/gnome-shell/assets/window-close.svg
+share/themes/Matcha-light-pueril/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-light-pueril/gnome-shell/gnome-shell.css
 share/themes/Matcha-light-pueril/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-light-pueril/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -5809,7 +5817,8 @@ share/themes/Matcha-light-pueril/gnome-shell/icons/scalable/status/message-indic
 share/themes/Matcha-light-pueril/gnome-shell/no-events.svg
 share/themes/Matcha-light-pueril/gnome-shell/no-notifications.svg
 share/themes/Matcha-light-pueril/gnome-shell/pad-osd.css
-share/themes/Matcha-light-pueril/gnome-shell/process-working.svg
+share/themes/Matcha-light-pueril/gnome-shell/process-working-dark.svg
+share/themes/Matcha-light-pueril/gnome-shell/process-working-light.svg
 share/themes/Matcha-light-pueril/gtk-2.0/apps.rc
 share/themes/Matcha-light-pueril/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-light-pueril/gtk-2.0/assets/arrow-down-prelight.png
@@ -6488,7 +6497,6 @@ share/themes/Matcha-light-sea/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-light-sea/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/more-results.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-light-sea/gnome-shell/assets/toggle-off.svg
@@ -6497,6 +6505,7 @@ share/themes/Matcha-light-sea/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/window-close.svg
+share/themes/Matcha-light-sea/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-light-sea/gnome-shell/gnome-shell.css
 share/themes/Matcha-light-sea/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-light-sea/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -6514,7 +6523,8 @@ share/themes/Matcha-light-sea/gnome-shell/icons/scalable/status/message-indicato
 share/themes/Matcha-light-sea/gnome-shell/no-events.svg
 share/themes/Matcha-light-sea/gnome-shell/no-notifications.svg
 share/themes/Matcha-light-sea/gnome-shell/pad-osd.css
-share/themes/Matcha-light-sea/gnome-shell/process-working.svg
+share/themes/Matcha-light-sea/gnome-shell/process-working-dark.svg
+share/themes/Matcha-light-sea/gnome-shell/process-working-light.svg
 share/themes/Matcha-light-sea/gtk-2.0/apps.rc
 share/themes/Matcha-light-sea/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-light-sea/gtk-2.0/assets/arrow-down-prelight.png
@@ -7185,7 +7195,6 @@ share/themes/Matcha-pueril/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-pueril/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-pueril/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-pueril/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-pueril/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-pueril/gnome-shell/assets/more-results.svg
 share/themes/Matcha-pueril/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-pueril/gnome-shell/assets/toggle-off.svg
@@ -7194,6 +7203,7 @@ share/themes/Matcha-pueril/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-pueril/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-pueril/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-pueril/gnome-shell/assets/window-close.svg
+share/themes/Matcha-pueril/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-pueril/gnome-shell/gnome-shell.css
 share/themes/Matcha-pueril/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-pueril/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -7211,7 +7221,8 @@ share/themes/Matcha-pueril/gnome-shell/icons/scalable/status/message-indicator-s
 share/themes/Matcha-pueril/gnome-shell/no-events.svg
 share/themes/Matcha-pueril/gnome-shell/no-notifications.svg
 share/themes/Matcha-pueril/gnome-shell/pad-osd.css
-share/themes/Matcha-pueril/gnome-shell/process-working.svg
+share/themes/Matcha-pueril/gnome-shell/process-working-dark.svg
+share/themes/Matcha-pueril/gnome-shell/process-working-light.svg
 share/themes/Matcha-pueril/gtk-2.0/apps.rc
 share/themes/Matcha-pueril/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-pueril/gtk-2.0/assets/arrow-down-prelight.png
@@ -7886,7 +7897,6 @@ share/themes/Matcha-sea/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-sea/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-sea/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-sea/gnome-shell/assets/dash-placeholder.svg
-share/themes/Matcha-sea/gnome-shell/assets/gnome-shell-start.svg
 share/themes/Matcha-sea/gnome-shell/assets/more-results.svg
 share/themes/Matcha-sea/gnome-shell/assets/noise-texture.png
 share/themes/Matcha-sea/gnome-shell/assets/toggle-off.svg
@@ -7895,6 +7905,7 @@ share/themes/Matcha-sea/gnome-shell/assets/window-close-active.svg
 share/themes/Matcha-sea/gnome-shell/assets/window-close-hover.svg
 share/themes/Matcha-sea/gnome-shell/assets/window-close-symbolic.svg
 share/themes/Matcha-sea/gnome-shell/assets/window-close.svg
+share/themes/Matcha-sea/gnome-shell/gnome-shell-start.svg
 share/themes/Matcha-sea/gnome-shell/gnome-shell.css
 share/themes/Matcha-sea/gnome-shell/icons/scalable/actions/color-pick.svg
 share/themes/Matcha-sea/gnome-shell/icons/scalable/actions/pointer-double-click-symbolic.svg
@@ -7912,7 +7923,8 @@ share/themes/Matcha-sea/gnome-shell/icons/scalable/status/message-indicator-symb
 share/themes/Matcha-sea/gnome-shell/no-events.svg
 share/themes/Matcha-sea/gnome-shell/no-notifications.svg
 share/themes/Matcha-sea/gnome-shell/pad-osd.css
-share/themes/Matcha-sea/gnome-shell/process-working.svg
+share/themes/Matcha-sea/gnome-shell/process-working-dark.svg
+share/themes/Matcha-sea/gnome-shell/process-working-light.svg
 share/themes/Matcha-sea/gtk-2.0/apps.rc
 share/themes/Matcha-sea/gtk-2.0/assets/arrow-down-insens.png
 share/themes/Matcha-sea/gtk-2.0/assets/arrow-down-prelight.png

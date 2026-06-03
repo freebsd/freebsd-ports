@@ -559,6 +559,9 @@
 %%DATADIR%%/c/contel301
 %%DATADIR%%/c/contel320
 %%DATADIR%%/c/contel321
+%%DATADIR%%/c/contour
+%%DATADIR%%/c/contour-direct
+%%DATADIR%%/c/contour-latest
 %%DATADIR%%/c/cops
 %%DATADIR%%/c/cops-10
 %%DATADIR%%/c/cops10
@@ -874,7 +877,9 @@
 %%DATADIR%%/e/ecma+index
 %%DATADIR%%/e/ecma+italics
 %%DATADIR%%/e/ecma+sgr
+%%DATADIR%%/e/ecma+standout
 %%DATADIR%%/e/ecma+strikeout
+%%DATADIR%%/e/ecma+underline
 %%DATADIR%%/e/elks
 %%DATADIR%%/e/elks-ansi
 %%DATADIR%%/e/elks-glasstty
@@ -935,6 +940,7 @@
 %%DATADIR%%/g/gator-52
 %%DATADIR%%/g/gator-52t
 %%DATADIR%%/g/gator-t
+%%DATADIR%%/g/ghostty
 %%DATADIR%%/g/gigi
 %%DATADIR%%/g/glasstty
 %%DATADIR%%/g/gnome
@@ -1190,6 +1196,7 @@
 %%DATADIR%%/i/icl6404
 %%DATADIR%%/i/icl6404-w
 %%DATADIR%%/i/ifmr
+%%DATADIR%%/i/illumos
 %%DATADIR%%/i/ims-ansi
 %%DATADIR%%/i/ims950
 %%DATADIR%%/i/ims950-b
@@ -1266,6 +1273,7 @@
 %%DATADIR%%/l/linux
 %%DATADIR%%/l/linux+decid
 %%DATADIR%%/l/linux+kbs
+%%DATADIR%%/l/linux+lockeys
 %%DATADIR%%/l/linux+sfkeys
 %%DATADIR%%/l/linux-16color
 %%DATADIR%%/l/linux-basic
@@ -1353,6 +1361,7 @@
 %%DATADIR%%/m/minix-old-am
 %%DATADIR%%/m/mintty
 %%DATADIR%%/m/mintty+common
+%%DATADIR%%/m/mintty+keypad
 %%DATADIR%%/m/mintty-direct
 %%DATADIR%%/m/mlterm
 %%DATADIR%%/m/mlterm+pcfkeys
@@ -1371,13 +1380,17 @@
 %%DATADIR%%/m/morphos
 %%DATADIR%%/m/mosh
 %%DATADIR%%/m/mosh-256color
+%%DATADIR%%/m/mostlike
 %%DATADIR%%/m/mouse-sun
 %%DATADIR%%/m/mrxvt
 %%DATADIR%%/m/mrxvt-256color
+%%DATADIR%%/m/ms+terminal
 %%DATADIR%%/m/ms-terminal
+%%DATADIR%%/m/ms-terminal-direct
 %%DATADIR%%/m/ms-vt-utf8
 %%DATADIR%%/m/ms-vt100
 %%DATADIR%%/m/ms-vt100+
+%%DATADIR%%/m/ms-vt100-16color
 %%DATADIR%%/m/ms-vt100-color
 %%DATADIR%%/m/msk227
 %%DATADIR%%/m/msk22714
@@ -1657,6 +1670,9 @@
 %%DATADIR%%/p/p9-8
 %%DATADIR%%/p/p9-8-w
 %%DATADIR%%/p/p9-w
+%%DATADIR%%/p/pangoterm
+%%DATADIR%%/p/pangoterm-256color
+%%DATADIR%%/p/pangoterm-direct
 %%DATADIR%%/p/pc-coherent
 %%DATADIR%%/p/pc-minix
 %%DATADIR%%/p/pc-venix
@@ -1841,6 +1857,9 @@
 %%DATADIR%%/r/regent60
 %%DATADIR%%/r/report+da2
 %%DATADIR%%/r/report+version
+%%DATADIR%%/r/rio
+%%DATADIR%%/r/rio-direct
+%%DATADIR%%/r/rlogin-color
 %%DATADIR%%/r/rt6221
 %%DATADIR%%/r/rt6221-w
 %%DATADIR%%/r/rtpc
@@ -1863,6 +1882,7 @@
 %%DATADIR%%/s/sc410
 %%DATADIR%%/s/sc415
 %%DATADIR%%/s/scanset
+%%DATADIR%%/s/sclp
 %%DATADIR%%/s/scoansi
 %%DATADIR%%/s/scoansi-new
 %%DATADIR%%/s/scoansi-old
@@ -1939,6 +1959,7 @@
 %%DATADIR%%/s/st-0.6
 %%DATADIR%%/s/st-0.7
 %%DATADIR%%/s/st-0.8
+%%DATADIR%%/s/st-0.8.5
 %%DATADIR%%/s/st-16color
 %%DATADIR%%/s/st-256color
 %%DATADIR%%/s/st-direct
@@ -1955,14 +1976,17 @@
 %%DATADIR%%/s/sun+sl
 %%DATADIR%%/s/sun-1
 %%DATADIR%%/s/sun-12
+%%DATADIR%%/s/sun-16color
 %%DATADIR%%/s/sun-17
 %%DATADIR%%/s/sun-24
+%%DATADIR%%/s/sun-256color
 %%DATADIR%%/s/sun-34
 %%DATADIR%%/s/sun-48
 %%DATADIR%%/s/sun-c
 %%DATADIR%%/s/sun-cgsix
 %%DATADIR%%/s/sun-cmd
 %%DATADIR%%/s/sun-color
+%%DATADIR%%/s/sun-direct
 %%DATADIR%%/s/sun-e
 %%DATADIR%%/s/sun-e-s
 %%DATADIR%%/s/sun-il
@@ -2052,6 +2076,7 @@
 %%DATADIR%%/t/teraterm2.3
 %%DATADIR%%/t/teraterm4.59
 %%DATADIR%%/t/teraterm4.97
+%%DATADIR%%/t/teraterm5.0
 %%DATADIR%%/t/terminator
 %%DATADIR%%/t/terminet
 %%DATADIR%%/t/terminet1200
@@ -2323,6 +2348,9 @@
 %%DATADIR%%/v/vt100+enq
 %%DATADIR%%/v/vt100+fnkeys
 %%DATADIR%%/v/vt100+keypad
+%%DATADIR%%/v/vt100+noapp
+%%DATADIR%%/v/vt100+noapp+pc
+%%DATADIR%%/v/vt100+pf1-pf4
 %%DATADIR%%/v/vt100+pfkeys
 %%DATADIR%%/v/vt100-am
 %%DATADIR%%/v/vt100-bm
@@ -2361,6 +2389,8 @@
 %%DATADIR%%/v/vt220+cvis8
 %%DATADIR%%/v/vt220+keypad
 %%DATADIR%%/v/vt220+pcedit
+%%DATADIR%%/v/vt220+sfkeys
+%%DATADIR%%/v/vt220+ufkeys
 %%DATADIR%%/v/vt220+vtedit
 %%DATADIR%%/v/vt220-8
 %%DATADIR%%/v/vt220-8bit
@@ -2396,11 +2426,14 @@
 %%DATADIR%%/v/vt510pc
 %%DATADIR%%/v/vt510pcdos
 %%DATADIR%%/v/vt52
+%%DATADIR%%/v/vt52+arrows
 %%DATADIR%%/v/vt52+keypad
 %%DATADIR%%/v/vt52-basic
 %%DATADIR%%/v/vt520
+%%DATADIR%%/v/vt520-w
 %%DATADIR%%/v/vt520ansi
 %%DATADIR%%/v/vt525
+%%DATADIR%%/v/vt525-w
 %%DATADIR%%/v/vt61
 %%DATADIR%%/v/vt61.5
 %%DATADIR%%/v/vte
@@ -2411,11 +2444,14 @@
 %%DATADIR%%/v/vte-2014
 %%DATADIR%%/v/vte-2017
 %%DATADIR%%/v/vte-2018
+%%DATADIR%%/v/vte-2022
 %%DATADIR%%/v/vte-256color
 %%DATADIR%%/v/vte-direct
 %%DATADIR%%/v/vtnt
 %%DATADIR%%/v/vv100
 %%DATADIR%%/v/vwmterm
+%%DATADIR%%/w/wezterm
+%%DATADIR%%/w/winconsole
 %%DATADIR%%/w/wren
 %%DATADIR%%/w/wrenw
 %%DATADIR%%/w/wsiris
@@ -2552,6 +2588,7 @@
 %%DATADIR%%/w/wy99gt-w
 %%DATADIR%%/w/wy99gt-w-vb
 %%DATADIR%%/w/wy99gt-wvb
+%%DATADIR%%/w/wyse+cvis
 %%DATADIR%%/w/wyse+sl
 %%DATADIR%%/w/wyse-325
 %%DATADIR%%/w/wyse-75ap
@@ -2727,6 +2764,7 @@
 %%DATADIR%%/x/xterm+256color
 %%DATADIR%%/x/xterm+256color2
 %%DATADIR%%/x/xterm+256setaf
+%%DATADIR%%/x/xterm+256setaf2
 %%DATADIR%%/x/xterm+88color
 %%DATADIR%%/x/xterm+88color2
 %%DATADIR%%/x/xterm+acs
@@ -2734,6 +2772,8 @@
 %%DATADIR%%/x/xterm+alt1049
 %%DATADIR%%/x/xterm+alt47
 %%DATADIR%%/x/xterm+app
+%%DATADIR%%/x/xterm+app+pc
+%%DATADIR%%/x/xterm+decedit
 %%DATADIR%%/x/xterm+direct
 %%DATADIR%%/x/xterm+direct16
 %%DATADIR%%/x/xterm+direct2
@@ -2758,6 +2798,8 @@
 %%DATADIR%%/x/xterm+pcf0
 %%DATADIR%%/x/xterm+pcf2
 %%DATADIR%%/x/xterm+pcfkeys
+%%DATADIR%%/x/xterm+r5+fkeys
+%%DATADIR%%/x/xterm+r5+lockeys
 %%DATADIR%%/x/xterm+r6f2
 %%DATADIR%%/x/xterm+sl
 %%DATADIR%%/x/xterm+sl-alt

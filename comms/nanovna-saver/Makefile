@@ -1,7 +1,7 @@
 PORTNAME=	nanovna-saver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/NanoVNA-Saver/nanovna-saver
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}

@@ -1,2 +1,2 @@
-This package contains xconsole, a utility for monitoring system console
-messages with X.
+XConsole displays in a X11 window the messages which are usually sent
+to /dev/console.

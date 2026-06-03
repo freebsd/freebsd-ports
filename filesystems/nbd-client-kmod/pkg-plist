@@ -1,0 +1,5 @@
+/%%KMODDIR%%/geom_nbd.ko
+lib/geom/geom_nbd.so
+share/man/man8/gnbd.8.gz
+sbin/gnbd
+@sample etc/devd/nbd-client.conf.sample

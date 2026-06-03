@@ -1,2 +1,9 @@
-The Open Policy Agent (OPA) is an open source, general-purpose policy engine
-that enables unified, context-aware policy enforcement across the entire stack.
+Open Policy Agent (OPA) is an open source, general-purpose policy engine
+that enables unified, context-aware policy enforcement across the entire
+stack. OPA is a graduated project of the Cloud Native Computing Foundation
+(CNCF).
+
+Use OPA to enforce policies in microservices, Kubernetes, CI/CD pipelines,
+API gateways, and more. OPA decouples policy decision-making from the
+application's business logic. Policies are written in a high-level
+declarative language called Rego.

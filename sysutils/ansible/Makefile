@@ -1,5 +1,5 @@
 PORTNAME=	ansible
-DISTVERSION=	11.7.0
+DISTVERSION=	13.6.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
 
-USES=		ansible:env cpe python:3.10+ shebangfix
+USES=		ansible:env cpe python shebangfix
 CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 

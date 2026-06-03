@@ -1,5 +1,5 @@
 PORTNAME=	utf8cpp
-PORTVERSION=	4.0.6
+PORTVERSION=	4.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -16,8 +16,6 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	nemtrif
 GH_PROJECT=	utfcpp
-
-CONFLICTS_INSTALL=	utf8cpp3
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/utf8cpp/

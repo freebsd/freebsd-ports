@@ -1,5 +1,5 @@
 PORTNAME=	textual-autocomplete
-PORTVERSION=	4.0.0a0
+PORTVERSION=	4.0.5
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSIONFULL}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easily add autocomplete dropdowns to your Textual apps
-WWW=		https://github.com/Textualize/textual
+WWW=		https://github.com/darrenburns/textual-autocomplete
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

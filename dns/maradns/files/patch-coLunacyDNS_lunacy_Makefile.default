@@ -1,0 +1,21 @@
+--- coLunacyDNS/lunacy/Makefile.default.orig	2023-05-03 00:53:39 UTC
++++ coLunacyDNS/lunacy/Makefile.default
+@@ -10,13 +10,14 @@ CFLAGS= -O3 -Wall $(MYCFLAGS) -DNO_LFS -DNO_SPAWNER
+ 
+ CC= gcc
+ CFLAGS= -O3 -Wall $(MYCFLAGS) -DNO_LFS -DNO_SPAWNER
+-AR= ar rcu
+-RANLIB= ranlib
+-RM= rm -f
++#CC= gcc
++#CFLAGS= -O3 -Wall $(MYCFLAGS) -DNO_LFS -DNO_SPAWNER
++#AR= ar rcu
++#RANLIB= ranlib
++#RM= rm -f
+ LIBS= -lm -lutil $(MYLIBS) -L/usr/local/lib/
+ 
+ MYCFLAGS=
+-MYLDFLAGS=
+ MYLIBS=
+ 
+ # If one renames this file, put the new name here

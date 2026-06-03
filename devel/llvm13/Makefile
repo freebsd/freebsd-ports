@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	13.0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -14,6 +14,8 @@ WWW=		https://llvm.org/
 
 LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
@@ -139,8 +141,9 @@ FLANG_IMPLIES=		MLIR
 FLANG_PORTDOCS=		flang
 FLANG_PLIST_DIRS=	${LLVM_DIR}/include/flang/Config
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
-GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
+GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
@@ -298,7 +301,7 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 .include "${.CURDIR}/Makefile.COMMANDS"
 .include "${.CURDIR}/Makefile.MAN1SRCS"
 
-_FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV X86
+_FREEBSD_BACKENDS=	AArch64 ARM PowerPC RISCV X86
 FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
 .if ${ARCH} == amd64
 _NATIVE_BACKENDS=	X86
@@ -308,8 +311,6 @@ _NATIVE_BACKENDS=	AArch64 ARM
 _NATIVE_BACKENDS=	ARM
 .elif ${ARCH} == i386
 _NATIVE_BACKENDS=	X86
-.elif ${ARCH:Mmips*}
-_NATIVE_BACKENDS=	Mips
 .elif ${ARCH:Mpowerpc*}
 _NATIVE_BACKENDS=	PowerPC
 .elif ${ARCH:Mriscv*}
@@ -325,7 +326,7 @@ FREEBSD_BACKENDS+=	WebAssembly
 NATIVE_BACKENDS+=	WebAssembly
 .endif
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
-			MSP430 NVPTX Sparc SystemZ WebAssembly XCore
+			Mips MSP430 NVPTX Sparc SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/linux/dmabuf_uapi.h.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/ui/gfx/linux/dmabuf_uapi.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/linux/dmabuf_uapi.h
 @@ -5,12 +5,11 @@
  #ifndef UI_GFX_LINUX_DMABUF_UAPI_H_
@@ -17,17 +17,7 @@
  
  struct dma_buf_sync {
    __u64 flags;
-@@ -26,9 +25,7 @@ constexpr unsigned long DMA_BUF_IOCTL_SYNC =
- constexpr char DMA_BUF_BASE = 'b';
- constexpr unsigned long DMA_BUF_IOCTL_SYNC =
-     _IOW(DMA_BUF_BASE, 0, struct dma_buf_sync);
--#endif
- 
--#ifndef DMA_BUF_IOCTL_EXPORT_SYNC_FILE
- struct dma_buf_export_sync_file {
-   __u32 flags;
-   __s32 fd;
-@@ -43,6 +40,5 @@ constexpr unsigned long DMA_BUF_IOCTL_IMPORT_SYNC_FILE
+@@ -43,6 +42,5 @@ constexpr unsigned long DMA_BUF_IOCTL_IMPORT_SYNC_FILE
      _IOWR(DMA_BUF_BASE, 2, struct dma_buf_export_sync_file);
  constexpr unsigned long DMA_BUF_IOCTL_IMPORT_SYNC_FILE =
      _IOW(DMA_BUF_BASE, 3, struct dma_buf_import_sync_file);

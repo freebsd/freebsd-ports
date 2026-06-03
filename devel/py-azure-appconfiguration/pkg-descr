@@ -4,5 +4,8 @@ their application configurations simply and securely.
 Modern programs, especially programs running in a cloud, generally have many
 components that are distributed in nature. Spreading configuration settings
 across these components can lead to hard-to-troubleshoot errors during an
-application deployment. Use App Configuration to securely store all the
-settings for your application in one place.
+application deployment. Use App Configuration to securely store all the settings
+for your application in one place.
+
+Use the client library for App Configuration to create and manage application
+configuration settings.

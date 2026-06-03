@@ -1,0 +1,8 @@
+@group games
+@(,games,2755) bin/xonix
+lib/X11/app-defaults/Xonix
+share/man/man1/xonix.1.gz
+@dir(,games,775) /var/games/xonix
+@postexec touch /var/games/xonix/xonix.scores
+@postexec chmod 0660 /var/games/xonix/xonix.scores
+@postunexec rm -f /var/games/xonix/xonix.scores

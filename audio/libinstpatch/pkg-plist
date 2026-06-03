@@ -94,5 +94,5 @@ include/libinstpatch-%%VER%%/libinstpatch/util.h
 include/libinstpatch-%%VER%%/libinstpatch/version.h
 lib/libinstpatch-1.0.so
 lib/libinstpatch-1.0.so.2
-lib/libinstpatch-1.0.so.2.2.0
+lib/libinstpatch-1.0.so.2.2.1
 libdata/pkgconfig/libinstpatch-1.0.pc

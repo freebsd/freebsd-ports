@@ -1,0 +1,68 @@
+--- core/Common/3dParty/html/katana-parser/src/foundation.c.orig	2025-12-04 03:36:03 UTC
++++ core/Common/3dParty/html/katana-parser/src/foundation.c
+@@ -52,6 +52,7 @@
+ void katana_string_append_characters(struct KatanaInternalParser* parser,
+                                      const char* str, KatanaParserString* output)
+ {
++    if (NULL == str) return;
+     size_t len = strlen(str);
+     maybe_resize_string(parser, len, output);
+     memcpy(output->data + output->length, str, len);
+@@ -62,6 +63,7 @@
+                                       const char* str,
+                                       KatanaParserString* output)
+ {
++    if (NULL == str) return;
+     size_t len = strlen(str);
+     size_t new_length = output->length + len;
+     char* new_data = katana_parser_allocate(parser, new_length);
+@@ -83,7 +85,9 @@
+ 
+ bool katana_string_has_prefix(const char* str, const char* prefix)
+ {
++    if (NULL == prefix) return false;
+     size_t pre_len = strlen(prefix);
++    if (NULL == prefix) return false;
+     size_t str_len = strlen(str);
+     return pre_len <= str_len && strncasecmp(prefix, str, pre_len);
+ }
+--- core/Common/3dParty/html/katana-parser/src/parser.c.orig	2025-12-04 03:15:29 UTC
++++ core/Common/3dParty/html/katana-parser/src/parser.c
+@@ -39,7 +39,7 @@
+ //#define assert(x)
+ 
+ #define breakpoint
+-#define KATANA_PARSER_STRING(literal) (KatanaParserString){ literal, sizeof(literal) - 1 }
++#define KATANA_PARSER_STRING(literal) { literal, sizeof(literal) - 1 }
+ 
+ 
+ typedef void (*KatanaArrayDeallocator)(KatanaParser* parser, void* e);
+@@ -1275,7 +1275,7 @@
+            yyloc->last_line,
+            yyloc->last_column,
+            error,
+-           katanaget_text(parser->scanner));
++           "error");
+ 
+     YYSTYPE * s = katanaget_lval(parser->scanner);
+ 
+@@ -1293,7 +1293,7 @@
+     e->last_line = yyloc->last_line;
+     e->last_column = yyloc->last_column;
+     snprintf(e->message, KATANA_ERROR_MESSAGE_SIZE, "%s at %s", error,
+-             katanaget_text(parser->scanner));
++             "error");
+     katana_array_add(parser, e, &(parser->output->errors));
+ }
+ 
+--- core/Common/3dParty/html/katana-parser/src/tokenizer.c.orig	2025-12-04 03:15:29 UTC
++++ core/Common/3dParty/html/katana-parser/src/tokenizer.c
+@@ -288,7 +288,7 @@
+ #endif // #if KATANA_FELX_DEBUG
+ #endif // #ifdef KATANA_FELX_DEBUG
+ 
+-inline bool katana_is_html_space(char c)
++static inline bool katana_is_html_space(char c)
+ {
+     return c <= ' ' && (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\f');
+ }

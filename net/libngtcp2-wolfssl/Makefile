@@ -1,12 +1,12 @@
 PORTNAME=	ngtcp2
-PORTVERSION=	1.13.0
+PORTVERSION=	1.22.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 PKGNAMESUFFIX=	-wolfssl
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Implementation of QUIC protocol (wolfssl backend)
+COMMENT=	Implementation of QUIC protocol (wolfSSL backend)
 WWW=		https://nghttp2.org/ngtcp2/ \
 		https://github.com/ngtcp2/ngtcp2
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	libngtcp2>=${PORTVERSION}<${PORTVERSION}_99:net/libngtcp2
 LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 RUN_DEPENDS=	libngtcp2>=${PORTVERSION}<${PORTVERSION}_99:net/libngtcp2
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only \
 		--with-jemalloc \

@@ -1,0 +1,32 @@
+From 966d564e43e650b9c34f9c67829d3947f52add91 Mon Sep 17 00:00:00 2001
+From: Dan McGregor <dan.mcgregor@usask.ca>
+Date: Sun, 24 Dec 2023 22:37:35 -0600
+Subject: [PATCH] asan_static x86-64: Support 64-bit ASAN_SHADOW_OFFSET_CONST
+ redux (#76185)
+
+Similar to b9935bb02a50, but also apply a similar change to
+ACCESS_CHECK_ADD.
+
+If ASAN_SHADOW_OFFSET_CONST cannot be encoded as a displacement, switch
+to `movabsq` and the register offset variant of cmp.
+---
+ compiler-rt/lib/asan/asan_rtl_x86_64.S | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git compiler-rt/lib/asan/asan_rtl_x86_64.S compiler-rt/lib/asan/asan_rtl_x86_64.S
+index e44587ac4331c7..9c5289856d8ae6 100644
+--- compiler-rt/lib/asan/asan_rtl_x86_64.S
++++ compiler-rt/lib/asan/asan_rtl_x86_64.S
+@@ -89,7 +89,12 @@ ENDF
+ #define ASAN_MEMORY_ACCESS_CHECK_ADD(reg, op, s, c) \
+         mov    %##reg,%r10 ;\
+         shr    $0x3,%r10 ;\
++        .if ASAN_SHADOW_OFFSET_CONST < 0x80000000  ;\
+         ##c    $0x0,ASAN_SHADOW_OFFSET_CONST(%r10) ;\
++        .else                                      ;\
++        movabsq $ASAN_SHADOW_OFFSET_CONST,%r11     ;\
++        ##c    $0x0,(%r10,%r11)                    ;\
++        .endif                                     ;\
+         jne    FLABEL(reg, op, s, add) ;\
+         retq  ;\
+ 

@@ -1,8 +1,11 @@
+include/dune-multidomaingrid-config.hh
 include/dune/grid/multidomaingrid.hh
 include/dune/grid/multidomaingrid/allsubdomaininterfacesiterator.hh
 include/dune/grid/multidomaingrid/arraybasedset.hh
 include/dune/grid/multidomaingrid/entity.hh
+include/dune/grid/multidomaingrid/factory.hh
 include/dune/grid/multidomaingrid/geometry.hh
+include/dune/grid/multidomaingrid/gmshreader.hh
 include/dune/grid/multidomaingrid/gridview.hh
 include/dune/grid/multidomaingrid/hierarchiciterator.hh
 include/dune/grid/multidomaingrid/hostgridaccessor.hh
@@ -33,6 +36,8 @@ include/dune/grid/multidomaingrid/subdomaintosubdomaininterfaceiterator.hh
 include/dune/grid/multidomaingrid/utility.hh
 lib/cmake/dune-multidomaingrid/dune-multidomaingrid-config-version.cmake
 lib/cmake/dune-multidomaingrid/dune-multidomaingrid-config.cmake
+lib/cmake/dune-multidomaingrid/dune-multidomaingrid-scoped-targets-%%DUNE_MULTIDOMAINGRID_CMAKE_HASH%%.cmake
+lib/cmake/dune-multidomaingrid/dune-multidomaingrid-targets.cmake
 lib/dunecontrol/dune-multidomaingrid/dune.module
 libdata/pkgconfig/dune-multidomaingrid.pc
 %%DATADIR%%/config.h.cmake

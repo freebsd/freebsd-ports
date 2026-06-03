@@ -1,9 +1,9 @@
-TIMESTAMP = 1731255381
-SHA256 (st-0.9.2.tar.gz) = 6b215d4f472b21d6232f30f221117a777e24bcfee68955ddefb7426467f9494b
-SIZE (st-0.9.2.tar.gz) = 48381
+TIMESTAMP = 1755097785
+SHA256 (st-0.9.3.tar.gz) = 9ed9feabcded713d4ded38c8cebf36a3b08f0042ef7934a0e2b2409da56e649b
+SIZE (st-0.9.3.tar.gz) = 49528
 SHA256 (st-scrollback-0.9.2.diff) = 8db63bf83df06cba12cdb02e578cb49afc789c726b4c85f66e95b372562bac7a
 SIZE (st-scrollback-0.9.2.diff) = 8955
 SHA256 (st-scrollback-mouse-0.9.2.diff) = 5e1e57e12821c022807b33b4a950f1724bc2efeebd44323c3941f0bd652e1a19
 SIZE (st-scrollback-mouse-0.9.2.diff) = 917
-SHA256 (st-xresources-20200604-9ba7ecf.diff) = 5be9b40d2b51761685f6503e92028a7858cc6571a8867b88612fce8a70514d5b
-SIZE (st-xresources-20200604-9ba7ecf.diff) = 4840
+SHA256 (st-xresources-20230320-45a15676.diff) = fc44d585d48cf1dfb00fb30c4e2c4cf9198b77f55a91f68ef7be26a5c75704a8
+SIZE (st-xresources-20230320-45a15676.diff) = 4853

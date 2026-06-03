@@ -1,10 +1,10 @@
---- test/conf/cassandra.yaml.orig	2018-03-06 21:24:02 UTC
+--- test/conf/cassandra.yaml.orig	2023-05-25 14:13:38 UTC
 +++ test/conf/cassandra.yaml
 @@ -40,7 +40,6 @@ server_encryption_options:
  incremental_backups: true
  concurrent_compactors: 4
- compaction_throughput_mb_per_sec: 0
+ compaction_throughput: 0MiB/s
 -row_cache_class_name: org.apache.cassandra.cache.OHCProvider
- row_cache_size_in_mb: 16
- enable_user_defined_functions: true
- enable_scripted_user_defined_functions: true
+ row_cache_size: 16MiB
+ user_defined_functions_enabled: true
+ scripted_user_defined_functions_enabled: true

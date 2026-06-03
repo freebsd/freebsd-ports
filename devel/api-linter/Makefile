@@ -1,6 +1,7 @@
 PORTNAME=	api-linter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.70.1
+DISTVERSION=	2.3.1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/googleapis/api-linter
+GO_MODULE=	github.com/googleapis/api-linter/v2
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}

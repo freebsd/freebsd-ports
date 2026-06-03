@@ -1,5 +1,5 @@
 PORTNAME=	htslib
-DISTVERSION=	1.22
+DISTVERSION=	1.23.1
 CATEGORIES=	biology devel
 # Github generated distfiles are incomplete, so use custom tarball
 MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
@@ -27,13 +27,15 @@ MAKE_ARGS=		${MAKE_ARGS_${ARCH}}
 PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=		test/*.pl
 
-OPTIONS_DEFINE=		CURL
-OPTIONS_DEFAULT=	CURL
+OPTIONS_DEFINE=		CURL PLUGINS
+OPTIONS_DEFAULT=	CURL PLUGINS
 
 CURL_DESC=		Use libcurl for network file access (HTTPS and S3 support).
 CURL_USES=		ssl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=	libcurl
+PLUGIN_DESC=		Enable external plugins for exotic file access, etc.
+PLUGIN_CONFIGURE_ON=	plugins
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 

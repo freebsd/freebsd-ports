@@ -1,15 +1,15 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_root.cc.orig	2025-05-31 17:16:41 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_root.cc.orig	2026-04-15 11:25:12 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_root.cc
-@@ -45,7 +45,7 @@
+@@ -48,7 +48,7 @@
  #include "wow64apiset.h"
  #endif
  
 -#if PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS)
 +#if PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS) || PA_BUILDFLAG(IS_BSD)
  #include <pthread.h>
- #if PA_CONFIG(ENABLE_SHADOW_METADATA)
- #include <sys/mman.h>
-@@ -298,7 +298,7 @@ void PartitionAllocMallocInitOnce() {
+ #endif  // PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS)
+ 
+@@ -255,7 +255,7 @@ void PartitionAllocMallocInitOnce() {
      return;
    }
  
@@ -18,7 +18,7 @@
    // When fork() is called, only the current thread continues to execute in the
    // child process. If the lock is held, but *not* by this thread when fork() is
    // called, we have a deadlock.
-@@ -1118,7 +1118,7 @@ void PartitionRoot::Init(PartitionOptions opts) {
+@@ -973,7 +973,7 @@ void PartitionRoot::Init(PartitionOptions opts) {
      // apple OSes.
      PA_CHECK((internal::SystemPageSize() == (size_t{1} << 12)) ||
               (internal::SystemPageSize() == (size_t{1} << 14)));

@@ -1,9 +1,9 @@
 PORTNAME=	container-inspector
-DISTVERSION=	33.0.0
+DISTVERSION=	33.1.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	container_inspector-${PORTVERSION}
+DISTNAME=	container_inspector-${DISTVERSION}
 
 MAINTAINER=	tuukka.pasanen@ilmi.fi
 COMMENT=	Analysis utilities and command line tools for Docker container images

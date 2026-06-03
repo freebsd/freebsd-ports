@@ -3,9 +3,12 @@ bin/inline-detox
 etc/detoxrc
 %%DATADIR%%/cp1252.tbl
 %%DATADIR%%/iso8859_1.tbl
-%%DATADIR%%/safe.tbl
+%%DATADIR%%/legacy/cp1252.tbl
+%%DATADIR%%/legacy/iso8859_1.tbl
 %%DATADIR%%/unicode.tbl
-%%DATADIR%%/unidecode.tbl
+%%DATADIR%%/legacy/unicode.tbl
+%%DATADIR%%/legacy/unidecode.tbl
+%%DATADIR%%/safe.tbl
 %%PORTDOCS%%%%DOCSDIR%%/BUILD.md
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

@@ -1,8 +1,8 @@
 PORTNAME=	OpenJUMP
-PORTVERSION=	2.0
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics java geography
 MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
-DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}[a56ff6d]-PLUS
+DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}[6c9a02d]-PLUS
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Open source GIS software written in Java
@@ -33,11 +33,11 @@ USES=		java zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}\[a56ff6d]-PLUS
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}\[6c9a02d]-PLUS
 
 OPTIONS_DEFINE=	DOCS
 
-PLUS_REV=	5095
+PLUS_REV=	5303
 TARGET_DIR=	${STAGEDIR}${PREFIX}/${PORTNAME}
 
 do-install:
@@ -46,6 +46,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${TARGET_DIR}/lib
 	${MKDIR} ${TARGET_DIR}/lib/ext
 	@cd ${WRKSRC}/lib/ext && ${COPYTREE_SHARE} . ${TARGET_DIR}/lib/ext
+	@${FIND} ${TARGET_DIR}/lib/ext -name "*turbojpeg*" -delete
 	${MKDIR} ${TARGET_DIR}/lib/native
 	${INSTALL_DATA}  ${WRKSRC}/lib/native/jecw-0.0.7.jar ${TARGET_DIR}/lib/native
 	${MKDIR} ${TARGET_DIR}/lib/icons
@@ -56,7 +57,9 @@ do-install:
 	${LN} -sf ${PREFIX}/${PORTNAME}/bin/openjump ${STAGEDIR}${PREFIX}/bin/openjump
 	${INSTALL_DATA} ${WRKSRC}/bin/default-plugins.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
+	@${AWK} '/<!-- Overload default priority for some packages -->/{print; print ""; print "    <!-- Suppress TurboJPEG native library errors -->"; print "    <logger name=\"it.geosolutions.imageio.plugins.turbojpeg\">"; print "        <level value=\"off\"/>"; print "    </logger>"; print "    <logger name=\"org.libjpegturbo\">"; print "        <level value=\"off\"/>"; print "    </logger>"; print "    <logger name=\"com.cadplan.fill_patterns.jump\">"; print "        <level value=\"off\"/>"; print "    </logger>"; next} {print}' ${TARGET_DIR}/bin/log4j.xml > ${TARGET_DIR}/bin/log4j.xml.tmp && ${MV} ${TARGET_DIR}/bin/log4j.xml.tmp ${TARGET_DIR}/bin/log4j.xml
 	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${TARGET_DIR}/bin/
+	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${TARGET_DIR}/
 
 	@${ECHO_MSG} "--->  Installing documentation"
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

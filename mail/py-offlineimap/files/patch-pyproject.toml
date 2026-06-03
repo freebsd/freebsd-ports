@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-04-12 23:06:42 UTC
++++ pyproject.toml
+@@ -10,8 +10,7 @@ authors = [
+ authors = [
+     { name = "John Goerzen & contributors", email = "jgoerzen@complete.org" }
+ ]
+-license = "GPL-2.0-or-later"
+-license-files = ["COPYING"]
++license = { text = "GPL-2.0-or-later" }
+ readme = "README.md"
+ keywords = ["client", "imap", "cli", "email", "mail", "synchronization", "sync", "offline"]
+ requires-python = ">=3.6"

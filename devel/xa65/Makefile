@@ -1,6 +1,5 @@
 PORTNAME=	xa65
-PORTVERSION=	2.3.14
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 DISTNAME=	xa-${PORTVERSION}
@@ -28,7 +27,6 @@ do-install-DOCS-on:
 .for doc in ChangeLog README.1st TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

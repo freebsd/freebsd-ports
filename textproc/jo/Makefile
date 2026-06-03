@@ -1,8 +1,7 @@
 PORTNAME=	jo
-PORTVERSION=	1.6
-PORTREVISION=	1
+DISTVERSION=	1.9
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/jpmens/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/jpmens/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Small utility to create JSON objects
@@ -12,7 +11,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/jo \
 		etc/bash_completion.d/jo.bash \

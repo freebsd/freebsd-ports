@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMESUFFIX=	27
@@ -62,7 +62,7 @@ LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
 # Upstream Issue: https://bugs.python.org/issue6299
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ENV_OFF=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
@@ -120,7 +120,7 @@ post-patch:
 # openssl/opensslv.h so setup.py just detects the string as 00000000
 # However care should be taken for the OSVERSION. If OpenSSL 3.0.9
 # lands later the OSVERSION string should be fixed accordingly
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && (${SSL_DEFAULT} == base || \
+.if ${OPSYS} == FreeBSD && (${SSL_DEFAULT} == base || \
 	${SSL_DEFAULT} == openssl || ${SSL_DEFAULT:Mopenssl3*} )
 	@${REINPLACE_CMD} -e 's|00907000|00000000|' \
 		${WRKSRC}/setup.py

@@ -1,5 +1,5 @@
 PORTNAME=	sterm
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/st/
 DISTNAME=	st-${DISTVERSION}
@@ -37,7 +37,7 @@ SCROLLBACK_PATCHFILES=	st-scrollback-0.9.2.diff:-p1 \
 			st-scrollback-mouse-0.9.2.diff:-p1
 
 XRESOURCES_PATCH_SITES=	https://st.suckless.org/patches/xresources/
-XRESOURCES_PATCHFILES=	st-xresources-20200604-9ba7ecf.diff:-p1
+XRESOURCES_PATCHFILES=	st-xresources-20230320-45a15676.diff:-p1
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"

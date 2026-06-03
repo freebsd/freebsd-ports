@@ -1,0 +1,20 @@
+--- data/x.dm.slick-greeter.gschema.xml.orig	2025-11-19 16:10:15 UTC
++++ data/x.dm.slick-greeter.gschema.xml
+@@ -58,7 +58,7 @@
+       <summary>GTK+ theme to use</summary>
+     </key>
+     <key name="icon-theme-name" type="s">
+-      <default>'gnome'</default>
++      <default>'Adwaita'</default>
+       <summary>Icon theme to use</summary>
+     </key>
+     <key name="cursor-theme-name" type="s">
+@@ -148,7 +148,7 @@
+       <summary>What clock format to use (e.g., %H:%M or %l:%M %p)</summary>
+     </key>
+     <key name="onscreen-keyboard-layout" type="s">
+-      <default>'/usr/share/onboard/layouts/Small.onboard'</default>
++      <default>''</default>
+       <summary>Path of the onscreen keyboard layout</summary>
+     </key>
+     <key name="content-align" type="s">

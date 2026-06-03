@@ -1,5 +1,6 @@
 PORTNAME=	django-graphql-jwt
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +13,11 @@ WWW=		https://github.com/flavors/django-graphql-jwt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use py-django-graphql-jwt instead
+EXPIRATION_DATE=2026-06-29
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=2.0:www/py-django42@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=2.0:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphene>=2.1.5:devel/py-graphene@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphene-django>=2.0.0:devel/py-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2:www/py-pyjwt@${PY_FLAVOR}

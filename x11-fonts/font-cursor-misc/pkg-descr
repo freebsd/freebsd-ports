@@ -1,1 +1,3 @@
-This package contains miscellaneous X.Org Cursor fonts.
+The font-cursor-misc package provides around 155 cursors in the
+portable PCF format. These include the X cursor, arrows, clock cursor,
+crosshair, fleur cursor, iron cross, sailboat cursor, and many more.

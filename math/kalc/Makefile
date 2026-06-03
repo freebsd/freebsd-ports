@@ -1,7 +1,7 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	2
+DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -21,9 +21,14 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	bgkillas
 
-CARGO_CRATES=	autocfg-1.4.0 \
+CARGO_CRATES=	arrayvec-0.7.6 \
+		autocfg-1.4.0 \
 		az-1.2.1 \
-		bitflags-2.9.0 \
+		bitcode-0.6.6 \
+		bitcode_derive-0.6.5 \
+		bitflags-2.9.1 \
+		bnum-0.12.1 \
+		bytemuck-1.23.0 \
 		cfg-if-1.0.0 \
 		convert_case-0.7.1 \
 		crossbeam-deque-0.8.6 \
@@ -37,42 +42,41 @@ CARGO_CRATES=	autocfg-1.4.0 \
 		dirs-sys-0.5.0 \
 		document-features-0.2.11 \
 		either-1.15.0 \
-		errno-0.3.11 \
+		errno-0.3.12 \
+		fastnum-0.2.9 \
 		fastrand-2.3.0 \
 		getrandom-0.2.16 \
+		glam-0.30.3 \
 		gmp-mpfr-sys-1.6.5 \
-		itoa-1.0.15 \
-		kalc-lib-1.5.0 \
+		kalc-lib-1.5.1 \
 		libc-0.2.172 \
-		libm-0.2.13 \
+		libm-0.2.15 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.9.4 \
 		litrs-0.4.1 \
-		lock_api-0.4.12 \
+		lock_api-0.4.13 \
 		log-0.4.27 \
-		memchr-2.7.4 \
-		mio-1.0.3 \
+		mio-1.0.4 \
 		option-ext-0.2.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
+		parking_lot-0.12.4 \
+		parking_lot_core-0.9.11 \
 		proc-macro2-1.0.95 \
 		quote-1.0.40 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.11 \
+		redox_syscall-0.5.12 \
 		redox_users-0.5.0 \
 		rug-1.27.0 \
-		rustix-1.0.5 \
-		ryu-1.0.20 \
+		rustix-1.0.7 \
 		scopeguard-1.2.0 \
 		serde-1.0.219 \
+		serde-big-array-0.5.1 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
-		signal-hook-0.3.17 \
+		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.5 \
 		smallvec-1.15.0 \
-		syn-2.0.100 \
+		syn-2.0.101 \
 		term_size-0.3.2 \
 		thiserror-2.0.12 \
 		thiserror-impl-2.0.12 \
@@ -82,7 +86,6 @@ CARGO_CRATES=	autocfg-1.4.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \

@@ -6,7 +6,8 @@ CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast JSON parser/generator for C++ with both SAX/DOM style API
-WWW=		https://github.com/Tencent/rapidjson
+WWW=		https://rapidjson.org/ \
+		https://github.com/Tencent/rapidjson
 
 LICENSE=	unknown
 LICENSE_NAME=	RapidJSON

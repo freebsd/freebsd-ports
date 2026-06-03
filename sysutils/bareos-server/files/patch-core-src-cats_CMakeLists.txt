@@ -1,0 +1,11 @@
+--- core/src/cats/CMakeLists.txt	2025-12-26 23:48:48.485670000 -0800
++++ core/src/cats/CMakeLists.txt	2025-12-26 23:45:40.019548000 -0800
+@@ -35,7 +35,7 @@
+           sql_update.cc
+           postgresql.cc
+ )
+-target_link_libraries(bareossql PUBLIC Bareos::Lib PostgreSQL::PostgreSQL)
++target_link_libraries(bareossql PRIVATE Bareos::Lib PostgreSQL::PostgreSQL)
+ 
+ set_target_properties(
+   bareossql PROPERTIES VERSION "${BAREOS_NUMERIC_VERSION}"

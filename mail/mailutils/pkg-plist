@@ -247,6 +247,8 @@ lib/mailutils/spamd.a
 lib/mailutils/spamd.so
 lib/mailutils/timestamp.a
 lib/mailutils/timestamp.so
+lib/mailutils/uidnew.a
+lib/mailutils/uidnew.so
 lib/mailutils/vacation.a
 lib/mailutils/vacation.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/mailutils/__init__.py

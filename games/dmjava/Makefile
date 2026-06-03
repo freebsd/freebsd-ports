@@ -1,6 +1,6 @@
 PORTNAME=	dmjava
 PORTVERSION=	1.05
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/oliver \
 		http://chaos.zpc.cz/files/

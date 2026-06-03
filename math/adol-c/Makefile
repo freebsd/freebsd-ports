@@ -1,6 +1,6 @@
 PORTNAME=	adol-c
 DISTVERSION=	2.7.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME:tu}/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -13,12 +13,13 @@ LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake libtool tar:tgz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-boost-system=boost_thread
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 
 INSTALL_TARGET=	install-strip

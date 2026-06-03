@@ -19,6 +19,10 @@ it's possible to set the Java argument -Dsodium.checks.issue2561=false
 to workaround it. Please note that this makes it difficult to diagnose
 crashes at startup or that it might not even work at all.
 
+This port installs the required Java and LWJGL versions needed to
+run the latest version of the game. If you wish to play older
+versions, the logs will advise you to install the appropriate ones.
+
 Have Fun!
 EOM
 }

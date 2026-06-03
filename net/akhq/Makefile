@@ -1,7 +1,7 @@
 PORTNAME=	akhq
 DISTVERSION=	0.25.1
 DISTVERSIONSUFFIX= -all
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/tchiotludo/akhq/releases/download/${PORTVERSION}/
 EXTRACT_SUFX=	.jar

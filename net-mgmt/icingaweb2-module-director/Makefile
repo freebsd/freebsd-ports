@@ -1,6 +1,6 @@
 PORTNAME=	icingaweb2-module-director
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.5
+DISTVERSION=	1.11.8
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.12.1:net-mgmt/icingaweb2@${PHP_FL
 
 USES=		php:web,flavors
 USE_PHP=	pcntl
-IGNORE_WITH_PHP=81
 USE_RC_SUBR=	icinga-director
 
 DIRECTOR_USER?=		icingadirector

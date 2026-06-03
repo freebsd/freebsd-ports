@@ -8,8 +8,8 @@ WWW=		https://subversion.apache.org/
 USES=		compiler java
 JAVA_OS=	native
 
-PORTREVISION_LATEST=	0
-PORTREVISION_LTS=		0
+PORTREVISION_LATEST=	2
+PORTREVISION_LTS=		2
 
 SVN_BUILD_BINDINGS=	yes
 

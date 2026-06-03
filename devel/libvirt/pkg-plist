@@ -4,7 +4,9 @@ bin/virt-host-validate
 bin/virt-pki-query-dn
 bin/virt-pki-validate
 bin/virt-ssh-helper
+%%QEMU%%bin/virt-qemu-qmp-proxy
 %%QEMU%%bin/virt-qemu-run
+%%QEMU%%bin/virt-qemu-sev-validate
 bin/virt-xml-validate
 %%BHYVE%%sbin/virtbhyved
 sbin/virtnetworkd
@@ -19,7 +21,9 @@ share/man/man1/virt-admin.1.gz
 share/man/man1/virt-host-validate.1.gz
 share/man/man1/virt-pki-query-dn.1.gz
 share/man/man1/virt-pki-validate.1.gz
+%%QEMU%%share/man/man1/virt-qemu-qmp-proxy.1.gz
 %%QEMU%%share/man/man1/virt-qemu-run.1.gz
+%%QEMU%%share/man/man1/virt-qemu-sev-validate.1.gz
 share/man/man1/virt-xml-validate.1.gz
 share/man/man7/virkeycode-atset1.7.gz
 share/man/man7/virkeycode-atset2.7.gz
@@ -50,6 +54,7 @@ share/man/man8/virtvboxd.8.gz
 @sample %%ETCDIR%%/libvirt.conf.sample
 @sample %%ETCDIR%%/libvirtd.conf.sample
 @sample %%ETCDIR%%/network.conf.sample
+@sample %%ETCDIR%%/secret.conf.sample
 %%BHYVE%%@sample %%ETCDIR%%/virtbhyved.conf.sample
 @sample %%ETCDIR%%/virtlockd.conf.sample
 @sample %%ETCDIR%%/virtlogd.conf.sample
@@ -103,6 +108,7 @@ lib/libvirt.so
 lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
 lib/sysusers.d/libvirt.conf
+%%QEMU%%lib/sysusers.d/libvirt-qemu.conf
 %%NSS%%lib/nss_libvirt.so.1
 %%NSS%%lib/nss_libvirt_guest.so.1
 libdata/pkgconfig/libvirt-admin.pc
@@ -116,6 +122,7 @@ sbin/libvirtd
 sbin/virtlockd
 sbin/virtlogd
 share/augeas/lenses/libvirt_lockd.aug
+share/augeas/lenses/libvirt_secrets.aug
 share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/libvirtd_network.aug
 %%BHYVE%%share/augeas/lenses/libvirtd_bhyve.aug
@@ -123,6 +130,7 @@ share/augeas/lenses/virtlockd.aug
 share/augeas/lenses/virtlogd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirt_lockd.aug
+share/augeas/lenses/tests/test_libvirt_secrets.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_libvirtd_network.aug
 %%BHYVE%%share/augeas/lenses/tests/test_virtbhyved.aug
@@ -159,6 +167,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/arm_Neoverse-N1.xml
 %%DATADIR%%/cpu_map/arm_Neoverse-N2.xml
 %%DATADIR%%/cpu_map/arm_Neoverse-V1.xml
+%%DATADIR%%/cpu_map/arm_Neoverse-V2.xml
 %%DATADIR%%/cpu_map/arm_Tengyun-S2500.xml
 %%DATADIR%%/cpu_map/arm_ThunderX299xx.xml
 %%DATADIR%%/cpu_map/arm_a64fx.xml
@@ -194,6 +203,10 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server-v4.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server-v5.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest-v1.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest-v2.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest-v3.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest.xml
 %%DATADIR%%/cpu_map/x86_Conroe-v1.xml
 %%DATADIR%%/cpu_map/x86_Conroe.xml
 %%DATADIR%%/cpu_map/x86_Cooperlake-v1.xml
@@ -206,24 +219,35 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Dhyana-v1.xml
 %%DATADIR%%/cpu_map/x86_Dhyana-v2.xml
 %%DATADIR%%/cpu_map/x86_Dhyana.xml
+%%DATADIR%%/cpu_map/x86_DiamondRapids-v1.xml
+%%DATADIR%%/cpu_map/x86_DiamondRapids.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa-v1.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Genoa-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa.xml
 %%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan-v2.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Milan-v3.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v3.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v4.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Rome-v5.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Turin-v1.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Turin.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v3.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v4.xml
+%%DATADIR%%/cpu_map/x86_EPYC-v5.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v1.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v2.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids-v3.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids-v4.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids-v5.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
@@ -273,8 +297,15 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v1.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v2.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v3.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids-v4.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids-v5.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids-v6.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids.xml
 %%DATADIR%%/cpu_map/x86_SierraForest-v1.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v2.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v3.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v4.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v5.xml
 %%DATADIR%%/cpu_map/x86_SierraForest.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
@@ -300,6 +331,10 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Westmere-v1.xml
 %%DATADIR%%/cpu_map/x86_Westmere-v2.xml
 %%DATADIR%%/cpu_map/x86_Westmere.xml
+%%DATADIR%%/cpu_map/x86_YongFeng-v1.xml
+%%DATADIR%%/cpu_map/x86_YongFeng-v2.xml
+%%DATADIR%%/cpu_map/x86_YongFeng-v3.xml
+%%DATADIR%%/cpu_map/x86_YongFeng.xml
 %%DATADIR%%/cpu_map/x86_athlon-v1.xml
 %%DATADIR%%/cpu_map/x86_athlon.xml
 %%DATADIR%%/cpu_map/x86_core2duo-v1.xml
@@ -355,7 +390,10 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/schemas/storagepool.rng
 %%DATADIR%%/schemas/storagepoolcaps.rng
 %%DATADIR%%/schemas/storagevol.rng
+%%DATADIR%%/schemas/sysinfo.rng
+%%DATADIR%%/schemas/sysinfocommon.rng
 %%DATADIR%%/test-screenshot.png
+%%NLS%%share/locale/ar/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/as/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/libvirt.mo
@@ -402,6 +440,7 @@ share/augeas/lenses/virtvboxd.aug
 %%NLS%%share/locale/uk/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/zh_Hant/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 %%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
@@ -423,12 +462,14 @@ lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 %%QEMU%%@dir /var/lib/libvirt/qemu/ram
 %%QEMU%%@dir /var/lib/libvirt/qemu/save
 %%QEMU%%@dir /var/lib/libvirt/qemu/snapshot
+%%QEMU%%@dir /var/lib/libvirt/qemu/varstore
 %%QEMU%%@dir /var/lib/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/swtpm
 %%QEMU%%@dir /var/log/swtpm/libvirt/qemu
 %%QEMU%%@dir /var/log/swtpm/libvirt
 %%QEMU%%@dir /var/log/swtpm
 %%QEMU%%@dir /var/run/libvirt/qemu/dbus
+%%QEMU%%@dir /var/run/libvirt/qemu/passt
 %%QEMU%%@dir /var/run/libvirt/qemu/slirp
 %%QEMU%%@dir /var/run/libvirt/qemu/swtpm
 %%QEMU%%@dir /var/run/libvirt/qemu
@@ -449,9 +490,10 @@ lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 @dir /var/lib/libvirt/dnsmasq
 @dir /var/lib/libvirt/filesystems
 @dir /var/lib/libvirt/images
-@dir /var/lib/libvirt/lockd/files
 @dir /var/lib/libvirt/lockd
+@dir /var/lib/libvirt/lockd/files
 @dir /var/lib/libvirt/network
+@dir /var/lib/libvirt/secrets
 @dir /var/lib/libvirt
 @dir /var/lib
 @dir /var/log/libvirt/lxc

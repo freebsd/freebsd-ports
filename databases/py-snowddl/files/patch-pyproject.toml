@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-18 07:44:17 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ keywords = ["snowflake", "database", "schema", "object
+ ]
+ description = "Object management automation tool for Snowflake"
+ keywords = ["snowflake", "database", "schema", "object", "change", "ddl", "sql", "create", "alter", "drop", "grant", "table", "view"]
+-license = "MIT AND (Apache-2.0 OR BSD-2-Clause)"
++license = {text = "MIT AND (Apache-2.0 OR BSD-2-Clause)"}
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Operating System :: OS Independent",

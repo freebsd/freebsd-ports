@@ -1,0 +1,10 @@
+--- Cargo.toml.orig	2026-05-19 19:58:57 UTC
++++ Cargo.toml
+@@ -29,7 +29,6 @@ typst-kit = { version = "0.14.2", features = [
+ typst-kit = { version = "0.14.2", features = [
+   "downloads",
+   "embed-fonts",
+-  "vendor-openssl",
+ ] }
+ typst-pdf = "0.14.2"
+ typst-svg = "0.14.2"

@@ -1,6 +1,6 @@
-Gforth is a fast and portable implementation of the ANS Forth
+Gforth is a fast and portable implementation of the ANS Forth (1994)
 language. It works nicely with the Emacs editor, offers some nice
 features such as input completion and history and a powerful locals
 facility, and it even has a manual. Gforth employs traditional
-implementation techniques: its inner innerpreter is indirect or
+implementation techniques: its inner interpreter is indirect or
 direct threaded.

@@ -1,5 +1,5 @@
 PORTNAME=	rex-socket
-PORTVERSION=	0.1.59
+PORTVERSION=	0.1.66
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/rapid7/rex-socket
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rex-core>=0:security/rubygem-rex-core
+RUN_DEPENDS=	rubygem-dnsruby>=0:dns/rubygem-dnsruby \
+		rubygem-rex-core>=0:security/rubygem-rex-core
 
 NO_ARCH=	yes
 USES=		gem

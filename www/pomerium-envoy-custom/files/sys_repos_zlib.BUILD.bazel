@@ -1,0 +1,35 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+# Use base system zlib. Headers are placed under zlib/include/ to match the
+# original envoy zlib.BUILD include path (includes = ["zlib/include"]).
+cc_import(
+    name = "_z",
+    shared_library = "libz.so",
+)
+
+cc_library(
+    name = "z",
+    hdrs = [
+        "zlib/include/zlib.h",
+        "zlib/include/zconf.h",
+    ],
+    includes = ["zlib/include"],
+    deps = [":_z"],
+    visibility = ["//visibility:public"],
+)
+
+alias(
+    name = "zlib",
+    actual = ":z",
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "all",
+    srcs = [
+        "libz.so",
+        "zlib/include/zconf.h",
+        "zlib/include/zlib.h",
+    ],
+    visibility = ["//visibility:public"],
+)

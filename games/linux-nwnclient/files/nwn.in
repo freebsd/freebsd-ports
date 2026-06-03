@@ -1,0 +1,128 @@
+#!/bin/sh
+
+nwn_datadir="%%NWNDATADIR%%"
+nwn_clientdir="%%NWNCLIENTDIR%%"
+nwn_userdir=${NWN_USERDIR:-"${HOME}/.nwn"}
+nwn_moviedir="${nwn_userdir}/nwmovies"
+lc_dirs="ambient data dmvault hak localvault music override portraits"
+
+set -e
+
+# Print arguments in lowercase
+tolower() {
+	set -e
+	echo "$@" | tr '[:upper:]' '[:lower:]'
+}
+
+# Rename all files in a directory to lowercase
+lowerdir() {
+	set -e
+	find "$@" -name '*[A-Z]*' | while read name ; do
+		mv -v "${name}" "$(tolower ${name})"
+	done
+}
+
+# Copy a directory structure and symlink its contents
+copydir() {
+	set -e
+	cd "$1"
+	find . -type d | cut -c 3- | while read dir ; do
+		[ -d "${nwn_userdir}/${dir}" ] ||
+			mkdir "${nwn_userdir}/${dir}"
+	done
+	find . -type l | cut -c 3- | while read file ; do
+		[ -L "${nwn_userdir}/${file}" ] ||
+			cp -R "${file}" "${nwn_userdir}/${file}"
+	done
+	find . -type f | cut -c 3- | while read file ; do
+		[ -e "${nwn_userdir}/${file}" -o \
+		-e "$(tolower ${nwn_userdir}/${file})" ] ||
+			ln -s "${1}/${file}" "${nwn_userdir}/${file}"
+	done
+}
+
+# Create user directory.  Will also update a user directory if anything is
+# different due to running NWN with different versions of the game.
+rebuilduserdir() {
+	# Copy ${nwn_clientdir} first since it may contain files which
+	# override parts of ${nwn_datadir}
+	copydir "${nwn_clientdir}"
+	copydir "${nwn_datadir}"
+
+	# Some files need to have their names converted to lowercase.  Create
+	# the directories if missing due to differences between versions of NWN.
+	cd "${nwn_userdir}"
+	mkdir -p ${lc_dirs}
+	lowerdir ${lc_dirs}
+}
+
+if [ ! -d "${nwn_userdir}" ] ; then
+	echo "Creating user directory"
+	mkdir "${nwn_userdir}"
+
+	# Copy the ini file so the user can tweak it
+	cp "${nwn_clientdir}/nwn.ini" "${nwn_userdir}"
+
+	# Create a non-empty CD key file to work around a bug in the
+	# client: it will ask for the key twice if the file is
+	# initally empty or missing
+	echo '[CDKEY]' >"${nwn_userdir}/nwncdkey.ini"
+
+	rebuilduserdir
+
+	echo "Your Neverwinter Nights directory (~/.nwn) has now been"
+	echo "created and populated.  Press ENTER to start the game."
+	read dummy
+else
+	# Remove dead links from different versions (e.g., original versus
+	# Diamond Edition) of NWN as they could confuse the game.
+	find -L ${nwn_userdir} -type l -exec rm -- {} +
+
+	rebuilduserdir
+fi
+
+echo "Saved games will be stored in ${nwn_userdir}/saves/"
+
+cd "${nwn_userdir}"
+
+# Remove old movie log file.
+rm -f ${nwn_userdir}/nwmovies.log
+
+# SDL settings
+#
+# - SDL_VIDEO_X11_XRANDR:  NWN shows a black screen when at the resolution of
+#                          the monitor if it uses xrandr.  This is possibly only
+#                          present with multiple monitors under Zaphod mode.
+#                          Set SDL_VIDEO_X11_XRANDR=0 in the environment to work
+#                          around this.
+export SDL_MOUSE_RELATIVE=0
+export SDL_VIDEO_X11_DGAMOUSE=0
+export SDL_VIDEO_X11_XRANDR=${SDL_VIDEO_X11_XRANDR:-1}
+export SDL_AUDIODRIVER=${SDL_AUDIODRIVER:-"dsp"}
+
+# Library locations
+export LD_LIBRARY_PATH="${nwn_userdir}/lib:${nwn_userdir}/miles"
+
+# Prevent saving core files from NWN.
+ulimit -c 0
+
+echo "Starting Neverwinter Nights..."
+if [ -e ${nwn_moviedir}/nwmovies.so ] ; then
+	if [ ! -e ${nwn_userdir}/lib/libdisasm.so ]
+	then
+		# Needed for generation of nwmovies.ini.  Linked here since the
+		# code calls dlopen() from the user directory.
+		ln -sf ${nwn_moviedir}/libdis/libdisasm.so \
+			${nwn_userdir}/lib/libdisasm.so
+	fi
+
+	export LD_PRELOAD=${nwn_moviedir}/nwmovies.so:/compat/linux/lib/libz.so.1
+	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${nwn_moviedir}"
+
+	# Support for newer nwmovies.so that can use an external application.
+	# It requires LD_PRELOAD to be removed else the player will fail when it
+	# attempts to preload any Linux libraries.  To make it easier, use a
+	# script that removes it instead of changing the movie playing library.
+	export NWMOVIES_PLAY_COMMAND="${nwn_userdir}/nwmovies.sh"
+fi
+./nwmain "${@}"

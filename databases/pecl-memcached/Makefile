@@ -1,5 +1,5 @@
 PORTNAME=	memcached
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -33,5 +33,6 @@ MSGPACK_CONFIGURE_ENABLE=	memcached-msgpack
 MSGPACK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}msgpack>=0:devel/pecl-msgpack@${PHP_FLAVOR}
 SASL_CONFIGURE_ENABLE=	memcached-sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+
 
 .include <bsd.port.mk>

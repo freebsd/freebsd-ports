@@ -1,0 +1,5 @@
+pydeck is a set of Python bindings for deck.gl, optimized for data science
+use cases.
+
+pydeck provides a way to visualize large-scale datasets in Python, either in
+Jupyter notebooks or as standalone HTML files.

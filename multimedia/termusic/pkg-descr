@@ -1,0 +1,11 @@
+Termusic is a terminal-based music player written in Rust. It features a
+rich user interface with support for various audio formats and integration
+with external tools.
+
+Features:
+* Support for many file formats (MP3, FLAC, OGG, WAV, etc.)
+* Album art display (using various protocols like kitty, iterm2, or sixel)
+* Playlist management
+* Lyrics display
+* Scrobbling to Last.fm
+* Integration with yt-dlp for downloading music

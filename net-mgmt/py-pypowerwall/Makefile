@@ -1,7 +1,7 @@
 PORTNAME=	pypowerwall
-PORTVERSION=	0.10.8
-PORTREVISION=	1
+PORTVERSION=	0.14.10
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FL
 USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	proxy/server.py proxy/transform.py
+NO_ARCH=	yes
 
 USE_RC_SUBR=	${PORTNAME}_proxy
 

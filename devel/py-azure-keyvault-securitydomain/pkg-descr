@@ -1,0 +1,3 @@
+Azure Keyvault Securitydomain Client Library provides secrets management. It can
+be used to securely store and control access to tokens, passwords, certificates,
+API keys, and other secrets.

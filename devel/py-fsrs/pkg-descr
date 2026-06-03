@@ -1,0 +1,12 @@
+Python implementation of the Free Spaced Repetition Scheduler (FSRS)
+algorithm. FSRS uses machine learning to analyze personal review history
+and optimize flashcard scheduling intervals, replacing fixed-formula
+schedulers like SM-2 with data-driven, individualized memory modeling.
+
+Features:
+- Implements FSRS-6 algorithm
+- Scheduling, card state management, and retrievability calculation
+- Optional optimizer module for computing optimal parameters from review data
+- Built into Anki since 23.10, with FSRS-6 support in Anki 25.09
+
+-- Christos Longros <chris.longros@gmail.com>

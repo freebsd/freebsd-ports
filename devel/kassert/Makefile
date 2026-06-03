@@ -1,6 +1,6 @@
 PORTNAME=	kassert
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -27,7 +27,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	doxygen>=1.9.0:devel/doxygen
 DOCS_CMAKE_BOOL=	KASSERT_BUILD_DOCS
-DOCS_ALL_TARGET=	all docs
+DOCS_ALL_TARGET=	all kassert_docs
 DOCS_VARS_OFF=	no_build=yes
 
 post-extract:

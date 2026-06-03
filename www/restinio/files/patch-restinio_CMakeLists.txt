@@ -1,0 +1,15 @@
+--- restinio/CMakeLists.txt.orig	2026-02-22 22:12:55 UTC
++++ restinio/CMakeLists.txt
+@@ -102,9 +102,9 @@ elseif (TARGET llhttp::llhttp_static)
+ elseif (TARGET llhttp::llhttp_static)
+     target_link_libraries(${RESTINIO_LIBRARY_NAME} INTERFACE llhttp::llhttp_static)
+     message(STATUS "${RESTINIO_LIBRARY_NAME} target will depend on 'llhttp::llhttp_static' target")
+-elseif (TARGET llhttp::llhttp_dynamic)
+-    target_link_libraries(${RESTINIO_LIBRARY_NAME} INTERFACE llhttp::llhttp_dynamic)
+-    message(STATUS "${RESTINIO_LIBRARY_NAME} target will depend on 'llhttp::llhttp_dynamic' target")
++elseif (TARGET llhttp::llhttp_shared)
++    target_link_libraries(${RESTINIO_LIBRARY_NAME} INTERFACE llhttp::llhttp_shared)
++    message(STATUS "${RESTINIO_LIBRARY_NAME} target will depend on 'llhttp::llhttp_shared' target")
+ else ()
+     message(FATAL_ERROR
+             "Unable to identify how to depend on llhttp. "

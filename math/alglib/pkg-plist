@@ -10,6 +10,7 @@ include/libalglib/kernels_avx2.h
 include/libalglib/kernels_fma.h
 include/libalglib/kernels_sse2.h
 include/libalglib/linalg.h
+include/libalglib/minlp.h
 include/libalglib/optimization.h
 include/libalglib/solvers.h
 include/libalglib/specialfunctions.h

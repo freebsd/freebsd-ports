@@ -1,5 +1,6 @@
 PORTNAME=	gimp
-DISTVERSION=	3.0.4
+DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
 PKGNAMESUFFIX=	3-app
@@ -11,10 +12,11 @@ WWW=		https://www.gimp.org/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		glib-networking>=0:net/glib-networking \
-		mypaint-brushes>0:graphics/mypaint-brushes \
+		mypaint-brushes2>0:graphics/mypaint-brushes2 \
 		bash:shells/bash \
+		xdg-open:devel/xdg-utils \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		appstreamcli:devel/appstream
 
@@ -31,15 +33,18 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libjson-c.so:devel/json-c \
 		libmypaint.so:graphics/libmypaint \
 		libfreetype.so:print/freetype2 \
+		libappstream.so:devel/appstream \
 		libappstream-glib.so:devel/appstream-glib \
 		libImath.so:math/Imath \
 		libwebp.so:graphics/webp \
-		libgjs.so:lang/gjs \
 		libOpenEXR.so:graphics/openexr \
 		libIex.so:graphics/openexr \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgudev-1.0.so:devel/libgudev \
 		${LIB_DEPENDS_${ARCH}}
+
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		mypaint-brushes2>0:graphics/mypaint-brushes2
 
 LIB_DEPENDS_aarch64=		libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=		libunwind.so:devel/libunwind
@@ -47,10 +52,9 @@ LIB_DEPENDS_i386=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		glib-networking>=0:net/glib-networking \
-		mypaint-brushes>0:graphics/mypaint-brushes \
-		gjs-console:lang/gjs
+		mypaint-brushes>0:graphics/mypaint-brushes
 
 USES=		cpe desktop-file-utils gettext gnome jpeg libarchive \
 		localbase:ldflags meson ninja perl5 pkgconfig python:3.7+ \
@@ -77,14 +81,17 @@ MESON_ARGS=	-Dappdata-test=disabled \
 		-Diff=disabled \
 		-Dfits=disabled
 
-OPTIONS_DEFINE?=	AALIB GHOSTSCRIPT HEIF HELP OPENJPEG JXL LIBMNG WMF DOCS VALA CFITSIO
-OPTIONS_DEFAULT?=	AALIB GHOSTSCRIPT HEIF OPENJPEG JXL WMF DOCS VALA LUA CFITSIO
+OPTIONS_DEFINE?=	AALIB GHOSTSCRIPT HEIF HELP OPENJPEG JS JXL LIBMNG WMF DOCS VALA CFITSIO BASH
+OPTIONS_DEFAULT?=	AALIB GHOSTSCRIPT HEIF OPENJPEG JS JXL WMF DOCS VALA LUA CFITSIO BAS
 OPTIONS_SINGLE=		SCRIPTS
 OPTIONS_SINGLE_SCRIPTS=	LUA LUAJIT LUA_NONE
 OPTIONS_SUB=	yes
 
 AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
 AALIB_MESON_ENABLED=	aa
+
+BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_MESON_ENABLED=	bash-completion
 
 CFITSIO_MESON_ENABLED=	fits
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
@@ -112,6 +119,11 @@ WMF_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libwmf.so:graphics/libwmf
 WMF_MESON_ENABLED=	wmf
 
+JS_DESC=		Install Javascript plug-ins
+JS_LIB_DEPENDS=		libgjs.so:lang/gjs
+JS_RUN_DEPENDS=		gjs-console:lang/gjs
+JS_MESON_ENABLED=	javascript
+
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_MESON_ENABLED=	gi-docgen
 
@@ -125,13 +137,14 @@ LUA_RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-l
 
 LUAJIT_DESC?=		Lua scripting language support via Luajit
 LUAJIT_USES=		luajit
+LUAJIT_BROKEN=		LuaJIT cannot use devel/lua-lgi module yet
 
 LUA_NONE_DESC?=		Disable Lua scripting language support
 LUA_NONE_MESON_FALSE=	lua
 
 LIBS+=		-lexecinfo -lm
 CPE_PRODUCT=	gimp
-CPE_VENDOR=	gnu
+CPE_VENDOR=	gimp
 
 SHEBANG_FILES=	plug-ins/python/*.py \
 		plug-ins/python/python-console/*.py \
@@ -141,7 +154,8 @@ SHEBANG_FILES=	plug-ins/python/*.py \
 
 SHEBANG_LANG+=	gjs
 
-PLIST_SUB+=	BINVER=${PORTVERSION:R:R} ABIVER=${PORTVERSION:R} SHLIBVER=${PORTVERSION:E}
+#PLIST_SUB+=	BINVER=${PORTVERSION:R:R} ABIVER=${PORTVERSION:R} SHLIBVER=${PORTVERSION:R:E}.${PORTVERSION:E}.${PORTVERSION:R:E}
+PLIST_SUB+=	BINVER=3 ABIVER=3.2 APIVER=3.0 SHLIBVER=0.200.0
 
 .include <bsd.port.options.mk>
 
@@ -149,6 +163,10 @@ PLIST_SUB+=	BINVER=${PORTVERSION:R:R} ABIVER=${PORTVERSION:R} SHLIBVER=${PORTVER
 PLIST_SUB+=	LUASCRIPTS=""
 .else
 PLIST_SUB+=	LUASCRIPTS="@comment "
+.endif
+
+.if !exists(/usr/include/omp.h)
+MESON_ARGS+=	-Dopenmp=disabled
 .endif
 
 #post-patch:

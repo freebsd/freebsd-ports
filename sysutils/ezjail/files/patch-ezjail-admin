@@ -1,6 +1,14 @@
---- ezjail-admin.orig	2018-08-17 10:07:06 UTC
-+++ ezjail-admin
-@@ -335,7 +335,7 @@ ezjail_queryftpserver () {
+--- ezjail-admin.orig	2015-10-02 10:12:13.000000000 +0200
++++ ezjail-admin	2025-02-12 19:02:27.127127000 +0100
+@@ -31,6 +31,7 @@
+ : ${ezjail_procfs_enable="YES"}
+ : ${ezjail_fdescfs_enable="YES"}
+ : ${ezjail_exec_start="/bin/sh /etc/rc"}
++: ${ezjail_exec_stop="/bin/sh /etc/rc.shutdown"}
+ 
+ : ${ezjail_use_zfs="NO"}
+ 
+@@ -335,7 +336,7 @@
    unset _ret
    echo -n "Querying your ftp-server... "
    TIFS=${IFS}; IFS=
@@ -9,7 +17,7 @@
      if [ ${ezjail_path} = "NO" ]; then
        echo "Warning: I am having problems querying the ftp server you specified (${ezjail_disturi})."
        _ret=1; break
-@@ -1053,7 +1053,7 @@ setup|update)
+@@ -1053,7 +1054,7 @@
  
      # make and setup our world, then split basejail and newjail
      cd "${ezjail_sourcetree}" && env DESTDIR="${ezjail_jailfull}" make ${ezjail_installaction} || exerr "Error: The command 'make ${ezjail_installaction}' failed.\n  Refer to the error report(s) above."

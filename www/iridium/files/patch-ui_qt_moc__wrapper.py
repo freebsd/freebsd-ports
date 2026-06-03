@@ -1,4 +1,4 @@
---- ui/qt/moc_wrapper.py.orig	2025-06-19 07:37:57 UTC
+--- ui/qt/moc_wrapper.py.orig	2025-12-10 15:04:57 UTC
 +++ ui/qt/moc_wrapper.py
 @@ -20,4 +20,4 @@ args = parser.parse_args()
  if args.path is None:

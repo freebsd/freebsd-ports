@@ -1,16 +1,14 @@
 PORTNAME=	xstatic-rickshaw
-PORTVERSION=	1.5.1.0
-PORTREVISION=	2
+PORTVERSION=	1.5.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Rickshaw-${PORTVERSION}
+DISTNAME=	xstatic_rickshaw-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Rickshaw (XStatic packaging standard)
-WWW=		https://tech.shutterstock.com/rickshaw/ \
-		https://github.com/openstack/xstatic-rickshaw \
-		https://github.com/shutterstock/rickshaw
+COMMENT=	Rickshaw ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-rickshaw \
+		https://github.com/openstack/xstatic-rickshaw
 
 LICENSE=	MIT
 

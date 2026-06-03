@@ -1,0 +1,2 @@
+Textual Speedups module implements some of Textual's classes in Rust, which
+should make Textual apps faster.

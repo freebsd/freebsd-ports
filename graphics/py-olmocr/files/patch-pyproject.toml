@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2026-04-07 19:24:23 UTC
++++ pyproject.toml
+@@ -52,8 +52,8 @@ gpu = [
+ [project.optional-dependencies]
+ gpu = [
+     "torch>=2.7.0",
+-    "transformers==4.57.3",
+-    "vllm==0.11.2"
++    "transformers>=4.57.3",
++    "vllm>=0.11.2"
+ ]
+ 
+ beaker = [

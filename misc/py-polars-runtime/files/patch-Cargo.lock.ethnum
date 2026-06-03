@@ -1,0 +1,19 @@
+-- Update ethnum from 1.5.2 to 1.5.3 to fix Rust build failure
+--
+-- The Rust build fails with ethnum 1.5.2 due to a compilation issue that
+-- is resolved in the newer 1.5.3 release. This patch updates the Cargo.lock
+-- to use the newer version.
+
+--- Cargo.lock.orig
++++ Cargo.lock
+@@ -1388,7 +1388,7 @@ version = "0.5.0"
+ 
+ [[package]]
+ name = "ethnum"
+-version = "1.5.2"
++version = "1.5.3"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "ca81e6b4777c89fd810c25a4be2b1bd93ea034fbe58e6a75216a34c6b82c539b"
++checksum = "40404c3f5f511ec4da6fe866ddf6a717c309fdbb69fbbad7b0f3edab8f2e835f"
+ 
+ [[package]]

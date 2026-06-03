@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka \
 		uid_wrapper>=0:devel/uid_wrapper
 
-USES=		cmake:testing pathfix perl5 shebangfix
+USES=		cmake:testing perl5 shebangfix
 USE_PERL5=	run
 
 CMAKE_OFF=	UNIT_TESTING

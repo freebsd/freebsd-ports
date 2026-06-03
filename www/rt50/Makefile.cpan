@@ -14,6 +14,7 @@
 ### Crypt::Eksblowfish
 ### CSS::Minifier::XS
 ### CSS::Squish 0.06
+### CSS::Inliner 4027
 ### Data::GUID
 ### Data::ICal
 ### Date::Extract 0.07
@@ -97,6 +98,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Business-Hours>0:misc/p5-Business-Hours				\
 		p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI				\
 		p5-CGI-PSGI>=0.12:www/p5-CGI-PSGI					\
+		p5-CSS-Inliner>=4027:www/p5-CSS-Inliner					\
 		p5-CSS-Squish>=0.06:textproc/p5-CSS-Squish				\
 		p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS			\
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor				\

@@ -1,6 +1,5 @@
 PORTNAME=	feh
-PORTVERSION=	3.10.3
-PORTREVISION=	2
+PORTVERSION=	3.12.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
@@ -12,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
-		libpng.so:graphics/png
+		libpng16.so:graphics/png
 TEST_DEPENDS=	p5-Test-Command>=0:devel/p5-Test-Command
 
 USES=		cpe desktop-file-utils gmake localbase:ldflags tar:bzip2 xorg

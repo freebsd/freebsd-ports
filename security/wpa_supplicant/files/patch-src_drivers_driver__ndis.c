@@ -1,6 +1,6 @@
---- src/drivers/driver_ndis.c.orig	2019-08-07 13:25:25 UTC
+--- src/drivers/driver_ndis.c.orig	2024-07-20 18:04:37 UTC
 +++ src/drivers/driver_ndis.c
-@@ -504,13 +504,13 @@ static int ndis_get_oid(struct wpa_drive
+@@ -504,13 +504,13 @@ static int ndis_get_oid(struct wpa_driver_ndis_data *d
  	o->Length = len;
  
  	if (!PacketRequest(drv->adapter, FALSE, o)) {
@@ -16,7 +16,7 @@
  			   __func__, oid, (unsigned int) o->Length, len);
  		os_free(buf);
  		return -1;
-@@ -573,7 +573,7 @@ static int ndis_set_oid(struct wpa_drive
+@@ -573,7 +573,7 @@ static int ndis_set_oid(struct wpa_driver_ndis_data *d
  		os_memcpy(o->Data, data, len);
  
  	if (!PacketRequest(drv->adapter, TRUE, o)) {
@@ -25,7 +25,7 @@
  			   __func__, oid, len);
  		os_free(buf);
  		return -1;
-@@ -1531,7 +1531,7 @@ static void wpa_driver_ndis_event_auth(s
+@@ -1543,7 +1543,7 @@ static void wpa_driver_ndis_event_auth(struct wpa_driv
  
  	if (data_len < sizeof(*req)) {
  		wpa_printf(MSG_DEBUG, "NDIS: Too short Authentication Request "
@@ -34,7 +34,7 @@
  		return;
  	}
  	req = (NDIS_802_11_AUTHENTICATION_REQUEST *) data;
-@@ -1565,7 +1565,7 @@ static void wpa_driver_ndis_event_pmkid(
+@@ -1577,7 +1577,7 @@ static void wpa_driver_ndis_event_pmkid(struct wpa_dri
  
  	if (data_len < 8) {
  		wpa_printf(MSG_DEBUG, "NDIS: Too short PMKID Candidate List "
@@ -43,7 +43,7 @@
  		return;
  	}
  	pmkid = (NDIS_802_11_PMKID_CANDIDATE_LIST *) data;
-@@ -1587,7 +1587,7 @@ static void wpa_driver_ndis_event_pmkid(
+@@ -1599,7 +1599,7 @@ static void wpa_driver_ndis_event_pmkid(struct wpa_dri
  	os_memset(&event, 0, sizeof(event));
  	for (i = 0; i < pmkid->NumCandidates; i++) {
  		PMKID_CANDIDATE *p = &pmkid->CandidateList[i];
@@ -52,7 +52,7 @@
  			   i, MAC2STR(p->BSSID), (int) p->Flags);
  		os_memcpy(event.pmkid_candidate.bssid, p->BSSID, ETH_ALEN);
  		event.pmkid_candidate.index = i;
-@@ -1778,7 +1778,7 @@ static void wpa_driver_ndis_get_capabili
+@@ -1790,7 +1790,7 @@ static void wpa_driver_ndis_get_capability(struct wpa_
  				   "overflow");
  			break;
  		}
@@ -61,7 +61,7 @@
  			   i, (int) ae->AuthModeSupported,
  			   (int) ae->EncryptStatusSupported);
  		switch (ae->AuthModeSupported) {
-@@ -2106,7 +2106,11 @@ static int wpa_driver_ndis_get_names(str
+@@ -2118,7 +2118,11 @@ static int wpa_driver_ndis_get_names(struct wpa_driver
  		dlen = dpos - desc;
  	else
  		dlen = os_strlen(desc);
@@ -74,7 +74,7 @@
  	os_free(b);
  	if (drv->adapter_desc == NULL)
  		return -1;
-@@ -2274,7 +2278,11 @@ static int wpa_driver_ndis_get_names(str
+@@ -2286,7 +2290,11 @@ static int wpa_driver_ndis_get_names(struct wpa_driver
  	} else {
  		dlen = os_strlen(desc[i]);
  	}

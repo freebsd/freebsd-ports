@@ -1,5 +1,6 @@
 PORTNAME=	dipy
 DISTVERSION=	1.10.0
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +13,11 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=3.1.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nibabel>=3.0.0:science/py-nibabel@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.8:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.30.0:misc/py-tqdm@${PY_FLAVOR} \
@@ -30,7 +31,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fury>0:graphics/py-fury@${PY_FLAVOR} \
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cvxpy>0:math/py-cvxpy@${PY_FLAVOR} # "doc" extra dependencies, see dipy/info.py
 
 USES=		python shebangfix
-USE_PYTHON=	concurrent cython3 pep517 pytest # autoplist is broken: it produces incorrect entries and unnecessary files are also placed under doc/
+USE_PYTHON=	concurrent cython pep517 pytest # autoplist is broken: it produces incorrect entries and unnecessary files are also placed under doc/
 
 SHEBANG_GLOB=	*.sh *.py
 

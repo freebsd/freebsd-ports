@@ -22,4 +22,6 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	plataformatec
 
+PORTSCOUT=	limit:^4\.
+
 .include <bsd.port.mk>

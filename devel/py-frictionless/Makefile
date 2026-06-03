@@ -1,5 +1,5 @@
 PORTNAME=	frictionless
-PORTVERSION=	5.18.1
+PORTVERSION=	5.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=22.2.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet>=6.0,1:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>=4.2:devel/py-humanize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -71,11 +71,11 @@ MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymysql>=1.0:databases/py-pymysql@${PY
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4:databases/py-sqlalchemy20@${PY_FLAVOR}
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.0,1:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyarrow>=14.0:databases/py-pyarrow@${PY_FLAVOR}
-PARQUET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastparquet>=0.8:databases/py-fastparquet@${PY_FLAVOR}
+PARQUET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=14.0:databases/py-pyarrow@${PY_FLAVOR}
 POSTGRESQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg>=3.0:databases/py-psycopg@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4:databases/py-sqlalchemy20@${PY_FLAVOR}
 SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4:databases/py-sqlalchemy20@${PY_FLAVOR}
 VISIDATA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}visidata>=2.10:devel/py-visidata@${PY_FLAVOR}
-WKT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grako>=3.99:textproc/py-grako@${PY_FLAVOR}
+WKT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tatsu>=5.8.3:devel/py-tatsu@${PY_FLAVOR}
 
 .include <bsd.port.mk>

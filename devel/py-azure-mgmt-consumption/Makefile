@@ -1,22 +1,26 @@
 PORTNAME=	azure-mgmt-consumption
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	10.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@FreeBSD.org
-COMMENT=	Microsoft Azure Consumption Management Client Library for Python
-WWW=		https://pypi.org/project/azure-mgmt-consumption/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Microsoft Azure Consumption Client Library for Python
+WWW=		https://azure.github.io/azure-sdk-for-python/ \
+		https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/consumption/azure-mgmt-consumption \
+		https://github.com/Azure/azure-sdk-for-python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.5.0:net-mgmt/py-msrest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.4.32:net-mgmt/py-msrestazure@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=1.1<2:www/py-azure-common@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.3.1<2.0.0:devel/py-azure-mgmt-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msrest>=0.6.21:net-mgmt/py-msrest@${PY_FLAVOR}
 
-USES=		azurepy python zip
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python zip
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

@@ -1,12 +1,12 @@
 PORTNAME=	goswagger
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.4
-PORTREVISION=	19
+DISTVERSION=	0.33.2
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Swagger 2.0 implementation for Go
-WWW=		https://goswagger.io/
+WWW=		https://goswagger.io/ \
+		https://github.com/go-swagger/go-swagger/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

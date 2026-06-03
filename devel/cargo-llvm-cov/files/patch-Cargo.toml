@@ -1,0 +1,14 @@
+-- Remove test-helper git dev-dependency. It is only needed for tests which are
+-- not run during port build. The git-sourced crate causes build failures in
+-- poudriere due to incompatibilities in the cargo [patch] section handling.
+
+--- Cargo.toml.orig	2026-05-10 00:41:23 UTC
++++ Cargo.toml
+@@ -47,7 +47,6 @@ tempfile = { version = "3", default-features = false }
+ build-context = "0.1"
+ rustversion = "1"
+ tempfile = { version = "3", default-features = false }
+-test-helper = { features = ["cli", "doc", "git"], git = "https://github.com/taiki-e/test-helper.git", rev = "f38a7f5" }
+ 
+ [lints]
+ workspace = true

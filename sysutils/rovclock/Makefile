@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=		fails to compile: rovclock.c:30:10: 'machine/pio.h' file not found
 BROKEN_riscv64=		fails to compile: rovclock.c:30:10: 'machine/pio.h' file not found
+BROKEN_armv7=		fails to compile: rovclock.c:30:10: 'machine/pio.h' file not found
 
 USES=		tar:bzip2
 

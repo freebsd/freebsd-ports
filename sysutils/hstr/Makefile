@@ -1,6 +1,5 @@
 PORTNAME=	hstr
-DISTVERSION=	2.3
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	monsieurp@gentoo.org
@@ -15,9 +14,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dvorka
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/hh bin/hstr \
-		share/man/man1/hstr.1.gz share/bash-completion/completions/hstr
+PLIST_FILES=	bin/hh \
+		bin/hstr \
+		share/bash-completion/completions/hstr \
+		share/man/man1/hstr.1.gz
 
 .include <bsd.port.mk>

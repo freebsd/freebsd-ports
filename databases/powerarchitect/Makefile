@@ -1,5 +1,6 @@
 PORTNAME=	powerarchitect
 PORTVERSION=	1.0.9
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	http://www.bestofbi.com/downloads/architect/${PORTVERSION}/
 DISTNAME=	SQL-Power-Architect-generic-${PORTVERSION}

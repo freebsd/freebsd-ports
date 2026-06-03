@@ -1,5 +1,6 @@
 PORTNAME=	argouml
 DISTVERSION=	0.35.1
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/argouml-tigris-org/argouml/releases/download/VERSION_${DISTVERSION:C/\./_/g}/
 DISTNAME=	ArgoUML-${DISTVERSION}

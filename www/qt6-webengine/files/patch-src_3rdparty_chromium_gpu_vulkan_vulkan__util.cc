@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_util.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_util.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_util.cc
-@@ -473,7 +473,7 @@ bool CheckVulkanCompatibilities(
+@@ -476,7 +476,7 @@ bool CheckVulkanCompatibilities(
      }
    }
  

@@ -7,6 +7,7 @@ etc/ltfs.conf.local
 include/ltfs/config.h
 include/ltfs/libltfs/arch/arch_info.h
 include/ltfs/libltfs/arch/errormap.h
+include/ltfs/libltfs/arch/ltfs_arch_ops.h
 include/ltfs/libltfs/arch/signal_internal.h
 include/ltfs/libltfs/arch/time_internal.h
 include/ltfs/libltfs/config_file.h

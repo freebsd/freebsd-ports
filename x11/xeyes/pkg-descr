@@ -1,1 +1,5 @@
-This package contains xeyes, which is a "follow the mouse" X demo application.
+A "follow the mouse" X demo, using the X SHAPE extension.
+Xeyes watches what you do and reports to the Boss.
+
+Keith Packard copied from the NeWS version written (apparently) by
+Jeremy Huxtable as seen at SIGGRAPH '88.

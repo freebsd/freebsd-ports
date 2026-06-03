@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-01-22 21:35:30 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ # https://packaging.python.org/en/latest/specifications/pyproject-toml/
+ 
+ [build-system]
+-requires = ["setuptools>=75.6.0"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]

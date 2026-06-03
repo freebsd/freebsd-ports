@@ -1,0 +1,11 @@
+--- doc/CMakeLists.txt.orig	2026-03-30 23:37:35.770967000 -0700
++++ doc/CMakeLists.txt	2026-03-30 23:37:58.442251000 -0700
+@@ -1,6 +1,8 @@
+ # SPDX-FileCopyrightText: Copyright © DUNE Project contributors, see file LICENSE.md in module root
+ # SPDX-License-Identifier: LicenseRef-GPL-2.0-only-with-DUNE-exception
+ 
++if (FREEBSD_INSTALL_DOCS)
+ add_subdirectory(doxygen)
++endif()
+ add_subdirectory(grids)
+ add_subdirectory(recipes)

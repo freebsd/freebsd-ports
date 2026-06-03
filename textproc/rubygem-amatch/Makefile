@@ -1,5 +1,5 @@
 PORTNAME=	amatch
-PORTVERSION=	0.4.2
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-mize>=0:devel/rubygem-mize \
-		rubygem-tins>=1.0<2:devel/rubygem-tins
+		rubygem-tins>=1<2:devel/rubygem-tins
 
 USES=		gem
 

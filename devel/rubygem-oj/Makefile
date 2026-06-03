@@ -1,11 +1,12 @@
 PORTNAME=	oj
-PORTVERSION=	3.16.11
+PORTVERSION=	3.16.17
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast JSON parser and serializer
-WWW=		https://www.ohler.com/oj/
+WWW=		https://www.ohler.com/oj/ \
+		https://github.com/ohler55/oj
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

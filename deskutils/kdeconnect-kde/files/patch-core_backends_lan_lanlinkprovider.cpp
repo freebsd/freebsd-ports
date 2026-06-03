@@ -1,6 +1,6 @@
---- core/backends/lan/lanlinkprovider.cpp.orig	2023-12-18 22:14:59 UTC
+--- core/backends/lan/lanlinkprovider.cpp.orig	2025-12-03 23:06:29 UTC
 +++ core/backends/lan/lanlinkprovider.cpp
-@@ -291,6 +291,16 @@ void LanLinkProvider::udpBroadcastReceived()
+@@ -303,6 +303,16 @@ void LanLinkProvider::udpBroadcastReceived()
          m_lastConnectionTime[deviceId] = now;
  
          int tcpPort = receivedPacket->get<int>(QStringLiteral("tcpPort"));

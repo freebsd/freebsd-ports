@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-04-01 07:40:07.000000000 -0700
++++ pyproject.toml	2026-04-13 08:00:15.036506000 -0700
+@@ -7,7 +7,8 @@
+ readme = "README.md"
+ # https://peps.python.org/pep-0621/#readme
+ requires-python = ">=3.10"
+-license = "GPL-3.0-or-later"
++# FreeBSD's py-setuptools 63.1.0 cannot handle the license expression
++# license = "GPL-3.0-or-later"
+ authors = [{ "name" = "Will Thames", "email" = "will@thames.id.au" }]
+ maintainers = [{ "name" = "Ansible by Red Hat", "email" = "info@ansible.com" }]
+ keywords = ["ansible", "lint"]
+@@ -119,7 +120,7 @@
+ [build-system]
+ requires = [
+   "setuptools_scm[toml] >= 7.0.5",  # required for "no-local-version" scheme
+-  "setuptools >= 65.3.0",
++  "setuptools >= 63.1.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

@@ -1,6 +1,6 @@
---- src/sss_client/nss_group.c.orig	2023-06-05 03:48:03 UTC
+--- src/sss_client/nss_group.c.orig	2025-05-07 09:36:03 UTC
 +++ src/sss_client/nss_group.c
-@@ -403,6 +403,75 @@ out:
+@@ -411,6 +411,75 @@ out:
      return nret;
  }
  

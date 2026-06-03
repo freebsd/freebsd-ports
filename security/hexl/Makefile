@@ -5,12 +5,14 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel homomorphic encryption acceleration library
-WWW=		https://intel.github.io/hexl/v1.2.1/doxygen/html/index.html
+WWW=		https://github.com/IntelLabs/hexl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	error: __int128 is not supported on this target
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	${PREFIX}/include/cpu_features/cpuinfo_x86.h is unconditionaly included
+BROKEN_i386=		error: __int128 is not supported on this target
 
 LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
 
@@ -18,7 +20,7 @@ USES=		cmake:testing compiler:c++17-lang localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	intel
+GH_ACCOUNT=	IntelLabs
 
 CMAKE_ON=		HEXL_SHARED_LIB
 CMAKE_OFF=		HEXL_BENCHMARK HEXL_TESTING

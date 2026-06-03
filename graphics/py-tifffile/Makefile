@@ -1,5 +1,5 @@
 PORTNAME=	tifffile
-PORTVERSION=	2025.6.1
+PORTVERSION=	2026.3.3
 PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
@@ -28,12 +28,12 @@ PLOT_DESC=	Plotting support
 XML_DESC=	Validate and print XML
 ZARR_DESC=	Access zarr store
 
-CODECS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imagecodecs>=2024.12.30:graphics/py-imagecodecs@${PY_FLAVOR}
+CODECS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imagecodecs>=2025.11.11:graphics/py-imagecodecs@${PY_FLAVOR}
 PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
 XML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}lxml5>=0:devel/py-lxml5@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 ZARR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}kerchunk>=0:filesystems/py-kerchunk@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}zarr>=3:devel/py-zarr@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}zarr>=3.1.5:devel/py-zarr@${PY_FLAVOR}
 
 .include <bsd.port.mk>

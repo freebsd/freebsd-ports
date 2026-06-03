@@ -1,4 +1,4 @@
---- config/puma.rb.example.orig	2025-01-22 04:13:11 UTC
+--- config/puma.rb.example.orig	2025-11-19 16:58:17 UTC
 +++ config/puma.rb.example
 @@ -1,15 +1,20 @@
  # frozen_string_literal: true
@@ -37,9 +37,9 @@
 -require_relative "/home/git/gitlab/lib/gitlab/cluster/lifecycle_events"
 +require_relative "%%WWWDIR%%/lib/gitlab/cluster/lifecycle_events"
  
- on_restart do
-   # Signal application hooks that we're about to restart
-@@ -74,14 +79,14 @@ wait_for_less_busy_worker ENV.fetch('PUMA_WAIT_FOR_LES
+ if Gem::Version.new(Puma::Const::PUMA_VERSION) < Gem::Version.new('7.0')
+   Gitlab::Cluster::LifecycleEvents.set_puma_options @config.options
+@@ -94,14 +99,14 @@ wait_for_less_busy_worker ENV.fetch('PUMA_WAIT_FOR_LES
  wait_for_less_busy_worker ENV.fetch('PUMA_WAIT_FOR_LESS_BUSY_WORKER', 0.001).to_f
  
  # Use json formatter

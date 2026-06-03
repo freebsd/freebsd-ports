@@ -34,6 +34,7 @@ etc/fonts/conf.avail/35-lang-normalize.conf
 etc/fonts/conf.avail/40-nonlatin.conf
 etc/fonts/conf.avail/45-generic.conf
 etc/fonts/conf.avail/45-latin.conf
+etc/fonts/conf.avail/48-guessfamily.conf
 etc/fonts/conf.avail/48-spacing.conf
 etc/fonts/conf.avail/49-sansserif.conf
 etc/fonts/conf.avail/50-user.conf
@@ -44,6 +45,8 @@ etc/fonts/conf.avail/65-fonts-persian.conf
 etc/fonts/conf.avail/65-khmer.conf
 etc/fonts/conf.avail/65-nonlatin.conf
 etc/fonts/conf.avail/69-unifont.conf
+etc/fonts/conf.avail/70-no-bitmaps-and-emoji.conf
+etc/fonts/conf.avail/70-no-bitmaps-except-emoji.conf
 etc/fonts/conf.avail/70-no-bitmaps.conf
 etc/fonts/conf.avail/70-yes-bitmaps.conf
 etc/fonts/conf.avail/80-delicious.conf
@@ -67,7 +70,7 @@ etc/fonts/conf.d/60-latin.conf
 etc/fonts/conf.d/65-fonts-persian.conf
 etc/fonts/conf.d/65-nonlatin.conf
 etc/fonts/conf.d/69-unifont.conf
-%%NO_BITMAPS%%etc/fonts/conf.d/70-no-bitmaps.conf
+%%NO_BITMAPS%%etc/fonts/conf.d/70-no-bitmaps-and-emoji.conf
 %%BITMAPS%%etc/fonts/conf.d/70-yes-bitmaps.conf
 etc/fonts/conf.d/80-delicious.conf
 etc/fonts/conf.d/90-synthetic.conf
@@ -80,7 +83,7 @@ include/fontconfig/fontconfig.h
 lib/libfontconfig.a
 lib/libfontconfig.so
 lib/libfontconfig.so.1
-lib/libfontconfig.so.1.14.0
+lib/libfontconfig.so.1.16.0
 libdata/pkgconfig/fontconfig.pc
 share/man/man1/fc-cache.1.gz
 share/man/man1/fc-cat.1.gz
@@ -128,6 +131,8 @@ share/man/man3/FcCharSetNextPage.3.gz
 share/man/man3/FcCharSetSubtract.3.gz
 share/man/man3/FcCharSetSubtractCount.3.gz
 share/man/man3/FcCharSetUnion.3.gz
+share/man/man3/FcConfigAcceptFilter.3.gz
+share/man/man3/FcConfigAcceptFont.3.gz
 share/man/man3/FcConfigAppFontAddDir.3.gz
 share/man/man3/FcConfigAppFontAddFile.3.gz
 share/man/man3/FcConfigAppFontClear.3.gz
@@ -145,6 +150,7 @@ share/man/man3/FcConfigGetCacheDirs.3.gz
 share/man/man3/FcConfigGetConfigDirs.3.gz
 share/man/man3/FcConfigGetConfigFiles.3.gz
 share/man/man3/FcConfigGetCurrent.3.gz
+share/man/man3/FcConfigGetDefaultLangs.3.gz
 share/man/man3/FcConfigGetFilename.3.gz
 share/man/man3/FcConfigGetFontDirs.3.gz
 share/man/man3/FcConfigGetFonts.3.gz
@@ -153,8 +159,11 @@ share/man/man3/FcConfigGetSysRoot.3.gz
 share/man/man3/FcConfigHome.3.gz
 share/man/man3/FcConfigParseAndLoad.3.gz
 share/man/man3/FcConfigParseAndLoadFromMemory.3.gz
+share/man/man3/FcConfigPreferAppFont.3.gz
 share/man/man3/FcConfigReference.3.gz
 share/man/man3/FcConfigSetCurrent.3.gz
+share/man/man3/FcConfigSetDefaultSubstitute.3.gz
+share/man/man3/FcConfigSetFontSetFilter.3.gz
 share/man/man3/FcConfigSetRescanInterval.3.gz
 share/man/man3/FcConfigSetSysRoot.3.gz
 share/man/man3/FcConfigSubstitute.3.gz
@@ -188,6 +197,7 @@ share/man/man3/FcFontSetPrint.3.gz
 share/man/man3/FcFontSetSort.3.gz
 share/man/man3/FcFontSetSortDestroy.3.gz
 share/man/man3/FcFontSort.3.gz
+share/man/man3/FcFontationsQueryAll.3.gz
 share/man/man3/FcFreeTypeCharIndex.3.gz
 share/man/man3/FcFreeTypeCharSet.3.gz
 share/man/man3/FcFreeTypeCharSetAndSpacing.3.gz

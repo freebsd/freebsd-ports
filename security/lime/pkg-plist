@@ -1,5 +1,6 @@
 include/lime/lime.hpp
-lib/liblime.a
+lib/liblime.so
+lib/liblime.so.0
 share/Lime/cmake/FindSoci.cmake
 share/Lime/cmake/LimeConfig.cmake
 share/Lime/cmake/LimeConfigVersion.cmake

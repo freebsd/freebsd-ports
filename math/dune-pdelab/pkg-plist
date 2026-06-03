@@ -1,3 +1,5 @@
+include/dune-pdelab-config.hh
+include/dune/pdelab.hh
 include/dune/pdelab/adaptivity/adaptivity.hh
 include/dune/pdelab/backend/common/aliasedmatrixview.hh
 include/dune/pdelab/backend/common/aliasedvectorview.hh
@@ -31,6 +33,13 @@ include/dune/pdelab/backend/istl/geneo/subdomainbasis.hh
 include/dune/pdelab/backend/istl/geneo/subdomainprojectedcoarsespace.hh
 include/dune/pdelab/backend/istl/geneo/two_level_schwarz.hh
 include/dune/pdelab/backend/istl/istlsolverbackend.hh
+include/dune/pdelab/backend/istl/matrixfree/assembledblockjacobipreconditioner.hh
+include/dune/pdelab/backend/istl/matrixfree/backends.hh
+include/dune/pdelab/backend/istl/matrixfree/blocksorpreconditioner.hh
+include/dune/pdelab/backend/istl/matrixfree/checklopinterface.hh
+include/dune/pdelab/backend/istl/matrixfree/gridoperatorpreconditioner.hh
+include/dune/pdelab/backend/istl/matrixfree/iterativeblockjacobipreconditioner.hh
+include/dune/pdelab/backend/istl/matrixfree/solverstatistics.hh
 include/dune/pdelab/backend/istl/matrixhelpers.hh
 include/dune/pdelab/backend/istl/novlpistlsolverbackend.hh
 include/dune/pdelab/backend/istl/ovlp_amg_dg_backend.hh
@@ -69,6 +78,12 @@ include/dune/pdelab/common/intersectiontype.hh
 include/dune/pdelab/common/jacobiantocurl.hh
 include/dune/pdelab/common/logtag.hh
 include/dune/pdelab/common/multiindex.hh
+include/dune/pdelab/common/partition/halo/colored.hh
+include/dune/pdelab/common/partition/halo/region.hh
+include/dune/pdelab/common/partition/halo/uncolored.hh
+include/dune/pdelab/common/partition/identity.hh
+include/dune/pdelab/common/partition/iteratorsplit.hh
+include/dune/pdelab/common/partition/metis.hh
 include/dune/pdelab/common/partitionviewentityset.hh
 include/dune/pdelab/common/polymorphicbufferwrapper.hh
 include/dune/pdelab/common/quadraturerules.hh
@@ -117,6 +132,7 @@ include/dune/pdelab/finiteelementmap/raviartthomasfem.hh
 include/dune/pdelab/finiteelementmap/rt0cube2dfem.hh
 include/dune/pdelab/finiteelementmap/rt0cube3dfem.hh
 include/dune/pdelab/finiteelementmap/rt0simplex2dfem.hh
+include/dune/pdelab/finiteelementmap/rt0simplex3dfem.hh
 include/dune/pdelab/finiteelementmap/rt1cube2dfem.hh
 include/dune/pdelab/finiteelementmap/rt1cube3dfem.hh
 include/dune/pdelab/finiteelementmap/rt1simplex2dfem.hh
@@ -275,7 +291,8 @@ include/dune/pdelab/solver/utility.hh
 include/dune/pdelab/stationary/linearproblem.hh
 lib/cmake/dune-pdelab/dune-pdelab-config-version.cmake
 lib/cmake/dune-pdelab/dune-pdelab-config.cmake
-lib/cmake/dune-pdelab/dune-pdelab-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dune-pdelab/dune-pdelab-scoped-targets-%%DUNE_PDELAB_CMAKE_HASH%%-release.cmake
+lib/cmake/dune-pdelab/dune-pdelab-scoped-targets-%%DUNE_PDELAB_CMAKE_HASH%%.cmake
 lib/cmake/dune-pdelab/dune-pdelab-targets.cmake
 lib/dunecontrol/dune-pdelab/dune.module
 lib/libdunepdelab.so

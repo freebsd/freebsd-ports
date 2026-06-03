@@ -1,11 +1,11 @@
---- cmake_modules/ThirdpartyToolchain.cmake.orig	2024-12-16 03:22:53 UTC
+--- cmake_modules/ThirdpartyToolchain.cmake.orig	2025-09-29 07:31:58 UTC
 +++ cmake_modules/ThirdpartyToolchain.cmake
-@@ -72,7 +72,7 @@ ExternalProject_Add (orc-format_ep
- # ----------------------------------------------------------------------
- # ORC Format
+@@ -141,7 +141,7 @@ else()
+   set(ORC_FORMAT_SOURCE_URL "$ENV{ORC_FORMAT_URL}")
+   message(STATUS "Using ORC_FORMAT_URL: ${ORC_FORMAT_SOURCE_URL}")
+ else()
+-  set(ORC_FORMAT_SOURCE_URL "https://www.apache.org/dyn/closer.lua/orc/orc-format-${ORC_FORMAT_VERSION}/orc-format-${ORC_FORMAT_VERSION}.tar.gz?action=download" )
++  set(ORC_FORMAT_SOURCE_URL "%%MYSITE%%/orc-format-${ORC_FORMAT_VERSION}.tar.gz" )
+   message(STATUS "Using DEFAULT URL: ${ORC_FORMAT_SOURCE_URL}")
+ endif()
  ExternalProject_Add (orc-format_ep
--  URL "https://archive.apache.org/dist/orc/orc-format-${ORC_FORMAT_VERSION}/orc-format-${ORC_FORMAT_VERSION}.tar.gz"
-+  URL "%%MYSITE%%/orc-format-${ORC_FORMAT_VERSION}.tar.gz"
-   URL_HASH SHA256=739fae5ff94b1f812b413077280361045bf92e510ef04b34a610e23a945d8cd5
-   CONFIGURE_COMMAND ""
-   BUILD_COMMAND     ""

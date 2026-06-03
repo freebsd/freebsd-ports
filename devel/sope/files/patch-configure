@@ -1,6 +1,6 @@
---- configure.orig	2016-09-08 20:29:55.239121000 -0500
-+++ configure	2016-09-08 20:30:26.951403000 -0500
-@@ -45,7 +45,7 @@
+--- configure.orig	2026-03-03 11:58:39 UTC
++++ configure
+@@ -46,7 +46,7 @@ fi
  fi
  
  # TODO: add pg_config, mysql_config etc!

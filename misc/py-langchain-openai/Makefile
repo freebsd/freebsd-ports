@@ -1,5 +1,5 @@
 PORTNAME=	langchain-openai
-DISTVERSION=	0.3.28
+DISTVERSION=	1.2.2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +13,11 @@ WWW=		https://python.langchain.com/docs/introduction/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.68:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openai>=1.86.0:misc/py-openai@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7:textproc/py-tiktoken@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.0:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=2.26.0:misc/py-openai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest

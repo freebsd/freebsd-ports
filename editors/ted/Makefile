@@ -1,51 +1,54 @@
 PORTNAME=	ted
-PORTVERSION=	2.23
-PORTREVISION=	8
+DISTVERSION=	2.23
+PORTREVISION=	9
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/ \
-		http://fossies.org/linux/misc/
+		https://ftp.nluug.nl/pub/editors/ted/
+PKGNAMESUFFIX=	${${FLAVOR} == motif:?:-${FLAVOR}}
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	X11 based RTF editor
 WWW=		https://www.nllgg.nl/Ted/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpaper.so:print/libpaper \
+		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff \
-		libpaper.so:print/libpaper
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	gsfonts>0:print/gsfonts
 
-WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
+FLAVORS=	motif gtk2
+FLAVOR?=	${FLAVORS:[1]}
 
-USES=		ghostscript:x11,run iconv pkgconfig xorg
-USE_XORG=	xext xft
+USES=		ghostscript:x11,run iconv jpeg pkgconfig xorg \
+		${${FLAVOR} == motif:?motif:gnome}
+USE_GNOME=	${${FLAVOR} == motif:?:gtk20}
+USE_XORG=	ice sm x11 xext xft xmu xorgproto xpm xt
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
+		--with-${${FLAVOR} == motif:?MOTIF:GTK}
+
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
-		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\"" \
+		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
 		DEF_PSSCRIPT_DIR="-DPSSCRIPT_DIR=\"\\\"${DATADIR}/\\\"\""
 ALL_TARGET=	compile.shared
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
-		ac_iconv_includes=${LOCALBASE}/include
+
+CONFLICTS_INSTALL=	${PORTNAME}${${FLAVOR} == motif:?-gtk2:}
 
 DATADIR=	${PREFIX}/share/Ted
 DOCSDIR=	${PREFIX}/share/doc/Ted
 
+WRKSRC=		${WRKDIR}/Ted-${DISTVERSION}
+
 AFMDIR=		${DATADIR}/afm
 INDDIR=		${DATADIR}/dfa
-
-OPTIONS_DEFINE=	GTK2 DOCS
-GTK2_DESC=	Use GTK2 instead of MOTIF
-GTK2_USES=	gnome
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_ON=	--with-GTK
-GTK2_CPPFLAGS=		`pkg-config --cflags gtk+-2.0 | ${SED} -e 's|-I|-isystem |g'`
-GTK2_USES_OFF=		motif
-GTK2_CONFIGURE_OFF=	--with-MOTIF
 
 .include <bsd.port.pre.mk>
 
@@ -60,25 +63,20 @@ post-patch:
 		 s|/usr/local|${LOCALBASE}|g ; \
 		 /paper.h/s|/usr/include|${LOCALBASE}/include|g ; \
 		 /paper.h/s|/usr/lib|${LOCALBASE}/lib|g'
-.if ! empty(ICONV_LIB)
-	@${REINPLACE_CMD} 's|/iconv\.so|/libiconv.so|' \
-		${WRKSRC}/Ted/configure ${WRKSRC}/textEncoding/configure
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Ted/Ted ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tedPackage/examples/rtf2*.sh ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/tedPackage/doc/Ted.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/tedPackage/doc/rtf2*.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tedPackage/examples/rtf2*.sh \
+		${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/tedPackage/doc/Ted.1 \
+		${WRKSRC}/tedPackage/doc/rtf2*.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${AFMDIR} \
+		${STAGEDIR}${INDDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/ps/*.ps ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${AFMDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/afm/*.afm ${STAGEDIR}${AFMDIR}
-	@${MKDIR} ${STAGEDIR}${INDDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/dfa/*.dfa ${STAGEDIR}${INDDIR}
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/TedDocument-en_US.rtf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/TedDocument-en_US.rtf \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

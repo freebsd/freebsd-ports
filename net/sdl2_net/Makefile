@@ -1,10 +1,10 @@
 PORTNAME=	sdl2_net
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	2.2.0
+DISTVERSION=	2.4.0
 CATEGORIES=	net
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Small sample cross-platform networking library
+COMMENT=	Simple, cross-platform wrapper over TCP/IP sockets
 WWW=		https://github.com/libsdl-org/SDL_net
 
 LICENSE=	ZLIB
@@ -18,5 +18,7 @@ USE_SDL=	sdl2
 USE_LDCONFIG=	yes
 CMAKE_OFF=	SDL2NET_SAMPLES
 CMAKE_ARGS=	-DSDL2NET_DEBUG_POSTFIX:STRING=
+
+PLIST_SUB=	LIBVERSION=0.${DISTVERSION:R:E}00.${DISTVERSION:E}
 
 .include <bsd.port.mk>

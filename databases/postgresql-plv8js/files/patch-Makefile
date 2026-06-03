@@ -1,6 +1,6 @@
---- Makefile.orig	2024-09-08 02:08:55 UTC
+--- Makefile.orig	2025-07-05 17:44:26 UTC
 +++ Makefile
-@@ -36,19 +36,8 @@ SHLIB_LINK += -Ldeps/v8-cmake/build
+@@ -37,20 +37,8 @@ SHLIB_LINK += -Ldeps/v8-cmake/build
  
  SHLIB_LINK += -Ldeps/v8-cmake/build
  
@@ -12,16 +12,17 @@
 -
 -deps/v8-cmake/README.md:
 -	@git submodule update --init --recursive
+-	$(foreach patch,$(PATCH_V8),cd deps/v8-cmake && patch -p1 <../../$(patch);)
 -
 -deps/v8-cmake/build/libv8_libbase.a: deps/v8-cmake/README.md
--	@cd deps/v8-cmake && mkdir -p build && cd build && cmake -Denable-fPIC=ON -DCMAKE_BUILD_TYPE=Release ../ && make -j $(NUMPROC)
+-	@cd deps/v8-cmake && mkdir -p build && cd build && cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Denable-fPIC=ON -DCMAKE_BUILD_TYPE=Release ../ && make -j $(NUMPROC)
 -
 -v8: deps/v8-cmake/build/libv8_libbase.a
 -
  # enable direct jsonb conversion by default
  CCFLAGS += -DJSONB_DIRECT_CONVERSION
  
-@@ -74,7 +63,7 @@ endif
+@@ -76,7 +64,7 @@ endif
  	REGRESS += bigint_graceful
  endif
  

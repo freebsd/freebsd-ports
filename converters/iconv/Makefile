@@ -27,7 +27,7 @@ CCSUTIL_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-ccs_Makefile
 
 .include <bsd.port.pre.mk>
 
-.if defined(NO_PROFILE) || ${OSVERSION} > 1400001
+.if defined(NO_PROFILE) || ${OPSYS} == FreeBSD
 PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""

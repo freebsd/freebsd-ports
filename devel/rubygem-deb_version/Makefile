@@ -1,5 +1,5 @@
 PORTNAME=	deb_version
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

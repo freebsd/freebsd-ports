@@ -1,6 +1,6 @@
-librnd is a free/open source, flexible, modular two-dimensional CAD engine
+librnd is a Free Software flexible, modular two-dimensional CAD engine
 
- - with transparent multiple GUI toolkit support,
- - flexible, dynamic menu system
- - flexible, dynamic configuration system
- - support for user scripting in a dozen languages
+- with transparent multiple GUI toolkit support,
+- flexible, dynamic menu system
+- flexible, dynamic configuration system
+- support for user scripting in a dozen languages

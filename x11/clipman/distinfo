@@ -1,10 +1,12 @@
-TIMESTAMP = 1713521797
-SHA256 (chmouel-clipman-v1.6.4_GH0.tar.gz) = e8d9c15337aab98b0233a049fedcebbd1791d42ba54fb5e29cdb8b5d5bde6488
-SIZE (chmouel-clipman-v1.6.4_GH0.tar.gz) = 23513
+TIMESTAMP = 1760204302
+SHA256 (chmouel-clipman-v1.6.5_GH0.tar.gz) = e9f23eea37dfde24472420f79906d553945224930efafa3a9012f5440de019dd
+SIZE (chmouel-clipman-v1.6.5_GH0.tar.gz) = 26159
 SHA256 (alecthomas-kingpin-v2.4.0_GH0.tar.gz) = 8c3cf1d68f6f86b1c62c074be1f8e216761c57d608f4f963b59e0306296e5395
 SIZE (alecthomas-kingpin-v2.4.0_GH0.tar.gz) = 51258
-SHA256 (alecthomas-units-b94a6e3cc137_GH0.tar.gz) = 85363142a53436bea696d297e5b5fcda6bc6a8104b1d7ba0db88ffee455b72e2
-SIZE (alecthomas-units-b94a6e3cc137_GH0.tar.gz) = 6012
+SHA256 (alecthomas-units-0f3dac36c52b_GH0.tar.gz) = 1b46733f34fb69f8ba758a81c5fc11118c7fcf13029c75e1921219bc0c7f074b
+SIZE (alecthomas-units-0f3dac36c52b_GH0.tar.gz) = 6506
+SHA256 (golang-text-v0.22.0_GH0.tar.gz) = ac8bdce0477effd5a830345979626745e5e5bcb81d1a77c8029b0e8b3d621089
+SIZE (golang-text-v0.22.0_GH0.tar.gz) = 8970985
 SHA256 (kballard-go-shellquote-95032a82bc51_GH0.tar.gz) = dde336eb697f7f9c26cf6d1467f75b6cf559262c1b0b110d28fff29790f76bc5
 SIZE (kballard-go-shellquote-95032a82bc51_GH0.tar.gz) = 4328
 SHA256 (xhit-go-str2duration-v2.1.0_GH0.tar.gz) = 6f2e676f5ca8fd54179d9b0c8eb3d51433dcd7c354ac4046fc1f54529c9d101a

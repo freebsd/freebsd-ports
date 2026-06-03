@@ -5,8 +5,8 @@ Features:
     * very lightweight (84KB of private memory per instance)
     * fixes broken CR/LF in headers
     * handles environment in a sane way (CGI scripts get HTTP-related env. vars
-    * from FastCGI parameters and inherit all the others from fcgiwrap's
-    * environment)
+      from FastCGI parameters and inherit all the others from fcgiwrap's
+      environment)
     * no configuration, so you can run several sites off the same fcgiwrap pool
     * passes CGI stderr output to fcgiwrap's stderr (this is by design but
-    * stderr could be also passed to FastCGI stderr stream)
+      stderr could be also passed to FastCGI stderr stream)

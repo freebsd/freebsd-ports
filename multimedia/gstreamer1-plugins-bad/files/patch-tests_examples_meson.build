@@ -1,6 +1,6 @@
---- tests/examples/meson.build.orig	2025-03-11 20:14:44 UTC
+--- tests/examples/meson.build.orig	2026-01-27 17:02:33 UTC
 +++ tests/examples/meson.build
-@@ -1,27 +1,75 @@
+@@ -1,29 +1,81 @@
 -subdir('audiomixmatrix')
 -subdir('avsamplesink')
 -subdir('camerabin2')
@@ -11,6 +11,7 @@
 -subdir('d3d12')
 -subdir('directfb')
 -subdir('gtk')
+-subdir('inter')
 -subdir('ipcpipeline')
 -subdir('mediafoundation')
 -subdir('mpegts')
@@ -22,6 +23,7 @@
 -subdir('qt6d3d11')
 -subdir('uvch264')
 -subdir('va')
+-subdir('vulkan')
 -subdir('waylandsink')
 -subdir('webrtc')
 -subdir('wpe')
@@ -58,6 +60,9 @@
 +if get_option('ipcpipeline').enabled()
 +  subdir('ipcpipeline')
 +endif
++if get_option('inter').enabled()
++  subdir('inter')
++endif
 +if get_option('mediafoundation').enabled()
 +  subdir('mediafoundation')
 +endif
@@ -87,6 +92,9 @@
 +endif
 +if get_option('va').enabled()
 +  subdir('va')
++endif
++if get_option('vulkan').enabled()
++  subdir('vulkan')
 +endif
 +if get_option('wayland').enabled()
 +  subdir('waylandsink')

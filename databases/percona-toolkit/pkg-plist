@@ -4,6 +4,7 @@ bin/pt-config-diff
 bin/pt-deadlock-logger
 bin/pt-diskstats
 bin/pt-duplicate-key-checker
+bin/pt-eustack-resolver
 bin/pt-fifo-split
 bin/pt-find
 bin/pt-fingerprint
@@ -17,6 +18,8 @@ bin/pt-mysql-summary
 bin/pt-online-schema-change
 bin/pt-pmp
 bin/pt-query-digest
+bin/pt-replica-find
+bin/pt-replica-restart
 bin/pt-show-grants
 bin/pt-sift
 bin/pt-slave-delay
@@ -80,7 +83,6 @@ bin/pt-visual-explain
 %%SITE_PERL%%/OobNibbleIterator.pm
 %%SITE_PERL%%/OptionParser.pm
 %%SITE_PERL%%/Outfile.pm
-%%SITE_PERL%%/Percona/Test.pm
 %%SITE_PERL%%/Percona/Toolkit.pm
 %%SITE_PERL%%/Percona/XtraDB/Cluster.pm
 %%SITE_PERL%%/PerconaTest.pm
@@ -107,7 +109,6 @@ bin/pt-visual-explain
 %%SITE_PERL%%/RowDiff.pm
 %%SITE_PERL%%/Runtime.pm
 %%SITE_PERL%%/SQLParser.pm
-%%SITE_PERL%%/Safeguards.pm
 %%SITE_PERL%%/Sandbox.pm
 %%SITE_PERL%%/Schema.pm
 %%SITE_PERL%%/SchemaIterator.pm
@@ -157,6 +158,7 @@ bin/pt-visual-explain
 %%PERL5_MAN1%%/pt-deadlock-logger.1.gz
 %%PERL5_MAN1%%/pt-diskstats.1.gz
 %%PERL5_MAN1%%/pt-duplicate-key-checker.1.gz
+%%PERL5_MAN1%%/pt-eustack-resolver.1.gz
 %%PERL5_MAN1%%/pt-fifo-split.1.gz
 %%PERL5_MAN1%%/pt-find.1.gz
 %%PERL5_MAN1%%/pt-fingerprint.1.gz
@@ -170,6 +172,8 @@ bin/pt-visual-explain
 %%PERL5_MAN1%%/pt-online-schema-change.1.gz
 %%PERL5_MAN1%%/pt-pmp.1.gz
 %%PERL5_MAN1%%/pt-query-digest.1.gz
+%%PERL5_MAN1%%/pt-replica-find.1.gz
+%%PERL5_MAN1%%/pt-replica-restart.1.gz
 %%PERL5_MAN1%%/pt-show-grants.1.gz
 %%PERL5_MAN1%%/pt-sift.1.gz
 %%PERL5_MAN1%%/pt-slave-delay.1.gz
@@ -180,6 +184,5 @@ bin/pt-visual-explain
 %%PERL5_MAN1%%/pt-table-checksum.1.gz
 %%PERL5_MAN1%%/pt-table-sync.1.gz
 %%PERL5_MAN1%%/pt-table-usage.1.gz
-%%PERL5_MAN1%%/pt-upgrade.1.gz
 %%PERL5_MAN1%%/pt-variable-advisor.1.gz
 %%PERL5_MAN1%%/pt-visual-explain.1.gz

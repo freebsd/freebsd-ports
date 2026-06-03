@@ -1,5 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
+PORTREVISION=	4
 #PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
@@ -11,6 +12,7 @@ WWW=		http://kicad-pcb.org/
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 BROKEN_i386=    doesn't buld on pkg builder
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
@@ -29,11 +31,11 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libGLEW-wayland.so:graphics/glew-wayland \
 		libnng.so:net/nng \
+		libpoppler-glib.so:graphics/poppler-glib \
+		libspnav.so:misc/libspnav \
 		libodbc.so:databases/unixODBC
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
-
-BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
 OPTIONS_DEFINE=	DOCS
 
@@ -55,9 +57,9 @@ USE_XORG+=	ice pixman x11 xext
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
+SHEBANG_FILES=	pcbnew/python/wizards/qfp/qfp.py
 #CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
-CXXFLAGS+=	-g 
+CXXFLAGS+=	-g -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unwind_Backtrace is available without `_GNU_SOURCE`."
 # -undefined dynamic_lookup
 CXXFLAGS_powerpc=	-O0
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \

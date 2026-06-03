@@ -1,0 +1,11 @@
+--- tests/read-only-files.orig	2025-02-27 13:33:25 UTC
++++ tests/read-only-files
+@@ -67,3 +67,8 @@ check 'patch -f -p0 --read-only=ignore < f.diff || ech
+ patching file f
+ patching file f
+ EOF
++
++check 'patch -o - f /dev/null || echo "Status: $?"' <<EOF
++patching file - (read from f)
++three
++EOF

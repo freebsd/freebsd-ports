@@ -1,6 +1,7 @@
 PORTNAME=		exoscale-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.84.0
+DISTVERSION=		1.93.0
+PORTREVISION=	3
 CATEGORIES=		net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/exoscale/cli
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	exoscale

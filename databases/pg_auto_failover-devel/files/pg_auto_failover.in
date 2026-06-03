@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# PROVIDE: pg_auto_failover
+# REQUIRE: DAEMON mountlate
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pg_auto_failover_enable (bool):       Set to NO by default.
+#               Set it to YES to enable pg_auto_failover.
+# pg_auto_failover_user (string):       Set user to run pg_autoctl
+#               Default is "postgres".
+# pg_auto_failover_pgdata (path):       REQUIRED. Set the PGDATA directory.
+#               This should point to your monitor or keeper data directory.
+#               No default - must be explicitly configured.
+# pg_auto_failover_name (string):       Optional friendly name for the node.
+#               Useful for distinguishing nodes in monitor logs.
+#               Default is "".
+# pg_auto_failover_hostname (string):   Optional hostname or IP for node.
+#               Used by other nodes to connect to this node.
+#               Default is "" (pg_autoctl will auto-detect).
+# pg_auto_failover_pgport (int):        PostgreSQL port number.
+#               Default is "".
+
+. /etc/rc.subr
+
+name="pg_auto_failover"
+rcvar="${name}_enable"
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/pg_autoctl"
+start_cmd="${name}_start"
+
+load_rc_config ${name}
+: ${pg_auto_failover_enable:=no}
+: ${pg_auto_failover_user:=postgres}
+: ${pg_auto_failover_name:=""}
+: ${pg_auto_failover_hostname:=""}
+: ${pg_auto_failover_pgport:=""}
+
+start_precmd=pg_auto_failover_startprecmd
+
+pg_auto_failover_startprecmd() {
+    if [ -z "${pg_auto_failover_pgdata}" ]; then
+        err 1 "pg_auto_failover_pgdata is not set"
+    fi
+    if checkyesno postgresql_enable 2>/dev/null; then
+        err 1 "postgresql_enable must be NO when using pg_auto_failover (pg_autoctl manages PostgreSQL)"
+    fi
+}
+
+pg_auto_failover_start() {
+    local args
+    args="--pgdata ${pg_auto_failover_pgdata}"
+
+    if [ -n "${pg_auto_failover_pgport}" ]; then
+        args="${args} --pgport ${pg_auto_failover_pgport}"
+    fi
+    if [ -n "${pg_auto_failover_name}" ]; then
+        args="${args} --name ${pg_auto_failover_name}"
+    fi
+    if [ -n "${pg_auto_failover_hostname}" ]; then
+        args="${args} --hostname ${pg_auto_failover_hostname}"
+    fi
+
+    ${command} -t ${name} \
+               -p ${pidfile} \
+               -f -H -o ${logfile} \
+               -u ${pg_auto_failover_user} \
+               ${procname} run ${args}
+}
+
+run_rc_command "$1"

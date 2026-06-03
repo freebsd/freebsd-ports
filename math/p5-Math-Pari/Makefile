@@ -1,5 +1,6 @@
 PORTNAME=	Math-Pari
 PORTVERSION=	2.030518
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN  \
@@ -20,6 +21,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		perl5
 USE_PERL5=	configure
+
+MAKE_JOBS_UNSAFE=yes
 
 PARI_WRKSRC=	${WRKDIR}/pari-2.3.5
 
@@ -70,10 +73,4 @@ post-install:
 	${INSTALL_LIB} ${PARI_WRKSRC}/build/libpari-gmp.so.2.3.5 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari
 	${LN} -s libpari-gmp.so.2.3.5 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari/libpari-gmp.so.2
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 504200
-BROKEN=	fails to build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

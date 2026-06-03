@@ -1,0 +1,6 @@
+%%FFMPEG%%bin/funnelcake_test
+include/funnelcake.h
+lib/libfunnelcake.a
+lib/libfunnelcake.so
+lib/libfunnelcake.so.1
+libdata/pkgconfig/funnelcake.pc

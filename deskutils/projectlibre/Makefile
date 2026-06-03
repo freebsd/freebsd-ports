@@ -1,5 +1,6 @@
 PORTNAME=	projectlibre
 DISTVERSION=	1.9.8
+PORTREVISION=	2
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/ProjectLibre/${PORTVERSION:S/.0$//} \
 		LOCAL/cpm/projectlibre/:icons

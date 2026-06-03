@@ -1,0 +1,17 @@
+--- tensorflow/tools/pip_package/BUILD.orig	2026-03-04 21:33:50 UTC
++++ tensorflow/tools/pip_package/BUILD
+@@ -323,12 +323,14 @@ tf_wheel(
+         "@platforms//os:macos": "macosx",
+         "@platforms//os:windows": "win",
+         "@platforms//os:linux": "linux",
++        "//conditions:default": "linux",
+     }),
+     platform_tag = select({
+         "@platforms//cpu:aarch64": "arm64",
+         "@platforms//cpu:arm64": "arm64",
+         "@platforms//cpu:x86_64": "x86_64",
+         "@platforms//cpu:ppc": "ppc64le",
++        "//conditions:default": "x86_64",
+     }),
+     source_files = [
+         "MANIFEST.in",

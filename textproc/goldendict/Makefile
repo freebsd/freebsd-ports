@@ -1,7 +1,11 @@
 PORTNAME=	goldendict
 PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
+
+PATCH_SITES=	https://github.com/goldendict/goldendict/commit/
+PATCHFILES=	718462c5c1e2b6f3064f921c0800e45b8d5b84b8.patch:-p1 \
+		b4f3fcdc4861975ec49ae2bb894f907c072fc8f6.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Feature-rich dictionary lookup program

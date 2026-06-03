@@ -1,5 +1,5 @@
 PORTNAME=	cairocffi
-PORTVERSION=	1.4.0
+PORTVERSION=	1.7.1
 PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
@@ -11,16 +11,17 @@ WWW=		https://github.com/kozea/cairocffi
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xcffib>=0.3.2:x11/py-xcffib@${PY_FLAVOR}
-TEST_DEPENDS=	${PYNUMPY} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		gdk-pixbuf2>0:graphics/gdk-pixbuf2
 
 USES=		gnome python
 USE_GNOME=	cairo
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

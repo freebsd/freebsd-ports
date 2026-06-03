@@ -10,4 +10,4 @@ else
 	set CLASSPATH = ""
 endif
 
-exec "${JAVA}" -cp %%JAVAJARDIR%%/%%JARFILE%%"${CLASSPATH}" com.sun.electric.Launcher
+exec "${JAVA}" -cp %%JAVAJARDIR%%/%%JARFILE%%"${CLASSPATH}" com.sun.electric.Electric

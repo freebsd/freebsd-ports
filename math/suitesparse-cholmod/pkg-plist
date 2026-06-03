@@ -3,6 +3,8 @@ lib/cmake/CHOLMOD/CHOLMODConfig.cmake
 lib/cmake/CHOLMOD/CHOLMODConfigVersion.cmake
 lib/cmake/CHOLMOD/CHOLMODTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/CHOLMOD/CHOLMODTargets.cmake
+lib/cmake/CHOLMOD/CHOLMODTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CHOLMOD/CHOLMODTargets_static.cmake
 lib/libcholmod.a
 lib/libcholmod.so
 lib/libcholmod.so.5

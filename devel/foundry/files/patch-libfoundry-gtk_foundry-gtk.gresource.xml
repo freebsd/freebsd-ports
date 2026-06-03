@@ -1,0 +1,22 @@
+Same build failure as x11/ptyxis
+
+--- libfoundry-gtk/foundry-gtk.gresource.xml.orig	2025-10-28 23:23:12 UTC
++++ libfoundry-gtk/foundry-gtk.gresource.xml
+@@ -35,7 +35,6 @@
+     <file>terminal/palettes/C64.palette</file>
+     <file>terminal/palettes/Cai.palette</file>
+     <file>terminal/palettes/campbell.palette</file>
+-    <file>terminal/palettes/Catppuccin Frappé.palette</file>
+     <file>terminal/palettes/Catppuccin Latte.palette</file>
+     <file>terminal/palettes/Catppuccin Macchiato.palette</file>
+     <file>terminal/palettes/Catppuccin Mocha.palette</file>
+@@ -179,9 +178,6 @@
+     <file>terminal/palettes/Red Sands.palette</file>
+     <file>terminal/palettes/Relaxed.palette</file>
+     <file>terminal/palettes/Rippedcasts.palette</file>
+-    <file>terminal/palettes/Rosé Pine Dawn.palette</file>
+-    <file>terminal/palettes/Rosé Pine Moon.palette</file>
+-    <file>terminal/palettes/Rosé Pine.palette</file>
+     <file>terminal/palettes/Royal.palette</file>
+     <file>terminal/palettes/rxvt.palette</file>
+     <file>terminal/palettes/Sat.palette</file>

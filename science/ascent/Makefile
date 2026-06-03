@@ -1,6 +1,7 @@
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.5
+PORTREVISION=	2
 CATEGORIES=	science
 PKGNAMESUFFIX=	-visualizer
 
@@ -51,5 +52,7 @@ MPICH_CMAKE_ON=		-DENABLE_MPI=ON
 OPENMPI_USES=		mpi:openmpi
 OPENMPI_CMAKE_ON=	-DENABLE_MPI=ON
 OPENMPI_BROKEN=		still chooses mpich, see https://github.com/Alpine-DAV/ascent/issues/1091
+
+# tests as of 0.9.5: 100% tests passed, 0 tests failed out of 97
 
 .include <bsd.port.mk>

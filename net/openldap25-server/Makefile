@@ -1,6 +1,6 @@
 PORTNAME=		openldap
 DISTVERSION=		2.5.20
-PORTREVISION=		${OPENLDAP_PORTREVISION}
+PORTREVISION=	2
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
 			http://gpl.savoirfairelinux.net/pub/mirrors/openldap/%SUBDIR%/ \
@@ -116,6 +116,7 @@ OPTIONS_DEFINE+=	ARGON2
 OPTIONS_DEFINE+=	LLOADD
 
 OPTIONS_EXCLUDE_FreeBSD_15=	SMBPWD	# Only works with Heimdal
+OPTIONS_EXCLUDE_FreeBSD_16=	SMBPWD	# Only works with Heimdal
 
 OPTIONS_DEFAULT+=	${BKNDS_DEFAULTS}
 OPTIONS_DEFAULT+=	${OPTIONS_GROUP_OVLYS}

@@ -1,18 +1,42 @@
---- all-services.yaml.orig	2025-04-11 13:35:01 UTC
+--- all-services.yaml.orig	2026-04-10 14:29:17 UTC
 +++ all-services.yaml
-@@ -156,7 +156,6 @@ services:
-   freetier:
-   fsx:
-   gamelift:
--  gameliftstreams:
-   geomaps:
-   geoplaces:
-   georoutes:
-@@ -187,7 +186,6 @@ services:
-   iotfleethub:
-   iotfleetwise:
-   iotjobsdataplane:
--  iotmanagedintegrations:
-   iotsecuretunneling:
-   iotsitewise:
-   iotthingsgraph:
+@@ -120,7 +120,6 @@ services:
+   deadline:
+   detective:
+   devicefarm:
+-  devopsagent:
+   devopsguru:
+   directconnect:
+   directoryservice:
+@@ -240,7 +239,6 @@ services:
+   marketplacecatalog:
+   marketplacecommerceanalytics:
+   marketplacedeployment:
+-  marketplacediscovery:
+   marketplaceentitlementservice:
+   marketplacemetering:
+   marketplacereporting:
+@@ -337,7 +335,6 @@ services:
+   rum:
+   s3:
+   s3control:
+-  s3files:
+   s3outposts:
+   s3tables:
+   s3vectors:
+@@ -353,7 +350,6 @@ services:
+   scheduler:
+   schemas:
+   secretsmanager:
+-  securityagent:
+   securityhub:
+   securityir:
+   securitylake:
+@@ -390,7 +386,6 @@ services:
+   supplychain:
+   support:
+   supportapp:
+-  sustainability:
+   swf:
+   synthetics:
+   taxsettings:

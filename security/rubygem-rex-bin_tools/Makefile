@@ -1,5 +1,5 @@
 PORTNAME=	rex-bin_tools
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.16
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	nasm>=0:devel/nasm \
 		rubygem-rex-text>=0:security/rubygem-rex-text
 
 NO_ARCH=	yes
-
 USES=		gem
 
 PLIST_FILES=	bin/msfbinscan \

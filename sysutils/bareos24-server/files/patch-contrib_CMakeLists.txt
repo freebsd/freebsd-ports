@@ -1,0 +1,27 @@
+--- contrib/CMakeLists.txt	2023-03-24 08:05:20.000000000 -0500
++++ contrib/CMakeLists.txt	2023-04-07 17:52:51.095371000 -0500
+@@ -24,10 +24,18 @@
+ include(GNUInstallDirs)
+ include(BareosSetVariableDefaults)
+ 
+-add_subdirectory(fd-plugins)
+-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
+-  add_subdirectory(misc)
+-endif()
+-if(NOT client-only)
+-  add_subdirectory(dir-plugins)
++if(ENABLE_PYTHON)
++  if(client-only)
++    add_subdirectory(fd-plugins)
++  endif()
++
++  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
++    if(client-only)
++      add_subdirectory(misc)
++    endif()
++  endif()
++
++  if(NOT client-only)
++    add_subdirectory(dir-plugins)
++  endif()
+ endif()

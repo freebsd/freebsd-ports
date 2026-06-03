@@ -1,5 +1,5 @@
 PORTNAME=	bsddialog
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com

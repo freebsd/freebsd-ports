@@ -1,0 +1,31 @@
+--- deps/readies/cmake/cc.orig	2023-05-03 09:56:10 UTC
++++ deps/readies/cmake/cc
+@@ -26,7 +26,7 @@ function(extract_debug_symbols TARGET)
+ #----------------------------------------------------------------------------------------------
+ 
+ function(extract_debug_symbols TARGET)
+-    if (NOT DEBUG AND NOT APPLE)
++    if (NOT DEBUG AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
+         add_custom_command(TARGET ${TARGET} POST_BUILD
+             COMMAND "$ENV{MK}/extract-obj-symbols" "$<TARGET_FILE:${TARGET}>")
+     endif()
+@@ -70,13 +70,15 @@ function(setup_cc_options)
+ 
+ 	# dirty trick to override default CMake flags (like: -O2 -DNDEBUG)
+ 	# by appending the overiding options using add_compile_options().
+-	# we rely on the overiding options being defined in CMAKE_CC_FLAGS rather than the 
++	# we rely on the overiding options being defined in CMAKE_CC_FLAGS rather than the
+ 	# language-specific CMAKE_CC_C_FLAGS and CMAKE_CC_CXX_FLAGS.
+ 
+ 	# need to be a list, otherwise quotes are erroneously inserted
+-	string(REPLACE " " ";" CMAKE_CC_FLAGS_LIST ${CMAKE_CC_FLAGS})
+-	add_compile_options(${CMAKE_CC_FLAGS_LIST})
+-	
++	if(CMAKE_CC_FLAGS)
++		string(REPLACE " " ";" CMAKE_CC_FLAGS_LIST ${CMAKE_CC_FLAGS})
++		add_compile_options(${CMAKE_CC_FLAGS_LIST})
++	endif()
++
+ 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${CMAKE_LD_FLAGS} ${CMAKE_EXE_LD_FLAGS}" PARENT_SCOPE)
+ 	set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${CMAKE_LD_FLAGS} ${CMAKE_SO_LD_FLAGS}" PARENT_SCOPE)
+ endfunction()

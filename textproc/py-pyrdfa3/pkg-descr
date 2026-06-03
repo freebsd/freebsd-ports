@@ -1,0 +1,5 @@
+RDFa parser library.
+
+pyRdfa is a Python library for parsing RDFa (Resource Description Framework
+in Attributes) data from HTML and XML documents. It implements the RDFa 1.0
+and 1.1 specifications.

@@ -1,0 +1,1 @@
+Sub::HandlesVia will make use of Sub::HandlesVia::XS when it can.

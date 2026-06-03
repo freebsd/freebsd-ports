@@ -16,7 +16,7 @@ USE_KDE=	archive auth bookmarks colorscheme completion config \
 		i18n iconthemes itemviews jobwidgets notifications service \
 		solid wallet widgetsaddons windowsystem \
 		ecm:build
-USE_QT=		5compat base
+USE_QT=		base declarative
 USE_XORG=	x11
 
 .include <bsd.port.mk>

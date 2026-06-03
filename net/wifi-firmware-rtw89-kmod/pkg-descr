@@ -1,10 +1,1 @@
 Firmware files for Realtek WiFi NICs supported by the rtw89 driver.
-
-Currently 11ax supported chipsets:
-- RTL8851B
-- RTL8852A
-- RTL8852B
-- RTL8852C
-
-Currently 11be supported chipsets:
-- RTL8922A

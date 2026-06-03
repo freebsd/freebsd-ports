@@ -4548,7 +4548,7 @@
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>Meta CPAN reports:</p>
 	<blockquote cite="https://metacpan.org/changes/release/SHAY/perl-5.26.1#Security">
 	  <p>CVE-2017-12814: $ENV{$key} stack buffer overflow on Windows</p>
 	  <p>A possible stack buffer overflow in the %ENV code on Windows has been

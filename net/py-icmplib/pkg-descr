@@ -1,0 +1,24 @@
+icmplib is a brand new and modern implementation of the ICMP protocol
+in Python. Use the built-in functions or build your own, you have the
+choice!
+
+
+    - Ready-to-use: icmplib offers ready-to-use functions such as the
+      most popular ones: ping, multiping and traceroute. An extensive
+      documentation also helps you get started.
+    - Modern: This library uses the latest mechanisms offered by Python
+      3.7+ and is fully object-oriented.
+    - Fast: Each class and function has been designed and optimized to
+      deliver the best performance. Some functions are also asynchronous
+      like the async_ping and async_multiping functions. You can ping
+      the world in seconds!
+    - Powerful: Use the library without root privileges, set the traffic
+      class of ICMP packets, customize their payload, send broadcast
+      requests and more!
+    - Evolutive: Easily build your own classes and functions with ICMPv4
+      and ICMPv6 sockets.
+    - Seamless integration of IPv6: Use IPv6 the same way you use IPv4.
+    - Cross-platform: Optimized for Linux, macOS and Windows. The library
+      automatically manages the specificities of each system.
+    - No dependency: icmplib is a pure Python implementation of the ICMP
+      protocol. It does not rely on any external dependency.

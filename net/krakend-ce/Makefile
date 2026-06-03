@@ -1,10 +1,9 @@
 PORTNAME=	krakend-ce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
-PORTREVISION=	1
+DISTVERSION=	2.13.6
 CATEGORIES=	net
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	High-performance, stateless, declarative, API Gateway
 WWW=		https://www.krakend.io/ \
 		https://github.com/krakend/krakend-ce/
@@ -20,10 +19,10 @@ CPE_VENDOR=	krakend
 CPE_PRODUCT=	krakend
 CPE_SW_EDITION=	community
 
-GO_MODULE=	github.com/krakendio/krakend-ce/v2
+GO_MODULE=	github.com/krakendio/${PORTNAME}/v2
 GO_TARGET=	./cmd/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X github.com/luraproject/lura/v2/core.KrakendVersion=${DISTVERSION} \
-		-X github.com/luraproject/lura/v2/core.GoVersion=${GO_VERSION}"
+GO_LDFLAGS=	-X github.com/luraproject/lura/v2/core.KrakendVersion=${DISTVERSION} \
+		-X github.com/luraproject/lura/v2/core.GoVersion=${GO_VERSION}
 
 TEST_TARGET=	test
 

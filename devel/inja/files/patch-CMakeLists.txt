@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2023-01-29 12:10:03 UTC
++++ CMakeLists.txt
+@@ -17,6 +17,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_S
+ set(INJA_PACKAGE_USE_EMBEDDED_JSON OFF)
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
+ 
++include(PkgConfigGeneration)
+ 
+ # For using the correct __cplusplus macro
+ if(MSVC)

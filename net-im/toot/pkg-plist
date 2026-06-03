@@ -8,7 +8,9 @@ bin/toot
 %%PYTHON_SITELIBDIR%%/toot/cli/accounts.py
 %%PYTHON_SITELIBDIR%%/toot/cli/auth.py
 %%PYTHON_SITELIBDIR%%/toot/cli/diag.py
+%%PYTHON_SITELIBDIR%%/toot/cli/follow_requests.py
 %%PYTHON_SITELIBDIR%%/toot/cli/lists.py
+%%PYTHON_SITELIBDIR%%/toot/cli/polls.py
 %%PYTHON_SITELIBDIR%%/toot/cli/post.py
 %%PYTHON_SITELIBDIR%%/toot/cli/read.py
 %%PYTHON_SITELIBDIR%%/toot/cli/statuses.py
@@ -39,6 +41,10 @@ bin/toot
 %%PYTHON_SITELIBDIR%%/toot/tui/timeline.py
 %%PYTHON_SITELIBDIR%%/toot/tui/utils.py
 %%PYTHON_SITELIBDIR%%/toot/tui/widgets.py
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/README.md
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/__init__.py
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/hyperlink.py
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/text_embed.py
 %%PYTHON_SITELIBDIR%%/toot/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/toot/utils/datetime.py
 %%PYTHON_SITELIBDIR%%/toot/utils/language.py

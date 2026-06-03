@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+	chmod -R 777 ${PREFIX}/lib/node_modules/qmd/node_modules/node-llama-cpp/llama 2>/dev/null || true
+	find ${PREFIX}/lib/node_modules/qmd/node_modules/.bin -type f -exec chmod +x {} \; 2>/dev/null || true
+	find ${PREFIX}/lib/node_modules/qmd/node_modules -path "*bin*" -type f -exec chmod +x {} \; 2>/dev/null || true
+	;;
+esac

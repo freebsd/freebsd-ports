@@ -1,9 +1,8 @@
---- pyproject.toml.orig	2025-05-10 13:32:40 UTC
+--- pyproject.toml.orig	2026-03-22 19:16:10 UTC
 +++ pyproject.toml
-@@ -1,15 +1,14 @@ build-backend = "setuptools.build_meta"
+@@ -1,14 +1,13 @@ build-backend = "setuptools.build_meta"
  [build-system]
  build-backend = "setuptools.build_meta"
- 
 -requires = [ "setuptools>=77" ]
 +requires = [ "setuptools>=62.6" ]
  
@@ -12,9 +11,9 @@
  description = "An abstract syntax tree for Python with inference support."
  readme = "README.rst"
  keywords = [ "abstract syntax tree", "python", "static code analysis" ]
--license = "LGPL-2.1-or-later"
+-license = "LGPL-2.1-OR-later"
 -license-files = [ "LICENSE", "CONTRIBUTORS.txt" ]
 +license = { text = "LGPL-2.1-or-later" }
- 
- requires-python = ">=3.9.0"
+ requires-python = ">=3.10.0"
  classifiers = [
+   "Development Status :: 6 - Mature",

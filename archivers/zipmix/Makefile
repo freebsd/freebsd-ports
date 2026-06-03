@@ -9,6 +9,9 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Produce .ZIP file from two other ones with the best compressed files
 WWW=		http://www.advsys.net/ken/utils.htm
 
+DEPRECATED=	No longer supported upstream. Replaced by archivers/archmerge
+EXPIRATION_DATE=	2026-06-30
+
 USES=		dos2unix ncurses zip
 MAKEFILE=	${FILESDIR}/Makefile
 NO_WRKSUBDIR=	yes

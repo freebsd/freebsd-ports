@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	math
 
 COMMENT=	Extended version of CSparse

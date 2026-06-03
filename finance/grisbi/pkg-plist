@@ -491,7 +491,7 @@ share/applications/org.grisbi.Grisbi.desktop
 %%DATADIR%%/pixmaps/gtk-corbeille-32.png
 %%DATADIR%%/pixmaps/gtk-delete-16.png
 %%DATADIR%%/pixmaps/gtk-delete-24.png
-%%DATADIR%%/pixmaps/gtk-dialog-warning-16.png
+%%DATADIR%%/pixmaps/gtk-dialog-warning.png
 %%DATADIR%%/pixmaps/gtk-edit-16.png
 %%DATADIR%%/pixmaps/gtk-edit-24.png
 %%DATADIR%%/pixmaps/gtk-execute-16.png

@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: gol
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for gol in /etc/rc.conf
+#
+# gol_enable (bool):       Enable gol. (default=NO)
+# gol_runas (str):         User to run gol as. (default=%%USER%%)
+# gol_host (str):          Host to serve. (default=127.0.0.1)
+# gol_port (int):          Port to serve. (default=3003)
+# gol_every (int):         Check for file paths every n seconds. (default=10)
+# gol_log (str):           Log output. (default=/var/log/gol.log)
+# gol_extra_args (str):    Additional parameters. (default=-f=${gol_log})
+# gol_args (str):          Main parameters. (default=-every=${gol_every} -host=${gol_host} -port=${gol_port} ${gol_extra_args})
+#
+
+. /etc/rc.subr
+
+name="gol"
+desc="All-in-one log viewer in browser"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${gol_enable:="NO"}
+: ${gol_runas:="%%USER%%"}
+: ${gol_log="/var/log/gol.log"}
+: ${gol_extra_args="-f=${gol_log}"}
+: ${gol_every:="10"}
+: ${gol_host:="127.0.0.1"}
+: ${gol_port:="3003"}
+: ${gol_args="-every=${gol_every} -host=${gol_host} -port=${gol_port} ${gol_extra_args}"}
+
+command="/usr/sbin/daemon"
+pidfile="/var/run/${name}.pid"
+procname="/usr/local/bin/${name}"
+command_args="-c -u ${gol_runas} -o ${gol_log} -p ${pidfile} -t \"${desc}\" ${procname} -open=false ${gol_args}"
+start_precmd="${name}_prestart"
+
+gol_prestart()
+{
+        if [ ! -f "${gol_log}" ]; then
+                install -m 644 /dev/null "${gol_log}"
+        fi
+
+        chmod 644 "${gol_log}"
+}
+
+run_rc_command "$1"

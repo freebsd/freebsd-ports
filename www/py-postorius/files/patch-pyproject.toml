@@ -1,0 +1,17 @@
+Add Django 5.2 support
+
+Obtained from:
+
+https://gitlab.com/mailman/postorius/-/commit/0468ab0329df85b89e6b5d9f7b4d1805f47450c9
+
+--- pyproject.toml.orig	2026-05-11 11:01:34 UTC
++++ pyproject.toml
+@@ -18,7 +18,7 @@ dependencies = [
+ ]
+ dependencies = [
+     "django-mailman3>=1.3.13",
+-    "django>=4.2,<5.1",
++    "django>=4.2,<5.3",
+     "mailmanclient>=3.3.3",
+     "readme_renderer[md]",
+ ]

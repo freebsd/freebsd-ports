@@ -1,6 +1,7 @@
-A collection of terminal games including, Jewels, Sudoku, Mines,
-Reversi, Checkers, Battleship, SOS,  Rabbithole, Pipes, Fifteen,
-Memoblocks, Fisher, Muncher, Miketron, Redsquare, Darrt, and Snakeduel.
+A collection of terminal games including battleship, checkers, darrt,
+fifteen, fisher, jewels, memoblocks, miketron, mines, muncher,
+pipes, rabbithole, redsquare, revenge, reversi, scissor, sjump,
+snakeduel, sos, sudoku, trsr, and tugow.
 
 The difficulty and/or dimensions are adjustable through simple command
 line options, you can play a minesweeper game that take hours to

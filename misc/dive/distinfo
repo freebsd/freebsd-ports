@@ -1,5 +1,5 @@
-TIMESTAMP = 1742619064
-SHA256 (go/misc_dive/dive-v0.13.0/v0.13.0.mod) = e3ce3c051ecdf897987e119567ea59b9d9d65b9a445b5edea7af0d602142024c
-SIZE (go/misc_dive/dive-v0.13.0/v0.13.0.mod) = 3130
-SHA256 (go/misc_dive/dive-v0.13.0/v0.13.0.zip) = cb6593724f9d331c63fcd314372c8da0dc6d80ea1626746e7c1118f4e1fcaede
-SIZE (go/misc_dive/dive-v0.13.0/v0.13.0.zip) = 6032636
+TIMESTAMP = 1762715892
+SHA256 (go/misc_dive/dive-v0.13.1/v0.13.1.mod) = bee6d7e78a59d71ee2d062811eeb95b72408fa3b3f89e072548b28ed04cf094f
+SIZE (go/misc_dive/dive-v0.13.1/v0.13.1.mod) = 3130
+SHA256 (go/misc_dive/dive-v0.13.1/v0.13.1.zip) = 92c0be3148ef225f144f610717c2070bef317d279c9362319d948cf63d5ec5fe
+SIZE (go/misc_dive/dive-v0.13.1/v0.13.1.zip) = 6032567

@@ -1,0 +1,18 @@
+Cppman is a tool that provides C++ manual pages on the terminal. It
+acts as a convenient interface to view formatted C++ documentation
+directly from cplusplus.com and cppreference.com, allowing developers
+to access relevant information quickly without switching to a web
+browser.
+
+Features:
+- Supports two backends (switch it with cppman -s):
+  cplusplus.com
+  cppreference.com
+- Syntax highlighting support for sections and example source code.
+- Usage/Interface similar to the 'man' command
+- Hyperlink between manpages (only available when pager=vim)
+  - Press Ctrl-] when cursor is on keyword to go forward and Ctrl-T to
+    go backward.
+  - You can also double-click on keyword to go forward and right-click
+    to go backward.
+- Frequently update to support cplusplus.com.

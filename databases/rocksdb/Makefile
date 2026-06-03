@@ -1,6 +1,7 @@
 PORTNAME=	rocksdb
-PORTVERSION=	10.4.2
+PORTVERSION=	11.1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,17 +22,17 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++17-lang gmake localbase:ldflags perl5
+USES=		compiler:c++20-lang gmake localbase:ldflags perl5
 USE_PERL5=	build
 
 ALL_TARGET=	shared_lib static_lib all
 CFLAGS+=	-DOS_FREEBSD
 CONFIGURE_ARGS=	make_config.mk
-CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_ROOT=${WRKSRC}
+CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_DISABLE_PG=1 ROCKSDB_ROOT=${WRKSRC}
 CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1 V=1
-USE_CXXSTD=	c++17
+USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
@@ -40,8 +41,6 @@ PORTDATA=	make_config.mk
 
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
-
-CONFLICTS_INSTALL=	rocksdb-lite
 
 BENCHMARKS=	cache_bench db_bench memtablerep_bench persistent_cache_bench range_del_aggregator_bench table_reader_bench
 TOOLS=		blob_dump db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump sst_dump trace_analyzer write_stress
@@ -59,10 +58,7 @@ ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-unused-parameter -Wno-unused-variable
-.if ${COMPILER_VERSION} >= 170
-CXXFLAGS+=	-Wno-sync-alignment
-.endif
+CXXFLAGS+=	-Wno-sync-alignment -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable
 .endif
 
 post-patch:

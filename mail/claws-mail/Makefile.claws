@@ -1,31 +1,22 @@
+DISTVERSION=	${CLAWSVERSION}
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	portmaster@BSDforge.com
 
 LICENSE=	GPLv3
 
-USES+=		gmake gnome iconv libtool pkgconfig tar:xz
+USES+=		gmake iconv libtool pkgconfig tar:xz
+.if !defined(NO_GTK)
+USES+=		gnome
+USE_GNOME+=	gtk30
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
 
-.include "${.CURDIR}/../claws-mail/Makefile.ver"
-
-.if ${MASTER_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
-
-.if ${MASTER_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-.endif
-.if ${MASTER_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
-.endif
-
-.include "${.CURDIR}/../claws-mail/Makefile.claws.plugins"
+.include "../claws-mail/Makefile.ver"
+.include "../claws-mail/Makefile.claws.plugins"
 
 .for p in ${CLAWS_PLUGINS}
 .  if empty(CLAWS_PLUGINS_BUILD:M${p})
@@ -34,11 +25,11 @@ CONFIGURE_ARGS+=	--disable-${p}-plugin
 .endfor
 
 .if defined(CLAWS_PLUGINS_BUILD)
-DISTNAME=	claws-mail-${PORTVERSION}
+DISTNAME=	claws-mail-${DISTVERSION}
 PKGNAMEPREFIX=	claws-mail-
 
-BUILD_DEPENDS+=	claws-mail>=${PORTVERSION}:mail/claws-mail
-RUN_DEPENDS+=	claws-mail>=${PORTVERSION}:mail/claws-mail
+BUILD_DEPENDS+=	claws-mail>=${DISTVERSION}:mail/claws-mail
+RUN_DEPENDS+=	claws-mail>=${DISTVERSION}:mail/claws-mail
 
 DISTINFO_FILE=	${.CURDIR}/../claws-mail/distinfo
 

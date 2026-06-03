@@ -1,0 +1,3 @@
+fastlite is a lightweight Python library that provides extra usability for
+SQLite databases, building on APSW (Another Python SQLite Wrapper) and
+designed to work with the fastai ecosystem.

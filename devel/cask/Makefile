@@ -1,9 +1,8 @@
 PORTNAME=	cask
 PORTVERSION=	0.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	17
+PORTREVISION=	19
 CATEGORIES=	devel elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Project management tool for Emacs
@@ -14,7 +13,7 @@ LICENSE=	GPLv3
 USES=		emacs python shebangfix
 USE_GITHUB=	yes
 
-CONFLICTS_INSTALL=	cask cask-emacs_*
+CONFLICTS_INSTALL=	cask-emacs_*
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -1,0 +1,11 @@
+--- src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile.orig	2020-07-09 16:57:01 UTC
++++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile
+@@ -41,7 +41,7 @@ SRCS = \
+ 	SUPR0IdcClient.c \
+ 	SUPR0IdcClientComponent.c
+ 
+-SRCS += device_if.h bus_if.h opt_netgraph.h
++SRCS += device_if.h bus_if.h opt_netgraph.h vnode_if.h
+ 
+ .include <bsd.kmod.mk>
+ 

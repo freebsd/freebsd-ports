@@ -1,0 +1,31 @@
+--- core/CMakeLists.txt.orig	2026-05-02 21:54:00 UTC
++++ core/CMakeLists.txt
+@@ -40,6 +40,10 @@ if (GOOS STREQUAL "")
+         set(GOOS "windows")
+     elseif(LINUX)
+         set(GOOS "linux")
++    elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++        set(GOOS "freebsd")
++    elseif(APPLE)
++        set(GOOS "darwin")
+     else()
+         set(GOOS "")
+     endif()
+@@ -182,9 +186,15 @@ message(STATUS "DESTINATION IS ${DESTDIR} FOR MACHINE 
+ # ----------------------------
+ # Tags
+ # ----------------------------
+-set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme,with_internal_resolvectl")
++set(TAGS "with_clash_api,with_quic,with_utls,with_grpc,with_acme")
+ 
+-if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
++if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    set(TAGS "${TAGS},with_gvisor,with_wireguard,with_dhcp,with_tailscale,with_shadowtls,with_internal_resolvectl")
++else()
++    message(STATUS "FreeBSD: disabling TUN-based and gVisor features")
++endif()
++
++if((GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64") AND NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+     set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
+ endif()
+ 

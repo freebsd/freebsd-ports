@@ -42,6 +42,7 @@ share/locale/fi/LC_MESSAGES/kalgebramobile.mo
 share/locale/fr/LC_MESSAGES/kalgebra.mo
 share/locale/fr/LC_MESSAGES/kalgebramobile.mo
 share/locale/ga/LC_MESSAGES/kalgebra.mo
+share/locale/ga/LC_MESSAGES/kalgebramobile.mo
 share/locale/gl/LC_MESSAGES/kalgebra.mo
 share/locale/gl/LC_MESSAGES/kalgebramobile.mo
 share/locale/he/LC_MESSAGES/kalgebra.mo
@@ -111,7 +112,6 @@ share/locale/zh_CN/LC_MESSAGES/kalgebra.mo
 share/locale/zh_CN/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebramobile.mo
-%%WEBENGINE%%share/metainfo/org.kde.graphsplasmoid.appdata.xml
 %%WEBENGINE%%share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml
 %%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui

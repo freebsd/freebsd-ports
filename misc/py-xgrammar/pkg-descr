@@ -1,0 +1,3 @@
+xgrammar enables efficient, flexible and portable structured generation
+for large language models. It provides grammar-constrained decoding that
+works with JSON schemas, regular expressions, and custom context-free grammars.

@@ -1,0 +1,14 @@
+-- Remove CMAKE_SOURCE_DIRECTORY to avoid embedding absolute build paths.
+-- It's only used for debug builds anyway, and BinaryData is used in release.
+
+--- CMakeLists.txt.orig	2026-05-17 03:55:19 UTC
++++ CMakeLists.txt
+@@ -31,7 +31,7 @@ add_compile_definitions(
+ add_compile_definitions(
+   JUCE_MODAL_LOOPS_PERMITTED
+   #JUCE_ENABLE_REPAINT_DEBUGGING
+-  CMAKE_SOURCE_DIRECTORY="${CMAKE_SOURCE_DIR}"
++  
+ )
+ 
+ # ==================== Add Plugin =======================

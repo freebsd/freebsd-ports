@@ -1,5 +1,5 @@
 PORTNAME=	async-http
-PORTVERSION=	0.89.0
+PORTVERSION=	0.95.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +12,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-async>=2.10.2:devel/rubygem-async \
-		rubygem-async-pool>=0.9<1:www/rubygem-async-pool \
+		rubygem-async-pool>=0.11<1:www/rubygem-async-pool \
 		rubygem-io-endpoint>=0.14<1:devel/rubygem-io-endpoint \
 		rubygem-io-stream>=0.6<1:devel/rubygem-io-stream \
 		rubygem-metrics>=0.12<1:devel/rubygem-metrics \
-		rubygem-protocol-http>=0.49<1:www/rubygem-protocol-http \
-		rubygem-protocol-http1>=0.30<1:www/rubygem-protocol-http1 \
-		rubygem-protocol-http2>=0.22<1:www/rubygem-protocol-http2 \
+		rubygem-protocol-http>=0.62<1:www/rubygem-protocol-http \
+		rubygem-protocol-http1>=0.39<1:www/rubygem-protocol-http1 \
+		rubygem-protocol-http2>=0.26<1:www/rubygem-protocol-http2 \
+		rubygem-protocol-url>=0.2<1:www/rubygem-protocol-url \
 		rubygem-traces>=0.10<1:devel/rubygem-traces
 
 USES=		gem

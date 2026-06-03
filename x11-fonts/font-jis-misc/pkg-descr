@@ -1,1 +1,4 @@
-This package contains miscellaneous X.Org JIS fonts.
+This are the PCF versions of the Japanese Industrial Standards fixed
+fonts for 75dpi displays. This font was created based on a bitmap
+font made by Toshihisa Koyama of Shaken, which is included in JIS X
+9051/JIS X 9052.

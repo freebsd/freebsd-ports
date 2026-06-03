@@ -1,16 +1,19 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER}
+PORTREVISION=	4
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	devel
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v37.5.0/:chromium \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
-DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
-		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
-		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
+DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
+		chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.1:chromium \
+		chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.2:chromium \
+		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
@@ -20,10 +23,12 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
 
+DEPRECATED=	EOLed upstream, switch to newer version
+EXPIRATION_DATE=2026-03-31
+
+BROKEN_i386=	fetch fails: node process stalls during fetch phase and eats up all CPUs
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-FETCH_DEPENDS=	yarn${NODEJS_SUFFIX}>0:www/yarn${NODEJS_SUFFIX}
-EXTRACT_DEPENDS=yarn${NODEJS_SUFFIX}>0:www/yarn${NODEJS_SUFFIX}
 PATCH_DEPENDS=	git:devel/git \
 		jq:textproc/jq
 BUILD_DEPENDS=	gperf:devel/gperf \
@@ -64,12 +69,12 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	git:devel/git \
-		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
-		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
+		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR}
 
-USES=		bison compiler:c++17-lang cpe gettext-tools gl gmake gnome \
-		iconv:wchar_t jpeg localbase:ldflags ninja nodejs:22,build \
-		pkgconfig python:build,test qt:5 shebangfix tar:xz xorg
+USES=		bison compiler:c++17-lang cpe display:test electron:env \
+		gettext-tools gl gmake gnome iconv:wchar_t jpeg \
+		localbase:ldflags ninja nodejs:22,build pkgconfig \
+		python:build,test qt:5 shebangfix tar:xz xorg
 
 CPE_VENDOR=	electronjs
 USE_GITHUB=	yes
@@ -84,8 +89,14 @@ USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
 		xrender xscrnsaver xtst
 USE_QT=		buildtools:build core:build widgets:build
+USE_ELECTRON=	npm:yarn4 prefetch extract
+NPM_EXTRACT_WRKSRC=	${WRKSRC:H}/${PORTNAME}-${ELECTRON_VER}
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
+
+# Unbreak build that is being killed in a poudriere VM with a signal due to OOM.
+# Limit parallel compilation to avoid OOM on large Chromium files (e.g. browser_interface_binders.cc) which can use several GB of RAM per job.
+MAKE_JOBS_NUMBER_LIMIT=	4
 
 MAKE_ARGS=	-C out/${BUILDTYPE}
 MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
@@ -212,7 +223,7 @@ PIPEWIRE_VARS_OFF=	GN_ARGS+=rtc_use_pipewire=false \
 			GN_ARGS+=rtc_link_pipewire=false
 
 PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true \
-			PINCLUDES="-I${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/pulseaudio-${PULSEV}/src -DPA_MAJOR=${PULSEMV}"
+			PINCLUDES="-I${WRKSRC:H}/pulseaudio-${PULSEV}/src -DPA_MAJOR=${PULSEMV}"
 PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
@@ -220,9 +231,9 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			138.0.7204.157
+CHROMIUM_VER=			138.0.7204.251
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			22.17.1
+NODE_VER=			22.21.1
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			e14bdcd1f72d62bca1d541b66da43130384ec213
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
@@ -233,8 +244,6 @@ REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 MANTLE_VER=			78d3966b3c331292ea29ec38661b25df0a245948
 # See ${WRKSRC}/electron/DEPS for ENGFLOW_RECLIENT_CONFIGS_VER
 ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
-
-YARN_TIMESTAMP=	61171200
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
@@ -287,11 +296,14 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
 
 # rust
-RUSTC_VERSION!=	rustc -V 2>/dev/null || true
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute="${LOCALBASE}" \
-		rustc_version="${RUSTC_VERSION}"
+		rust_sysroot_absolute="${LOCALBASE}"
+
+TEST_ENV+=	${MAKE_ENV} \
+		ELECTRON_OUT_DIR=${BUILDTYPE} \
+		LOCAL_GIT_DIRECTORY=${LOCALBASE} \
+		DISABLE_CRASH_REPORTER_TESTS=1
 
 pre-everything::
 	@${ECHO_MSG}
@@ -299,51 +311,31 @@ pre-everything::
 	@${ECHO_MSG} "and around ${WANTSPACE} of free disk space."
 	@${ECHO_MSG}
 
-pre-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX} ]; \
-		then ${MKDIR} ${WRKDIR}; \
-		${ECHO_CMD} 'yarn-offline-mirror "./yarn-offline-cache"' >> \
-			${WRKDIR}/.yarnrc; \
-		${CP} ${FILESDIR}/package.json ${FILESDIR}/yarn.lock ${WRKDIR}; \
-		cd ${WRKDIR} && ${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache \
-			yarn --frozen-lockfile --ignore-scripts; \
-		${MTREE_CMD} -cbnSp yarn-offline-cache | ${MTREE_CMD} -C | ${SED} \
-			-e 's:time=[0-9.]*:time=${YARN_TIMESTAMP}.000000000:' \
-			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
-			-e 's:mode=\([0-9]\)7[0-9][0-9]:mode=\1755:' \
-			-e 's:mode=\([0-9]\)6[0-9][0-9]:mode=\1644:' \
-			-e 's:flags=.*:flags=none:' \
-			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
-		${TAR} cJf ${DISTDIR}/${DIST_SUBDIR}/electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX} \
-			@yarn-offline-cache.mtree; \
-		${RM} -r ${WRKDIR}; \
-	fi
+pre-extract:
+# Chromium source tarball is splitted into multiple fragments. Concatenate them
+# into a single one and manually extract it into WRKDIR.
+	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.? > \
+		${WRKSRC:H}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}
+	@cd ${WRKSRC:H} && \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		chromium-${CHROMIUM_VER}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 post-extract:
 # Move extracted sources to appropriate locations
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/chromium-${CHROMIUM_VER} ${WRKSRC}
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${PORTNAME}-${ELECTRON_VER} ${WRKSRC}/electron
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_nan}-${NAN_VER} \
-		${WRKSRC}/third_party/nan
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_node}-${NODE_VER} \
+	${MV} ${WRKSRC:H}/chromium-${CHROMIUM_VER} ${WRKSRC}
+	${MV} ${WRKSRC:H}/${PORTNAME}-${ELECTRON_VER} ${WRKSRC}/electron
+	${MV} ${WRKSRC:H}/${GH_PROJECT_nan}-${NAN_VER} ${WRKSRC}/third_party/nan
+	${MV} ${WRKSRC:H}/${GH_PROJECT_node}-${NODE_VER} \
 		${WRKSRC}/third_party/electron_node
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_squirrel_mac}-${SQUIRREL_MAC_VER} \
+	${MV} ${WRKSRC:H}/${GH_PROJECT_squirrel_mac}-${SQUIRREL_MAC_VER} \
 		${WRKSRC}/third_party/squirrel.mac
-	${MKDIR} ${WRKSRC}/third_party/squirrel.mac/vendor
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_reactiveobjc}-${REACTIVEOBJC_VER} \
+	@${MKDIR} ${WRKSRC}/third_party/squirrel.mac/vendor
+	${MV} ${WRKSRC:H}/${GH_PROJECT_reactiveobjc}-${REACTIVEOBJC_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/ReactiveObjC
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_mantle}-${MANTLE_VER} \
+	${MV} ${WRKSRC:H}/${GH_PROJECT_mantle}-${MANTLE_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
+	${MV} ${WRKSRC:H}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
 		${WRKSRC}/third_party/engflow-reclient-configs
-# Install node modules for electron
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/yarn-offline-cache ${WRKDIR}
-	${ECHO_CMD} 'yarn-offline-mirror "../../../yarn-offline-cache"' >> ${WRKSRC}/electron/.yarnrc
-	${MV} ${WRKSRC}/electron/package.json ${WRKSRC}/electron/package.json.bak
-	${CP} ${FILESDIR}/package.json ${WRKSRC}/electron
-	cd ${WRKSRC}/electron && \
-		${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache yarn --frozen-lockfile --offline
 
 pre-patch:
 	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
@@ -368,8 +360,9 @@ pre-configure:
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
-	touch ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/pulseaudio-${PULSEV}/src/pulse/version.h
+	touch ${WRKSRC:H}/pulseaudio-${PULSEV}/src/pulse/version.h
 	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
+		${WRKSRC}/build/config/rust.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
@@ -443,10 +436,7 @@ post-install-DRIVER-on:
 		${STAGEDIR}${DATADIR}/chromedriver
 
 do-test:
-# Note 1: "npm install" will run before actual tests are executed
-# Note 2: Xvfb or something similar is necessary for headless testing
 	cd ${WRKSRC}/electron && \
-		${SETENV} ${TEST_ENV} ELECTRON_OUT_DIR=${BUILDTYPE} LOCAL_GIT_DIRECTORY=${LOCALBASE} \
-		npm run test -- --ci
+	${SETENV} ${TEST_ENV} yarn run test -- --ci
 
 .include <bsd.port.post.mk>

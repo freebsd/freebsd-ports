@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-09-10 08:41:47 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77", "setuptools-scm>=8"]
++requires = ["setuptools>=61", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,7 +8,7 @@ python bindings for the ISA-L ibrary."""
+ description = """
+ Faster zlib and gzip compatible compression and decompression by providing \
+ python bindings for the ISA-L ibrary."""
+-license="PSF-2.0"
++license={text = "PSF-2.0"}
+ keywords=["isal", "isa-l", "compression", "deflate", "gzip", "igzip"]
+ authors = [{name = "Leiden University Medical Center"},
+            {email = "r.h.p.vorderman@lumc.nl"}]

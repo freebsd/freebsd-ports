@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_http_auth_totp_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_auth_totp_module-debug.so

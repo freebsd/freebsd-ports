@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-By default the usage of OnlyKey will be allowed to users of the 'u2f'
-group. To override this edit %%PREFIX%%/etc/devd/onlykey.conf 
-EOM
-}
-]

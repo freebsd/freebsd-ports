@@ -50,8 +50,7 @@ load_rc_config $name
 : ${tailscaled_up_args:=""}
 : ${tailscaled_tun_dev:="tailscale0"}
 
-DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
-if [ ${DAEMON} -eq 0 ]; then
+if /usr/sbin/daemon 2>&1 | grep -q syslog; then
         : ${tailscaled_syslog_output_enable:="NO"}
         : ${tailscaled_syslog_output_priority:="info"}
         : ${tailscaled_syslog_output_facility:="daemon"}
@@ -71,15 +70,23 @@ else
         tailscaled_syslog_output_flags=""
 fi
 
+if ! checkyesno tailscaled_telemetry_enable; then
+        tailscaled_telemetry_flags="--no-logs-no-support"
+else
+        tailscaled_telemetry_flags=""
+fi
+
 pidfile=/var/run/${name}.pid
 procname="%%PREFIX%%/bin/${name}"
 ctlname="%%PREFIX%%/bin/tailscale"
+command="/usr/sbin/daemon"
+command_args="-f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} -port ${tailscaled_port} -tun ${tailscaled_tun_dev} -statedir ${tailscaled_state_dir} ${tailscaled_telemetry_flags} ${tailscaled_args}"
 
-start_cmd="${name}_start"
+start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
 stop_postcmd="${name}_poststop"
 
-tailscaled_start()
+tailscaled_prestart()
 {
 	# Check for orphaned tailscale network interface
 	# And if it exists, then destroy it
@@ -89,11 +96,8 @@ tailscaled_start()
 	)
 
         if ! checkyesno tailscaled_telemetry_enable; then
-		logger -s -t tailscale "Opting out of client logging telemetry."
-		tailscaled_args=" --no-logs-no-support ${tailscaled_args}"
+                logger -s -t tailscale "Opting out of client logging telemetry."
         fi
-
-	/usr/sbin/daemon -f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} -port ${tailscaled_port} -tun ${tailscaled_tun_dev} -statedir ${tailscaled_state_dir} ${tailscaled_args}
 }
 
 tailscaled_poststart()

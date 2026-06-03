@@ -1,0 +1,4 @@
+lib/aspell-%%VER%%/hus.dat
+lib/aspell-%%VER%%/hus_affix.dat
+share/aspell/hus.multi
+share/aspell/hus.rws

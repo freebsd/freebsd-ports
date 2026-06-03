@@ -1,1 +1,1 @@
-%%PYTHON_SITELIBDIR%%/oslquery.so
+%%PYTHON_SITELIBDIR%%/oslquery%%PYTHON_SOABI%%.so

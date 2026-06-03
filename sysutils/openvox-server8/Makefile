@@ -1,5 +1,6 @@
 PORTNAME=	openvox-server
-PORTVERSION=	8.8.1
+PORTVERSION=	8.12.1
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
@@ -16,11 +17,10 @@ ONLY_FOR_ARCHS_REASON=Bundled JNI only support some architectures
 RUN_DEPENDS=	bash>=0:shells/bash \
 		openvox-agent8>=8.0:sysutils/openvox-agent8 \
 		rubygem-openvoxserver-ca>=1:sysutils/rubygem-openvoxserver-ca \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
-		sudo>=1:security/sudo
+		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
-USES=		ruby java shebangfix
-JAVA_VERSION=	11+
+USES=		ruby java shebangfix sudo
+JAVA_VERSION=	17+
 USE_RC_SUBR=	puppetserver
 WRKSRC=		${WRKDIR}/puppetserver-${PORTVERSION}
 
@@ -56,8 +56,7 @@ post-patch:
 		${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|#!/opt/puppetlabs/puppet/bin/ruby|#!${RUBY}|' \
-		${WRKSRC}/ext/cli/ca \
-		${WRKSRC}/ext/cli/dropsonde
+		${WRKSRC}/ext/cli/ca
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
@@ -77,19 +76,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/web-routes.conf ${STAGEDIR}${ETCDIR}/conf.d/web-routes.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/webserver.conf ${STAGEDIR}${ETCDIR}/conf.d/webserver.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/auth.conf ${STAGEDIR}${ETCDIR}/conf.d/auth.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/ca.conf ${STAGEDIR}${ETCDIR}/conf.d/ca.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/metrics.conf ${STAGEDIR}${ETCDIR}/conf.d/metrics.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/services.d/ca.cfg ${STAGEDIR}${ETCDIR}/services.d/ca.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/system-config/services.d/bootstrap.cfg ${STAGEDIR}${ETCDIR}/services.d/bootstrap.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/bin/puppetserver ${STAGEDIR}${PREFIX}/bin/puppetserver
-	${INSTALL_DATA} ${WRKSRC}/ext/ezbake-functions.sh ${STAGEDIR}${DATADIR}/ezbake-functions.sh
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/ca ${STAGEDIR}${DATADIR}/cli/apps/ca
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/foreground ${STAGEDIR}${DATADIR}/cli/apps/foreground
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/gem ${STAGEDIR}${DATADIR}/cli/apps/gem
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/irb ${STAGEDIR}${DATADIR}/cli/apps/irb
-	${INSTALL_DATA} ${WRKSRC}/ext/cli/reload ${STAGEDIR}${DATADIR}/cli/apps/reload
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/ruby ${STAGEDIR}${DATADIR}/cli/apps/ruby
-	${INSTALL_DATA} ${WRKSRC}/ext/cli/start ${STAGEDIR}${DATADIR}/cli/apps/start
-	${INSTALL_DATA} ${WRKSRC}/ext/cli/stop ${STAGEDIR}${DATADIR}/cli/apps/stop
 	${INSTALL_DATA} ${WRKSRC}/ext/cli_defaults/cli-defaults.sh ${STAGEDIR}${DATADIR}/cli/cli-defaults.sh
 
 .include <bsd.port.mk>

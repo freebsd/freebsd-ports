@@ -1,0 +1,138 @@
+bin/xbarrel
+bin/xbevel
+bin/xcubes
+bin/xdino
+bin/xhexagons
+bin/xmball
+bin/xmlink
+bin/xoct
+bin/xpanex
+bin/xpyraminx
+bin/xrubik
+bin/xskewb
+bin/xtriangles
+lib/X11/app-defaults/XBarrel
+lib/X11/app-defaults/XBevel
+lib/X11/app-defaults/XCubes
+lib/X11/app-defaults/XDino
+lib/X11/app-defaults/XHexagons
+lib/X11/app-defaults/XMball
+lib/X11/app-defaults/XMlink
+lib/X11/app-defaults/XOct
+lib/X11/app-defaults/XPanex
+lib/X11/app-defaults/XPyraminx
+lib/X11/app-defaults/XRubik
+lib/X11/app-defaults/XSkewb
+lib/X11/app-defaults/XTriangles
+share/applications/xbarrel.desktop
+share/applications/xbevel.desktop
+share/applications/xcubes.desktop
+share/applications/xdino.desktop
+share/applications/xhexagons.desktop
+share/applications/xmball.desktop
+share/applications/xmlink.desktop
+share/applications/xoct.desktop
+share/applications/xpanex.desktop
+share/applications/xpyraminx.desktop
+share/applications/xrubik.desktop
+share/applications/xskewb.desktop
+share/applications/xtriangles.desktop
+share/games/xpuzzles/bump.au
+share/games/xpuzzles/drip.au
+share/games/xpuzzles/mandrill.xbm
+share/games/xpuzzles/mandrill.xpm
+share/games/xpuzzles/move.au
+share/icons/hicolor/16x16/apps/barrel.png
+share/icons/hicolor/16x16/apps/bevel.png
+share/icons/hicolor/16x16/apps/cubes.png
+share/icons/hicolor/16x16/apps/dino.png
+share/icons/hicolor/16x16/apps/hexagons.png
+share/icons/hicolor/16x16/apps/mball.png
+share/icons/hicolor/16x16/apps/mlink.png
+share/icons/hicolor/16x16/apps/oct.png
+share/icons/hicolor/16x16/apps/panex.png
+share/icons/hicolor/16x16/apps/pyraminx.png
+share/icons/hicolor/16x16/apps/rubik.png
+share/icons/hicolor/16x16/apps/skewb.png
+share/icons/hicolor/16x16/apps/triangles.png
+share/icons/hicolor/22x22/apps/barrel.png
+share/icons/hicolor/22x22/apps/bevel.png
+share/icons/hicolor/22x22/apps/cubes.png
+share/icons/hicolor/22x22/apps/dino.png
+share/icons/hicolor/22x22/apps/hexagons.png
+share/icons/hicolor/22x22/apps/mball.png
+share/icons/hicolor/22x22/apps/mlink.png
+share/icons/hicolor/22x22/apps/oct.png
+share/icons/hicolor/22x22/apps/panex.png
+share/icons/hicolor/22x22/apps/pyraminx.png
+share/icons/hicolor/22x22/apps/rubik.png
+share/icons/hicolor/22x22/apps/skewb.png
+share/icons/hicolor/22x22/apps/triangles.png
+share/icons/hicolor/24x24/apps/barrel.png
+share/icons/hicolor/24x24/apps/bevel.png
+share/icons/hicolor/24x24/apps/cubes.png
+share/icons/hicolor/24x24/apps/dino.png
+share/icons/hicolor/24x24/apps/hexagons.png
+share/icons/hicolor/24x24/apps/mball.png
+share/icons/hicolor/24x24/apps/mlink.png
+share/icons/hicolor/24x24/apps/oct.png
+share/icons/hicolor/24x24/apps/panex.png
+share/icons/hicolor/24x24/apps/pyraminx.png
+share/icons/hicolor/24x24/apps/rubik.png
+share/icons/hicolor/24x24/apps/skewb.png
+share/icons/hicolor/24x24/apps/triangles.png
+share/icons/hicolor/32x32/apps/barrel.png
+share/icons/hicolor/32x32/apps/bevel.png
+share/icons/hicolor/32x32/apps/cubes.png
+share/icons/hicolor/32x32/apps/dino.png
+share/icons/hicolor/32x32/apps/hexagons.png
+share/icons/hicolor/32x32/apps/mball.png
+share/icons/hicolor/32x32/apps/mlink.png
+share/icons/hicolor/32x32/apps/oct.png
+share/icons/hicolor/32x32/apps/panex.png
+share/icons/hicolor/32x32/apps/pyraminx.png
+share/icons/hicolor/32x32/apps/rubik.png
+share/icons/hicolor/32x32/apps/skewb.png
+share/icons/hicolor/32x32/apps/triangles.png
+share/icons/hicolor/48x48/apps/barrel.png
+share/icons/hicolor/48x48/apps/bevel.png
+share/icons/hicolor/48x48/apps/cubes.png
+share/icons/hicolor/48x48/apps/dino.png
+share/icons/hicolor/48x48/apps/hexagons.png
+share/icons/hicolor/48x48/apps/mball.png
+share/icons/hicolor/48x48/apps/mlink.png
+share/icons/hicolor/48x48/apps/oct.png
+share/icons/hicolor/48x48/apps/panex.png
+share/icons/hicolor/48x48/apps/pyraminx.png
+share/icons/hicolor/48x48/apps/rubik.png
+share/icons/hicolor/48x48/apps/skewb.png
+share/icons/hicolor/48x48/apps/triangles.png
+share/man/man6/xbarrel.6.gz
+share/man/man6/xbevel.6.gz
+share/man/man6/xcubes.6.gz
+share/man/man6/xdino.6.gz
+share/man/man6/xhexagons.6.gz
+share/man/man6/xmball.6.gz
+share/man/man6/xmlink.6.gz
+share/man/man6/xoct.6.gz
+share/man/man6/xpanex.6.gz
+share/man/man6/xpyraminx.6.gz
+share/man/man6/xrubik.6.gz
+share/man/man6/xskewb.6.gz
+share/man/man6/xtriangles.6.gz
+@owner games
+@group games
+@dir(games,games,775) /var/games/xpuzzles
+@sample /var/games/xpuzzles/barrel.scores.sample
+@sample /var/games/xpuzzles/bevel.scores.sample
+@sample /var/games/xpuzzles/cubes.scores.sample
+@sample /var/games/xpuzzles/dino.scores.sample
+@sample /var/games/xpuzzles/hexagons.scores.sample
+@sample /var/games/xpuzzles/mball.scores.sample
+@sample /var/games/xpuzzles/mlink.scores.sample
+@sample /var/games/xpuzzles/oct.scores.sample
+@sample /var/games/xpuzzles/panex.scores.sample
+@sample /var/games/xpuzzles/pyraminx.scores.sample
+@sample /var/games/xpuzzles/rubik.scores.sample
+@sample /var/games/xpuzzles/skewb.scores.sample
+@sample /var/games/xpuzzles/triangles.scores.sample

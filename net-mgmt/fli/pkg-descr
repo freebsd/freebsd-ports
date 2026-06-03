@@ -1,0 +1,12 @@
+fli is a command-line tool for analyzing AWS VPC Flow Logs with an intuitive
+query language that simplifies complex network traffic analysis.
+
+Features:
+- Smart filtering by IP, port, and protocol
+- Automatic IP annotations and cloud provider range identification
+- Support for multiple output formats (table, CSV, JSON)
+- Built-in caching for improved performance
+- Cross-platform compatibility
+
+fli makes it easy to gain insights into network traffic patterns, security
+events, and bandwidth consumption through commands like count, sum, and raw.

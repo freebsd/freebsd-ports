@@ -9,6 +9,9 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Enhanced execution box with regex pattern matching
 WWW=		https://offog.org/code/
 
+DEPRECATED=	No longer developed upstream
+EXPIRATION_DATE=	2026-07-01
+
 USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 

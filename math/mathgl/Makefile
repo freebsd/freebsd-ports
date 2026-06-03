@@ -1,6 +1,6 @@
 PORTNAME=	mathgl
 DISTVERSION=	2.5
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	math graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
@@ -54,8 +54,8 @@ PTHREADS_DESC=		Enable POSIX threads support (broken, fix pending release)
 
 PYTHON_CMAKE_BOOL=	enable-python
 PYTHON_BUILD_DEPENDS=	swig:devel/swig \
-			${PYNUMPY}
-PYTHON_RUN_DEPENDS=	${PYNUMPY}
+			${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 PYTHON_BROKEN=		Python option needs to be fixed: lgpl needs to be enabled for it
 
 MPI_CMAKE_BOOL=		enable-mpi

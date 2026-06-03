@@ -38,6 +38,10 @@ include/avro/buffer/BufferStream.hh
 include/avro/buffer/BufferStreambuf.hh
 include/avro/buffer/detail/BufferDetail.hh
 include/avro/buffer/detail/BufferDetailIterator.hh
+lib/cmake/avro-cpp/avro-cpp-config-version.cmake
+lib/cmake/avro-cpp/avro-cpp-config.cmake
+lib/cmake/avro-cpp/avro-cpp-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/avro-cpp/avro-cpp-targets.cmake
 lib/libavrocpp.so
 lib/libavrocpp.so.1
 lib/libavrocpp.so.%%PORTVERSION%%

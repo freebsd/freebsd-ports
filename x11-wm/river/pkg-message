@@ -1,0 +1,19 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.4.0"
+  message: <<EOM
+river 0.4.0+ is a breaking release and splits the compositor and window
+manager into separate processes. The river compositor no longer includes
+a window manager, instead users can choose any window manager implementing
+the protocol.
+
+If you are happy with how river 0.3 works and do not want to change your
+setup, please consider switching to x11-wm/river-classic, a maintained
+fork of river 0.3.
+
+For more info, see https://isaacfreund.com/blog/river-window-management/
+
+EOM
+}
+]

@@ -1,0 +1,25 @@
+--- dep/fmt/include/fmt/core.h.orig	2026-05-18 12:50:33 UTC
++++ dep/fmt/include/fmt/core.h
+@@ -216,20 +216,8 @@
+ #  define FMT_UNICODE !FMT_MSC_VERSION
+ #endif
+ 
+-#ifndef FMT_CONSTEVAL
+-#  if ((FMT_GCC_VERSION >= 1000 || FMT_CLANG_VERSION >= 1101) && \
+-       (!defined(__apple_build_version__) ||                     \
+-        __apple_build_version__ >= 14000029L) &&                 \
+-       FMT_CPLUSPLUS >= 202002L) ||                              \
+-      (defined(__cpp_consteval) &&                               \
+-       (!FMT_MSC_VERSION || _MSC_FULL_VER >= 193030704))
+-// consteval is broken in MSVC before VS2022 and Apple clang before 14.
+-#    define FMT_CONSTEVAL consteval
+-#    define FMT_HAS_CONSTEVAL
+-#  else
+-#    define FMT_CONSTEVAL
+-#  endif
+-#endif
++// Disable consteval
++#define FMT_CONSTEVAL
+ 
+ #ifndef FMT_USE_NONTYPE_TEMPLATE_ARGS
+ #  if defined(__cpp_nontype_template_args) &&                  \

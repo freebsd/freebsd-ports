@@ -1,6 +1,6 @@
 PORTNAME=	plman
 PORTVERSION=	2.5.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/dist/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}.sourceforge.net/

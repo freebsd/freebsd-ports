@@ -4,6 +4,9 @@ DISTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	409db5e910279224bd7e78f8188450c7e7d34d87.patch:-p1
+
 MAINTAINER=	teodor@sigaev.ru
 COMMENT=	C++11 library for serialization
 WWW=		https://github.com/USCiLab/cereal

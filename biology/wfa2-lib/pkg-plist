@@ -1,6 +1,7 @@
 include/wfa2lib/alignment/affine2p_penalties.h
 include/wfa2lib/alignment/affine_penalties.h
 include/wfa2lib/alignment/cigar.h
+include/wfa2lib/alignment/cigar_utils.h
 include/wfa2lib/alignment/linear_penalties.h
 include/wfa2lib/alignment/score_matrix.h
 include/wfa2lib/bindings/cpp/WFAligner.hpp
@@ -51,3 +52,4 @@ lib/libwfa2.so.0
 lib/libwfa2cpp.a
 lib/libwfa2cpp.so
 lib/libwfa2cpp.so.0
+libdata/pkgconfig/libwfa2.pc

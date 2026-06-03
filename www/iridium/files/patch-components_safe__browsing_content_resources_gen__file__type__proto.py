@@ -1,4 +1,4 @@
---- components/safe_browsing/content/resources/gen_file_type_proto.py.orig	2025-05-07 06:48:23 UTC
+--- components/safe_browsing/content/resources/gen_file_type_proto.py.orig	2025-12-10 15:04:57 UTC
 +++ components/safe_browsing/content/resources/gen_file_type_proto.py
 @@ -37,6 +37,8 @@ def PlatformTypes():
          "chromeos":

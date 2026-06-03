@@ -1,2 +1,12 @@
-Cowrie is a medium interaction SSH and Telnet honeypot designed to log brute
-force attacks and the shell interaction performed by the attacker.
+Cowrie is a medium and high interaction SSH and Telnet honeypot.
+
+Cowrie is designed to log brute force attacks and the shell interaction
+performed by an attacker. In medium interaction mode, it emulates a shell
+and filesystem, while in high interaction mode, it proxies traffic to
+another host.
+
+Features:
+- Fake filesystem with the ability to add/remove files.
+- Session logging in a format compatible with `ttyrec`.
+- Stores files uploaded with SFTP and SCP for later analysis.
+- Logs events to JSON files for processing with tools like Elasticsearch.

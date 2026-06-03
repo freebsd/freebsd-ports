@@ -87,7 +87,7 @@ shibboleth_idp_initupgrade() {
         printf "idp.keystore.password=${KEYSTORE}\nidp.sealer.password=${COOKIE}\n">%%WWWDIR%%/credentials/secrets.properties
     fi
     %%DATADIR%%/bin/install.sh --propertyFile %%WWWDIR%%/install.properties --propertyFiles %%WWWDIR%%/credentials/secrets.properties
-    /usr/bin/sed -i'.bak' -e "s|idp.scope = example.org|idp.scope=${shibboleth_idp_scope}|g" %%WWWDIR%%/conf/idp.properties
+    /usr/bin/sed -i'.bak' -e "s|idp.scope = example.org|idp.scope=${shibboleth_idp_scope}|g" -e 's|#idp.updateCheck.enable=true|idp.updateCheck.enable=false|g' %%WWWDIR%%/conf/idp.properties
 }
 
 shibboleth_idp_status() {

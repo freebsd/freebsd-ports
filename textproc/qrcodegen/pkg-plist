@@ -4,3 +4,7 @@ bin/qrcodegen
 %%DATADIR%%/NOTICE
 %%DATADIR%%/QRCodeGen.jar
 %%DATADIR%%/Version.html
+%%DATADIR%%/jaxb-api.jar
+%%DATADIR%%/jaxb-runtime.jar
+%%DATADIR%%/istack-commons-runtime.jar
+%%DATADIR%%/javax.activation-api.jar

@@ -1,8 +1,7 @@
 PORTNAME=	percona-toolkit
-DISTVERSION=	3.5.2
-PORTREVISION=	1
+DISTVERSION=	3.7.1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/source/tarball/
+MASTER_SITES=	https://downloads.percona.com/downloads/${PORTNAME}/${PORTVERSION}/source/tarball/
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collection of essential command-line utilities for MySQL

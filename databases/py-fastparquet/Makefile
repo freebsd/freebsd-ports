@@ -1,5 +1,6 @@
 PORTNAME=	fastparquet
-PORTVERSION=	2024.11.0
+PORTVERSION=	2025.12.0
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,10 @@ WWW=		https://github.com/dask/fastparquet
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+DEPRECATED=	Retired by upstream. See https://github.com/dask/fastparquet/commit/dfe8d4ed0107427674dfa1b18918a167f057a328 for details
+EXPIRATION_DATE=2026-06-30
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \

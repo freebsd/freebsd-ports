@@ -1,6 +1,6 @@
 PORTNAME=	molmod
 DISTVERSION=	1.4.8
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,14 @@ WWW=		https://github.com/molmod/molmod
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python shebangfix
 SHEBANG_GLOB=	*.py
-USE_PYTHON=	distutils cython cython_run autoplist
+USE_PYTHON=	autoplist cython0 cython0_run distutils
 
 do-test: # Tests fail: https://github.com/molmod/molmod/issues/27
 	@cd ${WRKSRC} && \

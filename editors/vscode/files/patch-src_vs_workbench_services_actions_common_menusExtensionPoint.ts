@@ -1,6 +1,6 @@
---- src/vs/workbench/services/actions/common/menusExtensionPoint.ts.orig	2025-07-09 22:00:36 UTC
+--- src/vs/workbench/services/actions/common/menusExtensionPoint.ts.orig	2026-05-12 20:17:22 UTC
 +++ src/vs/workbench/services/actions/common/menusExtensionPoint.ts
-@@ -1174,7 +1174,10 @@ class CommandsTableRenderer extends Disposable impleme
+@@ -1265,7 +1265,10 @@ class CommandsTableRenderer extends Disposable impleme
  
  		switch (platform) {
  			case 'win32': key = rawKeyBinding.win; break;

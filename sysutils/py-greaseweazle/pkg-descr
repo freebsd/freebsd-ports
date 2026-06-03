@@ -1,0 +1,9 @@
+Greaseweazle is a set of tools for accessing a floppy drive at the raw
+flux level. This allows reading and writing of raw flux data, as well as
+conversion between various floppy disk image formats. It supports a wide
+range of floppy disk formats including IBM, Amiga, Commodore 64, Apple,
+and Macintosh.
+
+The "gw" command-line tool communicates with a Greaseweazle USB device to
+read, write, and manipulate floppy disks at a level below the normal
+operating system disk interface.

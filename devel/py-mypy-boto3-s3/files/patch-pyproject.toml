@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-03-31 13:52:27.320395000 -0700
++++ pyproject.toml	2026-03-31 13:52:27.322993000 -0700
+@@ -5,7 +5,7 @@
+ [project]
+ name = "mypy-boto3-s3"
+ version = "1.42.80"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
+ description = "Type annotations for boto3 S3 1.42.80 service generated with mypy-boto3-builder 8.12.0"
+ readme = "README.md"

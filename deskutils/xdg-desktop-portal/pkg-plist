@@ -65,6 +65,7 @@ share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service
 share/dbus-1/services/org.freedesktop.portal.Desktop.service
 share/dbus-1/services/org.freedesktop.portal.Documents.service
 share/locale/be/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/bg/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/ca/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/cs/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/da/LC_MESSAGES/xdg-desktop-portal.mo

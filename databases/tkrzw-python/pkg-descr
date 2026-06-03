@@ -1,0 +1,5 @@
+Python interface for Tkrzw library implementing DBM with various
+algorithms. Tkrzw features high degrees of performance, concurrency,
+scalability and durability.
+
+Tkrzw is a successor of Kyoto Cabinet.

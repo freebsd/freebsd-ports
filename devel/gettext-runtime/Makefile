@@ -3,7 +3,7 @@
 # discretion.
 
 PORTNAME=	gettext-runtime
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GNU gettext runtime libraries and programs
 WWW=		https://www.gnu.org/software/gettext/
@@ -22,7 +22,7 @@ CPE_PRODUCT=	gettext
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-gettext \
+CONFIGURE_ARGS=	-C --disable-csharp --disable-java \
 		ac_cv_lib_rt_sched_yield=no
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

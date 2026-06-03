@@ -1,2 +1,2 @@
-The official collection of GLSL shaders for libretro frontends
-such as RetroArch.
+This is a collection of the GLSL shaders from the libretro project. Prominent
+examples of programs which can use these shaders are RetroArch and ScummVM.

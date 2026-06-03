@@ -1,6 +1,7 @@
 PORTNAME=	youtube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.4
+DISTVERSION=	2.10.6
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	-downloader
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/kkdai/youtube
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/kkdai/youtube/v2
 GO_TARGET=	./cmd/youtubedr

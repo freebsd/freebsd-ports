@@ -1,7 +1,7 @@
---- Documentation/reference/Makefile.am.orig	2020-07-07 14:26:13 UTC
+--- Documentation/reference/Makefile.am.orig	2026-04-13 13:37:14 UTC
 +++ Documentation/reference/Makefile.am
 @@ -81,11 +81,11 @@ GTKDOC_LIBS= \
- 	@GTKS_LIBS@ @GLU_LIBS@ @EXTRA_LDFLAGS@ @EXTRA_LIBS@
+ 	@GTKS_LIBS@ @EXTRA_LDFLAGS@ @EXTRA_LIBS@
  
  # This includes the standard gtk-doc make rules, copied by gtkdocize.
 -include $(srcdir)/gtk-doc.make
@@ -14,7 +14,7 @@
  
  # Files not to distribute
  # for --rebuild-types in $(SCAN_OPTIONS), e.g. $(DOC_MODULE).types
-@@ -93,11 +93,11 @@ EXTRA_DIST += version.in
+@@ -93,11 +93,11 @@ DISTCLEANFILES = $(DOC_MODULE).types $(DOC_MODULE)-sec
  DISTCLEANFILES = $(DOC_MODULE).types $(DOC_MODULE)-sections.txt
  
  # Comment this out if you want your docs-status tested during 'make check'

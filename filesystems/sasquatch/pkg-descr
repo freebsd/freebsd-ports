@@ -1,0 +1,16 @@
+The sasquatch project is a set of patches to the standard unsquashfs utility
+(part of squashfs-tools) that attempts to add support for as many hacked-up
+vendor-specific SquashFS implementations as possible.
+
+It can be used in conjunction with binwalk to extract firmware images where
+unsquashfs would fail, e.g.
+
+  If the vendor has done something simple like just muck a bit with the header
+  fields, sasquatch should sort it out.
+
+  If the vendor has made changes to the underlying LZMA compression options,
+  or to how these options are stored in the compressed data blocks, sasquatch
+  will attempt to automatically resolve such customizations via a brute-force
+  method.
+
+Original project under: https://github.com/devttys0/sasquatch

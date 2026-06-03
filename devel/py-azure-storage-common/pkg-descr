@@ -1,4 +1,3 @@
-Microsoft Azure Storage Common Client Library for Python
-
 This project provides a client library in Python that makes it easy to consume
-Microsoft Azure Storage services.
+Microsoft Azure Storage services. For documentation please see the Microsoft
+Azure Python Developer Center and our API Reference.

@@ -2,7 +2,7 @@ PORTNAME=	radish-play
 DISTVERSION=	g20250621
 CATEGORIES=	japanese audio
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Japanese Internet radio player
 WWW=		https://github.com/jg1uaa/radish-play
 

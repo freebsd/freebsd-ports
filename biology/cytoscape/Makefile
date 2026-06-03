@@ -1,5 +1,6 @@
 PORTNAME=	cytoscape
 DISTVERSION=	3.6.1
+PORTREVISION=	2
 CATEGORIES=	biology java
 MASTER_SITES=	LOCAL/yuri/:maven \
 		http://people.freebsd.org/~yuri/:maven
@@ -29,6 +30,10 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}-parent:${DISTVERSION}:p/parent \
 		${PORTNAME}:${PORTNAME}-support:${DISTVERSION}:s/support \
 		${PORTNAME}:${PORTNAME}-gui-distribution:${DISTVERSION}:g/gui-distribution \
 		${PORTNAME}:${PORTNAME}-app-template:${DISTVERSION}:d/app-developer
+JAVA_VERSION=	8 # Needs JAXB which is in included in jdk8 but not in jdk11+.
+
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
+
 NO_ARCH=	yes
 
 USER_WRKDIR=	~/.${PORTNAME}

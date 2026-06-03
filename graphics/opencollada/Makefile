@@ -4,7 +4,7 @@ PORTVERSION=	1.6.68
 PORTREVISION=	5
 CATEGORIES=	graphics devel
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing COLLADA files
 WWW=		http://opencollada.org/ \
 		https://github.com/KhronosGroup/OpenCOLLADA

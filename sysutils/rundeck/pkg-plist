@@ -8,4 +8,4 @@
 @dir %%RUNDECK_LOGDIR%%
 @owner
 @group
-%%DATADIR%%/%%RUNDECK_USER%%.war
+%%DATADIR%%/%%NAME%%

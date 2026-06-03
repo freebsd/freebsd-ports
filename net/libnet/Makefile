@@ -11,7 +11,7 @@ WWW=		https://github.com/libnet/libnet
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe libtool pathfix
+USES=		cpe libtool
 
 CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--disable-doxygen-dot \

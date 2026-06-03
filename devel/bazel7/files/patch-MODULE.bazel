@@ -1,0 +1,15 @@
+--- MODULE.bazel.orig	2026-03-24 07:09:07 UTC
++++ MODULE.bazel
+@@ -60,6 +60,12 @@ single_version_override(
+     ],
+ )
+ 
++single_version_override(
++    module_name = "rules_python",
++    patch_strip = 1,
++    patches = ["//toolchain_local:rules_python_freebsd.patch"],
++)
++
+ # The following Bazel modules are not direct dependencies for building Bazel,
+ # but are required for visibility from DIST_ARCHIVE_REPOS in repositories.bzl
+ bazel_dep(name = "apple_support", version = "1.23.1")

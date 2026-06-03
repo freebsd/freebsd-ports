@@ -16,7 +16,7 @@ BROKEN_i386=	typedef redefinition with different types ('unsigned long' vs 'unsi
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		alias gmake
+USES=		gmake
 MAKE_ARGS+=	INSTROOT=${STAGEDIR}
 WRKSRC=		${WRKDIR}/asl-current
 

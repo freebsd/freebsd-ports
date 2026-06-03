@@ -1,0 +1,11 @@
+--- thirdparty/tcp_pubsub/tcp_pubsub/tcp_pubsub/CMakeLists.txt.orig	2025-04-09 11:22:54 UTC
++++ thirdparty/tcp_pubsub/tcp_pubsub/tcp_pubsub/CMakeLists.txt
+@@ -11,7 +11,7 @@ set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
+ 
+ find_package(Threads REQUIRED)
+ find_package(asio REQUIRED)
+-find_package(recycle REQUIRED)
++#find_package(recycle REQUIRED)
+ 
+ # Include GenerateExportHeader that will create export macros for us
+ include(GenerateExportHeader)

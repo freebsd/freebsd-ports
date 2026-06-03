@@ -1,6 +1,5 @@
 PORTNAME=	gpaw
-DISTVERSION=	24.6.0
-PORTREVISION=	3
+DISTVERSION=	25.7.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,17 +9,19 @@ COMMENT=	DFT and beyond within the projector-augmented wave method in chemistry
 WWW=		https://wiki.fysik.dtu.dk/gpaw/ \
 		https://gitlab.com/gpaw/gpaw
 
+BROKEN=		fails to build with NumPy 2.x
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libmpich.so:net/mpich \
 		libopenblas.so:math/openblas \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		gpaw-setups>0:science/gpaw-setups
 

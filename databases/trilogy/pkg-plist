@@ -1,5 +1,6 @@
 bin/trilogy_query
 include/trilogy.h
+include/trilogy/allocator.h
 include/trilogy/blocking.h
 include/trilogy/buffer.h
 include/trilogy/builder.h

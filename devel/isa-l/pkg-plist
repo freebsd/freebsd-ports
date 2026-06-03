@@ -5,12 +5,13 @@ include/isa-l/crc64.h
 include/isa-l/erasure_code.h
 include/isa-l/gf_vect_mul.h
 include/isa-l/igzip_lib.h
+include/isa-l/isal_api.h
 include/isa-l/mem_routines.h
 include/isa-l/raid.h
 include/isa-l/test.h
 lib/libisal.a
 lib/libisal.so
 lib/libisal.so.2
-lib/libisal.so.2.0.31
+lib/libisal.so.2.0.32
 libdata/pkgconfig/libisal.pc
 share/man/man1/igzip.1.gz

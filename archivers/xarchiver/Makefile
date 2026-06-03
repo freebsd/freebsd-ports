@@ -1,5 +1,5 @@
 PORTNAME=	xarchiver
-DISTVERSION=	0.5.4.25
+DISTVERSION=	0.5.4.26
 CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -25,6 +25,8 @@ USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool
 GNU_CONFIGURE=	yes
 
 PORTSCOUT=	limit:^\d\.\d\.\d\.\d+$ # avoid tags like identical_to_xfce_git_content
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_GROUP=		FORMATS

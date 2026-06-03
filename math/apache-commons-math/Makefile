@@ -1,6 +1,6 @@
 PORTNAME=	commons-math
 PORTVERSION=	3.6.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	math java
 MASTER_SITES=	APACHE_COMMONS_SOURCE \
 		https://repo1.maven.org/maven2/junit/junit/4.8.2/:source2

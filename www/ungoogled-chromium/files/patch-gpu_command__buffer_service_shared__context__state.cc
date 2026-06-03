@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_context_state.cc.orig	2025-05-31 17:16:41 UTC
+--- gpu/command_buffer/service/shared_context_state.cc.orig	2026-04-15 11:25:12 UTC
 +++ gpu/command_buffer/service/shared_context_state.cc
-@@ -64,7 +64,7 @@
+@@ -61,7 +61,7 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #include "gpu/vulkan/vulkan_util.h"
  
@@ -9,16 +9,16 @@
  #include "gpu/command_buffer/service/external_semaphore_pool.h"
  #endif
  
-@@ -348,7 +348,7 @@ SharedContextState::SharedContextState(
-   if (gr_context_type_ == GrContextType::kVulkan) {
+@@ -298,7 +298,7 @@ SharedContextState::SharedContextState(
+   ) {
      if (vk_context_provider_) {
  #if BUILDFLAG(ENABLE_VULKAN) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_WIN))
 +    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD))
        external_semaphore_pool_ = std::make_unique<ExternalSemaphorePool>(this);
  #endif
-       use_virtualized_gl_contexts_ = false;
-@@ -385,7 +385,7 @@ SharedContextState::~SharedContextState() {
+     }
+@@ -339,7 +339,7 @@ SharedContextState::~SharedContextState() {
    }
  
  #if BUILDFLAG(ENABLE_VULKAN) && \

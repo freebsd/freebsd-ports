@@ -1,6 +1,6 @@
 PORTNAME=	kawa
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	lang scheme java
 MASTER_SITES=	GNU
 
@@ -11,6 +11,7 @@ WWW=		https://www.gnu.org/software/kawa/
 LICENSE=	MIT
 
 USES=		gmake groff java readline
+JAVA_VERSION=	8 11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \

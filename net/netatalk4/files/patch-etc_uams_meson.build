@@ -1,6 +1,6 @@
---- etc/uams/meson.build.orig	2025-03-31 05:27:01 UTC
+--- etc/uams/meson.build.orig	2025-08-07 15:36:39 UTC
 +++ etc/uams/meson.build
-@@ -25,7 +25,7 @@ library(
+@@ -24,7 +24,7 @@ library(
      name_suffix: lib_suffix,
      override_options: 'b_lundef=false',
      install: true,
@@ -8,8 +8,8 @@
 +    install_dir: libexecdir / 'netatalk-uams',
  )
  
- uams_passwd_sources = ['uams_passwd.c']
-@@ -39,7 +39,7 @@ library(
+ library(
+@@ -36,7 +36,7 @@ library(
      name_suffix: lib_suffix,
      override_options: 'b_lundef=false',
      install: true,
@@ -17,8 +17,35 @@
 +    install_dir: libexecdir / 'netatalk-uams',
  )
  
- if have_libgcrypt
-@@ -56,7 +56,7 @@ if have_libgcrypt
+ library(
+@@ -48,7 +48,7 @@ library(
+     name_suffix: lib_suffix,
+     override_options: 'b_lundef=false',
+     install: true,
+-    install_dir: libdir / 'netatalk',
++    install_dir: libexecdir / 'netatalk-uams',
+ )
+ 
+ library(
+@@ -60,7 +60,7 @@ library(
+     name_suffix: lib_suffix,
+     override_options: 'b_lundef=false',
+     install: true,
+-    install_dir: libdir / 'netatalk',
++    install_dir: libexecdir / 'netatalk-uams',
+ )
+ 
+ library(
+@@ -72,7 +72,7 @@ library(
+     name_suffix: lib_suffix,
+     override_options: 'b_lundef=false',
+     install: true,
+-    install_dir: libdir / 'netatalk',
++    install_dir: libexecdir / 'netatalk-uams',
+ )
+ 
+ if have_pam
+@@ -85,7 +85,7 @@ if have_pam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
          install: true,
@@ -27,7 +54,7 @@
      )
  
      library(
-@@ -68,7 +68,7 @@ if have_libgcrypt
+@@ -97,7 +97,7 @@ if have_pam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
          install: true,
@@ -36,64 +63,7 @@
      )
  
      library(
-@@ -80,7 +80,7 @@ if have_libgcrypt
-         name_suffix: lib_suffix,
-         override_options: 'b_lundef=false',
-         install: true,
--        install_dir: libdir / 'netatalk',
-+        install_dir: libexecdir / 'netatalk-uams',
-     )
-     if have_pam
-         uams_dhx2_pam_sources = ['uams_dhx2_pam.c']
-@@ -94,20 +94,20 @@ if have_libgcrypt
-             name_suffix: lib_suffix,
-             override_options: 'b_lundef=false',
-             install: true,
--            install_dir: libdir / 'netatalk',
-+            install_dir: libexecdir / 'netatalk-uams',
-         )
- 
-         if build_shared_lib
-             install_symlink(
-                 'uams_dhx2.so',
--                install_dir: libdir / 'netatalk',
-+                install_dir: libexecdir / 'netatalk-uams',
-                 pointing_to: 'uams_dhx2_pam.so',
-             )
-         endif
-     elif build_shared_lib
-         install_symlink(
-             'uams_dhx2.so',
--            install_dir: libdir / 'netatalk',
-+            install_dir: libexecdir / 'netatalk-uams',
-             pointing_to: 'uams_dhx2_passwd.so',
-         )
-     endif
-@@ -123,20 +123,20 @@ if have_libgcrypt
-             name_suffix: lib_suffix,
-             override_options: 'b_lundef=false',
-             install: true,
--            install_dir: libdir / 'netatalk',
-+            install_dir: libexecdir / 'netatalk-uams',
-         )
- 
-         if build_shared_lib
-             install_symlink(
-                 'uams_dhx.so',
--                install_dir: libdir / 'netatalk',
-+                install_dir: libexecdir / 'netatalk-uams',
-                 pointing_to: 'uams_dhx_pam.so',
-             )
-         endif
-     elif build_shared_lib
-         install_symlink(
-             'uams_dhx.so',
--            install_dir: libdir / 'netatalk',
-+            install_dir: libexecdir / 'netatalk-uams',
-             pointing_to: 'uams_dhx_passwd.so',
-         )
-     endif
-@@ -155,20 +155,20 @@ if have_pam
+@@ -109,40 +109,40 @@ if have_pam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
          install: true,
@@ -108,6 +78,18 @@
 +            install_dir: libexecdir / 'netatalk-uams',
              pointing_to: 'uams_pam.so',
          )
+         install_symlink(
+             'uams_dhx.so',
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+             pointing_to: 'uams_dhx_pam.so',
+         )
+         install_symlink(
+             'uams_dhx2.so',
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+             pointing_to: 'uams_dhx2_pam.so',
+         )
      endif
  elif build_shared_lib
      install_symlink(
@@ -116,8 +98,20 @@
 +        install_dir: libexecdir / 'netatalk-uams',
          pointing_to: 'uams_passwd.so',
      )
+     install_symlink(
+         'uams_dhx.so',
+-        install_dir: libdir / 'netatalk',
++        install_dir: libexecdir / 'netatalk-uams',
+         pointing_to: 'uams_dhx_passwd.so',
+     )
+     install_symlink(
+         'uams_dhx2.so',
+-        install_dir: libdir / 'netatalk',
++        install_dir: libexecdir / 'netatalk-uams',
+         pointing_to: 'uams_dhx2_passwd.so',
+     )
  endif
-@@ -186,6 +186,6 @@ if have_krb5_uam
+@@ -158,6 +158,6 @@ if have_krb5_uam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
          install: true,

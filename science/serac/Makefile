@@ -1,38 +1,41 @@
 PORTNAME=	serac
-PORTVERSION=	g20220823
-PORTREVISION=	6
+PORTVERSION=	g20260327
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High order nonlinear thermomechanical simulation code
-WWW=		https://github.com/LLNL/serac
+WWW=		https://github.com/LLNL/smith
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with axom-0.10.1, see https://github.com/LLNL/serac/issues/1313
-
-LIB_DEPENDS=	libaxom.so:science/axom \
+LIB_DEPENDS=	libaxom_core.so:science/axom \
+		libcamp.so:devel/camp \
 		libconduit.so:science/conduit \
+		libgcc_s.so.1:lang/gcc14 \
 		libhdf5.so:science/hdf5 \
 		libHYPRE.so:science/hypre \
+		libmetis.so:math/metis \
 		libmfem.so:math/mfem \
+		libopenblas.so:math/openblas \
 		libsiloh5.so:science/silo
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang lua
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TAGNAME=	07b8ef1
-GH_TUPLE=	LLNL:blt:49971b88e631aba76a9990c7702ceee47a7c3216:LLNL_blt/cmake/blt \
-		LLNL:uberenv:2cd030dd8fa9ff381900bfbe12fe1eea44a57bb5:LLNL_uberenv/scripts/uberenv \
-		LLNL:serac_tests:2fee9739eadeb218e99f7f5549e0800df81ca757:LLNL_serac_tests/tests
+GH_PROJECT=	smith
+GH_TAGNAME=	887c1cb
+GH_TUPLE=	LLNL:blt:2bf714a56d64b9b66b2a2b20207587af052efc36:LLNL_blt/cmake/blt \
+		LLNL:gretl:fbbbee58b3d3b97771b107ca6e015a40dcf5e0f6:LLNL_gretl/gretl \
+		LLNL:uberenv:bf2f438fc1fe97bb8290a11e5d4f2d56085b4ee3:LLNL_uberenv/scripts/uberenv \
+		LLNL:serac_tests:75d838c69f48a0f263ad68a81d963a0615bed37f:LLNL_serac_tests/tests
 
 CMAKE_TESTING_ON=	ENABLE_TESTS # tests fail to compile, see https://github.com/LLNL/serac/issues/786
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	ENABLE_TESTS
+CMAKE_OFF=	ENABLE_TESTS SMITH_ENABLE_CONTINUATION
 CMAKE_ARGS=	-DAXOM_DIR=${LOCALBASE} \
 		-DCONDUIT_DIR=${LOCALBASE} \
 		-DMFEM_DIR=${LOCALBASE}

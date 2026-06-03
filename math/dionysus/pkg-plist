@@ -12,6 +12,9 @@ include/dionysus/fields/q.h
 include/dionysus/fields/z2.h
 include/dionysus/fields/zp.h
 include/dionysus/filtration.h
+include/dionysus/linked-multi-filtration.h
+include/dionysus/matrix-filtration.h
+include/dionysus/multi-filtration.h
 include/dionysus/omni-field-persistence.h
 include/dionysus/omni-field-persistence.hpp
 include/dionysus/ordinary-persistence.h

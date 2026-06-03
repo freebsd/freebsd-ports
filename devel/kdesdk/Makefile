@@ -7,10 +7,8 @@ COMMENT=	KDE Software Development Kit
 WWW=		https://apps.kde.org/categories/development/
 
 USES=		kde:6 metaport qt:6
-USE_QT=		#
 
-OPTIONS_DEFINE=	CERVISIA \
-		DEVUTILS \
+OPTIONS_DEFINE=	DEVUTILS \
 		DEVSCRIPTS \
 		DOLPHIN \
 		KAPPTEMPLATE \
@@ -22,9 +20,7 @@ OPTIONS_DEFINE=	CERVISIA \
 		POXML \
 		THUMBNAILER \
 		UMBRELLO
-
-CERVISIA_DESC=		CVS frontend
-CERVISIA_RUN_DEPENDS=	cervisia>=${KDE_APPLICATIONS_VERSION}:devel/cervisia
+OPTIONS_DEFAULT=${OPTIONS_DEFINE}
 
 DEVUTILS_DESC=		KDE development utilities
 DEVUTILS_RUN_DEPENDS=	kde-dev-utils>=${KDE_APPLICATIONS_VERSION}:devel/kde-dev-utils
@@ -39,7 +35,7 @@ KAPPTEMPLATE_DESC=	Template generator
 KAPPTEMPLATE_RUN_DEPENDS=	kapptemplate>=${KDE_APPLICATIONS_VERSION}:devel/kapptemplate
 
 KATE_DESC=		KDE advanced text editor
-KATE_USE=		KDE=kate:run
+KATE_RUN_DEPENDS=	kate>=${KDE_APPLICATIONS_VERSION}:editors/kate
 
 KCACHEGRIND_DESC=	Profiler frontend
 KCACHEGRIND_RUN_DEPENDS=	kcachegrind>=${KDE_APPLICATIONS_VERSION}:devel/kcachegrind

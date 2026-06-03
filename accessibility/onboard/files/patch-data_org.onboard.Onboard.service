@@ -1,0 +1,9 @@
+--- data/org.onboard.Onboard.service.orig	2025-07-03 16:13:44 UTC
++++ data/org.onboard.Onboard.service
+@@ -16,5 +16,5 @@ Name=org.onboard.Onboard
+ # along with this program. If not, see <http://www.gnu.org/licenses/>.
+ [D-BUS Service]
+ Name=org.onboard.Onboard
+-Exec=/usr/bin/onboard
++Exec=%%LOCALBASE%%/bin/onboard
+ 

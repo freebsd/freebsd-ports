@@ -1,11 +1,11 @@
 PORTNAME=	e1071
-DISTVERSION=	1.7-16
+DISTVERSION=	1.7-17
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Misc Functions of the Department of Statistics (e1071), TU Wien
-WWW=		https://cran.r-project.org/web/packages/e1071/
+WWW=		https://cran.r-project.org/package=e1071
 
 LICENSE=	GPLv2+
 

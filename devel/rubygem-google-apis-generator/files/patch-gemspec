@@ -1,0 +1,11 @@
+--- google-apis-generator.gemspec.orig	2026-05-05 20:45:48 UTC
++++ google-apis-generator.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.0".freeze])
+-  s.add_runtime_dependency(%q<gems>.freeze, ["~> 1.2".freeze])
++  s.add_runtime_dependency(%q<gems>.freeze, [">= 1.2".freeze])
+   s.add_runtime_dependency(%q<google-apis-core>.freeze, [">= 0.15.0".freeze, "< 2.a".freeze])
+   s.add_runtime_dependency(%q<google-apis-discovery_v1>.freeze, ["~> 0.18".freeze])
+   s.add_runtime_dependency(%q<thor>.freeze, [">= 0.20".freeze, "< 2.a".freeze])

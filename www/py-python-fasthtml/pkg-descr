@@ -1,0 +1,3 @@
+FastHTML is a Python web framework for building web applications rapidly
+using HTML components. It provides an expressive, Pythonic interface to
+create ASGI applications with minimal boilerplate.

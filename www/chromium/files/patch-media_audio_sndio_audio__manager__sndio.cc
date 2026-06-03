@@ -1,6 +1,6 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2025-07-02 06:08:04 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2025-09-03 06:34:22 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,213 @@
+@@ -0,0 +1,215 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -8,6 +8,8 @@
 +#include "base/command_line.h"
 +#include "base/metrics/histogram_macros.h"
 +#include "base/memory/ptr_util.h"
++
++#include "base/logging.h"
 +
 +#include "media/audio/sndio/audio_manager_sndio.h"
 +

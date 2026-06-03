@@ -1,0 +1,46 @@
+From 392ad203ebc2060ccc83022d03f76a8d7bb2f614 Mon Sep 17 00:00:00 2001
+From: Karol Herbst <kherbst@redhat.com>
+Date: Sat, 7 Jun 2025 09:51:00 +0200
+Subject: [PATCH] clc: use new createTargetMachine overload with llvm-21
+
+The old one is deprecated, so let's move and silence the warning.
+
+Cc: mesa-stable
+Reviewed-by: Lionel Landwerlin <lionel.g.landwerlin@intel.com>
+Part-of: <https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/35399>
+---
+ src/compiler/clc/clc_helpers.cpp | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git src/compiler/clc/clc_helpers.cpp src/compiler/clc/clc_helpers.cpp
+index cbf46ce7aa49..2920f7325ed3 100644
+--- src/compiler/clc/clc_helpers.cpp
++++ src/compiler/clc/clc_helpers.cpp
+@@ -60,6 +60,10 @@
+ #include <spirv-tools/linker.hpp>
+ #include <spirv-tools/optimizer.hpp>
+ 
++#if LLVM_VERSION_MAJOR >= 16
++#include <llvm/TargetParser/Triple.h>
++#endif
++
+ #if LLVM_VERSION_MAJOR >= 20
+ #include <llvm/Support/VirtualFileSystem.h>
+ #endif
+@@ -1139,7 +1143,12 @@ llvm_mod_to_spirv(std::unique_ptr<::llvm::Module> mod,
+       auto target = TargetRegistry::lookupTarget(triple, error_msg);
+       if (target) {
+          auto TM = target->createTargetMachine(
+-            triple, "", "", {}, std::nullopt, std::nullopt,
++#if LLVM_VERSION_MAJOR >= 21
++            llvm::Triple(triple),
++#else
++            triple,
++#endif
++            "", "", {}, std::nullopt, std::nullopt,
+ #if LLVM_VERSION_MAJOR >= 18
+             ::llvm::CodeGenOptLevel::None
+ #else
+-- 
+GitLab
+

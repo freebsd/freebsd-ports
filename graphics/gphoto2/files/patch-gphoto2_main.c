@@ -1,10 +1,10 @@
---- gphoto2/main.c.orig	2020-07-02 06:39:33 UTC
+--- gphoto2/main.c.orig	2023-12-06 16:21:01 UTC
 +++ gphoto2/main.c
-@@ -1211,14 +1211,14 @@ start_timeout_func (Camera *camera, unsigned int timeo
+@@ -1215,14 +1215,14 @@ start_timeout_func (Camera *camera, unsigned int timeo
  
  	pthread_create (&tid, NULL, thread_func, td);
  
--	return (tid);
+-	return (unsigned int)tid;
 +	return (intptr_t)tid;
  }
  
@@ -12,7 +12,7 @@
  stop_timeout_func (Camera __unused__ *camera, unsigned int id,
  		   void __unused__ *data)
  {
--	pthread_t tid = id;
+-	pthread_t tid = (pthread_t)id;
 +	pthread_t tid = (pthread_t)(intptr_t)id;
  
  	pthread_cancel (tid);

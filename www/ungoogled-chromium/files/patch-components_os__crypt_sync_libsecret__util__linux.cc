@@ -1,6 +1,6 @@
---- components/os_crypt/sync/libsecret_util_linux.cc.orig	2024-10-27 06:40:35 UTC
+--- components/os_crypt/sync/libsecret_util_linux.cc.orig	2025-12-06 13:30:52 UTC
 +++ components/os_crypt/sync/libsecret_util_linux.cc
-@@ -185,16 +185,22 @@ bool LibsecretLoader::EnsureLibsecretLoaded() {
+@@ -184,16 +184,22 @@ bool LibsecretLoader::EnsureLibsecretLoaded() {
  
  // static
  bool LibsecretLoader::LoadLibsecret() {

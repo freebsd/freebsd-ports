@@ -4,7 +4,7 @@
  						anynet_ntoa(&RealHostAddr));
  			}
  
-+			BLACKLIST_INIT();
++			BLOCKLIST_INIT();
 +
  			if (pipefd[0] != -1)
  			{

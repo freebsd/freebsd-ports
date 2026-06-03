@@ -41,7 +41,7 @@
 /var/ossec/bin/wazuh-modulesd
 /var/ossec/bin/wazuh-syscheckd
 @mode 640
-@owner root
+@owner wazuh
 @group wazuh
 @sample /var/ossec/etc/client.keys.sample
 /var/ossec/etc/internal_options.conf
@@ -138,6 +138,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/9/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/sca.files
@@ -152,6 +153,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/23/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/24/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/25/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-commands.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/sca.files
@@ -164,6 +166,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/12/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/13/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9/sca.files
@@ -211,6 +214,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-indexer.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-syscollector.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-vulnerability-detection.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol/9/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/rootcheck.agent.template
@@ -231,6 +235,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/8/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/9/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/sca.files
@@ -243,6 +248,9 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/16/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/16/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/16/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11.4/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11/sca.files
@@ -306,6 +314,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/centos/6/cis_centos6_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/centos/7/cis_centos7_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/centos/8/cis_centos8_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/centos/9/cis_centos9_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/15/cis_apple_macOS_10.11.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/16/cis_apple_macOS_10.12.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/17/cis_apple_macOS_10.13.yml
@@ -316,9 +325,11 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/22/cis_apple_macOS_13.x.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/23/cis_apple_macOS_14.x.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/24/cis_apple_macOS_15.x.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/25/cis_apple_macOS_26.x.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian11.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian12.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian13.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian7.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian8.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian9.yml
@@ -326,11 +337,13 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd13.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd14.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd15.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd16.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/generic/sca_distro_independent_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i_bastille.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/mongodb/cis_mongodb_36.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/nginx/cis_nginx_1.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ol/10/cis_oracle_linux_10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/ol/9/cis_oracle_linux_9.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/oracledb/cis_oracle_database_19c.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/10/cis_rhel10_linux.yml
@@ -339,11 +352,13 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/7/cis_rhel7_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/8/cis_rhel8_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/9/cis_rhel9_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/rocky/cis_rocky_linux_10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rocky/cis_rocky_linux_8.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rocky/cis_rocky_linux_9.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/sles/11/cis_sles11_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/sles/12/cis_sles12_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/sles/15/cis_sles15_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/sles/16/cis_sles16_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/sunos/cis_solaris11.4.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/sunos/cis_solaris11.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu14-04.yml
@@ -451,6 +466,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/6
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/7
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/9
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/15
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/16
@@ -462,10 +478,12 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/23
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/24
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/25
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/12
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/13
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9
@@ -480,6 +498,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol/9
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/10
@@ -489,12 +508,14 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/8
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/9
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/8
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky/9
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rocky
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/11
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/12
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/16
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11.4
@@ -543,6 +564,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/6
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/7
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/8
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/9
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/15
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/16
@@ -554,6 +576,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/22
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/23
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/24
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/25
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/debian
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/freebsd
@@ -561,6 +584,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/hpux
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/mongodb
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/nginx
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/ol/10
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/ol/9
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/ol
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/oracledb
@@ -575,6 +599,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/11
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/12
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/15
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/16
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/sles
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/sunos
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu

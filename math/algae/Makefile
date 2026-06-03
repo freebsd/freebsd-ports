@@ -15,13 +15,12 @@ BROKEN_aarch64=		does not build: checking for proper floating point exception ha
 BROKEN_armv6=		does not build: checking for proper floating point exception handling... no
 BROKEN_armv7=		does not build: checking for proper floating point exception handling... no
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		fortran
+USES=		fortran:gfortran
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dlmalloc --without-fftw --without-blas \
 		--without-lapack --without-bcslib --without-npsol
-FFLAGS+=	-std=legacy
+FFLAGS=		-std=legacy
 PLIST_SUB=	ALGAE_VERSION=${PORTVERSION}
 
 INFO=		${PORTNAME}

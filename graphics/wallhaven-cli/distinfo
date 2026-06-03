@@ -1,5 +1,5 @@
-TIMESTAMP = 1729951373
-SHA256 (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.5/v2.0.5.mod) = e4046e484528215b298e8c6faac0b34dadd3ae78a71f31dbd4ae59f341690ce5
-SIZE (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.5/v2.0.5.mod) = 250
-SHA256 (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.5/v2.0.5.zip) = 0bd3a574b60018884949f577db69f69a03a8a59a8471bd8a25d59799630b32ca
-SIZE (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.5/v2.0.5.zip) = 10615
+TIMESTAMP = 1765677332
+SHA256 (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.6/v2.0.6.mod) = e4046e484528215b298e8c6faac0b34dadd3ae78a71f31dbd4ae59f341690ce5
+SIZE (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.6/v2.0.6.mod) = 250
+SHA256 (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.6/v2.0.6.zip) = 057f7a1a5f969e420c2f469b8d0fe48cc355a5ab0a33f5ea19cd16216db88fa1
+SIZE (go/graphics_wallhaven-cli/wallhaven-cli-v2.0.6/v2.0.6.zip) = 12035

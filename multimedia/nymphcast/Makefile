@@ -1,11 +1,13 @@
 PORTNAME=	NymphCast
 DISTVERSION=	v0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Audio and video source for a television or powered speakers
 WWW=		http://nyanko.ws/nymphcast.php
+
+BROKEN=		Does not build with ffmpeg > 6
 
 # The LICENSE_FILE lives outside the top-of-the-tree because
 # WRKSRC_SUBDIR is set.

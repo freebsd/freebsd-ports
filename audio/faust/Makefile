@@ -1,6 +1,10 @@
 PORTNAME=	faust
-DISTVERSION=	2.79.3
+DISTVERSION=	2.85.5
 CATEGORIES=	audio devel
+MASTER_SITES=	https://github.com/grame-cncm/faust/releases/download/${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	e4e9e51a1a12ef0806fc7c8439fa817a98ec57ce.patch:-p1 # https://github.com/grame-cncm/faust/pull/1170: Fix compilation flags for generated projects: use c++17 instead of c++14
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
@@ -16,23 +20,18 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++17-lang cmake localbase:ldflags llvm:min=${LLVM_VER},lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
+USES=		compiler:c++17-lang cmake cpe localbase:ldflags llvm:min=${LLVM_VER},lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++17
 
-USE_GITHUB=	yes
+USE_GITHUB=	nodefault
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	\
-		grame-cncm:faustlibraries:ef8dbf7:grame_cncm_faustlibraries/libraries \
-		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck \
-		shakfu:py2max:3aaa8ca:py2max/architecture/max-msp/py2max \
-		yixuan:spectra:8c7242e:spectra/tools/physicalModeling/mesh2faust/spectra
 
-#LLVM_VER=	15 # not c++17 by default
 LLVM_VER=	19
 
 SHEBANG_FILES=	tools/faust-config \
 		tools/faust2appls/* \
+		tools/faust2clap/faust2clap.py \
 		tools/benchmark/faustbench \
 		tools/sound2faust/sound2reader
 
@@ -61,6 +60,8 @@ HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
 
+CPE_VENDOR=		grame
+
 post-patch:
 	# change qmake (5) -> qmake6
 	@cd ${WRKSRC} && \
@@ -71,6 +72,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/faust # https://github.com/grame-cncm/faust/issues/135
 	@${FIND} ${STAGEDIR} -name android | ${XARGS} ${RM} -r
+	# update QT modules in installes bin/faust2*
+	${REINPLACE_CMD} -i '' -e 's| printsupport||g' ${STAGEDIR}${PREFIX}/bin/faust2*
 
 post-install-HIGHLIGHT-on:
 	# 1) kate
@@ -93,8 +96,5 @@ do-test:
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
 		${SETENV} ${TEST_ENV} ./example-freeverb_demo
-
-# test fails to build with Qt6 because of wrong C++11 option written into Makefile: https://github.com/grame-cncm/faust/issues/1109
-# once this is corrected, test builds and works fine
 
 .include <bsd.port.mk>

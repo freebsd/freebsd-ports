@@ -1,5 +1,5 @@
 PORTNAME=	log4cxx
-PORTVERSION=	1.4.0
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://archive.apache.org/dist/logging/log4cxx/${PORTVERSION}/
 DISTNAME=	apache-log4cxx-${PORTVERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libfmt.so:devel/libfmt
 TEST_DEPENDS=	zip:archivers/zip
 
-USES=		cmake:testing compiler:c++17-lang pathfix
+USES=		cmake:testing compiler:c++17-lang
 
 CMAKE_OFF=	APACHE_MAINTAINER \
 		APR_STATIC \

@@ -1,4 +1,4 @@
---- media/gpu/chromeos/platform_video_frame_utils.cc.orig	2025-07-02 06:08:04 UTC
+--- media/gpu/chromeos/platform_video_frame_utils.cc.orig	2026-04-09 06:05:42 UTC
 +++ media/gpu/chromeos/platform_video_frame_utils.cc
 @@ -69,7 +69,7 @@ static std::unique_ptr<ui::GbmDevice> CreateGbmDevice(
      const base::FilePath dev_path(FILE_PATH_LITERAL(
@@ -6,15 +6,15 @@
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_V4L2_CODEC)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_V4L2_CODEC)
-     const bool is_render_node = base::Contains(drm_node_file_prefix, "render");
+     const bool is_render_node = drm_node_file_prefix.contains("render");
  
      // TODO(b/313513760): don't guard base::File::FLAG_WRITE behind
-@@ -190,7 +190,7 @@ class GbmDeviceWrapper {
-       const base::FilePath dev_path(
-           base::CommandLine::ForCurrentProcess()->GetSwitchValuePath(
-               switches::kRenderNodeOverride));
+@@ -179,7 +179,7 @@ class GbmDeviceWrapper {
+             switches::kRenderNodeOverride)});
+     for (const auto& dev_path : dev_paths) {
+       if (!dev_path.empty()) {
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_V4L2_CODEC)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_V4L2_CODEC)
-       const bool is_render_node = base::Contains(dev_path.value(), "render");
+         const bool is_render_node = dev_path.value().contains("render");
  
-       // TODO(b/313513760): don't guard base::File::FLAG_WRITE behind
+         // TODO(b/313513760): don't guard base::File::FLAG_WRITE behind

@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Rsync Friendly File Encryption
 WWW=		https://rsyncrypto.lingnu.com/ \
 		https://sourceforge.net/projects/rsyncrypto/

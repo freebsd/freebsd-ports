@@ -1,7 +1,7 @@
 PORTNAME=		cpp-netlib
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=		0.13.0
-PORTREVISION=		11
+PORTREVISION=		12
 DISTVERSIONSUFFIX=	-final
 CATEGORIES=		devel
 
@@ -14,7 +14,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt
 
 BROKEN=		fails to build with Boost>=1.87
 
-LIB_DEPENDS=		libboost_system.so:devel/boost-libs
+LIB_DEPENDS=		libboost_thread.so:devel/boost-libs
 BUILD_DEPENDS=		boost-libs>0:devel/boost-libs \
 			asio>0:net/asio
 

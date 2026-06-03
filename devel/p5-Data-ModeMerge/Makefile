@@ -1,9 +1,8 @@
 PORTNAME=	Data-ModeMerge
-PORTVERSION=	0.36.0
+PORTVERSION=	0.360
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Data-ModeMerge-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Merge two nested data structures, with merging modes and options

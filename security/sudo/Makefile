@@ -1,5 +1,6 @@
 PORTNAME=	sudo
-PORTVERSION=	1.9.17p1
+PORTVERSION=	1.9.17p2
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -90,7 +91,8 @@ SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
 .if ${FLAVOR:U} == sssd
 RUN_DEPENDS+=		sssd:security/sssd2
-CONFIGURE_ARGS+=	--with-sssd
+CONFIGURE_ARGS+=	--with-sssd \
+			--with-sssd-conf=${LOCALBASE}/etc/sssd/sssd.conf
 .endif
 
 LOGFAC?=		authpriv
@@ -113,7 +115,7 @@ CONFIGURE_ARGS+=	--enable-kerb5-instance="${SUDO_KERB5_INSTANCE}"
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400072
+.if ${OPSYS} == FreeBSD
 . if ${PORT_OPTIONS:MOPIE}
 BUILD_DEPENDS+=	opie>0:security/opie
 RUN_DEPENDS+=	opie>0:security/opie

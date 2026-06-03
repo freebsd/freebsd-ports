@@ -1,6 +1,6 @@
 PORTNAME=		pgaudit
 #DISTVERSIONPREFIX=	v
-PORTVERSION=	16.0
+PORTVERSION=	18.0
 CATEGORIES=		databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S|.||}-
 
@@ -10,7 +10,7 @@ WWW=			https://www.pgaudit.org/
 
 LICENSE=		PostgreSQL
 
-USES=			gmake pgsql:16+
+USES=			gmake pgsql:18
 WANT_PGSQL=		server
 USE_GITHUB=		yes
 GH_ACCOUNT=		pgaudit
@@ -18,7 +18,7 @@ GH_ACCOUNT=		pgaudit
 MAKE_ENV=		USE_PGXS=1
 
 PLIST_FILES=	lib/postgresql/pgaudit.so \
-		share/postgresql/extension/pgaudit--16.0.sql \
+		share/postgresql/extension/pgaudit--18.0.sql \
 		share/postgresql/extension/pgaudit.control
 
 post-install:

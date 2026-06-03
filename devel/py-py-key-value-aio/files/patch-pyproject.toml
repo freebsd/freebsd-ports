@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-02-24 06:07:48 UTC
++++ pyproject.toml
+@@ -21,7 +21,7 @@ dependencies = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build>=0.8.2,<0.9.0"]
++requires = ["uv_build"]
+ build-backend = "uv_build"
+ 
+ [tool.uv.build-backend]

@@ -1,11 +1,15 @@
 PORTNAME=	jad
 PORTVERSION=	1.5.8c
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	https://varaneckas.com/jad/
 DISTNAME=	jad158c.freebsd
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java Decompiler
+
+DEPRECATED=	This is a version that is over 25 years old and has multiple vulnerabilities
+EXPIRATION_DATE=2026-06-30
 
 USES=		zip
 NO_WRKSUBDIR=	yes

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2024-06-28 17:57:17 UTC
++++ src/Makefile.in
+@@ -376,7 +376,7 @@ liblwgrp_la_LIBADD = 
+ 
+ liblwgrp_la_CFLAGS = $(INCLUDES)
+ liblwgrp_la_LIBADD = 
+-liblwgrp_la_LDFLAGS = -avoid-version
++liblwgrp_la_LDFLAGS = -version-info 0
+ all: all-am
+ 
+ .SUFFIXES:

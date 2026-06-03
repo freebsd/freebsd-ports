@@ -1,0 +1,20 @@
+--- tests/util/CMakeLists.txt.orig	2026-05-02 14:11:44 UTC
++++ tests/util/CMakeLists.txt
+@@ -129,7 +129,7 @@ endif()
+ 	)
+ endif()
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
+ 	# One needs to have at least one hardware driver present, otherwise
+ 	# there is no point compiling just the dispatcher.
+ 	if(PIGLIT_BUILD_DMA_BUF_TESTS)
+@@ -160,7 +160,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 		list(APPEND UTIL_GL_LIBS ${WAYLAND_LDFLAGS})
+         endif()
+ 
+-endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
+ 
+ if(MSVC)
+ 	list(APPEND UTIL_SOURCES msvc/getopt.c)

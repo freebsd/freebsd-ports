@@ -1,5 +1,5 @@
 PORTNAME=	setuptools-rust
-PORTVERSION=	1.11.1
+PORTVERSION=	1.12.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	cargo:lang/${RUST_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8.2<3:devel/py-semantic-version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=62.4:devel/py-setuptools@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

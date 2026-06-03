@@ -1,2 +1,3 @@
-This package contains xclock, a program for the X Window System that display
-the time in analog or digital form.
+The xclock program is the classic X Window System clock utility. It
+displays the time in analog or digital form. The time is continuously
+updated at a frequency which may be specified by the user.

@@ -167,7 +167,10 @@ share/dbus-1/system-services/org.freedesktop.ColorManager.service
 share/dbus-1/system.d/org.freedesktop.ColorManager.conf
 share/gir-1.0/Colord-1.0.gir
 share/gir-1.0/Colorhug-1.0.gir
+share/locale/ar/LC_MESSAGES/colord.mo
 share/locale/as/LC_MESSAGES/colord.mo
+share/locale/be/LC_MESSAGES/colord.mo
+share/locale/bg/LC_MESSAGES/colord.mo
 share/locale/bn_IN/LC_MESSAGES/colord.mo
 share/locale/ca/LC_MESSAGES/colord.mo
 share/locale/cs/LC_MESSAGES/colord.mo
@@ -222,6 +225,7 @@ share/locale/tr/LC_MESSAGES/colord.mo
 share/locale/uk/LC_MESSAGES/colord.mo
 share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
+share/metainfo/org.freedesktop.colord.metainfo.xml
 share/polkit-1/actions/org.freedesktop.color.policy
 %%VALA%%share/vala/vapi/colord.vapi
 %%VALA%%share/vala/vapi/colord.deps

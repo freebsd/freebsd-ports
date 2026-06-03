@@ -3,7 +3,7 @@ PORTVERSION=	${OCBM_VERSION}
 PORTREVISION=	2
 CATEGORIES=	comms archivers
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenCBM driver module for parallel-port X[MA]-1541 cables
 WWW=		http://opencbm.sourceforge.net/
 

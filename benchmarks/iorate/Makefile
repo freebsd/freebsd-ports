@@ -9,7 +9,7 @@ MAINTAINER=	blttll@gmail.com
 COMMENT=	General purpose storage I/O benchmarking tool
 WWW=		http://iorate.org/
 
-USES=		alias bison tar
+USES=		bison tar
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}"
 NO_WRKSUBDIR=	yes

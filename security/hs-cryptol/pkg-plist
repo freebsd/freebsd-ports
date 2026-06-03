@@ -1,7 +1,8 @@
 %%DATADIR%%/Array.cry
 %%DATADIR%%/Cryptol.cry
 %%DATADIR%%/Cryptol/Reference.cry
-%%DATADIR%%/CryptolTC.z3
+%%DATADIR%%/CryptolTC.smt2
 %%DATADIR%%/Float.cry
 %%DATADIR%%/PrimeEC.cry
 %%DATADIR%%/SuiteB.cry
+%%DATADIR%%/cry_ffi.h

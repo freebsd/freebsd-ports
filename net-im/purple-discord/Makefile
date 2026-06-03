@@ -1,9 +1,8 @@
 PORTNAME=	purple-discord
-PORTVERSION=	g20230215
-PORTREVISION=	1
+DISTVERSION=	g20251012
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Discord plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-discord
 
@@ -11,16 +10,19 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libnspr4.so:devel/nspr \
+		libnss3.so:security/nss \
 		libpurple.so:net-im/libpurple \
 		libqrencode.so:graphics/libqrencode
 
-USES=		dos2unix gettext gmake gnome magick:6,build pkgconfig
-USE_GNOME=	glib20
-USE_LDCONFIG=	yes
+USES=		dos2unix gettext gmake gnome magick:build pkgconfig
+DOS2UNIX_FILES=	Makefile
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	4a09188
+GH_TAGNAME=	nightly-f60596c3e6a22f819ad408232257dca1757a8519
+USE_GNOME=	glib20
 
-DOS2UNIX_FILES=	Makefile
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/purple-2/libdiscord.so
 
 .include <bsd.port.mk>

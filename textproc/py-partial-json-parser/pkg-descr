@@ -1,0 +1,3 @@
+partial-json-parser is a lightweight Python library for parsing partial
+JSON strings. It handles incomplete JSON data, which is useful for streaming
+scenarios where JSON is received incrementally.

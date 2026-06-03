@@ -1,6 +1,6 @@
---- components/device_signals/core/common/signals_features.cc.orig	2025-06-19 07:37:57 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2026-05-11 13:57:04 UTC
 +++ components/device_signals/core/common/signals_features.cc
-@@ -43,7 +43,7 @@ bool IsBrowserSignalsReportingEnabled() {
+@@ -54,7 +54,7 @@ bool IsPolicyDataCollectionEnabled() {
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

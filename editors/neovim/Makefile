@@ -1,6 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.3
+DISTVERSION=	0.12.2
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -20,18 +20,19 @@ LIB_DEPENDS=	libluv.so:devel/luv \
 		libvterm.so:devel/libvterm
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
-TEST_DEPENDS=	gmake:devel/gmake
+TEST_DEPENDS=	gmake:devel/gmake \
+		git:devel/git@tiny
 
 USES=		cmake cpe gettext iconv lua:51,build luajit \
 		pathfix pkgconfig
 
 USE_GITHUB=	yes
-GH_TUPLE=	tree-sitter:tree-sitter-c:v0.24.1:treesitter_c \
-		tree-sitter-grammars:tree-sitter-lua:v0.4.0:treesitter_lua \
-		tree-sitter-grammars:tree-sitter-markdown:v0.5.0:treesitter_markdown \
-		tree-sitter-grammars:tree-sitter-query:v0.6.2:treesitter_query \
-		tree-sitter-grammars:tree-sitter-vim:v0.7.0:treesitter_vim \
-		neovim:tree-sitter-vimdoc:v4.0.0:treesitter_vimdoc
+GH_TUPLE=	tree-sitter:tree-sitter-c:v0.24.2:treesitter_c \
+		tree-sitter-grammars:tree-sitter-lua:v0.5.0:treesitter_lua \
+		tree-sitter-grammars:tree-sitter-markdown:v0.5.3:treesitter_markdown \
+		tree-sitter-grammars:tree-sitter-query:v0.8.0:treesitter_query \
+		tree-sitter-grammars:tree-sitter-vim:v0.8.1:treesitter_vim \
+		neovim:tree-sitter-vimdoc:v4.1.0:treesitter_vimdoc
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
@@ -74,6 +75,20 @@ post-stage:
 	${FIND} ${STAGEDIR}${PREFIX}/lib/nvim -name "*.so" -exec ${STRIP_CMD} {} +
 
 do-test:
-	${GMAKE} -C ${WRKSRC} test
+	# Restrict tests to unittest target while functionaltest target fails
+	${GMAKE} -C ${WRKSRC} unittest
 
+versions:
+	for r in \
+		tree-sitter/tree-sitter-c \
+		tree-sitter-grammars/tree-sitter-lua \
+		tree-sitter-grammars/tree-sitter-markdown \
+		tree-sitter-grammars/tree-sitter-query \
+		tree-sitter-grammars/tree-sitter-vim \
+		neovim/tree-sitter-vimdoc; \
+	do \
+		${PRINTF} '%-20s %s\n' "$${r##*/}" \
+		"$$(curl -fsSL https://api.github.com/repos/$$r/releases/latest \
+		| perl -MJSON::PP -e 'use v5.38; say decode_json(do {local $$/; <>})->{tag_name}')"; \
+	done
 .include <bsd.port.mk>

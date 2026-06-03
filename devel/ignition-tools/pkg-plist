@@ -1,0 +1,9 @@
+bin/gz
+lib/cmake/gz-tools2-all/gz-tools2-all-config-version.cmake
+lib/cmake/gz-tools2-all/gz-tools2-all-config.cmake
+lib/cmake/gz-tools2-all/gz-tools2-all-targets.cmake
+lib/libgz-tools2-backward.so
+lib/libgz-tools2-backward.so.2
+lib/libgz-tools2-backward.so.2.0.3
+share/bash-completion/completions/gz
+share/gz/gz.completion

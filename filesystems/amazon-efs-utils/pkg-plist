@@ -1,0 +1,38 @@
+sbin/efs-proxy
+sbin/mount_efs
+sbin/amazon-efs-mount-watchdog
+lib/amazon/efs/efs_utils_common/__init__.py
+lib/amazon/efs/efs_utils_common/aws_credentials.py
+lib/amazon/efs/efs_utils_common/certificate_utils.py
+lib/amazon/efs/efs_utils_common/cloudwatch.py
+lib/amazon/efs/efs_utils_common/config_utils.py
+lib/amazon/efs/efs_utils_common/constants.py
+lib/amazon/efs/efs_utils_common/context.py
+lib/amazon/efs/efs_utils_common/error_reporting.py
+lib/amazon/efs/efs_utils_common/exceptions.py
+lib/amazon/efs/efs_utils_common/file_utils.py
+lib/amazon/efs/efs_utils_common/metadata.py
+lib/amazon/efs/efs_utils_common/mount_options.py
+lib/amazon/efs/efs_utils_common/mount_utils.py
+lib/amazon/efs/efs_utils_common/network_utils.py
+lib/amazon/efs/efs_utils_common/platform_utils.py
+lib/amazon/efs/efs_utils_common/process_utils.py
+lib/amazon/efs/efs_utils_common/proxy.py
+lib/amazon/efs/mount_efs/__init__.py
+lib/amazon/efs/mount_efs/dns_resolver.py
+lib/amazon/efs/mount_s3files/__init__.py
+lib/amazon/efs/mount_s3files/dns_resolver.py
+@sample etc/amazon/efs/efs-utils.conf.sample
+@sample etc/amazon/efs/s3files-utils.conf.sample
+etc/amazon/efs/efs-utils.crt
+share/man/man8/mount_efs.8.gz
+@dir lib/amazon/efs/efs_utils_common
+@dir lib/amazon/efs/mount_efs
+@dir lib/amazon/efs/mount_s3files
+@dir lib/amazon/efs
+@dir lib/amazon
+@dir etc/amazon/efs
+@dir etc/amazon
+@dir /var/log/amazon/efs
+@dir /var/log/amazon
+@dir /var/run/efs

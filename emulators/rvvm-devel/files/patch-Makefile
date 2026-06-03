@@ -1,0 +1,12 @@
+--- Makefile.orig	2026-03-08 19:25:25 UTC
++++ Makefile
+@@ -1033,7 +1033,8 @@ $(call path_shell,$(BIN_TARGETS): $(BIN_OBJ) $(BIN_LIB
+ 
+ 
+ # Set -Wl,--out-implib,$@.a for Windows libraries
+-override shared_extra = $(if $(filter windows,$(OS)),-Wl$(COMMA)--out-implib$(COMMA)$(patsubst %$(LIB_EXT),%.a,$1))
++#override shared_extra = $(if $(filter windows,$(OS)),-Wl$(COMMA)--out-implib$(COMMA)$(patsubst %$(LIB_EXT),%.a,$1))
++override shared_extra = -Wl$(COMMA)-soname$(COMMA)$(notdir $1).0
+ 
+ # Shared libraries
+ $(call path_shell,$(LIB_TARGETS): $(LIB_OBJ) $(CC_TRIGGER) $(LD_TRIGGER))

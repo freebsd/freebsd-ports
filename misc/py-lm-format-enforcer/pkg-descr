@@ -1,0 +1,3 @@
+lm-format-enforcer enforces the output format (e.g., JSON schema or regular
+expressions) of language models. It supports popular LLM libraries and
+integrates with frameworks like HuggingFace and LlamaCpp.

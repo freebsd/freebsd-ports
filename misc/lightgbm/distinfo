@@ -1,6 +1,6 @@
-TIMESTAMP = 1721973730
-SHA256 (microsoft-LightGBM-v4.5.0_GH0.tar.gz) = cc72ae1f979935e11243c93bacefe34144a4fcf3dc304b2a53d99ea408fe8976
-SIZE (microsoft-LightGBM-v4.5.0_GH0.tar.gz) = 6163768
+TIMESTAMP = 1775062583
+SHA256 (microsoft-LightGBM-v4.6.0_GH0.tar.gz) = 71d2c25855f10e82da8cb8b0c42bdf0da56e5556ff50a93b31c0592b8932eda3
+SIZE (microsoft-LightGBM-v4.6.0_GH0.tar.gz) = 6177521
 SHA256 (boostorg-compute-36350b7_GH0.tar.gz) = b82330296614fe9222bcdee60c5f71362d6fc16f17b0fb6fb5901b6531d1df90
 SIZE (boostorg-compute-36350b7_GH0.tar.gz) = 377110
 SHA256 (fmtlib-fmt-f5e5435_GH0.tar.gz) = 3e404dff177edebada2af98ffc9bd3efa0aae6fc69fa2a7750afb137f565040d

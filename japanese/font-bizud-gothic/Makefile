@@ -4,7 +4,7 @@ DISTVERSION=	1.051
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Morisawa BIZ UD Gothic fonts
 WWW=		https://github.com/googlefonts/morisawa-biz-ud-gothic
 

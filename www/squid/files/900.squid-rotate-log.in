@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Periodic script to rotate log files each week
+# To enable it, add 'weekly_squid_rotate_log_enable="YES"' to /etc/periodic.conf
+#
+
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$weekly_squid_rotate_log_enable" in
+    [Yy][Ee][Ss])
+        echo ""
+        echo "Rotating Squid's log files:"
+
+	%%PREFIX%%/sbin/squid -k rotate
+	rc=$?
+	;;
+    *)  
+	rc=0
+	;;
+esac
+
+exit $rc

@@ -1,6 +1,6 @@
---- src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp.orig	2025-02-19 13:05:34 UTC
+--- src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp.orig	2025-05-14 09:43:58 UTC
 +++ src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
-@@ -113,23 +113,36 @@ DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, retur
+@@ -114,23 +114,36 @@ DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, retur
  DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w, w, return 0, return)
  DEFINEFUNC(int, EVP_CIPHER_CTX_reset, EVP_CIPHER_CTX *c, c, return 0, return)
  DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, return 0, return)
@@ -37,7 +37,7 @@
  #ifdef TLS1_3_VERSION
  DEFINEFUNC2(int, SSL_CTX_set_ciphersuites, SSL_CTX *ctx, ctx, const char *str, str, return 0, return)
  DEFINEFUNC2(void, SSL_set_psk_use_session_callback, SSL *ssl, ssl, q_SSL_psk_use_session_cb_func_t callback, callback, return, DUMMYARG)
-@@ -194,7 +207,9 @@ DEFINEFUNC2(OCSP_RESPONSE *, OCSP_response_create, int
+@@ -195,7 +208,9 @@ DEFINEFUNC2(OCSP_RESPONSE *, OCSP_response_create, int
              ASN1_OCTET_STRING **piKeyHash, piKeyHash, ASN1_INTEGER **pserial, pserial, OCSP_CERTID *cid, cid,
              return 0, return)
  DEFINEFUNC2(OCSP_RESPONSE *, OCSP_response_create, int status, status, OCSP_BASICRESP *bs, bs, return nullptr, return)
@@ -47,7 +47,7 @@
  DEFINEFUNC2(int, OCSP_id_cmp, OCSP_CERTID *a, a, OCSP_CERTID *b, b, return -1, return)
  DEFINEFUNC7(OCSP_SINGLERESP *, OCSP_basic_add1_status, OCSP_BASICRESP *r, r, OCSP_CERTID *c, c, int s, s,
              int re, re, ASN1_TIME *rt, rt, ASN1_TIME *t, t, ASN1_TIME *n, n, return nullptr, return)
-@@ -215,7 +230,9 @@ DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **
+@@ -216,7 +231,9 @@ DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **
  DEFINEFUNC2(int, ASN1_INTEGER_cmp, const ASN1_INTEGER *a, a, const ASN1_INTEGER *b, b, return 1, return)
  DEFINEFUNC(int, ASN1_STRING_length, ASN1_STRING *a, a, return 0, return)
  DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **a, a, ASN1_STRING *b, b, return 0, return)
@@ -57,7 +57,7 @@
  DEFINEFUNC4(long, BIO_ctrl, BIO *a, a, int b, b, long c, c, void *d, d, return -1, return)
  DEFINEFUNC(int, BIO_free, BIO *a, a, return 0, return)
  DEFINEFUNC2(BIO *, BIO_new_mem_buf, void *a, a, int b, b, return nullptr, return)
-@@ -290,12 +307,14 @@ DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const
+@@ -291,12 +308,14 @@ DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const
  DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a, EVP_PKEY *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return nullptr, return)
@@ -72,7 +72,7 @@
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -764,8 +783,8 @@ static LoadedOpenSsl loadOpenSsl()
+@@ -765,8 +784,8 @@ static LoadedOpenSsl loadOpenSsl()
      libcrypto->setFileNameAndVersion("crypto"_L1, shlibVersion);
  #elif defined(SHLIB_VERSION_NUMBER)
      // first attempt: the canonical name is libssl.so.<SHLIB_VERSION_NUMBER>
@@ -83,7 +83,7 @@
  #endif // OPENSSL_SHLIB_VERSION
  
      if (libcrypto->load() && libssl->load()) {
-@@ -798,8 +817,8 @@ static LoadedOpenSsl loadOpenSsl()
+@@ -799,8 +818,8 @@ static LoadedOpenSsl loadOpenSsl()
      libssl->setFileNameAndVersion("ssl"_L1 + suffix, -1);
      libcrypto->setFileNameAndVersion("crypto"_L1 + suffix, -1);
  # else
@@ -94,7 +94,7 @@
  # endif
      if (libcrypto->load() && libssl->load()) {
          // libssl.so.0 and libcrypto.so.0 found
-@@ -868,21 +887,34 @@ bool q_resolveOpenSslSymbols()
+@@ -869,21 +888,34 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(EVP_CIPHER_CTX_reset)
          RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
          RESOLVEFUNC(EVP_PKEY_up_ref)
@@ -129,7 +129,7 @@
  #ifdef TLS1_3_VERSION
          RESOLVEFUNC(SSL_CTX_set_ciphersuites)
          RESOLVEFUNC(SSL_set_psk_use_session_callback)
-@@ -964,7 +996,9 @@ bool q_resolveOpenSslSymbols()
+@@ -965,7 +997,9 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(OCSP_check_validity)
          RESOLVEFUNC(OCSP_cert_to_id)
          RESOLVEFUNC(OCSP_id_get0_info)
@@ -140,7 +140,7 @@
          RESOLVEFUNC(OCSP_basic_sign)
          RESOLVEFUNC(OCSP_response_create)
          RESOLVEFUNC(i2d_OCSP_RESPONSE)
-@@ -1059,12 +1093,14 @@ bool q_resolveOpenSslSymbols()
+@@ -1060,12 +1094,14 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(SSL_CTX_use_PrivateKey)
          RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
          RESOLVEFUNC(SSL_CTX_get_cert_store);
@@ -155,7 +155,7 @@
          RESOLVEFUNC(SSL_accept)
          RESOLVEFUNC(SSL_clear)
          RESOLVEFUNC(SSL_connect)
-@@ -1124,7 +1160,9 @@ bool q_resolveOpenSslSymbols()
+@@ -1125,7 +1161,9 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(RSA_free)
  
          RESOLVEFUNC(DH_bits)

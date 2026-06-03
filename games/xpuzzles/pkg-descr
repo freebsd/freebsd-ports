@@ -1,0 +1,6 @@
+collection of puzzles for X (plain X version)
+The following puzzles are included:
+ - Rotational 3D Puzzles: xrubik, xpyraminx, xoct, xskewb, xdino,
+                          xmball, xbevel
+ - Sliding Block Puzzles: xcubes, xtriangles, xhexagons, xpanex
+ - Combination Puzzles:   xbarrel, xmlink

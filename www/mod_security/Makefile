@@ -1,6 +1,5 @@
 PORTNAME=	mod_security
-PORTVERSION=	2.9.10
-PORTREVISION=	1
+PORTVERSION=	2.9.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www security
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -11,6 +10,8 @@ WWW=		https://www.modsecurity.org/
 
 LICENSE=	APACHE20
 
+PORTSCOUT=	limit:^2\.
+
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
 		libapr-1.so:devel/apr1 \
 		libyajl.so:devel/yajl \
@@ -18,10 +19,11 @@ LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
 		libgdbm.so:databases/gdbm \
 		libexpat.so:textproc/expat2
 
-USES=		apache bdb:18 gnome perl5 pkgconfig shebangfix autoreconf libtool:build
+USES=		apache gnome perl5 pkgconfig shebangfix autoreconf libtool:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	owasp-modsecurity
 GH_PROJECT=	ModSecurity
+GH_TUPLE=	libinjection:libinjection:2117822:libinjection/apache2/others/libinjection
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	tools/rules-updater.pl.in mlogc/mlogc-batch-load.pl.in
@@ -61,7 +63,10 @@ ETCDIR=		${PREFIX}/etc/modsecurity
 
 REINPLACE_ARGS=	-i ""
 AP_EXTRAS+=	-DWITH_LIBXML2
-CONFIGURE_ARGS+=--with-apxs=${APXS} --with-pcre2=${LOCALBASE} --with-yajl=${LOCALBASE} --with-curl=${LOCALBASE}
+CONFIGURE_ARGS+=--with-apxs=${APXS} \
+		--with-pcre2=${LOCALBASE} \
+		--with-yajl=${LOCALBASE} \
+		--with-curl=${LOCALBASE}
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
@@ -78,6 +83,9 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/README ${STAGEDIR}${DOCSDIR}
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
-	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE}.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE}.sample \
+		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mod_security2.so \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_security2.so
 
 .include <bsd.port.mk>

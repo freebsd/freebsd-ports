@@ -1,2 +1,5 @@
+TIMESTAMP = 1780046636
 SHA256 (newsx-1.6.tar.gz) = 0256fcb3086382e7c94ad2b87d69684e3dc28fb7493a37fdd0115b1621bdd3f2
 SIZE (newsx-1.6.tar.gz) = 302821
+SHA256 (newsx-stack.patch) = 2df5920b46f83ceef691b69469b1732bda9edfb9a330f82cb52697870c3e0944
+SIZE (newsx-stack.patch) = 678

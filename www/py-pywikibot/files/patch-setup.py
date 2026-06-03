@@ -1,6 +1,6 @@
---- setup.py.orig	2024-03-09 06:20:55 UTC
+--- setup.py.orig	2026-04-11 04:56:46 UTC
 +++ setup.py
-@@ -160,12 +160,12 @@ def get_validated_version(name: str) -> str:  # pragma
+@@ -147,12 +147,12 @@ def get_validated_version(name: str) -> str:  # pragma
  
      from packaging.version import InvalidVersion, Version
  

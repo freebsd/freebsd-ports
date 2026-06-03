@@ -1,0 +1,3 @@
+The segments package provides Unicode Standard tokenization routines and
+orthography segmentation, implementing the linear algorithm described in
+the orthography profile specification from The Unicode Cookbook.

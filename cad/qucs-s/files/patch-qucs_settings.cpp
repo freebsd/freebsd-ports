@@ -1,6 +1,6 @@
 - this patch works together with post-patch: %%LOCALBASE%% are substituted there
 
---- qucs/settings.cpp.orig	2025-03-14 13:47:08 UTC
+--- qucs/settings.cpp.orig	2025-09-06 14:06:28 UTC
 +++ qucs/settings.cpp
 @@ -62,7 +62,7 @@ void settingsManager::initDefaults()
  #else
@@ -17,6 +17,6 @@
  
 -    m_Defaults["XyceParExecutable"] = "mpirun -np %p /usr/local/Xyce-Release-6.8.0-OPENMPI-OPENSOURCE/bin/Xyce";
 +    m_Defaults["XyceParExecutable"] = "mpirun -np %p %%LOCALBASE%%/bin/Xyce";
-     m_Defaults["S4Q_workdir"] = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-     m_Defaults["Nprocs"] = 4;
-     m_Defaults["SpiceOpusExecutable"] = "spiceopus";
+     m_Defaults["S4Q_workdir"] = QDir::toNativeSeparators(
+                                 QStandardPaths::writableLocation(QStandardPaths::CacheLocation)
+                                 + "/qucs-s");

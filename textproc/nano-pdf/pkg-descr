@@ -1,0 +1,10 @@
+py-nano-pdf is a CLI tool for editing PDF slides using natural language
+prompts, powered by Google's Gemini 3 Pro Image model.
+
+Features:
+- Edit PDF slides using natural language
+- Powered by Google Gemini AI
+- Command-line interface for batch processing
+- Support for complex PDF manipulations
+
+Requires paid GEMINI_API_KEY from Google.

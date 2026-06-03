@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+The default data directory will be created by the database in '/var/db/cassandra', which is already initialized during installation as the 'cassandra' user's home directory.
+The default log directory is '/var/log/cassandra' and must created by you to be accessible to the cassandra user.
+Start the cassandra service like so: `service cassandra [start|onestart]`.
+EOM
+}
+]

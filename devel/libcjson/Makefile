@@ -1,7 +1,6 @@
 PORTNAME=	libcjson
-PORTVERSION=	1.7.18
+PORTVERSION=	1.7.19
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/DaveGamble/cJSON
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c11 pathfix
+USES=		cmake:testing compiler:c11
 
 CMAKE_OFF=	CJSON_OVERRIDE_BUILD_SHARED_LIBS \
 		ENABLE_CJSON_TEST \

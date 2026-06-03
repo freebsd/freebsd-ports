@@ -1,0 +1,3 @@
+llguidance is a low-level library implementing grammar-constrained decoding
+for language models. It provides efficient token masks for steering LLM
+generation toward desired output formats including JSON and regex patterns.

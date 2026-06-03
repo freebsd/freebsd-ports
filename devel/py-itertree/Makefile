@@ -1,5 +1,5 @@
 PORTNAME=	itertree
-DISTVERSION=	1.1.3
+DISTVERSION=	1.2.0
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,13 +19,14 @@ USE_PYTHON=	pep517 autoplist pytest # 1 test fails, see https://github.com/BR1py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BR1py
-GH_TAGNAME=	1,1,3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/./-/g}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
+
+# tests as of 1.2.0: 196 passed, 1 xpassed in 86s
 
 .include <bsd.port.mk>

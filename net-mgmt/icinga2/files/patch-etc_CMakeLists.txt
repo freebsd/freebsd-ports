@@ -1,6 +1,6 @@
---- etc/CMakeLists.txt.orig	2023-08-11 09:37:32.071724000 +0200
-+++ etc/CMakeLists.txt	2023-08-11 11:30:51.251785000 +0200
-@@ -9,44 +9,44 @@ if(NOT WIN32)
+--- etc/CMakeLists.txt.orig	2026-04-22 09:29:50 UTC
++++ etc/CMakeLists.txt
+@@ -10,44 +10,44 @@ if(NOT WIN32)
  endif()
  
  if(NOT WIN32)
@@ -65,7 +65,7 @@
  install_if_not_exists(icinga2/zones.d/README ${ICINGA2_CONFIGDIR}/zones.d)
  
  if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-@@ -59,7 +59,7 @@ else()
+@@ -60,7 +60,7 @@ else()
  
    install(FILES bash_completion.d/icinga2 DESTINATION ${BASHCOMPLETION_DIR})
  else()

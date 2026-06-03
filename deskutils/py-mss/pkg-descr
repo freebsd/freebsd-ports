@@ -1,0 +1,13 @@
+MSS stands for Multiple ScreenShots.
+
+mss is an ultra-fast cross-platform multiple screenshots module in pure Python
+using ctypes.
+
+Featues:
+* Python 3.9+, PEP8 compliant, no dependency, thread-safe
+* very basic, it will grab one screenshot by monitor or a screenshot of all
+  monitors and save it to a PNG file
+* you can use PIL and benefit from all its formats (or add yours directly)
+* integrate well with Numpy and OpenCV
+* it could be easily embedded into games and other software which require fast
+  and platform optimized methods to grab screenshots (like AI, Computer Vision)

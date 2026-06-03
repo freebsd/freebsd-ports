@@ -1,0 +1,23 @@
+Django ModelSearch allows you to index Django models and search them using the
+ORM!
+
+It supports PostgreSQL FTS, SQLite FTS5, MySQL FTS, MariaDB FTS, Elasticsearch
+(7.x, 8.x, and 9.x), and OpenSearch (2.x and 3.x).
+
+Features:
+- Index models in Elasticsearch and OpenSearch and query with the Django ORM
+- Reuse existing QuerySets for search, works with Django paginators and
+  django-filter
+- Also supports PostgreSQL FTS, MySQL FTS, MariaDB FTS and SQLite FTS5
+- Autocomplete
+- Faceting
+- Per-field boosting
+- Fuzzy Search
+- Phrase search
+- Structured queries
+- Multi-table inheritance
+- Zero-downtime index rebuilding (uses aliases to atomically swap in a new index
+  when its ready)
+
+This has been built into Wagtail CMS since 2014 and extracted into a separate
+package in March 2025.

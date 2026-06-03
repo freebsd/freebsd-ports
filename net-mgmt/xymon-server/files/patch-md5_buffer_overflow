@@ -1,0 +1,17 @@
+From: Roland Rosenfeld <roland@debian.org>
+Date: Tue, 24 Sep 2024 21:53:18 +0200
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/xymon/+bug/2078638
+Subject: Fix buffer overflow in md5hash
+ This is triggered/found by -D_FORTIFY_SOURCE=3
+
+--- lib/digest.c
++++ lib/digest.c
+@@ -41,7 +41,7 @@ char *md5hash(char *input)
+ 	myMD5_Final(md_value, ctx->mdctx);
+ 
+ 	for(i = 0, p = md_string; (i < sizeof(md_value)); i++) 
+-		p += snprintf(p, (sizeof(md_string) - (md_string - p)), "%02x", md_value[i]);
++		p += snprintf(p, (sizeof(md_string) - (p - md_string)), "%02x", md_value[i]);
+ 	*p = '\0';
+ 
+ 	return md_string;

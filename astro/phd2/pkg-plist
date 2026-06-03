@@ -27,6 +27,7 @@ share/locale/zh_CN/LC_MESSAGES/phd2.mo
 share/locale/zh_TW/LC_MESSAGES/phd2.mo
 share/metainfo/phd2.appdata.xml
 %%DATADIR%%/PHD2GuideHelp.zip
+%%DATADIR%%/locale/cs_CZ/PHD2GuideHelp.zip
 %%DATADIR%%/locale/fr_FR/PHD2GuideHelp.zip
 %%DATADIR%%/locale/ja_JP/PHD2GuideHelp.zip
 %%DATADIR%%/locale/ru_RU/PHD2GuideHelp.zip

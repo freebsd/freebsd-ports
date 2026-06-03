@@ -1,0 +1,4 @@
+arviz-stats provides statistical computation and diagnostics for ArviZ.
+It includes functions for posterior analysis, MCMC diagnostics, model
+comparison (LOO, WAIC), convergence diagnostics (R-hat, ESS), and
+other statistical summaries for Bayesian models.

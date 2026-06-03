@@ -1,10 +1,8 @@
 PORTNAME=	noto
-PORTVERSION=	2.109
+PORTVERSION=	2.110
 CATEGORIES=	x11-fonts
-#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoKufiArabic-v${PORTVERSION}/fonts/ \
-#		https://github.com/notofonts/notofonts.github.io/raw/NotoKufiArabic-v${PORTVERSION}/fonts/NotoKufiArabic/hinted/ttf/:fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-24.3.1/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-24.3.1/fonts/NotoKufiArabic/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoKufiArabic-v${PORTVERSION}/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/NotoKufiArabic-v${PORTVERSION}/fonts/NotoKufiArabic/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-kufi-arabic
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}

@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	System to administer web accounts for the KDE desktop
 WWW=		https://projects.kde.org/projects/kdereview/kaccounts-integration
 
-LIB_DEPENDS=	libQCoro6Core.so:devel/qcoro@qt6 \
+LIB_DEPENDS=	libQCoro6Core.so:devel/qcoro \
 		libaccounts-qt6.so:net-im/libaccounts-qt@qt6 \
 		libsignon-qt6.so:sysutils/signond@qt6
 
@@ -17,11 +17,5 @@ USE_KDE=	config coreaddons dbusaddons i18n kcmutils kdeclarative kio \
 		ecm:build package:build \
 		iconthemes:run
 USE_QT=		base declarative
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc*} && ${OSVERSION} < 1400092
-USES+=		llvm:min=16
-.endif
 
 .include <bsd.port.mk>

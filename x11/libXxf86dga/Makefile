@@ -1,22 +1,18 @@
 PORTNAME=	libXxf86dga
-PORTVERSION=	1.1.6
-PORTREVISION=	1
+DISTVERSION=	1.1.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X DGA Extension
-WWW=		https://www.freedesktop.org/Software/xorg
+COMMENT=	Client library for the XFree86-DGA extension
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libxxf86dga
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.xz
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxxf86dga
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

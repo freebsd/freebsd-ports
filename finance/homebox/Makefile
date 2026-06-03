@@ -1,10 +1,12 @@
 PORTNAME=	homebox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
+DISTVERSION=	0.25.0
 PORTREVISION=	1
 CATEGORIES=	finance
-MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${DISTVERSION}.frontend${EXTRACT_SUFX}
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/homebox
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Inventory and organization system built for the Home User
@@ -12,9 +14,10 @@ WWW=		https://homebox.software
 
 LICENSE=	AGPLv3
 
-BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
-USES=		go:modules
+USES=		go:1.26+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sysadminsmedia
 
@@ -40,7 +43,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the Homebox repository to get the value of GITID.
-GITID=		bd604f5867defe38d66a476226546f65f5e0e223
+GITID=		e911e6a1ca00e098799131f45c9f0496eb9ac773
 
 HOMEBOX_USER=	${PORTNAME}
 HOMEBOX_GROUP=	${HOMEBOX_USER}

@@ -1,0 +1,12 @@
+Rustic is a backup tool that provides fast, encrypted, deduplicated backups.
+
+It reads and writes the restic repo format described in the design document and
+can be used as a restic replacement in most cases.
+
+It is implemented in Rust, a performant, memory-efficient, and reliable
+cross-platform systems programming language.
+
+Stability
+
+Rustic currently is in beta state and misses regression tests. It is not
+recommended to use it for production backups, yet.

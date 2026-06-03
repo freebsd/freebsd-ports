@@ -1,4 +1,4 @@
---- chrome/enterprise_companion/event_logger.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/enterprise_companion/event_logger.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/enterprise_companion/event_logger.cc
 @@ -126,7 +126,7 @@ proto::EnterpriseCompanionMetadata GetMetadata() {
    metadata.set_application_arch(proto::ARM64);

@@ -1,0 +1,10 @@
+--- doc/comm/CMakeLists.txt.orig	2026-03-31 13:23:17 UTC
++++ doc/comm/CMakeLists.txt
+@@ -14,6 +14,4 @@ dune_add_latex_document(
+ 
+ dune_add_latex_document(
+   SOURCE communication.tex
+-  FATHER_TARGET doc
+-  BUILD_ON_INSTALL
+-  INSTALL ${CMAKE_INSTALL_DOCDIR}/comm)
++  FATHER_TARGET doc)

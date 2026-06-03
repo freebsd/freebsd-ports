@@ -1,0 +1,5 @@
+sphinx-apidoc is a tool for automatic generation of Sphinx sources
+that, using the autodoc extension, documents a whole package in the
+style of other automatic API documentation tools. sphinx-apidoc
+does not actually build documentation - rather it simply generates
+it.

@@ -1,7 +1,7 @@
 PORTNAME=	autoflake
-DISTVERSION=	2.3.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.3
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
@@ -15,9 +15,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=3.0.0:devel/py-pyflakes@${PY_FLAVOR}
 
 USES=		python shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	PyCQA
 USE_PYTHON=	autoplist pep517 pytest
 
-SHEBANG_FILES=	autoflake.py test_autoflake.py
+SHEBANG_FILES=	autoflake.py
 
 NO_ARCH=	yes
 

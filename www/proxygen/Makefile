@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.07.21.00
+DISTVERSION=	2026.06.01.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,8 @@ BROKEN_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gperf>0:devel/gperf
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+LIB_DEPENDS=	libcares.so:dns/c-ares \
+		libboost_iostreams.so:devel/boost-libs \
 		libbzip2.so:misc/vxl \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libglog.so:devel/glog \
 		libicui18n.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
-		libmvfst_server.so:net/mvfst \
+		libmvfst.so:net/mvfst \
 		libsnappy.so:archivers/snappy \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \

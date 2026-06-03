@@ -1,6 +1,6 @@
 PORTNAME=	matplotlib-cpp
 PORTVERSION=	g20210422
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake:testing compiler:c++17-lang python
 

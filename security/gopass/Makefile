@@ -1,7 +1,7 @@
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.16
-PORTREVISION=	4
+DISTVERSION=	1.16.1
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	gopasspw:password-store-example:8db75ba3b69c:password_store_example
 GO_MODULE=	github.com/gopasspw/gopass
 GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSION}"
 
-PORTDOCS=	README.md docs/*
+PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

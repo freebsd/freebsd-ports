@@ -1,5 +1,6 @@
 include/KF6/KJobWidgets/KAbstractWidgetJobTracker
 include/KF6/KJobWidgets/KDialogJobUiDelegate
+include/KF6/KJobWidgets/KInhibitionJobTracker
 include/KF6/KJobWidgets/KNotificationJobUiDelegate
 include/KF6/KJobWidgets/KStatusBarJobTracker
 include/KF6/KJobWidgets/KUiServerJobTracker
@@ -7,6 +8,7 @@ include/KF6/KJobWidgets/KUiServerV2JobTracker
 include/KF6/KJobWidgets/KWidgetJobTracker
 include/KF6/KJobWidgets/kabstractwidgetjobtracker.h
 include/KF6/KJobWidgets/kdialogjobuidelegate.h
+include/KF6/KJobWidgets/kinhibitionjobtracker.h
 include/KF6/KJobWidgets/kjobwidgets_export.h
 include/KF6/KJobWidgets/kjobwidgets_version.h
 include/KF6/KJobWidgets/knotificationjobuidelegate.h
@@ -19,8 +21,8 @@ lib/cmake/KF6JobWidgets/KF6JobWidgetsConfigVersion.cmake
 lib/cmake/KF6JobWidgets/KF6JobWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6JobWidgets/KF6JobWidgetsTargets.cmake
 lib/libKF6JobWidgets.so
-lib/libKF6JobWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6JobWidgets.so.6
+lib/libKF6JobWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 share/dbus-1/interfaces/kf6_org.kde.JobView.xml
 share/dbus-1/interfaces/kf6_org.kde.JobViewServer.xml
 share/dbus-1/interfaces/kf6_org.kde.JobViewV2.xml

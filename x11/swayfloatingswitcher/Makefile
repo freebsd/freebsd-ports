@@ -3,7 +3,7 @@ PORTVERSION=	s20221131
 PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Alt+Tab switcher for floating windows
 WWW=		https://github.com/ErikReider/SwayFloatingSwitcher
 

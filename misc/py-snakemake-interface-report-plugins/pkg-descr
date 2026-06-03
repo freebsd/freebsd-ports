@@ -1,0 +1,2 @@
+snakemake-interface-report-plugins provides the interface for Snakemake
+report plugins.

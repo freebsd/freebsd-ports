@@ -1,0 +1,7 @@
+Amiberry is an optimized Amiga emulator that includes several neat features such
+as:
+ * JIT support to get high-performance results on CPU-intensive emulated
+   environments
+ * WHDLoad booter
+ * support for RetroArch controller mapping
+and several more...

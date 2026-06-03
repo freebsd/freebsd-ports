@@ -1,6 +1,6 @@
---- core/DesktopEditor/fontengine/js/cpp/text.cpp.orig	2022-09-27 21:25:17.640548000 +0200
-+++ core/DesktopEditor/fontengine/js/cpp/text.cpp	2022-09-27 21:22:11.216341000 +0200
-@@ -532,9 +532,9 @@ WASM_EXPORT unsigned char* ASC_FT_Get_Glyph_Render_Buf
+--- core/DesktopEditor/fontengine/js/cpp/text.cpp.orig	2025-08-02 18:33:34 UTC
++++ core/DesktopEditor/fontengine/js/cpp/text.cpp
+@@ -558,9 +558,9 @@ WASM_EXPORT unsigned char* ASC_FT_Get_Glyph_Render_Buf
  // ------------------------------------------------------------
  
  // HARFBUZZ

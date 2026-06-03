@@ -54,11 +54,11 @@ content of the '/var/db/samba/' directory.
 
     # samba-tool domain classicupgrade
 
-%%AC_DC%%1c. You will need to specify location of the 'nsupdate' command in the
-%%AC_DC%%'%%SAMBA4_CONFIG%%' file:
-%%AC_DC%%
-%%AC_DC%%      nsupdate command = %%PREFIX%%/bin/samba-nsupdate -g
-%%AC_DC%%
+%%AD_DC%%1c. You will need to specify location of the 'nsupdate' command in the
+%%AD_DC%%'%%SAMBA4_CONFIG%%' file:
+%%AD_DC%%
+%%AD_DC%%      nsupdate command = %%PREFIX%%/bin/samba-nsupdate -g
+%%AD_DC%%
 2. Put string 'samba_server_enable="YES"' into your /etc/rc.conf.
 
 3. Make sure that your server doesn't run Samba3, OpenLDAP and named.

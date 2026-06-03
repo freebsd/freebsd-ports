@@ -1,6 +1,6 @@
 PORTNAME=	openspades
 PORTVERSION=	0.1.3
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/yvt/openspades-paks/releases/download/r33/:data

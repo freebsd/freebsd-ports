@@ -1,5 +1,5 @@
 PORTNAME=	WWW-Salesforce
-PORTVERSION=	0.304
+PORTVERSION=	0.400
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,6 @@ TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
 
 NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.mk>

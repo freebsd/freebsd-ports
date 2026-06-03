@@ -796,6 +796,8 @@ include/color/generic/operation/distance/constant.hpp
 include/color/generic/operation/distance/delta_gray.hpp
 include/color/generic/operation/distance/distance.hpp
 include/color/generic/operation/distance/euclid.hpp
+include/color/generic/operation/distance/hsl_bicone.hpp
+include/color/generic/operation/distance/hsv_cone.hpp
 include/color/generic/operation/distance/hue_euclid.hpp
 include/color/generic/operation/distance/hue_helix.hpp
 include/color/generic/operation/distance/hue_helix_rgb.hpp

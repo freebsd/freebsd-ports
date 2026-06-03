@@ -1,6 +1,7 @@
 PORTNAME=	zaproxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16.1
+DISTVERSION=	2.17.0
+PORTREVISION=	4
 CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	gradle8:devel/gradle8
 
 USES=		gettext-runtime java
 USE_GITHUB=	yes
-JAVA_VERSION=	22
+JAVA_VERSION=	17 21
 
 NO_ARCH=	yes
 

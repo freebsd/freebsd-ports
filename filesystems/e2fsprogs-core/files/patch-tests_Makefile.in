@@ -1,6 +1,6 @@
---- tests/Makefile.in.orig	2021-01-29 05:51:02 UTC
+--- tests/Makefile.in.orig	2026-03-06 17:17:36 UTC
 +++ tests/Makefile.in
-@@ -17,7 +17,7 @@ all:: @DO_TEST_SUITE@ test_one test_script
+@@ -18,7 +18,7 @@ test_one: $(srcdir)/test_one.in Makefile mke2fs.conf t
  test_one: $(srcdir)/test_one.in Makefile mke2fs.conf test_data.tmp
  	@echo "Creating test_one script..."
  	@[ -f test_one ] && chmod u+w test_one || true

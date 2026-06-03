@@ -58,7 +58,7 @@ lib/libdnf.so.2
 lib/libdnf/plugins/README
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/hawkey/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/hawkey/_hawkey.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/libdnf-0.73.4.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libdnf-0.75.0.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libdnf/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libdnf/_common_types.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libdnf/_conf.so

@@ -1,0 +1,87 @@
+From 3b9197727e70bffded674d24100e7b4c80e7ef58 Mon Sep 17 00:00:00 2001
+From: Lucas Trzesniewski <lucas.trzesniewski@gmail.com>
+Date: Sat, 25 Oct 2025 21:43:32 +0200
+Subject: [PATCH] Fix incorrect version in docs (#829)
+
+---
+ doc/html/pcre2api.html     | 2 +-
+ doc/html/pcre2pattern.html | 2 +-
+ doc/pcre2.txt              | 4 ++--
+ doc/pcre2api.3             | 2 +-
+ doc/pcre2pattern.3         | 2 +-
+ 5 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/doc/html/pcre2api.html b/doc/html/pcre2api.html
+index 52f013e5e..dc45d7b0e 100644
+--- doc/html/pcre2api.html
++++ doc/html/pcre2api.html
+@@ -3526,7 +3526,7 @@ <h2><a name="SEC34" href="#TOC1">ITERATING OVER ALL MATCHES</a></h2>
+ for example, replacing all matches in the subject; splitting the subject on all
+ matches; or simply counting the number of matches. The <b>pcre2_next_match()</b>
+ function helps with this task by providing the appropriate parameters for the
+-next match attempt (available since PCRE2 10.46).
++next match attempt (available since PCRE2 10.47).
+ </p>
+ <p>
+ First, a match attempt should be made using one of the matching functions
+diff --git a/doc/html/pcre2pattern.html b/doc/html/pcre2pattern.html
+index a18a29771..6374d93ed 100644
+--- doc/html/pcre2pattern.html
++++ doc/html/pcre2pattern.html
+@@ -3451,7 +3451,7 @@ <h3>
+ Recursion and subroutines with returned capture groups
+ </h3>
+ <p>
+-Since PCRE2 10.46, recursion and subroutine calls may also specify a list of
++Since PCRE2 10.47, recursion and subroutine calls may also specify a list of
+ capture groups to return. This is a PCRE2 syntax extension not supported by
+ Perl. The pattern matching recurses into the referenced expression as described
+ above, however, when the recursion returns to the calling expression the
+diff --git a/doc/pcre2.txt b/doc/pcre2.txt
+index 4c43489fe..6ecf94e6e 100644
+--- doc/pcre2.txt
++++ doc/pcre2.txt
+@@ -3414,7 +3414,7 @@ ITERATING OVER ALL MATCHES
+        subject on all matches; or simply counting the number of  matches.  The
+        pcre2_next_match()  function  helps with this task by providing the ap-
+        propriate parameters for the next match attempt (available since  PCRE2
+-       10.46).
++       10.47).
+ 
+        First,  a  match attempt should be made using one of the matching func-
+        tions (pcre2_match(), pcre2_dfa_match(), or pcre2_jit_match()).   Then,
+@@ -10105,7 +10105,7 @@ RECURSIVE PATTERNS
+ 
+    Recursion and subroutines with returned capture groups
+ 
+-       Since  PCRE2  10.46,  recursion and subroutine calls may also specify a
++       Since  PCRE2  10.47,  recursion and subroutine calls may also specify a
+        list of capture groups to return. This is a PCRE2 syntax extension  not
+        supported  by  Perl.  The pattern matching recurses into the referenced
+        expression as described above, however, when the recursion  returns  to
+diff --git a/doc/pcre2api.3 b/doc/pcre2api.3
+index c43f57bee..1100e59af 100644
+--- doc/pcre2api.3
++++ doc/pcre2api.3
+@@ -3543,7 +3543,7 @@ A common task for applications is to implement "global" matching behaviour,
+ for example, replacing all matches in the subject; splitting the subject on all
+ matches; or simply counting the number of matches. The \fBpcre2_next_match()\fP
+ function helps with this task by providing the appropriate parameters for the
+-next match attempt (available since PCRE2 10.46).
++next match attempt (available since PCRE2 10.47).
+ .P
+ First, a match attempt should be made using one of the matching functions
+ (\fBpcre2_match()\fP, \fBpcre2_dfa_match()\fP, or \fBpcre2_jit_match()\fP).
+diff --git a/doc/pcre2pattern.3 b/doc/pcre2pattern.3
+index 6f73e1b84..db7856449 100644
+--- doc/pcre2pattern.3
++++ doc/pcre2pattern.3
+@@ -3499,7 +3499,7 @@ below.
+ .SS "Recursion and subroutines with returned capture groups"
+ .rs
+ .sp
+-Since PCRE2 10.46, recursion and subroutine calls may also specify a list of
++Since PCRE2 10.47, recursion and subroutine calls may also specify a list of
+ capture groups to return. This is a PCRE2 syntax extension not supported by
+ Perl. The pattern matching recurses into the referenced expression as described
+ above, however, when the recursion returns to the calling expression the

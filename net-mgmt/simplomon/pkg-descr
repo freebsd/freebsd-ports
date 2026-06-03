@@ -1,0 +1,6 @@
+Simplomon is a lightweight and easy-to-setup availability monitoring
+system. It offers advanced features such as certificate expiry checking,
+IPv6 autoconfiguration, DNS synchronization, DNSSEC signature freshness
+checks, HTTP redirect checking, providing a web page, JSON status, and a
+Prometheus node exporter. It is suitable for quickly setting up monitoring
+without the need for complex configuration or maintenance.

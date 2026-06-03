@@ -1,10 +1,11 @@
 PORTNAME=	pmd
-DISTVERSION=	7.11.0
+DISTVERSION=	7.21.0
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}_releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-dist-${DISTVERSION}-bin
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Static analysis tool for Java source code
 WWW=		https://pmd.github.io/
 
@@ -19,7 +20,8 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
-PLIST_SUB+=	ETCDIR=${ETCDIR} PORTVERSION=${DISTVERSION}
+PLIST_SUB+=	ETCDIR=${ETCDIR} \
+		PORTVERSION=${DISTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%ETCDIR%%|${ETCDIR}|g' \

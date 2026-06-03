@@ -1,12 +1,12 @@
---- make_Unix.inc.orig	2024-02-05 12:03:37 UTC
+--- make_Unix.inc.orig	2025-11-04 14:46:11 UTC
 +++ make_Unix.inc
 @@ -14,7 +14,7 @@ FORTRAN = gfortran
  #  the compiler options desired when NO OPTIMIZATION is selected.
  #
  FORTRAN = gfortran
--OPTS = -O2 -fPIC -fdefault-integer-8
-+#OPTS = -O2 -fPIC -fdefault-integer-8
- OPTS_NOOPT = -O0
+-OPTS = -O2 -fPIC -g
++#OPTS = -O2 -fPIC -g
+ OPTS_NOOPT = -O0 -g
  
  #  Define LDFLAGS to the desired linker options for your machine.
 @@ -30,13 +30,11 @@ ARCHFLAGS = cr
@@ -20,7 +20,7 @@
  #  machine-specific, optimized BLAS library should be used whenever
  #  possible.)
  #
--BLASLIB      = ../libs/blas.a
--LAPACKLIB    = ../libs/lapack.a
+-BLASLIB      = -lopenblas
+-LAPACKLIB    = -lopenblas
  LPKAUXLIB    = ../lpkaux.a
  SLICOTLIB    = ../slicot.a

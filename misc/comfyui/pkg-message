@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+You installed ComfyUI: a powerful and modular Stable Diffusion GUI.
+
+ComfyUI provides a web GUI that you need to access via your browser.
+It by default listens on http://127.0.0.1:8188.
+
+ComfyUI stores its data, including downloaded models, input images,
+and output images, in /var/db/comfyui.
+
+To use ComfyUI, you will likely need to download an archived Stable Diffusion
+model (checkpoint) file from the https://huggingface.co website
+and place it in:
+/var/db/comfyui/models/checkpoints
+
+The name of the file is one of
+* v1-5-pruned-emaonly.safetensors
+* v1-5-pruned-emaonly-fp16.safetensors
+* sd_xl_base_1.0.safetensors.
+
+Refer to the official documentation for further information.
+EOM
+}
+]

@@ -1,6 +1,5 @@
 PORTNAME=	postfix-mta-sts-resolver
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,8 @@ WWW=		https://pypi.python.org/pypi/postfix-mta-sts-resolver
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}aiodns>=3.0.0:dns/py-aiodns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.4.4:www/py-aiohttp@${PY_FLAVOR} \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	Snawoot
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 USE_RC_SUBR=	mta_sts
 
 NO_ARCH=	yes

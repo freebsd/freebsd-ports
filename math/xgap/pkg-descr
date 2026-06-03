@@ -1,1 +1,8 @@
-The XGAP package allows to use graphics in GAP.
+XGAP is a graphical user interface (GUI) for the GAP system for
+computational discrete algebra. It allows for the visualization
+of mathematical objects and is particularly useful for investigating
+subgroup lattices of groups.
+
+XGAP provides interactive displays and gives access to various
+GAP functions for group theory. It runs as a separate C program
+alongside the main GAP session to handle graphics and user interactions.

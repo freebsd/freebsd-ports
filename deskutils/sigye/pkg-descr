@@ -1,0 +1,7 @@
+Sigye (Korean for "clock") is a feature-rich terminal clock with
+ASCII art fonts, animated backgrounds, and productivity timers.
+
+It offers six display modes including Clock, Pomodoro, Timer,
+Stopwatch, World Clock, and Countdown. Developer-friendly features
+include Unix timestamp and ISO 8601 display formats with clipboard
+integration.

@@ -21,6 +21,14 @@
 	# Required for plugin installer usage of git
 	putenv("PATH=%%LOCALBASE%%/bin/:" . getenv("PATH"));
 
+	putenv('TTRSS_CACHE_DIR=/var/tt-rss/cache');
+	putenv('TTRSS_ICONS_DIR=/var/tt-rss/feed-icons');
+	putenv('TTRSS_LOCK_DIRECTORY=/var/tt-rss/lock');
+
+	putenv('TTRSS_LOCAL_PLUGINS_DIR=/var/tt-rss/local/plugins.local');
+	putenv('TTRSS_LOCAL_TEMPLATES_DIR=/var/tt-rss/local/templates.local');
+	putenv('TTRSS_LOCAL_THEMES_DIR=/var/tt-rss/local/themes.local');
+
 	#putenv('TTRSS_SINGLE_USER_MODE=true');
 
 	#putenv('TTRSS_SELF_URL_PATH=');

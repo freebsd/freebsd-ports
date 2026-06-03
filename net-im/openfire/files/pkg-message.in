@@ -9,8 +9,10 @@ placed in %%ETCDIR%%:
 
 openfire.xml.sample
 security.xml.sample
+java.security.sample
 keystore.sample
 truststore.sample
+client.truststore.sample
 crowd.properties.sample
 EOM
 }

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+%%PREFIX%%/bin/electron%%ELECTRON_VER%% %%PREFIX%%/share/deltachat-desktop $@

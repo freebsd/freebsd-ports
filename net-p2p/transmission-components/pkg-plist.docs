@@ -6,6 +6,9 @@
 %%DOCSDIR%%/news/news-4.0.3.md
 %%DOCSDIR%%/news/news-4.0.4.md
 %%DOCSDIR%%/news/news-4.0.5.md
+%%DOCSDIR%%/news/news-4.0.6.md
+%%DOCSDIR%%/news/news-4.1.0.md
+%%DOCSDIR%%/news/news-5.0.0-draft.md
 %%DOCSDIR%%/README.md
 %%DOCSDIR%%/rpc-spec.md
 %%DOCSDIR%%/send-email-when-torrent-done.sh

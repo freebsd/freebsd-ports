@@ -3,7 +3,7 @@ bin/lowdown-diff
 include/lowdown.h
 lib/liblowdown.a
 lib/liblowdown.so
-lib/liblowdown.so.2
+lib/liblowdown.so.3
 libdata/pkgconfig/lowdown.pc
 share/man/man1/lowdown.1.gz
 share/man/man1/lowdown-diff.1.gz
@@ -29,9 +29,9 @@ share/man/man3/lowdown_latex_new.3.gz
 share/man/man3/lowdown_latex_rndr.3.gz
 share/man/man3/lowdown_metaq_free.3.gz
 share/man/man3/lowdown_node_free.3.gz
-share/man/man3/lowdown_nroff_free.3.gz
-share/man/man3/lowdown_nroff_new.3.gz
-share/man/man3/lowdown_nroff_rndr.3.gz
+share/man/man3/lowdown_roff_free.3.gz
+share/man/man3/lowdown_roff_new.3.gz
+share/man/man3/lowdown_roff_rndr.3.gz
 share/man/man3/lowdown_odt_free.3.gz
 share/man/man3/lowdown_odt_new.3.gz
 share/man/man3/lowdown_odt_rndr.3.gz

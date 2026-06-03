@@ -1,9 +1,9 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	35.0.0
+PORTVERSION=	45.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fast and secure runtime for WebAssembly
 WWW=		https://wasmtime.dev/
 
@@ -30,8 +30,9 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
 
 .include "${.CURDIR}/Makefile.cargo"
 
-GH_TUPLE=	WebAssembly:testsuite:970d36b:testsuite/tests/spec_testsuite \
-		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
+GH_TUPLE=	WebAssembly:component-model:dac7805:component_model/tests/component-model \
+		WebAssembly:testsuite:3453673:testsuite/tests/spec_testsuite \
+		WebAssembly:wasi-testsuite:26ea2ff:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
 post-configure:

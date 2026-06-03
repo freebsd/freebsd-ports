@@ -4,6 +4,7 @@ include/c4/bitmask.hpp
 include/c4/blob.hpp
 include/c4/c4_pop.hpp
 include/c4/c4_push.hpp
+include/c4/dump.hpp
 include/c4/char_traits.hpp
 include/c4/charconv.hpp
 include/c4/common.hpp
@@ -20,6 +21,7 @@ include/c4/ext/fast_float_all.h
 include/c4/ext/rng/rng.hpp
 include/c4/ext/sg14/inplace_function.h
 include/c4/format.hpp
+include/c4/gcc-4.8.hpp
 include/c4/hash.hpp
 include/c4/language.hpp
 include/c4/memory_resource.hpp
@@ -32,16 +34,18 @@ include/c4/std/std.hpp
 include/c4/std/std_fwd.hpp
 include/c4/std/string.hpp
 include/c4/std/string_fwd.hpp
+include/c4/std/string_view.hpp
 include/c4/std/tuple.hpp
 include/c4/std/vector.hpp
 include/c4/std/vector_fwd.hpp
 include/c4/substr.hpp
 include/c4/substr_fwd.hpp
 include/c4/szconv.hpp
-include/c4/time.hpp
 include/c4/type_name.hpp
 include/c4/types.hpp
 include/c4/unrestrict.hpp
+include/c4/utf.hpp
+include/c4/version.hpp
 include/c4/windows.hpp
 include/c4/windows_pop.hpp
 include/c4/windows_push.hpp
@@ -50,4 +54,4 @@ lib/cmake/c4core/c4coreConfigVersion.cmake
 lib/cmake/c4core/c4coreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/c4core/c4coreTargets.cmake
 lib/libc4core.so
-lib/libc4core.so.%%PORTVERSION%%
+lib/libc4core.so.%%VERSION%%

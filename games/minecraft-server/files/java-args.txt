@@ -1,1 +1,1 @@
--Xmx1024M -Xms1024M
+-Xmx1024M -Xms1024M --enable-native-access=ALL-UNNAMED

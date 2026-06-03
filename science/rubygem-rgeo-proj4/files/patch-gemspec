@@ -1,0 +1,11 @@
+--- rgeo-proj4.gemspec.orig	2026-01-31 23:36:44 UTC
++++ rgeo-proj4.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<rgeo>.freeze, ["~> 3.0.0".freeze])
++  s.add_runtime_dependency(%q<rgeo>.freeze, [">= 3.0.0".freeze, "< 3.2".freeze])
+   s.add_development_dependency(%q<ffi-geos>.freeze, ["~> 2.2".freeze])
+   s.add_development_dependency(%q<minitest>.freeze, ["~> 5.14".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0".freeze])

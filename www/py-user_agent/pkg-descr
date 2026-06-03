@@ -1,2 +1,4 @@
-This module is for generating random, valid web navigator's configs
-& User-Agent HTTP headers.
+This module is for generating random, valid web user agents:
+
+- content of "User-Agent" HTTP headers
+- content of window.navigator JavaScript object

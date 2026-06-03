@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2024-09-10 15:12:57 UTC
++++ pyproject.toml
+@@ -2,6 +2,9 @@ build-backend = "setuptools.build_meta"
+ requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
++[tool.setuptools.packages.find]
++where = ["."]
++
+ [project]
+ name = "nile"
+ description = "Unofficial Amazon Games client"

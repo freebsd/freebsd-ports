@@ -1,18 +1,24 @@
---- pyproject.toml.orig	2024-10-18 15:03:06 UTC
+--- pyproject.toml.orig	2025-09-27 18:10:32 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,10 +1,9 @@
  [project]
 -name = "MarkupSafe"
 +name = "markupsafe"
- version = "3.0.2"
+ version = "3.0.3"
  description = "Safely add untrusted strings to HTML/XML markup."
  readme = "README.md"
-@@ -26,7 +26,7 @@ Chat = "https://discord.gg/pallets"
- Chat = "https://discord.gg/pallets"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = { file = "LICENSE.txt" }
+ maintainers = [{name = "Pallets", email = "contact@palletsprojects.com"}]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -57,7 +56,7 @@ typing = [
+ ]
  
  [build-system]
--requires = ["setuptools>=70.1"]
+-requires = ["setuptools>=77"]
 +requires = ["setuptools>=61"]
  build-backend = "setuptools.build_meta"
  
- [tool.pytest.ini_options]
+ [tool.uv]

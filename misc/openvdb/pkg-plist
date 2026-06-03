@@ -25,7 +25,7 @@ include/openvdb/math/Coord.h
 include/openvdb/math/DDA.h
 include/openvdb/math/FiniteDifference.h
 include/openvdb/math/Half.h
-include/openvdb/math/LegacyFrustum.h
+include/openvdb/math/HalfDecl.h
 include/openvdb/math/Maps.h
 include/openvdb/math/Mat.h
 include/openvdb/math/Mat3.h
@@ -97,6 +97,7 @@ include/openvdb/tools/GridOperators.h
 include/openvdb/tools/GridTransformer.h
 include/openvdb/tools/Interpolation.h
 include/openvdb/tools/LevelSetAdvect.h
+include/openvdb/tools/LevelSetDilatedMesh.h
 include/openvdb/tools/LevelSetFilter.h
 include/openvdb/tools/LevelSetFracture.h
 include/openvdb/tools/LevelSetMeasure.h
@@ -105,6 +106,7 @@ include/openvdb/tools/LevelSetPlatonic.h
 include/openvdb/tools/LevelSetRebuild.h
 include/openvdb/tools/LevelSetSphere.h
 include/openvdb/tools/LevelSetTracker.h
+include/openvdb/tools/LevelSetTubes.h
 include/openvdb/tools/LevelSetUtil.h
 include/openvdb/tools/Mask.h
 include/openvdb/tools/Merge.h
@@ -133,6 +135,9 @@ include/openvdb/tools/VelocityFields.h
 include/openvdb/tools/VolumeAdvect.h
 include/openvdb/tools/VolumeToMesh.h
 include/openvdb/tools/VolumeToSpheres.h
+include/openvdb/tools/impl/ConvexVoxelizer.h
+include/openvdb/tools/impl/LevelSetDilatedMeshImpl.h
+include/openvdb/tools/impl/LevelSetTubesImpl.h
 include/openvdb/tree/InternalNode.h
 include/openvdb/tree/Iterator.h
 include/openvdb/tree/LeafBuffer.h
@@ -169,5 +174,5 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.12.0
-lib/libopenvdb.so.12.0.1
+lib/libopenvdb.so.13.0
+lib/libopenvdb.so.13.0.0

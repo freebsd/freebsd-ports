@@ -1,46 +1,31 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.5
 CATEGORIES=	devel elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Work with Git forges from the comfort of Magit
 WWW=		https://github.com/magit/forge
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.2.2:databases/closql@${EMACS_FLAVOR} \
-		compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR} \
-		ghub${EMACS_PKGNAMESUFFIX}>=4.3.2:devel/ghub@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
-		magit${EMACS_PKGNAMESUFFIX}>=4.3.6:devel/magit@${EMACS_FLAVOR} \
-		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.7:textproc/markdown-mode.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.9.0:devel/transient@${EMACS_FLAVOR} \
-		yaml.el${EMACS_PKGNAMESUFFIX}>=1.2.0:textproc/yaml.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.2.2:databases/closql@${EMACS_FLAVOR} \
-		compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR} \
-		ghub${EMACS_PKGNAMESUFFIX}>=4.3.2:devel/ghub@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
-		magit${EMACS_PKGNAMESUFFIX}>=4.3.6:devel/magit@${EMACS_FLAVOR} \
-		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.7:textproc/markdown-mode.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.9.0:devel/transient@${EMACS_FLAVOR} \
-		yaml.el${EMACS_PKGNAMESUFFIX}>=1.2.0:textproc/yaml.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	closql>=2.4:databases/closql \
+		compat.el>=30.1.0.0:misc/compat.el \
+		cond-let>=0.2:devel/cond-let \
+		emacsql>=4.3.1:databases/emacsql \
+		ghub>=5.1:devel/ghub \
+		llama.el>=1.0:devel/llama.el \
+		magit>=4.5:devel/magit \
+		markdown-mode.el>=2.7:textproc/markdown-mode.el \
+		transient>=0.12:devel/transient \
+		yaml.el>=1.2.0:textproc/yaml.el
 
-USES=		emacs gmake makeinfo
+USES=		emacs:build gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-MAKE_ENV+=	INSTALL_INFO=install-info \
-		LOAD_PATH="${LOAD_PATH}"
-# Parallel build fails if Emacs is built with native compilation enabled
-MAKE_JOBS_UNSAFE=	yes
-ALL_TARGET=	lisp info
-
-CONFLICTS_INSTALL=	forge-devel*
+CONFLICTS_INSTALL=	forge-emacs_*
 
 NO_ARCH=	yes
 
@@ -53,24 +38,24 @@ OPTIONS_SUB=	yes
 PDF_DESC=	Build and install PDF document
 
 DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
-DOCS_ALL_TARGET=	html
-DOCS_BINARY_ALIAS=	sed=gsed
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
 PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
-PDF_ALL_TARGET=		pdf
 
-LOAD_PATH=	-L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/closql -L \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat -L \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/emacsql -L \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/ghub -L \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/magit
+do-build:
+	${GMAKE} -C ${WRKSRC}/lisp autoloads
+	${GMAKE} -C ${WRKSRC}/docs info
+
+do-build-DOCS-on:
+	${GMAKE} -C ${WRKSRC}/docs html
+
+do-build-PDF-on:
+	${GMAKE} -C ${WRKSRC}/docs pdf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lisp/*.el* \
-	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lisp/*.el \
+	${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 do-install-DOCS-on:

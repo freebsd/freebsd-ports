@@ -1,0 +1,11 @@
+--- a/source/common/network/io_socket_handle_impl.h
++++ b/source/common/network/io_socket_handle_impl.h
+@@ -102,7 +102,7 @@
+   // The minimum cmsg buffer size to filled in destination address, packets dropped and gso
+   // size when receiving a packet. It is possible for a received packet to contain both IPv4
+   // and IPV6 addresses.
+-  const size_t cmsg_space_{CMSG_SPACE(sizeof(int)) + CMSG_SPACE(sizeof(struct in_pktinfo)) +
++  const size_t cmsg_space_{CMSG_SPACE(sizeof(int)) + CMSG_SPACE(sizeof(struct in_addr)) +
+                            CMSG_SPACE(sizeof(struct in6_pktinfo)) + CMSG_SPACE(sizeof(uint16_t))};
+
+   size_t addressCacheMaxSize() const { return address_cache_max_capacity_; }

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-01-03 16:40:12 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ requires = [
+     # Next step should be >= 77.0 for PEP 639 support
+     # Don't bump too early to give distributors time to update
+     # their setuptools version.
+-    "setuptools >= 67.0",
++    "setuptools >= 61.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

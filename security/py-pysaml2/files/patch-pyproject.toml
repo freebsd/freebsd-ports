@@ -1,17 +1,15 @@
---- pyproject.toml.orig	2025-02-10 21:49:33 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -42,12 +42,12 @@ paste = {optional = true, version = "*"}
- importlib-metadata = {version = ">=1.7.0", python = "<3.8"}
- importlib-resources = {python = "<3.9", version = "*"}
- paste = {optional = true, version = "*"}
--pyopenssl = "<24.3.0"
-+pyopenssl = "*"
- python-dateutil = "*"
- pytz = "*"
- "repoze.who" = {optional = true, version = "*"}
- requests = "^2"
--xmlschema = "^2"
-+xmlschema = ">=2"
- "zope.interface" = {optional = true, version = "*"}
+@@ -25,10 +25,10 @@ dependencies = [
+ dependencies = [
+   "cryptography >=3.1",
+   "defusedxml",
+-  "pyopenssl <24.3.0",
++  "pyopenssl",
+   "python-dateutil",
+   "requests >=2.0.0,<3.0.0",  # ^2 means compatible with 2.x
+-  "xmlschema >=2.0.0,<3.0.0"
++  "xmlschema >=2.0.0"
+ ]
  
- [tool.poetry.extras]
+ [project.optional-dependencies]

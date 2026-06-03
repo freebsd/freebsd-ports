@@ -1,0 +1,22 @@
+Hermes is a self-improving AI agent that creates skills from experience and
+improves them during use. It runs as a CLI on a developer's machine and
+supports a pluggable toolset system, multiple LLM backends (OpenAI, Anthropic,
+Mistral, Bedrock, ...), web search and crawling integrations, voice / TTS /
+messaging connectors, and an agent-control protocol (ACP) adapter.
+
+This port installs the core CLI plus the optional [web] dashboard
+backend (FastAPI + Uvicorn).  The dashboard's static frontend assets
+(hermes_cli/web_dist/) are produced by an upstream npm pipeline that is
+not run in the ports build environment.  Other upstream extras such as
+Modal, Daytona, Vercel, faster-whisper, Telegram, Discord, Slack and
+the [rl] training loop are not packaged.
+
+Because Hermes ships top-level Python packages with generic names
+(tools, agent, gateway, plugins, ...), the source tree is installed
+under ${PREFIX}/lib/hermes-agent/ rather than site-packages, matching
+upstream's own Docker / Nix / Homebrew packaging.  The wrappers in
+${PREFIX}/bin prepend that directory to sys.path before invoking each
+entry point.
+
+The skills/ and optional-skills/ template directories ship under
+${DATADIR}/.  Hermes reads its working set from ${HOME}/.hermes/.

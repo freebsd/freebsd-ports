@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CPPFLAGS=-I.
 USES=		fortran gmake
-FFLAGS+=	-std=legacy
 
 PLIST_FILES=	bin/isaac
 PORTDOCS=	man.4_2.ps.gz
@@ -33,6 +32,12 @@ EXAMPLES_DISTFILES=	example_cases${EXTRACT_SUFX}
 
 OPTIMIZED_FFLAGS_DESC=	Use extra compiler (fortran) optimizations
 OPTIMIZED_FFLAGS_VARS=	FFLAGS+="-O2 -ffast-math"
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} != flang
+FFLAGS=		-std=legacy
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+;' \
@@ -53,4 +58,4 @@ do-install-EXAMPLES-on:
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/example_cases${EXTRACT_SUFX} \
 		-C ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

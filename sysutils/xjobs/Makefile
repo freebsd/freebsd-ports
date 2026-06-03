@@ -1,6 +1,5 @@
 PORTNAME=	xjobs
-PORTVERSION=	20200726
-PORTREVISION=	1
+PORTVERSION=	20250529
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.maier-komor.de/xjobs/
 

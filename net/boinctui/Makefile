@@ -1,10 +1,10 @@
 PORTNAME=	boinctui
-DISTVERSION=	2.7.1
+DISTVERSION=	2.7.2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Fullscreen text-mode manager for BOINC client
 WWW=		https://sourceforge.net/projects/boinctui/
 

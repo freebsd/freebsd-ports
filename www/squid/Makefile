@@ -1,14 +1,7 @@
 PORTNAME=	squid
-DISTVERSION=	6.14
+DISTVERSION=	7.4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
-
-PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
-		http://www1.il.squid-cache.org/%SUBDIR%/ \
-		http://www2.gr.squid-cache.org/%SUBDIR%/ \
-		http://ca2.squid-cache.org/%SUBDIR%/ \
-		https://www.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v6/changesets
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
@@ -18,8 +11,8 @@ WWW=		https://www.squid-cache.org/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib cpe gmake localbase:ldflags perl5 \
-		shebangfix tar:xz
+USES=		compiler:c++17-lang cpe gmake localbase:ldflags perl5 \
+		pkgconfig shebangfix tar:xz
 CPE_VENDOR=	squid-cache
 USE_RC_SUBR=	squid
 
@@ -49,7 +42,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 
 CONFLICTS=	squid-devel
 
-SUB_FILES+=	pkg-install pkg-message
+SUB_FILES+=	900.squid-rotate-log pkg-install pkg-message
 
 USERS=		squid
 GROUPS=		squid
@@ -63,14 +56,14 @@ PLIST_SUB+=	UNLINKD="@comment "
 PORTDOCS=	${MYDOCS:T}
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		ARP_ACL CACHE_DIGESTS DEBUG DELAY_POOLS DOCS ECAP ESI \
+OPTIONS_DEFINE=		ARP_ACL CACHE_DIGESTS DEBUG DELAY_POOLS DOCS ECAP \
 			EXAMPLES FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP \
-			ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP NETTLE SNMP \
-			SSL SSL_CRTD STACKTRACES TDB VIA_DB WCCP WCCPV2
+			ICMP IPV6 KQUEUE LARGEFILE LAX_HTTP NETTLE SNMP SSL \
+			SSL_CRTD STACKTRACES TDB VIA_DB WCCP WCCPV2
 OPTIONS_DEFAULT=	ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF \
 			FS_AUFS FS_DISKD FS_ROCK GSSAPI_BASE HTCP ICAP ICMP \
-			IDENT KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD \
-			TP_IPFW VIA_DB WCCP WCCPV2
+			KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_IPFW \
+			VIA_DB WCCP WCCPV2
 OPTIONS_GROUP=		AUTH
 OPTIONS_GROUP_AUTH=	AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB AUTH_SQL
 OPTIONS_RADIO=		FW
@@ -90,7 +83,6 @@ CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
 ECAP_DESC=		Loadable content adaptation modules
-ESI_DESC=		ESI support
 FOLLOW_XFF_DESC=	Support for the X-Following-For header
 FS_AUFS_DESC=		AUFS (threaded-io) support
 FS_DISKD_DESC=		DISKD storage engine controlled by separate service
@@ -98,7 +90,6 @@ FS_ROCK_DESC=		ROCK storage engine
 HTCP_DESC=		HTCP support
 ICAP_DESC=		the ICAP client
 ICMP_DESC=		ICMP pinging and network measurement
-IDENT_DESC=		Ident lookups (RFC 931)
 KQUEUE_DESC=		Kqueue(2) support
 LARGEFILE_DESC=		Support large (>2GB) cache and log files
 LAX_HTTP_DESC=		Do not enforce strict HTTP compliance
@@ -131,12 +122,7 @@ AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
 ECAP_LIB_DEPENDS=		libecap.so:www/libecap
-ECAP_USES=			pkgconfig:build
 ECAP_CONFIGURE_ENABLE=		ecap
-ESI_LIB_DEPENDS=		libexpat.so:textproc/expat2 \
-				libxml2.so:textproc/libxml2
-ESI_CONFIGURE_ENABLE=		esi
-ESI_CONFIGURE_WITH=		expat xml2
 FOLLOW_XFF_CONFIGURE_ENABLE=	follow-x-forwarded-for
 FS_AUFS_CONFIGURE_WITH=		pthreads
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
@@ -148,27 +134,32 @@ FS_DISKD_VARS=			DISKIO_MODULES+=DiskDaemon \
 				STORAGE_SCHEMES+=diskd
 FS_ROCK_VARS=			STORAGE_SCHEMES+=rock
 GSSAPI_BASE_USES=		gssapi
-GSSAPI_BASE_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				--with-heimdal-krb5=${GSSAPIBASEDIR} \
-				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
+.if exists(/usr/libdata/pkgconfig/mit-krb5.pc)
+GSSAPI_BASE_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} \
+				--without-heimdal-krb5
+GSSAPI_BASE_CONFIGURE_ENV=	LIBMIT_KRB5_CFLAGS="${GSSAPICPPFLAGS}" \
+				LIBMIT_KRB5_LIBS="${GSSAPILIBS}"
+.else
+GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} \
+				--without-mit-krb5
+GSSAPI_BASE_CONFIGURE_ENV=	LIBHEIMDAL_KRB5_CFLAGS="${GSSAPICPPFLAGS}" \
+				LIBHEIMDAL_KRB5_LIBS="${GSSAPILIBS}"
+.endif
 GSSAPI_BASE_PLIST_SUB=		AUTH_KERB=""
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
-GSSAPI_HEIMDAL_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				--with-heimdal-krb5=${GSSAPIBASEDIR} \
-				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=yes \
+				--without-mit-krb5
 GSSAPI_HEIMDAL_PLIST_SUB=	AUTH_KERB=""
 GSSAPI_MIT_USES=		gssapi:mit
-GSSAPI_MIT_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				--with-mit-krb5=${GSSAPIBASEDIR} \
-				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
+GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=yes \
+				--without-heimdal-krb5
 GSSAPI_MIT_PLIST_SUB=		AUTH_KERB=""
-GSSAPI_NONE_CONFIGURE_ON=	--without-gnugss \
+GSSAPI_NONE_CONFIGURE_ON=	--without-gss \
 				--without-heimdal-krb5 \
 				--without-mit-krb5
 HTCP_CONFIGURE_ENABLE=		htcp
 ICAP_CONFIGURE_ENABLE=		icap-client
 ICMP_CONFIGURE_ENABLE=		icmp
-IDENT_CONFIGURE_ENABLE=		ident-lookups
 IPV6_CONFIGURE_ENABLE=		ipv6
 KQUEUE_CONFIGURE_ENABLE=	kqueue
 LARGEFILE_CONFIGURE_WITH=	large-files
@@ -191,7 +182,7 @@ STACKTRACES_LDFLAGS=		-lunwind
 STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_VARS=		STRIP=""
 TDB_LIB_DEPENDS=		libtdb.so:${SAMBA_TDB_PORT}
-TDB_USES=			pkgconfig:build samba:env
+TDB_USES=			samba:env
 TDB_CONFIGURE_WITH=		tdb
 TDB_VARS=			EXTERNAL_ACL+="time_quota session"
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
@@ -204,17 +195,14 @@ WCCP_CONFIGURE_ENABLE=		wccp
 
 MYDOCS=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 
-change_files=	ChangeLog errors/Makefile.am errors/Makefile.in \
-		src/auth/basic/SMB_LM/README.html \
-		src/Makefile.am src/Makefile.in \
-		src/cf_gen.cc src/squid.8.in \
-		test-suite/Makefile.in test-suite/Makefile.am \
-		tools/Makefile.am tools/Makefile.in
+change_files=	ChangeLog errors/Makefile.am errors/Makefile.in src/Makefile.am \
+		src/Makefile.in src/cf_gen.cc src/squid.8.in \
+		test-suite/Makefile.in test-suite/Makefile.am
 
 .include <bsd.port.options.mk>
 
 # Authentication methods and modules:
-BASIC_AUTH+=	DB NCSA PAM POP3 RADIUS SMB_LM fake getpwnam
+BASIC_AUTH+=	DB NCSA PAM POP3 RADIUS fake getpwnam
 DIGEST_AUTH+=	file
 EXTERNAL_ACL+=	file_userip unix_group delayer
 
@@ -245,7 +233,7 @@ DISKIO_MODULES+=	AIO Blocking IpcIo Mmapped
 CONFIGURE_ARGS+=	--enable-auth-basic="${BASIC_AUTH}" \
 			--enable-auth-digest="${DIGEST_AUTH}" \
 			--enable-auth-negotiate="${NEGOTIATE_AUTH}" \
-			--enable-auth-ntlm="fake SMB_LM" \
+			--enable-auth-ntlm="fake" \
 			--enable-disk-io="${DISKIO_MODULES}" \
 			--enable-external-acl-helpers="${EXTERNAL_ACL}" \
 			--enable-log-daemon-helpers="file DB" \
@@ -278,10 +266,17 @@ post-patch-IPV6-off:
 		${WRKSRC}/src/cf.data.pre
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
+	${INSTALL_SCRIPT} ${WRKDIR}/900.squid-rotate-log \
+		${STAGEDIR}${PREFIX}/etc/periodic/weekly
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/auth/basic/DB/passwd.sql \
 		${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

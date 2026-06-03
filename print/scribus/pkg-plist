@@ -3520,10 +3520,14 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.el.qm
 %%DATADIR%%/translations/scribus.en_AU.qm
 %%DATADIR%%/translations/scribus.en_GB.qm
+%%DATADIR%%/translations/scribus.en_IN.qm
 %%DATADIR%%/translations/scribus.en_US.qm
 %%DATADIR%%/translations/scribus.eo.qm
 %%DATADIR%%/translations/scribus.es_AR.qm
+%%DATADIR%%/translations/scribus.es_CO.qm
 %%DATADIR%%/translations/scribus.es_ES.qm
+%%DATADIR%%/translations/scribus.es_MX.qm
+%%DATADIR%%/translations/scribus.es_VE.qm
 %%DATADIR%%/translations/scribus.et.qm
 %%DATADIR%%/translations/scribus.eu.qm
 %%DATADIR%%/translations/scribus.fa_IR.qm
@@ -3549,6 +3553,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.nl.qm
 %%DATADIR%%/translations/scribus.nn_NO.qm
 %%DATADIR%%/translations/scribus.oc.qm
+%%DATADIR%%/translations/scribus.pa.qm
 %%DATADIR%%/translations/scribus.pl_PL.qm
 %%DATADIR%%/translations/scribus.pms.qm
 %%DATADIR%%/translations/scribus.pt_BR.qm
@@ -3567,8 +3572,9 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.te.qm
 %%DATADIR%%/translations/scribus.th_TH.qm
 %%DATADIR%%/translations/scribus.tr.qm
+%%DATADIR%%/translations/scribus.tt.qm
 %%DATADIR%%/translations/scribus.uk.qm
-%%DATADIR%%/translations/scribus.untranslated.qm
+%%DATADIR%%/translations/scribus.vec.qm
 %%DATADIR%%/translations/scribus.zh_CN.qm
 %%DATADIR%%/translations/scribus.zh_TW.qm
 %%DATADIR%%/unicodenameslist.txt

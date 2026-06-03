@@ -1,8 +1,9 @@
 PORTNAME=	multiskkserv
 DISTVERSION=	20240224
+PORTREVISION=	1
 CATEGORIES=	japanese
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Multiple dictionary server for the SKK
 WWW=		https://github.com/sina-ht/multiskkserv/
 
@@ -33,6 +34,7 @@ OPTIONS_DEFAULT=	CDB
 CDB_DESC=		Use databases/cdb instead of bundled tinycdb
 CDB_EXTRACT_DEPENDS=	${NONEXISTENT}:databases/cdb:build
 CDB_CONFIGURE_ON=	--with-cdb=`${MAKE} -C ${PORTSDIR}/databases/cdb -V WRKSRC`
+CDB_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure.ac
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/skkdic-p2cdb ${STAGEDIR}${PREFIX}/bin

@@ -1,0 +1,7 @@
+--- doc/Makefile.orig	2026-04-20 10:22:10 UTC
++++ doc/Makefile
+@@ -27,4 +27,3 @@ gen-asciidoc:
+ 	@mkdir -p modules/cassandra/examples/TEXT/NODETOOL
+ 	python3 $(GENERATE_NODETOOL_DOCS)
+ 	python3 $(MAKE_CASSANDRA_YAML)
+-	$(PROCESS_NATIVE_PROC_SPECS)

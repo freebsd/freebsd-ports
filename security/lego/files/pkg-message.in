@@ -20,28 +20,41 @@ To run a script after the renewal to deploy certificates
 
 Note that the deploy script is provided as a sample and may need to be modified
 for your environment. The script will attempt to deploy certificates to
-    %%ETCDIR%%/ssl/certs
+    %%PREFIX%%/etc/ssl/certs
 and private keys to
-    %%ETCDIR%%/ssl/private.
+    %%PREFIX%%/etc/ssl/private.
 The script also tries to restart nginx.
 
-If using the sample renew script, add the domains for which lego will manage
-certificates to
-    %%ETCDIR%%/domains.txt, one domain on each line.
+If using the sample renew script, lego will load its configuration from
+    %%ETCDIR%%/lego.yml.
+See https://go-acme.github.io/lego/references/ref-file/index.html for more
+details.
 
-To add a Subject Alternate Name to the certificate, append the domain(s) to the
-line:
-    example.com www.example.com
+To run lego for the first time, configure an account and certificate in
+    %%ETCDIR%%/lego.yml.
+Then execute lego as the %%LEGO_USER%% user:
+    $ lego --config %%ETCDIR%%/lego.yml
+EOM
+},
+{ type: upgrade
+  maximum_version: 5.0
+  message: <<EOM
+To migrate from lego v4 to v5 run
 
-To run lego for the first time, edit
+    $ lego migrate --path %%PREFIX%%/etc/ssl/lego
+
+as the %%LEGO_USER%% user. This command migrates to a new file structure and
+outputs configuration that can be used as the basis for
+    %%ETCDIR%%/lego.yml.
+See https://go-acme.github.io/lego/references/ref-file/index.html for more
+details on the configuration file format.
+
     %%ETCDIR%%/lego.sh
-and set the EMAIL variable.
-
-Then run lego.sh with the run argument as the %%LEGO_USER%% user:
-    $ %%ETCDIR%%/lego.sh run
-
-Subsequent periodic runs will run with the renew argument by default, with a
-renewal interval of 30 days.
+will need to be updated as well, as the renew command has been
+removed. The script can also be simplified when a configuration file is used.
+See
+    %%ETCDIR%%/lego.sh.sample
+for an example.
 EOM
 }
 ]

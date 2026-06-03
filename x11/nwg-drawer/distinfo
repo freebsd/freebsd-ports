@@ -1,5 +1,5 @@
-TIMESTAMP = 1753261961
-SHA256 (go/x11_nwg-drawer/nwg-drawer-v0.7.4/v0.7.4.mod) = 4bf8aba06b69fd0776b7a331366e81ce8af211e25695f04dc20b1c4247d62d94
-SIZE (go/x11_nwg-drawer/nwg-drawer-v0.7.4/v0.7.4.mod) = 808
-SHA256 (go/x11_nwg-drawer/nwg-drawer-v0.7.4/v0.7.4.zip) = 9a52755ba2871042ee659dc007325dc78bcb2e666e7c0401318765e9a82e8300
-SIZE (go/x11_nwg-drawer/nwg-drawer-v0.7.4/v0.7.4.zip) = 79311
+TIMESTAMP = 1774617111
+SHA256 (go/x11_nwg-drawer/nwg-drawer-v0.7.5/v0.7.5.mod) = 87045578e02fd95975ff94979aabef10fac8627b190dab7bc57ccee68e920f87
+SIZE (go/x11_nwg-drawer/nwg-drawer-v0.7.5/v0.7.5.mod) = 788
+SHA256 (go/x11_nwg-drawer/nwg-drawer-v0.7.5/v0.7.5.zip) = 72f12d697f25fe63a74d4e444a908bedf895a54a9e44a464356644fd5f9b7786
+SIZE (go/x11_nwg-drawer/nwg-drawer-v0.7.5/v0.7.5.zip) = 79778

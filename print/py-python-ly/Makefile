@@ -1,6 +1,6 @@
 PORTNAME=	python-ly
-PORTVERSION=	0.9.8
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.9
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,7 @@ WWW=		https://github.com/frescobaldi/python-ly
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python

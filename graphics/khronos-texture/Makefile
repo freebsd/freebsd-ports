@@ -1,6 +1,6 @@
 PORTNAME=	khronos-texture
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.0
+DISTVERSION=	4.4.2
 CATEGORIES=	graphics
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++11-lib python:build
+USES=		cmake compiler:c++14-lang python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup

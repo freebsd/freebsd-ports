@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2024-11-16 12:20:41 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-05-09 18:09:27 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,392 @@
+@@ -0,0 +1,445 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -38,7 +38,6 @@
 +#include "base/time/time.h"
 +#include "build/build_config.h"
 +#include "crypto/crypto_buildflags.h"
-+#include "ppapi/buildflags/buildflags.h"
 +#include "sandbox/constants.h"
 +#include "sandbox/linux/services/credentials.h"
 +#include "sandbox/linux/services/namespace_sandbox.h"
@@ -47,6 +46,7 @@
 +#include "sandbox/linux/services/thread_helpers.h"
 +#include "sandbox/linux/syscall_broker/broker_command.h"
 +#include "sandbox/linux/syscall_broker/broker_process.h"
++#include "sandbox/policy/features.h"
 +#include "sandbox/policy/sandbox.h"
 +#include "sandbox/policy/sandbox_type.h"
 +#include "sandbox/policy/mojom/sandbox.mojom.h"
@@ -62,6 +62,7 @@
 +#endif
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
++#include "third_party/skia/rust/png/FFI.rs.h"
 +
 +#include <fontconfig/fontconfig.h>
 +#include "ui/gfx/linux/fontconfig_util.h"
@@ -73,6 +74,7 @@
 +#define _UNVEIL_UTILITY_NETWORK	"/etc/ungoogled-chromium/unveil.utility_network";
 +#define _UNVEIL_UTILITY_AUDIO	"/etc/ungoogled-chromium/unveil.utility_audio";
 +#define _UNVEIL_UTILITY_VIDEO	"/etc/ungoogled-chromium/unveil.utility_video";
++#define _UNVEIL_CDM		"/etc/ungoogled-chromium/unveil.cdm";
 +
 +namespace sandbox {
 +namespace policy {
@@ -127,6 +129,8 @@
 +      crypto::EnsureNSSInit();
 +#endif
 +      CRYPTO_pre_sandbox_init();
++
++      rust_png::initialize_cpudetect();
 +
 +      base::FilePath cache_directory, local_directory;
 +
@@ -194,6 +198,7 @@
 +bool SandboxLinux::SetUnveil(const std::string process_type, sandbox::mojom::Sandbox sandbox_type) {
 +  FILE *fp;
 +  char *s = NULL, *cp = NULL, *home = NULL, **ap, *tokens[MAXTOKENS];
++  char *xdg_var = NULL;
 +  char path[PATH_MAX];
 +  const char *ufile;
 +  size_t len = 0, lineno = 0;
@@ -215,8 +220,11 @@
 +    case sandbox::mojom::Sandbox::kVideoCapture:
 +      ufile = _UNVEIL_UTILITY_VIDEO;
 +      break;
++    case sandbox::mojom::Sandbox::kCdm:
++      ufile = _UNVEIL_CDM;
++      break;
 +    default:
-+      unveil("/dev/null", "r");
++      unveil("/dev/null", "rw");
 +      goto done;
 +  }
 +
@@ -258,6 +266,13 @@
 +        strncpy(path, home, sizeof(path) - 1);
 +        path[sizeof(path) - 1] = '\0';
 +        strncat(path, tokens[0], sizeof(path) - 1 - strlen(path));
++      } else if (strncmp(tokens[0], "XDG_", 4) == 0) {
++        if ((xdg_var = getenv(tokens[0])) == NULL || *xdg_var == '\0') {
++          LOG(ERROR) << "failed to get " << tokens[0];
++          continue;
++	}
++        strncpy(path, xdg_var, sizeof(path) - 1);
++        path[sizeof(path) - 1] = '\0';
 +      } else {
 +        strncpy(path, tokens[0], sizeof(path) - 1);
 +        path[sizeof(path) - 1] = '\0';
@@ -333,14 +348,8 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kGpu:
 +    case sandbox::mojom::Sandbox::kOnDeviceModelExecution:
-+      SetPledge("stdio drm rpath flock cpath wpath prot_exec recvfd sendfd tmppath", NULL);
++      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd unix", NULL);
 +      break;
-+#if BUILDFLAG(ENABLE_PPAPI)
-+    case sandbox::mojom::Sandbox::kPpapi:
-+      // prot_exec needed by v8
-+      SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);
-+      break;
-+#endif
 +    case sandbox::mojom::Sandbox::kAudio:
 +      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.utility_audio");
 +      break;
@@ -349,6 +358,9 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kVideoCapture:
 +      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.utility_video");
++      break;
++    case sandbox::mojom::Sandbox::kCdm:
++      SetPledge("stdio rpath flock recvfd sendfd", NULL);
 +      break;
 +    case sandbox::mojom::Sandbox::kUtility:
 +    case sandbox::mojom::Sandbox::kService:
@@ -362,11 +374,52 @@
 +  return true;
 +}
 +
++rlim_t GetProcessDataSizeLimit(sandbox::mojom::Sandbox sandbox_type) {
++#if defined(ARCH_CPU_64_BITS)
++  if (sandbox_type == sandbox::mojom::Sandbox::kGpu ||
++      sandbox_type == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
++      sandbox_type == sandbox::mojom::Sandbox::kRenderer) {
++    // Allow the GPU/ODML/RENDERER process's sandbox to access more physical
++    // memory if it's available on the system.
++    //
++    // Renderer processes are allowed to access 32 GB; the GPU/ODML processes,
++    // up to 64 GB.
++    constexpr rlim_t GB = 1024 * 1024 * 1024;
++    const rlim_t physical_memory =
++        base::SysInfo::AmountOfPhysicalMemory().InBytes();
++    rlim_t limit;
++    if ((sandbox_type == sandbox::mojom::Sandbox::kGpu ||
++         sandbox_type == sandbox::mojom::Sandbox::kOnDeviceModelExecution) &&  
++        physical_memory > 64 * GB) {
++      limit = 64 * GB;
++    } else if (physical_memory > 32 * GB) {
++      limit = 32 * GB;
++    } else if (physical_memory > 16 * GB) {
++      limit = 16 * GB;
++    } else {
++      limit = 8 * GB;
++    }
++
++    if (sandbox_type == sandbox::mojom::Sandbox::kRenderer &&
++        base::FeatureList::IsEnabled(
++            sandbox::policy::features::kHigherRendererMemoryLimit)) {   
++      limit *= 2; 
++    }
++
++    return limit;
++  }
++#endif
++
++  return static_cast<rlim_t>(kDataSizeLimit);
++}
++
 +bool SandboxLinux::LimitAddressSpace(int* error) {
 +#if !defined(ADDRESS_SANITIZER) && !defined(MEMORY_SANITIZER) && \
 +    !defined(THREAD_SANITIZER) && !defined(LEAK_SANITIZER)
 +  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+  if (SandboxTypeFromCommandLine(*command_line) == sandbox::mojom::Sandbox::kNoSandbox) {
++  sandbox::mojom::Sandbox sandbox_type =
++      SandboxTypeFromCommandLine(*command_line);
++  if (sandbox_type == sandbox::mojom::Sandbox::kNoSandbox) {
 +    return false;
 +  }
 +
@@ -376,8 +429,8 @@
 +  // using integer overflows that require large allocations, heap spray, or
 +  // other memory-hungry attack modes.
 +
-+  *error = sandbox::ResourceLimits::Lower(
-+      RLIMIT_DATA, static_cast<rlim_t>(sandbox::kDataSizeLimit));
++  rlim_t process_data_size_limit = GetProcessDataSizeLimit(sandbox_type);
++  *error = ResourceLimits::Lower(RLIMIT_DATA, process_data_size_limit);
 +
 +  // Cache the resource limit before turning on the sandbox.
 +  base::SysInfo::AmountOfVirtualMemory();

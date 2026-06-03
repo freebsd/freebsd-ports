@@ -1,0 +1,21 @@
+commit e4f3749a053b5fbe0feab93e46d6eba380ee2e58
+Author:     Erik Reider <35975961+ErikReider@users.noreply.github.com>
+AuthorDate: Wed Sep 17 01:01:39 2025 +0200
+Commit:     Erik Reider <35975961+ErikReider@users.noreply.github.com>
+CommitDate: Wed Sep 17 01:01:39 2025 +0200
+
+    Fixed Fedora 43 build issues
+
+diff --git a/src/Settings/Window/Window.vala b/src/Settings/Window/Window.vala
+index 1afe8ea..f2a9db6 100644
+--- src/Settings/Window/Window.vala
++++ src/Settings/Window/Window.vala
+@@ -140,7 +140,7 @@ namespace SwaySettings {
+                 new Adw.BreakpointCondition.length (
+                     Adw.BreakpointConditionLengthType.MAX_WIDTH, 650,
+                     Adw.LengthUnit.SP);
+-            Adw.Breakpoint breakpoint = new Adw.Breakpoint (condition);
++            Adw.Breakpoint breakpoint = new Adw.Breakpoint (condition.copy ());
+             breakpoint.add_setter (split_view, "collapsed", true);
+             add_breakpoint (breakpoint);
+ 

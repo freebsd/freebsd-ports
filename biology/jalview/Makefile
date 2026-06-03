@@ -1,5 +1,6 @@
 PORTNAME=	jalview
 DISTVERSION=	2.11.2.5
+PORTREVISION=	2
 CATEGORIES=	biology java
 MASTER_SITES=	https://www.jalview.org/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION:S/./_/g}

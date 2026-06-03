@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	23.1.1
+DISTVERSION=	23.1.5
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -13,7 +13,7 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bareos20-server bareos21-server bareos22-server bareos-server
+CONFLICTS?=	bareos22-server bareos24-server bareos-server
 
 BUILD_DEPENDS+=	utf8cpp>0:devel/utf8cpp
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
@@ -47,15 +47,12 @@ NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "23-server"
-OPTIONS_GROUP=	BACKENDS
-OPTIONS_GROUP_BACKENDS=	GFAPI
 OPTIONS_DEFINE=		MTX PYTHON LMDB NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	LMDB PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	PGSQL
 OPTIONS_SINGLE+=		DATABASE
 BACKENDS_DESC=		Storage backends
 DATABASE_DESC=		Database support
-GFAPI_DESC=	GFAPI backend support
 LMDB_DESC=	Enable faster accurate backup support
 
 NDMP_CMAKE_ON=	-Dndmp=ON
@@ -149,8 +146,6 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 
 NLS_USES=		gettext
 NLS_CMAKE_ON=		-Dnls=ON
-GFAPI_CMAKE_ON=		-Dgfapi=ON
-GFAPI_LIB_DEPENDS=	libglusterfs.so:net/glusterfs
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)

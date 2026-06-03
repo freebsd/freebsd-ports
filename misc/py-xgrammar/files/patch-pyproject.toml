@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-06 19:29:01 UTC
++++ pyproject.toml
+@@ -41,7 +41,7 @@ metal = ["mlx-lm; platform_system == 'Darwin' and plat
+ metal = ["mlx-lm; platform_system == 'Darwin' and platform_machine == 'arm64'"]
+ 
+ [build-system]
+-requires = ["scikit-build-core>=0.10.0", "nanobind==2.5.0"]
++requires = ["scikit-build-core>=0.10.0", "nanobind>=2.5.0"]
+ build-backend = "scikit_build_core.build"
+ 
+ [tool.scikit-build]

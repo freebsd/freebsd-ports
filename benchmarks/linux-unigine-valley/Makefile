@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Unigine Valley" "${COMMENT}" "${DATADIR}/data/launcher/icon.png
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAIL} -n 1491255 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
+	@${TAIL} -n 1490414 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \

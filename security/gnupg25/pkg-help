@@ -1,0 +1,3 @@
+If you run gpg from within a jail, you may get a warning message,
+stemming from the security.bsd.unprivileged_mlock sysctl. You can
+avoid that message by enabling the SUID_GPG option.

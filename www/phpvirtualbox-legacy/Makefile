@@ -1,6 +1,6 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 SUFFIX=		-legacy
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
@@ -18,8 +18,7 @@ USE_PHP=	session simplexml soap xml
 
 ETCDIR=		${WWWDIR}
 WWWDIR=		${PREFIX}/www/${PORTNAME}${SUFFIX}
-EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8 \
-		${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
+EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox-72/files/patch-panes_mediumEncryptionPasswords.html
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^5\.
@@ -29,6 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#Alias /phpvirtualbox#Alias /phpvirtualbox-legacy#' \
 		-e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \
 		${WRKSRC}/phpvirtualbox-legacy.conf
+	@${REINPLACE_CMD} -e 's#\r#\n#g' ${WRKSRC}/languages/zh_tw.xml
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-04-05 23:32:29 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ readme = "README.rst"
+ version = "3.0.0"
+ description = "Pythonic task execution"
+ readme = "README.rst"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-2-Clause" }
+ authors = [{ name = "Jeff Forcier", email = "jeff@bitprophet.org" }]
+ 
+ # We have a few 'dependencies' but we vendor them internally.
+@@ -52,7 +51,7 @@ inv = "invoke.main:program.run"
+ 
+ 
+ [build-system]
+-requires = ["setuptools >= 77"]
++requires = ["setuptools >= 61"]
+ build-backend = "setuptools.build_meta"
+ 
+ 

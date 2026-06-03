@@ -1,7 +1,7 @@
 PORTNAME=	kubie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.2
-PORTREVISION=	2
+DISTVERSION=	0.26.1
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/sbstp/kubie
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 riscv64
 ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 USES=		cargo

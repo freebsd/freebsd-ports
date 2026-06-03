@@ -1,4 +1,4 @@
---- content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2022-02-28 16:54:41 UTC
+--- content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2026-05-07 17:02:56 UTC
 +++ content/browser/scheduler/responsiveness/native_event_observer.cc
 @@ -15,7 +15,7 @@
  
@@ -6,15 +6,15 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "ui/aura/env.h"
- #include "ui/events/event.h"
+ #include "ui/events/platform/platform_event_source.h"
  #endif
-@@ -39,7 +39,7 @@ NativeEventObserver::~NativeEventObserver() {
-   DeregisterObserver();
+ 
+@@ -38,7 +38,7 @@ BrowserUINativeEventObserver::~BrowserUINativeEventObs
+   UnregisterObserver();
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void NativeEventObserver::RegisterObserver() {
-   aura::Env::GetInstance()->AddWindowEventDispatcherObserver(this);
- }
+ void BrowserUINativeEventObserver::RegisterObserver() {
+   CHECK(ui::PlatformEventSource::GetInstance());
+   ui::PlatformEventSource::GetInstance()->AddPlatformEventObserver(this);

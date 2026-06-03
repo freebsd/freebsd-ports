@@ -1,20 +1,9 @@
 The Hidden Lake is an anonymous network built on a micro-service
-architecture. At the heart of HL is the core - HLS (service), which generates
-anonymizing traffic and combines many other services (for example, HLF and
-HLM). Thus, Hidden Lake is not a whole and monolithic solution, but a
-composition of several combined services. The HL is a friend-to-friend (F2F)
-network, which means building trusted communications. Due to this approach,
-members of the HL network can avoid spam in their direction, as well as possible
-attacks if vulnerabilities are found in the code.
-
-List of applications:
-
-* Basic:
-- HLS :: anonymizes traffic using the QB-problem
-- HLC :: runs many HL services as one application
-- HLA :: adapts HL traffic to external environments
-* Applied:
-- HLM :: messenger with a web interface
-- HLF :: file sharing with a web interface
-- HLR :: executes remote access commands
-- HLP :: ping the node to check the online status
+architecture. At the heart of HL is the core - HLK (service), which generates
+anonymizing (queue based) traffic and combines many other services
+(HLS=filesharer, HLS=messenger, HLS=pinger and etc). Thus, Hidden Lake is not a
+whole and monolithic solution, but a composition of several combined
+services. The HL is a friend-to-friend (F2F) network, which means building
+trusted communications. Due to this approach, members of the HL network can
+avoid spam in their direction, as well as possible attacks if vulnerabilities
+are found in the code.

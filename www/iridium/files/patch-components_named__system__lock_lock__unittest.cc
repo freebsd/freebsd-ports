@@ -1,4 +1,4 @@
---- components/named_system_lock/lock_unittest.cc.orig	2025-05-07 06:48:23 UTC
+--- components/named_system_lock/lock_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/named_system_lock/lock_unittest.cc
 @@ -18,7 +18,7 @@
  #include "build/build_config.h"

@@ -3,11 +3,13 @@ bin/xdg-user-dirs-update
 etc/xdg/autostart/xdg-user-dirs.desktop
 etc/xdg/user-dirs.conf
 etc/xdg/user-dirs.defaults
+@comment lib/systemd/user/xdg-user-dirs.service
 share/man/man1/xdg-user-dir.1.gz
 share/man/man1/xdg-user-dirs-update.1.gz
 share/man/man5/user-dirs.conf.5.gz
 share/man/man5/user-dirs.defaults.5.gz
 share/man/man5/user-dirs.dirs.5.gz
+share/locale/ab/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/af/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/an/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ar/LC_MESSAGES/xdg-user-dirs.mo
@@ -19,6 +21,7 @@ share/locale/bg/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/bn_IN/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/br/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ca/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ckb/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/crh/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/cs/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/da/LC_MESSAGES/xdg-user-dirs.mo
@@ -45,11 +48,14 @@ share/locale/id/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/is/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/it/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ja/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ka/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/kab/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/kk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/kn/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ko/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ku/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ky/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/lg/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/lt/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/lv/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/mk/LC_MESSAGES/xdg-user-dirs.mo
@@ -71,7 +77,7 @@ share/locale/sk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sl/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sq/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sr/LC_MESSAGES/xdg-user-dirs.mo
-share/locale/sr@Latn/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/sr@latin/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sv/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ta/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/te/LC_MESSAGES/xdg-user-dirs.mo
@@ -79,6 +85,7 @@ share/locale/th/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/tr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/uk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/vi/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/wa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/zh_HK/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-user-dirs.mo

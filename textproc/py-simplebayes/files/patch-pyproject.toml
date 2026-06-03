@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-11 04:41:31 UTC
++++ pyproject.toml
+@@ -7,8 +7,6 @@ readme = "README.md"
+ version = "3.2.0"
+ description = "A memory-based, optional-persistence naïve bayesian text classifier."
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
+ requires-python = ">=3.10"
+ authors = [
+     {name = "Ryan Vennell", email = "ryan.vennell@gmail.com"}

@@ -1,5 +1,6 @@
 PORTNAME=	logisim
 PORTVERSION=	2.7.1
+PORTREVISION=	2
 CATEGORIES=	cad education java
 MASTER_SITES=	SF/circuit/2.7.x/2.7.1/
 DISTNAME=	${PORTNAME}-generic-${PORTVERSION}

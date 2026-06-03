@@ -26,6 +26,9 @@ SUB_FILES=	pkg-message
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/${PORTNAME}
 
+post-patch:
+	@${RM} ${WRKSRC}/docker-compose.yaml
+
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}

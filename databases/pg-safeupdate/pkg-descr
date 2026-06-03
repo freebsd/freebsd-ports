@@ -1,0 +1,4 @@
+Safeupdate is a simple extension to PostgreSQL that raises an error if UPDATE
+and DELETE are executed without specifying conditions. This extension was
+initially designed to protect data from accidental obliteration of data that is
+writable by PostgREST.

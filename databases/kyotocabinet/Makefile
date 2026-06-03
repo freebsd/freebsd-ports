@@ -11,9 +11,6 @@ WWW=		https://dbmx.net/kyotocabinet/
 
 LICENSE=	GPLv3
 
-BROKEN_mips=		fails to link: hidden symbol '__sync_lock_test_and_set_8' in /usr/lib/libgcc.a(stdatomic.o) is referenced by DSO
-BROKEN_mips64=		fails to link: hidden symbol '__sync_lock_test_and_set_8' in /usr/lib/libgcc.a(stdatomic.o) is referenced by DSO
-
 USES=		compiler:c++11-lang gmake
 
 CPPFLAGS+=	-fPIC

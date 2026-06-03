@@ -1,6 +1,5 @@
 PORTNAME=	tnftp
-DISTVERSION=	20230507
-PORTREVISION=	1
+DISTVERSION=	20260211
 CATEGORIES=	ftp
 MASTER_SITES=	https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/ \
 		https://ftp.uni-erlangen.de/netbsd/misc/tnftp/ \

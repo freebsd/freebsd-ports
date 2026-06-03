@@ -1,0 +1,4 @@
+lazymake is an interactive terminal UI for Makefiles. It offers
+fuzzy search across targets, a dependency graph view, variable
+inspection, syntax highlighting, and safety warnings before running
+destructive commands.

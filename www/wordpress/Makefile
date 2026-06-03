@@ -1,5 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.8.1
+DISTVERSION=	7.0
 PORTREVISION?=	0
 .ifndef WORDPRESS_LANG
 PORTEPOCH=	1
@@ -10,8 +10,7 @@ MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
 .endif
 CATEGORIES+=	www
 
-
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 WWW=		${MASTER_SITES}
 
@@ -30,7 +29,7 @@ PKGNAMESUFFIX=	-${WORDPRESS_LANG}
 CPE_LANG=	${WORDPRESS_LANG}
 .endif
 
-USE_PHP=	curl exif fileinfo ftp gd mysqli tokenizer xml zip zlib
+USE_PHP=	curl exif fileinfo filter ftp gd mysqli tokenizer xml zip zlib
 CONFLICTS_INSTALL=	??-wordpress
 NO_ARCH=	yes
 NO_BUILD=	yes

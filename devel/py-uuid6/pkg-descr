@@ -1,0 +1,4 @@
+New time-based UUID formats suited for use as a database key.
+
+Implements UUID versions 6, 7, and 8 as described in
+draft-peabody-dispatch-new-uuid-format.

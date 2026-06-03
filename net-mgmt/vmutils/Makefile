@@ -1,5 +1,5 @@
 PORTNAME=	vmutils
-PORTREVISION=	2
+PORTREVISION=	4
 
 COMMENT=	Ancillary utilities and agent for VictoriaMetrics
 
@@ -7,6 +7,11 @@ USE_RC_SUBR=	vmagent
 
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
+
+VMAGENT_DATA?=	/var/db/vmagent
+
+SUB_LIST+=	VMAGENT_DATA=${VMAGENT_DATA}
+PLIST_SUB+=	VMAGENT_DATA=${VMAGENT_DATA}
 
 do-install:
 .for p in agent alert auth backup ctl restore
@@ -16,6 +21,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/prometheus
 	${INSTALL_DATA} ${FILESDIR}/prometheus.yml.sample \
 		${STAGEDIR}${PREFIX}/etc/prometheus
+	@${MKDIR} ${STAGEDIR}${VMAGENT_DATA}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

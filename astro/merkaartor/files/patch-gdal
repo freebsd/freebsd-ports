@@ -1,0 +1,30 @@
+Obtained from:	https://github.com/openstreetmap/merkaartor/commit/28cca84e9f5db0aaba87c2084ed32f9677598823
+
+--- src/ImportExport/ImportExportGdal.cpp.orig	2021-08-27 12:34:31 UTC
++++ src/ImportExport/ImportExportGdal.cpp
+@@ -342,7 +342,7 @@ bool ImportExportGdal::importGDALDataset(GDALDataset* 
+     qDebug(lc_importExportGdal) << "Layers #" << poDS->GetLayerCount();
+     OGRLayer  *poLayer = poDS->GetLayer(0);
+ 
+-    OGRSpatialReference * theSrs = poLayer->GetSpatialRef(); // Note: Contrary to other OGR objects, the spatial ref must NOT be released by our code!
++    const OGRSpatialReference * theSrs = poLayer->GetSpatialRef(); // Note: Contrary to other OGR objects, the spatial ref must NOT be released by our code!
+     toWGS84 = NULL;
+ 
+     if (theSrs) {
+@@ -356,7 +356,6 @@ bool ImportExportGdal::importGDALDataset(GDALDataset* 
+                 qDebug("GDAL: couldn't initialise EPSG:27700: %d: %s", ogrError, CPLGetLastErrorMsg());
+                 the27700Srs->Release();
+             } else {
+-                theSrs->Release();
+                 theSrs = the27700Srs;
+             }
+         }
+@@ -395,7 +394,7 @@ bool ImportExportGdal::importGDALDataset(GDALDataset* 
+                 Feature* F = parseGeometry(aLayer, poGeometry);
+                 if (F) {
+                     for (int i=0; i<poFeature->GetFieldCount(); ++i) {
+-                        OGRFieldDefn  *fd = poFeature->GetFieldDefnRef(i);
++                        const OGRFieldDefn  *fd = poFeature->GetFieldDefnRef(i);
+                         QString k = QString::fromUtf8(fd->GetNameRef());
+                         if (k == "osm_id") {
+                             F->setId(IFeature::FId(F->getType(), (qint64)poFeature->GetFieldAsDouble(i)));

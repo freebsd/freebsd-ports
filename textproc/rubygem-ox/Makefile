@@ -1,11 +1,12 @@
 PORTNAME=	ox
-PORTVERSION=	2.14.23
+PORTVERSION=	2.14.26
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Speed-optimized XML parser and object serializer for Ruby
-WWW=		https://ohler.com/ox/
+WWW=		https://ohler.com/ox/ \
+		https://github.com/ohler55/ox
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

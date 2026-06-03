@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: bunkerweb_ui
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="bunkerweb_ui"
+rcvar="bunkerweb_ui_enable"
+
+load_rc_config $name
+: ${bunkerweb_ui_enable:="NO"}
+: ${bunkerweb_ui_pidfile:="/var/run/${name}.pid"}
+: ${bunkerweb_ui_logfile:="/var/log/bunkerweb/ui.log"}
+
+pidfile="${bunkerweb_ui_pidfile}"
+command="/usr/sbin/daemon"
+procname="/usr/local/bin/python3.11"
+command_args="-f -p ${pidfile} -o ${bunkerweb_ui_logfile} /usr/bin/env ENABLE_HEALTHCHECK=yes LISTEN_ADDR=0.0.0.0 LISTEN_PORT=7000 PYTHONPATH=/usr/local/share/bunkerweb/ui:/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api /usr/local/bin/gunicorn --bind 0.0.0.0:7000 -c /usr/local/share/bunkerweb/ui/utils/gunicorn.conf.py main:app"
+
+start_precmd="${name}_prestart"
+
+bunkerweb_ui_prestart()
+{
+	/bin/mkdir -p /var/log/bunkerweb /var/run/bunkerweb
+}
+
+run_rc_command "$1"

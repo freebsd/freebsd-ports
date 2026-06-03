@@ -1,7 +1,6 @@
 PORTNAME=	doggo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
-PORTREVISION=	5
+DISTVERSION=	1.1.7
 PORTEPOCH=	1
 CATEGORIES=	dns
 
@@ -16,7 +15,7 @@ FLAVORS=	default webui
 FLAVOR?=	${FLAVORS:[1]}
 webui_PKGNAMESUFFIX=	-webui
 
-USES=		go:modules
+USES=		go:1.26+,modules
 
 .if ${FLAVOR} == webui
 COMMENT+=	(web UI version)

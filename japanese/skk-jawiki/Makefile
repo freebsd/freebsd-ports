@@ -1,54 +1,21 @@
-PORTNAME=	jawiki
-DISTVERSION=	g20250609
+PORTNAME=	skk-jawiki
+DISTVERSION=	2026.04.01.141931
 CATEGORIES=	japanese
-PKGNAMEPREFIX?=	ja-skk-
+MASTER_SITES=	https://github.com/tokuhirom/jawiki-kana-kanji-dict/releases/download/v${DISTVERSION}/
+DISTFILES=	SKK-JISYO.jawiki
 
-MAINTAINER=	mew14930xvi@inbox.lv
-COMMENT?=	SKK dictionary from Wikipedia (Japanese edition)
+MAINTAINER=	mce@FreeBSD.org
+COMMENT=	SKK dictionary from Wikipedia (Japanese edition)
 WWW=		https://github.com/tokuhirom/jawiki-kana-kanji-dict
 
 LICENSE=	MIT
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	tokuhirom
-GH_PROJECT=	jawiki-kana-kanji-dict
-GH_TAGNAME=	2a6cfdf
 NO_ARCH=	yes
 
-.if defined(MECAB)	# japanese/mecab-jawiki
-BUILD_DEPENDS=	${LOCALBASE}/libexec/mecab/mecab-dict-index:japanese/mecab
-
-MECABDIR=	lib/mecab/dic/ipadic
-MECABDIC=	${PORTNAME}.dic
-
-PLIST_FILES=	${MECABDIR}/${MECABDIC}
-
-OPTIONS_DEFAULT=	UTF8
-OPTIONS_SINGLE=		CHARSET
-OPTIONS_SINGLE_CHARSET=	EUCJP SHIFTJIS UTF8
-EUCJP_DESC=		Use EUC-JP as dictionary charset
-SHIFTJIS_DESC=		Use SHIFT-JIS as dictionary charset
-UTF8_DESC=		Use UTF-8 as dictionary charset
-
-EUCJP_BUILD_DEPENDS=	ja-mecab-ipadic-eucjp>0:japanese/mecab-ipadic-eucjp
-SHIFTJIS_BUILD_DEPENDS=	ja-mecab-ipadic-sjis>0:japanese/mecab-ipadic-sjis
-UTF8_BUILD_DEPENDS=	ja-mecab-ipadic-utf8>0:japanese/mecab-ipadic-utf8
-
-EUCJP_VARS=		CSET=euc-jp
-SHIFTJIS_VARS=		CSET=shiftjis
-UTF8_VARS=		CSET=utf-8
-
-do-build:
-	${LOCALBASE}/libexec/mecab/mecab-dict-index \
-		-d ${LOCALBASE}/${MECABDIR} -u ${WRKSRC}/${MECABDIC} \
-		-f utf-8 -t ${CSET} ${WRKSRC}/mecab-userdic.csv
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${MECABDIR}
-	${INSTALL_DATA} ${WRKSRC}/${MECABDIC} ${STAGEDIR}${PREFIX}/${MECABDIR}
-.else
 SKKDIR=		share/skk
-SKKDIC=		SKK-JISYO.${PORTNAME}
+SKKDIC=		SKK-JISYO.jawiki
+
+PLIST_FILES=	${DICS:S|^|${SKKDIR}/|}
 
 OPTIONS_DEFAULT=		EUCCDB
 OPTIONS_MULTI=			DICTIONARY
@@ -68,7 +35,9 @@ EUCCDB_VARS=			DICS+=${SKKDIC}.cdb
 UTF8_VARS=			DICS+=${SKKDIC}.utf8
 UTF8CDB_VARS=			DICS+=${SKKDIC}.utf8.cdb
 
-PLIST_FILES=	${DICS:S|^|${SKKDIR}/|}
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/
 
 .include <bsd.port.options.mk>
 
@@ -98,6 +67,5 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SKKDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DICS} ${STAGEDIR}${PREFIX}/${SKKDIR}
-.endif
 
 .include <bsd.port.mk>

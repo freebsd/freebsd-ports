@@ -1,7 +1,10 @@
 bin/libde265-dec265
 include/libde265/de265-version.h
 include/libde265/de265.h
+lib/cmake/libde265/libde265-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libde265/libde265-config-version.cmake
+lib/cmake/libde265/libde265-config.cmake
 lib/libde265.so
 lib/libde265.so.0
-lib/libde265.so.0.1.5
+lib/libde265.so.0.1.12
 libdata/pkgconfig/libde265.pc

@@ -1,3 +1,14 @@
-Ollama allows to get up and running with large language models.
+Ollama is a tool that allows you to get up and running with large language
+models locally. It provides a simple command-line interface to run and
+manage models, as well as a REST API for programmatic access.
 
-Ollama supports a list of models available on ollama.com/library.
+Ollama supports a wide range of models available on ollama.com/library,
+including popular models like Llama 3, Gemma, and Mistral. It also
+allows you to customize models and create your own.
+
+With Ollama, you can:
+- Run large language models on your own machine
+- Chat with models in the terminal
+- Generate text and embeddings
+- Customize models with your own prompts and data
+- Expose models through a REST API for use in your applications

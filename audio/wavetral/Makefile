@@ -1,6 +1,6 @@
 PORTNAME=	wavetral
 DISTVERSION=	g20210517
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/jeanette-c/wavetral
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile

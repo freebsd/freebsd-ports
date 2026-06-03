@@ -1,0 +1,161 @@
+LLVM_COMMANDS=	\
+		bugpoint \
+		dsymutil \
+		llc \
+		lli \
+		llvm-addr2line \
+		llvm-ar \
+		llvm-as \
+		llvm-bcanalyzer \
+		llvm-bitcode-strip \
+		llvm-cat \
+		llvm-cfi-verify \
+		llvm-cgdata \
+		llvm-config \
+		llvm-cov \
+		llvm-ctxprof-util \
+		llvm-cvtres \
+		llvm-cxxmap \
+		llvm-debuginfo-analyzer \
+		llvm-debuginfod \
+		llvm-debuginfod-find \
+		llvm-diff \
+		llvm-dis \
+		llvm-dlltool \
+		llvm-dwarfdump \
+		llvm-dwarfutil \
+		llvm-dwp \
+		llvm-exegesis \
+		llvm-extract \
+		llvm-gsymutil \
+		llvm-ifs \
+		llvm-install-name-tool \
+		llvm-jitlink \
+		llvm-libtool-darwin \
+		llvm-link \
+		llvm-lipo \
+		llvm-mc \
+		llvm-ml \
+		llvm-ml64 \
+		llvm-modextract \
+		llvm-nm \
+		llvm-objcopy \
+		llvm-objdump \
+		llvm-opt-report \
+		llvm-otool \
+		llvm-pdbutil \
+		llvm-profdata \
+		llvm-profgen \
+		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
+		llvm-readobj \
+		llvm-readtapi \
+		llvm-reduce \
+		llvm-remarkutil \
+		llvm-rtdyld \
+		llvm-sim \
+		llvm-size \
+		llvm-split \
+		llvm-stress \
+		llvm-strings \
+		llvm-strip \
+		llvm-symbolizer \
+		llvm-tblgen \
+		llvm-tli-checker \
+		llvm-undname \
+		llvm-windres \
+		llvm-xray \
+		opt \
+		reduce-chunk-list \
+		sancov
+
+CLANG_COMMANDS=	\
+		amdgpu-arch \
+		analyze-build \
+		c-index-test \
+		clang \
+		clang++ \
+		clang-check \
+		clang-cpp \
+		clang-extdef-mapping \
+		clang-format \
+		clang-linker-wrapper \
+		clang-offload-bundler \
+		clang-offload-packager \
+		clang-repl \
+		clang-scan-deps \
+		clang-sycl-linker \
+		clang-tblgen \
+		diagtool \
+		hmaptool \
+		intercept-build \
+		nvptx-arch \
+		offload-arch \
+		scan-build \
+		scan-build-py \
+		scan-view
+
+EXTRAS_COMMANDS= \
+		clangd \
+		clang-apply-replacements \
+		clang-change-namespace \
+		clang-doc \
+		clang-include-cleaner \
+		clang-include-fixer \
+		clang-installapi \
+		clang-move \
+		clang-nvlink-wrapper \
+		clang-query \
+		clang-reorder-fields \
+		clang-tidy \
+		find-all-symbols \
+		modularize \
+		pp-trace
+
+FLANG_COMMANDS=	\
+		bbc \
+		f18-parse-demo \
+		fir-lsp-server \
+		fir-opt \
+		flang \
+		tco
+
+LIT_COMMANDS=	\
+		FileCheck \
+		lit \
+		llvm-lit
+
+LLD_COMMANDS=	\
+		ld.lld \
+		ld64.lld \
+		lld \
+		lld-link \
+		wasm-ld
+
+LLDB_COMMANDS=	\
+		lldb \
+		lldb-argdumper \
+		lldb-dap \
+		lldb-instr \
+		lldb-server
+
+MLIR_COMMANDS=	\
+		mlir-cat \
+		mlir-lsp-server \
+		mlir-minimal-opt \
+		mlir-minimal-opt-canonicalize \
+		mlir-opt \
+		mlir-pdll \
+		mlir-pdll-lsp-server \
+		mlir-query \
+		mlir-reduce \
+		mlir-rewrite \
+		mlir-runner \
+		mlir-tblgen \
+		mlir-transform-opt \
+		mlir-translate \
+		tblgen-lsp-server \
+		tblgen-to-irdl
+
+OPENMP_COMMANDS=

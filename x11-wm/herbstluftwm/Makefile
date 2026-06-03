@@ -1,6 +1,5 @@
 PORTNAME=	herbstluftwm
-DISTVERSION=	0.9.5
-PORTREVISION=	2
+DISTVERSION=	0.9.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://herbstluftwm.org/tarballs/
 
@@ -9,6 +8,7 @@ COMMENT=	Manual tiling window manager for X11
 WWW=		https://herbstluftwm.org/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 LIB_DEPENDS=	libfreetype.so:print/freetype2
@@ -24,20 +24,8 @@ SHEBANG_FILES=	doc/gendoc.py scripts/*.sh share/*.sh
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_SUB=		yes
-DOCS_USES+=		python:build
-DOCS_CMAKE_BOOL+=	WITH_DOCUMENTATION
-
-DOCS_VARS=	BINARY_ALIAS=python3=${PYTHON_CMD}
-
-.include <bsd.port.options.mk>
-
-post-patch-EXAMPLES-on:
+post-patch:
 	@${REINPLACE_CMD} -e 's,$${DOCDIR}/examples,${EXAMPLESDIR},' ${WRKSRC}/CMakeLists.txt
-
-post-patch-EXAMPLES-off:
-	@${REINPLACE_CMD} -e '\@$${DOCDIR}/examples@d' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/herbst*

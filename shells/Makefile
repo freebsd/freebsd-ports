@@ -32,6 +32,7 @@
     SUBDIR += ksh-devel
     SUBDIR += ksh93
     SUBDIR += libpowershell-native
+    SUBDIR += meka
     SUBDIR += mksh
     SUBDIR += modernish
     SUBDIR += murex
@@ -56,6 +57,7 @@
     SUBDIR += psh
     SUBDIR += rc
     SUBDIR += rubygem-shellwords
+    SUBDIR += rura
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += schemesh

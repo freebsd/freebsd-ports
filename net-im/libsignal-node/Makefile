@@ -1,6 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.76.0
+DISTVERSION=	0.93.2
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 PKGNAMESUFFIX=	-node
@@ -13,14 +13,14 @@ WWW=		https://github.com/signalapp/libsignal
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	amd64
 
 EXTRACT_DEPENDS=npm:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		npm:www/npm${NODEJS_SUFFIX} \
 		protoc:devel/protobuf
 
-USES=		cargo gmake nodejs:20,build python:build
+USES=		cargo gmake nodejs:24,build python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 # to get the GH_TUPLE
@@ -29,9 +29,11 @@ GH_ACCOUNT=	signalapp
 # git checkout correct_tag (grep boring Makefile.crates)
 # git submodule update --init --recursive
 # the hash for boringssl and fips should be printed on screen
-# or browse https://github.com/signalapp/boring/tree/signal-v4.15.0/boring-sys/deps (with the correct tag)
-GH_TUPLE=	google:boringssl:44b3df6f03d85c901767250329c571db405122d5:boringssl \
-		google:boringssl:853ca1ea1168dff08011e5d42d94609cc0ca2e27:boringssl_fips
+# or browse https://github.com/signalapp/boring/tree/signal-v5.0.2/boring-sys/deps (with the correct tag)
+GH_TUPLE=	google:boringssl:${BORING_REV}:boringssl
+
+BORING_REV=	91a66a59b6c1435120ff83e245d7719411294386
+BORING_VER=	v5.0.2
 
 # RUSTFLAGS=-Clink-dead-code is required to have a functional libsignal-node binary:
 # linkme is broken with https://github.com/dtolnay/linkme/commit/64e7c63c106848481bea8f66c4885b52c26ca9ec
@@ -43,6 +45,8 @@ MAKE_ENV=	HOME=${WRKDIR} \
 
 MAKE_ENV+=	RUSTC_BOOTSTRAP=aes,polyval
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsignal_node.so
@@ -52,27 +56,20 @@ RUST_ARCH=	${ARCH:S/amd64/x86_64/}
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
-		${WRKSRC}/node/binding.gyp
-
-# to get the hash:
-# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.67.4/Cargo.lock | grep https://github.com/signalapp/boring
 post-extract:
-	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.15.0/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.15.0/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-${BORING_REV}/* ${WRKDIR}/boring-signal-${BORING_VER}/boring-sys/deps/boringssl
 
 do-build:
 	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} npm install --ignore-optional --nodedir=${LOCALBASE}
 	cd ${WRKSRC}/node && \
-		${SETENV} ${MAKE_ENV} npx node-gyp rebuild --nodedir=${LOCALBASE}
+		${SETENV} ${MAKE_ENV} npm run build --nodedir=${LOCALBASE}
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} npm run tsc
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_${NODE_ARCH}.node/geni/rust/${RUST_ARCH}-unknown-freebsd/release/libsignal_node.so \
+	${INSTALL_LIB} ${WRKSRC}/target/release/libsignal_node.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 create-caches-tarball:

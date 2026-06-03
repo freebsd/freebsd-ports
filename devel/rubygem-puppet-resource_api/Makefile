@@ -1,5 +1,5 @@
 PORTNAME=	puppet-resource_api
-PORTVERSION=	1.9.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

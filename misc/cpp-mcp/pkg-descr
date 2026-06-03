@@ -1,0 +1,14 @@
+Model Context Protocol (MCP) is an open protocol that provides a standardized
+way for AI models and agents to interact with various resources, tools, and
+services. This framework implements the core functionality of the MCP
+protocol, conforming to the 2024-11-05 basic protocol specification.
+
+Core Features:
+* JSON-RPC 2.0 Communication: Request/response communication based on JSON-RPC
+  2.0 standard
+* Resource Abstraction: Standard interfaces for resources such as files,
+  APIs, etc.
+* Tool Registration: Register and call tools with structured parameters
+* Extensible Architecture: Easy to extend with new resource types and tools
+* Multi-Transport Support: Supports HTTP and standard input/output (stdio)
+  communication methods

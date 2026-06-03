@@ -1,6 +1,6 @@
 PORTNAME=	QSpectrumAnalyzer
 DISTVERSION=	2.1.0
-PORTREVISION=	16
+PORTREVISION=	19
 CATEGORIES=	misc hamradio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://github.com/xmikos/qspectrumanalyzer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyqtgraph>=0.10.0:graphics/py-pyqtgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}soapy_power>=1.5.0:misc/py-soapy_power@${PY_FLAVOR}
 

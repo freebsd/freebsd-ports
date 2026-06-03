@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+If you intend to use lua-language-server on your lua configuration of
+editors/neovim, consider:
+	cp %%EXAMPLESDIR%%/neovim.luarc.json ~/.config/nvim/.luarc.json
+
+This will allow lua-language-server to understand the neovim specific
+lua symbols rather than flag them as undefined.
+EOM
+}
+]

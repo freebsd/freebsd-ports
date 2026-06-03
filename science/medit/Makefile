@@ -2,13 +2,14 @@ PORTNAME=	medit
 PORTVERSION=	2012.02.05
 PORTREVISION=	5
 CATEGORIES=	science graphics
-MASTER_SITES=	https://www.ljll.math.upmc.fr/~frey/ftp/archives/
+MASTER_SITES=	https://www.ljll.fr/frey/ftp/archives/:src	\
+		https://www.ljll.fr/frey/logiciels/:mesh
 DISTFILES=	${SOURCETARB} ${LIBTARBALL}
 EXTRACT_ONLY=	${SOURCETARB}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
-WWW=		https://www.ljll.math.upmc.fr/frey/software.html #scivis
+WWW=		https://www.ljll.fr/frey/logiciels/Docmedit.dir/index.html
 
 LICENSE=	None
 LICENSE_NAME=	Special grant
@@ -38,7 +39,7 @@ OPTIONS_DEFINE=	EXAMPLES
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MEXAMPLES} || make(makesum)
-DISTFILES+=	meshes.tar.gz
+DISTFILES+=	meshes.tar.gz:mesh
 EXTRACT_ONLY+=	meshes.tar.gz
 MESHES=		DEFAULT.medit ozark.gis part.bb part.mesh thepart.mesh
 PLIST_FILES+=	${MESHES:S|^|%%EXAMPLESDIR%%/|}

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/policy/core/common/cloud/cloud_policy_client.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/policy/core/common/cloud/cloud_policy_client.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/components/policy/core/common/cloud/cloud_policy_client.cc
-@@ -703,7 +703,7 @@ void CloudPolicyClient::FetchPolicy(PolicyFetchReason 
+@@ -756,7 +756,7 @@ void CloudPolicyClient::FetchPolicy(PolicyFetchReason 
          fetch_request->set_invalidation_payload(invalidation_payload_);
        }
      }

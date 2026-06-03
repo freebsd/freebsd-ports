@@ -129,11 +129,12 @@ lib/libsiscone_spherical.so
 lib/libsiscone_spherical.so.0
 lib/libsiscone_spherical.so.0.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/fastjet%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/fastjet%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/fastjet%%PYTHON_TAG%%.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.so.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.so.0.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet_swig.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet_swig.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet_swig.so.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet_swig.so.0.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/fastjet.py
 %%PYTHON%%%%DATADIR%%/pyinterface/FastJetPythonExtensions.hh
 %%PYTHON%%%%DATADIR%%/pyinterface/fastjet-doc.i

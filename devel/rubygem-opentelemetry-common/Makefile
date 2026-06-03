@@ -1,13 +1,13 @@
 PORTNAME=	opentelemetry-common
-PORTVERSION=	0.22.0
+PORTVERSION=	0.25.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common helpers for OpenTelemetry
 WWW=		https://opentelemetry.io/ \
-		https://github.com/open-telemetry/opentelemetry-ruby \
-		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/common
+		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/common \
+		https://github.com/open-telemetry/opentelemetry-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

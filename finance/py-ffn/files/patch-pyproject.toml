@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	2024-06-23 07:27:54 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@ requires = [
+@@ -1,6 +1,6 @@
  [build-system]
  requires = [
 -    "oldest-supported-numpy",
@@ -8,3 +8,10 @@
      "setuptools",
      "wheel",
  ]
+@@ -73,3 +73,6 @@ Homepage = "http://pmorissette.github.io/ffn/"
+ 
+ [tool.ruff.lint.per-file-ignores]
+ "__init__.py" = ["F401", "F403"]
++
++[tool.pytest.ini_options]
++testpaths = ["tests"]

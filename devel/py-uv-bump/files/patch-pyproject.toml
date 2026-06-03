@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-03-25 18:40:55 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["uv_build>=0.7.20,<0.8.0"]
++requires = ["uv_build>=0.7.20"]
+ build-backend = "uv_build"
+ 
+ [project]
+@@ -12,8 +12,6 @@ authors = [{ name = "Jeroen van Zundert", email = "mai
+     "tomli>=2.3.0; python_version<'3.11'",
+ ]
+ authors = [{ name = "Jeroen van Zundert", email = "mail@jeroenvanzundert.nl" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
+ keywords = ["uv", "bump", "version", "dependency", "upgrade", "pyproject.toml", "cli"]
+ classifiers = [
+     "Development Status :: 4 - Beta",

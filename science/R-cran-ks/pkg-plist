@@ -12,6 +12,7 @@
 %%R_MOD_DIR%%/R/ks
 %%R_MOD_DIR%%/R/ks.rdb
 %%R_MOD_DIR%%/R/ks.rdx
+%%R_MOD_DIR%%/README.md
 %%R_MOD_DIR%%/data/air.RData
 %%R_MOD_DIR%%/data/cardio.RData
 %%R_MOD_DIR%%/data/grevillea.RData
@@ -24,9 +25,9 @@
 %%R_MOD_DIR%%/data/unicef.RData
 %%R_MOD_DIR%%/data/worldbank.RData
 %%R_MOD_DIR%%/doc/index.html
-%%R_MOD_DIR%%/doc/kde.R
-%%R_MOD_DIR%%/doc/kde.Rnw
-%%R_MOD_DIR%%/doc/kde.pdf
+%%R_MOD_DIR%%/doc/ks.R
+%%R_MOD_DIR%%/doc/ks.Rmd
+%%R_MOD_DIR%%/doc/ks.html
 %%R_MOD_DIR%%/help/AnIndex
 %%R_MOD_DIR%%/help/aliases.rds
 %%R_MOD_DIR%%/help/ks.rdb
@@ -35,3 +36,4 @@
 %%R_MOD_DIR%%/html/00Index.html
 %%R_MOD_DIR%%/html/R.css
 %%R_MOD_DIR%%/libs/ks.so
+%%R_MOD_DIR%%/pkgdown.yml

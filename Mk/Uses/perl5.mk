@@ -25,9 +25,9 @@
 #		  This value is added to PLIST_SUB.
 # USE_PERL5	- If set, this port uses perl5 in one or more of the extract,
 #		  patch, build, run or test phases.
-#		  It can also have configure, modbuild and modbuildtiny when
-#		  the port needs to run Makefile.PL, Build.PL and a
-#		  Module::Build::Tiny flavor of Build.PL.
+#		  It can also have configure, modbuild, modbuildtiny and distbuild
+#		  when the port needs to run Makefile.PL, Build.PL and flavors of 
+#		  Build.PL for Module::Build::Tiny or Dist::::Build.
 #
 # MAINTAINER: perl@FreeBSD.org
 
@@ -152,8 +152,8 @@ IGNORE=	improper use of USE_PERL5
 .    endif
 .  endif
 
-_USE_PERL5_VALID=	build configure extract modbuild modbuildtiny patch run \
-			test
+_USE_PERL5_VALID=	build configure extract modbuild modbuildtiny distbuild \
+			patch run test
 _USE_PERL5_UNKNOWN=
 .  for component in ${_USE_PERL5}
 .    if empty(_USE_PERL5_VALID:M${component})
@@ -186,7 +186,7 @@ _MANPAGES+=	${P5MAN${sect}:S%^%${PREFIX}/lib/perl5/${PERL_VER}/man/man${sect}/%}
 .  endfor
 MANDIRS+=	${PREFIX}/${SITE_PERL_REL}/man
 
-.  if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny}
+.  if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny} || ${_USE_PERL5:Mdistbuild}
 _USE_PERL5+=	configure
 ALL_TARGET?=	# empty
 CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
@@ -205,16 +205,22 @@ CONFIGURE_ARGS+=--perl="${PERL}"
 BUILD_DEPENDS+=	p5-Module-Build>=0.4234:devel/p5-Module-Build
 .      endif
 CONFIGURE_ARGS+=--create_packlist 1
-.    endif
+.    endif # Mmodbuild
 .    if ${_USE_PERL5:Mmodbuildtiny}
 .      if ${PORTNAME} != Module-Build-Tiny
 BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.043:devel/p5-Module-Build-Tiny
 .      endif
 CONFIGURE_ARGS+=--create_packlist 1
-.    endif
+.    endif # Mmodbuildtiny
+.    if ${_USE_PERL5:Mdistbuild}
+.      if ${PORTNAME} != Dist-Build
+BUILD_DEPENDS+=	p5-Dist-Build>=0.020:devel/p5-Dist-Build
+.      endif
+CONFIGURE_ARGS+=--create_packlist 1
+.    endif # Mdistbuild
 .  elif ${_USE_PERL5:Mconfigure}
 CONFIGURE_ARGS+=INSTALLDIRS="site"
-.  endif # modbuild
+.  endif # modbuild modbuildtiny distbuild
 
 .  if ${_USE_PERL5:Mconfigure}
 _USE_PERL5+=	build run
@@ -263,14 +269,14 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} \
 		${PERL5} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
-.      if !${_USE_PERL5:Mmodbuild*}
+.      if !(${_USE_PERL5:Mmodbuild*} || ${_USE_PERL5:Mdistbuild})
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
-.      endif # ! modbuild
+.      endif # ! modbuild* && ! distbuild
 .    endif # !target(do-configure)
 .  endif # configure
 
-.  if ${_USE_PERL5:Mmodbuild*}
+.  if ${_USE_PERL5:Mmodbuild*} || ${_USE_PERL5:Mdistbuild}
 .    if !target(do-build)
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${ALL_TARGET} ${MAKE_ARGS})
@@ -282,7 +288,7 @@ do-install:
 	@(cd ${BUILD_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${INSTALL_TARGET} ${MAKE_ARGS})
 .      endif # !target(do-install)
 .    endif # ! USES=gmake
-.  endif # modbuild
+.  endif # modbuild* || distbuild
 
 PACKLIST_DIR?=	${PREFIX}/${SITE_ARCH_REL}/auto
 
@@ -320,14 +326,15 @@ fix-perl-things:
 	@[ -d "${STAGEDIR}${PREFIX}/${SITE_PERL_REL}" ] && \
 		${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} -name README.pod -delete || :
 
-.  if !target(do-test) && (!empty(USE_PERL5:Mmodbuild*) || !empty(USE_PERL5:Mconfigure))
+.  if !target(do-test) && (!empty(USE_PERL5:Mmodbuild*) || !empty(USE_PERL5:Mdistbuild) || !empty(USE_PERL5:Mconfigure))
+
 TEST_TARGET?=	test
 TEST_WRKSRC?=	${BUILD_WRKSRC}
 do-test:
-.    if ${USE_PERL5:Mmodbuild*}
+.    if ${USE_PERL5:Mmodbuild*} || ${USE_PERL5:Mdistbuild} 
 	@cd ${TEST_WRKSRC}/ && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_TARGET} ${TEST_ARGS}
 .    elif ${USE_PERL5:Mconfigure}
 	@cd ${TEST_WRKSRC}/ && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET}
-.    endif # USE_PERL5:Mmodbuild*
-.  endif # do-test
+.    endif # modbuild* || distbuild
+.  endif # !target(do-test
 .endif # defined(_POSTMKINCLUDED)

@@ -1,5 +1,5 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.12.2
+DISTVERSION=	100.17.0
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://www.mongodb.com/docs/database-tools/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		compiler:c++14-lang go:1.23 localbase
+USES=		compiler:c++14-lang go localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
@@ -52,10 +52,6 @@ MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
 SSL_USE=		my_tags=ssl
-
-post-extract:
-# Verify we use the proper go version.
-	${SH} -xc "test \"X`grep -E '^go [[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$$' ${WRKSRC}/go.mod`\" = \"Xgo ${GO_VERSION}.0\""
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

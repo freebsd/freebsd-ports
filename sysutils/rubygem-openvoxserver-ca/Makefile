@@ -1,11 +1,11 @@
 PORTNAME=	openvoxserver-ca
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Ruby CLI tool to interact with the OpenVox Server Certificate Authority
-WWW=		https://github.com/OpenVoxProject/openvoxserver-ca-cli/
+WWW=		https://github.com/OpenVoxProject/openvoxserver-ca/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

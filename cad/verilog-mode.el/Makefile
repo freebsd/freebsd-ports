@@ -1,9 +1,8 @@
 PORTNAME=	verilog-mode.el
 PORTVERSION=	801
-PORTREVISION=	23
+PORTREVISION=	25
 CATEGORIES=	cad elisp
 MASTER_SITES=	http://www.veripool.org/ftp/
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME:R}-${PORTVERSION}.${PORTNAME:E}
 EXTRACT_SUFX=	.gz
 
@@ -13,16 +12,16 @@ WWW=		https://www.veripool.org/wiki/verilog-mode
 
 LICENSE=	GPLv3+
 
+USES=		emacs
+
+CONFLICTS_INSTALL=	verilog-mode.el-emacs_*
+
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${PORTNAME}
-
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		emacs:run
-
-CONFLICTS_INSTALL=	verilog-mode.el verilog-mode.el-emacs_* # share/emacs/site-lisp/verilog-mode.el
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 

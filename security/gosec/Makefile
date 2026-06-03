@@ -1,12 +1,12 @@
 PORTNAME=	gosec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.22.0
-PORTREVISION=	5
+DISTVERSION=	2.27.1
 CATEGORIES=	security devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Go security checker
-WWW=		https://securego.io/
+WWW=		https://securego.io/ \
+		https://github.com/securego/gosec
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

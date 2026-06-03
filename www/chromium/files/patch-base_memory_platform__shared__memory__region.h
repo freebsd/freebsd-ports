@@ -1,24 +1,6 @@
---- base/memory/platform_shared_memory_region.h.orig	2025-07-02 06:08:04 UTC
+--- base/memory/platform_shared_memory_region.h.orig	2026-04-09 06:05:42 UTC
 +++ base/memory/platform_shared_memory_region.h
-@@ -19,7 +19,7 @@
- #include "base/unguessable_token.h"
- #include "build/build_config.h"
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- namespace content {
- class SandboxIPCHandler;
- }
-@@ -86,7 +86,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
-     kMaxValue = GET_SHMEM_TEMP_DIR_FAILURE
-   };
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Structure to limit access to executable region creation.
-   struct ExecutableRegion {
-    private:
-@@ -125,7 +125,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -104,7 +104,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
  #if BUILDFLAG(IS_FUCHSIA)
      kNotVmo,
  #endif
@@ -27,7 +9,7 @@
      kFcntlFailed,
      kReadOnlyFdNotReadOnly,
      kUnexpectedReadOnlyFd,
-@@ -256,7 +256,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -249,7 +249,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
                             CheckPlatformHandlePermissionsCorrespondToMode);
    static PlatformSharedMemoryRegion Create(Mode mode,
                                             size_t size

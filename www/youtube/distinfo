@@ -1,5 +1,5 @@
-TIMESTAMP = 1746744251
-SHA256 (go/www_youtube/youtube-v2.10.4/v2.10.4.mod) = a7c9caede906479bb1ace136cde4c6bc6cd97170070a456af65eb8668c2f3264
-SIZE (go/www_youtube/youtube-v2.10.4/v2.10.4.mod) = 1941
-SHA256 (go/www_youtube/youtube-v2.10.4/v2.10.4.zip) = 4fd31a998bd54172f024e455f9fe69f24421dcca1fe161070a467cdc37bc82a1
-SIZE (go/www_youtube/youtube-v2.10.4/v2.10.4.zip) = 61289
+TIMESTAMP = 1774801365
+SHA256 (go/www_youtube/youtube-v2.10.6/v2.10.6.mod) = 0c14b2585bfe3d8f873aa7716c350be7d14e1217847364e6c6cd216784e51628
+SIZE (go/www_youtube/youtube-v2.10.6/v2.10.6.mod) = 1695
+SHA256 (go/www_youtube/youtube-v2.10.6/v2.10.6.zip) = 86cbc35e9823166430fbda4f2208ffb91e2c0d1518a92eaeaa7e60f7167a55d3
+SIZE (go/www_youtube/youtube-v2.10.6/v2.10.6.zip) = 61136

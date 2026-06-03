@@ -1,0 +1,4 @@
+bin/httpdirfs
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/USAGE.md

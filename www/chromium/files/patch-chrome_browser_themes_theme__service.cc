@@ -1,15 +1,24 @@
---- chrome/browser/themes/theme_service.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/themes/theme_service.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/themes/theme_service.cc
-@@ -72,7 +72,7 @@
+@@ -75,7 +75,7 @@
  #include "extensions/browser/extension_registry_observer.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/time/time.h"
  #include "ui/linux/linux_ui.h"
- #include "ui/ozone/public/ozone_platform.h"  // nogncheck
+ #include "ui/linux/linux_ui_factory.h"
+@@ -260,7 +260,7 @@ std::unique_ptr<ui::ThemeProvider> ThemeService::Creat
+ // static
+ void ThemeService::RegisterProfilePrefs(
+     user_prefs::PrefRegistrySyncable* registry) {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   registry->RegisterIntegerPref(prefs::kSystemTheme,
+                                 static_cast<int>(ui::GetDefaultSystemTheme()));
  #endif
-@@ -331,7 +331,7 @@ CustomThemeSupplier* ThemeService::GetThemeSupplier() 
+@@ -391,7 +391,7 @@ CustomThemeSupplier* ThemeService::GetThemeSupplier() 
  }
  
  bool ThemeService::ShouldUseCustomFrame() const {

@@ -1,6 +1,6 @@
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	java
 MASTER_SITES=	http://archive.apache.org/dist/jakarta/oro/
 

@@ -1,6 +1,6 @@
 PORTNAME=	pyquil
 DISTVERSION=	4.6.1
-PORTREVISION=	4
+PORTREVISION=	8
 CATEGORIES=	devel python # quantum-computing
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>=0.11.1:devel/py-lark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.5:math/py-networkx@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>=1.10.7:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qcs-sdk-python>=0.16.3:devel/py-qcs-sdk-python@${PY_FLAVOR} \

@@ -1,6 +1,6 @@
 PORTNAME=	vaultwarden
-DISTVERSION=	1.34.1
-PORTREVISION=	2
+DISTVERSION=	1.36.0
+#PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
@@ -10,11 +10,12 @@ WWW=		https://github.com/dani-garcia/vaultwarden
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_i386=    doesn't buld on pkg builder
+BROKEN_i386=	doesn't build on pkg builder
 
 LIB_DEPENDS+=	libcapnp.so:devel/capnproto \
 		libgmp.so:math/gmp \
-		libnettle.so:security/nettle
+		libnettle.so:security/nettle \
+		libzstd.so:archivers/zstd
 
 USES=		cargo ssl
 
@@ -28,13 +29,14 @@ USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	WEBVAULT
-OPTIONS_DEFAULT=${OPTIONS_DEFINE} ${OPTIONS_MULTI_DATABASE}
+OPTIONS_DEFINE=	WEBVAULT S3
 OPTIONS_MULTI=	DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	WEBVAULT ${OPTIONS_MULTI_DATABASE}
 
 DATABASE_DESC=	Database support
 WEBVAULT_DESC=	Vaultwarden web (bw_web_builds)
+S3_DESC=	S3 storage backend support (experimental)
 
 MYSQL_USES=	mysql:client
 MYSQL_VARS=	cargo_features+=mysql
@@ -42,6 +44,7 @@ PGSQL_USES=	pgsql
 PGSQL_VARS=	cargo_features+=postgresql
 SQLITE_VARS=	cargo_features+=sqlite
 WEBVAULT_RUN_DEPENDS=	${WWWDIR}/web-vault/index.html:www/vaultwarden-web_vault
+S3_VARS=	cargo_features+=s3
 
 # make cargo-crates > Makefile.crates
 

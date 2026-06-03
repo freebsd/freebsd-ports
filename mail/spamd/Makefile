@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	SF/freebsdspamd/spamd
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 WWW=		https://freebsdspamd.sourceforge.net/
 

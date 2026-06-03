@@ -1,6 +1,6 @@
 PORTNAME=	dtcp
 PORTVERSION=	20130602
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/
 
@@ -25,4 +25,10 @@ PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps \
 		share/man/man8/dtcpauth.8.gz share/man/man8/dtcpc.8.gz \
 		share/man/man8/dtcps.8.gz
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.4
+RUN_DEPENDS+=	rubygem-syslog>0:devel/rubygem-syslog
+.endif
+
+.include <bsd.port.post.mk>

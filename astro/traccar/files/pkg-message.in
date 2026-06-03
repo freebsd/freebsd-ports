@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+
+Traccar was sucesfully installed in the %%PREFIX%%/traccar.
+
+- configuration file: %%ETCDIR%%/traccar.xml
+- logs: %%TRACCAR_LOGDIR%%
+- H2 database files: %%TRACCAR_DATADIR%%
+
+It is not recommended to use H2 database for production.
+Edit %%ETCDIR%%/traccar.xml according to documentation at
+https://www.traccar.org/documentation/ to use another SQL database
+EOM
+}
+]

@@ -18,6 +18,8 @@ libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/jexec/jexec
 libexec/appjail/network/network
+libexec/appjail/juexec/juexec
+%%DATADIR%%/Isotype.png
 %%DATADIR%%/cmd/apply
 %%DATADIR%%/cmd/checkOld
 %%DATADIR%%/cmd/cmd
@@ -59,6 +61,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/usage
 %%DATADIR%%/cmd/version
 %%DATADIR%%/cmd/volume
+%%DATADIR%%/cmd/x11
 %%DATADIR%%/cmd/zfs
 %%DATADIR%%/files/config.conf
 %%DATADIR%%/files/default.conf
@@ -69,6 +72,7 @@ libexec/appjail/network/network
 %%DATADIR%%/files/rctl-actions
 %%DATADIR%%/files/rctl-resources
 %%DATADIR%%/files/rctl-subjects
+%%DATADIR%%/files/pkgbase/base.conf
 %%DATADIR%%/lib/atexit
 %%DATADIR%%/lib/check_func
 %%DATADIR%%/lib/colors
@@ -96,6 +100,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/tempfile
 %%DATADIR%%/lib/version
 %%DATADIR%%/lib/whitespaces
+%%DATADIR%%/lib/x11
 %%DATADIR%%/lib/zfs
 %%DATADIR%%/makejail/cmd/all/ADD
 %%DATADIR%%/makejail/cmd/all/ARG
@@ -176,12 +181,16 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/run_jail.sh
 %%DATADIR%%/scripts/runas.sh
 %%DATADIR%%/scripts/super-mv.sh
+%%DATADIR%%/scripts/xresize-exec.sh
 %%EXAMPLESDIR%%/appjail.conf
 %%EXAMPLESDIR%%/templates/bridge.conf
 %%EXAMPLESDIR%%/templates/freebsd-oci.conf
 %%EXAMPLESDIR%%/templates/linux.conf
 %%EXAMPLESDIR%%/templates/vnet.conf
 %%EXAMPLESDIR%%/templates/xorg.conf
+%%EXAMPLESDIR%%/hooks/pre.d/history.sh
+%%EXAMPLESDIR%%/hooks/pre.d/security-group.sh
+%%EXAMPLESDIR%%/hooks/pre.d/security-table.sh
 share/man/man1/appjail-apply.1.gz
 share/man/man1/appjail-checkOld.1.gz
 share/man/man1/appjail-cmd.1.gz
@@ -235,3 +244,4 @@ share/man/man7/appjail-ephemeral.7.gz
 share/man/man7/appjail-tutorial.7.gz
 share/man/man8/appjail-dns.8.gz
 share/man/man8/appjail-user.8.gz
+share/man/man1/appjail-x11.1.gz

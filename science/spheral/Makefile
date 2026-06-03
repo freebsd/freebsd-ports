@@ -1,7 +1,7 @@
 PORTNAME=	spheral
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.06.1
-PORTREVISION=	5
+DISTVERSION=	2025.12.0
+PORTREVISION=	1
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,18 +9,29 @@ COMMENT=	Environment for hydrodynamical & gravitational numerical simulations
 WWW=		https://github.com/LLNL/spheral
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/License.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/polyclipper2d.hh:math/polyclipper
-LIB_DEPENDS=	libaxom_core.so:science/axom \
+LIB_DEPENDS=	libadiak.so:misc/adiak \
+		libaxom_core.so:science/axom \
 		libboost_filesystem.so:devel/boost-libs \
+		libcamp.so:devel/camp \
+		libchai.so:devel/chai \
 		libconduit.so:science/conduit \
+		libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
+		libHYPRE.so:science/hypre \
 		libmfem.so:math/mfem \
+		libmetis.so:math/metis \
+		libopenblas.so:math/openblas \
 		libosdCPU.so:graphics/opensubdiv \
 		libpolytope.so:science/polytope \
 		libqhull_r.so:math/qhull \
-		libsiloh5.so:science/silo
+		libRAJA.so:misc/raja \
+		libsiloh5.so:science/silo \
+		libsz.so:science/libaec \
+		libsundials_core.so:math/sundials \
+		libumpire.so:devel/umpire
 
 USES=		cmake:testing compiler:c++14-lang eigen:3 fortran localbase:ldflags lua mpi:mpich python
 USE_LDCONFIG=	yes
@@ -49,12 +60,15 @@ CMAKE_ARGS=	-Daneos_DIR=${LOCALBASE} \
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
-CMAKE_OFF=	ENABLE_TESTS ENABLE_DOCS \
-		ENABLE_ANEOS \
+CMAKE_OFF=	SPHERAL_ENABLE_TESTS SPHERAL_ENABLE_DOCS \
+		SPHERAL_ENABLE_ANEOS \
+		SPHERAL_ENABLE_PYTHON \
+		SPHERAL_ENABLE_STATIC \
 		ENABLE_CUDA
-CMAKE_ON=	ENABLE_CXXONLY # disable Python support which is still for Python-2.7, see https://github.com/LLNL/spheral/issues/183
-CMAKE_ON+=	ENABLE_OPENMP
-CMAKE_TESTING_ON=	ENABLE_TESTS # tests fail to build, see https://github.com/LLNL/spheral/issues/230
+CMAKE_ON=	SPHERAL_ENABLE_SHARED \
+		ENABLE_OPENMP \
+		USE_EXTERNAL_CHAI
+CMAKE_TESTING_ON=	SPHERAL_ENABLE_TESTS # tests fail to build, see https://github.com/LLNL/spheral/issues/230
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 

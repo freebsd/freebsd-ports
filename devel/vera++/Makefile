@@ -13,9 +13,7 @@ WWW=		https://bitbucket.org/verateam/vera/wiki/Home
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-BROKEN=		fails to build with boost-1.85+
-
-BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USES=		compiler:c++11-lang cmake tk
 USE_CXXSTD=	c++14
@@ -35,12 +33,20 @@ OPTIONS_DEFINE=	DOCS LUA
 OPTIONS_DEFAULT=	LUA
 
 LUA_LIB_DEPENDS=	libluabind.so:devel/luabind
-LUA_CMAKE_ON=	-DVERA_LUA:BOOL=ON
-LUA_CMAKE_OFF=	-DVERA_LUA:BOOL=OFF
+LUA_USES=		lua:51
+LUA_CMAKE_ON=		-DVERA_LUA:BOOL=ON
+LUA_CMAKE_OFF=		-DVERA_LUA:BOOL=OFF
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^add_subdirectory(doc/d' \
+			  -e '/VERSION/ s/2.8.6/3.5/g' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/FILES/ s|share/vera++/doc|share/doc/vera++|g' \
+		${WRKSRC}/doc/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/boostLibs/ s/ system/ /g' \
+		${WRKSRC}/src/boost.cmake
+	@${REINPLACE_CMD} -e '/boost::filesystem/ s/normalize/lexically_normal/g' \
+		${WRKSRC}/src/executable_path.cpp
 
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${STAGEDIR}${PREFIX}/share/man/man1

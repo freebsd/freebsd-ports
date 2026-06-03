@@ -1,0 +1,3 @@
+The Light-weight Group library provides data structures and collectives to
+create/destroy ordered process groups efficiently in MPI codes - useful when
+frequent, transient groups make communicator creation too costly.

@@ -1,0 +1,2 @@
+Ruby library for running commands via WinRM as elevated through a scheduled
+task

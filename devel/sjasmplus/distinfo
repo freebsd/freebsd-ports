@@ -1,5 +1,5 @@
-TIMESTAMP = 1687947879
-SHA256 (sjasmplus-1.20.3-src.tar.xz) = 343839b79bc8bc79f97ac0b3ac05ea9c17799aa561af46f3ac7a1da863b1b286
-SIZE (sjasmplus-1.20.3-src.tar.xz) = 1210584
+TIMESTAMP = 1780121299
+SHA256 (sjasmplus-1.23.0-src.tar.xz) = cfe10c857c37107ea5358fe887c51477243bce53deb605d070eccb8147bb5186
+SIZE (sjasmplus-1.23.0-src.tar.xz) = 1279100
 SHA256 (vinniefalco-LuaBridge-6580b187_GH0.tar.gz) = e48ab46ff42c53e60ff0baddb995b5f8f0cdb8f295eca6999960d68eec107cff
 SIZE (vinniefalco-LuaBridge-6580b187_GH0.tar.gz) = 1197086

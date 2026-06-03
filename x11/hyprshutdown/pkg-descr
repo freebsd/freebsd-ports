@@ -1,0 +1,8 @@
+A graceful shutdown/logout utility for Hyprland, which prevents apps
+from crashing / dying unexpectedly.
+
+Notes:
+- hyprshutdown does not shut down the system, it only shuts down
+  Hyprland.
+- hyprshutdown does not work with anything other than Hyprland, as it
+  relies on Hyprland IPC.

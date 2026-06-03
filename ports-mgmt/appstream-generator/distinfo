@@ -1,3 +1,5 @@
-TIMESTAMP = 1752666020
-SHA256 (arrowd-appstream-generator-v0.9.1-5e71cac08bae0aa8e812f5dc5508b3b501ee5678_GH0.tar.gz) = fa51b029a5e5f98cc71cee336b6695b0f8a944cf58f39bcb2ca9653fc174c57b
-SIZE (arrowd-appstream-generator-v0.9.1-5e71cac08bae0aa8e812f5dc5508b3b501ee5678_GH0.tar.gz) = 549119
+TIMESTAMP = 1775749894
+SHA256 (appstream-generator-js-assets-0.10.2.tar.gz) = 43ae30af71ccffa12bc679e3003004b7671cca2976e553b78f852d71ee86076d
+SIZE (appstream-generator-js-assets-0.10.2.tar.gz) = 680623
+SHA256 (ximion-appstream-generator-v0.10.2_GH0.tar.gz) = cfafd3de39e124208123591e83f3165e40196edb9aa6acc536dc2cea5662ec81
+SIZE (ximion-appstream-generator-v0.10.2_GH0.tar.gz) = 583256

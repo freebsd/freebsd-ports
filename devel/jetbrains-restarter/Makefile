@@ -1,6 +1,6 @@
 PORTNAME=	restarter
-DISTVERSION=	242.23726.38
-PORTREVISION=	7
+DISTVERSION=	2025.2.2
+PORTREVISION=	6
 CATEGORIES=	devel
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -19,7 +19,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	intellij-community
-GH_TAGNAME=	idea/242.23726.38
+GH_TAGNAME=	idea/2025.2.2
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 WRKSRC_SUBDIR=	native/restarter

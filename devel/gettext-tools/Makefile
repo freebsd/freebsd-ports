@@ -3,7 +3,7 @@
 # discretion.
 
 PORTNAME=	gettext-tools
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	GNU gettext development and translation tools
 WWW=		https://www.gnu.org/software/gettext/
@@ -14,29 +14,33 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 .include "${.CURDIR}/../gettext/Makefile.common"
 
 BUILD_DEPENDS=	libtextstyle>=${PORTVERSION}:devel/libtextstyle
-LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
+LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle \
+		libunistring.so:devel/libunistring
 
-USES=		charsetfix cpe gettext-runtime iconv libtool localbase tar:xz
+USES=		charsetfix cpe gettext-runtime gnome iconv libtool \
+		localbase python shebangfix tar:xz
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	gettext
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-CPE_PRODUCT=	gettext
-CPE_VENDOR=	gnu
+SHEBANG_FILES=	src/spit.py.in
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-glib \
-		--with-included-libcroco --with-included-libunistring \
-		--with-included-libxml --with-installed-libtextstyle \
-		--with-xz --without-emacs \
+CONFIGURE_ARGS=	-C --disable-csharp --disable-java \
+		--with-installed-libtextstyle --with-xz --without-emacs \
 		ac_cv_lib_rt_sched_yield=no
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-WRKSRC_SUBDIR=	gettext-tools
 
 DATADIR=	${PREFIX}/share/gettext
 DOCSDIR=	${PREFIX}/share/doc/gettext
-PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION}
+
+WRKSRC_SUBDIR=	gettext-tools
 
 INFO=		gettext
+PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES THREADS
 OPTIONS_DEFAULT=THREADS

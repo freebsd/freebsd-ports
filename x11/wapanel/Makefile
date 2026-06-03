@@ -3,14 +3,16 @@ DISTVERSION=	1.1.0
 PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop bar for Wayfire and other wlroots compositors
 WWW=		https://firstbober.github.io/wapanel/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build with toml11 4.0.0+
 DEPRECATED=	https://github.com/Firstbober/wapanel/issues/39
+EXPIRATION_DATE=2026-06-30
 
 BUILD_DEPENDS=	toml11>0:devel/toml11 \
 		wayland-protocols>0:graphics/wayland-protocols

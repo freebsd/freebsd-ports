@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -320,7 +320,7 @@
+@@ -319,7 +319,7 @@
  #include "chrome/browser/devtools/devtools_window.h"
  #endif  // BUILDFLAG(ENABLE_DEVTOOLS_FRONTEND)
  
@@ -9,8 +9,8 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -491,11 +491,11 @@
- #endif
+@@ -508,11 +508,11 @@
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -23,7 +23,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
-@@ -523,7 +523,7 @@
+@@ -540,7 +540,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -32,7 +32,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1675,7 +1675,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1474,7 +1474,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
    on_device_translation::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION)
  
@@ -41,8 +41,8 @@
    WhatsNewUI::RegisterLocalStatePrefs(registry);
  #endif
  
-@@ -1829,7 +1829,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
- #endif  // BUILDFLAG(ENABLE_PDF)
+@@ -1634,7 +1634,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+ #endif  // BUILDFLAG(ENABLE_PDF_SAVE_TO_DRIVE)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_ANDROID)
@@ -50,13 +50,14 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2191,12 +2191,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2030,13 +2030,13 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    device_signals::RegisterProfilePrefs(registry);
+   ntp_tiles::EnterpriseShortcutsManagerImpl::RegisterProfilePrefs(registry);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
  

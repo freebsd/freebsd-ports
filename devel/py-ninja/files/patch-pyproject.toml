@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2026-04-06 13:12:36.737527000 UTC
++++ pyproject.toml	2026-04-06 13:13:02.176526000 UTC
+@@ -84,6 +84,10 @@
+ replacement = ""
+ 
+ 
++[tool.scikit-build.cmake.define]
++BUILD_TESTING = false
++RUN_NINJA_TEST = false
++
+ [tool.cibuildwheel]
+ archs = ["auto64", "auto32"]
+ build = "cp39-*"

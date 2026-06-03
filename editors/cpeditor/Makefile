@@ -1,10 +1,11 @@
 PORTNAME=	cpeditor
-DISTVERSION=	7.0.1
+DISTVERSION=	7.1.1
 CATEGORIES=	editors devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and cross-platform code editor for competitive programming
-WWW=		https://cpeditor.org/
+WWW=		https://cpeditor.org/ \
+		https://github.com/cpeditor/cpeditor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,11 +16,12 @@ USE_QT=		core gui network widgets \
 USE_KDE=	syntaxhighlighting
 
 USE_GITHUB=	yes
-GH_TUPLE=	itay-grudev:SingleApplication:494772e:itay_grudev_SingleApplication/third_party/singleapplication \
+GH_TUPLE=	cpeditor:FakeVim:dce7b08:FakeVim/third_party/FakeVim \
+		itay-grudev:SingleApplication:a8da87d:itay_grudev_SingleApplication/third_party/singleapplication \
 		cpeditor:QtFindReplaceDialog:a86ed0b:cpeditor_QtFindReplaceDialog/third_party/QtFindReplaceDialog \
 		cpeditor:lsp-cpp:69c8afa:cpeditor_lsp_cpp/third_party/lsp-cpp \
 		cpeditor:qhttp:fd780d2a0bee1246f2ab0a17f6eebab6403fce64:cpeditor_qhttp/third_party/qhttp \
-		MikeMirzayanov:testlib:d0a0161:MikeMirzayanov_testlib/third_party/testlib
+		MikeMirzayanov:testlib:1e4e8a2:MikeMirzayanov_testlib/third_party/testlib
 
 PLIST_FILES=	bin/cpeditor \
 		share/applications/cpeditor.desktop \

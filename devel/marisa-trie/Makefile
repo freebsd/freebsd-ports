@@ -1,11 +1,11 @@
 PORTNAME=	marisa-trie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.6
+DISTVERSION=	0.3.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	MARISA: Matching Algorithm with Recursively Implemented StorAge
 WWW=		https://github.com/s-yata/marisa-trie
 
@@ -13,43 +13,14 @@ LICENSE=	BSD2CLAUSE LGPL21+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-USES=		autoreconf libtool:build pathfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	s-yata
-GH_PROJECT=	marisa-trie
+USES=		cmake:testing compiler:c++20-lang pathfix
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	s-yata
 
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
-
-OPTIONS_DEFINE=	SSE2 SSE3 SSSE3 SSE4 SSE41 SSE42 SSE4A POPCNT
-OPTIONS_DEFAULT=${MACHINE_CPU:tu}
-
-SSE2_DESC=	Support for SSE2
-SSE2_CONFIGURE_ENABLE=	sse2
-
-SSE3_DESC=	Support for SSE3
-SSE3_CONFIGURE_ENABLE=	sse3
-
-SSSE3_DESC=	Support for SSSE3
-SSSE3_CONFIGURE_ENABLE=	sse3
-
-SSE4_DESC=	Support for SSE4
-SSE4_CONFIGURE_ENABLE=	sse4
-
-SSE41_DESC=	Support for SSE4.1
-SSE41_CONFIGURE_ENABLE=	sse4.1
-
-SSE42_DESC=	Support for SSE4.2
-SSE42_CONFIGURE_ENABLE=	sse4.2
-
-SSE4A_DESC=	Support for SSE4a
-SSE4A_CONFIGURE_ENABLE=	sse4a
-
-POPCNT_DESC=	Support for POPCNT
-POPCNT_CONFIGURE_ENABLE=	POPCNT
+CMAKE_ON_amd64=	ENABLE_NATIVE_CODE
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		${CMAKE_ON_${ARCH}}
 
 .include <bsd.port.mk>

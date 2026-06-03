@@ -1,14 +1,13 @@
 PORTNAME=	xstatic-d3
-PORTVERSION=	3.5.17.0
-PORTREVISION=	4
+PORTVERSION=	3.5.17.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-D3-${PORTVERSION}
+DISTNAME=	xstatic_d3-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	D3 (Data-Driven Documents) (XStatic packaging standard)
-WWW=		https://d3js.org/ \
+COMMENT=	D3 ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-d3 \
 		https://github.com/openstack/xstatic-d3
 
 LICENSE=	BSD3CLAUSE

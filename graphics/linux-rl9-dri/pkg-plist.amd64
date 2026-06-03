@@ -8,6 +8,7 @@ usr/lib/dri/swrast_dri.so
 usr/lib/dri/virtio_gpu_dri.so
 usr/lib/dri/vmwgfx_dri.so
 usr/lib/dri/zink_dri.so
+usr/lib/gbm/dri_gbm.so
 usr/lib/libEGL_mesa.so.0
 usr/lib/libEGL_mesa.so.0.0.0
 usr/lib/libGLU.so.1
@@ -15,11 +16,9 @@ usr/lib/libGLU.so.1.3.1
 usr/lib/libGLX_mesa.so.0
 usr/lib/libGLX_mesa.so.0.0.0
 usr/lib/libGLX_system.so.0
-usr/lib/libgallium-24.2.8.so
+usr/lib/libgallium-25.0.7.so
 usr/lib/libgbm.so.1
 usr/lib/libgbm.so.1.0.0
-usr/lib/libglapi.so.0
-usr/lib/libglapi.so.0.0.0
 usr/lib/libglut.so.3
 usr/lib/libglut.so.3.11.0
 usr/lib64/dri/crocus_dri.so
@@ -32,6 +31,7 @@ usr/lib64/dri/swrast_dri.so
 usr/lib64/dri/virtio_gpu_dri.so
 usr/lib64/dri/vmwgfx_dri.so
 usr/lib64/dri/zink_dri.so
+usr/lib64/gbm/dri_gbm.so
 usr/lib64/libEGL_mesa.so.0
 usr/lib64/libEGL_mesa.so.0.0.0
 usr/lib64/libGLU.so.1
@@ -40,11 +40,9 @@ usr/lib64/libGLX_mesa.so.0
 usr/lib64/libGLX_mesa.so.0.0.0
 usr/lib64/libGLX_system.so.0
 usr/lib64/libVkLayer_MESA_device_select.so
-usr/lib64/libgallium-24.2.8.so
+usr/lib64/libgallium-25.0.7.so
 usr/lib64/libgbm.so.1
 usr/lib64/libgbm.so.1.0.0
-usr/lib64/libglapi.so.0
-usr/lib64/libglapi.so.0.0.0
 usr/lib64/libglut.so.3
 usr/lib64/libglut.so.3.11.0
 usr/lib64/libvulkan_intel.so

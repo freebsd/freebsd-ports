@@ -1,5 +1,5 @@
---- _fdrc.orig	2010-09-25 00:00:00.000000000 +0900
-+++ _fdrc	2011-05-16 18:40:53.987863891 +0900
+--- _fdrc.orig	2019-07-26 15:00:00 UTC
++++ _fdrc
 @@ -17,6 +17,7 @@
  #	200-213: preserve previous sort type also in the archive browser
  #		(the least 2 digits are effective just after initialize)
@@ -39,7 +39,7 @@
  
  # minimum columns of filename field
  #	Default: 12
-@@ -156,6 +161,7 @@
+@@ -184,6 +189,7 @@
  #	2: color & force background to blacken
  #	3: color & force foreground to blacken
  #ANSICOLOR=0
@@ -47,7 +47,7 @@
  
  # color palette in the ANSI color mode
  #	Default: none
-@@ -270,6 +276,7 @@
+@@ -298,6 +304,7 @@
  #	0: evaluate arguments (Default)
  #	>= 1: pass through
  #THRUARGS=0
@@ -55,7 +55,7 @@
  
  # whether if make URL drive effective
  #	0: not use (Default)
-@@ -365,6 +372,7 @@
+@@ -393,6 +400,7 @@
  #	utf8-iconv, UTF8-ICONV: UTF-8 for iconv
  #	en, EN, C: English
  #LANGUAGE=""
@@ -63,7 +63,7 @@
  
  # system default Kanji code
  #	Default: No convert
-@@ -507,13 +515,58 @@
+@@ -535,13 +543,58 @@
  #NOCONVPATH=""
  
  #PAGER=more%K
@@ -123,7 +123,7 @@
  #(Default)
  #launch ".lzh"		"lha l" \
  #		-f "%a %u/%g %s %x %m %d %{yt} %*f" \
-@@ -634,6 +687,49 @@
+@@ -662,6 +715,49 @@
  #launch ".zip"	"pkunzip -vb %S"	" %s %x %x %x %y-%m-%d %t %*f" 14 2
  
  # archiver definition
@@ -173,7 +173,7 @@
  #(Default)
  #arch ".lzh"	"lha aq %C %TA"			"lha xq %C %TA"
  #arch ".tar"	"tar cf %C %T"			"tar xf %C %TA"
-@@ -727,3 +823,7 @@
+@@ -755,3 +851,7 @@
  # keymap definition
  #(Example)
  #keymap DEL	"\033[3~"

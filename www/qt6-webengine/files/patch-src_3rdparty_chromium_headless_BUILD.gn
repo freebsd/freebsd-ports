@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/headless/BUILD.gn.orig	2026-02-26 14:39:03 UTC
++++ src/3rdparty/chromium/headless/BUILD.gn
+@@ -477,7 +477,7 @@ component("headless_non_renderer") {
+     }
+   }
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [
+       "//components/crash/content/browser",
+       "//components/crash/core/app",

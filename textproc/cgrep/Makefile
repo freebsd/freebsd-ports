@@ -1,5 +1,6 @@
 PORTNAME=	cgrep
 PORTVERSION=	8.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -8,6 +9,7 @@ WWW=		https://awgn.github.io/cgrep/
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		cabal pkgconfig

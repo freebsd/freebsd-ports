@@ -1,0 +1,7 @@
+This preview package for Python includes ADLS Gen2 specific API support made
+available in Storage SDK. This includes:
+- New directory level operations (Create, Rename, Delete) for hierarchical
+  namespace enabled (HNS) storage account. For HNS enabled accounts, the
+  rename/move operations are atomic.
+- Permission related operations (Get/Set ACLs) for hierarchical namespace
+  enabled (HNS) accounts.

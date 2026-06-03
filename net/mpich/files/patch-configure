@@ -1,7 +1,7 @@
---- configure.orig	2023-06-07 20:28:42 UTC
+--- configure.orig	2026-02-03 22:45:37 UTC
 +++ configure
-@@ -1082,8 +1082,6 @@ hwlocsrcdir
- HAVE_ROMIO
+@@ -891,8 +891,6 @@ hwlocsrcdir
+ ROMIO_VERSION
  hwloclib
  hwlocsrcdir
 -jsonlib
@@ -9,7 +9,7 @@
  mpllib
  mpllibdir
  mplsrcdir
-@@ -32056,359 +32054,7 @@ fi
+@@ -32585,359 +32583,7 @@ fi
  
  
  
@@ -369,7 +369,7 @@
  # ----------------------------------------------------------------------------
  # HWLOC / NETLOC
  # ----------------------------------------------------------------------------
-@@ -39394,6 +39040,7 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
+@@ -40967,6 +40613,7 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
@@ -377,13 +377,3 @@
  
      if test "X$addarg" != "X" ; then
          # Code using mpif.h interface will likely need this flag to compile.
-@@ -44745,6 +44392,9 @@ else
-   $as_echo_n "(cached) " >&6
- else
-   if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "$ac_includes_default
-+#ifdef STDC_HEADERS
-+# include <stddef.h>
-+#endif
- #ifndef offsetof
- # define offsetof(type, member) ((char *) &((type *) 0)->member - (char *) 0)
- #endif

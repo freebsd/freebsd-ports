@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/__init__.py
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/__pycache__/build_feature_flags%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/__pycache__/build_feature_flags%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/_polars_runtime.abi3.so
+%%PYTHON_SITELIBDIR%%/_polars_runtime_%%FLAVOR%%/build_feature_flags.py
+%%PYTHON_SITELIBDIR%%/polars_runtime_%%FLAVOR%%-%%PORTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/polars_runtime_%%FLAVOR%%-%%PORTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/polars_runtime_%%FLAVOR%%-%%PORTVERSION%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/polars_runtime_%%FLAVOR%%-%%PORTVERSION%%.dist-info/licenses/LICENSE

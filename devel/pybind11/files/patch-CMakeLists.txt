@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-04-14 05:04:19 UTC
++++ CMakeLists.txt
+@@ -375,7 +375,7 @@ if(PYBIND11_INSTALL)
+   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/tools/pybind11.pc.in"
+                  "${CMAKE_CURRENT_BINARY_DIR}/pybind11.pc" @ONLY)
+   install(FILES "${CMAKE_CURRENT_BINARY_DIR}/pybind11.pc"
+-          DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig/")
++          DESTINATION "libdata/pkgconfig/")
+ 
+   # When building a wheel, include __init__.py's for modules
+   # (see https://github.com/pybind/pybind11/pull/5552)

@@ -1,9 +1,8 @@
 PORTNAME=	tuareg-mode
 PORTVERSION=	2.0.8
-PORTREVISION=	21
+PORTREVISION=	23
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Emacs major mode for editing Caml code
@@ -16,22 +15,23 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
 GH_PROJECT=	tuareg
 
+CONFLICTS_INSTALL=	tuareg-mode-emacs_*
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 OPTIONS_DEFINE=	DOCS
 ELISP_FILES=	ocamldebug.el tuareg.el
 .for f in ${ELISP_FILES}
-PLIST_FILES+=	${EMACS_SITE_LISPDIR}/$f ${EMACS_SITE_LISPDIR}/$fc
+PLIST_FILES+=	${EMACS_SITE_LISPDIR}/$f
 .endfor
 
 PORTDOCS=	README.md
 
-do-build:
-	(cd ${WRKSRC} && \
-		${EMACS_CMD} -batch -q -f batch-byte-compile ${ELISP_FILES})
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${EMACS_SITE_LISPDIR}
 .for tuareg_mode_f in ${ELISP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${tuareg_mode_f} ${WRKSRC}/${tuareg_mode_f}c \
+	${INSTALL_DATA} ${WRKSRC}/${tuareg_mode_f} \
 		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

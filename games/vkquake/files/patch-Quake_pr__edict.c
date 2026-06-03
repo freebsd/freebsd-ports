@@ -4,16 +4,16 @@
  process that does not generate this patch. To get around this, remove
  ${WRKSRC}/Misc/vq_pak/maps when the patches need to be regenerated.
 
---- Quake/pr_edict.c.orig	2025-05-01 11:30:09 UTC
+--- Quake/pr_edict.c.orig	2026-04-14 07:28:53 UTC
 +++ Quake/pr_edict.c
-@@ -883,8 +883,8 @@ void ED_PrintEdicts (void)
- */
- void ED_PrintEdicts (void)
- {
+@@ -977,8 +977,8 @@ void ED_PrintEdicts (void)
+ 	if (!sv.active)
+ 		return;
+ 
 -	int free_edicts_count = 0;
 -	int free_list_count = 0;
 +	int free_edicts_count __attribute__((unused)) = 0;
 +	int free_list_count __attribute__((unused)) = 0;
  
- 	if (!sv.active)
- 		return;
+ 	PR_SwitchQCVM (&sv.qcvm);
+ 

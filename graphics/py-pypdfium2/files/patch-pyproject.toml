@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-20 14:33:01 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ requires = [
+     "packaging",
+     # XXX dependence on wheel is historical, with setuptools >= v70.1.0 this is not needed anymore
+     "wheel !=0.38.0, !=0.38.1",
+-    "ctypesgen @ git+https://github.com/pypdfium2-team/ctypesgen@pypdfium2",
++    #"ctypesgen @ git+https://github.com/pypdfium2-team/ctypesgen@pypdfium2",
+ ]
+ 
+ [tool.cibuildwheel]

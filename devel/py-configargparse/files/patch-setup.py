@@ -1,11 +1,11 @@
---- setup.py.orig	2025-05-23 14:22:48 UTC
+--- setup.py.orig	2026-03-11 02:19:21 UTC
 +++ setup.py
-@@ -81,7 +81,7 @@ setup(
+@@ -91,7 +91,7 @@ setup(
  
  
  setup(
--    name='ConfigArgParse',
+-    name="ConfigArgParse",
 +    name='configargparse',
-     version="1.7.1",
-     description='A drop-in replacement for argparse that allows options to '
-                 'also be set via config files and/or environment variables.',
+     use_scm_version={"version_scheme": "no-guess-dev"},
+     setup_requires=["setuptools_scm"],
+     description="A drop-in replacement for argparse that allows options to "

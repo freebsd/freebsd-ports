@@ -29,6 +29,8 @@ OPTIONS_DEFAULT=SNMP
 SNMP_CONFIGURE_ENABLE=	snmp
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
+CFLAGS+=	-Wno-error=declaration-after-statement
+
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${CP} ${FILESDIR}/*.sample ${STAGEDIR}${ETCDIR}

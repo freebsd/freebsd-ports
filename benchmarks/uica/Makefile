@@ -29,7 +29,7 @@ SHEBANG_FILES=	uiCA.py
 
 # manually build a file name like instructions_Apr2022.xml from
 # the machine-sortable INSTRVERSION.  Use := to have date run only once
-INSTRVERSION=	2022.12
+INSTRVERSION=	2026.03
 INSTRUCTIONS:=	instructions_${${SETENV} LC_ALL=C TZ=UTC date -j -f %Y.%m ${INSTRVERSION} +%b%Y:L:sh}.xml
 
 MFLAGS=		--compiler=${COMPILER_TYPE:S/gcc/gnu/} \

@@ -1,8 +1,0 @@
---- src/OpenThreads/CMakeLists.txt.orig	2009-01-27 18:34:57.000000000 +0300
-+++ src/OpenThreads/CMakeLists.txt	2009-02-05 17:54:57.000000000 +0300
-@@ -94,4 +94,4 @@
-     @ONLY
-     )
- 
--INSTALL(FILES ${PROJECT_BINARY_DIR}/packaging/pkgconfig/openthreads.pc DESTINATION lib${LIB_POSTFIX}/pkgconfig)
-+INSTALL(FILES ${PROJECT_BINARY_DIR}/packaging/pkgconfig/openthreads.pc DESTINATION libdata/pkgconfig)

@@ -10,8 +10,6 @@ WWW=		https://www.meinbergglobal.com/english/sw/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_mips64=		fails to compile: unused variables
-
 USES=		kmod uidfix
 USE_RC_SUBR=	mbgsvcd
 

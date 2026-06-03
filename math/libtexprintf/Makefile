@@ -1,6 +1,5 @@
 PORTNAME=	libtexprintf
-DISTVERSION=	1.25
-PORTREVISION=	1
+DISTVERSION=	1.31
 CATEGORIES=	math textproc
 MASTER_SITES=	https://github.com/bartp5/${PORTNAME}/releases/download/v${DISTVERSION}/
 

@@ -1,5 +1,5 @@
 PORTNAME=	acstore
-PORTVERSION=	20240407
+PORTVERSION=	20260411
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/log2timeline/acstore/releases/download/${PORTVERSION}/

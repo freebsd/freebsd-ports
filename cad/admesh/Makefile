@@ -11,7 +11,7 @@ WWW=		https://launchpad.net/admesh
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool
+USES=		autoreconf cpe libtool
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -28,6 +28,8 @@ PLIST_FILES=	bin/admesh \
 		lib/libadmesh.so.1.0.0 \
 		libdata/pkgconfig/libadmesh.pc \
 		share/man/man1/admesh.1.gz
+
+CPE_VENDOR=	${PORTNAME}_project
 
 do-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING

@@ -1,8 +1,8 @@
---- deps/linenoise/Makefile.orig	2019-09-25 10:40:18 UTC
+--- deps/linenoise/Makefile.orig	2026-05-19 15:03:27 UTC
 +++ deps/linenoise/Makefile
-@@ -1,10 +1,10 @@
+@@ -1,10 +1,10 @@ WARN= -Wall -Werror
  STD=
- WARN= -Wall
+ WARN= -Wall -Werror
 -OPT= -Os
 +#OPT= -Os
  

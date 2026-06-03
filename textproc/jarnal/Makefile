@@ -1,5 +1,6 @@
 PORTNAME=	jarnal
 PORTVERSION=	1079
+PORTREVISION=	2
 CATEGORIES=	textproc editors
 MASTER_SITES=	http://www.dklevine.com/general/software/tc1000/
 DISTNAME=	${PORTNAME}-install

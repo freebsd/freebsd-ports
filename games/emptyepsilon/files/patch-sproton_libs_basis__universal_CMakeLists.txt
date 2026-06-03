@@ -1,8 +1,6 @@
-- avoid fetch, use pre-installed meshoptimizer package, see https://github.com/daid/SeriousProton/issues/253
-
---- sproton/libs/basis_universal/CMakeLists.txt.orig	2024-12-09 20:23:38 UTC
-+++ sproton/libs/basis_universal/CMakeLists.txt
-@@ -5,7 +5,7 @@ set(BASIS_URL "https://github.com/BinomialLLC/basis_un
+--- sproton/libs/basis_universal/CMakeLists.txt.orig	2025-12-05 12:11:01.680012000 -0800
++++ sproton/libs/basis_universal/CMakeLists.txt	2025-12-05 12:11:01.722728000 -0800
+@@ -5,7 +5,7 @@
  
  set(BASIS_VERSION "v1_15_update2")
  set(BASIS_URL "https://github.com/BinomialLLC/basis_universal")
@@ -11,3 +9,31 @@
      include(FetchContent)
      FetchContent_Declare(
          basis
+@@ -14,18 +14,21 @@
+     )
+     FetchContent_GetProperties(basis)
+ else()
+-    set(BASIS_BASE_PATH "${EXTERNALS_DIR}")
+-    set(basis_POPULATED FALSE)
+-    if(NOT EXISTS "${BASIS_BASE_PATH}/basis/CMakeLists.txt")
++    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../../SeriousProton/externals/basis/CMakeLists.txt")
++        set(basis_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../SeriousProton/externals/basis")
++        set(basis_BINARY_DIR "${PROJECT_BINARY_DIR}/externals/basis")
++        set(basis_POPULATED TRUE)
++    else()
++        set(BASIS_BASE_PATH "${EXTERNALS_DIR}")
++        set(basis_POPULATED FALSE)
+         set(BASIS_ZIP "${DOWNLOADS_DIR}/basis.zip")
+         file(DOWNLOAD "${BASIS_URL}/archive/refs/tags/${BASIS_VERSION}.zip" "${BASIS_ZIP}" TIMEOUT 60 TLS_VERIFY ON)
+ 
+         file(MAKE_DIRECTORY "${BASIS_BASE_PATH}/basis")
+         execute_process(COMMAND ${CMAKE_COMMAND} -E tar -xf "${BASIS_ZIP}" WORKING_DIRECTORY "${BASIS_BASE_PATH}")
++        set(basis_SOURCE_DIR "${BASIS_BASE_PATH}/basis")
++        set(basis_BINARY_DIR "${PROJECT_BINARY_DIR}/externals/basis")
+     endif()
+-
+-    set(basis_SOURCE_DIR "${BASIS_BASE_PATH}/basis")
+-    set(basis_BINARY_DIR "${PROJECT_BINARY_DIR}/externals/basis")
+ endif()
+ 
+ if(NOT basis_POPULATED)

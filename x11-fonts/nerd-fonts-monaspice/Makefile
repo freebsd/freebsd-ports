@@ -1,0 +1,11 @@
+_NAME=		Monaspice
+
+PORTREVISION=	0
+DISTNAME=	Monaspace
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

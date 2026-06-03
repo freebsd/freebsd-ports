@@ -1,7 +1,7 @@
-TIMESTAMP = 1743426316
-SHA256 (rocky/l/libaom-3.12.0-1.el9.aarch64.rpm) = 9f67e775d44216377a502f51b9114022a03b5b8746c51c046b3a0504dd8018fb
-SIZE (rocky/l/libaom-3.12.0-1.el9.aarch64.rpm) = 1663414
-SHA256 (rocky/l/libaom-3.12.0-1.el9.x86_64.rpm) = fdaca4cc7f5ccc8241a05f123a361c7a8b6a1bf1e4ca64482a55279f50147f36
-SIZE (rocky/l/libaom-3.12.0-1.el9.x86_64.rpm) = 1859389
-SHA256 (rocky/a/aom-3.12.0-1.el9.src.rpm) = 5cb9355be8e7d856a9e4e74bb5a80a0518a5d5e688a58fa522f791a2f1020dfa
-SIZE (rocky/a/aom-3.12.0-1.el9.src.rpm) = 5560226
+TIMESTAMP = 1762106721
+SHA256 (rocky/l/libaom-3.13.1-1.el9.aarch64.rpm) = c9a8c6b5e0bf94b045bb13ff60691c1ec7bab8a4686440f6c0a50c487064a98b
+SIZE (rocky/l/libaom-3.13.1-1.el9.aarch64.rpm) = 1687174
+SHA256 (rocky/l/libaom-3.13.1-1.el9.x86_64.rpm) = d93d949523578998223eb0349e18417d2d0d598556270025b8006e4589060c9f
+SIZE (rocky/l/libaom-3.13.1-1.el9.x86_64.rpm) = 1879745
+SHA256 (rocky/a/aom-3.13.1-1.el9.src.rpm) = 9aa46c7282cd1761cec8f694088f3c4a3bba86d0457f013b0a9c3f3e9d61d946
+SIZE (rocky/a/aom-3.13.1-1.el9.src.rpm) = 6323504

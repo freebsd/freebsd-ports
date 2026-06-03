@@ -1,4 +1,4 @@
---- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig	2025-05-07 06:48:23 UTC
+--- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig	2025-12-10 15:04:57 UTC
 +++ third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
 @@ -5,8 +5,6 @@
  #include "llvm/Config/llvm-config.h"

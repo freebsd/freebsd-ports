@@ -15,8 +15,8 @@ lib/fcitx5/libpinyin.so
 lib/fcitx5/libpinyinhelper.so
 lib/fcitx5/libpunctuation.so
 lib/fcitx5/libtable.so
-lib/fcitx5/qt5/libcustomphraseeditor.so
-lib/fcitx5/qt5/libpinyindictmanager.so
+lib/fcitx5/qt6/libcustomphraseeditor.so
+lib/fcitx5/qt6/libpinyindictmanager.so
 share/fcitx5/addon/chttrans.conf
 share/fcitx5/addon/cloudpinyin.conf
 share/fcitx5/addon/fullwidth.conf
@@ -190,10 +190,12 @@ share/icons/hicolor/scalable/apps/org.fcitx.Fcitx5.fcitx-punc-inactive.svg
 share/locale/ca/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/da/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/de/LC_MESSAGES/fcitx5-chinese-addons.mo
+share/locale/fr/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/he/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/ja/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/ko/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/ru/LC_MESSAGES/fcitx5-chinese-addons.mo
+share/locale/vi/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/metainfo/org.fcitx.Fcitx5.Addon.ChineseAddons.metainfo.xml

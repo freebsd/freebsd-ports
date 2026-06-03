@@ -1,0 +1,12 @@
+Relax version requirements for py-uv-build to be able to provide the port in
+the quarterly branch.
+
+--- pyproject.toml.orig	2026-04-20 12:43:47 UTC
++++ pyproject.toml
+@@ -408,5 +408,5 @@ formatter-cmds = ["ruff check --exit-zero --fix $file"
+ formatter-cmds = ["ruff check --exit-zero --fix $file", "ruff format $file"]
+ 
+ [build-system]
+-requires = ["uv_build>=0.11,<0.12"]
++requires = ["uv_build>=0.10.10,<0.12"]
+ build-backend = "uv_build"

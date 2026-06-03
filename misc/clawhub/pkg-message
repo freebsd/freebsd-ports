@@ -1,0 +1,41 @@
+[
+{ type: install
+  message: <<EOM
+You installed clawhub: the CLI for managing OpenClaw agent skills.
+
+Getting started:
+
+  Authenticate with the ClawHub registry:
+    $ clawhub login
+
+  Search for skills:
+    $ clawhub search "postgres backups"
+
+  Install a skill pack:
+    $ clawhub install my-skill-pack
+
+  Update all installed skills:
+    $ clawhub update --all
+
+  Sync local skills to the ClawHub directory:
+    $ clawhub sync
+
+  Publish a skill:
+    $ clawhub publish ./my-skill-pack \
+        --slug my-skill-pack \
+        --name "My Skill Pack" \
+        --version 1.2.0
+
+  Explore available packages:
+    $ clawhub package explore --family skill
+
+  Inspect a package:
+    $ clawhub package inspect @openclaw/example-plugin
+
+Note: 'clawdhub' is an alias for 'clawhub'.
+
+For more information, see https://clawhub.ai and https://github.com/openclaw/clawhub
+
+EOM
+}
+]

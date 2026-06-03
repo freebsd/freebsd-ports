@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: unpackerr
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable unpackerr:
+# unpackerr_enable (bool):	Set to "NO" by default.
+#		Set it to "YES" to enable unpackerr
+# unpackerr_configfile (str):	Set to "%%PREFIX%%/etc/unpackerr.conf" by default.
+#		Configuration file for unpackerr
+# unpackerr_user (str):		Set to "unpackerr" by default.
+#		User to run unpackerr
+
+. /etc/rc.subr
+
+name=unpackerr
+rcvar=unpackerr_enable
+
+start_precmd="${name}_precmd"
+stop_postcmd="${name}_postcmd"
+configtest_cmd="${name}_configtest"
+
+load_rc_config ${name}
+
+: ${unpackerr_enable:="no"}
+: ${unpackerr_configfile:="%%PREFIX%%/etc/unpackerr/unpackerr.conf"}
+: ${unpackerr_user:="unpackerr"}
+
+procname="%%PREFIX%%/bin/unpackerr"
+pidfile="/var/run/${name}.pid"
+daemonpidfile="/var/run/daemon_${name}.pid"
+required_files="${unpackerr_configfile}"
+command="/usr/sbin/daemon"
+
+unpackerr_precmd()
+{
+    rc_flags="-p ${pidfile} -P ${daemonpidfile} -f ${procname} -c ${unpackerr_configfile} ${rc_flags}"
+
+    /usr/bin/install -m 600 -o ${unpackerr_user} /dev/null $pidfile
+    /usr/bin/install -m 600 -o ${unpackerr_user} /dev/null $daemonpidfile
+}
+
+unpackerr_postcmd()
+{
+    rm -f $pidfile $daemonpidfile
+}
+
+run_rc_command "$1"

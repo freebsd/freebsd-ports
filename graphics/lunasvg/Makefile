@@ -1,10 +1,9 @@
 PORTNAME=	lunasvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.5.0
 CATEGORIES=	graphics
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	SVG rendering and manipulation library in C++
 WWW=		https://github.com/sammycage/lunasvg/
 
@@ -19,9 +18,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sammycage
 USE_LDCONFIG=	yes
 
+EXTRACT_AFTER_ARGS=	--exclude plutovg --no-same-owner --no-same-permissions
+
 PLIST_SUB=	SOVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=		STATIC
+OPTIONS_DEFINE=	STATIC
 OPTIONS_SUB=	yes
 
 STATIC_MESON_ON=	-Ddefault_library=both

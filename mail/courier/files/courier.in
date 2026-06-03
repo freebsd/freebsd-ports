@@ -13,7 +13,7 @@
 prefix="%%PREFIX%%"
 exec_prefix="${prefix}"
 sysconfdir="${prefix}/etc/courier"
-certsdir="%%CERTSDIR%%"
+certsdir="%%CERTSDIRPATH%%"
 sbindir="${exec_prefix}/sbin"
 bindir="${exec_prefix}/bin"
 libexecdir="${prefix}/libexec"

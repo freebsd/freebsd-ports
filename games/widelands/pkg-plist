@@ -9,4 +9,4 @@ share/icons/hicolor/32x32/apps/org.widelands.Widelands.png
 share/icons/hicolor/48x48/apps/org.widelands.Widelands.png
 share/icons/hicolor/64x64/apps/org.widelands.Widelands.png
 share/man/man6/widelands.6.gz
-share/metainfo/org.widelands.Widelands.appdata.xml
+share/metainfo/org.widelands.Widelands.metainfo.xml

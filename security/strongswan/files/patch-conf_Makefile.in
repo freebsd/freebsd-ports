@@ -1,9 +1,9 @@
---- conf/Makefile.in.orig	2024-03-19 10:57:29 UTC
+--- conf/Makefile.in.orig	2026-03-23 12:42:09 UTC
 +++ conf/Makefile.in
-@@ -917,15 +917,15 @@ install-data-local: $(plugins_install_src)
- 	test -e "$(DESTDIR)${strongswanconfdir}" || $(INSTALL) -d "$(DESTDIR)$(strongswanconfdir)" || true
- 	test -e "$(DESTDIR)${strongswanddir}" || $(INSTALL) -d "$(DESTDIR)$(strongswanddir)" || true
- 	test -e "$(DESTDIR)${charonconfdir}" || $(INSTALL) -d "$(DESTDIR)$(charonconfdir)" || true
+@@ -931,25 +931,25 @@ install-data-local: $(plugins_install_src)
+ 	test -e "$(DESTDIR)${charonconfdir}" || test -z "${charon_install_src}" || $(INSTALL) -d "$(DESTDIR)$(charonconfdir)" || true
+ 	test -e "$(DESTDIR)${cmdconfdir}" || test -z "${cmd_install_src}" || $(INSTALL) -d "$(DESTDIR)$(cmdconfdir)" || true
+ 	test -e "$(DESTDIR)${nmconfdir}" || test -z "${nm_install_src}" || $(INSTALL) -d "$(DESTDIR)$(nmconfdir)" || true
 -	test -e "$(DESTDIR)$(strongswan_conf)" || $(INSTALL) -m 644 $(srcdir)/strongswan.conf $(DESTDIR)$(strongswan_conf) || true
 +	test -e "$(DESTDIR)$(strongswan_conf)" || $(INSTALL) -m 644 $(srcdir)/strongswan.conf $(DESTDIR)$(strongswan_conf).sample || true
  	for f in $(options_install_src); do \
@@ -11,11 +11,23 @@
 -		test -f "$(DESTDIR)$(strongswanddir)/$$name" || $(INSTALL) -m 644 "$(srcdir)/$$f" "$(DESTDIR)$(strongswanddir)/$$name" || true; \
 +		test -f "$(DESTDIR)$(strongswanddir)/$$name" || $(INSTALL) -m 644 "$(srcdir)/$$f" "$(DESTDIR)$(strongswanddir)/$${name}.sample" || true; \
  	done
- 	for f in $(plugins_install_src); do \
+ 	for f in $(charon_install_src); do \
  		name=`basename $$f`; \
  		if test -f "$$f"; then dir=; else dir="$(srcdir)/"; fi; \
 -		test -f "$(DESTDIR)$(charonconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(charonconfdir)/$$name" || true; \
 +		test -f "$(DESTDIR)$(charonconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(charonconfdir)/$${name}.sample" || true; \
+ 	done
+ 	for f in $(cmd_install_src); do \
+ 		name=`basename $$f`; \
+ 		if test -f "$$f"; then dir=; else dir="$(srcdir)/"; fi; \
+-		test -f "$(DESTDIR)$(cmdconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(cmdconfdir)/$$name" || true; \
++		test -f "$(DESTDIR)$(cmdconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(cmdconfdir)/$${name}.sample" || true; \
+ 	done
+ 	for f in $(nm_install_src); do \
+ 		name=`basename $$f`; \
+ 		if test -f "$$f"; then dir=; else dir="$(srcdir)/"; fi; \
+-		test -f "$(DESTDIR)$(nmconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(nmconfdir)/$$name" || true; \
++		test -f "$(DESTDIR)$(nmconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(nmconfdir)/$${name}.sample" || true; \
  	done
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -13,9 +13,11 @@ include/template-glib-1.0/tmpl-version.h
 lib/girepository-1.0/Template-1.0.typelib
 lib/libtemplate_glib-1.0.so
 lib/libtemplate_glib-1.0.so.0
-lib/libtemplate_glib-1.0.so.0.3600.3
+lib/libtemplate_glib-1.0.so.0.4000.0
 libdata/pkgconfig/template-glib-1.0.pc
 share/gir-1.0/Template-1.0.gir
+share/locale/ar/LC_MESSAGES/template-glib.mo
+share/locale/bg/LC_MESSAGES/template-glib.mo
 share/locale/ca/LC_MESSAGES/template-glib.mo
 share/locale/cs/LC_MESSAGES/template-glib.mo
 share/locale/da/LC_MESSAGES/template-glib.mo
@@ -33,6 +35,8 @@ share/locale/id/LC_MESSAGES/template-glib.mo
 share/locale/it/LC_MESSAGES/template-glib.mo
 share/locale/ka/LC_MESSAGES/template-glib.mo
 share/locale/kab/LC_MESSAGES/template-glib.mo
+share/locale/kk/LC_MESSAGES/template-glib.mo
+share/locale/kw/LC_MESSAGES/template-glib.mo
 share/locale/lt/LC_MESSAGES/template-glib.mo
 share/locale/nl/LC_MESSAGES/template-glib.mo
 share/locale/pl/LC_MESSAGES/template-glib.mo

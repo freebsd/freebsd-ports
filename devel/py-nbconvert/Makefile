@@ -1,5 +1,5 @@
 PORTNAME=	nbconvert
-PORTVERSION=	7.16.6
+PORTVERSION=	7.17.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/nbconvert/releases/download/v${PORTVERSION}/
@@ -36,10 +36,4 @@ NO_ARCH=	yes
 
 SHEBANG_FILES=	nbconvert/nbconvertapp.py
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

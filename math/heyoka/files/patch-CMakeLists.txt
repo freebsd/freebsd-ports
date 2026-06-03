@@ -1,13 +1,23 @@
 - fix llvm version
+- use MODULE mode for OpenSSL (base system lacks cmake config file)
 
---- CMakeLists.txt.orig	2024-06-13 17:20:31 UTC
+--- CMakeLists.txt.orig	2026-03-20 00:58:15 UTC
 +++ CMakeLists.txt
-@@ -156,7 +156,7 @@ include(GNUInstallDirs)
+@@ -153,7 +153,7 @@
  #
  # https://github.com/llvm/llvm-project/issues/58558
  include(GNUInstallDirs)
 -find_package(LLVM REQUIRED CONFIG)
 +find_package(LLVM ${FREEBSD_LLVM_VERSION} REQUIRED CONFIG)
  
- if(${LLVM_VERSION_MAJOR} LESS 13 OR ${LLVM_VERSION_MAJOR} GREATER 18)
-   message(FATAL_ERROR "LLVM >= 13 and <= 18 is required.")
+ if(${LLVM_VERSION_MAJOR} LESS 18 OR ${LLVM_VERSION_MAJOR} GREATER 22)
+   message(FATAL_ERROR "LLVM >= 18 and <= 22 is required.")
+@@ -638,7 +638,7 @@
+ endif()
+ 
+ # Mandatory private dependency on openssl.
+-find_package(OpenSSL REQUIRED CONFIG)
++find_package(OpenSSL REQUIRED)
+ target_link_libraries(heyoka PRIVATE OpenSSL::SSL OpenSSL::Crypto)
+ 
+ # Mandatory dependency on sqlite. See:

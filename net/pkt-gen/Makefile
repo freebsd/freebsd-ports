@@ -1,9 +1,9 @@
 PORTNAME=	pkt-gen
-PORTVERSION=	g2024.09.16
+PORTVERSION=	g2025.10.08
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
-COMMENT=	Packet sink/source using the netmap API
+COMMENT=	Packet sink/source and bandwidth/delay emulator using the netmap API
 WWW=		https://github.com/luigirizzo/netmap
 
 LICENSE=	BSD2CLAUSE
@@ -12,7 +12,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	luigirizzo
 GH_PROJECT=	netmap
-GH_TAGNAME=	eb905c6
+GH_TAGNAME=	bc3a126
 
 MAKEFILE=	GNUmakefile
 
@@ -23,22 +23,29 @@ PCAP_MAKE_ARGS=	WITH_PCAP=1
 
 PLIST_FILES=	bin/pkt-gen \
 		bin/nmreplay \
+		bin/tlem \
 		share/man/man8/nmreplay.8.gz \
-		share/man/man8/pkt-gen.8.gz
+		share/man/man8/pkt-gen.8.gz \
+		share/man/man8/tlem.8.gz
 
 do-build:
 	cd ${WRKSRC}/libnetmap && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE}
 	cd ${WRKSRC}/apps/pkt-gen && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE}
 	cd ${WRKSRC}/apps/nmreplay && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE}
+	cd ${WRKSRC}/apps/tlem && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/pkt-gen/pkt-gen \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/nmreplay/nmreplay \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/apps/tlem/tlem \
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/apps/pkt-gen/pkt-gen.8 \
 		${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_MAN} ${WRKSRC}/apps/nmreplay/nmreplay.8 \
+		${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/apps/tlem/tlem.8 \
 		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

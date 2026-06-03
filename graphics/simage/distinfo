@@ -1,2 +1,3 @@
-SHA256 (simage-1.7.0.tar.gz) = c9a0c43e45f825c46941789f5a8f6c3b61da5ac87e4088cb611ac0fead494def
-SIZE (simage-1.7.0.tar.gz) = 752602
+TIMESTAMP = 1767287602
+SHA256 (simage-1.8.4-src.tar.gz) = b2bdc665cbe43036c29a479a0560a3c34697b25fad3a20ef49b240b1ac5f2956
+SIZE (simage-1.8.4-src.tar.gz) = 6798392

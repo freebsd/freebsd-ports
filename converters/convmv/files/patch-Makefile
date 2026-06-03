@@ -1,15 +1,13 @@
---- Makefile.orig	2008-11-29 13:49:38 UTC
+--- Makefile.orig	2023-04-21 08:37:04 UTC
 +++ Makefile
-@@ -1,6 +1,6 @@
+@@ -1,5 +1,5 @@ DESTDIR=
  DESTDIR=
 -PREFIX=/usr/local
--MANDIR=$(PREFIX)/share/man
 +PREFIX?=/usr/local
-+MANDIR=$(PREFIX)/share/man
+ MANDIR=$(PREFIX)/share/man
  TAR=tar
  FIND=find
- SED=sed
-@@ -10,11 +10,11 @@ all: manpage
+@@ -10,11 +10,11 @@ install: all
  install: all
  	mkdir -p $(DESTDIR)$(MANDIR)/man1/
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/

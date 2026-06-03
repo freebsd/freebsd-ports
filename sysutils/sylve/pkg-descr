@@ -1,0 +1,5 @@
+Sylve is a lightweight, open-source virtualization platform for FreeBSD,
+leveraging Bhyve for VMs and Jails for containerization, with deep ZFS
+integration. It provides a streamlined, Proxmox-like experience tailored for
+FreeBSD environments. Its backend is written in Go, and the frontend is written
+in Svelte (with Kit), integrated into a single binary for easy deployment.

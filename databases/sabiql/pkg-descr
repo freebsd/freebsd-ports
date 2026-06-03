@@ -1,0 +1,20 @@
+A fast, driver-less TUI to browse, query, and edit PostgreSQL databases — no
+drivers, no setup, just psql.
+Sabiql wraps your existing psql CLI - no Rust database drivers, no connection
+pools, no extra dependencies. Point it at your database and get a full-featured
+TUI with vim-like keybindings.
+
+Features:
+
+  - SQL Modal: ad-hoc queries with auto-completion for tables, columns, and
+    keywords
+  - ER Diagram: generate relationship diagrams via Graphviz, opened instantly
+    in your browser
+  - Inspector Pane: column details, types, constraints, and indexes for any
+    table
+  - Inline Cell Editing: edit cells in-place with a guarded UPDATE preview
+    before committing
+  - Row Deletion: DELETE with mandatory preview; risk level color-coded
+    (yellow/orange/red)
+  - Yank: copy any cell value to clipboard
+  - and more...

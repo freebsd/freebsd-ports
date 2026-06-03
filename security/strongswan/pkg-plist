@@ -1,6 +1,47 @@
 %%PKI%%bin/pki
 %%TPM%%bin/tpm_extendpcr
 @sample %%ETCDIR%%.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/blowfish.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/cmac.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/constraints.conf.sample
+%%CTR%%@sample %%ETCDIR%%.d/charon-cmd/ctr.conf.sample
+%%CURL%%@sample %%ETCDIR%%.d/charon-cmd/curl.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/drbg.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/eap-identity.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/eap-md5.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/eap-mschapv2.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/eap-peap.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/eap-tls.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/eap-ttls.conf.sample
+%%FIPS_PRF%%@sample %%ETCDIR%%.d/charon-cmd/fips-prf.conf.sample
+%%GCM%%@sample %%ETCDIR%%.d/charon-cmd/gcm.conf.sample
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon-cmd/gmp.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/kdf.conf.sample
+%%KERNELLIBIPSEC%%@sample %%ETCDIR%%.d/charon-cmd/kernel-libipsec.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/kernel-pfkey.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/kernel-pfroute.conf.sample
+%%LDAP%%@sample %%ETCDIR%%.d/charon-cmd/ldap.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/md4.conf.sample
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon-cmd/mgf1.conf.sample
+%%ML%%@sample %%ETCDIR%%.d/charon-cmd/ml.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/nonce.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/openssl.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/pem.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/pkcs1.conf.sample
+%%PKCS11%%@sample %%ETCDIR%%.d/charon-cmd/pkcs11.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/pkcs7.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/pkcs8.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/pubkey.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/random.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/resolve.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/revocation.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/socket-default.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/sshkey.conf.sample
+%%TPM%%@sample %%ETCDIR%%.d/charon-cmd/tpm.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/x509.conf.sample
+%%XAUTH%%@sample %%ETCDIR%%.d/charon-cmd/xauth-generic.conf.sample
+@sample %%ETCDIR%%.d/charon-cmd/xcbc.conf.sample
 @sample %%ETCDIR%%.d/charon-logging.conf.sample
 @sample %%ETCDIR%%.d/charon.conf.sample
 @sample %%ETCDIR%%.d/charon/addrblock.conf.sample
@@ -29,6 +70,7 @@
 @sample %%ETCDIR%%.d/charon/eap-tls.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-ttls.conf.sample
 %%FARP%%@sample %%ETCDIR%%.d/charon/farp.conf.sample
+%%FIPS_PRF%%@sample %%ETCDIR%%.d/charon/fips-prf.conf.sample
 %%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
 %%IPSECKEY%%@sample %%ETCDIR%%.d/charon/ipseckey.conf.sample
@@ -73,6 +115,7 @@
 %%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
 %%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-pam.conf.sample
 @sample %%ETCDIR%%.d/charon/xcbc.conf.sample
+@sample %%ETCDIR%%.d/iptfs.conf.sample
 %%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
 %%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
@@ -146,10 +189,8 @@ lib/ipsec/plugins/libstrongswan-eap-identity.la
 lib/ipsec/plugins/libstrongswan-eap-identity.so
 lib/ipsec/plugins/libstrongswan-eap-md5.la
 lib/ipsec/plugins/libstrongswan-eap-md5.so
-%%ML%%lib/ipsec/plugins/libstrongswan-ml.la
-%%ML%%lib/ipsec/plugins/libstrongswan-ml.so
-%%ML%%lib/ipsec/plugins/libstrongswan-ml.so.0
-%%ML%%lib/ipsec/plugins/libstrongswan-ml.so.0.0.0
+%%FIPS_PRF%%lib/ipsec/plugins/libstrongswan-fips-prf.la
+%%FIPS_PRF%%lib/ipsec/plugins/libstrongswan-fips-prf.so
 lib/ipsec/plugins/libstrongswan-eap-mschapv2.la
 lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
 lib/ipsec/plugins/libstrongswan-eap-peap.la
@@ -188,6 +229,8 @@ lib/ipsec/plugins/libstrongswan-md4.la
 lib/ipsec/plugins/libstrongswan-md4.so
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.so
+%%ML%%lib/ipsec/plugins/libstrongswan-ml.la
+%%ML%%lib/ipsec/plugins/libstrongswan-ml.so
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.la
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.so
 lib/ipsec/plugins/libstrongswan-nonce.la
@@ -312,6 +355,7 @@ sbin/charon-cmd
 %%DATADIR%%/templates/config/plugins/eap-tls.conf
 %%DATADIR%%/templates/config/plugins/eap-ttls.conf
 %%FARP%%%%DATADIR%%/templates/config/plugins/farp.conf
+%%FIPS_PRF%%%%DATADIR%%/templates/config/plugins/fips-prf.conf
 %%GCM%%%%DATADIR%%/templates/config/plugins/gcm.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
 %%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
@@ -358,8 +402,10 @@ sbin/charon-cmd
 %%XAUTH%%%%DATADIR%%/templates/config/plugins/xauth-pam.conf
 %%DATADIR%%/templates/config/plugins/xcbc.conf
 %%DATADIR%%/templates/config/strongswan.conf
+%%DATADIR%%/templates/config/strongswan.d/charon-cmd.conf
 %%DATADIR%%/templates/config/strongswan.d/charon-logging.conf
 %%DATADIR%%/templates/config/strongswan.d/charon.conf
+%%DATADIR%%/templates/config/strongswan.d/iptfs.conf
 %%PKI%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
 %%SQL%%%%DATADIR%%/templates/config/strongswan.d/pool.conf
 %%SWANCTL%%%%DATADIR%%/templates/config/strongswan.d/swanctl.conf

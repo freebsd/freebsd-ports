@@ -1,6 +1,6 @@
 PORTNAME=	cassandra
 DISTVERSION=	3.11.14
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	databases java
 MASTER_SITES=	LOCAL/fernape:repo
 PKGNAMESUFFIX=	3
@@ -12,6 +12,9 @@ WWW=		https://cassandra.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=		Cassandra 3.x is no longer maintained upstream, superseded by databases/cassandra4
+EXPIRATION_DATE=	2026-07-31
 
 RUN_DEPENDS=	snappyjava>=0:archivers/snappy-java
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
@@ -85,10 +88,10 @@ do-build:
 	@${DO_NADA} # Do nothing: Prevent USE_ANT from running a default build target.
 
 do-build-DOCS-on:
-	@cd ${WRKSRC} && ANT_OPTS="${ANT_OPTS_LOCAL}" ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocal.repository=${REPO_DIR} -Dpycmd=${PYTHON_CMD} freebsd-stage-doc
+	cd ${WRKSRC} && ${MAKE_ENV} ANT_OPTS="${ANT_OPTS_LOCAL}" ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocal.repository=${REPO_DIR} -Dpycmd=${PYTHON_CMD} freebsd-stage-doc
 
 do-build-DOCS-off:
-	@cd ${WRKSRC} && ANT_OPTS="${ANT_OPTS} -Xmx512m" ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocal.repository=${REPO_DIR} freebsd-stage
+	cd ${WRKSRC} && ${MAKE_ENV} ANT_OPTS="${ANT_OPTS} -Xmx512m" ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocal.repository=${REPO_DIR} freebsd-stage
 
 post-build:
 .for f in ${SCRIPT_FILES}

@@ -1,5 +1,5 @@
 PORTNAME=	c-blosc2
-PORTVERSION=	2.19.1
+PORTVERSION=	2.23.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing
+USES=		cmake:testing cpe
 
 CMAKE_OFF=	BUILD_LITE \
 		DEACTIVATE_AVX2 \
@@ -62,6 +62,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	Blosc
 USE_GITHUB=	yes
+
+CPE_VENDOR=	${PORTNAME}_project
 
 post-patch:
 # Clean up bundled libraries

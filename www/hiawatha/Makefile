@@ -1,17 +1,16 @@
 PORTNAME=	hiawatha
-DISTVERSION=	11.7
-PORTREVISION=	1
+DISTVERSION=	12.2
 CATEGORIES=	www
-MASTER_SITES=	https://hiawatha.leisink.net/files/
+MASTER_SITES=	https://hiawatha.leisink.net/files/download/
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	Advanced and secure web server for Unix
 WWW=		https://hiawatha.leisink.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmbedtls.so:security/mbedtls3
+LIB_DEPENDS=	libmbedtls.so:security/mbedtls4
 
 USES=		cmake:insource compiler:c11 cpe localbase:ldflags shebangfix
 CPE_VENDOR=	hiawatha-webserver
@@ -57,6 +56,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
 		-e 's|/etc/hiawatha|${ETCDIR}|g' \
 		${WRKSRC}/man/hiawatha.1.in
+	@${REINPLACE_CMD} -e 's|EnableSandbox|#EnableSandbox|g' \
+		${WRKSRC}/config/hiawatha.conf.in
 
 post-install:
 .for f in hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf error.xslt \

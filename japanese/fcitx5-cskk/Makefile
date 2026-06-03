@@ -1,6 +1,7 @@
 PORTNAME=	fcitx5-cskk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=   1
 CATEGORIES=	japanese textproc
 
 MAINTAINER=	syobon@syobon.net

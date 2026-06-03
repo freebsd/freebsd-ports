@@ -12,8 +12,6 @@ WWW=		https://github.com/fschulze/pytest-flakes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest4-flakes
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>0:devel/py-pyflakes@${PY_FLAVOR}
 

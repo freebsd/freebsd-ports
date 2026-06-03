@@ -69,11 +69,11 @@ include/atomic_ops_stack.h
 lib/libatomic_ops.a
 lib/libatomic_ops.so
 lib/libatomic_ops.so.1
-lib/libatomic_ops.so.1.2.0
+lib/libatomic_ops.so.1.3.0
 lib/libatomic_ops_gpl.a
 lib/libatomic_ops_gpl.so
 lib/libatomic_ops_gpl.so.1
-lib/libatomic_ops_gpl.so.1.2.0
+lib/libatomic_ops_gpl.so.1.3.0
 libdata/pkgconfig/atomic_ops.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

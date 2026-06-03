@@ -1,0 +1,10 @@
+--- deps/Makefile.orig	2026-04-08 23:41:58 UTC
++++ deps/Makefile
+@@ -120,6 +120,7 @@ libev/libev/.libs/libev.a:
+ 	cd libev && rm -rf libev-*/ || true
+ 	cd libev && tar -zxf libev-*.tar.gz
+ 	cd libev/libev && patch ev.c < ../ev.c-multiplication-overflow.patch
++	cd libev && sed -i -e 's/statfs.h/mount.h/' libev-*/ev.c
+ 	cd libev/libev && ./configure
+ 	cd libev/libev && CC=${CC} CXX=${CXX} ${MAKE}
+ 

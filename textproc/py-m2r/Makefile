@@ -1,6 +1,6 @@
 PORTNAME=	m2r
 DISTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ WWW=		https://github.com/miyakogi/m2r
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream repo archived on Nov 17, 2022
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mistune0>=0:textproc/py-mistune0@${PY_FLAVOR}

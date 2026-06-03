@@ -1,6 +1,6 @@
---- audio.h.orig	2008-11-11 11:29:08 UTC
+--- audio.h.orig	2025-06-08 11:12:29 UTC
 +++ audio.h
-@@ -118,7 +118,7 @@ void raw_close(void *);
+@@ -136,7 +136,7 @@ long wav_ieee_read(void *, double **buffer, int sample
  long wav_read(void *, double **buffer, int samples, int fast, int chunk);
  long wav_ieee_read(void *, double **buffer, int samples, int fast, int chunk);
  

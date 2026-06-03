@@ -1,0 +1,3 @@
+defusedcsv is a drop-in replacement for Python's standard csv module.
+It helps mitigate CSV injection attacks by escaping values that may be
+interpreted as formulas by spreadsheet applications.

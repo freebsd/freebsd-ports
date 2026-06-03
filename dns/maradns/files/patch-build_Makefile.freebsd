@@ -1,12 +1,15 @@
---- build/Makefile.freebsd.orig	2012-02-12 06:04:11 UTC
+--- build/Makefile.freebsd.orig	2023-05-03 00:53:39 UTC
 +++ build/Makefile.freebsd
-@@ -47,7 +47,8 @@ all: 
- 	cd ../qual ; make $(M) ; cd ../server ; \
- 	make $(M) $(Q) COMPILED=\"$(COMPILED)\" $(V) ; \
- 	cd ../tools ; make $(M) ; \
--	cd ../deadwood-*/src/ ; make FLAGS="-O2"; \
-+	cd misc ; make $(M) ; \
-+	cd ../../deadwood-*/src/ ; make FLAGS="-O2"; \
- 	cd ../../tcp ; make $(M) $(V) ; cat ../00README.FIRST
+@@ -31,8 +31,10 @@ Q="DEFINES=-DSELECT_PROBLEM"
+ Q="DEFINES=-DSELECT_PROBLEM"
  
- debug: 
+ # FreeBSD needs some special flags to compile MaraDNS
+-CC="cc -O2 -Wall -pipe -D_THREAD_SAFE -pthread"
+-M=CC=$(CC) 
++#CC="cc -O2 -Wall -pipe -D_THREAD_SAFE -pthread"
++#M=CC=$(CC) 
++CFLAGS+=-D_THREAD_SAFE -pthread
++M="CC=$(CC) $(CFLAGS)"
+ V="VERSION=$(VERSION)"
+ 
+ # Debug

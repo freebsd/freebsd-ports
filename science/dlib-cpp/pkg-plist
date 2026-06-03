@@ -66,6 +66,7 @@ include/dlib/clustering/modularity_clustering.h
 include/dlib/clustering/modularity_clustering_abstract.h
 include/dlib/clustering/spectral_cluster.h
 include/dlib/clustering/spectral_cluster_abstract.h
+include/dlib/cmake_utils/FindCUDNN.cmake
 include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
 include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
@@ -141,6 +142,8 @@ include/dlib/cuda/tensor.h
 include/dlib/cuda/tensor_abstract.h
 include/dlib/cuda/tensor_tools.h
 include/dlib/data_io.h
+include/dlib/data_io/arc_agi.h
+include/dlib/data_io/arc_agi_abstract.h
 include/dlib/data_io/cifar.h
 include/dlib/data_io/cifar_abstract.h
 include/dlib/data_io/image_dataset_metadata.h
@@ -1012,12 +1015,10 @@ lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.so
-lib/libdlib.so.20.0.0
+lib/libdlib.so.20.0.1
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
 @dir include/dlib/cmake_utils/test_for_avx
-@dir include/dlib/cmake_utils/test_for_cuda
-@dir include/dlib/cmake_utils/test_for_cudnn
 @dir include/dlib/cmake_utils/test_for_libjpeg
 @dir include/dlib/cmake_utils/test_for_libjxl
 @dir include/dlib/cmake_utils/test_for_libpng

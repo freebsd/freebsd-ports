@@ -1,10 +1,10 @@
---- src/3rdparty/chromium/base/process/process_metrics_freebsd.cc.orig	2024-10-23 07:00:35 UTC
+--- src/3rdparty/chromium/base/process/process_metrics_freebsd.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
-@@ -3,43 +3,58 @@
+@@ -3,41 +3,92 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
-+#include "base/notreached.h"
++#include "base/notimplemented.h"
  
  #include <stddef.h>
 +#include <sys/types.h>
@@ -26,8 +26,7 @@
 +  int pageshift = 0;
  
 -ProcessMetrics::ProcessMetrics(ProcessHandle process)
--    : process_(process),
--      last_cpu_(0) {}
+-    : process_(process), last_cpu_(0) {}
 +  while (pagesize > 1) {
 +    pageshift++;
 +    pagesize >>= 1;
@@ -47,37 +46,68 @@
  
 -base::expected<double, ProcessCPUUsageError>
 -ProcessMetrics::GetPlatformIndependentCPUUsage() {
-+base::expected<TimeDelta, ProcessCPUUsageError>
-+ProcessMetrics::GetCumulativeCPUUsage() {
-   struct kinfo_proc info;
+-  struct kinfo_proc info;
 -  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
 -  size_t length = sizeof(info);
-+  size_t length = sizeof(struct kinfo_proc);
-+  struct timeval tv;
++base::expected<ProcessMemoryInfo, ProcessUsageError>
++ProcessMetrics::GetMemoryInfo() const {
++  ProcessMemoryInfo memory_info;
++  kvm_t *kd = kvm_open(nullptr, "/dev/null", nullptr, O_RDONLY, "kvm_open");
++  struct kinfo_proc *pp;
++  int nproc;
  
-+  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
-+
-   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
+-  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
 -    return base::unexpected(ProcessCPUUsageError::kSystemError);
-+    return base::ok(TimeDelta());
++  if (kd == nullptr) {
++    return base::unexpected(ProcessUsageError::kSystemError);
+   }
  
 -  return base::ok(double{info.ki_pctcpu} / FSCALE * 100.0);
++  if ((pp = kvm_getprocs(kd, KERN_PROC_PID, process_, &nproc)) == nullptr) {
++    kvm_close(kd);
++    return base::unexpected(ProcessUsageError::kProcessNotFound);
++  }
++
++  if (nproc > 0) {
++    memory_info.resident_set_bytes = pp->ki_rssize << GetPageShift();
++  } else {
++    kvm_close(kd);
++    return base::unexpected(ProcessUsageError::kProcessNotFound);
++  }
++
++  kvm_close(kd);
++  return memory_info;
+ }
+ 
+ base::expected<TimeDelta, ProcessCPUUsageError>
+ ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED();
++  struct kinfo_proc info;
++  size_t length = sizeof(struct kinfo_proc);
++  struct timeval tv;
++
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
++
++  if (process_ == 0) {
++    return base::unexpected(ProcessCPUUsageError::kSystemError);
++  }
++
++  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
++    return base::unexpected(ProcessCPUUsageError::kSystemError);
++  }
++
++  if (length == 0) {
++    return base::unexpected(ProcessCPUUsageError::kProcessNotFound);
++  }
++
 +  return base::ok(Microseconds(info.ki_runtime));
  }
  
--base::expected<TimeDelta, ProcessCPUUsageError>
--ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
--}
--
  size_t GetSystemCommitCharge() {
-   int mib[2], pagesize;
-   unsigned long mem_total, mem_free, mem_inactive;
-@@ -61,6 +76,230 @@ size_t GetSystemCommitCharge() {
-   pagesize = getpagesize();
+@@ -65,5 +116,118 @@ size_t GetSystemCommitCharge() {
  
-   return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
-+}
+   return mem_total - (mem_free * pagesize) - (mem_inactive * pagesize);
+ }
 +
 +int64_t GetNumberOfThreads(ProcessHandle process) {
 +  // Taken from FreeBSD top (usr.bin/top/machine.c)
@@ -159,60 +189,6 @@
 +  return total_count;
 +}
 +
-+size_t ProcessMetrics::GetResidentSetSize() const {
-+  kvm_t *kd = kvm_open(nullptr, "/dev/null", nullptr, O_RDONLY, "kvm_open");
-+
-+  if (kd == nullptr)
-+    return 0;
-+
-+  struct kinfo_proc *pp;
-+  int nproc;
-+
-+  if ((pp = kvm_getprocs(kd, KERN_PROC_PID, process_, &nproc)) == nullptr) {
-+    kvm_close(kd);
-+    return 0;
-+  }
-+
-+  size_t rss;
-+
-+  if (nproc > 0) {
-+    rss = pp->ki_rssize << GetPageShift();
-+  } else {
-+    rss = 0;
-+  }
-+
-+  kvm_close(kd);
-+  return rss;
-+}
-+
-+uint64_t ProcessMetrics::GetVmSwapBytes() const {
-+  kvm_t *kd = kvm_open(nullptr, "/dev/null", nullptr, O_RDONLY, "kvm_open");
-+
-+  if (kd == nullptr)
-+    return 0;
-+
-+  struct kinfo_proc *pp;
-+  int nproc;
-+
-+  if ((pp = kvm_getprocs(kd, KERN_PROC_PID, process_, &nproc)) == nullptr) {
-+    kvm_close(kd);
-+    return 0;
-+  }
-+
-+  size_t swrss;
-+
-+  if (nproc > 0) {
-+    swrss = pp->ki_swrss > pp->ki_rssize
-+      ? (pp->ki_swrss - pp->ki_rssize) << GetPageShift()
-+      : 0;
-+  } else {
-+    swrss = 0;
-+  }
-+
-+  kvm_close(kd);
-+  return swrss;
-+}
-+
 +int ProcessMetrics::GetIdleWakeupsPerSecond() {
 +  NOTIMPLEMENTED();
 +  return 0;
@@ -245,62 +221,5 @@
 +SystemDiskInfo::SystemDiskInfo(const SystemDiskInfo& other) = default;
 +
 +SystemDiskInfo& SystemDiskInfo::operator=(const SystemDiskInfo&) = default;
-+
-+Value::Dict SystemDiskInfo::ToDict() const {
-+  Value::Dict res;
-+
-+  // Write out uint64_t variables as doubles.
-+  // Note: this may discard some precision, but for JS there's no other option.
-+  res.Set("reads", static_cast<double>(reads));
-+  res.Set("reads_merged", static_cast<double>(reads_merged));
-+  res.Set("sectors_read", static_cast<double>(sectors_read));
-+  res.Set("read_time", static_cast<double>(read_time));
-+  res.Set("writes", static_cast<double>(writes));
-+  res.Set("writes_merged", static_cast<double>(writes_merged));
-+  res.Set("sectors_written", static_cast<double>(sectors_written));
-+  res.Set("write_time", static_cast<double>(write_time));
-+  res.Set("io", static_cast<double>(io));
-+  res.Set("io_time", static_cast<double>(io_time));
-+  res.Set("weighted_io_time", static_cast<double>(weighted_io_time));
-+
-+  NOTIMPLEMENTED();
-+
-+  return res;
-+}
-+
-+Value::Dict SystemMemoryInfoKB::ToDict() const {
-+  Value::Dict res;
-+  res.Set("total", total);
-+  res.Set("free", free);
-+  res.Set("available", available);
-+  res.Set("buffers", buffers);
-+  res.Set("cached", cached);
-+  res.Set("active_anon", active_anon);
-+  res.Set("inactive_anon", inactive_anon);
-+  res.Set("active_file", active_file);
-+  res.Set("inactive_file", inactive_file);
-+  res.Set("swap_total", swap_total);
-+  res.Set("swap_free", swap_free);
-+  res.Set("swap_used", swap_total - swap_free);
-+  res.Set("dirty", dirty);
-+  res.Set("reclaimable", reclaimable);
-+
-+  NOTIMPLEMENTED();
-+
-+  return res;
-+}
-+
-+Value::Dict VmStatInfo::ToDict() const {
-+  Value::Dict res;
-+  // TODO(crbug.com/1334256): Make base::Value able to hold uint64_t and remove
-+  // casts below.
-+  res.Set("pswpin", static_cast<int>(pswpin));
-+  res.Set("pswpout", static_cast<int>(pswpout));
-+  res.Set("pgmajfault", static_cast<int>(pgmajfault));
-+
-+  NOTIMPLEMENTED();
-+
-+  return res;
- }
  
  }  // namespace base

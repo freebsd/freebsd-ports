@@ -1,11 +1,12 @@
 PORTNAME=	rdiscount
-PORTVERSION=	2.2.7.3
+PORTVERSION=	2.2.7.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast Markdown converter for ruby based on discount
-WWW=		https://dafoster.net/projects/rdiscount/
+WWW=		https://dafoster.net/projects/rdiscount/ \
+		https://github.com/davidfstr/rdiscount
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

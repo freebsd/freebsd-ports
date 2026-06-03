@@ -72,9 +72,6 @@ bin/test-connect-t
 @comment %%ETCDIR%%/server.cnf
 @sample %%ETCDIR%%/user_map.conf.sample
 include/mysql/server/big_endian.h
-include/mysql/server/byte_order_generic.h
-include/mysql/server/byte_order_generic_x86.h
-include/mysql/server/byte_order_generic_x86_64.h
 include/mysql/server/decimal.h
 include/mysql/server/errmsg.h
 include/mysql/server/handler_ername.h
@@ -223,6 +220,7 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/simple_password_check.so
 lib/mysql/plugin/sql_errlog.so
+lib/mysql/plugin/test_pam_modules/pam_mariadb_mtr.so
 lib/mysql/plugin/test_sql_service.so
 lib/mysql/plugin/test_versioning.so
 lib/mysql/plugin/type_mysql_json.so
@@ -455,7 +453,6 @@ libexec/mysqld
 share/aclocal/mysql.m4
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-BINARY
-%%PORTDOCS%%%%WSREP%%%%DOCSDIR%%/README-wsrep
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/THIRDPARTY
 %%MROONGA%%%%PORTDOCS%%%%DOCSDIR%%/groonga/README.md

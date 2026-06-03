@@ -1,6 +1,6 @@
 PORTNAME=	dlpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0
+DISTVERSION=	1.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://dmlc.github.io/dlpack/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang python:run shebangfix
+USES=		cmake compiler:c++11-lang python:run shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

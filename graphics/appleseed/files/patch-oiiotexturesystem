@@ -1,0 +1,123 @@
+--- src/appleseed/renderer/device/cpu/cpurenderdevice.cpp.orig
++++ src/appleseed/renderer/device/cpu/cpurenderdevice.cpp
+@@ -69,12 +69,12 @@
+ 
+     RENDERER_LOG_DEBUG("creating oiio texture system...");
+     m_texture_system = OIIOTextureSystemFactory::create(false);
+-    m_texture_system->attribute("automip", 0);
+-    m_texture_system->attribute("accept_untiled", 1);
+-    m_texture_system->attribute("accept_unmipped", 1);
+-    m_texture_system->attribute("gray_to_rgb", 1);
+-    m_texture_system->attribute("latlong_up", "y");
+-    m_texture_system->attribute("flip_t", 1);
++    (*m_texture_system)->attribute("automip", 0);
++    (*m_texture_system)->attribute("accept_untiled", 1);
++    (*m_texture_system)->attribute("accept_unmipped", 1);
++    (*m_texture_system)->attribute("gray_to_rgb", 1);
++    (*m_texture_system)->attribute("latlong_up", "y");
++    (*m_texture_system)->attribute("flip_t", 1);
+ 
+     m_renderer_services =
+         new RendererServices(
+@@ -116,7 +116,7 @@
+     m_shading_system->release();
+     delete m_renderer_services;
+ 
+-    const string stats = m_texture_system->getstats();
++    const string stats = (*m_texture_system)->getstats();
+     const string modified_stats = prefix_all_lines(trim_both(stats), "oiio: ");
+     RENDERER_LOG_DEBUG("%s", modified_stats.c_str());
+ 
+@@ -147,20 +147,20 @@
+         pretty_size(texture_cache_size_bytes).c_str());
+     const float texture_cache_size_mb =
+         static_cast<float>(texture_cache_size_bytes) / (1024 * 1024);
+-    m_texture_system->attribute("max_memory_MB", texture_cache_size_mb);
++    (*m_texture_system)->attribute("max_memory_MB", texture_cache_size_mb);
+ 
+     // Set OIIO search paths.
+     string prev_oiio_search_path;
+-    m_texture_system->getattribute("searchpath", prev_oiio_search_path);
++    (*m_texture_system)->getattribute("searchpath", prev_oiio_search_path);
+     if (prev_oiio_search_path != project_search_paths)
+     {
+         RENDERER_LOG_INFO("setting oiio search paths to %s", project_search_paths.c_str());
+-        m_texture_system->invalidate_all(true);
+-        m_texture_system->attribute("searchpath", project_search_paths);
++        (*m_texture_system)->invalidate_all(true);
++        (*m_texture_system)->attribute("searchpath", project_search_paths);
+     }
+ 
+     // Also use the project search paths to look for OpenImageIO plugins.
+-    m_texture_system->attribute("plugin_searchpath", project_search_paths);
++    (*m_texture_system)->attribute("plugin_searchpath", project_search_paths);
+ 
+     // Initialize OSL.
+     m_renderer_services->initialize(m_texture_store);
+--- src/appleseed/renderer/kernel/texturing/oiiotexturesystem.cpp.orig
++++ src/appleseed/renderer/kernel/texturing/oiiotexturesystem.cpp
+@@ -32,15 +32,18 @@
+ namespace renderer
+ {
+ 
++OIIOTextureSystem::OIIOTextureSystem(const bool shared)
++  : ts(OIIO::TextureSystem::create(shared)) {}
++
+ void OIIOTextureSystem::release()
+ {
+-    OIIO::TextureSystem::destroy(
+-        reinterpret_cast<OIIO::TextureSystem*>(this));
++    OIIO::TextureSystem::destroy(ts);
++    delete this;
+ }
+ 
+ OIIOTextureSystem* OIIOTextureSystemFactory::create(const bool shared)
+ {
+-    return reinterpret_cast<OIIOTextureSystem*>(OIIO::TextureSystem::create(shared));
++    return new OIIOTextureSystem(shared);
+ }
+ 
+ }   // namespace renderer
+--- src/appleseed/renderer/kernel/texturing/oiiotexturesystem.h.orig
++++ src/appleseed/renderer/kernel/texturing/oiiotexturesystem.h
+@@ -37,14 +37,15 @@
+ {
+ 
+ class OIIOTextureSystem
+-  : public OIIO::TextureSystem
+ {
+   public:
++    OIIOTextureSystem(const bool shared);
++    auto operator->() const noexcept { return ts.get(); }
++    auto get() const noexcept { return ts.get(); }
+     void release();
+ 
+   private:
+-    // Needed by gcc 8.
+-    void operator delete(void*) {}
++    std::shared_ptr<OIIO::TextureSystem> ts;
+ };
+ 
+ class OIIOTextureSystemFactory
+--- src/appleseed/renderer/meta/tests/test_environmentedf.cpp.orig
++++ src/appleseed/renderer/meta/tests/test_environmentedf.cpp
+@@ -195,7 +195,7 @@ TEST_SUITE(Renderer_Modeling_EnvironmentEDF)
+           , m_texture_system(
+                 OIIOTextureSystemFactory::create(),
+                 [](OIIOTextureSystem* object) { object->release(); })
+-          , m_renderer_services(Base::m_project, *m_texture_system)
++          , m_renderer_services(Base::m_project, *m_texture_system->get())
+           , m_shading_system(
+                 OSLShadingSystemFactory::create(&m_renderer_services, m_texture_system.get()),
+                 [](OSLShadingSystem* object) { object->release(); })
+--- src/appleseed/renderer/meta/tests/test_volume.cpp.orig
++++ src/appleseed/renderer/meta/tests/test_volume.cpp
+@@ -96,7 +96,7 @@ TEST_SUITE(Renderer_Modeling_Volume)
+           , m_texture_system(
+               OIIOTextureSystemFactory::create(),
+               [](OIIOTextureSystem* object) { object->release(); })
+-          , m_renderer_services(base.m_project, *m_texture_system)
++          , m_renderer_services(base.m_project, *m_texture_system->get())
+           , m_shading_system(
+               OSLShadingSystemFactory::create(&m_renderer_services, m_texture_system.get()),
+               [](OSLShadingSystem* object) { object->release(); })

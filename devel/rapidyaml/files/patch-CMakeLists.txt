@@ -1,17 +1,19 @@
---- CMakeLists.txt.orig	2021-12-28 17:18:42 UTC
+--- CMakeLists.txt.orig	2025-04-10 19:51:13 UTC
 +++ CMakeLists.txt
-@@ -17,9 +17,6 @@ option(RYML_DBG "Enable (very verbose) ryml debug prin
+@@ -27,11 +27,6 @@ option(RYML_INSTALL "Enable install target" ON)
  
  #-------------------------------------------------------
  
 -c4_require_subproject(c4core INCORPORATE
--    SUBDIRECTORY ${RYML_EXT_DIR}/c4core)
+-    SUBDIRECTORY ${RYML_EXT_DIR}/c4core
+-    OVERRIDE C4CORE_INSTALL ${RYML_INSTALL}
+-)
 -
  c4_add_library(ryml
      SOURCES
          ryml.hpp
-@@ -47,14 +44,15 @@ c4_add_library(ryml
-         c4/yml/tree.cpp
+@@ -74,14 +69,14 @@ c4_add_library(ryml
+         c4/yml/version.cpp
          c4/yml/writer.hpp
          c4/yml/yml.hpp
 -        ryml.natvis
@@ -25,7 +27,6 @@
 +
 +include_directories(/usr/local/include)
 +target_link_libraries(ryml c4core)
-+
  
- if(NOT RYML_DEFAULT_CALLBACKS)
-     target_compile_definitions(ryml PRIVATE RYML_NO_DEFAULT_CALLBACKS)
+ if(RYML_WITH_TAB_TOKENS)
+     target_compile_definitions(ryml PUBLIC RYML_WITH_TAB_TOKENS)

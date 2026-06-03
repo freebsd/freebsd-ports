@@ -1,0 +1,11 @@
+Terminal OpenAPI Spec (OAS) viewer
+
+* Keyboard Shortcuts:
+
+  Press `?` to see the help screen with all available keyboard shortcuts.
+
+* OpenAPI support:
+
+  oq supports all 3.* OpenAPI specification versions: 3.0, 3.1 and 3.2.
+
+  Both JSON and YAML formats are supported.

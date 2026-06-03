@@ -1,0 +1,4 @@
+cachebox is the fastest memoizing and caching Python library, written in Rust.
+It supports 7 caching algorithms: FIFO, LRU, LFU, RR, TTL, VTTL, and basic
+cache. Features include thread safety, zero external dependencies, and
+10-50x performance improvements over comparable Python caching libraries.

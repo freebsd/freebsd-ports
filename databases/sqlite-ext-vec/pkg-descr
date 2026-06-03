@@ -1,0 +1,7 @@
+sqlite-vec is an extremely small, "fast enough" vector search SQLite extension.
+
+Features:
+- Store and query float, int8, and binary vectors in vec0 virtual tables
+- Written in pure C, no dependencies, runs anywhere SQLite runs
+- Supports Linux/MacOS/Windows, in the browser with WASM, Raspberry Pis, etc.
+- Store non-vector data in metadata, auxiliary, or partition key columns

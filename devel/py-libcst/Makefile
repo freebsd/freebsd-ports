@@ -1,13 +1,12 @@
 PORTNAME=	libcst
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Concrete syntax tree with AST-like properties
+COMMENT=	Concrete syntax tree with AST-like properties for Python programs
 WWW=		https://github.com/Instagram/LibCST
 
 LICENSE=	MIT
@@ -31,12 +30,8 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}libcst03
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} < 31300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyyaml>=5.2:devel/py-pyyaml@${PY_FLAVOR}
+.if ${PYTHON_REL} < 31300 || ${PYTHON_REL} >= 31400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.3:devel/py-pyyaml@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyyaml-ft>=8.0.0:devel/py-pyyaml-ft@${PY_FLAVOR}
 .endif

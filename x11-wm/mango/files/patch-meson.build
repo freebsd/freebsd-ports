@@ -1,0 +1,30 @@
+--- meson.build.orig	2026-02-18 05:26:24 UTC
++++ meson.build
+@@ -12,12 +12,16 @@ endif
+     endif
+ endif
+ 
++osname = build_machine.system()
++
+ prefix = get_option('prefix')
+ sysconfdir = get_option('sysconfdir')
+ 
+ # 如果 sysconfdir 以 prefix 开头，去掉 prefix
+-if sysconfdir.startswith(prefix) and not is_nixos
+-  sysconfdir = sysconfdir.substring(prefix.length())
++if sysconfdir.startswith(prefix) and not is_nixos and osname != 'freebsd'
++  # this fails with: Unknown method "length" in object <[OptionStringHolder] holds [OptionString]
++  # sysconfdir = sysconfdir.substring(prefix.length())
++  sysconfdir = sysconfdir.replace(prefix, '')
+   # 确保 sysconfdir 是绝对路径
+   if not sysconfdir.startswith('/')
+     sysconfdir = '/' + sysconfdir
+@@ -72,7 +76,7 @@ c_args = [
+   '-DWLR_USE_UNSTABLE',
+   '-D_POSIX_C_SOURCE=200809L',
+   '-DVERSION="@0@"'.format(version_with_hash),
+-  '-DSYSCONFDIR="@0@"'.format('/etc'),
++  '-DSYSCONFDIR="@0@"'.format(sysconfdir),
+ ]
+ 
+ # 仅在 debug 选项启用时添加调试参数

@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-freebsd.cc.orig	2025-05-07 06:48:23 UTC
+--- v8/src/base/platform/platform-freebsd.cc.orig	2025-12-10 15:04:57 UTC
 +++ v8/src/base/platform/platform-freebsd.cc
 @@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache() {
    return new PosixDefaultTimezoneCache();

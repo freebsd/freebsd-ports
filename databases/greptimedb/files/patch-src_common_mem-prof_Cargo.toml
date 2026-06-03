@@ -1,0 +1,19 @@
+--- src/common/mem-prof/Cargo.toml.orig	2026-04-09 01:23:46 UTC
++++ src/common/mem-prof/Cargo.toml
+@@ -15,7 +15,7 @@ tokio.workspace = true
+ tempfile = "3.4"
+ tokio.workspace = true
+ 
+-[target.'cfg(not(windows))'.dependencies]
++[target.'cfg(not(any(windows, target_os = "freebsd")))'.dependencies]
+ tikv-jemalloc-ctl = { version = "0.6", features = ["use_std", "stats"] }
+ jemalloc-pprof-utils = { version = "0.8", package = "pprof_util", features = [
+     "flamegraph",
+@@ -23,6 +23,6 @@ jemalloc-pprof-mappings = { version = "0.7", package =
+ ] } # for parsing jemalloc prof dump
+ jemalloc-pprof-mappings = { version = "0.7", package = "mappings" } # for get the name of functions in the prof dump
+ 
+-[target.'cfg(not(windows))'.dependencies.tikv-jemalloc-sys]
++[target.'cfg(not(any(windows, target_os = "freebsd")))'.dependencies.tikv-jemalloc-sys]
+ features = ["stats", "profiling", "unprefixed_malloc_on_supported_platforms"]
+ version = "0.6"

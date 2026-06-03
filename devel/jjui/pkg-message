@@ -1,0 +1,23 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.10.0"
+  message: <<EOM
+
+Version 0.10 introduces breaking changes by replacing the legacy keybinding
+and customisation model with the new actions + bindings system.
+
+* [keys] configuration is no longer used.
+* [custom_commands] is replaced by [[actions]] and [[bindings]].
+* [leader] sequences are replaced by sequence bindings via seq.
+
+If you have an existing configuration, plan to migrate it
+rather than expecting a drop-in upgrade from v0.9.x.
+
+Check the URL below for more about migrating process.
+
+---> https://idursun.github.io/jjui/migrating/v0_10/
+
+EOM
+}
+]

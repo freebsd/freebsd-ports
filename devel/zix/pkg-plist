@@ -13,6 +13,7 @@ include/zix-0/zix/status.h
 include/zix-0/zix/string_view.h
 include/zix-0/zix/thread.h
 include/zix-0/zix/tree.h
+include/zix-0/zix/warnings.h
 include/zix-0/zix/zix.h
 lib/libzix-0.so
 lib/libzix-0.so.0

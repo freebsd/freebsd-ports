@@ -443,6 +443,7 @@ share/man/man1/rspterminal.1.gz
 share/man/man1/scriptingclient.1.gz
 share/man/man1/scriptingcontrol.1.gz
 share/man/man1/scriptingserviceexample.1.gz
+share/metainfo/no.nntb.dreibh.rsplib.fractalpooluser.metainfo.xml
 %%DATADIR%%/rsplib.bib
 %%DATADIR%%/rsplib.pdf
 %%DATADIR%%/rsplib.png

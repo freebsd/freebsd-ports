@@ -1,0 +1,8 @@
+EasyOCR is a Python package for out-of-the-box Optical Character
+Recognition (OCR) with 80+ supported languages and all common writing
+scripts, including Latin, Chinese, Arabic, Devanagari, Cyrillic, etc.
+
+This port provides:
+* the CLI OCR tool
+* the Python API for recognizing text in images through the Python
+  module EasyOCR

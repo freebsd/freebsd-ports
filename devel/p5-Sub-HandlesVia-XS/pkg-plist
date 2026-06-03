@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Sub/HandlesVia/XS.pm
+%%SITE_ARCH%%/auto/Sub/HandlesVia/XS/XS.so
+%%PERL5_MAN3%%/Sub::HandlesVia::XS.3.gz

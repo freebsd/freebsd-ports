@@ -1,6 +1,6 @@
 PORTNAME=	Crypt-DES
 PORTVERSION=	2.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,8 @@ TEST_DEPENDS=	p5-Crypt-CBC>=0:security/p5-Crypt-CBC
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/DES/DES.so
 
 .include <bsd.port.mk>

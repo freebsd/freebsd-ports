@@ -1,0 +1,2 @@
+DTCMP provides fast, scalable comparison-based operations on MPI datatypes,
+including sorting and key/value reductions, built atop lwgrp.

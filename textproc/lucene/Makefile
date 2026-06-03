@@ -1,5 +1,6 @@
 PORTNAME=	lucene
 PORTVERSION=	3.6.2
+PORTREVISION=	2
 # Be sure to chase devel/openoffice-devel and textproc/py-lucene
 # when updating this
 CATEGORIES=	textproc java devel

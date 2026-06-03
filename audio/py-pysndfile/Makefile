@@ -1,5 +1,5 @@
 PORTNAME=	pysndfile
-DISTVERSION=	1.4.7
+DISTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
@@ -11,17 +11,15 @@ WWW=		https://forge-2.ircam.fr/roebel/pysndfile
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pkgconfig>0:devel/py-pkgconfig@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python localbase
-USE_PYTHON=	distutils autoplist cython pytest
-
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/tests
-
-# tests fail: ModuleNotFoundError: No module named 'pysndfile_inst_dir'; reported to the author via-e-mail on 2024-12-15
+USE_PYTHON=	pep517 autoplist cython
 
 .include <bsd.port.mk>

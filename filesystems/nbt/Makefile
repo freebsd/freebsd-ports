@@ -5,7 +5,7 @@ MASTER_SITES=	SF/nbtfsutils
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	nbtfsutils-${REVISION_DATE}-${REVISION_HASH}-src
 
-MAINTAINER=	msl0000023508@gmail.com
+MAINTAINER=	whr@rivoreo.one
 COMMENT=	Editing Named Binary Tag (NBT) as using a file system
 WWW=		https://sourceforge.net/projects/nbtfsutils/
 

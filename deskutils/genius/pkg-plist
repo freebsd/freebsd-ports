@@ -36,8 +36,10 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/fourier-series-animation.gel
 %%DATADIR%%/examples/fourier-series-plotting.gel
 %%DATADIR%%/examples/laplace-fdm.gel
+%%DATADIR%%/examples/lefthand-rule-doubling.gel
 %%DATADIR%%/examples/linapprox.gel
 %%DATADIR%%/examples/lorenz.gel
+%%DATADIR%%/examples/midpoint-rule-doubling.gel
 %%DATADIR%%/examples/newton-calc-sqrt2.gel
 %%DATADIR%%/examples/newton-sqrt2.gel
 %%DATADIR%%/examples/peano-restrictions.gel
@@ -54,6 +56,7 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/strange-attractor.gel
 %%DATADIR%%/examples/taylor-exp.gel
 %%DATADIR%%/examples/taylor-sin.gel
+%%DATADIR%%/examples/trapezoid-rule-doubling.gel
 %%DATADIR%%/examples/vibrating-drumhead-modes.gel
 %%DATADIR%%/examples/zoom-differentiability.gel
 %%DATADIR%%/gel/calculus/differentiation.gel

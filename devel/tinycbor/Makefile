@@ -1,11 +1,7 @@
 PORTNAME=	tinycbor
-PORTVERSION=	0.6.1
+PORTVERSION=	7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/intel/tinycbor/commit/
-PATCHFILES=	628dee0d65f857d62ab1a6e1af9b9224d7df8fad.diff:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Concise Binary Object Representation (CBOR) library
@@ -16,24 +12,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcjson.so:devel/libcjson
 
-USES=		gmake localbase:ldflags pathfix
+USES=		cmake:testing compiler:c++20-lang localbase:ldflags pkgconfig
 
-INSTALL_TARGET=	install-strip
-MAKE_ARGS=	SOVERSION=${PORTVERSION:R:R}
-PATHFIX_MAKEFILEIN=	Makefile
+CMAKE_OFF=	WITH_FREESTANDING
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		BUILD_TOOLS \
+		WITH_CBOR2JSON \
+		WITH_FLOATING_POINT \
+		WITH_VALGRIND
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	intel
 USE_GITHUB=	yes
 
-post-patch:
-	@${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/VERSION
+OPTIONS_DEFINE=	EXAMPLES
 
-do-configure:
-	@cd ${WRKSRC}/ && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} configure
+EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/tools/json2cbor/json2cbor ${STAGEDIR}${PREFIX}/bin/json2cbor
 
 .include <bsd.port.mk>

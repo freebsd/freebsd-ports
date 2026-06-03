@@ -1,0 +1,5 @@
+include/srell/srell.hpp
+include/srell/srell_ucfdata2.h
+include/srell/srell_updata3.h
+%%PORTDOCS%%%%DOCSDIR%%/readme_en.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme_ja.txt

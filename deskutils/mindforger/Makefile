@@ -35,8 +35,6 @@ CMARK_QMAKE_OFF=	CONFIG+="mfnomd2html"
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
 USE_QT+=	webengine
 QMAKE_ARGS+=	CONFIG+="mfwebengine"
-.else
-USE_QT+=	webkit
 .endif
 
 pre-build-CMARK-on:

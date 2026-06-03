@@ -1,14 +1,7 @@
---- chrome/common/webui_url_constants.h.orig	2025-05-31 17:16:41 UTC
+--- chrome/common/webui_url_constants.h.orig	2026-05-09 18:09:27 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -524,18 +524,18 @@ inline constexpr char kChromeUIOsUrlAppURL[] = "chrome
+@@ -442,12 +442,12 @@ bool IsSystemWebUIHost(std::string_view host);
  #endif  // BUILDFLAG(IS_CHROMEOS)
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- inline constexpr char kChromeUIConnectorsInternalsHost[] =
-     "connectors-internals";
- #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_DESKTOP_ANDROID)
@@ -19,10 +12,10 @@
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- inline constexpr char kChromeUIWebAppSettingsHost[] = "app-settings";
- inline constexpr char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
- inline constexpr char kChromeUIWhatsNewHost[] = "whats-new";
-@@ -547,11 +547,11 @@ inline constexpr char kChromeUILinuxProxyConfigHost[] 
+ inline constexpr char kChromeUIDefaultBrowserModalURL[] =
+     "chrome://default-browser-modal/";
+ inline constexpr char kChromeUIDefaultBrowserModalHost[] =
+@@ -463,11 +463,11 @@ inline constexpr char kChromeUILinuxProxyConfigHost[] 
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -36,8 +29,8 @@
  inline constexpr char kChromeUIBrowserSwitchHost[] = "browser-switch";
  inline constexpr char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  inline constexpr char kChromeUIIntroDefaultBrowserSubPage[] = "default-browser";
-@@ -576,7 +576,7 @@ inline constexpr char kChromeUIHistorySyncOptinURL[] =
-     "chrome://history-sync-optin/";
+@@ -497,7 +497,7 @@ inline constexpr char kChromeUIUpdaterHost[] = "update
+ inline constexpr char kChromeUIUpdaterURL[] = "chrome://updater/";
  #endif
  
 -#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \

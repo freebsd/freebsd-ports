@@ -1,6 +1,6 @@
 PORTNAME=	pdf2docx
 DISTVERSION=	0.5.8
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fire>=0.3.0:devel/py-fire@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyMuPDF>=1.19.0:print/py-PyMuPDF@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymupdf>=1.19.0:print/py-PyMuPDF@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fonttools>=4.24.0:print/py-fonttools@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-docx>=0.8.10:textproc/py-python-docx@${PY_FLAVOR} \
 		opencv>0:graphics/opencv
 BUILD_DEPENDS=	${PY_DEPENDS} \

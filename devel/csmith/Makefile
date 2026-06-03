@@ -10,7 +10,7 @@ COMMENT=	Generates random C programs that conform to the C99 standard
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake libtool localbase perl5 shebangfix
+USES=		cmake localbase perl5 shebangfix
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	csmith-project

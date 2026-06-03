@@ -1,10 +1,10 @@
---- include/Surelog/Design/ModuleInstance.h.orig	2022-09-09 21:24:46 UTC
+--- include/Surelog/Design/ModuleInstance.h.orig	2025-08-30 03:55:56 UTC
 +++ include/Surelog/Design/ModuleInstance.h
-@@ -30,6 +30,7 @@
- #include <Surelog/Design/ValuedComponentI.h>
- #include <Surelog/SourceCompile/VObjectTypes.h>
+@@ -36,6 +36,7 @@
+ #include <uhdm/module_array.h>
  
+ #include <cstdint>
 +#include <filesystem>
- #include <string_view>
- 
- namespace SURELOG {
+ #include <map>
+ #include <set>
+ #include <string>

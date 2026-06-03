@@ -1,9 +1,8 @@
 PORTNAME=	mailest
 PORTVERSION=	0.9.24
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	21
+PORTREVISION=	23
 CATEGORIES=	mail
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Hyper Estraier backend for Mew
@@ -18,11 +17,13 @@ LICENSE_FILE_${L}=	${WRKSRC}/LICENSE.${L}
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libqdbm.so:databases/qdbm \
 		libestraier.so:textproc/hyperestraier
-RUN_DEPENDS=	mew${EMACS_PKGNAMESUFFIX}>0:mail/mew@${EMACS_FLAVOR}
+RUN_DEPENDS=	mew>0:mail/mew
 
-USES=		emacs:run fakeroot iconv
+USES=		emacs fakeroot iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	yasuoka
+
+CONFLICTS_INSTALL=	mailest-emacs_*
 
 MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 MAKE_ENV=	USE_BSDMAKE=true WITH_INSTALL_AS_USER=true

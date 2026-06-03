@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2025-10-18 07:21:09 UTC
++++ pyproject.toml
+@@ -1,11 +1,11 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77.0"]
++requires = ["setuptools>=63.0"]
+ 
+ [project]
+ name = "mashumaro"
+ version = "3.17"
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ description = "Fast and well tested serialization library"
+ readme = "README.md"
+ authors = [{ name = "Alexander Tikhonov", email = "random.gauss@gmail.com" }]

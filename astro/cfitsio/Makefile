@@ -1,5 +1,5 @@
 PORTNAME=	cfitsio
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.4
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -17,7 +17,7 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cpe libtool localbase pathfix pkgconfig
+USES=		cpe libtool localbase pkgconfig
 
 CONFIGURE_ARGS=	--enable-reentrant --with-bzip2=/usr
 GNU_CONFIGURE=	yes

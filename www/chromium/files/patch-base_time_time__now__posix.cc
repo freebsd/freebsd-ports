@@ -1,11 +1,14 @@
---- base/time/time_now_posix.cc.orig	2025-01-15 09:18:26 UTC
+--- base/time/time_now_posix.cc.orig	2025-09-06 10:01:20 UTC
 +++ base/time/time_now_posix.cc
-@@ -27,7 +27,7 @@
- #endif
+@@ -110,7 +110,11 @@ std::optional<TimeTicks> MaybeTimeTicksNowIgnoringOver
+ }
  
- // NaCl doesn't support CLOCK_MONOTONIC_COARSE.
--#if BUILDFLAG(IS_NACL)
-+#if BUILDFLAG(IS_NACL) || BUILDFLAG(IS_BSD)
- #define TIMETICKS_LOW_RESOLUTION_CLOCK CLOCK_MONOTONIC
- #else
- #define TIMETICKS_LOW_RESOLUTION_CLOCK CLOCK_MONOTONIC_COARSE
+ TimeTicks TimeTicksLowResolutionNowIgnoringOverride() {
++#if BUILDFLAG(IS_BSD)
++  return TimeTicks() + Microseconds(ClockNow(CLOCK_MONOTONIC));
++#else
+   return TimeTicks() + Microseconds(ClockNow(CLOCK_MONOTONIC_COARSE));
++#endif
+ }
+ }  // namespace subtle
+ 

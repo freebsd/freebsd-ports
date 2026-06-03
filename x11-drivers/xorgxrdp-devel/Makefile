@@ -1,13 +1,14 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.80.b20241215
+DISTVERSION=	0.10.80.b20260203
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	xrdp
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
+PATCHFILES=	406.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
@@ -19,17 +20,35 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nasm:devel/nasm
 RUN_DEPENDS=	xauth:x11/xauth
 
-USES=		autoreconf libtool:build localbase pkgconfig xorg
+FLAVORS=	xorg xlibre
+FLAVOR?=	${FLAVORS:[1]}
+
+USES=		autoreconf libtool:build localbase pkgconfig
 USE_LDCONFIG=	yes
-USE_XORG=	xorgproto xorg-server
+USE_XORG=	xorgproto
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	9698ba0
-GH_TUPLE=	neutrinolabs:xrdp:4c8c773:xrdp
+GH_TAGNAME=	7abffbf
+GH_TUPLE=	neutrinolabs:xrdp:4d9dde8:xrdp
+
+.if ${FLAVOR} == xlibre
+PKGNAMEPREFIX=	xlibre-
+USES+=		xlibre
+USE_XLIBRE+=	xlibre-server
+_XLIBRE_MAJOR_VER=	25
+_XMODDIR=	lib/xorg/modules/xlibre-${_XLIBRE_MAJOR_VER}
+.else
+USE_XORG=	xorg-server
+USES+=		xorg
+_XMODDIR=	lib/xorg/modules
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB+=	XMODDIR=${_XMODDIR}
 
 CONFLICTS=	xorgxrdp
 

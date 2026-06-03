@@ -1,5 +1,5 @@
 PORTNAME=	strongswan
-DISTVERSION=	6.0.1
+DISTVERSION=	6.0.6
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -41,12 +41,12 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=			CTR CURL DHCP EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
-				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
+				EAPSIMFILE FARP FIPS_PRF GCM IKEV1 IPSECKEY KDF \
 				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION ML MYSQL \
 				PKCS11 PKI PYTHON SMP SQLITE STROKE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
-OPTIONS_DEFAULT=		BUILTIN CURL GCM IKEV1 KDF PKI SWANCTL VICI
+OPTIONS_DEFAULT=		BUILTIN CURL GCM IKEV1 KDF ML PKI SWANCTL VICI
 OPTIONS_SINGLE=			PRINTF_HOOKS
 OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN LIBC VSTR
 OPTIONS_SUB=			yes
@@ -61,6 +61,7 @@ EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
 EAPRADIUS_DESC=		Enable EAP Radius proxy authentication
 EAPSIMFILE_DESC=	Enable EAP SIM with file backend
 FARP_DESC=		Enable farp plugin
+FIPS_PRF_DESC=		Enable FIPS PRF software implementation plugin
 GCM_DESC=		Enable GCM AEAD wrapper crypto plugin
 IKEV1_DESC=		Enable IKEv1 support
 IPSECKEY_DESC=		Enable authentication with IPSECKEY resource records with DNSSEC
@@ -100,6 +101,7 @@ EAPRADIUS_CONFIGURE_ON=		--enable-eap-radius
 EAPSIMFILE_CONFIGURE_ON=	--enable-eap-sim \
 				--enable-eap-sim-file
 FARP_CONFIGURE_ON=		--enable-farp
+FIPS_PRF_CONFIGURE_ON=		--enable-fips-prf
 GCM_CONFIGURE_ON=		--enable-gcm
 IKEV1_CONFIGURE_OFF=		--disable-ikev1
 IPSECKEY_CONFIGURE_ON=		--enable-ipseckey
@@ -172,10 +174,8 @@ PLIST_SUB+=	VIA="@comment "
 .else
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MVICI}
+post-install-VICI-on:
 	${INSTALL_DATA} ${WRKSRC}/src/libcharon/plugins/vici/libvici.h \
 		${STAGEDIR}${PREFIX}/include
-.endif
 
 .include <bsd.port.mk>

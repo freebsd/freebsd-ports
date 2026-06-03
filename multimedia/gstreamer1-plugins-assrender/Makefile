@@ -15,4 +15,3 @@ DIST=		bad
 GST_PLUGIN=	assrender
 
 .include "${MASTERDIR}/Makefile"
-

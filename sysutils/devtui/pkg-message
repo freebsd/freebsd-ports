@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+devtui requires command-line copy/paste utilities in order to paste text into
+and copy text out of the program.
+Supported utilities for this are xsel-conrad and xclip for X, and wl-clipboard
+for Wayland.
+EOM
+}
+]

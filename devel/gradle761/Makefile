@@ -1,5 +1,6 @@
 PORTNAME=	gradle
 PORTVERSION=	7.6.1 # because 8.0.1 breaks biology/gatk, see https://github.com/gradle/gradle/issues/25275
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 PKGNAMESUFFIX=	761

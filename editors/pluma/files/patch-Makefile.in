@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2026-06-01 10:42:34 UTC
++++ Makefile.in
+@@ -165,7 +165,7 @@ am__define_uniq_tagged_files = \
+   unique=`for i in $$list; do \
+     if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+   done | $(am__uniquify_input)`
+-DIST_SUBDIRS = po pluma pixmaps data plugins docs help tests
++DIST_SUBDIRS = po pluma pixmaps data plugins help tests
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	ABOUT-NLS AUTHORS COPYING ChangeLog NEWS README.md compile \
+ 	config.guess config.rpath config.sub install-sh ltmain.sh \
+@@ -419,7 +419,7 @@ top_srcdir = @top_srcdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = po pluma pixmaps data plugins docs help $(am__append_1)
++SUBDIRS = po pluma pixmaps data plugins help $(am__append_1)
+ distuninstallcheck_listfiles = find . -type f -print
+ EXTRA_DIST = \
+ 	autogen.sh		\

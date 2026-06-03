@@ -1,0 +1,8 @@
+Log::Report::Template extends Template, which is the core of Template Toolkit.
+The main addition is support for translations via the translation framework
+offered by Log::Report.
+
+You add translations to a template system, by adding calls to some translation
+function (by default called loc()) to your template text. That function will
+perform dark magic to collect the translation from translation tables, and fill
+in values.

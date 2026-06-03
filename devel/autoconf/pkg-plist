@@ -5,13 +5,6 @@ bin/autoreconf%%VERSION%%
 bin/autoscan%%VERSION%%
 bin/autoupdate%%VERSION%%
 bin/ifnames%%VERSION%%
-share/man/man1/autoconf%%VERSION%%.1.gz
-share/man/man1/autoheader%%VERSION%%.1.gz
-share/man/man1/autom4te%%VERSION%%.1.gz
-share/man/man1/autoreconf%%VERSION%%.1.gz
-share/man/man1/autoscan%%VERSION%%.1.gz
-share/man/man1/autoupdate%%VERSION%%.1.gz
-share/man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/Autom4te/C4che.pm
 %%DATADIR%%/Autom4te/ChannelDefs.pm
 %%DATADIR%%/Autom4te/Channels.pm
@@ -23,6 +16,7 @@ share/man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/Autom4te/Request.pm
 %%DATADIR%%/Autom4te/XFile.pm
 %%DATADIR%%/INSTALL
+%%DATADIR%%/autoconf/a68.m4
 %%DATADIR%%/autoconf/autoconf.m4
 %%DATADIR%%/autoconf/autoconf.m4f
 %%DATADIR%%/autoconf/autoheader.m4
@@ -44,6 +38,7 @@ share/man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/autoconf/status.m4
 %%DATADIR%%/autoconf/trailer.m4
 %%DATADIR%%/autoconf/types.m4
+%%DATADIR%%/autoconf_version.m4
 %%DATADIR%%/autom4te.cfg
 %%DATADIR%%/autoscan/autoscan.list
 %%DATADIR%%/autotest/autotest.m4
@@ -58,4 +53,10 @@ share/man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/m4sugar/m4sh.m4f
 %%DATADIR%%/m4sugar/m4sugar.m4
 %%DATADIR%%/m4sugar/m4sugar.m4f
-%%DATADIR%%/version.m4
+share/man/man1/autoconf%%VERSION%%.1.gz
+share/man/man1/autoheader%%VERSION%%.1.gz
+share/man/man1/autom4te%%VERSION%%.1.gz
+share/man/man1/autoreconf%%VERSION%%.1.gz
+share/man/man1/autoscan%%VERSION%%.1.gz
+share/man/man1/autoupdate%%VERSION%%.1.gz
+share/man/man1/ifnames%%VERSION%%.1.gz

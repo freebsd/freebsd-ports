@@ -1,0 +1,2 @@
+This Sphinx extension allows you to embed Mermaid graphs in your documents,
+including general flowcharts, sequence diagrams, gantt diagrams and more.

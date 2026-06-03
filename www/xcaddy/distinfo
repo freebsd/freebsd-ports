@@ -1,5 +1,5 @@
-TIMESTAMP = 1749233456
-SHA256 (go/www_xcaddy/xcaddy-v0.4.4/v0.4.4.mod) = 9ee7d2d355495f3f7b1fd4b6c318110d8420b7e4b74d8561f3602a7e71b6b7a6
-SIZE (go/www_xcaddy/xcaddy-v0.4.4/v0.4.4.mod) = 416
-SHA256 (go/www_xcaddy/xcaddy-v0.4.4/v0.4.4.zip) = 35fd6b699d98a56c08688a429307012149dce1fc3bdae0c08dcb3944ec0634eb
-SIZE (go/www_xcaddy/xcaddy-v0.4.4/v0.4.4.zip) = 80630
+TIMESTAMP = 1753865060
+SHA256 (go/www_xcaddy/xcaddy-v0.4.5/v0.4.5.mod) = c81e7d27db214122fd6def2eaa90b00102d01e1c780573ef79cebd1909228cf1
+SIZE (go/www_xcaddy/xcaddy-v0.4.5/v0.4.5.mod) = 416
+SHA256 (go/www_xcaddy/xcaddy-v0.4.5/v0.4.5.zip) = 93e392727719a1716973aa05408ce38aa256dcb078af4de32d89ca84a85082c5
+SIZE (go/www_xcaddy/xcaddy-v0.4.5/v0.4.5.zip) = 82260

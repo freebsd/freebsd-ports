@@ -1,6 +1,5 @@
 PORTNAME=	libdatovka
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	0.7.3
 CATEGORIES=	devel
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/libdatovka/
 
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		libgpg-error>=0:security/libgpg-error \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libjson-c.so:devel/json-c \
 		libexpat.so:textproc/expat2
 RUN_DEPENDS=	gpgme>=0:security/gpgme \
 		libgcrypt>=0:security/libgcrypt \

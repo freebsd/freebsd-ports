@@ -1,0 +1,36 @@
+--- cmake/modules/MaterialXConfig.cmake.in.orig	2025-09-15 18:12:11 UTC
++++ cmake/modules/MaterialXConfig.cmake.in
+@@ -20,10 +20,32 @@ set_and_check(MATERIALX_BASE_DIR "@PACKAGE_CMAKE_INSTA
+ # MATERIALX_RESOURCES_DIR    Path to MaterialX Resources (sample data, mtlx etc)
+ 
+ set_and_check(MATERIALX_BASE_DIR "@PACKAGE_CMAKE_INSTALL_PREFIX@")
+-set_and_check(MATERIALX_STDLIB_DIR "@PACKAGE_CMAKE_INSTALL_PREFIX@/libraries")
++set_and_check(MATERIALX_STDLIB_DIR "@PACKAGE_CMAKE_INSTALL_PREFIX@/share/MaterialX")
+ if(@MATERIALX_BUILD_PYTHON@ AND @MATERIALX_INSTALL_PYTHON@)
+     set_and_check(MATERIALX_PYTHON_DIR "@PACKAGE_CMAKE_INSTALL_PREFIX@/python")
+ endif()
++
++foreach(_lib
++    MaterialXCore
++    MaterialXFormat
++    MaterialXGenShader
++    MaterialXRender
++    MaterialXUtil
++    MaterialXRenderGlsl
++    MaterialXGenGlsl
++    MaterialXGenMsl
++    MaterialXRenderHw
++)
++    if(TARGET ${_lib})
++        set_target_properties(${_lib} PROPERTIES
++            IMPORTED_CONFIGURATIONS "Debug;Release;RelWithDebInfo;MinSizeRel"
++            IMPORTED_LOCATION_DEBUG          "%%PREFIX%%/lib/lib${_lib}${CMAKE_SHARED_LIBRARY_SUFFIX}"
++            IMPORTED_LOCATION_RELEASE        "%%PREFIX%%/lib/lib${_lib}${CMAKE_SHARED_LIBRARY_SUFFIX}"
++            IMPORTED_LOCATION_RELWITHDEBINFO "%%PREFIX%%/lib/lib${_lib}${CMAKE_SHARED_LIBRARY_SUFFIX}"
++            IMPORTED_LOCATION_MINSIZEREL     "%%PREFIX%%/lib/lib${_lib}${CMAKE_SHARED_LIBRARY_SUFFIX}"
++        )
++    endif()
++endforeach()
+ 
+ # Dependencies when building static libraries:
+ if(NOT @MATERIALX_BUILD_SHARED_LIBS@)

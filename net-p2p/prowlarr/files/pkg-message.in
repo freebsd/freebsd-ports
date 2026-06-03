@@ -2,13 +2,6 @@
 { type: install
   message: <<EOM
 
-%%PORTNAME%% relies on Microsoft dotNET5+ SDK to be built
-Microsoft does not have an official version of dotNET for FreeBSD
-
-This package was built with an UNOFFICIAL UNSUPPORTED version of dotNET
-If this is something that you do not want, remove this package with
-"pkg remove %%PORTNAME%%"
-
 This package installs a service file.
 Enable it with "sysrc %%PORTNAME%%_enable=TRUE"
 Start it with "service %%PORTNAME%% start".

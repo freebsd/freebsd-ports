@@ -2,7 +2,7 @@ bin/fcitx5
 bin/fcitx5-configtool
 bin/fcitx5-diagnose
 bin/fcitx5-remote
-etc/xdg/Xwayland-session.d/20-fcitx-x11
+%%WAYLAND%%etc/xdg/Xwayland-session.d/20-fcitx-x11
 etc/xdg/autostart/org.fcitx.Fcitx5.desktop
 include/Fcitx5/Config/fcitx-config/configuration.h
 include/Fcitx5/Config/fcitx-config/dbushelper.h
@@ -53,7 +53,7 @@ include/Fcitx5/Module/fcitx-module/spell/spell_public.h
 include/Fcitx5/Module/fcitx-module/testfrontend/testfrontend_public.h
 include/Fcitx5/Module/fcitx-module/testim/testim_public.h
 include/Fcitx5/Module/fcitx-module/unicode/unicode_public.h
-include/Fcitx5/Module/fcitx-module/wayland/wayland_public.h
+%%WAYLAND%%include/Fcitx5/Module/fcitx-module/wayland/wayland_public.h
 include/Fcitx5/Module/fcitx-module/xcb/xcb_public.h
 include/Fcitx5/Utils/fcitx-utils/capabilityflags.h
 include/Fcitx5/Utils/fcitx-utils/charutils.h
@@ -68,9 +68,11 @@ include/Fcitx5/Utils/fcitx-utils/dbus/objectvtable.h
 include/Fcitx5/Utils/fcitx-utils/dbus/servicewatcher.h
 include/Fcitx5/Utils/fcitx-utils/dbus/variant.h
 include/Fcitx5/Utils/fcitx-utils/element.h
+include/Fcitx5/Utils/fcitx-utils/environ.h
 include/Fcitx5/Utils/fcitx-utils/event.h
 include/Fcitx5/Utils/fcitx-utils/eventdispatcher.h
 include/Fcitx5/Utils/fcitx-utils/eventloopinterface.h
+include/Fcitx5/Utils/fcitx-utils/fdstreambuf.h
 include/Fcitx5/Utils/fcitx-utils/fcitxutils_export.h
 include/Fcitx5/Utils/fcitx-utils/flags.h
 include/Fcitx5/Utils/fcitx-utils/fs.h
@@ -93,6 +95,7 @@ include/Fcitx5/Utils/fcitx-utils/semver.h
 include/Fcitx5/Utils/fcitx-utils/signals.h
 include/Fcitx5/Utils/fcitx-utils/signals_details.h
 include/Fcitx5/Utils/fcitx-utils/standardpath.h
+include/Fcitx5/Utils/fcitx-utils/standardpaths.h
 include/Fcitx5/Utils/fcitx-utils/stringutils.h
 include/Fcitx5/Utils/fcitx-utils/stringutils_details.h
 include/Fcitx5/Utils/fcitx-utils/testing.h
@@ -131,8 +134,8 @@ lib/cmake/Fcitx5ModuleTestIM/Fcitx5ModuleTestIMConfig.cmake
 lib/cmake/Fcitx5ModuleTestIM/Fcitx5ModuleTestIMConfigVersion.cmake
 lib/cmake/Fcitx5ModuleUnicode/Fcitx5ModuleUnicodeConfig.cmake
 lib/cmake/Fcitx5ModuleUnicode/Fcitx5ModuleUnicodeConfigVersion.cmake
-lib/cmake/Fcitx5ModuleWayland/Fcitx5ModuleWaylandConfig.cmake
-lib/cmake/Fcitx5ModuleWayland/Fcitx5ModuleWaylandConfigVersion.cmake
+%%WAYLAND%%lib/cmake/Fcitx5ModuleWayland/Fcitx5ModuleWaylandConfig.cmake
+%%WAYLAND%%lib/cmake/Fcitx5ModuleWayland/Fcitx5ModuleWaylandConfigVersion.cmake
 lib/cmake/Fcitx5ModuleXCB/Fcitx5ModuleXCBConfig.cmake
 lib/cmake/Fcitx5ModuleXCB/Fcitx5ModuleXCBConfigVersion.cmake
 lib/cmake/Fcitx5Utils/Fcitx5CompilerSettings.cmake
@@ -162,8 +165,8 @@ lib/fcitx5/libtestim.so
 lib/fcitx5/libtestui.so
 lib/fcitx5/libunicode.so
 lib/fcitx5/libvirtualkeyboard.so
-lib/fcitx5/libwayland.so
-lib/fcitx5/libwaylandim.so
+%%WAYLAND%%lib/fcitx5/libwayland.so
+%%WAYLAND%%lib/fcitx5/libwaylandim.so
 lib/fcitx5/libxcb.so
 lib/fcitx5/libxim.so
 lib/libFcitx5Config.so
@@ -175,13 +178,13 @@ lib/libFcitx5Core.so.7
 lib/libFcitx5Utils.so
 lib/libFcitx5Utils.so.2
 lib/libFcitx5Utils.so.%%VER%%
-libexec/fcitx5-wayland-launcher
+%%WAYLAND%%libexec/fcitx5-wayland-launcher
 libdata/pkgconfig/Fcitx5Config.pc
 libdata/pkgconfig/Fcitx5Core.pc
 libdata/pkgconfig/Fcitx5Module.pc
 libdata/pkgconfig/Fcitx5Utils.pc
 share/applications/fcitx5-configtool.desktop
-share/applications/fcitx5-wayland-launcher.desktop
+%%WAYLAND%%share/applications/fcitx5-wayland-launcher.desktop
 share/applications/org.fcitx.Fcitx5.desktop
 share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/addon/classicui.conf
@@ -200,8 +203,8 @@ share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/addon/spell.conf
 %%DATADIR%%/addon/unicode.conf
 %%DATADIR%%/addon/virtualkeyboard.conf
-%%DATADIR%%/addon/wayland.conf
-%%DATADIR%%/addon/waylandim.conf
+%%WAYLAND%%%%DATADIR%%/addon/wayland.conf
+%%WAYLAND%%%%DATADIR%%/addon/waylandim.conf
 %%DATADIR%%/addon/xcb.conf
 %%DATADIR%%/addon/xim.conf
 %%DATADIR%%/data/quickphrase.d/emoji-eac.mb

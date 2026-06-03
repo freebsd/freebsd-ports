@@ -1,7 +1,13 @@
 bin/wayfire
+include/wayfire/action/action.hpp
+include/wayfire/action/action_interface.hpp
 include/wayfire/bindings-repository.hpp
 include/wayfire/bindings.hpp
 include/wayfire/compositor-view.hpp
+include/wayfire/condition/access_interface.hpp
+include/wayfire/condition/condition.hpp
+include/wayfire/condition/logic_condition.hpp
+include/wayfire/condition/test_condition.hpp
 include/wayfire/config-backend.hpp
 include/wayfire/config.h
 include/wayfire/core.hpp
@@ -11,10 +17,13 @@ include/wayfire/geometry.hpp
 include/wayfire/idle.hpp
 include/wayfire/img.hpp
 include/wayfire/input-device.hpp
+include/wayfire/lexer/lexer.hpp
+include/wayfire/lexer/literal.hpp
+include/wayfire/lexer/symbol.hpp
 include/wayfire/matcher.hpp
+include/wayfire/nonstd/json.hpp
 include/wayfire/nonstd/observer_ptr.h
 include/wayfire/nonstd/reverse.hpp
-include/wayfire/nonstd/safe-list.hpp
 include/wayfire/nonstd/tracking-allocator.hpp
 include/wayfire/nonstd/wlroots-full.hpp
 include/wayfire/nonstd/wlroots.hpp
@@ -23,8 +32,13 @@ include/wayfire/opengl.hpp
 include/wayfire/option-wrapper.hpp
 include/wayfire/output-layout.hpp
 include/wayfire/output.hpp
+include/wayfire/parser/action_parser.hpp
+include/wayfire/parser/condition_parser.hpp
+include/wayfire/parser/lambda_rule_parser.hpp
+include/wayfire/parser/rule_parser.hpp
 include/wayfire/per-output-plugin.hpp
 include/wayfire/plugin.hpp
+include/wayfire/plugins/animate/animate.hpp
 include/wayfire/plugins/blur/blur.hpp
 include/wayfire/plugins/common/cairo-util.hpp
 include/wayfire/plugins/common/geometry-animation.hpp
@@ -34,7 +48,6 @@ include/wayfire/plugins/common/move-drag-interface.hpp
 include/wayfire/plugins/common/preview-indication.hpp
 include/wayfire/plugins/common/shared-core-data.hpp
 include/wayfire/plugins/common/simple-text-node.hpp
-include/wayfire/plugins/common/simple-texture.hpp
 include/wayfire/plugins/common/util.hpp
 include/wayfire/plugins/common/workspace-wall.hpp
 include/wayfire/plugins/crossfade.hpp
@@ -43,12 +56,16 @@ include/wayfire/plugins/input-method-v1/input-method-v1.hpp
 include/wayfire/plugins/ipc/ipc-activator.hpp
 include/wayfire/plugins/ipc/ipc-helpers.hpp
 include/wayfire/plugins/ipc/ipc-method-repository.hpp
+include/wayfire/plugins/ipc/ipc-rules-common.hpp
 include/wayfire/plugins/scale-signal.hpp
 include/wayfire/plugins/vswitch.hpp
 include/wayfire/plugins/wm-actions-signals.hpp
 include/wayfire/plugins/wobbly/wobbly-signal.hpp
 include/wayfire/region.hpp
 include/wayfire/render-manager.hpp
+include/wayfire/render.hpp
+include/wayfire/rule/lambda_rule.hpp
+include/wayfire/rule/rule.hpp
 include/wayfire/scene-input.hpp
 include/wayfire/scene-operations.hpp
 include/wayfire/scene-render.hpp
@@ -58,6 +75,7 @@ include/wayfire/signal-definitions.hpp
 include/wayfire/signal-provider.hpp
 include/wayfire/toplevel-view.hpp
 include/wayfire/toplevel.hpp
+include/wayfire/touch/touch.hpp
 include/wayfire/txn/transaction-manager.hpp
 include/wayfire/txn/transaction-object.hpp
 include/wayfire/txn/transaction.hpp
@@ -71,6 +89,8 @@ include/wayfire/unstable/wlr-view-keyboard-interaction.hpp
 include/wayfire/unstable/xdg-toplevel-base.hpp
 include/wayfire/unstable/xwl-toplevel-base.hpp
 include/wayfire/util.hpp
+include/wayfire/utils.hpp
+include/wayfire/variant.hpp
 include/wayfire/view-access-interface.hpp
 include/wayfire/view-helpers.hpp
 include/wayfire/view-transform.hpp
@@ -80,6 +100,12 @@ include/wayfire/workarea.hpp
 include/wayfire/workspace-set.hpp
 include/wayfire/workspace-stream.hpp
 lib/libwayfire-blur-base.so
+lib/libwayfire-move-drag-interface.a
+lib/libwayfire-workspace-wall.a
+lib/libwf-utils.so
+lib/libwf-utils.so.0
+lib/libwf-utils.so.0.4.0
+lib/libwftouch.a
 lib/wayfire/libalpha.so
 lib/wayfire/libanimate.so
 lib/wayfire/libautostart.so
@@ -88,7 +114,6 @@ lib/wayfire/libcommand.so
 lib/wayfire/libcube.so
 lib/wayfire/libdecoration.so
 lib/wayfire/libdefault-config-backend.so
-lib/wayfire/libdemo-ipc.so
 lib/wayfire/libexpo.so
 lib/wayfire/libextra-gestures.so
 lib/wayfire/libfast-switcher.so
@@ -113,6 +138,7 @@ lib/wayfire/libshortcuts-inhibit.so
 lib/wayfire/libsimple-tile.so
 lib/wayfire/libstipc.so
 lib/wayfire/libswitcher.so
+lib/wayfire/libvk-color-management.so
 lib/wayfire/libvswipe.so
 lib/wayfire/libvswitch.so
 lib/wayfire/libwayfire-shell.so
@@ -125,6 +151,7 @@ lib/wayfire/libxdg-activation.so
 lib/wayfire/libxkb-bindings.so
 lib/wayfire/libzoom.so
 libdata/pkgconfig/wayfire.pc
+libdata/pkgconfig/wf-utils.pc
 share/man/man1/wayfire.1.gz
 %%EXAMPLESDIR%%/wayfire.ini
 %%DATADIR%%/metadata/alpha.xml
@@ -174,3 +201,4 @@ share/man/man1/wayfire.1.gz
 %%DATADIR%%/metadata/zoom.xml
 %%DATADIR%%/protocols/unstable/wayfire-shell-unstable-v2.xml
 share/wayland-sessions/wayfire.desktop
+share/xdg-desktop-portal/wayfire-portals.conf

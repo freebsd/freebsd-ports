@@ -1,0 +1,6 @@
+bin/Kobil_mIDentity_switch
+bin/RSA_SecurID_getpasswd
+lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
+lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
+share/man/man1/RSA_SecurID_getpasswd.1.gz
+share/man/man8/Kobil_mIDentity_switch.8.gz

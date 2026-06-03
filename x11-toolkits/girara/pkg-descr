@@ -1,2 +1,4 @@
-Girara is a library that implements a user interface that focuses
-on simplicity and minimalism.
+Girara was a library that implemented a user interface that focuses on
+simplicity and minimalism.
+Girara now contains common datastructures and utilities for the
+zathura ecosystem.

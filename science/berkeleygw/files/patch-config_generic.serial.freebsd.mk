@@ -7,7 +7,7 @@
 -FCPP    = cpp47 -C
 -F90free = gfortran47 -ffree-form -ffree-line-length-none
 -LINK    = gfortran47
-+FCPP    = $(FREEBSD_PREFIX)/bin/cpp$(FREEBSD_GCC_DEFAULT) -C
++FCPP    = $(FREEBSD_PREFIX)/bin/cpp$(FREEBSD_GCC_DEFAULT) -C -Uvector
 +F90free = $(FC) -ffree-form -ffree-line-length-none
 +LINK    = $(FC)
  FOPTS   = -O3

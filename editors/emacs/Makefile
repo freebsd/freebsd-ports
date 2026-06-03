@@ -1,6 +1,6 @@
 PORTNAME=	emacs
-DISTVERSION=	30.1
-PORTREVISION=	5
+DISTVERSION=	30.2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -78,7 +78,7 @@ CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
 CONFLICTS_INSTALL=	emacs-devel emacs-devel-nox
 
 BINARY_ALIAS=	makeinfo=true
-SUB_FILES=	pkg-message sources.el
+SUB_FILES=	default.el pkg-message site-start.el
 SUB_LIST=	EMACS_VER=${DISTVERSION} \
 		NATIVECOMP_COMMENT_END=${NATIVECOMP_COMMENT_END} \
 		NATIVECOMP_COMMENT_START=${NATIVECOMP_COMMENT_START}
@@ -205,7 +205,7 @@ MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 MODULES_CONFIGURE_WITH=		modules
 MOTIF_USES=			motif
 MOTIF_CONFIGURE_ON=		--with-x-toolkit=motif
-NATIVECOMP_USE=			GCC=yes
+NATIVECOMP_USE=			GCC=13
 NATIVECOMP_CONFIGURE_WITH=	native-compilation=aot
 OSS_CONFIGURE_ON=		--with-sound=oss
 OTF_LIB_DEPENDS=		libotf.so:print/libotf
@@ -296,6 +296,7 @@ post-patch:
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} libexec/emacs/${DISTVERSION}/${CONFIGURE_TARGET}/ -name emacs-*.pdmp >> ${TMPPLIST})
+	${INSTALL_DATA} ${WRKDIR}/default.el ${WRKDIR}/site-start.el ${STAGEDIR}${DATADIR}/site-lisp/
 
 post-install-MAILUTILS-on:
 	${LN} -sf ${PREFIX}/bin/movemail \
@@ -310,6 +311,5 @@ post-install-NATIVECOMP-on:
 post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${DISTVERSION}/src
 	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${DISTVERSION}/src
-	${INSTALL_DATA} ${WRKDIR}/sources.el ${STAGEDIR}${DATADIR}/${DISTVERSION}/site-lisp/site-start.el
 
 .include <bsd.port.mk>

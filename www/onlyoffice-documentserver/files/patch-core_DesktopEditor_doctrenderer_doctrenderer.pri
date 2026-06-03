@@ -1,6 +1,6 @@
---- ./core/DesktopEditor/doctrenderer/doctrenderer.pri.orig	2025-03-07 15:39:12.468049000 +0100
-+++ ./core/DesktopEditor/doctrenderer/doctrenderer.pri	2025-03-07 15:38:54.771039000 +0100
-@@ -22,6 +22,10 @@ core_android:DEFINES += DISABLE_MEMORY_LIMITATION
+--- core/DesktopEditor/doctrenderer/doctrenderer.pri.orig	2025-08-02 18:33:34 UTC
++++ core/DesktopEditor/doctrenderer/doctrenderer.pri
+@@ -22,6 +22,10 @@ ADD_DEPENDENCY(graphics, kernel, UnicodeConverter, ker
  #CONFIG += v8_version_60
  core_android:DEFINES += DISABLE_MEMORY_LIMITATION
  

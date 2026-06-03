@@ -1,7 +1,7 @@
 PORTNAME?=	guile
-DISTVERSION=	3.0.10
+DISTVERSION=	3.0.11
 CATEGORIES=	lang scheme
-MASTER_SITES=	GNU
+MASTER_SITES=	GNU/guile
 PKGNAMESUFFIX?=	3
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,9 +10,6 @@ WWW=		https://www.gnu.org/software/guile/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
-
-NOT_FOR_ARCHS?=	armv7 i386
-NOT_FOR_ARCHS_REASON=	Does not build on armv7 and i386
 
 USES=		tar:lz
 
@@ -74,12 +71,6 @@ THREADS_LIB_DEPENDS_OFF=libgc.so:devel/boehm-gc
 THREADS_CONFIGURE_ON=	--with-bdw-gc=bdw-gc-threaded
 THREADS_CONFIGURE_OFF=	--with-bdw-gc=bdw-gc
 THREADS_CONFIGURE_WITH=	threads
-
-# Upstream bugfixes: these aren't optional because the release version
-# has a broken (spawn*) function, which breaks guile-config, which
-# breaks builds of some dependent ports.
-
-# EXTRA_PATCHES=	${PATCHDIR}/extra-patch-upstream-fixes.patch
 
 # The prebuilt bytecode files are reported not to work on powerpc.
 

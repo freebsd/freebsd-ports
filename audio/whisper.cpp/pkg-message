@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+You installed whisper.cpp: Port of OpenAI's Whisper model in C/C++
+
+In order to use whisper.cpp you should first download an AI model.
+
+For example:
+$ whisper.cpp-download-ggml-model.sh base.en
+
+Then you can transcribe audio files using a command:
+$ whisper-cli -m ggml-base.en.bin -f {sample}.wav
+
+EOM
+}
+]

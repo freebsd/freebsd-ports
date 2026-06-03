@@ -1,3 +1,2 @@
-This is a PEP 561 type stub package for the `psycopg2` package.
-It can be used by type-checking tools like mypy, PyCharm, pytype
-etc. to check code that uses `psycopg2`.
+This is a PEP 561 type stub package for the psycopg2 package. It can be used by
+type checkers to check code that uses psycopg2.

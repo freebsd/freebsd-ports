@@ -1,8 +1,0 @@
-ARPC is a GRPC-like library that supports file descriptor passing.
-
-ARPC ships with a script, aprotoc, that works similar to Protobuf/GRPC's
-protoc. It generates message and service bindings, taking a .proto file
-as an input. Where ARPC differs from GRPC is that messages may contain
-file descriptors. These file descriptors are passed on to the remote
-side transparently. This makes ARPC useful for implementing privilege
-separation between processes.

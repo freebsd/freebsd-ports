@@ -1,0 +1,3 @@
+include/xorg/joystick-properties.h
+%%MODULEDIR%%/input/joystick_drv.so
+share/man/man4/joystick.4x.gz

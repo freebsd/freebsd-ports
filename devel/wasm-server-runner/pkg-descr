@@ -1,0 +1,2 @@
+wasm-server-runner allows you to run programs in the browser using web assembly
+using a simple cargo run.

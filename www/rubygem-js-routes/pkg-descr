@@ -1,0 +1,2 @@
+Generates javascript file that defines all Rails named routes as javascript helpers.
+

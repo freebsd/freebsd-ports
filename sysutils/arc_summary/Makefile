@@ -1,10 +1,8 @@
 PORTNAME=	arc_summary
 PORTVERSION=	20231114
 CATEGORIES=	sysutils
-MASTER_SITES=	https://cgit.freebsd.org/src/plain/sys/contrib/openzfs/cmd/ \
-		https://cgit.freebsd.org/src/plain/sys/contrib/openzfs/cmd/arc_summary/:13
-DISTFILES=	${PORTNAME}3?h=releng/13.2:13 \
-		${PORTNAME}?h=releng/14.0 \
+MASTER_SITES=	https://cgit.freebsd.org/src/plain/sys/contrib/openzfs/cmd/
+DISTFILES=	${PORTNAME}?h=releng/14.0 \
 		${PORTNAME}
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -27,9 +25,7 @@ PLIST_FILES=	bin/arc_summary
 .include <bsd.port.pre.mk>
 
 do-extract:
-.if ${OSVERSION} < 1400000
-	${CP} ${DISTDIR}/${PORTNAME}3?h=releng/13.2 ${WRKSRC}/${PORTNAME}
-.elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
+.if ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
 	${CP} ${DISTDIR}/${PORTNAME}?h=releng/14.0 ${WRKSRC}/${PORTNAME}
 .else
 	${CP} ${DISTDIR}/${PORTNAME} ${WRKSRC}/${PORTNAME}

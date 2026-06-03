@@ -1,0 +1,13 @@
+--- cmake/inja.pc.in.orig	2025-09-18 10:39:00 UTC
++++ cmake/inja.pc.in
+@@ -0,0 +1,10 @@
++prefix=@CMAKE_INSTALL_PREFIX@
++exec_prefix=${prefix}
++libdir=${exec_prefix}/lib
++includedir=${prefix}/include
++
++Name: inja
++Description: inja (Template Engine for Modern C++)
++Version: @PROJECT_VERSION@
++Libs: -L${libdir}
++Cflags: -I${includedir}

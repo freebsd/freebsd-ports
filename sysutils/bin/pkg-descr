@@ -1,0 +1,11 @@
+bin is a lightweight, cross-platform binary manager designed to
+simplify the installation and management of single-binary applications,
+which are gaining popularity due to languages such as Go, Rust or Deno.
+
+Features:
+
+* Zero Configuration
+* No Root Required
+* Version Management
+* Lightweight
+* Multiple Sources

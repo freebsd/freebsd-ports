@@ -1,0 +1,25 @@
+-- pyproject.toml uses PEP 639 SPDX license string format ("MIT") which requires
+-- newer setuptools. Use the older {text = ...} format.
+-- Also remove the upper version bound on uv_build per ports policy of ignoring
+-- upper version bounds on build dependencies.
+
+--- pyproject.toml.orig	2026-04-28 08:57:38 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ readme = "README.rst"
+ authors = [{ name = "Tom Ritchford", email = "tom@swirly.com" }]
+ requires-python = ">=3.10"
+ readme = "README.rst"
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = ["Programming Language :: Python :: 3", "Programming Language :: Python :: 3.10", "Programming Language :: Python :: 3.11", "Programming Language :: Python :: 3.12", "Programming Language :: Python :: 3.13", "Programming Language :: Python :: 3.14"]
+ dependencies = ["xmod"]
+ 
+@@ -28,7 +28,7 @@ module-root = ""
+ module-root = ""
+ 
+ [build-system]
+-requires = ["uv_build>=0.9.0,<0.10.0"]
++requires = ["uv_build>=0.9.0"]
+ build-backend = "uv_build"
+ 
+ [tool.coverage.run]

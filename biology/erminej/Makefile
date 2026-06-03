@@ -1,5 +1,6 @@
 PORTNAME=	erminej
 DISTVERSION=	3.2
+PORTREVISION=	2
 CATEGORIES=	biology java
 MASTER_SITES=	http://home.pavlab.msl.ubc.ca/ermineJ/distributions/
 DISTNAME=	ermineJ-${DISTVERSION}-generic-bundle

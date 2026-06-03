@@ -1,4 +1,4 @@
---- app/src/version.c.orig	2025-03-29 15:15:14 UTC
+--- app/src/version.c.orig	2026-05-12 19:35:47 UTC
 +++ app/src/version.c
 @@ -8,7 +8,7 @@
  # include <libavdevice/avdevice.h>
@@ -7,5 +7,5 @@
 -# include <libusb-1.0/libusb.h>
 +# include <libusb.h>
  #endif
- #include <SDL2/SDL_version.h>
+ #include <SDL3/SDL_version.h>
  

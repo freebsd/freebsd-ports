@@ -1,4 +1,5 @@
 bin/appid_detector_builder.sh
+bin/show_flows
 bin/snort
 bin/snort2lua
 bin/u2boat
@@ -32,12 +33,16 @@ include/snort/file_api/file_flows.h
 include/snort/file_api/file_lib.h
 include/snort/file_api/file_service.h
 include/snort/flow/deferred_trust.h
+include/snort/flow/dump_flows.h
+include/snort/flow/dump_flows_descriptor.h
+include/snort/flow/dump_flows_serializer.h
 include/snort/flow/expect_flow.h
 include/snort/flow/flow.h
 include/snort/flow/flow_data.h
 include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
 include/snort/flow/ha.h
+include/snort/flow/prune_stats.h
 include/snort/flow/session.h
 include/snort/flow/stream_flow.h
 include/snort/framework/api_options.h
@@ -66,6 +71,7 @@ include/snort/framework/policy_selector.h
 include/snort/framework/range.h
 include/snort/framework/snort_api.h
 include/snort/framework/so_rule.h
+include/snort/framework/tracer.h
 include/snort/framework/value.h
 include/snort/hash/hash_key_operations.h
 include/snort/hash/hashes.h
@@ -85,6 +91,7 @@ include/snort/helpers/event_gen.h
 include/snort/helpers/infractions.h
 include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
+include/snort/helpers/lockless_ring.h
 include/snort/helpers/memcap_allocator.h
 include/snort/helpers/ring2.h
 include/snort/helpers/scratch_allocator.h
@@ -117,6 +124,7 @@ include/snort/mime/decode_b64.h
 include/snort/mime/decode_base.h
 include/snort/mime/file_mime_config.h
 include/snort/mime/file_mime_decode.h
+include/snort/mime/file_mime_form_data.h
 include/snort/mime/file_mime_log.h
 include/snort/mime/file_mime_paf.h
 include/snort/mime/file_mime_process.h
@@ -137,6 +145,7 @@ include/snort/network_inspectors/extractor/extractor_enums.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
+include/snort/network_inspectors/rna/rna_fingerprint_deviceinfo.h
 include/snort/network_inspectors/rna/rna_fingerprint_smb.h
 include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
 include/snort/network_inspectors/rna/rna_fingerprint_ua.h
@@ -195,9 +204,11 @@ include/snort/pub_sub/daq_message_event.h
 include/snort/pub_sub/data_decrypt_event.h
 include/snort/pub_sub/dcerpc_events.h
 include/snort/pub_sub/detection_events.h
+include/snort/pub_sub/deviceinfo_events.h
 include/snort/pub_sub/domain_fronting.h
 include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/dns_events.h
+include/snort/pub_sub/dns_payload_event.h
 include/snort/pub_sub/eof_event.h
 include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
@@ -209,6 +220,7 @@ include/snort/pub_sub/ftp_events.h
 include/snort/pub_sub/http_body_event.h
 include/snort/pub_sub/http_event_ids.h
 include/snort/pub_sub/http_events.h
+include/snort/pub_sub/http_form_data_event.h
 include/snort/pub_sub/http_publish_length_event.h
 include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/http_transaction_end_event.h
@@ -216,6 +228,7 @@ include/snort/pub_sub/intrinsic_event_ids.h
 include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/packet_events.h
+include/snort/pub_sub/quic_events.h
 include/snort/pub_sub/reputation_events.h
 include/snort/pub_sub/rna_events.h
 include/snort/pub_sub/shadowtraffic_aggregator.h
@@ -242,6 +255,7 @@ include/snort/service_inspectors/http_inspect/http_inspect_base.h
 include/snort/service_inspectors/http_inspect/http_stream_splitter_base.h
 include/snort/service_inspectors/http_inspect/http_test_manager.h
 include/snort/service_inspectors/netflow/netflow_record.h
+include/snort/service_inspectors/ssh/ssh_types.h
 include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
@@ -259,7 +273,6 @@ include/snort/time/periodic.h
 include/snort/time/stopwatch.h
 include/snort/trace/trace.h
 include/snort/trace/trace_api.h
-include/snort/trace/trace_logger.h
 include/snort/utils/bits.h
 include/snort/utils/cpp_macros.h
 include/snort/utils/endian.h
@@ -270,6 +283,7 @@ include/snort/utils/util_unfold.h
 lib/snort/daq/daq_file.so
 lib/snort/daq/daq_hext.so
 libdata/pkgconfig/snort.pc
+%%PORTDOCS%%%%DOCSDIR%%/README.show_flows
 %%PORTDOCS%%%%DOCSDIR%%/README.u2boat
 %%PORTDOCS%%%%DOCSDIR%%/active.txt
 %%PORTDOCS%%%%DOCSDIR%%/appendix.txt
@@ -302,6 +316,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/iec104.txt
 %%PORTDOCS%%%%DOCSDIR%%/js_norm.txt
 %%PORTDOCS%%%%DOCSDIR%%/mms.txt
+%%PORTDOCS%%%%DOCSDIR%%/opcua.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/params.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_monitor.txt

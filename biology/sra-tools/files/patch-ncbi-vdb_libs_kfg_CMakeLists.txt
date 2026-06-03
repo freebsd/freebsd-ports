@@ -1,0 +1,10 @@
+--- ncbi-vdb/libs/kfg/CMakeLists.txt.orig	2026-05-13 00:05:30 UTC
++++ ncbi-vdb/libs/kfg/CMakeLists.txt
+@@ -58,6 +58,6 @@ if ( SINGLE_CONFIG AND NOT _NCBIVDB_CFG_PACKAGING)
+ 
+ if ( SINGLE_CONFIG AND NOT _NCBIVDB_CFG_PACKAGING)
+     install( SCRIPT CODE
+-        "execute_process(COMMAND /bin/bash -c \"${CMAKE_CURRENT_SOURCE_DIR}/install.sh ${CMAKE_SOURCE_DIR}/interfaces/kfg/ncbi ${CMAKE_INSTALL_PREFIX}/lib64/ncbi /etc/ncbi ${CMAKE_SOURCE_DIR}/interfaces/kfg/ncbi/kfgsums \" )"
++        "execute_process(COMMAND /bin/bash -c \"${CMAKE_CURRENT_SOURCE_DIR}/install.sh ${CMAKE_SOURCE_DIR}/interfaces/kfg/ncbi ${CMAKE_INSTALL_PREFIX}/lib/ncbi /etc/ncbi ${CMAKE_SOURCE_DIR}/interfaces/kfg/ncbi/kfgsums \" )"
+     )
+ endif()

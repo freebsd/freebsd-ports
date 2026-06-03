@@ -1,0 +1,15 @@
+Bug report: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=294287
+Upstream: https://github.com/wolfSSL/wolfssl/pull/10097
+
+--- cmake/config.in.orig	2026-03-18 23:01:31 UTC
++++ cmake/config.in
+@@ -19,9 +19,6 @@
+ /* Define to 1 if you have the `gmtime_r' function. */
+ #cmakedefine HAVE_GMTIME_R @HAVE_GMTIME_R@
+ 
+-/* Define to 1 if you have the <limits.h> header file. */
+-#cmakedefine HAVE_LIMITS_H @HAVE_LIMITS_H@
+-
+ /* Define to 1 if you have the <pcap/pcap.h> header file. */
+ #cmakedefine HAVE_PCAP_PCAP_H @HAVE_PCAP_PCAP_H@
+ 

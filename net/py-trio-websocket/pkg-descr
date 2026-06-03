@@ -1,4 +1,4 @@
-Trio WebSocket implements both server and client aspects of the the WebSocket
+Trio WebSocket implements both server and client aspects of the WebSocket
 protocol, striving for safety, correctness, and ergonomics. It is based on the
 wsproto project, which is a Sans-IO state machine that implements the majority
 of the WebSocket protocol, including framing, codecs, and events. This library

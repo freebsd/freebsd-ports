@@ -1,6 +1,6 @@
---- chrome/browser/themes/theme_helper.cc.orig	2025-04-15 08:30:07 UTC
+--- chrome/browser/themes/theme_helper.cc.orig	2026-04-15 11:25:12 UTC
 +++ chrome/browser/themes/theme_helper.cc
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "ui/gfx/image/image.h"
  #include "ui/native_theme/native_theme.h"
  

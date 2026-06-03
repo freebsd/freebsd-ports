@@ -40,12 +40,11 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/basic.conf
-%%PORTDOCS%%%%DOCSDIR%%/configs/reload/defaultsentinel_1.conf
-%%PORTDOCS%%%%DOCSDIR%%/configs/reload/defaultsentinel_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/file_rotate.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/file_rotate1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/invalid.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/max_connections.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/max_connections_refuse_all.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/max_payload.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/multiple_users_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/multiple_users_2.conf
@@ -87,3 +86,5 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/tls_curve_prefs.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/tls_empty_cipher.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/tls_empty_curve_prefs.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/tls_insecure_ciphers.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/tls_insecure_ciphers_allowed.conf

@@ -1,0 +1,12 @@
+[
+{
+  type: install
+  message: <<EOM
+Before starting waves for the first time, run the following commands:
+
+  mkdir ~/.config/waves
+  cp %%DATADIR%%/config.example.toml ~/.config/waves/config.toml
+
+Then customize that config file.
+}
+]

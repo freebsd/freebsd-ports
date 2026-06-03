@@ -1,0 +1,8 @@
+wadler-lindig provides a "pretty-printer" for Python objects, based on
+the Wadler-Lindig layout algorithm. It is an alternative to the built-in
+`pprint` module that consumes less horizontal space, which is useful
+for displaying complex, nested data structures in error messages or
+interactive sessions.
+
+The implementation is small, has no dependencies, and supports custom
+pretty-printed representations for user-defined types.

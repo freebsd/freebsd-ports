@@ -1,5 +1,7 @@
-Microsoft Azure Storage Client Library for Python with multi API version
-support.
-
 Handles multi-API versions of Azure Storage Data Plane originally from
 https://github.com/Azure/azure-storage-python.
+
+Note:
+- This is not an official Azure Storage SDK.
+- It is used by https://github.com/Azure/azure-cli to support multiple API
+  versions.

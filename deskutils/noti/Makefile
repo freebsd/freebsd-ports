@@ -1,6 +1,6 @@
 PORTNAME=	noti
 DISTVERSION=	3.8.0
-PORTREVISION=	3
+PORTREVISION=	15
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	notify-send:devel/libnotify
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	variadico

@@ -1,5 +1,6 @@
 PORTNAME=	pysolfc-cardsets
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}/ \
 		https://slackware.uk/~urchlay/src/:bk

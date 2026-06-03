@@ -1,5 +1,0 @@
-TIMESTAMP = 1674467482
-SHA256 (zig-0.10.1.tar.xz) = 69459bc804333df077d441ef052ffa143d53012b655a51f04cfef1414c04168c
-SIZE (zig-0.10.1.tar.xz) = 15143112
-SHA256 (zig-freebsd-x86_64-0.10.1.tar.xz) = e245b577b548af1c36357999165efbd347ae6fe1c7b04d02cd9bfb8d994cb58a
-SIZE (zig-freebsd-x86_64-0.10.1.tar.xz) = 43966220

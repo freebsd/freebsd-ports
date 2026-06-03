@@ -1,9 +1,10 @@
 PORTNAME=	qmapshack
 DISTVERSIONPREFIX=	V_
-DISTVERSION=	1.18.0
+DISTVERSION=	1.20.2
+PORTREVISION=	2
 CATEGORIES=	astro
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Ultimate outdoor aficionado's tool
 WWW=		https://github.com/Maproom/qmapshack/
 

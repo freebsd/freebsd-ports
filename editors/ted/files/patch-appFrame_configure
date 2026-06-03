@@ -1,0 +1,22 @@
+--- appFrame/configure.orig	2025-12-23 20:25:09 UTC
++++ appFrame/configure
+@@ -3828,15 +3828,15 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+     FT2_LIBS_FOUND=NO
+     FT2_FOUND=0
+ 
+-    if  ( freetype-config --cflags ) > /dev/null 2>&1
++    if  ( pkg-config --cflags freetype2 ) > /dev/null 2>&1
+     then
+-	FT2_CFLAGS=`freetype-config --cflags`
++	FT2_CFLAGS=`pkg-config --cflags freetype2`
+ 	FT2_HEADERS_FOUND=YES
+     fi
+ 
+-    if  ( freetype-config --libs ) > /dev/null 2>&1
++    if  ( pkg-config --libs freetype2 ) > /dev/null 2>&1
+     then
+-	FT2_LIBS=`freetype-config --libs`
++	FT2_LIBS=`pkg-config --libs freetype2`
+ 	FT2_LIBS_FOUND=YES
+     fi
+ 

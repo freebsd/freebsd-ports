@@ -1,5 +1,5 @@
---- src/common/dhcp.h.orig	2018-12-02 11:34:59.000000000 -0800
-+++ src/common/dhcp.h	2018-12-06 00:01:11.429254000 -0800
+--- src/common/dhcp.h.orig	2024-07-20 18:04:37 UTC
++++ src/common/dhcp.h
 @@ -9,6 +9,22 @@
  #ifndef DHCP_H
  #define DHCP_H

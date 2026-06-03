@@ -1,3 +1,5 @@
-TIMESTAMP = 1697560495
+TIMESTAMP = 1732980852
 SHA256 (budgie/budgie-desktop-view-v1.3.tar.xz) = acf47e478fa6df75308c1a553668d236a484bd5fb1b60deba4b7744de0445411
 SIZE (budgie/budgie-desktop-view-v1.3.tar.xz) = 274056
+SHA256 (budgie/05a9822.patch) = ae509a072e8a7ce2ec6d3590eec2ca5da04032ddaa00d653d6863047c34d22e4
+SIZE (budgie/05a9822.patch) = 1317

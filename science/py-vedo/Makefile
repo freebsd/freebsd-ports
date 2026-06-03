@@ -1,5 +1,5 @@
 PORTNAME=	vedo
-DISTVERSION=	2024.5.3
+DISTVERSION=	2026.6.1
 PORTREVISION=	1
 CATEGORIES=	science graphics python
 MASTER_SITES=	PYPI
@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for scientific analysis and visualization of 3D objects
-WWW=		https://vedo.embl.es/
+WWW=		https://vedo.embl.es/ \
+		https://github.com/marcomusy/vedo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,10 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		bash:shells/bash
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} # optional
 
 USES=		python shebangfix
 USE_PYTHON=	pep517 concurrent autoplist

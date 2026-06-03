@@ -1,6 +1,6 @@
 PORTNAME=	gnome-todo
 PORTVERSION=	41.0
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -8,6 +8,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small application to manage your personal tasks
 WWW=		https://wiki.gnome.org/Apps/Todo
+
+BROKEN=		fails to build, fatal error: 'girepository.h' file not found
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

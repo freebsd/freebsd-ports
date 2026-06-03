@@ -1,5 +1,5 @@
-TIMESTAMP = 1736034427
-SHA256 (google-brotli-v1.1.0_GH0.tar.gz) = e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff
-SIZE (google-brotli-v1.1.0_GH0.tar.gz) = 511969
-SHA256 (741610efd335a8b6ff9be4c9bed643e0a74fdb6a.patch) = 99ccada03a1c0ac09a93d14c81a5c2ee7bf4563aaafacc290a5070503dc60c1b
-SIZE (741610efd335a8b6ff9be4c9bed643e0a74fdb6a.patch) = 1024
+TIMESTAMP = 1761638001
+SHA256 (brotli/1.2.0/testdata.txz) = e8624d888f13067e7635353397cf42956bf4ca1382da67f9cec8d43e800deecb
+SIZE (brotli/1.2.0/testdata.txz) = 3830712
+SHA256 (brotli/1.2.0/google-brotli-v1.2.0_GH0.tar.gz) = 816c96e8e8f193b40151dad7e8ff37b1221d019dbcb9c35cd3fadbfe6477dfec
+SIZE (brotli/1.2.0/google-brotli-v1.2.0_GH0.tar.gz) = 646315

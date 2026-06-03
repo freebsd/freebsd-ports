@@ -1,6 +1,6 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.0
+DISTVERSION=	1.30.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +71,7 @@ test-check-all: # the upstream claims that some of these checks are broken witho
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check-all
 
 run-examples: build
-	@[ -f ${LOCALBASE}/lib/libtbb.so ] || ! echo "ERROR run-examples target requires devel/tbb package installed"
+	@[ -f ${LOCALBASE}/lib/libtbb.so ] || ! echo "ERROR run-examples target requires devel/onetbb package installed"
 .for e in simple sort mandelbrot stencil
 	@cd ${WRKSRC}/examples/${e} && \
 	${ECHO} "===> Running example ${e}" && \
@@ -79,6 +79,10 @@ run-examples: build
 	./${e}
 .endfor
 
-# tests as of 1.26.0: PASSRATE (1389/1389) = 100%
+# tests as of 1.30.0:
+# 752 / 759 tests PASSED
+# 0 / 759 tests FAILED compilation
+# 0 / 759 tests FAILED execution
+# 7 / 759 tests SKIPPED
 
 .include <bsd.port.mk>

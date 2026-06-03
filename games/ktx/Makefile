@@ -1,5 +1,5 @@
 PORTNAME=	ktx
-DISTVERSION=	1.45
+DISTVERSION=	1.47
 CATEGORIES=	games
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -11,10 +11,12 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	mvdsv:games/mvdsv
 
 USES=		cmake dos2unix
-DOS2UNIX_FILES=	resources/example-configs/ktx/ktx.cfg \
+DOS2UNIX_FILES=	resources/example-configs/id1/maps/arena3.ent \
+		resources/example-configs/ktx/ktx.cfg \
 		resources/example-configs/ktx/mvdsv.cfg \
 		resources/example-configs/ktx/problem.cfg \
-		resources/example-configs/ktx/race/routes/ztricks2.route
+		resources/example-configs/ktx/race/routes/ztricks2.route \
+		resources/extralog/ktxlog_0.1.xsd
 USE_GITHUB=	yes
 GH_ACCOUNT=	QW-Group
 USE_RC_SUBR=	${PORTNAME}
@@ -37,12 +39,13 @@ PORTDATA=	*
 do-install:
 	${REINPLACE_CMD} -e 's|^set k_defmap|// set k_defmap|' \
 		${WRKSRC}/resources/example-configs/ktx/ktx.cfg
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR} \
+		 ${STAGEDIR}${QWDIR}/ktx/demos \
+		 ${STAGEDIR}${QWDIR}/qw
 	cd ${WRKSRC}/resources && \
 		${COPYTREE_SHARE} 'extralog logo' ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/resources/example-configs && \
-		${COPYTREE_SHARE} '*' ${STAGEDIR}${QWDIR}
-	${MKDIR} ${STAGEDIR}${QWDIR}/ktx/demos ${STAGEDIR}${QWDIR}/qw
+		${COPYTREE_SHARE} . ${STAGEDIR}${QWDIR}
 	${MV} ${STAGEDIR}${QWDIR}/id1/maps ${STAGEDIR}${QWDIR}/qw
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/qwprogs.so \
 		${STAGEDIR}${DATADIR}
@@ -51,12 +54,13 @@ do-install:
 	${LN} -s ${Q1DIR}/id1/pak1.pak ${STAGEDIR}${QWDIR}/id1/
 	${LN} -s ${Q1DIR}/id1/maps     ${STAGEDIR}${QWDIR}/id1/
 
-.for f in port1 port2 port3 portffa servers
-	cd ${STAGEDIR}${QWDIR} && ${MV} ${f} ${f}.sample
-.endfor
-.for f in ktx.cfg listip.cfg matchless.cfg mvdfinish.qws mvdsv.cfg \
-	port1.cfg port2.cfg port3.cfg problem.cfg pwd.cfg server.cfg vip_ip.cfg
-	cd ${STAGEDIR}${QWDIR}/ktx && ${MV} ${f} ${f}.sample
-.endfor
+	(cd ${STAGEDIR}${QWDIR} && \
+		for f in port1 port2 port3 portffa servers; do \
+			${MV} $${f} $${f}.sample; done && \
+	cd ktx && \
+		for f in ktx.cfg listip.cfg matchless.cfg mvdfinish.qws \
+			mvdsv.cfg port1.cfg port2.cfg port3.cfg problem.cfg \
+			pwd.cfg server.cfg vip_ip.cfg; do \
+			${MV} $${f} $${f}.sample; done)
 
 .include <bsd.port.mk>

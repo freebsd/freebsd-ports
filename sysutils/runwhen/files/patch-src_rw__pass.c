@@ -1,6 +1,14 @@
---- src/rw_pass.c.orig	2022-08-10 16:08:24 UTC
+--- src/rw_pass.c.orig	2021-04-23 23:20:53 UTC
 +++ src/rw_pass.c
-@@ -9,7 +9,7 @@
+@@ -2,6 +2,7 @@
+ #include <unistd.h>
+ #include <errno.h>
+ 
++#include <skalibs/exec.h>
+ #include <skalibs/stddjb.h>
+ #include "prjlibs-include/constants.h"
+ #include "prjlibs-include/diewarn.h"
+@@ -9,7 +10,7 @@ extern char const* PROG;
  
  extern char const* PROG;
  

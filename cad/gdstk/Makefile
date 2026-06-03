@@ -1,11 +1,12 @@
 PORTNAME=	gdstk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.60
+DISTVERSION=	1.0.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for creation and manipulation of GDSII and OASIS files
-WWW=		https://heitzmann.github.io/gdstk/
+WWW=		https://heitzmann.github.io/gdstk/ \
+		https://github.com/heitzmann/gdstk/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,6 +20,6 @@ GH_ACCOUNT=	heitzmann
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-CONFLICTS_INSTALL=	misc/vxl # both install lib/libclipper.so
+CONFLICTS_INSTALL=	vxl # both install lib/libclipper.so
 
 .include <bsd.port.mk>

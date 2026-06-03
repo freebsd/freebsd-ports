@@ -1,9 +1,8 @@
 PORTNAME=	graphviz
-PORTVERSION=	12.2.1
-PORTREVISION=	2
+PORTVERSION=	15.0.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 WWW=		https://www.graphviz.org/
@@ -39,7 +38,13 @@ MAKE_ENV=	EXPR_COMPAT=yes
 CONFLICTS_INSTALL=	ghmm
 
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB=	SH_VERSION_SHORT="8" SH_VERSION_FULL="8.0.11" \
+		SH_LIBCDT_SHORT="6" SH_LIBCDT_FULL="6.0.3" \
+		SH_LIBCGRAPH_SHORT="8" SH_LIBCGRAPH_FULL="8.1.0" \
+		SH_LIBGVC_SHORT="7" SH_LIBGVC_FULL="7.0.10" \
+		SH_LIBGVPR_SHORT="2" SH_LIBGVPR_FULL="2.0.10" \
+		SH_LIBPATHPLAN_SHORT="4" SH_LIBPATHPLAN_FULL="4.0.7" \
+		SH_LIBXDOT_SHORT="4" SH_LIBXDOT_FULL="4.0.2"
 SHEBANG_FILES=	cmd/dot/dot_sandbox
 
 FIX_INCLUDE=	lib/cdt/dthdr.h lib/pathplan/tri.h \
@@ -52,7 +57,7 @@ FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
 		tclpkg/tclpathplan/demo/pathplan.tcl
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS ANN GTS \
-		PANGOCAIRO POPPLER GDK GHOSTSCRIPT DEVIL \
+		PANGOCAIRO POPPLER GDK GHOSTSCRIPT DEVIL ASCII \
 		SMYRNA GVEDIT \
 		PERL PHP PYTHON RUBY LUA TCL TK GUILE GO \
 		NVTHREADS DOCS EXAMPLES
@@ -68,6 +73,7 @@ POPPLER_DESC=	PDF and PS file support via poppler (requires PANGOCAIRO)
 GDK_DESC=	gdk plugin support (requires PANGOCAIRO)
 GHOSTSCRIPT_DESC=ghostscript plugin (requires PANGOCAIRO)
 DEVIL_DESC=	devil plugin
+ASCII_DESC=	ascii plugin
 SMYRNA_DESC=	SMYRNA graph viewer (GTK2)
 GVEDIT_DESC=	GVEDIT graph viewer (QT6)
 PERL_DESC=	Perl bindings (swig)
@@ -110,6 +116,7 @@ ANN_LIB_DEPENDS=	libann.so:math/ann
 GTS_LIB_DEPENDS=	libgts.so:graphics/gts
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
+ASCII_LIB_DEPENDS=	libaa.so:graphics/aalib
 SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 			libgts.so:graphics/gts
@@ -129,11 +136,12 @@ PANGOCAIRO_CONFIGURE_WITH=	pangocairo
 POPPLER_CONFIGURE_WITH=		poppler
 POPPLER_IMPLIES=		PANGOCAIRO
 GTK3_CONFIGURE_WITH=		gtk
-GDK_CONFIGURE_WITH=		gdk gdk-pixbuf 
+GDK_CONFIGURE_WITH=		gdk gdk-pixbuf
 GDK_IMPLIES=			PANGOCAIRO
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
 GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
 DEVIL_CONFIGURE_WITH=		devil
+ASCII_CONFIGURE_WITH=		aalib
 GVEDIT_CONFIGURE_WITH=		qt
 SMYRNA_CONFIGURE_OFF=		--with-glut=no
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext gtk
@@ -149,8 +157,8 @@ PYTHON_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py
 PYTHON_CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}"
 RUBY_CONFIGURE_ENABLE=		ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}" RUBY_VER="${RUBY_VER}" \
-			RUBY_CFLAGS="${RUBY_CFLAGS}" \
-			RUBY_LDFLAGS="${RUBY_LDFLAGS}" \
+			RUBY_CFLAGS="${GV_RUBY_CFLAGS}" \
+			RUBY_LDFLAGS="${GV_RUBY_LDFLAGS}" \
 			RUBY_INSTALL_DIR="${RUBY_SITEARCHLIBDIR}"
 RUBY_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.rb
 LUA_CONFIGURE_ENABLE=		lua
@@ -200,12 +208,12 @@ USES+=	python:env
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
-RUBY_CFLAGS+=	-I "${LOCALBASE}/include/ruby-${RUBY_VER}/" \
+GV_RUBY_CFLAGS+=-I "${LOCALBASE}/include/ruby-${RUBY_VER}/" \
 		-I "${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}"
 .if exists(${LOCALBASE}/bin/ruby${RUBY_SHLIBVER})
-RUBY_LIBS!=	${LOCALBASE}/bin/ruby${RUBY_SHLIBVER} \
+GV_RUBY_LIBS!=	${LOCALBASE}/bin/ruby${RUBY_SHLIBVER} \
 		-r rbconfig -e "print RbConfig::CONFIG[ 'LIBS' ]"
-RUBY_LDFLAGS+=	${RUBY_LIBS}
+GV_RUBY_LDFLAGS+=	${GV_RUBY_LIBS}
 .endif
 .endif
 
@@ -248,8 +256,6 @@ post-patch:
 		-e 's|LUA_INSTALL_DIR=.*|LUA_INSTALL_DIR="${LUA_MODLIBDIR}"|' \
 		-e 's| vendorarchdir| sitearchdir|' \
 		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
-		${WRKSRC}/cmd/smyrna/tvnodes.h
 	cd ${WRKSRC} && ${REINPLACE_CMD} \
 		-e 's|exec tclsh |exec tclsh${TCL_VER} |' ${FIX_TCL_SCRIPT}
 	cd ${WRKSRC} && ${REINPLACE_CMD} \

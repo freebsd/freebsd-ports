@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USERS=		ftp
 GROUPS=		ftp
-USES=		cpe alias
+USES=		cpe
 ALL_TARGET=	vsftpd
 USE_RC_SUBR=	vsftpd vsftpd6
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \

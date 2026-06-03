@@ -64,9 +64,10 @@ share/icons/hicolor/48x48/actions/rsibreak2.png
 share/icons/hicolor/48x48/actions/rsibreak3.png
 share/icons/hicolor/48x48/actions/rsibreak4.png
 share/icons/hicolor/48x48/actions/rsibreakx.png
-share/knotifications5/rsibreak.notifyrc
+share/knotifications6/rsibreak.notifyrc
 share/locale/ar/LC_MESSAGES/rsibreak.mo
 share/locale/be/LC_MESSAGES/rsibreak.mo
+share/locale/bg/LC_MESSAGES/rsibreak.mo
 share/locale/bs/LC_MESSAGES/rsibreak.mo
 share/locale/ca/LC_MESSAGES/rsibreak.mo
 share/locale/ca@valencia/LC_MESSAGES/rsibreak.mo
@@ -78,10 +79,12 @@ share/locale/en_GB/LC_MESSAGES/rsibreak.mo
 share/locale/eo/LC_MESSAGES/rsibreak.mo
 share/locale/es/LC_MESSAGES/rsibreak.mo
 share/locale/et/LC_MESSAGES/rsibreak.mo
+share/locale/eu/LC_MESSAGES/rsibreak.mo
 share/locale/fi/LC_MESSAGES/rsibreak.mo
 share/locale/fr/LC_MESSAGES/rsibreak.mo
 share/locale/ga/LC_MESSAGES/rsibreak.mo
 share/locale/gl/LC_MESSAGES/rsibreak.mo
+share/locale/he/LC_MESSAGES/rsibreak.mo
 share/locale/hi/LC_MESSAGES/rsibreak.mo
 share/locale/hne/LC_MESSAGES/rsibreak.mo
 share/locale/hr/LC_MESSAGES/rsibreak.mo
@@ -91,6 +94,7 @@ share/locale/id/LC_MESSAGES/rsibreak.mo
 share/locale/is/LC_MESSAGES/rsibreak.mo
 share/locale/it/LC_MESSAGES/rsibreak.mo
 share/locale/ja/LC_MESSAGES/rsibreak.mo
+share/locale/ka/LC_MESSAGES/rsibreak.mo
 share/locale/km/LC_MESSAGES/rsibreak.mo
 share/locale/ko/LC_MESSAGES/rsibreak.mo
 share/locale/lt/LC_MESSAGES/rsibreak.mo
@@ -105,6 +109,7 @@ share/locale/pt/LC_MESSAGES/rsibreak.mo
 share/locale/pt_BR/LC_MESSAGES/rsibreak.mo
 share/locale/ro/LC_MESSAGES/rsibreak.mo
 share/locale/ru/LC_MESSAGES/rsibreak.mo
+share/locale/sa/LC_MESSAGES/rsibreak.mo
 share/locale/se/LC_MESSAGES/rsibreak.mo
 share/locale/sk/LC_MESSAGES/rsibreak.mo
 share/locale/sl/LC_MESSAGES/rsibreak.mo
@@ -114,7 +119,6 @@ share/locale/tg/LC_MESSAGES/rsibreak.mo
 share/locale/tr/LC_MESSAGES/rsibreak.mo
 share/locale/ug/LC_MESSAGES/rsibreak.mo
 share/locale/uk/LC_MESSAGES/rsibreak.mo
-share/locale/x-test/LC_MESSAGES/rsibreak.mo
 share/locale/zh_CN/LC_MESSAGES/rsibreak.mo
 share/locale/zh_TW/LC_MESSAGES/rsibreak.mo
 share/metainfo/org.kde.rsibreak.appdata.xml

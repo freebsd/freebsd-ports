@@ -61,11 +61,18 @@ load_rc_config ${name}
 : ${remark_admin_type:="shared"}
 : ${remark_admin_rpc_api:=""}
 : ${remark_admin_rpc_timeout:="5s"}
+: ${remark_admin_rpc_auth_user:=""}
+: ${remark_admin_rpc_auth_passwd:=""}
+: ${remark_admin_rpc_secret_per_site:=""}
 : ${remark_admin_shared_id:=""}
 : ${remark_admin_shared_email:=""}
 : ${remark_backup_path:="%%REMARK_DATADIR%%/backup"}
 : ${remark_backup_max:="10"}
 : ${remark_cache_type:="mem"}
+: ${remark_cache_redis_addr:=""}
+: ${remark_cache_max_items:=""}
+: ${remark_cache_max_value:=""}
+: ${remark_cache_max_size:=""}
 : ${remark_avatar_type:="fs"}
 : ${remark_avatar_fs_path:="%%REMARK_DATADIR%%/avatars"}
 : ${remark_avatar_bolt_file:="%%REMARK_DATADIR%%/avatars.db"}
@@ -84,6 +91,10 @@ load_rc_config ${name}
 : ${remark_image_resize_width:="2400"}
 : ${remark_image_resize_height:="900"}
 : ${remark_auth_same_site:="default"}
+: ${remark_auth_apple_cid:=""}
+: ${remark_auth_apple_tid:=""}
+: ${remark_auth_apple_kid:=""}
+: ${remark_auth_apple_private_key_filepath:=""}
 : ${remark_auth_google_cid:=""}
 : ${remark_auth_google_csec:=""}
 : ${remark_auth_facebook_cid:=""}
@@ -96,6 +107,8 @@ load_rc_config ${name}
 : ${remark_auth_twitter_csec:=""}
 : ${remark_auth_patreon_cid:=""}
 : ${remark_auth_patreon_csec:=""}
+: ${remark_auth_discord_cid:=""}
+: ${remark_auth_discord_csec:=""}
 : ${remark_auth_yandex_cid:=""}
 : ${remark_auth_yandex_csec:=""}
 : ${remark_auth_telegram:=""}
@@ -211,9 +224,9 @@ remark_precmd()
                 err 1 "remark_admin_type has to be either 'shared' or 'rpc'"
                 ;;
         esac
-	export_variables ADMIN_SHARED_ID ADMIN_SHARED_EMAIL BACKUP_PATH
+	export_variables ADMIN_SHARED_ID ADMIN_SHARED_EMAIL ADMIN_RPC_SECRET_PER_SITE BACKUP_PATH
 	export MAX_BACKUP_FILES="${remark_backup_max}"
-	export_variables CACHE_TYPE AVATAR_TYPE
+	export_variables CACHE_TYPE CACHE_REDIS_ADDR CACHE_MAX_ITEMS CACHE_MAX_VALUE CACHE_MAX_SIZE AVATAR_TYPE
 	case "${AVATAR_TYPE}" in
 	fs)
 		export_variable AVATAR_FS_PATH
@@ -245,7 +258,9 @@ remark_precmd()
 		;;
 	esac
 	export_variables IMAGE_MAX_SIZE IMAGE_RESIZE_WIDTH IMAGE_RESIZE_HEIGHT AUTH_SAME_SITE AUTH_TELEGRAM
-	for _provider in google facebook microsoft github twitter patreon yandex; do
+	# Export Apple auth separately due to different parameters
+	export_variables AUTH_APPLE_CID AUTH_APPLE_TID AUTH_APPLE_KID AUTH_APPLE_PRIVATE_KEY_FILEPATH
+	for _provider in google facebook microsoft github twitter patreon discord yandex; do
 		_provider_upper="$(echo ${_provider} | tr a-z A-Z)"
 		export_variables "AUTH_${_provider_upper}_CID" "AUTH_${_provider_upper}_CSEC"
 	done

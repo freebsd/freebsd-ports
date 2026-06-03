@@ -1,5 +1,5 @@
 PORTNAME=	dmidecode
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH
 
@@ -10,7 +10,7 @@ WWW=		https://www.nongnu.org/dmidecode/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 riscv64 riscv64sf
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 riscv64
 
 USES=		tar:xz
 

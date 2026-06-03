@@ -1,5 +1,5 @@
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.28
+PORTVERSION=	2.5.32
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION} \
 		https://github.com/gphoto/gphoto2/releases/download/v${PORTVERSION}/

@@ -1,6 +1,6 @@
---- scripts/debian-common.orig	2023-02-08 17:55:01 UTC
+--- scripts/debian-common.orig	2025-08-27 14:48:00 UTC
 +++ scripts/debian-common
-@@ -215,10 +215,21 @@ echo \"Warning: Fake start-stop-daemon called, doing n
+@@ -220,10 +220,24 @@ echo \"Warning: Fake start-stop-daemon called, doing n
  		predep=$(without "$(without "$(resolve_deps $predep)" "$required")" "$done_predeps")
  		# XXX: progress is tricky due to how dpkg_progress works
  		# -- cjwatson 2009-07-29
@@ -16,13 +16,16 @@
 +			warning FREEBSD_00 "Applying FreeBSD-specific workaround..."
 +			# ... for "Failed to mount /etc/machine-id: Bad address" with Focal.
 +			in_target truncate -s0 /var/lib/dpkg/info/systemd.postinst
++			# Fix "Failed to take /etc/passwd lock: Invalid argument" error
++			# See: https://github.com/microsoft/WSL/issues/10397#issuecomment-1780132430
++			in_target ln -sf /bin/echo /bin/systemd-sysusers
 +			in_target dpkg --configure systemd
 +		fi
 +		set -e
  	done
  
  	if [ -n "$base" ]; then
-@@ -237,6 +248,12 @@ echo \"Warning: Fake start-stop-daemon called, doing n
+@@ -242,6 +256,12 @@ echo \"Warning: Fake start-stop-daemon called, doing n
  
  	mv "$TARGET/sbin/start-stop-daemon.REAL" "$TARGET/sbin/start-stop-daemon"
  	rm -f "$TARGET/usr/sbin/policy-rc.d"

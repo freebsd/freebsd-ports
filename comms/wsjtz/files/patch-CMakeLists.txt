@@ -1,9 +1,10 @@
---- CMakeLists.txt.orig	2022-04-18 18:07:26 UTC
+--- CMakeLists.txt.orig	2025-01-07 04:30:42 UTC
 +++ CMakeLists.txt
-@@ -141,6 +141,12 @@ attach a debugger which will then receive the console 
+@@ -145,7 +145,12 @@ attach a debugger which will then receive the console 
  # install locations
  #
  
+- 
 +if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  set (FREEBSD TRUE)
 +  link_directories("/usr/lib" "${LOCALBASE}/lib")
@@ -13,7 +14,7 @@
  if (APPLE)
    set (CMAKE_INSTALL_BINDIR ${CMAKE_PROJECT_NAME}.app/Contents/MacOS)
    set (CMAKE_INSTALL_DATAROOTDIR ${CMAKE_PROJECT_NAME}.app/Contents/Resources)
-@@ -875,8 +881,20 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
+@@ -936,8 +941,20 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
  #
  # OpenMP
  #
@@ -35,7 +36,7 @@
  #
  # fftw3 single precision library
  #
-@@ -923,7 +941,7 @@ set (CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+@@ -986,7 +1003,7 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
  #
  set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
  
@@ -44,8 +45,8 @@
  
  if (NOT APPLE)
    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-pragmas")
-@@ -1169,7 +1187,7 @@ add_executable (encode77 lib/77bit/encode77.f90)
- target_link_libraries (encode77 wsjt_fort wsjt_cxx)
+@@ -1247,7 +1264,7 @@ add_executable (wsprsim ${wsprsim_CSRCS})
+ target_link_libraries (hash22calc wsjt_fort wsjt_cxx)
  
  add_executable (wsprsim ${wsprsim_CSRCS})
 -target_link_libraries (wsprsim ${LIBM_LIBRARIES})
@@ -53,7 +54,7 @@
  
  add_executable (jt4code lib/jt4code.f90)
  target_link_libraries (jt4code wsjt_fort wsjt_cxx)
-@@ -1211,6 +1229,12 @@ target_link_libraries (ldpcsim240_74 wsjt_fort wsjt_cx
+@@ -1301,6 +1318,12 @@ endif(WSJT_BUILD_UTILS)
  
  endif(WSJT_BUILD_UTILS)
  
@@ -66,7 +67,7 @@
  add_executable (fmtave lib/fmtave.f90)
  
  add_executable (fcal lib/fcal.f90)
-@@ -1410,6 +1434,11 @@ if (${OPENMP_FOUND} OR APPLE)
+@@ -1499,6 +1522,11 @@ endif (${OPENMP_FOUND} OR APPLE)
  else (${OPENMP_FOUND} OR APPLE)
    target_link_libraries (jt9 wsjt_fort wsjt_cxx fort_qt)
  endif (${OPENMP_FOUND} OR APPLE)
@@ -77,8 +78,8 @@
 +endif ()
  
  if (WIN32)
-   # build map65
-@@ -1601,12 +1630,12 @@ install (PROGRAMS
+   find_package (Portaudio REQUIRED)
+@@ -1690,12 +1718,12 @@ install (PROGRAMS
    RENAME rigctld-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
    )
  

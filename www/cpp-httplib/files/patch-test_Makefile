@@ -1,16 +1,15 @@
---- test/Makefile.orig	2025-07-16 21:59:52 UTC
+--- test/Makefile.orig	2026-02-10 03:44:48 UTC
 +++ test/Makefile
-@@ -27,9 +27,6 @@ ifneq ($(OS), Windows_NT)
- 	ifeq ($(UNAME_S), Darwin)
- 		LIBS += -framework CoreFoundation -framework CFNetwork
+@@ -32,7 +32,7 @@ ifneq ($(OS), Windows_NT)
+ 		# Linux: use system paths
+ 		BROTLI_SUPPORT = -DCPPHTTPLIB_BROTLI_SUPPORT -lbrotlicommon -lbrotlienc -lbrotlidec
+ 		ZSTD_SUPPORT = -DCPPHTTPLIB_ZSTD_SUPPORT -lzstd
+-		LIBS = -lpthread -lcurl -lanl
++		LIBS = -lpthread -lcurl
  	endif
--	ifneq ($(UNAME_S), Darwin)
--		LIBS += -lanl
--	endif
  endif
  
- TEST_ARGS = gtest/src/gtest-all.cc gtest/src/gtest_main.cc -Igtest -Igtest/include $(OPENSSL_SUPPORT) $(ZLIB_SUPPORT) $(BROTLI_SUPPORT) $(ZSTD_SUPPORT) $(LIBS)
-@@ -70,13 +67,13 @@ test : test.cc include_httplib.cc ../httplib.h Makefil
+@@ -95,13 +95,13 @@ test : test.cc include_httplib.cc ../httplib.h Makefil
  	exit $$exit_code
  
  test : test.cc include_httplib.cc ../httplib.h Makefile cert.pem
@@ -24,18 +23,18 @@
 -	$(CXX) -o $@ $(CXXFLAGS) test.cc httplib.cc $(TEST_ARGS)
 +	$(CXX) -o $@ $(CXXFLAGS) test.cc httplib.cc ${LDFLAGS} $(TEST_ARGS)
  
- check_abi:
- 	@./check-shared-library-abi-compatibility.sh
-@@ -104,7 +101,7 @@ test_proxy : test_proxy.cc ../httplib.h Makefile cert.
+ # Mbed TLS backend targets
+ test_mbedtls : test.cc include_httplib.cc ../httplib.h Makefile cert.pem
+@@ -145,7 +145,7 @@ test_proxy : test_proxy.cc ../httplib.h Makefile cert.
  	fi
  
  test_proxy : test_proxy.cc ../httplib.h Makefile cert.pem
 -	$(CXX) -o $@ -I.. $(CXXFLAGS) test_proxy.cc $(TEST_ARGS)
 +	$(CXX) -o $@ -I.. $(CXXFLAGS) test_proxy.cc ${LDFLAGS} $(TEST_ARGS)
  
- # Runs server_fuzzer.cc based on value of $(LIB_FUZZING_ENGINE).
- # Usage: make fuzz_test LIB_FUZZING_ENGINE=/path/to/libFuzzer
-@@ -113,7 +110,7 @@ server_fuzzer : fuzzing/server_fuzzer.cc ../httplib.h 
+ test_proxy_mbedtls : test_proxy.cc ../httplib.h Makefile cert.pem
+ 	$(CXX) -o $@ -I.. $(CXXFLAGS) test_proxy.cc $(TEST_ARGS_MBEDTLS)
+@@ -157,7 +157,7 @@ server_fuzzer : fuzzing/server_fuzzer.cc ../httplib.h 
  
  # Fuzz target, so that you can choose which $(LIB_FUZZING_ENGINE) to use.
  server_fuzzer : fuzzing/server_fuzzer.cc ../httplib.h standalone_fuzz_target_runner.o

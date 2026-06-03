@@ -1,11 +1,13 @@
 bin/emilua
 include/emilua/actor.hpp
+include/emilua/allocator.hpp
 include/emilua/ambient_authority.hpp
 include/emilua/asio_error.hpp
 include/emilua/async_base.hpp
 include/emilua/byte_span.hpp
 include/emilua/condition_variable.hpp
 include/emilua/config.h
+include/emilua/config_from_cli.hpp
 include/emilua/core.hpp
 include/emilua/detail/core.hpp
 include/emilua/detail/landlock.hpp

@@ -1,5 +1,0 @@
-lib/libavl.a
-include/avl.h
-include/avlt.h
-include/avltr.h
-include/rb.h

@@ -1,6 +1,6 @@
 PORTNAME=	caldera
 DISTVERSION=	5.3.0
-PORTREVISION=	3
+PORTREVISION=	21
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -11,6 +11,9 @@ CONFLICTS=	caldera4
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expired www/npm-node20
+EXPIRATION_DATE=2026-09-02
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
@@ -31,9 +34,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dirhash>0:security/py-dirhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}donut-shellcode>0:devel/py-donut-shellcode@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}marshmallow-enum>0:devel/py-marshmallow-enum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap3>0:net/py-ldap3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svglib>0:converters/py-svglib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \

@@ -1,0 +1,8 @@
+--- po/LINGUAS.orig	2015-08-28 17:13:44 UTC
++++ po/LINGUAS
+@@ -3,4 +3,5 @@ fr
+ en
+ en_GB
+ fr
++ja
+ sv

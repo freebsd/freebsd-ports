@@ -1,5 +1,5 @@
 bin/simplescreenrecorder
-share/applications/simplescreenrecorder.desktop
+share/applications/be.maartenbaert.simplescreenrecorder.desktop
 share/icons/hicolor/128x128/apps/simplescreenrecorder-error.png
 share/icons/hicolor/128x128/apps/simplescreenrecorder-idle.png
 share/icons/hicolor/128x128/apps/simplescreenrecorder-paused.png
@@ -57,7 +57,7 @@ share/icons/hicolor/scalable/apps/simplescreenrecorder-recording.svg
 share/icons/hicolor/scalable/apps/simplescreenrecorder.svg
 share/man/man1/simplescreenrecorder.1.gz
 share/man/man1/ssr-glinject.1.gz
-share/metainfo/simplescreenrecorder.metainfo.xml
+share/metainfo/be.maartenbaert.simplescreenrecorder.metainfo.xml
 %%DATADIR%%/output-profiles/High%20Quality%20Intermediate.conf
 %%DATADIR%%/output-profiles/Live%20Stream%20%281000kbps%29.conf
 %%DATADIR%%/output-profiles/Live%20Stream%20%282000kbps%29.conf
@@ -76,6 +76,7 @@ share/metainfo/simplescreenrecorder.metainfo.xml
 %%DATADIR%%/translations/simplescreenrecorder_id.qm
 %%DATADIR%%/translations/simplescreenrecorder_it.qm
 %%DATADIR%%/translations/simplescreenrecorder_ja.qm
+%%DATADIR%%/translations/simplescreenrecorder_ko.qm
 %%DATADIR%%/translations/simplescreenrecorder_lt.qm
 %%DATADIR%%/translations/simplescreenrecorder_nl.qm
 %%DATADIR%%/translations/simplescreenrecorder_pl.qm

@@ -1,7 +1,7 @@
 PORTNAME=	uTox
-DISTVERSION=	0.17.2
+DISTVERSION=	0.18.1
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	10
+PORTREVISION=	3
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://github.com/uTox/uTox/releases/download/v${DISTVERSION}/
 
@@ -36,7 +36,6 @@ OPTIONS_DEFAULT=	DBUS
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
 
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 # ld.lld lacks default output emulation.  Using -b binary without
 # explicit -m will fail.  Mapping taken from lld/ELF/Driver.cpp.
 _LLD_EMUL_aarch64=	aarch64elf_fbsd
@@ -51,7 +50,6 @@ _LLD_EMUL_powerpc64le=	elf64lppc_fbsd
 post-patch:
 	@${REINPLACE_CMD} 's,[[:<:]]ld[[:>:]],ld -m${_LLD_EMUL_${ARCH}},' \
 		${WRKSRC}/src/xlib/CMakeLists.txt
-.endif
 
 do-test:
 	@cd ${TEST_WRKSRC} && \

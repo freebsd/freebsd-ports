@@ -1,5 +1,6 @@
 PORTNAME=	smartmontools
 DISTVERSION=	7.5
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -15,15 +16,14 @@ USES=		compiler:c++11-lib cpe
 USE_RC_SUBR=	smartd
 
 GNU_CONFIGURE=	yes
-
-PORTDOCS=	*
-SUB_FILES=	pkg-message smart
-
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-sample \
 		--with-gnupg=yes \
 		--with-initscriptdir=${PREFIX}/etc/rc.d \
 		--with-nvme-devicescan=yes
+
+SUB_FILES=	pkg-message smart
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 

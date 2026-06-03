@@ -1,5 +1,6 @@
 PORTNAME=	vips
-PORTVERSION=	8.17.1
+PORTVERSION=	8.18.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cpe gettext-tools gnome localbase meson pkgconfig python tar:xz
+USES=		compiler:c++14-lang cpe gettext-tools gnome localbase meson pkgconfig python tar:xz
 USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -40,17 +41,11 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS:[1]}
-nox11_PKGNAMESUFFIX=	-nox11
-
-CONFLICTS_INSTALL=	vips vips-nox11
-
-OPTIONS_DEFINE=	CFITSIO DOCS FFTW FONTCONFIG GIF HEIF IMAGEQUANT JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER SPNG TIFF WEBP
+OPTIONS_DEFINE=	CFITSIO DOCS FFTW FONTCONFIG GIF HEIF IMAGEQUANT JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER RAW SPNG TIFF UHDR WEBP
 OPTIONS_RADIO=	MAGICK SIMD
 OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHICSMAGICK
 OPTIONS_RADIO_SIMD=	HIGHWAY ORC
-OPTIONS_DEFAULT=CFITSIO FFTW FONTCONFIG GIF HEIF HIGHWAY IMAGEMAGICK JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER SPNG TIFF WEBP
+OPTIONS_DEFAULT=CFITSIO FFTW FONTCONFIG GIF HEIF HIGHWAY IMAGEMAGICK JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER RAW SPNG TIFF UHDR WEBP
 FONTCONFIG_IMPLIES=	PANGO
 LIBARCHIVE_DESC=Save image pyramid via libarchive
 HIGHWAY_DESC=	SIMD support via Highway (preferred)
@@ -59,6 +54,7 @@ GRAPHICSMAGICK_DESC=	Image processing via GraphicsMagick
 MATIO_DESC=	Matlab MAT format support
 ORC_DESC=	Accelerate loops with ORC
 SPNG_DESC=	Simple PNG support
+UHDR_DESC=	Ultra HDR support
 
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 CFITSIO_MESON_ENABLED=	cfitsio
@@ -73,7 +69,7 @@ FONTCONFIG_MESON_ENABLED=	fontconfig
 GIF_BUILD_DEPENDS=	cgif>=0.2.0:graphics/cgif
 GIF_LIB_DEPENDS=	libcgif.so:graphics/cgif
 GIF_MESON_ENABLED=	cgif
-GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick@${FLAVOR}
+GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHICSMAGICK_MESON_ON=-Dmagick=enabled -Dmagick-package=GraphicsMagick
 HEIF_BUILD_DEPENDS=	libheif>=1.4.0:graphics/libheif
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
@@ -82,7 +78,7 @@ HIGHWAY_BUILD_DEPENDS=	highway>=1.0.5:devel/highway
 HIGHWAY_LIB_DEPENDS=	libhwy.so:devel/highway
 HIGHWAY_MESON_ENABLED=	highway
 IMAGEMAGICK_MESON_ON=	-Dmagick=enabled -Dmagick-package=MagickCore
-IMAGEMAGICK_USES=	magick:${FLAVOR}
+IMAGEMAGICK_USES=	magick
 IMAGEQUANT_LIB_DEPENDS=	libimagequant.so:graphics/libimagequant
 IMAGEQUANT_MESON_ENABLED=	imagequant
 JPEG_BUILD_DEPENDS=	openjpeg>=2.4:graphics/openjpeg
@@ -118,11 +114,15 @@ PNG_MESON_ENABLED=	png
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 POPPLER_MESON_ENABLED=	poppler
 POPPLER_USE=		GNOME=cairo
+RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
+RAW_MESON_ENABLED=	raw
 SPNG_BUILD_DEPENDS=	libspng>=0.7:graphics/libspng
 SPNG_LIB_DEPENDS=	libspng.so:graphics/libspng
 SPNG_MESON_ENABLED=	spng
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MESON_ENABLED=	tiff
+UHDR_LIB_DEPENDS=	libuhdr.so:graphics/libultrahdr
+UHDR_MESON_ENABLED=	uhdr
 WEBP_BUILD_DEPENDS=	webp>=0.6:graphics/webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_MESON_ENABLED=	webp

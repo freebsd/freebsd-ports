@@ -1,5 +1,5 @@
 PORTNAME=	libretro-gambatte
-DISTVERSION=	0.20241022
+DISTVERSION=	0.20250918
 CATEGORIES=	games
 
 MAINTAINER=	tilde@ultros.pro
@@ -12,7 +12,7 @@ USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	gambatte-libretro
-GH_TAGNAME=	a1c4c98582308afafd73c050167a7ea330469e98
+GH_TAGNAME=	0092232a0aaef0ded0ead1c2003ccf7a85ccdfc0
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libretro/gambatte_libretro.so

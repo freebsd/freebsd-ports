@@ -1,13 +1,12 @@
 PORTNAME=	libfolia
-DISTVERSION=	2.21
-PORTREVISION=	2
+DISTVERSION=	2.21.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for FoLiA, a format for annotated language resources
 WWW=		https://proycon.github.io/folia/ \
-		https://github.com/proycon/folia
+		https://github.com/LanguageMachines/libfolia
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

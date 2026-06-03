@@ -4,7 +4,7 @@ PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	GNU
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	PostScript and PDF previewer
 WWW=		https://www.gnu.org/software/gv/
 

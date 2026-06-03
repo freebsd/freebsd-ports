@@ -1,17 +1,18 @@
---- include/driver/Debug.h.orig	2021-11-03 13:00:16 UTC
+--- include/driver/Debug.h.orig	2026-04-18 11:10:29 UTC
 +++ include/driver/Debug.h
-@@ -42,14 +42,14 @@ class CJECA32_PRIVATE_CLASS CDebug (public)
- public:
- 	~CDebug(void);
+@@ -47,7 +47,7 @@ class CJECA32_PRIVATE_CLASS CDebug (public)
+ 	void SetLoggerCallback(void *p_pcUmdfCallBack);
+ #endif
  
 -#if defined(OS_LINUX) || defined(OS_DARWIN)
 +#if defined(OS_LINUX) || defined(OS_DARWIN) || defined(OS_FREEBSD)
  	void setLevelMask(unsigned int nLevelMask);
  	void setLogFileName(const char *fname);
  #endif
- 	
- private:
+@@ -56,7 +56,7 @@ class CJECA32_PRIVATE_CLASS CDebug (public)
     unsigned int m_nLevelMask;
+    void* m_pcUmdfCallBack_1;
+ 
 -#if defined(OS_LINUX) || defined(OS_DARWIN)
 +#if defined(OS_LINUX) || defined(OS_DARWIN) || defined(OS_FREEBSD)
         char *m_logFileName;

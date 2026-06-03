@@ -49,4 +49,5 @@ lib/cmake/Matplot++/Matplot++ConfigVersion.cmake
 lib/cmake/Matplot++/Matplot++Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Matplot++/Matplot++Targets.cmake
 lib/libmatplot.so
+lib/libmatplot.so.1
 lib/libmatplot.so.1.2.0

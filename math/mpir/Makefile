@@ -1,24 +1,28 @@
 PORTNAME=	mpir
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	3.0.0
+PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES=	https://mpir.org/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Multiprecision integer, rational, floating point numbers library
-WWW=		https://www.mpir.org
+WWW=		https://github.com/wbhart/mpir/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	yasm:devel/yasm
+BUILD_DEPENDS=	makeinfo:print/texinfo \
+		yasm:devel/yasm
 
-USES=		libtool tar:bzip2
+USES=		autoreconf libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	wbhart
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cxx --with-system-yasm
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USE_LDCONFIG=	yes
 
 MPIR_VERSION=	23.0.3
 MPIRXX_VERSION=	8.4.3

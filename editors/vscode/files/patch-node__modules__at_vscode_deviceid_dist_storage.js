@@ -1,4 +1,4 @@
---- node_modules/@vscode/deviceid/dist/storage.js.orig	2025-06-19 08:49:17 UTC
+--- node_modules/@vscode/deviceid/dist/storage.js.orig	2026-02-09 08:26:27 UTC
 +++ node_modules/@vscode/deviceid/dist/storage.js
 @@ -42,7 +42,7 @@ function getDirectory() {
      if (process.platform === "darwin") {
@@ -9,7 +9,7 @@
          folder =
              process.env.XDG_CACHE_HOME ?? path.join(process.env.HOME, ".cache");
      }
-@@ -78,4 +78,4 @@ exports.setDeviceId = setDeviceId;
+@@ -87,4 +87,4 @@ exports.setDeviceId = setDeviceId;
      }
  }
  exports.setDeviceId = setDeviceId;

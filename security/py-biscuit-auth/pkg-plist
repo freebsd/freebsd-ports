@@ -1,0 +1,10 @@
+%%PYTHON_SITELIBDIR%%/biscuit_auth/__init__.py
+%%PYTHON_SITELIBDIR%%/biscuit_auth/__init__.pyi
+%%PYTHON_SITELIBDIR%%/biscuit_auth/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/biscuit_auth/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/biscuit_auth/biscuit_auth%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/biscuit_auth/py.typed
+%%PYTHON_SITELIBDIR%%/biscuit_python-0.4.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/biscuit_python-0.4.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/biscuit_python-0.4.0.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/biscuit_python-0.4.0.dist-info/licenses/LICENSE

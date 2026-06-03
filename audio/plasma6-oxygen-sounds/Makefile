@@ -10,6 +10,4 @@ USE_KDE=	ecm:build
 USE_QT=		base:build
 NO_ARCH=	yes
 
-CMAKE_ARGS=	-DQT_MAJOR_VERSION=6
-
 .include <bsd.port.mk>

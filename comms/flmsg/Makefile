@@ -1,11 +1,11 @@
 PORTNAME=	flmsg
-DISTVERSION=	4.0.23
+DISTVERSION=	4.0.24
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/files/${PORTNAME}/
+MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Forms management editor for Amateur Radio standard message formats
-WWW=		http://www.w1hkj.com/
+WWW=		https://www.w1hkj.org/flmsg-help/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,13 +1,11 @@
---- Makefile.orig	2023-02-12 18:33:37 UTC
+--- Makefile.orig	2024-01-26 06:38:18 UTC
 +++ Makefile
-@@ -68,8 +68,8 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(OBJDIR)/.done
+@@ -84,7 +84,7 @@ maxcso: $(OBJS)
  	$(CC) -c $(SRC_CFLAGS) $(CFLAGS) -o $@ $<
  
- # TODO: Perhaps detect and use system libdeflate if available.
--maxcso: $(SRC_CXX_OBJ) $(CLI_CXX_OBJ) $(ZOPFLI_C_OBJ) $(SRC_7ZIP) $(SRC_LIBDEFLATE)
--	$(CXX) $(LDFLAGS) -o $@ $(SRC_CXXFLAGS) $(CXXFLAGS) $^ $(LIBS) $(EXTRA_LIBS)
-+maxcso: $(SRC_CXX_OBJ) $(CLI_CXX_OBJ) $(SRC_7ZIP)
-+	$(CXX) $(LDFLAGS) -o $@ $(SRC_CXXFLAGS) $(CXXFLAGS) $^ $(LIBS) $(EXTRA_LIBS) -lzopfli -ldeflate
+ maxcso: $(OBJS)
+-	$(CXX) $(LDFLAGS) -o $@ $(SRC_CXXFLAGS) $(CXXFLAGS) $^ $(LIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(SRC_CXXFLAGS) $(CXXFLAGS) $^ $(LIBS) -lzopfli
  
  $(SRC_7ZIP):
  	$(MAKE) -f $(SRCDIR)/7zip/Makefile 7zip.a

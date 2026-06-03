@@ -1,7 +1,7 @@
 include/gnome-games-support-2/libgnome-games-support.h
 lib/libgnome-games-support-2.so
 lib/libgnome-games-support-2.so.4
-lib/libgnome-games-support-2.so.4.0.1
+lib/libgnome-games-support-2.so.4.1.0
 libdata/pkgconfig/libgnome-games-support-2.pc
 share/locale/ab/LC_MESSAGES/libgnome-games-support2.mo
 share/locale/af/LC_MESSAGES/libgnome-games-support2.mo

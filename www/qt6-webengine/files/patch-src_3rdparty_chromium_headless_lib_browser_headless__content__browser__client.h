@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.h.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.h.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.h
-@@ -45,7 +45,7 @@ class HeadlessContentBrowserClient : public content::C
+@@ -48,7 +48,7 @@ class HeadlessContentBrowserClient : public content::C
    CreateDevToolsManagerDelegate() override;
    content::GeneratedCodeCacheSettings GetGeneratedCodeCacheSettings(
        content::BrowserContext* context) override;

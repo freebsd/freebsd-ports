@@ -1,0 +1,11 @@
+--- Config.kmk.orig	2023-10-12 15:43:35.000000000 +0700
++++ Config.kmk	2023-10-30 22:11:09.119922000 +0700
+@@ -869,7 +869,7 @@
+ # windows versions (only define when buildling win.x86).
+ #VBOX_WITH_MORE_NT4_COMPAT_BINARIES = 1
+ # Set this to enable building of the vboximg-mount FUSE mounting utility.
+-if1of ($(KBUILD_TARGET), darwin linux)
++if1of ($(KBUILD_TARGET), darwin freebsd linux)
+  VBOX_WITH_VBOXIMGMOUNT = 1
+ endif
+ # Set this to enable packaging the fuse related bits into our installer.

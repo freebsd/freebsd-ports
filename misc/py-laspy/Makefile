@@ -1,5 +1,5 @@
 PORTNAME=	laspy
-DISTVERSION=	2.5.4
+DISTVERSION=	2.7.0
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,8 @@ WWW=		https://laspy.readthedocs.io/en/latest/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 # optional dependencies
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lazrs>=0.6.0:misc/py-lazrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}laszip>=0.2.1:archivers/py-laszip@${PY_FLAVOR} \

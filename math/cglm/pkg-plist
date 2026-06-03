@@ -8,6 +8,9 @@ include/cglm/applesimd.h
 include/cglm/bezier.h
 include/cglm/box.h
 include/cglm/call.h
+include/cglm/call/noise.h
+include/cglm/noise.h
+include/cglm/struct/noise.h
 include/cglm/call/aabb2d.h
 include/cglm/call/affine.h
 include/cglm/call/affine2d.h
@@ -183,5 +186,5 @@ include/cglm/vec4.h
 include/cglm/version.h
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.9.4
+lib/libcglm.so.0.9.6
 libdata/pkgconfig/cglm.pc

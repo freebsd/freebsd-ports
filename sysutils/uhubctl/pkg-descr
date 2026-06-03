@@ -1,0 +1,9 @@
+Uhubctl is utility to control USB power per-port on smart USB hubs.
+Smart hub is defined as one that implements per-port power switching.
+
+Note that quite a few modern motherboards have built-in root hubs
+that do support this feature - you may not even need to buy any external hub.
+
+This utility was tested to compile and work on Linux (Ubuntu/Debian/Raspbian,
+Redhat/EPEL/Fedora/CentOS, Arch Linux, Gentoo, openSUSE, Buildroot), FreeBSD,
+NetBSD, SunOS and MacOS.

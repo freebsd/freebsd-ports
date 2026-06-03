@@ -1,13 +1,11 @@
 PORTNAME=	freerdp
-DISTVERSION=	2.11.7
-PORTREVISION=	4
+DISTVERSION=	2.11.8
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	61983cd6dcb86097d91b7ef405abc1266444a368.patch:-p1 # ffmpeg6 support: AVPicture
-								   # https://github.com/FreeRDP/FreeRDP/pull/8941
 PATCHFILES+=	78cdb555c57c33b7f331cb280ac2f615cb87fa74.patch:-p1 # add additional neon check
 								   # https://github.com/FreeRDP/FreeRDP/issues/9746
 
@@ -18,19 +16,18 @@ WWW=		https://www.freerdp.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Support for 2.x has ended and it is highly recommended to upgrade to 3.x net/freerdp3
+EXPIRATION_DATE=	2026-12-31
+
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
-USES=		alias cmake compiler:c++11-lib cpe localbase pathfix pkgconfig ssl
+USES=		cmake compiler:c++11-lib cpe localbase pathfix pkgconfig ssl
 
 BROKEN_SSL=	libressl-devel
 BROKEN_SSL_REASON_libressl-devel=	fails to compile: no member named 'alert_dispatch' in 'struct ssl3_state_st'
 
 USE_LDCONFIG=	yes
 
-PATCHVERSION=	${DISTVERSION}
-MAJORVERSION=	${DISTVERSION:R:R}
-
-CMAKE_ARGS+=	${CMAKE_ARGS_${ARCH}}
 CMAKE_ON=	WITH_CHANNELS WITH_OPENSSL WITH_OSS WITH_ZLIB CHANNEL_URBDRC_CLIENT
 CMAKE_OFF=	WITH_DSP_EXPERIMENTAL WITH_GPROF WITH_GSSAPI WITH_GSTREAMER_0_10 WITH_IPP \
 		WITH_LIBSYSTEMD WITH_MBEDTLS WITH_OPENCL WITH_OPENSLES WITH_PROFILER \
@@ -40,8 +37,8 @@ CMAKE_OFF=	WITH_DSP_EXPERIMENTAL WITH_GPROF WITH_GSSAPI WITH_GSTREAMER_0_10 WITH
 
 PORTSCOUT=	limit:^2\.
 
-PLIST_SUB+=	PATCHVERSION="${PATCHVERSION}"
-PLIST_SUB+=	MAJORVERSION="${MAJORVERSION}"
+PLIST_SUB=	PATCHVERSION="${DISTVERSION}" \
+		MAJORVERSION="${DISTVERSION:R:R}"
 
 OPTIONS_DEFINE=		ALSA BROKENFOCUS CUPS FAAC FAAD FFMPEG GSM GSTREAMER \
 			ICU JPEG LAME MANPAGES OPENH264 PCSC \
@@ -148,12 +145,12 @@ X11_CMAKE_ON=		-DWITH_X11:BOOL=ON -DWITH_XCURSOR:BOOL=ON \
 X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF -DWITH_XKBFILE:BOOL=OFF
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|${DISTVERSION}-dev|${DISTVERSION}|' \
+		${WRKSRC}/CMakeLists.txt
+
+post-patch-GSM-on:
 	@${REINPLACE_CMD} -e 's|gsm/gsm.h|gsm.h|' \
 		${WRKSRC}/cmake/FindGSM.cmake \
 		${WRKSRC}/libfreerdp/codec/dsp.c
-
-pre-configure:
-	${CP} ${FILESDIR}/mntent.h ${WRKSRC}/rdtk/include
-	${CP} ${FILESDIR}/mntent_compat.c ${WRKSRC}/channels/rdpdr/client
 
 .include <bsd.port.mk>

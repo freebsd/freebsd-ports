@@ -11,7 +11,7 @@ WWW=		https://github.com/alexdobin/STAR
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/STAR-${DISTVERSION}/LICENSE
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture

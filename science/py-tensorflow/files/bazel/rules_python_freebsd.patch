@@ -1,0 +1,27 @@
+diff --git a/python/private/toolchains_repo.bzl b/python/private/toolchains_repo.bzl
+--- a/python/private/toolchains_repo.bzl
++++ b/python/private/toolchains_repo.bzl
+@@ -313,6 +313,23 @@
+     rctx.file("BUILD.bazel", _HOST_TOOLCHAIN_BUILD_CONTENT)
+ 
+     os_name = repo_utils.get_platforms_os_name(rctx)
++
++    # FreeBSD and other unsupported platforms: fall back to system Python.
++    if os_name not in ["linux", "windows", "osx"]:
++        result = rctx.execute(["which", "python3"])
++        if result.return_code != 0:
++            fail("rules_python: Cannot find system python3 for host OS '{}'. Install python3 in PATH.".format(os_name))
++        python_path = result.stdout.strip()
++        rctx.symlink(rctx.path(python_path), "python")
++
++        # Symlink lib so PYTHONHOME points to a usable prefix.
++        prefix_result = rctx.execute([python_path, "-c", "import sys; print(sys.prefix)"])
++        if prefix_result.return_code == 0:
++            prefix = prefix_result.stdout.strip()
++            rctx.symlink(rctx.path(prefix + "/lib"), "lib")
++
++        return
++
+     impl_repo_name = _get_host_impl_repo_name(
+         rctx = rctx,
+         logger = repo_utils.logger(rctx),

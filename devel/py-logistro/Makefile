@@ -1,5 +1,5 @@
 PORTNAME=	logistro
-DISTVERSION=	1.0.11
+DISTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,8 @@ NO_ARCH=	yes
 post-patch: # workaround for https://github.com/plotly/Kaleido/issues/288
 	@${REINPLACE_CMD} -e "s|version = \"0.0.0\"|version = \"${DISTVERSION}\"|" ${WRKSRC}/pyproject.toml
 
-# tests as of 1.0.11:
-# Results (18.81s):
-#       17 passed
+# tests as of 2.0.1:
+# Results (4.48s):
+#         12 passed
 
 .include <bsd.port.mk>

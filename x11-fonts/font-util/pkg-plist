@@ -1,5 +1,7 @@
 bin/bdftruncate
 bin/ucs2any
+libdata/pkgconfig/fontutil.pc
+share/aclocal/fontutil.m4
 share/fonts/util/map-ISO8859-1
 share/fonts/util/map-ISO8859-10
 share/fonts/util/map-ISO8859-11
@@ -17,7 +19,5 @@ share/fonts/util/map-ISO8859-8
 share/fonts/util/map-ISO8859-9
 share/fonts/util/map-JISX0201.1976-0
 share/fonts/util/map-KOI8-R
-libdata/pkgconfig/fontutil.pc
 share/man/man1/bdftruncate.1.gz
 share/man/man1/ucs2any.1.gz
-share/aclocal/fontutil.m4

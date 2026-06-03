@@ -11,6 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 IGNORE_FreeBSD_14=	included in base system
 IGNORE_FreeBSD_15=	included in base system
+IGNORE_FreeBSD_16=	included in base system
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet tested for non-x86
 

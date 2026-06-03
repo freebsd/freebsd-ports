@@ -1,6 +1,6 @@
 PORTNAME=	javatari
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	emulators java
 MASTER_SITES=	http://javatari.org/old/java/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}

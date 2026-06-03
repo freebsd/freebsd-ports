@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-06-11 12:41:36 UTC
+--- pyproject.toml.orig	2025-10-26 09:59:30 UTC
 +++ pyproject.toml
 @@ -9,7 +9,7 @@ requires-python = ">=3.9"
  description = "HTTP client library for gevent"

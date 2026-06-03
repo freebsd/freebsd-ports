@@ -1,14 +1,13 @@
 PORTNAME=	xstatic-jsencrypt
-PORTVERSION=	2.3.1.1
-PORTREVISION=	4
+PORTVERSION=	2.3.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-JSEncrypt-${PORTVERSION}
+DISTNAME=	xstatic_jsencrypt-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JSEncrypt (XStatic packaging standard)
-WWW=		https://travistidwell.com/jsencrypt/ \
+COMMENT=	JSEncrypt ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-jsencrypt \
 		https://github.com/openstack/xstatic-jsencrypt
 
 LICENSE=	MIT

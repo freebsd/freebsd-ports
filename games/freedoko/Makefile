@@ -1,5 +1,5 @@
 PORTNAME=	freedoko
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -7,6 +7,9 @@ DISTNAME=	FreeDoko_${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
 WWW=		https://free-doko.sourceforge.net/
+
+BROKEN=		plist issues and error messages during install stage
+EXPIRATION_DATE=2026-07-31
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

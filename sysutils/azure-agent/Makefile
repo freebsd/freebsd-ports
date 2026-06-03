@@ -1,6 +1,5 @@
 PORTNAME=	azure-agent
-PORTVERSION=	2.12.0.2
-PORTREVISION=	1
+DISTVERSION=	2.15.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -8,23 +7,29 @@ MAINTAINER=	weh@microsoft.com
 COMMENT=	Microsoft Azure Linux Agent
 WWW=		https://github.com/Azure/WALinuxAgent/
 
+PATCH_SITES=	https://github.com/Azure/WALinuxAgent/commit/
+PATCHFILES=	8669496167f1b41f5d0dceeb15dee3f23cfc5f5d.patch:-p1
+
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	sudo:security/sudo \
-		bash:shells/bash \
+RUN_DEPENDS=	bash:shells/bash \
 		dmidecode:sysutils/dmidecode \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR} \
 		ca_root_nss>0:security/ca_root_nss
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=4.0.2:devel/py-mock@${PY_FLAVOR} \
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		python shebangfix
+USES=		python shebangfix sudo
 
 SHEBANG_FILES=	bin/waagent bin/waagent2.0
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Azure
 GH_PROJECT=	WALinuxAgent
-USE_PYTHON=	autoplist distutils noflavors
+USE_PYTHON=	autoplist distutils noflavors pytest
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc/waagent,${PREFIX}/etc/waagent,g" \
@@ -53,5 +58,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/config/freebsd/waagent.conf \
 		${STAGEDIR}${PREFIX}/etc/waagent.conf.sample
+
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ./ci/pytest.sh
+
 
 .include <bsd.port.mk>

@@ -1,3 +1,5 @@
-TIMESTAMP = 1714983941
-SHA256 (swesterfeld-liquidsfz-0.3.2_GH0.tar.gz) = 19aa3ff8c303aadde61624d549bb04b670d0123fab66b51ea7c5e4919ebf5eee
-SIZE (swesterfeld-liquidsfz-0.3.2_GH0.tar.gz) = 206515
+TIMESTAMP = 1774221246
+SHA256 (swesterfeld-liquidsfz-0.4.0_GH0.tar.gz) = e5358aeee6a41c69422d4cbb03208c83af21181dad79413d7fa25217206b34cb
+SIZE (swesterfeld-liquidsfz-0.4.0_GH0.tar.gz) = 514427
+SHA256 (ocornut-imgui-dbee23e_GH0.tar.gz) = 604812743671376760f060c8e9b31e109dd64c007ca27fd42821469de7dfbeeb
+SIZE (ocornut-imgui-dbee23e_GH0.tar.gz) = 2051536

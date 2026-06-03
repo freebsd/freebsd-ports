@@ -1,5 +1,5 @@
 PORTNAME=	spamassassin
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 PORTREVISION=	2
 CATEGORIES?=	mail perl5
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/source/ CPAN/Mail
@@ -57,7 +57,7 @@ OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM DMARC PYZOR RAZOR RELAY_COUNTRY RLIMIT SPF_QUERY
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG_NONE GNUPG GNUPG2
-OPTIONS_DEFAULT=	AS_ROOT DKIM GNUPG SSL SPF_QUERY
+OPTIONS_DEFAULT=	AS_ROOT DKIM GNUPG2 SSL SPF_QUERY
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
 
@@ -182,6 +182,7 @@ post-patch::
 		-e 's,B_CONFDIR)/v343.pre,B_CONFDIR)/v343.pre.sample,g' \
 		-e 's,B_CONFDIR)/v400.pre,B_CONFDIR)/v400.pre.sample,g' \
 		-e 's,B_CONFDIR)/v401.pre,B_CONFDIR)/v401.pre.sample,g' \
+		-e 's,B_CONFDIR)/v402.pre,B_CONFDIR)/v402.pre.sample,g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 	${REINPLACE_CMD} -e '/^CC =/d; \

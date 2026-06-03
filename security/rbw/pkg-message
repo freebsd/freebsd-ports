@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+rbw will run rbw-agent, inheriting the environment, so if you plan to
+use rbw with a self-hosted instance (such as security/vaultwarden) with
+your own certificates, be sure to set the SSL_CERT_DIR or SSL_CERT_FILE
+environment variables before rbw-agent runs, otherwise you will receive
+an "UnknownIssuer" error.
+EOM
+}
+]

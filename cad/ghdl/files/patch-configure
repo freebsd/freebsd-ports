@@ -1,4 +1,4 @@
---- configure.orig	2025-03-01 16:49:42 UTC
+--- configure.orig	2026-03-07 17:47:40 UTC
 +++ configure
 @@ -140,8 +140,6 @@ for opt do
      --enable-coverage)      build_mode="coverage";;
@@ -9,7 +9,7 @@
        ;;
    esac
  done
-@@ -437,6 +435,7 @@ if test $backend = mcode; then
+@@ -440,6 +438,7 @@ if test $backend = mcode; then
      *darwin*)  ortho_flags="Flags_Macosx${mcode64}" ;;
      *mingw32*) ortho_flags="Flags_Windows${mcode64}" ;;
      *linux*)   ortho_flags="Flags_Linux${mcode64}" ;;

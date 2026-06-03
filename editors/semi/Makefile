@@ -2,7 +2,6 @@ PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}.${SNAPDATE}
 PORTREVISION=	1
 CATEGORIES=	editors elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	SEMI, Library of MIME feature for GNU Emacs for emacs
@@ -10,33 +9,34 @@ WWW=		https://github.com/wanderlust/semi
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	flim${EMACS_PKGNAMESUFFIX}>0:editors/flim@${EMACS_FLAVOR}
-RUN_DEPENDS=	flim${EMACS_PKGNAMESUFFIX}>0:editors/flim@${EMACS_FLAVOR}
+BUILD_DEPENDS=	flim>0:editors/flim
+RUN_DEPENDS=	flim>0:editors/flim
 
-USES=		emacs iconv makeinfo
+USES=		emacs:build iconv makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	wanderlust
-GH_TAGNAME=	85a52b8
+GH_TAGNAME=	5edbb0d
 
-SNAPDATE=	20240606
+SNAPDATE=	20251130
+
+CONFLICTS_INSTALL=	semi-emacs_*
+
 NO_ARCH=	yes
 
 FLIM_TRUNK=	1.14
 SEMI_VER=	${SEMI_TRUNK}.7
 SEMI_TRUNK=	1.14
 
-ALL_TARGET=	elc
-
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}" \
-		LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}" \
-		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${EMACS_VERSION_SITE_LISPDIR}" \
+		LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${EMACS_SITE_LISPDIR}" \
 		PACKAGE_LISPDIR=NONE
 
 INFO=		mime-ui-en mime-ui-ja
 
 OPTIONS_DEFINE=	DOCS
 
-post-build:
+do-build:
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-en.texi mime-ui-ja.texi; do \
 		${MAKEINFO} --no-split --no-validate $${i} ; \

@@ -1,0 +1,4 @@
+Self-contained reader and writer for Parquet files. No external
+dependencies are required, making it a lightweight alternative to the
+Apache Arrow R package for simple Parquet I/O. Supports most Parquet
+data types including factors, temporal types, and nested structures.

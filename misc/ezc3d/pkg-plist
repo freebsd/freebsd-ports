@@ -7,6 +7,7 @@ include/ezc3d/DataStartInfo.h
 include/ezc3d/Frame.h
 include/ezc3d/Group.h
 include/ezc3d/Header.h
+include/ezc3d/Options.h
 include/ezc3d/Parameter.h
 include/ezc3d/Parameters.h
 include/ezc3d/Point.h
@@ -16,6 +17,7 @@ include/ezc3d/Rotation.h
 include/ezc3d/Rotations.h
 include/ezc3d/RotationsInfo.h
 include/ezc3d/RotationsSubframe.h
+include/ezc3d/WriteOptions.h
 include/ezc3d/ezc3d.h
 include/ezc3d/ezc3dConfig.h
 include/ezc3d/ezc3dNamespace.h

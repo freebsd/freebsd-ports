@@ -1,15 +1,13 @@
---- src/zlib_ng/zlib-ng/CMakeLists.txt.orig	2023-12-25 16:17:33 UTC
+--- src/zlib_ng/zlib-ng/CMakeLists.txt.orig	2025-09-10 11:41:03 UTC
 +++ src/zlib_ng/zlib-ng/CMakeLists.txt
-@@ -74,9 +74,9 @@ option(ZLIB_COMPAT "Compile with zlib compatible API" 
+@@ -86,8 +86,8 @@ option(ZLIB_COMPAT "Compile with zlib compatible API" 
  #
  option(WITH_GZFILEOP "Compile with support for gzFile related functions" ON)
  option(ZLIB_COMPAT "Compile with zlib compatible API" OFF)
 -option(ZLIB_ENABLE_TESTS "Build test binaries" ON)
 -option(ZLIBNG_ENABLE_TESTS "Test zlib-ng specific API" ON)
--option(WITH_GTEST "Build gtest_zlib" ON)
 +option(ZLIB_ENABLE_TESTS "Build test binaries" OFF)
 +option(ZLIBNG_ENABLE_TESTS "Test zlib-ng specific API" OFF)
-+option(WITH_GTEST "Build gtest_zlib" OFF)
- option(WITH_FUZZERS "Build test/fuzz" OFF)
- option(WITH_BENCHMARKS "Build test/benchmarks" OFF)
  option(WITH_BENCHMARK_APPS "Build application benchmarks" OFF)
+ option(WITH_OPTIM "Build with optimisation" ON)
+ option(WITH_REDUCED_MEM "Reduced memory usage for special cases (reduces performance)" OFF)

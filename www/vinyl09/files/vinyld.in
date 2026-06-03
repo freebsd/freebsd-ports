@@ -1,0 +1,125 @@
+#!/bin/sh
+
+# PROVIDE: vinyld
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable vinyld:
+#
+# vinyld_enable="YES"
+#
+# Configuration variables and their default values:
+#
+# vinyld_pidfile - full path to the PID file.
+#	default: "/var/run/vinyld.pid"
+#
+# vinyld_listen - address and port at which vinyld will listen for
+#	client requests.
+#	default: ":80"
+#
+# vinyld_admin - address and port at which vinyld will listen for
+#	administrative commands.
+#	default: "localhost:81"
+#
+# vinyld_backend - address of the backend server.
+#	default: "localhost:8080"
+#
+# vinyld_config - name of the vinyld config file.
+#	default: unset.
+#
+# vinyld_hash - hash algorithm
+#       default: "critbit"
+#
+# vinyld_storage - storage method and parameters.
+#	default: "file,/tmp,100M"
+#
+# vinyld_jailuser - unprivileged user for the child process.
+#	default: "vinyl"
+#
+# vinyld_flags - complete command line arguments.
+#	default if vinyld_config is unset: "-j unix,user=${vinyld_jailuser} -P ${vinyld_pidfile} -a ${vinyld_listen} -T ${vinyld_admin} -b ${vinyld_backend} -s ${vinyld_storage} -h ${vinyld_hash} ${vinyld_extra_flags}"
+#	default if vinyld_config is set: "-j unix,user=${vinyld_jailuser} -P ${vinyld_pidfile} -a ${vinyld_listen} -T ${vinyld_admin} -f ${vinyld_config} -s ${vinyld_storage} -h ${vinyld_hash} ${vinyld_extra_flags}"
+#
+# See vinyld(1) for a detailed overview of command-line options.
+#
+
+. /etc/rc.subr
+
+name=vinyld
+rcvar=vinyld_enable
+
+load_rc_config ${name}
+
+: ${vinyld_enable:=NO}
+: ${vinyld_pidfile=/var/run/${name}.pid}
+: ${vinyld_listen=:80}
+: ${vinyld_admin=localhost:81}
+: ${vinyld_backend=localhost:8080}
+: ${vinyld_storage=file,/tmp,100M}
+: ${vinyld_hash=critbit}
+: ${vinyld_jailuser=vinyl}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="${vinyld_pidfile}"
+configtest_cmd="vinyld_checkconfig"
+reload_cmd="vinyld_reload"
+restart_precmd="vinyld_checkconfig"
+start_precmd="vinyld_precmd"
+extra_commands="status reload configtest"
+
+if [ -n "${vinyld_config}" ] ; then
+	: ${vinyld_flags:="-j unix,user=${vinyld_jailuser} -P ${vinyld_pidfile} -a ${vinyld_listen} -T ${vinyld_admin} -f ${vinyld_config} -s ${vinyld_storage} -h ${vinyld_hash} ${vinyld_extra_flags}"}
+else
+	: ${vinyld_flags:="-j unix,user=${vinyld_jailuser} -P ${vinyld_pidfile} -a ${vinyld_listen} -T ${vinyld_admin} -b ${vinyld_backend} -s ${vinyld_storage} -h ${vinyld_hash} ${vinyld_extra_flags}"}
+fi
+
+vinyld_checkconfig()
+{
+	if [ -z "${vinyld_config}" ]; then
+		echo "${name}: nothing to check, no configuration file defined, builtin VCL used"
+	else
+		echo "Performing sanity check on ${name} configuration:"
+		if eval ${command} -s ${vinyld_storage} ${vinyld_extra_flags} -C -f "${vinyld_config}" 2> /dev/null ; then
+			echo "${name}: the configuration file ${vinyld_config} syntax is ok"
+		else
+			err 1 "${name}: the configuration file ${vinyld_config} syntax is NOT ok"
+		fi
+	fi
+}
+
+# Adapted from work done by Ingvar Hagelund <ingvar@redpill-linpro.com> (see redhat/vinyl_reload_vcl)
+vinyld_reload()
+{
+	local _current_config_name _new_config_name _vinyladm_cmd
+
+	if [ -z "${vinyld_config}" ]; then
+		echo "${name}: nothing to reload, no configuration file defined, builtin VCL used"
+	else
+		_new_config_name="reloaded_$(date +%Y%m%d%H%M%S)"
+		_vinyladm_cmd="%%PREFIX%%/bin/vinyladm ${vinyl_cli_flags}"
+		if ! eval ${_vinyladm_cmd} vcl.list > /dev/null; then
+			err 1 "${name}: can't connect to vinyladm"
+		fi
+		_current_config_name=$(${_vinyladm_cmd} vcl.list | awk ' /^active/ { print $3 } ')
+		if ! eval ${_vinyladm_cmd} vcl.load ${_new_config_name} ${vinyld_config} > /dev/null; then
+			err 1 "${name}: vcl.load failed, you're still using previous rules (${_current_config_name})"
+		fi
+		if eval ${_vinyladm_cmd} vcl.use ${_new_config_name} > /dev/null; then
+			echo "VCL file \"${vinyld_config}\" has been successfully loaded as \"${_new_config_name}\""
+			echo "To remove previous loaded configurations, you should run \"${_vinyladm_cmd} vcl.discard <configname>\" by yourself"
+		else
+			err 1 "${name}: vcl.use failed, you're still using previous rules (${_current_config_name})"
+		fi
+	fi
+
+	return 0
+}
+
+vinyld_precmd()
+{
+	# Check config before starting
+	vinyld_checkconfig
+}
+
+run_rc_command "$1"

@@ -1,0 +1,11 @@
+secrets analyzer performs Secret Detection scanning. It reports possible secret
+leaks, like application tokens and cryptographic keys, in the source code and
+files contained in your project.
+The analyzer wraps Gitleaks tool, and is written in Go. It's structured
+similarly to other Static Analysis analyzers because it uses the shared
+command package.
+The analyzer is built and published as a Docker image in the GitLab Container
+Registry associated with this repository. You would typically use this analyzer
+in the context of a SAST, IaC, or Secret Detection job in your CI/CD pipeline.
+However, if you're contributing to the analyzer or you need to debug a problem,
+you can run, debug, and test locally using Docker.

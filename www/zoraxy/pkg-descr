@@ -1,0 +1,11 @@
+Zoraxy is a general purpose HTTP reverse proxy and forwarding tool written in Go.
+
+Features include:
+- reverse proxy with HTTP/2
+- redirection rules
+- TLS/SSL and ACME support
+- stream proxy for TCP and UDP
+- access control features
+- integrated uptime monitoring
+
+This package installs Zoraxy as a native FreeBSD service.

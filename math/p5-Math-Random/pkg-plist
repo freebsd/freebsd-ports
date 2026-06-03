@@ -1,7 +1,4 @@
 %%SITE_ARCH%%/Math/Random.pm
 %%SITE_ARCH%%/Math/example.pl
-%%SITE_ARCH%%/Math/test1.pl
-%%SITE_ARCH%%/Math/test2.pl
 %%SITE_ARCH%%/auto/Math/Random/Random.so
-%%SITE_ARCH%%/auto/Math/Random/autosplit.ix
 %%PERL5_MAN3%%/Math::Random.3.gz

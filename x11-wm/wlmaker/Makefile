@@ -1,6 +1,6 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
+DISTVERSION=	0.8
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,10 +10,12 @@ WWW=		https://github.com/phkaeser/wlmaker
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.31:graphics/wayland-protocols
+		wayland-protocols>=1.32:graphics/wayland-protocols
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-server.so:graphics/wayland \
-		libwlroots-0.18.so:x11-toolkits/wlroots018 \
+		libwlroots-0.20.so:x11-toolkits/wlroots020 \
+		libinput.so:x11/libinput \
+		libxdg-basedir.so:x11/libxdg-basedir \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	foot:x11/foot
 
@@ -22,22 +24,9 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:114022f:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:54e6055:libbase/submodules/libbase \
+		benhoyt:inih:r62:inih/submodules/inih
 CMAKE_OFF=	${WITH_DEBUG:D:Uconfig_DEBUG}
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/wlmclock \
-		share/icons/${PORTNAME}/chrome-48x48.png \
-		share/icons/${PORTNAME}/clip-48x48.png \
-		share/icons/${PORTNAME}/firefox-48x48.png \
-		share/icons/${PORTNAME}/terminal-48x48.png \
-		share/icons/${PORTNAME}/wlmclock-64x64.png \
-		share/applications/wlmclock.desktop \
-		share/wayland-sessions/${PORTNAME}.desktop \
-		${DATADIR}/root-menu.plist \
-		${DATADIR}/style.plist \
-		${DATADIR}/wlmaker-state.plist \
-		${DATADIR}/wlmaker.plist \
-		${NULL}
 
 post-patch:
 # Respect -O level from global CFLAGS or CMAKE_BUILD_TYPE
@@ -50,6 +39,10 @@ post-patch:
 		${WRKSRC}/src/config.c \
 		${WRKSRC}/src/launcher.c \
 		${WRKSRC}/src/${PORTNAME}.c
+# Generic nodes are not supported by procfs(5)
+	@${REINPLACE_CMD} -e 's,/proc,${LINUXBASE}&,' \
+		${WRKSRC}/apps/*.c \
+		${WRKSRC}/src/task_list.c
 # Respect LOCALBASE for apps and use open source Chrome
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,' \
 		 -e 's/google-chrome/chrome/' \

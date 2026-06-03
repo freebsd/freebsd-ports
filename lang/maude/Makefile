@@ -18,7 +18,7 @@ LIB_DEPENDS=	libbdd.so:science/buddy \
 		libgmp.so:math/gmp \
 		libsigsegv.so:devel/libsigsegv
 
-USES=		alias autoreconf bison compiler:c++11-lang localbase:ldflags \
+USES=		autoreconf bison compiler:c++11-lang localbase:ldflags \
 		ncurses
 USE_CXXSTD=	c++14
 

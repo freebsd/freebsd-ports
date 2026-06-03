@@ -1,6 +1,6 @@
 PORTNAME=	gitqlient
 DISTVERSION=	1.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/francescmm/GitQlient/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -12,10 +12,9 @@ WWW=		https://francescmm.github.io/GitQlient/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++17-lang cpe gl qmake:outsource qt:5
+USES=		compiler:c++17-lang cpe gl qmake:outsource qt:6
 USE_GL=		gl
-USE_QT=		core gui network widgets \
-		buildtools:build
+USE_QT=		base 5compat tools:build
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/GitQlient.pro
 

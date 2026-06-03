@@ -12,6 +12,7 @@ bin/OrthancRecoverCompressedFile
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
 include/orthanc/OrthancDatabasePlugin.proto
+include/orthanc/OrthancPluginCodeModel.json
 sbin/Orthanc
 %%DATADIR%%/plugins/libDelayedDeletion.so
 %%DATADIR%%/plugins/libDelayedDeletion.so.%%DISTVERSION%%

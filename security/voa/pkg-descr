@@ -1,0 +1,12 @@
+This project provides Rust libraries, command line tools and a test
+suite to interact with the File Hierarchy for the Verification of
+OS Artifacts (VOA).
+
+The VOA specification has been created to provide the means for a
+generic, OS artifact verification scheme, that can work with different
+technologies while relying on a unifying lookup directory to retrieve
+verifiers for signatures.
+
+This project provides a reference implementation for the VOA
+specification as well as a canonical test suite that is usable by
+any other implementation.

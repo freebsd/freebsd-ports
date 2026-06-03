@@ -1,5 +1,5 @@
 PORTNAME=	sys-cpu
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

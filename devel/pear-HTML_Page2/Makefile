@@ -1,5 +1,6 @@
 PORTNAME=	HTML_Page2
 PORTVERSION=	0.6.5
+PORTREVISON=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

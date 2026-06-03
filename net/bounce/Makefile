@@ -1,6 +1,6 @@
 PORTNAME=	bounce
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net security
 MASTER_SITES=	http://www.iagora.com/~espel/ \
 		LOCAL/obrien

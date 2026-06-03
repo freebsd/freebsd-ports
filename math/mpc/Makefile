@@ -1,6 +1,5 @@
 PORTNAME=	mpc
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -14,16 +13,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
+USES=		libtool pathfix tar:xz
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
 		--with-mpfr=${LOCALBASE}
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USES=		libtool
-USE_LDCONFIG=	yes
 
 INFO=		mpc
-PLIST_FILES=	include/mpc.h \
-		lib/libmpc.a lib/libmpc.so lib/libmpc.so.3 lib/libmpc.so.3.3.1
+PLIST_FILES=	include/mpc.h 			\
+		lib/libmpc.a 			\
+		lib/libmpc.so 			\
+		lib/libmpc.so.3 		\
+		lib/libmpc.so.3.4.1		\
+		libdata/pkgconfig/mpc.pc
 
 .include <bsd.port.mk>

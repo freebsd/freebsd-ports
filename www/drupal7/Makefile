@@ -1,11 +1,11 @@
 PORTNAME=	drupal7
-DISTVERSION=	7.98
+DISTVERSION=	7.103
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database driven web content management system (CMS)
 WWW=		https://www.drupal.org/
 

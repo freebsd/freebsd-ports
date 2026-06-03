@@ -1,5 +1,5 @@
 PORTNAME=	xen-guest-tools
-PORTVERSION=	4.20.0
+PORTVERSION=	4.21.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.xenproject.org/release/xen/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
@@ -52,7 +52,7 @@ PLIST_FILES=	bin/xen-detect \
 		bin/xenstore-rm \
 		bin/xenstore-watch \
 		bin/xenstore-write \
-		lib/libxenstore.so.4.0 \
+		lib/libxenstore.so.4.1 \
 		lib/libxenstore.so.4 \
 		lib/libxentoolcore.so.1.0 \
 		lib/libxentoolcore.so.1
@@ -68,7 +68,7 @@ do-install:
 		${WRKSRC}/tools/xs-clients/xenstore \
 		${WRKSRC}/tools/xs-clients/xenstore-control \
 		${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_LIB} ${WRKSRC}/tools/libs/store/libxenstore.so.4.0 \
+	${INSTALL_LIB} ${WRKSRC}/tools/libs/store/libxenstore.so.4.1 \
 		${WRKSRC}/tools/libs/toolcore/libxentoolcore.so.1.0 \
 		${STAGEDIR}${PREFIX}/lib/
 	cd ${STAGEDIR}${PREFIX}/bin/ && ${LN} -f xenstore xenstore-chmod
@@ -80,7 +80,7 @@ do-install:
 	cd ${STAGEDIR}${PREFIX}/bin/ && ${LN} -f xenstore xenstore-rm
 	cd ${STAGEDIR}${PREFIX}/bin/ && ${LN} -f xenstore xenstore-watch
 	cd ${STAGEDIR}${PREFIX}/bin/ && ${LN} -f xenstore xenstore-write
-	cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -f libxenstore.so.4.0 libxenstore.so.4
+	cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -f libxenstore.so.4.1 libxenstore.so.4
 	cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -f libxentoolcore.so.1.0 libxentoolcore.so.1
 
 .include <bsd.port.mk>

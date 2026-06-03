@@ -1,0 +1,16 @@
+--- meson.build.orig	2025-10-31 17:21:48 UTC
++++ meson.build
+@@ -54,12 +54,7 @@ endif
+     msg_warning = true
+ endif
+ 
+-if (get_option('prefix') == '/usr')
+-    msg += '\nInstallation prefix:       @0@ ✔'.format (get_option('prefix'))
+-else
+-    msg += '\nInstallation prefix:       @0@ ⛔'.format (get_option('prefix'))
+-    msg_warning = true
+-endif
++msg += '\nInstallation prefix:       @0@ ✔'.format (get_option('prefix'))
+ 
+ if (msg_warning)
+     warning(msg + '\n')

@@ -11,7 +11,7 @@ WWW=		https://github.com/SymbiFlow/fasm
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}textX>0:lang/py-textX@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}textx>0:lang/py-textX@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Prevent saving core files.
+ulimit -c 0
+
+# Run FreeBSD movie player binary without Linux libraries.
+unset LD_PRELOAD
+unset LD_LIBRARY_PATH
+
+# Play movie using the installed mpv with default options but allow them to be
+# changed if needed.
+player=${NWN_PLAYER:-%%PREFIX%%/bin/mpv}
+player_opts=${NWN_PLAYER_OPTS:-"--ontop --fullscreen --keep-open=no \
+	--no-terminal --no-config --no-input-cursor --hr-seek=yes \
+	--no-border --no-osc --osd-level=0"}
+${player} ${player_opts} "${HOME}/.nwn/${1}"

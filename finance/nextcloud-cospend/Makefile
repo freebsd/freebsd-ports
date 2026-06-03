@@ -1,5 +1,5 @@
 PORTNAME=	cospend
-PORTVERSION=	3.0.11
+PORTVERSION=	4.0.0
 CATEGORIES=	finance www editors
 MASTER_SITES=	https://github.com/julien-nc/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 
@@ -9,7 +9,7 @@ WWW=		https://apps.nextcloud.com/apps/cospend
 
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NEXTCLOUD_RUN_DEPENDS=	30
+NEXTCLOUD_RUN_DEPENDS=	33
 
 USES=		nextcloud php:flavors
 

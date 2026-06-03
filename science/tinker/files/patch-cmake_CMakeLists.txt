@@ -1,0 +1,15 @@
+--- cmake/CMakeLists.txt.orig	2025-10-03 08:52:37 UTC
++++ cmake/CMakeLists.txt
+@@ -68,12 +68,6 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+ 
+ # Set compiler flags
+ 
+-if(APPLE)
+-    set(ARCH_FLAGS "-mtune=native")
+-else()
+-    set(ARCH_FLAGS "-march=native")
+-endif()
+-
+ if(WIN32)
+     if(CMAKE_Fortran_COMPILER_ID MATCHES "Intel")
+         set(CMAKE_Fortran_FLAGS_RELEASE "/O3 /QxHost /Qip- /Qprec-div- /w")

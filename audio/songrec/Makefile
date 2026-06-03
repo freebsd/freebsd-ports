@@ -1,6 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.4.3
-PORTREVISION=	9
+DISTVERSION=	0.7.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,301 +11,383 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus \
-		libpulse.so:audio/pulseaudio
+		libpipewire-0.3.so:multimedia/pipewire \
+		libpulse.so:audio/pulseaudio \
+		libsoup-3.0.so:devel/libsoup3
 
-USES=		cargo gettext-runtime gnome ssl
-USE_GNOME=	gdkpixbuf glib20 gtk30
+USES=		cargo gettext-runtime gnome llvm:22 pkgconfig ssl
+USE_GNOME=	gdkpixbuf glib20 gtk40 libadwaita
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marin-m
 GH_PROJECT=	SongRec
+CARGO_FEATURES=	--no-default-features gui ffmpeg
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		alsa-0.9.1 \
-		alsa-sys-0.3.1 \
-		ansi_term-0.11.0 \
-		anyhow-1.0.47 \
+CARGO_CRATES=	adler2-2.0.1 \
+		aho-corasick-1.1.4 \
+		alsa-0.11.0 \
+		alsa-sys-0.4.0 \
+		android_system_properties-0.1.5 \
+		annotate-snippets-0.11.5 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		anyhow-1.0.102 \
 		app_dirs-1.2.1 \
 		arrayvec-0.7.6 \
-		atk-0.9.0 \
-		atk-sys-0.10.0 \
-		atty-0.2.14 \
-		autocfg-1.0.1 \
-		base64-0.12.3 \
-		base64-0.13.0 \
-		bindgen-0.56.0 \
-		bitflags-1.2.1 \
-		bitflags-2.6.0 \
+		async-broadcast-0.7.2 \
+		async-channel-2.5.0 \
+		async-executor-1.14.0 \
+		async-io-2.6.0 \
+		async-lock-3.4.2 \
+		async-process-2.5.0 \
+		async-recursion-1.1.1 \
+		async-signal-0.2.14 \
+		async-task-4.7.1 \
+		async-trait-0.1.89 \
+		atomic-waker-1.1.2 \
+		autocfg-1.5.0 \
+		base64-0.22.1 \
+		bindgen-0.72.1 \
+		bitflags-1.3.2 \
+		bitflags-2.11.1 \
 		block-0.1.6 \
-		bstr-0.2.17 \
-		bumpalo-3.8.0 \
-		bytemuck-1.18.0 \
-		byteorder-1.4.3 \
-		bytes-0.5.6 \
-		bytes-1.1.0 \
-		cairo-rs-0.9.1 \
-		cairo-sys-rs-0.10.0 \
-		cc-1.0.72 \
+		block2-0.6.2 \
+		blocking-1.6.2 \
+		bumpalo-3.20.2 \
+		bytemuck-1.25.0 \
+		byteorder-1.5.0 \
+		byteorder-lite-0.1.0 \
+		bytes-1.11.1 \
+		cairo-rs-0.21.5 \
+		cairo-sys-rs-0.21.5 \
+		cc-1.2.60 \
 		cesu8-1.1.0 \
-		cexpr-0.4.0 \
-		cfg-if-0.1.10 \
-		cfg-if-1.0.0 \
-		chfft-0.3.4 \
-		chrono-0.4.19 \
-		clang-sys-1.3.0 \
-		clap-2.33.3 \
-		claxon-0.4.3 \
-		combine-4.6.2 \
-		core-foundation-0.9.2 \
-		core-foundation-sys-0.8.3 \
-		coreaudio-rs-0.11.3 \
-		coreaudio-sys-0.2.8 \
-		cpal-0.15.3 \
-		crc32fast-1.2.1 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
+		cexpr-0.6.0 \
+		cfg-expr-0.20.7 \
+		cfg-if-1.0.4 \
+		cfg_aliases-0.2.1 \
+		chacha20-0.10.0 \
+		chrono-0.4.44 \
+		clang-sys-1.8.1 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_lex-1.1.0 \
+		clap_mangen-0.3.0 \
+		colorchoice-1.0.5 \
+		combine-4.6.7 \
+		concurrent-queue-2.5.0 \
+		convert_case-0.8.0 \
+		cookie-factory-0.3.3 \
+		core-foundation-sys-0.8.7 \
+		coreaudio-rs-0.14.2 \
+		cpufeatures-0.3.0 \
+		crc32fast-1.5.0 \
+		crossbeam-utils-0.8.21 \
+		csv-1.4.0 \
+		csv-core-0.1.13 \
 		dasp_sample-0.11.0 \
-		dbus-0.6.5 \
-		directories-4.0.1 \
-		dirs-3.0.2 \
-		dirs-sys-0.3.6 \
-		either-1.6.1 \
-		encoding_rs-0.8.29 \
-		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.0.1 \
-		fuchsia-zircon-0.3.3 \
-		fuchsia-zircon-sys-0.3.3 \
-		futures-0.3.17 \
-		futures-channel-0.3.17 \
-		futures-core-0.3.17 \
-		futures-executor-0.3.17 \
-		futures-io-0.3.17 \
-		futures-macro-0.3.17 \
-		futures-sink-0.3.17 \
-		futures-task-0.3.17 \
-		futures-util-0.3.17 \
-		gdk-0.13.2 \
-		gdk-pixbuf-0.9.0 \
-		gdk-pixbuf-sys-0.10.0 \
-		gdk-sys-0.10.0 \
-		getrandom-0.1.16 \
-		getrandom-0.2.3 \
-		gettext-rs-0.5.0 \
-		gettext-sys-0.19.9 \
-		gio-0.9.1 \
-		gio-sys-0.10.1 \
-		glib-0.10.3 \
-		glib-macros-0.10.1 \
-		glib-sys-0.10.1 \
-		glob-0.3.0 \
-		gobject-sys-0.10.0 \
-		gtk-0.9.2 \
-		gtk-sys-0.10.0 \
-		h2-0.2.7 \
-		hashbrown-0.11.2 \
-		heck-0.3.3 \
-		hermit-abi-0.1.19 \
-		hound-3.4.0 \
-		http-0.2.5 \
-		http-body-0.3.1 \
-		httparse-1.5.1 \
-		httpdate-0.3.2 \
-		hyper-0.13.10 \
-		hyper-tls-0.4.3 \
-		idna-0.2.3 \
-		indexmap-1.7.0 \
-		iovec-0.1.4 \
-		ipnet-2.3.1 \
-		itertools-0.9.0 \
-		itoa-0.4.8 \
+		directories-6.0.0 \
+		dirs-sys-0.5.0 \
+		dispatch2-0.3.1 \
+		either-1.15.0 \
+		encoding_rs-0.8.35 \
+		endi-1.1.1 \
+		enumflags2-0.7.12 \
+		enumflags2_derive-0.7.12 \
+		equivalent-1.0.2 \
+		erased-serde-0.4.10 \
+		errno-0.3.14 \
+		event-listener-5.4.1 \
+		event-listener-strategy-0.5.4 \
+		extended-0.1.0 \
+		fastrand-2.4.1 \
+		fdeflate-0.3.7 \
+		fern-0.7.1 \
+		field-offset-0.3.6 \
+		find-msvc-tools-0.1.9 \
+		flate2-1.1.9 \
+		foldhash-0.1.5 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
+		futures-executor-0.3.32 \
+		futures-io-0.3.32 \
+		futures-lite-2.6.1 \
+		futures-macro-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
+		gdk-pixbuf-0.21.5 \
+		gdk-pixbuf-sys-0.21.5 \
+		gdk4-0.10.3 \
+		gdk4-sys-0.10.3 \
+		getrandom-0.2.17 \
+		getrandom-0.4.2 \
+		gettext-rs-0.7.7 \
+		gettext-sys-0.26.0 \
+		gio-0.21.5 \
+		gio-sys-0.21.5 \
+		glib-0.21.5 \
+		glib-build-tools-0.21.0 \
+		glib-macros-0.21.5 \
+		glib-sys-0.21.5 \
+		glob-0.3.3 \
+		gobject-sys-0.21.5 \
+		graphene-rs-0.21.5 \
+		graphene-sys-0.21.5 \
+		gsk4-0.10.3 \
+		gsk4-sys-0.10.3 \
+		gtk4-0.10.3 \
+		gtk4-macros-0.10.3 \
+		gtk4-sys-0.10.3 \
+		hashbrown-0.15.5 \
+		hashbrown-0.17.0 \
+		heck-0.5.0 \
+		hermit-abi-0.5.2 \
+		hex-0.4.3 \
+		hound-3.5.1 \
+		humantime-2.3.0 \
+		iana-time-zone-0.1.65 \
+		iana-time-zone-haiku-0.1.2 \
+		id-arena-2.3.0 \
+		image-0.25.10 \
+		indexmap-2.14.0 \
+		is_terminal_polyfill-1.70.2 \
+		itertools-0.13.0 \
+		itoa-1.0.18 \
 		jni-0.21.1 \
-		jni-sys-0.3.0 \
-		jobserver-0.1.24 \
-		js-sys-0.3.70 \
-		kernel32-sys-0.2.2 \
-		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
-		lewton-0.10.2 \
-		libc-0.2.108 \
-		libdbus-sys-0.2.2 \
-		libloading-0.7.2 \
-		libpulse-binding-2.26.0 \
-		libpulse-sys-1.19.2 \
+		jni-sys-0.3.1 \
+		jni-sys-0.4.1 \
+		jni-sys-macros-0.4.1 \
+		js-sys-0.3.95 \
+		ksni-0.3.4 \
+		lazy_static-1.5.0 \
+		leb128fmt-0.1.0 \
+		libadwaita-0.8.1 \
+		libadwaita-sys-0.8.1 \
+		libc-0.2.185 \
+		libloading-0.8.9 \
+		libpulse-binding-2.30.1 \
+		libpulse-sys-1.23.0 \
+		libredox-0.1.16 \
+		libspa-0.9.2 \
+		libspa-sys-0.9.2 \
+		linux-raw-sys-0.12.1 \
 		locale_config-0.3.0 \
-		log-0.4.14 \
-		mach2-0.4.2 \
+		log-0.4.29 \
+		mach2-0.4.3 \
+		mach2-0.6.0 \
 		malloc_buf-0.0.6 \
-		matches-0.1.9 \
-		memchr-2.4.1 \
-		mime-0.3.16 \
-		mime_guess-2.0.3 \
-		mio-0.6.23 \
-		miow-0.2.2 \
-		mpris-player-0.6.1 \
-		native-tls-0.2.8 \
-		ndk-0.8.0 \
+		memchr-2.8.0 \
+		memoffset-0.9.1 \
+		minimal-lexical-0.2.1 \
+		minimp3-sys-0.3.2 \
+		minimp3_fixed-0.5.4 \
+		miniz_oxide-0.8.9 \
+		moxcms-0.8.1 \
+		mpris-server-0.9.0 \
+		ndk-0.9.0 \
 		ndk-context-0.1.1 \
-		ndk-sys-0.5.0+25.2.9519653 \
-		net2-0.2.37 \
-		nom-5.1.2 \
-		num-complex-0.4.0 \
-		num-derive-0.3.3 \
+		ndk-sys-0.6.0+11769913 \
+		nix-0.30.1 \
+		nom-7.1.3 \
+		nom-8.0.0 \
+		num-bigint-0.4.6 \
+		num-complex-0.4.6 \
 		num-derive-0.4.2 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		num_enum-0.7.3 \
-		num_enum_derive-0.7.3 \
+		num-integer-0.1.46 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
+		num_enum-0.7.6 \
+		num_enum_derive-0.7.6 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
+		objc2-0.6.4 \
+		objc2-audio-toolbox-0.3.2 \
+		objc2-avf-audio-0.3.2 \
+		objc2-core-audio-0.3.2 \
+		objc2-core-audio-types-0.3.2 \
+		objc2-core-foundation-0.3.2 \
+		objc2-encode-4.1.0 \
+		objc2-foundation-0.3.2 \
 		objc_id-0.1.1 \
-		oboe-0.6.1 \
-		oboe-sys-0.6.1 \
-		ogg-0.8.0 \
 		ole32-sys-0.2.0 \
-		once_cell-1.19.0 \
-		openssl-0.10.38 \
-		openssl-probe-0.1.4 \
-		openssl-sys-0.9.71 \
-		pango-0.9.1 \
-		pango-sys-0.10.0 \
-		peeking_take_while-0.1.2 \
-		percent-encoding-2.1.0 \
-		pin-project-1.0.8 \
-		pin-project-internal-1.0.8 \
-		pin-project-lite-0.1.12 \
-		pin-project-lite-0.2.7 \
-		pin-utils-0.1.0 \
-		pkg-config-0.3.22 \
-		ppv-lite86-0.2.15 \
-		proc-macro-crate-0.1.5 \
-		proc-macro-crate-1.1.0 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.86 \
+		once_cell-1.21.4 \
+		once_cell_polyfill-1.70.2 \
+		option-ext-0.2.0 \
+		ordered-stream-0.2.0 \
+		pango-0.21.5 \
+		pango-sys-0.21.5 \
+		parking-2.2.1 \
+		pastey-0.2.1 \
+		percent-encoding-2.3.2 \
+		pin-project-lite-0.2.17 \
+		piper-0.2.5 \
+		pipewire-0.9.2 \
+		pipewire-sys-0.9.2 \
+		pkg-config-0.3.33 \
+		png-0.18.1 \
+		polling-3.11.0 \
+		prettyplease-0.2.37 \
+		primal-check-0.3.4 \
+		proc-macro-crate-3.5.0 \
+		proc-macro2-1.0.106 \
 		pulsectl-rs-0.3.2 \
-		quote-1.0.37 \
-		rand-0.7.3 \
-		rand-0.8.4 \
-		rand_chacha-0.2.2 \
-		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
-		rand_core-0.6.3 \
-		rand_hc-0.2.0 \
-		rand_hc-0.3.1 \
-		redox_syscall-0.2.10 \
-		redox_users-0.4.0 \
-		regex-1.5.4 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
-		remove_dir_all-0.5.3 \
-		reqwest-0.10.10 \
-		rodio-0.19.0 \
-		rustc-hash-1.1.0 \
-		ryu-1.0.5 \
+		pxfm-0.1.29 \
+		quote-1.0.45 \
+		r-efi-6.0.0 \
+		rand-0.10.1 \
+		rand_core-0.10.1 \
+		realfft-3.5.0 \
+		redox_users-0.5.2 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		rodio-0.22.2 \
+		roff-1.1.1 \
+		rustc-hash-2.1.2 \
+		rustc_version-0.4.1 \
+		rustfft-6.4.1 \
+		rustix-1.1.4 \
+		rustversion-1.0.22 \
+		ryu-1.0.23 \
 		same-file-1.0.6 \
-		schannel-0.1.19 \
-		security-framework-2.3.1 \
-		security-framework-sys-2.4.2 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.71 \
-		serde_urlencoded-0.7.0 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_fmt-1.1.0 \
+		serde_json-1.0.149 \
+		serde_repr-0.1.20 \
+		serde_spanned-1.1.1 \
 		shell32-sys-0.1.2 \
-		shlex-0.1.1 \
-		slab-0.4.5 \
-		socket2-0.3.19 \
-		strsim-0.8.0 \
-		strum-0.18.0 \
-		strum_macros-0.18.0 \
-		symphonia-0.5.4 \
-		symphonia-bundle-mp3-0.5.4 \
-		symphonia-core-0.5.4 \
-		symphonia-metadata-0.5.4 \
-		syn-1.0.81 \
-		syn-2.0.77 \
-		system-deps-1.3.2 \
-		tempfile-3.2.0 \
-		textwrap-0.11.0 \
-		thiserror-1.0.64 \
-		thiserror-impl-1.0.64 \
-		time-0.1.43 \
-		tinyvec-1.5.1 \
-		tinyvec_macros-0.1.0 \
-		tokio-0.2.25 \
-		tokio-tls-0.3.1 \
-		tokio-util-0.3.1 \
-		toml-0.4.10 \
-		toml-0.5.8 \
-		tower-service-0.3.1 \
-		tracing-0.1.29 \
-		tracing-core-0.1.21 \
-		tracing-futures-0.2.5 \
-		try-lock-0.2.3 \
-		unicase-2.6.0 \
-		unicode-bidi-0.3.7 \
-		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
-		url-2.2.2 \
-		uuid-0.8.2 \
-		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
-		version-compare-0.0.10 \
-		version_check-0.9.3 \
-		walkdir-2.3.2 \
-		want-0.3.0 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.93 \
-		wasm-bindgen-backend-0.2.93 \
-		wasm-bindgen-futures-0.4.43 \
-		wasm-bindgen-macro-0.2.93 \
-		wasm-bindgen-macro-support-0.2.93 \
-		wasm-bindgen-shared-0.2.93 \
-		web-sys-0.3.55 \
+		shlex-1.3.0 \
+		signal-hook-registry-1.4.8 \
+		simd-adler32-0.3.9 \
+		slab-0.4.12 \
+		slice-ring-buffer-0.3.4 \
+		smallvec-1.15.1 \
+		soup3-0.8.0 \
+		soup3-sys-0.8.0 \
+		strength_reduce-0.2.4 \
+		strsim-0.11.1 \
+		sval-2.18.0 \
+		sval_buffer-2.18.0 \
+		sval_dynamic-2.18.0 \
+		sval_fmt-2.18.0 \
+		sval_json-2.18.0 \
+		sval_nested-2.18.0 \
+		sval_ref-2.18.0 \
+		sval_serde-2.18.0 \
+		symphonia-0.5.5 \
+		symphonia-bundle-flac-0.5.5 \
+		symphonia-codec-aac-0.5.5 \
+		symphonia-codec-alac-0.5.5 \
+		symphonia-codec-vorbis-0.5.5 \
+		symphonia-core-0.5.5 \
+		symphonia-format-mkv-0.5.5 \
+		symphonia-format-ogg-0.5.5 \
+		symphonia-format-riff-0.5.5 \
+		symphonia-metadata-0.5.5 \
+		symphonia-utils-xiph-0.5.5 \
+		syn-2.0.117 \
+		system-deps-7.0.8 \
+		target-lexicon-0.13.3 \
+		temp-dir-0.1.16 \
+		tempfile-3.27.0 \
+		thiserror-1.0.69 \
+		thiserror-2.0.18 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.18 \
+		toml-1.1.2+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
+		toml_edit-0.25.11+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
+		toml_writer-1.1.1+spec-1.1.0 \
+		tracing-0.1.44 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.36 \
+		trait-variant-0.1.2 \
+		transpose-0.2.3 \
+		typeid-1.0.3 \
+		uds_windows-1.2.1 \
+		unicode-ident-1.0.24 \
+		unicode-segmentation-1.13.2 \
+		unicode-width-0.2.2 \
+		unicode-xid-0.2.6 \
+		utf8parse-0.2.2 \
+		uuid-1.23.1 \
+		value-bag-1.12.0 \
+		value-bag-serde1-1.12.0 \
+		value-bag-sval2-1.12.0 \
+		version-compare-0.2.1 \
+		walkdir-2.5.0 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-bindgen-0.2.118 \
+		wasm-bindgen-macro-0.2.118 \
+		wasm-bindgen-macro-support-0.2.118 \
+		wasm-bindgen-shared-0.2.118 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		web-sys-0.3.95 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.54.0 \
-		windows-core-0.54.0 \
-		windows-result-0.1.2 \
+		windows-0.62.2 \
+		windows-collections-0.3.2 \
+		windows-core-0.62.2 \
+		windows-future-0.3.2 \
+		windows-implement-0.60.2 \
+		windows-interface-0.59.3 \
+		windows-link-0.2.1 \
+		windows-numerics-0.3.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
 		windows-sys-0.45.0 \
+		windows-sys-0.61.2 \
 		windows-targets-0.42.2 \
-		windows-targets-0.52.6 \
+		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.52.6 \
-		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.52.6 \
-		winreg-0.7.0 \
-		ws2_32-sys-0.2.1 \
-		xdg-2.4.0
-
-OPENSSLINC=	/usr/include
-OPENSSLLIB=	/usr/lib
+		winnow-0.7.15 \
+		winnow-1.0.2 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		xdg-2.5.2 \
+		zbus-5.14.0 \
+		zbus_macros-5.14.0 \
+		zbus_names-4.3.1 \
+		zmij-1.0.21 \
+		zvariant-5.10.0 \
+		zvariant_derive-5.10.0 \
+		zvariant_utils-3.3.0 \
+		cpal@git+https://github.com/RustAudio/cpal.git?rev=1c40a85\#1c40a85e2e74b376c6b35eef8d111586d426a61f
 
 PLIST_FILES=	bin/${PORTNAME}
 
 # known problem: The 'Audio input' combobox doesn't have any selections, see https://github.com/marin-m/SongRec/issues/115
+
+post-patch:
+	@${PATCH} -p0 -d ${WRKDIR}/cpal-1c40a85e2e74b376c6b35eef8d111586d426a61f \
+		< ${PATCHDIR}/cpal-alsa-estrpipe.patch
+	@${PATCH} -p0 -d ${WRKDIR}/cpal-1c40a85e2e74b376c6b35eef8d111586d426a61f \
+		< ${PATCHDIR}/cpal-frames-to-duration-bsd.patch
 
 .include <bsd.port.mk>

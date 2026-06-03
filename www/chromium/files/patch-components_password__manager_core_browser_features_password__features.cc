@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2025-07-02 06:08:04 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2026-05-30 09:39:35 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
-@@ -47,7 +47,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
+@@ -78,7 +78,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
               "ClearUndecryptablePasswordsInSync",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_IOS) || \
@@ -9,12 +9,21 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -120,7 +120,7 @@ BASE_FEATURE(kReuseDetectionBasedOnPasswordHashes,
-              "ReuseDetectionBasedOnPasswordHashes",
-              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -118,7 +118,7 @@ BASE_FEATURE(kFillChangePasswordFormByTyping,
+ BASE_FEATURE(kFillOnAccountSelect,
+              "fill-on-account-select",
+ // TODO(504600482): Disable the feature again upon fixing the bug.
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -180,7 +180,7 @@ BASE_FEATURE(kReduceRequirementsForPasswordChange,
+ 
+ BASE_FEATURE(kPasswordCheckupPrototype, base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kRestartToGainAccessToKeychain,
-              "RestartToGainAccessToKeychain",
  #if BUILDFLAG(IS_MAC)
+              base::FEATURE_ENABLED_BY_DEFAULT);

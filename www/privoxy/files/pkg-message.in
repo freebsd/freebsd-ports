@@ -5,7 +5,7 @@
   to /etc/rc.conf.
 
   To start Privoxy manually, run:
-  service privoxy forcestart
+  service privoxy onestart
 
   The rc script understands most of the commands listed
   in rc(8), it also contains a list of other rc variables

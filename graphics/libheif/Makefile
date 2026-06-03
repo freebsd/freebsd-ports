@@ -1,6 +1,5 @@
 PORTNAME=	libheif
-DISTVERSION=	1.19.8
-PORTREVISION=	1
+DISTVERSION=	1.22.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsharpyuv.so:graphics/webp
 
-USES=		cmake:testing compiler:c++11-lang cpe gettext-runtime gnome \
+USES=		cmake:testing compiler:c++20-lang cpe gettext-runtime gnome \
 		localbase:ldflags pathfix pkgconfig
 CPE_VENDOR=	struktur
 USE_GNOME=	gdkpixbuf glib20
@@ -51,6 +50,8 @@ DAV1D_CMAKE_BOOL=	WITH_DAV1D
 
 EXAMPLES_LIB_DEPENDS=	libpng16.so:graphics/png \
 			libtiff.so:graphics/tiff
+EXAMPLES_USES=		sdl
+EXAMPLES_USE=		SDL=sdl2
 EXAMPLES_CMAKE_BOOL=	WITH_EXAMPLES
 EXAMPLE_IMPLIES=	JPEG
 

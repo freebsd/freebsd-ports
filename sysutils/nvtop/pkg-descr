@@ -1,0 +1,9 @@
+NVTOP stands for Neat Videocard TOP, a (h)top like task monitor for GPUs and
+accelerators. It can handle multiple GPUs and print information about them
+in a htop-familiar way.
+
+Currently supported vendors are AMD (Linux amdgpu driver), Apple (limited M1
+& M2 support), Huawei (Ascend), Intel (Linux i915/Xe drivers), NVIDIA (Linux
+proprietary divers), Qualcomm Adreno (Linux MSM driver), Broadcom VideoCore
+(Linux v3d driver), Rockchip, MetaX (MXSML driver), Enflame (Linux EFML
+driver).

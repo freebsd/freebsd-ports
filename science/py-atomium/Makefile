@@ -1,7 +1,7 @@
 PORTNAME=	atomium
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.11
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	science biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coveralls>0:devel/py-coveralls@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.6.1:devel/py-msgpack@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rmsd>0:science/py-rmsd@${PY_FLAVOR} \

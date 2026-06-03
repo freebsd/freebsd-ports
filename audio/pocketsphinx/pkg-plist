@@ -22,11 +22,10 @@ lib/libpocketsphinx.a
 libdata/pkgconfig/pocketsphinx.pc
 share/man/man1/pocketsphinx.1.gz
 share/man/man1/pocketsphinx_batch.1.gz
+share/man/man1/pocketsphinx_lm_convert.1.gz
+share/man/man1/pocketsphinx_lm_eval.1.gz
 share/man/man1/pocketsphinx_mdef_convert.1.gz
-share/man/man1/sphinx_lm_convert.1.gz
-share/man/man1/sphinx_lm_eval.1.gz
-share/man/man1/sphinx_lm_sort.1.gz
-share/man/man1/sphinx_pitch.1.gz
+share/man/man1/pocketsphinx_pitch.1.gz
 %%DATADIR%%/model/en-us/cmudict-en-us.dict
 %%DATADIR%%/model/en-us/en-us-phone.lm.bin
 %%DATADIR%%/model/en-us/en-us.lm.bin

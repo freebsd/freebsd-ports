@@ -1,6 +1,6 @@
 PORTNAME=	amazon-ssm-plugin
-DISTVERSION=	1.2.707.0
-PORTREVISION=	5
+DISTVERSION=	1.2.814.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nork@FreeBSD.org
@@ -17,9 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 GH_PROJECT=	session-manager-plugin
 GH_SUBDIR=	${GH_PROJECT}
-GH_TUPLE=	aws:aws-sdk-go:v1.54.10:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+GH_TUPLE=	aws:aws-sdk-go-v2:release-2026-03-09:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
+		aws:smithy-go:v1.24.2:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eiannone/keyboard \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gorilla:websocket:e8629af678b7:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
@@ -58,7 +58,7 @@ post-extract:
 	${LN} -s  ${WRKSRC}                             ${WRKDIR}/src/vendor/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%VERSION%%|${RECOMMEND_VERSION}|' ${WRKSRC}/VERSION
+	${PRINTF} "${RECOMMEND_VERSION}" > ${WRKSRC}/VERSION
 	${REINPLACE_CMD} -e 's|%%VERSION%%|${RECOMMEND_VERSION}|' ${WRKSRC}/src/version/version.go
 	${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g; s|%%LOGDIR%%|${LOGDIR}|g' ${WRKSRC}/seelog_unix.xml
 	${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g; s|%%LOGDIR%%|${LOGDIR}|g' ${WRKSRC}/src/log/log_unix.go

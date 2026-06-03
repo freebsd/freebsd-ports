@@ -1,0 +1,11 @@
+--- mupdf-1.27.2-source/Makefile.orig	2026-03-31 16:51:44.790844000 -0700
++++ mupdf-1.27.2-source/Makefile	2026-03-31 16:51:44.792684000 -0700
+@@ -49,7 +49,7 @@
+ 
+ # workaround argument list too long errors
+ ifeq (4.0,$(firstword $(sort $(MAKE_VERSION) 4.0)))
+-  USE_ARGUMENT_FILE=yes
++  USE_ARGUMENT_FILE=no
+ else
+   USE_ARGUMENT_FILE=no
+ endif

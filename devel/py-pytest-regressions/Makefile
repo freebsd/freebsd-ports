@@ -1,6 +1,6 @@
 PORTNAME=	pytest-regressions
 PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/ESSS/pytest-regressions/releases/download/${PORTVERSION}/

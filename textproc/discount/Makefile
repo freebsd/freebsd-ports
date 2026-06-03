@@ -1,5 +1,5 @@
 PORTNAME=	discount
-PORTVERSION=	2.2.7d
+PORTVERSION=	3.0.1.2
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://www.pell.portland.or.us/~orc/Code/discount/
 
@@ -11,7 +11,7 @@ WWW=		https://www.pell.portland.or.us/~orc/Code/discount/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		cpe pathfix pkgconfig tar:bz2
+USES=		cpe pkgconfig tar:bz2
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--prefix=${PREFIX} --shared
@@ -21,11 +21,11 @@ INSTALL_TARGET=	install install.man
 TEST_TARGET=	test
 USE_LDCONFIG=	yes
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
+
 CONFLICTS_INSTALL=	markdown
 
 CPE_VENDOR=	discount_project
-
-PORTSCOUT=	skipv:2.2.7
 
 OPTIONS_DEFINE=	EXTRA SAMPLES TAB8
 OPTIONS_DEFAULT=EXTRA TAB8

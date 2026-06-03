@@ -1,0 +1,2 @@
+snakemake-interface-scheduler-plugins provides the scheduler plugin
+interface for Snakemake.

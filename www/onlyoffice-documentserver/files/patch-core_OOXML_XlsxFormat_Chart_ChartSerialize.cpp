@@ -1,5 +1,5 @@
---- core/OOXML/XlsxFormat/Chart/ChartSerialize.cpp.orig	2023-06-14 14:33:42.265435000 +0200
-+++ core/OOXML/XlsxFormat/Chart/ChartSerialize.cpp	2023-06-14 14:33:54.354616000 +0200
+--- core/OOXML/XlsxFormat/Chart/ChartSerialize.cpp.orig	2025-08-02 18:33:34 UTC
++++ core/OOXML/XlsxFormat/Chart/ChartSerialize.cpp
 @@ -1282,7 +1282,7 @@ xmlns:c16r2=\"http://schemas.microsoft.com/office/draw
  		{
  			writer.WriteString(L"<");

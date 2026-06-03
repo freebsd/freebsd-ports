@@ -1,0 +1,22 @@
+--- Makefile.orig	2026-04-13 08:14:51 UTC
++++ Makefile
+@@ -0,0 +1,19 @@
++PREFIX ?= /usr/local
++DESTDIR ?=
++DATADIR ?= $(PREFIX)/share/barrnap
++BINDIR ?= $(PREFIX)/bin
++INSTALL ?= install
++MKDIR_P ?= mkdir -p
++CP ?= cp -R
++
++.PHONY: all install test
++
++all:
++
++install:
++	$(MKDIR_P) $(DESTDIR)$(BINDIR) $(DESTDIR)$(DATADIR)
++	$(INSTALL) -m 0555 bin/barrnap $(DESTDIR)$(BINDIR)/barrnap
++	$(CP) db $(DESTDIR)$(DATADIR)/
++
++test:
++	$(MAKE) -C test all

@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2025.07.18
+DISTVERSION=	2026.05.15
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -23,22 +23,25 @@ USE_XORG=	xcb
 QMAKE_ENV+=		DOOBLE_DICTIONARIES_DIRECTORY=${WRKSRC_dictionaries}/Dictionaries
 QMAKE_SOURCE_PATH=	dooble.pro
 
+CXXFLAGS+=	-Wno-c++26-extensions
+
 QTWEBENGINE_DICTIONARIES=	${QT_DATADIR}/qtwebengine_dictionaries
 PLIST_SUB=			QTWEBENGINE_DICTIONARIES=${QTWEBENGINE_DICTIONARIES}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/Dooble ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-		${INSTALL_DATA} ${WRKSRC}/Icons/Logo/dooble.png ${STAGEDIR}${PREFIX}/share/pixmaps/dooble.png
-		${MKDIR} ${STAGEDIR}${QTWEBENGINE_DICTIONARIES}
-		${INSTALL_DATA} ${WRKSRC}/qtwebengine_dictionaries/*.bdic ${STAGEDIR}${QTWEBENGINE_DICTIONARIES}
-		desktop-file-edit \
-			--remove-category=Web \
-			--add-category=Network \
-			--add-category=WebBrowser \
-			--set-key=Exec --set-value="/usr/bin/env QTWEBENGINE_DICTIONARIES_PATH=${QTWEBENGINE_DICTIONARIES} ${PREFIX}/bin/${PORTNAME}" \
-			--set-icon=${PREFIX}/share/pixmaps/dooble.png \
-			${WRKSRC}/Distributions/dooble.desktop
-		${INSTALL_DATA} ${WRKSRC}/Distributions/dooble.desktop ${STAGEDIR}${PREFIX}/share/applications/dooble.desktop
+	${INSTALL_PROGRAM} ${WRKSRC}/Dooble ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps \
+		 ${STAGEDIR}${QTWEBENGINE_DICTIONARIES}
+	${INSTALL_DATA} ${WRKSRC}/Icons/Logo/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/qtwebengine_dictionaries/*.bdic ${STAGEDIR}${QTWEBENGINE_DICTIONARIES}
+	${LOCALBASE}/bin/desktop-file-edit \
+		--remove-category=Web \
+		--add-category=Network \
+		--add-category=WebBrowser \
+		--set-key=Exec \
+		--set-value="/usr/bin/env QTWEBENGINE_DICTIONARIES_PATH=${QTWEBENGINE_DICTIONARIES} ${PREFIX}/bin/${PORTNAME}" \
+		--set-icon=${PREFIX}/share/pixmaps/${PORTNAME}.png \
+		${WRKSRC}/Distributions/${PORTNAME}.desktop
+	${INSTALL_DATA} ${WRKSRC}/Distributions/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

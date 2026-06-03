@@ -1,14 +1,17 @@
 PORTNAME=	wl-screenrec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.5
-PORTREVISION=	9
+DISTVERSION=	0.1.5 # see PORTSCOUT comment below
+PORTREVISION=	18
 CATEGORIES=	multimedia wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance wlroots screen recording, featuring hardware encoding
 WWW=		https://github.com/russelltg/wl-screenrec
 
 LICENSE=	APACHE20
+
+#BROKEN_i386=	https://github.com/zmwangx/rust-ffmpeg-sys/issues/96
+BROKEN=		Fails to build with FFmpeg 8.1+, non-exhaustive patterns: `sys::AVColorPrimaries::AVCOL_PRI_EXT_BASE` and `sys::AVColorPrimaries::AVCOL_PRI_EXT_NB` not covered
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libavformat.so:multimedia/ffmpeg
@@ -22,7 +25,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_${PORTNAME}
 
 # https://github.com/russelltg/wl-screenrec/issues/99
-# https://github.com/zmwangx/rust-ffmpeg-sys/issues/96
 PORTSCOUT=	ignore:1
 
 post-patch:

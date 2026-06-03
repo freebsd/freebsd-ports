@@ -1,10 +1,10 @@
 PORTNAME=	android-ota-payload-extractor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1
-PORTREVISION=	9
+PORTREVISION=	21
 CATEGORIES=	sysutils
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Android OTA payload extractor written in Go
 WWW=		https://github.com/tobyxdd/android-ota-payload-extractor
 

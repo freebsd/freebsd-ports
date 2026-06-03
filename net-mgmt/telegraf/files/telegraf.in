@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: telegraf
-# REQUIRE: DAEMON NETWORKING
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable telegrafb:
@@ -51,10 +50,19 @@ stop_cmd="telegraf_stop"
 telegraf_prestart()
 {
     if [ ! -r "${telegraf_conf}" ]; then
-        echo WARNING: missing ${telegraf} configuration. Start aborted.
+        echo WARNING: missing ${name} configuration. Start aborted.
         exit 1
     fi
-    install -d -o ${telegraf_user} -g ${telegraf_group} -m750 %%TELEGRAF_LOGDIR%%
+    install -d -o ${telegraf_user} -g ${telegraf_group} -m 750 %%TELEGRAF_LOGDIR%%
+    _check_args="--config=${telegraf_conf}"
+    if [ -n "${telegraf_confdir}" ]; then
+        _check_args="${_check_args} --config-directory=${telegraf_confdir}"
+    fi
+    if ! %%PREFIX%%/bin/${name} config check ${_check_args} > /dev/null 2>&1; then
+        echo WARNING: failing to start ${name} ${telegraf_options}
+        echo Try running ${name} --test ${telegraf_options}
+        exit 1
+    fi
 }
 
 telegraf_start()

@@ -1,0 +1,369 @@
+--- CMakeLists.txt.orig	2025-12-19 16:57:53 UTC
++++ CMakeLists.txt
+@@ -56,6 +56,10 @@ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" )
+ 
+ 	# Linux: nothing to do here
+ 
++elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "NetBSD" )
++
++    # FreeBSD and NetBSD: nothing to do here
++
+ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD" )
+ 
+ 	set_property ( GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1 )
+@@ -159,23 +163,37 @@ endif ()
+ # ---- Setup Google Testing
+ #
+ 
++include( CTest )
++
+ # For Windows: Prevent overriding the parent project's compiler/linker settings
+ set( gtest_force_shared_crt ON CACHE BOOL "" FORCE )
+ 
+-# Check if population has already been performed
+-FetchContent_GetProperties(googletest)
+-if ( NOT googletest_POPULATED )
+-	# Fetch the content using previously declared details
+-	FetchContent_MakeAvailable(googletest)
++option( EINSTEIN_FETCH_GTEST "Download googletest if not found" ON )
+ 
+-	# Bring the populated content into the build
+-	#add_subdirectory( ${googletest_SOURCE_DIR} ${googletest_BINARY_DIR} )
+-endif ()
++set( EINSTEIN_USE_GTEST OFF )
++if ( BUILD_TESTING )
++	# Try to find GTest installed on the system first.
++	find_package( GTest CONFIG QUIET )
+ 
+-enable_testing()
++	# Check if population has already been performed
++	if ( NOT GTest_FOUND AND EINSTEIN_FETCH_GTEST )
++		FetchContent_GetProperties(googletest)
++		if ( NOT googletest_POPULATED )
++			# Fetch the content using previously declared details
++			FetchContent_MakeAvailable(googletest)
+ 
+-include( GoogleTest )
++			# Bring the populated content into the build
++			#add_subdirectory( ${googletest_SOURCE_DIR} ${googletest_BINARY_DIR} )
++		endif ()
++	endif ()
+ 
++	if ( TARGET GTest::gtest_main OR TARGET gtest_main )
++		set( EINSTEIN_USE_GTEST ON )
++	else ()
++		message( STATUS "GoogleTest not available; tests disabled." )
++	endif ()
++endif ()
++
+ #
+ # ---- Newt/64 library ---------------------------------------------------------
+ #
+@@ -322,11 +340,13 @@ if ( ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin" )
+ 		${app_sources}
+ 		${cmake_sources}
+ 	)
+-	add_executable ( EinsteinTests
+-		${common_sources}
+-		${test_sources}
+-		${cmake_sources}
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		add_executable ( EinsteinTests
++			${common_sources}
++			${test_sources}
++			${cmake_sources}
++		)
++	endif ()
+ 	if ( EINSTEIN_FLTK_FRONTEND )
+ 		add_library ( EinsteinFLGUI STATIC
+ 			${fluid_sources}
+@@ -337,9 +357,11 @@ if ( ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin" )
+ 	target_compile_options( Einstein PUBLIC
+ 		-Wall -Wextra -Wpedantic -Wno-missing-field-initializers -Werror
+ 	)
+-	target_compile_options( EinsteinTests PUBLIC
+-		-Wall -Wextra -Wpedantic -Wno-missing-field-initializers -Werror
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_compile_options( EinsteinTests PUBLIC
++			-Wall -Wextra -Wpedantic -Wno-missing-field-initializers -Werror
++		)
++	endif ()
+ 	if ( EINSTEIN_FLTK_FRONTEND )
+ 		target_compile_options( EinsteinFLGUI PUBLIC
+ 			-Wall -Wextra -Wpedantic -Wno-missing-field-initializers -Werror
+@@ -357,10 +379,12 @@ if ( ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin" )
+ 			TARGET_OS_MAC=1 NS_BLOCK_ASSERTIONS=1
+ 		)
+ 	endif ()
+-	target_compile_definitions ( EinsteinTests PRIVATE
+-		TARGET_UI_FLTK=1 NO_PORT_AUDIO NO_X11 TARGET_OS_OPENSTEP=1
+-		TARGET_OS_MAC=1 NS_BLOCK_ASSERTIONS=1
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_compile_definitions ( EinsteinTests PRIVATE
++			TARGET_UI_FLTK=1 NO_PORT_AUDIO NO_X11 TARGET_OS_OPENSTEP=1
++			TARGET_OS_MAC=1 NS_BLOCK_ASSERTIONS=1
++		)
++	endif ()
+ 	if ( EINSTEIN_FLTK_FRONTEND )
+ 		target_compile_definitions ( EinsteinFLGUI PRIVATE
+ 			TARGET_UI_FLTK=1 NO_PORT_AUDIO NO_X11 TARGET_OS_OPENSTEP=1
+@@ -390,7 +414,7 @@ if ( ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin" )
+ 			$ENV{ANDROID_NDK_HOME}/sysroot/usr/include
+ 		)
+ 	endif ()
+-	if ( EINSTEIN_FLTK_FRONTEND )
++	if ( EINSTEIN_USE_GTEST AND EINSTEIN_FLTK_FRONTEND )
+ 		target_link_libraries ( EinsteinTests
+ 			${system_libs}
+ 			fltk::fltk
+@@ -423,7 +447,7 @@ if ( ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin" )
+ 		)
+ 	endif ()
+ 
+-elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD" )
++elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES ".*BSD$" )
+ 
+ 	# create the application
+ 	add_executable ( Einstein
+@@ -431,11 +455,13 @@ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CM
+ 		${app_sources}
+ 		${cmake_sources}
+ 	)
+-	add_executable ( EinsteinTests
+-		${common_sources}
+-		${test_sources}
+-		${cmake_sources}
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		add_executable ( EinsteinTests
++			${common_sources}
++			${test_sources}
++			${cmake_sources}
++		)
++	endif ()
+ 	add_library ( EinsteinFLGUI STATIC
+ 		${fluid_sources}
+ 	)
+@@ -443,23 +469,34 @@ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CM
+ 	# how to compile and link
+ 	target_compile_options ( Einstein PUBLIC
+ 		-Wall -Wno-multichar -Wno-misleading-indentation -Wno-unused-result
+-		-Wno-missing-field-initializers -Wno-stringop-truncation # -Werror
++		-Wno-missing-field-initializers # -Werror
+ 		# Werror is disabled for testing purposes. Must reenable as soon as all Linux warnings are fixed.
+ 	)
+-	target_compile_options ( EinsteinTests PUBLIC
+-		-Wall -Wno-multichar -Wno-misleading-indentation -Wno-unused-result
+-		-Wno-missing-field-initializers -Wno-stringop-truncation -Werror
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_compile_options ( EinsteinTests PUBLIC
++			-Wall -Wno-multichar -Wno-misleading-indentation -Wno-unused-result
++			-Wno-missing-field-initializers -Werror
++		)
++	endif ()
+ 	target_compile_options ( EinsteinFLGUI PUBLIC
+ 		-Wall -Wno-multichar -Wno-misleading-indentation -Wno-unused-result
+-		-Wno-missing-field-initializers -Wno-stringop-truncation -Werror
++		-Wno-missing-field-initializers -Werror
+ 	)
++	if (CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
++        target_compile_options(Einstein PUBLIC -Wno-stringop-truncation)
++		if ( EINSTEIN_USE_GTEST )
++			target_compile_options(EinsteinTests PUBLIC -Wno-stringop-truncation)
++		endif ()
++        target_compile_options(EinsteinFLGUI PUBLIC -Wno-stringop-truncation)
++    endif()
+ 	target_compile_definitions ( Einstein PRIVATE
+ 		TARGET_UI_FLTK=1 TARGET_OS_LINUX=1
+ 	)
+-	target_compile_definitions ( EinsteinTests PRIVATE
+-		TARGET_UI_FLTK=1 TARGET_OS_LINUX=1
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_compile_definitions ( EinsteinTests PRIVATE
++			TARGET_UI_FLTK=1 TARGET_OS_LINUX=1
++		)
++	endif ()
+ 	target_compile_definitions ( EinsteinFLGUI PRIVATE
+ 		TARGET_UI_FLTK=1 TARGET_OS_LINUX=1
+ 	)
+@@ -469,18 +506,20 @@ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CM
+ 		EinsteinFLGUI
+ 		pthread
+ 	)
+-	target_link_libraries ( EinsteinTests
+-		${system_libs}
+-		fltk::fltk
+-		EinsteinFLGUI
+-		pthread
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_link_libraries ( EinsteinTests
++			${system_libs}
++			fltk::fltk
++			EinsteinFLGUI
++			pthread
++		)
++	endif ()
+ 	target_link_libraries ( EinsteinFLGUI
+ 		fltk::fltk fltk::images fltk::png fltk::z
+ 	)
+ 
+-	if ( ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD" )
+-		# Under OpenBSD, libffi is in ports (i.e. /usr/local) not base (i.e. /usr)
++	if ( ${CMAKE_SYSTEM_NAME} MATCHES ".*BSD$" )
++		# Under BSD, libffi is in ports (i.e. /usr/local) not base (i.e. /usr)
+ 		find_library ( ffi_lib NAMES ffi )
+ 		find_file ( ffi_incl NAMES ffi.h )
+ 		if ( ffi_lib MATCHES ".*NOTFOUND" OR ffi_incl MATCHES ".*NOTFOUND" )
+@@ -493,7 +532,7 @@ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CM
+ 			target_link_libraries ( Einstein ${ffi_lib} )
+ 		endif ()
+ 
+-		# Under OpenBSD, pulseaudio is in ports (i.e. /usr/local) not base (i.e. /usr)
++		# Under BSD, pulseaudio is in ports (i.e. /usr/local) not base (i.e. /usr)
+ 		find_library ( pulse_lib NAMES pulse )
+ 		if ( pulse_lib MATCHES ".*NOTFOUND" )
+ 			message ( FATAL_ERROR "libpulse not found! " )
+@@ -503,7 +542,7 @@ elseif ( ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CM
+ 			target_link_libraries ( Einstein ${pulse_lib} )
+ 		endif ()
+ 
+-		# Under OpenBSD, X11 is in /usr/X11R6
++		# Under BSD, find X11
+ 		include ( FindX11 )
+ 		if ( X11_FOUND )
+ 			target_include_directories ( Einstein SYSTEM PUBLIC ${X11_INCLUDE_DIR} )
+@@ -527,30 +566,38 @@ elseif ( WIN32 )
+ 		${common_sources} ${app_sources} ${cmake_sources} ${data}
+ 		${CMAKE_CURRENT_BINARY_DIR}/Einstein.rc
+ 	)
+-	add_executable ( EinsteinTests
+-		${common_sources} ${test_sources}
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		add_executable ( EinsteinTests
++			${common_sources} ${test_sources}
++		)
++	endif ()
+ 	add_library ( EinsteinFLGUI STATIC
+ 		${fluid_sources}
+ 	)
+ 
+ 	# how to compile and link
+ 	target_compile_options( Einstein PUBLIC "/bigobj" )
+-	target_compile_options( EinsteinTests PUBLIC "/bigobj" )
++	if ( EINSTEIN_USE_GTEST )
++		target_compile_options( EinsteinTests PUBLIC "/bigobj" )
++	endif ()
+ 	target_compile_options( EinsteinFLGUI PUBLIC "/bigobj" )
+ 	if ( $<CONFIG:Debug> )
+ 		target_compile_options( Einstein PUBLIC "/ZI" )
+-		target_compile_options( EinsteinTests PUBLIC "/ZI" )
++		if ( EINSTEIN_USE_GTEST )
++			target_compile_options( EinsteinTests PUBLIC "/ZI" )
++		endif ()
+ 		target_compile_options( EinsteinFLGUI PUBLIC "/ZI" )
+ 	endif ()
+ 	target_compile_definitions ( Einstein PRIVATE
+ 		TARGET_UI_FLTK=1 TARGET_OS_WIN32=1
+ 		WIN32_LEAN_AND_MEAN=1 _CRT_SECURE_NO_WARNINGS=1
+ 	)
+-	target_compile_definitions ( EinsteinTests PRIVATE
+-		TARGET_UI_FLTK=1 TARGET_OS_WIN32=1
+-		WIN32_LEAN_AND_MEAN=1 _CRT_SECURE_NO_WARNINGS=1
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_compile_definitions ( EinsteinTests PRIVATE
++			TARGET_UI_FLTK=1 TARGET_OS_WIN32=1
++			WIN32_LEAN_AND_MEAN=1 _CRT_SECURE_NO_WARNINGS=1
++		)
++	endif ()
+ 	target_compile_definitions ( EinsteinFLGUI PRIVATE
+ 		TARGET_UI_FLTK=1 TARGET_OS_WIN32=1
+ 		WIN32_LEAN_AND_MEAN=1 _CRT_SECURE_NO_WARNINGS=1
+@@ -562,17 +609,19 @@ elseif ( WIN32 )
+ 		winmm
+ 		gdiplus
+ 	)
+-	target_link_libraries ( EinsteinTests
+-		${system_libs}
+-		fltk::fltk
+-		EinsteinFLGUI
+-		gdiplus
+-	)
+-	target_link_libraries ( EinsteinTests
+-		${system_libs}
+-		fltk::fltk
+-		gdiplus
+-	)
++	if ( EINSTEIN_USE_GTEST )
++		target_link_libraries ( EinsteinTests
++			${system_libs}
++			fltk::fltk
++			EinsteinFLGUI
++			gdiplus
++		)
++		target_link_libraries ( EinsteinTests
++			${system_libs}
++			fltk::fltk
++			gdiplus
++		)
++	endif ()
+ 	target_link_libraries ( EinsteinFLGUI
+ 		fltk::fltk fltk::images fltk::png fltk::z
+ 	)
+@@ -634,11 +683,13 @@ target_include_directories (
+ 	${CMAKE_SOURCE_DIR}
+ 	${FLTK_INCLUDE_DIRS}
+ )
+-target_include_directories (
+-	EinsteinTests PUBLIC
+-	${CMAKE_SOURCE_DIR}
+-	${FLTK_INCLUDE_DIRS}
+-)
++if ( EINSTEIN_USE_GTEST )
++	target_include_directories (
++		EinsteinTests PUBLIC
++		${CMAKE_SOURCE_DIR}
++		${FLTK_INCLUDE_DIRS}
++	)
++endif ()
+ if ( EINSTEIN_FLTK_FRONTEND )
+ 	target_include_directories (
+ 		EinsteinFLGUI PUBLIC
+@@ -648,14 +699,27 @@ target_compile_definitions ( Einstein PUBLIC "$<$<CONF
+ endif ()
+ 
+ target_compile_definitions ( Einstein PUBLIC "$<$<CONFIG:DEBUG>:_DEBUG>" USE_CMAKE )
+-target_compile_definitions ( EinsteinTests PUBLIC "$<$<CONFIG:DEBUG>:_DEBUG>" USE_CMAKE )
++if ( EINSTEIN_USE_GTEST )
++	target_compile_definitions ( EinsteinTests PUBLIC "$<$<CONFIG:DEBUG>:_DEBUG>" USE_CMAKE )
++endif ()
+ if ( EINSTEIN_FLTK_FRONTEND )
+ 	target_compile_definitions ( EinsteinFLGUI PUBLIC "$<$<CONFIG:DEBUG>:_DEBUG>" USE_CMAKE )
+ endif ()
+ 
+-target_link_libraries ( EinsteinTests gtest_main )
++if ( EINSTEIN_USE_GTEST )
++	include( GoogleTest )
++	if ( TARGET GTest::gtest_main )
++		target_link_libraries ( EinsteinTests GTest::gtest_main )
++	elseif ( TARGET gtest_main )
++		target_link_libraries ( EinsteinTests gtest_main )
++	else ()
++		message ( STATUS "GoogleTest found without a gtest_main target; tests disabled." )
++	endif ()
++endif ()
+ 
+-gtest_discover_tests ( EinsteinTests )
++if ( EINSTEIN_USE_GTEST AND ( TARGET GTest::gtest_main OR TARGET gtest_main ) )
++	gtest_discover_tests ( EinsteinTests )
++endif ()
+ 
+ endif ()
+ 

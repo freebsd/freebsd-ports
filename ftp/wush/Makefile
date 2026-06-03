@@ -1,7 +1,7 @@
 PORTNAME=	wush
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	11
 CATEGORIES=	ftp
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/coder/wush
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/coder/wush
 GO_TARGET=	./cmd/wush

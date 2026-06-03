@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2021-06-06 05:46:00 UTC
+--- CMakeLists.txt.orig	2025-10-30 16:20:18 UTC
 +++ CMakeLists.txt
-@@ -9,7 +9,8 @@ endif()
- PROJECT(osm2pgrouting)
+@@ -12,7 +12,8 @@ LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cma
+   LANGUAGES C CXX)
  
  LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 -SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/osm2pgrouting")
@@ -10,7 +10,16 @@
  
  find_package(PostgreSQL REQUIRED)
  find_package(PQXX REQUIRED)
-@@ -92,14 +93,15 @@ if(WIN32)
+@@ -42,7 +43,7 @@ if (PQXX_VERSION VERSION_GREATER_EQUAL "7.0.0")
+ 
+ message(STATUS "PQXX_VERSION=${PQXX_VERSION}")
+ if (PQXX_VERSION VERSION_GREATER_EQUAL "7.0.0")
+-  set(CMAKE_CXX_STANDARD 17)
++  set(CMAKE_CXX_STANDARD 20)
+ else()
+   add_definitions(-DPQXX_DISCONNECT)
+   set(CMAKE_CXX_STANDARD 14)
+@@ -95,14 +96,15 @@ INSTALL(FILES
  endif()
  
  INSTALL(FILES

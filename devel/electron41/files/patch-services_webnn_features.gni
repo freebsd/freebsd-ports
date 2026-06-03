@@ -1,0 +1,11 @@
+--- services/webnn/features.gni.orig	2026-03-13 16:54:03 UTC
++++ services/webnn/features.gni
+@@ -9,7 +9,7 @@ declare_args() {
+ 
+ declare_args() {
+   # TFLite is used as a fallback option on Apple and Windows.
+-  webnn_use_tflite = is_android || is_chromeos || is_linux || is_apple || is_win
++  webnn_use_tflite = !is_bsd && (is_android || is_chromeos || is_linux || is_apple || is_win)
+ 
+   # TODO(crbug.com/454732289): Enable LiteRT after migration is complete.
+   webnn_use_litert = false

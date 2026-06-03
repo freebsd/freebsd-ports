@@ -1,3 +1,7 @@
-TIMESTAMP = 1699202613
-SHA256 (ArthurSonzogni-FTXUI-v5.0.0_GH0.tar.gz) = a2991cb222c944aee14397965d9f6b050245da849d8c5da7c72d112de2786b5b
-SIZE (ArthurSonzogni-FTXUI-v5.0.0_GH0.tar.gz) = 236755
+TIMESTAMP = 1755969505
+SHA256 (ArthurSonzogni-FTXUI-v6.1.9_GH0.tar.gz) = 45819c1e54914783d4a1ca5633885035d74146778a1f74e1213cdb7b76340e71
+SIZE (ArthurSonzogni-FTXUI-v6.1.9_GH0.tar.gz) = 262230
+SHA256 (ftxui_build_docs_target_all.patch?h=ftxui) = 2b513c179f998e02404dc147ad99c5d57a4fe91dce6cfb7f82de4e101b789fc0
+SIZE (ftxui_build_docs_target_all.patch?h=ftxui) = 1529
+SHA256 (ftxui_make_examples_installable.patch?h=ftxui) = 62457257e81d1ab735aece92aa6817a6e05d18ec5236b5dbb0e67532d1b1850f
+SIZE (ftxui_make_examples_installable.patch?h=ftxui) = 1150

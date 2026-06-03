@@ -1,0 +1,10 @@
+Deark is a portable command-line utility that can decode certain types of files,
+and either convert them to a more-modern or more-readable format, or extract
+embedded files from them. It also has an option (-d) to display detailed
+information about a file’s contents and metadata. It’s Free Software.
+
+The files it writes are usually named "output.*".
+
+When processing "archive" formats that contain other files, it's usually best to
+use Deark only to convert to ZIP format, so that the filenames and paths can be
+retained. Suggest options "-zip -ka".

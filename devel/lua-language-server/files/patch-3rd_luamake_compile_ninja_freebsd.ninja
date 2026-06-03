@@ -1,0 +1,38 @@
+--- 3rd/luamake/compile/ninja/freebsd.ninja.orig	2025-12-23 05:34:22 UTC
++++ 3rd/luamake/compile/ninja/freebsd.ninja
+@@ -2,7 +2,7 @@ obj = $builddir/obj
+ builddir = build/freebsd
+ bin = $builddir/bin
+ obj = $builddir/obj
+-cc = clang
++cc = %CC%
+ ar = ar
+ luamake = luamake
+ rule c_source_lua
+@@ -30,7 +30,7 @@ rule cxx_source_bee_2
+ rule cxx_source_bee_2
+   command = $cc -MMD -MT $out -MF $out.d -std=c++17 -fno-rtti -O2 -Wall $
+     -fvisibility=hidden -Ibee.lua -Ibee.lua/3rd/lua55 -isystem $
+-    /usr/local/include -DNDEBUG -o $out -c $in
++    %LOCALBASE%/include -DNDEBUG -o $out -c $in
+   description = Compile C++ $out
+   deps = gcc
+   depfile = $out.d
+@@ -126,7 +126,7 @@ rule link_bootstrap
+ build $obj/source_bootstrap/main.obj: cxx_source_bootstrap $
+     bee.lua/bootstrap/main.cpp
+ rule link_bootstrap
+-  command = $cc $in -o $out -Wl,-E -linotify -L/usr/local/lib -pthread -lm $
++  command = $cc $in -o $out -Wl,-E %INOTIFY_LIB% -L%LOCALBASE%/lib -pthread -lm $
+     -Wl,--push-state,-Bstatic -lstdc++ -Wl,--pop-state -Wl,-S,-x
+   description = Link    Exe $out
+ rule copy
+@@ -138,7 +138,7 @@ rule link_luamake
+   description = Run test.
+   pool = console
+ rule link_luamake
+-  command = $cc $in -o $out -linotify -L/usr/local/lib -pthread -lm $
++  command = $cc $in -o $out %INOTIFY_LIB% -L%LOCALBASE%/lib -pthread -lm $
+     -lstdc++ -Wl,-S,-x
+   description = Link    Exe $out
+ rule build_luamake_test

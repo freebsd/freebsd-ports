@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-11-06 00:31:38 UTC
+--- CMakeLists.txt.orig	2025-12-05 00:32:05 UTC
 +++ CMakeLists.txt
-@@ -27,22 +27,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_D
+@@ -27,24 +27,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_D
  
  list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
  
@@ -15,15 +15,17 @@
 -
 -add_definitions(-DANTLR4CPP_STATIC)
 -set(ANTLR4_WITH_STATIC_CRT OFF)
--# 4.9.3 is the latest ANTLR4 version
--set(ANTLR4_TAG tags/4.13.2)
+-# set(ANTLR4_TAG tags/4.13.2)
+-# This is a more recent commit than 4.13.2 that addresses a missing
+-# include directive needed in more recent Visual Studio releases
+-set(ANTLR4_TAG df4d68c09cdef73e023b8838a8bc7ca4dff1d1de)
 -include(ExternalAntlr4Cpp)
 -
 -
  if (DEFINED ENV{FORCE_BUILD_LIBXML2})
      set(BUILD_STATIC_LIBXML2 TRUE)
  else()
-@@ -107,4 +91,3 @@ add_subdirectory(c/type1/source)
+@@ -109,4 +91,3 @@ add_subdirectory(c/type1/source)
  add_subdirectory(c/spot/source)
  add_subdirectory(c/tx/source)
  add_subdirectory(c/type1/source)

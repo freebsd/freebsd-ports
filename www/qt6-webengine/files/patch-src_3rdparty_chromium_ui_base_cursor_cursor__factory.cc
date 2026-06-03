@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc.orig	2025-08-07 06:57:29 UTC
 +++ src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc
 @@ -97,7 +97,7 @@ void CursorFactory::ObserveThemeChanges() {
    NOTIMPLEMENTED();

@@ -1,6 +1,6 @@
 PORTNAME=	wego
-DISTVERSION=	2.3
-PORTREVISION=	5
+DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -14,14 +14,20 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	schachmat
 GH_TUPLE=	\
-		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
-		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		schachmat:ingo:a4bdc0729a3f:schachmat_ingo/vendor/github.com/schachmat/ingo
+		mattn:go-colorable:v0.1.14:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-runewidth:v0.0.23:mattn_go_runwidth/vendor/github.com/mattn/go-runewidth \
+		muesli:mango:v0.2.0:muesli_mango/vendor/github.com/muesli/mango \
+		muesli:roff:v0.1.0:muesli_roff/vendor/github.com/muesli/roff \
+		schachmat:ingo:a4bdc0729a3f:schachmat_ingo/vendor/github.com/schachmat/ingo \
+		clipperhouse:uax29:v2.2.0:clipperhouse_uax29/vendor/github.com/clipperhouse/uax29/v2 \
+		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		golang:sys:v0.29.0:golang_sys/vendor/golang.org/x/sys
 GO_TARGET=	wego
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz
+
+post-install:
+		${STAGEDIR}${PREFIX}/bin/wego --man > ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

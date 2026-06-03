@@ -1,0 +1,2 @@
+Python bindings to the NVIDIA Management Library.
+Provides a Python interface to GPU management and monitoring functions.

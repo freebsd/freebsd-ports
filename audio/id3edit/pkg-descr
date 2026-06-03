@@ -1,0 +1,18 @@
+id3edit is a command line editor to edit and debug ID3v2 tags (ID3v2.3.0 &
+ID3v2.4.0 of mp3 files with full Unicode support.
+
+Its main features are:
+- Show all frames of the ID3 tag (colloquial "mp3 tags")
+- Get/Add/Edit specific frames (see Name Definitions)
+- Get/Add artworks (Support for jpeg and png. Create an issue if you need more
+  types.)
+- Remove frames or the whole tag
+- Print hex-dump of a specific frame
+- You can overwrite the input file or write to a new path
+- It is made to handle invalid tags and headers and debug them
+- Can print a detailed list of all frames with comments when they are invalid
+- Supports Unicode correctly!
+- It works from command line
+- Support for ID3v2.3.0 (most common) and ID3v2.4.0 (latest)
+- All encodings supported (ISO 8859-1, UTF-16 with BOM, UTF-16BE, UTF-8)
+- Partial support of extended header: CRC feature supported!

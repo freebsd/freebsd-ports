@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-03-03 02:02:52 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-         "setuptools==72.1.0",   # ==72.1.0, see https://github.com/pypa/setuptools/issues/4748
++         "setuptools",   # ==72.1.0, see https://github.com/pypa/setuptools/issues/4748
+          "numpy",
+          "cython",
+-]
+\ No newline at end of file
++]

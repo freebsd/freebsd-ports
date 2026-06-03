@@ -1,6 +1,6 @@
---- tests/storage/sqlite/sqlite_file.py.orig	2024-06-08 09:38:23 UTC
+--- tests/storage/sqlite/sqlite_file.py.orig	2026-05-12 13:50:03 UTC
 +++ tests/storage/sqlite/sqlite_file.py
-@@ -136,13 +136,13 @@ class SQLiteStorageFileTest(test_lib.StorageTestCase):
+@@ -134,13 +134,13 @@ class SQLiteStorageFileTest(test_lib.StorageTestCase):
              event_data_stream.CONTAINER_TYPE, column_names=column_names))
          self.assertEqual(len(containers), 1)
  

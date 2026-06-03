@@ -1,9 +1,9 @@
 PORTNAME=	smplayer
-DISTVERSION=	24.5.0
+DISTVERSION=	25.6.0
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION:S/4/3/} \
-		SF/${PORTNAME}/SMPlayer/${PORTVERSION} \
-		https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		SF/${PORTNAME}/SMPlayer/${PORTVERSION:S/4/3/} \
+		SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Complete front-end based on Qt for mplayer

@@ -1,0 +1,28 @@
+--- j3d-core/build.xml.orig	2008-05-23 20:31:19 UTC
++++ j3d-core/build.xml
+@@ -142,6 +142,16 @@
+     <echo message="version_file    = ${version_file}"/>
+   </target>
+ 
++  <target name="setupFreeBSD" if="isFreeBSD">
++    <property name="isUnix" value="true"/>
++    <property name="shell" value="/bin/sh"/>
++    <property name="wstype" value="x11"/>
++    <property name="platformname" value="freebsd-${os.arch}"/>
++    <property name="platform" value="freebsd"/>
++    <property name="install.bin" value="lib/${os.arch}"/>
++    <property name="ports.localbase" value="/usr/local"/>
++  </target>
++
+   <target name="setupSolaris" if="isSolarisOnSparc">
+     <property name="isUnix" value="true"/>
+     <property name="shell" value="/usr/bin/ksh"/>
+@@ -232,7 +242,7 @@
+   </target>
+ 
+   <target name="setupPlatform"
+-       depends="init, setupBuildType, setupSolaris, setupSolarisX86, setupLinux, setupLinuxAmd64, setupLinuxIA64, setupLinuxPPC, setupWindows, setupWindowsAmd64, setupMacOSX, setupJogl">
++       depends="init, setupBuildType, setupFreeBSD, setupSolaris, setupSolarisX86, setupLinux, setupLinuxAmd64, setupLinuxIA64, setupLinuxPPC, setupWindows, setupWindowsAmd64, setupMacOSX, setupJogl">
+     <property name="build-debug-gen" location="${build}/${platform}/debug/gen"/>
+     <property name="build-opt-gen" location="${build}/${platform}/opt/gen"/>
+     <property name="docname" value="${build.relprefix}-${version_file}-doc"/>

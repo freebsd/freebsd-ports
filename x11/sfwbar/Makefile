@@ -1,13 +1,7 @@
 PORTNAME=	sfwbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0_beta16.1
+DISTVERSION=	1.0_beta17
 CATEGORIES=	x11 wayland
-PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	f101b45ae0ace422052463febe85c19dca8ad2ff.patch:-p1 \
-		30db8085d15f6892a175f976e36dd32ec63261ad.patch:-p1 \
-		5f460019b79c54ae782ccb661e9f4c1a160246b8.patch:-p1
 
 MAINTAINER=	tino.engel@mail.de
 COMMENT=	Flexible taskbar application for wayland compositors
@@ -22,7 +16,9 @@ LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libjson-c.so:devel/json-c \
 		libwayland-client.so:graphics/wayland
 
-FLAVORS=	default nopulse
+FLAVORS=		default lite
+FLAVOR?=		${FLAVORS:[1]}
+lite_PKGNAMESUFFIX=	-lite
 
 USES=		gnome meson pkgconfig python:run
 
@@ -39,10 +35,10 @@ MESON_ARGS=	-Dbluez=enabled \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		ALSA MPD NM PULSEAUDIO XKB
-OPTIONS_DEFAULT=	ALSA MPD NM PULSEAUDIO XKB
-.if ${FLAVOR:U:M*nopulse}
-OPTIONS_EXCLUDE+=	PULSEAUDIO
+OPTIONS_DEFINE=		ALSA MPD NLS NM PIPEWIRE PULSEAUDIO XKB
+OPTIONS_DEFAULT=	ALSA MPD NM PIPEWIRE PULSEAUDIO XKB
+.if ${FLAVOR} == lite
+OPTIONS_EXCLUDE=	PIPEWIRE PULSEAUDIO
 .endif
 OPTIONS_SUB=		yes
 
@@ -58,7 +54,13 @@ ALSA_MESON_ENABLED=	alsa
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 MPD_MESON_ENABLED=	mpd
 
+NLS_USES=		gettext-tools
+NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-nls-off
+
 NM_MESON_ENABLED=	nm
+
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_MESON_ENABLED=	pipewire
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	pulse
@@ -66,7 +68,7 @@ PULSEAUDIO_MESON_ENABLED=	pulse
 XKB_LIB_DEPENDS=	libxkbregistry.so:x11/libxkbcommon
 XKB_MESON_ENABLED=	xkb
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA} || ${PORT_OPTIONS:MPULSEAUDIO}
 PLIST_SUB+=	VOLUME=""
@@ -74,4 +76,4 @@ PLIST_SUB+=	VOLUME=""
 PLIST_SUB+=	VOLUME="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

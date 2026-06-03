@@ -1,3 +1,7 @@
-TIMESTAMP = 1687509192
-SHA256 (steinwurf-recycle-7.0.0_GH0.tar.gz) = dcda732e4be5986b0947e2b9b0168f9b3bf675bc9305663afb3254b872191dd8
-SIZE (steinwurf-recycle-7.0.0_GH0.tar.gz) = 132908
+TIMESTAMP = 1778378316
+SHA256 (steinwurf-recycle-8.0.0_GH0.tar.gz) = d27ae7c263d9e3a2102ac857d17b6b42d8f4200e4a177e6d571dc8343c30464c
+SIZE (steinwurf-recycle-8.0.0_GH0.tar.gz) = 137652
+SHA256 (steinwurf-cmake-toolchains-655f6d3_GH0.tar.gz) = 849ba2c2eaeb40b706c084d2eba4afadc8c1ee639ef5374e8f6ef73f3d540908
+SIZE (steinwurf-cmake-toolchains-655f6d3_GH0.tar.gz) = 6144
+SHA256 (steinwurf-gtest-8e1f80a_GH0.tar.gz) = deba1eb87f91feae2f402e26d64ac1bdfd9fc59b48ee2740df865bb2c80026d4
+SIZE (steinwurf-gtest-8e1f80a_GH0.tar.gz) = 128579

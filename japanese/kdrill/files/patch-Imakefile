@@ -9,7 +9,7 @@
 -RADLOCATION= /usr/local/lib/radkfile
 +DICTLOCATION= $(LOCALBASE)/share/dict/edict/kanjidic
 +EDICTLOCATION= $(LOCALBASE)/share/dict/edict/edict
-+RADLOCATION= $(LOCALBASE/share/dict/edict/radkfile
++RADLOCATION= $(LOCALBASE)/share/dict/edict/radkfile
  
  # If for some reason, the user prefs stuff isn't working for you, 
  # and you can't compile, uncomment this

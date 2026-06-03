@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		alias gettext-tools gnome meson pkgconfig tar:xz xfce
+USES=		gettext-tools gnome meson pkgconfig tar:xz xfce
 USE_GNOME=	glib20 gtk30
 USE_LDCONFIG=	yes
 USE_XFCE=	libmenu panel

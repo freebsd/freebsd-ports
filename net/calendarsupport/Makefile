@@ -4,7 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Calendar support libraries for KDEPim
-WWW=		https://github.com/KDE/calendarsupport
+WWW=		https://invent.kde.org/pim/calendarsupport
 
 LICENSE=	LGPL21
 

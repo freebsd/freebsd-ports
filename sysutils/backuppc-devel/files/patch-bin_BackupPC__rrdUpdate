@@ -1,0 +1,11 @@
+--- bin/BackupPC_rrdUpdate.orig	2024-12-21 12:57:57 UTC
++++ bin/BackupPC_rrdUpdate
+@@ -39,7 +39,7 @@ use lib "__INSTALLDIR__/lib";
+ no utf8;
+ 
+ use lib "__INSTALLDIR__/lib";
+-use BackupPC::Lib qw( :BPC_DT_ALL );
++use BackupPC::Lib;
+ use File::Path;
+ use Data::Dumper;
+ our(%Info);

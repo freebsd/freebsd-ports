@@ -11,4 +11,4 @@ include/bliss/partition.hh
 include/bliss/timer.hh
 include/bliss/uintseqhash.hh
 include/bliss/utils.hh
-lib/libbliss.a
+lib/libbliss.so

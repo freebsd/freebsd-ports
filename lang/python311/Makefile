@@ -1,10 +1,15 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
+PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
 DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
+
+PATCH_SITES=	https://github.com/python/cpython/commit/
+PATCHFILES=	ceac1efc66516ac387eef2c9a0ce671895b44f03.patch:-p1 \
+		96fc5048605863c7b6fd6289643feb0e97edd96c.patch:-p1
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
@@ -47,7 +52,6 @@ PLIST_SUB=		ABI=${ABIFLAGS} \
 OPTIONS_DEFINE=		DEBUG IPV6 LIBMPDEC LTO NLS PYMALLOC
 OPTIONS_DEFAULT=	LIBMPDEC LTO PYMALLOC
 OPTIONS_EXCLUDE_riscv64=	LTO
-OPTIONS_EXCLUDE_powerpc64le=	LTO
 OPTIONS_RADIO=		HASH
 OPTIONS_RADIO_HASH=	FNV SIPHASH
 OPTIONS_SUB=		yes
@@ -74,7 +78,7 @@ LTO_CONFIGURE_ON=	--with-lto
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
 # Upstream Issue: https://bugs.python.org/issue6299
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ENV_OFF=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no

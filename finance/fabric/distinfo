@@ -1,6 +1,6 @@
-TIMESTAMP = 1730689361
-SHA256 (hyperledger-fabric-v3.0.0_GH0.tar.gz) = 764e44dafb776e0f0f76bfb9adf788e04d71cc342b9283a6f70d4fad325069ae
-SIZE (hyperledger-fabric-v3.0.0_GH0.tar.gz) = 27341004
+TIMESTAMP = 1775960215
+SHA256 (hyperledger-fabric-v3.1.4_GH0.tar.gz) = e5884391e7295556b835953e251be9109c2ac1a98a0a4258c7f9d4c54387d5d6
+SIZE (hyperledger-fabric-v3.1.4_GH0.tar.gz) = 27852050
 SHA256 (AdaLogics-go-fuzz-headers-ced1acdcaa24_GH0.tar.gz) = 4bfef4b7e0352e5b579b9516c8c63f6ab7b4333f9a9dee32e3d6167d35d6fe74
 SIZE (AdaLogics-go-fuzz-headers-ced1acdcaa24_GH0.tar.gz) = 18085
 SHA256 (Azure-go-ansiterm-d185dfc1b5a1_GH0.tar.gz) = 1a061bad3379d8f955a3c2bd34c2927f2e561e7a11418dda2927eb222e3cbbc5

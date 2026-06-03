@@ -1,9 +1,7 @@
 PORTNAME=	grzip
-PORTVERSION=	0.3.0
-PORTREVISION=	3
+DISTVERSION=	0.3.1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ \
-		https://BSDforge.com/projects/source/archivers/grzip/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Efficient file compressor
@@ -11,28 +9,41 @@ WWW=		https://BSDforge.com/projects/archivers/grzip
 
 LICENSE=	LGPL21
 
-USES=		tar:bzip2 gettext
+USES=		gettext-runtime localbase:ldflags
 USE_LDCONFIG=	yes
-CFLAGS+=	-I${LOCALBASE}/include -fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 ALL_TARGET=	${PORTNAME}
-WRAPPERS=	grztar grzdiff grzgrep grzmore
-PLIST_FILES=	bin/${PORTNAME} bin/grunzip bin/grzcat ${WRAPPERS:S|^|bin/|} \
-		lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 include/${PORTNAME}.h \
-		share/locale/fr/LC_MESSAGES/${PORTNAME}.mo
+CFLAGS+=	-fPIC
+LDFLAGS+=	-lintl
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|DESTDIR|PREFIX|g;/^CC.*=/d;/^OPTFLAGS/s|-O2||;/^CFLAGS/s|=|+=|'\
-		-e '/^PREFIX=/d;/^LDFLAGS/s|=|+=|' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} ' \
+			s|DESTDIR|PREFIX|g; \
+			/^CC.*=/d;/^OPTFLAGS/s|-O2||; \
+			/^CFLAGS/s|=|+=|; \
+			/^PREFIX=/d;/^LDFLAGS/s|=|+=|; \
+			s|-Wl,-soname,lib${PORTNAME}.so|-Wl,-soname,lib${PORTNAME}.so.0|' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/po/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/grunzip
 	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/grzcat
-	${INSTALL_SCRIPT} ${WRAPPERS:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
+	${INSTALL_SCRIPT} ${grztar grzdiff grzgrep grzmore:L:S|^|${WRKSRC}/scripts/|} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so \
+		${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
+	${LN} -sf lib${PORTNAME}.so.0 ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include
+
+do-install-NLS-on:
 	(cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} PREFIX="${STAGEDIR}${PREFIX}" install)
 
 .include <bsd.port.mk>

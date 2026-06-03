@@ -1,4 +1,4 @@
-This package allows for HTTP NTLM authentication using the requests library.
-
-NTLM is a suite of authentication and session security protocols used in
-various Microsoft network protocol implementations.
+The requests-ntlm library adds support for NTLM authentication to the popular
+requests HTTP library for Python. This enables applications to seamlessly
+authenticate with web services that require Microsoft's NTLM protocol, which
+is common in corporate environments.

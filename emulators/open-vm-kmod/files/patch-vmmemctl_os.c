@@ -1,14 +1,12 @@
---- vmmemctl/os.c.orig	2025-05-15 19:16:07 UTC
+--- vmmemctl/os.c.orig	2026-01-22 06:30:37 UTC
 +++ vmmemctl/os.c
 @@ -91,8 +91,13 @@ MALLOC_DEFINE(M_VMMEMCTL, BALLOON_NAME, "vmmemctl meta
  /*
   * FreeBSD specific MACROS
   */
--#define VM_PAGE_LOCK(page) vm_page_lock(page);
--#define VM_PAGE_UNLOCK(page) vm_page_unlock(page)
 +#if __FreeBSD_version < 1500046
-+#define VM_PAGE_LOCK(page) vm_page_tryxbusy(page);
-+#define VM_PAGE_UNLOCK(page) vm_page_xunbusy(page)
+ #define VM_PAGE_LOCK(page) vm_page_lock(page);
+ #define VM_PAGE_UNLOCK(page) vm_page_unlock(page)
 +#else
 +#define VM_PAGE_LOCK(page) vm_page_tryxbusy(page);
 +#define VM_PAGE_UNLOCK(page) vm_page_xunbusy(page)
@@ -29,7 +27,35 @@
  
  /*
   * Globals
-@@ -404,7 +413,7 @@ os_pmap_free(os_pmap *p) // IN
+@@ -322,7 +331,11 @@ OS_MapPageHandle(PageHandle handle)     // IN
+ Mapping
+ OS_MapPageHandle(PageHandle handle)     // IN
+ {
++#if __FreeBSD_version > 1600015
++   void * res = KVA_ALLOC(PAGE_SIZE);
++#else
+    vm_offset_t res = KVA_ALLOC(PAGE_SIZE);
++#endif
+ 
+    vm_page_t page = (vm_page_t)handle;
+ 
+@@ -379,8 +392,13 @@ OS_UnmapPage(Mapping mapping)           // IN
+ void
+ OS_UnmapPage(Mapping mapping)           // IN
+ {
+-   pmap_qremove((vm_offset_t)mapping, 1);
+-   KVA_FREE((vm_offset_t)mapping, PAGE_SIZE);
++#if __FreeBSD_version > 1600015
++   pmap_qremove((void *)mapping, 1);
++   KVA_FREE((void *)mapping, PAGE_SIZE);
++#else
++   pmap_qremove(mapping, 1);
++   KVA_FREE(mapping, PAGE_SIZE);
++#endif
+ }
+ 
+ 
+@@ -404,7 +422,7 @@ os_pmap_free(os_pmap *p) // IN
  static void
  os_pmap_free(os_pmap *p) // IN
  {

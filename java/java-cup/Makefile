@@ -1,5 +1,6 @@
 PORTNAME=	cup
 PORTVERSION=	11b.20160615
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/releases/
 PKGNAMEPREFIX=	java-

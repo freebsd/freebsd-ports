@@ -18,30 +18,49 @@ BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	objdump:devel/binutils
-LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+LIB_DEPENDS=	libada.so:devel/libada \
+		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
+		libgtest.so:devel/googletest \
+		libhdr_histogram.so:graphics/hdr_histogram \
 		libicui18n.so:devel/icu \
+		libllhttp.so:www/llhttp \
+		libmerve.so:devel/merve \
+		libnbytes.so:www/nbytes \
 		libnghttp2.so:www/libnghttp2 \
 		libnghttp3.so:www/libnghttp3 \
 		libngtcp2.so:net/libngtcp2 \
 		libsimdjson.so:devel/simdjson \
 		libuv.so:devel/libuv \
+		libuvwasi.so:devel/uvwasi \
 		libzstd.so:archivers/zstd
+RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++11-lang gmake localbase pkgconfig python:build shebangfix tar:xz
+USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix sqlite tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
+		--shared-ada \
 		--shared-brotli \
 		--shared-cares \
+		--shared-gtest \
+		--shared-hdr-histogram \
+		--shared-http-parser \
 		--shared-libuv \
+		--shared-merve \
+		--shared-nbytes \
 		--shared-nghttp2 \
 		--shared-nghttp3 \
 		--shared-ngtcp2 \
 		--shared-simdjson \
+		--shared-sqlite \
+		--shared-uvwasi \
+		--shared-uvwasi-includes=${LOCALBASE}/include \
 		--shared-zlib \
 		--shared-zstd \
 		--with-intl=system-icu \
+		--without-corepack \
 		--without-npm
+CXXFLAGS_powerpc64=	-mpower8-vector
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CFLAGS.host="${CFLAGS}" \
@@ -65,7 +84,6 @@ BUNDLED_SSL_DESC=	Use bundled OpenSSL implementation from node.js
 JIT_DESC=		Use Just In Time compiler
 
 BUNDLED_SSL_CONFIGURE_OFF=	--openssl-use-def-ca-store --shared-openssl
-BUNDLED_SSL_RUN_DEPENDS_OFF=	ca_root_nss>=0:security/ca_root_nss
 BUNDLED_SSL_USES_OFF=	ssl
 JIT_CONFIGURE_OFF=	--v8-lite-mode
 
@@ -79,13 +97,23 @@ CONFIGURE_ARGS+=--openssl-no-asm
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/tools/v8_gypfiles/v8.gyp
 # Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/deps/ada/
 	@${RM} -r ${WRKSRC}/deps/brotli/
 	@${RM} -r ${WRKSRC}/deps/cares/
+	@${RM} -r ${WRKSRC}/deps/corepack/
+	@${RM} -r ${WRKSRC}/deps/googletest/
+	@${RM} -r ${WRKSRC}/deps/histogram/
+	@${RM} -r ${WRKSRC}/deps/icu-small/
+	@${RM} -r ${WRKSRC}/deps/llhttp/
+	@${RM} -r ${WRKSRC}/deps/merve/
+	@${RM} -r ${WRKSRC}/deps/nbytes/
 	@${RM} -r ${WRKSRC}/deps/nghttp2/
 	@${RM} -r ${WRKSRC}/deps/ngtcp2/
 	@${RM} -r ${WRKSRC}/deps/npm/
 	@${RM} -r ${WRKSRC}/deps/simdjson/
+	@${RM} -r ${WRKSRC}/deps/sqlite/
 	@${RM} -r ${WRKSRC}/deps/uv/
+	@${RM} -r ${WRKSRC}/deps/uvwasi/
 	@${RM} -r ${WRKSRC}/deps/zlib/
 	@${RM} -r ${WRKSRC}/deps/zstd/
 
@@ -94,11 +122,14 @@ post-configure:
 	# all occurrences of -I${LOCALBASE}/include. C*FLAGS include this
 	# before all -I../deps/* for bundled code. This can cause build
 	# breakages if the dependency is installed in ${LOCALBASE}. The
-	# USES+=localbase # above will ensure that we pick up includes for real
+	# USES+=localbase above will ensure that we pick up includes for real
 	# external dependencies.
-	${FIND} ${WRKSRC}/out -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
+	@${FIND} ${WRKSRC}/out -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|-I${LOCALBASE}/include||g'
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
+
+post-install-BUNDLED_SSL-on:
+	cd ${STAGEDIR}${PREFIX} && ${FIND} include/node/openssl/ -type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>

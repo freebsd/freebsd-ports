@@ -1,8 +1,9 @@
 bin/sqlcipher
 include/sqlcipher/sqlite3.h
 include/sqlcipher/sqlite3ext.h
-lib/libsqlcipher.so.0.8.6
-lib/libsqlcipher.so.0
-lib/libsqlcipher.so
 lib/libsqlcipher.a
+lib/libsqlcipher.so
+lib/libsqlcipher.so.0
+lib/libsqlcipher.so.3.51.2
 libdata/pkgconfig/sqlcipher.pc
+share/man/man1/sqlcipher.1.gz

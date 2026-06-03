@@ -1,10 +1,9 @@
 PORTNAME=	yaml-mode.el
 PORTVERSION=	0.0.16
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	textproc elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple major mode to edit YAML file for Emacsen
 WWW=		https://github.com/yoshiki/yaml-mode
 
@@ -16,16 +15,20 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yoshiki
 GH_PROJECT=	yaml-mode
 
-MAKE_ENV=	LISPDIR=${LISPDIR}
+CONFLICTS_INSTALL=	yaml-mode.el-emacs_*
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-LISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+LISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
-pre-install:
+do-install:
 	@${MKDIR} ${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${LISPDIR}
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in Changes README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

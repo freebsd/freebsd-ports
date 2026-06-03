@@ -1,5 +1,6 @@
 PORTNAME=	scalatest
 PORTVERSION=	1.6.1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.artima.com/downloadScalaTest/ \
 		http://www.scalatest.org/releases/

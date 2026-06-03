@@ -3,6 +3,8 @@ bin/rime_dict_manager
 bin/rime_patch
 bin/rime_table_decompiler
 include/rime_api.h
+include/rime_api_deprecated.h
+include/rime_api_stdbool.h
 include/rime_levers_api.h
 lib/librime.so
 lib/librime.so.1

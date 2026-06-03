@@ -1,0 +1,15 @@
+-- Use cmeel without [build] extras to avoid requiring Python cmake and
+-- git-archive-all packages. The system cmake from devel/cmake is used
+-- for building, and git-archive-all is only needed for creating source
+-- distributions from git repos (not needed when building from source dist).
+
+--- pyproject.toml.orig	2026-05-27 20:18:55 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "cmeel"
+ [build-system]
+ build-backend = "cmeel"
+-requires = ["cmeel[build]"]
++requires = ["cmeel"]
+ 
+ [project]
+ description = "cmeel distribution for Eigen. Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms."

@@ -23,25 +23,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++11-lib desktop-file-utils qt:5
-USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
-		script sql sql-sqlite3 svg widgets xmlpatterns \
+USE_QT=		concurrent core dbus declarative gui location multimedia \
+		network printsupport script sql sql-sqlite3 svg \
+		webchannel webengine widgets xmlpatterns \
 		buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OtterBrowser
 # GH_TAGNAME=	22de58d  # For intermediate versions only
 
-OPTIONS_MULTI=		BACKEND
-OPTIONS_MULTI_BACKEND=	QTWEBENGINE QTWEBKIT
-OPTIONS_DEFAULT=	QTWEBENGINE
-
-QTWEBENGINE_DESC=	Build QtWebEngine backend
-QTWEBKIT_DESC=		Build QtWebKit backend
-
-QTWEBENGINE_USE=	qt=declarative,location,webchannel,webengine
-QTWEBENGINE_CMAKE_BOOL=	ENABLE_QTWEBENGINE
-
-QTWEBKIT_USE=		qt=webkit
-QTWEBKIT_CMAKE_BOOL=	ENABLE_QTWEBKIT
+CMAKE_ON=	ENABLE_QTWEBENGINE
 
 .include <bsd.port.mk>

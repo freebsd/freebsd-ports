@@ -1,5 +1,6 @@
 PORTNAME=	jd-gui
 PORTVERSION=	1.6.6
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/java-decompiler/jd-gui/releases/download/v${PORTVERSION}/:jar

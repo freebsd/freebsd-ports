@@ -1,5 +1,6 @@
 PORTNAME=	pnetcdf
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.1
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	https://parallel-netcdf.github.io/Release/ \
 		LOCAL/sunpoet
@@ -14,7 +15,7 @@ LICENSE_NAME=	NetCDF License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-USES=		fortran gmake libtool mpi:${FLAVOR} pathfix perl5
+USES=		fortran gmake libtool mpi:${FLAVOR} perl5
 USE_PERL5=	build
 
 CFLAGS+=	-fPIC

@@ -19,12 +19,6 @@ PLIST_FILES=	sbin/mtx sbin/tapeinfo sbin/loaderinfo sbin/scsitape sbin/scsieject
 		share/man/man1/loaderinfo.1.gz share/man/man1/mtx.1.gz share/man/man1/tapeinfo.1.gz \
 		share/man/man1/scsitape.1.gz share/man/man1/scsieject.1.gz
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-FreeBSD_14
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}${PREFIX}|g' \
 		${WRKSRC}/Makefile.in

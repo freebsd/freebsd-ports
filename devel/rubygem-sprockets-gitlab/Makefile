@@ -1,5 +1,6 @@
 PORTNAME=	sprockets
 PORTVERSION=	3.7.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -13,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-rack22>=1,3<3,3:www/rubygem-rack22
+		rubygem-rack-gitlab>=1<3:www/rubygem-rack-gitlab
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	sprockets_project
+
+NO_ARCH=	yes
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/sprockets

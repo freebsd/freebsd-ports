@@ -1,5 +1,6 @@
 PORTNAME=	soapui
 PORTVERSION=	5.5.0
+PORTREVISION=	2
 CATEGORIES=	devel java www
 MASTER_SITES=	https://s3.amazonaws.com/downloads.eviware/soapuios/${PORTVERSION}/
 DISTNAME=	SoapUI-${PORTVERSION}-linux-bin

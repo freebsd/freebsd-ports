@@ -1,0 +1,13 @@
+Real asynchronous file operations with asyncio support.
+
+Features:
+* Since version 2.0.0 using caio, which contains linux libaio and two
+  thread-based implementations (c-based and pure-python).
+* AIOFile has no internal pointer. You should pass offset and chunk_size for
+  each operation or use helpers (Reader or Writer). The simplest way is to
+  use async_open for creating object with file-like interface.
+* For Linux using implementation based on libaio.
+* For POSIX (MacOS X and optional Linux) using implementation based on
+  threadpool.
+* Otherwise using pure-python thread-based implementation.
+* Implementation chooses automatically depending on system compatibility.

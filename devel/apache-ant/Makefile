@@ -1,6 +1,6 @@
 PORTNAME=	apache-ant
-DISTVERSION=	1.10.13
-PORTREVISION=	1
+DISTVERSION=	1.10.15
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/ant/binaries:bin \
 		https://deb.debian.org/debian/pool/main/a/ant/:man

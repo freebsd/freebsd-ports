@@ -1,10 +1,9 @@
 PORTNAME=	graphillion
-PORTVERSION=	1.5
-PORTREVISION=	1
+DISTVERSION=	1.7
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/g/G/}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/g/G/}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fast, lightweight graphset operation library in Python
@@ -15,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-# Python 2.7,3.4+
 USES=		python
 USE_PYTHON=	autoplist distutils
 

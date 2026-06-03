@@ -1,6 +1,6 @@
 PORTNAME=	gmm++
 DISTVERSION=	5.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/getfem/stable/
 DISTNAME=	${PORTNAME:S/+//g}-${DISTVERSION}

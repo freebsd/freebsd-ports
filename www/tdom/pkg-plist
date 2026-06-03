@@ -13,6 +13,7 @@ share/man/mann/pullparser.n.gz
 share/man/mann/schema.n.gz
 share/man/mann/tdomcmd.n.gz
 share/man/mann/tnc.n.gz
+share/man/mann/xpathFunc.n.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/category-index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dom.html
 %%PORTDOCS%%%%DOCSDIR%%/html/domDoc.html
@@ -25,5 +26,6 @@ share/man/mann/tnc.n.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/schema.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tdomcmd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tnc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/xpathFunc.html
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README.md

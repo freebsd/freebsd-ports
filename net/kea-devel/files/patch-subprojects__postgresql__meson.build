@@ -1,0 +1,23 @@
+--- subprojects/postgresql/meson.build.orig	2025-07-14 21:38:51.533442000 +0000
++++ subprojects/postgresql/meson.build	2025-07-14 21:55:25.061747000 +0000
+@@ -10,17 +10,16 @@
+     includedir = run_command([pg_config, '--includedir'], check: false)
+     ldflags = run_command([pg_config, '--ldflags'], check: false)
+     libdir = run_command([pg_config, '--libdir'], check: false)
+-    libs = run_command([pg_config, '--libs'], check: false)
+     version = run_command([pg_config, '--version'], check: false)
+-    if cppflags.returncode() == 0 and includedir.returncode() == 0 and libdir.returncode() == 0 and ldflags.returncode() == 0 and libs.returncode() == 0 and version.returncode() == 0
++
++    if cppflags.returncode() == 0 and includedir.returncode() == 0 and ldflags.returncode() == 0 and libdir.returncode() == 0 and version.returncode() == 0
+         pgsql_compile_args = cppflags.stdout().split()
+         pgsql_includedir_args = includedir.stdout().split()
+         pgsql_ldflags = ldflags.stdout().split()
+         pgsql_libdir = libdir.stdout().strip()
+-        pgsql_link_args = libs.stdout().split()
+         pgsql_version = version.stdout().strip()
+ 
+-        link_args = [f'-L@pgsql_libdir@'] + pgsql_ldflags + pgsql_link_args
++        link_args = ['-L' + pgsql_libdir] + pgsql_ldflags
+         if libpq.found()
+             link_args += ['-lpq']
+         endif

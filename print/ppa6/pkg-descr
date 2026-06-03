@@ -1,0 +1,7 @@
+Userspace driver program for PeriPage A6 printers.
+
+The driver includes the following backends:
+- USB (through libusb)
+- File (for specifying the raw device)
+
+Support for Bluetooth has not been implemented yet.

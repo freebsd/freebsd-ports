@@ -1,6 +1,6 @@
-TIMESTAMP = 1736756611
-SHA256 (akb825-VertexFormatConvert-v2.1.5_GH0.tar.gz) = 9a8a8ac2cdfa62ebb819cd5be4f8677d7dd23db14e03d34fe299be379650278b
-SIZE (akb825-VertexFormatConvert-v2.1.5_GH0.tar.gz) = 84116
+TIMESTAMP = 1765876464
+SHA256 (akb825-VertexFormatConvert-v2.1.6_GH0.tar.gz) = ddb1a87d4e78d37fd7fad36d40227e575a724a6c76de6210ccf6673204201e9f
+SIZE (akb825-VertexFormatConvert-v2.1.6_GH0.tar.gz) = 84854
 SHA256 (g-truc-glm-0af55cc_GH0.tar.gz) = 5addedd8ac476cfb3eee9a545525b696e926646d89c679f13f045846c208c7c3
 SIZE (g-truc-glm-0af55cc_GH0.tar.gz) = 4567398
 SHA256 (Tencent-rapidjson-858451e_GH0.tar.gz) = 0a68e212971929c92ca9e1bb924802a26602cab094fc6131d18fa29c6dd95c08

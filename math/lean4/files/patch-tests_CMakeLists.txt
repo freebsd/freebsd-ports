@@ -1,0 +1,18 @@
+-- Add LD_LIBRARY_PATH to the test environment on FreeBSD/Linux.
+-- Lake-built shared objects have no RPATH embedded, so the dynamic linker cannot
+-- find libLake_shared.so at test runtime without LD_LIBRARY_PATH.
+--- tests/CMakeLists.txt.orig	2026-05-26 17:39:45 UTC
++++ tests/CMakeLists.txt
+@@ -38,6 +38,12 @@ string(APPEND TEST_VARS " CXX='${CMAKE_CXX_COMPILER} $
+ # LEANC_OPTS in CXX is necessary for macOS c++ to find its headers
+ string(APPEND TEST_VARS " CXX='${CMAKE_CXX_COMPILER} ${LEANC_OPTS}'")
+ 
++# FreeBSD/Linux: lake-built shared objects have no rpath embedded, so we need
++# LD_LIBRARY_PATH to find libLake_shared.so and other lean shared libs at test runtime.
++if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD|Linux")
++  string(APPEND TEST_VARS " LD_LIBRARY_PATH='${MANGLED_BINARY_DIR}/lib/lean'")
++endif()
++
+ set(WITH_TEST_ENV "${CMAKE_CURRENT_SOURCE_DIR}/with_stage${STAGE}_test_env.sh")
+ set(WITH_BENCH_ENV "${CMAKE_CURRENT_SOURCE_DIR}/with_stage${STAGE}_bench_env.sh")
+ 

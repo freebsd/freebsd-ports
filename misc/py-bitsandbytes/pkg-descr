@@ -1,0 +1,3 @@
+bitsandbytes enables accessible large language models via k-bit quantization
+for PyTorch. We provide three main features for dramatically reducing memory
+consumption for inference and training.

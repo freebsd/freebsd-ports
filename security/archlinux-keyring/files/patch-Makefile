@@ -1,8 +1,8 @@
---- Makefile.orig	2023-05-02 19:14:05 UTC
+--- Makefile.orig	2025-11-16 09:08:47 UTC
 +++ Makefile
-@@ -51,22 +51,11 @@ clean:
- clean:
- 	rm -rf $(BUILD_DIR) $(WKD_BUILD_DIR)
+@@ -81,13 +81,8 @@ release: clean build build-voa
+ 	# NOTE: we specify GITLAB_HOST, because otherwise glab YOLO uses whatever is specified by the `host` key in its config and silently breaks all links...
+ 	GITLAB_HOST=gitlab.archlinux.org glab release create $(RELEASE) $(BUILD_DIR)/{$(PROJECT),$(VOA_PROJECT)}-$(RELEASE).tar.gz* --name=$(RELEASE) --notes="release version $(RELEASE)"
  
 -install: build wkd_sync_service
 +install: build
@@ -13,6 +13,9 @@
 -	install -vdm 755 $(DESTDIR)$(SYSTEMD_TIMER_DIR)
 -	ln -fsv ../$(WKD_SYNC_TIMER) $(DESTDIR)$(SYSTEMD_TIMER_DIR)/$(WKD_SYNC_TIMER)
  
+ install-voa: build-voa
+ 	@install -vdm 755 $(DESTDIR)$(VOA_TARGET_DIR)
+@@ -96,11 +91,5 @@ uninstall:
  uninstall:
  	rm -fv $(DESTDIR)$(KEYRING_TARGET_DIR)/{$(KEYRING_FILE),$(KEYRING_REVOKED_FILE),$(KEYRING_TRUSTED_FILE)}
  	rmdir -pv --ignore-fail-on-non-empty $(DESTDIR)$(KEYRING_TARGET_DIR)
@@ -23,4 +26,4 @@
 -	rm -v $(DESTDIR)$(SYSTEMD_TIMER_DIR)/$(WKD_SYNC_TIMER)
 -	rmdir -pv --ignore-fail-on-non-empty $(DESTDIR)$(SYSTEMD_TIMER_DIR)
  
- .PHONY: all lint fmt check test clean install uninstall wkd wkd_inspect
+ .PHONY: all build lint fmt check test clean install release uninstall wkd wkd_inspect

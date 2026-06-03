@@ -1,6 +1,5 @@
 PORTNAME=	sanoid
-PORTVERSION=	1.0.0.20191105
-PORTREVISION=	0
+DISTVERSION=	2.1.0-20230428
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -21,7 +20,7 @@ USES=		shebangfix perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
-GH_TAGNAME=	45d0898
+GH_TAGNAME=	55c5e0e
 
 USE_PERL5=	run
 SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
@@ -36,7 +35,10 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/sanoid|${PREFIX}/etc/sanoid|' \
 		${WRKSRC}/sanoid
 	@${REINPLACE_CMD} -i '' \
-		-e 's|:/bin:/usr/bin:/sbin|:${PREFIX}/bin:/bin:/usr/bin:/sbin|' \
+		-e 's|/usr/bin/lzop|${LOCALBASE}/bin/lzop|' \
+		-e 's|/usr/bin/mbuffer|${LOCALBASE}/bin/mbuffer|' \
+		-e 's|/usr/bin/pv|${LOCALBASE}/bin/pv|' \
+		-e 's|/usr/bin/sudo|${LOCALBASE}/bin/sudo|' \
 		${WRKSRC}/syncoid
 
 do-install:

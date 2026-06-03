@@ -1,7 +1,7 @@
---- src/names/names.c.orig	2017-03-18 16:11:42 UTC
+--- src/names/names.c.orig	2025-09-09 13:34:51 UTC
 +++ src/names/names.c
 @@ -19,7 +19,18 @@
- #include <config.h>
+ #include "config.h"
  #endif
  
 +#ifdef HAVE_SYS_TYPES_H

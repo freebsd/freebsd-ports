@@ -1,0 +1,11 @@
+--- doc/manual/en_US/dita/UserManual.ditamap.orig	2025-08-13 19:37:06 UTC
++++ doc/manual/en_US/dita/UserManual.ditamap
+@@ -540,7 +540,7 @@
+          <topicref href="topics/security-model.dita"/>
+          <topicref href="topics/secure-config-vms.dita">
+             <topicref href="topics/security-networking.dita"/>
+-        <topicref href="topics/security-of-remote-vms.dita"/>
++<!--        <topicref href="topics/security-of-remote-vms.dita"/> -->
+             <topicref href="topics/security-vrdp-auth.dita"/>
+             <topicref href="topics/security_clipboard.dita"/>
+             <topicref href="topics/security-shared-folders.dita"/>

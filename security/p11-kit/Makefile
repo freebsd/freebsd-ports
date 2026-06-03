@@ -1,5 +1,5 @@
 PORTNAME=	p11-kit
-DISTVERSION=	0.25.5
+DISTVERSION=	0.26.2
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -21,6 +21,7 @@ CPE_VENDOR=	p11-kit_project
 
 MESON_ARGS=	-Dnls=false \
 		-Dsystemd=disabled \
+		-Dzsh_completion=disabled \
 		-Dtrust_paths=${DATADIR}/certs
 
 OPTIONS_DEFINE=		DOCS MANPAGES TEST
@@ -48,10 +49,6 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/etc/pkcs11
 	${MKDIR} ${STAGEDIR}${DATADIR}/certs
 	${LN} -s /usr/share/certs/trusted ${STAGEDIR}${DATADIR}/certs/anchors
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400024
-	${LN} -s /usr/share/certs/blacklisted ${STAGEDIR}${DATADIR}/certs/blocklist
-.else
 	${LN} -s /usr/share/certs/untrusted ${STAGEDIR}${DATADIR}/certs/blocklist
-.endif
 
 .include <bsd.port.mk>

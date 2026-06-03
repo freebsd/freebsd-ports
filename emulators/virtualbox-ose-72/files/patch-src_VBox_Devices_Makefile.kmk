@@ -1,0 +1,53 @@
+--- src/VBox/Devices/Makefile.kmk.orig	2025-09-10 16:59:18 UTC
++++ src/VBox/Devices/Makefile.kmk
+@@ -135,6 +135,7 @@ if !defined(VBOX_ONLY_EXTPACKS)
+   VBoxDDU_LDFLAGS.darwin += -framework IOKit
+  endif
+ 
++ VBoxDDU_LDFLAGS.freebsd  = $(VBOX_GCC_NO_UNDEFINED)
+  VBoxDDU_LDFLAGS.linux    = $(VBOX_GCC_NO_UNDEFINED)
+  $(call VBOX_SET_VER_INFO_DLL,VBoxDDU,VirtualBox VMM Devices and Drivers Utilities)
+ 
+@@ -290,6 +291,7 @@ if !defined(VBOX_ONLY_EXTPACKS) && "$(intersects $(KBU
+  	-framework SystemConfiguration \
+  	-framework AVFoundation \
+  	-framework Foundation
++ VBoxDD_LDFLAGS.freebsd  = $(VBOX_GCC_NO_UNDEFINED)
+  VBoxDD_LDFLAGS.linux    = $(VBOX_GCC_NO_UNDEFINED)
+ 
+  # --- Tracing bits. ---
+@@ -334,7 +336,7 @@ if !defined(VBOX_ONLY_EXTPACKS) && "$(intersects $(KBU
+   	Graphics/DevVGA-SVGA-cmd.cpp
+  endif
+  ifdef VBOX_WITH_VMSVGA3D
+-  if1of ($(KBUILD_TARGET), linux win)
++  if1of ($(KBUILD_TARGET), linux win freebsd)
+    # Dynamically load 3D library (opengl32, libGL).
+    # This is a temporary solution. In future the 3D backend will be in a separate library.
+    VBOX_WITH_VMSVGA3D_DYNAMIC_LOAD = 1
+@@ -410,6 +412,7 @@ if !defined(VBOX_ONLY_EXTPACKS) && "$(intersects $(KBU
+     	Graphics/DevVGA-SVGA3d-glLdr.cpp
+    else
+     VBoxDD_LIBS.linux   += X11 GL
++    VBoxDD_LIBS.freebsd += X11 GL
+     VBoxDD_LIBS.win     += $(PATH_SDK_$(VBOX_WINPSDK)_LIB)/Opengl32.lib
+    endif
+    VBoxDD_LDFLAGS.darwin += -framework OpenGL
+@@ -517,6 +520,8 @@ if !defined(VBOX_ONLY_EXTPACKS) && "$(intersects $(KBU
+    	Video/JPEGEnc.cpp
+    VBoxDD_SOURCES.darwin += \
+    	Video/HostWebcam-darwin.mm
++   VBoxDD_SOURCES.freebsd += \
++   	Video/HostWebcam-v4l2.cpp
+    VBoxDD_SOURCES.linux += \
+    	Video/HostWebcam-v4l2.cpp
+    VBoxDD_SOURCES.solaris += \
+@@ -1536,6 +1541,8 @@ if defined(VBOX_WITH_VMSVGA3D) && !defined(VBOX_ONLY_E
+  VBoxSVGA3D_INCS = $(VBOX_GRAPHICS_INCS)
+  VBoxSVGA3D_INCS.win    := \
+  	Graphics/shaderlib/libWineStub/include
++ VBoxSVGA3D_INCS.freebsd := \
++	 Graphics/shaderlib/wine/include
+  VBoxSVGA3D_INCS.linux  := \
+  	Graphics/shaderlib/wine/include
+  VBoxSVGA3D_INCS.darwin := \

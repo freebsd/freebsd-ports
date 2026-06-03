@@ -1,8 +1,8 @@
---- Makefile.in.orig	2018-12-23 14:34:27 UTC
+--- Makefile.in.orig	2026-02-28 15:49:29 UTC
 +++ Makefile.in
-@@ -12527,7 +12527,7 @@ ref-del.sed : $(libgroff_srcdir)/ref-del.sin
- 	    -e 's/@''PACKAGE''@/$(LIBGROFF_PACKAGE)/g' $(libgroff_srcdir)/ref-del.sin > t-$@
- 	mv t-$@ $@
+@@ -20215,7 +20215,7 @@ ref-del.sed: $(libgroff_srcdir)/ref-del.sin
+ 	    $(libgroff_srcdir)/ref-del.sin > t-$@ \
+ 	  && mv t-$@ $@
  
 -install-data-local: install_charset_data
 +install-data-local: 

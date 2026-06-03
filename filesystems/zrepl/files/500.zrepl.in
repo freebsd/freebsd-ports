@@ -24,7 +24,7 @@ case "$weekly_zrepl_enable" in
 	echo
 	echo "Check Zrepl certificates for upcoming expiration:"
 
-	for cert in `/usr/bin/find %%ETCDIR%% -maxdepth 1 -name *.crt`; do
+	for cert in `/usr/bin/find %%ETCDIR%% -maxdepth 1 -name "*.crt"`; do
 		/usr/bin/openssl x509 --in "${cert}" \
 			-checkend "${weekly_zrepl_warntime}"
 

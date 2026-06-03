@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# PROVIDE: parkverbot
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# parkverbot_enable (bool):	Set to NO by default
+#				Set to YES to enable parkverbot
+# parkverbot_flags (string):	Devices passed to parkverbot(8)
+#				Default: none
+
+. /etc/rc.subr
+
+name=parkverbot
+rcvar=${name}_enable
+
+: ${parkverbot_enable:="NO"}
+: ${parkverbot_flags:=""}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+parkverbot_prepend="/usr/sbin/daemon -f -p ${pidfile}"
+
+load_rc_config ${name}
+run_rc_command "$1"

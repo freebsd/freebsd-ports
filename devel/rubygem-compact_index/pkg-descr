@@ -1,0 +1,4 @@
+The CompactIndex gem implements the response logic for the compact index format
+and to manage the versions file. The compact index format has three endpoints:
+/names, /versions and /info/gem_name. The versions file is a file which hold the
+versions in a cache-friendly way.

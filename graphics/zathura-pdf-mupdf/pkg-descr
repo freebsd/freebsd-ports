@@ -1,1 +1,3 @@
-Zathura plugin to view PDF using the MuPDF rendering engine.
+zathura is a highly customizable and functional document viewer based on the
+girara user interface library and several document libraries. This plugin for
+zathura provides PDF support using the mupdf library.

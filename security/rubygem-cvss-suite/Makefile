@@ -1,5 +1,5 @@
 PORTNAME=	cvss-suite
-PORTVERSION=	3.3.0
+PORTVERSION=	4.1.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/0llirocks/cvss-suite
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		rubygem-bigdecimal-gitlab>=3.1<4:math/rubygem-bigdecimal-gitlab
 
 USES=		gem shebangfix
 

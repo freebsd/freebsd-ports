@@ -1,5 +1,5 @@
 PORTNAME=	pkg_rmleaves
-DISTVERSION=	20231217
+PORTVERSION=	20260412
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://files.wittig.name/${PORTNAME}/ \
 		http://files.wittig.name/${PORTNAME}/
@@ -14,7 +14,8 @@ RUN_DEPENDS=	bsddialog:devel/bsddialog
 
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/pkg_rmleaves share/man/man1/pkg_rmleaves.1.gz
+PLIST_FILES=	sbin/pkg_rmleaves \
+		share/man/man1/pkg_rmleaves.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg_rmleaves ${STAGEDIR}${PREFIX}/sbin/pkg_rmleaves

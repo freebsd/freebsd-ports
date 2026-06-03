@@ -5252,6 +5252,7 @@ share/application-registry/texmacs.applications
 share/applications/texmacs.desktop
 share/icons/gnome/scalable/apps/TeXmacs.svg
 share/icons/gnome/scalable/mimetypes/text-texmacs.svg
+@comment share/icons/gnome/icon-theme.cache
 share/mime-info/texmacs.keys
 share/mime-info/texmacs.mime
 share/mime/packages/texmacs.xml

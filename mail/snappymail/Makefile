@@ -1,11 +1,11 @@
 PORTNAME=	snappymail
 DISTVERSION=	2.38.2
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/the-djmaze/snappymail/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, modern, lightweight & fast web-based email client
 WWW=		https://snappymail.eu/
 

@@ -1,0 +1,49 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: FreeBSD Ports Collection <ports@FreeBSD.org>
+Date: Sat, 01 Jan 2000 00:00:00 +0000
+Subject: [PATCH] Fix gperftools Bazel build for FreeBSD
+
+- Fix CXXFLAGS/CFLAGS select(): the //conditions:default branch used
+  MSVC-style flags (/std:c++17 /D_WIN32_WINNT=0x0602) which break clang
+  when @bazel_tools//tools/cpp:compiler does not match :is_clang.
+  Change default to GCC-compatible flags (same as :is_gcc/:is_clang).
+- Add "@platforms//os:freebsd": [] to NON_WINDOWS so targets using
+  target_compatible_with = NON_WINDOWS are not incompatible on FreeBSD.
+---
+diff --git a/BUILD.bazel b/BUILD.bazel
+index 0000000..0000001 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -19,23 +19,24 @@ is_msvc
+ CFLAGS_FOR_GCC = ["-Wall", "-Wwrite-strings", "-Wno-sign-compare", "-DTCMALLOC_DISABLE_HIDDEN_VISIBILITY"]
+ CXXFLAGS_FOR_GCC = CFLAGS_FOR_GCC + ["-Woverloaded-virtual", "-std=gnu++17", "-fsized-deallocation"]
+
+ CXXFLAGS = select({
+-    ":is_msvc": ["/std:c++17 /D_WIN32_WINNT=0x0602"],
+-    "//conditions:default": ["/std:c++17 /D_WIN32_WINNT=0x0602"], # the above doesn't work!
+-    ":is_gcc": CXXFLAGS_FOR_GCC,
+-    ":is_clang": CXXFLAGS_FOR_GCC + ["-Wthread-safety"]
++    ":is_msvc": ["/std:c++17", "/D_WIN32_WINNT=0x0602"],
++    ":is_gcc": CXXFLAGS_FOR_GCC,
++    ":is_clang": CXXFLAGS_FOR_GCC + ["-Wthread-safety"],
++    "//conditions:default": CXXFLAGS_FOR_GCC,
+ })
+
+ CFLAGS = select({
+-    ":is_msvc": ["/D_WIN32_WINNT=0x0602"],
+-    "//conditions:default": ["/D_WIN32_WINNT=0x0602"],
+-    ":is_gcc": CFLAGS_FOR_GCC,
+-    ":is_clang": CFLAGS_FOR_GCC + ["-Wthread-safety"]
++    ":is_msvc": ["/D_WIN32_WINNT=0x0602"],
++    ":is_gcc": CFLAGS_FOR_GCC,
++    ":is_clang": CFLAGS_FOR_GCC + ["-Wthread-safety"],
++    "//conditions:default": CFLAGS_FOR_GCC,
+ })
+
+ NON_WINDOWS = select({
+     "@platforms//os:osx": [],
+     "@platforms//os:linux": [],
++    "@platforms//os:freebsd": [],
+     "//conditions:default": ["@platforms//:incompatible"],
+ })
+

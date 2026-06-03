@@ -1,0 +1,13 @@
+vLLM is a fast and easy-to-use library for LLM inference and serving.
+It provides high-throughput and memory-efficient inference for large language
+models (LLMs) using state-of-the-art serving technologies including:
+
+- PagedAttention for efficient KV cache memory management
+- Continuous batching of incoming requests
+- Optimized CUDA kernels (on supported platforms)
+- Hugging Face model compatibility
+- Various decoding algorithms including parallel sampling and beam search
+- OpenAI-compatible API server
+
+On FreeBSD, vLLM runs in CPU/empty device mode (VLLM_TARGET_DEVICE=empty),
+providing pure Python inference without GPU acceleration.

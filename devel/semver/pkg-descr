@@ -1,0 +1,3 @@
+semver is a header-only semantic versioning library for modern C++. It allows to
+compare and manipulate versions complying with the Semantic Versioning 2.0.0
+specification. It is licensed under the MIT License.

@@ -1,0 +1,13 @@
+--- lib/plug-ins/msym/Makefile.am.orig	2026-04-20 18:38:49 UTC
++++ lib/plug-ins/msym/Makefile.am
+@@ -37,8 +37,10 @@ CLEANFILES = log
+ 
+ CLEANFILES = log
+ 
++if BUILTIN_MSYM
+ $(srcdir)/sym.c: builtin/msym_EXPORTS.h
+ $(srcdir)/msym.c: builtin/msym_EXPORTS.h
++endif
+ 
+ clean-local:
+ 	rm -rf builtin

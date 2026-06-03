@@ -1,3 +1,3 @@
-TIMESTAMP = 1740824868
-SHA256 (blueprint-compiler-v0.16.0.tar.bz2) = 77a5d593f433c8ca70a05390532cd186c60944cfa6bcd39296c1c2597a7a50fc
-SIZE (blueprint-compiler-v0.16.0.tar.bz2) = 101391
+TIMESTAMP = 1774186213
+SHA256 (gnome/blueprint-compiler-0.20.4.tar.xz) = 1f1ecc84bcd698902d422f7de83d39229a209dd3016f6d2c3b0ed0ab123f6891
+SIZE (gnome/blueprint-compiler-0.20.4.tar.xz) = 126108

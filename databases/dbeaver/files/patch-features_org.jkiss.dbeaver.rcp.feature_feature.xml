@@ -1,0 +1,16 @@
+--- features/org.jkiss.dbeaver.rcp.feature/feature.xml.orig	2025-07-18 15:47:12 UTC
++++ features/org.jkiss.dbeaver.rcp.feature/feature.xml
+@@ -25,10 +25,13 @@
+     <plugin id="org.eclipse.equinox.security.win32" ws="win32" version="0.0.0"/>
+     <plugin id="org.eclipse.equinox.security.macosx" ws="macosx" version="0.0.0"/>
+     <plugin id="org.eclipse.equinox.security.linux" ws="linux" version="0.0.0"/>
++    <plugin id="org.eclipse.equinox.security.freebsd" os="freebsd" version="0.0.0"/>
+ 
+     <plugin id="org.eclipse.compare.win32" ws="win32" version="0.0.0"/>
+ 
+     <!-- Filesystem -->
++    <plugin id="org.eclipse.core.filesystem.freebsd.x86_64" os="freebsd" arch="x86_64" version="0.0.0"/>
++    <plugin id="org.eclipse.core.filesystem.freebsd.aarch64" os="freebsd" arch="aarch64" version="0.0.0"/>
+     <plugin id="org.eclipse.core.filesystem.linux.x86_64" os="linux" arch="x86_64" version="0.0.0"/>
+     <plugin id="org.eclipse.core.filesystem.linux.aarch64" os="linux" arch="aarch64" version="0.0.0"/>
+     <plugin id="org.eclipse.core.filesystem.macosx" os="macosx" version="0.0.0"/>

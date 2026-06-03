@@ -1,0 +1,3 @@
+hare-gi is a GObject Introspection code generator for Hare. In
+short, it creates bindings for GTK family of libraries (GTK+, GDK,
+Pango, etc).

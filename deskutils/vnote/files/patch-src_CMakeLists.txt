@@ -1,0 +1,43 @@
+--- src/CMakeLists.txt.orig	2025-05-15 07:23:24.000000000 -0500
++++ src/CMakeLists.txt	2025-10-13 13:31:54.811026000 -0500
+@@ -31,14 +31,6 @@ set(VX_TS_FILES data/core/translations/vnote_zh_CN.ts
+ # Translations
+ set(VX_TS_FILES data/core/translations/vnote_zh_CN.ts
+     data/core/translations/vnote_ja.ts)
+-if((QT_DEFAULT_MAJOR_VERSION EQUAL 6))
+-    if((Qt6Widgets_VERSION VERSION_GREATER_EQUAL 6.7.0))
+-        qt_add_lupdate(TS_FILES ${VX_TS_FILES}
+-            SOURCE_TARGETS vnote)
+-    else()
+-        qt_add_lupdate(vnote TS_FILES ${VX_TS_FILES})
+-    endif()
+-endif()
+ # Generate .qm files from .ts files (lrelease)
+ set_source_files_properties(${VX_TS_FILES} PROPERTIES
+     OUTPUT_LOCATION "${CMAKE_CURRENT_BINARY_DIR}/translations")
+@@ -68,6 +60,16 @@ add_executable(vnote WIN32 MACOSX_BUNDLE
+     ${VX_APP_ICON_RC_WIN} ${VX_APP_ICON_MACOS} ${VX_RESOURCE_FILES}
+ )
+ 
++# Add lupdate target for translations (Qt6 only)
++if((QT_DEFAULT_MAJOR_VERSION EQUAL 6))
++    if((Qt6Widgets_VERSION VERSION_GREATER_EQUAL 6.7.0))
++        qt_add_lupdate(TS_FILES ${VX_TS_FILES}
++            SOURCE_TARGETS vnote)
++    else()
++        qt_add_lupdate(vnote TS_FILES ${VX_TS_FILES})
++    endif()
++endif()
++
+ add_dependencies(vnote VX_EXTRA_RESOURCE)
+ 
+ set(VX_LIBS_FOLDER ../libs)
+@@ -171,7 +173,7 @@ else()
+     set(iconsvg.files data/core/logo/vnote.svg)
+     foreach(item IN ITEMS desktop icon16 icon32 icon48 icon64 icon128 icon256 iconsvg)
+         install(FILES ${CMAKE_CURRENT_LIST_DIR}/${${item}.files}
+-            DESTINATION ${CMAKE_INSTALL_DATADIR}/${${item}.path}
++          DESTINATION ${CMAKE_INSTALL_PREFIX}/share/${${item}.path}
+             PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
+     endforeach()
+ endif()

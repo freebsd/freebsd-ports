@@ -16,7 +16,7 @@ USES=		cmake:indirect compiler:c++17-lang meson pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	marzer
-MESON_ARGS=	-Duse_vendored_libs=false
+MESON_FALSE=	use_vendored_libs
 
 post-patch:
 # Convert codeset from GNU to IANA

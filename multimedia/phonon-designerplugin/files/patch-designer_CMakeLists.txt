@@ -4,7 +4,7 @@ another internal copy and linking to that.
 --- designer/CMakeLists.txt.orig	2023-11-03 23:37:02 UTC
 +++ designer/CMakeLists.txt
 @@ -1,3 +1,5 @@
-+find_package(Phonon4Qt5 ${PROJECT_VERSION} EXACT REQUIRED)
++find_package(Phonon4Qt6 ${PROJECT_VERSION} EXACT REQUIRED)
 +
  set(phononwidgetsplugin_SRCS
      phononcollection.cpp

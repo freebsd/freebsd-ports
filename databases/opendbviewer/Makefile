@@ -18,6 +18,8 @@ USE_QT=		core dbus gui network sql sql-sqlite3 testlib widgets \
 		buildtools:build linguisttools:build qmake:build
 USE_XORG=	x11 xcb
 
+CMAKE_ARGS+=	-DQT_USE_VERSION=5
+
 OPTIONS_DEFINE=		DOCS MYSQL PGSQL
 OPTIONS_DEFAULT=	PGSQL
 

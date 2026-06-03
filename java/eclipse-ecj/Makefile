@@ -1,6 +1,6 @@
 PORTNAME=	ecj
 PORTVERSION=	4.4.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/eclipse/downloads/drops4/R-${PORTVERSION}-${DROPDATE}/
 PKGNAMEPREFIX=	eclipse-

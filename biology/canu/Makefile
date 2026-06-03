@@ -1,6 +1,6 @@
 PORTNAME=		canu
 DISTVERSION=		2.2
-PORTREVISION=		7
+PORTREVISION=		10
 CATEGORIES=		biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
@@ -12,7 +12,7 @@ WWW=		https://canu.readthedocs.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs

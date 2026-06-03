@@ -1,0 +1,10 @@
+UCX (Unified Communication X) is a high-performance communication framework
+for modern HPC and data-intensive workloads. It provides low-latency,
+high-bandwidth messaging and remote-memory-access primitives across a wide
+range of transports, including shared memory, TCP/IP, and RDMA-capable
+interconnects such as InfiniBand and RoCE (when supported by the platform).
+
+UCX is commonly used as a communication substrate for MPI, OpenSHMEM, and
+other distributed runtimes. It exposes a set of layered APIs (UCP/UCT/UCS/UCM)
+to balance portability and performance while enabling optimized transport
+selection, rendezvous protocols, and progress models.

@@ -1,6 +1,5 @@
 PORTNAME=	calcurse
-DISTVERSION=	4.8.1
-PORTREVISION=	2
+DISTVERSION=	4.8.2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/ \
 		https://fossies.org/linux/privat/
@@ -12,7 +11,7 @@ WWW=		https://calcurse.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses shebangfix
+USES=		ncurses shebangfix pkgconfig
 SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 		contrib/caldav/calcurse-caldav.py \
 		contrib/vdir/calcurse-vdir \

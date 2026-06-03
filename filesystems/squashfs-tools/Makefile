@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	gsed:textproc/gsed help2man:misc/help2man
 
-USES=		alias cpe gmake
+USES=		cpe gmake
 
 MAKE_ARGS=	INSTALL_MANPAGES_DIR=${PREFIX}/share/man/man1
 

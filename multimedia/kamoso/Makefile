@@ -8,21 +8,24 @@ WWW=		https://apps.kde.org/kamoso/
 
 LICENSE=	GPLv2
 
-USES=		cmake compiler:c++11-lang gettext gl gnome gstreamer kde:5 \
-		pkgconfig qt:5 tar:xz xorg
+RUN_DEPENDS=	frei0r>0:graphics/frei0r
+
+USES=		cmake compiler:c++20-lang gettext gl gnome gstreamer kde:6 \
+		pkgconfig qt:6 tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	glib20
-USE_GSTREAMER=	v4l2
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons i18n itemviews jobwidgets kio kirigami2 \
-		notifications purpose service solid widgetsaddons windowsystem \
-		xmlgui \
-		ecm:build
-USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
-		quickcontrols widgets xml \
-		buildtools:build qmake:build
+USE_GSTREAMER=	qt6 v4l2
+USE_KDE=	config i18n kio notifications purpose \
+		doctools:build ecm:build \
+		kirigami2:run
+USE_QT=		base declarative
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
+
+# Remove at 13.5-RELEASE EOL:
+.if !exists(/usr/bin/clang-scan-deps)
+USES+=		llvm
+.endif
 
 .include <bsd.port.mk>

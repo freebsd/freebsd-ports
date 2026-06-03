@@ -1,6 +1,6 @@
---- third_party/libc++/src/src/filesystem/filesystem_clock.cpp.orig	2025-05-07 06:48:23 UTC
+--- third_party/libc++/src/src/filesystem/filesystem_clock.cpp.orig	2025-12-10 15:04:57 UTC
 +++ third_party/libc++/src/src/filesystem/filesystem_clock.cpp
-@@ -35,7 +35,7 @@
+@@ -37,7 +37,7 @@
  #endif
  
  #if defined(__APPLE__) || defined(__gnu_hurd__) || defined(__AMDGPU__) || defined(__NVPTX__) ||                        \

@@ -1,5 +1,5 @@
 PORTNAME=	gnupg
-DISTVERSION=	2.4.7
+DISTVERSION=	2.4.9
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -23,6 +23,10 @@ USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite \
 		tar:bzip2
 
 CPE_VENDOR=	gnupg
+
+# Odd minor-versions are the development branch; in particular 2.5 is
+# close to being a new 2.6, but we don't want portscout informing about it.
+PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ntbtls \
@@ -76,7 +80,6 @@ pre-build:
 	${TOUCH} ${WRKSRC}/doc/*.texi
 
 post-install:
-	${RMDIR} ${STAGEDIR}${PREFIX}/share/man/manh
 	${MV} ${STAGEDIR}${PREFIX}/bin/gpgsplit ${STAGEDIR}${PREFIX}/bin/gpgsplit2
 	${MV} ${STAGEDIR}${DATADIR}/help*.txt ${STAGEDIR}${DOCSDIR}
 

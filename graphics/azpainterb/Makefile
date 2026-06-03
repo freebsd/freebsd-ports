@@ -6,7 +6,7 @@ MASTER_SITES=	http://azsky2.html.xdomain.jp/arc/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	8-bit RGB color dot editing program
-WWW=		http://azsky2.html.xdomain.jp/soft/azpainterb.html
+WWW=		http://azelpg.gitlab.io/azsky2/soft/azpainterb.html
 
 LICENSE=	GPLv3
 

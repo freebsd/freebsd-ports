@@ -1,0 +1,5 @@
+bin/hashbase_inc.pl
+%%SITE_PERL%%/Object/HashBase.pm
+%%SITE_PERL%%/Object/HashBase/Inline.pm
+%%SITE_PERL%%/Object/HashBase/Test.pm
+%%PERL5_MAN3%%/Object::HashBase.3.gz

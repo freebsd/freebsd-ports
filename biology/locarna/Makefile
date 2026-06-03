@@ -1,6 +1,5 @@
 PORTNAME=	locarna
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	biology
 MASTER_SITES=	https://github.com/s-will/LocARNA/releases/download/v${DISTVERSION}/
 

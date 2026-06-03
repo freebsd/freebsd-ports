@@ -14,7 +14,6 @@ share/hyperlatex/frames.hlx
 share/hyperlatex/french.hlx
 share/hyperlatex/german.hlx
 share/hyperlatex/hyperlatex.el
-share/hyperlatex/hyperlatex.elc
 share/hyperlatex/hyperxml.hlx
 share/hyperlatex/italian.hlx
 share/hyperlatex/longtable.hlx

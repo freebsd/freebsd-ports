@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
+WWW=		https://github.com/argp-standalone/argp-standalone
 
 LICENSE=	LGPL21+
 

@@ -1,0 +1,9 @@
+bin/base64
+include/libbase64.h
+lib/cmake/base64/base64-config-version.cmake
+lib/cmake/base64/base64-config.cmake
+lib/cmake/base64/base64-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/base64/base64-targets.cmake
+lib/libbase64.so
+lib/libbase64.so.0
+lib/libbase64.so.%%PORTVERSION%%

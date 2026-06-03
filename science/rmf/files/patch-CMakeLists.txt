@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-04-19 19:25:22 UTC
+--- CMakeLists.txt.orig	2026-04-29 23:05:31 UTC
 +++ CMakeLists.txt
-@@ -18,15 +18,15 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_S
+@@ -18,15 +18,15 @@ imp_find_python()
  include(cmake_modules/IMPFindPython.cmake)
  imp_find_python()
  
@@ -25,14 +25,14 @@
  
  # Don't deref quoted variables in if()
  if(POLICY CMP0054)
-@@ -168,12 +168,14 @@ else()
+@@ -183,12 +183,14 @@ endif()
  endif()
  
  
 -add_subdirectory(swig)
 +#add_subdirectory(swig)
  
-+if (FREEBSD_BUILS_WITH_TESTS)
++if (FREEBSD_BUILD_WITH_TESTS)
  add_subdirectory(test)
 -add_subdirectory(examples)
 -add_subdirectory(benchmark)

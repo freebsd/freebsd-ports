@@ -1,0 +1,3 @@
+pybase64 is a fast Base64 encoding/decoding library for Python. It provides
+a drop-in replacement for Python's base64 module using SIMD-optimized
+implementations for significantly better performance.

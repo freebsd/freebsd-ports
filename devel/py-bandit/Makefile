@@ -26,7 +26,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8.0:www/py-beautifulsoup@$
 		pylint${PYTHON_PKGNAMESUFFIX}>=1.9.4:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}testscenarios>=0.5.0:devel/py-testscenarios@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}testtools>=2.3.0:devel/py-testtools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0:textproc/py-tomli@${PY_FLAVOR}
+		${PY_TOMLI}
 
 USES=		python
 USE_PYTHON=	autoplist distutils pytest # 1 test fails, see https://github.com/PyCQA/bandit/issues/1083

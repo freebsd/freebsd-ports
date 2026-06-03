@@ -1,6 +1,7 @@
 PORTNAME=	tasks
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES?=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -11,7 +12,7 @@ WWW=		https://apps.nextcloud.com/apps/tasks
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NEXTCLOUD_RUN_DEPENDS=	28
+NEXTCLOUD_RUN_DEPENDS=	31
 
 USES=		nextcloud php:flavors
 

@@ -4,6 +4,8 @@ bin/mmctl
 %%WWWDIR%%/fonts/OFL.txt
 %%WWWDIR%%/fonts/nunito-bold.ttf
 %%WWWDIR%%/i18n/am.json
+%%WWWDIR%%/i18n/ar.json
+%%WWWDIR%%/i18n/ar_SA.json
 %%WWWDIR%%/i18n/be.json
 %%WWWDIR%%/i18n/bg.json
 %%WWWDIR%%/i18n/br.json

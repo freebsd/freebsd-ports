@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	libgd ??-libgd
 
-USES=		cpe tar:xz pkgconfig pathfix libtool:keepla autoreconf shebangfix
+USES=		autoreconf cpe gettext-tools libtool:keepla pathfix pkgconfig \
+		shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gd-formats

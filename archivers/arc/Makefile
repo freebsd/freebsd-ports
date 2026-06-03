@@ -17,7 +17,7 @@ CONFLICTS_INSTALL= arcanist-php[0-9][0-9]
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		alias cpe
+USES=		cpe
 CPE_VENDOR=	arc_project
 PLIST_FILES=	bin/arc bin/marc share/man/man1/arc.1.gz
 PORTDOCS=	Arc521.doc

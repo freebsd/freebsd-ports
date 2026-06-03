@@ -1,6 +1,6 @@
 PORTNAME=	game.libretro.fceumm
-PORTVERSION=	0.0.1.55
-DISTVERSIONSUFFIX=	-Nexus
+PORTVERSION=	0.0.1.60.20260311
+DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -19,6 +19,7 @@ NO_ARCH=	yes
 USES=		kodi
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-game
+GH_TAGNAME=	7ae97f0b9e8e2033ce82ba6e7a6de4ca6a164ccc
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib

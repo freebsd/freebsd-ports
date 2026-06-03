@@ -1,5 +1,5 @@
 PORTNAME=	pROC
-PORTVERSION=	1.18.5
+PORTVERSION=	1.19.0.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,8 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/pROC/
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-plyr>0:devel/R-cran-plyr \
-		R-cran-Rcpp>=0.11.1:devel/R-cran-Rcpp
+RUN_DEPENDS=	R-cran-Rcpp>=0.11.1:devel/R-cran-Rcpp
 
 USES=		cran:auto-plist,compiles
 

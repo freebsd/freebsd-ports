@@ -27,6 +27,8 @@ share/doc/HTML/nl/kdiff3/index.cache.bz2
 share/doc/HTML/nl/kdiff3/index.docbook
 share/doc/HTML/pt/kdiff3/index.cache.bz2
 share/doc/HTML/pt/kdiff3/index.docbook
+share/doc/HTML/pt_BR/kdiff3/index.cache.bz2
+share/doc/HTML/pt_BR/kdiff3/index.docbook
 share/doc/HTML/sl/kdiff3/index.cache.bz2
 share/doc/HTML/sl/kdiff3/index.docbook
 share/doc/HTML/sv/kdiff3/index.cache.bz2
@@ -41,7 +43,9 @@ share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/hicolor/48x48/apps/kdiff3.png
 share/icons/hicolor/64x64/apps/kdiff3.png
 share/icons/hicolor/scalable/apps/kdiff3.svgz
+share/locale/ar/LC_MESSAGES/diff_ext.mo
 share/locale/ar/LC_MESSAGES/kdiff3.mo
+share/locale/ar/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ast/LC_MESSAGES/diff_ext.mo
 share/locale/ast/LC_MESSAGES/kdiff3.mo
 share/locale/ast/LC_MESSAGES/kdiff3fileitemactionplugin.mo
@@ -90,6 +94,7 @@ share/locale/fi/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/fr/LC_MESSAGES/diff_ext.mo
 share/locale/fr/LC_MESSAGES/kdiff3.mo
 share/locale/fr/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/ga/LC_MESSAGES/diff_ext.mo
 share/locale/ga/LC_MESSAGES/kdiff3.mo
 share/locale/ga/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/gl/LC_MESSAGES/diff_ext.mo
@@ -192,6 +197,7 @@ share/man/es/man1/kdiff3.1.gz
 share/man/it/man1/kdiff3.1.gz
 share/man/man1/kdiff3.1.gz
 share/man/nl/man1/kdiff3.1.gz
+share/man/pt_BR/man1/kdiff3.1.gz
 share/man/sl/man1/kdiff3.1.gz
 share/man/sv/man1/kdiff3.1.gz
 share/man/uk/man1/kdiff3.1.gz

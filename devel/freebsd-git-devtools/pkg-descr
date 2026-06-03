@@ -1,8 +1,0 @@
-freebsd-git-devtools includes tools under tools/tools/git/ in the FreeBSD src
-repository:
-
-    - git-arc is a git plugin around arc that simplifies the creation and
-      management of FreeBSD Phabricator reviews.
-
-    - mfc-candidates compares git commit hashes between branches to identify
-      potential MFC candidates.

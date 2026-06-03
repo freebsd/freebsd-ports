@@ -1,6 +1,7 @@
 PORTNAME=	mysqld_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.2
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mr.deadlystorm@gmail.com
@@ -10,7 +11,7 @@ WWW=		https://github.com/prometheus/mysqld_exporter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 GO_MODULE=	github.com/prometheus/mysqld_exporter
 
 PLIST_FILES=	bin/mysqld_exporter

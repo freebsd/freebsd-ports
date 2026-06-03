@@ -1,6 +1,8 @@
---- src/cpp/session/SessionHttpMethods.cpp.orig	2021-09-22 13:58:50 UTC
+- Use RSTUDIO_VERSION instead of git hash for client version
+
+--- src/cpp/session/SessionHttpMethods.cpp.orig	2025-05-30 14:20:38 UTC
 +++ src/cpp/session/SessionHttpMethods.cpp
-@@ -437,7 +437,7 @@ std::string clientVersion()
+@@ -419,7 +419,7 @@ std::string clientVersion()
        return std::string();
  
     // clientVersion is the git revision hash

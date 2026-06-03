@@ -1,11 +1,11 @@
---- components/regional_capabilities/regional_capabilities_service.cc.orig	2025-06-19 07:37:57 UTC
+--- components/regional_capabilities/regional_capabilities_service.cc.orig	2026-04-15 12:07:04 UTC
 +++ components/regional_capabilities/regional_capabilities_service.cc
-@@ -235,7 +235,7 @@ std::optional<CountryId> RegionalCapabilitiesService::
-     return persisted_country_id;
-   }
+@@ -413,7 +413,7 @@ bool RegionalCapabilitiesService::IsInSearchEngineChoi
+       .choice_screen_eligibility_config.has_value();
+ }
  
--#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (base::FeatureList::IsEnabled(switches::kClearPrefForUnknownCountry)) {
-     profile_prefs_->ClearPref(country_codes::kCountryIDAtInstall);
-     base::UmaHistogramEnumeration(kUnknownCountryIdStored,
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // static
+ bool RegionalCapabilitiesService::IsInSearchEngineChoiceScreenRegion(
+     Client& client) {

@@ -18,7 +18,7 @@ To create clean copies of MAME's configuration files, execute:
 the output from this can be stored in ~/.mame or a custom path.
 
 To run MAME with custom configuration path(s), execute:
-"mame -inipath /var/db/mame /usr/local/etc/mame"
+"mame -inipath /var/db/mame %%LOCALBASE%%/etc/mame"
 
 See mame(6) for more information.
 EOM

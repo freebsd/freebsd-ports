@@ -1,0 +1,20 @@
+--- makefiles/makefile.defs.freebsd.alsa.orig	2026-04-19 21:54:48 UTC
++++ makefiles/makefile.defs.freebsd.alsa
+@@ -19,7 +19,7 @@ LINK ?= $(CXX)
+ LINK ?= $(CXX)
+ 
+ # -DALSA and -DJACK: Use ALSA and Jack audio in pa_unix_hostapis.c
+-AUDIO = -DALSA -DJACK
++AUDIO = -DALSA # -DJACK
+ 
+ # FreeBSD pretends to be Linux for most of the code; add CPPFLAGS
+ # explicitly because GNU make / gcc uses those preprocessor flags,
+@@ -40,7 +40,7 @@ EXECUTABLE = praat
+ 
+ EXECUTABLE = praat
+ 
+-LIBS = `pkg-config --libs gtk+-3.0` -L$(LOCALBASE)/lib -lasound -ljack -lm -lpthread -ltinfow
++LIBS = `pkg-config --libs gtk+-3.0` -L$(LOCALBASE)/lib -lasound -lm -lpthread -ltinfow
+ 
+ AR = ar
+ RANLIB = ls

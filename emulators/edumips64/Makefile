@@ -1,5 +1,6 @@
 PORTNAME=	edumips64
 DISTVERSION=	1.3.0
+PORTREVISION=	2
 CATEGORIES=	emulators education java
 MASTER_SITES=	https://github.com/EduMIPS64/${PORTNAME}/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	.jar

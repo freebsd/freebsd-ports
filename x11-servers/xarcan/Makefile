@@ -44,6 +44,11 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
+post-patch:
+	@${REINPLACE_CMD} -e '/_FBDEV_H_/ { x; \
+		s/^/unsigned long long arcan_timemillis();/; G; }' \
+			${WRKSRC}/hw/kdrive/arcan/arcan.h
+
 do-install:
 # XXX Prevent Meson from installing unrelated files
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/hw/kdrive/arcan/Xarcan \

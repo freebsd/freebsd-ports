@@ -1,5 +1,5 @@
 PORTNAME=	tetraproc
-DISTVERSION=	0.9.2
+DISTVERSION=	0.10.0
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 

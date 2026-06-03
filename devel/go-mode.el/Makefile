@@ -1,6 +1,7 @@
 PORTNAME=	go-mode.el
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	pat@patmaddox.com
@@ -10,7 +11,6 @@ WWW=		https://github.com/dominikh/go-mode.el
 LICENSE=	BSD3CLAUSE
 
 USES=			emacs
-EMACS_NO_DEPENDS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dominikh

@@ -1,6 +1,6 @@
 PORTNAME=		fastp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.26.0
+DISTVERSION=		1.2.0
 CATEGORIES=		biology
 
 MAINTAINER=	hayzam@alchemilla.io
@@ -11,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
-		libisal.so:devel/isa-l
+		libisal.so:devel/isa-l \
+		libhwy.so:devel/highway
 
 USES=		gmake localbase:ldflags
 USE_GITHUB=	yes

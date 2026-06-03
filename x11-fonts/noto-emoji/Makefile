@@ -1,5 +1,5 @@
 PORTNAME=	noto
-PORTVERSION=	2.048
+PORTVERSION=	2.051
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
 PKGNAMESUFFIX=	-emoji

@@ -1,0 +1,45 @@
+[
+{
+  type: install
+  message: <<EOM
+OpenClaw is a multi-channel AI gateway.
+
+To get started:
+
+1. Onboarding:
+   Run the interactive onboarding wizard to set up your workspace:
+   $ openclaw onboard
+
+2. Telegram Integration:
+   * Message @BotFather on Telegram and use /newbot.
+   * Note the API Token and set it:
+     $ openclaw config set channels.telegram.botToken "YOUR_TOKEN"
+
+3. FreeBSD Service:
+   Enable and start the OpenClaw service:
+   # sysrc openclaw_enable="YES"
+   # service openclaw start
+
+4. Account Pairing:
+   * Open your new bot on Telegram and click "Start".
+   * Approve the pairing request on the host:
+     $ openclaw pairing approve telegram <CODE>
+
+5. Web UI (Dashboard):
+   Access the management dashboard:
+   $ openclaw dashboard
+   By default, it is available at http://localhost:18789
+
+For more information, see https://github.com/openclaw/openclaw
+
+Port options EXTEND_AI_TIMEOUT, EXTEND_TYPING_TTL_TIMEOUT
+add patches that extend timeouts in order for openclaw to
+work with slow AI endpoints, for example CPU based
+endpoints.
+
+The openclaw package was verified to work on FreeBSD 15 STABLE
+with qwen3.5:35B-a3b run in ollama on a machine with 64GB RAM.
+
+EOM
+}
+]

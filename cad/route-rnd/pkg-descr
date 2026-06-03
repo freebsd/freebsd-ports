@@ -1,0 +1,9 @@
+route-rnd is a Free Software flexible, modular autorouter for Printed Circuit
+Boards
+
+- modular, supports different routing algorithms
+- fits well in a UNIXy workflow
+- the designed-for-simplicity file format makes it easy to interface
+- fully CLI, no GUI required
+- active development, frequent releases
+- Free Software license (GNU GPLv2+)

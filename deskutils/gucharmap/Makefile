@@ -1,7 +1,6 @@
 PORTNAME=	gucharmap
-PORTVERSION=	16.0.2 # must sync with textproc/UCD
+PORTVERSION=	17.0.0 # must sync with textproc/UCD
 CATEGORIES=	deskutils gnome
-#MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -12,14 +11,13 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		UCD=16.0.0,1:textproc/UCD \
-		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
+		UCD=17.0.0,1:textproc/UCD
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2
 
 USES=		desktop-file-utils gettext-tools gnome localbase meson perl5 pkgconfig \
-		python:build tar:xz vala:build
-USE_GNOME=	cairo glib20 gtk30 introspection:build
+		python:build tar:bz2 vala:build
+USE_GNOME=	atk cairo glib20 gtk30 introspection:build
 USE_PERL5=	build
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 USE_LDCONFIG=	yes

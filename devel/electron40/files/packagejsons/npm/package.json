@@ -1,0 +1,28 @@
+{
+  "main": "index.js",
+  "types": "electron.d.ts",
+  "bin": {
+    "electron": "cli.js"
+  },
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "abi_version",
+    "checksums.json",
+    "cli.js",
+    "electron.d.ts",
+    "index.js",
+    "install.js"
+  ],
+  "dependencies": {
+    "@electron/get": "^2.0.0",
+    "@types/node": "^24.9.0",
+    "extract-zip": "^2.0.1"
+  },
+  "engines": {
+    "node": ">= 12.20.55"
+  }
+}

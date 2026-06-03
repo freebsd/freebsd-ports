@@ -11,6 +11,10 @@ WWW=		https://catalog.caida.org/software/arts
 
 LICENSE=	LGPL21
 
+BROKEN=		/usr/include/c++/v1/__type_traits/is_trivially_relocatable.h:37:83: error: '__trivially_relocatable' is a private member of 'std::pair<unsigned int, unsigned int>'
+DEPRECATED=	deprecated by upstream, broken
+EXPIRATION_DATE=	2026-06-30
+
 USES=		gmake libtool
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes

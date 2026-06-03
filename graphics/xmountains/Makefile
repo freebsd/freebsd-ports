@@ -1,5 +1,5 @@
 PORTNAME=	xmountains
-PORTVERSION=	2.11
+PORTVERSION=	2.15
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
 		https://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/

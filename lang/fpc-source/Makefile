@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=.source
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
@@ -17,14 +17,14 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	57e84ef714df2404341229bd795dd69a8a6a38bb
+GL_TAGNAME=	4cdc5b1cdff8e81a6d1de622ec586f65c50091c7
 
 PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc/files
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/source-${GL_TAGNAME}
 
-FPC_COMMIT_DATE=20241120
+FPC_COMMIT_DATE=20251007
 FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
@@ -34,6 +34,9 @@ FPC_ARCH=	i386
 .elif ${ARCH} == "amd64"
 FPC_ARCH=	x86_64
 .endif
+
+post-extract:
+	${RM} -R ${WRKSRC}/.git*
 
 post-patch:
 .if ${OPSYS} == FreeBSD

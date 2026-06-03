@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-03-23 22:13:54 UTC
++++ Makefile
+@@ -33,7 +33,7 @@ elc:
+ 	$(EMACS) $(FLAGS) -f compile-semi $(PREFIX) $(LISPDIR) \
+ 		$(VERSION_SPECIFIC_LISPDIR) $(PACKAGE_LISPDIR)
+ 
+-install-elc:	elc
++install-elc:
+ 	$(EMACS) $(FLAGS) -f install-semi $(PREFIX) $(LISPDIR) \
+ 		$(VERSION_SPECIFIC_LISPDIR) $(PACKAGE_LISPDIR)
+ 

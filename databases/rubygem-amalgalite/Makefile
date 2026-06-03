@@ -1,5 +1,5 @@
 PORTNAME=	amalgalite
-PORTVERSION=	1.9.1
+PORTVERSION=	2.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -8,12 +8,10 @@ COMMENT=	Embeds the SQLite database engine in a Ruby extension
 WWW=		https://github.com/copiousfreetime/amalgalite
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-arrayfields>=4.9<5:devel/rubygem-arrayfields
+RUN_DEPENDS=	rubygem-csv>=3.3<4:devel/rubygem-csv
 
 USES=		gem
-
-PLIST_FILES=	bin/amalgalite-pack
 
 .include <bsd.port.mk>

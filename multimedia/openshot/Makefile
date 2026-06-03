@@ -1,7 +1,6 @@
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
-PORTREVISION=	1
+DISTVERSION=	3.5.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -12,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.3.3:multimedia/libopenshot@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.7.0:multimedia/libopenshot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=0:devel/py-sentry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
@@ -32,9 +31,14 @@ PLIST_SUB=	VERSION=${DISTVERSION:C/-.+//}
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=
+.if 1
+DOCS_BUILD_DEPENDS=	${FLAVORS:[1]}-sphinx>=0:textproc/py-sphinx \
+			${FLAVORS:[1]}-sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme
+.else
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
+.endif
 DOCS_PORTDOCS=	*
 
 do-build-DOCS-on:

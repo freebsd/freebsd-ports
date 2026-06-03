@@ -11,9 +11,6 @@ WWW=		https://www.nongnu.org/libruin/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	mips
-NOT_FOR_ARCHS_REASON=	glib needs GCC (not available for mips)
-
 BUILD_DEPENDS=	guile-lib-${GUILE_FLAVOR}>0:devel/guile-lib@${GUILE_FLAVOR}
 RUN_DEPENDS=	guile-lib-${GUILE_FLAVOR}>0:devel/guile-lib@${GUILE_FLAVOR}
 

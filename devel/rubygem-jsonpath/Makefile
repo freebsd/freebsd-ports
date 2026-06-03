@@ -1,5 +1,6 @@
 PORTNAME=	jsonpath
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/joshbuddy/jsonpath
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-multi_json-gitlab>=0:devel/rubygem-multi_json-gitlab
 
 USES=		gem
 

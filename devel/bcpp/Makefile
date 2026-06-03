@@ -1,5 +1,5 @@
 PORTNAME=	bcpp
-DISTVERSION=	20240917
+DISTVERSION=	20250914
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/
 

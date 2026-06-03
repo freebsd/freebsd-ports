@@ -1,11 +1,12 @@
 PORTNAME=	ntfy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
-PORTREVISION=	1
+DISTVERSION=	2.23.0
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 PKGNAMEPREFIX=	go-
-DISTFILES=	${PORTNAME}-${DISTVERSION}.frontend${EXTRACT_SUFX}
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/ntfy
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Send push notifications to your phone or desktop using PUT/POST
@@ -14,7 +15,7 @@ WWW=		https://ntfy.sh
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.26+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	binwiederhier
 
@@ -41,12 +42,12 @@ DOCS_USES=		python
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse --short HEAD'
 # in the ntfy repository to get the value of GITID.
-GITID=		061677a7
+GITID=		9302697
 
 BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 post-patch:
-	@${GREP} -rl "/etc/${PORTNAME}" ${WRKSRC}/cmd \
+	@${GREP} -rl "/etc/${PORTNAME}" ${WRKSRC}/cmd ${WRKSRC}/server \
 		| ${XARGS} ${REINPLACE_CMD} -e 's#/etc/${PORTNAME}#${ETCDIR}#g'
 
 pre-build:

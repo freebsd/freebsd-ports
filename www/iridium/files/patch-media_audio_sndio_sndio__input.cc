@@ -1,11 +1,13 @@
---- media/audio/sndio/sndio_input.cc.orig	2025-05-07 06:48:23 UTC
+--- media/audio/sndio/sndio_input.cc.orig	2026-01-16 14:21:21 UTC
 +++ media/audio/sndio/sndio_input.cc
-@@ -0,0 +1,200 @@
+@@ -0,0 +1,202 @@
 +// Copyright 2013 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
 +#include "base/logging.h"
++#include "media/base/audio_bus.h"
++#include "media/base/audio_sample_types.h"
 +#include "media/base/audio_timestamp_helper.h"
 +#include "media/audio/sndio/audio_manager_sndio.h"
 +#include "media/audio/audio_manager.h"

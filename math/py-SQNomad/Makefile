@@ -1,5 +1,6 @@
 PORTNAME=	SQNomad
 DISTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,13 +9,15 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Blackbox optimization software
 WWW=		https://www.gerad.ca/nomad/
 
+BROKEN=		fails to build with NumPy 2.x
+
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}SQCommon>0:misc/py-SQCommon@${PY_FLAVOR}
 
 USES=		python

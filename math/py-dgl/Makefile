@@ -1,6 +1,6 @@
 PORTNAME=	dgl
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4.0
 CATEGORIES=	math python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${BACKEND_DEPENDS}
 LIB_DEPENDS=	libdgl.so:math/dgl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.8.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.19.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.1.0:science/py-scipy@${PY_FLAVOR} \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} 
 		${BACKEND_DEPENDS}
 
 USES=		python localbase
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	autoplist cython0 distutils
 
 WRKSRC_SUBDIR=	python
 
@@ -48,12 +48,13 @@ TENSORFLOW_MAKE_ENV=		DGLBACKEND=tensorflow
 
 post-install:
 	# workaround for https://github.com/dmlc/dgl/issues/5665
-	@${RM} ${STAGEDIR}${PREFIX}/dgl/libdgl.so
+	@${RM} -f ${STAGEDIR}${PREFIX}/dgl/libdgl.so
 	# remove empty dirs
-	@${RMDIR} \
+	@${RM} -rf \
 		${STAGEDIR}${PREFIX}/dgl/tensoradapter/pytorch \
 		${STAGEDIR}${PREFIX}/dgl/tensoradapter \
 		${STAGEDIR}${PREFIX}/dgl/dgl_sparse \
+		${STAGEDIR}${PREFIX}/dgl/graphbolt \
 		${STAGEDIR}${PREFIX}/dgl
 	# strip binaries
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dgl/_ffi/_cy3/core${PYTHON_TAG}.so
@@ -61,12 +62,15 @@ post-install:
 fix-plist:
 	# workaround for https://github.com/dmlc/dgl/issues/5665
 	@${REINPLACE_CMD} ' \
-		/dgl\/libdgl.so/d ; \
+		/dgl\/libdgl\.so/d ; \
 		' ${TMPPLIST}
 	# remove empty dirs
 	@${REINPLACE_CMD} ' \
-		/dgl\/tensoradapter\/pytorch/d ; \
-		/dgl\/dgl_sparse/d ; \
+		/^dgl\/tensoradapter\/pytorch/d ; \
+		/^dgl\/tensoradapter$$/d ; \
+		/^dgl\/dgl_sparse/d ; \
+		/^dgl\/graphbolt/d ; \
+		/^dgl$$/d ; \
 		' ${TMPPLIST}
 
 .include <bsd.port.mk>

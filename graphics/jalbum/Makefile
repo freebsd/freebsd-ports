@@ -1,5 +1,6 @@
 PORTNAME=	jalbum
 PORTVERSION=	10.10.7
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
 DISTNAME=	jAlbum${PORTVERSION}

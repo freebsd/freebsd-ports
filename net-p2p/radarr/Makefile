@@ -1,5 +1,5 @@
 PORTNAME=	radarr
-DISTVERSION=	5.26.2.10099
+DISTVERSION=	6.1.1.10360
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${DISTVERSION}/
 DISTNAME=	Radarr.master.${DISTVERSION}.freebsd-core-x64
@@ -39,18 +39,17 @@ WRKSRC=		${WRKDIR}/Radarr
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	${RM} -rf ${WRKSRC}/Radarr.Update
 
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}/bin/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/ "! -name Radarr -and ! -name ffprobe"
-	${INSTALL_PROGRAM} ${WRKSRC}/Radarr ${STAGEDIR}/${DATADIR}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/ffprobe ${STAGEDIR}/${DATADIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/Radarr ${WRKSRC}/ffprobe ${STAGEDIR}/${DATADIR}/bin
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
+	@${ECHO_CMD} "e_sqlite3.so libsqlite3.so" \
+		>${STAGEDIR}${PREFIX}/etc/libmap.d/Radarr.conf
 
 .include <bsd.port.mk>

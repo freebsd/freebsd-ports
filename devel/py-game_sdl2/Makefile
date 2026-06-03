@@ -1,6 +1,6 @@
 PORTNAME=	game_sdl2
 PORTVERSION=	7.4.11
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		jpeg localbase python:2.7+ sdl
-USE_PYTHON=	autoplist distutils cython
+USE_PYTHON=	autoplist cython0 distutils
 USE_SDL=	image2 mixer2 ttf2
 
 BINARY_ALIAS=	cython=cython-${PYTHON_VER}

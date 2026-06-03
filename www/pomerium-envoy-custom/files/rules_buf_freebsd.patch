@@ -1,0 +1,29 @@
+diff --git a/buf/internal/toolchain.bzl b/buf/internal/toolchain.bzl
+--- a/buf/internal/toolchain.bzl
++++ b/buf/internal/toolchain.bzl
+@@ -119,6 +119,25 @@ def _buf_download_releases_impl(ctx):
+     major_version = int(version_number[0])
+     minor_version = int(version_number[1])
+     os, cpu = _detect_host_platform(ctx)
++    if os == "freebsd":
++        if cpu == "amd64":
++            cpu = "x86_64"
++        for cmd in ["buf", "protoc-gen-buf-lint", "protoc-gen-buf-breaking"]:
++            bin_path = ctx.which(cmd)
++            if not bin_path:
++                fail("{} not found in PATH. Install devel/buf.".format(cmd))
++            ctx.symlink(bin_path, cmd)
++        ctx.file("WORKSPACE", "workspace(name = \"{name}\")".format(name = ctx.name))
++        ctx.file("toolchain.bzl", _TOOLCHAIN_FILE)
++        ctx.file(
++            "BUILD",
++            _BUILD_FILE.format(
++                os = os,
++                cpu = cpu,
++                rules_buf_repo_name = Label("//buf/repositories.bzl").workspace_name,
++            ),
++        )
++        return
+     if os not in ["linux", "darwin", "windows"] or cpu not in ["arm64", "amd64", "ppc64le", "s390x"]:
+         fail("Unsupported operating system or cpu architecture ")
+     if os == "linux" and cpu == "arm64":

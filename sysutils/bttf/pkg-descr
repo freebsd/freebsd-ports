@@ -1,0 +1,12 @@
+bttf is a command-line utility for working with dates and times. It exposes
+much of the functionality of the Jiff datetime library on the command line,
+providing a more intuitive way to format datetimes or do arithmetic than
+traditional tools like date(1).
+
+Features include datetime formatting with custom patterns, arithmetic with
+durations, time zone conversions, duration calculations, sequence generation
+for recurring dates, and a "tag" mode that finds and processes datetimes
+embedded in arbitrary data.
+
+bttf deliberately does not aim for POSIX date(1) compatibility, instead
+offering a fresh, modern approach.

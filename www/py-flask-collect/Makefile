@@ -1,6 +1,6 @@
 PORTNAME=	Flask-Collect
 PORTVERSION=	1.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,6 +8,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	meka@tilda.center
 COMMENT=	Tool to collect static files in one command
 WWW=		https://github.com/coleifer/flask-peewee/
+
+DEPRECATED=	Project is discontinued
+EXPIRATION_DATE=	2026-06-30
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

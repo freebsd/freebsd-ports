@@ -11,7 +11,7 @@ WWW=		https://puck.nether.net/sysmon/
 
 LICENSE=	GPLv2
 
-USES=		alias ssl
+USES=		ssl
 
 GNU_CONFIGURE=	yes
 

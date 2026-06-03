@@ -1,6 +1,6 @@
 PORTNAME=	luajava
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	http://luaforge.net/frs/download.php/2105/
 
@@ -9,6 +9,7 @@ COMMENT=	Lua scripting tool for Java
 WWW=		http://www.keplerproject.org/luajava/
 
 USES=		gmake dos2unix java lua:51
+JAVA_VERSION=	8
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 

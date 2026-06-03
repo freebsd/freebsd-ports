@@ -1,6 +1,6 @@
 PORTNAME=	pcgen
 PORTVERSION=	6.06.01
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	https://github.com/PCGen/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	pcgen-${PORTVERSION}-full

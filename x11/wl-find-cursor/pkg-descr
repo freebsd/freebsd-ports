@@ -1,0 +1,2 @@
+wl-find-cursor is a tool to highlight and print out global mouse position
+on Wayland, especially for compositors based on wlroots, such as Sway.

@@ -1,0 +1,28 @@
+--- pyproject.toml.orig	2026-04-19 17:03:43 UTC
++++ pyproject.toml
+@@ -15,7 +15,6 @@ requires-python = ">= 3.11"
+   how to create output files from input files.
+ """ }
+ requires-python = ">= 3.11"
+-license = "MIT"
+ authors = [{ name = "Johannes Köster", email = "johannes.koester@uni-due.de" }]
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+@@ -40,7 +39,7 @@ dependencies = [
+   "jinja2>=3.0,<4.0",
+   "jsonschema",
+   "nbformat",
+-  "packaging >=24.0,<26",
++  "packaging>=24.0",
+   "psutil",
+   "pulp>=2.3.1,<3.4",
+   "pyyaml",
+@@ -60,7 +59,7 @@ dependencies = [
+   "yte>=1.5.5,<2.0",
+   "dpath>=2.1.6,<3.0.0",
+   "conda-inject>=1.3.1,<2.0",
+-  "sqlmodel>=0.0.37,<0.0.38",
++  "sqlmodel>=0.0.37",
+ ]
+ 
+ [project.urls]

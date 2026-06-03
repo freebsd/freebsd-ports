@@ -19,7 +19,7 @@ LIB_DEPENDS=	libCSXCAD.so:cad/csxcad \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}csxcad>0:cad/py-csxcad@${PY_FLAVOR}
 
 USES=		pkgconfig python
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	autoplist cython0 distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thliebig

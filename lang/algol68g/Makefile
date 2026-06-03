@@ -1,11 +1,11 @@
 PORTNAME=	algol68g
-PORTVERSION=	3.5.12
+PORTVERSION=	3.12.2
 CATEGORIES=	lang
-MASTER_SITES=	https://jmvdveer.home.xs4all.nl/ LOCAL/danfe
+MASTER_SITES=	https://algol68genie.nl/ LOCAL/danfe
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Algol 68 Genie hybrid compiler-interpreter
-WWW=		https://www.xs4all.nl/~jmvdveer/algol.html
+WWW=		https://algol68genie.nl/en/algol-68-genie/
 
 LICENSE=	GPLv3+
 

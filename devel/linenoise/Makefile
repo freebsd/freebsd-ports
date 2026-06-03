@@ -1,7 +1,5 @@
 PORTNAME=	linenoise
-DISTVERSION=	1.0-34
-DISTVERSIONSUFFIX=	-g93b2db9
-PORTREVISION=	2
+DISTVERSION=	2.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,6 +39,6 @@ do-install:
 do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} && \
-		./linenoise_example
+		./linenoise-test
 
 .include <bsd.port.mk>

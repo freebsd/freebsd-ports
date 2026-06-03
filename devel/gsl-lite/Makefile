@@ -1,6 +1,6 @@
 PORTNAME=	gsl-lite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.43.0
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,12 +17,12 @@ CMAKE_TESTING_ON=	GSL_LITE_OPT_BUILD_TESTS
 
 PLIST_FILES=	include/gsl-lite/gsl-lite.hpp \
 		include/gsl/gsl-lite.hpp \
-		lib/cmake/gsl-lite/gsl-lite-config-version.cmake \
-		lib/cmake/gsl-lite/gsl-lite-config.cmake \
-		lib/cmake/gsl-lite/gsl-lite-targets.cmake
+		share/cmake/gsl-lite/gsl-liteConfig.cmake \
+		share/cmake/gsl-lite/gsl-liteConfigVersion.cmake \
+		share/cmake/gsl-lite/gsl-liteTargets.cmake
 
 NO_ARCH=	yes
 
-# tests as of 0.43.0: 100% tests passed, 0 tests failed out of 12
+# tests as of 1.1.0: 100% tests passed, 0 tests failed out of 15
 
 .include <bsd.port.mk>

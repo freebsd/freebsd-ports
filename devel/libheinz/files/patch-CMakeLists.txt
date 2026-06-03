@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2023-01-24 07:32:58 UTC
+--- CMakeLists.txt.orig	2026-05-20 10:59:57 UTC
 +++ CMakeLists.txt
-@@ -35,7 +35,9 @@ endif()
+@@ -36,7 +36,9 @@ add_subdirectory(heinz)
  include(CTest)
  
- add_subdirectory(inc)
+ add_subdirectory(heinz)
 +if (BUILD_TESTING)
  add_subdirectory(test)
 +endif()

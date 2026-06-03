@@ -1,6 +1,6 @@
---- ext/vulkan/meson.build.orig	2025-03-11 20:14:44 UTC
+--- ext/vulkan/meson.build.orig	2026-01-27 17:02:33 UTC
 +++ ext/vulkan/meson.build
-@@ -86,7 +86,7 @@ if vulkan_conf.get('GST_VULKAN_HAVE_VIDEO_EXTENSIONS')
+@@ -93,7 +93,7 @@ if vulkan_conf.get('GST_VULKAN_HAVE_VIDEO_EXTENSIONS')
  
  if vulkan_conf.get('GST_VULKAN_HAVE_VIDEO_EXTENSIONS') == 1
    vulkan_sources += video_sources

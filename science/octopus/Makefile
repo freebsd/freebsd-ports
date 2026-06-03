@@ -1,6 +1,5 @@
 PORTNAME=	octopus
-DISTVERSION=	15.1
-PORTREVISION=	2
+DISTVERSION=	16.3
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
@@ -10,8 +9,10 @@ WWW=		https://octopus-code.org/documentation/15/
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	fails to build: Cannot find an intrinsic module named 'ieee_arithmetic'
+
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -30,8 +31,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libxc.so:science/libxc \
 		libyaml.so:textproc/libyaml
 
-USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
-USE_CXXSTD=	c++14
+USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 pkgconfig python shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/fdep/fortran_dependencies.pl testsuite/performance/create_combinations.py

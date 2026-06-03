@@ -1,6 +1,5 @@
 PORTNAME=	iprange
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/firehol/iprange/releases/download/v${PORTVERSION}/
 
@@ -9,8 +8,11 @@ COMMENT=	Manage IP ranges
 WWW=		https://github.com/firehol/iprange
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:xz
+
+IGNORE_i386=	__uint128_t is not available on i386 and is required for mandatory IPv6 support
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

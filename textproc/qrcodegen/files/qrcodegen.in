@@ -1,5 +1,8 @@
 #!/bin/sh
 
-cd %%DATADIR%%
-exec %%LOCALBASE%%/bin/java -jar QRCodeGen.jar "$@"
-
+CLASSPATH="%%DATADIR%%/QRCodeGen.jar"
+for jar in %%JAXB_FILES%%; do
+	CLASSPATH="${CLASSPATH}:%%DATADIR%%/${jar}"
+done
+export CLASSPATH
+exec %%JAVA%% qrcodegen.Loader "$@"

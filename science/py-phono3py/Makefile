@@ -1,6 +1,6 @@
 PORTNAME=	phono3py
-DISTVERSION=	3.9.0
-PORTREVISION=	1
+DISTVERSION=	3.28.0
+PORTREVISION=	3
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ WWW=		https://phonopy.github.io/phono3py/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=3.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonopy>=2.32:science/py-phonopy@${PY_FLAVOR} \
@@ -36,6 +36,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
 
 # tests as of 3.9.0: 11 failed, 179 passed, 8 skipped, 6 warnings, 4 errors in 2175.15s (0:36:15), see https://github.com/phonopy/phono3py/issues/307
-# - tests fail to find mubmodules that are installed and import fine when run standalone
+# tests as of 3.25.0: 21 failed, 193 passed, 11 skipped, 30 warnings, 45 errors in 152.92s (0:02:32), see https://github.com/phonopy/phono3py/issues/307
+# - tests fail to find submodules that are installed and import fine when run standalone
 
 .include <bsd.port.mk>

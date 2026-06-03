@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2022-11-09 12:37:21 UTC
++++ CMakeLists.txt
+@@ -65,13 +65,10 @@ ENDIF ()
+     ENDIF ()
+ ENDIF ()
+ 
+-IF (CMAKE_REQUIRE_FAILE)
+-    SET (CMAKE_REQUIRE_FIND_PACKAGE_Eigen3 ON)
+-    SET (CMAKE_REQUIRE_FIND_PACKAGE_nlohmann_json ON)
+-    SET (CMAKE_REQUIRE_FIND_PACKAGE_pybind11 ON)
+-    SET (CMAKE_REQUIRE_FIND_PACKAGE_pybind11_json ON)
+-    SET (CMAKE_REQUIRE_FIND_PACKAGE_GTest ON)
+-ENDIF ()
++SET (CMAKE_REQUIRE_FIND_PACKAGE_Eigen3 ON)
++SET (CMAKE_REQUIRE_FIND_PACKAGE_nlohmann_json ON)
++SET (CMAKE_REQUIRE_FIND_PACKAGE_pybind11 ON)
++SET (CMAKE_REQUIRE_FIND_PACKAGE_pybind11_json ON)
+ 
+ # detect operating system and host processor
+ MESSAGE (STATUS "We are on a ${CMAKE_SYSTEM_NAME} system")

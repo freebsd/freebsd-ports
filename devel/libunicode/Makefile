@@ -1,6 +1,6 @@
 PORTNAME=	libunicode
 PORTVERSION=	0.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/libunicode
 DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
@@ -19,8 +19,6 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-
-CONFLICTS_INSTALL=	libunicode-contour
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

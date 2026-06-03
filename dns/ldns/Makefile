@@ -1,5 +1,5 @@
 PORTNAME=	ldns
-DISTVERSION=	1.8.4
+DISTVERSION=	1.9.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -12,10 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gmake libtool perl5 ssl
-USE_PERL5=	build
-USE_LDCONFIG=	yes
-
 CPE_VENDOR=	nlnetlabs
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dane-ta-usage \
 			--with-ssl=${OPENSSLBASE}
@@ -24,93 +24,95 @@ MAKE_JOBS_UNSAFE=	yes
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
 OPTIONS_DEFINE=		DOXYGEN DRILL EXAMPLES
 OPTIONS_DEFAULT=	DRILL
-
-DRILL_DESC=	With drill program
-
 .endif
-
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-HTMLDOCS=		doc/html/*
 
 OPTIONS_DEFINE+=	DANETAUSAGE GOST RRTYPEAMTRELAY RRTYPEAVC RRTYPENINFO \
 			RRTYPERKEY RRTYPETA
 
+OPTIONS_SUB=		yes
+
 DANETAUSAGE_DESC=	Enable ta usage, requires openssl >= 1.1.0
+DRILL_DESC=		With drill program
 GOST_DESC=		GOST signatures enabled, requires openssl >= 1.0.0
+RRTYPEAMTRELAY_DESC=	Enable draft RR type amtrelay.
+RRTYPEAVC_DESC=		Enable draft RR type avc.
 RRTYPENINFO_DESC=	Enable draft RR type ninfo.
 RRTYPERKEY_DESC=	Enable draft RR type rkey.
 RRTYPETA_DESC=		Enable draft RR type ta.
-RRTYPEAVC_DESC=		Enable draft RR type avc.
-RRTYPEAMTRELAY_DESC=	Enable draft RR type amtrelay.
 
-OPTIONS_SUB=	yes
-
-DANETAUSAGE_CONFIGURE_ENABLE=		dane-ta-usage
 DANETAUSAGE_IMPLIES=			RRTYPETA
+DANETAUSAGE_CONFIGURE_ENABLE=		dane-ta-usage
+DOXYGEN_BUILD_DEPENDS=			doxygen:devel/doxygen
+DRILL_CONFIGURE_WITH=			drill
+DRILL_INSTALL_TARGET=			install-drill
+EXAMPLES_CONFIGURE_WITH=		examples
+EXAMPLES_INSTALL_TARGET=		install-examples
 GOST_CONFIGURE_ENABLE=			gost
+RRTYPEAMTRELAY_CONFIGURE_ENABLE=	rrtype-amtrelay
+RRTYPEAVC_CONFIGURE_ENABLE=		rrtype-avc
 RRTYPENINFO_CONFIGURE_ENABLE=		rrtype-ninfo
 RRTYPERKEY_CONFIGURE_ENABLE=		rrtype-rkey
 RRTYPETA_CONFIGURE_ENABLE=		rrtype-ta
-RRTYPEAVC_CONFIGURE_ENABLE=		rrtype-avc
-RRTYPEAMTRELAY_CONFIGURE_ENABLE=	rrtype-amtrelay
-EXAMPLES_CONFIGURE_WITH=		examples
-DRILL_CONFIGURE_WITH=			drill
-DRILL_INSTALL_TARGET=			install-drill
-EXAMPLES_INSTALL_TARGET=		install-examples
 
 .if defined(BUILD_PYLDNS)
+
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+BUILD_DEPENDS+=	swig:devel/swig
+LIB_DEPENDS+=	libldns.so:dns/ldns
 USES+=		python
 USE_PYTHON=	flavors
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-ALL_TARGET=	pyldns
-INSTALL_TARGET=	install-pyldns
 
 CONFIGURE_ARGS+=	--with-pyldns
-LIB_DEPENDS+=		libldns.so:dns/ldns
-BUILD_DEPENDS+=		swig:devel/swig
-CFLAGS+=		-I${OPENSSLINC}
+
+ALL_TARGET=	pyldns
+INSTALL_TARGET=	install-pyldns
+CFLAGS+=	-I${OPENSSLINC}
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' \
 		${WRKSRC}/Makefile.in
+post-install:
+# file /usr/local/lib/python3.11/site-packages/_ldns.so.3.6.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.3.6.0
+
 .elif defined(BUILD_P5PERL)
+
+PKGNAMEPREFIX=	p5-DNS-
+_BR_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
+		p5-Test-Exception>=0:devel/p5-Test-Exception
+BUILD_DEPENDS=	${_BR_DEPENDS}
+LIB_DEPENDS+=	libldns.so:dns/ldns
+RUN_DEPENDS=	${_BR_DEPENDS}
 USES+=		perl5
 USE_PERL5=	build run
-PKGNAMEPREFIX=	p5-DNS-
+
+CONFIGURE_ARGS+=	--with-p5-dns-ldns
 
 ALL_TARGET=	p5-dns-ldns
 INSTALL_TARGET=	install-p5-dns-ldns
 
-CONFIGURE_ARGS+=	--with-p5-dns-ldns
-RUN_DEPENDS=		p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
-			p5-Test-Exception>=0:devel/p5-Test-Exception
-BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS+=		libldns.so:dns/ldns
-
 post-patch:
-	${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DNS/LDNS/LDNS.so
-.else
+
+.else # BUILD_PYLDNS || BUILD_P5PERL
+
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
 
-.endif # BUILD_PYLDNS || BUILD_P5PERL
+EXAMPLES_LIST=	ldns-chaos ldns-compare-zones ldns-dane ldns-dpa ldns-gen-zone ldns-key2ds \
+		ldns-keyfetcher ldns-keygen ldns-mx ldns-notify ldns-nsec3-hash \
+		ldns-read-zone ldns-resolver ldns-revoke ldns-rrsig ldns-signzone \
+		ldns-test-edns ldns-testns ldns-update ldns-verify-zone ldns-version \
+		ldns-walk ldns-zcat ldns-zsplit ldnsd
 
-.include <bsd.port.pre.mk>
-
-.if ! ${PORT_OPTIONS:MGOST}
-NO_GOST=	--disable-gost
-.endif
-
-.if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
-
-post-build:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-build-DOXYGEN-on:
 	@(cd ${WRKSRC}; ${MAKE_CMD} doxygen)
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/packaging/libldns.pc \
@@ -120,28 +122,16 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/ldns_*.3 \
 		${STAGEDIR}${PREFIX}/share/man/man3
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.3
-.if ${PORT_OPTIONS:MDRILL}
+
+post-install-DOXYGEN-on:
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+
+post-install-DRILL-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/drill
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	for p in ldns-chaos ldns-compare-zones ldns-dane ldns-dpa ldns-gen-zone ldns-key2ds \
-		ldns-keyfetcher ldns-keygen ldns-mx ldns-notify ldns-nsec3-hash \
-		ldns-read-zone ldns-resolver ldns-revoke ldns-rrsig ldns-signzone \
-		ldns-test-edns ldns-testns ldns-update ldns-verify-zone ldns-version \
-		ldns-walk ldns-zcat ldns-zsplit ldnsd; do \
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$$p; done
-.endif
-.if ${PORT_OPTIONS:MDOXYGEN}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	${INSTALL_DATA} ${HTMLDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/html
-.endif
+
+post-install-EXAMPLES-on:
+	${STRIP_CMD} ${EXAMPLES_LIST:S|^|${STAGEDIR}${PREFIX}/bin/|}
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
-.if (defined(BUILD_PYLDNS))
-post-install:
-# file /usr/local/lib/python3.11/site-packages/_ldns.so.3.6.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.3.6.0
-.endif # BUILD_PYLDNS
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

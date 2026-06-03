@@ -2,7 +2,12 @@ Hyprland's simple, yet multi-threaded and GPU-accelerated screen
 locking utility.
 
 Features:
- - uses the secure ext-session-lock protocol
- - full support for fractional-scale
- - fully GPU accelerated
- - multi-threaded resource acquisition for no hitches
+- Uses the ext-session-lock protocol
+- Support for fractional-scale
+- Fully GPU accelerated
+- Multi-threaded resource acquisition
+- Blurred screenshot as the background
+- Native fingerprint support (using libfprint's dbus interface)
+- Some of Hyprland's eyecandy: gradient borders, blur, animations,
+  shadows, etc.
+and more...

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/backend/cups_ipp_helper.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/printing/backend/cups_ipp_helper.cc.orig	2025-07-02 06:08:04 UTC
 +++ src/3rdparty/chromium/printing/backend/cups_ipp_helper.cc
 @@ -202,7 +202,7 @@ void ExtractResolutions(const CupsOptionProvider& prin
    // Provide a default DPI if no valid DPI is found.

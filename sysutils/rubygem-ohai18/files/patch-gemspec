@@ -1,0 +1,11 @@
+--- ohai.gemspec.orig	2025-09-02 23:40:43 UTC
++++ ohai.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<chef-config>.freeze, [">= 14.12".freeze, "< 19".freeze])
+   s.add_runtime_dependency(%q<chef-utils>.freeze, [">= 16.0".freeze, "< 19".freeze])
+-  s.add_runtime_dependency(%q<ffi>.freeze, ["~> 1.9".freeze, "<= 1.17.0".freeze])
++  s.add_runtime_dependency(%q<ffi>.freeze, ["~> 1.9".freeze])
+   s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 2.2".freeze])
+   s.add_runtime_dependency(%q<ipaddress>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<mixlib-cli>.freeze, [">= 1.7.0".freeze])

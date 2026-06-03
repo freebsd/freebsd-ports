@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq-scheduler
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,6 @@
 PORTNAME=	jgraph
 PORTVERSION=	5.13.0.4
+PORTREVISION=	2
 CATEGORIES=	java graphics
 MASTER_SITES=	http://www.jgraph.com/downloads/jgraph/archive/ \
 		http://www.bayofrum.net/dist/jgraph/

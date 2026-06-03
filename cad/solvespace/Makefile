@@ -1,11 +1,7 @@
 PORTNAME=	solvespace
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	6b9e7b2e.patch:-p1
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Parametric 2d/3d CAD
@@ -28,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft:mimalloc
 GH_PROJECT=	libdxfrw:libdxfrw mimalloc:mimalloc
-GH_TAGNAME=	0b7b7b7:libdxfrw 38a0322:mimalloc
+GH_TAGNAME=	8359399:libdxfrw f81bf1b:mimalloc
 GH_SUBDIR=	extlib/libdxfrw:libdxfrw extlib/mimalloc:mimalloc
 
 post-patch:

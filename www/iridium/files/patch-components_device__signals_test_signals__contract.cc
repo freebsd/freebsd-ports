@@ -1,6 +1,6 @@
---- components/device_signals/test/signals_contract.cc.orig	2025-05-07 06:48:23 UTC
+--- components/device_signals/test/signals_contract.cc.orig	2026-04-15 12:07:04 UTC
 +++ components/device_signals/test/signals_contract.cc
-@@ -221,7 +221,7 @@ GetSignalsContract(bool is_av_signal_enabled) {
+@@ -216,7 +216,7 @@ GetSignalsContract() {
        base::BindRepeating(VerifyUnset, names::kCrowdStrike);
  #endif
  

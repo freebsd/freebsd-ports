@@ -1,0 +1,5 @@
+plaster is a loader interface around multiple config file formats.  It
+exists to define a common API for applications to use when they wish to
+load configuration.  The library itself does not aim to handle anything
+except a basic API that applications may use to find and load
+configuration settings.

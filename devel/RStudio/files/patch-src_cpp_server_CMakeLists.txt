@@ -1,6 +1,8 @@
---- src/cpp/server/CMakeLists.txt.orig	2021-05-24 22:22:25 UTC
+- Link libinotify required on FreeBSD for file system notifications
+
+--- src/cpp/server/CMakeLists.txt.orig	2025-01-31 18:17:58 UTC
 +++ src/cpp/server/CMakeLists.txt
-@@ -137,6 +137,9 @@ include_directories(
+@@ -146,6 +146,9 @@ add_stripped_executable(rserver ServerMain.cpp ${SERVE
  # define executable
  add_stripped_executable(rserver ServerMain.cpp ${SERVER_SOURCE_FILES} ${SERVER_HEADER_FILES})
  

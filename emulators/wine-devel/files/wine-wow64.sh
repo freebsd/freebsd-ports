@@ -9,7 +9,12 @@ I386_ROOT="${WINE_i386_ROOT:-$HOME/.i386-wine-pkg}"
 if [ ! -f "$I386_ROOT/$PREFIX/bin/wine" ]
 then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
-  printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine-devel mesa-dri"
+  printf "Try installing 32-bit Wine with\n\t%s\n\n" "$PREFIX/share/wine/pkg32.sh install wine-devel mesa-dri"
+
+  printf "On FreeBSD 15, use wine64.bin if 32-bit support is not needed.\n"
+  printf "If 32-bit is needed, either use the repository from FreeBSD 14 with this command:\n\t%s\n" "$PREFIX/share/wine/pkg32.sh --old install -r FreeBSD-ports wine-devel mesa-dri"
+  printf "or use Poudriere to build your own packages.\n"
+
   ABI=$(pkg config ABI | sed s/amd64/i386/)
   FREEBSD_VERSION_MAJOR=`uname -r | sed "s/\..*//"`
   cat <<- HERE
@@ -20,10 +25,11 @@ then
 	  FreeBSD:$FREEBSD_VERSION_MAJOR:i386
 	to the relevant output directories. See pkg.conf(5) for more info.
 HERE
+
   exit 1
 fi
 
-# Export early so that external libs could be found
+# Export early so that external 32-bit libs are found.
 export LD_32_LIBRARY_PATH="${LD_32_LIBRARY_PATH:+$LD_32_LIBRARY_PATH:}$I386_ROOT/$LOCALBASE/lib"
 
 WINE32_VERSION=$(env -u WINELOADERNOEXEC "$I386_ROOT/$PREFIX/bin/wine" --version)
@@ -32,6 +38,7 @@ if [ "$WINE32_VERSION" != "$WINE64_VERSION" ]
 then
   printf "wine [%s] and wine64 [%s] versions do not match!\n\n" "$WINE32_VERSION" "$WINE64_VERSION"
   printf "Try updating 32-bit wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh upgrade"
+  printf "If you are on FreeBSD 15, you can use the old repository\n\t%s\n" "$PREFIX/share/wine/pkg32.sh --old upgrade -r FreeBSD-ports"
   exit 1
 fi
 

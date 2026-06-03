@@ -1,0 +1,4 @@
+The SuperHTML CLI Tool offers validation and autoformatting features for
+SuperHTML, SuperMD, and Scripty (used by www/zine-ssg).
+
+Additionally it can be used as an LSP for HTML as well.

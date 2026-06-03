@@ -1,17 +1,16 @@
 PORTNAME=	xstatic-angular-schema-form
-PORTVERSION=	0.8.13.0
-PORTREVISION=	4
+PORTVERSION=	0.8.13.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Angular-Schema-Form-${PORTVERSION}
+DISTNAME=	xstatic_angular_schema_form-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Angular-Schema-Form (XStatic packaging standard)
-WWW=		http://schemaform.io/ \
-		https://github.com/openstack-archive/deb-python-xstatic-angular-schema-form
+COMMENT=	Angular-Schema-Form ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-angular-schema-form
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}

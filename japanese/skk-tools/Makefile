@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-g1e8c457
 PORTEPOCH=	1
 CATEGORIES=	japanese
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Jisyo-tools for the SKK Japanese-input software
 WWW=		https://github.com/skk-dev/skktools
 

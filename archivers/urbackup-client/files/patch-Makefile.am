@@ -2,9 +2,9 @@ Makefile.am uses ${INSTALL_PROGAM} to install scripts and configuation files,
 leading to an error from strip(1). This patch instead uses ${INSTALL} (for scripts)
 and ${INSTALL_DATA} (for configuration files).
 
---- Makefile.am.orig	2022-08-29 17:51:29 UTC
+--- Makefile.am.orig	2025-09-03 18:53:44 UTC
 +++ Makefile.am
-@@ -198,24 +198,24 @@ endif
+@@ -209,24 +209,24 @@ endif
  	$(MKDIR_P) "$(DESTDIR)$(datadir)/urbackup/scripts"
  	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)/urbackup"
  	

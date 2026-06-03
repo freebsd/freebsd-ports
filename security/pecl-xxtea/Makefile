@@ -2,7 +2,7 @@ PORTNAME=	xxtea
 DISTVERSION=	1.0.11
 CATEGORIES=	security
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XXTEA encryption algorithm extension for PHP
 WWW=		https://github.com/xxtea/xxtea-pecl
 

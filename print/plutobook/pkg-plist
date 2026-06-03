@@ -1,0 +1,8 @@
+%%TOOLS%%bin/html2pdf
+%%TOOLS%%bin/html2png
+include/plutobook/plutobook.h
+include/plutobook/plutobook.hpp
+lib/libplutobook.so
+lib/libplutobook.so.0
+lib/libplutobook.so.%%SOVERSION%%
+libdata/pkgconfig/plutobook.pc

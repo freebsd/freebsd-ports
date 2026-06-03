@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: kodi
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Configuration for kodi:
+#
+# kodi_enable (bool):	Enable kodi. (default=NO)
+# kodi_user (str):	User to run kodi as. (default=freebsd)
+#
+# It is generally required to create an account for kodi.
+
+. /etc/rc.subr
+
+name=kodi
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${kodi_enable:="NO"}
+: ${kodi_user:="freebsd"}
+
+pidfile="/var/run/$name.pid"
+procname="%%LOCALBASE%%/bin/kodi-standalone"
+command="/usr/sbin/daemon"
+start_cmd="kodi_start"
+
+kodi_start()
+{
+	startmsg "Starting $name."
+	/usr/sbin/daemon -S -f -p ${pidfile} -u ${kodi_user} ${procname}
+}
+
+run_rc_command "$1"

@@ -14,5 +14,6 @@ share/man/man1/gcli-releases.1.gz
 share/man/man1/gcli-repos.1.gz
 share/man/man1/gcli-snippets.1.gz
 share/man/man1/gcli-status.1.gz
+share/man/man1/gcli-tutorial.1.gz
 share/man/man1/gcli.1.gz
 share/man/man5/gcli.5.gz

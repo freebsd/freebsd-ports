@@ -5,7 +5,7 @@ CATEGORIES=	net-mgmt textproc
 MASTER_SITES=	http://www.pc-tools.net/files/unix/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kc8bws@kc8bws.com
 COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
 WWW=		http://www.pc-tools.net/unix/grepcidr/
 

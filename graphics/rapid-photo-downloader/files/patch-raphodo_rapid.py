@@ -1,6 +1,6 @@
---- raphodo/rapid.py.orig	2020-05-03 17:31:45 UTC
+--- raphodo/rapid.py.orig	2020-12-24 23:41:26 UTC
 +++ raphodo/rapid.py
-@@ -97,7 +97,7 @@ from PyQt5.QtNetwork import QLocalSocket, QLocalServer
+@@ -101,7 +101,7 @@ from raphodo.storage import (
  import sip
  
  from raphodo.storage import (
@@ -9,7 +9,7 @@
      has_one_or_more_folders, mountPaths, get_desktop_environment, get_desktop,
      gvfs_controls_mounts, get_default_file_manager, validate_download_folder,
      validate_source_folder, get_fdo_cache_thumb_base_directory, WatchDownloadDirs, get_media_dir,
-@@ -945,18 +945,6 @@ class RapidWindow(QMainWindow):
+@@ -949,18 +949,6 @@ class RapidWindow(QMainWindow):
              logging.debug("Starting camera hotplug monitor...")
              QTimer.singleShot(0, self.cameraHotplugThread.start)
  
@@ -28,7 +28,7 @@
          if self.gvfsControlsMounts:
              # Gio.VolumeMonitor must be in the main thread, according to
              # Gnome documentation
-@@ -4748,8 +4736,6 @@ Do you want to proceed with the download?
+@@ -4752,8 +4740,6 @@ Do you want to proceed with the download?
              self.sendTerminateToThread(self.backup_controller)
  
          if not self.gvfsControlsMounts:

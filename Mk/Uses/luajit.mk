@@ -20,7 +20,7 @@ LUAJIT_VER=	${LUAJIT_DEFAULT}
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync
-VALID_LUAJIT_VER=	luajit luajit-devel luajit-openresty
+VALID_LUAJIT_VER=	luajit luajit-openresty
 
 .if empty(VALID_LUAJIT_VER:M${LUAJIT_DEFAULT})
 IGNORE=	Invalid luajit default version ${LUAJIT_DEFAULT}: valid versions are ${VALID_LUAJIT_VER}

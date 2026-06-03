@@ -1,6 +1,6 @@
---- services/network/network_context.h.orig	2025-07-02 06:08:04 UTC
+--- services/network/network_context.h.orig	2026-05-07 17:02:56 UTC
 +++ services/network/network_context.h
-@@ -730,7 +730,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkContext
+@@ -766,7 +766,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkContext
     public:
      explicit NetworkContextHttpAuthPreferences(NetworkService* network_service);
      ~NetworkContextHttpAuthPreferences() override;

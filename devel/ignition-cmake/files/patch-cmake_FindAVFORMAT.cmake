@@ -1,8 +1,9 @@
---- cmake/FindAVFORMAT.cmake.orig	2023-04-24 07:30:02 UTC
+-- Help cmake find avformat from multimedia/ffmpeg4, which installs to %%LOCALBASE%%/ffmpeg4
+--- cmake/FindAVFORMAT.cmake.orig	2024-01-01 00:00:00 UTC
 +++ cmake/FindAVFORMAT.cmake
 @@ -16,4 +16,5 @@
  ########################################
  # Find AV format
- include(IgnPkgConfig)
+ include(GzPkgConfig)
 +set(CMAKE_PREFIX_PATH "%%LOCALBASE%%/ffmpeg4;%%LOCALBASE%%/ffmpeg4/libexec")
- ign_pkg_check_modules(AVFORMAT libavformat)
+ gz_pkg_check_modules_quiet(AVFORMAT libavformat)

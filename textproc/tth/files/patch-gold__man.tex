@@ -1,0 +1,38 @@
+--- gold_man.tex.orig	2014-06-22 20:02:23 UTC
++++ gold_man.tex
+@@ -225,7 +225,7 @@ the extra command:
+ the extra command:
+ 
+ \begin{verbatim}
+-\input /usr/local/tth/tthprep.sty
++\input %%DATADIR%%/styles/tthprep.sty
+ \end{verbatim}
+ 
+ \noindent where the path should be to wherever you unpacked or are
+@@ -308,7 +308,7 @@ line, for example
+ line, for example
+ 
+ \begin{verbatim}
+-%%tth: \input /usr/local/tth/swedish.bab
++%%tth: \input %%DATADIR%%/babel/swedish.bab
+ \end{verbatim}
+ 
+ \noindent This redefines the titles of chapters, table of contents, index, and
+@@ -321,7 +321,7 @@ supported by the simplified TtH style file input via:
+ supported by the simplified TtH style file input via:
+ 
+ \begin{verbatim}
+-%%tth:\input /usr/local/tth/amslatex.sty
++%%tth:\input %%DATADIR%%/styles/amslatex.sty
+ \end{verbatim}
+ 
+ \noindent The layout subtleties of these environments are inappropriate
+@@ -352,7 +352,7 @@ you can add the following line in the preamble.
+ the \verb!\usepackage{natbib}! is not explicitly in your LaTeX file,
+ you can add the following line in the preamble.
+ \begin{verbatim}
+-%%tth: \input /usr/local/tth/tthntbib.sty
++%%tth: \input %%DATADIR%%/styles/tthntbib.sty
+ \end{verbatim}
+ Your file might already contain, or you might want also to add lines like:
+ \begin{verbatim}

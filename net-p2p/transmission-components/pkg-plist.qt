@@ -2,6 +2,8 @@ bin/transmission-qt
 share/man/man1/transmission-qt.1.gz
 share/applications/transmission-qt.desktop
 share/icons/hicolor/scalable/apps/transmission-qt.svg
+share/icons/hicolor/scalable/apps/transmission-qt-devel.svg
+share/icons/hicolor/symbolic/apps/transmission-qt-symbolic.svg
 %%NLS%%%%DATADIR%%/translations/transmission_af.qm
 %%NLS%%%%DATADIR%%/translations/transmission_ca.qm
 %%NLS%%%%DATADIR%%/translations/transmission_da.qm
@@ -12,9 +14,11 @@ share/icons/hicolor/scalable/apps/transmission-qt.svg
 %%NLS%%%%DATADIR%%/translations/transmission_eu.qm
 %%NLS%%%%DATADIR%%/translations/transmission_fi.qm
 %%NLS%%%%DATADIR%%/translations/transmission_fr.qm
+%%NLS%%%%DATADIR%%/translations/transmission_he.qm
 %%NLS%%%%DATADIR%%/translations/transmission_hu.qm
 %%NLS%%%%DATADIR%%/translations/transmission_id.qm
-%%NLS%%%%DATADIR%%/translations/transmission_it_IT.qm
+%%NLS%%%%DATADIR%%/translations/transmission_is.qm
+%%NLS%%%%DATADIR%%/translations/transmission_it.qm
 %%NLS%%%%DATADIR%%/translations/transmission_ja.qm
 %%NLS%%%%DATADIR%%/translations/transmission_ka.qm
 %%NLS%%%%DATADIR%%/translations/transmission_kk.qm
@@ -32,3 +36,4 @@ share/icons/hicolor/scalable/apps/transmission-qt.svg
 %%NLS%%%%DATADIR%%/translations/transmission_tr.qm
 %%NLS%%%%DATADIR%%/translations/transmission_uk.qm
 %%NLS%%%%DATADIR%%/translations/transmission_zh_CN.qm
+%%NLS%%%%DATADIR%%/translations/transmission_zh_TW.qm

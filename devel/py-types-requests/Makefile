@@ -1,20 +1,24 @@
 PORTNAME=	types-requests
-PORTVERSION=	2.31.0.6
-PORTREVISION=	1
+PORTVERSION=	2.33.0.20260518
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	types_requests-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for requests
-WWW=		https://pypi.org/project/types-requests/
+WWW=		https://github.com/python/typeshed/tree/main/stubs/requests
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}types-urllib3>=0:devel/py-types-urllib3@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=2,1:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

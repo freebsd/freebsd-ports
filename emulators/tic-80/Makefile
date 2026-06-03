@@ -1,7 +1,7 @@
 PORTNAME=	TIC-80
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2837
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -38,7 +38,7 @@ GH_TUPLE=	nesbox:blip-buf:330226d9b55ecbeea644e17b5e0f096a165ca07e:blip_buf/vend
 		wasm3:wasm3:a3abb3f2d320994be59dfbe2cdafa8d0b6a8253e:wasm3/vendor/wasm3 \
 		blueloveTH:pocketpy:7312afdad24bb308037088d34b32ed0078fed7d2:pocketpy/vendor/pocketpy \
 		erkkah:naett:v0.3.1:naett/vendor/naett \
-		notnullnotvoid:msf_gif:v2.2:msfgif/vendor/msf_gif
+		notnullnotvoid:msf_gif:v2.4:msfgif/vendor/msf_gif
 USE_GL=		gl glu glut
 USE_SDL=	sdl2
 

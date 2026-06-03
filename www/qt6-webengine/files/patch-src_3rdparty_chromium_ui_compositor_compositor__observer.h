@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/compositor/compositor_observer.h.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/ui/compositor/compositor_observer.h.orig	2025-02-19 07:43:18 UTC
 +++ src/3rdparty/chromium/ui/compositor/compositor_observer.h
-@@ -52,7 +52,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
+@@ -56,7 +56,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
    // Called when a child of the compositor is resizing.
    virtual void OnCompositingChildResizing(Compositor* compositor) {}
  

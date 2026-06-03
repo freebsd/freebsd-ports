@@ -13,9 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../../COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: relocation R_386_PC32 cannot be used against symbol __mp_init
-.endif
 
 LIB_DEPENDS=	libelf.so.0:devel/libelf
 

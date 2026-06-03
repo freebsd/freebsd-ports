@@ -1,0 +1,4 @@
+cmeel is a Python build backend for creating wheels from CMake projects. It
+provides a standard Python build interface (PEP 517/518) for C++ libraries
+that use CMake as their build system, installing them under a common prefix
+(cmeel.prefix) within the Python package directory.

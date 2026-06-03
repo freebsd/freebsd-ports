@@ -1,6 +1,6 @@
 PORTNAME=	tflint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.58.0
+DISTVERSION=	0.62.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/terraform-linters/tflint
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/terraform-linters/tflint
 

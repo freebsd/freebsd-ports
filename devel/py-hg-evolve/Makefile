@@ -1,5 +1,5 @@
 PORTNAME=	hg-evolve
-DISTVERSION=	11.1.8
+DISTVERSION=	11.1.10
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,13 +7,13 @@ DISTNAME=	hg_evolve-${DISTVERSION}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Changeset Evolution with Mercurial
-WWW=		https://www.mercurial-scm.org/doc/evolution/
+WWW=		https://wiki.mercurial-scm.org/EvolveExtension
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	hg:devel/mercurial \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		hg:devel/mercurial
 
 USES=		python
 USE_PYTHON=	autoplist distutils

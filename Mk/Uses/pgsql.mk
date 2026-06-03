@@ -6,10 +6,10 @@
 # version 	Maintainer can set versions required. You can set this to
 #		[min]-[max] or min+ or -max or as an explicit version
 #		(eg. 14-16 for [min]-[max], 14+ or 16-
-#		for min+ and max-, 13 for an explicit version). Example:
+#		for min+ and max-, 17 for an explicit version). Example:
 #
-#		    USES=pgsql:13		# Only use PostgreSQL 13
-#		    USES=pgsql:13+		# Use PostgreSQL 13 or newer
+#		    USES=pgsql:17		# Only use PostgreSQL 17
+#		    USES=pgsql:17+		# Use PostgreSQL 17 or newer
 #		    USES=pgsql:14-16	# Use PostgreSQL between 14 & 16 inclusive
 #		    USES=pgsql:14-		# Use any PostgreSQL up to 14
 #		    USES=pgsql		# Use the default PostgreSQL
@@ -39,7 +39,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-VALID_PGSQL_VER=	13 14 15 16 17 18
+VALID_PGSQL_VER=	14 15 16 17 18
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6
@@ -63,7 +63,7 @@ PGSQL_DEFAULT?=	${$w_PGSQL_VER:C,^.,&.,}
 .  endfor
 
 .  ifdef DEFAULT_PGSQL_VER && WITH_PGSQL_VER
-IGNORE=		will not allow setting both DEFAULT_PGSQL_VER and WITH_PGSQL_VER.  Use DEFAULT_VERSIONS=pgsql=13 instead
+IGNORE=		will not allow setting both DEFAULT_PGSQL_VER and WITH_PGSQL_VER.  Use DEFAULT_VERSIONS=pgsql=18 instead
 .  endif
 
 # Setting/finding PostgreSQL version we want.

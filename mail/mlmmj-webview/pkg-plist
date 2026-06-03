@@ -1,0 +1,4 @@
+bin/mlmmj-genindex
+bin/mlmmj-webview
+share/man/man1/mlmmj-genindex.1.gz
+share/man/man1/mlmmj-webview.1.gz

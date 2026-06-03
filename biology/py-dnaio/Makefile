@@ -1,5 +1,5 @@
 PORTNAME=	dnaio
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython3 pep517
+USE_PYTHON=	autoplist cython pep517
 
 .include <bsd.port.mk>

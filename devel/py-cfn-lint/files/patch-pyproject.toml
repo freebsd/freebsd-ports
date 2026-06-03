@@ -1,10 +1,19 @@
---- pyproject.toml.orig	2024-12-12 18:51:10 UTC
+--- pyproject.toml.orig	2026-04-29 17:17:46 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
  requires = [
--  "setuptools >= 65.5.1",
+-  "setuptools >= 80.10.2",
 +  "setuptools",
  ]
  build-backend = "setuptools.build_meta"
  
+@@ -20,7 +20,7 @@ requires-python = ">=3.10,<3.15"
+ name = "cfn-lint"
+ description = "Checks CloudFormation templates for practices and behaviour that could potentially be improved"
+ requires-python = ">=3.10,<3.15"
+-license = "MIT-0"
++license = {text = "MIT-0"}
+ keywords = ["aws", "cloudformation", "lint"]
+ authors = [
+   {email = "kddejong@amazon.com"},

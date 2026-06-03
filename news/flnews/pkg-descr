@@ -1,0 +1,11 @@
+flnews is a fast and lightweight Usenet newsreader with a GUI based on the
+FLTK toolkit, intended for POSIX-conformant operating systems.
+
+Features:
+- Minimal external dependencies
+- Standards-compliant NNTP communication and MIME handling
+- Transport Layer Security (TLS) with optional CRL checking
+- Cancel-Lock / Cancel-Key authentication for Cancel and Supersede
+- NNTP COMPRESS extension (DEFLATE) when zlib is available
+- Shared group state in '~/.newsrc' for interoperability
+- Decoding support for all MIME 1.0 transfer encodings and many character sets

@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# PROVIDE: mysql
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable mysql:
+# mysql_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable MySQL.
+# mysql_dbdir (str):	Default to "%%MY_DBDIR%%"
+#			Base database directory.
+# mysql_confdir (str):	Default to "%%ETCDIR%%"
+#			Base configuration directory.
+# mysql_optfile (str):	Server-specific option file.
+#			Set it in the rc.conf or default behaviour of
+#			`mysqld_safe` itself, will be picking
+#			${mysql_confdir}/my.cnf if it exists.
+# mysql_pidfile (str):	Custom PID file path and name.
+#			Default to "${mysql_dbdir}/${hostname}.pid".
+# mysql_args (str):	Custom additional arguments to be passed
+#			to mysqld_safe (default empty).
+#
+
+. /etc/rc.subr
+
+name="mysql"
+rcvar=mysql_enable
+
+load_rc_config $name
+
+: ${mysql_enable="NO"}
+: ${mysql_dbdir="%%MY_DBDIR%%"}
+: ${mysql_confdir="%%ETCDIR%%"}
+if [ -f "${mysql_confdir}/my.cnf" ]; then
+: ${mysql_optfile="${mysql_confdir}/my.cnf"}
+elif [ -f "${mysql_dbdir}/my.cnf" ]; then
+: ${mysql_optfile="${mysql_dbdir}/my.cnf"}
+fi
+if [ ! -z "${mysql_optfile}" ]; then
+mysql_extra="--defaults-extra-file=${mysql_optfile}"
+fi
+
+mysql_user="mysql"
+: ${hostname:=`/bin/hostname`}
+pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
+command="/usr/sbin/daemon"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe ${mysql_extra} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --pid-file=${pidfile} --user=${mysql_user} ${mysql_args} %%FEDER%% %%PERFSCHEMRC%%"
+procname="%%PREFIX%%/libexec/mysqld"
+start_precmd="${name}_prestart"
+start_postcmd="${name}_poststart"
+mysqld_init="${procname}"
+mysqld_init_args="${mysql_extra} --initialize-insecure --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --user=${mysql_user}"
+
+mysql_create_auth_tables()
+{
+	eval $mysqld_init $mysqld_init_args >/dev/null 2>/dev/null
+}
+
+mysql_prestart()
+{
+	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
+		mysql_create_auth_tables || return 1
+	fi
+	return 0
+}
+
+mysql_poststart()
+{
+	local timeout=15
+	while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
+		timeout=$(( timeout - 1 ))
+		sleep 1
+	done
+	return 0
+}
+
+run_rc_command "$1"

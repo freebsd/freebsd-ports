@@ -1,0 +1,10 @@
+redshift_connector is the Amazon Redshift connector for Python. Easy integration
+with pandas and numpy, as well as support for numerous Amazon Redshift specific
+features help you get the most out of your data.
+
+Supported Amazon Redshift features include:
+- IAM authentication
+- Identity provider (IdP) authentication
+- Redshift specific data types
+
+This pure Python connector implements Python Database API Specification 2.0.

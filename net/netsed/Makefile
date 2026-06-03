@@ -1,10 +1,14 @@
 PORTNAME=	netsed
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net security
 MASTER_SITES=	http://silicone.homelinux.org/release/netsed/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Alters the contents of network packets in real time
+WWW=		http://silicone.homelinux.org/projects/netsed/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 MAKE_ARGS=	CFLAGS="${CFLAGS}"

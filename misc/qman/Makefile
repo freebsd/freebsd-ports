@@ -1,5 +1,6 @@
 PORTNAME=	qman
-PORTVERSION=	1.4.2.20250630
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.1
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cog:devel/py-cogapp
 
-USES=		groff:run meson pkgconfig
+USES=		groff:run meson ncurses pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plp13
-GH_TAGNAME=	16b4e808ab619d7bfb7d94017ca9505b69a387fb
 
 MESON_ARGS=	-Dconfigdir=${PREFIX}/etc/xdg/${PORTNAME} \
 		-Ddocs=disabled \
@@ -36,15 +36,6 @@ MANPAGES_MESON_ENABLED=	man-pages
 
 PORTDOCS=	BUILDING.md CONTRIBUTING.md DEBUGGING.md OS_SPECIFIC.md \
 		README.md TESTING.md TROUBLESHOOTING.md
-
-.include <bsd.port.options.mk>
-
-# FreeBSD 13 is missing /usr/libdata/pkgconfig/ncursesw.pc
-.if ${OPSYS} == FreeBSD && ${OSREL:R} == 13
-USES+=		ncurses:port
-.else
-USES+=		ncurses
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

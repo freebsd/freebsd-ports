@@ -1,12 +1,12 @@
---- GNUmakefile.orig	2025-05-09 03:10:41 UTC
+--- GNUmakefile.orig	2026-05-22 01:29:07 UTC
 +++ GNUmakefile
-@@ -190,12 +190,12 @@ JAVA_RUNTIME_CLASSES=$(JAVARUNTIME_SOURCES:.java=.clas
+@@ -294,12 +294,12 @@ JAVA_RUNTIME_CLASSES=$(JAVA_RUNTIME_SOURCES:.java=.cla
  JAVA_CLASSES = $(JAVA_SOURCES:.java=.class)
- JAVA_RUNTIME_CLASSES=$(JAVARUNTIME_SOURCES:.java=.class)
+ JAVA_RUNTIME_CLASSES=$(JAVA_RUNTIME_SOURCES:.java=.class)
  
--CFLAGS=-g -O2 -W -Wall -Wmissing-prototypes -Wmissing-declarations -Wshadow $(WERROR)
+-CFLAGS=-g -O2 -W -Wall -Wcast-qual -Wmissing-prototypes -Wmissing-declarations -Wshadow $(WERROR)
 -CPPFLAGS=
-+CFLAGS+=-fPIC -W -Wall -Wmissing-prototypes -Wmissing-declarations -Wshadow $(WERROR)
++CFLAGS+=-fPIC -W -Wall -Wcast-qual -Wmissing-prototypes -Wmissing-declarations -Wshadow $(WERROR)
 +CPPFLAGS+=
  
  INCLUDES=-Iinclude
@@ -14,15 +14,15 @@
 -all: snowball$(EXEEXT) libstemmer.a stemwords$(EXEEXT) $(C_OTHER_SOURCES) $(C_OTHER_HEADERS) $(C_OTHER_OBJECTS)
 +all: snowball$(EXEEXT) libstemmer.a libstemmer.so stemwords$(EXEEXT) $(C_OTHER_SOURCES) $(C_OTHER_HEADERS) $(C_OTHER_OBJECTS)
  
- algorithms.mk: libstemmer/mkalgorithms.pl libstemmer/modules.txt
- 	libstemmer/mkalgorithms.pl algorithms.mk libstemmer/modules.txt
-@@ -256,6 +256,9 @@ libstemmer.a: libstemmer/libstemmer.o $(RUNTIME_OBJECT
+ algorithms.mk: GNUmakefile libstemmer/mkalgorithms.pl $(MODULES)
+ 	libstemmer/mkalgorithms.pl algorithms.mk $(MODULES)
+@@ -406,6 +406,9 @@ libstemmer.a: libstemmer/libstemmer.o $(RUNTIME_OBJECT
  
  libstemmer.a: libstemmer/libstemmer.o $(RUNTIME_OBJECTS) $(C_LIB_OBJECTS)
- 	$(AR) -cru $@ $^
+ 	$(AR) $(ARFLAGS) $@ $^
 +
 +libstemmer.so: libstemmer/libstemmer.o $(RUNTIME_OBJECTS) $(C_LIB_OBJECTS)
-+	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname,libstemmer.so.3,-version-script,libstemmer/symbol.map -o $@.3.0.1 $^
++	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname,libstemmer.so.3,-version-script,libstemmer/symbol.map -o $@.3.1.0 $^
  
  examples/%.o: examples/%.c
  	$(CC) $(CFLAGS) $(INCLUDES) $(CPPFLAGS) -c -o $@ $<

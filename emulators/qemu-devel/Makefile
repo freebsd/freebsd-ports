@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	10.0.20250630
+DISTVERSION=	11.0.20260430
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -13,26 +13,28 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 		bash:shells/bash
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libinotify.so:devel/libinotify \
-		libzstd.so:archivers/zstd
+		liblzo2.so:archivers/lzo2 \
+		libzstd.so:archivers/zstd \
+		libslirp.so:net/libslirp
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t localbase:ldflags \
-		ninja perl5 pkgconfig python:build shebangfix tar:xz xorg
+		ninja:build perl5 pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	0d0fc3f4658937fb81fcc16a89738e83bd8d4795
+GL_TAGNAME=	67c629e8db17c3a6032bc9835181a94b97371c9A
 GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
 		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
-		qemu-project:meson:68d29ef7f62df5481aa4de8eaf421f25243f4cb2:meson/meson \
+		qemu-project:meson:4f808400371cb70e76a4970e59b64a9ea7663caf:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/subprojects/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:e7af9751d9f9fd3b47911f51a5cfd08af256a9ab:berkeleytestfloat3/subprojects/berkeley-testfloat-3
 USE_GNOME=	cairo glib20
 USE_PERL5=	build
-USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
 SHEBANG_FILES=	scripts/xml-preprocess.py
@@ -152,10 +154,11 @@ post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE}
+# Don't build with -j, because the development branch of QEMU regresses from time to time
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${GMAKE}
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .if !target(post-install)
 post-install:
@@ -166,5 +169,8 @@ post-install:
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
 .endif
+
+do-test:
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${GMAKE} test
 
 .include <bsd.port.mk>

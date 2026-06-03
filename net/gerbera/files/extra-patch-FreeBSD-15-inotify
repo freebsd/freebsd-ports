@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2026-03-14 13:58:28 UTC
++++ CMakeLists.txt
+@@ -666,8 +666,8 @@ if(WITH_INOTIFY)
+ endif()
+ 
+ if(WITH_INOTIFY)
+-    find_package(Inotify REQUIRED)
+-    target_link_libraries(libgerbera PUBLIC Inotify::Inotify)
++#    find_package(Inotify REQUIRED)
++#    target_link_libraries(libgerbera PUBLIC Inotify::Inotify)
+     target_compile_definitions(libgerbera PUBLIC HAVE_INOTIFY)
+ endif()
+ 

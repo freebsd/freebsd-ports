@@ -50,9 +50,6 @@ share/applications/connectagram.desktop
 %%NLS%%%%DATADIR%%/translations/connectagram_ru.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_tr.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_uk.qm
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/1024x1024/apps/connectagram.png
 share/icons/hicolor/128x128/apps/connectagram.png
 share/icons/hicolor/16x16/apps/connectagram.png

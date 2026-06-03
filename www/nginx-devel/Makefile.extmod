@@ -11,7 +11,7 @@ OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE \
 	HTTP_PUSH_STREAM HTTP_REDIS HTTP_SLICE_AHEAD HTTP_SUBS_FILTER HTTP_TARANTOOL \
 	HTTP_UPLOAD HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA \
-	LUASTREAM MEMC MODSECURITY3 NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
+	LUASTREAM MEMC MODSECURITY3 NATS NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
 	REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SRCACHE STS \
 	VOD VTS XSS WEBSOCKIFY ZSTD
 
@@ -205,7 +205,7 @@ LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.28:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.29:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
 LUASTREAM_IMPLIES=	DEVEL_KIT
@@ -213,7 +213,8 @@ LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.16:luastream
+LUASTREAM_BUILD_DEPENDS=lua-stream-nginx-module>=0.0.17:www/lua-stream-nginx-module
+WRKSRC_luastream=	${WRKDIR}/lua-stream-nginx-module
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
@@ -229,6 +230,10 @@ MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_GH_TUPLE=		owasp-modsecurity:ModSecurity-nginx:fd28e6a:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
+NATS_GH_TUPLE=		nats-io:nginx-nats:6f7adf1:nats
+NATS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_nats.c
+NATS_VARS=		DSO_EXTMODS+=nats NATS_SUBDIR=/src
+
 NAXSI_NGINX_VER=	1.7
 NAXSI_GH_TUPLE=		wargio:naxsi:${NAXSI_NGINX_VER}:naxsi \
 			libinjection:libinjection:b9fcaaf:libinjection
@@ -236,7 +241,7 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.9.1:njs
+NJS_GH_TUPLE=		nginx:njs:0.9.9:njs
 NJS_CONFIGURE_ON=	--with-cc-opt="-I ${LOCALBASE}/include/quickjs"
 NJS_LIB_DEPENDS=	libquickjs.so:lang/quickjs \
 			libxml2.so:textproc/libxml2 \
@@ -257,17 +262,20 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
 
-PASSENGER_NGINX_VER=	6.0.27
-PASSENGER_CATEGORIES=	ruby
-PASSENGER_USES=		ruby
-PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
-PASSENGER_RAKE_BIN=	${LOCALBASE}/bin/rake
+PASSENGER_NGINX_VER=	6.1.2
 PASSENGER_MASTER_SITES=	https://s3.amazonaws.com/phusion-passenger/releases/:passenger
 PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
+PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
+PASSENGER_CATEGORIES=	ruby
+PASSENGER_CFLAGS=	-DNDEBUG
+PASSENGER_CONFIGURE_ENV=OPTIMIZE="yes" EXTRA_PRE_CXXFLAGS="-std=c++14"
+PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
+			${PATCHDIR}/extra-patch-passenger-disable-telemetry \
+			${PATCHDIR}/extra-patch-passenger-Configuration.c
+PASSENGER_RAKE_BIN=	${LOCALBASE}/bin/rake
+PASSENGER_USES=		ruby
 PASSENGER_VARS=		WRKSRC_passenger=${WRKDIR}/passenger-${PASSENGER_NGINX_VER} \
 			DSO_EXTDIRS+=passenger-${PASSENGER_NGINX_VER}/src/nginx_module
-PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
-			${PATCHDIR}/extra-patch-passenger-disable-telemetry
 
 POSTGRES_USES=		pgsql
 POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
@@ -309,7 +317,7 @@ STS_IMPLIES=		STREAM
 STS_GH_TUPLE=		vozlt:nginx-module-sts:3c10d42:sts
 STS_VARS=		DSO_EXTMODS+=sts
 
-VOD_GH_TUPLE=		kaltura:nginx-vod-module:26f0687:vod
+VOD_GH_TUPLE=		diogoazevedos:nginx-vod-module:b9b4b44:vod
 VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libavutil.so:multimedia/ffmpeg
 VOD_USES=		iconv

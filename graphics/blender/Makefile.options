@@ -1,11 +1,8 @@
 OPTIONS_DEFINE=		\
 	ALEMBIC		\
-	AVI		\
 	BULLET		\
 	CAMERATRACK	\
 	CINEON		\
-	COLLADA		\
-	COMPOSITOR	\
 	CYCLES		\
 	CYCLES_EMBR	\
 	CYCLES_ONEAPI	\
@@ -21,8 +18,8 @@ OPTIONS_DEFINE=		\
 	HEADLESS	\
 	INPUT_NDOF	\
 	JACK		\
-	LZMA		\
-	LZO		\
+	MANIFOLD	\
+	MATERIALX	\
 	MENU		\
 	MOD_FLUID	\
 	MOD_OCEANSIM	\
@@ -33,15 +30,16 @@ OPTIONS_DEFINE=		\
 	OPENEXR		\
 	OPENIMAGEDN	\
 	OPENJPEG	\
-	OPENMP		\
 	OPENPGL		\
 	OPENSUBDIV	\
 	OPENVDB		\
 	OPENXR		\
+	PIPEWIRE	\
 	POTRACE		\
 	PUGIXML		\
 	PULSEAUDIO	\
 	QUADRIFLOW	\
+	RUBBERBAND	\
 	SDL		\
 	SIMD		\
 	SNDFILE		\
@@ -52,16 +50,12 @@ OPTIONS_DEFINE=		\
 	VULKAN		\
 	WAYLAND		\
 	WEBP		\
-	XINPUT		\
-	XF86VMODE
+	XINPUT
 
 OPTIONS_DEFAULT=	\
 	ALEMBIC		\
-	AVI		\
 	BULLET		\
 	CINEON		\
-	COLLADA		\
-	COMPOSITOR	\
 	CYCLES		\
 	CYCLES_ONEAPI	\
 	DRACO		\
@@ -73,8 +67,8 @@ OPTIONS_DEFAULT=	\
 	HARFBUZZ	\
 	HARU		\
 	INPUT_NDOF	\
-	LZMA		\
-	LZO		\
+	MANIFOLD	\
+	MATERIALX	\
 	MENU		\
 	MOD_FLUID	\
 	MOD_OCEANSIM	\
@@ -89,14 +83,13 @@ OPTIONS_DEFAULT=	\
 	PUGIXML		\
 	PULSEAUDIO	\
 	QUADRIFLOW	\
-	SDL		\
+	RUBBERBAND	\
 	TBB		\
 	THUMBNAILER	\
 	TRACE		\
 	WAYLAND		\
 	WEBP		\
-	XINPUT		\
-	XF86VMODE
+	XINPUT
 
 # CAMERATRACK: libunwind only supports i386/amd64/aarch64/powerpc64/powerpc64le
 # CYCLES_EMBR: embree only supports amd64 and i386
@@ -108,12 +101,9 @@ OPTIONS_DEFAULT_powerpc64=	CAMERATRACK
 OPTIONS_DEFAULT_powerpc64le=	CAMERATRACK
 
 ALEMBIC_DESC=		Enable Alembic file support
-AVI_DESC=		Enable Blender's own AVI file support
 BULLET_DESC=		Bullet physics engine
 CAMERATRACK_DESC=	Camera tracking support (amd64/aarch64/powerpc64/powerpc64le only)
 CINEON_DESC=		CINEON and DPX graphics format support
-COLLADA_DESC=		Enable read/write support for COLLADA files
-COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
 CYCLES_EMBR_DESC=	Embree support (amd64 only)
 CYCLES_ONEAPI_DESC=	Enable Cycles oneAPI compute support
@@ -128,8 +118,8 @@ HARFBUZZ_DESC=		Enable features using harfbuzz OpenType text shaping engine
 HARU_DESC=		Enable libharu support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
-LZMA_DESC=		Best compression support
-LZO_DESC=		Fast compression support
+MANIFOLD_DESC=		Enable manifold boolean support
+MATERIALX_DESC=		Enable MaterialX support
 MENU_DESC=		Install desktop menu
 MOD_FLUID_DESC=		Fluid simulation support
 MOD_OCEANSIM_DESC=	Ocean simulation support
@@ -141,17 +131,18 @@ OPENPGL_DESC=		Open Path Guiding in Cycles (aarch64 and amd64 only)
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 OPENVDB_DESC=		Use openVDB library for volumetric data
 OPENXR_DESC=		Enable VR features through the OpenXR specification
+PIPEWIRE_DESC=		Enable Pipewire audio support
 POTRACE_DESC=		Enable features using libpotrace
 PUGIXML_DESC=		Enable pugixml support
 QUADRIFLOW_DESC=	Enable quadriflow remesher
-SDL_DESC=		Audio and Joystick support using SDL
+RUBBERBAND_DESC=	Use Rubber Band for audio time-stretching and pitch-scaling
+SDL_DESC=		Audio support using SDL
 SIMD_DESC=		Use SIMD optimized routines (on amd64 require x86-64-v2 support)
 TBB_DESC=		Enable use of Intel's tbb
 THUMBNAILER_DESC=	Build blender thumbnailer
 TRACE_DESC=		Enable tracing image to GP stroke
 USD_DESC=		Universal Scene Description Support (aarch64 and amd64 only, broken)
-VULKAN_DESC=		Enable Vulkan as graphics backend (only for development)
+VULKAN_DESC=		Enable Vulkan as graphics backend
 WAYLAND_DESC=		Wayland support
 WEBP_DESC=		Enable webp image support
-XF86VMODE_DESC=		X11 video mode switching support
 XINPUT_DESC=		X11 Xinput (tablet) support

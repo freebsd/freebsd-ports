@@ -1,5 +1,6 @@
 PORTNAME=	lightweight-java-profiler
 PORTVERSION=	g20170308
+PORTREVISION=	3
 CATEGORIES=	java devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +17,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	assembly only available for x86
 
 USES=		gmake java shebangfix
-JAVA_VERSION=	8
 USE_GITHUB=	yes
 GH_ACCOUNT=	inevity
 GH_TAGNAME=	e8041b5
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	Makefile
 
-MAKE_ENV=	JAVA_HOME=${LOCALBASE}/openjdk8
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 
 .include <bsd.port.pre.mk>
 

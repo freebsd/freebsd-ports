@@ -1,0 +1,7 @@
+SnakyHash gem is used by the oauth and oauth2 gems, and others, to normalize
+hash keys and lookups, and provide a nice psuedo-object interface.
+
+It has its roots in the Rash (specifically the rash_alt flavor), which is a
+special Mash, made popular by the hashie gem.
+
+Classes that include SnakyHash::Snake should inherit from Hashie::Mash.

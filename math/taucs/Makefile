@@ -55,7 +55,7 @@ archives: configure
 lib: archives
 	@${PRINTF} "\n\n%s\n\n\n" "Building shared library:"
 	(cd ${WRKSRC}_SHARED/lib/FreeBSD && \
-		${FC} ${CFLAGS} ${PICFLAG} ${LDFLAGS} -shared \
+		${CC} ${CFLAGS} ${PICFLAG} ${LDFLAGS} -shared \
 		-o libtaucs.so.1 -Wl,-x -Wl,-soname,libtaucs.so.1 \
 		-Wl,--whole-archive libtaucs.a -Wl,--no-whole-archive)
 	${STRIP_CMD} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1

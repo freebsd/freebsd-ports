@@ -1,0 +1,4 @@
+Configurator is a Python library that makes it easy to read configuration
+from command line arguments and ini files. It merges values from both
+sources into a single object, so applications can accept the same setting
+from either an ini file or a CLI flag without writing extra glue code.

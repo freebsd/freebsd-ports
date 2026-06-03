@@ -1,7 +1,7 @@
 PORTNAME=	zgrab2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8
-PORTREVISION=	5
+DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,9 +15,9 @@ BROKEN_aarch64=	compilation fails: ztypes_freebsd_arm64.go:400:12: undefined: ui
 
 USES=		go:modules
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	zmap
-GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	zmap
+#GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.2.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-mgo:mgo:a6b53ec6cb22:go_mgo_mgo/vendor/gopkg.in/mgo.v2 \
@@ -41,7 +41,7 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		zmap:rc2:abaa70531248:zmap_rc2/vendor/github.com/zmap/rc2 \
 		zmap:zcrypto:c8b263fd8300:zmap_zcrypto/vendor/github.com/zmap/zcrypto \
 		zmap:zflags:9d95409821b6:zmap_zflags/vendor/github.com/zmap/zflags
-#GO_MODULE=	github.com/zmap/zgrab2 # fails to build: "unsafe.Slice requires go1.17 or later"
+GO_MODULE=	github.com/zmap/zgrab2 # fails to build: "unsafe.Slice requires go1.17 or later"
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}

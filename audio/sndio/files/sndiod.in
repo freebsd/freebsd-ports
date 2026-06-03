@@ -2,7 +2,7 @@
 
 # PROVIDE: sndiod
 # REQUIRE: NETWORKING sysctl
-# BEFORE:  DAEMON
+# BEFORE:  DAEMON virtual_oss
 # KEYWORD: shutdown
 
 . /etc/rc.subr

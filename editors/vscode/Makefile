@@ -1,5 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.102.2
+DISTVERSION=	${VSCODE_VERSION}
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -18,10 +18,9 @@ ONLY_FOR_ARCHS=	amd64
 EXTRACT_DEPENDS=jq:textproc/jq \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
 BUILD_DEPENDS=	zip:archivers/zip \
-		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
+		typescript-go>=7.0.0.g20260506:lang/typescript-go \
 		jq:textproc/jq \
-		rg:textproc/ripgrep \
-		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
+		rg:textproc/ripgrep
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libasound.so:audio/alsa-lib \
@@ -29,7 +28,6 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libopus.so:audio/opus \
 		libsndio.so:audio/sndio \
 		libdbus-1.so:devel/dbus \
-		libicuuc.so:devel/icu \
 		libepoll-shim.so:devel/libepoll-shim \
 		libevent.so:devel/libevent \
 		libffi.so:devel/libffi \
@@ -58,17 +56,28 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		bash:shells/bash
-TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
-		bash:shells/bash
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		desktop-file-utils gl gmake gnome gssapi:mit iconv:wchar_t \
-		jpeg localbase:ldflags nodejs:22,build pkgconfig python:build \
-		shebangfix xorg
+USES=		cargo desktop-file-utils display:test electron:39,build,test \
+		gl gmake gnome gssapi:mit iconv:wchar_t jpeg localbase:ldflags \
+		nodejs:22,build pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
+# See ${WRKSRC}/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/package.json for node-clipboard-rs version
+GH_TUPLE=	Teddy-Zhu:node-clipboard-rs:v0.0.10:node_clipboard_rs/node-clipboard-rs
+# See ${WRKSRC}/build/rspack/node_modules/@rspack/binding/package.json for rspack version
+GH_TUPLE+=	web-infra-dev:rspack:v1.7.10:rspack/rspack
 
-SOURCE_COMMIT_HASH=	c306e94f98122556ca081f527b466015e1bc37b0
+CARGO_CARGOTOML_CLIPBOARD=	${WRKSRC}/node-clipboard-rs/Cargo.toml
+CARGO_CARGOLOCK_CLIPBOARD=	${WRKSRC}/node-clipboard-rs/Cargo.lock
+CARGO_CARGOTOML_RSPACK=		${WRKSRC}/rspack/Cargo.toml
+CARGO_CARGOLOCK_RSPACK=		${WRKSRC}/rspack/Cargo.lock
+CARGO_CARGOTOML=		${CARGO_CARGOTOML_CLIPBOARD}
+CARGO_CARGOLOCK=		${CARGO_CARGOLOCK_CLIPBOARD}
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -76,33 +85,30 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xtst
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo pango gdkpixbuf gtk30 libxml2 libxslt
+USE_ELECTRON=	npm:npm
 
-SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*\.sh$$
+SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
 
 DATADIR=	${PREFIX}/share/code-oss
 TMPDIR=		${WRKDIR}
 BUNDLE_LIBS=	yes
 
-MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH}
-# Don't download electron binary distribution on electron node_modules installation
-MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
-# Don't download browser binaries on playwright node_modules installation
-MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
-		PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
+		VSCODE_QUALITY=stable
 # Don't create __pycache__ directory when executing node-gyp
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
-TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//}
+TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//} \
+		VSCODE_SKIP_PRELAUNCH=1
 
-NODEJS_DIR=	${.CURDIR:H:H}/www/node22
+UPSTREAM_ELECTRON_VER=	${ELECTRON_VER}
+
+.include "Makefile.version"
+.include <bsd.port.pre.mk>
+
+NODEJS_DIR=	${.CURDIR:H:H}/www/node${NODEJS_VERSION}
 .include "${NODEJS_DIR}/Makefile.version"
-ELECTRON_DIR=	${.CURDIR:H:H}/devel/electron35
-.include "${ELECTRON_DIR}/Makefile.version"
-
-ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
-ELECTRON_DOWNLOAD_URL_HASH!=	/sbin/sha256 -q -s ${ELECTRON_DOWNLOAD_URL}
-ELECTRON_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -118,7 +124,7 @@ post-extract:
 		${WRKSRC}/build/.moduleignore.freebsd
 	@${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}"
 	@${TAR} -xzf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} -C ${WRKSRC}
-	@for dir in `node -p "JSON.stringify(require('${WRKSRC}/build/npm/dirs').dirs)" | jq -r '.[]'`; do \
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
 		if [ -f ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} ]; then \
 			${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}/$${dir}"; \
 			${TAR} -xzf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} -C ${WRKSRC}/$${dir}; \
@@ -130,6 +136,11 @@ post-patch:
 		${WRKSRC}/.npmrc
 	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
 		${WRKSRC}/remote/.npmrc
+	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
+		${WRKSRC}/build/gulpfile.reh.ts \
+		${WRKSRC}/build/gulpfile.vscode.ts
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/node_modules/@typescript/native-preview/lib/getExePath.js
 	@(cd ${WRKSRC} && \
 		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
@@ -156,6 +167,8 @@ post-patch:
 		${FIND} . -type f -name '*.sh' \
 			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" \
 					-e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' {} ';')
+	@${SETENV} FILESDIR=${FILESDIR} \
+		${SH} ${FILESDIR}/update-product-json.sh ${WRKSRC}
 
 pre-build:
 # rebuild native node modules in top directory
@@ -169,7 +182,7 @@ pre-build:
 			node-gyp --userconfig=${WRKSRC}/.npmrc rebuild; \
 	done
 # rebuild native node modules in subdirectories
-	@for dir in `node -p "JSON.stringify(require('${WRKSRC}/build/npm/dirs').dirs)" | jq -r '.[]'`; do \
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
 		for subdir in `${FIND} ${WRKSRC}/$${dir}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
 			${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
 			if [ "`${ECHO_CMD} $${subdir} | ${GREP} /build/`" ]; then \
@@ -196,24 +209,74 @@ pre-build:
 			fi; \
 		done; \
 	done
+# build native node module for @teddyzhu/clipboard
+	@${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML_CLIPBOARD} \
+		--verbose --verbose \
+		${CARGO_BUILD_ARGS}
+	${CP} ${CARGO_TARGET_DIR}/*/libclipboard.so \
+		${WRKSRC}/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/clipboard.freebsd-${ELECTRON_ARCH}.node
+	${CP} ${CARGO_TARGET_DIR}/*/libclipboard.so \
+		${WRKSRC}/remote/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/clipboard.freebsd-${ELECTRON_ARCH}.node
+	# # build native node module for @rspack/binding
+	# @${CARGO_CARGO_RUN} build \
+	# 	--manifest-path ${CARGO_CARGOTOML_RSPACK} \
+	# 	--verbose --verbose \
+	# 	${CARGO_BUILD_ARGS}
+	# ${CP} ${CARGO_TARGET_DIR}/*/librspack.so \
+	# 	${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${ELECTRON_ARCH}.node
 # copy rg binary file to @vscode/ripgrep node module directory
-	@${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin
-	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
-	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
-	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
-	@${MKDIR} ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
-	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+	@${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin \
+		${WRKSRC}/build/node_modules/@vscode/ripgrep/bin \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin \
+		${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+# copy rg binary file to @github/copilot node modules directory
+	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/node_modules/@github/copilot-sdk/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/remote/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/node_modules/@github/copilot-sdk/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/remote/node_modules/@github/copilot/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+# copy keytar.node binary file to @github/copilot node modules directory
+	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/node_modules/@github/copilot-sdk/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
+	${CP} ${WRKSRC}/node_modules/keytar/build/Release/keytar.node \
+		${WRKSRC}/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
+	${CP} ${WRKSRC}/node_modules/keytar/build/Release/keytar.node \
+		${WRKSRC}/node_modules/@github/copilot-sdk/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
+	${CP} ${WRKSRC}/node_modules/keytar/build/Release/keytar.node \
+		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
+# copy pty.node binary file to @github/copilot node modules directory
+	${CP} ${WRKSRC}/node_modules/node-pty/build/Release/pty.node \
+		${WRKSRC}/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
+	${CP} ${WRKSRC}/node_modules/node-pty/build/Release/pty.node \
+		${WRKSRC}/node_modules/@github/copilot-sdk/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
+	${CP} ${WRKSRC}/node_modules/node-pty/build/Release/pty.node \
+		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${ELECTRON_ARCH}
 
 do-build:
-# setup download cache for gulp-atom-electron
-	@${MKDIR} ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH}
-	@cd ${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} && \
-		zip -q -r ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH}/electron-v${ELECTRON_VER}-linux-${ELECTRON_ARCH}.zip .
 # remove backup files so that they are not included in the package
-	@${FIND} ${WRKSRC} -type f \( -name '*.orig' -o -name '*~' \) -delete
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -o -name '*.orig' -o -name '*~' \) -delete
 # build and package vscode
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npx tsc -p build/tsconfig.build.json
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} \
+		npm_config_runtime=electron \
+		npm_config_target=${ELECTRON_VER} \
+		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
+		npm --userconfig=${WRKSRC}/.npmrc run compile && \
+	${SETENV} ${MAKE_ENV} \
 		npm_config_runtime=electron \
 		npm_config_target=${ELECTRON_VER} \
 		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
@@ -261,9 +324,8 @@ pre-test:
 	@cd ${WRKSRC}/.build/electron && ${MV} -f electron code-oss
 
 do-test:
-# Note: Xvfb or something similar is necessary for headless testing
 # unit tests
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ./scripts/test.sh --build || ${TRUE}
+	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ./scripts/test.sh || ${TRUE}
 # UI smoke tests
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} npm run smoketest
 
@@ -286,15 +348,21 @@ build-remote-extension-host: configure pre-build
 	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run gulp vscode-reh-web-linux-${ELECTRON_ARCH}-min
 
 ### targets for port maintainer(s)
-make-node-modules-archive: extract
+patch-package-json: extract
+# add node module for signature verification of extensions from Open VSX Registry
+	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/patch-package.json
+
+make-node-modules-archive: extract patch-package-json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
 	@cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \
+	${SETENV} ${MAKE_ENV} npm install \
+		--ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
 	${TAR} -czf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} node_modules
-	@for dir in `node -p "JSON.stringify(require('${WRKSRC}/build/npm/dirs').dirs)" | jq -r '.[]'`; do \
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
 		cd ${WRKSRC}/$${dir} && \
 		${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}/$${dir}" && \
-		${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \
+		${SETENV} ${MAKE_ENV} npm install \
+			--ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
 		if [ -d node_modules ]; then \
 			${TAR} -czf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} node_modules; \
 		fi; \
@@ -308,4 +376,26 @@ make-marketplace-exts-archive: extract
 	${SETENV} ${MAKE_ENV} npm run download-builtin-extensions
 	@${TAR} -czf ${WRKDIR}/vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX} -C ${WRKSRC}/.build builtInExtensions
 
-.include <bsd.port.mk>
+cargo-crates-from-multiple-lockfiles: extract
+	@set -- ${CARGO_CARGOTOML_CLIPBOARD} \
+		${CARGO_CARGOLOCK_CLIPBOARD} \
+		${CARGO_CARGOTOML_RSPACK} \
+		${CARGO_CARGOLOCK_RSPACK}; \
+	while [ $$# -gt 0 ]; do \
+		tf=$$1; \
+		lf=$$2; \
+		if [ ! -r $${lf} ]; then \
+			cd `${DIRNAME} $${lf}` && \
+			${_CARGO_RUN} generate-lockfile --manifest-path $${tf} --quiet; \
+		fi; \
+		shift 2; \
+	done
+	@for lf in ${CARGO_CARGOLOCK_CLIPBOARD} ${CARGO_CARGOLOCK_RSPACK}; do \
+		${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk $${lf}; \
+	done | \
+	${SED} -E 's/^CARGO_CRATES=\t+/\t\t/; s/ \\$$//' | \
+	${SORT} -u | \
+	${SED} -e '1s/^\t\t/CARGO_CRATES=\t/; s/$$/ \\/' | \
+	${SED} -e '$$s/ \\//'
+
+.include <bsd.port.post.mk>

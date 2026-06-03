@@ -13,6 +13,8 @@ bin/pdfarranger
 %%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/exporter%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/iconview%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/iconview%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/image_exporter%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/image_exporter%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/metadata%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/metadata%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/pdfarranger/__pycache__/pageutils%%PYTHON_TAG%%.opt-1.pyc
@@ -27,6 +29,7 @@ bin/pdfarranger
 %%PYTHON_SITELIBDIR%%/pdfarranger/core.py
 %%PYTHON_SITELIBDIR%%/pdfarranger/exporter.py
 %%PYTHON_SITELIBDIR%%/pdfarranger/iconview.py
+%%PYTHON_SITELIBDIR%%/pdfarranger/image_exporter.py
 %%PYTHON_SITELIBDIR%%/pdfarranger/metadata.py
 %%PYTHON_SITELIBDIR%%/pdfarranger/pageutils.py
 %%PYTHON_SITELIBDIR%%/pdfarranger/pdfarranger.py
@@ -39,6 +42,7 @@ share/icons/hicolor/32x32/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/48x48/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
 share/icons/hicolor/symbolic/apps/com.github.jeromerobert.pdfarranger-symbolic.svg
+share/locale/ar/LC_MESSAGES/pdfarranger.mo
 share/locale/ca/LC_MESSAGES/pdfarranger.mo
 share/locale/ca@valencia/LC_MESSAGES/pdfarranger.mo
 share/locale/cs/LC_MESSAGES/pdfarranger.mo
@@ -63,6 +67,7 @@ share/locale/pl_PL/LC_MESSAGES/pdfarranger.mo
 share/locale/pt_BR/LC_MESSAGES/pdfarranger.mo
 share/locale/pt_PT/LC_MESSAGES/pdfarranger.mo
 share/locale/ru/LC_MESSAGES/pdfarranger.mo
+share/locale/sl/LC_MESSAGES/pdfarranger.mo
 share/locale/sv/LC_MESSAGES/pdfarranger.mo
 share/locale/tr/LC_MESSAGES/pdfarranger.mo
 share/locale/uk/LC_MESSAGES/pdfarranger.mo

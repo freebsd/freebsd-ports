@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-05-07 06:48:23 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-03-24 16:59:08 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,392 @@
+@@ -0,0 +1,403 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -38,7 +38,6 @@
 +#include "base/time/time.h"
 +#include "build/build_config.h"
 +#include "crypto/crypto_buildflags.h"
-+#include "ppapi/buildflags/buildflags.h"
 +#include "sandbox/constants.h"
 +#include "sandbox/linux/services/credentials.h"
 +#include "sandbox/linux/services/namespace_sandbox.h"
@@ -62,6 +61,7 @@
 +#endif
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
++#include "third_party/skia/rust/png/FFI.rs.h"
 +
 +#include <fontconfig/fontconfig.h>
 +#include "ui/gfx/linux/fontconfig_util.h"
@@ -73,6 +73,7 @@
 +#define _UNVEIL_UTILITY_NETWORK	"/etc/iridium/unveil.utility_network";
 +#define _UNVEIL_UTILITY_AUDIO	"/etc/iridium/unveil.utility_audio";
 +#define _UNVEIL_UTILITY_VIDEO	"/etc/iridium/unveil.utility_video";
++#define _UNVEIL_CDM		"/etc/iridium/unveil.cdm";
 +
 +namespace sandbox {
 +namespace policy {
@@ -127,6 +128,8 @@
 +      crypto::EnsureNSSInit();
 +#endif
 +      CRYPTO_pre_sandbox_init();
++
++      rust_png::initialize_cpudetect();
 +
 +      base::FilePath cache_directory, local_directory;
 +
@@ -194,6 +197,7 @@
 +bool SandboxLinux::SetUnveil(const std::string process_type, sandbox::mojom::Sandbox sandbox_type) {
 +  FILE *fp;
 +  char *s = NULL, *cp = NULL, *home = NULL, **ap, *tokens[MAXTOKENS];
++  char *xdg_var = NULL;
 +  char path[PATH_MAX];
 +  const char *ufile;
 +  size_t len = 0, lineno = 0;
@@ -215,8 +219,11 @@
 +    case sandbox::mojom::Sandbox::kVideoCapture:
 +      ufile = _UNVEIL_UTILITY_VIDEO;
 +      break;
++    case sandbox::mojom::Sandbox::kCdm:
++      ufile = _UNVEIL_CDM;
++      break;
 +    default:
-+      unveil("/dev/null", "r");
++      unveil("/dev/null", "rw");
 +      goto done;
 +  }
 +
@@ -258,6 +265,13 @@
 +        strncpy(path, home, sizeof(path) - 1);
 +        path[sizeof(path) - 1] = '\0';
 +        strncat(path, tokens[0], sizeof(path) - 1 - strlen(path));
++      } else if (strncmp(tokens[0], "XDG_", 4) == 0) {
++        if ((xdg_var = getenv(tokens[0])) == NULL || *xdg_var == '\0') {
++          LOG(ERROR) << "failed to get " << tokens[0];
++          continue;
++	}
++        strncpy(path, xdg_var, sizeof(path) - 1);
++        path[sizeof(path) - 1] = '\0';
 +      } else {
 +        strncpy(path, tokens[0], sizeof(path) - 1);
 +        path[sizeof(path) - 1] = '\0';
@@ -333,14 +347,8 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kGpu:
 +    case sandbox::mojom::Sandbox::kOnDeviceModelExecution:
-+      SetPledge("stdio drm rpath flock cpath wpath prot_exec recvfd sendfd tmppath", NULL);
++      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd unix", NULL);
 +      break;
-+#if BUILDFLAG(ENABLE_PPAPI)
-+    case sandbox::mojom::Sandbox::kPpapi:
-+      // prot_exec needed by v8
-+      SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);
-+      break;
-+#endif
 +    case sandbox::mojom::Sandbox::kAudio:
 +      SetPledge(NULL, "/etc/iridium/pledge.utility_audio");
 +      break;
@@ -349,6 +357,9 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kVideoCapture:
 +      SetPledge(NULL, "/etc/iridium/pledge.utility_video");
++      break;
++    case sandbox::mojom::Sandbox::kCdm:
++      SetPledge("stdio rpath flock recvfd sendfd", NULL);
 +      break;
 +    case sandbox::mojom::Sandbox::kUtility:
 +    case sandbox::mojom::Sandbox::kService:

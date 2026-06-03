@@ -1,6 +1,6 @@
---- src/FFmpegWriter.cpp.orig	2024-06-20 01:25:10 UTC
+--- src/FFmpegWriter.cpp.orig	2026-04-02 23:34:37 UTC
 +++ src/FFmpegWriter.cpp
-@@ -166,7 +166,7 @@ void FFmpegWriter::SetVideoOptions(bool has_video, std
+@@ -168,7 +168,7 @@ void FFmpegWriter::SetVideoOptions(bool has_video, std
  		const AVCodec *new_codec;
  		// Check if the codec selected is a hardware accelerated codec
  #if USE_HW_ACCEL
@@ -9,7 +9,7 @@
  		if (strstr(codec.c_str(), "_vaapi") != NULL) {
  			new_codec = avcodec_find_encoder_by_name(codec.c_str());
  			hw_en_on = 1;
-@@ -216,7 +216,7 @@ void FFmpegWriter::SetVideoOptions(bool has_video, std
+@@ -218,7 +218,7 @@ void FFmpegWriter::SetVideoOptions(bool has_video, std
  		}
  #else  // unknown OS
  		new_codec = avcodec_find_encoder_by_name(codec.c_str());
@@ -18,7 +18,7 @@
  #else // USE_HW_ACCEL
  		new_codec = avcodec_find_encoder_by_name(codec.c_str());
  #endif // USE_HW_ACCEL
-@@ -563,6 +563,7 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
+@@ -564,6 +564,7 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
  						else {
  							av_opt_set_int(c->priv_data, "crf", std::min(std::stoi(value),63), 0);
  						}
@@ -26,7 +26,7 @@
  					case AV_CODEC_ID_HEVC :
  						c->bit_rate = 0;
  						if (strstr(info.vcodec.c_str(), "svt_hevc") != NULL) {
-@@ -571,6 +572,8 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
+@@ -572,6 +573,8 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
  							av_opt_set_int(c->priv_data, "forced-idr",1,0);
  						}
  						break;
@@ -35,7 +35,7 @@
  				}
  #endif  // FFmpeg 4.0+
  		} else {
-@@ -1434,21 +1437,25 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
+@@ -1429,21 +1432,25 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
  		adapter_num = openshot::Settings::Instance()->HW_EN_DEVICE_SET;
  		std::clog << "Encoding Device Nr: " << adapter_num << "\n";
  		if (adapter_num < 3 && adapter_num >=0) {

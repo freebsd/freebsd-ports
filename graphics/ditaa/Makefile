@@ -1,5 +1,6 @@
 PORTNAME=	ditaa
 DISTVERSION=	0.11.0
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	https://github.com/stathissideris/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-standalone.jar

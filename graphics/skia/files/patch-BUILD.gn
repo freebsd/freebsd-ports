@@ -1,0 +1,19 @@
+--- BUILD.gn.orig	2025-10-19 21:42:30 UTC
++++ BUILD.gn
+@@ -1254,7 +1254,6 @@ optional("pdf") {
+   deps = [
+     ":clipstack_utils",
+     ":pathops",
+-    "//third_party/zlib",
+   ]
+   public = skia_pdf_public
+   sources = skia_pdf_sources
+@@ -1927,7 +1926,7 @@ action("skia.h") {
+   skia_h = "$target_gen_dir/skia.h"
+   script = "gn/find_headers.py"
+ 
+-  args = [ rebase_path("//bin/gn") ] + [ rebase_path("//") ] +
++  args = [ "%%PREFIX%%/bin/gn" ] + [ rebase_path("//") ] +
+          [ rebase_path(skia_h, root_build_dir) ] +
+          rebase_path(skia_public_includes)
+   depfile = "$skia_h.deps"

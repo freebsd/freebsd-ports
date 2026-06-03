@@ -1,0 +1,8 @@
+--- pyproject.toml.orig	2026-01-25 11:23:49 UTC
++++ pyproject.toml
+@@ -155,4 +155,4 @@ sktime = [
+ ]
+ 
+ [tool.setuptools.packages.find]
+-exclude = ["tests", "tests.*"]
++exclude = ["docs", "docs.*", "tests", "tests.*"]

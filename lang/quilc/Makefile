@@ -1,7 +1,7 @@
 PORTNAME=	quilc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.26.0
-PORTREVISION=	8
+PORTREVISION=	13
 CATEGORIES=	lang # quantum-computing
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION} # many files, some are unversioned
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libffi.so:devel/libffi \
 		liblapack.so:math/lapack
 
-USES=		fortran gmake localbase pkgconfig
+USES=		fortran:gfortran gmake localbase pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quil-lang

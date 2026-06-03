@@ -1,0 +1,4 @@
+bin/jellyfin-desktop
+share/applications/org.jellyfin.JellyfinDesktop.desktop
+share/icons/hicolor/scalable/apps/org.jellyfin.JellyfinDesktop.svg
+share/metainfo/org.jellyfin.JellyfinDesktop.appdata.xml

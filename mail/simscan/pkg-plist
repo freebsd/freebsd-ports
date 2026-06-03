@@ -1,6 +1,6 @@
 @cwd %%QMAIL_PREFIX%%
-@(simscan,simscan,) bin/simscanmk
-@(simscan,simscan,04711) bin/simscan
-@dir(simscan,simscan,2750) %%SIMSCAN_DIR%%
-@dir %%QMAIL_PREFIX%%/bin
-@dir %%QMAIL_PREFIX%%
+@(%%USER%%,%%GROUP%%,) bin/simscanmk
+@(%%USER%%,%%GROUP%%,04711) bin/simscan
+@dir(%%USER%%,%%GROUP%%,2750) %%SIMSCAN_DIR%%
+@dir(,%%QMAIL_GROUP%%,) %%QMAIL_PREFIX%%/bin
+@dir(,%%QMAIL_GROUP%%,) %%QMAIL_PREFIX%%

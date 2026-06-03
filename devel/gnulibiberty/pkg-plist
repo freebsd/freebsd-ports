@@ -1,5 +1,6 @@
 include/libiberty/ansidecl.h
 include/libiberty/demangle.h
+include/libiberty/doubly-linked-list.h
 include/libiberty/dyn-string.h
 include/libiberty/fibheap.h
 include/libiberty/floatformat.h

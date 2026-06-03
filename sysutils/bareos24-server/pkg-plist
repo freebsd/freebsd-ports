@@ -1,0 +1,157 @@
+bin/bregex
+bin/bsmtp
+bin/bwild
+@sample(,bareos,640) %%ETCDIR%%/bareos-barcodes.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/catalog/MyCatalog.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/client/bareos-fd.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/console/bareos-mon.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/director/bareos-dir.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/Catalog.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/LinuxAll.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/SelfTest.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/jobdefs/DefaultJob.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Daemon.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Standard.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/pool/Differential.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/pool/Full.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/pool/Incremental.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/pool/Scratch.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/profile/operator.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycle.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf.sample
+%%ETCDIR%%/bareos-dir.d/storage/Dedupable.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/dplcompat.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/FileStorage.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/dplcompat.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/Dedupable.conf.sample
+%%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
+etc/logrotate.d/bareos-dir
+lib/bareos/backends/libbareossd-dedupable.so
+lib/bareos/backends/libbareossd-dplcompat.so
+lib/bareos/backends/libbareossd-fifo.so
+lib/bareos/backends/libbareossd-file.so
+lib/bareos/backends/libbareossd-tape.so
+%%PYTHON%%lib/bareos/plugins/BareosDirPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosDirPluginNscaSender.py
+%%PYTHON%%lib/bareos/plugins/BareosDirWrapper.py
+%%PYTHON%%lib/bareos/plugins/BareosSdPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosSdWrapper.py
+lib/bareos/plugins/autoxflate-sd.so
+%%PYTHON%%lib/bareos/plugins/bareos-dir-class-plugin.py
+%%PYTHON%%lib/bareos/plugins/bareos-dir-nsca-sender.py
+%%PYTHON%%lib/bareos/plugins/bareos-sd-class-plugin.py
+%%PYTHON%%lib/bareos/plugins/python3-dir.so
+%%PYTHON%%lib/bareos/plugins/python3-sd.so
+%%SCSICRYPTO%%lib/bareos/plugins/scsicrypto-sd.so
+%%SCSICRYPTO%%lib/bareos/plugins/scsitapealert-sd.so
+lib/bareos/scripts/bareos-ctl-dir
+lib/bareos/scripts/bareos-ctl-sd
+lib/bareos/scripts/bareos-glusterfind-wrapper
+lib/bareos/scripts/create_bareos_database
+%%PGSQL%%lib/bareos/scripts/ddl/creates/postgresql.sql
+%%PGSQL%%lib/bareos/scripts/ddl/drops/postgresql.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/postgresql-change_owner.dbconfig-template.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/postgresql-readonly.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/postgresql.sql
+lib/bareos/scripts/ddl/updates/postgresql.10_11.sql
+lib/bareos/scripts/ddl/updates/postgresql.11_12.sql
+lib/bareos/scripts/ddl/updates/postgresql.12_14.sql
+lib/bareos/scripts/ddl/updates/postgresql.14_2001.sql
+lib/bareos/scripts/ddl/updates/postgresql.2001_2002.sql
+lib/bareos/scripts/ddl/updates/postgresql.2002_2003.sql
+lib/bareos/scripts/ddl/updates/postgresql.2003_2004.sql
+lib/bareos/scripts/ddl/updates/postgresql.2004_2171.sql
+lib/bareos/scripts/ddl/updates/postgresql.2171_2192.sql
+lib/bareos/scripts/ddl/updates/postgresql.2192_2210.sql
+lib/bareos/scripts/ddl/updates/postgresql.2210_2230.sql
+lib/bareos/scripts/ddl/updates/postgresql.2230_2240.sql
+lib/bareos/scripts/ddl/updates/postgresql.bee.1017_2004.sql
+lib/bareos/scripts/ddl/versions.map
+lib/bareos/scripts/delete_catalog_backup
+lib/bareos/scripts/disk-changer
+lib/bareos/scripts/drop_bareos_database
+lib/bareos/scripts/drop_bareos_tables
+lib/bareos/scripts/grant_bareos_privileges
+lib/bareos/scripts/make_bareos_tables
+lib/bareos/scripts/make_catalog_backup
+lib/bareos/scripts/mtx-changer
+lib/bareos/scripts/query.sql
+lib/bareos/scripts/s3cmd-wrapper.sh
+lib/bareos/scripts/update_bareos_tables
+%%NDMP%%lib/libbareosndmp.so
+%%NDMP%%lib/libbareosndmp.so.24
+%%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
+lib/libbareossd.so
+lib/libbareossd.so.24
+lib/libbareossd.so.%%LIB_VERSION%%
+lib/libbareossql.so
+lib/libbareossql.so.24
+lib/libbareossql.so.%%LIB_VERSION%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir%%PYTHON_TAG%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd%%PYTHON_TAG%%.so
+share/man/man1/bregex.1.gz
+share/man/man1/bwild.1.gz
+share/man/man8/bareos-dbcheck.8.gz
+share/man/man8/bareos-dir.8.gz
+share/man/man8/bareos-sd.8.gz
+share/man/man8/bareos.8.gz
+share/man/man8/bcopy.8.gz
+share/man/man8/bextract.8.gz
+share/man/man8/bls.8.gz
+share/man/man8/bpluginfo.8.gz
+share/man/man8/bscan.8.gz
+share/man/man8/bscrypto.8.gz
+share/man/man8/btape.8.gz
+sbin/bareos-dbcheck
+sbin/bareos-dir
+sbin/bareos-sd
+sbin/bcopy
+sbin/bdedupestimate
+sbin/bextract
+sbin/bls
+sbin/bpluginfo
+sbin/bregex
+sbin/bscan
+sbin/bscrypto
+sbin/bsmtp
+sbin/btape
+sbin/btestls
+sbin/bwild
+sbin/chio-bareos
+sbin/testfind
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/catalog
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/client
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/console
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/counter
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/director
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/fileset
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/job
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/jobdefs
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/messages
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/pool
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/profile
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/schedule
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/storage
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/user
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir-export/client
+@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/ndmp
+@dir(bareos,bareos,) %%BAREOS_DIR%%
+@dir(bareos,bareos,) %%BAREOS_DIR%%/storage
+@dir(bareos,bareos,) /var/log/bareos
+@dir(bareos,bareos,) /var/run/bareos

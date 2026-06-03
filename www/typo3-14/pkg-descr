@@ -1,0 +1,15 @@
+We support each TYPO3 sprint release until the next minor version is published.
+Once released in April 2026, the long-term support version of TYPO3 14 will
+receive bug fixes until December 2027, and we will provide security updates until
+June 2029.
+
+We encourage users and agencies to install and use the sprint releases until
+the LTS release is available. Further details about the releases and planned
+release dates are available in the roadmap.
+
+System requirements
+* PHP 8.2, 8.3, 8.4, 8.5
+* MariaDB 10.4.3+ / MySQL 8.0.17+ / PostgreSQL 10.0+ / SQLite 3.8.3+
+* Modern Browsers
+* Detailed list of requirements:
+  https://get.typo3.org/version/14#system-requirements

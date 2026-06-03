@@ -1,5 +1,6 @@
 PORTNAME=	albucore
 DISTVERSION=	0.0.24
+PORTREVISION=	2
 CATEGORIES=	graphics python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simsimd>=5.9.2:devel/py-simsimd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stringzilla>=3.10.4:devel/py-stringzilla@${PY_FLAVOR} \
 		opencv>0:graphics/opencv

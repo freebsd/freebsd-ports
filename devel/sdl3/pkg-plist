@@ -12,6 +12,7 @@ include/SDL3/SDL_close_code.h
 include/SDL3/SDL_copying.h
 include/SDL3/SDL_cpuinfo.h
 include/SDL3/SDL_dialog.h
+include/SDL3/SDL_dlopennote.h
 include/SDL3/SDL_egl.h
 include/SDL3/SDL_endian.h
 include/SDL3/SDL_error.h

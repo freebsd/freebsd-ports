@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2025-07-11 21:32:27 UTC
+--- CMakeLists.txt.orig	2026-02-04 22:33:13 UTC
 +++ CMakeLists.txt
-@@ -13,6 +13,9 @@ add_definitions (-DCMAKE -DVERSION=\"${VERSION}\")
+@@ -23,6 +23,9 @@ add_definitions (-DCMAKE -DVERSION=\"${VERSION}\")
  
  add_definitions (-DCMAKE -DVERSION=\"${VERSION}\")
  
 +include_directories("/usr/local/include")
 +link_directories("/usr/local/lib")
 +
- if (WIN32)
+ if(WIN32)
  	add_definitions("-D_CRT_SECURE_NO_WARNINGS")
  	add_definitions("-D_CRT_NONSTDC_NO_DEPRECATE")

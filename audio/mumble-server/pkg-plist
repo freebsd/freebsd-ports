@@ -1,8 +1,3 @@
 bin/mumble-server
-@group mumble-server
-@sample etc/mumble/mumble-server.ini.sample
-@group wheel
+@sample(,%%GROUPS%%,0640) etc/mumble/mumble-server.ini.sample
 share/man/man1/mumble-server.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/SECURITY.md
-%%PORTDOCS%%%%DOCSDIR%%/README.static.linux

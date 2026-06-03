@@ -1,6 +1,4 @@
 bin/greptime
-bin/nyc-taxi
-bin/sqlness-runner
 @sample %%ETCDIR%%/datanode.toml.sample
 @sample %%ETCDIR%%/frontend.toml.sample
 @sample %%ETCDIR%%/metasrv.toml.sample

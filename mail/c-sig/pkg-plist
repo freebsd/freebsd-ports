@@ -1,5 +1,4 @@
-%%EMACS_VERSION_SITE_LISPDIR%%/c-sig/c-sig.el
-%%EMACS_VERSION_SITE_LISPDIR%%/c-sig/c-sig.elc
+%%EMACS_SITE_LISPDIR%%/c-sig/c-sig.el
 %%DOCSDIR%%/c-sig-eng.faq
 %%DOCSDIR%%/c-sig-eng.man
 %%DOCSDIR%%/c-sig-jp.faq

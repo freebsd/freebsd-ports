@@ -1,14 +1,13 @@
 PORTNAME=	xstatic-jquery.quicksearch
-PORTVERSION=	2.0.3.2
-PORTREVISION=	2
+PORTVERSION=	2.0.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-JQuery.quicksearch-${PORTVERSION}
+DISTNAME=	xstatic_jquery_quicksearch-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JQuery.quicksearch (XStatic packaging standard)
-WWW=		https://plugins.jquery.com/jquery.quicksearch/ \
+COMMENT=	JQuery.quicksearch ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-jquery.quicksearch \
 		https://github.com/openstack/xstatic-jquery.quicksearch
 
 LICENSE=	MIT

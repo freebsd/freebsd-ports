@@ -1,5 +1,5 @@
 PORTNAME=	PHP_CodeCoverage
-PORTVERSION=	12.3.1
+PORTVERSION=	14.1.9
 CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}File_Iterator>=0:devel/pear-File_Iterator@${PHP_FLAVOR} \
-		${PEAR_PKGNAMEPREFIX}PHP_TokenStream>=01:devel/pear-PHP_TokenStream@${PHP_FLAVOR} \
+		${PEAR_PKGNAMEPREFIX}PHP_TokenStream>=0:devel/pear-PHP_TokenStream@${PHP_FLAVOR} \
 		${PEAR_PKGNAMEPREFIX}Text_Template>=0:textproc/pear-Text_Template@${PHP_FLAVOR}
 
 USES=		pear:env

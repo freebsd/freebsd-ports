@@ -208,6 +208,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Sony.pm
 %%SITE_PERL%%/Image/ExifTool/SonyIDC.pm
 %%SITE_PERL%%/Image/ExifTool/Stim.pm
+%%SITE_PERL%%/Image/ExifTool/TNEF.pm
 %%SITE_PERL%%/Image/ExifTool/TagInfoXML.pm
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
@@ -412,6 +413,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Sony.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::SonyIDC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Stim.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::TNEF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::TagInfoXML.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::TagLookup.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::TagNames.3.gz

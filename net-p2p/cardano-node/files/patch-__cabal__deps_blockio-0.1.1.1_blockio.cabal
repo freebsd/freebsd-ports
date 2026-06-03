@@ -1,0 +1,17 @@
+--- _cabal_deps/blockio-0.1.1.1/blockio.cabal.orig	2026-05-07 15:43:31 UTC
++++ _cabal_deps/blockio-0.1.1.1/blockio.cabal
+@@ -110,6 +110,14 @@ library
+       System.FS.BlockIO.Internal
+       System.FS.BlockIO.Internal.Fcntl
+ 
++  elif os(freebsd)
++    hs-source-dirs: src-linux
++    build-depends:  unix ^>=2.8.4
++    other-modules:
++      System.FS.BlockIO.Internal
++      System.FS.BlockIO.Internal.Fcntl
++    cpp-options: -DSERIALBLOCKIO
++
+   elif os(windows)
+     hs-source-dirs: src-windows
+     build-depends:  Win32 ^>=2.14

@@ -1,6 +1,6 @@
---- Local/sa-exim.c.orig	2020-02-19 03:04:43 UTC
-+++ Local/sa-exim.c
-@@ -29,10 +29,7 @@ http://lists.merlins.org/lists/listinfo/sa-exim
+--- Local/sa-exim.c.orig	2025-12-18 04:08:13.593344000 +0100
++++ Local/sa-exim.c	2025-12-18 04:10:17.527828000 +0100
+@@ -29,10 +29,7 @@
  #include "sa-exim.h"
  
  /* Exim includes */
@@ -12,7 +12,7 @@
  
  #ifdef DLOPEN_LOCAL_SCAN
  
-@@ -409,6 +406,11 @@ int parsemlheader(char *buffer, FILE *readfh, char *he
+@@ -409,6 +406,11 @@
  	    if (buffer[strlen(buffer)-1] == '\n')
  	    {
  		buffer[strlen(buffer)-1]=0;
@@ -24,7 +24,7 @@
  	    }
  	    if (SAEximDebug > 5)
  	    {
-@@ -515,6 +517,7 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -515,6 +517,7 @@
      int pid;
      int writefd[2];
      int readfd[2];
@@ -32,7 +32,18 @@
      int i;
      /* These are the only values that we want working after the longjmp 
       * The automatic ones can be clobbered, but we don't really care */
-@@ -550,8 +553,9 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -536,8 +539,8 @@
+     time_t beforescan;
+     time_t afterscan;
+     time_t afterwait;
+-    time_t scantime=0;
+-    time_t fulltime=0;
++    int scantime=0;
++    int fulltime=0;
+     struct stat stbuf;
+ 
+     uschar *expand;
+@@ -550,8 +553,9 @@
      static char *SAspamcpath=SPAMC_LOCATION;
      static char *SAsafemesgidchars=SAFEMESGIDCHARS
      static char *SAspamcSockPath=NULL;
@@ -44,7 +55,7 @@
      static char *SAEximRunCond="0";
      static char *SAEximRejCond="1";
      static int SAmaxbody=250*1024;
-@@ -602,6 +606,10 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -602,6 +606,10 @@
      /* Do not put a %s in there, or you'll segfault */
      static char *SAmsgerror="Temporary local error while processing message, please contact postmaster";
  
@@ -55,7 +66,7 @@
      /* New values we read from spamassassin */
      char *xspamstatus=NULL;
      char *xspamflag=NULL;
-@@ -712,6 +720,7 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -712,6 +720,7 @@
  	    M_CHECKFORSTR(SAspamcSockPath);
  	    M_CHECKFORSTR(SAspamcPort);
  	    M_CHECKFORSTR(SAspamcHost);
@@ -63,7 +74,7 @@
  	    M_CHECKFORSTR(SAEximRunCond);
  	    M_CHECKFORSTR(SAEximRejCond);
  	    M_CHECKFORVAR(SAmaxbody, "%d");
-@@ -914,6 +923,22 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -914,6 +923,22 @@
  	ret=dup2(readfd[1],2);
  	CHECKERR(ret,"dup2 stderr",__LINE__);
  
@@ -86,7 +97,7 @@
  	/* 
           * I could implement the spamc protocol and talk to spamd directly
           * instead of forking spamc, but considering the overhead spent
-@@ -924,17 +949,30 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -924,17 +949,30 @@
  	/* Ok, we cheat, spamc cares about how big the whole message is and
           * we only know about the body size, so I'll  give an extra 16K
           * to account for any headers that can accompany the message */
@@ -122,7 +133,7 @@
      }
  
      if (SAEximDebug > 8)
-@@ -1045,6 +1083,11 @@ int local_scan(volatile int fd, uschar **return_text)
+@@ -1045,6 +1083,11 @@
  	if (buffer[strlen(buffer)-1] == '\n')
  	{
  	    buffer[strlen(buffer)-1]=0;
@@ -134,7 +145,21 @@
  	}
  restart:
  	if (SAEximDebug > 5)
-@@ -1218,7 +1261,7 @@ restart:
+@@ -1154,7 +1197,7 @@
+ 	{
+ 	    if (SAEximDebug > 5)
+ 	    {
+-		log_write(0, LOG_MAIN, "SA: Debug6: spamc read got newline, end of headers", buffer);
++		log_write(0, LOG_MAIN, "SA: Debug6: spamc read got newline, end of headers");
+ 	    }
+ 	    goto exit;
+ 	}
+@@ -1214,11 +1257,11 @@
+ 	{
+ 	    if (SAEximDebug > 8)
+ 	    {
+-		log_write(0, LOG_MAIN, "SA: Debug9: Read body from SA; line %d (read %d)", line, strlen(buffer));
++		log_write(0, LOG_MAIN, "SA: Debug9: Read body from SA; line %d (read %zd)", line, strlen(buffer));
  	    }
  
  	    stret=write(fd, buffer, strlen(buffer));
@@ -143,7 +168,7 @@
  	    if (SAEximDebug > 8)
  	    {
  		log_write(0, LOG_MAIN, "SA: Debug9: Wrote to msg; line %d (wrote %d)", line, ret);
-@@ -1229,18 +1272,20 @@ restart:
+@@ -1229,18 +1272,20 @@
  	    }
  	}
  
@@ -165,7 +190,7 @@
      }
  
      fclose((FILE *)readfh);
-@@ -1331,6 +1376,9 @@ restart:
+@@ -1331,6 +1376,9 @@
  	
  	if (dorej && doteergrube)
  	{
@@ -175,7 +200,7 @@
  	    /* By default, we'll only save temp bounces by message ID so
  	     * that when the same message is submitted several times, we
  	     * overwrite the same file on disk and not create a brand new
-@@ -1353,20 +1401,8 @@ restart:
+@@ -1353,20 +1401,8 @@
  
  	    for (i=0;i<SAteergrubetime/10;i++)
  	    {
@@ -194,7 +219,7 @@
 -		fprintf(smtp_out, str);
 -		ret=fflush(smtp_out);
 +		smtp_printf("451-%s\r\n", FALSE, teergrubewaitstr);
-+		ret=smtp_fflush();
++		ret=smtp_fflush(TRUE);
  		if (ret != 0)
  		{
  		    log_write(0, LOG_MAIN | LOG_REJECT, "SA: Action: teergrubed sender for %d secs until it closed the connection: %s (scanned in %d/%d secs | Message-Id: %s). %s", i*10, spamstatus, scantime, fulltime, safemesgid, mailinfo);

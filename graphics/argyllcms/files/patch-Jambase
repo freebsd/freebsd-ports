@@ -1,15 +1,6 @@
---- Jambase.orig	2016-09-28 02:58:53 UTC
+--- Jambase
 +++ Jambase
-@@ -966,7 +966,7 @@ else if $(UNIX)
- 	YACCFILES		?= y.tab ;
- 	YACCFLAGS		?= -d ;
- 
--	HDRS			?= /usr/local/include ;
-+	HDRS			?= $(LOCALBASE)/include ;
- 
- 	# Add some good defaults for OS X
- 	if $(OS) = MACOSX {
-@@ -999,7 +999,11 @@ else if $(UNIX)
+@@ -1038,7 +1038,11 @@ else if $(UNIX)
  # General defaults; a lot like UNIX
  #
  

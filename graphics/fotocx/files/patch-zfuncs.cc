@@ -1,6 +1,6 @@
---- zfuncs.cc.orig	2024-07-01 07:25:41 UTC
+--- zfuncs.cc.orig	2026-01-08 11:29:58 UTC
 +++ zfuncs.cc
-@@ -559,6 +559,7 @@ int zmalloc_test(int64 cc)
+@@ -495,6 +495,7 @@ int zmalloc_test(int64 cc)
  
  double realmemory()
  {
@@ -8,7 +8,7 @@
     FILE     *fid;
     ch       buff[100], *pp;
     double   rmem = 0;
-@@ -577,15 +578,45 @@ double realmemory()
+@@ -513,15 +514,45 @@ double realmemory()
     }
  
     fclose(fid);
@@ -54,7 +54,7 @@
     FILE     *fid;
     ch       buff[100], *pp;
     double   avmem = 0;
-@@ -610,6 +641,11 @@ double availmemory()
+@@ -546,6 +577,11 @@ double availmemory()
     }
  
     fclose(fid);
@@ -66,44 +66,33 @@
     return avmem;
  }
  
-@@ -749,7 +785,7 @@ void zappcrash(ch *format, ... )
+@@ -798,7 +834,7 @@ void zappcrash(ch *format, ... )
  
-    uname(&unbuff);                                                               //  get cpu arch. 32/64 bit
+    uname(&unbuff);                                                                     //  get cpu arch. 32/64 bit
     arch = unbuff.machine;
--   fid1 = popen("lsb_release -d","r");                                           //  get Linux flavor and release
+-   fid1 = popen("lsb_release -d","r");                                                 //  get Linux flavor and release
 +   fid1 = popen("uname -nv","r");
     if (fid1) {
        ii = fscanf(fid1,"%s %s %s",OS1,OS2,OS3);
        pclose(fid1);
-@@ -1062,7 +1098,7 @@ double get_seconds()
-    timespec    time1;
-    double      secs;
+@@ -1054,13 +1090,13 @@ double get_seconds(int init)
+    static double  secs1 = 0, secs2, secs3;
  
--   clock_gettime(CLOCK_MONOTONIC_RAW,&time1);
-+   clock_gettime(CLOCK_MONOTONIC,&time1);
-    secs = time1.tv_sec;
-    secs += time1.tv_nsec * 0.000000001;
-    return secs;
-@@ -1111,7 +1147,7 @@ void logtime_init(ch *text)
-    using namespace logtime_names;
- 
-    printf("logtime init: %s\n",text);
--   clock_gettime(CLOCK_MONOTONIC_RAW,&time1);
-+   clock_gettime(CLOCK_MONOTONIC,&time1);
-    return;
- }
- 
-@@ -1119,7 +1155,7 @@ void logtime(ch *text)
- {
-    using namespace logtime_names;
- 
--   clock_gettime(CLOCK_MONOTONIC_RAW,&time2);
-+   clock_gettime(CLOCK_MONOTONIC,&time2);
-    elapsed = time2.tv_sec - time1.tv_sec;
-    elapsed += 0.000000001 * (time2.tv_nsec - time1.tv_nsec);
-    time1 = time2;
-@@ -1808,6 +1844,10 @@ int wait_Jthread(pthread_t tid)
-    return 0;
+    if (init == 0) {
+-      clock_gettime(CLOCK_MONOTONIC_RAW,&time1);
++      clock_gettime(CLOCK_MONOTONIC,&time1);
+       secs1 = time1.tv_sec;
+       secs1 += time1.tv_nsec * 0.000000001;
+       return secs1;
+    }
+    else {
+-      clock_gettime(CLOCK_MONOTONIC_RAW,&time1);
++      clock_gettime(CLOCK_MONOTONIC,&time1);
+       secs2 = time1.tv_sec;
+       secs2 += time1.tv_nsec * 0.000000001;
+       secs3 = secs2 - secs1;
+@@ -2015,6 +2051,10 @@ nextrec:
+    return pp3;                                                                         //  return logical record, null terminated
  }
  
 +int get_nprocs()
@@ -111,28 +100,9 @@
 +   return sysconf(_SC_NPROCESSORS_ONLN);
 +}
  
- /********************************************************************************/
+ /**************************************************************************************/
  
-@@ -1858,7 +1898,7 @@ void set_cpu_affinity(int cpu)
- {
-    int         err;
-    static int  ftf = 1, Nsmp;
--   cpu_set_t   cpuset;
-+   cpuset_t    cpuset;
- 
-    if (ftf) {                                                                    //  first call
-       ftf = 0;
-@@ -1869,7 +1909,8 @@ void set_cpu_affinity(int cpu)
- 
-    CPU_ZERO(&cpuset);
-    CPU_SET(cpu,&cpuset);
--   err = sched_setaffinity(0,sizeof(cpuset),&cpuset);
-+   err = cpuset_setaffinity(CPU_LEVEL_WHICH,CPU_WHICH_PID,0,
-+      sizeof(cpuset),&cpuset);
-    if (err) Plog(2,"set_cpu_affinity() %s \n",strerror(errno));
-    return;
- }
-@@ -2182,7 +2223,7 @@ uint diskspace(ch *file)
+@@ -2209,7 +2249,7 @@ uint diskspace(ch *file)
     FILE     *fid;
  
     pp = zescape_quotes(file);
@@ -141,34 +111,34 @@
     zfree(pp);
  
     fid = popen(command,"r");
-@@ -4050,14 +4091,18 @@ ch * SearchWildCase(ch *wpath, int &uflag)
+@@ -4077,14 +4117,18 @@ ch * SearchWildCase(ch *wpath, int &uflag)
     flist and flist[*] are subjects for zfree().
  
     zfind() works for files containing quotes (")
 -   dotfiles (/. and /..) are not included
 +   dotfiles (/. and /..) are not included, if possible
  
- *********************************************************************************/
+ ***************************************************************************************/
  
  int zfind(ch *pattern, ch **&flist, int &NF)
  {
-    ch       **zfind_filelist = 0;                                                //  list of filespecs returned
+    ch       **zfind_filelist = 0;                                                      //  list of filespecs returned
 +#ifdef GLOB_PERIOD
-    int      globflags = GLOB_PERIOD;                                             //  include dotfiles
+    int      globflags = GLOB_PERIOD;                                                   //  include dotfiles
 +#else
 +   int      globflags = 0;
 +#endif
     int      ii, jj, err, cc;
     glob_t   globdata;
     ch       *pp;
-@@ -6028,9 +6073,16 @@ int zinitapp(ch *appvers, int argc, ch *argv[])       
-    if (argc > 1 && strmatchV(argv[1],"-ver","-v",0)) exit(0);                    //  exit if nothing else wanted
+@@ -6114,9 +6158,16 @@ int zinitapp(ch *appvers, int argc, ch *argv[])       
+    if (argc > 1 && strmatchV(argv[1],"-ver","-v",null)) exit(0);                       //  exit if nothing else wanted
  
     progexe = 0;
 +#if defined(__linux__)
-    cc = readlink("/proc/self/exe",buff,300);                                     //  get my executable program path
+    cc = readlink("/proc/self/exe",buff,300);                                           //  get my executable program path
     if (cc <= 0) zexit(1,"readlink() /proc/self/exe) failed");
-    buff[cc] = 0;                                                                 //  readlink() quirk
+    buff[cc] = 0;                                                                       //  readlink() quirk
 +#elif defined(__FreeBSD__)
 +   const int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
 +   size_t len = sizeof(buff);
@@ -177,4 +147,4 @@
 +#endif
     progexe = zstrdup(buff,"zinitapp");
  
-    Plog(1,"program exe: %s \n",progexe);                                         //  executable path
+    printf("program exe: %s \n",progexe);                                               //  executable path

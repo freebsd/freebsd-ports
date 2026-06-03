@@ -2,7 +2,7 @@
 
 # PROVIDE: mdnsresponderposix
 # REQUIRE: DAEMON
-# KEYWORD: shutdown
+# KEYWORD: resume shutdown
 
 . /etc/rc.subr
 
@@ -16,5 +16,11 @@ load_rc_config $name
 
 command="%%PREFIX%%/bin/mDNSResponderPosix"
 command_args="-b -P ${mdnsresponderposix_pidfile}"
+extra_commands="resume"
+resume_cmd="mdnsresponderposix_resume"
+
+mdnsresponderposix_resume() {
+	run_rc_command restart
+}
 
 run_rc_command $*

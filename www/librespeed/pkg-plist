@@ -5,6 +5,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-chart.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-customSettings.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-gauges.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-modern.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-pretty.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-progressBar.html
 @owner %%LIBRESPEED_USERNAME%%
@@ -30,7 +31,9 @@
 %%WWWDIR%%/results/telemetry_mysql.sql
 %%WWWDIR%%/results/telemetry_postgresql.sql
 @sample %%WWWDIR%%/results/telemetry_settings.php.sample
+%%WWWDIR%%/design-switch.js
 %%WWWDIR%%/favicon.ico
 @sample %%WWWDIR%%/index.html.sample
+%%WWWDIR%%/playwright.config.js
 %%WWWDIR%%/speedtest.js
 %%WWWDIR%%/speedtest_worker.js

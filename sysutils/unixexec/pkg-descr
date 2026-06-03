@@ -1,0 +1,4 @@
+unixexec attaches the stdin/stdout of a command to a Unix socket:
+
+* immediately exec(3)'s the command: the data is not proxied via another process
+* does not multiplex access to a socket

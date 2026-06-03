@@ -1,14 +1,9 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.1.26
+PORTVERSION=	1.1.32
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
-
-#PATCH_SITES+=	https://github.com/doublecmd/doublecmd/commit/
-#PATCHFILES+=	11f8742da2464570b588865fffe6090107a7f543.patch:-p1
-#PATCHFILES+=	e38813f8d5a1c0ea9696a9b8c4f5580b17681627.patch:-p1
-#PATCHFILES+=	68d1c6e4e1dc0dd16755ee6209bf21bdf95c7690.patch:-p1
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Total Commander like file manager for the X Window System
@@ -16,7 +11,7 @@ WWW=		https://doublecmd.sourceforge.io
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386 amd64 aarch64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
@@ -31,7 +26,7 @@ USE_GNOME=	cairo glib20
 USE_XORG=	x11
 USE_BINUTILS=	yes
 
-DCHELP=		1.1.26
+DCHELP=		1.1.30
 
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk \
 			components/multithreadprocs/multithreadprocslaz.lpk \
@@ -334,7 +329,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wlx/WlxMplayer/lib/wlxmplayer.wlx ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wlx/WlxMplayer/wlxmplayer.wlx ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
 .endif
 
 .if ${PORT_OPTIONS:MDSX_LOCATE}

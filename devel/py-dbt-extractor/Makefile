@@ -1,6 +1,6 @@
 PORTNAME=	dbt-extractor
-PORTVERSION=	0.5.1
-PORTREVISION=	15
+DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,8 @@ WWW=		https://github.com/dbt-labs/dbt-extractor/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	maturin:devel/py-maturin@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tree-sitter>0:devel/py-tree-sitter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tree-sitter>0:devel/py-tree-sitter@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517

@@ -1,16 +1,15 @@
 PORTNAME=	libXdamage
-PORTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Damage extension library
-WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libxdamage
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.xz
-USES=		xorg xorg-cat:lib
+USES=		tar:xz xorg xorg-cat:lib
 USE_XORG=	x11 xfixes xorgproto
 
 INSTALL_TARGET=	install-strip

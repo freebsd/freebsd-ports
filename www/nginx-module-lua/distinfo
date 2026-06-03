@@ -1,0 +1,7 @@
+TIMESTAMP = 1779806506
+SHA256 (nginx-1.30.2.tar.gz) = 7df3090907fca3cc0e456d6dc00ceb230da74ea88026ceff0affc29dbbd9ac4c
+SIZE (nginx-1.30.2.tar.gz) = 1325247
+SHA256 (openresty-lua-nginx-module-v0.10.29_GH0.tar.gz) = ca2c2122b909529bf9d1a89e9a5763835a2bd2629def8cb279c550f638f0a78f
+SIZE (openresty-lua-nginx-module-v0.10.29_GH0.tar.gz) = 892502
+SHA256 (vision5-ngx_devel_kit-v0.3.4_GH0.tar.gz) = 14a28063294f645d457b1eb10e3c23bbba44398f1c5f021421b58b6f8ab31662
+SIZE (vision5-ngx_devel_kit-v0.3.4_GH0.tar.gz) = 66474

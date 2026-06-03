@@ -1,6 +1,6 @@
---- cjeca32/Debug.cpp.orig	2024-10-06 15:03:41 UTC
+--- cjeca32/Debug.cpp.orig	2026-04-18 11:08:45 UTC
 +++ cjeca32/Debug.cpp
-@@ -141,7 +141,7 @@ CDebug Debug(0xffffffff);
+@@ -165,7 +165,7 @@ CDebug Debug(0xffffffff);
  
  
  

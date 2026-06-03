@@ -1,5 +1,5 @@
-TIMESTAMP = 1750495895
-SHA256 (go/www_shiori/shiori-v1.7.4/v1.7.4.mod) = 247336cc5dfbdf0bf093b310f9e1ff920eaa47e8a1abca571d3f5f536be826c9
-SIZE (go/www_shiori/shiori-v1.7.4/v1.7.4.mod) = 6740
-SHA256 (go/www_shiori/shiori-v1.7.4/v1.7.4.zip) = 5de0eff8f67d7455f83b7ea2d724adb77e43c5c5838d19539f86953aacd11eab
-SIZE (go/www_shiori/shiori-v1.7.4/v1.7.4.zip) = 7037128
+TIMESTAMP = 1759157679
+SHA256 (go/www_shiori/shiori-v1.8.0/v1.8.0.mod) = c8c339be9767273ddd70925d5851ab261860e687b391fa818ba1e938d0f1e537
+SIZE (go/www_shiori/shiori-v1.8.0/v1.8.0.mod) = 5994
+SHA256 (go/www_shiori/shiori-v1.8.0/v1.8.0.zip) = 39e2afc1b41fc16ef6262387ec1ba9e6e4f6bc8b1deda62cf214b5b15a476803
+SIZE (go/www_shiori/shiori-v1.8.0/v1.8.0.zip) = 7595665

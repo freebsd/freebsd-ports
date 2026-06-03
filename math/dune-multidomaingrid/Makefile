@@ -1,6 +1,5 @@
 PORTNAME=	dune-multidomaingrid
-DISTVERSION=	2.8.0
-PORTREVISION=	1
+DISTVERSION=	2.10.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_TAGNAME=	d31fd53d5a3d90348f8b33364011f3afb047c394
+GL_TAGNAME=	70ebbf54d6d608b6ad6e4949af3ff13f7e1c23ac
 
 NO_ARCH=	yes
 
@@ -29,9 +28,12 @@ OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
 
 DOCS_CMAKE_BOOL=	FREEBSD_INSTALL_DOCS
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 PORTDOCS=	*
+
+CMAKE_OFF=	DUNE_ENABLE_PYTHONBINDINGS
+
+PLIST_SUB+=	DUNE_MULTIDOMAINGRID_CMAKE_HASH=9a43d6b0cce18104cd3067dbdddf2b1c
 
 .include <bsd.port.mk>

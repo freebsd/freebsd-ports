@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	2026-01-24 11:40:24 UTC
++++ po/Makefile.in.in
+@@ -42,7 +42,7 @@ MKDIR_P = @MKDIR_P@
+ mkinstalldirs = $(SHELL) @install_sh@ -d
+ install_sh = $(SHELL) @install_sh@
+ MKDIR_P = @MKDIR_P@
+-mkdir_p = @mkdir_p@
++mkdir_p = @MKDIR_P@
+ 
+ # When building gettext-tools, we prefer to use the built programs
+ # rather than installed programs.  However, we can't do that when we

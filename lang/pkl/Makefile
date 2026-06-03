@@ -1,5 +1,6 @@
 PORTNAME=	pkl
 DISTVERSION=	0.26.0
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/apple/pkl/releases/download/${PORTVERSION}/
 DISTNAME=	jpkl

@@ -50,6 +50,6 @@ icingadb_precmd()
 
 }
 
-command_args="$icingadb_daemonflags -P $pidfile -t ${name} -T ${name} %%PREFIX%%/bin/$name -c %%PREFIX%%/etc/icingadb/config.yml"
+command_args="$icingadb_daemonflags -H -P $pidfile -t ${name} -T ${name} %%PREFIX%%/bin/$name -c %%PREFIX%%/etc/icingadb/config.yml"
 
 run_rc_command "$1"

@@ -1,0 +1,14 @@
+- enable PIC for erfa static library (required when linking into a shared library)
+
+--- src/detail/erfa/CMakeLists.txt.orig	2026-03-20 00:58:15 UTC
++++ src/detail/erfa/CMakeLists.txt
+@@ -254,6 +254,9 @@
+ 
+ add_library(heyoka_erfa STATIC "${HEYOKA_ERFA_SRC_FILES}")
+ 
++# Required when linking into a shared library.
++set_property(TARGET heyoka_erfa PROPERTY POSITION_INDEPENDENT_CODE ON)
++
+ # Compile in C99 mode.
+ target_compile_features(heyoka_erfa PRIVATE c_std_99)
+ # Enforce vanilla C.

@@ -1,5 +1,5 @@
 PORTNAME=	wmenu
-DISTVERSION=	0.1.9
+DISTVERSION=	0.2.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/adnano/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -17,14 +17,6 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo pango
-
-# XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
-# https://cgit.freebsd.org/src/commit/?id=af93fea71038
-.if !exists(/usr/include/sys/timerfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-CPPFLAGS+=	`pkg-config --cflags epoll-shim`
-LDFLAGS+=	`pkg-config --libs epoll-shim`
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

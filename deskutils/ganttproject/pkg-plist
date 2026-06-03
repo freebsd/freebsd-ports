@@ -3,7 +3,7 @@ share/applications/ganttproject.desktop
 %%DATADIR%%/HouseBuildingSample.gan
 %%DATADIR%%/LICENSE
 %%DATADIR%%/eclipsito.jar
-@(,,2755) %%DATADIR%%/ganttproject
+@(,,0755) %%DATADIR%%/ganttproject
 %%DATADIR%%/ganttproject.bak
 %%DATADIR%%/ganttproject.l4j.ini
 %%DATADIR%%/lib/javagalician.jar

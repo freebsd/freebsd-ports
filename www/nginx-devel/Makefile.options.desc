@@ -87,6 +87,7 @@ MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 MEMC_DESC=			3rd party memc (memcached) module
 MODSECURITY3_DESC=		3rd party modsecurity3 module
+NATS_DESC=			3rd party nats module
 NAXSI_DESC=			3rd party naxsi module
 NJS_DESC=			Enable javascript (NJS) module
 OTEL_DESC=			Enable OpenTELemetry module

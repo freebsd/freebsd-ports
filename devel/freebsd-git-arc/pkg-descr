@@ -1,0 +1,4 @@
+The git-arc script is a git plugin for arc, the Phabricator command-line
+tool, that simplifies the creation and management of FreeBSD Phabricator
+reviews.  It was created for src development, but also works for doc and
+ports.

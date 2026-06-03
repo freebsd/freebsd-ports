@@ -1,0 +1,4 @@
+A minimal CLI that signs arbitrary HTTP requests with AWS Signature Version 4
+and sends them via ureq.
+Aimed at one-off inspection, scripting, and debugging of S3-compatible APIs —
+not a replacement for the AWS CLI or any SDK.

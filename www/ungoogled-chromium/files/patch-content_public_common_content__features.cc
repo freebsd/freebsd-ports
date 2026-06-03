@@ -1,27 +1,37 @@
---- content/public/common/content_features.cc.orig	2025-05-31 17:16:41 UTC
+--- content/public/common/content_features.cc.orig	2026-05-20 20:50:29 UTC
 +++ content/public/common/content_features.cc
-@@ -80,7 +80,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup,
+@@ -140,7 +140,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup, base::FEATU
+ 
  // Runs the audio service in a separate process.
  BASE_FEATURE(kAudioServiceOutOfProcess,
-              "AudioServiceOutOfProcess",
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1275,9 +1275,9 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -150,7 +150,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
+ // Enables the audio-service sandbox. This feature has an effect only when the
+ // kAudioServiceOutOfProcess feature is enabled.
+ BASE_FEATURE(kAudioServiceSandbox,
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -1159,10 +1159,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
+ 
+ // Enable WebAssembly trap handler.
  BASE_FEATURE(kWebAssemblyTrapHandler,
-              "WebAssemblyTrapHandler",
- #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
--      BUILDFLAG(IS_MAC)) &&                                                  \
-+      BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)) &&                             \
+-#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
++#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
+       BUILDFLAG(IS_MAC)) &&                                                  \
       defined(ARCH_CPU_X86_64)) ||                                            \
 -    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)) && \
-+    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)) && \
++    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)) && \
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1334,7 +1334,11 @@ BASE_FEATURE(kWebUIJSErrorReportingExtended,
+@@ -1223,7 +1223,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -31,5 +41,5 @@
  BASE_FEATURE(kWebUsb, "WebUSB", base::FEATURE_ENABLED_BY_DEFAULT);
 +#endif
  
- // Controls whether the WebXR Device API is enabled.
- BASE_FEATURE(kWebXr, "WebXR", base::FEATURE_ENABLED_BY_DEFAULT);
+ // Apply `PrefetchPriority::kHighest` for Webview Prefetch API.
+ BASE_FEATURE(kWebViewPrefetchHighestPrefetchPriority,

@@ -1,5 +1,6 @@
 PORTNAME=	trove4j
 PORTVERSION=	3.1a1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	https://bitbucket.org/${PORTNAME}/trove/downloads/
 DISTNAME=	trove-${PORTVERSION}

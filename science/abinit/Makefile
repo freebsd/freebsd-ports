@@ -1,5 +1,5 @@
 PORTNAME=	abinit
-DISTVERSION=	10.4.5
+DISTVERSION=	10.8.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	gm4:devel/m4	\
-		${PYNUMPY}	\
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphviz>0:graphics/py-graphviz@${PY_FLAVOR}
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libelpa.so:math/elpa		\
 		libsz.so:science/libaec		\
 		libxc.so:science/libxc		\
 		libfftw3.so:math/fftw3		\
+		libfftw3f.so:math/fftw3-float   \
 		libhdf5.so:science/hdf5		\
 		libnetcdf.so:science/netcdf	\
 		libxmlf90.so:textproc/xmlf90	\
@@ -28,7 +29,7 @@ LIB_DEPENDS=	libelpa.so:math/elpa		\
 		libnetcdff.so:science/netcdf-fortran
 RUN_DEPENDS=	atompaw:science/atompaw
 TEST_DEPENDS=	bash:shells/bash \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		libyaml>0:textproc/libyaml
 
 USES=		autoreconf:build blaslapack:netlib fortran gmake gnome localbase:ldflags	\
@@ -53,7 +54,8 @@ TEST_TARGET=	tests_abirules tests_buildsys # Many tests print RuntimeError, http
 TEST_WRKSRC=	${WRKSRC}/abichecks
 PORTDOCS=	*
 
-BINARY_ALIAS=	git=false
+BINARY_ALIAS=	git=false \
+		gfortran=gfortran${GCC_DEFAULT} # for tests
 
 OPTIONS_DEFINE=			DOCS OPENMP
 OPTIONS_DEFAULT=		MPICH

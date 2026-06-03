@@ -1,0 +1,8 @@
+This is a simple HTTP server for serving static files.  It is suitable
+as a lightweight replacement for full-fledged HTTP servers on sites
+where only sporadic serving of static data is needed.
+
+One of such use cases is deployment of Let's Encrypt certificates on a
+server that runs only proxy software, such as Pound or HAProxy.  In this
+case using e.g. Apache or even Lighttpd just to serve Let's Encrypt
+challenge requests arriving once every 90 days is clearly an overkill.

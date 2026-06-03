@@ -1,0 +1,13 @@
+-- Mark proxygen_hq_devious_baton as EXCLUDE_FROM_MONOLITH so it builds as its
+-- own shared library (libproxygen_hq_devious_baton.so).
+-- Same root cause as patch-proxygen_httpserver_CMakeLists.txt.
+--- proxygen/httpserver/samples/hq/devious/CMakeLists.txt.orig	2026-05-12 20:06:06 UTC
++++ proxygen/httpserver/samples/hq/devious/CMakeLists.txt
+@@ -5,6 +5,7 @@ proxygen_add_library(proxygen_hq_devious_baton
+ # LICENSE file in the root directory of this source tree.
+ 
+ proxygen_add_library(proxygen_hq_devious_baton
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     DeviousBaton.cpp
+   DEPS

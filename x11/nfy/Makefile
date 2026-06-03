@@ -1,11 +1,11 @@
 PORTNAME=	nfy
-DISTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.margiolis.net/${PORTNAME}/
 
 MAINTAINER=	christos@freebsd.org
 COMMENT=	Minimal and daemonless notification program for X
-WWW=		https://margiolis.net/w/nfy/
+WWW=		https://margiolis.net/notes/nfy/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

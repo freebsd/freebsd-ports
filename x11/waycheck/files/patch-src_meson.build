@@ -1,0 +1,10 @@
+--- src/meson.build.orig	2025-08-27 20:18:18 UTC
++++ src/meson.build
+@@ -15,6 +15,6 @@ waycheck = executable(
+ waycheck = executable(
+     'waycheck',
+     sources: waycheck_sources,
+-    dependencies: [dep_qt6, dep_wayland_client],
++    dependencies: [dep_qt6, dep_wayland_client, dep_libutil],
+     install: true,
+ )

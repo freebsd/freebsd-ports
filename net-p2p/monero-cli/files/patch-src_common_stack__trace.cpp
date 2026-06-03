@@ -1,6 +1,6 @@
---- src/common/stack_trace.cpp.orig	2019-11-04 14:13:39 UTC
+--- src/common/stack_trace.cpp.orig	2025-10-07 19:25:41 UTC
 +++ src/common/stack_trace.cpp
-@@ -26,13 +26,14 @@
+@@ -26,7 +26,7 @@
  // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
  // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
@@ -9,10 +9,3 @@
  #define USE_UNWIND
  #else
  #define ELPP_FEATURE_CRASH_LOG 1
- #endif
- #include "easylogging++/easylogging++.h"
- 
-+#include <iomanip>
- #include <stdexcept>
- #ifdef USE_UNWIND
- #define UNW_LOCAL_ONLY

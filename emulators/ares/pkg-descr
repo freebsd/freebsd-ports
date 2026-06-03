@@ -3,14 +3,15 @@ preservation. It is a descendant of the emulators higan and bsnes. It's source
 code is structured to be maximally readable and self-documenting.
 
 ares supports the following systems: Arcade, WonderSwan, WonderSwan Color,
-Pocket Challenge V2, ColecoVision, PC-Engine / TurboGrafx, SuperGrafx, My
-Vision, NES / Famicom, Famicom Disk System, SNES / Super Famicom, Satellaview,
-Sufami Turbo, Nintendo 64, Nintendo 64DD, Game Boy, Game Boy Color, Game Boy
-Advance, SG-1000, Master System / Mark III, Mega Drive / Genesis, Mega CD, 32X,
-Game Gear, Neo Geo Pocket, Neo Geo Pocket Color
+Pocket Challenge V2, ColecoVision, PC-Engine / TurboGrafx, PC-Engine SuperGrafx,
+My Vision, NES / Famicom, Famicom Disk System, Game Boy, SNES / Super Famicom,
+Satellaview, Nintendo 64, SuFami Turbo, Game Boy Color, Nintendo 64DD, Game Boy
+Advance, SG-1000, Master System / Mark III, Mega Drive / Genesis, Game Gear,
+Mega CD, 32X, Neo Geo Pocket, Neo Geo Pocket Color
 
 ares has experimental support for the following systems: Atari 2600, MSX, MSX2,
-PC-Engine CD / TurboGrafx CD, ZX Spectrum, Neo Geo (AES/MVS), PlayStation
+PC-Engine CD / TurboGrafx CD, LaserActive, ZX Spectrum, Neo Geo (AES/MVS),
+PlayStation
 
 ares has all the features one would expect from a great emulator system: native
 multi-platform UI, dynamic rate control, save states, run-ahead, rewind and

@@ -1,10 +1,10 @@
 PORTNAME=	wmconfig
-PORTVERSION=	1.5.2
+DISTVERSION=	1.5.2
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://www.arrishq.net/files/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
 WWW=		https://www.arrishq.net/
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 

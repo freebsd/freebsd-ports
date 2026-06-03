@@ -1,0 +1,10 @@
+The exams2forms provides several building blocks for embedding exercises
+written with the R package exams (also known as R/exams) in interactive
+documents or quizzes written with rmarkdown or quarto.
+
+All R/exams exercise types are supported:
+* Single-choice (schoice).
+* Multiple-choice (mchoice).
+* Numeric (num).
+* Text (string).
+* Cloze combining all of the previous elements (cloze).

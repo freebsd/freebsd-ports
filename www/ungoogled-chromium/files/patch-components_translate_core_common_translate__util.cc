@@ -1,11 +1,11 @@
---- components/translate/core/common/translate_util.cc.orig	2023-09-17 07:59:53 UTC
+--- components/translate/core/common/translate_util.cc.orig	2026-03-15 18:32:51 UTC
 +++ components/translate/core/common/translate_util.cc
-@@ -21,7 +21,7 @@ const char kSecurityOrigin[] = "trk:220:https://transl
- BASE_FEATURE(kTFLiteLanguageDetectionEnabled,
-              "TFLiteLanguageDetectionEnabled",
+@@ -44,7 +44,7 @@ bool IsTFLiteLanguageDetectionEnabled() {
+ // The feature is explicitly disabled on WebView.
+ // TODO(crbug.com/40819484): Enable the feature on WebView.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT
+   return true;
  #else
-              base::FEATURE_DISABLED_BY_DEFAULT
+   return false;

@@ -1,5 +1,5 @@
 PORTNAME=	Reddit-Client
-PORTVERSION=	1.389
+PORTVERSION=	1.395
 PORTEPOCH=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -11,6 +11,8 @@ WWW=		https://metacpan.org/pod/Reddit::Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+PORTSCOUT=	limit:^[0-9]\.[0-9]{3}$$
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \

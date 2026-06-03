@@ -14,7 +14,7 @@ EOM
 { type: upgrade
   message: <<EOM
 If you're upgrading from a previous release of synapse, please read the upgrade
-instructions at %%DOCSDIR%%/UPGRADE.rst
+instructions at %%DOCSDIR%%/upgrade.md
 EOM
 }
 { type: upgrade

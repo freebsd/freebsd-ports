@@ -1,5 +1,6 @@
 PORTNAME=	gnubg
 PORTVERSION=	1.08.003
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNU
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
@@ -37,6 +38,12 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
+
+ICON_THEMES+=	gnubg
+DESKTOP_ENTRIES="GNU Backgammon" "A Backgammon application" \
+		"${DATADIR}/pixmaps/gnubg-big.png" \
+		"gnubg" "Application;Game;BoardGame;" \
+		false
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls

@@ -67,6 +67,8 @@ bin/kmk_time
 %%DATADIR%%/sdks/MACOSX133INCS.kmk
 %%DATADIR%%/sdks/MACOSX140.kmk
 %%DATADIR%%/sdks/MACOSX140INCS.kmk
+%%DATADIR%%/sdks/MACOSX145.kmk
+%%DATADIR%%/sdks/MACOSX145INCS.kmk
 %%DATADIR%%/sdks/MACOSX150.kmk
 %%DATADIR%%/sdks/MACOSX150INCS.kmk
 %%DATADIR%%/sdks/NT4DDK.kmk

@@ -1,18 +1,15 @@
 PORTNAME=	clamtk
-PORTVERSION=	6.18
-DISTVERSIONPREFIX=v
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	6.19
 CATEGORIES=	security
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	tmp386@live.com
 COMMENT=	GTK front-end for Clam Antivirus
-WWW=		https://dave-theunsub.github.io/clamtk/
+WWW=		https://github.com/piposeimandi/clamtk/ \
+		https://gitlab.com/dave_m/clamtk/-/wikis/home/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-
-DEPRECATED=	Maintainer has retired
-EXPIRATION_DATE=2025-12-30
 
 RUN_DEPENDS=	p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Text-CSV>=0:textproc/p5-Text-CSV \
@@ -24,16 +21,14 @@ RUN_DEPENDS=	p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		gnome-icon-theme>=0:misc/gnome-icon-theme \
 		icons-tango>0:x11-themes/icons-tango
 
-NO_BUILD=	yes
 USES=		gettext-runtime:run perl5 shebangfix
-USE_PERL5=	run
 USE_GITHUB=	yes
-GH_ACCOUNT=	dave-theunsub
-GH_TAGNAME=	1f026f0
+GH_ACCOUNT=	piposeimandi
+GH_TAGNAME=	32cc526
+USE_PERL5=	run
 SHEBANG_FILES=	clamtk
-
-LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`
-
+NO_BUILD=	yes
+PORTDOCS=	CHANGES DISCLAIMER.md README.md
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
@@ -43,21 +38,19 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}|g ; \
 		 s|/usr/share|${PREFIX}/share|g ; \
-		 s|/var/lib/clamav|/var/db/clamav|g' ${WRKSRC}/lib/*.pm
+		 s|/var/lib/clamav|/var/db/clamav|g' ${WRKSRC}/lib/ClamTk/*.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/ClamTk
-	${INSTALL_DATA} ${WRKSRC}/lib/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/ClamTk
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/lib/ClamTk/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/ClamTk
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png \
+			${WRKSRC}/images/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in CHANGES DISCLAIMER README.md
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- chrome/browser/chrome_content_browser_client_navigation_throttles.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/chrome_content_browser_client_navigation_throttles.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/chrome_content_browser_client_navigation_throttles.cc
-@@ -123,7 +123,7 @@
+@@ -140,7 +140,7 @@
  #include "chrome/browser/captive_portal/captive_portal_service_factory.h"
  #endif  // BUILDFLAG(ENABLE_CAPTIVE_PORTAL_DETECTION)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
  #include "chrome/browser/enterprise/profile_management/oidc_auth_response_capture_navigation_throttle.h"
  #include "chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.h"
-@@ -407,7 +407,7 @@ void CreateAndAddChromeThrottlesForNavigation(
+@@ -437,7 +437,7 @@ void CreateAndAddChromeThrottlesForNavigation(
      TypedNavigationUpgradeThrottle::MaybeCreateAndAdd(registry);
    }
  
@@ -18,7 +18,7 @@
    WebAppSettingsNavigationThrottle::MaybeCreateAndAdd(registry);
    profile_management::ProfileManagementNavigationThrottle::MaybeCreateAndAdd(
        registry);
-@@ -425,7 +425,7 @@ void CreateAndAddChromeThrottlesForNavigation(
+@@ -455,7 +455,7 @@ void CreateAndAddChromeThrottlesForNavigation(
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -27,8 +27,8 @@
    enterprise_connectors::DeviceTrustNavigationThrottle::MaybeCreateAndAdd(
        registry);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) ||
-@@ -457,7 +457,7 @@ void CreateAndAddChromeThrottlesForNavigation(
-   }
+@@ -507,7 +507,7 @@ void CreateAndAddChromeThrottlesForNavigation(
+       registry, ui_manager);
  #endif  // BUILDFLAG(SAFE_BROWSING_AVAILABLE)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

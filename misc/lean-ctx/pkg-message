@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+lean-ctx is a Model Context Protocol (MCP) server.
+
+The Model Context Protocol (MCP) is an open standard that allows developers
+to build secure, two-way connections between their data sources and AI models.
+It enables AI models to interact with external tools and data in a standardized
+way.
+
+Communication with lean-ctx can be done via multiple transports:
+* STDIO: The default transport for local MCP servers, where the host
+  communicates with the server over standard input and output.
+* HTTP: Using Server-Sent Events (SSE) for server-to-client communication.
+
+The HTTP transport is particularly beneficial as it allows lean-ctx to run
+as a remote service, enabling multiple clients to connect to a single
+server instance, and facilitating use cases where the AI model and the
+data source are on different machines.
+
+Note that using the HTTP transport requires setting up and starting the
+lean_ctx service. You can enable it by adding lean_ctx_enable="YES"
+to /etc/rc.conf and starting it with:
+# service lean_ctx start
+EOM
+}
+]

@@ -1,5 +1,5 @@
 PORTNAME=	rex-encoder
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.10
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-metasm>=0:devel/rubygem-metasm \
 		rubygem-rex-text>=0:security/rubygem-rex-text
 
 NO_ARCH=	yes
-
 USES=		gem
 
 .include <bsd.port.mk>

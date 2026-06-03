@@ -1,7 +1,7 @@
 [
 {	type: install
 	message: <<XYZZY
-You are recommended to copy %%DATADIR%%/sample.teco_ini to ~/.teco_ini
+You can copy %%DATADIR%%/fallback.teco_ini to ~/.teco_ini
 and edit this file afterwards with SciTECO.
 XYZZY
 }

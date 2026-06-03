@@ -1,6 +1,6 @@
 PORTNAME=	kivy
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 
 USES=		display:test gl pytest python shebangfix uniquefiles:dirs
 USE_GL=		egl gl glesv2
-USE_PYTHON=	autoplist concurrent cython distutils
+USE_PYTHON=	autoplist concurrent cython0 distutils
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=		--inplace
 PYDISTUTILS_EGGINFO=		Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info

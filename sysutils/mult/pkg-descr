@@ -1,0 +1,13 @@
+mult is a command-line tool that runs shell commands multiple times and
+provides a terminal user interface (TUI) for comparing the outputs.
+
+Features:
+
+- Run commands multiple times concurrently or sequentially
+- Specify number of runs
+- Add delay between runs
+- Stop at first failure
+- Compare outputs via TUI
+
+Useful for investigating inconsistent web server responses, checking flaky
+test suite outcomes, and running performance/stress tests.

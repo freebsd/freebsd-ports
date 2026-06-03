@@ -1,0 +1,20 @@
+Histui is a notification system for Wayland desktops. It captures, displays,
+and lets you browse your notification history.
+
+Features:
+
+  - CSS theming with hot reload - edit themes live without restarting
+  - Clickable URLs and deep links - jump straight to the source app
+  - Image previews and progress bars with Pango markup support
+  - Smart icon resolution - app aliases with Nerd Font fallbacks for 350+ apps
+  - Audio alerts by urgency with repeat options
+  - Notification stacking with smooth animations
+  - Supports Hyprland, Sway, river, and other layer-shell compositors
+  - Run alongside other daemons (dunst, mako etcetera..)
+
+Histui is also a CLI and TUI for querying notification history. You can:
+
+  - View what you missed while away
+  - Filter by app, urgency, or time range
+  - Output in JSON for scripts or dmenu for launchers
+  - Show notification counts in Waybar or Polybar

@@ -1,0 +1,4 @@
+daemon for forwarding Multicast UDP data between network interfaces.
+It is intended for use by systems such as firewalls to provide
+local bridging of multicast across network segments, for both IPv4
+and IPv6.

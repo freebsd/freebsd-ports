@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-04-06 19:59:22 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools", "wheel", "setuptools_scm==8.2.0"]
++requires = ["setuptools", "wheel", "setuptools_scm>=8.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.black]

@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-m17n
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.5
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 

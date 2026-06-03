@@ -1,6 +1,5 @@
 PORTNAME=	bchoppr
-DISTVERSION=	1.12.6-11
-DISTVERSIONSUFFIX=	-g9a463da
+DISTVERSION=	1.12.8
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -16,13 +15,14 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
-USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	x11
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BChoppr
-GH_TUPLE=	sjaehn:BWidgets:89d0765:BWidgets/src/BWidgets
+GH_TUPLE=	sjaehn:BWidgets:e04aede:BWidgets/src/BWidgets \
+		lv2:pugl:9b5a0871c1a8771dbe204e60f437653a67abd42a:pugl/src/BWidgets/pugl
 
 MAKEFILE=	makefile
 

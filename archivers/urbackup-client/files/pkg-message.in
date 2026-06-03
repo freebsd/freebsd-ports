@@ -16,15 +16,13 @@ The client daemon's configuration file is located at:
 Log rotation can be configured at:
 %%PREFIX%%/etc/newsyslog.conf.d/urbackupclient.conf
 
-If the GTK2 GUI was built, it can be launched via:
+If the GTK4 GUI was built, it can be launched via:
 %%PREFIX%%/bin/urbackupclientctl
 
-NOTE: For client configuration or to view logs, the GTK2 GUI 
-needs to have one of the following in its PATH:
-	- kdesu (e.g., %%PREFIX%%/lib/kde4/libexec/)
-		(port: x11/kde-runtime)
-	- gksu (e.g., %%PREFIX%%/bin/)
-		(port: sysutils/gksu)
+NOTE: For client configuration or to view logs, the GTK4 GUI
+needs to have kdesu in its PATH:
+	e.g., %%PREFIX%%/lib/libexec/kf6/
+		port: sysutils/plasma6-kde-cli-tools
 
 The client can also be configured via the UrBackup Server, or
 %%PREFIX%%/bin/urbackupclientctl

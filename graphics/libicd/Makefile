@@ -1,5 +1,5 @@
 PORTNAME=	libicd
-PORTVERSION=	0.0.0.20250416
+PORTVERSION=	0.0.0.20251227
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +19,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lucianpls
-GH_TAGNAME=	ebc3a80
+GH_TAGNAME=	f4311e9
 
 .include <bsd.port.mk>

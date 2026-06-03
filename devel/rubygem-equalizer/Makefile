@@ -1,5 +1,5 @@
 PORTNAME=	equalizer
-PORTVERSION=	0.0.11
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,9 +8,10 @@ COMMENT=	Ruby library to define equality methods
 WWW=		https://github.com/dkubb/equalizer
 
 LICENSE=	MIT
-
-NO_ARCH=	yes
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

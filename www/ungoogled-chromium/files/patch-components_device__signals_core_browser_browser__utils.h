@@ -1,15 +1,15 @@
---- components/device_signals/core/browser/browser_utils.h.orig	2025-05-31 17:16:41 UTC
+--- components/device_signals/core/browser/browser_utils.h.orig	2025-09-10 13:22:16 UTC
 +++ components/device_signals/core/browser/browser_utils.h
-@@ -29,7 +29,7 @@ bool GetSiteIsolationEnabled();
- // Returns the hostname of the current machine.
+@@ -31,7 +31,7 @@ bool GetSiteIsolationEnabled();
  std::string GetHostName();
+ #endif  // !BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Returns the hostname of the current machine.
  std::vector<std::string> GetSystemDnsServers();
  
-@@ -37,7 +37,7 @@ std::vector<std::string> GetSystemDnsServers();
+@@ -39,7 +39,7 @@ std::vector<std::string> GetSystemDnsServers();
  SettingValue GetOSFirewall();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  

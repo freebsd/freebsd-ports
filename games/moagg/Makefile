@@ -1,6 +1,6 @@
 PORTNAME=	moagg
 PORTVERSION=	1.95b
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${DISTVERSION:S/b//}/ \
 		SF/nemysisfreebsdp/games/:icons

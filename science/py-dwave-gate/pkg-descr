@@ -1,0 +1,2 @@
+dwave-gate is a software package for constructing, modifying and running quantum
+circuits on the provided state-vector simulator.

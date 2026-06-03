@@ -1,0 +1,12 @@
+Python Materials Genomics is a robust materials analysis code that defines
+core object representations for structures and molecules with support for
+many electronic structure codes.
+
+This is the pymatgen-core package, which implements the core data structures
+and algorithms of pymatgen, including:
+- Core data structures (Structure, Molecule, Element, etc.)
+- Electronic structure modules
+- IO modules for VASP, FEFF, CP2K, LAMMPS and more
+- Symmetry analysis
+- Transformation modules
+- Optimization utilities

@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+Sylve was installed!
+
+1) The default config file is located at %%ETCDIR%%/config.json. PLEASE
+   change your password in this file before starting the service for the
+   first time. The default username is "admin" and the default password is
+"admin".
+
+2) By default, Sylve datadir is located at %%DATADIR%% directory, this can
+   be modified in %%ETCDIR%%/config.json. This directory can become quite
+   large, with downloaded image files.
+
+3) Enable Sylve by using the command `sysrc sylve_enable=YES` and start
+   the service with `service sylve start`.
+
+4) You should now be able to visit https://IP:8181 to access the web
+   interface!
+
+5) Enjoy!
+EOM
+}
+]

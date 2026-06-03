@@ -1,3 +1,4 @@
+include/dune-metagrid-config.hh
 include/dune/common/applyif.hh
 include/dune/common/initializedptr.hh
 include/dune/common/smartptr.hh
@@ -134,6 +135,8 @@ include/dune/grid/test/checkcalls.cc
 include/dune/grid/test/sfc.cc
 lib/cmake/dune-metagrid/dune-metagrid-config-version.cmake
 lib/cmake/dune-metagrid/dune-metagrid-config.cmake
+lib/cmake/dune-metagrid/dune-metagrid-scoped-targets-%%DUNE_METAGRID_CMAKE_HASH%%.cmake
+lib/cmake/dune-metagrid/dune-metagrid-targets.cmake
 lib/dunecontrol/dune-metagrid/dune.module
 libdata/pkgconfig/dune-metagrid.pc
 share/cmake/modules/DuneMetagridMacros.cmake

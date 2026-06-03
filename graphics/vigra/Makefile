@@ -1,10 +1,10 @@
 PORTNAME=	vigra
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.12.1
+DISTVERSIONPREFIX=	Version-
+DISTVERSION=	1-12-4
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 WWW=		https://ukoethe.github.io/vigra/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 USES=		cmake compiler:c++14-lang python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ukoethe
-GH_TAGNAME=	8acd73a
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath
@@ -25,6 +24,8 @@ CFLAGS+=	-I${LOCALBASE}/include/Imath
 CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \
 		-DDOCINSTALL:PATH=${DOCSDIR_REL}
 SHEBANG_FILES=	config/vigra-config.in
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		HDF5 OPENEXR NUMPY DOCS FFTW
 OPTIONS_DEFAULT=	HDF5 OPENEXR FFTW ${OPTIONS_GROUP_IMAGEFORMATS}
@@ -43,9 +44,9 @@ NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC47+)
 NUMPY_CMAKE_BOOL=	WITH_VIGRANUMPY
 NUMPY_USES=		compiler:gcc-c++11-lib python:build
 NUMPY_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-			${PYNUMPY}
+			${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-			${PYNUMPY}
+			${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 NUMPY_LIB_DEPENDS=	${PY_BOOST}
 # On FreeBSD < 11 libc++ lacks support for sized delete operators.
 # GCC dropped the builtin version of these operators in 6+ by

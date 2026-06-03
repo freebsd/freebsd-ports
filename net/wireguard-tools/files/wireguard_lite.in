@@ -15,6 +15,8 @@
 # wireguard_<iface>_ips (str):    List of IP Addresses for iface
 # wireguard_<iface>_routes (str): List of Routes for this iface
 # wireguard_<iface>_mtu (str):    MTU for iface (default: "1500")
+# wireguard_<iface>_key (str):    Private key file for this iface
+# wireguard_<iface>_psk (str):    Preshared key file for this iface
 
 . /etc/rc.subr
 
@@ -35,9 +37,17 @@ wireguard_start()
 		eval wireguard_ips="\${wireguard_${interface}_ips}"
 		eval wireguard_routes="\${wireguard_${interface}_routes}"
 		eval wireguard_mtu="\${wireguard_${interface}_mtu}"
+		eval wireguard_key="\${wireguard_${interface}_key}"
+		eval wireguard_psk="\${wireguard_${interface}_psk}"
 
 		ifconfig ${interface} create
 		%%PREFIX%%/bin/wg setconf ${interface} ${wireguard_confdir}/${interface}.conf
+		if [ ! -z "${wireguard_key}" ]; then
+			%%PREFIX%%/bin/wg set ${interface} private-key ${wireguard_key}
+		fi
+		if [ ! -z "${wireguard_psk}" ]; then
+			%%PREFIX%%/bin/wg set ${interface} preshared-key ${wireguard_psk}
+		fi
 
 		for ip in ${wireguard_ips}; do
 			if [ "${ip#*:}" != "${ip}" ]; then

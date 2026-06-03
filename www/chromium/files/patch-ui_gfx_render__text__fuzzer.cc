@@ -1,4 +1,4 @@
---- ui/gfx/render_text_fuzzer.cc.orig	2024-06-17 12:56:06 UTC
+--- ui/gfx/render_text_fuzzer.cc.orig	2026-03-13 06:02:14 UTC
 +++ ui/gfx/render_text_fuzzer.cc
 @@ -17,7 +17,7 @@
  #include "ui/gfx/canvas.h"

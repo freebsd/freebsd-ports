@@ -1,0 +1,11 @@
+comfy-cli is a command line tool that helps users easily install and manage
+ComfyUI, a powerful open-source machine learning framework. With comfy-cli,
+you can quickly set up ComfyUI, install packages, and manage custom nodes,
+all from the convenience of your terminal.
+
+Features:
+- Easy installation of ComfyUI with a single command
+- Seamless package management for ComfyUI extensions and dependencies
+- Custom node management for extending ComfyUI's functionality
+- Download checkpoints and save model hashes
+- Support for testing frontend pull requests

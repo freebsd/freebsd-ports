@@ -1,0 +1,10 @@
+--- third_party/rust/bytemuck/v1/BUILD.gn.orig	2026-03-13 16:54:03 UTC
++++ third_party/rust/bytemuck/v1/BUILD.gn
+@@ -52,7 +52,6 @@ cargo_crate("lib") {
+     "derive",
+     "extern_crate_alloc",
+     "min_const_generics",
+-    "nightly_portable_simd",
+     "rustversion",
+   ]
+ 

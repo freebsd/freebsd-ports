@@ -1,0 +1,4 @@
+Go application that parses OpenVPN status files and exports data in JSON
+or OpenMetrics (Prometheus) format.  Supports all three OpenVPN status
+file versions (v1, v2, v3) and automatically extracts configuration data
+necessary from OpenVPN server config files.

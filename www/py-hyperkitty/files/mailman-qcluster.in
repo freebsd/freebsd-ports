@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# PROVIDE: mailman_qcluster
+# REQUIRE: mailman
+# KEYWORD: shutdown
+# 
+# Add these lines to /etc/rc.conf or /etc/rc.conf.local to enable
+# mailman:
+# 
+# mailman_qcluster_enable (bool):	Set to NO by default.
+# 					Set it to YES to enable mailman_qcluster.
+# mailman_qcluster_dir (path):		Set to %%PREFIX%%/mailman by default.
+# mailman_qcluster_user (str):		Set to mailman by default.
+
+. /etc/rc.subr
+
+name=mailman_qcluster
+rcvar=mailman_qcluster_enable
+
+load_rc_config $name
+
+: ${mailman_qcluster_enable:=NO}
+: ${mailman_qcluster_dir:="%%PREFIX%%/mailman"}
+: ${mailman_qcluster_user:="mailman"}
+
+_pidprefix="/var/run/mailman"
+pidfile="${_pidprefix}/${name}.pid"
+
+command=/usr/sbin/daemon
+command_args="-P ${pidfile} -f -ST ${name} -l mail ${mailman_qcluster_dir}/manage.py qcluster"
+
+required_files="${mailman_qcluster_dir}/settings.py"
+
+start_precmd="mailman_qcluster_precmd"
+
+mailman_qcluster_precmd()
+{
+	install -o ${mailman_qcluster_user} -d ${_pidprefix}
+	install -o ${mailman_qcluster_user} -m 0644 /dev/null ${pidfile}
+}
+
+run_rc_command "$1"

@@ -3,7 +3,7 @@ DISTVERSION=	1.4.2
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	${_qt_version}
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adwaita theme for Qt applications
 WWW=		https://github.com/MartinBriza/adwaita-qt
 

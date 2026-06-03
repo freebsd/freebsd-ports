@@ -1,3 +1,5 @@
-TIMESTAMP = 1737906844
-SHA256 (gnome/linuxmint-xviewer-3.4.8_GH0.tar.gz) = c8abe0e9a19ba867c620a1c417bb719b6c1e07e5baa444697d1e71ad8f676889
-SIZE (gnome/linuxmint-xviewer-3.4.8_GH0.tar.gz) = 2547011
+TIMESTAMP = 1778548720
+SHA256 (gnome/linuxmint-xviewer-3.4.16_GH0.tar.gz) = 41323bd88c032ce158ce1970f945aa7b6c7fc11fcc211bdfd54ea9d8701d9866
+SIZE (gnome/linuxmint-xviewer-3.4.16_GH0.tar.gz) = 2479897
+SHA256 (gnome/74d7d4ba2584c658ae6fb87208543671664943cc.patch) = 0791197b064a793a75c3b08cac8e8197000f055fd1203608deb3ae1b6b2d16f8
+SIZE (gnome/74d7d4ba2584c658ae6fb87208543671664943cc.patch) = 4986

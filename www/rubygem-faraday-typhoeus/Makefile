@@ -1,5 +1,5 @@
 PORTNAME=	faraday-typhoeus
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

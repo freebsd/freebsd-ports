@@ -1,5 +1,3 @@
-TIMESTAMP = 1728389806
-SHA256 (tcpdump-4.99.5.tar.gz) = 8c75856e00addeeadf70dad67c9ff3dd368536b2b8563abf6854d7c764cd3adb
-SIZE (tcpdump-4.99.5.tar.gz) = 2045086
-SHA256 (5c1ecd8c.patch) = 1fe70c129bd03674e830728ecc346f5fc9badd45e1856d83b0ca3978a15eaad1
-SIZE (5c1ecd8c.patch) = 1004
+TIMESTAMP = 1768416594
+SHA256 (tcpdump-4.99.6.tar.gz) = 5839921a0f67d7d8fa3dacd9cd41e44c89ccb867e8a6db216d62628c7fd14b09
+SIZE (tcpdump-4.99.6.tar.gz) = 2053753

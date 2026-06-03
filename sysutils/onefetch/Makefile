@@ -1,9 +1,9 @@
 PORTNAME=	onefetch
-DISTVERSION=	2.22.0
-PORTREVISION=	6
+DISTVERSION=	2.27.1
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Git repository summary on your terminal
 WWW=		https://github.com/o2sh/onefetch
 

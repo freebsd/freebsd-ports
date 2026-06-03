@@ -1,15 +1,29 @@
---- src/cpp/CMakeLists.txt.orig	2022-12-03 07:38:59 UTC
+- Use shared (.so) SOCI libraries instead of static (.a) on FreeBSD
+
+--- src/cpp/CMakeLists.txt.orig	2025-10-20 20:09:32 UTC
 +++ src/cpp/CMakeLists.txt
-@@ -468,9 +468,9 @@ endif()
+@@ -414,18 +414,18 @@ if(UNIX)
  # find SOCI libraries
  if(UNIX)
     if(NOT APPLE AND RSTUDIO_USE_SYSTEM_SOCI)
--      find_library(SOCI_CORE_LIB NAMES "libsoci_core.a" "soci_core")
--      find_library(SOCI_SQLITE_LIB NAMES "libsoci_sqlite3.a" "soci_sqlite3")
--      find_library(SOCI_POSTGRESQL_LIB NAMES "libsoci_postgresql.a" "soci_postgresql")
-+      find_library(SOCI_CORE_LIB NAMES "libsoci_core.so" "soci_core")
-+      find_library(SOCI_SQLITE_LIB NAMES "libsoci_sqlite3.so" "soci_sqlite3")
-+      find_library(SOCI_POSTGRESQL_LIB NAMES "libsoci_postgresql.so" "soci_postgresql")
-       if(NOT SOCI_CORE_LIB OR NOT SOCI_SQLITE_LIB OR NOT SOCI_POSTGRESQL_LIB)
-          message(FATAL_ERROR "Some or all SOCI libraries were not found. Ensure the SOCI dependency is installed and try again.")
+-      find_library(SOCI_CORE_LIB NAMES "libsoci_core.a" "soci_core" REQUIRED)
+-      find_library(SOCI_SQLITE_LIB NAMES "libsoci_sqlite3.a" "soci_sqlite3" REQUIRED)
++      find_library(SOCI_CORE_LIB NAMES "libsoci_core.so" "soci_core" REQUIRED)
++      find_library(SOCI_SQLITE_LIB NAMES "libsoci_sqlite3.so" "soci_sqlite3" REQUIRED)
+       if(RSTUDIO_PRO_BUILD)
+-         find_library(SOCI_POSTGRESQL_LIB NAMES "libsoci_postgresql.a" "soci_postgresql" REQUIRED)
++         find_library(SOCI_POSTGRESQL_LIB NAMES "libsoci_postgresql.so" "soci_postgresql" REQUIRED)
        endif()
+       get_filename_component(SOCI_LIBRARY_DIR "${SOCI_CORE_LIB}" DIRECTORY)
+    else()
+       set(SOCI_LIBRARY_DIR "${RSTUDIO_TOOLS_SOCI}/build/lib")
+-      find_library(SOCI_CORE_LIB NAMES "libsoci_core.a" "soci_core" PATHS "${SOCI_LIBRARY_DIR}" NO_DEFAULT_PATH REQUIRED)
+-      find_library(SOCI_SQLITE_LIB NAMES "libsoci_sqlite3.a" "soci_sqlite3" PATHS "${SOCI_LIBRARY_DIR}" NO_DEFAULT_PATH REQUIRED)
++      find_library(SOCI_CORE_LIB NAMES "libsoci_core.so" "soci_core" PATHS "${SOCI_LIBRARY_DIR}" NO_DEFAULT_PATH REQUIRED)
++      find_library(SOCI_SQLITE_LIB NAMES "libsoci_sqlite3.so" "soci_sqlite3" PATHS "${SOCI_LIBRARY_DIR}" NO_DEFAULT_PATH REQUIRED)
+       if(RSTUDIO_PRO_BUILD)
+-         find_library(SOCI_POSTGRESQL_LIB NAMES "libsoci_postgresql.a" "soci_postgresql" PATHS "${SOCI_LIBRARY_DIR}" NO_DEFAULT_PATH REQUIRED)
++         find_library(SOCI_POSTGRESQL_LIB NAMES "libsoci_postgresql.so" "soci_postgresql" PATHS "${SOCI_LIBRARY_DIR}" NO_DEFAULT_PATH REQUIRED)
+       endif()
+    endif()
+ 

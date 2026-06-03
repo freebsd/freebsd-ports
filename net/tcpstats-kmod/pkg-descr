@@ -1,0 +1,10 @@
+Kernel module providing system-wide TCP socket statistics via /dev/tcpstats.
+
+The tcpstats module creates a read-only character device that streams
+fixed-size 320-byte records containing per-connection TCP metrics including
+addresses, ports, TCP state, congestion control parameters (cwnd, ssthresh),
+RTT measurements, retransmit counts, ECN statistics, and process attribution.
+
+Features include in-kernel filtering by port, TCP state, IP version, and CIDR
+address ranges, with DoS protection via tunable concurrent reader and file
+descriptor limits.

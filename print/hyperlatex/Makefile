@@ -1,9 +1,8 @@
 PORTNAME=	Hyperlatex
 DISTVERSION=	2.9a
-PORTREVISION=	25
+PORTREVISION=	27
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/2.9a
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
@@ -14,7 +13,12 @@ RUN_DEPENDS=	ppmtogif:graphics/netpbm
 USES=		emacs tex
 USE_TEX=	latex
 
-CONFLICTS_INSTALL=	 Hyperlatex Hyperlatex-emacs_*
+CONFLICTS_INSTALL=	Hyperlatex-emacs_*
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+CONFLICTS_INSTALL=	 Hyperlatex-emacs_*
 
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
 HYPERLATEX_DIR=	${PREFIX}/share/hyperlatex
@@ -25,9 +29,6 @@ do-configure:
 	${REINPLACE_CMD} -e 's|$$HOME/Hyperlatex/Hlx|${HYPERLATEX_DIR}|' bin/hyperlatex && \
 	${REINPLACE_CMD} -e '1s|^#$$|#\!/usr/bin/awk|' bin/normalize-eps.awk)
 
-do-build:
-	cd ${WRKSRC}/hlx; emacs -batch -q -no-site-file -l hyperlatex.el -f hyperlatex-compile
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${HYPERLATEX_DIR}
 	@${MKDIR} ${STAGEDIR}${LATEX_DIR}
@@ -36,7 +37,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/normalize-eps.awk \
 		${STAGEDIR}${PREFIX}/bin/normalize-eps
 	${INSTALL_DATA} ${WRKSRC}/etc/hyperlatex.sty ${STAGEDIR}${LATEX_DIR}
-	cd ${WRKSRC}/hlx; for f in *.el *.elc *.hlx *.xbm *.awk ; do \
+	cd ${WRKSRC}/hlx; for f in *.el *.hlx *.xbm *.awk ; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f \
 	    ${STAGEDIR}${HYPERLATEX_DIR}; fi; done
 

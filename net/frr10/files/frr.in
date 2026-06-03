@@ -195,6 +195,8 @@ case "${frr_cmd}" in
 			if [ -x %%PREFIX%%/etc/rc.d/watchfrr ]; then
 				echo "WARNING: Old rc.d/watchfrr detected, this file must be deleted"
 			fi
+			mkdir -p /var/lib/frr
+			chown -R frr:frr /var/lib/frr
 			if checkyesno frr_vtysh_boot; then
 				echo "Checking intergrated config..."
 				if ! [ -f %%ETCDIR%%/vtysh.conf ]; then

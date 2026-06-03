@@ -24,8 +24,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fields>0:devel/py-fields@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest4-cov
-
 NO_ARCH=	yes
 
 TEST_ARGS+=	-p pytester

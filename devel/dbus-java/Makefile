@@ -1,5 +1,6 @@
 PORTNAME=	dbus-java
 PORTVERSION=	2.7
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-java/
 
@@ -17,6 +18,7 @@ LICENSE_PERMS_ACADEMIC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libunix-java.so:devel/libmatthew
 
 USES=		gettext gmake java
+JAVA_VERSION=	8
 
 MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man/man1
 .if defined(WITH_DEBUG)

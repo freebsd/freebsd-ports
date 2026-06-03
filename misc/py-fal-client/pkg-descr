@@ -1,0 +1,6 @@
+Python client for the fal.ai serverless inference API.
+
+fal.ai hosts generative AI models (image, video, audio, language) and exposes
+them through a REST + WebSocket API.  This client provides  synchronous and
+asynchronous bindings, file upload helpers, streaming result handles, and
+request queueing for long-running jobs.

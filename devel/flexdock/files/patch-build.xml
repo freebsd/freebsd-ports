@@ -5,7 +5,7 @@
     <target name="compile" depends="init, resources"
             description="Compile java sources for the framework, demos, and tests">
 -      <javac classpathref="javac.classpath" destdir="${bin.dir}" debug="true" source="1.5" target="1.5" includeAntRuntime="no">
-+      <javac classpathref="javac.classpath" destdir="${bin.dir}" debug="true" source="1.6" target="1.6" includeAntRuntime="no">
++      <javac classpathref="javac.classpath" destdir="${bin.dir}" debug="true" includeAntRuntime="no">
           <compilerarg value="-Xlint"/>
           <src path="${java.src.core}" />
           <!-- the next 3 are interdependent -->
@@ -15,8 +15,8 @@
        </javac>
 -      <javac classpathref="javac.classpath.demo" srcdir="${java.src.demo}" destdir="${bin.dir.demo}" debug="true" source="1.5" target="1.5" includeAntRuntime="no"/>
 -      <javac classpathref="javac.classpath.test" srcdir="${java.src.test}" destdir="${bin.dir.test}" debug="true" source="1.5" target="1.5"  includeAntRuntime="no"/>
-+      <javac classpathref="javac.classpath.demo" srcdir="${java.src.demo}" destdir="${bin.dir.demo}" debug="true" source="1.6" target="1.6" includeAntRuntime="no"/>
-+      <javac classpathref="javac.classpath.test" srcdir="${java.src.test}" destdir="${bin.dir.test}" debug="true" source="1.6" target="1.6"  includeAntRuntime="no"/>
++      <javac classpathref="javac.classpath.demo" srcdir="${java.src.demo}" destdir="${bin.dir.demo}" debug="true" includeAntRuntime="no"/>
++      <javac classpathref="javac.classpath.test" srcdir="${java.src.test}" destdir="${bin.dir.test}" debug="true" includeAntRuntime="no"/>
     </target>
  
  

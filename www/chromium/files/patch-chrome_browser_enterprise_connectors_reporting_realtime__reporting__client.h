@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h
 @@ -19,7 +19,7 @@
  #include "components/keyed_service/core/keyed_service.h"
@@ -9,7 +9,7 @@
  #include "components/device_signals/core/browser/signals_types.h"
  #endif
  
-@@ -116,7 +116,7 @@ class RealtimeReportingClient : public RealtimeReporti
+@@ -119,7 +119,7 @@ class RealtimeReportingClient : public RealtimeReporti
        const std::string& dm_token) override;
  #endif
  
@@ -17,8 +17,8 @@
 +#if (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(notyet)
    // DEPRECATED: Use MaybeCollectDeviceSignalsAndReportEvent(Event, ...).
    void MaybeCollectDeviceSignalsAndReportEventDeprecated(
-       base::Value::Dict event,
-@@ -166,7 +166,7 @@ class RealtimeReportingClient : public RealtimeReporti
+       base::DictValue event,
+@@ -169,7 +169,7 @@ class RealtimeReportingClient : public RealtimeReporti
    base::WeakPtrFactory<RealtimeReportingClient> weak_ptr_factory_{this};
  };
  

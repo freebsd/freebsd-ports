@@ -1,0 +1,13 @@
+--- help/CMakeLists.txt.orig	2025-09-23 01:54:08 UTC
++++ help/CMakeLists.txt
+@@ -170,8 +170,8 @@ if (HELP)
+   set (mallard-schema ${CMAKE_CURRENT_SOURCE_DIR}/xml/mallard-1.0.rng)
+   foreach (lang ${help_all_langs})
+     add_custom_command (OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${lang}/validate.txt
+-#      COMMAND ${XMLLINT} --noout --xinclude --noent --relaxng ${mallard-schema} *.page > ${CMAKE_CURRENT_BINARY_DIR}/${lang}/validate.txt 2>&1
+-      COMMAND ${XMLLINT} --noout --xinclude --noent --relaxng ${mallard-schema} *.page
++#      COMMAND ${XMLLINT} --noout --xinclude --noent ${mallard-schema} *.page > ${CMAKE_CURRENT_BINARY_DIR}/${lang}/validate.txt 2>&1
++      COMMAND ${XMLLINT} --noout --xinclude --noent ${mallard-schema} *.page
+       DEPENDS help-${lang}-pages
+       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${lang}
+       COMMENT "'${lang}' help - mallard pages validation report"

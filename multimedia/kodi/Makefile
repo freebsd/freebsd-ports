@@ -1,16 +1,13 @@
 PORTNAME=	kodi
-DISTVERSION=	21.2
-PORTREVISION=	2
+DISTVERSION=	22.0a3
 CATEGORIES=	multimedia java
-MASTER_SITES=	http://mirrors.kodi.tv/build-deps/sources/
+MASTER_SITES=	https://mirrors.kodi.tv/build-deps/sources/
 DISTFILES=	apache-groovy-binary-${GROOVY_VERSION}.zip \
 		commons-lang3-${COMMONS_LANG_VERSION}-bin.tar.gz \
-		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz
+		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz \
+		json-${NLOHMANN_JSON_VERSION}.tar.xz
 DIST_SUBDIR=	${PORTNAME}
 # do not forget to fix devel/kodi-platform when updating kodi
-
-PATCH_SITES=	https://github.com/xbmc/xbmc/commit/
-PATCHFILES=	269053ebbfd3cc4a3156a511f54ab7f08a09a730.patch:-p1
 
 MAINTAINER=	yzrh@noema.org
 COMMENT=	Award winning media center application
@@ -21,16 +18,18 @@ LICENSE=	GPLv2+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers \
-		rapidjson>0:devel/rapidjson \
 		swig>0:devel/swig
-LIB_DEPENDS=	libass.so:multimedia/libass \
+LIB_DEPENDS=	libaacs.so:multimedia/libaacs \
+		libass.so:multimedia/libass \
 		libavcodec.so:multimedia/ffmpeg \
 		libavfilter.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
+		libbdplus.so:multimedia/libbdplus \
 		libcdio.so:sysutils/libcdio \
 		libcrossguid.so:devel/libcrossguid \
 		libcurl.so:ftp/curl \
+		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libfmt.so:devel/libfmt \
 		libfreetype.so:print/freetype2 \
@@ -39,9 +38,8 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libgif.so:graphics/giflib \
 		libharfbuzz.so:print/harfbuzz \
 		liblzo2.so:archivers/lzo2 \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libpng.so:graphics/png \
-		libpostproc.so:multimedia/ffmpeg \
 		libspdlog.so:devel/spdlog \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
@@ -53,22 +51,29 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
-		desktop-file-utils gettext gmake gnome iconv java:build jpeg libtool \
-		pkgconfig python sqlite ssl
+		desktop-file-utils gettext gmake gnome iconv java:build jpeg \
+		libtool pkgconfig python sqlite ssl
 
-KODI_CODENAME=		Omega
+KODI_CODENAME=		Piers
 LIBDVDCSS_VERSION=	1.4.3-Next-Nexus-Alpha2-2
 LIBDVDNAV_VERSION=	6.1.1-Next-Nexus-Alpha2-2
 LIBDVDREAD_VERSION=	6.1.3-Next-Nexus-Alpha2-2
-GROOVY_VERSION=		4.0.16
-COMMONS_LANG_VERSION=	3.14.0
-COMMONS_TEXT_VERSION=	1.11.0
+GROOVY_VERSION=		4.0.26
+COMMONS_LANG_VERSION=	3.17.0
+COMMONS_TEXT_VERSION=	1.13.0
+# TODO: make it a new port
+NLOHMANN_JSON_VERSION=	3.12.0
 
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:${DISTVERSION}-${KODI_CODENAME} \
 		xbmc:libdvdcss:${LIBDVDCSS_VERSION}:libdvdcss/tools/depends/target/libdvdcss/native \
 		xbmc:libdvdnav:${LIBDVDNAV_VERSION}:libdvdnav/tools/depends/target/libdvdnav/native \
 		xbmc:libdvdread:${LIBDVDREAD_VERSION}:libdvdread/tools/depends/target/libdvdread/native
+
+USE_GNOME=	libxml2
+JAVA_VERSION=	8 11
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	kodi
 
 KODI_ARCH_aarch64=	aarch64
 KODI_ARCH_amd64=	x86_64
@@ -78,43 +83,42 @@ KODI_ARCH_armv6=	armv6
 KODI_ARCH_powerpc64=	powerpc64
 KODI_ARCH_powerpc64le=	powerpc64le
 
-PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
-
-USE_LDCONFIG=	yes
-USE_GNOME=	libxml2
-JAVA_VERSION=	8 11
-CMAKE_ARGS=	-DGIT_VERSION="${DISTVERSION}-${KODI_CODENAME}" \
+CMAKE_ARGS=	-Dapache-commons-lang_SOURCE_DIR="${WRKSRC}/tools/depends/share/java/lang" \
+		-Dapache-commons-text_SOURCE_DIR="${WRKSRC}/tools/depends/share/java/text" \
+		-DCMAKE_VERBOSE_MAKEFILE=ON \
+		-DCORE_PLATFORM_NAME:STRING="${KODI_PLATFORM}" \
+		-DCROSSGUID_INCLUDE_DIR="${LOCALBASE}/include" \
+		-DGIT_VERSION="${DISTVERSION}-${KODI_CODENAME}" \
+		-Dgroovy_SOURCE_DIR="${WRKSRC}/tools/depends/share/groovy" \
 		-DLIBDVDCSS_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdcss-${LIBDVDCSS_VERSION}_GH0.tar.gz" \
 		-DLIBDVDNAV_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdnav-${LIBDVDNAV_VERSION}_GH0.tar.gz" \
 		-DLIBDVDREAD_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdread-${LIBDVDREAD_VERSION}_GH0.tar.gz" \
-		-Dgroovy_SOURCE_DIR="${WRKSRC}/tools/depends/share/groovy" \
-		-Dapache-commons-lang_SOURCE_DIR="${WRKSRC}/tools/depends/share/java/lang" \
-		-Dapache-commons-text_SOURCE_DIR="${WRKSRC}/tools/depends/share/java/text" \
-		-DCROSSGUID_INCLUDE_DIR="${LOCALBASE}/include" \
-		-DCORE_PLATFORM_NAME:STRING="${KODI_PLATFORM}" \
-		-DCMAKE_VERBOSE_MAKEFILE=ON
+		-DNLOHMANN_JSON_URL="${DISTDIR}/${PORTNAME}/json-${NLOHMANN_JSON_VERSION}.tar.xz"
+CMAKE_ON=	ENABLE_INTERNAL_NLOHMANNJSON VERBOSE_FIND
 CMAKE_OFF=	ENABLE_INTERNAL_CROSSGUID
 CONFIGURE_ENV=	_CPU_FEATURE="${CPU_FEATURE}"
 
-OPTIONS_SUB=		yes
-OPTIONS_DEFINE=		AIRPLAY AVAHI LIBBLURAY CEC DAV1D DBUS \
-			DVDCSS LCMS2 LIRC WEBSERVER MYSQL NFS DVD SMB TEST \
-			UDEV UPNP VAAPI VDPAU XSLT DOCS
-OPTIONS_DEFAULT=	LIBBLURAY CEC LCMS2 WEBSERVER DAV1D \
-			DVD UPNP VAAPI VDPAU XSLT GBM WAYLAND X11 GL
+PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
+
+OPTIONS_DEFINE=		AIRPLAY AVAHI CEC DAV1D DBUS DOCS DVD DVDCSS LCMS2 \
+			LIBBLURAY LIRC MYSQL NFS SMB TEST UDEV UPNP VAAPI VDPAU \
+			WEBSERVER XSLT
+OPTIONS_DEFAULT=	CEC DAV1D DVD GBM GL LCMS2 LIBBLURAY UPNP VAAPI VDPAU \
+			WAYLAND WEBSERVER X11 XSLT
 OPTIONS_DEFAULT_amd64=	SSE SSE2 SSE3 SSSE3 SSE4_1 SSE4_2
 OPTIONS_DEFAULT_i386=	SSE SSE2 SSE3
-OPTIONS_SINGLE=		RENDER
-OPTIONS_SINGLE_RENDER=	GL GLES
-OPTIONS_GROUP=		SOUND FEATURE PLATFORM
-OPTIONS_GROUP_SOUND=	ALSA PIPEWIRE PULSEAUDIO SNDIO
+OPTIONS_GROUP=		FEATURE PLATFORM SOUND
 OPTIONS_GROUP_FEATURE=	SSE SSE2 SSE3 SSSE3 SSE4_1 SSE4_2 AVX AVX2
 OPTIONS_GROUP_PLATFORM=	GBM WAYLAND X11
+OPTIONS_GROUP_SOUND=	ALSA PIPEWIRE PULSEAUDIO SNDIO
+OPTIONS_SINGLE=		RENDER
+OPTIONS_SINGLE_RENDER=	GL GLES
 OPTIONS_EXCLUDE_aarch64=FEATURE
-OPTIONS_EXCLUDE_armv7=	FEATURE
 OPTIONS_EXCLUDE_armv6=	FEATURE
+OPTIONS_EXCLUDE_armv7=	FEATURE
 OPTIONS_EXCLUDE_powerpc64=	FEATURE
 OPTIONS_EXCLUDE_powerpc64le=	FEATURE
+OPTIONS_SUB=		yes
 
 PLATFORM_DESC=	Kodi platform
 FEATURE_DESC=	X86 CPU feature
@@ -142,8 +146,7 @@ AVX2_DESC=	Use AVX2 optimized routines
 
 AIRPLAY_LIB_DEPENDS=	libplist-2.0.so:devel/libplist \
 			libshairplay.so:audio/shairplay
-AIRPLAY_CMAKE_BOOL=	ENABLE_PLIST \
-			ENABLE_AIRTUNES
+AIRPLAY_CMAKE_BOOL=	ENABLE_AIRTUNES ENABLE_PLIST
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CMAKE_BOOL=	ENABLE_AVAHI
@@ -151,7 +154,8 @@ AVAHI_CMAKE_BOOL=	ENABLE_AVAHI
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CMAKE_BOOL=	ENABLE_BLURAY
 
-CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
+CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec \
+			libp8-platform.so:devel/p8-platform
 CEC_CMAKE_BOOL=		ENABLE_CEC
 
 DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
@@ -190,7 +194,7 @@ UPNP_CMAKE_BOOL=	ENABLE_UPNP
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CMAKE_BOOL=	ENABLE_VAAPI
 
-VDPAU_IMPLIES=		X11 GL
+VDPAU_IMPLIES=		GL X11
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
 
@@ -234,11 +238,11 @@ GBM_VARS=		KODI_PLATFORM+=gbm
 GBM_USES=		gl
 GBM_USE=		GL=egl,gbm,glu
 GBM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
-GBM_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+GBM_LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 			libdrm.so:graphics/libdrm \
-			libxkbcommon.so:x11/libxkbcommon \
+			libepoll-shim.so:devel/libepoll-shim \
 			libinput.so:x11/libinput \
-			libdisplay-info.so:sysutils/libdisplay-info
+			libxkbcommon.so:x11/libxkbcommon
 GBM_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
 WAYLAND_VARS=		KODI_PLATFORM+=wayland
@@ -248,22 +252,27 @@ WAYLAND_USE=		GL=egl,glu
 WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-			libxkbcommon.so:x11/libxkbcommon \
 			libinput.so:x11/libinput \
-			libwayland-client++.so:graphics/waylandpp
+			libwayland-client++.so:graphics/waylandpp \
+			libxkbcommon.so:x11/libxkbcommon
 
 X11_VARS=		KODI_PLATFORM+=x11
-X11_USES=		xorg gl
-X11_USE=		XORG=x11,xext,xrandr GL=egl,gbm,glu
+X11_USES=		gl xorg
+X11_USE=		GL=egl,gbm,glu XORG=x11,xext,xrandr
 X11_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 .include <bsd.port.options.mk>
 
-.if (!empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MWAYLAND) || !empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MX11) || !empty(PORT_OPTIONS:MWAYLAND) && !empty(PORT_OPTIONS:MX11)) && !empty(PORT_OPTIONS:MGLES)
+.if (!empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MWAYLAND) || \
+	!empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MX11) || \
+	!empty(PORT_OPTIONS:MWAYLAND) && !empty(PORT_OPTIONS:MX11)) && \
+	!empty(PORT_OPTIONS:MGLES)
 BROKEN=	option GLES does not build with multiple PLATFORM
 .endif
 
-.if !empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MWAYLAND) || !empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MX11) || !empty(PORT_OPTIONS:MWAYLAND) && !empty(PORT_OPTIONS:MX11)
+.if !empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MWAYLAND) || \
+	!empty(PORT_OPTIONS:MGBM) && !empty(PORT_OPTIONS:MX11) || \
+	!empty(PORT_OPTIONS:MWAYLAND) && !empty(PORT_OPTIONS:MX11)
 PLIST_SUB+=	KODICOMBINED="" \
 		KODIGBM="@comment " \
 		KODIWAYLAND="@comment " \
@@ -291,10 +300,8 @@ PLIST_SUB+=	KODIX11="@comment "
 .endif
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/tools/depends/share
-	@${MV} ${WRKDIR}/groovy-${GROOVY_VERSION} ${WRKSRC}/tools/depends/share/groovy
-
 	@${MKDIR} ${WRKSRC}/tools/depends/share/java
+	@${MV} ${WRKDIR}/groovy-${GROOVY_VERSION} ${WRKSRC}/tools/depends/share/groovy
 	@${MV} ${WRKDIR}/commons-lang3-${COMMONS_LANG_VERSION} ${WRKSRC}/tools/depends/share/java/lang
 	@${MV} ${WRKDIR}/commons-text-${COMMONS_TEXT_VERSION} ${WRKSRC}/tools/depends/share/java/text
 
@@ -305,7 +312,7 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${LN} -s kodi.bin.1.gz kodi.1.gz
-	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} kodi-TexturePacker TexturePacker
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kodi-TexturePacker
 	${FIND} ${STAGEDIR}${PREFIX}/lib/kodi -type f -name '*.so' -print0 | ${XARGS} -0 ${STRIP_CMD}
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/firewalld
 

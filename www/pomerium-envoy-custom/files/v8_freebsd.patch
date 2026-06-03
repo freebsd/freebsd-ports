@@ -1,0 +1,128 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: FreeBSD Ports Collection <ports@FreeBSD.org>
+Date: Sat, 01 Jan 2000 00:00:00 +0000
+Subject: [PATCH] Add FreeBSD platform support to v8 Bazel build config
+
+Add is_freebsd config_setting to v8's Bazel config and include FreeBSD
+in is_posix and is_not_android.  Wire up the FreeBSD-specific platform
+source files (platform-freebsd.cc, stack_trace_posix.cc) that v8 already
+ships but were not referenced from the Bazel build.  Also add a
+V8_TARGET_OS_FREEBSD define and a //conditions:default fallback to the
+OS-specific define select() so the build does not fail on unrecognised
+platforms.
+---
+diff --git a/bazel/config/BUILD.bazel b/bazel/config/BUILD.bazel
+index 0000000..0000001 100644
+--- a/bazel/config/BUILD.bazel
++++ b/bazel/config/BUILD.bazel
+@@ -163,6 +163,11 @@
+     constraint_values = ["@platforms//os:windows"],
+ )
+
++config_setting(
++    name = "is_freebsd",
++    constraint_values = ["@platforms//os:freebsd"],
++)
++
+ selects.config_setting_group(
+     name = "is_64bit",
+     match_any = [
+@@ -189,6 +194,7 @@
+         ":is_linux",
+         ":is_android",
+         ":is_macos",
++        ":is_freebsd",
+     ],
+ )
+
+@@ -198,6 +204,7 @@
+         ":is_windows",
+         ":is_linux",
+         ":is_macos",
++        ":is_freebsd",
+     ]
+ )
+
+diff --git a/BUILD.bazel b/BUILD.bazel
+index 0000000..0000001 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -547,6 +547,11 @@
+             "_CRT_RAND_S",
+             "_WIN32_WINNT=0x0A00",
+         ],
++        "@v8//bazel/config:is_freebsd": [
++            "V8_HAVE_TARGET_OS",
++            "V8_TARGET_OS_FREEBSD",
++        ],
++        "//conditions:default": [],
+     }) + select({
+         ":is_v8_enable_pointer_compression": [
+             "V8_COMPRESS_POINTERS",
+@@ -933,6 +938,11 @@
+             "src/base/platform/platform-win32.h",
+             "src/base/win32-headers.h",
+         ],
++        "@v8//bazel/config:is_freebsd": [
++            "src/base/debug/stack_trace_posix.cc",
++            "src/base/platform/platform-freebsd.cc",
++        ],
++        "//conditions:default": [],
+     }),
+     visibility = ["//visibility:public"],
+ )
+@@ -4369,3 +4379,7 @@
+     copts = ["-Wno-implicit-fallthrough"],
++    linkopts = select({
++        "@v8//bazel/config:is_freebsd": ["-lexecinfo"],
++        "//conditions:default": [],
++    }),
+     deps = ["@abseil-cpp//absl/synchronization", "@abseil-cpp//absl/time"],
+ )
+diff --git a/bazel/defs.bzl b/bazel/defs.bzl
+index 0000000..0000001 100644
+--- a/bazel/defs.bzl
++++ b/bazel/defs.bzl
+@@ -438,6 +438,9 @@
+         "s390x": "s390x",
+         "riscv64": "riscv64",
+         "ppc64": "ppc64le",
++        "freebsd": "x64",
++        "freebsd_x86_64": "x64",
++        "freebsd_aarch64": "arm64",
+     }
+     v8_target_cpu = mapping[settings["//command_line_option:cpu"]]
+     return {"@v8//bazel/config:v8_target_cpu": v8_target_cpu}
+diff --git a/include/v8config.h b/include/v8config.h
+index 0000000..0000001 100644
+--- a/include/v8config.h
++++ b/include/v8config.h
+@@ -203,7 +203,8 @@
+   && !defined(V8_TARGET_OS_LINUX) \
+   && !defined(V8_TARGET_OS_MACOS) \
+   && !defined(V8_TARGET_OS_WIN) \
+-  && !defined(V8_TARGET_OS_CHROMEOS)
++  && !defined(V8_TARGET_OS_CHROMEOS) \
++  && !defined(V8_TARGET_OS_FREEBSD)
+ #  error No known target OS defined.
+ # endif
+
+@@ -243,5 +244,9 @@
+ #ifdef V8_OS_WIN
+ # define V8_TARGET_OS_WIN
+ #endif
++
++#ifdef V8_OS_FREEBSD
++# define V8_TARGET_OS_FREEBSD
++#endif
+
+ #endif  // V8_HAVE_TARGET_OS
+@@ -258,6 +263,8 @@
+ # define V8_TARGET_OS_STRING "macos"
+ #elif defined(V8_TARGET_OS_WINDOWS)
+ # define V8_TARGET_OS_STRING "windows"
++#elif defined(V8_TARGET_OS_FREEBSD)
++# define V8_TARGET_OS_STRING "freebsd"
+ #else
+ # define V8_TARGET_OS_STRING "unknown"
+ #endif

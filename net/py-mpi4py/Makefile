@@ -1,18 +1,21 @@
 PORTNAME=	mpi4py
-DISTVERSION=	4.1.0
+DISTVERSION=	4.1.2
 CATEGORIES=	net parallel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	laurent.chardon@gmail.com
+MAINTAINER=	laurent@FreeBSD.org
 COMMENT?=	Python bindings for MPI (OpenMPI)
 WWW=		https://github.com/mpi4py/mpi4py
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		pkgconfig python
-USE_PYTHON=	autoplist concurrent cython3 distutils
+USE_PYTHON=	autoplist concurrent cython pep517
 
 LDFLAGS+=	${MPI_LIBS}
 
@@ -23,7 +26,6 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-mpich-4*
 MPIOPTIONS=		--oversubscribe --stream-buffering 0
 .elif ${MP} == "MPICH"
 USES+=			fortran mpi:mpich
-LDFLAGS+=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-4*
 MPIOPTIONS=
 .else
@@ -35,6 +37,12 @@ PORTDOCS=	*
 #SLAVEDIRS=	net/py-mpi4py-mpich
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${MP} == "MPICH" && ${FORTRAN_DEFAULT} == gfortran
+LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
+.endif
 
 pre-configure:
 	${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
@@ -52,4 +60,4 @@ post-install:
 do-test:
 	(cd ${WRKSRC} && ${MPIEXEC} ${MPIOPTIONS} -n 5 ${PYTHON_CMD} test/main.py)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

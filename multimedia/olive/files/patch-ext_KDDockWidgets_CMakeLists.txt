@@ -1,0 +1,11 @@
+--- ext/KDDockWidgets/CMakeLists.txt.orig	2026-03-01 03:04:31 UTC
++++ ext/KDDockWidgets/CMakeLists.txt
+@@ -156,7 +156,7 @@ endif()
+     set(QT_MIN_VERSION "5.15")
+     set(${PROJECT_NAME}_LIBRARY_QTID "")
+ endif()
+-find_package(Qt${Qt_VERSION_MAJOR} ${QT_MIN_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Test)
++find_package(Qt${Qt_VERSION_MAJOR} ${QT_MIN_VERSION} NO_MODULE REQUIRED COMPONENTS Core Widgets Test)
+ include(KDQtInstallPaths) #to set QT_INSTALL_FOO variables
+ 
+ set(${PROJECT_NAME}_DEPS "widgets")

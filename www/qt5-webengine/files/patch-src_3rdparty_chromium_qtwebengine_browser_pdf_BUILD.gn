@@ -1,0 +1,9 @@
+--- src/3rdparty/chromium/qtwebengine/browser/pdf/BUILD.gn.orig	2025-04-23 16:00:55 UTC
++++ src/3rdparty/chromium/qtwebengine/browser/pdf/BUILD.gn
+@@ -7,5 +7,6 @@ source_set("pdf") {
+ 
+   deps = [
+     "//content/public/browser",
++    "//chrome/app:generated_resources",
+   ]
+ }

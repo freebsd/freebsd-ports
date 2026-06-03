@@ -1,7 +1,7 @@
 PORTNAME=	gitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	22
+PORTREVISION=	34
 CATEGORIES=	devel
 
 MAINTAINER=	dch@FreeBSD.org
@@ -17,6 +17,7 @@ GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_MODULE=	github.com/muesli/${PORTNAME}
 
+PORTSCOUT=	limit:^0\.[0-9]\. site:https://github.com/muesli/gitty/releases
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-build:

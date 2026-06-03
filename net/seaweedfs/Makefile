@@ -1,11 +1,11 @@
 PORTNAME=	seaweedfs
-DISTVERSION=	3.91
-PORTREVISION=	1
+DISTVERSION=	4.12
+PORTREVISION=	3
 CATEGORIES=	net sysutils
 
 MAINTAINER=	drtr0jan@yandex.ru
 COMMENT=	Distributed Object Store and Filesystem
-WWW=		https://github.com/seaweedfs/seaweedfs/wiki
+WWW=		https://seaweedfs.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,8 +14,9 @@ USES=		go:modules
 
 USE_RC_SUBR=	seaweedfs
 
-GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20250616034216-c26299b05a67
+GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20260210021559-0b80f055c285
 GO_TARGET=	./weed
+GO_BUILDFLAGS=	-ldflags "-s -w -X github.com/seaweedfs/seaweedfs/weed/util/version.COMMIT=${GO_MODULE:C/.*-//}"
 CGO_CFLAGS=	-I.
 
 SEAWEEDFS_DIR?=		/var/db/${PORTNAME}

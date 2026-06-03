@@ -1,0 +1,27 @@
+-- Remove ext-modules from pyproject.toml as it is not supported by setuptools < 64.
+-- The extension modules are now defined in setup.py.
+
+--- pyproject.toml.orig	2026-02-23 23:57:10 UTC
++++ pyproject.toml
+@@ -13,8 +13,6 @@ readme = "README.md"
+ ]
+ description = "Utilities for processing high-throughput sequencing experiments"
+ readme = "README.md"
+-license = "GPL-3.0-or-later"
+-license-files = ["LICENSE"]
+ dynamic = ["version"]
+ requires-python = ">= 3.12"
+ dependencies = [
+@@ -45,12 +43,6 @@ packages = [
+     'hits.serialize',
+     'hits.visualize',
+     'hits.visualize.interactive',
+-]
+-
+-ext-modules = [
+-    {name = "hits.adapters_cython", sources = ["hits/adapters_cython.pyx"]},
+-    {name = "hits.fastq_cython", sources = ["hits/fastq_cython.pyx"]},
+-    {name = "hits.sw_cython", sources = ["hits/sw_cython.pyx"]},
+ ]
+ 
+ [tool.setuptools.dynamic]

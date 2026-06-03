@@ -1,0 +1,11 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -182,6 +182,7 @@
+         ":macos_x86_64_legacy": False,
+         "//conditions:default": True,
+     }),
++    alwayslink = True,
+     # Headers must be in textual_hdrs to allow us to set the standard to C99
+     textual_hdrs = [
+         "include/cpuinfo.h",

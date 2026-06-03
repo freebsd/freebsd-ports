@@ -1,4 +1,4 @@
---- src/saga_core/saga_gui/CMakeLists.txt.orig	2022-08-31 16:51:39 UTC
+--- src/saga_core/saga_gui/CMakeLists.txt.orig	2026-04-10 09:39:33 UTC
 +++ src/saga_core/saga_gui/CMakeLists.txt
 @@ -241,7 +241,7 @@ if(GIT_FOUND)
  			OUTPUT_VARIABLE GIT_HASH

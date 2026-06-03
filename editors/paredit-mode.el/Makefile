@@ -1,9 +1,8 @@
 PORTNAME=	paredit-mode.el
 PORTVERSION=	24
-PORTREVISION=	20
+PORTREVISION=	22
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://mumble.net/~campbell/emacs/
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	paredit-${PORTVERSION}.el
 EXTRACT_SUFX=
 EXTRACT_ONLY=
@@ -15,6 +14,8 @@ WWW=		https://www.emacswiki.org/emacs/ParEdit
 LICENSE=	GPLv3+
 
 USES=		emacs
+
+CONFLICTS_INSTALL=	paredit-mode.el-emacs_*
 
 NO_BUILD=	yes
 NO_ARCH=	yes

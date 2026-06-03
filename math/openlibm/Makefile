@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.7
 CATEGORIES=	math
 
-MAINTAINER=	laurent.chardon@gmail.com
+MAINTAINER=	laurent@FreeBSD.org
 COMMENT=	High quality system independent, portable, open source libm
 WWW=		https://openlibm.org
 

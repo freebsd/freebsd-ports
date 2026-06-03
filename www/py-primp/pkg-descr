@@ -1,0 +1,16 @@
+PRIMP (Python Requests IMPersonate) is a high-performance HTTP client library
+for Python, designed to mimic the behavior of real web browsers. It extends
+the popular `requests` library by adding advanced impersonation capabilities.
+
+Key features include:
+* Browser Fingerprinting**: Mimics TLS and HTTP/2 fingerprints of various
+  popular web browsers (e.g., Chrome, Firefox, Safari) to evade detection by
+  anti-bot systems.
+* High Performance**: Optimized for speed, making it suitable for demanding
+  web scraping and automation tasks.
+* Ease of Use**: Maintains the familiar and user-friendly API of the
+  `requests` library.
+
+PRIMP is ideal for developers and researchers who need to interact with websites
+that employ sophisticated bot detection mechanisms, enabling more robust web
+scraping, automated testing, and data collection.

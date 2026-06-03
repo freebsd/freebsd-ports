@@ -1,0 +1,8 @@
+Gram is a fork of the Zed code editor. It features solid performance and is
+highly configurable, yet comes with batteries included out of the box. Gram
+supports many popular languages and can use Zed extensions to support
+additional languages. Other features include built-in documentation, debugger
+support via the DAP protocol, and source control using git.
+
+Gram explicitly excludes AI integration, telemetry, proprietary server
+components, and third-party service integrations.

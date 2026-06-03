@@ -3,6 +3,8 @@ lib/cmake/ParU/ParUConfig.cmake
 lib/cmake/ParU/ParUConfigVersion.cmake
 lib/cmake/ParU/ParUTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ParU/ParUTargets.cmake
+lib/cmake/ParU/ParUTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ParU/ParUTargets_static.cmake
 lib/libparu.a
 lib/libparu.so
 lib/libparu.so.1

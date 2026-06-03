@@ -1,0 +1,7 @@
+Mtg is an implementation of MTProto proxy in Golang.
+
+Features:
+- Lightweight: Maximizes performance while keeping the code maintainable.
+- Easy Deployment: Inspired by ShadowSocks; avoids "promoted channels".
+- Single Secret: One secret per instance to keep configuration simple.
+- No WebUI: Purely CLI/config-driven to remain lean and secure.

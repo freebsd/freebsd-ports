@@ -1,6 +1,6 @@
 PORTNAME=	minipro
-DISTVERSION=	0.5
-PORTREVISION=	2
+DISTVERSION=	0.7.4
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@freebsd.org
@@ -16,17 +16,17 @@ USES=		compiler:c11 gmake pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	DavidGriffith
 GL_PROJECT=	${PORTNAME}
-GL_TAGNAME=	e8244313c2558b41a390824e1f847f449ebd7fce
+GL_TAGNAME=	f124338492a3937dbf02f9c4bc5219892f10481e
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
 PLIST_FILES=	bin/minipro \
 		share/man/man1/minipro.1.gz \
+		share/minipro/dump-alg-minipro.bash \
 		share/minipro/infoic.xml \
 		share/minipro/logicic.xml
 
 post-install:
-	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/minipro.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	pastix
 PORTVERSION=	6.3.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.inria.fr/solverstack/pastix/uploads/${GL_TAG}/
 
@@ -11,13 +11,13 @@ WWW=		https://solverstack.gitlabpages.inria.fr/pastix/
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	bash:shells/bash	\
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libmetis.so:math/metis	\
 		libjulia.so:lang/julia	\
 		libscotch.so:cad/scotch	\
 		libhwloc.so:devel/hwloc2
 RUN_DEPENDS=	bash:shells/bash	\
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake blaslapack:openblas fortran pkgconfig python
 

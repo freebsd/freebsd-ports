@@ -1,7 +1,7 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.6
-PORTREVISION=	10
+PORTREVISION=	16
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	SWIG wrapped code invalid in 32 bit architecture, regenerate code using -DSWIGWORDSIZE32
 BROKEN_i386=	SWIG wrapped code invalid in 32 bit architecture, regenerate code using -DSWIGWORDSIZE32 # see https://github.com/google/or-tools/issues/2130
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}absl-py>0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \

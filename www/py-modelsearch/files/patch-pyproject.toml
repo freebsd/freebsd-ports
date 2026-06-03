@@ -1,0 +1,24 @@
+--- pyproject.toml.orig	2026-02-11 23:19:59 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80,<81"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -11,12 +11,11 @@ dependencies = [
+ requires-python = ">= 3.10"
+ dependencies = [
+   "Django>=4.2",
+-  "django-tasks>=0.7,<0.12",
++  "django-tasks>=0.7,<1",
+ ]
+ description = "A library for indexing Django models with Elasicsearch, OpenSearch or database and searching them with the Django ORM."
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-3-Clause"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Web Environment",

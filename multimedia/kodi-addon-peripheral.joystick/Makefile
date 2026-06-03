@@ -1,6 +1,6 @@
 PORTNAME=	peripheral.joystick
-DISTVERSION=	21.1.15
-DISTVERSIONSUFFIX=	-Omega
+DISTVERSION=	22.0.6.20260329
+DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -17,6 +17,7 @@ USES=		cmake localbase compiler:c++14-lang kodi
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
+GH_TAGNAME=	0ef37bb8ae6a74907b2f844418b20bca72ddefb4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|if(CORE_SYSTEM_NAME STREQUAL linux)|if(1)|g' \

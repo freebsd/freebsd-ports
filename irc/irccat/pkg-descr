@@ -1,0 +1,9 @@
+irccat lets you easily send events to IRC channels from scripts and other
+applications.
+
+Features:
+
+- TCP listener: cat strings to a TCP port and have them sent to IRC
+- HTTP listener: send messages and trigger commands via HTTP
+- Webhooks: receive events from GitHub, GitLab, Sentry, Grafana, and more
+- Commands: trigger external scripts via IRC messages

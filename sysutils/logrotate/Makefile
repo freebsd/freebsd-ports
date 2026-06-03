@@ -1,32 +1,30 @@
 PORTNAME=	logrotate
-PORTVERSION=	3.13.0
-PORTREVISION=	2
+DISTVERSION=	3.22.0
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	js@iksz.hu
 COMMENT=	Daemon to rotate, compress, remove, and mail system log files
+WWW=		https://github.com/logrotate/logrotate/
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USE_GITHUB=	yes
-
-PATCH_STRIP=		-p1
-USES=		autoreconf cpe gmake localbase
+USES=		cpe gmake localbase tar:xz
 CPE_VENDOR=	logrotate_project
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-default-mail-command=/usr/bin/mailx \
 		--with-compress-command=/usr/bin/gzip \
 		--with-uncompress-command=/usr/bin/gunzip \
 		--with-state-file-path=/var/run/logrotate.status
+SUB_FILES=	logrotate.conf.sample
 
 post-install:
-	${SED} -e 's|__PREFIX__|${PREFIX}|' \
-		< ${FILESDIR}/logrotate.conf.sample > ${STAGEDIR}${PREFIX}/etc/logrotate.conf.sample
-	${MKDIR} ${STAGEDIR}${ETCDIR}.d
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/logrotate.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/logrotate.conf.sample
+	${MKDIR} ${STAGEDIR}${ETCDIR}.d \
+		 ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/syslog.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

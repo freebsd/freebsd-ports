@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-09-28 08:11:20 UTC
++++ pyproject.toml
+@@ -57,7 +57,7 @@ dependencies = [
+ dependencies = [
+   "certifi",
+   "isodate",
+-  "lxml >=4.6.4,<6",
++  "lxml >=4.6.4,<7",
+   "pycountry",
+   "pycryptodome >=3.4.3,<4",
+   "PySocks >=1.5.6,!=1.5.7",

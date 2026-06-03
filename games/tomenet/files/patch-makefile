@@ -1,42 +1,63 @@
---- makefile.orig	2015-02-01 10:19:25 UTC
+--- makefile.orig	2025-04-26 17:04:27 UTC
 +++ makefile
-@@ -203,7 +203,7 @@ CLI_LUAOBJS = \
- #
- # This is my compiler of choice, it seems to work most everywhere
- #
--CC = gcc
-+CC ?= cc
+@@ -226,7 +226,8 @@ CPP = cpp
+ #So, -nostdinc will prevent the whole own comment blob of cpp to get generated
+ #in the first place, as we never asked for it:
+ #CPPFLAGS = -C -P -nostdinc
+-CPPFLAGS = -x c -E -Wp,-C,-P,-nostdinc,-Wno-format-overflow
++#CPPFLAGS = -x c -E -Wp,-C,-P,-nostdinc,-Wno-format-overflow
++CPPFLAGS = -C -P -x c -Wno-format-overflow
  
- # For allowing #if..#else..#endif constructs in LUA files - C. Blue
- # Note: The flags must contain
-@@ -256,8 +256,8 @@ X11BASE = /usr/X11R6
- # attempt to "guess" at many of these flags based on your system.
- #
- ## With SDL
--CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags` -D_DEFAULT_SOURCE -DACC32
--LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm `sdl-config --libs` -lSDL_mixer
-+#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags` -D_DEFAULT_SOURCE -DACC32
-+#LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm `sdl-config --libs` -lSDL_mixer
+ # gcc variant:
+ #CPP = gcc
+@@ -291,12 +292,12 @@ SERVER_EXTRA_LIBS = -lcrypt
+ 
+ # With SDL2
+ #  With sdl2-config
+-CFLAGS = -pipe -Wall -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -std=c99 -D_DEFAULT_SOURCE -DACC32 -fPIE -fsigned-char -Wno-macro-redefined
++#CFLAGS = -pipe -Wall -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -std=c99 -D_DEFAULT_SOURCE -DACC32 -fPIE -fsigned-char -Wno-macro-redefined
+ # Note: -fsigned-char is important for ARM64, as there 'char' is by default unsigned, while on x86/AM64 it is by default signed!
+ #  With manually set prefix
+ #CFLAGS = -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -std=c99 -DSOUND_SDL -I/usr/local/include/SDL2 -I/usr/include/SDL2 -D_REENTRANT -D_DEFAULT_SOURCE -DACC32 -fPIE -fsigned-char -Wno-format-truncation
+ #  With sdl2-config
+-LIBS = -L/usr/pkg/lib -lncurses -lm
++#LIBS = -L/usr/pkg/lib -lncurses -lm
+ #  With manually set prefix
+ #LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lm -L/usr/local/lib -L/usr/lib -pthread -lSDL2 -lSDL2_mixer
+ 
+@@ -333,8 +334,8 @@ LDFLAGS += -Wl,-z,relro -Wl,-z,now
+ #LIBS = -L/usr/pkg/lib -lncurses -lm `sdl-config --libs` -lSDL_mixer
  ##
  ## Without SDL
- #CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
-@@ -304,8 +304,8 @@ LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -
- #LDFLAGS = -Wl,-rpath,\$$ORIGIN
+-#CFLAGS = -O2 -g -pipe -Wall -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -std=c99
+-#LIBS = -L/usr/pkg/lib -lncurses -lm
++CFLAGS += -O2 -g -pipe -Wall -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -std=c99
++LIBS = -L/usr/local/lib -lncurses -lm
+ 
+ 
  ##
- ## Without SDL
--#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
--#LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm
-+CFLAGS += -Wall -Wno-implicit-int -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
-+LIBS += -lncurses -lcrypt -lm -lexecinfo
+@@ -420,17 +421,17 @@ CFLAGS += $(shell ./os-check.sh)
+ CFLAGS += $(shell ./os-check.sh)
  
+ # Normal (non-test) client uses optimizations
+-tomenet: CFLAGS += -g -O2 -DSOUND_SDL `sdl2-config --cflags` -DUSE_X11 -I${X11BASE}/include
+-tomenet: LIBS += -L${X11BASE}/lib -lX11 `sdl2-config --libs` -lSDL2_mixer
++#tomenet: CFLAGS += -g -O2 -DSOUND_SDL `sdl2-config --cflags` -DUSE_X11 -I${X11BASE}/include
++#tomenet: LIBS += -L${X11BASE}/lib -lX11 `sdl2-config --libs` -lSDL2_mixer
+ # Compile a client with 'test client' version/tag
+ #tomenet.test: CFLAGS += -DTEST_CLIENT -g3 -O0
+ #disable 3 warning spams: 'accessing n bytes in a region of size m', '_FORTIFY_SOURCE requires compiling with optimization', 'directive writing up to 159 bytes into a region of size'
+-tomenet.test: CFLAGS += -DTEST_CLIENT -g3 -O0 -Wno-stringop-overflow -Wno-cpp -Wno-format-overflow -DSOUND_SDL `sdl2-config --cflags` -DUSE_X11 -I${X11BASE}/include
+-tomenet.test: PPFLAGS = -DTEST_CLIENT -DSOUND_SDL `sdl2-config --cflags` 
+-tomenet.test: LIBS += -L${X11BASE}/lib -lX11 `sdl2-config --libs` -lSDL2_mixer
+-accedit: CFLAGS += -g -O2
++#tomenet.test: CFLAGS += -DTEST_CLIENT -g3 -O0 -Wno-stringop-overflow -Wno-cpp -Wno-format-overflow -DSOUND_SDL `sdl2-config --cflags` -DUSE_X11 -I${X11BASE}/include
++#tomenet.test: PPFLAGS = -DTEST_CLIENT -DSOUND_SDL `sdl2-config --cflags` 
++#tomenet.test: LIBS += -L${X11BASE}/lib -lX11 `sdl2-config --libs` -lSDL2_mixer
++#accedit: CFLAGS += -g -O2
+ # Server is compiled with optimizations:
+-tomenet.server: CFLAGS += -g -O2
++#tomenet.server: CFLAGS += -g -O2
+ # Server is compiled without optimizations, for debugging with gdb specifically:
+ #tomenet.server: CFLAGS += -ggdb -O0
  
- ## Added by thaler, 6/28/97
-@@ -397,7 +397,7 @@ date:
- #
- 
- accedit: account/accedit.o
--	$(CC) $(CFLAGS) $(LDFLAGS) -o accedit account/accedit.o -lcurses -lcrypt
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o accedit account/accedit.o -lncurses -lcrypt
- 
- 
- #

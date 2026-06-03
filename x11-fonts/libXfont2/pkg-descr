@@ -1,1 +1,6 @@
-This package contains the X font libary
+libXfont provides the core of the legacy X11 font system, handling the
+index files (fonts.dir, fonts.alias, fonts.scale), the various font
+file formats, and rasterizing them. It is used by the X display servers
+(Xorg, Xvfb, etc.) and the X Font Server (xfs), but should not be used
+by normal X11 clients. X11 clients access fonts via either the new APIs
+in libXft, or the legacy APIs in libX11.

@@ -1,0 +1,15 @@
+-- Update netsock to 0.7.0 which contains FreeBSD compatibility fixes.
+-- This version fixes network socket handling issues on FreeBSD.
+-- Ref: https://github.com/shellrow/netsock/issues/2
+
+--- Cargo.toml.orig	2026-05-01 14:18:54 UTC
++++ Cargo.toml
+@@ -27,7 +27,7 @@ crossterm = "0.29.0"
+ nix = { version = "0.30", features = ["fs"] }
+ ratatui = "0.29"
+ crossterm = "0.29.0"
+-netsock = "0.3.0"
++netsock = "0.7.0"
+ #libc = "=0.2.172"
+ tokio = { version = "1.45.1", features = ["rt", "rt-multi-thread", "macros", "process", "fs", "io-std", "full"] }
+ futures = "0.3.31"

@@ -6,7 +6,7 @@ MASTER_SITES=	https://fukuchi.org/archive/shortshort/
 
 MAINTAINER?=	meta@FreeBSD.org
 COMMENT=	Bicycle with trailers like "sl"
-WWW=		https://fukuchi.org/works/shortshort/ #quit
+WWW=		https://fukuchi.org/en/works/shortshort/quit/
 
 USES=		ncurses
 

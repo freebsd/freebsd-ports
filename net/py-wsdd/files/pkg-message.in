@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+The rc variable for the workgroup name in /etc/rc.conf has changed from
+wsdd_group to wsdd_workgroup. Do not forget to change the variable name.
+
+EOM
+}
+]

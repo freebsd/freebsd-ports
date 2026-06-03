@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2026-05-13 09:54:34 UTC
++++ CMakeLists.txt
+@@ -31,7 +31,7 @@ LINK_DIRECTORIES(${OS_LINK_DIR})
+ set(OS_LINK_LIBRARY WinRing0x64)
+ set(OS_LINK_DIR ./win32)
+ LINK_DIRECTORIES(${OS_LINK_DIR})
+-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif(CMAKE_SYSTEM_NAME MATCHES "^(Linux|FreeBSD)$")
+ set(OS_SOURCE lib/linux/osdep_linux.c lib/linux/osdep_linux_mem.c lib/linux/osdep_linux_smu_kernel_module.c)
+ 
+ find_package(PkgConfig REQUIRED)
+@@ -59,7 +59,7 @@ ADD_EXECUTABLE(${PROJECT_NAME} ${OS_SOURCE} ${COMMON_S
+ add_definitions(-D_LIBRYZENADJ_INTERNAL)
+ 
+ ADD_EXECUTABLE(${PROJECT_NAME} ${OS_SOURCE} ${COMMON_SOURCES} argparse.c main.c)
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND (PREFER_STATIC_LINKING OR NOT BUILD_SHARED_LIBS))
++if(CMAKE_SYSTEM_NAME MATCHES "^(Linux|FreeBSD)$" AND (PREFER_STATIC_LINKING OR NOT BUILD_SHARED_LIBS))
+     if(PREFER_STATIC_LINKING)
+         set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS " -static")
+     endif()

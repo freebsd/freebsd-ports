@@ -1,6 +1,4 @@
 include/KPim6/CalendarSupport/CalendarSupport/ArchiveDialog
-include/KPim6/CalendarSupport/CalendarSupport/CalPrintDefaultPlugins
-include/KPim6/CalendarSupport/CalendarSupport/CalPrintPluginBase
 include/KPim6/CalendarSupport/CalendarSupport/CalPrinter
 include/KPim6/CalendarSupport/CalendarSupport/CalendarSingleton
 include/KPim6/CalendarSupport/CalendarSupport/CategoryHierarchyReader
@@ -21,9 +19,7 @@ include/KPim6/CalendarSupport/CalendarSupport/Utils
 include/KPim6/CalendarSupport/calendarsupport/archivedialog.h
 include/KPim6/CalendarSupport/calendarsupport/calendarsingleton.h
 include/KPim6/CalendarSupport/calendarsupport/calendarsupport_export.h
-include/KPim6/CalendarSupport/calendarsupport/calprintdefaultplugins.h
 include/KPim6/CalendarSupport/calendarsupport/calprinter.h
-include/KPim6/CalendarSupport/calendarsupport/calprintpluginbase.h
 include/KPim6/CalendarSupport/calendarsupport/categoryhierarchyreader.h
 include/KPim6/CalendarSupport/calendarsupport/cellitem.h
 include/KPim6/CalendarSupport/calendarsupport/collectionselection.h

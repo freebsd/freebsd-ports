@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: syncthing
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# syncthing_enable (bool):	Set to NO by default.
+#				Set it to YES to enable syncthing.
+# syncthing_home (path):        Directory where syncthing configuration
+#                               data is stored.
+#                               Default: %%PREFIX%%/etc/syncthing
+# syncthing_log_file (path):    Syncthing log file
+#                               Default: /var/log/syncthing.log
+# syncthing_user (user):        Set user to run syncthing.
+#                               Default is "syncthing".
+# syncthing_group (group):      Set group to run syncthing.
+#                               Default is "syncthing".
+
+. /etc/rc.subr
+
+name=syncthing
+rcvar=syncthing_enable
+
+load_rc_config $name
+
+: ${syncthing_enable:="NO"}
+: ${syncthing_home=%%PREFIX%%/etc/syncthing}
+: ${syncthing_log_file=/var/log/syncthing.log}
+: ${syncthing_user:="syncthing"}
+: ${syncthing_group=${syncthing_group:-$syncthing_user}}
+
+pidfile=/var/run/syncthing.pid
+procname="%%PREFIX%%/bin/syncthing"
+command="/usr/sbin/daemon"
+command_args="-cf -p ${pidfile} ${procname} ${syncthing_home:+-home=${syncthing_home}} ${syncthing_log_file:+-logfile=${syncthing_log_file}} -no-browser ${syncthing_args}"
+
+start_precmd=syncthing_startprecmd
+
+syncthing_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${syncthing_user} -g ${syncthing_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${syncthing_home} ]; then
+                install -d -o ${syncthing_user} -g ${syncthing_group} ${syncthing_home}
+        fi
+
+        if [ ! -e ${syncthing_log_file} ]; then
+                install -o ${syncthing_user} -g ${syncthing_group} /dev/null ${syncthing_log_file};
+        fi
+}
+
+run_rc_command "$1"

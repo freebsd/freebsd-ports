@@ -84,6 +84,11 @@ else # profile is not provided
 	fi
 fi
 
+# make sure the db directory exists and is owned by the correct user/group
+mkdir -p /var/db/greptimedb
+chown -R ${greptimedb_user}:${greptimedb_group} /var/db/greptimedb
+cd /var/db/greptimedb
+
 greptimedb_poststart()
 {
 	if [ -n "$greptimedb_post_start" ]; then

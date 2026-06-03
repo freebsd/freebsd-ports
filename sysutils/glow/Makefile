@@ -1,10 +1,10 @@
 PORTNAME=	glow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	15
+DISTVERSION=	2.1.1
+PORTREVISION=	8
 CATEGORIES=	sysutils
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Render markdown on the CLI, with pizzazz!
 WWW=		https://github.com/charmbracelet/glow
 
@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	ad21129
+_BUILD_SHA=	d37e988
 
-GO_MODULE=	github.com/charmbracelet/${PORTNAME}
+GO_MODULE=	github.com/charmbracelet/${PORTNAME}/v2
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X main.Version=${_BUILD_VERSION} \

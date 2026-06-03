@@ -1,5 +1,5 @@
-TIMESTAMP = 1739470321
-SHA256 (go/www_fabio/fabio-v1.6.4/v1.6.4.mod) = 68009f2c2b56dead35364510830170f4123ceb42ebafe5560c5b03d1f2caf51b
-SIZE (go/www_fabio/fabio-v1.6.4/v1.6.4.mod) = 4956
-SHA256 (go/www_fabio/fabio-v1.6.4/v1.6.4.zip) = 95ce0a061a8cd6111ee651c7bd27274c405488569de57b8ad5332758d0c97617
-SIZE (go/www_fabio/fabio-v1.6.4/v1.6.4.zip) = 1928806
+TIMESTAMP = 1743060960
+SHA256 (go/www_fabio/fabio-v1.6.11/v1.6.11.mod) = e4193979db809d7e9b3e58d7ee54d6d2ead4588d54b81062cf50dd872793f431
+SIZE (go/www_fabio/fabio-v1.6.11/v1.6.11.mod) = 5311
+SHA256 (go/www_fabio/fabio-v1.6.11/v1.6.11.zip) = cdc6718d98dc4836944daf2dd015dee3d8d4d198cd7a1f7c1c723096630a20d1
+SIZE (go/www_fabio/fabio-v1.6.11/v1.6.11.zip) = 1929812

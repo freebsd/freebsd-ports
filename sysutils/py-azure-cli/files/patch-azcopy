@@ -1,0 +1,20 @@
+--- azure/cli/command_modules/storage/azcopy/util.py.orig	2026-03-31 07:19:01 UTC
++++ azure/cli/command_modules/storage/azcopy/util.py
+@@ -74,6 +74,8 @@ class AzCopy:
+             file_url = 'https://aka.ms/downloadazcopy-v10-mac'
+             if _verify_url(file_url) is None:
+                 file_url = _verify_url('https://aka.ms/InstallAzCopyForCLIDarwin')
++        elif self.system == 'FreeBSD':
++            raise CLIError('Azcopy ({}) binary not available, follow instructions at https://wiki.freebsd.org/Ports/sysutils/py-azure-cli'.format(self.system))
+         else:
+             raise CLIError('Azcopy executable does not exist for {}.'.format(self.system))
+         azcopy_install_guide = 'https://learn.microsoft.com/azure/storage/common/storage-use-azcopy-v10'
+@@ -220,7 +222,7 @@ def _get_default_install_location():
+     _azcopy_installation_dir = os.path.join(_config_dir, "bin")
+     if system == 'Windows':
+         install_location = os.path.join(_azcopy_installation_dir, 'azcopy.exe')
+-    elif system in ('Linux', 'Darwin'):
++    elif system in ('Linux', 'Darwin', 'FreeBSD'):
+         install_location = os.path.join(_azcopy_installation_dir, 'azcopy')
+     else:
+         raise CLIError('The {} platform is not currently supported. If you want to know which platforms are supported, '

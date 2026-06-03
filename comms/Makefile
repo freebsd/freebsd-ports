@@ -36,6 +36,7 @@
     SUBDIR += ebook2cw
     SUBDIR += ebusd
     SUBDIR += echolinux
+    SUBDIR += emacs-eat
     SUBDIR += ems-flasher
     SUBDIR += fl_moxgen
     SUBDIR += flamp
@@ -57,12 +58,11 @@
     SUBDIR += gr-osmosdr
     SUBDIR += grig
     SUBDIR += gstreamer1-plugins-spandsp
-    SUBDIR += gtkmmorse
     SUBDIR += hackrf
-    SUBDIR += hackrf-devel
     SUBDIR += hamlib
     SUBDIR += hcidump
     SUBDIR += hidapi
+    SUBDIR += hydrasdr
     SUBDIR += ibp
     SUBDIR += iceoryx
     SUBDIR += inspectrum
@@ -97,6 +97,7 @@
     SUBDIR += lrzsz
     SUBDIR += lysdr
     SUBDIR += mbelib
+    SUBDIR += meshcore-cli
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += morse
@@ -134,6 +135,7 @@
     SUBDIR += predict
     SUBDIR += py-ModbusTCP
     SUBDIR += py-adafruit-ampy
+    SUBDIR += py-cayennelpp
     SUBDIR += py-elelabs-zigbee-ezsp-utility
     SUBDIR += py-esptool
     SUBDIR += py-fritzconnection
@@ -142,13 +144,16 @@
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
     SUBDIR += py-libusbsio
+    SUBDIR += py-meshcore
     SUBDIR += py-nkdfu
     SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
+    SUBDIR += py-pynitrokey
     SUBDIR += py-pyocd
     SUBDIR += py-pyocd-pemicro
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
+    SUBDIR += py-pyserial-asyncio-fast
     SUBDIR += py-sdm_modbus
     SUBDIR += py-spsdk
     SUBDIR += py-streamdeck

@@ -31,7 +31,6 @@ share/applications/mate-system-info.desktop
 share/applications/mate-theme-installer.desktop
 share/applications/mate-window-properties.desktop
 share/applications/matecc.desktop
-share/applications/mimeinfo.cache
 share/desktop-directories/matecc.directory
 share/help/C/mate-control-center/config-accessibility-keyboard.xml
 share/help/C/mate-control-center/config-background.xml

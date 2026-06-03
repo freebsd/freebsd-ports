@@ -19,6 +19,7 @@
 %%PYQT_SIPDIR%%/QtGraphs/qcustom3ditem.sip
 %%PYQT_SIPDIR%%/QtGraphs/qcustom3dlabel.sip
 %%PYQT_SIPDIR%%/QtGraphs/qcustom3dvolume.sip
+%%PYQT_SIPDIR%%/QtGraphs/qcustomseries.sip
 %%PYQT_SIPDIR%%/QtGraphs/qdatetimeaxis.sip
 %%PYQT_SIPDIR%%/QtGraphs/qgraphs3dnamespace.sip
 %%PYQT_SIPDIR%%/QtGraphs/qgraphstheme.sip
@@ -58,3 +59,4 @@
 %%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/INSTALLER
 %%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/licenses/LICENSE

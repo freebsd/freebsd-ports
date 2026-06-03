@@ -1,12 +1,7 @@
 PORTNAME=	subprocess
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0-6
-DISTVERSIONSUFFIX=	-g29d01c7
+DISTVERSION=	0.6.0
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	2caf8c1e119d5f14f4ae31316ddfd03126e101ac.patch:-p1 # https://github.com/benman64/subprocess/pull/17
-PATCHFILES+=	cef6823e5834053a20144b790945f7ed1808c28c.patch:-p1 # https://github.com/benman64/subprocess/pull/18
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ subprocess library similar in design to Python subprocess library
@@ -31,5 +26,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/cpp/subprocess/${inc} ${STAGEDIR}${PREFIX}/include/subprocess
 .endfor
 	${INSTALL_LIB} ${BUILD_WRKSRC}/subprocess/libsubprocess.so ${STAGEDIR}${PREFIX}/lib
+
+# tests as of 0.6.0: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

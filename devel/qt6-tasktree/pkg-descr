@@ -1,0 +1,6 @@
+The Qt TaskTree module automatically manages a chain (or a tree) of
+asynchronous tasks of mixed types, including running processes,
+network queries, functions in separate threads, animations, timers,
+and so on. It's easily extensible with any other types of asynchronous
+tasks. New to Qt 6.11, this is a 'tech preview', so the API/ABI are
+not considered as stable yet.

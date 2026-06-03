@@ -1,23 +1,26 @@
---- pyproject.toml.orig	2025-07-15 03:23:16 UTC
+--- pyproject.toml.orig	2026-05-18 06:03:50 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
  build-backend = "setuptools.build_meta"
--requires = ["setuptools>=77.0.3"]
+-requires = ["setuptools>=82.0.1"]
 +requires = ["setuptools>=61"]
  
  [project]
  name = "types-docutils"
- version = "0.21.0.20250715"
+ version = "0.22.3.20260518"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
  description = "Typing stubs for docutils"
  readme = { text = """\
  ## Typing stubs for docutils
-@@ -55,5 +54,4 @@ dependencies = []
+@@ -46,8 +45,4 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
 -packages = ['docutils-stubs']
  include-package-data = false
+-
+-[tool.setuptools.package-data]
+-'docutils-stubs' = ['__init__.pyi', '__main__.pyi', 'core.pyi', 'examples.pyi', 'frontend.pyi', 'io.pyi', 'languages/__init__.pyi', 'languages/af.pyi', 'languages/ar.pyi', 'languages/ca.pyi', 'languages/cs.pyi', 'languages/da.pyi', 'languages/de.pyi', 'languages/en.pyi', 'languages/eo.pyi', 'languages/es.pyi', 'languages/fa.pyi', 'languages/fi.pyi', 'languages/fr.pyi', 'languages/gl.pyi', 'languages/he.pyi', 'languages/it.pyi', 'languages/ja.pyi', 'languages/ka.pyi', 'languages/ko.pyi', 'languages/lt.pyi', 'languages/lv.pyi', 'languages/nl.pyi', 'languages/pl.pyi', 'languages/pt_br.pyi', 'languages/ru.pyi', 'languages/sk.pyi', 'languages/sv.pyi', 'languages/uk.pyi', 'languages/zh_cn.pyi', 'languages/zh_tw.pyi', 'nodes.pyi', 'parsers/__init__.pyi', 'parsers/commonmark_wrapper.pyi', 'parsers/docutils_xml.pyi', 'parsers/null.pyi', 'parsers/recommonmark_wrapper.pyi', 'parsers/rst/__init__.pyi', 'parsers/rst/directives/__init__.pyi', 'parsers/rst/directives/admonitions.pyi', 'parsers/rst/directives/body.pyi', 'parsers/rst/directives/html.pyi', 'parsers/rst/directives/images.pyi', 'parsers/rst/directives/misc.pyi', 'parsers/rst/directives/parts.pyi', 'parsers/rst/directives/references.pyi', 'parsers/rst/directives/tables.pyi', 'parsers/rst/languages/__init__.pyi', 'parsers/rst/languages/af.pyi', 'parsers/rst/languages/ar.pyi', 'parsers/rst/languages/ca.pyi', 'parsers/rst/languages/cs.pyi', 'parsers/rst/languages/da.pyi', 'parsers/rst/languages/de.pyi', 'parsers/rst/languages/en.pyi', 'parsers/rst/languages/eo.pyi', 'parsers/rst/languages/es.pyi', 'parsers/rst/languages/fa.pyi', 'parsers/rst/languages/fi.pyi', 'parsers/rst/languages/fr.pyi', 'parsers/rst/languages/gl.pyi', 'parsers/rst/languages/he.pyi', 'parsers/rst/languages/it.pyi', 'parsers/rst/languages/ja.pyi', 'parsers/rst/languages/ka.pyi', 'parsers/rst/languages/ko.pyi', 'parsers/rst/languages/lt.pyi', 'parsers/rst/languages/lv.pyi', 'parsers/rst/languages/nl.pyi', 'parsers/rst/languages/pl.pyi', 'parsers/rst/languages/pt_br.pyi', 'parsers/rst/languages/ru.pyi', 'parsers/rst/languages/sk.pyi', 'parsers/rst/languages/sv.pyi', 'parsers/rst/languages/uk.pyi', 'parsers/rst/languages/zh_cn.pyi', 'parsers/rst/languages/zh_tw.pyi', 'parsers/rst/roles.pyi', 'parsers/rst/states.pyi', 'parsers/rst/tableparser.pyi', 'readers/__init__.pyi', 'readers/doctree.pyi', 'readers/pep.pyi', 'readers/standalone.pyi', 'statemachine.pyi', 'transforms/__init__.pyi', 'transforms/components.pyi', 'transforms/frontmatter.pyi', 'transforms/misc.pyi', 'transforms/parts.pyi', 'transforms/peps.pyi', 'transforms/references.pyi', 'transforms/universal.pyi', 'transforms/writer_aux.pyi', 'utils/__init__.pyi', 'utils/_roman_numerals.pyi', 'utils/code_analyzer.pyi', 'utils/math/__init__.pyi', 'utils/math/latex2mathml.pyi', 'utils/math/math2html.pyi', 'utils/math/mathalphabet2unichar.pyi', 'utils/math/mathml_elements.pyi', 'utils/math/tex2mathml_extern.pyi', 'utils/math/tex2unichar.pyi', 'utils/math/unichar2tex.pyi', 'utils/punctuation_chars.pyi', 'utils/smartquotes.pyi', 'utils/urischemes.pyi', 'writers/__init__.pyi', 'writers/_html_base.pyi', 'writers/docutils_xml.pyi', 'writers/html4css1/__init__.pyi', 'writers/html5_polyglot/__init__.pyi', 'writers/latex2e/__init__.pyi', 'writers/manpage.pyi', 'writers/null.pyi', 'writers/odf_odt/__init__.pyi', 'writers/odf_odt/prepstyles.pyi', 'writers/odf_odt/pygmentsformatter.pyi', 'writers/pep_html/__init__.pyi', 'writers/pseudoxml.pyi', 'writers/s5_html/__init__.pyi', 'writers/xetex/__init__.pyi', 'METADATA.toml', 'py.typed']

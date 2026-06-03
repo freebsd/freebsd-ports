@@ -1,5 +1,5 @@
 PORTNAME=	dask-awkward
-PORTVERSION=	2025.3.0
+PORTVERSION=	2026.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.8.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awkward>=2.5.1:math/py-awkward@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awkward>=2.8.12:math/py-awkward@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachetools>=0:devel/py-cachetools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dask>=2023.04.0:devel/py-dask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dask>=2023.4.0:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python

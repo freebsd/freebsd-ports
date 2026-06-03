@@ -6,6 +6,7 @@ include/superlu/slu_scomplex.h
 include/superlu/slu_sdefs.h
 include/superlu/slu_util.h
 include/superlu/slu_zdefs.h
+include/superlu/superlu_config.h
 include/superlu/superlu_enum_consts.h
 include/superlu/supermatrix.h
 lib/cmake/superlu/superluConfig.cmake
@@ -13,6 +14,6 @@ lib/cmake/superlu/superluConfigVersion.cmake
 lib/cmake/superlu/superluTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/superlu/superluTargets.cmake
 lib/libsuperlu.so
-lib/libsuperlu.so.5
-lib/libsuperlu.so.5.3.0
+lib/libsuperlu.so.7
+lib/libsuperlu.so.7.0.1
 libdata/pkgconfig/superlu.pc

@@ -1,7 +1,7 @@
 PORTNAME=	kustomize
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.0
-PORTREVISION=	4
+DISTVERSION=	5.8.0
+PORTREVISION=	7
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/kubernetes-sigs/kustomize
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24+,modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
 

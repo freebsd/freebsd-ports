@@ -1,3 +1,6 @@
+- Use FreeBSD port version for RSTUDIO_VERSION
+- Set FreeBSD-specific build ID
+
 --- src/cpp/session/session-config.h.in.orig	2021-09-22 13:58:50 UTC
 +++ src/cpp/session/session-config.h.in
 @@ -13,7 +13,7 @@

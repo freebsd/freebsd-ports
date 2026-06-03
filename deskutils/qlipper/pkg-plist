@@ -7,7 +7,10 @@ share/icons/hicolor/128x128/apps/qlipper.png
 %%DATADIR%%/translations/qlipper_de.qm
 %%DATADIR%%/translations/qlipper_es.qm
 %%DATADIR%%/translations/qlipper_it.qm
+%%DATADIR%%/translations/qlipper_ja.qm
 %%DATADIR%%/translations/qlipper_lt.qm
 %%DATADIR%%/translations/qlipper_pl.qm
+%%DATADIR%%/translations/qlipper_pt.qm
 %%DATADIR%%/translations/qlipper_sr.qm
+%%DATADIR%%/translations/qlipper_sv.qm
 %%DATADIR%%/translations/qlipper_zh_CN.qm

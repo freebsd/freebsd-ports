@@ -1,0 +1,13 @@
+--- third_party/xla/third_party/python_runtime/BUILD.bazel.orig	2026-03-04 21:33:50 UTC
++++ third_party/xla/third_party/python_runtime/BUILD.bazel
+@@ -2,7 +2,8 @@ package(default_visibility = ["//visibility:public"])
+ 
+ package(default_visibility = ["//visibility:public"])
+ 
+-alias(
++# On FreeBSD, replace the rules_python CC toolchain alias with a direct
++# cc_library. Python headers are added globally via --copt=-isystem in bazelrc.
++cc_library(
+     name = "headers",
+-    actual = "@rules_python//python/cc:current_py_cc_headers",
+ )

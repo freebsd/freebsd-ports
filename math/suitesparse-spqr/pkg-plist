@@ -5,6 +5,8 @@ lib/cmake/SPQR/SPQRConfig.cmake
 lib/cmake/SPQR/SPQRConfigVersion.cmake
 lib/cmake/SPQR/SPQRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPQR/SPQRTargets.cmake
+lib/cmake/SPQR/SPQRTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SPQR/SPQRTargets_static.cmake
 lib/libspqr.a
 lib/libspqr.so
 lib/libspqr.so.4

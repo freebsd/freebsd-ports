@@ -1,8 +1,8 @@
 PORTNAME=	nll
-PORTVERSION=	20250413a
+PORTVERSION=	20260317a
 CATEGORIES=	lang
 MASTER_SITES=	https://kozos.jp/nlux/archive/
-DISTNAME=	nlux-alpha-20250413
+DISTNAME=	nlux-alpha-${PORTVERSION:C|[a-zA-Z]*$||}
 
 MAINTAINER=	kozos@kozos.jp
 COMMENT=	Simple language for programming learning
@@ -11,7 +11,7 @@ WWW=		https://kozos.jp/nll/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FLAVORS=		default nosdl sdl1
+FLAVORS=		sdl2 nosdl sdl1
 FLAVOR?=		${FLAVORS:[1]}
 nosdl_PKGNAMESUFFIX=	-nosdl
 sdl1_PKGNAMESUFFIX=	-sdl1
@@ -20,6 +20,29 @@ USES=		zip
 MAKE_ARGS=	ARCH= \
 		BUILD= \
 		CCOMPILER=${CC}
+
+.if ${FLAVOR} == sdl2
+COMMENT+=	(SDL 2)
+USES+=		sdl xorg
+USE_SDL=	sdl2
+USE_XORG=	x11
+MAKE_ARGS+=	SDLDIR=${LOCALBASE} \
+		USE_SDL1= \
+		USE_SDL2=yes
+.elif ${FLAVOR} == nosdl
+COMMENT+=	(limited graphic and audio function)
+MAKE_ARGS+=	USE_SDL1= \
+		USE_SDL2=
+.elif ${FLAVOR} == sdl1
+COMMENT+=	(SDL 1.2)
+USES+=		sdl xorg
+USE_SDL=	sdl
+USE_XORG=	x11
+MAKE_ARGS+=	SDLDIR=${LOCALBASE} \
+		USE_SDL1=yes \
+		USE_SDL2=
+.endif
+
 WRKSRC=		${WRKDIR}/nlux/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -61,31 +84,6 @@ SYSCALL_MAKE_ARGS_OFF=	USE_SYSCALL_FUNCTION=
 SYSTEM_MAKE_ARGS=	USE_SYSTEM_FUNCTION=yes
 SYSTEM_MAKE_ARGS_OFF=	USE_SYSTEM_FUNCTION=
 
-.if ${FLAVOR} == default
-USE_SDL=	sdl2
-USE_XORG=	x11
-USES+=		sdl xorg
-MAKE_ARGS+=	SDLDIR=${LOCALBASE} \
-		USE_SDL1= \
-		USE_SDL2=yes
-.endif
-
-.if ${FLAVOR} == nosdl
-COMMENT+=	(limited graphic and audio function)
-MAKE_ARGS+=	USE_SDL1= \
-		USE_SDL2=
-.endif
-
-.if ${FLAVOR} == sdl1
-COMMENT+=	(SDL 1.2)
-USE_SDL=	sdl
-USE_XORG=	x11
-USES+=		sdl xorg
-MAKE_ARGS+=	SDLDIR=${LOCALBASE} \
-		USE_SDL1=yes \
-		USE_SDL2=
-.endif
-
 post-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/nlux/bin/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
@@ -94,13 +92,14 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\//} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\/graphic\//} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\/audio\//} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\/network\//} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/samples/|} \
+			${PORTEXAMPLES:S|^|${WRKSRC}/samples/graphic/|} \
+			${PORTEXAMPLES:S|^|${WRKSRC}/samples/audio/|} \
+			${PORTEXAMPLES:S|^|${WRKSRC}/samples/network/|} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

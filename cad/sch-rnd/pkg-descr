@@ -1,0 +1,8 @@
+sch-rnd is a Free Software simple, modular, scriptable schematics editor
+
+- can be used as a stand-alone schematics capture tool
+- but also fits nicely in the Ringdove EDA suite
+- is workflow-agnostic
+- is set up in a similar manner as pcb-rnd
+- is easy and fast to compile, edit and contribute to
+- supports many file formats

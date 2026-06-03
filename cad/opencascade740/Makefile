@@ -1,10 +1,10 @@
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0 # resurrected because science/chrono only builds with opencascade-7.4.0, see https://github.com/projectchrono/chrono/issues/359#issuecomment-1023478083
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad science
 PKGNAMESUFFIX=	740
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
 WWW=		https://www.opencascade.org/
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
-USES=		alias:10 cmake compiler:c++14-lang dos2unix \
+USES=		cmake compiler:c++14-lang dos2unix \
 		gl python qt:5 shebangfix tk tar:tgz xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu

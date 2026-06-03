@@ -62,6 +62,7 @@
 %%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
 %%DSO%%%%MEMC%%libexec/nginx/ngx_http_memc_module.so
 %%DSO%%%%MODSECURITY3%%libexec/nginx/ngx_http_modsecurity_module.so
+%%DSO%%%%NATS%%libexec/nginx/ngx_nats_module.so
 %%DSO%%%%NAXSI%%libexec/nginx/ngx_http_naxsi_module.so
 %%DSO%%%%OTEL%%libexec/nginx/ngx_otel_module.so
 %%DSO%%%%PASSENGER%%libexec/nginx/ngx_http_passenger_module.so

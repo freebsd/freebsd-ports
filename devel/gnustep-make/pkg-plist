@@ -1,8 +1,8 @@
 GNUstep/GNUstep.conf
 GNUstep/System/Library/Documentation/man/man1/debugapp.1.gz
-GNUstep/System/Library/Documentation/man/man1/openapp.1.gz
 GNUstep/System/Library/Documentation/man/man1/gnustep-config.1.gz
 GNUstep/System/Library/Documentation/man/man1/gnustep-tests.1.gz
+GNUstep/System/Library/Documentation/man/man1/openapp.1.gz
 GNUstep/System/Library/Documentation/man/man1/opentool.1.gz
 GNUstep/System/Library/Documentation/man/man7/GNUstep.7.gz
 GNUstep/System/Library/Documentation/man/man7/library-combo.7.gz
@@ -75,7 +75,7 @@ GNUstep/System/Library/Makefiles/TestFramework/README
 GNUstep/System/Library/Makefiles/TestFramework/Summary.sh
 GNUstep/System/Library/Makefiles/TestFramework/Testing.h
 GNUstep/System/Library/Makefiles/TestFramework/example1.m
-GNUstep/System/Library/Makefiles/TestFramework/example%%MAJORVERSION%%.m
+GNUstep/System/Library/Makefiles/TestFramework/example2.m
 GNUstep/System/Library/Makefiles/TestFramework/example3.m
 GNUstep/System/Library/Makefiles/TestFramework/example4.m
 GNUstep/System/Library/Makefiles/TestFramework/example5.m
@@ -86,8 +86,8 @@ GNUstep/System/Library/Makefiles/TestFramework/example9.m
 GNUstep/System/Library/Makefiles/aggregate.make
 GNUstep/System/Library/Makefiles/app-wrapper.template
 GNUstep/System/Library/Makefiles/application.make
-GNUstep/System/Library/Makefiles/bundle.make
 GNUstep/System/Library/Makefiles/bake_debian_files.sh
+GNUstep/System/Library/Makefiles/bundle.make
 GNUstep/System/Library/Makefiles/clean_cpu.sh
 GNUstep/System/Library/Makefiles/clean_os.sh
 GNUstep/System/Library/Makefiles/clean_vendor.sh
@@ -102,9 +102,9 @@ GNUstep/System/Library/Makefiles/ctool.make
 GNUstep/System/Library/Makefiles/documentation.make
 GNUstep/System/Library/Makefiles/empty.make
 GNUstep/System/Library/Makefiles/executable.template
-GNUstep/System/Library/Makefiles/filesystem.sh
 GNUstep/System/Library/Makefiles/filesystem.csh
 GNUstep/System/Library/Makefiles/filesystem.make
+GNUstep/System/Library/Makefiles/filesystem.sh
 GNUstep/System/Library/Makefiles/fixpath.sh
 GNUstep/System/Library/Makefiles/framework.make
 GNUstep/System/Library/Makefiles/gnustep-make-help
@@ -134,20 +134,20 @@ GNUstep/System/Library/Makefiles/serial-subdirectories.make
 GNUstep/System/Library/Makefiles/service.make
 GNUstep/System/Library/Makefiles/spec-rules.template
 GNUstep/System/Library/Makefiles/strip_makefiles.sh
-GNUstep/System/Library/Makefiles/tar-exclude-list
 GNUstep/System/Library/Makefiles/subproject.make
+GNUstep/System/Library/Makefiles/tar-exclude-list
 GNUstep/System/Library/Makefiles/target.make
 GNUstep/System/Library/Makefiles/test-application.make
 GNUstep/System/Library/Makefiles/test-library.make
 GNUstep/System/Library/Makefiles/test-tool.make
 GNUstep/System/Library/Makefiles/tool.make
 GNUstep/System/Library/Makefiles/vendor.sh
+GNUstep/System/Makefiles
 GNUstep/System/Tools/debugapp
 GNUstep/System/Tools/gnustep-config
 GNUstep/System/Tools/gnustep-tests
 GNUstep/System/Tools/openapp
 GNUstep/System/Tools/opentool
-GNUstep/System/Makefiles
 @dir GNUstep/Local/Applications
 @dir GNUstep/Local/Library/ApplicationSupport
 @dir GNUstep/Local/Library/Bundles
@@ -164,10 +164,9 @@ GNUstep/System/Makefiles
 @dir GNUstep/System/Library/ColorPickers
 @dir GNUstep/System/Library/Colors
 @dir GNUstep/System/Library/DocTemplates
-@dir GNUstep/System/Library/Documentation/man
-@dir GNUstep/System/Library/Documentation/info
 @dir GNUstep/System/Library/Documentation/Developer
 @dir GNUstep/System/Library/Documentation/User
+@dir GNUstep/System/Library/Documentation/info
 @dir GNUstep/System/Library/Fonts
 @dir GNUstep/System/Library/Frameworks
 @dir GNUstep/System/Library/Headers
@@ -178,7 +177,7 @@ GNUstep/System/Makefiles
 @dir GNUstep/System/Library/Makefiles/Additional
 @dir GNUstep/System/Library/Makefiles/Auxiliary
 @dir GNUstep/System/Library/PostScript
-@dir GNUstep/System/Library/Sounds
 @dir GNUstep/System/Library/Services
+@dir GNUstep/System/Library/Sounds
 @dir GNUstep/System/Tools/Java
 @dir GNUstep/System/Tools/Resources

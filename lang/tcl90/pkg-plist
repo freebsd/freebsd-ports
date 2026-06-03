@@ -251,11 +251,11 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/word.tcl
 lib/tcl%%TCL_VER%%/writefile.tcl
-lib/tcl9/%%TCL_VER%%/http-2.10.0.tm
+lib/tcl9/%%TCL_VER%%/http-2.10.1.tm
 lib/tcl9/%%TCL_VER%%/msgcat-1.7.1.tm
-lib/tcl9/%%TCL_VER%%/platform-1.0.19.tm
+lib/tcl9/%%TCL_VER%%/platform-1.1.0.tm
 lib/tcl9/%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl9/%%TCL_VER%%/tcltest-2.5.9.tm
+lib/tcl9/%%TCL_VER%%/tcltest-2.5.10.tm
 libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man1/tclsh.tcl%%PKGNAMESUFFIX%%.1.gz
 %%TCLMAN%%share/man/man3/DString.tcl%%PKGNAMESUFFIX%%.3.gz

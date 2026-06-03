@@ -1,0 +1,10 @@
+--- tensorflow/tools/pip_package/utils/BUILD.orig	2026-04-04 09:56:19 UTC
++++ tensorflow/tools/pip_package/utils/BUILD
+@@ -3,6 +3,7 @@ py_library(
+ py_library(
+     name = "py_utils",
+     srcs = [
++        "__init__.py",
+         "utils.py",
+     ],
+ )

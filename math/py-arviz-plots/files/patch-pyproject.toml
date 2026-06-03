@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-17 15:47:09 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ readme = "README.md"
+ [project]
+ name = "arviz-plots"
+ readme = "README.md"
+-requires-python = ">=3.12"
++requires-python = ">=3.11"
+ license = {file = "LICENSE"}
+ authors = [
+     {name = "ArviZ team", email = "arvizdevs@gmail.com"}

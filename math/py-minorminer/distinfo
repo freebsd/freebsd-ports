@@ -1,6 +1,6 @@
-TIMESTAMP = 1731038865
-SHA256 (dwavesystems-minorminer-0.2.16_GH0.tar.gz) = 0945862971d6d5e37b5cdb91950758843d919e898d7e62259c9049ee13dcca74
-SIZE (dwavesystems-minorminer-0.2.16_GH0.tar.gz) = 1281256
+TIMESTAMP = 1758997678
+SHA256 (dwavesystems-minorminer-0.2.19_GH0.tar.gz) = f4207bed0a74bbe89fd5a1d8657bc611106a67ac733aa034877d27f306afdf6a
+SIZE (dwavesystems-minorminer-0.2.19_GH0.tar.gz) = 1290750
 SHA256 (boothby-glasgow-subgraph-solver-568c45f_GH0.tar.gz) = efe3971ee56bc5acf8d64a9e9f98e38962f9c4514b4356e1f7f662873a9fc8b9
 SIZE (boothby-glasgow-subgraph-solver-568c45f_GH0.tar.gz) = 80856
 SHA256 (nemequ-portable-snippets-84abba9_GH0.tar.gz) = 934157a2892aa9afcab81229b089b0255fdba45727ccec7a017e270fa32f7e4f

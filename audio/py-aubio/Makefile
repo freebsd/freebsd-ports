@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -6,8 +6,8 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Python bindings for aubio music analysis
 
 LIB_DEPENDS=	libaubio.so:audio/aubio
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	sox:audio/sox
 
 USES+=		python

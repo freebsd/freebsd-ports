@@ -1,0 +1,38 @@
+--- core/src/qt-tray-monitor/CMakeLists.txt	2025-12-04 05:21:37.000000000 -0800
++++ core/src/qt-tray-monitor/CMakeLists.txt	2025-12-27 15:33:44.742809000 -0800
+@@ -32,19 +32,7 @@
+ if(Qt6Widgets_FOUND)
+   message(STATUS "Found QT6Widgets")
+ else()
+-  message(STATUS "QT6Widgets NOT found, checking for Qt5 ...")
+-  find_package(Qt5 COMPONENTS Core Widgets)
+-  if(Qt5Widgets_FOUND)
+-    message(STATUS "Found QT5Widgets")
+-  else()
+-    message(STATUS "QT5Widgets NOT found, checking for Qt4 ...")
+-    find_package(Qt4)
+-    if(NOT Qt4_FOUND)
+-      message(
+-        FATAL_ERROR "Both Qt5 and Qt4 not found, cannot build tray-monitor"
+-      )
+-    endif()
+-  endif()
++  message(STATUS "QT6Widgets NOT found ...")
+ endif()
+ 
+ if(HAVE_WIN32)
+@@ -79,14 +67,6 @@
+ endif()
+ 
+ target_link_libraries(bareos-tray-monitor PRIVATE bareos CLI11::CLI11)
+-
+-if(Qt4_FOUND)
+-  target_link_libraries(bareos-tray-monitor PRIVATE Qt4::QtGui)
+-endif()
+-
+-if(TARGET Qt5::Widgets)
+-  target_link_libraries(bareos-tray-monitor PRIVATE Qt5::Widgets)
+-endif()
+ 
+ if(TARGET Qt6::Widgets)
+   target_link_libraries(bareos-tray-monitor PRIVATE Qt6::Widgets)

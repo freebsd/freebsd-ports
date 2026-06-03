@@ -1,7 +1,7 @@
 PORTNAME=		apg
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.2.0
-PORTREVISION=	9
+PORTREVISION=	15
 PORTEPOCH=		1
 CATEGORIES=		security sysutils
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/wneessen/apg-go
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	wneessen
 GH_PROJECT=	apg-go

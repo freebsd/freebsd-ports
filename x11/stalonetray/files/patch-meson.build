@@ -1,0 +1,8 @@
+--- meson.build.orig	2025-10-23 04:16:18 UTC
++++ meson.build
+@@ -105,5 +105,4 @@ install_data(
+ install_data(
+   'stalonetrayrc.sample',
+   install_dir: get_option('sysconfdir'),
+-  rename: ['stalonetrayrc'],
+ )

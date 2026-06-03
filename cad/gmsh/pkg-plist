@@ -46,6 +46,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/faces.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/flatten.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/flatten2.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/fractures.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/fragment_surfaces.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/get_data_perf.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/get_data_perf.py
@@ -60,8 +61,10 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/import_perf.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/import_perf.jl
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/import_perf.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/julia_exception.jl
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/mesh_from_discrete_curve.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/mesh_quality.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/min_edge.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/mirror_mesh.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/msh_attributes.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/multi_process.py
@@ -81,6 +84,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/open.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/open.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/opt.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/parametric_surface.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/partition.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/partition.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/periodic.py
@@ -90,9 +94,12 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/poisson.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/prepro.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/prim_axis.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/raw_tetrahedralization.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/raw_tetrahedralization.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/raw_triangulation.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/relocate_nodes.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/remesh_cavity.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/remesh_partial_move.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/remesh_stl.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/remove_elements.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/renumbering.py
@@ -125,6 +132,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/terrain_stl_data.stl
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/test.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/test.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/torus_bspline.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/trimmed.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/tube_boundary_layer.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/view.cpp
@@ -132,6 +140,9 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/view_adaptive_to_mesh.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/view_combine.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/view_element_size.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/view_list_isoparametric.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/view_list_subparametric.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/api/view_list_superparametric.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/view_renumbering.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/viewlist.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/api/viewlist.py
@@ -145,6 +156,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/component8.step
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/compsolid.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/compsolid2.geo
+%%PORTDOCS%%%%DOCSDIR%%/examples/boolean/cylinder_with_hole.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/extend_field.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/extrude.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/extrude2.geo
@@ -155,6 +167,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/fillet_chamfer.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/fleur.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/fragment_numbering.geo
+%%PORTDOCS%%%%DOCSDIR%%/examples/boolean/full_quad.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/hybrid_occ_builtin.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/hyperboloid.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/import.geo
@@ -183,6 +196,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/spline.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/step_assembly.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/surface_filling.geo
+%%PORTDOCS%%%%DOCSDIR%%/examples/boolean/symmetry_test_occ_builtin.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/thicksolid.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/thrusections.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/transfinite.geo
@@ -405,4 +419,7 @@ lib/libgmsh.so.%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/view3.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/view4.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/view5.msh
+%%DATADIR%%/gmshConfig.cmake
+%%DATADIR%%/gmshTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/gmshTargets.cmake
 share/man/man1/gmsh.1.gz

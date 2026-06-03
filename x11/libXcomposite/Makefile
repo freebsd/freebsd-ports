@@ -1,21 +1,17 @@
 PORTNAME=	libXcomposite
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+DISTVERSION=	0.4.7
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Composite extension library
-WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libxcomposite
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.xz
-USES=		xorg xorg-cat:lib
-USE_XORG=	x11 xfixes xext xorgproto
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		tar:xz xorg xorg-cat:lib
+USE_XORG=	x11 xfixes xorgproto
 
 INSTALL_TARGET=	install-strip
 

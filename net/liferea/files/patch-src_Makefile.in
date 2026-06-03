@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2026-04-26 13:20:43.007761000 +0200
++++ src/Makefile.in	2026-04-26 13:21:19.183756000 +0200
+@@ -476,6 +476,7 @@
+ 	$(top_srcdir)/js/htmlview.js \
+ 	$(top_srcdir)/js/gopher-renderer.js \
+ 	$(top_srcdir)/js/helpers/render.js \
++	$(top_srcdir)/js/user.js \
+ 	$(top_srcdir)/js/vendor/Readability.js \
+ 	$(top_srcdir)/js/vendor/purify.min.js \
+ 	$(top_srcdir)/js/vendor/handlebars.min.js \

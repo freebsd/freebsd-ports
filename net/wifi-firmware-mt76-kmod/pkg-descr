@@ -1,7 +1,1 @@
 Firmware files for Mediatek WiFi NICs supported by the mt76 driver.
-
-Currently provides firmware for the following sub-drivers:
-- mt7915
-- mt7921
-- mt7925
-- mt7996

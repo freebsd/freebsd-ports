@@ -1,5 +1,6 @@
 PORTNAME=	opengrok
 DISTVERSION=	1.14.1
+PORTREVISION=	2
 CATEGORIES=	devel java
 # Doesn't currently work with portscout, but the release tarball is required.
 MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION}/

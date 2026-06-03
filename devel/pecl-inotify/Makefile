@@ -1,5 +1,5 @@
 PORTNAME=	inotify
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -1,9 +1,8 @@
 PORTNAME=	rime-double-pinyin
-DISTVERSION=	g20190120
-PORTREVISION=	1
+DISTVERSION=	g20250923
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Double Pinyin schema support
 WWW=		https://github.com/rime/rime-double-pinyin
 

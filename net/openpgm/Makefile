@@ -1,11 +1,7 @@
 PORTNAME=	openpgm
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	5-2-122
-PORTREVISION=	6
+DISTVERSION=	5-3-128
 CATEGORIES=	net devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	ee25ff3d13f2639b4c3a42125e79f77f921c3320.patch:-p3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the PGM reliable multicast protocol
@@ -14,19 +10,25 @@ WWW=		https://code.google.com/p/openpgm/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf compiler:c11 pathfix perl5 libtool python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	steve-o
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c11 pathfix perl5 libtool python:build
-USE_PERL5=	build
-USE_LDCONFIG=	yes
-WRKSRC_SUBDIR=	openpgm/pgm
+
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+WRKSRC_SUBDIR=	openpgm/pgm
+
 PORTDOCS=	draft-ietf-rmt-bb-pgmcc-03.txt rfc3208.txt
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-extract:
+	${MV} ${WRKSRC}/openpgm-5.2.pc.in ${WRKSRC}/openpgm-5.3.pc.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

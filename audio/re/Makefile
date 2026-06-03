@@ -1,11 +1,11 @@
 PORTNAME=	re
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.24.0
+DISTVERSION=	4.8.1
 CATEGORIES=	audio devel
 
-MAINTAINER=	herbert@gojira.at
+MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
 COMMENT=	Library for real-time comms with async IO support
-WWW=		https://github.com/baresip
+WWW=		https://github.com/baresip/re
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

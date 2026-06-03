@@ -1,8 +1,8 @@
 PORTNAME=	giacxcas
 DISTVERSION=	1.9.0-85
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	math
-MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
+MASTER_SITES=	http://www-fourier.univ-grenoble-alpes.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoa/cocoalib/tgz/:cocoa \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
 DISTFILES=	giac_${DISTVERSION}${EXTRACT_SUFX}:giac \
@@ -12,10 +12,10 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system
-WWW=		https://www-fourier.ujf-grenoble.fr/~parisse/giac.html
+WWW=		https://www-fourier.univ-grenoble-alpes.fr/~parisse/giac.html
 
-LICENSE=	GPLv3 DOC
-LICENSE_COMB=	multi
+LICENSE=		GPLv3 DOC
+LICENSE_COMB=		multi
 LICENSE_NAME_DOC=	French documentation
 LICENSE_TEXT_DOC=	French documentation is for non-commercial use only
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
@@ -121,6 +121,8 @@ post-patch:
 	${SED} -i ".orig" -Ee 's|char \*last = style \+ strlen\(style\) - 2|char *last = pretty|' \
 		-Ee 's|\*style = 0|last = style + strnlen(style, ENDOFBUFFER) - 2; *style = 0|' \
 		${FLTKDEV-GIAC}/src/fl_set_fonts_xft.cxx
+	@${REINPLACE_CMD} -e 's/"filesystem  system"/"filesystem "/' \
+		${WRKDIR}/CoCoALib-${COCOA_LIB_VERSION}/configuration/boost-find-lib.sh
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|^protected:|public:|' ${FLTKDEV-GIAC}/FL/Fl_Widget.H

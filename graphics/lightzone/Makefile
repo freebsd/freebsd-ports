@@ -1,7 +1,7 @@
 PORTNAME=	lightzone
 DISTVERSION=	4.1.8-3
 DISTVERSIONSUFFIX=	-g36e87773
-PORTREVISION=	13
+PORTREVISION=	17
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -36,6 +36,7 @@ USES=		desktop-file-utils gmake gnome java:ant,run jpeg pkgconfig xorg
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
+JAVA_VERSION=	8 # because of Bug 292671 - graphics/lightzone: does not build with jdk11+
 JAVA_VENDOR=	openjdk
 
 PATCH_WRKSRC=	${WRKSRC:H}

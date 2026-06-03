@@ -13,8 +13,8 @@ CFLAGS+=	-Wno-compound-token-split-by-macro
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${MODDIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
+	${MKDIR} ${STAGEDIR}${MODDIR} \
+		 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_perl_module.so \
 	    ${STAGEDIR}${MODDIR}

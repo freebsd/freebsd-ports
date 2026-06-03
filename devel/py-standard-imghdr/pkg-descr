@@ -1,0 +1,3 @@
+Backport of the standard library imghdr module for Python 3.13+, where
+it was removed ("dead battery").  Provides imghdr.what() and imghdr.tests
+for packages that depend on the module.

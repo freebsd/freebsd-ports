@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libnotify.so:devel/libnotify \
 		libstartup-notification-1.so:x11/startup-notification
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
-		${LOCALBASE}/libdata/pkgconfig/bcop.pc:devel/compiz-bcop \
+		${LOCALBASE}/share/pkgconfig/bcop.pc:devel/compiz-bcop \
 		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:x11-wm/compiz-plugins-main
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

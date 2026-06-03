@@ -1,37 +1,36 @@
 PORTNAME=	ignition-common
-DISTVERSION=	3.0.0
-PORTREVISION=	11
+DISTVERSIONPREFIX=	gz-common7_
+DISTVERSION=	7.0.0
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of libraries designed to rapidly develop robot applications
 WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake
-LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
+BUILD_DEPENDS=	ignition-cmake>=5:devel/ignition-cmake
+LIB_DEPENDS=	libassimp.so:multimedia/assimp \
+		libavcodec.so:multimedia/ffmpeg4 \
+		libfmt.so:devel/libfmt \
 		libfreeimage.so:graphics/freeimage \
-		libgts.so:graphics/gts \
+		libgdal.so:graphics/gdal \
+		libgz-math.so:math/ignition-math \
+		libgz-utils.so:devel/ignition-utils \
+		libspdlog.so:devel/spdlog \
 		libtinyxml2.so:textproc/tinyxml2 \
-		libuuid.so:misc/libuuid \
-		libignition-math6.so:math/ignition-math
+		libuuid.so:misc/libuuid
 
-USES=		cmake compiler:c++17-lang gnome localbase pkgconfig
-USE_CXXSTD=	c++14
-USE_GNOME=	glib20
+USES=		cmake compiler:c++17-lang localbase pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	USE_EXTERNAL_TINYXML2
-CMAKE_OFF=	BUILD_TESTING
+CMAKE_OFF=	BUILD_DOCS BUILD_TESTING
 
-BB_ACCOUNT=	ignitionrobotics
-BB_PROJECT=	ign-common
-BB_COMMIT=	a5c4d5a35bb8
-
-WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+USE_GITHUB=	yes
+GH_ACCOUNT=	gazebosim
+GH_PROJECT=	gz-common
 
 PLIST_SUB=	COMMON_IGN_VER=common${DISTVERSION:R:R}
 

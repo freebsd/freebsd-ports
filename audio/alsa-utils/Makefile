@@ -1,5 +1,5 @@
 PORTNAME=	alsa-utils
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.15.2
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/utils/
 
@@ -19,14 +19,14 @@ USES=		gettext-tools gmake libtool localbase ncurses pkgconfig \
 		shebangfix tar:bzip2
 SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
 
-GNU_CONFIGURE=			yes
+GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=			--with-udev-rules-dir="\$${prefix}/lib/udev"
-INSTALL_TARGET=			install-strip
-CFLAGS+=			-Dlseek64=lseek -DSCHED_IDLE=SCHED_OTHER \
-				-I${LOCALBASE}/include/libepoll-shim
-CPPFLAGS+=			-I${.CURDIR}/../alsa-lib/files
-LDFLAGS+=			-linotify -lepoll-shim
+CONFIGURE_ARGS=	--with-udev-rules-dir="\$${prefix}/lib/udev"
+INSTALL_TARGET=	install-strip
+CFLAGS+=	-Dlseek64=lseek -DSCHED_IDLE=SCHED_OTHER \
+		-I${LOCALBASE}/include/libepoll-shim
+CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
+LDFLAGS+=	-linotify -lepoll-shim
 
 OPTIONS_DEFINE=		BAT MANPAGES NLS SAMPLERATE
 OPTIONS_DEFAULT=	BAT MANPAGES
@@ -61,7 +61,7 @@ post-patch:
 		${WRKSRC}/amidi/amidi.1
 	@${REINPLACE_CMD} \
 		's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/alsa-info/alsa-info.sh.1 \
+		${WRKSRC}/alsa-info/alsa-info.sh.8 \
 		${WRKSRC}/amidi/amidi.1
 
 .include <bsd.port.mk>

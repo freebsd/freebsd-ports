@@ -1,4 +1,0 @@
-Dancer2::Plugin::Passphrase manages the hashing of passwords for Dancer apps,
-allowing developers to follow cryptography best practices without having to
-become a cryptography expert. It uses the bcrypt algorithm as the default,
-while also supporting any hashing function provided by Digest.

@@ -1,7 +1,7 @@
 PORTNAME=	dejavu
 PORTVERSION=	2.37
 DISTVERSIONPREFIX=	fonts-ttf-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_${PORTVERSION:R}_${PORTVERSION:E}/
 
@@ -29,7 +29,6 @@ NO_BUILD=	yes
 
 PLIST_SUB=	FCDIR=${FCDIR} FCDIR_LINKS=${FCDIR_LINKS}
 PORTDOCS=	README.md langcover.txt status.txt unicover.txt
-SUB_FILES=	pkg-message
 
 FCDIR?=		etc/fonts/conf.avail
 FCDIR_LINKS=	${FCDIR:S|conf.avail|conf.d|}

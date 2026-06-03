@@ -1,0 +1,2 @@
+snakemake-interface-common provides common functions and classes for
+Snakemake and its plugins.

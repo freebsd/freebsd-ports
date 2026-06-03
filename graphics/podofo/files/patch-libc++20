@@ -1,0 +1,11 @@
+--- src/podofo/private/charconv_compat.h.orig	2024-09-12 19:14:33 UTC
++++ src/podofo/private/charconv_compat.h
+@@ -7,7 +7,7 @@
+ #if defined(__GNUC__) && !defined(__clang__) && __GNUC__ < 10
+ #define WANT_CHARS_FORMAT
+ #endif
+-#if (defined(__GNUC__) && !defined(__MINGW32__) &&  __GNUC__ < 11) || (defined(__MINGW32__) &&  __GNUC__ < 12) || defined(__clang__)
++#if (defined(__GNUC__) && !defined(__clang__) && !defined(__MINGW32__) &&  __GNUC__ < 11) || (defined(__MINGW32__) &&  __GNUC__ < 12) || (defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 200000)
+ #define WANT_FROM_CHARS
+ #endif
+ 

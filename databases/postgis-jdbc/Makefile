@@ -1,5 +1,6 @@
 PORTNAME=	postgis-jdbc
 PORTVERSION=	2.1.7
+PORTREVISION=	2
 CATEGORIES=	databases java geography
 MASTER_SITES=	http://postgis.net/stuff/
 EXTRACT_SUFX=	.jar

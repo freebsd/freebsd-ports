@@ -1,5 +1,5 @@
 PORTNAME=	liferea
-DISTVERSION=	1.16-RC4
+DISTVERSION=	1.16.10
 CATEGORIES=	net gnome
 MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${DISTVERSION}/
 
@@ -39,5 +39,10 @@ CONFIGURE_ARGS=	--enable-introspection
 MAKE_ENV+=	WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 INSTALL_TARGET=	install-strip
+
+# stop-gap hack to accomodate glib < 2.86 and pygobject > 3.52
+post-install:
+	${MKDIR} -p "${STAGEDIR}/${LOCALBASE}/lib/girepository-1.0/"
+	${LN} -sf "../${PORTNAME}/girepository-1.0/Liferea-3.0.typelib" "${STAGEDIR}/${LOCALBASE}/lib/girepository-1.0/Liferea-3.0.typelib"
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	libvhdi
-PORTVERSION=	20240509
+PORTVERSION=	20251119
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvhdi/releases/download/${PORTVERSION}/ \
@@ -12,11 +12,13 @@ WWW=		https://github.com/libyal/libvhdi
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		fuse libtool pathfix pkgconfig python
+USES=		fuse libtool localbase pathfix pkgconfig python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

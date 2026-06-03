@@ -1,5 +1,7 @@
 bin/cflow
 share/man/man1/cflow.1.gz
+share/cflow/1.8/c11.cfo
+share/cflow/1.8/gcc.cfo
 %%NLS%%share/locale/da/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/de/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/cflow.mo
@@ -12,6 +14,7 @@ share/man/man1/cflow.1.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/cflow.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/cflow.mo

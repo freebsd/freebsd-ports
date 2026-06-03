@@ -46,4 +46,4 @@ share/man/man1/rtf2ps.1.gz
 %%DATADIR%%/gsfontmetrics.ps
 %%DATADIR%%/gslibpath.ps
 %%DATADIR%%/gslsfonts.ps
-%%PORTDOCS%%%%DOCSDIR%%/TedDocument-en_US.rtf
+%%DOCSDIR%%/TedDocument-en_US.rtf

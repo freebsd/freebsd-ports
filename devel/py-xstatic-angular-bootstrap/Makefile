@@ -1,17 +1,17 @@
 PORTNAME=	xstatic-angular-bootstrap
-PORTVERSION=	2.5.0.0
-PORTREVISION=	2
+PORTVERSION=	2.5.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Angular-Bootstrap-${PORTVERSION}
+DISTNAME=	xstatic_angular_bootstrap-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Angular-Bootstrap (XStatic packaging standard)
-WWW=		https://angular-ui.github.io/bootstrap/ \
+COMMENT=	Angular-Bootstrap ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-angular-bootstrap \
 		https://github.com/openstack/xstatic-angular-bootstrap
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}

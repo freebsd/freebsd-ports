@@ -12,9 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: vtable for LV2UI in readonly segment
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=		ld: error: can't create dynamic relocation R_386_32 against symbol: vtable for LV2UI in readonly segment
-.endif
 BROKEN_riscv64=		can't create dynamic relocation R_RISCV_LO12_I against symbol: vtable for LV2UI in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \

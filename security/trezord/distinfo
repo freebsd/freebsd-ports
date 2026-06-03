@@ -1,8 +1,12 @@
-TIMESTAMP = 1681804602
-SHA256 (trezor-trezord-go-v2.0.33_GH0.tar.gz) = b589b857888811cfdd6593dd911e0574b8257fce24a9d9366a187be3b859fa59
-SIZE (trezor-trezord-go-v2.0.33_GH0.tar.gz) = 645382
+TIMESTAMP = 1765199636
+SHA256 (trezor-trezord-go-v2.0.33-9-ga58468e_GH0.tar.gz) = 071757a557bb9ed83351ff4134423b75f23fee3b1baeee4e7a5596ecf74d0f37
+SIZE (trezor-trezord-go-v2.0.33-9-ga58468e_GH0.tar.gz) = 645802
+SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
+SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (felixge-httpsnoop-v1.0.1_GH0.tar.gz) = 02f506689067855a2afcbea692a63f60bcb50a3994722650339c82027d1cbe3e
 SIZE (felixge-httpsnoop-v1.0.1_GH0.tar.gz) = 10725
+SHA256 (go-yaml-yaml-v2.4.0_GH0.tar.gz) = d8e94679e5fff6bd1a35e10241543929a5f3da44f701755babf99b3daf0faac0
+SIZE (go-yaml-yaml-v2.4.0_GH0.tar.gz) = 73209
 SHA256 (gorilla-csrf-v1.7.0_GH0.tar.gz) = 8cbc7df34ba5266f78c81b5d1a86b822d4107533dd4c3fd9fe16cdee4d916db5
 SIZE (gorilla-csrf-v1.7.0_GH0.tar.gz) = 21854
 SHA256 (gorilla-handlers-v1.5.1_GH0.tar.gz) = be22eafc7020cba749c8638d0051c326f1b31b5a76a98d86beafc595079f6b09

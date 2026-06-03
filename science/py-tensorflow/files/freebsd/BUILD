@@ -86,3 +86,24 @@ toolchain(
     toolchain_type = "@bazel_tools//tools/python:toolchain_type",
 )
 
+load("@rules_python//python/cc:py_cc_toolchain.bzl", "py_cc_toolchain")
+
+# Python C/C++ headers toolchain for FreeBSD (satisfies @rules_python//python/cc:toolchain_type)
+py_cc_toolchain(
+    name = "python_cc_toolchain_impl",
+    headers = "@xla//third_party/python_runtime:headers",
+    python_version = "3.11",
+)
+
+toolchain(
+    name = "python_cc_toolchain",
+    exec_compatible_with = [
+        "@platforms//os:freebsd",
+    ],
+    target_compatible_with = [
+        "@platforms//os:freebsd",
+    ],
+    toolchain = ":python_cc_toolchain_impl",
+    toolchain_type = "@rules_python//python/cc:toolchain_type",
+)
+

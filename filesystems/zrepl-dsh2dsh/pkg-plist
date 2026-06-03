@@ -7,6 +7,11 @@ etc/rc.d/zrepl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bandwidth_limit.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/template.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/include.d/snap.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/include_directory.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/duplicate_job_names/zrepl.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/duplicate_job_names_with_include/included.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid/duplicate_job_names_with_include/zrepl.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/local.yml
 @sample %%EXAMPLESDIR%%/newsyslog.conf etc/newsyslog.conf.d/zrepl.conf

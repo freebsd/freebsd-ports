@@ -1,6 +1,6 @@
---- config/config.go.orig	2024-10-11 14:37:05 UTC
+--- config/config.go.orig	1979-11-29 23:00:00 UTC
 +++ config/config.go
-@@ -60,7 +60,7 @@ func configFiles() []string {
+@@ -61,7 +61,7 @@ func configFiles() []string {
  	if mode.Get() == mode.TestDev {
  		return []string{"config.yml"}
  	}

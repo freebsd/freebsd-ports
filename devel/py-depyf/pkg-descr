@@ -1,0 +1,3 @@
+depyf is a Python package for decompiling and understanding Python bytecode.
+It helps developers analyze and debug compiled Python code by providing
+human-readable representations of bytecode.

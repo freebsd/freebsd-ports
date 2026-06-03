@@ -1,0 +1,26 @@
+Zoraxy has been installed.
+
+To enable Zoraxy at boot, add the following to /etc/rc.conf:
+
+  zoraxy_enable="YES"
+
+Start the service with:
+
+  service zoraxy start
+
+By default, Zoraxy listens on:
+
+  http://localhost:8000/
+
+From another machine on the network, use:
+
+  http://<your-ip>:8000/
+
+On first startup, open the web interface and complete the initial
+administrator account setup.
+
+Optional rc.conf settings:
+
+  zoraxy_user="zoraxy"
+  zoraxy_group="zoraxy"
+  zoraxy_port=":8000"

@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2025-05-31 17:16:41 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2026-02-15 10:01:45 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -58,7 +58,7 @@
+@@ -64,7 +64,7 @@
  #        include "libANGLE/renderer/gl/wgl/DisplayWGL.h"
  #    elif ANGLE_ENABLE_CGL
  #        include "libANGLE/renderer/gl/cgl/DisplayCGL.h"
@@ -9,25 +9,25 @@
  #        include "libANGLE/renderer/gl/egl/DisplayEGL.h"
  #        if defined(ANGLE_USE_X11)
  #            include "libANGLE/renderer/gl/glx/DisplayGLX_api.h"
-@@ -422,7 +422,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -427,7 +427,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
              impl = new rx::DisplayCGL(state);
              break;
  
 -#    elif defined(ANGLE_PLATFORM_LINUX)
 +#    elif defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_BSD)
- #        if defined(ANGLE_USE_GBM)
+ #        if defined(ANGLE_USE_GBM) || defined(ANGLE_USE_WAYLAND)
              if (platformType == 0)
              {
-@@ -468,7 +468,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -478,7 +478,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
  #if defined(ANGLE_ENABLE_OPENGL)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
              impl = new rx::DisplayWGL(state);
 -#    elif defined(ANGLE_PLATFORM_LINUX)
 +#    elif defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_BSD)
- #        if defined(ANGLE_USE_GBM)
+ #        if defined(ANGLE_USE_GBM) || defined(ANGLE_USE_WAYLAND)
              if (platformType == 0)
              {
-@@ -519,7 +519,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -534,7 +534,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
                  impl = rx::CreateVulkanWin32Display(state);
              }
              break;
@@ -36,7 +36,7 @@
  #        if defined(ANGLE_USE_GBM)
              if (platformType == EGL_PLATFORM_GBM_KHR && rx::IsVulkanGbmDisplayAvailable())
              {
-@@ -2136,7 +2136,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2185,7 +2185,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.platformWaylandEXT = true;
  #endif
  
@@ -45,7 +45,7 @@
      extensions.platformSurfacelessMESA = true;
  #endif
  
-@@ -2183,7 +2183,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2232,7 +2232,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

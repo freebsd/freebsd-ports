@@ -53,6 +53,7 @@ share/icons/hicolor/scalable/apps/org.xfce.xfdesktop.svg
 %%NLS%%share/locale/it/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfdesktop.mo
@@ -78,11 +79,13 @@ share/icons/hicolor/scalable/apps/org.xfce.xfdesktop.svg
 %%NLS%%share/locale/te/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/th/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/tt/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/uz/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/vec/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfdesktop.mo

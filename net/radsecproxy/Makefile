@@ -1,5 +1,5 @@
 PORTNAME=	radsecproxy
-DISTVERSION=	1.11.1
+DISTVERSION=	1.11.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

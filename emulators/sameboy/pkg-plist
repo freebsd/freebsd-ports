@@ -20,7 +20,7 @@ share/icons/hicolor/512x512/mimetypes/x-gameboy-rom.png
 share/icons/hicolor/64x64/apps/sameboy.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-color-rom.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-rom.png
-share/mime/sameboy.xml
+share/mime/packages/sameboy.xml
 @comment %%DATADIR%%/LICENSE
 %%DATADIR%%/Palettes/Canyon.sbp
 %%DATADIR%%/Palettes/Desert.sbp

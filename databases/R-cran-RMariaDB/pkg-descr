@@ -1,0 +1,4 @@
+Fully DBI-compliant interface to MariaDB and MySQL databases using the
+cpp11 package. This is the modern replacement for RMySQL, providing
+better performance, parameterized queries, and active maintenance by
+the r-dbi team.

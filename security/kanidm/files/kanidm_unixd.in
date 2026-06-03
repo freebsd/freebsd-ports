@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: kanidm_unixd
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN kanidm_unixd_tasks
 # KEYWORD: shutdown
 #
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
@@ -19,9 +19,9 @@ load_rc_config $name
 
 : ${kanidm_unixd_enable:="NO"}
 
-pidfile="/var/run/kanidm-unixd.pid"
+pidfile="/var/run/kanidm_unixd.pid"
 command=/usr/sbin/daemon
-command_args="-u %%USER%% -p /var/run/kanidm-unixd.pid -T kanidm_unixd /usr/local/libexec/${name}"
-procname=/usr/local/libexec/${name}
+command_args="-u %%USER%% -p /var/run/kanidm_unixd.pid -T kanidm_unixd %%PREFIX%%/libexec/${name}"
+procname=%%PREFIX%%/libexec/${name}
 
 run_rc_command "$1"

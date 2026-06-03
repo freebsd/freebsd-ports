@@ -2,7 +2,7 @@ PORTNAME=	nagios-snmp-plugins
 PORTVERSION=	1.3.1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 WWW=		http://henning.schmiedehausen.org/eyewiki/Wiki.jsp?page=NagiosSnmpPlugins
 

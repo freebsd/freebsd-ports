@@ -1,5 +1,5 @@
-TIMESTAMP = 1708391912
-SHA256 (webmproject-libwebm-libwebm-1.0.0.31_GH0.tar.gz) = 616cfdca1c869222dc60d5a49d112c1464040390e3876afca4d385347c6ce55e
-SIZE (webmproject-libwebm-libwebm-1.0.0.31_GH0.tar.gz) = 501573
+TIMESTAMP = 1764494246
+SHA256 (webmproject-libwebm-libwebm-1.0.0.32_GH0.tar.gz) = 7fd5e085bda9f8031cf2ad2a1e52d9b7b29cba9c0b96ad2ce794ce89e4249eb8
+SIZE (webmproject-libwebm-libwebm-1.0.0.32_GH0.tar.gz) = 501689
 SHA256 (google-googletest-release-1.11.0_GH0.tar.gz) = b4870bf121ff7795ba20d20bcdd8627b8e088f2d1dab299a031c1034eddc93d5
 SIZE (google-googletest-release-1.11.0_GH0.tar.gz) = 886330

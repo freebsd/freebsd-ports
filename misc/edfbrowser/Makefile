@@ -1,5 +1,5 @@
 PORTNAME=	edfbrowser
-DISTVERSION=	1.95
+DISTVERSION=	2.14
 CATEGORIES=	misc
 MASTER_SITES=	https://www.teuniz.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION:S/.//}_source
@@ -11,9 +11,9 @@ WWW=		https://www.teuniz.net/edfbrowser/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils gl qmake qt:5 shared-mime-info
-USE_QT=		core gui network printsupport widgets buildtools:build
-USE_GL=		gl
+USES=		desktop-file-utils gl qmake qt:6 shared-mime-info
+USE_QT=		base tools:build
+USE_GL=		opengl
 
 OPTIONS_DEFINE=	DOCS
 

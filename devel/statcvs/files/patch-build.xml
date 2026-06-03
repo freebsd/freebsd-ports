@@ -1,0 +1,20 @@
+--- build.xml.orig	2026-04-10 10:20:23 UTC
++++ build.xml
+@@ -57,7 +57,7 @@
+   <target name="compile" depends="init,filter">
+     <!-- Compile the java code from ${src} into ${build} -->
+     <javac srcdir="${src.filtered}" destdir="${build}" debug="on"
+-    source="1.4" target="1.4">
++    >
+       <classpath refid="project.class.path" />
+     </javac>
+   </target>
+@@ -118,7 +118,7 @@
+   <target name="compile.tests" depends="init.tests,compile">
+     <!-- Compile the unit tests from ${src.tests} into ${build.tests} -->
+     <javac srcdir="${src.tests}" destdir="${build.tests}"
+-    debug="on" source="1.4" target="1.4">
++    debug="on">
+       <classpath>
+         <path refid="project.class.path" />
+         <pathelement path="${build}" />

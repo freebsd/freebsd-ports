@@ -1,3 +1,18 @@
+--- opendkim/opendkim.c	2024-12-21 10:50:37.224458000 +0100
++++ opendkim/opendkim.c	2024-12-21 10:52:34.002259000 +0100
+@@ -12105,8 +12105,10 @@
+ 
+ 				if (domainok)
+ 				{
+-					strlcpy((char *) dfc->mctx_domain, p,
+-					        sizeof dfc->mctx_domain);
++					// We must not use strlcpy() here since
++					// src and dst overlap.
++					char* p2 = dfc->mctx_domain;
++					while( (*p2++ = *p++) );
+ 					break;
+ 				}
+ 			}
 commit 7c70ee7c86da1cecc621182355cc950d3b193314
 Author: David Bürgin <dbuergin@gluet.ch>
 Date:   Sat Oct 14 09:19:37 2023 +0200

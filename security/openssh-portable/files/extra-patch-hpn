@@ -905,9 +905,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  .It Fl r
  Recursively copy entire directories when uploading and downloading.
  Note that
---- work/openssh/ssh.c.orig	2024-06-30 21:36:28.000000000 -0700
-+++ work/openssh/ssh.c	2024-07-01 13:58:31.555859000 -0700
-@@ -1070,6 +1070,14 @@ main(int ac, char **av)
+--- work/openssh/ssh.c.orig	2025-10-05 19:25:16.000000000 -0700
++++ work/openssh/ssh.c	2025-10-06 08:20:57.445863000 -0700
+@@ -1092,6 +1092,14 @@ main(int ac, char **av)
  			break;
  		case 'T':
  			options.request_tty = REQUEST_TTY_NO;
@@ -922,7 +922,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  			break;
  		case 'o':
  			line = xstrdup(optarg);
-@@ -2159,6 +2167,78 @@ ssh_session2_setup(struct ssh *ssh, int id, int succes
+@@ -2235,6 +2243,78 @@ ssh_session2_setup(struct ssh *ssh, int id, int succes
  	    NULL, fileno(stdin), command, environ);
  }
  
@@ -1001,7 +1001,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /* open new channel for a session */
  static int
  ssh_session2_open(struct ssh *ssh)
-@@ -2177,9 +2257,17 @@ ssh_session2_open(struct ssh *ssh)
+@@ -2253,9 +2333,17 @@ ssh_session2_open(struct ssh *ssh)
  	if (in == -1 || out == -1 || err == -1)
  		fatal("dup() in/out/err failed");
  
@@ -1019,22 +1019,22 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		window >>= 1;
  		packetmax >>= 1;
  	}
-@@ -2188,6 +2276,12 @@ ssh_session2_open(struct ssh *ssh)
- 	    window, packetmax, CHAN_EXTENDED_WRITE,
+@@ -2265,6 +2353,12 @@ ssh_session2_open(struct ssh *ssh)
  	    "client-session", CHANNEL_NONBLOCK_STDIO);
- 
+ 	if (tty_flag)
+ 		channel_set_tty(ssh, c);
 +#ifdef HPN_ENABLED
 +	if (options.tcp_rcv_buf_poll > 0 && !options.hpn_disabled) {
 +		c->dynamic_window = 1;
 +		debug ("Enabled Dynamic Window Scaling");
 +	}
 +#endif
- 	debug3_f("channel_new: %d", c->self);
+ 	debug3_f("channel_new: %d%s", c->self, tty_flag ? " (tty)" : "");
  
  	channel_send_open(ssh, c->self);
-@@ -2203,6 +2297,15 @@ ssh_session2(struct ssh *ssh, const struct ssh_conn_in
+@@ -2280,6 +2374,15 @@ ssh_session2(struct ssh *ssh, const struct ssh_conn_in
  {
- 	int r, interactive, id = -1;
+ 	int r, id = -1;
  	char *cp, *tun_fwd_ifname = NULL;
 +
 +#ifdef HPN_ENABLED
@@ -1233,17 +1233,6 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/*
  	 * Create a new session and process group since the 4.4BSD
  	 * setlogin() affects the entire process group.  We don't
---- work.clean/openssh-9.8p1/sshd-session.c.orig	2024-07-01 13:54:25.745441000 -0700
-+++ work/openssh-9.8p1/sshd-session.c	2024-07-01 13:54:57.335695000 -0700
-@@ -1305,7 +1305,7 @@ main(int ac, char **av)
- 		alarm(options.login_grace_time);
- 
- 	if ((r = kex_exchange_identification(ssh, -1,
--	    options.version_addendum)) != 0)
-+	    options.version_addendum, options.hpn_disabled)) != 0)
- 		sshpkt_fatal(ssh, r, "banner exchange");
- 
- 	ssh_packet_set_nonblocking(ssh);
 --- work.clean/openssh-6.8p1/sshd_config	2015-04-01 22:07:18.248858000 -0500
 +++ work/openssh-6.8p1/sshd_config	2015-04-01 22:16:49.932279000 -0500
 @@ -111,6 +111,20 @@ AuthorizedKeysFile	.ssh/authorized_keys
@@ -1267,11 +1256,11 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  # Example of overriding settings on a per-user basis
  #Match User anoncvs
  #	X11Forwarding no
---- work/openssh/version.h.orig	2025-02-18 00:15:08.000000000 -0800
-+++ work/openssh/version.h	2025-02-19 07:59:36.425254000 -0800
+--- work/openssh/version.h.orig	2025-10-05 19:25:16.000000000 -0700
++++ work/openssh/version.h	2025-10-06 08:19:38.217160000 -0700
 @@ -4,3 +4,4 @@
  
- #define SSH_PORTABLE	"p2"
+ #define SSH_PORTABLE	"p1"
  #define SSH_RELEASE	SSH_VERSION SSH_PORTABLE
 +#define SSH_HPN         "-hpn14v15"
 --- work/openssh/kex.h.orig	2019-07-10 17:35:36.523216000 -0700
@@ -1285,16 +1274,29 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  struct kex *kex_new(void);
  int	 kex_ready(struct ssh *, char *[PROPOSAL_MAX]);
---- work/openssh/sshd-auth.c.orig	2025-04-10 22:36:29.699636000 -0700
-+++ work/openssh/sshd-auth.c	2025-04-10 22:36:33.770235000 -0700
-@@ -827,6 +827,10 @@ do_ssh2_kex(struct ssh *ssh)
+--- work/openssh/sshd-auth.c.orig	2026-04-25 16:58:23.868827000 -0700
++++ work/openssh/sshd-auth.c	2026-04-25 16:59:29.116215000 -0700
+@@ -799,6 +799,14 @@ do_ssh2_kex(struct ssh *ssh)
  	struct kex *kex;
  	int r;
  
 +#ifdef NONE_CIPHER_ENABLED
-+        if (options.none_enabled == 1)
++        if (options.none_enabled == 1) {
 +                debug ("WARNING: None cipher enabled");
++		char *old_ciphers = options.ciphers;
++		xasprintf(&options.ciphers, "%s,none", old_ciphers);
++		free(old_ciphers);
++	}
 +#endif
  	if (options.rekey_limit || options.rekey_interval)
  		ssh_packet_set_rekey_limits(ssh, options.rekey_limit,
  		    options.rekey_interval);
+@@ -813,7 +821,7 @@ do_ssh2_kex(struct ssh *ssh)
+ 	free(hkalgs);
+ 
+ 	if ((r = kex_exchange_identification(ssh, -1,
+-	    options.version_addendum)) != 0) {
++	    options.version_addendum, options.hpn_disabled)) != 0) {
+ 		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
+ 		sshpkt_fatal(ssh, r, "banner exchange");
+ 	}

@@ -1,4 +1,3 @@
-include/gdalcpp.hpp
 include/osmium/area/assembler.hpp
 include/osmium/area/assembler_config.hpp
 include/osmium/area/assembler_legacy.hpp

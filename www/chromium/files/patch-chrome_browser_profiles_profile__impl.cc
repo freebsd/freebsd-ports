@@ -1,8 +1,17 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -269,6 +269,10 @@
+@@ -262,7 +262,7 @@
  #include "chrome/browser/safe_browsing/safe_browsing_service.h"
  #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/gapis/gapis_service_factory.h"
+ #include "components/gapis/gapis_service.h"
+ #endif  // BUILDFLAG(IS_LINUX)
+@@ -271,6 +271,10 @@
+ #include "chrome/browser/themes/theme_service_factory.h"
+ #endif  // !BUILDFLAG(IS_ANDROID)
  
 +#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/sandbox.h"
@@ -11,7 +20,7 @@
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -593,7 +597,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
+@@ -607,7 +611,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
    policy_provider = GetUserCloudPolicyManagerAsh();
  #else  // !BUILDFLAG(IS_CHROMEOS)
    {
@@ -20,7 +29,16 @@
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -889,7 +893,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -790,7 +794,7 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+   }
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Bootstrap and initialize the Gapis service.
+   if (gapis::GapisService* gapis_service =
+           GapisServiceFactory::GetForProfile(this)) {
+@@ -886,7 +890,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

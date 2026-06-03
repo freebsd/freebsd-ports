@@ -1,5 +1,6 @@
 PORTNAME=	lz4
 PORTVERSION=	1.10.0
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/lz4/lz4/releases/download/v${PORTVERSION}/
@@ -12,37 +13,34 @@ WWW=		https://lz4.org/ \
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/../../lib/LICENSE
-LICENSE_FILE_GPLv2=	${WRKSRC}/../../programs/COPYING
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/lib/LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/programs/COPYING
 
-USES=		cpe meson pkgconfig python:build
+# Note this port is in the dependency chain of lang/python314
+# via archivers/zstd and cannot use meson or python to build
+USES=		cpe gmake pkgconfig
 
-MESON_ARGS=	--default-library=both \
-		-Dalign-test=true \
-		-Dcontrib=false \
-		-Ddebug-level=1 \
-		-Ddistance-max=65535 \
-		-Denable_multithread=true \
-		-Dexamples=false \
-		-Dfast-dec-loop='auto' \
-		-Dforce-sw-bitcount=false \
-		-Dfreestanding=false \
-		-Dmemory-usage=0 \
-		-Dossfuzz=true \
-		-Dprograms=true \
-		-Dunstable=false \
-		-Duser-memory-functions=false
+CFLAGS+=	-DLZ4IO_MULTITHREAD -pthread
+LDFLAGS+=	-pthread
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		MANDIR="${PREFIX}/share/man"
+MAKE_ENV=	TARGET_ARCH=
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
-WRKSRC_SUBDIR=	build/meson
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+BINARY_ALIAS=	make=${GMAKE}
 
 CPE_VENDOR=	lz4_project
 
 PORTSCOUT=	limit:^[0-9]*\.
 
-OPTIONS_DEFINE=	TEST
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-TEST_MESON_TRUE=	tests
+OPTIONS_DEFINE=	TEST
+TEST_DESC=	Run extensive tests
+
+TEST_TEST_TARGET=	test
+TEST_USES=	python:-3.13,test
 
 .include <bsd.port.mk>

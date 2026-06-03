@@ -1,6 +1,6 @@
---- net/disk_cache/backend_experiment.h.orig	2024-11-16 12:20:41 UTC
+--- net/disk_cache/backend_experiment.h.orig	2025-09-10 13:22:16 UTC
 +++ net/disk_cache/backend_experiment.h
-@@ -14,7 +14,7 @@ namespace disk_cache {
+@@ -15,7 +15,7 @@ namespace disk_cache {
  // default.
  constexpr bool IsSimpleBackendEnabledByDefaultPlatform() {
    return BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) ||

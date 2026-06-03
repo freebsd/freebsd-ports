@@ -1,6 +1,6 @@
 PORTNAME=	domino-chain
 PORTVERSION=	1.1
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -36,6 +36,7 @@ OPTIONS_SUB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/fontpaths.*=/,/^}/ s|".*fonts.*"|"${FREESANS_DIR}"|' \
 		${WRKSRC}/src/domino-chain/screen.cpp
+	@${REINPLACE_CMD} -e '/boost_system/d' ${WRKSRC}/Makefile
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,0 +1,15 @@
+# Replace the existing [provider_sect] and [default_provider] sections
+# with this config
+
+[provider_sect]
+default = default_sect
+pkcs11 = pkcs11_sect
+
+[default_sect]
+activate = 1
+
+[pkcs11_sect]
+module = %%PREFIX%%/lib/ossl-modules/pkcs11.so
+# pkcs11-module-token-pin = %%PREFIX%%/etc/ssl/pinfile.txt
+# pkcs11-module-path = %%PREFIX%%/lib/vendor_pkcs11.so
+activate = 1

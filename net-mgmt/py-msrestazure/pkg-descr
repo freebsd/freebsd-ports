@@ -1,1 +1,3 @@
-AutoRest swagger generator Python client runtime. Azure-specific module.
+This package is deprecated and no longer receives updates
+- The authentication part of this package has been moved to azure-identity
+- The other parts of this library are covered by azure-mgmt-core

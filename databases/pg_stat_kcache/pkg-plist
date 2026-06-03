@@ -16,5 +16,7 @@ share/postgresql/extension/pg_stat_kcache--2.2.2--2.2.3.sql
 share/postgresql/extension/pg_stat_kcache--2.2.2.sql
 share/postgresql/extension/pg_stat_kcache--2.2.3--2.3.0.sql
 share/postgresql/extension/pg_stat_kcache--2.2.3.sql
+share/postgresql/extension/pg_stat_kcache--2.3.0--2.3.1.sql
 share/postgresql/extension/pg_stat_kcache--2.3.0.sql
+share/postgresql/extension/pg_stat_kcache--2.3.1.sql
 share/postgresql/extension/pg_stat_kcache.control

@@ -1,5 +1,5 @@
 PORTNAME=	gbsplay
-DISTVERSION=	0.0.100
+DISTVERSION=	0.0.102
 PORTEPOCH=	1
 CATEGORIES=	audio
 
@@ -27,8 +27,6 @@ CONFIGURE_ARGS=	--disable-pipewire \
 		--sysconfdir=${PREFIX}/etc
 
 MAKE_ENV+=	EXAMPLESDIR="${STAGEDIR}${EXAMPLESDIR}"
-
-CONFLICTS_INSTALL=	mate-control-center # share/applications/mimeinfo.cache
 
 OPTIONS_DEFINE=		ALSA BASH_COMPLETIONS DOCS EXAMPLES NAS NLS PULSEAUDIO \
 			SDL

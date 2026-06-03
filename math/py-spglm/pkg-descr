@@ -3,7 +3,7 @@ Statsmodels package, this it has been simplified and customized for the purposes
 of serving as the base for several other PySAL modules, namely SpInt and GWR.
 Currently, it supports the estimation of Gaussian, Poisson, and Logistic
 regression using only iteratively weighted least squares estimation (IWLS). One
-of the large differences this module and the functions avaialble in the
+of the large differences this module and the functions available in the
 Statsmodels package is that the custom IWLS routine is fully sparse compatible,
 which was necesary for the very sparse design matrices that arise in constrained
 spatial interaction models. The somewhat limited functionality and computation

@@ -91,6 +91,7 @@ include/fio/os/os-freebsd.h
 include/fio/os/os.h
 include/fio/oslib/getopt.h
 include/fio/parse.h
+include/fio/pcbuf.h
 include/fio/printing.h
 include/fio/profile.h
 include/fio/pshared.h
@@ -98,6 +99,7 @@ include/fio/rate-submit.h
 include/fio/rwlock.h
 include/fio/server.h
 include/fio/smalloc.h
+include/fio/sprandom.h
 include/fio/stat.h
 include/fio/steadystate.h
 include/fio/td_error.h
@@ -266,6 +268,7 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_verify.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_write_same_ndob.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_write_same_ndob.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sprandom.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-steadystate.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-steadystate.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-test.fio

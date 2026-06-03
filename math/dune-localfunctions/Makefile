@@ -1,7 +1,6 @@
 PORTNAME=	dune-localfunctions
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
-PORTREVISION=	1
+DISTVERSION=	2.11.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,11 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	core
-GL_TAGNAME=	f6628171b2773065ab43f97a77f47cd8c4283d8f
+GL_TAGNAME=	56e0e0e97bcd1cadeb05296e89a492900c0fd790
+
+CMAKE_OFF=	DUNE_ENABLE_PYTHONBINDINGS
+
+PLIST_SUB+=	DUNE_LOCALFUNCTIONS_CMAKE_HASH=49d120d3897aee42c5e8eb22158d11e8
 
 NO_ARCH=	yes
 
@@ -30,13 +33,11 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_CMAKE_BOOL=	FREEBSD_INSTALL_DOCS
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			latex:print/tex-formats \
-			sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 PORTDOCS=	*
 
 post-stage-DOCS-on: # https://gitlab.dune-project.org/core/dune-common/issues/191
-	@${RMDIR} ${STAGEDIR}${DOCSDIR}/comm
+	@${RMDIR} ${STAGEDIR}${DOCSDIR}/comm || ${TRUE}
 
 .include <bsd.port.mk>

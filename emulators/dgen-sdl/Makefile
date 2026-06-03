@@ -12,7 +12,6 @@ USE_SDL=	sdl
 USE_GL=		glu
 USES=		gl gmake sdl
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--disable-asm
 

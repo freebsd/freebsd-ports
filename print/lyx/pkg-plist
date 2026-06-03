@@ -3324,12 +3324,12 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/lyx2lyx/__pycache__/lyx_2_4%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/lyx_2_4%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/lyx_2_4%%PYTHON_TAG%%.pyc
+%%DATADIR%%/lyx2lyx/__pycache__/lyx_2_5%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/lyx2lyx/__pycache__/lyx_2_5%%PYTHON_TAG%%.opt-2.pyc
+%%DATADIR%%/lyx2lyx/__pycache__/lyx_2_5%%PYTHON_TAG%%.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/parser_tools%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/parser_tools%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/parser_tools%%PYTHON_TAG%%.pyc
-%%DATADIR%%/lyx2lyx/__pycache__/profiling%%PYTHON_TAG%%.opt-1.pyc
-%%DATADIR%%/lyx2lyx/__pycache__/profiling%%PYTHON_TAG%%.opt-2.pyc
-%%DATADIR%%/lyx2lyx/__pycache__/profiling%%PYTHON_TAG%%.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/test_parser_tools%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/test_parser_tools%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/lyx2lyx/__pycache__/test_parser_tools%%PYTHON_TAG%%.pyc
@@ -3360,8 +3360,8 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/lyx2lyx/lyx_2_2.py
 %%DATADIR%%/lyx2lyx/lyx_2_3.py
 %%DATADIR%%/lyx2lyx/lyx_2_4.py
+%%DATADIR%%/lyx2lyx/lyx_2_5.py
 %%DATADIR%%/lyx2lyx/parser_tools.py
-%%DATADIR%%/lyx2lyx/profiling.py
 %%DATADIR%%/lyx2lyx/test_parser_tools.py
 %%DATADIR%%/lyx2lyx/unicode_symbols.py
 %%DATADIR%%/scripts/TeXFiles.py

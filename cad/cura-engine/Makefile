@@ -1,6 +1,6 @@
 PORTNAME=		CuraEngine
 PORTVERSION=		5.7.0
-PORTREVISION=	3
+PORTREVISION=	8
 PORTEPOCH=		1
 CATEGORIES=		cad
 DIST_SUBDIR=		Ultimaker
@@ -15,7 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/uuid/uuid.hpp:devel/boost-libs \
 		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
 		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3 \
 		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson
-LIB_DEPENDS=	libArcus.so:net/libarcus \
+LIB_DEPENDS=	libabsl_log_internal_message.so:devel/abseil \
+		libArcus.so:net/libarcus \
+		libfmt.so:devel/libfmt \
 		libpolyclipping.so:graphics/polyclipping \
 		libprotobuf.so:devel/protobuf \
 		libspdlog.so:devel/spdlog
@@ -39,7 +41,7 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_LIBS:BOOL=ON \
 		-DStb_FOUND:BOOL=ON \
 		-DStb_INCLUDE_DIRS=${WRKSRC}/include/stb
 LDFLAGS+=	-L${LOCALBASE}/lib
-WITH_DEBUGINFO=	1 # Will segfault if Release
+#WITH_DEBUGINFO=	1 # Will segfault if Release
 
 PLIST_FILES=	bin/CuraEngine
 

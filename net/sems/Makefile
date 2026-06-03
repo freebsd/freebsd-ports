@@ -10,6 +10,9 @@ WWW=		https://github.com/sems-server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+BROKEN=		Fails to detect declared dependencies
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libopus.so:audio/opus \
 		libcodec2.so:audio/codec2 \
 		libevent.so:devel/libevent \

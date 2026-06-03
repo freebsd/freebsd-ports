@@ -16,15 +16,18 @@ load_rc_config $name
 # Set defaults
 : ${cbsd_statsd_bhyve_enable:="NO"}
 
+[ -z "${CIX_DISTDIR}" ] && CIX_DISTDIR="%%PREFIX%%/cbsd"
+[ -z "${CIX_BIN}" ] && CIX_BIN="%%PREFIX%%/bin/cbsd"
+
 export workdir="${cbsd_workdir}"
-globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
+globalconf=${cbsd_globalconf:-"${CIX_DISTDIR}/cbsd.conf"}
 
 start_cmd=${name}_start
 stop_cmd=${name}_stop
 restart_cmd=${name}_restart
 extra_commands="restart"
 
-command="%%PREFIX%%/cbsd/tools/racct-bhyve-statsd"
+command="${CIX_DISTDIR}/tools/racct-bhyve-statsd"
 pidfile="${cbsd_workdir}/var/run/${name}.pid"
 daemon_pidfile="${cbsd_workdir}/var/run/${name}-daemon.pid"
 daemon_logdir="/var/log/${name}"

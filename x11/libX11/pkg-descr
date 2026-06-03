@@ -1,1 +1,2 @@
-This package contains the X11 library.
+This package contains the core X11 protocol client library (aka "Xlib").
+It provides a complete API for the basic functions of the window system.

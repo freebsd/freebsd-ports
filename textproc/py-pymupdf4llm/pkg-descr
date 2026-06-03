@@ -1,0 +1,4 @@
+pymupdf4llm provides utilities to convert PDF documents to Markdown format
+suitable for use with Large Language Models (LLMs) and Retrieval-Augmented
+Generation (RAG) systems. It is built on top of PyMuPDF and preserves the
+document's structure, tables, images, and text formatting.

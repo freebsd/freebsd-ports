@@ -1,0 +1,15 @@
+QMD (Python edition) is an on-device search engine for everything you need
+to remember. Index your markdown notes, meeting transcripts, documentation,
+and knowledge bases. Search with keywords or natural language using local
+AI models.
+
+QMD combines BM25 full-text search, vector semantic search, and LLM
+re-ranking all running locally via sentence-transformers with GGUF models.
+
+Features:
+- Full-text search with BM25 algorithm
+- Vector-based semantic search with embeddings
+- LLM-based re-ranking for relevance
+- Support for markdown collections and context hierarchies
+- Local-first, privacy-focused operation
+- Model Context Protocol (MCP) support for agentic flows

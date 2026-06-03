@@ -7,6 +7,7 @@ bin/goaccess
 %%NLS%%share/locale/fr/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/it/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/goaccess.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/goaccess.mo

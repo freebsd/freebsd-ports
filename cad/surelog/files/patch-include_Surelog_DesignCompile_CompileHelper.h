@@ -1,10 +1,10 @@
---- include/Surelog/DesignCompile/CompileHelper.h.orig	2022-09-09 21:48:59 UTC
+--- include/Surelog/DesignCompile/CompileHelper.h.orig	2025-08-30 03:55:56 UTC
 +++ include/Surelog/DesignCompile/CompileHelper.h
-@@ -29,6 +29,7 @@
- #include <Surelog/Expression/ExprBuilder.h>
+@@ -33,6 +33,7 @@
  #include <Surelog/SourceCompile/VObjectTypes.h>
  
+ #include <cstdint>
 +#include <filesystem>
  #include <string>
+ #include <string_view>
  #include <unordered_map>
- 

@@ -1,0 +1,6 @@
+lib/%%TCL_PKG%%/lib%%TCL_PKG_LIB_PREFIX%%%%TCL_PKG%%.so
+lib/%%TCL_PKG%%/pkgIndex.tcl
+share/man/mann/thread.%%TCL_PKG_LIB_PREFIX%%.n.gz
+share/man/mann/tpool.%%TCL_PKG_LIB_PREFIX%%.n.gz
+share/man/mann/tsv.%%TCL_PKG_LIB_PREFIX%%.n.gz
+share/man/mann/ttrace.%%TCL_PKG_LIB_PREFIX%%.n.gz

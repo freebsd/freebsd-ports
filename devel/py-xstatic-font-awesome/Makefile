@@ -1,15 +1,13 @@
 PORTNAME=	xstatic-font-awesome
-PORTVERSION=	6.2.1.1
-PORTREVISION=	1
+PORTVERSION=	6.2.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Font-Awesome-${PORTVERSION}
+DISTNAME=	xstatic_font_awesome-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Iconic font and CSS framework (font-awesome)
-WWW=		https://fontawesome.com/ \
-		https://github.com/xstatic-py/xstatic-font-awesome
+WWW=		https://github.com/xstatic-py/xstatic-font-awesome
 
 LICENSE=	OFL11
 

@@ -1,0 +1,41 @@
+receivers:
+  nginx:
+     endpoint: "http://127.0.0.1:8080/status"
+     collection_interval: 10s
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+
+exporters:
+  prometheus:
+    endpoint: 0.0.0.0:8889
+    namespace: default
+
+  debug:
+    verbosity: detailed
+
+processors:
+  batch:
+
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+  pprof:
+    endpoint: 0.0.0.0:1777
+  zpages:
+    endpoint: 0.0.0.0:55679
+
+service:
+  extensions: [health_check, pprof, zpages]
+
+  pipelines:
+    metrics:
+      receivers: [nginx]
+      processors: [batch]
+      exporters: [prometheus]
+
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug]

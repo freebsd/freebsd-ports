@@ -1,5 +1,5 @@
 PORTNAME=	xapian
-PORTVERSION=	1.4.29
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-USES=		compiler:c++11-lang libtool php:build,flavors tar:xz
+USES=		compiler:c++17-lang libtool php:build,flavors tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 
 PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR}
 

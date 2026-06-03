@@ -1,0 +1,186 @@
+PORTNAME=	vscode
+DISTVERSION=	${VSCODE_VERSION}
+CATEGORIES=	editors
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
+PKGNAMESUFFIX=	-reh
+DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules
+DIST_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	tagattie@FreeBSD.org
+COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
+WWW=		https://code.visualstudio.com/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+ONLY_FOR_ARCHS=	aarch64 amd64
+
+EXTRACT_DEPENDS=jq:textproc/jq \
+		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
+BUILD_DEPENDS=	typescript-go>=7.0.0.g20260506:lang/typescript-go \
+		jq:textproc/jq \
+		rg:textproc/ripgrep
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libcares.so:dns/c-ares \
+		libicui18n.so:devel/icu \
+		libllhttp.so:www/llhttp \
+		libnghttp2.so:www/libnghttp2 \
+		libnghttp3.so:www/libnghttp3 \
+		libngtcp2.so:net/libngtcp2 \
+		libsimdjson.so:devel/simdjson \
+		libuv.so:devel/libuv \
+		libzstd.so:archivers/zstd \
+		libsqlite3.so:databases/sqlite3 \
+		libsecret-1.so:security/libsecret
+
+USES=		cargo electron:env gssapi:mit localbase:ldflags \
+		nodejs:22,build pkgconfig python:build shebangfix
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	microsoft
+# See ${WRKSRC}/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/package.json for node-clipboard-rs version
+GH_TUPLE=	Teddy-Zhu:node-clipboard-rs:v0.0.10:node_clipboard_rs/node-clipboard-rs
+# See ${WRKSRC}/build/rspack/node_modules/@rspack/binding/package.json for rspack version
+GH_TUPLE+=	web-infra-dev:rspack:v1.7.10:rspack/rspack
+
+CARGO_CARGOTOML_CLIPBOARD=	${WRKSRC}/node-clipboard-rs/Cargo.toml
+CARGO_CARGOLOCK_CLIPBOARD=	${WRKSRC}/node-clipboard-rs/Cargo.lock
+CARGO_CARGOTOML_RSPACK=		${WRKSRC}/rspack/Cargo.toml
+CARGO_CARGOLOCK_RSPACK=		${WRKSRC}/rspack/Cargo.lock
+CARGO_CARGOTOML=		${CARGO_CARGOTOML_CLIPBOARD}
+CARGO_CARGOLOCK=		${CARGO_CARGOLOCK_CLIPBOARD}
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+
+USE_ELECTRON=	npm:npm
+
+SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
+PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
+
+MAKE_ENV=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
+		VSCODE_QUALITY=stable
+
+BINARY_ALIAS=	python=${PYTHON_CMD}
+
+.include "Makefile.version"
+.include <bsd.port.pre.mk>
+
+NODEJS_ARCH=	${ELECTRON_ARCH}
+NODEJS_DIR=	${PORTSDIR}/www/node${NODEJS_VERSION}
+.include "${NODEJS_DIR}/Makefile.version"
+
+post-extract:
+	@${CP} ${WRKSRC}/build/.moduleignore.linux \
+		${WRKSRC}/build/.moduleignore.freebsd
+	@${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}"
+	@${TAR} -xzf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} -C ${WRKSRC}
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
+		if [ -f ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} ]; then \
+			${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}/$${dir}"; \
+			${TAR} -xzf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} \
+				-C ${WRKSRC}/$${dir}; \
+		fi; \
+	done
+
+post-patch:
+	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
+		${WRKSRC}/remote/.npmrc
+	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
+		${WRKSRC}/build/gulpfile.reh.ts \
+		${WRKSRC}/build/gulpfile.vscode.ts
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/node_modules/@typescript/native-preview/lib/getExePath.js
+	@(cd ${WRKSRC} && \
+	${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
+	@(cd ${WRKSRC} && \
+	${FIND} ${PATHFIX_FILES} -type f \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
+	@${SETENV} FILESDIR=${FILESDIR} \
+		${SH} ${FILESDIR}/update-product-json.sh ${WRKSRC}
+
+pre-build:
+# rebuild native node modules in subdirectories
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
+		for subdir in `${FIND} ${WRKSRC}/$${dir}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
+			${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
+			if [ "`${ECHO_CMD} $${subdir} | ${GREP} /build/`" ]; then \
+				cd $${subdir} && \
+				${SETENV} ${MAKE_ENV} \
+					npm_config_runtime=node \
+					npm_config_target=${NODEJS_PORTVERSION} \
+					npm_config_nodedir=${LOCALBASE} \
+					node-gyp --userconfig=${WRKSRC}/build/.npmrc rebuild; \
+			elif [ "`${ECHO_CMD} $${subdir} | ${GREP} /remote/`" ]; then \
+				cd $${subdir} && \
+				${SETENV} ${MAKE_ENV} \
+					npm_config_runtime=node \
+					npm_config_target=${NODEJS_PORTVERSION} \
+					npm_config_nodedir=${LOCALBASE} \
+					node-gyp --userconfig=${WRKSRC}/remote/.npmrc rebuild; \
+			fi; \
+		done; \
+	done
+# build native node module for @teddyzhu/clipboard
+	@${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML_CLIPBOARD} \
+		--verbose --verbose \
+		${CARGO_BUILD_ARGS}
+	${CP} ${CARGO_TARGET_DIR}/*/libclipboard.so \
+		${WRKSRC}/remote/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/clipboard.freebsd-${NODEJS_ARCH}.node
+	# # build native node module for @rspack/binding
+	# @${CARGO_CARGO_RUN} build \
+	#	--manifest-path ${CARGO_CARGOTOML_RSPACK} \
+	#	--verbose --verbose \
+	#	${CARGO_BUILD_ARGS}
+	# ${CP} ${CARGO_TARGET_DIR}/*/librspack.so \
+	#	${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${ELECTRON_ARCH}.node
+# copy rg binary file to @vscode/ripgrep node module directory
+	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin \
+		${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
+# copy rg binary file to @github/copilot node modules directory
+	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/remote/node_modules/@github/copilot/ripgrep/bin/freebsd-${NODEJS_ARCH}
+# copy keytar.node binary file to @github/copilot node modules directory
+	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
+	${CP} ${WRKSRC}/build/node_modules/keytar/build/Release/keytar.node \
+		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
+# copy pty.node binary file to @github/copilot node modules directory
+	${CP} ${WRKSRC}/remote/node_modules/node-pty/build/Release/pty.node \
+		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
+
+do-build:
+# setup download cache for node
+	@${MKDIR} ${WRKSRC}/.build/node/v${NODEJS_PORTVERSION}/linux-${NODEJS_ARCH}
+	@${CP} ${LOCALBASE}/bin/node \
+		${WRKSRC}/.build/node/v${NODEJS_PORTVERSION}/linux-${NODEJS_ARCH}
+# remove backup files so that they are not included in the package
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -o -name '*.orig' -o -name '*~' \) -delete
+# build vscode remote extension host
+	cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} \
+		npm_config_runtime=node \
+		npm_config_target=${NODEJS_PORTVERSION} \
+		npm_config_nodedir=${LOCALBASE} \
+		npm --userconfig=${WRKSRC}/remote/.npmrc run compile && \
+	${SETENV} ${MAKE_ENV} \
+		npm_config_runtime=node \
+		npm_config_target=${NODEJS_PORTVERSION} \
+		npm_config_nodedir=${LOCALBASE} \
+		npm --userconfig=${WRKSRC}/remote/.npmrc run \
+			gulp vscode-reh-linux-${NODEJS_ARCH}-min
+# strip native node modules
+	@${FIND} ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH} -type f -exec ${FILE} {} ';' | \
+		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ': ' '{print $$1}' | ${XARGS} ${STRIP_CMD}
+	${TAR} -czf ${WRKDIR}/vscode-reh-${OPSYS:tl}-${NODEJS_ARCH}-${DISTVERSION}.tar.gz \
+		-C ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH} .
+
+.include <bsd.port.post.mk>

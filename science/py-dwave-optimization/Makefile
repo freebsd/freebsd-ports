@@ -1,8 +1,10 @@
 PORTNAME=	dwave-optimization
-DISTVERSION=	0.1.0
+DISTVERSION=	0.6.6
+PORTREVISION=	3
 CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Nonlinear models for industrial optimization problems
@@ -11,32 +13,20 @@ WWW=		https://github.com/dwavesystems/dwave-optimization
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-dso>=2.10:devel/py-setuptools-dso@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}reno>=4.1.0:textproc/py-reno@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}meson-python>=0.18.0:devel/meson-python@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython3 pep517
-
-POST_PLIST=	fix-plist
+USE_PYTHON=	autoplist cython pep517 pytest
 
 post-install:
 	# strip binaries
 	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_model${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_utilities${PYTHON_TAG}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/libdwave-optimization.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/model${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/states${PYTHON_TAG}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/symbols${PYTHON_TAG}.so
-	# remove conflicting __init__.py, see https://github.com/dwavesystems/dwave-system/issues/462
-	@${RM} -r \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__pycache__
-
-fix-plist:
-	@${REINPLACE_CMD} -e " \
-		s|.*dwave/__init__\.py||; \
-		s|.*dwave/__pycache__/.*|| \
-		" ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
---- third_party/angle/src/common/platform_helpers.h.orig	2025-05-07 06:48:23 UTC
+--- third_party/angle/src/common/platform_helpers.h.orig	2025-12-10 15:04:57 UTC
 +++ third_party/angle/src/common/platform_helpers.h
 @@ -62,7 +62,7 @@ inline constexpr bool IsIOS()
  

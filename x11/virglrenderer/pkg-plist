@@ -3,5 +3,6 @@ include/virgl/virgl-version.h
 include/virgl/virglrenderer.h
 lib/libvirglrenderer.so
 lib/libvirglrenderer.so.1
-lib/libvirglrenderer.so.1.8.9
+lib/libvirglrenderer.so.1.10.0
 libdata/pkgconfig/virglrenderer.pc
+%%VENUS%%libexec/virgl_render_server

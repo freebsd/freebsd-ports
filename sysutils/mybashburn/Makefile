@@ -36,7 +36,7 @@ FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
 MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
 NORMALIZE_RUN_DEPENDS=	normalize:audio/normalize
-SUDO_RUN_DEPENDS=	sudo:security/sudo
+SUDO_USES=		sudo
 VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
 
 post-patch:

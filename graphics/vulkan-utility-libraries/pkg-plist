@@ -12,5 +12,6 @@ include/vulkan/vk_enum_string_helper.h
 lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets.cmake
 lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibrariesConfig.cmake
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibrariesConfigVersion.cmake
 lib/libVulkanLayerSettings.a
 lib/libVulkanSafeStruct.a

@@ -1,4 +1,4 @@
---- ui/gfx/linux/dmabuf_uapi.h.orig	2025-05-07 06:48:23 UTC
+--- ui/gfx/linux/dmabuf_uapi.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/gfx/linux/dmabuf_uapi.h
 @@ -5,12 +5,11 @@
  #ifndef UI_GFX_LINUX_DMABUF_UAPI_H_

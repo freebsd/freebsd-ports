@@ -1,0 +1,3 @@
+argparse-dataclass provides declarative CLIs with argparse and dataclasses.
+It allows the creation of command-line interfaces using Python dataclasses
+as a declarative specification.

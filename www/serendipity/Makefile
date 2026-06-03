@@ -3,7 +3,7 @@ PORTVERSION=	2.5.0
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP based weblog software
 WWW=		https://www.s9y.org/
 

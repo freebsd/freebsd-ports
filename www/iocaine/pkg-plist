@@ -1,0 +1,18 @@
+bin/iocaine
+%%ETCDIR%%/README.md
+%%ETCDIR%%/config.kdl
+%%ETCDIR%%/config.kdl.orig
+%%ETCDIR%%/config.kdl.sample
+%%ETCDIR%%/etc/fennel.lua
+%%ETCDIR%%/etc/robots.json
+%%ETCDIR%%/lua/decide.lua
+%%ETCDIR%%/lua/init.lua
+%%ETCDIR%%/lua/main.lua
+%%ETCDIR%%/lua/output.lua
+%%ETCDIR%%/lua/tests.lua
+%%ETCDIR%%/roto/init/pkg.roto
+%%ETCDIR%%/roto/main/pkg.roto
+%%ETCDIR%%/templates/garbage.html
+%%ETCDIR%%/testsuite.kdl
+%%ETCDIR%%/testsuite.kdl.sample
+@dir(%%USERS%%,%%GROUPS%%,750) /var/db/iocaine

@@ -1,11 +1,7 @@
 PORTNAME=	lcalc
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSION=	2.2.1
 CATEGORIES=	math
-MASTER_SITES=	https://mirror.csclub.uwaterloo.ca/sage/spkg/upstream/${PORTNAME}/ \
-		https://mirror.lyrahosting.com/sagemath/spkg/upstream/${PORTNAME}/ \
-		https://mirror.dogado.de/sage/spkg/upstream/${PORTNAME}/ \
-		http://files.sagemath.org/spkg/upstream/${PORTNAME}/
+MASTER_SITES=	https://gitlab.com/-/project/12934202/uploads/0bcf82cdd02412faf9ec0cf80e656610/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-function c++ class library and the CLI program lcalc

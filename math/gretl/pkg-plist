@@ -82,6 +82,7 @@ include/gretl/uservar.h
 include/gretl/var.h
 include/gretl/varprint.h
 include/gretl/vartest.h
+include/gretl/version.h
 lib/gretl-gtk%%GTK_VER%%/anova.so
 lib/gretl-gtk%%GTK_VER%%/arma.so
 lib/gretl-gtk%%GTK_VER%%/arma_x12.so
@@ -134,6 +135,7 @@ lib/gretl-gtk%%GTK_VER%%/spss_import.so
 lib/gretl-gtk%%GTK_VER%%/stata_export.so
 lib/gretl-gtk%%GTK_VER%%/stata_import.so
 lib/gretl-gtk%%GTK_VER%%/stats_tables.so
+lib/gretl-gtk%%GTK_VER%%/stepwise.so
 lib/gretl-gtk%%GTK_VER%%/svm.so
 lib/gretl-gtk%%GTK_VER%%/sysest.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/tramo-x12a.so
@@ -142,12 +144,11 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.50
-lib/libgretl-1.0.so.50.0.0
+lib/libgretl-1.0.so.55
+lib/libgretl-1.0.so.55.0.0
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
-%%GUI%%share/metainfo/gretl.appdata.xml
 %%GUI%%%%DATADIR%%/COPYING
 %%GUI%%%%DATADIR%%/NEWS
 %%GUI%%%%DATADIR%%/data/gnuplot/altpoints.gpsty
@@ -175,6 +176,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/AWM.gdt
 %%DATADIR%%/data/misc/AWM17.gdt
 %%DATADIR%%/data/misc/AWM18.gdt
+%%DATADIR%%/data/misc/AWM_update.gdt
 %%DATADIR%%/data/misc/CEL.gdt
 %%DATADIR%%/data/misc/abdata.gdt
 %%DATADIR%%/data/misc/anscombe.gdt
@@ -388,9 +390,11 @@ libdata/pkgconfig/gretl.pc
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_other_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_series_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_single_example.inp
+%%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_tree_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/print_dims.inp
 %%ADDONS%%%%DATADIR%%/functions/extra/extra.gfn
 %%ADDONS%%%%DATADIR%%/functions/extra/extra.pdf
+%%ADDONS%%%%DATADIR%%/functions/geoplot/examples/GDPpc.plt
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/MANIFEST
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/Makefile
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/Makefile.in
@@ -445,6 +449,7 @@ libdata/pkgconfig/gretl.pc
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/doc.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/elnet_sequence.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/fat.inp
+%%ADDONS%%%%DATADIR%%/functions/regls/examples/fat_BIC.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/fatplus.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/lambda_sequence.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/multiprint.inp
@@ -543,6 +548,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/biprobit_via_ghk.inp
 %%DATADIR%%/scripts/misc/bjg.inp
 %%DATADIR%%/scripts/misc/camtriv.inp
+%%DATADIR%%/scripts/misc/casella_ex1.inp
 %%DATADIR%%/scripts/misc/convolve.inp
 %%DATADIR%%/scripts/misc/credscore.inp
 %%DATADIR%%/scripts/misc/denmark.inp
@@ -685,4 +691,5 @@ libdata/pkgconfig/gretl.pc
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gretl.mo
 share/man/man1/gretl.1.gz
+%%GUI%%share/metainfo/gretl.appdata.xml
 %%GUI%%share/mime/packages/gretl.xml

@@ -1,5 +1,6 @@
 PORTNAME=	foliate
 PORTVERSION=	3.3.0
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
@@ -15,14 +16,13 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libwebkitgtk-6.0.so:www/webkit2-gtk@60
 RUN_DEPENDS=	gjs-console:lang/gjs
 
-USES=		desktop-file-utils gnome localbase meson pkgconfig python shebangfix
+USES=		desktop-file-utils gettext-tools gnome localbase meson \
+		pkgconfig python shebangfix
 USE_GNOME=	cairo gtk40 introspection
 GLIB_SCHEMAS=	com.github.johnfactotum.Foliate.gschema.xml
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnfactotum

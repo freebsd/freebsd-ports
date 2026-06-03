@@ -1,17 +1,18 @@
---- src/tests/CMakeLists.txt.orig	2021-06-07 16:43:45 UTC
+--- src/tests/CMakeLists.txt.orig	2025-11-19 00:27:49 UTC
 +++ src/tests/CMakeLists.txt
-@@ -45,12 +45,12 @@ else()
-             ${item} ${PARTIO_LIBRARIES} ${GTEST_LIB} Threads::Threads)
-         target_compile_definitions(${item} PRIVATE -DPARTIO_DATA_DIR="${PROJECT_SOURCE_DIR}/src/data")
-         target_link_directories(${item} PRIVATE ${GTEST_LINK_PATH})
--        install(TARGETS ${item} DESTINATION ${CMAKE_INSTALL_PARTIO_TESTDIR})
-         add_test(NAME ${item} COMMAND ${item})
-+        set_tests_properties(${item} PROPERTIES ENVIRONMENT
-+            "LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/src/lib")
-     endforeach(item)
+@@ -37,11 +37,13 @@ foreach(item testiterator testio testcache testcloneco
+     add_executable(${item} "${item}.cpp")
+     target_link_libraries(${item} ${PARTIO_LIBRARIES} GTest::gtest Threads::Threads)
+     target_compile_definitions(${item} PRIVATE -DPARTIO_DATA_DIR="${PROJECT_SOURCE_DIR}/src/data")
+-    install(TARGETS ${item} DESTINATION ${CMAKE_INSTALL_PARTIO_TESTDIR})
+     add_test(NAME ${item} COMMAND ${item})
++    set_tests_properties(${item} PROPERTIES ENVIRONMENT
++        "LD_LIBRARY_PATH=${PROJECT_BINARY_DIR}/src/lib")
+ endforeach(item)
  
-     foreach(item testpartjson testpartio)
-         add_test(NAME ${item} COMMAND ${PYTHON_EXECUTABLE} -B ${CMAKE_CURRENT_SOURCE_DIR}/${item}.py)
--        install(PROGRAMS ${item}.py DESTINATION ${CMAKE_INSTALL_PARTIO_TESTDIR} RENAME ${item})
-     endforeach(item)
- endif()
+ foreach(item testpartjson testpartio)
+     add_test(NAME ${item} COMMAND ${Python_EXECUTABLE} -B ${CMAKE_CURRENT_SOURCE_DIR}/${item}.py)
+-    install(PROGRAMS ${item}.py DESTINATION ${CMAKE_INSTALL_PARTIO_TESTDIR} RENAME ${item})
++    set_tests_properties(${item} PROPERTIES ENVIRONMENT
++        "LD_LIBRARY_PATH=${PROJECT_BINARY_DIR}/src/lib;PYTHONPATH=${PROJECT_BINARY_DIR}/src/py:${PROJECT_SOURCE_DIR}/src/tools")
+ endforeach(item)

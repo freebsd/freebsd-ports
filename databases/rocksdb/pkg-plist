@@ -46,6 +46,7 @@ include/rocksdb/file_system.h
 include/rocksdb/filter_policy.h
 include/rocksdb/flush_block_policy.h
 include/rocksdb/functor_wrapper.h
+include/rocksdb/io_dispatcher.h
 include/rocksdb/io_status.h
 include/rocksdb/iostats_context.h
 include/rocksdb/iterator.h
@@ -61,6 +62,7 @@ include/rocksdb/options.h
 include/rocksdb/perf_context.h
 include/rocksdb/perf_level.h
 include/rocksdb/persistent_cache.h
+include/rocksdb/point_lock_bench_tool.h
 include/rocksdb/port_defs.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/rocksdb_namespace.h
@@ -90,6 +92,7 @@ include/rocksdb/transaction_log.h
 include/rocksdb/types.h
 include/rocksdb/unique_id.h
 include/rocksdb/universal_compaction.h
+include/rocksdb/user_defined_index.h
 include/rocksdb/user_write_callback.h
 include/rocksdb/utilities/agg_merge.h
 include/rocksdb/utilities/backup_engine.h
@@ -104,8 +107,6 @@ include/rocksdb/utilities/info_log_finder.h
 include/rocksdb/utilities/ldb_cmd.h
 include/rocksdb/utilities/ldb_cmd_execute_result.h
 include/rocksdb/utilities/leveldb_options.h
-include/rocksdb/utilities/lua/rocks_lua_custom_library.h
-include/rocksdb/utilities/lua/rocks_lua_util.h
 include/rocksdb/utilities/memory_util.h
 include/rocksdb/utilities/object_registry.h
 include/rocksdb/utilities/optimistic_transaction_db.h
@@ -132,7 +133,7 @@ include/rocksdb/write_batch_base.h
 include/rocksdb/write_buffer_manager.h
 lib/librocksdb.a
 lib/librocksdb.so
-lib/librocksdb.so.10
+lib/librocksdb.so.11
 lib/librocksdb.so.%%SHLIB_VER%%
 lib/librocksdb.so.%%PORTVERSION%%
 lib/librocksdb_test.so

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/wtf/math_extras.h.orig	2022-10-01 07:40:07 UTC
+--- third_party/blink/renderer/platform/wtf/math_extras.h.orig	2025-09-10 13:22:16 UTC
 +++ third_party/blink/renderer/platform/wtf/math_extras.h
-@@ -128,6 +128,10 @@ constexpr float Grad2turn(float g) {
+@@ -130,6 +130,10 @@ constexpr float Grad2turn(float g) {
    return g * (1.0f / 400.0f);
  }
  
@@ -11,7 +11,7 @@
  constexpr double RoundHalfTowardsPositiveInfinity(double value) {
    return std::floor(value + 0.5);
  }
-@@ -135,6 +139,9 @@ constexpr double RoundHalfTowardsPositiveInfinity(doub
+@@ -137,6 +141,9 @@ constexpr double RoundHalfTowardsPositiveInfinity(doub
  constexpr float RoundHalfTowardsPositiveInfinity(float value) {
    return std::floor(value + 0.5f);
  }

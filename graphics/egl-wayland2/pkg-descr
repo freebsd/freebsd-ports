@@ -1,0 +1,9 @@
+This is a new implementation of a EGL External Platform Library for Wayland
+(EGL_KHR_platform_wayland), using the NVIDIA driver's new platform surface
+interface, which simplifies a lot of the library and improves window resizing.
+
+This library implements an EGL External Platform interface to work
+along with EGL drivers that support the external platform mechanism.
+
+Minimum required version of nvidia-driver for this is 560.
+Any of legacy versions are not supported.

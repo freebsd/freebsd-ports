@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2026-05-16 11:52:38 UTC
++++ Makefile.in
+@@ -361,7 +361,7 @@ AUTOMAKE_OPTIONS = foreign
+ am__v_SED_0 = @echo "  SED     " $@;
+ am__v_SED_1 = 
+ AUTOMAKE_OPTIONS = foreign
+-SUBDIRS = man rc po syntax joe colors desktop
++SUBDIRS = man rc po syntax joe colors
+ EXTRA_DIST = COPYING docs/hacking.md ChangeLog NEWS.md docs/README.old README.md INSTALL.md INSTALL.AMIGA \
+ 	docs/help-system.html charmaps/klingon.in \
+ 	cygbuild setup.hint autojoe docs/man.md

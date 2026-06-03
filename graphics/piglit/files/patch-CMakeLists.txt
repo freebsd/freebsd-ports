@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2026-05-02 14:11:44 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
+ 	set(DEFAULT_EGL ON)
+ 	set(DEFAULT_GLX ON)
+ 	set(DEFAULT_WGL OFF)
+@@ -230,7 +230,7 @@ endif()
+ 	add_definitions(-DPIGLIT_HAS_WGL)
+ endif()
+ 
+-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
+ 	pkg_check_modules(LIBDRM QUIET libdrm)
+ 	pkg_check_modules(XCB QUIET xcb)
+ 	pkg_check_modules(XCB_DRI2 QUIET xcb-dri2)

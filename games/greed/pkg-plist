@@ -1,3 +1,2 @@
 @(,games,2555) bin/greed
-share/man/man6/greed.6.gz
 @sample(,games,664) %%SCOREFILE%%.sample

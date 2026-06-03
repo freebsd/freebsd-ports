@@ -1,36 +1,20 @@
---- src/ugenecl/src/Main.cpp.orig	2018-08-16 13:59:20 UTC
+--- src/ugenecl/src/Main.cpp.orig	2026-03-01 18:44:47 UTC
 +++ src/ugenecl/src/Main.cpp
-@@ -93,7 +93,7 @@
- #include <ServiceRegistryImpl.h>
- #include <SettingsImpl.h>
- #include <TaskSchedulerImpl.h>
--#include <crash_handler/CrashHandler.h>
-+//#include <crash_handler/CrashHandler.h>
- 
- // local project imports
- #include "DumpHelpTask.h"
-@@ -191,6 +191,7 @@ static void setSearchPaths() {
- }
- 
- int main(int argc, char **argv) {
-+#if 0
-     if (CrashHandler::isEnabled()) {
-         CrashHandler::setupHandler();
+@@ -151,7 +151,7 @@ static void setScriptsSearchPath() {
+         scriptsSearchPath.push_back(appDirPath + RELATIVE_DEV_SCRIPTS_DIR);
      }
-@@ -198,6 +199,7 @@ int main(int argc, char **argv)
-     if (qgetenv(ENV_SEND_CRASH_REPORTS) == "0") {
-         CrashHandler::setSendCrashReports(false);
+     if (scriptsSearchPath.empty()) {
+-        scriptsSearchPath.push_back("/");
++        scriptsSearchPath.push_back("/usr/local/share/ugene/scripts");
      }
-+#endif
- 
-     if (!Version::checkBuildAndRuntimeVersions()) {
-         return -1;
-@@ -617,7 +619,7 @@ int main(int argc, char **argv)
-     delete pwr;
-     appContext->setAlignmentAlgorithmsRegistry(NULL);
- 
--    CrashHandler::shutdown();
-+    //CrashHandler::shutdown();
- 
-     return rc;
+     QDir::setSearchPaths(PATH_PREFIX_SCRIPTS, scriptsSearchPath);
  }
+@@ -178,7 +178,7 @@ static void setDataSearchPaths() {
+     }
+ 
+     if (dataSearchPaths.empty()) {
+-        dataSearchPaths.push_back("/");
++        dataSearchPaths.push_back("/usr/local/share/ugene/data");
+     }
+ 
+     QDir::setSearchPaths(PATH_PREFIX_DATA, dataSearchPaths);

@@ -1,17 +1,17 @@
---- app/meson.build.orig	2025-03-29 15:15:14 UTC
+--- app/meson.build.orig	2026-05-12 19:35:47 UTC
 +++ app/meson.build
-@@ -67,8 +67,8 @@ conf = configuration_data()
+@@ -70,8 +70,8 @@ feature_test_macros = [
+ 
+ feature_test_macros = [
+     '-D_GNU_SOURCE',
+-    '-D_POSIX_C_SOURCE=200809L',
+-    '-D_XOPEN_SOURCE=700',
++#     '-D_POSIX_C_SOURCE=200809L',
++#     '-D_XOPEN_SOURCE=700',
+ ]
  
  conf = configuration_data()
- 
--conf.set('_POSIX_C_SOURCE', '200809L')
--conf.set('_XOPEN_SOURCE', '700')
-+# conf.set('_POSIX_C_SOURCE', '200809L')
-+# conf.set('_XOPEN_SOURCE', '700')
- conf.set('_GNU_SOURCE', true)
- 
- if host_machine.system() == 'windows'
-@@ -196,10 +196,10 @@ install_data('data/bash-completion/scrcpy',
+@@ -207,10 +207,10 @@ install_data('data/bash-completion/scrcpy',
  install_data('data/zsh-completion/_scrcpy',
               install_dir: datadir / 'zsh/site-functions')
  install_data('data/bash-completion/scrcpy',

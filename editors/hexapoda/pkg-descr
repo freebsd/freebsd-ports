@@ -1,0 +1,10 @@
+A colorful modal hex editor.
+
+Features:
+ - Color-codes bytes by value
+ - Modal, selection-first editing inspired by Kakoune and Helix
+ - Multiple selections, with the ability to split into N-byte chunks
+ - Undo / redo
+ - Inspects the current selection as signed, unsigned, binary,
+   fixed-point, UTF-8 or color
+ - Marks notable offsets and jumps to selected offset

@@ -1,5 +1,5 @@
 PORTNAME=	h3
-PORTVERSION=	3.7.7
+PORTVERSION=	4.4.2
 PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
@@ -13,10 +13,8 @@ WWW=		https://uber.github.io/h3-py/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	h3>=3.7.2:graphics/h3 \
-		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	h3>=4.4.1:graphics/h3 \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libh3.so:graphics/h3
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 

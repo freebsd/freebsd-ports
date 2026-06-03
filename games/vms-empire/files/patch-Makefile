@@ -1,38 +1,36 @@
---- Makefile.orig	2024-10-05 16:57:31 UTC
+--- Makefile.orig	2026-05-02 11:46:08 UTC
 +++ Makefile
-@@ -20,7 +20,7 @@ LIBS = -lncurses
- # You shouldn't have to modify anything below this line.
+@@ -43,7 +43,7 @@ VERSION=$(shell sed -n <NEWS.adoc '/^[0-9]/s/:.*//p' |
+ # Build
  
  # There's a dynamic format in the object-display routines; suppress the warning
--CFLAGS = $(DEBUG) $(PROFILE) -Wall -Wno-format-security
-+CFLAGS ?= $(DEBUG) $(PROFILE) -Wall -Wno-format-security
+-CFLAGS = $(DEBUG) $(PROFILE) -Wall -Wextra -Werror -Wno-format-security -Wno-unused-parameter
++CFLAGS ?= $(DEBUG) $(PROFILE) -Wall -Wextra -Werror -Wno-format-security -Wno-unused-parameter
  
  FILES = \
  	attack.c \
-@@ -93,16 +93,16 @@ install: empire.6 uninstall
- 	@cppcheck --quiet --inline-suppr --suppress=missingIncludeSystem --suppress=unusedFunction --template gcc --enable=all --force *.[ch]
+@@ -124,16 +124,14 @@ install: empire.6 uninstall
+ # Install/uninstall
  
  install: empire.6 uninstall
--	install -m 0755 -d $(DESTDIR)/usr/bin
--	install -m 0755 -d $(DESTDIR)/usr/share/man/man6
--	install -m 0755 -d $(DESTDIR)/usr/share/applications/
--	install -m 0755 -d $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/
--	install -m 0755 -d $(DESTDIR)/usr/share/appdata
--	install -m 0755 vms-empire $(DESTDIR)/usr/bin/
--	install -m 0644 empire.6 $(DESTDIR)/usr/share/man/man6/vms-empire.6
--	install -m 0644 vms-empire.desktop $(DESTDIR)/usr/share/applications/
--	install -m 0644 vms-empire.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/
--	install -m 0644 vms-empire.xml $(DESTDIR)/usr/share/appdata/
-+	install -m 0755 -d $(DESTDIR)$(PREFIX)/bin
-+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/man/man6
-+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/applications/
-+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/
-+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/appdata
-+	install -m 0755 vms-empire $(DESTDIR)$(PREFIX)/bin/
-+	install -m 0644 empire.6 $(DESTDIR)$(PREFIX)/share/man/man6/vms-empire.6
-+	install -m 0644 vms-empire.desktop $(DESTDIR)$(PREFIX)/share/applications/
-+	install -m 0644 vms-empire.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/
-+	install -m 0644 vms-empire.xml $(DESTDIR)$(PREFIX)/share/appdata/
+-	install -m 0755 -d $(BINDIR)
+-	install -m 0755 -d $(MANDIR)/man6
+-	install -m 0755 -d $(DATADIR)/applications/
+-	install -m 0755 -d $(DATADIR)/icons/hicolor/48x48/apps/
+-	install -m 0755 -d $(DATADIR)/appdata
+-	install -m 0755 vms-empire $(BINDIR)/
+-	install -m 0644 empire.6 $(MANDIR)/man6/vms-empire.6
+-	install -m 0644 vms-empire.desktop $(DATADIR)/applications/
+-	install -m 0644 vms-empire.png $(DATADIR)/icons/hicolor/48x48/apps/
+-	install -m 0644 vms-empire.adoc $(DATADIR)/appdata/
++	install -m 0755 -d $(DESTDIR)$(BINDIR)
++	install -m 0755 -d $(DESTDIR)$(MANDIR)/man6
++	install -m 0755 -d $(DESTDIR)$(DATADIR)/applications/
++	install -m 0755 -d $(DESTDIR)$(DATADIR)/icons/hicolor/48x48/apps/
++	install -m 0755 vms-empire $(DESTDIR)$(BINDIR)/
++	install -m 0644 empire.6 $(DESTDIR)$(MANDIR)/man6/vms-empire.6
++	install -m 0644 vms-empire.desktop $(DESTDIR)$(DATADIR)/applications/
++	install -m 0644 vms-empire.png $(DESTDIR)$(DATADIR)/icons/hicolor/48x48/apps/
  
  uninstall:
- 	rm -f /usr/bin/vms-empire /usr/share/man/man6/vms-empire.6
+ 	rm -f $(BINDIR)/vms-empire $(MANDIR)/man6/vms-empire.6

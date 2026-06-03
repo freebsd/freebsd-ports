@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-08-25 06:27:48 UTC
++++ pyproject.toml
+@@ -12,8 +12,7 @@ authors = [
+     {name = "Chris Billington", email = "chrisjbillington@gmail.com"},
+ ]
+ keywords = ["inotify"]
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
+ requires-python = ">=3.6"
+ dynamic = ["version"]
+ 

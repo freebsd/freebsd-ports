@@ -1,108 +1,6 @@
-Revert 3a557c5d88b7b15b5954ba2743febb055549b536 to fix build on powerpc and powerpc64.
-
-Error:
-CC	libswscale/ppc/yuv2rgb_altivec.o
-libswscale/ppc/yuv2rgb_altivec.c: In function ?altivec_yuv2_abgr?:
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: implicit declaration of function ?vec_xl?; did you mean ?vec_rl?? [-Werror=implicit-function-declaration]
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:437:1: note: in expansion of macro ?DEFCSP420_CVT?
-  437 | DEFCSP420_CVT(yuv2_abgr,  out_abgr)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:437:1: note: in expansion of macro ?DEFCSP420_CVT?
-  437 | DEFCSP420_CVT(yuv2_abgr,  out_abgr)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:340:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  340 |             y1 = vec_xl(0, y2i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:437:1: note: in expansion of macro ?DEFCSP420_CVT?
-  437 | DEFCSP420_CVT(yuv2_abgr,  out_abgr)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:437:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c:437:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c: In function ?altivec_yuv2_bgra?:
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:438:1: note: in expansion of macro ?DEFCSP420_CVT?
-  438 | DEFCSP420_CVT(yuv2_bgra,  out_bgra)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:340:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  340 |             y1 = vec_xl(0, y2i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:438:1: note: in expansion of macro ?DEFCSP420_CVT?
-  438 | DEFCSP420_CVT(yuv2_bgra,  out_bgra)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:438:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c:438:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c: In function ?altivec_yuv2_rgba?:
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:439:1: note: in expansion of macro ?DEFCSP420_CVT?
-  439 | DEFCSP420_CVT(yuv2_rgba,  out_rgba)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:340:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  340 |             y1 = vec_xl(0, y2i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:439:1: note: in expansion of macro ?DEFCSP420_CVT?
-  439 | DEFCSP420_CVT(yuv2_rgba,  out_rgba)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:439:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c:439:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c: In function ?altivec_yuv2_argb?:
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:440:1: note: in expansion of macro ?DEFCSP420_CVT?
-  440 | DEFCSP420_CVT(yuv2_argb,  out_argb)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:340:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  340 |             y1 = vec_xl(0, y2i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:440:1: note: in expansion of macro ?DEFCSP420_CVT?
-  440 | DEFCSP420_CVT(yuv2_argb,  out_argb)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:440:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c:440:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c: In function ?altivec_yuv2_rgb24?:
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:441:1: note: in expansion of macro ?DEFCSP420_CVT?
-  441 | DEFCSP420_CVT(yuv2_rgb24, out_rgb24)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:340:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  340 |             y1 = vec_xl(0, y2i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:441:1: note: in expansion of macro ?DEFCSP420_CVT?
-  441 | DEFCSP420_CVT(yuv2_rgb24, out_rgb24)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:441:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c:441:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c: In function ?altivec_yuv2_bgr24?:
-libswscale/ppc/yuv2rgb_altivec.c:338:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  338 |             y0 = vec_xl(0, y1i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:442:1: note: in expansion of macro ?DEFCSP420_CVT?
-  442 | DEFCSP420_CVT(yuv2_bgr24, out_bgr24)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:340:18: error: incompatible types when assigning to type ?__vector unsigned char? {aka ?__vector(16) unsigned char?} from type ?int?
-  340 |             y1 = vec_xl(0, y2i);                                              \
-      |                  ^~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:442:1: note: in expansion of macro ?DEFCSP420_CVT?
-  442 | DEFCSP420_CVT(yuv2_bgr24, out_bgr24)
-      | ^~~~~~~~~~~~~
-libswscale/ppc/yuv2rgb_altivec.c:442:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-libswscale/ppc/yuv2rgb_altivec.c:442:1: error: can?t convert a value of type ?int? to vector type ?__vector(16) signed char? which has different size
-cc1: some warnings being treated as errors
-
---- external/FFmpeg/libswscale/ppc/yuv2rgb_altivec.c.orig	2020-06-15 18:54:24 UTC
+--- external/FFmpeg/libswscale/ppc/yuv2rgb_altivec.c.orig	2025-02-24 16:35:12 UTC
 +++ external/FFmpeg/libswscale/ppc/yuv2rgb_altivec.c
-@@ -305,6 +305,9 @@ static int altivec_ ## name(SwsContext *c, const unsig
+@@ -316,6 +316,9 @@ static int altivec_ ## name(SwsContext *c, const unsig
      vector signed short R1, G1, B1;                                           \
      vector unsigned char R, G, B;                                             \
                                                                                \
@@ -112,7 +10,7 @@ cc1: some warnings being treated as errors
      vector signed short lCY       = c->CY;                                    \
      vector signed short lOY       = c->OY;                                    \
      vector signed short lCRV      = c->CRV;                                   \
-@@ -335,13 +338,26 @@ static int altivec_ ## name(SwsContext *c, const unsig
+@@ -346,13 +349,26 @@ static int altivec_ ## name(SwsContext *c, const unsig
          vec_dstst(oute, (0x02000002 | (((w * 3 + 32) / 32) << 16)), 1);       \
                                                                                \
          for (j = 0; j < w / 16; j++) {                                        \

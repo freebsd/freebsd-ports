@@ -28,7 +28,7 @@
 # grafana_syslog_output_tag (str):
 #     Set syslog tag if syslog enabled
 #     Default is "grafana"
-# grafana_args (string):
+# grafana_args (str):
 #     Set additional command line arguments
 #     Default is ""
 

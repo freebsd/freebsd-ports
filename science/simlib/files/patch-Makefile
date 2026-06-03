@@ -1,0 +1,78 @@
+--- Makefile.orig	2026-02-20 12:35:59 UTC
++++ Makefile
+@@ -6,40 +6,40 @@ all:
+         uninstall clean doc clean-doc clean-all pack dist
+ 
+ all:
+-	make -C src
+-	make -C examples
+-	make -C tests
++	$(MAKE) -C src
++	$(MAKE) -C examples
++	$(MAKE) -C tests
+ 
+ rebuild: clean-all
+-	make all
++	$(MAKE) all
+ 
+ 32: clean-all
+-	make -C src        32
+-	make -C examples   32
+-	make -C tests      32
++	$(MAKE) -C src        32
++	$(MAKE) -C examples   32
++	$(MAKE) -C tests      32
+ 64: clean-all
+-	make -C src        64
+-	make -C examples   64
+-	make -C tests      64
++	$(MAKE) -C src        64
++	$(MAKE) -C examples   64
++	$(MAKE) -C tests      64
+ 
+ test: clean-all
+-	make -C src        test
++	$(MAKE) -C src        test
+ test32: clean-all
+-	make -C src        test32
++	$(MAKE) -C src        test32
+ 
+ ###untested
+ #fuzzy:
+-#	make -C src fuzzy
++#	$(MAKE) -C src fuzzy
+ 
+ install:
+-	make -C src install
++	$(MAKE) -C src install
+ uninstall:
+-	make -C src uninstall
++	$(MAKE) -C src uninstall
+ # cleaning etc.
+ clean:
+-	make -C src clean
+-	make -C examples clean
+-	make -C tests clean
++	$(MAKE) -C src clean
++	$(MAKE) -C examples clean
++	$(MAKE) -C tests clean
+ 
+ # doxygen-generated documentation
+ doc:
+@@ -47,12 +47,12 @@ clean-doc:
+ 
+ clean-doc:
+ 	rm -rf ./doc/doxygen
+-	make -C ./doc/latex clean
++	$(MAKE) -C ./doc/latex clean
+ 
+ clean-all: clean clean-doc
+-	make -C examples clean-all
+-	make -C ./doc/latex clean-all
+-	make -C tests clean-all
++	$(MAKE) -C examples clean-all
++	$(MAKE) -C ./doc/latex clean-all
++	$(MAKE) -C tests clean-all
+ 
+ # create archive with .git
+ pack: clean-all

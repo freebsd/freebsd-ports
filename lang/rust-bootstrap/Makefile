@@ -2,7 +2,8 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.88.0
+PORTVERSION=	1.95.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
@@ -19,7 +20,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	untested on other architectures
 
 BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysroot@${FLAVOR} \
@@ -82,6 +83,7 @@ do-configure:
 	@${ECHO_CMD} '# https://github.com/rust-lang/rust/issues/135358 (bug #947897)' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'profile="dist"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'tools = ["cargo"]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml
@@ -95,6 +97,11 @@ do-configure:
 	@${ECHO_CMD} 'host=["${_RUST_HOST}","${_RUST_TARGET}"]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'target=["${_RUST_TARGET}"]' >> ${WRKSRC}/config.toml
 .endif
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
+.else
+	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="stable"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
@@ -102,11 +109,6 @@ do-configure:
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'download-ci-llvm=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'link-shared=false' >> ${WRKSRC}/config.toml
-.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
-	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
-.else
-	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
-.endif
 # https://github.com/rust-lang/rust/pull/72696#issuecomment-641517185
 	@${ECHO_CMD} 'ldflags="-lz"' >> ${WRKSRC}/config.toml
 # we need to make sure to always build llvm with host arch support to get a
@@ -127,6 +129,7 @@ do-configure:
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
 .endif
 	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'compression-formats=["xz"]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'src-tarball=false' >> ${WRKSRC}/config.toml
 
 do-build:
@@ -137,6 +140,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/rust-bootstrap/${FLAVOR}
 	${INSTALL_DATA} ${WRKDIR}/_build/dist/*-${_RUST_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}${EXTRACT_SUFX} \
 		${STAGEDIR}${PREFIX}/rust-bootstrap/${FLAVOR}
+	# we only need rustc, std and cargo
+	${RM} ${STAGEDIR}${PREFIX}/rust-bootstrap/${FLAVOR}/rust-${PORTVERSION}-* \
+			${STAGEDIR}${PREFIX}/rust-bootstrap/${FLAVOR}/rust*dev*
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} rust-bootstrap -type f >> ${TMPPLIST}
 

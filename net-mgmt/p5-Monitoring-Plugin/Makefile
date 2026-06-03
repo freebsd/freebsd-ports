@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NIERLEIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules to streamline writing Monitoring plugins
 WWW=		https://metacpan.org/dist/Monitoring-Plugin
 

@@ -1,5 +1,5 @@
 PORTNAME=	pghero
-PORTVERSION=	3.7.0
+PORTVERSION=	3.8.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/ankane/pghero
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activerecord71>=7.1:databases/rubygem-activerecord71
+RUN_DEPENDS=	rubygem-activerecord81>=7.2:databases/rubygem-activerecord81
 
 USES=		cpe gem
 

@@ -1,10 +1,11 @@
 PORTNAME=	clamav
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5.2
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source (GPL) anti-virus engine (Regular Feature Release)
 WWW=		https://www.clamav.net/
 

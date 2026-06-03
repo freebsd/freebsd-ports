@@ -1,0 +1,54 @@
+post-patch:
+.if ${PKGNAMESUFFIX} == "24-traymonitor"
+	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|\@bindir\@|${LOCALBASE}/bin|g' ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.desktop.in
+	@${REINPLACE_CMD}  '207d' ${WRKSRC}/CMakeLists.txt
+.endif
+
+post-extract:
+.if ${PKGNAMESUFFIX} == "24-traymonitor"
+	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/client/FileDaemon-local.conf.in \
+		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/client/FileDaemon-local.conf
+	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/director/Director-local.conf.in \
+		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/director/Director-local.conf
+	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/monitor/bareos-mon.conf.in \
+		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/monitor/bareos-mon.conf
+	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/storage/StorageDaemon-local.conf.in \
+		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/storage/StorageDaemon-local.conf
+.endif
+
+post-build:
+.if ${PKGNAMEPREFIX} == "nagios-check_"
+	${MAKE_CMD} -C ${WRKSRC}/examples/nagios/check_bareos
+.endif
+
+pre-install:
+.if ${PKGNAMESUFFIX} == "24-traymonitor"
+.	for d in client director monitor storage
+		${MKDIR} ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}
+		${FIND} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
+.	endfor
+.endif
+
+do-install:
+.if ${PKGNAMEPREFIX} == "nagios-check_"
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/nagios/check_bareos/check_bareos \
+	${STAGEDIR}${PREFIX}/libexec/nagios
+.endif
+.if ${PKGNAMESUFFIX} == "-client-static"
+	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bareos-fd ${STAGEDIR}${PREFIX}/sbin/bareos-fd-static
+	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${STAGEDIR}${PREFIX}/sbin/bconsole-static
+.endif
+.if ${PKGNAMESUFFIX} == "24-traymonitor"
+# Install config files and preserve existing ones
+.for d in client director monitor storage
+	${INSTALL_SCRIPT} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
+.endfor
+	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
+	${INSTALL_DATA} ${WRKSRC}/core/src/images/bareos-logo_128x128.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/bareos-tray-monitor.png
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/core/src/images/bareos-logo.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/bareos-tray-monitor.svg
+	${INSTALL_DATA} ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.desktop.in ${STAGEDIR}${DESKTOPDIR}/bareos-tray-monitor.desktop
+.endif

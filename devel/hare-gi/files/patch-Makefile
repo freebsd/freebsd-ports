@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-04-12 16:46:54 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ BINDIR = $(PREFIX)/bin
+ DESTDIR =
+ PREFIX = /usr/local
+ BINDIR = $(PREFIX)/bin
+-SRCDIR = $(PREFIX)/src
++SRCDIR = $(PREFIX)/share
+ HARESRCDIR = $(SRCDIR)/hare
+ THIRDPARTYDIR = $(HARESRCDIR)/third-party
+ 

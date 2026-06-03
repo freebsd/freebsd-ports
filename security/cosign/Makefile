@@ -1,6 +1,7 @@
 PORTNAME=	cosign
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.3
+DISTVERSION=	3.0.6
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe go:modules
 CPE_VENDOR=	sigstore
 
-GO_MODULE=	github.com/sigstore/cosign/v2
+GO_MODULE=	github.com/sigstore/cosign/v3
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-buildid= \
 		-X sigs.k8s.io/release-utils/version.gitVersion=$(DISTVERSION) \
@@ -23,7 +24,7 @@ GO_BUILDFLAGS=	-ldflags="-buildid= \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GIT_HASH=	488ef8ceed5ab5d77379e9077a124a0d0df41d06
+GIT_HASH=	f1ad3ee952313be5d74a49d67ba0aa8d0d5e351f
 
 .include <bsd.port.pre.mk>
 

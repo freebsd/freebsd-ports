@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlite-vec"
+version = "0.1.9"
+description = "A vector search SQLite extension"
+license = {text = "MIT OR Apache-2.0"}
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+include = ["sqlite_vec*"]
+
+[tool.setuptools.package-data]
+sqlite_vec = ["vec0.so", "vec0.dylib", "vec0.dll"]

@@ -1,6 +1,6 @@
 PORTNAME=	lizzie
 DISTVERSION=	0.6-105
-PORTREVISION=	2
+PORTREVISION=	6
 DISTVERSIONSUFFIX=	-gd0e7040
 CATEGORIES=	games java
 
@@ -11,12 +11,15 @@ WWW=		https://github.com/featurecat/lizzie
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	maven>0:devel/maven
+BUILD_DEPENDS=	maven38>0:devel/maven38
 RUN_DEPENDS=	leelaz:games/leela-zero
 
 USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	featurecat
+JAVA_VERSION=	8 # because of Bug 292662 - games/lizzie: does not build with jdk11+
+
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
 NO_ARCH=	yes
 

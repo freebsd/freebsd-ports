@@ -1,7 +1,8 @@
 PORTNAME=	liblo
-PORTVERSION=	0.32
+PORTVERSION=	0.35
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/radarsat1/liblo/releases/download/${PORTVERSION}/ \
+		SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight Open Sound Control implementation
@@ -16,17 +17,17 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+EXTRA_PATCHES+=	${EXTRA_PATCHES_${ARCH}}
+EXTRA_PATCHES_i386=	${PATCHDIR}/extra-patch-32bit
+EXTRA_PATCHES_powerpc=	${PATCHDIR}/extra-patch-32bit
+EXTRA_PATCHES_powerpcspe=	${PATCHDIR}/extra-patch-32bit
+
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 DOXYGEN_IMPLIES=DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpcspe
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-32bit
-.endif
+DOXYGEN_CONFIGURE_ENABLE=	doc
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

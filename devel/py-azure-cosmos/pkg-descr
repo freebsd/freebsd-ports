@@ -1,11 +1,10 @@
-This is the Microsoft Azure Cosmos Python SDK.
+Azure Cosmos DB is a globally distributed, multi-model database service that
+supports document, key-value, wide-column, and graph databases.
 
-Azure Cosmos DB is Microsoft's globally distributed, multi-model database
-service. With the click of a button, Azure Cosmos DB enables you to elastically
-and independently scale throughput and storage across any number of Azure's
-geographic regions. You can elastically scale throughput and storage, and take
-advantage of fast, single-digit-millisecond data access using your favorite API
-among SQL, MongoDB, Cassandra, Tables, or Gremlin. Cosmos DB provides
-comprehensive service level agreements (SLAs) for throughput, latency,
-availability, and consistency guarantees, something no other database service
-can offer.
+Use the Azure Cosmos DB SQL API SDK for Python to manage databases and the JSON
+documents they contain in this NoSQL database service. High level capabilities
+are:
+- Create Cosmos DB databases and modify their settings
+- Create and modify containers to store collections of JSON documents
+- Create, read, update, and delete the items (JSON documents) in your containers
+- Query the documents in your database using SQL-like syntax

@@ -1,3 +1,5 @@
-TIMESTAMP = 1751375051
-SHA256 (jupyter_ydoc-3.1.0.tar.gz) = 23d8b3c34b52472371b5c177f849c2a97842b1c634ed7419ca8d744635e29dbc
-SIZE (jupyter_ydoc-3.1.0.tar.gz) = 957259
+TIMESTAMP = 1778246803
+SHA256 (jupyter_ydoc-3.4.1.tar.gz) = fb31f0e7033b8a5bf8920334e2b3dd9bdaba3052de3164de28e14525fd0bc4d8
+SIZE (jupyter_ydoc-3.4.1.tar.gz) = 973504
+SHA256 (9b7635bdcebfa07e3234b0449c4ffe2a07aaa206.patch) = c7dea7f0c0562bca26a1ffc128ae9762db05e4e0c65064ac11bc7e2523c43884
+SIZE (9b7635bdcebfa07e3234b0449c4ffe2a07aaa206.patch) = 908

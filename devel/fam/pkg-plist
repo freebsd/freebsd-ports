@@ -1,9 +1,0 @@
-bin/fam
-etc/fam.conf
-include/fam.h
-lib/libfam.a
-lib/libfam.so
-lib/libfam.so.0
-lib/libfam.so.0.0.0
-share/man/man1/fam.1m.gz
-share/man/man3/fam.3x.gz

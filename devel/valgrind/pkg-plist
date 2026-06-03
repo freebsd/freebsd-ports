@@ -8,6 +8,7 @@ bin/valgrind
 bin/valgrind-di-server
 bin/valgrind-listener
 bin/vgdb
+bin/vgstack
 include/valgrind/cachegrind.h
 include/valgrind/callgrind.h
 include/valgrind/config.h

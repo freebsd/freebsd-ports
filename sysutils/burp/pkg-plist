@@ -18,8 +18,6 @@ sbin/burp_ca
 %%DATADIR%%/scripts/summary_script
 %%DATADIR%%/scripts/timer_script
 share/man/man8/bedup.8.gz
-share/man/man8/bsigs.8.gz
-share/man/man8/bsparse.8.gz
 share/man/man8/burp.8.gz
 share/man/man8/burp_ca.8.gz
 share/man/man8/vss_strip.8.gz

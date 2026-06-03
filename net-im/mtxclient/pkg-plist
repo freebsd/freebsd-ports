@@ -34,6 +34,7 @@ include/mtx/events/mscs/image_packs.hpp
 include/mtx/events/name.hpp
 include/mtx/events/nheko_extensions/event_expiry.hpp
 include/mtx/events/nheko_extensions/hidden_events.hpp
+include/mtx/events/nheko_extensions/invite_permissions.hpp
 include/mtx/events/pinned_events.hpp
 include/mtx/events/policy_rules.hpp
 include/mtx/events/power_levels.hpp

@@ -1,0 +1,2 @@
+snakemake-interface-executor-plugins provides a stable interface for
+interactions between Snakemake and its executor plugins.

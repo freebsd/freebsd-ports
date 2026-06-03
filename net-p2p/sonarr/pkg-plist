@@ -1,3 +1,4 @@
+etc/libmap.d/Sonarr.conf
 %%DATADIR%%/bin/0Harmony.dll
 %%DATADIR%%/bin/BouncyCastle.Cryptography.dll
 %%DATADIR%%/bin/Dapper.dll

@@ -1,11 +1,35 @@
 -- workaround for https://github.com/softwareQinc/qpp/issues/171
 
---- unit_tests/CMakeLists.txt.orig	2024-03-04 21:51:04 UTC
+--- unit_tests/CMakeLists.txt.orig	2026-03-14 20:42:02 UTC
 +++ unit_tests/CMakeLists.txt
-@@ -40,5 +40,5 @@ endforeach()
-   target_sources(${TARGET_NAME} PUBLIC ${file})
- endforeach()
+@@ -1,13 +1,6 @@ set(TARGET_NAME "unit_tests")
+ set(TARGET_NAME "unit_tests")
  
--target_link_libraries(${TARGET_NAME} PUBLIC ${QPP_LINK_DEPS} gmock libqpp)
+-include(FetchContent)
+-message(STATUS "Fetching GoogleTest...")
+-FetchContent_Declare(
+-  googletest
+-  GIT_REPOSITORY https://github.com/google/googletest.git
+-  GIT_TAG main
+-  GIT_PROGRESS TRUE
+-  GIT_SHALLOW TRUE)
++find_package(GTest REQUIRED)
+ 
+ if(MSVC)
+   # Ensure Google Test uses the Shared C Runtime (/MD or /MDd) to prevent linker
+@@ -20,8 +13,6 @@ endif()
+       CACHE BOOL "Force Google Test to use shared C Runtime on MSVC" FORCE)
+ endif()
+ 
+-FetchContent_MakeAvailable(googletest)
+-
+ file(GLOB_RECURSE TEST_SOURCES "tests/*.cpp" "tests/MATLAB/*.cpp"
+      "tests/classes/*.cpp" "tests/qasm/*.cpp")
+ 
+@@ -44,5 +35,5 @@ target_link_libraries(${TARGET_NAME} PRIVATE libqpp_in
+              RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/unit_tests")
+ target_link_libraries(${TARGET_NAME} PRIVATE libqpp_internal GTest::gmock)
+ 
+-include(GoogleTest)
 +target_link_libraries(${TARGET_NAME} PUBLIC ${QPP_LINK_DEPS} gtest gmock libqpp)
  gtest_discover_tests(${TARGET_NAME})

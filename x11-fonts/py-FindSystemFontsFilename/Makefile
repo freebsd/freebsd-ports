@@ -1,5 +1,5 @@
 PORTNAME=	FindSystemFontsFilename
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,12 @@ USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+# fix build with devel/py-setuptools < 77.0.0
+post-patch:
+	@${REINPLACE_CMD} -e 's,^\(license = \)\("MIT"\),\1{ text = \2 },1' \
+		-e 's,\(setuptools>=\)77.0.0,\163.1.0,1' \
+		-e '/^license-files/d' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

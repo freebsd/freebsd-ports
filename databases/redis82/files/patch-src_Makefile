@@ -1,0 +1,39 @@
+--- src/Makefile.orig	2025-08-04 11:05:03 UTC
++++ src/Makefile
+@@ -67,7 +67,7 @@ endif
+ 	STD+=-std=c99
+ endif
+ 
+-PREFIX?=/usr/local
++PREFIX:=$(PREFIX)
+ INSTALL_BIN=$(PREFIX)/bin
+ INSTALL=install
+ PKG_CONFIG?=pkg-config
+@@ -143,7 +143,6 @@ FINAL_LIBS=-lm -lstdc++
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(OPT) $(REDIS_LDFLAGS) $(DEBUG)
+ FINAL_LIBS=-lm -lstdc++
+-DEBUG=-g -ggdb
+ 
+ # Linux ARM32 needs -latomic at linking time
+ ifneq (,$(findstring armv,$(uname_M)))
+@@ -182,6 +181,11 @@ else
+ 	OPENSSL_PREFIX?=/usr/local/opt/openssl
+ endif
+ else
++ifeq ($(uname_S),FreeBSD)
++        # FreeBSD
++        FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
++        FINAL_LDFLAGS= $(LDFLAGS) -pthread
++else
+ ifeq ($(uname_S),AIX)
+         # AIX
+         FINAL_LDFLAGS+= -Wl,-bexpall
+@@ -231,6 +235,7 @@ else
+ 	# All the other OSes (notably Linux)
+ 	FINAL_LDFLAGS+= -rdynamic
+ 	FINAL_LIBS+=-ldl -pthread -lrt
++endif
+ endif
+ endif
+ endif

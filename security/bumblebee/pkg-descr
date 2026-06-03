@@ -1,0 +1,23 @@
+Bumblebee is a read-only inventory collector for package, extension, and
+developer-tool metadata on developer endpoints, built to check exposure to
+known software supply-chain compromises.
+
+It answers a narrow supply-chain response question: when an advisory names a
+package, extension, or version, which developer machines show a match in their
+on-disk metadata right now?
+
+SBOMs help answer what shipped, and EDR helps answer what ran or touched the
+network, but supply-chain response often needs a different view: messy local
+state across lockfiles, package-manager metadata, extension manifests, and
+developer-tool configurations.
+
+Bumblebee turns that scattered on-disk state into structured NDJSON component
+records and, when given an exposure catalog, flags exact matches for fast,
+read-only exposure checks.
+
+Key properties:
+- Single static binary, zero non-stdlib dependencies
+- Three scan profiles (baseline, project, deep) for different populations
+- Reads lockfiles, package-manager install metadata, extension manifests, and
+  MCP JSON configs — without executing any package manager
+- Emits NDJSON output suitable for log-ingest pipelines

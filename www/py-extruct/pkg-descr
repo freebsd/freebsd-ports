@@ -1,0 +1,10 @@
+Extract embedded metadata from HTML markup.
+
+extruct is a library for extracting embedded metadata from HTML markup.
+It currently supports:
+- W3C's HTML Microdata
+- Embedded JSON-LD
+- Microformats via mf2py
+- RDFa via pyrdfa3
+- Dublin Core Metadata (DC-HTML-2003)
+- Open Graph Protocol (OGP)

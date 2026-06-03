@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.h.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.h
-@@ -412,8 +412,12 @@ bool TryRecommitSystemPagesInternal(
+@@ -322,8 +322,12 @@ bool TryRecommitSystemPagesInternal(
  
  void DiscardSystemPagesInternal(uintptr_t address, size_t length) {
    void* ptr = reinterpret_cast<void*>(address);

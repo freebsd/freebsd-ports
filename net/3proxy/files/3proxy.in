@@ -23,6 +23,4 @@ command="%%PREFIX%%/bin/3proxy"
 
 load_rc_config $name
 
-start_cmd="echo \"Starting ${name}.\";	${command} ${threeproxy_flags}"
-
 run_rc_command "$1"

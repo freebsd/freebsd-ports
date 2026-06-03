@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing
 
 CMAKE_OFF=	HELGRIND_TESTING \
 		PICKY_DEVELOPER \

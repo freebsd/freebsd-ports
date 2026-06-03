@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# PROVIDE: vinylncsa
+# REQUIRE: DAEMON vinyld
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable vinylncsa:
+#
+# vinylncsa_enable="YES"
+#
+# Configuration variables and their default values:
+#
+# vinylncsa_pidfile - full path to the PID file.
+#	default: "/var/run/vinylncsa.pid"
+#
+# vinylncsa_file - full path to the log file.
+#	default: "/var/log/vinylncsa.log"
+#
+# vinylncsa_log_method - log to file or syslog
+#       default: "-D -a -w ${vinylncsa_file}"
+#       vinylncsa_syslog="YES": '| /usr/bin/logger -t vinyl -p daemon.info &'
+#
+# vinylncsa_flags - command line arguments.
+#	default: "-t off -P ${vinylncsa_pidfile} ${vinylncsa_logformat:+ -F \"$vinylncsa_logformat\"} ${vinylncsa_log_method}"
+#
+# vinylncsa_logformat - log file format.
+#       default: "" (uses vinylncsa's default format)
+#       example: "%h %l %u %t %r %s %b %{Referer}i %{User-agent}i"
+#
+# Add the following line to /etc/newsyslog.conf to rotate the log file
+# once a day:
+#
+# /var/log/vinylncsa.log vinyllog:vinyl 640 7 * @T00 JB /var/run/vinylncsa.pid
+#
+# See vinylncsa(1) for a detailed overview of command-line options.
+#
+
+. /etc/rc.subr
+
+name=vinylncsa
+rcvar=vinylncsa_enable
+
+load_rc_config ${name}
+
+: ${vinylncsa_enable:=NO}
+: ${vinylncsa_pidfile=/var/run/${name}.pid}
+: ${vinylncsa_file=/var/log/${name}.log}
+: ${vinylncsa_flags="-t off -P ${vinylncsa_pidfile} ${vinylncsa_logformat:+-F \"$vinylncsa_logformat\"}"}
+: ${vinylncsa_syslog:=NO}
+
+if checkyesno vinylncsa_syslog; then
+    vinylncsa_log_method='| /usr/bin/logger -t vinyl -p daemon.info &'
+else
+    vinylncsa_log_method="-D -a -w ${vinylncsa_file}"
+fi
+
+command="%%PREFIX%%/bin/${name}"
+command_args="${vinylncsa_flags} ${vinylncsa_log_method}"
+pidfile=${vinylncsa_pidfile}
+start_precmd=precmd
+
+precmd()
+{
+        # $vinylncsa_flags gets applied too early if we don't do this.
+        rc_flags=""
+
+	if [ ! -e ${pidfile} ]; then
+		install -o vinyllog -g vinyl -m 644 /dev/null ${pidfile};
+	fi
+
+	if [ ! -e ${vinylncsa_file} ]; then
+		install -o vinyllog -g vinyl -m 640 /dev/null ${vinylncsa_file};
+	fi
+}
+
+run_rc_command "$1"

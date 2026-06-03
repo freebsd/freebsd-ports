@@ -30,7 +30,7 @@
 # Make sure to only add arguments strictly needed, as [version] and [flavor]
 # will override user configuration in DEFAULT_VERSIONS.
 #
-# MAINTAINER: tcberner@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 #
 
 .if ! defined(_INCLUDE_USES_MAGICK_MK)

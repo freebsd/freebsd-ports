@@ -1,9 +1,8 @@
 PORTNAME=	rime-bopomofo
-DISTVERSION=	g20210131
-PORTREVISION=	1
+DISTVERSION=	g20260126
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Chewing schema support
 WWW=		https://github.com/rime/rime-bopomofo
 
@@ -26,7 +25,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	c7618f4f5728e1634417e9d02ea50d82b71956ab
+GH_TAGNAME=	a8c35a4ae3998ac0cdbd02fbb42c883ecada4279
 
 NO_ARCH=	yes
 

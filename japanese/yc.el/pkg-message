@@ -3,7 +3,7 @@
   message: <<EOM
 Quick Setup:
 
-(1) Add the following two lines in your $HOME/.emacs file;
+(1) Add the following two lines in your Emacs configuration:
 
   (load "yc")
   (global-yc-mode 1) ;; if you need ANK-conversion-mode in all buffers

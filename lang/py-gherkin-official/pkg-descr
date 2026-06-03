@@ -1,0 +1,14 @@
+Gherkin is a parser and compiler for the Gherkin language, which is a
+business-readable, domain-specific language that lets you describe software's
+behavior without detailing how that behavior is implemented.
+
+Gherkin serves two purposes:
+* It serves as your project's documentation
+* It serves as your project's automated tests
+
+Gherkin is written in the "Given-When-Then" style, which allows developers to
+write tests in plain English that stakeholders can understand.
+
+This is the official implementation from the Cucumber team, providing a
+reliable and well-maintained parser for BDD (Behavior-Driven Development)
+frameworks.

@@ -1,6 +1,6 @@
 PORTNAME=	ximaging
 DISTVERSIONPREFIX=	src-
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 CATEGORIES=	graphics
 MASTER_SITES=	https://fastestcode.org/dl/
 
@@ -9,6 +9,7 @@ COMMENT=	Image Viewer and Browser for Unix/X11
 WWW=		https://fastestcode.org/ximaging.html
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff

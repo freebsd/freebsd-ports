@@ -1,7 +1,7 @@
 PORTNAME=	pet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	8
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/knqyf263/pet
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/knqyf263/pet
 

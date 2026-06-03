@@ -1,3 +1,9 @@
+%%PYTHON_SITELIBDIR%%/nlopt-2.9.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/nlopt-2.9.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/nlopt-2.9.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/nlopt-2.9.0-py%%PYTHON_VER%%.egg-info/not-zip-safe
+%%PYTHON_SITELIBDIR%%/nlopt-2.9.0-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/nlopt-2.9.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/nlopt/__init__.py
 %%PYTHON_SITELIBDIR%%/nlopt/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/nlopt/__pycache__/__init__%%PYTHON_TAG%%.pyc

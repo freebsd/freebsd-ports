@@ -1,4 +1,4 @@
---- CMake/Modules/FindUsb.cmake.orig	2021-12-28 16:31:58 UTC
+--- CMake/Modules/FindUsb.cmake.orig	2024-09-27 09:47:22 UTC
 +++ CMake/Modules/FindUsb.cmake
 @@ -27,7 +27,7 @@ libfind_pkg_detect (Usb usb-1.0
  endif ()

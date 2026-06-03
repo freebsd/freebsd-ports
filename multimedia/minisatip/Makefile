@@ -1,5 +1,5 @@
 PORTNAME=	minisatip
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.80
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia
@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa
 
-USES=		gmake ssl
+USES=		cmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	catalinii
 
@@ -21,13 +21,11 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	${PORTNAME}
-GNU_CONFIGURE=	yes
 ALL_TARGET=	minisatip
 
 .include <bsd.port.pre.mk>
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/minisatip ${STAGEDIR}${PREFIX}/sbin
+post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DATADIR})
 

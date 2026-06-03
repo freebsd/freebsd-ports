@@ -1,8 +1,10 @@
 PORTNAME=	tesseract
 DISTVERSION=	2014_05_12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://download.tuxfamily.org/${PORTNAME}/
+#MASTER_SITES=	http://download.tuxfamily.org/${PORTNAME}/
+MASTER_SITES=	http://absinthe.tuxfamily.net/tesseract/ \
+		https://hina.lysator.liu.se/pub/void-ppc-sources/tesseract-1/
 PKGNAMESUFFIX=	-game
 DISTNAME=	${PORTNAME}_${DISTVERSION}_first_edition_linux
 

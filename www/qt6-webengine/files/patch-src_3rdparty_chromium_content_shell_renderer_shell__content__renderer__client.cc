@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/shell/renderer/shell_content_renderer_client.cc.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/content/shell/renderer/shell_content_renderer_client.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/content/shell/renderer/shell_content_renderer_client.cc
-@@ -54,7 +54,7 @@
+@@ -50,7 +50,7 @@
  #include "media/base/media_switches.h"
  #endif
  

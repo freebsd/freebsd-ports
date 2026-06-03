@@ -1,5 +1,5 @@
 PORTNAME=	libversion
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org

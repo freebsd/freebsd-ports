@@ -1,0 +1,24 @@
+--- common/viperutil/config_util.go.orig	2026-04-12 02:18:00 UTC
++++ common/viperutil/config_util.go
+@@ -154,7 +154,8 @@ func getKeysRecursively(base string, get
+ 
+ 	if oType != nil && oType.Kind() == reflect.Struct {
+ 	outer:
+-		for field := range oType.Fields() {
++		for i := 0; i < oType.NumField(); i++ {
++			field := oType.Field(i)
+ 			fieldName := field.Name
+ 			fieldType := field.Type
+ 
+--- internal/peer/gossip/mcs_test.go.orig	2026-04-12 02:18:00 UTC
++++ internal/peer/gossip/mcs_test.go
+@@ -103,7 +103,8 @@ func TestGetPKIidOfCert(t *testing.T) {
+ 	// Ensure that additional fields haven't been introduced in the code
+ 	v := reflect.Indirect(reflect.ValueOf(id)).Type()
+ 	fieldsNoExported := 0
+-	for field := range v.Fields() {
++	for i := 0; i < v.NumField(); i++ {
++		field := v.Field(i)
+ 		if !field.IsExported() {
+ 			fieldsNoExported++
+ 		}

@@ -3,7 +3,7 @@ DISTVERSION=	3.1.2
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/magli143/exomizer/wiki/downloads/
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cruncher for 6502-based systems
 WWW=		https://bitbucket.org/magli143/exomizer/wiki/Home
 

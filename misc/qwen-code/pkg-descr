@@ -1,0 +1,5 @@
+Qwen Code is a command-line AI workflow tool adapted from Gemini CLI and
+optimized for Qwen3-Coder models. It lives in your terminal, understands
+your codebase, and helps you code faster by executing routine tasks,
+explaining complex code, and handling git workflows through natural
+language commands.

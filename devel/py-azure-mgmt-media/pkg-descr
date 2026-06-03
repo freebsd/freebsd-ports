@@ -1,4 +1,8 @@
-This is the Microsoft Azure Media Services Client Library.
+Please note, this package has been deprecated and will no longer be maintained
+after 06/30/2024. Refer to Azure Media Services retirement guide for more
+retirement details and how to migrate to the new services. Refer to our
+deprecation policy for more details.
 
-Azure Resource Manager (ARM) is the next generation of management APIs that
-replace the old Azure Service Management (ASM).
+This is the Microsoft Azure Media Services Client Library. This package has been
+tested with Python 3.7+. For a more complete view of Azure libraries, see the
+azure sdk python release.

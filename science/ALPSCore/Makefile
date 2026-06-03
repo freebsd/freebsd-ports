@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.2
 CATEGORIES=	science
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Generic algorithms and utilities for condensed matter physics
 WWW=		https://alpscore.org/ \
 		https://github.com/ALPSCore/ALPSCore/

@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-To use psvn, add the following line to your ~/.emacs:
+To use psvn, add the following line to Emacs configuration:
 
 (require 'psvn)
 

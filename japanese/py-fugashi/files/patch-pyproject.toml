@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-03-31 11:16:34.813194000 -0700
++++ pyproject.toml	2026-03-31 11:16:34.815104000 -0700
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["Cython~=3.1.5", "setuptools>=77", "setuptools-scm>=8"]
++requires = ["Cython>=3.1.5", "setuptools>=63", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@
+ description = "Cython MeCab wrapper for fast, pythonic Japanese tokenization."
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "MIT AND BSD-3-Clause"
+-license-files = ["LICENSE", "LICENSE.mecab"]
++license = {text = "MIT AND BSD-3-Clause"}
+ authors = [{ name = "Paul O'Leary McCann", email = "polm@dampfkraft.com" }]
+ classifiers = [
+   "Environment :: Console",

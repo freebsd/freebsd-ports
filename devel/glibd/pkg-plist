@@ -61,9 +61,6 @@ include/d/glibd-2/gio/DatagramBasedT.d
 include/d/glibd-2/gio/DebugControllerDBus.d
 include/d/glibd-2/gio/DebugControllerIF.d
 include/d/glibd-2/gio/DebugControllerT.d
-include/d/glibd-2/gio/DesktopAppInfo.d
-include/d/glibd-2/gio/DesktopAppInfoLookupIF.d
-include/d/glibd-2/gio/DesktopAppInfoLookupT.d
 include/d/glibd-2/gio/DriveIF.d
 include/d/glibd-2/gio/DriveT.d
 include/d/glibd-2/gio/DtlsClientConnectionIF.d
@@ -77,8 +74,6 @@ include/d/glibd-2/gio/EmblemedIcon.d
 include/d/glibd-2/gio/ErrorGIO.d
 include/d/glibd-2/gio/FileAttributeInfoList.d
 include/d/glibd-2/gio/FileAttributeMatcher.d
-include/d/glibd-2/gio/FileDescriptorBasedIF.d
-include/d/glibd-2/gio/FileDescriptorBasedT.d
 include/d/glibd-2/gio/FileEnumerator.d
 include/d/glibd-2/gio/FileIF.d
 include/d/glibd-2/gio/FileIOStream.d
@@ -199,12 +194,6 @@ include/d/glibd-2/gio/TlsServerConnectionT.d
 include/d/glibd-2/gio/UnixConnection.d
 include/d/glibd-2/gio/UnixCredentialsMessage.d
 include/d/glibd-2/gio/UnixFDList.d
-include/d/glibd-2/gio/UnixFDMessage.d
-include/d/glibd-2/gio/UnixInputStream.d
-include/d/glibd-2/gio/UnixMountEntry.d
-include/d/glibd-2/gio/UnixMountMonitor.d
-include/d/glibd-2/gio/UnixMountPoint.d
-include/d/glibd-2/gio/UnixOutputStream.d
 include/d/glibd-2/gio/UnixSocketAddress.d
 include/d/glibd-2/gio/Vfs.d
 include/d/glibd-2/gio/VolumeIF.d

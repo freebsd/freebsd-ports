@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-09-21 09:30:04 UTC
++++ configure.ac
+@@ -108,7 +108,7 @@ if test ${HOST_CPU_C_ABI} = arm -o ${HOST_CPU_C_ABI} =
+   dnl comes with clang 10 (which doesn't grok old "divided" syntax) and with
+   dnl an old GNU as (which doesn't grok the '.fpu vfpv3-d16' pseudo-op).
+   case "$host_os" in
+-    *eabi*) HOST_CPU_C_ABI="${HOST_CPU_C_ABI}-eabi" ;;
++    *eabi*|*freebsd*) HOST_CPU_C_ABI="${HOST_CPU_C_ABI}-eabi" ;;
+     *)      HOST_CPU_C_ABI="${HOST_CPU_C_ABI}-old" ;;
+   esac
+ fi

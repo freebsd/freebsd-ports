@@ -1,0 +1,5 @@
+cdxgen generates CycloneDX SBOMs for multiple programming languages and
+ecosystems.
+
+It supports scanning source code, containers, and binaries to produce Software
+Bill of Materials outputs.

@@ -2,11 +2,27 @@ Minizip was originally developed in 1998. It was first included in the zlib
 distribution as an additional code contribution starting in zlib 1.1.2. Since
 that time, it has been continually improved upon and contributed to by many
 people.
-
+Features:
 + Creating and extracting zip archives.
 + Adding and removing entries from zip archives.
 + Read and write raw zip entry data.
 + Reading and writing zip archives from memory.
-+ Zlib, BZIP2, LZMA, and ZSTD compression methods.
++ Support for large files with ZIP64 extension.
++ Zlib, BZIP2, LZMA, PPMD, XZ and ZSTD compression methods.
 + Password protection through Traditional PKWARE and WinZIP AES encryption.
 + Buffered streaming for improved I/O performance.
++ NTFS timestamp support for UTC last modified, last accessed, and creation
+  dates.
++ Disk split support for splitting zip archives into multiple files.
++ Preservation of file attributes across file systems.
++ Follow and store symbolic links.
++ Unicode filename support through UTF-8 encoding.
++ Legacy character encoding support CP437, CP932, CP936, CP950.
++ Turn off compilation of compression, decompression, or encryption.
++ Windows (Win32 & WinRT), macOS and Linux platform support.
++ Streaming interface for easy implementation of additional platforms.
++ Support for Apple's compression library ZLIB and XZ implementations.
++ Zero out local file header information.
++ Zip/unzip of central directory to reduce size.
++ Recover the central directory if it is corrupt or missing.
++ Example minizip and minigzip command line tools.

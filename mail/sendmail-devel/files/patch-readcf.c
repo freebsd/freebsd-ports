@@ -1,26 +1,27 @@
---- sendmail/readcf.c.orig	2025-04-09 08:39:43 UTC
+--- sendmail/readcf.c.orig	2026-03-09 16:19:10 UTC
 +++ sendmail/readcf.c
-@@ -3206,6 +3206,10 @@ static struct optioninfo
- 	{ "CipherSuites",		O_CIPHERSUITES,	OI_NONE	},
+@@ -3175,6 +3175,11 @@ static struct optioninfo
+ 	{ "SameDomainOnly",		O_SAMEDOMAINONLY,	OI_NONE	},
  #endif
  
-+#if USE_BLACKLIST
-+# define O_BLACKLIST		0xfb
-+	{ "UseBlacklist",	O_BLACKLIST,	OI_NONE	},
++#if USE_BLOCKLIST
++# define O_BLOCKLIST		0xfb
++	{ "UseBlocklist",	O_BLOCKLIST,	OI_NONE	},
++	{ "UseBlacklist",	O_BLOCKLIST,	OI_NONE	}, /* alias */
 +#endif
  	{ NULL,				'\0',		OI_NONE	}
  };
  
-@@ -4941,6 +4945,12 @@ setoption(opt, val, safe, sticky, e)
+@@ -4901,6 +4906,12 @@ setoption(int opt, char *val, bool safe, bool sticky, 
  #if _FFR_MTA_STS
  	  case O_MTASTS:
  		StrictTransportSecurity = atobool(val);
 +		break;
 +#endif
 +
-+#if USE_BLACKLIST
-+	  case O_BLACKLIST:
-+		UseBlacklist = atobool(val);
++#if USE_BLOCKLIST
++	  case O_BLOCKLIST:
++		UseBlocklist = atobool(val);
  		break;
  #endif
  

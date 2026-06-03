@@ -1,5 +1,5 @@
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.29
+PORTVERSION=	2.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -15,19 +15,19 @@ BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libxapian.so:databases/xapian-core
 
-USES=		compiler:c++11-lang libtool localbase perl5 shebangfix tar:xz
+USES=		compiler:c++17-lang libtool localbase perl5 pkgconfig shebangfix tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		ac_cv_func_snprintf=snprintf
 CONFIGURE_ENV=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 
-CONFLICTS_INSTALL=	xapian-omega12
+CONFLICTS_INSTALL=	xapian-omega14
 
 PORTSCOUT=	limitw:1,even
 
-SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
+SHEBANG_FILES=	dbi2omega mbox2omega
 
 OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
 OPTIONS_DEFAULT=ICONV

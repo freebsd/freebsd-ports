@@ -61,7 +61,7 @@ do-test:
 ${VUXML_FLAT_NAME}: ${VUXML_FILE} vuln/*.xml
 	xmllint -noent ${.ALLSRC:[1]} > ${.TARGET}
 
-validate: tidy
+validate: tidy check-portepoch
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FLAT_FILE}"
 	@${ECHO_MSG} Checking if tidy differs...
 	@if ${DIFF} -u "${VUXML_FLAT_FILE}" "${VUXML_FILE}.tidy"; \
@@ -83,6 +83,10 @@ validate: tidy
 		return 1; \
 	fi
 	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FLAT_FILE}
+	@${ECHO_CMD}
+	@${ECHO_CMD} 'Be sure to get versioning right for PORTEPOCH and remember possible linux-* ports!'
+	@${ECHO_CMD} 'Also, <gt> tags are usually wrong in ranges. Use <ge> where adequate.'
+	@${ECHO_CMD}
 
 tidy: ${VUXML_FLAT_NAME}
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
@@ -92,7 +96,14 @@ tidy: ${VUXML_FLAT_NAME}
 	fi
 	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FLAT_FILE}" > "${VUXML_FILE}.tidy"
 
+check-portepoch:
+	${PYTHON_CMD} ${FILESDIR}/check_vuln_portepoch.py ${VUXML_CURRENT_FILE}
+
 newentry:
+	@${ECHO_CMD}
+	@${ECHO_CMD} 'Be sure to get versioning right for PORTEPOCH and remember possible linux-* ports!'
+	@${ECHO_CMD} 'Also, <gt> tags are usually wrong in ranges. Use <ge> where adequate.'
+	@${ECHO_CMD}
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_CURRENT_FILE}" "CVE_ID=${CVE_ID}" "SA_ID=${SA_ID}"
 
 .if defined(VID) && !empty(VID)

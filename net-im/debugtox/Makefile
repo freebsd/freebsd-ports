@@ -1,5 +1,6 @@
 PORTNAME=	debugtox
 DISTVERSION=	g20250207
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://tox.chat \
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to compile with toxcore-0.2.20
 
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libtoxcore.so:net-im/tox

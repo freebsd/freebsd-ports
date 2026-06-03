@@ -1,5 +1,5 @@
 PORTNAME=	mailparse
-PORTVERSION=	3.1.8
+DISTVERSION=	3.1.9
 CATEGORIES=	mail www
 
 MAINTAINER=	dbaio@FreeBSD.org

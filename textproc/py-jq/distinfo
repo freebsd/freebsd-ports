@@ -1,3 +1,5 @@
-TIMESTAMP = 1724359388
-SHA256 (jq-1.8.0.tar.gz) = 53141eebca4bf8b4f2da5e44271a8a3694220dfd22d2b4b2cfb4816b2b6c9057
-SIZE (jq-1.8.0.tar.gz) = 2058265
+TIMESTAMP = 1768944824
+SHA256 (jq-1.11.0.tar.gz) = 4ad5cafd793b6ae5e4919e2202bb579c46ec097e26e5fdaa2c3cfd760f46ce7d
+SIZE (jq-1.11.0.tar.gz) = 2029780
+SHA256 (mwilliamson-jq.py-1.11.0_GH0.tar.gz) = 4ad5cafd793b6ae5e4919e2202bb579c46ec097e26e5fdaa2c3cfd760f46ce7d
+SIZE (mwilliamson-jq.py-1.11.0_GH0.tar.gz) = 2029780

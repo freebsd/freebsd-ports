@@ -1,9 +1,9 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.48.0
+DISTVERSION=	0.51.0
 CATEGORIES=	x11-wm wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phone compositor
 WWW=		https://gitlab.gnome.org/World/Phosh/phoc
 
@@ -29,7 +29,7 @@ GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
 GL_TUPLE=	World/Phosh:gmobile:v0.2.0:gmobile/subprojects/gmobile \
 		GNOME:gvdb:4758f6f:gvdb/subprojects/gvdb
-MESON_ARGS=	-Dembed-wlroots=disabled
+MESON_DISABLED=	embed-wlroots
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-outputs-states \
 		share/man/man1/${PORTNAME}-outputs-states.1.gz \

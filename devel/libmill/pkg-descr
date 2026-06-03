@@ -1,4 +1,0 @@
-Libmill is a library that introduces Go-style concurrency to C.
-
-It can execute up to 20 million coroutines and 50 million context switches per
-second.

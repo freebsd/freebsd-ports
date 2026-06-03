@@ -3,7 +3,7 @@ PORTVERSION=	0.7.0
 PORTREVISION=	2
 CATEGORIES=	graphics devel
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for creating PNG images
 WWW=		https://pngwriter.sourceforge.net/
 

@@ -63,8 +63,8 @@ WARNINGS_CONFIGURE_ENABLE=	warnings
 
 .include <bsd.port.options.mk>
 
-.if !defined(NO_PROFILE) && ( ${OPSYS} == FreeBSD && ${OSVERSION} < 1400079 )
-CONFIGURE_ARGS+=	--enable-profile
+.if !defined(NO_PROFILE)
+CONFIGURE_ARGS+=		--enable-profile
 .endif
 
 do-install:

@@ -1,1 +1,4 @@
-PC-8801 emulator for X.
+A high-performance emulator for the NEC PC-8801 series, one of Japan's most
+iconic 8-bit computer lines. It is designed to be lightweight and portable,
+allowing users to run vintage software, games, and applications originally
+developed for the PC-8801 architecture.

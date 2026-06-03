@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-05-11 10:43:44 UTC
++++ pyproject.toml
+@@ -1,10 +1,10 @@ requires = [
+ [build-system]
+ requires = [
+-    "hatchling==1.29.0",
+-    "packaging==26.0",
+-    "pathspec==1.0.4",
+-    "pluggy==1.6.0",
+-    "trove-classifiers==2026.1.14.14",
++    "hatchling>=1.29.0",
++    "packaging>=26.0",
++    "pathspec>=1.0.4",
++    "pluggy>=1.6.0",
++    "trove-classifiers>=2026.1.14.14",
+ ]
+ build-backend = "hatchling.build"
+ 

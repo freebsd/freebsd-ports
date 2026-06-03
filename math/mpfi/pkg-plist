@@ -4,3 +4,4 @@ lib/libmpfi.a
 lib/libmpfi.so
 lib/libmpfi.so.0
 lib/libmpfi.so.0.0.0
+libdata/pkgconfig/mpfi.pc

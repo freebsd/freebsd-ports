@@ -61,7 +61,6 @@
     SUBDIR += portsearch
     SUBDIR += portshaker
     SUBDIR += portshaker-config
-    SUBDIR += portsnap
     SUBDIR += portsreinstall
     SUBDIR += porttools
     SUBDIR += porttree
@@ -82,5 +81,6 @@
     SUBDIR += submodules2tuple
     SUBDIR += synth
     SUBDIR += wanted-ports
+    SUBDIR += zig2tuple
 
 .include <bsd.port.subdir.mk>

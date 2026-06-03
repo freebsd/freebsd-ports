@@ -1,8 +1,10 @@
 etc/xdg/uniemoji/custom.json
-%%DATADIR%%/UnicodeData.txt
 %%DATADIR%%/config.py
-%%DATADIR%%/emojione.json
 %%DATADIR%%/ibus.py
+%%DATADIR%%/joypixels_emoji.json
+%%DATADIR%%/unicode/UnicodeData.txt
+%%DATADIR%%/unicode/emoji-sequences.txt
+%%DATADIR%%/unicode/emoji-zwj-sequences.txt
 %%DATADIR%%/uniemoji.py
 %%DATADIR%%/uniemoji.svg
 share/ibus/component/uniemoji.xml

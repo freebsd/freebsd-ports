@@ -1,7 +1,7 @@
 PORTNAME=	popeye
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.22.1
-PORTREVISION=	3
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS_REASON=	Compilation fails due to integer overflow
 NOT_FOR_ARCHS=		armv7 i386
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
 _BUILD_HASH=	f736e64

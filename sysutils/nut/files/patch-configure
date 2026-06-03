@@ -1,0 +1,47 @@
+--- configure.orig	2026-04-13 13:26:29.248587000 -0700
++++ configure	2026-04-13 13:31:28.601276000 -0700
+@@ -9342,18 +9342,6 @@
+ 
+ fi
+ 
+-for TOKEN in upsmon nutmon ups nut; do
+-	if test -n "`${PROBE_OS_USER} ${TOKEN}`"
+-then :
+-  RUN_AS_USER="${TOKEN}"
+-fi
+-	if test -n "`${PROBE_OS_GROUP} ${TOKEN}`"
+-then :
+-  RUN_AS_GROUP="${TOKEN}"
+-fi
+-done
+-unset TOKEN
+-
+ case ${target_os} in #(
+   *mingw*) :
+     POWERDOWNFLAG="C:\\\\killpower" ;; #(
+@@ -22556,7 +22544,6 @@
+ printf "%s\n" "#define HAVE_UU_LOCK 1" >>confdefs.h
+ 
+ 	SERLIBS="-lutil"
+-		RUN_AS_USER="uucp"
+ 
+ else $as_nop
+ 
+@@ -41472,7 +41459,7 @@
+ then :
+   withval=$with_nut_monitor; nut_with_nut_monitor="${withval}"
+ else $as_nop
+-  nut_with_nut_monitor="auto"
++  nut_with_nut_monitor="no"
+ 
+ fi
+ 
+@@ -47583,7 +47570,7 @@
+ fi
+         if test -n "${nut_with_nut_monitor_py2gtk2}${nut_with_nut_monitor_py3qt5}${nut_with_nut_monitor_py3qt6}" ; then
+         case "${nut_with_nut_monitor}" in
+-            "auto") nut_with_nut_monitor="yes" ;;
++            "auto") nut_with_nut_monitor="no" ;;
+         esac
+     else
+         case "${nut_with_nut_monitor}" in

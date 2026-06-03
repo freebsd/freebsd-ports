@@ -1,6 +1,5 @@
 PORTNAME=	h2o
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20241011
+DISTVERSION=	20260501
 CATEGORIES=	www
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libhiredis.so:databases/hiredis \
 USES=		cmake compiler:c11 cpe pathfix perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-GH_TAGNAME=	8398a11
+GH_TAGNAME=	8cb324b
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	${PORTNAME}
 

@@ -1,5 +1,5 @@
 PORTNAME=	libcerf
-DISTVERSION=	2.4
+DISTVERSION=	3.3
 CATEGORIES=	math
 MASTER_SITES=	https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
@@ -19,5 +19,7 @@ OPTIONS_DEFINE=	DOCS
 
 DOCSDIR=	${PREFIX}/share/doc/cerf # docs are installed with the same option and man pages
 PORTDOCS=	*
+
+# tests as of 3.3: 100% tests passed, 0 tests failed out of 18
 
 .include <bsd.port.mk>

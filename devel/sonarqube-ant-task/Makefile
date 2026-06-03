@@ -1,5 +1,6 @@
 PORTNAME=	sonarqube-ant-task
 PORTVERSION=	2.7.0.1612
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/
 EXTRACT_SUFX=	.jar

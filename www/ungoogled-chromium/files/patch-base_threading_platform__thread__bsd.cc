@@ -1,29 +1,38 @@
---- base/threading/platform_thread_bsd.cc.orig	2024-04-23 07:42:17 UTC
+--- base/threading/platform_thread_bsd.cc.orig	2026-03-15 18:32:51 UTC
 +++ base/threading/platform_thread_bsd.cc
-@@ -0,0 +1,31 @@
+@@ -0,0 +1,40 @@
 +// Copyright 2023 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +// Description: These are stubs for *BSD.
 +
++#include "base/notimplemented.h"
 +#include "base/threading/platform_thread.h"
 +
 +namespace base {
 +namespace internal {
 +
++void SetCurrentThreadTypeImpl(ThreadType thread_type,
++                              MessagePumpType pump_type_hint) {
++  NOTIMPLEMENTED();
++  return;
++}
++
 +bool CanSetThreadTypeToRealtimeAudio() {
 +  return false;
 +}
 +
-+bool SetCurrentThreadTypeForPlatform(ThreadType thread_type,
-+                                MessagePumpType pump_type_hint) {
++PlatformPriorityOverride SetThreadTypeOverride(
++    PlatformThreadHandle thread_handle,
++    ThreadType thread_type) {
 +  return false;
 +}
 +
-+std::optional<ThreadPriorityForTest>
-+GetCurrentThreadPriorityForPlatformForTest() {
-+  return std::nullopt;
-+}
++void RemoveThreadTypeOverride(
++    PlatformThreadHandle thread_handle,
++    const PlatformPriorityOverride& priority_override_handle,
++    ThreadType initial_thread_type) {}
++
 +}  // namespace internal
 +
 +// static

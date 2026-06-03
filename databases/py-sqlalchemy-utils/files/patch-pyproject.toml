@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-12-13 03:12:35 UTC
++++ pyproject.toml
+@@ -1,13 +1,13 @@
+ [build-system]
+-requires = ["setuptools>=77.0.0"]
++requires = ["setuptools>=61.0.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "SQLAlchemy-Utils"
++name = "sqlalchemy-utils"
+ version = "0.42.1"
+ description = "Various utility functions for SQLAlchemy."
+ readme = "README.rst"
+-license = "BSD-3-Clause"
++license = { text = "BSD-3-Clause" }
+ authors = [
+     {name = "Konsta Vesterinen", email = "konsta@fastmonkeys.com"},
+     {name = "Ryan Leckey"},

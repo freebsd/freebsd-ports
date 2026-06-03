@@ -1,5 +1,5 @@
 PORTNAME=	pyparsing
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pyparsing/pyparsing/releases/download/${PORTVERSION}/
@@ -13,9 +13,9 @@ WWW=		https://pyparsing-docs.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12<4:devel/py-flit-core@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

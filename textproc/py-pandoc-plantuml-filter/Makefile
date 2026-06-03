@@ -24,4 +24,3 @@ USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
-

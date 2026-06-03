@@ -1,9 +1,8 @@
 PORTNAME=	muse
 PORTVERSION=	3.20
-PORTREVISION=	30
+PORTREVISION=	32
 CATEGORIES=	textproc elisp
 MASTER_SITES=	LOCAL/dryice
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Authoring and publishing environment for Emacs
@@ -12,7 +11,9 @@ WWW=		https://www.emacswiki.org/cgi-bin/wiki/MuseMode
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		emacs gmake
+USES=		emacs:build gmake
+
+CONFLICTS_INSTALL=	muse-emacs_*
 
 NO_ARCH=	yes
 
@@ -27,10 +28,6 @@ INFO_INFO=		muse
 
 LISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 
-.if ${FLAVOR:Ufull:Mfull}
-PKGNAMESUFFIX=	-emacs
-.endif
-
 post-patch-INFO-off:
 	${REINPLACE_CMD} -e '/^SUBDIRS/s|texi||g; \
 		/^install:/s|install-info||g; /^all:/s|info-only||g' \
@@ -41,6 +38,8 @@ post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib  ${STAGEDIR}${LISPDIR})
 	${INSTALL_DATA} ${WRKSRC}/experimental/* \
 		${STAGEDIR}${LISPDIR}/experimental
+	@${FIND} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/muse \
+		-name "*.elc" -delete
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

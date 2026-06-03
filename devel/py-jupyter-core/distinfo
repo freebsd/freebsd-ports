@@ -1,3 +1,3 @@
-TIMESTAMP = 1748496019
-SHA256 (jupyter_core-5.8.1.tar.gz) = 0a5f9706f70e64786b75acba995988915ebd4601c8a52e534a40b51c95f59941
-SIZE (jupyter_core-5.8.1.tar.gz) = 88923
+TIMESTAMP = 1762587526
+SHA256 (jupyter_core-5.9.1.tar.gz) = 4d09aaff303b9566c3ce657f580bd089ff5c91f5f89cf7d8846c3cdf465b5508
+SIZE (jupyter_core-5.9.1.tar.gz) = 89814

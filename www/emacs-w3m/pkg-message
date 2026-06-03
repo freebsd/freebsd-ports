@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
- Before using emacs-w3m, you must add this to your own .emacs:
+ Before using emacs-w3m, you must add this to your Emacs configuration:
 
  (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
 

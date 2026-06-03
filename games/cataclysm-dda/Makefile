@@ -1,6 +1,7 @@
 PORTNAME=	cataclysm-dda
 PORTVERSION=	0.H			# Preserve PORTVERSION so uppercase is respected
 DISTVERSIONSUFFIX=	-g08f04fd	# Using TAG instead of upstream 0.H-RELEASE
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -66,4 +67,13 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Clang 21.1.8 introduced stricter flow analysis on 16-CURRENT (2026-04-25)
+# This workaround prevents build failure in math_parser.cpp and others.
+# Ref: https://github.com/llvm/llvm-project/issues/154493
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1600017
+CXXFLAGS+=	-Wno-error=missing-noreturn -Wno-error=deprecated-declarations
+.endif
+
+.include <bsd.port.post.mk>

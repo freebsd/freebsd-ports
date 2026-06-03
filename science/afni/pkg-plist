@@ -596,6 +596,7 @@ bin/find_variance_lines.tcsh
 bin/float_scan
 bin/from3d
 bin/gen_cluster_table
+bin/gen_cluster_table.py
 bin/gen_epi_review.py
 bin/gen_group_command.py
 bin/gen_ss_review_scripts.py
@@ -623,6 +624,7 @@ bin/imstat
 bin/imupsam
 bin/init_user_dotfiles.py
 bin/inspec
+bin/install_bootcamp_data.tcsh
 bin/lesion_align
 bin/lib_dataTable.R
 bin/make_pq_script.py
@@ -641,6 +643,7 @@ bin/nifti_tool
 bin/niml_feedme
 bin/niprobe
 bin/nsize
+bin/obliquity_remover.py
 bin/open_apqc.py
 bin/p2dsetstat
 bin/parse_fs_lt_log.py
@@ -864,6 +867,8 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_pbar.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_tool.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cdiflist.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cluster_rois.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cluster_table.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_csv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_decay_timing.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_dti_sundry.py
@@ -874,11 +879,15 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gssrt.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gtkyd.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_info_items.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_plot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_tableize.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_matplot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_msar.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_obl_child.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_obl_name.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_obl_tool.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_filt.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_funcs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_interact.py
@@ -1046,6 +1055,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_dan_dickstein.jpg
 %%DATADIR%%/funstuff/face_dante.jpg
 %%DATADIR%%/funstuff/face_dario.jpg
+%%DATADIR%%/funstuff/face_darwin.jpg
 %%DATADIR%%/funstuff/face_dave_jangraw.jpg
 %%DATADIR%%/funstuff/face_daveperlman.jpg
 %%DATADIR%%/funstuff/face_davepitcher.jpg
@@ -1203,7 +1213,6 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_les_petits_beauchamps.jpg
 %%DATADIR%%/funstuff/face_lfrank.jpg
 %%DATADIR%%/funstuff/face_lin_zhu.jpg
-%%DATADIR%%/funstuff/face_lincoln1.jpg
 %%DATADIR%%/funstuff/face_lincoln2.jpg
 %%DATADIR%%/funstuff/face_lindachao.jpg
 %%DATADIR%%/funstuff/face_lindathede.jpg
@@ -1318,8 +1327,8 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_rjsquirrel.jpg
 %%DATADIR%%/funstuff/face_rmbirn.jpg
 %%DATADIR%%/funstuff/face_roadbrain.jpg
+%%DATADIR%%/funstuff/face_robertwill.jpg
 %%DATADIR%%/funstuff/face_robinkampe.jpg
-%%DATADIR%%/funstuff/face_robterwill.jpg
 %%DATADIR%%/funstuff/face_rory.jpg
 %%DATADIR%%/funstuff/face_roryd.jpg
 %%DATADIR%%/funstuff/face_rprost.jpg
@@ -1423,8 +1432,10 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_wapostman2.jpg
 %%DATADIR%%/funstuff/face_watercubestud.jpg
 %%DATADIR%%/funstuff/face_wendyhasenkamp.jpg
+%%DATADIR%%/funstuff/face_will_e.jpg
 %%DATADIR%%/funstuff/face_wmluh.jpg
 %%DATADIR%%/funstuff/face_wpostman.jpg
+%%DATADIR%%/funstuff/face_x2zhang.jpg
 %%DATADIR%%/funstuff/face_xinianzuo.jpg
 %%DATADIR%%/funstuff/face_xue_zhang.jpg
 %%DATADIR%%/funstuff/face_xzhang.jpg

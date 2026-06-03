@@ -1,6 +1,6 @@
 PORTNAME=	reproc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.2.5
+DISTVERSION=	14.2.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,5 +23,7 @@ do-test:
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DREPROC_TEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 14.2.7: 100% tests passed, 0 tests failed out of 10
 
 .include <bsd.port.mk>

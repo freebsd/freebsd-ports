@@ -5,7 +5,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.linta.de/distfiles/ \
 		http://www.gnu-darwin.org/distfiles/
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Transparent analog clock for x11
 
 LICENSE=	GPLv1

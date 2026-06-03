@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	2026-05-18 06:07:35 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=82.0.1"]
++requires = ["setuptools>=61"]
+ 
+ [project]
+ name = "types-requests"
+ version = "2.33.0.20260518"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ description = "Typing stubs for requests"
+ readme = { text = """\
+ ## Typing stubs for requests
+@@ -53,8 +52,4 @@ dependencies = ['urllib3>=2']
+ "Chat" = "https://gitter.im/python/typing"
+ 
+ [tool.setuptools]
+-packages = ['requests-stubs']
+ include-package-data = false
+-
+-[tool.setuptools.package-data]
+-'requests-stubs' = ['__init__.pyi', '__version__.pyi', 'adapters.pyi', 'api.pyi', 'auth.pyi', 'certs.pyi', 'compat.pyi', 'cookies.pyi', 'exceptions.pyi', 'help.pyi', 'hooks.pyi', 'models.pyi', 'packages.pyi', 'sessions.pyi', 'status_codes.pyi', 'structures.pyi', 'utils.pyi', 'METADATA.toml', 'py.typed']

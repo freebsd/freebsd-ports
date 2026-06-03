@@ -2,7 +2,7 @@ PORTNAME=	opencbm
 PORTVERSION=	${OCBM_VERSION}
 CATEGORIES=	comms archivers
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore CBM serial IEC/IEEE-488 bus utilities
 WWW=		http://opencbm.sourceforge.net/
 

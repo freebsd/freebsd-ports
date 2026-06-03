@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: mtail
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+. /etc/rc.subr
+
+name=mtail
+rcvar=mtail_enable
+
+load_rc_config $name
+
+: ${mtail_enable:=NO}
+: ${mtail_user:=%%USERS%%}
+: ${mtail_args:=""}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/mtail"
+command="/usr/sbin/daemon"
+command_args="-T ${name} -p ${pidfile} -u ${mtail_user} -f -H %%PREFIX%%/bin/mtail ${mtail_args}"
+start_cmd=mtail_start
+
+mtail_start()
+{
+	echo "Starting ${name}."
+	${command} ${command_args}
+}
+
+run_rc_command "$1"

@@ -1,5 +1,5 @@
 PORTNAME=	opengfx
-PORTVERSION=	7.1
+PORTVERSION=	8.0
 CATEGORIES=	games
 MASTER_SITES=	https://cdn.openttd.org/${PORTNAME}-releases/${PORTVERSION}/
 PKGNAMEPREFIX=	openttd-

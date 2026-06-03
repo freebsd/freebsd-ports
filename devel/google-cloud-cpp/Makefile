@@ -1,12 +1,12 @@
 PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.27.0
-PORTREVISION=	18
+PORTREVISION=	24
 CATEGORIES=	devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	amzo1337@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Idiomatic Clients for Google Cloud Platform services
 WWW=		https://github.com/googleapis/google-cloud-cpp
 

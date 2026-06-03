@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/enterprise/watermarking/watermark.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/enterprise/watermarking/watermark.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/enterprise/watermarking/watermark.cc
-@@ -34,7 +34,7 @@ gfx::Font WatermarkFont() {
+@@ -29,7 +29,7 @@ gfx::Font WatermarkFont(int font_size) {
        "Segoe UI",
  #elif BUILDFLAG(IS_MAC)
        "SF Pro Text",
@@ -9,7 +9,7 @@
        "Ubuntu",
  #elif BUILDFLAG(IS_CHROMEOS)
        "Google Sans",
-@@ -45,7 +45,7 @@ gfx::Font WatermarkFont() {
+@@ -40,7 +40,7 @@ gfx::Font WatermarkFont(int font_size) {
  }
  
  gfx::Font::Weight WatermarkFontWeight() {

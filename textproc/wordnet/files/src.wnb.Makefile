@@ -1,14 +1,13 @@
 PREFIX?=	/usr/local
 TCL_DVER?=	8.4
 TCL_VER=	${TCL_DVER:S/.//g}
-TCL_INCDIR?=	${PREFIX}/include/tcl${TCL_DVER}
 
 CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\"" -DHAVE_LANGINFO_CODESET
 
-CFLAGS+=	-I${.CURDIR}/../../include -I$(TCL_INCDIR)
+CFLAGS+=	-I${.CURDIR}/../../include -I${TCL_INCLUDEDIR}
 
-LDADD=		-L.. -lWN -L${PREFIX}/lib -ltcl${TCL_VER} # -ltk${TCL_VER}
+LDADD=		-L.. -lWN -L${LOCALBASE}/lib -ltcl${TCL_VER} # -ltk${TCL_VER}
 
 SHLIB_NAME=	libtclwn2.so.0
 SRCS=		stubs.c

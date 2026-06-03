@@ -1,10 +1,9 @@
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.5
+DISTVERSION=	4.5.8
 CATEGORIES=	net devel
-#MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C library for lightweight websocket clients and servers
 WWW=		https://libwebsockets.org/
 
@@ -64,15 +63,10 @@ SQLITE_CMAKE_BOOL=	LWS_WITH_SQLITE3
 WEBSERVER_CMAKE_BOOL=	LWS_WITH_LWSWS
 WEBSERVER_IMPLIES=	PEERLIMITS PLUGINS LIBUV
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls3
 MBEDTLS_CMAKE_BOOL=	LWS_WITH_MBEDTLS
 OPENSSL_USES=		ssl
 OPENSSL_CMAKE_BOOL=	LWS_WITHOUT_BUILTIN_SHA1
-# WolfSSL needs to be compiled with --enable-libwebsockets to work
-# WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
-# WOLFSSL_CMAKE_BOOL=	LWS_WITH_SSL LWS_WITH_WOLFSSL
-# WOLFSSL_CMAKE_ON=	-DLWS_WOLFSSL_INCLUDE_DIRS=${LOCALBASE}/include \
-#			-DLWS_WOLFSSL_LIBRARIES=${LOCALBASE}/lib/libwolfssl.so
 
 GLIB_USES=		gnome
 GLIB_USE=		GNOME=glib20

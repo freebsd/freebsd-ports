@@ -1,1 +1,5 @@
 A fast and simple progress bar for Jupyter Notebook and console.
+
+The fastprogress library provides nested progress bars with customizable display
+options, support for plotting during training loops, and integration with
+Jupyter notebooks.

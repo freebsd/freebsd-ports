@@ -1,0 +1,107 @@
+--- ctm/ctm_pass3.c.ORI	2025-08-10 16:21:45.923332000 +0000
++++ ctm/ctm_pass3.c	2025-08-14 07:29:01.065066000 +0000
+@@ -203,6 +203,8 @@
+ 		case CTM_F_Targetname:
+ 		  //GETNAMECOPY( targetname, sep, j, Verbose );
+ 		  GETFIELDCOPY( targetname, sep );
++		  if( FnameDecode( targetname ) )
++		     return BADREAD;
+ 		  break;
+ 		default: WRONG
+ 		}
+--- ctm/ctm_input.c.ORI	2025-08-10 16:21:45.852199000 +0000
++++ ctm/ctm_input.c	2025-08-14 07:30:26.721303000 +0000
+@@ -14,6 +14,38 @@
+ 
+ #include "ctm.h"
+ 
++u_char FnameDecode( u_char* in )
++{
++  u_char* o = in;
++
++  // Return OK if this no encoded name
++  //
++  if( *in++ != '/' )
++    return 0;
++
++
++  // Copy name, unescaping chars
++  //
++  while( 1 ) {
++
++    if( (*o = *in++) == '\0' )		// copy char and return OK
++      return 0;
++
++    if( *o++ != '%' )			// no magic, next char
++      continue;
++
++    o--;				// "delete" magic
++
++    if( (*o = *in++) == '\0' ) {	// no char after magic
++      Fatal( "Badly encoded filename." );
++      return 1;				// return BAD
++    }
++
++    *o++ -= 0x20;			// decode
++  }
++}
++
++
+ /*---------------------------------------------------------------------------*/
+ void
+ Fatal_(int ln, char *fn, char *kind)
+@@ -152,6 +184,9 @@
+     struct stat st;
+ 
+     if ((p = Ffield(fd,ctx,term)) == NULL) return(NULL);
++
++    if( FnameDecode( p ) )
++	return NULL;
+ 
+     strcpy(CatPtr, p);
+ 
+--- ctm/ctm.h.ORI	2025-08-10 16:21:45.922547000 +0000
++++ ctm/ctm.h	2025-08-14 07:00:34.944434000 +0000
+@@ -153,6 +153,7 @@
+ 
+ u_char * Ffield(FILE *fd, MD5_CTX *ctx,u_char term);
+ u_char * Fname(FILE *fd, MD5_CTX *ctx,u_char term,int qual, int verbose);
++u_char FnameDecode( u_char* n );
+ 
+ intmax_t Fbytecnt(FILE *fd, MD5_CTX *ctx, u_char term);
+ 
+--- ctm/ctm_pass1.c.ORI	2025-08-10 16:21:45.922914000 +0000
++++ ctm/ctm_pass1.c	2025-08-14 07:28:32.124418000 +0000
+@@ -112,6 +112,8 @@
+ 	    switch (j & CTM_F_MASK) {
+ 		case CTM_F_Name: /* XXX check for garbage and .. */
+ 		    GETFIELDCOPY(name,sep);
++		    if( FnameDecode( name ) )
++			return BADREAD;
+ 		    j = strlen(name);
+ 		    if(name[j-1] == '/' && !slashwarn)  {
+ 			fprintf(stderr,"Warning: contains trailing slash\n");
+@@ -229,6 +231,8 @@
+ 		    break;
+ 		case CTM_F_Targetname:
+ 		    GETFIELDCOPY( targetname, sep );
++		    if( FnameDecode( targetname ) )
++			return BADREAD;
+ 		    break;
+ 		default:
+ 			fprintf(stderr,"List = 0x%x\n",j);
+--- ctm/ctm_passb.c.ORI	2025-08-10 16:21:45.923530000 +0000
++++ ctm/ctm_passb.c	2025-08-14 07:29:29.050430000 +0000
+@@ -92,7 +92,11 @@
+ 		    break;
+ 		case CTM_F_Count: GETBYTECNT(cnt,sep); break;
+ 		case CTM_F_Bytes: GETDATA(trash,cnt); break;
+-		case CTM_F_Targetname: GETFIELDCOPY( targetname, sep ); break;
++		case CTM_F_Targetname:
++		    GETFIELDCOPY( targetname, sep );
++		    if( FnameDecode( targetname ) )
++			return BADREAD;
++		    break;
+ 		default: WRONG
+ 		}
+ 	    }

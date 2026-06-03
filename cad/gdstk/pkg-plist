@@ -9,6 +9,7 @@ include/gdstk/gdsii.hpp
 include/gdstk/gdstk.hpp
 include/gdstk/gdswriter.hpp
 include/gdstk/label.hpp
+include/gdstk/layername.hpp
 include/gdstk/library.hpp
 include/gdstk/map.hpp
 include/gdstk/oasis.hpp

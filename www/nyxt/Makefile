@@ -1,7 +1,7 @@
 PORTNAME=	nyxt
 DISTVERSION=	3.12.0
 DISTVERSIONSUFFIX=	-source-with-submodules
-PORTREVISION=	1
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/atlas-engineer/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE CC-BY-SA-3.0
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/licenses/SOURCE-LICENSE
 LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/licenses/ASSET-LICENSE
+
+NOT_FOR_ARCHS=	i386
 
 BUILD_DEPENDS=	git>0:devel/git \
 		sbcl>0:lang/sbcl

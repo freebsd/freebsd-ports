@@ -3,7 +3,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 # PROVIDE: synapse
-# REQUIRE: LOGIN postgresql
+# REQUIRE: NETWORKING LOGIN postgresql
 # KEYWORD: shutdown
 
 #

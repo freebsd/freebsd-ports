@@ -1,5 +1,6 @@
 PORTNAME=	flex-sdk
 PORTVERSION=	4.6.0.23201
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.6/
 DISTNAME=	flex_sdk_${PORTVERSION}_mpl

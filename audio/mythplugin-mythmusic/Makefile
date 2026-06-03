@@ -1,7 +1,6 @@
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	34.0
-PORTREVISION=	2
+DISTVERSION=	35.0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
@@ -10,18 +9,18 @@ COMMENT=	Music playing plugin for MythTV
 WWW=		https://www.mythtv.org/wiki/MythMusic
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libmyth-34.so:multimedia/mythtv
+		libmyth-35.so:multimedia/mythtv
 
 USES=		gmake qt:5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
-USE_LDCONFIG=	yes
 USE_QT=		buildtools:build core gui qmake:build sql widgets xml
 SHEBANG_FILES=	../mythtv/programs/scripts/metadata/Music/mbutils.py
 
@@ -34,18 +33,15 @@ CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
 MAKE_ENV=	QTDIR="${PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}"
 DESTDIRNAME=	INSTALL_ROOT
-PLIST_SUB=	MYTHSHARE="share/mythtv"
 WRKSRC_SUBDIR=	mythplugins
+PLIST_SUB=	MYTHSHARE="share/mythtv"
 
 OPTIONS_DEFINE=	CDIO
+OPTIONS_DEFAULT=CDIO
 
 CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 			libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_ENABLE=	cdio
-
-FFTW_DESC=		FFTW3-based visualizations
-FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
-FFTW_CONFIGURE_ENABLE=	fftw
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

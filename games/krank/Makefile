@@ -1,6 +1,6 @@
 PORTNAME=	krank
 PORTVERSION=	07
-PORTREVISION=	11
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -9,7 +9,7 @@ COMMENT=	Little casual game
 WWW=		https://krank.sourceforge.net/
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python:run tar:bzip2
 NO_BUILD=	yes

@@ -1,7 +1,7 @@
 PORTNAME=	mariadb-java-client
-DISTVERSION=	3.5.4
+DISTVERSION=	3.5.8
 CATEGORIES=	databases java
-MASTER_SITES=	https://dlm.mariadb.com/4308494/Connectors/java/connector-java-${DISTVERSION}/ \
+MASTER_SITES=	https://dlm.mariadb.com/4639714/Connectors/java/connector-java-${DISTVERSION}/ \
 		https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
 

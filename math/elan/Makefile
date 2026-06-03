@@ -1,7 +1,7 @@
 PORTNAME=	elan
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.1
-PORTREVISION=	2
+DISTVERSION=	4.2.2
+PORTREVISION=	0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,7 +34,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		base64-0.21.7 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		block-buffer-0.9.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
@@ -61,7 +60,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		deflate64-0.1.9 \
 		deranged-0.4.0 \
 		derive_arbitrary-1.4.1 \
-		digest-0.9.0 \
 		digest-0.10.7 \
 		dirs-3.0.2 \
 		dirs-next-2.0.0 \
@@ -138,7 +136,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		log-0.4.22 \
 		lzma-rs-0.3.0 \
 		lzma-sys-0.1.20 \
-		markdown-0.3.0 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
 		miniz_oxide-0.8.0 \
@@ -148,9 +145,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		normpath-1.3.0 \
 		num-conv-0.1.0 \
 		object-0.36.5 \
-		ole32-sys-0.2.0 \
 		once_cell-1.20.2 \
-		opaque-debug-0.3.1 \
 		openssl-0.10.70 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -161,11 +156,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pest-2.7.14 \
 		pin-project-lite-0.2.15 \
 		pin-utils-0.1.0 \
-		pipeline-0.5.0 \
 		pkg-config-0.3.31 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.89 \
+		pulldown-cmark-0.13.0 \
 		quote-1.0.37 \
 		r-efi-5.2.0 \
 		rand-0.8.5 \
@@ -196,7 +191,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_json-1.0.132 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
-		sha2-0.9.9 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
 		slab-0.4.9 \
@@ -229,6 +223,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		try-lock-0.2.5 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.7 \
+		unicase-2.8.1 \
 		unicode-ident-1.0.13 \
 		unicode-width-0.1.14 \
 		url-2.5.3 \
@@ -238,7 +233,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		vec_map-0.8.2 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.0 \
-		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasi-0.14.2+wasi-0.2.4 \
@@ -249,9 +243,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
 		web-sys-0.3.72 \
-		winapi-0.2.8 \
 		winapi-0.3.9 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \

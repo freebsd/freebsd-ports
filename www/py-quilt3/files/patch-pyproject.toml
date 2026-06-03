@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["uv_build>=0.8.15,<0.9.0"]
+-build-backend = "uv_build"
++requires = ["flit-core >= 3.12"]
++build-backend = "flit_core.buildapi"
+ 
+ [project]
+ name = "quilt3"
+@@ -27,12 +27,12 @@ dependencies = [
+ dependencies = [
+     "platformdirs>=2",
+     "boto3>=1.21.7",
+-    "jsonlines==1.2.0",
++    "jsonlines>=1.2.0",
+     "PyYAML>=5.1",
+     "requests>=2.12.4",
+     "tenacity>=5.1.1,!=8.4.0",
+     "tqdm>=4.32",
+-    "requests_futures==1.0.0",
++    "requests_futures>=1.0.0",
+     "jsonschema>=3,<5",
+     "pydantic>=2.0.0,<3.0.0",
+     "awscrt>=0.31.0",

@@ -1,2 +1,12 @@
-D4 is a generally applicable atomic-charge dependent london dispersion
-correction calculator.
+DFTD4 provides a generally applicable, charge-dependent London-dispersion
+correction for Density Functional Theory (DFT) calculations and other
+atomistic modeling methods. It addresses the missing van-der-Waals (vdW)
+interactions from standard exchange-correlation functionals by approximating
+them based solely on the system's structure, enabling rapid computation.
+
+This software can be linked as an external package to various DFT codes,
+such as VASP, to add vdW energies, forces, and stresses for structure
+relaxation and molecular dynamics simulations. It features functional-specific
+parameters for numerous density functionals and offers API support for
+Fortran, C, and Python, making it a versatile tool for computational
+chemistry and physics.

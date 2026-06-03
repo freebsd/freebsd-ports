@@ -1,6 +1,6 @@
 PORTNAME=	erkale
-DISTVERSION=	g20220405
-PORTREVISION=	10
+DISTVERSION=	g20260415
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +31,7 @@ USE_CXXSTD=	c++14 # fix build with clang16 due to use of deprecated feature std:
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
-GH_TAGNAME=	f005a9ed588d7b6fcda54648db16523419308cbd
+GH_TAGNAME=	71a378a85ecb14e5a7615e5ccd18eb3fb9335736
 
 TEST_TARGET=	test
 
@@ -66,8 +66,12 @@ OPENBLAS_CMAKE_ON=	-DLAPACK_LIBRARIES:STRING=-lopenblas -DBLAS_LIBRARIES:STRING=
 
 .if ${FLAVOR} == parallel
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/include/erkale ${STAGEDIR}${PREFIX}/include/erkale${SUFFIX}
-	@${MV} ${STAGEDIR}${PREFIX}/bin/erkale_bastool ${STAGEDIR}${PREFIX}/bin/erkale_bastool${SUFFIX}
+	@if [ -d ${STAGEDIR}${PREFIX}/include/erkale ]; then \
+		${MV} ${STAGEDIR}${PREFIX}/include/erkale ${STAGEDIR}${PREFIX}/include/erkale${SUFFIX}; \
+	fi
+	@if [ -e ${STAGEDIR}${PREFIX}/bin/erkale_bastool ]; then \
+		${MV} ${STAGEDIR}${PREFIX}/bin/erkale_bastool ${STAGEDIR}${PREFIX}/bin/erkale_bastool${SUFFIX}; \
+	fi
 .endif
 
 .include <bsd.port.mk>

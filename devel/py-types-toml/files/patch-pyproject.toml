@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	2026-05-18 06:02:14 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=82.0.1"]
++requires = ["setuptools>=61"]
+ 
+ [project]
+ name = "types-toml"
+ version = "0.10.8.20260518"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ description = "Typing stubs for toml"
+ readme = { text = """\
+ ## Typing stubs for toml
+@@ -46,8 +45,4 @@ dependencies = []
+ "Chat" = "https://gitter.im/python/typing"
+ 
+ [tool.setuptools]
+-packages = ['toml-stubs']
+ include-package-data = false
+-
+-[tool.setuptools.package-data]
+-'toml-stubs' = ['__init__.pyi', 'decoder.pyi', 'encoder.pyi', 'ordered.pyi', 'tz.pyi', 'METADATA.toml', 'py.typed']

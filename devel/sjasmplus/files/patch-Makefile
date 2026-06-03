@@ -1,15 +1,15 @@
---- Makefile.orig	2023-06-27 23:25:44 UTC
+--- Makefile.orig	2026-04-23 12:06:09 UTC
 +++ Makefile
-@@ -67,7 +67,7 @@ LUA_VER?=5.4
+@@ -72,7 +72,7 @@ LUA_VER?=5.5
  BUILD_DIR=build
  
- LUA_VER?=5.4
+ LUA_VER?=5.5
 -LUA_LIBNAME?=lua$(LUA_VER)
 +LUA_LIBNAME?=lua-$(LUA_VER)
  
  SUBDIR_BASE=sjasm
  SUBDIR_LUA=lua$(LUA_VER)
-@@ -259,7 +259,7 @@ $(SUBDIR_DOCS)/documentation.html: Makefile $(wildcard
+@@ -282,7 +282,7 @@ $(SUBDIR_DOCS)/documentation.html: Makefile $(sort $(w
  		--stringparam html.stylesheet docbook.css \
  		--stringparam generate.toc "book toc" \
  		-o $(SUBDIR_DOCS)/documentation.html \

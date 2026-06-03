@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-cxx
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient binary serialization protocol (C++ version)
 WWW=		https://msgpack.org/
 

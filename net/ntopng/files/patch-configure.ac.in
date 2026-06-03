@@ -1,10 +1,14 @@
---- configure.ac.in.orig	2025-04-29 17:01:16 UTC
+--- configure.ac.in.orig	2025-12-28 10:02:12 UTC
 +++ configure.ac.in
-@@ -153,40 +153,8 @@ LIBPCAP=-lpcap
+@@ -153,44 +153,11 @@ CFLAGS="${CFLAGS} -Wall"
+ AC_ARG_WITH(nedge,          [  --with-test-mode      Enable ntopng/nEdge test mode])
+ 
+ CFLAGS="${CFLAGS} -Wall"
+-OS=""
++OS=`uname -or | cut -d '-' -f 1`
  MAKE=make
  BIN_PATH=/usr/bin
  LIBPCAP=-lpcap
-+OS=`uname -or | cut -d '-' -f 1`
  
 -if test $SYSTEM = "FreeBSD" || test $SYSTEM = "Darwin"; then
 -   CFLAGS="${CFLAGS} -I/usr/local/include"
@@ -42,7 +46,7 @@
  dnl> Remove spaces
  OS="${OS#"${OS%%[![:space:]]*}"}"
  
-@@ -233,24 +201,6 @@ fi
+@@ -237,24 +204,6 @@ fi
    LIBS="${LIBS} -lnetfilter_queue -lnfnetlink -lnetfilter_conntrack"
  fi
  
@@ -67,39 +71,32 @@
  if [ test -f /usr/bin/lsb_release ]; then
    CODENAME=`/usr/bin/lsb_release -c|cut -f 2`
    if test $CODENAME = "wheezy" ; then
-@@ -313,15 +263,12 @@ AC_ARG_WITH(ndpi-includes,
-       NDPI_CUST_INC="-I$withval -I$withval/../lib/third_party/include"
-    ])
+@@ -321,10 +270,6 @@ fi
+    echo "WARNING: /usr/local/include/ndpi is present and might lead to compile errors"
+ fi
  
--if test -d /usr/local/include/ndpi ; then :
--   echo "WARNING: /usr/local/include/ndpi is present and might lead to compile errors"
--fi
--
 -NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
 -NDPI_LIB=
 -NDPI_LIB_DEP=
 -
--AC_MSG_CHECKING(for nDPI source)
+ AS_VAR_IF(with_dynamic_ndpi, no, [
+ AC_MSG_CHECKING(for nDPI source)
+       if test -d "./nDPI" ; then :
+@@ -354,8 +299,11 @@ AS_VAR_IF(with_dynamic_ndpi, yes, [
+ ])
+ 
+ AS_VAR_IF(with_dynamic_ndpi, yes, [
+-      NDPI_LIB="-lndpi"
+-      NDPI_LIB_DEP=$NDPI_LIB
 +PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
 +  NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
 +  NDPI_LIB="$NDPI_LIBS"
 +  NDPI_LIB_DEP=
-+  ], [
-+      AC_MSG_CHECKING(for nDPI source)
-       if test -d "./nDPI" ; then :
-          NDPI_HOME=./nDPI
-       elif test -d "../nDPI" ; then :
-@@ -346,8 +293,8 @@ AC_MSG_CHECKING(for nDPI source)
-       else
-          AC_MSG_RESULT(not found)
-       fi
-+  ])
++], [])
+ ])
  
--
  if test ! -z "$NDPI_CUST_INC" ; then :
-   NDPI_INC=$NDPI_CUST_INC
- fi
-@@ -370,44 +317,10 @@ AC_ARG_WITH(json-c-static,
+@@ -380,44 +328,10 @@ AC_ARG_WITH(json-c-static,
      [PKG_CHECK_MODULES(JSON, json-c, [], [AC_MSG_ERROR(Please install libjson-c-dev package prerequisite)])]
  )
  
@@ -147,7 +144,16 @@
  AC_MSG_CHECKING([PF_RING nBPF])
  NBPF_HOME=${PWD}/../PF_RING/userland/nbpf
  LIBNBPF=${NBPF_HOME}/libnbpf.a
-@@ -544,16 +457,11 @@ AS_VAR_IF(with_hiredis, yes, [
+@@ -494,7 +408,7 @@ fi
+ if test -d ${TMP_CLICKHOUSE_HOME}; then
+  CLICKHOUSE_HOME=${TMP_CLICKHOUSE_HOME}
+ fi
+-echo "Using clickhouse-cpp stored at ${CLICKHOUSE_HOME}"
++# echo "Using clickhouse-cpp stored at ${CLICKHOUSE_HOME}"
+ 
+ dnl> fi dnl> test $SYSTEM = "Linux"
+  
+@@ -575,16 +489,11 @@ AS_VAR_IF(with_hiredis, yes, [
      else
        pkg-config --exists hiredis
        if test "$?" -ne 1; then
@@ -166,13 +172,13 @@
 +        exit -1
        fi
     fi
- ])
-@@ -570,14 +478,14 @@ if test "${with_nedge+set}" != set; then
+ 
+@@ -604,14 +513,14 @@ if test "${with_nedge+set}" != set; then
    fi
  
    if test $SYSTEM = "FreeBSD"; then
 -     LIBPCAP="${PF_RING_HOME}/userland/libpcap/libpcap.a"
-+     # Use pcap from base
++      # Use pcap from base
    else
      if test -d ${PF_RING_HOME}; then
        AC_MSG_CHECKING(for PF_RING source installed in $PF_RING_HOME)
@@ -180,11 +186,11 @@
    fi
  
 - if test -f "/usr/local/lib/libpfring.a" || test -f "/opt/pfring/lib/libpfring.a" || test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
-+ if test -f "%%LOCALBASE%%/lib/libpfring.a" || test -f "/opt/pfring/lib/libpfring.a" || test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
++if test -f "%%LOCALBASE%%/lib/libpfring.a" || test -f "/opt/pfring/lib/libpfring.a" || test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
    AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
    if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
       echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
-@@ -597,18 +505,18 @@ if test "${with_nedge+set}" != set; then
+@@ -631,18 +540,18 @@ if test "${with_nedge+set}" != set; then
           CXXFLAGS="${CXXFLAGS} -I/opt/pfring/include"
           echo "Using PF_RING installed in /opt/pfring"
        else
@@ -209,21 +215,7 @@
  	  echo "Please make sure you have installed your PF_RING libraries and try again"
  	  exit 1
          fi
-@@ -789,11 +697,9 @@ else
-   fi
- else
-    dnl> FreeBSD
--   if test -f "/usr/local/lib/mysql/libmysqlclient.a"; then
--     MYSQL_LIB=/usr/local/lib/mysql/libmysqlclient.a
--     MYSQL_INC="-I /usr/local/include/mysql/"
-+     MYSQL_LIB="-L%%LOCALBASE%%/lib/mysql -lmysqlclient"
-+     MYSQL_INC="-I%%LOCALBASE%%/include/mysql"
-      AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
--   fi
- fi
- 
- AC_CHECK_LIB([expat], [XML_ParserCreate], expat=true)
-@@ -848,7 +754,7 @@ fi
+@@ -841,7 +750,7 @@ fi
    INSTALL_DIR=${ac_default_prefix}
  fi
  

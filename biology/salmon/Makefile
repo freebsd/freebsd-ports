@@ -1,6 +1,7 @@
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.10.3
+PORTREVISION=		2
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,13 +11,13 @@ WWW=		https://github.com/COMBINE-lab/salmon
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 # libtool and auto* are run manually in submodules, so don't put them in USES
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
-		libgff==2.0.0:biology/libgff \
+		libgff>=2.0.0:biology/libgff \
 		libtool:devel/libtool \
 		autoreconf:devel/autoconf \
 		aclocal:devel/automake \

@@ -130,10 +130,12 @@ include/librnd4/librnd/src_3rd/genregex/regex_se.h
 include/librnd4/librnd/src_3rd/genregex/regex_sei.h
 include/librnd4/librnd/src_3rd/genregex/regex_templ.h
 include/librnd4/librnd/src_3rd/genrtree/genrtree_api.h
+include/librnd4/librnd/src_3rd/genrtree/genrtree_api2.h
 include/librnd4/librnd/src_3rd/genrtree/genrtree_debug.h
 include/librnd4/librnd/src_3rd/genrtree/genrtree_delete.h
 include/librnd4/librnd/src_3rd/genrtree/genrtree_impl.h
 include/librnd4/librnd/src_3rd/genrtree/genrtree_search.h
+include/librnd4/librnd/src_3rd/genrtree/genrtree_search2.h
 include/librnd4/librnd/src_3rd/gensexpr/gensexpr_impl.h
 include/librnd4/librnd/src_3rd/gensexpr/gsx_parse.h
 include/librnd4/librnd/src_3rd/gensexpr/gsxl.h
@@ -323,6 +325,7 @@ lib/librnd4/sphash
 %%PORTDOCS%%%%DOCSDIR%%4/developer/hid_remote/proto_low.html
 %%PORTDOCS%%%%DOCSDIR%%4/developer/hid_remote/proto_parse.html
 %%PORTDOCS%%%%DOCSDIR%%4/developer/hid_remote/proto_parse.svg
+%%PORTDOCS%%%%DOCSDIR%%4/faq.html
 %%PORTDOCS%%%%DOCSDIR%%4/index.html
 %%PORTDOCS%%%%DOCSDIR%%4/irc.html
 %%PORTDOCS%%%%DOCSDIR%%4/license.html

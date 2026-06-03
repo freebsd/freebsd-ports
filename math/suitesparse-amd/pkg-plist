@@ -3,6 +3,8 @@ lib/cmake/AMD/AMDConfig.cmake
 lib/cmake/AMD/AMDConfigVersion.cmake
 lib/cmake/AMD/AMDTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/AMD/AMDTargets.cmake
+lib/cmake/AMD/AMDTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/AMD/AMDTargets_static.cmake
 lib/libamd.a
 lib/libamd.so
 lib/libamd.so.3

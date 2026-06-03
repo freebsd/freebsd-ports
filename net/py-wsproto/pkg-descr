@@ -7,5 +7,3 @@ This does not provide a parsing layer, a network layer, or any rules about
 concurrency. Instead, it's a purely in-memory solution, defined in terms of data
 actions and WebSocket frames. RFC6455 and Compression Extensions for WebSocket
 via RFC7692 are fully supported.
-
-See also: https://github.com/python-hyper/wsproto/

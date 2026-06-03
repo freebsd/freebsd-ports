@@ -1,6 +1,6 @@
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
+DISTVERSION=	4.1.0
 PORTREVISION=	3
 CATEGORIES=	science
 
@@ -17,7 +17,7 @@ BROKEN_i386=	undefined reference to `__atomic_load'
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \
 		libhdf5.so:science/hdf5 \
 		libmpich.so:net/mpich \
@@ -50,7 +50,7 @@ OPTIONS_SUB=		yes
 
 NEXUS_DESC=		Install Nexus (workflow utility) alongside QMCPACK
 NEXUS_CMAKE_BOOL=	INSTALL_NEXUS
-NEXUS_PY_DEPENDS=	${PYNUMPY} \
+NEXUS_PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyscf>0:science/py-pyscf@${PY_FLAVOR}

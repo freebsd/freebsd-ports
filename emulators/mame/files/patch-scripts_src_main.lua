@@ -1,8 +1,8 @@
  Remove suffixes from mame binary for debug/profile builds.
 
---- scripts/src/main.lua.orig	2023-11-14 03:17:20 UTC
+--- scripts/src/main.lua.orig	2025-09-24 14:56:11 UTC
 +++ scripts/src/main.lua
-@@ -58,13 +58,13 @@ end
+@@ -71,13 +71,13 @@ end
  	configuration { "Release" }
  		targetsuffix ""
  		if _OPTIONS["PROFILE"] then

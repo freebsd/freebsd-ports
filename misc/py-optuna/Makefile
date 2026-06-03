@@ -1,5 +1,6 @@
 PORTNAME=	optuna
-DISTVERSION=	4.3.0
+DISTVERSION=	4.7.0
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=1.5.0:databases/py-alembic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4.2:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
@@ -49,6 +50,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PATH=${STAGEDIR}${PREFIX}/bin:${PATH} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 4.3.0: 670 failed, 4925 passed, 119 skipped, 16 warnings, 4 errors in 879.29s (0:14:39), many tests failed due to missing kaleido module + somother failures
+# tests as of 4.7.0: 567 failed, 5266 passed, 164 skipped, 892 warnings, 152 errors in 387.83s (0:06:27), many tests failed due to missing kaleido module + somother failures
 
 .include <bsd.port.mk>

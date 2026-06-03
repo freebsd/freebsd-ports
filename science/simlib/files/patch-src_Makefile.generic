@@ -1,0 +1,32 @@
+--- src/Makefile.generic.orig	2026-02-20 12:38:35 UTC
++++ src/Makefile.generic
+@@ -223,15 +223,15 @@ install: all
+ 
+ #TODO: add version and symlink, do not run ldconfig for local install
+ install: all
+-	install -d $(PREFIX)/include $(PREFIX)/lib
+-	install -m0644 $(SIMLIB_HEADERS) $(PREFIX)/include
+-	install -m0644 $(LIBNAME).a      $(PREFIX)/lib/lib$(LIBNAME).a
+-	install -m0644 $(LIBNAME).so     $(PREFIX)/lib/lib$(LIBNAME).so
++	install -d $(PREFIX)/include $(DESTDIR)/$(PREFIX)/lib
++	install -m0644 $(SIMLIB_HEADERS) $(DESTDIR)/$(PREFIX)/include
++	install -m0644 $(LIBNAME).a      $(DESTDIR)/$(PREFIX)/lib/lib$(LIBNAME).a
++	install -m0644 $(LIBNAME).so     $(DESTDIR)/$(PREFIX)/lib/lib$(LIBNAME).so
+ 	@if ! grep '^'$(PREFIX)/lib'$$' /etc/ld.so.conf >/dev/null; then \
+ 	  echo "Please add $(PREFIX)/lib to /etc/ld.so.conf ";  \
+ 	fi
+ 	@echo "This should be run as root:"
+-	ldconfig # update dynamic linker cache
++	#ldconfig # update dynamic linker cache
+ 
+ #############################################################################
+ # Uninstall library
+@@ -249,7 +249,7 @@ test: all
+ test: all
+ 	$(CXX) $(CXXFLAGS) -o $(TESTFILE) $(TESTFILE).cc -lm simlib.a
+ 	./$(TESTFILE) >$(TESTFILE).output
+-	sed -i 's/0x[0-9a-f]*/PTR/g' $(TESTFILE).output
++	sed -i '' 's/0x[0-9a-f]*/PTR/g' $(TESTFILE).output
+ 	@echo `date` "by" `$(CXX) --version|head -n 1` >>TEST-BY.txt
+ 	@echo
+ 	-diff -bs $(TESTFILE).output-- $(TESTFILE).output

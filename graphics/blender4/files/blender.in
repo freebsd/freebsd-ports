@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export BLENDER_SYSTEM_RESOURCES=%%DATADIR%%
+export BLENDER_EXTERN_DRACO_LIBRARY_PATH=%%PYTHON_SITELIBDIR%%/libextern_draco.so
+
+exec %%PREFIX%%/bin/blender-bin-45 "$@"

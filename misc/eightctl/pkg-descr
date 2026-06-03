@@ -1,0 +1,5 @@
+eightctl is a modern Go CLI for Eight Sleep Pods.
+
+It controls power/temperature, alarms, schedules, audio, base, autopilot,
+travel, household, and export sleep metrics. Includes a daemon for scheduled
+routines.

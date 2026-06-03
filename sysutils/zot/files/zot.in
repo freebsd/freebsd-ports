@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: zot
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable zot daemon:
+#
+# zot_enable="YES"
+# zot_config="/usr/local/etc/zot/config.json"
+#
+
+. /etc/rc.subr
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+name="zot"
+rcvar=zot_enable
+
+load_rc_config ${name}
+
+: ${zot_enable:="NO"}
+: ${zot_config:="/usr/local/etc/zot/config.json"}
+
+command="/usr/sbin/daemon"
+procname="/usr/local/bin/${name}"
+pidfile="/var/run/${name}.pid"
+command_args="-S -p ${pidfile} ${procname} serve ${zot_config}"
+
+run_rc_command "$1"

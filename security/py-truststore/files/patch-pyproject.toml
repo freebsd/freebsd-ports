@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-08-12 18:47:53 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ readme = "README.md"
+   {name = "David Glick", email = "david@glicksoftware.com"}
+ ]
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+   "Intended Audience :: Developers",

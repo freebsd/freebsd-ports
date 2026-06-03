@@ -1,0 +1,11 @@
+--- meson_options.txt.orig	2026-02-07 06:29:30 UTC
++++ meson_options.txt
+@@ -10,6 +10,8 @@ option('unittest', type: 'boolean', value: false, desc
+ 
+ option('unittest', type: 'boolean', value: false, description: 'Enable unittests in the code')
+ 
++option('git', type: 'boolean', value: true, description: 'Use git describe if that\'s available')
++
+ # Experimental options
+ 
+ option('modularize', type: 'boolean', value: false, description: 'Build with clang\'s module system (experimental)')

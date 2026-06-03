@@ -12,7 +12,7 @@ WWW=		https://github.com/rpm-software-management/popt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe iconv libtool pathfix
+USES=		cpe iconv libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -4,7 +4,7 @@ DISTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Grab a color from screen
 WWW=		https://www.muquit.com/muquit/software/grabc/grabc.html
 

@@ -543,6 +543,7 @@ share/knsrcfiles/okteta-structures.knsrc
 share/kservices5/oktetapart.desktop
 share/locale/ar/LC_MESSAGES/libkasten.mo
 share/locale/ar/LC_MESSAGES/liboktetacore.mo
+share/locale/ar/LC_MESSAGES/liboktetagui.mo
 share/locale/ar/LC_MESSAGES/liboktetakasten.mo
 share/locale/ar/LC_MESSAGES/okteta.mo
 share/locale/ar/LC_MESSAGES/oktetapart.mo

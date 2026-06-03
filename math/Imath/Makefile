@@ -1,14 +1,15 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.1.12
+PORTVERSION=	3.2.2
+PORTREVISION=	4
 CATEGORIES=	math devel graphics
 MASTER_SITES=	https://github.com/AcademySoftwareFoundation/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/mandree/
 # to verify: 'make makesum' and download .sigstore.json to working directory, then:
 # sigstore verify github --cert-identity \
-# https://github.com/AcademySoftwareFoundation/Imath/.github/workflows/release-sign.yml@refs/tags/v3.1.12 \
-# /usr/ports/distfiles/Imath-3.1.12.tar.gz --bundle Imath-3.1.12.tar.gz.sigstore.json
+# https://github.com/AcademySoftwareFoundation/Imath/.github/workflows/release-sign.yml@refs/tags/v3.2.2 \
+# /usr/ports/distfiles/Imath-3.2.2.tar.gz --bundle Imath-3.2.2.tar.gz.sigstore.json
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	C++/Python lib of 2D/3D vector, matrix, math ops for computer graphics
@@ -26,32 +27,28 @@ CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX= \
 PATCH_STRIP=	-p1
 
 PLIST_SUB=	MAJORVER=${_MAJORVER} \
-		MINVER=${_MINVER} \
-		PLVER=${_PLVER} \
 		VER=${_VER} \
+		REL=${_REL} \
 		PYVER=${PYTHON_VER:S/./_/}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS LARGE_STACK PYTHON
+OPTIONS_DEFAULT=DOCS PYTHON
 OPTIONS_SUB=	yes
 
 LARGE_STACK_DESC=	Enable sys-dependent large stack optimizations
 LARGE_STACK_CMAKE_BOOL=	IMATH_ENABLE_LARGE_STACK
 
-PYTHON_BUILD_DEPENDS=	${PYNUMPY}
-PYTHON_LIB_DEPENDS=	${PY_BOOST}
-PYTHON_RUN_DEPENDS=	${PYNUMPY}
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+PYTHON_LIB_DEPENDS=	${PY_BOOST} \
+			libboost_container.so:devel/boost-libs
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	PYTHON
 
-_MAJORVER=	3_1
-_VER=		29
-_MINVER=	11
-_PLVER=		0
-
-post-patch:
-	${REINPLACE_CMD} -E 's}find_package\(Python(3?) COMPONENTS}set(Python\1_EXECUTABLE ${PYTHON_CMD})\nfind_package(Python\1 ${PYTHON_VER} EXACT COMPONENTS}' \
-		${WRKSRC}/src/python/CMakeLists.txt
+_MAJORVER=	3_2
+_VER=		30
+_REL=		${PORTVERSION}
 
 post-install:
 .for l in libImath

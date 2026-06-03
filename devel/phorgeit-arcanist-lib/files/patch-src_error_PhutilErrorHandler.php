@@ -1,6 +1,6 @@
---- src/error/PhutilErrorHandler.php.orig	2022-05-17 23:20:14 UTC
+--- src/error/PhutilErrorHandler.php.orig	2025-12-15 18:12:56 UTC
 +++ src/error/PhutilErrorHandler.php
-@@ -181,6 +181,11 @@ final class PhutilErrorHandler extends Phobject {
+@@ -185,6 +185,11 @@ final class PhutilErrorHandler extends Phobject {
     * @task internal
     */
    public static function handleError($num, $str, $file, $line, $ctx = null) {

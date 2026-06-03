@@ -1,6 +1,6 @@
---- Tools/SOGoToolUpdateSecret.m	2024-03-27 16:51:10.990469000 -0500
-+++ Tools/SOGoToolUpdateSecret.m	2024-03-27 16:51:29.082221000 -0500
-@@ -266,8 +266,6 @@
+--- Tools/SOGoToolUpdateSecret.m.orig	2026-03-30 08:52:39 UTC
++++ Tools/SOGoToolUpdateSecret.m
+@@ -266,8 +266,6 @@ - (BOOL) updateSecretFromEncryptedData: (NSString*) ne
        [source synchronize];
      }
    }

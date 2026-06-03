@@ -12,9 +12,12 @@ WWW=		http://docopt.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	pep517 autoplist concurrent
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

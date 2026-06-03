@@ -1,3 +1,4 @@
+include/dune-grid-glue-config.hh
 include/dune/grid-glue/adapter/gridglue.cc
 include/dune/grid-glue/adapter/gridglue.hh
 include/dune/grid-glue/adapter/gridglueamirawriter.hh
@@ -14,6 +15,7 @@ include/dune/grid-glue/common/projection.hh
 include/dune/grid-glue/common/projection_impl.hh
 include/dune/grid-glue/common/projectionwriter.hh
 include/dune/grid-glue/common/projectionwriter_impl.hh
+include/dune/grid-glue/common/ringcomm.hh
 include/dune/grid-glue/extractors/codim0extractor.hh
 include/dune/grid-glue/extractors/codim1extractor.hh
 include/dune/grid-glue/extractors/extractor.hh
@@ -32,7 +34,8 @@ include/dune/grid-glue/merging/simplexintersection.cc
 include/dune/grid-glue/merging/standardmerge.hh
 lib/cmake/dune-grid-glue/dune-grid-glue-config-version.cmake
 lib/cmake/dune-grid-glue/dune-grid-glue-config.cmake
-lib/cmake/dune-grid-glue/dune-grid-glue-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dune-grid-glue/dune-grid-glue-scoped-targets-%%DUNE_GRID_GLUE_CMAKE_HASH%%-release.cmake
+lib/cmake/dune-grid-glue/dune-grid-glue-scoped-targets-%%DUNE_GRID_GLUE_CMAKE_HASH%%.cmake
 lib/cmake/dune-grid-glue/dune-grid-glue-targets.cmake
 lib/dunecontrol/dune-grid-glue/dune.module
 lib/libdunegridglue.so

@@ -1,5 +1,5 @@
 PORTNAME=	level-zero
-PORTVERSION=	1.22.4
+PORTVERSION=	1.28.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog
 
-USES=		cmake compiler:c++14-lang localbase:ldflags pathfix
+USES=		cmake compiler:c++14-lang localbase:ldflags
 
 CMAKE_OFF=	BUILD_INSTALLER \
 		BUILD_L0_LOADER_TESTS \
 		BUILD_STATIC \
 		USE_ASAN
 CMAKE_ON=	SYSTEM_SPDLOG
+CXXFLAGS+=	-Wno-extern-c-compat
 LDFLAGS+=	-lfmt
 USE_LDCONFIG=	yes
 

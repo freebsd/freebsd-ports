@@ -1,11 +1,10 @@
 PORTNAME=	fet
-DISTVERSION=	7.3.2
+DISTVERSION=	7.8.5
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
 		https://timetabling.de/download/ \
 		https://timetabling.de/download/old/
-PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Free timetabling software
@@ -14,16 +13,10 @@ WWW=		https://lalescu.ro/liviu/fet/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt6 qt5
-FLAVOR?=	qt6
-
-USES=		compiler:c++17-lang gl qmake qt:${FLAVOR:S/qt//} tar:bzip2
-USE_GL=		gl
-_USE_QT5=	core gui network printsupport widgets buildtools:build
-_USE_QT6=	base
-USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
-
-CONFLICTS_INSTALL=	${FLAVORS:@fl@fet-${fl}@}
+USES=		cmake compiler:c++17-lang gl qt:6 tar:xz xorg
+USE_GL=		opengl
+USE_QT=		base
+USE_XORG=	ice x11 xcb
 
 DESKTOP_ENTRIES=	"FET" \
 			"Free timetable software" \
@@ -42,8 +35,10 @@ post-patch:
 		${WRKSRC}/src/interface/fet.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fet ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/fet-cl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/src/interface/fet \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/src/cl/fet-cl \
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/fet*.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-EXAMPLES-on:

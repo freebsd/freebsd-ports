@@ -9,17 +9,19 @@
  	# Support 128-bit long double for NewABI.
  	HAVE_LONG_DOUBLE='defined(__mips64)'
  	TARGET=MIPS; TARGETDIR=mips
-@@ -17255,6 +17255,10 @@ case "$host" in
+@@ -17255,7 +17255,11 @@ case "$host" in
  	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
  	HAVE_LONG_DOUBLE_VARIANT=1
  	;;
+-  powerpc64-*-freebsd*)
 +  powerpcspe-*-freebsd*)
 +	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
 +	CFLAGS="$CFLAGS -D__NO_FPRS__"
 +	;;
-   powerpc64-*-freebsd*)
++  powerpc64-*-freebsd* | powerpc64le-*-freebsd*)
  	TARGET=POWERPC; TARGETDIR=powerpc
  	;;
+   powerpc*-*-rtems*)
 @@ -18289,7 +18293,8 @@ $as_echo "#define HAVE_AS_CFI_PSEUDO_OP 1" >>confdefs.
   fi
  
@@ -30,7 +32,7 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking assembler and linker support unaligned pc related relocs" >&5
  $as_echo_n "checking assembler and linker support unaligned pc related relocs... " >&6; }
  if ${libffi_cv_as_sparc_ua_pcrel+:} false; then :
-@@ -18363,9 +18368,9 @@ $as_echo "$libffi_cv_as_register_pseudo_op" >&6; }
+@@ -18363,9 +18368,9 @@ $as_echo "#define HAVE_AS_REGISTER_PSEUDO_OP 1" >>conf
  $as_echo "#define HAVE_AS_REGISTER_PSEUDO_OP 1" >>confdefs.h
  
      fi
@@ -42,7 +44,7 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking assembler supports pc related relocs" >&5
  $as_echo_n "checking assembler supports pc related relocs... " >&6; }
  if ${libffi_cv_as_x86_pcrel+:} false; then :
-@@ -18386,78 +18391,9 @@ $as_echo "$libffi_cv_as_x86_pcrel" >&6; }
+@@ -18386,78 +18391,9 @@ $as_echo "#define HAVE_AS_X86_PCREL 1" >>confdefs.h
  $as_echo "#define HAVE_AS_X86_PCREL 1" >>confdefs.h
  
      fi
@@ -123,7 +125,7 @@
  # On PaX enable kernels that have MPROTECT enable we can't use PROT_EXEC.
  # Check whether --enable-pax_emutramp was given.
  if test "${enable_pax_emutramp+set}" = set; then :
-@@ -18592,16 +18528,12 @@ if ${libffi_cv_ro_eh_frame+:} false; then :
+@@ -18592,16 +18528,12 @@ else
    $as_echo_n "(cached) " >&6
  else
  

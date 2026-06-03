@@ -1,0 +1,25 @@
+Remove unused KF6 Archive component.
+
+The Avogadro:Gui target requires the Qt::Concurrent target to be found.
+
+--- CMakeLists.txt.orig	2026-02-28 11:23:51 UTC
++++ CMakeLists.txt
+@@ -89,7 +89,6 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+ )
+ 
+ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+-    Archive
+     Config
+     ConfigWidgets
+     CoreAddons
+@@ -122,6 +121,10 @@ ecm_set_disabled_deprecation_versions(QT 5.14.0
+     KF 6.13
+ )
+ 
++
++if (AvogadroLibs_FOUND)
++  find_package(Qt6Concurrent ${QT_MIN_VERSION} REQUIRED)
++endif()
+ 
+ if (HAVE_OPENBABEL AND AvogadroLibs_FOUND AND Eigen3_FOUND)
+   find_package(Qt6OpenGL ${QT_MIN_VERSION} REQUIRED)

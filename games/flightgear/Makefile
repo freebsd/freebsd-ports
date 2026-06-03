@@ -1,5 +1,5 @@
 PORTNAME=	flightgear
-PORTVERSION=	2024.1.1
+PORTVERSION=	2024.1.5
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -27,12 +27,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 # Disable ninja, see https://sourceforge.net/p/flightgear/codetickets/2118/
-USES=		alias cmake:noninja compiler:c++17-lang cpe dos2unix gl jpeg \
+USES=		cmake:noninja compiler:c++17-lang cpe dos2unix gl jpeg \
 		openal:al,alut sqlite tar:bzip2 xorg
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	flightgear
-GL_TAGNAME=	v${PORTVERSION}
 
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glew glu glut
@@ -51,7 +50,7 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_USES=	pkgconfig
 DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
-QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
+QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON -DCHECK_FOR_QT6:BOOL=OFF
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
 QT5_USES=	qt:5
 QT5_USE=	QT=core,buildtools,linguisttools,gui,declarative,network,qmake,widgets,svg

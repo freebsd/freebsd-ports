@@ -1,5 +1,5 @@
 PORTNAME=	zabbix7
-DISTVERSION=	7.0.17
+DISTVERSION=	7.0.26
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -81,7 +81,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 MYSQL OPENSSL SNMP SSH UNIXODBC
+OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 MYSQLDV OPENSSL SNMP SSH UNIXODBC
 OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP NMAP SNMP SSH UNIXODBC
 OPTIONS_SINGLE+=	DB SSL
 OPTIONS_SINGLE_DB=	MDB5 MDB6 MYSQL MYSQLDV ORACLE PGSQL
@@ -98,8 +98,8 @@ NMAP_DESC=	Build/install nmap for o/s detection
 SNMP_DESC=	Support for SNMP checks
 SSH_DESC=	Support for SSH-based checks
 UNIXODBC_DESC=	Support for database checks via ODBC
-MYSQL_DESC=	MySQL 8.0 database support
-MYSQLDV_DESC=	MYSQL DEFAULT_VERSIONS= (poudriere)
+MYSQL_DESC=	MySQL 8.4 database support
+MYSQLDV_DESC=	MySQL database support (per DEFAULT_VERSIONS)
 
 FPING_RUN_DEPENDS=	fping:net/fping
 
@@ -110,7 +110,7 @@ LDAP_CONFIGURE_WITH=	ldap
 LDAP_USES=		ldap
 
 MYSQL_CONFIGURE_ON=	--with-mysql
-MYSQL_USES+=		compiler:c11 mysql:80
+MYSQL_USES+=		compiler:c11 mysql:84
 
 MYSQLDV_CONFIGURE_ON=	--with-mysql
 MYSQLDV_USES+=		compiler:c11 mysql
@@ -155,8 +155,8 @@ MODBUS_DESC=		Support for Modbus checks
 MODBUS_CONFIGURE_WITH=	libmodbus
 MODBUS_LIB_DEPENDS=	libmodbus.so:comms/libmodbus
 
-NMAP_RUN_DEPENDS=	nmap:security/nmap \
-			sudo:security/sudo
+NMAP_RUN_DEPENDS=	nmap:security/nmap
+NMAP_USES=		sudo
 
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USES=		ssl
@@ -169,7 +169,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 .endif # if ${ZABBIX_BUILD} != "java"
 
 .if ${ZABBIX_BUILD} == "java"
-USES+=         java
+USES+=		java
 JAVA_VERSION=	11+
 .endif
 

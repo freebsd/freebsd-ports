@@ -1,8 +1,0 @@
-bin/xds-config
-include/xds.h
-lib/libxds.a
-lib/libxds.so
-lib/libxds.so.9
-lib/libxds.so.9.0.23
-share/man/man1/xds-config.1.gz
-share/man/man3/xds.3.gz

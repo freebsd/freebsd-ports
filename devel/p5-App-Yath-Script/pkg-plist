@@ -1,0 +1,8 @@
+bin/yath
+%%SITE_PERL%%/App/Yath/Script.pm
+%%SITE_PERL%%/App/Yath/Script/V0.pm
+%%SITE_PERL%%/App/Yath/template.pod
+%%PERL5_MAN1%%/yath.1.gz
+%%PERL5_MAN3%%/App::Yath::Script.3.gz
+%%PERL5_MAN3%%/App::Yath::Script::V0.3.gz
+%%PERL5_MAN3%%/App::Yath::template.3.gz

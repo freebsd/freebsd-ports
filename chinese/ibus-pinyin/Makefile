@@ -1,6 +1,6 @@
 PORTNAME=	ibus-pinyin
 PORTVERSION=	1.5.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	chinese
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -9,7 +9,7 @@ WWW=		http://code.google.com/p/ibus
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:textproc/ibus
 LIB_DEPENDS=	libpyzy-1.0.so:chinese/pyzy \
 		libibus-1.0.so:textproc/ibus \

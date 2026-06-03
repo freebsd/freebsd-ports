@@ -1,5 +1,0 @@
-ScanDoc scans C and C++ program for embedded documentation, and
-formats it into HTML or other formats. It also analyzes code
-structure and uses this information to enhance the generated
-documentation. It has been inspired by JavaDoc, as well as the
-Amiga "autodoc" utility.

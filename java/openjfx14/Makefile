@@ -1,6 +1,6 @@
 PORTNAME=	openjfx
 DISTVERSION=	14.0.2.1+1
-PORTREVISION=	17
+PORTREVISION=	20
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/7.7.1/:core \
 		https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-grouping/7.7.1/:grouping \
@@ -47,6 +47,8 @@ USE_XORG=	x11 xtst xxf86vm
 
 CFLAGS+=	-Wno-unused-command-line-argument \
 		-Wno-int-conversion
+# Suppress errors with lld >= 17 due to undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
 
 PLIST_SUB=	INSTALLDIR=${_INSTALLDIR}
 
@@ -87,14 +89,15 @@ _GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle62 --no-daemon
 
 _INSTALLDIR=	${PREFIX}/${PKGBASE}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
-# Suppress errors with lld >= 17 due to undefined symbols.
-LDFLAGS+=	-Wl,--undefined-version
+.if defined(RUBY_VER) && ${RUBY_VER} >= 3.4
+BUILD_DEPENDS+=	rubygem-getoptlong>=0:devel/rubygem-getoptlong
+.endif
 
 post-extract:
 	${MKDIR} ${WRKDIR}/jars
@@ -172,4 +175,4 @@ do-install:
 do-test-TEST-on:
 	@cd ${WRKSRC} && ${_GRADLE_RUN} check test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

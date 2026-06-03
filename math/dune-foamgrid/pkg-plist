@@ -1,3 +1,4 @@
+include/dune-foamgrid-config.hh
 include/dune/foamgrid/dgffoam.cc
 include/dune/foamgrid/dgffoam.hh
 include/dune/foamgrid/foamgrid.hh
@@ -5,7 +6,6 @@ include/dune/foamgrid/foamgrid/foamgrid.cc
 include/dune/foamgrid/foamgrid/foamgridedge.hh
 include/dune/foamgrid/foamgrid/foamgridelements.hh
 include/dune/foamgrid/foamgrid/foamgridentity.hh
-include/dune/foamgrid/foamgrid/foamgridentitypointer.hh
 include/dune/foamgrid/foamgrid/foamgridentityseed.hh
 include/dune/foamgrid/foamgrid/foamgridfactory.hh
 include/dune/foamgrid/foamgrid/foamgridgeometry.hh
@@ -19,6 +19,8 @@ include/dune/foamgrid/foamgrid/foamgridnulliteratorfactory.hh
 include/dune/foamgrid/foamgrid/foamgridvertex.hh
 lib/cmake/dune-foamgrid/dune-foamgrid-config-version.cmake
 lib/cmake/dune-foamgrid/dune-foamgrid-config.cmake
+lib/cmake/dune-foamgrid/dune-foamgrid-scoped-targets-%%DUNE_FOAMGRID_CMAKE_HASH%%.cmake
+lib/cmake/dune-foamgrid/dune-foamgrid-targets.cmake
 lib/dunecontrol/dune-foamgrid/dune.module
 libdata/pkgconfig/dune-foamgrid.pc
 share/dune/cmake/modules/DuneFoamgridMacros.cmake

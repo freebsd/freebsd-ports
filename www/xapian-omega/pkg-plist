@@ -1,5 +1,4 @@
 bin/dbi2omega
-bin/htdig2omega
 bin/mbox2omega
 bin/omindex
 bin/omindex-list
@@ -30,7 +29,6 @@ bin/scriptindex
 share/man/man1/omindex-list.1.gz
 share/man/man1/omindex.1.gz
 share/man/man1/scriptindex.1.gz
-%%DATADIR%%/omega/htdig2omega.script
 %%DATADIR%%/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/mhtml2html
 %%WWWDIR%%/cgi-bin/omega

@@ -1,11 +1,11 @@
 PORTNAME=	fio
-DISTVERSION=	3.40
+DISTVERSION=	3.42
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Flexible IO tester
-WWW=		https://git.kernel.dk/cgit/fio/
+WWW=		https://git.kernel.org/pub/scm/linux/kernel/git/axboe/fio.git/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

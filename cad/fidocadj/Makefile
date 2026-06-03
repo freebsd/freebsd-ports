@@ -1,6 +1,6 @@
 PORTNAME=	fidocadj
 PORTVERSION=	0.24.8
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	cad java
 # No USE_GITHUB here because GITHUB_EXTRACT_SUFX is hardcoded to .tar.gz
 MASTER_SITES=	https://github.com/DarwinNE/FidoCadJ/releases/download/v${PORTVERSION}/

@@ -1,22 +1,19 @@
 - Fix VERSION.
-- Make plugins dependent upon cairo optional.
-- Add logic so slave ports can build without installing base files or plugins.
+- Make plugins that depend upon cairo optional.
+- Add logic so extra plugins can build without installing base components.
 
---- CMakeLists.txt.orig	2024-06-07 09:00:56 UTC
+--- CMakeLists.txt.orig	2025-12-02 16:23:47 UTC
 +++ CMakeLists.txt
-@@ -3,16 +3,21 @@ project (frei0r)
- list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
- 
- project (frei0r)
--set (VERSION 1.8)
-+set (VERSION 2.3)
+@@ -7,6 +7,8 @@ include(GNUInstallDirs)
  
  include(GNUInstallDirs)
  
 +option (BUILD_EXTRA_PLUGINS "Build plugins with optional dependencies" ON)
 +
  option (WITHOUT_OPENCV "Disable plugins dependent upon OpenCV" OFF)
- if (NOT WITHOUT_OPENCV)
+ option (WITHOUT_FACERECOGNITION "Disable facedetect plugin to avoid protobuf conflicts" OFF)
+ 
+@@ -14,7 +16,10 @@ endif ()
    find_package (OpenCV)
  endif ()
  
@@ -28,25 +25,23 @@
  
  include(FindPkgConfig)
  option (WITHOUT_GAVL "Disable plugins dependent upon gavl" OFF)
-@@ -35,18 +40,25 @@ INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
+@@ -37,17 +42,24 @@ INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
  # --- custom targets: ---
  INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
  
--# See this thread for a ridiculous discussion about the simple question how to install a header file with CMake: http://www.cmake.org/pipermail/cmake/2009-October/032874.html
--install (DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "frei0r.h" PATTERN "msvc" EXCLUDE)
+-install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 +if (NOT BUILD_EXTRA_PLUGINS)
-+  # See this thread for a ridiculous discussion about the simple question how to install a header file with CMake: http://www.cmake.org/pipermail/cmake/2009-October/032874.html
-+  install (DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "frei0r.h" PATTERN "msvc" EXCLUDE)
++  install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
  
  # For code documentation run: doxygen doc/Doxyfile
  # add_subdirectory (doc)
  
 -add_subdirectory (src)
 +  add_subdirectory (src)
-+else()
++else ()
 +  add_subdirectory (src/filter)
 +  add_subdirectory (src/mixer2)
-+endif()
++endif ()
  
  # Generate frei0r.pc and install it.
  set (prefix "${CMAKE_INSTALL_PREFIX}")

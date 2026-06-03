@@ -1,5 +1,5 @@
 PORTNAME=	gettext-tiny
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.barfooze.de/pub/sabotage/tarballs/ \
 		http://ftp.barfooze.de/pub/sabotage/tarballs/
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	tar:xz
 TOOLS=	msgfmt msgmerge
-SCRIPTS=	xgettext
+SCRIPTS=	xgettext autopoint
 
 PLIST_FILES=	${TOOLS:C,^,bin/tiny-,} \
 		${SCRIPTS:C,^,bin/tiny-,}

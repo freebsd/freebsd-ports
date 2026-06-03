@@ -1,6 +1,6 @@
 PORTNAME=	twmn
 PORTVERSION=	g20190917
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build with Boost>=1.87
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes

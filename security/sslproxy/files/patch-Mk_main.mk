@@ -1,6 +1,15 @@
---- Mk/main.mk.orig	2022-12-26 01:44:45 UTC
+--- Mk/main.mk.orig	2025-11-09 10:48:19 UTC
 +++ Mk/main.mk
-@@ -302,11 +302,13 @@ endif
+@@ -198,7 +198,7 @@ MANDIR?=	share/man
+ 
+ PREFIX?=	/usr/local
+ MANDIR?=	share/man
+-EXAMPLESDIR?=	share/examples
++EXAMPLESDIR?=	etc
+ 
+ INSTALLUID?=	0
+ INSTALLGID?=	0
+@@ -299,11 +299,13 @@ endif
  		&& echo sqlite3)
  endif
  endif
@@ -14,7 +23,7 @@
  
  # Function: Generate list of base paths to search when locating packages
  # $1 packagename
-@@ -422,18 +424,24 @@ ifneq (,$(strip $(PKGS)))
+@@ -428,18 +430,24 @@ ifneq (,$(strip $(PKGS)))
  endif
  
  ifneq (,$(strip $(PKGS)))

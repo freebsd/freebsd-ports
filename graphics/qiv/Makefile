@@ -1,5 +1,6 @@
 PORTNAME=	qiv
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://spiegl.de/qiv/download/
 

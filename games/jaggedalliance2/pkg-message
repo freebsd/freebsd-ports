@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-This Jagged Alliance 2 port requires data files from the original
-game CD and installation.
-EOM
-}
-]

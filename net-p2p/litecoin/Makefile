@@ -1,7 +1,7 @@
 PORTNAME=	litecoin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.4
-PORTREVISION=	6
+PORTREVISION=	12
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	hsw@bitmark.com
@@ -109,8 +109,11 @@ post-install:
 
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/AX_BOOST_SYSTEM/d' ${WRKSRC}/configure.ac
+
 regression-test: build
-	# To use this sucessfully, remove --without-daemon and --without-utils
+	# To use this successfully, remove --without-daemon and --without-utils
 	# from CONFIGURE_ARGS above.
 
 	@cd ${WRKSRC} && ${GMAKE} check

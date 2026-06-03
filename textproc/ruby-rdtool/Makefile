@@ -10,6 +10,8 @@ COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 WWW=		https://github.com/uwabami/rdtool
 
 BROKEN=		hook /wrkdirs/usr/ports/textproc/ruby-rdtool/work/rdtool-0.6.38/lib/rd/pre-setup.rb failed: undefined method 'exists?' for module FileTest
+DEPRECATED=	Broken for more than 2 years. Use textproc/rubygem-rdtool instead
+EXPIRATION_DATE=2026-05-31
 
 BUILD_DEPENDS=	racc:devel/rubygem-racc
 

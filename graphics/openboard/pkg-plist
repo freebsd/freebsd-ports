@@ -1,0 +1,2370 @@
+bin/openboard
+%%ETCDIR%%/OpenBoard.config
+%%ETCDIR%%/OpenBoard.css
+%%ETCDIR%%/widgets.md5sum
+share/applications/ch.openboard.OpenBoard.desktop
+share/icons/hicolor/scalable/apps/ch.openboard.OpenBoard.svg
+share/icons/hicolor/scalable/mimetypes/ch.openboard.application-ubz.svg
+share/mime/packages/ch.openboard.openboard-ubz.xml
+%%DATADIR%%/customizations/fonts/AndBasR.ttf
+%%DATADIR%%/customizations/fonts/Bstgreek.ttf
+%%DATADIR%%/customizations/fonts/EcritureA-Italique-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Italique-Orne-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Italique-Orne.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Italique.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Romain-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Romain-Orne-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Romain-Orne.otf
+%%DATADIR%%/customizations/fonts/EcritureA-Romain.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Italique-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Italique-Orne-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Italique-Orne.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Italique.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Romain-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Romain-Orne-Ligne.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Romain-Orne.otf
+%%DATADIR%%/customizations/fonts/EcritureB-Romain.otf
+%%DATADIR%%/customizations/fonts/GETypoLibre.otf
+%%DATADIR%%/customizations/fonts/ec_cour.ttf
+%%DATADIR%%/customizations/fonts/ecl_cour.ttf
+%%DATADIR%%/fonts/COPYRIGHT
+%%DATADIR%%/fonts/d050000l.pfb
+%%DATADIR%%/fonts/n019003l.pfb
+%%DATADIR%%/fonts/n019004l.pfb
+%%DATADIR%%/fonts/n019023l.pfb
+%%DATADIR%%/fonts/n019024l.pfb
+%%DATADIR%%/fonts/n021003l.pfb
+%%DATADIR%%/fonts/n021004l.pfb
+%%DATADIR%%/fonts/n021023l.pfb
+%%DATADIR%%/fonts/n021024l.pfb
+%%DATADIR%%/fonts/n022003l.pfb
+%%DATADIR%%/fonts/n022004l.pfb
+%%DATADIR%%/fonts/n022023l.pfb
+%%DATADIR%%/fonts/n022024l.pfb
+%%DATADIR%%/fonts/s050000l.pfb
+%%DATADIR%%/i18n/OpenBoard_ar.qm
+%%DATADIR%%/i18n/OpenBoard_bg.qm
+%%DATADIR%%/i18n/OpenBoard_ca.qm
+%%DATADIR%%/i18n/OpenBoard_cs.qm
+%%DATADIR%%/i18n/OpenBoard_da.qm
+%%DATADIR%%/i18n/OpenBoard_de.qm
+%%DATADIR%%/i18n/OpenBoard_el.qm
+%%DATADIR%%/i18n/OpenBoard_en.qm
+%%DATADIR%%/i18n/OpenBoard_en_UK.qm
+%%DATADIR%%/i18n/OpenBoard_es.qm
+%%DATADIR%%/i18n/OpenBoard_eu.qm
+%%DATADIR%%/i18n/OpenBoard_fr.qm
+%%DATADIR%%/i18n/OpenBoard_fr_CH.qm
+%%DATADIR%%/i18n/OpenBoard_gl.qm
+%%DATADIR%%/i18n/OpenBoard_hr.qm
+%%DATADIR%%/i18n/OpenBoard_hu.qm
+%%DATADIR%%/i18n/OpenBoard_it.qm
+%%DATADIR%%/i18n/OpenBoard_iw.qm
+%%DATADIR%%/i18n/OpenBoard_ja.qm
+%%DATADIR%%/i18n/OpenBoard_ko.qm
+%%DATADIR%%/i18n/OpenBoard_mg.qm
+%%DATADIR%%/i18n/OpenBoard_nb.qm
+%%DATADIR%%/i18n/OpenBoard_nl.qm
+%%DATADIR%%/i18n/OpenBoard_pl.qm
+%%DATADIR%%/i18n/OpenBoard_pt.qm
+%%DATADIR%%/i18n/OpenBoard_pt_BR.qm
+%%DATADIR%%/i18n/OpenBoard_ro.qm
+%%DATADIR%%/i18n/OpenBoard_ru.qm
+%%DATADIR%%/i18n/OpenBoard_sk.qm
+%%DATADIR%%/i18n/OpenBoard_sv.qm
+%%DATADIR%%/i18n/OpenBoard_tr.qm
+%%DATADIR%%/i18n/OpenBoard_uk.qm
+%%DATADIR%%/i18n/OpenBoard_zh.qm
+%%DATADIR%%/i18n/OpenBoard_zh_CN.qm
+%%DATADIR%%/i18n/OpenBoard_zh_TW.qm
+%%DATADIR%%/library/applications/AnyEmbed.wgt/config.xml
+%%DATADIR%%/library/applications/AnyEmbed.wgt/css/ubwidget.css
+%%DATADIR%%/library/applications/AnyEmbed.wgt/icon.png
+%%DATADIR%%/library/applications/AnyEmbed.wgt/index.html
+%%DATADIR%%/library/applications/AnyEmbed.wgt/js/jquery-1.3.2.min.js
+%%DATADIR%%/library/applications/AnyEmbed.wgt/js/jquery.disable.text.select.js
+%%DATADIR%%/library/applications/AnyEmbed.wgt/js/languages.js
+%%DATADIR%%/library/applications/AnyEmbed.wgt/js/ubw-main.js
+%%DATADIR%%/library/applications/Calculator.wgt/Gruntfile.js
+%%DATADIR%%/library/applications/Calculator.wgt/config.xml
+%%DATADIR%%/library/applications/Calculator.wgt/css/calculator.css
+%%DATADIR%%/library/applications/Calculator.wgt/dist/calculator.js
+%%DATADIR%%/library/applications/Calculator.wgt/icon.png
+%%DATADIR%%/library/applications/Calculator.wgt/index.html
+%%DATADIR%%/library/applications/Calculator.wgt/js/sankore.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Button.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Calculator.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Calculus/Engine.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Calculus/Expression.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Command.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Editor/Editor.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Editor/Layout.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/KeystrokeLine.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Text.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/UI/EditorInterface.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/UI/MainInterface.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Util/Error.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Util/EventDispatcher.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Util/Hash.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Util/I18N.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Util/i18n/messages.en.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/Util/i18n/messages.fr.js
+%%DATADIR%%/library/applications/Calculator.wgt/js/src/Sankore/klass.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/css/ubwidget.css
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_out/bottom.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_out/left.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_out/right.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_out/top.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_over/button_arrow_bottom.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_over/button_arrow_left.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_over/button_arrow_right.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/arrows_over/button_arrow_top.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/back.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/back_small.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_out-copie.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_out.gif
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_out.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_out_dark.gif
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_out_dark.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_over.gif
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_toggle.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/button_toggle_invert.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/back.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/bottom.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/cbottomleft.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/cbottomright.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/ctopleft.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/ctopright.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/left.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/right.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/buttons_shadow/top.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/pi.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/pi.psd
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/pi_click.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/pi_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/pow.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/pow.psd
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/sq.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/sq.psd
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/sq_click.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/calculator/sq_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/display copy.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/display.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/historyback.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/historytab.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/historytabOver.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/inspector.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche0.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche0_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche0_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche1.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche1_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche1_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche2.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche2_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche2_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche3.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche3_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche3_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche4.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche4_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche4_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche5.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche5_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche5_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche6.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche6_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche6_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche7.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche7_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche7_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche8.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche8_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche8_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche9.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche9_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touche9_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchec.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchec_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchec_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchediv.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchediv_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchediv_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchedot.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchedot_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchedot_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/toucheeq.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/toucheeq_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/toucheeq_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchef.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchef_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchef_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchem.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchem_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchem_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchep.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchep_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchep_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchepd.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchepd_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchepd_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchepg.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchepg_over.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/images/touchepg_over_down.png
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/src/calculate.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/src/jquery.ubwidget.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/src/ubw-main.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/vendor/jquery-1.3.2.min.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/vendor/jquery-ui-1.7.2.custom.min.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/vendor/jquery.disable.text.select.js
+%%DATADIR%%/library/applications/Calculator.wgt/legacy/js/vendor/jquery.easing.1.2.js
+%%DATADIR%%/library/applications/Calculator.wgt/package.json
+%%DATADIR%%/library/applications/Camera.wgt/config.xml
+%%DATADIR%%/library/applications/Camera.wgt/cropper/LICENSE
+%%DATADIR%%/library/applications/Camera.wgt/cropper/cropper.css
+%%DATADIR%%/library/applications/Camera.wgt/cropper/cropper.js
+%%DATADIR%%/library/applications/Camera.wgt/css/style.css
+%%DATADIR%%/library/applications/Camera.wgt/icon.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/glass.png
+%%DATADIR%%/library/applications/Camera.wgt/img/nocamera.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/pause.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/play.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/rotleft.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/rotright.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/select-camera.svg
+%%DATADIR%%/library/applications/Camera.wgt/img/snapshot.svg
+%%DATADIR%%/library/applications/Camera.wgt/index.html
+%%DATADIR%%/library/applications/Camera.wgt/js/camera.js
+%%DATADIR%%/library/applications/Camera.wgt/js/i18n.js
+%%DATADIR%%/library/applications/ColorPicker.wgt/Default.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/config.xml
+%%DATADIR%%/library/applications/ColorPicker.wgt/css/colorpicker.css
+%%DATADIR%%/library/applications/ColorPicker.wgt/css/layout.css
+%%DATADIR%%/library/applications/ColorPicker.wgt/icon.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/blank.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_background.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_hex.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_hsb_b.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_hsb_h.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_hsb_s.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_indic.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_overlay.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_rgb_b.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_rgb_g.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_rgb_r.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_select.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/colorpicker_submit.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_background.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_hex.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_hsb_b.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_hsb_h.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_hsb_s.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_indic.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_rgb_b.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_rgb_g.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_rgb_r.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/custom_submit.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/select.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/select2.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/slider.png
+%%DATADIR%%/library/applications/ColorPicker.wgt/images/tools.jpg
+%%DATADIR%%/library/applications/ColorPicker.wgt/index.html
+%%DATADIR%%/library/applications/ColorPicker.wgt/js/colorpicker.js
+%%DATADIR%%/library/applications/ColorPicker.wgt/js/eye.js
+%%DATADIR%%/library/applications/ColorPicker.wgt/js/jquery-1.8.1.min.js
+%%DATADIR%%/library/applications/ColorPicker.wgt/js/jquery.js
+%%DATADIR%%/library/applications/ColorPicker.wgt/js/layout.js
+%%DATADIR%%/library/applications/ColorPicker.wgt/js/utils.js
+%%DATADIR%%/library/applications/GeoInfo.wgt/GeoInfo.html
+%%DATADIR%%/library/applications/GeoInfo.wgt/config.xml
+%%DATADIR%%/library/applications/GeoInfo.wgt/css/GeoInfo.css
+%%DATADIR%%/library/applications/GeoInfo.wgt/gpl-3.0.txt
+%%DATADIR%%/library/applications/GeoInfo.wgt/icon.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Afrique.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/AmeriqueNord.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/AmeriqueSud.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Asie.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Carte_Monde_1.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Carte_Monde_Afrique.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Carte_Monde_AmeriqueNord.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Carte_Monde_AmeriqueSud.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Carte_Monde_Eurasie.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Carte_Monde_Oceanie.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Eurasie.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Eurasie2.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Europe.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/EuropeOuest.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/EuropeOuestAsie.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Cartes/Oceanie.bmp
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Algeria.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Angola.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Benin.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Botswana.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Burkina_Faso.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Burundi.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Cameroon.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Chad.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Cote_d'Ivoire.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Djibouti.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Egypt.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Equatorial_Guinea.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Eritrea.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Ethiopia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Gabon.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Ghana.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Guinea-Bissau.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Guinea.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Kenya.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Lesotho.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Liberia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Libya.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Madagascar.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Malawi.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Mali.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Mauritania.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Morocco.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Mozambique.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Namibia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Niger.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Nigeria.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Rwanda.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Senegal.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Sierra_Leone.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Somalia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_South_Africa.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Sudan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Swaziland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Tanzania.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_The_Gambia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Togo.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Tunisia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Uganda.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Zambia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_Zimbabwe.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_the_Central_African_Republic.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_the_Democratic_Republic_of_the_Congo.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Afrique/Flag_of_the_Republic_of_the_Congo.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Belize.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Canada.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Costa_Rica.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Cuba.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_El_Salvador.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Greenland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Guatemala.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Haiti.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Honduras.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Jamaica.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Mexico.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Nicaragua.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_Panama.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_the_Bahamas.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_the_Dominican_Republic.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueNord/Flag_of_the_United_States.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Argentina.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Bolivia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Brazil.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Chile.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Colombia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Ecuador.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_France.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Guyana.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Paraguay.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Peru.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Suriname.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Uruguay.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/AmeriqueSud/Flag_of_Venezuela.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Afghanistan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Bahrain.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Bangladesh.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Bhutan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Brunei.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Cambodia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_East_Timor.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_India.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Indonesia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Iran.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Iraq.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Israel.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Japan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Jordan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Kazakhstan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Kuwait.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Kyrgyzstan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Laos.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Lebanon.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Malaysia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Maldives.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Mongolia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Myanmar.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Nepal.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_North_Korea.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Oman.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Pakistan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Qatar.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Russia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Saudi_Arabia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Singapore.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_South_Korea.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Sri_Lanka.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Syria.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Tajikistan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Thailand.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Turkmenistan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Uzbekistan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Vietnam.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_Yemen.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_the_People's_Republic_of_China.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_the_Philippines.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Asie/Flag_of_the_United_Arab_Emirates.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Albania.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Andorra.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Armenia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Austria.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Azerbaijan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Belarus.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Belgium.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Bosnia_and_Herzegovina.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Bulgaria.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Croatia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Cyprus.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Denmark.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Estonia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Finland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_France.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Georgia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Germany.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Greece.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Hungary.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Iceland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Ireland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Italy.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Kazakhstan.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Latvia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Liechtenstein.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Lithuania.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Luxembourg.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Macedonia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Malta.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Moldova.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Monaco.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Montenegro.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Norway.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Poland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Portugal.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Romania.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Russia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_San_Marino.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Serbia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Slovakia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Slovenia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Spain.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Sweden.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Switzerland.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Turkey.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_Ukraine.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_the_Czech_Republic.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_the_Netherlands.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_the_United_Kingdom.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Europe/Flag_of_the_Vatican_City.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_Australia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_France.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_Indonesia.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_New_Zealand.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_Papua_New_Guinea.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_Vanuatu.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/Drapeaux/Oceanie/Flag_of_the_Solomon_Islands.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/cursor.png
+%%DATADIR%%/library/applications/GeoInfo.wgt/images/question.jpg
+%%DATADIR%%/library/applications/GeoInfo.wgt/js/GeoInfo.js
+%%DATADIR%%/library/applications/GeoInfo.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/applications/GeoInfo.wgt/js/languages.js
+%%DATADIR%%/library/applications/GeoInfo.wgt/js/soapclient.js
+%%DATADIR%%/library/applications/GeoInfo.wgt/js/tinyxmldom.js
+%%DATADIR%%/library/applications/GoogleMaps.wgt/config.xml
+%%DATADIR%%/library/applications/GoogleMaps.wgt/icon.png
+%%DATADIR%%/library/applications/GoogleMaps.wgt/index.html
+%%DATADIR%%/library/applications/GraphMe.wgt/Grapheur.html
+%%DATADIR%%/library/applications/GraphMe.wgt/Guide_Utilisateur.html
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/GraphMe.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_AjouterWidget.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_Deplacement.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_Navigateur.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_Options.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_Plus.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_Presentation.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/Guide_Uniboard.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/bottom-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/bottom-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/bottom.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/center.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/top-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/top-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/black/top.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/bottom-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/bottom-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/bottom.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/center.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/top-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/top-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/blue/top.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/cursor.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/bottom-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/bottom-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/bottom.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/center.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/top-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/top-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/darkblue/top.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/gradient.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/gradient1.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/gradient2.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/gradient3.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/gradient4.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/mini_icon.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/move.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/onglet1.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/onglet2.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/tangent.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/bottom-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/bottom-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/bottom.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/center.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/top-left.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/top-right.png
+%%DATADIR%%/library/applications/GraphMe.wgt/Images/white/top.png
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Affichage.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Affichage3D.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/AffichageSVG.svg
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/AffichageUniboard.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/CartesianFunction.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/ColorPicker.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Editeur.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Etudes.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Fonction.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/ImplicitFunction.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Interface.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Languages.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Outils.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/ParametricFunction.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/PolarFunction.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Sauvegardes.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Souris.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Utils.js
+%%DATADIR%%/library/applications/GraphMe.wgt/JavaScript/Widget.js
+%%DATADIR%%/library/applications/GraphMe.wgt/Style/ColorPicker.css
+%%DATADIR%%/library/applications/GraphMe.wgt/Style/Guide_Utilisateur.css
+%%DATADIR%%/library/applications/GraphMe.wgt/Style/Haut.css
+%%DATADIR%%/library/applications/GraphMe.wgt/Style/Menus.css
+%%DATADIR%%/library/applications/GraphMe.wgt/Style/Widget.css
+%%DATADIR%%/library/applications/GraphMe.wgt/config.xml
+%%DATADIR%%/library/applications/GraphMe.wgt/icon.png
+%%DATADIR%%/library/applications/GraphMe.wgt/version.html
+%%DATADIR%%/library/applications/GraphMe.wgt/version.txt
+%%DATADIR%%/library/applications/Horloge.wgt/config.xml
+%%DATADIR%%/library/applications/Horloge.wgt/icon.png
+%%DATADIR%%/library/applications/Horloge.wgt/index.html
+%%DATADIR%%/library/applications/Horloge.wgt/station-clock.js
+%%DATADIR%%/library/applications/Html.wgt/config.xml
+%%DATADIR%%/library/applications/Html.wgt/icon.png
+%%DATADIR%%/library/applications/Html.wgt/images/bts.png
+%%DATADIR%%/library/applications/Html.wgt/images/style.css
+%%DATADIR%%/library/applications/Html.wgt/index.html
+%%DATADIR%%/library/applications/Html.wgt/jquery.pack.js
+%%DATADIR%%/library/applications/Html.wgt/languages.js
+%%DATADIR%%/library/applications/Html.wgt/markitup/jquery.markitup.js
+%%DATADIR%%/library/applications/Html.wgt/markitup/jquery.markitup.pack.js
+%%DATADIR%%/library/applications/Html.wgt/markitup/readme.txt
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/bold.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/clean.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/image.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/italic.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/link.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/picture.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/preview.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/images/stroke.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/set.js
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/default/style.css
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/bold.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/clean.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/h1.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/h2.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/h3.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/h4.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/h5.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/h6.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/image.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/italic.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/link.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/list-bullet.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/list-item.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/list-numeric.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/paragraph.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/picture.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/preview.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/images/stroke.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/readme.txt
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/set.js
+%%DATADIR%%/library/applications/Html.wgt/markitup/sets/html/style.css
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/bg-container-white.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/bg-container.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/bg-footer-white.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/bg-footer.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/bg-header-white.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/bg-header.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/handle.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/menu.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/spacer.gif
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/images/submenu.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/readme.txt
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/macosx/style.css
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-container.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-bbcode.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-dotclear.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-html.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-json.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-markdown.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-textile.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-wiki.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor-xml.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/bg-editor.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/handle.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/menu.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/images/submenu.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/markitup/style.css
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/simple/images/handle.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/simple/images/menu.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/skins/simple/images/submenu.png
+%%DATADIR%%/library/applications/Html.wgt/markitup/templates/preview.css
+%%DATADIR%%/library/applications/Html.wgt/markitup/templates/preview.html
+%%DATADIR%%/library/applications/Latex2svg.wgt/config.xml
+%%DATADIR%%/library/applications/Latex2svg.wgt/css/main.css
+%%DATADIR%%/library/applications/Latex2svg.wgt/icon.png
+%%DATADIR%%/library/applications/Latex2svg.wgt/index.html
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/LICENSE
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex-base.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex-full.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/action.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/all-packages.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/ams.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/amscd.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/autoload.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/bbox.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/boldsymbol.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/braket.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/bussproofs.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/cancel.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/cases.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/centernot.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/color.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/colortbl.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/colorv2.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/configmacros.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/empheq.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/enclose.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/extpfeil.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/gensymb.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/html.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/mathtools.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/mhchem.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/newcommand.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/noerrors.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/noundefined.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/physics.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/require.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/setoptions.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/tagformat.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/textcomp.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/textmacros.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/unicode.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/upgreek.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/input/tex/extensions/verb.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/output/svg.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/output/svg/fonts/tex.js
+%%DATADIR%%/library/applications/Latex2svg.wgt/js/MathJax/tex-svg.js
+%%DATADIR%%/library/applications/Notes.wgt/config.xml
+%%DATADIR%%/library/applications/Notes.wgt/css/jScrollPane.css
+%%DATADIR%%/library/applications/Notes.wgt/css/ubwidget.css
+%%DATADIR%%/library/applications/Notes.wgt/icon.png
+%%DATADIR%%/library/applications/Notes.wgt/images/back.png
+%%DATADIR%%/library/applications/Notes.wgt/images/shadowcenter.png
+%%DATADIR%%/library/applications/Notes.wgt/images/shadowleft.png
+%%DATADIR%%/library/applications/Notes.wgt/images/shadowright.png
+%%DATADIR%%/library/applications/Notes.wgt/images/stick-but-aminus.png
+%%DATADIR%%/library/applications/Notes.wgt/images/stick-but-aplus.png
+%%DATADIR%%/library/applications/Notes.wgt/images/stick-but-maximize.png
+%%DATADIR%%/library/applications/Notes.wgt/images/stick-but-minimize.png
+%%DATADIR%%/library/applications/Notes.wgt/index.html
+%%DATADIR%%/library/applications/Notes.wgt/js/jquery-1.3.2.min.js
+%%DATADIR%%/library/applications/Notes.wgt/js/jquery-ui-1.7.2.custom.min.js
+%%DATADIR%%/library/applications/Notes.wgt/js/jquery.disable.text.select.js
+%%DATADIR%%/library/applications/Notes.wgt/js/jquery.ubwidget.js
+%%DATADIR%%/library/applications/Notes.wgt/js/ubw-main.js
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/OpenLayers.js
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/blank.gif
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/east-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/images.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/layer-switcher-maximize.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/layer-switcher-minimize.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/north-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/south-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/west-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/zoom-minus-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/zoom-plus-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/img/zoom-world-mini.png
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/api/theme/default/style.css
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/config.xml
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/icon.svg
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/index.html
+%%DATADIR%%/library/applications/OpenStreetMap.wgt/js/jquery-1.7.2.min.js
+%%DATADIR%%/library/applications/Papier.wgt/config.xml
+%%DATADIR%%/library/applications/Papier.wgt/icon.png
+%%DATADIR%%/library/applications/Papier.wgt/images/by-nc-sa.eu.svg
+%%DATADIR%%/library/applications/Papier.wgt/images/cc-by-nc-sa-min.svg
+%%DATADIR%%/library/applications/Papier.wgt/jquery/jquery-2.2.4.min.js
+%%DATADIR%%/library/applications/Papier.wgt/jquery/jquery-ui-1.12.1.min.js
+%%DATADIR%%/library/applications/Papier.wgt/jquery/jquery-ui-base.min.css
+%%DATADIR%%/library/applications/Papier.wgt/licence.txt
+%%DATADIR%%/library/applications/Papier.wgt/papier.css
+%%DATADIR%%/library/applications/Papier.wgt/papier.html
+%%DATADIR%%/library/applications/Papier.wgt/papier.js
+%%DATADIR%%/library/applications/Papier.wgt/rev.txt
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/LICENSE
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-ar.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-ca.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-cs.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-de.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-dk.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-es.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-fa.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-fi.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-fr.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-gr.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-he.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-hr.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-id.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-it.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-ja.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-ko.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-lt.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-nl.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-pl.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-pt-br.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-ru.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-sv.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-tr.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-zh-cn.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/i18n/jquery.spectrum-zh-tw.js
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/spectrum.css
+%%DATADIR%%/library/applications/Papier.wgt/spectrum-1.8.1/spectrum.js
+%%DATADIR%%/library/applications/QR-Code.wgt/config.xml
+%%DATADIR%%/library/applications/QR-Code.wgt/design.css
+%%DATADIR%%/library/applications/QR-Code.wgt/icon.png
+%%DATADIR%%/library/applications/QR-Code.wgt/index.html
+%%DATADIR%%/library/applications/QR-Code.wgt/js/jquery-3.2.1.min.js
+%%DATADIR%%/library/applications/QR-Code.wgt/js/jquery.qrcode.js
+%%DATADIR%%/library/applications/QR-Code.wgt/js/jquery.qrcode.min.js
+%%DATADIR%%/library/applications/QR-Code.wgt/js/main.js
+%%DATADIR%%/library/applications/QR-Code.wgt/js/qrcode.js
+%%DATADIR%%/library/applications/QR-Code.wgt/ok.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/beep.wav
+%%DATADIR%%/library/applications/Stopwatch.wgt/config.xml
+%%DATADIR%%/library/applications/Stopwatch.wgt/css/ubwidget.css
+%%DATADIR%%/library/applications/Stopwatch.wgt/finalbeep.wav
+%%DATADIR%%/library/applications/Stopwatch.wgt/icon.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_out/bottom.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_out/left.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_out/right.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_out/top.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_over/bottom.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_over/button_arrow_bottom.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_over/button_arrow_left.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_over/button_arrow_right.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_over/button_arrow_top.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/arrows_over/top.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/back.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_out-copie.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_out.gif
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_out.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_out_dark.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_pause.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_pause_invert.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_pause_invertxov.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_play.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_play_invert.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_play_invertxov.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_reset_invert.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_toggle.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/button_toggle_invert.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/back.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/bottom.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/cbottomleft.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/cbottomright.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/ctopleft.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/ctopright.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/left.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/right.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/buttons_shadow/top.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/images/inspector.png
+%%DATADIR%%/library/applications/Stopwatch.wgt/index.html
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/DD_roundies_0.0.2a.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/calculate.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/jquery-1.3.2.min.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/jquery-ui-1.7.2.custom.min.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/jquery.center.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/jquery.disable.text.select.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/jquery.easing.1.2.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/jquery.ubwidget.js
+%%DATADIR%%/library/applications/Stopwatch.wgt/js/ubw-main.js
+%%DATADIR%%/library/applications/VideoPicker.wgt/config.xml
+%%DATADIR%%/library/applications/VideoPicker.wgt/css/howto.css
+%%DATADIR%%/library/applications/VideoPicker.wgt/css/main.css
+%%DATADIR%%/library/applications/VideoPicker.wgt/icon.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/arrow.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/bts.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/btson.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/button.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/button_anim.gif
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/button_over.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/button_show.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/capture_vimeo.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/capture_youtube.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/center.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/howto_back.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/info_ico.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/inputfield_back.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/keys_copy.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/keys_paste.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/left.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/logos_web.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/imgs/right.png
+%%DATADIR%%/library/applications/VideoPicker.wgt/index.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/en/capture_widget.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/en/error.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/en/howto.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/fr/capture_widget.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/fr/error.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/fr/howto.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/ru/capture_widget.jpg
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/ru/error.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/locales/ru/howto.html
+%%DATADIR%%/library/applications/VideoPicker.wgt/scripts/jquery-1.3.2.min.js
+%%DATADIR%%/library/applications/VideoPicker.wgt/scripts/jquery.oembed.js
+%%DATADIR%%/library/applications/VideoPicker.wgt/scripts/languages.js
+%%DATADIR%%/library/applications/Wikipedia.wgt/config.xml
+%%DATADIR%%/library/applications/Wikipedia.wgt/css/master.css
+%%DATADIR%%/library/applications/Wikipedia.wgt/css/superfish.css
+%%DATADIR%%/library/applications/Wikipedia.wgt/icon.png
+%%DATADIR%%/library/applications/Wikipedia.wgt/images/toolbarBody.png
+%%DATADIR%%/library/applications/Wikipedia.wgt/images/toolbarButtonBack.png
+%%DATADIR%%/library/applications/Wikipedia.wgt/images/toolbarButtonForward.png
+%%DATADIR%%/library/applications/Wikipedia.wgt/images/toolbarButtonLanguages.png
+%%DATADIR%%/library/applications/Wikipedia.wgt/images/toolbarButtonSearch.png
+%%DATADIR%%/library/applications/Wikipedia.wgt/images/toolbarLoading.jpg
+%%DATADIR%%/library/applications/Wikipedia.wgt/index.html
+%%DATADIR%%/library/applications/Wikipedia.wgt/script/jquery.min.js
+%%DATADIR%%/library/applications/Wikipedia.wgt/script/languages.js
+%%DATADIR%%/library/applications/Wikipedia.wgt/script/superfish.js
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/config.xml
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/css/master.css
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/css/superfish.css
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/icon.png
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/images/toolbarBody.png
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/images/toolbarButtonBack.png
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/images/toolbarButtonForward.png
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/images/toolbarButtonLanguages.png
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/images/toolbarButtonSearch.png
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/images/toolbarLoading.jpg
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/index.html
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/script/jquery.min.js
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/script/languages.js
+%%DATADIR%%/library/applications/Wiktionnairy.wgt/script/superfish.js
+%%DATADIR%%/library/applications/iCell.wgt/config.xml
+%%DATADIR%%/library/applications/iCell.wgt/icon.png
+%%DATADIR%%/library/applications/iCell.wgt/icon_old.png
+%%DATADIR%%/library/applications/iCell.wgt/images/ADN.gif
+%%DATADIR%%/library/applications/iCell.wgt/images/ADN.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/ADN_zoom.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/ARN_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/ARN_zoom.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/Golgi_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/Lys_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/Mitoch_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/Noy_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/REL_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/RER_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/Vesic_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/centriole_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/centriole_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/fond_ADN.png
+%%DATADIR%%/library/applications/iCell.wgt/images/golgi_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/index.png
+%%DATADIR%%/library/applications/iCell.wgt/images/lys_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/mitoch_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/noy_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/nucl_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/nucl_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/rel_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/rer_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/rib_aura.png
+%%DATADIR%%/library/applications/iCell.wgt/images/rib_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/images/vesic_in.jpg
+%%DATADIR%%/library/applications/iCell.wgt/js/script.js
+%%DATADIR%%/library/applications/iCell.wgt/js/textes_descriptifs.js
+%%DATADIR%%/library/applications/iCell.wgt/js/textes_descriptifs.js0
+%%DATADIR%%/library/applications/iCell.wgt/readme.txt
+%%DATADIR%%/library/applications/iCell.wgt/style/style.css
+%%DATADIR%%/library/applications/iCell.wgt/widget.html
+%%DATADIR%%/library/audios/Sonata para piano.mp3
+%%DATADIR%%/library/interactivities/Ass audio.wgt/config.xml
+%%DATADIR%%/library/interactivities/Ass audio.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Ass audio.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/add_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/ar_down.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/ar_down_white.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/false.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/green_point.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/play.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/red_point.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/replay.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/stop.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/img/true.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/index.html
+%%DATADIR%%/library/interactivities/Ass audio.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/en/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/fr/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/ru/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/sk/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Ass audio.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Ass audio.wgt/objects/0.gif
+%%DATADIR%%/library/interactivities/Ass audio.wgt/objects/1.gif
+%%DATADIR%%/library/interactivities/Ass audio.wgt/objects/2.gif
+%%DATADIR%%/library/interactivities/Ass audio.wgt/objects/3.gif
+%%DATADIR%%/library/interactivities/Ass audio.wgt/objects/4.gif
+%%DATADIR%%/library/interactivities/Ass audio.wgt/objects/beep.wav
+%%DATADIR%%/library/interactivities/Ass images.wgt/config.xml
+%%DATADIR%%/library/interactivities/Ass images.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Ass images.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/add_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/ar_down.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/ar_down_white.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/clear_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/false.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/green_point.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/numb_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/red_point.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/img/true.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/index.html
+%%DATADIR%%/library/interactivities/Ass images.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/en/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/fr/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/ru/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/sk/img/drop_img.png
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Ass images.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Ass images.wgt/objects/0.gif
+%%DATADIR%%/library/interactivities/Ass images.wgt/objects/1.gif
+%%DATADIR%%/library/interactivities/Ass images.wgt/objects/2.gif
+%%DATADIR%%/library/interactivities/Ass images.wgt/objects/3.gif
+%%DATADIR%%/library/interactivities/Ass images.wgt/objects/4.gif
+%%DATADIR%%/library/interactivities/Calculation.wgt/config.xml
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/submit.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Calculation.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Calculation.wgt/help.html
+%%DATADIR%%/library/interactivities/Calculation.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Calculation.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Calculation.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Calculation.wgt/icon.png
+%%DATADIR%%/library/interactivities/Calculation.wgt/index.html
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Calculation.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/config.xml
+%%DATADIR%%/library/interactivities/Cat pict.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Cat pict.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/green_point.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/minus.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/plus.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/red_point.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/index.html
+%%DATADIR%%/library/interactivities/Cat pict.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/fr/img/drop_img.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/ru/img/drop_img.png
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Cat pict.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Cat pict.wgt/objects/0.gif
+%%DATADIR%%/library/interactivities/Cat pict.wgt/objects/1.gif
+%%DATADIR%%/library/interactivities/Cat pict.wgt/objects/2.gif
+%%DATADIR%%/library/interactivities/Cat pict.wgt/objects/3.gif
+%%DATADIR%%/library/interactivities/Cat pict.wgt/objects/4.gif
+%%DATADIR%%/library/interactivities/Cat text.wgt/config.xml
+%%DATADIR%%/library/interactivities/Cat text.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Cat text.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/img_plus.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/minus.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/plus.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Cat text.wgt/index.html
+%%DATADIR%%/library/interactivities/Cat text.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Cat text.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Cat text.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Cat text.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Choose.wgt/config.xml
+%%DATADIR%%/library/interactivities/Choose.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Choose.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Choose.wgt/images/1thOption.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/2thOption.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/3thOption.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/addSomething.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/bg.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/bigBlackClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/blueClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/boldBlackClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/boldClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/boldGreyClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/bottom.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/bottomLeftThing.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/bottom_left.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/bottom_right.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/complete.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/grayClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/greySquare.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/greySquareArrow.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/horSep.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/left.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/leftThing.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/lessBottomBorder.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/lessTopBorder.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/lowerBack.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/lowerBorder.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/lowerBorder2.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/niceBack.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/niceBack2.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/niceBack3.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-bottom.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-left.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-right.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-top-left.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-top-right.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pad-top.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/pencil.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/point.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/redBoldClose.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/reload.jpg
+%%DATADIR%%/library/interactivities/Choose.wgt/images/reload2.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/right.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/rightThing.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/separator.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/separator2.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/settings.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/sidePoints.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/spanner.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/star.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/stop.jpg
+%%DATADIR%%/library/interactivities/Choose.wgt/images/tool.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/top.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/topLeftThing.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/top_left.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/top_right.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/transparentBack.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/upperBorder.png
+%%DATADIR%%/library/interactivities/Choose.wgt/images/upperBorder2.png
+%%DATADIR%%/library/interactivities/Choose.wgt/index.html
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/en/scripts/selQuestionApp.js
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/fr/scripts/selQuestionApp.js
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/ru/scripts/selQuestionApp.js
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Choose.wgt/locales/sk/scripts/selQuestionApp.js
+%%DATADIR%%/library/interactivities/Choose.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Choose.wgt/scripts/selQuestionApp.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/config.xml
+%%DATADIR%%/library/interactivities/Constrast.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Constrast.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/bg.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/bottom.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/bottom_left.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/bottom_right.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/greySquare.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/greySquare2.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/icon-close.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/left.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-bottom.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-left.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-right.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-top-left.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-top-right.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/pad-top.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/plus.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/popupBack.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/right.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/top.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/top_left.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/top_right.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/trgDown.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/images/trgRight.png
+%%DATADIR%%/library/interactivities/Constrast.wgt/index.html
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/en/scripts/blackYellow.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/fr/scripts/blackYellow.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/ru/scripts/blackYellow.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Constrast.wgt/locales/sk/scripts/blackYellow.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/scripts/blackYellow.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Constrast.wgt/scripts/jquery.disable.text.select.js
+%%DATADIR%%/library/interactivities/Dial.wgt/config.xml
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Dial.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Dial.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Dial.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Dial.wgt/help.html
+%%DATADIR%%/library/interactivities/Dial.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Dial.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Dial.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Dial.wgt/icon.png
+%%DATADIR%%/library/interactivities/Dial.wgt/index.html
+%%DATADIR%%/library/interactivities/Dial.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/lib/jquery-css-transform.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Dial.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Dice.wgt/config.xml
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/arrow-up.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Dice.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Dice.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Dice.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Dice.wgt/help.html
+%%DATADIR%%/library/interactivities/Dice.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Dice.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Dice.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Dice.wgt/icon.png
+%%DATADIR%%/library/interactivities/Dice.wgt/index.html
+%%DATADIR%%/library/interactivities/Dice.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/jquery-css-transform.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/jquery-ui-1.8.17.custom.min.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Dice.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/config.xml
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/arrow-down.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/box-bg.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/images/trombonne.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Envelope.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Envelope.wgt/help.html
+%%DATADIR%%/library/interactivities/Envelope.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Envelope.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Envelope.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Envelope.wgt/icon.png
+%%DATADIR%%/library/interactivities/Envelope.wgt/index.html
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/lib/jquery-ui-1.8.17.custom.min.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Envelope.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/config.xml
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/box-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/card-closed-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/drop-label-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/drop-label-ondrop-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/pile-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/pile-with-card-bg.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Magic Box.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Magic Box.wgt/help.html
+%%DATADIR%%/library/interactivities/Magic Box.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Magic Box.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Magic Box.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Magic Box.wgt/icon.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/images/boeuf.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/images/coq.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/images/poule.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/images/vache.png
+%%DATADIR%%/library/interactivities/Magic Box.wgt/index.html
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Magic Box.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Memory.wgt/config.xml
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/drop-label-bg.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/drop-label-ondrop-bg.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/flip.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/mark.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/pile-bg.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/result-bg.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Memory.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Memory.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Memory.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Memory.wgt/help.html
+%%DATADIR%%/library/interactivities/Memory.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Memory.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Memory.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Memory.wgt/icon.png
+%%DATADIR%%/library/interactivities/Memory.wgt/index.html
+%%DATADIR%%/library/interactivities/Memory.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Memory.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/config.xml
+%%DATADIR%%/library/interactivities/Order Letters.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Order Letters.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/ar_down.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/ar_down_white.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/play.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/replay.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/stop.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Order Letters.wgt/index.html
+%%DATADIR%%/library/interactivities/Order Letters.wgt/js/jquery-1.8.0.min.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/js/jquery-ui-1.8.23.custom.min.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/fr/objects/exemple.mp3
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/ru/objects/example.mp3
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Order Letters.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Order Letters.wgt/objects/beep.mp3
+%%DATADIR%%/library/interactivities/Order Letters.wgt/objects/beep.wav
+%%DATADIR%%/library/interactivities/Order Letters.wgt/objects/example_en.mp3
+%%DATADIR%%/library/interactivities/Order Letters.wgt/objects/example_fr.mp3
+%%DATADIR%%/library/interactivities/Order Letters.wgt/objects/example_ru.mp3
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/config.xml
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/add_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/clear_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/drop_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/fill_hor.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/fill_vert.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/numb_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/index.html
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/en/img/drop_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/fr/img/drop_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/ru/img/drop_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/sk/img/drop_img.png
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/objects/0.gif
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/objects/1.gif
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/objects/2.gif
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/objects/3.gif
+%%DATADIR%%/library/interactivities/Order Pictures.wgt/objects/4.gif
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/config.xml
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/index.html
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/en/script/template2.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/fr/script/template2.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/ru/script/template2.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/locales/sk/script/template2.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/scripts/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/scripts/template2.js
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/styles/master.css
+%%DATADIR%%/library/interactivities/Order Sentence.wgt/styles/of_puppets.css
+%%DATADIR%%/library/interactivities/Order Words.wgt/config.xml
+%%DATADIR%%/library/interactivities/Order Words.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Order Words.wgt/index.html
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/en/scripts/template2.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/fr/scripts/template2.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/ru/scripts/template2.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Order Words.wgt/locales/sk/scripts/template2.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/scripts/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/scripts/template2.js
+%%DATADIR%%/library/interactivities/Order Words.wgt/styles/master.css
+%%DATADIR%%/library/interactivities/Order Words.wgt/styles/of_puppets.css
+%%DATADIR%%/library/interactivities/Scale.wgt/config.xml
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/balance.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/delete.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/graduations.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/pivot.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/scale.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/scales.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/weight-add.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/images/weight.png
+%%DATADIR%%/library/interactivities/Scale.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Scale.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Scale.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Scale.wgt/help.html
+%%DATADIR%%/library/interactivities/Scale.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Scale.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Scale.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Scale.wgt/icon.png
+%%DATADIR%%/library/interactivities/Scale.wgt/index.html
+%%DATADIR%%/library/interactivities/Scale.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/jquery-css-transform.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/jquery-ui-1.8.17.custom.min.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Scale.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Select.wgt/config.xml
+%%DATADIR%%/library/interactivities/Select.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Select.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Select.wgt/img/add_block.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/add_text.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/circle.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/close_cont.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/play.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/replay.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/stop.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Select.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Select.wgt/index.html
+%%DATADIR%%/library/interactivities/Select.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Select.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Select.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Select.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Select.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Select.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Select.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Select.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Select.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Select.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Select.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Slider.wgt/config.xml
+%%DATADIR%%/library/interactivities/Slider.wgt/css/basic.css
+%%DATADIR%%/library/interactivities/Slider.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Slider.wgt/img/add_left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/add_right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/add_text.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/close_img.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/close_slide.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/moving.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/play.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/replay.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/resize.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/size_down.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/size_up.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/stop.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/turn_left.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/turn_left2.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/turn_right.png
+%%DATADIR%%/library/interactivities/Slider.wgt/img/turn_right11.png
+%%DATADIR%%/library/interactivities/Slider.wgt/index.html
+%%DATADIR%%/library/interactivities/Slider.wgt/js/easySlider1.5.js
+%%DATADIR%%/library/interactivities/Slider.wgt/js/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Slider.wgt/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Slider.wgt/js/script.js
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/en/js/script.js
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/fr/js/script.js
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/ru/js/script.js
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Slider.wgt/locales/sk/js/script.js
+%%DATADIR%%/library/interactivities/Slider.wgt/objects/1.gif
+%%DATADIR%%/library/interactivities/Slider.wgt/objects/bateaux.mp3
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/config.xml
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/index.html
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/en/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/fr/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/ru/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/locales/sk/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/scripts/app.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/scripts/ext.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/styles/app.css
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/styles/master.css
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/styles/separator-activated.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/styles/separator-hover.png
+%%DATADIR%%/library/interactivities/Split Sentence.wgt/styles/wcontainer.css
+%%DATADIR%%/library/interactivities/Split Text.wgt/config.xml
+%%DATADIR%%/library/interactivities/Split Text.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/index.html
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/en/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/fr/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/ru/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Split Text.wgt/locales/sk/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/scripts/app2.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/scripts/ext.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Split Text.wgt/styles/app.css
+%%DATADIR%%/library/interactivities/Split Text.wgt/styles/master.css
+%%DATADIR%%/library/interactivities/Split Text.wgt/styles/separator-activated.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/styles/separator-hover.png
+%%DATADIR%%/library/interactivities/Split Text.wgt/styles/wcontainer.css
+%%DATADIR%%/library/interactivities/Syllables.wgt/config.xml
+%%DATADIR%%/library/interactivities/Syllables.wgt/icon.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/icon.svg
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/bg.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/bottom.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/bottom_left.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/bottom_right.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/left.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-bottom-left.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-bottom-right.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-bottom.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-left.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-right.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-top-left.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-top-right.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/pad-top.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/parameters-bg.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/right.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/toolbar-help.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/top.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/top_left.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/img/top_right.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/index.html
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/en/index.html
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/en/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/fr/index.html
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/fr/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/ru/index.html
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/ru/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/sk/index.html
+%%DATADIR%%/library/interactivities/Syllables.wgt/locales/sk/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/scripts/ext.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/scripts/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/scripts/spl-word.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/scripts/wcontainer.js
+%%DATADIR%%/library/interactivities/Syllables.wgt/styles/master.css
+%%DATADIR%%/library/interactivities/Syllables.wgt/styles/separator-activated.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/styles/separator-hover.png
+%%DATADIR%%/library/interactivities/Syllables.wgt/styles/spl-word.css
+%%DATADIR%%/library/interactivities/Syllables.wgt/styles/wcontainer.css
+%%DATADIR%%/library/interactivities/Tables.wgt/config.xml
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/rature.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/sens-lecture.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/table-bg.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Tables.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Tables.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Tables.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Tables.wgt/help.html
+%%DATADIR%%/library/interactivities/Tables.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Tables.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Tables.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Tables.wgt/icon.png
+%%DATADIR%%/library/interactivities/Tables.wgt/index.html
+%%DATADIR%%/library/interactivities/Tables.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Tables.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/config.xml
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/player1.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/player2.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/result-bg.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/submit.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/help.html
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/icon.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/images/failed.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/images/succeed.png
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/index.html
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Tic Tac Toe.wgt/js/templates.js
+%%DATADIR%%/library/interactivities/Train.wgt/config.xml
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/bg.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/pad-bd.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/parameters-bg.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/slate-bd.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/slate-toolbar-edit.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/slate-toolbar-help.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/slate-toolbar-reload.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/toolbar-edit.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/toolbar-help.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/images/toolbar-reload.png
+%%DATADIR%%/library/interactivities/Train.wgt/css/main.css
+%%DATADIR%%/library/interactivities/Train.wgt/css/ubw-help.css
+%%DATADIR%%/library/interactivities/Train.wgt/css/ubw-main.css
+%%DATADIR%%/library/interactivities/Train.wgt/help.html
+%%DATADIR%%/library/interactivities/Train.wgt/i18n/Messages.properties
+%%DATADIR%%/library/interactivities/Train.wgt/i18n/Messages_fr.properties
+%%DATADIR%%/library/interactivities/Train.wgt/i18n/Messages_sk.properties
+%%DATADIR%%/library/interactivities/Train.wgt/icon.png
+%%DATADIR%%/library/interactivities/Train.wgt/index.html
+%%DATADIR%%/library/interactivities/Train.wgt/js/help-template.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/help_fr-template.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/help_sk-template.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/lib/jquery-1.7.1.min.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/lib/jquery-ui-1.8.17.custom.min.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/lib/jquery.i18n.properties-min-1.0.9.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/lib/modernizr.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/lib/mustache.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/lib/ubw-main.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/main.js
+%%DATADIR%%/library/interactivities/Train.wgt/js/templates.js
+%%DATADIR%%/library/pictures/Worldmap_wdb_splitted.svg
+%%DATADIR%%/library/search/Data AbulEdu.wgs/config.xml
+%%DATADIR%%/library/search/Data AbulEdu.wgs/css/basic.css
+%%DATADIR%%/library/search/Data AbulEdu.wgs/icon.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/icon.thumbnail.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/down.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/greySquare.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/icon-close.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/popupBack.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/search.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/search_app.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/trgDown.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/trgUp.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/images/up.png
+%%DATADIR%%/library/search/Data AbulEdu.wgs/index.html
+%%DATADIR%%/library/search/Data AbulEdu.wgs/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/search/Pixabay.wgs/config.xml
+%%DATADIR%%/library/search/Pixabay.wgs/css/basic.css
+%%DATADIR%%/library/search/Pixabay.wgs/icon.png
+%%DATADIR%%/library/search/Pixabay.wgs/icon.thumbnail.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/down.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/greySquare.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/icon-close.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/popupBack.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/search.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/search_app.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/trgDown.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/trgUp.png
+%%DATADIR%%/library/search/Pixabay.wgs/images/up.png
+%%DATADIR%%/library/search/Pixabay.wgs/index.html
+%%DATADIR%%/library/search/Pixabay.wgs/locales/locales.js
+%%DATADIR%%/library/search/Pixabay.wgs/logo.png
+%%DATADIR%%/library/search/Pixabay.wgs/logo_square.png
+%%DATADIR%%/library/search/Pixabay.wgs/scripts/jquery-1.6.2.min.js
+%%DATADIR%%/library/search/Pixabay.wgs/select/jquery.selectBox-arrow.gif
+%%DATADIR%%/library/search/Pixabay.wgs/select/jquery.selectBox.css
+%%DATADIR%%/library/search/Pixabay.wgs/select/jquery.selectBox.js
+%%DATADIR%%/library/search/Pixabay.wgs/select/jquery.selectBox.min.js
+%%DATADIR%%/library/shape/blue_arrow_down.svg
+%%DATADIR%%/library/shape/blue_arrow_left.svg
+%%DATADIR%%/library/shape/blue_arrow_right.svg
+%%DATADIR%%/library/shape/blue_arrow_up.svg
+%%DATADIR%%/library/shape/blue_bubble_speak.svg
+%%DATADIR%%/library/shape/blue_bubble_speak_left.svg
+%%DATADIR%%/library/shape/blue_bubble_think.svg
+%%DATADIR%%/library/shape/blue_cylinder.svg
+%%DATADIR%%/library/shape/blue_disk.svg
+%%DATADIR%%/library/shape/blue_exagon.svg
+%%DATADIR%%/library/shape/blue_octogon.svg
+%%DATADIR%%/library/shape/blue_pentagon.svg
+%%DATADIR%%/library/shape/blue_rectangle.svg
+%%DATADIR%%/library/shape/blue_rectangle_rnd.svg
+%%DATADIR%%/library/shape/blue_rhombus.svg
+%%DATADIR%%/library/shape/blue_square.svg
+%%DATADIR%%/library/shape/blue_square_rnd.svg
+%%DATADIR%%/library/shape/blue_star.svg
+%%DATADIR%%/library/shape/blue_star_rnd.svg
+%%DATADIR%%/library/shape/blue_trapeze.svg
+%%DATADIR%%/library/shape/blue_triangle.svg
+%%DATADIR%%/library/shape/blue_triangle_rect.svg
+%%DATADIR%%/library/shape/blue_triangle_rnd.svg
+%%DATADIR%%/library/shape/grey_arrow_down.svg
+%%DATADIR%%/library/shape/grey_arrow_left.svg
+%%DATADIR%%/library/shape/grey_arrow_right.svg
+%%DATADIR%%/library/shape/grey_arrow_up.svg
+%%DATADIR%%/library/shape/grey_bubble_speak.svg
+%%DATADIR%%/library/shape/grey_bubble_speak_left.svg
+%%DATADIR%%/library/shape/grey_bubble_think.svg
+%%DATADIR%%/library/shape/grey_cylinder.svg
+%%DATADIR%%/library/shape/grey_disk.svg
+%%DATADIR%%/library/shape/grey_exagon.svg
+%%DATADIR%%/library/shape/grey_octogon.svg
+%%DATADIR%%/library/shape/grey_pentagon.svg
+%%DATADIR%%/library/shape/grey_rectangle.svg
+%%DATADIR%%/library/shape/grey_rectangle_rnd.svg
+%%DATADIR%%/library/shape/grey_rhombus.svg
+%%DATADIR%%/library/shape/grey_square.svg
+%%DATADIR%%/library/shape/grey_square_rnd.svg
+%%DATADIR%%/library/shape/grey_star.svg
+%%DATADIR%%/library/shape/grey_star_rnd.svg
+%%DATADIR%%/library/shape/grey_trapeze.svg
+%%DATADIR%%/library/shape/grey_triangle.svg
+%%DATADIR%%/library/shape/grey_triangle_rect.svg
+%%DATADIR%%/library/shape/grey_triangle_rnd.svg
+%%DATADIR%%/library/shape/nofill_arrow_down.svg
+%%DATADIR%%/library/shape/nofill_arrow_left.svg
+%%DATADIR%%/library/shape/nofill_arrow_right.svg
+%%DATADIR%%/library/shape/nofill_arrow_up.svg
+%%DATADIR%%/library/shape/nofill_bubble_speak.svg
+%%DATADIR%%/library/shape/nofill_bubble_speak_left.svg
+%%DATADIR%%/library/shape/nofill_bubble_think.svg
+%%DATADIR%%/library/shape/nofill_cylinder.svg
+%%DATADIR%%/library/shape/nofill_disk.svg
+%%DATADIR%%/library/shape/nofill_exagon.svg
+%%DATADIR%%/library/shape/nofill_octogon.svg
+%%DATADIR%%/library/shape/nofill_pentagon.svg
+%%DATADIR%%/library/shape/nofill_rectangle.svg
+%%DATADIR%%/library/shape/nofill_rectangle_rnd.svg
+%%DATADIR%%/library/shape/nofill_rhombus.svg
+%%DATADIR%%/library/shape/nofill_square.svg
+%%DATADIR%%/library/shape/nofill_square_rnd.svg
+%%DATADIR%%/library/shape/nofill_star.svg
+%%DATADIR%%/library/shape/nofill_star_rnd.svg
+%%DATADIR%%/library/shape/nofill_trapeze.svg
+%%DATADIR%%/library/shape/nofill_triangle.svg
+%%DATADIR%%/library/shape/nofill_triangle_rect.svg
+%%DATADIR%%/library/shape/nofill_triangle_rnd.svg
+%%DATADIR%%/library/shape/red_arrow_down.svg
+%%DATADIR%%/library/shape/red_arrow_left.svg
+%%DATADIR%%/library/shape/red_arrow_right.svg
+%%DATADIR%%/library/shape/red_arrow_up.svg
+%%DATADIR%%/library/shape/red_bubble_speak.svg
+%%DATADIR%%/library/shape/red_bubble_speak_left.svg
+%%DATADIR%%/library/shape/red_bubble_think.svg
+%%DATADIR%%/library/shape/red_cylinder.svg
+%%DATADIR%%/library/shape/red_disk.svg
+%%DATADIR%%/library/shape/red_exagon.svg
+%%DATADIR%%/library/shape/red_octogon.svg
+%%DATADIR%%/library/shape/red_pentagon.svg
+%%DATADIR%%/library/shape/red_rectangle.svg
+%%DATADIR%%/library/shape/red_rectangle_rnd.svg
+%%DATADIR%%/library/shape/red_rhombus.svg
+%%DATADIR%%/library/shape/red_square.svg
+%%DATADIR%%/library/shape/red_square_rnd.svg
+%%DATADIR%%/library/shape/red_star.svg
+%%DATADIR%%/library/shape/red_star_rnd.svg
+%%DATADIR%%/library/shape/red_trapeze.svg
+%%DATADIR%%/library/shape/red_triangle.svg
+%%DATADIR%%/library/shape/red_triangle_rect.svg
+%%DATADIR%%/library/shape/red_triangle_rnd.svg
+%%DATADIR%%/library/shape/white_arrow_down.svg
+%%DATADIR%%/library/shape/white_arrow_left.svg
+%%DATADIR%%/library/shape/white_arrow_right.svg
+%%DATADIR%%/library/shape/white_arrow_up.svg
+%%DATADIR%%/library/shape/white_bubble_speak.svg
+%%DATADIR%%/library/shape/white_bubble_speak_left.svg
+%%DATADIR%%/library/shape/white_bubble_think.svg
+%%DATADIR%%/library/shape/white_cylinder.svg
+%%DATADIR%%/library/shape/white_disk.svg
+%%DATADIR%%/library/shape/white_exagon.svg
+%%DATADIR%%/library/shape/white_octogon.svg
+%%DATADIR%%/library/shape/white_pentagon.svg
+%%DATADIR%%/library/shape/white_rectangle.svg
+%%DATADIR%%/library/shape/white_rectangle_rnd.svg
+%%DATADIR%%/library/shape/white_rhombus.svg
+%%DATADIR%%/library/shape/white_square.svg
+%%DATADIR%%/library/shape/white_square_rnd.svg
+%%DATADIR%%/library/shape/white_star.svg
+%%DATADIR%%/library/shape/white_star_rnd.svg
+%%DATADIR%%/library/shape/white_trapeze.svg
+%%DATADIR%%/library/shape/white_triangle.svg
+%%DATADIR%%/library/shape/white_triangle_rect.svg
+%%DATADIR%%/library/shape/white_triangle_rnd.svg
+%%DATADIR%%/library/videos/wannaworktogether.mp4
+%%DATADIR%%/startupHints/assets/common/ApplicationsCategory.png
+%%DATADIR%%/startupHints/assets/common/FavoritesCategory.png
+%%DATADIR%%/startupHints/assets/common/InteractivesCategory.png
+%%DATADIR%%/startupHints/assets/common/PicturesCategory.png
+%%DATADIR%%/startupHints/assets/common/WebSearchCategory.png
+%%DATADIR%%/startupHints/assets/common/addToFavorites.png
+%%DATADIR%%/startupHints/assets/common/arrow.png
+%%DATADIR%%/startupHints/assets/common/background.png
+%%DATADIR%%/startupHints/assets/common/captureAreaBoard.png
+%%DATADIR%%/startupHints/assets/common/captureAreaDesktop.png
+%%DATADIR%%/startupHints/assets/common/captureScreen.png
+%%DATADIR%%/startupHints/assets/common/captureWindow.png
+%%DATADIR%%/startupHints/assets/common/clearPage.png
+%%DATADIR%%/startupHints/assets/common/display.png
+%%DATADIR%%/startupHints/assets/common/documents.png
+%%DATADIR%%/startupHints/assets/common/eraser.png
+%%DATADIR%%/startupHints/assets/common/eraserArrow.svg
+%%DATADIR%%/startupHints/assets/common/export.png
+%%DATADIR%%/startupHints/assets/common/hand.png
+%%DATADIR%%/startupHints/assets/common/handPlay.png
+%%DATADIR%%/startupHints/assets/common/import.png
+%%DATADIR%%/startupHints/assets/common/laser.png
+%%DATADIR%%/startupHints/assets/common/line.png
+%%DATADIR%%/startupHints/assets/common/marker.png
+%%DATADIR%%/startupHints/assets/common/markerArrow.svg
+%%DATADIR%%/startupHints/assets/common/miniNewFolder.png
+%%DATADIR%%/startupHints/assets/common/newDocument.png
+%%DATADIR%%/startupHints/assets/common/newFolder.png
+%%DATADIR%%/startupHints/assets/common/openboard-document.png
+%%DATADIR%%/startupHints/assets/common/pen.png
+%%DATADIR%%/startupHints/assets/common/penArrow.svg
+%%DATADIR%%/startupHints/assets/common/settings.png
+%%DATADIR%%/startupHints/assets/common/text.png
+%%DATADIR%%/startupHints/assets/common/tip.png
+%%DATADIR%%/startupHints/assets/common/web.png
+%%DATADIR%%/startupHints/assets/common/zoomIn.png
+%%DATADIR%%/startupHints/assets/common/zoomOut.png
+%%DATADIR%%/startupHints/assets/hint1/menu.png
+%%DATADIR%%/startupHints/assets/hint1/openboard-logo.png
+%%DATADIR%%/startupHints/assets/hint1/openboard-logo.png.bck
+%%DATADIR%%/startupHints/assets/hint10/application-gif1.gif
+%%DATADIR%%/startupHints/assets/hint11/podcast-gif1.gif
+%%DATADIR%%/startupHints/assets/hint11/podcast-gif2.gif
+%%DATADIR%%/startupHints/assets/hint11/podcast2.png
+%%DATADIR%%/startupHints/assets/hint12/favorites.png
+%%DATADIR%%/startupHints/assets/hint12/favorites2.png
+%%DATADIR%%/startupHints/assets/hint12/favorites3.png
+%%DATADIR%%/startupHints/assets/hint2/arrow.png
+%%DATADIR%%/startupHints/assets/hint2/bo-gif1.gif
+%%DATADIR%%/startupHints/assets/hint2/bo1.png
+%%DATADIR%%/startupHints/assets/hint2/bo9.png
+%%DATADIR%%/startupHints/assets/hint3/bureau-gif1.gif
+%%DATADIR%%/startupHints/assets/hint3/bureau-gif2.gif
+%%DATADIR%%/startupHints/assets/hint3/bureau1.png
+%%DATADIR%%/startupHints/assets/hint3/bureau1.png.bck
+%%DATADIR%%/startupHints/assets/hint4/document1.png
+%%DATADIR%%/startupHints/assets/hint4/gif-document1.gif
+%%DATADIR%%/startupHints/assets/hint4/gif-document2.gif
+%%DATADIR%%/startupHints/assets/hint5/gif1.gif
+%%DATADIR%%/startupHints/assets/hint5/gif2.gif
+%%DATADIR%%/startupHints/assets/hint5/img1.png
+%%DATADIR%%/startupHints/assets/hint6/addToolToLibrary.png
+%%DATADIR%%/startupHints/assets/hint6/app-gif1.gif
+%%DATADIR%%/startupHints/assets/hint6/app-gif2.gif
+%%DATADIR%%/startupHints/assets/hint6/app-gif3.gif
+%%DATADIR%%/startupHints/assets/hint6/app1.png
+%%DATADIR%%/startupHints/assets/hint6/app2.png
+%%DATADIR%%/startupHints/assets/hint7/capture-gif2.gif
+%%DATADIR%%/startupHints/assets/hint7/capture1.png
+%%DATADIR%%/startupHints/assets/hint7/capture4.png
+%%DATADIR%%/startupHints/assets/hint7/caputre2.png
+%%DATADIR%%/startupHints/assets/hint7/caputre3.png
+%%DATADIR%%/startupHints/assets/hint7/gif-capture1.gif
+%%DATADIR%%/startupHints/assets/hint8/capture1.png
+%%DATADIR%%/startupHints/assets/hint8/capture2.png
+%%DATADIR%%/startupHints/assets/hint8/image-gif1.gif
+%%DATADIR%%/startupHints/assets/hint8/image-gif2.gif
+%%DATADIR%%/startupHints/assets/hint8/image-gif3.gif
+%%DATADIR%%/startupHints/assets/hint9/cat-pict.png
+%%DATADIR%%/startupHints/assets/hint9/interactivite-gif2.gif
+%%DATADIR%%/startupHints/assets/hint9/interactivite-gif3.gif
+%%DATADIR%%/startupHints/assets/hint9/interactivite1.png
+%%DATADIR%%/startupHints/assets/hint9/interactivite3.png
+%%DATADIR%%/startupHints/config.xml
+%%DATADIR%%/startupHints/css/basic.css
+%%DATADIR%%/startupHints/images/left.png
+%%DATADIR%%/startupHints/images/right.png
+%%DATADIR%%/startupHints/index.html
+%%DATADIR%%/startupHints/js/jquery-1.6.2.min.js
+%%DATADIR%%/startupHints/js/jquery-ui-1.8.9.custom.min.js
+%%DATADIR%%/startupHints/locales/de/1.html
+%%DATADIR%%/startupHints/locales/de/10.html
+%%DATADIR%%/startupHints/locales/de/11.html
+%%DATADIR%%/startupHints/locales/de/12.html
+%%DATADIR%%/startupHints/locales/de/2.html
+%%DATADIR%%/startupHints/locales/de/3.html
+%%DATADIR%%/startupHints/locales/de/4.html
+%%DATADIR%%/startupHints/locales/de/5.html
+%%DATADIR%%/startupHints/locales/de/6.html
+%%DATADIR%%/startupHints/locales/de/7.html
+%%DATADIR%%/startupHints/locales/de/8.html
+%%DATADIR%%/startupHints/locales/de/9.html
+%%DATADIR%%/startupHints/locales/de/css/style.css
+%%DATADIR%%/startupHints/locales/de/error.html
+%%DATADIR%%/startupHints/locales/en/1.html
+%%DATADIR%%/startupHints/locales/en/10.html
+%%DATADIR%%/startupHints/locales/en/11.html
+%%DATADIR%%/startupHints/locales/en/12.html
+%%DATADIR%%/startupHints/locales/en/2.html
+%%DATADIR%%/startupHints/locales/en/3.html
+%%DATADIR%%/startupHints/locales/en/4.html
+%%DATADIR%%/startupHints/locales/en/5.html
+%%DATADIR%%/startupHints/locales/en/6.html
+%%DATADIR%%/startupHints/locales/en/7.html
+%%DATADIR%%/startupHints/locales/en/8.html
+%%DATADIR%%/startupHints/locales/en/9.html
+%%DATADIR%%/startupHints/locales/en/css/style.css
+%%DATADIR%%/startupHints/locales/en/error.html
+%%DATADIR%%/startupHints/locales/fr/1.html
+%%DATADIR%%/startupHints/locales/fr/10.html
+%%DATADIR%%/startupHints/locales/fr/11.html
+%%DATADIR%%/startupHints/locales/fr/12.html
+%%DATADIR%%/startupHints/locales/fr/2.html
+%%DATADIR%%/startupHints/locales/fr/3.html
+%%DATADIR%%/startupHints/locales/fr/4.html
+%%DATADIR%%/startupHints/locales/fr/5.html
+%%DATADIR%%/startupHints/locales/fr/6.html
+%%DATADIR%%/startupHints/locales/fr/7.html
+%%DATADIR%%/startupHints/locales/fr/8.html
+%%DATADIR%%/startupHints/locales/fr/9.html
+%%DATADIR%%/startupHints/locales/fr/css/style.css
+%%DATADIR%%/startupHints/locales/fr/error.html
+%%DATADIR%%/startupHints/locales/hr/1.html
+%%DATADIR%%/startupHints/locales/hr/10.html
+%%DATADIR%%/startupHints/locales/hr/11.html
+%%DATADIR%%/startupHints/locales/hr/12.html
+%%DATADIR%%/startupHints/locales/hr/2.html
+%%DATADIR%%/startupHints/locales/hr/3.html
+%%DATADIR%%/startupHints/locales/hr/4.html
+%%DATADIR%%/startupHints/locales/hr/5.html
+%%DATADIR%%/startupHints/locales/hr/6.html
+%%DATADIR%%/startupHints/locales/hr/7.html
+%%DATADIR%%/startupHints/locales/hr/8.html
+%%DATADIR%%/startupHints/locales/hr/9.html
+%%DATADIR%%/startupHints/locales/hr/css/style.css
+%%DATADIR%%/startupHints/locales/hr/error.html
+%%DATADIR%%/startupHints/locales/it/1.html
+%%DATADIR%%/startupHints/locales/it/10.html
+%%DATADIR%%/startupHints/locales/it/11.html
+%%DATADIR%%/startupHints/locales/it/12.html
+%%DATADIR%%/startupHints/locales/it/2.html
+%%DATADIR%%/startupHints/locales/it/3.html
+%%DATADIR%%/startupHints/locales/it/4.html
+%%DATADIR%%/startupHints/locales/it/5.html
+%%DATADIR%%/startupHints/locales/it/6.html
+%%DATADIR%%/startupHints/locales/it/7.html
+%%DATADIR%%/startupHints/locales/it/8.html
+%%DATADIR%%/startupHints/locales/it/9.html
+%%DATADIR%%/startupHints/locales/it/css/style.css
+%%DATADIR%%/startupHints/locales/it/error.html
+%%DATADIR%%/template/asyncAPI.js
+%%DATADIR%%/template/intranet-podcast-metadata.template
+%%DATADIR%%/template/npapi-wrapper.config.xml

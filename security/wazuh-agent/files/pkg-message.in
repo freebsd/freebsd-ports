@@ -31,7 +31,11 @@ Wazuh Agent was installed
 
    https://github.com/alonsobsd/wazuh-freebsd
 
-6) Add Wazuh agent to /etc/rc.conf
+6) The sysctl 'kern.hostuuid' is used as a serial number. If you are in a jail,
+    you should have at least started the 'hostid' rc script to uniquely identify
+    this device.
+
+7) Add Wazuh agent to /etc/rc.conf
 
   # sysrc wazuh_agent_enable="YES"
 
@@ -39,7 +43,7 @@ Wazuh Agent was installed
 
   # service wazuh-agent enable
 
-7) Start Wazuh agent
+8) Start Wazuh agent
 
   # service wazuh-agent start
 

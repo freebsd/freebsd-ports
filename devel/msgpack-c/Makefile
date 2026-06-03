@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	c-
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-c
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient binary serialization, like JSON but smaller and faster
 WWW=		https://msgpack.org/
 

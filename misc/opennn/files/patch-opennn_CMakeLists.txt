@@ -1,0 +1,18 @@
+--- opennn/CMakeLists.txt.orig	2026-04-08 05:34:55 UTC
++++ opennn/CMakeLists.txt
+@@ -5,7 +5,7 @@ file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "*.h"
+ file(GLOB_RECURSE CPP_SOURCES CONFIGURE_DEPENDS "*.cpp")
+ file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "*.h")
+ 
+-add_library(opennn STATIC ${CPP_SOURCES} ${HEADER_FILES})
++add_library(opennn ${CPP_SOURCES} ${HEADER_FILES})
+ 
+ # Force linker to include all object files so that REGISTER() auto-registration
+ # in anonymous namespaces is not stripped from the final binary.
+@@ -52,4 +52,4 @@ target_compile_options(opennn PRIVATE
+ target_compile_options(opennn PRIVATE
+     $<$<CONFIG:DEBUG>:-O0 -g>
+     $<$<NOT:$<CONFIG:DEBUG>>:-O2>
+-)
+\ No newline at end of file
++)

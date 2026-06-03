@@ -1,6 +1,6 @@
 PORTNAME=	ollama-hpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.7
 CATEGORIES=	devel # machine learning
 
 MAINTAINER=	yuri@FreeBSD.org

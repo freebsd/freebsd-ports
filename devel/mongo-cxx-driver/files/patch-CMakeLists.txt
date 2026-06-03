@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2024-11-20 20:53:26 UTC
++++ CMakeLists.txt
+@@ -206,31 +206,10 @@ if(BUILD_VERSION STREQUAL "0.0.0")
+     else()
+         find_package(PythonInterp)
+ 
+-        if(PYTHONINTERP_FOUND)
+-            execute_process(
+-                COMMAND ${PYTHON_EXECUTABLE} etc/calc_release_version.py
+-                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-                OUTPUT_VARIABLE CALC_RELEASE_VERSION
+-                RESULT_VARIABLE CALC_RELEASE_VERSION_RESULT
+-                OUTPUT_STRIP_TRAILING_WHITESPACE
+-            )
+-
+-            if(NOT CALC_RELEASE_VERSION_RESULT STREQUAL 0)
+-                # If python failed above, stderr would tell the user about it
+-                message(FATAL_ERROR
+-                    "BUILD_VERSION not specified and could not be calculated\
+- (script invocation failed); specify in CMake command, -DBUILD_VERSION=<version>"
+-                )
+-            else()
+-                set(BUILD_VERSION ${CALC_RELEASE_VERSION})
+-                file(WRITE ${CMAKE_BINARY_DIR}/VERSION_CURRENT ${CALC_RELEASE_VERSION})
+-            endif()
+-        else()
+             message(FATAL_ERROR
+                 "BUILD_VERSION not specified and could not be calculated\
+  (Python was not found on the system); specify in CMake command, -DBUILD_VERSION=<version>"
+             )
+-        endif()
+     endif()
+ endif()
+ 

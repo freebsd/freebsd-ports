@@ -1,8 +1,8 @@
 PORTNAME=	libxc
-DISTVERSION=	6.2.2
+DISTVERSION=	7.0.0
 CATEGORIES=	science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of exchange-correlation functionals for DFT
 WWW=		https://gitlab.com/libxc/libxc
 
@@ -15,7 +15,6 @@ USES=		cmake:testing fortran python
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
-GL_TAGNAME=	0a19bedb24d258b2019eb2d027c1b1039d3e6503
 
 CMAKE_ON=	BUILD_SHARED_LIBS ENABLE_FORTRAN ENABLE_PYTHON
 CMAKE_OFF=	BUILD_TESTING DISABLE_KXC ENABLE_XHOST
@@ -24,5 +23,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pylibxc$$|${PYTHONPREFIX_SITELIBDIR}/pylibxc|'	\
 		-e 's|$${CMAKE_INSTALL_PREFIX}/$${CMAKE_INSTALL_LIBDIR}/pylibxc/|${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pylibxc/|'\
 		${WRKSRC}/CMakeLists.txt
+
+# tests as of 7.0.0: 100% tests passed, 0 tests failed out of 20556
 
 .include <bsd.port.mk>

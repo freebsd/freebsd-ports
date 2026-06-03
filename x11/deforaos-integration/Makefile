@@ -1,6 +1,6 @@
 PORTNAME=	integration
 PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Integration/
 PKGNAMEPREFIX=	deforaos-

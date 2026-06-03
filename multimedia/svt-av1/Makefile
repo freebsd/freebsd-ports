@@ -1,6 +1,6 @@
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.2
+DISTVERSION=	4.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,16 +17,14 @@ BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 
 USES=		cmake compiler:c11
-USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
-GH_TUPLE=	1480c1:cpuinfo:e649baa:cpuinfo/third_party/cpuinfo
 GL_ACCOUNT=	AOMediaCodec
 GL_PROJECT=	SVT-AV1
 CMAKE_OFF=	NATIVE
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
-CONFLICTS_INSTALL=	svt-av1-psy # bin/SvtAv1EncApp
+CONFLICTS_INSTALL=	svt-av1-hdr # bin/SvtAv1EncApp
 
 OPTIONS_DEFINE=	LTO
 OPTIONS_DEFAULT=LTO

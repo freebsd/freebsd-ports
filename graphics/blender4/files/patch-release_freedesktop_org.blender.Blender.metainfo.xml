@@ -1,0 +1,10 @@
+--- release/freedesktop/org.blender.Blender.metainfo.xml.orig	2025-12-25 20:48:19 UTC
++++ release/freedesktop/org.blender.Blender.metainfo.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <component type="desktop">
+-    <id>org.blender.Blender</id>
++    <id>org.blender.Blender-%%VERS_TAG%%</id>
+     <launchable type="desktop-id">blender.desktop</launchable>
+     <name>Blender</name>
+     <summary>Free and open source 3D creation suite</summary>

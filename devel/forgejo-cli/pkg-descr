@@ -1,0 +1,11 @@
+forgejo-cli (fj) is a CLI client for Forgejo akin to gh, glab, or tea.
+
+From the command line, you can:
+    - Open, edit, comment on, close issues
+    - Create and merge pull requests, including AGit pull requests
+    - Create, star, watch, and edit repositories
+    - Manage organizations and teams
+    - Publish new releases
+
+fj doesn't try to replace your usage of git, it's meant to work alongside
+it. It handles all the Forgejo-specific things that git doesn't.

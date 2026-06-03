@@ -1,0 +1,8 @@
+qo is an interactive TUI to query structured data (JSON/CSV/TSV) using
+SQL (in particular, SQLite syntax). Results are updated in real-time.
+
+It ultimately works as a standard stdin-in/stdout-out CLI app, so it's
+essentially a normal piped app that (optionally) has interactivity.
+
+If you pass the query as an argument, it'll skip the TUI, but still
+let you query your data with SQL.

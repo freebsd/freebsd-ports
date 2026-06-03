@@ -1,0 +1,13 @@
+-- Exclude segyio.cpp from the wheel.
+-- It is a source file and should not be installed in site-packages.
+
+--- pyproject.toml.orig	2026-05-25 23:12:10 UTC
++++ pyproject.toml
+@@ -87,6 +87,7 @@
+ # everything not OS X. We depend on C++11, which makes our minimum
+ # supported OS X release 10.9
+ cmake.args = [ "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.9" ]
++wheel.exclude = ["segyio/segyio.cpp"]
+ 
+ [tool.cibuildwheel]
+ before-build = [

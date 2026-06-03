@@ -1,5 +1,6 @@
 PORTNAME=	catfish
 PORTVERSION=	4.20.1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -39,8 +40,8 @@ ZEITGEIST_DESC=	Provide recent search suggestions (broken)
 
 POLKIT_RUN_DEPENDS=	pkexec:sysutils/polkit
 
-SUDO_RUN_DEPENDS=	sudo:security/sudo
-
 ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
+
+SUDO_USES=	sudo
 
 .include <bsd.port.mk>

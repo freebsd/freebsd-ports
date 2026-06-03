@@ -4,17 +4,17 @@
 
 See also: https://github.com/pdfminer/pdfminer.six/issues/724
 
---- pyproject.toml.orig	2025-04-05 16:54:46 UTC
+--- pyproject.toml.orig	2025-12-30 15:48:54 UTC
 +++ pyproject.toml
 @@ -7,7 +7,6 @@ readme = "README.md"
  dynamic = ["version"]
  description = "PDF parser and analyzer"
  readme = "README.md"
 -license = "MIT"
- requires-python = ">=3.9"
+ requires-python = ">=3.10"
  authors = [
      { name = "Yusuke Shinyama" },
-@@ -63,8 +62,8 @@ script-files = [
+@@ -68,8 +67,8 @@ script-files = [
  [tool.setuptools]
  packages = ["pdfminer"]
  script-files = [

@@ -1,6 +1,5 @@
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.31
-PORTREVISION=	1
+PORTVERSION=	2.5.33
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -14,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 PATHFIX_MAKEFILEIN=	Makefile.in \
 			configure \
 			libgphoto2_port/Makefile.in \

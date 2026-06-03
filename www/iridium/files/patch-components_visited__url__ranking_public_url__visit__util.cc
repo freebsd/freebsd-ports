@@ -1,4 +1,4 @@
---- components/visited_url_ranking/public/url_visit_util.cc.orig	2025-06-19 07:37:57 UTC
+--- components/visited_url_ranking/public/url_visit_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/visited_url_ranking/public/url_visit_util.cc
 @@ -68,7 +68,7 @@ PlatformType GetPlatformInput() {
    return PlatformType::kWindows;

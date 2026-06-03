@@ -1,5 +1,5 @@
 PORTNAME=	pysubs2
-DISTVERSION=	1.7.2
+DISTVERSION=	1.8.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,11 +8,10 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for editing subtitle files
 WWW=		https://github.com/tkarabela/pysubs2
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest

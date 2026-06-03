@@ -1,5 +1,6 @@
 PORTNAME=	quilt3
-PORTVERSION=	6.3.1
+PORTVERSION=	7.3.0
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +12,9 @@ WWW=		https://github.com/quiltdata/quilt
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.21.7:www/py-boto3@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>=0.31.0:devel/py-awscrt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>=1.21.7:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonlines>=1.2.0:devel/py-jsonlines@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=3<5:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2:devel/py-platformdirs@${PY_FLAVOR} \
@@ -24,14 +25,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.21.7:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=5.1.1:devel/py-tenacity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.32:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+MAKE_ENV=	SOURCE_DATE_EPOCH=315532800 # 1980-01-01 00:00:00 UTC
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	ANNDATA
+OPTIONS_DEFINE=	ANNDATA PYARROW
 ANNDATA_DESC=	Annotated data support
+PYARROW_DESC=	Apache Arrow support
 
 ANNDATA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anndata>=0.8.0:devel/py-anndata@${PY_FLAVOR}
+PYARROW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.14.0,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=0.19.2,1:math/py-pandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyarrow>=0.14.1:databases/py-pyarrow@${PY_FLAVOR}
 
 .include <bsd.port.mk>

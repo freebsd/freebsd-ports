@@ -1,0 +1,126 @@
+https://github.com/russelltg/wl-screenrec/commit/1017db6ffa0d
+
+--- Cargo.lock.orig	2024-08-04 17:10:34 UTC
++++ Cargo.lock
+@@ -68,9 +68,9 @@ name = "bindgen"
+ 
+ [[package]]
+ name = "bindgen"
+-version = "0.69.4"
++version = "0.72.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "a00dc851838a2120612785d195287475a3ac45514741da670b735818822129a0"
++checksum = "993776b509cfb49c750f11b8f07a46fa23e0a1386ffc01fb1e7d343efc387895"
+ dependencies = [
+  "bitflags",
+  "cexpr",
+@@ -88,15 +88,19 @@ name = "bitflags"
+ 
+ [[package]]
+ name = "bitflags"
+-version = "2.6.0"
++version = "2.9.4"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de"
++checksum = "2261d10cca569e4643e526d8dc2e62e433cc8aba21ab764233731f8d369bf394"
+ 
+ [[package]]
+ name = "cc"
+-version = "1.1.7"
++version = "1.2.36"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "26a5c3fd7bfa1ce3897a3a3501d362b2d87b7f2583ebcb4a949ec25911025cbc"
++checksum = "5252b3d2648e5eedbc1a6f501e3c795e07025c1e93bbf8bbdd6eef7f447a6d54"
++dependencies = [
++ "find-msvc-tools",
++ "shlex",
++]
+ 
+ [[package]]
+ name = "cexpr"
+@@ -233,9 +237,9 @@ name = "ffmpeg-next"
+ 
+ [[package]]
+ name = "ffmpeg-next"
+-version = "7.0.4"
++version = "8.0.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "19a340e3d664ad5f530147cd6d4a86ece739a829fe2d81c369389ef903bd96f6"
++checksum = "d658424d233cbd993a972dd73a66ca733acd12a494c68995c9ac32ae1fe65b40"
+ dependencies = [
+  "bitflags",
+  "ffmpeg-sys-next",
+@@ -244,9 +248,9 @@ name = "ffmpeg-sys-next"
+ 
+ [[package]]
+ name = "ffmpeg-sys-next"
+-version = "7.0.2"
++version = "8.0.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "db1b7546e70609ead8c06b2b4c618a1ba352364675f81608f431dd4f321fe3f1"
++checksum = "9bca20aa4ee774fe384c2490096c122b0b23cf524a9910add0686691003d797b"
+ dependencies = [
+  "bindgen",
+  "cc",
+@@ -257,6 +261,12 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "find-msvc-tools"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "7fd99930f64d146689264c637b5af2f0233a933bef0d8570e2526bf9e083192d"
++
++[[package]]
+ name = "glob"
+ version = "0.3.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -270,9 +280,9 @@ name = "hermit-abi"
+ 
+ [[package]]
+ name = "hermit-abi"
+-version = "0.3.9"
++version = "0.5.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
++checksum = "fc0fef456e4baa96da950455cd02c081ca953b141298e41db3fc7e36b1da849c"
+ 
+ [[package]]
+ name = "human-size"
+@@ -383,9 +393,9 @@ name = "num_cpus"
+ 
+ [[package]]
+ name = "num_cpus"
+-version = "1.16.0"
++version = "1.17.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "4161fcb6d602d4d2081af7c3a45852d875a03dd337a6bfdd6e06407b61342a43"
++checksum = "91df4bbde75afed763b708b7eee1e8e7651e02d97f6d5dd763e89367e957b23b"
+ dependencies = [
+  "hermit-abi",
+  "libc",
+@@ -470,9 +480,9 @@ name = "rustc-hash"
+ 
+ [[package]]
+ name = "rustc-hash"
+-version = "1.1.0"
++version = "2.1.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
++checksum = "357703d41365b4b27c590e3ed91eabb1b663f07c4c084095e60cbed4362dff0d"
+ 
+ [[package]]
+ name = "rustix"
+--- Cargo.toml.orig	2024-08-04 17:10:34 UTC
++++ Cargo.toml
+@@ -27,8 +27,8 @@ wayland-protocols-wlr = { version = "0.3", features = 
+     "staging",
+ ] }
+ wayland-protocols-wlr = { version = "0.3", features = ["client"] }
+-ffmpeg-next = "7.0.1"
+-ffmpeg-sys-next = "7.0.0" # need direct dep on -sys to get metadata to consume in build.rs
++ffmpeg-next = "8.0.0"
++ffmpeg-sys-next = "8.0.1" # need direct dep on -sys to get metadata to consume in build.rs
+ thiserror = "1.0.38"
+ drm-fourcc = "2.2.0"
+ human-size = "0.4.2"

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libtolua++-${LUA_VER}.so:lang/tolua++
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tokenizer.hpp:devel/boost-libs
 
 # recheck with boost >= 1.73
-BROKEN_FreeBSD_14=	does not build because boost asio is not compatible with c++20
+BROKEN=		does not build because boost asio is not compatible with c++20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Andrettin

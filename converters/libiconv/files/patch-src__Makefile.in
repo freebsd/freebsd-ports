@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2019-01-27 22:07:13 UTC
+--- src/Makefile.in.orig	2023-05-12 20:45:58 UTC
 +++ src/Makefile.in
-@@ -71,7 +71,6 @@ OBJECTS_RES_no =
+@@ -71,7 +71,6 @@ all : iconv_no_i18n$(EXEEXT) iconv.@OBJEXT@ $(OBJECTS_
  # without internationalization and not linked with libintl.
  
  all : iconv_no_i18n$(EXEEXT) iconv.@OBJEXT@ $(OBJECTS_RES_@WOE32@)
@@ -12,8 +12,8 @@
  	if [ ! -d $(DESTDIR)$(bindir) ] ; then $(mkinstalldirs) $(DESTDIR)$(bindir) ; fi
  	case "@host_os@" in \
  	  hpux*) $(CC) $(LDFLAGS) $(CFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a -L$(DESTDIR)$(libdir) -liconv @LIBINTL@ $(OBJECTS_RES_@WOE32@) `if test -n '$(DESTDIR)'; then echo " -Wl,+b -Wl,$(libdir)"; fi` -o iconv$(EXEEXT);; \
--	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(CFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a $(DESTDIR)$(libdir)/libiconv.la @LTLIBINTL@ $(OBJECTS_RES_@WOE32@) -o iconv$(EXEEXT);; \
-+	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(CFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a ../lib/libiconv.la @LTLIBINTL@ $(OBJECTS_RES_@WOE32@) -o iconv$(EXEEXT);; \
+-	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(CFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a @LTLIBINTL@ $(DESTDIR)$(libdir)/libiconv.la $(OBJECTS_RES_@WOE32@) -o iconv$(EXEEXT);; \
++	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(CFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a @LTLIBINTL@ $(top_srcdir)/lib/libiconv.la $(OBJECTS_RES_@WOE32@) -o iconv$(EXEEXT);; \
  	esac
  	$(INSTALL_PROGRAM_ENV) $(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv$(EXEEXT) $(DESTDIR)$(bindir)/iconv$(EXEEXT)
  

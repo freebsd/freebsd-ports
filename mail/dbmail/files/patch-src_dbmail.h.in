@@ -1,0 +1,11 @@
+--- src/dbmail.h.in.orig	2025-05-31 16:37:09 UTC
++++ src/dbmail.h.in
+@@ -118,7 +118,7 @@
+ #include <ldap.h>
+ #endif
+ 
+-#include <zdb.h>
++#include <zdb/zdb.h>
+ 
+ #include "dm_cram.h"
+ #include "dm_capa.h"

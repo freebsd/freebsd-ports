@@ -1,10 +1,10 @@
 PORTNAME=	libgnt
-PORTVERSION=	2.14.3
-PORTREVISION=	4
+DISTVERSION=	2.14.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/pidgin/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit based on glib and ncurses for text-mode user interfaces
 WWW=		https://keep.imfreedom.org/libgnt/libgnt/
 

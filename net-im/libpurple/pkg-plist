@@ -144,7 +144,7 @@ lib/libpurple.so.0.%%SHLIB_VERSION%%
 libdata/pkgconfig/purple.pc
 %%CONSOLEUI%%man/man1/finch.1.gz
 %%GTKUI%%man/man1/pidgin.1.gz
-%%PERLMAN:%%man/man3/Purple.3.gz
+%%PERLMAN:%%share/man/man3/Purple.3.gz
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo

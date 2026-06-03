@@ -1,5 +1,5 @@
 PORTNAME=	scamper
-DISTVERSION=	20250227
+DISTVERSION=	20260420
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${DISTVERSION}
@@ -20,12 +20,14 @@ SLAVE_PORT?=	no
 
 .if ${SLAVE_PORT} == no
 
-OPTIONS_DEFINE=	HOIHO MINRTT UPTIME
+OPTIONS_DEFINE=	HOIHO MINRTT RXIFD SUID_SCAMPER UPTIME
 OPTIONS_SUB=	yes
 
-HOIHO_DESC=	Install sc_hoiho
-MINRTT_DESC=	Install sc_minrtt
-UPTIME_DESC=	Install sc_uptime
+HOIHO_DESC=		Install sc_hoiho
+MINRTT_DESC=		Install sc_minrtt
+RXIFD_DESC=		Install sc_rxifd
+SUID_SCAMPER_DESC=	Install scamper with setuid bit to allow non-root use
+UPTIME_DESC=		Install sc_uptime
 
 HOIHO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 HOIHO_USES=		localbase:ldflags
@@ -36,6 +38,8 @@ MINRTT_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 MINRTT_USES=		localbase:ldflags sqlite:3
 MINRTT_CONFIGURE_ENABLE=	sc_minrtt
 MINRTT_CONFIGURE_WITH=	pcre2
+
+RXIFD_CONFIGURE_ENABLE=	sc_rxifd
 
 UPTIME_USES=		localbase:ldflags sqlite:3
 UPTIME_CONFIGURE_ENABLE=	sc_uptime

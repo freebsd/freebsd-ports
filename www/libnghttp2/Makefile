@@ -1,5 +1,5 @@
 PORTNAME=	nghttp2
-PORTVERSION=	1.66.0
+PORTVERSION=	1.69.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -12,7 +12,7 @@ WWW=		https://nghttp2.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool pathfix pkgconfig tar:xz
+USES=		cpe libtool pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes

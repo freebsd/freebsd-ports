@@ -6,11 +6,10 @@ bin/bz3more
 bin/bz3most
 bin/bzip3
 include/libbz3.h
-lib/cmake/bzip3/bzip3-config-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/bzip3/bzip3-config.cmake
+lib/libbzip3.a
 lib/libbzip3.so
-lib/libbzip3.so.0
-lib/libbzip3.so.0.0.0
+lib/libbzip3.so.1
+lib/libbzip3.so.1.0.0
 libdata/pkgconfig/bzip3.pc
 share/man/man1/bunzip3.1.gz
 share/man/man1/bz3cat.1.gz

@@ -1,6 +1,5 @@
 PORTNAME=	zchunk
-DISTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.5.3
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libcurl.so:ftp/curl
 
-USES=		localbase:ldflags meson pkgconfig
+USES=		cpe localbase:ldflags meson pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
@@ -30,5 +29,13 @@ OPENSSL_LDFLAGS=	-L${OPENSSLLIB} -lssl -lcrypto # workaround for https://github.
 ZSTD_MESON_ON=		-Dwith-zstd=enabled
 ZSTD_MESON_OFF=		-Dwith-zstd=disabled
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+# tests as of 1.5.3:
+# Ok:                 36  
+# Expected Fail:      1   
+# Fail:               0   
+# Unexpected Pass:    0   
+# Skipped:            0   
+# Timeout:            0   
 
 .include <bsd.port.mk>

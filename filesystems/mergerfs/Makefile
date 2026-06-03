@@ -1,5 +1,5 @@
 PORTNAME=	mergerfs
-DISTVERSION=	2.40.2
+DISTVERSION=	2.42.0
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
@@ -10,13 +10,13 @@ WWW=		https://github.com/trapexit/mergerfs
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
-
 USES=		fuse gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	trapexit
 
-PLIST_FILES=	bin/mergerfs \
+PLIST_FILES=	bin/fsck.mergerfs \
+		bin/mergerfs \
+		bin/mergerfs.collect-info \
 		lib/mergerfs/preload.so \
 		share/man/man1/mergerfs.1.gz
 

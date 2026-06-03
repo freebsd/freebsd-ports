@@ -1,6 +1,5 @@
 PORTNAME=	vgmplay
-PORTVERSION=	0.51.1
-PORTREVISION=	2
+PORTVERSION=	0.52.0
 CATEGORIES=	audio
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -18,21 +17,26 @@ GH_PROJECT=	${PORTNAME}-libvgm
 
 PLIST_FILES=	bin/vgmplay \
 		${EXAMPLESDIR}/vgmplay.ini
+PORTDOCS=	Updates.txt VGMPlay.txt
 
-OPTIONS_DEFINE=		MEDIACONTROLS
+OPTIONS_DEFINE=		DOCS MEDIACONTROLS
 OPTIONS_DEFAULT=	# none
 
 MEDIACONTROLS_DESC=	Media Controls via D-Bus
 
+MEDIACONTROLS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 MEDIACONTROLS_CMAKE_ON=	-DMEDIA_CONTROLS:STRING="DBUS"
 MEDIACONTROLS_CMAKE_OFF=-DMEDIA_CONTROLS:STRING="OFF"
-MEDIACONTROLS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-
-post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/main.cpp
 
 post-install:
+.for f in updates.txt vgmplay.ini vgmplay.txt
+	@${RM} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/VGMPlay.ini ${STAGEDIR}${EXAMPLESDIR}/vgmplay.ini
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

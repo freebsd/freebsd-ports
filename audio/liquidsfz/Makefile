@@ -1,5 +1,5 @@
 PORTNAME=	liquidsfz
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,11 +13,14 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
 		libsndfile.so:audio/libsndfile
 
-USES=		autoreconf compiler:c++17-lang gmake libtool pkgconfig readline
+USES=		autoreconf compiler:c++17-lang gl gmake libtool pkgconfig readline xorg
+USE_XORG=	x11 xcursor xext xrandr
+USE_GL=		gl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	swesterfeld
+GH_TUPLE=	ocornut:imgui:dbee23e:imgui/3rdparty/imgui
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
@@ -27,8 +30,9 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/liquidsfz \
 		include/liquidsfz.hh \
 		lib/libliquidsfz.so \
-		lib/libliquidsfz.so.3 \
-		lib/libliquidsfz.so.3.0.2 \
+		lib/libliquidsfz.so.4 \
+		lib/libliquidsfz.so.4.0.0 \
+		lib/lv2/liquidsfz.lv2/dejavu-lgc-sans.ttf \
 		lib/lv2/liquidsfz.lv2/liquidsfz.ttl \
 		lib/lv2/liquidsfz.lv2/liquidsfz_lv2.so \
 		lib/lv2/liquidsfz.lv2/manifest.ttl \

@@ -1,0 +1,14 @@
+[
+{
+  type: upgrade
+  maximum_version: "3.6.0"
+  message: <<EOM
+With the upgrade to version 3.6.0+ support for all properties ending with
+'.stripquotes' in your wrapper.conf has been dropped and your application
+won't start again.
+
+Read the release notes for more details:
+https://wrapper.tanukisoftware.com/doc/english/release-notes.html#3.6.0
+EOM
+}
+]

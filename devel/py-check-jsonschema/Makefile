@@ -1,9 +1,10 @@
 PORTNAME=	check-jsonschema
-PORTVERSION=	0.28.2
+PORTVERSION=	0.37.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/check-jsonschema/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	check_jsonschema-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	jsonschema CLI and pre-commit hook
@@ -11,13 +12,13 @@ WWW=		https://github.com/python-jsonschema/check-jsonschema
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0<5.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}regress>=0.4.0:devel/py-regress@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}regress>=2024.11.1:devel/py-regress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0<3.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.6:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.10<0.20.0:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PY_TOMLI}
 
 USES=		python

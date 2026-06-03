@@ -1,0 +1,7 @@
+bin/act_runner
+@sample %%ETCDIR%%/act_runner.conf.sample
+@owner %%ACT_RUNNER_USER%%
+@group %%ACT_RUNNER_GROUP%%
+@dir %%DATADIR%%
+@dir %%LOGDIR%%
+@dir %%PIDDIR%%

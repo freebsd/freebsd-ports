@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/rkitover/vimpager/releases/download/${DISTVERSI
 DISTFILES+=	man${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Use Vim/NeoVim as a pager (${FLAVOR:U} flavor)
 WWW=		https://github.com/rkitover/vimpager
 

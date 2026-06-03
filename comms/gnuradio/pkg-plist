@@ -16369,7 +16369,7 @@ share/bash-completion/completions/gr_modtool
 %%DATADIR%%/examples/zeromq/zeromq_reqrep.grc
 %%DATADIR%%/examples/zeromq/zmq_msg.grc
 %%DATADIR%%/examples/zeromq/zmq_stream.grc
-%%DATADIR%%/fec/ldpc/271.127.%%PYTHON_VER%%2
+%%DATADIR%%/fec/ldpc/271.127.3.112
 %%DATADIR%%/fec/ldpc/PNB2_512_23C1.alist
 %%DATADIR%%/fec/ldpc/n_0100_k_0023_gap_10.alist
 %%DATADIR%%/fec/ldpc/n_0100_k_0027_gap_04.alist

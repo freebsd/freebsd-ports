@@ -1,5 +1,6 @@
 PORTNAME=	sway
 DISTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	${GH_PROJECT:S/${PORTNAME}//}
 
@@ -53,6 +54,13 @@ SWAYBG_RUN_DEPENDS=	swaybg:x11/swaybg
 X11_USE=		XORG=xcb
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 
+.include <bsd.port.options.mk>
+
+# https://github.com/freebsd/freebsd-src/pull/1675
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1403505
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-wordexp
+.endif
+
 post-patch:
 # Let @sample handle default files under etc/
 	@${REINPLACE_CMD} -e '/config\.in/{ N; s/@BASENAME@/&.sample/; }' \
@@ -61,7 +69,7 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
-.if exists(${.CURDIR}/files/patch-common_stringop.c)
+.if exists(${.CURDIR}/files/extra-patch-wordexp)
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275328
 	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE=200809L/_XOPEN_SOURCE=700/' \
 		${WRKSRC}/meson.build

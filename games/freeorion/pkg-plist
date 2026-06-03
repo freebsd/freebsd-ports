@@ -12,6 +12,7 @@ lib/freeorion/libfreeorionparse.so
 %%CLIENT_GG%%share/icons/hicolor/32x32/apps/org.freeorion.FreeOrion.png
 %%CLIENT_GG%%share/icons/hicolor/64x64/apps/org.freeorion.FreeOrion.png
 %%CLIENT_GG%%share/metainfo/org.freeorion.FreeOrion.metainfo.xml
+@dir %%DATADIR%%/default/scripting/_readme_images
 @dir %%DATADIR%%/default/data/sound/combat
 @dir %%DATADIR%%/default/data/art/stars_sidepanel
 @dir %%DATADIR%%/default/data/art/stars/old_stars

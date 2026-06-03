@@ -1,0 +1,40 @@
+--- libtransmission/CMakeLists.txt.orig	2026-02-20 00:30:46 UTC
++++ libtransmission/CMakeLists.txt
+@@ -272,12 +272,12 @@ target_link_libraries(${TR_NAME}
+ target_link_libraries(${TR_NAME}
+     PRIVATE
+         Threads::Threads
+-        deflate::deflate
++        libdeflate::libdeflate
+         CURL::libcurl
+         FastFloat::fast_float
+         psl::psl
+         natpmp::natpmp
+-        miniupnpc::libminiupnpc
++        miniupnpc::miniupnpc
+         dht::dht
+         libutp::libutp
+         libb64::libb64
+@@ -288,7 +288,7 @@ target_link_libraries(${TR_NAME}
+         RapidJSON
+         utf8::cpp
+         wildmat
+-        WideInteger::WideInteger
++        transmission::WideInteger
+         MadlerCrcany
+         $<$<BOOL:${WIN32}>:crypt32>
+         $<$<BOOL:${WIN32}>:shlwapi>
+@@ -297,9 +297,10 @@ target_link_libraries(${TR_NAME}
+         $<$<BOOL:${HAVE_LIBATOMIC}>:atomic>
+     PUBLIC
+         transmission::crypto_impl
+-        fmt::fmt-header-only
+-        small::small
+-        libevent::event)
++        transmission::fmt-header-only
++        transmission::small
++        libevent::core
++	libevent::extra)
+ 
+ if(INSTALL_LIB)
+     install(

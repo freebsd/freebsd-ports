@@ -1,0 +1,9 @@
+Comprehensive toolkit for reading and analyzing Anki flashcard
+collection databases. Provides functions to access notes, cards,
+decks, note types, and review logs with a tidy interface. Features
+extensive analytics including retention rates, learning curves,
+forgetting curve fitting, and review patterns. Supports FSRS (Free
+Spaced Repetition Scheduler) analysis with stability, difficulty,
+retrievability metrics, parameter comparison, and workload predictions.
+
+-- Christos Longros <chris.longros@gmail.com>

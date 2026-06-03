@@ -1,6 +1,6 @@
 PORTNAME=	ccx
 DISTVERSION=	2.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 PKGNAMEPREFIX=	CalculiX-
@@ -15,7 +15,7 @@ WWW=		http://www.calculix.de/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libspooles.so:math/spooles
 
 USES=		blaslapack fortran gmake perl5 tar:bzip2

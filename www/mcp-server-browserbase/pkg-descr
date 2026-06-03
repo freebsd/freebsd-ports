@@ -1,0 +1,7 @@
+MCP server for Browserbase allows AI agents and Large Language Models (LLMs)
+to control a fully managed, cloud-hosted web browser.
+
+It acts as a bridge between an AI assistant and the web, enabling the agent
+to perform complex online tasks using natural language. Key capabilities
+include web interaction (navigation, clicks, forms), data extraction,
+capturing visual context, and session management.

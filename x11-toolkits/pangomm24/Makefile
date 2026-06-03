@@ -11,7 +11,7 @@ WWW=		https://gtkmm.gnome.org/
 
 LICENSE=	LGPL21+
 
-USES+=		compiler:c++17-lang gnome libtool localbase meson \
+USES+=		compiler:c++17-lang gnome localbase meson \
 		pkgconfig python:build tar:xz
 USE_CXXSTD=	c++17
 USE_GNOME=	cairomm11 glibmm26 pango libxslt

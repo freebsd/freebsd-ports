@@ -5,4 +5,5 @@ share/applications/yazi.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keymap-default.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-dark.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-light.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vfs-default.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yazi-default.toml

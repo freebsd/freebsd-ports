@@ -1,0 +1,4 @@
+Oxyde-core is the Rust extension module used by the Oxyde ORM.
+
+It provides the native backend for query generation, execution, connection
+pooling, and migrations across PostgreSQL, SQLite, and MySQL.

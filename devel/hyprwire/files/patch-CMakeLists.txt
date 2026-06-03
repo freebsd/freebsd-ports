@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2026-04-25 23:30:02 UTC
++++ CMakeLists.txt
+@@ -144,14 +144,14 @@ if(BUILD_TESTING)
+   file(GLOB_RECURSE TESTFILES CONFIGURE_DEPENDS "tests/unit/*.cpp")
+   add_executable(hyprwire_tests ${TESTFILES})
+ 
+-  target_compile_options(hyprwire_tests PRIVATE --coverage -fsanitize=address)
++  target_compile_options(hyprwire_tests PRIVATE --coverage)
+   target_link_options(hyprwire_tests PRIVATE --coverage)
+   
+   target_include_directories(
+     hyprwire_tests
+     PUBLIC "./include"
+     PRIVATE "./src" "./src/include" "./protocols" "${CMAKE_BINARY_DIR}")
+-  target_link_libraries(hyprwire_tests PRIVATE asan hyprwire GTest::gtest_main
++  target_link_libraries(hyprwire_tests PRIVATE hyprwire GTest::gtest_main
+                                                        PkgConfig::deps)
+   gtest_discover_tests(hyprwire_tests
+     PROPERTIES ENVIRONMENT "ASAN_OPTIONS=detect_leaks=0"

@@ -1,1 +1,11 @@
-Preprocessor for typesetting Haskell sources with LaTeX.
+This tool is primarily intended for people who want to write articles or books
+using LaTeX that contain some Haskell code. It works on literate Haskell
+documents where the non-Haskell parts form essentially a valid LaTeX document,
+then processes the Haskell code in the document and replaces it with formatted
+LaTeX output. It is not fully automatic in the sense that it will turn an
+arbitrary literate Haskell document into a LaTeX document without further work.
+
+Nearly all aspects about the output and formatting are configurable. Output of
+code can be made using proportional fonts in such a way that even complex
+horizontal alignment is preserved. The preprocessor can also be invoked in
+another mode to just extract the Haskell code.

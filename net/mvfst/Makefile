@@ -1,6 +1,6 @@
 PORTNAME=	mvfst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.07.21.00
+DISTVERSION=	2026.06.01.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/facebook/mvfst
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfizz.so:security/fizz \

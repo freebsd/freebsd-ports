@@ -1,6 +1,6 @@
 PORTNAME=	onnx
 DISTVERSION=	1.17.0
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil \
@@ -29,7 +29,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 #LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf # disable packaged protobuf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-re2>0:devel/py-google-re2@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.2:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.2.1:devel/py-typing-extensions@${PY_FLAVOR}

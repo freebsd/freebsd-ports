@@ -1,0 +1,92 @@
+--- WORKSPACE.orig	2026-03-16 21:25:50 UTC
++++ WORKSPACE
+@@ -2,31 +2,6 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "
+ 
+ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+ 
+-# Hedron's Compile Commands Extractor for Bazel
+-# https://github.com/hedronvision/bazel-compile-commands-extractor
+-http_archive(
+-    name = "hedron_compile_commands",
+-    strip_prefix = "bazel-compile-commands-extractor-f5fbd4cee671d8d908f37c83abaf70fba5928fc7",
+-    url = "https://github.com/mikael-s-persson/bazel-compile-commands-extractor/archive/f5fbd4cee671d8d908f37c83abaf70fba5928fc7.tar.gz",
+-    sha256 = "ba3feefdf57b6d4c749e3c4abfa86f3673e7db364cb13acfc3496dce6ea801a3",
+-)
+-
+-load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_setup")
+-
+-hedron_compile_commands_setup()
+-
+-load("@hedron_compile_commands//:workspace_setup_transitive.bzl", "hedron_compile_commands_setup_transitive")
+-
+-hedron_compile_commands_setup_transitive()
+-
+-load("@hedron_compile_commands//:workspace_setup_transitive_transitive.bzl", "hedron_compile_commands_setup_transitive_transitive")
+-
+-hedron_compile_commands_setup_transitive_transitive()
+-
+-load("@hedron_compile_commands//:workspace_setup_transitive_transitive_transitive.bzl", "hedron_compile_commands_setup_transitive_transitive_transitive")
+-
+-hedron_compile_commands_setup_transitive_transitive_transitive()
+-
+ envoy_version = "41749943780b54b70b510b1b1a4805ae529e174a"
+ 
+ openssh_version = "V_10_2_P1"
+@@ -57,6 +32,26 @@ http_archive(
+         "//patches/envoy:0008-cel-cpp-compatibility.patch",
+         "//patches/envoy:tmp-envoy-41815.patch",
+         "//patches/envoy:tmp-transport-socket-options.patch",
++        "//patches/envoy:freebsd-rules-foreign-cc.patch",
++        "//patches/envoy:freebsd-dependency-imports.patch",
++        "//patches/envoy:freebsd-envoy-cmake-generate-args.patch",
++        "//patches/envoy:freebsd-go-sdk.patch",
++        "//patches/envoy:freebsd-foreign-cc-ares.patch",
++        "//patches/envoy:freebsd-foreign-cc-nghttp2.patch",
++        "//patches/envoy:freebsd-foreign-cc-maxmind.patch",
++        "//patches/envoy:freebsd-maxmind-extension.patch",
++        "//patches/envoy:freebsd-foreign-cc-zlib.patch",
++        "//patches/envoy:freebsd-foreign-cc-zstd.patch",
++        "//patches/envoy:freebsd-foreign-cc-luajit.patch",
++        "//patches/envoy:freebsd-luajit.patch",
++        "//patches/envoy:freebsd-platform.patch",
++        "//patches/envoy:freebsd-terminate-thread.patch",
++        "//patches/envoy:freebsd-thread-impl.patch",
++        "//patches/envoy:freebsd-address-impl.patch",
++        "//patches/envoy:freebsd-io-socket-handle-impl-h.patch",
++        "//patches/envoy:freebsd-io-socket-handle-impl-cc.patch",
++        "//patches/envoy:freebsd-lz4-qat-removal.patch",
++        "//patches/envoy:freebsd-inotify.patch",
+     ],
+     sha256 = "26de1f5b0497a3b4dba9b6157fc555f3c9f4e1f21214462ebff5b19649304e9f",
+     strip_prefix = "envoy-" + envoy_version,
+@@ -87,9 +82,30 @@ envoy_python_dependencies()
+ 
+ envoy_python_dependencies()
+ 
++# FreeBSD: Pre-register rules_proto 7.1.0 before envoy_dependency_imports() runs.
++# rules_proto_grpc_toolchains() (called inside envoy_dependency_imports) would otherwise
++# register rules_proto 5.3.0-21.7 first; external_http_archive then skips the 7.1.0
++# registration from api/bazel/repositories.bzl because existing_rules() already contains
++# "rules_proto".  rules_proto 5.3.0-21.7 lacks proto/proto_common.bzl which is required
++# by io_bazel_rules_go/proto/compiler.bzl at BUILD loading time.
++http_archive(
++    name = "rules_proto",
++    sha256 = "14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4",
++    strip_prefix = "rules_proto-7.1.0",
++    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/7.1.0.tar.gz",
++)
++
+ load("@envoy//bazel:dependency_imports.bzl", "envoy_dependency_imports")
+ 
+ envoy_dependency_imports()
++
++# FreeBSD: Register @local_jdk compile toolchains before DEFAULT.WORKSPACE.SUFFIX
++# adds the remote JDK toolchains. The @local_jdk toolchains have
++# exec_compatible_with = HOST_CONSTRAINTS (FreeBSD) and use local_jdk as runtime
++# (not remotejdk_21), avoiding toolchain resolution failures on FreeBSD.
++# The @local_jdk repo is set up by jdk.WORKSPACE in DEFAULT.WORKSPACE.SUFFIX;
++# register_toolchains here is lazy and resolves during build analysis.
++register_toolchains("@local_jdk//:all")
+ 
+ load("@envoy_api//bazel:envoy_http_archive.bzl", "envoy_http_archive")
+ 

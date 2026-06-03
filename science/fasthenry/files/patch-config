@@ -1,0 +1,11 @@
+--- config.orig	2019-09-08 19:58:44 UTC
++++ config
+@@ -7,7 +7,7 @@ fi
+   name="default"
+ fi
+ 
+-if test "$name" != "default" -a "$name" != "alpha" -a "$name" != "dec" -a "$name" != "sgi" -a "$name" != "sysV" -a "$name" != "solaris" -a "$name" != "mingw"
++if test "$name" != "default" -a "$name" != "alpha" -a "$name" != "dec" -a "$name" != "sgi" -a "$name" != "sysV" -a "$name" != "solaris" -a "$name" != "mingw" -a "$name" != "freebsd"
+ then
+   echo config: Unknown type: $1.  Choose one of: default, alpha, dec, sgi, sysV, solaris, mingw
+ else

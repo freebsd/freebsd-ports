@@ -11,6 +11,8 @@ USES=		kde:6 metaport
 OPTIONS_DEFINE=	ALL ${KDE_GAMES_ALL}
 OPTIONS_DEFAULT=	ALL
 
+ALL_DESC=	Install all games
+
 .include "Makefile.common"
 
 .for game in ${KDE_GAMES_ALL}

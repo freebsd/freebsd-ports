@@ -1,10 +1,9 @@
 PORTNAME=	Sepia
 PORTVERSION=	0.992
-PORTREVISION=	29
+PORTREVISION=	31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Simple Emacs-Perl Interface
@@ -25,7 +24,11 @@ RUN_DEPENDS=	p5-Devel-Size>=0:devel/p5-Devel-Size \
 USES=		emacs gmake makeinfo perl5
 USE_PERL5=	configure
 
-CONFIGURE_ARGS+=	--emacs ${EMACS_CMD} --lisp ${PREFIX}/${EMACS_SITE_LISPDIR}/sepia --info ${PREFIX}/${INFO_PATH}
+CONFIGURE_ARGS+=	--lisp ${PREFIX}/${EMACS_SITE_LISPDIR}/sepia --info ${PREFIX}/${INFO_PATH}
+
+CONFLICTS_INSTALL=	p5-Sepia-emacs_*
+
+NO_ARCH=	yes
 
 INFO=	sepia
 

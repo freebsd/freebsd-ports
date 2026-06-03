@@ -1,8 +1,7 @@
 PORTNAME=	saga
-PORTVERSION=	9.9.1
+PORTVERSION=	9.12.4
 CATEGORIES=	math
-MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
-
+MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/([0-9]).*/\1/1}/SAGA%20-%20${PORTVERSION}
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	System for Automated Geoscientific Analyses
 WWW=		http://www.saga-gis.org/en/index.html
@@ -16,6 +15,7 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexiv2.so:graphics/exiv2 \
 		libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
@@ -31,23 +31,24 @@ RUN_DEPENDS:=	swig:devel/swig
 
 USES=		cmake compiler:c++17-lang desktop-file-utils dos2unix \
 		gnome iconv:wchar_t localbase pkgconfig python
-DOS2UNIX_GLOB=	*.cpp *.h
+DOS2UNIX_GLOB=	*.cpp *.h *.txt
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	f41608881
+GIT_TAGNAME=	bcdf1c4ab
 
-CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
+CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h \
+		-DWITH_TOOLS_PDAL:BOOL=TRUE
 CMAKE_ON=	CMAKE_VERBOSE_MAKEFILE
 CMAKE_ON+=	WITH_DEV_TOOLS
 CMAKE_ON+=	WITH_EXCERCISES
+CMAKE_ON+=	WITH_EXIV2
 CMAKE_ON+=	WITH_LIFETIME_TRACKER
 CMAKE_ON+=	WITH_MRMR
 CMAKE_ON+=	WITH_SYSTEM_SVM
 CMAKE_ON+=	WITH_TOOLS_HPDF
 CMAKE_ON+=	WITH_TOOLS_OPENCV
 CMAKE_ON+=	WITH_PYTHON_PKG
-CMAKE_ON+=	WITH_TOOLS_PDAL
 CMAKE_ON+=	WITH_TOOLS_POSTGRES
 CMAKE_ON+=	WITH_TOOLS_PROJ
 CMAKE_OFF=	WITH_CLIPPER_ONE
@@ -100,6 +101,8 @@ post-install:
 	(cd ${WRKSRC}/src/accessories && ${RM} -R python)
 	(cd ${WRKSRC}/src/accessories && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${RM} -R ${STAGEDIR}${DATADIR}/CMakeLists.txt
+	${RM} -R ${STAGEDIR}${DATADIR}/classification
+	${RM} -R ${STAGEDIR}${DATADIR}/color_ramps
 	${RM} -R ${STAGEDIR}${DATADIR}/templates/template4saga-tools/my_tool_library/Makefile.bak
 # library helper files are not needed and cripple some math/qgis extensions
 	@${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la

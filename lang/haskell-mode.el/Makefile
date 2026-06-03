@@ -1,9 +1,8 @@
 PORTNAME=	haskell-mode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	17.5
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	lang elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp mode for editing haskell programs
@@ -11,13 +10,13 @@ WWW=		https://projects.haskell.org/haskellmode-emacs/
 
 LICENSE=	GPLv3
 
-USES=		emacs gmake
+USES=		emacs:build gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 
-#EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox
-
 ALL_TARGET=	haskell-mode-autoloads.el
+
+CONFLICTS_INSTALL=	haskell-mode-emacs_*
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

@@ -12,10 +12,10 @@
 #     Set to NO by default
 # tempo_user (string):
 #     Set user that grafana will run under
-#     Default is "%%tempo_USER%%"
+#     Default is "%%TEMPO_USER%%"
 # tempo_group (string):
 #     Set group that own grafana files
-#     Default is "%%tempo_GROUP%%"
+#     Default is "%%TEMPO_GROUP%%"
 # tempo_config (string)
 #     Set full path to config file
 #     Default is "%%PREFIX%%/etc/tempo.yaml"

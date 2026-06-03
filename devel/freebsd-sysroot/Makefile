@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2024-12-31
+DISTVERSION=	a2026-04-30
 CATEGORIES=	devel
 MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
 		LOCAL/rust:${FLAVOR}
@@ -10,6 +10,8 @@ EXTRACT_ONLY=	${DISTFILES:[1]:S/:${FLAVOR}$$//}
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	FreeBSD ${_SYSROOT_VER} ${FLAVOR:S/_/ /} sysroot
 WWW=		https://www.FreeBSD.org/
+
+NO_SHLIB_REQUIRES_GLOB=	libprivate*
 
 LICENSE=	FREEBSD
 LICENSE_NAME=	FreeBSD base licenses
@@ -39,15 +41,16 @@ SUB_LIST=	FREEBSD_SYSROOT="${_SYSROOT}" \
 PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
 PLIST_SUB=	ROOT=${_SYSROOT:S,^${PREFIX}/,,}
 
+_GCC_VERSION=				${_SYSROOT_DIST_powerpc:[2]:C/-.*//}
 _SYSROOT=				${PREFIX}/${PORTNAME}/${FLAVOR:S/_/-/g}
-_SYSROOT_VER=				13.4-RELEASE
+_SYSROOT_VER=				14.3-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_armv7=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv7-GENERICSD.img.xz
 _SYSROOT_DIST_amd64=			releases/amd64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_i386=			releases/i386/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz \
-					gcc13-13.3.0.pkg
+					gcc14-14.2.0_4.pkg
 _SYSROOT_DIST_powerpc64=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpcspe=		releases/powerpc/powerpcspe/${_SYSROOT_VER}/base.txz
@@ -64,10 +67,10 @@ _SYSROOT_EXCLUDE_armv7=			usr/lib/debug/*
 _SYSROOT_ARCH_amd64=			x86_64
 _SYSROOT_ARCH_i386=			i686
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
-_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd13.4
-_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd13.4-gnueabihf
-_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.4 # secure-plt
-_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.4 # elfv2
+_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//}
+_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//}-gnueabihf
+_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//} # secure-plt
+_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd${_SYSROOT_VER:C/-RELEASE//} # elfv2
 
 .if make(distclean) || make(makesum)
 MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
@@ -113,14 +116,14 @@ post-extract:
 .if ${FLAVOR} == powerpc
 	cd ${EXTRACT_WRKDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${_SYSROOT_DIST_${FLAVOR}:[2]} \
-		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc13
+		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/${_GCC_VERSION}
 .endif
 	@${FIND} ${STAGEDIR}${_SYSROOT} -type d -empty -delete
 	@${MV} ${STAGEDIR}${_SYSROOT}/COPYRIGHT ${WRKDIR}
 
 do-install:
 .if ${FLAVOR} == powerpc
-	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc13/libatomic.so \
+	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/${_GCC_VERSION}/libatomic.so \
 		${STAGEDIR}${_SYSROOT}/usr/lib/libatomic.so
 .endif
 	@${MKDIR} ${STAGEDIR}${_SYSROOT}/bin

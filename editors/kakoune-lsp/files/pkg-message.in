@@ -4,11 +4,6 @@
 To enable LSP support for configured languages just add following
 commands to your kakrc:
 
-eval %sh{
-	kak-lsp --config %%ETCDIR%%/kak-lsp.toml \
-		--kakoune \
-		-s $kak_session
-}
 lsp-enable
 EOM
 }

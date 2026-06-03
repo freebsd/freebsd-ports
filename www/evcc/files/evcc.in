@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: evcc
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="evcc"
+rcvar=evcc_enable
+
+load_rc_config $name
+
+: ${evcc_enable:="NO"}
+: ${evcc_user:="evcc"}
+: ${evcc_group:="evcc"}
+: ${evcc_command:="/usr/local/bin/evcc"}
+: ${evcc_dbdir:="/var/db/evcc"}
+: ${evcc_log:="/var/log/evcc.log"}
+
+logfile="/var/log/${name}.log"
+pidfile="/var/run/${name}/${name}.pid"
+workingdir="/var/empty"
+
+command="/usr/sbin/daemon"
+# -r  = restart on exit
+# -f  = stay in foreground (rc handles it)
+# -P  = write pidfile
+# -u  = run as user
+# -o  = log output
+command_args="-H -r -f -o ${logfile} -P ${pidfile} -t ${name} \
+    /bin/sh -c 'cd ${workingdir} && ${evcc_command} --database ${evcc_dbdir}/evcc.db'"
+
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+
+evcc_precmd() {
+    echo "Preparing ${name} environment..."
+
+    # Create required directories
+    install -d -o ${evcc_user} -g ${evcc_group} ${evcc_dbdir}
+    install -d -o ${evcc_user} -g ${evcc_group} /var/run/${name}
+
+    # Ensure log file exists and is writable
+    touch ${evcc_log}
+    chown ${evcc_user}:${evcc_group} ${evcc_log}
+}
+
+evcc_start() {
+    echo "Starting ${name}"
+    su -m ${evcc_user} -c "${command} ${command_args}"
+}
+
+run_rc_command "$1"
+

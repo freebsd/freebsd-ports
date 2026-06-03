@@ -40,7 +40,7 @@ OPTIONS_SUB=		yes
 
 ZIG_DESC=		Include Zig language support
 
-ZIG_BUILD_DEPENDS=	zig>0:lang/zig
+ZIG_BUILD_DEPENDS=	zig014=0.14.0:lang/zig014
 
 CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so.0 \
 		-DTABIXPP_LOCAL=${WRKSRC}/contrib/tabixpp

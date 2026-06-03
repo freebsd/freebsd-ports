@@ -1,5 +1,6 @@
 bin/mousai
 share/applications/io.github.seadve.Mousai.desktop
+share/dbus-1/services/io.github.seadve.Mousai.service
 share/icons/hicolor/scalable/apps/io.github.seadve.Mousai.svg
 share/icons/hicolor/symbolic/apps/io.github.seadve.Mousai-symbolic.svg
 share/locale/ar/LC_MESSAGES/mousai.mo
@@ -22,6 +23,7 @@ share/locale/gl/LC_MESSAGES/mousai.mo
 share/locale/hi/LC_MESSAGES/mousai.mo
 share/locale/hr/LC_MESSAGES/mousai.mo
 share/locale/hu/LC_MESSAGES/mousai.mo
+share/locale/ia/LC_MESSAGES/mousai.mo
 share/locale/id/LC_MESSAGES/mousai.mo
 share/locale/it/LC_MESSAGES/mousai.mo
 share/locale/ja/LC_MESSAGES/mousai.mo

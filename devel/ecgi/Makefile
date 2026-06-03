@@ -1,15 +1,17 @@
 PORTNAME=	ecgi
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	https://BSDforge.com/projects/source/devel/ecgi/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Library for the creation of CGI-based Web applications
-WWW=		https://BSDforge.com/projects/devel/ecgi/
+WWW=		https://github.com/Sven-Dawitz/${PORTNAME}
 
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	Sven-Dawitz
 PORTDOCS=	*
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
 
@@ -26,7 +28,7 @@ do-install:
 .for file in ${HEADER_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include/ecgi
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ecgitut.txt ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TUTORIAL.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

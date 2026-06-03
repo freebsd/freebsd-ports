@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Math/GSL/Alien.pm
+%%SITE_ARCH%%/Math/GSL/Alien/Install/Files.pm
+%%SITE_ARCH%%/auto/Math/GSL/Alien/Alien.txt
+%%SITE_ARCH%%/auto/share/dist/Math-GSL-Alien/_alien/alien.json
+%%SITE_ARCH%%/auto/share/dist/Math-GSL-Alien/_alien/alienfile
+%%PERL5_MAN3%%/Math::GSL::Alien.3.gz

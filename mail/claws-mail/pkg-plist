@@ -97,7 +97,6 @@ include/claws-mail/gtk/about.h
 include/claws-mail/gtk/authors.h
 include/claws-mail/gtk/claws-marshal.h
 include/claws-mail/gtk/colorlabel.h
-%%GTK2%%include/claws-mail/gtk/colorsel.h
 include/claws-mail/gtk/combobox.h
 include/claws-mail/gtk/description_window.h
 include/claws-mail/gtk/filesel.h
@@ -105,7 +104,6 @@ include/claws-mail/gtk/foldersort.h
 include/claws-mail/gtk/gtkaspell.h
 include/claws-mail/gtk/gtkcmclist.h
 include/claws-mail/gtk/gtkcmctree.h
-%%GTK2%%include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
 include/claws-mail/gtk/gtkunit.h
@@ -234,7 +232,6 @@ lib/claws-mail/plugins/pgpinline.deps
 lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/smime.deps
 libdata/pkgconfig/claws-mail.pc
-share/man/man1/claws-mail.1.gz
 share/applications/claws-mail.desktop
 %%DATADIR%%/acroread2claws-mail.pl
 %%DATADIR%%/calypso_convert.pl
@@ -300,3 +297,4 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
+share/man/man1/claws-mail.1.gz

@@ -1,8 +1,8 @@
 - .git/ is missing in archive, so use version from environment
 
---- build/gen.py.orig	2024-06-23 08:56:53 UTC
+--- build/gen.py.orig	2026-03-17 09:10:16 UTC
 +++ build/gen.py
-@@ -241,25 +241,16 @@ def GenerateLastCommitPosition(host, header):
+@@ -245,25 +245,16 @@ def GenerateLastCommitPosition(host, header):
    return ret.returncode == 0 and "#define __GNUC__" in ret.stdout and not "#define __clang__" in ret.stdout
  
  def GenerateLastCommitPosition(host, header):
@@ -30,7 +30,7 @@
  
    # Only write/touch this file if the commit position has changed.
    old_contents = ''
-@@ -302,7 +293,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -306,7 +297,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'msys': 'build_linux.ninja.template',
        'darwin': 'build_mac.ninja.template',
        'linux': 'build_linux.ninja.template',

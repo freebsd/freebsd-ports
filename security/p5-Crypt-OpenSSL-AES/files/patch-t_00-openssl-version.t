@@ -1,11 +1,11 @@
---- t/00-openssl-version.t.orig	2023-11-10 22:50:53 UTC
+--- t/00-openssl-version.t.orig	2026-04-03 14:37:18 UTC
 +++ t/00-openssl-version.t
 @@ -3,7 +3,7 @@ use Test::More tests => 1;
- use File::Which qw(which);
+ use Crypt::OpenSSL::Guess qw(find_openssl_exec find_openssl_prefix);
  use Test::More tests => 1;
  
--my $openssl = which('openssl');
-+my $openssl = "SSLBIN";
- like($openssl, qr/openssl/, "Found openssl");
- print "$openssl version: ";
- 
+-my $openssl = find_openssl_exec(find_openssl_prefix());
++my $openssl = "%%SSLBIN%%";
+ ok($openssl, "Found OpenSSL full path");
+ if ($openssl) {
+     my $version = `$openssl version`;

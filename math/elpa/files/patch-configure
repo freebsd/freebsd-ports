@@ -1,6 +1,258 @@
---- configure.orig	2018-08-29 19:42:22 UTC
+--- configure.orig	2026-03-04 17:57:40 UTC
 +++ configure
-@@ -23453,15 +23453,15 @@ postdeps_FC=$(echo $postdeps_FC | sed 's
+@@ -30219,7 +30219,7 @@ printf %s "checking whether the $compiler linker ($LD)
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -30514,7 +30514,7 @@ _LT_EOF
+ 
+     *-mlibc)
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       ;;
+ 
+     netbsd* | netbsdelf*-gnu)
+@@ -30523,7 +30523,7 @@ _LT_EOF
+ 	wlarc=
+       else
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       fi
+       ;;
+ 
+@@ -30542,7 +30542,7 @@ _LT_EOF
+ _LT_EOF
+       elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -30571,7 +30571,7 @@ _LT_EOF
+ 	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
+ 	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	    archive_expsym_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	    archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 	  else
+ 	    ld_shlibs=no
+ 	  fi
+@@ -30589,7 +30589,7 @@ _LT_EOF
+     *)
+       if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -31253,7 +31253,7 @@ printf "%s\n" "$lt_cv_irix_exported_symbol" >&6; }
+ 	hardcode_direct_absolute=yes
+ 	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
+ 	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	  archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-retain-symbols-file,$export_symbols'
++	  archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-version-script,$lib-ver'
+ 	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
+ 	  export_dynamic_flag_spec='$wl-E'
+ 	else
+@@ -32122,7 +32122,7 @@ freebsd* | dragonfly* | midnightbsd*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+@@ -33862,7 +33862,7 @@ else
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+ else
+-  if $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++  if $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+     old_striplib="$STRIP --strip-debug"
+     striplib="$STRIP --strip-unneeded"
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -33876,7 +33876,7 @@ printf "%s\n" "yes" >&6; }
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+       ;;
+-    freebsd*)
++dragonfly* |     freebsd*)
+       if $STRIP -V 2>&1 | $GREP "elftoolchain" >/dev/null; then
+         old_striplib="$STRIP --strip-debug"
+         striplib="$STRIP --strip-unneeded"
+@@ -34120,7 +34120,7 @@ module_expsym_cmds_CXX=
+ inherit_rpath_CXX=no
+ module_cmds_CXX=
+ module_expsym_cmds_CXX=
+-link_all_deplibs_CXX=unknown
++link_all_deplibs_CXX=no
+ old_archive_cmds_CXX=$old_archive_cmds
+ reload_flag_CXX=$reload_flag
+ reload_cmds_CXX=$reload_cmds
+@@ -34337,7 +34337,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
+       # archiving commands below assume that GNU ld is being used.
+       if test yes = "$with_gnu_ld"; then
+         archive_cmds_CXX='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
+-        archive_expsym_cmds_CXX='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++        archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 
+         hardcode_libdir_flag_spec_CXX='$wl-rpath $wl$libdir'
+         export_dynamic_flag_spec_CXX='$wl--export-dynamic'
+@@ -35036,7 +35036,7 @@ fi
+ 	    case `$CC -V 2>&1` in
+ 	      *"Version 7."*)
+ 	        archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
+-		archive_expsym_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++		archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 		;;
+ 	      *)  # Version 8.0 or newer
+ 	        tmp_idyn=
+@@ -35044,7 +35044,7 @@ fi
+ 		  ia64*) tmp_idyn=' -i_dynamic';;
+ 		esac
+ 	        archive_cmds_CXX='$CC -shared'"$tmp_idyn"' $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-		archive_expsym_cmds_CXX='$CC -shared'"$tmp_idyn"' $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++		archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared'"$tmp_idyn"' $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 		;;
+ 	    esac
+ 	    archive_cmds_need_lc_CXX=no
+@@ -35076,7 +35076,7 @@ fi
+ 	      ;;
+ 	    *) # Version 6 and above use weak symbols
+ 	      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
+-	      archive_expsym_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	      archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 	      ;;
+ 	    esac
+ 
+@@ -35087,7 +35087,7 @@ fi
+ 	  cxx*)
+ 	    # Compaq C++
+ 	    archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
+-	    archive_expsym_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname  -o $lib $wl-retain-symbols-file $wl$export_symbols'
++	    archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname  -o $lib $wl-version-script $wl$lib-ver'
+ 
+ 	    runpath_var=LD_RUN_PATH
+ 	    hardcode_libdir_flag_spec_CXX='-rpath $libdir'
+@@ -35121,7 +35121,7 @@ fi
+ 	      # Sun C++ 5.9
+ 	      no_undefined_flag_CXX=' -zdefs'
+ 	      archive_cmds_CXX='$CC -G$allow_undefined_flag -h$soname -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags'
+-	      archive_expsym_cmds_CXX='$CC -G$allow_undefined_flag -h$soname -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-retain-symbols-file $wl$export_symbols'
++	      archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -G$allow_undefined_flag -h$soname -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-version-script $wl$lib-ver'
+ 	      hardcode_libdir_flag_spec_CXX='-R$libdir'
+ 	      whole_archive_flag_spec_CXX='$wl--whole-archive`new_convenience=; for conv in $convenience\"\"; do test -z \"$conv\" || new_convenience=\"$new_convenience,$conv\"; done; func_echo_all \"$new_convenience\"` $wl--no-whole-archive'
+ 	      compiler_needs_object_CXX=yes
+@@ -35193,7 +35193,7 @@ fi
+ 	  archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
+ 	  hardcode_libdir_flag_spec_CXX='$wl-rpath,$libdir'
+ 	  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
+-	    archive_expsym_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-retain-symbols-file,$export_symbols -o $lib'
++	    archive_expsym_cmds_CXX='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-version-script,$lib-ver -o $lib'
+ 	    export_dynamic_flag_spec_CXX='$wl-E'
+ 	    whole_archive_flag_spec_CXX=$wlarc'--whole-archive$convenience '$wlarc'--no-whole-archive'
+ 	  fi
+@@ -36749,7 +36749,7 @@ freebsd* | dragonfly* | midnightbsd*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+@@ -37875,7 +37875,7 @@ module_expsym_cmds_FC=
+ inherit_rpath_FC=no
+ module_cmds_FC=
+ module_expsym_cmds_FC=
+-link_all_deplibs_FC=unknown
++link_all_deplibs_FC=no
+ old_archive_cmds_FC=$old_archive_cmds
+ reload_flag_FC=$reload_flag
+ reload_cmds_FC=$reload_cmds
+@@ -38775,7 +38775,7 @@ printf %s "checking whether the $compiler linker ($LD)
+   hardcode_minus_L_FC=no
+   hardcode_shlibpath_var_FC=unsupported
+   inherit_rpath_FC=no
+-  link_all_deplibs_FC=unknown
++  link_all_deplibs_FC=no
+   module_cmds_FC=
+   module_expsym_cmds_FC=
+   old_archive_from_new_cmds_FC=
+@@ -39070,7 +39070,7 @@ _LT_EOF
+ 
+     *-mlibc)
+ 	archive_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds_FC='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       ;;
+ 
+     netbsd* | netbsdelf*-gnu)
+@@ -39079,7 +39079,7 @@ _LT_EOF
+ 	wlarc=
+       else
+ 	archive_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds_FC='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       fi
+       ;;
+ 
+@@ -39098,7 +39098,7 @@ _LT_EOF
+ _LT_EOF
+       elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds_FC='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs_FC=no
+       fi
+@@ -39127,7 +39127,7 @@ _LT_EOF
+ 	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	    hardcode_libdir_flag_spec_FC='$wl-rpath $wl$libdir'
+ 	    archive_cmds_FC='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	    archive_expsym_cmds_FC='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	    archive_expsym_cmds_FC='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 	  else
+ 	    ld_shlibs_FC=no
+ 	  fi
+@@ -39145,7 +39145,7 @@ _LT_EOF
+     *)
+       if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds_FC='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds_FC='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs_FC=no
+       fi
+@@ -39757,7 +39757,7 @@ printf "%s\n" "$lt_cv_irix_exported_symbol" >&6; }
+ 	hardcode_direct_absolute_FC=yes
+ 	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
+ 	  archive_cmds_FC='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	  archive_expsym_cmds_FC='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-retain-symbols-file,$export_symbols'
++	  archive_expsym_cmds_FC='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-version-script,$lib-ver'
+ 	  hardcode_libdir_flag_spec_FC='$wl-rpath,$libdir'
+ 	  export_dynamic_flag_spec_FC='$wl-E'
+ 	else
+@@ -40454,7 +40454,7 @@ freebsd* | dragonfly* | midnightbsd*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+@@ -44161,15 +44161,15 @@ if test x"${with_mpi}" = x"yes"; then
  
  if test x"${with_mpi}" = x"yes"; then
    if test x"${enable_openmp}" = x"yes"; then

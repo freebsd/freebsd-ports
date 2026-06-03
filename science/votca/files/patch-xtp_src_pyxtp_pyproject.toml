@@ -1,0 +1,11 @@
+--- xtp/src/pyxtp/pyproject.toml.orig	2026-04-20 19:20:56 UTC
++++ xtp/src/pyxtp/pyproject.toml
+@@ -9,7 +9,7 @@ authors = [
+   { name="Bjoern Baumeier", email="bjoernbaumeier@gmail.com" },
+ ]
+ 
+-dependencies = ["ase", "xmltodict", "h5py", "lxml", "rdkit"]
++dependencies = ["ase", "xmltodict", "h5py", "lxml"]
+ 
+ [tool.pytest.ini_options]
+ addopts = [

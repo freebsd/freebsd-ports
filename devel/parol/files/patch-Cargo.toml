@@ -1,0 +1,20 @@
+- prevent breakage due to crates/.cargo inclusion
+
+--- Cargo.toml.orig	2026-05-03 07:50:45 UTC
++++ Cargo.toml
+@@ -2,7 +2,7 @@ resolver = "2"
+ 
+ resolver = "2"
+ 
+-members = ["crates/*"]
++members = ["crates/parol"]
+ 
+ exclude = [
+   "crates/parol/tests/snapshots/bin",
+@@ -39,4 +39,4 @@ lto = true
+ 
+ [profile.release]
+ lto = true
+-debug = true
+\ No newline at end of file
++debug = true

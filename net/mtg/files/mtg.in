@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# PROVIDE: mtg
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add following lines to /etc/rc.conf to enable the MTG:
+#
+# mtg_enable (bool):			Set NO by default
+#					Set YES to enable daemon
+# mtg_user (user):			Set user to run mtg.
+#					Default is "root".
+# mtg_group (group):			Set group to run mtg.
+#					Default is "wheel".
+# mtg_args (str): 			Set flags used with mtg.
+#					Default is "run %%ETCDIR%%/config.toml".
+#					Use `mtg --help` to get instruction.
+# mtg_syslog_output_enable (bool):	Set to YES to enable syslog output
+#					Default is "NO". See daemon(8).
+# mtg_syslog_output_tag (str):		Set syslog tag if syslog enabled.
+#					Default is "mtg". See daemon(8).
+# mtg_syslog_output_priority (str):	Set syslog priority if syslog enabled.
+#					Default is "notice". See daemon(8).
+# mtg_syslog_output_facility (str):	Set syslog facility if syslog enabled.
+#					Default is "daemon". See daemon(8).
+
+. /etc/rc.subr
+
+name=mtg
+rcvar=mtg_enable
+
+load_rc_config $name
+
+: ${mtg_enable:="NO"}
+: ${mtg_user:="%%USER%%"}
+: ${mtg_group:="%%GROUP%%"}
+: ${mtg_args:="run %%ETCDIR%%/config.toml"}
+: ${mtg_syslog_output_enable:="NO"}
+
+start_precmd="mtg_prestart"
+
+if checkyesno mtg_syslog_output_enable; then
+	if [ -n "${mtg_syslog_output_tag}" ]; then
+		mtg_syslog_output_flags="-T ${mtg_syslog_output_tag}"
+	else
+		mtg_syslog_output_flags="-T ${name}"
+	fi
+	if [ -n "${mtg_syslog_output_priority}" ]; then
+		mtg_syslog_output_flags="${mtg_syslog_output_flags} -s ${mtg_syslog_output_priority}"
+	fi
+
+	if [ -n "${mtg_syslog_output_facility}" ]; then
+		mtg_syslog_output_flags="${mtg_syslog_output_flags} -l ${mtg_syslog_output_facility}"
+	fi
+fi
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${mtg_syslog_output_flags} -P ${pidfile} %%PREFIX%%/bin/mtg ${mtg_args}"
+
+mtg_prestart()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${mtg_user}" -g "${mtg_group}" /dev/null "${pidfile}"
+	fi
+}
+
+run_rc_command "$1"

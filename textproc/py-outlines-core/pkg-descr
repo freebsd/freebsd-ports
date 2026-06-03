@@ -1,0 +1,3 @@
+outlines-core provides the core Rust implementation for Outlines structured
+text generation. It implements efficient finite state machines for constrained
+LLM generation, supporting regex, JSON schemas, and context-free grammars.

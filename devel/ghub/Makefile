@@ -1,32 +1,25 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.2
+DISTVERSION=	5.2.0
 CATEGORIES=	devel elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Client libraries for the APIs of various Git forges
 WWW=		https://github.com/magit/ghub
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
-		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.2:devel/treepy.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
-		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.2:devel/treepy.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el>=30.1.0.0:misc/compat.el \
+		cond-let>0.2:devel/cond-let \
+		llama.el>=1.0:devel/llama.el \
+		treepy.el>=0.1.3:devel/treepy.el
 
-USES=		emacs gmake makeinfo
+USES=		emacs:build gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-MAKE_ARGS=	LOAD_PATH=" -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat -L ."
-MAKE_JOBS_UNSAFE=	yes
-ALL_TARGET=	lisp info
-
-CONFLICTS_INSTALL=	ghub-emacs*
+CONFLICTS_INSTALL=	ghub-emacs_*
 
 NO_ARCH=	yes
 
@@ -38,22 +31,28 @@ OPTIONS_DEFINE=	DOCS PDF
 PDF_DESC=	Build and install PDF document
 
 DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
-DOCS_ALL_TARGET=	html
 DOCS_BINARY_ALIAS=	sed=gsed
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
 PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
-PDF_ALL_TARGET=		pdf
 PDF_PLIST_FILES=	${DOCSDIR}/ghub.pdf
 
-ELISP_FILES=	buck.el buck.elc ghub-autoloads.el ghub-graphql.el \
-		ghub-graphql.elc ghub.el ghub.elc glab.el glab.elc gogs.el \
-		gogs.elc gsexp.el gsexp.elc gtea.el gtea.elc
+ELISP_FILES=	ghub-autoloads.el ghub-graphql.el ghub-legacy.el ghub.el gsexp.el
+
+do-build:
+	cd ${WRKSRC} && ${MAKE_CMD} info
+	cd ${WRKSRC}/lisp && ${MAKE_CMD} autoloads
+
+do-build-DOCS-on:
+	cd ${WRKSRC} && SED=gsed ${MAKE_CMD} html
+
+do-build-PDF-on:
+	cd ${WRKSRC} && ${MAKE_CMD} pdf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	${INSTALL_DATA} ${ELISP_FILES:C/^/${WRKSRC}\/lisp\//} \
-		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 do-install-DOCS-on:

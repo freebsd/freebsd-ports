@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.h
 @@ -22,7 +22,7 @@
  #include "ui/gfx/image/image_family.h"

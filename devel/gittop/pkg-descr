@@ -1,0 +1,7 @@
+Gittop is a terminal user interface for analyzing Git repository
+statistics, styled after system monitoring utilities like htop and
+btop.
+
+It presents repository data through interactive visualizations
+including activity heatmaps, contributor rankings, branch tables and
+commit timelines, with vim-style keybindings and theming support.

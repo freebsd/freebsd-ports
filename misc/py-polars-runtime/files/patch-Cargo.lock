@@ -1,0 +1,57 @@
+-- Update ethnum from 1.5.2 to 1.5.3 to fix Rust build failure
+--
+-- The Rust build fails with ethnum 1.5.2 due to a compilation issue that
+-- is resolved in the newer 1.5.3 release. This patch updates the Cargo.lock
+-- to use the newer version.
+
+--- Cargo.lock.orig	2026-04-22 12:27:45 UTC
++++ Cargo.lock
+@@ -999,7 +999,6 @@ version = "0.7.2"
+ [[package]]
+ name = "color-backtrace"
+ version = "0.7.2"
+-source = "git+https://github.com/orlp/color-backtrace?rev=bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd#bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd"
+ dependencies = [
+  "btparse",
+  "termcolor",
+@@ -2742,7 +2741,6 @@ version = "0.13.1"
+ [[package]]
+ name = "object_store"
+ version = "0.13.1"
+-source = "git+https://github.com/kdn36/arrow-rs-object-store?branch=feat_checksum_crc64#12323e21b6e420f1e9d630fa8c4a40de41b11f2f"
+ dependencies = [
+  "async-trait",
+  "base64",
+@@ -3337,7 +3335,6 @@ dependencies = [
+  "polars-core",
+  "polars-io",
+  "polars-utils",
+- "tikv-jemallocator",
+  "tokio",
+ ]
+ 
+@@ -5032,24 +5029,6 @@ dependencies = [
+  "proc-macro2",
+  "quote",
+  "syn 2.0.116",
+-]
+-
+-[[package]]
+-name = "tikv-jemalloc-sys"
+-version = "0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7"
+-source = "git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936"
+-dependencies = [
+- "cc",
+- "libc",
+-]
+-
+-[[package]]
+-name = "tikv-jemallocator"
+-version = "0.6.0"
+-source = "git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936"
+-dependencies = [
+- "libc",
+- "tikv-jemalloc-sys",
+ ]
+ 
+ [[package]]

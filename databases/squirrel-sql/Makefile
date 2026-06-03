@@ -1,5 +1,6 @@
 PORTNAME=	squirrel-sql
-DISTVERSION=	4.8.0
+DISTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${DISTVERSION}-plainzip
 DISTNAME=	squirrelsql-${DISTVERSION}-optional
@@ -11,7 +12,7 @@ WWW=		http://www.squirrelsql.org/
 LICENSE=	GPLv2
 
 USES=		java zip
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 
 DATADIR=	${PREFIX}/share/java/${PKGBASE}
 
@@ -21,6 +22,13 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"squirrel-sql" \
 		"Development;Database;Java;" \
 		false
+EXTRACT_BEFORE_ARGS=	-qo \
+			-x '*.bat' \
+			-x '*.sh' \
+			-x '${DISTNAME}/icons/acorn.png.bak.png' \
+			-x '${DISTNAME}/mac' \
+			-x '${DISTNAME}/squirrelcli/*' \
+			-x '${DISTNAME}/squirrelcli'
 NO_ARCH=	yes
 NO_BUILD=	yes
 
@@ -28,12 +36,9 @@ SUB_FILES=	squirrel-sql
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-post-extract:
-	cd "${WRKSRC}" && ${RM} -r *.bat *.sh icons/acorn.png.bak.png mac squirrelcli
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd "${WRKSRC}" && ${FIND} . | ${CPIO} -pdum -R root:wheel ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/squirrel-sql ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

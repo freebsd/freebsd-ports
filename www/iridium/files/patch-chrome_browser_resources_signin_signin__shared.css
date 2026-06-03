@@ -1,11 +1,11 @@
---- chrome/browser/resources/signin/signin_shared.css.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/resources/signin/signin_shared.css.orig	2026-03-24 16:59:08 UTC
 +++ chrome/browser/resources/signin/signin_shared.css
-@@ -54,7 +54,7 @@ a {
-   border-radius: var(--scrollbar-width);
- }
- 
+@@ -39,7 +39,7 @@ a {
+   justify-content: flex-end;
+ </if>
+   padding: var(--action-container-padding);
 -<if expr="is_macosx or is_linux or is_chromeos">
 +<if expr="is_macosx or is_posix or is_chromeos">
- .action-container {
    flex-flow: row-reverse;
    justify-content: flex-start;
+ </if>

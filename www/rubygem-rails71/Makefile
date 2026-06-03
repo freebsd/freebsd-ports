@@ -1,5 +1,5 @@
 PORTNAME=	rails
-PORTVERSION=	7.1.5.1
+PORTVERSION=	7.1.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	71
@@ -64,18 +64,8 @@ USES=		cpe gem
 NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
-CPE_PRODUCT=	ruby_on_rails
+CPE_PRODUCT=	rails
 
 PORTSCOUT=	limit:^7\.1\.
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} <= 3.1
-RUN_DEPENDS+=	rubygem-cgi>=0.3.6:www/rubygem-cgi
-.endif
-
-.if ${RUBY_VER} == 3.1
-RUN_DEPENDS+=	rubygem-error_highlight>=0.4.0:devel/rubygem-error_highlight
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	sqlmap
-PORTVERSION=	1.8
+PORTVERSION=	1.9.12
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 USES=		python shebangfix
 USE_PYTHON=	autoplist pep517
 
-SHEBANG_FILES=	*.py sqlmap/extra/shutils/*.sh sqlmap/extra/shutils/*.py
+SHEBANG_FILES=	*.py sqlmap/extra/shutils/*.sh sqlmap/extra/shutils/*.py \
+		sqlmap/plugins/dbms/clickhouse/*.py \
+		sqlmap/thirdparty/identywaf/identYwaf.py
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MSF

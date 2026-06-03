@@ -4,10 +4,14 @@ lib/cmake/KLU/KLUConfig.cmake
 lib/cmake/KLU/KLUConfigVersion.cmake
 lib/cmake/KLU/KLUTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KLU/KLUTargets.cmake
+lib/cmake/KLU/KLUTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KLU/KLUTargets_static.cmake
 lib/cmake/KLU_CHOLMOD/KLU_CHOLMODConfig.cmake
 lib/cmake/KLU_CHOLMOD/KLU_CHOLMODConfigVersion.cmake
 lib/cmake/KLU_CHOLMOD/KLU_CHOLMODTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KLU_CHOLMOD/KLU_CHOLMODTargets.cmake
+lib/cmake/KLU_CHOLMOD/KLU_CHOLMODTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KLU_CHOLMOD/KLU_CHOLMODTargets_static.cmake
 lib/libklu.a
 lib/libklu.so
 lib/libklu.so.2

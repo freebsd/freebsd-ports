@@ -1,2 +1,8 @@
-This package contains bitmap, which is a tool for creating or editing
-rectangular images made up of 1's and 0's.
+The bitmap program is a rudimentary tool for creating or editing
+rectangular images made up of 1's and 0's. Bitmaps are used in X for
+defining clipping regions, cursor shapes, icon shapes, and tile and
+stipple patterns.
+
+The bmtoa and atobm filters convert bitmap files (FILE FORMAT) to and
+from ASCII strings. They are most commonly used to quickly print out
+bitmaps and to generate versions for including in text.

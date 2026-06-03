@@ -1,5 +1,5 @@
 PORTNAME=	coreutils
-DISTVERSION=	9.7
+DISTVERSION=	9.9
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
@@ -11,7 +11,7 @@ WWW=		https://www.gnu.org/software/coreutils/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix cpe iconv perl5 tar:xz
+USES=		charsetfix cpe iconv perl5 ssl tar:xz
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 USE_PERL5=	build	# required for tests and man page generation

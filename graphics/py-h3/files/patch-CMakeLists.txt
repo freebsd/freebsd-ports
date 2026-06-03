@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2022-11-24 19:38:22 UTC
+--- CMakeLists.txt.orig	2022-11-09 12:37:21 UTC
 +++ CMakeLists.txt
-@@ -6,28 +6,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
- # Always make a release build
- set(CMAKE_BUILD_TYPE Release)
+@@ -11,35 +11,6 @@ find_package(
+   COMPONENTS Interpreter Development.Module
+   REQUIRED)
  
 -# Avoid building tooling we won't need for release
 -# See all options with `cmake -LA` in an `h3/build` directory,
@@ -29,3 +29,10 @@
  # Build the rest (other than the core library dependency) as shared
  set(BUILD_SHARED_LIBS ON)
  add_subdirectory(src/h3)
+-
+-# Include built h3api.h for Cython API
+-install(
+-    FILES
+-        "${CMAKE_CURRENT_BINARY_DIR}/src/h3lib/src/h3lib/include/h3api.h"
+-    DESTINATION
+-        ${SKBUILD_PROJECT_NAME}/_cy)

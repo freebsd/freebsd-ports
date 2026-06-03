@@ -1,3 +1,20 @@
+%%DATADIR%%/emacs-mode/agda-input.el
+%%DATADIR%%/emacs-mode/agda-input.elc
+%%DATADIR%%/emacs-mode/agda2-abbrevs.el
+%%DATADIR%%/emacs-mode/agda2-abbrevs.elc
+%%DATADIR%%/emacs-mode/agda2-highlight.el
+%%DATADIR%%/emacs-mode/agda2-highlight.elc
+%%DATADIR%%/emacs-mode/agda2-mode-pkg.el
+%%DATADIR%%/emacs-mode/agda2-mode.el
+%%DATADIR%%/emacs-mode/agda2-mode.elc
+%%DATADIR%%/emacs-mode/agda2-queue.el
+%%DATADIR%%/emacs-mode/agda2-queue.elc
+%%DATADIR%%/emacs-mode/agda2.el
+%%DATADIR%%/emacs-mode/agda2.elc
+%%DATADIR%%/emacs-mode/annotation.el
+%%DATADIR%%/emacs-mode/annotation.elc
+%%DATADIR%%/emacs-mode/eri.el
+%%DATADIR%%/emacs-mode/eri.elc
 %%DATADIR%%/lib/prim/Agda/Builtin/Bool.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Char.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Char/Properties.agda
@@ -5,7 +22,6 @@
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Equiv.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Glue.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/HCompU.agda
-%%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Id.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Path.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Sub.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Equality.agda
@@ -42,7 +58,6 @@
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Equiv.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Glue.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/HCompU.agdai
-%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Id.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Path.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Sub.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Equality.agdai

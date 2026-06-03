@@ -1,6 +1,6 @@
 bin/sff
-libexec/sff/sff-extfunc
-libexec/sff/plugins/archive
-libexec/sff/plugins/fzf-find
-libexec/sff/plugins/preview
+lib/sff/sff-extfunc
+lib/sff/plugins/archive
+lib/sff/plugins/fzf-find
+lib/sff/plugins/preview
 share/man/man1/sff.1.gz

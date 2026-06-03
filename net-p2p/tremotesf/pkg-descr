@@ -1,5 +1,5 @@
-Tremotesf is yet another, but modern (first-released in 2016) cross-platfom GUI
-for Transmission daemon written in C++ and Qt.
+Tremotesf is yet another cross-platfom GUI for Transmission daemon written in
+C++ and Qt.
 
 Features include, but not necessarily limited to:
 * View torrent list

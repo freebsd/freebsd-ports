@@ -5,9 +5,8 @@ https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278837#c3
 make extract
 cp xxx/Cargo.toml xxx/Cargo.toml.1
 make configure
-diff -dup xxx/Cargo.toml.1 xxx/Cargo.toml
 
---- Cargo.toml.orig	2025-06-26 20:06:31 UTC
+--- Cargo.toml.orig	2025-08-30 05:01:02 UTC
 +++ Cargo.toml
 @@ -38,7 +38,7 @@ flate2            = { version = "1.0" }
  crossbeam-channel = { version = "0.5.12" }
@@ -30,10 +29,10 @@ diff -dup xxx/Cargo.toml.1 xxx/Cargo.toml
  
  lsp-types = { version = "0.95.1", features = ["proposed"] }                                                  # not following semver, so should be locked to patch version updates only
  psp-types = { git = "https://github.com/lapce/psp-types", rev = "f7fea28f59e7b2d6faa1034a21679ad49b3524ad" }
-@@ -85,31 +90,6 @@ regalloc2 = { rev = "5d79e12d0a93b10fc181f4da409b4671d
- # Temporarily patch lsp-types with a version that adds message-type debug
- lsp-types = { git = "https://github.com/lapce/lsp-types", rev = "feaa1e2ec80975c9dadd400a238ceacf071058e6" }
- regalloc2 = { rev = "5d79e12d0a93b10fc181f4da409b4671dd365228", git = "https://github.com/bytecodealliance/regalloc2" }
+@@ -89,31 +94,6 @@ dpi = { git = "https://github.com/rust-windowing/winit
+ # cargo vendor issue: https://github.com/rust-lang/cargo/issues/10310
+ # dpi comes from winit (source) and muda (crate)
+ dpi = { git = "https://github.com/rust-windowing/winit", rev = "ee245c569d65fdeacf705ee5eedb564508d10ebe" }
 -
 -
 -[workspace.dependencies.tracing]

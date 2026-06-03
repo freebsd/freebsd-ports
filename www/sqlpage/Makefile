@@ -1,7 +1,7 @@
 PORTNAME=	sqlpage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.2
-PORTREVISION=	1
+DISTVERSION=	0.43.0
+PORTREVISION=	2
 CATEGORIES=	www databases
 MASTER_SITES=	https://cdn.jsdelivr.net/npm/:npm
 DISTFILES=	${NPM_DISTFILES}
@@ -13,7 +13,8 @@ WWW=		https://github.com/lovasoa/SQLPage
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libodbc.so:databases/unixODBC
 
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib \
 		LLVM_CONFIG_PATH=${LLVM_CONFIG}
@@ -28,11 +29,11 @@ GH_PROJECT=	SQLPage
 USERS=		sqlpage
 GROUPS=		sqlpage
 
-NPM_DISTFILES=	apexcharts@4.7.0/dist/apexcharts.min.js:npm \
-		@tabler/core@1.3.1/dist/css/tabler.min.css:npm \
-		@tabler/core@1.3.1/dist/css/tabler-vendors.min.css:npm \
-		@tabler/core@1.3.1/dist/js/tabler.min.js:npm \
-		@tabler/icons-sprite@3.33.0/dist/tabler-sprite.svg:npm \
+NPM_DISTFILES=	apexcharts@5.3.6/dist/apexcharts.min.js:npm \
+		@tabler/core@1.4.0/dist/css/tabler.min.css:npm \
+		@tabler/core@1.4.0/dist/css/tabler-vendors.min.css:npm \
+		@tabler/core@1.4.0/dist/js/tabler.min.js:npm \
+		@tabler/icons-sprite@3.35.0/dist/tabler-sprite.svg:npm \
 		tom-select@2.4.3/dist/css/tom-select.bootstrap5.css:npm \
 		tom-select@2.4.1/dist/js/tom-select.popular.min.js:npm
 
@@ -48,7 +49,7 @@ post-install:
 		${MKDIR} ${STAGEDIR}/${ETCDIR} ;\
 		 ${INSTALL_DATA} ${FILESDIR}/sqlpage.json ${STAGEDIR}${ETCDIR}/sqlpage.json.sample
 		${MKDIR} ${STAGEDIR}/${WWWDIR} ${STAGEDIR}${DATADIR} ;\
-		 ${INSTALL_DATA} ${WRKSRC}/index.sql ${STAGEDIR}${DATADIR}
+		 ${INSTALL_DATA} ${WRKSRC}/src/index.sql ${STAGEDIR}${DATADIR}
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d ;\
 		 ${INSTALL_DATA} ${FILESDIR}/sqlpage.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/sqlpage.conf.sample
 

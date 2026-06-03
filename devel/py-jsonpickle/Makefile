@@ -1,12 +1,13 @@
 PORTNAME=	jsonpickle
-DISTVERSION=	3.4.0
+DISTVERSION=	4.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library for serializing any arbitrary object graph into JSON
-WWW=		https://jsonpickle.github.io/
+WWW=		https://jsonpickle.github.io/ \
+		https://github.com/jsonpickle/jsonpickle
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}\
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/py-pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>0:devel/py-pytest-benchmark@${PY_FLAVOR} \
@@ -42,5 +43,7 @@ USE_PYTHON=	pep517 autoplist pytest # 10 tests fail, see https://github.com/json
 CPE_VENDOR=	${PORTNAME}_project
 
 NO_ARCH=	yes
+
+# tests as of 4.1.2: 5 failed, 415 passed, 2 skipped, 651 warnings in 9.21s, see https://github.com/jsonpickle/jsonpickle/issues/601
 
 .include <bsd.port.mk>

@@ -34,7 +34,7 @@ USERS=		rtg
 GROUPS=		rtg
 
 OPTIONS_DEFINE=	WEB MYSQL
-MYSQL_DESC=	Pull MySQL server in as a dependancy for local setups
+MYSQL_DESC=	Pull MySQL server in as a dependency for local setups
 WEB_DESC=	Include PHP-based web client interface pre-requisites
 
 MYSQL_USES=	mysql:server

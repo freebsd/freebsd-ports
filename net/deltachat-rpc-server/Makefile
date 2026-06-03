@@ -1,7 +1,7 @@
 PORTNAME=	deltachat-rpc-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.159.3
-PORTREVISION=	2
+DISTVERSION=	2.49.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	feld@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://github.com/chatmail/core
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=	aarch64
+NOT_FOR_ARCHS_REASON=	Dependency update needed to fix the build
 
 USES=		cargo gmake perl5 ssl
 

@@ -1,6 +1,6 @@
 PORTNAME=	immer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://sinusoid.es/immer/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	arximboldi
 

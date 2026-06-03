@@ -1,8 +1,0 @@
-bin/var-config
-include/var.h
-lib/libvar.a
-lib/libvar.so
-lib/libvar.so.11
-lib/libvar.so.11.0.23
-share/man/man1/var-config.1.gz
-share/man/man3/var.3.gz

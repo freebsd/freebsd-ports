@@ -1,7 +1,7 @@
 PORTNAME=	trillian
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
-PORTREVISION=	3
+DISTVERSION=	1.7.3
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/google/trillian
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:modules
 USE_RC_SUBR=	trillian_log_server trillian_log_signer
 
 GO_MODULE=	github.com/google/trillian

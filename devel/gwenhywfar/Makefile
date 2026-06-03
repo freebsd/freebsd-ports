@@ -1,8 +1,8 @@
 PORTNAME=	gwenhywfar
-PORTVERSION=	5.12.0
+PORTVERSION=	5.14.1
 PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/529/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/630/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
@@ -60,29 +60,17 @@ LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar
 BUILD_WRKSRC=	${WRKSRC}/gui
 INSTALL_WRKSRC=	${WRKSRC}/gui/${_GWEN_GUI}
 
-.  if ${_GWEN_GUI} == "fox16"
-LIB_DEPENDS+=	libFOX-1.6.so:x11-toolkits/fox16
-CONFIGURE_ARGS+=--with-fox-includes=${LOCALBASE}/include/fox-1.6 \
-		--with-fox-libs=${LOCALBASE}/lib
-CXXFLAGS+=	-Dregister=
-.  elif ${_GWEN_GUI} == "gtk2"
-LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz \
-		libfontconfig.so:x11-fonts/fontconfig
-USES+=		gettext-runtime gnome
-USE_GNOME+=	cairo gdkpixbuf gtk20
-.  elif ${_GWEN_GUI} == "gtk3"
+.  if ${_GWEN_GUI} == "gtk3"
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USES+=		gettext-runtime gnome
 USE_GNOME+=	cairo gdkpixbuf gtk30
-.  elif ${_GWEN_GUI} == "qt5"
-USES+=		compiler:c++11-lang gl qmake:no_env qt:5
-USE_GL=		gl
-USE_QT=		core gui widgets \
-		buildtools:build qmake:build
-CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
-		--with-qt5-moc=${MOC} \
-		--with-qt5-uic=${UIC}
+.  elif ${_GWEN_GUI} == "qt6"
+USES+=		compiler:c++17-lang gl qt:6
+USE_GL=		opengl
+USE_QT=		base
+CONFIGURE_ENV+=	QMAKE=${QMAKE} \
+		QT_MOC=${MOC} \
+		QT_UIC=${UIC}
 .  endif
 .endif
 

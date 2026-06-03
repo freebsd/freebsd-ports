@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2025-11-23 11:19:54 UTC
++++ pyproject.toml
+@@ -5,8 +5,7 @@ keywords = ["backport", "backports", "pep-784", "zstd"
+ description = "Backport of compression.zstd"
+ readme = { file = "README.md", content-type = "text/markdown" }
+ keywords = ["backport", "backports", "pep-784", "zstd"]
+-license = "PSF-2.0"
+-license-files = ["LICENSE.txt", "LICENSE_zstd.txt"]
++license = {text = "PSF-2.0"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
+@@ -31,7 +30,7 @@ Source = "https://github.com/rogdham/backports.zstd"
+ #
+ 
+ [build-system]
+-requires = ["setuptools>=80"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.packages.find]

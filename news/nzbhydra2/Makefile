@@ -1,5 +1,5 @@
 PORTNAME=	nzbhydra2
-DISTVERSION=	7.9.0
+DISTVERSION=	8.5.3
 DISTVERSIONSUFFIX=	-generic
 CATEGORIES=	news java
 MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -13,40 +13,38 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-USES=		java python
+USES=		java python zip
+JAVA_VERSION=	17
+JAVA_VENDOR=	openjdk
 USE_RC_SUBR=	nzbhydra2
 
-EXTRACT_SUFX=	.zip
-EXTRACT_AFTER_ARGS=	--exclude executables \
-			--exclude other \
-			--exclude WindowsService \
-			--exclude *.exe \
-			--exclude nzbhydra2wrapper.py \
-			--no-same-owner --no-same-permissions
-
+EXTRACT_BEFORE_ARGS=	-qo \
+			-x '*.exe' -x '*.cmd' \
+			-x WindowsService \
+			-x executables \
+			-x nzbhydra2wrapper.py \
+			-x other/* -x other
+NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-
 SUB_FILES=	nzbhydra2
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		JAVA=${JAVA} \
-		DISTVERSION=${DISTVERSION}
+		DISTVERSION=${DISTVERSION} \
+		USER=${USERS} \
+		GROUP=${GROUPS}
 
-JAVA_VERSION=	17+
-JAVA_VENDOR=	openjdk
+NO_WRKSUBDIR=	yes
 
 USERS=		nzbhydra2
 GROUPS=		nzbhydra2
 
-PLIST_FILES=	${DATADIR}/lib/core-${DISTVERSION}-exec.jar \
+PLIST_FILES=	${DATADIR}/changelog.md \
+		${DATADIR}/lib/core-${DISTVERSION}-exec.jar \
 		${DATADIR}/nzbhydra2wrapperPy3.py \
-		${DATADIR}/changelog.md \
-		${DATADIR}/readme.md \
-		${DATADIR}/LICENSE
+		${DATADIR}/readme.md
 
 do-install:
-	@${MKDIR} ${STAGEDIR}/${DATADIR}
-	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR} '! -name LICENSE')
 
 .include <bsd.port.mk>

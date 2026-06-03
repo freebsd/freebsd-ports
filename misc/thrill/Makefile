@@ -10,7 +10,7 @@ WWW=		https://project-thrill.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe # static_assert failed due to requirement 'sizeof(unsigned int) == 8' "FOXXLL supports only 64-bit builds"
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe # static_assert failed due to requirement 'sizeof(unsigned int) == 8' "FOXXLL supports only 64-bit builds"
 
 LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 

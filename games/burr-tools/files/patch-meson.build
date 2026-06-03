@@ -1,0 +1,58 @@
+--- meson.build.orig	2025-10-30 12:13:51 UTC
++++ meson.build
+@@ -1,8 +1,6 @@ project('burrtools', 'cpp', 'c',
+ project('burrtools', 'cpp', 'c',
+-	version: run_command('sh', '-c', 
+-	                     'git describe --tags --always --dirty 2>/dev/null || echo 0.7.0-unknown',
+-	                     check: false).stdout().strip(),
+-	
++	version: '%%PKGVERSION%%',
++
+ 	default_options : [
+ 	  'c_std=c11',
+ 	  'build.c_std=c11',
+@@ -27,26 +25,6 @@ lua_src = [
+ endif
+ 
+ lua_src = [
+-  'src/lua/lapi.c',
+-  'src/lua/lauxlib.c',
+-  'src/lua/lcode.c',
+-  'src/lua/ldebug.c',
+-  'src/lua/ldo.c',
+-  'src/lua/ldump.c',
+-  'src/lua/lfunc.c',
+-  'src/lua/lgc.c',
+-  'src/lua/llex.c',
+-  'src/lua/lmem.c',
+-  'src/lua/lobject.c',
+-  'src/lua/lopcodes.c',
+-  'src/lua/lparser.c',
+-  'src/lua/lstate.c',
+-  'src/lua/lstring.c',
+-  'src/lua/ltable.c',
+-  'src/lua/ltm.c',
+-  'src/lua/lundump.c',
+-  'src/lua/lvm.c',
+-  'src/lua/lzio.c',
+   'src/lua/luaclass.cpp',
+ ]
+ 
+@@ -205,6 +183,7 @@ gdiplus_dep = dependency('', required: false)
+ 
+ gdiplus_dep = dependency('', required: false)
+ 
++lua_dep = dependency('lua-5.1')
+ fltk_dep = cxx.find_library('fltk', required: false)
+ fltkgl_dep = cxx.find_library('fltk_gl', required: false)
+ fltkimages_dep = cxx.find_library('fltk_images', required: false)
+@@ -277,7 +256,7 @@ executable('burrTxt2',  tools_src + halfedge_src + lib
+  	   dependencies: [thread_dep, zlib_dep],
+ 	  )
+ 
+-executable('burrtools', lua_src + tools_src + gui_src + halfedge_src + libburr_src,
+-          dependencies: [thread_dep, zlib_dep, gl_dep, glu_dep, gdiplus_dep, fltk_dep, fltkgl_dep, fltkimages_dep, fltkpng_dep, fltkz_dep, libpng_dep, cocoa_dep],
++executable('burrtools',  lua_src + tools_src + gui_src + halfedge_src + libburr_src,
++          dependencies: [lua_dep, thread_dep, zlib_dep, gl_dep, glu_dep, gdiplus_dep, fltk_dep, fltkgl_dep, fltkimages_dep, fltkpng_dep, fltkz_dep, libpng_dep, cocoa_dep],
+           win_subsystem: 'windows',
+ 	  )

@@ -1,0 +1,13 @@
+--- sample/sample-config-files/loopback-client.orig	2025-04-02 06:53:10 UTC
++++ sample/sample-config-files/loopback-client
+@@ -12,8 +12,8 @@
+ # this config file has the crypto material (cert, key, ..) "inlined",
+ # while the "server" config has it as external reference - test both paths
+ 
+-rport 16000
+-lport 16001
++rport 16100
++lport 16101
+ remote localhost
+ local localhost
+ dev null

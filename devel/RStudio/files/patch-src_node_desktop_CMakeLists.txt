@@ -1,0 +1,133 @@
+- Install freedesktop files to CMAKE_INSTALL_PREFIX instead of /usr
+- Include node_modules in copy (pre-fetched during fetch phase)
+- Use electron-forge package with pre-downloaded Electron zip
+- Install Electron app files on FreeBSD (treat like Linux)
+
+--- src/node/desktop/CMakeLists.txt.orig	2025-12-01 09:09:04 UTC
++++ src/node/desktop/CMakeLists.txt
+@@ -41,11 +41,11 @@ if(RSTUDIO_INSTALL_FREEDESKTOP)
+    configure_file (${RSTUDIO_FREEDESKTOP_SOURCE_DIR}/rstudio.desktop.in
+                   ${RSTUDIO_FREEDESKTOP_BINARY_DIR}/rstudio.desktop)
+    install(FILES ${RSTUDIO_FREEDESKTOP_BINARY_DIR}/rstudio.desktop
+-         DESTINATION /usr/share/applications)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ 
+    # mime types
+    install(FILES ${RSTUDIO_FREEDESKTOP_SOURCE_DIR}/rstudio.xml
+-         DESTINATION /usr/share/mime/packages)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/mime/packages)
+ 
+    # define icon dirs
+    set(RSTUDIO_ICONS_16 ${RSTUDIO_FREEDESKTOP_SOURCE_DIR}/icons/16x16)
+@@ -56,41 +56,41 @@ if(RSTUDIO_INSTALL_FREEDESKTOP)
+ 
+    # application icon
+    install(FILES ${RSTUDIO_ICONS_32}/rstudio.png
+-         DESTINATION /usr/share/pixmaps)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps)
+    install(FILES ${RSTUDIO_ICONS_16}/rstudio.png
+-         DESTINATION /usr/share/icons/hicolor/16x16/apps)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/16x16/apps)
+    install(FILES ${RSTUDIO_ICONS_24}/rstudio.png
+-         DESTINATION /usr/share/icons/hicolor/24x24/apps)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/24x24/apps)
+    install(FILES ${RSTUDIO_ICONS_32}/rstudio.png
+-         DESTINATION /usr/share/icons/hicolor/32x32/apps)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps)
+    install(FILES ${RSTUDIO_ICONS_48}/rstudio.png
+-         DESTINATION /usr/share/icons/hicolor/48x48/apps)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/apps)
+    install(FILES ${RSTUDIO_ICONS_256}/rstudio.png
+-         DESTINATION /usr/share/icons/hicolor/256x256/apps)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps)
+ 
+    # .RData icon
+    install(FILES ${RSTUDIO_ICONS_16}/application-x-r-data.png
+-         DESTINATION /usr/share/icons/hicolor/16x16/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/16x16/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_24}/application-x-r-data.png
+-         DESTINATION /usr/share/icons/hicolor/24x24/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/24x24/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_32}/application-x-r-data.png
+-         DESTINATION /usr/share/icons/hicolor/32x32/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_48}/application-x-r-data.png
+-         DESTINATION /usr/share/icons/hicolor/48x48/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_256}/application-x-r-data.png
+-         DESTINATION /usr/share/icons/hicolor/256x256/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/mimetypes)
+ 
+    # .Rproj icon
+    install(FILES ${RSTUDIO_ICONS_16}/application-x-r-project.png
+-         DESTINATION /usr/share/icons/hicolor/16x16/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/16x16/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_24}/application-x-r-project.png
+-         DESTINATION /usr/share/icons/hicolor/24x24/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/24x24/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_32}/application-x-r-project.png
+-         DESTINATION /usr/share/icons/hicolor/32x32/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_48}/application-x-r-project.png
+-         DESTINATION /usr/share/icons/hicolor/48x48/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/mimetypes)
+    install(FILES ${RSTUDIO_ICONS_256}/application-x-r-project.png
+-         DESTINATION /usr/share/icons/hicolor/256x256/mimetypes)
++         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/mimetypes)
+ endif()
+ 
+ if(APPLE)
+@@ -117,11 +117,7 @@ file(
+ file(
+    COPY "${CMAKE_CURRENT_SOURCE_DIR}/"
+    DESTINATION "${ELECTRON_BINARY_DIR}/"
+-   REGEX "/.webpack$" EXCLUDE
+-   REGEX "/build$" EXCLUDE
+-   REGEX "/bin$" EXCLUDE
+-   REGEX "/out$" EXCLUDE
+-   REGEX "/node_modules$" EXCLUDE)
++   REGEX "/.webpack$" EXCLUDE)
+ 
+ configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main/build-info.ts.in
+@@ -165,11 +161,8 @@ else()
+       DEPENDS "${DESKTOP_SOURCES}"
+       COMMENT "Building desktop (Electron ${UNAME_M})"
+       WORKING_DIRECTORY "${ELECTRON_BINARY_DIR}"
+-      COMMAND
+-         ${CMAKE_COMMAND} -E env
+-         "PATH=${MODIFIED_PATH}"
+-         "MAKEFLAGS="
+-         ${NPM} run package
++      COMMAND ${CMAKE_COMMAND} -E env "PATH=${MODIFIED_PATH}" "MAKEFLAGS=" ${NPX} ts-node scripts/generate.ts
++      COMMAND ${CMAKE_COMMAND} -E env "PATH=${MODIFIED_PATH}" "MAKEFLAGS=" "NODE_INSTALLER=npm" ${NPX} electron-forge package --platform=linux
+    )
+ 
+ endif()
+@@ -236,7 +229,7 @@ if(WIN32)
+    install(FILES ${VCRUNTIME_X86_FILES} DESTINATION "${RSTUDIO_INSTALL_BIN}/x86")
+    install(FILES ${VCRUNTIME_X64_FILES} DESTINATION "${RSTUDIO_INSTALL_BIN}")
+ 
+-elseif(LINUX)
++elseif(LINUX OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+ 
+    if(UNAME_M STREQUAL aarch64)
+       set(ELECTRON_ARCH arm64)
+@@ -244,13 +237,15 @@ elseif(LINUX)
+       set(ELECTRON_ARCH x64)
+    endif()
+ 
++   # On FreeBSD, only install resources/app (Electron app files)
++   # since we use system electron37, not the bundled Electron
+    install(
+-      DIRECTORY "${ELECTRON_BINARY_DIR}/out/RStudio-linux-${ELECTRON_ARCH}/"
++      DIRECTORY "${ELECTRON_BINARY_DIR}/out/RStudio-linux-${ELECTRON_ARCH}/resources/app/"
+       DIRECTORY_PERMISSIONS
+       OWNER_READ OWNER_WRITE OWNER_EXECUTE
+       GROUP_READ GROUP_EXECUTE
+       WORLD_READ WORLD_EXECUTE
+-      DESTINATION "${RSTUDIO_INSTALL_ELECTRON}"
++      DESTINATION "resources/app"
+       USE_SOURCE_PERMISSIONS
+    )
+ 

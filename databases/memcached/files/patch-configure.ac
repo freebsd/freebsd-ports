@@ -1,6 +1,6 @@
---- configure.ac.orig	2023-03-08 21:34:27 UTC
+--- configure.ac.orig	2025-07-18 21:35:16 UTC
 +++ configure.ac
-@@ -201,7 +201,7 @@ if test "x$enable_dtrace" = "xyes"; then
+@@ -207,7 +207,7 @@ if test "x$enable_dtrace" = "xyes"; then
    if test "x$DTRACE" != "xno"; then
      AC_DEFINE([ENABLE_DTRACE],1,[Set to nonzero if you want to include DTRACE])
      build_dtrace=yes

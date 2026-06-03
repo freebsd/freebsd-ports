@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/app/content_main_runner_impl.cc.orig	2025-03-09 19:36:47 UTC
+--- src/3rdparty/chromium/content/app/content_main_runner_impl.cc.orig	2026-02-26 14:39:03 UTC
 +++ src/3rdparty/chromium/content/app/content_main_runner_impl.cc
-@@ -147,18 +147,20 @@
+@@ -150,18 +150,20 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -22,8 +22,8 @@
 +#endif
  #include "third_party/boringssl/src/include/openssl/crypto.h"
  
- #if BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -189,12 +191,16 @@
+ #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
+@@ -182,12 +184,16 @@
  #include "content/public/common/zygote/zygote_handle.h"
  #include "content/zygote/zygote_main.h"
  #include "media/base/media_switches.h"
@@ -41,16 +41,16 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -406,7 +412,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -387,7 +393,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
- #if BUILDFLAG(ENABLE_PPAPI)
- // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -444,7 +450,10 @@ void PreSandboxInit() {
+ #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
+ // Loads registered library CDMs but does not initialize them. This is needed by
+@@ -406,7 +412,10 @@ void PreSandboxInit() {
  
  void PreSandboxInit() {
    // Ensure the /dev/urandom is opened.
@@ -61,7 +61,7 @@
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -456,9 +465,16 @@ void PreSandboxInit() {
+@@ -418,9 +427,16 @@ void PreSandboxInit() {
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
@@ -76,18 +76,18 @@
    base::GetMaxNumberOfInotifyWatches();
 +#endif
  
- #if BUILDFLAG(ENABLE_PPAPI)
-   // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -772,7 +788,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+ #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
+   // Ensure access to the library CDMs before the sandbox is turned on.
+@@ -741,7 +757,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+     base::HangWatcher::CreateHangWatcherInstance();
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
-     bool start_hang_watcher_now;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -882,11 +898,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -859,11 +875,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -101,12 +101,15 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1069,8 +1084,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1027,10 +1042,23 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
 +#elif BUILDFLAG(IS_BSD)
 +  PreSandboxInit();
++
+ #elif BUILDFLAG(IS_IOS) && !BUILDFLAG(IS_IOS_TVOS)
+   ChildProcessEnterSandbox();
  #endif
  
 +#if BUILDFLAG(IS_BSD)
@@ -122,7 +125,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1169,6 +1196,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1134,6 +1162,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

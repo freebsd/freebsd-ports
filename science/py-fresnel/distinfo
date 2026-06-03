@@ -1,9 +1,9 @@
-TIMESTAMP = 1642820220
-SHA256 (glotzerlab-fresnel-v0.13.4-4-g3ba217f_GH0.tar.gz) = ac0b4f0e26050cdb4c1f5aa65cca66462127f2e6f2d6e0c97138d510fe5356e6
-SIZE (glotzerlab-fresnel-v0.13.4-4-g3ba217f_GH0.tar.gz) = 11009467
+TIMESTAMP = 1760712135
+SHA256 (glotzerlab-fresnel-v0.13.8_GH0.tar.gz) = b64b5aac2836bb3c30d8e7c8256e5726ff680b52674dcb0286a291f05e9c2241
+SIZE (glotzerlab-fresnel-v0.13.8_GH0.tar.gz) = 11065739
 SHA256 (glotzerlab-random123-7f2371b8c597a486cd33fb421a196d78efe08043_GH0.tar.gz) = c96b9240953197387977244858d624c81bef15d74c5badd77a07c8d29cb30a8e
 SIZE (glotzerlab-random123-7f2371b8c597a486cd33fb421a196d78efe08043_GH0.tar.gz) = 648611
-SHA256 (glotzerlab-fresnel-examples-dad005682fc3b5d167861ce7eda23a157baf2ce7_GH0.tar.gz) = c603a5a48b7b559ae091d11f4a1ccdae2628929ccef721d9da1bd17bb8928e5a
-SIZE (glotzerlab-fresnel-examples-dad005682fc3b5d167861ce7eda23a157baf2ce7_GH0.tar.gz) = 8110548
+SHA256 (glotzerlab-fresnel-examples-edae193_GH0.tar.gz) = e6b89dd8a4d15283f645aa206b91b139d0c89feb47e379c25dd37f0a42b8d73a
+SIZE (glotzerlab-fresnel-examples-edae193_GH0.tar.gz) = 8109210
 SHA256 (glotzerlab-qhull-613debeaea72ee66626dace9ba1a2eff11b5d37d_GH0.tar.gz) = b4504a190dc15c3ae932b998a2eed3cba8c7bdda1ab2a886e7e09d0526ee8143
 SIZE (glotzerlab-qhull-613debeaea72ee66626dace9ba1a2eff11b5d37d_GH0.tar.gz) = 1308230

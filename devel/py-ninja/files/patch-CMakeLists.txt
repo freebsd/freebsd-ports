@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-04-06 13:19:14.054748000 UTC
++++ CMakeLists.txt	2026-04-06 13:19:14.097244000 UTC
+@@ -33,5 +33,7 @@
+   )
+ endif()
+ 
+-install(TARGETS ninja COMPONENT python DESTINATION "${SKBUILD_SCRIPTS_DIR}")
++if(NOT DEFINED ENV{NINJA_PYTHON_DIST_ALLOW_NINJA_DEP})
++  install(TARGETS ninja COMPONENT python DESTINATION "${SKBUILD_SCRIPTS_DIR}")
++endif()
+ install(FILES "${ninja_SOURCE_DIR}/misc/ninja_syntax.py" COMPONENT python DESTINATION ninja)

@@ -1,6 +1,5 @@
 PORTNAME=	doorkeeper-openid_connect
-PORTVERSION=	1.8.11
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/doorkeeper-gem/doorkeeper-openid_connect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-doorkeeper-rails-gitlab>=5.5<5.9:security/rubygem-doorkeeper-rails-gitlab \
+RUN_DEPENDS=	rubygem-doorkeeper-rails-gitlab>=5.5<6:security/rubygem-doorkeeper-rails-gitlab \
 		rubygem-jwt>=2.5:www/rubygem-jwt \
 		rubygem-ostruct>=0.5:devel/rubygem-ostruct
 

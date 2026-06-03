@@ -19,6 +19,8 @@
 #               Default is ":9100".
 # node_exporter_textfile_dir (string):  Set directory that node_exporter will watch
 #               Default is "/var/tmp/node_exporter".
+# node_exporter_pidfile (string):       Set location of the node_exporter pidfile
+#               Default is "/var/run/node_exporter.pid".
 
 . /etc/rc.subr
 
@@ -33,12 +35,12 @@ load_rc_config $name
 : ${node_exporter_args:=""}
 : ${node_exporter_listen_address:=":9100"}
 : ${node_exporter_textfile_dir:="/var/tmp/node_exporter"}
+: ${node_exporter_pidfile:="/var/run/node_exporter.pid"}
 
 
-pidfile=/var/run/node_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/node_exporter"
-command_args="-f -p ${pidfile} -T ${name} \
+command_args="-f -p ${node_exporter_pidfile} -T ${name} \
     /usr/bin/env ${procname} \
     --web.listen-address=${node_exporter_listen_address} \
     --collector.textfile.directory=${node_exporter_textfile_dir} \
@@ -48,11 +50,11 @@ start_precmd=node_exporter_startprecmd
 
 node_exporter_startprecmd()
 {
-    if [ ! -e ${pidfile} ]; then
+    if [ ! -e ${node_exporter_pidfile} ]; then
         install \
             -o ${node_exporter_user} \
             -g ${node_exporter_group} \
-            /dev/null ${pidfile};
+            /dev/null ${node_exporter_pidfile};
     fi
     if [ ! -d ${node_exporter_textfile_dir} ]; then
         install \

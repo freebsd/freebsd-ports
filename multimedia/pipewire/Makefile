@@ -1,19 +1,23 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.4.1
-PORTREVISION=	1
+DISTVERSION=	1.6.6
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Server and user space API to deal with multimedia pipelines
 WWW=		https://pipewire.org/
 
+PATCH_SITES=	https://gitlab.freedesktop.org/pipewire/pipewire/-/commit/
+PATCHFILES=	db8bb8d489c55f9e8993c1c77c11e11268ef55dc.patch:-p1
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat \
+		${LOCALBASE}/include/fftw3.f:math/fftw3
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libinotify.so:devel/libinotify \
 		libepoll-shim.so:devel/libepoll-shim \
+		libfftw3f.so:math/fftw3-float \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libudev.so:devel/libudev-devd \
@@ -30,7 +34,7 @@ GL_SITE=	https://gitlab.freedesktop.org
 SHEBANG_FILES=	doc/*.py
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		ALSA AVAHI DOCS DOXYGEN EBUR GSTREAMER JACK LV2 PULSEAUDIO \
+OPTIONS_DEFINE=		ALSA AVAHI DOCS DOXYGEN EBUR GSTREAMER JACK LV2 ONNX PULSEAUDIO \
 			VULKAN X11_BELL
 OPTIONS_DEFAULT=	EBUR GSTREAMER JACK
 OPTIONS_SUB=		yes
@@ -63,6 +67,10 @@ LV2_DESC=		Support lv2-based audio plugins via lilv
 LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv
 LV2_MESON_ENABLED=	lv2
 
+ONNX_DESC=		ONNX filter-graph plugin
+ONNX_LIB_DEPENDS=	libonnxruntime.so:misc/onnxruntime
+ONNX_MESON_ENABLED=	onnxruntime
+
 PULSEAUDIO_DESC=		Enable PulseAudio emulation
 PULSEAUDIO_MESON_ENABLED=	libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
@@ -75,6 +83,7 @@ VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 
 X11_BELL_DESC=		Support for X11 bell via libcanberra
 X11_BELL_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
+X11_BELL_USES=		xorg
 X11_BELL_USE=		xorg=x11,xfixes
 X11_BELL_MESON_ENABLED=	libcanberra x11 x11-xfixes
 
@@ -90,7 +99,8 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D roc=disabled \
 		-D sdl2=disabled \
 		-D selinux=disabled \
-		-D systemd=disabled \
+		-D libsystemd=disabled \
+		-D systemd-user-service=disabled \
 		-D logind=disabled \
 		-D pipewire-v4l2=disabled \
 		-D libmysofa=disabled \

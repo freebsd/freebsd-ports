@@ -1,0 +1,6 @@
+include/lwgrp.h
+%%STATIC%%lib/liblwgrp.a
+%%SHARED%%lib/liblwgrp.so
+%%SHARED%%lib/liblwgrp.so.0
+%%SHARED%%lib/liblwgrp.so.0.0.0
+libdata/pkgconfig/liblwgrp.pc

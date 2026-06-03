@@ -1,5 +1,5 @@
 PORTNAME=	cgif
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -10,10 +10,11 @@ WWW=		https://github.com/dloebl/cgif
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		meson
+USES=		meson python:env
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	--default-library=both \
-		-Dexamples=false \
+		-Dexamples=true \
 		-Dfuzzer=false \
 		-Dinstall_examples=false \
 		-Dtests=true

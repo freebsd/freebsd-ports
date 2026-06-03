@@ -1,5 +1,5 @@
 PORTNAME=	observium
-DISTVERSION=	24.12
+DISTVERSION=	26.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.observium.org/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -20,10 +20,9 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		mtr:net/mtr@nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6@${PHP_FLAVOR} \
-		snmpget:net-mgmt/net-snmp \
-		sudo:security/sudo
+		snmpget:net-mgmt/net-snmp
 
-USES=		cpe php:cli,flavors python shebangfix
+USES=		cpe php:cli,flavors python shebangfix sudo
 USE_PHP=	ctype filter gd iconv mysqli posix session snmp tokenizer xml zlib
 SHEBANG_FILES=	\
 		poller-wrapper.py \
@@ -59,9 +58,10 @@ SUB_LIST+=	PHP="${PREFIX}/bin/php" PYTHON="${PYTHON_CMD}"
 ROOT_FILES=	add_device.php adduser.php alerter.php \
 		config.php.default config_to_json.php \
 		delete_device.php discovery.php housekeeping.php \
-		irc.php notifications.php observium-wrapper poller-wrapper.py poller.php \
-		rename_device.php snmp.conf.example snmpd.conf.example \
-		snmptrap.php syslog.php test_alert.php test_code.php test_db.php test_geo.php VERSION
+		irc.php notifications.php observium-wrapper phpunit.xml phpunit9.xml \
+		poller-wrapper.py poller.php rename_device.php snmp.conf.example snmpd.conf.example \
+		syslog.php test_alert.php test_code.php test_db.php test_geo.php VERSION \
+		README LICENSE.COMMUNITY INSTALL
 ROOT_DIRS=	html includes libs logs mibs rrd scripts templates tests update
 
 PORTDOCS=	INSTALL README VERSION

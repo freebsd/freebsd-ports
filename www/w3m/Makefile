@@ -1,8 +1,9 @@
 PORTNAME=	w3m
-PORTVERSION=	0.5.3.${SNAPDATE}
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.6
+PORTREVISION?=	1
 CATEGORIES+=	www
-MASTER_SITES=	https://git.sr.ht/~rkta/${PORTNAME}/archive/${COMMIT_HASH}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://git.sr.ht/~rkta/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser
@@ -13,8 +14,6 @@ LICENSE_NAME=	w3m
 LICENSE_FILE=	${WRKSRC}/doc/README
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
-
 LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 USES=		cpe iconv pkgconfig perl5 ssl
@@ -22,9 +21,6 @@ USES=		cpe iconv pkgconfig perl5 ssl
 CPE_VENDOR=	w3m_project
 
 MAKE_JOBS_UNSAFE=	yes
-SNAPDATE=	20250305
-COMMIT_HASH=	32193d61e3938518c0d454022d165b236f26f153
-WRKSRC=		${WRKDIR}/${PORTNAME}-${COMMIT_HASH}
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.7.0
-PORTREVISION=	32
+PORTREVISION=	33
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -27,8 +27,6 @@ USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-
-LDFLAGS+=	-lboost_system
 
 PORTDOCS=	*
 

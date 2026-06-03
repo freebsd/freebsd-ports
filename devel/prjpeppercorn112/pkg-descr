@@ -1,0 +1,4 @@
+GateMate FPGAs Bitstream Documentation and Tools.
+
+This port is used by devel/nextpnr to generate configuration bitstreams for
+CologneChip GateMate FPGAs.

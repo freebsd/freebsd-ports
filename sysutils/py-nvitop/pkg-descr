@@ -1,0 +1,5 @@
+nvitop is an interactive NVIDIA device and process monitoring tool. It has a
+colorful and informative interface that continuously updates the status of
+the devices and processes. As a resource monitor, it includes many features
+and options, such as tree-view, environment variable viewing, process filtering,
+process metrics monitoring.

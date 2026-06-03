@@ -1,79 +1,20 @@
---- bin/pmd.orig	2024-07-21 02:20:21 UTC
+--- bin/pmd.orig	2025-08-19 11:31:35 UTC
 +++ bin/pmd
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- is_cygwin() {
-     case "$(uname)" in
-@@ -48,17 +48,7 @@ set_lib_dir() {
+@@ -74,7 +74,7 @@ set_lib_dir() {
  
  set_lib_dir() {
-   if [ -z "${LIB_DIR}" ]; then
--    # Allow for symlinks to this script
--    if [ -L "$0" ]; then
--      local script_real_loc=$(readlink "$0")
--    else
--      local script_real_loc=${BASH_SOURCE[0]:-${(%):-%x}}
--    fi
--    local script_dir=$(dirname "${script_real_loc}")
--
--    pushd "${script_dir}/../lib" >/dev/null
--    readonly LIB_DIR=$(pwd -P)
--    popd >/dev/null
-+    readonly LIB_DIR=%%PREFIX%%/share/java/pmd
+   if [ -z "$LIB_DIR" ]; then
+-    LIB_DIR="$PMD_HOME/lib"
++    readonly LIB_DIR="%%PREFIX%%/share/java/pmd"
    fi
  }
  
-@@ -70,17 +60,7 @@ set_conf_dir() {
+@@ -86,7 +86,7 @@ set_conf_dir() {
  
  set_conf_dir() {
-   if [ -z ${CONF_DIR} ]; then
--    # Allow for symlinks to this script
--    if [ -L $0 ]; then
--      local script_real_loc=$(readlink "$0")
--    else
--      local script_real_loc=${BASH_SOURCE[0]:-${(%):-%x}}
--    fi
--    local script_dir=$(dirname "${script_real_loc}")
--
--    pushd "${script_dir}/../conf" >/dev/null
--    readonly CONF_DIR=$(pwd -P)
--    popd >/dev/null
-+    readonly CONF_DIR=%%ETCDIR%%
+   if [ -z "$CONF_DIR" ]; then
+-    CONF_DIR="$PMD_HOME/conf"
++    readonly CONF_DIR="%%ETCDIR%%"
    fi
  }
  
-@@ -90,12 +70,12 @@ check_conf_dir() {
-   fi
- }
- 
--function script_exit() {
-+script_exit() {
-     echo "$1" >&2
-     exit 1
- }
- 
--function check_java() {
-+check_java() {
-   java -version >/dev/null 2>&1
-   if [ $? -ne 0 ]; then
-     script_exit "No java executable found in PATH"
-@@ -153,7 +133,7 @@ jre_specific_vm_options() {
-   fi
- }
- 
--function add_pmd_classpath() {
-+add_pmd_classpath() {
-     if [ -n "$classpath" ]; then
-         classpath="$classpath:${CONF_DIR}:${LIB_DIR}/*"
-     else
-@@ -161,7 +141,7 @@ function add_pmd_classpath() {
-     fi
- }
- 
--function add_openjfx_classpath() {
-+add_openjfx_classpath() {
-   if [ "${APPNAME}" = "designer" ]
-   then
-     if [ "$java_vendor" = "openjdk" ] && [ "$java_ver" -lt 100 ]

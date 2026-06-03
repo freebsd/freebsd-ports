@@ -31,6 +31,7 @@ lib/libPlasmaSystemMonitorTable.so
 %%QT_QMLDIR%%/org/kde/ksysguard/table/KillDialog.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/LineChartCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/PlasmaSystemMonitorTable.qmltypes
+%%QT_QMLDIR%%/org/kde/ksysguard/table/ReniceDialog.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/TableViewHeader.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/TextCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/UserCellDelegate.qml
@@ -107,6 +108,9 @@ share/locale/fi/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/fr/LC_MESSAGES/plasma-systemmonitor.mo
+share/locale/ga/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
+share/locale/ga/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
+share/locale/ga/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/gl/LC_MESSAGES/plasma-systemmonitor.mo

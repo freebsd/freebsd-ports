@@ -1,7 +1,6 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
-PORTREVISION=	9
+DISTVERSION=	2.11.0
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +9,8 @@ EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}_GH0.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PyTorch-based audio signal processing and machine learning library
-WWW=		https://pytorch.org/audio/stable/index.html
+WWW=		https://pytorch.org/audio/stable/index.html \
+		https://github.com/pytorch/audio
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,6 +24,9 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 LIB_DEPENDS=	libabsl_symbolize.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}SoundFile>0:audio/py-SoundFile@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}torchcodec>0:multimedia/py-torchcodec@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>0:devel/py-expecttest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -34,16 +37,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch
 GH_PROJECT=	audio
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's| URL .*| URL file://${DISTDIR}/sox-14.4.2.tar.bz2|' \
-		${WRKSRC}/third_party/sox/CMakeLists.txt
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-post-install:
-	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && ${STRIP_CMD} \
-		torchaudio/lib/_torchaudio.so \
-		torchaudio/lib/_torchaudio_sox.so \
-		torchaudio/lib/libtorchaudio.so \
-		torchaudio/lib/libtorchaudio_sox.so
+# tests as of 2.11.0: 592 passed, 4 failed, 473 skipped (segfault in rnnt_pipeline_test upstream issue)
 
 .include <bsd.port.mk>

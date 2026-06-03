@@ -1,6 +1,6 @@
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
-PORTREVISION=	10
+PORTREVISION=	13
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/
 EXTRACT_SUFX=	-src.zip
@@ -31,6 +31,9 @@ USE_XORG=	x11 xau xdamage xdmcp xext xfixes xorgproto xt xxf86vm
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_LOCALE=	en_US.UTF-8
+# gluegen/src/java/net/highteq/nativetaglet/NativeTaglet.java:3: error: package com.sun.tools.doclets does not exist
+JAVA_VERSION=	8
+NO_SHLIB_REQUIRES_GLOB=	libjawt.so libjvm.so
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 BUILD_BINPATH=	${WRKSRC}/bin

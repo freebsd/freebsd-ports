@@ -1,6 +1,6 @@
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
-PORTREVISION=	19
+PORTREVISION=	22
 CATEGORIES=	graphics
 
 PATCH_SITES=	http://vault.101011010.xyz/distfiles/ LOCAL/danfe
@@ -12,8 +12,6 @@ WWW=		https://appleseedhq.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		liblz4.so:archivers/liblz4 \
@@ -89,6 +87,30 @@ post-patch:
                 ${WRKSRC}/src/appleseed/foundation/image/color.h
 	@${REINPLACE_CMD} -e '/return Product/s,trt\.derived(),trt,' \
 		${WRKSRC}/src/thirdparty/bcd/ext/eigen/Eigen/src/Core/Transpositions.h
+	@${REINPLACE_CMD} -e 's/impl->m_input->read_image(/&0, 0, 0, -1,/' \
+		${WRKSRC}/src/appleseed/foundation/image/genericprogressiveimagefilereader.cpp
+	@${REINPLACE_CMD} -e 's/clamp(/foundation::&/' \
+		${WRKSRC}/src/appleseed/renderer/kernel/lighting/lighttree.cpp \
+		${WRKSRC}/src/appleseed/renderer/kernel/shading/closures.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/bsdf/glassbsdf.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/environmentedf/hosekenvironmentedf.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/environmentedf/preethamenvironmentedf.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/input/texturesource.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/postprocessingstage/colormappostprocessingstage.cpp \
+		${WRKSRC}/src/appleseed/renderer/utility/transformsequence.cpp \
+		${WRKSRC}/src/appleseed.studio/utility/widgetzoomhandler.cpp
+	@${REINPLACE_CMD} -e 's/TypeDesc::Type/Type/' \
+		${WRKSRC}/src/appleseed/renderer/kernel/rendering/final/texturecontrolledpixelrenderer.cpp \
+		${WRKSRC}/src/appleseed/renderer/kernel/rendering/rendererservices.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/postprocessingstage/renderstamppostprocessingstage.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/shadergroup/shaderparam.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/shadergroup/shaderquery.cpp
+	@${REINPLACE_CMD} -e 's/using OSL::TypeDesc/&, OSL::TypeColor, OSL::TypeFloat, OSL::TypeInt, OSL::TypeString, OSL::TypeVector/' \
+		${WRKSRC}/src/appleseed/renderer/kernel/shading/closures.cpp
+	@${REINPLACE_CMD} -e '/OSL::ShadingSystem(/s,texturesystem,&->get(),' \
+		${WRKSRC}/src/appleseed/renderer/kernel/shading/oslshadingsystem.cpp
+	@${REINPLACE_CMD} -e 's/filesystem::path/bf::path/' \
+		${WRKSRC}/src/appleseed/renderer/modeling/project/projectfilewriter.cpp
 
 .include <bsd.port.mk>
 

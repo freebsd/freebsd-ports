@@ -1,4 +1,4 @@
---- Makefile.orig
+--- Makefile.orig	2003-04-16 17:32:42 UTC
 +++ Makefile
 @@ -14,10 +14,10 @@
  #
@@ -13,7 +13,7 @@
  # Debug (strict)
  #CFLAGS =	-g -pedantic -Wall $(IFLAGS)
  # Debug (profiling)
-@@ -50,7 +50,7 @@
+@@ -50,7 +50,7 @@ $(PROG): $(OBJS)
  default: $(PROG)
  
  $(PROG): $(OBJS)
@@ -22,7 +22,7 @@
  
  clean: 
  	rm -f $(OBJS) *core* ./*~ ./*.bak $(PROG)
-@@ -59,7 +59,7 @@
+@@ -59,7 +59,7 @@ depend: $(SRCS)
  	$(MAKEDEPEND) $(MAKEDEPFLAGS) -I. $(SRCS) 2> /dev/null
  
  .c.o:

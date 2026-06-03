@@ -11,6 +11,9 @@ WWW=		https://socialsolution.omron.com/software/products/product_text/wnn7/suppo
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandoned, A patch is needed for the current version of Emacs
+EXPIRATION_DATE=2026-06-30
+
 USES=		tar:tgz
 
 NO_BUILD=	yes

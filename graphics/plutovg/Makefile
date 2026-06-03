@@ -1,9 +1,9 @@
 PORTNAME=	plutovg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.3.3
 CATEGORIES=	graphics
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Tiny 2D vector graphics library in C
 WWW=		https://github.com/sammycage/plutovg/
 

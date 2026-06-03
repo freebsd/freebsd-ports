@@ -3,13 +3,12 @@ PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	${MAIN_PR}
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
-		LOCAL/marino:boot LOCAL/ericbsd:boot GCC/${MS_SUBDIR}
+MASTER_SITES=	LOCAL/fluffy:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.xz
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
-WWW=		http://www.dragonlace.net/
+WWW=		https://github.com/jrmarino/draco
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -30,6 +29,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 PIE_UNSAFE=		yes
 
+OPTIONS_DEFINE=		GRAPHITE
 OPTIONS_GROUP=		STANDARD BOOTSTRAP
 OPTIONS_GROUP_STANDARD=	FORTRAN OBJC NLS TESTSUITE ALLSTAGES STATIC
 OPTIONS_GROUP_BOOTSTRAP=BOOTSTRAP
@@ -40,6 +40,10 @@ TESTSUITE_DESC=		Activate test support
 ALLSTAGES_DESC=		Build compiler with itself (twice, brings in libcc1)
 STATIC_DESC=		Link compilers and drivers statically
 BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
+GRAPHITE_DESC=		Support for Graphite loop optimizations
+
+GRAPHITE_LIB_DEPENDS=		libisl.so:devel/isl
+GRAPHITE_CONFIGURE_WITH+=	isl
 
 # The BOOTSTRAP option overrides all the others.  "make stage" will build a
 # static compiler that supports C, C++, and Ada languages and then create
@@ -51,11 +55,7 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .if ${OPSYS} == FreeBSD
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 MODERN_BINUTILS=	yes
-BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.120.tar.bz2
-.endif
-.if ${OPSYS} == DragonFly
-ONLY_FOR_ARCHS=		x86_64
-BOOTSTRAP_COMPILER=	ada-bootstrap.x86_64.dragonfly.41.tar.bz2
+BOOTSTRAP_COMPILER=	ada-bootstrap-${GARCH}-freebsd-13-${GCC_VERSION}.tar.bz2
 .endif
 
 .if defined(MODERN_BINUTILS)
@@ -78,7 +78,7 @@ PHASEFILE=		${WRKSRC}/gcc/DEV-PHASE
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
 PKG_PREFIX=		${PREFIX}/${PORTNAME}
 MANDIRS=		${PREFIX}/${PORTNAME}/share
-BSFILENAME=		ada-bootstrap.${GARCH}.${OPSYS:tl}.${OSREL:S/.//}.tar.bz2
+BSFILENAME=		ada-bootstrap-${GARCH}-${OPSYS:tl}-${OSREL:R}-${GCC_VERSION}.tar.bz2
 
 # If we find gnatmake and friends in a standard location, then we'll use this
 # compiler instead of downloading the bootstrap.
@@ -109,12 +109,9 @@ DISTFILES+=	${BOOTSTRAP_COMPILER}:boot
 .if defined(PLUS_BOOTSTRAPS)
 DISTFILES=	\
    ${IDENTIFICATION}.tar.xz \
-   ada-bootstrap.i386.freebsd.100B.tar.bz2:boot \
-   ada-bootstrap.i386.freebsd.120.tar.bz2:boot \
-   ada-bootstrap.x86_64.dragonfly.41.tar.bz2:boot \
-   ada-bootstrap.x86_64.freebsd.100B.tar.bz2:boot \
-   ada-bootstrap.x86_64.freebsd.120.tar.bz2:boot \
-   ada-bootstrap.aarch64.freebsd.120.tar.bz2:boot
+   ada-bootstrap-aarch64-freebsd-13-${GCC_VERSION}.tar.bz2:boot \
+   ada-bootstrap-x86_64-freebsd-13-${GCC_VERSION}.tar.bz2:boot \
+   ada-bootstrap-i386-freebsd-13-${GCC_VERSION}.tar.bz2:boot
 .endif
 
 .if ${PORT_OPTIONS:MFORTRAN} && !${PORT_OPTIONS:MBOOTSTRAP}
@@ -221,44 +218,44 @@ post-extract:
 
 do-configure:
 	${MKDIR} ${BUILDDIR}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_CONFIGURE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_CONFIGURE_ENV} \
 		${CFG_SCRIPT} ${ADA_CONFIG_ARGS}
 
 do-build:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} all
 
 .if ${PORT_OPTIONS:MTESTSUITE} && !${PORT_OPTIONS:MBOOTSTRAP}
 test: build test-ada test-fortran test-objc test-cxx test-c
 
 test-ada:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -sk check-ada
 
 test-cxx:
 	# libstdc++ testsuite will break every time, for TRUE to continue
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c++ || true
 
 test-c:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c
 
 test-fortran:
 .  if ${PORT_OPTIONS:MFORTRAN}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-fortran
 .  endif
 
 test-objc:
 .  if ${PORT_OPTIONS:MOBJC}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-objc
 .  endif
 .endif
 
 do-install:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENVI} ${WRK_ENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} install-strip ${MAKE_ARGS}
 	${MV} ${STAGEDIR}${PKG_PREFIX}/share ${WRKDIR}/moved_share
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/dejagnu/baseboards \

@@ -1,11 +1,30 @@
---- pyproject.toml.orig	2025-03-06 00:32:42 UTC
+Obtained from:	https://github.com/dbcli/pgcli/commit/d0a6cc2fe35186bc9616ecc61b5679ca7ee78b1d
+
+--- pyproject.toml.orig	2025-05-17 03:39:59 UTC
 +++ pyproject.toml
-@@ -49,7 +49,7 @@ keyring = ["keyring >= 12.2.0"]
- 
- [project.optional-dependencies]
- keyring = ["keyring >= 12.2.0"]
--sshtunnel = ["sshtunnel >= 0.4.0"]
-+sshtunnel = ["sshtunnel"]
+@@ -25,7 +25,8 @@ dependencies = [
+ requires-python = ">=3.9"
+ dependencies = [
+     "pgspecial>=2.0.0",
+-    "click >= 4.1,<8.1.8",
++    # Click 8.1.8 through 8.3.0 have broken pager invocation for multi-argument PAGER values, which causes behave test failures.
++    "click >= 4.1, != 8.1.8, != 8.2.*, != 8.3.0, < 9",
+     "Pygments>=2.0",       # Pygments has to be Capitalcased.
+     # We still need to use pt-2 unless pt-3 released on Fedora32
+     # see: https://github.com/dbcli/pgcli/pull/1197
+@@ -65,7 +66,7 @@ dev = [
+ ]
  
  [build-system]
- requires = ["setuptools>=61.2"]
+-requires = ["setuptools>=64.0", "setuptools-scm>=8"]
++requires = ["setuptools>=61.0", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
+@@ -132,4 +133,4 @@ addopts = "--capture=sys --showlocals -rxs"
+ [tool.pytest.ini_options]
+ minversion = "6.0"
+ addopts = "--capture=sys --showlocals -rxs"
+-testpaths = ["tests"]
+\ No newline at end of file
++testpaths = ["tests"]

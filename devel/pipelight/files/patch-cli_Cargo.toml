@@ -1,0 +1,10 @@
+--- cli/Cargo.toml.orig	2025-09-02 18:02:17 UTC
++++ cli/Cargo.toml
+@@ -1,6 +1,6 @@ name = "cli"
+ [package]
+ name = "cli"
+-version = "0.0.0"
++version = "%%VERSION%%"
+ edition = "2021"
+ build = "build.rs"
+ 

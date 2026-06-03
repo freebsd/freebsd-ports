@@ -1,0 +1,10 @@
+wacli is a WhatsApp CLI tool built on top of whatsmeow, focused on:
+
+- Best-effort local sync of message history and continuous capture
+- Fast offline search with SQLite FTS5
+- Sending text, quoted replies, and files
+- Contact and group management
+- Scriptable JSON output
+
+This is a third-party tool that uses the WhatsApp Web protocol via whatsmeow
+and is not affiliated with WhatsApp.

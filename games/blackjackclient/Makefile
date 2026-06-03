@@ -1,6 +1,6 @@
 PORTNAME=	BlackjackClient
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	SF/t-blackjack/
 DISTNAME=	t-blackjack-beta

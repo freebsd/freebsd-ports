@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-01-20 04:36:03 UTC
++++ pyproject.toml
+@@ -43,7 +43,7 @@ dev = [
+     "pytest-sugar >= 1.0.0",
+     "pytest-clarity >= 1.0.1",
+     "syrupy >= 4.0.0",
+-    "maturin == 1.8.2", # coordinate this with .github/workflows/release-python.yml
++    "maturin > 0", # coordinate this with .github/workflows/release-python.yml
+     "numpy >= 1.24.1",
+     "pdoc >= 14.6.1",
+     "ruff >= 0.3.5",
+@@ -51,7 +51,7 @@ dev = [
+ ]
+ 
+ [build-system]
+-requires = ["maturin==1.8.2"] # coordinate this with .github/workflows/release-python.yml
++requires = ["maturin>0"] # coordinate this with .github/workflows/release-python.yml
+ build-backend = "maturin"
+ 
+ [tool.black]

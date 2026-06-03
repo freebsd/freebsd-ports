@@ -1,6 +1,8 @@
 bin/gsed
 %%NLS%%share/locale/af/LC_MESSAGES/sed.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/sed.mo
+%%NLS%%share/locale/be/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sed.mo

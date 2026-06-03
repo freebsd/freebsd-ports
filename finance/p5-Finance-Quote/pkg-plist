@@ -7,7 +7,6 @@
 %%SITE_PERL%%/Finance/Quote/BVB.pm
 %%SITE_PERL%%/Finance/Quote/BorsaItaliana.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm
-%%SITE_PERL%%/Finance/Quote/CMBChina.pm
 %%SITE_PERL%%/Finance/Quote/CSE.pm
 %%SITE_PERL%%/Finance/Quote/Comdirect.pm
 %%SITE_PERL%%/Finance/Quote/Consorsbank.pm
@@ -18,6 +17,7 @@
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/FinanceAPI.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/Fixer.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/OpenExchange.pm
+%%SITE_PERL%%/Finance/Quote/CurrencyRates/TwelveData.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/YahooJSON.pm
 %%SITE_PERL%%/Finance/Quote/Deka.pm
 %%SITE_PERL%%/Finance/Quote/FTfunds.pm
@@ -39,12 +39,14 @@
 %%SITE_PERL%%/Finance/Quote/Sinvestor.pm
 %%SITE_PERL%%/Finance/Quote/StockData.pm
 %%SITE_PERL%%/Finance/Quote/Stooq.pm
+%%SITE_PERL%%/Finance/Quote/SwissFundData.pm
 %%SITE_PERL%%/Finance/Quote/TMX.pm
 %%SITE_PERL%%/Finance/Quote/TSP.pm
 %%SITE_PERL%%/Finance/Quote/TesouroDireto.pm
 %%SITE_PERL%%/Finance/Quote/Tradegate.pm
 %%SITE_PERL%%/Finance/Quote/TreasuryDirect.pm
 %%SITE_PERL%%/Finance/Quote/TwelveData.pm
+%%SITE_PERL%%/Finance/Quote/USBonds.pm
 %%SITE_PERL%%/Finance/Quote/Union.pm
 %%SITE_PERL%%/Finance/Quote/UserAgent.pm
 %%SITE_PERL%%/Finance/Quote/XETRA.pm
@@ -60,7 +62,6 @@
 %%PERL5_MAN3%%/Finance::Quote::BVB.3.gz
 %%PERL5_MAN3%%/Finance::Quote::BorsaItaliana.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Bourso.3.gz
-%%PERL5_MAN3%%/Finance::Quote::CMBChina.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CSE.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Comdirect.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Consorsbank.3.gz
@@ -71,6 +72,7 @@
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::FinanceAPI.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::Fixer.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::OpenExchange.3.gz
+%%PERL5_MAN3%%/Finance::Quote::CurrencyRates::TwelveData.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::YahooJSON.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Deka.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FTfunds.3.gz
@@ -92,12 +94,14 @@
 %%PERL5_MAN3%%/Finance::Quote::Sinvestor.3.gz
 %%PERL5_MAN3%%/Finance::Quote::StockData.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Stooq.3.gz
+%%PERL5_MAN3%%/Finance::Quote::SwissFundData.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TMX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TSP.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TesouroDireto.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Tradegate.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TreasuryDirect.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TwelveData.3.gz
+%%PERL5_MAN3%%/Finance::Quote::USBonds.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Union.3.gz
 %%PERL5_MAN3%%/Finance::Quote::XETRA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz

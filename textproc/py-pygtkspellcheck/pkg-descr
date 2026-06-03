@@ -1,0 +1,3 @@
+Python GTK Spellcheck is a simple but quite powerful spellchecking
+library for GTK written in pure Python.  Its spellchecking component
+is based on Enchant and it supports both GTK 3 and 4 via PyGObject.

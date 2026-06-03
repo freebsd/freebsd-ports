@@ -1,0 +1,5 @@
+Waycheck is a simple Qt6 application that displays all of the Wayland
+protocols that your compositor supports, and all of the protocols that
+it doesn't support. It can be used to compare protocol support between
+compositors, or if you're working on your own compositor, to keep
+track of which protocols you still need to implement.

@@ -1,3 +1,5 @@
-TIMESTAMP = 1690897251
-SHA256 (linbox-team-givaro-v4.2.0_GH0.tar.gz) = dca23a928e4704f045848fce884fe49ce09a8de7ebf750b87c807ca4e0facedd
-SIZE (linbox-team-givaro-v4.2.0_GH0.tar.gz) = 637479
+TIMESTAMP = 1771446897
+SHA256 (linbox-team-givaro-v4.2.1_GH0.tar.gz) = 6aae4b74c2772b6f4aa4e55d1d90f79214635aa664e3b121dde2e0b5192f310b
+SIZE (linbox-team-givaro-v4.2.1_GH0.tar.gz) = 643640
+SHA256 (ed91ee0dc2d41f3ceb72abc375ad5c0fec62ed56.patch) = 9bbe7074e3452c197801ac92c14be1050db72c587deeaa51873fb8c9fb71a992
+SIZE (ed91ee0dc2d41f3ceb72abc375ad5c0fec62ed56.patch) = 7113

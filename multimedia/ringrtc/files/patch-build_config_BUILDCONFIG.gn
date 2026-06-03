@@ -27,10 +27,10 @@
    _default_toolchain = "//build/toolchain/zos:$target_cpu"
 +} else if (target_os == "openbsd" || target_os == "freebsd") {
 +  _default_toolchain = host_toolchain
- } else {
-   assert(false, "Unsupported target_os: $target_os")
- }
-@@ -313,7 +320,11 @@ is_android = current_os == "android"
+ } else if (target_os == "emscripten") {
+   # Because it's too hard to remove all targets from //BUILD.gn that do not work with it.
+   assert(
+@@ -318,7 +325,11 @@ is_ios = current_os == "ios"
  is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"

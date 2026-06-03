@@ -133,15 +133,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
 		dispatch-0.2.0 \
-		dispatch2-0.2.0 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
 		dlib-0.5.2 \
 		dmg-0.1.2 \
 		document-features-0.2.10 \
 		downcast-rs-1.2.0 \
-		downcast-rs-2.0.1 \
-		dpi-0.1.1 \
 		drm-0.11.1 \
 		drm-ffi-0.7.1 \
 		drm-fourcc-2.2.0 \
@@ -168,7 +165,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fastrand-2.0.1 \
 		fd-lock-4.0.0 \
 		fdeflate-0.3.0 \
-		filetime-0.2.17 \
+		filetime-0.2.26 \
 		flate2-1.0.30 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
@@ -372,7 +369,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		owned_ttf_parser-0.19.0 \
 		parking-2.2.0 \
 		parking_lot-0.12.3 \
-		parking_lot_core-0.9.3 \
+		parking_lot_core-0.9.11 \
 		paste-1.0.9 \
 		pathdiff-0.2.1 \
 		peniko-0.4.0 \
@@ -431,7 +428,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		renderdoc-sys-1.1.0 \
 		reqwest-0.11.27 \
 		resvg-0.45.1 \
-		rfd-0.15.3 \
+		rfd-0.15.4 \
 		rgb-0.8.36 \
 		roxmltree-0.19.0 \
 		roxmltree-0.20.0 \
@@ -491,9 +488,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strict-num-0.1.1 \
 		strsim-0.10.0 \
 		strum-0.26.3 \
-		strum-0.27.1 \
+		strum-0.27.2 \
 		strum_macros-0.26.4 \
-		strum_macros-0.27.1 \
+		strum_macros-0.27.2 \
 		svgtypes-0.15.3 \
 		swash-0.2.5 \
 		syn-1.0.109 \
@@ -632,7 +629,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wiggle-macro-14.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.10 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		winch-codegen-0.12.2 \
 		windows-0.44.0 \
@@ -640,43 +637,48 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows-core-0.58.0 \
 		windows-implement-0.58.0 \
 		windows-interface-0.58.0 \
+		windows-link-0.1.3 \
 		windows-result-0.2.0 \
 		windows-strings-0.1.0 \
-		windows-sys-0.36.1 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.36.1 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.36.1 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.36.1 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
 		winnow-0.5.10 \
 		winnow-0.7.11 \
 		winreg-0.50.0 \
@@ -725,9 +727,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		human-sort@git+https://github.com/dragazo/human-sort?rev=1e74db1e09e8194ba88ad983723cf6f8b0c365da\#1e74db1e09e8194ba88ad983723cf6f8b0c365da \
 		floem-vger@git+https://github.com/lapce/vger-rs.git?rev=3206d47ec1e30b645ddcb0687036ba3e1f0d98ec\#3206d47ec1e30b645ddcb0687036ba3e1f0d98ec \
 		dpi,winit@git+https://github.com/rust-windowing/winit?rev=ee245c569d65fdeacf705ee5eedb564508d10ebe\#ee245c569d65fdeacf705ee5eedb564508d10ebe \
+		floem,floem-editor-core,floem_reactive,floem_renderer,floem_tiny_skia_renderer,floem_vger_renderer@git+https://github.com/lapce/floem?rev=e0dd862564e3afbad5cba8ebe60df166a7a41e56\#e0dd862564e3afbad5cba8ebe60df166a7a41e56 \
 		muda@git+https://github.com/tauri-apps/muda?rev=8e986af3cea96a729413abc75c3702dec3990bd2\#8e986af3cea96a729413abc75c3702dec3990bd2 \
 		tracing,tracing-appender,tracing-attributes,tracing-core,tracing-log,tracing-subscriber@git+https://github.com/tokio-rs/tracing?rev=908cc432a5994f6e17c8f36e13c217dc40085704\#908cc432a5994f6e17c8f36e13c217dc40085704 \
 		regalloc2@git+https://github.com/bytecodealliance/regalloc2?rev=5d79e12d0a93b10fc181f4da409b4671dd365228\#5d79e12d0a93b10fc181f4da409b4671dd365228 \
 		lsp-types@git+https://github.com/lapce/lsp-types?rev=feaa1e2ec80975c9dadd400a238ceacf071058e6\#feaa1e2ec80975c9dadd400a238ceacf071058e6 \
-		locale_config@git+https://github.com/lapce/locale_config.git?branch=lapce\#54c9fe6a247c3618c224ec57e6c3a747bc3a96e4 \
-		floem,floem-editor-core,floem_reactive,floem_renderer,floem_tiny_skia_renderer,floem_vger_renderer@git+https://github.com/lapce/floem?rev=2055dde9833699b65ff052eb63cadbddec91c7ce\#2055dde9833699b65ff052eb63cadbddec91c7ce
+		locale_config@git+https://github.com/lapce/locale_config.git?branch=lapce\#54c9fe6a247c3618c224ec57e6c3a747bc3a96e4

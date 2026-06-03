@@ -24,6 +24,7 @@
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/GPOS.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/HINFO.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/HIP.pm
+%%SITE_ARCH%%/Zonemaster/LDNS/RR/HTTPS.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/IPSECKEY.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/ISDN.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/KEY.pm
@@ -64,6 +65,7 @@
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/SPF.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/SRV.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/SSHFP.pm
+%%SITE_ARCH%%/Zonemaster/LDNS/RR/SVCB.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/TA.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/TALINK.pm
 %%SITE_ARCH%%/Zonemaster/LDNS/RR/TKEY.pm
@@ -104,6 +106,7 @@
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::GPOS.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::HINFO.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::HIP.3.gz
+%%PERL5_MAN3%%/Zonemaster::LDNS::RR::HTTPS.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::IPSECKEY.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::ISDN.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::KEY.3.gz
@@ -144,6 +147,7 @@
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::SPF.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::SRV.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::SSHFP.3.gz
+%%PERL5_MAN3%%/Zonemaster::LDNS::RR::SVCB.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::TA.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::TALINK.3.gz
 %%PERL5_MAN3%%/Zonemaster::LDNS::RR::TKEY.3.gz

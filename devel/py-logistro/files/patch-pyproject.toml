@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2025-02-10 01:47:09 UTC
+--- pyproject.toml.orig	2025-11-01 02:40:04 UTC
 +++ pyproject.toml
 @@ -1,17 +1,15 @@
  [build-system]
--requires = ["setuptools>=65.0.0", "wheel", "setuptools-git-versioning"]
-+requires = ["setuptools>0", "wheel"]
+-requires = ["setuptools", "wheel", "setuptools-git-versioning"]
++requires = ["setuptools", "wheel"]
  build-backend = "setuptools.build_meta"
  
  [tool.setuptools.packages]
@@ -14,10 +14,10 @@
 -
  [project]
  name = "logistro"
-+version = "1.0.11"
++version = "2.0.1"
  description = "Simple wrapper over logging for a couple basic features"
 -dynamic = ["version"]
 +dynamic = []
  readme = "README.md"
+ license = { "file" = "LICENSE" }
  requires-python = ">=3.8"
- authors = [

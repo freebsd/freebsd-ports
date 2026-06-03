@@ -13,5 +13,13 @@ Pocket ID is installed
 
      service pocket-id start
 EOM
+},
+{ type: upgrade
+  maximum_version: "2.0.0"
+  message: <<EOM
+This is a major release which includes some breaking changes, please follow the migration guide to upgrade to v2:
+
+  https://pocket-id.org/docs/setup/major-releases/migrate-v2
+EOM
 }
 ]

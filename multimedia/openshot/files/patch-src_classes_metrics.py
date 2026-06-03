@@ -1,6 +1,6 @@
---- src/classes/metrics.py.orig	2022-12-08 21:31:12 UTC
+--- src/classes/metrics.py.orig	2026-03-18 21:17:58 UTC
 +++ src/classes/metrics.py
-@@ -61,6 +61,11 @@ try:
+@@ -59,6 +59,11 @@ try:
          os_version = "Macintosh; Intel Mac OS X %s" % v[0].replace(".", "_")
          os_distro = "OS X %s" % v[0]
  

@@ -129,6 +129,7 @@
 %%WWWDIR%%/library/Icingadb/Common/Links.php
 %%WWWDIR%%/library/Icingadb/Common/LoadMore.php
 %%WWWDIR%%/library/Icingadb/Common/Macros.php
+%%WWWDIR%%/library/Icingadb/Common/Model.php
 %%WWWDIR%%/library/Icingadb/Common/ObjectInspectionDetail.php
 %%WWWDIR%%/library/Icingadb/Common/SearchControls.php
 %%WWWDIR%%/library/Icingadb/Common/ServiceLink.php

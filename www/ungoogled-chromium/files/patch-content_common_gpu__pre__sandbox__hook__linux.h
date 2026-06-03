@@ -1,16 +1,18 @@
---- content/common/gpu_pre_sandbox_hook_linux.h.orig	2024-04-23 07:42:17 UTC
+--- content/common/gpu_pre_sandbox_hook_linux.h.orig	2025-09-10 13:22:16 UTC
 +++ content/common/gpu_pre_sandbox_hook_linux.h
-@@ -5,8 +5,13 @@
- #ifndef CONTENT_COMMON_GPU_PRE_SANDBOX_HOOK_LINUX_H_
- #define CONTENT_COMMON_GPU_PRE_SANDBOX_HOOK_LINUX_H_
+@@ -7,7 +7,15 @@
+ 
+ #include <vector>
  
 +#include "build/build_config.h"
- #include "base/component_export.h"
++
 +#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/sandbox.h"
++#include "sandbox/linux/syscall_broker/broker_command.h"
++#include "sandbox/linux/syscall_broker/broker_file_permission.h"
 +#else
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
  
- namespace content {
- 
+ namespace sandbox::syscall_broker {
+ class BrokerFilePermission;

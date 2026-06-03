@@ -3,9 +3,45 @@
   message: <<EOM
 You installed AdGuardHome: Network-wide ads & trackers blocking DNS server.
 
-In order to use it please start the service 'adguardhome' and
-then access the URL http://0.0.0.0:3000/ in your favorite browser.
+AdGuardHome is configured to run as the 'unbound' user. By default, 
+non-root users cannot bind to privileged ports like 53 (DNS). 
+To allow AdGuardHome to function, choose one of the following options:
 
+OPTION A: Using the 'portacl' service (Recommended for simplicity)
+1. Install the portacl package:
+   # pkg install portacl
+
+2. Add these lines to /etc/rc.conf:
+   portacl_enable="YES"
+   portacl_users="unbound"
+   portacl_user_unbound_tcp="domain 853"
+   portacl_user_unbound_udp="domain"
+
+3. Start the service to apply rules immediately:
+   # service portacl start
+
+---
+
+OPTION B: Manual Configuration (Base system only)
+1. Load the required kernel module:
+   # kldload mac_portacl
+
+2. Apply the following sysctl rules (replace 59 with 'id -u unbound' if different):
+   # sysctl net.inet.ip.portrange.reservedhigh=0
+   # sysctl security.mac.portacl.port_high=1024
+   # sysctl security.mac.portacl.rules=uid:59:tcp:53,uid:59:udp:53,uid:59:tcp:853
+
+3. To make this persistent, add mac_portacl_load="YES" to /boot/loader.conf 
+   and the sysctl rules to /etc/sysctl.conf.
+
+---
+
+FINAL STEPS:
+Enable and start AdGuardHome:
+   # sysrc adguardhome_enable="YES"
+   # service adguardhome start
+
+Then complete the setup via the web interface at http://localhost:3000/
 EOM
 }
 ]

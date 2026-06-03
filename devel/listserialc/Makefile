@@ -1,5 +1,6 @@
 PORTNAME=	listserialc
 PORTVERSION=	1.1.0
+PORTREVISION=	2
 CATEGORIES=	devel java
 
 MAINTAINER=	kevans@FreeBSD.org

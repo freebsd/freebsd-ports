@@ -1,3 +1,0 @@
-#!/bin/sh
-
-%%PREFIX%%/sbin/leofs manager_slave "$@"

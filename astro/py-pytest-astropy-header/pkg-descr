@@ -1,0 +1,5 @@
+The pytest-astropy-header package provides a way to include information about
+the system, Python installation, and select dependencies in the header of the
+output when running pytest. It can be used with packages that are not
+affiliated with the Astropy project, but is optimized for use with
+Astropy-related projects.

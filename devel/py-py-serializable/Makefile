@@ -1,5 +1,5 @@
 PORTNAME=	py-serializable
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/madpah/serializable/releases/download/v${PORTVERSION}/

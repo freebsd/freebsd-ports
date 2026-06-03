@@ -2,13 +2,13 @@ PORTNAME=	mesen
 DISTVERSION=	0.9.9
 CATEGORIES=	emulators
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform Nintendo Entertainment System (NES/Famicom) emulator
 WWW=		https://www.mesen.ca/
 
 LICENSE=	GPLv3
 
-# ARM/MIPS are only supported on Android
+# ARM is only supported on Android
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	zip:archivers/zip \

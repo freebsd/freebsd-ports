@@ -17,7 +17,7 @@ GH_ACCOUNT=	bldewolf
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		alias gettext gmake libtool
+USES=		gettext gmake libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-Dbswap_32=bswap32 -Dbswap_16=bswap16 \
 		-I${LOCALBASE}/include

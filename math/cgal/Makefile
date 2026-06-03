@@ -1,6 +1,6 @@
 PORTNAME=	cgal
 PORTVERSION=	5.6.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
@@ -12,10 +12,11 @@ WWW=		https://www.cgal.org/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libmpfr.so:math/mpfr \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl \
+		boost-libs>0:devel/boost-libs
+LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp
+RUN_DEPENDS=	boost-libs>0:devel/boost-libs # needed because the installed include/CGAL/config.h file includes boost/config.hpp
 
 #TODO math/mpfi, math/rs, graphics/qglviewer
 #Not yet in ports

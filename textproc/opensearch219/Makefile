@@ -1,6 +1,5 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.19.1
-PORTREVISION=	0
+DISTVERSION=	2.19.5
 DISTVERSIONSUFFIX=	-linux-${OPENSEARCH_ARCH}
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -21,7 +20,7 @@ RUN_DEPENDS=	bash>0:shells/bash \
 CONFLICTS=	opensearch opensearch13 opensearch210 opensearch213 opensearch216
 
 USES=		cpe java shebangfix
-JAVA_VERSION=	17+
+JAVA_VERSION=	21
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/opensearch bin/opensearch-cli \

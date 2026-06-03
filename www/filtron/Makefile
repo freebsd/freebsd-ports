@@ -1,6 +1,7 @@
 PORTNAME=	filtron
-PORTVERSION=	g20180218
-PORTREVISION=	28
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,17 +11,10 @@ WWW=		https://github.com/asciimoo/filtron
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
-USE_GITHUB=	yes
-GH_ACCOUNT=	asciimoo
-GH_TAGNAME=	93f8b22
-GH_TUPLE=	\
-		klauspost:compress:v1.7.1:compress/vendor/github.com/klauspost/compress \
-		klauspost:cpuid:v1.2.1:cpuid/vendor/github.com/klauspost/cpuid \
-		valyala:bytebufferpool:v1.0.0:bytebufferpool/vendor/github.com/valyala/bytebufferpool \
-		valyala:fasthttp:v1.3.0:fasthttp/vendor/github.com/valyala/fasthttp
+USES=		go:modules
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_MODULE=	github.com/asciimoo/filtron
+GO_PKGNAME=	${GO_MODULE}
 
 PLIST_FILES=	bin/${PORTNAME}
 

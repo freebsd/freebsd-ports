@@ -1,10 +1,30 @@
---- Cargo.toml.orig	2025-02-05 10:44:30 UTC
+--- Cargo.toml.orig	2025-12-24 14:16:03 UTC
 +++ Cargo.toml
-@@ -17,7 +17,6 @@ futures-util = "0.3"
- diesel = { version = "2.2", features = ["sqlite", "r2d2"] }
- diesel_migrations = "2.2"
- futures-util = "0.3"
--glycin = { version = "2.0", features = ["gdk4"] }
- indexmap = "2.7"
- Inflector = "0.11"
+@@ -25,7 +25,7 @@ log = "0.4"
+ indexmap = "2.12"
  language-tags = "0.3"
+ log = "0.4"
+-mdns-sd = "0.17"
++mdns-sd = "0.13"
+ mpris-server = "0.9"
+ pretty_env_logger = "0.5"
+ rand = "0.9"
+@@ -45,9 +45,16 @@ adw = { version = "0.8", package = "libadwaita", featu
+ uuid = { version = "1.19", features = ["v4"] }
+ 
+ adw = { version = "0.8", package = "libadwaita", features = ["v1_7"] }
+-glycin = { package = "libglycin-rebind", version = "0.0.1" }
+-glycin-gtk4 = { package = "libglycin-gtk4-rebind", version = "0.0.1" }
+ gstreamer = { version = "0.24" }
+ gstreamer-audio = { version = "0.24" }
+ gtk = { version = "0.10", package = "gtk4", features = ["gnome_46"] }
+ shumate = { version = "0.7", package = "libshumate" }
++
++[target.'cfg(target_os = "linux")'.dependencies]
++glycin = { package = "libglycin-rebind", version = "0.0.1" }
++glycin-gtk4 = { package = "libglycin-gtk4-rebind", version = "0.0.1" }
++
++[profile.release]
++opt-level = 2
++debug = false
++strip = "symbols"

@@ -1,6 +1,6 @@
---- meson.build.orig	2025-02-05 10:44:30 UTC
+--- meson.build.orig	2025-12-24 14:16:03 UTC
 +++ meson.build
-@@ -19,8 +19,10 @@ dependency('shumate-1.0', version: '>= 1.3')
+@@ -19,15 +19,15 @@ dependency('shumate-1.0', version: '>= 1.3')
  dependency('shumate-1.0', version: '>= 1.3')
  
  # Required by glycin crate
@@ -13,3 +13,10 @@
  
  dependency('gstreamer-1.0', version: '>= 1.16')
  dependency('gstreamer-base-1.0', version: '>= 1.16')
+ dependency('gstreamer-audio-1.0', version: '>= 1.16')
+ dependency('gstreamer-plugins-base-1.0', version: '>= 1.16')
+-dependency('gstreamer-plugins-bad-1.0', version: '>= 1.16')
+-dependency('gstreamer-bad-audio-1.0', version: '>= 1.16')
+ 
+ # Initialize project variables
+ name       = 'Shortwave'

@@ -1,0 +1,9 @@
+The Azure Monitor Distro of Opentelemetry Python is a "one-stop-shop" telemetry
+solution, requiring only one line of code to instrument your application. The
+distro captures telemetry via OpenTelemetry instrumentations and reports
+telemetry to Azure Monitor via the Azure Monitor exporters.
+
+Prior to using this SDK, please read and understand Data Collection Basics,
+especially the section on telemetry types. OpenTelemetry terminology differs
+from Application Insights terminology so it is important to understand the way
+the telemetry types map to each other.

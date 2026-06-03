@@ -1,13 +1,8 @@
---- dao/ScsiIf-freebsd-cam.cc.orig	2023-01-25 14:30:35 UTC
+--- dao/ScsiIf-freebsd-cam.cc.orig	2025-12-05 11:17:35 UTC
 +++ dao/ScsiIf-freebsd-cam.cc
-@@ -112,11 +112,11 @@ int ScsiIf::sendCmd(const unsigned char *cmd, int cmdL
- {
- 	int		retval;
- 	int		flags = CAM_DIR_NONE;
--	u_int8_t *	data_ptr;
--	size_t		data_len;
-+	u_int8_t *	data_ptr = NULL;
-+	size_t		data_len = 0;
+@@ -115,8 +115,8 @@ int ScsiIf::sendCmd(const unsigned char *cmd, int cmdL
+ 	u_int8_t *	data_ptr = NULL;
+ 	size_t		data_len = 0;
  
 -	bzero(impl_->ccb, sizeof(union ccb));
 -	bcopy(cmd, &impl_->ccb->csio.cdb_io.cdb_bytes, cmdLen);

@@ -1,6 +1,6 @@
---- wpa_supplicant/ctrl_iface_unix.c.orig	2022-01-16 12:51:29.000000000 -0800
-+++ wpa_supplicant/ctrl_iface_unix.c	2023-11-29 08:12:07.843443000 -0800
-@@ -506,6 +506,10 @@
+--- wpa_supplicant/ctrl_iface_unix.c.orig	2024-07-20 18:04:37 UTC
++++ wpa_supplicant/ctrl_iface_unix.c
+@@ -509,6 +509,10 @@ static int wpas_ctrl_iface_open_sock(struct wpa_suppli
  	struct group *grp;
  	char *endp;
  	int flags;
@@ -11,7 +11,7 @@
  
  	buf = os_strdup(wpa_s->conf->ctrl_interface);
  	if (buf == NULL)
-@@ -678,6 +682,22 @@
+@@ -681,6 +685,22 @@ havesock:
  			/* Not fatal, continue on.*/
  		}
  	}

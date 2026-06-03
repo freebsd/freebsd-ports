@@ -1,3 +1,7 @@
+Hunk 1: Don't find Qt6 until we can land a KF6-based Krita
+Hunk 2: Link to -lpthread
+Hunk 3: bmake doesn't work for this
+
 --- CMakeLists.txt.orig	2023-05-04 22:27:01 UTC
 +++ CMakeLists.txt
 @@ -153,7 +153,7 @@ find_package(Threads REQUIRED)

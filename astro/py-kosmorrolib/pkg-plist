@@ -25,7 +25,7 @@
 %%PYTHON_SITELIBDIR%%/kosmorrolib/events.py
 %%PYTHON_SITELIBDIR%%/kosmorrolib/exceptions.py
 %%PYTHON_SITELIBDIR%%/kosmorrolib/model.py
-%%PYTHON_SITELIBDIR%%/kosmorrolib-%%VE%%.dist-info/LICENSE.md
+%%PYTHON_SITELIBDIR%%/kosmorrolib-%%VE%%.dist-info/licenses/LICENSE.md
 %%PYTHON_SITELIBDIR%%/kosmorrolib-%%VE%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/kosmorrolib-%%VE%%.dist-info/RECORD
 %%PYTHON_SITELIBDIR%%/kosmorrolib-%%VE%%.dist-info/WHEEL

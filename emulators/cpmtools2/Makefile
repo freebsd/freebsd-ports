@@ -1,6 +1,6 @@
 PORTNAME=	cpmtools2
 PORTVERSION=	2.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://www.moria.de/~michael/cpmtools/files/
 DISTNAME=	${PORTNAME:C/2$//}-${PORTVERSION}
@@ -13,11 +13,11 @@ LICENSE=	GPLv3
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/sbin \
 		--datarootdir=${DATADIR}
 
 OPTIONS_DEFINE=	LIBDSK
+OPTIONS_DEFAULT=	LIBDSK
 
 LIBDSK_DESC=	Access to disks and disk images support
 

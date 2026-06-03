@@ -1,4 +1,3 @@
-bin/yath
 %%SITE_PERL%%/App/Yath.pm
 %%SITE_PERL%%/App/Yath/Command.pm
 %%SITE_PERL%%/App/Yath/Command/abort.pm
@@ -44,6 +43,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Plugin/Notify.pm
 %%SITE_PERL%%/App/Yath/Plugin/SysInfo.pm
 %%SITE_PERL%%/App/Yath/Plugin/YathUI.pm
+%%SITE_PERL%%/App/Yath/Script/V1.pm
 %%SITE_PERL%%/App/Yath/Tester.pm
 %%SITE_PERL%%/App/Yath/Util.pm
 %%SITE_PERL%%/Test2/Formatter/QVF.pm
@@ -102,7 +102,6 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/Util/Term.pm
 %%SITE_PERL%%/Test2/Harness/Util/UUID.pm
 %%SITE_PERL%%/Test2/Tools/HarnessTester.pm
-%%PERL5_MAN1%%/yath.1.gz
 %%PERL5_MAN3%%/App::Yath.3.gz
 %%PERL5_MAN3%%/App::Yath::Command.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::abort.3.gz
@@ -148,6 +147,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Plugin::Notify.3.gz
 %%PERL5_MAN3%%/App::Yath::Plugin::SysInfo.3.gz
 %%PERL5_MAN3%%/App::Yath::Plugin::YathUI.3.gz
+%%PERL5_MAN3%%/App::Yath::Script::V1.3.gz
 %%PERL5_MAN3%%/App::Yath::Tester.3.gz
 %%PERL5_MAN3%%/App::Yath::Util.3.gz
 %%PERL5_MAN3%%/Test2::Formatter::QVF.3.gz

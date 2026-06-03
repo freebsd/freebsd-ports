@@ -1,6 +1,6 @@
 PORTNAME=	ocserv
 DISTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	https://www.infradead.org/ocserv/download/
 

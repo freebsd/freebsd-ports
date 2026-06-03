@@ -1,5 +1,3 @@
-TIMESTAMP = 1734569338
-SHA256 (hyprwm-xdg-desktop-portal-hyprland-v1.3.9_GH0.tar.gz) = 3f7d94fd408ed5e3a9b639d3dd8502e2169decc34f285e8552434da5fddf497e
-SIZE (hyprwm-xdg-desktop-portal-hyprland-v1.3.9_GH0.tar.gz) = 50667
-SHA256 (hyprwm-hyprland-protocols-v0.2_GH0.tar.gz) = 106cb189d0fbe4ec0ee11a12a17238172f4c4cd1b2b26db904df144e5c7a05f0
-SIZE (hyprwm-hyprland-protocols-v0.2_GH0.tar.gz) = 6342
+TIMESTAMP = 1777373969
+SHA256 (hyprwm-xdg-desktop-portal-hyprland-v1.3.12_GH0.tar.gz) = c30ffe6ce9569a222438cb403d426a58c84e3653f19c8de641673097a9acc3b0
+SIZE (hyprwm-xdg-desktop-portal-hyprland-v1.3.12_GH0.tar.gz) = 52079

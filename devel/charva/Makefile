@@ -1,6 +1,6 @@
 PORTNAME=	charva
 PORTVERSION=	1.1.4
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}
@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix java:ant,run zip
 DOS2UNIX_GLOB=	build.xml Makefile.freebsd.txt *.c *.java
+JAVA_VERSION=	8 # javah is not availabile in JDK11+
 
 ALL_TARGET=	clean makeDLL dist
 

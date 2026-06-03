@@ -318,6 +318,7 @@ share/applications/cherrytree.desktop
 %%DATADIR%%/language-specs/abap.lang
 %%DATADIR%%/language-specs/clisp.lang
 %%DATADIR%%/language-specs/elixir.lang
+%%DATADIR%%/language-specs/gkeyfile.lang
 %%DATADIR%%/language-specs/hcl.lang
 %%DATADIR%%/language-specs/markdown-extra.lang
 %%DATADIR%%/language-specs/nasm.lang

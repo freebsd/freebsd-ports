@@ -1,18 +1,10 @@
---- CMakeLists.txt.orig	2023-03-15 09:08:40 UTC
+--- CMakeLists.txt.orig	2026-05-18 14:11:32 UTC
 +++ CMakeLists.txt
-@@ -60,11 +60,11 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED ${QT_COMPO
+@@ -51,6 +51,7 @@ if (BUILD_WITH_QT6)
  
- find_package(Qt5 ${QT_MIN_VERSION} REQUIRED ${QT_COMPONENTS})
- 
--set(KIMAGEANNOTATOR_MIN_VERSION 0.6.1)
--find_package(kImageAnnotator ${KIMAGEANNOTATOR_MIN_VERSION} REQUIRED)
-+set(KIMAGEANNOTATOR_MIN_VERSION 0.7.0)
-+find_package(kImageAnnotator-Qt5 ${KIMAGEANNOTATOR_MIN_VERSION} REQUIRED)
- 
--set(KCOLORPICKER_MIN_VERSION 0.2.0)
--find_package(kColorPicker ${KCOLORPICKER_MIN_VERSION} REQUIRED)
-+set(KCOLORPICKER_MIN_VERSION 0.3.0)
-+find_package(kColorPicker-Qt5 ${KCOLORPICKER_MIN_VERSION} REQUIRED)
- 
- set(BASEPATH "${CMAKE_SOURCE_DIR}")
- include_directories("${BASEPATH}")
+ if (BUILD_WITH_QT6)
+ 	set(QT_MAJOR_VERSION 6)
++	list(APPEND QT_COMPONENTS GuiPrivate)
+ else()
+ 	set(QT_MAJOR_VERSION 5)
+ endif()

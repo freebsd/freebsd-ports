@@ -1,0 +1,6 @@
+Wide-integer implements a generic C++ template for extended width unsigned and
+signed integral types.
+This C++ template header-only library implements drop-in big integer types such
+as uint128_t, uint256_t, uint384_t, uint512_t, uint1024_t, uint1536_t, etc.
+These can be used essentially like regular built-in integers. Corresponding
+signed integer types such as int128_t, int256_t, and the like can also be used.

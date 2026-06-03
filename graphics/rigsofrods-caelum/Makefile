@@ -1,7 +1,7 @@
 PORTNAME=	rigsofrods-caelum
 PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	monwarez@mailoo.org

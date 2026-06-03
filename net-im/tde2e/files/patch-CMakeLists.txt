@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-05-23 15:52:11 UTC
+--- CMakeLists.txt.orig	2026-02-07 08:38:50 UTC
 +++ CMakeLists.txt
-@@ -238,7 +238,7 @@ endif()
+@@ -230,7 +230,7 @@ endif()
    add_subdirectory(test)
  endif()
  

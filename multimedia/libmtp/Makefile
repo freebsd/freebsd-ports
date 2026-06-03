@@ -1,5 +1,5 @@
 PORTNAME=	libmtp
-DISTVERSION=	1.1.22
+DISTVERSION=	1.1.23
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		SF

@@ -1,0 +1,9 @@
+Chawan is a text-mode web browser and pager for Unix-like systems, with a focus
+on implementing modern web standards while remaining self-contained, easy to
+understand and extensible.
+
+It includes functionality like CSS, inline images inside the terminal, and
+JavaScript through a small, independent browser engine.
+
+Most of Chawan has been developed from scratch in the memory-safe Nim
+programming language.

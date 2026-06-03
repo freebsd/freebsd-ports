@@ -1,9 +1,6 @@
 [
 { type: install
   message: <<EOM
-To enable autoloading of SLY, add this to some Emacs init file:
-(require 'sly-autoloads)
-
 You should specify some Lisp implementation. This works for both SLY and SLIME:
 (setq inferior-lisp-program "path_to_your_lisp_binary")
 SLY however has convenient specific variables for more complex

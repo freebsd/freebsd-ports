@@ -1,5 +1,6 @@
 PORTNAME=	mustermann-grape
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/ruby-grape/mustermann-grape
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mustermann>=1.0:devel/rubygem-mustermann
+RUN_DEPENDS=	rubygem-mustermann3>=1.0:devel/rubygem-mustermann3
 
 USES=		gem
 

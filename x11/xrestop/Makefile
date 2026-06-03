@@ -2,7 +2,7 @@ PORTNAME=	xrestop
 DISTVERSION=	0.6
 CATEGORIES=	x11
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
 WWW=		https://www.freedesktop.org/wiki/Software/xrestop/
 

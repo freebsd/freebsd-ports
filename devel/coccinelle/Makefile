@@ -1,5 +1,6 @@
 PORTNAME=	coccinelle
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://coccinelle.gitlabpages.inria.fr/website/distrib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -37,7 +38,6 @@ EMACS_DESC=	Emacs plugin
 VIM_DESC=	Vim plugin
 
 EMACS_USES=	emacs
-EMACS_NO_DEPENDS=	yes
 
 post-extract:
 	${RM} -r ${WRKSRC}/bundles/stdcompat/stdcompat-current

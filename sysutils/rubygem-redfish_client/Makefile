@@ -1,5 +1,5 @@
 PORTNAME=	redfish_client
-PORTVERSION=	0.5.4
+DISTVERSION=	0.8.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -8,8 +8,9 @@ COMMENT=	Simple Redfish client library
 WWW=		https://github.com/xlab-steampunk/redfish-client-ruby
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-excon>=0.60:devel/rubygem-excon \
+RUN_DEPENDS=	rubygem-excon>=0.71:devel/rubygem-excon \
 		rubygem-server_sent_events>=0.1:devel/rubygem-server_sent_events
 
 USES=		gem

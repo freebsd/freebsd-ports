@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2023-10-12 22:17:26 UTC
++++ src/Makefile.in
+@@ -443,7 +443,7 @@ libdtcmp_la_LIBADD = $(LWGRP_LDFLAGS) $(LWGRP_LIBS)
+ 
+ libdtcmp_la_CFLAGS = $(INCLUDES)
+ libdtcmp_la_LIBADD = $(LWGRP_LDFLAGS) $(LWGRP_LIBS)
+-libdtcmp_la_LDFLAGS = -avoid-version
++libdtcmp_la_LDFLAGS = -version-info 0
+ all: all-am
+ 
+ .SUFFIXES:

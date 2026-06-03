@@ -1,0 +1,8 @@
+include/testsweeper.hh
+lib/cmake/testsweeper/testsweeperConfig.cmake
+lib/cmake/testsweeper/testsweeperConfigVersion.cmake
+lib/cmake/testsweeper/testsweeperTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/testsweeper/testsweeperTargets.cmake
+lib/libtestsweeper.so
+lib/libtestsweeper.so.2
+lib/libtestsweeper.so.2.0.0

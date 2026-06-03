@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2024-07-31 14:19:23 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2026-02-15 10:01:45 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc
 @@ -18,6 +18,10 @@
  #include <pthread.h>

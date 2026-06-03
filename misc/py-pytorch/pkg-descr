@@ -1,3 +1,10 @@
-PyTorch is a Python package that provides two high-level features:
+PyTorch is an open-source machine learning library for Python, based on the
+Torch library, used for applications such as natural language processing.
+It is primarily developed by Facebook's AI Research lab.
+
+PyTorch provides two high-level features:
 * Tensor computation (like NumPy) with strong GPU acceleration
 * Deep neural networks built on a tape-based autograd system
+
+It is a popular choice for deep learning research and production due to its
+flexibility and ease of use.

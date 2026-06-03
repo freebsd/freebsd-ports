@@ -1,5 +1,5 @@
 PORTNAME=	Math-Random
-PORTVERSION=	0.72
+PORTVERSION=	0.75
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ WWW=		https://metacpan.org/release/Math-Random
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
+
 SHEBANG_FILES=	example.pl
 
 post-install:

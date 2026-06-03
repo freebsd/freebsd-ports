@@ -1,4 +1,4 @@
---- Makefile.orig	2025-04-20 12:57:11 UTC
+--- Makefile.orig	2025-11-28 15:27:50 UTC
 +++ Makefile
 @@ -45,8 +45,8 @@ endif
  #
@@ -9,38 +9,51 @@
 +CFLAGS = $(PRESET_CFLAGS)
 +CXXFLAGS = $(PRESET_CXXFLAGS)
  ifdef KCPP_DEBUG
- 	CFLAGS = -g -O0
- 	CXXFLAGS = -g -O0
-@@ -151,10 +151,10 @@ else
- 	FULLCFLAGS += -mavx2 -msse3 -mssse3 -mfma -mf16c -mavx
+ CFLAGS = -g -O0
+ CXXFLAGS = -g -O0
+@@ -178,10 +178,10 @@ else
  endif # LLAMA_NOAVX2
+ endif # LLAMA_NOAVX1
  else
--	CFLAGS += -march=native -mtune=native
--	SIMPLECFLAGS += -march=native -mtune=native
--	SIMPLERCFLAGS += -march=native -mtune=native
--	FULLCFLAGS += -march=native -mtune=native
-+	#CFLAGS += -march=native -mtune=native
-+	#SIMPLECFLAGS += -march=native -mtune=native
-+	#SIMPLERCFLAGS += -march=native -mtune=native
-+	#FULLCFLAGS += -march=native -mtune=native
+-CFLAGS += -march=native -mtune=native
+-SIMPLECFLAGS += -march=native -mtune=native
+-SIMPLERCFLAGS += -march=native -mtune=native
+-FULLCFLAGS += -march=native -mtune=native
++#CFLAGS += -march=native -mtune=native
++#SIMPLECFLAGS += -march=native -mtune=native
++#SIMPLERCFLAGS += -march=native -mtune=native
++#FULLCFLAGS += -march=native -mtune=native
  endif # LLAMA_PORTABLE
  endif # if x86
  
-@@ -297,8 +297,8 @@ else
- 	CXXFLAGS += -mcpu=native
+@@ -251,7 +251,7 @@ else
+ endif
+ 
+ else
+-NVCCFLAGS += -arch=native
++#NVCCFLAGS += -arch=native
+ endif # LLAMA_PORTABLE
+ 
+ ifdef LLAMA_CUDA_CCBIN
+@@ -368,15 +368,15 @@ ifneq ($(findstring clang, $(CCV)), )
+ # sve is cooked on termux so we are disabling it
+ ifeq ($(UNAME_O), Android)
+ ifneq ($(findstring clang, $(CCV)), )
+-CFLAGS += -mcpu=native+nosve
+-CXXFLAGS += -mcpu=native+nosve
++#CFLAGS += -mcpu=native+nosve
++#CXXFLAGS += -mcpu=native+nosve
+ else
+-CFLAGS += -mcpu=native
+-CXXFLAGS += -mcpu=native
++#CFLAGS += -mcpu=native
++#CXXFLAGS += -mcpu=native
  endif
  else
--	CFLAGS += -mcpu=native
--	CXXFLAGS += -mcpu=native
-+	#CFLAGS += -mcpu=native
-+	#CXXFLAGS += -mcpu=native
+-CFLAGS += -mcpu=native
+-CXXFLAGS += -mcpu=native
++#CFLAGS += -mcpu=native
++#CXXFLAGS += -mcpu=native
  endif
  endif
  endif
-@@ -841,4 +841,4 @@ finishedmsg:
- #phony for printing messages
- finishedmsg:
- 	$(NOTIFY_MSG)
--	$(DONOTHING)
-\ No newline at end of file
-+	$(DONOTHING)

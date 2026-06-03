@@ -19,9 +19,9 @@ load_rc_config $name
 
 : ${kanidm_unixd_tasks_enable:="NO"}
 
-pidfile="/var/run/kanidm-unixd-tasks.pid"
+pidfile="/var/run/kanidm_unixd_tasks.pid"
 command=/usr/sbin/daemon
-command_args="-u root -p /var/run/kanidm-unixd-tasks.pid -T kanidm_unixd_tasks /usr/local/libexec/${name}"
-procname=/usr/local/libexec/${name}
+command_args="-u root -p /var/run/kanidm_unixd_tasks.pid -T kanidm_unixd_tasks %%PREFIX%%/libexec/${name}"
+procname=%%PREFIX%%/libexec/${name}
 
 run_rc_command "$1"

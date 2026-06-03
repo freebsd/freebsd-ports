@@ -1,6 +1,5 @@
 PORTNAME=	dftbplus
-DISTVERSION=	24.1
-PORTREVISION=	5
+DISTVERSION=	25.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,18 +8,18 @@ WWW=		https://dftbplus.org/
 
 LICENSE=	GPLv3 # main code is under LGPL3+, the bundled dftd3-lib is under GPLv1+, this makes the result GPLv3 (based on https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility)
 
-BROKEN_aarch64=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug\#255890
+BROKEN_aarch64=	lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug\#255890
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:gcc-c++11-lib fortran pkgconfig python:build shebangfix
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	tools/dptools/bin/* tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
+SHEBANG_FILES=	tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
 		external/fypp/bin/fypp utils/test/testlist_to_fypp
 SHEBANG_GLOB=	*.py *.sh
 
@@ -45,7 +44,7 @@ OPTIONS_SUB=		yes
 
 ARPACK_DESC=		Build with ARPACK for large eigenvalue problems
 ARPACK_CMAKE_BOOL=	WITH_ARPACK
-ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng
+ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich
 ARPACK_PREVENTS=	MPIX # ARPACK is only used in a single-core application
 
 CHIMES_DESC=		Build with ChIMES
@@ -81,7 +80,7 @@ POISSON_CMAKE_BOOL=	WITH_POISSON
 
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
-PYTHON_BROKEN=		fails to install into stage directory: https://github.com/dftbplus/dftbplus/issues/931
+PYTHON_BROKEN=		fails to stage: https://github.com/dftbplus/dftbplus/issues/931
 
 SOCKETS_DESC=		Build with sockets library
 SOCKETS_CMAKE_BOOL=	WITH_SOCKETS

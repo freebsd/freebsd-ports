@@ -1,3 +1,3 @@
-TIMESTAMP = 1748683322
-SHA256 (openmpi-5.0.8.tar.bz2) = 53131e1a57e7270f645707f8b0b65ba56048f5b5ac3f68faabed3eb0d710e449
-SIZE (openmpi-5.0.8.tar.bz2) = 30293034
+TIMESTAMP = 1772311968
+SHA256 (openmpi-5.0.10.tar.bz2) = 0acecc4fc218e5debdbcb8a41d182c6b0f1d29393015ed763b2a91d5d7374cc6
+SIZE (openmpi-5.0.10.tar.bz2) = 30565735

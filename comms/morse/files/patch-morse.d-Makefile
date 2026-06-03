@@ -1,5 +1,5 @@
---- morse.d/Makefile.orig	2011-06-04 02:08:38.000000000 -0700
-+++ morse.d/Makefile	2012-04-12 11:10:58.000000000 -0700
+--- morse.d/Makefile.orig	2024-02-14 19:40:27 UTC
++++ morse.d/Makefile
 @@ -1,40 +1,43 @@
 -DEVICE=PA
 +DEVICE?=PA
@@ -42,10 +42,10 @@
  morseOSS:	morse.o beepOSS.o
 -	$(CC) $(CFLAGS) -o $@ morse.o beepOSS.o -lm
 +	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ morse.o beepOSS.o -lm
-+
+ 
 +beepPA.o: beepPA.c
 +	${CC} ${CFLAGS} ${PA_CFLAGS} -c ${.IMPSRC}
- 
++
  morsePA:	morse.o beepPA.o
 -	$(CC) $(CFLAGS) $(PA_CFLAGS) -o $@ morse.o beepPA.o -lm $(PA_LIBS)
 +	$(CC) $(CFLAGS) $(PA_CFLAGS) $(LDFLAGS) -o $@ morse.o beepPA.o -lm $(PA_LIBS)

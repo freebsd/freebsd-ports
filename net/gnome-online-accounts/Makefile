@@ -1,5 +1,5 @@
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.54.4
+PORTVERSION=	3.54.11
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -15,17 +15,15 @@ BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsecret-1.so:security/libsecret \
 		libsoup-3.0.so:devel/libsoup3 \
-		librest-1.0.so:net/librest1 \
-		libp11-kit.so:security/p11-kit \
-		libdbus-1.so:devel/dbus
+		librest-1.0.so:net/librest1
 
-USES=		compiler:c++11-lib desktop-file-utils gettext gnome \
+USES=		compiler:c++11-lib desktop-file-utils gettext-tools gnome \
 		localbase meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 gtk40 introspection:build libadwaita libxml2 \
 		libxslt:build
-USE_LDCONFIG=	yes
-
 GLIB_SCHEMAS=	org.gnome.online-accounts.gschema.xml
+
+USE_LDCONFIG=	yes
 
 MESON_ARGS+=	-Dexchange=true \
 		-Dkerberos=false \

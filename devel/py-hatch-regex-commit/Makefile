@@ -1,5 +1,5 @@
 PORTNAME=	hatch-regex-commit
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	hatch_regex_commit-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hatch plugin to create a commit and tag when bumping version
-WWW=		https://pypi.org/project/hatch-regex-commit/
+WWW=		https://github.com/frankie567/hatch-regex-commit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

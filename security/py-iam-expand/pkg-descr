@@ -1,0 +1,3 @@
+Python package to expand and deobfuscate IAM policies.
+
+This library helps expand and deobfuscate AWS IAM policy actions and resources.

@@ -1,6 +1,6 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.10
+DISTVERSION=	3.8.12
 CATEGORIES=	www editors accessibility
 
 MAINTAINER=	alfix86@gmail.com
@@ -8,7 +8,7 @@ COMMENT=	Line-oriented web browser and text editor
 WWW=		https://edbrowse.org/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libodbc.so:databases/unixODBC \
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c11 gmake perl5 pkgconfig readline ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	CMB
 USE_PERL5=	build
 
 MAKEFILE=	makefile

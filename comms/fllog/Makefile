@@ -1,30 +1,27 @@
 PORTNAME=	fllog
-PORTVERSION=	1.2.8
+DISTVERSION=	1.2.9
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/fldigi/${PORTNAME} \
-		http://www.w1hkj.com/files/fllog/
+MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio logging program
-WWW=		http://www.w1hkj.com/fllog-help/index.html
+WWW=		https://www.w1hkj.org/fllog-help/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpng16.so:graphics/png
 
-USES=		gmake desktop-file-utils
+USES=		desktop-file-utils gmake jpeg xorg
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
-
-OPTIONS_DEFINE=	NATIVE_OPT
-
-NATIVE_OPT_DESC=	Enable Native Optimizations
 
 PLIST_FILES=	bin/fllog \
 		share/applications/fllog.desktop \
 		share/pixmaps/fllog.xpm
-
-NATIVE_OPT_CONFIGURE_ON=	--enable-optimizations=native
-NATIVE_OPT_CONFIGURE_OFF=	--enable-optimizations=none
 
 .include <bsd.port.mk>

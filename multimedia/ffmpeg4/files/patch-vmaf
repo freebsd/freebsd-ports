@@ -1,26 +1,4 @@
-https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/3d29724c008d
-
---- configure.orig	2021-10-24 20:47:11 UTC
-+++ configure
-@@ -3663,7 +3663,7 @@ vidstabtransform_filter_deps="libvidstab"
- vaguedenoiser_filter_deps="gpl"
- vidstabdetect_filter_deps="libvidstab"
- vidstabtransform_filter_deps="libvidstab"
--libvmaf_filter_deps="libvmaf pthreads"
-+libvmaf_filter_deps="libvmaf"
- zmq_filter_deps="libzmq"
- zoompan_filter_deps="swscale"
- zscale_filter_deps="libzimg const_nan"
-@@ -6441,7 +6441,7 @@ enabled libvidstab        && require_pkg_config libvid
- enabled libuavs3d         && require_pkg_config libuavs3d "uavs3d >= 1.1.41" uavs3d.h uavs3d_decode
- enabled libv4l2           && require_pkg_config libv4l2 libv4l2 libv4l2.h v4l2_ioctl
- enabled libvidstab        && require_pkg_config libvidstab "vidstab >= 0.98" vid.stab/libvidstab.h vsMotionDetectInit
--enabled libvmaf           && require_pkg_config libvmaf "libvmaf >= 1.5.2" libvmaf.h compute_vmaf
-+enabled libvmaf           && require_pkg_config libvmaf "libvmaf >= 2.0.0" libvmaf.h vmaf_init
- enabled libvo_amrwbenc    && require libvo_amrwbenc vo-amrwbenc/enc_if.h E_IF_init -lvo-amrwbenc
- enabled libvorbis         && require_pkg_config libvorbis vorbis vorbis/codec.h vorbis_info_init &&
-                              require_pkg_config libvorbisenc vorbisenc vorbis/vorbisenc.h vorbis_encode_init
---- doc/filters.texi.orig	2021-10-24 20:47:07 UTC
+--- doc/filters.texi.orig	2025-05-17 13:52:31 UTC
 +++ doc/filters.texi
 @@ -13867,66 +13867,58 @@ ffmpeg -i input.mov -vf lensfun=make=Canon:model="Cano
  
@@ -153,7 +131,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/3d29724c008d
  @end example
  @end itemize
  
---- libavfilter/vf_libvmaf.c.orig	2021-10-24 20:47:07 UTC
+--- libavfilter/vf_libvmaf.c.orig	2025-05-17 13:52:31 UTC
 +++ libavfilter/vf_libvmaf.c
 @@ -24,8 +24,8 @@
   * Calculate the VMAF between two input videos.

@@ -1,8 +1,7 @@
 PORTNAME=	cgribex
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/26325/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/30191/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -1,11 +1,11 @@
---- services/vmtoolsd/Makefile.am.orig	2024-10-10 15:05:07 UTC
+--- services/vmtoolsd/Makefile.am.orig	2025-06-19 04:05:18 UTC
 +++ services/vmtoolsd/Makefile.am
-@@ -81,7 +81,7 @@ install-exec-hook:
+@@ -81,7 +81,7 @@ install-data-hook:
  	@INSTVMSG@ vmtoolsd $(srcdir)/l10n $(DESTDIR)$(datadir)
  
  install-exec-hook:
 -	$(INSTALL) -d $(DESTDIR)/etc/vmware-tools
-+#	$(INSTALL) -d $(DESTDIR)/etc/vmware-tools
++	$(INSTALL) -d $(DESTDIR)%%PREFIX%%/etc/vmware-tools
  	$(INSTALL) -d $(DESTDIR)/$(PAM_PREFIX)/pam.d/
  	$(INSTALL) $(top_srcdir)/pam/generic $(DESTDIR)/$(PAM_PREFIX)/pam.d/vmtoolsd
  

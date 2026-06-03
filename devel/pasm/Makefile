@@ -15,8 +15,6 @@ GH_ACCOUNT=	rpaulo
 GH_PROJECT=	am335x_pru_package
 PLIST_FILES=	bin/pasm
 
-USES=		alias
-
 do-build:
 	(cd ${WRKSRC}/pru_sw/utils/pasm_source && \
 		${CC} ${CFLAGS} -D_UNIX_ pasm.c pasmpp.c pasmexp.c pasmop.c \

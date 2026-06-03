@@ -1,5 +1,5 @@
 PORTNAME=	bcftools
-PORTVERSION=	1.22
+PORTVERSION=	1.23.1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -23,11 +23,15 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	misc/* test/test.pl
 
-OPTIONS_DEFINE=		GPL
+OPTIONS_DEFINE=		GPL PERL
 GPL_DESC=		Enable modules that rely on GPL code
-OPTIONS_DEFAULT=	GPL
+PERL_DESC=		Enable external PERL scripts for advanced filtering
+OPTIONS_DEFAULT=	GPL PERL
 
 GPL_LIB_DEPENDS=	libgsl.so:math/gsl
+GPL_CONFIGURE_ENABLE=	libgsl
+PERL_USES=		perl5
+PERL_CONFIGURE_ENABLE=	perl-filters
 
 .include <bsd.port.options.mk>
 

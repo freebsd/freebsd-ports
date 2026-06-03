@@ -17,6 +17,10 @@
 #               Default is "nobody".
 # postgres_exporter_args (string):          Set extra arguments to pass to postgres_exporter
 #               Default is "".
+# postgres_exporter_env (string)            Set environment passed to postgres_exporter.
+#               A series of VAR=value pairs.  If not using multi-target mode,
+#               this may be used to set the target DSN via $DATA_SOURCE_URI.
+#               Default is "".
 # postgres_exporter_listen_address (string):Set ip:port that postgres_exporter will listen on
 #               Default is "localhost:9187".
 # postgres_exporter_syslog_output_tag (str):      Set syslog tag.
@@ -39,6 +43,7 @@ load_rc_config $name
 : ${postgres_exporter_user:="nobody"}
 : ${postgres_exporter_group:="nobody"}
 : ${postgres_exporter_args:=""}
+: ${postgres_exporter_env:=""}
 : ${postgres_exporter_listen_address:="localhost:9187"}
 : ${postgres_exporter_syslog_output_tag=${name}}
 : ${postgres_exporter_syslog_output_priority=notice}
@@ -51,7 +56,7 @@ command_args="-f -p ${pidfile} -t ${name} \
     -T ${postgres_exporter_syslog_output_tag} \
     -s ${postgres_exporter_syslog_output_priority} \
     -l ${postgres_exporter_syslog_output_facility} \
-    /usr/bin/env ${procname} \
+    /usr/bin/env ${postgres_exporter_env} ${procname} \
     --web.listen-address=${postgres_exporter_listen_address} \
     --config.file=${postgres_exporter_config_file} \
     ${postgres_exporter_args}"

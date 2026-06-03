@@ -8,6 +8,8 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
+IGNORE_FreeBSD_13=	does not build with OpenSSL 1.1.1
+
 LIB_DEPENDS=	libphonenumber.so:devel/libphonenumber \
 		libpoppler.so:graphics/poppler \
 		libZXing.so:textproc/zxing-cpp

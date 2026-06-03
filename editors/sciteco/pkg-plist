@@ -6,14 +6,15 @@ share/man/man1/%%PROGRAM_PREFIX%%sciteco.1.gz
 share/man/man1/%%PROGRAM_PREFIX%%tedoc.tes.1.gz
 share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%DATADIR%%/lib/color.tes
+%%DATADIR%%/lib/colors/contrast.tes
 %%DATADIR%%/lib/colors/solarized.tes
 %%DATADIR%%/lib/colors/terminal.tes
 %%DATADIR%%/lib/fnkeys.tes
 %%DATADIR%%/lib/getopt.tes
 %%DATADIR%%/lib/lexer.tes
-%%DATADIR%%/sciteco-16.png
-%%DATADIR%%/sciteco-32.png
-%%DATADIR%%/sciteco-48.png
+%%DATADIR%%/lib/repl.tes
+%%DATADIR%%/lib/tank.tes
+%%DATADIR%%/lib/tecat.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/abaqus.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/ada.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/asciidoc.tes
@@ -33,6 +34,7 @@ share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%LEXILLA%%%%DATADIR%%/lib/lexers/cobol.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/cpp.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/cs.tes
+%%LEXILLA%%%%DATADIR%%/lib/lexers/css.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/d.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/devicetree.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/diff.tes
@@ -44,7 +46,6 @@ share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%LEXILLA%%%%DATADIR%%/lib/lexers/flash.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/freebasic.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/gap.tes
-%%LEXILLA%%%%DATADIR%%/lib/lexers/git.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/go.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/gob.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/html.tes
@@ -53,6 +54,7 @@ share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%LEXILLA%%%%DATADIR%%/lib/lexers/java.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/js.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/kix.tes
+%%LEXILLA%%%%DATADIR%%/lib/lexers/latex.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/lisp.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/lout.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/lua.tes
@@ -78,6 +80,7 @@ share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%LEXILLA%%%%DATADIR%%/lib/lexers/scheme.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/specman.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/spice.tes
+%%LEXILLA%%%%DATADIR%%/lib/lexers/sql.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/swift.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/systemverilog.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/tacl.tes
@@ -92,7 +95,11 @@ share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%LEXILLA%%%%DATADIR%%/lib/lexers/vxml.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/xml.tes
 %%LEXILLA%%%%DATADIR%%/lib/lexers/yaml.tes
+%%DATADIR%%/lib/lexers/email.tes
+%%DATADIR%%/lib/lexers/git.tes
+%%DATADIR%%/lib/lexers/sciteco.tes
 %%DATADIR%%/lib/lexers/woman.tes
+%%DATADIR%%/lib/opener.tes
 %%DATADIR%%/lib/session.tes
 %%DATADIR%%/lib/string.tes
 %%DATADIR%%/lib/women/grosciteco.tes.1.woman
@@ -103,8 +110,13 @@ share/man/man7/%%PROGRAM_PREFIX%%sciteco.7.gz
 %%DATADIR%%/lib/women/sciteco.7.woman.tec
 %%DATADIR%%/lib/women/tedoc.tes.1.woman
 %%DATADIR%%/lib/women/tedoc.tes.1.woman.tec
-%%DATADIR%%/sample.teco_ini
+%%DATADIR%%/lib/women/tutorial.woman
+%%DATADIR%%/lib/women/tutorial.woman.tec
+%%DATADIR%%/fallback.teco_ini
 %%DATADIR%%/sciteco.tmac
+%%GTK%%%%DATADIR%%/sciteco-16.png
+%%GTK%%%%DATADIR%%/sciteco-32.png
+%%GTK%%%%DATADIR%%/sciteco-48.png
 %%GTK%%%%DATADIR%%/fallback.css
 %%GTK%%share/icons/hicolor/16x16/apps/sciteco.png
 %%GTK%%share/icons/hicolor/32x32/apps/sciteco.png

@@ -113,7 +113,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: not set.
 # PATCH_SITES	- Primary location(s) for distribution patch files
 #				  if not found locally.
-# DIST_SUBDIR	- Suffix to ${DISTDIR}.  If set, all ${DISTFILES} and
+# DIST_SUBDIR	- Suffix to ${DISTDIR}.  If set to non-empty value, all ${DISTFILES} and
 #				  ${PATCHFILES} will be put in this subdirectory of
 #				  ${DISTDIR} (see below).  Also they will be fetched in this
 #				  subdirectory from FreeBSD mirror sites.
@@ -163,12 +163,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # IGNORE_${ARCH} - Port should be ignored on ${ARCH}.
 # IGNORE_${OPSYS} - Port should be ignored on ${OPSYS}.
 # IGNORE_${OPSYS}_${OSREL:R} -  Port should be ignored on a single
-#				  release of ${OPSYS}, e.g IGNORE_FreeBSD_13
-#				  would affect all point releases of FreeBSD 13.
+#				  release of ${OPSYS}, e.g IGNORE_FreeBSD_14
+#				  would affect all point releases of FreeBSD 14.
 # IGNORE_${OPSYS}_${OSREL:R}_${ARCH} -  Port should be ignored on a
 #				  single release of ${OPSYS} and specific architecture,
-#				  e.g IGNORE_FreeBSD_13_i386 would affect all point
-#				  releases of FreeBSD 13 in i386.
+#				  e.g IGNORE_FreeBSD_14_i386 would affect all point
+#				  releases of FreeBSD 14 in i386.
 # BROKEN		- Port is believed to be broken.  Package builds can
 # 				  still be attempted using TRYBROKEN to test this
 #				  assumption.
@@ -179,13 +179,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  can still be attempted using TRYBROKEN to
 #				  test this assumption.
 # BROKEN_${OPSYS}_${OSREL:R} -  Port is believed to be broken on a single
-#				  release of ${OPSYS}, e.g BROKEN_FreeBSD_13
-#				  would affect all point releases of FreeBSD 13
+#				  release of ${OPSYS}, e.g BROKEN_FreeBSD_14
+#				  would affect all point releases of FreeBSD 14
 #				  unless TRYBROKEN is also set.
 # BROKEN_${OPSYS}_${OSREL:R}_${ARCH} -  Port is believed to be broken on a
 #				  single release of ${OPSYS} and specific architecture,
-#				  e.g BROKEN_FreeBSD_13 would affect all point
-#				  releases of FreeBSD 13 in i386
+#				  e.g BROKEN_FreeBSD_14 would affect all point
+#				  releases of FreeBSD 14 in i386
 #				  unless TRYBROKEN is also set.
 # DEPRECATED	- Port is deprecated to install. Advisory only.
 # EXPIRATION_DATE
@@ -680,6 +680,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For extract:
 #
+# EXTRACT_ENV	- Environment to pass to ${EXTRACT_CMD}
 # EXTRACT_CMD	- Command for extracting archive
 #				  Default: ${TAR}
 # EXTRACT_BEFORE_ARGS
@@ -1007,7 +1008,7 @@ PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
 LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
-_DISTDIR?=		${DISTDIR}${DIST_SUBDIR:D/${DIST_SUBDIR}}
+_DISTDIR?=		${DISTDIR}${empty(DIST_SUBDIR):?:${DIST_SUBDIR:D/${DIST_SUBDIR}}}
 INDEXDIR?=		${PORTSDIR}
 SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
@@ -1081,7 +1082,7 @@ LD+=		--sysroot=${CROSS_SYSROOT}
 STRIP_CMD=	${CROSS_BINUTILS_PREFIX}strip
 # only bmake support the below
 STRIPBIN=	${STRIP_CMD}
-.export.env STRIPBIN
+.export-env STRIPBIN
 .endif
 
 #
@@ -1165,7 +1166,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .    endif
 _EXPORTED_VARS+=	OSVERSION
 
-.    if ${OPSYS} == FreeBSD && (${OSVERSION} < 1305000 || (${OSVERSION} >= 1400000 && ${OSVERSION} < 1402000))
+.    if ${OPSYS} == FreeBSD && ${OSVERSION} < 1403000
 _UNSUPPORTED_SYSTEM_MESSAGE=	Ports Collection support for your ${OPSYS} version has ended, and no ports\
 								are guaranteed to build on this system. Please upgrade to a supported release.
 .      if defined(ALLOW_UNSUPPORTED_SYSTEM)
@@ -1386,7 +1387,7 @@ PREFIX?=		${LOCALBASE}
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .    if defined(USE_LOCAL_MK)
-.include "${PORTSDIR}/Mk/bsd.local.mk"
+.sinclude "${PORTSDIR}/Mk/bsd.local.mk"
 .    endif
 .    for odir in ${OVERLAYS}
 .sinclude "${odir}/Mk/bsd.overlay.mk"
@@ -1658,6 +1659,10 @@ QA_ENV+=		USESSHAREDMIMEINFO=yes
 .    if !empty(USES:Mterminfo)
 QA_ENV+=		USESTERMINFO=yes
 .    endif
+.    if !empty(USES:Mpython*)
+QA_ENV+=		USESPYTHON=yes \
+				PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
+.    endif
 
 CO_ENV+=		STAGEDIR=${STAGEDIR} \
 				PREFIX=${PREFIX} \
@@ -1773,6 +1778,7 @@ CFLAGS:=	${CFLAGS:C/ $//}
 .      if defined(_CPUCFLAGS)
 .        if !empty(_CPUCFLAGS)
 CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
+CXXFLAGS:=	${CXXFLAGS:C/${_CPUCFLAGS}//}
 .        endif
 .      endif
 .    endif
@@ -1842,7 +1848,7 @@ PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
 .include "${PORTSDIR}/Mk/bsd.gcc.mk"
 .    endif
 
-.    if defined(LLD_UNSAFE) && ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+.    if defined(LLD_UNSAFE)
 LDFLAGS+=	-fuse-ld=bfd
 BINARY_ALIAS+=	ld=${LD}
 USE_BINUTILS=	yes
@@ -1851,15 +1857,15 @@ USE_BINUTILS=	yes
 .    if defined(USE_BINUTILS) && !defined(DISABLE_BINUTILS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BINUTILS?=	ADDR2LINE AR AS CPPFILT GPROF LD NM OBJCOPY OBJDUMP RANLIB \
-	READELF SIZE STRINGS
+	READELF SIZE STRINGS STRIP_CMD
 BINUTILS_NO_MAKE_ENV?=
 .      for b in ${BINUTILS}
-${b}=	${LOCALBASE}/bin/${b:C/PP/++/:tl}
+${b}=	${LOCALBASE}/bin/${b:C/PP/++/:C/_CMD//:tl}
 .        if defined(GNU_CONFIGURE) || defined(BINUTILS_CONFIGURE)
-CONFIGURE_ENV+=	${b}="${${b}}"
+CONFIGURE_ENV+=	${b:C/_CMD//}="${${b}}"
 .        endif
 .        if ${BINUTILS_NO_MAKE_ENV:M${b}} == ""
-MAKE_ENV+=	${b}="${${b}}"
+MAKE_ENV+=	${b:C/_CMD//}="${${b}}"
 .        endif
 .      endfor
 .    endif
@@ -1935,7 +1941,7 @@ PKGPREDEINSTALL?=	${PKGDIR}/pkg-pre-deinstall
 PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
 
 .    if defined(USE_LOCAL_MK)
-.include "${PORTSDIR}/Mk/bsd.local.mk"
+.sinclude "${PORTSDIR}/Mk/bsd.local.mk"
 .    endif
 .    for odir in ${OVERLAYS}
 .sinclude "${odir}/Mk/bsd.overlay.mk"
@@ -2138,6 +2144,7 @@ PATCH_DIST_ARGS+=	--suffix .orig
 TAR?=	/usr/bin/tar
 
 # EXTRACT_SUFX is defined in .pre.mk section
+EXTRACT_ENV?=	LC_ALL=C.UTF-8
 EXTRACT_CMD?=	${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
 EXTRACT_AFTER_ARGS?=	--no-same-owner --no-same-permissions
@@ -2208,11 +2215,7 @@ PKG_SUFX=	.pkg
 .    if defined(PKG_NOCOMPRESS)
 PKG_COMPRESSION_FORMAT?=	tar
 .    else
-.      if ${OSVERSION} > 1400000
 PKG_COMPRESSION_FORMAT?=	tzst
-.      else
-PKG_COMPRESSION_FORMAT?=	txz
-.      endif
 .    endif
 
 # where pkg(8) stores its data
@@ -2543,7 +2546,7 @@ _PATCH_SITES_ENV+=	_PATCH_SITES_${_group}=${_PATCH_SITES_${_group}:Q}
 CKSUMFILES=		${ALLFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
-.    if defined(DIST_SUBDIR)
+.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 .      if defined(CKSUMFILES) && ${CKSUMFILES}!=""
 _CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .      endif
@@ -3208,7 +3211,8 @@ clean-wrkdir:
 .    if !target(do-extract)
 do-extract: ${EXTRACT_WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
-		if ! (cd ${EXTRACT_WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+		if ! (cd ${EXTRACT_WRKDIR} && ${EXTRACT_ENV} ${EXTRACT_CMD} \
+		    ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
 			${ECHO_MSG} "===>  Failed to extract \"${_DISTDIR}/$$file\"."; \
 			exit 1; \
@@ -3454,7 +3458,7 @@ ${_PLIST}.${sp}: ${TMPPLIST}
 
 ${WRKDIR_PKGFILE${_SP.${sp}}}:	${_PLIST}.${sp} create-manifest ${WRKDIR}/pkg
 	@echo "===>   Building ${PKGNAME${_SP.${sp}}}"
-	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR}.${sp} -p ${_PLIST}.${sp} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -T${MAKE_JOBS_NUMBER} -m ${METADIR}.${sp} -p ${_PLIST}.${sp} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
@@ -3909,7 +3913,7 @@ delete-distfiles:
 			fi; \
 		done; \
 	fi)
-.      if defined(DIST_SUBDIR)
+.      if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	-@${RMDIR} ${_DISTDIR} >/dev/null 2>&1 || ${TRUE}
 .      endif
 .    endif
@@ -3926,7 +3930,7 @@ delete-distfiles-list:
 			fi; \
 		done; \
 	fi
-.      if defined(DIST_SUBDIR)
+.      if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	@${ECHO_CMD} "${RMDIR} ${_DISTDIR} 2>/dev/null || ${TRUE}"
 .      endif
 .    endif
@@ -4489,7 +4493,7 @@ describe-json:
 	${ECHO_CMD} \"complete_options_list\":[\"${COMPLETE_OPTIONS_LIST:ts,:S/,/\",\"/g}\"], ;\
 	${ECHO_CMD} \"categories\":[\"${CATEGORIES:ts,:S/,/\",\"/g}\"], ;\
 	${ECHO_CMD} \"license\":[\"${LICENSE:ts,:S/,/\",\"/g}\"], ;\
-	${ECHO_CMD} \"deprecated\":\""${DEPRECATED:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}" \", ;\
+	${ECHO_CMD} \"deprecated\":\"${DEPRECATED:Q:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}\", ;\
 	${ECHO_CMD} \"broken\":\"${BROKEN:Q:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}\", ;\
 	${ECHO_CMD} \"distversion\":\"${DISTVERSION}\", ;\
 	${ECHO_CMD} \"distversionprefix\":\"${DISTVERSIONPREFIX}\", ;\
@@ -5330,7 +5334,9 @@ show-warnings:
 	@${ECHO_MSG} "${m}" | ${FMT_80}
 	@${ECHO_MSG}
 .      endfor
+.      if ${WARNING_WAIT} != 0
 	@sleep ${WARNING_WAIT}
+.      endif
 .    endif
 
 .    if defined(ERROR)
@@ -5356,7 +5362,7 @@ show-dev-warnings:
 .        endfor
 .        if defined(DEV_WARNING_FATAL)
 	@${FALSE}
-.        else
+.        elif ${DEV_WARNING_WAIT} != 0
 	@sleep ${DEV_WARNING_WAIT}
 .        endif
 .      endif

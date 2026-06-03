@@ -1,3 +1,5 @@
-TIMESTAMP = 1723925892
+TIMESTAMP = 1767830027
 SHA256 (polybar-3.7.2.tar.gz) = e2feacbd02e7c94baed7f50b13bcbf307d95df0325c3ecae443289ba5b56af29
 SIZE (polybar-3.7.2.tar.gz) = 494383
+SHA256 (455d63611a695ffe4fe372272be28f4f6d9b90d3.patch) = fbd0ff540e769284b4abcee9b4067bee7b0bad1c2ee9cca9f146e2faaa89e45c
+SIZE (455d63611a695ffe4fe372272be28f4f6d9b90d3.patch) = 895

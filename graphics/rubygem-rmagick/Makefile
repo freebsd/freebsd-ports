@@ -1,5 +1,5 @@
 PORTNAME=	rmagick
-PORTVERSION=	6.1.2
+PORTVERSION=	7.0.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-observer>=0.1<1:devel/rubygem-observer \
 		rubygem-pkg-config>=1.4<2:devel/rubygem-pkg-config
 
-USES=		gem pkgconfig shebangfix
-
-SHEBANG_FILES=	.devcontainer/*.sh
+USES=		gem pkgconfig
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11

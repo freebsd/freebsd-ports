@@ -1,6 +1,6 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.3
+DISTVERSION=	3.12
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/oneapi-src/oneDNN
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
 BROKEN_aarch64=	error: sys/prctl.h file not found
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
@@ -68,6 +68,12 @@ OPTIONS_SINGLE_SIMD+=	SIMD_SSE41
 
 CXXFLAGS:=	${CXXFLAGS:S/-O2/-O3/} # clang writes wrong binary code when -O2 optimization is used and one testcase is failing, see https://bugs.llvm.org/show_bug.cgi?id=48104
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
+CXXFLAGS+=	-mcpu=power7
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
@@ -78,6 +84,6 @@ do-test: # 1 test fails, see https://github.com/oneapi-src/oneDNN/issues/2011
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 3.7.3: 100% tests passed, 0 tests failed out of 170
+# tests as of 3.10: 100% tests passed, 0 tests failed out of 172
 
 .include <bsd.port.mk>

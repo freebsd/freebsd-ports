@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Rename multiple files using regular expressions
 WWW=		https://rename.sourceforge.net/
 

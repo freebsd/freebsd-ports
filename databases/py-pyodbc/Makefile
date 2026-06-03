@@ -1,12 +1,11 @@
 PORTNAME=	pyodbc
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTVERSION=	5.3.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rob.kruus@gmail.com
-COMMENT=	ODBC connections for python
+COMMENT=	Python ODBC bridge
 WWW=		https://github.com/mkleehammer/pyodbc
 
 LICENSE=	MIT
@@ -16,7 +15,10 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC
 BUILD_DEPENDS=	unixODBC>=2.2.14:databases/unixODBC
 
 USES=		localbase python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyodbc*.so

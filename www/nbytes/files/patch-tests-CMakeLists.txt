@@ -1,0 +1,8 @@
+--- tests/CMakeLists.txt.orig	2025-12-24 18:53:34 UTC
++++ tests/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-include(GoogleTest)
++find_package(GTest)
+ include(CTest)
+ add_executable(basic basic.cpp)
+ target_link_libraries(

@@ -1,0 +1,7 @@
+The Qt OpenAPI module provides functionality for generating Qt HTTP clients
+using Qt Network RESTful APIs. The main module features are the Qt OpenAPI
+generator (a plugin to the upstream OpenAPI generator) and the pre-generated
+OpenApiCommon library.
+
+It allows developers to autogenerate Qt HTTP clients in C++ using Qt Network
+APIs such as QRestAccessManager directly from OpenAPI specifications.

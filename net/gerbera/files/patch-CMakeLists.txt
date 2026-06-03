@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2026-03-22 07:47:15 UTC
++++ CMakeLists.txt
+@@ -951,14 +951,14 @@ endif()
+     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/changelog.gz" DESTINATION "${CMAKE_INSTALL_DOCDIR}")
+ endif()
+ 
+-if(NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
+-    set(BASH_COMPLETION_DIR "/usr/share/bash-completion/completions")
+-
+-    install(
+-        FILES scripts/gerbera-completion.sh
+-        DESTINATION "${BASH_COMPLETION_DIR}"
+-        RENAME gerbera)
+-endif()
++#if(NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
++#    set(BASH_COMPLETION_DIR "/usr/share/bash-completion/completions")
++#
++#    install(
++#        FILES scripts/gerbera-completion.sh
++#        DESTINATION "${BASH_COMPLETION_DIR}"
++#        RENAME gerbera)
++#endif()
+ 
+ set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA ${DEBIAN_EXTRA_FILES})
+ 

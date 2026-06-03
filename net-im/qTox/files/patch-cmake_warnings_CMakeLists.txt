@@ -1,0 +1,10 @@
+--- cmake/warnings/CMakeLists.txt.orig	2025-11-07 11:06:58 UTC
++++ cmake/warnings/CMakeLists.txt
+@@ -28,7 +28,6 @@ target_compile_options(
+     -fno-common;
+     -fstrict-overflow;
+     -ftrapv;
+-    -pedantic-errors;
+     -Wall;
+     -Wcast-align;
+     -Wdouble-promotion;

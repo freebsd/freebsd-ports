@@ -1,11 +1,11 @@
 PORTNAME=	hypothesis
-PORTVERSION=	6.136.1
+PORTVERSION=	6.152.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Library for property based testing
+COMMENT=	Property-based testing library for Python
 WWW=		https://hypothesis.works/ \
 		https://hypothesis.readthedocs.io/en/latest/ \
 		https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=23.2.0:devel/py-attrs@${PY_FLAVOR} \
-		${PY_EXCEPTIONGROUP} \
+RUN_DEPENDS=	${PY_EXCEPTIONGROUP} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.1.0<3.0.0:devel/py-sortedcontainers@${PY_FLAVOR}
 
 USES=		python
@@ -41,18 +40,18 @@ PYTZ_DESC=		Timezone support
 REDIS_DESC=		Redis support
 WATCHDOG_DESC=		Watchdog support
 
-CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=19.10b0:devel/py-black@${PY_FLAVOR} \
+CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=20.8b0:devel/py-black@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}rich>=9.0.0:textproc/py-rich@${PY_FLAVOR}
 CODEMODS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.3.16:devel/py-libcst@${PY_FLAVOR}
-CROSSHAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crosshair-tool>=0.0.88:devel/py-crosshair-tool@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}hypothesis-crosshair>=0.0.23:devel/py-hypothesis-crosshair@${PY_FLAVOR}
+CROSSHAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crosshair-tool>=0.0.104:devel/py-crosshair-tool@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}hypothesis-crosshair>=0.0.28:devel/py-hypothesis-crosshair@${PY_FLAVOR}
 DATEUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=1.4:devel/py-python-dateutil@${PY_FLAVOR}
-DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR}
+DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 DPCONTRACTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}dpcontracts>=0.4:devel/py-dpcontracts@${PY_FLAVOR}
-GHOSTWRITER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}black>=19.10b0:devel/py-black@${PY_FLAVOR}
+GHOSTWRITER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}black>=20.8b0:devel/py-black@${PY_FLAVOR}
 LARK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>=0.10.1:devel/py-lark@${PY_FLAVOR}
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.3,1:math/py-numpy@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21.6,1:math/py-numpy@${PY_FLAVOR}
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.1,1:math/py-pandas@${PY_FLAVOR}
 PYTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.6,1:devel/py-pytest@${PY_FLAVOR}
 PYTZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2014.1,1:devel/py-pytz@${PY_FLAVOR}

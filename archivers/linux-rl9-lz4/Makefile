@@ -8,15 +8,19 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	LZ4 compression library and utilities (Rocky Linux ${LINUX_DIST_VER})
 WWW=		https://lz4.github.io/lz4/
 
+LICENSE=	BSD2CLAUSE GPLv2
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE=	${FILESDIR}/LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/usr/share/licenses/lz4/COPYING
+
 USES=		cpe linux:rl9
+CPE_VENDOR=	lz4_project
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-WANT_LINUX32=	yes
-
-CPE_VENDOR=	lz4_project
 
 BIN_DISTNAMES=	${DISTNAME}
 LIB_DISTNAMES=	lz4-libs-${PORTVERSION}${DISTVERSIONSUFFIX}
+WANT_LINUX32=	yes
 
 DESCR=		${PORTSDIR}/${PKGCATEGORY}/liblz4/pkg-descr
 

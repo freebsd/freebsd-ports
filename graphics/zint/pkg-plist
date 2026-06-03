@@ -2,6 +2,9 @@ bin/zint
 bin/zint-qt
 include/qzint.h
 include/zint.h
+lib/cmake/zint/zint-config.cmake
+lib/cmake/zint/zint-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/zint/zint-targets.cmake
 lib/libQZint.so
 lib/libQZint.so.%%VER%%
 lib/libQZint.so.%%VER%%.0.0
@@ -10,6 +13,4 @@ lib/libzint.so.%%VER%%
 lib/libzint.so.%%VER%%.0.0
 share/cmake/Modules/FindZint.cmake
 share/man/man1/zint.1.gz
-%%DATADIR%%/zint-config.cmake
-%%DATADIR%%/zint-targets-%%CMAKE_BUILD_TYPE%%.cmake
-%%DATADIR%%/zint-targets.cmake
+share/pixmaps/zint-qt.png

@@ -1,18 +1,27 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2026-05-30 09:39:35 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -2740,7 +2740,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
+@@ -2473,7 +2473,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
  }
  
  void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
 -#if !BUILDFLAG(IS_LINUX)
 +#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
-   GetContentsWebView()->SetFastResize(is_dragging);
-   if (multi_contents_view_) {
-     multi_contents_view_->GetInactiveContentsView()->SetFastResize(is_dragging);
-@@ -6044,7 +6044,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
+   UpdateFastResizeForContentViews(is_dragging);
+ 
+   if (!is_dragging) {
+@@ -5996,7 +5996,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (!ShouldShowAvatarToolbarIPH()) {
+     return;
+   }
+@@ -6006,7 +6006,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
+ }
+ 
+ void BrowserView::MaybeShowSignInBenefitsIPH() {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (!ShouldShowAvatarToolbarIPH()) {

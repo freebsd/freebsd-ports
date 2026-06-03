@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	5-mysql
 
@@ -9,7 +9,6 @@ MASTERDIR=	${.CURDIR}/../libgda5
 BUILD_WRKSRC=	${WRKSRC}/providers/mysql/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
-
 LIBGDA5_SLAVE=	mysql
 
 .include "${MASTERDIR}/Makefile"

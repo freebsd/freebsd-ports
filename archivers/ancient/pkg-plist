@@ -3,5 +3,5 @@ include/ancient/ancient.hpp
 lib/libancient.a
 lib/libancient.so
 lib/libancient.so.2
-lib/libancient.so.2.0.2
+lib/libancient.so.2.0.3
 libdata/pkgconfig/libancient.pc

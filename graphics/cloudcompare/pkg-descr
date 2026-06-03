@@ -1,7 +1,14 @@
-CloudCompare is a 3D point cloud (and triangular mesh) processing software. It
-was originally designed to perform comparison between two 3D points clouds
-(such as the ones obtained with a laser scanner) or between a point cloud and a
-triangular mesh. It relies on an octree structure that is highly optimized for
-this particular use-case. It was also meant to deal with huge point clouds
-(typically more than 10 millions points, and up to 120 millions with 2 Gb of
-memory).
+CloudCompare is a 3D point cloud (and triangular mesh) editing and processing
+software.
+
+It has been designed to perform direct comparison between dense 3D point
+clouds. It relies on a specific octree structure that enables great performances
+when performing this kind of task. As most point clouds now are acquired by
+terrestrial laser scanners, CloudCompare is able to deal with huge point clouds
+- typically tens of millions of points. A comparison between a point cloud and a
+triangular mesh is also supported. So are many other point cloud processing
+algorithms (registration, resampling, color/normal vectors/scalar fields
+management, statistics computation, sensor management, interactive or automatic
+segmentation, etc.) as well as display enhancement tools (custom color ramps,
+color & normal vectors handling, calibrated pictures handling, OpenGL shaders,
+plugins, etc.).

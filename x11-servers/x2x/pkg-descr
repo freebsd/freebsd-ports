@@ -13,7 +13,7 @@ control to the "from" display.
 If the -east or -west options are specified on the command line, x2x
 starts up with a different interface.  When the mouse moves to the
 (east or west) side of the default screen on the "from" display, the
-cursor slides over to the "to" display.  When the mouse returns to to
+cursor slides over to the "to" display.  When the mouse returns to
 side of the "to" display that it entered, it slides back onto the
 "from" display.
 

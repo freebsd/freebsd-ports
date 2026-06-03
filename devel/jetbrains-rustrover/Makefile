@@ -1,6 +1,7 @@
 PORTNAME=	rustrover
-DISTVERSION=	2024.3.8
-CATEGORIES=	devel
+DISTVERSION=	2025.2.4
+PORTREVISION=	2
+CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	RustRover-${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	cmake:devel/cmake-core \
@@ -25,10 +26,10 @@ RUN_DEPENDS=	cmake:devel/cmake-core \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		cpe java python:run
+USES=		cpe java python:run desktop-file-utils
 
 CPE_VENDOR=	jetbrains
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 

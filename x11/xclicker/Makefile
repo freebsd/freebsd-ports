@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
 CATEGORIES=	x11
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Fast gui autoclicker for x11 desktops
 WWW=		https://github.com/robiot/xclicker
 

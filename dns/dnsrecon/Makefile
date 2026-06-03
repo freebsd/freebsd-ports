@@ -1,6 +1,6 @@
 PORTNAME=	dnsrecon
 DISTVERSION=	0.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 
 MAINTAINER=	rihaz.jerrin@gmail.com
@@ -10,7 +10,7 @@ WWW=		https://github.com/darkoperator/dnsrecon
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>=0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 

@@ -2,11 +2,11 @@ PORTNAME=	mpfrcx
 DISTVERSION=	0.6.3
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.multiprecision.org/downloads/
+MASTER_SITES=	https://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Arbitrary precision library for arithmetic of univariate polynomials
-WWW=		https://www.multiprecision.org/mpfrcx/home.html
+WWW=		https://www.multiprecision.org/mpfrcx/index.html
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

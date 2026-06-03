@@ -2,7 +2,6 @@ bin/ircd
 bin/ircd-hybrid-mkpasswd
 %%ETCDIR%%/reference.ircd.conf
 %%ETCDIR%%/reference.modules.conf
-etc/rc.d/ircd-hybrid
 lib/ircd-hybrid/modules/cap_account_notify.la
 lib/ircd-hybrid/modules/cap_account_notify.so
 lib/ircd-hybrid/modules/cap_away_notify.la

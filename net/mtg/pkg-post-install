@@ -1,0 +1,23 @@
+#!/bin/sh
+
+DOMAIN="storage.googleapis.com"
+DEFAULT_SECRET="ee367a189aee18fa31c190054efd4a8e9573746f726167652e676f6f676c65617069732e636f6d"
+
+generate_secret() {
+	echo ":: Generate new secret"
+	SECRET=`${PKG_PREFIX}/bin/mtg generate-secret --hex ${DOMAIN}`
+}
+
+if grep -q "^[^#]*secret = \"${DEFAULT_SECRET}\"$" ${PKG_PREFIX}/etc/mtg/config.toml
+then
+	generate_secret
+	echo ":: Replace secret in ${PKG_PREFIX}/etc/mtg/config.toml"
+	/usr/bin/diff -q ${PKG_PREFIX}/etc/mtg/config.toml.sample ${PKG_PREFIX}/etc/mtg/config.toml >/dev/null ||  BAK=".bak"
+	/usr/bin/sed -i "${BAK}" "s/${DEFAULT_SECRET}/${SECRET}/g" ${PKG_PREFIX}/etc/mtg/config.toml
+fi
+if grep -q "${DEFAULT_SECRET}" ${PKG_PREFIX}/etc/mtg/config.toml.sample
+then
+	[ ! ${SECRET} ] && generate_secret
+	echo ":: Replace secret in ${PKG_PREFIX}/etc/mtg/config.toml.sample"
+	/usr/bin/sed -i "" "s/${DEFAULT_SECRET}/${SECRET}/g" ${PKG_PREFIX}/etc/mtg/config.toml.sample
+fi

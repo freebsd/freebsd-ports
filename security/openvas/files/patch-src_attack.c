@@ -1,5 +1,5 @@
---- src/attack.c	2025-03-03 04:49:55.000000000 -0800
-+++ src/attack.c	2025-04-14 20:09:40.968033000 -0700
+--- src/attack.c.orig	2025-05-27 12:10:19 UTC
++++ src/attack.c
 @@ -31,7 +31,6 @@
  #include "utils.h"
  
@@ -8,7 +8,7 @@
  #include <errno.h> /* for errno() */
  #include <fcntl.h>
  #include <glib.h>
-@@ -1555,14 +1554,14 @@
+@@ -1555,21 +1554,21 @@ stop:
    gettimeofday (&now, NULL);
    if (test_alive_hosts_only)
      {
@@ -27,3 +27,12 @@
                 gvm_hosts_count (hosts));
  
    if (prefs_get ("report_scripts"))
+     {
+       char *buff =
+-        g_strdup_printf ("},\"scan_time\":  {\"start\": %ld, \"stop\": %ld}}",
+-                         then.tv_sec, now.tv_sec);
++        g_strdup_printf ("},\"scan_time\":  {\"start\": %lld, \"stop\": %lld}}",
++                         (long long)then.tv_sec, (long long)now.tv_sec);
+       char *path = g_strdup_printf (
+         "%s/%s-stats.json", prefs_get ("report_scripts"), globals->scan_id);
+ 

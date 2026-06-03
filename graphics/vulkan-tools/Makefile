@@ -1,18 +1,19 @@
 PORTNAME=	vulkan-tools
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.321
+DISTVERSIONPREFIX=	vulkan-sdk-
+DISTVERSION=	1.4.350.0
 CATEGORIES=	graphics
 
-MAINTAINER=	atanubiswas484@gmail.com
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Tools and demos for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-Tools
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers
 
-USES=		alias cmake compiler:c++11-lib pkgconfig python:build
+USES=		cmake compiler:c++11-lib localbase pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Tools

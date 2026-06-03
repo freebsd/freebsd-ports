@@ -1,6 +1,5 @@
 PORTNAME=	dlib
-DISTVERSION=	20.0.0
-PORTREVISION=	1
+DISTVERSION=	20.0.1
 CATEGORIES=	science devel math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,7 @@ WWW=		http://dlib.net
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 
+BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=		${PY_BOOST} \
 			libpng.so:graphics/png \
 			libgif.so:graphics/giflib

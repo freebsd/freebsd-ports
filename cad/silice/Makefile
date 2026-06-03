@@ -1,7 +1,7 @@
 PORTNAME=	silice
-DISTVERSION=	g20221229
+DISTVERSION=	g20260322
 PORTREVISION=	1
-CATEGORIES=	cad
+CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language that simplifies prototyping and writing algorithms for FPGAs
@@ -15,15 +15,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}edalize>0:cad/py-edalize@${PY_FLAVOR} # exam
 
 USES=		cmake:noninja java python shebangfix
 
-JAVA_VERSION=	17
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sylefeb
 GH_PROJECT=	Silice
-GH_TAGNAME=	6a2beda
-GH_TUPLE=	sylefeb:LibSL-small:b1942d5:LibSL_small/src/libs/LibSL-small \
-		sylefeb:tinygpus:e6429ac:tinygpus/projects/tinygpus \
-		ultraembedded:fat_io_lib:0ef5c2b:fat_io_lib/learn-silice/classroom/soc_wave_player/firmware/fat_io_lib
+GH_TAGNAME=	73bebc45
+GH_TUPLE=	ultraembedded:fat_io_lib:0ef5c2bb:fat_io_lib/learn-silice/classroom/soc_wave_player/firmware/fat_io_lib \
+		sylefeb:tinygpus:498be1b8:tinygpus/projects/tinygpus \
+		sylefeb:LibSL-small:b1942d5:libslsmall/projects/tinygpus/demos/q5k/qrepack/LibSL-small \
+		pybind:pybind11:2dd52544:pybind11/python/pybind11 \
+		sylefeb:LibSL-small:b1942d59:libslsmall/src/libs/LibSL-small
 
 SHEBANG_GLOB=	*.sh *.py
 

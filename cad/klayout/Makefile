@@ -1,9 +1,9 @@
 PORTNAME=	klayout
-PORTVERSION=	0.28.12
+PORTVERSION=	0.28.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Qt-based chip mask layout viewing and editing tool
 WWW=		http://www.klayout.de/index.html
 
@@ -11,6 +11,8 @@ LICENSE=	GPLv2
 
 BROKEN_i386=	type 'hash<long long>' does not provide a call operator
 BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
+
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++0x gmake gl python ruby qt:5
 USE_GITHUB=	yes
@@ -33,14 +35,17 @@ INSTALL_WRKSRC=	${WRKSRC}/build-release
 TEST_WRKSRC=	${WRKSRC}/build-release
 PLIST_SUB=	PORTVERSION=${PORTVERSION} PORTVERSION_R=${PORTVERSION:R}
 
+CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
+
 do-configure:
 	cd ${WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} ${SH} build.sh \
+	    ${SETENV} ${MAKE_ENV} ${CONFIGURE_SHELL} build.sh \
 		-with-qtbinding \
 		-rpath "${PREFIX}/lib/klayout" \
 		-prefix "${PREFIX}" \
 		-python ${PYTHON_CMD} \
 		-ruby ${RUBY} \
+		-nolibgit2 \
 		-dry-run
 
 post-configure:

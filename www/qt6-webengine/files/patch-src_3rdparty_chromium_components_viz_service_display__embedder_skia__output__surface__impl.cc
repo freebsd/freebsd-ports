@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2025-09-06 10:01:20 UTC
 +++ src/3rdparty/chromium/components/viz/service/display_embedder/skia_output_surface_impl.cc
 @@ -1498,7 +1498,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
                                              ->GetVulkanPhysicalDevice(),

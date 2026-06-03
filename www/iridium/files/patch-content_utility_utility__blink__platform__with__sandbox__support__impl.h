@@ -1,4 +1,4 @@
---- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2025-05-07 06:48:23 UTC
+--- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2025-12-10 15:04:57 UTC
 +++ content/utility/utility_blink_platform_with_sandbox_support_impl.h
 @@ -34,7 +34,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
  

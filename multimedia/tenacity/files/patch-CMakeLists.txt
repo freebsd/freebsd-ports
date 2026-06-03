@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-10-12 15:38:58 UTC
++++ CMakeLists.txt
+@@ -412,7 +412,7 @@ endif()
+     set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>")
+ endif()
+ 
+-if (CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_64|AMD64")
++if (CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_64|amd64")
+     # Allow AVX2 or AVX512 to be enabled if desired
+     option(AVX    "Enable the usage of AVX in builds instead of SSE4.")
+     option(AVX2   "Enable the usage of AVX2 in builds instead of SSE4 or AVX." OFF)

@@ -1,7 +1,6 @@
-PORTNAME=	novelwriter
+PORTNAME=	novelWriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
-PORTREVISION=	1
+DISTVERSION=	26.1
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 
@@ -12,7 +11,7 @@ WWW=		https://novelwriter.io/ \
 
 LICENSE=	GPLv3
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enchant>=3.0.0:textproc/py-enchant@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PY_DEPENDS} \

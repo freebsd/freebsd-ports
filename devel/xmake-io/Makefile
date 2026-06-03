@@ -15,6 +15,8 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libsv.so:devel/sv \
 		libtbox.so:devel/tbox
 
+LDFLAGS+=	-lexecinfo
+
 USES=		gmake lua:54 luajit pkgconfig readline
 USE_GITHUB=	yes
 GH_PROJECT=	xmake

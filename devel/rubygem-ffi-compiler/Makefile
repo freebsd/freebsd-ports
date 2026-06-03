@@ -1,5 +1,5 @@
 PORTNAME=	ffi-compiler
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

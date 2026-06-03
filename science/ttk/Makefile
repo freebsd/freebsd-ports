@@ -1,5 +1,6 @@
 PORTNAME=	ttk
 DISTVERSION=	1.3.0
+PORTREVISION=	5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://topology-tool-kit.github.io \
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/functional/hash.hpp:devel/boost-libs \

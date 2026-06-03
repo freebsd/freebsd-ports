@@ -1,6 +1,6 @@
---- src/app/qbs-setup-qt/setupqt.cpp.orig	2021-11-28 22:25:29 UTC
+--- src/app/qbs-setup-qt/setupqt.cpp.orig	2025-06-20 12:42:25 UTC
 +++ src/app/qbs-setup-qt/setupqt.cpp
-@@ -70,7 +70,7 @@ static QStringList qmakeExecutableNames()
+@@ -71,7 +71,7 @@ static QStringList qmakeExecutableNames()
  {
      const QString baseName = HostOsInfo::appendExecutableSuffix(QStringLiteral("qmake"));
      QStringList lst(baseName);

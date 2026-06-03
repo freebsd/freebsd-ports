@@ -5,6 +5,22 @@ Tinyauth is installed
 
 1) Configure it in %%PREFIX%%/etc/tinyauth.env
 
+   1.1) If you just want to see a quick demo, add an entry to the
+        hosts(5) file on the client that will connect to tinyauth,
+        something like this:
+
+     127.0.0.1    tinyauth.example.localhost
+
+   1.2) Next, create a user:
+
+     su -m tinyauth -c 'tinyauth user create --interactive'
+
+   1.3) Add the result to %%PREFIX%%/etc/tinyauth.env, escaping any
+        dollar signs:
+
+     TINYAUTH_APPURL=http://tinyauth.example.localhost:3000
+     TINYAUTH_AUTH_USERS="user:\$2a\$10\$n3t.jAIhfTHT1x/iROffGel9OQeEKh74sETmyf7XikZKLHfASRJ8K"
+
 2) Enable it with
 
      sysrc tinyauth_enable=YES
@@ -12,6 +28,28 @@ Tinyauth is installed
 3) Start it with
 
      service tinyauth start
+EOM
+}
+{ type: upgrade
+  maximum_version: "4.0.0"
+  message: <<EOM
+Since version 4.0.0, Tinyauth is a stateful application, which means you must set
+DATABASE_PATH to /var/db/tinyauth/tinyauth.db if you want sessions to persist even
+after restarting.
+
+Please refer to the current documentation for any changes you
+need to make to your configuration file:
+
+  https://tinyauth.app/docs/breaking-updates/3-to-4/
+EOM
+}
+{ type: upgrade
+  maximum_version: "5.0.0"
+  message: <<EOM
+This release introduces some breaking-changes, please refer to the documentation
+for migration instructions:
+
+  https://tinyauth.app/docs/breaking-updates/4-to-5
 EOM
 }
 ]

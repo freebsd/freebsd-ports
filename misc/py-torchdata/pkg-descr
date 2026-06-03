@@ -1,0 +1,3 @@
+The TorchData project is an iterative enhancement to the PyTorch
+torch.utils.data.DataLoader and torch.utils.data.Dataset/IterableDataset
+to make them scalable, performant dataloading solutions.

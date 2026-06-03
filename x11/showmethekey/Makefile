@@ -1,6 +1,6 @@
 PORTNAME=	showmethekey
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.4
+DISTVERSION=	1.21.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -22,7 +22,8 @@ USES=		compiler:c11 gettext-tools gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlynxZhou
 USE_GNOME=	cairo gtk40 libadwaita
-GLIB_SCHEMAS=	one.alynx.showmethekey.gschema.xml
+GLIB_SCHEMAS=	one.alynx.showmethekey.enums.gschema.xml \
+		one.alynx.showmethekey.gschema.xml
 USE_XORG=	x11
 PKEXEC?=	pkexec:sysutils/polkit
 MESON_ARGS=	-Dpkexec_path="${PKEXEC:C/\:.*//}"

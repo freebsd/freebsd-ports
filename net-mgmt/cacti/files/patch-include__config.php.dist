@@ -1,0 +1,16 @@
+--- include/config.php.dist.orig	2026-04-25 14:32:30 UTC
++++ include/config.php.dist	2026-04-25 14:34:24 UTC
+@@ -121,9 +121,12 @@
+ /**
+  * Optional parameter to disable the PHP SNMP extension. If not set, defaults
+  * to class_exists('SNMP').
++ * For FreeBSD due to the issue cased by php82-snmp: 8.2.29 -> 8.2.30 upgrade
++ * we disable this by default. New installation of cacti will use snmp binary
++ * but existing installs will kept their previous configuration.
+  */
+ 
+-//$php_snmp_support = false;
++$php_snmp_support = false;
+ 
+ /**
+  * Optional parameter to define the path of the csrf_secret.php path.  This

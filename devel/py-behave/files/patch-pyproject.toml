@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-08-11 18:54:15 UTC
++++ pyproject.toml
+@@ -66,8 +66,7 @@ keywords = [
+     "BDD", "behavior-driven-development", "bdd-framework",
+     "behave", "gherkin", "cucumber-like"
+ ]
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-2-Clause" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",

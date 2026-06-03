@@ -37,6 +37,6 @@ lib/compat/pam_rhosts.so.5
 lib/compat/pam_rootok.so.5
 lib/compat/pam_securetty.so.5
 lib/compat/pam_self.so.5
-lib/compat/pam_ssh.so.5
+@comment lib/compat/pam_ssh.so.5
 lib/compat/pam_tacplus.so.5
 lib/compat/pam_unix.so.5

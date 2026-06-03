@@ -1,0 +1,3 @@
+lazyworktree is a terminal user interface for managing Git worktrees
+with a keyboard-first workflow. Built with the Bubble Tea framework,
+it enables fast iteration and integrates with existing Git tooling.

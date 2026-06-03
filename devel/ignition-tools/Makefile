@@ -1,8 +1,7 @@
 PORTNAME=	ignition-tools
-DISTVERSION=	0.1.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	gz-tools2_
+DISTVERSION=	2.0.3
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Ignition entry point (ign) for using all the suite of ignition tools
@@ -11,18 +10,16 @@ WWW=		https://ignitionrobotics.org/home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ignition-cmake>=5:devel/ignition-cmake
+
 USES=		cmake compiler:c++11-lang pkgconfig ruby shebangfix
-SHEBANG_FILES=	src/ign.in
+USE_LDCONFIG=	yes
 
-BB_ACCOUNT=	ignitionrobotics
-BB_PROJECT=	ign-tools
-BB_COMMIT=	e775d6356667
+SHEBANG_FILES=	src/gz.in
 
-WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
-NO_ARCH=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	gazebosim
+GH_PROJECT=	gz-tools
 
-PLIST_FILES=	bin/ign \
-		lib/cmake/ignition-tools/ignition-tools-config.cmake \
-		libdata/pkgconfig/ignition-tools.pc
-
+CMAKE_OFF=	BUILD_TESTING
 .include <bsd.port.mk>

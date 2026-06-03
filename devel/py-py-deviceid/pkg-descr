@@ -1,0 +1,2 @@
+deviceid provides a device ID for a given system, based on the DevDeviceId
+specification.

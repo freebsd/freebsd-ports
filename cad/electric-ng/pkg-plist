@@ -1,5 +1,5 @@
 bin/electric-ng
-%%IRSIM%%libexec/electric-ng/electricSFS-%%VERSION%%.jar
-%%PORTDOCS%%%%DOCSDIR%%-ng/ElectricManual-%%VERSION%%.pdf
-share/java/classes/electricBinary-%%VERSION%%.jar
+%%PLUGINS%%libexec/electric-ng/electricSFS-%%VERSION%%.jar
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/ElectricManual-%%VERSION%%.pdf
+%%JAVAJARDIR%%/electricBinary-%%VERSION%%.1.jar
 share/pixmaps/electric-ng.png

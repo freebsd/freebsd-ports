@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-04-22 18:54:13 UTC
+--- CMakeLists.txt.orig	2025-01-30 16:44:33 UTC
 +++ CMakeLists.txt
-@@ -334,7 +334,7 @@ endif()
+@@ -344,7 +344,7 @@ foreach (lib ${libs})
  set(XLIFEPP_LIBS "")
  foreach (lib ${libs})
    file(GLOB_RECURSE libsrcs src/${lib}/*.cpp)

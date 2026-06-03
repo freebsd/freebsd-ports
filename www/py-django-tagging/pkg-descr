@@ -1,2 +1,0 @@
-A generic tagging application for Django projects, which allows association of
-a number of tags with any Model instance and makes retrieval of tags simple.

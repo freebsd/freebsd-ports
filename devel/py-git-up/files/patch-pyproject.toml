@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2024-10-05 20:00:15 UTC
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -31,7 +31,7 @@ colorama = "^0.4.0"
- python = "^3.8"
- GitPython = "^3.0.0"
- colorama = "^0.4.0"
--termcolor = "^2.0.0"
-+termcolor = ">=2.0.0"
+@@ -25,7 +25,7 @@ dependencies = [
+ dependencies = [
+     "GitPython~=3.1",
+     "colorama~=0.4",
+-    "packaging~=25.0",
++    "packaging>=25.0",
+     "termcolor~=3.2",
+ ]
  
- [tool.poetry.dev-dependencies]
- coveralls = "^3.0.0"

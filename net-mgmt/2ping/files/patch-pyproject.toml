@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-03-03 04:33:23 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@ requires-python = ">=3.6"
+ description = "2ping a bi-directional ping utility"
+ readme = "README.md"
+ requires-python = ">=3.6"
+-license = "MPL-2.0"
++license = { text = "MPL-2.0" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",

@@ -1,10 +1,10 @@
 PORTNAME=	fbreader
 PORTVERSION=	0.99.6
 DISTVERSIONSUFFIX=	-freebsdport
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Powerful e-book reader
 WWW=		https://fbreader.org/
 

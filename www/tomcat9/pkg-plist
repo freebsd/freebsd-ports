@@ -608,6 +608,7 @@
 %%HOST_MANAGER%%@sample %%T%%/webapps/host-manager/WEB-INF/web.xml.sample
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/css/manager.css
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/asf-logo.svg
+%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/favicon.ico
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/tomcat.svg
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/index.jsp
 %%MANAGER%%@sample %%T%%/webapps/manager/META-INF/context.xml.sample
@@ -622,6 +623,7 @@
 %%MANAGER%%@sample %%T%%/webapps/manager/WEB-INF/web.xml.sample
 %%MANAGER%%%%T%%/webapps/manager/css/manager.css
 %%MANAGER%%%%T%%/webapps/manager/images/asf-logo.svg
+%%MANAGER%%%%T%%/webapps/manager/images/favicon.ico
 %%MANAGER%%%%T%%/webapps/manager/images/tomcat.svg
 %%MANAGER%%%%T%%/webapps/manager/index.jsp
 %%MANAGER%%%%T%%/webapps/manager/status.xsd

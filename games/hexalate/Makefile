@@ -1,5 +1,5 @@
 PORTNAME=	hexalate
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 

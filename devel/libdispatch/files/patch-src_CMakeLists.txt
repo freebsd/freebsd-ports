@@ -1,13 +1,12 @@
---- src/CMakeLists.txt.orig	2024-06-13 00:13:26 UTC
+--- src/CMakeLists.txt.orig	2025-03-07 00:50:44 UTC
 +++ src/CMakeLists.txt
-@@ -1,6 +1,6 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL Darwin)
+@@ -1,5 +1,5 @@
  
- if(NOT CMAKE_SYSTEM_NAME STREQUAL Darwin)
--  add_subdirectory(BlocksRuntime)
-+#  add_subdirectory(BlocksRuntime)
+-if(NOT CMAKE_SYSTEM_NAME STREQUAL Darwin)
++if(NOT BlocksRuntime_FOUND)
+   add_subdirectory(BlocksRuntime)
  endif()
  
- add_library(dispatch
 @@ -145,7 +145,7 @@ target_compile_options(dispatch PRIVATE -fblocks)
  # FIXME(compnerd) add check for -fblocks?
  target_compile_options(dispatch PRIVATE -fblocks)
@@ -27,4 +26,4 @@
 +        EXPORT_NAME dispatch )
  endif()
  
- if(ENABLE_SWIFT)
+ if(LINKER_SUPPORTS_BUILD_ID)

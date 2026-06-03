@@ -2,7 +2,7 @@
 
 # PROVIDE: keyd
 # REQUIRE: DAEMON
-# KEYWORD: shutdown
+# KEYWORD: resume shutdown
 #
 # Add the following lines to /etc/rc.conf to enable this service:
 #
@@ -13,6 +13,8 @@
 
 name="keyd"
 rcvar="${name}_enable"
+resume_cmd="sleep 3; run_rc_command restart"
+extra_commands="resume"
 
 load_rc_config "$name"
 

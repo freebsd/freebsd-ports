@@ -26,6 +26,7 @@ load_rc_config "$name"
 
 : ${clamav_clamd_enable:=NO}
 : ${clamav_clamd_pidfile="%%CLAMAV_CLAMD_PIDFILE%%"}
+: ${clamav_clamd_malloc_conf:=""}
 
 command=%%PREFIX%%/sbin/clamd
 pidfile=${clamav_clamd_pidfile}
@@ -44,5 +45,7 @@ clamav_clamd_precmd()
 		exit 1
 	fi
 }
+
+export MALLOC_CONF="${clamav_clamd_malloc_conf}"
 
 run_rc_command "$1"

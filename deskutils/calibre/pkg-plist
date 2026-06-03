@@ -19,6 +19,28 @@ bin/lrs2lrf
 bin/markdown-calibre
 bin/web2disk
 lib/calibre/calibre/__init__.py
+lib/calibre/calibre/ai/__init__.py
+lib/calibre/calibre/ai/config.py
+lib/calibre/calibre/ai/github/__init__.py
+lib/calibre/calibre/ai/github/backend.py
+lib/calibre/calibre/ai/github/config.py
+lib/calibre/calibre/ai/google/__init__.py
+lib/calibre/calibre/ai/google/backend.py
+lib/calibre/calibre/ai/google/config.py
+lib/calibre/calibre/ai/lm_studio/__init__.py
+lib/calibre/calibre/ai/lm_studio/backend.py
+lib/calibre/calibre/ai/lm_studio/config.py
+lib/calibre/calibre/ai/ollama/__init__.py
+lib/calibre/calibre/ai/ollama/backend.py
+lib/calibre/calibre/ai/ollama/config.py
+lib/calibre/calibre/ai/open_router/__init__.py
+lib/calibre/calibre/ai/open_router/backend.py
+lib/calibre/calibre/ai/open_router/config.py
+lib/calibre/calibre/ai/openai/__init__.py
+lib/calibre/calibre/ai/openai/backend.py
+lib/calibre/calibre/ai/openai/config.py
+lib/calibre/calibre/ai/prefs.py
+lib/calibre/calibre/ai/utils.py
 lib/calibre/calibre/build_forms.py
 lib/calibre/calibre/constants.py
 lib/calibre/calibre/customize/__init__.py
@@ -665,6 +687,7 @@ lib/calibre/calibre/gui2/actions/browse_annots.py
 lib/calibre/calibre/gui2/actions/browse_notes.py
 lib/calibre/calibre/gui2/actions/catalog.py
 lib/calibre/calibre/gui2/actions/choose_library.py
+lib/calibre/calibre/gui2/actions/column_tooltips.py
 lib/calibre/calibre/gui2/actions/convert.py
 lib/calibre/calibre/gui2/actions/copy_to_library.py
 lib/calibre/calibre/gui2/actions/delete.py
@@ -676,6 +699,7 @@ lib/calibre/calibre/gui2/actions/fetch_news.py
 lib/calibre/calibre/gui2/actions/fts.py
 lib/calibre/calibre/gui2/actions/help.py
 lib/calibre/calibre/gui2/actions/layout_actions.py
+lib/calibre/calibre/gui2/actions/llm_book.py
 lib/calibre/calibre/gui2/actions/manage_categories.py
 lib/calibre/calibre/gui2/actions/mark_books.py
 lib/calibre/calibre/gui2/actions/match_books.py
@@ -716,6 +740,7 @@ lib/calibre/calibre/gui2/catalog/catalog_epub_mobi_ui.py
 lib/calibre/calibre/gui2/catalog/catalog_tab_template_ui.py
 lib/calibre/calibre/gui2/central.py
 lib/calibre/calibre/gui2/changes.py
+lib/calibre/calibre/gui2/chat_widget.py
 lib/calibre/calibre/gui2/comments_editor.py
 lib/calibre/calibre/gui2/complete2.py
 lib/calibre/calibre/gui2/convert/__init__.py
@@ -832,6 +857,7 @@ lib/calibre/calibre/gui2/dialogs/enum_values_edit.py
 lib/calibre/calibre/gui2/dialogs/exim.py
 lib/calibre/calibre/gui2/dialogs/ff_doc_editor.py
 lib/calibre/calibre/gui2/dialogs/jobs_ui.py
+lib/calibre/calibre/gui2/dialogs/llm_book.py
 lib/calibre/calibre/gui2/dialogs/match_books.py
 lib/calibre/calibre/gui2/dialogs/match_books_ui.py
 lib/calibre/calibre/gui2/dialogs/message_box.py
@@ -902,6 +928,7 @@ lib/calibre/calibre/gui2/library/notes.py
 lib/calibre/calibre/gui2/library/views.py
 lib/calibre/calibre/gui2/linux_file_dialogs.py
 lib/calibre/calibre/gui2/listener.py
+lib/calibre/calibre/gui2/llm.py
 lib/calibre/calibre/gui2/lrf_renderer/__init__.py
 lib/calibre/calibre/gui2/lrf_renderer/bookview.py
 lib/calibre/calibre/gui2/lrf_renderer/config_ui.py
@@ -1178,6 +1205,7 @@ lib/calibre/calibre/gui2/viewer/control_sleep.py
 lib/calibre/calibre/gui2/viewer/convert_book.py
 lib/calibre/calibre/gui2/viewer/highlights.py
 lib/calibre/calibre/gui2/viewer/integration.py
+lib/calibre/calibre/gui2/viewer/llm.py
 lib/calibre/calibre/gui2/viewer/lookup.py
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/overlay.py
@@ -1437,6 +1465,8 @@ lib/calibre/calibre/utils/test_lock.py
 lib/calibre/calibre/utils/text2int.py
 lib/calibre/calibre/utils/threadpool.py
 lib/calibre/calibre/utils/titlecase.py
+lib/calibre/calibre/utils/tts/__init__.py
+lib/calibre/calibre/utils/tts/piper.py
 lib/calibre/calibre/utils/unicode_names.py
 lib/calibre/calibre/utils/unrar.py
 lib/calibre/calibre/utils/unsmarten.py
@@ -1614,6 +1644,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/icons.rcc
 %%DATADIR%%/images.qrc
 %%DATADIR%%/images/add_book.png
+%%DATADIR%%/images/ai.png
 %%DATADIR%%/images/apple-touch-icon.png
 %%DATADIR%%/images/arrow-down.png
 %%DATADIR%%/images/arrow-up.png
@@ -1753,6 +1784,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/mimetypes/gif.png
 %%DATADIR%%/images/mimetypes/html.png
 %%DATADIR%%/images/mimetypes/jpeg.png
+%%DATADIR%%/images/mimetypes/kepub.png
 %%DATADIR%%/images/mimetypes/kfx.png
 %%DATADIR%%/images/mimetypes/lit.png
 %%DATADIR%%/images/mimetypes/lrf.png
@@ -1822,6 +1854,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/search_add_saved.png
 %%DATADIR%%/images/search_copy_saved.png
 %%DATADIR%%/images/search_delete_saved.png
+%%DATADIR%%/images/send.png
 %%DATADIR%%/images/series.png
 %%DATADIR%%/images/similar.png
 %%DATADIR%%/images/smarten-punctuation.png

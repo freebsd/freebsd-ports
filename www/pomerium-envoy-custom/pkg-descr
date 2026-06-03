@@ -1,0 +1,6 @@
+Pomerium's custom build of Envoy proxy, a high performance C++ distributed
+proxy designed for single services and applications.
+
+This is a fork maintained by the Pomerium project with patches specific to
+pomerium's identity-aware access proxy use case.  The binary is installed as
+pomerium-envoy to allow coexistence with the standard envoy package.

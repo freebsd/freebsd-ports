@@ -1,8 +1,11 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
+PORTREVISION=	3
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
+MASTER_SITES=	LOCAL/openjdk:boot
+DISTFILES+=	${BOOTSTRAPJDKFILE}:boot
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -10,13 +13,17 @@ WWW=		https://openjdk.java.net/projects/jdk/24/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=	2026-06-12
+
 # i386 is deprecated, and will be removed in the next JDK
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	zip:archivers/zip \
-		${LOCALBASE}/include/cups/cups.h:print/cups \
+BUILD_DEPENDS=	${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		zip:archivers/zip
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -35,18 +42,21 @@ CPE_VENDOR=	oracle
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	openjdk
-GH_TAGNAME=	jdk-24.0.2-ga-freebsd-1
+GH_TAGNAME=	jdk-24.0.2-ga-freebsd-2
 
 NO_CCACHE=	yes
 
+# Suppress passing -j to do-build target via Mk/bsd.port.mk
+# In the JDK build the number of parallel jobs is passed in via configure --with-num-cores=N
+_MAKE_JOBS=	#
 MAKE_ENV=	CLASSPATH="" \
 		JAVA_HOME="" \
 		LD_LIBRARY_PATH="" \
-		MAKEFLAGS=""
-
-MAKE_JOBS_UNSAFE=	yes
+		LOG=cmdlines \
+		MAKEFLAGS="CONF_CHECK=ignore"
 
 JDK_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
+BOOTSTRAPJDKFILE=	openjdk24-24.0.2+12.2_2.${JDK_ARCH}.tar.xz
 JDK_OSARCH=	bsd-${JDK_ARCH}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 .if defined(BUILD_JRE)
@@ -55,6 +65,7 @@ JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jre
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jdk
 .endif
 INSTALLDIR=	${PREFIX}/${PKGBASE}
+BOOTSTRAPJDKDIR=	${WRKDIR}/boot-jdk
 
 NOPRECIOUSMAKEVARS=	yes
 
@@ -62,7 +73,7 @@ JDK_MAJOR_VERSION=	24
 JDK_MINOR_VERSION=	0
 JDK_PATCH_VERSION=	2
 JDK_BUILD_NUMBER=	12
-BSD_JDK_VERSION=	1
+BSD_JDK_VERSION=	2
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
 
@@ -82,6 +93,7 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-giflib-lib=${LOCALBASE}/lib \
 		--with-harfbuzz=system \
 		--with-libpng=system \
+		--with-num-cores=${MAKE_JOBS_NUMBER} \
 		--with-zlib=system \
 		--with-lcms=system \
 		--x-includes=${LOCALBASE}/include \
@@ -104,21 +116,6 @@ ALL_TARGET=		images
 JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
-
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk24 ${LOCALBASE}/openjdk23
-
-# do we have valid native jdk installed?
-.for BJDK in ${BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${BJDK}
-.  endif
-.endfor
-
-# if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk23
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk23
-.endif
 
 JDK_BUILD_JVM=	server
 

@@ -1,0 +1,6 @@
+RAJA is a C++ software library developed at Lawrence Livermore National
+Laboratory (LLNL) to enable performance portability for High-Performance
+Computing (HPC) applications. Its primary goal is to allow developers to
+write a single version of their code that can be compiled and run
+efficiently on diverse hardware architectures and programming models,
+such as GPUs using CUDA or OpenMP.

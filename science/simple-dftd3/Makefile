@@ -1,12 +1,11 @@
 PORTNAME=	simple-dftd3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
-PORTREVISION=	2
+DISTVERSION=	1.4.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reimplementation of the DFT-D3 program
-WWW=		https://github.com/awvwgk/simple-dftd3
+WWW=		https://github.com/dftd3/simple-dftd3
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,5 +27,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
+
+# tests as of 1.4.0: 100% tests passed, 0 tests failed out of 7
 
 .include <bsd.port.mk>

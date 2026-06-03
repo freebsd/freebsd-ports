@@ -1,0 +1,4 @@
+The c-siphash project is a standalone implementation of SipHash in Standard
+ISO-C11. It provides a streaming-capable API to compute data hashes according
+to the SipHash algorithm. For API documentation, see the c-siphash.h header
+file, as well as the docbook comments for each function.

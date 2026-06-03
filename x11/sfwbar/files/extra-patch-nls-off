@@ -1,0 +1,11 @@
+--- meson.build.orig	2026-03-18 07:53:36 UTC
++++ meson.build
+@@ -132,7 +132,7 @@ doc_list = [ 'sfwbar' ]
+ deps = [gtk3, glib, gio_unix, gmod, glsh, wayl, json, lbrt ]
+ doc_list = [ 'sfwbar' ]
+ 
+-subdir('po')
++# subdir('po')
+ 
+ cargs = ['-DGLIB_DISABLE_DEPRECATION_WARNINGS',
+     '-DGDK_DISABLE_DEPRECATED',

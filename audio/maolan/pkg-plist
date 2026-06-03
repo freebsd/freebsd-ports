@@ -1,0 +1,5 @@
+bin/maolan
+bin/maolan-cli
+bin/maolan-osc
+share/applications/maolan.desktop
+share/icons/hicolor/scalable/apps/maolan.svg

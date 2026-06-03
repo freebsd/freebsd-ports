@@ -1,0 +1,26 @@
+--- meson.build.orig	2025-09-13 00:58:35 UTC
++++ meson.build
+@@ -10,7 +10,6 @@ dex_req_version = '0.4'
+ 
+ adw_req_version = '1.7'
+ dex_req_version = '0.4'
+-flatpak_req_version = '1.0'
+ foundry_req_version = '1.0'
+ glib_req_version = '2.78'
+ gom_req_version = '0.4'
+@@ -20,7 +19,6 @@ dex_req = '>= @0@'.format(dex_req_version)
+ 
+ adw_req = '>= @0@'.format(adw_req_version)
+ dex_req = '>= @0@'.format(dex_req_version)
+-flatpak_req = '>= @0@'.format(flatpak_req_version)
+ foundry_req = '>= @0@'.format(foundry_req_version)
+ glib_req = '>= @0@'.format(glib_req_version)
+ gom_req = '>= @0@'.format(gom_req_version)
+@@ -30,7 +28,6 @@ dex_dep = dependency('libdex-1', version: dex_req)
+ 
+ adw_dep = dependency('libadwaita-1', version: adw_req)
+ dex_dep = dependency('libdex-1', version: dex_req)
+-flatpak_dep = dependency('flatpak', version: flatpak_req)
+ foundry_dep = dependency('libfoundry-1', version: foundry_req)
+ glib_dep = dependency('glib-2.0', version: glib_req)
+ gom_dep = dependency('gom-1.0', version: gom_req)

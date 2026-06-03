@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-applehelp>=0:textproc/py-sphin
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.10+
 USE_PYTHON=	autoplist concurrent cython_test pep517 pytest
 
 NO_ARCH=	yes
@@ -53,8 +53,9 @@ EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8:devel/py-importlib-metadata@${PY_FLAVOR}
+# imghdr was removed from the standard library in Python 3.13
+.if ${PYTHON_REL} >= 31300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}standard-imghdr>=3.13.0:devel/py-standard-imghdr@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,6 @@
 PORTNAME=	ldview
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5
-PORTREVISION=	2
+DISTVERSION=	4.6
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,17 +12,20 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 
 LIB_DEPENDS=	lib3ds.so:graphics/lib3ds \
 		libgl2ps.so:print/gl2ps \
+		libminizip.so:archivers/minizip \
 		libOSMesa.so:graphics/libosmesa \
 		libpng16.so:graphics/png \
 		libtinyxml.so:textproc/tinyxml
 RUN_DEPENDS=	bash:shells/bash \
 		ldraw>0:cad/ldraw
 
-USES=		desktop-file-utils gl gmake jpeg qmake qt:5 shared-mime-info shebangfix xorg
+USES=		desktop-file-utils gl gmake jpeg qmake qt:5 shared-mime-info \
+		shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	tcobbs
 USE_GL=		gl glu
-USE_QT=		core gui linguist opengl printsupport widgets buildtools:build qmake:build
+USE_QT=		core gui linguist network opengl printsupport widgets \
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	desktop/ldraw-thumbnailer

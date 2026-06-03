@@ -5,7 +5,7 @@
      });
  
 -    const shell = "/bin/bash";
-+    const shell = "PREFIX/bin/bash";
++    const shell = "${PREFIX}/bin/bash";
      const cmd =
        `"${Deno.execPath()}" run ${scriptPath} < /dev/tcp/127.0.0.1/9000`;
      const args = ["-c", cmd];

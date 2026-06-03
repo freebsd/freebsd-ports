@@ -1,26 +1,27 @@
 PORTNAME=	ignition-plugin
-DISTVERSION=	1.0.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	gz-plugin4_
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for registering plugins and dynamically loading them
 WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake
+BUILD_DEPENDS=	cli11>0:devel/cli11 \
+		ignition-cmake>=5:devel/ignition-cmake
+LIB_DEPENDS=	libgz-utils.so:devel/ignition-utils
 
 USES=		cmake compiler:c++17-lang
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-BB_ACCOUNT=	ignitionrobotics
-BB_PROJECT=	ign-plugin
-BB_COMMIT=	6bf2bf09570f
+CMAKE_OFF=	BUILD_TESTING
 
-WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+GH_ACCOUNT=	gazebosim
+GH_PROJECT=	gz-plugin
 
 PLIST_SUB+=	PLUGIN_IGN_VER=plugin${DISTVERSION:R:R}
 

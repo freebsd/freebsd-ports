@@ -4,9 +4,13 @@ include/lmdecls.h
 include/lmfit.hpp
 include/lmmin.h
 include/lmstruct.h
+lib/cmake/lmfit/lmfitConfig.cmake
+lib/cmake/lmfit/lmfitConfigVersion.cmake
+lib/cmake/lmfit/lmfitTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/lmfit/lmfitTargets.cmake
 lib/liblmfit.so
-lib/liblmfit.so.9
-lib/liblmfit.so.9.0.0
+lib/liblmfit.so.10
+lib/liblmfit.so.10.0.0
 libdata/pkgconfig/lmfit.pc
 share/man/man3/lmcurve.3.gz
 share/man/man3/lmcurve2.3.gz

@@ -1,0 +1,24 @@
+server:
+  port: 3080
+  baseURL:  /
+  logging:
+    - levels: 'info|warning|error'
+      output: stdout
+  sources:
+    - path: %%WWWDIR%%
+  database: '/var/db/filebrowser-quantum/filebrowser-quantum.db'
+userDefaults:
+  preview:
+    image: true
+    popup: true
+    video: false
+    office: false
+    highQuality: false
+  darkMode: true
+  disableSettings: false
+  singleClick: false
+  permissions:
+    admin: false
+    modify: false
+    share: false
+    api: false

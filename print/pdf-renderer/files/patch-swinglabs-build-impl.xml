@@ -1,0 +1,19 @@
+--- swinglabs-build-impl.xml.orig	2025-12-17 08:00:14 UTC
++++ swinglabs-build-impl.xml
+@@ -204,6 +204,7 @@ -->
+         </echo>
+         <mkdir dir="${dist.javadoc.dir}"/>
+         <javadoc destdir="${dist.javadoc.dir}"
++                 encoding="${javac.encoding}"
+                  source="${javac.source}"
+                  notree="${javadoc.notree}" use="${javadoc.use}"
+                  nonavbar="${javadoc.nonavbar}" noindex="${javadoc.noindex}"
+@@ -211,7 +212,7 @@ -->
+                  version="${javadoc.version}" 	
+                  windowtitle="${javadoc.windowtitle}"
+                  private="${javadoc.private}"
+-                 additionalparam="${javadoc.additionalparam}"
++                 additionalparam="${javadoc.additionalparam} -Xdoclint:none"
+                  failonerror="true" useexternalfile="false"
+                  verbose="${javadoc.verbose}"
+                  maxmemory="1024M"

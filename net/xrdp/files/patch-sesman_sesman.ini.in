@@ -1,13 +1,13 @@
---- sesman/sesman.ini.in.orig	2017-12-27 14:40:24 UTC
+--- sesman/sesman.ini.in.orig	2026-04-17 14:22:02 UTC
 +++ sesman/sesman.ini.in
-@@ -75,8 +75,8 @@ param=xrdp/xorg.conf
- param=-noreset
- param=-nolisten
- param=tcp
+@@ -162,8 +162,8 @@ param=tcp
+ ; edit these lines to get debugging info in the xorgxrdp log file
+ #param=-logverbose
+ #param=5
 -param=-logfile
 -param=.xorgxrdp.%s.log
 +#param=-logfile
 +#param=.xorgxrdp.%s.log
  
- [X11rdp]
- param=X11rdp
+ [Xvnc]
+ param=Xvnc

@@ -1,7 +1,7 @@
-TIMESTAMP = 1708415374
-SHA256 (rocky/l/libjxl-0.7.0-1.el9.aarch64.rpm) = 312b2570c0a272067e7da24fe15b203cd3797975435aeac81181d74067644402
-SIZE (rocky/l/libjxl-0.7.0-1.el9.aarch64.rpm) = 695267
-SHA256 (rocky/l/libjxl-0.7.0-1.el9.x86_64.rpm) = 22549884ba9f6f69c6e31955c77bf1d47b3b00cad86aeeed745933788b9bd0fd
-SIZE (rocky/l/libjxl-0.7.0-1.el9.x86_64.rpm) = 980251
-SHA256 (rocky/j/jpegxl-0.7.0-1.el9.src.rpm) = a07df3df5cc31d0af5e53b846ab5a27128368b9985bf587c9a08fb4b81d64fae
-SIZE (rocky/j/jpegxl-0.7.0-1.el9.src.rpm) = 4081635
+TIMESTAMP = 1757068323
+SHA256 (rocky/l/libjxl-0.7.2-2.el9.aarch64.rpm) = 64b84ac3293cd16c2f25e9f7e7addee1d69d09a4b6938c53e6ebca50dcd570ab
+SIZE (rocky/l/libjxl-0.7.2-2.el9.aarch64.rpm) = 739985
+SHA256 (rocky/l/libjxl-0.7.2-2.el9.x86_64.rpm) = feadf9606256e182301aef0c53fac0f7b240391766eb41a331d4d2e1cbe2e087
+SIZE (rocky/l/libjxl-0.7.2-2.el9.x86_64.rpm) = 1005187
+SHA256 (rocky/j/jpegxl-0.7.2-2.el9.src.rpm) = fdf7668acba37236cf0a2810a96af8a5f97962f53e3afa1b13b40fb1e60511c3
+SIZE (rocky/j/jpegxl-0.7.2-2.el9.src.rpm) = 4080459

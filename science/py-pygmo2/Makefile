@@ -1,7 +1,7 @@
 PORTNAME=	pygmo2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.19.7
-PORTREVISION=	6
+PORTREVISION=	10
 CATEGORIES=	science graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libpagmo.so:science/pagmo2 \
 		libboost_serialization.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \

@@ -1,6 +1,5 @@
 PORTNAME=	yara-python-dex
-PORTVERSION=	1.0.7.1
-PORTREVISION=	1
+PORTVERSION=	1.0.9
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,6 +25,6 @@ USE_PYTHON=	distutils
 LDFLAGS+=	-s
 .endif
 
-PLIST_SUB=	VER=${PORTVERSION:R}
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/yara%%PYTHON_TAG%%.so
 
 .include <bsd.port.mk>

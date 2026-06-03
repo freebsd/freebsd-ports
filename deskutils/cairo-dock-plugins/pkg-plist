@@ -6,6 +6,8 @@ lib/cairo-dock/libcd-Clipper.so
 lib/cairo-dock/libcd-Composite-Manager.so
 lib/cairo-dock/libcd-Dbus.so
 lib/cairo-dock/libcd-Folders.so
+lib/cairo-dock/libcd-Indicator-Generic.so
+lib/cairo-dock/libcd-Messaging-Menu.so
 %%GMENU%%lib/cairo-dock/libcd-GMenu.so
 %%IMPULSE%%lib/cairo-dock/libcd-Impulse.so
 %%ZEITGEIST%%lib/cairo-dock/libcd-Recent-Events.so
@@ -68,6 +70,7 @@ lib/cairo-dock/libcd_kde-integration.so
 %%DATADIR%%/gauges/Battery/battery6.svg
 %%DATADIR%%/gauges/Battery/battery7.svg
 %%DATADIR%%/gauges/Battery/foreground.svg
+%%DATADIR%%/gauges/Battery/preview
 %%DATADIR%%/gauges/Battery/readme
 %%DATADIR%%/gauges/Battery/theme.xml
 %%ALSA_MIXER%%%%DATADIR%%/gauges/Sound-Mono/0.svg
@@ -160,6 +163,14 @@ lib/cairo-dock/libcd_kde-integration.so
 %%IMPULSE%%%%DATADIR%%/plug-ins/Impulse/impulse-running.svg
 %%IMPULSE%%%%DATADIR%%/plug-ins/Impulse/impulse-stopped.svg
 %%IMPULSE%%%%DATADIR%%/plug-ins/Impulse/preview.jpg
+%%DATADIR%%/plug-ins/Indicator-Generic/Indicator-Generic.conf
+%%DATADIR%%/plug-ins/Indicator-Generic/icon.svg
+%%DATADIR%%/plug-ins/Indicator-Generic/preview.jpg
+%%DATADIR%%/plug-ins/Messaging-Menu/Messaging-Menu.conf
+%%DATADIR%%/plug-ins/Messaging-Menu/icon.svg
+%%DATADIR%%/plug-ins/Messaging-Menu/indicator-messages-new.svg
+%%DATADIR%%/plug-ins/Messaging-Menu/indicator-messages.svg
+%%DATADIR%%/plug-ins/Messaging-Menu/preview.jpg
 %%DATADIR%%/plug-ins/RSSreader/RSSreader.conf
 %%DATADIR%%/plug-ins/RSSreader/icon.svg
 %%DATADIR%%/plug-ins/RSSreader/preview.jpg
@@ -461,6 +472,8 @@ lib/cairo-dock/libcd_kde-integration.so
 %%DATADIR%%/plug-ins/wifi/wifi.conf
 %%XFCE_INTEGRATION%%%%DATADIR%%/plug-ins/xfce-integration/icon.png
 share/locale/ar/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/be/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/bg/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ca/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/cs/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/da/LC_MESSAGES/cairo-dock-plugins.mo
@@ -470,6 +483,7 @@ share/locale/en/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/es/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/et/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/eu/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/fi/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/fr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/he/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/hr/LC_MESSAGES/cairo-dock-plugins.mo
@@ -489,6 +503,7 @@ share/locale/sr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sr@latin/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sv/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/tr/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/ug/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/uk/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/uz/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo

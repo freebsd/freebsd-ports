@@ -1,0 +1,13 @@
+Hide Gtk.Button because the GNOME Software Developmen Kit on Flathub is
+only available for Linux.
+
+--- src/manuals-window.ui.orig	2025-09-13 00:58:35 UTC
++++ src/manuals-window.ui
+@@ -131,6 +131,7 @@ Or, press Ctrl+W to close the window</property>
+                             <property name="action-name">win.show-bundle-dialog</property>
+                             <property name="label" translatable="yes">Install Documentation…</property>
+                             <property name="halign">center</property>
++                            <property name="visible">false</property>
+                             <style>
+                               <class name="pill"/>
+                             </style>

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: fmd-server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for fmd-server in /etc/rc.conf
+#
+# fmd_server_enable (bool):    Enable fmd-server. (default=NO)
+# fmd_server_log (str):        Log output. (default=/var/log/fmd-server.log)
+# fmd_server_runas (str):      User to run fmd-server as. (default=www)
+# fmd_server_args (str):       Arguments to fmd-server.
+#                              Supports --config and/or --db-dir.
+#
+
+. /etc/rc.subr
+
+name="fmd_server"
+desc="Locate and control your devices."
+rcvar="${name}_enable"
+
+srvbin="fmd-server"
+
+load_rc_config $name
+
+: ${fmd_server_enable:="NO"}
+: ${fmd_server_log:="/var/log/fmd-server.log"}
+: ${fmd_server_runas:="www"}
+: ${fmd_server_args:="--config %%ETCDIR%%/config.yml"}
+
+pidfile="/var/run/${srvbin}.pid"
+procname="%%LOCALBASE%%/bin/${srvbin}"
+command="/usr/sbin/daemon"
+command_args="-c -u '${fmd_server_runas}' -p '${pidfile}' -t '${desc}' -o '${fmd_server_log}' '${procname}' serve ${fmd_server_args}"
+
+run_rc_command "$1"

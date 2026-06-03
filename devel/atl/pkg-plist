@@ -8,5 +8,5 @@ lib/cmake/atl/atl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/atl/atl-targets.cmake
 lib/libatl.so
 lib/libatl.so.2
-lib/libatl.so.2.2.1
+lib/libatl.so.2.3.2
 libdata/pkgconfig/atl.pc

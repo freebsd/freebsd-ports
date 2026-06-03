@@ -1,0 +1,18 @@
+--- a/lib/x86/crc32_impl.h
++++ b/lib/x86/crc32_impl.h
+@@ -55,6 +55,7 @@ static const u8 MAYBE_UNUSED shift_tab[48] = {
+ #  define USE_AVX512		0
+ #  include "crc32_pclmul_template.h"
+ 
++#  ifndef LIBDEFLATE_DISABLE_SIMD_ABOVE_SSE2
+ /*
+  * PCLMULQDQ/AVX implementation.  Same as above, but this is compiled with AVX
+  * enabled so that the compiler can generate VEX-coded instructions which can be
+@@ -66,6 +67,7 @@ static const u8 MAYBE_UNUSED shift_tab[48] = {
+ #  define VL			16
+ #  define USE_AVX512		0
+ #  include "crc32_pclmul_template.h"
++#  endif /* !LIBDEFLATE_DISABLE_SIMD_ABOVE_SSE2 */
+ #endif
+ 
+ /*

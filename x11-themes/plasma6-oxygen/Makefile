@@ -16,7 +16,6 @@ USE_KDE=	colorscheme completion config configwidgets coreaddons \
 USE_QT=		base declarative
 USE_XORG=	x11 xcb
 
-CMAKE_ARGS=	-DQT_MAJOR_VERSION=6
 CMAKE_ON=	BUILD_QT6
 CMAKE_OFF=	BUILD_QT5
 

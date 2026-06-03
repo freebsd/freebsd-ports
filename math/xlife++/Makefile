@@ -1,8 +1,8 @@
 PORTNAME=	xlife++
-DISTVERSION=	2.3
+DISTVERSION=	3.0
 CATEGORIES=	math
-MASTER_SITES=	https://uma.ensta-paristech.fr/soft/XLiFE++/downloads/binaries/
-DISTNAME=	xlifepp-sources-v${DISTVERSION}-2022-04-22
+MASTER_SITES=	https://gitlab.inria.fr/xlifepp/downloads/-/raw/main/v${DISTVERSION}/
+DISTNAME=	xlifepp-sources-v${DISTVERSION}-2025-01-30
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	XLiFE++: eXtended Library of Finite Elements in C++
@@ -12,11 +12,11 @@ WWW=		https://xlifepp.pages.math.cnrs.fr/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, e-mailed to authors on 2024-11-03
-
-USES=		cmake compiler:c++11-lang eigen:3 fortran tar:tbz
+USES=		cmake compiler:c++11-lang eigen:3 fortran
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/xlifepp-v${DISTVERSION}
 
 CMAKE_OFF=	XLIFEPP_ENABLE_ARPACK # should be ON, but it fails to build. Reported to their bugs ML.
 
@@ -35,5 +35,7 @@ post-configure:
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} -r CMakeLists.txt VERSION.txt etc/visuTermVec.m etc/templates etc/gmsh
+
+# build from source instructions: https://xlifepp.pages.math.cnrs.fr/installation/from_sources.html
 
 .include <bsd.port.mk>

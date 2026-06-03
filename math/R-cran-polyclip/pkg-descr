@@ -1,0 +1,6 @@
+R port of Angus Johnson's open source library 'Clipper'. Performs polygon
+clipping operations (intersection, union, set minus, set difference) for
+polygonal regions of arbitrary complexity, including holes. Computes offset
+polygons (spatial buffer zones, morphological dilations, Minkowski dilations)
+for polygonal regions and polygonal lines. Computes Minkowski Sum of general
+polygons. There is a function for removing self-intersections from polygon data.

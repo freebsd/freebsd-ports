@@ -1,3 +1,7 @@
+% sed -i .orig 's|__vector uint8_t|__vector unsigned char|g; s|__vector uint16_t|__vector unsigned short|g; s|__vector uint32_t|__vector unsigned int|g' blosc/bitshuffle-altivec.c blosc/shuffle-altivec.c blosc/transpose-altivec.h
+
+Reference:	https://cgit.freebsd.org/ports/commit/?id=14431609528a126da59b8121e8b752f56b5a9da3
+
 --- blosc/bitshuffle-altivec.c.orig	2024-08-12 12:46:55 UTC
 +++ blosc/bitshuffle-altivec.c
 @@ -40,15 +40,15 @@

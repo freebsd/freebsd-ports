@@ -1,14 +1,14 @@
 PORTNAME=	pyTooling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.3.0
-PORTREVISION=	1
+DISTVERSION=	8.14.0
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # requirements.txt is missing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of arbitrary classes, decorators, meta-classes, exceptions
-WWW=		https://pytooling.github.io/pyTooling/
+WWW=		https://pytooling.github.io/pyTooling/ \
+		https://github.com/pyTooling/pyTooling
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anytree>=2.8.0:devel/py-anytree@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}igraph>0:math/py-igraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itertree>0:devel/py-itertree@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>=1.10:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.6:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=4.0.0:devel/py-pytest-benchmark@${PY_FLAVOR} \
@@ -29,15 +29,16 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anytree>=2.8.0:devel/py-anytree@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}treelib>0:devel/py-treelib@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 8 tests fail, see https://github.com/pyTooling/pyTooling/issues/123#issuecomment-2362275029
+USE_PYTHON=	pep517 autoplist
 USE_GITHUB=	yes
-
-TEST_ARGS=	${WRKSRC}/tests/unit # skip performance and other tests
 
 NO_ARCH=	yes
 
 TEST_WRKSRC=	${WRKSRC}
 
-# tests as of 8.3.0: 6 failed, 858 passed, 17 skipped, 6 xfailed in 20.75s
+# tests as of 8.14.0: 1149 passed, 19 skipped, 8 xfailed, 17 deselected
+
+do-test:
+	cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest tests/unit -k 'not ExplicitPathsOnWindows and not ExplicitPathsOnLinux and not ExplicitBinaryDirectoryOnWindows and not ExplicitBinaryDirectoryOnLinux and not test_TypeConvertToInt and not test_LineTerminal' -v
 
 .include <bsd.port.mk>

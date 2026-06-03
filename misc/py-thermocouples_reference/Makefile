@@ -1,6 +1,6 @@
 PORTNAME=	thermocouples_reference
 DISTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/thermocouples_reference/
 LICENSE=	PD
 
 #BUILD_DEPENDS=	${PY_SETUPTOOLS}
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python

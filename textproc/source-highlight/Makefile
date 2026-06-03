@@ -1,10 +1,10 @@
 PORTNAME=	source-highlight
 DISTVERSION=	3.1.9
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 WWW=		https://www.gnu.org/software/src-highlite/source-highlight.html
 
@@ -18,7 +18,7 @@ USES=		compiler:c++11-lang gmake pathfix libtool localbase
 USE_CXXSTD=	gnu++11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--with-bash-completion
+CONFIGURE_ARGS=	--with-bash-completion --with-boost=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

@@ -5,7 +5,7 @@
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
-#		necessary (MySQL-8.0 = 80, look at bsd.default-versions.mk for
+#		necessary (MySQL-8.4 = 84, look at bsd.default-versions.mk for
 #		possible values).
 # client	Depends on the libmysqlclient library (default)
 # server 	Depend on the server at run/build time. If none of these is
@@ -61,9 +61,10 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # Mk/bsd.default-versions.mk in sync.
 MYSQL80_LIBVER=		21
 MYSQL84_LIBVER=		24
-MYSQL91_LIBVER=		24
+MYSQL96_LIBVER=		24
+MYSQL97_LIBVER=		24
 
-.  for v in 105 106 1011 114 118
+.  for v in 106 1011 114 118 123
 MYSQL${v}m_LIBVER=	3
 .  endfor
 

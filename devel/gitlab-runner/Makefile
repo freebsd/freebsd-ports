@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.2.0
+DISTVERSION=	18.11.3
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -8,7 +8,7 @@ DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
 
 #PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
-#PATCHFILES+=	4551.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4551, Allow FreeBSD to be used with Docker builds
+#PATCHFILES+=	5966.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5966, Fix bash shell cleanup to support variable expansion in paths
 #PATCH_SITES=	https://gitlab.com/mfechner/gitlab-runner/-/commit/
 #PATCHFILES+=	2f12af03ccd5fe875d583ddc8b976329b635fd22.patch:-p1
 
@@ -22,16 +22,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 RUN_DEPENDS=	bash:shells/bash \
 		ca_root_nss>=0:security/ca_root_nss \
-		git:devel/git
+		git:devel/git \
+		gitlab-analyzers-secrets>=0:security/gitlab-analyzers-secrets
 
-USES=		go:modules,1.24
+USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner
 # this branch removes the replace line in go.mod which breaks the way FreeBSD ports build go packages
-GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/18-2-stable/
+GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/18-11-stable/
 
-GITBRANCH=	18-2-stable
+GITBRANCH=	18-11-stable
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)

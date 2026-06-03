@@ -1,5 +1,6 @@
 PORTNAME=	kmousetool
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	accessibility kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	GPLv2
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons i18n \
-		iconthemes notifications phonon statusnotifieritem \
+		iconthemes notifications statusnotifieritem \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		base multimedia

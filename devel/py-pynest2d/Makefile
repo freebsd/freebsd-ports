@@ -1,6 +1,6 @@
 PORTNAME=	pynest2d
 DISTVERSION=	5.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ BROKEN_aarch64=	broken with trait error from boost
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${PY_FLAVOR} \
 		${LOCALBASE}/include/libnest2d/libnest2d.hpp:devel/libnest2d-ultimaker
 LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 
 USES=		python cmake compiler:c++11-lang pyqt:6 pkgconfig

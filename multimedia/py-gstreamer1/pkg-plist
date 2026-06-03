@@ -1,4 +1,5 @@
 lib/gstreamer-1.0/libgstpython.so
+lib/gstreamer-1.0/python/gesotioformatter.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstAnalytics.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstApp.py

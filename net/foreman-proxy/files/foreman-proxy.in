@@ -23,6 +23,6 @@ foreman_proxy_user=${foreman_proxy_user-"%%FOREMAN_PROXY_USER%%"}
 
 load_rc_config "${name}"
 
-required_files="%%PREFIX%%/etc/foreman-proxy/settings.yml"
+required_files="%%ETCDIR%%/settings.yml"
 
 run_rc_command "$1"

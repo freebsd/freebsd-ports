@@ -17,7 +17,7 @@ OPTIONS_DEFAULT=	TAGLIB
 
 TAGLIB_DESC=	TagLib support
 
-USES=		gnome iconv pkgconfig
+USES=		cpe gnome iconv pkgconfig
 USE_GNOME=	libxml2
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -37,6 +37,8 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 TAGLIB_CONFIGURE_OFF=	--without-taglib
 TAGLIB_LIB_DEPENDS=		libtag.so:audio/taglib
 TAGLIB_CONFIGURE_ON=	--with-taglib=${LOCALBASE}
+
+CPE_VENDOR=	icecast
 
 .include <bsd.port.options.mk>
 

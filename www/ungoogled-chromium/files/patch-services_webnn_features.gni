@@ -1,0 +1,11 @@
+--- services/webnn/features.gni.orig	2026-05-09 18:09:27 UTC
++++ services/webnn/features.gni
+@@ -9,7 +9,7 @@ assert(use_blink)
+ 
+ declare_args() {
+   # TFLite is used as a fallback option on Apple and Windows.
+-  webnn_use_tflite = is_android || is_chromeos || is_linux || is_apple || is_win
++  webnn_use_tflite = !is_bsd && (is_android || is_chromeos || is_linux || is_apple || is_win)
+ 
+   # LiteRT matches TFLite except for arm.
+   # TODO(b/454732289): Add arm support once APK size issue is resolved.

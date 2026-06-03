@@ -39,6 +39,7 @@ include/oclero/qlementine/widgets/LineEdit.hpp
 include/oclero/qlementine/widgets/LoadingSpinner.hpp
 include/oclero/qlementine/widgets/Menu.hpp
 include/oclero/qlementine/widgets/NavigationBar.hpp
+include/oclero/qlementine/widgets/NotificationBadge.hpp
 include/oclero/qlementine/widgets/PlainTextEdit.hpp
 include/oclero/qlementine/widgets/Popover.hpp
 include/oclero/qlementine/widgets/PopoverButton.hpp
@@ -52,4 +53,4 @@ lib/cmake/qlementine/qlementineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qlementine/qlementineTargets.cmake
 lib/libqlementine.so
 lib/libqlementine.so.1
-lib/libqlementine.so.1.2
+lib/libqlementine.so.1.4

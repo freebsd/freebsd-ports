@@ -1,0 +1,11 @@
+--- alsa-info/alsa-info.sh.8.orig	2020-02-19 12:02:10 UTC
++++ alsa-info/alsa-info.sh.8
+@@ -37,7 +37,7 @@ Includes output from \fIamixer\fP.
+ Includes output from \fIalsactl\fP.
+ .TP
+ \fI\-\-with-configs\fP
+-Includes output from ~/.asoundrc and /etc/asound.conf if they exist.
++Includes output from ~/.asoundrc and %%LOCALBASE%%/etc/asound.conf if they exist.
+ .TP
+ \fI\-\-update\fP
+ Check server for updates.

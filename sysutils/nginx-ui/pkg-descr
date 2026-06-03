@@ -1,0 +1,11 @@
+Nginx UI is a comprehensive web-based interface designed to simplify
+the management and configuration of Nginx single-node and cluster
+nodes. It offers real-time server statistics, Nginx performance
+monitoring, AI-powered ChatGPT assistance, the code editor that
+supports LLM Code Completion, one-click deployment, automatic renewal
+of Let's Encrypt certificates, and user-friendly editing tools for
+website configurations. Additionally, Nginx UI provides features
+such as online access to Nginx logs, automatic testing and reloading
+of configuration files, a web terminal, dark mode, and responsive
+web design. Built with Go and Vue, Nginx UI ensures a seamless and
+efficient experience for managing your Nginx server.

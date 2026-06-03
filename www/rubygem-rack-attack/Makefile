@@ -1,5 +1,5 @@
 PORTNAME=	rack-attack
-PORTVERSION=	6.7.0
+PORTVERSION=	6.8.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/kickstarter/rack-attack
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack22>=1.0,3<3,3:www/rubygem-rack22
+RUN_DEPENDS=	rubygem-rack22>=1.0,3<4,3:www/rubygem-rack22
 
 USES=		gem
 

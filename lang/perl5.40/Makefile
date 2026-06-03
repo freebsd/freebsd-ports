@@ -1,6 +1,5 @@
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	https://cpan.metacpan.org/authors/id/S/SH/SHAY/ CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -14,9 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-# Uncomment when the default Perl is switched to 5.42+
-#DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
-#EXPIRATION_DATE=<Release date of .0 + 3 years>
+DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
+EXPIRATION_DATE=	2027-06-09
 
 USES=		cpe tar:xz
 
@@ -133,8 +131,7 @@ OPTIONS_DEFAULT=	DTRACE MULTIPLICITY PERL_64BITINT THREADS
 OPTIONS_EXCLUDE=	DTRACE
 .endif
 .for a in aarch64 armv6 armv7 \
-	mips mips64 mips64el mips64elhf mips64hf mipsel mipselhf mipshf mipsn32 \
-	riscv64 riscv64sf
+	riscv64
 OPTIONS_EXCLUDE_${a}=	DTRACE
 .endfor
 OPTIONS_SUB=		yes

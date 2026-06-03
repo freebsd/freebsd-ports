@@ -1,6 +1,6 @@
 PORTNAME=	apache-beam
 DISTVERSION=	2.43.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=2.2.0:devel/py-cloudpickle@${PY_
 		${PYTHON_PKGNAMEPREFIX}grpcio>=1.33.1>0:devel/py-grpcio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hdfs>=2.1.0:www/py-hdfs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.8:www/py-httplib2@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson<4.0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}objsize>=0.5.2:devel/py-objsize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.7.1:devel/py-proto-plus@${PY_FLAVOR} \
@@ -52,7 +52,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.12:devel/py-freezegun@${PY_F
 		# testcontainers[mysql]>=3.0.3 is also required
 
 USES=		python zip
-USE_PYTHON=	autoplist concurrent cryptography_test cython distutils pytest # 5 tests fail, depending on pyarrow, MySqlContainer, threadpoolctl
+USE_PYTHON=	autoplist concurrent cryptography_test cython0 distutils pytest # 5 tests fail, depending on pyarrow, MySqlContainer, threadpoolctl
 
 post-install:
 	# strip binaries

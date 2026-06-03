@@ -1,0 +1,87 @@
+--- bin/barrnap.orig	2026-04-13 08:23:19 UTC
++++ bin/barrnap
+@@ -14,14 +14,22 @@ use FindBin;
+ # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+ # global variables
+ 
+-my $VERSION = "1.10.5";
++my $VERSION = "1.10.6";
+ my $EXE = $FindBin::RealScript;
+ my $DESC = "Rapid microbial RNA annotationn";
+ my $AUTHOR = 'Torsten Seemann';
+ my $URL = 'https://github.com/tseemann/barrnap';
+-my $DEFAULT_DBDIR = path("$FindBin::RealBin/../db")->realpath;
++my $DEFAULT_DBDIR = path("/usr/local/share/barrnap/db");
+ my $BUILD_DIR = path("$FindBin::RealBin/../build")->realpath;
+ my $DEVNULL = File::Spec->devnull;
++my %NEEDS_EXE = (
++  rrna => [qw(cmsearch seqkit)],
++  trna => [qw(aragorn)],
++  ncrna => [qw(cmscan)],
++  mrna => [qw(pyrodigal diamond ziggypep transterm)],
++  operon => [qw(bedtools)],
++  updatedb => [qw(make taxonkit diamond seqkit)],
++);
+ my $DOT = '.';
+ my @KINGDOM = qw"bac arc fun";
+ my %KINGDOM = (map { $_ => 1 } @KINGDOM);
+@@ -91,11 +99,7 @@ msg("Checking dependencies:");
+   $rrna = $trna = $ncrna = $operon = $mrna = 1;
+ }
+ msg("Checking dependencies:");
+-require_exe(
+-  'cmsearch', 'cmscan', 'bedtools', 'aragorn', 
+-  'any2fasta', 'seqkit', 'make', 'transterm',
+-  'ziggypep', 'pyrodigal', 'diamond', 'taxonkit'
+-);
++require_exe(required_exe());
+ 
+ # Check all input files and make
+ my @infile;
+@@ -115,8 +119,13 @@ my($a2f_opt,$sk_opt) = $quiet ? ('-q','--quiet') : (''
+ # Write a single combined FASTA file
+ my $FASTA = File::Spec->rel2abs("$EXE.fasta");
+ my($a2f_opt,$sk_opt) = $quiet ? ('-q','--quiet') : ('','');
+-run_cmd("any2fasta -k $a2f_opt @infile > $FASTA.tmp");
+-run_cmd("seqkit seq $sk_opt -g --min-len 1 -u -w 60 $FASTA.tmp > $FASTA");
++if (which('any2fasta')) {
++  run_cmd("any2fasta -k $a2f_opt @infile > $FASTA.tmp");
++  run_cmd("seqkit seq $sk_opt -g --min-len 1 -u -w 60 $FASTA.tmp > $FASTA");
++}
++else {
++  run_cmd("seqkit seq $sk_opt -g --min-len 1 -u -w 60 @infile > $FASTA");
++}
+ -s $FASTA or err("No sequences found in input");
+ run_cmd("rm -f $FASTA.fai"); # for --debug case of tmp=.
+ run_cmd("seqkit faidx $sk_opt $FASTA");
+@@ -716,6 +725,12 @@ sub enumerate_dbs {
+     $dmnd =~ m=(\w+)\.dmnd$= or err("Bad DMND model: $dmnd");
+     $db->{$1}{'CDS'} = $dmnd;
+   }
++  if (! keys %$db) {
++    for my $yml (glob("$dir/*/database.yml")) {
++      $yml =~ m=(\w+)/database\.yml$= or err("Bad database metadata: $yml");
++      $db->{$1}{rRNA} = $yml;
++    }
++  }
+   return $db;
+ }
+ #----------------------------------------------------------------------
+@@ -747,6 +762,17 @@ sub update_dbs {
+   list_dbs($d);
+   #msg("Finished updating databases.");
+   exit(0);
++}
++#----------------------------------------------------------------------
++sub required_exe {
++  my @exe;
++  push @exe, @{$NEEDS_EXE{updatedb}} if $updatedb;
++  push @exe, @{$NEEDS_EXE{rrna}} if $rrna;
++  push @exe, @{$NEEDS_EXE{trna}} if $trna;
++  push @exe, @{$NEEDS_EXE{ncrna}} if $ncrna;
++  push @exe, @{$NEEDS_EXE{mrna}} if $mrna;
++  push @exe, @{$NEEDS_EXE{operon}} if $operon || $outseq;
++  return uniq @exe;
+ }
+ #----------------------------------------------------------------------
+ sub require_exe {

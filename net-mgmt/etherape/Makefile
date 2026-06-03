@@ -1,10 +1,9 @@
 PORTNAME=	etherape
-PORTVERSION=	0.9.20
-PORTREVISION=	3
+DISTVERSION=	0.9.22
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	Graphical network traffic monitor tool modeled after Etherman
 WWW=		http://etherape.sourceforge.net/
 
@@ -13,25 +12,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		yelp-tools>=0:textproc/yelp-tools
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libgoocanvas-2.0.so:graphics/goocanvas2 \
-		libpopt.so:devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		gettext gmake gnome iconv localbase pathfix pkgconfig
+USES=		gettext-runtime gmake gnome iconv localbase pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf gtk30 pango
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	pcap_CFLAGS="-I/usr/include" \
+		pcap_LIBS="-lpcap"
+LDFLAGS+=	-L/usr/lib
 PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README README.bugs TODO
 
-OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|char \*argv)|char **argv)|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|__EXPORT__|__EXPORT_H__|' ${WRKSRC}/src/export.h
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_SUB=		yes
+DOCS_MAKE_ARGS_OFF=	SUBDIRS="src glade m4 po"
+NLS_USES=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

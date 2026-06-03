@@ -1,8 +1,8 @@
---- src/xilinx.cpp.orig	2020-12-17 12:58:30 UTC
+--- src/xilinx.cpp.orig	2026-03-01 10:27:31 UTC
 +++ src/xilinx.cpp
-@@ -47,6 +47,10 @@ Xilinx::~Xilinx() {}
- #define ISC_DISABLE 0x16
- #define BYPASS   0x3f
+@@ -540,6 +540,10 @@ bool Xilinx::zynqmp_init(const std::string &family)
+ 	return true;
+ }
  
 +#ifndef ETIME
 +#define ETIME 9935
@@ -10,4 +10,4 @@
 +
  void Xilinx::reset()
  {
- 	_jtag->shiftIR(JSHUTDOWN, 6);
+ 	_jtag->shiftIR(get_ircode(_ircode_map, "JSHUTDOWN"), NULL, _irlen);

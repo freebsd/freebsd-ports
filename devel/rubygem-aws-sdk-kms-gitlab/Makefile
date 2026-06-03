@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-kms
-PORTVERSION=	1.101.0
+PORTVERSION=	1.106.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,7 +11,7 @@ WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-kms
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-aws-sdk-core-gitlab>=3.216.0<4:devel/rubygem-aws-sdk-core-gitlab \
+RUN_DEPENDS=	rubygem-aws-sdk-core-gitlab>=3.225.0<4:devel/rubygem-aws-sdk-core-gitlab \
 		rubygem-aws-sigv4>=1.5<2:devel/rubygem-aws-sigv4
 
 USES=		gem

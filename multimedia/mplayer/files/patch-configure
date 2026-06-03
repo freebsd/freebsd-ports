@@ -1,4 +1,4 @@
---- configure.orig	2024-09-21 09:30:02 UTC
+--- configure.orig	2025-04-01 19:53:08 UTC
 +++ configure
 @@ -664,7 +664,7 @@ _altivec=auto
  _iwmmxt=auto
@@ -26,7 +26,7 @@
      ;;
  
    esac
-@@ -1520,40 +1519,6 @@ echo >> "$TMPLOG"
+@@ -1520,46 +1519,6 @@ echo >> "$TMPLOG"
  echo configuration: $configuration > "$TMPLOG"
  echo >> "$TMPLOG"
  
@@ -37,12 +37,13 @@
 -    exit 1
 -fi
 -
--FFBRANCH=master
+-FFBRANCH="release/7.1"
 -test -e FFBRANCH && FFBRANCH=$(cat FFBRANCH)
 -
 -if test -e ffmpeg/mp_auto_pull ; then
+-    cfg_fetch="remote.origin.fetch=+refs/heads/$FFBRANCH:refs/remotes/origin/$FFBRANCH"
 -    echo "Updating FFmpeg, (re)move ffmpeg/mp_auto_pull to disable"
--    (cd ffmpeg && git checkout $FFBRANCH)
+-    (cd ffmpeg && git -c "$cfg_fetch" fetch --depth 1 origin && git -c "$cfg_fetch" checkout $FFBRANCH)
 -    if ! (cd ffmpeg && git pull --rebase --ff-only) ; then
 -        echo "git pull failed, (re)move ffmpeg/mp_auto_pull to disable pulling"
 -        exit 1
@@ -64,10 +65,15 @@
 -    touch ffmpeg/mp_auto_pull
 -fi
 -
+-ffmpeg_filter_struct_name=AVFilter
+-if grep -q FFFilter ffmpeg/configure; then
+-    ffmpeg_filter_struct_name=FFFilter
+-fi
+-
  list_subparts() {
    test ! -e ffmpeg/libav${3} && return 1
    pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
-@@ -1843,7 +1808,7 @@ if test -z "$_target" ; then
+@@ -1858,7 +1817,7 @@ if test -z "$_target" ; then
    case "$1" in
        x86_64|amd64|x64|i[3-9]86*|i86pc|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -76,7 +82,7 @@
        alpha) host_arch=alpha ;;
        sun4*|sparc*) host_arch=sparc ;;
        parisc*|hppa*|9000*) host_arch=hppa ;;
-@@ -1965,7 +1930,11 @@ echo "yes"
+@@ -1984,7 +1943,11 @@ echo "yes"
  cflag_check "" || die "Compiler is not functioning correctly. Check your installation and custom CFLAGS $CFLAGS ."
  echo "yes"
  
@@ -89,7 +95,7 @@
  
  if test -z "$_target" ; then
    cat > $TMPC << EOF
-@@ -2975,7 +2944,11 @@ if test -z "$CFLAGS" || test "$_profile" != "" || test
+@@ -2997,7 +2960,11 @@ if test -z "$CFLAGS" || test "$_profile" != "" || test
    fi
  
    if test "$_profile" != "" || test "$_debug" != ""; then
@@ -102,7 +108,7 @@
      WARNFLAGS="-W -Wall $WARNFLAGS"
      _install_strip=
    fi
-@@ -3104,7 +3077,7 @@ if x86_32 ; then
+@@ -3126,7 +3093,7 @@ if x86_32 ; then
      _pref_as_version='2.16.92'
      echo 'pabsd %xmm0, %xmm1' >> $TMPS
    fi
@@ -111,7 +117,7 @@
  
    if test "$as_verc_fail" != yes ; then
      echores "ok"
-@@ -3264,8 +3237,8 @@ if ppc && ( test "$_altivec" = yes || test "$_runtime_
+@@ -3286,8 +3253,8 @@ if ppc && ( test "$_altivec" = yes || test "$_runtime_
  
      # check if AltiVec is supported by the compiler, and how to enable it
      echocheck "GCC AltiVec flags"
@@ -122,7 +128,7 @@
      # check if <altivec.h> should be included
          if $(header_check altivec.h $_altivec_gcc_flags) ; then
              def_altivec_h='#define HAVE_ALTIVEC_H 1'
-@@ -3371,6 +3344,13 @@ if arm ; then
+@@ -3393,6 +3360,13 @@ if arm ; then
    fi
    echores "$setend"
  
@@ -136,7 +142,7 @@
    echocheck "softfloat ABI"
    softfloat=yes
    cpp_condition_check '' 'defined(__ARM_PCS_VFP) || (!defined(__ARM_PCS) && !defined(__SOFTFP__))' && softfloat=no
-@@ -4281,7 +4261,7 @@ elif freebsd || netbsd || openbsd || bsdos ; then
+@@ -4303,7 +4277,7 @@ elif freebsd || netbsd || openbsd || bsdos ; then
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -145,7 +151,7 @@
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
-@@ -4291,7 +4271,7 @@ if ! hpux ; then
+@@ -4313,7 +4287,7 @@ if ! hpux ; then
  EOF
  _pthreads=no
  if ! hpux ; then
@@ -154,7 +160,7 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
-@@ -4434,7 +4414,7 @@ EOF
+@@ -4456,7 +4430,7 @@ EOF
  }
  EOF
    _iconv=no
@@ -163,7 +169,7 @@
      cc_check $ld_tmp && extra_ldflags="$extra_ldflags $ld_tmp" &&
        ld_iconv="$ld_tmp" && _iconv=yes && break
    done
-@@ -5848,15 +5828,6 @@ EOF
+@@ -5870,15 +5844,6 @@ EOF
        break
      fi
    done
@@ -179,7 +185,7 @@
    if win32 && cc_check -DGL_WIN32 -lopengl32 ; then
      _gl=yes
      _gl_win32=yes
-@@ -6391,7 +6362,7 @@ elif freebsd ; then
+@@ -6413,7 +6378,7 @@ elif freebsd ; then
  elif dragonfly ; then
    default_cdrom_device="/dev/cd0"
  elif freebsd ; then
@@ -188,7 +194,7 @@
  elif openbsd ; then
    default_cdrom_device="/dev/rcd0c"
  elif sunos ; then
-@@ -6404,7 +6375,7 @@ fi
+@@ -6426,7 +6391,7 @@ fi
    default_cdrom_device="/dev/cdrom"
  fi
  
@@ -197,7 +203,7 @@
    default_dvd_device=$default_cdrom_device
  elif darwin ; then
    default_dvd_device="/dev/rdiskN"
-@@ -6931,7 +6902,7 @@ if test "$_libgsm" = auto ; then
+@@ -6953,7 +6918,7 @@ if test "$_libgsm" = auto ; then
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -206,7 +212,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -7363,6 +7334,16 @@ if test "$_librtmp" = yes && test "$networking" = yes;
+@@ -7385,6 +7350,16 @@ if test "$_librtmp" = yes && test "$networking" = yes;
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -223,7 +229,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7780,7 +7761,7 @@ if test "$_mencoder" = no ; then
+@@ -7802,7 +7777,7 @@ if test "$_mencoder" = no ; then
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -232,7 +238,7 @@
  fi
  echores "$_mencoder"
  
-@@ -8384,7 +8365,7 @@ libs_mplayer=$ld_tmp
+@@ -8406,7 +8381,7 @@ libs_mplayer=$ld_tmp
  
  #############################################################################
  

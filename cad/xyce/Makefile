@@ -1,11 +1,13 @@
 PORTNAME=	xyce
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	7.9.0
+DISTVERSION=	7.10.0
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Xyce electronic simulator
-WWW=		https://xyce.sandia.gov/
+WWW=		https://xyce.sandia.gov/ \
+		https://github.com/Xyce/Xyce
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,10 +22,10 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libcolamd.so:math/suitesparse-colamd \
 		libsuitesparseconfig.so:math/suitesparse-config \
 		libumfpack.so:math/suitesparse-umfpack
-TEST_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		git:devel/git \
-		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+TEST_DEPENDS=	git:devel/git \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		autoreconf bison gmake fortran libtool localbase perl5 python:test # GNU tools should be used for 7.5 and on until the cmake build is declared stable
 USE_CXXSTD=	c++14 # otherwise configure fails because of c++14 features like std::conditional_t
@@ -74,5 +76,10 @@ do-test: # one test is known to fail, see https://github.com/Xyce/Xyce/issues/67
 # Xyce build instructions: https://xyce.sandia.gov/documentation-tutorials/building-guide/
 # Xyce regression suite instructions: https://xyce.sandia.gov/documentation-tutorials/running-the-xyce-regression-suite/
 # docs are in https://xyce.sandia.gov/files/xyce/Xyce_Docs-7.5.tar.gz
+
+# tests as of 7.10.0:
+# All Test runs complete - Warning 1 Tests FAILED (CommandLine/command_line.........................................TIME LIMIT[sh])
+#                                  0 Tests EXITED WITH ERROR
+# 				 Total testing time: 159.1m (wall),  8997s (user),   382s (system)
 
 .include <bsd.port.mk>

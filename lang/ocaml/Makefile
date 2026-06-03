@@ -63,6 +63,6 @@ LLD_UNSAFE=	yes
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${_DISTDIR}${DISTNAME:R}-refman.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME:R}-refman.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

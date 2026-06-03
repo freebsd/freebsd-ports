@@ -1,5 +1,6 @@
 PORTNAME=	pdfbox
 PORTVERSION=	3.0.4
+PORTREVISION=	2
 CATEGORIES=	print textproc java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTVERSION}/
 DISTFILES=	${JAR_NAMES:S/$/-${PORTVERSION}.jar/}

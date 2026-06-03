@@ -1,10 +1,11 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.11.13
-PORTREVISION?=	1
+PORTVERSION=	10.11.18
+PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
-		https://mirror.one.com/${SITESDIR}/ \
+MASTER_SITES=	\
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
+		https://mirror.nodesdirect.com/${SITESDIR}/ \
+		https://mirror.one.com/${SITESDIR}/ \
 		https://ftp.icm.edu.pl/pub/unix/database/${SITESDIR}/ \
 		https://mirror.truenetwork.ru/${SITESDIR}/ \
 		https://mirrors.aliyun.com/${SITESDIR}/ \
@@ -187,7 +188,7 @@ LZO_CMAKE_ON=		-DWITH_INNODB_LZO=ON
 LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
-OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+OQGRAPH_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_BROKEN=		RocksDB engine build failyure "jemalloc_helper.h:65:61: error: use of undeclared identifier 'nothrow'; did you mean 'std::nothrow'?"
 ROCKSDB_USES=		python

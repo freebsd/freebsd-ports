@@ -1,5 +1,5 @@
---- pdfium/third_party/base/logging.h.orig	2017-04-16 14:53:52 UTC
-+++ pdfium/third_party/base/logging.h
+--- 3rdparty/pdfium/third_party/base/logging.h.orig	2026-02-07 08:59:58 UTC
++++ 3rdparty/pdfium/third_party/base/logging.h
 @@ -10,7 +10,7 @@
  
  #ifndef _WIN32

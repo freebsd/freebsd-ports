@@ -1,9 +1,10 @@
 PORTNAME=	piper-phonemize
 DISTVERSION=	2023.11.14
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-4
 CATEGORIES=	audio
 
-MAINTAINER=	kenrap@kennethraplee.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, local neural text to speech system
 WWW=		https://rhasspy.github.io/piper-samples/
 

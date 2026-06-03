@@ -1,5 +1,6 @@
 PORTNAME=	openssl-ccm
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +10,8 @@ WWW=		https://github.com/SmallLars/openssl-ccm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-openssl>=3.0:security/rubygem-openssl
 
 USES=		gem
 

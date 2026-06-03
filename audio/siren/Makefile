@@ -1,5 +1,6 @@
 PORTNAME=	siren
 DISTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 
@@ -9,9 +10,6 @@ WWW=		https://www.kariliq.nl/siren/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
-
-BROKEN_mips=		fails to configure: cannot find program /nxb-bin/usr/bin/cc
-BROKEN_mips64=		fails to configure: cannot find program /nxb-bin/usr/bin/cc
 
 USES=		localbase:ldflags ncurses pkgconfig
 HAS_CONFIGURE=	yes

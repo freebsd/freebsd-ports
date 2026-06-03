@@ -1,0 +1,4 @@
+This is a fork of the original repo by matthewrudy adapted for usage with Ruby
+3.
+
+Memoist is an extraction of ActiveSupport::Memoizable.

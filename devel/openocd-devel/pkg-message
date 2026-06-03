@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+OpenOCD is now installed, this software can damage your hardware, enjoy!
+
+User's guide is at:
+ http://openocd.sourceforge.net/documentation/online-docs/
+Developer's guide is at:
+ http://openocd.sourceforge.net/documentation/openocd-reference-manual/
+
+FreeBSD USB NOTE:
+ To allow an ordinary user to acces any of the the hotplug USB interface
+ add him/her to the operator group  (pw groupmod operator -m username), then
+ setup the devfs subsystem by adding these lines to the following files:
+
+ ***/etc/devfs.rules:
+ [localrules=10]
+        add path 'ugen*' mode 0660 group operator
+        add path 'usb/*'  mode 0660 group operator
+        add path 'usb' mode 0770 group operator
+
+ ***/etc/rc.conf:
+	devfs_system_ruleset="localrules"
+EOM
+}
+]

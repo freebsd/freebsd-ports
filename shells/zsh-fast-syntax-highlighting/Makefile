@@ -1,6 +1,7 @@
 PORTNAME=	zsh-fast-syntax-highlighting
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.55
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	phantrungson17@gmail.com

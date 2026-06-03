@@ -1,6 +1,5 @@
 PORTNAME=	makeself
-DISTVERSION=	2.5.0
-PORTREVISION=	1
+DISTVERSION=	2.7.1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/megastep/makeself/releases/download/release-${PORTVERSION}/
 EXTRACT_SUFX=	.run

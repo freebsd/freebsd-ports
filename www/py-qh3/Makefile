@@ -1,17 +1,19 @@
 PORTNAME=	qh3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.9
-PORTREVISION=	8
+DISTVERSION=	1.8.1
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightway and fast implementation of QUIC and HTTP/3
-WWW=		https://qh3.readthedocs.io/en/latest/
+WWW=		https://qh3.readthedocs.io/en/latest/ \
+		https://github.com/jawah/qh3
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilaton fails: error[E0080]: attempt to compute `16_usize - 20_usize`, which would overflow
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.2:devel/py-maturin@${PY_FLAVOR} \
 		bash:shells/bash \
@@ -26,160 +28,164 @@ GH_TUPLE=	litespeedtech:ls-qpack:8ff2bf6:ls_qpack/../ls-qpack-rs-86a836850b45593
 
 SHEBANG_GLOB=	*.sh
 
-CARGO_CRATES=	aead-0.5.2 \
-		aes-0.8.4 \
-		aho-corasick-1.1.3 \
-		asn1-rs-0.6.2 \
-		asn1-rs-derive-0.5.1 \
+CARGO_CRATES=	aes-0.8.4 \
+		aho-corasick-1.1.4 \
+		asn1-rs-0.7.1 \
+		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
-		autocfg-1.3.0 \
-		aws-lc-fips-sys-0.12.11 \
-		aws-lc-rs-1.8.1 \
-		aws-lc-sys-0.20.1 \
-		base64-0.22.1 \
-		base64ct-1.6.0 \
-		bindgen-0.66.1 \
-		bindgen-0.69.5 \
-		bitflags-2.6.0 \
+		autocfg-1.5.0 \
+		aws-lc-fips-sys-0.13.14 \
+		aws-lc-rs-1.16.3 \
+		aws-lc-sys-0.40.0 \
+		base64ct-1.8.3 \
+		bincode-1.3.3 \
+		bindgen-0.72.1 \
+		bitflags-2.11.1 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
-		byteorder-1.5.0 \
 		cbc-0.1.2 \
-		cc-1.1.10 \
+		cc-1.2.61 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.0 \
-		chacha20-0.9.1 \
-		chacha20poly1305-0.10.1 \
+		cfg-if-1.0.4 \
+		cfg_aliases-0.2.1 \
 		cipher-0.4.4 \
 		clang-sys-1.8.1 \
-		cmake-0.1.50 \
+		cmake-0.1.58 \
 		const-oid-0.9.6 \
-		cpufeatures-0.2.13 \
-		crypto-common-0.1.6 \
+		cpufeatures-0.2.17 \
+		crypto-common-0.1.7 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
-		data-encoding-2.6.0 \
-		der-0.7.9 \
-		der-parser-9.0.0 \
+		data-encoding-2.11.0 \
+		der-0.7.10 \
+		der-parser-10.0.0 \
 		der_derive-0.7.3 \
-		deranged-0.3.11 \
+		deranged-0.5.8 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
 		dsa-0.6.3 \
 		dunce-1.0.5 \
 		ed25519-2.2.3 \
-		ed25519-dalek-2.1.1 \
-		either-1.13.0 \
-		errno-0.3.9 \
+		ed25519-dalek-2.2.0 \
+		either-1.15.0 \
 		fiat-crypto-0.2.9 \
-		flagset-0.4.6 \
+		find-msvc-tools-0.1.9 \
+		flagset-0.4.7 \
 		fs_extra-1.3.0 \
 		generic-array-0.14.7 \
-		getrandom-0.2.15 \
-		glob-0.3.1 \
-		heck-0.4.1 \
+		getrandom-0.2.17 \
+		getrandom-0.3.4 \
+		glob-0.3.3 \
+		heck-0.5.0 \
 		hmac-0.12.1 \
-		home-0.5.9 \
-		indoc-2.0.5 \
-		inout-0.1.3 \
-		itertools-0.12.1 \
-		itoa-1.0.11 \
-		jobserver-0.1.32 \
+		icu_collections-2.2.0 \
+		icu_locale_core-2.2.0 \
+		icu_normalizer-2.2.0 \
+		icu_normalizer_data-2.2.0 \
+		icu_properties-2.2.0 \
+		icu_properties_data-2.2.0 \
+		icu_provider-2.2.0 \
+		idna-1.1.0 \
+		idna_adapter-1.2.2 \
+		inout-0.1.4 \
+		itertools-0.13.0 \
+		itoa-1.0.18 \
+		jobserver-0.1.34 \
 		lazy_static-1.5.0 \
-		lazycell-1.3.0 \
-		libc-0.2.155 \
-		libloading-0.8.5 \
-		libm-0.2.8 \
-		linux-raw-sys-0.4.14 \
-		lock_api-0.4.12 \
-		log-0.4.22 \
-		memchr-2.7.4 \
-		memoffset-0.9.1 \
+		libc-0.2.186 \
+		libloading-0.8.9 \
+		libm-0.2.16 \
+		litemap-0.8.2 \
+		log-0.4.29 \
+		ls-qpack-rs-0.3.1 \
+		ls-qpack-rs-sys-0.3.1 \
+		memchr-2.8.0 \
 		minimal-lexical-0.2.1 \
-		mirai-annotations-1.12.0 \
 		nom-7.1.3 \
 		num-bigint-0.4.6 \
-		num-bigint-dig-0.8.4 \
-		num-conv-0.1.0 \
+		num-bigint-dig-0.8.6 \
+		num-conv-0.2.1 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
 		num-traits-0.2.19 \
-		oid-registry-0.7.0 \
-		once_cell-1.19.0 \
-		opaque-debug-0.3.1 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
-		paste-1.0.15 \
+		oid-registry-0.8.1 \
+		once_cell-1.21.4 \
 		pbkdf2-0.12.2 \
-		peeking_take_while-0.1.2 \
 		pem-rfc7468-0.7.0 \
+		pin-project-lite-0.2.17 \
 		pkcs1-0.7.5 \
 		pkcs5-0.7.1 \
 		pkcs8-0.10.2 \
-		poly1305-0.8.0 \
-		portable-atomic-1.7.0 \
+		portable-atomic-1.13.1 \
+		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.20 \
-		prettyplease-0.2.20 \
-		proc-macro2-1.0.86 \
-		pyo3-0.20.3 \
-		pyo3-build-config-0.20.3 \
-		pyo3-ffi-0.20.3 \
-		pyo3-macros-0.20.3 \
-		pyo3-macros-backend-0.20.3 \
-		python3-dll-a-0.2.10 \
-		quote-1.0.36 \
+		ppv-lite86-0.2.21 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.106 \
+		pyo3-0.28.3 \
+		pyo3-build-config-0.28.3 \
+		pyo3-ffi-0.28.3 \
+		pyo3-macros-0.28.3 \
+		pyo3-macros-backend-0.28.3 \
+		python3-dll-a-0.2.15 \
+		quinn-udp-0.6.1 \
+		quote-1.0.45 \
+		r-efi-5.3.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.5.3 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
 		rfc6979-0.4.0 \
-		ring-0.17.8 \
-		rsa-0.9.6 \
-		rustc-hash-1.1.0 \
-		rustc_version-0.4.0 \
+		ring-0.17.14 \
+		rsa-0.9.10 \
+		rustc-hash-2.1.2 \
+		rustc_version-0.4.1 \
 		rusticata-macros-4.1.0 \
-		rustix-0.38.34 \
-		rustls-0.23.12 \
-		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.8.0 \
-		rustls-webpki-0.102.6 \
+		rustls-0.23.40 \
+		rustls-pemfile-2.2.0 \
+		rustls-pki-types-1.14.1 \
+		rustls-webpki-0.103.13 \
 		salsa20-0.10.2 \
-		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
-		semver-1.0.23 \
-		serde-1.0.207 \
-		serde_derive-1.0.207 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
 		sha1-0.10.6 \
-		sha2-0.10.8 \
+		sha2-0.10.9 \
 		shlex-1.3.0 \
 		signature-2.2.0 \
-		smallvec-1.13.2 \
+		smallvec-1.15.1 \
+		socket2-0.6.3 \
 		spin-0.9.8 \
 		spki-0.7.3 \
+		stable_deref_trait-1.2.1 \
 		subtle-2.6.1 \
-		syn-2.0.74 \
-		synstructure-0.13.1 \
-		target-lexicon-0.12.16 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
-		time-0.3.36 \
-		time-core-0.1.2 \
-		time-macros-0.2.18 \
-		tls_codec-0.4.1 \
-		tls_codec_derive-0.4.1 \
-		typenum-1.17.0 \
-		unicode-ident-1.0.12 \
-		unindent-0.2.3 \
-		universal-hash-0.5.1 \
+		syn-2.0.117 \
+		synstructure-0.13.2 \
+		target-lexicon-0.13.5 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		time-macros-0.2.27 \
+		tinystr-0.8.3 \
+		tls_codec-0.4.2 \
+		tls_codec_derive-0.4.2 \
+		tracing-0.1.44 \
+		tracing-core-0.1.36 \
+		typenum-1.20.0 \
+		unicode-ident-1.0.24 \
 		untrusted-0.9.0 \
+		utf8_iter-1.0.4 \
 		version_check-0.9.5 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-4.4.2 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
+		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
@@ -189,14 +195,22 @@ CARGO_CRATES=	aead-0.5.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
+		wit-bindgen-0.57.1 \
+		writeable-0.6.3 \
 		x509-cert-0.2.5 \
 		x509-ocsp-0.2.1 \
-		x509-parser-0.16.0 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
-		zeroize-1.8.1 \
-		zeroize_derive-1.4.2 \
-		ls-qpack,ls-qpack-sys@git+https://github.com/Ousret/ls-qpack-rs.git\#86a836850b45593a1635e757439e291214573828
+		x509-parser-0.18.1 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerocopy-0.8.48 \
+		zerocopy-derive-0.8.48 \
+		zerofrom-0.1.7 \
+		zerofrom-derive-0.1.7 \
+		zeroize-1.8.2 \
+		zeroize_derive-1.4.3 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3
 CARGO_CRATES+=	python3-dll-a-0.2.9
 
 CARGO_BUILD=	no

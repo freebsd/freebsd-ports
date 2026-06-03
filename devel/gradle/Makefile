@@ -1,10 +1,10 @@
 PORTNAME=	gradle
-PORTVERSION=	8.13
+PORTVERSION=	9.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://services.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Project automation tool
 WWW=		https://www.gradle.org/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe java zip
 
-CONFLICTS_INSTALL=	gradle6 gradle62
+CONFLICTS_INSTALL=	gradle6 gradle8
 
 NO_ARCH=	yes
 NO_BUILD=	yes

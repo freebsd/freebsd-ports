@@ -1,12 +1,14 @@
 PORTNAME=	yfinance
 PORTVERSION=	0.2.57
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yahoo! Finance market data downloader
-WWW=		https://github.com/ranaroussi/yfinance
+WWW=		https://ranaroussi.github.io/yfinance/ \
+		https://github.com/ranaroussi/yfinance
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

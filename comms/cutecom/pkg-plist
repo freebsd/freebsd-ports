@@ -1,0 +1,6 @@
+bin/cutecom
+share/applications/cutecom.desktop
+share/icons/hicolor/32x32/apps/cutecom.png
+share/icons/hicolor/scalable/apps/cutecom.svg
+share/man/man1/cutecom.1.gz
+share/metainfo/com.gitlab.cutecom.cutecom.appdata.xml

@@ -1,0 +1,3 @@
+Whiskers is a port creation helper tool that is custom-built for
+Catppuccin, allowing developers to define template files which the
+palette can be injected into.

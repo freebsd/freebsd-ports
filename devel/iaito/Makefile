@@ -1,12 +1,9 @@
 PORTNAME=	iaito
-DISTVERSION=	5.9.9
+DISTVERSION=	6.0.8
 CATEGORIES=	devel
 
-PATCH_SITES=	https://github.com/radareorg/iaito/commit/
-PATCHFILES+=	14d843c138defd36b8550c37f067e64d6b8316fb.patch:-p1 # Fix build with Qt >= 6.9.0
-
 MAINTAINER=	freebsd@sysctl.cz
-COMMENT=	Official QT frontend of radare2, a libre reverse engineering framework
+COMMENT=	Official Qt frontend of radare2, a libre reverse engineering framework
 WWW=		https://github.com/radareorg/iaito
 
 LICENSE=	GPLv3
@@ -18,8 +15,7 @@ LIB_DEPENDS=	libcapstone.so:devel/capstone \
 
 FLAVORS=		qt6 qt5
 FLAVOR?=		qt6
-qt5_PKGNAMESUFFIX=	-qt5
-qt6_PKGNAMESUFFIX=	-qt6
+${FLAVOR}_PKGNAMESUFFIX=	-${FLAVOR}
 
 USES=		compiler:c++17-lang desktop-file-utils gl gmake pkgconfig \
 		qmake:no_configure
@@ -51,10 +47,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/org.radare.iaito.desktop \
 			${STAGEDIR}${DESKTOPDIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps \
+		 ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/src/img/org.radare.iaito.svg \
 			${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/src/org.radare.iaito.appdata.xml \
 			${STAGEDIR}${PREFIX}/share/metainfo
 

@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -20,24 +20,25 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
-		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
-		mdds>=2.1:devel/mdds \
+		mdds>=${MDDS_VERSION}:devel/mdds \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
+		fast_float>=0:math/fast_float \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
 		gsed:textproc/gsed \
-		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		coreutils>=8.23:sysutils/coreutils \
-		flex>=0.26:textproc/flex
-LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		frozen>=1:devel/frozen
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libbox2d.so:misc/box2d \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.18.so:devel/liborcus \
+		liborcus-0.21.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libgraphite2.so:graphics/graphite2 \
@@ -62,7 +63,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgmepp \
-		libargon2.so:security/libargon2 \
 		libgpg-error.so:security/libgpg-error \
 		libnss3.so:security/nss \
 		libxmlsec1-nss.so:security/xmlsec1 \
@@ -83,6 +83,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
+		libmd4c.so:textproc/md4c \
 		libmythes-1.2.so:textproc/mythes \
 		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
@@ -90,6 +91,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libserf-1.so:www/serf
+#		libargon2.so:security/libargon2 \
 LIB_DEPENDS+=	${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
@@ -102,16 +104,18 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/twemoji-color-font-ttf/TwitterColorEmoji-SVGinOT.ttf:x11-fonts/twemoji-color-font-ttf \
-		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:x11-fonts/gentium-basic \
+		${LOCALBASE}/share/fonts/Gentium/Gentium-Bold.ttf:x11-fonts/gentium \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
-DISTFILES+=	dtoa-20180411.tgz:src
+DISTFILES+=	afdko-4.0.3.tar.gz:src
+DISTFILES+=	antlr4-cpp-runtime-4.13.2-source.zip:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
-DISTFILES+=	frozen-1.2.0.tar.gz:src
-DISTFILES+=	skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz:src
-DISTFILES+=	zxcvbn-c-2.5.tar.gz:src
+DISTFILES+=	phc-winner-argon2-20190702.tar.gz:src
+DISTFILES+=	skia-m142-f4ed99d2443962782cf5f8b4dd27179f131e7cbe.tar.xz:src
+DISTFILES+=	y-crdt-0.23.5.tar.gz:src
+DISTFILES+=	zxcvbn-c-2.6.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -128,11 +132,12 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf:build bison compiler:c++20-lang cpe desktop-file-utils \
 		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
-		python shebangfix shared-mime-info ssl tar:xz xorg
+		python shebangfix shared-mime-info sqlite ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
+USE_LOCALE?=	en_US.UTF-8
 
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
@@ -141,11 +146,11 @@ OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA LTO MMEDIA PDFIUM PGSQL MA
 OPTIONS_RADIO=	QT KDE
 OPTIONS_RADIO_QT=	QT5 QT6
 OPTIONS_RADIO_KDE=	KF5 KF6
-OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
+OPTIONS_DEFAULT=	CUPS DOCS GTK3 JAVA MMEDIA PDFIUM QT6
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
-GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental, broken)
+GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 KF6_DESC=	KF6/Qt6 GUI toolkit support (implies QT6)
@@ -155,8 +160,8 @@ PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
 QT_DESC=	Select Qt GUI engine version
 KDE_DESC=	Select KDE GUI engine version
-QT5_DESC=	Qt5 GUI toolkit support (default visual style)
-QT6_DESC=	Qt6 GUI toolkit support (experimental visual style)
+QT5_DESC=	Qt5 GUI toolkit support
+QT6_DESC=	Qt6 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
 WEBDAV_DESC=	Enable WebDAV protocol
@@ -187,17 +192,9 @@ GTK4_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 GTK4_USE=	GNOME=gtk40
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
-			${JAVAJARDIR}/commons-codec.jar:java/apache-commons-codec \
-			${JAVAJARDIR}/commons-httpclient.jar:java/apache-commons-httpclient \
-			${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3 \
-			${JAVAJARDIR}/commons-logging.jar:java/apache-commons-logging \
 			${JAVAJARDIR}/junit.jar:java/junit
 JAVA_CATEGORIES=	java
 JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
-			--with-commons-codec-jar=${JAVAJARDIR}/commons-codec.jar \
-			--with-commons-httpclient-jar=${JAVAJARDIR}/commons-httpclient.jar \
-			--with-commons-lang-jar=${JAVAJARDIR}/commons-lang3.jar \
-			--with-commons-logging-jar=${JAVAJARDIR}/commons-logging.jar \
 			--with-jdk-home="${JAVA_HOME}" \
 			--with-junit=${JAVAJARDIR}/junit.jar \
 			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar \
@@ -214,7 +211,6 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
-		8249374c274932a21846fa7629c2aa9b-officeotron-0.7.4-master.jar:ext \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
 		a084cd548b586552cb7d3ee51f1af969-odfvalidator-1.1.8-incubating-SNAPSHOT-jar-with-dependencies.jar:ext \
@@ -226,9 +222,10 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
 		Java-WebSocket-1.6.0.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
-		rhino-1.7.15.zip:src
+		officeotron-0.8.5.jar:ext \
+		rhino-1.7.15.1.zip:src
 JAVA_USES=	java
-JAVA_VARS=	JAVA_VERSION=17+
+JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 
 KF5_CONFIGURE_ENABLE=	kf5
 KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
@@ -250,7 +247,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-6764.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-7471.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -301,7 +298,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-mpl-subset \
 		--exec-prefix=${PREFIX} \
 		--with-boost=${LOCALBASE} \
-		--with-build-version="FreeBSD ports ${PKGVERSION}" \
+		--with-extra-buildid="FreeBSD ports ${PKGVERSION}" \
 		--with-external-dict-dir=${LOCALBASE}/share/hunspell \
 		--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 		--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
@@ -310,22 +307,24 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-abseil \
-		--with-system-argon2 \
+		--with-system-argon2=no \
+		--with-system-afdko=no \
 		--with-system-cppunit \
-		--with-system-cuckoo \
 		--with-system-curl \
 		--with-system-dicts \
 		--with-system-dragonbox=no \
-		--with-system-frozen=no \
+		--with-system-frozen \
 		--with-system-gpgmepp \
 		--with-system-libfixmath=no \
 		--with-system-libs \
 		--with-system-libtiff \
 		--with-system-libxml \
+		--with-system-md4c \
 		--with-system-mdds \
 		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
+		--with-system-sqlite3 \
 		--with-system-zlib \
 		--with-system-zxcvbn=no \
 		--with-system-zxing \
@@ -335,7 +334,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
-		FLEX=${LOCALBASE}/bin/flex \
 		CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		GNUTAR="${TAR}" \
 		GPERF=${LOCALBASE}/bin/gperf \
@@ -360,6 +358,7 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
+MDDS_VERSION=	3.1
 
 .include <bsd.port.options.mk>
 
@@ -397,10 +396,13 @@ CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 LDFLAGS+=	-Wl,--undefined-version
 
 post-patch:
+	${REINPLACE_CMD} \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|mdds-3.0|mdds-${MDDS_VERSION}|g' \
+		${WRKSRC}/configure
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
 .endif
-	${CP} ${FILESDIR}/powerpc64le-skia.patch.0 ${WRKSRC}/external/skia/
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun

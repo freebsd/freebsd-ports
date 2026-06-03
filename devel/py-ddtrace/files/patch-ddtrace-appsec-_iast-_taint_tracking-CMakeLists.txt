@@ -1,4 +1,4 @@
---- ddtrace/appsec/_iast/_taint_tracking/CMakeLists.txt.orig	2025-04-07 19:46:51 UTC
+--- ddtrace/appsec/_iast/_taint_tracking/CMakeLists.txt.orig	2025-10-24 08:35:12 UTC
 +++ ddtrace/appsec/_iast/_taint_tracking/CMakeLists.txt
 @@ -3,7 +3,7 @@ option(BUILD_MACOS "Build for MacOS" OFF)
  
@@ -13,7 +13,7 @@
      add_definitions(-DDONT_COMPILE_ABSEIL) # Define DONT_COMPILE_ABSEIL preprocessor variable
  else()
      message("Release mode: using abseil (DD_COMPILE_ABSEIL unset or not 0/false)")
--    FetchContent_Declare(absl URL "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.zip")
+-    FetchContent_Declare(absl URL "https://github.com/abseil/abseil-cpp/archive/refs/tags/20250127.1.zip")
 -    FetchContent_MakeAvailable(absl)
 +    add_subdirectory(absl)
  endif()

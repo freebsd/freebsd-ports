@@ -25,7 +25,7 @@ lib/cmake/f3d/f3dTargets.cmake
 lib/cmake/f3d/library-config.cmake
 lib/libf3d.so
 lib/libf3d.so.3
-lib/libf3d.so.3.2
+lib/libf3d.so.3.5
 lib/libvtkext.so
 %%ALEMBIC%%share/applications/f3d-plugin-alembic.desktop
 %%ASSIMP%%share/applications/f3d-plugin-assimp.desktop
@@ -68,12 +68,12 @@ share/icons/hicolor/64x64/apps/f3d.png
 share/icons/hicolor/scalable/apps/f3d.svg
 share/metainfo/app.f3d.F3D.metainfo.xml
 share/mime/packages/f3d-3d-formats.xml
-share/mime/packages/f3d-3d-image-formats.xml
 %%ALEMBIC%%share/mime/packages/f3d-alembic-formats.xml
 %%ASSIMP%%share/mime/packages/f3d-assimp-formats.xml
 %%DRACO%%share/mime/packages/f3d-draco-formats.xml
-%%OCCT%%share/mime/packages/f3d-occt-formats.xml
 %%HDF%%share/mime/packages/f3d-hdf-formats.xml
+share/mime/packages/f3d-image-formats.xml
+%%OCCT%%share/mime/packages/f3d-occt-formats.xml
 share/mime/packages/f3d-vtk-formats.xml
 %%ALEMBIC%%share/thumbnailers/f3d-plugin-alembic.thumbnailer
 %%ASSIMP%%share/thumbnailers/f3d-plugin-assimp.thumbnailer

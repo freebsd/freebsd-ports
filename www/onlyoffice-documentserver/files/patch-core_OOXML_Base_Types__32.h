@@ -1,5 +1,5 @@
---- ./core/OOXML/Base/Types_32.h.orig	2023-02-13 11:19:10.378060000 +0100
-+++ ./core/OOXML/Base/Types_32.h	2023-02-13 11:19:35.144374000 +0100
+--- core/OOXML/Base/Types_32.h.orig	2025-08-02 18:33:34 UTC
++++ core/OOXML/Base/Types_32.h
 @@ -38,7 +38,7 @@
  	typedef unsigned __int16	_UINT16;
  	typedef unsigned __int32	_UINT32;

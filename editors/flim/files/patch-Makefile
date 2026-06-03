@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-03-23 16:22:48 UTC
++++ Makefile
+@@ -38,7 +38,7 @@ check:
+ 	$(EMACS) $(FLAGS) -f check-flim $(PREFIX) $(LISPDIR) \
+ 		$(VERSION_SPECIFIC_LISPDIR) $(PACKAGE_LISPDIR)
+ 
+-install:	elc
++install:
+ 	$(EMACS) $(FLAGS) -f install-flim $(PREFIX) $(LISPDIR) \
+ 		$(VERSION_SPECIFIC_LISPDIR) $(PACKAGE_LISPDIR)
+ 

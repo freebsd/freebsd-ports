@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=7.4.2:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/

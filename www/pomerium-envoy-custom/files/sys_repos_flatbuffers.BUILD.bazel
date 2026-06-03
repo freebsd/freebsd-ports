@@ -1,0 +1,20 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+# flatbuffers: header-only use on FreeBSD.
+# The code that uses flatbuffers (cel-cpp flatbuffers_backed_impl, Envoy CEL expr filter)
+# only calls inline/template APIs from flatbuffers/flatbuffers.h and flatbuffers/reflection.h.
+# libflatbuffers.so exports the schema Parser and codegen utilities, which are not used
+# at runtime.  Declare as a header-only cc_library so no shared library is needed.
+
+cc_library(
+    name = "flatbuffers",
+    hdrs = glob(["flatbuffers/*.h"]),
+    includes = [""],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "all",
+    srcs = glob(["flatbuffers/*.h"]),
+    visibility = ["//visibility:public"],
+)

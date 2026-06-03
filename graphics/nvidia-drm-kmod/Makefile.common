@@ -20,7 +20,7 @@ USES=		kmod uidfix tar:xz
 
 SUB_FILES=	20-nvidia-drm-outputclass.conf
 
-RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver${PKGNAMESUFFIX}
+RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
 
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.common"
@@ -34,6 +34,10 @@ MAKE_ENV+=	DEBUG_FLAGS=${DEBUG_FLAGS} \
 			DRMKMODDIR=${WRKDIR}/drm-kmod-${DRM_KMOD_GH_TAGNAME}/
 WRKSRC=		${WRKDIR}/NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}/
 WRKSRC_SUBDIR=	src/nvidia-drm/
+
+.if ${NVVERSION} < 595.07105 && empty(.CURDIR:M*graphics/nvidia-drm-5*)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c-20250918-01
+.endif
 
 .if ${NVVERSION} < 565.00000
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-conftest.h
@@ -82,3 +86,7 @@ post-patch:
 	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
 			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
 			-e "$$linenum,+2d" ${WRKSRC}/../nvidia/nv-freebsd.h
+	# Workaround for build failure on any base without pm_vt_switch_required().
+	# 13.5, 14.3 and 15.0 doesn't have the stub (blank) function.
+	${REINPLACE_CMD} -e 's/.*pm_vt_switch_required(dev->dev, true);.*/#if __FreeBSD_version >= 1403507 \&\& __FreeBSD_version < 1500000 || __FreeBSD_version >= 1500504\n&\n#endif/' \
+		${WRKSRC}/nvidia-drm-drv.c

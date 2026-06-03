@@ -1,0 +1,3 @@
+zig2tuple is a FreeBSD ports utility that converts Zig Object Notation
+dependency entries (build.zig.zon files) to the ZIG_TUPLE knob that is later
+consumed the USES=zig machinery.

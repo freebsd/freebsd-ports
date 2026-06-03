@@ -1,8 +1,8 @@
 bin/ares
-%%TOOLS%%bin/arm7tdmi
+%%TOOLSARM7TDMI%%bin/arm7tdmi
 %%TOOLS%%bin/genius
 %%TOOLS%%bin/i8080
-%%TOOLS%%bin/m68000
+%%TOOLSM68000%%bin/m68000
 %%TOOLS%%bin/mame2bml
 %%TOOLS%%bin/mia
 bin/sourcery

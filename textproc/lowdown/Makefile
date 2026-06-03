@@ -1,5 +1,5 @@
 PORTNAME=	lowdown
-PORTVERSION=	2.0.2
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
@@ -9,7 +9,6 @@ WWW=		https://kristaps.bsd.lv/lowdown/
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdiff.a:textproc/libdiff
 LDFLAGS+=	-lmd
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}" MANDIR=${PREFIX}/share/man
 
@@ -20,5 +19,6 @@ INSTALL_TARGET=	install install_libs
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-diff
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblowdown.so.3
 
 .include <bsd.port.mk>

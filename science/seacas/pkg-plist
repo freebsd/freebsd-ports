@@ -28,6 +28,7 @@ bin/genshell
 bin/getopt.seacas
 bin/gjoin
 bin/grepos
+bin/grope
 bin/io_info
 bin/io_modify
 bin/io_shell
@@ -45,7 +46,6 @@ bin/slice
 bin/sphgen
 bin/txtexo
 bin/zellij
-grope
 include/CatalystCGNSMeshBase.h
 include/CatalystExodusMeshBase.h
 include/CatalystManagerBase.h
@@ -233,7 +233,6 @@ include/Iovs_exodus_DatabaseIO.h
 include/Iovs_exodus_IOFactory.h
 include/SEACASIoss_config.h
 include/SeacasConfig.cmake
-include/Seacas_version_date.h
 include/Zoltan_config.h
 include/apr_symrec.h
 include/apr_tokenize.h
@@ -468,12 +467,11 @@ lib/libblotlib.a
 lib/libchaco.so
 lib/libchaco.so.2
 lib/libchaco.so.2.0
-lib/libexoIIv2c.a
+lib/libexoIIv2for.a
 lib/libexoIIv2for32.a
 lib/libexoIIv2for32.so
 lib/libexoIIv2for32.so.2
 lib/libexoIIv2for32.so.2.0
-lib/libexodus.a
 lib/libexodus.so
 lib/libexodus.so.2
 lib/libexodus.so.2.0
@@ -516,4 +514,3 @@ lib/tests/exomerge_unit_test.e
 lib/tests/exomerge_unit_test.py
 lib/tests/test-assembly.exo
 lib/tests/test_exodus3.py
-libexoIIv2for.a

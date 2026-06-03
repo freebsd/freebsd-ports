@@ -1,6 +1,5 @@
 PORTNAME=	DRR
-PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTVERSION=	0.0.5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,10 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/DRR/
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS=	R-cran-kernlab>0:science/R-cran-kernlab \
-		R-cran-CVST>0:math/R-cran-CVST
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-CVST>0:math/R-cran-CVST \
+		R-cran-kernlab>0:science/R-cran-kernlab
 
 USES=		cran:auto-plist
 

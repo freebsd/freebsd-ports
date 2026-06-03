@@ -98,13 +98,13 @@ include/guile/%%GUILE_VER%%/libguile/scm.h
 include/guile/%%GUILE_VER%%/libguile/scmconfig.h
 include/guile/%%GUILE_VER%%/libguile/scmsigs.h
 include/guile/%%GUILE_VER%%/libguile/script.h
+include/guile/%%GUILE_VER%%/libguile/setjump-win.h
 include/guile/%%GUILE_VER%%/libguile/simpos.h
 include/guile/%%GUILE_VER%%/libguile/smob.h
 include/guile/%%GUILE_VER%%/libguile/snarf.h
 include/guile/%%GUILE_VER%%/libguile/socket.h
 include/guile/%%GUILE_VER%%/libguile/sort.h
 include/guile/%%GUILE_VER%%/libguile/srcprop.h
-include/guile/%%GUILE_VER%%/libguile/srfi-1.h
 include/guile/%%GUILE_VER%%/libguile/srfi-13.h
 include/guile/%%GUILE_VER%%/libguile/srfi-14.h
 include/guile/%%GUILE_VER%%/libguile/srfi-4.h
@@ -306,6 +306,7 @@ lib/guile/%%GUILE_VER%%/ccache/oop/goops/active-slot.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/composite-slot.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/describe.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/internal.go
+lib/guile/%%GUILE_VER%%/ccache/oop/goops/keyword-formals.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/save.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/simple.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/stklos.go
@@ -385,7 +386,10 @@ lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-171/gnu.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-171/meta.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-18.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-19.go
+lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-197.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-2.go
+lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-207.go
+lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-244.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-26.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-27.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-28.go
@@ -404,6 +408,7 @@ lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-45.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-6.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-60.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-64.go
+lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-64/automake.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-67.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-69.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-71.go
@@ -481,10 +486,9 @@ lib/guile/%%GUILE_VER%%/extensions/guile-readline.so.0.0.0
 lib/libguile-%%GUILE_VER%%.a
 lib/libguile-%%GUILE_VER%%.so
 lib/libguile-%%GUILE_VER%%.so.1
-lib/libguile-%%GUILE_VER%%.so.1.7.0
-lib/libguile-%%GUILE_VER%%.so.1.7.0-gdb.scm
+lib/libguile-%%GUILE_VER%%.so.1.7.1
+lib/libguile-%%GUILE_VER%%.so.1.7.1-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
-share/man/man1/guile%%GUILE_SFX%%.1.gz
 @comment share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
@@ -664,6 +668,7 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/composite-slot.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/describe.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/internal.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/keyword-formals.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/save.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/simple.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/stklos.scm
@@ -743,7 +748,12 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-171/meta.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-18.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-19.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-197.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-2.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-207.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-207/upstream/base64.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-207/upstream/bytestrings-impl.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-244.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-26.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-27.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-28.scm
@@ -763,7 +773,7 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-6.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-60.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-64.scm
-%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-64/testing.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-64/automake.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-67.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-67/compare.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-69.scm
@@ -843,3 +853,4 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/web/server.scm
 %%DATADIR%%/%%GUILE_VER%%/web/server/http.scm
 %%DATADIR%%/%%GUILE_VER%%/web/uri.scm
+share/man/man1/guile%%GUILE_SFX%%.1.gz

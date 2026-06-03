@@ -48,7 +48,7 @@ bin/mecrisp-stellaris
 %%DATADIR%%/experimental/vocs-0.7.0/README
 %%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-Classes-1.log
 %%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-Classes-2.log
-%%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-DataTypes.log.
+%%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-DataTypes.log
 %%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-Registers.log
 %%DATADIR%%/experimental/vocs-0.7.0/examples/lm4f120/GPIO.txt
 %%DATADIR%%/experimental/vocs-0.7.0/examples/lm4f120/Pendulum

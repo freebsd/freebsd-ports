@@ -1,6 +1,5 @@
 PORTNAME=	darktable
-PORTVERSION=	5.2.0
-PORTREVISION=	0
+PORTVERSION=	5.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -42,9 +41,10 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome jpeg \
-		llvm:build lua perl5 pkgconfig sdl shebangfix sqlite \
-		tar:xz xorg
+# Note that compiler-related Uses are defined later in this Makefile, based on
+# the value of `${ARCH}`.
+USES=		cmake desktop-file-utils gl gnome jpeg lua perl5 pkgconfig sdl \
+		shebangfix sqlite tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -65,7 +65,7 @@ CFLAGS+=	-fopenmp -Wno-thread-safety-analysis
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-OPTIONS_DEFINE=		DOCS GMIC GRAPHMAGICK LIBSECRET NLS PRINT TOOLS
+OPTIONS_DEFINE=		DOCS GMIC GRAPHMAGICK IMAGEMAGICK LIBSECRET NLS PRINT TOOLS
 OPTIONS_DEFAULT=	PRINT
 OPTIONS_SUB=		yes
 
@@ -78,6 +78,9 @@ GMIC_CMAKE_BOOL=	USE_GMIC
 
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
+
+IMAGEMAGICK_USES=	magick:7
+IMAGEMAGICK_CMAKE_BOOL=	USE_IMAGEMAGICK
 
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	USE_LIBSECRET
@@ -104,6 +107,19 @@ PLIST_SUB+=	NO_OPENCL="@comment "
 .else
 PLIST_SUB+=	NO_OPENCL=""
 .endif
+
+.if ${ARCH} == powerpc64le
+LDFLAGS+=	-lexecinfo
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lib
+.endif
+# `llvm:build` must be added after `compiler:*` above. Otherwise it triggers
+# the following warning from Mk/compiler.mk:
+#
+#     make: .../Mk/Uses/compiler.mk:86: warning: Command "/usr/local/llvm19/bin/clang --version" exited with status 127
+#     make: .../Mk/Uses/compiler.mk:134: warning: Command "/usr/local/llvm19/bin/clang++ -### /dev/null 2>&1" exited with status 127
+USES+=		llvm:build
 
 .include <bsd.port.pre.mk>
 

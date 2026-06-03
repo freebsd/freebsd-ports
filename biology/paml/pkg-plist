@@ -111,6 +111,13 @@ bin/yn00
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/brown.trees
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeml.ctl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codonml.ctl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combine-mcmc/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combine-mcmc/to_combine/mcmc_1.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combine-mcmc/to_combine/mcmc_21.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combine-mcmc/to_combine/mcmc_3.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combine-mcmc/to_combine/mcmc_5.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combine-mcmc/wrong_file/mcmc_4.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dating-cross-bracing/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dNdSGene1.nuc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dat/MtZoa.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dat/cpREV10.dat

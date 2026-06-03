@@ -1,6 +1,6 @@
 PORTNAME=	dorst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.4
+DISTVERSION=	0.20.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	charlesrocket
 
 .if ${FLAVOR:U} == gtk
-USES+=			desktop-file-utils gnome
+USES+=			gnome
 USE_GNOME=		glib20 gtk40 libadwaita
 CARGO_FEATURES+=	gui
 
@@ -37,7 +37,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/share/org.hellbyte.dorst.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/org.hellbyte.dorst.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/org.hellbyte.dorst.png
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
 
 PLIST_FILES+=	bin/dorst

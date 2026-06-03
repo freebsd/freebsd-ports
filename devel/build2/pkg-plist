@@ -1,6 +1,8 @@
 bin/b
 bin/bdep
 bin/bpkg
+bin/bx
+include/byte-order.h
 include/libbuild2/action.hxx
 include/libbuild2/adhoc-rule-buildscript.hxx
 include/libbuild2/adhoc-rule-cxx.hxx
@@ -9,6 +11,7 @@ include/libbuild2/algorithm.hxx
 include/libbuild2/algorithm.ixx
 include/libbuild2/autoconf/export.hxx
 include/libbuild2/autoconf/init.hxx
+include/libbuild2/autoconf/module.hxx
 include/libbuild2/autoconf/rule.hxx
 include/libbuild2/b-cmdline.hxx
 include/libbuild2/b-options.hxx
@@ -40,6 +43,7 @@ include/libbuild2/cc/common.hxx
 include/libbuild2/cc/common.ixx
 include/libbuild2/cc/common.txx
 include/libbuild2/cc/compile-rule.hxx
+include/libbuild2/cc/compiledb.hxx
 include/libbuild2/cc/export.hxx
 include/libbuild2/cc/guess.hxx
 include/libbuild2/cc/init.hxx
@@ -138,6 +142,11 @@ include/libbuild2/script/timeout.hxx
 include/libbuild2/script/timeout.ixx
 include/libbuild2/script/token.hxx
 include/libbuild2/search.hxx
+include/libbuild2/shell/script/lexer.hxx
+include/libbuild2/shell/script/parser.hxx
+include/libbuild2/shell/script/runner.hxx
+include/libbuild2/shell/script/script.hxx
+include/libbuild2/shell/script/token.hxx
 include/libbuild2/target-key.hxx
 include/libbuild2/target-state.hxx
 include/libbuild2/target-type.hxx
@@ -166,11 +175,11 @@ include/libbuild2/variable.hxx
 include/libbuild2/variable.ixx
 include/libbuild2/variable.txx
 include/libbuild2/version.hxx
+include/libbuild2/version-snapshot.hxx
 include/libbuild2/version/export.hxx
 include/libbuild2/version/init.hxx
 include/libbuild2/version/module.hxx
 include/libbuild2/version/rule.hxx
-include/libbuild2/version/snapshot.hxx
 include/libbuild2/version/utility.hxx
 include/libbutl/b.hxx
 include/libbutl/b.ixx
@@ -179,6 +188,7 @@ include/libbutl/base64.hxx
 include/libbutl/bufstreambuf.hxx
 include/libbutl/builtin.hxx
 include/libbutl/builtin.ixx
+include/libbutl/builtin.txx
 include/libbutl/char-scanner.hxx
 include/libbutl/char-scanner.ixx
 include/libbutl/char-scanner.txx
@@ -279,9 +289,10 @@ include/libbutl/uuid.hxx
 include/libbutl/uuid.ixx
 include/libbutl/vector-view.hxx
 include/libbutl/version.hxx
+include/libbutl/xxh64.hxx
 lib/libbpkg-%%SOVERSION%%.so
 lib/libbuild2-%%SOVERSION%%.so
-lib/libbuild2-autoconf-%%SOVERSION%%-0.3.so
+lib/libbuild2-autoconf-%%SOVERSION%%-0.4.so
 lib/libbuild2-autoconf-%%SOVERSION%%.so
 lib/libbuild2-autoconf.so
 lib/libbuild2-bash-%%SOVERSION%%-%%SOVERSION%%.so
@@ -305,7 +316,7 @@ lib/libbuild2-cxx.so
 lib/libbuild2-in-%%SOVERSION%%-%%SOVERSION%%.so
 lib/libbuild2-in-%%SOVERSION%%.so
 lib/libbuild2-in.so
-lib/libbuild2-kconfig-%%SOVERSION%%-0.3.so
+lib/libbuild2-kconfig-%%SOVERSION%%-0.4.so
 lib/libbuild2-kconfig-%%SOVERSION%%.so
 lib/libbuild2-kconfig.so
 lib/libbuild2-version-%%SOVERSION%%-%%SOVERSION%%.so
@@ -343,8 +354,6 @@ libdata/pkgconfig/libbutl-pkg-config.pc
 libdata/pkgconfig/libbutl-pkg-config.shared.pc
 libdata/pkgconfig/libbutl.pc
 libdata/pkgconfig/libbutl.shared.pc
-%%DATADIR%%/libbuild2/cc/std.compat.cppm
-%%DATADIR%%/libbuild2/cc/std.cppm
 share/doc/bdep/AUTHORS
 share/doc/bdep/LEGAL
 share/doc/bdep/LICENSE
@@ -418,6 +427,7 @@ share/doc/bpkg/manifest
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/b.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/bx.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/build2-build-system-manual-a4.pdf
 %%PORTDOCS%%%%DOCSDIR%%/build2-build-system-manual-a4.ps
 %%PORTDOCS%%%%DOCSDIR%%/build2-build-system-manual-letter.pdf
@@ -487,3 +497,4 @@ share/man/man1/bpkg-rep-remove.1.gz
 share/man/man1/bpkg-repository-signing.1.gz
 share/man/man1/bpkg-repository-types.1.gz
 share/man/man1/bpkg.1.gz
+share/man/man1/bx.1.gz

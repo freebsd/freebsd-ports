@@ -1,6 +1,6 @@
 PORTNAME=	uhd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.8.0.0
+DISTVERSION=	4.9.0.1
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 DIST_SUBDIR=	${PORTNAME}
@@ -10,21 +10,21 @@ COMMENT=	Ettus Research UHD driver framework
 WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 
 # See https://www.ettus.com/sdr-software/licenses/.  Dual license
-# under GPLv3 and and "Alternate License" whose terms are not documented
+# under GPLv3 and "Alternate License" whose terms are not documented
 # on the web site (contact info@ettus.com).  Mark as GPLv3 for now
 # until terms of the "Alternate License" are made clear.  When that
 # is understood and if appropriate, we can add that license here.
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	${PY_BOOST} \
-		libboost_system.so:devel/boost-libs
-BUILD_DEPENDS=	flatc:devel/flatbuffers \
+		libboost_thread.so:devel/boost-libs
+BUILD_DEPENDS=	\
 		orcc:devel/orc \
 		cheetah-analyze:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		rst2html:textproc/py-docutils@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
@@ -33,10 +33,6 @@ USES=		compiler:c++14-lang cmake ncurses pkgconfig \
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	EttusResearch
-
-BROKEN_FreeBSD_13_aarch64=	fails to configure: Could not find standard set_new_handler function
-BROKEN_FreeBSD_13_armv6=	fails to configure: Could not find standard set_new_handler function
-BROKEN_FreeBSD_13_armv7=	fails to configure: Could not find standard set_new_handler function
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 #CXXFLAGS_amd64=	-msse2 -std=c++11
@@ -49,7 +45,7 @@ SHEBANG_GLOB=	*.py *.py.in *_bist usrp_update*
 
 CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
-#CMAKE_ARGS+=	--debug-output --trace
+CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${WRKSRC}/host/include ${LOCALBASE}/include"
 
 OPTIONS_DEFINE=		DOCS DOXYGEN
 OPTIONS_DEFAULT=	DOCS
@@ -61,15 +57,6 @@ DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON"
 DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
 			-DENABLE_MANUAL:STRING="OFF"
 DOXYGEN_PORTDOCS=	doxygen
-
-#
-# XXX N.B. uhd compile will fail if the generated flatbuffers
-# files are out of date with current version of flatbuffers.
-# There is likely a better way of doing this, but this works.
-pre-configure:
-.for f in cal_metadata.fbs iq_cal.fbs dsa_cal.fbs pwr_cal.fbs
-	(cd ${WRKSRC}/host/include/uhd/cal;flatc --cpp ${f})
-.endfor
 
 do-install:
 # install host component

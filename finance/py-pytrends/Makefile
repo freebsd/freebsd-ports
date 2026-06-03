@@ -1,6 +1,6 @@
 PORTNAME=	pytrends
 DISTVERSION=	4.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=0.25:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest # many tests fail, see https://github.com/GeneralMills/pytrends/issues/608

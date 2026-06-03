@@ -1,5 +1,6 @@
 PORTNAME=	smashing
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	rubygem-coffee-script>=2.4<3:devel/rubygem-coffee-script \
 		rubygem-sinatra2>=2.2<3:www/rubygem-sinatra2 \
 		rubygem-sinatra-contrib2>=2.0<3:www/rubygem-sinatra-contrib2 \
 		rubygem-sprockets>=4.0<5:devel/rubygem-sprockets \
-		rubygem-thin>=1.7<2:www/rubygem-thin \
+		rubygem-thin>=1.7:www/rubygem-thin \
 		rubygem-thor>=1.0<2:devel/rubygem-thor
 
 USES=		cpe gem

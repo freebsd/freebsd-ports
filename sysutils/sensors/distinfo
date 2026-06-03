@@ -1,0 +1,5 @@
+TIMESTAMP = 1753639972
+SHA256 (sensors/sensors-0.6.tar.gz) = 6304f7f6da342c1a856deebb16784437d6a7001e027c1fab6be38d238a5f5b55
+SIZE (sensors/sensors-0.6.tar.gz) = 3257
+SHA256 (sensors/LICENSE) = b4bb8570bcaaf370e936763a1cf5dade6994c8fceb93bff22c9b768b8184f14f
+SIZE (sensors/LICENSE) = 1356

@@ -1,0 +1,2 @@
+syslog_protocol is a syslog protocol for ruby which roughly conforms to the
+murky shade of grey known as http://www.faqs.org/rfcs/rfc3164.html

@@ -1,0 +1,4 @@
+Typing stubs for boto.
+
+This package provides type stubs for boto, the Python interface to Amazon
+Web Services.

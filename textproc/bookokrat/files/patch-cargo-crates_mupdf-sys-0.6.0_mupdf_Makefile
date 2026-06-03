@@ -1,0 +1,13 @@
+--- cargo-crates/mupdf-sys-0.6.0/mupdf/Makefile.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/mupdf-sys-0.6.0/mupdf/Makefile
+@@ -54,6 +54,10 @@ endif
+   USE_ARGUMENT_FILE=no
+ endif
+ 
++ifeq ($(OS),FreeBSD)
++  USE_ARGUMENT_FILE=no
++endif
++
+ # --- Commands ---
+ 
+ ifneq ($(verbose),yes)

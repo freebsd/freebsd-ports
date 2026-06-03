@@ -1,5 +1,5 @@
 PORTNAME=	httparty
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -20,9 +20,8 @@ USES=		cpe gem
 
 NO_ARCH=	yes
 
-CPE_VENDOR=	john_nunemaker
+PLIST_FILES=	bin/httparty
 
-post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/httparty
+CPE_VENDOR=	john_nunemaker
 
 .include <bsd.port.mk>

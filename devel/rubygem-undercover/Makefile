@@ -1,5 +1,5 @@
 PORTNAME=	undercover
-PORTVERSION=	0.7.4
+PORTVERSION=	0.8.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-benchmark>=0:benchmarks/rubygem-benchmark \
 		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
 		rubygem-imagen>=0.2.0:devel/rubygem-imagen \
 		rubygem-rainbow>=2.1<4.0:devel/rubygem-rainbow \

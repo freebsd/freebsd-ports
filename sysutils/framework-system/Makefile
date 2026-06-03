@@ -1,7 +1,7 @@
 PORTNAME=	framework-system
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.4.0
-PORTREVISION=	2
+DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dhs@frame.work
@@ -20,7 +20,6 @@ GH_ACCOUNT=	FrameworkComputer
 
 CARGO_BUILD_ARGS=	-p framework_tool
 CARGO_INSTALL_PATH=	framework_tool
-CARGO_FEATURES=		--no-default-features freebsd
 
 PLIST_FILES=	bin/framework_tool
 

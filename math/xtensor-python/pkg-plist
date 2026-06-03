@@ -7,6 +7,7 @@ include/xtensor-python/pytensor.hpp
 include/xtensor-python/pyvectorize.hpp
 include/xtensor-python/xtensor_python_config.hpp
 include/xtensor-python/xtensor_type_caster_base.hpp
-lib/cmake/xtensor-python/xtensor-pythonConfig.cmake
-lib/cmake/xtensor-python/xtensor-pythonConfigVersion.cmake
-lib/cmake/xtensor-python/xtensor-pythonTargets.cmake
+share/cmake/xtensor-python/xtensor-pythonConfig.cmake
+share/cmake/xtensor-python/xtensor-pythonConfigVersion.cmake
+share/cmake/xtensor-python/xtensor-pythonTargets.cmake
+share/pkgconfig/xtensor-python.pc

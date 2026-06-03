@@ -5,7 +5,7 @@
      }
  
 +#ifdef Q_OS_FREEBSD
-+    dirList.append("/usr/local/share/qcad/" + subDirectory);
++    dirList.append("%%DATADIR%%" + subDirectory);
 +#endif
 +
  #ifdef Q_OS_MAC

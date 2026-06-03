@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -87,3 +87,9 @@ ban-relative-imports = "all"
+ 
+ [tool.ruff.lint.flake8-tidy-imports]
+ ban-relative-imports = "all"
++
++[tool.pytest.ini_options]
++testpaths = ["test"]
++python_files = ["test_*.py"]
++python_classes = ["Test*"]
++python_functions = ["test_*"]

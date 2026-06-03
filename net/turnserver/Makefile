@@ -1,9 +1,8 @@
 PORTNAME=	turnserver
-DISTVERSION=	4.6.3
+DISTVERSION=	4.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
 		http://coturn.net/turnserver/extradocs/:xdocs
-PKGNAMEPREFIX=
 DISTFILES=	turn.extra.docs-2.0.0.1.tar.gz:xdocs
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -96,27 +95,24 @@ SQLITE_USES=	sqlite
 SQLITE_CONFIGURE_ENV_OFF=	TURN_NO_SQLITE=1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnserver ${STAGEDIR}${PREFIX}/bin/turnserver
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnadmin ${STAGEDIR}${PREFIX}/bin/turnadmin
-.for f in ${_BIN_UTILS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnutils_${f} ${STAGEDIR}${PREFIX}/bin/
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnserver ${WRKSRC}/bin/turnadmin \
+			${_BIN_UTILS:S|^|${WRKSRC}/bin/turnutils_|} \
+		${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MANPAGES} \
 		${STAGEDIR}${PREFIX}/share/man/man1)
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/turndb && ${INSTALL_DATA} schema.sql schema.userdb.redis \
-		schema.stats.redis ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC}/turndb && ${INSTALL_SCRIPT} testredisdbsetup.sh schema.mongo.sh \
-		testmongosetup.sh ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/turndb && \
+		${INSTALL_DATA} schema.sql schema.userdb.redis \
+			schema.stats.redis ${STAGEDIR}${DATADIR} && \
+		${INSTALL_SCRIPT} testredisdbsetup.sh schema.mongo.sh \
+			testmongosetup.sh ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} ${WRKSRC}/lib/libturnclient.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnserver.conf \
-		${STAGEDIR}${PREFIX}/etc/turnserver.conf.default
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/turn
+		${STAGEDIR}${PREFIX}/etc/turnserver.conf.sample
 	(cd ${WRKSRC}/include/turn && ${COPYTREE_SHARE} "client ns_turn_defs.h" \
 		${STAGEDIR}${PREFIX}/include/turn)
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/turndocs/docs && ${COPYTREE_SHARE} "${DOCS}" ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTREADMEDOCS} ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/postinstall.txt
@@ -124,10 +120,9 @@ do-install-DOCS-on:
 		schema.userdb.redis schema.stats.redis ${STAGEDIR}${DOCSDIR})
 
 do-install-EXAMPLES-on:
-.for dir in basic loadbalance longtermsecure longtermsecuredb restapi selfloadbalance
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts/${dir}
-.endfor
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/etc
+	${MKDIR} ${basic loadbalance longtermsecure longtermsecuredb restapi selfloadbalance \
+		:L:S|^|${STAGEDIR}${EXAMPLESDIR}/scripts/|} \
+		${STAGEDIR}${EXAMPLESDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/examples/scripts/readme.txt \
 		${STAGEDIR}${EXAMPLESDIR}/scripts
 	(cd ${WRKSRC}/examples/etc && ${INSTALL_DATA} ${_ETC_EXAMPLES} \

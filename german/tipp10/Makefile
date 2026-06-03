@@ -1,6 +1,6 @@
 PORTNAME=	tipp10
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.3
+DISTVERSION=	3.3.4
 CATEGORIES=	german education
 
 MAINTAINER=	nick.lott@gmail.com

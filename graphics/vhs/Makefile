@@ -1,7 +1,7 @@
 PORTNAME=	vhs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	1
+DISTVERSION=	0.11.0
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -34,6 +34,6 @@ UNGOOGLED_CHROMIUM_RUN_DEPENDS=	ungoogled-chromium>0:www/ungoogled-chromium
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the VHS repository to get the value of GITID.
-GITID=		710bb769af94d844ffdc3c8b737a6775813fc0a4
+GITID=		c6af91a25fed05852338a5ed58d9b099b8369a1e
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+include/bstraux.h
+include/bstrlib.h
+include/buniutil.h
+include/utf8util.h
+lib/libbstring.so
+lib/libbstring.so.1
+lib/libbstring.so.1.1.0
+libdata/pkgconfig/bstring.pc

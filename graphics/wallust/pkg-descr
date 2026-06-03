@@ -1,0 +1,3 @@
+wallust is a command line tool for creating 16 color palettes, since
+it was the original intent of pywal, the tool that inspired the
+creation of wallust.

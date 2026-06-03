@@ -1,10 +1,10 @@
 PORTNAME=	netbird
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.49.0
+DISTVERSION=	0.70.0
 PORTREVISION=	1
 CATEGORIES=	security net net-vpn
 
-MAINTAINER=	hakan.external@netbird.io
+MAINTAINER=	dev@netbird.io
 COMMENT=	Peer-to-peer VPN that seamlessly connects your devices
 WWW=		https://netbird.io/
 
@@ -23,8 +23,6 @@ GO_MODULE=	github.com/netbirdio/netbird
 GO_TARGET=	./client:${PORTNAME}
 GO_BUILDFLAGS=	-tags freebsd -o ${PORTNAME} -ldflags \
 		"-s -w -X github.com/netbirdio/netbird/version.version=${DISTVERSION}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 

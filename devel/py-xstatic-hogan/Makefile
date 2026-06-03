@@ -1,16 +1,14 @@
 PORTNAME=	xstatic-hogan
-PORTVERSION=	2.0.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	XStatic-Hogan-${PORTVERSION}
+DISTNAME=	xstatic_hogan-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Hogan (XStatic packaging standard)
-WWW=		https://twitter.github.io/hogan.js/ \
-		https://github.com/openstack/xstatic-hogan \
-		https://github.com/twitter/hogan.js
+COMMENT=	Hogan ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-hogan \
+		https://github.com/openstack/xstatic-hogan
 
 LICENSE=	APACHE20
 

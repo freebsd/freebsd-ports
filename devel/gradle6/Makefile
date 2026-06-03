@@ -1,5 +1,6 @@
 PORTNAME=	gradle
 PORTVERSION=	6.9.4
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 PKGNAMESUFFIX=	6

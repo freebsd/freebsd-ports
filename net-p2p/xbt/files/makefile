@@ -23,7 +23,7 @@ CCACHE!=	command -v ccache
 	$(CCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 xbt_tracker: $(misc_OBJS) $(tracker_OBJS)
-	$(CXX) $(LDFLAGS) -o $@ $>$^ $(LIBS)
+	$(CXX) $(LDFLAGS) -o $@ $> $(LIBS)
 
 all: xbt_tracker
 

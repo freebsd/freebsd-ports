@@ -1,26 +1,26 @@
 PORTNAME=	Thrift
-PORTVERSION=	${THRIFT_PORTVERSION}	# need to keep this in sync with ../thrift see ../thrift/bsd.thrift.mk
+PORTVERSION=	0.22.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:JKING/thrift
 PKGNAMEPREFIX=	p5-
-DISTFILES=
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Thrift
-WWW=		https://thrift.apache.org/
+WWW=		https://metacpan.org/dist/Thrift
 
-BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector
-RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector
-FETCH_DEPENDS+=	${NONEXISTENT}:devel/thrift:extract
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		cpe perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
+
 CPE_VENDOR=	apache
 
-post-extract:
-	@${LN} -sfh \
-	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/perl ${WRKSRC}
-
-.include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>

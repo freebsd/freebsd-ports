@@ -1,5 +1,5 @@
 PORTNAME=	roadie-rails
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -11,7 +11,7 @@ WWW=		https://github.com/Mange/roadie-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-railties52>=5.1<8.1:www/rubygem-railties52 \
+RUN_DEPENDS=	rubygem-railties52>=5.1<8.2:www/rubygem-railties52 \
 		rubygem-roadie>=5.0<6:mail/rubygem-roadie
 
 USES=		gem shebangfix

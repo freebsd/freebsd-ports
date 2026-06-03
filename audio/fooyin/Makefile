@@ -1,11 +1,7 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.10.8
 CATEGORIES=	audio multimedia
-
-PATCH_SITES=	https://github.com/fooyin/fooyin/commit/
-PATCHFILES+=	e44e08abb33f01fe85cc896170c55dbf732ffcc9.patch:-p1 # Fix build with Qt >= 6.9.0
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	foobar2000 inspired audio player
@@ -21,16 +17,18 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libgme.so:audio/libgme \
 		libicui18n.so:devel/icu \
 		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
-		libtag.so:audio/taglib \
-		libvgm-player.so:audio/libvgm
+		libQCoro6Core.so:devel/qcoro \
+		libtag.so:audio/taglib
 
-USES=		cmake compiler:c++20-lang desktop-file-utils gl libarchive \
+USES=		cmake compiler:c++23-lang desktop-file-utils gl libarchive \
 		pkgconfig qt:6 sdl
 USE_GL=		opengl
 USE_QT=		base sqldriver-sqlite svg tools:build
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
+
+CXXFLAGS+=	-fexperimental-library
 
 CMAKE_OFF=	BUILD_ALSA \
 		BUILD_CCACHE \
@@ -39,6 +37,7 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_ALSA \
 		CMAKE_DISABLE_FIND_PACKAGE_Ebur128 \
 		CMAKE_DISABLE_FIND_PACKAGE_OpenMpt \
 		CMAKE_DISABLE_FIND_PACKAGE_PipeWire \
-		CMAKE_DISABLE_FIND_PACKAGE_SndFile
+		CMAKE_DISABLE_FIND_PACKAGE_SndFile \
+		CMAKE_DISABLE_FIND_PACKAGE_SoXR
 
 .include <bsd.port.mk>

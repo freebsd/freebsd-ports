@@ -80,12 +80,6 @@ WRKSRC=		${WRKDIR}/swift-project
 PLIST_SUB=	SWIFT_ARCH=${swift_arch} \
 		SWIFT_TARGET_TRIPLE=${swift_arch}-unknown-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1304500 && ${OSVERSION} <= 1305502
-BROKEN=		Unbuildable due to a problem with libc++. See <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=286342>
-.endif
-
 pre-patch:
 	@${MKDIR} ${WRKSRC}/llbuild/lib/LLBSQLite3
 
@@ -111,4 +105,4 @@ do-install:
 		${COPYTREE_SHARE} .${swift_install_prefix}/$${subdir} ${STAGEDIR} ; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

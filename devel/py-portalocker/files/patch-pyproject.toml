@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-06-14 13:20:20 UTC
++++ pyproject.toml
+@@ -6,8 +6,7 @@ authors = [{ name = 'Rick van Hattem', email = 'wolph@
+ name = 'portalocker'
+ dynamic = ['version']
+ authors = [{ name = 'Rick van Hattem', email = 'wolph@wol.ph' }]
+-license = 'BSD-3-Clause'
+-license-files = ['LICENSE']
++license = { text = 'BSD-3-Clause' }
+ description = 'Wraps the portalocker recipe for easy usage'
+ keywords = ['locking', 'locks', 'with', 'statement', 'windows', 'linux', 'unix']
+ readme = 'README.rst'

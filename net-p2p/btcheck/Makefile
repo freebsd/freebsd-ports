@@ -39,7 +39,7 @@ GNUTLS_USES=		localbase
 GNUTLS_CONFIGURE_ON=	--with-gnutls
 
 MBEDTLS_DESC=		Use SHA-1 implementation from mbedTLS/PolarSSL
-MBEDTLS_LIB_DEPENDS=	libmbedcrypto.so:security/mbedtls2
+MBEDTLS_LIB_DEPENDS=	libmbedcrypto.so:security/mbedtls3
 MBEDTLS_USES=		localbase
 MBEDTLS_CONFIGURE_ON=	--with-polarssl
 

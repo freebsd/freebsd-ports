@@ -1,4 +1,4 @@
---- Jamsettings.orig	2014-03-10 13:44:59 UTC
+--- Jamsettings.orig	2018-06-01 02:17:49 UTC
 +++ Jamsettings
 @@ -12,7 +12,7 @@ INSTALLROOT ?= "" ;
  

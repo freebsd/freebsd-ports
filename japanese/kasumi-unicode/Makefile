@@ -1,20 +1,20 @@
 PORTNAME=	kasumi-unicode
-DISTVERSION=	2.6
+DISTVERSION=	2.7
 CATEGORIES=	japanese
+MASTER_SITES=	https://github.com/fujiwarat/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Dictionary management tool for anthy-unicode
+WWW=		https://github.com/fujiwarat/kasumi-unicode/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libanthy-unicode.so:japanese/anthy-unicode
 
-USES=		autoreconf compiler:c++11-lang gmake gnome iconv:wchar_t \
+USES=		autoreconf compiler:c++14-lang gmake gnome iconv:wchar_t \
 		libtool pkgconfig
-USE_CXXSTD=	c++11
-USE_GITHUB=	yes
-GH_ACCOUNT=	fujiwarat
+USE_CXXSTD=	c++14
 USE_GNOME=	gtk30
 
 GNU_CONFIGURE=	yes

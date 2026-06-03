@@ -1,6 +1,6 @@
---- media/base/video_frame.h.orig	2025-06-19 07:37:57 UTC
+--- media/base/video_frame.h.orig	2026-05-11 13:57:04 UTC
 +++ media/base/video_frame.h
-@@ -42,7 +42,7 @@
+@@ -40,7 +40,7 @@
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/hdr_metadata.h"
  
@@ -9,7 +9,7 @@
  #include "base/files/scoped_file.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -88,7 +88,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -91,7 +91,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Backed by read-only shared memory.
@@ -17,9 +17,9 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      STORAGE_DMABUFS = 5,  // Each plane is stored into a DmaBuf.
  #endif
-     STORAGE_GPU_MEMORY_BUFFER = 6,
-@@ -420,7 +420,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
-       ReleaseMailboxAndGpuMemoryBufferCB mailbox_holder_and_gmb_release_cb,
+     STORAGE_MAPPABLE_SHARED_IMAGE = 6,
+@@ -324,7 +324,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+       base::span<const uint8_t> uv_data,
        base::TimeDelta timestamp);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -27,7 +27,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -733,7 +733,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -641,7 +641,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // wait for the included sync point.
    scoped_refptr<gpu::ClientSharedImage> shared_image() const;
  
@@ -36,9 +36,9 @@
    // The number of DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
    // remaining planes. Should be > 0 for STORAGE_DMABUFS.
-@@ -973,7 +973,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
-   // GpuMemoryBuffers. Clients will set this flag while creating a VideoFrame.
-   bool is_mappable_si_enabled_ = false;
+@@ -846,7 +846,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+   base::ReadOnlySharedMemoryRegion owned_shm_region_;
+   base::ReadOnlySharedMemoryMapping owned_shm_mapping_;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -62,6 +62,7 @@ IPV6_CONFIGURE_OFF=	--disable-inet6
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
+JACK_BROKEN=		does not compile with recent ffmpeg due to deprecated API
 
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-jpeg

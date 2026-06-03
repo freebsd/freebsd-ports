@@ -1,5 +1,5 @@
 PORTNAME=	orchestrator_client
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

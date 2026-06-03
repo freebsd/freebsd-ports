@@ -12,8 +12,6 @@ WWW=		https://github.com/python-dugong/python-dugong/
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR}
-
 USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
 

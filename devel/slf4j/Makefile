@@ -1,5 +1,6 @@
 PORTNAME=	slf4j
 DISTVERSION=	1.7.36
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/:source1
 JARFILES=	integration jcl-over-slf4j jul-to-slf4j log4j-over-slf4j \
@@ -8,7 +9,7 @@ JARFILES=	integration jcl-over-slf4j jul-to-slf4j log4j-over-slf4j \
 DISTFILES=	${JARFILES:C|(.+)|slf4j/\1/${DISTVERSION}/\1-${DISTVERSION}.jar:source1|}
 EXTRACT_ONLY=
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple facade or abstraction for various logging frameworks
 WWW=		https://www.slf4j.org/
 

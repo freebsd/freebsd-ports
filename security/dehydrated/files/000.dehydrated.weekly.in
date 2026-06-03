@@ -32,6 +32,8 @@ case "$weekly_dehydrated_enable" in
 		su -m "$weekly_dehydrated_user" -c "%%PREFIX%%/bin/dehydrated -c $weekly_dehydrated_flags"
 	fi
 
+	status=$?
+
 	echo "Deploying Let's Encrypt certificates:"
 
 	if [ -x "$weekly_dehydrated_deployscript" ]
@@ -40,6 +42,8 @@ case "$weekly_dehydrated_enable" in
 	else
 		echo 'Skipped, deploy script not set or not executable.'
 	fi
+
+	exit $status
         ;;
     *)
         ;;

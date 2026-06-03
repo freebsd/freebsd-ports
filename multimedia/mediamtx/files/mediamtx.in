@@ -9,7 +9,7 @@
 # mediamtx_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable mediamtx.
 # mediamtx_conf_dir (str):	Directory where ${name} configuration
-#				data is stored.
+#				file is stored.
 
 . /etc/rc.subr
 

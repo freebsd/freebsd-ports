@@ -1,0 +1,8 @@
+Application to create thumbnail images from video files and join them in
+one image. Features:
+
+* parallel processing
+* set number of rows and columns
+* toggle file info
+* set thumbnail width and spacing
+* set background and text colors

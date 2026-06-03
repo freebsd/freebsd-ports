@@ -1,5 +1,6 @@
 PORTNAME=	riemann
 DISTVERSION=	0.3.11
+PORTREVISION=	2
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 

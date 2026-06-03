@@ -1,5 +1,5 @@
 PORTNAME=	app-model
-DISTVERSION=	0.3.1
+DISTVERSION=	0.5.0
 CATEGORIES=	devel science
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}in-n-out>=0.1.5:devel/py-in-n-out@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psygnal>=0.3.4:devel/py-psygnal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psygnal>=0.10:devel/py-psygnal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-compat>=0.1.1:devel/py-pydantic-compat@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.8:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.8:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}QtPy>0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}superqt>0:x11-toolkits/py-superqt@${PY_FLAVOR}

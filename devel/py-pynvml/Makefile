@@ -1,5 +1,5 @@
 PORTNAME=	pynvml
-PORTVERSION=	12.0.0
+PORTVERSION=	13.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nvidia_ml_py>=12.0.0:devel/py-nvidia-ml-py@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
-# tests as of 12.0.0: 2 passed, 2 errors in 24.70s
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c 'import pynvml_utils; assert pynvml_utils.__version__ == "${PORTVERSION}"; assert "Provides a Python interface" in pynvml_utils.nvidia_smi.DeviceQuery("--help"); assert "Provides a Python interface" in pynvml_utils.nvidia_smi.XmlDeviceQuery("--help")'
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	topgrade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.0.2
-PORTREVISION=	4
+DISTVERSION=	16.9.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@scd-systems.net
@@ -11,9 +11,7 @@ WWW=		https://github.com/topgrade-rs/topgrade
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	sudo:security/sudo
-
-USES=		cargo
+USES=		cargo sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	topgrade-rs
 

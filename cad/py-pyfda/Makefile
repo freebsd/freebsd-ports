@@ -1,6 +1,6 @@
 PORTNAME=	pyfda
 PORTVERSION=	0.1
-PORTREVISION=	14
+PORTREVISION=	17
 DISTVERSIONSUFFIX=	rc6
 CATEGORIES=	cad python devel
 MASTER_SITES=	PYPI
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python pyqt:5

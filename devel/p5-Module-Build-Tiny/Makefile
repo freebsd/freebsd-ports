@@ -1,11 +1,11 @@
 # If you have compelling evidence that some ports need at least this version of
 # p5-Module-Build-Tiny to build, be sure to update the BUILD_DEPENDS version in
 # Mk/Uses/perl5.mk.
-
 PORTNAME=	Module-Build-Tiny
-PORTVERSION=	0.052
+PORTVERSION=	0.053
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:LEONT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -1,11 +1,11 @@
 PORTNAME=	UCD
-PORTVERSION=	16.0.0 # must sync with deskutils/gucharmap
+PORTVERSION=	17.0.0 # must sync with deskutils/gucharmap
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	https://www.unicode.org/Public/zipped/${DISTVERSION}/:src	\
-		https://raw.githubusercontent.com/unicode-org/unihan-database/0da97601945f29dbd34ebc1a2f3bbd28bf3f8462/:lic
+MASTER_SITES=	https://www.unicode.org/Public/${PORTVERSION}/${PORTNAME:tl}/:src	\
+		https://raw.githubusercontent.com/unicode-org/unihan-database/12da7b1f81ef6055b43d640095602e31bac4a17b/:lic
 DISTFILES=	${PORTNAME}.zip:src	\
-		LICENSE.md:lic
+		LICENSE:lic
 DIST_SUBDIR=	unicode-${PORTNAME}/${DISTVERSION}
 EXTRACT_ONLY=
 
@@ -15,7 +15,7 @@ WWW=		https://unicode.org/ucd/
 
 LICENSE=	Unicode_License_Agreement
 LICENSE_NAME=	Unicode License Agreement
-LICENSE_FILE=	${_DISTDIR}/LICENSE.md
+LICENSE_FILE=	${_DISTDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	HAN

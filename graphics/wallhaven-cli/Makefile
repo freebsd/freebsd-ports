@@ -1,10 +1,10 @@
 PORTNAME=	wallhaven-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.5
-PORTREVISION=	5
+DISTVERSION=	2.0.6
+PORTREVISION=	6
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	CLI for wallhaven to browse wallpapers in terminal
 WWW=		https://github.com/r3tr0ananas/wallhaven-cli
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	chafa:graphics/chafa \
 		fzf:textproc/fzf
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/r3tr0ananas/wallhaven-cli/v2
 GO_TARGET=	./wallhaven

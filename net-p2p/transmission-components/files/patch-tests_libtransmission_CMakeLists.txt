@@ -1,0 +1,11 @@
+--- tests/libtransmission/CMakeLists.txt.orig	2026-02-21 07:46:06 UTC
++++ tests/libtransmission/CMakeLists.txt
+@@ -78,7 +78,7 @@ target_link_libraries(libtransmission-test
+         gtestall
+         dht::dht
+         fmt::fmt-header-only
+-        libevent::event
++        libevent::core
+         WideInteger::WideInteger)
+ 
+ if(NOT CMAKE_CROSSCOMPILING OR CMAKE_CROSSCOMPILING_EMULATOR)

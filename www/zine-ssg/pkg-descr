@@ -1,0 +1,8 @@
+Zine is a static site generator similar in concept to www/gohugo.
+
+Zine turns your content into HTML, styles it using your layouts, and finally
+copies the result into an output directory that you can then publish on static
+hosting services like GitHub Pages.
+
+Zine has a companion port, devel/superhtml which acts as an LSP for the markdown
+content and HTML layouts.

@@ -1,14 +1,23 @@
---- pyproject.toml.orig	2023-02-15 05:35:05 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -3,7 +3,6 @@ authors = ["long2ice <long2ice@gmail.com>"]
+@@ -2,7 +2,7 @@ keywords = ["driver", "asyncio", "mysql"]
+ authors = [{ name = "long2ice", email = "long2ice@gmail.com" }]
  description = "A fast asyncio MySQL driver"
- documentation = "https://github.com/long2ice/asyncmy"
- homepage = "https://github.com/long2ice/asyncmy"
--include = ["CHANGELOG.md", "LICENSE", "README.md"]
  keywords = ["driver", "asyncio", "mysql"]
- license = "Apache-2.0"
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
  name = "asyncmy"
-@@ -40,7 +39,7 @@ uvloop = { version = "*", markers = "sys_platform != '
+ readme = "README.md"
+ requires-python = ">=3.9"
+@@ -15,7 +15,6 @@ repository = "https://github.com/long2ice/asyncmy.git"
+ repository = "https://github.com/long2ice/asyncmy.git"
+ 
+ [tool.poetry]
+-include = ["CHANGELOG.md", "LICENSE", "README.md"]
+ packages = [
+     { include = "asyncmy" },
+ ]
+@@ -41,7 +40,7 @@ generate-setup-file = true
  
  [tool.poetry.build]
  generate-setup-file = true

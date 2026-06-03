@@ -1,6 +1,6 @@
 PORTNAME=	game.libretro
-PORTVERSION=	21.0.6
-DISTVERSIONSUFFIX=	-Omega
+PORTVERSION=	22.2.5.20260320
+DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -20,8 +20,9 @@ GH_ACCOUNT=	kodi-game:DEFAULT \
 GH_PROJECT=	game.libretro:DEFAULT \
 		libretro-common:libretro \
 		rcheevos:rcheevos
-GH_TAGNAME=	2cb1ed77d3a31d73301447c60f600eaebccd2f07:DEFAULT \
-		50c15a88eb741cbe675743a282d8cc4c89421e3f:libretro \
+# See: https://github.com/kodi-game/game.libretro/tree/Piers/depends/common
+GH_TAGNAME=	d7be5fa3c7ef3cf727bc36ff65f1a067a198b45c:DEFAULT \
+		55ca668901e72eb885976c8c839e6903ecbb119d:libretro \
 		v9.2.0:rcheevos
 
 CMAKE_ON=	ENABLE_INTERNAL_LIBRETROCOMMON \

@@ -1,6 +1,6 @@
---- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2025-05-31 17:16:41 UTC
+--- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2026-04-15 11:25:12 UTC
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
  #include "core/fxge/fx_font.h"
  #include "core/fxge/systemfontinfo_iface.h"
  

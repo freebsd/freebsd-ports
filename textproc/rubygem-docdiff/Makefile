@@ -1,5 +1,5 @@
 PORTNAME=	docdiff
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,8 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/docdiff
 
-SHEBANG_FILES=	docdiffwebui.cgi langfilter.rb */*.rb lib/docdiff/*.rb
+SHEBANG_FILES=	*/*.rb \
+		doc/example/docdiffwebui.cgi \
+		lib/docdiff/*.rb
 
 .include <bsd.port.mk>

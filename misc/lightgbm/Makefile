@@ -1,11 +1,12 @@
 PORTNAME=	lightgbm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.0
+DISTVERSION=	4.6.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Gradient boosting framework that uses tree based learning algorithms
-WWW=		https://lightgbm.readthedocs.io/en/latest/
+WWW=		https://lightgbm.readthedocs.io/en/latest/ \
+		https://github.com/lightgbm-org/LightGBM
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

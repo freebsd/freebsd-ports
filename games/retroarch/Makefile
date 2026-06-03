@@ -1,9 +1,12 @@
 PORTNAME=	RetroArch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.0
+DISTVERSION=	1.22.2
+PORTREVISION=	1
 CATEGORIES=	games emulators
+MASTER_SITES=	https://github.com/libretro/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME:tl}-sourceonly-${DISTVERSION}
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	tilde@ultros.pro
 COMMENT=	Cross-platform entertainment system based on libretro API
 WWW=		https://github.com/libretro/RetroArch
 
@@ -20,10 +23,9 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 RUN_DEPENDS=	retroarch-assets>0:games/retroarch-assets \
 		libretro-core-info>0:games/libretro-core-info
 
-USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl
+USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl \
+		tar:xz
 CPE_VENDOR=	libretro
-USE_GITHUB=	yes
-GH_ACCOUNT=	libretro
 
 SHEBANG_FILES=	libretro-common/glsym/glgen.py libretro-common/glsym/rglgen.py \
 		tools/cg2glsl.py tools/vulkan_loader_generator.py
@@ -40,7 +42,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		ALSA CACA DOCS FFMPEG FREETYPE JACK OPENAL OPENGL OSS \
-			PULSEAUDIO QT SDL UDEV V4L X11
+			PIPEWIRE PULSEAUDIO QT SDL UDEV V4L X11
 OPTIONS_DEFINE_amd64=	WAYLAND # svgalib is x86 only
 OPTIONS_DEFINE_i386=	WAYLAND
 OPTIONS_DEFAULT=	FFMPEG FREETYPE OPENAL OPENGL OSS QT SDL UDEV V4L X11
@@ -68,6 +70,8 @@ OPENGL_USES=			gl
 OPENGL_USE=			GL=egl,gbm,gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 OSS_CONFIGURE_ENABLE=		oss
+PIPEWIRE_LIB_DEPENDS=		libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_CONFIGURE_ENABLE=	pipewire
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 QT_USES=			qt:6

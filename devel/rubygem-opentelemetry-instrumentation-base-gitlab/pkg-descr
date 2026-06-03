@@ -1,0 +1,7 @@
+OpenTelemetry Instrumentation Base contains the instrumentation base class, and
+the instrumentation registry. These modules provide a common interface to
+support the installation of auto instrumentation libraries. The instrumentation
+base is responsible for adding itself to the instrumentation registry as well as
+providing convenience hooks for the installation process. The instrumentation
+registry contains all the instrumentation to be installed during the SDK
+configuration process.

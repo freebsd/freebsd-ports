@@ -1,11 +1,11 @@
---- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2026-05-09 18:09:27 UTC
 +++ chrome/browser/extensions/api/tabs/tabs_api.cc
-@@ -945,7 +945,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
+@@ -1226,7 +1226,7 @@ ExtensionFunction::ResponseValue WindowsCreateFunction
  // created as minimized.
  // TODO(crbug.com/40254339): Remove this workaround when linux is fixed.
  // TODO(crbug.com/40254339): Find a fix for wayland as well.
--#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
-   if (new_window->initial_show_state() ==
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(SUPPORTS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))&& BUILDFLAG(SUPPORTS_OZONE_X11)
+   if (new_window->GetBrowserForMigrationOnly()->initial_show_state() ==
        ui::mojom::WindowShowState::kMinimized) {
-     new_window->window()->Minimize();
+     new_window->GetWindow()->Minimize();

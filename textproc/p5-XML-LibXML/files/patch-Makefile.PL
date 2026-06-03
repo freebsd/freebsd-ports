@@ -1,8 +1,8 @@
 Avoid using more Alien::* in ports tree.
 
---- Makefile.PL.orig	2022-09-30 03:26:14 UTC
+--- Makefile.PL.orig	2026-05-20 01:29:12 UTC
 +++ Makefile.PL
-@@ -17,15 +17,12 @@ use warnings;
+@@ -17,15 +17,12 @@ require 5.008001;
  
  require 5.008001;
  
@@ -18,7 +18,7 @@ Avoid using more Alien::* in ports tree.
    "Config" => 0,
    "ExtUtils::MakeMaker" => 0,
  );
-@@ -68,15 +65,13 @@ my %prereqs = (
+@@ -67,15 +64,13 @@ my %prereqs = (
    "warnings" => 0,
  );
  
@@ -36,5 +36,5 @@ Avoid using more Alien::* in ports tree.
 -  $xsbuild{$k} = (defined($base_val) ? ($base_val . ' ' . $v) : $v);
 -}
  
- my %WriteMakefileArgs = (
-   "NAME" => "XML::LibXML",
+ # Strip bogus -L/lib entries that Alien::Base::Wrapper sometimes injects
+ # (the directory does not exist on macOS and the linker warns about it).

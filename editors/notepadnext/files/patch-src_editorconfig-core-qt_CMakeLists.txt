@@ -1,0 +1,28 @@
+-- Replace the tests-only CMakeLists.txt with one that builds the editorconfig-core-qt static library.
+-- The original file only set up tests, not the library target that NotepadNext links against.
+--- src/editorconfig-core-qt/CMakeLists.txt.orig	2022-04-09 13:00:34 UTC
++++ src/editorconfig-core-qt/CMakeLists.txt
+@@ -1,13 +1,13 @@
+-# This file is used for testing only
++cmake_minimum_required(VERSION 3.16)
++project(editorconfig-core-qt LANGUAGES CXX)
+ 
+-# To perform the test, run `cmake .` at the root of the project tree followed
+-# by ctest .
++find_package(Qt6 COMPONENTS Core REQUIRED)
+ 
+-cmake_minimum_required(VERSION 2.6)
++set(CMAKE_AUTOMOC ON)
+ 
+-# Do not check any compiler
+-project(editorconfig-core-qt NONE)
+-
+-enable_testing()
+-set(EDITORCONFIG_CMD ${CMAKE_BINARY_DIR}/editorconfig-app.exe)
+-add_subdirectory(tests)
++add_library(editorconfig-core-qt STATIC
++    EditorConfig.cpp
++    EditorConfig.h
++)
++target_include_directories(editorconfig-core-qt PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++target_link_libraries(editorconfig-core-qt PUBLIC Qt6::Core)

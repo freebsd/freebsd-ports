@@ -1,5 +1,5 @@
 PORTNAME=	celluloid
-DISTVERSION=	0.29
+DISTVERSION=	0.30
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/${PORTNAME}-player/${PORTNAME}/releases/download/v${DISTVERSION}/
 

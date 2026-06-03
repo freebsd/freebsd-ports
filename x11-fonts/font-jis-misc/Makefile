@@ -1,13 +1,17 @@
 PORTNAME=	font-jis-misc
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+DISTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org miscellaneous JIS fonts
-WWW=		https://www.x.org/
+COMMENT=	X.Org japanese JIS X 0208 fonts
+WWW=		https://gitlab.freedesktop.org/xorg/font/jis-misc
 
-USES=		xorg-cat:font
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=		tar:xz xorg-cat:font
 
 NO_ARCH=	yes
 

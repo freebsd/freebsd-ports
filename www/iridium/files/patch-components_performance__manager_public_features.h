@@ -1,4 +1,4 @@
---- components/performance_manager/public/features.h.orig	2025-05-07 06:48:23 UTC
+--- components/performance_manager/public/features.h.orig	2025-12-10 15:04:57 UTC
 +++ components/performance_manager/public/features.h
 @@ -19,7 +19,7 @@ namespace performance_manager::features {
  

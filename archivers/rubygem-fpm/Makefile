@@ -1,5 +1,5 @@
 PORTNAME=	fpm
-PORTVERSION=	1.16.0
+PORTVERSION=	1.17.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-arr-pm>=0.0.11<0.1:devel/rubygem-arr-pm \
 		rubygem-backports>=2.6.2:devel/rubygem-backports \
-		rubygem-cabin>=0.6.0:devel/rubygem-cabin \
+		rubygem-cabin>=0.9.1:devel/rubygem-cabin \
 		rubygem-clamp>=1.0.0<2:devel/rubygem-clamp \
 		rubygem-pleaserun>=0.0.29<0.1:devel/rubygem-pleaserun \
 		rubygem-rexml>=0:textproc/rubygem-rexml \

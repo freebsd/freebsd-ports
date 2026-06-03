@@ -1,6 +1,7 @@
 PORTNAME=	prodigy-lig
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.3
+PORTREVISION=	2
 CATEGORIES=	biology python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://nestor.science.uu.nl/prodigy/lig
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR}

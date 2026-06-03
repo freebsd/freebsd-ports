@@ -1,21 +1,21 @@
 PORTNAME=	form
-DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.1
-PORTREVISION=	1
+DISTVERSION=	5.0.0
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/form-dev/form/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Symbolic Manipulation System
-WWW=		https://www.nikhef.nl/~form/
+WWW=		https://www.nikhef.nl/~form/ \
+		https://github.com/form-dev/form
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgmp.so:math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libzstd.so:archivers/zstd
 
 USES=		autoreconf gmake localbase
-USE_GITHUB=	yes
-GH_ACCOUNT=	vermaseren
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--disable-native \

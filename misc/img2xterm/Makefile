@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	misc
 
-MAINTAINER=	laurent.chardon@gmail.com
+MAINTAINER=	laurent@FreeBSD.org
 COMMENT=	Display images on 256 color xterms
 WWW=		https://github.com/kfei/img2xterm
 

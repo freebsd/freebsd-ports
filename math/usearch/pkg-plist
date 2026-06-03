@@ -1,0 +1,8 @@
+include/usearch/index.hpp
+include/usearch/index_dense.hpp
+include/usearch/index_plugins.hpp
+include/usearch/usearch.h
+lib/libusearch_c.so
+lib/libusearch_static_c.a
+%%JAVAJARDIR%%/usearch-2.24.0.jar
+%%JAVAJARDIR%%/usearch.jar

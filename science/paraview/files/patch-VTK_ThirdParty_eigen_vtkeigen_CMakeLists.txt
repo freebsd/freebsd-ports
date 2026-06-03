@@ -1,6 +1,6 @@
---- VTK/ThirdParty/eigen/vtkeigen/CMakeLists.txt.orig	2025-03-31 14:04:52 UTC
+--- VTK/ThirdParty/eigen/vtkeigen/CMakeLists.txt.orig	2025-09-25 09:24:50 UTC
 +++ VTK/ThirdParty/eigen/vtkeigen/CMakeLists.txt
-@@ -77,7 +77,7 @@ else ()
+@@ -71,7 +71,7 @@ else ()
  if (FALSE) # XXX(kitware): hardcoding settings.
  option(EIGEN_TEST_CXX11 "Enable testing with C++11 and C++11 features (e.g. Tensor module)." OFF)
  else ()
@@ -9,9 +9,9 @@
  endif ()
  
  
-@@ -90,13 +90,14 @@ endmacro(ei_add_cxx_compiler_flag)
+@@ -84,13 +84,14 @@ endmacro()
    endif()
- endmacro(ei_add_cxx_compiler_flag)
+ endmacro()
  
 -check_cxx_compiler_flag("-std=c++11" EIGEN_COMPILER_SUPPORT_CPP11)
 +# s/c++11/c++17/ to avoid conflict with abseil include/absl/base/config.h

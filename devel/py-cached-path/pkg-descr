@@ -1,0 +1,10 @@
+cached_path provides a unified interface for accessing files whether they are
+stored locally or remotely.  It supports the following remote backends:
+
+- HTTP and HTTPS URLs
+- Amazon S3
+- Google Cloud Storage
+- Hugging Face Hub
+
+Remote files are cached locally so that subsequent accesses do not require
+re-downloading.  The local cache is managed transparently.

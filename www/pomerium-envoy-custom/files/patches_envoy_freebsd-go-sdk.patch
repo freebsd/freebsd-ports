@@ -1,0 +1,13 @@
+--- a/bazel/dependency_imports.bzl
++++ b/bazel/dependency_imports.bzl
+@@ -42,9 +42,7 @@
+     compatibility_proxy_repo()
+     rules_foreign_cc_dependencies()
+     go_rules_dependencies()
+-    go_register_toolchains(go_version)
+-    if go_version != "host":
+-        envoy_download_go_sdks(go_version)
++    go_register_toolchains(version = "host")
+     gazelle_dependencies(go_sdk = "go_sdk")
+     apple_rules_dependencies()
+     pip_dependencies()

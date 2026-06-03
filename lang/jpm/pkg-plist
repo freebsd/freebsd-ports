@@ -12,5 +12,6 @@ lib/janet/jpm/init.janet
 lib/janet/jpm/make-config.janet
 lib/janet/jpm/pm.janet
 lib/janet/jpm/rules.janet
+lib/janet/jpm/scaffold.janet
 lib/janet/jpm/shutil.janet
 share/man/man1/jpm.1.gz

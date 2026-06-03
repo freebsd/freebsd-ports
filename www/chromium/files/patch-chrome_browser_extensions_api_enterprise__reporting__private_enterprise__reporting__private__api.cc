@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2026-05-07 17:02:56 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -40,7 +40,7 @@
+@@ -38,7 +38,7 @@
  #include "components/reporting/util/statusor.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <optional>
  
  #include "base/strings/string_util.h"
-@@ -156,7 +156,7 @@ api::enterprise_reporting_private::ContextInfo ToConte
+@@ -154,7 +154,7 @@ api::enterprise_reporting_private::ContextInfo ToConte
  }
  
  bool AllowClientCertificateReportingForUsers() {
@@ -18,7 +18,7 @@
    return base::FeatureList::IsEnabled(
        enterprise_signals::features::kAllowClientCertificateReportingForUsers);
  #else
-@@ -169,7 +169,7 @@ bool IsProfilePrefManaged(Profile* profile, std::strin
+@@ -167,7 +167,7 @@ bool IsProfilePrefManaged(Profile* profile, std::strin
    return pref && pref->IsManaged();
  }
  
@@ -27,7 +27,7 @@
  
  device_signals::SignalsAggregationRequest CreateAggregationRequest(
      device_signals::SignalName signal_name) {
-@@ -231,7 +231,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
+@@ -229,7 +229,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
  
  // getPersistentSecret
  
@@ -36,7 +36,7 @@
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -671,7 +671,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -669,7 +669,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  

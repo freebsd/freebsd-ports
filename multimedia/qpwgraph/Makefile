@@ -1,11 +1,12 @@
 PORTNAME=	qpwgraph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	1.0.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PipeWire Graph Qt GUI Interface
-WWW=		https://gitlab.freedesktop.org/rncbc/qpwgraph
+WWW=		https://gitlab.freedesktop.org/rncbc/qpwgraph \
+		https://github.com/rncbc/qpwgraph
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -17,8 +18,7 @@ USES=		cmake desktop-file-utils gl pkgconfig qt:6 shared-mime-info
 USE_QT=		base svg tools:build
 USE_GL=		gl opengl
 
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.freedesktop.org
-GL_ACCOUNT=	rncbc
+USE_GITHUB=	yes
+GH_ACCOUNT=	rncbc
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	dolphin-emu
-PORTVERSION=	2506
+PORTVERSION=	2603
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,6 +11,7 @@ LICENSE=	BSD3CLAUSE CC0-1.0 GPLv2+ MIT
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
+		glslang>0:graphics/glslang \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 # Notes on dependencies:
 # - alsa support has been disabled (not optimal)
@@ -48,7 +50,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libudev.so:devel/libudev-devd \
 		libevdev.so:devel/libevdev
 
-USES=		cmake compiler:c++17-lang desktop-file-utils elfctl gl iconv \
+USES=		cmake compiler:c++23-lang desktop-file-utils elfctl gl iconv \
 		pkgconfig python qmake qt:6 sdl xorg
 
 ELF_FEATURES=	+noaslr:Binaries/dolphin-emu*
@@ -60,7 +62,7 @@ GH_TAGNAME=	${PORTVERSION}
 .include "${.CURDIR}/Makefile.tuples"
 
 USE_GL=		egl gl
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 USE_XORG=	ice sm x11 xext xi xrandr
 USE_QT=		base svg
 

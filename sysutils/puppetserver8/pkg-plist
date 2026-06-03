@@ -2,6 +2,7 @@
 @sample %%ETCDIR%%/logback.xml.sample
 @sample %%ETCDIR%%/request-logging.xml.sample
 @sample %%ETCDIR%%/conf.d/auth.conf.sample
+@sample %%ETCDIR%%/conf.d/ca.conf.sample
 @sample %%ETCDIR%%/conf.d/global.conf.sample
 @sample %%ETCDIR%%/conf.d/metrics.conf.sample
 @sample %%ETCDIR%%/conf.d/puppetserver.conf.sample

@@ -7,7 +7,6 @@
     SUBDIR += dolphin
     SUBDIR += doublecmd
     SUBDIR += filerunner
-    SUBDIR += fsv2
     SUBDIR += gentoo
     SUBDIR += gprename
     SUBDIR += konqueror
@@ -30,5 +29,6 @@
     SUBDIR += xcruise
     SUBDIR += xdiskusage
     SUBDIR += xfe
+    SUBDIR += xfile
 
 .include <bsd.port.subdir.mk>

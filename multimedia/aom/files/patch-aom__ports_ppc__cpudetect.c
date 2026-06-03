@@ -1,21 +1,27 @@
 - Implement VSX detection on FreeBSD
 
---- aom_ports/ppc_cpudetect.c.orig	2021-07-20 22:23:15 UTC
+--- aom_ports/ppc_cpudetect.c.orig	2025-09-02 20:59:58 UTC
 +++ aom_ports/ppc_cpudetect.c
-@@ -9,12 +9,6 @@
+@@ -9,18 +9,11 @@
   * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
   */
  
 -#include <fcntl.h>
 -#include <unistd.h>
 -#include <stdint.h>
--#include <asm/cputable.h>
--#include <linux/auxvec.h>
 -
  #include "config/aom_config.h"
  
  #include "aom_ports/ppc.h"
-@@ -37,6 +31,13 @@ static int cpu_env_mask(void) {
+ 
+ #if CONFIG_RUNTIME_CPU_DETECT
+-#include <asm/cputable.h>
+-#include <linux/auxvec.h>
+-
+ static int cpu_env_flags(int *flags) {
+   char *env;
+   env = getenv("AOM_SIMD_CAPS");
+@@ -38,6 +31,13 @@ static int cpu_env_mask(void) {
    return env && *env ? (int)strtol(env, NULL, 0) : ~0;
  }
  
@@ -29,7 +35,7 @@
  int ppc_simd_caps(void) {
    int flags;
    int mask;
-@@ -75,6 +76,34 @@ out_close:
+@@ -76,7 +76,35 @@ out_close:
    close(fd);
    return flags & mask;
  }
@@ -56,11 +62,12 @@
 +
 +  return flags & mask;
 +}
-+#else
+ #else
 +#error \
 +    "--enable-runtime-cpu-detect selected, but no CPU detection method " \
 +"available for your platform. Reconfigure with --disable-runtime-cpu-detect."
 +#endif   /* end __FreeBSD__ */
- #else
++#else
  // If there is no RTCD the function pointers are not used and can not be
  // changed.
+ int ppc_simd_caps(void) { return 0; }

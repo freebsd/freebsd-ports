@@ -1,12 +1,9 @@
 PORTNAME=	sonic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.9
-PORTREVISION=	10
+PORTREVISION=	17
 CATEGORIES=	textproc
-MASTER_SITES+=	https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/:unidic
-DISTFILES+=	unidic-mecab-2.1.2_src.zip:unidic # check cargo-crates/lindera-unidic-XXX/build.rs
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wadegimpbc@tuta.com
 COMMENT=	Fast, lightweight, and schema-less search backend
 WWW=		https://github.com/valeriansaliou/sonic
 
@@ -14,6 +11,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo compiler:c++11-lang gmake
 USE_GITHUB=	yes
@@ -26,9 +24,17 @@ GROUPS=		sonic
 PLIST_FILES=	bin/sonic \
 		"@sample ${ETCDIR}/config.cfg.sample"
 PORTDOCS=	CONFIGURATION.md PROTOCOL.md README.md
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	CHINESE DOCS JAPANESE
+OPTIONS_DEFAULT=	CHINESE
+CHINESE_DESC=	Chinese word segmentation
+JAPANESE_DESC=	Japanese word segmentation (adds ~100MB UniDic download)
 
 CARGO_ENV+=	DISTDIR=${DISTDIR}
+CARGO_FEATURES=	--no-default-features allocator-jemalloc
+CHINESE_VARS=	CARGO_FEATURES+=tokenizer-chinese
+JAPANESE_VARS=	CARGO_FEATURES+=tokenizer-japanese
+JAPANESE_MASTER_SITES=	https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/:unidic
+JAPANESE_DISTFILES=	unidic-mecab-2.1.2_src.zip:unidic
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

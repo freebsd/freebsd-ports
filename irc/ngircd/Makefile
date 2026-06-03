@@ -7,7 +7,7 @@ MASTER_SITES=	https://ngircd.barton.de/pub/ngircd/ \
 		https://ngircd.mirror.3rz.de/pub/ngircd/ \
 		https://ngircd.sourceforge.io/pub/ngircd/
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 WWW=		https://ngircd.barton.de/
 

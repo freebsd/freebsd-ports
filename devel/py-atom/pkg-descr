@@ -1,0 +1,16 @@
+Atom is a framework for creating memory efficient Python objects with enhanced
+features such as dynamic initialization, validation, and change notification
+for object attributes. It provides the default model binding behavior for the
+Enaml UI framework.
+
+Key features:
+* Memory efficient object creation
+* Dynamic attribute initialization
+* Attribute validation
+* Change notification system
+* Type annotation support (atom 0.8.0+)
+* Enhanced property system
+
+Atom objects can be defined using traditional class-based approach or modern
+type annotations, making it suitable for both legacy and modern Python
+codebases.

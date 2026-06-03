@@ -7,6 +7,7 @@ bin/format_dump
 bin/format_info
 bin/format_server
 bin/format_test
+bin/korvo_server
 bin/scale_test
 bin/self_format_test
 include/cod.h
@@ -18,5 +19,5 @@ lib/cmake/ffs/ffs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ffs/ffs-targets.cmake
 lib/libffs.so
 lib/libffs.so.3
-lib/libffs.so.3.0.0
+lib/libffs.so.3.3.0
 libdata/pkgconfig/ffs.pc

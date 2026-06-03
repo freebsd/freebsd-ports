@@ -1,12 +1,12 @@
 PORTNAME=	textnote
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
-PORTREVISION=	27
+PORTREVISION=	39
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Tool for creating and organizing daily notes on the command line
-WWW=		https://github.com/dkaslovsky/textnote #installation
+WWW=		https://github.com/dkaslovsky/textnote
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

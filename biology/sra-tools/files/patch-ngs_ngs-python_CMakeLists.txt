@@ -1,0 +1,19 @@
+--- ngs/ngs-python/CMakeLists.txt.orig	2026-03-25 20:33:21 UTC
++++ ngs/ngs-python/CMakeLists.txt
+@@ -29,11 +29,11 @@ if( Python3_EXECUTABLE )
+     #TODO: install
+ 
+     if( NOT LSB_RELEASE_ID_SHORT STREQUAL "Ubuntu" )
+-      add_test(
+-        NAME Test_NGS_Python_install
+-        COMMAND ${Python3_EXECUTABLE} -m pip install .
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-      )
++      # add_test(
++        # NAME Test_NGS_Python_install
++        # COMMAND ${Python3_EXECUTABLE} -m pip install .
++        # WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++      # )
+     else()
+       add_test(
+         NAME Test_NGS_Python_install

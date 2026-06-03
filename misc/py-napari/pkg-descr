@@ -1,0 +1,4 @@
+napari is a fast, interactive viewer for multi-dimensional images in Python.
+
+napari leverages the power of Python to enable fast and interactive browsing,
+annotation and analysis of large multi-dimensional images.

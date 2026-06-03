@@ -1,18 +1,29 @@
 * Avoid making all warnings into errors
 * Extra optimizations via COPT should be overwritable 
 
---- mpy-cross/Makefile.orig	2021-09-01 14:07:13 UTC
+--- mpy-cross/Makefile.orig	2026-04-06 13:12:49 UTC
 +++ mpy-cross/Makefile
-@@ -17,7 +17,7 @@ INC += -I$(BUILD)
+@@ -6,6 +6,10 @@ QSTR_DEFS = qstrdefsport.h
+ # qstr definitions (must come before including py.mk)
+ QSTR_DEFS = qstrdefsport.h
+ 
++# Enable compressed ROM text so genhdr/compressed.data.h is generated before
++# compilation when the unix port passes -DMICROPY_ROM_TEXT_COMPRESSION=1.
++MICROPY_ROM_TEXT_COMPRESSION = 1
++
+ # OS name, for simple autoconfig
+ UNAME_S := $(shell uname -s)
+ 
+@@ -17,7 +21,7 @@ INC += -I$(TOP)
  INC += -I$(TOP)
  
  # compiler settings
 -CWARN = -Wall -Werror
 +CWARN = -Wall
  CWARN += -Wextra -Wno-unused-parameter -Wpointer-arith
- CFLAGS = $(INC) $(CWARN) -std=gnu99 $(CFLAGS_MOD) $(COPT) $(CFLAGS_EXTRA)
+ CFLAGS += $(INC) $(CWARN) -std=gnu99 $(COPT) $(CFLAGS_EXTRA)
  CFLAGS += -fdata-sections -ffunction-sections -fno-asynchronous-unwind-tables
-@@ -25,9 +25,9 @@ CFLAGS += -fdata-sections -ffunction-sections -fno-asy
+@@ -25,9 +29,9 @@ CFLAGS += -g
  # Debugging/Optimization
  ifdef DEBUG
  CFLAGS += -g
@@ -24,3 +35,15 @@
  endif
  
  # On OSX, 'gcc' is a symlink to clang unless a real gcc is installed.
+@@ -58,5 +62,11 @@ OBJ += $(addprefix $(BUILD)/, $(SRC_C:.c=.o))
+ 
+ OBJ = $(PY_CORE_O)
+ OBJ += $(addprefix $(BUILD)/, $(SRC_C:.c=.o))
++
++# mpy-cross is a host-only cross-compiler with no threading or frozen modules.
++# Undefine unix port flags that bleed in via the combined sub-make CFLAGS so
++# the resulting binary does not reference unimplemented symbols.
++CFLAGS += -UMICROPY_PY_THREAD -UMICROPY_QSTR_EXTRA_POOL \
++	-UMICROPY_MODULE_FROZEN_MPY -UMICROPY_MODULE_FROZEN_STR
+ 
+ include $(TOP)/py/mkrules.mk

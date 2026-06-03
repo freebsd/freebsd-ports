@@ -1,10 +1,10 @@
 bin/qt6ct
 lib/libqt6ct-common.so
-lib/libqt6ct-common.so.0.9
+lib/libqt6ct-common.so.0.11
 %%QT_PLUGINDIR%%/platformthemes/libqt6ct.so
 %%QT_PLUGINDIR%%/styles/libqt6ct-style.so
 share/applications/qt6ct.desktop
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%DATADIR%%/colors/airy.conf
 %%DATADIR%%/colors/darker.conf
 %%DATADIR%%/colors/dusk.conf

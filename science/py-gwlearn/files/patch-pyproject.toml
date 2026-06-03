@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-01-21 19:55:20 UTC
++++ pyproject.toml
+@@ -11,7 +11,7 @@ authors = [
+ authors = [
+    { name = "Martin Fleischmann", email = "martin@martinfleischmann.net" },
+ ]
+-license = "BSD-3-Clause"
++license = { text = "BSD-3-Clause" }
+ classifiers = [
+     "Programming Language :: Python :: 3",
+     "Operating System :: OS Independent",

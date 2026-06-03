@@ -1,6 +1,6 @@
 PORTNAME=	game
 DISTVERSION=	2.6.1
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/docs/LGPL.txt
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat
 
 USES=		compiler:c11 jpeg localbase pkgconfig python sdl xorg

@@ -1,0 +1,11 @@
+--- Makefile.orig      2026-02-22 11:55:23 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ amdmsrt: Info.o AmdMsrTweaker.o WinRing0.o Worker.o
+ all: amdmsrt
+ 
+ amdmsrt: Info.o AmdMsrTweaker.o WinRing0.o Worker.o
+-	$(CXX) $(CXXFLAGS) -o $@ $>$^
++	$(CXX) $(CXXFLAGS) -o $@ Info.o AmdMsrTweaker.o WinRing0.o Worker.o
+ # $>$^ is to be compatible against BSD and GNU make(1)
+ 
+ .cpp.o:

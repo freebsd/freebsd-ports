@@ -1,0 +1,28 @@
+Description: indicating we use signed char, so that we don't depend on the
+ default choice of the implementation
+Author: Pierre Gruet <pgt@debian.org>
+Forwarded: no
+Last-Update: 2024-10-04
+
+--- src/plugins_3rdparty/ball/src/include/BALL/DATATYPE/hashGrid.h
++++ src/plugins_3rdparty/ball/src/include/BALL/DATATYPE/hashGrid.h
+@@ -37,7 +37,7 @@
+ {
+ 	namespace __private
+ 	{
+-		extern const char BALL_EXPORT neighbour_table_[27][3];
++		extern const signed char BALL_EXPORT neighbour_table_[27][3];
+ 	}
+ 
+ 	template <typename Item> class HashGrid3;
+--- src/plugins_3rdparty/ball/src/source/DATATYPE/hashGrid.cpp
++++ src/plugins_3rdparty/ball/src/source/DATATYPE/hashGrid.cpp
+@@ -9,7 +9,7 @@
+ {
+ 	namespace __private
+ 	{
+-		const char neighbour_table_[27][3] =
++		const signed char neighbour_table_[27][3] =
+ 		{
+ 			{ 0,  0,  0 }, { 0,  0, -1 }, { 0,  0,  1 },
+ 			{ 0, -1, -1 }, { 0, -1,  0 }, { 0, -1,  1 },

@@ -4,7 +4,7 @@
 Add the following entry to /etc/gettytab:
 
 Ly:\
-	:lo=%%PREFIX%%/bin/ly:\
+	:lo=%%PREFIX%%/bin/ly_wrapper:\
 	:al=root:
 
 Modify the command field of the ttyv1 terminal entry in /etc/ttys
@@ -13,6 +13,14 @@ ttyv1   "/usr/libexec/getty Ly"         xterm   on secure
 
 Make sure that "tty" is set appropriately in the %%ETCDIR%%/config.ini file if
 you decide to configure a different TTY for Ly instead.
+EOM
+}
+{ type: upgrade
+  maximum_version: 1.3.0
+  message: <<EOM
+/!\ make sure you update you /etc/gettytab to use %%PREFIX%%/bin/ly_wrapper
+instead of %%PREFIX%%/bin/ly
+/!\ make sure you reviewed your %%ETCDIR%%/config.ini file which might be incompatible
 EOM
 }
 ]

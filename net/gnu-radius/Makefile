@@ -1,6 +1,6 @@
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	net
 MASTER_SITES=	GNU/radius
 DISTNAME=	radius-${PORTVERSION}
@@ -53,8 +53,6 @@ PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_WITH=		postgres
 DBM_CONFIGURE_ENABLE=		dbm=ndbm
 EMACS_USES=			emacs
-EMACS_CONFIGURE_WITH=		lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
-EMACS_NO_DEPENDS=		yes
 NLS_USES=			gettext
 NLS_CONFIGURE_OFF=		--disable-nls
 PAM_CONFIGURE_ENABLE=		pam
@@ -70,5 +68,10 @@ post-install:
 	( cd ${WRKSRC}/examples && ${COPYTREE_SHARE} .\
 		${STAGEDIR}${EXAMPLESDIR}\
 		"! ( -name Makefile -o -name Makefile\.* ) " )
+
+post-install-EMACS-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/elisp/*.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 .include <bsd.port.mk>

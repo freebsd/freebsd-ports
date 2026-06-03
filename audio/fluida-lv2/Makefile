@@ -1,6 +1,6 @@
 PORTNAME=	fluida
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.5
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 MASTER_SITES=	https://github.com/brummer10/Fluida.lv2/releases/download/v${DISTVERSION}/

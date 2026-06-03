@@ -1,0 +1,14 @@
+--- meson.build.orig	2026-03-13 08:55:32 UTC
++++ meson.build
+@@ -49,7 +49,10 @@ endif
+ if not libcrypto.found()
+   libcrypto = dependency('libcrypto3', version: '>= 3.0.7', required: true)
+ endif
+-provider_path = libcrypto.get_variable(pkgconfig: 'modulesdir')
++provider_path = get_option('modulesdir')
++if provider_path == ''
++  provider_path = libcrypto.get_variable(pkgconfig: 'modulesdir')
++endif
+ libssl = dependency('libssl', version: '>= 3.0.7', required: false)
+ if not libssl.found()
+   libssl = dependency('libssl3', version: '>= 3.0.7', required: true, method: 'pkg-config')

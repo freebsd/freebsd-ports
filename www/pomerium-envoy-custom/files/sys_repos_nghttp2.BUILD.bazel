@@ -1,0 +1,27 @@
+load("@rules_cc//cc:defs.bzl", "cc_import", "cc_library")
+
+cc_import(
+    name = "_nghttp2",
+    shared_library = "libnghttp2.so",
+)
+
+cc_library(
+    name = "nghttp2",
+    hdrs = [
+        "include/nghttp2/nghttp2.h",
+        "include/nghttp2/nghttp2ver.h",
+    ],
+    includes = ["include"],
+    deps = [":_nghttp2"],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "all",
+    srcs = [
+        "include/nghttp2/nghttp2.h",
+        "include/nghttp2/nghttp2ver.h",
+        "libnghttp2.so",
+    ],
+    visibility = ["//visibility:public"],
+)

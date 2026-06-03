@@ -187,6 +187,7 @@ share/icons/hicolor/scalable/devices/xfce-display-right.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo

@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-11-06 20:43:49 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61.0.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -27,8 +27,7 @@ classifiers=[
+     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+     "Topic :: Software Development :: Libraries :: Python Modules",
+ ]
+-license = "MIT"
+-license-files = ["LICENSE.txt"]
++license = {text = "MIT"}
+ dependencies = ["django>=4.2"]
+ authors = [{name = "Miguel Araujo", email = "miguel.araujo.perez@gmail.com"}]
+ dynamic = ['version']

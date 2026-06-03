@@ -1,0 +1,22 @@
+Normally if you write to a pipe from multiple processes/threads, the messages
+will come mixed together unpredictably. Some messages may be interrupted by
+parts of messages from other writers. This module takes advantage of some POSIX
+specifications to allow multiple writers to send arbitrary data down a pipe in
+atomic chunks to avoid the issue.
+
+NOTE: This only works for POSIX compliant pipes on POSIX compliant systems. Also
+some features may not be available on older systems, or some platforms.
+
+Under the hood this module will split your message into small sections of
+slightly smaller than the PIPE_BUF limit. Each message will be sent as 1 atomic
+chunk with a 4 byte prefix indicating what process id it came from, what thread
+id it came from, a chunk ID (in descending order, so if there are 3 chunks the
+first will have id 2, the second 1, and the final chunk is always 0 allowing a
+flush as it knows it is done) and then 1 byte with the length of the data
+section to follow.
+
+On the receiving end this module will read chunks and re-assemble them based on
+the header data. So the reader will always get complete messages. Note that
+message order is not guarenteed when messages are sent from multiple processes
+or threads. Though all messages from any given thread/process should be in
+order.

@@ -1,0 +1,11 @@
+--- bin/BackupPC_nightly.orig	2024-12-21 12:58:00 UTC
++++ bin/BackupPC_nightly
+@@ -86,7 +86,7 @@ use lib "__INSTALLDIR__/lib";
+ no utf8;
+ 
+ use lib "__INSTALLDIR__/lib";
+-use BackupPC::Lib qw( :BPC_DT_ALL );
++use BackupPC::Lib;
+ use BackupPC::XS;
+ use BackupPC::DirOps;
+ use Getopt::Std;

@@ -12,8 +12,6 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		does not configure: error: check for atomictype failed
-BROKEN_mips=		does not configure: in section .data.rel.ro of csvdeserializer-test.o: defined in discarded section
-BROKEN_mips64=		does not configure: in section .data.rel.ro of csvdeserializer-test.o: defined in discarded section
 BROKEN_riscv64=		does not configure: error: check for atomictype failed
 
 USES=		cpe iconv libtool localbase pathfix
@@ -49,12 +47,6 @@ PLIST_SUB+=	X86_ONLY="@comment "
 PLIST_SUB+=	ARM_ONLY=""
 .else
 PLIST_SUB+=	ARM_ONLY="@comment "
-.endif
-
-.if ${ARCH:Mmips*}
-PLIST_SUB+=	MIPS_ONLY=""
-.else
-PLIST_SUB+=	MIPS_ONLY="@comment "
 .endif
 
 .if ${ARCH:Mpowerpc*}

@@ -25,9 +25,9 @@
     SUBDIR += R-cran-Matching
     SUBDIR += R-cran-MatrixModels
     SUBDIR += R-cran-NMF
-    SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
+    SUBDIR += R-cran-RcppParallel
     SUBDIR += R-cran-RcppRoll
     SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-Rsolnp
@@ -39,6 +39,7 @@
     SUBDIR += R-cran-acepack
     SUBDIR += R-cran-admisc
     SUBDIR += R-cran-alabama
+    SUBDIR += R-cran-ankiR
     SUBDIR += R-cran-ash
     SUBDIR += R-cran-assertthat
     SUBDIR += R-cran-backports
@@ -46,6 +47,7 @@
     SUBDIR += R-cran-car
     SUBDIR += R-cran-carData
     SUBDIR += R-cran-coda
+    SUBDIR += R-cran-collections
     SUBDIR += R-cran-combinat
     SUBDIR += R-cran-conf.design
     SUBDIR += R-cran-conquer
@@ -105,6 +107,7 @@
     SUBDIR += R-cran-mitools
     SUBDIR += R-cran-mnormt
     SUBDIR += R-cran-moments
+    SUBDIR += R-cran-mpoly
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-ncdf4
     SUBDIR += R-cran-nloptr
@@ -112,17 +115,20 @@
     SUBDIR += R-cran-nortest
     SUBDIR += R-cran-numDeriv
     SUBDIR += R-cran-numbers
+    SUBDIR += R-cran-orthopolynom
     SUBDIR += R-cran-outliers
     SUBDIR += R-cran-partitions
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-plot3D
     SUBDIR += R-cran-pls
+    SUBDIR += R-cran-polyclip
     SUBDIR += R-cran-polycor
     SUBDIR += R-cran-polynom
     SUBDIR += R-cran-pracma
     SUBDIR += R-cran-prodlim
     SUBDIR += R-cran-proxy
     SUBDIR += R-cran-psych
+    SUBDIR += R-cran-psychTools
     SUBDIR += R-cran-pwr
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-qualityTools
@@ -310,6 +316,7 @@
     SUBDIR += ecos
     SUBDIR += edenmath
     SUBDIR += eigen3
+    SUBDIR += eigen5
     SUBDIR += eispack
     SUBDIR += elan
     SUBDIR += elemental
@@ -401,7 +408,6 @@
     SUBDIR += hpipm
     SUBDIR += hptt
     SUBDIR += hs-Agda
-    SUBDIR += hs-syfco
     SUBDIR += hsl
     SUBDIR += hydrogen
     SUBDIR += hyperdeal
@@ -462,7 +468,6 @@
     SUBDIR += libformfactor
     SUBDIR += libhomfly
     SUBDIR += libmesh
-    SUBDIR += libmissing
     SUBDIR += libnormaliz
     SUBDIR += libocas
     SUBDIR += liborigin
@@ -491,6 +496,7 @@
     SUBDIR += ltl2ba
     SUBDIR += m4ri
     SUBDIR += m4rie
+    SUBDIR += manifold
     SUBDIR += mate-calc
     SUBDIR += math77
     SUBDIR += mathex
@@ -554,6 +560,7 @@
     SUBDIR += octave
     SUBDIR += octave-forge
     SUBDIR += octave-forge-actuarial
+    SUBDIR += octave-forge-apa
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-automatic-differentiation
     SUBDIR += octave-forge-base
@@ -587,6 +594,7 @@
     SUBDIR += octave-forge-fl-core
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-fuzzy-logic-toolkit
+    SUBDIR += octave-forge-fxp
     SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-generate_html
@@ -598,17 +606,24 @@
     SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
+    SUBDIR += octave-forge-instrument-control
     SUBDIR += octave-forge-integration
     SUBDIR += octave-forge-internal-fluid-flow
     SUBDIR += octave-forge-interval
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-irsa
+    SUBDIR += octave-forge-joystick
     SUBDIR += octave-forge-level-set
     SUBDIR += octave-forge-linear-algebra
+    SUBDIR += octave-forge-llms
     SUBDIR += octave-forge-lssa
     SUBDIR += octave-forge-ltfat
     SUBDIR += octave-forge-mapping
     SUBDIR += octave-forge-matgeom
+    SUBDIR += octave-forge-mboct-fem-pkg
+    SUBDIR += octave-forge-mboct-mbdyn-pkg
+    SUBDIR += octave-forge-mboct-numerical-pkg
+    SUBDIR += octave-forge-mboct-octave-pkg
     SUBDIR += octave-forge-mccabe-thiele
     SUBDIR += octave-forge-mechanics
     SUBDIR += octave-forge-miscellaneous
@@ -618,6 +633,7 @@
     SUBDIR += octave-forge-msh
     SUBDIR += octave-forge-multicore
     SUBDIR += octave-forge-mvn
+    SUBDIR += octave-forge-mysql
     SUBDIR += octave-forge-nan
     SUBDIR += octave-forge-ncarray
     SUBDIR += octave-forge-netcdf
@@ -626,6 +642,9 @@
     SUBDIR += octave-forge-nurbs
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octave-pool
+    SUBDIR += octave-forge-octave_boost
+    SUBDIR += octave-forge-octave_ffmpeg_free
+    SUBDIR += octave-forge-octave_mermaid_js
     SUBDIR += octave-forge-octave_php_wrapper
     SUBDIR += octave-forge-octave_tar
     SUBDIR += octave-forge-octave_zstd
@@ -633,7 +652,6 @@
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odbc
     SUBDIR += octave-forge-odebvp
-    SUBDIR += octave-forge-onsas
     SUBDIR += octave-forge-optics
     SUBDIR += octave-forge-optim
     SUBDIR += octave-forge-optiminterp
@@ -649,6 +667,7 @@
     SUBDIR += octave-forge-pythonic
     SUBDIR += octave-forge-quaternion
     SUBDIR += octave-forge-queueing
+    SUBDIR += octave-forge-rf
     SUBDIR += octave-forge-rtree
     SUBDIR += octave-forge-secs1d
     SUBDIR += octave-forge-secs2d
@@ -706,7 +725,6 @@
     SUBDIR += p5-Algorithm-Combinatorics
     SUBDIR += p5-Algorithm-CurveFit
     SUBDIR += p5-Algorithm-Munkres
-    SUBDIR += p5-Alien-GSL
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
     SUBDIR += p5-Bit-Vector-Minimal
@@ -751,6 +769,7 @@
     SUBDIR += p5-Math-GMPq
     SUBDIR += p5-Math-GMPz
     SUBDIR += p5-Math-GSL
+    SUBDIR += p5-Math-GSL-Alien
     SUBDIR += p5-Math-Geometry
     SUBDIR += p5-Math-Geometry-Planar
     SUBDIR += p5-Math-Geometry-Planar-GPC
@@ -887,8 +906,6 @@
     SUBDIR += petanque
     SUBDIR += petiga
     SUBDIR += pffft
-    SUBDIR += php81-bcmath
-    SUBDIR += php81-gmp
     SUBDIR += php82-bcmath
     SUBDIR += php82-gmp
     SUBDIR += php83-bcmath
@@ -936,6 +953,9 @@
     SUBDIR += py-annoy
     SUBDIR += py-apgl
     SUBDIR += py-arviz
+    SUBDIR += py-arviz-base
+    SUBDIR += py-arviz-plots
+    SUBDIR += py-arviz-stats
     SUBDIR += py-arybo
     SUBDIR += py-autograd
     SUBDIR += py-awkward
@@ -958,6 +978,7 @@
     SUBDIR += py-cmyt
     SUBDIR += py-colormath
     SUBDIR += py-contourpy
+    SUBDIR += py-conway-polynomials
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
     SUBDIR += py-cvxpy
@@ -997,8 +1018,10 @@
     SUBDIR += py-hdmedians
     SUBDIR += py-hepstats
     SUBDIR += py-heyoka
+    SUBDIR += py-highspy
     SUBDIR += py-hmmlearn
     SUBDIR += py-hypernetx
+    SUBDIR += py-ibis-framework
     SUBDIR += py-igraph
     SUBDIR += py-iminuit
     SUBDIR += py-intspan
@@ -1008,6 +1031,7 @@
     SUBDIR += py-isosurfaces
     SUBDIR += py-jacobi
     SUBDIR += py-jax
+    SUBDIR += py-jij-cimod
     SUBDIR += py-kahip
     SUBDIR += py-keras
     SUBDIR += py-keras-applications
@@ -1038,6 +1062,7 @@
     SUBDIR += py-munkres
     SUBDIR += py-narwhals
     SUBDIR += py-ndindex
+    SUBDIR += py-ndonnx
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
     SUBDIR += py-nlopt
@@ -1047,6 +1072,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-numpy-groupies
     SUBDIR += py-numpy-stl
+    SUBDIR += py-numpy1
     SUBDIR += py-openTSNE
     SUBDIR += py-opt-einsum
     SUBDIR += py-or-tools
@@ -1116,12 +1142,14 @@
     SUBDIR += py-simhash
     SUBDIR += py-slepc4py
     SUBDIR += py-snuggs
+    SUBDIR += py-sparsediffpy
     SUBDIR += py-spectral
     SUBDIR += py-spglm
     SUBDIR += py-spint
     SUBDIR += py-splot
     SUBDIR += py-spopt
     SUBDIR += py-spot
+    SUBDIR += py-spox
     SUBDIR += py-spreg
     SUBDIR += py-squarify
     SUBDIR += py-ssm
@@ -1133,6 +1161,7 @@
     SUBDIR += py-theano
     SUBDIR += py-timple
     SUBDIR += py-topologic
+    SUBDIR += py-torchsde
     SUBDIR += py-triangle
     SUBDIR += py-umap-learn
     SUBDIR += py-uncertainties
@@ -1154,7 +1183,6 @@
     SUBDIR += qxfun
     SUBDIR += randlib
     SUBDIR += rankwidth
-    SUBDIR += rapid
     SUBDIR += readstat
     SUBDIR += reduce
     SUBDIR += reduce-psl
@@ -1168,6 +1196,7 @@
     SUBDIR += rubiks
     SUBDIR += rubygem-algebra
     SUBDIR += rubygem-bigdecimal
+    SUBDIR += rubygem-bigdecimal-gitlab
     SUBDIR += rubygem-cmath
     SUBDIR += rubygem-enumerable-statistics
     SUBDIR += rubygem-expression_parser
@@ -1180,7 +1209,6 @@
     SUBDIR += rubygem-numru-misc
     SUBDIR += rubygem-numru-units
     SUBDIR += rubygem-prime
-    SUBDIR += rubygem-rb-gsl
     SUBDIR += rumur
     SUBDIR += saga
     SUBDIR += savage
@@ -1222,6 +1250,7 @@
     SUBDIR += stanmath
     SUBDIR += stp
     SUBDIR += suitesparse
+    SUBDIR += suitesparse-Example
     SUBDIR += suitesparse-amd
     SUBDIR += suitesparse-btf
     SUBDIR += suitesparse-camd
@@ -1261,6 +1290,7 @@
     SUBDIR += tinyexpr
     SUBDIR += tinymt
     SUBDIR += tlapack
+    SUBDIR += tlfloat
     SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz
@@ -1275,6 +1305,7 @@
     SUBDIR += units
     SUBDIR += universal
     SUBDIR += unuran
+    SUBDIR += usearch
     SUBDIR += vampire
     SUBDIR += vdt
     SUBDIR += verdict
@@ -1282,15 +1313,14 @@
     SUBDIR += vinci
     SUBDIR += visualpolylib
     SUBDIR += vowpal_wabbit
-    SUBDIR += vtk8
     SUBDIR += vtk9
     SUBDIR += wavelib
     SUBDIR += wcalc
+    SUBDIR += wide-integer
     SUBDIR += wxmaxima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
     SUBDIR += xgap
-    SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas
     SUBDIR += xlife++

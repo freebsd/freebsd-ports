@@ -1,11 +1,10 @@
 PORTNAME=	unionfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
-PORTREVISION=	1
+DISTVERSION=	3.7
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	FUSE based implementation of the well-known unionfs
 WWW=		https://github.com/rpodgorny/unionfs-fuse
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		cmake fuse localbase:ldflags python:test
+USES=		cmake fuse:3 localbase:ldflags pkgconfig python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny

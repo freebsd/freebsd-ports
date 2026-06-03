@@ -27,6 +27,7 @@ include/tbox/algorithm/sort.h
 include/tbox/algorithm/walk.h
 include/tbox/charset/charset.h
 include/tbox/charset/prefix.h
+include/tbox/charset/utf8.h
 include/tbox/config.h
 include/tbox/container/array_iterator.h
 include/tbox/container/bloom_filter.h
@@ -110,6 +111,7 @@ include/tbox/libc/misc/stdarg.h
 include/tbox/libc/misc/time/prefix.h
 include/tbox/libc/misc/time/time.h
 include/tbox/libc/misc/time/type.h
+include/tbox/libc/misc/wctype.h
 include/tbox/libc/prefix.h
 include/tbox/libc/stdio/prefix.h
 include/tbox/libc/stdio/printf_object.h

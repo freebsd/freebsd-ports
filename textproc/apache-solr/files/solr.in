@@ -37,11 +37,16 @@ load_rc_config $name
 
 : ${solr_enable:=NO}
 : ${solr_instance:=/var/db/solr}
+: ${solr_standalone:=YES}
 : ${solr_svcj_options:="net_basic"}
 
 solr_start ()
 {
-	su -m solr -c "${command} start"
+	solr_mode_args=""
+	if checkyesno solr_standalone; then
+		solr_mode_args=" --user-managed"
+	fi
+	su -m solr -c "${command} start${solr_mode_args}"
 }
 
 solr_stop ()

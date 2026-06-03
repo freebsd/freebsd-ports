@@ -1,0 +1,21 @@
+../src/vulkan/wsi/wsi_common_wayland.c:1962:57: error: use of undeclared identifier 'CLOCK_MONOTONIC_RAW'
+ 1962 |          if (clock_id != CLOCK_MONOTONIC && clock_id != CLOCK_MONOTONIC_RAW)
+      |                                                         ^
+../src/vulkan/wsi/wsi_common_wayland.c:3601:12: error: use of undeclared identifier 'CLOCK_MONOTONIC_RAW'
+ 3601 |       case CLOCK_MONOTONIC_RAW:
+      |            ^
+
+--- src/vulkan/wsi/wsi_common_wayland.c.orig	2026-01-29 17:00:57 UTC
++++ src/vulkan/wsi/wsi_common_wayland.c
+@@ -68,6 +68,11 @@
+ #include <sys/sysmacros.h>
+ #endif
+ 
++/* The "RAW" clocks on Linux are called "FAST" on FreeBSD */
++#if !defined(CLOCK_MONOTONIC_RAW) && defined(CLOCK_MONOTONIC_FAST)
++#define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC_FAST
++#endif
++
+ struct wsi_wayland;
+ 
+ struct wsi_wl_format {

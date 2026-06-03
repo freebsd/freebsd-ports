@@ -1,0 +1,6 @@
+pdf-form-filler-mcp is an MCP STDIO server allowing to fill PDF forms.
+
+It allows AI agents to find the list of form fields in a given MCP server,
+to fill these fields, and to save the resulting PDF.
+
+It supports both AcroForm and XFA PDF forms.

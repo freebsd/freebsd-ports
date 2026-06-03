@@ -7,7 +7,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/csrd/
 PATCH_SITES=	http://green.ribbon.to/~ikazuhiro/dic/files/
 PATCHFILES=	csrd.c.diff.gz
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for Shogakukan Random House English-Japanese Dictionary
 WWW=		http://openlab.ring.gr.jp/edict/
 

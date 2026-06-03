@@ -1,1 +1,6 @@
-XML to Hash translator.
+Really simple XML parsing ripped from Crack, which ripped it from Merb.
+
+Nori supports pluggable parsers and ships with both REXML and Nokogiri
+implementations.
+
+It defaults to Nokogiri since v2.0.0, but you can change it to use REXML.

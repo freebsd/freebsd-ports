@@ -1,6 +1,5 @@
 PORTNAME=	searxng
-DISTVERSION=	20250711
-PORTREVISION=	1
+DISTVERSION=	20260517
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -12,8 +11,11 @@ WWW=		https://docs.searxng.org/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgspec>=0:devel/py-msgspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_TOMLI} \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>=0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fasttext-predict>=0:textproc/py-fasttext-predict@${PY_FLAVOR} \
@@ -24,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=0:textproc/py-langdetect@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>=0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown-it-py>=0:textproc/py-markdown-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgspec>=0:devel/py-msgspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
@@ -35,14 +37,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0:devel/py-typer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvloop>=0:devel/py-uvloop@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}valkey>=0:databases/py-valkey@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}valkey>=0:databases/py-valkey@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}whitenoise>=0:www/py-whitenoise@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
-GH_TAGNAME=	d5743398539263f2c0cac676e073a08cb3eb6eb8
+GH_TAGNAME=	d7e8b7cd1896272dc2cc54531c8e5f72461e84bb
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	searxng
 

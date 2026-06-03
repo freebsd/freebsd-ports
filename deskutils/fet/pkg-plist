@@ -4,6 +4,7 @@ share/man/man1/fet-cl.1.gz
 share/man/man1/fet.1.gz
 %%NLS%%%%DATADIR%%/translations/fet_ar.qm
 %%NLS%%%%DATADIR%%/translations/fet_bg.qm
+%%NLS%%%%DATADIR%%/translations/fet_bs.qm
 %%NLS%%%%DATADIR%%/translations/fet_ca.qm
 %%NLS%%%%DATADIR%%/translations/fet_cs.qm
 %%NLS%%%%DATADIR%%/translations/fet_da.qm

@@ -1,0 +1,35 @@
+--- a/bazel/private/java_proto_support.bzl
++++ b/bazel/private/java_proto_support.bzl
+@@ -6,8 +6,13 @@
+ # https://developers.google.com/open-source/licenses/bsd
+ """Support for compiling protoc generated Java code."""
+ 
+-load("@rules_java//java/private:proto_support.bzl", "compile", "merge")  # buildifier: disable=bzl-visibility
++# Inline stubs for rules_java 7.x compatibility (proto_support.bzl added in rules_java 8.x)
++def compile(**kwargs):
++    return java_common.compile(**kwargs)
+ 
++def merge(providers, **kwargs):
++    return java_common.merge(providers, **kwargs)
++
+ # The provider is used to collect source and runtime jars in the `proto_library` dependency graph.
+ JavaProtoAspectInfo = provider("JavaProtoAspectInfo", fields = ["jars"])
+ 
+--- a/bazel/private/java_lite_proto_library.bzl
++++ b/bazel/private/java_lite_proto_library.bzl
+@@ -8,12 +8,14 @@
+ 
+ load("@rules_java//java/common:java_common.bzl", "java_common")
+ load("@rules_java//java/common:java_info.bzl", "JavaInfo")
+-load("@rules_java//java/common:proguard_spec_info.bzl", "ProguardSpecInfo")
+ load("//bazel/common:proto_common.bzl", "proto_common")
+ load("//bazel/common:proto_info.bzl", "ProtoInfo")
+ load("//bazel/private:java_proto_support.bzl", "JavaProtoAspectInfo", "java_compile_for_protos", "java_info_merge_for_protos")
+ load("//bazel/private:toolchain_helpers.bzl", "toolchains")
++# Inline ProguardSpecInfo stub for rules_java 7.x compatibility
++ProguardSpecInfo = provider("ProguardSpecInfo", fields = ["specs"])
+ 
++
+ _PROTO_TOOLCHAIN_ATTR = "_aspect_proto_toolchain_for_javalite"
+ 
+ _JAVA_LITE_PROTO_TOOLCHAIN = Label("//bazel/private:javalite_toolchain_type")

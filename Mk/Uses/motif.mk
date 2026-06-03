@@ -20,6 +20,12 @@ LIB_DEPENDS+=		libXm.so:x11-toolkits/lesstif
 .  elif defined(WANT_OPEN_MOTIF_DEVEL)
 USE_XORG+=	xpm
 LIB_DEPENDS+=		libXm.so.4:x11-toolkits/open-motif-devel
+.  elif defined(WANT_THENTENAAR_MOTIF)
+USE_XORG+=	xpm
+LIB_DEPENDS+=		libXm.so.5:x11-toolkits/thentenaar-motif
+.  elif defined(WANT_THENTENAAR_MOTIF_DEVEL)
+USE_XORG+=	xpm
+LIB_DEPENDS+=		libXm.so.5:x11-toolkits/thentenaar-motif-devel
 .  else
 USE_XORG+=	xpm
 LIB_DEPENDS+=		libXm.so.4:x11-toolkits/open-motif

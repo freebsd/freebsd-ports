@@ -1,6 +1,6 @@
 PORTNAME=	google-fonts
 DISTVERSION=	0.0.0.20210120
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,6 @@ LICENSE=	APACHE20 OFL11
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	Andika>0:x11-fonts/andika \
-		GentiumBasic>0:x11-fonts/gentium-basic \
 		alef>0:x11-fonts/alef \
 		alegreya-sans>0:x11-fonts/alegreya-sans \
 		anonymous-pro>0:x11-fonts/anonymous-pro \
@@ -27,7 +26,6 @@ RUN_DEPENDS=	Andika>0:x11-fonts/andika \
 		lato>.:x11-fonts/lato \
 		montserrat>0:x11-fonts/montserrat \
 		noto-basic>0:x11-fonts/noto-basic \
-		open-sans>0:x11-fonts/open-sans \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		source-code-pro-ttf>0:x11-fonts/source-code-pro-ttf \
 		source-sans-ttf>0:x11-fonts/source-sans-ttf \
@@ -52,7 +50,6 @@ OPTIONS_DEFINE=	DOCS
 # These font families are installed by the RUN_DEPENDS above.
 EXCLUSIONS=	apache/arimo \
 		apache/cousine \
-		apache/opensans \
 		apache/roboto \
 		apache/tinos \
 		ofl/alef \
@@ -70,7 +67,6 @@ EXCLUSIONS=	apache/arimo \
 		ofl/firamono \
 		ofl/firasans \
 		ofl/firasanscondensed \
-		ofl/gentiumbasic \
 		ofl/jetbrainsmono \
 		ofl/lato \
 		ofl/montserrat \

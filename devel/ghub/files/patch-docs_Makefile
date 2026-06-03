@@ -1,11 +1,25 @@
---- docs/Makefile.orig	2023-05-13 16:19:37 UTC
+--- docs/Makefile.orig	2026-04-01 12:39:11 UTC
 +++ docs/Makefile
-@@ -51,7 +51,7 @@ html-dir: $(PKG).texi
+@@ -52,19 +52,19 @@ HTML_FIXUP_HREF   = 's% href="\.\./\(.*\)_html/% href=
+ %.html: %.texi
+ 	@printf "Generating $@\n"
+ 	@$(MAKEINFO) --html --no-split $(MANUAL_HTML_ARGS) $<
+-	@sed -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) $@
++	@$(SED) -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) $@
+ 
+ %/index.html: %.texi
+ 	@printf "Generating $(PKG)/*.html\n"
+ 	@rm -rf $(PKG)
+ 	@$(MAKEINFO) --html -o $(PKG)/ $(MANUAL_HTML_ARGS) $<
+ 	@for f in $$(find $(PKG) -name '*.html') ; do \
+-	sed -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) -e $(HTML_FIXUP_HREF) $$f ; \
++	$(SED) -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) -e $(HTML_FIXUP_HREF) $$f ; \
+ 	done
  
  %.pdf: %.texi
  	@printf "Generating $@\n"
 -	@texi2pdf --clean $< > /dev/null
 +	@texi2pdf $< > /dev/null
  
- PUBLISH_PATH   ?= /manual/
- RELEASE_PATH   ?= /manual/$(VERSION)/
+ DOCS_DOMAIN = docs.$(DOMAIN)
+ STAT_DOMAIN = stats.$(DOMAIN)

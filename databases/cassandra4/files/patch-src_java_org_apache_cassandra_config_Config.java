@@ -1,11 +1,11 @@
---- src/java/org/apache/cassandra/config/Config.java.orig	2022-05-06 16:40:06 UTC
+--- src/java/org/apache/cassandra/config/Config.java.orig	2026-03-17 23:20:36 UTC
 +++ src/java/org/apache/cassandra/config/Config.java
-@@ -304,7 +304,7 @@ public class Config
-     public volatile int key_cache_save_period = 14400;
-     public volatile int key_cache_keys_to_save = Integer.MAX_VALUE;
+@@ -445,7 +445,7 @@ public class Config
+     @Replaces(oldName = "key_cache_save_period", converter = Converters.SECONDS_CUSTOM_DURATION)
+     public volatile DurationSpec.IntSecondsBound key_cache_save_period = new DurationSpec.IntSecondsBound("4h");
  
 -    public String row_cache_class_name = "org.apache.cassandra.cache.OHCProvider";
 +    public String row_cache_class_name = "org.apache.cassandra.cache.SerializingCacheProvider";
-     public long row_cache_size_in_mb = 0;
-     public volatile int row_cache_save_period = 0;
-     public volatile int row_cache_keys_to_save = Integer.MAX_VALUE;
+     @Replaces(oldName = "row_cache_size_in_mb", converter = Converters.MEBIBYTES_DATA_STORAGE_LONG, deprecated = true)
+     public DataStorageSpec.LongMebibytesBound row_cache_size = new DataStorageSpec.LongMebibytesBound("0MiB");
+     @Replaces(oldName = "row_cache_save_period", converter = Converters.SECONDS_CUSTOM_DURATION)

@@ -1,9 +1,9 @@
 PORTNAME=	esbuild
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.0
-PORTREVISION=	5
+# post to phabricator & chromium@ before committing so they can update
+DISTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	devel www
-# also bump & test ESBUILD_VERSION in net-im/signal-desktop
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Extremely fast JavaScript bundler and minifier

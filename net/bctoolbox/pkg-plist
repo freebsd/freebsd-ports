@@ -18,8 +18,10 @@ include/bctoolbox/vconnect.h
 include/bctoolbox/vfs.h
 include/bctoolbox/vfs_encrypted.hh
 include/bctoolbox/vfs_standard.h
-lib/libbctoolbox.a
-lib/libbctoolbox-tester.a
+lib/libbctoolbox.so
+lib/libbctoolbox.so.1
+lib/libbctoolbox-tester.so
+lib/libbctoolbox-tester.so.1
 libdata/pkgconfig/bctoolbox.pc
 libdata/pkgconfig/bctoolbox-tester.pc
 share/BCToolbox/cmake/ConfigureSpecfile.cmake

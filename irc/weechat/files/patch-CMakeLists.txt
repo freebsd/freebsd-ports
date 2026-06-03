@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-05-31 11:34:43 UTC
+--- CMakeLists.txt.orig	2026-03-29 08:20:23 UTC
 +++ CMakeLists.txt
-@@ -102,11 +102,13 @@ option(ENABLE_ALIAS          "Enable Alias plugin"    
+@@ -96,11 +96,13 @@ option(ENABLE_ALIAS          "Enable Alias plugin"    
  option(ENABLE_ZSTD           "Enable Zstandard compression"             ON)
  option(ENABLE_CJSON          "Enable cJSON support"                     ON)
  option(ENABLE_ALIAS          "Enable Alias plugin"                      ON)
@@ -14,24 +14,50 @@
  option(ENABLE_IRC            "Enable IRC plugin"                        ON)
  option(ENABLE_LOGGER         "Enable Logger plugin"                     ON)
  option(ENABLE_RELAY          "Enable Relay plugin"                      ON)
-@@ -233,10 +236,12 @@ endif()
+@@ -258,13 +260,15 @@ endif()
    add_definitions(-DHAVE_CJSON)
  endif()
  
 -# Check for iconv
 -find_package(Iconv)
 -if(ICONV_FOUND)
--  add_definitions(-DHAVE_ICONV)
-+if (ENABLE_ICONV)
+-  if(ICONV_LIBRARY)
+-    list(APPEND EXTRA_LIBS ${ICONV_LIBRARY})
++if(ENABLE_ICONV)
 +  # Check for iconv
 +  find_package(Iconv)
 +  if(ICONV_FOUND)
++    if(ICONV_LIBRARY)
++      list(APPEND EXTRA_LIBS ${ICONV_LIBRARY})
++    endif()
 +    add_definitions(-DHAVE_ICONV)
-+  endif()
+   endif()
+-  add_definitions(-DHAVE_ICONV)
  endif()
  
  # Check for CURL
-@@ -311,10 +316,10 @@ set(exec_prefix "\${prefix}")
+@@ -290,12 +294,14 @@ endif()
+   add_custom_target(translations COMMAND true)
+ endif()
+ 
+-if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+-  find_library(EXECINFO_LIB_PATH execinfo /usr/local/lib)
+-  check_function_exists(backtrace HAVE_BACKTRACE)
+-  list(APPEND EXTRA_LIBS "execinfo")
+-else()
+-  check_symbol_exists(backtrace "execinfo.h" HAVE_BACKTRACE)
++if(ENABLE_BACKTRACE)
++  if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    find_library(EXECINFO_LIB_PATH execinfo /usr/local/lib)
++    check_function_exists(backtrace HAVE_BACKTRACE)
++    list(APPEND EXTRA_LIBS "execinfo")
++  else()
++    check_symbol_exists(backtrace "execinfo.h" HAVE_BACKTRACE)
++  endif()
+ endif()
+ 
+ if(${CMAKE_SYSTEM_NAME} STREQUAL "Haiku")
+@@ -343,10 +349,10 @@ set(exec_prefix "\${prefix}")
  set(PACKAGE "${PROJECT_NAME}")
  set(prefix "${CMAKE_INSTALL_PREFIX}")
  set(exec_prefix "\${prefix}")

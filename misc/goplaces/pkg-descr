@@ -1,0 +1,16 @@
+goplaces is a modern Go client and CLI for the Google Places API (New).
+It is fast for humans and tidy for scripts.
+
+Features:
+- Text search with filters: keyword, type, open now, min rating, price levels
+- Autocomplete suggestions for places and queries (session tokens supported)
+- Nearby search around a location restriction
+- Place photos in details and photo media URLs
+- Route search along a driving path (Routes API)
+- Directions between two points with distance, duration, and steps (Routes API)
+- Location bias (lat/lng/radius) and pagination tokens
+- Place details: hours, phone, website, rating, price, types
+- Optional reviews in details
+- Resolve free-form location strings to candidate places
+- Locale hints (language + region) across search/resolve/details
+- CLI with color human output and --json (respects NO_COLOR)

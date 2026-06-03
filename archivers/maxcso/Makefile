@@ -1,7 +1,7 @@
 PORTNAME=	maxcso
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.0-27
-DISTVERSIONSUFFIX=	-g528c69bf
+DISTVERSION=	1.13.0-36
+DISTVERSIONSUFFIX=	-g961f232c
 CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -19,6 +19,8 @@ LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
 USES=		compiler:c++11-lang gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	unknownbrackets
+
+MAKE_ARGS=	USE_EXTERNAL_LIBDEFLATE=1
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz

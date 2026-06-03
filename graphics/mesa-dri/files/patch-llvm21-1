@@ -1,0 +1,36 @@
+From 0e7c94b2b369ac0bf4439e207bc9047f2cd44ead Mon Sep 17 00:00:00 2001
+From: Natalie Vock <natalie.vock@gmx.de>
+Date: Mon, 10 Mar 2025 16:18:24 +0100
+Subject: [PATCH] ac/llvm: Don't use getTriple() on LLVM21+
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+setTargetTriple() takes a Triple now.
+
+Reviewed-by: Konstantin Seurer <konstantin.seurer@gmail.com>
+Reviewed-by: Marek Olšák <marek.olsak@amd.com>
+Part-of: <https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/33981>
+---
+ src/amd/llvm/ac_llvm_helper.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git src/amd/llvm/ac_llvm_helper.cpp src/amd/llvm/ac_llvm_helper.cpp
+index 1b6c955caa41..cb59123dacae 100644
+--- src/amd/llvm/ac_llvm_helper.cpp
++++ src/amd/llvm/ac_llvm_helper.cpp
+@@ -97,7 +97,11 @@ LLVMModuleRef ac_create_module(LLVMTargetMachineRef tm, LLVMContextRef ctx)
+    TargetMachine *TM = reinterpret_cast<TargetMachine *>(tm);
+    LLVMModuleRef module = LLVMModuleCreateWithNameInContext("mesa-shader", ctx);
+ 
++#if LLVM_VERSION_MAJOR >= 21
++   unwrap(module)->setTargetTriple(TM->getTargetTriple());
++#else
+    unwrap(module)->setTargetTriple(TM->getTargetTriple().getTriple());
++#endif
+    unwrap(module)->setDataLayout(TM->createDataLayout());
+    return module;
+ }
+-- 
+GitLab
+

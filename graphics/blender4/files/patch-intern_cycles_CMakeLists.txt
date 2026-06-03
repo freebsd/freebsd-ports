@@ -1,0 +1,18 @@
+--- intern/cycles/CMakeLists.txt.orig	2026-02-11 03:51:59 UTC
++++ intern/cycles/CMakeLists.txt
+@@ -90,6 +90,7 @@ elseif(CMAKE_COMPILER_IS_GNUCC OR (CMAKE_CXX_COMPILER_
+     set(CYCLES_SSE42_FLAGS "/arch:SSE2")
+   endif()
+ elseif(CMAKE_COMPILER_IS_GNUCC OR (CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
++  if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
+   check_cxx_compiler_flag(-msse4.2 CXX_HAS_SSE42)
+   check_cxx_compiler_flag(-mavx2 CXX_HAS_AVX2)
+ 
+@@ -98,6 +99,7 @@ elseif(CMAKE_COMPILER_IS_GNUCC OR (CMAKE_CXX_COMPILER_
+     if(CXX_HAS_AVX2)
+       set(CYCLES_AVX2_FLAGS "${CYCLES_SSE42_FLAGS} -mavx -mavx2 -mfma -mlzcnt -mbmi -mbmi2 -mf16c")
+     endif()
++  endif()
+   endif()
+ 
+ elseif(WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL "Intel")

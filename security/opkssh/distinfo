@@ -1,0 +1,5 @@
+TIMESTAMP = 1763233259
+SHA256 (opkssh-v0.10.0.vendor.tar.gz) = 038566589aa4db1bd890b20e074d0b9b995a2b766b30c72f97b35dd2afa4168e
+SIZE (opkssh-v0.10.0.vendor.tar.gz) = 5490704
+SHA256 (openpubkey-opkssh-v0.10.0_GH0.tar.gz) = 71796c060705411e98fc7d11d944c531cea1d09df14cc1331c5647a31483de41
+SIZE (openpubkey-opkssh-v0.10.0_GH0.tar.gz) = 573801

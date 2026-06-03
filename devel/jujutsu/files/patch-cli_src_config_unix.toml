@@ -1,0 +1,6 @@
+--- cli/src/config/unix.toml.orig	2026-03-04 17:59:55 UTC
++++ cli/src/config/unix.toml
+@@ -1,2 +1,2 @@
+ [ui]
+-editor = "nano"
++editor = "vi"

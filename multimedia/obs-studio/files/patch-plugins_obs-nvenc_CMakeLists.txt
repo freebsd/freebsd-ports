@@ -1,0 +1,29 @@
+--- plugins/obs-nvenc/CMakeLists.txt.orig	2025-09-27 00:04:14.000000000 +0300
++++ plugins/obs-nvenc/CMakeLists.txt	2025-12-23 07:49:06.708408000 +0300
+@@ -14,7 +14,7 @@
+   add_subdirectory("${CMAKE_SOURCE_DIR}/shared/opts-parser" "${CMAKE_BINARY_DIR}/shared/opts-parser")
+ endif()
+ 
+-if(OS_LINUX AND NOT TARGET OBS::glad)
++if((OS_LINUX OR OS_FREEBSD) AND NOT TARGET OBS::glad)
+   add_subdirectory("${CMAKE_SOURCE_DIR}/deps/glad" "${CMAKE_BINARY_DIR}/deps/glad")
+ endif()
+ 
+@@ -28,7 +28,7 @@
+ target_sources(
+   obs-nvenc
+   PRIVATE
+-    $<$<PLATFORM_ID:Linux>:nvenc-opengl.c>
++    $<$<PLATFORM_ID:Linux,FreeBSD>:nvenc-opengl.c>
+     $<$<PLATFORM_ID:Windows>:nvenc-d3d11.c>
+     cuda-helpers.c
+     cuda-helpers.h
+@@ -46,7 +46,7 @@
+ 
+ target_link_libraries(
+   obs-nvenc
+-  PRIVATE OBS::libobs OBS::opts-parser FFnvcodec::FFnvcodec $<$<PLATFORM_ID:Linux>:OBS::glad>
++  PRIVATE OBS::libobs OBS::opts-parser FFnvcodec::FFnvcodec $<$<PLATFORM_ID:Linux,FreeBSD>:OBS::glad>
+ )
+ 
+ target_compile_definitions(obs-nvenc PRIVATE $<$<BOOL:${ENABLE_NVENC_FFMPEG_IDS}>:REGISTER_FFMPEG_IDS>)

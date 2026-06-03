@@ -1,5 +1,5 @@
 PORTNAME=	reformulas
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,9 +9,8 @@ WWW=		https://cran.r-project.org/package=reformulas
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS=	R-cran-Rdpack>0:devel/R-cran-Rdpack
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-Rdpack>0:devel/R-cran-Rdpack
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
 

@@ -1,0 +1,4 @@
+mpiFileUtils provides a library (libmfu) and a suite of MPI-parallel file
+utilities such as dcp (parallel copy), dcmp (compare), ddup (duplicate finder),
+dfind, dtar/dbz2, dchmod, and more. Designed for high scalability on large
+filesystems.

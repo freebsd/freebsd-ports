@@ -1,5 +1,5 @@
 PORTNAME=	Tickit
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -11,9 +11,9 @@ WWW=		https://metacpan.org/release/Tickit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libtickit>=0.4.4:devel/libtickit \
+BUILD_DEPENDS=	libtickit>=0.4.6:devel/libtickit \
 		p5-Module-Build-Using-PkgConfig>=0:devel/p5-Module-Build-Using-PkgConfig \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libtickit.so:devel/libtickit

@@ -1,15 +1,15 @@
---- Makefile.orig	2021-02-28 05:20:51 UTC
+--- Makefile.orig	2024-02-04 05:55:04 UTC
 +++ Makefile
 @@ -14,7 +14,7 @@
  #	NO_SSL_SUPPORT		/* don't support ssl (https) */
  #	DO_HTPASSWD		/* support .htpasswd files */
  #	NO_LUA_SUPPORT		/* don't support Lua for dynamic content */
 -#	NO_BLOCKLIST_SUPPORT	/* don't support blocklist */
-+#	NO_BLACKLIST_SUPPORT	/* don't support blacklist */
++#	NO_BLACKLIST_SUPPORT	/* don't support blocklist */
  #
  # other system specific defines:
  #	HAVE_NBUTIL_H		/* netbsd compat is in <nbutil.h>
-@@ -24,20 +24,17 @@
+@@ -24,22 +24,19 @@
  # for setting CFLAGS relevant to your make, eg
  #   % make COPTS="-DDO_HTPASSWD"
  
@@ -22,6 +22,8 @@
  	tilde-luzah-bozo.c dir-index-bozo.c content-bozo.c lua-bozo.c
  SRCS+=	main.c
  
+ COPTS.ssl-bozo.c+=-Wno-error=deprecated-declarations
+ 
 -LDADD=	-lblocklist -lcrypt -llua -lm
 -DPADD=	${LIBBLOCKLIST} ${LIBCRYPT} ${LIBLUA} ${LIBM}
 -
@@ -33,7 +35,7 @@
  .if defined(.OS.MAKE)
  OPSYS=	${.OS.MAKE}
  .else
-@@ -48,9 +45,6 @@ LDADD+=		-lnbutil
+@@ -50,9 +47,6 @@ LDADD+=		-lnbutil
  CPPFLAGS+=	-DHAVE_NBUTIL_H
  LDADD+=		-lnbutil
  .endif

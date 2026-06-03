@@ -1,5 +1,6 @@
 PORTNAME=	edgar
 DISTVERSION=	1.37
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/riksweeney/edgar/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	legend-of-

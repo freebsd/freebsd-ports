@@ -112,16 +112,6 @@ share/doc/HTML/fr/tellico/source-options.png
 share/doc/HTML/fr/tellico/sru-options.png
 share/doc/HTML/fr/tellico/template-options.png
 share/doc/HTML/fr/tellico/z3950-options.png
-share/doc/HTML/it/tellico/advanced.docbook
-share/doc/HTML/it/tellico/configuration.docbook
-share/doc/HTML/it/tellico/details.docbook
-share/doc/HTML/it/tellico/faqs.docbook
-share/doc/HTML/it/tellico/fundamentals.docbook
-share/doc/HTML/it/tellico/hacking.docbook
-share/doc/HTML/it/tellico/importing-exporting.docbook
-share/doc/HTML/it/tellico/index.cache.bz2
-share/doc/HTML/it/tellico/index.docbook
-share/doc/HTML/it/tellico/menus.docbook
 share/doc/HTML/nl/tellico/advanced.docbook
 share/doc/HTML/nl/tellico/configuration.docbook
 share/doc/HTML/nl/tellico/details.docbook
@@ -225,6 +215,7 @@ share/kconf_update/tellico-3-4-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
 share/knsrcfiles/tellico-template.knsrc
+share/locale/ar/LC_MESSAGES/tellico.mo
 share/locale/bg/LC_MESSAGES/tellico.mo
 share/locale/bs/LC_MESSAGES/tellico.mo
 share/locale/ca/LC_MESSAGES/tellico.mo

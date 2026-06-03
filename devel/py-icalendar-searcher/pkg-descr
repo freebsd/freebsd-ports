@@ -1,0 +1,10 @@
+This library should contain logic for searching, filtering and sorting icalendar
+data, as well as logic for storing and representing an icalendar search query.
+
+Audience:
+- This will be used for the python CalDAV client library, both for bundling
+  search parameters together in one object, for doing client-side filtering when
+  the server does not support the desired search query.
+- This may be useful in any kind of software handling collections of calendar
+  content and needing to do filtering or searches on it.
+- This may also be useful by calendar server developers.

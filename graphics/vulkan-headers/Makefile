@@ -1,13 +1,16 @@
 PORTNAME=	vulkan-headers
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.322
+DISTVERSIONPREFIX=	vulkan-sdk-
+DISTVERSION=	1.4.350.0
 CATEGORIES=	graphics
 
-MAINTAINER=	atanubiswas484@gmail.com
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-Headers
 
-LICENSE=	APACHE20
+LICENSE=		APACHE20 MIT
+LICENSE_COMB=		multi
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSES/Apache-2.0.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 
 USES=		cmake
 USE_GITHUB=	yes

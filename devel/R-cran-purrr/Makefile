@@ -1,5 +1,5 @@
 PORTNAME=	purrr
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -28,5 +28,7 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-tidyselect>0:devel/R-cran-tidyselect
 
 USES=		cran:auto-plist,compiles
+
+TESTING_UNSAFE=	Missed R-cran-mirai port.
 
 .include <bsd.port.mk>

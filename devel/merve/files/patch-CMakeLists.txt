@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2026-02-02 18:27:24 UTC
++++ CMakeLists.txt
+@@ -70,16 +70,8 @@ if(MERVE_TESTING OR MERVE_BENCHMARKS)
+     endif()
+   endif()
+   # We use Google Benchmark, but it does not build under several 32-bit systems.
+-  if(Git_FOUND AND MERVE_BENCHMARKS AND (CMAKE_SIZEOF_VOID_P EQUAL 8))
+-    CPMAddPackage(
+-      NAME benchmark
+-      GITHUB_REPOSITORY google/benchmark
+-      GIT_TAG f91b6b4
+-      OPTIONS "BENCHMARK_ENABLE_TESTING OFF"
+-              "BENCHMARK_ENABLE_INSTALL OFF"
+-              "BENCHMARK_ENABLE_WERROR OFF"
+-
+-    )
++  if(MERVE_BENCHMARKS)
++    find_package(Benchmark)
+   endif()
+ 
+   if (MERVE_TESTING AND NOT EMSCRIPTEN)

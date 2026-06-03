@@ -1,0 +1,11 @@
+--- release/freedesktop/blender.desktop.orig	2025-07-10 09:43:07 UTC
++++ release/freedesktop/blender.desktop
+@@ -79,7 +79,7 @@ Keywords=3d;cg;modeling;animation;painting;sculpting;t
+ Comment[zh_CN]=3D 建模、动画、渲染和后期制作
+ Comment[zh_TW]=3D 模型、動畫、算圖和後製
+ Keywords=3d;cg;modeling;animation;painting;sculpting;texturing;video editing;video tracking;rendering;render engine;cycles;python;
+-Exec=blender %f
++Exec=blender-%%VERS_TAG%% %f
+ Icon=blender
+ Terminal=false
+ Type=Application

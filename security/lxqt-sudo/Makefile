@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-sudo
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LXQT
 
@@ -10,10 +10,8 @@ WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	sudo:security/sudo
-
 USES=		cmake compiler:c++20-lang gettext kde:6 lxqt:2 qt:6 perl5 tar:xz \
-		gnome xorg
+		gnome sudo xorg
 USE_PERL5=	build
 USE_QT=		base:run tools:build svg
 

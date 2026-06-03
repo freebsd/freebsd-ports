@@ -1,0 +1,11 @@
+--- plugins-scripts/subst.in.orig	2016-08-01 16:28:29.583644100 +0000
++++ plugins-scripts/subst.in	2025-05-12 18:58:53.592280000 +0000
+@@ -41,7 +41,7 @@
+
+ /^#! ?\/.*\/python/ {sub(/^#! ?\/.*\/python/,"#! @PYTHON@");}
+ /^#! ?\/.*\/perl/ {sub(/^#! ?\/.*\/perl/,"#! @PERL@");}
+-/^#! ?\/.*\/[a-z]{0,2}awk/ {sub(/^#! ?\/.*\/[a-z]{0,2}awk/,"#! @AWK@");}
++/^#! ?\/.*\/[a-z]?[a-z]?awk/ {sub(/^#! ?\/.*\/[a-z]?[a-z]?awk/,"#! @AWK@");}
+ /^#! ?\/.*\/sh/ {sub(/^#! ?\/.*\/sh/,"#! @SHELL@");}
+
+ # add to libexecdir to INC for perl utils.pm

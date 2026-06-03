@@ -1,10 +1,10 @@
 [
 { type: install
   message: <<EOM
-To activate anthy-unicode, you will need to add the following lines to
-your ~/.emacs:
+To activate anthy-unicode in Emacs, you will need to add the following
+lines to your .emacs file:
 
-(set-language-environment "japanese")
+(set-language-environment "Japanese")
 (setq default-input-method "japanese-anthy-unicode")
 EOM
 }

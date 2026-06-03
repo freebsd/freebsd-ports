@@ -1,0 +1,229 @@
+--- src/Communication_SWIG/libSALOME_Comm.i.orig	2023-06-19 16:51:55 UTC
++++ src/Communication_SWIG/libSALOME_Comm.i
+@@ -49,7 +49,11 @@
+   PyObject* iorSupport = PyObject_CallMethod(orb, (char*)"object_to_string", (char*)"O", $input);
+  
+   if (iorSupport == Py_None)
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+   char * s = PyString_AsString(PyObject_Str(iorSupport));
+  
+   // Ask omniORB to convert IOR string to SALOME::SenderDouble_ptr
+@@ -76,7 +80,11 @@
+   PyObject* iorSupport = PyObject_CallMethod(orb, (char*)"object_to_string", (char*)"O", $input);
+  
+   if (iorSupport == Py_None)
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+   char * s = PyString_AsString(PyObject_Str(iorSupport));
+  
+   // Ask omniORB to convert IOR string to SALOME::SenderInt_ptr
+@@ -133,7 +141,11 @@ PyObject * getValueForSenderDouble(SALOME::SenderDoubl
+               {
+                 const char * message = "Error in SUPPORT::getTypes";
+                 PyErr_SetString(PyExc_RuntimeError, message);
++#if (SWIG_VERSION < 0x040400)
+                 return NULL;
++#else
++                return 0;
++#endif
+               }
+     }
+   PyObject * result = Py_BuildValue("O", py_list);
+@@ -160,7 +172,11 @@ PyObject * getValueForSenderInt(SALOME::SenderInt_ptr 
+               {
+                 const char * message = "Error in SUPPORT::getTypes";
+                 PyErr_SetString(PyExc_RuntimeError, message);
++#if (SWIG_VERSION < 0x040400)
+                 return NULL;
++#else
++                return 0;
++#endif
+               }
+     }
+   PyObject * result = Py_BuildValue("O", py_list);
+@@ -188,7 +204,11 @@ PyObject * getValueForMatrix(SALOME::Matrix_ptr matrix
+               {
+                 const char * message = "PyList_SetItem matrix sent may be invalid";
+                 PyErr_SetString(PyExc_RuntimeError, message);
++#if (SWIG_VERSION < 0x040400)
+                 return NULL;
++#else
++                return 0;
++#endif
+               }
+          }
+        PyList_SetItem(py_list,i,tmpRow);
+--- src/DSC/DSC_Python/calcium.i.orig	2023-06-19 16:51:55 UTC
++++ src/DSC/DSC_Python/calcium.i
+@@ -56,7 +56,11 @@ PyObject* dsc ;
+   {
+     PyErr_SetString(PyExc_ImportError,
+         (char*)"Cannot import _omnipy");
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+   }
+   PyObject* pyapi = PyObject_GetAttrString(omnipy, (char*)"API");
+   api = (omniORBpyAPI*)PyCapsule_GetPointer(pyapi,"_omnipy.API");
+@@ -706,7 +710,11 @@ CORBAPTR(PortableServer::POA)
+       PyErr_SetObject(excc, exci);
+       Py_XDECREF(excc);
+       Py_XDECREF(exci);
++#if (SWIG_VERSION < 0x040400)
+       return NULL;
++#else
++      return 0;
++#endif
+    }
+    catch(Engines::DSC::PortNotConnected& _e) {
+       Py_BLOCK_THREADS
+@@ -715,7 +723,11 @@ CORBAPTR(PortableServer::POA)
+       PyErr_SetObject(excc, exci);
+       Py_XDECREF(excc);
+       Py_XDECREF(exci);
++#if (SWIG_VERSION < 0x040400)
+       return NULL;
++#else
++      return 0;
++#endif
+    }
+    catch(Engines::DSC::BadPortType& _e) {
+       Py_BLOCK_THREADS
+@@ -724,18 +736,30 @@ CORBAPTR(PortableServer::POA)
+       PyErr_SetObject(excc, exci);
+       Py_XDECREF(excc);
+       Py_XDECREF(exci);
++#if (SWIG_VERSION < 0x040400)
+       return NULL;
++#else
++      return 0;
++#endif
+    }
+    catch (SALOME_Exception &e) {
+       Py_BLOCK_THREADS
+       PyErr_SetString(PyExc_RuntimeError,e.what());
++#if (SWIG_VERSION < 0x040400)
+       return NULL;
++#else
++      return 0;
++#endif
+    }
+    catch (SALOME::SALOME_Exception &e) {
+       Py_BLOCK_THREADS
+       //This one should be converted into a python corba exception
+       PyErr_SetString(PyExc_RuntimeError,e.details.text);
++#if (SWIG_VERSION < 0x040400)
+       return NULL;
++#else
++      return 0;
++#endif
+    }
+    catch (const CORBA::SystemException& e) {
+       Py_BLOCK_THREADS 
+@@ -744,7 +768,11 @@ CORBAPTR(PortableServer::POA)
+    catch(...) {
+       Py_BLOCK_THREADS
+       PyErr_SetString(PyExc_ValueError,"Unknown exception");
++#if (SWIG_VERSION < 0x040400)
+       return NULL;
++#else
++      return 0;
++#endif
+    }
+    Py_END_ALLOW_THREADS
+ }
+--- src/Launcher_SWIG/Launcher.i.orig	2023-06-19 16:51:55 UTC
++++ src/Launcher_SWIG/Launcher.i
+@@ -139,7 +139,7 @@ struct ResourceDefinition_cpp (public)
+ {
+   try
+   {
+-    $function
++    $action
+   }
+   catch (ResourcesException& e)
+   {
+@@ -193,7 +193,7 @@ class ResourcesManager_cpp (public)
+ {
+   try
+   {
+-    $function
++    $action
+   }
+   catch (LauncherException& e)
+   {
+--- src/LifeCycleCORBA_SWIG/libSALOME_LifeCycleCORBA.i.orig	2023-06-19 16:51:55 UTC
++++ src/LifeCycleCORBA_SWIG/libSALOME_LifeCycleCORBA.i
+@@ -63,7 +63,11 @@ omniORBpyAPI* api=0;
+   if (!omnipy)
+   {
+     PyErr_SetString(PyExc_ImportError, (char*)"Cannot import _omnipy");
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+   }
+   PyObject* pyapi = PyObject_GetAttrString(omnipy, (char*)"API");
+   api = (omniORBpyAPI*)PyCapsule_GetPointer(pyapi,"_omnipy.API");
+@@ -176,7 +180,11 @@ omniORBpyAPI* api=0;
+     {
+        MESSAGE("Not a ContainerParameters struct");
+        PyErr_SetString(PyExc_TypeError,"Must Be a Python ContainerParameters object");
+-       return NULL;
++#if (SWIG_VERSION < 0x040400)
++    return NULL;
++#else
++    return 0;
++#endif
+     }
+ }
+ 
+@@ -199,22 +207,38 @@ omniORBpyAPI* api=0;
+     catch (ServiceUnreachable&) {
+        Py_BLOCK_THREADS
+        PyErr_SetString(PyExc_RuntimeError,"Naming Service Unreacheable");
++#if (SWIG_VERSION < 0x040400)
+        return NULL;
++#else
++       return 0;
++#endif
+     }
+     catch (SALOME_Exception &e) {
+        Py_BLOCK_THREADS
+        PyErr_SetString(PyExc_RuntimeError,e.what());
++#if (SWIG_VERSION < 0x040400)
+        return NULL;
++#else
++       return 0;
++#endif
+     }
+     catch (SALOME::SALOME_Exception &e) {
+        Py_BLOCK_THREADS
+        PyErr_SetString(PyExc_RuntimeError,e.details.text);
++#if (SWIG_VERSION < 0x040400)
+        return NULL;
++#else
++       return 0;
++#endif
+     }
+     catch (...) {
+        Py_BLOCK_THREADS
+        PyErr_SetString(PyExc_RuntimeError, "unknown exception");
++#if (SWIG_VERSION < 0x040400)
+        return NULL;
++#else
++       return 0;
++#endif
+     }
+     Py_END_ALLOW_THREADS
+ }

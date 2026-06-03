@@ -1,0 +1,4 @@
+QJSEngine bindings for the QCAD API.
+
+It uses the Qt Script based qtscriptgenerator for Qt 5 which was made
+obsolete when the Qt Script module was declared deprecated.

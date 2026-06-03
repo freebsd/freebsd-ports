@@ -3,6 +3,7 @@
 %%HTML%%%%DOCBASE%%/nl/articles/leap-seconds/index.html
 %%HTML%%%%DOCBASE%%/nl/articles/problem-reports/index.html
 %%HTML%%%%DOCBASE%%/nl/articles/solid-state/index.html
+%%HTML%%%%DOCBASE%%/nl/books/faq/index.html
 %%HTML%%%%DOCBASE%%/nl/books/handbook/advanced-networking/index.html
 %%HTML%%%%DOCBASE%%/nl/books/handbook/audit/index.html
 %%HTML%%%%DOCBASE%%/nl/books/handbook/basics/index.html
@@ -52,4 +53,5 @@
 %%PDF%%%%DOCBASE%%/nl/articles/leap-seconds/leap-seconds_nl.pdf
 %%PDF%%%%DOCBASE%%/nl/articles/problem-reports/problem-reports_nl.pdf
 %%PDF%%%%DOCBASE%%/nl/articles/solid-state/solid-state_nl.pdf
+%%PDF%%%%DOCBASE%%/nl/books/faq/faq_nl.pdf
 %%PDF%%%%DOCBASE%%/nl/books/handbook/handbook_nl.pdf

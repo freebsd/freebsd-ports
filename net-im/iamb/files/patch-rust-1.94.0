@@ -1,0 +1,21 @@
+From d69bc64cb9f6ddd150d5a6f1e08119f4cc74740e Mon Sep 17 00:00:00 2001
+From: vaw <git@nlih.de>
+Date: Fri, 10 Apr 2026 15:02:40 +0000
+Subject: [PATCH] Fix build on rustc `1.94.0` (#599)
+
+---
+ src/main.rs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/main.rs b/src/main.rs
+index 0a316c76..1d6b7d8a 100644
+--- src/main.rs
++++ src/main.rs
+@@ -11,6 +11,7 @@
+ //!
+ //! Most rendering logic lives under the [windows] module, but [Matrix messages][message] have
+ //! their own module.
++#![recursion_limit = "256"]
+ #![allow(clippy::manual_range_contains)]
+ #![allow(clippy::needless_return)]
+ #![allow(clippy::result_large_err)]

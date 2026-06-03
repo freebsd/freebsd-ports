@@ -636,7 +636,7 @@ usr/lib64/libcom_err.so.2.1
 usr/lib64/libcrypt.so.2
 usr/lib64/libcrypt.so.2.0.0
 usr/lib64/libcrypto.so.3
-usr/lib64/libcrypto.so.3.2.2
+usr/lib64/libcrypto.so.3.5.1
 usr/lib64/libdatrie.so.1
 usr/lib64/libdatrie.so.1.4.0
 usr/lib64/libdb-5.3.so
@@ -775,7 +775,7 @@ usr/lib64/libsoup-gnome-2.4.so.1.11.0
 usr/lib64/libsqlite3.so.0
 usr/lib64/libsqlite3.so.0.8.6
 usr/lib64/libssl.so.3
-usr/lib64/libssl.so.3.2.2
+usr/lib64/libssl.so.3.5.1
 usr/lib64/libstdc++.so.6
 usr/lib64/libstdc++.so.6.0.29
 usr/lib64/libthread_db.so.1
@@ -796,7 +796,6 @@ usr/lib64/libz.so.1
 usr/lib64/libz.so.1.2.11
 usr/lib64/libzstd.so.1
 usr/lib64/libzstd.so.1.5.5
-usr/lib64/ossl-modules/fips.so
 usr/lib64/ossl-modules/legacy.so
 usr/lib64/security/pam_cap.so
 usr/libexec/awk/grcat

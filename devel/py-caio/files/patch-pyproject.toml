@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	2026-02-24 06:48:06 UTC
++++ pyproject.toml
+@@ -1,10 +1,9 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "caio"
+-license-files = ["COPYING"]
+ description = "Asynchronous file IO for Linux MacOS or Windows."
+ readme = "README.md"
+ authors = [{ name = "Dmitry Orlov", email = "me@mosquito.su"}]

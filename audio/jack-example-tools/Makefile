@@ -20,7 +20,7 @@ USES=		compiler:c11 localbase:ldflags meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	jackaudio
 
-CONFIGURE_ARGS=	-Djack_net=enabled \
+MESON_ARGS=	-Djack_net=enabled \
 		-Djack_netsource=enabled \
 		-Djack_rec=enabled
 CFLAGS+=	-fPIC

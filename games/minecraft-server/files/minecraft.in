@@ -8,7 +8,7 @@
 # minecraft_enable (Default: NO)
 # minecraft_mems (Default: 1024M)
 # minecraft_memx (Default: 1024M)
-# minecraft_args (Default: "")
+# minecraft_args (Default: "--enable-native-access=ALL-UNNAMED")
 . /etc/rc.subr
 
 name=minecraft
@@ -19,7 +19,7 @@ load_rc_config $name
 
 minecraft_mems=${minecraft_mems:-"1024M"}
 minecraft_memx=${minecraft_memx:-"1024M"}
-minecraft_args=${minecraft_args:-""}
+minecraft_args=${minecraft_args:-"--enable-native-access=ALL-UNNAMED"}
 
 extra_commands="console status kill"
 start_cmd="${name}_start"

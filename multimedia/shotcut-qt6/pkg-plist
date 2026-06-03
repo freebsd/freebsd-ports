@@ -9,6 +9,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/filter-sets/Glow Intensity
 %%DATADIR%%/filter-sets/Obscure With Blur
 %%DATADIR%%/filter-sets/Obscure With Mosaic
+%%DATADIR%%/filter-sets/Soft Focus
 %%DATADIR%%/filter-sets/Text Simple with Gradient Back
 %%DATADIR%%/qml/export-chapters/export-chapters.js
 %%DATADIR%%/qml/export-chapters/main.js
@@ -22,6 +23,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/export-edl/package.json
 %%DATADIR%%/qml/export-edl/rebuild.sh
 %%DATADIR%%/qml/export-edl/test-node.js
+%%DATADIR%%/qml/extensions/whispermodel.qml
 %%DATADIR%%/qml/filters/alpha_adjust/icon.webp
 %%DATADIR%%/qml/filters/alpha_adjust/meta.qml
 %%DATADIR%%/qml/filters/alpha_adjust/ui.qml
@@ -74,6 +76,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/audio_matrix_ms/meta.qml
 %%DATADIR%%/qml/filters/audio_matrix_ms/ui.qml
 %%DATADIR%%/qml/filters/audio_mono/meta.qml
+%%DATADIR%%/qml/filters/audio_mono/ui.qml
 %%DATADIR%%/qml/filters/audio_mute/meta.qml
 %%DATADIR%%/qml/filters/audio_mute/ui.qml
 %%DATADIR%%/qml/filters/audio_noisegate/meta.qml
@@ -344,6 +347,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/opacity/meta.qml
 %%DATADIR%%/qml/filters/opacity/meta_movit.qml
 %%DATADIR%%/qml/filters/opacity/ui.qml
+%%DATADIR%%/qml/filters/outline/icon.webp
+%%DATADIR%%/qml/filters/outline/meta.qml
+%%DATADIR%%/qml/filters/outline/ui.qml
 %%DATADIR%%/qml/filters/pillar_echo/icon.webp
 %%DATADIR%%/qml/filters/pillar_echo/meta.qml
 %%DATADIR%%/qml/filters/pillar_echo/ui.qml
@@ -475,6 +481,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/white/meta_movit.qml
 %%DATADIR%%/qml/filters/white/ui.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/Button.qml
+%%DATADIR%%/qml/modules/Shotcut/Controls/ChannelMask.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ColorPicker.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ComboBox.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/CurveComboBox.qml
@@ -542,6 +549,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/translations/shotcut_eu.qm
 %%DATADIR%%/translations/shotcut_fi.qm
 %%DATADIR%%/translations/shotcut_fr.qm
+%%DATADIR%%/translations/shotcut_fr_CA.qm
 %%DATADIR%%/translations/shotcut_ga.qm
 %%DATADIR%%/translations/shotcut_gd.qm
 %%DATADIR%%/translations/shotcut_gl.qm
@@ -550,6 +558,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/translations/shotcut_it.qm
 %%DATADIR%%/translations/shotcut_ja.qm
 %%DATADIR%%/translations/shotcut_ko.qm
+%%DATADIR%%/translations/shotcut_lt.qm
 %%DATADIR%%/translations/shotcut_nb.qm
 %%DATADIR%%/translations/shotcut_ne.qm
 %%DATADIR%%/translations/shotcut_nl.qm

@@ -21,6 +21,7 @@
 %%SITE_PERL%%/PDF/Builder/Basic/PDF/String.pm
 %%SITE_PERL%%/PDF/Builder/Basic/PDF/Utils.pm
 %%SITE_PERL%%/PDF/Builder/Content.pm
+%%SITE_PERL%%/PDF/Builder/Content/Column_docs.pm
 %%SITE_PERL%%/PDF/Builder/Content/Hyphenate_basic.pm
 %%SITE_PERL%%/PDF/Builder/Content/Text.pm
 %%SITE_PERL%%/PDF/Builder/Docs.pm
@@ -144,6 +145,7 @@
 %%PERL5_MAN3%%/PDF::Builder::Basic::PDF::String.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Basic::PDF::Utils.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Content.3.gz
+%%PERL5_MAN3%%/PDF::Builder::Content::Column_docs.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Content::Hyphenate_basic.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Content::Text.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Docs.3.gz

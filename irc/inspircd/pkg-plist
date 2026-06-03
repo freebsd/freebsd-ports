@@ -17,6 +17,7 @@ bin/inspircd-testssl
 %%ETCDIR%%/examples/providers/dronebl.example.conf
 %%ETCDIR%%/examples/providers/efnet-rbl.example.conf
 %%ETCDIR%%/examples/providers/irccloud.example.conf
+%%ETCDIR%%/examples/providers/securelist.example.conf
 %%ETCDIR%%/examples/providers/torexit.example.conf
 %%ETCDIR%%/examples/services/anope.example.conf
 %%ETCDIR%%/examples/services/atheme.example.conf
@@ -126,6 +127,7 @@ libexec/inspircd/modules/m_ircv3_labeledresponse.so
 libexec/inspircd/modules/m_ircv3_msgid.so
 libexec/inspircd/modules/m_ircv3_servertime.so
 libexec/inspircd/modules/m_ircv3_sts.so
+libexec/inspircd/modules/m_ircv3_utf8only.so
 libexec/inspircd/modules/m_joinflood.so
 libexec/inspircd/modules/m_kicknorejoin.so
 libexec/inspircd/modules/m_knock.so
@@ -180,6 +182,7 @@ libexec/inspircd/modules/m_setidle.so
 libexec/inspircd/modules/m_setname.so
 libexec/inspircd/modules/m_sha1.so
 libexec/inspircd/modules/m_sha2.so
+libexec/inspircd/modules/m_sharebans.so
 libexec/inspircd/modules/m_showfile.so
 libexec/inspircd/modules/m_showwhois.so
 libexec/inspircd/modules/m_shun.so
@@ -220,7 +223,6 @@ libexec/inspircd/modules/m_services.so
 %%LDAP%%libexec/inspircd/modules/m_ldap.so
 %%LDAP%%libexec/inspircd/modules/m_ldapauth.so
 %%LDAP%%libexec/inspircd/modules/m_ldapoper.so
-%%MBEDTLS%%libexec/inspircd/modules/m_ssl_mbedtls.so
 %%MYSQL%%libexec/inspircd/modules/m_mysql.so
 %%OPENSSL%%libexec/inspircd/modules/m_ssl_openssl.so
 %%PCRE2%%libexec/inspircd/modules/m_regex_pcre2.so

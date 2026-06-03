@@ -3,7 +3,7 @@ bin/solvespace-cli
 include/slvs.h
 lib/libslvs.so
 lib/libslvs.so.1
-lib/libslvs.so.3.1
+lib/libslvs.so.3.2
 share/applications/solvespace.desktop
 share/icons/hicolor/16x16/apps/solvespace.png
 share/icons/hicolor/16x16/mimetypes/application-x-solvespace.png
@@ -17,6 +17,7 @@ share/icons/hicolor/scalable/apps/solvespace.svg
 share/icons/hicolor/scalable/mimetypes/application-x-solvespace.svg
 share/metainfo/com.solvespace.SolveSpace.metainfo.xml
 share/mime/packages/solvespace-slvs.xml
+share/thumbnailers/solvespace.thumbnailer
 %%DATADIR%%/banner.txt
 %%DATADIR%%/fonts/BitstreamVeraSans-Roman-builtin.ttf
 %%DATADIR%%/fonts/private/0-check-false.png
@@ -64,6 +65,8 @@ share/mime/packages/solvespace-slvs.xml
 %%DATADIR%%/icons/graphics-window/text.png
 %%DATADIR%%/icons/graphics-window/trim.png
 %%DATADIR%%/icons/graphics-window/vert.png
+%%DATADIR%%/icons/text-window/constraint-dimo.png
+%%DATADIR%%/icons/text-window/constraint-wo.png
 %%DATADIR%%/icons/text-window/constraint.png
 %%DATADIR%%/icons/text-window/construction.png
 %%DATADIR%%/icons/text-window/edges.png
@@ -78,10 +81,12 @@ share/mime/packages/solvespace-slvs.xml
 %%DATADIR%%/icons/text-window/shaded.png
 %%DATADIR%%/icons/text-window/workplane.png
 %%DATADIR%%/locales.txt
+%%DATADIR%%/locales/cs_CZ.po
 %%DATADIR%%/locales/de_DE.po
 %%DATADIR%%/locales/en_US.po
 %%DATADIR%%/locales/es_AR.po
 %%DATADIR%%/locales/fr_FR.po
+%%DATADIR%%/locales/ja_JP.po
 %%DATADIR%%/locales/ru_RU.po
 %%DATADIR%%/locales/tr_TR.po
 %%DATADIR%%/locales/uk_UA.po

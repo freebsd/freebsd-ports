@@ -1,0 +1,3 @@
+apswutils is a fork of sqlite-minutils that uses APSW (Another Python SQLite
+Wrapper) instead of the standard sqlite3 module, providing a lightweight and
+expressive interface for working with SQLite databases.

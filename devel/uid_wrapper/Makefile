@@ -1,5 +1,5 @@
 PORTNAME=	uid_wrapper
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	SAMBA/cwrap
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka
 
-USES=		cmake:testing localbase pathfix
+USES=		cmake:testing localbase
 
 CMAKE_OFF=	PICKY_DEVELOPER \
 		UNIT_TESTING

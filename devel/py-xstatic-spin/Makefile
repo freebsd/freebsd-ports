@@ -7,10 +7,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-Spin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Spin (XStatic packaging standard)
-WWW=		https://spin.js.org/ \
-		https://github.com/openstack/xstatic-spin \
-		https://github.com/fgnass/spin.js
+COMMENT=	Spin ${PORTVERSION:R} (XStatic packaging standard)
+WWW=		https://opendev.org/openstack/xstatic-spin \
+		https://github.com/openstack/xstatic-spin
 
 LICENSE=	MIT
 

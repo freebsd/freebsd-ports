@@ -1,7 +1,7 @@
 PORTNAME=	arcanist
 
 MAINTAINER=	grembo@FreeBSD.org
-COMMENT=	Command line interface for Phabricator
+COMMENT=	Phorge.it CLI
 WWW?=		https://we.phorge.it/book/arcanist/
 
 SLAVEPORT=	bin

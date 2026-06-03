@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/lrcalc-%%VER%%.dist-info/COPYING
+%%PYTHON_SITELIBDIR%%/lrcalc-%%VER%%.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/lrcalc-%%VER%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/lrcalc-%%VER%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/lrcalc-%%VER%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/lrcalc-%%VER%%.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/lrcalc%%PYTHON_TAG%%.so

@@ -1,6 +1,6 @@
 PORTNAME=	rhino
 DISTVERSION=	1_7R4
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	lang java
 MASTER_SITES=	GHC \
 		LOCAL/nivit/${PORTNAME}/:swingex \
@@ -34,7 +34,6 @@ OPTIONS_DEFINE=	LINEDIT
 USES=		zip
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
-JAVA_VERSION=	8
 
 .include <bsd.port.options.mk>
 

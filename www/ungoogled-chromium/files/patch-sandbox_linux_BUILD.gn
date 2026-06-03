@@ -1,6 +1,6 @@
---- sandbox/linux/BUILD.gn.orig	2025-05-06 12:23:00 UTC
+--- sandbox/linux/BUILD.gn.orig	2025-12-06 13:30:52 UTC
 +++ sandbox/linux/BUILD.gn
-@@ -12,11 +12,11 @@ if (is_android) {
+@@ -10,11 +10,11 @@ if (is_android) {
  }
  
  declare_args() {
@@ -15,7 +15,7 @@
  
    # On Android, use plain GTest.
    use_base_test_suite = is_linux || is_chromeos
-@@ -377,6 +377,17 @@ component("sandbox_services") {
+@@ -380,6 +380,17 @@ component("sandbox_services") {
        "services/libc_interceptor.h",
      ]
    }

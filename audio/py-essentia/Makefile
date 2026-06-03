@@ -1,22 +1,24 @@
 PORTNAME=	essentia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1_beta5-859
-DISTVERSIONSUFFIX=	-gb247091f
-PORTREVISION=	5
+DISTVERSION=	2.1_beta5-1417
+PORTREVISION=	2
+DISTVERSIONSUFFIX=	-gf0f6c358
 CATEGORIES=	audio
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings for essentia, C++ library for audio and music analysis
-WWW=		https://essentia.upf.edu/
+WWW=		https://essentia.upf.edu/ \
+		https://github.com/MTG/essentia
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 LIB_DEPENDS=	libessentia.so:audio/essentia
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 

@@ -1,6 +1,7 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.6
+DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xcur2png:x11/xcur2png
 
-USES=		gnome go:modules pkgconfig
+USES=		gnome go:1.25+,modules pkgconfig
 
 USE_GNOME=	cairo gdkpixbuf gtk30
 

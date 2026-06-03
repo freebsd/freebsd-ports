@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-core
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -36,13 +36,7 @@ NO_BUILD=	yes
 MAKE_ARGS+=	GUEST_ROOT=${LOCALBASE}/share/wifibox \
 		GUEST_MAN=${LOCALBASE}/share/man/man5/wifibox-alpine.5.gz \
 		VERSION=${PORTVERSION} \
-		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl}
-
-.if ${OSVERSION} > 1400089
-MAKE_ARGS+=	DEVD_FIX=
-PLIST_SUB+=	DEVD_FIX="@comment "
-.else
-PLIST_SUB+=	DEVD_FIX=""
-.endif
+		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl} \
+		DEVD_FIX=
 
 .include <bsd.port.mk>

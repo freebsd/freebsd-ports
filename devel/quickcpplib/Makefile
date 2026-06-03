@@ -1,6 +1,5 @@
 PORTNAME=	quickcpplib
-DISTVERSION=	g20230614
-PORTREVISION=	1
+DISTVERSION=	g20260310
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ned14
-GH_TAGNAME=	f9ab259
+GH_TAGNAME=	3c1d8cb
 GH_TUPLE=	\
 		ned14:quickcpplib:af81e79226211640acace43637a929e4aae4b1f3:ned14_quickcpplib/doc/html \
 		martinmoene:span-lite:dbb484f6c2060b41afa55653dec99b228013a813:martinmoene_span_lite/include/quickcpplib/span-lite \

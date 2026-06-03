@@ -101,6 +101,7 @@ lib/OpenMVS/libCommon.so
 lib/OpenMVS/libIO.so
 lib/OpenMVS/libMVS.so
 lib/OpenMVS/libMath.so
+lib/pyOpenMVS.so
 lib/cmake/OpenMVS/OpenMVSConfig.cmake
 lib/cmake/OpenMVS/OpenMVSConfigVersion.cmake
 lib/cmake/OpenMVS/OpenMVSTargets-%%CMAKE_BUILD_TYPE%%.cmake

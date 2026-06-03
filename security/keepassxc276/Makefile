@@ -1,9 +1,13 @@
 PORTNAME=	keepassxc
 DISTVERSION=	2.7.6
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	276
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+
+PATCH_SITES+=	https://github.com/keepassxreboot/keepassxc/commit/
+PATCHFILES+=	fedcbf60c5c0dc7c3602c49a984d53a45c154c73.diff:-p1
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	KeePass Cross-platform Community Edition
@@ -18,13 +22,10 @@ LICENSE_NAME_NOKIA-LGPL-EXCEPTION=	Nokia Qt LGPL Exception version 1.1
 LICENSE_FILE_NOKIA-LGPL-EXCEPTION=	${WRKSRC}/LICENSE.NOKIA-LGPL-EXCEPTION
 LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired security/botan2
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libqrencode.so:graphics/libqrencode \
-		libbotan-2.so:security/botan2
+		libbotan-3.so:security/botan3
 
 USES=		cmake compiler:c++17-lang desktop-file-utils pkgconfig qt:5 \
 		readline shared-mime-info tar:xz xorg

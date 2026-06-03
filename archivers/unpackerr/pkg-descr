@@ -1,0 +1,5 @@
+Unpackerr is an application that runs on Windows, macOS, Linux, FreeBSD and in
+Docker. You can use it to watch a download folder and extract new items. The
+more common use is to watch starr apps (radarr, sonarr, readarr, lidarr,
+whisparr) and extract items they download. It can do both, at the same time
+even.

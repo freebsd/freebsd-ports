@@ -1,0 +1,11 @@
+bin/rvvm
+include/rvvm/rvvm.h
+include/rvvm/rvvm_blk.h
+include/rvvm/rvvm_char.h
+include/rvvm/rvvm_fb.h
+include/rvvm/rvvm_gpio.h
+lib/librvvm.so
+lib/librvvm.so.0
+libdata/pkgconfig/rvvm.pc
+%%DATADIR%%/fw_jump.bin
+%%DATADIR%%/fw_payload.bin

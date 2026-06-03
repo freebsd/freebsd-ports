@@ -1,6 +1,6 @@
 PORTNAME=	ipydatawidgets
 PORTVERSION=	4.3.5
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-packaging>0:devel/py-jupyter-packaging@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipywidgets>=7.0.0:devel/py-ipywidgets@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traittypes>=0.2.0:devel/py-traittypes@${PY_FLAVOR}
 
 USES=		python

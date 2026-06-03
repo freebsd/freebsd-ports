@@ -26,6 +26,7 @@
 %%SITE_PERL%%/Sub/HandlesVia/Manual/Advanced.pod
 %%SITE_PERL%%/Sub/HandlesVia/Manual/Comparison.pod
 %%SITE_PERL%%/Sub/HandlesVia/Manual/WithClassTiny.pod
+%%SITE_PERL%%/Sub/HandlesVia/Manual/WithCorinna.pod
 %%SITE_PERL%%/Sub/HandlesVia/Manual/WithGeneric.pod
 %%SITE_PERL%%/Sub/HandlesVia/Manual/WithMite.pod
 %%SITE_PERL%%/Sub/HandlesVia/Manual/WithMoo.pod
@@ -64,6 +65,7 @@
 %%PERL5_MAN3%%/Sub::HandlesVia::Manual::Advanced.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Manual::Comparison.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Manual::WithClassTiny.3.gz
+%%PERL5_MAN3%%/Sub::HandlesVia::Manual::WithCorinna.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Manual::WithGeneric.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Manual::WithMite.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Manual::WithMoo.3.gz

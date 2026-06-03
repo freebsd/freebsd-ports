@@ -1,5 +1,5 @@
 PORTNAME=	xorgproto
-DISTVERSION=	2024.1
+DISTVERSION=	2025.1
 CATEGORIES=	x11
 MASTER_SITES=	XORG/individual/proto
 
@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/proto/xorgproto
 
 LICENSE=	MIT
 
-USES=		tar:xz
+USES=		pkgconfig tar:xz
 
 NO_ARCH=	yes
 

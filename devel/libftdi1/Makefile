@@ -1,6 +1,6 @@
 PORTNAME=	libftdi1
 PORTVERSION=	1.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	https://www.intra2net.com/en/developer/libftdi/download/
 
@@ -33,10 +33,11 @@ EXAMPLES_CMAKE_BOOL=	EXAMPLES
 
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	PYTHON_BINDINGS
-PYTHON_BUILD_DEPENDS=	swig:devel/swig
+PYTHON_BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+			swig:devel/swig
 
 BOOST_CMAKE_BOOL=	FTDIPP
-BOOST_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 BOOST_PORTEXAMPLES=	find_all_pp
 
 .include <bsd.port.options.mk>

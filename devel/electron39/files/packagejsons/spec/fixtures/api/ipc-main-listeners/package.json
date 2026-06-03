@@ -1,0 +1,4 @@
+{
+  "name": "electron-test-ipc-main-listeners",
+  "main": "main.js"
+}

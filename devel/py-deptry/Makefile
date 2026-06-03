@@ -1,6 +1,6 @@
 PORTNAME=	deptry
-PORTVERSION=	0.23.0
-PORTREVISION=	4
+PORTVERSION=	0.25.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ DISTFILES=	deptry-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI utility to check for unused, missing and transitive dependencies
 WWW=		https://deptry.com/ \
-		https://github.com/fpgmaas/deptry
+		https://github.com/osprey-oss/deptry
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requirements-parser>=0.11.0<1:devel/py-requirements-parser@${PY_FLAVOR} \
 		${PY_TOMLI}
 
-USES=		cargo python:3.9+
+USES=		cargo python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no

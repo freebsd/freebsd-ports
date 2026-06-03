@@ -1,6 +1,6 @@
---- ./src/com/sun/pdfview/colorspace/PDFColorSpace.java.orig	2011-11-17 09:12:43.000000000 +0100
-+++ ./src/com/sun/pdfview/colorspace/PDFColorSpace.java	2011-11-17 09:12:53.000000000 +0100
-@@ -161,7 +161,13 @@
+--- src/com/sun/pdfview/colorspace/PDFColorSpace.java.orig	2011-09-15 09:33:56 UTC
++++ src/com/sun/pdfview/colorspace/PDFColorSpace.java
+@@ -161,7 +161,13 @@ public class PDFColorSpace {
          PDFObject[] ary = csobj.getArray();
          name = ary[0].getStringValue();
  
@@ -15,7 +15,7 @@
              value = new PDFColorSpace(new CalGrayColor(ary[1]));
          } else if (name.equals("CalRGB")) {
              value = new PDFColorSpace(new CalRGBColor(ary[1]));
-@@ -194,8 +200,7 @@
+@@ -194,8 +200,7 @@ public class PDFColorSpace {
  
              return new PatternSpace(base);
          } else {

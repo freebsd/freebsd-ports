@@ -1,6 +1,5 @@
 PORTNAME=	libgridxc
-DISTVERSION=	1.1.0
-PORTREVISION=	2
+DISTVERSION=	2.0.3
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.com/siesta-project/libraries/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -10,6 +9,8 @@ WWW=		https://gitlab.com/siesta-project/libraries/libgridxc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		uses -lxcf90, removed in libxc-7, upstream claims this and downstream (Siesta) are unmaintained, but this does not appear universally true
 
 USES=		cmake fortran pkgconfig
 USE_LDCONFIG=	yes

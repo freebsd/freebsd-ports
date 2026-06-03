@@ -1,0 +1,5 @@
+TLM is a local CLI Copilot, powered by Ollama.
+
+tlm is a local command-line copilot that helps you with your daily
+terminal tasks. It uses Ollama to provide suggestions and assistance
+directly in your shell, aiming to boost your productivity.

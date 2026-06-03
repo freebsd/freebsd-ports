@@ -1,6 +1,6 @@
---- compile/unix.mak.orig	2014-12-20 04:39:02 UTC
+--- compile/unix.mak.orig	2022-06-23 01:52:51 UTC
 +++ compile/unix.mak
-@@ -39,36 +39,48 @@ install-mkdir:
+@@ -39,27 +39,37 @@ install-mkdir:
  	$(MKDIR) $(bindir)
  	$(MKDIR) $(libdir)
  	$(MKDIR) $(incdir)
@@ -12,7 +12,7 @@
  	$(MKDIR) $(dictdir)/euc-jp
  	$(MKDIR) $(dictdir)/utf-8
  
--install-dict:
+-install-dict: install-mkdir
 +install-mkdir-doc:
 +	$(MKDIR) $(docdir)
 +
@@ -42,8 +42,9 @@
  	  $(INSTALL_DATA) dict/utf-8.d/han2zen.dat $(dictdir)/utf-8; \
  	  $(INSTALL_DATA) dict/utf-8.d/hira2kata.dat $(dictdir)/utf-8; \
  	  $(INSTALL_DATA) dict/utf-8.d/roma2hira.dat $(dictdir)/utf-8; \
- 	  $(INSTALL_DATA) dict/utf-8.d/zen2han.dat $(dictdir)/utf-8; \
- 	fi
+@@ -69,10 +79,14 @@ install-lib: install-mkdir
+ # depends on $(libdir) to be already present
+ install-lib: install-mkdir
  
 -install: $(outdir)cmigemo$(EXEEXT) $(libmigemo_DSO) install-mkdir install-dict install-lib
 -	$(INSTALL_DATA) $(srcdir)migemo.h $(incdir)
@@ -53,5 +54,8 @@
 +install: $(outdir)cmigemo$(EXEEXT) $(libmigemo_DSO) install-mkdir install-dat install-lib
 +	$(INSTALL_DATA) $(srcdir)migemo.h $(incdir)
  	$(INSTALL_PROGRAM) $(outdir)cmigemo$(EXEEXT) $(bindir)
++
++
  
  ##############################################################################
+ # Uninstall

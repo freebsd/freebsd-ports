@@ -16,6 +16,7 @@ lib/cgit/filters/syntax-highlighting.sh
 %%ASCIIDOC%%share/man/man5/cgitrc.5.gz
 %%WWWDIR%%/cgit.cgi
 %%WWWDIR%%/cgit.css
+%%WWWDIR%%/cgit.js
 %%WWWDIR%%/cgit.png
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/robots.txt

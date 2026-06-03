@@ -1,6 +1,6 @@
---- browser/installer/package-manifest.in.orig	2024-11-25 17:39:16 UTC
+--- browser/installer/package-manifest.in.orig	2026-03-24 09:16:46 UTC
 +++ browser/installer/package-manifest.in
-@@ -215,13 +215,13 @@
+@@ -222,13 +222,13 @@
  @RESPATH@/chrome/toolkit.manifest
  #ifdef MOZ_GTK
  @RESPATH@/browser/chrome/icons/default/default16.png
@@ -15,5 +15,5 @@
 -@RESPATH@/browser/chrome/icons/default/default256.png
 +;@RESPATH@/browser/chrome/icons/default/default256.png
  #endif
- @RESPATH@/browser/features/*
  
+ ; [DevTools Startup Files]

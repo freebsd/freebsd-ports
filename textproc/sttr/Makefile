@@ -1,6 +1,7 @@
 PORTNAME=	sttr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.26
+DISTVERSION=	0.2.30
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	se@FreeBSD.org
@@ -10,12 +11,8 @@ WWW=		https://github.com/abhimanyu003/sttr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.23
+USES=		go:1.24+,modules
 GO_MODULE=	github.com/abhimanyu003/sttr
-GO_MOD_DIST=	github
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	abhimanyu003
 
 PLIST_FILES=	bin/sttr
 

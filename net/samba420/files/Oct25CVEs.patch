@@ -1,0 +1,49 @@
+diff -Naurp a/source3/modules/vfs_streams_xattr.c b/source3/modules/vfs_streams_xattr.c
+index 03ff6147cb0..4fb4f42baa0 100644
+--- a/source3/modules/vfs_streams_xattr.c
++++ b/source3/modules/vfs_streams_xattr.c
+@@ -959,14 +959,17 @@ static ssize_t streams_xattr_pwrite(vfs_handle_struct *handle,
+ 
+         if ((offset + n) > ea.value.length - config->xattr_compat_bytes) {
+ 		uint8_t *tmp;
++		size_t new_sz = offset + n + config->xattr_compat_bytes;
+ 
+ 		tmp = talloc_realloc(talloc_tos(), ea.value.data, uint8_t,
+-					   offset + n + config->xattr_compat_bytes);
++					   new_sz);
+ 
+ 		if (tmp == NULL) {
+ 			TALLOC_FREE(ea.value.data);
+                         errno = ENOMEM;
+                         return -1;
+                 }
++
++		memset(tmp + ea.value.length, 0, new_sz - ea.value.length);
+ 		ea.value.data = tmp;
+- 		ea.value.length = offset + n + config->xattr_compat_bytes;
++ 		ea.value.length = new_sz;
+		if (config->xattr_compat_bytes) {
+
+diff -Naurp a/source4/nbt_server/wins/wins_hook.c b/source4/nbt_server/wins/wins_hook.c
+index 1af471b15bc..442141fecdd 100644
+--- a/source4/nbt_server/wins/wins_hook.c
++++ b/source4/nbt_server/wins/wins_hook.c
+@@ -43,9 +43,18 @@ void wins_hook(struct winsdb_handle *h, const struct winsdb_record *rec,
+ 	int child;
+ 	char *cmd = NULL;
+ 	TALLOC_CTX *tmp_mem = NULL;
++	const char *p = NULL;
+ 
+ 	if (!wins_hook_script || !wins_hook_script[0]) return;
+ 
++	for (p = rec->name->name; *p; p++) {
++		if (!(isalnum((int)*p) || strchr_m("._-", *p))) {
++			DBG_ERR("not calling wins hook for invalid name %s\n",
++				rec->name->name);
++			return;
++		}
++	}
++
+ 	tmp_mem = talloc_new(h);
+ 	if (!tmp_mem) goto failed;
+

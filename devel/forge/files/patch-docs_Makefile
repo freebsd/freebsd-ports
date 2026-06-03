@@ -1,6 +1,20 @@
---- docs/Makefile.orig	2022-03-07 17:47:08 UTC
+--- docs/Makefile.orig	2025-11-01 21:28:16 UTC
 +++ docs/Makefile
-@@ -50,7 +50,7 @@ html-dir: $(PKG).texi
+@@ -50,19 +50,19 @@ HTML_FIXUP_MENU   = '/<\/body>/i<div id="s-css-s--menu
+ %.html: %.texi
+ 	@printf "Generating $@\n"
+ 	@$(MAKEINFO) --html --no-split $(MANUAL_HTML_ARGS) $<
+-	@sed -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) $@
++	@gsed -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) $@
+ 
+ %/index.html: %.texi
+ 	@printf "Generating $(PKG)/*.html\n"
+ 	@rm -rf $(PKG)
+ 	@$(MAKEINFO) --html -o $(PKG)/ $(MANUAL_HTML_ARGS) $<
+ 	@for f in $$(find $(PKG) -name '*.html') ; do \
+-	sed -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) $$f ; \
++	gsed -i -e $(HTML_FIXUP_CSS) -e $(HTML_FIXUP_ONLOAD) -e $(HTML_FIXUP_MENU) $$f ; \
+ 	done
  
  %.pdf: %.texi
  	@printf "Generating $@\n"

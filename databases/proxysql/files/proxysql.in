@@ -26,6 +26,7 @@ rcvar=proxysql_enable
 load_rc_config $name
 
 : ${proxysql_enable:="NO"}
+: ${proxysql_command:="%%PREFIX%%/sbin/proxysql"}
 : ${proxysql_user:="proxysql"}
 : ${proxysql_group:="proxysql"}
 : ${proxysql_config:="%%ETCDIR%%/proxysql.cfg"}
@@ -46,12 +47,12 @@ initial_cmd=proxysql_initial
 
 proxysql_initial()
 {
-    su -m ${proxysql_user} -c "${proxysql_command} --initial"
+    su -m ${proxysql_user} -c "${proxysql_command} ${command_args} --initial"
 }
 
 proxysql_reload()
 {
-    su -m ${proxysql_user} -c "${proxysql_command} --reload"
+    su -m ${proxysql_user} -c "${proxysql_command} ${command_args} --reload"
 }
 
 load_rc_config $name

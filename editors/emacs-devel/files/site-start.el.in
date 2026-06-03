@@ -1,0 +1,33 @@
+;;; site-start.el --- Site-wide Initialization -*- lexical-binding: t -*-
+
+;; Installed by editors/emacs and editors/emacs-devel.
+;;
+;; This file is interpreted before user configuration.
+;; See the header of %%PREFIX%%/share/emacs/site-lisp/default.el for
+;; documentation on FreeBSD's site-wide Emacs startup configuration.
+
+;;; Code:
+
+(defvar freebsd-inhibit-byte-compile nil
+  "When non-nil, inhibit byte-compilation of FreeBSD ports elisp.
+Only applies to Emacs builds without native compilation support.")
+
+(defvar freebsd-site-lisp-dir "%%PREFIX%%/share/emacs/site-lisp"
+  "Root directory for FreeBSD ports-installed elisp files.
+This value is substituted at package build time by the FreeBSD
+ports infrastructure.")
+
+(defvar freebsd-elc-cache-dir
+  (expand-file-name "freebsd-elc-cache" user-emacs-directory)
+  "Per-user cache directory for byte-compiled FreeBSD ports elisp.
+Byte-compiled .elc files are stored here mirroring the subdirectory
+structure of `freebsd-site-lisp-dir', allowing load-path priority
+to select compiled files over .el source files.")
+
+;;; Path to Emacs C Sources, which is used by `find-function' for C-defined
+;;; symbols.
+(when (string-match (regexp-quote "%%EMACS_VER%%") emacs-version)
+  (setq find-function-C-source-directory
+        "%%DATADIR%%/%%EMACS_VER%%/src"))
+
+;;; site-start.el ends here

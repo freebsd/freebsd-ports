@@ -1,0 +1,12 @@
+--- mdal/frmts/mdal_gdal.cpp.orig	2025-02-20 14:58:36 UTC
++++ mdal/frmts/mdal_gdal.cpp
+@@ -175,8 +175,7 @@ MDAL::DriverGdal::metadata_hash MDAL::DriverGdal::pars
+ MDAL::DriverGdal::metadata_hash MDAL::DriverGdal::parseMetadata( GDALMajorObjectH gdalObject, const char *pszDomain /* = 0 */ )
+ {
+   MDAL::DriverGdal::metadata_hash meta;
+-  char **GDALmetadata = nullptr;
+-  GDALmetadata = GDALGetMetadata( gdalObject, pszDomain );
++  CSLConstList GDALmetadata = GDALGetMetadata( gdalObject, pszDomain );
+ 
+   if ( GDALmetadata )
+   {

@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-10-28 23:23:12 UTC
++++ meson.build
+@@ -59,8 +59,6 @@ peas_dep = dependency('libpeas-2', version: peas_req)
+ peas_req = '>= @0@'.format(peas_req_version)
+ peas_dep = dependency('libpeas-2', version: peas_req)
+ 
+-sysprof_dep = dependency('sysprof-capture-4')
+-
+ project_c_args = []
+ test_c_args = [
+   '-Wcast-align',

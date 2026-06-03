@@ -1,6 +1,16 @@
 --- src/main.cpp.orig	2023-07-30 15:32:56 UTC
 +++ src/main.cpp
-@@ -25,7 +25,13 @@
+@@ -5,6 +5,9 @@
+ #include <unistd.h>
+ #include <vector>
+ 
++#include <iostream>
++using namespace std;
++
+ #include "ftxui/component/captured_mouse.hpp"
+ #include "ftxui/component/component.hpp"
+ #include "ftxui/component/component_base.hpp"
+@@ -25,7 +28,13 @@
  #include "utils/is_file_exist.hpp"
  
  #define DEV_MEM "/dev/mem"
@@ -15,7 +25,7 @@
  
  using namespace std;
  using namespace ftxui;
-@@ -71,6 +77,7 @@ int main(int argc, char *argv[]) {
+@@ -71,6 +80,7 @@ int main(int argc, char *argv[]) {
    gShowMessageModal = &showMessageModal;
    gMessageStr = &messageStr;
  
@@ -23,7 +33,7 @@
    if (isFileExist(DEV_FMEM) == false) {
      if (isFileExist(DEV_MEM) == false) {
        cerr << "[ERROR] Neither /dev/mem nor /dev/fmem exist.\nGet the source "
-@@ -90,9 +97,21 @@ int main(int argc, char *argv[]) {
+@@ -90,9 +100,21 @@ int main(int argc, char *argv[]) {
        return EXIT_FAILURE;
      }
    }
@@ -45,7 +55,7 @@
      FATAL;
    gFileDescriptor = &fileDescriptor;
  
-@@ -102,7 +121,7 @@ int main(int argc, char *argv[]) {
+@@ -102,7 +124,7 @@ int main(int argc, char *argv[]) {
    int tabSelected = 0;
    vector<string> tabValues{
        " Memory ",
@@ -54,7 +64,7 @@
    };
    auto tabToggle =
        Menu(&tabValues, &tabSelected, MenuOption::Horizontal()) | border;
-@@ -110,7 +129,7 @@ int main(int argc, char *argv[]) {
+@@ -110,7 +132,7 @@ int main(int argc, char *argv[]) {
    Component tabContainer = Container::Tab(
        {
            (new Memory(0x00000000))->getComponent(),
@@ -63,7 +73,7 @@
        },
        &tabSelected);
  
-@@ -140,4 +159,4 @@ int main(int argc, char *argv[]) {
+@@ -140,4 +162,4 @@ int main(int argc, char *argv[]) {
                center);
    close(fileDescriptor);
    return EXIT_SUCCESS;

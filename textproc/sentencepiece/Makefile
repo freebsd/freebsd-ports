@@ -1,7 +1,6 @@
 PORTNAME=	sentencepiece
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.2.1
 CATEGORIES=	textproc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,5 +22,7 @@ OPTIONS_DEFINE=		GPERFTOOLS # this seems to cause this error in llama-cpp's conv
 
 GPERFTOOLS_CMAKE_BOOL=	SPM_ENABLE_TCMALLOC
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
+
+# tests as of 0.2.1: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

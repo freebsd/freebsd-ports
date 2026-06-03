@@ -1,0 +1,5 @@
+TIMESTAMP = 1774401562
+SHA256 (cdxgen-12.1.2-node_modules.tar.gz) = 7044aafc4a7f2b9261d1c0883aa59a396278513bf0aff65e820151517babf46a
+SIZE (cdxgen-12.1.2-node_modules.tar.gz) = 105109069
+SHA256 (CycloneDX-cdxgen-12.1.2-v12.1.2_GH0.tar.gz) = 6719f1266744ba6f80618881f55ebde6411a75651bb434d28554b311e327318c
+SIZE (CycloneDX-cdxgen-12.1.2-v12.1.2_GH0.tar.gz) = 17800038

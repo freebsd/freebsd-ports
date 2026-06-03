@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: vboxwatchdog
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable vboxwatchdog
+#
+# vboxwatchdog_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable vboxwatchdog.
+# vboxwatchdog_user (str):	User account to run with.
+# vboxwatchdog_flags (str):	Custom flags for VBoxWatchdog.
+
+. /etc/rc.subr
+
+name=vboxwatchdog
+rcvar=vboxwatchdog_enable
+
+command="%%VBOXDIR%%/VBoxBalloonCtrl"
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+vboxwatchdog_start()
+{
+	local pid
+
+	HOME=$(/usr/sbin/pw usershow -7 -n "${vboxwatchdog_user}" | /usr/bin/cut -d: -f6)
+	pid=$(check_pidfile $pidfile $command)
+
+	if [ -n "${pid}" ]; then
+		echo "${name} already running? (pid=${pid})."
+		return 1
+	fi
+
+	# prevent inheriting this setting to VBoxSVC
+	unset VBOX_RELEASE_LOG_DEST
+
+	echo -n "Starting ${name}"
+	/usr/bin/install -o ${vboxwatchdog_user} -g %%VBOXGROUP%% -m 644 /dev/null ${pidfile}
+	/usr/sbin/daemon -f -p ${pidfile} -u ${vboxwatchdog_user} ${command} ${vboxwatchdog_flags}
+	echo '.'
+}
+
+load_rc_config $name
+
+: ${vboxwatchdog_enable="NO"}
+: ${vboxwatchdog_user="%%VBOXUSER%%"}
+: ${vboxwatchdog_flags=""}
+
+run_rc_command "$1"

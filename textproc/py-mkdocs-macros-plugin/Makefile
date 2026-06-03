@@ -1,5 +1,5 @@
 PORTNAME=	mkdocs-macros-plugin
-DISTVERSION=	1.3.7
+DISTVERSION=	1.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs>=0.17:textproc/py-mkdocs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=0:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}termcolor>=0:devel/py-termcolor@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}super-collections>=0:devel/py-super-collections@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}super-collections>=0.6.2:devel/py-super-collections@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}termcolor>=0:devel/py-termcolor@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

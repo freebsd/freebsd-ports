@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00 UTC
-+++ cargo-crates/v8-135.1.0/build/toolchain/gcc_toolchain.gni
+--- cargo-crates/v8-147.4.0/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00 UTC
++++ cargo-crates/v8-147.4.0/build/toolchain/gcc_toolchain.gni
 @@ -56,6 +56,12 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
@@ -13,6 +13,15 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
+@@ -343,7 +349,7 @@ template("single_gcc_toolchain") {
+ 
+       # Module file doesn't need coverage instrumentation because module files
+       # represent interfaces rather than implementations.
+-      command = "$cxx -MD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}}${extra_cppflags}${extra_cxxflags} {{module_deps_no_self}} -fmodule-name={{cc_module_name}} -x c++ -Xclang -emit-module -c {{source}} -o {{output}}"
++      command = "$cxx -MD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}}${extra_cppflags}${extra_cxxflags} {{module_deps_no_self}} -x c++ -Xclang -emit-module -c {{source}} -o {{output}}"
+       depsformat = "gcc"
+       description = "CXX_MODULE {{output}}"
+       outputs = [ "$object_subdir/{{source_name_part}}.pcm" ]
 @@ -896,22 +902,13 @@ template("gcc_toolchain") {
  # actually just be doing a native compile.
  template("clang_toolchain") {
@@ -29,8 +38,8 @@
 -
 -    cc = "${prefix}/clang"
 -    cxx = "${prefix}/clang++"
-+    cc = "cc"
-+    cxx = "c++"
++    cc = "%%CC%%"
++    cxx = "%%CXX%%"
      ld = cxx
 -    readelf = "${prefix}/llvm-readelf"
 -    ar = "${prefix}/llvm-ar"

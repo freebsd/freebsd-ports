@@ -1,0 +1,397 @@
+PORTNAME=	llguidance
+DISTVERSION=	1.7.5
+PORTREVISION=	1
+CATEGORIES=	textproc python # machine-learning
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Low-level Guidance library for constrained LLM generation
+WWW=		https://github.com/microsoft/llguidance
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0:devel/py-maturin@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}transformers>0:misc/py-transformers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tiktoken>0:textproc/py-tiktoken@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}llama-cpp-python>0:misc/py-llama-cpp-python@${PY_FLAVOR}
+
+USES=		cargo python shebangfix ssl
+USE_PYTHON=	autoplist pep517 pytest
+
+SHEBANG_FILES=	python/llguidance/gbnf_to_lark.py
+
+CARGO_SRC_SUBDIR=	python_ext
+CARGO_CARGOLOCK=	${WRKSRC}/Cargo.lock
+CARGO_VENDOR_DIR=	${WRKSRC}/cargo-crates
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.1 \
+		ahash-0.8.12 \
+		aho-corasick-1.1.3 \
+		alloca-0.4.0 \
+		anes-0.1.6 \
+		anstream-0.6.19 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.3 \
+		anstyle-wincon-3.0.9 \
+		anyhow-1.0.98 \
+		atomic-waker-1.1.2 \
+		autocfg-1.5.0 \
+		backtrace-0.3.75 \
+		base64-0.13.1 \
+		base64-0.22.1 \
+		bit-set-0.5.3 \
+		bit-set-0.8.0 \
+		bit-vec-0.6.3 \
+		bit-vec-0.8.0 \
+		bitflags-2.9.1 \
+		borrow-or-share-0.2.2 \
+		bstr-1.12.0 \
+		bumpalo-3.19.0 \
+		bytecount-0.6.9 \
+		bytemuck-1.23.1 \
+		bytemuck_derive-1.9.3 \
+		byteorder-1.5.0 \
+		bytes-1.11.1 \
+		cast-0.3.0 \
+		castaway-0.2.3 \
+		cbindgen-0.29.2 \
+		cc-1.2.27 \
+		cfg-if-1.0.1 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clap-4.5.40 \
+		clap_builder-4.5.40 \
+		clap_derive-4.5.40 \
+		clap_lex-0.7.5 \
+		colorchoice-1.0.4 \
+		compact_str-0.9.0 \
+		console-0.15.11 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.7 \
+		crc32fast-1.4.2 \
+		criterion-0.8.1 \
+		criterion-plot-0.8.1 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
+		darling-0.20.11 \
+		darling_core-0.20.11 \
+		darling_macro-0.20.11 \
+		dary_heap-0.3.7 \
+		derive_builder-0.20.2 \
+		derive_builder_core-0.20.2 \
+		derive_builder_macro-0.20.2 \
+		derivre-0.3.11 \
+		dirs-6.0.0 \
+		dirs-sys-0.5.0 \
+		displaydoc-0.2.5 \
+		either-1.15.0 \
+		email_address-0.2.9 \
+		encode_unicode-1.0.0 \
+		encoding_rs-0.8.35 \
+		equivalent-1.0.2 \
+		errno-0.3.13 \
+		esaxx-rs-0.1.10 \
+		fancy-regex-0.13.0 \
+		fancy-regex-0.14.0 \
+		fastrand-2.3.0 \
+		flate2-1.1.2 \
+		fluent-uri-0.3.2 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		fraction-0.15.3 \
+		futures-0.3.31 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-timer-3.0.3 \
+		futures-util-0.3.31 \
+		getrandom-0.2.16 \
+		getrandom-0.3.3 \
+		gimli-0.31.1 \
+		glob-0.3.2 \
+		h2-0.4.11 \
+		half-2.7.1 \
+		hashbrown-0.15.4 \
+		heck-0.5.0 \
+		hermit-abi-0.5.2 \
+		hf-hub-0.4.3 \
+		http-1.3.1 \
+		http-body-1.0.1 \
+		http-body-util-0.1.3 \
+		httparse-1.10.1 \
+		hyper-1.6.0 \
+		hyper-rustls-0.27.7 \
+		hyper-tls-0.6.0 \
+		hyper-util-0.1.14 \
+		icu_collections-2.0.0 \
+		icu_locale_core-2.0.0 \
+		icu_normalizer-2.0.0 \
+		icu_normalizer_data-2.0.0 \
+		icu_properties-2.0.1 \
+		icu_properties_data-2.0.1 \
+		icu_provider-2.0.0 \
+		ident_case-1.0.1 \
+		idna-1.0.3 \
+		idna_adapter-1.2.1 \
+		indexmap-2.10.0 \
+		indicatif-0.17.11 \
+		instant-0.1.13 \
+		io-uring-0.7.8 \
+		ipnet-2.11.0 \
+		iri-string-0.7.8 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.13.0 \
+		itertools-0.14.0 \
+		itoa-1.0.15 \
+		js-sys-0.3.77 \
+		jsonschema-0.29.1 \
+		lazy_static-1.5.0 \
+		libc-0.2.174 \
+		libredox-0.1.4 \
+		linux-raw-sys-0.9.4 \
+		litemap-0.8.0 \
+		lock_api-0.4.13 \
+		log-0.4.27 \
+		macro_rules_attribute-0.2.2 \
+		macro_rules_attribute-proc_macro-0.2.2 \
+		memchr-2.7.5 \
+		mime-0.3.17 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.8.9 \
+		mio-1.0.4 \
+		monostate-0.1.14 \
+		monostate-impl-0.1.14 \
+		native-tls-0.2.14 \
+		nom-7.1.3 \
+		num-0.4.3 \
+		num-bigint-0.4.6 \
+		num-cmp-0.1.0 \
+		num-complex-0.4.6 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
+		num_cpus-1.17.0 \
+		number_prefix-0.4.0 \
+		object-0.36.7 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		oorandom-11.1.5 \
+		openssl-0.10.78 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.6 \
+		openssl-sys-0.9.114 \
+		option-ext-0.2.0 \
+		outref-0.5.2 \
+		page_size-0.6.0 \
+		parking_lot-0.12.4 \
+		parking_lot_core-0.9.11 \
+		paste-1.0.15 \
+		percent-encoding-2.3.1 \
+		pin-project-lite-0.2.16 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.32 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
+		portable-atomic-1.11.1 \
+		potential_utf-0.1.2 \
+		ppv-lite86-0.2.21 \
+		proc-macro-crate-3.3.0 \
+		proc-macro2-1.0.95 \
+		pyo3-0.28.2 \
+		pyo3-build-config-0.28.2 \
+		pyo3-ffi-0.28.2 \
+		pyo3-macros-0.28.2 \
+		pyo3-macros-backend-0.28.2 \
+		quote-1.0.40 \
+		r-efi-5.3.0 \
+		rand-0.9.4 \
+		rand_chacha-0.9.0 \
+		rand_core-0.9.3 \
+		rayon-1.10.0 \
+		rayon-cond-0.4.0 \
+		rayon-core-1.12.1 \
+		redox_syscall-0.5.13 \
+		redox_users-0.5.0 \
+		ref-cast-1.0.24 \
+		ref-cast-impl-1.0.24 \
+		referencing-0.29.1 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		relative-path-1.9.3 \
+		reqwest-0.12.22 \
+		ring-0.17.14 \
+		rstest-0.25.0 \
+		rstest_macros-0.25.0 \
+		rustc-demangle-0.1.25 \
+		rustc-hash-1.1.0 \
+		rustc_version-0.4.1 \
+		rustix-1.0.7 \
+		rustls-0.23.28 \
+		rustls-pki-types-1.12.0 \
+		rustls-webpki-0.103.13 \
+		rustversion-1.0.21 \
+		ryu-1.0.20 \
+		same-file-1.0.6 \
+		schannel-0.1.27 \
+		scopeguard-1.2.0 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.14.0 \
+		semver-1.0.26 \
+		serde-1.0.219 \
+		serde-json-fmt-0.1.0 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.140 \
+		serde_spanned-1.0.0 \
+		serde_urlencoded-0.7.1 \
+		shlex-1.3.0 \
+		slab-0.4.11 \
+		smallvec-1.15.1 \
+		smartstring-1.0.1 \
+		socket2-0.5.10 \
+		socks-0.3.4 \
+		spm_precompiled-0.1.4 \
+		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
+		strsim-0.11.1 \
+		strum-0.27.1 \
+		strum_macros-0.27.1 \
+		subtle-2.6.1 \
+		syn-2.0.104 \
+		sync_wrapper-1.0.2 \
+		synstructure-0.13.2 \
+		system-configuration-0.6.1 \
+		system-configuration-sys-0.6.0 \
+		target-lexicon-0.13.4 \
+		tempfile-3.20.0 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		tiktoken-rs-0.7.0 \
+		tinystr-0.8.1 \
+		tinytemplate-1.2.1 \
+		tokenizers-0.21.2 \
+		tokio-1.46.0 \
+		tokio-macros-2.5.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-rustls-0.26.2 \
+		tokio-util-0.7.15 \
+		toml-0.9.5 \
+		toml_datetime-0.6.11 \
+		toml_datetime-0.7.0 \
+		toml_edit-0.22.27 \
+		toml_parser-1.0.10+spec-1.1.0 \
+		toml_writer-1.0.7+spec-1.1.0 \
+		tower-0.5.2 \
+		tower-http-0.6.6 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
+		tracing-0.1.41 \
+		tracing-core-0.1.34 \
+		try-lock-0.2.5 \
+		unicode-ident-1.0.18 \
+		unicode-normalization-alignments-0.1.12 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.2.1 \
+		unicode_categories-0.1.1 \
+		untrusted-0.9.0 \
+		ureq-2.12.1 \
+		url-2.5.4 \
+		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
+		uuid-1.17.0 \
+		uuid-simd-0.8.0 \
+		vcpkg-0.2.15 \
+		version_check-0.9.5 \
+		vsimd-0.8.0 \
+		walkdir-2.5.0 \
+		want-0.3.1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-futures-0.4.50 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		wasm-streams-0.4.2 \
+		web-sys-0.3.77 \
+		web-time-1.1.0 \
+		webpki-roots-0.26.11 \
+		webpki-roots-1.0.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.11 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-link-0.1.3 \
+		windows-registry-0.5.3 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
+		windows-targets-0.52.6 \
+		windows-targets-0.53.2 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
+		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
+		winnow-0.7.12 \
+		winnow-1.0.0 \
+		wit-bindgen-rt-0.39.0 \
+		writeable-0.6.1 \
+		yoke-0.8.0 \
+		yoke-derive-0.8.0 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
+		zeroize-1.8.1 \
+		zerotrie-0.2.2 \
+		zerovec-0.11.2 \
+		zerovec-derive-0.11.1
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/python/torch_tests
+
+pre-test:
+	@${MV} ${WRKSRC}/python/llguidance ${WRKSRC}/python/llguidance.hidden
+
+post-test:
+	@${MV} ${WRKSRC}/python/llguidance.hidden ${WRKSRC}/python/llguidance
+
+# tests as of 1.7.0: 32 passed, 2 skipped, 128272 warnings in 16.20s
+
+.include <bsd.port.mk>

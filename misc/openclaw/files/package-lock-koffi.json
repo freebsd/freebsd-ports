@@ -1,0 +1,25 @@
+{
+  "name": "koffi-installer",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "koffi-installer",
+      "version": "1.0.0",
+      "dependencies": {
+        "koffi": "^2.16.1"
+      }
+    },
+    "node_modules/koffi": {
+      "version": "2.16.1",
+      "resolved": "https://registry.npmjs.org/koffi/-/koffi-2.16.1.tgz",
+      "integrity": "sha512-0Ie6CfD026dNfWSosDw9dPxPzO9Rlyo0N8m5r05S8YjytIpuilzMFDMY4IDy/8xQsTwpuVinhncD+S8n3bcYZQ==",
+      "hasInstallScript": true,
+      "license": "MIT",
+      "funding": {
+        "url": "https://liberapay.com/Koromix"
+      }
+    }
+  }
+}

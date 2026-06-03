@@ -1,6 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.7.0
-PORTREVISION=	2
+DISTVERSION=	1.7.1
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://integrativemodeling.org/rmf/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libhdf5.so:science/hdf5
 
 USES=		compiler:c++17-lang cmake:testing localbase:ldflags python:build shebangfix
@@ -29,8 +28,9 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 do-test:
 	@${RM} ${WRKSRC}/test/*.py
 	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFREEBSD_BUILS_WITH_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFREEBSD_BUILD_WITH_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
+# tests as of 1.7.1: all 7 tests passed
 .include <bsd.port.mk>

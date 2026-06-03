@@ -3,7 +3,7 @@ DISTVERSION=	0.9.2
 CATEGORIES=	irc
 MASTER_SITES=	https://projects.duckcorp.org/attachments/download/103/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
 WWW=		https://bip.milkypond.org/
 

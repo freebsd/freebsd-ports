@@ -1,8 +1,6 @@
 PORTNAME=	openpgl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
-#DISTVERSIONSUFFIX=	-beta
+DISTVERSION=	0.7.1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -21,7 +19,7 @@ LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenPathGuidingLibrary
+GH_ACCOUNT=	RenderKit
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

@@ -1,9 +1,9 @@
 PORTNAME=	magic-wormhole
-DISTVERSION=	0.16.0
-PORTREVISION=	1
+DISTVERSION=	0.24.0
 CATEGORIES=	net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Get things from one computer to another, safely
@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}autobahn>=0.14.1:www/py-autobahn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Automat>=0.3.0:devel/py-Automat@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Automat>0:devel/py-Automat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hkdf>=0.0.3:security/py-hkdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>=0:devel/py-humanize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iterable-io>=1.0.0:devel/py-iterable-io@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pynacl>=0.3.0:security/py-pynacl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyNaCl>=0.3.0:security/py-pynacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spake2>=0.8:security/py-spake2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.13.0:misc/py-tqdm@${PY_FLAVOR} \

@@ -6,6 +6,9 @@ MAINTAINER=	seafork@disroot.org
 COMMENT=	Simple terminal emulator for Wayland and X11
 WWW=		https://github.com/91861/wayst
 
+# https://github.com/91861/wayst/issues/120
+BROKEN_armv7=	src/vt.h:278:1: error: requested alignment is less than minimum alignment of 8 for type 'VtCommand'
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

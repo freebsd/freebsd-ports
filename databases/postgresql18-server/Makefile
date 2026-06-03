@@ -1,11 +1,10 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	18beta1
+DISTVERSION?=	18.4
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
-#DISTFILES+=	${PORTNAME}-${DISTVERSION}-docs.tar.bz:docs
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -22,8 +21,12 @@ DIST_SUBDIR=	postgresql
 OPTIONS_SUB=	yes
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
-USES+=		bison perl5 tar:bzip2 cpe
-USE_PERL5=	build
+USES+=		tar:bzip2 cpe
+.if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
+USES+=		bison perl5
+USE_PERL5+=	build
+.endif
+
 .if !defined(NO_BUILD)
 USES+=		gmake
 GNU_CONFIGURE=	yes
@@ -53,11 +56,11 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/replication/pgoutput \
 		src/bin/initdb src/bin/pg_ctl \
 		src/bin/pg_archivecleanup src/bin/pg_basebackup \
-		src/bin/pg_checksums \
+		src/bin/pg_checksums src/bin/pg_combinebackup \
 		src/bin/pg_controldata src/bin/pg_resetwal src/pl \
 		src/bin/pg_rewind \
 		src/bin/pg_test_fsync src/bin/pg_test_timing \
-		src/bin/pg_waldump src/bin/pg_upgrade
+		src/bin/pg_waldump src/bin/pg_walsummary src/bin/pg_upgrade
 
 BUILD_DIRS?=	src/port ${INSTALL_DIRS}
 INSTALL_TARGET?=install-strip
@@ -68,7 +71,7 @@ COMPONENT=	-server
 USE_RC_SUBR=	postgresql
 USES+=		pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 USERS=		${PG_USER}
-GROUPS=	${PG_GROUP}
+GROUPS=		${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
@@ -94,21 +97,13 @@ LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 .  endif
 
-.  if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 15
-OPTIONS_DEFINE+=	ZSTD
-OPTIONS_DEFAULT+=	ZSTD
-ZSTD_DESC=		Build with ZSTD compression support
-ZSTD_CONFIGURE_WITH=	zstd
-ZSTD_LIB_DEPENDS+=	libzstd.so:archivers/zstd
-.  endif
-
 OPTIONS_DEFINE+=	LLVM
 OPTIONS_DEFAULT+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
 LLVM_CONFIGURE_WITH=	llvm
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG} \
 			CLANG=${LOCALBASE}/bin/clang${LLVM_VERSION}
-LLVM_USES=		llvm:min=11,lib
+LLVM_USES=		llvm:lib
 
 CONFIGURE_ARGS+=	--with-icu
 LIB_DEPENDS+=		libicudata.so:devel/icu
@@ -133,6 +128,17 @@ GSSAPI_CONFIGURE_WITH=	gssapi
 
 PATCH_DIST_STRIP=-p1
 .endif # !SLAVE_ONLY
+
+.if defined(SERVER_ONLY) || defined(CLIENT_ONLY) || ${COMPONENT} == "-contrib"
+.  if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 15
+OPTIONS_DEFINE+=	ZSTD
+OPTIONS_DEFAULT+=	ZSTD
+ZSTD_DESC=		Build with ZSTD compression support
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+USES+=			pkgconfig
+.  endif
+.endif
 
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
@@ -193,7 +199,9 @@ do-build:
 		cd ${WRKSRC}/$${dir} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ; \
 	done
 .  if defined(CLIENT_ONLY)
+.    if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
 	@ cd ${WRKSRC}/doc && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} man
+.    endif
 .  endif
 .  if exists(${FILESDIR}/pkg-message${COMPONENT}.in)
 SUB_FILES+=	pkg-message${COMPONENT}
@@ -211,21 +219,28 @@ post-patch:
 .  endif
 
 do-install:
-	@for dir in ${INSTALL_DIRS}; do \
+	for dir in ${INSTALL_DIRS}; do \
 	    cd ${WRKSRC}/$${dir} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done
 .  if defined(SERVER_ONLY)
-	@ ${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql ;\
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily ;\
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${STAGEDIR}${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
-	@ cd ${WRKSRC}/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
-	@ cd ${WRKSRC}/doc/src/sgml && ${COPYTREE_SHARE} "man1 man3 man7" ${STAGEDIR}${PREFIX}/share/man
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/lib*.so
+	cd ${WRKSRC}/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
+.    if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
+	cd ${WRKSRC}/doc/src/sgml && ${COPYTREE_SHARE} "man1 man3 man7" ${STAGEDIR}${PREFIX}/share/man
+.    endif
 .  endif
-	@ if [ -r ${PKGMESSAGE} ]; then \
+.  if defined(SLAVE_ONLY)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
+.  endif
+	if [ -r ${PKGMESSAGE} ]; then \
 		${MKDIR} ${STAGEDIR}${DOCSDIR} ;\
 		${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README${COMPONENT} ;\
 	fi

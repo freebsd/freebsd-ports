@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# PROVIDE: sylve
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable sylve:
+#
+# sylve_enable (bool):      Set to "NO" by default.
+#                           Set it to "YES" to enable sylve.
+# sylve_user (user):        Set to "root" by default.
+#                           User to run sylve as.
+# sylve_group (group):      Set to "wheel" by default.
+#                           Group to run sylve as.
+# sylve_args (str):         Set to "-config %%ETCDIR%%/config.json" by default.
+#                           Extra flags passed to sylve.
+
+. /etc/rc.subr
+
+name=sylve
+rcvar=sylve_enable
+
+load_rc_config $name
+
+: ${sylve_enable:="NO"}
+: ${sylve_user:="root"}
+: ${sylve_group:="wheel"}
+: ${sylve_args:="-config %%ETCDIR%%/config.json"}
+
+export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
+
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
+procname="%%PREFIX%%/sbin/sylve"
+command="/usr/sbin/daemon"
+command_args="-f -c -T ${name} -p ${pidfile} -P ${daemon_pidfile} ${procname} ${sylve_args}"
+
+start_precmd=sylve_startprecmd
+stop_postcmd=sylve_stoppostcmd
+
+sylve_startprecmd()
+{
+	if [ ! -e ${daemon_pidfile} ]; then
+		install -o ${sylve_user} -g ${sylve_group} /dev/null ${daemon_pidfile};
+	fi
+	if [ ! -e ${pidfile} ]; then
+		install -o ${sylve_user} -g ${sylve_group} /dev/null ${pidfile};
+	fi
+}
+
+
+sylve_stoppostcmd()
+{
+	if [ -f "${daemon_pidfile}" ]; then
+		pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		[ ${_err} -eq 0 ] && kill -9 ${pids}
+	fi
+}
+
+run_rc_command "$1"

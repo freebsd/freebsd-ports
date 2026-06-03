@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}${PORTVERSION:R}
 
-USES=		autoreconf alias tcl:tea tar:bzip2
+USES=		autoreconf tcl:tea tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION:R}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared \

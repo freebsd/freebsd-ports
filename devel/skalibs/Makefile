@@ -1,5 +1,5 @@
 PORTNAME=	skalibs
-DISTVERSION=    2.14.3.0
+DISTVERSION=    2.14.5.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -9,8 +9,6 @@ WWW=		https://www.skarnet.org/software/skalibs/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_mips64=	fails to build: Checking whether system has auto-close after fd-passing... test crashed, aborting
 
 USES=		gmake
 USE_LDCONFIG=	yes

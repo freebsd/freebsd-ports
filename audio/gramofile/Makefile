@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw.so:math/fftw
 
-USES=		alias gmake ncurses perl5
+USES=		gmake ncurses perl5
 USE_CSTD=	gnu89
 
 MAKE_ARGS=	CC="${CC}" \

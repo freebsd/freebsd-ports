@@ -1,47 +1,41 @@
 PORTNAME=	closql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
+DISTVERSION=	2.4.0
+PORTREVISION=	3
 CATEGORIES=	databases elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Store EIEIO objects using EmacSQL
 WWW=		https://github.com/magit/closql
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el>=30.0.0.0:misc/compat.el \
+		cond-let>=0.2.1:devel/cond-let \
+		emacsql>=4.3.1:databases/emacsql
 
-USES=		emacs gmake
+USES=		emacs:build gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-MAKE_ENV+=	LOAD_PATH="${LOAD_PATH}"
-MAKE_JOBS_UNSAFE=	Opening input file: No such file or directory, /wrkdirs/usr/ports/databases/closql/work-full/closql-2.2.0/.#closql-autoloads.el
+ALL_TARGET=	autoloads
 
-CONFLICTS_INSTALL=	closql closql-devel* closql-emacs_*
+CONFLICTS_INSTALL=	closql-emacs_*
 
 NO_ARCH=	yes
 
-PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/closql-autoloads.el \
-		${EMACS_VERSION_SITE_LISPDIR}/closql.el \
-		${EMACS_VERSION_SITE_LISPDIR}/closql.elc
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/${PORTNAME}/closql-autoloads.el \
+		${EMACS_SITE_LISPDIR}/${PORTNAME}/closql.el
 
 PORTDOCS=	README.org
 
 OPTIONS_DEFINE=	DOCS
 
-LOAD_PATH=	-L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat -L \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/emacsql
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.el* \
-	   ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR})
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.el \
+	   ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME})
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

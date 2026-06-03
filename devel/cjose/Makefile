@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}
 CFLAGS+=	-Wno-error=strict-prototypes
 .endif
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
 CFLAGS+=	-Wno-error=deprecated-declarations
 .endif
 

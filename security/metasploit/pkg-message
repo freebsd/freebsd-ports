@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+
+This port requires the addition of seperate gems to include the win32api.
+As an unprivileged non-root user, please run "bundle install" from the /usr/local/share/metasploit directory
+cd /usr/local/share/metasploit && bundle install
+
+EOM
+}
+]

@@ -1,0 +1,42 @@
+--- src/lua.c.orig	2025-12-15 10:44:40 UTC
++++ src/lua.c
+@@ -498,18 +498,30 @@ static void lua_initreadline (lua_State *L) {
+ #include <dlfcn.h>
+ 
+ static void lua_initreadline (lua_State *L) {
++  union {
++    void *ptr;
++    l_readlineT rlfunc;
++    l_addhistT ahfunc;
++    char **rlnamevar;
++    int *icompvar;
++  } u;
++
+   void *lib = dlopen(LUA_READLINELIB, RTLD_NOW | RTLD_LOCAL);
+-  if (lib == NULL)
++  if (lib == NULL) {
+     lua_warning(L, "library '" LUA_READLINELIB "' not found", 0);
+-  else {
+-    const char **name = cast(const char**, dlsym(lib, "rl_readline_name"));
+-    if (name != NULL)
+-      *name = "lua";
+-    l_readline = cast(l_readlineT, cast_func(dlsym(lib, "readline")));
+-    l_addhist = cast(l_addhistT, cast_func(dlsym(lib, "add_history")));
+-    if (l_readline == NULL)
+-      lua_warning(L, "unable to load 'readline'", 0);
++    return;
+   }
++
++  u.ptr = dlsym(lib, "readline");
++  l_readline = u.rlfunc;
++  u.ptr = dlsym(lib, "add_history");
++  l_addhist = u.ahfunc;
++  if ((u.ptr = dlsym(lib, "rl_readline_name")))
++    *u.rlnamevar = "lua";
++  if ((u.ptr = dlsym(lib, "rl_inhibit_completion")))
++    *u.icompvar = 1;
++  if (l_readline == NULL)
++    lua_warning(L, "unable to load 'readline' from dynamic library", 0);
+ }
+ 
+ #else		/* }{ */

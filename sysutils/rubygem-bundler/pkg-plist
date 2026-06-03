@@ -15,7 +15,6 @@ share/man/man1/bundle-gem.1.gz
 share/man/man1/bundle-help.1.gz
 share/man/man1/bundle-info.1.gz
 share/man/man1/bundle-init.1.gz
-share/man/man1/bundle-inject.1.gz
 share/man/man1/bundle-install.1.gz
 share/man/man1/bundle-issue.1.gz
 share/man/man1/bundle-licenses.1.gz
@@ -30,6 +29,5 @@ share/man/man1/bundle-remove.1.gz
 share/man/man1/bundle-show.1.gz
 share/man/man1/bundle-update.1.gz
 share/man/man1/bundle-version.1.gz
-share/man/man1/bundle-viz.1.gz
 share/man/man1/bundle.1.gz
 share/man/man5/gemfile.5.gz

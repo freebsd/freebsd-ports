@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-01-24 15:24:29 UTC
++++ pyproject.toml
+@@ -21,7 +21,7 @@ classifiers = [
+     "Topic :: Text Processing :: Markup :: HTML",
+     "Topic :: Text Processing :: Markup :: XML",
+ ]
+-license = "HPND-sell-variant"  # aka "Python (MIT Style)" or "Elementtree" license
++license = { text = "HPND-sell-variant" } # aka "Python (MIT Style)" or "Elementtree" license
+ 
+ [project.urls]
+ "Homepage" = "https://github.com/moinwiki/emeraldtree"
+@@ -30,7 +30,7 @@ where = ["src"]
+ where = ["src"]
+ 
+ [build-system]
+-requires = ["setuptools>=78.1.1", "wheel", "setuptools_scm[toml]"]
++requires = ["setuptools>=61", "wheel", "setuptools_scm[toml]"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]

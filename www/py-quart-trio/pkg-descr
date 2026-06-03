@@ -1,0 +1,3 @@
+Quart-Trio is an extension for Quart to support the Trio event loop. This is an
+alternative to using the asyncio event loop present in the Python standard
+library and supported by default in Quart.

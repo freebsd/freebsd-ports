@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.2
 PORTEPOCH=	1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=   https://github.com/openzfs/zfs/releases/download/zfs-${PORTVERSION}/
@@ -19,17 +19,17 @@ RUN_DEPENDS=	openzfs-kmod>=0:filesystems/openzfs-kmod
 USES+=		cpe libtool gettext-runtime gmake python:build shebangfix ssl
 SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
 SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
-		cmd/arcstat.in \
+		cmd/zarcstat.in \
 		cmd/dbufstat.in \
 		cmd/zilstat.in \
-		cmd/arc_summary
+		cmd/zarcsummary
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	MAKE=gmake --prefix=${PREFIX} --with-config="user"
 
 OPTIONS_DEFINE=	DEBUG PYTHON TESTS
-PYTHON_DESC=	Build the pyzfs library, arc_summary, arcstat, and dbufstat utilities
+PYTHON_DESC=	Build the pyzfs library, zarcsummary, zarcstat, and dbufstat utilities
 TESTS_DESC=	Install the ZFS Test Suite
 OPTIONS_SUB=	yes
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--enable-debug --enable-debuginfo
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=	--with-python=${PYTHON_VER}
+CONFIGURE_ARGS+=	--with-python=${PYTHON_VER} --enable-pyzfs
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
@@ -59,7 +59,7 @@ post-extract:
 	cd ${WRKSRC} && ${SED} -i '' '1s:@PYTHON_SHEBANG@:python3:' \
 		tests/test-runner/bin/zts-report.py.in \
 		tests/test-runner/bin/test-runner.py.in \
-		cmd/arcstat.in \
+		cmd/zarcstat.in \
 		cmd/dbufstat.in \
 		cmd/zilstat.in
 

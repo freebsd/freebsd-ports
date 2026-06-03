@@ -1,15 +1,15 @@
---- base/memory/discardable_memory.cc.orig	2025-03-09 21:38:10 UTC
+--- base/memory/discardable_memory.cc.orig	2025-11-01 06:40:37 UTC
 +++ base/memory/discardable_memory.cc
-@@ -26,7 +26,7 @@ BASE_FEATURE(kMadvFreeDiscardableMemory,
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -20,7 +20,7 @@ namespace features {
+ BASE_FEATURE(kMadvFreeDiscardableMemory, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_POSIX)
  
 -#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kDiscardableMemoryBackingTrial,
-              "DiscardableMemoryBackingTrial",
-              base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -44,7 +44,7 @@ BASE_FEATURE_ENUM_PARAM(DiscardableMemoryTrialGroup,
+ BASE_FEATURE(kDiscardableMemoryBackingTrial, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE_ENUM_PARAM(DiscardableMemoryTrialGroup,
+@@ -36,7 +36,7 @@ BASE_FEATURE_ENUM_PARAM(DiscardableMemoryTrialGroup,
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
-@@ -63,7 +63,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
+@@ -54,7 +54,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
-@@ -95,7 +95,7 @@ DiscardableMemory::DiscardableMemory() = default;
+@@ -81,7 +81,7 @@ DiscardableMemory::DiscardableMemory() = default;
  DiscardableMemory::~DiscardableMemory() = default;
  
  DiscardableMemoryBacking GetDiscardableMemoryBacking() {

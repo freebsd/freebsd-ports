@@ -1,15 +1,14 @@
---- commands/Makefile.orig	2020-04-08 15:45:13 UTC
+--- commands/Makefile.orig	2025-07-30 06:00:02 UTC
 +++ commands/Makefile
-@@ -10,12 +10,7 @@ SRCS      = CmdSubrs.c CmdAB.c CmdCD.c CmdE.c CmdFI.c 
+@@ -10,11 +10,7 @@ SRCS      = CmdSubrs.c CmdAB.c CmdCD.c CmdE.c CmdFI.c 
  # Force the module to regenerate the symbolic link in the readline
  # directory, as it may be needed by CmdFI.c (in the non-Tcl compile)
  
 -module: ${MAGICDIR}/readline/readline lib${MODULE}.o
 -
+-# Delegate this task to the readline/Makefile
 -${MAGICDIR}/readline/readline:
--	@if ( ! test -f ${MAGICDIR}/readline/readline ) ; then \
--	(cd ${MAGICDIR}/readline; ln -s `ls | grep readline` readline) ; \
--	fi
+-	${MAKE} -C ${MAGICDIR}/readline readline-create-symlinks
 +module: lib${MODULE}.o
  
  include ${MAGICDIR}/defs.mak

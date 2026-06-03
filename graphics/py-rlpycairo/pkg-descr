@@ -1,0 +1,7 @@
+This is a plugin for the ReportLab PDF Toolkit, which constructs rich PDF
+documents, and is also used for the creation of charts in a variety of bitmap
+and vector formats.
+
+This plugin is intended to replace most of the usage of the libart based
+C extension _renderPM which has been shown to have issues when rendering
+complex documents.

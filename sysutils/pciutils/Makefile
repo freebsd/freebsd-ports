@@ -1,11 +1,12 @@
 PORTNAME=	pciutils
-PORTVERSION=	3.14.0
+PORTVERSION=	3.15.0
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration utilities
-WWW=		https://mj.ucw.cz/sw/pciutils/
+WWW=		https://mj.ucw.cz/sw/pciutils/ \
+		https://github.com/pciutils/pciutils
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

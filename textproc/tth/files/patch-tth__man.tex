@@ -1,0 +1,20 @@
+--- tth_man.tex.orig	2025-11-03 23:36:21 UTC
++++ tth_man.tex
+@@ -1006,7 +1006,7 @@ without alteration of the original \TeX\ files, by pla
+ (simplified) version of the macro package on the path \TtH\ searches.
+  An example using the \verb!-p! switch might be
+ \begin{verbatim}
+-tth >file.html <file.tex -p/usr/local/tthinputs:~/mytthinputs
++tth >file.html <file.tex -p%%DATADIR%%/tthinputs:~/mytthinputs
+ \end{verbatim}
+ 
+ \index{macros!alternate}
+@@ -1280,7 +1280,7 @@ the extra command:
+ the extra command:
+ 
+ \begin{verbatim}
+-\input /usr/local/tth/tthprep.sty
++\input %%DATADIR%%/styles/tthprep.sty
+ \end{verbatim}
+ 
+ \noindent where the path should be to wherever you unpacked or are

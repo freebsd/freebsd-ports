@@ -1,14 +1,13 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.14.3
-PORTREVISION=	6
+DISTVERSION=	8.19.15
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
-PKGNAMESUFFIX?=	8
+PKGNAMESUFFIX=	${DISTVERSION:R:R}
 DISTFILES=	go.mod:gomod
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Send logs, network, metrics and heartbeat to elasticsearch or logstash
+COMMENT=	Send logs, network, metrics and heartbeat to Elasticsearch or Logstash (${DISTVERSION:R:R}.x version)
 WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
@@ -18,21 +17,25 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	elastic
 
-USE_RC_SUBR=	${GO_TARGET:C,\./,,g}
+USE_RC_SUBR=	${GO_TARGET:S,./,,g}
 
-GO_MODULE=	github.com/elastic/beats/v8
+GO_MODULE=	github.com/elastic/beats/v7
 CGO_CFLAGS=	-I.
 CGO_LDFLAGS=	-L.
-MAKE_ENV+=	GOBUILD_FLAGS="-mod=vendor"
+MAKE_ENV=	GOBUILD_FLAGS="-mod=vendor"
 
-CONFLICTS=	beats6 beats7
+CONFLICTS=	${PORTNAME}*
 
-PORTSCOUT=	limit:^8
+PORTSCOUT=	limit:^${DISTVERSION:R:R}\.
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		AUDITBEAT FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
+.ifmake makesum || makeplist || distclean
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+.else
 OPTIONS_DEFAULT=	FILEBEAT HEARTBEAT METRICBEAT
+.endif
 OPTIONS_SUB=		yes
 
 AUDITBEAT_DESC=			Auditbeat
@@ -40,42 +43,49 @@ FILEBEAT_DESC=			Filebeat
 HEARTBEAT_DESC=			Heartbeat
 METRICBEAT_DESC=		Metricbeat
 PACKETBEAT_DESC=		Packetbeat
-AUDITBEAT_MASTER_SITES=		https://artifacts.elastic.co/downloads/beats/auditbeat/:auditbeat
+AUDITBEAT_MASTER_SITES=		https://artifacts.elastic.co/downloads/beats/auditbeat/:auditbeat \
+				${LOCAL_MASTER_SITES:S|$|:auditbeat|}
 AUDITBEAT_DISTFILES=		auditbeat-${DISTVERSION}-darwin-x86_64.tar.gz:auditbeat
 AUDITBEAT_VARS=			GO_TARGET+=./auditbeat
-FILEBEAT_MASTER_SITES=		https://artifacts.elastic.co/downloads/beats/filebeat/:filebeat
+FILEBEAT_MASTER_SITES=		https://artifacts.elastic.co/downloads/beats/filebeat/:filebeat \
+				${LOCAL_MASTER_SITES:S|$|:filebeat|}
 FILEBEAT_DISTFILES=		filebeat-${DISTVERSION}-darwin-x86_64.tar.gz:filebeat
 FILEBEAT_VARS=			GO_TARGET+=./filebeat
-HEARTBEAT_MASTER_SITES=		https://artifacts.elastic.co/downloads/beats/heartbeat/:heartbeat
+HEARTBEAT_MASTER_SITES=		https://artifacts.elastic.co/downloads/beats/heartbeat/:heartbeat \
+				${LOCAL_MASTER_SITES:S|$|:heartbeat|}
 HEARTBEAT_DISTFILES=		heartbeat-${DISTVERSION}-darwin-x86_64.tar.gz:heartbeat
 HEARTBEAT_VARS=			GO_TARGET+=./heartbeat
-METRICBEAT_MASTER_SITES=	https://artifacts.elastic.co/downloads/beats/metricbeat/:metricbeat
+METRICBEAT_MASTER_SITES=	https://artifacts.elastic.co/downloads/beats/metricbeat/:metricbeat \
+				${LOCAL_MASTER_SITES:S|$|:metricbeat|}
 METRICBEAT_DISTFILES=		metricbeat-${DISTVERSION}-darwin-x86_64.tar.gz:metricbeat
 METRICBEAT_VARS=		GO_TARGET+=./metricbeat
-PACKETBEAT_MASTER_SITES=	https://artifacts.elastic.co/downloads/beats/packetbeat/:packetbeat
+PACKETBEAT_MASTER_SITES=	https://artifacts.elastic.co/downloads/beats/packetbeat/:packetbeat \
+				${LOCAL_MASTER_SITES:S|$|:packetbeat|}
 PACKETBEAT_DISTFILES=		packetbeat-${DISTVERSION}-darwin-x86_64.tar.gz:packetbeat
 PACKETBEAT_VARS=		CGO_CFLAGS+=-I/usr/include \
 				CGO_LDFLAGS+=-L/usr/lib \
 				GO_TARGET+=./packetbeat
 
+LOCAL_MASTER_SITES=		LOCAL/vvd/elastic
+
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%BEATSVERSION%%|v${PORTVERSION}|g" ${WRKSRC}/dev-tools/mage/settings.go
-.for BEATMOD in ${GO_TARGET:C,\./,,g}
+	${REINPLACE_CMD} -e "s|%%BEATSVERSION%%|v${DISTVERSION}|g" ${WRKSRC}/dev-tools/mage/settings.go
+.for BEATMOD in ${GO_TARGET:S,^./,,g}
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|g" ${WRKSRC}/${BEATMOD}/*.yml
 .endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-.for BEATMOD in ${GO_TARGET:C,^\./,,g}
-	${MKDIR} ${STAGEDIR}/var/db/beats/${BEATMOD} && \
+.for BEATMOD in ${GO_TARGET:S,^./,,g}
+	(${MKDIR} ${STAGEDIR}/var/db/beats/${BEATMOD} && \
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/${BEATMOD} \
 		${STAGEDIR}${PREFIX}/sbin && \
 	${INSTALL_DATA} ${WRKSRC}/${BEATMOD}/${BEATMOD}.yml \
 		${STAGEDIR}${ETCDIR}/${BEATMOD}.yml.sample && \
 	${INSTALL_DATA} ${WRKSRC}/${BEATMOD}/${BEATMOD}.reference.yml \
-		${STAGEDIR}${ETCDIR}/${BEATMOD}.yml.reference
+		${STAGEDIR}${ETCDIR}/${BEATMOD}.yml.reference)
 	(MODULE_SRC=${WRKDIR}/${BEATMOD}-${DISTVERSION}-darwin-x86_64/module; \
 	 if [ -d $${MODULE_SRC} ]; then \
 	   MODULE_DEST=${STAGEDIR}${DATADIR}/${BEATMOD}/module && \

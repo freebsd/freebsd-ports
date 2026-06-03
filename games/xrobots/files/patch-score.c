@@ -8,7 +8,7 @@
  #include "xrobots.h"
  
  /*----------------------------------------------------------------------*/
-@@ -67,14 +68,13 @@ typedef struct {
+@@ -67,14 +68,13 @@ static SCORE scores[MAXSCORES];
  
  static SCORE scores[MAXSCORES];
  
@@ -24,6 +24,15 @@
  
  /*----------------------------------------------------------------------*/
  
+@@ -91,7 +91,7 @@ check_score(current_score)
+   }
+   if(scorefile) {
+ #ifndef SYSV
+-    flock(scorefile->_file, LOCK_UN);
++    flock(fileno(scorefile), LOCK_UN);
+ #endif
+     fclose(scorefile);
+     show_scores();
 @@ -103,19 +103,20 @@ static void load_scores()
  {
    int i = 0;
@@ -35,7 +44,8 @@
      return;
    }
  #ifndef SYSV
-   flock(scorefile->_file, LOCK_EX);
+-  flock(scorefile->_file, LOCK_EX);
++  flock(fileno(scorefile), LOCK_EX);
  #endif
 -  while( fgets(scores[i].score,6,scorefile) 	/* get score */
 -      && fgets(scores[i].name,26,scorefile) 	/* get name */
@@ -62,7 +72,7 @@
  popdown_callback(w, closure, call_data)
    Widget w;
    caddr_t closure;
-@@ -253,7 +254,7 @@ void
+@@ -253,7 +254,7 @@ show_scores()
  show_scores()
  {
    int i;
@@ -71,3 +81,12 @@
    Arg tmp_arg;
  
    for(i = 0;i<MAXSCORES;i++) {
+@@ -276,7 +277,7 @@ show_scores_callback()
+ 
+   if(scorefile) {
+ #ifndef SYSV
+-    flock(scorefile->_file, LOCK_UN);
++    flock(fileno(scorefile), LOCK_UN);
+ #endif
+     fclose(scorefile);
+     show_scores();

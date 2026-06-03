@@ -1,1 +1,2 @@
 pynvml provides Python access to the NVML library for GPU diagnostics.
+It ships the deprecated pynvml_utils helper module on top of nvidia-ml-py.

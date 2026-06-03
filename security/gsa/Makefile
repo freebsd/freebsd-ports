@@ -1,6 +1,6 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.0.0
+DISTVERSION=	26.14.0
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Greenbone Security Assistant webpage written in React
 WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
+
+DEPRECATED=	Depends on expired www/npm-node20
+EXPIRATION_DATE=2026-09-02
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 

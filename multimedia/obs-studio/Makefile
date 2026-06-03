@@ -1,6 +1,5 @@
 PORTNAME=	obs-studio
-DISTVERSION=	31.1.1
-PORTREVISION=	1
+DISTVERSION=	32.1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}
@@ -18,9 +17,10 @@ BROKEN_i386=	link fails: relocation R_386_PC32 cannot be used against symbol 'st
 
 BUILD_DEPENDS=	asio>0:net/asio \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
-		v4l_compat>=0:multimedia/v4l_compat \
+		simde>0:devel/simde \
 		swig:devel/swig \
 		uthash>0:devel/uthash \
+		v4l_compat>=0:multimedia/v4l_compat \
 		websocketpp>0:devel/websocketpp
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavcodec.so:multimedia/ffmpeg \
@@ -61,19 +61,23 @@ USE_GL=		gl
 USE_XORG=	ice sm x11 xcb xcomposite xext xfixes xinerama xrandr
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	UNIX_STRUCTURE
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
 		-DQT_VERSION=6 \
 		-DPython_EXECUTABLE="${PYTHON_CMD}"
+CMAKE_OFF=	CMAKE_COMPILE_WARNING_AS_ERROR # no -Werror
 
+CFLAGS+=	-Wno-error=attribute-warning
 CFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat -Wno-error=pass-failed
 CFLAGS_powerpc64le=	-Wno-error=deprecated-altivec-src-compat
+CFLAGS+=	-fPIC # otherwise we get: relocation R_X86_64_PC32 cannot be used against symbol '__stack_chk_guard'; recompile with -fPIC
+CXXFLAGS+=	-fPIC # otherwise we get: relocation R_X86_64_PC32 cannot be used against symbol '__stack_chk_guard'; recompile with -fPIC
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-sources
 
-OPTIONS_DEFINE=		BROWSER PIPEWIRE VLC VST WAYLAND
+OPTIONS_DEFINE=		BROWSER NVENC PIPEWIRE VLC VST WAYLAND
 OPTIONS_DEFAULT=	PIPEWIRE VLC VST WAYLAND
+OPTIONS_DEFAULT_amd64=	NVENC
 OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	JACK PULSEAUDIO SNDIO
 OPTIONS_DEFAULT+=	${OPTIONS_MULTI_AUDIO}
@@ -81,21 +85,23 @@ OPTIONS_SUB=		yes
 AUDIO_DESC=		Audio backends
 
 BROWSER_DESC=		Build OSB browser
-BROWSER_CMAKE_BOOL=	BUILD_BROWSER
+BROWSER_CMAKE_BOOL=	BUILD_BROWSER # this also requires an additional git submodule
 BROWSER_BROKEN=		Needs CEF (Chromium Embedded Framework) which isn't yet ported
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DENABLE_JACK=TRUE
 JACK_CMAKE_OFF=		-DDISABLE_JACK=TRUE
 
+NVENC_DESC=		NVIDIA Hardware Encoder Plugin
+NVENC_BUILD_DEPENDS=	ffnvcodec-headers>=13.0.19.0:multimedia/ffnvcodec-headers
+NVENC_CMAKE_BOOL=	ENABLE_NVENC
+
 PIPEWIRE_DESC=		Screen capture via PipeWire
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 PIPEWIRE_CMAKE_BOOL=	ENABLE_PIPEWIRE
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_CMAKE_ON=	-DENABLE_PULSEAUDIO=TRUE
-PULSEAUDIO_CMAKE_OFF=	-DDISABLE_PULSEAUDIO=TRUE
-PULSEAUDIO_BROKEN_OFF=	https://github.com/obsproject/obs-studio/issues/4025
+PULSEAUDIO_CMAKE_BOOL=	ENABLE_PULSEAUDIO
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CMAKE_ON=		-DENABLE_SNDIO=TRUE
@@ -106,7 +112,7 @@ VLC_CMAKE_BOOL=		ENABLE_VLC
 VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 VST_DESC=		Build VST submodule
-VST_CMAKE_BOOL=		BUILD_VST
+VST_CMAKE_BOOL=		ENABLE_VST
 
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
@@ -119,12 +125,5 @@ PLIST_SUB+=	LUAJIT="@comment "
 .else
 PLIST_SUB+=	LUAJIT=""
 .endif
-
-xpost-install:
-	# https://github.com/obsproject/obs-studio/issues/2625
-	${INSTALL_DATA} ${WRKSRC}/UI/obs-frontend-api/obs-frontend-api.h ${STAGEDIR}${PREFIX}/include/obs
-	# https://github.com/obsproject/obs-studio/issues/2647 (only for multimedia/obs-audio-spectralizer, should be removed later)
-	${INSTALL_DATA} ${WRKSRC}/cmake/Modules/ObsHelpers.cmake ${STAGEDIR}${PREFIX}/lib/cmake
-	${INSTALL_DATA} ${WRKSRC}/cmake/external/ObsPluginHelpers.cmake ${STAGEDIR}${PREFIX}/lib/cmake
 
 .include <bsd.port.post.mk>

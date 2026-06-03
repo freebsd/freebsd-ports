@@ -1,0 +1,12 @@
+--- media/BUILD.gn.orig	2026-03-13 16:54:03 UTC
++++ media/BUILD.gn
+@@ -103,6 +103,9 @@ config("media_config") {
+       defines += [ "DLOPEN_PULSEAUDIO" ]
+     }
+   }
++  if (use_sndio) {
++    defines += [ "USE_SNDIO" ]
++  }
+ }
+ 
+ # Internal grouping of the configs necessary to support sub-folders having their

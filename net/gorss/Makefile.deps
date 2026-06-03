@@ -1,31 +1,30 @@
 # Generated with `make gomod-vendor'
 GH_TUPLE=	\
 		OpenPeeDeeP:xdg:v1.0.0:openpeedeep_xdg/vendor/github.com/OpenPeeDeeP/xdg \
-		PuerkitoBio:goquery:v1.8.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
-		andybalholm:cascadia:v1.3.1:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
-		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
-		gdamore:tcell:v2.6.0:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
-		gen2brain:beeep:6e717729cb4f:gen2brain_beeep/vendor/github.com/gen2brain/beeep \
+		PuerkitoBio:goquery:v1.11.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
+		andybalholm:cascadia:v1.3.3:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
+		esiqveland:notify:v0.13.3:esiqveland_notify/vendor/github.com/esiqveland/notify \
+		gdamore:encoding:v1.0.1:gdamore_encoding/vendor/github.com/gdamore/encoding \
+		gdamore:tcell:v2.13.7:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		gen2brain:beeep:v0.11.2:gen2brain_beeep/vendor/github.com/gen2brain/beeep \
 		gilliek:go-opml:v1.0.0:gilliek_go_opml/vendor/github.com/gilliek/go-opml \
-		go-toast:toast:01e6764cf0a4:go_toast_toast/vendor/github.com/go-toast/toast \
-		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
-		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.6.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
-		jaytaylor:html2text:74c2419ad056:jaytaylor_html2text/vendor/jaytaylor.com/html2text \
+		go-ole:go-ole:v1.3.0:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
+		godbus:dbus:v5.2.2:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		golang:net:v0.49.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.40.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.39.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.33.0:golang_text/vendor/golang.org/x/text \
 		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
-		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v1.14.16:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
-		mmcdole:gofeed:v1.2.1:mmcdole_gofeed/vendor/github.com/mmcdole/gofeed \
-		mmcdole:goxpp:v1.1.0:mmcdole_goxpp/vendor/github.com/mmcdole/goxpp \
+		k3a:html2text:v1.3.0:k3a_html2text/vendor/github.com/k3a/html2text \
+		lucasb-eyer:go-colorful:v1.3.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-sqlite3:v1.14.33:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mmcdole:gofeed:v1.3.0:mmcdole_gofeed/vendor/github.com/mmcdole/gofeed \
+		mmcdole:goxpp:v1.1.1:mmcdole_goxpp/vendor/github.com/mmcdole/goxpp \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
-		nu7hatch:gouuid:179d4d0c4d8d:nu7hatch_gouuid/vendor/github.com/nu7hatch/gouuid \
-		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		rivo:tview:84f9c0ff9de8:rivo_tview/vendor/github.com/rivo/tview \
-		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		ssor:bom:6386211fdfcf:ssor_bom/vendor/github.com/ssor/bom \
+		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
+		rivo:tview:v0.42.0:rivo_tview/vendor/github.com/rivo/tview \
+		rivo:uniseg:v0.4.7:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		sergeymakinen:go-bmp:v1.0.0:sergeymakinen_go_bmp/vendor/github.com/sergeymakinen/go-bmp \
+		sergeymakinen:go-ico:v1.0.0:sergeymakinen_go_ico/vendor/github.com/sergeymakinen/go-ico \
 		tadvi:systray:11a2b8fa57af:tadvi_systray/vendor/github.com/tadvi/systray

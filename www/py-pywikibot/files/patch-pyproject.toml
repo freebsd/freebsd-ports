@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-04-11 04:58:34 UTC
++++ pyproject.toml
+@@ -23,8 +23,6 @@ keywords = [
+     "pywiki", "pywikibase", "pywikibot", "pywikipedia", "pywikipediabot",
+     "wiki", "wikibase", "wikidata", "wikimedia", "wikipedia",
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
+ classifiers=[
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",

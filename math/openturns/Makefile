@@ -1,7 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24
-PORTREVISION=	6
+DISTVERSION=	1.27
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,10 +36,12 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libglog.so:devel/glog \
 		libgmp.so:math/gmp \
 		libhdf5_cpp.so:science/hdf5 \
+		libhighs.so:math/highs \
 		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
+		libmuparser.so:math/muparser \
 		libnlopt.so:math/nlopt \
 		libOsi.so:math/osi \
 		libpagmo.so:science/pagmo2 \
@@ -73,7 +74,7 @@ OPTIONS_SUB=		yes
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_CMAKE_ON=	-DSWIG_EXECUTABLE=${LOCALBASE}/bin/swig
-PYTHON_PY_DEPENDS=	${PYNUMPY} \
+PYTHON_PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}chaospy>0:math/py-chaospy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.3.1:math/py-matplotlib@${PY_FLAVOR} \
@@ -97,6 +98,6 @@ PORTEXAMPLES=		*
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
-# tests as of 1.24: 99% tests passed, 1 tests failed out of 537, see https://github.com/openturns/openturns/issues/2862
+# tests as of 1.25.1: 99% tests passed, 1 tests failed out of 539, the test cppcheck_Normal_large was killed because it used too much memory
 
 .include <bsd.port.mk>

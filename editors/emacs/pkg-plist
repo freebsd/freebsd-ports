@@ -4291,8 +4291,9 @@ share/metainfo/emacs.metainfo.xml
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/info/elisp_type_hierarchy.jpg
 %%DATADIR%%/info/elisp_type_hierarchy.txt
+%%DATADIR%%/site-lisp/default.el
+%%DATADIR%%/site-lisp/site-start.el
 %%DATADIR%%/site-lisp/subdirs.el
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/alloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/android-asset.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/android-emacs.c

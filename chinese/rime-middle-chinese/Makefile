@@ -3,7 +3,7 @@ DISTVERSION=	g20210926
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Middle Chinese schema support
 WWW=		https://github.com/rime/rime-middle-chinese
 

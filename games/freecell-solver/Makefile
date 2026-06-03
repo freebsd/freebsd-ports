@@ -26,7 +26,6 @@ LIB_DEPENDS=	${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_armv6=	libgmp.so:math/gmp
 LIB_DEPENDS_armv7=	libgmp.so:math/gmp
 LIB_DEPENDS_i386=	libgmp.so:math/gmp
-LIB_DEPENDS_mips=	libgmp.so:math/gmp
 LIB_DEPENDS_powerpc=	libgmp.so:math/gmp
 
 OPTIONS_DEFINE=	DOCS TCMALLOC

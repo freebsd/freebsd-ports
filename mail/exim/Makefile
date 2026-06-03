@@ -102,6 +102,7 @@ IGNORE=	you cannot enable DANE without DNSSEC support or without TLS support
 .endif
 
 .if ${PORT_OPTIONS:MSA_EXIM} || defined(FETCH_ALL)
+BROKEN=		Unmaintained extension
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
@@ -109,7 +110,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 .endif
 
-EXIM_VERSION=	4.98.2
+EXIM_VERSION=	4.99.3
 SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'|${SORT} -h`
@@ -136,11 +137,11 @@ EXIM_INSTALL_ARG+=	"eximon" "eximon.bin"
 .endif # !EXIMON_ONLY
 
 PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
-PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
+PORTDOC_FILES=	ChangeLog NewStuff DANE-draft-notes \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
 		experimental-spec.txt filter.txt spec.txt
 
-PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
+PORT_EXAMPLES=	transport-filter.pl
 
 DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
@@ -297,13 +298,6 @@ SEDLIST+=	-e 's,^\# (DISABLE_TLS=),\1,'
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
 SEDLIST+=	-e 's,^\# (EXIM_PERL=),\1,'
-.endif
-
-.if ${PORT_OPTIONS:MTCP_WRAPPERS}
-SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
-		-e 's,^\# (USE_TCP_WRAPPERS=),\1,'
-.else
-SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MICONV}

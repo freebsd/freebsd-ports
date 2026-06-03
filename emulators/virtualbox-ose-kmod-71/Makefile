@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.1.12
+DISTVERSION=	7.1.18
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 PKGNAMESUFFIX=	-kmod-71
@@ -9,8 +9,11 @@ MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox kernel module for FreeBSD
 WWW=		https://www.virtualbox.org/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=		Upstream EOL reaches on 2026-04-21, use emulators/virtualbox-ose-kmod-72 instead
+EXPIRATION_DATE=	2026-12-31
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -35,9 +38,12 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-legacy \
 			virtualbox-ose-kmod \
-			virtualbox-ose-kmod-70
+			virtualbox-ose-kmod-70 \
+			virtualbox-ose-kmod-72
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}-71/files
+EXTRACT_AFTER_ARGS=	--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=		limit:^7\.1\.
 SUB_FILES=		pkg-message
 SUB_LIST=		OPSYS=${OPSYS} OSREL=${OSREL}

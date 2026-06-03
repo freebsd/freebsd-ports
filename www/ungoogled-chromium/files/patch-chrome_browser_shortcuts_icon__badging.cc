@@ -1,6 +1,6 @@
---- chrome/browser/shortcuts/icon_badging.cc.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/shortcuts/icon_badging.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/shortcuts/icon_badging.cc
-@@ -59,7 +59,7 @@ enum class BadgeSize {
+@@ -58,7 +58,7 @@ enum class BadgeSize {
  constexpr ShortcutSize kSizesNeededForShortcutCreation[] = {
      ShortcutSize::k16, ShortcutSize::k32, ShortcutSize::k128,
      ShortcutSize::k256, ShortcutSize::k512};

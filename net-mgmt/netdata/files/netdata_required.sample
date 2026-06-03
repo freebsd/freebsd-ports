@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# PROVIDE: netdata_required
+# REQUIRE: LOGIN
+# BEFORE:  netdata
+
+# Add required services after "REQUIRE: LOGIN".

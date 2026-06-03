@@ -1,6 +1,6 @@
---- third_party/angle/src/common/system_utils_linux.cpp.orig	2025-02-20 09:59:21 UTC
+--- third_party/angle/src/common/system_utils_linux.cpp.orig	2025-10-21 16:57:35 UTC
 +++ third_party/angle/src/common/system_utils_linux.cpp
-@@ -15,10 +15,15 @@
+@@ -19,10 +19,15 @@
  #include <sys/types.h>
  #include <unistd.h>
  
@@ -16,7 +16,7 @@
  std::string GetExecutablePath()
  {
      // We cannot use lstat to get the size of /proc/self/exe as it always returns 0
-@@ -34,6 +39,7 @@ std::string GetExecutablePath()
+@@ -38,6 +43,7 @@ std::string GetExecutablePath()
      path[result] = '\0';
      return path;
  }
@@ -24,7 +24,7 @@
  
  std::string GetExecutableDirectory()
  {
-@@ -59,6 +65,10 @@ void SetCurrentThreadName(const char *name)
+@@ -63,6 +69,10 @@ void SetCurrentThreadName(const char *name)
      // There's a 15-character (16 including '\0') limit.  If the name is too big (and ERANGE is
      // returned), name will be ignored.
      ASSERT(strlen(name) < 16);

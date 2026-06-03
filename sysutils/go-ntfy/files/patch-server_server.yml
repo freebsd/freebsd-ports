@@ -1,0 +1,11 @@
+--- server/server.yml.orig	2026-03-10 04:55:20 UTC
++++ server/server.yml
+@@ -19,7 +19,7 @@
+ # To listen on all interfaces, you may omit the IP address, e.g. ":443".
+ # To disable HTTP, set "listen-http" to "-".
+ #
+-# listen-http: ":80"
++listen-http: ":8080"
+ # listen-https:
+ 
+ # Listen on a Unix socket, e.g. /var/lib/ntfy/ntfy.sock

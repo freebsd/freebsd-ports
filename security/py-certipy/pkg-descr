@@ -1,0 +1,13 @@
+certipy is a simple python tool for creating certificate authorities
+and certificates on the fly.
+
+Certipy was made to simplify the certificate creation process. To that end,
+Certipy exposes methods for creating and managing certificate authorities,
+certificates, signing and building trust bundles.
+
+Behind the scenes Certipy:
+
+* Manages records of all certificates it creates
+* External certs can be imported and managed by Certipy
+* Maintains signing hierarchy
+* Persists certificates to files with appropriate permissions

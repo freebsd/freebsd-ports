@@ -1,7 +1,7 @@
 PORTNAME=	httpx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.10
-PORTREVISION=	2
+PORTREVISION=	8
 CATEGORIES=	www
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/projectdiscovery/httpx
 
 LICENSE=	MIT
 
-USES=		go:1.21,modules
+USES=		go:modules
 GO_MODULE=	github.com/projectdiscovery/httpx
 
 GO_TARGET=	./cmd/${PORTNAME}

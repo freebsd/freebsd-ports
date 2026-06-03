@@ -1,5 +1,5 @@
 PORTNAME=	h5netcdf
-DISTVERSION=	1.6.1
+DISTVERSION=	1.8.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,6 @@ USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.6.1: 101 passed, 54 skipped in 7.45s
+# tests as of 1.8.0: 78 passed, 147 skipped, 20 xfailed in 4.20s
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	cyclonedx-python-lib
-PORTVERSION=	10.5.0
+PORTVERSION=	11.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/CycloneDX/cyclonedx-python-lib/releases/download/v${PORTVERSION}/
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}license-expression>=30<31:textproc/py-license-expression@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.11<2:textproc/py-packageurl-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-serializable>=2.0.0<3:devel/py-py-serializable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-serializable>=2.1.0<3:devel/py-py-serializable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.4.0<3:devel/py-sortedcontainers@${PY_FLAVOR}
 
 USES=		python
@@ -42,7 +42,7 @@ JSON_VALIDATION_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fqdn>=0:www/py-fqdn@${PY_FL
 				${PYTHON_PKGNAMEPREFIX}rfc3987-syntax>=1.1.0:www/py-rfc3987-syntax@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}uri-template>=0:net/py-uri-template@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}webcolors>=24.6.0:graphics/py-webcolors@${PY_FLAVOR}
-XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=4<7:devel/py-lxml5@${PY_FLAVOR}
+XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4<7:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 

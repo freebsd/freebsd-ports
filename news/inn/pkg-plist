@@ -33,16 +33,16 @@ bin/expireover
 bin/expirerm
 bin/fastrm
 bin/filter/INN.py
-bin/filter/filter_innd.pl
-bin/filter/filter_innd.py
-bin/filter/filter_nnrpd.pl
 bin/filter/nnrpd.py
-bin/filter/nnrpd_access.pl
-bin/filter/nnrpd_access.py
-bin/filter/nnrpd_auth.pl
-bin/filter/nnrpd_auth.py
-bin/filter/nnrpd_dynamic.py
-bin/filter/startup_innd.pl
+@sample %%NEWSBASE%%/bin/filter/filter_innd.pl.sample
+@sample %%NEWSBASE%%/bin/filter/filter_innd.py.sample
+@sample %%NEWSBASE%%/bin/filter/filter_nnrpd.pl.sample
+@sample %%NEWSBASE%%/bin/filter/nnrpd_access.pl.sample
+@sample %%NEWSBASE%%/bin/filter/nnrpd_access.py.sample
+@sample %%NEWSBASE%%/bin/filter/nnrpd_auth.pl.sample
+@sample %%NEWSBASE%%/bin/filter/nnrpd_auth.py.sample
+@sample %%NEWSBASE%%/bin/filter/nnrpd_dynamic.py.sample
+@sample %%NEWSBASE%%/bin/filter/startup_innd.pl.sample
 bin/gencancel
 bin/getlist
 bin/grephistory
@@ -84,7 +84,8 @@ bin/procbatch
 bin/prunehistory
 bin/pullnews
 bin/rc.news
-@(,uucp,4550) bin/rnews
+%%UUCP_RNEWS%%@(,uucp,4550) bin/rnews
+%%NO_UUCP_RNEWS%%bin/rnews
 bin/rnews.libexec/c7unbatch
 bin/rnews.libexec/decode
 bin/rnews.libexec/encode
@@ -353,14 +354,13 @@ share/man/man8/writelog.8.gz
 @comment --------------------------------------------------------------
 @sample %%DBDIR%%/active.sample
 @sample %%DBDIR%%/active.times.sample
+@sample %%DBDIR%%/history.sample
 @sample %%DBDIR%%/newsgroups.sample
 @comment --------------------------------------------------------------
-%%WITHOUT_TAGGED_HASH%%@postunexec f=history.hash;  if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITHOUT_TAGGED_HASH%%@postunexec f=history.index; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITHOUT_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
-%%WITHOUT_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
-%%WITH_TAGGED_HASH%%@postunexec f=history.pag; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITH_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
+@sample %%DBDIR%%/history.dir.sample
+%%WITHOUT_TAGGED_HASH%%@sample %%DBDIR%%/history.hash.sample
+%%WITHOUT_TAGGED_HASH%%@sample %%DBDIR%%/history.index.sample
+%%WITH_TAGGED_HASH%%@sample %%DBDIR%%/history.pag.sample
 @sample %%CONFDIR%%/actsync.cfg.sample
 @sample %%CONFDIR%%/actsync.ign.sample
 @sample %%CONFDIR%%/buffindexed.conf.sample
@@ -371,6 +371,8 @@ share/man/man8/writelog.8.gz
 @sample %%CONFDIR%%/distributions.sample
 @sample %%CONFDIR%%/expire.ctl.sample
 @sample %%CONFDIR%%/incoming.conf.sample
+@sample %%CONFDIR%%/inn-radius.conf.sample
+@sample %%CONFDIR%%/inn-secrets.conf.sample
 @sample %%CONFDIR%%/inn.conf.sample
 @sample %%CONFDIR%%/innfeed.conf.sample
 @sample %%CONFDIR%%/innreport.conf.sample

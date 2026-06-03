@@ -1,0 +1,6 @@
+/%%KMODDIR%%/dmabuf.ko
+/%%KMODDIR%%/amdgpu.ko
+/%%KMODDIR%%/drm.ko
+/%%KMODDIR%%/i915kms.ko
+/%%KMODDIR%%/radeonkms.ko
+/%%KMODDIR%%/ttm.ko

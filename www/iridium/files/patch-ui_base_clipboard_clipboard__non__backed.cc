@@ -1,6 +1,6 @@
---- ui/base/clipboard/clipboard_non_backed.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/base/clipboard/clipboard_non_backed.cc.orig	2026-04-15 12:07:04 UTC
 +++ ui/base/clipboard/clipboard_non_backed.cc
-@@ -461,7 +461,7 @@ ClipboardNonBacked::ClipboardNonBacked() {
+@@ -459,7 +459,7 @@ ClipboardNonBacked::ClipboardNonBacked() {
    // so create internal clipboards for platform supported clipboard buffers.
    constexpr ClipboardBuffer kClipboardBuffers[] = {
      ClipboardBuffer::kCopyPaste,

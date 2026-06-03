@@ -1,10 +1,10 @@
 PORTNAME=	graylog
-DISTVERSION=	6.3.0
+DISTVERSION=	7.0.6
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for centralized log collection
 WWW=		https://www.graylog.org/
 

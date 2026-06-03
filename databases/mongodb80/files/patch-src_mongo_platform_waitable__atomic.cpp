@@ -1,3 +1,9 @@
+# Original upstream implementation:
+#   https://jira.mongodb.org/browse/SERVER-81797
+# Attempt to upstream this patch:
+#   https://github.com/mongodb/mongo/pull/1607
+#   https://jira.mongodb.org/browse/SERVER-99225
+#
 --- src/mongo/platform/waitable_atomic.cpp.orig	2024-11-20 23:53:48 UTC
 +++ src/mongo/platform/waitable_atomic.cpp
 @@ -34,6 +34,9 @@
@@ -46,7 +52,7 @@
 +    }
 +
 +    int umtxOpRet;
-+    if ((umtxOpRet = _umtx_op(const_cast<void*>(uaddr), UMTX_OP_WAIT_UINT_PRIVATE, old, (void*)sizeof(struct _umtx_time), uaddr2)) != 0) {
++    if ((umtxOpRet = _umtx_op(const_cast<void*>(uaddr), UMTX_OP_WAIT_UINT_PRIVATE, old, (void*)sizeof(struct _umtx_time), uaddr2)) == -1) {
 +        if (errno == ETIMEDOUT) {
 +            return false;
 +        }

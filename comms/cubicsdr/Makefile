@@ -1,6 +1,6 @@
 PORTNAME=	cubicsdr
 PORTVERSION=	0.2.7
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 		libpulse.so:audio/pulseaudio \
 		libSoapySDR.so:misc/soapysdr
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++11-lib gl python
 USE_GL+=	egl glu

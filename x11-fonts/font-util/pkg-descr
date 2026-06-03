@@ -1,2 +1,5 @@
-This package contains font-util, an application for creating an index of
-X font files in a directory.
+The font-util package provides ucs2any and bdftruncate tools, for
+generating BDF fonts containing subsets of ISO 10646-1 code-points and
+generating truncated BDF font from ISO 10646-1-encoded BDF font.
+It also provides mapping-files (character set tables) and the fontutil
+pkg-config and autoconf macro files.

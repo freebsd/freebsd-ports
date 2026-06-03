@@ -10,6 +10,9 @@ WWW=		https://github.com/dail8859/NotepadNext
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	editors/notepadnext contains fixes in this port
+EXPIRATION_DATE=2026-06-30
+
 CONFLICTS=	notepadnext-[0-9]*
 
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet

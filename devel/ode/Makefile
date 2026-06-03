@@ -1,5 +1,6 @@
 PORTNAME=	ode
-DISTVERSION=	0.16.2
+DISTVERSION=	0.16.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/odedevs/${PORTNAME}/downloads/
@@ -13,6 +14,20 @@ LICENSE_COMB=	dual
 
 USES=		cmake:testing
 
+FLAVORS=	double single
+FLAVOR?=	${FLAVORS:[1]}
+
+single_CONFLICTS=	odoo-double
+double_CONFLICTS=	odoo-single
+
+.if ${FLAVOR} == double
+PKGNAMESUFFIX=	-double
+CMAKE_ON=	ODE_DOUBLE_PRECISION
+.else
+PKGNAMESUFFIX=	-single
+CMAKE_OFF=	ODE_DOUBLE_PRECISION
+.endif
+
 CMAKE_OFF=	ODE_WITH_TESTS
 CMAKE_TESTING_ON=	ODE_WITH_TESTS
 
@@ -25,6 +40,7 @@ DEMOS_DESC=		Build demos (not installed)
 DEMOS_CMAKE_BOOL=	ODE_WITH_DEMOS
 DEMOS_USES=		gl localbase pkgconfig
 DEMOS_USE=		GL=gl,glu
+DEMOS_BROKEN=		error: use of undeclared identifier 'mem_fun'; did you mean 'mem_fn'?
 
 GIMPACT_DESC=		Enable gimpact instead of opcode support
 GIMPACT_CMAKE_BOOL=	ODE_WITH_GIMPACT

@@ -6,7 +6,7 @@ MASTER_SITES=	SUNSITE/games/strategy:src \
 		http://www.cs.cornell.edu/andru/release/:x
 DISTFILES=	${PORTNAME}-src.tar.gz:src xsokoban-3.3c.tar.gz:x
 
-MAINTAINER=	mew14930xvi@inbox.lv
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Logical game: problems with packets in cave
 
 USES=		ncurses

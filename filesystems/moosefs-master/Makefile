@@ -1,0 +1,106 @@
+PORTNAME=		moosefs
+DISTVERSION=		4.59.1
+DISTVERSIONSUFFIX=	-1
+PORTREVISION?=		0
+CATEGORIES=		filesystems sysutils
+MASTER_SITES=		http://repository.moosefs.com/src/
+PKGNAMESUFFIX?=		-master
+
+MAINTAINER=		freebsd@moosefs.com
+COMMENT?=		Fault-tolerant distributed filesystem
+WWW=			https://moosefs.com/
+
+LICENSE=		GPLv2
+
+USES=			python:build
+GNU_CONFIGURE=		yes
+WRKSRC=			${WRKDIR}/${PORTNAME}-${DISTVERSION}
+PLIST=			${.CURDIR}/pkg-plist
+DESCR=			${.CURDIR}/pkg-descr
+STRIP=
+
+MFS_COMPONENT?=		master
+MFS_USER=		mfs
+MFS_GROUP=		mfs
+MFS_WORKDIR=		/var
+
+USERS=			${MFS_USER}
+GROUPS=			${MFS_GROUP}
+
+CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
+			--with-default-user=${MFS_USER} \
+			--with-default-group=${MFS_GROUP}
+
+CONFLICTS=		moosefs3-*
+
+PLIST_SUB=		USER=${MFS_USER} \
+			GROUP=${MFS_GROUP}
+
+.if ${MFS_COMPONENT} == gui
+MFS_CGIDIR=		${PREFIX}/share/mfscgi
+USES=			python
+USE_RC_SUBR=		mfsgui
+SUB_FILES+=		pkg-message-gui
+PKGMESSAGE=		${WRKDIR}/pkg-message-gui
+PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
+CONFIGURE_ARGS+=	--enable-mfscgi --enable-mfsgui \
+			--with-mfscgi-dir=${MFS_CGIDIR}
+RUN_DEPENDS=		moosefs-cli>0:filesystems/moosefs-cli
+CONFLICTS+=		moosefs-cgiserv
+.else
+CONFIGURE_ARGS+=	--disable-mfscgi --disable-mfsgui
+.endif
+
+.if ${MFS_COMPONENT} == chunkserver
+USE_RC_SUBR=		mfschunkserver
+SUB_FILES+=		pkg-message-chunkserver
+PKGMESSAGE=		${WRKDIR}/pkg-message-chunkserver
+PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
+CONFIGURE_ARGS+=	--enable-mfschunkserver
+.else
+CONFIGURE_ARGS+=	--disable-mfschunkserver
+.endif
+
+.if ${MFS_COMPONENT} == cli
+USES=			python
+CONFIGURE_ARGS+=	--enable-mfscli
+NO_ARCH=		yes
+.else
+CONFIGURE_ARGS+=	--disable-mfscli
+.endif
+
+.if ${MFS_COMPONENT} == client
+USES=			compiler:c11 fuse:3 libtool pkgconfig
+USE_LDCONFIG=		yes
+CONFIGURE_ARGS+=	--enable-mfsmount
+.else
+CONFIGURE_ARGS+=	--disable-mfsmount
+.endif
+
+.if ${MFS_COMPONENT} == master
+USE_RC_SUBR=		mfsmaster
+PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
+SUB_FILES+=		pkg-message-master
+PKGMESSAGE=		${WRKDIR}/pkg-message-master
+CONFIGURE_ARGS+=	--enable-mfsmaster
+.else
+CONFIGURE_ARGS+=	--disable-mfsmaster
+.endif
+
+.if ${MFS_COMPONENT} == metalogger
+USE_RC_SUBR=		mfsmetalogger
+SUB_FILES+=		pkg-message-metalogger
+PKGMESSAGE=		${WRKDIR}/pkg-message-metalogger
+PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
+CONFIGURE_ARGS+=	--enable-mfsmetalogger
+.else
+CONFIGURE_ARGS+=	--disable-mfsmetalogger
+.endif
+
+.if ${MFS_COMPONENT} == netdump
+CONFIGURE_ARGS+=	--enable-mfsnetdump
+.else
+CONFIGURE_ARGS+=	--disable-mfsnetdump
+.endif
+
+.include <bsd.port.mk>

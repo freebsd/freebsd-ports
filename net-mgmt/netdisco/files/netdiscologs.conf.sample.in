@@ -1,2 +1,0 @@
-/var/log/netdisco/netdisco-web.log	%%NETDISCO_USER%%:%%NETDISCO_GROUP%%	640	7	1000	*	JC	/var/run/netdisco/netdisco-web.pid
-/var/log/netdisco/netdisco-daemon.log	%%NETDISCO_USER%%:%%NETDISCO_GROUP%%	640	7	1000	*	JC	/var/run/netdisco/netdisco-daemon.pid

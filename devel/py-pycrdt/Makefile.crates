@@ -1,66 +1,56 @@
-CARGO_CRATES=	arc-swap-1.7.1 \
-		async-lock-3.4.0 \
-		async-trait-0.1.88 \
-		autocfg-1.5.0 \
-		bitflags-2.9.1 \
-		bumpalo-3.19.0 \
-		cfg-if-1.0.1 \
+CARGO_CRATES=	arc-swap-1.9.1 \
+		async-lock-3.4.2 \
+		async-trait-0.1.89 \
+		bitflags-2.11.1 \
+		bumpalo-3.20.2 \
+		cfg-if-1.0.4 \
 		concurrent-queue-2.5.0 \
 		crossbeam-utils-0.8.21 \
-		dashmap-6.1.0 \
-		event-listener-5.4.0 \
+		dashmap-6.2.1 \
+		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
-		fastrand-2.3.0 \
-		getrandom-0.2.16 \
+		fastrand-2.4.1 \
+		getrandom-0.3.4 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
-		indoc-2.0.6 \
-		itoa-1.0.15 \
-		js-sys-0.3.77 \
-		libc-0.2.174 \
-		lock_api-0.4.13 \
-		log-0.4.27 \
-		memchr-2.7.5 \
-		memoffset-0.9.1 \
-		once_cell-1.21.3 \
+		itoa-1.0.18 \
+		js-sys-0.3.98 \
+		libc-0.2.186 \
+		lock_api-0.4.14 \
+		memchr-2.8.0 \
+		once_cell-1.21.4 \
 		parking-2.2.1 \
-		parking_lot_core-0.9.11 \
-		pin-project-lite-0.2.16 \
-		portable-atomic-1.11.1 \
-		proc-macro2-1.0.95 \
-		pyo3-0.25.1 \
-		pyo3-build-config-0.25.1 \
-		pyo3-ffi-0.25.1 \
-		pyo3-macros-0.25.1 \
-		pyo3-macros-backend-0.25.1 \
-		quote-1.0.40 \
-		redox_syscall-0.5.13 \
-		ryu-1.0.20 \
+		parking_lot_core-0.9.12 \
+		pin-project-lite-0.2.17 \
+		portable-atomic-1.13.1 \
+		proc-macro2-1.0.106 \
+		pyo3-0.28.3 \
+		pyo3-build-config-0.28.3 \
+		pyo3-ffi-0.28.3 \
+		pyo3-macros-0.28.3 \
+		pyo3-macros-backend-0.28.3 \
+		quote-1.0.45 \
+		r-efi-5.3.0 \
+		redox_syscall-0.5.18 \
+		rustversion-1.0.22 \
 		scopeguard-1.2.0 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
-		smallstr-0.3.0 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
+		smallstr-0.3.1 \
 		smallvec-1.15.1 \
-		syn-2.0.104 \
-		target-lexicon-0.13.2 \
-		thiserror-2.0.12 \
-		thiserror-impl-2.0.12 \
-		unicode-ident-1.0.18 \
-		unindent-0.2.4 \
-		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.100 \
-		wasm-bindgen-backend-0.2.100 \
-		wasm-bindgen-macro-0.2.100 \
-		wasm-bindgen-macro-support-0.2.100 \
-		wasm-bindgen-shared-0.2.100 \
-		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.52.6 \
-		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.52.6 \
-		yrs-0.24.0
+		syn-2.0.117 \
+		target-lexicon-0.13.5 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		unicode-ident-1.0.24 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		wasm-bindgen-0.2.121 \
+		wasm-bindgen-macro-0.2.121 \
+		wasm-bindgen-macro-support-0.2.121 \
+		wasm-bindgen-shared-0.2.121 \
+		windows-link-0.2.1 \
+		wit-bindgen-0.57.1 \
+		yrs-0.26.0 \
+		zmij-1.0.21

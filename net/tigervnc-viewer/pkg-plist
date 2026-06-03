@@ -9,6 +9,7 @@ share/icons/hicolor/64x64/apps/tigervnc.png
 share/icons/hicolor/128x128/apps/tigervnc.png
 share/icons/hicolor/scalable/apps/tigervnc.svg
 share/metainfo/org.tigervnc.vncviewer.metainfo.xml
+%%NLS%%share/locale/ar/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/tigervnc.mo

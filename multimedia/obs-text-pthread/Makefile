@@ -1,5 +1,5 @@
 PORTNAME=	obs-text-pthread
-DISTVERSION=	2.0.5
+DISTVERSION=	2.0.7
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,7 @@ WWW=		https://github.com/norihiro/obs-text-pthread
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	simde>0:devel/simde
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libobs.so:multimedia/obs-studio \
 		libpng16.so:graphics/png

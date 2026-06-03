@@ -1,6 +1,6 @@
 PORTNAME=	inkscape
-DISTVERSION=	1.4.2
-PORTREVISION=	1
+DISTVERSION=	1.4.3
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachecontrol>0:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.7.1:sysutils/py-filelock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss2>0:textproc/py-tinycss2@${PY_FLAVOR} \
@@ -46,19 +46,21 @@ TEST_DEPENDS=	googletest>0:devel/googletest \
 		bash:shells/bash
 
 USES=		compiler:c++20-lang cmake:testing cpe desktop-file-utils ghostscript:run \
-		gnome jpeg pathfix pkgconfig python \
+		gnome iconv jpeg magick:test pathfix pkgconfig python \
 		readline shebangfix tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf glibmm gtkmm30 gtksourceview4 libxml2 libxslt
 USE_PYTHON=	cython
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-DATETAG=	2025-05-08_ebf0e940d0
+DATETAG=	2025-12-25_0d15f75042
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct
+
+TESTING_UNSAFE=	Some tests fail due to missing input files, an upstream packaging problem
 
 OPTIONS_DEFINE=		OPENMP POPPLER SCRIBUS VISIO CDR WPG GVFS NLS GSPELL
 OPTIONS_DEFAULT=	POPPLER VISIO CDR WPG GM GSPELL
@@ -117,5 +119,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_VERSION}"|g' \
 		${WRKSRC}/src/extension/implementation/script.cpp
 	@${TOUCH} ${WRKSRC}/share/extensions/gcodetools_check_for_updates.inx.h
+
+# inkscape's buildsystem tries to execute tests that aren't built yet
+# we have to build tests first with an explicit 'ninja tests' call
+pre-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_TESTING_ARGS} ${CMAKE_SOURCE_PATH} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} tests
 
 .include <bsd.port.mk>

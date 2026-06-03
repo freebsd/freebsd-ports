@@ -1,1 +1,6 @@
-A library for building web service security.
+Akami is a Ruby library for building WS-Security headers in SOAP requests. It
+lets you create security elements like UsernameTokens, timestamps, and
+namespaces, following the WS-Security specification.
+
+It's commonly used with SOAP clients like Savon, but can also be helpful in
+other Ruby applications that need standards-compliant SOAP authentication.

@@ -7,9 +7,9 @@ Canonicize the host name before looking it up in the host file.
 
 --- ssh.c.orig	2018-04-02 05:38:28 UTC
 +++ ssh.c
-@@ -1281,6 +1281,23 @@ main(int ac, char **av)
- 	ssh_digest_free(md);
- 	conn_hash_hex = tohex(conn_hash, ssh_digest_bytes(SSH_DIGEST_SHA1));
+@@ -1289,6 +1289,23 @@ main(int ac, char **av)
+ 			check_follow_cname(direct, &host, cname);
+ 	}
  
 +	/* Find canonic host name. */
 +	if (strchr(host, '.') == 0) {
@@ -29,5 +29,5 @@ Canonicize the host name before looking it up in the host file.
 +	}
 +
  	/*
- 	 * Expand tokens in arguments. NB. LocalCommand is expanded later,
- 	 * after port-forwarding is set up, so it may pick up any local
+ 	 * If canonicalisation is enabled then re-parse the configuration
+ 	 * files as new stanzas may match.

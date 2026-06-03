@@ -1,8 +1,31 @@
---- configure.orig	2015-08-19 04:44:49 UTC
+--- configure.orig	2023-05-03 00:53:39 UTC
 +++ configure
-@@ -93,6 +93,9 @@ elif echo $UNAME | grep -i cygwin > /dev
- 	echo It looks like you are using Cygwin\; this should compile fine
+@@ -42,6 +42,7 @@ fi
+ # Set the directory for the build files
+ BUILDDIR=build
+ export BUILDDIR
++DEADWOOD=$( echo deadwood-*/src )
+ 
+ # Show them the disclaimer
+ cat 00README.FIRST
+@@ -116,13 +117,11 @@ elif echo $UNAME | grep -i mingw32 > /dev/null ; then
+ 	# Mingw32 doesn't support symlinks
+ 	cp server/MaraBigHash_en.h server/MaraBigHash_locale.h
+ 	cp server/MaraDNS_en.h server/MaraDNS_locale.h
+-	DEADWOOD_DIR=$( echo deadwood-* )
+-	cp $DEADWOOD_DIR/src/Makefile.mingw342 $DEADWOOD_DIR/src/Makefile
++	cp $DEADWOOD/Makefile.mingw342 $DEADWOOD/Makefile
+ 	cp COPYING 00README.FIRST
+ 	exit 0
+ elif echo $UNAME | grep -i cygwin > /dev/null ; then
+ 	cat $BUILDDIR/Makefile.noflock >> Makefile
+-	DEADWOOD="$( echo deadwood-*/src )"
+ 	cp ${DEADWOOD}/Makefile.xcygwin ${DEADWOOD}/Makefile
+ 	echo It looks like you are using Cygwin\; this will compile fine
  	echo by typing in \'make\'.
+@@ -137,6 +136,9 @@ elif echo $UNAME | grep -i cygwin > /dev/null ; then
+ 	echo cygrunsrv.exe -S MaraDNS
+ 	echo
  	EXITCODE=0
 +elif echo $UNAME | grep -i freebsd > /dev/null ; then
 +	cat $BUILDDIR/Makefile.freebsd >> Makefile
@@ -10,3 +33,20 @@
  # This is a a template for adding support to a new OS for MaraDNS.
  # Some points: If you port MaraDNS, make sure the underlying OS has
  # /dev/urandom support or have the default mararc have a
+@@ -184,14 +186,14 @@ if [ -z "$IPV6" ] ; then
+ 	cp tcp/Makefile.authonly tcp/Makefile
+ 	cp dns/Makefile.authonly dns/Makefile
+ 	cp tools/Makefile.authonly tools/Makefile
+-	DEADWOOD_DIR=$( echo deadwood-* )
+-	cp $DEADWOOD_DIR/src/Makefile.noip6 $DEADWOOD_DIR/src/Makefile
++	cp $DEADWOOD/Makefile.noip6 $DEADWOOD/Makefile
+ else
+ 	cp server/Makefile.ipv6 server/Makefile
+ 	cp qual/Makefile.nothreads qual/Makefile
+ 	cp tcp/Makefile.ipv6 tcp/Makefile
+ 	cp dns/Makefile.authonly dns/Makefile
+ 	cp tools/Makefile.ipv6 tools/Makefile
++	sed -e 's|-DNOIP6 ||' ${DEADWOOD}/Makefile.noip6 > ${DEADWOOD}/Makefile
+ fi
+ 
+ # While Lunacy *could* use readline, we use the API compatible

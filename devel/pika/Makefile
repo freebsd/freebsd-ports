@@ -1,5 +1,6 @@
 PORTNAME=	pika
 DISTVERSION=	0.34.0
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,8 +9,6 @@ WWW=		https://github.com/pika-org/pika
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
-
-BROKEN_aarch64=		compilation error: error: 'regparm' is not valid on this platform
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libfmt.so:devel/libfmt \

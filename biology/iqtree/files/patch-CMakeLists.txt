@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-02-11 08:46:02 UTC
++++ CMakeLists.txt
+@@ -229,7 +229,7 @@ elseif (UNIX AND NOT APPLE)  # Unix and Linux
+       OUTPUT_VARIABLE OS_NATIVE_ARCHITECTURE
+       OUTPUT_STRIP_TRAILING_WHITESPACE
+     )
+-    if(OS_NATIVE_ARCHITECTURE STREQUAL "aarch64")
++    if(OS_NATIVE_ARCHITECTURE STREQUAL "aarch64" OR OS_NATIVE_ARCHITECTURE STREQUAL "arm64")
+         message("Unix/Linux ARM64 DETECTED!")
+ 	    set (__ARM_NEON "TRUE")
+ 		set (NEON 1)

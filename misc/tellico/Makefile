@@ -1,5 +1,5 @@
 PORTNAME=	tellico
-DISTVERSION=	4.1.2
+DISTVERSION=	4.1.5
 PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/

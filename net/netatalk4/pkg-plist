@@ -1,4 +1,3 @@
-bin/ad
 bin/addump
 %%LDAP%%bin/afpldaptest
 bin/afppasswd
@@ -7,6 +6,7 @@ bin/asip-status
 bin/dbd
 bin/fce_listen
 bin/macusers
+bin/nad
 @sample etc/afp.conf.sample
 %%DBUS%%etc/dbus-1/system.d/netatalk-dbus.conf
 %%SPOTLIGHT%%etc/dbus-session.conf.netatalk
@@ -37,14 +37,15 @@ include/atalk/acl.h
 include/atalk/adouble.h
 include/atalk/aep.h
 include/atalk/afp.h
+include/atalk/afp_util.h
 include/atalk/asp.h
 include/atalk/atp.h
-include/atalk/bstrlib.h
 include/atalk/cnid.h
 include/atalk/ddp.h
 include/atalk/ea.h
 include/atalk/globals.h
 include/atalk/hash.h
+include/atalk/iniparser_util.h
 include/atalk/list.h
 include/atalk/logger.h
 include/atalk/nbp.h
@@ -68,21 +69,15 @@ sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad
 sbin/netatalk
-share/man/man1/ad.1.gz
 share/man/man1/addump.1.gz
-share/man/man1/afp_lantest.1.gz
-share/man/man1/afp_logintest.1.gz
-share/man/man1/afp_spectest.1.gz
-share/man/man1/afp_speedtest.1.gz
-share/man/man1/afparg.1.gz
 share/man/man1/afpldaptest.1.gz
 share/man/man1/afppasswd.1.gz
 %%DBUS%%share/man/man1/afpstats.1.gz
-share/man/man1/afptest.1.gz
 share/man/man1/asip-status.1.gz
 share/man/man1/dbd.1.gz
 share/man/man1/fce_listen.1.gz
 share/man/man1/macusers.1.gz
+share/man/man1/nad.1.gz
 share/man/man3/atalk_aton.3.gz
 share/man/man3/nbp_name.3.gz
 share/man/man4/atalk.4.gz

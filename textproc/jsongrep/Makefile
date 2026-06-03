@@ -1,0 +1,220 @@
+PORTNAME=	jsongrep
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.0
+PORTREVISION=	1
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Query language over JSON documents
+WWW=		https://github.com/micahkepe/jsongrep
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	micahkepe
+
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		alloca-0.4.0 \
+		android_system_properties-0.1.5 \
+		anes-0.1.6 \
+		anstream-0.6.20 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
+		anyhow-1.0.98 \
+		assert_cmd-2.0.17 \
+		autocfg-1.5.0 \
+		base64-0.22.1 \
+		bitflags-2.11.0 \
+		block-buffer-0.10.4 \
+		bstr-1.12.0 \
+		bumpalo-3.20.2 \
+		cast-0.3.0 \
+		cc-1.2.56 \
+		cfg-if-1.0.1 \
+		chrono-0.4.43 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clap-4.5.43 \
+		clap-verbosity-flag-3.0.3 \
+		clap_builder-4.5.43 \
+		clap_complete-4.5.57 \
+		clap_derive-4.5.41 \
+		clap_lex-0.7.5 \
+		clap_mangen-0.2.29 \
+		colorchoice-1.0.4 \
+		colored-3.1.1 \
+		core-foundation-sys-0.8.7 \
+		cpufeatures-0.2.17 \
+		criterion-0.8.2 \
+		criterion-plot-0.8.2 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
+		crypto-common-0.1.6 \
+		deunicode-1.6.2 \
+		difflib-0.4.0 \
+		digest-0.10.7 \
+		doc-comment-0.3.3 \
+		dyn-clone-1.0.20 \
+		either-1.15.0 \
+		env_filter-0.1.3 \
+		env_logger-0.11.8 \
+		equivalent-1.0.2 \
+		errno-0.3.14 \
+		fastrand-2.3.0 \
+		find-msvc-tools-0.1.9 \
+		foldhash-0.1.5 \
+		generic-array-0.14.7 \
+		getrandom-0.4.2 \
+		half-2.7.1 \
+		hashbrown-0.15.5 \
+		hashbrown-0.16.1 \
+		heck-0.5.0 \
+		hifijson-0.2.3 \
+		iana-time-zone-0.1.65 \
+		iana-time-zone-haiku-0.1.2 \
+		id-arena-2.3.0 \
+		indexmap-2.13.0 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.13.0 \
+		itoa-1.0.15 \
+		jaq-core-2.2.1 \
+		jaq-json-1.1.3 \
+		jaq-std-2.1.2 \
+		jiff-0.2.15 \
+		jiff-static-0.2.15 \
+		jmespath-0.5.0 \
+		jql-parser-8.1.2 \
+		jql-runner-8.1.2 \
+		js-sys-0.3.88 \
+		jsonpath-rust-1.0.4 \
+		leb128fmt-0.1.0 \
+		libc-0.2.183 \
+		libm-0.2.16 \
+		linux-raw-sys-0.12.1 \
+		log-0.4.27 \
+		memchr-2.7.5 \
+		memmap2-0.9.9 \
+		num-traits-0.2.19 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		oorandom-11.1.5 \
+		page_size-0.6.0 \
+		pest-2.8.1 \
+		pest_derive-2.8.1 \
+		pest_generator-2.8.1 \
+		pest_meta-2.8.1 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
+		portable-atomic-1.11.1 \
+		portable-atomic-util-0.2.4 \
+		predicates-3.1.3 \
+		predicates-core-1.0.9 \
+		predicates-tree-1.0.12 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.95 \
+		quote-1.0.40 \
+		r-efi-6.0.0 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-lite-0.1.9 \
+		regex-syntax-0.8.5 \
+		rmp-0.8.15 \
+		rmp-serde-1.3.1 \
+		roff-0.2.2 \
+		rustix-1.1.4 \
+		rustversion-1.0.22 \
+		ryu-1.0.23 \
+		same-file-1.0.6 \
+		semver-1.0.27 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
+		serde_json_borrow-0.9.0 \
+		serde_spanned-0.6.9 \
+		serde_yaml-0.9.34+deprecated \
+		sha2-0.10.9 \
+		shlex-1.3.0 \
+		slug-0.1.6 \
+		strsim-0.11.1 \
+		syn-2.0.117 \
+		tempfile-3.27.0 \
+		termtree-0.5.1 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		tinytemplate-1.2.1 \
+		toml-0.8.23 \
+		toml_datetime-0.6.11 \
+		toml_edit-0.22.27 \
+		toml_write-0.1.2 \
+		typed-arena-2.0.2 \
+		typenum-1.18.0 \
+		ucd-trie-0.1.7 \
+		unicode-ident-1.0.18 \
+		unicode-xid-0.2.6 \
+		unsafe-libyaml-0.2.11 \
+		urlencoding-2.1.3 \
+		utf8parse-0.2.2 \
+		version_check-0.9.5 \
+		wait-timeout-0.2.1 \
+		walkdir-2.5.0 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-bindgen-0.2.111 \
+		wasm-bindgen-macro-0.2.111 \
+		wasm-bindgen-macro-support-0.2.111 \
+		wasm-bindgen-shared-0.2.111 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		web-sys-0.3.88 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.11 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.62.2 \
+		windows-implement-0.60.2 \
+		windows-interface-0.59.3 \
+		windows-link-0.1.3 \
+		windows-link-0.2.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
+		windows-sys-0.60.2 \
+		windows-targets-0.53.3 \
+		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_msvc-0.53.0 \
+		windows_i686_gnu-0.53.0 \
+		windows_i686_gnullvm-0.53.0 \
+		windows_i686_msvc-0.53.0 \
+		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_msvc-0.53.0 \
+		winnow-0.7.15 \
+		winnow-1.0.0 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		zerocopy-0.8.39 \
+		zerocopy-derive-0.8.39 \
+		zmij-1.0.21
+
+PLIST_FILES=	bin/jg
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jg
+
+.include <bsd.port.mk>

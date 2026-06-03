@@ -1,6 +1,6 @@
 PORTNAME=	libkiwix
 DISTVERSION=	13.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMESUFFIX=	13
 MASTER_SITES=	https://download.kiwix.org/release/libkiwix/
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 		libaria2.so:www/aria2 \
 		libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu \
-		libxapian.so:databases/xapian-core \
+		libxapian.so:databases/xapian-core14 \
 		libctpp2.so:textproc/ctpp2 \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd

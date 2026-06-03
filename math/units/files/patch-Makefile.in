@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2026-02-19 19:26:24 UTC
++++ Makefile.in
+@@ -112,7 +111,6 @@ units_cur_inst: units_cur
+ 
+ units_cur_inst: units_cur
+ 	sed -e "s*output_dir = ''*output_dir='@CDAT@'*"\
+-            -e "s@/usr/bin/python@$(PYTHON)@" \
+              $(srcdir)/units_cur > units_cur_inst
+ 
+ install-support: definitions.units elements.units units_cur_inst 

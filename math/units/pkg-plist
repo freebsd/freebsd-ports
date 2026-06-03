@@ -1,5 +1,10 @@
 bin/gunits
+%%UNITS_CUR%%bin/gunits_cur
+share/man/man1/gunits.1.gz
+%%DATADIR%%/cpi.units
+%%DATADIR%%/crypto.units
 %%DATADIR%%/currency.units
 %%DATADIR%%/definitions.units
+%%DATADIR%%/elements.units
 %%DATADIR%%/locale_map.txt
-share/man/man1/gunits.1.gz
+%%DATADIR%%/metal_prices.units

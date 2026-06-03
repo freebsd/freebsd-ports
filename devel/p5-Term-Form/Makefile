@@ -1,7 +1,8 @@
 PORTNAME=	Term-Form
-PORTVERSION=	0.562
+PORTVERSION=	0.563
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:KUERBIS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,8 +14,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-Choose>=1.773:devel/p5-Term-Choose \
-		p5-Term-Choose-Util>=0.145:devel/p5-Term-Choose-Util
+RUN_DEPENDS=	p5-Term-Choose>=1.782:devel/p5-Term-Choose \
+		p5-Term-Choose-Util>=0.148:devel/p5-Term-Choose-Util
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5

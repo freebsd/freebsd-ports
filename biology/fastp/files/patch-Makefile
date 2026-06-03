@@ -1,40 +1,58 @@
---- Makefile.orig	2025-06-06 00:03:48 UTC
-+++ Makefile
-@@ -7,6 +7,8 @@ LIBRARY_DIRS ?=
- INCLUDE_DIRS ?=
- LIBRARY_DIRS ?=
+--- Makefile.orig	2026-03-10 03:34:23.000000000 +0000
++++ Makefile	2026-03-17 16:26:48.654370000 +0000
+@@ -2,6 +2,8 @@
+ DIR_SRC := ./src
+ DIR_OBJ := ./obj
  
-+STRIP	?= strip
++STRIP ?= strip
 +
- SRC := $(wildcard ${DIR_SRC}/*.cpp)
- OBJ := $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC}))
- 
-@@ -15,15 +17,21 @@ CXX ?= g++
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ INCLUDE_DIRS ?=
+@@ -15,26 +17,29 @@
  BIN_TARGET := ${TARGET}
  
  CXX ?= g++
--CXXFLAGS := -std=c++11 -pthread -g -O3 -MD -MP -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) ${CXXFLAGS}
-+# Optional flags that the user can override by setting CXXFLAGS in the
-+# env or make argument.  -pthread is a link flag, and serves no purpose
-+# in the compile command.  It is handled by -lpthread in LIBS.
+-CXXFLAGS := -std=c++11 -pthread -g -O3 -MD -MP -I. -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) ${CXXFLAGS}
 +CXXFLAGS ?= -g -O3 -MD -MP
-+# Required flags
-+CXXFLAGS += -std=c++11 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
- LIBS := -lisal -ldeflate -lpthread
- STATIC_FLAGS := -static -Wl,--no-as-needed -pthread
--LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS) $(LD_FLAGS)
-+# Append required flags to standard LDFLAGS from env
-+LDFLAGS += $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS)
- STATIC_LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(STATIC_FLAGS) $(LIBS) $(STATIC_LD_FLAGS)
++CXXFLAGS += -std=c++11 -I. -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
+ LIBS := -lisal -ldeflate -lhwy -lpthread
  
+ UNAME_S := $(shell uname -s)
+ ifeq ($(UNAME_S),Linux)
+-  # Linux: fully static binary
+-  LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) -static -Wl,--no-as-needed -pthread $(LIBS) $(LD_FLAGS)
++# Linux: fully static binary
++LD_FLAGS := $(LDFLAGS) $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) -static -Wl,--no-as-needed -pthread $(LIBS)
++else ifeq ($(UNAME_S),Darwin)
++# macOS: link 3rd-party libs statically via .a when available, fallback to dynamic
++FIND_STATIC = $(firstword $(foreach d,$(LIBRARY_DIRS),$(wildcard $(d)/lib$(1).a)) $(wildcard /usr/local/lib/lib$(1).a /opt/homebrew/lib/lib$(1).a))
++STATIC_LIBS :=
++DYNAMIC_LIBS :=
++$(foreach lib,isal deflate hwy,\
++  $(if $(call FIND_STATIC,$(lib)),\
++    $(eval STATIC_LIBS += $(call FIND_STATIC,$(lib))),\
++    $(eval DYNAMIC_LIBS += -l$(lib))))
++LD_FLAGS := $(LDFLAGS) $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(STATIC_LIBS) $(DYNAMIC_LIBS) -lpthread
+ else
+-  # macOS: link 3rd-party libs statically via .a when available, fallback to dynamic
+-  FIND_STATIC = $(firstword $(foreach d,$(LIBRARY_DIRS),$(wildcard $(d)/lib$(1).a)) $(wildcard /usr/local/lib/lib$(1).a /opt/homebrew/lib/lib$(1).a))
+-  STATIC_LIBS :=
+-  DYNAMIC_LIBS :=
+-  $(foreach lib,isal deflate hwy,\
+-    $(if $(call FIND_STATIC,$(lib)),\
+-      $(eval STATIC_LIBS += $(call FIND_STATIC,$(lib))),\
+-      $(eval DYNAMIC_LIBS += -l$(lib))))
+-  LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(STATIC_LIBS) $(DYNAMIC_LIBS) -lpthread $(LD_FLAGS)
++# Other Unix-like systems (e.g. FreeBSD): use normal dynamic linking
++LD_FLAGS := $(LDFLAGS) $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS)
+ endif
  
+-
  ${BIN_TARGET}:${OBJ}
--	$(CXX) $(OBJ) -o $@ $(LD_FLAGS)
-+	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
+ 	$(CXX) $(OBJ) -o $@ $(LD_FLAGS)
  
- static:${OBJ}
- 	$(CXX) $(OBJ) -o ${BIN_TARGET} $(STATIC_LD_FLAGS)
-@@ -38,8 +46,15 @@ clean:
+@@ -47,8 +52,16 @@
  	@rm -rf $(DIR_OBJ)
  	@rm -f $(TARGET)
  
@@ -43,11 +61,12 @@
 +# unless DESTDIR is supplied by the user.
  install:
 -	install $(TARGET) $(BINDIR)/$(TARGET)
-+	install $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
++	mkdir -p $(DESTDIR)$(BINDIR)
++	install $(TARGET) $(DESTDIR)$(BINDIR)
  	@echo "Installed."
-+
+ 
 +# Many package managers use install-strip target if debugging is not enabled
 +install-strip: install
 +	$(STRIP) $(DESTDIR)$(BINDIR)/$(TARGET)
- 
++
  -include $(OBJ:.o=.d)

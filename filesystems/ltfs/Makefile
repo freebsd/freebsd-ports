@@ -1,8 +1,7 @@
 PORTNAME=	ltfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.7
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-10514
+DISTVERSION=	2.4.8.3
+DISTVERSIONSUFFIX=	-10521
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -20,12 +19,13 @@ USES=		autoreconf compiler:c11 fuse gnome libtool:build pkgconfig \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LinearTapeFileSystem
+GH_TUPLE=	troydhanson:uthash:2031adf:uthash/src/libltfs/uthash_submodule
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/utils/ltfs_ordered_copy
 
-GNU_CONFIGURE=			yes
+GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--enable-icu-6x

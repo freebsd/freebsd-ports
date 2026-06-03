@@ -11,7 +11,7 @@
 # gerbera_flags (str):		Custom additional arguments to be passed
 #				to gerbera (default empty).
 # gerbera_conf_dir (str):	Directory where ${name} configuration
-#				data is stored.
+#				file is located.
 
 . /etc/rc.subr
 

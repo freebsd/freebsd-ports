@@ -1,6 +1,6 @@
---- paperless.conf.example.orig	2024-04-08 01:44:14 UTC
+--- paperless.conf.example.orig	2025-08-17 20:46:35 UTC
 +++ paperless.conf.example
-@@ -17,17 +17,29 @@
+@@ -13,17 +13,29 @@
  
  # Paths and folders
  
@@ -34,7 +34,7 @@
  #PAPERLESS_URL=https://example.com
  #PAPERLESS_CSRF_TRUSTED_ORIGINS=https://example.com # can be set using PAPERLESS_URL
  #PAPERLESS_ALLOWED_HOSTS=example.com,www.example.com # can be set using PAPERLESS_URL
-@@ -40,6 +52,7 @@
+@@ -36,6 +48,7 @@
  
  # OCR settings
  
@@ -42,7 +42,7 @@
  #PAPERLESS_OCR_LANGUAGE=eng
  #PAPERLESS_OCR_MODE=skip
  #PAPERLESS_OCR_SKIP_ARCHIVE_FILE=never
-@@ -56,6 +69,7 @@
+@@ -52,6 +65,7 @@
  
  # Software tweaks
  
@@ -50,7 +50,7 @@
  #PAPERLESS_TASK_WORKERS=1
  #PAPERLESS_THREADS_PER_WORKER=1
  #PAPERLESS_TIME_ZONE=UTC
-@@ -92,3 +106,7 @@
+@@ -88,3 +102,7 @@
  
  #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
  #PAPERLESS_GS_BINARY=/usr/bin/gs

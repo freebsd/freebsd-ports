@@ -1,0 +1,13 @@
+--- doc/doxygen/CMakeLists.txt.orig	2026-01-09 13:06:10 UTC
++++ doc/doxygen/CMakeLists.txt
+@@ -2,7 +2,9 @@
+ # SPDX-License-Identifier: LicenseRef-GPL-2.0-only-with-DUNE-exception
+ 
+ # create Doxyfile.in and Doxyfile
+-add_doxygen_target()
++if (FREEBSD_INSTALL_DOXYGEN)
++  add_doxygen_target()
++endif()
+ 
+ install(
+   FILES

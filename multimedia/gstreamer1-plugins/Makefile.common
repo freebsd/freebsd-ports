@@ -250,6 +250,7 @@ BAD_GST_ALL_PLUGINS+= \
 		videoframe_audiolevel \
 		videoparsers \
 		videosignal \
+		vmaf \
 		vmnc \
 		voaacenc \
 		voamrwbenc \
@@ -266,7 +267,6 @@ BAD_GST_ALL_PLUGINS+= \
 		winks \
 		winscreencap \
 		x265 \
-		y4m \
 		zbar \
 		zxing
 
@@ -378,44 +378,48 @@ BINARY_ALIAS=	python3=${PYTHON_VERSION}
 # Disable all plugins by default
 .if ${DIST}=="base"
 .for d in ${BASE_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=disabled
+MESON_ARGS+=	-D${d}=disabled
 .endfor
 .for d in ${BASE_GST_ENABLED_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=enabled
+MESON_ARGS+=	-D${d}=enabled
 .endfor
 .endif
 
 .if ${DIST}=="bad"
 .for d in ${BAD_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=disabled
+MESON_ARGS+=	-D${d}=disabled
 .endfor
 .for d in ${BAD_GST_ENABLED_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=enabled
+MESON_ARGS+=	-D${d}=enabled
 .endfor
 .endif
 
 .if ${DIST}=="good"
 .for d in ${GOOD_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=disabled
+MESON_ARGS+=	-D${d}=disabled
 .endfor
 .for d in ${GOOD_GST_ENABLED_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=enabled
+MESON_ARGS+=	-D${d}=enabled
 .endfor
 .endif
 
 .if ${DIST}=="ugly"
 .for d in ${UGLY_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=disabled
+MESON_ARGS+=	-D${d}=disabled
 .endfor
 .for d in ${UGLY_GST_ENABLED_PLUGINS}
-CONFIGURE_ARGS+=	-D${d}=enabled
+MESON_ARGS+=	-D${d}=enabled
 .endfor
 .endif
 
 .if ${GST_PLUGIN}!="base" && ${GST_PLUGIN}!="bad" && \
 	${GST_PLUGIN}!="good" && ${GST_PLUGIN}!="ugly" && \
 	${GST_PLUGIN}!="x"
-CONFIGURE_ARGS+=	-D${GST_PLUGIN}=enabled
+MESON_ARGS+=	-D${GST_PLUGIN}=enabled
+.endif
+
+.if defined(GST_PLUGIN_DEPENDS)
+MESON_ARGS+=	-D${GST_PLUGIN_DEPENDS}=enabled
 .endif
 
 .if !defined(NO_GSTREAMER_COMMON)
@@ -424,4 +428,3 @@ GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
 USE_GSTREAMER+=	${DIST:base=}
 
 .endif # NO_GSTREAMER_COMMON
-

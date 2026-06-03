@@ -13,7 +13,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		compiler:c++14-lang jpeg meson pkgconfig
 USE_GITHUB=	yes
-CONFIGURE_ARGS=	-Dflavors=${PLATFORMS:ts,}
+MESON_ARGS=	-Dflavors=${PLATFORMS:ts,}
 
 PORTDOCS=	NEWS
 

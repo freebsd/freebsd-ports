@@ -1,0 +1,9 @@
+It is very easy to end up in a situation where a producer process produces data
+faster than a consumer process can read/process it resulting in the producer
+blocking on a full pipe buffer. This module allows 2 processes to share data
+similar to a pipe, but without the producer blocking due to full pipe buffers.
+
+A pipe is better in most situations, this is only useful if the producer needs
+to do many things and you cannot afford to block on a consumer. This is used by
+App::Yath to send data to a comparatively slow database upload process without
+blocking.

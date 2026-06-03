@@ -1,0 +1,5 @@
+Pure Python implementation of Google Common Expression Language.
+
+This implementation has minimal dependencies, runs quickly, and can be embedded
+into Python-based applications. Specifically, the intent is to be part of Cloud
+Custodian, C7N, as part of the security policy filter.

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smartypants>=1.8.3:textproc/py-smartypants@${PY_FLAVOR}
 
-USES=		python:3.9+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

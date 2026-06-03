@@ -1,13 +1,22 @@
---- crates/arti/src/arti-example-config.toml.orig	2023-08-01 15:40:26 UTC
+--- crates/arti/src/arti-example-config.toml.orig	2026-01-13 15:58:28 UTC
 +++ crates/arti/src/arti-example-config.toml
-@@ -102,8 +102,8 @@
- #
- # The state directory is not yet used.
+@@ -168,8 +168,8 @@
+ # Multiple processes can share the same cache_dir.  If they do, one of them
+ # will download directory information for all of the others.
  [storage]
 -#cache_dir = "${ARTI_CACHE}"
 -#state_dir = "${ARTI_LOCAL_DATA}"
 +cache_dir = "/var/db/arti/"
 +state_dir = "/var/db/arti/"
+ 
+ # A file in which to store a description of the proxy ports we're listening on.
+ #
+@@ -178,7 +178,7 @@
+ #
+ # The format of this JSON is documented in the Arti source,
+ # in `crates/arti/src/proxy/port_info.rs`. (TODO: Replace with link.)
+-#port_info_file = "${ARTI_LOCAL_DATA}/public/port_info.json"
++port_info_file = "/var/db/arti/port_info.json"
  
  #[storage.keystore]
  # Whether the keystore is enabled.

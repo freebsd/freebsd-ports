@@ -1,0 +1,4 @@
+Google Cloud Monitoring API client library.
+
+This library enables interaction with the Cloud Monitoring API, allowing
+you to manage and retrieve metrics, dashboards, and alerting policies.

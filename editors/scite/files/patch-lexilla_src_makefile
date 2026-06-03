@@ -1,0 +1,10 @@
+--- lexilla/src/makefile.orig	2025-06-07 23:27:16 UTC
++++ lexilla/src/makefile
+@@ -44,7 +44,6 @@ ifdef CLANG
+ BASE_FLAGS += --std=c++17
+ 
+ ifdef CLANG
+-CXX = clang++
+ ifdef windir
+ # Clang on Win32 uses MSVC headers so will complain about strcpy without this
+ DEFINES += -D_CRT_SECURE_NO_DEPRECATE=1

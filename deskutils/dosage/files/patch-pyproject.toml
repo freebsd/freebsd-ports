@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-11-04 11:57:33 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = [ "setuptools>=66", "setuptools-scm>=7.1" ]
++requires = [ "setuptools>=63", "setuptools-scm>=7.1" ]
+ 
+ [project]
+ name = "dosage"

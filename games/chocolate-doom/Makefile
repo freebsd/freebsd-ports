@@ -1,5 +1,5 @@
 PORTNAME=	chocolate-doom
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.1
 CATEGORIES=	games
 
 MAINTAINER=	jakub_lach@mailplus.pl

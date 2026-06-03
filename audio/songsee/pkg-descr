@@ -1,0 +1,6 @@
+songsee is a fast, native Go audio visualizer that generates FFT-based
+images from audio files. It supports 9 visualization modes (spectrogram,
+mel, chroma, hpss, selfsim, loudness, tempogram, mfcc, flux), 5 color
+palettes, auto-contrast normalization, and outputs PNG or JPEG images.
+
+Input can be WAV, MP3, or any format supported by ffmpeg.

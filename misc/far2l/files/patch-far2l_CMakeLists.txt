@@ -1,0 +1,32 @@
+--- far2l/CMakeLists.txt.orig	2026-03-23 08:04:51 UTC
++++ far2l/CMakeLists.txt
+@@ -271,9 +271,11 @@ set_target_properties(far2l
+     ENABLE_EXPORTS TRUE)
+ 
+ if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD")
++    find_library(SYSINFO_LIBRARY NAMES sysinfo)
+     target_link_libraries(far2l
+     PRIVATE ${WINPORT}
+     PRIVATE c
++    PRIVATE ${SYSINFO_LIBRARY}
+     PRIVATE ${UCHARDET_LIBRARIES})
+ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Haiku")
+     target_link_libraries(far2l
+@@ -314,7 +316,7 @@ else()
+ 
+     find_package(Python3 3.9 COMPONENTS Interpreter)
+ 
+-    if(Python3_Interpreter_FOUND)
++    if (FALSE AND Python3_Interpreter_FOUND)
+         execute_process(COMMAND "${Python3_EXECUTABLE}" -c "import markdown"
+                         RESULT_VARIABLE PYTHON_MARKDOWN_STATUS
+                         OUTPUT_QUIET
+@@ -340,7 +342,7 @@ else()
+             message(WARNING "Python-Markdown not found. Skipping AppStream metainfo generation.")
+         endif()
+     else()
+-        message(WARNING "Python >=3.9 interpreter not found. Skipping AppStream metainfo generation.")
++        message(WARNING "AppStream metainfo generation disabled.")
+     endif()
+ 
+ endif()

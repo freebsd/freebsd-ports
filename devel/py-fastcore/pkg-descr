@@ -1,0 +1,3 @@
+fastcore is a Python library extending the standard library and providing
+utilities used by the fastai ecosystem, including typed dispatch, testing
+helpers, documentation tools, and more.

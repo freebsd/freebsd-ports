@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/gobby/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Collaborative editing library
 WWW=		https://github.com/gobby/libinfinity
 

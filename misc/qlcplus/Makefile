@@ -1,6 +1,6 @@
 PORTNAME=	qlcplus
 DISTVERSIONPREFIX=	QLC+_
-DISTVERSION=	4.13.1
+DISTVERSION=	5.1.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,12 +19,13 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
 
 USES=		desktop-file-utils gl pkgconfig qmake qt:5 shared-mime-info shebangfix
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++14 # fails with c++17, see https://github.com/mcallegari/qlcplus/issues/1943
 USE_GITHUB=	yes
 GH_ACCOUNT=	mcallegari
 USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_QT=		core gui multimedia network script serialport testlib widgets buildtools:build
+USE_QT=		core gui multimedia network script serialport testlib websockets widgets \
+		buildtools:build linguisttools:build
 
 SHEBANG_FILES=	translate.sh
 

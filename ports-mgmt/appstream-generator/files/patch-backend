@@ -1,0 +1,96 @@
+From 0426e92d54ea53b83fb03eab84194f6026356c3d Mon Sep 17 00:00:00 2001
+From: Gleb Popov <6yearold@gmail.com>
+Date: Sun, 15 Feb 2026 19:11:30 +0300
+Subject: [PATCH] FreeBSD backend: little fixes for the packageForFile() code
+ path
+
+---
+ src/backends/freebsd/fbsdpkg.cpp      | 6 +++---
+ src/backends/freebsd/fbsdpkgindex.cpp | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git src/backends/freebsd/fbsdpkg.cpp src/backends/freebsd/fbsdpkg.cpp
+index 3b6ef9b..62b0ecd 100644
+--- src/backends/freebsd/fbsdpkg.cpp
++++ src/backends/freebsd/fbsdpkg.cpp
+@@ -40,7 +40,7 @@ FreeBSDPackage *FreeBSDPackage::CreateFromWorkdir(const std::string &workDir)
+         if (!entry.is_regular_file())
+             continue;
+ 
+-        if (entry.path().extension() != "pkg")
++        if (entry.path().extension() != ".pkg")
+             continue;
+ 
+         count++;
+@@ -164,9 +164,9 @@ const std::vector<std::string> &FreeBSDPackage::contents()
+     if (m_isWorkdirPackage) {
+         std::vector<std::string> ret;
+ 
+-        for (const auto &entry : fs::directory_iterator(m_stageDir)) {
++        for (const auto &entry : fs::recursive_directory_iterator(m_stageDir)) {
+             auto relPath = fs::relative(entry.path(), m_stageDir);
+-            ret.push_back(relPath);
++            ret.push_back(fs::path("/") / relPath);
+         }
+ 
+         m_contentsL = ret;
+diff --git src/backends/freebsd/fbsdpkgindex.cpp src/backends/freebsd/fbsdpkgindex.cpp
+index ef879a2..f593021 100644
+--- src/backends/freebsd/fbsdpkgindex.cpp
++++ src/backends/freebsd/fbsdpkgindex.cpp
+@@ -154,7 +154,7 @@ std::shared_ptr<Package> FreeBSDPackageIndex::packageForFile(
+         return nullptr;
+     }
+ 
+-    return nullptr;
++    return std::shared_ptr<FreeBSDPackage>(FreeBSDPackage::CreateFromWorkdir(fname));
+ }
+ 
+ bool FreeBSDPackageIndex::hasChanges(
+From 130da611fe7d197cd13f5545060e7e3c5319fcb3 Mon Sep 17 00:00:00 2001
+From: Gleb Popov <6yearold@gmail.com>
+Date: Sun, 15 Feb 2026 19:12:44 +0300
+Subject: [PATCH] Engine::processFile: also pass custom prefix to the
+ IconHandler constructor
+
+---
+ src/engine.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git src/engine.cpp src/engine.cpp
+index 78b1fef..f9fbf66 100644
+--- src/engine.cpp
++++ src/engine.cpp
+@@ -899,7 +899,8 @@ bool Engine::processFile(
+             *m_cstore,
+             m_dstore->mediaExportPoolDir(),
+             getIconCandidatePackages(suite, sectionName, arch),
+-            suite.iconTheme);
++            suite.iconTheme,
++            m_pkgIndex->dataPrefix());
+         processPackages(pkgs, std::move(iconh), nullptr);
+     }
+ 
+From 80ec49446c8d9dc5b48fcde94a73d64752335177 Mon Sep 17 00:00:00 2001
+From: Gleb Popov <6yearold@gmail.com>
+Date: Sun, 15 Feb 2026 19:14:04 +0300
+Subject: [PATCH] IconHandler: set the extra prefix when creating a builtin
+ hicolor theme
+
+---
+ src/iconhandler.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git src/iconhandler.cpp src/iconhandler.cpp
+index d3b1558..e5b68d3 100644
+--- src/iconhandler.cpp
++++ src/iconhandler.cpp
+@@ -370,7 +370,7 @@ IconHandler::IconHandler(
+                 indexData.resize(f.tellg());
+                 f.seekg(0, std::ios::beg);
+                 f.read(reinterpret_cast<char *>(indexData.data()), indexData.size());
+-                tmpThemes["hicolor"] = std::make_unique<Theme>("hicolor", indexData);
++                tmpThemes["hicolor"] = std::make_unique<Theme>("hicolor", indexData, m_extraPrefix);
+             }
+         }
+     }

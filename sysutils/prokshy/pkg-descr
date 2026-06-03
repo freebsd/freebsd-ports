@@ -1,0 +1,11 @@
+prokshy is a small and lightweight script that uses unixexec to
+exchange data through the special character file (/dev/vtcon/prokshy)
+created by virtio_console(4). This script is designed to "standardize"
+the way a command is executed from the host into the virtual machine.
+The host connects to the unix(4) socket created by bhyve(8) and
+then sends a command, a space, and then the data (or the command’s
+argument). prokshy doesn’t care about the argument format: you can
+use netstring, JSON, base64, or any other format that can be sent
+for the command you’ve created. That’s the other advantage of
+prokshy: it allows you to implement a "command," making it truly
+flexible.

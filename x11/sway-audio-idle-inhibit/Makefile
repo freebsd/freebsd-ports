@@ -4,7 +4,7 @@ PORTVERSION=	0.1.2
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disable swayidle during audio playback/recording
 WWW=		https://github.com/ErikReider/SwayAudioIdleInhibit
 

@@ -1,7 +1,5 @@
 %%PYTHON_SITELIBDIR%%/memory_allocator/__init__.pxd
 %%PYTHON_SITELIBDIR%%/memory_allocator/__init__.py
-%%PYTHON_SITELIBDIR%%/memory_allocator/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/memory_allocator/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/memory_allocator/memory.pxd
 %%PYTHON_SITELIBDIR%%/memory_allocator/memory_allocator%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/memory_allocator/memory_allocator.pxd

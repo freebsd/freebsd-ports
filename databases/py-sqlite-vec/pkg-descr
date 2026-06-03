@@ -1,0 +1,5 @@
+sqlite-vec is a vector search SQLite extension with Python bindings.
+It provides fast nearest-neighbor vector search using SQLite virtual tables.
+
+The Python package bundles the compiled vec0.so SQLite loadable extension
+and provides helper functions for loading it and serializing vectors.

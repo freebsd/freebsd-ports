@@ -1,0 +1,16 @@
+--- i915/Makefile.orig	2026-04-29 07:48:52 UTC
++++ i915/Makefile
+@@ -347,9 +347,11 @@ CWARNFLAGS.intel_freebsd.c=	-Wno-unused-function
+ CWARNFLAGS.intel_fbc.c=		-Wno-unused-variable
+ CWARNFLAGS.intel_fbdev.c=	-Wno-initializer-overrides
+ CWARNFLAGS.intel_freebsd.c=	-Wno-unused-function
+-CWARNFLAGS.i915_gem_context.c=	-Wno-unused-function
++CWARNFLAGS.i915_gem_context.c=	-Wno-unused-function -Wno-address-of-packed-member
+ CWARNFLAGS.intel_ggtt.c=	-Wno-integer-overflow
+-CWARNFLAGS.intel_guc_capture.c=	-Wno-unused-but-set-variable
++CWARNFLAGS.intel_guc_capture.c=	-Wno-unused-but-set-variable -Wno-address-of-packed-member
++CWARNFLAGS.intel_guc_ct.c=	-Wno-address-of-packed-member
++CWARNFLAGS.intel_guc_submission.c=	-Wno-unused-function -Wno-address-of-packed-member
+ CWARNFLAGS.intel_hdmi.c=	-Wno-unused-but-set-variable
+ CWARNFLAGS.intel_hotplug.c=	-Wno-uninitialized
+ CWARNFLAGS.intel_pm.c=		-Wno-incompatible-pointer-types-discards-qualifiers

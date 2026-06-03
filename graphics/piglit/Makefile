@@ -1,6 +1,5 @@
 PORTNAME=	piglit
-PORTVERSION=	20200910
-PORTREVISION=	2
+PORTVERSION=	20260502
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,9 +10,10 @@ LICENSE=	MIT GPLv2 GPLv3 LGPL20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
@@ -22,30 +22,19 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwaffle-1.so:graphics/waffle \
 		libwayland-egl.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
+USES=		cmake compiler:c11 gl pkgconfig python shebangfix xorg
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	piglit
-GL_TAGNAME=	136a7f5fa0703603be1ffb338abe4865e76a8058
-
-PATCH_SITES=		https://gitlab.freedesktop.org/mesa/piglit/-/commit/
-PATCH_DIST_STRIP=	-p1
-PATCHFILES+=		7f1916da04fc.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-PATCHFILES+=		c6a4d8aa8e68.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-PATCHFILES+=		0443b6a18648.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-PATCHFILES+=		96d8ddd0a658.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-PATCHFILES+=		d5f4cfd3b0da.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-PATCHFILES+=		64c468c6c7e3.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-PATCHFILES+=		681e86f53c2e.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
-
-USES=		cmake compiler:c11 gl pkgconfig python shebangfix xorg
+GL_TAGNAME=	0730373391be9a944a16a2a975871c0e740c45f0
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
-SHEBANG_FILES=	piglit
+SHEBANG_FILES=	piglit replayer/replayer.py
 
 CMAKE_ON=	PIGLIT_BUILD_GLES2_TESTS PIGLIT_BUILD_GLES3_TESTS
 LDFLAGS+=	-L${LOCALBASE}/lib

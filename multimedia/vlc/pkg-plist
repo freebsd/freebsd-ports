@@ -131,7 +131,7 @@ share/icons/hicolor/48x48/apps/vlc.png
 %%NLS%%share/locale/am_ET/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/an/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/vlc.mo
-%%NLS%%share/locale/as_IN/LC_MESSAGES/vlc.mo
+%%NLS%%share/locale/as/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/be/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/vlc.mo
@@ -229,7 +229,7 @@ share/icons/hicolor/48x48/apps/vlc.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/vlc.mo
-share/metainfo/vlc.appdata.xml
+share/metainfo/org.videolan.vlc.appdata.xml
 share/solid/actions/vlc-openbd.desktop
 share/solid/actions/vlc-opencda.desktop
 share/solid/actions/vlc-opendvd.desktop

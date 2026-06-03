@@ -8,7 +8,9 @@
     SUBDIR += amigadepacker
     SUBDIR += ancient
     SUBDIR += apache-commons-compress
+    SUBDIR += appscript
     SUBDIR += arc
+    SUBDIR += archmerge
     SUBDIR += arj
     SUBDIR += ark
     SUBDIR += arqiver
@@ -31,6 +33,7 @@
     SUBDIR += draco
     SUBDIR += dzip
     SUBDIR += engrampa
+    SUBDIR += extract-xiso
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += gcab
@@ -100,6 +103,7 @@
     SUBDIR += nwreckdum
     SUBDIR += ocaml-bz2
     SUBDIR += ocaml-zip
+    SUBDIR += openzl
     SUBDIR += opkg-openwrt
     SUBDIR += ouch
     SUBDIR += p5-Archive-Any
@@ -155,14 +159,11 @@
     SUBDIR += pecl-rar
     SUBDIR += pecl-zstd
     SUBDIR += php-brotli
+    SUBDIR += php-bzip3
     SUBDIR += php-horde_lz4
     SUBDIR += php-lz4
     SUBDIR += php-snappy
     SUBDIR += php-zstd
-    SUBDIR += php81-bz2
-    SUBDIR += php81-phar
-    SUBDIR += php81-zip
-    SUBDIR += php81-zlib
     SUBDIR += php82-bz2
     SUBDIR += php82-phar
     SUBDIR += php82-zip
@@ -190,10 +191,8 @@
     SUBDIR += py-blosc
     SUBDIR += py-blosc2
     SUBDIR += py-borgbackup
-    SUBDIR += py-borgbackup12
     SUBDIR += py-brotli
     SUBDIR += py-brotlicffi
-    SUBDIR += py-brotlipy
     SUBDIR += py-bup
     SUBDIR += py-bz2file
     SUBDIR += py-comicapi
@@ -247,12 +246,12 @@
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip-gitlab
     SUBDIR += rubygem-rubyzip13
-    SUBDIR += rubygem-rubyzip2
     SUBDIR += rubygem-snappy
     SUBDIR += rvm
     SUBDIR += rzip
     SUBDIR += sectar
     SUBDIR += sharutils
+    SUBDIR += smpq
     SUBDIR += snappy
     SUBDIR += snappy-java
     SUBDIR += snzip
@@ -279,6 +278,7 @@
     SUBDIR += unlzx
     SUBDIR += unmakeself
     SUBDIR += unmass
+    SUBDIR += unpackerr
     SUBDIR += unrar
     SUBDIR += unrar-iconv
     SUBDIR += unrpa

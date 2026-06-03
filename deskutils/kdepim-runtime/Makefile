@@ -22,7 +22,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons holidays i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdav kio \
 		notifications notifyconfig parts service solid sonnet \
-		textwidgets unitconversion wallet widgetsaddons windowsystem \
+		textwidgets unitconversion widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build
 # pim components
@@ -41,7 +41,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 211
 CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 

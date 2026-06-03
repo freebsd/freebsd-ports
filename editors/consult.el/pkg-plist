@@ -1,0 +1,10 @@
+%%EMACS_SITE_LISPDIR%%/consult/consult-compile.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-flymake.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-imenu.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-info.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-kmacro.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-org.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-register.el
+%%EMACS_SITE_LISPDIR%%/consult/consult-xref.el
+%%EMACS_SITE_LISPDIR%%/consult/consult.el
+%%PORTDOCS%%%%DOCSDIR%%/README.org

@@ -1,4 +1,5 @@
 bin/gm4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/barem4.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize2.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comments.m4
@@ -36,6 +37,7 @@ bin/gm4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stack_sep.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sync-lines.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sysv-args.m4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testbarem4.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trace.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translit.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/undivert.m4
@@ -57,6 +59,7 @@ bin/gm4
 %%NLS%%share/locale/hr/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/id/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/m4.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/m4.mo

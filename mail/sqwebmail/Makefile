@@ -1,12 +1,11 @@
 PORTNAME=	sqwebmail
-PORTVERSION=	6.2.4
-PORTREVISION=	1
+PORTVERSION=	6.3.1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
-WWW=		https://inter7.com/sqwebmail/
+WWW=		https://www.courier-mta.org/sqwebmail/
 
 LICENSE=	GPLv3
 
@@ -14,7 +13,7 @@ BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
-LIB_DEPENDS=	libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libcourier-unicode.so:devel/courier-unicode \
 		libidn2.so:dns/libidn2
 
@@ -32,7 +31,7 @@ HTTPS_LOGIN_DESC=	Generate https:// URLs only for login
 MIMETYPES_DESC=	search for a mime.types file
 SENTRENAME_DESC=	Periodic rename the Sent folder
 CHARSET_DESC=	charsets
-FAM_USES=	fam
+FAM_LIB_DEPENDS=	libfam.so.0:devel/gamin
 
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
 
@@ -59,7 +58,7 @@ MAILGRP?=	courier
 #
 # End of user variables
 
-USES=		compiler:c++11-lang gettext gmake iconv perl5 tar:bzip2 pkgconfig
+USES=		compiler:c++17-lang gettext gmake iconv perl5 tar:bzip2 pkgconfig
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
 
@@ -178,16 +177,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
 		${WRKSRC}/libs/maildir/configure
 .endif
-	@${REINPLACE_CMD} -e 's|LIBPCRE=-lpcre|LIBPCRE="-L${LOCALBASE}/lib -lpcre"|g' \
-		${WRKSRC}/libs/maildir/configure
-
 	@${REINPLACE_CMD} -e 's|@echo|echo|g'  ${WRKSRC}/libs/maildir/configure
 
-	@${REINPLACE_CMD} -e 's|-lpcre|-L${LOCALBASE}/lib &|g' \
-		${WRKSRC}/libs/sqwebmail/Makefile.in
-
-	@${REINPLACE_CMD} -e 's|\$$(testmaildirfilter_LDADD)|& \$$(LIBPCRE)|g; \
-		s|$$(LINK) $$(maildirkw_LDFLAGS)|$$(CXXLINK) $$(maildirkw_LDFLAGS)|' \
+	@${REINPLACE_CMD} -e 's|$$(LINK) $$(maildirkw_LDFLAGS)|$$(CXXLINK) $$(maildirkw_LDFLAGS)|' \
 		${WRKSRC}/libs/maildir/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \

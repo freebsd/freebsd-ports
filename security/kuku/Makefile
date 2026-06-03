@@ -1,6 +1,6 @@
 PORTNAME=	kuku
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	3.0.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,5 +24,9 @@ do-test:
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DKUKU_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		./bin/kukutest
+
+# tests as of 3.0.0:
+# [==========] 23 tests from 3 test suites ran. (16 ms total)
+# [  PASSED  ] 23 tests.
 
 .include <bsd.port.mk>

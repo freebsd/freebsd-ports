@@ -1,10 +1,10 @@
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
-MASTER_SITES=	SF/stonx/stonx/0.6.7.6 SF/emutos/emutos/1.3:tos
+MASTER_SITES=	SF/stonx/stonx/0.6.7.6
 DISTNAME=	STonX-0.6.7.6
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} emutos-512k-1.3.zip:tos
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
@@ -12,7 +12,8 @@ WWW=		https://stonx.sourceforge.net/
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+BUILD_DEPENDS=	${LOCALBASE}/share/emutos/etos512uk.img:${PKGCATEGORY}/emutos \
+		bdftopcf:x11-fonts/bdftopcf \
 		gccmakedep:devel/gccmakedep \
 		mkfontscale:x11-fonts/mkfontscale \
 		${LOCALBASE}/share/fonts/misc/10x20-ISO8859-1.pcf.gz:x11-fonts/font-misc-misc
@@ -64,7 +65,7 @@ US_DESC=	English (NTSC)
 pre-configure:
 .for l in ${OPTIONS_RADIO_TOS}
 .if ${PORT_OPTIONS:M${l}}
-	${CP} -v ${WRKDIR}/emutos-512k-1.3/etos512${l:tl}.img ${WRKSRC}/tos.img
+	${CP} -v ${LOCALBASE}/share/emutos/etos512${l:tl}.img ${WRKSRC}/data/tos.img
 .endif
 .endfor
 

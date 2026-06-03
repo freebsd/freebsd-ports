@@ -1,6 +1,6 @@
 PORTNAME=	frr
 DISTVERSIONPREFIX=	frr-
-DISTVERSION=	10.4.0
+DISTVERSION=	10.6.1
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	10-pythontools
@@ -38,7 +38,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libjson-c.so:devel/json-c \
 		libpcre2-8.so:devel/pcre2 \
 		libprotobuf-c.so:devel/protobuf-c \
-		libyang.so.2:net/libyang2
+		libyang.so.3:net/libyang3
 
 USES=		autoreconf bison compiler:c++11-lang gmake libtool makeinfo \
 		pkgconfig python:build readline shebangfix

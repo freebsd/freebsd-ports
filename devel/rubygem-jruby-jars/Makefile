@@ -1,5 +1,6 @@
 PORTNAME=	jruby-jars
 PORTVERSION=	9.2.21.0
+PORTREVISION=	2
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 

@@ -17,9 +17,6 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/license-gplv2.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/license-gplv3.txt
 LICENSE_PERMS_FIPL=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_mips=		fails to compile: section referenced in discarded section
-BROKEN_mips64=		fails to compile: opcode not supported on this processor: mips3 (mips3) 'madd $4,$5'
-
 USES=		cpe dos2unix gmake zip
 USE_CXXSTD=	gnu++14
 CPE_VENDOR=	${PORTNAME}_project

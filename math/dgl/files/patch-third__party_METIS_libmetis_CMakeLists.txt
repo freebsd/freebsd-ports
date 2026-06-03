@@ -1,15 +1,14 @@
---- third_party/METIS/libmetis/CMakeLists.txt.orig	2023-05-09 05:04:07 UTC
+-- Rename bundled METIS target to dgl_metis to avoid conflicts and keep
+-- the private library name consistent with the FreeBSD port install step.
+-- Needed so the port can install the bundled METIS shared object as
+-- libdgl_metis.so (see dgl issue #5666 workaround used by this port).
+--- third_party/METIS/libmetis/CMakeLists.txt.orig	2024-09-16 17:42:45 UTC
 +++ third_party/METIS/libmetis/CMakeLists.txt
-@@ -3,13 +3,13 @@ include_directories(.)
- # Find sources.
- file(GLOB metis_sources *.c)
+@@ -5,10 +5,10 @@ file(GLOB metis_sources *.c)
+ 
  # Build libmetis.
--add_library(metis ${METIS_LIBRARY_TYPE} ${GKlib_sources} ${metis_sources})
-+add_library(dgl_metis ${METIS_LIBRARY_TYPE} ${GKlib_sources} ${metis_sources})
- if(UNIX)
--  target_link_libraries(metis m)
-+  target_link_libraries(dgl_metis m)
- endif()
+-add_library(metis ${METIS_LIBRARY_TYPE} ${metis_sources})
++add_library(dgl_metis ${METIS_LIBRARY_TYPE} ${metis_sources})
  
  if(METIS_INSTALL)
 -  install(TARGETS metis

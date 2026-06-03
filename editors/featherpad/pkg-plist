@@ -25,6 +25,7 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_ja.qm
 %%DATADIR%%/translations/featherpad_ka.qm
 %%DATADIR%%/translations/featherpad_ko.qm
+%%DATADIR%%/translations/featherpad_lg.qm
 %%DATADIR%%/translations/featherpad_lt.qm
 %%DATADIR%%/translations/featherpad_nb_NO.qm
 %%DATADIR%%/translations/featherpad_nl.qm

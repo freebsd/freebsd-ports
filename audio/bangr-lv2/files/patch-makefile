@@ -1,0 +1,17 @@
+--- makefile.orig	2026-04-12 06:02:00 UTC
++++ makefile
+@@ -26,10 +26,10 @@ endif
+   override GUI_LIBS += fontconfig
+   override GUIPPFLAGS += -DPKG_HAVE_FONTCONFIG
+ endif
+-DSPCFLAGS += `$(PKG_CONFIG) --cflags --static $(LV2_LIBS)`
+-GUICFLAGS += -I$(CURDIR)/src/BWidgets/include `$(PKG_CONFIG) --cflags --static $(GUI_LIBS)`
+-DSPLIBS += -Wl,-Bstatic -lm `$(PKG_CONFIG) --libs --static $(LV2_LIBS)` -Wl,-Bdynamic
+-GUILIBS += -Wl,-Bstatic -lbwidgetscore -lcairoplus -lpugl -lm -Wl,-Bdynamic `$(PKG_CONFIG) --libs $(GUI_LIBS)`
++DSPCFLAGS += `$(PKG_CONFIG) --cflags $(LV2_LIBS)`
++GUICFLAGS += -I$(CURDIR)/src/BWidgets/include `$(PKG_CONFIG) --cflags $(GUI_LIBS)`
++DSPLIBS += -lm `$(PKG_CONFIG) --libs $(LV2_LIBS)` -Wl,-Bdynamic
++GUILIBS += -lbwidgetscore -lcairoplus -lpugl -lm -Wl,-Bdynamic `$(PKG_CONFIG) --libs $(GUI_LIBS)`
+ 
+ # complile
+ CC ?= gcc

@@ -1,6 +1,6 @@
 --- SConstruct.orig	2009-12-10 14:58:55 UTC
 +++ SConstruct
-@@ -16,7 +16,7 @@ picLibBuilder = Builder(
+@@ -16,7 +16,7 @@ env['BUILDERS']['Library'] = picLibBuilder
  env['BUILDERS']['StaticLibrary'] = picLibBuilder
  env['BUILDERS']['Library'] = picLibBuilder
  
@@ -9,7 +9,7 @@
  #opts.Add('CC', 'C compiler')
  #opts.Add('CXX', 'C++ compiler')
  opts.Add('CCFLAGS', 'General options that are passed to the C compiler')
-@@ -30,12 +30,13 @@ opts.Add('CPPPATH', 'extra cpp path')
+@@ -30,12 +30,13 @@ if sys.platform != "win32":
  
  if sys.platform != "win32":
  	opts.Add('prefix', 'prefix for **nix packaging', '')
@@ -25,7 +25,7 @@
  
  opts.Update(env)
  opts.Save('options.cache', env.Clone())
-@@ -47,16 +48,18 @@ debug = buildmode == "debug"
+@@ -47,16 +48,18 @@ import SCons.Util
  Export('debug')
  
  import SCons.Util
@@ -59,6 +59,57 @@
  		
  	env.Append(CPPFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
  	env.Append(CCFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
+@@ -119,17 +119,17 @@ else: 
+ 
+ #print conf.env['CCFLAGS']
+ 
+-if not conf.CheckLibWithHeader('expat', 'expat.h', 'c', "XML_ParserCreate(NULL);", False):
++if not conf.CheckLibWithHeader('expat', 'expat.h', 'c', None, "XML_ParserCreate(NULL);", False):
+ 	Exit(1)
+ 
+-if not conf.CheckLibWithHeader('z', 'zlib.h', 'c', "zlibVersion();", False):
++if not conf.CheckLibWithHeader('z', 'zlib.h', 'c', None, "zlibVersion();", False):
+ 	Exit(1)
+ 
+ if sys.platform == "win32":
+ 	conf.env.Append(LINKFLAGS = ['/SUBSYSTEM:WINDOWS', '/FORCE'])
+ 	conf.env.Append(LIBS=['SDLmain'])
+ 
+-if not conf.CheckLibWithHeader('SDL', 'SDL.h', 'c++', "SDL_Init(0);", False):
++if not conf.CheckLibWithHeader('SDL', 'SDL.h', 'c++', None, "SDL_Init(0);", False):
+ 	Exit(1)
+ 	
+ 
+@@ -140,23 +140,23 @@ Export('smpeg_lib')
+ 	smpeg_lib = 'smpeg_d'
+ Export('smpeg_lib')
+ 
+-if not conf.CheckLibWithHeader(smpeg_lib, 'smpeg/smpeg.h', 'c++', "SMPEG_new_data(malloc(42), 42, NULL, 0);", False):
++if not conf.CheckLibWithHeader(smpeg_lib, 'smpeg/smpeg.h', 'c++', None, "SMPEG_new_data(malloc(42), 42, NULL, 0);", False):
+ 	Exit(1)
+ 
+-if not conf.CheckLibWithHeader('SDL_image', 'SDL_image.h', 'c++', "IMG_Load(0);", False):
++if not conf.CheckLibWithHeader('SDL_image', 'SDL_image.h', 'c++', None, "IMG_Load(0);", False):
+ 	Exit(1)
+ 
+-if not conf.CheckLibWithHeader('vorbisfile', 'vorbis/vorbisfile.h', 'c++', "ov_open(0, 0, 0, 0);", False):
++if not conf.CheckLibWithHeader('vorbisfile', 'vorbis/vorbisfile.h', 'c++', None, "ov_open(0, 0, 0, 0);", False):
+ 	Exit(1)
+ 
+ if sys.platform == 'win32':
+-	if not conf.CheckLibWithHeader('lua', 'lua.hpp', 'c++', "lua_newstate(NULL, NULL);", False):
++	if not conf.CheckLibWithHeader('lua', 'lua.hpp', 'c++', None, "lua_newstate(NULL, NULL);", False):
+ 		Exit(1)
+ 
+ if sys.platform != 'win32':
+-	have_sse = conf.CheckLibWithHeader('m', "xmmintrin.h", 'c', '_mm_set_ss(1.0f);', False)
++	have_sse = conf.CheckLibWithHeader('m', "xmmintrin.h", 'c', None, '_mm_set_ss(1.0f);', False)
+ else: 
+-	have_sse = conf.CheckLibWithHeader('kernel32', "xmmintrin.h", 'c', '_mm_set_ss(1.0f);', False) # hackish lib :(
++	have_sse = conf.CheckLibWithHeader('kernel32', "xmmintrin.h", 'c', None, '_mm_set_ss(1.0f);', False) # hackish lib :(
+ 
+ conf.Finish()
+ 
 @@ -205,7 +205,7 @@ try : 
  
  	except: 
@@ -68,7 +119,7 @@
  except : 
  	svnversion = os.popen('svnversion -n .', 'r')
  	version = svnversion.readline().strip()
-@@ -238,7 +238,10 @@ except : 
+@@ -238,7 +238,10 @@ version = version[version.rfind(':') + 1:]
  			env.Append(CPPDEFINES='PLUGINS_DIR="\\"' + plugins_dir + '\\""')
  
  version = version[version.rfind(':') + 1:]
@@ -80,7 +131,7 @@
  
  Export('version')
  Export('revision')
-@@ -246,31 +249,35 @@ Export('lib_dir')
+@@ -246,31 +249,35 @@ version = '0.9.%s' %version
  Export('plugins_dir')
  
  version = '0.9.%s' %version

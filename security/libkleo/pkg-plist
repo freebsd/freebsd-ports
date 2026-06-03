@@ -1,5 +1,7 @@
 etc/xdg/libkleopatrarc
 include/KPim6/Libkleo/Libkleo/Algorithm
+include/KPim6/Libkleo/Libkleo/AnimatedExpander
+include/KPim6/Libkleo/Libkleo/ApplicationPaletteWatcher
 include/KPim6/Libkleo/Libkleo/Assuan
 include/KPim6/Libkleo/Libkleo/AuditLogEntry
 include/KPim6/Libkleo/Libkleo/AuditLogViewer
@@ -16,6 +18,7 @@ include/KPim6/Libkleo/Libkleo/DefaultKeyFilter
 include/KPim6/Libkleo/Libkleo/DefaultKeyGenerationJob
 include/KPim6/Libkleo/Libkleo/DirectoryServicesWidget
 include/KPim6/Libkleo/Libkleo/Dn
+include/KPim6/Libkleo/Libkleo/DnAttributes
 include/KPim6/Libkleo/Libkleo/DocAction
 include/KPim6/Libkleo/Libkleo/EditDirectoryServiceDialog
 include/KPim6/Libkleo/Libkleo/Enum
@@ -26,6 +29,7 @@ include/KPim6/Libkleo/Libkleo/ExpiryCheckerConfig
 include/KPim6/Libkleo/Libkleo/ExpiryCheckerSettings
 include/KPim6/Libkleo/Libkleo/FileNameRequester
 include/KPim6/Libkleo/Libkleo/FileSystemWatcher
+include/KPim6/Libkleo/Libkleo/FormTextInput
 include/KPim6/Libkleo/Libkleo/Formatting
 include/KPim6/Libkleo/Libkleo/GnuPG
 include/KPim6/Libkleo/Libkleo/Hex
@@ -70,13 +74,15 @@ include/KPim6/Libkleo/Libkleo/SystemInfo
 include/KPim6/Libkleo/Libkleo/Test
 include/KPim6/Libkleo/Libkleo/TreeView
 include/KPim6/Libkleo/Libkleo/TreeWidget
-include/KPim6/Libkleo/Libkleo/UniqueLock
 include/KPim6/Libkleo/Libkleo/UserIDListModel
 include/KPim6/Libkleo/Libkleo/UserIDListProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/Libkleo/Validation
+include/KPim6/Libkleo/Libkleo/Verification
 include/KPim6/Libkleo/libkleo/algorithm.h
+include/KPim6/Libkleo/libkleo/animatedexpander.h
+include/KPim6/Libkleo/libkleo/applicationpalettewatcher.h
 include/KPim6/Libkleo/libkleo/assuan.h
 include/KPim6/Libkleo/libkleo/auditlogentry.h
 include/KPim6/Libkleo/libkleo/auditlogviewer.h
@@ -94,6 +100,7 @@ include/KPim6/Libkleo/libkleo/defaultkeygenerationjob.h
 include/KPim6/Libkleo/libkleo/directoryserviceswidget.h
 include/KPim6/Libkleo/libkleo/dn.h
 include/KPim6/Libkleo/libkleo/dnattributeorderconfigwidget.h
+include/KPim6/Libkleo/libkleo/dnattributes.h
 include/KPim6/Libkleo/libkleo/docaction.h
 include/KPim6/Libkleo/libkleo/editdirectoryservicedialog.h
 include/KPim6/Libkleo/libkleo/enum.h
@@ -106,6 +113,7 @@ include/KPim6/Libkleo/libkleo/expirycheckersettings.h
 include/KPim6/Libkleo/libkleo/filenamerequester.h
 include/KPim6/Libkleo/libkleo/filesystemwatcher.h
 include/KPim6/Libkleo/libkleo/formatting.h
+include/KPim6/Libkleo/libkleo/formtextinput.h
 include/KPim6/Libkleo/libkleo/gnupg.h
 include/KPim6/Libkleo/libkleo/hex.h
 include/KPim6/Libkleo/libkleo/kconfigbasedkeyfilter.h
@@ -150,12 +158,12 @@ include/KPim6/Libkleo/libkleo/systeminfo.h
 include/KPim6/Libkleo/libkleo/test.h
 include/KPim6/Libkleo/libkleo/treeview.h
 include/KPim6/Libkleo/libkleo/treewidget.h
-include/KPim6/Libkleo/libkleo/uniquelock.h
 include/KPim6/Libkleo/libkleo/useridlistmodel.h
 include/KPim6/Libkleo/libkleo/useridlistproxymodel.h
 include/KPim6/Libkleo/libkleo/useridproxymodel.h
 include/KPim6/Libkleo/libkleo/useridselectioncombo.h
 include/KPim6/Libkleo/libkleo/validation.h
+include/KPim6/Libkleo/libkleo/verification.h
 include/KPim6/Libkleo/libkleo_version.h
 lib/cmake/KPim6Libkleo/KPim6LibkleoConfig.cmake
 lib/cmake/KPim6Libkleo/KPim6LibkleoConfigVersion.cmake
@@ -166,7 +174,7 @@ lib/libKPim6Libkleo.so.6
 lib/libKPim6Libkleo.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/KPim6Libkleo/find-modules/FindLibAssuan.cmake
 share/KPim6Libkleo/find-modules/FindLibGpgError.cmake
-%%DATADIR%%patra/pics/smartcard.xpm
+share/libkleopatra/pics/smartcard.xpm
 share/locale/ar/LC_MESSAGES/libkleopatra6.mo
 share/locale/ast/LC_MESSAGES/libkleopatra6.mo
 share/locale/be/LC_MESSAGES/libkleopatra6.mo
@@ -191,6 +199,7 @@ share/locale/fr/LC_MESSAGES/libkleopatra6.mo
 share/locale/fy/LC_MESSAGES/libkleopatra6.mo
 share/locale/ga/LC_MESSAGES/libkleopatra6.mo
 share/locale/gl/LC_MESSAGES/libkleopatra6.mo
+share/locale/he/LC_MESSAGES/libkleopatra6.mo
 share/locale/hi/LC_MESSAGES/libkleopatra6.mo
 share/locale/hne/LC_MESSAGES/libkleopatra6.mo
 share/locale/hr/LC_MESSAGES/libkleopatra6.mo

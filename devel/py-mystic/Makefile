@@ -1,5 +1,6 @@
 PORTNAME=	mystic
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.9:devel/py-dill@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}klepto>=0.2.7:devel/py-klepto@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.4.1:devel/py-dill@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}klepto>=0.2.8:devel/py-klepto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mpmath>=0.19:math/py-mpmath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>=0.6.7:math/py-sympy@${PY_FLAVOR}
@@ -24,5 +25,11 @@ USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	PARALLEL
+PARALLEL_DESC=	Parallel computing support
+
+PARALLEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathos>=0.3.5:devel/py-pathos@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyina>=0.3.1:devel/py-pyina@${PY_FLAVOR}
 
 .include <bsd.port.mk>

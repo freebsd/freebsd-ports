@@ -1,5 +1,5 @@
 PORTNAME=	cudatext
-PORTVERSION=	1.226.0.0
+PORTVERSION=	1.234.3.0
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -9,24 +9,24 @@ WWW=		https://uvviewsoft.com/
 
 LICENSE=	MPL20
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors python xorg
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alexey-T
 GH_PROJECT=	CudaText
-GH_TUPLE=	bgrabitmap:bgrabitmap:d2a9b15:bgrabitmap/bgrabitmap \
-		Alexey-T:Python-for-Lazarus:fda3fdb:python4lazarus/python4lazarus \
-		Alexey-T:ATFlatControls:975502d:atflatcontrols/atflatcontrols  \
-		Alexey-T:ATSynEdit:2cd6f81:atsynedit/atsynedit \
-		Alexey-T:Emmet-Pascal:df69312:emmet/emmet \
-		Alexey-T:EControl:cb845fc:econtrol/econtrol \
-		Alexey-T:ATSynEdit_Ex:e142ca5:atsyneditex/atsyneditex \
+GH_TUPLE=	bgrabitmap:bgrabitmap:6ada359:bgrabitmap/bgrabitmap \
+		Alexey-T:EncConv:8caaa6b:encconv/encconv \
+		Alexey-T:ATBinHex-Lazarus:ac03d54:atbinhex/atbinhex \
+		Alexey-T:ATFlatControls:11594c7:atflatcontrols/atflatcontrols  \
+		Alexey-T:ATSynEdit:499538f:atsynedit/atsynedit \
 		Alexey-T:ATSynEdit_Cmp:c24f441:atsyneditcmp/atsyneditcmp \
-		Alexey-T:ATBinHex-Lazarus:33759b6:atbinhex/atbinhex \
-		Alexey-T:UniqueInstance:753f823:uniqueinstance/uniqueinstance \
-		Alexey-T:EncConv:8caaa6b:encconv/encconv
+		Alexey-T:EControl:847ce66:econtrol/econtrol \
+		Alexey-T:ATSynEdit_Ex:a980d3b:atsyneditex/atsyneditex \
+		Alexey-T:Python-for-Lazarus:fda3fdb:python4lazarus/python4lazarus \
+		Alexey-T:Emmet-Pascal:df69312:emmet/emmet \
+		Alexey-T:UniqueInstance:753f823:uniqueinstance/uniqueinstance
 
 DOS2UNIX_FILES=	app/settings_default/default.json setup/debfiles/cudatext.desktop
 

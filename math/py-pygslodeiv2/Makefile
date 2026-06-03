@@ -1,6 +1,5 @@
 PORTNAME=	pygslodeiv2
-DISTVERSION=	0.9.4
-PORTREVISION=	5
+DISTVERSION=	0.9.8
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +11,12 @@ WWW=		https://github.com/bjodah/pygslodeiv2
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libgsl.so:math/gsl
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang localbase python
-USE_PYTHON=	distutils autoplist cython pytest
+USE_PYTHON=	autoplist cython0 distutils pytest
 
 pre-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace

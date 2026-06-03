@@ -1,13 +1,12 @@
 PORTNAME=	coq
 PORTVERSION=	8.20.1
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	math
 DISTVERSIONPREFIX=	V
 #DISTVERSIONSUFFIX=	.0
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 WWW=		https://coq.inria.fr/
 
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	${SA_DIR}/num/META:math/ocaml-num \
 		${SA_DIR}/zarith/META:math/ocaml-zarith
 
-USES=		emacs gettext-runtime gmake gnome ocaml:camlp4,dune,ldconfig python:env shebangfix tex
+USES=		gettext-runtime gmake gnome ocaml:camlp4,dune,ldconfig python:env shebangfix tex
 SHEBANG_FILES=	tools/*.py
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview3
@@ -40,7 +39,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-bytecode-compiler yes \
 		-native-compiler yes
 
-CONFLICTS_INSTALL=	coq coq-emacs_* # bin/coq-tex bin/coq_makefile bin/coqc bin/coqchk bin/coqdep bin/coqdoc bin/coqide bin/coqmktop bin/coqtop bin/coqtop.byte bin/coqwc bin/coqworkmgr bin/gallina
+CONFLICTS_INSTALL=	coq-emacs_*
 
 OPTIONS_DEFINE=		DOCS IDE
 OPTIONS_DEFAULT=	IDE

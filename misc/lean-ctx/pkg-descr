@@ -1,0 +1,14 @@
+LeanCTX is a hybrid context optimizer designed to reduce token consumption
+in AI-assisted software engineering workflows. It acts as a cognitive filter
+between AI tools and Large Language Models (LLMs), stripping noise like
+comments and whitespace to lower costs and maximize context efficiency.
+
+Features:
+- AST-Aware Compression: Uses Tree-sitter to parse 14 languages, preserving
+  critical types and logic while reducing token counts by up to 90%.
+- MCP Server Integration: Provides 24 tools that replace standard file reads
+  with compressed alternatives for any MCP-enabled AI client.
+- Automated Shell Hook: Intercepts and compresses output from over 90 common
+  command patterns (git, npm, cargo, docker, kubectl, etc.).
+- Privacy and Performance: Single Rust binary with zero dependencies and no
+  cloud requirements.

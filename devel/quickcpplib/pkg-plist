@@ -21,6 +21,7 @@ include/quickcpplib/console_colours.hpp
 include/quickcpplib/cpp_feature.h
 include/quickcpplib/declval.hpp
 include/quickcpplib/detach_cast.hpp
+include/quickcpplib/detail/config.hpp
 include/quickcpplib/detail/impl/execinfo_win64.ipp
 include/quickcpplib/detail/impl/signal_guard.ipp
 include/quickcpplib/detail/preprocessor_macro_overload.h
@@ -86,6 +87,7 @@ share/scripts/cpp-pm/CMakeLists.txt
 share/scripts/cpp-pm/cmake/HunterGate.cmake
 share/scripts/cpp-pm/cmake/HunterVersion.cmake
 share/scripts/gen_guard_matrix.py
+share/scripts/generate_gdb_printer.py
 share/scripts/make_deb.py
 share/scripts/merge_develop_to_master_if_good.py
 share/scripts/merge_junit_results.py

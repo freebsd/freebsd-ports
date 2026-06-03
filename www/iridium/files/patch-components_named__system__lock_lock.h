@@ -1,4 +1,4 @@
---- components/named_system_lock/lock.h.orig	2025-05-07 06:48:23 UTC
+--- components/named_system_lock/lock.h.orig	2025-12-10 15:04:57 UTC
 +++ components/named_system_lock/lock.h
 @@ -38,7 +38,7 @@ class ScopedLock {
    // may acquire that lock. The lock name has different meanings per platform:

@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-archiver
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	LXQT
 
@@ -24,10 +24,4 @@ USE_QT=		tools:build base:run
 USE_LXQT=	buildtools2 libfmqt6 lxqt
 USE_XORG=	xcb
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1400504
-RUN_DEPENDS+=	unzip:archivers/unzip
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

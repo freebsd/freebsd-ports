@@ -1,0 +1,56 @@
+--- src/Makefile.orig	2026-02-20 12:34:00 UTC
++++ src/Makefile
+@@ -9,32 +9,32 @@ all:
+ 
+ #################################################################
+ all:
+-	gmake -j3 -f $(MAKEFILE)
++	$(MAKE) -f $(MAKEFILE)
+ 
+ # special versions for 32/64 bit platforms
+ # maybe you need gmake clean first...
+ 32:
+-	gmake -f $(MAKEFILE) EXTRA_CXXFLAGS="-m32"
++	$(MAKE) -f $(MAKEFILE) EXTRA_CXXFLAGS="-m32"
+ 64:
+-	gmake -f $(MAKEFILE) EXTRA_CXXFLAGS="-m64"
++	$(MAKE) -f $(MAKEFILE) EXTRA_CXXFLAGS="-m64"
+ 
+ #TODO: change
+ fuzzy:
+-	gmake -f $(MAKEFILE)  MODULES="fuzzy" fuzzymodule all
++	$(MAKE) -f $(MAKEFILE)  MODULES="fuzzy" fuzzymodule all
+ 
+ #################################################################
+ dep:
+-	gmake -f $(MAKEFILE) dep
++	$(MAKE) -f $(MAKEFILE) dep
+ #################################################################
+ test:
+-	gmake -f $(MAKEFILE) test
++	$(MAKE) -f $(MAKEFILE) test
+ test32:
+-	gmake -f $(MAKEFILE) EXTRA_CXXFLAGS="-m32" test
++	$(MAKE) -f $(MAKEFILE) EXTRA_CXXFLAGS="-m32" test
+ #################################################################
+ install:
+-	gmake -f $(MAKEFILE) install
++	$(MAKE) -f $(MAKEFILE) install
+ uninstall:
+-	gmake -f $(MAKEFILE) uninstall
++	$(MAKE) -f $(MAKEFILE) uninstall
+ 
+ #############################################################################
+ cppcheck:
+@@ -42,8 +42,8 @@ clean:
+ 
+ #################################################################
+ clean:
+-	gmake -f $(MAKEFILE) clean
+-	gmake -f $(MAKEFILE) MODULES="fuzzy" clean
++	$(MAKE) -f $(MAKEFILE) clean
++	$(MAKE) -f $(MAKEFILE) MODULES="fuzzy" clean
+ pack:
+-	gmake -f $(MAKEFILE) pack
++	$(MAKE) -f $(MAKEFILE) pack
+ #################################################################

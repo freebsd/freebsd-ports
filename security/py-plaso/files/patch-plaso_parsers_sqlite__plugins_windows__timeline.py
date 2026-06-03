@@ -1,6 +1,6 @@
---- plaso/parsers/sqlite_plugins/windows_timeline.py.orig	2024-06-08 09:38:22 UTC
+--- plaso/parsers/sqlite_plugins/windows_timeline.py.orig	2026-05-12 13:50:02 UTC
 +++ plaso/parsers/sqlite_plugins/windows_timeline.py
-@@ -89,10 +89,10 @@ class WindowsTimelinePlugin(interface.SQLitePlugin):
+@@ -86,10 +86,10 @@ class WindowsTimelinePlugin(interface.SQLitePlugin):
    QUERIES = [
        (('SELECT StartTime, Payload, PackageName FROM Activity '
          'INNER JOIN Activity_PackageId ON Activity.Id = '

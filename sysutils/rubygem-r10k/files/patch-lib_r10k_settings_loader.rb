@@ -1,4 +1,4 @@
---- lib/r10k/settings/loader.rb.orig	2018-04-07 11:13:36 UTC
+--- lib/r10k/settings/loader.rb.orig	2025-09-04 00:19:16 UTC
 +++ lib/r10k/settings/loader.rb
 @@ -8,8 +8,8 @@ module R10K
      #
