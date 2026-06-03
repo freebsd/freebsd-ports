@@ -1,6 +1,6 @@
 PORTNAME=	einops
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # some test files are missing in the PYPI tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,6 +38,6 @@ xdo-test:
 do-test-via-script:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} test.py numpy pytorch
 
-# tests as of 0.8.1: 4 failed, 91 passed, 8 skipped, 9 warnings in 135.44s (0:02:15)
+# tests as of 0.8.2: 68 passed, 4 skipped, 58 warnings in 38.37s
 
 .include <bsd.port.mk>
