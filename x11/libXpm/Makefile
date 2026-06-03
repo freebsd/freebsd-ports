@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe localbase:ldflags tar:xz xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xext xt
 
-CPE_VENDOR=	libxpm_project
+CPE_VENDOR=	x.org
 
 OPTIONS_DEFINE=		NLS
 NLS_USES=		gettext
