@@ -21,7 +21,6 @@ USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 #INSTALL_TARGET=install-strip
-CPE_VENDOR=	netatalk_project
 
 MESON_ARGS=		-Dwith-libgcrypt-path=${LOCALBASE} \
 			-Dwith-bdb-path=${LOCALBASE} \
