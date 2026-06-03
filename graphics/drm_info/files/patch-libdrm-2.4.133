@@ -1,0 +1,13 @@
+Drop after graphics/libdrm >= 2.4.134 update
+
+--- meson.build.orig	2026-06-03 12:36:30 UTC
++++ meson.build
+@@ -45,7 +45,7 @@ libdrm = dependency(
+ #
+ # We need to make sure we don't use any new libdrm functions, but those
+ # are added very infrequently, so this is unlikely to be an issue.
+-if libdrm.version().version_compare('<2.4.134')
++if libdrm.version().version_compare('<2.4.133')
+   if libdrm.type_name() == 'internal'
+     error('libdrm subproject out of date. Run `meson subprojects update`.')
+   endif
