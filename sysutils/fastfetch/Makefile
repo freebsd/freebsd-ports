@@ -1,5 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.63.1
+DISTVERSION=	2.64.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,16 +18,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
 
 OPTIONS_DEFINE=	VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS SQLITE3 \
-		IMAGEMAGICK CHAFA GLX OPENCL
+		IMAGEMAGICK CHAFA GLX OPENCL CODEC LUA QUICKJS
 
 OPTIONS_DEFAULT=VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS SQLITE3 \
-		IMAGEMAGICK CHAFA GLX OPENCL
+		IMAGEMAGICK CHAFA GLX OPENCL CODEC LUA QUICKJS
 
 DCONF_DESC=	Needed for values that are only stored in DConf + Fallback for GSettings
 CHAFA_DESC=	Image output as ascii art
 LIBDRM_DESC=	Enable display server detection via libdrm
 VULKAN_DESC=	Vulkan module & fallback for GPU output
 XRANDR_DESC=	Needed for display and WM detection in X11
+CODEC_DESC=	Hardware video codec detection (VA-API, VDPAU)
+LUA_DESC=	Lua scripting support for format strings
+QUICKJS_DESC=	JavaScript scripting support for format strings (QuickJS)
 
 VULKAN_CMAKE_BOOL=	ENABLE_VULKAN
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader \
@@ -67,6 +70,17 @@ GLX_BUILD_DEPENDS=	${LOCALBASE}/lib/libGLX.so:graphics/libglvnd
 OPENCL_CMAKE_BOOL=	ENABLE_OPENCL
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenCL.so:devel/ocl-icd \
 			${LOCALBASE}/include/CL/cl.h:devel/opencl
+
+LUA_CMAKE_BOOL=	ENABLE_LUA
+LUA_USES=		lua:build
+
+CODEC_CMAKE_BOOL=	ENABLE_VA ENABLE_VDPAU
+CODEC_BUILD_DEPENDS=	${LOCALBASE}/lib/libva.so:multimedia/libva \
+			${LOCALBASE}/lib/libvdpau.so:multimedia/libvdpau
+
+QUICKJS_CMAKE_BOOL=	ENABLE_QUICKJS
+QUICKJS_CMAKE_ON=	-Dqjs_DIR=${LOCALBASE}/lib/cmake/quickjs
+QUICKJS_BUILD_DEPENDS=	${LOCALBASE}/lib/libqjs.so:lang/quickjs-ng
 
 CMAKE_ARGS=	-DTARGET_DIR_ETC:STRING="${LOCALBASE}/etc" \
 		-DENABLE_SYSTEM_YYJSON:BOOL=ON \
