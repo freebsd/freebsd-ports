@@ -1,7 +1,7 @@
 PORTNAME=	pocket-id
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:

@@ -1,7 +1,7 @@
 PORTNAME=	tinyauth
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:

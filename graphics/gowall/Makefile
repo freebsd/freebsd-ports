@@ -1,6 +1,7 @@
 PORTNAME=	gowall
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 # Pull the patches that aren't upstreamed yet from my own fork

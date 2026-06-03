@@ -1,7 +1,7 @@
 PORTNAME=	esbuild
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel www
 # also bump & test ESBUILD_VERSION in net-im/signal-desktop
 

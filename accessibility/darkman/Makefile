@@ -1,6 +1,7 @@
 PORTNAME=	darkman
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	accessibility wayland
 
 MAINTAINER=	pierre-alain+freebsd@toret.fr
