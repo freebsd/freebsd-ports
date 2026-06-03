@@ -1,0 +1,8 @@
+memtui is a modern terminal user interface client for Memcached.
+
+It offers tree-structured key navigation, smart JSON and binary value
+formatting, and Vim style keybindings, making it easy to browse and
+debug data stored in a Memcached server.
+
+memtui requires Memcached 1.4.31 or later for lru_crawler metadump
+support.

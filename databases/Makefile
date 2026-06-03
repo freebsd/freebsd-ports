@@ -182,6 +182,7 @@
     SUBDIR += mdbx
     SUBDIR += mdcached
     SUBDIR += memcached
+    SUBDIR += memtui
     SUBDIR += metabase
     SUBDIR += mongodb-tools
     SUBDIR += mongodb70
