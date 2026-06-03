@@ -11,6 +11,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		autocfg-1.5.0 \
 		base64-0.22.1 \
 		bgzip-0.3.1 \
+		binary-heap-plus-0.5.0 \
 		binary-layout-2.1.0 \
 		bincode-1.3.3 \
 		bitflags-2.9.4 \
@@ -34,6 +35,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		colored-2.2.0 \
 		colorgrad-0.7.2 \
 		compact_str-0.8.1 \
+		compare-0.1.0 \
 		comrak-0.39.1 \
 		console-0.16.1 \
 		const-random-0.1.18 \
@@ -62,8 +64,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_macro-0.21.3 \
 		dbus-0.9.9 \
 		debug_unsafe-0.1.3 \
-		deepsize-0.2.0 \
-		deepsize_derive-0.1.2 \
 		derive_arbitrary-1.4.2 \
 		derive_more-0.99.20 \
 		deunicode-1.6.2 \
@@ -93,7 +93,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		errno-0.2.8 \
 		errno-0.3.14 \
 		errno-dragonfly-0.1.2 \
-		ext-sort-0.1.5 \
 		fast-float2-0.2.3 \
 		fastrand-2.3.0 \
 		filetime-0.2.26 \
@@ -116,6 +115,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.0 \
+		heavykeeper-0.6.5 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		html-escape-0.2.13 \
@@ -140,7 +140,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		instability-0.3.9 \
 		integer-encoding-3.0.4 \
 		itertools-0.13.0 \
-		itoa-1.0.15 \
+		itoa-1.0.18 \
 		jemalloc-sys-0.5.4+5.3.0-patched \
 		jemallocator-0.5.4 \
 		jiff-0.2.23 \
@@ -151,13 +151,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		js-sys-0.3.81 \
 		lazy_static-1.5.0 \
 		levenshtein_automata-0.2.1 \
-		libc-0.2.177 \
+		libc-0.2.186 \
 		libdbus-sys-0.2.6 \
 		libm-0.2.16 \
 		libredox-0.1.10 \
 		libz-rs-sys-0.5.2 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.11.0 \
+		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
 		lock_api-0.4.14 \
 		log-0.4.28 \
@@ -169,13 +169,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		md5-0.7.0 \
 		memchr-2.7.6 \
 		memmap2-0.5.10 \
-		memmap2-0.9.8 \
 		mime2ext-0.1.54 \
 		miniz_oxide-0.8.9 \
 		namedlock-0.7.0 \
 		new_debug_unreachable-1.0.6 \
 		normpath-1.5.0 \
-		npyz-0.8.4 \
+		npyz-0.9.1 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
@@ -234,10 +233,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.8 \
-		rmp-0.8.14 \
-		rmp-serde-1.3.0 \
 		rust_xlsxwriter-0.88.1 \
-		rustix-1.1.2 \
+		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
@@ -252,7 +249,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
-		simd-csv-0.12.0 \
+		simd-csv-0.13.0 \
 		simd-json-0.14.3 \
 		simdutf8-0.1.5 \
 		siphasher-1.0.1 \
@@ -269,12 +266,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
-		syn-1.0.109 \
 		syn-2.0.106 \
 		synstructure-0.13.2 \
 		tar-0.4.44 \
 		tdigest-0.2.3 \
-		tempfile-3.23.0 \
+		tempfile-3.27.0 \
 		tendril-0.4.3 \
 		termsize-0.1.9 \
 		textwrap-0.16.2 \
@@ -361,6 +357,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-derive-0.11.1 \
 		zip-4.6.1 \
 		zlib-rs-0.5.2 \
+		zmij-1.0.21 \
 		zopfli-0.8.2 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
