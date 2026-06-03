@@ -1,0 +1,5 @@
+TIMESTAMP = 1780449942
+SHA256 (go/sysutils_reqlog/reqlog-v0.7.1/v0.7.1.mod) = c3b53e5d91022f2c90701f44d41b81c96fd24bebf8064efe1f24a2983bd9b813
+SIZE (go/sysutils_reqlog/reqlog-v0.7.1/v0.7.1.mod) = 418
+SHA256 (go/sysutils_reqlog/reqlog-v0.7.1/v0.7.1.zip) = d9f97dab04c31a057606735e0f0e6526396da2392c53a9c04042311b52e7d1e7
+SIZE (go/sysutils_reqlog/reqlog-v0.7.1/v0.7.1.zip) = 416481
