@@ -19,7 +19,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome-test-vectors>=0:security/py-py
 
 # Officially: 2.7, 3.7-3.13
 USES=		cpe python
-CPE_VENDOR=	python
 USE_PYTHON=	autoplist pep517
 
 CONFLICTS_INSTALL?=	${PYTHON_PKGNAMEPREFIX}pycrypto
