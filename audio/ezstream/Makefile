@@ -38,7 +38,8 @@ TAGLIB_CONFIGURE_OFF=	--without-taglib
 TAGLIB_LIB_DEPENDS=		libtag.so:audio/taglib
 TAGLIB_CONFIGURE_ON=	--with-taglib=${LOCALBASE}
 
-CPE_VENDOR=	icecast
+CPE_VENDOR=	xiph
+CPE_PRODUCT=	icecast_ezstream
 
 .include <bsd.port.options.mk>
 
