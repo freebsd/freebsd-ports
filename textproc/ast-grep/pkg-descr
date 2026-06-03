@@ -1,0 +1,7 @@
+ast-grep is an abstract syntax tree based tool to search code by
+pattern code. Think of it as your old-friend grep, but matching AST
+nodes instead of text. You can write patterns as if you are writing
+ordinary code. It will match all code that has the same syntactical
+structure. You can use $ sign + upper case letters as a wildcard,
+e.g. $MATCH, to match any single AST node. Think of it as regular
+expression dot ., except it is not textual.

@@ -69,6 +69,7 @@
     SUBDIR += aspell
     SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
+    SUBDIR += ast-grep
     SUBDIR += augeas
     SUBDIR += az-aspell
     SUBDIR += bat
