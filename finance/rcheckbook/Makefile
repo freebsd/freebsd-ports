@@ -1,6 +1,6 @@
 PORTNAME=	rcheckbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.2
 CATEGORIES=	finance
 
 MAINTAINER=	tonyhawk2100@gmail.com
@@ -17,11 +17,11 @@ GH_ACCOUNT=	bryceac
 
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib
 
-PLIST_FILES=	"@dir ${DBDIR}" \
-		${DBDIR}/register.db \
+PLIST_FILES=	"@dir ${SCHEMADIR}" \
+		${SCHEMADIR}/register.sql \
 		bin/${PORTNAME}
 
-DBDIR=		/var/db/${PORTNAME}
+SCHEMADIR=		/usr/local/share/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DBDIR}
