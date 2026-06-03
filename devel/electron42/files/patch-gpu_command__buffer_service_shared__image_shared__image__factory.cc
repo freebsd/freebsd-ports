@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-04-28 21:06:17 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-05-26 20:44:49 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
 @@ -55,7 +55,7 @@
  #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
@@ -9,7 +9,7 @@
  #include "gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.h"
  #endif
  
-@@ -118,7 +118,7 @@ const char* GmbTypeToString(gfx::GpuMemoryBufferType t
+@@ -123,7 +123,7 @@ const char* GmbTypeToString(gfx::GpuMemoryBufferType t
      case gfx::IO_SURFACE_BUFFER:
        return "platform";
  #endif
@@ -18,7 +18,7 @@
      case gfx::NATIVE_PIXMAP:
        return "platform";
  #endif
-@@ -139,7 +139,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
+@@ -144,7 +144,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
    return gfx::GpuMemoryBufferType::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::GpuMemoryBufferType::ANDROID_HARDWARE_BUFFER;
@@ -27,7 +27,7 @@
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -316,7 +316,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -322,7 +322,7 @@ SharedImageFactory::SharedImageFactory(
      factories_.push_back(std::move(ozone_factory));
    }
  
@@ -36,7 +36,7 @@
    if (gr_context_type_ == GrContextType::kVulkan
  #if BUILDFLAG(USE_WEBGPU_ON_VULKAN_VIA_GL_INTEROP)
        /* We support GL context for WebGPU gl-vulkan interop (on linux).*/
-@@ -1040,7 +1040,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
+@@ -1051,7 +1051,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

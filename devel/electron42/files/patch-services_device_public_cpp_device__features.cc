@@ -1,6 +1,6 @@
---- services/device/public/cpp/device_features.cc.orig	2026-04-28 21:06:17 UTC
+--- services/device/public/cpp/device_features.cc.orig	2026-05-26 20:44:49 UTC
 +++ services/device/public/cpp/device_features.cc
-@@ -135,11 +135,11 @@ BASE_FEATURE(kAutomaticUsbDetach, base::FEATURE_ENABLE
+@@ -152,11 +152,11 @@ BASE_FEATURE(kAutomaticUsbDetach, base::FEATURE_ENABLE
  // a USB interface is busy.
  #if BUILDFLAG(IS_ANDROID)
  BASE_FEATURE(kAutomaticUsbDetach, base::FEATURE_ENABLED_BY_DEFAULT);
