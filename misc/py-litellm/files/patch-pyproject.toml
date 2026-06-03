@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -218,7 +218,7 @@ healthcheck = [
+@@ -220,7 +220,7 @@ healthcheck = [
  ]
  
  [build-system]
