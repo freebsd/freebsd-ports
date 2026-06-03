@@ -1,4 +1,4 @@
-TIMESTAMP = 1780202191
+TIMESTAMP = 1780472790
 SHA256 (rust/crates/ab_glyph-0.2.32.crate) = 01c0457472c38ea5bd1c3b5ada5e368271cb550be7a4ca4a0b4634e9913f6cc2
 SIZE (rust/crates/ab_glyph-0.2.32.crate) = 20967
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.10.crate) = 366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618
@@ -1985,5 +1985,5 @@ SHA256 (iced-rs-cryoglyph-53ba3e879539d19ed8162942126a977ec896cc3b_GH0.tar.gz) =
 SIZE (iced-rs-cryoglyph-53ba3e879539d19ed8162942126a977ec896cc3b_GH0.tar.gz) = 222090
 SHA256 (squidowl-iced-fcfa87cb35b615715919c8b4da408b6488f195de_GH0.tar.gz) = 9638c4b41a8890c0f40894bc0e9bd2be06a0759d00e46a7ca3eb040a02ec0f90
 SIZE (squidowl-iced-fcfa87cb35b615715919c8b4da408b6488f195de_GH0.tar.gz) = 5312377
-SHA256 (squidowl-halloy-2026.7_GH0.tar.gz) = 7f5f054d41d80d4b3b4984e45a39af67fc73e6e35e44f0916827c9a562935b66
-SIZE (squidowl-halloy-2026.7_GH0.tar.gz) = 9856677
+SHA256 (squidowl-halloy-2026.7.1_GH0.tar.gz) = 8e718a86e5e589f4151dd5a138feaef29d6896cc3273d9a9825aee5a5ca48bce
+SIZE (squidowl-halloy-2026.7.1_GH0.tar.gz) = 9859443
