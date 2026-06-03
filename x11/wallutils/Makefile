@@ -11,8 +11,6 @@ WWW=		https://github.com/xyproto/wallutils
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with libheif 1.22.2 # See also: https://github.com/xyproto/wallutils/issues/58
-
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libX11.so:x11/libX11
 
@@ -56,7 +54,8 @@ PLIST_FILES=	${GO_TARGET:S,./cmd,bin,}
 PLIST_FILES+=	${GO_TARGET:S,./cmd,share/man/man1,:S,$,.1.gz,}
 
 OPTIONS_DEFINE=		HEIF
-OPTIONS_DEFAULT=	HEIF
+#OPTIONS_DEFAULT=	HEIF
+HEIF_BROKEN=		fails to build with libheif 1.22.2 # See also: https://github.com/xyproto/wallutils/issues/58
 
 # Using [HEIF_VARS= GO_TARGET+=./cmd/heic2stw] causes post-install to fail parsing instalation of heic2stw.1 manual
 .include <bsd.port.options.mk>
