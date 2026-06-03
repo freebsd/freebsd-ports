@@ -14,7 +14,6 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gnome gstreamer meson pkgconfig python tar:xz
-CPE_VENDOR=	${PORTNAME}_project
 USE_GNOME=	pygobject3
 USE_GSTREAMER=	bad rtsp-server webrtc
 USE_PYTHON=	flavors
