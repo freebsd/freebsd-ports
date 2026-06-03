@@ -1,0 +1,11 @@
+The Catch2::Catch2 target needs to be added to find the catch2 headers.
+
+--- test/__inline_var_tests/CMakeLists.txt.orig	2026-01-13 16:46:26 UTC
++++ test/__inline_var_tests/CMakeLists.txt
+@@ -7,5 +7,5 @@ add_dependencies(tests inline_var_tests)
+ file(GLOB_RECURSE inline_var_test_files "*.cpp")
+ add_executable(inline_var_tests EXCLUDE_FROM_ALL ${inline_var_test_files})
+ add_dependencies(tests inline_var_tests)
+-target_link_libraries(inline_var_tests PUBLIC zug-dev)
++target_link_libraries(inline_var_tests PUBLIC zug-dev Catch2::Catch2)
+ add_test("test/inline_var_tests" inline_var_tests)
