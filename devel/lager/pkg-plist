@@ -29,6 +29,7 @@ include/lager/extra/cereal/immer_box.hpp
 include/lager/extra/cereal/immer_flex_vector.hpp
 include/lager/extra/cereal/immer_map.hpp
 include/lager/extra/cereal/immer_set.hpp
+include/lager/extra/cereal/immer_table.hpp
 include/lager/extra/cereal/immer_vector.hpp
 include/lager/extra/cereal/inline.hpp
 include/lager/extra/cereal/json.hpp
@@ -45,6 +46,7 @@ include/lager/extra/derive/size_check.hpp
 include/lager/extra/enum.hpp
 include/lager/extra/qt.hpp
 include/lager/extra/struct.hpp
+include/lager/extra/thunk.hpp
 include/lager/future.hpp
 include/lager/lens.hpp
 include/lager/lenses.hpp
