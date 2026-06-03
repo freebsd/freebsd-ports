@@ -1,0 +1,164 @@
+# github.com/Masterminds/semver v1.5.0
+## explicit
+github.com/Masterminds/semver
+# github.com/PuerkitoBio/goquery v1.9.1
+## explicit; go 1.18
+github.com/PuerkitoBio/goquery
+# github.com/alecthomas/chroma v0.10.0
+## explicit; go 1.13
+github.com/alecthomas/chroma
+github.com/alecthomas/chroma/formatters/html
+github.com/alecthomas/chroma/lexers
+github.com/alecthomas/chroma/lexers/a
+github.com/alecthomas/chroma/lexers/b
+github.com/alecthomas/chroma/lexers/c
+github.com/alecthomas/chroma/lexers/circular
+github.com/alecthomas/chroma/lexers/d
+github.com/alecthomas/chroma/lexers/e
+github.com/alecthomas/chroma/lexers/f
+github.com/alecthomas/chroma/lexers/g
+github.com/alecthomas/chroma/lexers/h
+github.com/alecthomas/chroma/lexers/i
+github.com/alecthomas/chroma/lexers/internal
+github.com/alecthomas/chroma/lexers/j
+github.com/alecthomas/chroma/lexers/k
+github.com/alecthomas/chroma/lexers/l
+github.com/alecthomas/chroma/lexers/m
+github.com/alecthomas/chroma/lexers/n
+github.com/alecthomas/chroma/lexers/o
+github.com/alecthomas/chroma/lexers/p
+github.com/alecthomas/chroma/lexers/q
+github.com/alecthomas/chroma/lexers/r
+github.com/alecthomas/chroma/lexers/s
+github.com/alecthomas/chroma/lexers/t
+github.com/alecthomas/chroma/lexers/v
+github.com/alecthomas/chroma/lexers/w
+github.com/alecthomas/chroma/lexers/x
+github.com/alecthomas/chroma/lexers/y
+github.com/alecthomas/chroma/lexers/z
+github.com/alecthomas/chroma/styles
+# github.com/alecthomas/chroma/v2 v2.13.0
+## explicit; go 1.19
+github.com/alecthomas/chroma/v2
+github.com/alecthomas/chroma/v2/formatters/html
+github.com/alecthomas/chroma/v2/lexers
+github.com/alecthomas/chroma/v2/styles
+# github.com/andybalholm/cascadia v1.3.2
+## explicit; go 1.16
+github.com/andybalholm/cascadia
+# github.com/cjoudrey/gluahttp v0.0.0-20201111170219-25003d9adfa9
+## explicit
+github.com/cjoudrey/gluahttp
+# github.com/dlclark/regexp2 v1.11.0
+## explicit; go 1.13
+github.com/dlclark/regexp2
+github.com/dlclark/regexp2/syntax
+# github.com/fsnotify/fsnotify v1.7.0
+## explicit; go 1.17
+github.com/fsnotify/fsnotify
+# github.com/gammazero/deque v0.2.1
+## explicit; go 1.18
+github.com/gammazero/deque
+# github.com/gammazero/workerpool v1.1.3
+## explicit; go 1.18
+github.com/gammazero/workerpool
+# github.com/gofrs/uuid v4.4.0+incompatible
+## explicit
+github.com/gofrs/uuid
+# github.com/google/btree v1.1.2
+## explicit; go 1.18
+github.com/google/btree
+# github.com/gorilla/mux v1.8.1
+## explicit; go 1.20
+github.com/gorilla/mux
+# github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79
+## explicit
+github.com/gregjones/httpcache
+github.com/gregjones/httpcache/diskcache
+# github.com/inconshreveable/mousetrap v1.1.0
+## explicit; go 1.18
+github.com/inconshreveable/mousetrap
+# github.com/peterbourgon/diskv v2.0.1+incompatible
+## explicit
+github.com/peterbourgon/diskv
+# github.com/russross/blackfriday v1.6.0
+## explicit; go 1.13
+github.com/russross/blackfriday
+# github.com/speedata/bild v0.0.0-20240628091728-dd063a632b14
+## explicit; go 1.21
+github.com/speedata/bild/clone
+github.com/speedata/bild/imgio
+github.com/speedata/bild/math/f64
+github.com/speedata/bild/parallel
+github.com/speedata/bild/transform
+# github.com/speedata/config v0.0.0-20181203093101-3a3f44982ec4
+## explicit
+github.com/speedata/config
+# github.com/speedata/css/scanner v0.0.0-20250825095519-68d469dc62c4
+## explicit; go 1.14
+github.com/speedata/css/scanner
+# github.com/speedata/go-epub v0.5.5
+## explicit
+github.com/speedata/go-epub
+# github.com/speedata/goxlsx v1.0.2
+## explicit
+github.com/speedata/goxlsx
+# github.com/speedata/hotfolder v0.0.0-20181204121114-5f743a840a92
+## explicit
+github.com/speedata/hotfolder
+# github.com/speedata/optionparser v1.1.1
+## explicit; go 1.17
+github.com/speedata/optionparser
+# github.com/yuin/goldmark v1.7.1
+## explicit; go 1.19
+github.com/yuin/goldmark
+github.com/yuin/goldmark/ast
+github.com/yuin/goldmark/extension
+github.com/yuin/goldmark/extension/ast
+github.com/yuin/goldmark/parser
+github.com/yuin/goldmark/renderer
+github.com/yuin/goldmark/renderer/html
+github.com/yuin/goldmark/text
+github.com/yuin/goldmark/util
+# github.com/yuin/goldmark-highlighting/v2 v2.0.0-20230729083705-37449abec8cc
+## explicit; go 1.13
+github.com/yuin/goldmark-highlighting/v2
+# github.com/yuin/gopher-lua v1.1.1
+## explicit; go 1.17
+github.com/yuin/gopher-lua
+github.com/yuin/gopher-lua/ast
+github.com/yuin/gopher-lua/parse
+github.com/yuin/gopher-lua/pm
+# golang.org/x/image v0.18.0
+## explicit; go 1.18
+golang.org/x/image/bmp
+# golang.org/x/net v0.35.0
+## explicit; go 1.18
+golang.org/x/net/html
+golang.org/x/net/html/atom
+golang.org/x/net/html/charset
+# golang.org/x/sys v0.30.0
+## explicit; go 1.18
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# golang.org/x/text v0.22.0
+## explicit; go 1.18
+golang.org/x/text/encoding
+golang.org/x/text/encoding/charmap
+golang.org/x/text/encoding/htmlindex
+golang.org/x/text/encoding/internal
+golang.org/x/text/encoding/internal/identifier
+golang.org/x/text/encoding/japanese
+golang.org/x/text/encoding/korean
+golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/encoding/traditionalchinese
+golang.org/x/text/encoding/unicode
+golang.org/x/text/internal/language
+golang.org/x/text/internal/language/compact
+golang.org/x/text/internal/tag
+golang.org/x/text/internal/utf8internal
+golang.org/x/text/language
+golang.org/x/text/runes
+golang.org/x/text/transform
+# gopkg.in/yaml.v3 v3.0.1
+## explicit

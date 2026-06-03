@@ -168,6 +168,7 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
+    SUBDIR += publisher
     SUBDIR += py-PyMuPDF
     SUBDIR += py-collidoscope
     SUBDIR += py-dehinter

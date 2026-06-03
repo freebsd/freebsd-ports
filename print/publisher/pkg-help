@@ -1,0 +1,47 @@
+JAVA_TOOLS option
+-----------------
+
+By selection the JAVA_TOOLS option, the following ports are installed
+as runtime dependencies and their JAR files are
+symlinked into /usr/local/lib/speedata-publisher:
+
+  textproc/saxon-he   (XSLT/XPath/XQuery, also provides xmlresolver)
+  textproc/jing       (RELAX NG validator)
+  textproc/trang      (schema converter)
+
+A Java runtime (openjdk25) is pulled in transitively.
+
+To build without these dependencies (for example to use the upstream
+JARs at specific versions, or to skip the Java toolchain entirely):
+
+  cd /usr/ports/print/publisher
+  make config        # uncheck JAVA_TOOLS
+  make install clean
+
+Without JAVA_TOOLS the following files would normally need to be placed
+manually at the indicated paths:
+
+  /usr/local/lib/speedata-publisher/saxon-he-12.9.jar
+  /usr/local/lib/speedata-publisher/jing.jar
+  /usr/local/lib/speedata-publisher/trang.jar
+  /usr/local/lib/speedata-publisher/lib/xmlresolver-5.3.3.jar
+  /usr/local/lib/speedata-publisher/lib/xmlresolver-5.3.3-data.jar
+
+Upstream download URLs:
+
+  https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/12.9/Saxon-HE-12.9.jar
+  https://github.com/relaxng/jing-trang/releases/download/V20220510/jing-20220510.jar
+  https://github.com/relaxng/jing-trang/releases/download/V20220510/trang-20220510.jar
+  https://repo1.maven.org/maven2/org/xmlresolver/xmlresolver/5.3.3/xmlresolver-5.3.3.jar
+  https://repo1.maven.org/maven2/org/xmlresolver/xmlresolver/5.3.3/xmlresolver-5.3.3-data.jar
+
+A Java runtime must also be installed (pkg install openjdk25).
+
+Pro flavor
+----------
+
+This port has two flavors: default (community) and pro. To build the
+pro flavor from source:
+
+  cd /usr/ports/print/publisher
+  make FLAVOR=pro install clean
