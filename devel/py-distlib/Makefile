@@ -1,5 +1,5 @@
 PORTNAME=	distlib
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,7 @@ USE_PYTHON=	pep517 autoplist pytest # few tests fail intermittently, see https:/
 NO_ARCH=	yes
 
 TEST_ENV=	PYTHONHASHSEED=0 # needed for tests to succeed
+
+# tests as of 0.4.1: 1 failed, 222 passed, 21 skipped, 49 warnings in 21.39s
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+-- Relax setuptools version requirement
+-- Upper limits on dependencies often break builds in the ports tree
+
+--- pyproject.toml.orig	2026-06-03 06:40:03 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 68,<75",
++    "setuptools >= 63",
+     "wheel"
+ ]
+ build-backend = 'setuptools.build_meta'
