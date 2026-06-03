@@ -30,8 +30,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython-test-exception-raiser>=1.0.2<2:devel
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
-CPE_VENDOR=	twistedmatrix
-
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	CONCH HTTP2 SERIAL TLS WEBSOCKET
