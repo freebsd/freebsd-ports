@@ -23,7 +23,7 @@ FLAVORS=		mysql mysqlactivesync pgsql pgsqlactivesync
 FLAVOR?=		${FLAVORS:[1]}
 
 USES=			cpe gettext-runtime gnustep objc pkgconfig shebangfix ssl
-CPE_VENDOR=		inverse
+CPE_VENDOR=		alinto
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 USE_RC_SUBR=		sogod
