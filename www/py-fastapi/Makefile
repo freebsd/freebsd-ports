@@ -28,7 +28,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}inline-snapshot>=0:devel/py-inline-snapshot
 		${PYTHON_PKGNAMEPREFIX}sqlmodel>=0:databases/py-sqlmodel@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	tiangolo
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
