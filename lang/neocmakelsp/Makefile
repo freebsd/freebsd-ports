@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2
+DISTVERSION=	0.10.3
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		assert_cmd-2.2.0 \
 		auto_impl-1.3.0 \
 		bitflags-2.11.0 \
-		borrow-or-share-0.2.4 \
 		bstr-1.12.1 \
 		bytes-1.11.1 \
 		cc-1.2.58 \
@@ -49,16 +48,17 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		crunchy-0.2.4 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
-		dashmap-6.1.0 \
+		dashmap-6.2.1 \
 		difflib-0.4.0 \
+		displaydoc-0.2.5 \
 		dlv-list-0.5.2 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		etcetera-0.11.0 \
 		fastrand-2.3.0 \
 		find-msvc-tools-0.1.9 \
-		fluent-uri-0.3.2 \
 		foldhash-0.1.5 \
+		form_urlencoded-1.2.2 \
 		futures-0.3.32 \
 		futures-channel-0.3.32 \
 		futures-core-0.3.32 \
@@ -67,6 +67,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		futures-sink-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
+		gen-lsp-types-0.6.0 \
 		getrandom-0.2.17 \
 		getrandom-0.4.2 \
 		glob-0.3.3 \
@@ -76,7 +77,16 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		httparse-1.10.1 \
+		icu_collections-2.2.0 \
+		icu_locale_core-2.2.0 \
+		icu_normalizer-2.2.0 \
+		icu_normalizer_data-2.2.0 \
+		icu_properties-2.2.0 \
+		icu_properties_data-2.2.0 \
+		icu_provider-2.2.0 \
 		id-arena-2.3.0 \
+		idna-1.1.0 \
+		idna_adapter-1.2.2 \
 		ignore-0.4.25 \
 		indexmap-2.13.0 \
 		indoc-2.0.7 \
@@ -87,9 +97,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		leb128fmt-0.1.0 \
 		libc-0.2.184 \
 		linux-raw-sys-0.12.1 \
+		litemap-0.8.2 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
-		lsp-types-f-0.99.0 \
 		memchr-2.8.0 \
 		mio-1.2.0 \
 		nu-ansi-term-0.50.3 \
@@ -103,6 +113,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		pathdiff-0.2.3 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.17 \
+		potential_utf-0.1.5 \
 		predicates-3.1.4 \
 		predicates-core-1.0.10 \
 		predicates-tree-1.0.13 \
@@ -111,8 +122,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		quote-1.0.45 \
 		r-efi-6.0.0 \
 		redox_syscall-0.5.18 \
-		ref-cast-1.0.25 \
-		ref-cast-impl-1.0.25 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
@@ -127,7 +136,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.149 \
-		serde_repr-0.1.20 \
 		serde_spanned-1.1.1 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
@@ -135,19 +143,20 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		socket2-0.6.3 \
+		stable_deref_trait-1.2.1 \
 		streaming-iterator-0.1.9 \
 		strsim-0.11.1 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.2 \
+		synstructure-0.13.2 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
 		termtree-0.5.1 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		tiny-keccak-2.0.2 \
-		tokio-1.50.0 \
-		tokio-macros-2.6.1 \
+		tinystr-0.8.3 \
+		tokio-1.52.0 \
+		tokio-macros-2.7.0 \
 		tokio-util-0.7.18 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
@@ -155,7 +164,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tower-0.5.3 \
 		tower-layer-0.3.3 \
-		tower-lsp-f-0.24.0 \
+		tower-lsp-f-0.25.0-rc3 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
@@ -169,6 +178,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		unicode-ident-1.0.24 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
+		url-2.5.8 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		valuable-0.1.1 \
 		wait-timeout-0.2.1 \
@@ -199,6 +210,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		wit-bindgen-rust-macro-0.51.0 \
 		wit-component-0.244.0 \
 		wit-parser-0.244.0 \
+		writeable-0.6.3 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerofrom-0.1.8 \
+		zerofrom-derive-0.1.7 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3 \
 		zmij-1.0.21
 
 PLIST_FILES=	bin/${PORTNAME}
