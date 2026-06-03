@@ -67,7 +67,7 @@ GCC_DEFAULT?=		14
 GHOSTSCRIPT_DEFAULT?=	10
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
-# Possible values: 1.24, 1.25, 1.26
+# Possible values: 1.25, 1.26
 GO_DEFAULT?=		1.25
 # Possible values: 1.8, 2.2, 3.0
 GUILE_DEFAULT?=		2.2
