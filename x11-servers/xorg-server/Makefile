@@ -100,7 +100,7 @@ PLIST_SUB+=	FONTPATHD="${FONTPATHD:S,^${PREFIX}/,,}"
 USE_GL+=	gl
 USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
 CPE_VENDOR=	x.org
-CPE_PRODUCT=	xorg-server
+CPE_PRODUCT=	x_server
 
 .if ${FLAVOR} == xorg
 USE_GL+=	gbm
