@@ -63,7 +63,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GH_ACCOUNT=	Blosc
 USE_GITHUB=	yes
 
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	blosc
 
 post-patch:
 # Clean up bundled libraries
