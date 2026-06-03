@@ -39,7 +39,13 @@ lib/libgbm%%SUFFIX%%.so.1.0.0
 %%radv%%lib/libvulkan_radeon%%SUFFIX%%.so
 %%NO_COINST%%libdata/pkgconfig/dri.pc
 %%NO_COINST%%libdata/pkgconfig/gbm.pc
+%%anv%%share/drirc.d/00-anv%%SUFFIX%%-defaults.conf
+%%crocus%%share/drirc.d/00-crocus%%SUFFIX%%-defaults.conf
+%%iris%%share/drirc.d/00-iris%%SUFFIX%%-defaults.conf
 share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
+%%panfrost%%share/drirc.d/00-panfrost%%SUFFIX%%-defaults.conf
+%%r600%%share/drirc.d/00-r600%%SUFFIX%%-defaults.conf
+%%radeonsi%%share/drirc.d/00-radeonsi%%SUFFIX%%-defaults.conf
 %%radv%%share/drirc.d/00-radv%%SUFFIX%%-defaults.conf
 %%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
 %%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json

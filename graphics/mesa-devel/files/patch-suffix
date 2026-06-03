@@ -31,23 +31,18 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  with_gallium_xa = get_option('gallium-xa') \
---- src/amd/vulkan/meson.build.orig	2026-05-27 20:30:38 UTC
+--- src/amd/vulkan/meson.build.orig	2026-06-03 18:25:19 UTC
 +++ src/amd/vulkan/meson.build
-@@ -38,11 +38,11 @@ radv_drirc = custom_target(
-     '--import-path', join_paths(dir_source_root, 'src/util'),
-     '--drirc-src', '@OUTPUT0@',
-     '--drirc-hdr', '@OUTPUT1@',
--    '--validate', join_paths(dir_source_root, 'src/util/00-radv-defaults.conf'),
-+    '--validate', join_paths(dir_source_root, 'src/util/00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix'))),
-   ],
-   depend_files : files(
-     join_paths(dir_source_root, 'src/util/drirc_gen.py'),
--    join_paths(dir_source_root, 'src/util/00-radv-defaults.conf'),
-+    join_paths(dir_source_root, 'src/util/00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix'))),
-   ),
- )
+@@ -31,7 +31,7 @@ radv_drirc = custom_target(
  
-@@ -252,7 +252,7 @@ libvulkan_radeon = shared_library(
+ radv_drirc = custom_target(
+   'radv_drirc',
+-  input  : [files('radv_drirc_gen.py'), drirc_gen, join_paths(dir_source_root, 'src/util/00-radv-defaults.conf')],
++  input  : [files('radv_drirc_gen.py'), drirc_gen, join_paths(dir_source_root, 'src/util/00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))],
+   output : ['radv_drirc.c', 'radv_drirc.h'],
+   command : [
+     prog_python, '@INPUT0@',
+@@ -250,7 +250,7 @@ libvulkan_radeon = shared_library(
  endif
  
  libvulkan_radeon = shared_library(
@@ -115,17 +110,17 @@ Library selection is handled by libglvnd and/or libmap.conf.
    gl_lib_version = '0.0.0'
    files_libglx += files(
      'g_glxglvnddispatchfuncs.c',
---- src/intel/vulkan/meson.build.orig	2026-05-27 20:30:38 UTC
+--- src/intel/vulkan/meson.build.orig	2026-06-03 18:25:19 UTC
 +++ src/intel/vulkan/meson.build
-@@ -102,7 +102,7 @@ libanv_drirc_files = custom_target(
-              libanv_drirc_args,
-              '--drirc-src', '@OUTPUT0@',
-              '--drirc-hdr', '@OUTPUT1@',
--             '--validate', join_paths(dir_source_root, 'src/util/00-mesa-defaults.conf')],
-+             '--validate', join_paths(dir_source_root, 'src/util/00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix')))],
- )
+@@ -95,7 +95,7 @@ libanv_drirc_files = custom_target(
  
- libanv_drirc = static_library(
+ libanv_drirc_files = custom_target(
+   'libanv_drirc',
+-  input : ['anv_drirc_gen.py', drirc_gen, join_paths(dir_source_root, 'src/util/00-anv-defaults.conf')],
++  input : ['anv_drirc_gen.py', drirc_gen, join_paths(dir_source_root, 'src/util/00-anv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))],
+   output : ['anv_drirc.c', 'anv_drirc.h'],
+   command : [prog_python, '@INPUT0@',
+              '-p', join_paths(dir_source_root, 'src/util/'),
 @@ -302,7 +302,7 @@ libvulkan_intel = shared_library(
  )
  
@@ -168,18 +163,62 @@ Library selection is handled by libglvnd and/or libmap.conf.
    ['core.c', shared_glapi_mapi_tmp_h],
    c_args : [
      c_msvc_compat_args,
---- src/util/meson.build.orig	2022-12-03 14:41:29 UTC
+--- src/util/meson.build.orig	2026-06-03 18:25:19 UTC
 +++ src/util/meson.build
-@@ -170,10 +170,10 @@ files_mesa_util = files(
-   'mesa_cache_db.h',
- )
+@@ -211,33 +211,33 @@ endif
+   files_mesa_util += files('cache_ops_null.c')
+ endif
  
 -files_drirc = files('00-mesa-defaults.conf')
 +files_drirc = files('00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
  
- if with_amd_vk
--  files_drirc += files('00-radv-defaults.conf')
-+  files_drirc += files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
- endif
+ foreach i : [
+-  [with_amd_vk, '00-radv-defaults.conf'],
+-  [with_intel_vk, '00-anv-defaults.conf'],
+-  [with_intel_hasvk, '00-hasvk-defaults.conf'],
+-  [with_nouveau_vk, '00-nvk-defaults.conf'],
+-  [with_microsoft_vk, '00-dzn-defaults.conf'],
+-  [with_freedreno_vk, '00-turnip-defaults.conf'],
+-  [with_gallium_r300, '00-r300-defaults.conf'],
+-  [with_gallium_iris, '00-iris-defaults.conf'],
+-  [with_gallium_crocus, '00-crocus-defaults.conf'],
+-  [with_gallium_asahi, '00-asahi-defaults.conf'],
+-  [with_gallium_v3d, '00-v3d-defaults.conf'],
+-  [with_asahi_vk, '00-hk-defaults.conf'],
+-  [with_panfrost_vk, '00-panvk-defaults.conf'],
+-  [with_gallium_virgl, '00-virtio_gpu-defaults.conf'],
+-  [with_gallium_panfrost, '00-panfrost-defaults.conf'],
+-  [with_gallium_radeonsi, '00-radeonsi-defaults.conf'],
+-  [with_gallium_zink, '00-zink-defaults.conf'],
+-  [with_gallium_r600, '00-r600-defaults.conf'],
+-  [with_gallium_freedreno, '00-msm-defaults.conf'],
+-  [with_gallium_d3d12, '00-d3d12-defaults.conf'],
+-  [with_gallium_svga, '00-vmwgfx-defaults.conf'],
++  [with_amd_vk, '00-radv@0@-defaults.conf'],
++  [with_intel_vk, '00-anv@0@-defaults.conf'],
++  [with_intel_hasvk, '00-hasvk@0@-defaults.conf'],
++  [with_nouveau_vk, '00-nvk@0@-defaults.conf'],
++  [with_microsoft_vk, '00-dzn@0@-defaults.conf'],
++  [with_freedreno_vk, '00-turnip@0@-defaults.conf'],
++  [with_gallium_r300, '00-r300@0@-defaults.conf'],
++  [with_gallium_iris, '00-iris@0@-defaults.conf'],
++  [with_gallium_crocus, '00-crocus@0@-defaults.conf'],
++  [with_gallium_asahi, '00-asahi@0@-defaults.conf'],
++  [with_gallium_v3d, '00-v3d@0@-defaults.conf'],
++  [with_asahi_vk, '00-hk@0@-defaults.conf'],
++  [with_panfrost_vk, '00-panvk@0@-defaults.conf'],
++  [with_gallium_virgl, '00-virtio_gpu@0@-defaults.conf'],
++  [with_gallium_panfrost, '00-panfrost@0@-defaults.conf'],
++  [with_gallium_radeonsi, '00-radeonsi@0@-defaults.conf'],
++  [with_gallium_zink, '00-zink@0@-defaults.conf'],
++  [with_gallium_r600, '00-r600@0@-defaults.conf'],
++  [with_gallium_freedreno, '00-msm@0@-defaults.conf'],
++  [with_gallium_d3d12, '00-d3d12@0@-defaults.conf'],
++  [with_gallium_svga, '00-vmwgfx@0@-defaults.conf'],
+ ]
+   if i[0]
+-    files_drirc += files(i[1])
++    files_drirc += files(i[1].format(get_option('egl-lib-suffix')))
+   endif
+ endforeach
  
- if with_tests
