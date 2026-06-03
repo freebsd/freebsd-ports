@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline \
+USES=		compiler:c11 cpe gmake ncurses pathfix pkgconfig readline \
 		shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
@@ -183,10 +183,7 @@ sigstore-verify: ${_sigstorebundle} checksum
 		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 
 pre-test:
-	@${ECHO_CMD} "=== NOTE: the py314-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
-.if ${PORT_OPTIONS:MDEBUG}
-	@${ECHO_CMD} "=== NOTE: The test_ssl test is known to fail with DEBUG option enabled ==="
-.endif
+	@${ECHO_CMD} "=== NOTE: the py315-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
 .if empty(PORT_OPTIONS:MIPV6)
 	@${ECHO_CMD} "=== NOTE: Some asynch tests require IPV6 support enabled, expect some test failures ==="
 .endif
