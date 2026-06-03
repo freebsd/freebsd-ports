@@ -19,7 +19,7 @@ USES=		cpe gem
 
 NO_ARCH=	yes
 
-CPE_VENDOR=	john_nunemaker
+CPE_VENDOR=	jnunemaker
 
 PORTSCOUT=	limit:^0\.21\.
 
