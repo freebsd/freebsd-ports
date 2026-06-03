@@ -19,8 +19,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVO
 USES=		cpe python
 USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/pydantic/pydantic/issues/4535, https://github.com/HypothesisWorks/hypothesis/issues/3703
 
-CPE_VENDOR=	pydantic_project
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
