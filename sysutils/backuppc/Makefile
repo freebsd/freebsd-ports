@@ -21,7 +21,6 @@ USES=		cpe perl5
 CONFLICTS_INSTALL=	backuppc4 backuppc-devel
 
 USE_RC_SUBR=	backuppc
-CPE_VENDOR=	craig_barratt
 NO_ARCH=	yes
 NO_BUILD=	yes
 
