@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cpe gmake gnome libtool pkgconfig:build
 
-CPE_VENDOR=	trustwave
+CPE_VENDOR=	owasp
 
 USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
