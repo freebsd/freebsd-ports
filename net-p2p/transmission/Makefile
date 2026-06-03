@@ -1,5 +1,5 @@
 PORTNAME=	transmission
-DISTVERSION=	4.1.1
+DISTVERSION=	4.1.2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	mondo.debater_0q@icloud.com
