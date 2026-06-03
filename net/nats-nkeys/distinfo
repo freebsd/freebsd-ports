@@ -1,5 +1,5 @@
-TIMESTAMP = 1776522097
-SHA256 (go/net_nats-nkeys/nkeys-v0.4.15/v0.4.15.mod) = b408352087d0b0140933b83034cddc08f728f2b16bc79661468068c60e283215
-SIZE (go/net_nats-nkeys/nkeys-v0.4.15/v0.4.15.mod) = 147
-SHA256 (go/net_nats-nkeys/nkeys-v0.4.15/v0.4.15.zip) = f8a75cd4d959035655f84c2264f9de9177a2cfa066ba803d58b2df3d5d562c76
-SIZE (go/net_nats-nkeys/nkeys-v0.4.15/v0.4.15.zip) = 38392
+TIMESTAMP = 1780474267
+SHA256 (go/net_nats-nkeys/nkeys-v0.4.16/v0.4.16.mod) = c5b9a84b813a2659a6898bdd8c7e6c1b603e8076ee6e4aff64175b3a57c19acc
+SIZE (go/net_nats-nkeys/nkeys-v0.4.16/v0.4.16.mod) = 126
+SHA256 (go/net_nats-nkeys/nkeys-v0.4.16/v0.4.16.zip) = 622f43893c8136fae2ee5a3b4375e5e6812ad564fde63fc80b806c1438428a31
+SIZE (go/net_nats-nkeys/nkeys-v0.4.16/v0.4.16.zip) = 38811
