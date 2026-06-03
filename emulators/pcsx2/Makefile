@@ -1,6 +1,5 @@
 PORTNAME=	pcsx2
-PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 
@@ -26,6 +25,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libplutovg.so:graphics/plutovg \
 		libplutosvg.so:graphics/plutosvg \
 		libshaderc_shared.so:graphics/shaderc \
+		libxkbcommon.so:x11/libxkbcommon \
 		libcurl.so:ftp/curl \
 		libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
@@ -73,7 +73,7 @@ CMAKE_ARGS+=	\
 		-DENABLE_TESTS:BOOL=OFF
 
 OPTIONS_DEFINE=	DOCS
-PORTDOCS=	Debugger.pdf GameIndex.pdf
+PORTDOCS=	GameIndex.pdf
 
 # Stable releases use an even minor number
 PORTSCOUT=	limit:^v[0-9]+.[02468].
