@@ -1,5 +1,5 @@
 PORTNAME=	langsmith
-DISTVERSION=	0.7.34
+DISTVERSION=	0.8.8
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=1.0.0:www/py-requests-toolbelt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uuid-utils>=0.12.0:misc/py-uuid-utils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}websockets>=15.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xxhash>=3.0.0:devel/py-xxhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.23.0:archivers/py-zstandard@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.30.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
@@ -31,5 +32,9 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 0.8.8: 187 failed, 799 passed, 105 skipped, 3 xfailed, 66 warnings, 17 errors in 608.54s (0:10:08), many or all faiures are due to missing API keys
 
 .include <bsd.port.mk>
