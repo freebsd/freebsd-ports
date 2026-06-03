@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		cpe go:modules
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	github
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
