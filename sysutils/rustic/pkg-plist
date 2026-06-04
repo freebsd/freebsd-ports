@@ -3,9 +3,11 @@ bin/rustic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/full.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/local.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opendal-source.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/par2.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rustic.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/b2.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/gdrive.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/rclone_ovh-hot-cold.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/s3_aws.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/s3_idrive.toml
