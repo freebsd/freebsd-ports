@@ -1,6 +1,5 @@
 PORTNAME=	mattermost
-PORTVERSION=	10.11.14
-PORTREVISION=	2
+PORTVERSION=	10.11.19
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
@@ -9,7 +8,7 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Open source Slack-alternative in Golang and React
 WWW=		https://mattermost.org/
 
-LICENSE=	MIT
+LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 ONLY_FOR_ARCHS=	aarch64 amd64
