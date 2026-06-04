@@ -1,3 +1,29 @@
+  <vuln vid="0d6d9d9b-5feb-11f1-8607-8447094a420f">
+    <topic>Apache httpd -- DoS exploit in HTTP/2</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.67_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Calif security reports:</p>
+	<blockquote cite="https://blog.calif.io/p/codex-discovered-a-hidden-http2-bomb">
+	  <p>Remote DoS in mod_http2</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49975</cvename>
+      <url>https://blog.calif.io/p/codex-discovered-a-hidden-http2-bomb</url>
+    </references>
+    <dates>
+      <discovery>2026-06-02</discovery>
+      <entry>2026-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36cb0ced-5e23-11f1-86a2-589cfc10a551">
     <topic>xwayland -- Multiple vulnerabilities</topic>
     <affects>
