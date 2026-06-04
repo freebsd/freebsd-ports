@@ -626,6 +626,7 @@
     SUBDIR += minecraft-server
     SUBDIR += minerbold
     SUBDIR += minetest_game
+    SUBDIR += minetestmapper
     SUBDIR += minigalaxy
     SUBDIR += mirrormagic
     SUBDIR += miscom
