@@ -5336,3 +5336,4 @@ www/redmine51||2026-05-31|Has expired: Please migrate to newer version. Ruby 3.2
 devel/rye||2026-06-02|Has expired: Rye is no longer developed. All users should migrate to uv, the successor project from the same maintainers, which is actively maintained and much more widely used
 x11/hamclock||2026-06-02|Has expired: Upstream programmer is deceased upstream server discontinued in June
 devel/twiggy||2026-06-02|Archived upstream, no longer maintained, and has an unclear latest release number
+dns/dnsmasq-devel|dns/dnsmasq|2026-06-04|Discontinued -devel port, use dns/dnsmasq instead
