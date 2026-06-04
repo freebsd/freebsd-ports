@@ -15,10 +15,6 @@ lib/cmake/ecflow/ecflow-config-version.cmake
 lib/cmake/ecflow/ecflow-config.cmake
 lib/cmake/ecflow/ecflow-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ecflow/ecflow-targets.cmake
-%%PYTHON_SITELIBDIR%%/ecflow/__init__.py
-%%PYTHON_SITELIBDIR%%/ecflow/ecf.py
-%%PYTHON_SITELIBDIR%%/ecflow/ecflow.so
-%%PYTHON_SITELIBDIR%%/ecflow/sms2ecf.py
 %%DATADIR%%/%%ETCDIR%%_test_ui.sh
 %%DATADIR%%/%%ETCDIR%%_ui_create_jira_issue.sh
 %%DATADIR%%/%%ETCDIR%%_ui_node_state_diag.sh
