@@ -1,6 +1,6 @@
 PORTNAME=	json-repair
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.59.10
+DISTVERSION=	0.60.1
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI # missing file for tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,5 +27,6 @@ GH_PROJECT=	${PORTNAME:S/-/_/}
 NO_ARCH=	yes
 
 # tests as of 0.59.10: 265 passed
+# tests as of 0.60.1: 6 failed, 272 passed, 1 skipped in 24.94s, see https://github.com/mangiucugna/json_repair/issues/199
 
 .include <bsd.port.mk>
