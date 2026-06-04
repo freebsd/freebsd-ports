@@ -1,6 +1,5 @@
 PORTNAME=	warzone2100
-DISTVERSION=	4.6.3
-PORTREVISION=	2
+DISTVERSION=	4.7.0
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_src
@@ -9,8 +8,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 WWW=		https://wz2100.net/
-
-BROKEN=		Fails to build, error: no member named 'eVkColorspaceSrgbNonlinear' in 'vk::ColorSpaceKHR'
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -30,7 +27,8 @@ LIB_DEPENDS= 	libcurl.so:ftp/curl \
 		libsodium.so:security/libsodium \
 		libtheoradec.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis \
-		libzip.so:archivers/libzip
+		libzip.so:archivers/libzip \
+		libturbojpeg.so:graphics/libjpeg-turbo
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USES=		cmake bison compiler:c++11-lib gl openal:al pkgconfig \
@@ -40,7 +38,8 @@ USE_SDL=	sdl3
 CMAKE_ON=	WZ_DISABLE_FETCHCONTENT_GIT_CLONE \
 		CMAKE_DISABLE_FIND_PACKAGE_Asciidoctor \
 		CMAKE_DISABLE_FIND_PACKAGE_Git \
-		FETCHCONTENT_FULLY_DISCONNECTED
+		WZ_USE_SYSTEM_LIBJPEG_TURBO \
+		WZ_SKIP_ELF_SEPARATE_DEBUG
 CMAKE_OFF=	FMT_INSTALL \
 		WZ_DOWNLOAD_PREBUILT_PACKAGES \
 		WZ_ENABLE_WARNINGS_AS_ERRORS \

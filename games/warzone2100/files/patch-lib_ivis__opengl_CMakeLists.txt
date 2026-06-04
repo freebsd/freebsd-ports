@@ -1,0 +1,15 @@
+--- lib/ivis_opengl/CMakeLists.txt.orig	2026-06-08 11:42:23 UTC
++++ lib/ivis_opengl/CMakeLists.txt
+@@ -178,9 +178,9 @@ if (WZ_USE_SYSTEM_LIBJPEG_TURBO)
+ option(WZ_USE_SYSTEM_LIBJPEG_TURBO "Build with the system libjpeg-turbo library" ${_DEFAULT_WZ_USE_SYSTEM_LIBJPEG_TURBO_VALUE})
+ 
+ if (WZ_USE_SYSTEM_LIBJPEG_TURBO)
+-	find_package(libjpeg-turbo CONFIG REQUIRED)
+-	target_link_libraries(ivis-opengl PRIVATE $<IF:$<TARGET_EXISTS:libjpeg-turbo::turbojpeg>,libjpeg-turbo::turbojpeg,libjpeg-turbo::turbojpeg-static>)
+-
++	find_package(PkgConfig REQUIRED)
++	pkg_check_modules(libturbojpeg REQUIRED IMPORTED_TARGET libturbojpeg)
++	target_link_libraries(ivis-opengl PRIVATE PkgConfig::libturbojpeg)
+ else()
+ 	include(ExternalProject)
+ 
