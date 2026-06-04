@@ -22,7 +22,7 @@ LIB_DEPENDS=	libbarvinok.so:math/barvinok \
 		libisl.so:devel/isl \
 		libpolylibgmp.so:math/polylib
 
-USES=		cmake:indirect llvm:15 python # w/out llvm:* the build fails to find LLVMgold.so
+USES=		cmake:indirect llvm:min=16 python # w/out llvm:* the build fails to find LLVMgold.so
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
