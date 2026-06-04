@@ -11,7 +11,6 @@ include/RAJA/internal/Iterators.hpp
 include/RAJA/internal/MemUtils_CPU.hpp
 include/RAJA/internal/RAJAVec.hpp
 include/RAJA/internal/ThreadUtils_CPU.hpp
-include/RAJA/internal/fault_tolerance.hpp
 include/RAJA/internal/foldl.hpp
 include/RAJA/internal/get_platform.hpp
 include/RAJA/pattern/WorkGroup.hpp
@@ -20,6 +19,7 @@ include/RAJA/pattern/WorkGroup/WorkRunner.hpp
 include/RAJA/pattern/WorkGroup/WorkStorage.hpp
 include/RAJA/pattern/WorkGroup/WorkStruct.hpp
 include/RAJA/pattern/atomic.hpp
+include/RAJA/pattern/detail/TypeTraits.hpp
 include/RAJA/pattern/detail/algorithm.hpp
 include/RAJA/pattern/detail/forall.hpp
 include/RAJA/pattern/detail/multi_reduce.hpp
@@ -39,14 +39,15 @@ include/RAJA/pattern/kernel/Reduce.hpp
 include/RAJA/pattern/kernel/Region.hpp
 include/RAJA/pattern/kernel/Tile.hpp
 include/RAJA/pattern/kernel/TileTCount.hpp
+include/RAJA/pattern/kernel/TypeTraits.hpp
 include/RAJA/pattern/kernel/internal.hpp
 include/RAJA/pattern/kernel/internal/LoopData.hpp
 include/RAJA/pattern/kernel/internal/LoopTypes.hpp
 include/RAJA/pattern/kernel/internal/Statement.hpp
 include/RAJA/pattern/kernel/internal/StatementList.hpp
 include/RAJA/pattern/kernel/internal/Template.hpp
-include/RAJA/pattern/kernel/type-traits.hpp
 include/RAJA/pattern/launch.hpp
+include/RAJA/pattern/launch/launch_context_policy.hpp
 include/RAJA/pattern/launch/launch_core.hpp
 include/RAJA/pattern/multi_reduce.hpp
 include/RAJA/pattern/params/forall.hpp
@@ -90,6 +91,7 @@ include/RAJA/pattern/tensor/internal/TensorRegisterBase.hpp
 include/RAJA/pattern/tensor/internal/TensorTileExec.hpp
 include/RAJA/pattern/tensor/internal/VectorRegisterImpl.hpp
 include/RAJA/pattern/tensor/stats.hpp
+include/RAJA/pattern/thread.hpp
 include/RAJA/policy/MultiPolicy.hpp
 include/RAJA/policy/PolicyBase.hpp
 include/RAJA/policy/WorkGroup.hpp
@@ -179,6 +181,7 @@ include/RAJA/policy/openmp/region.hpp
 include/RAJA/policy/openmp/scan.hpp
 include/RAJA/policy/openmp/sort.hpp
 include/RAJA/policy/openmp/synchronize.hpp
+include/RAJA/policy/openmp/thread.hpp
 include/RAJA/policy/openmp_target.hpp
 include/RAJA/policy/openmp_target/WorkGroup.hpp
 include/RAJA/policy/openmp_target/WorkGroup/Dispatcher.hpp
@@ -209,6 +212,7 @@ include/RAJA/policy/sequential/reduce.hpp
 include/RAJA/policy/sequential/region.hpp
 include/RAJA/policy/sequential/scan.hpp
 include/RAJA/policy/sequential/sort.hpp
+include/RAJA/policy/sequential/thread.hpp
 include/RAJA/policy/simd.hpp
 include/RAJA/policy/simd/forall.hpp
 include/RAJA/policy/simd/kernel/For.hpp
@@ -265,6 +269,7 @@ include/RAJA/policy/tensor/arch/scalar/scalar.hpp
 include/RAJA/policy/tensor/arch/scalar/traits.hpp
 include/RAJA/policy/tensor/arch_impl.hpp
 include/RAJA/policy/tensor/policy.hpp
+include/RAJA/policy/thread_auto.hpp
 include/RAJA/util/BitMask.hpp
 include/RAJA/util/CaliperPlugin.hpp
 include/RAJA/util/CombiningAdapter.hpp
@@ -300,7 +305,6 @@ include/RAJA/util/concepts.hpp
 include/RAJA/util/for_each.hpp
 include/RAJA/util/macros.hpp
 include/RAJA/util/math.hpp
-include/RAJA/util/mutex.hpp
 include/RAJA/util/plugins.hpp
 include/RAJA/util/reduce.hpp
 include/RAJA/util/resource.hpp
