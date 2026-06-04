@@ -1,5 +1,6 @@
 PORTNAME=	valentina
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +22,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
-GL_TAGNAME=	d4386130f4017c499c92b5a41a378f6c8a9db65f
+GL_TAGNAME=	54b3c6a47d7c81df864fae531396f19955ab1e22
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 
