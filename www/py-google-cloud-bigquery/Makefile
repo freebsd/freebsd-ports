@@ -1,6 +1,5 @@
 PORTNAME=	google-cloud-bigquery
-DISTVERSION=	3.28.0
-PORTREVISION=	1
+DISTVERSION=	3.41.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,15 +17,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.11.1:www/py-google-api-co
 		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=2.4.1:www/py-google-cloud-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-resumable-media>=2.0.0:www/py-google-resumable-media@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpcio>=1.49.1:devel/py-grpcio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=20.0.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=24.2.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.15.0:devel/py-proto-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.19.5:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.2:devel/py-python-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-testutils>0:www/py-google-cloud-testutils@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # 31 tests fail, tests require missing dependencies like db-tests, etc
+USE_PYTHON=	pep517 autoplist pytest # 31 tests fail, tests require missing dependencies like db-tests, etc
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 NO_ARCH=	yes
 
