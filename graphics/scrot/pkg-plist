@@ -1,0 +1,4 @@
+bin/scrot
+share/bash-completion/completions/scrot
+share/man/man1/scrot.1.gz
+share/zsh/site-functions/_scrot
