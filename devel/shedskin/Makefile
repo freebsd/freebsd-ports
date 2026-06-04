@@ -1,6 +1,6 @@
 PORTNAME=	shed-skin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.11
+DISTVERSION=	0.9.12
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no test files
 DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
@@ -13,7 +13,7 @@ WWW=		https://shedskin.github.io/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	boehm-gc>0:devel/boehm-gc \
 		pcre>0:devel/pcre
 
