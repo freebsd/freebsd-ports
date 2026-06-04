@@ -59,9 +59,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo desktop-file-utils display:test electron:39,build,test \
+USES=		cargo desktop-file-utils display:test electron:42,build,test \
 		gl gmake gnome gssapi:mit iconv:wchar_t jpeg localbase:ldflags \
-		nodejs:22,build pkgconfig python:build shebangfix xorg
+		nodejs:24,build pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
@@ -80,8 +80,11 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
+CFLAGS+=	-Wno-error=implicit-function-declaration
+
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
+USE_CXXSTD=	c++20
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xtst
 USE_GL=		gbm gl glesv2
@@ -135,6 +138,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${ELECTRON_VER}\2|' \
 		${WRKSRC}/.npmrc
+	@${REINPLACE_CMD} -E "/const electronVersion/s/'[0-9]+\.[0-9]+\.[0-9]+'/'${ELECTRON_VER}'/" \
+		${WRKSRC}/build/lib/electron.ts
 	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
 		${WRKSRC}/remote/.npmrc
 	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
@@ -351,7 +356,7 @@ build-remote-extension-host: configure pre-build
 ### targets for port maintainer(s)
 patch-package-json: extract
 # add node module for signature verification of extensions from Open VSX Registry
-	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/patch-package.json
+	@${PATCH} -s -p0 -d ${WRKSRC} < ${PATCHDIR}/patch-package.json
 
 make-node-modules-archive: extract patch-package-json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"

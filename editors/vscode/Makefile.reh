@@ -34,7 +34,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libsecret-1.so:security/libsecret
 
 USES=		cargo electron:env gssapi:mit localbase:ldflags \
-		nodejs:22,build pkgconfig python:build shebangfix
+		nodejs:24,build pkgconfig python:build shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
@@ -49,10 +49,14 @@ CARGO_CARGOTOML_RSPACK=		${WRKSRC}/rspack/Cargo.toml
 CARGO_CARGOLOCK_RSPACK=		${WRKSRC}/rspack/Cargo.lock
 CARGO_CARGOTOML=		${CARGO_CARGOTOML_CLIPBOARD}
 CARGO_CARGOLOCK=		${CARGO_CARGOLOCK_CLIPBOARD}
+CARGO_BUILDDEP=	any-version
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
+CFLAGS+=	-Wno-error=implicit-function-declaration
+
+USE_CXXSTD=	c++20
 USE_ELECTRON=	npm:npm
 
 SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
