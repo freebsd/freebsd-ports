@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260605:
+  AFFECTS: Users of dns/dnsmasq-devel
+  AUTHOR: mandree@FreeBSD.org
+
+  The dns/dnsmasq-devel port has been unable to keep the pace of the upstream
+  releases due project admin issues beyond its maintainer's control. At the
+  same time, dns/dnsmasq is now at the 2.93 release, thus newer than
+  dnsmasq-devel.  The -devel port is no longer useful at this time.
+
+  Users are sought to replace the dnsmasq-devel port and install dnsmasq
+  instead. The configuration including rc.conf settings are compatible,
+  so a simple "pkg install dnsmasq" or, for portmaster users,
+  "portmaster -o dns/dnsmasq dns/dnsmasq-devel" should achieve that.
+
 20260601:
   AFFECTS: Users of security/lego
   AUTHOR: matt@matthoran.com

@@ -5338,3 +5338,4 @@ devel/rye||2026-06-02|Has expired: Rye is no longer developed. All users should 
 x11/hamclock||2026-06-02|Has expired: Upstream programmer is deceased upstream server discontinued in June
 devel/twiggy||2026-06-02|Archived upstream, no longer maintained, and has an unclear latest release number
 audio/surge-synthesizer-lv2|audio/surge-synthesizer-xt-lv2|2026-06-04|Retire older surge-synthesizer-lv2 in favor of new gen surge-synthesizer-xt-lv2
+dns/dnsmasq-devel|dns/dnsmasq|2026-06-05|Discontinued -devel port, use dns/dnsmasq instead
