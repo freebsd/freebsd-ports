@@ -1,3 +1,51 @@
+  <vuln vid="0823ac26-6040-11f1-ba4a-50ebf6bdf8e9">
+    <topic>PowerDNS -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><lt>5.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2026/05/20/powerdns-security-advisory-2026-06-for-powerdns-authoritative-server">
+	<p>2025-07: Internal logic flaw in cache management can lead to
+	a denial of service in Recursor</p>
+	  <p>When using views, queries sent using TCP Proxy Protocol will select
+	    the view according to the address of the proxy, rather than the address
+	    of the initial query. This can lead to wrong data being returned.</p>
+	  <p>Missing escaping of special characters (such as $ or @) in DNS names
+	    received during an AXFR operation can lead to an incorrect
+	    (non-parseable) Bind backend configuration to be written, causing this
+	    backend to fail until manual operation is performed to fix the
+	    configuration.</p>
+	  <p>Missing sanity checks of the answer to the initial SOA query, when
+	    running in auto-secondary mode and receiving a notification for an
+	    not-yet-known domain may cause the server to crash.</p>
+	  <p>Multiple concurrency and locking defects in the GSS-TSIG code can
+	    lead to memory corruption due to accidental data structure sharing,
+	    which can in turn lead to a program crash.</p>
+	  <p>Missing proper escaping of double-quote characters when computing
+	    labels will cause AXFR of a catalog zone with a member whose producer
+	    group option contains such a character to fail.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-41999</cvename>
+      <cvename>CVE-2026-42000</cvename>
+      <cvename>CVE-2026-42001</cvename>
+      <cvename>CVE-2026-42002</cvename>
+      <cvename>CVE-2026-42396</cvename>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-06.html</url>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d6d9d9b-5feb-11f1-8607-8447094a420f">
     <topic>Apache httpd -- DoS exploit in HTTP/2</topic>
     <affects>
