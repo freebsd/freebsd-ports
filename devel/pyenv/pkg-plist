@@ -305,8 +305,8 @@ libexec/pyenv-plugins/python-build/share/python-build/3.14.5
 libexec/pyenv-plugins/python-build/share/python-build/3.14.5t
 libexec/pyenv-plugins/python-build/share/python-build/3.15t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15-dev
-libexec/pyenv-plugins/python-build/share/python-build/3.15.0b1
-libexec/pyenv-plugins/python-build/share/python-build/3.15.0b1t
+libexec/pyenv-plugins/python-build/share/python-build/3.15.0b2
+libexec/pyenv-plugins/python-build/share/python-build/3.15.0b2t
 libexec/pyenv-plugins/python-build/share/python-build/3.16t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.16-dev
 libexec/pyenv-plugins/python-build/share/python-build/activepython-2.7.14
@@ -1267,7 +1267,6 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy3.5-6.0.0
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.5-6.0.0-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.5-7.0.0
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.5-7.0.0-src
-libexec/pyenv-plugins/python-build/share/python-build/pypy3.5-c-jit-latest
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.6-7.0.0
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.6-7.0.0-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.6-7.1.0
@@ -1300,7 +1299,6 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy3.7-7.3.8
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.7-7.3.8-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.7-7.3.9
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.7-7.3.9-src
-libexec/pyenv-plugins/python-build/share/python-build/pypy3.7-c-jit-latest
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.8-7.3.6
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.8-7.3.6-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.8-7.3.7
