@@ -1,7 +1,9 @@
 PORTNAME=	dtv-scan-tables
-PORTVERSION=	20250609
+DISTVERSION=	2026-03-16
+DISTVERSIONSUFFIX=	-7a595d06a6b0
+PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	LOCAL/decke
+MASTER_SITES=	https://linuxtv.org/downloads/dtv-scan-tables/
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Digital TV scan tables from linuxtv.org
@@ -12,10 +14,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 
-USES=		tar:xz
+USES=		tar:bz2
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/usr/share/dvb
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
