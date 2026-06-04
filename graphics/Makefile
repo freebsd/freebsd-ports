@@ -1247,6 +1247,7 @@
     SUBDIR += timg
     SUBDIR += tintfu
     SUBDIR += tinyows
+    SUBDIR += tippecanoe
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += tslib
