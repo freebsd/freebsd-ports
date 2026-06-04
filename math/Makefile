@@ -584,6 +584,7 @@
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-divand
     SUBDIR += octave-forge-doctest
+    SUBDIR += octave-forge-dsppack
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-fda
     SUBDIR += octave-forge-femoctave
