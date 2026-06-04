@@ -1,11 +1,13 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.93rc1 # remember to bump PORTEPOCH when going from test to rc!
+DISTVERSION=	2.93 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	8
 CATEGORIES=	dns
 MASTER_SITES=	LOCAL/mandree/ \
-		https://www.thekelleys.org.uk/dnsmasq/release-candidates/
+		https://www.thekelleys.org.uk/dnsmasq/
+#MASTER_SITES=	LOCAL/mandree/ \
+#		https://www.thekelleys.org.uk/dnsmasq/release-candidates/
 #MASTER_SITES=	LOCAL/mandree/ \
 #		https://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
@@ -16,7 +18,8 @@ WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Short-lived test branch, to be removed after v2.93 release
+DEPRECATED=	Short-lived test branch, to be removed after 2026Q2
+EXPIRATION_DATE=2026-06-30
 
 USES=		compiler cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
