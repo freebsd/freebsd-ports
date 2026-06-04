@@ -1,5 +1,6 @@
 PORTNAME=	epazote
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io

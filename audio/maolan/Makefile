@@ -1,5 +1,6 @@
 PORTNAME=	maolan
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	meka@tilda.center

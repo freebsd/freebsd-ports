@@ -1,6 +1,6 @@
 PORTNAME=	regress
 PORTVERSION=	2025.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/crate-py/regress/releases/download/v${PORTVERSION}/

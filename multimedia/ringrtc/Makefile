@@ -1,7 +1,7 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.67.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:boringssl \
 		LOCAL/mikael/ringrtc/:build \

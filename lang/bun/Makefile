@@ -1,7 +1,7 @@
 PORTNAME=	bun
 DISTVERSIONPREFIX=	bun-v
 DISTVERSION=	1.3.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	GH \
 		https://github.com/oven-sh/zig/releases/download/autobuild-04e7f6ac1e009525bc00934f20199c68f04e0a24/:ovenzig \

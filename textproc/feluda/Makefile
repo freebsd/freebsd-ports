@@ -1,6 +1,7 @@
 PORTNAME=	feluda
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.0 # Cargo.lock patched: `make patch cargo-crates`
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	nxjoseph@FreeBSD.org

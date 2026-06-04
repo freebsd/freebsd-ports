@@ -1,6 +1,7 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
