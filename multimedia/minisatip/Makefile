@@ -1,5 +1,5 @@
 PORTNAME=	minisatip
-PORTVERSION=	2.0.80
+PORTVERSION=	2.0.81
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia
@@ -17,11 +17,11 @@ USES=		cmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	catalinii
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 USE_RC_SUBR=	${PORTNAME}
 ALL_TARGET=	minisatip
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
