@@ -1,5 +1,5 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -8,8 +8,7 @@ WWW=		https://vcmi.eu/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libboost_atomic.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libfuzzylite.so:devel/fuzzylite \
 		libminizip.so:archivers/minizip \
 		libsquish.so:graphics/squish \
@@ -30,19 +29,25 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON \
 
 PORTDOCS=	ChangeLog.md
 
-OPTIONS_DEFINE=	DOCS MMAI QT
-OPTIONS_DEFAULT=	QT
+OPTIONS_DEFINE=	DOCS MMAI NLS QT VIDEO
+OPTIONS_DEFAULT=	QT VIDEO
 OPTIONS_SUB=	yes
 
 MMAI_DESC=	Experimental machine learning-based combat AI
 MMAI_LIB_DEPENDS=	libonnxruntime.so:misc/onnxruntime
 MMAI_CMAKE_OFF=	-DENABLE_MMAI:BOOL=OFF
 
+NLS_USES=	gettext-tools
+NLS_CMAKE_OFF=	-DENABLE_TRANSLATIONS:BOOL=OFF
+
 QT_DESC=	Build Qt-based game launcher and map editor
 QT_USES=	qt:5
 QT_USE=		QT=buildtools:build,linguisttools:build,qmake:build \
 		QT=core,gui,network,svg,widgets,xml
 QT_CMAKE_OFF=	-DENABLE_LAUNCHER:BOOL=OFF -DENABLE_EDITOR:BOOL=OFF
+
+VIDEO_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+VIDEO_CMAKE_OFF=	-DENABLE_VIDEO:BOOL=OFF
 
 post-patch:
 	@${REINPLACE_CMD} -e '/QT NAMES/s, Qt6,,' ${WRKSRC}/CMakeLists.txt
@@ -56,3 +61,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
+VIDEO_DESC+=	using FFmpeg
