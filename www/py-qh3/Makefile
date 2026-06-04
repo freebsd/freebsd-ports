@@ -1,7 +1,6 @@
 PORTNAME=	qh3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
-PORTREVISION=	1
+DISTVERSION=	1.9.1
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.2:devel/py-maturin@${PY_FLAVOR}
 		cmake:devel/cmake-core
 
 USES=		cargo llvm:build python shebangfix
-USE_PYTHON=	pep517 autoplist pytest # tests fail to run because they can't find qh3._hazmat for some reason
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jawah
@@ -31,13 +30,13 @@ SHEBANG_GLOB=	*.sh
 
 CARGO_CRATES=	aes-0.8.4 \
 		aho-corasick-1.1.4 \
-		asn1-rs-0.7.1 \
+		asn1-rs-0.7.2 \
 		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
-		autocfg-1.5.0 \
+		autocfg-1.5.1 \
 		aws-lc-fips-sys-0.13.14 \
-		aws-lc-rs-1.16.3 \
-		aws-lc-sys-0.40.0 \
+		aws-lc-rs-1.17.0 \
+		aws-lc-sys-0.41.0 \
 		base64ct-1.8.3 \
 		bincode-1.3.3 \
 		bindgen-0.72.1 \
@@ -45,7 +44,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		cbc-0.1.2 \
-		cc-1.2.61 \
+		cc-1.2.63 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -63,12 +62,12 @@ CARGO_CRATES=	aes-0.8.4 \
 		der_derive-0.7.3 \
 		deranged-0.5.8 \
 		digest-0.10.7 \
-		displaydoc-0.2.5 \
+		displaydoc-0.2.6 \
 		dsa-0.6.3 \
 		dunce-1.0.5 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.2.0 \
-		either-1.15.0 \
+		either-1.16.0 \
 		fiat-crypto-0.2.9 \
 		find-msvc-tools-0.1.9 \
 		flagset-0.4.7 \
@@ -97,15 +96,15 @@ CARGO_CRATES=	aes-0.8.4 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		litemap-0.8.2 \
-		log-0.4.29 \
+		log-0.4.30 \
 		ls-qpack-rs-0.3.1 \
 		ls-qpack-rs-sys-0.3.1 \
-		memchr-2.8.0 \
+		memchr-2.8.1 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
 		num-bigint-0.4.6 \
 		num-bigint-dig-0.8.6 \
-		num-conv-0.2.1 \
+		num-conv-0.2.2 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
 		num-traits-0.2.19 \
@@ -157,9 +156,10 @@ CARGO_CRATES=	aes-0.8.4 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
+		shlex-2.0.1 \
 		signature-2.2.0 \
 		smallvec-1.15.1 \
-		socket2-0.6.3 \
+		socket2-0.6.4 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.1 \
@@ -177,7 +177,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		tls_codec_derive-0.4.2 \
 		tracing-0.1.44 \
 		tracing-core-0.1.36 \
-		typenum-1.20.0 \
+		typenum-1.20.1 \
 		unicode-ident-1.0.24 \
 		untrusted-0.9.0 \
 		utf8_iter-1.0.4 \
@@ -203,23 +203,27 @@ CARGO_CRATES=	aes-0.8.4 \
 		x509-parser-0.18.1 \
 		yoke-0.8.2 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.48 \
-		zerocopy-derive-0.8.48 \
-		zerofrom-0.1.7 \
+		zerocopy-0.8.50 \
+		zerocopy-derive-0.8.50 \
+		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
 		zeroize_derive-1.4.3 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3
-CARGO_CRATES+=	python3-dll-a-0.2.9
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
+TEST_ARGS=	--import-mode=importlib
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.3.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.15.1:devel/py-pytest-mock@${PY_FLAVOR}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
+
+# tests as of 1.9.1: 578 passed in 22.99s
 
 .include <bsd.port.mk>
