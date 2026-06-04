@@ -1,6 +1,6 @@
 PORTNAME=	ruff
-DISTVERSION=	0.15.15
-PORTREVISION=	1
+DISTVERSION=	0.15.16
+PORTREVISION=	0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,7 +46,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		arc-swap-1.9.1 \
 		argfile-1.0.0 \
 		arrayvec-0.7.6 \
-		assert_fs-1.1.3 \
+		assert_fs-1.1.4 \
 		attribute-derive-0.10.3 \
 		attribute-derive-macro-0.10.3 \
 		autocfg-1.5.0 \
@@ -93,7 +93,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		colorchoice-1.0.4 \
 		colored-2.2.0 \
 		colored-3.1.1 \
-		compact_str-0.9.0 \
+		compact_str-0.9.1 \
 		condtype-1.3.0 \
 		console-0.16.1 \
 		console_error_panic_hook-0.1.7 \
@@ -131,7 +131,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
 		divan-macros-0.1.17 \
-		doc-comment-0.3.3 \
 		drop_bomb-0.1.5 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
@@ -168,8 +167,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		half-2.6.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
+		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
-		hashlink-0.10.0 \
+		hashlink-0.11.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		html-escape-0.2.13 \
@@ -197,7 +197,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		insta-1.47.2 \
 		insta-cmd-0.6.0 \
 		interpolator-0.5.0 \
-		intrusive-collections-0.9.7 \
+		intrusive-collections-0.10.1 \
 		inventory-0.3.24 \
 		is-macro-0.3.7 \
 		is-terminal-0.4.16 \
@@ -206,8 +206,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.24 \
-		jiff-static-0.2.24 \
+		jiff-0.2.27 \
+		jiff-static-0.2.27 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
@@ -220,23 +220,23 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.186 \
 		libcst-1.8.6 \
 		libcst_derive-1.8.6 \
-		libmimalloc-sys-0.1.47 \
+		libmimalloc-sys-0.1.49 \
 		libredox-0.1.10 \
 		libtest-mimic-0.7.3 \
 		libtest-mimic-0.8.1 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
 		lock_api-0.4.13 \
-		log-0.4.29 \
+		log-0.4.30 \
 		lsp-server-0.7.9 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
 		markdown-1.0.0 \
 		matchers-0.2.0 \
 		matchit-0.9.2 \
-		memchr-2.8.0 \
+		memchr-2.8.1 \
 		memoffset-0.9.1 \
-		mimalloc-0.1.50 \
+		mimalloc-0.1.52 \
 		minicov-0.3.7 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -290,9 +290,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-atomic-util-0.2.4 \
 		potential_utf-0.1.3 \
 		ppv-lite86-0.2.21 \
-		predicates-3.1.3 \
-		predicates-core-1.0.9 \
-		predicates-tree-1.0.12 \
+		predicates-3.1.4 \
+		predicates-core-1.0.10 \
+		predicates-tree-1.0.13 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
 		proc-macro-crate-3.4.0 \
@@ -331,9 +331,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
-		salsa-0.26.2 \
-		salsa-macro-rules-0.26.2 \
-		salsa-macros-0.26.2 \
+		salsa-0.27.0 \
+		salsa-macro-rules-0.27.0 \
+		salsa-macros-0.27.0 \
 		same-file-1.0.6 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
@@ -345,7 +345,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.1.1 \
 		serde_test-1.0.177 \
@@ -356,7 +356,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		shellexpand-3.1.2 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
-		similar-3.1.0 \
+		similar-3.1.1 \
 		siphasher-1.0.1 \
 		smallvec-1.15.1 \
 		snapbox-1.0.0 \
@@ -462,7 +462,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
 		windows-link-0.1.3 \
-		windows-link-0.2.0 \
+		windows-link-0.2.1 \
 		windows-result-0.4.0 \
 		windows-strings-0.5.0 \
 		windows-sys-0.52.0 \
