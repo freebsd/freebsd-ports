@@ -1,5 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	5.0.4
+DISTVERSION=	5.0.5
 PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
