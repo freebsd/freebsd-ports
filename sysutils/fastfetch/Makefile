@@ -1,5 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.64.0
+DISTVERSION=	2.64.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
