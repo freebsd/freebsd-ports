@@ -10,7 +10,9 @@ WWW=		https://github.com/DaveGamble/cJSON
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c11
+USES=		cmake:testing cpe compiler:c11
+CPE_VENDOR=	davegamble
+CPE_PRODUCT=	cjson
 
 CMAKE_OFF=	CJSON_OVERRIDE_BUILD_SHARED_LIBS \
 		ENABLE_CJSON_TEST \
