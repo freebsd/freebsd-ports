@@ -13,6 +13,6 @@ lib/cmake/sonivox/sonivox-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sonivox/sonivox-shared-targets.cmake
 lib/libsonivox.so
 lib/libsonivox.so.4
-lib/libsonivox.so.4.0.0.0
+lib/libsonivox.so.4.0.1.0
 libdata/pkgconfig/sonivox.pc
 share/man/man1/sonivoxrender.1.gz
