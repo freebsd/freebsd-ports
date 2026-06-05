@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-input-wacom
 PORTVERSION=	25.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org
