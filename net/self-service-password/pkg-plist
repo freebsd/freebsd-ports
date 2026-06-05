@@ -17,6 +17,7 @@
 %%WWWDIR%%/htdocs/js/jquery.selectunique.js
 %%WWWDIR%%/htdocs/js/ppolicy.js
 %%WWWDIR%%/htdocs/js/self-service-password.js
+%%WWWDIR%%/htdocs/js/show-password-input.js
 %%WWWDIR%%/htdocs/newcaptcha.php
 %%WWWDIR%%/htdocs/resetbyquestions.php
 %%WWWDIR%%/htdocs/resetbytoken.php
@@ -115,10 +116,10 @@
 %%WWWDIR%%/lang/cn.inc.php
 %%WWWDIR%%/lang/cs.inc.php
 %%WWWDIR%%/lang/de.inc.php
-%%WWWDIR%%/lang/ee.inc.php
 %%WWWDIR%%/lang/el.inc.php
 %%WWWDIR%%/lang/en.inc.php
 %%WWWDIR%%/lang/es.inc.php
+%%WWWDIR%%/lang/et.inc.php
 %%WWWDIR%%/lang/eu.inc.php
 %%WWWDIR%%/lang/fr.inc.php
 %%WWWDIR%%/lang/hu.inc.php
@@ -292,6 +293,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/LICENSE
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/package-lock.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
@@ -355,6 +357,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueue.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/Utils.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
@@ -379,6 +382,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Query.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Request.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Response.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc3986.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc7230.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/ServerRequest.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Stream.php
@@ -390,6 +394,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/UPGRADING.md
 %%WWWDIR%%/vendor/ltb-project/ltb-common/.github/workflows/php.yml
 %%WWWDIR%%/vendor/ltb-project/ltb-common/.github/workflows/unittests.yml
 %%WWWDIR%%/vendor/ltb-project/ltb-common/.gitignore
@@ -449,7 +454,6 @@
 %%WWWDIR%%/vendor/paragonie/random_compat/other/build_phar.php
 %%WWWDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
 %%WWWDIR%%/vendor/paragonie/random_compat/psalm.xml
-%%WWWDIR%%/vendor/phpmailer/phpmailer/.editorconfig
 %%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
 %%WWWDIR%%/vendor/phpmailer/phpmailer/composer.json
 %%WWWDIR%%/vendor/phpmailer/phpmailer/get_oauth_token.php
@@ -513,6 +517,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
 %%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/SECURITY.md
+%%WWWDIR%%/vendor/phpmailer/phpmailer/SMTPUTF8.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/DSNConfigurator.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/Exception.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuth.php
@@ -539,9 +544,12 @@
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/Hash/CRC16.php
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/Hash/HashGeneratorInterface.php
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/Hash/PhpiredisCRC16.php
+%%WWWDIR%%/vendor/predis/predis/src/Cluster/NullSlotRange.php
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/PredisStrategy.php
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/RedisStrategy.php
+%%WWWDIR%%/vendor/predis/predis/src/Cluster/SimpleSlotMap.php
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/SlotMap.php
+%%WWWDIR%%/vendor/predis/predis/src/Cluster/SlotRange.php
 %%WWWDIR%%/vendor/predis/predis/src/Cluster/StrategyInterface.php
 %%WWWDIR%%/vendor/predis/predis/src/Collection/Iterator/CursorBasedIterator.php
 %%WWWDIR%%/vendor/predis/predis/src/Collection/Iterator/HashKey.php
@@ -609,6 +617,7 @@
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BGREWRITEAOF.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BGSAVE.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BITCOUNT.php
+%%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BITFIELD_RO.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BITFIELD.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BITOP.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/BITPOS.php
@@ -704,6 +713,8 @@
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HEXPIRETIME.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HGET.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HGETALL.php
+%%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HGETDEL.php
+%%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HGETEX.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HINCRBY.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HINCRBYFLOAT.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HKEYS.php
@@ -718,6 +729,7 @@
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HRANDFIELD.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HSCAN.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HSET.php
+%%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HSETEX.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HSETNX.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HSTRLEN.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/HTTL.php
@@ -802,6 +814,7 @@
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/SCRIPT.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/SDIFF.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/SDIFFSTORE.php
+%%WWWDIR%%/vendor/predis/predis/src/Command/Redis/Search/FT_LIST.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/Search/FTAGGREGATE.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/Search/FTALIASADD.php
 %%WWWDIR%%/vendor/predis/predis/src/Command/Redis/Search/FTALIASDEL.php
@@ -1233,6 +1246,7 @@
 %%WWWDIR%%/vendor/symfony/finder/README.md
 %%WWWDIR%%/vendor/symfony/finder/SplFileInfo.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap72.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
@@ -1286,7 +1300,6 @@
 %%WWWDIR%%/vendor/symfony/var-exporter/LICENSE
 %%WWWDIR%%/vendor/symfony/var-exporter/README.md
 %%WWWDIR%%/vendor/symfony/var-exporter/VarExporter.php
-@dir %%WWWDIR%%/lib/vendor/bin
 @dir %%WWWDIR%%/vendor/components
 @dir %%WWWDIR%%/vendor/fortawesome
 @dir %%WWWDIR%%/vendor/twbs
