@@ -1,6 +1,6 @@
---- components/enterprise/browser/reporting/report_util.cc.orig	2026-04-09 06:05:42 UTC
+--- components/enterprise/browser/reporting/report_util.cc.orig	2026-06-04 10:12:25 UTC
 +++ components/enterprise/browser/reporting/report_util.cc
-@@ -200,7 +200,7 @@ std::string GetSecuritySignalsInReport(
+@@ -204,7 +204,7 @@ std::string GetSecuritySignalsInReport(
      signals_dict.Set("antivirus_info", std::move(anti_virus_list));
  
      signals_dict.Set("hotfixes", RepeatedFieldptrToList(os_report.hotfixes()));

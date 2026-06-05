@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.h.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.h.orig	2026-06-04 10:12:25 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.h
 @@ -41,7 +41,7 @@ class ShellLinkItem;
  
@@ -18,7 +18,7 @@
    bool DeleteDesktopDirOnLinux();
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -271,7 +271,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
+@@ -276,7 +276,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
    base::FilePath chrome_apps_folder() override;
    void EnableOrDisablePathOnLogin(const base::FilePath& file_path,
                                    bool enable_on_login) override;
@@ -27,7 +27,7 @@
    base::FilePath desktop();
    base::FilePath startup();
    base::FilePath applications();
-@@ -344,7 +344,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
+@@ -349,7 +349,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
    base::ScopedTempDir chrome_apps_folder_;
    std::map<base::FilePath, bool> startup_enabled_;
  

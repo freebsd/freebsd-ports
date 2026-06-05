@@ -1,4 +1,4 @@
---- v8/BUILD.gn.orig	2026-05-07 17:02:56 UTC
+--- v8/BUILD.gn.orig	2026-06-04 10:12:25 UTC
 +++ v8/BUILD.gn
 @@ -1045,6 +1045,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
@@ -41,7 +41,7 @@
    }
  }
  
-@@ -2829,6 +2834,12 @@ template("run_mksnapshot") {
+@@ -2822,6 +2827,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -54,7 +54,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -7248,7 +7259,7 @@ v8_component("v8_libbase") {
+@@ -7263,7 +7274,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -63,7 +63,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -7259,6 +7270,18 @@ v8_component("v8_libbase") {
+@@ -7274,6 +7285,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

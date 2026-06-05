@@ -1,6 +1,6 @@
---- components/named_system_lock/lock.h.orig	2024-07-30 11:12:21 UTC
+--- components/named_system_lock/lock.h.orig	2026-06-04 10:12:25 UTC
 +++ components/named_system_lock/lock.h
-@@ -38,7 +38,7 @@ class ScopedLock {
+@@ -36,7 +36,7 @@ class ScopedLock {
    // may acquire that lock. The lock name has different meanings per platform:
    // Linux: A shared memory object name starting with `/`. E.g. `/MyApp.lock`.
    // Mac: A bootstrap service name (see `man bootstrap_check_in`).

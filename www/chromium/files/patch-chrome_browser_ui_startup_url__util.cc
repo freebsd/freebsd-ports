@@ -1,15 +1,15 @@
---- chrome/browser/ui/startup/google_chrome_scheme_util.cc.orig	2026-03-13 06:02:14 UTC
-+++ chrome/browser/ui/startup/google_chrome_scheme_util.cc
-@@ -26,7 +26,7 @@
- #include "chrome/common/chrome_constants.h"
- #endif
+--- chrome/browser/ui/startup/url_util.cc.orig	2026-06-04 10:12:25 UTC
++++ chrome/browser/ui/startup/url_util.cc
+@@ -13,7 +13,7 @@
+ #include "url/gurl.h"
+ #include "url/url_constants.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/headless/headless_mode_util.h"
  #endif
  
-@@ -133,7 +133,7 @@ bool ValidateUrl(const GURL& url) {
+@@ -39,7 +39,7 @@ bool ValidateLaunchUrl(const GURL& url) {
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
    bool url_scheme_is_chrome = false;

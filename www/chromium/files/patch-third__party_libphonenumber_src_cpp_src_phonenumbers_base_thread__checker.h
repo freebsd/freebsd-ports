@@ -1,5 +1,5 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h.orig	2022-09-24 10:57:32 UTC
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h
+--- third_party/libphonenumber/src/cpp/src/phonenumbers/base/thread_checker.h.orig	2026-06-04 10:12:25 UTC
++++ third_party/libphonenumber/src/cpp/src/phonenumbers/base/thread_checker.h
 @@ -22,7 +22,7 @@
  // Note that I18N_PHONENUMBERS_NO_THREAD_SAFETY must be defined only to let the
  // user of the library know that it can't be used in a thread-safe manner when
