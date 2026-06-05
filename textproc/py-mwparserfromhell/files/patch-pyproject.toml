@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-06-05 06:08:23 UTC
++++ pyproject.toml
+@@ -5,8 +5,6 @@ authors = [
+ authors = [
+     {name = "Ben Kurtovic", email = "ben@benkurtovic.com"},
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
+ keywords = [
+     "mwparserfromhell", "wikipedia", "wiki", "mediawiki", "wikicode", "wikitext"
+ ]
