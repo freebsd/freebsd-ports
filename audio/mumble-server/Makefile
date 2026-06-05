@@ -16,7 +16,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake compiler:c++17-lang pkgconfig python:build qt:5 ssl
+USES=		cmake compiler:c++17-lang cpe pkgconfig python:build qt:5 ssl
 USE_CXXSTD=	c++17
 USE_QT=		buildtools:build core dbus network qmake:build sql xml
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX:S|-|_|}
