@@ -1,7 +1,6 @@
 PORTNAME=	maim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.8.0
-PORTREVISION=	2
+DISTVERSION=	5.8.2
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -17,13 +16,10 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libslopy.so:x11/slop \
 		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++17-lang gl jpeg xorg
+USES=		cmake compiler:c++17-lang jpeg xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
-USE_GL=		gl
 USE_XORG=	ice sm x11 xcomposite xext xfixes xrandr xrender
-
-CMAKE_ARGS=	-DSLOP_LIBRARIES=${LOCALBASE}/lib/libslopy.so
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
