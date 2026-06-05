@@ -12,7 +12,9 @@ WWW=		https://commons.apache.org/proper/commons-compress/
 
 LICENSE=	APACHE20
 
-USES=		java
+USES=		cpe java
+CPE_VENDOR=	apache
+CPE_PRODUCT=	commons_compress
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
