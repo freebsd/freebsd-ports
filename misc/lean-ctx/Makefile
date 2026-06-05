@@ -1,7 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
-PORTREVISION=	1
+DISTVERSION=	3.7.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -103,7 +102,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		crossterm-0.28.1 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.4 \
@@ -249,7 +247,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libredox-0.1.16 \
 		libsqlite3-sys-0.37.0 \
 		line-clipping-0.3.7 \
-		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
 		litrs-1.0.0 \
@@ -385,7 +382,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
-		rustix-0.38.44 \
 		rustix-1.1.4 \
 		rustls-0.23.39 \
 		rustls-native-certs-0.8.3 \
