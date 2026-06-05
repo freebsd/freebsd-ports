@@ -1,3 +1,0 @@
--- This patch file is intentionally empty.
--- The FreeBSD-specific files (discover/cpu_freebsd.go, llm/llm_freebsd.go)
--- are already included in the yurivict/ollama fork source at this version.

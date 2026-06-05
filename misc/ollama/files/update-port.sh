@@ -49,9 +49,6 @@ cp -r \
 	../$GH_ACCOUNT_ORIG-$GH_PROJECT.repo/.golangci.yaml \
 	.
 
-## apply freebsd compatibility patch
-#(patch-no-backup-1 < ../files/freebsd-compatibility.patch) || { echo "error: failed to apply freebsd compatibility patch"; exit 1; }
-
 # change import path to the fork
 grep -rl ollama/ollama | xargs sed -i '' -e 's|ollama/ollama|yurivict/ollama|g'
 
