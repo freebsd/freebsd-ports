@@ -30,7 +30,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pytest-remotedata>=0:devel/py-pytest-remotedata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=0:devel/py-pytest-timeout@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	py7zr_project
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} \
