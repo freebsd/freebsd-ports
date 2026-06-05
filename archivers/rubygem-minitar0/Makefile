@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/docs/bsdl.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/docs/ruby.txt
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
 
