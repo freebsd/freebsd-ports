@@ -1,5 +1,5 @@
 PORTNAME=	toxcore
-DISTVERSION=	0.2.22
+DISTVERSION=	0.2.23
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://github.com/TokTok/c-${PORTNAME}/releases/download/v${DISTVERSION}/
