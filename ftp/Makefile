@@ -79,6 +79,7 @@
     SUBDIR += sftpgo
     SUBDIR += smbftpd
     SUBDIR += spegla
+    SUBDIR += surge
     SUBDIR += termscp
     SUBDIR += tftp-hpa
     SUBDIR += tnftp
