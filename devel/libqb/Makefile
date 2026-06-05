@@ -1,5 +1,5 @@
 PORTNAME=	libqb
-DISTVERSION=	2.0.9
+DISTVERSION=	2.0.10
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ClusterLabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -38,13 +38,12 @@ DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
 DOXYGEN_USES=			gnome
 DOXYGEN_USES_OFF=		autoreconf
 DOXYGEN_USE=			GNOME=libxml2:build
-DOXYGEN_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-DOXYGEN_OFF-patch-configure.ac
+DOXYGEN_CONFIGURE_ENABLE=	man
 
 QB_SOCKET_DIR?=	/var/run/qb
 
 post-extract-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/install: install-am/install:/g' ${WRKSRC}/doxygen2man/Makefile
