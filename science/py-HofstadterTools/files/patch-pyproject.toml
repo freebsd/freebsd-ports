@@ -1,0 +1,12 @@
+-- https://github.com/HofstadterTools/HofstadterTools/issues/19
+
+--- pyproject.toml.orig	2026-06-05 05:51:36 UTC
++++ pyproject.toml
+@@ -23,7 +23,6 @@ dependencies = [
+     "matplotlib",
+     "prettytable",
+     "tqdm",
+-    "pytest",
+     "ipython",
+     "jupyter",
+     "PyQt5"

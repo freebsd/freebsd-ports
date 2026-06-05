@@ -1,13 +1,15 @@
 PORTNAME=	HofstadterTools
-DISTVERSION=	1.0.4
-PORTREVISION=	3
+DISTVERSION=	1.0.5
 CATEGORIES=	science python # physics
 MASTER_SITES=	PYPI
+MASTER_SITE_SUBDIR=	source/h/hofstadtertools
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	hofstadtertools-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for analyzing the Hofstadter model of particles in the lattice
-WWW=		https://hofstadter.tools/
+WWW=		https://hofstadter.tools/ \
+		https://github.com/HofstadterTools/HofstadterTools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter>0:devel/py-jupyter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${PY_FLAVOR} \
