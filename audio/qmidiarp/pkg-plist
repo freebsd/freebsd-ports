@@ -23,11 +23,6 @@ share/man/de/man1/qmidiarp.1.gz
 share/man/fr/man1/qmidiarp.1.gz
 share/man/man1/qmidiarp.1.gz
 share/metainfo/qmidiarp.appdata.xml
-%%DATADIR%%/examples/demo.qmax
-%%DATADIR%%/examples/demo_seqlfo.qmax
-%%DATADIR%%/examples/demo_seqlfo2.qmax
-%%DATADIR%%/examples/demo_up_down.qmax
-%%DATADIR%%/examples/old_arp.qmax
 %%LV2%%%%DATADIR%%/translations/qmidiarp_cs.qm
 %%LV2%%%%DATADIR%%/translations/qmidiarp_de.qm
 %%LV2%%%%DATADIR%%/translations/qmidiarp_es.qm
