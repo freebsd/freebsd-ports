@@ -1,6 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.16.8
+DISTVERSION=	6.17.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -73,6 +73,6 @@ post-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 6.16.8: 100% tests passed, 0 tests failed out of 86
+# tests as of 6.17.0: 100% tests passed, 0 tests failed out of 92
 
 .include <bsd.port.mk>
