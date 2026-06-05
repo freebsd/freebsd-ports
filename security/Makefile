@@ -491,6 +491,7 @@
     SUBDIR += p5-App-ClusterSSH
     SUBDIR += p5-App-Genpass
     SUBDIR += p5-App-TLSMe
+    SUBDIR += p5-Auth-GoogleAuth
     SUBDIR += p5-Auth-YubikeyDecrypter
     SUBDIR += p5-AuthCAS
     SUBDIR += p5-Authen-Bitcard
