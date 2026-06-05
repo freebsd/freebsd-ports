@@ -25,12 +25,6 @@ BINARY_ALIAS=	g++=${CXX}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
