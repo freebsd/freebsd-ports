@@ -1,0 +1,26 @@
+-- Fix license format in pyproject.toml and lower setuptools requirement.
+-- The original pyproject.toml incorrectly used a string for the license field
+-- and required a very recent setuptools version not yet in the ports tree.
+
+--- pyproject.toml.orig 2026-06-05 04:25:53 UTC
+
++++ pyproject.toml
+@@ -4,8 +4,7 @@ authors = [{ name = "Matt Swain", email = "m.swain@me.
+ description = "A simple Python wrapper around the PubChem PUG REST API."
+ readme = "README.md"
+ authors = [{ name = "Matt Swain", email = "m.swain@me.com" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ requires-python = ">=3.10"
+ dependencies = []
+ keywords = ["pubchem", "python", "rest", "api", "chemistry", "cheminformatics"]
+@@ -56,7 +55,7 @@ py-modules = ["pubchempy"]
+ py-modules = ["pubchempy"]
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=63.1.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.pytest.ini_options]
