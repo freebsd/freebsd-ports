@@ -1,10 +1,10 @@
 PORTNAME=	fmd-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
-#MASTER_SITES=	LOCAL/mm/${PORTNAME}/:pnpmcache
-#DISTFILES=	${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX}:pnpmcache
+MASTER_SITES=	LOCAL/mm/${PORTNAME}/:pnpmcache
+DISTFILES=	${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX}:pnpmcache
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	FMD web server to locate and control your devices
@@ -13,7 +13,7 @@ WWW=		https://fmd-foss.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules nodejs:build
+USES=		go:modules nodejs:build tar:zstd
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_ACCOUNT=	fmd-foss
@@ -77,6 +77,7 @@ pre-build:
 		@${MKDIR} ${WRKDIR}/.bin
 		@cd ${WRKSRC}/web && \
 			${SETENV} ${MAKE_ENV} corepack enable --install-directory ${WRKDIR}/.bin && \
+			${SETENV} ${CONFIGURE_ENV} pnpm install --offline && \
 			${SETENV} ${MAKE_ENV} pnpm build
 
 post-install:
@@ -88,9 +89,9 @@ make-pnpm-cache: configure
 	@${MKDIR} ${WRKDIR}/.bin
 	@cd ${WRKSRC}/web && \
 		${SETENV} ${CONFIGURE_ENV} corepack enable --install-directory ${WRKDIR}/.bin && \
-		${SETENV} ${CONFIGURE_ENV} pnpm install
+		${SETENV} ${CONFIGURE_ENV} pnpm fetch
 	@cd ${WRKDIR} \
-		&& ${TAR} -c --zstd -f ${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX} pnpm .cache/pnpm .cache/node ${GO_MODNAME}@${GO_MODVERSION}/web/node_modules \
+		&& ${TAR} -c --zstd -f ${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX} pnpm \
 		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX} mm@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
 
 .include <bsd.port.mk>
