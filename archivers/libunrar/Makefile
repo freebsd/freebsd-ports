@@ -14,7 +14,9 @@ LICENSE_NAME=	UnRAR License
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang cpe gmake
+CPE_VENDOR=	rarlab
+CPE_PRODUCT=	unrar
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	lib
