@@ -18,7 +18,8 @@ LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
 RUN_DEPENDS=	eawpats>0:audio/eawpats
 .endif
 
-USES=		gmake localbase tar:bzip2
+USES=		cpe gmake localbase tar:bzip2
+CPE_VENDOR=	timidity++_project
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	SHLD="${CC} -shared"
