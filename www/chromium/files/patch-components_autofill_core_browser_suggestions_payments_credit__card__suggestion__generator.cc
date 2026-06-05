@@ -1,6 +1,6 @@
---- components/autofill/core/browser/suggestions/payments/credit_card_suggestion_generator.cc.orig	2026-05-07 17:02:56 UTC
+--- components/autofill/core/browser/suggestions/payments/credit_card_suggestion_generator.cc.orig	2026-06-04 10:12:25 UTC
 +++ components/autofill/core/browser/suggestions/payments/credit_card_suggestion_generator.cc
-@@ -43,7 +43,7 @@ using SuggestionData = SuggestionGenerator::Suggestion
+@@ -43,7 +43,7 @@ using SuggestionDataSource = SuggestionGenerator::Sugg
  
  bool IsSaveAndFillEnabled() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

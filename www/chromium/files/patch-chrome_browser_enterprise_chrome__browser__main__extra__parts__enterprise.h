@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/chrome_browser_main_extra_parts_enterprise.h.orig	2025-12-05 10:12:50 UTC
+--- chrome/browser/enterprise/chrome_browser_main_extra_parts_enterprise.h.orig	2026-06-04 10:12:25 UTC
 +++ chrome/browser/enterprise/chrome_browser_main_extra_parts_enterprise.h
-@@ -25,7 +25,7 @@ class ChromeBrowserMainExtraPartsEnterprise
+@@ -29,7 +29,7 @@ class ChromeBrowserMainExtraPartsEnterprise
    ~ChromeBrowserMainExtraPartsEnterprise() override;
  
    // ChromeBrowserMainExtraParts:

@@ -1,4 +1,4 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2026-05-07 17:02:56 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2026-06-04 10:12:25 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
 @@ -27,7 +27,7 @@ BASE_FEATURE(kAutofillDisableBnplCountryCheckForTestin
  // page using server-side AI.
@@ -81,7 +81,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -247,7 +247,7 @@ BASE_FEATURE(kAutofillEnableTouchToFillReshowForBnpl,
+@@ -252,7 +252,7 @@ BASE_FEATURE(kAutofillEnableTravelCategoryAndMerchantB
  // the card, and FIDO is not.
  BASE_FEATURE(kAutofillEnableVcn3dsAuthentication,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -90,7 +90,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -276,7 +276,7 @@ BASE_FEATURE(kAutofillEnableWalletBrandingV2,
+@@ -281,7 +281,7 @@ BASE_FEATURE(kAutofillEnableWalletBrandingV2,
  // eligibility.
  BASE_FEATURE(kAutofillPreferBuyNowPayLaterBlocklists,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -99,7 +99,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -326,7 +326,7 @@ const base::FeatureParam<int> kAutofillVcnEnrollStrike
+@@ -336,7 +336,7 @@ const base::FeatureParam<int> kAutofillVcnEnrollStrike
      /*default_value=*/180};
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

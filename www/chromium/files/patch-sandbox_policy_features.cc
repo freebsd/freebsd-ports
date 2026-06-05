@@ -1,4 +1,4 @@
---- sandbox/policy/features.cc.orig	2026-05-07 17:02:56 UTC
+--- sandbox/policy/features.cc.orig	2026-06-04 10:12:25 UTC
 +++ sandbox/policy/features.cc
 @@ -17,7 +17,11 @@ namespace sandbox::policy::features {
  #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_FUCHSIA)
@@ -12,7 +12,7 @@
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  // Enables a fine-grained seccomp-BPF syscall filter for the network service.
-@@ -99,7 +103,7 @@ BASE_FEATURE(kWinSboxStrictHandleChecks, base::FEATURE
+@@ -110,7 +114,7 @@ BASE_FEATURE(kWinSboxModuleTamperingProtection,
  BASE_FEATURE(kSpectreVariant2Mitigation, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

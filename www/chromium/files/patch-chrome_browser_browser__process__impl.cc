@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2026-06-04 10:12:25 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -269,7 +269,7 @@ void OnLocalStatePrefsLoaded();
+@@ -271,7 +271,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/browser_features.h"
  #include "components/os_crypt/async/browser/freedesktop_secret_key_provider.h"
  #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
-@@ -288,7 +288,7 @@ void OnLocalStatePrefsLoaded();
+@@ -290,7 +290,7 @@ void OnLocalStatePrefsLoaded();
  #include "chrome/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
@@ -18,7 +18,7 @@
  // How often to check if the persistent instance of Chrome needs to restart
  // to install an update.
  static const int kUpdateCheckIntervalHours = 6;
-@@ -1297,7 +1297,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+@@ -1309,7 +1309,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingEnabled, false);
  
@@ -27,7 +27,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1547,7 +1547,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1558,7 +1558,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
            local_state(), /*force_protection_level=*/std::nullopt)));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    const auto password_store =
        cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore);
-@@ -1884,7 +1884,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1897,7 +1897,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

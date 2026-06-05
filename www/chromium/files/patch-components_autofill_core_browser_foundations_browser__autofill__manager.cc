@@ -1,6 +1,6 @@
---- components/autofill/core/browser/foundations/browser_autofill_manager.cc.orig	2026-04-09 06:05:42 UTC
+--- components/autofill/core/browser/foundations/browser_autofill_manager.cc.orig	2026-06-04 10:12:25 UTC
 +++ components/autofill/core/browser/foundations/browser_autofill_manager.cc
-@@ -938,7 +938,7 @@ BrowserAutofillManager::GetAmountExtractionManager() {
+@@ -862,7 +862,7 @@ BrowserAutofillManager::GetAmountExtractionManager() {
  
  payments::BnplManager* BrowserAutofillManager::GetPaymentsBnplManager() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
