@@ -1,0 +1,5 @@
+Numdifftools is a suite of tools written in Python to solve automatic
+numerical differentiation problems in one or more variables.  It
+provides functions for calculating derivatives, Jacobians, Hessians,
+and gradients, all with error estimates.  The methods are based on
+the complex-step derivative approximation and extrapolation algorithms.
