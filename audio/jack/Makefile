@@ -16,7 +16,9 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		compiler:c11 localbase pkgconfig python shebangfix waf
+USES=		compiler:c11 cpe localbase pkgconfig python shebangfix waf
+CPE_VENDOR=	jackaudio
+CPE_PRODUCT=	jack2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jackaudio
