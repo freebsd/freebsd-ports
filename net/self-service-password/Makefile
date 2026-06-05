@@ -1,7 +1,7 @@
 PORTNAME=	self-service-password
-DISTVERSION=	1.7.3
+DISTVERSION=	1.8.0
 CATEGORIES=	net www
-MASTER_SITES=	http://ltb-project.org/archives/
+MASTER_SITES=	https://ltb-project.org/archives/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
 
