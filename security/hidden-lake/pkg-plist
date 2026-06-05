@@ -1,5 +1,6 @@
 bin/hla-http
 bin/hla-https
+bin/hla-meshtastic
 bin/hla-tcp
 bin/hlc
 bin/hlk
