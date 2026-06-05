@@ -41,6 +41,7 @@ DATADIR=	${PREFIX}/share/surge-xt
 
 CMAKE_ON=	SURGE_BUILD_LV2 \
 		SURGE_SKIP_VST3
+CMAKE_ON+=	SURGE_SKIP_WERROR # fix breakage, see https://github.com/surge-synthesizer/surge/issues/8410
 CMAKE_OFF=	JUCE_PLUGINHOST_VST3 JUCE_PLUGINHOST_VST
 
 CFLAGS+=	-Wno-nan-infinity-disabled -Wno-unknown-warning-option # workaround for https://github.com/surge-synthesizer/surge/issues/7730
