@@ -1,9 +1,8 @@
 PORTNAME=	mate-control-center
-PORTVERSION=	1.28.1
-DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+DISTVERSION=	1.28.1
+PORTREVISION=	6
 CATEGORIES=	sysutils mate
-DIST_SUBDIR=	mate
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for MATE project
@@ -13,9 +12,7 @@ LICENSE=	GPLv2+ GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:textproc/itstool \
-		yelp-tools>0:textproc/yelp-tools \
- 		yelp-xsl>0:textproc/yelp-xsl
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libdbus-1.so:devel/dbus \
@@ -29,11 +26,9 @@ LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 		libaccountsservice.so:sysutils/accountsservice \
 		libudisks2.so:sysutils/libudisks
 
-PORTSCOUT=	limitw:1,even
-
-USES=		autoreconf desktop-file-utils gettext gmake gnome libtool localbase mate \
+USES=		desktop-file-utils gettext gmake gnome libtool localbase mate \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
-USE_GITHUB=	yes
+USE_GITHUB=	nodefault
 GH_ACCOUNT=	mate-desktop
 USE_CSTD=	c99
 USE_MATE=	desktop libmatekbd marco menus settingsdaemon
@@ -42,6 +37,7 @@ USE_GNOME=	cairo dconf glib20 gtk30 intlhack libxml2 librsvg2 pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-control-center/releases/ limitw:1,even
 CONFIGURE_ARGS=	--enable-appindicator=no \
 		--disable-update-mimedb \
 		--disable-systemd
