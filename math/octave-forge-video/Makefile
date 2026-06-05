@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-video
 DISTVERSION=	2.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
