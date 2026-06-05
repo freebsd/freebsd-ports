@@ -178,6 +178,8 @@ share/man/man1/jj-tag-set.1.gz
 share/man/man1/jj-tag.1.gz
 share/man/man1/jj-undo.1.gz
 share/man/man1/jj-unsign.1.gz
+share/man/man1/jj-util-backend-name.1.gz
+share/man/man1/jj-util-backend.1.gz
 share/man/man1/jj-util-completion.1.gz
 share/man/man1/jj-util-config-schema.1.gz
 share/man/man1/jj-util-exec.1.gz
