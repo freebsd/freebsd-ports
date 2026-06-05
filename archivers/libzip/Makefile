@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cmake cpe ssl tar:xz
-CPE_VENDOR=	nih
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_OSSFUZZ \
