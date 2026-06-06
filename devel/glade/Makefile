@@ -21,8 +21,9 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 CONFLICTS=	glade3-3.*
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gnome \
+USES=		compiler:c11 cpe desktop-file-utils gettext gnome \
 		localbase:ldflags meson pathfix pkgconfig tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME=	cairo gtk30 intlhack introspection:build
 
 DOCSDIR=	${PREFIX}/share/doc/gladeui-2
