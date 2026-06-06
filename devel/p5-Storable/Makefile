@@ -11,7 +11,8 @@ WWW=		https://metacpan.org/release/Storable
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-USES=		perl5
+USES=		cpe perl5
+CPE_VENDOR=	nwclark
 USE_PERL5=	configure
 
 post-install:
