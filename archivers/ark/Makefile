@@ -10,6 +10,7 @@ LICENSE=	GPLv2+
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gl \
 		kde:6 libarchive qt:6 tar:xz xorg
+CPE_VENDOR=	kde
 USE_KDE=	bookmarks colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons doctools filemetadata i18n \
 		iconthemes itemviews jobwidgets kio parts pty service solid \
