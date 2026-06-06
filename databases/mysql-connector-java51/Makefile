@@ -21,7 +21,7 @@ PORTSCOUT=	limit:^5\.1\..*
 
 USES=		cpe java:build
 CPE_VENDOR=	oracle
-CPE_PRODUCT=	mysql_connector_j
+CPE_PRODUCT=	mysql_connector/j
 
 CONFLICTS_INSTALL=	mysql-connector-java # share/java/classes/mysql-connector-java.jar
 
