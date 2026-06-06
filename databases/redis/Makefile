@@ -16,7 +16,7 @@ LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		compiler:c11 cpe gmake localbase:ldflags pkgconfig tcl:test
-CPE_VENDOR=	redislabs
+CPE_VENDOR=	redis
 USE_RC_SUBR=	redis sentinel
 
 MAKE_ENV=	OPTIMIZATION= \
