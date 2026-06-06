@@ -19,7 +19,7 @@ TEST_DEPENDS=	msgfmt:devel/gettext-tools
 GIT_VERSION=	2.53.0
 USES=		compiler:c++11-lang cpe gmake iconv perl5 python:env \
 		shebangfix ssl tar:xz
-CPE_VENDOR=	lars_hjemli
+CPE_VENDOR=	cgit_project
 USE_PERL5=	test
 SHEBANG_FILES=	filters/email-gravatar.py \
 		filters/html-converters/md2html \
