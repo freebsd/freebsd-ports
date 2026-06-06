@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	agronholm
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 .include <bsd.port.mk>
