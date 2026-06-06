@@ -67,6 +67,7 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += boinctui
+    SUBDIR += bone-kmods
     SUBDIR += bounce
     SUBDIR += bredbandskollen
     SUBDIR += brynet

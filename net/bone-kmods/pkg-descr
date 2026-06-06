@@ -1,0 +1,14 @@
+This is the [B]ag [O]f [N]etgraph [E]xtensions. An evolving set of extra
+netgraph(4) kernel modules.
+
+At present this module provides the following additional nodes:
+* ng_pcap(4) provides a way to get pcap information from the netgraph(4)
+  system.
+* ng_wormhole(4) provides a way to connect vnet enabled jails using netgraph(4).
+* ng_ula4tag(4) provides a way to VLAN tag traffic that is either (or both) IPv4
+  or IPv6 unique local addresses (ULA).
+
+See manpages for more details and example usage.
+net/bone-utils has utilities that simplify using the nodes in this pkg.
+
+If you are on CURRENT you likely need the @invariants flavor.
