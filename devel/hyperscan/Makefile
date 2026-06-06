@@ -15,7 +15,8 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
-USES=	compiler:c++11-lib cmake pathfix python:build
+USES=	compiler:c++11-lib cpe cmake pathfix python:build
+CPE_VENDOR=	intel
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	SSSE3 is required for work
 
