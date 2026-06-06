@@ -1,7 +1,7 @@
 PORTNAME=	fmd-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mm/${PORTNAME}/:pnpmcache
 DISTFILES=	${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX}:pnpmcache
@@ -91,7 +91,7 @@ make-pnpm-cache: configure
 		${SETENV} ${CONFIGURE_ENV} corepack enable --install-directory ${WRKDIR}/.bin && \
 		${SETENV} ${CONFIGURE_ENV} pnpm fetch
 	@cd ${WRKDIR} \
-		&& ${TAR} -c --zstd -f ${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX} pnpm \
+		&& ${TAR} -c --zstd -f ${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX} .cache/node pnpm \
 		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-pnpm-cache-${DISTVERSION}${EXTRACT_SUFX} mm@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
 
 .include <bsd.port.mk>
