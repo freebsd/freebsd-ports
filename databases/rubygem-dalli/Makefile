@@ -12,8 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
-USES=		gem
+USES=		cpe gem
 
+CPE_VENDOR=	dalli_project
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
