@@ -1,3 +1,44 @@
+  <vuln vid="9b94eb13-6159-11f1-be36-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>19.0.0</ge><lt>19.0.1</lt></range>
+<range><ge>18.11.0</ge><lt>18.11.4</lt></range>
+<range><ge>12.7.0</ge><lt>18.10.7</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-0-1-released/">
+	  <p>Improper Access Control issue in Duo AI workflow runners impacts GitLab EE</p>
+	  <p>Denial of Service issue in Wiki impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL WorkItem API impacts GitLab CE/EE</p>
+	  <p>Improper Authorization issue in Duo Workflows API impacts GitLab EE</p>
+	  <p>Missing Authorization issue in Operations impacts GitLab EE</p>
+	  <p>Incorrect Name Resolution issue in Pipelines impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in certain authentication endpoints impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-4868</cvename>
+      <cvename>CVE-2026-1402</cvename>
+      <cvename>CVE-2026-6713</cvename>
+      <cvename>CVE-2026-5296</cvename>
+      <cvename>CVE-2026-2601</cvename>
+      <cvename>CVE-2026-8716</cvename>
+      <cvename>CVE-2026-2710</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-0-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-05-27</discovery>
+      <entry>2026-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0823ac26-6040-11f1-ba4a-50ebf6bdf8e9">
     <topic>PowerDNS -- Multiple vulnerabilities</topic>
     <affects>
