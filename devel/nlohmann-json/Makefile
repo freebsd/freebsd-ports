@@ -17,7 +17,8 @@ WWW=		https://nlohmann.github.io/json/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
-USES=		cmake:testing compiler:c++11-lib
+USES=		cmake:testing compiler:c++11-lib cpe
+CPE_VENDOR=	nlohmann
 USE_GITHUB=	yes
 GH_ACCOUNT=	nlohmann
 
