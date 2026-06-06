@@ -1,6 +1,6 @@
 PORTNAME=	qh3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.2
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,7 +40,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		base64ct-1.8.3 \
 		bincode-1.3.3 \
 		bindgen-0.72.1 \
-		bitflags-2.11.1 \
+		bitflags-2.12.1 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		cbc-0.1.2 \
@@ -96,7 +96,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		litemap-0.8.2 \
-		log-0.4.30 \
+		log-0.4.32 \
 		ls-qpack-rs-0.3.1 \
 		ls-qpack-rs-sys-0.3.1 \
 		memchr-2.8.1 \
@@ -201,7 +201,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		x509-cert-0.2.5 \
 		x509-ocsp-0.2.1 \
 		x509-parser-0.18.1 \
-		yoke-0.8.2 \
+		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
 		zerocopy-0.8.50 \
 		zerocopy-derive-0.8.50 \
