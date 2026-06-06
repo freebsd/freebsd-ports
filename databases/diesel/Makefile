@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		cargo mysql pgsql sqlite
+USES=		cargo cpe mysql pgsql sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diesel-rs
