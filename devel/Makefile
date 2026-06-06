@@ -5079,6 +5079,7 @@
     SUBDIR += py-google-i18n-address
     SUBDIR += py-google-pasta
     SUBDIR += py-google-re2
+    SUBDIR += py-google-re2-stubs
     SUBDIR += py-googleapis-common-protos
     SUBDIR += py-gptscript
     SUBDIR += py-gpxpy
