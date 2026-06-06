@@ -1,17 +1,18 @@
---- mediamtx.yml.orig	2025-08-12 20:37:33 UTC
+--- mediamtx.yml.orig	2026-06-04 22:46:38 UTC
 +++ mediamtx.yml
-@@ -450,7 +450,6 @@ pathDefaults:
-   # * whep://existing-url -> the stream is pulled from another WebRTC server / camera
-   # * wheps://existing-url -> the stream is pulled from another WebRTC server / camera with HTTPS
+@@ -482,7 +482,6 @@ pathDefaults:
+   # * whep://existing-url -> the stream is pulled from another WebRTC server / camera with HTTP+WHEP
+   # * wheps://existing-url -> the stream is pulled from another WebRTC server / camera with HTTPS+WHEP
    # * redirect -> the stream is provided by another path or server
 -  # * rpiCamera -> the stream is provided by a Raspberry Pi Camera
    # The following variables can be used in the source string:
    # * $MTX_QUERY: query parameters (passed by first reader)
    # * $G1, $G2, ...: regular expression groups, if path name is
-@@ -564,101 +563,7 @@ pathDefaults:
-   # It can be can be a relative path (i.e. /otherstream) or an absolute RTSP URL.
+@@ -612,100 +611,6 @@ pathDefaults:
+   # Path to which clients will be redirected.
+   # It can be a relative path (i.e. /otherstream) or an absolute RTSP URL.
    sourceRedirect:
- 
+-
 -  ###############################################
 -  # Default path settings -> Raspberry Pi Camera source (when source is "rpiCamera")
 -
@@ -86,7 +87,7 @@
 -  rpiCameraTextOverlayEnable: false
 -  # Text that is printed on each frame.
 -  # format is the one of the strftime() function.
--  rpiCameraTextOverlay: '%Y-%m-%d %H:%M:%S - MediaMTX'
+-  rpiCameraTextOverlay: "%Y-%m-%d %H:%M:%S - MediaMTX"
 -  # Codec (auto, hardwareH264, softwareH264 or mjpeg).
 -  # When is "auto" and stream is primary, it defaults to hardwareH264 (if available) or softwareH264.
 -  # When is "auto" and stream is secondary, it defaults to mjpeg.
@@ -98,16 +99,13 @@
 -  # Hardware H264 profile (baseline, main or high) (when codec is hardwareH264).
 -  rpiCameraHardwareH264Profile: main
 -  # Hardware H264 level (4.0, 4.1 or 4.2) (when codec is hardwareH264).
--  rpiCameraHardwareH264Level: '4.1'
+-  rpiCameraHardwareH264Level: "4.1"
 -  # Software H264 profile (baseline, main or high) (when codec is softwareH264).
 -  rpiCameraSoftwareH264Profile: baseline
 -  # Software H264 level (4.0, 4.1 or 4.2) (when codec is softwareH264).
--  rpiCameraSoftwareH264Level: '4.1'
+-  rpiCameraSoftwareH264Level: "4.1"
 -  # M-JPEG JPEG quality (when codec is mjpeg).
 -  rpiCameraMJPEGQuality: 60
--
--  ###############################################
-+  #################################################
-   # Default path settings -> Hooks
  
-   # Command to run when this path is initialized.
+   ###############################################
+   # Default path settings -> Hooks
