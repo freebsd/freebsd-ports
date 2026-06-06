@@ -11,7 +11,8 @@ WWW=		https://libguestfs.org/hivex.3.html \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime gmake gnome iconv libtool perl5 pkgconfig readline shebangfix
+USES=		cpe gettext-runtime gmake gnome iconv libtool perl5 pkgconfig readline shebangfix
+CPE_VENDOR=	redhat
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
