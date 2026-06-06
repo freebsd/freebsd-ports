@@ -93,12 +93,6 @@ SUB_FILES=	nvidia.conf pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 PORTDOCS=	*
 
-.if ${NVVERSION} >= 331.013
-SUB_LIST+=	NVGL=""
-.else
-SUB_LIST+=	NVGL="\# "
-.endif
-
 OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB+=	MODULESDIR=${MODULESDIR}
