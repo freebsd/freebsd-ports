@@ -10,7 +10,8 @@ WWW=		https://github.com/ndevilla/iniparser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake pathfix
+USES=		cmake cpe pathfix
+CPE_VENDOR=	ndevilla
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
