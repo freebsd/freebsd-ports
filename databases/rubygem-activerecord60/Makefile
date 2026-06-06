@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activemodel60>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activemodel60 \
 		rubygem-activesupport60>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport60
 
-USES=		gem
+USES=		cpe gem
 
+CPE_VENDOR=	activerecord_project
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^6\.0\.
