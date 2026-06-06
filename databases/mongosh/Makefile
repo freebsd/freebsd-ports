@@ -48,9 +48,10 @@ LIB_DEPENDS=	libada.so:devel/libada \
 		libmongocrypt.so:databases/libmongocrypt
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++20-lang gmake gssapi:mit localbase nodejs:24,build \
+USES=		compiler:c++20-lang cpe gmake gssapi:mit localbase nodejs:24,build \
 		pkgconfig python:build shebangfix sqlite ssl tar:xz
 
+CPE_VENDOR=	mongodb
 USE_GITHUB=	yes
 GH_ACCOUNT=	VultureProject
 GH_PROJECT=	mongosh
