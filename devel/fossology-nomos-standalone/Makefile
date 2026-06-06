@@ -15,7 +15,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USE_GITHUB=	yes
 
-USES=		gnome gmake gettext pkgconfig
+USES=		cpe gnome gmake gettext pkgconfig
+CPE_VENDOR=	linuxfoundation
 USE_GNOME=	glib20
 
 BUILD_WRKSRC=	${WRKSRC}/src/nomos/agent
