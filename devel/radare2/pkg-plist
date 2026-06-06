@@ -52,7 +52,6 @@ include/libr/r_heap_jemalloc.h
 include/libr/r_io.h
 include/libr/r_lang.h
 include/libr/r_lib.h
-include/libr/r_limits.h
 include/libr/r_list.h
 include/libr/r_magic.h
 include/libr/r_main.h
