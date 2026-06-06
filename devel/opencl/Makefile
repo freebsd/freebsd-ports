@@ -8,6 +8,9 @@ WWW=		https://github.com/KhronosGroup/OpenCL-Headers/
 
 LICENSE=	APACHE20
 
+USES=		cpe
+
+CPE_VENDOR=	khronos
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	OpenCL-Headers OpenCL-CLHPP:clhpp
