@@ -91,7 +91,17 @@
 	</body>
     </description>
     <references>
+      <cvename>CVE-2026-50256</cvename>
+      <cvename>CVE-2026-50257</cvename>
+      <cvename>CVE-2026-50258</cvename>
+      <cvename>CVE-2026-50259</cvename>
+      <cvename>CVE-2026-50260</cvename>
+      <cvename>CVE-2026-50261</cvename>
+      <cvename>CVE-2026-50262</cvename>
+      <cvename>CVE-2026-50263</cvename>
+      <cvename>CVE-2026-50264</cvename>
       <url>https://lists.x.org/archives/xorg-announce/2026-June/003702.html</url>
+      <url>https://lists.x.org/archives/xorg-announce/2026-June/003705.html</url>
     </references>
     <dates>
       <discovery>2026-06-01</discovery>
@@ -118,7 +128,17 @@
 	</body>
     </description>
     <references>
+      <cvename>CVE-2026-50256</cvename>
+      <cvename>CVE-2026-50257</cvename>
+      <cvename>CVE-2026-50258</cvename>
+      <cvename>CVE-2026-50259</cvename>
+      <cvename>CVE-2026-50260</cvename>
+      <cvename>CVE-2026-50261</cvename>
+      <cvename>CVE-2026-50262</cvename>
+      <cvename>CVE-2026-50263</cvename>
+      <cvename>CVE-2026-50264</cvename>
       <url>https://lists.x.org/archives/xorg-announce/2026-June/003702.html</url>
+      <url>https://lists.x.org/archives/xorg-announce/2026-June/003705.html</url>
     </references>
     <dates>
       <discovery>2026-06-01</discovery>
