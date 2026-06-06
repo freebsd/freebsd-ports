@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-activemodel52>=${PORTVERSION}:databases/rubygem-activemodel
 		rubygem-activesupport52>=${PORTVERSION}:devel/rubygem-activesupport52 \
 		rubygem-arel>=9.0:databases/rubygem-arel
 
-USES=		gem
+USES=		cpe gem
 
+CPE_VENDOR=	activerecord_project
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^5\.2\.
