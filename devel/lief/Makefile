@@ -20,7 +20,9 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libmbedtls.so:security/mbedtls3 \
 		libspdlog.so:devel/spdlog
 
-USES=		cmake:testing localbase:ldflags pkgconfig
+USES=		cmake:testing cpe localbase:ldflags pkgconfig
+
+CPE_VENDOR=	lief-project
 
 CMAKE_OFF=	LIEF_ASAN \
 		LIEF_ASM \
