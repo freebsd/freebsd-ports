@@ -1,33 +1,33 @@
 bin/inspircd
 bin/inspircd-testssl
-@sample %%ETCDIR%%/examples/codepages/iso-8859-1.example.conf %%ETCDIR%%/iso-8859-1.conf
-@sample %%ETCDIR%%/examples/codepages/iso-8859-2.example.conf %%ETCDIR%%/iso-8859-2.conf
-@sample %%ETCDIR%%/examples/filter.example.conf %%ETCDIR%%/filter.conf
-@sample %%ETCDIR%%/examples/help.example.conf %%ETCDIR%%/help.conf
-@sample %%ETCDIR%%/examples/inspircd.example.conf %%ETCDIR%%/inspircd.conf
-@sample %%ETCDIR%%/examples/links.example.conf %%ETCDIR%%/links.conf
-@sample %%ETCDIR%%/examples/modules.example.conf %%ETCDIR%%/modules.conf
-@sample %%ETCDIR%%/examples/motd.example.txt %%ETCDIR%%/motd.txt
-@sample %%ETCDIR%%/examples/opermotd.example.txt %%ETCDIR%%/opermotd.txt
-@sample %%ETCDIR%%/examples/opers.example.conf %%ETCDIR%%/opers.conf
-@sample %%ETCDIR%%/examples/quotes.example.txt %%ETCDIR%%/quotes.txt
-%%ETCDIR%%/examples/codepages/ascii.example.conf
-%%ETCDIR%%/examples/codepages/rfc1459.example.conf
-%%ETCDIR%%/examples/codepages/strict-rfc1459.example.conf
-%%ETCDIR%%/examples/providers/dronebl.example.conf
-%%ETCDIR%%/examples/providers/efnet-rbl.example.conf
-%%ETCDIR%%/examples/providers/irccloud.example.conf
-%%ETCDIR%%/examples/providers/securelist.example.conf
-%%ETCDIR%%/examples/providers/torexit.example.conf
-%%ETCDIR%%/examples/services/anope.example.conf
-%%ETCDIR%%/examples/services/atheme.example.conf
-%%ETCDIR%%/examples/services/generic.example.conf
-%%ETCDIR%%/examples/sql/sqloper/mysql.sql
-%%ETCDIR%%/examples/sql/sqloper/pgsql.sql
-%%ETCDIR%%/examples/sql/sqloper/sqlite3.sql
-%%ETCDIR%%/examples/sql/log_sql/mysql.sql
-%%ETCDIR%%/examples/sql/log_sql/pgsql.sql
-%%ETCDIR%%/examples/sql/log_sql/sqlite3.sql
+@sample %%EXAMPLESDIR%%/codepages/iso-8859-1.example.conf %%ETCDIR%%/iso-8859-1.conf
+@sample %%EXAMPLESDIR%%/codepages/iso-8859-2.example.conf %%ETCDIR%%/iso-8859-2.conf
+@sample %%EXAMPLESDIR%%/filter.example.conf %%ETCDIR%%/filter.conf
+@sample %%EXAMPLESDIR%%/help.example.conf %%ETCDIR%%/help.conf
+@sample %%EXAMPLESDIR%%/inspircd.example.conf %%ETCDIR%%/inspircd.conf
+@sample %%EXAMPLESDIR%%/links.example.conf %%ETCDIR%%/links.conf
+@sample %%EXAMPLESDIR%%/modules.example.conf %%ETCDIR%%/modules.conf
+@sample %%EXAMPLESDIR%%/motd.example.txt %%ETCDIR%%/motd.txt
+@sample %%EXAMPLESDIR%%/opermotd.example.txt %%ETCDIR%%/opermotd.txt
+@sample %%EXAMPLESDIR%%/opers.example.conf %%ETCDIR%%/opers.conf
+@sample %%EXAMPLESDIR%%/quotes.example.txt %%ETCDIR%%/quotes.txt
+%%EXAMPLESDIR%%/codepages/ascii.example.conf
+%%EXAMPLESDIR%%/codepages/rfc1459.example.conf
+%%EXAMPLESDIR%%/codepages/strict-rfc1459.example.conf
+%%EXAMPLESDIR%%/providers/dronebl.example.conf
+%%EXAMPLESDIR%%/providers/efnet-rbl.example.conf
+%%EXAMPLESDIR%%/providers/irccloud.example.conf
+%%EXAMPLESDIR%%/providers/securelist.example.conf
+%%EXAMPLESDIR%%/providers/torexit.example.conf
+%%EXAMPLESDIR%%/services/anope.example.conf
+%%EXAMPLESDIR%%/services/atheme.example.conf
+%%EXAMPLESDIR%%/services/generic.example.conf
+%%EXAMPLESDIR%%/sql/sqloper/mysql.sql
+%%EXAMPLESDIR%%/sql/sqloper/pgsql.sql
+%%EXAMPLESDIR%%/sql/sqloper/sqlite3.sql
+%%EXAMPLESDIR%%/sql/log_sql/mysql.sql
+%%EXAMPLESDIR%%/sql/log_sql/pgsql.sql
+%%EXAMPLESDIR%%/sql/log_sql/sqlite3.sql
 %%ETCDIR%%/help.txt
 libexec/inspircd/deploy-ssl.sh
 libexec/inspircd/inspircd
