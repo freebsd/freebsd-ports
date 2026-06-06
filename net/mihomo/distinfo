@@ -1,5 +1,5 @@
-TIMESTAMP = 1780298491
-SHA256 (go/net_mihomo/mihomo-v1.19.26/v1.19.26.mod) = dfc926397ed8fa7a16ee1374cdea36b2df7faa7a602e2d1c2cc4be24344e20e7
-SIZE (go/net_mihomo/mihomo-v1.19.26/v1.19.26.mod) = 6961
-SHA256 (go/net_mihomo/mihomo-v1.19.26/v1.19.26.zip) = 39aa76bb0523714e2bf4af1b9b7f289e3b99af845f7ef6a62526488653d25279
-SIZE (go/net_mihomo/mihomo-v1.19.26/v1.19.26.zip) = 1339850
+TIMESTAMP = 1780765724
+SHA256 (go/net_mihomo/mihomo-v1.19.27/v1.19.27.mod) = e23d9304f41d800c5f2b641026ba1e0ae89f8a294ef76677f742636e13624c67
+SIZE (go/net_mihomo/mihomo-v1.19.27/v1.19.27.mod) = 7302
+SHA256 (go/net_mihomo/mihomo-v1.19.27/v1.19.27.zip) = aec20ce0d27eb65fa11948614fbea250e145f06492d13c4efd6d24f951e38ba2
+SIZE (go/net_mihomo/mihomo-v1.19.27/v1.19.27.zip) = 1348958
