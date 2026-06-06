@@ -18,7 +18,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libleveldb.so:databases/leveldb \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake:noninja localbase:ldflags ssl
+USES=		cmake:noninja cpe localbase:ldflags ssl
+CPE_VENDOR=	apache
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 
