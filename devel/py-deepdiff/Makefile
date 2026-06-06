@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep difference and search of any Python object/data
-WWW=		https://github.com/seperman/deepdiff
+WWW=		https://github.com/qlustered/deepdiff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,7 +19,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpickle>0:devel/py-jsonpickle@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pydantic2>0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-pyyaml>0:devel/py-types-pyyaml@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
+CPE_VENDOR=	qluster
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
 SHEBANG_FILES=	deepdiff/diff.py
