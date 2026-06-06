@@ -20,6 +20,6 @@ logfile="/var/log/${name}.log"
 
 procname=%%PREFIX%%/bin/authelia
 command="/usr/sbin/daemon"
-command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/authelia --config %%PREFIX%%/etc/authelia.yml"
+command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/authelia --config %%PREFIX%%/etc/authelia.yml --config.experimental.filters template"
 
 run_rc_command "$1"
