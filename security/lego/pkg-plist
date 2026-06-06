@@ -5,5 +5,5 @@ bin/lego
 @dir(%%LEGO_USER%%,www,) %%WWWDIR%%
 @sample etc/lego/deploy.sh.sample
 @sample(%%LEGO_USER%%,%%LEGO_USER%%,0700) etc/lego/lego.sh.sample
-@sample(%%LEGO_USER%%,%%LEGO_USER%%,0700) etc/lego/lego.yml.sample
+@sample(%%LEGO_USER%%,%%LEGO_USER%%,0600) etc/lego/lego.yml.sample
 etc/periodic/weekly/604.lego
