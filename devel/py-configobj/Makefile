@@ -15,7 +15,8 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	configobj_project
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
