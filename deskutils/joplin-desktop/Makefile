@@ -22,9 +22,10 @@ BUILD_DEPENDS=	7zz:archivers/7-zip \
 LIB_DEPENDS=	libvips.so:graphics/vips \
 		libsecret-1.so:security/libsecret
 
-USES=		cargo electron:40 gmake localbase:ldflags nodejs:24,build \
+USES=		cargo cpe electron:40 gmake localbase:ldflags nodejs:24,build \
 		python:build
 
+CPE_VENDOR=	joplinapp
 USE_GITHUB=	yes
 GH_ACCOUNT=	laurent22
 GH_TUPLE=	rollup:rollup:v4.9.1:rollup/rollup \
