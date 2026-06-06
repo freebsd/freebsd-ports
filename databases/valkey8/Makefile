@@ -10,7 +10,8 @@ WWW=		https://valkey.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig tcl:test
+USES=		cpe gmake pkgconfig tcl:test
+CPE_VENDOR=	lfprojects
 USE_GITHUB=	yes
 GH_ACCOUNT=	valkey-io
 USE_RC_SUBR=	valkey valkeysentinel
