@@ -20,7 +20,7 @@ LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
@@ -111,7 +111,7 @@ MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
 MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 .endif
 SBCL_BOOT_LIST=	1.2.7-x86-64-freebsd 1.2.7-x86-freebsd 1.2.7-x86-64-dragonfly \
-		2.5.7-powerpc64le-freebsd
+		2.5.7-powerpc64le-freebsd 2.6.5-powerpc64-freebsd
 
 .include <bsd.port.options.mk>
 
