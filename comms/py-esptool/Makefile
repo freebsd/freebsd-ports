@@ -22,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=3:devel/py-argcomplete@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}rich-click>0:devel/py-rich-click@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	espressif
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent cryptography distutils pytest
 
