@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly
 
-USES=		cargo
+USES=		cargo cpe
 
+CPE_VENDOR=	skim-rs
 USE_GITHUB=	yes
 GH_ACCOUNT=	lotabout
 
