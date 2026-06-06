@@ -94,8 +94,6 @@ SUB_FILES+=	nvidia.conf
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
-MODULESDIR=	lib/xorg/modules
-EXTENSIONSDIR=	${MODULESDIR}/extensions/.nvidia
 PORTDOCS=	*
 
 .if ${NVVERSION} >= 331.013
@@ -107,11 +105,6 @@ SUB_LIST+=	NVGL="\# "
 OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB+=	MODULESDIR=${MODULESDIR}
-.if ${NVVERSION} < 410.057
-PLIST_SUB+=	EXTENSIONSDIR=${EXTENSIONSDIR}
-.else
-PLIST_SUB+=	EXTENSIONSDIR="@comment "
-.endif
 
 # Not part of the pkg-plist because DISTVERSION is not on PLIST_SUB
 .if ${NVVERSION} >= 515.04304
