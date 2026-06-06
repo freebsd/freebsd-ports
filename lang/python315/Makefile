@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${PYTHON_SUFFIX}
 DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pre-release versions of the interpreted object-oriented programming language
 WWW=		https://www.python.org/
 
