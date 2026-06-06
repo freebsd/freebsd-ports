@@ -1,7 +1,6 @@
 PORTNAME=	vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
-PORTREVISION=	1
+DISTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
 		LOCAL/bofh/security/${PORTNAME}/:web_ui
@@ -27,7 +26,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 EXTRACT_DEPENDS=npm-node20>0:www/npm-node20
 .endif
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:1.26+,modules
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -46,7 +45,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	cf1ce4df8af6e323558bd5f8c37e771388cbc951
+GITID=	a71d5add7ef4111ec4015e9a81b06388f652e2ac
 
 .include <bsd.port.pre.mk>
 
