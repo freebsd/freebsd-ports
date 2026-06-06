@@ -1,7 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
-PORTREVISION=	1
+DISTVERSION=	0.4.6
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -45,7 +44,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		approx-0.5.1 \
 		arc-swap-1.9.1 \
 		array-concat-0.5.5 \
-		array-init-2.1.0 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		as-raw-xcb-connection-1.0.1 \
@@ -62,17 +60,16 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		async-task-4.7.1 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
-		autocfg-1.5.0 \
+		autocfg-1.5.1 \
 		base64-0.22.1 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
 		bindgen-0.70.1 \
 		bindgen-0.72.1 \
-		bit-set-0.8.0 \
-		bit-vec-0.8.0 \
+		bit-set-0.9.1 \
+		bit-vec-0.9.1 \
 		bitflags-1.3.2 \
-		bitflags-2.11.1 \
-		bitvec-1.0.1 \
+		bitflags-2.12.1 \
 		blake3-1.8.5 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
@@ -80,8 +77,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		block2-0.6.2 \
 		blocking-1.6.2 \
 		borsh-1.6.1 \
-		build-target-0.4.0 \
-		bumpalo-3.20.2 \
+		bumpalo-3.20.3 \
 		bytecount-0.6.9 \
 		bytemuck-1.25.0 \
 		bytemuck_derive-1.10.2 \
@@ -93,7 +89,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		calloop-wayland-source-0.3.0 \
 		calloop-wayland-source-0.4.1 \
 		cast-0.3.0 \
-		cc-1.2.62 \
+		cc-1.2.63 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-0.1.10 \
@@ -108,7 +104,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
-		codespan-reporting-0.12.0 \
+		codespan-reporting-0.13.1 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.5 \
 		combine-4.6.7 \
@@ -127,7 +123,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		core-text-20.1.0 \
 		core-text-21.0.0 \
 		coreaudio-rs-0.11.3 \
-		coreaudio-sys-0.2.17 \
+		coreaudio-sys-0.2.18 \
 		cpal-0.15.3 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
@@ -143,7 +139,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		crypto-common-0.1.7 \
 		ctor-0.10.1 \
 		cursor-icon-1.2.0 \
-		d3d12-descriptor-heap-0.2.1 \
 		dashmap-6.2.1 \
 		dasp_sample-0.11.0 \
 		data-encoding-2.11.0 \
@@ -156,7 +151,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		dirs-sys-next-0.1.2 \
 		dispatch-0.2.0 \
 		dispatch2-0.3.1 \
-		displaydoc-0.2.5 \
+		displaydoc-0.2.6 \
 		dlib-0.5.3 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
@@ -168,7 +163,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		dtor-0.8.1 \
 		dunce-1.0.5 \
 		dwrote-0.11.5 \
-		either-1.15.0 \
+		either-1.16.0 \
 		encoding_rs-0.8.35 \
 		endi-1.1.1 \
 		enumflags2-0.7.12 \
@@ -202,7 +197,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		funty-2.0.0 \
 		futures-0.3.32 \
 		futures-channel-0.3.32 \
 		futures-core-0.3.32 \
@@ -221,9 +215,9 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		gif-0.14.2 \
 		gl_generator-0.14.0 \
 		glob-0.3.3 \
-		glow-0.16.0 \
-		glslang-0.6.2 \
-		glslang-sys-0.7.0+1062752 \
+		glow-0.17.0 \
+		glslang-0.8.1 \
+		glslang-sys-0.8.1+275822a \
 		glutin_wgl_sys-0.6.1 \
 		gpu-allocator-0.28.0 \
 		gpu-descriptor-0.3.2 \
@@ -231,8 +225,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		grid-1.0.1 \
 		guillotiere-0.6.2 \
 		half-2.7.1 \
-		halfbrown-0.2.5 \
 		halfbrown-0.3.0 \
+		halfbrown-0.4.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
@@ -254,7 +248,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		indexmap-2.14.0 \
-		inotify-0.11.1 \
+		inotify-0.11.2 \
 		inotify-sys-0.1.5 \
 		iovec-0.1.4 \
 		is_terminal_polyfill-1.70.2 \
@@ -266,32 +260,26 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.98 \
+		js-sys-0.3.99 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
-		kqueue-1.1.1 \
+		kqueue-1.2.0 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
-		librashader-0.10.1 \
-		librashader-cache-0.10.1 \
-		librashader-common-0.10.1 \
-		librashader-pack-0.10.1 \
-		librashader-preprocess-0.10.1 \
-		librashader-presets-0.10.1 \
-		librashader-reflect-0.10.1 \
-		librashader-runtime-0.10.1 \
-		librashader-runtime-d3d11-0.10.1 \
-		librashader-runtime-d3d12-0.10.1 \
-		librashader-runtime-d3d9-0.10.1 \
-		librashader-runtime-gl-0.10.1 \
-		librashader-runtime-mtl-0.10.1 \
-		librashader-runtime-vk-0.10.1 \
-		librashader-runtime-wgpu-0.10.1 \
-		libredox-0.1.16 \
+		librashader-0.11.1 \
+		librashader-cache-0.11.1 \
+		librashader-common-0.11.1 \
+		librashader-pack-0.11.1 \
+		librashader-preprocess-0.11.1 \
+		librashader-presets-0.11.1 \
+		librashader-reflect-0.11.1 \
+		librashader-runtime-0.11.1 \
+		librashader-runtime-wgpu-0.11.1 \
+		libredox-0.1.17 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \
@@ -300,26 +288,24 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.3.9 \
-		log-0.4.29 \
+		log-0.4.32 \
 		lru-0.16.4 \
-		mach-siegbert-vogt-dxcsa-0.1.3 \
 		mach2-0.4.3 \
 		malloc_buf-0.0.6 \
 		malloc_buf-1.0.0 \
 		matchers-0.2.0 \
-		memchr-2.8.0 \
+		memchr-2.8.1 \
 		memmap2-0.9.10 \
 		memoffset-0.9.1 \
 		metal-0.32.0 \
-		metal-0.33.0 \
 		minicov-0.3.8 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
-		mio-1.2.0 \
+		mio-1.2.1 \
 		miow-0.5.0 \
 		miow-0.6.1 \
 		moxcms-0.8.1 \
-		naga-28.0.0 \
+		naga-29.0.3 \
 		ndk-0.8.0 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
@@ -367,7 +353,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		onig_sys-69.9.3 \
 		oorandom-11.1.5 \
 		option-ext-0.2.0 \
-		orbclient-0.3.54 \
+		orbclient-0.3.55 \
 		ordered-float-5.3.0 \
 		ordered-stream-0.2.0 \
 		owned_ttf_parser-0.25.1 \
@@ -411,7 +397,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
-		radium-0.7.0 \
 		rand-0.4.6 \
 		rand-0.8.6 \
 		rand-0.9.4 \
@@ -424,6 +409,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		range-alloc-0.1.5 \
 		rapidhash-4.4.1 \
 		raw-window-handle-0.6.2 \
+		raw-window-metal-1.1.0 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		rdrand-0.4.0 \
@@ -431,7 +417,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		read-fonts-0.37.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.5 \
+		redox_syscall-0.8.1 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		regex-1.12.3 \
@@ -440,7 +426,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-1.1.0 \
 		roxmltree-0.20.0 \
-		rspirv-0.12.0+sdk-1.3.268.0 \
+		rspirv-0.13.0+sdk-1.4.341.0 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
@@ -456,12 +442,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.1.1 \
 		sha1-0.10.6 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
+		shlex-2.0.1 \
 		signal-hook-0.4.4 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.9 \
@@ -478,22 +465,20 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		smithay-clipboard-0.7.3 \
 		smol_str-0.3.6 \
 		softbuffer-0.4.8 \
-		spirv-0.3.0+sdk-1.3.268.0 \
-		spirv-cross-sys-0.4.3+e670b39 \
-		spirv-cross2-0.4.6 \
+		spirv-0.4.0+sdk-1.4.341.0 \
+		spirv-cross-sys-0.7.2+38681a3 \
+		spirv-cross2-0.7.1 \
 		spirv-cross2-derive-0.1.0 \
-		spirv-to-dxil-0.4.7 \
-		spirv-to-dxil-sys-0.4.7 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
+		strumbra-0.6.0 \
 		svg_fmt-0.4.5 \
 		swash-0.2.7 \
 		syn-2.0.117 \
 		synstructure-0.13.2 \
 		taffy-0.10.1 \
-		tap-1.0.1 \
 		tempdir-0.3.7 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
@@ -515,7 +500,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		toml-0.9.12+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.11+spec-1.1.0 \
+		toml_edit-0.25.12+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tracing-0.1.44 \
@@ -524,14 +509,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
 		tracing-web-0.1.3 \
-		triomphe-0.1.15 \
 		ttf-parser-0.25.1 \
 		twox-hash-2.1.2 \
-		typenum-1.20.0 \
+		typenum-1.20.1 \
 		ucd-trie-0.1.7 \
 		uds_windows-1.2.1 \
 		unicode-ident-1.0.24 \
-		unicode-segmentation-1.13.2 \
+		unicode-segmentation-1.13.3 \
 		unicode-width-0.2.2 \
 		unicode-width-16-0.1.0 \
 		unicode-xid-0.2.6 \
@@ -548,14 +532,14 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.121 \
-		wasm-bindgen-futures-0.4.71 \
-		wasm-bindgen-macro-0.2.121 \
-		wasm-bindgen-macro-support-0.2.121 \
-		wasm-bindgen-shared-0.2.121 \
-		wasm-bindgen-test-0.3.71 \
-		wasm-bindgen-test-macro-0.3.71 \
-		wasm-bindgen-test-shared-0.2.121 \
+		wasm-bindgen-0.2.122 \
+		wasm-bindgen-futures-0.4.72 \
+		wasm-bindgen-macro-0.2.122 \
+		wasm-bindgen-macro-support-0.2.122 \
+		wasm-bindgen-shared-0.2.122 \
+		wasm-bindgen-test-0.3.72 \
+		wasm-bindgen-test-macro-0.3.72 \
+		wasm-bindgen-test-shared-0.2.122 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
@@ -570,41 +554,35 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wayland-protocols-wlr-0.3.12 \
 		wayland-scanner-0.31.10 \
 		wayland-sys-0.31.11 \
-		web-sys-0.3.98 \
+		web-sys-0.3.99 \
 		web-time-1.1.0 \
 		weezl-0.1.12 \
-		wgpu-28.0.0 \
-		wgpu-core-28.0.1 \
-		wgpu-core-deps-apple-28.0.0 \
-		wgpu-core-deps-emscripten-28.0.0 \
-		wgpu-core-deps-windows-linux-android-28.0.0 \
-		wgpu-hal-28.0.1 \
-		wgpu-types-28.0.0 \
-		wide-1.4.0 \
-		widestring-1.2.1 \
+		wgpu-29.0.3 \
+		wgpu-core-29.0.3 \
+		wgpu-core-deps-apple-29.0.3 \
+		wgpu-core-deps-emscripten-29.0.3 \
+		wgpu-core-deps-windows-linux-android-29.0.3 \
+		wgpu-hal-29.0.3 \
+		wgpu-naga-bridge-29.0.3 \
+		wgpu-types-29.0.3 \
+		wide-1.5.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.42.0 \
 		windows-0.54.0 \
-		windows-0.58.0 \
 		windows-0.62.2 \
 		windows-collections-0.3.2 \
 		windows-core-0.54.0 \
-		windows-core-0.58.0 \
 		windows-core-0.62.2 \
 		windows-future-0.3.2 \
-		windows-implement-0.58.0 \
 		windows-implement-0.60.2 \
-		windows-interface-0.58.0 \
 		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
 		windows-numerics-0.3.1 \
 		windows-result-0.1.2 \
-		windows-result-0.2.0 \
 		windows-result-0.4.1 \
-		windows-strings-0.1.0 \
 		windows-strings-0.5.1 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
@@ -652,7 +630,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wit-parser-0.244.0 \
 		writeable-0.6.3 \
 		wyhash-0.5.0 \
-		wyz-0.5.1 \
 		x11-clipboard-0.9.3 \
 		x11-dl-2.21.0 \
 		x11rb-0.13.2 \
@@ -665,14 +642,14 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		yansi-1.0.1 \
 		yazi-0.2.1 \
 		yeslogic-fontconfig-sys-6.0.1 \
-		yoke-0.8.2 \
+		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
 		zbus-4.4.0 \
 		zbus_macros-4.4.0 \
 		zbus_names-3.0.0 \
 		zeno-0.3.3 \
-		zerocopy-0.8.48 \
-		zerocopy-derive-0.8.48 \
+		zerocopy-0.8.50 \
+		zerocopy-derive-0.8.50 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zerotrie-0.2.4 \
