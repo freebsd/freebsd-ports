@@ -1275,6 +1275,7 @@
     SUBDIR += sundials
     SUBDIR += superlu
     SUBDIR += superlu-dist
+    SUBDIR += superlu-mt
     SUBDIR += symengine
     SUBDIR += symfpu
     SUBDIR += symmetrica
