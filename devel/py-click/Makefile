@@ -13,7 +13,8 @@ BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}flit-core>=3.11<4:devel/py-flit-core@${PY
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	palletsprojects
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
