@@ -16,6 +16,7 @@ LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
 
 USES=		cmake cpe pathfix pkgconfig python:env
 CPE_VENDOR=	mongodb
+CPE_PRODUCT=	c_driver
 PATHFIX_WRKSRC=	${WRKSRC}/src/libmongoc
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
