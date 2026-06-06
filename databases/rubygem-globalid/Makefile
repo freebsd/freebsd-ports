@@ -12,8 +12,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.2.0:devel/rubygem-activesupport4
 
-USES=		gem
+USES=		cpe gem
 
+CPE_VENDOR=	rubyonrails
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^0\.
