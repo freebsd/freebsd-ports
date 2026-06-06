@@ -10,7 +10,7 @@ WWW=		https://open62541.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake python shebangfix
+USES=		cmake cpe python shebangfix
 SHEBANG_GLOB=	*.py
 USE_LDCONFIG=	yes
 
