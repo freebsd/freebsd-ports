@@ -21,7 +21,7 @@ APR_VERSION=	1.7.6
 APU_VERSION=	1.6.3
 
 CPE_VENDOR=	apache
-CPE_PRODUCT=	apr-util
+CPE_PRODUCT=	portable_runtime
 CPE_VERSION=	${APU_VERSION}
 
 OPTIONS_SUB=		yes
