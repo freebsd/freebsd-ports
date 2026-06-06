@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake go:modules,no_targets
+USES=		cpe gmake go:modules,no_targets
+CPE_VENDOR=	codenotary
 GO_MODULE=	github.com/codenotary/immudb
 
 .include <bsd.port.pre.mk>
