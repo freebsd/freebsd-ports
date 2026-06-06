@@ -21,7 +21,7 @@ PLIST_FILES=	"@dir ${SCHEMADIR}" \
 		${SCHEMADIR}/register.sql \
 		bin/${PORTNAME}
 
-SCHEMADIR=		/usr/local/share/${PORTNAME}
+SCHEMADIR=		${LOCALBASE}/share/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DBDIR}
