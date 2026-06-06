@@ -88,10 +88,7 @@ EGL_JSON_PATH=		${PREFIX}/share/egl/egl_external_platform.d
 GLVND_JSON_PATH=	${PREFIX}/share/glvnd/egl_vendor.d
 VKICD_PATH=		${PREFIX}/share/vulkan/icd.d
 VKLAYERS_PATH=		${PREFIX}/share/vulkan/implicit_layer.d
-SUB_FILES=	pkg-message
-.if !defined(LIBGLDIR)
-SUB_FILES+=	nvidia.conf
-.endif
+SUB_FILES=	nvidia.conf pkg-message
 
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 PORTDOCS=	*
