@@ -1,4 +1,4 @@
-TIMESTAMP = 1780607316
+TIMESTAMP = 1780728441
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -949,5 +949,5 @@ SHA256 (rust/crates/zstd-safe-7.2.1.crate) = 54a3ab4db68cea366acc5c897c7b4d4d1b8
 SIZE (rust/crates/zstd-safe-7.2.1.crate) = 21122
 SHA256 (rust/crates/zstd-sys-2.0.13+zstd.1.5.6.crate) = 38ff0f21cfee8f97d94cef41359e0c89aa6113028ab0291aa8ca0038995a95aa
 SIZE (rust/crates/zstd-sys-2.0.13+zstd.1.5.6.crate) = 749090
-SHA256 (wandb-wandb-v0.27.1_GH0.tar.gz) = 078f363854f28cac77f0325009b68cffc25591480a57dc134df8f01f7a2d8173
-SIZE (wandb-wandb-v0.27.1_GH0.tar.gz) = 43388966
+SHA256 (wandb-wandb-v0.27.2_GH0.tar.gz) = ac7c70b8985c824e62f5bd3294e7bc5a57747de5ef7a298e7e071de185bcf485
+SIZE (wandb-wandb-v0.27.2_GH0.tar.gz) = 43393576
