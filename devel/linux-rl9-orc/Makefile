@@ -11,7 +11,8 @@ WWW=		https://gstreamer.freedesktop.org/projects/orc.html
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
-USES=		linux:rl9
+USES=		cpe linux:rl9
+CPE_VENDOR=	gstreamer
 USE_LDCONFIG=	yes
 USE_LINUX=	libgcrypt
 USE_LINUX_RPM=	yes
