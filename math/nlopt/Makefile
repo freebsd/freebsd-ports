@@ -1,7 +1,6 @@
 PORTNAME=	nlopt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.1
-PORTREVISION=	2
+DISTVERSION=	2.11.0
 CATEGORIES=	math
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -32,7 +31,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	stevengj
 USE_LDCONFIG=	yes
 
-# 'make test': 100% tests passed, 0 tests failed out of 83
+# 'make FLAVOR=full    test': 100% tests passed, 0 tests failed out of 84
+# 'make FLAVOR=minimal test': 100% tests passed, 0 tests failed out of 77
 CMAKE_TESTING_ON=	NLOPT_TESTS
 
 .if ${FLAVOR} == full
