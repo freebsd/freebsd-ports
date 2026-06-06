@@ -15,8 +15,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cargo
+USES=		cargo cpe
 
+CPE_VENDOR=	gitoxidelabs
 USE_GITHUB=	yes
 GH_ACCOUNT=	Byron
 
