@@ -1,0 +1,6 @@
+The pipcl package provides Python build backend operations (including
+PEP 517 support), for use by a setup.py script.
+
+Designed to help build complex Python extension packages, it can also be
+used to build simple pure-python packages. It is a python module that does
+not impose any restrictions on usage.
