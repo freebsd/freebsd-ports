@@ -38,6 +38,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USES=		compiler:c++17-lang cpe gl pkgconfig scons sdl
 
 CPE_VENDOR=	godotengine
+CPE_PRODUCT=	godot_engine
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 USE_GL=		gl glew glu
