@@ -16,7 +16,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/slf4j-api.jar:devel/slf4j \
 
 USES=		cpe java
 CPE_VENDOR=	oracle
-CPE_PRODUCT=	mysql_connector_j
+CPE_PRODUCT=	mysql_connector/j
 
 NO_ARCH=	yes
 NO_BUILD=	yes
