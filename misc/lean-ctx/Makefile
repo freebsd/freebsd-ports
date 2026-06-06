@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.4
+DISTVERSION=	3.7.5
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,7 @@ GH_ACCOUNT=	yvgude
 WRKSRC_SUBDIR=	rust
 
 CARGO_CRATES=	adler2-2.0.1 \
+		adobe-cmap-parser-0.4.1 \
 		aes-0.8.4 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
@@ -57,6 +58,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		blake3-1.8.5 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.0 \
+		block-padding-0.3.3 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
 		bytecount-0.6.9 \
@@ -67,8 +69,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bzip2-0.6.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
+		cbc-0.1.2 \
 		cc-1.2.60 \
 		cesu8-1.1.0 \
+		cff-parser-0.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
@@ -132,14 +136,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		document-features-0.2.12 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
+		ecb-0.1.2 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.2.0 \
 		either-1.15.0 \
 		email-encoding-0.4.1 \
 		email_address-0.2.9 \
 		encode_unicode-1.0.0 \
+		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
+		euclid-0.20.14 \
 		euclid-0.22.14 \
 		fallible-iterator-0.2.0 \
 		fallible-iterator-0.3.0 \
@@ -252,6 +259,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
+		lopdf-0.38.0 \
 		lru-0.16.4 \
 		lru-slab-0.1.2 \
 		lsp-types-0.97.0 \
@@ -273,6 +281,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		nom-8.0.0 \
+		nom_locate-5.0.0 \
 		nu-ansi-term-0.50.3 \
 		num-bigint-0.4.6 \
 		num-conv-0.2.1 \
@@ -294,6 +303,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		paste-1.0.15 \
 		pastey-0.2.2 \
 		pbkdf2-0.12.2 \
+		pdf-extract-0.10.0 \
 		pem-3.0.6 \
 		percent-encoding-2.3.2 \
 		pest-2.8.6 \
@@ -316,9 +326,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plotters-svg-0.3.7 \
 		png-0.18.1 \
 		polycool-0.4.0 \
+		pom-1.1.0 \
 		portable-atomic-1.13.1 \
 		postgres-protocol-0.6.11 \
 		postgres-types-0.2.13 \
+		postscript-0.14.1 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
 		ppmd-rust-1.4.0 \
@@ -343,6 +355,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
+		rangemap-1.7.1 \
 		ratatui-0.30.0 \
 		ratatui-core-0.1.0 \
 		ratatui-crossterm-0.1.0 \
@@ -514,6 +527,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-zig-1.1.2 \
 		try-lock-0.2.5 \
 		ttf-parser-0.25.1 \
+		type1-encoding-parser-0.1.1 \
 		typed-path-0.12.3 \
 		typeid-1.0.3 \
 		typenum-1.20.0 \
