@@ -27,7 +27,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgi-lifespan>=0:devel/py-asgi-lifespan@${P
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=0:devel/py-pytest-benchmark@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	collerek
 USE_GITHUB=	yes
 GH_ACCOUNT=	collerek
 USE_PYTHON=	autoplist concurrent cryptography pep517 pytest
