@@ -28,7 +28,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-packagekit
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/engrampa/releases/ limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.engrampa.gschema.xml
 
