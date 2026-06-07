@@ -11,12 +11,11 @@ WWW=		https://github.com/mate-desktop/libmatemixer
 
 LICENSE=	LGPL21
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool pkgconfig tar:xz
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	mate-desktop
 USE_GNOME=	glib20 intlhack
+PORTSCOUT=	site:https://github.com/mate-desktop/libmatemixer/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-null \
 		--enable-oss \
