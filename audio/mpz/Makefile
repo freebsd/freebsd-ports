@@ -1,5 +1,5 @@
 PORTNAME=	mpz
-PORTVERSION=	1.0.26
+DISTVERSION=	2.0.10
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -8,20 +8,19 @@ WWW=		https://mpz-player.org/
 
 LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libtag.so:audio/taglib \
+LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
+		libtag.so:audio/taglib \
 		libyaml-cpp.so:devel/yaml-cpp
 
+USES=		cmake compiler:c++17-lang desktop-file-utils gl gstreamer qt:6 \
+		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	olegantonyan
-
-USES=		compiler:c++11-lang desktop-file-utils gstreamer qmake qt:5
+USE_GL=		opengl
 USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
-USE_QT=		buildtools:build concurrent core dbus gui multimedia \
-		network widgets x11extras
+USE_QT=		base multimedia tools:build
+USE_XORG=	ice sm x11 xext xorgproto
 
-QMAKE_ARGS=	DEFINES+=USE_SYSTEM_TAGLIB DEFINES+=USE_SYSTEM_YAMLCPP
-
-post-extract:
-	@${RM} -r ${WRKSRC}/libs/taglib ${WRKSRC}/libs/yaml-cpp
+CMAKE_ON=	USE_SYSTEM_LIBMPDCLIENT USE_SYSTEM_TAGLIB USE_SYSTEM_YAMLCPP
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-05-19 14:50:19 UTC
++++ CMakeLists.txt
+@@ -352,7 +352,7 @@ endif()
+ # demangled function names from STRIPPED release binaries (no DWARF shipped).
+ # Skipped on Windows: PE has no .dynsym equivalent for executables, so the
+ # same trick can't work there without shipping DWARF or PDBs.
+-if(UNIX AND NOT APPLE)
++if(LINUX AND NOT APPLE)
+   set(CPPTRACE_DIR 3rdparty/cpptrace-1.0.4)
+   set(CPPTRACE_BUILD_TESTING OFF CACHE BOOL "" FORCE)
+   set(CPPTRACE_GET_SYMBOLS_WITH_LIBDL ON CACHE BOOL "" FORCE)
