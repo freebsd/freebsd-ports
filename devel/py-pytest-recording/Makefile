@@ -1,5 +1,5 @@
 PORTNAME=	pytest-recording
-DISTVERSION=	0.13.3
+DISTVERSION=	0.13.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 0.13.2: 30 failed, 29 passed, 6 skipped in 42.49s, see https://github.com/kiwicom/pytest-recording/issues/154
+# tests as of 0.13.4: 63 passed, 8 skipped, 55 warnings in 23.68s
 
 .include <bsd.port.mk>
