@@ -1,14 +1,23 @@
---- meson.build.orig	2025-08-15 11:23:59 UTC
+--- meson.build.orig	2026-01-28 14:23:48 UTC
 +++ meson.build
-@@ -91,9 +91,19 @@ endif
+@@ -23,6 +23,10 @@ pciaccess = dependency('pciaccess', version : '>= 0.10
+ pthreads = dependency('threads', required : true)
+ pciaccess = dependency('pciaccess', version : '>= 0.10', required : true)
+ 
++if dependency('pciaccess').found()
++    config.set('HAVE_PCI_DEVICE_IS_BOOT_DISPLAY',1)
++endif
++
+ x11 = dependency('x11', required : false)
+ xfixes = dependency('xfixes', required : false)
+ png = dependency('libpng', required : false)
+@@ -88,8 +92,18 @@ endif
    error('xf86-video-intel depends upon atomic operations, which were not found for your compiler/cpu. Try compiling with -march=native, or install the libatomics-op-dev package.')
  endif
  
 -libudev = dependency('libudev', required : false)
-+libudev = dependency('libudev', required : get_option('udev') == 'true')
 -if libudev.found()
--  config.set('HAVE_UDEV', 1)
--endif
++libudev = dependency('libudev', required : get_option('udev') == 'true')
 +with_udev = false
 +if get_option('udev') == 'auto'
 +  if libudev.found()
@@ -20,11 +29,10 @@
 +  with_udev = get_option('udev') == 'true'
 +endif
 +if with_udev
-+  config.set('HAVE_UDEV', 1)
-+endif
+   config.set('HAVE_UDEV', 1)
+ endif
  
- cpuid_code = '''
-@@ -183,7 +183,7 @@ man_config.set('filemansuffix', '5')
+@@ -180,7 +194,7 @@ man_config.set('filemansuffix', '5')
  man_config = configuration_data()
  man_config.set('appmansuffix', '1')
  man_config.set('filemansuffix', '5')
