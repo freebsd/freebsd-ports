@@ -29,6 +29,6 @@ USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-indicator-applet/releases/ limitw:1,even
 
 .include <bsd.port.mk>
