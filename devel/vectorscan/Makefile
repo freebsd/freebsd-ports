@@ -11,7 +11,7 @@ WWW=		https://github.com/VectorCamp/vectorscan
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=	ragel:devel/ragel
 
