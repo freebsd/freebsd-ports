@@ -487,6 +487,7 @@
     SUBDIR += py-fal-client
     SUBDIR += py-fast-histogram
     SUBDIR += py-fastmcp
+    SUBDIR += py-fastmcp-slim
     SUBDIR += py-fastscapelib
     SUBDIR += py-files-to-prompt
     SUBDIR += py-fleep
