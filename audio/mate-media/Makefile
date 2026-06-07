@@ -31,6 +31,6 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-media/releases/ limitw:1,even
 
 .include <bsd.port.mk>
