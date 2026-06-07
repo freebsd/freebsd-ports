@@ -73,6 +73,8 @@ MAKE_ENV=	${CUSTOM_ENV} \
 		LINK="${CXX}"
 # CXXFLAGS+=	-DNODE_API_EXPERIMENTAL \
 # 		-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT
+EXTRACT_AFTER_ARGS=	--exclude scripts/nodejs-patches/008-windows-tcp-connect-crash-fix-node-62561.patch \
+			--no-same-owner --no-same-permissions
 REINPLACE_ARGS=	-i ''
 
 MONGO_CRYPT_VER=7.0.0
