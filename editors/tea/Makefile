@@ -19,7 +19,6 @@ SPELL_DESC=		Spell checker backend
 
 USE_QT=		base
 USE_GL=		opengl
-USE_LOCALE=	en_US.UTF-8
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	psemiletov

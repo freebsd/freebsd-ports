@@ -59,8 +59,7 @@ make-swift-packages-cache: extract
 	${SETENV} ${MAKE_ENV} ${LOCALBASE}/swift6/bin/swift package \
 		--scratch-path=${WRKDIR}/swift-packages-cache \
 		resolve
-	@${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-		${TAR} -czf ${WRKDIR}/${PORTNAME}-${DISTVERSION}-swift-packages${EXTRACT_SUFX} \
+	@${TAR} -czf ${WRKDIR}/${PORTNAME}-${DISTVERSION}-swift-packages${EXTRACT_SUFX} \
 		-C ${WRKDIR} swift-packages-cache
 
 .include <bsd.port.mk>

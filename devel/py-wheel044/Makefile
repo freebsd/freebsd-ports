@@ -20,8 +20,6 @@ USE_PYTHON=	allflavors autoplist concurrent pep517
 
 PORTSCOUT=	ignore:1
 
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268500
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 NO_ARCH=	yes
 
 post-install:

@@ -40,10 +40,6 @@ ZFS_RUN_DEPENDS=	bash-completion-zfs>=0:shells/bash-completion-zfs
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == riscv64
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
-.endif
-
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/ssl/openssl.cnf|${PREFIX}& &|g' \

@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 CONFIGURE_ENV=		CC=${CC} CXX=${CXX} CPP=${CPP} GHC=${BOOT_GHC} \
 			ALEX=/usr/bin/true HAPPY=/usr/bin/true
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
-USE_LOCALE=		en_US.UTF-8
 NO_CCACHE=		yes
 OPTIONS_SUB=		yes
 SHEBANG_FILES=		${BOOT_SCRIPT} \

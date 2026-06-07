@@ -12,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		cmake python:build
-USE_LOCALE=	en_US.UTF-8
 
 CMAKE_ARGS=	-DCMAKE_DOC_DIR:STRING="${DOCSDIR_REL}" \
 		-DCMAKE_MAN_DIR:STRING="share/man"

@@ -19,6 +19,4 @@ TEST_DEPENDS=	R-cran-callr>0:devel/R-cran-callr \
 
 USES=		cran:auto-plist
 
-MAKE_ENV+=	LC_ALL="C.UTF-8"
-
 .include <bsd.port.mk>

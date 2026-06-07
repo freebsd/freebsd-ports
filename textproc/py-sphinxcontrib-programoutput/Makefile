@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.5,1:textproc/py-sphinx@${PY_FLAV
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-USE_LOCALE=	en_US.UTF-8
 
 NO_ARCH=	yes
 

@@ -25,8 +25,6 @@ USE_PYTHON+=	pytest
 TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
 .endif
 
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268500
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

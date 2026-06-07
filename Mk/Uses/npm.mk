@@ -240,8 +240,7 @@ npm-fetch-node-package-manager:
 		${SETENV} SCRIPTSDIR=${SCRIPTSDIR} WRKDIR=${WRKDIR} \
 			${SH} ${SCRIPTSDIR}/npm-create-mtree.sh ${NPM_CMDNAME} > \
 			${NPM_CMDNAME}.mtree && \
-		${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-			${TAR} -cz --options 'gzip:!timestamp' \
+		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz @${NPM_CMDNAME}.mtree; \
 	fi
 	@${SETENV} ${MAKE_ENV} corepack install -g ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz
@@ -292,8 +291,7 @@ npm-archive-node-modules:
 				${SH} ${SCRIPTSDIR}/npm-create-mtree.sh $${dir} >> \
 				${WRKDIR}/node-modules-cache.mtree; \
 		done; \
-		${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-			${TAR} -cz --options 'gzip:!timestamp' \
+		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} \
 			-C ${WRKDIR} @node-modules-cache.mtree; \
 		if [ ${TMPDIR} != ${WRKDIR} ]; then \
@@ -409,8 +407,7 @@ npm-archive-node-modules:
 		${SETENV} SCRIPTSDIR=${SCRIPTSDIR} WRKDIR=${WRKDIR} \
 			${SH} ${SCRIPTSDIR}/npm-create-mtree.sh ${NPM_MODULE_CACHE} > \
 			node-modules-cache.mtree && \
-		${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-			${TAR} -cz --options 'gzip:!timestamp' \
+		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} @node-modules-cache.mtree; \
 		if [ ${TMPDIR} != ${WRKDIR} ]; then \
 			${RM} -r ${WRKDIR}; \

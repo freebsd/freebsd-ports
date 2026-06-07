@@ -15,9 +15,6 @@ BROKEN_i386=	compiler goes out of memory
 BUILD_DEPENDS=	emacs:editors/emacs@nox
 
 USES=		cabal
-
-USE_LOCALE=	en_US.UTF-8
-
 USE_CABAL=	ListLike-4.7.8.4 \
 		OneTuple-0.4.2_1 \
 		QuickCheck-2.16.0.0 \

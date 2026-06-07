@@ -100,7 +100,7 @@ post-patch:
 		${WRKSRC}/lib/puppet/gettext/config.rb
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} LC_ALL=C.UTF-8 ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
 		--localedir=${RUBY_SITELIBDIR}/puppet/locales --publicdir=/var/puppet/state/
 
 post-install:
@@ -111,7 +111,7 @@ post-install:
 	(cd ${WRKDIR}/puppetlabs-${module:C/=.*//}-${module:C/.*=//} && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/vendor_modules/${module:C/=.*//})
 .endfor
 	${MKDIR} ${STAGEDIR}/var/puppet
-	${SETENV} LC_ALL=C.UTF-8 ${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
+	${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \
 		--rundir=/var/run/puppet \
 		--vardir=/var/puppet \

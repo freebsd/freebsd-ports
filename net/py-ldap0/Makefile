@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.5:devel/py-pyasn1@${PY_FLAVOR} \
 TEST_DEPENDS=	${LOCALBASE}/libexec/slapd:net/openldap${OPENLDAP_VER}-server
 
 USES=		ldap:24 localbase python
-USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes

@@ -137,7 +137,6 @@ USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
-USE_LOCALE?=	en_US.UTF-8
 
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin

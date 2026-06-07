@@ -24,7 +24,6 @@ GH_PROJECT=	python-${PORTNAME}
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	concurrent distutils autoplist
-USE_LOCALE=	en_US.UTF-8
 
 PORTDOCS=	README.rst
 PORTEXAMPLES=	*

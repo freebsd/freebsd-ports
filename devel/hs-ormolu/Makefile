@@ -11,8 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cabal
 
-USE_LOCALE=	C.UTF-8
-
 post-patch:
 	${REINPLACE_CMD} 's|jobs: 1|jobs: 2|' ${CABAL_HOME}/.cabal/config
 

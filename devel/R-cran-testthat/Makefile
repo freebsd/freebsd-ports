@@ -31,8 +31,6 @@ RUN_DEPENDS=	R-cran-brio>=1.1.5:devel/R-cran-brio \
 
 USES=		cran:auto-plist,compiles
 
-MAKE_ENV=	LC_ALL=C.UTF-8
-
 do-test:
 	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \

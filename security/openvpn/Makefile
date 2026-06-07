@@ -149,7 +149,7 @@ post-configure:
 # for instance, pkcs11-helper:
 _tlslibs=libssl libcrypto
 post-build:
-	@a=$$(LC_ALL=C ldd -f '%o\n' ${WRKSRC}/src/openvpn/openvpn \
+	@a=$$(ldd -f '%o\n' ${WRKSRC}/src/openvpn/openvpn \
 	|	${SORT} -u) ; set -- $$(for i in ${_tlslibs} ; do ${PRINTF} '%s\n' "$$a" | ${GREP} $${i}.so | wc -l ; done | ${SORT} -u) ;\
 	if test "$$*" != "1" ; then ( set -x ; ldd -a ${WRKSRC}/src/openvpn/openvpn ) ; ${PRINTF} '%s\n' "$$a" ; ${ECHO_CMD} >&2 "${.CURDIR} FAILED: either of ${_tlslibs} libraries linked multiple times" ; ${RM} ${BUILD_COOKIE} ; exit 1 ; fi
 

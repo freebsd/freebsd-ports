@@ -58,10 +58,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fakeredis>=0:databases/py-fakeredis@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
 USES=		python
-USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent cryptography pep517
-# Upstream archive contains files with UTF-8 names
-EXTRACT_CMD=	${SETENV} LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE} ${TAR}
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
 

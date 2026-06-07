@@ -35,8 +35,7 @@ NO_ARCH=	yes
 # will fail.
 PYTEST_IGNORED_TESTS=	test_connect_ex \
 			test_connect_refused
-TEST_ENV=	LC_ALL=en_US.UTF-8 \
-		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 CPE_VENDOR=	jean-paul_calderone
 

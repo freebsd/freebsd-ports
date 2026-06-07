@@ -17,7 +17,6 @@ LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2@qt6
 
 USES=		python pyqt:6 gl qt:6
 USE_GL=		gl
-USE_LOCALE=	C.UTF-8
 USE_PYQT=	pyqt6 qtbuilder:build sip:build
 USE_PYTHON=	concurrent flavors
 USE_QT=		base

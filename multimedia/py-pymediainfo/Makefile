@@ -19,9 +19,6 @@ RUN_DEPENDS=	mediainfo>0:multimedia/mediainfo
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
-# Upstream archive contains files with UTF-8 names
-EXTRACT_CMD=	${SETENV} LC_ALL=C.UTF-8 ${TAR}
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

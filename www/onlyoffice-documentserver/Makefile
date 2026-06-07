@@ -95,8 +95,6 @@ USE_LDCONFIG=	yes
 USE_QT=		base:build
 
 MAKE_ENV=	BUILD_NUMBER=${_DS_BUILD} \
-		LANG=C.UTF-8 \
-		LC_ALL=C.UTF-8 \
 		NODE_OPTIONS=--max-old-space-size=3072 \
 		npm_package_config_node_gyp_nodedir=${LOCALBASE} \
 		npm_package_config_node_gyp_python=${PYTHON_CMD} \

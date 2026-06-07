@@ -29,8 +29,7 @@ USE_QT=		buildtools:build concurrent:build qmake:build testlib:build \
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=YES
 
 do-test:
-	@cd ${TEST_WRKSRC} && LC_ALL=C.UTF-8 ctest -C ${CMAKE_BUILD_TYPE} \
-		${_MAKE_JOBS}
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 	@${CAT} ${TEST_WRKSRC}/Testing/Temporary/LastTest.log
 
 .include <bsd.port.mk>

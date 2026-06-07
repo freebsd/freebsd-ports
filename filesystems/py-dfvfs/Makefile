@@ -47,14 +47,10 @@ RUN_DEPENDS=	libbde>=a:filesystems/libbde \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python
-USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist cryptography pep517
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
 
 NO_ARCH=	yes
-
-# Upstream archive contains files with UTF-8 names
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 .include <bsd.port.mk>

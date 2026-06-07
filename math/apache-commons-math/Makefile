@@ -17,7 +17,6 @@ WWW=		https://commons.apache.org/proper/commons-math/
 LICENSE=	APACHE20
 
 USES=		java:ant,run
-USE_LOCALE=	en_US.ISO8859-1
 
 ALL_TARGET=	compile jar
 MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true

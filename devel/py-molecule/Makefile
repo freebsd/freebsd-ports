@@ -48,10 +48,6 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 #
 # Test failures. Only three tests fail:
 #  test/unit/test_util.py ......FFF.......................   [ 23%]
-#
-# The click module demands a UTF-8 locale when used with python-3.x
-TEST_ENV=	LANG=en_US.UTF-8 \
-		LC_ALL=en_US.UTF-8
 
 NO_ARCH=	yes
 

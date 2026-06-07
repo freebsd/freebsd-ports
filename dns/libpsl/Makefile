@@ -21,7 +21,6 @@ MESON_ARGS=	--default-library=both \
 		-Dpsl_file=${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
 		-Dpsl_testfile=${LOCALBASE}/share/public_suffix_list/test_psl.txt
 USE_LDCONFIG=	yes
-USE_LOCALE=	en_US.UTF-8
 
 SHEBANG_FILES=	src/psl-make-dafsa
 TEST_TARGET=	test

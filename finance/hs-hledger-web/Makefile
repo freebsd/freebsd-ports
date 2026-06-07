@@ -10,6 +10,5 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
-USE_LOCALE=	en_US.UTF-8
 
 .include <bsd.port.mk>

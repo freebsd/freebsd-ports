@@ -16,7 +16,6 @@ RUN_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}:lang/erlang-runtime${_
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	pivotal_software
-USE_LOCALE=	en_US.UTF-8
 USE_RC_SUBR=	${PORTNAME}
 
 NO_ARCH=	yes

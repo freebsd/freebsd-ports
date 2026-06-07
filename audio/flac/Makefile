@@ -23,10 +23,6 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	flac_project
 
-# Preserve UTF-8 filenames in test/flac-to-flac-metadata-test-files/.
-# They are referenced by the test suite.
-EXTRACT_CMD=	${SETENV} LC_ALL=C.UTF-8 ${TAR}
-
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \

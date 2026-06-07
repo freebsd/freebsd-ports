@@ -9,9 +9,6 @@ WWW=		https://github.com/erikd/hjsmin
 LICENSE=	BSD3CLAUSE
 
 USES=		cabal
-
-USE_LOCALE=	en_US.UTF-8
-
 USE_CABAL=	alex-3.5.3.0 \
 		ansi-terminal-1.1.2 \
 		ansi-terminal-types-1.1 \

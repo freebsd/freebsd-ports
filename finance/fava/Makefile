@@ -31,8 +31,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.11:devel/py-babel@${PY_FLAVOR} \
 USES=		python # same as finance/beancount
 USE_PYTHON=	autoplist distutils noflavors
 
-# Upstream archive contains files with UTF-8 names
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 NO_ARCH=	yes
 
 post-patch:

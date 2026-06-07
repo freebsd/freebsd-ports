@@ -20,7 +20,6 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
-USE_LOCALE=	en_US.UTF-8
 MAKE_ENV+=	MAN_PREFIX=${PREFIX}/share/man \
 		PATH="${LOCALBASE}/lib/erlang${_ERLANG_VER}/bin:${PATH}"
 ALL_TARGET=	# empty

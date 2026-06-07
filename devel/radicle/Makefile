@@ -47,7 +47,7 @@ generate-tarball:
 		${GIT_HEAD} | ${TAR} xf -
 	${FIND} ${DISTNAME} -print0 | \
 	     ${XARGS} -0r ${TOUCH} -d '1970-01-01T00:00:00Z'
-	${FIND} ${DISTNAME} -print0 | LC_ALL=C ${SORT} -z | \
+	${FIND} ${DISTNAME} -print0 | ${SORT} -z | \
 		sudo ${TAR} --owner=0 --group=0 --numeric-owner --no-recursion \
 		--null -T - -cf - ${DISTNAME} | \
 		${GZIP_CMD} -9n >${DISTNAME}.tar.gz

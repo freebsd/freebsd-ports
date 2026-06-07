@@ -162,7 +162,7 @@ TESTIMAGES=	${MASTERDIR}/testimages
 # _check_version strips stuffixes from distnames etc. that do not appear
 # in the program's version numbering
 _check_version=	${PKGVERSION:C/.g0//}
-_env=		LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" RT_SETTINGS=${WRKDIR}/rt-config RT_CACHE="$$TMP/rtcache"
+_env=		LANGUAGE= DISPLAY= HOME="$$TMP" RT_SETTINGS=${WRKDIR}/rt-config RT_CACHE="$$TMP/rtcache"
 post-install:
 	@${RM} -f ${WRKDIR}/selftest.exitcodes ${WRKDIR}/selftest.expect
 	@(set -e; _mp=$$(/bin/df -P ${STAGEDIR}${PREFIX}/bin/rawtherapee | ${AWK} 'NR==2{print $$NF}') ; \

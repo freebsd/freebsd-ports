@@ -158,7 +158,7 @@ do-fetch:
 		(cd $$_NSrc && \
 		  ${FIND} node_modules packages/bun-error/node_modules \
 			src/node-fallbacks/node_modules -print0 \
-		  | LC_ALL=C ${SORT} -z \
+		  | ${SORT} -z \
 		  | ${SETENV} -i ${TAR} czf ${DD}/bun-node-modules-${DISTVERSION}.tar.gz \
 			--format=cpio --gid 0 --uid 0 --options gzip:!timestamp \
 			--no-recursion --null -T -) && \
@@ -183,7 +183,7 @@ do-fetch:
 			( cd $$_DTmp && \
 			  ${FIND} tarballs -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 			  ${FIND} tarballs -print0 \
-			  | LC_ALL=C ${SORT} -z \
+			  | ${SORT} -z \
 			  | ${SETENV} -i ${TAR} czf ${DD}/bun-dep-tarballs-${DISTVERSION}.tar.gz \
 				--format=cpio --gid 0 --uid 0 --options gzip:!timestamp \
 				--no-recursion --null -T - ); \
@@ -199,7 +199,7 @@ do-fetch:
 			${FIND} $$_LTmp/c-api/vendor -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 			( cd $$_LTmp/c-api && \
 			  ${FIND} vendor -print0 \
-			  | LC_ALL=C ${SORT} -z \
+			  | ${SORT} -z \
 			  | ${SETENV} -i ${TAR} czf ${DD}/bun-cargo-vendor-lolhtml-${DISTVERSION}.tar.gz \
 				--format=cpio --gid 0 --uid 0 --options gzip:!timestamp \
 				--no-recursion --null -T - ) && \

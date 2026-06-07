@@ -35,13 +35,8 @@ CPE_VENDOR=	cookiecutter_project
 
 NO_ARCH=	yes
 
-# pytest needs a UTF-8 environment, and it will try and write outside
-# ${WRKDIR} unless told not to.
-
-TEST_ENV=	HOME=${WRKDIR} \
-		LANG=C.UTF-8 \
-		LC_ALL=C.UTF-8 \
-		TMPDIR=${WRKDIR}
+# pytest will try and write outside ${WRKDIR} unless told not to.
+TEST_ENV=	TMPDIR=${WRKDIR}
 
 # Windows specific test
 PYTEST_IGNORED_TESTS= test_run_shell_hooks_win

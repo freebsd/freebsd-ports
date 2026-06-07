@@ -27,8 +27,6 @@ USE_RC_SUBR=	kleened
 MAKE_ENV+=	ERL_LIBS='' \
 		HEX_HOME=${WRKDIR}/.hex \
 		HEX_OFFLINE=true \
-		LANG=en_US_UTF-8 \
-		LC_ALL=en_US.UTF-8 \
 		MIX_ARCHIVES=${WRKDIR} \
 		MIX_ENV=prod \
 		MIX_HOME=${WRKDIR}/.mix \

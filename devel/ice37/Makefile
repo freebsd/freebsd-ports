@@ -127,7 +127,7 @@ do-test-TEST-on:
 .for CONFIG in ${CONFIGS}
 	@${ECHO} Testing configuration ${CONFIG}
 	cd ${BUILD_WRKSRC} && \
-		${SETENV} LC_ALL=en_US.UTF-8 ${PYTHON_CMD} ./allTests.py \
+		${PYTHON_CMD} ./allTests.py \
 		--config=${CONFIG} \
 		$$(${TEST} $$(${IS_JAILED_CMD}) -eq 1 \
 			&& ${ECHO} ${JAILED_FILTER})

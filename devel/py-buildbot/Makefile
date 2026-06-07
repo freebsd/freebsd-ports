@@ -76,6 +76,6 @@ do-test:
 
 # Old invocation that we will probably need later
 # ${MKDIR} ${WRKDIR}/tmp
-# cd ${WRKDIR}/tmp && TZ=UTC LANG=C PYTHONPATH=${WRKSRC} ${PYTHON_CMD} -m twisted.trial buildbot.test
+# cd ${WRKDIR}/tmp && TZ=UTC PYTHONPATH=${WRKSRC} ${PYTHON_CMD} -m twisted.trial buildbot.test
 
 .include <bsd.port.mk>

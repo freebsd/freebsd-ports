@@ -45,7 +45,6 @@ SHEBANG_LANG=	sh
 sh_OLD_CMD=	/usr/bin/sh
 sh_CMD=		${SH}
 USE_GNOME=	gtk40
-USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec
 NO_ARCH=	yes

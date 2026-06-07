@@ -30,7 +30,6 @@ TEST_DEPENDS=	pdftex:print/tex-formats \
 
 USES=		cran:auto-plist
 
-MAKE_ENV=	LC_ALL=C.UTF-8 \
-		R_ZIPCMD=${LOCALBASE}/bin/zip
+MAKE_ENV=	R_ZIPCMD=${LOCALBASE}/bin/zip
 
 .include <bsd.port.mk>

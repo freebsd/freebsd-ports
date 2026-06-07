@@ -35,8 +35,6 @@ TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles
 
-MAKE_ENV=	LC_ALL=C.UTF-8
-
 do-test:
 	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \

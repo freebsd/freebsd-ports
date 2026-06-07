@@ -425,7 +425,7 @@ post-install-DRIVER-on:
 
 do-test-TEST-on:
 .for t in ${TEST_TARGETS}
-	cd ${WRKSRC}/out/${BUILDTYPE} && ${SETENV} LC_ALL=en_US.UTF-8 \
+	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		./${t} --gtest_filter=-${EXCLUDE_${t}:ts:} || ${TRUE}
 .endfor
 

@@ -343,9 +343,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  can be used in Makefiles by port maintainers
 #				  if a port breaks with it.
 ##
-# USE_LOCALE	- LANG and LC_ALL are set to the value of this variable in
-#				  CONFIGURE_ENV and MAKE_ENV.  Example: USE_LOCALE=en_US.UTF-8
-##
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
@@ -681,6 +678,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # For extract:
 #
 # EXTRACT_ENV	- Environment to pass to ${EXTRACT_CMD}
+#				  Default: none
 # EXTRACT_CMD	- Command for extracting archive
 #				  Default: ${TAR}
 # EXTRACT_BEFORE_ARGS
@@ -994,8 +992,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Most port authors should not need to understand anything after this point.
 #
 
-LANG=		C
-LC_ALL=		C
+LANG=		C.UTF-8
+LC_ALL=		C.UTF-8
 .export		LANG LC_ALL
 
 # These need to be absolute since we don't know how deep in the ports
@@ -1589,6 +1587,7 @@ PKG_NOTE_flavor=	${FLAVOR}
 # GIT_CEILING_DIRECTORIES prevents ports that try to find their version
 # using git from finding the ports tree's git repository.
 WRK_ENV+=		HOME=${WRKDIR} \
+				LANG=C.UTF-8 \
 				MACHINE_ARCH=${MACHINE_ARCH} \
 				PWD="$${PWD}" \
 				GIT_CEILING_DIRECTORIES=${WRKDIR} \
@@ -1988,10 +1987,6 @@ ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .      endif
 .    endif
 
-.    if defined(USE_LOCALE)
-WRK_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
-.    endif
-
 # Macro for doing in-place file editing using regexps.  REINPLACE_ARGS may only
 # be used to set or override the -i argument.  Any other use is considered
 # invalid.
@@ -2144,7 +2139,6 @@ PATCH_DIST_ARGS+=	--suffix .orig
 TAR?=	/usr/bin/tar
 
 # EXTRACT_SUFX is defined in .pre.mk section
-EXTRACT_ENV?=	LC_ALL=C.UTF-8
 EXTRACT_CMD?=	${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
 EXTRACT_AFTER_ARGS?=	--no-same-owner --no-same-permissions
