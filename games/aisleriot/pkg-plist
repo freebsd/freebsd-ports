@@ -118,6 +118,7 @@ libexec/aisleriot/ar-cards-renderer
 %%DATADIR%%/cards/tarot.svgz
 %%DATADIR%%/cards/tigullio.svgz
 %%DATADIR%%/cards/tragy.svgz
+%%DATADIR%%/cards/Атласные.svgz
 %%DATADIR%%/icons/hicolor/16x16/actions/cards-deal.png
 %%DATADIR%%/icons/hicolor/22x22/actions/cards-deal.png
 %%DATADIR%%/icons/hicolor/24x24/actions/cards-deal.png
