@@ -1,0 +1,15 @@
+--- configure.ac.orig	2026-06-07 07:26:03 UTC
++++ configure.ac
+@@ -153,7 +153,11 @@ CPPFLAGS="$SAVE_CPPFLAGS"
+ 
+ CPPFLAGS="$SAVE_CPPFLAGS"
+ 
+-PKG_CHECK_MODULES([PCIACCESS], [pciaccess >= 0.8.0])
++PKG_CHECK_MODULES([PCIACCESS], [pciaccess >= 0.8.0], [LIBPCIACCESS=yes], [LIBPCIACCESS=no])
++if test "x$LIBPCIACCESS" = xyes; then
++	AC_DEFINE(HAVE_PCI_DEVICE_IS_BOOT_DISPLAY, 1, [libpciaccess support])
++fi
++
+ XORG_CFLAGS="$XORG_CFLAGS $PCIACCESS_CFLAGS"
+ 
+ # Checks for headers/macros for byte swapping
