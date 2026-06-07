@@ -27,7 +27,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-gksu=no
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/caja-extensions/releases/ limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.Caja.Sendto.gschema.xml \
 		org.mate.caja-open-terminal.gschema.xml
