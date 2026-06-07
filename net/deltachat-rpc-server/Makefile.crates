@@ -19,7 +19,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		asn1-rs-0.6.2 \
 		asn1-rs-derive-0.5.1 \
 		asn1-rs-impl-0.2.0 \
-		astral-tokio-tar-0.6.0 \
+		astral-tokio-tar-0.6.2 \
 		async-broadcast-0.7.2 \
 		async-channel-1.9.0 \
 		async-channel-2.5.0 \
@@ -47,7 +47,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bitflags-2.11.0 \
 		bitvec-1.0.1 \
 		blake2-0.10.6 \
-		blake3-1.8.3 \
+		blake3-1.8.5 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		blowfish-0.9.1 \
@@ -94,7 +94,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cmac-0.7.2 \
 		cobs-0.2.3 \
 		color_quant-1.1.0 \
-		colorutils-rs-0.7.6 \
+		colorutils-rs-0.8.0 \
 		concurrent-queue-2.5.0 \
 		const-oid-0.9.6 \
 		constant_time_eq-0.3.1 \
@@ -104,6 +104,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
 		crc-3.2.1 \
 		crc-catalog-2.4.0 \
 		crc24-0.1.6 \
@@ -129,7 +130,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
-		data-encoding-2.10.0 \
+		data-encoding-2.11.0 \
 		dbl-0.3.2 \
 		der-0.7.9 \
 		der-parser-9.0.0 \
@@ -241,7 +242,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		httpdate-1.0.3 \
 		human-panic-2.0.6 \
 		humansize-2.1.3 \
-		hyper-1.8.1 \
+		hybrid-array-0.2.3 \
+		hybrid-array-0.3.1 \
+		hyper-1.9.0 \
 		hyper-rustls-0.27.5 \
 		hyper-util-0.1.20 \
 		iana-time-zone-0.1.61 \
@@ -285,8 +288,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		k256-0.13.4 \
 		kamadak-exif-0.6.1 \
 		keccak-0.1.6 \
+		kem-0.3.0-pre.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.184 \
+		libc-0.2.186 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.35.0 \
@@ -311,7 +315,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.8 \
-		mio-1.0.3 \
+		mio-1.2.0 \
+		ml-dsa-0.0.4 \
+		ml-kem-0.2.3 \
 		moka-0.12.10 \
 		moxcms-0.8.1 \
 		mutate_once-0.1.1 \
@@ -352,11 +358,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		once_cell-1.21.3 \
 		oorandom-11.1.4 \
 		opaque-debug-0.3.1 \
-		openssl-0.10.72 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-src-300.4.2+3.4.1 \
-		openssl-sys-0.9.107 \
+		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		p256-0.13.2 \
 		p384-0.13.1 \
@@ -427,8 +433,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		r-efi-5.2.0 \
 		radium-0.7.0 \
 		radix_trie-0.2.1 \
-		rand-0.8.5 \
-		rand-0.9.2 \
+		rand-0.8.6 \
+		rand-0.9.4 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
@@ -464,7 +470,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.14.0 \
 		rustls-webpki-0.102.8 \
-		rustls-webpki-0.103.10 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.14 \
 		rustyline-16.0.0 \
 		ryu-1.0.19 \
@@ -510,12 +516,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		simdutf8-0.1.5 \
 		simple-dns-0.9.3 \
 		slab-0.4.9 \
+		slh-dsa-0.0.3 \
 		smallvec-1.15.1 \
 		smawk-0.3.2 \
 		snafu-0.8.5 \
 		snafu-derive-0.8.5 \
 		socket2-0.5.9 \
-		socket2-0.6.0 \
+		socket2-0.6.3 \
 		spin-0.9.8 \
 		spin-0.10.0 \
 		spki-0.7.3 \
@@ -556,9 +563,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.50.0 \
+		tokio-1.52.1 \
 		tokio-io-timeout-1.2.1 \
-		tokio-macros-2.6.0 \
+		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.18 \
 		tokio-tfo-0.3.1 \
@@ -693,8 +700,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		z32-1.3.0 \
-		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
