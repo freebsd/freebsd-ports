@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-dbus-services=${PREFIX}/share/dbus-1/services
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-notification-daemon/releases/ limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.NotificationDaemon.gschema.xml
 
