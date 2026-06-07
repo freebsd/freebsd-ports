@@ -34,6 +34,12 @@ MANPAGES_CONFIGURE_OFF=	-Dman-pages=false
 X11_CONFIGURE_ON=	-Dxwayland=true
 X11_CONFIGURE_OFF=	-Dxwayland=false
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+ZIG_ARGS+=	-Dllvm=true
+.endif
+
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
 
