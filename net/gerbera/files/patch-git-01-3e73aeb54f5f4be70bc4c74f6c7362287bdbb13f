@@ -1,0 +1,56 @@
+From 3e73aeb54f5f4be70bc4c74f6c7362287bdbb13f Mon Sep 17 00:00:00 2001
+From: Karlchen <k_straussberger@netzland.net>
+Date: Sun, 7 Jun 2026 00:21:04 +0200
+Subject: [PATCH] Handle url decoding correctly
+
+---
+ ChangeLog.md          | 1 +
+ ReleaseNotes.md       | 1 +
+ src/upnp/compat.h     | 5 +++++
+ src/util/url_utils.cc | 3 ++-
+ 4 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/src/upnp/compat.h b/src/upnp/compat.h
+index 3470efe1d..cb1d91b15 100644
+--- src/upnp/compat.h
++++ src/upnp/compat.h
+@@ -46,6 +46,9 @@ static constexpr grb_read_t GRB_READ_ERROR = -1;
+ #define GrbUpnpFileInfoSetContentType(i, mt) (i)->content_type = std::move((mt))
+ #define GrbUpnpGetHeaders(i) (i)->request_headers
+ #define GrbUpnpSetHeaders(i, h) std::copy((h).begin(), (h).end(), std::back_inserter((i)->response_headers))
++// npupnp reencodes the query arguments to build a parsable URL. We need another
++// decoding layer when using it.
++#define GrbUrlUnescape(u) urlUnescape(urlUnescape(u))
+ 
+ #define UPNP_NEEDS_LITERAL_HOST_REDIRECT
+ extern "C" void UpnpSetAllowLiteralHostRedirection(int);
+@@ -80,6 +83,8 @@ void UpnpSetHeadersCompat(const UpnpFileInfo* fileInfo, const std::map<std::stri
+ #define GrbUpnpGetHeaders(i) UpnpGetHeadersCompat(i)
+ #define GrbUpnpSetHeaders(i, h) UpnpSetHeadersCompat(i, h)
+ 
++#define GrbUrlUnescape(u) urlUnescape(u)
++
+ #if (UPNP_VERSION <= 11419) or (UPNP_VERSION > 170000 and UPNP_VERSION <= 170110)
+ // new method added
+ #define UPNP_NEEDS_CORS
+diff --git a/src/util/url_utils.cc b/src/util/url_utils.cc
+index 884f23667..3a80e9096 100644
+--- src/util/url_utils.cc
++++ src/util/url_utils.cc
+@@ -24,6 +24,7 @@ Gerbera - https://gerbera.io/
+ #include "url_utils.h" // API
+ 
+ #include "exceptions.h"
++#include "upnp/compat.h"
+ 
+ #include <fmt/format.h>
+ #if FMT_VERSION >= 100202
+@@ -195,7 +196,7 @@ std::map<std::string, std::string> dictDecode(std::string_view url, bool unEscap
+             auto key = std::string_view(data, eqPos - data);
+             auto value = std::string_view(eqPos + 1, ampPos - eqPos - 1);
+             if (unEscape) {
+-                dict.try_emplace(urlUnescape(key), urlUnescape(value));
++                dict.try_emplace(GrbUrlUnescape(key), GrbUrlUnescape(value));
+             } else {
+                 dict.emplace(key, value);
+             }
