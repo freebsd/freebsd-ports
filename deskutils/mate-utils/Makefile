@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-utils/releases/ limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.dictionary.gschema.xml \
 		org.mate.disk-usage-analyzer.gschema.xml \
