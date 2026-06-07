@@ -118,8 +118,7 @@ post-patch: .SILENT
 .endif
 # Disable installation of Linux libraries (provided by the corresponding
 # `x11/linux-nvidia-libs' port or its slaves)
-	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& 0/' \
-		${WRKSRC}/lib/Makefile
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/compat/Makefile
 # Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
 # port for a while now
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
