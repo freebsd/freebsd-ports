@@ -1,6 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	11.0.0
-PORTREVISION=	1
+DISTVERSION=	11.0.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -18,7 +17,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}qemu.qmp>=0.0.5:emulators/py-qemu.qmp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 .if ${FLAVOR:U} != guestagent
 LIB_DEPENDS+=	libzstd.so:archivers/zstd
 .endif
