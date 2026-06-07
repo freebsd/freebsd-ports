@@ -34,7 +34,7 @@ BIN_SYMLINKS=	bin/n14 \
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=		llvm:max=21
+USES+=		llvm
 .endif
 
 post-patch:
