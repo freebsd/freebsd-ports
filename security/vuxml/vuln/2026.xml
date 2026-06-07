@@ -1,13 +1,44 @@
+  <vuln vid="d31259c0-624d-11f1-8607-8447094a420f">
+    <topic>Weechat -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><lt>4.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Weechat project reports:</p>
+	<blockquote cite="https://weechat.org/download/weechat/4.9.2/">
+	  <p>See links for detail.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://weechat.org/download/weechat/4.9.2/</url>
+      <url>https://weechat.org/doc/weechat/security/#WSA-2026-3</url>
+      <url>https://weechat.org/doc/weechat/security/#WSA-2026-4</url>
+      <url>https://weechat.org/doc/weechat/security/#WSA-2026-5</url>
+      <url>https://weechat.org/doc/weechat/security/#WSA-2026-6</url>
+      <url>https://weechat.org/doc/weechat/security/#WSA-2026-7</url>
+      <url>https://weechat.org/doc/weechat/security/#WSA-2026-8</url>
+    </references>
+    <dates>
+      <discovery>2026-06-07</discovery>
+      <entry>2026-06-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b94eb13-6159-11f1-be36-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
-<package>
-<name>gitlab-ce</name>
-<name>gitlab-ee</name>
-<range><ge>19.0.0</ge><lt>19.0.1</lt></range>
-<range><ge>18.11.0</ge><lt>18.11.4</lt></range>
-<range><ge>12.7.0</ge><lt>18.10.7</lt></range>
-</package>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.0.0</ge><lt>19.0.1</lt></range>
+	<range><ge>18.11.0</ge><lt>18.11.4</lt></range>
+	<range><ge>12.7.0</ge><lt>18.10.7</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
