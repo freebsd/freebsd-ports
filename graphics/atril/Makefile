@@ -33,7 +33,7 @@ USE_GNOME=	cairo gtk30 intlhack libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/atril/releases/ limitw:1,even
 
 SLAVEPORT?=	no
 CONFIGURE_ARGS=	--disable-static \
