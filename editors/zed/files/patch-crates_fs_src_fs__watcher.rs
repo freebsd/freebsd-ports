@@ -1,6 +1,6 @@
---- crates/fs/src/fs_watcher.rs.orig	2026-05-21 13:26:57 UTC
+--- crates/fs/src/fs_watcher.rs.orig	2026-06-06 03:37:40 UTC
 +++ crates/fs/src/fs_watcher.rs
-@@ -171,8 +171,13 @@ pub fn requires_poll_watcher(path: &Path) -> bool {
+@@ -173,8 +173,13 @@ pub fn requires_poll_watcher(path: &Path) -> bool {
          return detect_requires_poll_watcher_linux(path);
      }
  
@@ -15,7 +15,7 @@
          let _ = path;
          false
      }
-@@ -318,6 +323,52 @@ fn is_wsl_drvfs_path(path: &Path) -> bool {
+@@ -324,6 +329,52 @@ fn is_wsl_drvfs_path(path: &Path) -> bool {
      let after_mnt = &path[5..];
      after_mnt.starts_with(|c: char| c.is_ascii_alphabetic())
          && (after_mnt.len() == 1 || after_mnt.as_bytes()[1] == b'/')
