@@ -9,7 +9,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computation using data flow graphs for scalable machine learning
-WWW=		https://www.tensorflow.org
+WWW=		https://www.tensorflow.org \
+		https://github.com/tensorflow/tensorflow
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
