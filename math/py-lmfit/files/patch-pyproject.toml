@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-06-06 23:46:51 UTC
++++ pyproject.toml
+@@ -18,8 +18,7 @@ readme = "README.rst"
+ ]
+ description = "Least-Squares Minimization with Bounds and Constraints"
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-3-Clause"}
+ keywords = ["curve-fitting, least-squares minimization"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

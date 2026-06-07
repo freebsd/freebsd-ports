@@ -1,6 +1,5 @@
 PORTNAME=	lmfit
-DISTVERSION=	1.3.3
-PORTREVISION=	2
+DISTVERSION=	1.3.4
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asteval>=1.0:devel/py-asteval@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>=0.3.4:devel/py-dill@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.24:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.10.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.2.2:math/py-uncertainties@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
@@ -29,8 +28,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} MPLBACKEND=Agg
+
 NO_ARCH=	yes
 
-# tests as of 1.3.3: 5 failed, 654 passed, 12 skipped, 16 warnings in 153.81s (0:02:33) # _tkinter.TclError: no display name and no $DISPLAY environment variable
+# tests as of 1.3.4: 1 failed, 662 passed, 12 skipped, 179 warnings in 27.83s
 
 .include <bsd.port.mk>
