@@ -148,8 +148,8 @@ share/metainfo/texstudio.metainfo.xml
 %%DATADIR%%/lv_LV-Latvian.dic
 %%DATADIR%%/mk_MK-Macedonian.aff
 %%DATADIR%%/mk_MK-Macedonian.dic
-%%DATADIR%%/mm_MM-Mongolian.aff
-%%DATADIR%%/mm_MM-Mongolian.dic
+%%DATADIR%%/mn_MN-Mongolian.aff
+%%DATADIR%%/mn_MN-Mongolian.dic
 %%DATADIR%%/nb_NB-NorwegianBokmal.aff
 %%DATADIR%%/nb_NB-NorwegianBokmal.dic
 %%DATADIR%%/nds_NDS-LowGerman.aff
