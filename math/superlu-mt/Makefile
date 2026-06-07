@@ -1,9 +1,13 @@
 PORTNAME=	superlu-mt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	siva@FreeBSD.org
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b121cf0fcafbd10a1ca18c8d062d54cd68bbae9d.patch:-p1 # add THREAD_API cmake option
+
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of routines for performing sparse factorization
 WWW=		https://portal.nersc.gov/project/sparse/superlu/
 
@@ -21,6 +25,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS USE_XSDK_DEFAULTS
 CMAKE_OFF=	enable_fortran \
 		enable_tests \
 		enable_examples
+CMAKE_ARGS=	-DTHREAD_API=BOTH
 
 LDFLAGS+=	-lpthread \
 		-lm \
