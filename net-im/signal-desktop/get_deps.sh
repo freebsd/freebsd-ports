@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v8.11.0
+SIGNAL_VERS=v8.13.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 
@@ -71,3 +71,4 @@ echo "requires: PNPM_VERS ${pnpm_version}"
 ############ WEBRTC ############
 webrtc_version=$(fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v${ringrtc_version}/config/version.properties | grep 'webrtc.version' | awk -F '=' '{print $2}')
 printf "WEBRTC_REV=\t${webrtc_version}\n" | portedit merge -i ../../multimedia/ringrtc/Makefile
+sed -i '' "s#WEBRTC_REV=.*#WEBRTC_REV=${webrtc_version}#g" ../../multimedia/ringrtc/webrtc_fetch.sh
