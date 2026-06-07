@@ -1,0 +1,3 @@
+Lightweight Vala + GTK4 + libadwaita desktop client that talks to
+deltachat-rpc-server over JSON-RPC. Follows GNOME HIG, works on desktop
+and mobile form factors.
