@@ -33,7 +33,7 @@ USE_CSTD=	c11
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/pluma-plugins/releases/ limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.pluma.plugins.sourcecodebrowser.gschema.xml \
 		org.mate.pluma.plugins.terminal.gschema.xml \
