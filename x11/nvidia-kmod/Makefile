@@ -126,7 +126,7 @@ CONFLICTS_INSTALL+=	nvidia-kmod*
 
 pre-patch:
 .for p in ${SUB_PATCHES}
-	@${SED} 's/%%NVSRC%%/${NVSRC}/g' ${PATCHDIR}/${p}.in > ${WRKDIR}/${p}
+	@${SED} 's/%%NVSRC%%/${NVSRC}/g' ${MASTERDIR}/files/${p}.in > ${WRKDIR}/${p}
 .endfor
 .for p in ${SUB_PATCHES}
 EXTRA_PATCHES+=	${WRKDIR}/${p}

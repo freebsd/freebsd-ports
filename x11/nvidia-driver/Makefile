@@ -106,14 +106,6 @@ CONFLICTS_INSTALL+=	nvidia-driver*
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
-.for p in ${SUB_PATCHES}
-	@${SED} 's/%%NVSRC%%/${NVSRC}/g' ${PATCHDIR}/${p}.in > ${WRKDIR}/${p}
-.endfor
-.for p in ${SUB_PATCHES}
-EXTRA_PATCHES+=	${WRKDIR}/${p}
-.endfor
-
 post-patch: .SILENT
 # Patch only needed for non-kmod
 	${REINPLACE_CMD} -e '/SUBDIR=\tsrc \\/d' -e 's/\tlib/SUBDIR=\tlib/' \
