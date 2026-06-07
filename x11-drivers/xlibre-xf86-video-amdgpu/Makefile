@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-video-amdgpu
 PORTVERSION=	25.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64/powerpc64le
 
-LIB_DEPENDS=	libdrm_amdgpu.so:graphics/libdrm
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
+		libdrm_amdgpu.so:graphics/libdrm
 
 USES=		gl tar:xz xlibre-cat:driver
 USE_GL=		gbm
