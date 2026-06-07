@@ -1,7 +1,7 @@
 PORTNAME=	gnat12
 DISTVERSION=	12.4.0
 CATEGORIES=	lang
-MASTER_SITES=	http://gcc.gnu.org/pub/gcc/releases/gcc-${DISTVERSION}/:gcc \
+MASTER_SITES=	${MASTER_SITE_GCC:C|%SUBDIR%|${MASTER_SITE_SUBDIR}|}:gcc \
 		LOCAL/thierry:gnat
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 DISTFILES=	gcc-${DISTVERSION}.tar.xz:gcc
@@ -21,13 +21,13 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils \
 		gcc${_GCC_VER}>0:lang/gcc${_GCC_VER}
 
-USES=		bison gettext-runtime gmake iconv libtool localbase tar:xz
+USES=		bison gmake iconv libtool localbase tar:xz
 USE_BINUTILS=	yes
 USE_LDCONFIG=	${_TARGLIB}
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_PREFIX=	${_PKG_PREFIX}
 GNU_CONFIGURE_MANPREFIX=	${_PKG_PREFIX}/share
+GNU_CONFIGURE_PREFIX=	${_PKG_PREFIX}
 CONFIGURE_ARGS=		--disable-bootstrap \
 			--disable-libgomp \
 			--disable-libmudflap \
@@ -51,14 +51,17 @@ CONFIGURE_TARGET=	${_GNAT_ARCH}-portbld-${_PLATFORM}
 
 MAKE_ENV+=	PATH=${_TOOLCHAIN_PATHS}
 INSTALL_TARGET=	install-strip
+
+PIE_UNSAFE=	yes
+
 MANDIRS=	${_PKG_PREFIX}/share/man
 BINARY_ALIAS=	make=${GMAKE}
+
 WRKSRC=		${WRKDIR}/gcc-${DISTVERSION}
+
 PLIST_SUB=	ASSET_FILE=${_ASSET_FILE} \
 		CONFTRGT=${CONFIGURE_TARGET} \
 		VER=${DISTVERSION}
-
-PIE_UNSAFE=	yes
 
 OPTIONS_DEFINE=			ASSETS NLS
 .if exists(/usr/lib32/libc.so)
@@ -92,16 +95,11 @@ MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
 CONFIGURE_ARGS+=		--disable-multilib
 .endif
+NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ON=		--enable-nls
 NLS_CONFIGURE_OFF=		--disable-nls
 PREVASSET_DISTFILES+=		${_PREV_ASSET_FILE}.tar.xz:gnat
 PREVASSET_VARS=			_GCC6AUX_PATH=${WRKDIR}/${_PREV_ASSET_FILE}/bin
-
-.include <bsd.port.pre.mk>
-
-.if ${UID} != 0
-BINMODE=	755
-.endif
 
 _ASSET_FILE=		gnat-${_GNAT_ARCH}-${OPSYS:tl}.${OSREL:R}-${PKGVERSION}
 _GCC_VER=		${DISTVERSION:R:R}
@@ -115,13 +113,17 @@ _PLATFORM=		${OPSYS:tl}${OSREL}
 _PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 _PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
 _PREV_ASSET_OSREL?=	${OSREL:R}
-_PREV_ASSET_VER?=	12.3.0
 _PREV_ASSET_REV?=	_1
+_PREV_ASSET_VER?=	12.3.0
 _REV_FILE=		${WRKSRC}/gcc/REVISION
 _TARGLIB=		${_PKG_PREFIX}/lib ${_PKG_PREFIX}/lib/gcc${_GCC_VER}
 _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GCC6AUX_PATH}:${PREFIX}/bin:${LOCALBASE}/bin
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${UID} != 0
+BINMODE=	755
+.endif
 
 .if ${ARCH} == i386
 LIB_DIR_32=	""
@@ -137,25 +139,24 @@ PLIST_SUB+=	LIB32=" "
 .endif
 
 .if ${ARCH} == amd64
-PLIST_SUB+=	AMD64=" " \
+PLIST_SUB+=	64BIT=" " \
 		AARCH64="@comment " \
-		X86=" " \
-		64BIT=" "
+		AMD64=" " \
+		X86=" "
 .elif ${ARCH} == i386
-PLIST_SUB+=	AMD64="@comment " \
+PLIST_SUB+=	64BIT="@comment " \
 		AARCH64="@comment " \
-		X86=" " \
-		64BIT="@comment "
-.elif ${ARCH} == aarch64
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
-PLIST_SUB+=	X86="@comment " \
 		AMD64="@comment " \
+		X86=" "
+.elif ${ARCH} == aarch64
+PLIST_SUB+=	64BIT=" " \
 		AARCH64=" " \
-		64BIT=" "
+		AMD64="@comment " \
+		X86="@comment "
 .endif
 
 pre-configure:
-	${FIND} ${WRKSRC}/gcc/config -name "*freebsd.h" | \
+	${FIND} ${WRKSRC}/gcc/config -name "*freebsd.h" -o -name "*freebsd64.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|!static:[[:blank:]]|!static: --hash-style=gnu -rpath ${PREFIX}/gnat${_GCC_VER}/lib |'
 	${ECHO} "-=> GNAT ${_OS_LABEL4VERS}" > ${_REV_FILE}
 	${ECHO} "release" > ${_PHASE_FILE}
@@ -185,4 +186,4 @@ post-stage-ASSETS-on:
 		>> ${PKGMESSAGE}
 	${ECHO_CMD} "(and adjust distinfo)" >> ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
