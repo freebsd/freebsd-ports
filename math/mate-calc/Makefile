@@ -22,7 +22,7 @@ GH_ACCOUNT=	mate-desktop
 USE_GNOME=	cairo gdkpixbuf gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-calc/releases/ limitw:1,even
 
 GLIB_SCHEMAS=	org.mate.calc.gschema.xml
 
