@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	site:https://github.com/mate-desktop/mozo/releases/ limitw:1,even
 
 NLS_USES=	gettext
 OPTIONS_DEFINE=	NLS
