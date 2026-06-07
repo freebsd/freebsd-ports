@@ -1,5 +1,5 @@
 PORTNAME=	clion
-DISTVERSION=	2026.1.1
+DISTVERSION=	2026.1.2
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/ \
 		https://packages.jetbrains.team/files/p/clion/ports/2025.2/freebsd/clang/:clang
@@ -59,6 +59,10 @@ PLIST_SUB+=	ARCH=${ARCH} \
 		CLANG_ARCH=${_CLANG_ARCH} \
 		PTY4J_ARCH=${_PTY4J_ARCH} \
 		SQLITE_ARCH=${_SQLITE_ARCH}
+
+post-patch:
+	${REINPLACE_CMD} -E '1s/^.{6}//' \
+		${WRKSRC}/plugins/plugin-classpath.txt
 
 do-install:
 # Linux/Windows/OS X only so remove them
