@@ -1,3 +1,5 @@
-TIMESTAMP = 1710042888
-SHA256 (rozhuk-im-gtk-mixer-1.0.4_GH0.tar.gz) = 25f05f3930aaab417497b05e286cec08cc2727705c1159a8902aa123801e76cf
-SIZE (rozhuk-im-gtk-mixer-1.0.4_GH0.tar.gz) = 28302
+TIMESTAMP = 1780794111
+SHA256 (rozhuk-im-gtk-mixer-1.0.5_GH0.tar.gz) = c1d924cfc2e1d988bc96917c3313de8c528d4912364aa9783db3191ad1612ce8
+SIZE (rozhuk-im-gtk-mixer-1.0.5_GH0.tar.gz) = 59663
+SHA256 (freebsd-virtual_oss-v1.3.3_GH0.tar.gz) = d0ef373bf112172781d1840fc4732f72fef2dfe99d156fa5d5ba6c69caaab7b2
+SIZE (freebsd-virtual_oss-v1.3.3_GH0.tar.gz) = 3895227
