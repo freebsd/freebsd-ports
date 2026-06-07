@@ -193,20 +193,49 @@ def resolve_make_value(value, portname):
 
 
 def get_github_repo(makefile_path):
-    """Return (account, project) for USE_GITHUB=yes ports, else None."""
+    """Return (account, project) for USE_GITHUB=yes ports or from WWW field, else None."""
     use_github = get_makefile_var(makefile_path, "USE_GITHUB")
-    if not use_github or use_github.lower() != "yes":
-        return None
+    if use_github and use_github.lower() == "yes":
+        portname = get_makefile_var(makefile_path, "PORTNAME")
+        if not portname:
+            return None
 
-    portname = get_makefile_var(makefile_path, "PORTNAME")
-    if not portname:
-        return None
-
-    gh_account = get_makefile_var(makefile_path, "GH_ACCOUNT") or portname
-    gh_project = get_makefile_var(makefile_path, "GH_PROJECT") or portname
-    gh_account = resolve_make_value(gh_account.split()[0], portname)
-    gh_project = resolve_make_value(gh_project.split()[0], portname)
-    return gh_account, gh_project
+        gh_account = get_makefile_var(makefile_path, "GH_ACCOUNT") or portname
+        gh_project = get_makefile_var(makefile_path, "GH_PROJECT") or portname
+        gh_account = resolve_make_value(gh_account.split()[0], portname)
+        gh_project = resolve_make_value(gh_project.split()[0], portname)
+        return gh_account, gh_project
+    
+    # If USE_GITHUB is not set, try to extract from WWW field, but only for ports
+    # that appear to use GitHub releases and are explicitly marked with a comment
+    # or have DISTVERSION matching a GitHub-style tag pattern (YYYY.M.DD or similar)
+    version = get_makefile_var(makefile_path, "DISTVERSION") or get_makefile_var(makefile_path, "PORTVERSION")
+    if version and looks_like_version(version):
+        # Only query from WWW if version matches GitHub-style patterns:
+        # - YYYY.M.DD (date-based like 2026.4.26, 2026.4.29)
+        # - X.Y.Z.W (4+ numeric components)
+        # This filters out most non-GitHub ports while catching real GitHub releases
+        parts = re.findall(r"\d+", version)
+        if len(parts) >= 3:
+            # Check if it looks like YYYY.M.DD (year >= 2000)
+            if int(parts[0]) >= 2000 and int(parts[0]) <= 2099:
+                if int(parts[1]) >= 1 and int(parts[1]) <= 12:
+                    if int(parts[2]) >= 1 and int(parts[2]) <= 31:
+                        # Looks like a date-based version from GitHub
+                        www = get_makefile_var(makefile_path, "WWW")
+                        if www:
+                            m = re.match(r"https?://(?:www\.)?github\.com/([^/]+)/([^/\s]+)", www)
+                            if m:
+                                return m.group(1), m.group(2)
+            # Also check for simple 4+ component versions (e.g., 1.2.3.4)
+            elif len(parts) >= 4:
+                www = get_makefile_var(makefile_path, "WWW")
+                if www:
+                    m = re.match(r"https?://(?:www\.)?github\.com/([^/]+)/([^/\s]+)", www)
+                    if m:
+                        return m.group(1), m.group(2)
+    
+    return None
 
 
 # --- Version handling ---
@@ -328,14 +357,16 @@ def get_port_version_via_make(port_dir):
 
 def find_maintained_ports(maintainer_email):
     """
-    Return (versions, uses_types, github_repos) keyed by port origin.
+    Return (versions, uses_types, github_repos, github_version_prefixes) keyed by port origin.
     versions[origin] = real version string
     uses_types[origin] = comma-separated port type string
     github_repos[origin] = (account, project) for USE_GITHUB ports
+    github_version_prefixes[origin] = (prefix, suffix) to strip from GitHub release tags
     """
     versions = {}
     uses_types = {}
     github_repos = {}
+    github_version_prefixes = {}
     top_makefile = os.path.join(PORTSDIR, "Makefile")
     categories = get_subdir_entries(top_makefile)
 
@@ -367,8 +398,15 @@ def find_maintained_ports(maintainer_email):
             github_repo = get_github_repo(port_makefile)
             if github_repo:
                 github_repos[origin] = github_repo
+                portname = get_makefile_var(port_makefile, "PORTNAME") or ""
+                prefix_raw = get_makefile_var(port_makefile, "DISTVERSIONPREFIX") or ""
+                suffix_raw = get_makefile_var(port_makefile, "DISTVERSIONSUFFIX") or ""
+                prefix = resolve_make_value(prefix_raw, portname)
+                suffix = resolve_make_value(suffix_raw, portname)
+                if prefix or suffix:
+                    github_version_prefixes[origin] = (prefix, suffix)
 
-    return versions, uses_types, github_repos
+    return versions, uses_types, github_repos, github_version_prefixes
 
 
 # --- Repology API ---
@@ -451,48 +489,36 @@ def query_github_latest_release(account, project, cache):
     if key in cache:
         return cache[key]
 
-    quoted_account = urllib.parse.quote(account, safe="")
-    quoted_project = urllib.parse.quote(project, safe="")
-    url = f"{GITHUB_API_BASE}/repos/{quoted_account}/{quoted_project}/releases/latest"
-
+    # Use 'gh' CLI for better rate limit handling and authentication
     try:
-        with github_request(url) as resp:
-            data = json.load(resp)
-    except urllib.error.HTTPError as e:
-        if e.code != 404:
-            print(
-                f"Warning: Could not query GitHub latest release for {account}/{project}: HTTP {e.code}",
-                file=sys.stderr,
-            )
-        cache[key] = None
-        return None
-    except urllib.error.URLError as e:
-        print(
-            f"Warning: Could not query GitHub latest release for {account}/{project}: {e.reason}",
-            file=sys.stderr,
+        result = subprocess.run(
+            ["gh", "release", "view", "--repo", f"{account}/{project}"],
+            capture_output=True,
+            text=True,
+            timeout=30,
         )
+        if result.returncode == 0:
+            for line in result.stdout.split("\n"):
+                if line.startswith("tag:"):
+                    tag = line.split(":", 1)[1].strip()
+                    cache[key] = tag.strip() or None
+                    return cache[key]
         cache[key] = None
         return None
-    except Exception as e:
-        print(
-            f"Warning: Could not query GitHub latest release for {account}/{project}: {e}",
-            file=sys.stderr,
-        )
+    except Exception:
         cache[key] = None
         return None
 
-    tag = (data.get("tag_name") or "").strip()
-    cache[key] = tag.strip() or None
-    return cache[key]
 
-
-def query_github_releases(github_repos):
+def query_github_releases(github_repos, version_prefixes=None):
     """Return dict {origin: latest_release_tag} for GitHub-based ports with releases."""
     cache = {}
     latest_releases = {}
 
     unique_repos = sorted(set(github_repos.values()))
-    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
+    # gh CLI handles rate limiting better than direct API calls, so we can use more workers
+    max_workers = min(8, len(unique_repos)) if unique_repos else 1
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_map = {
             executor.submit(query_github_latest_release, account, project, cache): (account, project)
             for account, project in unique_repos
@@ -503,6 +529,12 @@ def query_github_releases(github_repos):
     for origin, repo in github_repos.items():
         latest = cache.get(repo)
         if latest:
+            if version_prefixes and origin in version_prefixes:
+                prefix, suffix = version_prefixes[origin]
+                if prefix and latest.startswith(prefix):
+                    latest = latest[len(prefix):]
+                if suffix and latest.endswith(suffix):
+                    latest = latest[:-len(suffix)]
             latest_releases[origin] = latest
     return latest_releases
 
@@ -651,7 +683,7 @@ def main():
     check_portsdir()
 
     print(f"Scanning {PORTSDIR} for ports maintained by {maintainer_email}...", file=sys.stderr)
-    local_versions, local_uses, github_repos = find_maintained_ports(maintainer_email)
+    local_versions, local_uses, github_repos, github_version_prefixes = find_maintained_ports(maintainer_email)
 
     if not local_versions:
         print(f"No ports maintained by {maintainer_email}")
@@ -662,7 +694,7 @@ def main():
         file=sys.stderr,
     )
     outdated_repology = query_repology_outdated(maintainer_email)
-    github_latest = query_github_releases(github_repos)
+    github_latest = query_github_releases(github_repos, github_version_prefixes)
     print(f"Repology reports {len(outdated_repology)} outdated FreeBSD ports.", file=sys.stderr)
     print(f"GitHub provides latest releases for {len(github_latest)} GitHub-based ports.", file=sys.stderr)
 
