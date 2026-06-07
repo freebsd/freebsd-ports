@@ -11,6 +11,9 @@ WWW=		https://www.php.net/
 
 LICENSE=	PHP301
 
+DEPRECATED=		Upstream EOL reaches on 2026-12-31
+EXPIRATION_DATE=		2026-12-31
+
 USES+=		compiler:c11 cpe gnome localbase pkgconfig tar:xz
 CPE_PRODUCT=	php
 PHP_VER=	82
