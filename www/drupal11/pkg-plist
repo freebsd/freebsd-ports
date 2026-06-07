@@ -5360,6 +5360,7 @@
 %%WWWDIR%%/core/modules/automated_cron/config/schema/automated_cron.schema.yml
 %%WWWDIR%%/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php
 %%WWWDIR%%/core/modules/automated_cron/src/Hook/AutomatedCronHooks.php
+%%WWWDIR%%/core/modules/automated_cron/tests/src/Functional/AutomatedCronTest.php
 %%WWWDIR%%/core/modules/automated_cron/tests/src/Functional/GenericTest.php
 %%WWWDIR%%/core/modules/automated_cron/tests/src/Kernel/AutomatedCronTest.php
 %%WWWDIR%%/core/modules/ban/ban.info.yml
@@ -6286,6 +6287,7 @@
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentItemTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentOrphanTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentStringIdEntitiesTest.php
+%%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentTokenReplaceTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentTypeValidationTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentUninstallTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/CommentUriDeprecationTest.php
@@ -8771,6 +8773,7 @@
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Views/LanguageTestBase.php
 %%WWWDIR%%/core/modules/language/tests/src/Traits/LanguageTestTrait.php
 %%WWWDIR%%/core/modules/language/tests/src/Unit/Config/LanguageConfigOverrideTest.php
+%%WWWDIR%%/core/modules/language/tests/src/Unit/ConfigurableLanguageManagerSwitchLinksTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Unit/ConfigurableLanguageUnitTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Unit/ContentLanguageSettingsUnitTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Unit/LanguageNegotiationUrlTest.php
@@ -9636,6 +9639,7 @@
 %%WWWDIR%%/core/modules/menu_link_content/src/Controller/MenuController.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Entity/MenuLinkContent.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Entity/MenuLinkContentLinkTarget.php
+%%WWWDIR%%/core/modules/menu_link_content/src/EventSubscriber/DefaultContentSubscriber.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Form/MenuLinkContentDeleteForm.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Form/MenuLinkContentForm.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Hook/MenuLinkContentHooks.php
@@ -9673,6 +9677,7 @@
 %%WWWDIR%%/core/modules/menu_link_content/tests/src/Functional/Rest/MenuLinkContentXmlAnonTest.php
 %%WWWDIR%%/core/modules/menu_link_content/tests/src/Functional/Rest/MenuLinkContentXmlBasicAuthTest.php
 %%WWWDIR%%/core/modules/menu_link_content/tests/src/Functional/Rest/MenuLinkContentXmlCookieTest.php
+%%WWWDIR%%/core/modules/menu_link_content/tests/src/Kernel/DefaultContentTest.php
 %%WWWDIR%%/core/modules/menu_link_content/tests/src/Kernel/MenuLinkContentCacheabilityBubblingTest.php
 %%WWWDIR%%/core/modules/menu_link_content/tests/src/Kernel/MenuLinkContentDeriverTest.php
 %%WWWDIR%%/core/modules/menu_link_content/tests/src/Kernel/MenuLinksTest.php
@@ -10465,6 +10470,7 @@
 %%WWWDIR%%/core/modules/navigation/tests/src/FunctionalJavascript/PerformanceTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/ConfigAction/AddNavigationBlockConfigActionTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationContentLinksTest.php
+%%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationEntityRouteHelperTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationMenuBlockTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationMenuLinkTreeTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationMenuMarkupTest.php
@@ -10982,7 +10988,6 @@
 %%WWWDIR%%/core/modules/package_manager/src/TranslatableStringAdapter.php
 %%WWWDIR%%/core/modules/package_manager/src/TranslatableStringFactory.php
 %%WWWDIR%%/core/modules/package_manager/src/ValidationResult.php
-%%WWWDIR%%/core/modules/package_manager/src/Validator/AllowedScaffoldPackagesValidator.php
 %%WWWDIR%%/core/modules/package_manager/src/Validator/BaseRequirementValidatorTrait.php
 %%WWWDIR%%/core/modules/package_manager/src/Validator/BaseRequirementsFulfilledValidator.php
 %%WWWDIR%%/core/modules/package_manager/src/Validator/ComposerMinimumStabilityValidator.php
@@ -11120,7 +11125,6 @@
 %%WWWDIR%%/core/modules/package_manager/tests/src/Functional/FailureMarkerRequirementTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Functional/GenericTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Functional/PackageManagerTestBase.php
-%%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/AllowedScaffoldPackagesValidatorTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/BaseRequirementsFulfilledValidatorTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/ChangeLoggerTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/ComposerInspectorTest.php
@@ -13324,6 +13328,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/test_htmx/src/Controller/HtmxTestAttachmentsController.php
 %%WWWDIR%%/core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestAjaxForm.php
 %%WWWDIR%%/core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestForm.php
+%%WWWDIR%%/core/modules/system/tests/modules/test_htmx/src/Hook/TestHtmxHooks.php
 %%WWWDIR%%/core/modules/system/tests/modules/test_htmx/test_htmx.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/test_htmx/test_htmx.libraries.yml
 %%WWWDIR%%/core/modules/system/tests/modules/test_htmx/test_htmx.routing.yml
@@ -13640,6 +13645,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/NodeTitleTestBase.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeEarlyInitializationTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeInfoTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeProceduralTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeSuggestionsAlterTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeTokenTest.php
@@ -13768,6 +13774,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/FunctionsTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/ThemeDeprecationTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/ThemeEngineTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/ThemeHookTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/ThemeTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/TwigFilterTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Theme/TwigIncludeTest.php
@@ -13791,6 +13798,10 @@
 %%WWWDIR%%/core/modules/system/tests/src/Unit/Routing/AdminRouteSubscriberTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Unit/SecurityAdvisories/SecurityAdvisoryTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Unit/TraitAccessTest.php
+%%WWWDIR%%/core/modules/system/tests/themes/HookCollector/procedural_hook_theme/procedural_hook_theme.info.yml
+%%WWWDIR%%/core/modules/system/tests/themes/HookCollector/procedural_hook_theme/procedural_hook_theme.theme
+%%WWWDIR%%/core/modules/system/tests/themes/HookCollector/procedural_hook_theme/src/Hook/ProceduralHookThemeHooks.php
+%%WWWDIR%%/core/modules/system/tests/themes/HookCollector/procedural_hook_theme/templates/node.html.twig
 %%WWWDIR%%/core/modules/system/tests/themes/HookCollector/oop_hook_theme/oop_hook_theme.info.yml
 %%WWWDIR%%/core/modules/system/tests/themes/HookCollector/oop_hook_theme/src/Hook/TestHookCollectionHooks.php
 %%WWWDIR%%/core/modules/system/tests/themes/HookCollector/oop_hook_theme_with_module/oop_hook_theme_with_module.info.yml
@@ -14068,6 +14079,7 @@
 %%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.taxonomy_translated_term_name_test.yml
 %%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.test_argument_taxonomy_index_tid_depth.yml
 %%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.test_argument_taxonomy_vocabulary.yml
+%%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.test_argument_tid_from_node.yml
 %%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.test_field_filters.yml
 %%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.test_filter_taxonomy_index_tid.yml
 %%WWWDIR%%/core/modules/taxonomy/tests/modules/taxonomy_test_views/test_views/views.view.test_filter_taxonomy_index_tid__non_existing_dependency.yml
@@ -14133,6 +14145,7 @@
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyParentUITest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyRelationshipTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyTermArgumentDepthTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyTermArgumentTidFromNodeTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyTermViewTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyTestBase.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/TaxonomyVocabularyArgumentTest.php
@@ -14257,6 +14270,7 @@
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextItemBaseTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextSummaryTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextWithSummaryItemTest.php
+%%WWWDIR%%/core/modules/text/tests/src/Unit/Plugin/Field/FieldType/TextFieldItemListTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Unit/Plugin/migrate/field/d6/TextFieldTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Unit/Plugin/migrate/field/d7/TextFieldTest.php
 %%WWWDIR%%/core/modules/text/text.field_type_categories.yml
@@ -17625,6 +17639,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileCopyTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteGadgetChainTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteRecursiveTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteRecursiveRemoteTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileMoveTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileSaveDataTest.php
@@ -17660,6 +17675,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Hook/HookLoaderTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Hook/HookOrderTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Hook/HookOrderTestTrait.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Hook/KernelTestHooksTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Hook/ThemeHookCollectorPassTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Htmx/HtmxRendererTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Htmx/HtmxRequestTest.php
@@ -17762,6 +17778,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Routing/RouteProviderTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Routing/UrlIntegrationTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/ServiceProvider/ServiceProviderTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Session/AccessPolicyProcessorInFibersTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Session/AccountSwitcherTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Session/SessionManagerDestroyNoCliCheckTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Session/SuperUserPermissionsTest.php
@@ -17994,6 +18011,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/FrontMatter/FrontMatterTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Gettext/PoHeaderTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Gettext/PoItemTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Component/Gettext/PoStreamReaderTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Gettext/PoStreamWriterTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Graph/GraphTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/HttpFoundation/SecuredRedirectResponseTest.php
@@ -18072,6 +18090,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/AssertUtilsTrait.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/Fixtures.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/Functional/ComposerHookTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/Functional/DrupalInstalledTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/Functional/ManageGitIgnoreTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/Functional/ScaffoldTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/Functional/ScaffoldUpgradeTest.php
@@ -18121,6 +18140,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal-test-overwrite/replace-me.txt
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal/assets/robots-default.txt
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal/composer.json.tmpl
+%%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-installed-fixture/composer.json.tmpl
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-profile/assets/profile.default.services.yml
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-profile/composer.json.tmpl
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-file/assets/empty_file.txt
@@ -18378,6 +18398,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/BaseFieldDefinitionTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/ContentEntityBaseMockableClass.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/ContentEntityBaseUnitTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/Controller/EntityControllerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/Enhancer/EntityRouteEnhancerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/EntityAccessCheckTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/EntityConstraintViolationListTest.php
@@ -18412,6 +18433,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/TypedData/EntityAdapterUnitTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Error/DrupalLogErrorTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/ActiveLinkResponseFilterTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/CsrfExceptionSubscriberTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/CustomPageExceptionHtmlSubscriberTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/ExceptionJsonSubscriberTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/FinalExceptionSubscriberTest.php
@@ -18699,6 +18721,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/TypedData/RecursiveContextualValidatorTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/UnroutedUrlTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Update/UpdateHookRegistryTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Update/UpdateOrderingTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Update/UpdateRegistryTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/UrlTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Utility/CallableResolverTest.php
@@ -19112,6 +19135,7 @@
 %%WWWDIR%%/core/tests/fixtures/test_missing_base_theme/test_missing_base_theme.info.yml
 %%WWWDIR%%/core/tests/fixtures/test_missing_base_theme/test_missing_base_theme.theme
 %%WWWDIR%%/core/tests/fixtures/test_stable/test_stable.info.yml
+%%WWWDIR%%/core/tests/fixtures/test_update_ordering/test_update_ordering.php
 %%WWWDIR%%/core/themes/claro/claro.info.yml
 %%WWWDIR%%/core/themes/claro/claro.libraries.yml
 %%WWWDIR%%/core/themes/claro/claro.theme
@@ -21371,6 +21395,7 @@
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckCircularReferencesPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckDefinitionValidityPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckExceptionOnInvalidReferenceBehaviorPass.php
+%%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckFactoryBuilderCircularReferencePass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckReferenceValidityPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckTypeDeclarationsPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/Compiler.php
@@ -22200,21 +22225,36 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php83/Resources/stubs/Override.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php83/bootstrap72.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/bootstrap81.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php84/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Php84.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/Deprecated.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/RoundingMode.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/RoundingMode.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Deprecated.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Pdo/Dblib.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Pdo/Firebird.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Pdo/Mysql.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Pdo/Odbc.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Pdo/Pgsql.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Pdo/Sqlite.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap82.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php85/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php85/Php85.php
 %%WWWDIR%%/vendor/symfony/polyfill-php85/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php85/Resources/stubs/DelayedTargetValidation.php
+%%WWWDIR%%/vendor/symfony/polyfill-php85/Resources/stubs/Filter/FilterException.php
+%%WWWDIR%%/vendor/symfony/polyfill-php85/Resources/stubs/Filter/FilterFailedException.php
 %%WWWDIR%%/vendor/symfony/polyfill-php85/Resources/stubs/NoDiscard.php
 %%WWWDIR%%/vendor/symfony/polyfill-php85/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php85/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-php85/composer.json
 %%WWWDIR%%/vendor/symfony/process/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/process/Exception/ExceptionInterface.php
@@ -22476,6 +22516,7 @@
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/Required.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/SubscribedService.php
 %%WWWDIR%%/vendor/symfony/service-contracts/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/service-contracts/ContainerAwareInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/LICENSE
 %%WWWDIR%%/vendor/symfony/service-contracts/README.md
 %%WWWDIR%%/vendor/symfony/service-contracts/ResetInterface.php
@@ -22877,6 +22918,7 @@
 %%WWWDIR%%/vendor/symfony/yaml/Inline.php
 %%WWWDIR%%/vendor/symfony/yaml/LICENSE
 %%WWWDIR%%/vendor/symfony/yaml/Parser.php
+%%WWWDIR%%/vendor/symfony/yaml/ParserState.php
 %%WWWDIR%%/vendor/symfony/yaml/README.md
 %%WWWDIR%%/vendor/symfony/yaml/Resources/bin/yaml-lint
 %%WWWDIR%%/vendor/symfony/yaml/Tag/TaggedValue.php
@@ -22887,7 +22929,6 @@
 %%WWWDIR%%/vendor/twig/twig/LICENSE
 %%WWWDIR%%/vendor/twig/twig/README.rst
 %%WWWDIR%%/vendor/twig/twig/composer.json
-%%WWWDIR%%/vendor/twig/twig/splitsh.json
 %%WWWDIR%%/vendor/twig/twig/src/AbstractTwigCallable.php
 %%WWWDIR%%/vendor/twig/twig/src/Attribute/AsTwigFilter.php
 %%WWWDIR%%/vendor/twig/twig/src/Attribute/AsTwigFunction.php
@@ -22915,6 +22956,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/ExpressionParsers.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/ArgumentsTrait.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/ArrowExpressionParser.php
+%%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/AssignmentExpressionParser.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/BinaryOperatorExpressionParser.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/ConditionalTernaryExpressionParser.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/DotExpressionParser.php
@@ -22962,6 +23004,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckSecurityNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckToStringNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/DeprecatedNode.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/CoercesChildrenToStringInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/DoNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/EmbedNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/EmptyNode.php
@@ -22994,10 +23037,15 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/MulBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotEqualBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotInBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotSameAsBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NullCoalesceBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/ObjectDestructuringSetBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/OrBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/PowerBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/RangeBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SameAsBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SequenceDestructuringSetBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SetBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SpaceshipBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/StartsWithBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SubBinary.php
@@ -23006,6 +23054,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/CallExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/ConditionalExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/ConstantExpression.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/EmptyExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Filter/DefaultFilter.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Filter/RawFilter.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/FilterExpression.php
