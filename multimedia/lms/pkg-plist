@@ -1,6 +1,7 @@
 bin/lms
 bin/lms-audioinfo
 bin/lms-audioplay
+bin/lms-recommendation
 @sample etc/lms.conf.sample
 etc/pam.d/lms
 %%DATADIR%%/approot/admin-about.xml
@@ -35,7 +36,11 @@ etc/pam.d/lms
 %%DATADIR%%/approot/playqueue.xml
 %%DATADIR%%/approot/%%CMAKE_BUILD_TYPE%%.xml
 %%DATADIR%%/approot/%%CMAKE_BUILD_TYPE%%s.xml
-%%DATADIR%%/approot/settings.xml
+%%DATADIR%%/approot/settings-audio.xml
+%%DATADIR%%/approot/settings-password.xml
+%%DATADIR%%/approot/settings-services.xml
+%%DATADIR%%/approot/settings-subsonic.xml
+%%DATADIR%%/approot/settings-ui.xml
 %%DATADIR%%/approot/tracklist.xml
 %%DATADIR%%/approot/tracklists.xml
 %%DATADIR%%/approot/tracks.xml
