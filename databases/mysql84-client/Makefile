@@ -23,6 +23,8 @@ CONFLICTS_INSTALL=	mysql8[1-9]-client \
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1 -DINSTALL_SUPPORTFILESDIR=0
 
+CPE_PRODUCT=	mysql
+
 USE_LDCONFIG+=	${PREFIX}/lib/mysql
 
 MMAN1=		comp_err.1 lz4_decompress.1 mysql.1 mysql_config.1 mysql_config_editor.1 \
