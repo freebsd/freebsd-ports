@@ -11,7 +11,9 @@ WWW=		https://www.libsdl.org/
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_PRODUCT=	simple_directmedia_layer
+CPE_VENDOR=	libsdl
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	nolib
