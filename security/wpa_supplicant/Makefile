@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
 
 USES=		cpe gmake pkgconfig:build readline ssl
+CPE_VENDOR=	w1.fi
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
