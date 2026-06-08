@@ -9,7 +9,7 @@ WWW=		https://www.accellera.org/downloads/standards/systemc
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	configure: error: sorry...architecture not supported
 
 USES=		autoreconf compiler:c++17-lang gmake libtool
@@ -26,5 +26,11 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+CONFIGURE_ARGS+=	--enable-pthreads
+.endif
 
 .include <bsd.port.mk>
