@@ -24,9 +24,9 @@ PLIST_FILES=	"@dir ${SCHEMADIR}" \
 SCHEMADIR=		${LOCALBASE}/share/${PORTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DBDIR}
-	${INSTALL_DATA} ${WRKSRC}/register.db \
-		${STAGEDIR}${DBDIR}
+	${MKDIR} ${STAGEDIR}${SCHEMADIR}
+	${INSTALL_DATA} ${WRKSRC}/register.sql \
+		${STAGEDIR}${SCHEMADIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/rcheckbook \
 		${STAGEDIR}${PREFIX}/bin
 
