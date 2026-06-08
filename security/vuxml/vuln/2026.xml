@@ -1,3 +1,40 @@
+  <vuln vid="7655baae-637d-11f1-8607-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.68</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.68">
+	  <p>See links for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48913</cvename>
+      <cvename>CVE-2026-44631</cvename>
+      <cvename>CVE-2026-44186</cvename>
+      <cvename>CVE-2026-44185</cvename>
+      <cvename>CVE-2026-44119</cvename>
+      <cvename>CVE-2026-43951</cvename>
+      <cvename>CVE-2026-42536</cvename>
+      <cvename>CVE-2026-42535</cvename>
+      <cvename>CVE-2026-34356</cvename>
+      <cvename>CVE-2026-34355</cvename>
+      <cvename>CVE-2026-29170</cvename>
+      <cvename>CVE-2026-29167</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.68</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72e5b334-6365-11f1-8c57-000af7b98cf6">
     <topic>Unbound -- Multiple vulnerabilities</topic>
     <affects>
