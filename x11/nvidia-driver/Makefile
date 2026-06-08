@@ -124,8 +124,8 @@ post-patch: .SILENT
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 # Do not build any binaries (native nvidia-settings and nvidia-xconfig are
 # provided by their corresponding ports) and manual pages
-	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
-	${REINPLACE_CMD} -e '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/x11/bin/Makefile
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/x11/man/Makefile
 # Also do not install libnvidia-gtk* libraries which are for nvidia-settings
 .if ${NVVERSION} >= 346.016
 	${REINPLACE_CMD} -e '/libnvidia-gtk/d' ${WRKSRC}/lib/Makefile
