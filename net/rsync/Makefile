@@ -1,5 +1,5 @@
 PORTNAME=	rsync
-DISTVERSION=	3.4.3
+DISTVERSION=	3.4.4
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -13,10 +13,11 @@ WWW=		https://rsync.samba.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.8.0:textproc/py-cmarkgfm@${PY_FLAVOR} \
+		${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
-TEST_DEPENDS=	${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
 
 USES=		autoreconf:build cpe python shebangfix ssl
 CPE_VENDOR=	samba
@@ -37,6 +38,8 @@ TEST_TARGET=	check
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 SUB_LIST=	NAME=rsyncd
 
@@ -74,7 +77,7 @@ CONFIGURE_ARGS+=	ac_cv_search_libiconv_open=no
 post-patch:
 	@${REINPLACE_CMD} -e 's:/etc/r{1,2}sync:${ETCDIR}/:g' \
 					  -e 's:/etc/letsencrypt:${PREFIX}/etc/letsencrypt:g' \
-					  ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
+					  ${WRKSRC}/rsync.1.md ${WRKSRC}/rsyncd.conf.5.md
 	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync
 
 pre-configure:
