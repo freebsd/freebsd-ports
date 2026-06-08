@@ -39,10 +39,10 @@ BROTLI_VARS=		DSO_EXTMODS+=brotli
 CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.2:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
-ECHO_GH_TUPLE=		openresty:echo-nginx-module:b0f344b:echo
+ECHO_GH_TUPLE=		openresty:echo-nginx-module:ebed47c:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
 
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:c631276:drizzle
+DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:3b4cb3d:drizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
@@ -57,7 +57,7 @@ DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.4:devel_kit
 DEVEL_KIT_USES=			iconv
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
-ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:7ffe4ec:encryptsession
+ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:1ba049b:encryptsession
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
@@ -207,7 +207,7 @@ LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
 LUA_GH_TUPLE=		openresty:lua-nginx-module:4b21d8f:lua \
-			openresty:lua-resty-core:e68e857:luarc \
+			openresty:lua-resty-core:9f8dc05:luarc \
 			openresty:lua-resty-lrucache:1c7cf6b:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
@@ -215,8 +215,8 @@ LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:421ed88:luastream \
-			openresty:lua-resty-core:e68e857:luarc \
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:6f3335c:luastream \
+			openresty:lua-resty-core:9f8dc05:luarc \
 			openresty:lua-resty-lrucache:1c7cf6b:luarl
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
@@ -228,7 +228,7 @@ LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
 
-MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.20:memc
+MEMC_GH_TUPLE=		openresty:memc-nginx-module:8c0e680:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_GH_TUPLE=		owasp-modsecurity:ModSecurity-nginx:b94f2d3:modsecurity3
@@ -301,7 +301,7 @@ REDIS2_VARS=		DSO_EXTMODS+=redis2
 RTMP_GH_TUPLE=		arut:nginx-rtmp-module:6c7719d:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
-SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:eb223c9:setmisc
+SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:35365f2:setmisc
 SET_MISC_IMPLIES=	DEVEL_KIT
 SET_MISC_VARS=		DSO_EXTMODS+=setmisc
 
@@ -316,7 +316,7 @@ SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
 SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
-SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:bcdcfdc:srcache
+SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:ca5945a:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 STS_GH_TUPLE=		vozlt:nginx-module-sts:3c10d42:sts
