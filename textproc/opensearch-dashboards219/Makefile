@@ -1,6 +1,7 @@
 PORTNAME=	opensearch-dashboards
 DISTVERSION=	2.19.5
 DISTVERSIONSUFFIX=	-linux-${OPENSEARCH_ARCH}
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 PKGNAMESUFFIX=	219
@@ -12,17 +13,14 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Depends on expired www/npm-node20
-EXPIRATION_DATE=2026-09-02
-
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 CONFLICTS=	opensearch-dashboards opensearch-dashboards210 opensearch-dashboards213 \
 		opensearch-dashboards216
 
-BUILD_DEPENDS=	npm-node20>0:www/npm-node20
+BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 
-USES=		nodejs:20,build,run python:build
+USES=		nodejs:24,build,run python:build
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_FILES=	pkg-deinstall
@@ -32,7 +30,7 @@ SUB_LIST=	PORTNAME="${PORTNAME}" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NODE_VER=	20.20.2
+NODE_VER=	24.16.0
 NO_BUILD=	yes
 
 _DEVDIR=	${WRKDIR}/.devdir
