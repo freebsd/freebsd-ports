@@ -1,3 +1,32 @@
+  <vuln vid="a207a367-6359-11f1-8c57-000af7b98cf6">
+    <topic>strongSwan -- Double-free when destroying certain cloned identities that can lead to remote code execution</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><ge>4.3.3</ge><lt>6.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>R. Elliott Childre reports:</p>
+	<blockquote cite="https://www.strongswan.org/blog/2026/06/08/strongswan-vulnerability-(cve-2026-47895).html">
+	<p>The clone() method of the identification_t class doesn't correctly handle identities that have an empty but
+	non-NULL encoding. Both objects will point to the same location, resulting in a double-free once the second object
+	is destroyed. This can lead to a crash and could potentially be exploitable for remote code execution. Affected are
+	all strongSwan versions since 4.3.3.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-47895</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-47895</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df803002-624e-11f1-8607-8447094a420f">
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
