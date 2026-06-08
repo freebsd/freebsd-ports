@@ -1,5 +1,5 @@
 PORTNAME=	pygltflib
-DISTVERSION=	1.16.4
+DISTVERSION=	1.16.5
 CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,14 +8,16 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for managing 3D objects in Khronos Group gltf, gltf2 formats
 WWW=		https://gitlab.com/dodgyville/pygltflib
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0.0.25:devel/py-dataclasses-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deprecated>0:devel/py-deprecated@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils # autoplist is broken
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
