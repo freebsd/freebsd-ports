@@ -39,7 +39,9 @@ GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=OFF
 
-USES=		cmake:insource compiler:c++11-lib iconv:translit ssl
+USES=		cmake:insource compiler:c++11-lib cpe iconv:translit ssl
+CPE_PRODUCT=	connector/c
+CPE_VENDOR=	mariadb
 USE_LDCONFIG=	${PREFIX}/lib/mariadb
 SITESDIR=	mariadb/connector-c-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/mysql
