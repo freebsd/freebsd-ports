@@ -13,7 +13,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		perl5
+USES=		cpe perl5
+CPE_PRODUCT=	app::cpanminus
+CPE_VENDOR=	app::cpanminus_project
 USE_PERL5=	configure
 
 NO_ARCH=	yes
