@@ -38,7 +38,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unearth>=0.17.5:devel/py-unearth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20:devel/py-virtualenv@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	frostming
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
