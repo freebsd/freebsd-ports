@@ -1,11 +1,12 @@
 PORTNAME=	pythonqt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.6
+DISTVERSION=	4.1.0
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dynamic Python binding for Qt Applications
-WWW=		https://mevislab.github.io/pythonqt/
+WWW=		https://mevislab.github.io/pythonqt/ \
+		https://github.com/mevislab/PythonQt
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
