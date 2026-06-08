@@ -1,6 +1,5 @@
 PORTNAME=	zstd
-DISTVERSION=	0.15.2
-PORTREVISION=	1
+DISTVERSION=	0.16.0
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -27,5 +26,6 @@ OPTIONS_DEFAULT=	APCU
 APCU_DESC=		APCu cache compression support for objects
 
 APCU_BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/apcu/apc_serializer.h:devel/pecl-APCu@${PHP_FLAVOR}
+APCU_CONFIGURE_ENABLE=	apcu
 
 .include <bsd.port.mk>
