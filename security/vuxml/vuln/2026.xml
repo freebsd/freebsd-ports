@@ -1,3 +1,48 @@
+  <vuln vid="36ec75da-633d-11f1-9dbc-28d2443e6cfa">
+    <topic>tree-sitter-cli -- Always-Incorrect Control Flow Implementation in wasmtime crate</topic>
+    <affects>
+    <package>
+	<name>tree-sitter-cli</name>
+	<range><lt>0.26.9</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-q49f-xg75-m9xw reports:</p>
+	<blockquote cite="https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-q49f-xg75-m9xw">
+	  <p>Wasmtime is a runtime for WebAssembly.  From 25.0.0 to before 36.0.7,
+42.0.2, and 43.0.1, Wasmtime's Winch compiler contains a vulnerability
+where the compilation of the table.fill instruction can result in
+a host panic.  This means that a valid guest can be compiled with
+Winch, on any architecture, and cause the host to panic.  This
+represents a denial-of-service vulnerability in Wasmtime due to
+guests being able to trigger a panic.  The specific issue is that
+a historical refactoring changed how compiled code referenced tables
+within the table.* instructions.  This refactoring forgot to update
+the Winch code paths associated as well, meaning that Winch was
+using the wrong indexing scheme.  Due to the feature support of
+Winch the only problem that can result is tables being mixed up or
+nonexistent tables being used, meaning that the guest is limited
+to panicking the host (using a nonexistent table), or executing
+spec-incorrect behavior and modifying the wrong table. This
+vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>RUSTSEC-2026-0089</cvename>
+      <url>https://rustsec.org/advisories/RUSTSEC-2026-0089</url>
+      <cvename>CVE-2026-34946</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-34946</url>
+      <cvename>GHSA-q49f-xg75-m9xw</cvename>
+      <url>https://github.com/advisories/GHSA-q49f-xg75-m9xw</url>
+    </references>
+    <dates>
+      <discovery>2026-04-09</discovery>
+      <entry>2026-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="259b562f-64ab-11f1-8607-8447094a420f">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
