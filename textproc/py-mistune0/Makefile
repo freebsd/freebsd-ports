@@ -22,6 +22,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+CPE_PRODUCT=	mistune
 CPE_VENDOR=	mistune_project
 
 PORTSCOUT=	limit:^0\.
