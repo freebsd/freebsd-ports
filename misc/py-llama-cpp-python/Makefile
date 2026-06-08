@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp-python
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.26
+DISTVERSION=	0.3.28
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -35,12 +35,12 @@ USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	abetlen
-GH_TUPLE=	ggerganov:llama.cpp:210a657:cpp/vendor/llama.cpp
+GH_TUPLE=	ggerganov:llama.cpp:9e3b928:cpp/vendor/llama.cpp
 
 SHEBANG_GLOB=	*.py
 
 CONFLICTS_BUILD=	llama-cpp
 
-# tests as of 0.3.25: 14 passed
+# tests as of 0.3.28: 66 passed in 364.39s (0:06:04)
 
 .include <bsd.port.mk>
