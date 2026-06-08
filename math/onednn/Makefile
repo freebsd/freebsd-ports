@@ -1,6 +1,6 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12
+DISTVERSION=	3.12.1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -84,6 +84,6 @@ do-test: # 1 test fails, see https://github.com/oneapi-src/oneDNN/issues/2011
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 3.10: 100% tests passed, 0 tests failed out of 172
+# tests as of 3.12.1: 100% tests passed, 0 tests failed out of 175
 
 .include <bsd.port.mk>
