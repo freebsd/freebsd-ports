@@ -12,7 +12,10 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:build,flavors
+USES=		cpe php:build,flavors
+
+CPE_PRODUCT=	andrew's_web_libraries
+CPE_VENDOR=	davical
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	davical-project
