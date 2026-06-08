@@ -1,0 +1,7 @@
+Tired of writing the same 'ol boilerplate code for command line scripts?
+Want a standard, simple way to create a Perl script that takes options
+and commands? CLI::Simple makes it easy to create scripts that take
+options, commands and arguments.
+
+CLI::Simple is designed around the modulino pattern - Perl modules that
+can be executed directly as scripts.

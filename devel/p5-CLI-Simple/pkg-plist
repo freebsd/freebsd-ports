@@ -1,0 +1,15 @@
+bin/cli-simple
+bin/create-modulino.pl
+%%SITE_PERL%%/CLI/Simple.pm
+%%SITE_PERL%%/CLI/Simple/Constants.pm
+%%SITE_PERL%%/CLI/Simple/DumpSpec.pm
+%%SITE_PERL%%/CLI/Simple/Helpers.pm
+%%SITE_PERL%%/CLI/Simple/Migrate.pm
+%%SITE_PERL%%/CLI/Simple/Scaffold.pm
+%%SITE_PERL%%/CLI/Simple/Shell.pm
+%%SITE_PERL%%/CLI/Simple/Utils.pm
+%%PERL5_MAN1%%/create-modulino.1.gz
+%%PERL5_MAN3%%/CLI::Simple.3.gz
+%%PERL5_MAN3%%/CLI::Simple::Constants.3.gz
+%%PERL5_MAN3%%/CLI::Simple::Shell.3.gz
+%%PERL5_MAN3%%/CLI::Simple::Utils.3.gz
