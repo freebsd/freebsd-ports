@@ -2573,6 +2573,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind05.json
 %%DATADIR%%/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind06.json
 %%DATADIR%%/palettes.dat
+%%DATADIR%%/scenario_patches/0129e96.parkpatch
 %%DATADIR%%/scenario_patches/0153987.parkpatch
 %%DATADIR%%/scenario_patches/020ed74.parkpatch
 %%DATADIR%%/scenario_patches/081feb1.parkpatch
@@ -2607,6 +2608,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/scenario_patches/3781719.parkpatch
 %%DATADIR%%/scenario_patches/37d31a4.parkpatch
 %%DATADIR%%/scenario_patches/3a2ca59.parkpatch
+%%DATADIR%%/scenario_patches/3c799b8.parkpatch
 %%DATADIR%%/scenario_patches/3ff5604.parkpatch
 %%DATADIR%%/scenario_patches/41c7297.parkpatch
 %%DATADIR%%/scenario_patches/43b5d61.parkpatch
