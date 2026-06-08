@@ -30,7 +30,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
-USES=		bison cmake:testing compiler:c++17-lang ssl
+USES=		bison cmake:testing compiler:c++17-lang cpe ssl
+CPE_PRODUCT=	thrift
+CPE_VENDOR=	facebook
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
