@@ -120,8 +120,10 @@ post-patch: .SILENT
 	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/compat/Makefile
 # Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
 # port for a while now
-	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
-		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
+	${MKDIR} ${WRKSRC}/lib/libvdpau
+	${MKDIR} ${WRKSRC}/lib/libvdpau_trace
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libvdpau/Makefile
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libvdpau_trace/Makefile
 # Do not build any binaries (native nvidia-settings and nvidia-xconfig are
 # provided by their corresponding ports) and manual pages
 	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/x11/bin/Makefile
