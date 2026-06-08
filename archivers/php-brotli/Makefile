@@ -1,6 +1,5 @@
 PORTNAME=	brotli
-DISTVERSION=	0.18.2
-PORTREVISION=	1
+DISTVERSION=	0.19.0
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -21,5 +20,13 @@ GH_PROJECT=	php-ext-brotli
 PHP_MODNAME=	${PORTNAME}
 
 CONFIGURE_ARGS=	--with-libbrotli
+
+OPTIONS_DEFINE=		APCU
+OPTIONS_DEFAULT=	APCU
+
+APCU_DESC=		APCu cache compression support for objects
+
+APCU_BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/apcu/apc_serializer.h:devel/pecl-APCu@${PHP_FLAVOR}
+APCU_CONFIGURE_ENABLE=	apcu
 
 .include <bsd.port.mk>
