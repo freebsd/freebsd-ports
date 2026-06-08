@@ -130,7 +130,10 @@ post-patch: .SILENT
 	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/x11/man/Makefile
 # Also do not install libnvidia-gtk* libraries which are for nvidia-settings
 .if ${NVVERSION} >= 346.016
-	${REINPLACE_CMD} -e '/libnvidia-gtk/d' ${WRKSRC}/lib/Makefile
+	${MKDIR} ${WRKSRC}/lib/libnvidia-gtk2
+	${MKDIR} ${WRKSRC}/lib/libnvidia-gtk3
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libnvidia-gtk2/Makefile
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libnvidia-gtk3/Makefile
 .endif
 # Adjust installation path of a conflicting file (shared between
 # nvidia-driver and xorg-server) to ease package manager work
