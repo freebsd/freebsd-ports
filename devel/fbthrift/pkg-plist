@@ -317,6 +317,7 @@ include/thrift/lib/cpp2/detail/Enum.h
 include/thrift/lib/cpp2/detail/EventHandlerRuntime.h
 include/thrift/lib/cpp2/detail/Isset.h
 include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/dynamic/AccumulatingTypeSystem.h
 include/thrift/lib/cpp2/dynamic/Any.h
 include/thrift/lib/cpp2/dynamic/Binary.h
 include/thrift/lib/cpp2/dynamic/DynamicServiceSchema.h
@@ -349,6 +350,7 @@ include/thrift/lib/cpp2/dynamic/detail/ListIteratorBase.h
 include/thrift/lib/cpp2/dynamic/detail/SmallBuffer.h
 include/thrift/lib/cpp2/dynamic/detail/Traits.h
 include/thrift/lib/cpp2/dynamic/detail/TypeSystem.h
+include/thrift/lib/cpp2/dynamic/detail/TypeSystemImpl.h
 include/thrift/lib/cpp2/dynamic/detail/TypeSystemUtils.h
 include/thrift/lib/cpp2/dynamic/fwd.h
 include/thrift/lib/cpp2/fast_thrift/bench/runner/BenchmarkRegistry.h
@@ -422,11 +424,14 @@ include/thrift/lib/cpp2/fast_thrift/frame/write/handler/FrameFragmentationHandle
 include/thrift/lib/cpp2/fast_thrift/frame/write/handler/FrameLengthEncoderHandler.h
 include/thrift/lib/cpp2/fast_thrift/frame/write/handler/IntervalBatchingFrameHandler.h
 include/thrift/lib/cpp2/fast_thrift/frame/write/handler/LoopBatchingFrameHandler.h
+include/thrift/lib/cpp2/fast_thrift/frame/write/handler/WriteCompletionTracker.h
 include/thrift/lib/cpp2/fast_thrift/interface/debug/DebugServerInterface.h
 include/thrift/lib/cpp2/fast_thrift/interface/monitor/MonitoringServerInterface.h
 include/thrift/lib/cpp2/fast_thrift/interface/status/StatusServerInterface.h
 include/thrift/lib/cpp2/fast_thrift/rocket/bench/BenchContext.h
+include/thrift/lib/cpp2/fast_thrift/rocket/client/Event.h
 include/thrift/lib/cpp2/fast_thrift/rocket/client/Messages.h
+include/thrift/lib/cpp2/fast_thrift/rocket/client/RocketClientEventFactory.h
 include/thrift/lib/cpp2/fast_thrift/rocket/client/adapter/RocketClientAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/rocket/client/common/RocketClientAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/rocket/client/common/RocketClientConnection.h
@@ -437,8 +442,10 @@ include/thrift/lib/cpp2/fast_thrift/rocket/client/handler/RocketClientSetupFrame
 include/thrift/lib/cpp2/fast_thrift/rocket/client/handler/RocketClientStreamStateHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/common/TypeErasedPtr.h
 include/thrift/lib/cpp2/fast_thrift/rocket/common/handler/RocketMetricsHandler.h
+include/thrift/lib/cpp2/fast_thrift/rocket/server/Event.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/Messages.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/MetadataProtocol.h
+include/thrift/lib/cpp2/fast_thrift/rocket/server/RocketServerEventFactory.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/adapter/RocketServerAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/common/RocketServerAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/common/RocketServerConnection.h
@@ -514,6 +521,7 @@ include/thrift/lib/cpp2/fast_thrift/thrift/server/util/ResponsePayloads.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/util/ResponseSerializer.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/util/RocketFrameDecoder.h
 include/thrift/lib/cpp2/fast_thrift/transport/TransportHandler.h
+include/thrift/lib/cpp2/fast_thrift/transport/WriteCompletion.h
 include/thrift/lib/cpp2/fast_thrift/transport/bench/BenchAsyncTransport.h
 include/thrift/lib/cpp2/fast_thrift/transport/test/TestAsyncTransport.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
@@ -742,6 +750,7 @@ include/thrift/lib/cpp2/server/PreprocessResult.h
 include/thrift/lib/cpp2/server/ReactiveToggle.h
 include/thrift/lib/cpp2/server/RequestCompletionCallback.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
+include/thrift/lib/cpp2/server/RequestEncryptionState.h
 include/thrift/lib/cpp2/server/RequestExpirationDelegate.h
 include/thrift/lib/cpp2/server/RequestPileBase.h
 include/thrift/lib/cpp2/server/RequestPileInterface.h
@@ -913,6 +922,7 @@ include/thrift/lib/cpp2/transport/rocket/server/detail/KeepAliveHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/MetadataPushHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/OutgoingFrameHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestChannelHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RequestEncryptionStateDispatch.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestFnfHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestResponseHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestStreamHandler.h
@@ -1022,6 +1032,7 @@ include/thrift/lib/python/client/test/http2_helper.h
 include/thrift/lib/python/server/PythonAsyncProcessor.h
 include/thrift/lib/python/server/PythonAsyncProcessorFactory.h
 include/thrift/lib/python/server/RequestContextExtractor.h
+include/thrift/lib/python/server/TrustedServerExceptionUtil.h
 include/thrift/lib/python/server/event_handler.h
 include/thrift/lib/python/server/flagged/PromptRequestContextInvalidation.h
 include/thrift/lib/python/server/flagged/RcAwareTaskPatch.h
