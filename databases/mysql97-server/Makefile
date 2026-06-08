@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql97-client
 
+CPE_PRODUCT?=	mysql_server
 CPE_VENDOR=	oracle
 
 USE_CXXSTD=	c++20
