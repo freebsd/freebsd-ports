@@ -30,9 +30,11 @@ LIB_DEPENDS=	libboost_locale.so:devel/boost-libs	\
 		libpoppler-glib.so:graphics/poppler-glib	\
 		libodbc.so:databases/unixODBC
 
-USES=		cmake:noninja compiler:c++20-lang desktop-file-utils \
+USES=		cmake:noninja compiler:c++20-lang cpe desktop-file-utils \
 		gnome pkgconfig python shared-mime-info shebangfix \
 		tar:bz2 xorg
+CPE_VENDOR=	kicad
+CPE_PRODUCT=	eda
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 USE_XORG=	ice x11 xext
