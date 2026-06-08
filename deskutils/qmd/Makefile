@@ -14,7 +14,7 @@ FETCH_DEPENDS=	jq:textproc/jq \
 		npm:www/npm \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		gmake nodejs:build,run sqlite
+USES=		gmake nodejs:build,run python:build sqlite
 
 PACKAGE_NAME=	@tobilu/qmd
 
@@ -83,7 +83,7 @@ do-build:
 	@${CP} ${WRKDIR}/sqlite-vec-src-${SQLITE_VEC_VERSION}/dist/vec0.so ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/sqlite-vec/
 	@${ECHO_MSG} "====> Building better-sqlite3 for FreeBSD..."
 	@cd ${WRKDIR}/better-sqlite3-${dep_better_sqlite3_version}/node_modules/${dep_better_sqlite3_npm_name} && \
-		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
+		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" PYTHON=${PYTHON_CMD} \
 			npm rebuild --nodedir=${LOCALBASE} && \
 		${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/better-sqlite3/build/Release && \
 		${CP} build/Release/better_sqlite3.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/better-sqlite3/build/Release/
