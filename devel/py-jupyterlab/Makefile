@@ -31,7 +31,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}async-lru>=1.0.0:devel/py-async-lru@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_PRODUCT=	jupyterlab
+CPE_VENDOR=	jupyter
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
