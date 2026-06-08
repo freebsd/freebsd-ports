@@ -1,7 +1,6 @@
 PORTNAME=	openslide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
-PORTREVISION=	3
+DISTVERSION=	4.0.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +11,7 @@ WWW=		https://openslide.org \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+BUILD_DEPENDS=	xdelta3:misc/xdelta3
 LIB_DEPENDS=	libdicom.so:graphics/libdicom \
 		libopenjp2.so:graphics/openjpeg \
 		libpng16.so:graphics/png \
@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf glib20 libxml2
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Ddoc=disabled
+MESON_ARGS=	-Ddoc=disabled \
+		-Dtest=disabled
 
 .include <bsd.port.mk>
