@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_PRODUCT=	git_large_file_storage
+CPE_VENDOR=	git_large_file_storage_project
 GO_MODULE=	github.com/git-lfs/git-lfs/v3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
