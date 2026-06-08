@@ -18765,15 +18765,17 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/psutil/tests/test_testutils.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/psutil/tests/test_unicode.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/psutil/tests/test_windows.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/licenses/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/licenses/NOTICE.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__init__.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__init__.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -19025,7 +19027,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/fixed_shape_tensor.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/json.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/opaque.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/parquet_variant.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/uuid.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/variable_shape_tensor.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension_type.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/api.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/azurefs.h
@@ -19117,6 +19121,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/async.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/benchmark.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/common.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/config.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/csv.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/datetime.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/decimal.h
@@ -19241,7 +19246,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/secure_string.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/simd.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/small_vector.h
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/span.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/string.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/string_util.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/task_group.h
@@ -19284,7 +19288,8 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/pcg/pcg_random.hpp
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/pcg/pcg_uint128.hpp
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/portable-snippets/debug-trap.h
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/portable-snippets/safe-math.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/safeint/safe_math.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/safeint/safe_math_impl.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/strptime.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/xxhash.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/xxhash/xxhash.h
@@ -19335,19 +19340,17 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/json.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/jvm.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib%%PYTHON_TAG%%.so
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib_api.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so.2100
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so.2100.0.0
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so.2400
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so.2400.0.0
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so.2100
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so.2100.0.0
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so.2400
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so.2400.0.0
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so.2100
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so.2100.0.0
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so.2400
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so.2400.0.0
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/memory.pxi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/orc.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/pandas-shim.pxi
@@ -19365,6 +19368,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/parquet/core.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/parquet/encryption.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/public-api.pxi
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/py.typed
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/scalar.pxi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/CMakeLists.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/api.h
@@ -19376,6 +19380,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/benchmark.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/common.cc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/common.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/config.cc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/config.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/config_internal.h.cmake
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/csv.cc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/csv.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/datetime.cc
@@ -33239,6 +33246,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/double-conversion
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/pcg
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/portable-snippets
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/safeint
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored/xxhash
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/vendored
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow
@@ -33265,7 +33273,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/vendored/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/vendored
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-21.0.0.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-24.0.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyasn1/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyasn1/codec/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyasn1/codec/ber/__pycache__
