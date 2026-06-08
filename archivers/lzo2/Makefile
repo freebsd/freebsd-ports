@@ -16,7 +16,8 @@ USES=		cpe libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR} --with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
-CPE_VENDOR=	oberhumer
+CPE_VENDOR=	lzo_project
+CPE_PRODUCT=	lzo
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
