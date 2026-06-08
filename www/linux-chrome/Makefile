@@ -20,6 +20,7 @@ RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-rl9-wget \
 		update-mime-database:misc/shared-mime-info
 
 USES=		cpe desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
+CPE_VENDOR=	google
 USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio at-spi2-atk \
 		ca-certificates cairo cups-libs curl dbuslibs dri expat \
 		ffmpeg-libs gnupg gstreamer1-libav gtk3 libxkbcommon \
