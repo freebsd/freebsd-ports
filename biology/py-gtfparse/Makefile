@@ -1,5 +1,5 @@
 PORTNAME=	gtfparse
-DISTVERSION=	2.7.0
+DISTVERSION=	2.7.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,7 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest # tests from the PYPI tarball fail because 'data' module is missing, and the GH repository doesn't have tags, see https://github.com/openvax/gtfparse/issues/53
 
 NO_ARCH=	yes
+
+# tests as of 2.7.1: 11 passed
 
 .include <bsd.port.mk>
