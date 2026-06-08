@@ -12,7 +12,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		perl5
+USES=		cpe perl5
+CPE_PRODUCT=	convert::asn1
+CPE_VENDOR=	convert::asn1_project
 USE_PERL5=	configure
 
 NO_ARCH=	yes
