@@ -47,6 +47,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.10.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-svg-edit-moin>=2012.11.15.1:devel/py-xstatic-svg-edit-moin@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
+CPE_PRODUCT=	moinmoin
 CPE_VENDOR=	moinmo
 USE_PYTHON=	autoplist pep517
 
