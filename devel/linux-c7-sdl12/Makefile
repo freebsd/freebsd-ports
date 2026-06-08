@@ -9,7 +9,9 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://www.libsdl.org/
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_PRODUCT=	simple_directmedia_layer
+CPE_VENDOR=	libsdl
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
