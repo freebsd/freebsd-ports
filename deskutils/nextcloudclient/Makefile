@@ -16,9 +16,11 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libxkbcommon.so:x11/libxkbcommon \
 		libp11.so:security/libp11
 
-USES=		cmake:noninja compiler:c++20-lang desktop-file-utils gl gmake \
+USES=		cmake:noninja compiler:c++20-lang cpe desktop-file-utils gl gmake \
 		gnome iconv kde:6 localbase:ldflags pkgconfig qt:6 shared-mime-info \
 		sqlite ssl
+CPE_PRODUCT=	desktop
+CPE_VENDOR=	nextcloud
 USE_CXXSTD=	c++20
 USE_GL=		opengl
 USE_KDE=	archive ecm:build
