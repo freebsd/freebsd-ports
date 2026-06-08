@@ -1,2 +1,2 @@
-This package contains smproxy, a Session Manager Proxy for the X Window
-System.
+Smproxy allows X applications that do not support X11R6 session
+management to participate in an X11R6 session.
