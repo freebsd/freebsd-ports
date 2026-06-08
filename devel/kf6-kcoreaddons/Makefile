@@ -5,7 +5,8 @@ CATEGORIES=	devel kde kde-frameworks
 COMMENT=	Qt addon library with a collection of non-GUI utilities
 MAINTAINER=	kde@FreeBSD.org
 
-USES=		cmake kde:6 qt:6 shared-mime-info tar:xz
+USES=		cmake cpe kde:6 qt:6 shared-mime-info tar:xz
+CPE_VENDOR=	kde
 USE_KDE=	ecm:build
 USE_QT=		base declarative tools
 
