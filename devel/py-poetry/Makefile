@@ -45,7 +45,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.2.0:devel/py-coverage@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.1,1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}responses>=0.25.8:devel/py-responses@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	python-poetry
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 BINARY_ALIAS=	git=false
