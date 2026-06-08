@@ -1,0 +1,65 @@
+--- pyproject.toml.orig	2026-06-07 07:14:53 UTC
++++ pyproject.toml
+@@ -0,0 +1,62 @@
++[project]
++name = "iocage"
++version = "1.12"
++description = "A jail manager that uses ZFS."
++authors = [
++    {name = "iocage Contributors",email = "ports@FreeBSD.org"},
++]
++keywords = ["freebsd", "jail", "jail manager", "zfs"]
++classifiers = [
++  "Environment :: Console",
++  "Intended Audience :: System Administrators",
++  "Operating System :: POSIX :: BSD :: FreeBSD",
++  "Programming Language :: Python",
++  "Programming Language :: Python :: 3",
++  "Programming Language :: Python :: 3.9",
++  "Programming Language :: Python :: 3.10",
++  "Programming Language :: Python :: 3.11",
++  "Programming Language :: Python :: 3.12",
++  "Programming Language :: Python :: 3.13",
++  "Programming Language :: Python :: 3.14"
++]
++requires-python = ">=3.9"
++readme = "README.md"
++license = "BSD-2-Clause"
++license-files = ["LICENSE"]
++
++dependencies = [
++    "setuptools>=82.0.1",
++    "click>=6.7",
++    "coloredlogs>=9.0",
++    "requests>=2.18.4",
++    "texttable>=1.2.1",
++]
++
++[project.urls]
++Homepage = "https://github.com/freebsd/iocage"
++
++[project.scripts]
++iocage = "iocage_cli:cli"
++
++[build-system]
++requires = ["hatchling"]
++build-backend = "hatchling.build"
++
++[tool.hatch.build.targets.wheel]
++packages = ["iocage_cli", "iocage_lib"]
++exclude = ["*.orig"]
++
++[tool.hatch.build.targets.wheel.shared-data]
++"rc.d/iocage" = "etc/rc.d/iocage"
++"iocage.8" = "share/man/man8/iocage.8"
++"zsh-completion/_iocage" = "share/zsh/site-functions/_iocage"
++
++[tool.hatch.build.targets.sdist]
++include = [
++    "iocage_cli/*.py",
++    "iocage_lib/*.py",
++    "pyproject.toml",
++    "README.md",
++    "LICENSE"
++]
++exclude = ["*.orig"]

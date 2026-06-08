@@ -1,0 +1,19 @@
+--- rc.d/iocage.orig	2026-06-07 06:57:45 UTC
++++ rc.d/iocage
+@@ -1,7 +1,4 @@
+ #!/bin/sh
+-#
+-# $FreeBSD$
+-#
+ 
+ # PROVIDE: iocage
+ # REQUIRE: LOGIN cleanvar sshd zfs
+@@ -22,7 +19,7 @@ load_rc_config "$name"
+ # read configuration and set defaults
+ load_rc_config "$name"
+ : ${iocage_enable="NO"}
+-: ${iocage_lang="en_US.UTF-8"}
++: ${iocage_lang="C.UTF-8"}
+ 
+ start_cmd="iocage_start"
+ stop_cmd="iocage_stop"
