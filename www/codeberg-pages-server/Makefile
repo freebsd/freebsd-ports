@@ -13,7 +13,7 @@ WWW=		https://codeberg.org/Codeberg/pages-server
 LICENSE=	EUPL12
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
+USES=		go:modules
 USE_RC_SUBR=	codeberg-pages-server
 
 GO_MODULE=	codeberg.org/codeberg/pages
