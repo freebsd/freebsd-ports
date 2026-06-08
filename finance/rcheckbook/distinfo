@@ -1,4 +1,4 @@
-TIMESTAMP = 1780871925
+TIMESTAMP = 1780959796
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/angle-0.5.0.crate) = 0bf965b6b142c8c68150e815ef527d17f0fe74e622b2c5287fd8626cb7c4a5fa
@@ -293,5 +293,5 @@ SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff89263923
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
 SHA256 (rust/crates/zopfli-0.8.3.crate) = f05cd8797d63865425ff89b5c4a48804f35ba0ce8d125800027ad6017d2b5249
 SIZE (rust/crates/zopfli-0.8.3.crate) = 51589
-SHA256 (bryceac-rcheckbook-v0.6.2_GH0.tar.gz) = 430c9a462fbecf2049e5ece5fa00dd4e8d8f0e25de1d00b64330821d19c6da31
-SIZE (bryceac-rcheckbook-v0.6.2_GH0.tar.gz) = 35116
+SHA256 (bryceac-rcheckbook-v0.6.3_GH0.tar.gz) = e934e7bc192ab2a3739f43ca7d49f8abc8bcf6098ddc092854de58278ab8242e
+SIZE (bryceac-rcheckbook-v0.6.3_GH0.tar.gz) = 35116
