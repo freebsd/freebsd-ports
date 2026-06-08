@@ -13,7 +13,9 @@ WWW=		https://jdbc.postgresql.org/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		java
+USES=		cpe java
+CPE_PRODUCT=	postgresql_jdbc_driver
+CPE_VENDOR=	postgresql
 NO_ARCH=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/postgresql.jar
 
