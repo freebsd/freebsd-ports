@@ -12,7 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr \
 		libSoapySDR.so:misc/soapysdr
 
-USES=		cmake pkgconfig ssl
+USES=		cmake cpe pkgconfig ssl
+
+CPE_PRODUCT=	rtl_433
+CPE_VENDOR=	rtl_433_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	merbanan
