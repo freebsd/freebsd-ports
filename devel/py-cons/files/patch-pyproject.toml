@@ -1,0 +1,19 @@
+-- Relax setuptools requirement and remove license-files for older setuptools compatibility.
+
+--- pyproject.toml.orig 2026-06-08 01:39:29 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.0", "setuptools-scm"]
++requires = ["setuptools>=63.1.0", "setuptools-scm"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,6 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "An implementation of Lisp/Scheme-like cons in Python."
+ readme = "README.md"
+-license-files = ["LICENSE.txt"]
+ authors = [
+     { name = "Brandon T. Willard", email = "brandonwillard+cons@gmail.com" },
+ ]
