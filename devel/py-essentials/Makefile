@@ -1,5 +1,5 @@
 PORTNAME=	essentials
-DISTVERSION=	1.1.8
+DISTVERSION=	1.1.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.1.8: 157 passed in 3.25s
+# tests as of 1.1.9: 157 passed in 1.26s
 
 .include <bsd.port.mk>
