@@ -10,7 +10,6 @@ COMMENT=	GNU Transport Layer Security library (Rocky Linux ${LINUX_DIST_VER})
 WWW=		https://gnutls.org/
 
 USES=		cpe linux:rl9
-CPE_VENDOR=	gnu
 USE_LINUX=	gnutls libassuan libgcrypt libgpg-error libksba npth openldap sqlite3
 USE_LINUX_RPM=	yes
 
