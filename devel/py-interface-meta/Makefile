@@ -1,5 +1,5 @@
 PORTNAME=	interface-meta
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ NO_ARCH=	yes
 
 BINARY_ALIAS=	git=false
 
-# tests as of 2.0.0: 36 passed in 1.94s
+# tests as of 2.0.1: 36 passed in 0.35s (when run sequentially)
 
 .include <bsd.port.mk>
