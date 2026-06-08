@@ -15,7 +15,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_F
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarg>0:devel/py-yarg@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	pipreqs_project
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
