@@ -107,11 +107,10 @@ CONFLICTS_INSTALL+=	nvidia-driver*
 .include <bsd.port.pre.mk>
 
 post-patch: .SILENT
-# Patch only needed for non-kmod
-	${REINPLACE_CMD} -e '/SUBDIR=\tsrc \\/d' -e 's/\tlib/SUBDIR=\tlib/' \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e '/\.if exists(firmware)/,/\.endif/d' \
-		${WRKSRC}/Makefile
+# Disable building kmod bits
+	${MKDIR} ${WRKSRC}/firmware
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/src/Makefile
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/firmware/Makefile
 
 .if ${NVVERSION} >= 390
 	${REINPLACE_CMD} -e 's|/man/man1|/share/man/man1|' ${WRKSRC}/nvml/man/Makefile
