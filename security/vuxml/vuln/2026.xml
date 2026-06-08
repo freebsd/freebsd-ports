@@ -1,3 +1,61 @@
+  <vuln vid="72e5b334-6365-11f1-8c57-000af7b98cf6">
+    <topic>Unbound -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.25.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/news/2026/May/20/unbound-1.25.1-released/">
+	  <p>This release consolidates security fixes for issues reported
+	    over a period of time. There are fixes for:</p>
+	  <ul>
+	    <li>CVE-2026-33278: Possible remote code execution during
+	      DNSSEC validation.</li>
+	    <li>CVE-2026-42944: Heap overflow and crash with multiple
+	      nsid, cookie, padding EDNS options.</li>
+	    <li>CVE-2026-42959: Crash during DNSSEC validation of
+	      malicious content.</li>
+	    <li>CVE-2026-32792: Packet of death with DNSCrypt.</li>
+	    <li>CVE-2026-40622: "Ghost domain name" variant.</li>
+	    <li>CVE-2026-41292: Parsing a long list of incoming EDNS
+	      options degrades performance.</li>
+	    <li>CVE-2026-42534: Jostle logic bypass degrades resolution
+	      performance.</li>
+	    <li>CVE-2026-42923: Degradation of service with unbounded
+	      NSEC3 hash calculations.</li>
+	    <li>CVE-2026-42960: Possible cache poisoning attack while
+	      following delegation.</li>
+	    <li>CVE-2026-44390: Unbounded name compression in certain
+	      cases causes degradation of service.</li>
+	    <li>CVE-2026-44608: Use after free and crash in RPZ code.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-32792</cvename>
+      <cvename>CVE-2026-33278</cvename>
+      <cvename>CVE-2026-40622</cvename>
+      <cvename>CVE-2026-41292</cvename>
+      <cvename>CVE-2026-42534</cvename>
+      <cvename>CVE-2026-42923</cvename>
+      <cvename>CVE-2026-42944</cvename>
+      <cvename>CVE-2026-42959</cvename>
+      <cvename>CVE-2026-42960</cvename>
+      <cvename>CVE-2026-44390</cvename>
+      <cvename>CVE-2026-44608</cvename>
+      <url>https://www.nlnetlabs.nl/projects/unbound/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a207a367-6359-11f1-8c57-000af7b98cf6">
     <topic>strongSwan -- Double-free when destroying certain cloned identities that can lead to remote code execution</topic>
     <affects>
