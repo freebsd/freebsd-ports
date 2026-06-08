@@ -21,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		osinfo-db-import:sysutils/osinfo-db-tools \
 		${LOCALBASE}/share/osinfo/VERSION:misc/osinfo-db
 
-USES=		gettext gnome meson perl5 pkgconfig tar:xz
+USES=		cpe gettext gnome meson perl5 pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2 libxslt introspection:build
 USE_PERL5=	build
 USE_LDCONFIG=	yes
