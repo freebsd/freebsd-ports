@@ -17,6 +17,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	libmspack_project
+CPE_VENDOR=	kyzer
 
 .include <bsd.port.mk>
