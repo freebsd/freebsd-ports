@@ -11,7 +11,9 @@ WWW=		https://metacpan.org/release/File-Path
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-USES=		perl5
+USES=		cpe perl5
+CPE_PRODUCT=	file::path
+CPE_VENDOR=	file::path_project
 USE_PERL5=	configure
 
 NO_ARCH=	yes
