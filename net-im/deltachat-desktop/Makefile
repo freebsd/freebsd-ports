@@ -1,6 +1,6 @@
 PORTNAME=	deltachat-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.51.0
+DISTVERSION=	2.52.0
 PORTREVISION=	0
 CATEGORIES=	net-im
 
@@ -12,7 +12,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Important to keep the RPC server core in sync with the Desktop release
-RUN_DEPENDS=	deltachat-rpc-server>=2.51<2.52:net/deltachat-rpc-server
+RUN_DEPENDS=	deltachat-rpc-server>=2.52<2.53:net/deltachat-rpc-server
 USES=		electron:40,build,run desktop-file-utils nodejs:22,build pkgconfig
 
 USE_ELECTRON=	npm:pnpm prefetch extract
