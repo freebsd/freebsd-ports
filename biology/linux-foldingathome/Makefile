@@ -1,6 +1,6 @@
 PORTNAME=	foldingathome
 DISTVERSION=	8.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/
 PKGNAMEPREFIX=	linux-
@@ -10,12 +10,8 @@ MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
 WWW=		https://foldingathome.org/
 
-# Distribution without permission is prohibited
-LICENSE=	FAHSL
-LICENSE_NAME=	Folding@home Software License
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/${DISTNAME:T}/LICENSE
-LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
-		auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
