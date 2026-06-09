@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# PROVIDE: yubal
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Yubal in /etc/rc.conf
+#
+# yubal_enable (bool):     Enable yubal. (Default=NO)
+# yubal_env_file (str):    Path containing the environment variables
+#                          to be used by yubal. (Default: %%PREFIX%%/etc/yubal.env)
+# yubal_logfile (str):     Log file name. (Default: /var/log/yubal.log)
+# yubal_runas (str):       User to run yubal as. (Default: %%USER%%)
+
+. /etc/rc.subr
+
+name=yubal
+desc="Self-hosted YouTube Music downloader"
+rcvar="${name}_enable"
+
+load_rc_config "${name}"
+
+: ${yubal_enable:="NO"}
+: ${yubal_env_file:="%%PREFIX%%/etc/${name}.env"}
+: ${yubal_logfile:="/var/log/${name}.log"}
+: ${yubal_runas:="%%USER%%"}
+
+pidfile="/var/run/${name}.pid"
+start_cmd="${name}_start"
+procname="%%PREFIX%%/bin/python%%PYTHON_VER%%"
+
+yubal_start()
+{
+	startmsg -n "Starting ${name}"
+	cd "/var/db/${name}"
+	env \
+		YUBAL_ROOT="%%WWWDIR%%" \
+		YUBAL_DATA="%%HOMEDIR%%/data" \
+		YUBAL_CONFIG="%%HOMEDIR%%/config" \
+			 /usr/sbin/daemon -o "${yubal_logfile}" -u "${yubal_runas}" -p "${pidfile}" \
+				"${procname}" -m yubal_api
+	startmsg "."
+}
+
+run_rc_command "${1}"

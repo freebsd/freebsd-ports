@@ -2038,6 +2038,7 @@
     SUBDIR += py-yt-dlp
     SUBDIR += py-yt-dlp-ejs
     SUBDIR += py-yubal
+    SUBDIR += py-yubal-api
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
