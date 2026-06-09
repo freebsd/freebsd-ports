@@ -1,7 +1,6 @@
 PORTNAME=	sem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -22,6 +21,8 @@ GH_ACCOUNT=	ataraxy-labs
 
 CARGO_CARGOTOML=	${WRKSRC}/crates/sem-cli/Cargo.toml
 CARGO_INSTALL_PATH=	./crates/sem-cli
+# For maintainer:
+CARGO_LOCK_URL=	https://raw.githubusercontent.com/ataraxy-labs/sem/refs/tags/${DISTVERSIONPREFIX}${DISTVERSION}/crates/Cargo.lock
 
 PLIST_FILES=	bin/sem \
 		share/bash-completion/completions/sem.bash \
