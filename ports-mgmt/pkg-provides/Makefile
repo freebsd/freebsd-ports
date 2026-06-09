@@ -1,5 +1,6 @@
 PORTNAME=	pkg-provides
-DISTVERSION=	0.7.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.0
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -12,11 +13,11 @@ LICENSE_COMB=	multi
 NOT_FOR_ARCHS=	armv6
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre2-8.so:devel/pcre2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rosorio
-GH_TAGNAME=	v0.7.4
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
