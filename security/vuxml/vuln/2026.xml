@@ -1,3 +1,59 @@
+  <vuln vid="45accfb8-56e4-41b7-8463-572ce643fde0">
+    <topic>Elixir -- Denial of service via unbounded integer parsing in Version</topic>
+    <affects>
+      <package>
+	<name>elixir</name>
+	<range><ge>1.5.0</ge><le>1.19.5</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PJUllrich reports:</p>
+	<blockquote cite="https://github.com/elixir-lang/elixir/security/advisories/GHSA-w2h8-8x3g-278p">
+	  <p>The Version module parses numeric version components without
+	    length limits. Untrusted input can trigger creation of
+	    arbitrary-precision integers, causing CPU and memory exhaustion.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49762</cvename>
+      <url>https://github.com/elixir-lang/elixir/security/advisories/GHSA-w2h8-8x3g-278p</url>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f778ad20-0d5f-49c4-af45-4493ff0696d9">
+    <topic>Elixir -- Denial of service via unbounded integer parsing in Version</topic>
+    <affects>
+      <package>
+	<name>elixir-devel</name>
+	<range><ge>1.5.0</ge><lt>1.20.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PJUllrich reports:</p>
+	<blockquote cite="https://github.com/elixir-lang/elixir/security/advisories/GHSA-w2h8-8x3g-278p">
+	  <p>The Version module parses numeric version components without
+	    length limits. Untrusted input can trigger creation of
+	    arbitrary-precision integers, causing CPU and memory exhaustion.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49762</cvename>
+      <url>https://github.com/elixir-lang/elixir/security/advisories/GHSA-w2h8-8x3g-278p</url>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7655baae-637d-11f1-8607-8447094a420f">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
