@@ -2,8 +2,8 @@ PORTNAME=	kwindowsystem
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11 kde kde-frameworks
 
-COMMENT=	Access to the windowing system
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Access to the windowing system
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \

@@ -2,8 +2,8 @@ PORTNAME=	sonnet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	textproc kde kde-frameworks
 
-COMMENT=	Multi-language spell checker
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Multi-language spell checker
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libhunspell-1.7.so:textproc/hunspell

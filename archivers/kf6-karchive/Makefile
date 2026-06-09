@@ -2,8 +2,8 @@ PORTNAME=	karchive
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	archivers kde kde-frameworks
 
-COMMENT=	Reading, creating, and manipulating file archives
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Reading, creating, and manipulating file archives
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 

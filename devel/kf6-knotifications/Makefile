@@ -2,8 +2,8 @@ PORTNAME=	knotifications
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Cross-platform library for creating popup notifications
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Cross-platform library for creating popup notifications
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 

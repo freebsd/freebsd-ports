@@ -2,8 +2,8 @@ PORTNAME=	syntax-highlighting
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	textproc kde kde-frameworks
 
-COMMENT=	Syntax highlighting engine for Kate syntax definitions
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Syntax highlighting engine for Kate syntax definitions
 
 USES=		cmake gl kde:6 perl5 python:build qt:6 tar:xz
 USE_GL=		gl opengl

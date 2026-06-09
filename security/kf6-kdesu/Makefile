@@ -2,8 +2,8 @@ PORTNAME=	kdesu
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	security kde kde-frameworks
 
-COMMENT=	User interface for running shell commands with root privileges
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	User interface for running shell commands with root privileges
 
 USES=		cmake gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	config coreaddons i18n pty \

@@ -2,8 +2,8 @@ PORTNAME=	kio
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Network transparent access to files and data
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Network transparent access to files and data
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 

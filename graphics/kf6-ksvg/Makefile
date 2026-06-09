@@ -2,8 +2,8 @@ PORTNAME=	ksvg
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	graphics kde kde-frameworks
 
-COMMENT=	Components for handling SVGs
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Components for handling SVGs
 
 USES=		cmake gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl

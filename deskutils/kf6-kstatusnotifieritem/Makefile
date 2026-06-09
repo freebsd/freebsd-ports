@@ -2,8 +2,8 @@ PORTNAME=	kstatusnotifieritem
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	deskutils kde kde-frameworks
 
-COMMENT=	Implementation of Status Notifier Items
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Implementation of Status Notifier Items
 
 USES=		cmake gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl

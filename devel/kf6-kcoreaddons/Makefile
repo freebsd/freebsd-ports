@@ -2,8 +2,8 @@ PORTNAME=	kcoreaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Qt addon library with a collection of non-GUI utilities
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Qt addon library with a collection of non-GUI utilities
 
 USES=		cmake cpe kde:6 qt:6 shared-mime-info tar:xz
 CPE_VENDOR=	kde

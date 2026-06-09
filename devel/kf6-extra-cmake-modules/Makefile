@@ -2,8 +2,8 @@ PORTNAME=	extra-cmake-modules
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Extra modules and scripts for CMake
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Extra modules and scripts for CMake
 WWW=		https://api.kde.org/ecm-index.html
 
 LICENSE=	BSD3CLAUSE

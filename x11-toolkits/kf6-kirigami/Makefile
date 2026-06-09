@@ -2,8 +2,8 @@ PORTNAME=	kirigami
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
-COMMENT=	QtQuick components for building adaptable UIs
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	QtQuick components for building adaptable UIs
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 

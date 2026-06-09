@@ -2,8 +2,8 @@ PORTNAME=	kguiaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
-COMMENT=	Utilities for graphical user interfaces
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Utilities for graphical user interfaces
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \

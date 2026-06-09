@@ -4,7 +4,7 @@ CATEGORIES=	x11 kde
 PKGNAMEPREFIX=	kf6-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE frameworks meta port
+COMMENT=	KDE Frameworks (meta port)
 WWW=		https://api.kde.org
 
 USES=		kde:6 metaport qt:6

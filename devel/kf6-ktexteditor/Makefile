@@ -2,8 +2,8 @@ PORTNAME=	ktexteditor
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Full text editor component
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Full text editor component
 
 LIB_DEPENDS=	libeditorconfig.so:editors/editorconfig-core-c
 

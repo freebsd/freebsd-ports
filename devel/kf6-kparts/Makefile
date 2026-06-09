@@ -2,8 +2,8 @@ PORTNAME=	kparts
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Plugin framework for user interface components
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Plugin framework for user interface components
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl
