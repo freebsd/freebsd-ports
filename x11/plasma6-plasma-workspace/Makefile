@@ -5,7 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
 PATCHFILES=	faf0e944008a8ce3182e11a2ee192b1589c5661a.patch:-p1
 
-COMMENT=	KDE Plasma Workspace
+COMMENT=	Various components for Plasma-based environment
 MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols

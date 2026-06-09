@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE Plasma Desktop
+COMMENT=	KDE Plasma shell for desktop form factor
 
 BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
