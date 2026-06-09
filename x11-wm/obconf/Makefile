@@ -1,6 +1,6 @@
 PORTNAME=	obconf
 PORTVERSION=	2.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/obconf/
 
