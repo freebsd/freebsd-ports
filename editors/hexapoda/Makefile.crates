@@ -44,6 +44,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		digest-0.10.7 \
 		document-features-0.2.12 \
 		either-1.15.0 \
+		enum-iterator-2.3.0 \
+		enum-iterator-derive-1.5.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		euclid-0.22.14 \
