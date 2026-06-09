@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2026-06-09 10:14:45 UTC
++++ Makefile.in
+@@ -338,9 +338,7 @@ doc_DATA = \
+ 	AUTHORS \
+ 	ChangeLog \
+ 	ChangeLog.OLD \
+-	COPYING \
+ 	gnutrition.html \
+-	INSTALL \
+ 	NEWS \
+ 	README
+ 
