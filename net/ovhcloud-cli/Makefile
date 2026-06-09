@@ -1,7 +1,6 @@
 PORTNAME=		ovhcloud-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.10.0
-PORTREVISION=	4
+DISTVERSION=		0.12.0
 CATEGORIES=		net devel
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -57,12 +56,14 @@ GH_TUPLE=	\
 		golang:sys:v0.41.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:v0.40.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.34.0:golang_text/vendor/golang.org/x/text \
+		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.1:gorilla_css/vendor/github.com/gorilla/css \
 		imdario:mergo:v1.0.2:imdario_mergo/vendor/dario.cat/mergo \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jarcoal:httpmock:v1.4.1:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
 		josharian:intern:v1.0.0:josharian_intern/vendor/github.com/josharian/intern \
 		lucasb-eyer:go-colorful:v1.3.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		lrstanley:bubblezone:b48c55a5e78e:lrstanley_bubblezone/vendor/github.com/lrstanley/bubblezone \
 		mailru:easyjson:v0.9.1:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-localereader:v0.0.1:mattn_go_localereader/vendor/github.com/mattn/go-localereader \
@@ -76,6 +77,7 @@ GH_TUPLE=	\
 		muesli:cancelreader:v0.2.2:muesli_cancelreader/vendor/github.com/muesli/cancelreader \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:termenv:v0.16.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		NimbleMarkets:ntcharts:v0.5.1:nimblemarkets_ntcharts/vendor/github.com/NimbleMarkets/ntcharts \
 		oasdiff:yaml3:d2182401db90:oasdiff_yaml3/vendor/github.com/oasdiff/yaml3 \
 		oasdiff:yaml:f31be36b4037:oasdiff_yaml/vendor/github.com/oasdiff/yaml \
 		ovh:go-ovh:v1.9.0:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
