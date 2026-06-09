@@ -37,7 +37,7 @@
          auto backend = func(this);
 --- /dev/null
 +++ plugins/network/SysctlBackend.cpp
-@@ -0,0 +1,160 @@
+@@ -0,0 +1,158 @@
 +/*
 + * SPDX-FileCopyrightText: 2022 Jesper Schmitz Mouridsen <jesper@schmitz.computer>
 + *
@@ -110,33 +110,31 @@
 +    char addr_buf[NI_MAXHOST];
 +    QStringList ipv4_addrs;
 +    QStringList ipv6_addrs;
++    ifaddrs *ifap0 = nullptr;
++    ifaddrs *ifap;
 +    struct sockaddr_in *sin;
 +
-+    ipv4_addrs.clear();
-+    ipv6_addrs.clear();
-+    ifaddrs *ifap;
-+    bzero(&ifap, sizeof(ifap));
-+    for (getifaddrs(&ifap); ifap != nullptr; ifap = ifap->ifa_next) {
++    getifaddrs(&ifap0);
++    for (ifap = ifap0; ifap != nullptr; ifap = ifap->ifa_next) {
 +        if (name() == QString::fromLatin1(ifap->ifa_name)) {
 +            sin = reinterpret_cast<struct sockaddr_in *>(ifap->ifa_addr);
-+            if (sin == NULL)
++            if (sin == nullptr)
 +                return;
 +
-+            if(getnameinfo(ifap->ifa_addr, sin->sin_len, addr_buf, sizeof(addr_buf), NULL, 0, NI_NUMERICHOST)==0) {
-+
-+	        if (sin->sin_family == AF_INET) {
++            if (getnameinfo(ifap->ifa_addr, sin->sin_len, addr_buf, sizeof(addr_buf),
++                NULL, 0, NI_NUMERICHOST) == 0) {
++                if (sin->sin_family == AF_INET) {
 +                    ipv4_addrs << QString::fromLatin1(addr_buf);
-+		}
-+                if (sin->sin_family == AF_INET6) {
-+	            ipv6_addrs << QString::fromLatin1(addr_buf);
 +                }
-+	    }
-+
++                if (sin->sin_family == AF_INET6) {
++                    ipv6_addrs << QString::fromLatin1(addr_buf);
++                }
++            }
 +        }
 +    }
 +    m_ipv4Sensor->setValue(ipv4_addrs.join("\n"));
 +    m_ipv6Sensor->setValue(ipv6_addrs.join("\n"));
-+    freeifaddrs(ifap);
++    freeifaddrs(ifap0);
 +}
 +
 +SysctlNetDevice::~SysctlNetDevice()
