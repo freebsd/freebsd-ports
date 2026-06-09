@@ -1,0 +1,20 @@
+Memories is a batteries-included photo management solution for Nextcloud with
+advanced features including:
+
+- Timeline: Sort photos and videos by date taken, parsed from Exif data.
+- Rewind: Jump to any time in the past instantly and relive your memories.
+- AI Tagging: Group photos by people and objects, powered by recognize and
+  facerecognition.
+- Albums: Create albums to group photos and videos together. Then share these
+  albums with others.
+- External Sharing: Share photos and videos with people outside of your
+  Nextcloud instance.
+- Mobile Support: Work from any device, of any shape and size through the web
+  app.
+- Edit Metadata: Edit dates and other metadata on photos quickly and in bulk.
+- Archive: Store photos you don't want to see in your timeline in a separate
+  folder.
+- Video Transcoding: Transcode videos and use HLS for maximal performance.
+- Map: View your photos on a map, tagged with accurate reverse geocoding.
+- Migration: Migrate easily from Nextcloud Photos and Google Takeout.
+- Performance: Do all this very fast.
