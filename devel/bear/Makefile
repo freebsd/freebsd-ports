@@ -1,6 +1,5 @@
 PORTNAME=	bear
-DISTVERSION=	4.1.2
-PORTREVISION=	1
+DISTVERSION=	4.1.4
 CATEGORIES=	devel
 
 MAINTAINER=	aokblast@FreeBSD.org
@@ -30,7 +29,8 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/RELEASE.md ${STAGEDIR}${DOCSDIR}
 
 post-install:
-.for l in libexec/bear/bin/bear-driver libexec/bear/bin/bear-wrapper libexec/bear/lib/libexec.so
+.for l in libexec/bear/bin/bear-driver libexec/bear/bin/bear-wrapper \
+	libexec/bear/lib/libexec.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${l}
 .endfor
 
