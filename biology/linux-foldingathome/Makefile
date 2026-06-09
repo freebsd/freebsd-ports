@@ -1,5 +1,6 @@
 PORTNAME=	foldingathome
 DISTVERSION=	8.4.9
+PORTREVISION=	1
 CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/
 PKGNAMEPREFIX=	linux-
@@ -27,7 +28,7 @@ ETCDIR=		${PREFIX}/etc/fahclient
 DOCSDIR=	${PREFIX}/share/doc/fahclient
 NO_BUILD=	yes
 
-SUB_FILES=	pkg-message
+SUB_FILES=	fahclient.8 pkg-message
 SUB_LIST=	FAHCLIENT_CONFIG_XML=${_FAHCLIENT_CONFIG_XML} \
 		FAHCLIENT_PROGRAM=${_FAHCLIENT_PROGRAM} \
 		FAHCLIENT_WORK_DIR=${_FAHCLIENT_WORK_DIR}
@@ -60,6 +61,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/config.xml.sample \
 		${STAGEDIR}${_FAHCLIENT_CONFIG_XML}.sample
 	@${MKDIR} ${STAGEDIR}${_FAHCLIENT_WORK_DIR}
+	${INSTALL_MAN} ${WRKDIR}/fahclient.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

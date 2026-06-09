@@ -1,4 +1,5 @@
 bin/fah-client
+share/man/man8/fahclient.8.gz
 @dir(fahclient,fahclient,) %%ETCDIR%%
 @sample(fahclient,fahclient,) %%ETCDIR%%/config.xml.sample
 @dir(fahclient,fahclient,) %%FAHCLIENT_WORK_DIR%%
