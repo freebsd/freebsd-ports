@@ -815,6 +815,7 @@
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += ytree
+    SUBDIR += zeroclaw
     SUBDIR += zine
     SUBDIR += zoneinfo
 
