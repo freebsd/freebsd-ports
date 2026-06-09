@@ -1,15 +1,26 @@
---- CMakeLists.txt.orig	2020-12-15 13:54:30 UTC
+--- CMakeLists.txt.orig	2026-06-09 06:48:58 UTC
 +++ CMakeLists.txt
-@@ -51,7 +51,7 @@ message(STATUS "gau2grid install: ${CMAKE_INSTALL_PREF
+@@ -51,17 +51,14 @@ message(STATUS "gau2grid install: ${CMAKE_INSTALL_PREF
+ message(STATUS "gau2grid install: ${CMAKE_INSTALL_PREFIX}")
  
  #  <<  Python  >>
- set(Python_ADDITIONAL_VERSIONS 3.9 3.8 3.7 3.6 3.5)  # adjust with CMake minimum FindPythonInterp
--find_package(PythonLibsNew 3.6 REQUIRED)
-+find_package(PythonLibsNew ${FREEBSD_PYTHON_VER} REQUIRED)
- message(STATUS "${Cyan}Found Python ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}${ColourReset}: ${PYTHON_EXECUTABLE} (found version ${PYTHON_VERSION_STRING})")
+-find_package(Python 3.6 REQUIRED COMPONENTS Interpreter)
++find_package(Python ${FREEBSD_PYTHON_VER} REQUIRED COMPONENTS Interpreter)
+ message(STATUS "${Cyan}Found Python ${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}${ColourReset}: ${Python_EXECUTABLE} (found version ${Python_VERSION})")
  
  
-@@ -110,6 +110,7 @@ target_include_directories(gg INTERFACE
+ ################################  Main Project  ################################
+ add_custom_command(
+     OUTPUT  gau2grid/gau2grid.h gau2grid_orbital.c gau2grid_phi.c gau2grid_deriv1.c gau2grid_deriv2.c gau2grid_deriv3.c gau2grid_transform.c gau2grid_helper.c
+-    COMMAND Python::Interpreter -c "import sys; \
+-                                     sys.path.append('${PROJECT_SOURCE_DIR}'); \
+-                                     import gau2grid as gg; \
+-                                     gg.c_gen.generate_c_gau2grid(${MAX_AM}, path='${CMAKE_CURRENT_BINARY_DIR}')"
++    COMMAND Python::Interpreter -c "import sys;                                      sys.path.append('${PROJECT_SOURCE_DIR}');                                      import gau2grid as gg;                                      gg.c_gen.generate_c_gau2grid(${MAX_AM}, path='${CMAKE_CURRENT_BINARY_DIR}')"
+     DEPENDS gau2grid/c_generator.py
+             gau2grid/c_generator.py
+             gau2grid/codegen.py
+@@ -117,6 +114,7 @@ target_include_directories(gg PUBLIC
                             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
  
  # GNUInstallDirs "DATADIR" wrong here; CMake search path wants "share".
@@ -17,7 +28,7 @@
  set(CMAKECONFIG_INSTALL_DIR "share/cmake/${PN}")
  configure_package_config_file(cmake/${PN}Config.cmake.in
                                "${CMAKE_CURRENT_BINARY_DIR}/${PN}Config.cmake"
-@@ -139,6 +140,7 @@ if(${NATIVE_PYTHON_INSTALL_WITH_LIB} OR (NOT(${INSTALL
+@@ -148,6 +146,7 @@ endif()
             NAMESPACE "${PN}::"
             FILE "${PROJECT_BINARY_DIR}/${PN}Targets.cmake")
  endif()
@@ -25,7 +36,7 @@
  
  if(${INSTALL_PYMOD})
      if(${NATIVE_PYTHON_INSTALL})
-@@ -162,12 +164,12 @@ if(${INSTALL_PYMOD})
+@@ -171,14 +170,14 @@ if(${INSTALL_PYMOD})
                      OUTPUT_STRIP_TRAILING_WHITESPACE)
  
      install(DIRECTORY gau2grid
@@ -40,3 +51,6 @@
              RENAME "gg${PYLIB_EXTENSION}")
  
      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE
+-            DESTINATION ${CMAKE_INSTALL_LIBDIR}${PYMOD_INSTALL_LIBDIR}/gau2grid)
++            DESTINATION ${PYMOD_INSTALL_LIBDIR}/gau2grid)
+ endif()
