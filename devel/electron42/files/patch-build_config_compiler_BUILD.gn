@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2026-04-28 21:06:17 UTC
+--- build/config/compiler/BUILD.gn.orig	2026-06-08 07:06:35 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -202,7 +202,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -56,7 +56,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1338,7 +1345,7 @@ config("compiler_cpu_abi") {
+@@ -1348,7 +1355,7 @@ config("compiler_cpu_abi") {
      # CPU architecture. We may or may not be doing a cross compile now, so for
      # simplicity we always explicitly set the architecture.
      if (current_cpu == "x64") {
@@ -65,7 +65,7 @@
          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
        } else {
-@@ -1352,7 +1359,7 @@ config("compiler_cpu_abi") {
+@@ -1362,7 +1369,7 @@ config("compiler_cpu_abi") {
          ldflags += [ "-march=$cros_target_cpu_arch" ]
        }
      } else if (current_cpu == "x86") {
@@ -74,7 +74,7 @@
          cflags += [ "--target=i386-unknown-linux-gnu" ]
          ldflags += [ "--target=i386-unknown-linux-gnu" ]
        } else {
-@@ -1364,7 +1371,7 @@ config("compiler_cpu_abi") {
+@@ -1374,7 +1381,7 @@ config("compiler_cpu_abi") {
          "-msse3",
        ]
      } else if (current_cpu == "arm") {
@@ -83,7 +83,7 @@
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -1373,7 +1380,7 @@ config("compiler_cpu_abi") {
+@@ -1383,7 +1390,7 @@ config("compiler_cpu_abi") {
          "-mfloat-abi=$arm_float_abi",
        ]
      } else if (current_cpu == "arm64") {
@@ -92,7 +92,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1785,7 +1792,7 @@ config("clang_revision") {
+@@ -1795,7 +1802,7 @@ config("clang_revision") {
  }
  
  config("clang_revision") {
@@ -101,7 +101,7 @@
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -1910,13 +1917,13 @@ config("sanitize_c_array_bounds") {
+@@ -1920,13 +1927,13 @@ config("sanitize_c_array_bounds") {
        # sanitizer) is enabled, they then do expensive debug like operations. We
        # want to suppress this behaviour since we want to keep performance costs
        # as low as possible while having these checks.
@@ -117,7 +117,7 @@
      ]
    }
  }
-@@ -1934,7 +1941,7 @@ config("sanitize_return") {
+@@ -1944,7 +1951,7 @@ config("sanitize_return") {
        # sanitizer) is enabled, they then do expensive debug like operations. We
        # want to suppress this behaviour since we want to keep performance costs
        # as low as possible while having these checks.
@@ -126,7 +126,7 @@
      ]
    }
  }
-@@ -3078,7 +3085,7 @@ config("afdo") {
+@@ -3088,7 +3095,7 @@ config("afdo") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -135,7 +135,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -3105,7 +3112,7 @@ config("afdo") {
+@@ -3115,7 +3122,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
