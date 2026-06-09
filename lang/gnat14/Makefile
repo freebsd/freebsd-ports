@@ -112,7 +112,6 @@ _PLATFORM=		${OPSYS:tl}${OSREL}
 _PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 _PREV_ASSET_OSREL=	${OSREL:R}
 _PREV_ASSET_REV=
-_PREV_ASSET_VER=	13.2.0 # To be updated when assets for 14 will be available
 _REV_FILE=		${WRKSRC}/gcc/REVISION
 _TARGLIB=		${_PKG_PREFIX}/lib ${_PKG_PREFIX}/lib/gcc${_GCC_VER}
 _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GNAT13_PATH}:${PREFIX}/bin:${LOCALBASE}/bin
@@ -121,6 +120,12 @@ _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GNAT13_PATH}:${PREFIX}/bin:${
 
 .if ${UID} != 0
 BINMODE=	755
+.endif
+
+.if ${ARCH} == aarch64 && ${_PREV_ASSET_OSREL} == 13
+_PREV_ASSET_VER=	13.2.0 # To be updated when assets for 14 will be available
+.else
+_PREV_ASSET_VER=	14.2.0
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == aarch64
