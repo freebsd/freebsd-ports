@@ -1,5 +1,5 @@
-TIMESTAMP = 1776522139
-SHA256 (go/net_nats-nsc/nsc-v2.12.2/v2.12.2.mod) = 262ae36b88f94dd4f5a74068a728bff794cbccd5b2b9f077273f998750290eb7
-SIZE (go/net_nats-nsc/nsc-v2.12.2/v2.12.2.mod) = 2201
-SHA256 (go/net_nats-nsc/nsc-v2.12.2/v2.12.2.zip) = c4ff6fe9bc4780233cf5516c4a1cd713a3b2aa4a79547529ba091dd8732b70bf
-SIZE (go/net_nats-nsc/nsc-v2.12.2/v2.12.2.zip) = 497509
+TIMESTAMP = 1781018506
+SHA256 (go/net_nats-nsc/nsc-v2.15.0/v2.15.0.mod) = 7d196da20bc8cbdc1c77ed658f49069f3a88ce4ae87c885959cc6cc7287d695b
+SIZE (go/net_nats-nsc/nsc-v2.15.0/v2.15.0.mod) = 2201
+SHA256 (go/net_nats-nsc/nsc-v2.15.0/v2.15.0.zip) = f12ce5aa8dc98adc5c9214ce4c6b7336a50610237fb955f52e3f175b6f452a18
+SIZE (go/net_nats-nsc/nsc-v2.15.0/v2.15.0.zip) = 510546
