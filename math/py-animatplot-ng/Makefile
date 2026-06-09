@@ -1,9 +1,9 @@
 PORTNAME=	animatplot-ng
-DISTVERSION=	0.4.4
-PORTREVISION=	2
+DISTVERSION=	0.4.6
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	animatplot_ng-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Making animating in matplotlib easy (new gen)
@@ -20,5 +20,7 @@ USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
+
+# tests as of 0.4.6: 32 passed, 2 skipped
 
 .include <bsd.port.mk>
