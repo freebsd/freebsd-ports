@@ -8,6 +8,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
+		approx-0.5.1 \
 		arbitrary-1.4.2 \
 		arboard-3.6.1 \
 		async-trait-0.1.89 \
@@ -20,9 +21,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.11.1 \
+		bitflags-2.13.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.20.2 \
+		by_address-1.2.1 \
 		bytemuck-1.25.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.1 \
@@ -45,6 +47,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		convert_case-0.10.0 \
 		cpufeatures-0.2.17 \
 		crc32fast-1.5.0 \
+		critical-section-1.2.0 \
 		crossbeam-utils-0.8.21 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
@@ -82,6 +85,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		euclid-0.22.14 \
 		eyre-0.6.12 \
 		fancy-regex-0.11.0 \
+		fast-srgb8-1.0.0 \
 		fastrand-2.4.1 \
 		fax-0.2.7 \
 		fdeflate-0.3.7 \
@@ -156,6 +160,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
+		libm-0.2.16 \
 		libredox-0.1.16 \
 		line-clipping-0.3.7 \
 		linux-raw-sys-0.12.1 \
@@ -164,6 +169,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
 		lru-0.16.4 \
+		lru-0.18.0 \
 		lru-slab-0.1.2 \
 		mac_address-1.1.8 \
 		memchr-2.8.0 \
@@ -196,6 +202,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
 		owo-colors-4.3.0 \
+		palette-0.7.6 \
+		palette_derive-0.7.6 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		percent-encoding-2.3.2 \
@@ -234,12 +242,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
-		ratatui-0.30.0 \
-		ratatui-core-0.1.0 \
-		ratatui-crossterm-0.1.0 \
-		ratatui-macros-0.7.0 \
-		ratatui-termwiz-0.1.0 \
-		ratatui-widgets-0.3.0 \
+		ratatui-0.30.1 \
+		ratatui-core-0.1.1 \
+		ratatui-crossterm-0.1.1 \
+		ratatui-macros-0.7.1 \
+		ratatui-termwiz-0.1.1 \
+		ratatui-widgets-0.3.1 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
 		regex-1.12.3 \
@@ -266,7 +274,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.9 \
@@ -286,14 +294,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		strum-0.27.2 \
-		strum_macros-0.27.2 \
+		strum-0.28.0 \
+		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		tempfile-3.27.0 \
 		terminfo-0.9.0 \
 		termios-0.3.3 \
@@ -340,7 +348,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		urlencoding-2.1.3 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.1 \
+		uuid-1.23.2 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		vtparse-0.6.2 \
