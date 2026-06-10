@@ -25,6 +25,7 @@ include/basix/polyset.h
 include/basix/precompute.h
 include/basix/quadrature.h
 include/basix/sobolev-spaces.h
+include/basix/types.h
 include/basix/version.h
 include/finite-element.h
 lib/cmake/basix/BasixConfig.cmake

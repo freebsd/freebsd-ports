@@ -1,7 +1,6 @@
 PORTNAME=	fenics-basix
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	3
+DISTVERSION=	0.11.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +10,6 @@ WWW=		https://github.com/FEniCS/basix
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	xtensor>0:math/xtensor \
-		xtl-quant-stack>0:devel/xtl-quant-stack
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		cmake compiler:c++20-lang
