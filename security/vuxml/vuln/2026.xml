@@ -1,3 +1,257 @@
+  <vuln vid="d87db2a1-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- buffer overflow parsing SCTP ERROR/ABORT chunks</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.13</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-6f4f-chj5-5g97 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-6f4f-chj5-5g97">
+	  <p>A buffer overflow error when parsing SCTP ERROR or ABORT
+	  chunks has been fixed. This could lead to stack corruption and
+	  VM crash, but ultimately with hard work by an attacker be
+	  refined into maybe even remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49759</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-6f4f-chj5-5g97</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d87de755-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- stack overflow in ei_s_print_term for very large integer terms</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.13</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-xcxj-5pg2-v72j reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-xcxj-5pg2-v72j">
+	  <p>Fixed a stack overflow in ei_s_print_term in erl_interface
+	  for very large integer terms (more than 2000 hexadecimal digits
+	  long).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49760</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-xcxj-5pg2-v72j</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d87e0681-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- FTP passive-mode client does not validate server response IP</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.13</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-24cv-hwgr-37fq reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-24cv-hwgr-37fq">
+	  <p>The FTP client in passive mode did not validate the IP
+	  address returned in the server's response, allowing a
+	  compromised or malicious server to redirect the data connection
+	  to an arbitrary host. This enables server-side request forgery
+	  (SSRF) and FTP bounce attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48858</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-24cv-hwgr-37fq</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d87e2466-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- httpc leaks authentication headers on cross-host redirect</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.13</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-m75x-4vwg-ggjh reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-m75x-4vwg-ggjh">
+	  <p>The HTTP client (httpc) in inets now removes Authorization,
+	  Proxy-Authorization, Cookie, Referer, and Origin headers when
+	  following a redirect to a different host or port, following the
+	  requirements of RFC 9110 section 15.4. Previously these headers
+	  were forwarded verbatim, potentially leaking credentials to
+	  unintended targets.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48856</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-m75x-4vwg-ggjh</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d87e41a4-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- SFTP READLINK discloses server filesystem paths</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.13</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-pv7g-pjrq-x2fh reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-pv7g-pjrq-x2fh">
+	  <p>The SSH SFTP daemon's handling of SSH_FXP_READLINK returned
+	  symbolic link targets containing the server's absolute
+	  filesystem path, disclosing the backend root prefix to clients.
+	  The handler now strips the backend root prefix from symlink
+	  targets before returning them.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48855</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-pv7g-pjrq-x2fh</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d87e5fb4-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- TLS distribution check_ip flag does not enforce same-LAN constraint</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.13</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-gp7x-mfv6-52cv reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-gp7x-mfv6-52cv">
+	  <p>Erlang distribution over TLS run with the kernel check_ip
+	  flag now properly enforces connecting nodes to be on the same
+	  LAN. Previously the constraint was not enforced.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48860</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-gp7x-mfv6-52cv</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d87e7df5-64d4-11f1-ab11-4c526214c986">
+    <topic>Erlang/OTP -- timing-based username enumeration in SSH password authentication</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-3w6p-vwhf-wvp4 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-3w6p-vwhf-wvp4">
+	  <p>A timing-based username enumeration vulnerability during
+	  password authentication with the user_passwords option has been
+	  fixed by performing a dummy PBKDF2 computation for invalid
+	  usernames, so authentication timing no longer reveals whether a
+	  username exists.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48859</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-3w6p-vwhf-wvp4</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ce71561-64c7-11f1-99fc-40b034429ecf">
     <topic>p5-ack -- Multiple issues</topic>
     <affects>
