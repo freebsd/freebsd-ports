@@ -1,15 +1,15 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2026-05-11 13:57:04 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2026-06-10 12:51:34 UTC
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -261,7 +261,7 @@
+@@ -263,7 +263,7 @@
  #include "chrome/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/gapis/gapis_service_factory.h"
  #include "components/gapis/gapis_service.h"
- #endif  // BUILDFLAG(IS_LINUX)
-@@ -270,6 +270,10 @@
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
+@@ -272,6 +272,10 @@
  #include "chrome/browser/themes/theme_service_factory.h"
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -20,7 +20,7 @@
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -606,7 +610,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
+@@ -608,7 +612,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
    policy_provider = GetUserCloudPolicyManagerAsh();
  #else  // !BUILDFLAG(IS_CHROMEOS)
    {
@@ -29,16 +29,16 @@
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -789,7 +793,7 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -791,7 +795,7 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
    }
  #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    // Bootstrap and initialize the Gapis service.
    if (gapis::GapisService* gapis_service =
            GapisServiceFactory::GetForProfile(this)) {
-@@ -880,7 +884,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -882,7 +886,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

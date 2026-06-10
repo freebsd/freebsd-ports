@@ -1,6 +1,6 @@
---- components/optimization_guide/core/feature_registry/feature_registration.cc.orig	2026-05-11 13:57:04 UTC
+--- components/optimization_guide/core/feature_registry/feature_registration.cc.orig	2026-06-10 12:51:34 UTC
 +++ components/optimization_guide/core/feature_registry/feature_registration.cc
-@@ -83,7 +83,7 @@ BASE_FEATURE(kProductSpecificationsMqlsLogging,
+@@ -87,7 +87,7 @@ BASE_FEATURE(kProductSpecificationsMqlsLogging,
  
  BASE_FEATURE(kFormsClassificationsMqlsLogging,
               BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) ||

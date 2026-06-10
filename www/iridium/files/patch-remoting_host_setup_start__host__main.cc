@@ -1,38 +1,47 @@
---- remoting/host/setup/start_host_main.cc.orig	2026-05-11 13:57:04 UTC
+--- remoting/host/setup/start_host_main.cc.orig	2026-06-10 12:51:34 UTC
 +++ remoting/host/setup/start_host_main.cc
-@@ -41,7 +41,7 @@
+@@ -44,7 +44,7 @@
  #include <unistd.h>
  #endif  // BUILDFLAG(IS_POSIX)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "remoting/base/crash/crash_reporting_crashpad.h"
- #include "remoting/host/setup/daemon_controller_delegate_linux.h"
- #include "remoting/host/setup/start_host_as_root.h"
-@@ -373,7 +373,7 @@ bool InitializeCloudMachineParams(HostStarter::Params&
- }  // namespace
+ #include "remoting/host/linux/host_types.h"
+ #include "remoting/host/setup/daemon_controller_delegate_linux_single_process.h"
+@@ -91,7 +91,7 @@ constexpr char kDisableCrashReportingSwitchName[] = "d
+ constexpr char kInvalidPinErrorMessage[] =
+     "Please provide a numeric PIN consisting of at least six digits.\n";
  
- int StartHostMain(int argc, char** argv) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Minimize the amount of code that runs as root on Posix systems.
-   if (getuid() == 0) {
-     return remoting::StartHostAsRoot(argc, argv);
-@@ -398,7 +398,7 @@ int StartHostMain(int argc, char** argv) {
+ // The host type to use.
+ constexpr char kHostTypeSwitchName[] = "host-type";
+ #endif
+@@ -118,7 +118,7 @@ void PrintDefaultHelpMessage(const char* process_name)
+       process_name, kAuthCodeSwitchName, kRedirectUrlSwitchName,
+       kDisplayNameSwitchName, kPinSwitchName, kDisableCrashReportingSwitchName);
  
-   mojo::core::Init();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   std::cerr << base::StringPrintf(" [--%s=<host type>]", kHostTypeSwitchName)
+             << "\n\n";
+   HostType::PrintHostTypeHelp();
+@@ -424,7 +424,7 @@ int StartHostMain(int argc, char** argv) {
+   }
+ #endif  // defined(REMOTING_ENABLE_CRASH_REPORTING)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   const HostType* host_type = nullptr;
+   if (command_line->HasSwitch(kHostTypeSwitchName)) {
+     std::string host_type_name =
+@@ -473,7 +473,7 @@ int StartHostMain(int argc, char** argv) {
+   }
+ #endif  // BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (command_line->HasSwitch("no-start")) {
      // On Linux, registering the host with systemd and starting it is the only
      // reason start_host requires root. The --no-start options skips that final
-@@ -449,7 +449,7 @@ int StartHostMain(int argc, char** argv) {
-   // We don't have a config file yet so we can't use IsUsageStatsAllowed(),
-   // instead we can just check the command line parameter.
-   if (params.enable_crash_reporting) {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     InitializeCrashpadReporting();
- #elif BUILDFLAG(IS_WIN)
-     InitializeBreakpadReporting();
