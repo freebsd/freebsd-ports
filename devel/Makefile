@@ -8697,6 +8697,7 @@
     SUBDIR += tokio-console
     SUBDIR += toml11
     SUBDIR += tomlplusplus
+    SUBDIR += toomanycooks
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tracy
