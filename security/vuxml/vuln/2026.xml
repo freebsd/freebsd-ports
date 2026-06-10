@@ -1,3 +1,516 @@
+  <vuln vid="fc0c7763-6477-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Insufficient response validation in the ldns stub resolver</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When used as a stub resolver over UDP, ldns failed to verify
+	  that a received response belonged to the outstanding query.  It did
+	  not check that the response source address and port matched the
+	  query destination, that the transaction ID matched, or that the
+	  question section of the response matched that of the query.</p>
+	<h1>Impact:</h1>
+	  <p>Without these checks, an off-path attacker who cannot observe
+	  the query can forge UDP responses that ldns will accept as genuine.
+	  By injecting spoofed replies, the attacker can return arbitrary DNS
+	  data to any program that uses ldns for stub resolving, including
+	  drill(1).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-10846</cvename>
+      <freebsdsa>SA-26:36.ldns</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a57fe2c1-6476-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in OpenSSL</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Multiple issues have been reported as part of this advisory
+	  with different issues affecting different OpenSSL versions and
+	  therefore different FreeBSD versions.  Instead of exhaustively
+	  listing detailed writeups for each issue, please see the referenced
+	  advisory from OpenSSL.</p>
+	  <p>Issues affecting FreeBSD 15.x (OpenSSL 3.5):</p>
+	  <ul>
+	    <li>CVE-2026-7383: Possible heap buffer overflow in ASN.1 string conversion</li>
+	    <li>CVE-2026-9076: Out-of-bounds read in CMS password-based decryption</li>
+	    <li>CVE-2026-34180: Heap buffer over-read in ASN.1 content parsing</li>
+	    <li>CVE-2026-34181: PKCS#12 files with PBMAC1 accepted with short HMAC keys</li>
+	    <li>CVE-2026-34182: CMS AuthEnvelopedData may accept forged messages</li>
+	    <li>CVE-2026-34183: Unbounded memory growth in the QUIC PATH_CHALLENGE handler</li>
+	    <li>CVE-2026-42764: NULL dereference in QUIC server initial packet handling</li>
+	    <li>CVE-2026-42766: Possible NULL dereference in password-based CMS decryption</li>
+	    <li>CVE-2026-42767: NULL dereference in CRMF EncryptedValue decryption</li>
+	    <li>CVE-2026-42768: Bleichenbacher oracle in CMS_decrypt() and PKCS7_decrypt()</li>
+	    <li>CVE-2026-42769: Trust-anchor substitution in CMP rootCaKeyUpdate handling</li>
+	    <li>CVE-2026-42770: FFC-DH peer validation uses attacker-supplied q</li>
+	    <li>CVE-2026-45445: AES-OCB IV ignored on the EVP_Cipher() one-shot path</li>
+	    <li>CVE-2026-45446: Empty-message tag bypass in AES-GCM-SIV and AES-SIV modes</li>
+	    <li>CVE-2026-45447: Heap use-after-free in PKCS7_verify()</li>
+	  </ul>
+	  <p>Issues affecting FreeBSD 14.x (OpenSSL 3.0):</p>
+	  <ul>
+	    <li>CVE-2026-7383: Possible heap buffer overflow in ASN.1 string conversion</li>
+	    <li>CVE-2026-9076: Out-of-bounds read in CMS password-based decryption</li>
+	    <li>CVE-2026-34180: Heap buffer over-read in ASN.1 content parsing</li>
+	    <li>CVE-2026-34182: CMS AuthEnvelopedData may accept forged messages</li>
+	    <li>CVE-2026-42766: Possible NULL dereference in password-based CMS decryption</li>
+	    <li>CVE-2026-42770: FFC-DH peer validation uses attacker-supplied q</li>
+	    <li>CVE-2026-45445: AES-OCB IV ignored on the EVP_Cipher() one-shot path</li>
+	    <li>CVE-2026-45446: Empty-message tag bypass in AES-GCM-SIV and AES-SIV modes</li>
+	    <li>CVE-2026-45447: Heap use-after-free in PKCS7_verify()</li>
+	  </ul>
+	<h1>Impact:</h1>
+	  <p>The issues include heap buffer overflows and over-reads, NULL
+	  pointer dereferences, a use-after-free, unbounded memory allocation,
+	  and several cryptographic flaws permitting message forgery, integrity
+	  bypass, or recovery of a private key.</p>
+	  <p>Security impact ranges from a Denial of Service to a potential
+	  remote code execution.  See the OpenSSL advisory for specific
+	  details.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-7383</cvename>
+      <cvename>CVE-2026-9076</cvename>
+      <cvename>CVE-2026-34180</cvename>
+      <cvename>CVE-2026-34181</cvename>
+      <cvename>CVE-2026-34182</cvename>
+      <cvename>CVE-2026-34183</cvename>
+      <cvename>CVE-2026-42764</cvename>
+      <cvename>CVE-2026-42766</cvename>
+      <cvename>CVE-2026-42767</cvename>
+      <cvename>CVE-2026-42768</cvename>
+      <cvename>CVE-2026-42769</cvename>
+      <cvename>CVE-2026-42770</cvename>
+      <cvename>CVE-2026-45445</cvename>
+      <cvename>CVE-2026-45446</cvename>
+      <cvename>CVE-2026-45447</cvename>
+      <freebsdsa>SA-26:35.openssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="71036b90-6476-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Integer overflow in vt(4) CONS_HISTORY ioctl</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The CONS_HISTORY ioctl handler did not adequately validate the
+	  requested history size.  A large value caused an integer overflow
+	  in the buffer size calculation, resulting in a heap allocation
+	  smaller than expected.  Subsequent initialization of the buffer
+	  wrote beyond the end of the allocation.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user with access to a vt(4) device can
+	  trigger an out-of-bounds write in the kernel, potentially escalating
+	  privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49416</cvename>
+      <freebsdsa>SA-26:34.vt</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b604d3e1-6474-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in unbound</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Multiple vulnerabilities have been reported in Unbound.  Instead
+	  of listing detailed writeups for each issue, please see the upstream
+	  advisories referenced below.</p>
+	  <ul>
+	    <li>CVE-2026-32792: Packet of death with DNSCrypt</li>
+	    <li>CVE-2026-33278: Possible remote code execution during DNSSEC validation</li>
+	    <li>CVE-2026-40622: "Ghost domain name" variant</li>
+	    <li>CVE-2026-41292: Parsing a long list of incoming EDNS options degrades performance</li>
+	    <li>CVE-2026-42534: Jostle logic bypass degrades resolution performance</li>
+	    <li>CVE-2026-42923: Degradation of service with unbounded NSEC3 hash calculations</li>
+	    <li>CVE-2026-42944: Heap overflow and crash with multiple nsid, cookie, padding EDNS options</li>
+	    <li>CVE-2026-42959: Crash during DNSSEC validation of malicious content</li>
+	    <li>CVE-2026-42960: Possible cache poisoning while following delegation</li>
+	    <li>CVE-2026-44390: Unbounded name compression causes degradation of service</li>
+	    <li>CVE-2026-44608: Use-after-free and crash in RPZ code</li>
+	  </ul>
+	<h1>Impact:</h1>
+	  <p>The issues range from Denial of Service (DoS) through resource
+	  exhaustion or crashes to possible remote code execution during
+	  DNSSEC validation.  See the upstream Unbound advisories for specific
+	  details.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-32792</cvename>
+      <cvename>CVE-2026-33278</cvename>
+      <cvename>CVE-2026-40622</cvename>
+      <cvename>CVE-2026-41292</cvename>
+      <cvename>CVE-2026-42534</cvename>
+      <cvename>CVE-2026-42923</cvename>
+      <cvename>CVE-2026-42944</cvename>
+      <cvename>CVE-2026-42959</cvename>
+      <cvename>CVE-2026-42960</cvename>
+      <cvename>CVE-2026-44390</cvename>
+      <cvename>CVE-2026-44608</cvename>
+      <freebsdsa>SA-26:33.unbound</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7e61007e-6474-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD-kernel -- ASLR bypass for setuid executables via procctl(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The ELF image activator cleared per-process ASLR preference
+	  flags for setuid binaries after the code that computes the PIE base
+	  address, rather than before.  As a result, a user-requested ASLR
+	  disable was still in effect at the point where the base address was
+	  chosen.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can disable ASLR for a setuid PIE
+	  binary by calling procctl(2) before execve(2).  This makes exploitation
+	  of any separate memory corruption vulnerability in that binary
+	  significantly easier.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49414</cvename>
+      <freebsdsa>SA-26:32.elf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="438b0278-6474-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Arm CPU errata may bypass page table permission changes</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Some Arm CPUs have errata where the ordering of stores and the
+	  TLBI+DSB sequence may be incorrect.  If one CPU stores to a virtual
+	  address while another CPU invalidates the translation for that
+	  address, the second CPU's TLBI+DSB may complete before the first
+	  CPU's store has been globally observed.</p>
+	<h1>Impact:</h1>
+	  <p>This erratum may allow software to write to a previously writable
+	  location after the page table is modified to forbid writes to that
+	  location.  Consequently this may allow software to write to memory
+	  owned by a higher exception level, possibly allowing software to
+	  escalate privilege to that higher exception level.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10263</cvename>
+      <freebsdsa>SA-26:31.arm64</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fa5289e4-6473-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Flaw in Linuxulator execution of setugid binaries</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The Linuxulator determined whether a binary was set-user-ID or
+	  set-group-ID by checking the P_SUGID process flag.  During execve(2),
+	  this flag is not yet set at the point where the auxiliary vector
+	  is constructed, so AT_SECURE was incorrectly set to zero for
+	  set-user-ID and set-group-ID executables.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can inject a shared library via
+	  LD_PRELOAD into a set-user-ID or set-group-ID Linux binary, gaining
+	  the privileges of that binary.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49413</cvename>
+      <freebsdsa>SA-26:30.linux</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c5b7ac13-6473-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Use-after-free bug in the IPV6_MSFILTER socket option handler</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The kernel handler for IPV6_MSFILTER dropped a serializing lock
+	  in order to copy the source-filter list from userspace, then
+	  reacquired the lock.  During this window another thread could free
+	  the multicast filter structure, leaving the handler with a stale
+	  pointer to freed memory.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this use-after-free to
+	  escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49412</cvename>
+      <freebsdsa>SA-26:28.ip6_multicast</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="94f20492-6473-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- sigqueue(2) missing capability mode restriction</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>sigqueue(2) was marked as permitted in capability mode with the
+	  introduction of Capsicum in 2011, but the implementation of
+	  kern_sigqueue did not include a capability mode check restricting
+	  signal delivery to the calling process's own PID.</p>
+	<h1>Impact:</h1>
+	  <p>A process in capability mode can use sigqueue(2) to send signals
+	  to any process it could signal following standard Unix permissions,
+	  bypassing the Capsicum sandbox restriction.  A compromised sandboxed
+	  process could interfere with other processes, for example by sending
+	  SIGKILL or SIGSTOP.  This could be any process running as the same
+	  user, or any process, for a superuser sandboxed process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45259</cvename>
+      <freebsdsa>SA-26:28.capsicum</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="253188dd-6473-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in the sound(4) mmap path</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The sound(4) driver contained two memory-safety errors in its
+	  mmap(2) support.</p>
+	  <p>First, dsp_mmap_single() validated the requested mapping by checking
+	  the sum of the user-supplied offset and length against the buffer
+	  size.  This addition could overflow, so that a large offset and
+	  length wrapped around and passed the check.  The offset was then
+	  narrowed from 64 to 32 bits when converted to a buffer address,
+	  yielding a mapping that extended past the audio buffer into unrelated
+	  kernel memory.  (CVE-2026-45258)</p>
+	  <p>Second, the audio buffer backing a mapping could be freed when the
+	  device was closed even though the mapping remained valid.  The freed
+	  memory could then be reused elsewhere while still accessible through
+	  the stale mapping.  (CVE-2026-49417)</p>
+	<h1>Impact:</h1>
+	  <p>The /dev/dsp device nodes are world-accessible by default.  On
+	  a system with an audio device, either issue allows an unprivileged
+	  local user to read and write kernel memory, which can be used to
+	  escalate privileges, potentially gaining full control of the affected
+	  system.  At a minimum, an attacker can crash the kernel, resulting
+	  in a Denial of Service (DoS).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45258</cvename>
+      <cvename>CVE-2026-49417</cvename>
+      <freebsdsa>SA-26:27.sound</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f2c4892a-6472-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Arbitrary file overwrite via the KTLS receive path</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The KTLS receive path decrypted each record in place, assuming
+	  that the mbufs holding received data were anonymous and safe to
+	  modify.  This assumption does not hold for data placed on a socket
+	  by sendfile(2), which can reference file-backed memory directly
+	  through non-anonymous M_EXTPG pages or EXT_SFBUF mbufs.  When the
+	  sender transmits such data over a loopback connection without
+	  enabling KTLS on the transmit side, the file-backed mbufs reach the
+	  receiver's decryption path unchanged.  Decrypting a record in place
+	  then overwrites the backing file's page cache instead of a private
+	  copy of the data.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user who can read a file can overwrite
+	  its contents with data of their choosing by sending the file over
+	  a loopback connection on which they have enabled KTLS receive.  The
+	  write modifies the page cache directly, so it bypasses file flags
+	  such as schg and is written back to disk.  By overwriting a setuid
+	  binary or other trusted file, a local user can escalate privileges,
+	  potentially gaining full control of the affected system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45257</cvename>
+      <freebsdsa>SA-26:26.ktls</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="91163897-6472-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Missing permission check in thr_kill2(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When used to deliver a signal to a specific thread, thr_kill2(2)
+	  called p_cansignal() to determine whether the operation was permitted
+	  but did not check the result before delivering the signal.  The
+	  signal was sent even when the permission check failed.  The system
+	  call returned the resulting error to the caller, but by then the
+	  signal had already been delivered.</p>
+	<h1>Impact:</h1>
+	  <p>The missing check allows an unprivileged local user who knows
+	  or can guess a target's process and thread IDs to send any signal
+	  to a process they would not normally be permitted to signal, including
+	  processes owned by other users or by root.  The same check enforces
+	  jail boundaries, so a jailed process can signal processes on the
+	  host or in other jails.  Thread IDs are allocated globally and
+	  sequentially, and so can be discovered by brute force with no
+	  visibility into the target.</p>
+	  <p>An attacker can stop or terminate arbitrary processes, including
+	  critical system daemons, resulting in a Denial of Service (DoS).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45256</cvename>
+      <freebsdsa>SA-26:25.thr</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45accfb8-56e4-41b7-8463-572ce643fde0">
     <topic>Elixir -- Denial of service via unbounded integer parsing in Version</topic>
     <affects>
