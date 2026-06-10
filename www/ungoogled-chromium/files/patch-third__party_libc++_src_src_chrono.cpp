@@ -1,6 +1,6 @@
---- third_party/libc++/src/src/chrono.cpp.orig	2025-02-20 09:59:21 UTC
+--- third_party/libc++/src/src/chrono.cpp.orig	2026-06-05 13:45:06 UTC
 +++ third_party/libc++/src/src/chrono.cpp
-@@ -38,7 +38,7 @@
+@@ -37,7 +37,7 @@
  // OpenBSD and GPU do not have a fully conformant suite of POSIX timers, but
  // it does have clock_gettime and CLOCK_MONOTONIC which is all we need.
  #if defined(__APPLE__) || defined(__gnu_hurd__) || defined(__OpenBSD__) || defined(__AMDGPU__) ||                      \

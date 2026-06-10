@@ -1,4 +1,4 @@
---- chrome/browser/download/download_file_picker.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/download/download_file_picker.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/download/download_file_picker.cc
 @@ -18,7 +18,7 @@
  #include "content/public/browser/web_contents.h"
@@ -12,7 +12,7 @@
 @@ -83,7 +83,7 @@ DownloadFilePicker::DownloadFilePicker(download::Downl
    // dialog in Linux (See SelectFileImpl() in select_file_dialog_linux_gtk.cc).
    // and windows.Here we make owning_window host to browser current active
-   // window if it is null. https://crbug.com/1301898
+   // window if it is null. https://crbug.com/40825014
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    if (!owning_window || !owning_window->GetHost()) {

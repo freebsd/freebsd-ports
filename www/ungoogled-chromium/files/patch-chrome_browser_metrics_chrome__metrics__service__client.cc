@@ -1,7 +1,7 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -206,11 +206,11 @@
- #include "chrome/browser/metrics/google_update_metrics_provider_mac.h"
+@@ -210,7 +210,7 @@
+ #include "chrome/browser/metrics/power/power_metrics_provider_mac.h"
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
@@ -9,44 +9,16 @@
  #include "components/metrics/motherboard_metrics_provider.h"
  #endif
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/metrics/chrome_metrics_service_crash_reporter.h"
- #endif
- 
-@@ -223,19 +223,19 @@
- #include "chrome/browser/metrics/power/power_metrics_provider_mac.h"
- #endif
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+@@ -222,7 +222,7 @@
  #include "chrome/browser/metrics/bluetooth_metrics_provider.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/skills/skills_metrics_provider.h"
- #include "chrome/browser/ui/tabs/tab_metrics_provider.h"
- #include "components/skills/features.h"
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-         // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/updates/update_metrics_provider.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -254,7 +254,7 @@ const int kMaxHistogramGatheringWaitDuration = 60000; 
- // Needs to be kept in sync with the writer in
- // third_party/crashpad/crashpad/handler/handler_main.cc.
- const char kCrashpadHistogramAllocatorName[] = "CrashpadMetrics";
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- ChromeMetricsServiceCrashReporter& GetCrashReporter() {
-   static base::NoDestructor<ChromeMetricsServiceCrashReporter> crash_reporter;
-   return *crash_reporter;
-@@ -564,7 +564,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
+@@ -551,7 +551,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -55,16 +27,7 @@
    metrics::structured::StructuredMetricsService::RegisterPrefs(registry);
  
  #if !BUILDFLAG(IS_CHROMEOS)
-@@ -661,7 +661,7 @@ std::string ChromeMetricsServiceClient::GetVersionStri
- void ChromeMetricsServiceClient::OnEnvironmentUpdate(std::string* environment) {
-   // TODO(https://bugs.ch40m1um.qjz9zk/p/crashpad/issues/detail?id=135): call this
-   // on Mac when the Crashpad API supports it.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Register the environment with the crash reporter. Note that there is a
-   // window from startup to this point during which crash reports will not have
-   // an environment set.
-@@ -761,7 +761,7 @@ void ChromeMetricsServiceClient::Initialize() {
+@@ -748,7 +748,7 @@ void ChromeMetricsServiceClient::Initialize() {
          this, local_state);
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -73,7 +36,7 @@
    metrics::structured::Recorder::GetInstance()->SetUiTaskRunner(
        base::SequencedTaskRunner::GetCurrentDefault());
  #endif
-@@ -821,7 +821,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -808,7 +808,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::CPUMetricsProvider>());
  
@@ -82,7 +45,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -910,7 +910,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -901,7 +901,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<GoogleUpdateMetricsProviderMac>());
  #endif
  
@@ -91,16 +54,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -1009,7 +1009,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
-       std::make_unique<HttpsEngagementMetricsProvider>());
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   metrics_service_->RegisterMetricsProvider(
-       std::make_unique<TabMetricsProvider>(
-           g_browser_process->profile_manager()));
-@@ -1031,7 +1031,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -1020,7 +1020,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -109,7 +63,7 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
    metrics_service_->RegisterMetricsProvider(
-@@ -1237,7 +1237,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1226,7 +1226,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
    }
  #endif
  
@@ -118,7 +72,7 @@
    // This creates the DesktopProfileSessionDurationsServices if it didn't exist
    // already.
    metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(
-@@ -1588,7 +1588,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
+@@ -1577,7 +1577,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
    recorder =
        std::make_unique<metrics::structured::AshStructuredMetricsRecorder>(
            cros_system_profile_provider_.get());

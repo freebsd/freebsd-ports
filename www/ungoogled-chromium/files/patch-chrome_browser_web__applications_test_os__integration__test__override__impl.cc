@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
 @@ -50,7 +50,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
@@ -81,7 +81,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    return base::PathExists(desktop_shortcut_path);
-@@ -771,7 +771,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
+@@ -786,7 +786,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -90,7 +90,7 @@
  base::FilePath OsIntegrationTestOverrideImpl::desktop() {
    return desktop_.GetPath();
  }
-@@ -822,7 +822,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -837,7 +837,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    success = chrome_apps_folder_.CreateUniqueTempDirUnderPath(
        outer_temp_dir_.GetPath());
    CHECK(success);
@@ -99,7 +99,7 @@
    success = desktop_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
    CHECK(success);
    success = startup_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
-@@ -835,7 +835,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -850,7 +850,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    CHECK(success);
  #endif
  
@@ -108,7 +108,7 @@
    auto callback = base::BindRepeating([](base::FilePath filename_in,
                                           std::string xdg_command,
                                           std::string file_contents) {
-@@ -907,7 +907,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
+@@ -922,7 +922,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
    EXPECT_TRUE(!startup_.IsValid() || startup_.Delete());
  #elif BUILDFLAG(IS_MAC)
    EXPECT_TRUE(!chrome_apps_folder_.IsValid() || DeleteChromeAppsDir());

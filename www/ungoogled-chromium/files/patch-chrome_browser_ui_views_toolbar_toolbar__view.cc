@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/toolbar/toolbar_view.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ui/views/toolbar/toolbar_view.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/ui/views/toolbar/toolbar_view.cc
-@@ -401,7 +401,7 @@ void ToolbarView::Init() {
+@@ -395,7 +395,7 @@ void ToolbarView::Init() {
    }
  
    std::unique_ptr<MediaToolbarButtonView> media_button;

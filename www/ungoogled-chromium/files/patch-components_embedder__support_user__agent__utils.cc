@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils.cc.orig	2026-03-15 18:32:51 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2026-06-05 13:45:06 UTC
 +++ components/embedder_support/user_agent_utils.cc
 @@ -285,7 +285,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -9,25 +9,16 @@
    return "X11; ";  // strange, but that's what Firefox uses
  #elif BUILDFLAG(IS_ANDROID)
    return "Linux; ";
-@@ -301,7 +301,7 @@ std::string GetUserAgentPlatform() {
- }
- 
- std::string GetUnifiedPlatform() {
--#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
-   // This constant is only used on Android (desktop) and Linux.
-   constexpr char kUnifiedPlatformLinuxX64[] = "X11; Linux x86_64";
- #endif
-@@ -321,7 +321,7 @@ std::string GetUnifiedPlatform() {
+@@ -325,7 +325,7 @@ std::string GetUnifiedPlatform() {
    return "Windows NT 10.0; Win64; x64";
  #elif BUILDFLAG(IS_FUCHSIA)
    return "Fuchsia";
 -#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
-   return kUnifiedPlatformLinuxX64;
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return "X11; Linux x86_64";
  #elif BUILDFLAG(IS_IOS)
    if (ui::GetDeviceFormFactor() == ui::DEVICE_FORM_FACTOR_TABLET) {
-@@ -581,7 +581,7 @@ bool GetMobileBitForUAMetadata() {
+@@ -585,7 +585,7 @@ bool GetMobileBitForUAMetadata() {
  }
  
  std::string GetPlatformVersion() {
@@ -36,7 +27,7 @@
    // TODO(crbug.com/40245146): Remove this Blink feature
    if (base::FeatureList::IsEnabled(
            blink::features::kReduceUserAgentDataLinuxPlatformVersion)) {
-@@ -632,6 +632,9 @@ std::string GetPlatformForUAMetadata() {
+@@ -639,6 +639,9 @@ std::string GetPlatformForUAMetadata() {
  #else
    return "Chromium OS";
  #endif
@@ -46,7 +37,7 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -816,6 +819,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -823,6 +826,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

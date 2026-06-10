@@ -1,0 +1,38 @@
+--- chrome/browser/metrics/BUILD.gn.orig	2026-06-05 13:45:06 UTC
++++ chrome/browser/metrics/BUILD.gn
+@@ -197,7 +197,7 @@ source_set("metrics") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     public += [ "bluetooth_metrics_provider.h" ]
+   }
+ 
+@@ -208,7 +208,7 @@ source_set("metrics") {
+     ]
+   }
+ 
+-  if (is_win || is_android || is_linux) {
++  if (!is_bsd && (is_win || is_android || is_linux)) {
+     public += [ "chrome_metrics_service_crash_reporter.h" ]
+   }
+ 
+@@ -456,7 +456,7 @@ source_set("impl") {
+     sources += [ "structured/chrome_structured_metrics_delegate.cc" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     sources += [ "bluetooth_metrics_provider.cc" ]
+   }
+ 
+@@ -471,7 +471,7 @@ source_set("impl") {
+     deps += [ "//chrome/browser/updates:update_metrics" ]
+   }
+ 
+-  if (is_win || is_android || is_linux) {
++  if (!is_bsd && (is_win || is_android || is_linux)) {
+     sources += [ "chrome_metrics_service_crash_reporter.cc" ]
+   }
+ 

@@ -1,6 +1,6 @@
---- base/rand_util.h.orig	2026-03-15 18:32:51 UTC
+--- base/rand_util.h.orig	2026-06-05 13:45:06 UTC
 +++ base/rand_util.h
-@@ -225,7 +225,7 @@ decltype(auto) RandomChoice(Range&& r) {
+@@ -221,7 +221,7 @@ decltype(auto) RandomChoice(Range&& r) {
    return r[base::RandGenerator(r.size())];
  }
  

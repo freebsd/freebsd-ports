@@ -1,6 +1,6 @@
---- printing/printing_features.h.orig	2026-02-15 10:01:45 UTC
+--- printing/printing_features.h.orig	2026-06-05 13:45:06 UTC
 +++ printing/printing_features.h
-@@ -24,7 +24,7 @@ BASE_DECLARE_FEATURE(kApiPrintingMarginsAndScale);
+@@ -19,7 +19,7 @@ namespace printing::features {
  COMPONENT_EXPORT(PRINTING_BASE)
  BASE_DECLARE_FEATURE(kAlignPdfDefaultPrintSettingsWithHTML);
  

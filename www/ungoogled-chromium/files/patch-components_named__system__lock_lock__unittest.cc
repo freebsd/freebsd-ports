@@ -1,4 +1,4 @@
---- components/named_system_lock/lock_unittest.cc.orig	2025-04-15 08:30:07 UTC
+--- components/named_system_lock/lock_unittest.cc.orig	2026-06-05 13:45:06 UTC
 +++ components/named_system_lock/lock_unittest.cc
 @@ -18,7 +18,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include <fcntl.h>
  #include <sys/mman.h>
  
-@@ -45,7 +45,7 @@ class NamedSystemLockTest : public ::testing::Test {
+@@ -44,7 +44,7 @@ class NamedSystemLockTest : public ::testing::Test {
    const std::string lock_name_ = base::UnguessableToken::Create().ToString();
  
    std::unique_ptr<ScopedLock> CreateLock() {
@@ -17,8 +17,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
      return ScopedLock::Create(lock_name_, base::Seconds(0));
  #else
-     CSecurityAttributes sa;
-@@ -95,7 +95,7 @@ TEST_F(NamedSystemLockTest, TryLockInThreadSuccess) {
+     SECURITY_ATTRIBUTES sa = {sizeof(SECURITY_ATTRIBUTES), nullptr, FALSE};
+@@ -94,7 +94,7 @@ TEST_F(NamedSystemLockTest, TryLockInThreadSuccess) {
    EXPECT_TRUE(CreateLock());
  }
  

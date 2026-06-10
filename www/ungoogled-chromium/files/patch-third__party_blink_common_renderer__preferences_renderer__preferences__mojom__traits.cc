@@ -1,4 +1,4 @@
---- third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc.orig	2026-01-16 13:40:34 UTC
+--- third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc.orig	2026-06-05 13:45:06 UTC
 +++ third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc
 @@ -78,7 +78,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
  
@@ -9,7 +9,7 @@
    if (!data.ReadSystemFontFamilyName(&out->system_font_family_name))
      return false;
  #endif
-@@ -117,7 +117,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
+@@ -108,7 +108,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
    out->selection_clipboard_buffer_available =
        data.selection_clipboard_buffer_available();
  #endif
