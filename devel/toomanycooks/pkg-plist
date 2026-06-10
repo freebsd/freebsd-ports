@@ -91,4 +91,3 @@ lib/cmake/TooManyCooks/TooManyCooksConfig.cmake
 lib/cmake/TooManyCooks/TooManyCooksConfigVersion.cmake
 lib/cmake/TooManyCooks/TooManyCooksTargets.cmake
 lib/cmake/TooManyCooks/tmc-find-hwloc.cmake
-licenses/LICENSE
