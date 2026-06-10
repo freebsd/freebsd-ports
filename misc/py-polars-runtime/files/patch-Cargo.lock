@@ -1,12 +1,15 @@
--- Update ethnum from 1.5.2 to 1.5.3 to fix Rust build failure
+-- Update from 1.40.1 to 1.41.2:
+--   remove git source for color-backtrace
+--   remove git source for object_store (now apache/arrow-rs-object-store)
+--   remove tikv-jemallocator dependency (use default allocator)
 --
--- The Rust build fails with ethnum 1.5.2 due to a compilation issue that
--- is resolved in the newer 1.5.3 release. This patch updates the Cargo.lock
--- to use the newer version.
+-- The FreeBSD ports cargo infrastructure uses vendored crates,
+-- so git sources must be removed. The default allocator is used
+-- instead of jemalloc to avoid runtime TLS errors.
 
---- Cargo.lock.orig	2026-04-22 12:27:45 UTC
+--- Cargo.lock.orig	2026-05-29 09:06:27 UTC
 +++ Cargo.lock
-@@ -999,7 +999,6 @@ version = "0.7.2"
+@@ -1039,7 +1039,6 @@ version = "0.7.2"
  [[package]]
  name = "color-backtrace"
  version = "0.7.2"
@@ -14,15 +17,15 @@
  dependencies = [
   "btparse",
   "termcolor",
-@@ -2742,7 +2741,6 @@ version = "0.13.1"
+@@ -2779,7 +2778,6 @@ version = "0.13.2"
  [[package]]
  name = "object_store"
- version = "0.13.1"
--source = "git+https://github.com/kdn36/arrow-rs-object-store?branch=feat_checksum_crc64#12323e21b6e420f1e9d630fa8c4a40de41b11f2f"
+ version = "0.13.2"
+-source = "git+https://github.com/apache/arrow-rs-object-store?rev=6f1c9acc94636e059a2b3aef5c75e815e065cc89#6f1c9acc94636e059a2b3aef5c75e815e065cc89"
  dependencies = [
   "async-trait",
   "base64",
-@@ -3337,7 +3335,6 @@ dependencies = [
+@@ -3398,7 +3396,6 @@ dependencies = [
   "polars-core",
   "polars-io",
   "polars-utils",
@@ -30,28 +33,3 @@
   "tokio",
  ]
  
-@@ -5032,24 +5029,6 @@ dependencies = [
-  "proc-macro2",
-  "quote",
-  "syn 2.0.116",
--]
--
--[[package]]
--name = "tikv-jemalloc-sys"
--version = "0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7"
--source = "git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936"
--dependencies = [
-- "cc",
-- "libc",
--]
--
--[[package]]
--name = "tikv-jemallocator"
--version = "0.6.0"
--source = "git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936"
--dependencies = [
-- "libc",
-- "tikv-jemalloc-sys",
- ]
- 
- [[package]]

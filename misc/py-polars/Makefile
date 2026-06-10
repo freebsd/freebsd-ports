@@ -1,6 +1,6 @@
 PORTNAME=	polars
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.40.1
+DISTVERSION=	1.41.2
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,14 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}altair>=5.4.0:graphics/py-altair@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 .for runtime in compat 32 64 # same as flavors in misc/py-polars-runtime
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}polars-runtime-${runtime}>0:misc/py-polars-runtime@${runtime}
 .endfor
+# optional dependencies
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}altair>=5.4.0:graphics/py-altair@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}great-tables>0:devel/py-great-tables@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest

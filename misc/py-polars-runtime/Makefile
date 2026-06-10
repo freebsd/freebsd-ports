@@ -1,6 +1,6 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.40.1
+DISTVERSION=	1.41.2
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +12,15 @@ WWW=		https://github.com/pola-rs/polars
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FLAVORS=	compat 32 64 # runtime values; it might look hackish to define different types of flavors in this Python port, but Polars needs all of them to be installed and there should be no problems as long as files are installed into proper locations
-FLAVOR?=	${FLAVORS:[1]}
-${FLAVOR}_PKGNAMESUFFIX=	-${FLAVOR} # there's no default runtime for Polars, all of them are needed
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.3.2:devel/py-maturin@${PY_FLAVOR} \
 		rust-nightly>0:lang/rust-nightly
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}altair>=5.4.0:graphics/py-altair@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
+
+FLAVORS=	compat 32 64 # runtime values; it might look hackish to define different types of flavors in this Python port, but Polars needs all of them to be installed and there should be no problems as long as files are installed into proper locations
+FLAVOR?=	${FLAVORS:[1]}
+${FLAVOR}_PKGNAMESUFFIX=	-${FLAVOR} # there's no default runtime for Polars, all of them are needed
 
 USES=		cargo pkgconfig python
 USE_PYTHON=	pep517 noflavors # autoplist is broken
@@ -47,7 +47,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.101 \
-		apache-avro-0.17.0 \
+		apache-avro-0.21.0 \
 		ar_archive_writer-0.5.1 \
 		arboard-3.6.1 \
 		argminmax-0.6.3 \
@@ -99,6 +99,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-2.11.0 \
 		blake3-1.8.3 \
 		block-buffer-0.10.4 \
+		block-buffer-0.12.0 \
+		bon-3.9.1 \
+		bon-macros-3.9.1 \
 		boxcar-0.2.14 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
@@ -113,6 +116,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cc-1.2.56 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
+		chacha20-0.10.0 \
 		chrono-0.4.43 \
 		chrono-tz-0.10.4 \
 		clipboard-win-5.4.1 \
@@ -124,8 +128,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		constant_time_eq-0.4.2 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
-		core2-0.4.0 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
 		crc-2.1.0 \
 		crc-catalog-1.1.1 \
 		crc-fast-1.10.0 \
@@ -142,11 +146,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-bigint-0.4.9 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.7 \
-		dary_heap-0.3.8 \
+		crypto-common-0.2.1 \
+		darling-0.23.0 \
+		darling_core-0.23.0 \
+		darling_macro-0.23.0 \
 		debug_unsafe-0.1.4 \
 		der-0.6.1 \
 		deranged-0.5.6 \
 		digest-0.10.7 \
+		digest-0.11.3 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
 		dissimilar-1.0.10 \
@@ -193,7 +201,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.4.1 \
 		glob-0.3.3 \
 		group-0.12.1 \
-		h2-0.3.27 \
 		h2-0.4.13 \
 		half-2.7.1 \
 		halfbrown-0.4.0 \
@@ -209,11 +216,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
-		httpdate-1.0.3 \
 		humantime-2.3.0 \
-		hyper-0.14.32 \
+		hybrid-array-0.4.10 \
 		hyper-1.8.1 \
-		hyper-rustls-0.24.2 \
 		hyper-rustls-0.27.7 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.20 \
@@ -227,6 +232,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_properties_data-2.1.2 \
 		icu_provider-2.1.1 \
 		id-arena-2.3.0 \
+		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		indexmap-2.13.0 \
@@ -243,9 +249,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		leb128fmt-0.1.0 \
 		libc-0.2.182 \
 		libflate-1.4.0 \
-		libflate-2.2.1 \
 		libflate_lz77-1.2.0 \
-		libflate_lz77-2.2.0 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
@@ -261,6 +265,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lz4_flex-0.12.1 \
 		matrixmultiply-0.3.10 \
 		md-5-0.10.6 \
+		md-5-0.11.0 \
 		memchr-2.8.0 \
 		memmap2-0.9.10 \
 		mimalloc-0.1.48 \
@@ -268,6 +273,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		mio-1.1.1 \
 		native-tls-0.2.16 \
 		ndarray-0.17.2 \
+		nix-0.31.2 \
 		now-0.1.3 \
 		ntapi-0.4.3 \
 		num-0.4.3 \
@@ -290,10 +296,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-io-surface-0.3.2 \
 		object-0.37.3 \
 		once_cell-1.21.3 \
-		openssl-0.10.75 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.111 \
+		openssl-sys-0.9.116 \
 		outref-0.5.2 \
 		p256-0.11.1 \
 		parking-2.2.1 \
@@ -334,10 +340,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
 		rand-0.9.2 \
+		rand-0.10.1 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
+		rand_core-0.10.1 \
 		rand_distr-0.5.1 \
 		rand_xorshift-0.4.0 \
 		raw-cpuid-11.6.0 \
@@ -363,12 +371,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc_version-0.4.1 \
 		rustflags-0.1.7 \
 		rustix-1.1.3 \
-		rustls-0.21.12 \
 		rustls-0.23.36 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
-		rustls-webpki-0.101.7 \
-		rustls-webpki-0.103.9 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -376,7 +382,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		schemars-0.9.0 \
 		schemars_derive-0.9.0 \
 		scopeguard-1.2.0 \
-		sct-0.7.1 \
 		sec1-0.3.0 \
 		security-framework-3.6.0 \
 		security-framework-sys-2.16.0 \
@@ -405,7 +410,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		slotmap-1.1.1 \
 		smallvec-1.15.1 \
 		snap-1.1.1 \
-		socket2-0.5.10 \
 		socket2-0.6.2 \
 		spin-0.10.0 \
 		spki-0.6.0 \
@@ -417,9 +421,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		streaming-decompression-0.1.2 \
 		streaming-iterator-0.1.9 \
 		strength_reduce-0.2.4 \
-		strum-0.26.3 \
+		strsim-0.11.1 \
 		strum-0.27.2 \
-		strum_macros-0.26.4 \
 		strum_macros-0.27.2 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
@@ -431,10 +434,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		target-triple-1.0.0 \
 		tempfile-3.25.0 \
 		termcolor-1.4.1 \
-		thiserror-1.0.69 \
 		thiserror-2.0.18 \
-		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
+		tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 \
+		tikv-jemallocator-0.7.0 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
@@ -444,7 +447,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-1.49.0 \
 		tokio-macros-2.6.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.4 \
 		tokio-util-0.7.18 \
 		toml-1.0.2+spec-1.1.0 \
@@ -461,8 +463,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		try-lock-0.2.5 \
 		trybuild-1.0.116 \
 		twox-hash-2.1.2 \
-		typed-builder-0.19.1 \
-		typed-builder-macro-0.19.1 \
 		typenum-1.19.0 \
 		unarray-0.1.4 \
 		unicode-ident-1.0.24 \
@@ -566,8 +566,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		object_store@git+https://github.com/kdn36/arrow-rs-object-store?branch=feat_checksum_crc64\#12323e21b6e420f1e9d630fa8c4a40de41b11f2f \
-		color-backtrace@git+https://github.com/orlp/color-backtrace?rev=bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd\#bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd
+		color-backtrace@git+https://github.com/orlp/color-backtrace?rev=bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd\#bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd \
+		object_store@git+https://github.com/apache/arrow-rs-object-store?rev=6f1c9acc94636e059a2b3aef5c75e815e065cc89\#6f1c9acc94636e059a2b3aef5c75e815e065cc89
 CARGO_TARGET_DIR=	${WRKSRC}/target
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
