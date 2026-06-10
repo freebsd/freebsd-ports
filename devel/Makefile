@@ -5095,6 +5095,7 @@
     SUBDIR += py-graphql-core2
     SUBDIR += py-graphql-relay
     SUBDIR += py-graphql-relay2
+    SUBDIR += py-great-tables
     SUBDIR += py-greenlet
     SUBDIR += py-grimoirelab-toolkit
     SUBDIR += py-grizzled
