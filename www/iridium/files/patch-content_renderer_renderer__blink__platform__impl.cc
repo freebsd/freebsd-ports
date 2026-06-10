@@ -1,15 +1,14 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2026-05-11 13:57:04 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2026-06-10 12:51:34 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -120,7 +120,7 @@
- #include "content/child/child_process_sandbox_support_impl_win.h"
+@@ -121,14 +121,14 @@
+ #include "third_party/blink/public/web/win/web_font_rendering.h"
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "content/child/font_data/font_data_manager.h"
  #include "skia/ext/font_utils.h"
- #include "third_party/blink/public/web/win/web_font_rendering.h"
-@@ -128,7 +128,7 @@
+ #endif
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"

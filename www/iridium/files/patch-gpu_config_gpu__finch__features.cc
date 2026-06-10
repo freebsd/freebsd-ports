@@ -1,4 +1,4 @@
---- gpu/config/gpu_finch_features.cc.orig	2026-05-11 13:57:04 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2026-06-10 12:51:34 UTC
 +++ gpu/config/gpu_finch_features.cc
 @@ -110,7 +110,7 @@ const base::FeatureParam<std::string>
  // of associating with an unused IPC::Channel.
@@ -18,17 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -132,7 +132,8 @@ BASE_FEATURE(kNvidiaWaylandYuvHardwareConversionWorkar
- // Android and Linux.
- BASE_FEATURE(kDefaultEnableGpuRasterization,
- #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
--    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX)
-+    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
-+    BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT
- #else
-              base::FEATURE_DISABLED_BY_DEFAULT
-@@ -468,7 +469,7 @@ BASE_FEATURE(kGPUDriverBugListTestGroup, base::FEATURE
+@@ -470,7 +470,7 @@ BASE_FEATURE(kGPUDriverBugListTestGroup, base::FEATURE
  const base::FeatureParam<int> kGPUDriverBugListTestGroupId{
      &kGPUDriverBugListTestGroup, "test_group", 0};
  

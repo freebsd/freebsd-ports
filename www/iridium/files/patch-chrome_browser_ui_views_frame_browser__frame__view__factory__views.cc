@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig	2026-06-10 12:51:34 UTC
 +++ chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc
 @@ -17,7 +17,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_win.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_layout_linux.h"
  #include "chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.h"
  #include "chrome/browser/ui/views/frame/browser_frame_view_linux_native.h"
-@@ -32,7 +32,7 @@ namespace chrome {
+@@ -33,7 +33,7 @@ namespace chrome {
  
  namespace {
  

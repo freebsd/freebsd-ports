@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2026-05-11 13:57:04 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2026-06-10 12:51:34 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -319,7 +319,7 @@
+@@ -326,7 +326,7 @@
  #include "chrome/browser/devtools/devtools_window.h"
  #endif  // BUILDFLAG(ENABLE_DEVTOOLS_FRONTEND)
  
@@ -9,13 +9,13 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -508,11 +508,11 @@
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
+@@ -512,11 +512,11 @@
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "components/device_signals/core/browser/pref_names.h"  // nogncheck due to crbug.com/1125897
+ #include "components/device_signals/core/browser/pref_names.h"  // nogncheck due to crbug.com/40147906
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -23,7 +23,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
-@@ -540,7 +540,7 @@
+@@ -544,7 +544,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -32,7 +32,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1474,7 +1474,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1533,7 +1533,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
    on_device_translation::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION)
  
@@ -41,7 +41,7 @@
    WhatsNewUI::RegisterLocalStatePrefs(registry);
  #endif
  
-@@ -1634,7 +1634,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1693,7 +1693,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(ENABLE_PDF_SAVE_TO_DRIVE)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -50,7 +50,7 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2030,13 +2030,13 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2095,13 +2095,13 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,8 +1,8 @@
---- content/shell/renderer/shell_content_renderer_client.cc.orig	2026-05-11 13:57:04 UTC
+--- content/shell/renderer/shell_content_renderer_client.cc.orig	2026-06-10 12:51:34 UTC
 +++ content/shell/renderer/shell_content_renderer_client.cc
-@@ -57,7 +57,7 @@
- #include "components/surface_embed/renderer/create_plugin.h"
- #endif  // BUILDFLAG(ENABLE_SURFACE_EMBED)
+@@ -53,7 +53,7 @@
+ #include "media/base/media_switches.h"
+ #endif
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && \

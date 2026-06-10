@@ -1,4 +1,4 @@
---- build/config/linux/pkg-config.py.orig	2026-05-11 13:57:04 UTC
+--- build/config/linux/pkg-config.py.orig	2026-06-10 12:51:34 UTC
 +++ build/config/linux/pkg-config.py
 @@ -125,7 +125,7 @@ def main():
    # If this is run on non-Linux platforms, just return nothing and indicate
@@ -6,6 +6,6 @@
    # platforms.
 -  if "linux" not in sys.platform:
 +  if not sys.platform.startswith(tuple(['linux', 'openbsd', 'freebsd'])):
-     if options.libdir:
+     if options.dridriverdir or options.libdir:
        sys.stdout.write("")
        return 0

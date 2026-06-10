@@ -1,6 +1,6 @@
---- base/files/file_util_unittest.cc.orig	2026-05-11 13:57:04 UTC
+--- base/files/file_util_unittest.cc.orig	2026-06-10 12:51:34 UTC
 +++ base/files/file_util_unittest.cc
-@@ -4279,7 +4279,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
+@@ -4410,7 +4410,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
  }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  TEST_F(FileUtilTest, ReadFileToStringWithProcFileSystem) {
    FilePath file_path("/proc/cpuinfo");
    std::string data = "temp";
-@@ -4862,6 +4862,19 @@ TEST_F(FileUtilTest, CreateDirectoryOnlyCheckMissingSu
+@@ -4993,6 +4993,19 @@ TEST_F(FileUtilTest, CreateDirectoryOnlyCheckMissingSu
  
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -29,7 +29,7 @@
  #if BUILDFLAG(IS_WIN) && BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
      defined(ARCH_CPU_32_BITS)
  // TODO(crbug.com/327582285): Re-enable these tests. They may be failing due to
-@@ -5028,7 +5041,7 @@ TEST(FileUtilMultiThreadedTest, MultiThreadedTempFiles
+@@ -5159,7 +5172,7 @@ TEST(FileUtilMultiThreadedTest, MultiThreadedTempFiles
                  NULL);
  #else
      size_t bytes_written =

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc.orig	2026-06-10 12:51:34 UTC
 +++ chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc
-@@ -18,7 +18,7 @@ BrowserFrameViewLayoutLinuxNative::~BrowserFrameViewLa
+@@ -19,7 +19,7 @@ BrowserFrameViewLayoutLinuxNative::~BrowserFrameViewLa
  
  ui::WindowFrameProvider* BrowserFrameViewLayoutLinuxNative::GetFrameProvider()
      const {

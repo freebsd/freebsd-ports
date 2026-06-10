@@ -1,5 +1,5 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig	2025-12-10 15:04:57 UTC
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h
+--- third_party/libphonenumber/src/cpp/src/phonenumbers/base/memory/singleton.h.orig	2026-06-10 12:51:34 UTC
++++ third_party/libphonenumber/src/cpp/src/phonenumbers/base/memory/singleton.h
 @@ -22,7 +22,7 @@
  #elif (__cplusplus >= 201103L) && defined(I18N_PHONENUMBERS_USE_STDMUTEX)
  // C++11 Lock implementation based on std::mutex.
