@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.6
+DISTVERSION=	0.4.7
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -61,6 +61,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
+		baremetal-0.33.0 \
 		base64-0.22.1 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
@@ -69,10 +70,10 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		bit-set-0.9.1 \
 		bit-vec-0.9.1 \
 		bitflags-1.3.2 \
-		bitflags-2.12.1 \
+		bitflags-2.13.0 \
 		blake3-1.8.5 \
-		block-0.1.6 \
 		block-buffer-0.10.4 \
+		block-rs-0.2.0 \
 		block2-0.5.1 \
 		block2-0.6.2 \
 		blocking-1.6.2 \
@@ -260,7 +261,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.99 \
+		js-sys-0.3.100 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kqueue-1.2.0 \
@@ -297,7 +298,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		memchr-2.8.1 \
 		memmap2-0.9.10 \
 		memoffset-0.9.1 \
-		metal-0.32.0 \
 		minicov-0.3.8 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -414,15 +414,15 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		rayon-core-1.13.0 \
 		rdrand-0.4.0 \
 		read-fonts-0.35.0 \
-		read-fonts-0.37.0 \
+		read-fonts-0.39.2 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.18 \
 		redox_syscall-0.8.1 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-1.1.0 \
 		roxmltree-0.20.0 \
@@ -455,7 +455,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		simdutf-0.7.0 \
 		siphasher-1.0.3 \
 		skrifa-0.37.0 \
-		skrifa-0.40.0 \
+		skrifa-0.42.1 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		smallvec-1.15.1 \
@@ -475,7 +475,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		strsim-0.11.1 \
 		strumbra-0.6.0 \
 		svg_fmt-0.4.5 \
-		swash-0.2.7 \
+		swash-0.2.8 \
 		syn-2.0.117 \
 		synstructure-0.13.2 \
 		taffy-0.10.1 \
@@ -532,14 +532,14 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.122 \
-		wasm-bindgen-futures-0.4.72 \
-		wasm-bindgen-macro-0.2.122 \
-		wasm-bindgen-macro-support-0.2.122 \
-		wasm-bindgen-shared-0.2.122 \
-		wasm-bindgen-test-0.3.72 \
-		wasm-bindgen-test-macro-0.3.72 \
-		wasm-bindgen-test-shared-0.2.122 \
+		wasm-bindgen-0.2.123 \
+		wasm-bindgen-futures-0.4.73 \
+		wasm-bindgen-macro-0.2.123 \
+		wasm-bindgen-macro-support-0.2.123 \
+		wasm-bindgen-shared-0.2.123 \
+		wasm-bindgen-test-0.3.73 \
+		wasm-bindgen-test-macro-0.3.73 \
+		wasm-bindgen-test-shared-0.2.123 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
@@ -554,7 +554,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wayland-protocols-wlr-0.3.12 \
 		wayland-scanner-0.31.10 \
 		wayland-sys-0.31.11 \
-		web-sys-0.3.99 \
+		web-sys-0.3.100 \
 		web-time-1.1.0 \
 		weezl-0.1.12 \
 		wgpu-29.0.3 \
@@ -648,8 +648,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		zbus_macros-4.4.0 \
 		zbus_names-3.0.0 \
 		zeno-0.3.3 \
-		zerocopy-0.8.50 \
-		zerocopy-derive-0.8.50 \
+		zerocopy-0.8.52 \
+		zerocopy-derive-0.8.52 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zerotrie-0.2.4 \
