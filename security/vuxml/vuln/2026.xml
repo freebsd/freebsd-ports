@@ -1,3 +1,182 @@
+  <vuln vid="efa1873c-64a0-11f1-b189-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>149.0.7827.102</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>149.0.7827.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html">
+	 <p>This update includes 74 security fixes:</p>
+	 <ul>
+	    <li>[516501794] Critical CVE-2026-11628: Use after free in Ozone.</li>
+	    <li>[516674532] Critical CVE-2026-11629: Use after free in Ozone.</li>
+	    <li>[516677924] Critical CVE-2026-11630: Use after free in File Input.</li>
+	    <li>[516691130] Critical CVE-2026-11631: Use after free in Aura.</li>
+	    <li>[516707881] Critical CVE-2026-11632: Use after free in TabStrip.</li>
+	    <li>[516963272] Critical CVE-2026-11633: Use after free in Bluetooth.</li>
+	    <li>[516975148] Critical CVE-2026-11634: Use after free in Gamepad.</li>
+	    <li>[516987814] Critical CVE-2026-11635: Use after free in Bluetooth.</li>
+	    <li>[517023053] Critical CVE-2026-11636: Use after free in Autofill.</li>
+	    <li>[517040438] Critical CVE-2026-11637: Use after free in Views.</li>
+	    <li>[517047197] Critical CVE-2026-11638: Use after free in Printing.</li>
+	    <li>[517227707] Critical CVE-2026-11639: Use after free in Compositing.</li>
+	    <li>[517339758] Critical CVE-2026-11640: Integer overflow in libyuv.</li>
+	    <li>[517418936] Critical CVE-2026-11641: Use after free in Bluetooth.</li>
+	    <li>[517678820] Critical CVE-2026-11642: Use after free in Web Apps.</li>
+	    <li>[518006379] Critical CVE-2026-11643: Use after free in Proxy.</li>
+	    <li>[518043597] Critical CVE-2026-11644: Use after free in Views.</li>
+	    <li>[506689381] High CVE-2026-11645: Out of bounds memory access in V8.</li>
+	    <li>[517168239] High CVE-2026-11646: Use after free in ViewTransitions.</li>
+	    <li>[502156940] High CVE-2026-11647: Use after free in Printing.</li>
+	    <li>[506684534] High CVE-2026-11648: Use after free in FullScreen.</li>
+	    <li>[511270083] High CVE-2026-11649: Use after free in V8.</li>
+	    <li>[511279942] High CVE-2026-11650: Use after free in V8.</li>
+	    <li>[511736002] High CVE-2026-11651: Use after free in Network.</li>
+	    <li>[513156160] High CVE-2026-11652: Use after free in Extensions.</li>
+	    <li>[513321171] High CVE-2026-11653: Insufficient validation of untrusted input in Extensions.</li>
+	    <li>[513362710] High CVE-2026-11654: Use after free in CameraCapture.</li>
+	    <li>[513396305] High CVE-2026-11655: Integer overflow in Media.</li>
+	    <li>[513424000] High CVE-2026-11656: Use after free in ServiceWorker.</li>
+	    <li>[513465272] High CVE-2026-11657: Use after free in Payments.</li>
+	    <li>[513564337] High CVE-2026-11658: Insufficient validation of untrusted input in Extensions.</li>
+	    <li>[513702971] High CVE-2026-11659: Insufficient validation of untrusted input in UI.</li>
+	    <li>[513731890] High CVE-2026-11660: Insufficient validation of untrusted input in New Tab Page.</li>
+	    <li>[513748868] High CVE-2026-11661: Use after free in Views.</li>
+	    <li>[513773313] High CVE-2026-11662: Type Confusion in Bindings.</li>
+	    <li>[513820666] High CVE-2026-11663: Use after free in Skia.</li>
+	    <li>[513830374] High CVE-2026-11664: Use after free in Payments.</li>
+	    <li>[513948465] High CVE-2026-11665: Out of bounds read in Dawn.</li>
+	    <li>[514009323] High CVE-2026-11666: Insufficient validation of untrusted input in Input.</li>
+	    <li>[514671098] High CVE-2026-11667: Out of bounds read in WebRTC.</li>
+	    <li>[515419790] High CVE-2026-11668: Uninitialized Use in Codecs.</li>
+	    <li>[515429352] High CVE-2026-11669: Integer overflow in Media.</li>
+	    <li>[515469283] High CVE-2026-11670: Use after free in PDF.</li>
+	    <li>[516608438] High CVE-2026-11671: Use after free in Navigation.</li>
+	    <li>[516794471] High CVE-2026-11672: Out of bounds write in GPU.</li>
+	    <li>[516902973] High CVE-2026-11673: Use after free in InterestGroups.</li>
+	    <li>[516910450] High CVE-2026-11674: Use after free in Guest View.</li>
+	    <li>[516915337] High CVE-2026-11675: Insufficient validation of untrusted input in Skia.</li>
+	    <li>[516949298] High CVE-2026-11676: Insufficient validation of untrusted input in Dawn.</li>
+	    <li>[516979551] High CVE-2026-11677: Race in Network.</li>
+	    <li>[516986556] High CVE-2026-11678: Integer overflow in libyuv.</li>
+	    <li>[516997135] High CVE-2026-11679: Use after free in Codecs.</li>
+	    <li>[517004487] High CVE-2026-11680: Use after free in Media.</li>
+	    <li>[517050585] High CVE-2026-11681: Use after free in Ozone.</li>
+	    <li>[517103584] High CVE-2026-11682: Insufficient validation of untrusted input in Views.</li>
+	    <li>[517129549] High CVE-2026-11683: Use after free in WebCodecs.</li>
+	    <li>[517130229] High CVE-2026-11684: Insufficient policy enforcement in Network.</li>
+	    <li>[517183713] High CVE-2026-11685: Insufficient data validation in MediaCapture.</li>
+	    <li>[517247333] High CVE-2026-11686: Insufficient validation of untrusted input in Dawn.</li>
+	    <li>[517303276] High CVE-2026-11687: Use after free in Dawn.</li>
+	    <li>[517309206] High CVE-2026-11688: Object lifecycle issue in SVG.</li>
+	    <li>[517486004] High CVE-2026-11689: Insufficient validation of untrusted input in Passwords.</li>
+	    <li>[517533654] High CVE-2026-11690: Out of bounds read and write in Media.</li>
+	    <li>[517585486] High CVE-2026-11691: Insufficient validation of untrusted input in New Tab Page.</li>
+	    <li>[517607902] High CVE-2026-11692: Use after free in Read Anything.</li>
+	    <li>[517644287] High CVE-2026-11693: Inappropriate implementation in Plugins.</li>
+	    <li>[517705966] High CVE-2026-11694: Use after free in ServiceWorker.</li>
+	    <li>[517762104] High CVE-2026-11695: Inappropriate implementation in Passwords.</li>
+	    <li>[517993381] High CVE-2026-11696: Uninitialized Use in Video.</li>
+	    <li>[518105731] High CVE-2026-11697: Insufficient validation of untrusted input in UI.</li>
+	    <li>[518235412] High CVE-2026-11698: Use after free in Bluetooth.</li>
+	    <li>[518237527] High CVE-2026-11699: Use after free in Bluetooth.</li>
+	    <li>[511732085] Medium CVE-2026-11700: Use after free in Tracing.</li>
+	    <li>[516413817] Medium CVE-2026-11701: Insufficient validation of untrusted input in Guest View.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-11628</cvename>
+      <cvename>CVE-2026-11629</cvename>
+      <cvename>CVE-2026-11630</cvename>
+      <cvename>CVE-2026-11631</cvename>
+      <cvename>CVE-2026-11632</cvename>
+      <cvename>CVE-2026-11633</cvename>
+      <cvename>CVE-2026-11634</cvename>
+      <cvename>CVE-2026-11635</cvename>
+      <cvename>CVE-2026-11636</cvename>
+      <cvename>CVE-2026-11637</cvename>
+      <cvename>CVE-2026-11638</cvename>
+      <cvename>CVE-2026-11639</cvename>
+      <cvename>CVE-2026-11640</cvename>
+      <cvename>CVE-2026-11641</cvename>
+      <cvename>CVE-2026-11642</cvename>
+      <cvename>CVE-2026-11643</cvename>
+      <cvename>CVE-2026-11644</cvename>
+      <cvename>CVE-2026-11645</cvename>
+      <cvename>CVE-2026-11646</cvename>
+      <cvename>CVE-2026-11647</cvename>
+      <cvename>CVE-2026-11648</cvename>
+      <cvename>CVE-2026-11649</cvename>
+      <cvename>CVE-2026-11650</cvename>
+      <cvename>CVE-2026-11651</cvename>
+      <cvename>CVE-2026-11652</cvename>
+      <cvename>CVE-2026-11653</cvename>
+      <cvename>CVE-2026-11654</cvename>
+      <cvename>CVE-2026-11655</cvename>
+      <cvename>CVE-2026-11656</cvename>
+      <cvename>CVE-2026-11657</cvename>
+      <cvename>CVE-2026-11658</cvename>
+      <cvename>CVE-2026-11659</cvename>
+      <cvename>CVE-2026-11660</cvename>
+      <cvename>CVE-2026-11661</cvename>
+      <cvename>CVE-2026-11662</cvename>
+      <cvename>CVE-2026-11663</cvename>
+      <cvename>CVE-2026-11664</cvename>
+      <cvename>CVE-2026-11665</cvename>
+      <cvename>CVE-2026-11666</cvename>
+      <cvename>CVE-2026-11667</cvename>
+      <cvename>CVE-2026-11668</cvename>
+      <cvename>CVE-2026-11669</cvename>
+      <cvename>CVE-2026-11670</cvename>
+      <cvename>CVE-2026-11671</cvename>
+      <cvename>CVE-2026-11672</cvename>
+      <cvename>CVE-2026-11673</cvename>
+      <cvename>CVE-2026-11674</cvename>
+      <cvename>CVE-2026-11675</cvename>
+      <cvename>CVE-2026-11676</cvename>
+      <cvename>CVE-2026-11677</cvename>
+      <cvename>CVE-2026-11678</cvename>
+      <cvename>CVE-2026-11679</cvename>
+      <cvename>CVE-2026-11680</cvename>
+      <cvename>CVE-2026-11681</cvename>
+      <cvename>CVE-2026-11682</cvename>
+      <cvename>CVE-2026-11683</cvename>
+      <cvename>CVE-2026-11684</cvename>
+      <cvename>CVE-2026-11685</cvename>
+      <cvename>CVE-2026-11686</cvename>
+      <cvename>CVE-2026-11687</cvename>
+      <cvename>CVE-2026-11688</cvename>
+      <cvename>CVE-2026-11689</cvename>
+      <cvename>CVE-2026-11690</cvename>
+      <cvename>CVE-2026-11691</cvename>
+      <cvename>CVE-2026-11692</cvename>
+      <cvename>CVE-2026-11693</cvename>
+      <cvename>CVE-2026-11694</cvename>
+      <cvename>CVE-2026-11695</cvename>
+      <cvename>CVE-2026-11696</cvename>
+      <cvename>CVE-2026-11697</cvename>
+      <cvename>CVE-2026-11698</cvename>
+      <cvename>CVE-2026-11699</cvename>
+      <cvename>CVE-2026-11700</cvename>
+      <cvename>CVE-2026-11701</cvename>
+      <url>https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc0c7763-6477-11f1-958d-bc241121aa0a">
     <topic>FreeBSD -- Insufficient response validation in the ldns stub resolver</topic>
     <affects>
