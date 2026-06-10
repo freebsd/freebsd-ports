@@ -21,4 +21,5 @@ share/man/man8/archiveopteryx.8.gz
 share/man/man8/installer.8.gz
 share/man/man8/logd.8.gz
 share/man/man8/recorder.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
 @dir %%ETCDIR%%
