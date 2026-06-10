@@ -163,9 +163,9 @@ Library selection is handled by libglvnd and/or libmap.conf.
    ['core.c', shared_glapi_mapi_tmp_h],
    c_args : [
      c_msvc_compat_args,
---- src/util/meson.build.orig	2026-06-03 18:25:19 UTC
+--- src/util/meson.build.orig	2026-06-10 20:57:35 UTC
 +++ src/util/meson.build
-@@ -211,33 +211,33 @@ endif
+@@ -211,36 +211,36 @@ endif
    files_mesa_util += files('cache_ops_null.c')
  endif
  
@@ -178,7 +178,10 @@ Library selection is handled by libglvnd and/or libmap.conf.
 -  [with_intel_hasvk, '00-hasvk-defaults.conf'],
 -  [with_nouveau_vk, '00-nvk-defaults.conf'],
 -  [with_microsoft_vk, '00-dzn-defaults.conf'],
+-  [with_imagination_vk, '00-pvr-defaults.conf'],
+-  [with_broadcom_vk, '00-v3dv-defaults.conf'],
 -  [with_freedreno_vk, '00-turnip-defaults.conf'],
+-  [with_virtio_vk, '00-venus-defaults.conf'],
 -  [with_gallium_r300, '00-r300-defaults.conf'],
 -  [with_gallium_iris, '00-iris-defaults.conf'],
 -  [with_gallium_crocus, '00-crocus-defaults.conf'],
@@ -199,7 +202,10 @@ Library selection is handled by libglvnd and/or libmap.conf.
 +  [with_intel_hasvk, '00-hasvk@0@-defaults.conf'],
 +  [with_nouveau_vk, '00-nvk@0@-defaults.conf'],
 +  [with_microsoft_vk, '00-dzn@0@-defaults.conf'],
++  [with_imagination_vk, '00-pvr@0@-defaults.conf'],
++  [with_broadcom_vk, '00-v3dv@0@-defaults.conf'],
 +  [with_freedreno_vk, '00-turnip@0@-defaults.conf'],
++  [with_virtio_vk, '00-venus@0@-defaults.conf'],
 +  [with_gallium_r300, '00-r300@0@-defaults.conf'],
 +  [with_gallium_iris, '00-iris@0@-defaults.conf'],
 +  [with_gallium_crocus, '00-crocus@0@-defaults.conf'],
