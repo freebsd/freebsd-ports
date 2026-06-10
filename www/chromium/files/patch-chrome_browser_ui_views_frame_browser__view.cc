@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2026-06-10 07:57:19 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
 @@ -2376,7 +2376,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
  }
@@ -9,7 +9,7 @@
    UpdateFastResizeForContentViews(is_dragging);
  
    if (!is_dragging) {
-@@ -5714,7 +5714,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
+@@ -5716,7 +5716,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {
@@ -18,7 +18,7 @@
    if (!ShouldShowAvatarToolbarIPH()) {
      return;
    }
-@@ -5725,7 +5725,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
+@@ -5727,7 +5727,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
  }
  
  void BrowserView::MaybeShowSignInBenefitsIPH() {
