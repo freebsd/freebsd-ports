@@ -1,0 +1,6 @@
+Tools for HTML generation and output.
+
+This package provides a set of tools to generate, manipulate, and
+output HTML content in Python. It is part of the Shiny for Python
+ecosystem, providing foundation HTML tag classes and rendering
+utilities.

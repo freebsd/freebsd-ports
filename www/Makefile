@@ -1842,6 +1842,7 @@
     SUBDIR += py-html5lib-modern
     SUBDIR += py-html5rdf
     SUBDIR += py-htmldate
+    SUBDIR += py-htmltools
     SUBDIR += py-httmock
     SUBDIR += py-http-parser
     SUBDIR += py-http-sf
