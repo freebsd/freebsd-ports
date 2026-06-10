@@ -57,7 +57,7 @@ post-patch:
 # See also: <URL:http://cr.yp.to/cdb/cdbmake.html>.
 do-build:
 .for type in ${SKK_JISYO_TYPE}
-	${AWK} '/^[^;]/ { \
+	LC_ALL=C ${AWK} '/^[^;]/ { \
 			s = substr($$0, index($$0, " ") + 1); \
 			print "+" length($$1) "," length(s) ":" $$1 "->" s; \
 		} \

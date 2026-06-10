@@ -54,7 +54,7 @@ do-build:
 		>> ${WRKSRC}/${SKKDIC}
 .endif
 .for dic in ${DICS:M*.cdb}
-	${AWK} '/^[^;]/ { \
+	LC_ALL=C ${AWK} '/^[^;]/ { \
 			s = substr($$0, index($$0, " ") + 1); \
 			print "+" length($$1) "," length(s) ":" $$1 "->" s; \
 		} \
