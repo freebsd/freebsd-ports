@@ -1,3 +1,67 @@
+  <vuln vid="259b562f-64ab-11f1-8607-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.21,1</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.6</lt></range>
+      </package>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.7</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.3</lt></range>
+      </package>
+      <package>
+	<name>openssl40</name>
+	<range><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>openssl111</name>
+	<range><lt>1.1.1zh</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260609.txt">
+	  <p>Eighteen vulnerabilities in OpenSSL library.
+	    Highest classification High.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-45447</cvename>
+      <cvename>CVE-2026-34182</cvename>
+      <cvename>CVE-2026-34183</cvename>
+      <cvename>CVE-2026-35188</cvename>
+      <cvename>CVE-2026-42764</cvename>
+      <cvename>CVE-2026-45445</cvename>
+      <cvename>CVE-2026-7383</cvename>
+      <cvename>CVE-2026-9076</cvename>
+      <cvename>CVE-2026-34180</cvename>
+      <cvename>CVE-2026-34181</cvename>
+      <cvename>CVE-2026-42765</cvename>
+      <cvename>CVE-2026-42766</cvename>
+      <cvename>CVE-2026-42767</cvename>
+      <cvename>CVE-2026-42768</cvename>
+      <cvename>CVE-2026-42769</cvename>
+      <cvename>CVE-2026-42770</cvename>
+      <cvename>CVE-2026-42771</cvename>
+      <cvename>CVE-2026-45446</cvename>
+      <url>https://openssl-library.org/news/secadv/20260609.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="efa1873c-64a0-11f1-b189-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
