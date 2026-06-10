@@ -1,5 +1,5 @@
 PORTNAME=	Business-ISBN-Data
-PORTVERSION=	20260523.001
+PORTVERSION=	20260604.001
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BRIANDFOY
@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Business-ISBN-Data
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=0:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
