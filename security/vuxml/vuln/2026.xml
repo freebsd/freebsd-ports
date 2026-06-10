@@ -1,3 +1,35 @@
+  <vuln vid="7ce71561-64c7-11f1-99fc-40b034429ecf">
+    <topic>p5-ack -- Multiple issues</topic>
+    <affects>
+<package>
+<name>p5-ack</name>
+<range><lt>3.10.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ack project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/ack/changes">
+	  <p>CVE-2026-49147: filename ANSI escape sequences</p>
+	  <p>CVE-2026-49146: project .ackrc -A -B -C memory exhaustion</p>
+	  <p>CVE-2026-49145: project .ackrc --follow / --files-from file exfiltration</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49147</cvename>
+      <url>https://www.suse.com/security/cve/CVE-2026-49147.html</url>
+      <cvename>CVE-2026-49146</cvename>
+      <url>https://www.suse.com/security/cve/CVE-2026-49146.html</url>
+      <cvename>CVE-2026-49145</cvename>
+      <url>https://www.suse.com/security/cve/CVE-2026-49145.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-07</discovery>
+      <entry>2026-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36ec75da-633d-11f1-9dbc-28d2443e6cfa">
     <topic>tree-sitter-cli -- Always-Incorrect Control Flow Implementation in wasmtime crate</topic>
     <affects>
