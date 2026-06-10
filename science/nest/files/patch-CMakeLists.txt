@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-02-16 13:40:33 UTC
+--- CMakeLists.txt.orig	2026-06-09 13:32:28 UTC
 +++ CMakeLists.txt
-@@ -197,7 +197,7 @@ printInfo("-- NEST version: ${NEST_VERSION_STRING}")
+@@ -199,7 +199,7 @@ set( TEST_OPTS "" )
  enable_testing()
  set( TEST_OPTS "" )
  
@@ -9,7 +9,7 @@
    set( TEST_OPTS "${TEST_OPTS};--with-python=${PYTHON}" )
  endif ()
  
-@@ -226,9 +226,13 @@ add_custom_target( installcheck
+@@ -227,7 +227,9 @@ add_custom_target( installcheck
  ##################        Define Subdirectories here          ##################
  ################################################################################
  
@@ -17,13 +17,9 @@
  add_subdirectory( doc )
 +endif()
  add_subdirectory( bin )
-+if (INSTALL_EXAMPLES)
- add_subdirectory( examples )
-+endif()
  add_subdirectory( build_support )
- add_subdirectory( lib )
  add_subdirectory( libnestutil )
-@@ -238,7 +242,7 @@ add_subdirectory( nest )
+@@ -235,7 +237,7 @@ add_subdirectory( testsuite )
  add_subdirectory( nestkernel )
  add_subdirectory( thirdparty )
  add_subdirectory( testsuite )
@@ -32,3 +28,18 @@
    add_subdirectory( pynest )
  endif ()
  
+@@ -348,12 +350,10 @@ endif()
+   set( CMAKE_INSTALL_DOCDIR "nest/doc")
+ endif()
+ 
+-install( FILES LICENSE README.md
+-    DESTINATION ${CMAKE_INSTALL_DOCDIR}
+-)
+-
++if (INSTALL_EXAMPLES)
+ install( DIRECTORY examples/
+     DESTINATION ${CMAKE_INSTALL_DOCDIR}/examples
+ )
++endif()
+ 
+ nest_print_config_summary()
