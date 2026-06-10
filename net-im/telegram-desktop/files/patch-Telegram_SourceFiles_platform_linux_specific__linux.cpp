@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig	2025-11-20 19:58:26 UTC
+--- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig	2026-06-09 19:32:50 UTC
 +++ Telegram/SourceFiles/platform/linux/specific_linux.cpp
 @@ -68,7 +68,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
  		Gio::DBusProxyFlags::NONE_,
@@ -36,7 +36,7 @@
  			auto interface = XdgDBus::DBus(
  				XdgDBus::DBusProxy::new_for_bus_finish(res, nullptr));
  
-@@ -549,7 +549,7 @@ void PortalCheckScheme(
+@@ -552,7 +552,7 @@ void PortalCheckScheme(
  		Gio::DBusProxyFlags::NONE_,
  		base::Platform::XDP::kService,
  		base::Platform::XDP::kObjectPath,
@@ -45,7 +45,7 @@
  			auto interface = XdpOpenURI::OpenURI(
  				XdpOpenURI::OpenURIProxy::new_for_bus_finish(res, nullptr));
  
-@@ -563,7 +563,7 @@ void PortalCheckScheme(
+@@ -566,7 +566,7 @@ void PortalCheckScheme(
  				GLib::Variant::new_array(
  					GLib::VariantType::new_("{sv}"),
  					{}),
