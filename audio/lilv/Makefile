@@ -1,5 +1,5 @@
 PORTNAME=	lilv
-DISTVERSION=	0.26.4
+DISTVERSION=	0.28.0
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
@@ -20,8 +20,14 @@ RUN_DEPENDS=	lv2>=1.14.0:audio/lv2
 
 USES=		meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Ddocs=disabled
+MESON_ARGS=	-Ddocs=disabled -Dtests=disabled
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+do-test:
+	@cd ${WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} -Dtests=enabled && \
+		cd ${BUILD_WRKSRC} && \
+		${DO_MAKE_BUILD} test
 
 .include <bsd.port.mk>
