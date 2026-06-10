@@ -1,0 +1,6 @@
+Python parser for the CommonMark Markdown spec.
+
+Pure Python port of the reference implementation of CommonMark, a
+strongly specified, highly compatible specification of Markdown.
+Provides a parser and renderer for CommonMark-compliant Markdown
+text, with support for converting to HTML and other output formats.

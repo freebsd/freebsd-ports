@@ -1362,6 +1362,7 @@
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-cmarkgfm
     SUBDIR += py-collective.checkdocs
+    SUBDIR += py-commonmark
     SUBDIR += py-conllu
     SUBDIR += py-creole
     SUBDIR += py-cssselect2
