@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+This port (security/openssl) will update from 3.0 to 3.5
+per 2026-07-01 (2026Q3) in anticipation of the End-of-Life
+of OpenSSL 3.0.
+A new port (security/openssl30) will be created for the
+remainder of the lifespan of OpenSSL 3.0 and FreeBSD 14.
+See: https://openssl-library.org/roadmap/index.html
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+This port (security/openssl) will update from 3.0 to 3.5
+per 2026-07-01 (2026Q3) in anticipation of the End-of-Life
+of OpenSSL 3.0.
+A new port (security/openssl30) will be created for the
+remainder of the lifespan of OpenSSL 3.0 and FreeBSD 14.
+See: https://openssl-library.org/roadmap/index.html
+EOM
+},
+]
