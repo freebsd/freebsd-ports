@@ -1,6 +1,6 @@
---- configure.orig	2026-02-19 21:12:55 UTC
+--- configure.orig	2026-06-09 20:26:02 UTC
 +++ configure
-@@ -784,6 +784,7 @@ HDF5_LIBS
+@@ -786,6 +786,7 @@ HDF5_LIBS
  HDF5_FFLAGS
  HDF5_FC
  HDF5_LIBS
@@ -8,7 +8,7 @@
  HDF5_LDFLAGS
  HDF5_CPPFLAGS
  HDF5_CFLAGS
-@@ -12827,7 +12828,7 @@ printf %s "checking whether the $compiler linker ($LD)
+@@ -12988,7 +12989,7 @@ printf %s "checking whether the $compiler linker ($LD)
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -17,7 +17,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -13125,7 +13126,7 @@ _LT_EOF
+@@ -13286,7 +13287,7 @@ _LT_EOF
  
      *-mlibc)
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -26,7 +26,7 @@
        ;;
  
      netbsd* | netbsdelf*-gnu)
-@@ -13134,7 +13135,7 @@ _LT_EOF
+@@ -13295,7 +13296,7 @@ _LT_EOF
  	wlarc=
        else
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -35,7 +35,7 @@
        fi
        ;;
  
-@@ -13153,7 +13154,7 @@ _LT_EOF
+@@ -13314,7 +13315,7 @@ _LT_EOF
  _LT_EOF
        elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -44,7 +44,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -13182,7 +13183,7 @@ _LT_EOF
+@@ -13343,7 +13344,7 @@ _LT_EOF
  	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
  	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -53,7 +53,7 @@
  	  else
  	    ld_shlibs=no
  	  fi
-@@ -13200,7 +13201,7 @@ _LT_EOF
+@@ -13361,7 +13362,7 @@ _LT_EOF
      *)
        if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -62,7 +62,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -13865,7 +13866,7 @@ printf "%s\n" "$lt_cv_irix_exported_symbol" >&6; }
+@@ -14026,7 +14027,7 @@ printf "%s\n" "$lt_cv_irix_exported_symbol" >&6; }
  	hardcode_direct_absolute=yes
  	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
  	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -71,7 +71,7 @@
  	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
  	  export_dynamic_flag_spec='$wl-E'
  	else
-@@ -14734,7 +14735,7 @@ freebsd* | dragonfly* | midnightbsd*)
+@@ -14895,7 +14896,7 @@ freebsd* | dragonfly* | midnightbsd*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -80,7 +80,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -16492,7 +16493,7 @@ else
+@@ -16653,7 +16654,7 @@ else
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
  printf "%s\n" "no" >&6; }
  else
@@ -89,7 +89,7 @@
      old_striplib="$STRIP --strip-debug"
      striplib="$STRIP --strip-unneeded"
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-@@ -16506,7 +16507,7 @@ printf "%s\n" "yes" >&6; }
+@@ -16667,7 +16668,7 @@ printf "%s\n" "yes" >&6; }
        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  printf "%s\n" "yes" >&6; }
        ;;
@@ -98,7 +98,7 @@
        if $STRIP -V 2>&1 | $GREP "elftoolchain" >/dev/null; then
          old_striplib="$STRIP --strip-debug"
          striplib="$STRIP --strip-unneeded"
-@@ -16752,7 +16753,7 @@ module_expsym_cmds_CXX=
+@@ -16913,7 +16914,7 @@ module_expsym_cmds_CXX=
  inherit_rpath_CXX=no
  module_cmds_CXX=
  module_expsym_cmds_CXX=
@@ -107,7 +107,7 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -16969,7 +16970,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
+@@ -17130,7 +17131,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
        # archiving commands below assume that GNU ld is being used.
        if test yes = "$with_gnu_ld"; then
          archive_cmds_CXX='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -116,7 +116,7 @@
  
          hardcode_libdir_flag_spec_CXX='$wl-rpath $wl$libdir'
          export_dynamic_flag_spec_CXX='$wl--export-dynamic'
-@@ -17668,7 +17669,7 @@ fi
+@@ -17829,7 +17830,7 @@ fi
  	    case `$CC -V 2>&1` in
  	      *"Version 7."*)
  	        archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -125,7 +125,7 @@
  		;;
  	      *)  # Version 8.0 or newer
  	        tmp_idyn=
-@@ -17676,7 +17677,7 @@ fi
+@@ -17837,7 +17838,7 @@ fi
  		  ia64*) tmp_idyn=' -i_dynamic';;
  		esac
  	        archive_cmds_CXX='$CC -shared'"$tmp_idyn"' $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -134,7 +134,7 @@
  		;;
  	    esac
  	    archive_cmds_need_lc_CXX=no
-@@ -17708,7 +17709,7 @@ fi
+@@ -17869,7 +17870,7 @@ fi
  	      ;;
  	    *) # Version 6 and above use weak symbols
  	      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -143,7 +143,7 @@
  	      ;;
  	    esac
  
-@@ -17719,7 +17720,7 @@ fi
+@@ -17880,7 +17881,7 @@ fi
  	  cxx*)
  	    # Compaq C++
  	    archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -152,7 +152,7 @@
  
  	    runpath_var=LD_RUN_PATH
  	    hardcode_libdir_flag_spec_CXX='-rpath $libdir'
-@@ -17753,7 +17754,7 @@ fi
+@@ -17914,7 +17915,7 @@ fi
  	      # Sun C++ 5.9
  	      no_undefined_flag_CXX=' -zdefs'
  	      archive_cmds_CXX='$CC -G$allow_undefined_flag -h$soname -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags'
@@ -161,7 +161,7 @@
  	      hardcode_libdir_flag_spec_CXX='-R$libdir'
  	      whole_archive_flag_spec_CXX='$wl--whole-archive`new_convenience=; for conv in $convenience\"\"; do test -z \"$conv\" || new_convenience=\"$new_convenience,$conv\"; done; func_echo_all \"$new_convenience\"` $wl--no-whole-archive'
  	      compiler_needs_object_CXX=yes
-@@ -17825,7 +17826,7 @@ fi
+@@ -17986,7 +17987,7 @@ fi
  	  archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
  	  hardcode_libdir_flag_spec_CXX='$wl-rpath,$libdir'
  	  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
@@ -170,7 +170,7 @@
  	    export_dynamic_flag_spec_CXX='$wl-E'
  	    whole_archive_flag_spec_CXX=$wlarc'--whole-archive$convenience '$wlarc'--no-whole-archive'
  	  fi
-@@ -19384,7 +19385,7 @@ freebsd* | dragonfly* | midnightbsd*)
+@@ -19545,7 +19546,7 @@ freebsd* | dragonfly* | midnightbsd*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -179,7 +179,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -24160,7 +24161,7 @@ case $host_os in
+@@ -24484,7 +24485,7 @@ case $host_os in
  
  case $host_os in
  
@@ -188,7 +188,7 @@
  
          # -kthread: FreeBSD kernel threads (preferred to -pthread since SMP-able)
          # lthread: LinuxThreads port on FreeBSD (also preferred to -pthread)
-@@ -25027,6 +25028,7 @@ HDF5_LIBS=""
+@@ -25351,6 +25352,7 @@ HDF5_LIBS=""
  HDF5_CPPFLAGS=""
  HDF5_LDFLAGS=""
  HDF5_LIBS=""
@@ -196,7 +196,7 @@
  HDF5_FC=""
  HDF5_FFLAGS=""
  HDF5_FLIBS=""
-@@ -25416,7 +25418,59 @@ printf "%s\n" "#define H5_USE_18_API 1" >>confdefs.h
+@@ -25740,7 +25742,59 @@ printf "%s\n" "#define H5_USE_18_API 1" >>confdefs.h
    fi
  
  
@@ -256,7 +256,7 @@
  #
  # Handle user hints
  #
-@@ -27518,6 +27572,133 @@ fi
+@@ -27938,6 +27992,133 @@ fi
  fi
  
    fi
@@ -390,3 +390,15 @@
  
  
  #
+--- configure.orig	2026-06-10 12:48:33 UTC
++++ configure
+@@ -27589,8 +27589,8 @@ else case e in #(
+ 	    if test "$ac_with_rpath" = "yes"; then
+ 	      S2N_LDFLAGS="-Wl,-rpath -Wl,$d/$bit "
+ 	    fi
+-	    S2N_LDFLAGS+="-L$d/$bit"
++	    S2N_LDFLAGS="${S2N_LDFLAGS} -L$d/$bit"
+             LIBS="$S2N_LDFLAGS $S2N_LIBS"
+             CPPFLAGS="$S2N_CPPFLAGS $CPPFLAGS"
+ 	    if test "$cross_compiling" = yes
+ then :
