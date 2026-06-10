@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.h.orig	2026-05-09 18:09:27 UTC
+--- components/password_manager/core/browser/features/password_features.h.orig	2026-06-05 13:45:06 UTC
 +++ components/password_manager/core/browser/features/password_features.h
-@@ -201,7 +201,7 @@ BASE_DECLARE_FEATURE(kReduceRequirementsForPasswordCha
+@@ -207,7 +207,7 @@ BASE_DECLARE_FEATURE(kProactivelyDownloadModelForPassw
  // This flag is only for the prototype version.
  BASE_DECLARE_FEATURE(kPasswordCheckupPrototype);
  

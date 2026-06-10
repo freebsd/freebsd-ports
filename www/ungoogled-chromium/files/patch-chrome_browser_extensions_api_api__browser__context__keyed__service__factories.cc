@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
-@@ -57,7 +57,7 @@
+@@ -55,7 +55,7 @@
  
  #endif  // BUILDFLAG(ENABLE_EXTENSIONS)
  

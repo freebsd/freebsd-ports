@@ -1,6 +1,6 @@
---- media/video/mappable_shared_image_video_frame_pool.cc.orig	2026-05-09 18:09:27 UTC
+--- media/video/mappable_shared_image_video_frame_pool.cc.orig	2026-06-05 13:45:06 UTC
 +++ media/video/mappable_shared_image_video_frame_pool.cc
-@@ -686,7 +686,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
+@@ -690,7 +690,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
    }
  
    bool is_software_backed_video_frame = !video_frame->HasSharedImage();
@@ -9,7 +9,7 @@
    is_software_backed_video_frame &= !video_frame->HasDmaBufs();
  #endif
  
-@@ -1099,7 +1099,7 @@ scoped_refptr<VideoFrame> MappableSharedImageVideoFram
+@@ -1118,7 +1118,7 @@ scoped_refptr<VideoFrame> MappableSharedImageVideoFram
            gpu::SHARED_IMAGE_USAGE_WEBGPU_READ);
  #endif
  

@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.h
-@@ -147,7 +147,7 @@ class WebRtcLoggingController
+@@ -148,7 +148,7 @@ class WebRtcLoggingController
  
    base::RepeatingCallback<void(const std::string&)> GetLogMessageCallback();
  
@@ -9,7 +9,7 @@
    // Ensures that the WebRTC Logs directory exists and then grants render
    // process access to the 'WebRTC Logs' directory, and invokes |callback| with
    // the ids necessary to create a DirectoryEntry object.
-@@ -226,7 +226,7 @@ class WebRtcLoggingController
+@@ -228,7 +228,7 @@ class WebRtcLoggingController
    bool CheckCanOperationProceed(GenericDoneCallback& callback);
    bool CheckCanOperationProceed(UploadDoneCallback& callback);
  

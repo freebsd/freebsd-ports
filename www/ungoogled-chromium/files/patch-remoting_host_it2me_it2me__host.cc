@@ -1,6 +1,6 @@
---- remoting/host/it2me/it2me_host.cc.orig	2026-04-15 11:25:12 UTC
+--- remoting/host/it2me/it2me_host.cc.orig	2026-06-05 13:45:06 UTC
 +++ remoting/host/it2me/it2me_host.cc
-@@ -73,7 +73,7 @@
+@@ -72,7 +72,7 @@
  #include "remoting/host/chromeos/features.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "remoting/host/linux/gnome_remote_desktop_session.h"
  #include "remoting/host/linux/portal_remote_desktop_session.h"
  #endif
-@@ -284,7 +284,7 @@ void It2MeHost::ConnectOnNetworkThread(
+@@ -283,7 +283,7 @@ void It2MeHost::ConnectOnNetworkThread(
  
    SetState(It2MeHostState::kStarting, ErrorCode::OK);
  

@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/rtc_diagnostic_logging_utils.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/media/webrtc/rtc_diagnostic_logging_utils.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/media/webrtc/rtc_diagnostic_logging_utils.cc
-@@ -22,7 +22,7 @@
+@@ -32,7 +32,7 @@
  #include "url/origin.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

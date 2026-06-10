@@ -1,6 +1,6 @@
---- chrome/browser/first_run/first_run.cc.orig	2026-03-15 18:32:51 UTC
+--- chrome/browser/first_run/first_run.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/first_run/first_run.cc
-@@ -319,7 +319,7 @@ void SetupInitialPrefsFromInstallPrefs(
+@@ -309,7 +309,7 @@ void SetupInitialPrefsFromInstallPrefs(
      out_prefs->confirm_to_quit = true;
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +9,7 @@
    install_prefs.GetBool(installer::initial_preferences::kRequireEula,
                          &out_prefs->eula_required);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -468,7 +468,7 @@ ProcessInitialPreferencesResult ProcessInitialPreferen
+@@ -458,7 +458,7 @@ ProcessInitialPreferencesResult ProcessInitialPreferen
    return FIRST_RUN_PROCEED;
  }
  

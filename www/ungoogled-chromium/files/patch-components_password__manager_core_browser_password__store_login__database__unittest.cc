@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_store/login_database_unittest.cc.orig	2026-03-15 18:32:51 UTC
+--- components/password_manager/core/browser/password_store/login_database_unittest.cc.orig	2026-06-05 13:45:06 UTC
 +++ components/password_manager/core/browser/password_store/login_database_unittest.cc
-@@ -2230,7 +2230,7 @@ INSTANTIATE_TEST_SUITE_P(MigrationToVCurrent,
+@@ -2248,7 +2248,7 @@ INSTANTIATE_TEST_SUITE_P(MigrationToVCurrent,
                           testing::Values(1, 2, 3, 24));
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_IOS) || \
