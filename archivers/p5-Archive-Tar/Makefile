@@ -1,5 +1,5 @@
 PORTNAME=	Archive-Tar
-PORTVERSION=	3.10
+PORTVERSION=	3.12
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
@@ -15,6 +15,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Compress-Lzma>=0:archivers/p5-IO-Compress-Lzma \
 		p5-IO-String>=0:devel/p5-IO-String
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Text-Diff>=0:textproc/p5-Text-Diff
 
 USES=		cpe perl5
 CPE_VENDOR=	archive::tar_project
