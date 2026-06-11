@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.6.1
+DISTVERSION=	2026.6.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -109,7 +109,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.7.0 \
 		bit-vec-0.8.0 \
-		bitflags-2.12.1 \
+		bitflags-2.13.0 \
 		bitvec-1.0.1 \
 		blake2-0.10.6 \
 		blake3-1.8.5 \
@@ -172,7 +172,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		compression-codecs-0.4.38 \
 		compression-core-0.4.32 \
 		concurrent-queue-2.5.0 \
-		configparser-3.1.0 \
+		configparser-3.2.0 \
 		confique-0.4.0 \
 		confique-macro-0.0.13 \
 		console-0.16.3 \
@@ -383,7 +383,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		hmac-0.13.0 \
 		homedir-0.3.6 \
 		http-0.2.12 \
-		http-1.4.1 \
+		http-1.4.2 \
 		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
@@ -448,7 +448,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.99 \
+		js-sys-0.3.100 \
 		json-patch-4.2.0 \
 		jsonptr-0.7.1 \
 		junction-2.0.0 \
@@ -466,7 +466,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.17 \
-		link-section-0.18.1 \
+		link-section-0.18.2 \
 		linktime-proc-macro-0.2.0 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
@@ -884,22 +884,22 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.122 \
-		wasm-bindgen-futures-0.4.72 \
-		wasm-bindgen-macro-0.2.122 \
-		wasm-bindgen-macro-support-0.2.122 \
-		wasm-bindgen-shared-0.2.122 \
+		wasm-bindgen-0.2.123 \
+		wasm-bindgen-futures-0.4.73 \
+		wasm-bindgen-macro-0.2.123 \
+		wasm-bindgen-macro-support-0.2.123 \
+		wasm-bindgen-shared-0.2.123 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
 		wasm-streams-0.5.0 \
 		wasmparser-0.244.0 \
 		wasmtimer-0.4.3 \
-		web-sys-0.3.99 \
+		web-sys-0.3.100 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
 		webpki-roots-1.0.7 \
-		which-8.0.2 \
+		which-8.0.3 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
