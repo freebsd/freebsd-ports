@@ -1,4 +1,4 @@
-TIMESTAMP = 1781207375
+TIMESTAMP = 1781208142
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/angle-0.5.0.crate) = 0bf965b6b142c8c68150e815ef527d17f0fe74e622b2c5287fd8626cb7c4a5fa
@@ -275,6 +275,8 @@ SHA256 (rust/crates/uuid-1.23.1.crate) = ddd74a9687298c6858e9b88ec8935ec45d22e8f
 SIZE (rust/crates/uuid-1.23.1.crate) = 62932
 SHA256 (rust/crates/vcpkg-0.2.15.crate) = accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426
 SIZE (rust/crates/vcpkg-0.2.15.crate) = 228735
+SHA256 (rust/crates/wasm-bindgen-0.2.121.crate) = 49ace1d07c165b0864824eee619580c4689389afa9dc9ed3a4c75040d82e6790
+SIZE (rust/crates/wasm-bindgen-0.2.121.crate) = 65838
 SHA256 (rust/crates/which-4.4.2.crate) = 87ba24419a2078cd2b0f2ede2691b6c66d8e47836da3b6db8265ebad47afbfc7
 SIZE (rust/crates/which-4.4.2.crate) = 15953
 SHA256 (rust/crates/writeable-0.5.5.crate) = 1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51
