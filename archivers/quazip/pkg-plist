@@ -9,6 +9,7 @@ include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quacrc32.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quagzipfile.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quaziodevice.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip.h
+include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_config.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_global.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_qt_compat.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_textcodec.h

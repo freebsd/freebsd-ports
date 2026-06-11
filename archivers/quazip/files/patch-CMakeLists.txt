@@ -2,11 +2,14 @@ OPTIONAL_COMPONENTS never worked quite right with Qt5 when REQUIRED was also
 passed to find_package(). If an optional component is not found, it results
 in an error.
 
---- CMakeLists.txt.orig	2025-03-06 04:56:05 UTC
+--- CMakeLists.txt.orig	2026-05-31 11:09:35 UTC
 +++ CMakeLists.txt
-@@ -90,8 +90,10 @@ elseif(QUAZIP_QT_MAJOR_VERSION EQUAL 5)
-     set(QUAZIP_TEST_QT_LIBRARIES Qt6::Core Qt6::Core5Compat Qt6::Network Qt6::Test)
-     set(QUAZIP_PKGCONFIG_REQUIRES "zlib, Qt6Core")
+@@ -82,10 +82,12 @@ if(QUAZIP_QT_MAJOR_VERSION EQUAL 6)
+     set(QUAZIP_QT_ZLIB_HEADER_COMPONENT ZlibPrivate)
+     set(QUAZIP_LIB_LIBRARIES Qt6::Core )
+     set(QUAZIP_TEST_QT_LIBRARIES Qt6::Core Qt6::Network Qt6::Test)
+-    set(QUAZIP_PKGCONFIG_REQUIRES "zlib, Qt6Core")
++    set(QUAZIP_PKGCONFIG_REQUIRES "zlib, Qt6Core, Qt6Core5Compat")
  elseif(QUAZIP_QT_MAJOR_VERSION EQUAL 5)
 -    find_package(Qt5 REQUIRED COMPONENTS Core
 -            OPTIONAL_COMPONENTS Network Test)
