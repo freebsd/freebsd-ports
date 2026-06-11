@@ -1,6 +1,6 @@
 PORTNAME=	odin
 DISTVERSIONPREFIX=	dev-
-DISTVERSION=	2026-05
+DISTVERSION=	2026-06
 CATEGORIES=	lang devel
 PKGNAMESUFFIX=	-lang
 
@@ -61,5 +61,8 @@ do-test:
 # Finished 470 tests in 1.634790591s. All tests were successful.
 # Finished 58 tests in 566.009413ms. All tests were successful.
 # Finished 36 tests in 1.574317511s. All tests were successful.
+
+# tests as of 2026-06:
+# Finished 507 tests in 2.454120088s. 1 test failed.
 
 .include <bsd.port.mk>
