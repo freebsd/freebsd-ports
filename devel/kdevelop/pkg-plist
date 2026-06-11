@@ -1893,6 +1893,7 @@ share/locale/he/LC_MESSAGES/kdevflatpak.mo
 share/locale/he/LC_MESSAGES/kdevghprovider.mo
 share/locale/he/LC_MESSAGES/kdevgit.mo
 share/locale/he/LC_MESSAGES/kdevgrepview.mo
+share/locale/he/LC_MESSAGES/kdevheaptrack.mo
 share/locale/he/LC_MESSAGES/kdevkonsole.mo
 share/locale/he/LC_MESSAGES/kdevlldb.mo
 share/locale/he/LC_MESSAGES/kdevmanpage.mo
@@ -1901,6 +1902,7 @@ share/locale/he/LC_MESSAGES/kdevokteta.mo
 share/locale/he/LC_MESSAGES/kdevopenwith.mo
 share/locale/he/LC_MESSAGES/kdevoutlineview.mo
 share/locale/he/LC_MESSAGES/kdevpatchreview.mo
+share/locale/he/LC_MESSAGES/kdevplatform.mo
 share/locale/he/LC_MESSAGES/kdevproblemreporter.mo
 share/locale/he/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/he/LC_MESSAGES/kdevprojectmanagerview.mo

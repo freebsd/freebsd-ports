@@ -7287,6 +7287,8 @@ share/locale/ta/LC_MESSAGES/calligrastage.mo
 share/locale/ta/LC_MESSAGES/calligrawords.mo
 share/locale/ta/LC_MESSAGES/karbon.mo
 share/locale/ta/LC_MESSAGES/koconverter.mo
+share/locale/ta/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/ta/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/tg/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/tg/LC_MESSAGES/KarbonTools.mo
 share/locale/tg/LC_MESSAGES/calligra.mo
