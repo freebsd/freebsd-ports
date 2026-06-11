@@ -1,3 +1,90 @@
+  <vuln vid="644d5e6c-1bd9-4904-8440-16c04100a2e1">
+    <topic>h2o -- stack overflow serving static files on musl libc</topic>
+    <affects>
+      <package>
+	<name>h2o</name>
+	<range><lt>20260609</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>h2o project reports:</p>
+	<blockquote cite="https://github.com/h2o/h2o/security/advisories/GHSA-rf9v-m59p-mq84">
+	  <p>When serving static files, h2o can allocate a file path on
+	    the stack using alloca.  On systems using musl libc, a large
+	    allocation can exceed the default pthread stack size and crash
+	    the server, causing a denial of service.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44453</cvename>
+      <url>https://github.com/h2o/h2o/security/advisories/GHSA-rf9v-m59p-mq84</url>
+    </references>
+    <dates>
+      <discovery>2026-05-29</discovery>
+      <entry>2026-06-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fba766f4-ccda-4e1b-8875-ab857c6a6532">
+    <topic>h2o -- heap overrun parsing zero-length SNI</topic>
+    <affects>
+      <package>
+	<name>h2o</name>
+	<range><lt>20260609</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>h2o project reports:</p>
+	<blockquote cite="https://github.com/h2o/h2o/security/advisories/GHSA-w68q-rqwx-7wvq">
+	  <p>When h2o receives a TLS or QUIC ClientHello containing a
+	    zero-length SNI extension, it can overrun the zero-length
+	    hostname while copying it.  This can trigger a segmentation
+	    fault and cause a denial of service.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44452</cvename>
+      <url>https://github.com/h2o/h2o/security/advisories/GHSA-w68q-rqwx-7wvq</url>
+    </references>
+    <dates>
+      <discovery>2026-05-29</discovery>
+      <entry>2026-06-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="35c57495-2231-4733-a66e-044f3dad8b21">
+    <topic>h2o -- HTTP/2 state amplification denial of service</topic>
+    <affects>
+      <package>
+	<name>h2o</name>
+	<range><lt>20260609</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>h2o project reports:</p>
+	<blockquote cite="https://github.com/h2o/h2o/security/advisories/GHSA-qcrr-wrhc-pgq9">
+	  <p>An HTTP/2 attack can combine HPACK decompression state
+	    amplification with stalled streams.  Depending on server
+	    configuration, decoded header state can be retained by stalled
+	    streams, causing excessive memory use and denial of service.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/h2o/h2o/security/advisories/GHSA-qcrr-wrhc-pgq9</url>
+      <url>https://blog.calif.io/p/codex-discovered-a-hidden-http2-bomb</url>
+    </references>
+    <dates>
+      <discovery>2026-06-04</discovery>
+      <entry>2026-06-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d87db2a1-64d4-11f1-ab11-4c526214c986">
     <topic>Erlang/OTP -- buffer overflow parsing SCTP ERROR/ABORT chunks</topic>
     <affects>
