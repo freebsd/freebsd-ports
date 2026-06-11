@@ -246,6 +246,7 @@
     SUBDIR += klettres
     SUBDIR += koboldcpp
     SUBDIR += kookbook
+    SUBDIR += ktea
     SUBDIR += ktouch
     SUBDIR += kwordquiz
     SUBDIR += lastools
