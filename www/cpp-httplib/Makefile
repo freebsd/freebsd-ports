@@ -1,6 +1,6 @@
 PORTNAME=	cpp-httplib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.46.1
+DISTVERSION=	0.47.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,7 +45,9 @@ SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/test" LDFLAGS="${LDFLAGS}"
 
-# tests aas of 0.46.1:
-# 694 tests from 145 test suites ran. (184746 ms total)
+# [==========] 713 tests from 150 test suites ran. (257976 ms total)
+# [  PASSED  ] 712 tests.
+# [  FAILED  ] 1 test, listed below:
+# [  FAILED  ] YahooRedirectTest3.NewResultInterface_Online
 
 .include <bsd.port.mk>
