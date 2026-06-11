@@ -1,2 +1,3 @@
-SHA256 (xorg/app/fslsfonts-1.0.5.tar.bz2) = f1ed55093356b78daec2678d22f52d42ec11fe88575562d734396962e626d7f6
-SIZE (xorg/app/fslsfonts-1.0.5.tar.bz2) = 125650
+TIMESTAMP = 1781052956
+SHA256 (xorg/app/fslsfonts-1.0.7.tar.xz) = 67cddb1aa7fccab5d107beef32fa2c143e8a132a2b974a557557b24c6f306b63
+SIZE (xorg/app/fslsfonts-1.0.7.tar.xz) = 127436
