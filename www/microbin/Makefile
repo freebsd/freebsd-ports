@@ -1,7 +1,7 @@
 PORTNAME=	microbin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,13 +16,17 @@ BROKEN_i386=	link fails: ld: error: undefined symbol: __atomic_load
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
-LIB_DEPENDS=	libonig.so:devel/oniguruma
+LIB_DEPENDS=	libonig.so:devel/oniguruma \
+		libzstd.so:archivers/zstd
 
 USES=		cargo perl5
 USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	szabodanika
+
+USERS=		microbin
+GROUPS=		microbin
 
 CARGO_CRATES=	actix-codec-0.5.2 \
 		actix-files-0.6.6 \
@@ -434,6 +438,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		zstd-safe-7.2.1 \
 		zstd-sys-2.0.13+zstd.1.5.6
 
-PLIST_FILES=	bin/${PORTNAME}
+USE_RC_SUBR=	microbin
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/db/microbin
 
 .include <bsd.port.mk>

@@ -445,7 +445,7 @@ stalwart:*:484:484::0:0:stalwart Mail Server Daemon:/nonexistent:/usr/sbin/nolog
 # free: 496
 # free: 497
 rustypaste:*:498:498::0:0:Minimal file upload/pastebin service:/nonexistent:/usr/sbin/nologin
-# free: 499
+microbin:*:499:499::0:0:Tiny, self-contained, configurable paste bin and URL shortener:/nonexistent:/usr/sbin/nologin
 qw:*:500:500::0:0:QuakeWorld Server:/nonexistent:/usr/sbin/nologin
 qwfwd:*:501:501::0:0:QuakeWorld Proxy:/nonexistent:/usr/sbin/nologin
 # free: 502
