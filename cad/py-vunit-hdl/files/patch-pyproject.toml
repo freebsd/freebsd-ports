@@ -1,10 +1,13 @@
---- pyproject.toml.orig	2023-02-23 03:24:14 UTC
+-- Relax setuptools and setuptools_scm version requirements to allow newer versions.
+
+--- pyproject.toml.orig	2026-06-11 07:14:15 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  [build-system]
  requires = [
-     "setuptools >= 35.0.2",
+-    "setuptools >= 35.0.2, <82.0.0",
 -    "setuptools_scm >= 2.0.0, <3"
++    "setuptools >= 35.0.2",
 +    "setuptools_scm"
  ]
  build-backend = "setuptools.build_meta"

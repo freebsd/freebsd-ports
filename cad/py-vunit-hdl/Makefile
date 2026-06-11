@@ -1,10 +1,10 @@
 PORTNAME=	vunit-hdl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.0
+DISTVERSION=	4.7.1
 CATEGORIES=	cad python
 #MASTER_SITES=	PYPI # some files are missing during tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source unit testing framework for VHDL/SystemVerilog
@@ -25,10 +25,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	VUnit
 GH_PROJECT=	vunit
 GH_TUPLE=	Paebbels:JSON-for-VHDL:95e848b:j4v/vunit/vhdl/JSON-for-VHDL \
-		OSVVM:OSVVM:2104430:osvvm/vunit/vhdl/osvvm
+		OSVVM:OSVVM:871f509:osvvm/vunit/vhdl/osvvm
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 4.7.1: 512 passed, 49 failed, 7 skipped
 
 .include <bsd.port.mk>
