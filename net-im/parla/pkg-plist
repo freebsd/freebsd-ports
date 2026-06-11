@@ -3,3 +3,4 @@ share/applications/io.github.trufae.Parla.desktop
 share/icons/hicolor/scalable/apps/io.github.trufae.Parla.svg
 share/icons/hicolor/scalable/apps/parla-tray.svg
 share/icons/hicolor/scalable/apps/parla-welcome.svg
+share/metainfo/io.github.trufae.Parla.metainfo.xml
