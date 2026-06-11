@@ -1,7 +1,6 @@
 PORTNAME=	pinact
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
-PORTREVISION=	1
+DISTVERSION=	4.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -29,9 +28,9 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
 
-pre-build:
-	@${CP} ${GO_WRKSRC}/vendor/github.com/suzuki-shunsuke/ghtkn-go-sdk/ghtkn/internal/browser/browser_linux.go \
-		${GO_WRKSRC}/vendor/github.com/suzuki-shunsuke/ghtkn-go-sdk/ghtkn/internal/browser/browser_freebsd.go
+post-configure:
+	@${CP} ${GO_WRKSRC}/vendor/github.com/suzuki-shunsuke/ghtkn-go-sdk/ghtkn/browser/browser_linux.go \
+		${GO_WRKSRC}/vendor/github.com/suzuki-shunsuke/ghtkn-go-sdk/ghtkn/browser/browser_freebsd.go
 
 post-build-COMPLETIONS-on:
 .for shell in bash fish zsh
