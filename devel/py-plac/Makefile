@@ -1,6 +1,5 @@
 PORTNAME=	plac
-DISTVERSION=	1.4.3
-PORTREVISION=	1
+DISTVERSION=	1.4.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +10,16 @@ WWW=		https://github.com/ialbert/plac
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+TEST_WRKSRC=	${WRKSRC}/doc
+
+# tests as of 1.4.5: 26 passed, 2 failed
 
 .include <bsd.port.mk>
