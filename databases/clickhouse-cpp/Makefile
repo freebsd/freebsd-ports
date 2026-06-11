@@ -1,6 +1,6 @@
 PORTNAME=		clickhouse-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.6.1
+DISTVERSION=		2.6.2
 CATEGORIES=		databases devel
 
 MAINTAINER=	madpilot@FreeBSD.org
