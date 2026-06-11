@@ -316,11 +316,9 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
 	</body>
     </description>
     <references>
-      <cvename>RUSTSEC-2026-0089</cvename>
       <url>https://rustsec.org/advisories/RUSTSEC-2026-0089</url>
       <cvename>CVE-2026-34946</cvename>
       <url>https://cveawg.mitre.org/api/cve/CVE-2026-34946</url>
-      <cvename>GHSA-q49f-xg75-m9xw</cvename>
       <url>https://github.com/advisories/GHSA-q49f-xg75-m9xw</url>
     </references>
     <dates>
