@@ -1,6 +1,6 @@
-TIMESTAMP = 1780467765
-SHA256 (cachebox-6.0.0.tar.gz) = 22eab2c8c9cb10e442c5aece69db34b86c84ff288d98f69103baa7c555521a4e
-SIZE (cachebox-6.0.0.tar.gz) = 149258
+TIMESTAMP = 1781199448
+SHA256 (cachebox-6.1.1.tar.gz) = 371f26fc2e659ec686e92aa1624b79fd26d327fc4b68aaddbb482f714f95c89f
+SIZE (cachebox-6.1.1.tar.gz) = 152387
 SHA256 (rust/crates/android_system_properties-0.1.5.crate) = 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
 SIZE (rust/crates/android_system_properties-0.1.5.crate) = 5243
 SHA256 (rust/crates/autocfg-1.5.1.crate) = f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53
