@@ -141,6 +141,7 @@
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
+    SUBDIR += supermodel
     SUBDIR += teo
     SUBDIR += tic-80
     SUBDIR += tiemu3
