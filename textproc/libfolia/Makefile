@@ -1,5 +1,5 @@
 PORTNAME=	libfolia
-DISTVERSION=	2.21.1
+DISTVERSION=	2.22
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
