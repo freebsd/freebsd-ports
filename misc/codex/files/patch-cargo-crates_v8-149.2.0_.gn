@@ -1,0 +1,25 @@
+--- cargo-crates/v8-149.2.0/.gn.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-149.2.0/.gn
+@@ -78,16 +78,16 @@ default_args = {
+ 
+   use_relative_vtables_abi = false
+ 
+-  v8_depend_on_icu_data_file = false
+-  icu_copy_icudata_to_root_build_dir = false
+-  icu_use_data_file = false
++  v8_depend_on_icu_data_file = true
++  icu_copy_icudata_to_root_build_dir = true
++  icu_use_data_file = true
+ 
+   # TODO: third_party/compiler-rt missing?
+   use_llvm_libatomic = false
+ 
+-  enable_rust = true
+-  enable_rust_cxx = true
+-  v8_enable_temporal_support = true
++  enable_rust = false
++  enable_rust_cxx = false
++  v8_enable_temporal_support = false
+ 
+   # prevent hashdos
+   v8_use_default_hasher_secret = false

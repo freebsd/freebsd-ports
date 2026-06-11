@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.136.0
-PORTREVISION=	1
+DISTVERSION=	0.139.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	fails to build: rustc-LLVM ERROR: out of memory
 
-BUILD_DEPENDS=	gn:devel/gn
+BUILD_DEPENDS=	gn:devel/gn \
+		icu>0:devel/icu
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus \
@@ -23,7 +23,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo gnome llvm:min=19 ninja:build python:test shebangfix ssl
+USES=		cargo gnome llvm:min=21 ninja:build python:test \
+		shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
@@ -55,9 +56,15 @@ CARGO_ENV=		OPENSSL_NO_VENDOR=1 \
 			V8_FROM_SOURCE=1 \
 			GN=${LOCALBASE}/bin/gn \
 			NINJA=${NINJA_CMD} \
-			CLANG_BASE_PATH=/usr
+			CLANG_BASE_PATH=${LLVM_PREFIX}
 
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+BINARY_ALIAS=	python3=${PYTHON_CMD} \
+		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_VERSION} \
+		cc=${LOCALBASE}/bin/clang${LLVM_VERSION} \
+		c++=${LOCALBASE}/bin/clang++${LLVM_VERSION} \
+		ar=${LOCALBASE}/bin/llvm-ar${LLVM_VERSION} \
+		nm=${LOCALBASE}/bin/llvm-nm${LLVM_VERSION} \
+		ld=${LOCALBASE}/bin/ld.lld${LLVM_VERSION}
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
@@ -73,6 +80,15 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
 
+post-configure:
+	@${MKDIR} ${WRKSRC_crate_v8}/third_party/icu/common
+.for suffix in l b
+	@if [ -r ${LOCALBASE}/share/icu/*/icudt*${suffix}.dat ]; then \
+		${CP} ${LOCALBASE}/share/icu/*/icudt*${suffix}.dat \
+			${WRKSRC_crate_v8}/third_party/icu/common/icudt${suffix}.dat; \
+	fi
+.endfor
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
@@ -82,7 +98,6 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/exec_policy.rs \
 		${BUILD_WRKSRC}/core/src/exec_policy_tests.rs \
 		${BUILD_WRKSRC}/core/src/exec_tests.rs \
-		${BUILD_WRKSRC}/core/src/shell.rs \
 		${BUILD_WRKSRC}/core/src/shell_snapshot_tests.rs \
 		${BUILD_WRKSRC}/core/src/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell_tests.rs \
@@ -95,6 +110,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
 		${BUILD_WRKSRC}/exec-server/tests/file_system.rs \
 		${BUILD_WRKSRC}/shell-command/src/parse_command.rs \
+		${BUILD_WRKSRC}/shell-command/src/shell_detect.rs \
 		${BUILD_WRKSRC}/shell-escalation/src/unix/escalate_server.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
