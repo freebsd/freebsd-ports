@@ -1,9 +1,8 @@
-PORTNAME=	ReFrame_HPC
-DISTVERSION=	4.9.3
+PORTNAME=	reframe_hpc
+DISTVERSION=	4.10.0
 CATEGORIES=	benchmarks python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	rikka.goering@outlook.de
 COMMENT=	HPC regression/benchmark testing framework
@@ -13,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archspec>=0.2.4:devel/py-archspec@${PY_FLAVOR} \
@@ -27,10 +27,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archspec>=0.2.4:devel/py-archspec@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semver>=0:devel/py-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulate>=0:devel/py-tabulate@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tabulate>=0:devel/py-tabulate@${PY_FLAVOR} \
+		bash:shells/bash
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist pep517
+SHEBANG_GLOB=	*.sh
 
 NO_ARCH=	yes
 
