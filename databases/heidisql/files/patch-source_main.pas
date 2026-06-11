@@ -1,11 +1,11 @@
---- source/main.pas.orig	2026-01-30 17:33:07 UTC
+--- source/main.pas.orig	2026-06-09 17:25:49 UTC
 +++ source/main.pas
 @@ -15,9 +15,12 @@ uses
    LazStringUtils, dbconnection, dbstructures, dbstructures.mysql, generic_types,
    apphelpers, extra_controls, createdatabase, SynEditMarkup, SynEditMarkupBracket,
    searchreplace, ImgList, IniFiles, LazFileUtils, LazUTF8, tabletools,
--  lazaruscompat, extfiledialog, process, SynEditMiscClasses, Contnrs;
-+  lazaruscompat, extfiledialog, process, SynEditMiscClasses, Contnrs
+-  lazaruscompat, extfiledialog, process, SynEditMiscClasses, Contnrs, SynExportHTML;
++  lazaruscompat, extfiledialog, process, SynEditMiscClasses, Contnrs, SynExportHTML
 +{$IFDEF CPUAARCH64 AND $IFDEF FREEBSD}
 +  , LazEditTextAttributes
 +{$ENDIF}
@@ -15,7 +15,7 @@
  type
  
    // Bind parameters for query tabs
-@@ -7062,7 +7065,11 @@ var
+@@ -7129,7 +7132,11 @@ var
    Editor: TSynMemo;
    Token: String;
    CaretStart, CaretTokenTypeInt: Integer;
@@ -27,7 +27,7 @@
    Proposal: TSynCompletion;
    p: TPoint;
    LineIdx, ColIdx, StartCol, EndCol: Integer;
-@@ -7278,7 +7285,11 @@ var
+@@ -7345,7 +7352,11 @@ var
  var
    Edit: TSynEdit;
    Token: String;
@@ -39,7 +39,7 @@
    TokenType, TokenStart: Integer;
    RowColPos: TPoint;
    SQLFunc: TSQLFunction;
-@@ -13182,7 +13193,11 @@ var
+@@ -13403,7 +13414,11 @@ var
    Editors: TComponentList;
    BaseEditor: TSynMemo;
    KeyStroke: TSynEditKeyStroke;
