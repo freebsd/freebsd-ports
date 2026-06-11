@@ -1,3 +1,13 @@
-TIMESTAMP = 1551853031
-SHA256 (dlang-community-D-Scanner-v0.7.0_GH0.tar.gz) = f838d6baf84e5f091d629ed706f4df4a49ee61cce05ca3dc0f38b29878769b2a
-SIZE (dlang-community-D-Scanner-v0.7.0_GH0.tar.gz) = 85626
+TIMESTAMP = 1780549392
+SHA256 (dlang-community-D-Scanner-v0.15.2_GH0.tar.gz) = f9e3efd6f622b0cbccbe1a3558b40e74082b6bd8b2e5ce88282d7e090146cbd2
+SIZE (dlang-community-D-Scanner-v0.15.2_GH0.tar.gz) = 103122
+SHA256 (dlang-community-DCD-1c60c54_GH0.tar.gz) = 82b9117b54c1a4b40fbd889e4bb1d6bbeb90e75827808c9269e9b9cf90f25faf
+SIZE (dlang-community-DCD-1c60c54_GH0.tar.gz) = 199253
+SHA256 (dlang-community-containers-116a028_GH0.tar.gz) = bff072c766d163b2f9ab64f2837f2b9d0edc48924ab86541f31654a790c2dad2
+SIZE (dlang-community-containers-116a028_GH0.tar.gz) = 55500
+SHA256 (burner-inifiled-cecaff8_GH0.tar.gz) = 5291937bac86e8dc5f4059b3824f5cfd9f4ce573e8797cfba32cfa7e274a4f51
+SIZE (burner-inifiled-cecaff8_GH0.tar.gz) = 8244
+SHA256 (dlang-community-libddoc-fbbfb82_GH0.tar.gz) = 053c402615cf921bb1cbd838249cf558a4a4fb3335014f63f31b3810915fda3b
+SIZE (dlang-community-libddoc-fbbfb82_GH0.tar.gz) = 21116
+SHA256 (dlang-community-libdparse-fe6d1e3_GH0.tar.gz) = d03d36a7f7a6c3d02a31e2bd04ac1742542d9da62c5f48545a69803c6c362706
+SIZE (dlang-community-libdparse-fe6d1e3_GH0.tar.gz) = 158796

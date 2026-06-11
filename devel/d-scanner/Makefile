@@ -1,6 +1,5 @@
 PORTNAME=	d-scanner
-PORTVERSION=	0.7.0
-PORTREVISION=	4
+PORTVERSION=	0.15.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,35 +9,27 @@ WWW=		https://github.com/dlang-community/D-Scanner
 
 LICENSE=	BSL
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	ldmd2:lang/ldc \
-		dub:devel/dub \
-		rdmd:lang/dlang-tools \
-		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers \
-		${LOCALBASE}/lib/d/libdsymbol.a:devel/dsymbol \
-		${LOCALBASE}/lib/d/libinifiled.a:devel/inifiled \
-		${LOCALBASE}/lib/d/libddoc.a:devel/libddoc \
-		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
-		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \
-		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator \
 		rdmd:lang/dlang-tools
 
-USES=		pkgconfig
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
 GH_PROJECT=	D-Scanner
+GH_TUPLE=	dlang-community:DCD:1c60c54:DCD/DCD \
+		dlang-community:containers:116a028:containers/containers \
+		burner:inifiled:cecaff8:inifiled/inifiled \
+		dlang-community:libddoc:fbbfb82:libddoc/libddoc \
+		dlang-community:libdparse:fe6d1e3:libdparse/libdparse
+
+MAKE_ENV+=	DC=${DC}
+MAKEFILE=	makefile
 
 PLIST_FILES=	bin/dscanner
-DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
-DC=		${PREFIX}/bin/ldmd2
+DC=		ldmd2
 
 post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/dub.json
-
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} DUB_HOME=${WRKDIR}/dub_home DC=${DC} ${DUB_CMD}
+	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dscanner ${STAGEDIR}${PREFIX}/bin/
