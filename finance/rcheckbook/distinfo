@@ -1,4 +1,4 @@
-TIMESTAMP = 1781195046
+TIMESTAMP = 1781207375
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/angle-0.5.0.crate) = 0bf965b6b142c8c68150e815ef527d17f0fe74e622b2c5287fd8626cb7c4a5fa
@@ -137,6 +137,8 @@ SHA256 (rust/crates/itertools-0.12.1.crate) = ba291022dbbd398a455acf126c1e341954
 SIZE (rust/crates/itertools-0.12.1.crate) = 137761
 SHA256 (rust/crates/itoa-1.0.18.crate) = 8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682
 SIZE (rust/crates/itoa-1.0.18.crate) = 15935
+SHA256 (rust/crates/js-sys-0.3.98.crate) = 67df7112613f8bfd9150013a0314e196f4800d3201ae742489d999db2f979f08
+SIZE (rust/crates/js-sys-0.3.98.crate) = 108519
 SHA256 (rust/crates/kparse-3.0.5.crate) = 503149c856ef5f8728156b55609019cf2714a29ebdb2a82dc1a831d2c743f28a
 SIZE (rust/crates/kparse-3.0.5.crate) = 77633
 SHA256 (rust/crates/lazy_static-1.5.0.crate) = bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
