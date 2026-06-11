@@ -1,5 +1,5 @@
---- core/src/window/settings.rs.orig	2025-09-19 07:04:16 UTC
-+++ core/src/window/settings.rs
+--- cargo-crates/iced_core-0.14.0/src/window/settings.rs.orig	2026-06-11 11:49:23 UTC
++++ cargo-crates/iced_core-0.14.0/src/window/settings.rs
 @@ -7,7 +7,7 @@ mod platform;
  #[path = "settings/macos.rs"]
  mod platform;

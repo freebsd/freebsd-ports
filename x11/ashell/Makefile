@@ -1,13 +1,12 @@
 PORTNAME=	ashell
-DISTVERSION=	0.8.0
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
-COMMENT=	Ready to go Wayland status bar for Hyprland
+COMMENT=	Ready to go Wayland status bar for Hyprland and Niri
 WWW=		https://malpenzibo.github.io/ashell/
 
-LICENSE=	MIT
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
@@ -36,16 +35,9 @@ LDFLAGS+=	-linotify
 .endif
 
 post-patch:
-	@${BSDMAKE} PATCHDIR=${PATCHDIR}/iced WRKSRC=${WRKSRC_crate_iced} \
-		do-patch
 # https://github.com/RazrFalcon/fontdb/issues/61
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
-		${WRKSRC_crate_fontdb-0.18.0}/src/lib.rs \
-		${WRKSRC_crate_fontdb-0.23.0}/src/lib.rs
-# temporary hack to avoid the following error in configure phase
-# error: failed to select a version for the requirement `redox_syscall = "^0.4"`
-	@${REINPLACE_CMD} -E '/redox_syscall =/s/0\.4(\.[0-9])?/0\.5/' \
-		${WRKSRC_crate_softbuffer}/Cargo.toml
+		${WRKSRC_crate_fontdb}/src/lib.rs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
