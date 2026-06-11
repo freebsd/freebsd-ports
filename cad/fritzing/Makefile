@@ -37,7 +37,7 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e '/CONFIG += debug_and_release/d' ${WRKSRC}/phoenix.pro
 	${REINPLACE_CMD} -e 's|QT_MOST=.*|QT_MOST=${QT6_VERSION}|' ${WRKSRC}/phoenix.pro
-	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/pri_quazipdetect.pri > ${WRKSRC}/pri/quazipdetect.pri
+	${CP} ${FILESDIR}/pri_quazipdetect.pri ${WRKSRC}/pri/quazipdetect.pri
 	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/pri_spicedetect.pri > ${WRKSRC}/pri/spicedetect.pri
 	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/pri_clipper1detect.pri > ${WRKSRC}/pri/clipper1detect.pri
 
