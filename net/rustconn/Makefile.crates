@@ -26,6 +26,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
 		async-broadcast-0.7.2 \
+		async-channel-2.5.0 \
 		async-dnssd-0.5.1 \
 		async-recursion-1.1.1 \
 		async-trait-0.1.89 \
@@ -117,7 +118,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
 		crypto-mac-0.11.0 \
-		crypto-primes-0.7.0 \
+		crypto-primes-0.7.2 \
 		cryptoki-0.12.0 \
 		cryptoki-sys-0.5.0 \
 		csv-1.4.0 \
@@ -312,7 +313,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		keyboard-types-0.7.0 \
 		kqueue-1.2.0 \
 		kqueue-sys-1.1.2 \
-		ksni-0.3.4 \
+		ksni-0.3.5 \
 		kurbo-0.13.1 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
@@ -470,9 +471,9 @@ CARGO_CRATES=	addchain-0.2.1 \
 		rc2-0.9.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		reqwest-0.12.28 \
 		resvg-0.47.0 \
 		rfc6979-0.5.0-rc.5 \
@@ -720,8 +721,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zbus-5.16.0 \
 		zbus_macros-5.16.0 \
 		zbus_names-4.3.2 \
-		zerocopy-0.8.50 \
-		zerocopy-derive-0.8.50 \
+		zerocopy-0.8.52 \
+		zerocopy-derive-0.8.52 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
