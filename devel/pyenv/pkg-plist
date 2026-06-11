@@ -289,6 +289,8 @@ libexec/pyenv-plugins/python-build/share/python-build/3.13.12
 libexec/pyenv-plugins/python-build/share/python-build/3.13.12t
 libexec/pyenv-plugins/python-build/share/python-build/3.13.13
 libexec/pyenv-plugins/python-build/share/python-build/3.13.13t
+libexec/pyenv-plugins/python-build/share/python-build/3.13.14
+libexec/pyenv-plugins/python-build/share/python-build/3.13.14t
 libexec/pyenv-plugins/python-build/share/python-build/3.14t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14.0
@@ -303,6 +305,8 @@ libexec/pyenv-plugins/python-build/share/python-build/3.14.4
 libexec/pyenv-plugins/python-build/share/python-build/3.14.4t
 libexec/pyenv-plugins/python-build/share/python-build/3.14.5
 libexec/pyenv-plugins/python-build/share/python-build/3.14.5t
+libexec/pyenv-plugins/python-build/share/python-build/3.14.6
+libexec/pyenv-plugins/python-build/share/python-build/3.14.6t
 libexec/pyenv-plugins/python-build/share/python-build/3.15t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15.0b2
@@ -1145,6 +1149,8 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.4t
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.4/Python-3.14.4/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.5t
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.5/Python-3.14.5/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.6t
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.6/Python-3.14.6/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/cinder-3.8-dev/Cinder-3.8-dev/001-disable-werror.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/cinder-3.10-dev/Cinder-3.10-dev/001-disable-werror.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/micropython-1.22.0/micropython-1.22.0/0001-py-misc-Don-t-warn-about-a-GNU-extension-for-static-.patch
