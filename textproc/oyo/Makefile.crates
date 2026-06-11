@@ -75,6 +75,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itoa-1.0.15 \
 		js-sys-0.3.83 \
 		kasuari-0.4.12 \
+		keymap-1.0.0-rc.6 \
+		keymap_derive-1.0.0-rc.6 \
+		keymap_parser-1.0.0-rc.6 \
 		libc-0.2.184 \
 		libredox-0.1.11 \
 		line-clipping-0.3.5 \
@@ -144,7 +147,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
+		strum-0.28.0 \
 		strum_macros-0.27.2 \
+		strum_macros-0.28.0 \
 		syn-2.0.117 \
 		syntect-5.3.0 \
 		thiserror-1.0.69 \
