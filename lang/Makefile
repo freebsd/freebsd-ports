@@ -309,6 +309,7 @@
     SUBDIR += python313
     SUBDIR += python313t
     SUBDIR += python314
+    SUBDIR += python314t
     SUBDIR += qmasm
     SUBDIR += quickjs
     SUBDIR += quickjs-ng
