@@ -1,3 +1,54 @@
+  <vuln vid="ac9bab80-6618-11f1-8e04-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.0.0</ge><lt>19.0.2</lt></range>
+	<range><ge>18.11.0</ge><lt>18.11.5</lt></range>
+	<range><ge>12.0.0</ge><lt>18.10.8</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-0-2-released/">
+	  <p>Improper Access Control issue in Group SAML Identity API impacts GitLab EE</p>
+	  <p>Cross-site Scripting issue in Analytics Dashboard impacts GitLab EE</p>
+	  <p>Denial of Service issue in Grape API JSON parsing middleware impacts GitLab CE/EE</p>
+	  <p>HTML injection issue in certain group setting fields impacts GitLab EE</p>
+	  <p>Denial of Service issue in Group Placeholder Reassignments API impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in Merge Requests API impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in Gitaly repository import impacts GitLab CE/EE</p>
+	  <p>HTML injection issue in CI/CD Catalog impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in Security Inventory impacts GitLab EE</p>
+	  <p>Authorization Bypass issue in Merge Request diff impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in Todos API impacts GitLab CE/EE</p>
+	  <p>Improper Neutralization issue in Service Desk email template impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6552</cvename>
+      <cvename>CVE-2026-10087</cvename>
+      <cvename>CVE-2026-7250</cvename>
+      <cvename>CVE-2026-8589</cvename>
+      <cvename>CVE-2026-1500</cvename>
+      <cvename>CVE-2026-6269</cvename>
+      <cvename>CVE-2026-9204</cvename>
+      <cvename>CVE-2026-10733</cvename>
+      <cvename>CVE-2026-6277</cvename>
+      <cvename>CVE-2026-6976</cvename>
+      <cvename>CVE-2026-3553</cvename>
+      <cvename>CVE-2026-9694</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-0-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-06-11</discovery>
+      <entry>2026-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="644d5e6c-1bd9-4904-8440-16c04100a2e1">
     <topic>h2o -- stack overflow serving static files on musl libc</topic>
     <affects>
