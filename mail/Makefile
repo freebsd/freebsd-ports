@@ -635,6 +635,7 @@
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-mini_mime
     SUBDIR += rubygem-net-imap
+    SUBDIR += rubygem-net-imap-gitlab
     SUBDIR += rubygem-net-pop
     SUBDIR += rubygem-net-smtp
     SUBDIR += rubygem-pony
