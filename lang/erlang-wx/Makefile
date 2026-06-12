@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	26.2.5.21
+DISTVERSION=	28.5.0.2
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 PKGNAMESUFFIX=	-wx
@@ -34,10 +34,10 @@ PLIST_SUB=	DEBUGGER_VERSION=${DEBUGGER_VERSION} \
 		OBSERVER_VERSION=${OBSERVER_VERSION} \
 		WX_VERSION=${WX_VERSION}
 
-DEBUGGER_VERSION=	5.3.4
-ET_VERSION=		1.7
-OBSERVER_VERSION=	2.15.1
-WX_VERSION=		2.4.1.1
+DEBUGGER_VERSION=	6.0.3
+ET_VERSION=		1.7.3
+OBSERVER_VERSION=	2.18.2
+WX_VERSION=		2.5.4.1
 WX_APPS=		wx debugger et observer
 
 pre-configure:
@@ -65,11 +65,11 @@ do-build:
 
 do-install:
 .for app in ${WX_APPS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-$$(${CUT} -w -f3 ${WRKSRC}/lib/${app}/vsn.mk)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-$$(${GREP} -E '_VSN *=' ${WRKSRC}/lib/${app}/vsn.mk | ${CUT} -w -f3)
 	${FIND} ${WRKSRC}/lib/${app} -type d -empty -delete
 .for dir in src include priv ebin
 	cd ${WRKSRC}/lib/${app} && if [ -d ${dir} ]; then \
-		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-$$(${CUT} -w -f3 vsn.mk); \
+		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-$$(${GREP} -E '_VSN *=' vsn.mk | ${CUT} -w -f3); \
 	fi
 .endfor
 .endfor

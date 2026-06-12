@@ -25,9 +25,8 @@ lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/ebin/debugger.beam
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/ebin/i.beam
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/ebin/int.beam
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/priv/Makefile
-lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/priv/debugger.gif
-lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/priv/debugger.tool
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/priv/erlang_bug.png
+lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/priv/erlang_bug.png.license
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/src/Makefile
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/src/dbg_debugged.erl
 lib/erlang/lib/debugger-%%DEBUGGER_VERSION%%/src/dbg_icmd.erl
@@ -129,6 +128,7 @@ lib/erlang/lib/observer-%%OBSERVER_VERSION%%/priv/bin/cdv.bat
 lib/erlang/lib/observer-%%OBSERVER_VERSION%%/priv/bin/etop
 lib/erlang/lib/observer-%%OBSERVER_VERSION%%/priv/bin/etop.bat
 lib/erlang/lib/observer-%%OBSERVER_VERSION%%/priv/erlang_observer.png
+lib/erlang/lib/observer-%%OBSERVER_VERSION%%/priv/erlang_observer.png.license
 lib/erlang/lib/observer-%%OBSERVER_VERSION%%/src/Makefile
 lib/erlang/lib/observer-%%OBSERVER_VERSION%%/src/cdv_atom_cb.erl
 lib/erlang/lib/observer-%%OBSERVER_VERSION%%/src/cdv_bin_cb.erl
@@ -429,12 +429,16 @@ lib/erlang/lib/wx-%%WX_VERSION%%/include/glu.hrl
 lib/erlang/lib/wx-%%WX_VERSION%%/include/wx.hrl
 lib/erlang/lib/wx-%%WX_VERSION%%/priv/erl_gl.so
 lib/erlang/lib/wx-%%WX_VERSION%%/priv/erlang-logo128.png
+lib/erlang/lib/wx-%%WX_VERSION%%/priv/erlang-logo128.png.license
 lib/erlang/lib/wx-%%WX_VERSION%%/priv/erlang-logo32.png
+lib/erlang/lib/wx-%%WX_VERSION%%/priv/erlang-logo32.png.license
 lib/erlang/lib/wx-%%WX_VERSION%%/priv/erlang-logo64.png
+lib/erlang/lib/wx-%%WX_VERSION%%/priv/erlang-logo64.png.license
 lib/erlang/lib/wx-%%WX_VERSION%%/priv/wxe_driver.so
 lib/erlang/lib/wx-%%WX_VERSION%%/src/Makefile
 lib/erlang/lib/wx-%%WX_VERSION%%/src/gen/gl.erl
 lib/erlang/lib/wx-%%WX_VERSION%%/src/gen/glu.erl
+lib/erlang/lib/wx-%%WX_VERSION%%/src/gen/vendor.info
 lib/erlang/lib/wx-%%WX_VERSION%%/src/gen/wxAcceleratorEntry.erl
 lib/erlang/lib/wx-%%WX_VERSION%%/src/gen/wxAcceleratorTable.erl
 lib/erlang/lib/wx-%%WX_VERSION%%/src/gen/wxActivateEvent.erl
