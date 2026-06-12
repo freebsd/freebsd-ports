@@ -24,10 +24,28 @@ to set the following tunables:
 hw.re.s5wol="1"
 hw.re.s0_magic_packet="1"
 
-If you experience network hangs with IPv6 enabled,
-you might need to disable the checksum offloading
-by adding the following parameters to the related
-ifconfig line in your /etc/rc.conf file:
+By default the driver negotiates 802.3x flow
+control with the link partner.  If a congested
+peer throttles your transmit path with pause
+frames (e.g. a 2.5GbE card behind a 1GbE switch),
+you can disable flow control with:
+
+hw.re.flow_control="0"
+
+The driver programs the PCIe Max Read Request
+Size for better transmit performance.  On Realtek
+SoC platforms this can be disabled with:
+
+hw.re.config_soc_lan="1"
+
+Driver versions before 1102.01 could hang the
+RTL8125 transmitter when sending small UDP
+packets (e.g. IPv6 DNS queries).  This is fixed,
+but if you still experience network hangs with
+IPv6 enabled, you can disable the checksum
+offloading by adding the following parameters to
+the related ifconfig line in your /etc/rc.conf
+file, and please report the issue:
 
 -rxcsum -txcsum -rxcsum6 -txcsum6
 EOM
