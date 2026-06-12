@@ -5,7 +5,7 @@
  // const SIOCGIFMEDIA: u64 = 0xc02c6938;
  
 -#[cfg(all(target_os = "freebsd", target_arch = "x86_64"))]
-+#[cfg(all(target_os = "freebsd", any(target_arch = "x86_64", target_arch = "aarch64", target_arch = "powerpc64le")))]
++#[cfg(all(target_os = "freebsd", target_pointer_width = "64"))]
  // https://github.com/freebsd/freebsd-src/blob/master/sys/sys/sockio.h#L139
  // #define	SIOCGIFXMEDIA	_IOWR('i', 139, struct ifmediareq)
  const SIOCGIFXMEDIA: u64 = 0xc030698b;
