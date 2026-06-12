@@ -1,11 +1,11 @@
 PORTNAME=	wcd
-DISTVERSION=	6.0.6
+DISTVERSION=	6.0.7
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
 MAINTAINER=	jishanalam9128@gmail.com
 COMMENT=	Command-line program to change directory fast
-WWW=		http://wcd.sourceforge.net/
+WWW=		https://waterlander.net/wcd/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/copying.txt
