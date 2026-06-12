@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-drb>=0:devel/rubygem-drb \
 		rubygem-i18n>=1.6,2<2,2:devel/rubygem-i18n \
 		rubygem-logger-gitlab>=1.4.2:devel/rubygem-logger-gitlab \
-		rubygem-minitest>=5.1:devel/rubygem-minitest \
+		rubygem-minitest>=5.1<6:devel/rubygem-minitest \
 		rubygem-securerandom>=0.3:security/rubygem-securerandom \
 		rubygem-tzinfo>=2.0.5<3:devel/rubygem-tzinfo
 

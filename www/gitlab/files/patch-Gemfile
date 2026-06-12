@@ -167,7 +167,7 @@
 +gem 'parser'
 +gem 'net-smtp'
 +gem 'net-pop'
-+gem 'psych', '~> 3.1'
++gem 'psych'
 +
  gem 'gitlab-sdk', '~> 0.3.0', feature_category: :application_instrumentation
  
