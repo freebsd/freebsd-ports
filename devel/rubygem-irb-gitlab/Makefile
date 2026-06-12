@@ -1,5 +1,5 @@
 PORTNAME=	irb
-PORTVERSION=	1.15.3
+PORTVERSION=	1.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-pp>=0.6.0:devel/rubygem-pp \
+		rubygem-prism>=1.3.0:textproc/rubygem-prism \
 		rubygem-rdoc-gitlab>=4.0.0:devel/rubygem-rdoc-gitlab \
 		rubygem-reline>=0.4.2:devel/rubygem-reline
 
