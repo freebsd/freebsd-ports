@@ -1,5 +1,5 @@
 PORTNAME=	rdoc
-PORTVERSION=	6.3.4.1
+PORTVERSION=	6.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,6 +12,10 @@ WWW=		https://ruby.github.io/rdoc/ \
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.rdoc
+
+RUN_DEPENDS=	rubygem-erb-gitlab>=0:devel/rubygem-erb-gitlab \
+		rubygem-psych>=4.0.0:textproc/rubygem-psych \
+		rubygem-tsort>=0:devel/rubygem-tsort
 
 USES=		cpe gem
 
