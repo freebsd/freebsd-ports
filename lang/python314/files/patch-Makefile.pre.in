@@ -1,4 +1,4 @@
---- Makefile.pre.in.orig	2025-11-01 17:59:00 UTC
+--- Makefile.pre.in.orig	2025-11-02 05:07:12 UTC
 +++ Makefile.pre.in
 @@ -84,7 +84,6 @@ BASECPPFLAGS=	@BASECPPFLAGS@
  OPT=		@OPT@
