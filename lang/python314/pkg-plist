@@ -8320,6 +8320,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/zoneinfo/_common.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/zoneinfo/_tzpath.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/zoneinfo/_zoneinfo.py
-libdata/pkgconfig/python-%%PYTHON_BASEVER%%embed.pc
-libdata/pkgconfig/python-%%PYTHON_BASEVER%%pc
+libdata/pkgconfig/python-%%PYTHON_BASEVER%%-embed.pc
+libdata/pkgconfig/python-%%PYTHON_BASEVER%%.pc
 share/man/man1/python%%PYTHON_BASEVER%%.1.gz
