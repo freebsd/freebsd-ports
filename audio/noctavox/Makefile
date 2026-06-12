@@ -1,7 +1,7 @@
 PORTNAME=	noctavox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.7
-PORTREVISION=	1
+DISTVERSION=	0.2.8
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -34,13 +34,18 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 THEME_EXAMPLES_DIR=	${STAGEDIR}${EXAMPLESDIR}/themes_examples
 
+post-patch-DOCS-on:
+	${REINPLACE_CMD} -E \
+		-e 's,docs/,,g' ${WRKSRC}/readme.md
+
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${RLN} vox ${PORTNAME}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	${INSTALL_DATA} ${WRKSRC}/readme.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && \
-	${INSTALL_DATA} header.gif keymaps.md themes.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} header.gif keymaps.md themes.md themes.png ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${THEME_EXAMPLES_DIR} && \
