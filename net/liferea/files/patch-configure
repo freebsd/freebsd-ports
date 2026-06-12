@@ -1,0 +1,26 @@
+From 930e2e0892a31cef5f7b373a6a4d3f9b9a3d7e1f Mon Sep 17 00:00:00 2001
+From: Fabian Keil <fk@fabiankeil.de>
+Date: Fri, 12 Jun 2026 09:35:30 +0200
+Subject: [PATCH] configure: Downgrade required glib-2.0 version to 2.68.0
+
+... to make sure Liferea can be built from the FreeBSD ports branch 2026Q2.
+---
+ configure | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git configure configure
+index d1bc6db..cc90fc0 100755
+--- configure
++++ configure
+@@ -16376,7 +16376,7 @@ fi
+ # Mandatory library dependencies
+ 
+ pkg_modules="	gtk+-3.0 >= 3.24.0
+-		glib-2.0 >= 2.86.0
++		glib-2.0 >= 2.68.0
+ 		gio-2.0 >= 2.50.0
+ 		pango >= 1.4.0
+ 		libxml-2.0 >= 2.6.27
+-- 
+2.53.0
+
