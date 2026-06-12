@@ -1,5 +1,5 @@
 PORTNAME=	hunter
-DISTVERSION=	3.7.0
+DISTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,5 +24,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+# tests as of 3.9.0: 174 passed, 12 failed in 367.23s
 
 .include <bsd.port.mk>
