@@ -25,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # devel/rubygem-parser is required for database upgrade process
 # see https://gitlab.com/gitlab-org/gitlab/-/issues/350866
 # mail/rubygem-net-smtp is required as ruby 3.1 removed it
-# textproc/rubygem-psych3 is required as ruby 3.1 applied an update to psych 4.0 which has breaking changes
+# textproc/rubygem-psych is required
 # mail/rubygem-net-pop is required as ruby 3.1 removed it
 # rubygem-freezolite is required by bundled gem auto_freeze
 # rubygem-require-hooks is required by bundled gem auto_freeze
@@ -41,8 +41,8 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	rubygem-parser-gitlab>=3.3.11.1:devel/rubygem-parser-gitlab \
-	rubygem-net-smtp>=0:mail/rubygem-net-smtp \
-	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
+	rubygem-net-smtp>=0.5.1:mail/rubygem-net-smtp \
+	rubygem-psych>=5.3.1:textproc/rubygem-psych \
 	rubygem-net-pop>=0:mail/rubygem-net-pop \
 	rubygem-rails-gitlab>=${RAILS_VERSION}<7.3:www/rubygem-rails-gitlab \
 	rubygem-zeitwerk>=2.6.18<2.6.19:devel/rubygem-zeitwerk \
@@ -82,7 +82,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-openid_connect>=2.3.1<2.4:net/rubygem-openid_connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
 	rubygem-rack-oauth2-gitlab>=2.2.1<2.3:security/rubygem-rack-oauth2-gitlab \
-	rubygem-jwt2>=2.10.2<2.11:www/rubygem-jwt2 \
+	rubygem-jwt2>=2.10.3<2.11:www/rubygem-jwt2 \
 	rubygem-gssapi>=1.3.1<1.4:security/rubygem-gssapi \
 	rubygem-recaptcha>=5.12<6.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
@@ -161,7 +161,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-asciidoctor-kroki>=0.10.0<0.11:textproc/rubygem-asciidoctor-kroki \
 	rubygem-rouge-gitlab>=4.7.0<4.8:textproc/rubygem-rouge-gitlab \
 	rubygem-truncato>=0.7.13<0.8.0:textproc/rubygem-truncato \
-	rubygem-nokogiri>=1.19.1<2:textproc/rubygem-nokogiri \
+	rubygem-nokogiri>=1.19.3<2:textproc/rubygem-nokogiri \
 	rubygem-gitlab-glfm-markdown>=0.0.41<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-tanuki_emoji>=0.13<1:graphics/rubygem-tanuki_emoji \
 	rubygem-unicode-emoji>=4.0.4<5:devel/rubygem-unicode-emoji \
@@ -301,7 +301,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-jsonb_accessor>=1.4<2:www/rubygem-jsonb_accessor \
 	rubygem-json>=2.19.2<2.20:devel/rubygem-json \
 	rubygem-json_schemer>=2.4.0<2.5:devel/rubygem-json_schemer \
-	rubygem-oj-gitlab>=3.16.16<3.17:devel/rubygem-oj-gitlab \
+	rubygem-oj-gitlab>=3.17.3<3.18:devel/rubygem-oj-gitlab \
 	rubygem-oj-introspect>=0.9<1:devel/rubygem-oj-introspect \
 	rubygem-multi_json-gitlab>=1.17.0<1.18:devel/rubygem-multi_json-gitlab \
 	rubygem-yajl-ruby>=1.4.3<1.5:devel/rubygem-yajl-ruby \
@@ -330,6 +330,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-gitlab_query_language>=0.27.1<0.28:devel/rubygem-gitlab_query_language \
 	rubygem-zlib>=3.2.3<3.3:devel/rubygem-zlib \
 	rubygem-license_finder-gitlab>=7.2.1<8:devel/rubygem-license_finder-gitlab \
+	rubygem-erb-gitlab>=4.0.3.1<4.0.3.2:devel/rubygem-erb-gitlab \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
 	rubygem-parallel>=1.27.0<2:sysutils/rubygem-parallel \
 	rubygem-google-cloud-storage_transfer-gitlab>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer-gitlab \
