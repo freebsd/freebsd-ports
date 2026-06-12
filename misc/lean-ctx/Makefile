@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.5
+DISTVERSION=	3.8.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,9 @@ WRKSRC_SUBDIR=	rust
 
 CARGO_CRATES=	adler2-2.0.1 \
 		adobe-cmap-parser-0.4.1 \
+		aead-0.5.2 \
 		aes-0.8.4 \
+		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
@@ -59,6 +61,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.0 \
 		block-padding-0.3.3 \
+		borrow-or-share-0.2.4 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
 		bytecount-0.6.9 \
@@ -75,7 +78,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cff-parser-0.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
+		chacha20-0.9.1 \
 		chacha20-0.10.0 \
+		chacha20poly1305-0.10.1 \
 		chrono-0.4.44 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -118,6 +123,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
+		data-encoding-2.11.0 \
 		data-url-0.3.2 \
 		deadpool-0.12.3 \
 		deadpool-postgres-0.14.1 \
@@ -153,6 +159,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.11.0 \
 		fancy-regex-0.13.0 \
+		fancy-regex-0.18.0 \
 		fastrand-2.4.1 \
 		fdeflate-0.3.7 \
 		fiat-crypto-0.2.9 \
@@ -165,12 +172,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		flate2-1.1.9 \
 		float-cmp-0.9.0 \
 		fluent-uri-0.1.4 \
+		fluent-uri-0.4.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.23.0 \
 		form_urlencoded-1.2.2 \
+		fraction-0.15.4 \
 		fs2-0.4.3 \
 		fs_extra-1.3.0 \
 		futures-0.3.32 \
@@ -183,6 +192,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
 		generic-array-0.14.7 \
+		gethostname-1.1.0 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
@@ -197,6 +207,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
+		hkdf-0.12.4 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
 		http-1.4.0 \
@@ -241,6 +252,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.95 \
+		jsonschema-0.46.5 \
 		jsonwebtoken-10.3.0 \
 		kasuari-0.4.12 \
 		kurbo-0.13.1 \
@@ -273,20 +285,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		memmap2-0.9.10 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
+		micromap-0.3.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
 		moka-0.12.15 \
 		nix-0.29.0 \
+		nix-0.31.2 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		nom_locate-5.0.0 \
 		nu-ansi-term-0.50.3 \
+		num-0.4.3 \
 		num-bigint-0.4.6 \
+		num-cmp-0.1.0 \
+		num-complex-0.4.6 \
 		num-conv-0.2.1 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
 		num_threads-0.1.7 \
@@ -294,9 +313,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-system-configuration-0.3.2 \
 		once_cell-1.21.4 \
 		oorandom-11.1.5 \
+		opaque-debug-0.3.1 \
 		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
+		outref-0.5.2 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		password-hash-0.5.0 \
@@ -325,6 +346,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		png-0.18.1 \
+		poly1305-0.8.0 \
 		polycool-0.4.0 \
 		pom-1.1.0 \
 		portable-atomic-1.13.1 \
@@ -337,6 +359,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
+		process-wrap-9.1.0 \
 		proptest-1.11.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
@@ -368,6 +391,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.4.6 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
+		referencing-0.46.5 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
@@ -445,6 +469,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		slotmap-1.1.1 \
 		smallvec-1.15.1 \
 		socket2-0.6.3 \
+		spin-0.9.8 \
 		spki-0.7.3 \
 		sqlite-wasm-rs-0.5.3 \
 		sse-stream-0.2.2 \
@@ -452,6 +477,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		static_assertions-1.1.0 \
 		streaming-iterator-0.1.9 \
 		strict-num-0.1.1 \
+		string-interner-0.19.0 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
@@ -512,6 +538,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-cpp-0.23.4 \
 		tree-sitter-dart-0.1.0 \
 		tree-sitter-elixir-0.3.5 \
+		tree-sitter-gdscript-6.1.0 \
 		tree-sitter-go-0.25.0 \
 		tree-sitter-java-0.23.5 \
 		tree-sitter-javascript-0.25.0 \
@@ -536,6 +563,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-bidi-0.3.18 \
 		unicode-bidi-mirroring-0.4.0 \
 		unicode-ccc-0.4.0 \
+		unicode-general-category-1.1.0 \
 		unicode-ident-1.0.24 \
 		unicode-normalization-0.1.25 \
 		unicode-properties-0.1.4 \
@@ -545,6 +573,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-vo-0.1.0 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
+		universal-hash-0.5.1 \
 		untrusted-0.9.0 \
 		unty-0.0.4 \
 		ureq-3.3.0 \
@@ -556,10 +585,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		uuid-1.23.1 \
+		uuid-simd-0.8.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		virtue-0.0.18 \
+		vsimd-0.8.0 \
 		vtparse-0.6.2 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
@@ -575,9 +606,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-bindgen-macro-support-0.2.118 \
 		wasm-bindgen-shared-0.2.118 \
 		wasm-encoder-0.244.0 \
+		wasm-encoder-0.251.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.5.0 \
+		wasmi-1.0.9 \
+		wasmi_collections-1.0.9 \
+		wasmi_core-1.0.9 \
+		wasmi_ir-1.0.9 \
+		wasmparser-0.228.0 \
 		wasmparser-0.244.0 \
+		wasmparser-0.251.0 \
+		wast-251.0.0 \
+		wat-1.251.0 \
 		web-sys-0.3.95 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
@@ -594,10 +634,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.62.2 \
+		windows-collections-0.3.2 \
 		windows-core-0.62.2 \
+		windows-future-0.3.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
+		windows-numerics-0.3.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
 		windows-sys-0.45.0 \
@@ -610,6 +654,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
+		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
