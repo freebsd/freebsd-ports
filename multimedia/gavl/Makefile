@@ -1,37 +1,38 @@
 PORTNAME=	gavl
-PORTVERSION=	1.4.0
-PORTREVISION=	4
+DISTVERSION=	2.0.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://github.com/bplaum/gavl/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for handling uncompressed video and audio data
-WWW=		https://gmerlin.sourceforge.net/
+WWW=		https://github.com/bplaum/gavl
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool localbase pathfix pkgconfig
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libgnutls.so:security/gnutls \
+		libnettle.so:security/nettle \
+		libpng.so:graphics/png \
+		libva.so:multimedia/libva
+
+USES=		gl libtool localbase pkgconfig
+USE_GL=		egl gl
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen
 INSTALL_TARGET=	install-strip
 
-# Opt-in to sched* functions
-# https://cgit.freebsd.org/src/commit/?id=90fa9705d5cd29cf11c5dc7319299788dec2546a
-CFLAGS+=	-D_WITH_CPU_SET_T
-LIBS+=		-lm
-
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS PNG DOCS
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS PNG
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_CONFIGURE_OFF=	--disable-libpng
+OPTIONS_DEFINE=		OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 post-patch-OPTIMIZED_CFLAGS-off:
 	@${REINPLACE_CMD} -e \
-		's|-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math||g' \
+		's|-O3 -fomit-frame-pointer||g' \
 		${WRKSRC}/configure
 
 post-install:
