@@ -54,7 +54,8 @@ SOUND_DISTFILES=	musics-${MUSICS_DATE}${EXTRACT_SUFX}:musics \
 SOUND_CONFIGURE_ENABLE=	sound
 
 post-extract:
-	-@${MV} ${WRKDIR}/levels-${LEVELS_DATE}/reconstruct?on2.xal ${WRKDIR}/levels-${LEVELS_DATE}/reconstruction2.xal
+	@${MV} $$'${WRKDIR}/levels-${LEVELS_DATE}/reconstruct\xeeon2.xal' \
+		${WRKDIR}/levels-${LEVELS_DATE}/reconstruction2.xal
 
 post-patch:
 	@${TOUCH} -r ${WRKSRC}/configure ${WRKSRC}/aclocal.m4
