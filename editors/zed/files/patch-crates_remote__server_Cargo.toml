@@ -1,6 +1,6 @@
---- crates/remote_server/Cargo.toml.orig	2026-05-06 20:35:33 UTC
+--- crates/remote_server/Cargo.toml.orig	2026-06-10 17:21:09 UTC
 +++ crates/remote_server/Cargo.toml
-@@ -28,7 +28,6 @@ collections.workspace = true
+@@ -29,7 +29,6 @@ collections.workspace = true
  clap.workspace = true
  client.workspace = true
  collections.workspace = true

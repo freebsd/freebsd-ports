@@ -1,4 +1,4 @@
---- crates/gpui/src/gpui.rs.orig	2026-03-25 15:03:32 UTC
+--- crates/gpui/src/gpui.rs.orig	2026-06-10 17:21:09 UTC
 +++ crates/gpui/src/gpui.rs
 @@ -35,7 +35,7 @@ pub mod profiler;
  pub mod prelude;
@@ -9,7 +9,7 @@
  #[expect(missing_docs)]
  pub mod queue;
  mod scene;
-@@ -102,7 +102,7 @@ pub use profiler::*;
+@@ -131,7 +131,7 @@ pub use profiler::*;
  pub use path_builder::*;
  pub use platform::*;
  pub use profiler::*;
