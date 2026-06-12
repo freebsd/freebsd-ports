@@ -383,6 +383,7 @@
     SUBDIR += libopenshot-audio
     SUBDIR += libopusenc
     SUBDIR += libremidi
+    SUBDIR += libresidfp
     SUBDIR += libsamplerate
     SUBDIR += libshout
     SUBDIR += libsidplay
