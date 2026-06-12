@@ -9,4 +9,3 @@ bin/escript
 bin/run_erl
 bin/snmpc
 bin/to_erl
-%%FOP%%etc/man.d/erlang.conf
