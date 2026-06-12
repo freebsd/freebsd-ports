@@ -7392,6 +7392,7 @@
     SUBDIR += rubygem-equalizer
     SUBDIR += rubygem-equatable
     SUBDIR += rubygem-erb
+    SUBDIR += rubygem-erb-gitlab
     SUBDIR += rubygem-errand
     SUBDIR += rubygem-error_highlight
     SUBDIR += rubygem-et-orbi
