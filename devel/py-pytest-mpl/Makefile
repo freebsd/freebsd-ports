@@ -1,9 +1,9 @@
 PORTNAME=	pytest-mpl
-DISTVERSION=	0.17.0
-PORTREVISION=	2
+DISTVERSION=	0.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pytest plugin to facilitate image comparison for Matplotlib figures
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # several tests fail, see https://github.com/matplotlib/pytest-mpl/issues/179
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
