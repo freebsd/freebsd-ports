@@ -1,5 +1,5 @@
 PORTNAME=	nekobox
-DISTVERSION=	5.11.17
+DISTVERSION=	5.11.20
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +27,7 @@ USE_XORG=	ice sm x11 xext
 USE_GITHUB=	yes
 GH_ACCOUNT=	qr243vbi
 GH_PROJECT=	nekobox
-GH_TUPLE=	quickjs-ng:quickjs:967aa0b:qjs/3rdparty/qjs
+GH_TUPLE=	quickjs-ng:quickjs:967aa0b:qjs/src/3rdparty/qjs
 
 CMAKE_ON=	CMAKE_SKIP_INSTALL_RPATH \
 		SKIP_UPDATER
