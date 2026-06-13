@@ -1,6 +1,6 @@
---- src/main.ts.orig	2026-06-03 09:29:03 UTC
+--- src/main.ts.orig	2026-06-12 00:12:36 UTC
 +++ src/main.ts
-@@ -142,7 +142,7 @@ if (userLocale) {
+@@ -146,7 +146,7 @@ if (userLocale) {
  // Pseudo Language Language Pack is being used.
  // In that case, use `en` as the Electron locale.
  
@@ -9,7 +9,7 @@
  	const electronLocale = (!userLocale || userLocale === 'qps-ploc') ? 'en' : userLocale;
  	app.commandLine.appendSwitch('lang', electronLocale);
  }
-@@ -234,7 +234,7 @@ function configureCommandlineSwitchesSync(cliArgs: Nat
+@@ -238,7 +238,7 @@ function configureCommandlineSwitchesSync(cliArgs: Nat
  		'remote-debugging-port'
  	];
  
