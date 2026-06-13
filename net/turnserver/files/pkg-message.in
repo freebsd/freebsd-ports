@@ -7,7 +7,8 @@ you have to:
 
 	a) Edit %%PREFIX%%/etc/turnserver.conf as necessary. You can always
 	refer to %%PREFIX%%/etc/turnserver.conf.sample for the example
-	configuration corresponding to the latest version of turnserver.
+	configuration corresponding to the turnserver version currently
+	installed.
 
 	b) For user accounts settings: set up SQLite or PostgreSQL or
 	MySQL or Redis database for user accounts.
