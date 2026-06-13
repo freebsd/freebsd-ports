@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -17,7 +17,8 @@ WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 
-LIB_DEPENDS=	libffi.so:devel/libffi
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libffi.so:devel/libffi
 
 USES=		compiler:c11 cpe ncurses pathfix pkgconfig \
 		python:${PYTHON_DISTVERSION:R},env readline shebangfix ssl tar:xz
@@ -31,7 +32,7 @@ SHEBANG_FILES+=	Lib/test/ziptestdata/exe_with_z64 \
 		Lib/test/ziptestdata/header.sh
 
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
-CONFIGURE_ARGS+=	--enable-shared --without-ensurepip \
+CONFIGURE_ARGS+=	--enable-shared --without-ensurepip --with-system-expat \
 			--with-system-ffi
 CONFIGURE_ENV+=		OPT="" ac_cv_prog_cc_g=false # Null out OPT to respect user CFLAGS and remove optimizations
 
