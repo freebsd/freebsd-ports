@@ -1,5 +1,5 @@
 PORTNAME=	pcsc-lite
-DISTVERSION=	2.4.1
+DISTVERSION=	2.5.1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -53,7 +53,6 @@ post-install:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
