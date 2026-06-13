@@ -24,6 +24,24 @@
      if (ret < 0) {
          return -errno;
      }
+@@ -106,6 +115,8 @@ int ucs_vfs_sock_send(int sockfd, const ucs_vfs_sock_m
+ 
+     memset(cbuf, 0, sizeof(cbuf));
+     memset(&msgh, 0, sizeof(msgh));
++    msgh.msg_control    = cbuf;
++    msgh.msg_controllen = sizeof(cbuf);
+     msg.action      = vfs_msg->action;
+     iov.iov_base    = &msg;
+     iov.iov_len     = sizeof(msg);
+@@ -114,8 +125,6 @@ int ucs_vfs_sock_send(int sockfd, const ucs_vfs_sock_m
+ 
+     if (vfs_msg->action == UCS_VFS_SOCK_ACTION_MOUNT_REPLY) {
+         /* send file descriptor */
+-        msgh.msg_control    = cbuf;
+-        msgh.msg_controllen = sizeof(cbuf);
+         cmsgp               = CMSG_FIRSTHDR(&msgh);
+         cmsgp->cmsg_level   = SOL_SOCKET;
+         cmsgp->cmsg_len     = CMSG_LEN(sizeof(vfs_msg->fd));
 @@ -132,7 +141,11 @@ int ucs_vfs_sock_recv(int sockfd, ucs_vfs_sock_message
  int ucs_vfs_sock_recv(int sockfd, ucs_vfs_sock_message_t *vfs_msg)
  {

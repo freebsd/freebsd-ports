@@ -1,7 +1,7 @@
---- configure.ac.orig	2026-02-05 12:41:56 UTC
+--- configure.ac.orig	2026-06-12 20:50:26 UTC
 +++ configure.ac
 @@ -14,8 +14,6 @@ define([ucx_ver_extra], )   # Extra version string. Em
- define([ucx_ver_patch], 0)  # Patch version. Increased for a bugfix release.
+ define([ucx_ver_patch], 1)  # Patch version. Increased for a bugfix release.
  define([ucx_ver_extra], )   # Extra version string. Empty for a general release.
  
 -define([ts], esyscmd([sh -c "date +%Y%m%d%H%M%S"]))
@@ -83,14 +83,12 @@
  #
  # Define SHARED_LIB preprocessor macro when building a shared library
  #
-@@ -255,6 +294,22 @@ AS_IF([test "x$with_docs_only" = xyes],
+@@ -255,6 +294,20 @@ AS_IF([test "x$with_docs_only" = xyes],
       m4_include([test/apps/iodemo/configure.m4])
       m4_include([test/apps/uct_info/configure.m4])
  
-+AS_IF([test "x$with_docs_only" != xyes && test "x$build_gtest" = xyes], [
-+  PKG_CHECK_MODULES([GTEST], [gtest_main],
-+                    [have_gtest=yes],
-+                    [have_gtest=no])
++AS_IF([test "x$with_docs_only" != xyes], [
++  have_gtest=yes
 +], [
 +  have_gtest=no
 +])

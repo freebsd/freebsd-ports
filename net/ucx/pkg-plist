@@ -3,6 +3,7 @@ bin/ucx_info
 %%PERFTEST%%bin/ucx_perftest
 %%PERFTEST%%bin/ucx_perftest_daemon
 bin/ucx_read_profile
+%%FUSE%%bin/ucx_vfs
 @sample %%ETCDIR%%/ucx.conf.sample
 include/ucm/api/ucm.h
 include/ucp/api/ucp.h
@@ -113,19 +114,19 @@ lib/libuct.so.0.0.0
 %%IBVERBS%%lib/ucx/libuct_ib.so
 %%IBVERBS%%lib/ucx/libuct_ib.so.0
 %%IBVERBS%%lib/ucx/libuct_ib.so.0.0.0
+%%FUSE%%lib/ucx/libucs_fuse.a
+%%FUSE%%lib/ucx/libucs_fuse.so
+%%FUSE%%lib/ucx/libucs_fuse.so.0
+%%FUSE%%lib/ucx/libucs_fuse.so.0.0.0
 %%UMAD%%lib/ucx/libucx_perftest_mad.a
 %%UMAD%%lib/ucx/libucx_perftest_mad.so
 %%UMAD%%lib/ucx/libucx_perftest_mad.so.0
 %%UMAD%%lib/ucx/libucx_perftest_mad.so.0.0.0
+%%FUSE%%libdata/pkgconfig/ucx-fuse.pc
 %%IBVERBS%%libdata/pkgconfig/ucx-ib.pc
 libdata/pkgconfig/ucx-ucs.pc
 libdata/pkgconfig/ucx-uct.pc
 libdata/pkgconfig/ucx.pc
-%%EXAMPLES%%%%DATADIR%%/examples/hello_world_util.h
-%%EXAMPLES%%%%DATADIR%%/examples/ucp_client_server.c
-%%EXAMPLES%%%%DATADIR%%/examples/ucp_hello_world.c
-%%EXAMPLES%%%%DATADIR%%/examples/ucp_util.h
-%%EXAMPLES%%%%DATADIR%%/examples/uct_hello_world.c
 %%PERFTEST%%%%DATADIR%%/perftest/README
 %%PERFTEST%%%%DATADIR%%/perftest/msg_pow2
 %%PERFTEST%%%%DATADIR%%/perftest/msg_pow2_large
@@ -136,9 +137,3 @@ libdata/pkgconfig/ucx.pc
 %%PERFTEST%%%%DATADIR%%/perftest/test_types_uct
 %%PERFTEST%%%%DATADIR%%/perftest/transports
 %%PERFTEST%%%%DATADIR%%/perftest/test_types_ucp_device_cuda
-%%FUSE%%bin/ucx_vfs
-%%FUSE%%lib/ucx/libucs_fuse.a
-%%FUSE%%lib/ucx/libucs_fuse.so
-%%FUSE%%lib/ucx/libucs_fuse.so.0
-%%FUSE%%lib/ucx/libucs_fuse.so.0.0.0
-%%FUSE%%libdata/pkgconfig/ucx-fuse.pc

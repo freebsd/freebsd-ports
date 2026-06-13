@@ -1,43 +1,41 @@
-PORTNAME=		ucx
-DISTVERSION=		1.20.0
-PORTREVISION=		1
-CATEGORIES=		net
-MASTER_SITES=		https://github.com/openucx/ucx/releases/download/v${DISTVERSION}/
+PORTNAME=	ucx
+DISTVERSION=	1.20.1
+CATEGORIES=	net
+MASTER_SITES=	https://github.com/openucx/ucx/releases/download/v${DISTVERSION}/
 
-MAINTAINER=		rikka.goering@outlook.de
-COMMENT=		Unified Communication X framework (UCX)
-WWW=			https://openucx.org/
+MAINTAINER=	rikka.goering@outlook.de
+COMMENT=	Unified Communication X framework (UCX)
+WWW=		https://openucx.org/
 
-LICENSE=		BSD3CLAUSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	uses arch-specific CPU backends; armv7 is not supported upstream and does not build on FreeBSD
 
-BUILD_DEPENDS=		${LOCALBASE}/share/aclocal/ax_c_float_words_bigendian.m4:devel/autoconf-archive
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_c_float_words_bigendian.m4:devel/autoconf-archive
 
-USES=			autoreconf gmake libtool pkgconfig
-USE_LDCONFIG=		yes
+USES=		autoreconf dos2unix gmake libtool pkgconfig
+USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-mt \
-			--with-go=no \
-			--enable-compiler-opt=0 \
-			--disable-doxygen-doc
-CONFIGURE_ENV+=		GIT=/usr/bin/false
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-doxygen-doc \
+		--enable-compiler-opt=0 \
+		--enable-gtest \
+		--enable-mt \
+		--with-go=no
+CONFIGURE_ENV=	GIT=/usr/bin/false
+INSTALL_TARGET=	install-strip
+TEST_ENV+=	LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
+CFLAGS+=	-Wno-error
+CXXFLAGS+=	-Wno-error
+LDFLAGS+=	-lexecinfo -lprocstat -lutil
 
-INSTALL_TARGET=		install-strip
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-TEST_ENV+=		LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
-
-CFLAGS+=		-Wno-error
-CXXFLAGS+=		-Wno-error
-LDFLAGS+=		-lexecinfo
-
-PORTDOCS=		*
-PORTEXAMPLES=		*
-
-OPTIONS_DEFINE=		DOCS EXAMPLES FUSE IBVERBS IODEMO UMAD PERFTEST
-OPTIONS_DEFAULT=	IODEMO PERFTEST FUSE
+OPTIONS_DEFINE=		DOCS EXAMPLES FUSE IBVERBS IODEMO PERFTEST UMAD
+OPTIONS_DEFAULT=	FUSE IODEMO PERFTEST
 OPTIONS_SUB=		yes
 
 IBVERBS_DESC=		Enable InfiniBand/RDMA (verbs) transport
@@ -56,12 +54,16 @@ UMAD_IMPLIES=		IBVERBS PERFTEST
 UMAD_CONFIGURE_ON=	--with-mad=${LOCALBASE}
 UMAD_CONFIGURE_OFF=	--with-mad=no
 
+post-patch:
+	${REINPLACE_CMD} 's|^examplesdir = $$(pkgdatadir)/examples$$|examplesdir = ${EXAMPLESDIR}|' \
+		${WRKSRC}/examples/Makefile.am
+
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/ucx.conf ${STAGEDIR}${ETCDIR}/ucx.conf.sample
 
 do-test:
-	@${ECHO_MSG} "===> Running UCX smoke tests (ucx_info)"
-	${SETENVI} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/ucx_info -v >/dev/null
-	${SETENVI} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/ucx_info -d >/dev/null
+	cd ${WRKSRC}/test/gtest && \
+		${SETENV} ${TEST_ENV} ${MAKE_CMD} && \
+		${SETENV} ${TEST_ENV} ./gtest --gtest_filter=-malloc_hook*:sysv/*:test_rcache*:test_rcache_pfn*:test_vfs_sock*:test_datatype.hlist_for_each_extract_if:tcp/test_uct_pending.pending_fairness*:tcp/test_uct_peer_failure.purge_failed_peer*:tcp/test_uct_pending.pending_purge*:tcp/test_uct_iface.is_reachable*:tcp/test_uct_perf*:tcp/test_uct_loopback*:tcp/test_uct_tcp.listener_flood_connect_and_send_large*:tcp/test_uct_tcp.listener_flood_connect_and_send_small*:tcp/test_uct_tcp.check_addr_len*:shm*/*:mm_tcp/*:ib_shm/*:ud_tcp/*:all/*:*/test_ucp_am*:*/test_ucp_loopback*:tcp/test_ucp_perf*:*/test_ucp_proto_mock_self.rkey_ptr*:*/test_ucp_tag_probe*:test_config.test_config_file:test_config.test_config_file_parse_files:signal/*:*/test_async.many_timers*:*/test_ucp_peer_failure_keepalive*:*/test_ucp_mmap*:self/test_ucp_wakeup.signal*:tcp/test_ucp_wakeup.signal*:tcp/test_proto_reset.am_eager_multi_bcopy*:tcp/test_uct_sockaddr.err_handle*:tcp/test_ucp_sockaddr_protocols_diff_net_devices*:*.*rndv*:*/test_ucp_tag_match_rndv_align*:tcp/test_ucp_sockaddr_iface_activate*
 
 .include <bsd.port.mk>
