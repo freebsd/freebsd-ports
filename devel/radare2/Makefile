@@ -1,5 +1,5 @@
 PORTNAME=	radare2
-DISTVERSION=	6.0.7
+DISTVERSION=	6.0.8
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,8 +19,8 @@ CPE_VENDOR=	radare
 PATHFIX_MAKEFILEIN=	Makefile
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg
-GH_TUPLE=	radareorg:sdb:2.2.2:sdb/subprojects/sdb \
-		quickjs-ng:quickjs:6a9fe9af5ca0bf7c49ae697edef44864272317d1:qjs/subprojects/qjs
+GH_TUPLE=	radareorg:sdb:2.3.0:sdb/subprojects/sdb \
+		quickjs-ng:quickjs:d405777f7eefa22c17c12970317ef3d6e7658f5a:qjs/subprojects/qjs
 
 SHEBANG_FILES=		sys/clang-format-radare2
 
