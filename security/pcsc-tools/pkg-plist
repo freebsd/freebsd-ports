@@ -4,6 +4,7 @@ bin/gscriptor
 bin/scriptor
 share/applications/gscriptor.desktop
 share/locale/fr/LC_MESSAGES/pcsc-tools.mo
+share/locale/ka/LC_MESSAGES/pcsc-tools.mo
 share/locale/ru/LC_MESSAGES/pcsc-tools.mo
 share/man/man1/ATR_analysis.1p.gz
 share/man/man1/gscriptor.1.gz
