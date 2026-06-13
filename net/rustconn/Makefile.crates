@@ -52,7 +52,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		blake2-0.10.6 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
-		block-buffer-0.12.0 \
+		block-buffer-0.12.1 \
 		block-padding-0.4.2 \
 		block2-0.6.2 \
 		bumpalo-3.20.3 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cairo-sys-rs-0.22.0 \
 		cast-0.3.0 \
 		cbc-0.2.1 \
-		cc-1.2.63 \
+		cc-1.2.64 \
 		cesu8-1.1.0 \
 		cfg-expr-0.15.8 \
 		cfg-expr-0.20.8 \
@@ -344,7 +344,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
 		md4-0.10.2 \
-		memchr-2.8.1 \
+		memchr-2.8.2 \
 		memmap2-0.9.10 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
@@ -535,7 +535,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		slug-0.1.6 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		socket2-0.6.4 \
 		spice-client-0.2.0 \
 		spin-0.9.8 \
@@ -717,7 +717,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		xmlwriter-0.1.0 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		yuv-0.8.14 \
+		yuv-0.8.15 \
 		zbus-5.16.0 \
 		zbus_macros-5.16.0 \
 		zbus_names-4.3.2 \
