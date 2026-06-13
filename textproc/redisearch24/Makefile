@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
+DISTVERSION=	2.4.3
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -17,8 +17,8 @@ USES=		cmake compiler
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	RedisAI:VectorSimilarity:b341bb7:vectorsimilarity/deps/VectorSimilarity \
-			google:cpu_features:2f5a7bf:cpu_features/deps/cpu_features
+GH_TUPLE=	RedisAI:VectorSimilarity:adfea2c:vectorsimilarity/deps/VectorSimilarity \
+			google:cpu_features:v0.7.0:cpu_features/deps/cpu_features
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd
