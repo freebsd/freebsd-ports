@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.2
+DISTVERSION=	3.8.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -350,8 +350,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		polycool-0.4.0 \
 		pom-1.1.0 \
 		portable-atomic-1.13.1 \
-		postgres-protocol-0.6.11 \
-		postgres-types-0.2.13 \
+		postgres-protocol-0.6.12 \
+		postgres-types-0.2.14 \
 		postscript-0.14.1 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
@@ -514,7 +514,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.52.1 \
 		tokio-macros-2.7.0 \
-		tokio-postgres-0.7.17 \
+		tokio-postgres-0.7.18 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.18 \
 		tokio-util-0.7.18 \
