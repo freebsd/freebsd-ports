@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# PROVIDE: telemt
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# telemt_enable: Set to YES to enable the telemt service.
+#		Default: NO
+#
+# telemt_config: Configuration file
+#		Default: /usr/local/etc/telemt/config.toml
+#
+# telemt_uid: The user account used to run the telemt daemon.
+#		Default:  "nobody"
+#
+# telemt_gid: The group account used to own files created by this script.
+#		Default:  "nobody"
+#
+# telemt_flags: Additional flags to pass to the telemt daemon.
+#		Default:  "--syslog"
+#
+
+. /etc/rc.subr
+name=telemt
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${telemt_enable:="NO"}
+: ${telemt_config:="/usr/local/etc/telemt/config.toml"}
+: ${telemt_uid:="nobody"}
+: ${telemt_gid:="nobody"}
+: ${telemt_flags:="--syslog"}
+
+pidfile="/var/run/telemt/telemt.pid"
+
+command="/usr/local/bin/telemt"
+command_args="--daemon --pid-file ${pidfile} --run-as-user ${telemt_uid} --run-as-group ${telemt_gid} ${telemt_config}"
+
+start_precmd="${name}_prestart"
+extra_commands="reload"
+
+telemt_prestart() {
+	pidfile_dir="$(dirname "${pidfile}")"
+	if ! [ -d "${pidfile_dir}" ]; then
+		install -d -m 755 -o "${telemt_uid}" -g "${telemt_gid}" "${pidfile_dir}"
+	fi
+}
+
+run_rc_command "$1"

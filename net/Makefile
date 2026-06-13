@@ -1616,6 +1616,7 @@
     SUBDIR += td-system-tools
     SUBDIR += tdetect
     SUBDIR += teddycloud
+    SUBDIR += telemt
     SUBDIR += termshark
     SUBDIR += tftpgrab
     SUBDIR += throttled
