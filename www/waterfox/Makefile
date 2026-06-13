@@ -1,6 +1,5 @@
 PORTNAME=	waterfox
-DISTVERSION=	6.6.13
-PORTREVISION=	1
+DISTVERSION=	6.6.14
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -32,7 +31,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 USE_GECKO=	gecko
 USE_GITHUB=	yes
 GH_ACCOUNT=	BrowserWorks
-GH_TUPLE=	BrowserWorks:l10n:f17435e:l10n/waterfox/browser/locales
+GH_TUPLE=	BrowserWorks:l10n:a2e5c9b:l10n/waterfox/browser/locales
 USE_MOZILLA=	-sqlite
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
@@ -87,8 +86,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
-	@${REINPLACE_CMD} -e 's|wasm32-wasi|&p1|' \
-		${WRKSRC}/build/moz.configure/toolchain.configure
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${STAGEDIR}${DESKTOPDIR}
