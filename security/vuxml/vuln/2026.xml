@@ -1,3 +1,52 @@
+  <vuln vid="94f93681-6775-11f1-8044-002590af0794">
+    <topic>caddy -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+      <name>caddy</name>
+      <range><lt>2.11.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Caddy project reports:</p>
+      <blockquote cite="https://github.com/caddyserver/caddy/releases/tag/v2.11.4">
+      <p>Caddy 2.11.4 contains multiple security fixes.</p>
+      </blockquote>
+      <p>GitHub Security Advisory GHSA-qrp7-cvwr-j2c6 reports:</p>
+      <blockquote cite="https://github.com/caddyserver/caddy/security/advisories/GHSA-qrp7-cvwr-j2c6">
+      <p>Windows-encoded backslashes in request paths could bypass
+      path-scoped authorization rules before files are served by
+      <code>file_server</code>.</p>
+      </blockquote>
+      <p>GitHub Security Advisory GHSA-f59h-q822-g45g reports:</p>
+      <blockquote cite="https://github.com/caddyserver/caddy/security/advisories/GHSA-f59h-q822-g45g">
+      <p><code>forward_auth copy_headers</code> could fail to remove
+      underscore aliases of copied identity headers before FastCGI header
+      normalization, allowing identity or group header spoofing.</p>
+      </blockquote>
+      <p>GitHub Security Advisory GHSA-vcc4-2c75-vc9v reports:</p>
+      <blockquote cite="https://github.com/caddyserver/caddy/security/advisories/GHSA-vcc4-2c75-vc9v">
+      <p>The <code>stripHTML</code> template function could fail to remove
+      malformed HTML, potentially allowing client-side cross-site
+      scripting if untrusted output is later rendered as HTML.</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-52844</cvename>
+      <cvename>CVE-2026-52845</cvename>
+      <cvename>CVE-2026-52846</cvename>
+      <url>https://github.com/caddyserver/caddy/releases/tag/v2.11.4</url>
+      <url>https://github.com/caddyserver/caddy/security/advisories/GHSA-qrp7-cvwr-j2c6</url>
+      <url>https://github.com/caddyserver/caddy/security/advisories/GHSA-f59h-q822-g45g</url>
+      <url>https://github.com/caddyserver/caddy/security/advisories/GHSA-vcc4-2c75-vc9v</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ac9bab80-6618-11f1-8e04-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
