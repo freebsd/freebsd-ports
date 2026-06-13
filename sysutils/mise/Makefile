@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.6.3
+DISTVERSION=	2026.6.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +56,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		astral-reqwest-middleware-0.5.1 \
 		astral-tokio-tar-0.6.2 \
 		astral_async_http_range_reader-0.11.0 \
-		astral_async_zip-0.0.17 \
+		astral_async_zip-0.0.18 \
 		async-backtrace-0.2.7 \
 		async-backtrace-attributes-0.2.7 \
 		async-compression-0.4.42 \
@@ -111,7 +111,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bit-vec-0.8.0 \
 		bitflags-2.13.0 \
 		bitvec-1.0.1 \
-		blake2-0.10.6 \
+		blake2-0.11.0-rc.6 \
 		blake3-1.8.5 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.0 \
@@ -260,7 +260,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		exec-0.3.1 \
 		expr-lang-1.1.1 \
 		eyre-0.6.12 \
-		fancy-regex-0.17.0 \
+		fancy-regex-0.18.0 \
 		faster-hex-0.10.0 \
 		fastrand-2.4.1 \
 		fiat-crypto-0.2.9 \
@@ -542,7 +542,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		os_pipe-1.2.3 \
 		outref-0.5.2 \
 		owo-colors-4.3.0 \
-		papergrid-0.17.0 \
+		papergrid-0.18.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -550,7 +550,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pastey-0.2.3 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
-		path_resolver-0.2.10 \
+		path_resolver-0.2.11 \
 		pbkdf2-0.12.2 \
 		pbkdf2-0.13.0 \
 		pem-3.0.6 \
@@ -617,20 +617,20 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
-		rattler-0.43.2 \
-		rattler_cache-0.8.2 \
-		rattler_conda_types-0.46.4 \
-		rattler_digest-1.3.0 \
-		rattler_macros-1.1.0 \
-		rattler_menuinst-0.2.62 \
-		rattler_networking-0.27.2 \
-		rattler_package_streaming-0.26.2 \
-		rattler_pty-0.2.12 \
+		rattler-0.44.3 \
+		rattler_cache-0.9.1 \
+		rattler_conda_types-0.47.0 \
+		rattler_digest-1.3.1 \
+		rattler_macros-1.1.1 \
+		rattler_menuinst-0.2.65 \
+		rattler_networking-0.28.0 \
+		rattler_package_streaming-0.26.3 \
+		rattler_pty-0.2.13 \
 		rattler_redaction-0.2.1 \
-		rattler_repodata_gateway-0.29.2 \
-		rattler_shell-0.27.2 \
-		rattler_solve-7.1.1 \
-		rattler_virtual_packages-2.4.1 \
+		rattler_repodata_gateway-0.29.4 \
+		rattler_shell-0.27.5 \
+		rattler_solve-7.1.2 \
+		rattler_virtual_packages-3.0.0 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
@@ -782,7 +782,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		sysctl-0.5.5 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
-		tabled-0.20.0 \
+		tabled-0.21.0 \
 		tabled_derive-0.11.0 \
 		tap-1.0.1 \
 		taplo-0.14.0 \
