@@ -5,8 +5,9 @@
 to enable turnserver as an automatically started system service,
 you have to:
 
-	a) Create and edit %%PREFIX%%/etc/turnserver.conf file.
-	Use %%PREFIX%%/etc/turnserver.conf.sample as an example.
+	a) Edit %%PREFIX%%/etc/turnserver.conf as necessary. You can always
+	refer to %%PREFIX%%/etc/turnserver.conf.sample for the original
+	example corresponding to the latest version turnserver.
 
 	b) For user accounts settings: set up SQLite or PostgreSQL or
 	MySQL or Redis database for user accounts.
