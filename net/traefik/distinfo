@@ -1,3 +1,5 @@
-TIMESTAMP = 1778785441
+TIMESTAMP = 1781350455
 SHA256 (traefik-3.7.1.tar.xz) = eec16fb917306b27537ca3ab585182c058373eaf5c7fc8f42e95003ea94ab699
 SIZE (traefik-3.7.1.tar.xz) = 25827640
+SHA256 (traefik-3.7.1-3.7.5.patch.xz) = 86159c1523cab76444494c8e406ac8004b660280191bbdebce8b7a77a956aacb
+SIZE (traefik-3.7.1-3.7.5.patch.xz) = 502548
