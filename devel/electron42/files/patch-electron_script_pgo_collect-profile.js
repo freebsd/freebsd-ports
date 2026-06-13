@@ -1,6 +1,6 @@
---- electron/script/pgo/collect-profile.js.orig	2026-06-02 11:33:02 UTC
+--- electron/script/pgo/collect-profile.js.orig	2026-06-09 06:05:33 UTC
 +++ electron/script/pgo/collect-profile.js
-@@ -71,7 +71,7 @@ function installTrustedCA(caCertPath) {
+@@ -75,7 +75,7 @@ function installTrustedCA(caCertPath) {
  // network workload coverage degrades but collection still succeeds.
  function installTrustedCA(caCertPath) {
    try {
