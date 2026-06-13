@@ -13,6 +13,9 @@ WWW=		https://fmd-foss.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	does not build
+
 USES=		go:modules nodejs:build tar:zstd
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
