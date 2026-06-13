@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	6.9.1
+DISTVERSION=	6.9.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		microsoft-gsl>0:devel/microsoft-gsl \
 		range-v3>0:devel/range-v3 \
 		tl-expected>0:devel/tl-expected \
+		toomanycooks>0:devel/toomanycooks \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm \
 		${LOCALBASE}/lib/libtde2e.a:net-im/tde2e \
@@ -107,6 +108,7 @@ post-extract:
 	${RM} -rf \
 		${WRKSRC}/Telegram/ThirdParty/GSL \
 		${WRKSRC}/Telegram/ThirdParty/QR \
+		${WRKSRC}/Telegram/ThirdParty/TooManyCooks \
 		${WRKSRC}/Telegram/ThirdParty/dispatch \
 		${WRKSRC}/Telegram/ThirdParty/expected \
 		${WRKSRC}/Telegram/ThirdParty/fcitx5-qt \
