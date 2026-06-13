@@ -1,4 +1,4 @@
---- src/tools/info/Makefile.am.orig	2026-02-04 09:52:46 UTC
+--- src/tools/info/Makefile.am.orig	2026-06-10 21:28:13 UTC
 +++ src/tools/info/Makefile.am
 @@ -14,7 +14,11 @@ build_config.h: $(top_builddir)/config.h Makefile
  # Produce a C header file which contains all defined variables from config.h
