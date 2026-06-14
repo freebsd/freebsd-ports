@@ -31,6 +31,10 @@ DEMOS_CMAKE_ON=		OMPL_BUILD_DEMOS
 FLANN_DESC=		Use FLANN for nearest neighbor queries
 FLANN_LIB_DEPENDS=	libflann.so:math/flann
 
+PLANNERARENA_DESC=	Install plannerarena (depends on R)
+PLANNERARENA_BUILD_DEPENDS=	Rscript:math/R
+PLANNERARENA_RUN_DEPENDS=	Rscript:math/R
+
 SPOT_DESC=		Use 'Spot' for creating finite automata from LTL formulae
 SPOT_USES=		compiler:c++14-lang
 SPOT_LIB_DEPENDS=	libspot.so:math/spot
@@ -38,7 +42,7 @@ SPOT_LIB_DEPENDS=	libspot.so:math/spot
 TRIANGLE_DESC=		Create triangular decompositions of 2D polygons
 TRIANGLE_LIB_DEPENDS=	libtriangle.so:math/triangle
 
-.for o in ${OPTIONS_DEFINE:NDEMOS}
+.for o in ${OPTIONS_DEFINE:NDEMOS:NPLANNERARENA}
 post-patch-${o}-off:
 	@${REINPLACE_CMD} 's|find_package(${o}|#&|i' ${WRKSRC}/CMakeModules/OMPLDependencies.cmake
 .endfor
