@@ -1,3 +1,3 @@
-TIMESTAMP = 1781169862
-SHA256 (langchain_core-1.4.6.tar.gz) = fb8547f83587c8f646f2136b106b732a974ffbff5537799125d16ed4c326eb63
-SIZE (langchain_core-1.4.6.tar.gz) = 949354
+TIMESTAMP = 1781401327
+SHA256 (langchain_core-1.4.7.tar.gz) = 7a825d77de0a3f39adbd9d09612a75e85527e14a52c1601089bcc062972d9f2b
+SIZE (langchain_core-1.4.7.tar.gz) = 952522
