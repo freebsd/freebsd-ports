@@ -153,7 +153,6 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Microsoft.AspNetCore.WebUtilities.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.dll
 %%DATADIR%%/bin/Microsoft.Bcl.AsyncInterfaces.dll
-%%DATADIR%%/bin/Microsoft.Bcl.Cryptography.dll
 %%DATADIR%%/bin/Microsoft.CSharp.dll
 %%DATADIR%%/bin/Microsoft.Data.SqlClient.dll
 %%DATADIR%%/bin/Microsoft.Extensions.Caching.Abstractions.dll
@@ -447,9 +446,9 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/System.Xml.XmlSerializer.dll
 %%DATADIR%%/bin/System.Xml.dll
 %%DATADIR%%/bin/System.dll
-%%DATADIR%%/bin/UI/194-74921861e81ae7f57cdf.js
-%%DATADIR%%/bin/UI/194-74921861e81ae7f57cdf.js.LICENSE.txt
-%%DATADIR%%/bin/UI/194-74921861e81ae7f57cdf.js.map
+%%DATADIR%%/bin/UI/194-4b970a3e3dd59743b5ea.js
+%%DATADIR%%/bin/UI/194-4b970a3e3dd59743b5ea.js.LICENSE.txt
+%%DATADIR%%/bin/UI/194-4b970a3e3dd59743b5ea.js.map
 %%DATADIR%%/bin/UI/195-9b5e92c9172ec7406271.js
 %%DATADIR%%/bin/UI/195-9b5e92c9172ec7406271.js.map
 %%DATADIR%%/bin/UI/Content/195-429be677181e931bd77f.css
@@ -495,8 +494,8 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-080df03727d73fef7848.js
-%%DATADIR%%/bin/UI/index-080df03727d73fef7848.js.map
+%%DATADIR%%/bin/UI/index-f406f68d8df178e3031d.js
+%%DATADIR%%/bin/UI/index-f406f68d8df178e3031d.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
