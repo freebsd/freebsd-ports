@@ -1,5 +1,5 @@
 PORTNAME=	pyvo
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,5 +31,6 @@ NO_ARCH=	yes
 TEST_ARGS=	--remote-data
 
 # tests as of 1.8.1: 510 passed, 1 xfailed, 1 xpassed in 101.56s
+# tests as of 1.9.1: failed to run due to missing pkg_resources (needed by pytest-doctestplus)
 
 .include <bsd.port.mk>
