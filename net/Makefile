@@ -997,12 +997,12 @@
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-amqp
-    SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-xmlrpc
     SUBDIR += pen
+    SUBDIR += php-oauth
     SUBDIR += php82-ldap
     SUBDIR += php82-soap
     SUBDIR += php82-sockets

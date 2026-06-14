@@ -5344,3 +5344,4 @@ sysutils/mixer||2026-06-13|Discontinued, use /etc/rc.d/mixer
 audio/freebsd-13-mixer||2026-06-13|Discontinued
 java/openjdk24||2026-06-14|Has expired: No longer supported by upstream
 devel/simian||2026-06-14|Has expired: does not fetch
+net/pecl-oauth2|net/php-oauth|2026-06-14|Renamed to avoid confusion between implemented protocol and library version. Also, pecl repository is deprecated
