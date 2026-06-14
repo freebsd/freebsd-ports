@@ -8538,7 +8538,6 @@
     SUBDIR += simde
     SUBDIR += simdjson
     SUBDIR += simgear
-    SUBDIR += simian
     SUBDIR += simpleini
     SUBDIR += sjasmplus
     SUBDIR += skalibs
