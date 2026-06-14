@@ -1,5 +1,5 @@
 PORTNAME=	bcunit
-DISTVERSION=	5.4.94
+DISTVERSION=	5.4.118
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,5 +16,7 @@ GL_ACCOUNT=	public
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
