@@ -1,9 +1,10 @@
 PORTNAME=	lmarbles
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	Atomix-like game of moving marbles in puzzles
 WWW=		http://lgames.sourceforge.net/index.php?project=LMarbles
 
