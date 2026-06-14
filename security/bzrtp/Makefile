@@ -1,5 +1,5 @@
 PORTNAME=	bzrtp
-DISTVERSION=	5.4.100
+DISTVERSION=	5.4.121
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -21,6 +21,8 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} 's/<alloca\.h>/<stdlib.h>/' ${WRKSRC}/src/zidCache.c
