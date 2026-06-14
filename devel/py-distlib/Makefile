@@ -1,5 +1,5 @@
 PORTNAME=	distlib
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	PYTHONHASHSEED=0 # needed for tests to succeed
 
-# tests as of 0.4.2: 21 failed, 205 passed, 21 skipped
+# tests as of 0.4.3: 1 failed, 224 passed, 21 skipped in 20.50s
 
 .include <bsd.port.mk>
