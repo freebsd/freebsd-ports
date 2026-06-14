@@ -739,7 +739,6 @@
     SUBDIR += minipro
     SUBDIR += minirsyslogd
     SUBDIR += mise
-    SUBDIR += mixer
     SUBDIR += mkdesktop
     SUBDIR += mkfwimage
     SUBDIR += mkjail

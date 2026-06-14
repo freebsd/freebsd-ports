@@ -196,7 +196,6 @@
     SUBDIR += fossmixer
     SUBDIR += freac
     SUBDIR += freealut
-    SUBDIR += freebsd-13-mixer
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
     SUBDIR += ft2-clone
