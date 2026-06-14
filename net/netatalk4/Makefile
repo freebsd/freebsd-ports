@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	4.4.3
+PORTVERSION=	4.5.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
 PKGNAMESUFFIX=	4
@@ -68,12 +68,11 @@ DBUS_USE=	GNOME+=glib20
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libdbus-1.so:devel/dbus
 DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
-DBUS_MESON_ON=		-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon \
-			-Dwith-dbus-sysconf-path=${LOCALBASE}/etc/dbus-1/system.d
+DBUS_MESON_ON=		-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon
 DBUS_MESON_OFF=		-Dwith-afpstats=false
 MYSQL_USES=	mysql
-MYSQL_MESON_ON=-Dwith-cnid-default-backend=mysql
-MYSQL_MESON_OFF=-Dwith-cnid-default-backend=dbd
+MYSQL_MESON_ON=-Dwith-cnid-backends=mysql
+MYSQL_MESON_OFF=-Dwith-cnid-backends=dbd
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
 ACL_MESON_OFF=-Dwith-acls=false
 LIBWRAP_MESON_OFF=-Dwith-tcp-wrappers=false
@@ -98,10 +97,6 @@ post-patch:
 #		${WRKSRC}/config/Makefile.in
 #	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
 #		${WRKSRC}/contrib/shell_utils/afpstats
-
-post-install:
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/contrib/bin_utils/macusers \
-		${STAGEDIR}${PREFIX}/bin/macusers
 
 .if ${PORT_OPTIONS:MPAM}
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/netatalk.sample
