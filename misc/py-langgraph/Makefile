@@ -1,5 +1,5 @@
 PORTNAME=	langgraph
-DISTVERSION=	1.2.4
+DISTVERSION=	1.2.5
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.0:misc/py-langchain-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.7:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint>=4.1.0:misc/py-langgraph-checkpoint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-prebuilt>=1.1.0:misc/py-langgraph-prebuilt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-sdk>=0.4.2:misc/py-langgraph-sdk@${PY_FLAVOR} \
@@ -25,5 +25,7 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
