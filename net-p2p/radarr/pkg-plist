@@ -155,7 +155,6 @@ etc/libmap.d/Radarr.conf
 %%DATADIR%%/bin/Microsoft.AspNetCore.WebUtilities.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.dll
 %%DATADIR%%/bin/Microsoft.Bcl.AsyncInterfaces.dll
-%%DATADIR%%/bin/Microsoft.Bcl.Cryptography.dll
 %%DATADIR%%/bin/Microsoft.CSharp.dll
 %%DATADIR%%/bin/Microsoft.Data.SqlClient.dll
 %%DATADIR%%/bin/Microsoft.Extensions.Caching.Abstractions.dll
@@ -463,9 +462,9 @@ etc/libmap.d/Radarr.conf
 %%DATADIR%%/bin/System.dll
 %%DATADIR%%/bin/UI/527-124e0afdd3dadbb9f546.js
 %%DATADIR%%/bin/UI/527-124e0afdd3dadbb9f546.js.map
-%%DATADIR%%/bin/UI/640-2de4d02a466c7e2f3b22.js
-%%DATADIR%%/bin/UI/640-2de4d02a466c7e2f3b22.js.LICENSE.txt
-%%DATADIR%%/bin/UI/640-2de4d02a466c7e2f3b22.js.map
+%%DATADIR%%/bin/UI/640-6947d4b0d5ef9ee0fef3.js
+%%DATADIR%%/bin/UI/640-6947d4b0d5ef9ee0fef3.js.LICENSE.txt
+%%DATADIR%%/bin/UI/640-6947d4b0d5ef9ee0fef3.js.map
 %%DATADIR%%/bin/UI/7-a1b843a798e447f93f4f.js
 %%DATADIR%%/bin/UI/7-a1b843a798e447f93f4f.js.map
 %%DATADIR%%/bin/UI/Content/527-daac9c32834ddf9a1b61.css
@@ -510,8 +509,8 @@ etc/libmap.d/Radarr.conf
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-656a65559611dbf26d6a.js
-%%DATADIR%%/bin/UI/index-656a65559611dbf26d6a.js.map
+%%DATADIR%%/bin/UI/index-02e24635035ed28fd7d3.js
+%%DATADIR%%/bin/UI/index-02e24635035ed28fd7d3.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
