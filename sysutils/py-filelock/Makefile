@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	3.29.1
+DISTVERSION=	3.29.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 3.29.1: 447 passed, 25 skipped, 6 warnings in 43.81s
+# tests as of 3.29.4: 1 failed, 468 passed, 25 skipped, 6 warnings in 44.64s
 
 .include <bsd.port.mk>
