@@ -1,5 +1,5 @@
-TIMESTAMP = 1781356633
-SHA256 (go/textproc_vale/vale-v3.15.0/v3.15.0.mod) = 0cbea1bda4072c852a43bc6a68af304ee8903e0a05f38cd3182d96830c848031
-SIZE (go/textproc_vale/vale-v3.15.0/v3.15.0.mod) = 2677
-SHA256 (go/textproc_vale/vale-v3.15.0/v3.15.0.zip) = 9be9657dd0ebaf1be5787cbbeb196d0b8f21cf7a505896b2b67af7cc1f4eb1d7
-SIZE (go/textproc_vale/vale-v3.15.0/v3.15.0.zip) = 10203280
+TIMESTAMP = 1781435741
+SHA256 (go/textproc_vale/vale-v3.15.1/v3.15.1.mod) = 0cbea1bda4072c852a43bc6a68af304ee8903e0a05f38cd3182d96830c848031
+SIZE (go/textproc_vale/vale-v3.15.1/v3.15.1.mod) = 2677
+SHA256 (go/textproc_vale/vale-v3.15.1/v3.15.1.zip) = d083c90276248df820b53e9b7e09926b3abe55e298f9b5cdc32b5bea28090219
+SIZE (go/textproc_vale/vale-v3.15.1/v3.15.1.zip) = 10203443
