@@ -11,9 +11,9 @@
 	<p>http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00003.html reports:</p>
 	<blockquote cite="http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00003.html">
 	  <p>Buffer overflow in the smiGetNode function in lib/smi.c in libsmi
-0.4.8 allows context-dependent attackers to execute arbitrary code
-via an Object Identifier (aka OID) represented as a numerical string
-containing many components separated by .  (dot) characters.</p>
+	    0.4.8 allows context-dependent attackers to execute arbitrary code
+	    via an Object Identifier (aka OID) represented as a numerical string
+	    containing many components separated by .  (dot) characters.</p>
 	</blockquote>
 	</body>
     </description>
