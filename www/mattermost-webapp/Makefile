@@ -1,5 +1,5 @@
 PORTNAME=	mattermost
-DISTVERSION=	10.11.19
+DISTVERSION=	11.7.3
 CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${DISTVERSION}/
 PKGNAMESUFFIX=	-webapp
@@ -7,7 +7,7 @@ DISTNAME=	mattermost-${PORTVERSION}-linux-amd64
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Webapp of Mattermost server
-WWW=		https://mattermost.org/
+WWW=		https://mattermost.com/
 
 LICENSE=	APACHE20
 
