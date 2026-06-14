@@ -297,7 +297,6 @@ share/pixmaps/sigil.png
 %%DATADIR%%/python3lib/xmlsanitycheck.py
 %%DATADIR%%/translations/sigil_ar.qm
 %%DATADIR%%/translations/sigil_ca.qm
-%%DATADIR%%/translations/sigil_cs.qm
 %%DATADIR%%/translations/sigil_de.qm
 %%DATADIR%%/translations/sigil_en.qm
 %%DATADIR%%/translations/sigil_es.qm
