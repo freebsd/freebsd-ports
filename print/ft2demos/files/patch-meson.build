@@ -1,6 +1,6 @@
---- meson.build.orig	2021-12-02 03:37:39.000000000 -0900
-+++ meson.build	2022-01-04 02:25:43.961204000 -0900
-@@ -112,7 +112,7 @@
+--- meson.build.orig	2026-03-22 15:10:04 UTC
++++ meson.build
+@@ -126,7 +126,7 @@ executable('ftgrid',
  
  executable('ftgrid',
    'src/ftgrid.c',
