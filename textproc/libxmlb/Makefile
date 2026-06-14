@@ -1,6 +1,5 @@
 PORTNAME=	libxmlb
-DISTVERSION=	0.3.22
-PORTREVISION=	1
+DISTVERSION=	0.3.27
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/hughsie/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -18,12 +17,14 @@ USES=		gnome meson pkgconfig localbase:ldflags tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dstemmer=true \
-		-Dtests=false
+MESON_ARGS=	-Dstemmer=true
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_MESON_TRUE=	gtkdoc
+
+TEST_MESON_TRUE=	tests
 
 .include <bsd.port.mk>
