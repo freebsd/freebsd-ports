@@ -1,5 +1,5 @@
 PORTNAME=	gpu-firmware-radeon-kmod
-PORTVERSION=	20220511
+PORTVERSION=	20260519
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -63,7 +63,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod-firmware
-GH_TAGNAME=	20220511
+GH_TAGNAME=	20260519
 
 MAKE_ENV=	KMODS="radeonkmsfw"
 MAKE_ENV+=	RADEONKMODS="${FLAVOR}"
