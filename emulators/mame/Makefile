@@ -1,5 +1,6 @@
 PORTNAME=	mame
 DISTVERSION=	0.288
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	laurent@FreeBSD.org
@@ -68,6 +69,8 @@ MAKE_ENV=	FORCE_DRC_C_BACKEND=1 \
 		USE_SYSTEM_LIB_ZSTD=1 \
 		USE_TAPTUN=1
 
+# for LZMA AES support
+CFLAGS_armv7=	-march=armv8-a+aes
 CFLAGS_aarch64=	-march=armv8-a+crc+crypto
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
@@ -187,10 +190,6 @@ _TOOLS_MANUALS=		-name *.1 -depth 1 -type f -and -not -type d -and -not \
 
 .if ${ARCH:Maarch64} || ${ARCH:Mamd64} || ${ARCH:Mpowerpc64*}
 MAKE_ENV+=		PTR64=1
-.endif
-
-.if ${ARCH} == aarch64 || ${ARCH} == armv7
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-3rdparty_lzma_C_AesOpt.c
 .endif
 
 # Compiling with -pg (PROFILE) causes the linker to run out of memory on i386,
