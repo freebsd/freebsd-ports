@@ -161,6 +161,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/enum.CoverageLevel.html
 %%DOCS%%share/doc/Pango/enum.Direction.html
 %%DOCS%%share/doc/Pango/enum.EllipsizeMode.html
+%%DOCS%%share/doc/Pango/enum.FontColor.html
 %%DOCS%%share/doc/Pango/enum.FontScale.html
 %%DOCS%%share/doc/Pango/enum.Gravity.html
 %%DOCS%%share/doc/Pango/enum.GravityHint.html
@@ -365,6 +366,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/method.FontDescription.copy_static.html
 %%DOCS%%share/doc/Pango/method.FontDescription.equal.html
 %%DOCS%%share/doc/Pango/method.FontDescription.free.html
+%%DOCS%%share/doc/Pango/method.FontDescription.get_color.html
 %%DOCS%%share/doc/Pango/method.FontDescription.get_family.html
 %%DOCS%%share/doc/Pango/method.FontDescription.get_features.html
 %%DOCS%%share/doc/Pango/method.FontDescription.get_gravity.html
@@ -380,6 +382,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/method.FontDescription.merge.html
 %%DOCS%%share/doc/Pango/method.FontDescription.merge_static.html
 %%DOCS%%share/doc/Pango/method.FontDescription.set_absolute_size.html
+%%DOCS%%share/doc/Pango/method.FontDescription.set_color.html
 %%DOCS%%share/doc/Pango/method.FontDescription.set_family.html
 %%DOCS%%share/doc/Pango/method.FontDescription.set_family_static.html
 %%DOCS%%share/doc/Pango/method.FontDescription.set_features.html
