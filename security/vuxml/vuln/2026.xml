@@ -1,3 +1,32 @@
+  <vuln vid="76b09b16-638b-11f1-8e16-901b0e13f1a0">
+    <topic>libsmi -- Buffer overflow in the smiGetNode function in lib/smi</topic>
+    <affects>
+    <package>
+	<name>libsmi</name>
+	<range><ge>0.4.8</ge><lt>0.4.8_3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00003.html reports:</p>
+	<blockquote cite="http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00003.html">
+	  <p>Buffer overflow in the smiGetNode function in lib/smi.c in libsmi
+0.4.8 allows context-dependent attackers to execute arbitrary code
+via an Object Identifier (aka OID) represented as a numerical string
+containing many components separated by .  (dot) characters.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2891</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2010-2891</url>
+    </references>
+    <dates>
+      <discovery>2010-10-27</discovery>
+      <entry>2026-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57e69b2c-67b2-11f1-b3b6-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
