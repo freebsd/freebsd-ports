@@ -1,0 +1,14 @@
+[
+{
+  type: upgrade
+  maximum_version: "1.0.8"
+  message: <<EOM
+games/lmarbles dropped global shared state support (/var/games/lmarbles/).
+
+Settings and high scores are now automatically managed per-user
+inside the home directory (~/.lmarbles/).
+
+You may safely delete the old shared directory and files.
+EOM
+}
+]
