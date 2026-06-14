@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260614:
+  AFFECTS: Users of www/mattermost-server
+  AUTHOR: decke@FreeBSD.org
+
+  Mattermost 11.x dropped support for MySQL / MariaDB database.
+
+  If you are affected please read the migration guidelines before updating:
+  https://docs.mattermost.com/deployment-guide/postgres-migration.html
+
 20260609:
   AFFECTS: Users of x11-wm/mango
   AUTHOR: nivit@FreeBSD.org

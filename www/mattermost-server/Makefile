@@ -1,12 +1,12 @@
 PORTNAME=	mattermost
-PORTVERSION=	10.11.19
+PORTVERSION=	11.7.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	Open source Slack-alternative in Golang and React
-WWW=		https://mattermost.org/
+COMMENT=	Open core, self-hosted collaboration platform in Golang and React
+WWW=		https://mattermost.com/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
@@ -26,8 +26,8 @@ GO_BUILDFLAGS=	-ldflags=" \
 		-X github.com/mattermost/mattermost/server/public/model.BuildHashEnterprise=none \
 		-X github.com/mattermost/mattermost/server/public/model.BuildEnterpriseReady=false"
 
-WRKSRC_SUBDIR=	server
 WWWDIR=		${PREFIX}/www/mattermost
+WRKSRC_SUBDIR=	server
 
 MATTERMOSTD_USER=	mattermost
 MATTERMOSTD_GROUP=	mattermost
