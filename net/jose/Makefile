@@ -1,6 +1,5 @@
 PORTNAME=	jose
-DISTVERSION=	14
-PORTREVISION=	1
+DISTVERSION=	15
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/latchset/${PORTNAME}/releases/download/v${DISTVERSION}/
 
