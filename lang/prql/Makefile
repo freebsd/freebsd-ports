@@ -1,6 +1,6 @@
 PORTNAME=	prql
-DISTVERSION=	0.13.12
-PORTREVISION=	1
+DISTVERSION=	0.13.13
+PORTREVISION=	0
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -26,7 +26,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		ansi-to-html-0.2.2 \
+		ansi-to-html-0.2.3 \
 		anstream-1.0.0 \
 		anstyle-1.0.13 \
 		anstyle-parse-1.0.0 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.44 \
-		chumsky-0.12.0 \
+		chumsky-0.13.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -229,7 +229,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lexical-util-1.0.7 \
 		lexical-write-float-1.0.6 \
 		lexical-write-integer-1.0.6 \
-		libc-0.2.185 \
+		libc-0.2.186 \
 		libduckdb-sys-1.10501.0 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
@@ -251,7 +251,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		memo-map-0.3.3 \
 		memoffset-0.9.1 \
 		minicov-0.3.8 \
-		minijinja-2.19.0 \
+		minijinja-2.20.0 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
 		mysql-28.0.0 \
@@ -321,10 +321,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		regex-1.12.3 \
-		regex-automata-0.3.9 \
 		regex-automata-0.4.14 \
 		regex-lite-0.1.9 \
-		regex-syntax-0.7.5 \
 		regex-syntax-0.8.10 \
 		relative-path-1.9.3 \
 		rend-0.4.2 \
@@ -388,7 +386,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		socket2-0.6.3 \
 		sqlformat-0.3.5 \
 		sqlite-wasm-rs-0.5.2 \
-		sqlparser-0.60.0 \
+		sqlparser-0.62.0 \
 		stable_deref_trait-1.2.1 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
@@ -404,7 +402,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
@@ -424,7 +422,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.51.1 \
+		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
 		tokio-postgres-0.7.13 \
 		tokio-rustls-0.24.1 \
@@ -467,9 +465,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		uuid-1.20.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
-		vergen-9.0.2 \
-		vergen-gitcl-1.0.2 \
-		vergen-lib-0.1.5 \
+		vergen-9.0.6 \
+		vergen-gitcl-1.0.8 \
+		vergen-lib-0.1.6 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
