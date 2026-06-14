@@ -1,5 +1,5 @@
 PORTNAME=	ip4r
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	databases net
 
 MAINTAINER=	axel.rau@chaos1.de
