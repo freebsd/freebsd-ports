@@ -190,9 +190,10 @@ HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 HTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 
-HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:39dc908:mod_zip
+HTTP_ZIP_GH_TUPLE=	evanmiller:mod_zip:a9f9afa:mod_zip
 HTTP_ZIP_USES=		iconv
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
+HTTP_ZIP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_zip_headers.c
 
 ICONV_GH_TUPLE=		calio:iconv-nginx-module:v0.14:iconv
 ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
@@ -200,13 +201,13 @@ ICONV_IMPLIES=		DEVEL_KIT
 ICONV_USES=		iconv
 ICONV_VARS=		DSO_EXTMODS+=iconv
 
-KEYVAL_GH_TUPLE=	kjdev:nginx-keyval:bb04325:keyval
+KEYVAL_GH_TUPLE=	kjdev:nginx-keyval:54164ab:keyval
 KEYVAL_VARS=		DSO_EXTMODS+=keyval
 
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LUA_GH_TUPLE=		openresty:lua-nginx-module:4b21d8f:lua \
+LUA_GH_TUPLE=		openresty:lua-nginx-module:cf6453c:lua \
 			openresty:lua-resty-core:9f8dc05:luarc \
 			openresty:lua-resty-lrucache:1c7cf6b:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
