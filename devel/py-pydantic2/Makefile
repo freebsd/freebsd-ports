@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>=0.6.0:devel/py-annotated-ty
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.1:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-inspection>=0.4.2:devel/py-typing-inspection@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
