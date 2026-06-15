@@ -122,6 +122,7 @@
     SUBDIR += crowdsec-firewall-bouncer
     SUBDIR += cryptlib
     SUBDIR += cryptopp
+    SUBDIR += cryptopp-modern
     SUBDIR += ct-submit
     SUBDIR += cvechecker
     SUBDIR += cvm

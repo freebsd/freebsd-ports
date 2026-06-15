@@ -1,0 +1,8 @@
+Actively maintained fork of Crypto++ library which features multiple
+algorithms and schemes such as:
+ChaCha20-Poly1305, AES, Camellia, Blowfish, Threefish, Triple-DES, block
+mode chipers, BLAKE2s, BLAKE3, GMAC, HMAC, SHA*, RSA, DSA, DH, ed25519,
+x25519, Argon2, ML-KEM ML-DSA to name a few.
+
+It acts as a drop-in API/ABI compatible replacement for the original
+Crypto++ library
