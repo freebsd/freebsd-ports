@@ -1,6 +1,5 @@
 PORTNAME=	lttoolbox
-DISTVERSION=	3.8.0
-PORTREVISION=	1
+DISTVERSION=	3.8.2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/apertium/${PORTNAME}/releases/download/v${DISTVERSION}/
 
