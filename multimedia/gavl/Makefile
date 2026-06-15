@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
 		libva.so:multimedia/libva
 
-USES=		gl libtool localbase pkgconfig
+USES=		gl iconv libtool localbase pkgconfig
 USE_GL=		egl gl
 USE_LDCONFIG=	yes
 
