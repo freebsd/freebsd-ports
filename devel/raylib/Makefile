@@ -9,7 +9,7 @@ WWW=		https://www.raylib.com/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake localbase:ldflags sdl xorg
+USES=		cmake cpe localbase:ldflags sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	raysan5
 USE_LDCONFIG=	yes
