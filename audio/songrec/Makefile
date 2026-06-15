@@ -1,6 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.7.3
-PORTREVISION=	1
+DISTVERSION=	0.7.4
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,11 +64,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cairo-rs-0.21.5 \
 		cairo-sys-rs-0.21.5 \
 		cc-1.2.60 \
-		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-expr-0.20.7 \
 		cfg-if-1.0.4 \
-		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
 		chrono-0.4.44 \
 		clang-sys-1.8.1 \
@@ -80,10 +77,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		colorchoice-1.0.5 \
 		combine-4.6.7 \
 		concurrent-queue-2.5.0 \
-		convert_case-0.8.0 \
 		cookie-factory-0.3.3 \
 		core-foundation-sys-0.8.7 \
 		coreaudio-rs-0.14.2 \
+		cpal-0.18.1 \
 		cpufeatures-0.3.0 \
 		crc32fast-1.5.0 \
 		crossbeam-utils-0.8.21 \
@@ -157,7 +154,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itoa-1.0.18 \
-		jni-0.21.1 \
+		jni-0.22.4 \
+		jni-macros-0.22.4 \
 		jni-sys-0.3.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
@@ -172,8 +170,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libpulse-binding-2.30.1 \
 		libpulse-sys-1.23.0 \
 		libredox-0.1.16 \
-		libspa-0.9.2 \
-		libspa-sys-0.9.2 \
+		libspa-0.10.0 \
+		libspa-sys-0.10.0 \
 		linux-raw-sys-0.12.1 \
 		locale_config-0.3.0 \
 		log-0.4.29 \
@@ -191,7 +189,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
 		ndk-sys-0.6.0+11769913 \
-		nix-0.30.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		num-bigint-0.4.6 \
@@ -225,8 +222,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.17 \
 		piper-0.2.5 \
-		pipewire-0.9.2 \
-		pipewire-sys-0.9.2 \
+		pipewire-0.10.0 \
+		pipewire-sys-0.10.0 \
 		pkg-config-0.3.33 \
 		png-0.18.1 \
 		polling-3.11.0 \
@@ -266,6 +263,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.9 \
+		simd_cesu8-1.1.1 \
+		simdutf8-0.1.5 \
 		slab-0.4.12 \
 		slice-ring-buffer-0.3.4 \
 		smallvec-1.15.1 \
@@ -314,7 +313,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		typeid-1.0.3 \
 		uds_windows-1.2.1 \
 		unicode-ident-1.0.24 \
-		unicode-segmentation-1.13.2 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
@@ -351,17 +349,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-numerics-0.3.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
-		windows-sys-0.45.0 \
 		windows-sys-0.61.2 \
-		windows-targets-0.42.2 \
 		windows-threading-0.2.1 \
-		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_msvc-0.42.2 \
-		windows_i686_gnu-0.42.2 \
-		windows_i686_msvc-0.42.2 \
-		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_msvc-0.42.2 \
 		winnow-0.7.15 \
 		winnow-1.0.2 \
 		wit-bindgen-0.51.0 \
@@ -378,17 +367,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zmij-1.0.21 \
 		zvariant-5.10.0 \
 		zvariant_derive-5.10.0 \
-		zvariant_utils-3.3.0 \
-		cpal@git+https://github.com/RustAudio/cpal.git?rev=1c40a85\#1c40a85e2e74b376c6b35eef8d111586d426a61f
+		zvariant_utils-3.3.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
 # known problem: The 'Audio input' combobox doesn't have any selections, see https://github.com/marin-m/SongRec/issues/115
-
-post-patch:
-	@${PATCH} -p0 -d ${WRKDIR}/cpal-1c40a85e2e74b376c6b35eef8d111586d426a61f \
-		< ${PATCHDIR}/cpal-alsa-estrpipe.patch
-	@${PATCH} -p0 -d ${WRKDIR}/cpal-1c40a85e2e74b376c6b35eef8d111586d426a61f \
-		< ${PATCHDIR}/cpal-frames-to-duration-bsd.patch
 
 .include <bsd.port.mk>
