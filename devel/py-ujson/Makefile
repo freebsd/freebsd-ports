@@ -17,7 +17,9 @@ LICENSE_PERMS_TclTk=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_PRODUCT=	ultrajson
+CPE_VENDOR=	ultrajson_project
 USE_PYTHON=	pep517 autoplist
 
 .include <bsd.port.mk>
