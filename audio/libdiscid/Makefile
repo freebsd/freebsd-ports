@@ -1,9 +1,12 @@
 PORTNAME=	libdiscid
-PORTVERSION=	0.6.5
+DISTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/v${PORTVERSION}/ \
-		http://ftp.osuosl.org/pub/musicbrainz/${PORTNAME}/ \
-		http://ftp.eu.metabrainz.org/pub/musicbrainz/${PORTNAME}/
+MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		https://data.musicbrainz.org/pub/musicbrainz/${PORTNAME}/
+
+PATCH_SITES=	https://github.com/metabrainz/${PORTNAME}/commit/
+PATCHFILES+=	d9e81a9a8af7679733907418a340c50e9fec8023.patch:-p1 # Use HTTPS for MusicBrainz URLs
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for creating MusicBrainz DiscIDs
