@@ -11,7 +11,8 @@ WWW=		https://pypi.org/pypi/pydash/
 
 LICENSE=	MIT
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	derrickgilland
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
