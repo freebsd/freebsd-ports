@@ -1,6 +1,5 @@
 PORTNAME=	zensical
-DISTVERSION=	0.0.43
-PORTREVISION=	1
+DISTVERSION=	0.0.45
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.8:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.7:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.20:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.21.2:textproc/py-pymdown-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.21.3:textproc/py-pymdown-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.2:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomli>=2.4.0:textproc/py-tomli@${PY_FLAVOR}
 
