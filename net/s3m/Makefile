@@ -1,6 +1,5 @@
 PORTNAME=	s3m
-DISTVERSION=	0.14.5
-PORTREVISION=	4
+DISTVERSION=	0.18.1
 CATEGORIES=	net
 
 MAINTAINER=	nbari@tequila.io
@@ -14,7 +13,7 @@ BROKEN_i386=	needs SSE or SSE2 type extensions to compile
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo ssl
+USES=		cargo
 USE_GITHUB=	yes
 
 PORTSCOUT=	limit:[0-9.]+
