@@ -1,5 +1,5 @@
 PORTNAME=	openbolt
-PORTVERSION=	5.5.0
+PORTVERSION=	5.6.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
