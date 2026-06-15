@@ -1,5 +1,5 @@
 PORTNAME=	openvox-agent
-PORTVERSION=	8.27.0
+PORTVERSION=	8.28.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
