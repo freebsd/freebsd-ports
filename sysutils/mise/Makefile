@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.6.9
+DISTVERSION=	2026.6.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -105,9 +105,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		beef-0.5.2 \
 		bindgen-0.72.1 \
 		binstall-tar-0.4.42 \
-		bit-set-0.6.0 \
 		bit-set-0.8.0 \
-		bit-vec-0.7.0 \
 		bit-vec-0.8.0 \
 		bitflags-2.13.0 \
 		bitvec-1.0.1 \
@@ -127,7 +125,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		byteorder-1.5.0 \
 		bytes-1.11.1 \
 		bytes-utils-0.1.4 \
-		bytesize-2.3.1 \
+		bytesize-2.4.0 \
 		bzip2-0.5.2 \
 		bzip2-0.6.1 \
 		bzip2-sys-0.1.13+1.0.8 \
@@ -266,7 +264,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fiat-crypto-0.2.9 \
 		file_url-0.3.1 \
 		filetime-0.2.29 \
-		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
 		fixedbitset-0.5.7 \
@@ -482,7 +479,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lua-src-550.0.0 \
 		luajit-src-210.6.6+707c12b \
 		lzma-rs-0.3.0 \
-		lzma-rust-0.1.7 \
 		lzma-rust2-0.16.4 \
 		lzma-sys-0.1.20 \
 		matchers-0.2.0 \
@@ -514,7 +510,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nom-8.0.0 \
 		nom-language-0.1.0 \
 		nonempty-0.12.0 \
-		nt-time-0.8.1 \
 		nu-ansi-term-0.50.3 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
@@ -526,7 +521,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
-		number_prefix-0.4.0 \
 		object-0.37.3 \
 		olpc-cjson-0.1.4 \
 		once_cell-1.21.4 \
@@ -717,7 +711,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_yaml-0.9.34+deprecated \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
-		sevenz-rust-0.6.1 \
 		sevenz-rust2-0.20.2 \
 		sha1-0.10.6 \
 		sha1-0.11.0 \
@@ -729,7 +722,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		shared_thread-0.2.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.1 \
-		shellexpand-3.1.2 \
 		shlex-1.3.0 \
 		shlex-2.0.1 \
 		sigchld-0.2.4 \
