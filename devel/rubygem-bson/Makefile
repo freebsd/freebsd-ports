@@ -12,6 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
 
-CPE_VENDOR=	bson_project
+CPE_VENDOR=	mongodb
 
 .include <bsd.port.mk>
