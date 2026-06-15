@@ -1,5 +1,5 @@
 PORTNAME=	openvoxdb
-PORTVERSION=	8.13.0
+PORTVERSION=	8.14.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
