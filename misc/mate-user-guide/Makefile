@@ -18,7 +18,7 @@ RUN_DEPENDS=	yelp:x11/yelp
 USES=		gettext gmake tar:xz
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	mate-desktop
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-user-guide/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
-PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>
