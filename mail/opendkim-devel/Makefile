@@ -1,8 +1,7 @@
 PORTNAME=	opendkim
 DISTVERSIONPREFIX=	rel-opendkim-
-DISTVERSION=	2.11.0-Beta2-48
-DISTVERSIONSUFFIX=	-g551ab382
-PORTREVISION=	3
+DISTVERSION=	2.11.0-Beta2-49
+DISTVERSIONSUFFIX=	-g1c7a9f47c
 CATEGORIES=	mail security
 PKGNAMESUFFIX=	-devel
 
@@ -22,39 +21,40 @@ USES=		autoreconf cpe libtool perl5 pkgconfig shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	trusteddomainproject
 GH_PROJECT=	OpenDKIM
+GH_TAGNAME=	1c7a9f47c658a2e2ff7f2211b9800c44f4ec046d
 USE_LDCONFIG=	yes
 USE_PERL5=	run
 
 SHEBANG_FILES=	opendkim/opendkim-genkey* reprrd/opendkim-reprrdimport* \
 		reputation/opendkim-* stats/opendkim-*
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-test-socket=./test.sock
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 TEST_TARGET=	check
 
-CONFLICTS_INSTALL=	opendkim
+CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-devel*
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=			BDB_BASE CURL DOCS FILTER GNUTLS JANSSON LDNS \
-				LMDB LUA MEMCACHED OPENDBX OPENLDAP POPAUTH \
+OPTIONS_DEFINE=			BDB_BASE CURL DOCS FILTER GNUTLS JANSSON LMDB \
+				LUA MEMCACHED OPENDBX OPENLDAP POPAUTH \
 				QUERY_CACHE SASL
 OPTIONS_DEFAULT=		FILTER LUA UNBOUND
 OPTIONS_GROUP=			DEVELOPER FFR
 OPTIONS_GROUP_DEVELOPER=	ALLSYMBOLS CODECOVERAGE DEBUG
-OPTIONS_GROUP_FFR=		ADSP_LISTS ATPS DB_HANDLE_POOLS DEFAULT_SENDER \
-				DIFFHEADERS IDENTITY_HEADER LDAP_CACHING \
-				LUA_ONLY_SIGNING POSTGRES_RECONNECT_HACK \
-				RATE_LIMIT RBL REPLACE_RULES REPRRD REPUTATION \
-				RESIGN SENDER_MACRO SOCKETDB STATS STATSEXT VBR
+OPTIONS_GROUP_FFR=		ATPS DB_HANDLE_POOLS DEFAULT_SENDER DIFFHEADERS \
+				IDENTITY_HEADER LDAP_CACHING \
+				POSTGRES_RECONNECT_HACK RATE_LIMIT RBL \
+				REPLACE_RULES REPRRD REPUTATION RESIGN \
+				SENDER_MACRO SOCKETDB STATS STATSEXT VBR
 OPTIONS_SINGLE=			RESOLV
 OPTIONS_SINGLE_RESOLV=		STOCK_RESOLVER UNBOUND
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=			yes
 
-ADSP_LISTS_DESC=		ADSP filtering for lists (experimental)
 ALLSYMBOLS_DESC=		Export all internal symbols for better test coverage
 ATPS_DESC=			Authorized Third Party Sign check
 BDB_BASE_DESC=			Use Berkeley DB from base
@@ -71,10 +71,8 @@ GNUTLS_DESC=			Use GnuTLS instead of OpenSSL
 IDENTITY_HEADER_DESC=		Special header to set identity
 JANSSON_DESC=			Statistics and other output as JSON data
 LDAP_CACHING_DESC=		LDAP query piggybacking and caching
-LDNS_DESC=			Use LDNS library for DNS queries
 LMDB_DESC=			Use Lightning Memory-Mapped DB key-value store
 LUA_DESC=			Describe filter policy with lua
-LUA_ONLY_SIGNING_DESC=		Message signing by Lua only
 MEMCACHED_DESC=			Use memcached as a data set
 OPENDBX_DESC=			Store filter policies via OpenDBX
 OPENLDAP_DESC=			Store filter policies in LDAP
@@ -95,8 +93,6 @@ STATS_DESC=			Per-message and per-signature statistics
 STOCK_RESOLVER_DESC=		Use the stock resolver library
 UNBOUND_DESC=			Use unbound DNS library
 VBR_DESC=			Vouch-By-Reference support
-
-ADSP_LISTS_CONFIGURE_ENABLE=	adsp_lists
 
 ALLSYMBOLS_CONFIGURE_ENABLE=	allsymbols
 
@@ -131,17 +127,13 @@ JANSSON_CONFIGURE_WITH=	libjansson
 LDAP_CACHING_USES=		ldap
 LDAP_CACHING_CONFIGURE_ENABLE=	ldap_caching
 
-LDNS_LIB_DEPENDS=	libldns.so:dns/ldns
-LDNS_CONFIGURE_WITH=	ldns
-
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 LMDB_CONFIGURE_WITH=	lmdb
 
-LUA_USES=		lua
-LUA_CONFIGURE_WITH=	lua
-
-LUA_ONLY_SIGNING_IMPLIES=		LUA
-LUA_ONLY_SIGNING_CONFIGURE_ENABLE=	lua_only_signing
+LUA_USES=		lua:flavors
+LUA_CONFIGURE_ENABLE=	lua
+LUA_CONFIGURE_ENV=	LUA_CFLAGS=-I"${LUA_INCDIR}" \
+			LUA_LIBS=-L"${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_CONFIGURE_WITH=	libmemcached
@@ -217,14 +209,15 @@ USES+=			bdb
 LDFLAGS+=	-lpthread
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e '/PKG_CHECK_MODULES/s/lua5\.[0-9]/lua-${LUA_VER}/' \
-	    -e '/PKG_CHECK_MODULES/s/cyrussasl/libsasl2/'			 \
-	    ${WRKSRC}/configure.ac
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample \
 	    ${STAGEDIR}${PREFIX}/etc/mail/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${FLAVOR:Mlua*}
+PKGNAMESUFFIX=	-devel-${FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
