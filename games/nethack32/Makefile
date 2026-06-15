@@ -14,7 +14,9 @@ WWW=		https://www.nethack.org/
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-3.2.2
 
-USES=		tar:tgz xorg
+USES=		cpe tar:tgz xorg
+CPE_PRODUCT=	nethack
+CPE_VENDOR=	nethack
 USE_XORG=	xaw xpm
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"
