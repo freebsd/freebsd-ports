@@ -18,6 +18,7 @@ LICENSE_PERMS_SELv1=	pkg-mirror auto-accept
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cpe cargo
+CPE_VENDOR=	stalw
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
 GH_PROJECT=	stalwart
