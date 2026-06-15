@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-06-15 17:11:21 UTC
++++ pyproject.toml
+@@ -27,6 +27,7 @@ Funding = "https://www.paypal.me/careless25"
+ Funding = "https://www.paypal.me/careless25"
+ 
+ [tool.setuptools.packages.find]
++exclude = ["tests", "tests.*"]
+ where = ["."]
+ 
+ # ---------------------------------------------------------------------------
