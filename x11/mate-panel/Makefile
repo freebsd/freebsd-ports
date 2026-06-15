@@ -1,10 +1,10 @@
 PORTNAME=	mate-panel
-PORTVERSION=	1.28.4
-PORTREVISION=	2
+DISTVERSION=	1.28.4
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
-DIST_SUBDIR=	mate
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the MATE Desktop
@@ -21,16 +21,17 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libstartup-notification-1.so:x11/startup-notification
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
 		tar:xz xorg
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	mate-desktop
 USE_CSTD=	c99
 USE_MATE=	desktop libmateweather menus
 USE_XORG=	ice sm
 USE_GNOME=	cairo dconf gnomeprefix gtk30 intltool \
 		introspection:build librsvg2
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-panel/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
@@ -52,7 +53,7 @@ OPTIONS_SUB=	yes
 WAYLAND_LIB_DEPENDS=		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 WAYLAND_CONFIGURE_ENABLE=	wayland
 
-X11_USE= 			GNOME=libwnck3 XORG=x11,xau,xrandr
+X11_USE=			GNOME=libwnck3 XORG=x11,xau,xrandr
 X11_CONFIGURE_ENABLE=		x11
 X11_VARS=			GLIB_SCHEMAS+=org.mate.panel.applet.notification-area.gschema.xml \
 				GLIB_SCHEMAS+=org.mate.panel.applet.window-list.gschema.xml \
