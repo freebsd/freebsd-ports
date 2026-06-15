@@ -1,8 +1,9 @@
 PORTNAME=	mate-desktop
-PORTVERSION=	1.28.2
+DISTVERSION=	1.28.2
+PORTREVISION=	1
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
-DIST_SUBDIR=	mate
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for MATE
@@ -18,14 +19,15 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
 RUN_DEPENDS=	dconf-editor:devel/dconf-editor
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase pathfix \
 		pkgconfig python shebangfix tar:xz xorg
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	mate-desktop
 USE_XORG=	x11 xrandr
 USE_GNOME=	cairo dconf gdkpixbuf gnomeprefix gtk30 \
 		intltool introspection:build
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-desktop/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
