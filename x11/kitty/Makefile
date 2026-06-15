@@ -1,6 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.47.3
+DISTVERSION=	0.47.4
 PORTREVISION=	0
 CATEGORIES=	x11 wayland
 
@@ -24,15 +24,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libcanberra.so:audio/libcanberra \
 		libdbus-1.so:devel/dbus \
 		libepoll-shim-interpose.so:devel/libepoll-shim \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		liblcms2.so:graphics/lcms2 \
-		libpng.so:graphics/png \
-		librsync.so:net/librsync \
 		libwayland-client.so:graphics/wayland \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon \
@@ -40,7 +36,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 # ncursesw and tinfo >= 6.1 seem to be needed
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules,1.26 magick ncurses pkgconfig python shebangfix ssl \
+		go:modules,1.26 ncurses pkgconfig python shebangfix ssl \
 		tar:xz terminfo xorg
 CPE_VENDOR=	kovidgoyal
 
