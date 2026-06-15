@@ -12,7 +12,6 @@
     SUBDIR += apache-commons-lang3
     SUBDIR += apache-commons-logging
     SUBDIR += apache-commons-pool
-    SUBDIR += aparapi
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej

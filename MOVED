@@ -5349,4 +5349,5 @@ graphics/mesa-gallium-va|graphics/mesa-dri|2026-06-15|Merged into graphics/mesa-
 graphics/mesa-gallium-vdpau|graphics/mesa-dri|2026-06-15|Merged into graphics/mesa-dri
 graphics/libosmesa||2026-06-15|EOLed upstream
 graphics/mesa-gallium-xa||2026-06-15|EOLed upstream
-lang/clover||2026-06-14|EOLed upstream
+lang/clover||2026-06-15|EOLed upstream
+java/aparapi||2026-06-15|Has expired: no maintainer, no users in the ports tree, java 8 only, last upstream commit was 10 years ago
