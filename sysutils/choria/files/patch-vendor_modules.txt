@@ -1,4 +1,4 @@
---- vendor/modules.txt.orig
+--- /dev/null
 +++ vendor/modules.txt
 @@ -0,0 +1,984 @@
 +# al.essio.dev/pkg/shellescape v1.6.0
@@ -63,13 +63,13 @@
 +# github.com/cheekybits/genny v1.0.0
 +## explicit
 +github.com/cheekybits/genny/generic
-+# github.com/choria-io/appbuilder v0.17.0
++# github.com/choria-io/appbuilder v0.17.1
 +## explicit; go 1.25.0
 +github.com/choria-io/appbuilder/builder
 +github.com/choria-io/appbuilder/commands/exec
 +github.com/choria-io/appbuilder/commands/parent
 +github.com/choria-io/appbuilder/internal/sprig
-+# github.com/choria-io/ccm v0.0.27
++# github.com/choria-io/ccm v0.0.31
 +## explicit; go 1.25.0
 +github.com/choria-io/ccm/facts
 +github.com/choria-io/ccm/hiera
@@ -105,7 +105,7 @@
 +github.com/choria-io/ccm/resources/service
 +github.com/choria-io/ccm/resources/service/systemd
 +github.com/choria-io/ccm/templates
-+# github.com/choria-io/fisk v0.8.3
++# github.com/choria-io/fisk v0.9.0
 +## explicit; go 1.25.0
 +github.com/choria-io/fisk
 +github.com/choria-io/fisk/units
@@ -151,7 +151,7 @@
 +# github.com/dustin/go-humanize v1.0.1
 +## explicit; go 1.16
 +github.com/dustin/go-humanize
-+# github.com/ebitengine/purego v0.10.0
++# github.com/ebitengine/purego v0.10.1
 +## explicit; go 1.18
 +github.com/ebitengine/purego
 +github.com/ebitengine/purego/internal/cgo
@@ -194,7 +194,7 @@
 +# github.com/gdamore/encoding v1.0.1
 +## explicit; go 1.9
 +github.com/gdamore/encoding
-+# github.com/gdamore/tcell/v2 v2.13.9
++# github.com/gdamore/tcell/v2 v2.13.10
 +## explicit; go 1.24.0
 +github.com/gdamore/tcell/v2
 +github.com/gdamore/tcell/v2/terminfo
@@ -292,7 +292,7 @@
 +github.com/google/go-tpm/legacy/tpm2
 +github.com/google/go-tpm/tpmutil
 +github.com/google/go-tpm/tpmutil/tbs
-+# github.com/google/pprof v0.0.0-20260507013755-92041b743c96
++# github.com/google/pprof v0.0.0-20260604005048-7023385849c0
 +## explicit; go 1.24.0
 +github.com/google/pprof/profile
 +# github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
@@ -337,7 +337,7 @@
 +# github.com/itchyny/timefmt-go v0.1.8
 +## explicit; go 1.24
 +github.com/itchyny/timefmt-go
-+# github.com/jedib0t/go-pretty/v6 v6.7.10
++# github.com/jedib0t/go-pretty/v6 v6.8.1
 +## explicit; go 1.18
 +github.com/jedib0t/go-pretty/v6/progress
 +github.com/jedib0t/go-pretty/v6/table
@@ -367,7 +367,7 @@
 +# github.com/lestrrat-go/httpcc v1.0.1
 +## explicit; go 1.16
 +github.com/lestrrat-go/httpcc
-+# github.com/lestrrat-go/httprc/v3 v3.0.5
++# github.com/lestrrat-go/httprc/v3 v3.0.6
 +## explicit; go 1.23.0
 +github.com/lestrrat-go/httprc/v3
 +github.com/lestrrat-go/httprc/v3/errsink
@@ -415,13 +415,13 @@
 +# github.com/lufia/plan9stats v0.0.0-20260330125221-c963978e514e
 +## explicit; go 1.21
 +github.com/lufia/plan9stats
-+# github.com/mattn/go-colorable v0.1.14
++# github.com/mattn/go-colorable v0.1.15
 +## explicit; go 1.18
 +github.com/mattn/go-colorable
 +# github.com/mattn/go-isatty v0.0.22
 +## explicit; go 1.21
 +github.com/mattn/go-isatty
-+# github.com/mattn/go-runewidth v0.0.23
++# github.com/mattn/go-runewidth v0.0.24
 +## explicit; go 1.20
 +github.com/mattn/go-runewidth
 +# github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
@@ -480,10 +480,10 @@
 +github.com/nats-io/jsm.go/monitor
 +github.com/nats-io/jsm.go/natscontext
 +github.com/nats-io/jsm.go/schemas
-+# github.com/nats-io/jwt/v2 v2.8.1
++# github.com/nats-io/jwt/v2 v2.8.2
 +## explicit; go 1.25.0
 +github.com/nats-io/jwt/v2
-+# github.com/nats-io/nats-server/v2 v2.14.0
++# github.com/nats-io/nats-server/v2 v2.14.2
 +## explicit; go 1.25.0
 +github.com/nats-io/nats-server/v2/conf
 +github.com/nats-io/nats-server/v2/internal/fastrand
@@ -524,10 +524,10 @@
 +github.com/nats-io/natscli/options
 +github.com/nats-io/natscli/plugins
 +github.com/nats-io/natscli/top
-+# github.com/nats-io/nkeys v0.4.15
-+## explicit; go 1.24.0
++# github.com/nats-io/nkeys v0.4.16
++## explicit; go 1.25.0
 +github.com/nats-io/nkeys
-+# github.com/nats-io/nsc/v2 v2.12.2
++# github.com/nats-io/nsc/v2 v2.15.0
 +## explicit; go 1.25.0
 +github.com/nats-io/nsc/v2/cmd/store
 +github.com/nats-io/nsc/v2/home
@@ -540,7 +540,7 @@
 +# github.com/oleiade/reflections v1.1.0
 +## explicit; go 1.22.6
 +github.com/oleiade/reflections
-+# github.com/onsi/ginkgo/v2 v2.28.3
++# github.com/onsi/ginkgo/v2 v2.31.0
 +## explicit; go 1.25.0
 +github.com/onsi/ginkgo/v2
 +github.com/onsi/ginkgo/v2/config
@@ -564,7 +564,7 @@
 +github.com/onsi/ginkgo/v2/internal/testingtproxy
 +github.com/onsi/ginkgo/v2/reporters
 +github.com/onsi/ginkgo/v2/types
-+# github.com/onsi/gomega v1.40.0
++# github.com/onsi/gomega v1.42.0
 +## explicit; go 1.24.0
 +github.com/onsi/gomega
 +github.com/onsi/gomega/format
@@ -578,7 +578,7 @@
 +github.com/onsi/gomega/matchers/support/goraph/node
 +github.com/onsi/gomega/matchers/support/goraph/util
 +github.com/onsi/gomega/types
-+# github.com/open-policy-agent/opa v1.16.2
++# github.com/open-policy-agent/opa v1.17.1
 +## explicit; go 1.25.0
 +github.com/open-policy-agent/opa/capabilities
 +github.com/open-policy-agent/opa/internal/bundle
@@ -671,8 +671,8 @@
 +# github.com/prometheus/client_model v0.6.2
 +## explicit; go 1.22.0
 +github.com/prometheus/client_model/go
-+# github.com/prometheus/common v0.67.5
-+## explicit; go 1.24.0
++# github.com/prometheus/common v0.68.1
++## explicit; go 1.25.0
 +github.com/prometheus/common/expfmt
 +github.com/prometheus/common/model
 +# github.com/prometheus/procfs v0.20.1
@@ -715,7 +715,7 @@
 +# github.com/segmentio/ksuid v1.0.4
 +## explicit; go 1.12
 +github.com/segmentio/ksuid
-+# github.com/shirou/gopsutil/v4 v4.26.4
++# github.com/shirou/gopsutil/v4 v4.26.5
 +## explicit; go 1.24.0
 +github.com/shirou/gopsutil/v4/common
 +github.com/shirou/gopsutil/v4/cpu
@@ -735,8 +735,8 @@
 +## explicit; go 1.21.0
 +github.com/spf13/cast
 +github.com/spf13/cast/internal
-+# github.com/synadia-io/jwt-auth-builder.go v0.0.9
-+## explicit; go 1.23.0
++# github.com/synadia-io/jwt-auth-builder.go v0.0.10
++## explicit; go 1.25.0
 +github.com/synadia-io/jwt-auth-builder.go
 +github.com/synadia-io/jwt-auth-builder.go/providers/nsc
 +# github.com/synadia-io/orbit.go/counters v0.1.1
@@ -776,7 +776,7 @@
 +## explicit; go 1.24
 +github.com/valyala/fastjson
 +github.com/valyala/fastjson/fastfloat
-+# github.com/vektah/gqlparser/v2 v2.5.33
++# github.com/vektah/gqlparser/v2 v2.5.34
 +## explicit; go 1.22
 +github.com/vektah/gqlparser/v2/ast
 +github.com/vektah/gqlparser/v2/gqlerror
@@ -825,7 +825,7 @@
 +# go.yaml.in/yaml/v3 v3.0.4
 +## explicit; go 1.16
 +go.yaml.in/yaml/v3
-+# golang.org/x/crypto v0.51.0
++# golang.org/x/crypto v0.53.0
 +## explicit; go 1.25.0
 +golang.org/x/crypto/bcrypt
 +golang.org/x/crypto/blake2b
@@ -843,16 +843,16 @@
 +golang.org/x/crypto/pbkdf2
 +golang.org/x/crypto/salsa20/salsa
 +golang.org/x/crypto/scrypt
-+# golang.org/x/exp v0.0.0-20260508232706-74f9aab9d74a
++# golang.org/x/exp v0.0.0-20260611194520-c48552f49976
 +## explicit; go 1.25.0
 +golang.org/x/exp/maps
 +golang.org/x/exp/slices
-+# golang.org/x/mod v0.36.0
++# golang.org/x/mod v0.37.0
 +## explicit; go 1.25.0
 +golang.org/x/mod/internal/lazyregexp
 +golang.org/x/mod/module
 +golang.org/x/mod/semver
-+# golang.org/x/net v0.54.0
++# golang.org/x/net v0.56.0
 +## explicit; go 1.25.0
 +golang.org/x/net/bpf
 +golang.org/x/net/html
@@ -864,10 +864,10 @@
 +golang.org/x/net/ipv4
 +golang.org/x/net/ipv6
 +golang.org/x/net/proxy
-+# golang.org/x/sync v0.20.0
++# golang.org/x/sync v0.21.0
 +## explicit; go 1.25.0
 +golang.org/x/sync/errgroup
-+# golang.org/x/sys v0.44.0
++# golang.org/x/sys v0.46.0
 +## explicit; go 1.25.0
 +golang.org/x/sys/cpu
 +golang.org/x/sys/plan9
@@ -877,10 +877,10 @@
 +golang.org/x/sys/windows/svc
 +golang.org/x/sys/windows/svc/eventlog
 +golang.org/x/sys/windows/svc/mgr
-+# golang.org/x/term v0.43.0
++# golang.org/x/term v0.44.0
 +## explicit; go 1.25.0
 +golang.org/x/term
-+# golang.org/x/text v0.37.0
++# golang.org/x/text v0.38.0
 +## explicit; go 1.25.0
 +golang.org/x/text/cases
 +golang.org/x/text/encoding
@@ -916,7 +916,7 @@
 +# golang.org/x/time v0.15.0
 +## explicit; go 1.25.0
 +golang.org/x/time/rate
-+# golang.org/x/tools v0.45.0
++# golang.org/x/tools v0.46.0
 +## explicit; go 1.25.0
 +golang.org/x/tools/cover
 +golang.org/x/tools/go/ast/astutil
