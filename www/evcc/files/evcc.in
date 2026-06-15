@@ -17,6 +17,7 @@ load_rc_config $name
 : ${evcc_command:="/usr/local/bin/evcc"}
 : ${evcc_dbdir:="/var/db/evcc"}
 : ${evcc_log:="/var/log/evcc.log"}
+: ${evcc_flags:=""}#
 
 logfile="/var/log/${name}.log"
 pidfile="/var/run/${name}/${name}.pid"
@@ -29,7 +30,7 @@ command="/usr/sbin/daemon"
 # -u  = run as user
 # -o  = log output
 command_args="-H -r -f -o ${logfile} -P ${pidfile} -t ${name} \
-    /bin/sh -c 'cd ${workingdir} && ${evcc_command} --database ${evcc_dbdir}/evcc.db'"
+    /bin/sh -c 'cd ${workingdir} && ${evcc_command} --database ${evcc_dbdir}/evcc.db ${evcc_flags}'"
 
 start_precmd="${name}_precmd"
 start_cmd="${name}_start"
