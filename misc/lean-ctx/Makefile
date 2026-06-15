@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.4
+DISTVERSION=	3.8.5
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -544,6 +544,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-javascript-0.25.0 \
 		tree-sitter-kotlin-ng-1.1.0 \
 		tree-sitter-language-0.1.7 \
+		tree-sitter-lua-0.5.0 \
+		tree-sitter-luau-1.2.0 \
 		tree-sitter-php-0.24.2 \
 		tree-sitter-python-0.25.0 \
 		tree-sitter-ruby-0.23.1 \
