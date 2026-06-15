@@ -1,8 +1,9 @@
 PORTNAME=	pytest-localserver
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Py.test Plugin to test server connections locally
