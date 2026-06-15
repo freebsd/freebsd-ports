@@ -145,7 +145,7 @@ SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 UNIXODBC_CONFIGURE_WITH=	unixodbc
 UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 .elif ${ZABBIX_BUILD} == "agent"
-OPTOINS_DEFINE+=		PCRE
+OPTIONS_DEFINE+=		PCRE
 OPTIONS_SINGLE+=		SSL
 OPTIONS_SINGLE_SSL=		GNUTLS OPENSSL
 .endif # if ${ZABBIX_BUILD} != "agent"
