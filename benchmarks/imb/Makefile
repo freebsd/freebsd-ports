@@ -1,54 +1,56 @@
 PORTNAME=	IMB
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.7
-PORTREVISION=	2
+DISTVERSIONPREFIX=	IMB-v
+DISTVERSION=	2021.11
 CATEGORIES=	benchmarks parallel
-MASTER_SITES=	https://github.com/intel/mpi-benchmarks/archive/refs/tags/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Intel MPI Benchmark
+MAINTAINER=	laurent@FreeBSD.org
+COMMENT=	Intel(R) MPI Benchmark
 WWW=		https://software.intel.com/en-us/imb-user-guide
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/license.txt
 
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	intel
-#GH_PROJECT=	mpi-benchmarks
+FLAVORS=		mpich openmpi
+FLAVOR?=		${FLAVORS:[1]}
+openmpi_PKGNAMESUFFIX=	-openmpi
 
-USES=		gmake localbase
+USES=		gmake localbase mpi:${FLAVOR}
 USE_CXXSTD=	c++14
 
-BINARY_ALIAS=	make=${GMAKE}
+USE_GITHUB=	yes
+GH_ACCOUNT=	intel
+GH_PROJECT=	mpi-benchmarks
 
-WRKSRC=		${WRKDIR}/mpi-benchmarks-${DISTNAME}
+MAKE_ENV=	MPI_HOME=${MPI_HOME}
 
 # Intel hardcodes -O3 in make_mpich.  Replacing it with system defaults
 # would make it impossible to compare benchmark results with other systems.
 # By putting it here we make it easier for somebody to change it, if they
 # _really_ want it.
 OPT_CFLAGS=	-O3
+CFLAGS+=	${OPT_CFLAGS} ${MPI_CFLAGS}
+CXXFLAGS+=	-fopenmp
+LDFLAGS+=	-Wl,-rpath,/lib ${MPI_LIBS} -fopenmp
+
 CC=		${MPICC}
 CXX=		${MPICXX}
-CFLAGS+=	${OPT_CFLAGS} ${MPI_CFLAGS}
-LDFLAGS+=	${MPI_LIBS}
-MAKE_ENV=	MPI_HOME=${MPI_HOME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${FLAVOR}
+BINARY_ALIAS=	make=${GMAKE}
 
-OPTIONS_DEFINE=		CHECK_RESULTS DOCS
-OPTIONS_RADIO=		MPI
-OPTIONS_RADIO_MPI=	MPICH OPENMPI
-OPTIONS_DEFAULT=	MPICH
+PLIST_SUB=	FLAVOR=${FLAVOR}
+
+OPTIONS_DEFINE=	CHECK_RESULTS DOCS
 
 # Attention: -DCHECK results are not valid as real benchmark data! Don't
 # forget to deactivate DCHECK and recompile in order to get proper results.
 CHECK_RESULTS_DESC=	Check results (not valid as real benchmark data)
 CHECK_RESULTS_CFLAGS=	-DCHECK
 
-MPICH_USES=	mpi:mpich
-OPENMPI_USES=	mpi:openmpi
-
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} IMB-* ${STAGEDIR}${PREFIX}/bin)
+	@for benchmark in ${WRKSRC}/IMB-*; do \
+		${INSTALL_PROGRAM} $${benchmark} \
+			${STAGEDIR}${PREFIX}/bin/$${benchmark##*/}-${FLAVOR}; \
+	done
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
