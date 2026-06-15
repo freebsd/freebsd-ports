@@ -11,7 +11,7 @@ WWW=		https://pyyaml.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase python
+USES=		cpe localbase python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
