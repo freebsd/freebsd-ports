@@ -11,7 +11,9 @@ WWW=		https://www.nethack.org/
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 
-USES=		gmake ncurses tar:tgz
+USES=		cpe gmake ncurses tar:tgz
+CPE_PRODUCT=	nethack
+CPE_VENDOR=	nethack
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"
