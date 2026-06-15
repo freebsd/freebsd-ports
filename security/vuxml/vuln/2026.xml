@@ -1,3 +1,90 @@
+  <vuln vid="1466c84c-68b1-11f1-8de5-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>149.0.7827.102</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>149.0.7827.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_01962725236.html">
+	 <p>This update includes 28 security fixes:</p>
+	 <ul>
+	    <li>[516731749] Critical CVE-2026-12007: Use after free  Core. Reported by Google on 2026-05-26</li>
+	    <li>[516942828] Critical CVE-2026-12008: Use after free  DigitalCredentials. Reported by Google on 2026-05-27</li>
+	    <li>[517332006] Critical CVE-2026-12009: Insufficient validation of untrusted input  ccessibility. Reported by Google on 2026-05-28</li>
+	    <li>[517531647] Critical CVE-2026-12010: Heap buffer overflow  GPU. Reported by Google on 2026-05-28</li>
+	    <li>[518108291] Critical CVE-2026-12011: Use after free  WebMIDI. Reported by Google on 2026-05-30</li>
+	    <li>[499182801] High CVE-2026-12012: Use after free  etwork. Reported by Google on 2026-04-03</li>
+	    <li>[514229805] High CVE-2026-12013: Use after free  Media. Reported by Henock Habte, Independent Security Researcher on 2026-05-18</li>
+	    <li>[514742747] High CVE-2026-12014: Use after free  Cast. Reported by Google on 2026-05-19</li>
+	    <li>[515463295] High CVE-2026-12015: Use after free  utofill. Reported by Google on 2026-05-21</li>
+	    <li>[516482138] High CVE-2026-12016: Insufficient validation of untrusted input  DevTools. Reported by Google on 2026-05-25</li>
+	    <li>[516797143] High CVE-2026-12017: Insufficient validation of untrusted input  Extensions. Reported by Google on 2026-05-26</li>
+	    <li>[516808201] High CVE-2026-12018: Inappropriate implementation  Mojo. Reported by Google on 2026-05-26</li>
+	    <li>[516872067] High CVE-2026-12019: Out of bounds write  Codecs. Reported by Google on 2026-05-26</li>
+	    <li>[516907083] High CVE-2026-12020: Use after free  utofill. Reported by Google on 2026-05-27</li>
+	    <li>[516929496] High CVE-2026-12022: Race  Safe Browsing. Reported by Google on 2026-05-27</li>
+	    <li>[517018374] High CVE-2026-12023: Use after free  GPU. Reported by Google on 2026-05-27</li>
+	    <li>[517086161] High CVE-2026-12024: Insufficient policy enforcement  DevTools. Reported by Google on 2026-05-27</li>
+	    <li>[517153191] High CVE-2026-12025: Insufficient validation of untrusted input  etwork. Reported by Google on 2026-05-27</li>
+	    <li>[517347084] High CVE-2026-12026: Out of bounds read  Video. Reported by Google on 2026-05-28</li>
+	    <li>[517517155] High CVE-2026-12027: Insufficient policy enforcement  Headless. Reported by Google on 2026-05-28</li>
+	    <li>[517555461] High CVE-2026-12028: Use after free  GPU. Reported by Google on 2026-05-28</li>
+	    <li>[518002958] High CVE-2026-12029: Use after free  Video. Reported by Google on 2026-05-29</li>
+	    <li>[518007423] High CVE-2026-12030: Heap buffer overflow  GPU. Reported by Google on 2026-05-29</li>
+	    <li>[518045638] High CVE-2026-12031: Inappropriate implementation  Views. Reported by Google on 2026-05-30</li>
+	    <li>[518128953] High CVE-2026-12032: Inappropriate implementation  Passwords. Reported by Google on 2026-05-30</li>
+	    <li>[519248779] High CVE-2026-12033: Out of bounds read  VideoCapture. Reported by Google on 2026-06-02</li>
+	    <li>[519258799] High CVE-2026-12034: Insufficient validation of untrusted input  Linux Toolkit Theming. Reported by Google on 2026-06-02</li>
+	    <li>[520210566] High CVE-2026-12035: Use after free  Views. Reported by Google on 2026-06-05</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-12007</cvename>
+      <cvename>CVE-2026-12008</cvename>
+      <cvename>CVE-2026-12009</cvename>
+      <cvename>CVE-2026-12010</cvename>
+      <cvename>CVE-2026-12011</cvename>
+      <cvename>CVE-2026-12012</cvename>
+      <cvename>CVE-2026-12013</cvename>
+      <cvename>CVE-2026-12014</cvename>
+      <cvename>CVE-2026-12015</cvename>
+      <cvename>CVE-2026-12016</cvename>
+      <cvename>CVE-2026-12017</cvename>
+      <cvename>CVE-2026-12018</cvename>
+      <cvename>CVE-2026-12019</cvename>
+      <cvename>CVE-2026-12020</cvename>
+      <cvename>CVE-2026-12022</cvename>
+      <cvename>CVE-2026-12023</cvename>
+      <cvename>CVE-2026-12024</cvename>
+      <cvename>CVE-2026-12025</cvename>
+      <cvename>CVE-2026-12026</cvename>
+      <cvename>CVE-2026-12027</cvename>
+      <cvename>CVE-2026-12028</cvename>
+      <cvename>CVE-2026-12029</cvename>
+      <cvename>CVE-2026-12030</cvename>
+      <cvename>CVE-2026-12031</cvename>
+      <cvename>CVE-2026-12032</cvename>
+      <cvename>CVE-2026-12033</cvename>
+      <cvename>CVE-2026-12034</cvename>
+      <cvename>CVE-2026-12035</cvename>
+      <url>https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_01962725236.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-11</discovery>
+      <entry>2026-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76b09b16-638b-11f1-8e16-901b0e13f1a0">
     <topic>libsmi -- Buffer overflow in the smiGetNode function in lib/smi</topic>
     <affects>
