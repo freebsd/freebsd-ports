@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	7.2.30
 CATEGORIES=	graphics
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible vector graphics editor with LaTeX support
 WWW=		https://ipe.otfried.org/
 
