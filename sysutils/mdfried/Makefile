@@ -1,6 +1,6 @@
 PORTNAME=	mdfried
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
+DISTVERSION=	0.22.2
 PORTREVISION=	0
 CATEGORIES=	sysutils
 
@@ -27,5 +27,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	benjajaja
 
 PLIST_FILES=	bin/mdfried
+
+OPTIONS_DEFINE=		PDF
+OPTIONS_DEFAULT=	PDF
+
+PDF_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+PDF_USES=		gmake llvm
+PDF_VARS=		CARGO_FEATURES+=pdf
 
 .include <bsd.port.mk>
