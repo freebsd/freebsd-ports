@@ -1,6 +1,7 @@
 PORTNAME=	alizams
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,4 +34,9 @@ CMAKE_ARGS+=	-DALIZA_DISABLE_SIMDMATH:BOOL=YES # i386 also needs disabling SIND,
 .endif
 
 .include <../../science/InsightToolkit/Makefile.version>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^Exec=/s,/usr,${PREFIX},' \
+		${WRKSRC}/package/archive/usr/share/applications/${PORTNAME}.desktop
+
 .include <bsd.port.mk>
