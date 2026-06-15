@@ -24,7 +24,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${BUILD_AND_RUN_DEPENDS}
 
-USES=		cmake desktop-file-utils iconv shebangfix
+USES=		cmake cpe desktop-file-utils iconv shebangfix
+
+CPE_VENDOR=	cern
 
 SHEBANG_FILES=	main/python/rootcp.py \
 		main/python/rootdrawtree.py \
