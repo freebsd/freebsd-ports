@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.8:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	wheel_project
 USE_PYTHON=	allflavors autoplist concurrent pep517
 # tests: 62 passed
 USE_PYTHON+=	pytest
