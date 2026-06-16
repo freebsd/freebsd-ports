@@ -1,5 +1,6 @@
 PORTNAME=	gnupg
-DISTVERSION=	2.4.9
+DISTVERSION=	2.5.20
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -24,18 +25,14 @@ USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite \
 
 CPE_VENDOR=	gnupg
 
-# Odd minor-versions are the development branch; in particular 2.5 is
-# close to being a new 2.6, but we don't want portscout informing about it.
-PORTSCOUT=	limitw:1,even
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-ntbtls \
-		--enable-gpg-is-gpg2
+CONFIGURE_ARGS=	--disable-ntbtls
 
 TEST_ARGS=	TESTARGS=--parallel
 TEST_TARGET=	check
 
-CONFLICTS=	dirmngr
+CONFLICTS=		dirmngr
+CONFLICTS_INSTALL=	gnupg1-*
 
 INFO=		gnupg
 
@@ -80,11 +77,6 @@ pre-build:
 	${TOUCH} ${WRKSRC}/doc/*.texi
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/gpgsplit ${STAGEDIR}${PREFIX}/bin/gpgsplit2
 	${MV} ${STAGEDIR}${DATADIR}/help*.txt ${STAGEDIR}${DOCSDIR}
-
-# Necessary because of --enable-gpg-is-gpg2
-pre-test:
-	${LN} -s gpg ${WRKSRC}/bin/gpg2
 
 .include <bsd.port.mk>

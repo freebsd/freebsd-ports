@@ -1,20 +1,21 @@
 %%GNUTLS%%bin/dirmngr
 %%GNUTLS%%bin/dirmngr-client
 bin/gpg-agent
+bin/gpg-authcode-sign.sh
 bin/gpg-card
 bin/gpg-connect-agent
 bin/gpg-mail-tube
 bin/gpg-wks-client
 %%WKS_SERVER%%bin/gpg-wks-server
-%%SUID_GPG%%@(,,4555) bin/gpg2
-%%NO_SUID_GPG%%bin/gpg2
+%%SUID_GPG%%@(,,4555) bin/gpg
+%%NO_SUID_GPG%%bin/gpg
 bin/gpgconf
 bin/gpgparsemail
 bin/gpgscm
 bin/gpgsm
-bin/gpgsplit2
+bin/gpgsplit
 bin/gpgtar
-bin/gpgv2
+bin/gpgv
 bin/kbxutil
 bin/watchgnupg
 %%DIRMNGRLDAP%%libexec/dirmngr_ldap
@@ -35,12 +36,12 @@ share/man/man1/gpg-mail-tube.1.gz
 share/man/man1/gpg-preset-passphrase.1.gz
 share/man/man1/gpg-wks-client.1.gz
 %%WKS_SERVER%%share/man/man1/gpg-wks-server.1.gz
-share/man/man1/gpg2.1.gz
+share/man/man1/gpg.1.gz
 share/man/man1/gpgconf.1.gz
 share/man/man1/gpgparsemail.1.gz
 share/man/man1/gpgsm.1.gz
 share/man/man1/gpgtar.1.gz
-share/man/man1/gpgv2.1.gz
+share/man/man1/gpgv.1.gz
 share/man/man1/scdaemon.1.gz
 share/man/man1/watchgnupg.1.gz
 share/man/man7/gnupg.7.gz
@@ -94,7 +95,10 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/help.zh_CN.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.zh_TW.txt
 %%DATADIR%%/distsigkey.gpg
-%%GNUTLS%%%%DATADIR%%/sks-keyservers.netCA.pem
+%%DATADIR%%/mail-tube.de.txt
+%%DATADIR%%/mail-tube.txt
+%%DATADIR%%/wks-utils.de.txt
+%%DATADIR%%/wks-utils.txt
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gnupg2.mo
@@ -112,6 +116,7 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/id/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gnupg2.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnupg2.mo
@@ -124,7 +129,9 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/uk/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
-@postexec [ -e %D/bin/gpg ] || ln -sf gpg2 %D/bin/gpg
-@postunexec [ -e %D/bin/gpg ] || rm -f %D/bin/gpg
-@postexec [ -e %D/share/man/man1/gpg.1.gz ] || ln -sf gpg2.1.gz %D/share/man/man1/gpg.1.gz
-@postunexec [ -e %D/share/man/man1/gpg.1.gz ] || rm -f %D/share/man/man1/gpg.1.gz
+@postexec [ -e %D/bin/gpg2 ] || ln -sf gpg %D/bin/gpg2
+@postunexec [ -e %D/bin/gpg2 ] || rm -f %D/bin/gpg2
+@postexec [ -e %D/bin/gpgsplit2 ] || ln -sf gpg %D/bin/gpgsplit2
+@postunexec [ -e %D/bin/gpgsplit2 ] || rm -f %D/bin/gpgsplit2
+@postexec [ -e %D/share/man/man1/gpg2.1.gz ] || ln -sf gpg.1.gz %D/share/man/man1/gpg2.1.gz
+@postunexec [ -e %D/share/man/man1/gpg2.1.gz ] || rm -f %D/share/man/man1/gpg2.1.gz
