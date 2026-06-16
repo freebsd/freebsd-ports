@@ -1,6 +1,6 @@
 PORTNAME=	swaync
-PORTVERSION=	0.12.3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.12.6
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,11 +22,11 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 USES=		compiler:c11 gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf gtk40 libadwaita
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
-SHEBANG_FILES=	build-aux/meson/postinstall.py
+USE_GNOME=	cairo gdkpixbuf gtk40 libadwaita
 GLIB_SCHEMAS=	org.erikreider.swaync.gschema.xml
+SHEBANG_FILES=	build-aux/meson/postinstall.py
 
 OPTIONS_DEFINE=	MANPAGES PULSEAUDIO
 OPTIONS_DEFAULT=MANPAGES PULSEAUDIO
@@ -51,7 +51,7 @@ post-patch:
 		${WRKSRC}/src/meson.build
 	@${REINPLACE_CMD} -e "s,'/',get_option('prefix')," \
 		-e "/output.*css/s/'[^']*/&.sample/" \
-		${WRKSRC}/data/meson.build
+		${WRKSRC}/data/style/meson.build
 # Respect PREFIX in manpages
 	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/man/${PORTNAME}.1.scd
