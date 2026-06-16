@@ -1,5 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.30.8
+PORTVERSION=	2.30.10
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -62,7 +62,7 @@ OPTIONS_DEFAULT=HUNSPELL
 HUNSPELL_RUN_DEPENDS=	hunspell:textproc/hunspell
 
 SPELL2FIX=	setup/user_transliteration.py engine/itb_util_core.py
-SHR2FIX=	engine/itb_sound.py ${GLIB_SCHEMAS}
+SHR2FIX=	engine/itb_sound.py engine/itb_emoji.py ${GLIB_SCHEMAS}
 XML2FIX=	org.freedesktop.ibus.engine.typing_booster.metainfo.xml.in	\
 		org.freedesktop.ibus.engine.typing_booster.emoji_picker.metainfo.xml.in
 COMP2DEL=	engine/Makefile setup/Makefile
