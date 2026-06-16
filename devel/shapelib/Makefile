@@ -14,7 +14,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSE-LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		libtool localbase
+USES=		cpe libtool localbase
+
+CPE_VENDOR=	osgeo
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
