@@ -11,7 +11,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	infocmp:devel/ncurses
 
-USES=		java tar:tgz
+USES=		cpe java tar:tgz
+
+CPE_VENDOR=	scala.epfl
 
 OPTIONS_DEFINE=	ADVANCED # PRELOADED
 OPTIONS_DEFAULT=ADVANCED
