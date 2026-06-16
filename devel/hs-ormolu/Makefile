@@ -1,5 +1,5 @@
 PORTNAME=	ormolu
-DISTVERSION=	0.8.1.0
+DISTVERSION=	0.8.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
