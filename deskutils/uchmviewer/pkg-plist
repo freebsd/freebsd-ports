@@ -1,0 +1,17 @@
+bin/uchmviewer
+share/applications/uchmviewer.desktop
+share/icons/hicolor/128x128/apps/uchmviewer.png
+share/locale/cs/LC_MESSAGES/uchmviewer.mo
+share/locale/de/LC_MESSAGES/uchmviewer.mo
+share/locale/fr/LC_MESSAGES/uchmviewer.mo
+share/locale/hu/LC_MESSAGES/uchmviewer.mo
+share/locale/it/LC_MESSAGES/uchmviewer.mo
+share/locale/nl/LC_MESSAGES/uchmviewer.mo
+share/locale/pl/LC_MESSAGES/uchmviewer.mo
+share/locale/pt_BR/LC_MESSAGES/uchmviewer.mo
+share/locale/ru/LC_MESSAGES/uchmviewer.mo
+share/locale/sv/LC_MESSAGES/uchmviewer.mo
+share/locale/tr/LC_MESSAGES/uchmviewer.mo
+share/locale/uk/LC_MESSAGES/uchmviewer.mo
+share/locale/zh_CN/LC_MESSAGES/uchmviewer.mo
+share/locale/zh_TW/LC_MESSAGES/uchmviewer.mo

@@ -1,0 +1,24 @@
+--- packages/CMakeLists.txt.orig	2026-03-08 12:36:08 UTC
++++ packages/CMakeLists.txt
+@@ -1,10 +1,7 @@ cmake_minimum_required(VERSION 3.16)
+ 
+ cmake_minimum_required(VERSION 3.16)
+ 
+-if (CMAKE_SYSTEM_NAME MATCHES "Linux")
+-    install(FILES freedesktop/uchmviewer.desktop DESTINATION ${APP_DEF_INSTALL_DIR})
+-    install(DIRECTORY freedesktop/icons/ DESTINATION ${APP_ICONS_INSTALL_DIR})
+-elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND USE_MACOS_BUNDLE)
++if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND USE_MACOS_BUNDLE)
+     set(PLIST macos/Info.plist)
+     set(PLIST_OUT ${CMAKE_CURRENT_BINARY_DIR}/${PLIST})
+     configure_file(${PLIST}.in ${PLIST_OUT})
+@@ -12,6 +9,9 @@ elseif (&{CMAKE_SYSTEM_NAME} MATCHES "Windows")
+     install(FILES macos/uchmviewer.icns DESTINATION ${APP_ICONS_INSTALL_DIR})
+ elseif (&{CMAKE_SYSTEM_NAME} MATCHES "Windows")
+     install(FILES uchmviewer.png DESTINATION ${APP_ICONS_INSTALL_DIR})
++else ()
++    install(FILES freedesktop/uchmviewer.desktop DESTINATION ${APP_DEF_INSTALL_DIR})
++    install(DIRECTORY freedesktop/icons/ DESTINATION ${APP_ICONS_INSTALL_DIR})
+ endif ()
+ 
+ 

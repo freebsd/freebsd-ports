@@ -289,6 +289,7 @@
     SUBDIR += tpb
     SUBDIR += treeline
     SUBDIR += treesheets
+    SUBDIR += uchmviewer
     SUBDIR += ultralist
     SUBDIR += virt-manager
     SUBDIR += vit
