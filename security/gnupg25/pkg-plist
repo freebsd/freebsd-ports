@@ -13,7 +13,7 @@ bin/gpgconf
 bin/gpgparsemail
 bin/gpgscm
 bin/gpgsm
-bin/gpgsplit2
+bin/gpgsplit
 bin/gpgtar
 bin/gpgv
 bin/kbxutil
@@ -131,5 +131,7 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 @postexec [ -e %D/bin/gpg2 ] || ln -sf gpg %D/bin/gpg2
 @postunexec [ -e %D/bin/gpg2 ] || rm -f %D/bin/gpg2
+@postexec [ -e %D/bin/gpgsplit2 ] || ln -sf gpg %D/bin/gpgsplit2
+@postunexec [ -e %D/bin/gpgsplit2 ] || rm -f %D/bin/gpgsplit2
 @postexec [ -e %D/share/man/man1/gpg2.1.gz ] || ln -sf gpg.1.gz %D/share/man/man1/gpg2.1.gz
 @postunexec [ -e %D/share/man/man1/gpg2.1.gz ] || rm -f %D/share/man/man1/gpg2.1.gz

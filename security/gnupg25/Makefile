@@ -1,5 +1,6 @@
 PORTNAME=	gnupg
 DISTVERSION=	2.5.20
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	25
@@ -7,6 +8,9 @@ PKGNAMESUFFIX=	25
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Complete and free PGP implementation
 WWW=		https://www.gnupg.org/
+
+DEPRECATED=	Will roll up into security/gnupg
+EXPIRATION_DATE=	2026-06-30
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
@@ -32,7 +36,7 @@ TEST_ARGS=	TESTARGS=--parallel
 TEST_TARGET=	check
 
 CONFLICTS=		dirmngr
-CONFLICTS_INSTALL=	gnupg1-* gnupg-2.4*
+CONFLICTS_INSTALL=	gnupg1-* gnupg-2.4* gnupg-2.5*
 
 INFO=		gnupg
 
@@ -77,7 +81,6 @@ pre-build:
 	${TOUCH} ${WRKSRC}/doc/*.texi
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/gpgsplit ${STAGEDIR}${PREFIX}/bin/gpgsplit2
 	${MV} ${STAGEDIR}${DATADIR}/help*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
