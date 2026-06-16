@@ -1,5 +1,5 @@
 PORTNAME=	mailio
-DISTVERSION=	0.25.3
+DISTVERSION=	0.26.0
 CATEGORIES=	mail devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,16 +17,21 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	karastojko
 
-CMAKE_OFF=	MAILIO_BUILD_TESTS MAILIO_BUILD_EXAMPLES MAILIO_BUILD_DOCUMENTATION
-CMAKE_ON=	MAILIO_DYN_LINK_TESTS # workaround for https://github.com/karastojko/mailio/issues/159
-CMAKE_TESTING_ON=	MAILIO_BUILD_TESTS # tests fail, see https://github.com/karastojko/mailio/issues/160
+CMAKE_OFF=	MAILIO_BUILD_TESTS \
+		MAILIO_DYN_LINK_TESTS \
+		MAILIO_BUILD_EXAMPLES \
+		MAILIO_BUILD_DOCUMENTATION
+CMAKE_TESTING_ON=	MAILIO_BUILD_TESTS \
+			MAILIO_DYN_LINK_TESTS
 CMAKE_TESTING_TARGET=	all
+
+LDFLAGS+=	-lpthread
 
 post-test:
 	@cd ${WRKSRC}/test && ${BUILD_WRKSRC}/test/test_message
 
-# tests as of 0.25.1:
-# Running 139 test cases...
+# tests as of 0.26.0:
+# Running 142 test cases...
 # *** No errors detected
 
 .include <bsd.port.mk>
