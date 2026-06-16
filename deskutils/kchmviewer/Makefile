@@ -8,6 +8,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE viewer for CHM files
 WWW=		https://www.kchmviewer.net/
 
+DEPRECATED=	Development stalled; use deskutils/uchmviewer
+EXPIRATION_DATE=	2026-09-30
+
 LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libzip.so:archivers/libzip
 
