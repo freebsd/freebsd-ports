@@ -1,6 +1,6 @@
 PORTNAME=	gnupg
 PORTVERSION=	1.4.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	1
@@ -20,6 +20,8 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-camellia \
 		--enable-noexecstack
 CFLAGS+=	-fcommon
+
+CONFLICTS_INSTALL=	gnupg-2.5*
 
 INFO=		gnupg1
 DOCSDIR=	${PREFIX}/share/doc/gnupg1
