@@ -1,5 +1,5 @@
-TIMESTAMP = 1780632557
-SHA256 (go/ftp_surge/surge-v0.8.7/v0.8.7.mod) = aaeedca7132d244b75f7d3507623653331fef547a82a71bd84f35a2dac0edecc
-SIZE (go/ftp_surge/surge-v0.8.7/v0.8.7.mod) = 2628
-SHA256 (go/ftp_surge/surge-v0.8.7/v0.8.7.zip) = 43b80756b0d95c9a77a2bb15a98a75ba68fb0ab45484e8c5b7dd58f6a225f760
-SIZE (go/ftp_surge/surge-v0.8.7/v0.8.7.zip) = 3482189
+TIMESTAMP = 1781592228
+SHA256 (go/ftp_surge/surge-v0.9.0/v0.9.0.mod) = 0bba9d1ae4a3c68370bda4c324bffe9a48b2d54c98c813aac1e767a181046557
+SIZE (go/ftp_surge/surge-v0.9.0/v0.9.0.mod) = 2628
+SHA256 (go/ftp_surge/surge-v0.9.0/v0.9.0.zip) = e31048f55148524faabd66b7e6470ff1c8f89eb0d7973ceca7b8ad3768ddcaeb
+SIZE (go/ftp_surge/surge-v0.9.0/v0.9.0.zip) = 3525992
