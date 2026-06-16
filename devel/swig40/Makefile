@@ -16,7 +16,9 @@ EXPIRATION_DATE=2026-06-30
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		lua:build
+USES=		cpe lua:build
+
+CPE_VENDOR=	swig_project
 
 ALL_TARGET=	# empty
 CFLAGS+=	-fPIC -DPIC
