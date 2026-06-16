@@ -22,6 +22,7 @@ libexec/chawan/dirlist2html
 libexec/chawan/gmi2html
 libexec/chawan/gopher2html
 libexec/chawan/img2html
+libexec/chawan/init.jsb
 libexec/chawan/md2html
 libexec/chawan/nc
 libexec/chawan/tohtml
@@ -30,10 +31,10 @@ libexec/chawan/urldec
 libexec/chawan/urlenc
 share/man/man1/cha.1.gz
 share/man/man1/mancha.1.gz
+share/man/man5/cha-cgi.5.gz
 share/man/man5/cha-config.5.gz
 share/man/man5/cha-mailcap.5.gz
 share/man/man5/cha-mime.types.5.gz
-share/man/man5/cha-localcgi.5.gz
 share/man/man5/cha-urimethodmap.5.gz
 share/man/man7/cha-protocols.7.gz
 share/man/man7/cha-api.7.gz
