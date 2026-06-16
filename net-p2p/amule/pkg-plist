@@ -52,7 +52,6 @@ bin/wxcas
 %%WEBSERVER%%%%DATADIR%%/webserver/default/loginlogo.jpg
 %%WEBSERVER%%%%DATADIR%%/webserver/default/loginlogo.png
 %%WEBSERVER%%%%DATADIR%%/webserver/default/logo.png
-%%WEBSERVER%%%%DATADIR%%/webserver/default/maquette.dwt
 %%WEBSERVER%%%%DATADIR%%/webserver/default/ok.png
 %%WEBSERVER%%%%DATADIR%%/webserver/default/pause.png
 %%WEBSERVER%%%%DATADIR%%/webserver/default/play.png
@@ -98,9 +97,11 @@ share/applications/wxcas.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/amulesig.md
 %%MONOLITHIC%%share/icons/hicolor/128x128/apps/org.amule.aMule.png
+%%MONOLITHIC%%share/icons/hicolor/256x256/apps/org.amule.aMule.png
 %%NLS%%share/locale/ar/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/amule.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/da/LC_MESSAGES/amule.mo
@@ -121,6 +122,7 @@ share/applications/wxcas.desktop
 %%NLS%%share/locale/ja/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/amule.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/amule.mo
@@ -131,6 +133,7 @@ share/applications/wxcas.desktop
 %%NLS%%share/locale/sl/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/amule.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/amule.mo
