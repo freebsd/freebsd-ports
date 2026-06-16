@@ -5,7 +5,8 @@ CATEGORIES=	graphics
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 WWW=		https://www.mesa3d.org/
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+		libva>=0:multimedia/libva
 LIB_DEPENDS+=	libgallium-${MESAVERSION}.so:graphics/mesa-libs \
 		libgbm.so:graphics/mesa-libs
 
@@ -44,11 +45,7 @@ panfrost_DESC=		ARM Midgard and Bifrost
 panfrost_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
 r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
-r600_BUILD_DEPENDS=	libva>=0:multimedia/libva
-r600_MESON_ON=		-Dgallium-va=enabled
 radeonsi_DESC=		AMD/ATI Southern Islands and newer
-radeonsi_BUILD_DEPENDS=	libva>=0:multimedia/libva
-radeonsi_MESON_ON=	-Dgallium-va=enabled
 svga_DESC=		VMWare Virtual GPU
 zink_DESC=		OpenGL on top of Khronos’ Vulkan API
 
@@ -102,9 +99,6 @@ MESA_PLATFORMS+=	wayland
 
 MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
-# Vulkan Video extensions (keep in sync with mesa-gallium-va)
-MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc,av1dec,av1enc,vp9dec"
-
 # Disable some options
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dgles1=enabled \
@@ -115,10 +109,6 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dvalgrind=disabled
-
-.if !${PORT_OPTIONS:Mr600} && !${PORT_OPTIONS:Mradeonsi}
-MESON_ARGS+=	-Dgallium-va=disabled
-.endif
 
 .if ${ARCH} != amd64
 MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629

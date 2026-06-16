@@ -14,7 +14,8 @@ BUILD_DEPENDS=	libglvnd>=0:graphics/libglvnd \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 		spirv-tools>0:graphics/spirv-tools \
-		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T} \
+		libva>=0:multimedia/libva
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
@@ -59,8 +60,9 @@ GALLIUM_DRIVERS=	llvmpipe
 MESON_ARGS+=	-Dgallium-drivers=${GALLIUM_DRIVERS:ts,}
 MESON_ARGS+=	-Dvulkan-drivers=""
 
+MESON_ARGS+=	-Dvideo-codecs="all"
+
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
-		-Dgallium-va=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dtools="" \
