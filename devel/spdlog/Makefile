@@ -14,7 +14,9 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt
 TEST_DEPENDS=	catch2>=0:devel/catch2 \
 		pkgconf>=0:devel/pkgconf
 
-USES=		cmake:testing compiler:c++14-lang pathfix
+USES=		cmake:testing compiler:c++14-lang cpe pathfix
+
+CPE_VENDOR=	gabime
 
 CMAKE_OFF=	SPDLOG_BUILD_ALL \
 		SPDLOG_BUILD_BENCH \
