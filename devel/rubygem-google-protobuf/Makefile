@@ -14,7 +14,10 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
 		rubygem-rake>=13.3<14:devel/rubygem-rake
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+
+CPE_PRODUCT=	protobuf
+CPE_VENDOR=	google
 
 SHEBANG_GLOB=	*.rb
 
