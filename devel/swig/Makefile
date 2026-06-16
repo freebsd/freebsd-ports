@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		gmake lua:build
+USES=		cpe gmake lua:build
+
+CPE_VENDOR=	swig_project
 
 ALL_TARGET=	# empty
 CFLAGS+=	-fPIC -DPIC
