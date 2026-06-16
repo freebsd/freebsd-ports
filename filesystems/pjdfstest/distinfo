@@ -1,6 +1,6 @@
-TIMESTAMP = 1781031842
-SHA256 (rust/crates/pjdfstest-0.2.1.crate) = ac4962998027fc2acf10adc1b82015f9e04f86e6268b276c77df52c0c765d427
-SIZE (rust/crates/pjdfstest-0.2.1.crate) = 54871
+TIMESTAMP = 1781619393
+SHA256 (rust/crates/pjdfstest-0.2.2.crate) = bb5e2bea16df357ae879d1585bedaffe5913ab8f45e874f623b0b2f5555c8376
+SIZE (rust/crates/pjdfstest-0.2.2.crate) = 55019
 SHA256 (rust/crates/anstream-0.6.21.crate) = 43d5b281e737544384e969a5ccad3f1cdd24b48086a0fc1b2a5262a26b8f4f4a
 SIZE (rust/crates/anstream-0.6.21.crate) = 29516
 SHA256 (rust/crates/anstyle-1.0.14.crate) = 940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000
