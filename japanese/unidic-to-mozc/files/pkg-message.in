@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Dictionary Import Procedure:
+Open the "Dictionary Tool" in Mozc.
+
+$ mozc_tool dictionary_tool
+
+Select "Tools" > "Import as new dictionary..."
+Specify the %%DATADIR%%/mozc_unidic_merged_1.txt
+and execute the import.
+Follow the same procedure to import _2.txt through _4.txt in order.
+EOM
+}
+]

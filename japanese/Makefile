@@ -280,6 +280,7 @@
     SUBDIR += uim-anthy-unicode
     SUBDIR += uim-mozc
     SUBDIR += uim-tomoe-gtk
+    SUBDIR += unidic-to-mozc
     SUBDIR += vera-fpw
     SUBDIR += vftool
     SUBDIR += w3m
