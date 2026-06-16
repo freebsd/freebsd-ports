@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260616:
+  AFFECTS: Users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  LibreNMS 26.6.0 bring in a sizeable refactor to the rrd processes.
+
+  A new configuration item is required for the font-cache directory.
+
+  Add this entry to $PREFIX/librenms.env
+
+  XDG_CACHE_HOME=/var/db/librenms/font-cache
+
 20260614:
   AFFECTS: Users of www/mattermost-server
   AUTHOR: decke@FreeBSD.org
