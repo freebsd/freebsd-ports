@@ -1,7 +1,6 @@
 PORTNAME=	kopia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
-PORTREVISION=	1
+DISTVERSION=	0.23.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,9 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 GO_MODULE=	github.com/kopia/kopia
-GO_BUILDFLAGS=	-ldflags "\
-		-X github.com/kopia/kopia/repo.BuildVersion=${DISTVERSION} \
-		-X github.com/kopia/kopia/repo.BuildInfo="`date +%Y%m%d`""
+GO_LDFLAGS=	-X github.com/kopia/kopia/repo.BuildVersion=${DISTVERSION} \
+		-X github.com/kopia/kopia/repo.BuildInfo=${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
