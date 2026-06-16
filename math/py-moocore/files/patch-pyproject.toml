@@ -1,0 +1,28 @@
+-- Fix build with older setuptools
+--
+-- The upstream pyproject.toml uses a string for the license field and
+-- the license-files field, which require a newer setuptools than what is
+-- available in some environments.
+-- This patch fixes these issues and relaxes the setuptools requirement.
+
+--- pyproject.toml.orig 2026-06-16 16:59:52 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ build-backend = "setuptools.build_meta"
+ requires = [
+   "cffi>=1.17.1",
+-  "setuptools>=77.0.3",
++  "setuptools>=63.1.0",
+   "wheel",
+ ]
+ 
+@@ -18,8 +18,7 @@ keywords = [
+   "operations research",
+   "Optimization",
+ ]
+-license = "LGPL-2.1-or-later"
+-license-files = [ "COPYRIGHTS" ]
++license = { text = "LGPL-2.1-or-later" }
+ authors = [
+   { name = "Manuel López-Ibáñez", email = "manuel.lopez-ibanez@manchester.ac.uk" },
+   { name = "Fergus Rooney", email = "fergus.rooney@outlook.com" },
