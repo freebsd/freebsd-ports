@@ -6,13 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20260616:
-  AFFECTS: Users of security/gnupg , security/gnupg25 , security/gnupg1
+  AFFECTS: Users of security/gnupg, security/gnupg25, security/gnupg1
   AUTHOR: adridg@FreeBSD.org
 
-  GnuPG 2.4 reaches end-of-life in July 2026. The 2.5 series is declared
-  stable upstream. Port security/gnupg25 will be retired and security/gnupg
-  is updated to the 2.5 series. As a result, users of security/gnupg25 must
-  switch (back) to security/gnupg . GnuPG 2.5 is backwards-compatible
+  GnuPG 2.4 reaches end-of-life in July 2026.  The 2.5 series is declared
+  stable upstream.  Port security/gnupg25 will be retired and security/gnupg
+  is updated to the 2.5 series.  As a result, users of security/gnupg25 must
+  switch (back) to security/gnupg.  GnuPG 2.5 is backwards-compatible
   with 2.4 and regular users of security/gnupg should experience no issues.
   Upstream has removed co-installability with GnuPG 1.4, users that install
   both security/gnupg and legacy security/gnupg1 will have to uninstall one.
