@@ -1,6 +1,6 @@
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	java devel
 PKGNAMEPREFIX=	java-
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 LIB_DEPENDS=	libsigar.so:devel/sigar
 TEST_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
-USES=		java perl5
+USES=		java:build perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	polo-language # amishHammer
 GH_TAGNAME=	6719d4d
