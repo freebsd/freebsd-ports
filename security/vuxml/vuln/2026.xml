@@ -2,8 +2,8 @@
    <topic>nginx -- multiple vulnerabilities</topic>
    <affects>
      <package>
-       <name>nginx</name>
-       <range><lt>1.31.2,3</lt></range>
+       <name>nginx-devel</name>
+       <range><lt>1.31.2</lt></range>
      </package>
    </affects>
    <description>
