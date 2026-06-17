@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}huggingface-hub>0:misc/py-huggingface-hub@${
 		${PYTHON_PKGNAMEPREFIX}transformers>=0:misc/py-transformers@${PY_FLAVOR}
 # extra run dependencies for kokoro-text-to-audio and kokoro-text-to-wav
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SoundFile>0:audio/py-SoundFile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}soundfile>0:audio/py-SoundFile@${PY_FLAVOR} \
 		mpv:multimedia/mpv
 
 USES=		python
