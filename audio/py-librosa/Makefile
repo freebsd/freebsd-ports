@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}audioread>=2.1.9:audio/py-audioread@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}pooch>=1.1:devel/py-pooch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.1.0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.6.0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SoundFile>=0.12.1:audio/py-SoundFile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}soundfile>=0.12.1:audio/py-SoundFile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}soxr>=0.3.2:audio/py-soxr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.1:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.0:math/py-matplotlib@${PY_FLAVOR} \
