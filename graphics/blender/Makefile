@@ -1,6 +1,6 @@
 PORTNAME=	blender
-DISTVERSION=	5.1.0
-PORTREVISION=	0
+DISTVERSION=	5.0.1
+PORTEPOCH=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -16,14 +16,10 @@ LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	static_assert(sizeof(unsigned long long) == sizeof(struct hipArray*))
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${${ARCH}_BUILD_DEPENDS}
-aarch64_BUILD_DEPENDS=	${LOCALBASE}/include/sse2neon.h:devel/sse2neon
-
-LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
-		libceres.so:math/ceres-solver \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
-		libfreetype.so:print/freetype2 \
+		libOpenImageIO.so:graphics/openimageio \
 		libpng.so:graphics/png \
 		libsamplerate.so:audio/libsamplerate \
 		libtiff.so:graphics/tiff \
@@ -31,17 +27,14 @@ LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run \
-		pkgconfig python:3.13 shebangfix tar:xz xorg
+		pkgconfig python shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 
 SHEBANG_FILES=	scripts/modules/blend_render_info.py
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 \
 		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
-		-DCMAKE_POLICY_DEFAULT_CMP0167=NEW \
-		-DPYTHON_NUMPY_INCLUDE_DIRS:STRING="${PYTHON_SITELIBDIR}/numpy/_core/include" \
-		-DPYTHON_NUMPY_PATH:STRING="${PYTHON_SITELIBDIR}/numpy/_core/include"
-# if PYTHON_NUMPY_PATH is an empty string PYTHON_NUMPY_INCLUDE_DIRS gets overwritten
+		-DCMAKE_POLICY_DEFAULT_CMP0167=NEW
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DWITH_GHOST_DEBUG:BOOL=ON
 .endif
@@ -116,7 +109,8 @@ MATERIALX_CMAKE_BOOL=		WITH_MATERIALX
 MATERIALX_CMAKE_ON=		-DMaterialX_DIR:STRING=${LOCALBASE}/lib/cmake/MaterialX \
 				-DMATERIALX_STDLIB_DIR:STRING=${LOCALBASE}/share/materialx \
 				-DMATERIALX_PYTHON_DIR:STRING=${PYTHON_SITELIBDIR}/MaterialX
-MATERIALX_LIB_DEPENDS=		libMaterialXCore.so:graphics/materialx
+MATERIALX_LIB_DEPENDS=		libMaterialXCore.so:graphics/materialx \
+				libMaterialXFormat.so:graphics/materialx
 MENU_USES=			desktop-file-utils
 MOD_FLUID_CMAKE_BOOL=		WITH_MOD_FLUID
 MOD_FLUID_IMPLIES=		TBB
