@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.7
+DISTVERSION=	3.8.8
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -517,6 +517,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-postgres-0.7.18 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.18 \
+		tokio-tungstenite-0.29.0 \
 		tokio-util-0.7.18 \
 		toml-0.8.23 \
 		toml_datetime-0.6.11 \
@@ -556,6 +557,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-zig-1.1.2 \
 		try-lock-0.2.5 \
 		ttf-parser-0.25.1 \
+		tungstenite-0.29.0 \
 		type1-encoding-parser-0.1.1 \
 		typed-path-0.12.3 \
 		typeid-1.0.3 \
