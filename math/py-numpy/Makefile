@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>=0.18.0,1:devel/meson-python@
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=5.3.0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang cpe fortran pkgconfig python:3.11+ shebangfix
-USE_PYTHON=	allflavors autoplist concurrent cython pep517 pytest
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 PEP517_BUILD_CONFIG_SETTING=	-Csetup-args=-Dallow-noblas=false \
 				-Csetup-args=-Dcpu-baseline-detect=disabled
