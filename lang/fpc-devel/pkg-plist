@@ -375,6 +375,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpobserver.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpobserver.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpobserver.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fppromise.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fppromise.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptemplate.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptemplate.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptemplate.rsj
@@ -1202,6 +1204,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/coffwriter.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/coffwriter.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/dfmreader.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/dfmreader.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/dialogresource.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/dialogresource.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/elfconsts.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/elfconsts.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/elfreader.o
@@ -1746,6 +1750,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/asciitab.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/asciitab.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/colorsel.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/colorsel.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/colorsel.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/colortxt.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/colortxt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/dialogs.o
@@ -1796,6 +1801,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/uasciitab.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/uasciitab.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/ucolorsel.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/ucolorsel.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/ucolorsel.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/ucolortxt.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/ucolortxt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/udialogs.o
@@ -3085,11 +3091,15 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.ioutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.ioutils.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.builders.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.builders.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.converters.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.converters.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.readers.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.readers.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.serializers.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.serializers.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.types.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.types.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.json.utils.o
@@ -3492,6 +3502,7 @@ lib/libpas2jslib.so
 %%EXAMPLESDIR%%-%%PORTVERSION%%/libsee/examples/testwrite.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/libsee/examples/tlibsee.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/libsndfile/examples/sfplay.pp
+%%EXAMPLESDIR%%-%%PORTVERSION%%/libvlc/examples/testvlc.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/libxml2/examples/Makefile
 %%EXAMPLESDIR%%-%%PORTVERSION%%/libxml2/examples/Makefile.fpc
 %%EXAMPLESDIR%%-%%PORTVERSION%%/libxml2/examples/exutils.pas
