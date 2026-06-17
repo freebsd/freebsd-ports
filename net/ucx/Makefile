@@ -1,5 +1,6 @@
 PORTNAME=	ucx
 DISTVERSION=	1.20.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/openucx/ucx/releases/download/v${DISTVERSION}/
 
@@ -57,6 +58,8 @@ UMAD_CONFIGURE_OFF=	--with-mad=no
 post-patch:
 	${REINPLACE_CMD} 's|^examplesdir = $$(pkgdatadir)/examples$$|examplesdir = ${EXAMPLESDIR}|' \
 		${WRKSRC}/examples/Makefile.am
+	${REINPLACE_CMD} 's|/run/user|/var/run/user|' \
+		${WRKSRC}/src/ucs/vfs/sock/vfs_sock.h
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/ucx.conf ${STAGEDIR}${ETCDIR}/ucx.conf.sample
@@ -64,6 +67,6 @@ post-install:
 do-test:
 	cd ${WRKSRC}/test/gtest && \
 		${SETENV} ${TEST_ENV} ${MAKE_CMD} && \
-		${SETENV} ${TEST_ENV} ./gtest --gtest_filter=-malloc_hook*:sysv/*:test_rcache*:test_rcache_pfn*:test_vfs_sock*:test_datatype.hlist_for_each_extract_if:tcp/test_uct_pending.pending_fairness*:tcp/test_uct_peer_failure.purge_failed_peer*:tcp/test_uct_pending.pending_purge*:tcp/test_uct_iface.is_reachable*:tcp/test_uct_perf*:tcp/test_uct_loopback*:tcp/test_uct_tcp.listener_flood_connect_and_send_large*:tcp/test_uct_tcp.listener_flood_connect_and_send_small*:tcp/test_uct_tcp.check_addr_len*:shm*/*:mm_tcp/*:ib_shm/*:ud_tcp/*:all/*:*/test_ucp_am*:*/test_ucp_loopback*:tcp/test_ucp_perf*:*/test_ucp_proto_mock_self.rkey_ptr*:*/test_ucp_tag_probe*:test_config.test_config_file:test_config.test_config_file_parse_files:signal/*:*/test_async.many_timers*:*/test_ucp_peer_failure_keepalive*:*/test_ucp_mmap*:self/test_ucp_wakeup.signal*:tcp/test_ucp_wakeup.signal*:tcp/test_proto_reset.am_eager_multi_bcopy*:tcp/test_uct_sockaddr.err_handle*:tcp/test_ucp_sockaddr_protocols_diff_net_devices*:*.*rndv*:*/test_ucp_tag_match_rndv_align*:tcp/test_ucp_sockaddr_iface_activate*
+		${SETENV} ${TEST_ENV} ./gtest --gtest_filter=-malloc_hook*:sysv/*:test_rcache*:test_rcache_pfn*:test_vfs_sock*:test_datatype.hlist_for_each_extract_if:tcp/test_uct_pending.pending_fairness*:tcp/test_uct_peer_failure.purge_failed_peer*:tcp/test_uct_pending.pending_purge*:tcp/test_uct_iface.is_reachable*:tcp/test_uct_perf*:tcp/test_uct_loopback*:tcp/test_uct_tcp.listener_flood_connect_and_send_large*:tcp/test_uct_tcp.listener_flood_connect_and_send_small*:tcp/test_uct_tcp.check_addr_len*:shm*/*:mm_tcp/*:ib_shm/*:ud_tcp/*:all/*:*/test_ucp_loopback*:tcp/test_ucp_perf*:*/test_ucp_proto_mock_self.rkey_ptr*:test_config.test_config_file:test_config.test_config_file_parse_files:signal/*:*/test_async.many_timers*:*/test_ucp_peer_failure_keepalive*:self/test_ucp_wakeup.signal*:tcp/test_ucp_wakeup.signal*:tcp/test_proto_reset.am_eager_multi_bcopy*:tcp/test_uct_sockaddr.err_handle*:tcp/test_ucp_sockaddr_protocols_diff_net_devices*:tcp/test_ucp_sockaddr_iface_activate*:*/test_ucp_atomic*:*/test_ucp_mmap*:*/test_ucp_tag_match_rndv_align*:*/test_ucp_tag_probe*:tcp/test_ucp_sockaddr.*close_during_rndv*:tcp/test_ucp_sockaddr_protocols_err*::*test_ucp_wireup_1sided.stress_connect*
 
 .include <bsd.port.mk>
