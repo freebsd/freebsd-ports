@@ -29,6 +29,7 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 OPTIONS_GROUP_GALLIUM=	crocus i915 iris llvmpipe panfrost r300 r600 radeonsi svga zink
 GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Intel GPU Gen4 (Broadwater) to Gen7 (Haswell)
+crocus_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
 i915_DESC=		Intel GPU Gen3 (Grantsdale to Pineview)
 iris_DESC=		Intel GPU Gen8 (Broadwell) and newer
 iris_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
@@ -40,6 +41,7 @@ iris_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 iris_IMPLIES=		SPIRV
 llvmpipe_DESC=		Software Rasterizer
 panfrost_DESC=		ARM Midgard and Bifrost
+panfrost_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
 r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
 r600_BUILD_DEPENDS=	libva>=0:multimedia/libva
