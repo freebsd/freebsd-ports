@@ -1,5 +1,5 @@
 PORTNAME=	Coin
-PORTVERSION=	4.0.8
+PORTVERSION=	4.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -30,8 +30,6 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' \
-		${WRKSRC}/Makefile.in
 	@${FIND} ${WRKSRC} \( -name \*.cpp -o -name \*.h -a \! \
 		-name expat.h \) -a -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} 's/<stdlib.h>/<cstdlib>/g'
