@@ -1,8 +1,8 @@
 PORTNAME=	mate-session-manager
-PORTVERSION=	1.28.0
-PORTREVISION=	1
+DISTVERSION=	1.28.0
+PORTREVISION=	2
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,13 +18,12 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2 \
 		${LOCALBASE}/bin/xdpyinfo:x11/xdpyinfo
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
 		tar:xz xorg
 USE_MATE=	desktop
 USE_XORG=	ice sm x11 xau xext xrandr xrender xtrans xtst
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxslt pango
+PORTSCOUT=	limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-docbook-docs \
