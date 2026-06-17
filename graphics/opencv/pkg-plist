@@ -782,7 +782,7 @@ lib/libopencv_xphoto.so.%%SHORTVERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/bioinspired/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/ccm/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/colored_kinfu/__init__.pyi
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/config-%%PYTHON_VER%%.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/config-%%PYTHON_BASEVER%%.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/config.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/cuda/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/datasets/__init__.pyi
@@ -853,7 +853,7 @@ lib/libopencv_xphoto.so.%%SHORTVERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/plot/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/ppf_match_3d/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/py.typed
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/python-%%PYTHON_VER%%/cv2%%PYTHON_TAG%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/python-%%PYTHON_BASEVER%%/cv2%%PYTHON_SOABI%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/quality/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/rapid/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/reg/__init__.pyi
