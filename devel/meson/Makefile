@@ -1,5 +1,6 @@
 PORTNAME=	meson
 PORTVERSION=	1.10.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
@@ -49,6 +50,9 @@ PYTEST_BROKEN_TESTS=	test_pkgconfig_formatting \
 			test_static_link
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/python3|${PYTHON_CMD}|' \
+		-e 's|/usr/bin/meson|${LOCALBASE}/bin/meson|' \
+		${WRKSRC}/data/com.mesonbuild.install.policy
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|g' \
 		-e "s|'lib', 'pkgconfig'|'libdata', 'pkgconfig'|g" \
 		-e "s|self.libdir, 'pkgconfig'|'libdata', 'pkgconfig'|g" \
