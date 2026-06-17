@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PY_EXCEPTIONGROUP} \
 		${PY_TOMLI}
 
 USES=		python
-USE_PYTHON=	allflavors autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
