@@ -1,3 +1,100 @@
+  <vuln vid="cffe1232-e4b3-4c72-8b4c-6a8298c9b289">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>149.0.7827.155</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>149.0.7827.155</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_01750511403.html">
+	 <p>This update includes 33 security fixes:</p>
+	 <ul>
+	    <li>[516496659] Critical CVE-2026-12437: Use after free in WebShare.</li>
+	    <li>[516947912] Critical CVE-2026-12438: Inappropriate implementation in WebView.</li>
+	    <li>[519728275] Critical CVE-2026-12439: Use after free in Digital Credentials.</li>
+	    <li>[519731619] Critical CVE-2026-12440: Use after free in DigitalCredentials.</li>
+	    <li>[520157118] Critical CVE-2026-12441: Use after free in File Input.</li>
+	    <li>[521950423] Critical CVE-2026-12442: Use after free in Passwords.</li>
+	    <li>[522566295] Critical CVE-2026-12443: Use after free in Web Authentication.</li>
+	    <li>[513160088] High CVE-2026-12444: Out of bounds read in Chromoting.</li>
+	    <li>[513199795] High CVE-2026-12445: Use after free in Extensions.</li>
+	    <li>[513313107] High CVE-2026-12446: Insufficient data validation in Passwords.</li>
+	    <li>[513405023] High CVE-2026-12447: Heap buffer overflow in WebRTC.</li>
+	    <li>[513458233] High CVE-2026-12448: Inappropriate implementation in WebView.</li>
+	    <li>[513480539] High CVE-2026-12449: Use after free in Chromoting.</li>
+	    <li>[514531776] High CVE-2026-12450: Inappropriate implementation in Media.</li>
+	    <li>[514741076] High CVE-2026-12451: Use after free in DigitalCredentials.</li>
+	    <li>[515462244] High CVE-2026-12452: Use after free in Downloads.</li>
+	    <li>[516448843] High CVE-2026-12453: Insufficient validation of untrusted input in Input.</li>
+	    <li>[516926968] High CVE-2026-12454: Race in Safe Browsing.</li>
+	    <li>[517069848] High CVE-2026-12455: Use after free in Tab Strip.</li>
+	    <li>[517124587] High CVE-2026-12456: Insufficient validation of untrusted input in Extensions.</li>
+	    <li>[517153117] High CVE-2026-12457: Insufficient data validation in Extensions.</li>
+	    <li>[517258337] High CVE-2026-12458: Incorrect security UI in Passwords.</li>
+	    <li>[517406035] High CVE-2026-12459: Inappropriate implementation in Serial.</li>
+	    <li>[517484284] High CVE-2026-12460: Insufficient policy enforcement in File System Access.</li>
+	    <li>[517727318] High CVE-2026-12461: Out of bounds read in WebRTC.</li>
+	    <li>[517916024] High CVE-2026-12462: Use after free in Media.</li>
+	    <li>[518042749] High CVE-2026-12463: Inappropriate implementation in Views.</li>
+	    <li>[519358344] High CVE-2026-12464: Use after free in Browser.</li>
+	    <li>[520189702] High CVE-2026-12465: Insufficient validation of untrusted input in Metrics.</li>
+	    <li>[520199394] High CVE-2026-12466: Heap buffer overflow in WebRTC.</li>
+	    <li>[520202726] High CVE-2026-12467: Use after free in Extensions.</li>
+	    <li>[521485244] High CVE-2026-12468: Inappropriate implementation in Updater.</li>
+	    <li>[521618871] High CVE-2026-12469: Uninitialized Use in GPU.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-12437</cvename>
+      <cvename>CVE-2026-12438</cvename>
+      <cvename>CVE-2026-12439</cvename>
+      <cvename>CVE-2026-12440</cvename>
+      <cvename>CVE-2026-12441</cvename>
+      <cvename>CVE-2026-12442</cvename>
+      <cvename>CVE-2026-12443</cvename>
+      <cvename>CVE-2026-12444</cvename>
+      <cvename>CVE-2026-12445</cvename>
+      <cvename>CVE-2026-12446</cvename>
+      <cvename>CVE-2026-12447</cvename>
+      <cvename>CVE-2026-12448</cvename>
+      <cvename>CVE-2026-12449</cvename>
+      <cvename>CVE-2026-12450</cvename>
+      <cvename>CVE-2026-12451</cvename>
+      <cvename>CVE-2026-12452</cvename>
+      <cvename>CVE-2026-12453</cvename>
+      <cvename>CVE-2026-12454</cvename>
+      <cvename>CVE-2026-12455</cvename>
+      <cvename>CVE-2026-12456</cvename>
+      <cvename>CVE-2026-12457</cvename>
+      <cvename>CVE-2026-12458</cvename>
+      <cvename>CVE-2026-12459</cvename>
+      <cvename>CVE-2026-12460</cvename>
+      <cvename>CVE-2026-12461</cvename>
+      <cvename>CVE-2026-12462</cvename>
+      <cvename>CVE-2026-12463</cvename>
+      <cvename>CVE-2026-12464</cvename>
+      <cvename>CVE-2026-12465</cvename>
+      <cvename>CVE-2026-12466</cvename>
+      <cvename>CVE-2026-12467</cvename>
+      <cvename>CVE-2026-12468</cvename>
+      <cvename>CVE-2026-12469</cvename>
+      <url>https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_01750511403.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-11</discovery>
+      <entry>2026-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="44afeb08-6a18-11f1-9647-10ffe07f9334">
     <topic>mail/mailpit -- Incomplete SSRF protection in Link Check API via uncovered IPv6 forms</topic>
     <affects>
@@ -34,11 +131,11 @@
     <affects>
       <package>
        <name>chromium</name>
-       <range><lt>149.0.7827.102</lt></range>
+       <range><lt>149.0.7827.114</lt></range>
       </package>
       <package>
        <name>ungoogled-chromium</name>
-       <range><lt>149.0.7827.102</lt></range>
+       <range><lt>149.0.7827.114</lt></range>
       </package>
     </affects>
     <description>
