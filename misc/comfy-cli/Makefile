@@ -1,6 +1,6 @@
 PORTNAME=	comfy-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.4
+DISTVERSION=	1.10.5
 CATEGORIES=	misc python # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
