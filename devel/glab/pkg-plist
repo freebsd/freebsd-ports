@@ -51,6 +51,15 @@
 %%MANPAGES%%share/man/man1/glab-config-get.1.gz
 %%MANPAGES%%share/man/man1/glab-config-set.1.gz
 %%MANPAGES%%share/man/man1/glab-config.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-repository-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-repository-list.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-repository-view.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-repository.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-tag-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-tag-list.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-tag-view.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry-tag.1.gz
+%%MANPAGES%%share/man/man1/glab-container-registry.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-add.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-get.1.gz
@@ -147,6 +156,8 @@
 %%MANPAGES%%share/man/man1/glab-orbit-remote.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-setup.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit.1.gz
+%%MANPAGES%%share/man/man1/glab-packages-list.1.gz
+%%MANPAGES%%share/man/man1/glab-packages.1.gz
 %%MANPAGES%%share/man/man1/glab-release-create.1.gz
 %%MANPAGES%%share/man/man1/glab-release-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-release-download.1.gz
