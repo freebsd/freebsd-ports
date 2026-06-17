@@ -5,7 +5,6 @@
 %%TESTS%%bin/raidz_test
 etc/bash_completion.d/zfs
 etc/bash_completion.d/zpool
-etc/sudoers.d/zfs
 etc/zfs/vdev_id.conf.alias.example
 etc/zfs/vdev_id.conf.multipath.example
 etc/zfs/vdev_id.conf.sas_direct.example
@@ -1898,6 +1897,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/deadman/deadman_sync.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/deadman/deadman_zio.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_bclone_pruned.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_fdt_create.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_fdt_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_fdt_pacing.ksh
@@ -2402,6 +2402,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_incrementals.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_largeblocks.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_many_clones.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_max_blkid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_mixed_recsize.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_mounts.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted_negative.ksh
@@ -2474,6 +2475,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_ganging.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_hole.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_indirect.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_missing_log.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_remove.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_scrub.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_send.ksh
