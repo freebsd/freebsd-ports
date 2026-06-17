@@ -1,6 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.2.8
-PORTREVISION=	1
+DISTVERSION=	7.2.10
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 DISTNAME=	VirtualBox-${DISTVERSION}
