@@ -1,6 +1,5 @@
 PORTNAME=	iocaine
-DISTVERSION=	3.4.0
-PORTREVISION=	1
+DISTVERSION=	3.5.0
 CATEGORIES=	www
 MASTER_SITES=	https://git.madhouse-project.org/iocaine/iocaine/archive/ \
 		https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/tags/v${ROBOTS_VERSION}/:robots \
