@@ -1,4 +1,4 @@
-TIMESTAMP = 1781180704
+TIMESTAMP = 1781675352
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -401,5 +401,5 @@ SHA256 (rust/crates/zerocopy-derive-0.8.33.crate) = 2c7962b26b0a8685668b671ee4b5
 SIZE (rust/crates/zerocopy-derive-0.8.33.crate) = 100877
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (ahkohd-oyo-v0.1.34_GH0.tar.gz) = 2f8fa8b04c977ee87ebe4b2b59d1cbcd82e34ae5c7dd31287fe6897f3d14d7cb
-SIZE (ahkohd-oyo-v0.1.34_GH0.tar.gz) = 3246743
+SHA256 (ahkohd-oyo-v0.1.35_GH0.tar.gz) = fa62f3578935120fa526dd1251d5e88f5cf969b833db1217d9c3f1a65501f9ae
+SIZE (ahkohd-oyo-v0.1.35_GH0.tar.gz) = 3249381
