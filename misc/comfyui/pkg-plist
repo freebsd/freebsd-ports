@@ -1,4 +1,3 @@
-bin/comfyui
 %%DATADIR%%/.spectral.yaml
 %%DATADIR%%/CODEOWNERS
 %%DATADIR%%/CONTRIBUTING.md
@@ -13,6 +12,7 @@ bin/comfyui
 %%DATADIR%%/alembic_db/versions/0001_assets.py
 %%DATADIR%%/alembic_db/versions/0002_merge_to_asset_references.py
 %%DATADIR%%/alembic_db/versions/0003_add_metadata_job_id.py
+%%DATADIR%%/alembic_db/versions/0004_drop_tag_type.py
 %%DATADIR%%/api_server/__init__.py
 %%DATADIR%%/api_server/routes/__init__.py
 %%DATADIR%%/api_server/routes/internal/README.md
@@ -39,8 +39,10 @@ bin/comfyui
 %%DATADIR%%/app/assets/services/__init__.py
 %%DATADIR%%/app/assets/services/asset_management.py
 %%DATADIR%%/app/assets/services/bulk_ingest.py
+%%DATADIR%%/app/assets/services/cursor.py
 %%DATADIR%%/app/assets/services/file_utils.py
 %%DATADIR%%/app/assets/services/hashing.py
+%%DATADIR%%/app/assets/services/image_dimensions.py
 %%DATADIR%%/app/assets/services/ingest.py
 %%DATADIR%%/app/assets/services/metadata_extract.py
 %%DATADIR%%/app/assets/services/path_utils.py
@@ -227,6 +229,7 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/cogvideo/__init__.py
 %%DATADIR%%/comfy/ldm/cogvideo/model.py
 %%DATADIR%%/comfy/ldm/cogvideo/vae.py
+%%DATADIR%%/comfy/ldm/colormap.py
 %%DATADIR%%/comfy/ldm/common_dit.py
 %%DATADIR%%/comfy/ldm/cosmos/blocks.py
 %%DATADIR%%/comfy/ldm/cosmos/cosmos_tokenizer/layers3d.py
@@ -236,6 +239,13 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/cosmos/position_embedding.py
 %%DATADIR%%/comfy/ldm/cosmos/predict2.py
 %%DATADIR%%/comfy/ldm/cosmos/vae.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/camera.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/dpt.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/model.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/preprocess.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/ray_pose.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/reference_view_selector.py
+%%DATADIR%%/comfy/ldm/depth_anything_3/transform.py
 %%DATADIR%%/comfy/ldm/ernie/model.py
 %%DATADIR%%/comfy/ldm/flux/controlnet.py
 %%DATADIR%%/comfy/ldm/flux/layers.py
@@ -575,6 +585,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/util/validation_utils.py
 %%DATADIR%%/comfy_config/config_parser.py
 %%DATADIR%%/comfy_config/types.py
+%%DATADIR%%/comfy_execution/asset_enrichment.py
 %%DATADIR%%/comfy_execution/cache_provider.py
 %%DATADIR%%/comfy_execution/caching.py
 %%DATADIR%%/comfy_execution/graph.py
@@ -596,6 +607,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_attention_multiply.py
 %%DATADIR%%/comfy_extras/nodes_audio.py
 %%DATADIR%%/comfy_extras/nodes_audio_encoder.py
+%%DATADIR%%/comfy_extras/nodes_bernini.py
 %%DATADIR%%/comfy_extras/nodes_bg_removal.py
 %%DATADIR%%/comfy_extras/nodes_camera_trajectory.py
 %%DATADIR%%/comfy_extras/nodes_canny.py
@@ -611,6 +623,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_curve.py
 %%DATADIR%%/comfy_extras/nodes_custom_sampler.py
 %%DATADIR%%/comfy_extras/nodes_dataset.py
+%%DATADIR%%/comfy_extras/nodes_depth_anything_3.py
 %%DATADIR%%/comfy_extras/nodes_differential_diffusion.py
 %%DATADIR%%/comfy_extras/nodes_easycache.py
 %%DATADIR%%/comfy_extras/nodes_edit_model.py
@@ -679,6 +692,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_sag.py
 %%DATADIR%%/comfy_extras/nodes_sam3.py
 %%DATADIR%%/comfy_extras/nodes_save_3d.py
+%%DATADIR%%/comfy_extras/nodes_scail.py
 %%DATADIR%%/comfy_extras/nodes_sd3.py
 %%DATADIR%%/comfy_extras/nodes_sdpose.py
 %%DATADIR%%/comfy_extras/nodes_sdupscale.py
@@ -779,6 +793,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/assets_test/queries/conftest.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_asset.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_asset_info.py
+%%DATADIR%%/tests-unit/assets_test/queries/test_asset_reference_keyset.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_cache_state.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_metadata.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_tags.py
@@ -786,7 +801,9 @@ bin/comfyui
 %%DATADIR%%/tests-unit/assets_test/services/conftest.py
 %%DATADIR%%/tests-unit/assets_test/services/test_asset_management.py
 %%DATADIR%%/tests-unit/assets_test/services/test_bulk_ingest.py
+%%DATADIR%%/tests-unit/assets_test/services/test_cursor.py
 %%DATADIR%%/tests-unit/assets_test/services/test_enrich.py
+%%DATADIR%%/tests-unit/assets_test/services/test_image_dimensions.py
 %%DATADIR%%/tests-unit/assets_test/services/test_ingest.py
 %%DATADIR%%/tests-unit/assets_test/services/test_path_utils.py
 %%DATADIR%%/tests-unit/assets_test/services/test_tag_histogram.py
@@ -795,14 +812,17 @@ bin/comfyui
 %%DATADIR%%/tests-unit/assets_test/test_crud.py
 %%DATADIR%%/tests-unit/assets_test/test_downloads.py
 %%DATADIR%%/tests-unit/assets_test/test_file_utils.py
+%%DATADIR%%/tests-unit/assets_test/test_list_cursor.py
 %%DATADIR%%/tests-unit/assets_test/test_list_filter.py
 %%DATADIR%%/tests-unit/assets_test/test_metadata_filters.py
+%%DATADIR%%/tests-unit/assets_test/test_prompt_id_enforcement.py
 %%DATADIR%%/tests-unit/assets_test/test_prune_orphaned_assets.py
 %%DATADIR%%/tests-unit/assets_test/test_sync_references.py
 %%DATADIR%%/tests-unit/assets_test/test_tags_api.py
 %%DATADIR%%/tests-unit/assets_test/test_uploads.py
 %%DATADIR%%/tests-unit/comfy_api_test/input_impl_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/multicombo_serialization_test.py
+%%DATADIR%%/tests-unit/comfy_api_test/video_bit_depth_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_types_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/__init__.py
 %%DATADIR%%/tests-unit/comfy_extras_test/image_stitch_test.py
@@ -814,6 +834,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/deploy_environment_test.py
 %%DATADIR%%/tests-unit/execution_test/preview_method_override_test.py
 %%DATADIR%%/tests-unit/execution_test/test_cache_provider.py
+%%DATADIR%%/tests-unit/execution_test/test_enrich_output.py
 %%DATADIR%%/tests-unit/execution_test/validate_node_input_test.py
 %%DATADIR%%/tests-unit/feature_flags_test.py
 %%DATADIR%%/tests-unit/folder_paths_test/__init__.py
@@ -860,11 +881,11 @@ bin/comfyui
 %%DATADIR%%/utils/extra_config.py
 %%DATADIR%%/utils/install_util.py
 %%DATADIR%%/utils/json_util.py
-@group users
-@mode 4775
 %%DATADIR%%/utils/mime_types.py
 /var/db/comfyui/input/example.png
+@dir /var/db/comfyui
 @dir /var/db/comfyui/input
+@dir /var/db/comfyui/models
 @dir /var/db/comfyui/models/audio_encoders
 @dir /var/db/comfyui/models/checkpoints
 @dir /var/db/comfyui/models/clip
@@ -885,9 +906,10 @@ bin/comfyui
 @dir /var/db/comfyui/models/upscale_models
 @dir /var/db/comfyui/models/vae
 @dir /var/db/comfyui/models/vae_approx
-@dir /var/db/comfyui/models
 @dir /var/db/comfyui/output
 @dir /var/db/comfyui/temp
-@dir /var/db/comfyui/user/default
 @dir /var/db/comfyui/user
-@dir /var/db/comfyui
+@dir /var/db/comfyui/user/default
+@group users
+@mode 4775
+bin/comfyui
