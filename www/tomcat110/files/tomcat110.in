@@ -128,6 +128,7 @@ command_args="-java-home '${_tomcat_java_home}' \
 	-wait ${_tomcat_wait} \
 	-outfile '${_tomcat_stdout}' \
 	-errfile '${_tomcat_stderr}' \
+	-procname ${name} \
 	-classpath '${_tomcat_catalina_home}/bin/bootstrap.jar:%%LOCALBASE%%/share/java/classes/commons-daemon.jar:${_tomcat_catalina_home}/bin/tomcat-juli.jar${_tomcat_classpath}' \
 	-Djava.util.logging.manager=${_tomcat_logging_manager} \
 	-Djava.util.logging.config.file='${_tomcat_logging_config}' \
