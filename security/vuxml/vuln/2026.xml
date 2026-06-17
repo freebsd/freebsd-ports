@@ -1,3 +1,126 @@
+  <vuln vid="ab152ccb-6a59-11f1-bf61-3c7c3fba4204">
+    <topic>Routinator -- CWE-755 Improper Handling of Exceptional Conditions</topic>
+    <affects>
+    <package>
+	<name>routinator</name>
+	<range><lt>0.15.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49235.txt">https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49235.txt</a> reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49235.txt">
+	  <p>When Routinator encounters a file via RRDP using a specifically
+crafted Document Type Definition, Routinator crashes.</p>
+<p>Thanks to <a href="https://www.x41-dsec.de/">X41 D-Sec GmbH</a> for reporting the vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49235</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-49235</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40edfb37-6a59-11f1-bf61-3c7c3fba4204">
+    <topic>Routinator -- CWE-20 Improper Input Validation</topic>
+    <affects>
+    <package>
+	<name>routinator</name>
+	<range><lt>0.15.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49234.txt">https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49234.txt</a> reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49234.txt">
+	  <p>When sending a specifically crafted non-UTF-8 string as select-asn
+query parameter to the /api/v1/origins endpoint, Routinator crashes.
+
+This only affects users who allow API access from untrusted networks.</p>
+<p>Thanks to <a href="https://www.x41-dsec.de/">X41 D-Sec GmbH</a> for reporting the vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49234</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-49234</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e7be3859-6a58-11f1-bf61-3c7c3fba4204">
+    <topic>Routinator -- CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</topic>
+    <affects>
+    <package>
+	<name>routinator</name>
+	<range><lt>0.15.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49233.txt">https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49233.txt</a> reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49233.txt">
+	  <p>Routinator does not properly check the module component of rsync
+URIs, which are used to create the file system paths for the
+Routinator cache.  This allows for path traversal by having a module
+name containing .., potentially providing an attacker access to the
+entire Routinator rsync cache.</p>
+<p>Thanks to <a href="https://www.x41-dsec.de/">X41 D-Sec GmbH</a> for reporting the vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49233</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-49233</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b1c6c691-6a57-11f1-bf61-3c7c3fba4204">
+    <topic>Routinator -- CWE-755 Improper Handling of Exceptional Conditions</topic>
+    <affects>
+    <package>
+	<name>routinator</name>
+	<range><lt>0.15.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49232.txt">https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49232.txt</a> reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-49232.txt">
+	  <p>Routinator exits on any error when accepting incoming HTTP or RTR
+connections, including ones it can recover from such as running out
+of file descriptors.  This condition can be triggered maliciously
+by an attacker by opening a large number of connections to the HTTP
+or RTR server.
+
+This only affects users that make their HTTP or RTR server available
+to untrusted networks.</p>
+<p>Thanks to <a href="https://www.x41-dsec.de/">X41 D-Sec GmbH</a> for reporting the vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49232</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-49232</url>
+    </references>
+    <dates>
+      <discovery>2026-06-08</discovery>
+      <entry>2026-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cffe1232-e4b3-4c72-8b4c-6a8298c9b289">
     <topic>chromium -- security fixes</topic>
     <affects>
