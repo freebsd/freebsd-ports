@@ -1,6 +1,6 @@
---- stage0/src/runtime/io.cpp.orig	2026-02-24 00:20:30 UTC
+--- stage0/src/runtime/io.cpp.orig	2026-06-13 21:32:55 UTC
 +++ stage0/src/runtime/io.cpp
-@@ -1390,7 +1390,13 @@ extern "C" LEAN_EXPORT obj_res lean_io_app_path() {
+@@ -1397,7 +1397,13 @@ extern "C" LEAN_EXPORT obj_res lean_io_app_path() {
      char dest[PATH_MAX];
      memset(dest, 0, PATH_MAX);
      pid_t pid = getpid();
@@ -11,6 +11,6 @@
 +#else
 +#   error "Unknown platform"
 +#endif
-     if (readlink(path, dest, PATH_MAX) == -1) {
+     if (readlink(path, dest, PATH_MAX - 1) == -1) {
          return io_result_mk_error("failed to locate application");
      } else {
