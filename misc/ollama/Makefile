@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.7
+DISTVERSION=	0.30.9
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,14 +27,16 @@ GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
 GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
-LLAMA_CPP_VERSION=	b9509 # from the LLAMA_CPP_VERSION file in the llama.cpp repo
-GGML_SO_VERSION=	0.13.1	# tied to LLAMA_CPP_VERSION; update when llama.cpp changes
+LLAMA_CPP_VERSION=	b9626 # from the LLAMA_CPP_VERSION file in the llama.cpp repo
+GGML_SO_VERSION=	0.15.1	# tied to LLAMA_CPP_VERSION; update when llama.cpp changes
 MLX_CORE_VERSION=	0.31.2
 MLX_C_VERSION=		fba4470b89073180056c9ea46c443051375f7399
 JSON_VERSION=		3.11.3
 
-DISTFILES+=	${LLAMA_CPP_VERSION}.tar.gz:llamasrc
-MASTER_SITES+=	https://github.com/ggml-org/llama.cpp/archive/refs/tags/:llamasrc
+DISTFILES+=	${LLAMA_CPP_VERSION}.tar.gz:llamasrc \
+		llama-${LLAMA_CPP_VERSION}-ui.tar.gz:llamasrc
+MASTER_SITES+=	https://github.com/ggml-org/llama.cpp/archive/refs/tags/:llamasrc \
+		https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_CPP_VERSION}/:llamasrc
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/ollama-limit-gpu-layers
@@ -116,15 +118,22 @@ MASTER_SITES+=	https://github.com/ml-explore/mlx/archive/refs/tags/:mlxsrc \
 		https://github.com/nlohmann/json/releases/download/v${JSON_VERSION}/:jsonsrc
 .endif
 
+post-extract:
+	# Copy pre-built UI assets into llama.cpp source tree so the build
+	# can embed them without running npm or downloading from Hugging Face.
+	@${MKDIR} ${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION}/tools/ui/dist && \
+		${CP} -r ${WRKDIR}/llama-${LLAMA_CPP_VERSION}/* \
+		${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION}/tools/ui/dist/
+
 post-patch:
-	# Apply llama.cpp compat hooks patch so the llama-server build has Ollama hooks
-	@${PATCH} -d ${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION} -p1 \
-		< ${WRKSRC}/llama/compat/llama-cpp-hooks.patch
 	# Apply llama.cpp laguna model patch (adds llama_model_laguna class)
 	@${PATCH} -d ${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION} -p1 \
-		< ${WRKSRC}/llama/compat/models/llama-cpp-laguna.patch
+		< ${WRKSRC}/llama/compat/models/003-llama-cpp-laguna.patch
+	# Fix llama-ui-embed crash when called without asset_dir argument
+	@${REINPLACE_CMD} -e 's|const std::string asset_dir = argv\[3\];|const std::string asset_dir = (argc > 3) ? argv[3] : "";|g' \
+		${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION}/tools/ui/embed.cpp
 	# FreeBSD: copy llm/llm_freebsd.go for LlamaServerSysProcAttr
-		@${CP} ${FILESDIR}/llm_freebsd.go ${WRKSRC}/llm/
+	@${CP} ${FILESDIR}/llm_freebsd.go ${WRKSRC}/llm/
 	# update version in version.go
 	@${REINPLACE_CMD} -e 's|var Version string = "0.0.0"|var Version string = "${PORTVERSION}"|g' \
 		${WRKSRC}/version/version.go
