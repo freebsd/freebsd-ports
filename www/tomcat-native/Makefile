@@ -1,6 +1,5 @@
 PORTNAME=	tomcat-native
-DISTVERSION=	1.3.7
-PORTREVISION=	1
+DISTVERSION=	1.3.8
 CATEGORIES=	www java
 MASTER_SITES=	https://archive.apache.org/dist/tomcat/tomcat-connectors/native/${PORTVERSION}/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
