@@ -1,5 +1,6 @@
 PORTNAME=	meson
 PORTVERSION=	1.10.2
+PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -23,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_F
 		gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		ninja:run python shebangfix vala:test
-USE_PYTHON=	allflavors autoplist concurrent cython_test optsuffix pep517 pytest
+USE_PYTHON=	autoplist cython_test optsuffix pep517 pytest
 SHEBANG_FILES=	mesonbuild/rewriter.py \
 		mesonbuild/scripts/cmake_run_ctgt.py
 NO_ARCH=	yes
