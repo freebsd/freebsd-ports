@@ -1,3 +1,55 @@
+  <vuln vid="35598415-56de-4562-959c-11fb1fd2d995">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>jenkins</name>
+	<range><lt>2.568</lt></range>
+    </package>
+    <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.555.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory 2026-06-10:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2026-06-10/">
+	  <ul>
+	    <li>SECURITY-3707 / CVE-2026-53435: Deserialization vulnerability
+	    (High)</li>
+	    <li>SECURITY-3711+3755 / CVE-2026-53436, CVE-2026-53437: Open
+	    redirect vulnerability (Medium)</li>
+	    <li>SECURITY-3712 / CVE-2026-53438: Missing permission check allows
+	    canceling queue items (Medium)</li>
+	    <li>SECURITY-3713 / CVE-2026-53439: Missing permission checks allow
+	    obtaining limited user profile information (Medium)</li>
+	    <li>SECURITY-3721 / CVE-2026-53440: Open redirect vulnerability in
+	    "Delegate to servlet container" security realm (Medium)</li>
+	    <li>SECURITY-3731 / CVE-2026-53441: Stored XSS vulnerability in
+	    node offline cause description (High)</li>
+	    <li>SECURITY-3744 / CVE-2026-53442: Plaintext secrets persisted and
+	    served by config.xml endpoints (Medium)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-53435</cvename>
+      <cvename>CVE-2026-53436</cvename>
+      <cvename>CVE-2026-53437</cvename>
+      <cvename>CVE-2026-53438</cvename>
+      <cvename>CVE-2026-53439</cvename>
+      <cvename>CVE-2026-53440</cvename>
+      <cvename>CVE-2026-53441</cvename>
+      <cvename>CVE-2026-53442</cvename>
+      <url>https://www.jenkins.io/security/advisory/2026-06-10/</url>
+    </references>
+    <dates>
+      <discovery>2026-06-10</discovery>
+      <entry>2026-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab152ccb-6a59-11f1-bf61-3c7c3fba4204">
     <topic>Routinator -- CWE-755 Improper Handling of Exceptional Conditions</topic>
     <affects>
