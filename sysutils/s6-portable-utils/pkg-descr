@@ -1,0 +1,4 @@
+s6-portable-utils is a set of tiny general Unix utilities, often
+performing well-known tasks such as cut and grep, but optimized for
+simplicity and small size. They were designed for embedded systems and
+other constrained environments, but they work everywhere.
