@@ -1,8 +1,7 @@
 PORTNAME=	boringssl
-DISTVERSION=	0.20260601.0
-PORTREVISION=	1
+DISTVERSION=	0.20260616.0
 CATEGORIES=	security
-EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${DISTVERSION}-${GH_TAGNAME}_GH0.tar.gz
+EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${DISTVERSION}_GH0.tar.gz
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fork of OpenSSL
@@ -20,7 +19,6 @@ CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	d84317a
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1
 
 CFLAGS_i386=	-msse2
@@ -38,10 +36,10 @@ DISTFILES+=	filippo.io/edwards25519/@v/v1.2.0.zip:gomods \
 		filippo.io/edwards25519/@v/v1.2.0.mod:gomods \
 		filippo.io/mldsa/@v/v0.0.0-20260215214346-43d0283efc3e.zip:gomods \
 		filippo.io/mldsa/@v/v0.0.0-20260215214346-43d0283efc3e.mod:gomods \
-		golang.org/x/crypto/@v/v0.43.0.zip:gomods \
-		golang.org/x/crypto/@v/v0.43.0.mod:gomods \
-		golang.org/x/sys/@v/v0.37.0.zip:gomods \
-		golang.org/x/sys/@v/v0.37.0.mod:gomods
+		golang.org/x/crypto/@v/v0.52.0.zip:gomods \
+		golang.org/x/crypto/@v/v0.52.0.mod:gomods \
+		golang.org/x/sys/@v/v0.45.0.zip:gomods \
+		golang.org/x/sys/@v/v0.45.0.mod:gomods
 .endif
 
 post-install:
