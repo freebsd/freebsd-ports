@@ -1,6 +1,7 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.30.9
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -100,6 +101,7 @@ _CMAKE_FLAGS=	-DCMAKE_BUILD_TYPE=Release \
 		-DGGML_BACKEND_DIR=${PREFIX}/lib/ollama \
 		-DFETCHCONTENT_FULLY_DISCONNECTED=ON \
 		-DFETCHCONTENT_SOURCE_DIR_LLAMA_CPP=${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION} \
+		-DOLLAMA_LLAMA_CPP_SKIP_COMPAT_PATCH=ON \
 		-DLLAMA_BUILD_NUMBER=${LLAMA_CPP_VERSION:S/b//}
 
 .include <bsd.port.options.mk>
@@ -129,6 +131,9 @@ post-patch:
 	# Apply llama.cpp laguna model patch (adds llama_model_laguna class)
 	@${PATCH} -d ${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION} -p1 \
 		< ${WRKSRC}/llama/compat/models/003-llama-cpp-laguna.patch
+	# Apply Ollama llama.cpp compat hooks patch (vision model support)
+	@${PATCH} -d ${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION} -p1 \
+		< ${WRKSRC}/llama/compat/001-llama-cpp-hooks.patch
 	# Fix llama-ui-embed crash when called without asset_dir argument
 	@${REINPLACE_CMD} -e 's|const std::string asset_dir = argv\[3\];|const std::string asset_dir = (argc > 3) ? argv[3] : "";|g' \
 		${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION}/tools/ui/embed.cpp
