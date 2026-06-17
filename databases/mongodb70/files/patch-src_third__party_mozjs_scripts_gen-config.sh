@@ -1,5 +1,5 @@
---- src/third_party/mozjs/gen-config.sh.orig	2025-12-22 19:50:59 UTC
-+++ src/third_party/mozjs/gen-config.sh
+--- src/third_party/mozjs/scripts/gen-config.sh.orig	2026-06-16 06:40:34 UTC
++++ src/third_party/mozjs/scripts/gen-config.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh

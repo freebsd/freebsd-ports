@@ -1,14 +1,13 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	7.0.34
-PORTREVISION=	2
+DISTVERSION=	7.0.35
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 # https://github.com/mongodb/mongo/pull/1619/
 # "Modernize dynamic module loading to work with Python3.12"
-PATCHFILES+=	0877732109589e441cbf234dce17ec0e7b614902.patch:-p1
+#PATCHFILES+=	0877732109589e441cbf234dce17ec0e7b614902.patch:-p1
 
 MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	MongoDB Community Edition (7.0.x Branch)
@@ -30,7 +29,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/py-pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.11:devel/py-pyyaml@${PY_FLAVOR} \
 		rust-cbindgen>0:devel/rust-cbindgen
-# build depends used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
+# build depends used while running ${WRKSRC}/src/third_party/mozjs/scripts/gen-config.sh
 BUILD_DEPENDS+=	gm4:devel/m4 \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -45,12 +44,12 @@ FLAVORS=	default armv80a
 armv80a_PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}-armv80a
 
 USES=		compiler:c++20-lang cpe python:build scons shebangfix ssl
-# gmake is used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
+# gmake is used while running ${WRKSRC}/src/third_party/mozjs/scripts/gen-config.sh
 USES+=		gmake pkgconfig
 CPE_PRODUCT=	mongodb
 
-# mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/get-sources.sh
-MOZJS_TAG=	692674d55f1c4acfae4316efab0f79cd67250341
+# mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/scripts/import.sh
+MOZJS_TAG=	dd4a007275927572d0b10857d3f11b28550d0095
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb mongodb-forks:mozjs
@@ -62,7 +61,7 @@ SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
 HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	gen-config.sh
+CONFIGURE_SCRIPT=	scripts/gen-config.sh
 CONFIGURE_ARGS=		${MOZJS_ARCH} \
 			freebsd
 CONFIGURE_ENV+=		PYTHON3="${PYTHON_CMD}"
@@ -150,7 +149,7 @@ MOZJS_ARCH=	${ARCH}
 
 post-extract:
 # Verify we downloaded the proper mozjs git tag.
-	${SH} -xc "test \"X`grep -E '^LIB_GIT_REVISION=' ${MOZJS_WRKSRC}/get-sources.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
+	${SH} -xc "test \"X`grep -E '^LIB_GIT_REVISION=' ${MOZJS_WRKSRC}/scripts/import.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
 	${PATCH} -d ${WRKDIR}/spidermonkey-${MOZJS_TAG} -p1 < ${PATCHDIR}/d497aa4f770ca02f6083e93b94996a8fe32c2ff4.patch
 
 post-patch:
@@ -161,7 +160,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's#rU#r#g' ${WRKDIR}/spidermonkey-${MOZJS_TAG}/python/mozbuild/mozbuild/action/process_define_files.py
 
 pre-configure:
-# Replacement of ${WRKSRC}/src/third_party/mozjs/get-sources.sh
+# Replacement of ${WRKSRC}/src/third_party/mozjs/scripts/import.sh
 	${LN} -sF ${WRKDIR}/spidermonkey-${MOZJS_TAG} ${MOZJS_WRKSRC}/mozilla-release
 
 do-build:
