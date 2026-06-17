@@ -85,11 +85,11 @@ JAVA_DEFAULT?=		21
 .  else
 JAVA_DEFAULT?=		25
 .  endif
-# Possible values: 4.6, 4.99
+# Possible values: 4.8, 4.99
 .  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc*}
 LAZARUS_DEFAULT?=	4.99
 .  else
-LAZARUS_DEFAULT?=	4.6
+LAZARUS_DEFAULT?=	4.8
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
