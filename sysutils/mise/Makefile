@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.6.10
+DISTVERSION=	2026.6.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -112,7 +112,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		blake2-0.11.0-rc.6 \
 		blake3-1.8.5 \
 		block-buffer-0.10.4 \
-		block-buffer-0.12.0 \
+		block-buffer-0.12.1 \
 		block-padding-0.3.3 \
 		blowfish-0.9.1 \
 		bs58-0.5.1 \
@@ -133,7 +133,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
 		cbc-0.1.2 \
-		cc-1.2.63 \
+		cc-1.2.64 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -424,7 +424,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indoc-2.0.7 \
 		inout-0.1.4 \
 		inout-0.2.2 \
-		insta-1.47.2 \
+		insta-1.48.0 \
 		intl-memoizer-0.5.3 \
 		intl_pluralrules-7.0.2 \
 		io-close-0.3.7 \
@@ -445,7 +445,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.100 \
+		js-sys-0.3.102 \
 		json-patch-4.2.0 \
 		jsonptr-0.7.1 \
 		junction-2.0.0 \
@@ -485,7 +485,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		maybe-async-0.2.11 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
-		memchr-2.8.1 \
+		memchr-2.8.2 \
 		memmap2-0.9.10 \
 		memoffset-0.9.1 \
 		miette-7.6.0 \
@@ -511,6 +511,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nom-language-0.1.0 \
 		nonempty-0.12.0 \
 		nu-ansi-term-0.50.3 \
+		nucleo-matcher-0.3.1 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
 		num-bigint-dig-0.8.6 \
@@ -526,13 +527,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
-		openssl-0.10.80 \
+		openssl-0.10.81 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.116 \
+		openssl-sys-0.9.117 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
-		os-release-0.1.0 \
 		os_pipe-1.2.3 \
 		outref-0.5.2 \
 		owo-colors-4.3.0 \
@@ -611,20 +611,20 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
-		rattler-0.44.3 \
-		rattler_cache-0.9.1 \
-		rattler_conda_types-0.47.0 \
+		rattler-0.44.4 \
+		rattler_cache-0.9.2 \
+		rattler_conda_types-0.47.1 \
 		rattler_digest-1.3.1 \
 		rattler_macros-1.1.1 \
-		rattler_menuinst-0.2.65 \
-		rattler_networking-0.28.0 \
-		rattler_package_streaming-0.26.3 \
+		rattler_menuinst-0.2.66 \
+		rattler_networking-0.28.1 \
+		rattler_package_streaming-0.26.4 \
 		rattler_pty-0.2.13 \
 		rattler_redaction-0.2.1 \
-		rattler_repodata_gateway-0.29.4 \
-		rattler_shell-0.27.5 \
-		rattler_solve-7.1.2 \
-		rattler_virtual_packages-3.0.0 \
+		rattler_repodata_gateway-0.29.5 \
+		rattler_shell-0.27.6 \
+		rattler_solve-7.1.3 \
+		rattler_virtual_packages-3.0.1 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
@@ -632,11 +632,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		reflink-copy-0.1.29 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
 		regex-lite-0.1.9 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		rend-0.5.3 \
 		reqwest-0.12.28 \
 		reqwest-0.13.4 \
@@ -746,7 +746,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		siphasher-1.0.3 \
 		slab-0.4.12 \
 		slug-0.1.6 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		snafu-0.8.9 \
 		snafu-derive-0.8.9 \
 		snap-1.1.1 \
@@ -756,6 +756,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
+		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum-0.28.0 \
@@ -770,7 +771,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.117 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
-		sys-info-0.9.1 \
 		sysctl-0.5.5 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
@@ -794,9 +794,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
-		time-0.3.47 \
-		time-core-0.1.8 \
-		time-macros-0.2.27 \
+		time-0.3.49 \
+		time-core-0.1.9 \
+		time-macros-0.2.29 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
@@ -862,7 +862,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.2 \
+		uuid-1.23.3 \
 		valuable-0.1.1 \
 		value-trait-0.12.1 \
 		vcpkg-0.2.15 \
@@ -874,20 +874,20 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.3+wasi-0.2.9 \
+		wasip2-1.0.4+wasi-0.2.12 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.123 \
-		wasm-bindgen-futures-0.4.73 \
-		wasm-bindgen-macro-0.2.123 \
-		wasm-bindgen-macro-support-0.2.123 \
-		wasm-bindgen-shared-0.2.123 \
+		wasm-bindgen-0.2.125 \
+		wasm-bindgen-futures-0.4.75 \
+		wasm-bindgen-macro-0.2.125 \
+		wasm-bindgen-macro-support-0.2.125 \
+		wasm-bindgen-shared-0.2.125 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
 		wasm-streams-0.5.0 \
 		wasmparser-0.244.0 \
 		wasmtimer-0.4.3 \
-		web-sys-0.3.100 \
+		web-sys-0.3.102 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
 		webpki-roots-1.0.7 \
@@ -969,17 +969,17 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		x509-tsp-0.1.0 \
 		xattr-1.6.1 \
 		xmlparser-0.13.6 \
-		xx-2.5.4 \
+		xx-2.6.1 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.50 \
-		zerocopy-derive-0.8.50 \
+		zerocopy-0.8.52 \
+		zerocopy-derive-0.8.52 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
-		zeroize-1.8.2 \
-		zeroize_derive-1.4.3 \
+		zeroize-1.9.0 \
+		zeroize_derive-1.5.0 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
@@ -1003,7 +1003,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 # Fix build on armv7, i386 and powerpc
 # sys-info-0.9.1 crate issue: https://github.com/FillZpp/sys-info-rs/issues/80
-post-patch:
+xpost-patch:
 	@${REINPLACE_CMD} \
 	-e '/get_cpu/s|unsigned long|uint64_t|' \
 	-e '/get_proc_total/s|unsigned long|uint64_t|' \
