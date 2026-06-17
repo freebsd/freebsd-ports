@@ -1,0 +1,10 @@
+--- src/Library/Serialization/CMakeLists.txt.orig	2025-09-07 22:10:00 UTC
++++ src/Library/Serialization/CMakeLists.txt
+@@ -15,6 +15,7 @@ set(LIBRARY_SERIALIZATION_HEADERS
+ 
+ add_library(library_serialization STATIC ${LIBRARY_SERIALIZATION_SOURCES} ${LIBRARY_SERIALIZATION_HEADERS})
+ target_check_style(library_serialization)
++find_package(FastFloat REQUIRED)
+ target_link_libraries(library_serialization
+         PUBLIC
+         utility
