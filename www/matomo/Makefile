@@ -1,5 +1,5 @@
 PORTNAME=	matomo
-PORTVERSION=	5.9.0
+PORTVERSION=	5.11.2
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -11,7 +11,7 @@ WWW=		https://www.matomo.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe shebangfix php:flavors
+USES=		cpe php:flavors shebangfix
 USE_PHP=	ctype curl dom fileinfo filter gd iconv intl mbstring mcrypt \
 		memcache mysqli opcache pdo pdo_mysql posix readline session \
 		simplexml soap sockets sqlite3 tidy tokenizer xml zlib
