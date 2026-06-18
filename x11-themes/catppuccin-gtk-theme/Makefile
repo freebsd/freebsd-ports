@@ -1,5 +1,6 @@
 PORTNAME=	catppuccin-gtk-theme
-DISTVERSION=	g20251023
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -21,10 +22,11 @@ USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fausto-Korpsvart
 GH_PROJECT=	Catppuccin-GTK-Theme
-GH_TAGNAME=	f25d8cf688d8f224f0ce396689ffcf5767eb647e
 
 SHEBANG_FILES=	themes/build.sh \
 		themes/install.sh
+
+MAKE_ENV=	BATCH_MODE=true
 
 BINARY_ALIAS=	sed=gsed
 NO_ARCH=	yes
@@ -38,7 +40,8 @@ OPTIONS_DEFINE=	DOCS
 INSTALL_FLAGS=	--dest ${STAGEDIR}${PREFIX}/share/themes \
 		--theme all \
 		--color light dark \
-		--size standard compact
+		--size standard compact \
+		--verbose
 
 do-build:
 	cd ${BUILD_WRKSRC} && \
@@ -47,7 +50,7 @@ do-build:
 do-install:
 	cd ${BUILD_WRKSRC} && \
 	${SETENV} ${MAKE_ENV} ./install.sh ${INSTALL_FLAGS}
-.for colorscheme in frappe macchiato
+.for colorscheme in frappe macchiato black
 	cd ${BUILD_WRKSRC} && \
 	${SETENV} ${MAKE_ENV} ./install.sh ${INSTALL_FLAGS} --tweaks ${colorscheme}
 .endfor
