@@ -1,7 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.9
-PORTREVISION=	1
+DISTVERSION=	0.30.10
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +27,7 @@ GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
 GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
-LLAMA_CPP_VERSION=	b9626 # from the LLAMA_CPP_VERSION file in the llama.cpp repo
+LLAMA_CPP_VERSION=	b9672 # from the LLAMA_CPP_VERSION file in the llama.cpp repo
 GGML_SO_VERSION=	0.15.1	# tied to LLAMA_CPP_VERSION; update when llama.cpp changes
 MLX_CORE_VERSION=	0.31.2
 MLX_C_VERSION=		fba4470b89073180056c9ea46c443051375f7399
