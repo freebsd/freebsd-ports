@@ -227,7 +227,7 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 post-extract-TEST-on:
 	@${LN} -sf ${WRKDIR}/jtreg/linux/bin ${WRKDIR}/jtreg/
 
-post-patch:
+pre-configure:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${FILESDIR}/bsd.fontconfig.properties.in > \
