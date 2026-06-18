@@ -62,6 +62,9 @@ post-patch:
 		${WRKSRC}/comm/mail/app/nsMailApp.cpp
 	@${REINPLACE_CMD} -e 's|wasm32-wasi|&p1|' \
 		${WRKSRC}/build/moz.configure/toolchain.configure
+	${FIND} ${WRKSRC}/comm/third_party/rust -name .cargo-checksum.json | \
+		${XARGS} ${REINPLACE_CMD} \
+		's,"\([a-z_]*/\)*.gitmodules":"[[:xdigit:]]\{64\}"\,,,'
 
 port-pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/defaults
