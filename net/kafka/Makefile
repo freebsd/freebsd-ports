@@ -1,6 +1,5 @@
 PORTNAME=	kafka
-DISTVERSION=	3.9.1
-PORTREVISION=	1
+DISTVERSION=	3.9.2
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_2.13-${DISTVERSION}
@@ -22,8 +21,8 @@ USE_RC_SUBR=	kafka kafka_connect
 
 SHEBANG_FILES=	bin/*.sh
 
-KAFKA_USER?=		kafka
-KAFKA_GROUP?=		kafka
+KAFKA_USER?=		${PORTNAME}
+KAFKA_GROUP?=		${PORTNAME}
 KAFKA_DBDIR?=		/var/db/${PORTNAME}
 KAFKA_DBDIR_KRAFT?=	${KAFKA_DBDIR}-kraft
 KAFKA_LOGDIR?=		/var/log/${PORTNAME}
@@ -40,8 +39,12 @@ SUB_LIST=	JAVA=${JAVA} \
 		KAFKA_GROUP=${KAFKA_GROUP} \
 		KAFKA_LOGDIR=${KAFKA_LOGDIR} \
 		KAFKA_USER=${KAFKA_USER}
+.if ${KAFKA_USER} == ${PORTNAME}
 USERS=		${KAFKA_USER}
+.endif
+.if ${KAFKA_GROUP} == ${PORTNAME}
 GROUPS=		${KAFKA_GROUP}
+.endif
 
 KAFKA_BINS=		connect-distributed.sh connect-mirror-maker.sh \
 			connect-plugin-path.sh connect-standalone.sh \
@@ -97,15 +100,12 @@ post-patch:
 .endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${ETCDIR}/kraft
-	${MKDIR} ${STAGEDIR}${KAFKA_DBDIR}
-	${MKDIR} ${STAGEDIR}${KAFKA_DBDIR_KRAFT}
-	${MKDIR} ${STAGEDIR}${KAFKA_LOGDIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}/bin
-.for f in ${KAFKA_BINS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${DATADIR}/bin/
-.endfor
+	${MKDIR} ${STAGEDIR}${ETCDIR}/kraft \
+		 ${STAGEDIR}${KAFKA_DBDIR} \
+		 ${STAGEDIR}${KAFKA_DBDIR_KRAFT} \
+		 ${STAGEDIR}${KAFKA_LOGDIR} \
+		 ${STAGEDIR}${DATADIR}/bin
+	${INSTALL_SCRIPT} ${KAFKA_BINS:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${DATADIR}/bin
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} libs ${STAGEDIR}${DATADIR} "-not ( \
 		-name kafka_*-javadoc\.jar -or -name kafka_*-scaladoc\.jar -or \
 		-name kafka_*-sources\.jar -or -name kafka_*-test\.jar -or \
@@ -120,6 +120,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${EXTRACT_CMD} -xf ${WRKSRC}/site-docs/${PORTNAME}_2.13-${DISTVERSION}-site-docs.tgz -C ${STAGEDIR}${DOCSDIR}
+	${EXTRACT_CMD} -xf ${WRKSRC}/site-docs/${PORTNAME}_2.13-${DISTVERSION}-site-docs.tgz \
+		-C ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
