@@ -1,11 +1,10 @@
 PORTNAME=	recursor
-DISTVERSION=	5.4.2
-PORTREVISION=	0
+DISTVERSION=	5.4.3
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
 DISTNAME=	pdns-${PORTNAME}-${DISTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libsodium.so:security/libsodium
 
-USES=		cargo compiler:c++11-lib cpe localbase meson pkgconfig \
+USES=		cargo compiler:c++17-lang cpe localbase meson pkgconfig \
 		python:build ssl tar:xz
 
 CPE_VENDOR=	powerdns
@@ -47,14 +46,15 @@ TARGET_ORDER_OVERRIDE=	750:cargo-configure
 USERS=		pdns_recursor
 GROUPS=		pdns
 
-OPTIONS_DEFINE=		DNSTAP GNUTLS SNMP
-OPTIONS_DEFAULT=	LUA
+OPTIONS_DEFINE=		DNSTAP GNUTLS NOD SNMP
+OPTIONS_DEFAULT=	LUA NOD
 OPTIONS_SINGLE=		EXTLUA
 OPTIONS_SINGLE_EXTLUA=	LUA LUAJIT
 
 DNSTAP_DESC=	dnstap support (see dnstap.info)
 LUAJIT_DESC=	Use luajit
 LUA_DESC=	Use lang/lua
+NOD_DESC=	Newly Observed Domain Tracking support
 
 DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm
 DNSTAP_MESON_ENABLED=	dnstap
@@ -67,6 +67,8 @@ LUAJIT_MESON_ON=	-Dlua=luajit
 
 LUA_USES=	lua
 LUA_MESON_ON=	-Dlua=lua
+
+NOD_MESON_ENABLED=	nod
 
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_MESON_ENABLED=	snmp
