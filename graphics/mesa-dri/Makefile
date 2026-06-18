@@ -38,7 +38,6 @@ iris_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 iris_RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
-iris_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 iris_IMPLIES=		SPIRV
 llvmpipe_DESC=		Software Rasterizer
 panfrost_DESC=		ARM Midgard and Bifrost
@@ -67,7 +66,6 @@ anv_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 anv_RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
-anv_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 radv_DESC=		AMD/ATI Southern Islands and newer Vulkan support
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 swrast_vk_DESC=		Software Rasterizer Vulkan support

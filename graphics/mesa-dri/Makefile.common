@@ -56,6 +56,8 @@ LTO_UNSAFE=	Upstream recommends against LTO https://gitlab.freedesktop.org/mesa/
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG}
+# Needed to locate libclc
+CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 
 # mesa 25.x removed the -Dlibelf option; libelf is now auto-detected.
 # If the user has elfutils installed in LOCALBASE, propagate it as a

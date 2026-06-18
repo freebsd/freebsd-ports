@@ -20,8 +20,6 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 		spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 
-CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
-
 OPTIONS_GROUP=		PLATFORM
 OPTIONS_GROUP_PLATFORM=	X11 WAYLAND
 X11_DESC=		Enable X11 support for GBM/EGL
