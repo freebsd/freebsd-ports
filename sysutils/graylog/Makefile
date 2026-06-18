@@ -1,5 +1,5 @@
 PORTNAME=	graylog
-DISTVERSION=	7.0.8
+DISTVERSION=	7.1.3
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/${PORTNAME}/ \
 		LOCAL/vvd
