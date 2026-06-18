@@ -494,11 +494,6 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/idna-%%IDNA_VER%%/ebin/idna_table.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/idna-%%IDNA_VER%%/ebin/idna_ucs.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/idna-%%IDNA_VER%%/ebin/punycode.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/LICENSE
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/ebin/jiffy.app
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/ebin/jiffy.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/ebin/jiffy_utf8.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/priv/jiffy.so
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/LICENSE.md
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.beam

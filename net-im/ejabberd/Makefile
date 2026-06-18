@@ -1,5 +1,6 @@
 PORTNAME=	ejabberd
 PORTVERSION=	26.04
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://code.jquery.com/:jquery \
 		https://github.com/twbs/bootstrap/releases/download/v5.3.8/:bootstrap
@@ -46,7 +47,6 @@ GH_TUPLE=	processone:p1_utils:${P1_UTILS_VER}:p1_utils/deps/p1_utils \
 		processone:fast_xml:${FAST_XML_VER}:fast_xml/deps/fast_xml \
 		processone:xmpp:${XMPP_VER}:xmpp/deps/xmpp \
 		processone:fast_yaml:${FAST_YAML_VER}:fast_yaml/deps/fast_yaml \
-		davisp:jiffy:${JIFFY_VER}:jiffy/deps/jiffy \
 		processone:p1_oauth2:${P1_OAUTH2_VER}:p1_oauth2/deps/p1_oauth2 \
 		potatosalad:erlang-jose:${JOSE_VER}:jose/deps/jose \
 		processone:eimp:${EIMP_VER}:eimp/deps/eimp \
@@ -79,7 +79,7 @@ SUBS=		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		FAST_XML_VER=${FAST_XML_VER}				\
 		FAST_YAML_VER=${FAST_YAML_VER}				\
 		IDNA_VER=${IDNA_VER}					\
-		JIFFY_VER=${JIFFY_VER} JOSE_VER=${JOSE_VER}		\
+		JOSE_VER=${JOSE_VER}					\
 		LUERL_VER=${LUERL_VER}					\
 		MQTREE_VER=${MQTREE_VER}				\
 		P1_ACME_VER=${P1_ACME_VER}				\
@@ -110,7 +110,6 @@ FAST_TLS_VER=	1.1.26
 FAST_XML_VER=	1.1.60
 FAST_YAML_VER=	1.0.40
 IDNA_VER=	7.1.0
-JIFFY_VER=	1.1.1
 JOSE_VER=	1.11.12
 LUERL_VER=	1.2
 MQTREE_VER=	1.0.20
