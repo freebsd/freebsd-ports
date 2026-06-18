@@ -5,7 +5,8 @@ CATEGORIES=	graphics
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 WWW=		https://www.mesa3d.org/
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+BUILD_DEPENDS+=	glslangValidator:graphics/glslang \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		libva>=0:multimedia/libva
 LIB_DEPENDS+=	libgallium-${MESAVERSION}.so:graphics/mesa-libs \
 		libgbm.so:graphics/mesa-libs
@@ -60,14 +61,12 @@ ${_gd}_VARS+=		GALLIUM_DRIVERS+=${_gd}
 OPTIONS_GROUP_VULKAN=	anv radv swrast_vk
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Intel GPU Gen9 and newer Vulkan support
-anv_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
-			libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
+anv_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 			spirv-tools>0:graphics/spirv-tools \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 anv_RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
 radv_DESC=		AMD/ATI Southern Islands and newer Vulkan support
-radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 swrast_vk_DESC=		Software Rasterizer Vulkan support
 
 OPTIONS_EXCLUDE+=	${ARCH:Marmv7:C/.+/anv radv/}
