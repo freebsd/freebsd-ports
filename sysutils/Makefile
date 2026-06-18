@@ -308,6 +308,7 @@
     SUBDIR += dmg2img
     SUBDIR += dmidecode
     SUBDIR += dnf
+    SUBDIR += docker-buildx
     SUBDIR += docker-cli
     SUBDIR += docker-compose
     SUBDIR += docker-credential-pass
