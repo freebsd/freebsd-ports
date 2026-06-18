@@ -1,8 +1,9 @@
 PORTNAME=	Farama-Notifications
-DISTVERSION=	0.0.4
+DISTVERSION=	0.0.6
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	farama_notifications-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Notifications for all Farama Foundation maintained libraries
