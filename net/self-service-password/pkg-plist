@@ -320,6 +320,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlShareHandleState.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php
@@ -335,6 +336,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/RequestOptions.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/TransferStats.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/TransportSharing.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
@@ -1300,6 +1302,7 @@
 %%WWWDIR%%/vendor/symfony/var-exporter/LICENSE
 %%WWWDIR%%/vendor/symfony/var-exporter/README.md
 %%WWWDIR%%/vendor/symfony/var-exporter/VarExporter.php
+@dir %%WWWDIR%%/lib/vendor/bin
 @dir %%WWWDIR%%/vendor/components
 @dir %%WWWDIR%%/vendor/fortawesome
 @dir %%WWWDIR%%/vendor/twbs
