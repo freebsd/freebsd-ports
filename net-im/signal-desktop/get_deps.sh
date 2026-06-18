@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v8.13.0
+SIGNAL_VERS=v8.14.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 

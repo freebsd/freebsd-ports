@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.13.0
-PORTREVISION=	2
+DISTVERSION=	8.14.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm
@@ -80,7 +79,7 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	41
+ELECTRON_VER_MAJOR=	42
 PNPM_VERS=		10.18.1
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
@@ -98,8 +97,8 @@ PLIST_SUB+=	NOT_AARCH64=""
 .endif
 
 do-build:
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron41/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron41 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron42/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron42 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
