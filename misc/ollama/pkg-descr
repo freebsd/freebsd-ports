@@ -12,3 +12,4 @@ With Ollama, you can:
 - Generate text and embeddings
 - Customize models with your own prompts and data
 - Expose models through a REST API for use in your applications
+- Run generative models that generate images
