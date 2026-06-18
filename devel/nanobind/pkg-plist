@@ -2,6 +2,7 @@ cmake/nanobind-config-version.cmake
 cmake/nanobind-config.cmake
 include/nanobind/eigen/dense.h
 include/nanobind/eigen/sparse.h
+include/nanobind/eigen/tensor.h
 include/nanobind/eval.h
 include/nanobind/intrusive/counter.h
 include/nanobind/intrusive/counter.inl
