@@ -1,11 +1,10 @@
 PORTNAME=	astc-encoder
-DISTVERSION=	5.4.0
+DISTVERSION=	5.5.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Texture compressor for Adaptive Scalable Texture Compression format
-WWW=		https://github.com/ARM-software/astc-encoder \
-		https://developer.arm.com/Gaming%20Graphics%20and%20VR
+WWW=		https://github.com/ARM-software/astc-encoder
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -26,6 +25,6 @@ LDFLAGS+=	-pthread
 
 PLIST_FILES=	bin/astcenc-native
 
-# tests as of 5.4.0: 100% tests passed, 0 tests failed out of 1
+# tests as of 5.5.0: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
