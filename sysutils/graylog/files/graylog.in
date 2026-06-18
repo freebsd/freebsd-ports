@@ -11,11 +11,11 @@
 #   Flag that determines whether graylog is enabled
 #
 # graylog_user (username):
-#   Default value: "graylog"
+#   Default value: "%%GRAYLOGUSER%%"
 #   Name of the graylog user account
 #
 # graylog_group (group):
-#   Default value: "graylog"
+#   Default value: "%%GRAYLOGGROUP%%"
 #   Name of the graylog group
 #
 # graylog_config (string)
@@ -39,7 +39,7 @@
 #   Storage location for the graylog journal
 #
 # graylog_run_dir (string):
-#   Default value: /var/graylog
+#   Default value: /var/run/graylog
 #   Path to the graylog run folder.
 #
 # graylog_log_config (string):
