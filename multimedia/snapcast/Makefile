@@ -37,7 +37,9 @@ CLIENT_CMAKE_BOOL=	BUILD_CLIENT
 CLIENT_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 CLIENT_BROKEN=		Snapclient not yet supported for FreeBSD (according to CMakeLists.txt) # see https://github.com/badaix/snapcast/issues/1098
 
-post-install: # workaround for https://github.com/badaix/snapcast/issues/1021
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/snapserver.conf ${STAGEDIR}${PREFIX}/etc/snapserver.conf.sample
+	# workaround for https://github.com/badaix/snapcast/issues/1021
 	@${CHMOD} +r ${STAGEDIR}${PREFIX}/share/snapserver/plug-ins/meta_mpd.py
 
 .include <bsd.port.mk>
