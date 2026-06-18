@@ -1,7 +1,7 @@
 PORTNAME=	gsm
-DISTVERSION=	1.0.23
+DISTVERSION=	1.0.24
 CATEGORIES=	audio
-MASTER_SITES=	http://www.quut.com/gsm/
+MASTER_SITES=	https://www.quut.com/gsm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio converter and library for converting u-law to gsm encoding
@@ -14,6 +14,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/gsm-1.0-pl23
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}-pl${DISTVERSION:E}
 
 .include <bsd.port.mk>
