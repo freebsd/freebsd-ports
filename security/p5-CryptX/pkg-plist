@@ -4,6 +4,7 @@
 %%SITE_ARCH%%/Crypt/AuthEnc/ChaCha20Poly1305.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/EAX.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/GCM.pm
+%%SITE_ARCH%%/Crypt/AuthEnc/GCMSIV.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/OCB.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/SIV.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/XChaCha20Poly1305.pm
@@ -12,6 +13,7 @@
 %%SITE_ARCH%%/Crypt/Checksum/CRC32.pm
 %%SITE_ARCH%%/Crypt/Cipher.pm
 %%SITE_ARCH%%/Crypt/Cipher/AES.pm
+%%SITE_ARCH%%/Crypt/Cipher/ARIA.pm
 %%SITE_ARCH%%/Crypt/Cipher/Anubis.pm
 %%SITE_ARCH%%/Crypt/Cipher/Blowfish.pm
 %%SITE_ARCH%%/Crypt/Cipher/CAST5.pm
@@ -71,6 +73,7 @@
 %%SITE_ARCH%%/Crypt/Digest/SHA512_224.pm
 %%SITE_ARCH%%/Crypt/Digest/SHA512_256.pm
 %%SITE_ARCH%%/Crypt/Digest/SHAKE.pm
+%%SITE_ARCH%%/Crypt/Digest/SM3.pm
 %%SITE_ARCH%%/Crypt/Digest/Tiger192.pm
 %%SITE_ARCH%%/Crypt/Digest/TurboSHAKE.pm
 %%SITE_ARCH%%/Crypt/Digest/Whirlpool.pm
@@ -80,6 +83,7 @@
 %%SITE_ARCH%%/Crypt/Mac/BLAKE2s.pm
 %%SITE_ARCH%%/Crypt/Mac/F9.pm
 %%SITE_ARCH%%/Crypt/Mac/HMAC.pm
+%%SITE_ARCH%%/Crypt/Mac/KMAC.pm
 %%SITE_ARCH%%/Crypt/Mac/OMAC.pm
 %%SITE_ARCH%%/Crypt/Mac/PMAC.pm
 %%SITE_ARCH%%/Crypt/Mac/Pelican.pm
@@ -124,6 +128,7 @@
 %%PERL5_MAN3%%/Crypt::AuthEnc::ChaCha20Poly1305.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::EAX.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::GCM.3.gz
+%%PERL5_MAN3%%/Crypt::AuthEnc::GCMSIV.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::OCB.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::SIV.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::XChaCha20Poly1305.3.gz
@@ -132,6 +137,7 @@
 %%PERL5_MAN3%%/Crypt::Checksum::CRC32.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::AES.3.gz
+%%PERL5_MAN3%%/Crypt::Cipher::ARIA.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Anubis.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Blowfish.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::CAST5.3.gz
@@ -191,6 +197,7 @@
 %%PERL5_MAN3%%/Crypt::Digest::SHA512_224.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::SHA512_256.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::SHAKE.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::SM3.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::Tiger192.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::TurboSHAKE.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::Whirlpool.3.gz
@@ -200,6 +207,7 @@
 %%PERL5_MAN3%%/Crypt::Mac::BLAKE2s.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::F9.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::HMAC.3.gz
+%%PERL5_MAN3%%/Crypt::Mac::KMAC.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::OMAC.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::PMAC.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::Pelican.3.gz
