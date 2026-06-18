@@ -1,5 +1,5 @@
-TIMESTAMP = 1781241826
-SHA256 (go/security_infisical-cli/infisical-cli-v0.43.92/v0.43.92.mod) = 80d86b1055c1da6b7d051a07bb4d6a08767980a9682144a10222f9bcdf3ff4f0
-SIZE (go/security_infisical-cli/infisical-cli-v0.43.92/v0.43.92.mod) = 10383
-SHA256 (go/security_infisical-cli/infisical-cli-v0.43.92/v0.43.92.zip) = 3143f84e7d06af39b2e57b8090d759ac3dc15ae59202fe6267e627e65a688efc
-SIZE (go/security_infisical-cli/infisical-cli-v0.43.92/v0.43.92.zip) = 730184
+TIMESTAMP = 1781791750
+SHA256 (go/security_infisical-cli/infisical-cli-v0.43.96/v0.43.96.mod) = 568dc61efca41c08c27340781932dfec07b2901072dc45cb5fb8a96165406c66
+SIZE (go/security_infisical-cli/infisical-cli-v0.43.96/v0.43.96.mod) = 10383
+SHA256 (go/security_infisical-cli/infisical-cli-v0.43.96/v0.43.96.zip) = bf830dd050ee492f1a1462cfad271a071efdb87a8ab92f362b01a55c77e92814
+SIZE (go/security_infisical-cli/infisical-cli-v0.43.96/v0.43.96.zip) = 754830
