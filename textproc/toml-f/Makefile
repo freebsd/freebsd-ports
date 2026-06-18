@@ -1,5 +1,5 @@
 PORTNAME=	toml-f
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -19,6 +19,6 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	BUILD_TESTING
 
-# tests as of 0.5.0: 100% tests passed, 0 tests failed out of 6
+# tests as of 0.5.1: 100% tests passed, 0 tests failed out of 6
 
 .include <bsd.port.mk>
