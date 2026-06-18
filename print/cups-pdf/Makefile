@@ -1,10 +1,8 @@
 PORTNAME=	cups-pdf
-DISTVERSION=	3.0.1
-PORTREVISION=	3
+DISTVERSION=	3.0.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.cups-pdf.de/src/ \
-		http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	https://www.cups-pdf.de/src/
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual printer for CUPS to produce PDF files
@@ -22,7 +20,7 @@ LIBS+=		-lcups
 
 ETCDIR=		${PREFIX}/etc/cups
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -85,14 +83,14 @@ do-build:
 		${CC} ${CFLAGS} ${LDFLAGS} ${LIBS} -o cups-pdf cups-pdf.c)
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/cups/backend
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/cups/backend \
+		 ${STAGEDIR}${PREFIX}/share/cups/model \
+		 ${STAGEDIR}${ETCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cups-pdf \
 		${STAGEDIR}${PREFIX}/libexec/cups/backend/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model
 	${INSTALL_DATA} ${WRKSRC}/extra/CUPS-PDF_opt.ppd \
 		${WRKSRC}/extra/CUPS-PDF_noopt.ppd \
 		${STAGEDIR}${PREFIX}/share/cups/model/
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
 		${STAGEDIR}${ETCDIR}/cups-pdf.conf.sample
 
