@@ -313,6 +313,7 @@
     SUBDIR += docker-credential-pass
     SUBDIR += docker-machine
     SUBDIR += docker-registry
+    SUBDIR += dockerbox
     SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += downtimed
