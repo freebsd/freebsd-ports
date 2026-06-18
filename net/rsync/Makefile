@@ -1,6 +1,6 @@
 PORTNAME=	rsync
-DISTVERSION=	3.4.4
-PORTREVISION=	1
+DISTVERSION=	3.5.0
+
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
+TEST_DEPENDS=	${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX} \
+		bash:shells/bash
 
 USES=		autoreconf:build cpe python shebangfix ssl
 CPE_VENDOR=	samba
@@ -51,9 +53,9 @@ OPTIONS_DEFAULT=	FLAGS ICONV SSH ZLIB_BASE
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
 SSH_DESC=	Use SSH instead of RSH
 
-FLAGS_DESC=	File system flags support patch, adds --file-flags
+FLAGS_DESC=		File system flags support patch, adds --file-flags
 FLAGS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-file-flags.diff
-ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
+ZLIB_BASE_DESC=		Use zlib from base instead of bundled one
 
 ICONV_USES=		iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
@@ -91,5 +93,8 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/support/rrsync.1.md ${STAGEDIR}${DOCSDIR}
+
+pre-test:
+	${FIND} ${WRKSRC}/testsuite/ -type f -name '*.py' -exec ${REINPLACE_CMD} -e 's/python3/${PYTHON_VERSION}/g' {} \;
 
 .include <bsd.port.post.mk>
