@@ -1,5 +1,6 @@
 PORTNAME=	amule
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -9,17 +10,16 @@ WWW=		https://github.com/amule-project/amule
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
-		libcurl.so:ftp/curl \
-		libzstd.so:archivers/zstd
+BUILD_DEPENDS=	cryptopp-modern>0:security/cryptopp-modern
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake:testing gettext-runtime gnome localbase:ldflags pkgconfig \
 		readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	amule-org
 USE_GNOME=	glib20
-USE_WX=		3.2
 USE_RC_SUBR=	amuled
+USE_WX=		3.2
 
 CMAKE_ON=	BUILD_ALC BUILD_ALCC BUILD_AMULECMD BUILD_DAEMON BUILD_ED2K \
 		BUILD_WXCAS
@@ -62,12 +62,6 @@ WEBSERVER_CMAKE_BOOL=	BUILD_WEBSERVER
 PLIST_SUB+=	AMULESKIN=""
 .else
 PLIST_SUB+=	AMULESKIN="@comment "
-.endif
-
-# Fix segmentation fault, PR 266866
-# See also 5a19c08: ("security/cryptopp: Update to 8.7.0")
-.if ${ARCH} == i386 || ${ARCH} == amd64
-CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM
 .endif
 
 .include <bsd.port.mk>
