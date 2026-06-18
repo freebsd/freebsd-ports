@@ -1,6 +1,5 @@
 PORTNAME=	rustworkx
-DISTVERSION=	0.17.1
-PORTREVISION=	10
+DISTVERSION=	0.18.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,114 +11,158 @@ WWW=		https://github.com/Qiskit/rustworkx
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.9:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=5.4:graphics/py-pillow@${PY_FLAVOR}
-		#${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
 USES=		cargo python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
 
-CARGO_CRATES=	adler2-2.0.0 \
-		aho-corasick-1.1.3 \
+CARGO_CRATES=	adler2-2.0.1 \
+		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
-		arbitrary-1.4.1 \
-		autocfg-1.4.0 \
-		bitflags-2.9.0 \
-		cc-1.2.18 \
-		cfg-if-1.0.0 \
-		crc32fast-1.4.2 \
+		anyhow-1.0.102 \
+		approx-0.5.1 \
+		arbitrary-1.4.2 \
+		autocfg-1.5.0 \
+		bitflags-2.11.1 \
+		block-buffer-0.10.4 \
+		bytemuck-1.25.0 \
+		cc-1.2.62 \
+		cfg-if-1.0.4 \
+		chacha20-0.10.0 \
+		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
+		crc32fast-1.5.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		derive_arbitrary-1.4.1 \
+		crypto-common-0.1.7 \
+		derive_arbitrary-1.4.2 \
+		digest-0.10.7 \
 		either-1.15.0 \
-		env_logger-0.8.4 \
+		env_filter-1.0.1 \
+		env_logger-0.11.10 \
 		equivalent-1.0.2 \
+		find-msvc-tools-0.1.9 \
 		fixedbitset-0.5.7 \
-		flate2-1.1.1 \
+		flate2-1.1.9 \
 		foldhash-0.1.5 \
-		getrandom-0.2.15 \
-		getrandom-0.3.2 \
-		hashbrown-0.15.2 \
+		foldhash-0.2.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.17 \
+		getrandom-0.3.4 \
+		getrandom-0.4.2 \
+		hashbrown-0.15.5 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
-		hermit-abi-0.3.9 \
-		indexmap-2.9.0 \
-		indoc-2.0.6 \
+		hermit-abi-0.5.2 \
+		id-arena-2.3.0 \
+		indexmap-2.14.0 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
-		itoa-1.0.15 \
-		jobserver-0.1.33 \
-		libc-0.2.171 \
-		libfuzzer-sys-0.4.9 \
-		libm-0.2.15 \
-		log-0.4.27 \
-		matrixmultiply-0.3.9 \
-		memchr-2.7.4 \
-		memoffset-0.9.1 \
-		miniz_oxide-0.8.7 \
-		ndarray-0.16.1 \
-		ndarray-stats-0.6.0 \
-		noisy_float-0.2.0 \
+		itoa-1.0.18 \
+		jobserver-0.1.34 \
+		leb128fmt-0.1.0 \
+		libc-0.2.186 \
+		libfuzzer-sys-0.4.13 \
+		libm-0.2.16 \
+		log-0.4.29 \
+		matrixmultiply-0.3.10 \
+		memchr-2.8.0 \
+		miniz_oxide-0.8.9 \
+		nalgebra-0.33.3 \
+		nalgebra-macros-0.2.2 \
+		nalgebra-sparse-0.10.0 \
+		ndarray-0.17.2 \
+		ndarray-stats-0.7.0 \
+		noisy_float-0.2.1 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
 		num-integer-0.1.46 \
+		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
-		numpy-0.24.0 \
-		once_cell-1.21.3 \
-		petgraph-0.8.1 \
-		portable-atomic-1.11.0 \
-		portable-atomic-util-0.2.4 \
+		num_cpus-1.17.0 \
+		numpy-0.29.0 \
+		once_cell-1.21.4 \
+		paste-1.0.15 \
+		pest-2.8.6 \
+		pest_derive-2.8.6 \
+		pest_generator-2.8.6 \
+		pest_meta-2.8.6 \
+		petgraph-0.8.3 \
+		portable-atomic-1.13.1 \
+		portable-atomic-util-0.2.7 \
 		ppv-lite86-0.2.21 \
-		priority-queue-2.3.1 \
-		proc-macro2-1.0.94 \
-		pyo3-0.24.1 \
-		pyo3-build-config-0.24.1 \
-		pyo3-ffi-0.24.1 \
-		pyo3-macros-0.24.1 \
-		pyo3-macros-backend-0.24.1 \
-		quick-xml-0.37.4 \
-		quickcheck-1.0.3 \
-		quickcheck_macros-1.1.0 \
-		quote-1.0.40 \
-		r-efi-5.2.0 \
-		rand-0.8.5 \
-		rand-0.9.1 \
+		prettyplease-0.2.37 \
+		priority-queue-2.7.0 \
+		proc-macro2-1.0.106 \
+		pyo3-0.29.0 \
+		pyo3-build-config-0.29.0 \
+		pyo3-ffi-0.29.0 \
+		pyo3-macros-0.29.0 \
+		pyo3-macros-backend-0.29.0 \
+		quick-xml-0.37.5 \
+		quickcheck-1.1.0 \
+		quickcheck_macros-1.2.0 \
+		quote-1.0.45 \
+		r-efi-5.3.0 \
+		r-efi-6.0.0 \
+		rand-0.8.6 \
+		rand-0.10.1 \
 		rand_chacha-0.3.1 \
-		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
-		rand_core-0.9.3 \
-		rand_distr-0.5.1 \
-		rand_pcg-0.9.0 \
+		rand_core-0.10.1 \
+		rand_distr-0.6.0 \
+		rand_pcg-0.10.2 \
 		rawpointer-0.2.1 \
-		rayon-1.10.0 \
+		rayon-1.12.0 \
 		rayon-cond-0.4.0 \
-		rayon-core-1.12.1 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-syntax-0.8.5 \
-		rustc-hash-2.1.1 \
-		ryu-1.0.20 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
+		rayon-core-1.13.0 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		rustc-hash-2.1.2 \
+		safe_arch-0.7.4 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
+		sha2-0.10.9 \
 		shlex-1.3.0 \
-		smallvec-1.15.0 \
-		sprs-0.11.3 \
-		syn-2.0.100 \
-		target-lexicon-0.13.2 \
-		unicode-ident-1.0.18 \
-		unindent-0.2.4 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-0.14.2+wasi-0.2.4 \
-		wit-bindgen-rt-0.39.0 \
-		zerocopy-0.8.24 \
-		zerocopy-derive-0.8.24
+		simba-0.9.1 \
+		simd-adler32-0.3.9 \
+		smallvec-1.15.2 \
+		sprs-0.11.4 \
+		syn-2.0.117 \
+		target-lexicon-0.13.5 \
+		typenum-1.20.0 \
+		ucd-trie-0.1.7 \
+		unicode-ident-1.0.24 \
+		unicode-xid-0.2.6 \
+		version_check-0.9.5 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.1+wasi-0.2.4 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		wide-0.7.33 \
+		wit-bindgen-0.46.0 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		zerocopy-0.8.48 \
+		zerocopy-derive-0.8.48 \
+		zmij-1.0.21
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -130,11 +173,15 @@ MAKE_ENV=	${CARGO_ENV}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${BUILD_WRKDIR}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_TAG}.so # workaround for https://github.com/Qiskit/rustworkx/issues/654
-
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-#do-test: # this runs tests in the fixed venv
-#	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} tox -epy
+# The upstream Cargo.lock has pyo3 resolved to hashbrown 0.15.5,
+# but cargo update re-resolves it to 0.17.1 causing type mismatches.
+# Preserve the upstream Cargo.lock to avoid this issue.
+post-extract:
+	@${CP} ${CARGO_CARGOLOCK} ${CARGO_CARGOLOCK}.orig
+
+post-configure:
+	@${CP} ${CARGO_CARGOLOCK}.orig ${CARGO_CARGOLOCK}
 
 .include <bsd.port.mk>
