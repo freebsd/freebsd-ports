@@ -1,3 +1,42 @@
+  <vuln vid="46b654f8-6b28-11f1-b8e5-3497f65b111b">
+    <topic>nginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>nginx</name>
+       <range><lt>1.30.3,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx developers report:</p>
+       <p>
+       A heap memory buffer overflow vulnerability when using the
+       "ignore_invalid_headers off;" and "large_client_header_buffers"
+       directives with large configured values while proxying a specially
+       crafted request to an HTTP/2 or gRPC backend may allow memory
+       corruption or a segmentation fault in a worker process
+       (CVE-2026-42055).
+       </p>
+       <p>
+       A heap memory buffer overread vulnerability while handling a
+       specially crafted response with decoding from UTF-8 via the
+       "charset_map" directive may allow limited disclosure of worker
+       process memory or a segmentation fault in a worker process
+       (CVE-2026-48142).
+       </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42055</cvename>
+      <cvename>CVE-2026-48142</cvename>
+      <url>https://nginx.org/en/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2026-06-17</discovery>
+      <entry>2026-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="08b0c0f6-6a85-11f1-b8e5-3497f65b111b">
    <topic>nginx -- multiple vulnerabilities</topic>
    <affects>
