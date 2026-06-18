@@ -110,6 +110,10 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dvalgrind=disabled
 
+.if !${PORT_OPTIONS:Mr600} && !${PORT_OPTIONS:Mradeonsi}
+MESON_ARGS+=	-Dgallium-va=disabled
+.endif
+
 .if ${ARCH} != amd64
 MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
 .endif
