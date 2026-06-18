@@ -1,5 +1,5 @@
 PORTNAME=	dwave-optimization
-DISTVERSION=	0.6.6
+DISTVERSION=	0.7.1
 PORTREVISION=	3
 CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	PYPI
@@ -27,6 +27,5 @@ post-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_utilities${PYTHON_TAG}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/libdwave-optimization.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/states${PYTHON_TAG}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/symbols${PYTHON_TAG}.so
 
 .include <bsd.port.mk>
