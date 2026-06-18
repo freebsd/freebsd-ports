@@ -1,5 +1,5 @@
---- config.h.in.orig	2023-03-05 17:09:22.768898000 +0100
-+++ config.h.in	2023-03-05 17:32:21.267867000 +0100
+--- config.h.in.orig	2025-03-12 19:29:04 UTC
++++ config.h.in
 @@ -1,5 +1,7 @@
  /* config.h.in.  Generated from configure.ac by autoheader.  */
  
