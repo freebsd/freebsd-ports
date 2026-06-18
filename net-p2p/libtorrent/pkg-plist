@@ -1,7 +1,6 @@
 include/torrent/bitfield.h
 include/torrent/chunk_manager.h
 include/torrent/common.h
-include/torrent/connection_manager.h
 include/torrent/data/block.h
 include/torrent/data/block_list.h
 include/torrent/data/block_transfer.h
@@ -20,8 +19,8 @@ include/torrent/download/choke_queue.h
 include/torrent/download/download_manager.h
 include/torrent/download/group_entry.h
 include/torrent/download/resource_manager.h
+include/torrent/download/types.h
 include/torrent/download_info.h
-include/torrent/error.h
 include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/hash_string.h
@@ -30,8 +29,6 @@ include/torrent/net/connection_state.h
 include/torrent/net/fd.h
 include/torrent/net/http_get.h
 include/torrent/net/http_stack.h
-include/torrent/net/network_config.h
-include/torrent/net/poll.h
 include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
@@ -49,8 +46,13 @@ include/torrent/peer/peer.h
 include/torrent/peer/peer_info.h
 include/torrent/peer/peer_list.h
 include/torrent/rate.h
+include/torrent/runtime/network_config.h
 include/torrent/runtime/network_manager.h
+include/torrent/runtime/runtime.h
 include/torrent/runtime/socket_manager.h
+include/torrent/system/callbacks.h
+include/torrent/system/poll.h
+include/torrent/system/system.h
 include/torrent/system/thread.h
 include/torrent/throttle.h
 include/torrent/torrent.h
@@ -59,6 +61,7 @@ include/torrent/tracker/manager.h
 include/torrent/tracker/tracker.h
 include/torrent/tracker/tracker_state.h
 include/torrent/tracker/wrappers.h
+include/torrent/types/string_utf8.h
 include/torrent/utils/chrono.h
 include/torrent/utils/directory_events.h
 include/torrent/utils/extents.h
@@ -70,11 +73,10 @@ include/torrent/utils/random.h
 include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
 include/torrent/utils/scheduler.h
-include/torrent/utils/signal_bitfield.h
 include/torrent/utils/string_manip.h
 include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.41
-lib/libtorrent.so.41.0.0
+lib/libtorrent.so.44
+lib/libtorrent.so.44.0.0
 libdata/pkgconfig/libtorrent.pc
