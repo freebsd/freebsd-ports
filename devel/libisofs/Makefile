@@ -1,7 +1,8 @@
 PORTNAME=	libisofs
-PORTVERSION=	1.5.6
+DISTVERSION=	1.5.8.02
 CATEGORIES=	devel
-MASTER_SITES=	http://files.libburnia-project.org/releases/
+MASTER_SITES=	https://files.libburnia-project.org/releases/
+DISTNAME=	${PORTNAME}-${DISTVERSION:R}.pl${DISTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia ISO9660 filesystem creation library
@@ -16,6 +17,8 @@ USES=		iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 
 PORTDOCS=	Tutorial susp_* zisofs_format.txt
 
