@@ -1,5 +1,5 @@
 PORTNAME=	lhasa
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/fragglet/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://soulsphere.org/projects/${PORTNAME}/
