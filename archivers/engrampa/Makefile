@@ -2,8 +2,8 @@ PORTNAME=	engrampa
 DISTVERSION=	1.28.2
 PORTREVISION=	1
 CATEGORIES=	archivers mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Archive manager for zip files, tar, etc
@@ -19,8 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:archivers/gtar \
 
 USES=		cpe desktop-file-utils gettext gmake gnome libtool localbase \
 		mate pkgconfig tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_MATE=	caja common:build
 USE_GNOME=	cairo gtk30 intltool
 GNU_CONFIGURE=	yes
