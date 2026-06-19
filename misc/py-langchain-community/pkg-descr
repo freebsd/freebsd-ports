@@ -1,0 +1,4 @@
+Community contributed LangChain integrations.
+
+Contains third-party integrations that implement the base interfaces
+defined in LangChain Core.
