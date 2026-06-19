@@ -2,8 +2,8 @@ PORTNAME=	mate-notification-daemon
 DISTVERSION=	1.28.3
 PORTREVISION=	4
 CATEGORIES=	deskutils mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
@@ -22,8 +22,6 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libnotify.so:devel/libnotify
 
 USES=		gettext gmake gnome libtool localbase pkgconfig tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_XORG=	x11
 USE_GNOME=	cairo glib20 gtk30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
