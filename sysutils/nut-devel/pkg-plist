@@ -113,6 +113,7 @@ lib/libnutscan.so.4.1.0
 %%SERIAL%%libexec/nut/powervar_cx_ser
 %%SERIAL%%libexec/nut/powerpanel
 %%USB%%libexec/nut/powervar_cx_usb
+%%SERIAL%%libexec/nut/ragtech
 %%SERIAL%%libexec/nut/rhino
 %%USB%%libexec/nut/richcomm_usb
 %%SERIAL%%libexec/nut/safenet
@@ -332,6 +333,7 @@ lib/libnutscan.so.4.1.0
 %%MANPAGES%%%%SERIAL%%share/man/man8/powercom.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/powerpanel.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/powervar_cx_ser.8.gz
+%%MANPAGES%%%%SERIAL%%share/man/man8/ragtech.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/rhino.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/riello_ser.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/safenet.8.gz
