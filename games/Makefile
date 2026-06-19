@@ -144,7 +144,6 @@
     SUBDIR += cave9
     SUBDIR += cavezofphear
     SUBDIR += cdogs-sdl
-    SUBDIR += cgoban
     SUBDIR += chapping
     SUBDIR += chessx
     SUBDIR += chocolate-doom
