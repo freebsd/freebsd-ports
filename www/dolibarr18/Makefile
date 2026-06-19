@@ -1,5 +1,5 @@
 PORTNAME=	dolibarr18
-DISTVERSION=	18.0.8
+DISTVERSION=	18.0.10
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
@@ -7,6 +7,9 @@ COMMENT=	Modern software package to manage your company or foundation
 WWW=		https://www.dolibarr.org/
 
 LICENSE=	GPLv3
+
+DEPRECATED=	php81 is the recommended max version for run it
+EXPIRATION_DATE=2026-07-31
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:S/d/D/:S/18//}
@@ -16,6 +19,7 @@ USE_PHP=	calendar curl gd intl session
 NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
+PHP_VER=	82
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=		MYSQL PGSQL
