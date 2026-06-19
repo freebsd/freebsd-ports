@@ -1861,6 +1861,7 @@
     SUBDIR += py-httpx-socks
     SUBDIR += py-httpx-sse
     SUBDIR += py-httpx-ws
+    SUBDIR += py-httpx2
     SUBDIR += py-httpx_gssapi
     SUBDIR += py-hypercorn
     SUBDIR += py-hyperframe
