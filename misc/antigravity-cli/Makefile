@@ -1,5 +1,5 @@
 PORTNAME=	antigravity-cli
-DISTVERSION=	1.0.9
+DISTVERSION=	1.0.10
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	${AGY_URL_BASE}linux-x64/:amd64 \
 		${AGY_URL_BASE}linux-arm/:aarch64
@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	is a Linux binary with a limited platform support
 USES=		linux:rl9
 USE_LINUX=	base
 
-AGY_URL_BASE=	https://storage.googleapis.com/antigravity-public/antigravity-cli/1.0.9-6003845613092864/
+AGY_URL_BASE=	https://storage.googleapis.com/antigravity-public/antigravity-cli/1.0.10-6349723456634880/
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
