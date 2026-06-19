@@ -2,13 +2,13 @@ https://github.com/eclipse/openvsx/issues/543
 https://github.com/termux/termux-packages/issues/24739
 https://github.com/termux/termux-packages/pull/24757
 
---- package.json.orig	2026-06-15 22:24:03 UTC
-+++ package.json
-@@ -144,6 +144,7 @@
-     "native-is-elevated": "0.9.0",
-     "native-keymap": "^3.3.5",
+--- remote/package.json.orig	2026-06-19 09:19:52 UTC
++++ remote/package.json
+@@ -40,6 +40,7 @@
+     "kerberos": "2.1.1",
+     "minimist": "^1.2.8",
      "node-addon-api": "^6.0.0",
 +    "node-ovsx-sign": "^1.2.0",
      "node-pty": "^1.2.0-beta.13",
-     "open": "^10.1.2",
-     "playwright-core": "1.61.0-alpha-2026-06-04",
+     "ssh2": "^1.16.0",
+     "tar": "^7.5.9",

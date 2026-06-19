@@ -322,7 +322,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		munge-0.4.1 \
 		munge_macro-0.4.1 \
 		napi-3.1.6 \
-		napi-3.9.1 \
+		napi-3.9.3 \
 		napi-build-2.2.3 \
 		napi-build-2.3.2 \
 		napi-derive-3.1.2 \
@@ -587,7 +587,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_visit-2.0.1 \
 		syn-1.0.109 \
 		syn-2.0.114 \
-		syn-2.0.117 \
+		syn-2.0.118 \
 		synstructure-0.13.1 \
 		system-interface-0.27.3 \
 		tap-1.0.1 \

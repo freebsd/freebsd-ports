@@ -1,6 +1,6 @@
---- node_modules/@typescript/native-preview/lib/getExePath.js.orig	2026-03-12 13:11:24 UTC
+--- node_modules/@typescript/native-preview/lib/getExePath.js.orig	2026-06-19 07:39:14 UTC
 +++ node_modules/@typescript/native-preview/lib/getExePath.js
-@@ -7,40 +7,7 @@ export default function getExePath() {
+@@ -8,40 +8,7 @@ export default function getExePath() {
      const __dirname = path.dirname(fileURLToPath(import.meta.url));
      const normalizedDirname = __dirname.replace(/\\/g, "/");
  
