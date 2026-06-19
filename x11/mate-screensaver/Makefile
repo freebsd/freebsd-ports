@@ -2,8 +2,8 @@ PORTNAME=	mate-screensaver
 DISTVERSION=	1.28.0
 PORTREVISION=	3
 CATEGORIES=	x11 mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE screen saver and locker
@@ -21,8 +21,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 USES=		gettext gl gmake gnome localbase mate pathfix pkgconfig tar:xz \
 		xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus session:run
 USE_XORG=	ice sm x11 xext xscrnsaver xxf86vm
