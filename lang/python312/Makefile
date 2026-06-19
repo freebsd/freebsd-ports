@@ -9,7 +9,8 @@ DIST_SUBDIR=	python
 
 PATCH_SITES=	https://github.com/python/cpython/commit/
 PATCHFILES=	cbba6119391112aba9c5aebf7b94aea447922c48.patch:-p1 \
-		cc023511238ad93ecc8796157c6f9139a2bb2932.patch:-p1
+		cc023511238ad93ecc8796157c6f9139a2bb2932.patch:-p1 \
+		c00c386faa579ad71196d33408644478488e43ec.patch:-p1
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
