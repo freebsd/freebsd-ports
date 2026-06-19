@@ -1,182 +1,185 @@
 CARGO_CRATES=	aes-0.8.4 \
-		anyhow-1.0.100 \
-		arc-swap-1.7.1 \
+		anyhow-1.0.102 \
+		arc-swap-1.9.1 \
 		atomic-waker-1.1.2 \
-		autocfg-1.5.0 \
+		autocfg-1.5.1 \
 		base64-0.22.1 \
-		base64ct-1.8.0 \
-		bitflags-2.10.0 \
+		base64ct-1.8.3 \
+		bitflags-2.13.0 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
-		bytes-1.11.0 \
+		bytes-1.11.1 \
 		cbc-0.1.2 \
-		cc-1.2.46 \
+		cc-1.2.63 \
 		cfg-if-1.0.4 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
 		cipher-0.4.4 \
 		const-oid-0.9.6 \
 		cpufeatures-0.2.17 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
-		data-encoding-2.9.0 \
+		data-encoding-2.11.0 \
 		der-0.7.10 \
 		digest-0.10.7 \
-		either-1.15.0 \
+		dispatch2-0.3.1 \
+		doctest-file-1.1.1 \
+		either-1.16.0 \
 		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
-		find-msvc-tools-0.1.5 \
+		errno-0.3.14 \
+		find-msvc-tools-0.1.9 \
 		fnv-1.0.7 \
-		futures-0.3.31 \
-		futures-channel-0.3.31 \
-		futures-core-0.3.31 \
-		futures-executor-0.3.31 \
-		futures-io-0.3.31 \
-		futures-macro-0.3.31 \
-		futures-sink-0.3.31 \
-		futures-task-0.3.31 \
-		futures-util-0.3.31 \
+		futures-0.3.32 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
+		futures-executor-0.3.32 \
+		futures-io-0.3.32 \
+		futures-macro-0.3.32 \
+		futures-sink-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
 		generic-array-0.14.7 \
-		getrandom-0.2.16 \
+		getrandom-0.2.17 \
 		getrandom-0.3.4 \
-		h2-0.4.12 \
-		hashbrown-0.16.0 \
+		h2-0.4.14 \
+		half-2.7.1 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hmac-0.12.1 \
-		http-1.3.1 \
+		http-1.4.2 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
-		hyper-1.8.1 \
-		hyper-util-0.1.18 \
-		indexmap-2.12.0 \
+		hyper-1.10.1 \
+		hyper-util-0.1.20 \
+		indexmap-2.14.0 \
 		indoc-2.0.7 \
 		inout-0.1.4 \
 		itertools-0.14.0 \
-		itoa-1.0.15 \
-		libc-0.2.177 \
-		libmimalloc-sys-0.1.44 \
+		itoa-1.0.18 \
+		libc-0.2.186 \
+		libmimalloc-sys-0.1.49 \
 		lock_api-0.4.14 \
-		log-0.4.28 \
-		memchr-2.7.6 \
+		log-0.4.32 \
+		memchr-2.8.1 \
 		memoffset-0.9.1 \
-		mimalloc-0.1.48 \
+		mimalloc-0.1.52 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
-		mio-1.1.0 \
-		ntapi-0.4.1 \
+		mio-1.2.1 \
+		ntapi-0.4.3 \
+		objc2-0.6.4 \
 		objc2-core-foundation-0.3.2 \
+		objc2-encode-4.1.0 \
+		objc2-foundation-0.3.2 \
 		objc2-io-kit-0.3.2 \
-		once_cell-1.21.3 \
+		objc2-open-directory-0.3.2 \
+		once_cell-1.21.4 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pbkdf2-0.12.2 \
 		pem-3.0.6 \
 		percent-encoding-2.3.2 \
-		pin-project-lite-0.2.16 \
-		pin-utils-0.1.0 \
+		pin-project-lite-0.2.17 \
 		pkcs5-0.7.1 \
 		pkcs8-0.10.2 \
-		portable-atomic-1.11.1 \
+		portable-atomic-1.13.1 \
 		ppv-lite86-0.2.21 \
-		proc-macro2-1.0.103 \
-		pyo3-0.27.1 \
-		pyo3-build-config-0.27.1 \
-		pyo3-ffi-0.27.1 \
-		pyo3-macros-0.27.1 \
-		pyo3-macros-backend-0.27.1 \
-		python3-dll-a-0.2.14 \
-		quote-1.0.42 \
+		proc-macro2-1.0.106 \
+		pyo3-0.27.2 \
+		pyo3-build-config-0.27.2 \
+		pyo3-ffi-0.27.2 \
+		pyo3-macros-0.27.2 \
+		pyo3-macros-backend-0.27.2 \
+		python3-dll-a-0.2.15 \
+		quote-1.0.45 \
 		r-efi-5.3.0 \
-		rand-0.9.2 \
+		rand-0.9.4 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
-		rand_core-0.9.3 \
+		rand_core-0.9.5 \
+		recvmsg-1.0.0 \
 		redox_syscall-0.5.18 \
 		ring-0.17.14 \
-		rustls-0.23.35 \
+		rustls-0.23.40 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.13.0 \
-		rustls-webpki-0.103.8 \
+		rustls-pki-types-1.14.1 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		salsa20-0.10.2 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
+		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
-		shlex-1.3.0 \
-		signal-hook-registry-1.4.6 \
-		slab-0.4.11 \
+		shlex-2.0.1 \
+		signal-hook-registry-1.4.8 \
+		slab-0.4.12 \
 		smallvec-1.15.1 \
-		socket2-0.6.1 \
+		socket2-0.6.4 \
 		spki-0.7.3 \
 		subtle-2.6.1 \
-		syn-2.0.110 \
-		sysinfo-0.37.2 \
-		target-lexicon-0.13.3 \
-		thiserror-2.0.17 \
-		thiserror-impl-2.0.17 \
-		tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
-		tikv-jemallocator-0.6.1 \
-		tokio-1.48.0 \
-		tokio-macros-2.6.0 \
+		syn-2.0.117 \
+		sysinfo-0.39.3 \
+		target-lexicon-0.13.5 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 \
+		tikv-jemallocator-0.7.0 \
+		tokio-1.52.3 \
+		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
-		tokio-stream-0.1.17 \
-		tokio-tungstenite-0.28.0 \
-		tokio-util-0.7.17 \
-		tracing-0.1.41 \
-		tracing-core-0.1.34 \
-		tungstenite-0.28.0 \
-		typenum-1.19.0 \
-		unicase-2.8.1 \
-		unicode-ident-1.0.22 \
+		tokio-stream-0.1.18 \
+		tokio-tungstenite-0.29.0 \
+		tokio-util-0.7.18 \
+		tracing-0.1.44 \
+		tracing-core-0.1.36 \
+		tungstenite-0.29.0 \
+		typenum-1.20.1 \
+		unicase-2.9.0 \
+		unicode-ident-1.0.24 \
 		unindent-0.2.4 \
 		untrusted-0.9.0 \
-		utf-8-0.7.6 \
 		version_check-0.9.5 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.1+wasi-0.2.4 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.61.3 \
-		windows-collections-0.2.0 \
-		windows-core-0.61.2 \
-		windows-future-0.2.1 \
+		windows-0.62.2 \
+		windows-collections-0.3.2 \
+		windows-core-0.62.2 \
+		windows-future-0.3.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
-		windows-link-0.1.3 \
 		windows-link-0.2.1 \
-		windows-numerics-0.2.0 \
-		windows-result-0.3.4 \
-		windows-strings-0.4.2 \
+		windows-numerics-0.3.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
 		windows-sys-0.52.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
-		windows-threading-0.1.0 \
+		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
-		wit-bindgen-0.46.0 \
-		zerocopy-0.8.27 \
-		zerocopy-derive-0.8.27 \
+		wit-bindgen-0.57.1 \
+		zerocopy-0.8.52 \
+		zerocopy-derive-0.8.52 \
 		zeroize-1.8.2 \
 		pyo3-log@git+https://github.com/gi0baro/pyo3-log.git?branch=pyo3-027\#5725d1dc79f34c6286938d3be8bcd89e540bae76 \
-		tls-listener@git+https://github.com/gi0baro/tls-listener.git?branch=0.11.x\#28d8a48209466324343d133414ea9af218faebb3
+		tls-listener@git+https://github.com/gi0baro/tls-listener.git?branch=0.11.x\#28d8a48209466324343d133414ea9af218faebb3 \
+		interprocess@git+https://github.com/kotauskas/interprocess.git?rev=44351c4fe88c72ead4f3b0b762c4cf45beb90841\#44351c4fe88c72ead4f3b0b762c4cf45beb90841
