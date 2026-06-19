@@ -1,7 +1,6 @@
 PORTNAME=	tagref
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.1
-PORTREVISION=	2
+DISTVERSION=	1.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,23 +21,28 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		bitflags-2.11.0 \
+		bitflags-2.11.1 \
 		bstr-1.12.1 \
-		clap-4.6.0 \
+		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_derive-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		colorchoice-1.0.5 \
 		colored-3.1.1 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
+		equivalent-1.0.2 \
 		errno-0.3.14 \
 		globset-0.4.18 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		ignore-0.4.25 \
+		indexmap-2.14.0 \
 		is_terminal_polyfill-1.70.2 \
-		libc-0.2.183 \
+		itoa-1.0.18 \
+		libc-0.2.186 \
+		libyaml-rs-0.3.0 \
 		linux-raw-sys-0.12.1 \
 		log-0.4.29 \
 		memchr-2.8.0 \
@@ -49,6 +53,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
 		rustix-1.1.4 \
+		ryu-1.0.23 \
 		same-file-1.0.6 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
@@ -61,7 +66,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		walkdir-2.5.0 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
-		windows-sys-0.61.2
+		windows-sys-0.61.2 \
+		yaml_serde-0.10.4
 
 PLIST_FILES=	bin/${PORTNAME}
 
