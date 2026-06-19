@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-video-qxl
 DISTVERSION=	25.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org
