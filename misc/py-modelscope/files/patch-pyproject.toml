@@ -1,0 +1,25 @@
+-- Fix pyproject.toml for compatibility with setuptools 63.1.0:
+-- - Convert license string to PEP 621 table format.
+-- - Remove license-files property (not supported by setuptools<69).
+-- - Lower setuptools build requirement from >=69 to >=63.1.0.
+--- pyproject.toml.orig	2026-05-22 05:56:16 UTC
++++ pyproject.toml
+@@ -3,8 +3,7 @@ readme = {file = "README.md", content-type = "text/mar
+ dynamic = ["version", "dependencies", "optional-dependencies"]
+ description = "ModelScope: bring the notion of Model-as-a-Service to life."
+ readme = {file = "README.md", content-type = "text/markdown"}
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ authors = [
+   {name = "ModelScope team"},
+   {email = "contact@modelscope.cn"}
+@@ -28,7 +27,7 @@ ms = "modelscope.cli.cli:run_cmd"
+ ms = "modelscope.cli.cli:run_cmd"
+ 
+ [build-system]
+-requires = ["setuptools>=69", "wheel"]
++requires = ["setuptools>=63.1.0", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools]
