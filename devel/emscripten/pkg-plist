@@ -157,6 +157,7 @@ lib/emscripten/site/source/docs/porting/guidelines/portability_guidelines.rst
 lib/emscripten/site/source/docs/porting/index.rst
 lib/emscripten/site/source/docs/porting/multimedia_and_graphics/EGL-Support-in-Emscripten.rst
 lib/emscripten/site/source/docs/porting/multimedia_and_graphics/OpenGL-support.rst
+lib/emscripten/site/source/docs/porting/multimedia_and_graphics/WebGPU-support.rst
 lib/emscripten/site/source/docs/porting/multimedia_and_graphics/index.rst
 lib/emscripten/site/source/docs/porting/networking.rst
 lib/emscripten/site/source/docs/porting/pthreads.rst
@@ -1189,13 +1190,11 @@ lib/emscripten/system/lib/libc/musl/WHATSNEW
 lib/emscripten/system/lib/libc/musl/arch/emscripten/atomic_arch.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/alltypes.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/alltypes.h.in
-lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/endian.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/errno.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/fenv.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/float.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/limits.h
-lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/posix.h
-lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/reg.h
+lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/mman.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/setjmp.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/signal.h
 lib/emscripten/system/lib/libc/musl/arch/emscripten/bits/stat.h
@@ -1219,12 +1218,13 @@ lib/emscripten/system/lib/libc/musl/arch/generic/bits/link.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/mman.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/msg.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/poll.h
+lib/emscripten/system/lib/libc/musl/arch/generic/bits/reg.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/resource.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/sem.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/shm.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/socket.h
+lib/emscripten/system/lib/libc/musl/arch/generic/bits/stat.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/statfs.h
-lib/emscripten/system/lib/libc/musl/arch/generic/bits/stdarg.h
 lib/emscripten/system/lib/libc/musl/arch/generic/bits/termios.h
 lib/emscripten/system/lib/libc/musl/arch/generic/fp_arch.h
 lib/emscripten/system/lib/libc/musl/config.mak
@@ -1527,6 +1527,7 @@ lib/emscripten/system/lib/libc/musl/src/dirent/closedir.c
 lib/emscripten/system/lib/libc/musl/src/dirent/dirfd.c
 lib/emscripten/system/lib/libc/musl/src/dirent/fdopendir.c
 lib/emscripten/system/lib/libc/musl/src/dirent/opendir.c
+lib/emscripten/system/lib/libc/musl/src/dirent/posix_getdents.c
 lib/emscripten/system/lib/libc/musl/src/dirent/readdir.c
 lib/emscripten/system/lib/libc/musl/src/dirent/readdir_r.c
 lib/emscripten/system/lib/libc/musl/src/dirent/rewinddir.c
@@ -1699,6 +1700,7 @@ lib/emscripten/system/lib/libc/musl/src/linux/quotactl.c
 lib/emscripten/system/lib/libc/musl/src/linux/readahead.c
 lib/emscripten/system/lib/libc/musl/src/linux/reboot.c
 lib/emscripten/system/lib/libc/musl/src/linux/remap_file_pages.c
+lib/emscripten/system/lib/libc/musl/src/linux/renameat2.c
 lib/emscripten/system/lib/libc/musl/src/linux/sbrk.c
 lib/emscripten/system/lib/libc/musl/src/linux/sendfile.c
 lib/emscripten/system/lib/libc/musl/src/linux/setfsgid.c
@@ -2550,6 +2552,7 @@ lib/emscripten/system/lib/libc/musl/src/temp/mktemp.c
 lib/emscripten/system/lib/libc/musl/src/termios/cfgetospeed.c
 lib/emscripten/system/lib/libc/musl/src/termios/cfmakeraw.c
 lib/emscripten/system/lib/libc/musl/src/termios/cfsetospeed.c
+lib/emscripten/system/lib/libc/musl/src/termios/cfsetspeed.c
 lib/emscripten/system/lib/libc/musl/src/termios/tcdrain.c
 lib/emscripten/system/lib/libc/musl/src/termios/tcflow.c
 lib/emscripten/system/lib/libc/musl/src/termios/tcflush.c
@@ -2694,6 +2697,7 @@ lib/emscripten/system/lib/libc/musl/src/time/__month_to_secs.c
 lib/emscripten/system/lib/libc/musl/src/time/__secs_to_tm.c
 lib/emscripten/system/lib/libc/musl/src/time/__tm_to_secs.c
 lib/emscripten/system/lib/libc/musl/src/time/__tz.c
+lib/emscripten/system/lib/libc/musl/src/time/__utc.c
 lib/emscripten/system/lib/libc/musl/src/time/__year_to_secs.c
 lib/emscripten/system/lib/libc/musl/src/time/asctime.c
 lib/emscripten/system/lib/libc/musl/src/time/asctime_r.c
@@ -6041,6 +6045,7 @@ lib/emscripten/system/lib/pkgconfig/glfw3.pc
 lib/emscripten/system/lib/pkgconfig/sdl.pc
 lib/emscripten/system/lib/pthread/em_task_queue.c
 lib/emscripten/system/lib/pthread/em_task_queue.h
+lib/emscripten/system/lib/pthread/emscripten_atomic_wait_suspending.c
 lib/emscripten/system/lib/pthread/emscripten_futex_wait.c
 lib/emscripten/system/lib/pthread/emscripten_futex_wake.c
 lib/emscripten/system/lib/pthread/emscripten_get_next_tid.c
@@ -6350,8 +6355,8 @@ lib/emscripten/tools/maint/run_python.sh
 lib/emscripten/tools/maint/run_python_compiler.ps1
 lib/emscripten/tools/maint/run_python_compiler.sh
 lib/emscripten/tools/maint/simde_update.py
-lib/emscripten/tools/maint/update_docs.py
 lib/emscripten/tools/maint/update_settings_docs.py
+lib/emscripten/tools/maint/update_website.py
 lib/emscripten/tools/minimal_runtime_shell.py
 lib/emscripten/tools/ports/__init__.py
 lib/emscripten/tools/ports/boost_headers.py
