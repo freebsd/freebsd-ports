@@ -45,7 +45,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		base64-0.22.1 \
 		base64ct-1.8.3 \
 		bit-vec-0.9.1 \
-		bitflags-2.11.1 \
+		bitflags-2.13.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
@@ -82,15 +82,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		cmake-0.1.57 \
-		codspeed-4.6.0 \
-		codspeed-criterion-compat-4.6.0 \
-		codspeed-criterion-compat-walltime-4.6.0 \
+		codspeed-4.7.0 \
+		codspeed-criterion-compat-4.7.0 \
+		codspeed-criterion-compat-walltime-4.7.0 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.5 \
 		colored-2.2.0 \
 		combine-4.6.7 \
 		concurrent-queue-2.5.0 \
-		configparser-3.1.0 \
+		configparser-3.2.0 \
 		console-0.16.3 \
 		const-oid-0.9.6 \
 		const-random-0.1.18 \
@@ -113,7 +113,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ctrlc-3.5.2 \
 		cyclonedx-bom-0.8.1 \
 		cyclonedx-bom-macros-0.1.0 \
-		dashmap-6.2.1 \
 		data-encoding-2.11.0 \
 		data-url-0.3.2 \
 		deadpool-0.12.3 \
@@ -218,7 +217,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		id-arena-2.3.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		ignore-0.4.25 \
+		ignore-0.4.26 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		imagesize-0.14.0 \
@@ -310,6 +309,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ordered-stream-0.2.0 \
 		os_str_bytes-6.6.1 \
 		owo-colors-4.3.0 \
+		papaya-0.2.4 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -408,7 +408,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rusticata-macros-4.1.0 \
 		rustix-1.1.4 \
 		rustls-0.23.40 \
-		rustls-native-certs-0.8.3 \
+		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
@@ -430,6 +430,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		secret-service-5.1.0 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
+		seize-0.5.1 \
 		self-replace-1.5.0 \
 		semver-1.0.27 \
 		serde-1.0.228 \
@@ -587,7 +588,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
 		weezl-0.1.12 \
-		which-8.0.2 \
+		which-8.0.3 \
 		widestring-1.2.1 \
 		winapi-util-0.1.11 \
 		windows-0.61.3 \
