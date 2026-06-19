@@ -1,5 +1,5 @@
 PORTNAME=	langchain-core
-DISTVERSION=	1.4.7
+DISTVERSION=	1.4.8
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.33:devel/py-jsonpatch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.14:misc/py-langchain-protocol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.17:misc/py-langchain-protocol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langsmith>=0.3.45:misc/py-langsmith@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.2:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.10.0:devel/py-pydantic2@${PY_FLAVOR} \
