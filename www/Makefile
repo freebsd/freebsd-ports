@@ -1849,6 +1849,7 @@
     SUBDIR += py-http-sf
     SUBDIR += py-httpbin
     SUBDIR += py-httpcore
+    SUBDIR += py-httpcore2
     SUBDIR += py-httpie
     SUBDIR += py-httplib2
     SUBDIR += py-httpretty
