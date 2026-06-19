@@ -448,6 +448,7 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-accelerate
+    SUBDIR += py-aistudio-sdk
     SUBDIR += py-alive-progress
     SUBDIR += py-anthropic
     SUBDIR += py-apache-beam
