@@ -1,6 +1,6 @@
 PORTNAME=	quantum++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.1
+DISTVERSION=	7.0.3
 CATEGORIES=	misc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,10 +31,8 @@ NO_ARCH=	yes
 post-test: # run tests
 	@${BUILD_WRKSRC}/unit_tests/unit_tests
 
-# tests as of 6.0:
-# [==========] 457 tests from 325 test suites ran. (1585 ms total)
-# [  PASSED  ] 457 tests.
-
-# tests as of 7.0: fail to compile, see https://github.com/softwareQinc/qpp/issues/197
+# tests as of 7.0.3:
+# [==========] 458 tests from 326 test suites ran. (2998 ms total)
+# [  PASSED  ] 458 tests.
 
 .include <bsd.port.mk>
