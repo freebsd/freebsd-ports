@@ -2138,7 +2138,6 @@
     SUBDIR += sr-hunspell
     SUBDIR += ss-hunspell
     SUBDIR += stardict-dict-fa_IR
-    SUBDIR += stardict-dictd_mova
     SUBDIR += stardict-rptts
     SUBDIR += stardict3
     SUBDIR += sttr
