@@ -1521,7 +1521,6 @@
     SUBDIR += seaweedfs
     SUBDIR += seda
     SUBDIR += self-service-password
-    SUBDIR += sems
     SUBDIR += sendemail
     SUBDIR += sendme
     SUBDIR += sendsms
