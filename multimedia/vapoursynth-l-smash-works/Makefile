@@ -17,7 +17,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblsmash.so:multimedia/l-smash
 
 USES=		meson pkgconfig
-USE_LDFLAGS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	HomeOfAviSynthPlusEvolution
