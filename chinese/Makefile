@@ -89,6 +89,7 @@
     SUBDIR += pcmanx
     SUBDIR += php-opencc
     SUBDIR += phpbb3-tw
+    SUBDIR += py-chinese-calendar
     SUBDIR += py-rjieba
     SUBDIR += pycangjie
     SUBDIR += pyzy
