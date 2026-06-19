@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -9,7 +9,9 @@ DIST_SUBDIR=	python
 
 PATCH_SITES=	https://github.com/python/cpython/commit/
 PATCHFILES=	ceac1efc66516ac387eef2c9a0ce671895b44f03.patch:-p1 \
-		96fc5048605863c7b6fd6289643feb0e97edd96c.patch:-p1
+		96fc5048605863c7b6fd6289643feb0e97edd96c.patch:-p1 \
+		f4654824ae0850ac87227fb270f9057477946769.patch:-p1 \
+		e20c6c9667c99ecaab96e1a2b3767082841ffc8b.patch:-p1
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
