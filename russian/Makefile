@@ -21,13 +21,6 @@
     SUBDIR += py-pytils
     SUBDIR += rubygem-russian
     SUBDIR += rux
-    SUBDIR += stardict-bars
-    SUBDIR += stardict-computer
-    SUBDIR += stardict-dal
-    SUBDIR += stardict-engcom
-    SUBDIR += stardict-mueller7
-    SUBDIR += stardict-mueller7accent
-    SUBDIR += stardict-pc
     SUBDIR += wordpress
     SUBDIR += xcode
     SUBDIR += xruskb
