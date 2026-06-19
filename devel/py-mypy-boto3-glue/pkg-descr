@@ -1,0 +1,1 @@
+mypy-boto3-dynamodb contains type annotations for boto3 Glue.

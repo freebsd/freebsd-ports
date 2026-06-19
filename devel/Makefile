@@ -5424,6 +5424,7 @@
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
     SUBDIR += py-mypy-boto3-dynamodb
+    SUBDIR += py-mypy-boto3-glue
     SUBDIR += py-mypy-boto3-s3
     SUBDIR += py-mypy-protobuf
     SUBDIR += py-mypy_extensions
