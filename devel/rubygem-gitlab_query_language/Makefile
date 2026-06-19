@@ -1,7 +1,8 @@
 PORTNAME=	gitlab_query_language
-PORTVERSION=	0.27.2
+PORTVERSION=	0.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+DISTFILES+=	${DISTNAME}.gem
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Library  to compile GitLab Query Language (GLQL) queries to GraphQL
@@ -13,18 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rb_sys>=0.9.91<0.10:lang/rubygem-rb_sys
 
 USES=		cargo gem gmake llvm:build
+GEM_ENV+=	MAKE=gmake \
+		${CARGO_ENV}
 
 # Required to be able to build the rust library the gem uses
 GEMFILES:=	${DISTNAME}.gem
-DISTFILES+=	${DISTNAME}.gem
 GEMS_SKIP_SUBDIR=	1
-CARGO_VENDOR_DIR=	${WRKSRC}/ext/gitlab_query_language/cargo-crates
 CARGO_CARGOTOML=	${WRKSRC}/ext/gitlab_query_language/Cargo.toml
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_ENV+=	CARGO_NET_OFFLINE=true
-GEM_ENV+=	MAKE=gmake \
-		${CARGO_ENV}
+CARGO_VENDOR_DIR=	${WRKSRC}/ext/gitlab_query_language/cargo-crates
 
 # update the crates file with:
 # make makesum
