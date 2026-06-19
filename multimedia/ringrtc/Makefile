@@ -84,7 +84,8 @@ TESTING_REV=		629b7bb6055714e23d8125bf790cfc8d94a94159
 THIRD_PARTY_REV=	4923971b35e39f6bd9be8bc19c4680785a15c80d
 TOOLS_REV=		f363a79871a91f36322e845e3134e2f04e1fc18a
 
-BINARY_ALIAS=	vpython3=${PYTHON_CMD}
+BINARY_ALIAS=	python3=${PYTHON_CMD} \
+		vpython3=${PYTHON_CMD}
 
 # Keep in sync with https://github.com/signalapp/ringrtc/blob/v2.53.0/bin/build-desktop#L130
 # Run "gn args out/release --list" for all variables.
