@@ -1,7 +1,7 @@
-TIMESTAMP = 1781325065
-SHA256 (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0/go.mod) = 12698344c7a2739855997d4d15aa8d41993ec30c2f732bfa0b85158fc2d8b98d
-SIZE (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0/go.mod) = 788
-SHA256 (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0.tar.gz) = ca3dc6f6b9265cfe01b6bd41f27ecbb93aada74c83b6285f5ed55007b9a06ae9
-SIZE (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0.tar.gz) = 20735684
-SHA256 (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0/microsoft-TypeScript-c3bd12d888b86f676718b16e64d7d2abcb423514_GH0.tar.gz) = 1fc752c3ebe8bfea504e5ef30cc877ff0e0fb1f128d32a2b1044ef8ab4aef657
-SIZE (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260527-94f31f32f8b5713e8fb17aaa65ba73b596485459_GH0/microsoft-TypeScript-c3bd12d888b86f676718b16e64d7d2abcb423514_GH0.tar.gz) = 29338108
+TIMESTAMP = 1781855588
+SHA256 (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0/go.mod) = 97a879da9538c89a21abff747d29feb3dc57442b866d4815c0ae06b73f3383aa
+SIZE (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0/go.mod) = 788
+SHA256 (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0.tar.gz) = 8a550ee88c7b7e2b028818473ac3425ed677e32e22c4e098644a258876417040
+SIZE (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0.tar.gz) = 20141245
+SHA256 (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0/microsoft-TypeScript-c3bd12d888b86f676718b16e64d7d2abcb423514_GH0.tar.gz) = 1fc752c3ebe8bfea504e5ef30cc877ff0e0fb1f128d32a2b1044ef8ab4aef657
+SIZE (go/lang_typescript-go/microsoft-typescript-go-7.0.0.g20260609-69b0d53976ef291fa0bb2b636ec1b557a015f6b3_GH0/microsoft-TypeScript-c3bd12d888b86f676718b16e64d7d2abcb423514_GH0.tar.gz) = 29338108
