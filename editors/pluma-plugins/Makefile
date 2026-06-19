@@ -2,8 +2,8 @@ PORTNAME=	pluma-plugins
 DISTVERSION=	1.28.0
 PORTREVISION=	6
 CATEGORIES=	editors mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for Pluma
@@ -25,8 +25,6 @@ RUN_DEPENDS=	pluma>=0:editors/pluma \
 
 USES=		compiler:c11 gettext gnome libtool:keepla localbase gmake \
 		pkgconfig python shebangfix tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview4 intlhack introspection \
 		intltool vte3
 USE_CSTD=	c11
