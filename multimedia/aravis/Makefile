@@ -1,5 +1,5 @@
 PORTNAME=	aravis
-DISTVERSION=	0.8.34
+DISTVERSION=	0.8.36
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
