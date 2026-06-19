@@ -1,5 +1,6 @@
 PORTNAME=	dolibarr20
 DISTVERSION=	20.0.4
+PORTREVISION=	1
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
@@ -17,6 +18,7 @@ USE_PHP=	calendar curl gd intl session
 NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
+PHP_VER=	82
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=		MYSQL PGSQL
