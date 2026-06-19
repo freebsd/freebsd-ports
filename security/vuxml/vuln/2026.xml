@@ -8289,7 +8289,7 @@ affected.</p>
     <topic>Python -- use-after-free vulnerability in decompressors under memory pressure</topic>
     <affects>
       <package><name>python310</name><range><lt>3.10.20_3</lt></range></package>
-      <package><name>python311</name><range><lt>3.11.15_3</lt></range></package>
+      <package><name>python311</name><range><lt>3.11.15_4</lt></range></package>
       <package><name>python312</name><range><ge>0</ge></range></package>
       <package><name>python313</name><range><lt>3.13.14</lt></range></package>
       <package><name>python313t</name><range><lt>3.13.14</lt></range></package>
