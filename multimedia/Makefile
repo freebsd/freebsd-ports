@@ -252,7 +252,6 @@
     SUBDIR += navidrome
     SUBDIR += neolink
     SUBDIR += nostt
-    SUBDIR += nymphcast
     SUBDIR += nymphcastlib
     SUBDIR += nymphrpc
     SUBDIR += obs-multi-rtmp

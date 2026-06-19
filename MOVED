@@ -5355,3 +5355,4 @@ sysutils/docker|sysutils/docker-cli|2026-06-18|Reflect its actual content
 multimedia/dvbcut||2026-06-19|Broken for more than 6 months and upstream is dead
 games/cgoban||2026-06-19|Broken for more than a year and upstream is dead
 games/valyriatear||2026-06-19|Broken for more than a year and upstream is dead
+multimedia/nymphcast||2026-06-19|Broken for more than 6 months
