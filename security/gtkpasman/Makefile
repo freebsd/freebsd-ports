@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK passwords manager for system and network administrators
 WWW=		https://gtkpasman.sourceforge.net/
 
-RUN_DEPENDS+=	gpgv2:security/gnupg
+RUN_DEPENDS+=	gnupg>=2.5.20:security/gnupg
 
 USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool
