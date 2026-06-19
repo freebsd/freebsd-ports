@@ -1043,6 +1043,7 @@
     SUBDIR += pwol
     SUBDIR += pwsafe
     SUBDIR += pxattr
+    SUBDIR += py-GPUtil
     SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-core218
