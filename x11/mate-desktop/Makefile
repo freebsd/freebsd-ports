@@ -2,8 +2,8 @@ PORTNAME=	mate-desktop
 DISTVERSION=	1.28.2
 PORTREVISION=	1
 CATEGORIES=	x11 mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for MATE
@@ -21,8 +21,6 @@ RUN_DEPENDS=	dconf-editor:devel/dconf-editor
 
 USES=		gettext gmake gnome libtool localbase pathfix \
 		pkgconfig python shebangfix tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_XORG=	x11 xrandr
 USE_GNOME=	cairo dconf gdkpixbuf gnomeprefix gtk30 \
 		intltool introspection:build
