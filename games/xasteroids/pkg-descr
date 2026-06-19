@@ -1,2 +1,12 @@
 X11 based asteroids style arcade game.
 Make big rocks into little ones.
+
+This port is based on version 5.0 of xasteroids.
+The following changes have been made:
+
+ - Improved cursor-hiding.
+ - Arrow keys.
+ - ANSI-C cleanups.
+ - Use usleep() instead of a delay loop, when available.
+ - Add prototypes.
+ - Reformat man page.
