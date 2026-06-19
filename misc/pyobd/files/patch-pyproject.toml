@@ -1,0 +1,27 @@
+-- Fix format of project.license field in pyproject.toml to comply with PEP 621.
+-- The original format uses a string instead of a table, which is invalid PEP 621 metadata and causes the PEP 517 build backend to fail validation.
+--
+--- pyproject.toml.orig	2026-06-19 18:31:19 UTC
++++ pyproject.toml
+@@ -9,14 +9,18 @@ dependencies = [
+     "six==1.16.0",
+ ]
+ 
+-name = "pyobd2"
+-version = "1.17"
++name = "pyobd"
++version = "1.19"
+ description = "An OBD-II compliant car diagnostic tool "
+ authors = [{ "name" = "Jure Poljsak" }, { "name" = "Charles Donour Sizemore" }]
+ readme = "README.md"
+-license = "GPL-2.0-only"
++license = {text = "GPL-2.0-only"}
+ requires-python = ">=3.8"
+ 
+ [build-system]
+ requires = ["setuptools", "wheel"]
+ build-backend = "setuptools.build_meta"
++
++[tool.setuptools]
++packages = ["obd", "obd.protocols"]
++py-modules = ["pyobd", "obd2_codes", "obd_io", "obd_sensors", "debugEvent"]
