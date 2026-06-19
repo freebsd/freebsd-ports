@@ -1,8 +1,8 @@
 PORTNAME=	mate-menus
 DISTVERSION=	1.28.1
 CATEGORIES=	x11 mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
@@ -15,8 +15,6 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
 		python tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_GNOME=	glib20 intltool introspection:buid
 USE_LDCONFIG=	yes
 PORTSCOUT=	site:https://github.com/mate-desktop/mate-menus/releases/ limitw:1,even
