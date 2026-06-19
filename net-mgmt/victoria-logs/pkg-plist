@@ -5,8 +5,6 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/cluster-ha.excalidraw
 %%PORTDOCS%%%%DOCSDIR%%/cluster-ha.webp
 %%PORTDOCS%%%%DOCSDIR%%/data-ingestion/openshift.md
-%%PORTDOCS%%%%DOCSDIR%%/security-and-lb-search-auth.excalidraw
-%%PORTDOCS%%%%DOCSDIR%%/security-and-lb-search-auth.webp
 %%PORTDOCS%%%%DOCSDIR%%/security-and-lb-tenants.excalidraw
 %%PORTDOCS%%%%DOCSDIR%%/security-and-lb-tenants.webp
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
