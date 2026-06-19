@@ -2,8 +2,8 @@ PORTNAME=	mate-system-monitor
 DISTVERSION=	1.28.1
 PORTREVISION=	2
 CATEGORIES=	sysutils mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE system monitor program
@@ -18,8 +18,6 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 
 USES=		compiler:c++11-lib gettext gmake gnome localbase mate \
 		pathfix pkgconfig tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_MATE=	icontheme
 USE_GNOME=	gtkmm30 intlhack librsvg2 libwnck3 libxml2
 PORTSCOUT=	site:https://github.com/mate-desktop/mate-system-monitor/releases/ limitw:1,even
