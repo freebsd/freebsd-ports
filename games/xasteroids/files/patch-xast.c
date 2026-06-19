@@ -1,6 +1,6 @@
---- xast.c.orig
+--- xast.c.orig	2026-06-19 11:03:44 UTC
 +++ xast.c
-@@ -3,6 +3,13 @@
+@@ -3,6 +3,14 @@
  	goetz@cs.buffalo.EDU
  	Version 5, 9 Feb 93
  
@@ -10,11 +10,12 @@
 +		Arrow keys.
 +		ANSI-C cleanups.
 +		Use usleep() instead of a delay loop, when available.
++		Add prototypes.
 +
  	Changes from version 4.3:
  
  		High score script.
-@@ -27,16 +34,30 @@
+@@ -27,16 +35,30 @@
  			Pat Ryan <pat@jaameri.gsfc.nasa.gov>
  			Craig Smith <csmith@cscs.UUCP>
  			Doug Merritt <doug@netcom.com>
@@ -46,7 +47,7 @@
  /* Indexes for 1st dimension of obj	*/
  /* The order they are in is important	*/
  #define	AST	0
-@@ -68,10 +89,10 @@
+@@ -68,10 +90,10 @@
  #define M_BULLET 0.1
  
  /* Keys		*/
@@ -61,7 +62,7 @@
  
  #define BMAX		300	/* Max particles in a "boom" + 1	*/
  #define letheight	20	/* height of font	*/
-@@ -121,6 +142,7 @@
+@@ -121,6 +143,7 @@ int	width, height,
  	shapesize[LASTSHAPE+1]	= {44, 21, 10, 2, 1, SHIPSIZE+1, 35, 20},
  	shield_on;
  
@@ -69,7 +70,7 @@
  initasts()
  {	int i;
  	extern Objtype obj[SHIP+1];
-@@ -143,6 +165,7 @@
+@@ -143,6 +166,7 @@ initasts()
  		obj[i].mass = M_BULLET;
  }	}
  
@@ -77,7 +78,7 @@
  makeasts()
  {	int i;
  	extern Objtype obj[SHIP+1];
-@@ -163,7 +186,7 @@
+@@ -163,7 +187,7 @@ makeasts()
  		if (a >  63)
  			obj[i].y = (double) a;
  			else obj[i].y = (double) height - a;
@@ -86,7 +87,7 @@
  		obj[i].rot = (double) a;
  		a = rand(rndint);
  		obj[i].rotvel = ((double) a)/2048;
-@@ -177,6 +200,7 @@
+@@ -177,6 +201,7 @@ makeasts()
  	numasts = i;
  }
  
@@ -94,15 +95,31 @@
  makeenemy()	/* Start an enemy ship	*/
  {	extern Objtype obj[SHIP+1];
  	extern int height, level, rndint;
-@@ -258,6 +282,7 @@
+@@ -199,9 +224,9 @@ int nextast()	/* Find next unused asteroid object	*/
+ 	return i;
+ }
+ 
+-int collide(i, j)	/* Returns non-zero if i collided with j	*/
++int collide(int i, int j)
++			/* Returns non-zero if i collided with j	*/
+ 			/* Ship must be j!  (See below)			*/
+-	int i, j;
+ {	extern Objtype obj[SHIP+1];
+ 	extern int shapesize[LASTSHAPE+1];
+ 	extern double drawscale;
+@@ -258,15 +283,17 @@ Loopend:		jx1 = jx2; jy1 = jy2;
  	return 0;
  }
  
+-blastpair(i, j)		/* Generate random velocity vector v.	*/
+-	int i, j ;	/* Add v to i, -v to j.			*/
 +void
- blastpair(i, j)		/* Generate random velocity vector v.	*/
- 	int i, j ;	/* Add v to i, -v to j.			*/
++blastpair(int i, int j)
++			/* Generate random velocity vector v.	*/
++			/* Add v to i, -v to j.			*/
  {	extern int rndint;
-@@ -266,7 +291,7 @@
+ 	extern Objtype obj[SHIP+1];
+ 	unsigned char c;	/* for rand	*/
  	double vx, vy;
  	c = rand(rndint);
  /*	c = 4 - c>>5;	if you need angles from -3 to 4		*/
@@ -111,47 +128,70 @@
  	vx = cos((double) c); vy = sin((double) c);
  	obj[i].xvel = obj[i].xvel + vx;
  	obj[i].yvel = obj[i].yvel + vy;
-@@ -282,6 +307,7 @@
+@@ -282,8 +309,8 @@ blastpair(i, j)		/* Generate random velocity vector v.
  #define rotinert(i)	(double) (obj[i].mass*shapesize[obj[i].shape]*shapesize[obj[i].shape])
  
  /* cause two objects to collide elastically	*/
+-bounce(i, j)
+-int	i,j;
 +void
- bounce(i, j)
- int	i,j;
++bounce(int i, int j)
  {
-@@ -345,6 +371,7 @@
+ double	rotrat, temp;
+ extern	Objtype obj[SHIP+1];
+@@ -345,10 +372,9 @@ obj[j].rotvel = temp;
  obj[j].rotvel = temp;
  }
  
+-botline(disp, window, gc)	/* Print status line text	*/
+-	Display *disp;
+-	Drawable window;
+-	GC gc;
 +void
- botline(disp, window, gc)	/* Print status line text	*/
- 	Display *disp;
- 	Drawable window;
-@@ -357,6 +384,7 @@
++botline(Display *disp, Drawable window, GC gc)
++			/* Print status line text	*/
+ {	extern int highscore, ships, score;
+ 	char text[70];
+ 	sprintf(text, "Ships:%2d   Score:%6d   Shield:        High:%6d",
+@@ -357,10 +383,9 @@ botline(disp, window, gc)	/* Print status line text	*/
  			text, strlen(text));
  }
  
+-printss(disp, window, gc)	/* Print ships and score	*/
+-	Display *disp;
+-	Drawable window;
+-	GC gc;
 +void
- printss(disp, window, gc)	/* Print ships and score	*/
- 	Display *disp;
- 	Drawable window;
-@@ -389,6 +417,7 @@
++printss(Display *disp, Drawable window, GC gc)
++			/* Print ships and score	*/
+ {	extern int height, highscore, oldscore, ships, score;
+ 	extern Objtype obj[SHIP+1];	/* to kill ship	*/
+ 	char sstring[30];
+@@ -389,18 +414,17 @@ printss(disp, window, gc)	/* Print ships and score	*/
  	XClearArea(disp, window, 340+(energy>>1), height+8, 8, 10, False);
  }
  
+-upscore(killer, up)	/* Only award score for things the player shot */
+-	int killer, up;
 +void
- upscore(killer, up)	/* Only award score for things the player shot */
- 	int killer, up;
++upscore(int killer, int up)
++		/* Only award score for things the player shot */
  {	extern int score;
-@@ -397,6 +426,7 @@
+ 	if (killer != ENEMYBUL && killer != SHIP)
+ 		score = score + up;
  }
  
  /* boom, movebooms, drawbooms all by Peter Phillips */
+-boom(ob, particles, duration)
+-int ob;
+-int particles;
+-int duration;
 +void
- boom(ob, particles, duration)
- int ob;
- int particles;
-@@ -429,6 +459,7 @@
++boom(int ob, int particles, int duration)
+ { extern int rndint;
+   int i;
+   unsigned int r1, r2;
+@@ -429,6 +453,7 @@ int duration;
  }
  
  /* move the various booms that are active */
@@ -159,15 +199,20 @@
  movebooms()
  {
    int i;
-@@ -461,6 +492,7 @@
+@@ -461,10 +486,8 @@ movebooms()
  }
  
  /* Draw the various booms */
+-drawbooms(disp, window, gc)
+-     Display *disp;
+-     Drawable window;
+-     GC gc;
 +void
- drawbooms(disp, window, gc)
-      Display *disp;
-      Drawable window;
-@@ -481,6 +513,7 @@
++drawbooms(Display *disp, Drawable window, GC gc)
+ {
+   int i;
+   Boom b;
+@@ -481,6 +504,7 @@ drawbooms(disp, window, gc)
    }
  }
  
@@ -175,13 +220,14 @@
  deletebooms()	/* delete all booms */
  {	Boom b;
  
-@@ -490,11 +523,12 @@
+@@ -490,11 +514,11 @@ deletebooms()	/* delete all booms */
  		b = b->next;
  }	}
  
+-killast(killer, i)
+-	int killer, i;		/* i = Asteroid # to kill	*/
 +void
- killast(killer, i)
- 	int killer, i;		/* i = Asteroid # to kill	*/
++killast(int killer, int i)	/* i = Asteroid # to kill	*/
  {	extern Objtype obj[SHIP+1];
  	extern int numasts;
 -	int k, na, oldna;
@@ -189,16 +235,19 @@
  
  	if (obj[i].shape == ASTSHAPE1)
  	{	na = nextast();		/* Could put 6 lines in a sub */
-@@ -543,6 +577,8 @@
+@@ -543,8 +567,9 @@ killast(killer, i)
  	{	boom(i, 9, 7);
  		obj[i].alive = 0; upscore(killer, 500);}
  }
+-moveobjs(crash)
+-	int *crash;
 +
 +void
- moveobjs(crash)
- 	int *crash;
++moveobjs(int *crash)
  {	extern Objtype obj[SHIP+1];
-@@ -585,6 +621,7 @@
+ 	extern int ships;
+ 	extern double speedscale;
+@@ -585,6 +610,7 @@ moveobjs(crash)
  	    }
  }
  
@@ -206,7 +255,7 @@
  fire()
  {	extern Objtype obj[SHIP+1];
  	extern int width, nextbul;
-@@ -603,6 +640,7 @@
+@@ -603,6 +629,7 @@ fire()
  	nextbul++; if (nextbul == LASTBUL+1) nextbul = FBUL;
  }
  
@@ -214,23 +263,36 @@
  hyper()
  {	extern Objtype obj[SHIP+1];
  	extern int width, height, rndint;
-@@ -617,6 +655,7 @@
+@@ -617,13 +644,9 @@ hyper()
  	obj[SHIP].y = (double) i;
  }
  
+-vdraw(disp, window, gc, shape, x, y, rot)
+-	Display *disp;
+-	Drawable window;
+-	GC gc;
+-	int shape;
+-	double x, y, rot;
+-
 +void
- vdraw(disp, window, gc, shape, x, y, rot)
- 	Display *disp;
- 	Drawable window;
-@@ -639,6 +678,7 @@
++vdraw(Display *disp, Drawable window, GC gc,
++    int shape, double x, double y, double rot)
+ {	int line;
+ 	extern PolarPair shapes[LASTSHAPE+1][11];
+ 	extern int numpairs[LASTSHAPE+1];
+@@ -639,9 +662,8 @@ vdraw(disp, window, gc, shape, x, y, rot)
  	XDrawLines (disp, window, gc, figure, numpairs[shape], CoordModePrevious);
  }
  
+-main(argc, argv)
+-	int argc;
+-	char **argv;
 +int
- main(argc, argv)
- 	int argc;
- 	char **argv;
-@@ -663,8 +703,8 @@
++main(int argc, char *argv[])
+ {	Colormap cmap;
+ 	Cursor cursor;
+ 	Display *disp;
+@@ -663,8 +685,8 @@ main(argc, argv)
  	extern int level, numasts, rndint, ships, score, oldscore;
  	extern Objtype obj[SHIP+1];
  	unsigned char c;	/* for rand	*/
@@ -241,7 +303,7 @@
  		enemycount, counter, counterstart = 1,
  		i,	/* index for drawing objs, counting bullets */
  		r;	/* radius of shield circle	*/
-@@ -704,11 +744,30 @@
+@@ -704,11 +726,30 @@ main(argc, argv)
  		KeyPressMask | KeyReleaseMask | StructureNotifyMask);
  	XMapRaised (disp, window);
  
@@ -273,7 +335,7 @@
  	XDefineCursor(disp, window, cursor);
  
  	XFillRectangle (disp, pixmap, pmgc, 0, 0, width, height);
-@@ -746,7 +805,7 @@
+@@ -746,7 +787,7 @@ Newship:    botline(disp, window, gc);
  		{   XNextEvent(disp, &event);
  		    switch (event.type)
  		    {	case MappingNotify:
@@ -282,7 +344,7 @@
  			    break;
  			case ConfigureNotify:
  			    width = event.xconfigure.width;
-@@ -757,28 +816,29 @@
+@@ -757,28 +798,29 @@ Newship:    botline(disp, window, gc);
  			    botline(disp, window, gc);
  			    break;
  			case KeyPress:
@@ -322,7 +384,7 @@
  				    if (obj[SHIP].alive)
  				    {	hyper(); flashon = 1;
  /*				    NOT XSetForeground (disp, gc, bg);
-@@ -787,52 +847,55 @@
+@@ -787,52 +829,55 @@ Newship:    botline(disp, window, gc);
  					XFillRectangle (disp, pixmap, pmgc, 0, 0, width, height);
  				    }
  				    break;
@@ -398,7 +460,7 @@
  				    shield_on = 0; break;
  			    }
  /*			    break;		*/
-@@ -850,7 +913,7 @@
+@@ -850,7 +895,7 @@ Newship:    botline(disp, window, gc);
  			    botline(disp, window, gc);
  			}
  			/* Write copyright notice	*/
@@ -407,7 +469,7 @@
  			{   sprintf(text, "Xasteroids");
  			    XDrawImageString (disp, pixmap, gc,
  				width/2-50, height/2-2*letheight,
-@@ -917,7 +980,11 @@
+@@ -917,7 +962,11 @@ Newship:    botline(disp, window, gc);
  			}
  			else	obj[ENEMYBUL].alive = 0;
  		    }

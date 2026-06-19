@@ -1,4 +1,4 @@
---- xast.man.orig
+--- xast.man.orig	2026-06-19 11:03:44 UTC
 +++ xast.man
 @@ -1,9 +1,9 @@
 -.TH xasteroids n
@@ -13,7 +13,7 @@
  .br
  .SH DESCRIPTION
  Make big rocks into little ones.
-@@ -11,60 +11,70 @@
+@@ -11,60 +11,70 @@ Make big rocks into little ones.
  .SH COMMANDS
  .I xasteroids 
  

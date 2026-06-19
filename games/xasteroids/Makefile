@@ -1,38 +1,39 @@
 PORTNAME=	xasteroids
 PORTVERSION=	5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.sh.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	X11 based asteroids style arcade game
 
-EXTRACT_CMD=	( cd ${WRKSRC}; zcat | ${SH} -s )
-EXTRACT_BEFORE_ARGS=	<
-EXTRACT_AFTER_ARGS=	# empty
+LICENSE=	XASTEROIDS
+LICENSE_NAME=	Xasteroids license
+LICENSE_FILE=	${WRKSRC}/README
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-NO_WRKSUBDIR=	yes
-
-USES=		xorg
+USES=		localbase:ldflags xorg
 USE_XORG=	x11 xext
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11 -lm
+LIBS+=		-lXext -lX11 -lm
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/xasteroids \
 		share/man/man6/xasteroids.6.gz
 
-post-extract:
-	@${LN} -sf xast.man ${WRKSRC}/xasteroids.6
+do-extract:
+	(cd ${EXTRACT_WRKDIR} && \
+	    ${SETENV} ${EXTRACT_ENV} zcat ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	    ${SETENV} ${EXTRACT_ENV} ${SH} -s)
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CPPFLAGS} ${CFLAGS} -o xasteroids xast.c \
-		${LDFLAGS})
+	(cd ${WRKSRC} && ${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} \
+	    -o xasteroids xast.c ${LIBS})
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xasteroids ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} xasteroids.6 ${STAGEDIR}${PREFIX}/share/man/man6)
+	(cd ${WRKSRC} && ${INSTALL_MAN} xast.man ${STAGEDIR}${PREFIX}/share/man/man6/xasteroids.6)
 
 .include <bsd.port.mk>
