@@ -1,6 +1,6 @@
---- codex-rs/exec/tests/suite/mod.rs.orig	2026-06-09 19:02:39 UTC
+--- codex-rs/exec/tests/suite/mod.rs.orig	2026-06-18 03:59:28 UTC
 +++ codex-rs/exec/tests/suite/mod.rs
-@@ -10,5 +10,6 @@ mod resume;
+@@ -11,5 +11,6 @@ mod resume;
  mod output_schema;
  mod prompt_stdin;
  mod resume;
