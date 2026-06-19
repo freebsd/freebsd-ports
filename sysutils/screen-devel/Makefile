@@ -10,8 +10,8 @@ WWW=		https://www.gnu.org/software/screen/
 
 CONFLICTS=	screen-[0-9]*
 
-GIT_TAGNAME=	184adeb
-SCREEN_COMMIT_DATE=	20260414
+GIT_TAGNAME=	9c94dab
+SCREEN_COMMIT_DATE=	20260609
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}/src
 
