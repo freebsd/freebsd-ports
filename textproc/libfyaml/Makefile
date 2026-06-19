@@ -4,6 +4,10 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/pantoniou/libfyaml/releases/download/v${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/pantoniou/libfyaml/commit/
+PATCHFILES=	0982fcefc6a16d4c8cb5b06747d3fc8e630de3ae.diff:-p1 \
+		9192deaac095f9881cc1e5756dede683f36b09d6.diff:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	YAML parser and emitter
 WWW=		https://github.com/pantoniou/libfyaml
