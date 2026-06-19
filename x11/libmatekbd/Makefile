@@ -2,8 +2,8 @@ PORTNAME=	libmatekbd
 DISTVERSION=	1.28.0
 PORTREVISION=	1
 CATEGORIES=	x11 mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE keyboard shared library
@@ -16,8 +16,6 @@ LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 USES=		gettext gmake gnome libtool localbase pathfix \
 		pkgconfig tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_GNOME=	cairo gtk30 intltool introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
