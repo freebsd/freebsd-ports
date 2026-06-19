@@ -1,5 +1,5 @@
 PORTNAME=	django-allauth
-PORTVERSION=	65.17.0
+PORTVERSION=	65.18.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj52-
@@ -13,9 +13,6 @@ WWW=		https://allauth.org/ \
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Obsolete, please use www/py-django-allauth instead
-EXPIRATION_DATE=2026-06-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
