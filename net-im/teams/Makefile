@@ -1,12 +1,11 @@
 PORTNAME=	teams
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
-PORTREVISION=	2
+DISTVERSION=	2.11.1
 CATEGORIES=	net-im
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Unofficial Microsoft Teams client
-WWW=		https://github.com/IsmaelMartinez/teams-for-linux
+WWW=		https://ismaelmartinez.github.io/teams-for-linux/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -37,7 +36,7 @@ do-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/dist/${ELECTRON_BUILDER_APP_OUT_DIR} && \
-		${COPYTREE_SHARE} resources ${STAGEDIR}${DATADIR}
+	${COPYTREE_SHARE} resources ${STAGEDIR}${DATADIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
