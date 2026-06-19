@@ -7603,6 +7603,7 @@
     SUBDIR += rubygem-gitlab-chronic
     SUBDIR += rubygem-gitlab-dangerfiles
     SUBDIR += rubygem-gitlab-experiment
+    SUBDIR += rubygem-gitlab-grape-openapi
     SUBDIR += rubygem-gitlab-labkit
     SUBDIR += rubygem-gitlab-license
     SUBDIR += rubygem-gitlab-pygments.rb
@@ -8228,6 +8229,7 @@
     SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-semver2
     SUBDIR += rubygem-semver_dialects
+    SUBDIR += rubygem-semver_dialects-gitlab
     SUBDIR += rubygem-semverse
     SUBDIR += rubygem-sentry-rails
     SUBDIR += rubygem-sentry-raven
@@ -8470,6 +8472,7 @@
     SUBDIR += rubygem-zhexdump
     SUBDIR += rubygem-zlib
     SUBDIR += rubygem-zstd-ruby
+    SUBDIR += rubygem-zstd-ruby-gitlab
     SUBDIR += rubymine
     SUBDIR += rudeconfig
     SUBDIR += rudiments
