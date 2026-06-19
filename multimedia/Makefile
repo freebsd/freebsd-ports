@@ -255,7 +255,6 @@
     SUBDIR += nymphcastlib
     SUBDIR += nymphrpc
     SUBDIR += obs-multi-rtmp
-    SUBDIR += obs-streamfx
     SUBDIR += obs-studio
     SUBDIR += obs-text-pthread
     SUBDIR += obs-waveform
