@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.15.17
+DISTVERSION=	0.15.18
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,11 +42,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-wincon-3.0.10 \
 		anyhow-1.0.102 \
 		approx-0.5.1 \
-		arbitrary-1.4.2 \
 		arc-swap-1.9.1 \
 		argfile-1.0.0 \
 		arrayvec-0.7.6 \
 		assert_fs-1.1.4 \
+		async-trait-0.1.89 \
 		attribute-derive-0.10.3 \
 		attribute-derive-macro-0.10.3 \
 		autocfg-1.5.0 \
@@ -55,7 +55,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
-		bitflags-2.12.1 \
+		bitflags-2.13.0 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
@@ -122,7 +122,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dashmap-6.2.1 \
 		datatest-stable-0.3.3 \
 		derive-where-1.6.0 \
-		derive_arbitrary-1.4.2 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
@@ -154,10 +153,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fs-err-3.3.0 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
+		futures-core-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
 		gen-lsp-types-0.8.0 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.9.0 \
-		get-size2-0.9.0 \
+		get-size-derive2-0.10.0 \
+		get-size2-0.10.0 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
@@ -187,7 +189,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		ignore-0.4.25 \
+		ignore-0.4.26 \
 		imara-diff-0.2.0 \
 		imperative-1.0.7 \
 		indexmap-2.14.0 \
@@ -213,7 +215,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
 		jod-thread-1.0.0 \
-		js-sys-0.3.82 \
+		js-sys-0.3.100 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
@@ -221,6 +223,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.186 \
 		libcst-1.8.6 \
 		libcst_derive-1.8.6 \
+		libm-0.2.16 \
 		libmimalloc-sys-0.1.49 \
 		libredox-0.1.10 \
 		libtest-mimic-0.7.3 \
@@ -229,7 +232,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
 		lock_api-0.4.13 \
-		log-0.4.31 \
+		log-0.4.32 \
 		lsp-server-0.7.9 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
@@ -239,7 +242,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		memchr-2.8.1 \
 		memoffset-0.9.1 \
 		mimalloc-0.1.52 \
-		minicov-0.3.7 \
+		minicov-0.3.8 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
@@ -322,10 +325,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
 		regex-lite-0.1.7 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		ron-0.12.0 \
 		rust-stemmers-1.2.0 \
 		rustc-hash-2.1.2 \
@@ -350,8 +353,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_json-1.0.150 \
 		serde_spanned-1.1.1 \
 		serde_test-1.0.177 \
-		serde_with-3.20.0 \
-		serde_with_macros-3.20.0 \
+		serde_with-3.21.0 \
+		serde_with_macros-3.21.0 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.2 \
@@ -359,6 +362,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		similar-2.7.0 \
 		similar-3.1.1 \
 		siphasher-1.0.1 \
+		slab-0.4.12 \
 		smallvec-1.15.1 \
 		snapbox-1.0.0 \
 		snapbox-macros-1.0.0 \
@@ -410,6 +414,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-subscriber-0.3.23 \
 		tryfn-1.0.0 \
 		typed-arena-2.0.2 \
+		typed-path-0.12.3 \
 		typeid-1.0.3 \
 		typenum-1.18.0 \
 		ucd-trie-0.1.7 \
@@ -428,7 +433,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.2 \
+		uuid-1.23.3 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
@@ -441,19 +446,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.1+wasi-0.2.4 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.105 \
-		wasm-bindgen-futures-0.4.55 \
-		wasm-bindgen-macro-0.2.105 \
-		wasm-bindgen-macro-support-0.2.105 \
-		wasm-bindgen-shared-0.2.105 \
-		wasm-bindgen-test-0.3.55 \
-		wasm-bindgen-test-macro-0.3.55 \
+		wasm-bindgen-0.2.123 \
+		wasm-bindgen-futures-0.4.73 \
+		wasm-bindgen-macro-0.2.123 \
+		wasm-bindgen-macro-support-0.2.123 \
+		wasm-bindgen-shared-0.2.123 \
+		wasm-bindgen-test-0.3.73 \
+		wasm-bindgen-test-macro-0.3.73 \
+		wasm-bindgen-test-shared-0.2.123 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.82 \
+		web-sys-0.3.100 \
 		web-time-1.1.0 \
-		which-8.0.2 \
+		which-8.0.3 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -509,7 +515,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
-		zip-5.1.1 \
+		zip-8.6.0 \
 		zlib-rs-0.5.5 \
 		zmij-1.0.10 \
 		zstd-0.13.3 \
