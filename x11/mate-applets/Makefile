@@ -2,8 +2,8 @@ PORTNAME=	mate-applets
 DISTVERSION=	1.28.1
 PORTREVISION=	4
 CATEGORIES=	x11 mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applets components for the MATE Desktop Environment
@@ -24,8 +24,6 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 
 USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
 		pkgconfig tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_CSTD=	c11
 
 USE_MATE=	libmateweather panel
