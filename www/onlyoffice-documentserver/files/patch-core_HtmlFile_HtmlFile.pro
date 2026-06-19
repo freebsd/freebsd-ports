@@ -1,6 +1,6 @@
---- core/HtmlFile/HtmlFile.pro.orig	2021-09-30 12:13:32 UTC
+--- core/HtmlFile/HtmlFile.pro.orig	2026-05-17 15:03:58 UTC
 +++ core/HtmlFile/HtmlFile.pro
-@@ -18,6 +18,10 @@ include(../Common/base.pri)
+@@ -49,6 +49,10 @@
  
  ADD_DEPENDENCY(kernel, UnicodeConverter)
  

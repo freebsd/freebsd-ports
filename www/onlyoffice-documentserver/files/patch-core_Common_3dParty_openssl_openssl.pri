@@ -9,4 +9,5 @@
 +    LIBS +=  -L%%OPENSSL_LIB%% -lcrypto -lssl
  }
  
- INCLUDEPATH += $$OPENSSL_LIBS_DIRECTORY/../include
+-INCLUDEPATH += $$OPENSSL_LIBS_DIRECTORY/../include
++INCLUDEPATH += %%OPENSSL_INC%%

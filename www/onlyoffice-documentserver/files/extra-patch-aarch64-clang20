@@ -1,0 +1,11 @@
+--- core/Common/3dParty/v8_89/v8/src/compiler/backend/instruction-codes.h.orig 2021-04-12 21:00:33 UTC
++++ core/Common/3dParty/v8_89/v8/src/compiler/backend/instruction-codes.h
+@@ -276,7 +276,7 @@
+ using ArchOpcodeField = base::BitField<ArchOpcode, 0, 9>;
+ static_assert(ArchOpcodeField::is_valid(kLastArchOpcode),
+               "All opcodes must fit in the 9-bit ArchOpcodeField.");
+-using AddressingModeField = base::BitField<AddressingMode, 9, 5>;
++using AddressingModeField = base::BitField<AddressingMode, 9, 4>;
+ using FlagsModeField = base::BitField<FlagsMode, 14, 3>;
+ using FlagsConditionField = base::BitField<FlagsCondition, 17, 5>;
+ using DeoptImmedArgsCountField = base::BitField<int, 22, 2>;

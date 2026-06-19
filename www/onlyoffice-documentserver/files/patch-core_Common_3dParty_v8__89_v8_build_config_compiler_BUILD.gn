@@ -65,7 +65,7 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1526,12 +1522,37 @@ config("default_warnings") {
+@@ -1526,12 +1522,35 @@ config("default_warnings") {
          "-Wno-undefined-var-template",
        ]
  
@@ -82,8 +82,6 @@
 +        cflags += [
 +          # zlib uses K&R-style function definitions
 +          "-Wno-deprecated-non-prototype",
-+          # bit-field.h constexpr enum range (Clang 16+ only)
-+          "-Wno-enum-constexpr-conversion",
 +          # pthread mutex/condvar wrappers lack annotations
 +          "-Wno-thread-safety-analysis",
 +          # v8.h SetWeak<T> reinterpret_cast function pointer template

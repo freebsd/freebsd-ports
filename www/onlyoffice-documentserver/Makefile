@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.3.1
-PORTREVISION=	2
+DISTVERSION=	9.4.0
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		https://nodejs.org/dist/v${_PKGFETCH_NODE_VERSION}/:source2 \
@@ -15,30 +14,20 @@ COMMENT=	Secure office and productivity apps
 WWW=		https://www.onlyoffice.com/
 
 LICENSE=	AGPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 
 # node version used with "npm install" inside ${WRKSRC}/yao-pkg
 # kept in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
-_DS_BUILD=		8
-_PKGFETCH_NODE_VERSION=	24.14.1
-_NPM_CACHE_TAG= ${_DS_TAGNAME}-202604230220
+_DS_BUILD=		129
+_PKGFETCH_NODE_VERSION=	24.15.0
+_NPM_CACHE_TAG=		${_DS_TAGNAME}-202606140107
 # end of cache build config
 
-_NODE_DISTFILE=	node-v${_PKGFETCH_NODE_VERSION}.tar.gz
-WRKSRC_npm_cache= ${WRKDIR}/onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}
-
-# Map FreeBSD ARCH to the node/sharp platform-arch suffix
-.if ${MACHINE_ARCH} == aarch64
-_SHARP_NODE_ARCH=   arm64v8
-.else
-_SHARP_NODE_ARCH=   x64
-.endif
-
-_SHARP_NODE_FILE=   sharp-freebsd-${_SHARP_NODE_ARCH}.node
-_SHARP_INSTALL_DIR= ${WWWDIR}/documentserver/server/DocService/sharp
+_NODE_DISTFILE=		node-v${_PKGFETCH_NODE_VERSION}.tar.gz
+WRKSRC_npm_cache=	${WRKDIR}/onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		boost-libs>0:devel/boost-libs \
@@ -48,6 +37,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		npm:www/npm-node24 \
 		optipng:graphics/optipng
 
+# Need libvips because npm module sharp requires it on Unix OS's
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libbrotlicommon.so:archivers/brotli \
 		libbrotlidec.so:archivers/brotli \
@@ -64,19 +54,18 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		librevenge-0.0.so:textproc/librevenge \
 		libvips.so:graphics/vips
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+		${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
 		gsed:textproc/gsed \
 		nginx:www/nginx \
 		pwgen:sysutils/pwgen \
-		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv:wchar_t localbase java:build pkgconfig \
-		python:build qt:5 ssl trigger
+USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv:wchar_t \
+		java:build localbase pkgconfig python:build qt:6 ssl trigger
 
 BROKEN_SSL=	boringssl libressl libressl-devel
-BROKEN_SSL_REASON=	Node.js requires OpenSSL
+BROKEN_SSL_REASON=	upstream Node.js requires OpenSSL
 
 DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/http-common.conf.m4
 
@@ -95,7 +84,7 @@ GH_TUPLE=	ONLYOFFICE:build_tools:${_DS_TAGNAME}:buildtools/build_tools \
 		ONLYOFFICE:sdkjs:${_DS_TAGNAME}:sdkjs/sdkjs \
 		ONLYOFFICE:server:${_DS_TAGNAME}:server/server \
 		ONLYOFFICE:web-apps:${_DS_TAGNAME}:webapps/web-apps \
-		ONLYOFFICE:DocumentBuilder:626d1e44db3d06ceb8298215a67ef0475912d89a:document_builder/DocumentBuilder \
+		ONLYOFFICE:DocumentBuilder:${DISTVERSIONPREFIX}${DISTVERSION}:document_builder/DocumentBuilder \
 		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
 		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser \
 		hunspell:hyphen:73dd296:hunspell_hyphen/core/Common/3dParty/hyphen/hyphen
@@ -103,12 +92,14 @@ GH_TUPLE=	ONLYOFFICE:build_tools:${_DS_TAGNAME}:buildtools/build_tools \
 JAVA_VERSION=	11+
 
 USE_LDCONFIG=	yes
-USE_QT=		qmake:build
+USE_QT=		base:build
 
 MAKE_ENV=	BUILD_NUMBER=${_DS_BUILD} \
+		LANG=C.UTF-8 \
+		LC_ALL=C.UTF-8 \
+		NODE_OPTIONS=--max-old-space-size=3072 \
 		npm_package_config_node_gyp_nodedir=${LOCALBASE} \
 		npm_package_config_node_gyp_python=${PYTHON_CMD} \
-		NODE_OPTIONS=--max-old-space-size=3072 \
 		PKG_BUILD_PATH=${WRKDIR}/.pkg-build \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
 		PRODUCT_VERSION=${DISTVERSION} \
@@ -124,11 +115,9 @@ STRIP=
 ETCDIR=		${PREFIX}/etc/onlyoffice
 WWWDIR=		${PREFIX}/www/onlyoffice
 
-BINARY_ALIAS=	python=${PYTHON_CMD} \
-		strip=true
+BINARY_ALIAS=	python=${PYTHON_CMD} strip=true
 
-SUB_FILES=	pkg-message \
-		onlyoffice.newsyslog.sample
+SUB_FILES=	onlyoffice.newsyslog.sample pkg-message
 SUB_LIST=	DS_GROUPNAME=${DS_GROUPNAME} \
 		DS_USERNAME=${DS_USERNAME} \
 		ETCDIR=${ETCDIR} \
@@ -145,16 +134,20 @@ PLIST_SUB=	DS_GROUPNAME=${DS_GROUPNAME} \
 		DS_USERNAME=${DS_USERNAME} \
 		SHARP_NODE_FILE=${_SHARP_NODE_FILE}
 
-OPTIONS_DEFAULT=	PGSQL
-OPTIONS_SINGLE=		DB
-OPTIONS_SINGLE_DB=	MYSQL PGSQL
-
-MYSQL_USES+=	mysql:client
-PGSQL_USES+=	pgsql
-PGSQL_VARS=	WANT_PGSQL=client
+OPTIONS_DEFINE_amd64=		LLVM_PORTS
+LLVM_PORTS_DESC=		Use LLVM/clang from ports instead of base system
 
 .include <bsd.port.pre.mk>
+
 .if ${ARCH} == aarch64
+EXTRA_PATCHES+=			${PATCHDIR}/extra-patch-aarch64-clang20
+# Map FreeBSD ARCH to the node/sharp platform-arch suffix
+_SHARP_NODE_ARCH=		arm64v8
+.else
+_SHARP_NODE_ARCH=		x64
+.endif
+
+.if ${ARCH} == aarch64 || ${PORT_OPTIONS:MLLVM_PORTS}
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=	ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
 		c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \
@@ -164,14 +157,18 @@ BINARY_ALIAS+=	ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
 		nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT}
 .endif
 
+_SHARP_NODE_FILE=	sharp-freebsd-${_SHARP_NODE_ARCH}.node
+_SHARP_INSTALL_DIR=	${WWWDIR}/documentserver/server/DocService/sharp
+
 post-extract:
 	@${MV} ${WRKDIR}/v8 ${WRKSRC}/core/Common/3dParty/v8_89
 
 	@${LN} -s ${WRKSRC_npm_cache} ${WRKDIR}/.npm
 	@${MKDIR} ${WRKDIR}/.pkg-build
-	@${MKDIR} -p ${WRKDIR}/.pkg-cache/node
+	@${MKDIR} ${WRKDIR}/.pkg-cache/node
+	@${CP} ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js ${WRKDIR}/
 
-	# Copy node tarball to pkg-cache directory, and create sha256sum file
+# Copy node tarball to pkg-cache directory, and create sha256sum file
 	@${CP} ${DISTDIR}/${_NODE_DISTFILE} ${WRKDIR}/.pkg-cache/node
 	@${EGREP} '^\s*SHA256[[:space:]]\(${_NODE_DISTFILE}\)' \
 			${.CURDIR}/distinfo | \
@@ -185,16 +182,15 @@ post-extract:
 	@${MV} ${WRKSRC}/server/Common/config/production-linux.json ${WRKSRC}/server/Common/config/production-freebsd.json
 	@${MV} ${WRKSRC}/server/Common/config/development-linux.json ${WRKSRC}/server/Common/config/development-freebsd.json
 
-	# linux has moved to systemd init files, continue to using supervisord for now
+# linux has moved to systemd init files, continue to using supervisord for now
 	${MKDIR} ${WRKSRC}/document-server-package/common/documentserver/supervisor
-.for i in ds-converter.conf ds-docservice.conf ds-metrics.conf ds.conf
+.for i in ds-docservice.conf ds-metrics.conf ds.conf
 	${CP} ${FILESDIR}/${i} \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor
 .endfor
 
 pre-configure:
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/build_tools/tools/freebsd/automate.py \
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/core/Apple/IWork.pro \
 		${WRKSRC}/core/Common/3dParty/boost/boost.pri \
 		${WRKSRC}/core/Common/3dParty/brotli/brotli.pri \
@@ -211,7 +207,6 @@ pre-configure:
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4 \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf \
 		${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch
@@ -234,22 +229,26 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4 \
 		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} 's|%%OPENSSL_LIB%%|${OPENSSLLIB}|' \
+	@${REINPLACE_CMD} -e 's|%%OPENSSL_INC%%|${OPENSSLINC}|' -e 's|%%OPENSSL_LIB%%|${OPENSSLLIB}|' \
+		${WRKDIR}/extra-patch-pkg-fetch_lib-es5_build.js \
 		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri
+	@${REINPLACE_CMD} -e 's|%%QT_LIBDIR%%|${QT_LIBDIR}|' \
+			  -e 's|%%QT_VERSION%%|${QT6_VERSION}|' \
+		${WRKSRC}/build_tools/tools/freebsd/automate.py
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
-	# Copy new package.json for sdkjs root
+# Copy new package.json for sdkjs root
 	@${CP} ${WRKSRC_npm_cache}/sdkjs-package.json ${WRKSRC}/sdkjs/package.json
 	@${ECHO_MSG} "  Installed: sdkjs/package.json"
 
-	# Copy optimized shrinkwrap files from cache repo, overwriting upstream
+# Copy optimized shrinkwrap files from cache repo, overwriting upstream
 	@${ECHO_MSG} "Installing optimized npm-shrinkwrap.json files..."
 	@(cd ${WRKSRC_npm_cache}/shrinkwrap && \
 		${FIND} . -name npm-shrinkwrap.json | while read shrinkwrap; do \
 			rel_path=$${shrinkwrap#./}; \
 			target="${WRKSRC}/$${rel_path}"; \
 			target_dir=$$(dirname "$$target"); \
-			${MKDIR} -p "$$target_dir"; \
+			${MKDIR} "$$target_dir"; \
 			${CP} "$$shrinkwrap" "$$target"; \
 			${ECHO_MSG} "  Installed: $${rel_path}"; \
 		done)
@@ -267,13 +266,13 @@ do-build:
 
 	@cd ${WRKSRC}/sdkjs ; ${SETENV} ${MAKE_ENV} npm install
 
-	# During offline builds the install script doesn't run, and must patch for external native addon
+# During offline builds the install script doesn't run, and must patch for external native addon
 	@cd ${WRKSRC}/server/DocService ; ${SETENV} ${MAKE_ENV} NODE_ENV=production npm install --ignore-scripts
 	@cd ${WRKSRC}/server/DocService ; node_modules/.bin/patch-package
 	@cd ${WRKSRC}/server/DocService/node_modules/sharp ; ${SETENV} ${MAKE_ENV} NODE_ENV=production npm run install
 
-	# Install Metrics dependencies and patch statsd for Node 24 compatibility
-	# (util.log was removed in Node 23; patch replaces it with console.log)
+# Install Metrics dependencies and patch statsd for Node 24 compatibility
+# (util.log was removed in Node 23; patch replaces it with console.log)
 	@cd ${WRKSRC}/server/Metrics ; ${SETENV} ${MAKE_ENV} NODE_ENV=production npm install --ignore-scripts
 	@cd ${WRKSRC}/server/Metrics ; node_modules/.bin/patch-package
 
@@ -282,8 +281,8 @@ do-build:
 	@${CP} ${WRKSRC_npm_cache}/yao-pkg-npm-shrinkwrap-${MACHINE_ARCH}.json ${WRKSRC}/yao-pkg/npm-shrinkwrap.json
 	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install
 
-	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
-	@cd ${WRKSRC} && ${PATCH} -N -s -i ${WRKSRC_npm_cache}/extra-patch-pkg-fetch_patches_node.v${_PKGFETCH_NODE_VERSION}.cpp.patch || ${TRUE}
+	@cd ${WRKSRC} && ${PATCH} -N -s -i ${WRKDIR}/extra-patch-pkg-fetch_lib-es5_build.js
+	@cd ${WRKSRC} && ${PATCH} -N -s -i ${WRKSRC_npm_cache}/extra-patch-pkg-fetch_patches_node.v${_PKGFETCH_NODE_VERSION}.cpp.patch
 
 	cd ${WRKSRC}/build_tools/tools/freebsd ; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} automate.py
 	cd ${WRKSRC}/document-server-package ; ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd

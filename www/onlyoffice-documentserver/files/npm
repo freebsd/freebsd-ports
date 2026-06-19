@@ -1,3 +1,2 @@
 #!/bin/sh
 exec %%LOCALBASE%%/bin/npm --offline --no-fund --no-audit "$@"
-#exec %%LOCALBASE%%/bin/npm "$@"

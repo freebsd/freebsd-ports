@@ -1,4 +1,4 @@
---- document-server-package/Makefile.orig	2024-02-12 14:46:57 UTC
+--- document-server-package/Makefile.orig	2026-05-14 16:29:43 UTC
 +++ document-server-package/Makefile
 @@ -23,6 +23,7 @@
  PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
@@ -8,7 +8,7 @@
  UNAME_M ?= $(shell uname -m)
  ifeq ($(UNAME_M),x86_64)
  	RPM_ARCH := x86_64
-@@ -138,6 +139,22 @@
+@@ -139,6 +140,22 @@
  	endif
  else
  	UNAME_S := $(shell uname -s)
@@ -31,7 +31,7 @@
  	ifeq ($(UNAME_S),Linux)
  		PLATFORM := linux
  		SHARED_EXT := .so*
-@@ -167,6 +184,12 @@
+@@ -168,6 +185,12 @@
  		DS_EXAMPLE := /var/www/onlyoffice/documentserver-example
  		DEV_NULL := /dev/null
  	endif
@@ -44,16 +44,16 @@
  	ifeq ($(UNAME_M),x86_64)
  		ARCHITECTURE := 64
  		PKG_TARGET ?= node18-linux-x64
-@@ -364,7 +387,7 @@
+@@ -370,7 +393,7 @@
  		
  documentserver:
  	mkdir -p $(DOCUMENTSERVER_FILES)
 -	cp -rf -t $(DOCUMENTSERVER) ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)/*
 +	cp -rf ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)/* $(DOCUMENTSERVER)
  
- ifneq ($(PRODUCT_NAME_LOW),$(filter $(PRODUCT_NAME_LOW),documentserver-de documentserver-ee))
+ ifeq ($(PRODUCT_NAME_LOW),documentserver)
  	rm -rf $(DOCUMENTSERVER)/server/AdminPanel
-@@ -377,25 +400,25 @@
+@@ -383,27 +406,27 @@
  	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
  
  	# rename product specific folders
@@ -64,6 +64,7 @@
 -	sed 's|\("db.*": "\)onlyoffice\("\)|\1'$(ONLYOFFICE_VALUE)'\2|'  -i $(DOCUMENTSERVER_CONFIG)/*.json
 +	sed -i '' 's|\("db.*": "\)onlyoffice\("\)|\1'$(ONLYOFFICE_VALUE)'\2|' $(DOCUMENTSERVER_CONFIG)/*.json
  
+ ifneq ($(PRODUCT_NAME_LOW),documentserver)
  	# rename db schema name
 -	sed 's|onlyoffice|'$(ONLYOFFICE_VALUE)'|'  -i $(DOCUMENTSERVER)/server/schema/**/*.sql
 +	sed -i '' 's|onlyoffice|'$(ONLYOFFICE_VALUE)'|' $(DOCUMENTSERVER)/server/schema/**/*.sql
@@ -71,6 +72,7 @@
  	# ignore CREATE DATABASE commands in MySQL
 -	sed -r "s/^(CREATE DATABASE|USE)/-- \1/" -i $(DOCUMENTSERVER)/server/schema/mysql/*.sql
 +	sed -i '' -r "s/^(CREATE DATABASE|USE)/-- \1/" $(DOCUMENTSERVER)/server/schema/mysql/*.sql
+ endif
  
  	# rename product in license
 -	sed 's|ONLYOFFICE|'$(COMPANY_NAME)'|'  -i $(DOCUMENTSERVER)/server/3rd-Party.txt
@@ -86,18 +88,15 @@
  	rm -fr $(3RD_PARTY_LICENSE_FILES)
  
  ifeq ($(PLATFORM),win)
-@@ -405,8 +428,8 @@
+@@ -411,33 +434,33 @@
+ 	echo ; >> $(DOCUMENTSERVER)/3rd-Party.txt
+ 	cat exe/license/3rd-Party.txt ; >> $(DOCUMENTSERVER)/3rd-Party.txt
  endif
- 
- 	[ -f $(LICENSE_FILE) ] \
--		&& cp -f -t $(DOCUMENTSERVER) $(LICENSE_FILE) \
--		|| cp -f -t $(DOCUMENTSERVER) LICENSE.txt
-+		&& cp -f $(LICENSE_FILE) $(DOCUMENTSERVER) \
-+		|| cp -f LICENSE.txt $(DOCUMENTSERVER)
- 
+-	cp -f -t $(DOCUMENTSERVER) $(LICENSE_FILE)
++	cp -f $(LICENSE_FILE) $(DOCUMENTSERVER)
  	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
  	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
-@@ -414,26 +437,26 @@
+ 	[ -f $(HTMLFILEINTERNAL)$(EXEC_EXT) ] && chmod u+x $(HTMLFILEINTERNAL)$(EXEC_EXT) || true
  	chmod u+x $(DOCUMENTSERVER)/server/tools/allfontsgen$(EXEC_EXT)
  
  	mv -f $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js.tpl
@@ -132,7 +131,7 @@
  
  ifeq ($(PLATFORM),win)		
  	cd $(DOCUMENTSERVER)/npm && \
-@@ -441,13 +464,13 @@
+@@ -445,13 +468,13 @@
  endif		
  	rm -r \
  		$(DOCUMENTSERVER)/npm/node_modules \
@@ -148,7 +147,7 @@
  	
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
  
-@@ -456,7 +479,7 @@
+@@ -460,7 +483,7 @@
  	# Prevent for modification original config
  	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
  
@@ -157,7 +156,7 @@
  
  	/usr/bin/find $(DOCUMENTSERVER_EXAMPLE)/welcome -depth -type f -exec sed -i "s_{{year}}_$(shell date +"%Y")_g" {} \;
  	sed -i "s|{{EXAMPLE_DISABLED_COMMANDS}}|$(EXAMPLE_DISABLED_COMMANDS)|g" $(DOCUMENTSERVER_EXAMPLE)/welcome/example-disabled.html
-@@ -545,6 +568,7 @@
+@@ -553,6 +576,7 @@
  	cd $(@D) && $(ISCC) $(ISCC_PARAMS) $(iss_file)
  
  $(EXE): iss_file = common.iss

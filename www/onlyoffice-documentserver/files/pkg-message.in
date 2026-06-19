@@ -12,40 +12,12 @@ upgrade Document Server to a new version and all your changes will be lost.
 
 1. Enable services at startup in the /etc/rc.conf file:
   nginx_enable="YES"
-  rabbitmq_enable="YES"
   supervisord_enable="YES"
 
   Optionally in case of a jail with local IP and no internet access:
     update /etc/hosts in order to resolve your nextcloud server to its local IP
 
-2. Install a database server and set up the database (either PostgreSQL or MySQL):
-  For PostgreSQL (don't forget to change the password):
-    # service postgresql initdb
-    # service postgresql start
-    # psql -U postgres -c "CREATE DATABASE onlyoffice;"
-    # psql -U postgres -c "CREATE USER onlyoffice WITH password 'onlyoffice';"
-    # psql -U postgres -c "GRANT ALL privileges ON DATABASE onlyoffice TO onlyoffice;"
-    # psql -U postgres -c "ALTER DATABASE onlyoffice OWNER to onlyoffice;"
-    # psql -hlocalhost -Uonlyoffice -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/createdb.sql
-
-    Optionally in case of a jail with local IP:
-      update /var/db/postgres/data13/pg_hba.conf accordingly
-
-  For MySQL don't forget to change the password):
-    # service mysql-server start
-    # mysql -u root -p -e "CREATE DATABASE onlyoffice DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"
-    # mysql -u root -p -e "CREATE USER 'onlyoffice'@'localhost' IDENTIFIED BY 'onlyoffice';"
-    # mysql -u root -p -e "GRANT ALL privileges ON  onlyoffice.* TO 'onlyoffice'@'localhost';"
-    # mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/createdb.sql
-
-3. Create a new rabbitmq user for the ONLYOFFICE Document Server configuration (don't forget to change the password):
-  # service rabbitmq start
-  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` add_user onlyoffice password
-  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_user_tags onlyoffice administrator
-  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_permissions -p / onlyoffice ".*" ".*" ".*"
-  and update the rabbitmq:url object in %%ETCDIR%%/documentserver/local.json: "amqp://onlyoffice:password@localhost"
-
-4. Set up supervisord in order to execute documentserver services:
+2. Set up supervisord in order to execute documentserver services:
   - let supervisord.conf load files contained in this directory by adding to
     %%PREFIX%%/etc/supervisord.conf:
 [include]
@@ -54,7 +26,7 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
   - start supervisord:
     # service supervisord start
 
-5. Set up nginx:
+3. Set up nginx:
   - For HTTP include the following in your %%PREFIX%%/etc/nginx/nginx.conf file:
       include %%ETCDIR%%/documentserver/nginx/ds.conf;
 
@@ -64,10 +36,10 @@ NOTE: documentserver-update-securelink.sh will only update ./nginx/ds.conf and l
   - start nginx:
     # service nginx start
 
-6. Install OnlyOffice plugins (you'll need internet):
+4. Install OnlyOffice plugins (you'll need internet):
    # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
 
-7. Set up Onlyoffice with Nextcloud, if desired:
+5. Set up Onlyoffice with Nextcloud, if desired:
   - JWT is mandated within Onlyoffice Nextcloud app, requiring edits to %%ETCDIR%%/documentserver/local.json:
       In the token:enable section, set the browser, request:inbox and request:outbox objects to "true"
 
@@ -126,6 +98,19 @@ as before, with no loss of functionality for the community edition.
 You may safely remove any Admin Panel logs and configuration files:
   # rm -rf /var/log/onlyoffice/documentserver/adminpanel
   # rm -f %%ETCDIR%%/documentserver/supervisor/adminpanel.conf
+EOM
+}
+{ type: upgrade
+  maximum_version: 9.4.0
+  message: <<EOM
+NOTICE: As of ONLYOFFICE Docs 9.4.0, the upstream Community Edition no
+longer supports PostgreSQL, MySQL, or RabbitMQ. These capabilities
+remain available only in the Developer and Enterprise editions.
+
+If upgrading from a version prior to 9.4.0, net/rabbitmq and any
+database client packages used solely by ONLYOFFICE Docs may be removed.
+After verifying proper operation, any database previously dedicated to
+ONLYOFFICE Docs may be archived and deleted.
 EOM
 }
 ]

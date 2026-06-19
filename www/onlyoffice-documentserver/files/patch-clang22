@@ -1,0 +1,11 @@
+--- core/DesktopEditor/cximage/jasper/jp2/jp2_dec.c.orig	2026-03-02 10:46:12 UTC
++++ core/DesktopEditor/cximage/jasper/jp2/jp2_dec.c
+@@ -289,7 +289,7 @@
+ 		jas_image_setclrspc(dec->image, jp2_getcs(&dec->colr->data.colr));
+ 		break;
+ 	case JP2_COLR_ICC:
+-		iccprof = jas_iccprof_createfrombuf(dec->colr->data.colr.iccp,
++		iccprof = jas_iccprof_createfrombuf((unsigned char *)(void *)dec->colr->data.colr.iccp,
+ 		  dec->colr->data.colr.iccplen);
+ 		assert(iccprof);
+ 		jas_iccprof_gethdr(iccprof, &icchdr);
