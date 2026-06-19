@@ -1,6 +1,5 @@
 PORTNAME=	maolan
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.2.1
 CATEGORIES=	audio
 
 MAINTAINER=	meka@tilda.center
@@ -28,7 +27,9 @@ GH_TAGNAME=	${DISTVERSION}
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
 
-MAKE_ENV=	LIBCLANG_PATH="${LOCALBASE}/llvm${LLVM_VERSION}/lib"
+CARGO_BUILD_ARGS+=	--workspace
+CARGO_INSTALL_PATH=	. plugin-host
+MAKE_ENV=		LIBCLANG_PATH="${LOCALBASE}/llvm${LLVM_VERSION}/lib"
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
