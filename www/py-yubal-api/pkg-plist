@@ -1,6 +1,6 @@
-%%PYTHON_SITELIBDIR%%/yubal_api-0.9.0.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/yubal_api-0.9.0.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/yubal_api-0.9.0.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/yubal_api-0.9.1.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/yubal_api-0.9.1.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/yubal_api-0.9.1.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/yubal_api/__init__.py
 %%PYTHON_SITELIBDIR%%/yubal_api/__main__.py
 %%PYTHON_SITELIBDIR%%/yubal_api/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -144,8 +144,8 @@
 %%PYTHON_SITELIBDIR%%/yubal_api/services/sync_service.py
 %%PYTHON_SITELIBDIR%%/yubal_api/settings.py
 %%WWWDIR%%/web/dist/assets/index-CB2szv8f.css
-%%WWWDIR%%/web/dist/assets/index-Cb_kQ0nn.js
-%%WWWDIR%%/web/dist/assets/index-Cb_kQ0nn.js.map
+%%WWWDIR%%/web/dist/assets/index-BadfZoMY.js
+%%WWWDIR%%/web/dist/assets/index-BadfZoMY.js.map
 %%WWWDIR%%/web/dist/assets/rolldown-runtime-Cyuzqnbw.js
 %%WWWDIR%%/web/dist/assets/vendor-heroui-CDEHibTy.js
 %%WWWDIR%%/web/dist/assets/vendor-heroui-CDEHibTy.js.map

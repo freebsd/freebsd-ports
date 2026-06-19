@@ -1,5 +1,5 @@
-TIMESTAMP = 1780944637
-SHA256 (yubal-v0.9.0.frontend.tar.gz) = fed1e8b38abee9d00a65a5addb71b84be515e95894ce4bfdff04d317c54af658
-SIZE (yubal-v0.9.0.frontend.tar.gz) = 1523865
-SHA256 (guillevc-yubal-v0.9.0_GH0.tar.gz) = 19ba551b6411c613fcf6fb488d49a6d9df47bba9c1d03dfa47698dc5f5efc398
-SIZE (guillevc-yubal-v0.9.0_GH0.tar.gz) = 12894665
+TIMESTAMP = 1781850318
+SHA256 (yubal-v0.9.1.frontend.tar.gz) = f5d4fc2449c6c50466a17823077a3f3c20623f84a354e65072d04dab634cbf12
+SIZE (yubal-v0.9.1.frontend.tar.gz) = 1523214
+SHA256 (guillevc-yubal-v0.9.1_GH0.tar.gz) = 9b86fdd76b0e0da41b4a52217d957850e5f73daa816244edc3ea2749f3a9729b
+SIZE (guillevc-yubal-v0.9.1_GH0.tar.gz) = 12894494
