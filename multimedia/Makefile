@@ -44,7 +44,6 @@
     SUBDIR += dtv-scan-tables
     SUBDIR += dv2sub
     SUBDIR += dvb-apps
-    SUBDIR += dvbcut
     SUBDIR += dvbsnoop
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
