@@ -173,7 +173,7 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib
 ICONV_LIBS=	${ICONV_LIB}
 .endif
 
-post-patch:
+pre-configure:
 	@${RM} ${WRKSRC}/src/hotspot/os_cpu/bsd_ppc/thread_bsd_ppc.cpp
 	@${MV} ${WRKSRC}/src/hotspot/os_cpu/bsd_ppc/thread_bsd_ppc.hpp \
 		${WRKSRC}/src/hotspot/os_cpu/bsd_ppc/javaThread_bsd_ppc.hpp
