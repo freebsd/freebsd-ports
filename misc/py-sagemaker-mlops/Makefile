@@ -1,5 +1,5 @@
 PORTNAME=	sagemaker-mlops
-DISTVERSION=	1.10.1
+DISTVERSION=	1.14.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +15,13 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.42.2<2.0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}botocore>=1.42.2<2.0:devel/py-botocore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=46.0.0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyarrow>=14.0.0:databases/py-pyarrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyiceberg>=0.8.0:databases/py-pyiceberg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}s3fs>=0:filesystems/py-s3fs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.10.1:misc/py-sagemaker-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-serve>=1.10.1:misc/py-sagemaker-serve@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-train>=1.10.1:misc/py-sagemaker-train@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.14.0:misc/py-sagemaker-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-serve>=1.14.0:misc/py-sagemaker-serve@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-train>=1.14.0:misc/py-sagemaker-train@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
