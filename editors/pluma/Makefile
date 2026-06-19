@@ -1,8 +1,8 @@
 PORTNAME=	pluma
 DISTVERSION=	1.28.1
 CATEGORIES=	editors mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for MATE Desktop Environment
@@ -19,8 +19,6 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome libtool localbase \
 		mate pathfix pkgconfig python shebangfix tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gdkpixbuf gnomeprefix gtk30 gtksourceview4 \
 		intltool introspection libxml2
