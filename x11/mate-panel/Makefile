@@ -3,8 +3,8 @@ DISTVERSION=	1.28.4
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11 mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the MATE Desktop
@@ -23,8 +23,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
 		tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_CSTD=	c99
 USE_MATE=	desktop libmateweather menus
 USE_XORG=	ice sm
