@@ -1,14 +1,11 @@
 PORTNAME=	l-smash-works
-DISTVERSION=	20230716
-PORTREVISION=	1
+DISTVERSION=	20260326
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
 WWW=		https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works
-
-BROKEN=		Does not build with ffmpeg > 6
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,27 +17,30 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblsmash.so:multimedia/l-smash
 
 USES=		meson pkgconfig
+USE_LDFLAGS=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	HomeOfAviSynthPlusEvolution
 GH_PROJECT=	L-SMASH-Works
-USE_LDFLAGS=	yes
+GH_TAGNAME=	1282
 
-EXCLUDE=	VSHelper.h VSScript.h VapourSynth.h
-EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
+EXTRACT_AFTER_ARGS= 	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/include/VSHelper.h \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/include/VapourSynth.h \
+			--no-same-owner --no-same-permissions
 
 WRKSRC_SUBDIR=	VapourSynth
 
-PLIST_FILES=	lib/vapoursynth/libvslsmashsource.so
-
 CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+
+PLIST_FILES=	lib/vapoursynth/libvslsmashsource.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
 		${PATCH_WRKSRC}/meson.build
 	@${REINPLACE_CMD} -e 's|LSMASHSource.dll|libvslsmashsource.so|g' \
-		${PATCH_WRKSRC}/README
+		${PATCH_WRKSRC}/README.md
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
