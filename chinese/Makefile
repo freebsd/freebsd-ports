@@ -67,6 +67,7 @@
     SUBDIR += lunar
     SUBDIR += moettf
     SUBDIR += opencc
+    SUBDIR += opencc-cli
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
     SUBDIR += p5-Date-Chinese
