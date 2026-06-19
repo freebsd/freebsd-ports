@@ -244,11 +244,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.22.so
-lib/libisc-9.21.22.so
-lib/libisccc-9.21.22.so
-lib/libisccfg-9.21.22.so
-lib/libns-9.21.22.so
+lib/libdns-9.21.23.so
+lib/libisc-9.21.23.so
+lib/libisccc-9.21.23.so
+lib/libisccfg-9.21.23.so
+lib/libns-9.21.23.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
