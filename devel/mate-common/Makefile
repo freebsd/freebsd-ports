@@ -2,8 +2,8 @@ PORTNAME=	mate-common
 DISTVERSION=	1.28.0
 PORTREVISION=	1
 CATEGORIES=	devel mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common automake macros for MATE
@@ -13,8 +13,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig:both tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
