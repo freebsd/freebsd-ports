@@ -2,8 +2,8 @@ PORTNAME=	mate-settings-daemon
 DISTVERSION=	1.28.0
 PORTREVISION=	4
 CATEGORIES=	sysutils mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE settings daemon
@@ -27,8 +27,6 @@ RUN_DEPENDS=	xrdb:x11/xrdb
 
 USES=		gettext gmake gnome libtool localbase mate pathfix \
 		pkgconfig tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_MATE=	desktop libmatekbd mixer
 USE_XORG=	ice sm x11 xext xi
 USE_GNOME=	cairo dconf gtk30 intlhack
