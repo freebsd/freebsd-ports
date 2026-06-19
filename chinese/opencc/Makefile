@@ -1,6 +1,6 @@
 PORTNAME=	opencc
-DISTVERSION=	1.1.6
 DISTVERSIONPREFIX=	ver.
+DISTVERSION=	1.3.1
 CATEGORIES=	chinese converters
 
 MAINTAINER=	lichray@gmail.com
@@ -9,23 +9,16 @@ WWW=		https://github.com/BYVoid/OpenCC
 
 LICENSE=	APACHE20
 
+USES=		cmake:testing compiler:c++11-lib python:build
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 GH_ACCOUNT=	BYVoid
 GH_PROJECT=	OpenCC
 
-USES=		cmake compiler:c++11-lib python:build
-USE_LDCONFIG=	yes
+CMAKE_TESTING_ON=	ENABLE_GTEST
 
-OPTIONS_DEFINE=	TESTS
-
-TESTS_DESC=	Build the unit testing
-TESTS_CMAKE_ON=	-DENABLE_GTEST=ON
-
-MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	test
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|python|${PYTHON_CMD}|g" \
-		${WRKSRC}/data/CMakeLists.txt
+# tests as of 1.3.1: 100% tests passed, 0 tests failed out of 18
 
 .include <bsd.port.mk>
