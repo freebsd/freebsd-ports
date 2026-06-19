@@ -2,8 +2,8 @@ PORTNAME=	caja-extensions
 DISTVERSION=	1.28.0
 PORTREVISION=	3
 CATEGORIES=	deskutils mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Set of extensions for Caja
@@ -18,8 +18,6 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 
 USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
 		pkgconfig gstreamer tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 GNU_CONFIGURE=	yes
