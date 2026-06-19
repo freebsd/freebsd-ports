@@ -2,8 +2,8 @@ PORTNAME=	mate-calc
 DISTVERSION=	1.28.0
 PORTREVISION=	2
 CATEGORIES=	math mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE calculator tool based on the old calctool for OpenWindows
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
 
 USES=		gettext gmake gnome localbase pkgconfig tar:xz
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_GNOME=	cairo gdkpixbuf gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
