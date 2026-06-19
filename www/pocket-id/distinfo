@@ -1,7 +1,7 @@
-TIMESTAMP = 1780636072
-SHA256 (go/www_pocket-id/pocket-id-pocket-id-v2.8.0_GH0/pocket-id-v2.8.0.frontend.tar.gz) = 2cd1c7505520111d2e8fae843d9e28ff1df169d8a58ed336256644b3ca0865e7
-SIZE (go/www_pocket-id/pocket-id-pocket-id-v2.8.0_GH0/pocket-id-v2.8.0.frontend.tar.gz) = 2301972
-SHA256 (go/www_pocket-id/pocket-id-pocket-id-v2.8.0_GH0/go.mod) = ff1bac3ea845a7abd50cc4ac681f9b326afcabea916168dc8a2bbc240f806f1d
-SIZE (go/www_pocket-id/pocket-id-pocket-id-v2.8.0_GH0/go.mod) = 9822
-SHA256 (go/www_pocket-id/pocket-id-pocket-id-v2.8.0_GH0/pocket-id-pocket-id-v2.8.0_GH0.tar.gz) = d20a5b4f538ab76ceae7d8eca079afa21063d486a61035e2fff378b46945878f
-SIZE (go/www_pocket-id/pocket-id-pocket-id-v2.8.0_GH0/pocket-id-pocket-id-v2.8.0_GH0.tar.gz) = 1759620
+TIMESTAMP = 1781912412
+SHA256 (go/www_pocket-id/pocket-id-pocket-id-v2.9.0_GH0/pocket-id-v2.9.0.frontend.tar.gz) = c2a92d4d8d1260db9a2ffde986edc2a12972858f460fb801850690d577830fe9
+SIZE (go/www_pocket-id/pocket-id-pocket-id-v2.9.0_GH0/pocket-id-v2.9.0.frontend.tar.gz) = 2289955
+SHA256 (go/www_pocket-id/pocket-id-pocket-id-v2.9.0_GH0/go.mod) = f574616867f89771bb7577763cb0c308b60967d9759c03d66d17ca5e6d7c9350
+SIZE (go/www_pocket-id/pocket-id-pocket-id-v2.9.0_GH0/go.mod) = 9820
+SHA256 (go/www_pocket-id/pocket-id-pocket-id-v2.9.0_GH0/pocket-id-pocket-id-v2.9.0_GH0.tar.gz) = 5938a9aed5d41c75ff0d58bdf43c4f63eaf2f479783a09ee301dd38e7c9d3bcf
+SIZE (go/www_pocket-id/pocket-id-pocket-id-v2.9.0_GH0/pocket-id-pocket-id-v2.9.0_GH0.tar.gz) = 1823483
