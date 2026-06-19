@@ -2,7 +2,8 @@ PORTNAME=	mate-control-center
 DISTVERSION=	1.28.1
 PORTREVISION=	6
 CATEGORIES=	sysutils mate
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
+DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for MATE project
@@ -28,8 +29,6 @@ LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase mate \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	mate-desktop
 USE_CSTD=	c99
 USE_MATE=	desktop libmatekbd marco menus settingsdaemon
 USE_XORG=	ice sm x11 xcursor xext xft xi xrandr xscrnsaver
