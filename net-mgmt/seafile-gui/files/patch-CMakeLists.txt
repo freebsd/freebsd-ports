@@ -1,6 +1,25 @@
---- CMakeLists.txt.orig	2022-04-25 04:00:03 UTC
+--- CMakeLists.txt.orig	2026-04-08 07:07:55 UTC
 +++ CMakeLists.txt
-@@ -171,7 +171,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+@@ -133,18 +133,6 @@ ENDIF()
+ ####################
+ ###### BEGIN: QT configuration
+ ####################
+-FIND_PROGRAM(qmake_executable NAMES qmake qmake.exe)
+-EXECUTE_PROCESS(COMMAND
+-    bash -c "${qmake_executable} --version | grep -iE '^using qt version [0-9.]+' | awk '{print $4}'"
+-    OUTPUT_VARIABLE DETECTED_QT_VERSION
+-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-MESSAGE("Qt version: ${DETECTED_QT_VERSION}")
+-EXECUTE_PROCESS(COMMAND
+-    bash -c "qmake --version|grep -iE '^using qt version [0-9]'|awk '{print $4}'|grep -iE '^[0-9]'|awk -F . '{print $1}'"
+-    OUTPUT_VARIABLE QT_VERSION_MAJOR
+-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-MESSAGE("QT_VERSION_MAJOR: ${QT_VERSION_MAJOR}")
+-
+ IF(USE_QT_WEBKIT)
+     ADD_DEFINITIONS(-DSEAFILE_USE_WEBKIT)
+     SET(WEBKIT_NAME "WebKit")
+@@ -171,7 +159,7 @@ ENDIF()
      ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
  ENDIF()
  
@@ -9,7 +28,7 @@
      SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
  ENDIF()
  
-@@ -383,7 +383,7 @@ PKG_CHECK_MODULES(JANSSON REQUIRED jansson>=2.0)
+@@ -383,7 +371,7 @@ PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
  
  PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
  
@@ -18,7 +37,7 @@
  
  PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
  
-@@ -601,7 +601,7 @@ LIST(APPEND utils_sources
+@@ -597,7 +585,7 @@ LIST(APPEND utils_sources
      src/utils/stl.cpp
      src/utils/seafile-error.cpp
      )
@@ -27,7 +46,7 @@
      LIST(APPEND utils_sources
          src/utils/process-linux.cpp
          )
-@@ -797,7 +797,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+@@ -792,7 +780,7 @@ ENDIF()
  ENDIF()
  
  ## QtBus

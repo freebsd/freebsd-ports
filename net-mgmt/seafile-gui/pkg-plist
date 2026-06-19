@@ -1,5 +1,5 @@
 bin/seafile-applet
-share/applications/seafile.desktop
+share/applications/com.seafile.seafile-applet.desktop
 share/icons/hicolor/128x128/apps/seafile.png
 share/icons/hicolor/16x16/apps/seafile.png
 share/icons/hicolor/22x22/apps/seafile.png

@@ -11,13 +11,13 @@
  if WIN32
  wt_monitor_src = wt-monitor.c wt-monitor-win32.c wt-monitor-structs.c
  endif
-@@ -97,7 +101,7 @@ seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_com
+@@ -102,7 +102,7 @@
  	@LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ @LIBEVENT_PTHREADS_LIBS@\
  	$(top_builddir)/common/cdc/libcdc.la \
  	$(top_builddir)/common/index/libindex.la @LIB_WS32@ @LIB_CRYPT32@ \
 -	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @BPWRAPPER_LIBS@ \
--	@WS_LIBS@
+-	@WS_LIBS@ @ARGON2_LIBS@
 +	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ \
-+	@LIB_INOTIFY@ @BPWRAPPER_LIBS@ @WS_LIBS@
++	@LIB_INOTIFY@ @BPWRAPPER_LIBS@ @WS_LIBS@ @ARGON2_LIBS@
  
  seaf_daemon_LDFLAGS = @CONSOLE@

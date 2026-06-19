@@ -193,3 +193,22 @@
  }
  #endif
  
+@@ -2976,10 +2976,16 @@
+     return ret;
+ #else
+ 
++#ifdef __linux__
++    return removexattr (path, name);
++#endif
++
+ #ifdef __APPLE__
+     return removexattr (path, name, 0);
+-#else
+-    return removexattr (path, name);
++#endif
++
++#if defined __FreeBSD__ || defined __NetBSD__
++    return extattr_delete_file(path, EXTATTR_NAMESPACE_USER, name);
+ #endif
+ 
+ #endif
