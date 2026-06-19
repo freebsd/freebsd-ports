@@ -4,6 +4,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/AES.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Acknowledgements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Additional Security Requirements and Precautions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en/Argon2id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Authenticity and Integrity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Authors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Avoid Third-Party File Extensions.html
@@ -39,6 +40,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Cascades.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Changing Passwords and Keyfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Choosing Passwords and Keyfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en/Command Line Usage for Unix.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en/Command Line Usage for Windows.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Command Line Usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/CompilingGuidelineLinux.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/CompilingGuidelineWin.html
@@ -81,7 +84,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_Bank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_VC_BTC_Sigwit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_VeraCrypt_Bitcoin_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_VeraCrypt_Ethereum.png
@@ -115,6 +117,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Issues and Limitations.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Journaling File Systems.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en/Key Derivation Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Keyfiles in VeraCrypt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Keyfiles in VeraCrypt_Image_040.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Keyfiles.html
@@ -198,7 +201,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Wear-Leveling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Whirlpool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/arrow_right.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/en/bank_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/en/donation.js
 %%PORTDOCS%%%%DOCSDIR%%/html/en/flag-au-small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/en/flag-au.png
@@ -215,6 +217,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/liberapay_donate.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/en/mastodon_veracrypt.PNG
 %%PORTDOCS%%%%DOCSDIR%%/html/en/paypal_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/en/pbkdf2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/html/en/twitter_veracrypt.PNG
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/AES.html
@@ -297,7 +300,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_Bank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_VC_BTC_Sigwit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_VeraCrypt_Bitcoin_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_VeraCrypt_Ethereum.png
@@ -414,7 +416,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Wear-Leveling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Whirlpool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/arrow_right.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/ru/bank_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/donation.js
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/flag-au-small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/flag-au.png
@@ -513,7 +514,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_Bank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_VC_BTC_Sigwit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_VeraCrypt_Bitcoin_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_VeraCrypt_Ethereum.png
@@ -630,7 +630,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Wear-Leveling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Whirlpool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/arrow_right.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/bank_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/donation.js
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/flag-au-small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/flag-au.png
@@ -649,7 +648,9 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/paypal_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/twitter_veracrypt.PNG
-share/icons/hicolor/128x128/apps/veracrypt.xpm
-share/icons/hicolor/16x16/apps/veracrypt.xpm
-share/icons/hicolor/256x256/apps/veracrypt.xpm
-share/icons/hicolor/48x48/apps/veracrypt.xpm
+share/icons/hicolor/1024x1024/apps/veracrypt.png
+share/icons/hicolor/128x128/apps/veracrypt.png
+share/icons/hicolor/16x16/apps/veracrypt.png
+share/icons/hicolor/256x256/apps/veracrypt.png
+share/icons/hicolor/48x48/apps/veracrypt.png
+share/icons/hicolor/scalable/apps/veracrypt.svg
