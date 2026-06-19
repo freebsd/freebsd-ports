@@ -1,7 +1,6 @@
 PORTNAME=	concourse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2.3
-PORTREVISION=	1
+DISTVERSION=	8.2.4
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -403,5 +402,7 @@ post-extract:
 
 PLIST_FILES=	bin/concourse \
 	bin/fly
+
+# tests as of 8.2.4: web and baggageclaim tests pass, worker/runtime/runtimefakes fails to compile, atc tests fail to initialize database
 
 .include <bsd.port.mk>
