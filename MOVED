@@ -5354,3 +5354,4 @@ java/aparapi||2026-06-15|Has expired: no maintainer, no users in the ports tree,
 sysutils/docker|sysutils/docker-cli|2026-06-18|Reflect its actual content
 multimedia/dvbcut||2026-06-19|Broken for more than 6 months and upstream is dead
 games/cgoban||2026-06-19|Broken for more than a year and upstream is dead
+games/valyriatear||2026-06-19|Broken for more than a year and upstream is dead

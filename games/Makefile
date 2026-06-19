@@ -1017,7 +1017,6 @@
     SUBDIR += untahris
     SUBDIR += uqm
     SUBDIR += urbanterror-data
-    SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vanilla-conquer
     SUBDIR += vavoom
