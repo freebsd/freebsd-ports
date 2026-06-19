@@ -10,6 +10,12 @@ WWW=		https://github.com/mctools/ncrystal
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# ncrystal-4.4.4/ncrystal_core/src/core/NCDefs.cc:25:18: error:
+# static assertion failed due to requirement 'std::numeric_limits<unsigned int>::max() >=
+# std::numeric_limits<unsigned long long>::max()': NCrystal is no longer supported on 32bit systems
+NOT_FOR_ARCHS=	armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	NCrystal is no longer supported on 32bit systems
+
 USES=		cmake:testing python:build,test shebangfix
 USE_LDCONFIG=	yes
 
