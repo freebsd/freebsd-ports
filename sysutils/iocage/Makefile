@@ -1,7 +1,7 @@
 PORTNAME=	iocage
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	sysutils python
+MASTER_SITES=	https://github.com/freebsd/iocage/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
@@ -27,11 +27,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libzfs>=1.0.2:filesystems/py-libzfs@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python
-USE_GITHUB=	yes
-GH_ACCOUNT=	freebsd
 USE_PYTHON=	autoplist pep517
 
 CONFLICTS=	py*[0-9]-iocage py*-iocage-devel
+EXTRACT_AFTER_ARGS=	-C ${WRKSRC}
 NO_ARCH=	yes
 
 OPTIONS_DEFAULT=	GIT
@@ -43,6 +42,9 @@ GIT_LITE_DESC=	depend on lite flavor of devel/git (bare minimum git experience)
 
 GIT_RUN_DEPENDS=git:devel/git
 GIT_LITE_RUN_DEPENDS=git:devel/git@lite
+
+pre-extract:
+	@${MKDIR} ${WRKSRC}
 
 post-patch:
 	@${RM} ${WRKSRC}/setup.py
