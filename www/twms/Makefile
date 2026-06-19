@@ -1,6 +1,6 @@
 PORTNAME=	twms
 PORTVERSION=	0.06y
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www astro
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/Komzpa/twms
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	unmaintained port, may not work with newer Python
+EXPIRATION_DATE=2026-06-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webpy>0:www/webpy@${PY_FLAVOR} \
