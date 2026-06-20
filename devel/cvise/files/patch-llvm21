@@ -1,0 +1,161 @@
+commit 68262f7d6de584b6474801827cb7dfc68011de25
+Author: Maksim Ivanov <emaxx@google.com>
+Date:   2025-06-24T22:14:34+02:00
+
+    Add support for LLVM 21 as of 2025.06.24 (#183)
+
+    Adjust the C++ code according to backwards-incompatible changes
+    that are being made in the tip-of-the-tree LLVM sources (for the upcoming
+    21 release).
+
+    Switch the CI-LLVM-nightly job to using LLVM version 21.
+
+    This fixes #171.
+
+diff --git .github/workflows/build-llvm-nightly.yml .github/workflows/build-llvm-nightly.yml
+index 3912cdc7..7dca21fa 100644
+--- .github/workflows/build-llvm-nightly.yml
++++ .github/workflows/build-llvm-nightly.yml
+@@ -27,10 +27,10 @@ jobs:
+       - run: nproc
+       - run: wget https://apt.llvm.org/llvm.sh
+       - run: chmod +x llvm.sh
+-      - run: ./llvm.sh 20
+-      - run: apt-get install -y bolt-20 clang-20 libclang-common-20-dev libclang-20-dev mlir-20-tools llvm-20-tools libclang-common-20-dev libclang-20-dev libclang1-20 clang-format-20 python3-clang-20 clangd-20 clang-tidy-20 libomp-20-dev
++      - run: ./llvm.sh 21
++      - run: apt-get install -y bolt-21 clang-21 libclang-common-21-dev libclang-21-dev mlir-21-tools llvm-21-tools libclang-common-21-dev libclang-21-dev libclang1-21 clang-format-21 python3-clang-21 clangd-21 clang-tidy-21 libomp-21-dev
+       # TODO: remove in the future
+-      - run: touch /usr/lib/llvm-20/lib/libLibcTableGenUtil.a
++      - run: touch /usr/lib/llvm-21/lib/libLibcTableGenUtil.a
+       - uses: actions/checkout@v4
+       - run: mkdir objdir
+       - run: cmake ..
+diff --git clang_delta/CommonRenameClassRewriteVisitor.h clang_delta/CommonRenameClassRewriteVisitor.h
+index b758df79..598493b1 100644
+--- clang_delta/CommonRenameClassRewriteVisitor.h
++++ clang_delta/CommonRenameClassRewriteVisitor.h
+@@ -368,7 +368,12 @@ template<typename T> bool CommonRenameClassRewriteVisitor<T>::
+     dyn_cast<DependentTemplateSpecializationType>(Ty);
+   TransAssert(DTST && "Bad DependentTemplateSpecializationType!");
+
+-  const IdentifierInfo *IdInfo = DTST->getIdentifier();
++  const IdentifierInfo *IdInfo =
++#if LLVM_VERSION_MAJOR > 20
++    DTST->getDependentTemplateName().getName().getIdentifier();
++#else
++    DTST->getIdentifier();
++#endif
+   std::string IdName = IdInfo->getName().str();
+   std::string Name;
+   if (getNewNameByName(IdName, Name)) {
+diff --git clang_delta/RemoveNamespace.cpp clang_delta/RemoveNamespace.cpp
+index 20d234ee..ba816b07 100644
+--- clang_delta/RemoveNamespace.cpp
++++ clang_delta/RemoveNamespace.cpp
+@@ -440,7 +440,12 @@ bool RemoveNamespaceRewriteVisitor::VisitDependentTemplateSpecializationTypeLoc(
+     dyn_cast<DependentTemplateSpecializationType>(Ty);
+   TransAssert(DTST && "Bad DependentTemplateSpecializationType!");
+
+-  const IdentifierInfo *IdInfo = DTST->getIdentifier();
++  const IdentifierInfo *IdInfo =
++#if LLVM_VERSION_MAJOR > 20
++    DTST->getDependentTemplateName().getName().getIdentifier();
++#else
++    DTST->getIdentifier();
++#endif
+   std::string IdName = IdInfo->getName().str();
+   std::string Name;
+
+@@ -563,7 +568,9 @@ bool RemoveNamespaceRewriteVisitor::TraverseNestedNameSpecifierLoc(
+	 break;
+       }
+       case NestedNameSpecifier::TypeSpec: // Fall-through
++#if LLVM_VERSION_MAJOR <= 20
+       case NestedNameSpecifier::TypeSpecWithTemplate:
++#endif
+	 TraverseTypeLoc(Loc.getTypeLoc());
+	 break;
+       default:
+diff --git clang_delta/RemoveUnusedFunction.cpp clang_delta/RemoveUnusedFunction.cpp
+index ca9d3f7b..9b0c9651 100644
+--- clang_delta/RemoveUnusedFunction.cpp
++++ clang_delta/RemoveUnusedFunction.cpp
+@@ -254,7 +254,11 @@ bool RUFAnalysisVisitor::VisitFunctionDecl(FunctionDecl *FD)
+
+   if (FD->isReferenced() ||
+       FD->isMain() ||
++#if LLVM_VERSION_MAJOR > 20
++      FD->hasAttr<DeviceKernelAttr>() ||
++#else
+       FD->hasAttr<OpenCLKernelAttr>() ||
++#endif
+       ConsumerInstance->hasReferencedSpecialization(CanonicalFD) ||
+       ConsumerInstance->isInlinedSystemFunction(CanonicalFD) ||
+       ConsumerInstance->isInReferencedSet(CanonicalFD) ||
+diff --git clang_delta/RenameFun.cpp clang_delta/RenameFun.cpp
+index 8dee2431..2a4b0ae6 100644
+--- clang_delta/RenameFun.cpp
++++ clang_delta/RenameFun.cpp
+@@ -261,7 +261,13 @@ void RenameFun::addFun(const FunctionDecl *FD)
+ {
+   std::string Name = FD->getNameAsString();
+   // Skip special functions
+-  if (isSpecialFun(Name) || FD->hasAttr<OpenCLKernelAttr>())
++  if (isSpecialFun(Name) ||
++#if LLVM_VERSION_MAJOR > 20
++      FD->hasAttr<DeviceKernelAttr>()
++#else
++      FD->hasAttr<OpenCLKernelAttr>()
++#endif
++     )
+     FunToNameMap[FD] = Name;
+
+   if (FunToNameMap.find(FD) != FunToNameMap.end())
+diff --git clang_delta/Transformation.cpp clang_delta/Transformation.cpp
+index d4896cb9..0da9827a 100644
+--- clang_delta/Transformation.cpp
++++ clang_delta/Transformation.cpp
+@@ -675,7 +675,10 @@ const DeclContext *Transformation::getDeclContextFromSpecifier(
+	 return NAD->getNamespace()->getCanonicalDecl();
+       }
+       case NestedNameSpecifier::TypeSpec: // Fall-through
+-      case NestedNameSpecifier::TypeSpecWithTemplate: {
++#if LLVM_VERSION_MAJOR <= 20
++      case NestedNameSpecifier::TypeSpecWithTemplate:
++#endif
++      {
+	 const Type *Ty = NNS->getAsType();
+	 if (const RecordType *RT = Ty->getAs<RecordType>())
+	   return RT->getDecl();
+diff --git clang_delta/TransformationManager.cpp clang_delta/TransformationManager.cpp
+index d985bd51..d36f62a5 100644
+--- clang_delta/TransformationManager.cpp
++++ clang_delta/TransformationManager.cpp
+@@ -163,7 +163,12 @@ bool TransformationManager::initializeCompilerInstance(std::string &ErrorMsg)
+     ClangInstance->createFileManager();
+
+     if(CLCPath != NULL && ClangInstance->hasFileManager() &&
+-       ClangInstance->getFileManager().getDirectory(CLCPath, false)) {
++#if LLVM_VERSION_MAJOR > 20
++       ClangInstance->getFileManager().getDirectoryRef(CLCPath, false)
++#else
++       ClangInstance->getFileManager().getDirectory(CLCPath, false)
++#endif
++      ) {
+	 Args.push_back("-I");
+	 Args.push_back(CLCPath);
+     }
+@@ -186,7 +191,12 @@ bool TransformationManager::initializeCompilerInstance(std::string &ErrorMsg)
+
+   TargetInfo *Target =
+     TargetInfo::CreateTargetInfo(ClangInstance->getDiagnostics(),
+-                                 ClangInstance->getInvocation().TargetOpts);
++#if LLVM_VERSION_MAJOR > 20
++                                 ClangInstance->getInvocation().getTargetOpts()
++#else
++                                 ClangInstance->getInvocation().TargetOpts
++#endif
++                                );
+   ClangInstance->setTarget(Target);
+
+   if (const char *env = getenv("CVISE_INCLUDE_PATH")) {
