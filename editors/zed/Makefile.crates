@@ -7,9 +7,9 @@ CARGO_CRATES=	accesskit-0.24.0 \
 		addr2line-0.25.1 \
 		adler2-2.0.1 \
 		aes-0.8.4 \
-		agent-client-protocol-0.13.1 \
-		agent-client-protocol-derive-0.13.1 \
-		agent-client-protocol-schema-0.13.5 \
+		agent-client-protocol-0.14.0 \
+		agent-client-protocol-derive-0.14.0 \
+		agent-client-protocol-schema-0.13.6 \
 		ahash-0.7.8 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
@@ -736,6 +736,7 @@ CARGO_CRATES=	accesskit-0.24.0 \
 		objc2-core-data-0.2.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-core-image-0.2.2 \
+		objc2-core-services-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.2.2 \
 		objc2-foundation-0.3.2 \
@@ -1471,6 +1472,7 @@ CARGO_CRATES=	accesskit-0.24.0 \
 		xml5ever-0.18.1 \
 		xmlparser-0.13.6 \
 		xmlwriter-0.1.0 \
+		xxhash-rust-0.8.15 \
 		y4m-0.8.0 \
 		yaml-rust2-0.8.1 \
 		yansi-1.0.1 \
@@ -1510,6 +1512,7 @@ CARGO_CRATES=	accesskit-0.24.0 \
 		zvariant-5.11.0 \
 		zvariant_derive-5.11.0 \
 		zvariant_utils-3.3.1 \
+		notify,notify-types@git+https://github.com/zed-industries/notify?rev=faecbc33db4f59313e5225ef766bfd9e54a54cfd\#faecbc33db4f59313e5225ef766bfd9e54a54cfd \
 		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=c3a55bbc207008f1ca3474b6037fdd3c443cad0f\#c3a55bbc207008f1ca3474b6037fdd3c443cad0f \
 		tree-sitter-md@git+https://github.com/tree-sitter-grammars/tree-sitter-markdown?rev=9a23c1a96c0513d8fc6520972beedd419a973539\#9a23c1a96c0513d8fc6520972beedd419a973539 \
 		trash@git+https://github.com/zed-industries/trash-rs?rev=3bf27effd4eb8699f2e484d3326b852fe3e53af7\#3bf27effd4eb8699f2e484d3326b852fe3e53af7 \
@@ -1530,7 +1533,6 @@ CARGO_CRATES=	accesskit-0.24.0 \
 		xim-ctext,xim-parser,zed-xim@git+https://github.com/zed-industries/xim-rs.git?rev=16f35a2c881b815a2b6cdfd6687988e84f8447d8\#16f35a2c881b815a2b6cdfd6687988e84f8447d8 \
 		tree-sitter-cpp@git+https://github.com/tree-sitter/tree-sitter-cpp?rev=5cb9b693cfd7bfacab1d9ff4acac1a4150700609\#5cb9b693cfd7bfacab1d9ff4acac1a4150700609 \
 		tree-sitter-heex@git+https://github.com/zed-industries/tree-sitter-heex?rev=1dd45142fbb05562e35b2040c6129c9bca346592\#1dd45142fbb05562e35b2040c6129c9bca346592 \
-		notify,notify-types@git+https://github.com/zed-industries/notify.git?rev=6566ae63331ffd1f2025b18dc00c3049fb8588c9\#6566ae63331ffd1f2025b18dc00c3049fb8588c9 \
 		dap-types@git+https://github.com/zed-industries/dap-types?rev=1b461b310481d01e02b2603c16d7144b926339f8\#1b461b310481d01e02b2603c16d7144b926339f8 \
 		async-pipe@git+https://github.com/zed-industries/async-pipe-rs?rev=82d00a04211cf4e1236029aa03e6b6ce2a74c553\#82d00a04211cf4e1236029aa03e6b6ce2a74c553 \
 		wprcontrol@git+https://github.com/zed-industries/wprcontrol?rev=cd811f7\#cd811f7d744f65291e13131b1d907fda63ed91a1 \
