@@ -35,9 +35,7 @@ NO_SHLIB_REQUIRES_GLOB=*:32
 
 # Choose proper distinfo file using PKGNAMESUFFIX for slave ports.
 # Kept for switching to centralized distinfo with suffixes.
-.ifdef PKGNAMESUFFIX
 DISTINFO_FILE=	${.CURDIR}/distinfo
-.endif
 
 LIB_DEPENDS+=	libX11.so:x11/libX11 \
 		libXext.so:x11/libXext
