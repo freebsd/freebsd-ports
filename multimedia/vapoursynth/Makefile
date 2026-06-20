@@ -29,4 +29,11 @@ COMMENT+= (compatibility mode)
 MESON_ARGS+=    -Denable_x86_asm=false
 .endif
 
+.if defined(CPUTYPE) && ${ARCH} == amd64
+BUILD_FAIL_MESSAGE+= If CPUTYPE is defined but falls under requirements (support for AVX2 instruction set) the build will fail. \
+		Building without utilizing the instruction set is possible however with performance penalties. \
+		To disable don't define CPUTYPE during build. \
+
+.endif
+
 .include <bsd.port.mk>
