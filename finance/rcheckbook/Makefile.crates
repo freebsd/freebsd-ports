@@ -1,9 +1,3 @@
-===>  License MIT accepted by the user
-===>   rcheckbook-0.6.5 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by rcheckbook-0.6.5 for building
-===>  Extracting for rcheckbook-0.6.5
-=> SHA256 Checksum OK for bryceac-rcheckbook-v0.6.5_GH0.tar.gz.
-===>  Moving crates to /usr/ports/finance/rcheckbook/work/rcheckbook-0.6.5//cargo-crates
 CARGO_CRATES=	adler2-2.0.1 \
 		ahash-0.7.8 \
 		aho-corasick-1.1.4 \
