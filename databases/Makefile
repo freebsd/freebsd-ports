@@ -38,6 +38,7 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += clickhouse-cpp
+    SUBDIR += clickhouse-devel
     SUBDIR += closql
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
