@@ -16,7 +16,7 @@ SLAVE_POST_INSTALL=	slave-post-install
 slave-post-patch:
 # Adjust installation path of a conflicting file (shared between
 # nvidia-driver and xorg-server) to ease package manager work
-	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
+	${REINPLACE_CMD} -e '/LIBDIR/s:lib/modules/extensions:&/.nvidia:g' \
 		${WRKSRC}/x11/extension/Makefile
 
 slave-post-install:

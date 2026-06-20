@@ -5,6 +5,9 @@ PORTREVISION=	11
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 PKGNAMESUFFIX=	-304
 
+LIB_DEPENDS=	libXv.so:x11/libXv \
+		libXvMC.so:x11/libXvMC
+
 MAKE_ENV=	EGL_WAYLAND_JSON_PATH=${STAGEDIR}${EGL_JSON_PATH}
 
 PLIST_FILES=	${EXTENSIONSDIR}/libglx.so \
@@ -16,7 +19,7 @@ SLAVE_POST_INSTALL=	slave-post-install
 slave-post-patch:
 # Adjust installation path of a conflicting file (shared between
 # nvidia-driver and xorg-server) to ease package manager work
-	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
+	${REINPLACE_CMD} -e '/LIBDIR/s:lib/modules/extensions:&/.nvidia:g' \
 		${WRKSRC}/x11/extension/Makefile
 
 slave-post-install:

@@ -28,9 +28,6 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 .include "${.CURDIR}/../nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
-FLAVORS=	xorg xlibre
-FLAVOR?=	${FLAVORS:[1]}
-
 # the package provides lib32 versions of the libraries, which then depends
 # themselves in non existing lib32 libraries, so we don't want the package
 # to end up depending on non existing libraries
@@ -42,15 +39,18 @@ NO_SHLIB_REQUIRES_GLOB=*:32
 DISTINFO_FILE=	${.CURDIR}/distinfo
 .endif
 
+LIB_DEPENDS+=	libX11.so:x11/libX11 \
+		libXext.so:x11/libXext
+
 # Pull GNU sed(1) for "binary" patching of obj/libglvnd/libEGL.so.1 and
 # obj/libEGL_nvidia.so.0 (see below)
 .if ${NVVERSION} >= 410.057
-PATCH_DEPENDS=	gsed:textproc/gsed
-BUILD_DEPENDS=	pkg-config:devel/pkgconf
-LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
+PATCH_DEPENDS+=	gsed:textproc/gsed
+BUILD_DEPENDS+=	pkg-config:devel/pkgconf
+LIB_DEPENDS+=	libOpenGL.so:graphics/libglvnd
 .endif
 
-RUN_DEPENDS=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
+RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
 
 .if ${NVVERSION} >= 415.013
 LIB_DEPENDS+=	libnvidia-egl-wayland.so:graphics/egl-wayland
@@ -61,24 +61,13 @@ LIB_DEPENDS+=	libnvidia-egl-xcb.so:graphics/egl-x11
 LIB_DEPENDS+=	libnvidia-egl-wayland2.so:graphics/egl-wayland2
 .endif
 
-USES=		cpe uidfix xorg
+USES=		cpe uidfix
 .if ${NVVERSION} >= 470.04201
 USES+=		tar:xz
 .endif
 
 CPE_PRODUCT=	gpu_driver
 CPE_VENDOR=	nvidia
-
-USE_XORG=	x11 xext
-.if ${FLAVOR} == xlibre
-PKGNAMEPREFIX=	xlibre-
-USES+=xlibre
-USE_XLIBRE+=	xlibre-server
-CONFLICTS_BUILD+=	xorg-server
-.else
-USE_XORG+=	xorg-server
-CONFLICTS_BUILD+=	xlibre-server
-.endif
 
 USE_LDCONFIG=	yes
 
@@ -142,6 +131,9 @@ post-patch: .SILENT ${SLAVE_POST_PATCH}
 .if ${NVVERSION} >= 390
 	${REINPLACE_CMD} -e 's|/man/man1|/share/man/man1|' ${WRKSRC}/nvml/man/Makefile
 .endif
+	${REINPLACE_CMD} -e 's|/lib/modules/|/${MODULESDIR}/|' \
+		${WRKSRC}/x11/driver/Makefile \
+		${WRKSRC}/x11/extension/Makefile
 # Do not execute afterinstall target (prevent automatic module registration
 # and "smart" installation of conflicting files heuristics)
 	${REINPLACE_CMD} -e 's/afterinstall/&_dontexecute/' ${WRKSRC}/Makefile
