@@ -1,7 +1,6 @@
 PORTNAME=	consul
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
@@ -18,7 +17,7 @@ WWW=		https://www.consul.io/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:1.26+,modules
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
