@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-06-20 17:07:30 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=80",
++    "setuptools",
+     "setuptools_scm>=8",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -11,8 +11,6 @@ name = "hunter"
+     "version",
+ ]
+ name = "hunter"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
+ description = "Hunter is a flexible code tracing toolkit."
+ authors = [
+     { name = "Ionel Cristian Mărieș", email = "contact@ionelmc.ro" },
