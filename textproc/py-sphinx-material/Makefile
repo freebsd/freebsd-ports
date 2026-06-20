@@ -11,6 +11,9 @@ WWW=		https://bashtage.github.io/sphinx-material/
 
 LICENSE=	MIT
 
+# See https://github.com/bashtage/sphinx-material/issues/141
+DEPRECATED=	No longer maintained and does not work with Python 3.12
+
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 PY_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}	\
@@ -22,7 +25,7 @@ PY_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}	\
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	bashtage
 
-USES=		python
+USES=		python:-3.11
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>
