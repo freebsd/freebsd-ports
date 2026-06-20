@@ -1,6 +1,7 @@
 PORTNAME=	cbmc
-PORTVERSION=	6.9.0
 DISTVERSIONPREFIX=	cbmc-
+DISTVERSION=	6.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	DEBIAN/pool/main/m/minisat2:minisat
 DISTFILES=	minisat2_2.2.1.orig.tar.gz:minisat
@@ -12,35 +13,27 @@ WWW=		https://github.com/diffblue/cbmc
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
-RUN_DEPENDS=	${LOCALBASE}/bin/cvc5:math/cvc5 \
-		${LOCALBASE}/bin/z3:math/z3
+BUILD_DEPENDS=	flex:textproc/flex \
+		bash:shells/bash \
+		git:devel/git@lite \
+		jq:textproc/jq
+RUN_DEPENDS=	cvc5:math/cvc5 \
+		z3:math/z3
 
-USES=		gmake bison python shebangfix
+USES=		cmake bison python shebangfix perl5
+USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diffblue
 SHEBANG_FILES=	${WRKSRC}/scripts/ls_parse.py
-WRKSRC_minisat=	${WRKDIR}/minisat2-2.2.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|.*git describe --tags.*|GIT_INFO = ${PORTNAME}-${PORTVERSION}|' \
-		${WRKSRC}/src/util/Makefile
-post-extract:
-	@${MV} ${WRKSRC_minisat} ${WRKSRC}/minisat-2.2.1
+CMAKE_OFF=	WITH_JBMC
 
-do-build:
-	@${MKDIR} ${STAGEDIR}
-	cd ${WRKSRC} && ${GMAKE} -C src -j${MAKE_JOBS_NUMBER}
+pre-extract:
+	${MKDIR} ${BUILD_WRKSRC}/minisat2-download/minisat2-download-prefix/src
+	${CP} ${DISTDIR}/minisat2_2.2.1.orig.tar.gz ${BUILD_WRKSRC}/minisat2-download/minisat2-download-prefix/src/
 
-do-install:
-.  for x in cbmc crangler goto-analyzer goto-cc goto-diff goto-instrument \
-	goto-inspect goto-harness goto-synthesizer symtab2gb
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${x}/${x} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/${x}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
-.  endfor
-	${LN} -sf goto-cc ${STAGEDIR}${PREFIX}/bin/goto-gcc
-	${LN} -sf goto-cc ${STAGEDIR}${PREFIX}/bin/goto-ld
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/ls_parse.py ${STAGEDIR}${PREFIX}/bin/
+do-test:
+	cd ${BUILD_WRKSRC} && ctest . -V -L CORE
 
 .include <bsd.port.mk>
