@@ -1,12 +1,12 @@
 PORTNAME=	gsoap
-DISTVERSION=	2.8.142
+DISTVERSION=	2.8.143
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
-WWW=		https://www.cs.fsu.edu/~engelen/soap.html
+WWW=		https://www.genivia.com/dev.html
 
 LICENSE=	GPLv2
 
