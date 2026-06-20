@@ -1,5 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	10.0.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	cad
 
@@ -10,7 +11,8 @@ WWW=		https://kicad.org/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm	\
-		swig:devel/swig
+		swig:devel/swig				\
+		gtar:archivers/gtar
 LIB_DEPENDS=	libboost_locale.so:devel/boost-libs	\
 		libabsl_log_internal_check_op.so:devel/abseil		\
 		libgit2.so:devel/libgit2		\
@@ -62,7 +64,8 @@ CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DKICAD_WAYLAND=ON				\
 		-DKICAD_INSTALL_DEMOS=ON			\
 		-DNANODBC_ENABLE_BOOST=ON			\
-		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
+		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE	\
+		-DTAR=${LOCALBASE}/bin/gtar
 CMAKE_ENV+=	DODBC_PATH=${LOCALBASE}
 USE_LDCONFIG=	yes
 
