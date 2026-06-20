@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.2
+DISTVERSION=	2.10.3
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:R}
 
@@ -18,16 +18,16 @@ LICENSE_FILE_SSPLv1=	${WRKSRC}/licenses/SSPLv1.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
 
-USES=		cmake compiler localbase
+USES=		cmake compiler localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	RedisAI:VectorSimilarity:0ca9b98:vectorsimilarity/deps/VectorSimilarity \
-			google:cpu_features:438a66e:cpu_features/deps/cpu_features \
-			RedisLabsModules:readies:5771466:readies/deps/readies \
-			RedisLabs:RedisModulesSDK:7ba899d:redismodulesdk/deps/RedisModulesSDK \
+GH_TUPLE=	RedisAI:VectorSimilarity:040b982:vectorsimilarity/deps/VectorSimilarity \
+		RedisLabsModules:readies:9f19bb2:readies/deps/readies \
+		RedisLabs:RedisModulesSDK:6a62be4:redismodulesdk/deps/RedisModulesSDK \
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd -Wno-dev
@@ -35,15 +35,13 @@ CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 PLIST_FILES=	lib/${PORTNAME}${PKGNAMESUFFIX}.so
 
 CFLAGS+=	-DCLOCK_MONOTONIC_RAW=CLOCK_MONOTONIC -fPIC
-CXXFLAGS+=-Wno-vla-cxx-extension -fPIC
+CXXFLAGS+=	-Wno-vla-cxx-extension -fPIC -I${LOCALBASE}/include/cpu_features
+LDFLAGS+=      -lcpu_features
 
 post-patch:
 	@${REINPLACE_CMD} -e '/conan_toolchain.cmake/d' \
 		${WRKSRC}/src/geometry/CMakeLists.txt
-
-pre-configure:
-	@${MKDIR} ${WRKDIR}/.build/_deps
-	@${MV} ${WRKSRC}/deps/cpu_features ${WRKDIR}/.build/_deps/cpu_features-src
+	${ECHO_CMD} "find_package(CpuFeatures REQUIRED)" > ${WRKSRC}/deps/VectorSimilarity/cmake/cpu_features.cmake
 
 do-install:
 	${INSTALL} -m 0755 ${INSTALL_WRKSRC}/redisearch.so \
