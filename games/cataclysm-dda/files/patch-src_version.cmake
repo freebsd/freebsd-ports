@@ -1,11 +1,20 @@
---- src/version.cmake.orig	2023-08-20 13:24:21 UTC
+--- src/version.cmake.orig	2026-06-19 22:33:11 UTC
 +++ src/version.cmake
-@@ -6,7 +6,7 @@ ELSE(GIT_EXECUTABLE)
- 	)
- ELSE(GIT_EXECUTABLE)
- 	MESSAGE(WARNING "Git binary not found. Build version will be set to NULL. Install Git package or use -DGIT_BINARY to set path to git binary.")
--	SET (VERSION "NULL")
-+	SET (VERSION "%%DISTVERSION%%")
- ENDIF(GIT_EXECUTABLE)
+@@ -21,8 +21,16 @@ if("${GIT_VERSION}" MATCHES "GIT-NOTFOUND")
+ message(NOTICE ${GIT_VERSION})
  
- CONFIGURE_FILE(${SRC} ${DST} @ONLY)
+ if("${GIT_VERSION}" MATCHES "GIT-NOTFOUND")
++    set(GIT_VERSION "%%DISTVERSION%%")
++    file(WRITE ${CMAKE_SOURCE_DIR}/src/version.h
++            "// NOLINT(cata-header-guard)\n\#define VERSION \"${GIT_VERSION}\"\n")
++    file(WRITE ${CMAKE_SOURCE_DIR}/VERSION.txt "\
++build type: Release\n\
++build number: %%DISTVERSION%%\n\
++commit sha: FreeBSD-Ports\n\
++commit url: https://ports.freebsd.org\n")
+     return()
+-endif()
++endif() 
+ 
+ if(GIT_VERSION)
+     string(REPLACE "-NOTFOUND" "" GIT_VERSION ${GIT_VERSION})
