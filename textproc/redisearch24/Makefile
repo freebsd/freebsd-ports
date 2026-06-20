@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.3
+DISTVERSION=	2.4.4
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -13,25 +13,26 @@ LICENSE_NAME=	Redis Source Available License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		cmake compiler
+LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
+
+USES=		cmake compiler localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	RedisAI:VectorSimilarity:adfea2c:vectorsimilarity/deps/VectorSimilarity \
-			google:cpu_features:v0.7.0:cpu_features/deps/cpu_features
+GH_TUPLE=	RedisAI:VectorSimilarity:adfea2c:vectorsimilarity/deps/VectorSimilarity
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd
+
+CXXFLAGS+=	-Wno-vla-cxx-extension -I${LOCALBASE}/include/cpu_features
+LDFLAGS+=	-lcpu_features
 
 CONFLICTS_INSTALL=	redisearch*
 
 PLIST_FILES=	lib/${PORTNAME}${PKGNAMESUFFIX}.so
 
-CXXFLAGS=-Wno-vla-cxx-extension
-
-pre-configure:
-	@${MKDIR} ${WRKDIR}/.build/_deps
-	@${MV} ${WRKSRC}/deps/cpu_features ${WRKDIR}/.build/_deps/cpu_features-src
+post-patch:
+		${ECHO_CMD} "find_package(CpuFeatures REQUIRED)" > ${WRKSRC}/deps/VectorSimilarity/cmake/cpu_features.cmake
 
 do-install:
 	${INSTALL} -m 0755 ${INSTALL_WRKSRC}/redisearch.so \
