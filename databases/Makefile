@@ -96,6 +96,7 @@
     SUBDIR += heidisql
     SUBDIR += hiredis
     SUBDIR += hsqldb
+    SUBDIR += iceberg-rust
     SUBDIR += immudb
     SUBDIR += imposm3
     SUBDIR += influxdb
