@@ -142,4 +142,4 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		zip-4.6.1 \
 		zlib-rs-0.6.3 \
 		zmij-1.0.21 \
-		zopfli-0.8.3 \
+		zopfli-0.8.3 
