@@ -93,6 +93,26 @@ SUB_FILES=	nvidia.conf pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 PORTDOCS=	*
 
+# Disable building kmod bits
+DISABLED_FEATURES=	firmware \
+			src
+# Disable installation of Linux libraries (provided by the corresponding
+# `x11/linux-nvidia-libs' port or its slaves)
+DISABLED_FEATURES+=	lib/compat
+# Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
+# port for a while now
+DISABLED_FEATURES+=	lib/libvdpau \
+			lib/libvdpau_trace
+# Do not build any binaries (native nvidia-settings and nvidia-xconfig are
+# provided by their corresponding ports) and manual pages
+DISABLED_FEATURES+=	x11/bin \
+			x11/man
+.if ${NVVERSION} >= 346.016
+# Do not install libnvidia-gtk* libraries which are for nvidia-settings
+DISABLED_FEATURES+=	lib/libnvidia-gtk2 \
+			lib/libnvidia-gtk3
+.endif
+
 .if ${NVVERSION} < 358.009
 SUB_LIST+=	KLDNAME=nvidia
 .else
@@ -100,6 +120,7 @@ SUB_LIST+=	KLDNAME=nvidia-modeset
 .endif
 
 OPTIONS_DEFINE=	DOCS
+DOCS_VARS_OFF=	disabled_features+=doc
 
 PLIST_SUB+=	MODULESDIR=${MODULESDIR}
 
@@ -113,33 +134,13 @@ CONFLICTS_INSTALL+=	nvidia-driver*
 .include <bsd.port.pre.mk>
 
 post-patch: .SILENT ${SLAVE_POST_PATCH}
-# Disable building kmod bits
-	${MKDIR} ${WRKSRC}/firmware
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/src/Makefile
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/firmware/Makefile
-
+# We disable features by creating a no-op Makefile
+.for feat in ${DISABLED_FEATURES}
+	${MKDIR} ${WRKSRC}/${feat}
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/${feat}/Makefile
+.endfor
 .if ${NVVERSION} >= 390
 	${REINPLACE_CMD} -e 's|/man/man1|/share/man/man1|' ${WRKSRC}/nvml/man/Makefile
-.endif
-# Disable installation of Linux libraries (provided by the corresponding
-# `x11/linux-nvidia-libs' port or its slaves)
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/compat/Makefile
-# Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
-# port for a while now
-	${MKDIR} ${WRKSRC}/lib/libvdpau
-	${MKDIR} ${WRKSRC}/lib/libvdpau_trace
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libvdpau/Makefile
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libvdpau_trace/Makefile
-# Do not build any binaries (native nvidia-settings and nvidia-xconfig are
-# provided by their corresponding ports) and manual pages
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/x11/bin/Makefile
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/x11/man/Makefile
-# Also do not install libnvidia-gtk* libraries which are for nvidia-settings
-.if ${NVVERSION} >= 346.016
-	${MKDIR} ${WRKSRC}/lib/libnvidia-gtk2
-	${MKDIR} ${WRKSRC}/lib/libnvidia-gtk3
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libnvidia-gtk2/Makefile
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libnvidia-gtk3/Makefile
 .endif
 # Do not execute afterinstall target (prevent automatic module registration
 # and "smart" installation of conflicting files heuristics)
@@ -172,10 +173,6 @@ post-patch: .SILENT ${SLAVE_POST_PATCH}
 		-e '/LIBDIR/!s/$${LOCALBASE}/$${DESTDIR}$${PREFIX}/' \
 		${WRKSRC}/lib/libnvidia-allocator/Makefile
 .endif
-
-# Conditionally install documentation (but you generally want it)
-post-patch-DOCS-off:
-	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/doc/Makefile
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MODULESDIR}/drivers \
