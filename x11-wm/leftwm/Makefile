@@ -3,7 +3,7 @@ DISTVERSION=	0.5.4
 PORTREVISION=	12
 CATEGORIES=	x11-wm
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling window manager for Adventurers
 WWW=		https://leftwm.org/
 
