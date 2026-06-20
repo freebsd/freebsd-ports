@@ -1,5 +1,5 @@
 PORTNAME=	genie
-DISTVERSION=	g2023092101
+DISTVERSION=	g2026032500
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,11 +9,11 @@ WWW=		https://github.com/bkaradzic/GENie
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		gmake lua:53,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkaradzic
 GH_PROJECT=	GENie
-GH_TAGNAME=	7f00dcb
+GH_TAGNAME=	5c323f6
 
 MAKE_ARGS=	-C build/gmake.freebsd \
 		AR=${AR} \
@@ -23,6 +23,9 @@ MAKE_ARGS=	-C build/gmake.freebsd \
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
+
+CFLAGS+=	-I${LUA_INCDIR}
+LIBS+=		-L${LUA_LIBDIR} -llua-${LUA_VER}
 
 OPTIONS_DEFINE=	DEBUG
 
