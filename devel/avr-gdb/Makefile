@@ -1,6 +1,5 @@
 PORTNAME=	gdb
-PORTVERSION=	7.3.1
-PORTREVISION=	6
+PORTVERSION=	17.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	avr-
@@ -12,13 +11,19 @@ WWW=		https://www.gnu.org/software/gdb/
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
+LIB_DEPENDS+=	libxxhash.so:devel/xxhash
+LIB_DEPENDS+=	libzstd.so:archivers/zstd
+LIB_DEPENDS+=	libmpfr.so:math/mpfr
+LIB_DEPENDS+=	libgmp.so:math/gmp
 
-USES=		cpe gmake ncurses tar:bzip2 iconv
+USES=		cpe gmake ncurses tar:xz iconv
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls \
-		--disable-werror
+		--disable-werror \
+		--with-gmp=${LOCALBASE} \
+		--with-mpfr=${LOCALBASE} 
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -r dejagnu expect tcl texinfo
