@@ -106,7 +106,7 @@ CONFLICTS_INSTALL+=	nvidia-driver*
 
 .include <bsd.port.pre.mk>
 
-post-patch: .SILENT
+post-patch: .SILENT ${SLAVE_POST_PATCH}
 # Disable building kmod bits
 	${MKDIR} ${WRKSRC}/firmware
 	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/src/Makefile
@@ -134,12 +134,6 @@ post-patch: .SILENT
 	${MKDIR} ${WRKSRC}/lib/libnvidia-gtk3
 	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libnvidia-gtk2/Makefile
 	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/lib/libnvidia-gtk3/Makefile
-.endif
-# Adjust installation path of a conflicting file (shared between
-# nvidia-driver and xorg-server) to ease package manager work
-.if ${NVVERSION} < 410.057
-	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
-		${WRKSRC}/x11/extension/Makefile
 .endif
 # Do not execute afterinstall target (prevent automatic module registration
 # and "smart" installation of conflicting files heuristics)
