@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -12,32 +12,33 @@ LICENSE=	RSALv2 SSPLv1
 LICENSE_COMB=	dual
 LICENSE_NAME_RSALv2=	Redis Source Available License v2
 LICENSE_NAME_SSPLv1=	Server Side Public License v1
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_FILE_RSALv2=	${WRKSRC}/licenses/RSALv2.txt
 LICENSE_FILE_SSPLv1=	${WRKSRC}/licenses/SSPLv1.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake compiler
+LIB_DEPENDS=   libcpu_features.so:devel/cpu_features
+
+USES=		cmake compiler localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	RedisAI:VectorSimilarity:4e065d8:vectorsimilarity/deps/VectorSimilarity \
-			google:cpu_features:438a66e:cpu_features/deps/cpu_features
+GH_TUPLE=	RedisAI:VectorSimilarity:4e065d8:vectorsimilarity/deps/VectorSimilarity
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd
+
+CFLAGS+=	-DCLOCK_MONOTONIC_RAW=CLOCK_MONOTONIC
+CXXFLAGS+=	-Wno-vla-cxx-extension -I${LOCALBASE}/include/cpu_features
+LDFLAGS+=      -lcpu_features
 
 CONFLICTS_INSTALL=	redisearch*
 
 PLIST_FILES=	lib/${PORTNAME}${PKGNAMESUFFIX}.so
 
-CFLAGS+=	-DCLOCK_MONOTONIC_RAW=CLOCK_MONOTONIC
-CXXFLAGS+=-Wno-vla-cxx-extension
-
-pre-configure:
-	@${MKDIR} ${WRKDIR}/.build/_deps
-	@${MV} ${WRKSRC}/deps/cpu_features ${WRKDIR}/.build/_deps/cpu_features-src
+post-patch:
+	${ECHO_CMD} "find_package(CpuFeatures REQUIRED)" > ${WRKSRC}/deps/VectorSimilarity/cmake/cpu_features.cmake
 
 do-install:
 	${INSTALL} -m 0755 ${INSTALL_WRKSRC}/redisearch.so \
