@@ -28,11 +28,6 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 .include "${.CURDIR}/../nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
-# the package provides lib32 versions of the libraries, which then depends
-# themselves in non existing lib32 libraries, so we don't want the package
-# to end up depending on non existing libraries
-NO_SHLIB_REQUIRES_GLOB=*:32
-
 # Choose proper distinfo file using PKGNAMESUFFIX for slave ports.
 DISTINFO_FILE=	${.CURDIR}/../nvidia-driver${PKGNAMESUFFIX}/distinfo
 
@@ -44,7 +39,6 @@ USES=		kmod uidfix
 .if ${NVVERSION} >= 470.04201
 USES+=		tar:xz
 .endif
-USE_LDCONFIG=	yes
 
 PIE_UNSAFE=	yes
 
