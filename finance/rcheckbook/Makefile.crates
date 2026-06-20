@@ -112,7 +112,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		rustix-0.38.44 \
 		scopeguard-1.2.0 \
 		serde-1.0.228 \
-		serde-big-array-0.5.1
+		serde-big-array-0.5.1 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.149 \
