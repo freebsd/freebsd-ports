@@ -93,6 +93,12 @@ SUB_FILES=	nvidia.conf pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 PORTDOCS=	*
 
+.if ${NVVERSION} < 358.009
+SUB_LIST+=	KLDNAME=nvidia
+.else
+SUB_LIST+=	KLDNAME=nvidia-modeset
+.endif
+
 OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB+=	MODULESDIR=${MODULESDIR}

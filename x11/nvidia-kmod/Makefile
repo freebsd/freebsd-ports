@@ -82,12 +82,6 @@ NVSRC=		.
 NVSRC=		nvidia
 .endif
 
-.if ${NVVERSION} < 358.009
-SUB_LIST+=	KLDNAME=nvidia
-.else
-SUB_LIST+=	KLDNAME=nvidia-modeset
-.endif
-
 .if ${NVVERSION} >= 530.03002 && ${NVVERSION} < 545.00
 SUB_PATCHES += extra-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c
 .endif
