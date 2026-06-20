@@ -175,14 +175,10 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MODULESDIR}/drivers \
 		${STAGEDIR}${PREFIX}/${MODULESDIR}/extensions
 
-post-install: .SILENT
+post-install: .SILENT ${SLAVE_POST_INSTALL}
 	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh \
 		${STAGEDIR}${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
-.if ${NVVERSION:R} < 460
-	${REINPLACE_CMD} -e '/libnvidia-glvkspirv\.so/d ; \
-		/nvidia_icd\.json/d ; /nvidia_layers\.json/d' ${TMPPLIST}
-.endif
 .if ${NVVERSION} >= 304.128 && ${NVVERSION} < 310.019 || ${NVVERSION} >= 361.016
 	${REINPLACE_CMD} -E '/libvdpau(_trace)?\.so/d' ${TMPPLIST}
 .endif
@@ -192,69 +188,14 @@ post-install: .SILENT
 	${LN} -sf libXvMCNVIDIA.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .endif
-.if ${NVVERSION} < 331.013 || ${ARCH} == amd64 && ${NVVERSION} < 334.016
-	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
-		${TMPPLIST}
-.endif
-.if ${NVVERSION} < 352.009
-	${REINPLACE_CMD} -E '/(lib)?nvidia-(debugdump|smi|ml)/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 410.057
-	${REINPLACE_CMD} -E '/lib(EGL|GLESv[12].*)_nvidia/d ; \
-		/lib(GLX|GLdispatch|OpenGL)/d ; \
-		/extensions\/libglxserver_nvidia\.so/d ; \
-		/10_nvidia\.json/d' ${TMPPLIST}
-.else
+.if ${NVVERSION} >= 410.057
 	${REINPLACE_CMD} -e '/extensions\/\.nvidia\/libglx/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 415.013
-	${REINPLACE_CMD} -e '/libnvidia-egl-wayland\.so/d ; \
-		/10_nvidia_wayland\.json/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 440.036
-	${REINPLACE_CMD} -e '/lib32\//d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 470.074 || ${NVVERSION} >= 545.000
 	${REINPLACE_CMD} -e '/libnvidia-vulkan-producer\.so/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 495.02905
-	${REINPLACE_CMD} -e '/libnvidia-egl-gbm\.so/d ; \
-		/15_nvidia_gbm\.json/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 525.08902
-	${REINPLACE_CMD} -e '/libnvidia-allocator\.so/d ; \
-		/nvidia-drm_gbm\.so/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 545.000
-	${REINPLACE_CMD} -e '/libnvidia-gpucomp\.so/d' ${TMPPLIST}
-.endif
 
-.if ${NVVERSION} < 410.057
-# Rename some libraries and install a libmap file to resolve conflict with
-# Mesa libraries.
-	${LN} -sf libGL-NVIDIA.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so
-	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1
-	${RM} ${STAGEDIR}${PREFIX}/lib/libGL.so
-.  if ${NVVERSION} >= 331.013
-	${LN} -sf libEGL-NVIDIA.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so
-	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so.1
-	${RM} ${STAGEDIR}${PREFIX}/lib/libEGL.so
-	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv1_CM.so
-	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv1_CM.so.1
-	${LN} -sf libGLESv2-NVIDIA.so.2 \
-		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so
-	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so.2 \
-		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2
-	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv2.so
-.  endif
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d/
-	${INSTALL_DATA} ${WRKDIR}/nvidia.conf \
-		${STAGEDIR}${PREFIX}/etc/libmap.d/
-.else
+.if ${NVVERSION} >= 410.057
 	${REINPLACE_CMD} -E '/-NVIDIA/d ; \
 		/lib(Open)?E?GLX?(ESv[12](_CM)?|dispatch)?\.so/d' \
 		${TMPPLIST}
