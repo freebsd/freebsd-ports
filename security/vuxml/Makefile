@@ -83,13 +83,13 @@ validate: tidy check-portepoch
 		return 1; \
 	fi
 	@${ECHO_MSG} Checking CVE IDs...
-	@(NON_CANONICAL_CVE="`cd ${.CURDIR} && ${GREP} -Fn '<cvename>' vuln/*.xml | ${EGREP} -v '(CAN|CVE)-'`"; \
+	@(NON_CANONICAL_CVE="`cd ${.CURDIR} && ${GREP} -Fn '<cvename>' vuln/*.xml | ${EGREP} -v '(CAN|CVE)-' | ${SED} -E 's/([0-9]+:)[[:space:]]*</\1 </' || ${TRUE}`"; \
 	if [ -z "$${NON_CANONICAL_CVE}" ]; \
 	then \
 		${ECHO_MSG} ... seems okay; \
 	else \
 		${ECHO_MSG} Only CVE IDs are allowed within cvename tags. These lines are wrong:; \
-		printf "%s\n" $${NON_CANONICAL_CVE}; \
+		printf "%s\n" "$${NON_CANONICAL_CVE}"; \
 		return 1; \
 	fi)
 
