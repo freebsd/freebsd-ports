@@ -324,7 +324,6 @@ libdata/pkgconfig/r_util.pc
 %%PORTDOCS%%%%DOCSDIR%%/maemo.md
 %%PORTDOCS%%%%DOCSDIR%%/objc.pl
 %%PORTDOCS%%%%DOCSDIR%%/openbsd.md
-%%PORTDOCS%%%%DOCSDIR%%/plugins.md
 %%PORTDOCS%%%%DOCSDIR%%/portscan.r2
 %%PORTDOCS%%%%DOCSDIR%%/qnx.md
 %%PORTDOCS%%%%DOCSDIR%%/r2ascii.txt
@@ -725,6 +724,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/platform/nes-init.r2
 %%DATADIR%%/%%PORTVERSION%%/platform/stm8-fini.r2
 %%DATADIR%%/%%PORTVERSION%%/platform/stm8-init.r2
+%%DATADIR%%/%%PORTVERSION%%/scripts/english.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/il2cpp.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/ipsw-kernel-symbolicate.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/licenses.r2.js
