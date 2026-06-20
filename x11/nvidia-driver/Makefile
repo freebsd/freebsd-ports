@@ -166,10 +166,10 @@ post-patch: .SILENT ${SLAVE_POST_PATCH}
 		-e '/LIBDIR/!s/$${LOCALBASE}/$${DESTDIR}$${PREFIX}/' \
 		${WRKSRC}/lib/libnvidia-allocator/Makefile
 .endif
+
 # Conditionally install documentation (but you generally want it)
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
-.endif
+post-patch-DOCS-off:
+	${PRINTF} 'all:\ninstall:' > ${WRKSRC}/doc/Makefile
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MODULESDIR}/drivers \
