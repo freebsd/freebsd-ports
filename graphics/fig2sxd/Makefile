@@ -1,8 +1,6 @@
 PORTNAME=	fig2sxd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gedae2ef
+DISTVERSION=	0.24
 CATEGORIES=	graphics converters
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler gmake
 USE_GITLAB=	yes
 GL_ACCOUNT=	acfbuerger
-GL_TAGNAME=	77a24df7a2b1bea8a8a7e73690487a9e80a15d48
 
 PLIST_FILES=	bin/fig2sxd \
 		share/man/man1/fig2sxd.1.gz
