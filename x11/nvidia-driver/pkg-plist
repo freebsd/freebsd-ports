@@ -96,7 +96,5 @@ share/man/man1/nvidia-smi.1.gz
 share/vulkan/icd.d/nvidia_icd.json
 share/vulkan/implicit_layer.d/nvidia_layers.json
 %%MODULESDIR%%/drivers/nvidia_drv.so
-%%EXTENSIONSDIR%%/libglx.so
-%%EXTENSIONSDIR%%/libglx.so.1
 %%MODULESDIR%%/extensions/libglxserver_nvidia.so
 %%MODULESDIR%%/extensions/libglxserver_nvidia.so.1

@@ -5,14 +5,17 @@ COMMENT=	NVIDIA DRM Kernel Module
 WWW=		https://www.nvidia.com/object/unix.html
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${NVIDIA_DISTVERSION}:nvidia \
 				https://codeload.github.com/freebsd/drm-kmod/tar.gz/${DRM_KMOD_GH_TAGNAME}?dummy=/:drm
-DISTVERSION?=   ${NVIDIA_DISTVERSION}
+DISTVERSION=	${NVIDIA_DISTVERSION}
 PORTREVISION?=	0
 DISTFILES=		NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}${EXTRACT_SUFX}:nvidia \
 				freebsd-drm-kmod-${DRM_KMOD_GH_TAGNAME}_GH0.tar.gz:drm
-# Choose proper distinfo file using PKGNAMESUFFIX for slave ports.
-# Kept for switching to centralized distinfo with suffixes.
-.ifdef PKGNAMESUFFIX
-DISTINFO_FILE=	${.CURDIR}/distinfo
+
+FLAVORS=	default 580 devel
+FLAVOR?=	default
+.if ${FLAVOR} != default
+NVIDIA_DISTVERSION=	${NVIDIA_${FLAVOR}_DISTVERSION}
+PKGNAMESUFFIX=		-${FLAVOR}
+DISTINFO_FILE=		${.CURDIR}/distinfo.${FLAVOR}
 .endif
 
 ONLY_FOR_ARCHS=	amd64
@@ -90,3 +93,10 @@ post-patch:
 	# 13.5, 14.3 and 15.0 doesn't have the stub (blank) function.
 	${REINPLACE_CMD} -e 's/.*pm_vt_switch_required(dev->dev, true);.*/#if __FreeBSD_version >= 1403507 \&\& __FreeBSD_version < 1500000 || __FreeBSD_version >= 1500504\n&\n#endif/' \
 		${WRKSRC}/nvidia-drm-drv.c
+
+.if !defined(DO_REAL_MAKESUM)
+makesum:
+.  for flavor in ${FLAVORS}
+	${MAKE} -C ${.CURDIR} makesum FLAVOR=${flavor} DO_REAL_MAKESUM=yes
+.  endfor
+.endif

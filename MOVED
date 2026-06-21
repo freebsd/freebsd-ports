@@ -5369,3 +5369,15 @@ russian/stardict-pc||2026-06-19|Broken for years and unfetchable
 sysutils/bsdstats||2026-06-19|Broken for more than 10 months
 textproc/stardict-dictd_mova||2026-06-19|Broken for years and unfetchable
 x11/taiga||2026-06-19|Broken for more than 6 months
+graphics/nvidia-drm-515-kmod-580|graphics/nvidia-drm-515-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-515-kmod-devel|graphics/nvidia-drm-515-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-61-kmod-580|graphics/nvidia-drm-61-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-61-kmod-devel|graphics/nvidia-drm-61-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-612-kmod-580|graphics/nvidia-drm-612-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-612-kmod-devel|graphics/nvidia-drm-612-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-66-kmod-580|graphics/nvidia-drm-66-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-66-kmod-devel|graphics/nvidia-drm-66-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-latest-kmod-580|graphics/nvidia-drm-latest-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-latest-kmod-devel|graphics/nvidia-drm-latest-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-kmod-580|graphics/nvidia-drm-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
+graphics/nvidia-drm-kmod-devel|graphics/nvidia-drm-kmod|XXXX-XX-XX|Merged into the master port as a FLAVOR
