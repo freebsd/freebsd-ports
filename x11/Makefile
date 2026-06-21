@@ -68,6 +68,7 @@
     SUBDIR += dmenu
     SUBDIR += dmenu2
     SUBDIR += docker-tray
+    SUBDIR += dragon-drop
     SUBDIR += dsbautostart
     SUBDIR += dsbxinput
     SUBDIR += dwlb
