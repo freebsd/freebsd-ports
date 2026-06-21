@@ -2646,7 +2646,7 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
     <dates>
       <discovery>2026-05-28</discovery>
       <entry>2026-05-29</entry>
-      <modified>2026-06-30</modified>
+      <modified>2026-05-30</modified>
     </dates>
   </vuln>
 
