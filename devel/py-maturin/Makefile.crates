@@ -30,11 +30,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cargo-config2-0.1.44 \
 		cargo-cyclonedx-0.5.9 \
 		cargo-lock-10.1.0 \
-		cargo-options-0.7.6 \
+		cargo-options-0.8.1 \
 		cargo-platform-0.1.9 \
 		cargo-platform-0.3.2 \
-		cargo-xwin-0.22.0 \
-		cargo-zigbuild-0.22.2 \
+		cargo-xwin-0.23.0 \
+		cargo-zigbuild-0.23.0 \
 		cargo_metadata-0.18.1 \
 		cargo_metadata-0.23.1 \
 		cbindgen-0.29.2 \
@@ -234,7 +234,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro2-1.0.106 \
 		psm-0.1.30 \
 		purl-0.1.6 \
-		pyo3-introspection-0.28.3 \
+		pyo3-introspection-0.29.0 \
 		pyproject-toml-0.13.7 \
 		python-pkginfo-0.6.8 \
 		quote-1.0.45 \
