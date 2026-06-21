@@ -1,0 +1,14 @@
+--- gcc/config.gcc.orig
++++ gcc/config.gcc
+@@ -2896,7 +2896,10 @@
+ 	tmake_file="rs6000/t-fprules rs6000/t-ppcos ${tmake_file} rs6000/t-ppccomm"
+ 	case ${target} in
+ 	    powerpc*le-*-*)
+-		tm_file="${tm_file} rs6000/sysv4le.h" ;;
++		tm_file="${tm_file} rs6000/sysv4le.h"
++		if test x$with_long_double_format = xieee; then
++		    tm_defines="${tm_defines} RS6000_DEFAULT_LONG_DOUBLE_SIZE=128 TARGET_IEEEQUAD_DEFAULT=1 TARGET_FLOAT128_ENABLE_TYPE=1"
++		fi ;;
+ 	esac
+ 	case ${target} in
+ 	     powerpc64*)

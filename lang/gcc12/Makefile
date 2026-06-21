@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	12.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -69,6 +69,10 @@ GRAPHITE_LIB_DEPENDS=          libisl.so:devel/isl
 GRAPHITE_CONFIGURE_WITH+=      isl
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64le && ${OSVERSION} >= 1600019
+CONFIGURE_ARGS+=	--with-long-double-format=ieee
+.endif
 
 # Extraction fails with poudriere on aarch64 for GCC 12.
 # It seems that the bug is specific to lang/gcc11 and lang/gcc12 only.
