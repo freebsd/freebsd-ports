@@ -51,4 +51,7 @@ SRCS=	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 BINUTILS_NO_MAKE_ENV_armv7=	LD
 BINUTILS_NO_MAKE_ENV=	${BINUTILS_NO_MAKE_ENV_${ARCH}}
 
+# override bogus STRIP=${STRIP_CMD} from MAKE_ENV
+MAKE_ARGS=	STRIP=${STRIP}
+
 .include <bsd.port.mk>
