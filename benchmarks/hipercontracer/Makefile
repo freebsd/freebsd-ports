@@ -1,5 +1,5 @@
 PORTNAME=	hipercontracer
-DISTVERSION=	2.1.14
+DISTVERSION=	2.2.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
@@ -10,17 +10,10 @@ WWW=		https://www.nntb.no/~dreibh/hipercontracer/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
-		libboost_filesystem.so:devel/boost-libs \
-		libboost_iostreams.so:devel/boost-libs \
-		libboost_log.so:devel/boost-libs \
-		libboost_program_options.so:devel/boost-libs \
-		libboost_thread.so:devel/boost-libs \
-		libinotify.so:devel/libinotify
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 RUN_DEPENDS=	getopt>=0:misc/getopt
 
-USES=		cmake compiler:c++20-lang desktop-file-utils python \
-		shared-mime-info shebangfix ssl tar:xz
+USES=		cmake compiler:c++20-lang pkgconfig shebangfix tar:xz
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/results-examples/r-install-dependencies \
@@ -33,51 +26,114 @@ MAKE_ENV=	OMP_NUM_THREADS=1
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=		COLLECTOR DBEAVERTOOLS DBSHELL ICONS IMPMARIADB \
-			IMPMONGO IMPORTER IMPPGSQL NODE QUERYTOOL RESULTSTOOL \
-			RTUNNEL SYNC TRIGGER UDPECHO VIEWERTOOL
-OPTIONS_DEFAULT=	COLLECTOR DBEAVERTOOLS DBSHELL ICONS IMPMARIADB \
-			IMPMONGO IMPORTER IMPPGSQL NODE QUERYTOOL RESULTSTOOL \
-			RTUNNEL SYNC TRIGGER UDPECHO VIEWERTOOL
-COLLECTOR_DESC=		Build HiPerConTracer Collector Tools
-DBEAVERTOOLS_DESC=	Build DBeaver Tools
-DBSHELL_DESC=		Build DBShell
-ICONS_DESC=		Build Icons and Logo Files
-IMPMARIADB_DESC=	Enable MariaDB/MySQL support for HiPerConTracer Importer Tool
-IMPMONGO_DESC=		Enable MongoDB support for HiPerConTracer Importer Tool
-IMPORTER_DESC=		Build HiPerConTracer Importer Tool
-IMPPGSQL_DESC=		Enable PostgreSQL support for HiPerConTracer Importer Tool
-NODE_DESC=		Build HiPerConTracer Node Tools
-QUERYTOOL_DESC=		Build HiPerConTracer Query Tool
-RESULTSTOOL_DESC=	Build HiPerConTracer Results Tool
-RTUNNEL_DESC=		Build HiPerConTracer Reverse Tunnel Tool
-SYNC_DESC=		Build HiPerConTracer Synchronisation Tool
-TRIGGER_DESC=		Build HiPerConTracer Trigger Tool
-UDPECHO_DESC=		Build UDP Echo Server
-VIEWERTOOL_DESC=	Build HiPerConTracer Viewer Tool
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULES}
+OPTIONS_MULTI=		MODULES
+OPTIONS_MULTI_MODULES=	COLLECTOR DBEAVER_TOOLS DBSHELL EXAMPLE_RESULTS \
+			EXAMPLE_SCRIPTS HIPERCONTRACER ICONS IMPORTER \
+			LIBHIPERCONTRACER LIBHPCTDB LIBHPCTDB_MARIADB \
+			LIBHPCTDB_MONGODB LIBHPCTDB_POSTGRESQL LIBHPCTIO \
+			LIBUNIVERSALIMPORTER NODE PIPE_CHECKSUM QUERY \
+			RESULTS RTUNNEL SYNC TRIGGER UDPECHO VIEWER
+OPTIONS_SUB=		yes
 
+COLLECTOR_DESC=			Build HiPerConTracer Collector Tools
+DBEAVER_TOOLS_DESC=		Build DBeaver Tools
+DBSHELL_DESC=			Build DBShell
+EXAMPLE_RESULTS_DESC=		Include example results
+EXAMPLE_SCRIPTS_DESC=		Include example scripts
+HIPERCONTRACER_DESC=		Build HiPerConTracer
+ICONS_DESC=			Build Icons and Logo Files
+IMPORTER_DESC=			Build HiPerConTracer Importer Tool
+LIBHIPERCONTRACER_DESC=		Build HiPerConTracer Library (libhipercontracer)
+LIBHPCTDB_DESC=			Build HiPerConTracer Database Backend Library (libhpctdb)
+LIBHPCTDB_MARIADB_DESC=		Enable MariaDB/MySQL support for HiPerConTracer Importer Tool
+LIBHPCTDB_MONGODB_DESC=		Enable MongoDB support for HiPerConTracer Importer Tool
+LIBHPCTDB_POSTGRESQL_DESC=	Enable PostgreSQL support for HiPerConTracer Importer Tool
+LIBHPCTIO_DESC=			Build HiPerConTracer I/O Library (libhpctio)
+LIBUNIVERSALIMPORTER_DESC=	Build Universal Importer Library (libuniversalimporter)
+NODE_DESC=			Build HiPerConTracer Node Tools
+PIPE_CHECKSUM_DESC=		Build Pipe Checksum Tool
+QUERY_DESC=			Build HiPerConTracer Query Tool
+RESULTS_DESC=			Build HiPerConTracer Results Tool
+RTUNNEL_DESC=			Build HiPerConTracer Reverse Tunnel Tool
+SYNC_DESC=			Build HiPerConTracer Synchronisation Tool
+TRIGGER_DESC=			Build HiPerConTracer Trigger Tool
+UDPECHO_DESC=			Build UDP Echo Server
+VIEWER_DESC=			Build HiPerConTracer Viewer Tool
+
+COLLECTOR_RUN_DEPENDS=		rsync:net/rsync \
+				sudo:security/sudo
 COLLECTOR_CMAKE_BOOL=		WITH_COLLECTOR
-DBEAVERTOOLS_CMAKE_BOOL=	WITH_DBEAVER_TOOLS
+
+DBEAVER_TOOLS_CMAKE_BOOL=	WITH_DBEAVER_TOOLS
+
 DBSHELL_CMAKE_BOOL=		WITH_DBSHELL
+
+EXAMPLE_RESULTS_CMAKE_BOOL=	WITH_EXAMPLE_RESULTS
+
+EXAMPLE_SCRIPTS_USES=		python
+EXAMPLE_SCRIPTS_CMAKE_BOOL=	WITH_EXAMPLE_SCRIPTS
+
+HIPERCONTRACER_IMPLIES=		LIBHIPERCONTRACER
+HIPERCONTRACER_USES=		shared-mime-info
+HIPERCONTRACER_CMAKE_BOOL=	WITH_HIPERCONTRACER
+
 ICONS_BUILD_DEPENDS=		gm:graphics/GraphicsMagick \
-				gs:print/ghostscript10 \
-				pdf2svg:graphics/pdf2svg
+				mutool:graphics/mupdf
+ICONS_USES=			ghostscript
 ICONS_CMAKE_BOOL=		WITH_ICONS
-IMPMARIADB_LIB_DEPENDS=		libmariadb.so:databases/mariadb118-client
-IMPMARIADB_CMAKE_BOOL=		ENABLE_BACKEND_MARIADB
-IMPMONGO_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
-				libmongoc-1.0.so:devel/mongo-c-driver
-IMPMONGO_CMAKE_BOOL=		ENABLE_BACKEND_MONGODB
+
+IMPORTER_IMPLIES=		LIBUNIVERSALIMPORTER
 IMPORTER_CMAKE_BOOL=		WITH_IMPORTER
-IMPPGSQL_LIB_DEPENDS=		libpqxx.so:databases/postgresql-libpqxx
-IMPPGSQL_CMAKE_BOOL=		ENABLE_BACKEND_POSTGRESQL
+
+LIBHIPERCONTRACER_IMPLIES=	LIBHPCTIO
+LIBHIPERCONTRACER_CMAKE_BOOL=	WITH_LIBHIPERCONTRACER
+
+LIBHPCTDB_IMPLIES=		LIBHPCTIO
+LIBHPCTDB_CMAKE_BOOL=		WITH_LIBHPCTDB
+
+LIBHPCTDB_MARIADB_IMPLIES=	LIBHPCTDB
+LIBHPCTDB_MARIADB_LIB_DEPENDS=	libmariadb.so:databases/mariadb118-client
+LIBHPCTDB_MARIADB_CMAKE_BOOL=	ENABLE_BACKEND_MARIADB
+
+LIBHPCTDB_MONGODB_IMPLIES=	LIBHPCTDB
+LIBHPCTDB_MONGODB_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
+				libmongoc-1.0.so:devel/mongo-c-driver
+LIBHPCTDB_MONGODB_CMAKE_BOOL=	ENABLE_BACKEND_MONGODB
+
+LIBHPCTDB_POSTGRESQL_IMPLIES=		LIBHPCTDB
+LIBHPCTDB_POSTGRESQL_LIB_DEPENDS=	libpqxx.so:databases/postgresql-libpqxx
+LIBHPCTDB_POSTGRESQL_CMAKE_BOOL=	ENABLE_BACKEND_POSTGRESQL
+
+LIBHPCTIO_CMAKE_BOOL=		WITH_LIBHPCTIO
+
+LIBUNIVERSALIMPORTER_IMPLIES=		LIBHPCTDB
+LIBUNIVERSALIMPORTER_LIB_DEPENDS=	libinotify.so:devel/libinotify
+LIBUNIVERSALIMPORTER_CMAKE_BOOL=	WITH_LIBUNIVERSALIMPORTER
+
+NODE_RUN_DEPENDS=		sudo:security/sudo
 NODE_CMAKE_BOOL=		WITH_NODE
-QUERYTOOL_CMAKE_BOOL=		WITH_QUERY
-RESULTSTOOL_CMAKE_BOOL=		WITH_RESULTS
+
+PIPE_CHECKSUM_USES=		ssl
+PIPE_CHECKSUM_CMAKE_BOOL=	WITH_PIPE_CHECKSUM
+
+QUERY_IMPLIES=			LIBHPCTDB
+QUERY_CMAKE_BOOL=		WITH_QUERY
+
+RESULTS_IMPLIES=		LIBHPCTIO
+RESULTS_CMAKE_BOOL=		WITH_RESULTS
+
 RTUNNEL_CMAKE_BOOL=		WITH_RTUNNEL
+
+SYNC_RUN_DEPENDS=		rsync:net/rsync
 SYNC_CMAKE_BOOL=		WITH_SYNC
+
+TRIGGER_IMPLIES=		LIBHIPERCONTRACER
 TRIGGER_CMAKE_BOOL=		WITH_TRIGGER
+
 UDPECHO_CMAKE_BOOL=		WITH_UDP_ECHO_SERVER
-VIEWERTOOL_CMAKE_BOOL=		WITH_VIEWER
+
+VIEWER_USES=			desktop-file-utils
+VIEWER_CMAKE_BOOL=		WITH_VIEWER
 
 .include <bsd.port.mk>
