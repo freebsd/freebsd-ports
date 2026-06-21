@@ -6,5 +6,5 @@ lib/cmake/libde265/libde265-config-version.cmake
 lib/cmake/libde265/libde265-config.cmake
 lib/libde265.so
 lib/libde265.so.0
-lib/libde265.so.0.1.12
+lib/libde265.so.0.2.1
 libdata/pkgconfig/libde265.pc
