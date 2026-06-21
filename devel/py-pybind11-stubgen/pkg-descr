@@ -1,0 +1,4 @@
+pybind11-stubgen generates stubs for python extensions to make them less opaque.
+
+This is to assist static analysis tools and IDE to understand python binary
+extensions.

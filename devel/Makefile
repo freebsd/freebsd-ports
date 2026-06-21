@@ -5722,6 +5722,7 @@
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybase64
     SUBDIR += py-pybind11
+    SUBDIR += py-pybind11-stubgen
     SUBDIR += py-pybix
     SUBDIR += py-pybreaker
     SUBDIR += py-pycadf
