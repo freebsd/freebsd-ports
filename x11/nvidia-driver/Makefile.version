@@ -1,4 +1,22 @@
 # NVIDIA Distversion
 #
 # This will be included from x11/nvidia-driver and the nvidia-drm port
+NVIDIA_PORT_VERSIONS=	304 340 390 470 580 devel
+
 NVIDIA_DISTVERSION?= 595.84
+
+NVIDIA_304_DISTVERSION=		304.137
+NVIDIA_340_DISTVERSION=		340.108
+NVIDIA_390_DISTVERSION=		390.157
+NVIDIA_470_DISTVERSION=		470.256.02
+NVIDIA_580_DISTVERSION=		580.159.04
+NVIDIA_devel_DISTVERSION=	610.43.02
+
+.for v in ${NVIDIA_PORT_VERSIONS}
+.  if !exists(${.CURDIR}/../../x11/nvidia-driver-${v}/Makefile)
+.    error "NVIDIA_PORT_VERSIONS contains ${v}, but no x11/nvidia-driver-${v}/Makefile exists"
+.  endif
+.  if !defined(NVIDIA_${v}_DISTVERSION)
+.    error "NVIDIA_PORT_VERSIONS contains ${v}, but no NVIDIA_${v}_DISTVERSION defined"
+.  endif
+.endfor
