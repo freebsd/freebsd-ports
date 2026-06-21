@@ -29,6 +29,17 @@ SHEBANG_FILES=	${WRKSRC}/scripts/ls_parse.py
 
 CMAKE_OFF=	WITH_JBMC
 
+.include <bsd.port.pre.mk>
+
+# Pre-llvm-21.1.8 clang flags bundled catch.hpp's zero-arg variadic macros
+# under -Wc++20-extensions; project's -Wpedantic -Werror in CMakeLists comes
+# after CMAKE_CXX_FLAGS, so patch the silencer in there directly.
+.if ${OSVERSION} < 1600017
+post-patch:
+	${REINPLACE_CMD} -e 's|-Wno-deprecated-declarations")|-Wno-deprecated-declarations -Wno-c++20-extensions")|' \
+		${WRKSRC}/CMakeLists.txt
+.endif
+
 pre-extract:
 	${MKDIR} ${BUILD_WRKSRC}/minisat2-download/minisat2-download-prefix/src
 	${CP} ${DISTDIR}/minisat2_2.2.1.orig.tar.gz ${BUILD_WRKSRC}/minisat2-download/minisat2-download-prefix/src/
@@ -36,4 +47,4 @@ pre-extract:
 do-test:
 	cd ${BUILD_WRKSRC} && ctest . -V -L CORE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
