@@ -1,6 +1,6 @@
 PORTNAME=	icons-tango
 PORTVERSION=	0.8.90
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://tango.freedesktop.org/releases/
 DISTNAME=	tango-icon-theme-${PORTVERSION}
