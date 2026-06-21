@@ -1,7 +1,6 @@
 PORTNAME=	terraform-ls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.38.6
-PORTREVISION=	2
+DISTVERSION=	0.38.7
 CATEGORIES=	devel
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/hashicorp/terraform-ls
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/hashicorp/terraform-ls
 
