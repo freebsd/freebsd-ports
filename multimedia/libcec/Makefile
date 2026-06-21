@@ -1,6 +1,7 @@
 PORTNAME=	libcec
 PORTVERSION=	7.1.1
 DISTVERSIONPREFIX=	libcec-
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -37,7 +38,7 @@ PYTHON_DESC=	Build python wrapper
 
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
 PYTHON_CMAKE_BOOL_OFF=	SKIP_PYTHON_WRAPPER
-PYTHON_USES=		python:build
+PYTHON_USES=		python
 X11_USE_OFF=		XORG=x11,xorgproto,xrandr
 X11_USES_OFF=		xorg
 
