@@ -29,7 +29,7 @@ include/createrepo_c/xml_file.h
 include/createrepo_c/xml_parser.h
 lib/libcreaterepo_c.so
 lib/libcreaterepo_c.so.1
-lib/libcreaterepo_c.so.1.1.4
+lib/libcreaterepo_c.so.1.2.4
 libdata/pkgconfig/createrepo_c.pc
 share/man/man8/createrepo_c.8.gz
 share/man/man8/mergerepo_c.8.gz
