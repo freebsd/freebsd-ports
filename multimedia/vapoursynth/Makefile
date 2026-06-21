@@ -17,6 +17,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	Upstream only targets 64-bit archs and plugins are only optimized and/or runs reasonably fast on aarch64 and amd64
+
 WITH_LTO=	yes
 LDFLAGS+=	-lpthread
 
@@ -26,7 +29,7 @@ MESON_ARGS=	-Dpython3_bin=${PYTHON_CMD}
 
 .if !defined(CPUTYPE) && ${ARCH} == amd64
 COMMENT+= (compatibility mode)
-MESON_ARGS+=    -Denable_x86_asm=false
+MESON_ARGS+=	-Denable_x86_asm=false
 .endif
 
 .if defined(CPUTYPE) && ${ARCH} == amd64
