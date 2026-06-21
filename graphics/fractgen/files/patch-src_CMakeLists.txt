@@ -1,0 +1,9 @@
+--- src/CMakeLists.txt.orig	2026-05-29 16:20:38 UTC
++++ src/CMakeLists.txt
+@@ -153,5 +153,5 @@ IF (WITH_EXAMPLES)
+ # ==== Examples =============================================================
+ IF (WITH_EXAMPLES)
+    FILE(GLOB fractgen_examples "examples/*.fsf")
+-   INSTALL(FILES ${fractgen_examples} DESTINATION ${CMAKE_INSTALL_DATADIR}/fractgen/examples)
++   INSTALL(FILES ${fractgen_examples} DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/fractgen)
+ ENDIF()
