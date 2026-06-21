@@ -3,8 +3,8 @@ include/courier-unicode-script-tab.h
 include/courier-unicode.h
 lib/libcourier-unicode.a
 lib/libcourier-unicode.so
-lib/libcourier-unicode.so.11
-lib/libcourier-unicode.so.11.0.0
+lib/libcourier-unicode.so.12
+lib/libcourier-unicode.so.12.0.0
 share/man/man3/unicode::bidi.3.gz
 share/man/man3/unicode::bidi_calc.3.gz
 share/man/man3/unicode::bidi_calc_types.3.gz
@@ -22,6 +22,7 @@ share/man/man3/unicode::compose.3.gz
 share/man/man3/unicode::compose_default_callback.3.gz
 share/man/man3/unicode::decompose.3.gz
 share/man/man3/unicode::decompose_default_reallocate.3.gz
+share/man/man3/unicode::fromu_string_converter.3.gz
 share/man/man3/unicode::iconvert::convert.3.gz
 share/man/man3/unicode::iconvert::convert_tocase.3.gz
 share/man/man3/unicode::iconvert::fromu.3.gz
@@ -32,8 +33,10 @@ share/man/man3/unicode::linebreak_callback_save_buf.3.gz
 share/man/man3/unicode::linebreak_iter.3.gz
 share/man/man3/unicode::linebreakc_callback_base.3.gz
 share/man/man3/unicode::linebreakc_iter.3.gz
+share/man/man3/unicode::string_converter.3.gz
 share/man/man3/unicode::tolower.3.gz
 share/man/man3/unicode::totitle.3.gz
+share/man/man3/unicode::tou_string_converter.3.gz
 share/man/man3/unicode::toupper.3.gz
 share/man/man3/unicode::ucs_2.3.gz
 share/man/man3/unicode::ucs_4.3.gz
