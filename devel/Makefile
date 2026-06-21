@@ -6604,6 +6604,7 @@
     SUBDIR += resolv_wrapper
     SUBDIR += revive
     SUBDIR += rgbds
+    SUBDIR += rgx
     SUBDIR += rgxg
     SUBDIR += rhtvision
     SUBDIR += rinutils

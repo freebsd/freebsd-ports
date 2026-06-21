@@ -1,0 +1,11 @@
+bin/rgx
+%%PORTDOCS%%%%DOCSDIR%%/ROADMAP.md
+%%PORTDOCS%%%%DOCSDIR%%/advanced.md
+%%PORTDOCS%%%%DOCSDIR%%/integrations.md
+%%PORTDOCS%%%%DOCSDIR%%/shortcuts.md
+%%PORTDOCS%%%%DOCSDIR%%/superpowers/plans/2026-04-04-step-through-debugger.md
+%%PORTDOCS%%%%DOCSDIR%%/superpowers/plans/2026-04-05-architecture-refactor.md
+%%PORTDOCS%%%%DOCSDIR%%/superpowers/plans/2026-04-11-grex-overlay.md
+%%PORTDOCS%%%%DOCSDIR%%/superpowers/specs/2026-04-04-step-through-debugger-design.md
+%%PORTDOCS%%%%DOCSDIR%%/superpowers/specs/2026-04-11-grex-overlay-design.md
+%%PORTDOCS%%%%DOCSDIR%%/usage.md
