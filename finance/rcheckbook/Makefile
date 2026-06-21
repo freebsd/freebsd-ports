@@ -30,13 +30,30 @@ PLIST_FILES=	"@dir ${SCHEMADIR}" \
 		${MANDIR}/rcheckbook-update.1 \
 
 SCHEMADIR=		${LOCALBASE}/share/${PORTNAME}
-MANDIR=		${LOCALBASE}/share/man/man1
+MANDIR=		${LOCALBASE}/man/man1
 
 do-install:
 	${MKDIR} ${STAGEDIR}${SCHEMADIR}
+	${MKDIR} ${STAGEDIR}${MANDIR}
 	${INSTALL_DATA} ${WRKSRC}/register.sql \
 		${STAGEDIR}${SCHEMADIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/rcheckbook \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-add.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-export.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-import.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-list.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-remove.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-summary.1 \
+		${STAGEDIR}${MANDIR}
+	${INSTALL_DATA} ${WRKSRC}/man/rcheckbook-update.1 \
+		${STAGEDIR}${MANDIR}
 
 .include <bsd.port.mk>
