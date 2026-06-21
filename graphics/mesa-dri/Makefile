@@ -13,6 +13,8 @@ LIB_DEPENDS+=	libgallium-${MESAVERSION}.so:graphics/mesa-libs \
 
 USES+=		llvm:lib,noexport
 
+GALLIUM_DRIVERS=	zink
+
 OPTIONS_DEFINE=		ZSTD
 OPTIONS_GROUP=		GALLIUM PLATFORM VULKAN
 OPTIONS_DEFAULT=	WAYLAND X11 ZSTD
@@ -28,7 +30,7 @@ WAYLAND_DESC=		Enable Wayland support for GBM/EGL and Vulkan
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-OPTIONS_GROUP_GALLIUM=	crocus i915 iris llvmpipe panfrost r300 r600 radeonsi svga zink
+OPTIONS_GROUP_GALLIUM=	crocus i915 iris llvmpipe panfrost r300 r600 radeonsi svga
 GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Intel GPU Gen4 (Broadwater) to Gen7 (Haswell)
 crocus_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
@@ -47,9 +49,8 @@ r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
 radeonsi_DESC=		AMD/ATI Southern Islands and newer
 svga_DESC=		VMWare Virtual GPU
-zink_DESC=		OpenGL on top of Khronos’ Vulkan API
 
-OPTIONS_EXCLUDE+=	${ARCH:Marmv7:C/.+/crocus i915 iris panfrost r300 r600 radeonsi svga zink/}
+OPTIONS_EXCLUDE+=	${ARCH:Marmv7:C/.+/crocus i915 iris panfrost r300 r600 radeonsi svga/}
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:C/.+/panfrost/}
 OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/crocus i915 iris svga/}
 MESON_ARGS+=		-Dgallium-drivers=${GALLIUM_DRIVERS:ts,}

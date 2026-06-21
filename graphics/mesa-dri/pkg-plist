@@ -47,7 +47,7 @@ lib/dri/sun4i-drm_dri.so
 lib/dri/udl_dri.so
 lib/dri/vkms_dri.so
 %%svga%%lib/dri/vmwgfx_dri.so
-%%zink%%lib/dri/zink_dri.so
+lib/dri/zink_dri.so
 lib/dri/zynqmp-dpsub_dri.so
 @comment lib/gbm/dri_gbm.so
 @comment lib/libEGL.so
