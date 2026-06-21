@@ -25,7 +25,13 @@ PY_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}	\
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	bashtage
 
-USES=		python:-3.11
+USES=		python
 USE_PYTHON=	distutils
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31200
+BROKEN=		AttributeError: module 'configparser' has no attribute 'SafeConfigParser'.
+.endif
+
+.include <bsd.port.post.mk>
