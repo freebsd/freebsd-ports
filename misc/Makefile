@@ -573,6 +573,7 @@
     SUBDIR += py-openvdb
     SUBDIR += py-optuna
     SUBDIR += py-oterm
+    SUBDIR += py-paddlepaddle
     SUBDIR += py-palettable
     SUBDIR += py-papermill
     SUBDIR += py-pdd

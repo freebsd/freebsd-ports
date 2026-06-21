@@ -1,0 +1,10 @@
+PaddlePaddle is a deep learning framework developed by Baidu, originating
+from industrial practice. It provides an easy-to-use and efficient platform
+for deep learning research and applications.
+
+PaddlePaddle supports a wide range of neural network architectures and
+provides rich tools and components for model development, training, and
+deployment. It is compatible with NVIDIA GPUs, and supports distributed
+training across multiple nodes.
+
+This package provides the Python bindings for the PaddlePaddle framework.
