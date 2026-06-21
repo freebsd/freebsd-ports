@@ -1,6 +1,6 @@
 PORTNAME=	rcheckbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.5
+DISTVERSION=	0.6.6
 CATEGORIES=	finance
 
 MAINTAINER=	tonyhawk2100@gmail.com
@@ -19,9 +19,18 @@ MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib
 
 PLIST_FILES=	"@dir ${SCHEMADIR}" \
 		${SCHEMADIR}/register.sql \
-		bin/${PORTNAME}
+		bin/${PORTNAME} \
+		${MANDIR}/rcheckbook.1 \
+		${MANDIR}/rcheckbook-add.1 \
+		${MANDIR}/rcheckbook-export.1 \
+		${MANDIR}/rcheckbook-import.1 \
+		${MANDIR}/rcheckbook-list.1 \
+		${MANDIR}/rcheckbook-remove.1 \
+		${MANDIR}/rcheckbook-summary.1 \
+		${MANDIR}/rcheckbook-update.1 \
 
 SCHEMADIR=		${LOCALBASE}/share/${PORTNAME}
+MANDIR=		${LOCALBASE}/share/man/man1
 
 do-install:
 	${MKDIR} ${STAGEDIR}${SCHEMADIR}
