@@ -30,7 +30,7 @@ PLIST_FILES=	"@dir ${SCHEMADIR}" \
 		${MANDIR}/rcheckbook-update.1 \
 
 SCHEMADIR=		${LOCALBASE}/share/${PORTNAME}
-MANDIR=		${LOCALBASE}/man/man1
+MANDIR=		${LOCALBASE}/share/man/man1
 
 do-install:
 	${MKDIR} ${STAGEDIR}${SCHEMADIR}
