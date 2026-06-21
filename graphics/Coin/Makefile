@@ -1,5 +1,5 @@
 PORTNAME=	Coin
-PORTVERSION=	4.0.9
+DISTVERSION=	4.0.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -16,6 +16,7 @@ USES=		cmake gl openal:al pathfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d
 GH_PROJECT=	coin
+# GH_TAGNAME= ${DISTVERSIONPREFIX}{PORTVERSION}
 
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xext xt
