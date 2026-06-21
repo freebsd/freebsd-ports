@@ -10,5 +10,5 @@ include/superlu_mt/slu_mt_util.h
 include/superlu_mt/slu_mt_zdefs.h
 include/superlu_mt/slu_scomplex.h
 include/superlu_mt/supermatrix.h
-lib/libsuperlu_mt_OPENMP.so
+%%OPENMP%%lib/libsuperlu_mt_OPENMP.so
 lib/libsuperlu_mt_PTHREAD.so

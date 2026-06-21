@@ -25,7 +25,13 @@ CMAKE_ON=	BUILD_SHARED_LIBS USE_XSDK_DEFAULTS
 CMAKE_OFF=	enable_fortran \
 		enable_tests \
 		enable_examples
+.if exists(/usr/include/omp.h)
 CMAKE_ARGS=	-DTHREAD_API=BOTH
+PLIST_SUB+=	OPENMP=""
+.else
+CMAKE_ARGS=	-DTHREAD_API=PTHREAD
+PLIST_SUB+=	OPENMP="@comment "
+.endif
 
 LDFLAGS+=	-lpthread \
 		-lm \
