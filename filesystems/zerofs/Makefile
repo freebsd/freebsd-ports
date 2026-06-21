@@ -1,7 +1,6 @@
 PORTNAME=	zerofs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.14
-PORTREVISION=	1
+DISTVERSION=	1.2.7
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	stephan@lichtenauer.co.za
