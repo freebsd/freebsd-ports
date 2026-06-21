@@ -1,6 +1,7 @@
 PORTNAME=	lebiniou
 DISTVERSION=	3.66.0
 PORTREVISION=	8
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
