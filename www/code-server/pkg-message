@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+code-server has been installed.
+
+Enable the service:
+
+  sysrc code_server_enable=YES
+
+Start the service:
+
+  service code-server start
+
+By default, code-server listens on:
+
+  http://<server>:8080/
+
+See:
+
+  %%PREFIX%%/share/doc/code-server/README.md
+EOM
+}
+]

@@ -1,0 +1,5 @@
+code-server runs Visual Studio Code in a web browser and allows remote
+development through a web-based interface.
+
+The service provides access to a full VS Code environment from any modern
+browser without requiring a local VS Code installation.

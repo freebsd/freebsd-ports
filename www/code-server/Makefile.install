@@ -1,0 +1,17 @@
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "out node_modules package.json src" \
+		${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib/vscode
+	cd ${WRKSRC}/lib/vscode-reh-web-linux-x64 && ${COPYTREE_SHARE} "." \
+		${STAGEDIR}${DATADIR}/lib/vscode
+	${INSTALL_SCRIPT} ${WRKDIR}/code-server-wrapper \
+		${STAGEDIR}${PREFIX}/bin/code-server
+	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/bin/code-server-oss
+	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/bin/helpers/*.sh
+	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/bin/remote-cli/code-server
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.md \
+		${STAGEDIR}${DOCSDIR}

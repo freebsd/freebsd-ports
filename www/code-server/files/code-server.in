@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# PROVIDE: code_server
+# REQUIRE: LOGIN NETWORKING DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable code-server:
+#
+# code_server_enable="YES"
+#
+# Optional settings:
+#
+# code_server_run_user="nobody"
+# code_server_run_group="nobody"
+# code_server_config="%%PREFIX%%/etc/code-server/config.yaml"
+# code_server_host="127.0.0.1"
+# code_server_port="8080"
+# code_server_auth="password"
+# code_server_user_data_dir="/var/db/code-server/user-data"
+# code_server_extensions_dir="/var/db/code-server/extensions"
+# code_server_extra_args=""
+
+. /etc/rc.subr
+
+name="code_server"
+rcvar="code_server_enable"
+
+load_rc_config "${name}"
+
+: ${code_server_enable:="NO"}
+: ${code_server_run_user:="nobody"}
+: ${code_server_run_group:="nobody"}
+: ${code_server_config:="%%PREFIX%%/etc/code-server/config.yaml"}
+: ${code_server_host:="127.0.0.1"}
+: ${code_server_port:="8080"}
+: ${code_server_auth:="password"}
+: ${code_server_user_data_dir:="/var/db/code-server/user-data"}
+: ${code_server_extensions_dir:="/var/db/code-server/extensions"}
+: ${code_server_extra_args:=""}
+
+pidfile="/var/run/code-server/${name}.pid"
+
+command="/usr/sbin/daemon"
+procname="%%LOCALBASE%%/bin/node"
+
+command_args="-f \
+-p ${pidfile} \
+-u ${code_server_run_user} \
+/usr/bin/env \
+HOME=/var/db/code-server \
+XDG_DATA_HOME=${code_server_user_data_dir} \
+XDG_CONFIG_HOME=$(dirname ${code_server_config}) \
+XDG_CACHE_HOME=/var/db/code-server/cache \
+%%PREFIX%%/bin/code-server \
+--config ${code_server_config} \
+--host ${code_server_host} \
+--port ${code_server_port} \
+--auth ${code_server_auth} \
+--user-data-dir ${code_server_user_data_dir} \
+--extensions-dir ${code_server_extensions_dir} \
+${code_server_extra_args}"
+
+start_precmd="${name}_prestart"
+
+code_server_prestart()
+{
+	install -d -o ${code_server_run_user} -g ${code_server_run_group} -m 0750 /var/run/code-server
+	install -d -o ${code_server_run_user} -g ${code_server_run_group} -m 0750 /var/db/code-server
+	install -d -o ${code_server_run_user} -g ${code_server_run_group} -m 0750 /var/db/code-server/cache
+	install -d -o ${code_server_run_user} -g ${code_server_run_group} -m 0750 ${code_server_user_data_dir}
+	install -d -o ${code_server_run_user} -g ${code_server_run_group} -m 0750 ${code_server_extensions_dir}
+	install -d -o ${code_server_run_user} -g ${code_server_run_group} -m 0750 "$(dirname "${code_server_config}")"
+}
+
+run_rc_command "$1"
