@@ -414,6 +414,7 @@ FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4Post.py
 FreeCAD/Mod/CAM/CAMTests/TestMachine.py
 FreeCAD/Mod/CAM/CAMTests/TestMarlinPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMassoG3Post.py
+FreeCAD/Mod/CAM/CAMTests/TestOpenSBPPost.py
 FreeCAD/Mod/CAM/CAMTests/TestPathAdaptive.py
 FreeCAD/Mod/CAM/CAMTests/TestPathCommandAnnotations.py
 FreeCAD/Mod/CAM/CAMTests/TestPathCore.py
@@ -947,6 +948,7 @@ FreeCAD/Mod/Draft/draftguitools/gui_edit_part_objects.py
 FreeCAD/Mod/Draft/draftguitools/gui_edit_sketcher_objects.py
 FreeCAD/Mod/Draft/draftguitools/gui_ellipses.py
 FreeCAD/Mod/Draft/draftguitools/gui_facebinders.py
+FreeCAD/Mod/Draft/draftguitools/gui_field_locks.py
 FreeCAD/Mod/Draft/draftguitools/gui_fillets.py
 FreeCAD/Mod/Draft/draftguitools/gui_grid.py
 FreeCAD/Mod/Draft/draftguitools/gui_groups.py
@@ -1075,6 +1077,7 @@ FreeCAD/Mod/Draft/drafttests/test_dxf.py
 FreeCAD/Mod/Draft/drafttests/test_import.py
 FreeCAD/Mod/Draft/drafttests/test_import_gui.py
 FreeCAD/Mod/Draft/drafttests/test_import_tools.py
+FreeCAD/Mod/Draft/drafttests/test_manual_input_gui.py
 FreeCAD/Mod/Draft/drafttests/test_modification.py
 FreeCAD/Mod/Draft/drafttests/test_oca.py
 FreeCAD/Mod/Draft/drafttests/test_pivy.py
@@ -1973,6 +1976,9 @@ FreeCAD/Mod/Sketcher/ProfileLib/RegularPolygon.py
 FreeCAD/Mod/Sketcher/ProfileLib/__init__.py
 FreeCAD/Mod/Sketcher/Profiles.py
 FreeCAD/Mod/Sketcher/SketcherExample.py
+FreeCAD/Mod/Sketcher/SketcherTests/GuiTestCase.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintPreselectionGui.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestExternalFacePreselection.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestOnViewParameterGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestPlacementUpdate.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchCarbonCopyReverseMapping.FCStd
@@ -3557,6 +3563,18 @@ FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/ca/A4_Landscape_ISO5457_advan
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/ca/A4_Landscape_ISO5457_minimal.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/ca/A4_Portrait_ISO5457_advanced.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/ca/A4_Portrait_ISO5457_minimal.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A0_Landscape_ISO5457_advanced.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A0_Landscape_ISO5457_minimal.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A1_Landscape_ISO5457_advanced.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A1_Landscape_ISO5457_minimal.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A2_Landscape_ISO5457_advanced.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A2_Landscape_ISO5457_minimal.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A3_Landscape_ISO5457_advanced.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A3_Landscape_ISO5457_minimal.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A4_Landscape_ISO5457_advanced.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A4_Landscape_ISO5457_minimal.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A4_Portrait_ISO5457_advanced.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/cs/A4_Portrait_ISO5457_minimal.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A0_Landscape_ISO7200_DE.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A1_Landscape_ISO7200_DE.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A2_Landscape_ISO7200_DE.svg
