@@ -1,6 +1,6 @@
 PORTNAME=	accounts-qml-module
 DISTVERSION=	0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kde
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -11,8 +11,8 @@ WWW=		https://gitlab.com/groups/accounts-sso
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaccounts-qt6.so:net-im/libaccounts-qt@qt6 \
-		libsignon-qt6.so:sysutils/signond@qt6
+LIB_DEPENDS=	libaccounts-qt6.so:net-im/libaccounts-qt \
+		libsignon-qt6.so:sysutils/signond
 
 USES=		compiler:c++17-lang gl pkgconfig qmake qt:6 tar:bz2
 USE_GL=		gl

@@ -1,5 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +12,7 @@ BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libicuuc.so:devel/icu \
 		libkaccounts6.so:net-im/kaccounts-integration \
-		liboauth2plugin.so:sysutils/signon-plugin-oauth2@qt6 \
+		liboauth2plugin.so:sysutils/signon-plugin-oauth2 \
 		libpackagekitqt6.so:ports-mgmt/packagekit-qt \
 		libwayland-client.so:graphics/wayland \
 		libxcb-util.so:x11/xcb-util \

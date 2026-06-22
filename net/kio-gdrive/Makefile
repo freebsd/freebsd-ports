@@ -1,5 +1,6 @@
 PORTNAME=	kio-gdrive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
-		libaccounts-qt6.so:net-im/libaccounts-qt@qt6 \
+		libaccounts-qt6.so:net-im/libaccounts-qt \
 		libkaccounts6.so:net-im/kaccounts-integration
 RUN_DEPENDS=	kaccounts-providers>=0:net-im/kaccounts-providers
 
