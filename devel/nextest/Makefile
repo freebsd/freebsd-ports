@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.137
-PORTREVISION=	1
+DISTVERSION=	0.9.138
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -78,7 +77,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
-		chrono-0.4.44 \
+		chrono-0.4.45 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
 		clap_derive-4.6.1 \
@@ -200,7 +199,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		home-0.5.12 \
-		http-1.4.0 \
+		http-1.4.2 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
@@ -214,7 +213,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		id-arena-2.3.0 \
-		iddqd-0.4.2 \
+		iddqd-0.4.4 \
 		idna-1.1.0 \
 		idna_adapter-1.0.0 \
 		ignore-0.4.23 \
@@ -288,11 +287,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
-		openssl-0.10.79 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.115 \
+		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
 		os_pipe-1.2.2 \
@@ -352,9 +351,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		referencing-0.46.5 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		reqwest-0.13.3 \
 		ring-0.17.14 \
 		ron-0.12.0 \
@@ -389,7 +388,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
 		serde_ignored-0.1.14 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_path_to_error-0.1.20 \
 		serde_spanned-1.1.1 \
 		serde_tokenstream-0.2.2 \
@@ -409,7 +408,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		smol_str-0.3.2 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
@@ -460,7 +459,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-util-0.7.15 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.11+spec-1.1.0 \
+		toml_edit-0.25.12+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tonic-0.14.2 \
