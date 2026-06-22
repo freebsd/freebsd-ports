@@ -1,5 +1,5 @@
 PORTNAME=	pkg_jail
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -16,14 +16,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dinoex
 
 LMAN1=		allservice.1 check-allservice.1 pkg_jail.1 pkg_update.1
-LMAN8=		make-base.8 update-base.8 update-pkg.8
+LMAN8=		make-base.8 mergemaster.8 update-base.8 update-pkg.8
 
 do-install:
 	( cd ${WRKSRC} && \
 	${INSTALL_SCRIPT} allservice check-allservice pkg_jail pkg_update \
 		${STAGEDIR}${PREFIX}/bin/ )
 	( cd ${WRKSRC} && \
-	${INSTALL_SCRIPT} make-base update-base update-pkg \
+	${INSTALL_SCRIPT} make-base mergemaster update-base update-pkg \
 		${STAGEDIR}${PREFIX}/sbin/ )
 .for i in ${LMAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/man/man1/

@@ -3,6 +3,7 @@ bin/check-allservice
 bin/pkg_jail
 bin/pkg_update
 sbin/make-base
+sbin/mergemaster
 sbin/update-base
 sbin/update-pkg
 share/man/man1/allservice.1.gz
@@ -10,5 +11,6 @@ share/man/man1/check-allservice.1.gz
 share/man/man1/pkg_jail.1.gz
 share/man/man1/pkg_update.1.gz
 share/man/man8/make-base.8.gz
+share/man/man8/mergemaster.8.gz
 share/man/man8/update-base.8.gz
 share/man/man8/update-pkg.8.gz
