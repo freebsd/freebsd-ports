@@ -1,7 +1,8 @@
 PORTNAME=	signon
 DISTVERSION=	8.61
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
-PKGNAMESUFFIX=	-${FLAVOR}
+PKGNAMESUFFIX=	-qt6
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,16 +12,10 @@ WWW=		https://gitlab.com/accounts-sso/signond
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
-
 USES=		compiler:c++11-lang gettext gl pathfix pkgconfig python qmake \
-		qt:${FLAVOR:S/qt//} tar:bz2
+		qt:6 tar:bz2
 USE_GL=		gl
-_USE_QT_qt5=	core dbus gui network sql testlib xml \
-		buildtools:build qmake:build
-_USE_QT_qt6=	base
-USE_QT=		${_USE_QT_${FLAVOR}}
+USE_QT=	base
 
 # gitlab variables
 USE_GITLAB=	yes
@@ -30,7 +25,7 @@ GL_TAGNAME=	c8ad98249af541514ff7a81634d3295e712f1a39
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_SUB=	QT_VER=${FLAVOR:S/qt//}
+PLIST_SUB=	QT_VER=6
 
 pre-configure:
 	#make it find qdbusxml2ccp (as ${QT_BINDIR} is not in PATH)
