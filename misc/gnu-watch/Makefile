@@ -1,8 +1,10 @@
 PORTNAME=	watch
-DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.6
+PORTREVISION=	1
 CATEGORIES=	misc
+MASTER_SITES=	SF/procps-ng/Production
 PKGNAMEPREFIX=	gnu-
+DISTNAME=	procps-ng-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
@@ -10,12 +12,9 @@ WWW=		https://gitlab.com/procps-ng/procps/
 
 LICENSE=	GPLv2
 
-USES=		autoreconf gettext-tools gmake libtool localbase:ldflags \
+USES=		gettext-tools gmake libtool localbase:ldflags \
 		ncurses pkgconfig tar:xz
-USE_CSTD=	gnu99
-USE_GITLAB=	yes
-GL_ACCOUNT=	procps-ng
-GL_PROJECT=	procps
+
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	src/watch
@@ -28,11 +27,17 @@ OPTIONS_DEFAULT=	UNICODE
 
 NLS_USES=			gettext
 NLS_CONFIGURE_OFF=		--disable-nls
-NLS_LDFLAGS=			-lintl
+
 UNICODE_CONFIGURE_ENABLE=	watch8bit
 
 post-patch:
-	${REINPLACE_CMD} 's/ncursesw/${NCURSES_IMPL}/g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e '\
+		s|WATCH|${PKGBASE:tu}|g; \
+		s|watch \\-|${PKGBASE} \\-|g; \
+		s|B watch|B ${PKGBASE}|g; \
+		s|fBwatch|fB${PKGBASE}|g; \
+		s|watch uname|${PKGBASE} uname|g' \
+		${PATCH_WRKSRC}/man/watch.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/watch \
