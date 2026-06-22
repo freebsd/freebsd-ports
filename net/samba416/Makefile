@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}416
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			10
+PORTREVISION=			11
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -463,10 +463,10 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
 # Python bindings
 BUILD_DEPENDS+=			${PY_SETUPTOOLS}
 .if ! ${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)
-USES+=				python:build,test,3.11-3.12
+USES+=				python:build,test,3.11-3.14
 CONFIGURE_ARGS+=		--disable-python
 .else
-USES+=				python:3.11-3.12
+USES+=				python:3.11-3.14
 PLIST+=				${PKGDIR}/pkg-plist.python
 # Don't cache Python modules
 CONFIGURE_ARGS+=		--nopycache
