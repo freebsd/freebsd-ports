@@ -1,5 +1,5 @@
 PORTNAME=	nvc
-DISTVERSION=	1.21.0
+DISTVERSION=	1.21.1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.nickg.me.uk/files/
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 TEST_DEPENDS=	check>0:devel/check
 
-USES=		autoreconf compiler:c++14-lang gmake localbase pkgconfig shebangfix
+USES=		autoreconf compiler:c++14-lang gmake llvm localbase pkgconfig shebangfix
 
 SHEBANG_FILES=	contrib/functions.sh
 
@@ -55,6 +55,6 @@ LLVM_VERSION=	${LLVM_DEFAULT}
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
 
-# tests as of 1.20.1: All 2 tests passed
+# tests as of 1.21.1: All 2 tests passed
 
 .include <bsd.port.mk>
