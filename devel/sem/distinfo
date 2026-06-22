@@ -1,4 +1,4 @@
-TIMESTAMP = 1781617441
+TIMESTAMP = 1782151670
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -653,5 +653,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.3.crate) = 625dc425cab0dca6dc3c3319506e6
 SIZE (rust/crates/zerovec-derive-0.11.3.crate) = 22115
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (ataraxy-labs-sem-v0.12.0_GH0.tar.gz) = 16a1b77f08251ac32230bf9f1d517cf921b3c397498c26d2ba7cd77749ab9347
-SIZE (ataraxy-labs-sem-v0.12.0_GH0.tar.gz) = 540507
+SHA256 (ataraxy-labs-sem-v0.13.0_GH0.tar.gz) = 332c3e992fbf8349bba59575dfaeb4d9dd49b8ecdfe09d8b642792bff87f7f28
+SIZE (ataraxy-labs-sem-v0.13.0_GH0.tar.gz) = 544972
