@@ -20,14 +20,14 @@ MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib
 PLIST_FILES=	"@dir ${SCHEMADIR}" \
 		${SCHEMADIR}/register.sql \
 		bin/${PORTNAME} \
-		${MANDIR}/rcheckbook.1 \
-		${MANDIR}/rcheckbook-add.1 \
-		${MANDIR}/rcheckbook-export.1 \
-		${MANDIR}/rcheckbook-import.1 \
-		${MANDIR}/rcheckbook-list.1 \
-		${MANDIR}/rcheckbook-remove.1 \
-		${MANDIR}/rcheckbook-summary.1 \
-		${MANDIR}/rcheckbook-update.1 \
+		${MANDIR}/rcheckbook.1.gz \
+		${MANDIR}/rcheckbook-add.1.gz \
+		${MANDIR}/rcheckbook-export.1.gz \
+		${MANDIR}/rcheckbook-import.1.gz \
+		${MANDIR}/rcheckbook-list.1.gz \
+		${MANDIR}/rcheckbook-remove.1.gz \
+		${MANDIR}/rcheckbook-summary.1.gz \
+		${MANDIR}/rcheckbook-update.1.gz \
 
 SCHEMADIR=		${LOCALBASE}/share/${PORTNAME}
 MANDIR=		${LOCALBASE}/share/man/man1
