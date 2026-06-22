@@ -9,7 +9,6 @@
     SUBDIR += adiak
     SUBDIR += adios2
     SUBDIR += aichat
-    SUBDIR += air
     SUBDIR += alpaca
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper

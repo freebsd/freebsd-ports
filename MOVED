@@ -5370,3 +5370,4 @@ sysutils/bsdstats||2026-06-19|Broken for more than 10 months
 textproc/stardict-dictd_mova||2026-06-19|Broken for years and unfetchable
 x11/taiga||2026-06-19|Broken for more than 6 months
 databases/py-apache-arrow|databases/py-pyarrow|2026-06-21|Remove in favor of py-pyarrow, which is the same project
+misc/air||2026-06-21|Upstream has disappeared
