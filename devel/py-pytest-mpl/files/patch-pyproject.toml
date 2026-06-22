@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-03-25 10:00:28 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=80",
++    "setuptools",
+     "setuptools-scm[simple]>=8",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -9,10 +9,6 @@ authors = [
+ name = "pytest-mpl"
+ authors = [
+     { name = "Thomas Robitaille", email = "thomas.robitaille@gmail.com" },
+-]
+-license = "BSD-2-Clause"
+-license-files = [
+-    "LICENSE",
+ ]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
