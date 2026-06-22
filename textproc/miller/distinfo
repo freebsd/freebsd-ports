@@ -1,5 +1,5 @@
-TIMESTAMP = 1776763132
-SHA256 (go/textproc_miller/johnkerl-miller-v6.18.1_GH0/go.mod) = cf6c3cf902bfd55aec7ef6b79f7c255c79a23015895880f658d4c9ca5d970eff
-SIZE (go/textproc_miller/johnkerl-miller-v6.18.1_GH0/go.mod) = 1727
-SHA256 (go/textproc_miller/johnkerl-miller-v6.18.1_GH0/johnkerl-miller-v6.18.1_GH0.tar.gz) = db9eca9fdfc2e524a8ad8a03bdfb748fa3747898ca6191a33493da945e72aa8f
-SIZE (go/textproc_miller/johnkerl-miller-v6.18.1_GH0/johnkerl-miller-v6.18.1_GH0.tar.gz) = 11588178
+TIMESTAMP = 1782151435
+SHA256 (go/textproc_miller/johnkerl-miller-v6.19.0_GH0/go.mod) = 8823423d6d8c0f8cd2bd8e60c9874272b1d12a2872807ee330019976385ebab6
+SIZE (go/textproc_miller/johnkerl-miller-v6.19.0_GH0/go.mod) = 1858
+SHA256 (go/textproc_miller/johnkerl-miller-v6.19.0_GH0/johnkerl-miller-v6.19.0_GH0.tar.gz) = 032cd07d947986dfe9a97ed4f4ea5fb8bf354dce81229b58acad9e89e941a59e
+SIZE (go/textproc_miller/johnkerl-miller-v6.19.0_GH0/johnkerl-miller-v6.19.0_GH0.tar.gz) = 11598156
