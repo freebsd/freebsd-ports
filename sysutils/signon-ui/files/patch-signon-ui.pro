@@ -1,14 +1,12 @@
---- signon-ui.pro.orig	2013-06-11 06:51:14 UTC
+--- signon-ui.pro.orig	2023-10-16 20:12:00 UTC
 +++ signon-ui.pro
-@@ -3,10 +3,7 @@ include(common-project-config.pri)
- 
+@@ -4,8 +4,7 @@ SUBDIRS = \
  TEMPLATE = subdirs
  CONFIG += ordered
--SUBDIRS = \
--    po \
+ SUBDIRS = \
 -    src \
 -    tests
-+SUBDIRS = src 
++    src
  
  include(common-installs-config.pri)
  
