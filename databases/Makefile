@@ -754,7 +754,6 @@
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-anysqlite
-    SUBDIR += py-apache-arrow
     SUBDIR += py-apsw
     SUBDIR += py-apswutils
     SUBDIR += py-asyncmy
