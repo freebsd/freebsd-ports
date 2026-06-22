@@ -5372,3 +5372,5 @@ databases/py-apache-arrow|databases/py-pyarrow|2026-06-21|Remove in favor of py-
 misc/air||2026-06-21|Upstream has disappeared
 sysutils/signond@qt5||2026-06-22|Unflavorize, remove Qt5 flavor
 sysutils/signond@qt6|sysutils/signond|2026-06-22|Unflavorize
+sysutils/signon-plugin-oauth2@qt5||2026-06-22|Unflavorize, remove Qt5 flavor
+sysutils/signon-plugin-oauth2@qt6|sysutils/signon-plugin-oauth2|2026-06-22|Unflavorize
