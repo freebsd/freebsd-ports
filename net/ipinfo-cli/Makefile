@@ -1,7 +1,6 @@
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
-DISTVERSION=	3.3.1
-PORTREVISION=	24
+DISTVERSION=	3.3.2
 CATEGORIES=	net
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -15,7 +14,7 @@ USES=	go:modules
 
 USE_GITHUB=	yes
 GH_PROJECT=	cli
-GH_TUPLE=	golang:sys:v0.16.0:golang_sys
+GH_TUPLE=	golang:sys:v0.46.0:golang_sys
 
 GO_TARGET=	./ipinfo
 
