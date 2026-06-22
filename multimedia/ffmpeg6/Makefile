@@ -1,5 +1,5 @@
 PORTNAME=	ffmpeg
-PORTVERSION=	6.1.5
+PORTVERSION=	6.1.6
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 PKGNAMESUFFIX=	6
