@@ -1,6 +1,6 @@
 PORTNAME=	wasmtime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	45.0.2
+DISTVERSION=	46.0.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,7 +48,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bitflags-2.11.1 \
 		block-buffer-0.10.2 \
 		bstr-1.6.0 \
-		bumpalo-3.20.0 \
+		bumpalo-3.20.2 \
 		byteorder-1.4.3 \
 		bytes-1.11.1 \
 		bytesize-2.0.1 \
@@ -60,8 +60,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cap-primitives-3.4.5 \
 		cap-std-3.4.5 \
 		cap-time-ext-3.4.5 \
-		capstone-0.13.0 \
-		capstone-sys-0.17.0 \
+		capstone-0.14.0 \
+		capstone-sys-0.18.0 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.19.2 \
 		cast-0.3.0 \
@@ -99,7 +99,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cty-0.2.2 \
 		debugid-0.8.0 \
 		der-0.7.10 \
-		deranged-0.3.11 \
+		deranged-0.5.8 \
 		derive_arbitrary-1.4.0 \
 		digest-0.10.7 \
 		directories-next-2.0.0 \
@@ -195,7 +195,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indexmap-1.9.1 \
 		indexmap-2.14.0 \
 		inout-0.1.3 \
-		instant-0.1.12 \
+		instant-0.1.13 \
 		io-extras-0.18.4 \
 		io-lifetimes-2.0.3 \
 		ipnet-2.5.0 \
@@ -208,7 +208,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ittapi-sys-0.4.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.74 \
-		json-from-wast-0.248.0 \
+		json-from-wast-0.251.0 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
 		leb128fmt-0.1.0 \
@@ -225,7 +225,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		logos-0.14.2 \
 		logos-codegen-0.14.2 \
 		logos-derive-0.14.2 \
-		mach2-0.4.2 \
+		mach2-0.4.3 \
+		mach2-0.6.0 \
 		macro-string-0.2.0 \
 		managed-0.8.0 \
 		matchers-0.2.0 \
@@ -244,7 +245,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nom-7.1.3 \
 		nu-ansi-term-0.50.3 \
 		num-complex-0.4.6 \
-		num-conv-0.1.0 \
+		num-conv-0.2.1 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
@@ -256,10 +257,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		once_cell-1.19.0 \
 		once_cell_polyfill-1.70.1 \
 		oorandom-11.1.3 \
-		openssl-0.10.78 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
-		openssl-sys-0.9.114 \
+		openssl-sys-0.9.116 \
 		openvino-0.9.0 \
 		openvino-finder-0.9.0 \
 		openvino-sys-0.9.0 \
@@ -286,8 +287,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		quick-error-1.2.3 \
 		quote-1.0.41 \
 		r-efi-6.0.0 \
-		rand-0.8.5 \
-		rand-0.9.2 \
+		rand-0.8.6 \
+		rand-0.9.4 \
 		rand-0.10.1 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
@@ -359,12 +360,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.106 \
 		synstructure-0.13.1 \
 		system-interface-0.27.3 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		target-lexicon-0.13.3 \
 		tch-0.17.0 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
-		terminal_size-0.4.3 \
+		terminal_size-0.4.4 \
 		test-log-0.2.18 \
 		test-log-macros-0.2.18 \
 		thiserror-1.0.65 \
@@ -372,8 +373,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-impl-1.0.65 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.4 \
-		time-0.3.36 \
-		time-core-0.1.2 \
+		time-0.3.47 \
+		time-core-0.1.8 \
 		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
 		tokio-1.51.1 \
@@ -429,16 +430,16 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasm-bindgen-macro-0.2.97 \
 		wasm-bindgen-macro-support-0.2.97 \
 		wasm-bindgen-shared-0.2.97 \
-		wasm-compose-0.248.0 \
+		wasm-compose-0.251.0 \
 		wasm-encoder-0.244.0 \
 		wasm-encoder-0.247.0 \
-		wasm-encoder-0.248.0 \
+		wasm-encoder-0.251.0 \
 		wasm-metadata-0.244.0 \
 		wasm-metadata-0.247.0 \
-		wasm-metadata-0.248.0 \
-		wasm-mutate-0.248.0 \
-		wasm-smith-0.248.0 \
-		wasm-wave-0.248.0 \
+		wasm-metadata-0.251.0 \
+		wasm-mutate-0.251.0 \
+		wasm-smith-0.251.0 \
+		wasm-wave-0.251.0 \
 		wasmi-1.0.8 \
 		wasmi_collections-1.0.8 \
 		wasmi_core-1.0.8 \
@@ -446,11 +447,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasmparser-0.228.0 \
 		wasmparser-0.244.0 \
 		wasmparser-0.247.0 \
-		wasmparser-0.248.0 \
-		wasmprinter-0.248.0 \
+		wasmparser-0.251.0 \
+		wasmprinter-0.251.0 \
 		wast-35.0.2 \
-		wast-248.0.0 \
-		wat-1.248.0 \
+		wast-251.0.0 \
+		wat-1.251.0 \
 		webpki-root-certs-1.0.4 \
 		webpki-roots-0.26.1 \
 		which-6.0.3 \
@@ -464,26 +465,16 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows-interface-0.52.0 \
 		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.13 \
 		winsafe-0.0.19 \
 		winx-0.36.4 \
@@ -499,10 +490,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wit-bindgen-rust-macro-0.57.0 \
 		wit-component-0.244.0 \
 		wit-component-0.247.0 \
-		wit-component-0.248.0 \
+		wit-component-0.251.0 \
 		wit-parser-0.244.0 \
 		wit-parser-0.247.0 \
-		wit-parser-0.248.0 \
+		wit-parser-0.251.0 \
 		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
