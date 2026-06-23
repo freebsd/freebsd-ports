@@ -86,11 +86,11 @@ CARGO_CRATES=	ahash-0.8.12 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
-		pyo3-0.28.3 \
-		pyo3-build-config-0.28.3 \
-		pyo3-ffi-0.28.3 \
-		pyo3-macros-0.28.3 \
-		pyo3-macros-backend-0.28.3 \
+		pyo3-0.29.0 \
+		pyo3-build-config-0.29.0 \
+		pyo3-ffi-0.29.0 \
+		pyo3-macros-0.29.0 \
+		pyo3-macros-backend-0.29.0 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
