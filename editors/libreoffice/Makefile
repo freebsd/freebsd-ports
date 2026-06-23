@@ -341,8 +341,8 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		ICU_LIBS="`icu-config --ldflags`" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
-		ZXING_CFLAGS="-I${LOCALBASE}/include/ZXing \
-		CPLUS_INCLUDE_PATH="-I${LOCALBASE}/include \
+		ZXING_CFLAGS="-I${LOCALBASE}/include/ZXing" \
+		CPLUS_INCLUDE_PATH="-I${LOCALBASE}/include" \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
