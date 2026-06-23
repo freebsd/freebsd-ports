@@ -13,7 +13,7 @@ WWW=		http://openlab.jp/skk/dic.html
 LICENSE=	GPLv2+
 
 .if defined(WITH_SKKJISYO_CDB)
-BUILD_DEPENDS=	${LOCALBASE}/bin/cdb:databases/tinycdb
+BUILD_DEPENDS=	${LOCALBASE}/bin/cdbmake:databases/cdb
 .endif
 
 USE_GITHUB=	yes
@@ -65,8 +65,9 @@ do-build:
 			print ""; \
 		}' \
 		< ${WRKSRC}/SKK-JISYO.${type} | \
-	${LOCALBASE}/bin/cdb -c -t - \
-		${WRKSRC}/SKK-JISYO.${type}${CDBSUFFIX}
+	${LOCALBASE}/bin/cdbmake \
+		${WRKSRC}/SKK-JISYO.${type}${CDBSUFFIX} \
+		${WRKSRC}/SKK-JISYO.${type}.tmp
 .endfor
 .endif
 
