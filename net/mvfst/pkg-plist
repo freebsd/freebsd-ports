@@ -196,6 +196,7 @@ include/quic/state/ConnectionOopsFields.h
 include/quic/state/DatagramHandlers.h
 include/quic/state/EarlyDataAppParamsHandler.h
 include/quic/state/LossState.h
+include/quic/state/LossEvent.h
 include/quic/state/OutstandingPacket.h
 include/quic/state/QuicAckFrequencyFunctions.h
 include/quic/state/QuicConnectionStats.h
@@ -217,6 +218,7 @@ include/quic/state/stream/StreamStateFunctions.h
 include/quic/tools/tperf/PacingObserver.h
 include/quic/tools/tperf/TperfClient.h
 include/quic/tools/tperf/TperfServer.h
+include/quic/tools/tperf/TperfTcp.h
 include/quic/xsk/BaseXskContainer.h
 include/quic/xsk/HashingXskContainer.h
 include/quic/xsk/ThreadLocalXskContainer.h
