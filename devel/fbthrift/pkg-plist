@@ -784,6 +784,7 @@ include/thrift/lib/cpp2/server/ServiceMethodDecoratorBase.h
 include/thrift/lib/cpp2/server/SingleBucketRequestPileQueue.h
 include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
+include/thrift/lib/cpp2/server/StopTLSEncryptionStateProvider.h
 include/thrift/lib/cpp2/server/StreamInterceptorContext.h
 include/thrift/lib/cpp2/server/TMConcurrencyController.h
 include/thrift/lib/cpp2/server/ThreadManagerLoggingWrapper.h
