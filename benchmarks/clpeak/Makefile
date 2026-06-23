@@ -1,5 +1,5 @@
 PORTNAME=	clpeak
-DISTVERSION=	2.0.13
+DISTVERSION=	2.0.14
 CATEGORIES=	benchmarks
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,5 +29,8 @@ VULKAN_CMAKE_BOOL=	CLPEAK_ENABLE_VULKAN
 
 post-patch:
 	@${REINPLACE_CMD} '/install.*LICENSE/d' ${WRKSRC}/CMakeLists.txt
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
