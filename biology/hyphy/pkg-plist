@@ -186,6 +186,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BranchSiteREL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FADE.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FEL.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FitModel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/MEME.bf
