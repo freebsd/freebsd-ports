@@ -1,0 +1,24 @@
+-- Relax version requirements for dimod and meson-python to match versions available in the ports tree.
+--- pyproject.toml.orig	2026-06-23 15:37:58 UTC
++++ pyproject.toml
+@@ -2,9 +2,9 @@ requires = [
+ requires = [
+     # Same as dependency-groups.build
+     "cython~=3.2.0",
+-    "dimod==0.12.21",  # oldest dimod that supports Python 3.14
++    "dimod>=0.12.21",  # oldest dimod that supports Python 3.14
+     "meson~=1.10.2",  # latest as of March 2026
+-    "meson-python~=0.19.0",  # latest as of March 2026
++    "meson-python>=0.18.0",  # latest as of March 2026
+     "ninja~=1.13.0",  # latest as of March 2026
+     "numpy~=2.0",
+ ]
+@@ -54,7 +54,7 @@ build = [
+ build = [
+     # Same as build-system.requires
+     "cython~=3.2.0",
+-    "dimod==0.12.21",
++    "dimod>=0.12.21",
+     "meson~=1.9.0",
+     "meson-python~=0.18.0",
+     "ninja~=1.13.0",
