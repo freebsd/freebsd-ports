@@ -1,5 +1,5 @@
 PORTNAME=	skk-jawiki
-DISTVERSION=	2026.04.01.141931
+DISTVERSION=	2026.06.21.141122
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/tokuhirom/jawiki-kana-kanji-dict/releases/download/v${DISTVERSION}/
 DISTFILES=	SKK-JISYO.jawiki
@@ -27,8 +27,8 @@ UTF8CDB_DESC=			UTF8 Charset dictionary (cdb)
 
 EUC_BUILD_DEPENDS=		${LOCALBASE}/bin/nkf:japanese/nkf
 EUCCDB_BUILD_DEPENDS=		${LOCALBASE}/bin/nkf:japanese/nkf \
-				${LOCALBASE}/bin/cdb:databases/tinycdb
-UTF8CDB_BUILD_DEPENDS=		${LOCALBASE}/bin/cdb:databases/tinycdb
+				${LOCALBASE}/bin/cdbmake:databases/cdb
+UTF8CDB_BUILD_DEPENDS=		${LOCALBASE}/bin/cdbmake:databases/cdb
 
 EUC_VARS=			DICS=${SKKDIC}
 EUCCDB_VARS=			DICS+=${SKKDIC}.cdb
@@ -61,7 +61,7 @@ do-build:
 		END { \
 			print ""; \
 		}' < ${WRKSRC}/${dic:S|.cdb||} | \
-	${LOCALBASE}/bin/cdb -c -t - ${WRKSRC}/${dic}
+	${LOCALBASE}/bin/cdbmake ${WRKSRC}/${dic} ${WRKSRC}/${dic}.tmp
 .endfor
 
 do-install:
