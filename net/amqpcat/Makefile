@@ -1,6 +1,7 @@
 PORTNAME=	amqpcat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
@@ -16,9 +17,10 @@ LICENSE=	MIT
 BUILD_DEPENDS=	crystal:lang/crystal \
 		help2man:misc/help2man \
 		shards:devel/shards
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
+		libpcre2-8.so:devel/pcre2
 
-USES=		pkgconfig
+USES=		pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
 GH_TUPLE=	cloudamqp:amq-protocol.cr:v1.1.15:proto/deps/amq-protocol.cr \
