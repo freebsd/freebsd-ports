@@ -1,6 +1,6 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
+DISTVERSION=	3.5.1
 CATEGORIES=	editors elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://github.com/magit/with-editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	compat.el>=30.1.0.0:misc/compat.el
+RUN_DEPENDS=	compat.el>=31.0:misc/compat.el \
+		cond-let>=1.0:devel/cond-let
 
 USES=		emacs:build gmake makeinfo
 USE_GITHUB=	yes
