@@ -1,6 +1,6 @@
 PORTNAME=	cowrie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.4
 CATEGORIES=	security python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,14 +17,13 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}attrs>=26.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=5.0.0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=48.0.0:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=48.0.1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=3.16:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=26.2:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>0:devel/py-pyasn1-modules@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.5:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service-identity>=24.2.0:security/py-service-identity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tftpy>=0.8.7:ftp/py-tftpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=2.7.0:net/py-urllib3@${PY_FLAVOR}
