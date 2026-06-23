@@ -11,10 +11,11 @@ LICENSE=	GPLv2+
 
 # minimum required version 6.4.2 - not codified, on the assumption
 # that fetchmail port updated at the same time
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
+_BR_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
-		fetchmail>=${PORTVERSION}:mail/fetchmail
-BUILD_DEPENDS+=	${RUN_DEPENDS}
+		fetchmail>=${DISTVERSION}:mail/fetchmail
+BUILD_DEPENDS=	${_BR_DEPENDS}
+RUN_DEPENDS=	${_BR_DEPENDS}
 
 USES=		python shebangfix tar:xz
 USE_PYTHON=	py3kplist
@@ -25,6 +26,7 @@ ALL_TARGET=	fetchmailconf
 INSTALL_TARGET=	install-data-am install-nodist_binSCRIPTS install-man
 
 FILESDIR=	${.CURDIR}/files
+MASTERDIR=	${.CURDIR}/../fetchmail
 PATCHDIR=	${FILESDIR}
 NO_ARCH=	yes
 
@@ -40,7 +42,5 @@ post-install:
 # then install:
 		${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${STAGEDIR}${PREFIX}/bin
 		${RM} ${STAGEDIR}${PREFIX}/share/man/man1/fetchmail.1*
-
-MASTERDIR=	${.CURDIR}/../fetchmail
 
 .include "${MASTERDIR}/Makefile"
