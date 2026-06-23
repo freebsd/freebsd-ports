@@ -1,5 +1,5 @@
 PORTNAME=	qcelemental
-DISTVERSION=	0.50.2
+DISTVERSION=	0.50.3
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>0:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nglview>=3.0.3:science/py-nglview@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.3.3:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>=0.24:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.9.0:science/py-scipy@${PY_FLAVOR}
@@ -36,6 +36,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest -rs --pyargs qcelemental
 
-# tests as of 0.29.0: 1 failed, 1191 passed, 2 skipped, 2 xpassed, 1 warning in 12.71s, see https://github.com/MolSSI/QCElemental/issues/380
+# tests as of 0.50.3: 2151 passed, 126 skipped, 2 xpassed, 2 warnings in 13.48s
 
 .include <bsd.port.mk>
