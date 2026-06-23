@@ -1,5 +1,5 @@
 PORTNAME=	HofstadterTools
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.7
 CATEGORIES=	science python # physics
 MASTER_SITES=	PYPI
 MASTER_SITE_SUBDIR=	source/h/hofstadtertools
