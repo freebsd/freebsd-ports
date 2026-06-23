@@ -61,7 +61,7 @@ include/ldns/zone.h
 lib/libldns.a
 lib/libldns.so
 lib/libldns.so.3
-lib/libldns.so.3.6.0
+lib/libldns.so.%%SOVERSION%%
 libdata/pkgconfig/libldns.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/LogoInGradientBar2-y100.png
 %%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
