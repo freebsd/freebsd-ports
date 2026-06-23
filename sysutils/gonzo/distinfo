@@ -1,5 +1,5 @@
-TIMESTAMP = 1760669775
-SHA256 (go/sysutils_gonzo/gonzo-v0.2.1/v0.2.1.mod) = 49e027b45c4d8cd1d84fd02602e7a1cdafc0a6d264b0ab789eb8fc1024d6e156
-SIZE (go/sysutils_gonzo/gonzo-v0.2.1/v0.2.1.mod) = 2668
-SHA256 (go/sysutils_gonzo/gonzo-v0.2.1/v0.2.1.zip) = ca3911448994fbf5c2ce5f205c03f210a20b867553b7392198bb682d0a518ed0
-SIZE (go/sysutils_gonzo/gonzo-v0.2.1/v0.2.1.zip) = 48369554
+TIMESTAMP = 1782190864
+SHA256 (go/sysutils_gonzo/gonzo-v0.4.2/v0.4.2.mod) = 82c38e978041fb5b33a6baedeb20fb74edb2e4b809398ba210581cf9c9b3544d
+SIZE (go/sysutils_gonzo/gonzo-v0.4.2/v0.4.2.mod) = 4847
+SHA256 (go/sysutils_gonzo/gonzo-v0.4.2/v0.4.2.zip) = 2609bcb6018591f58b649ff8c0a8c54d2bdb87204be04314fc1d8a2c5a15dc66
+SIZE (go/sysutils_gonzo/gonzo-v0.4.2/v0.4.2.zip) = 55614457
