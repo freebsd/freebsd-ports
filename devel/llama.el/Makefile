@@ -1,6 +1,6 @@
 PORTNAME=	llama.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/tarsius/llama
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	compat.el>=30.1.0.0:misc/compat.el
+RUN_DEPENDS=	compat.el>=31.0:misc/compat.el
 
 USES=		emacs:build gmake
 USE_GITHUB=	yes
@@ -24,19 +24,20 @@ CONFLICTS_INSTALL=	llama.el-emacs_*
 
 NO_ARCH=	yes
 
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/llama-autoloads.el \
-		${EMACS_SITE_LISPDIR}/llama.el
+PLIST_FILES=	${ELISPDIR}/llama-autoloads.el \
+		${ELISPDIR}/llama.el
 
 PORTDOCS=	README.org
 
 OPTIONS_DEFINE=	DOCS
 
+ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME:R}
 ELISP_FILES=	llama-autoloads.el llama.el
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA}  ${ELISP_FILES:C/^/${WRKSRC}\//} \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${ELISPDIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
