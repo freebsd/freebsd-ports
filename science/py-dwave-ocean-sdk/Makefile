@@ -1,5 +1,5 @@
 PORTNAME=	dwave-ocean-sdk
-DISTVERSION=	9.3.0
+DISTVERSION=	9.4.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
