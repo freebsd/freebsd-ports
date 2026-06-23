@@ -1,8 +1,11 @@
 PORTNAME=	alertmanager
-PORTVERSION=	0.31.1
+PORTVERSION=	0.33.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net-mgmt
+MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod \
+		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:ui
+DISTFILES=	go.mod:gomod \
+		${PORTNAME}-web-ui-${DISTVERSION}.tar.gz:ui
 
 MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Alert routing for Prometheus
@@ -11,9 +14,11 @@ WWW=		https://prometheus.io/docs/alerting/alertmanager/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 GO_MODULE=	github.com/prometheus/alertmanager
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	prometheus
 USE_RC_SUBR=	alertmanager
 
 GO_TARGET=	./cmd/alertmanager ./cmd/amtool
@@ -32,6 +37,10 @@ LD_FLAG_STRING=	-s \
 		${LD_FLAG_X_PREFIX}.BuildUser=${_BUILD_USER} \
 		${LD_FLAG_X_PREFIX}.BuildDate=${_BUILD_DATE}
 LD_FLAG_X_PREFIX=	-X github.com/prometheus/common/version
+
+post-patch:
+	@${RM} -rf ${WRKSRC}/web/ui/static
+	@${CP} -a ${WRKDIR}/dist ${WRKSRC}/ui/app/dist
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/alertmanager
