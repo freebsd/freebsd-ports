@@ -1,6 +1,6 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.2
+DISTVERSION=	0.28.0
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -118,5 +118,7 @@ post-install:
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ]; then \
 		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
 	fi
+
+# tests as of 0.28.0: 1 failed, 2644 passed, 185 skipped, 4 xfailed, 2 xpassed, 6 errors
 
 .include <bsd.port.mk>
