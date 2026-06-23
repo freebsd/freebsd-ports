@@ -1,6 +1,5 @@
 PORTNAME=	blake3
-DISTVERSION=	1.0.8
-PORTREVISION=	3
+DISTVERSION=	1.0.9
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,39 +19,36 @@ USES=		cargo python
 USE_PYTHON=	pep517 autoplist pytest
 
 CARGO_CRATES=	arrayref-0.3.9 \
-		arrayvec-0.7.6 \
-		autocfg-1.5.0 \
-		blake3-1.8.2 \
-		cc-1.2.41 \
-		cfg-if-1.0.3 \
-		constant_time_eq-0.3.1 \
+		arrayvec-0.7.7 \
+		blake3-1.8.5 \
+		cc-1.2.65 \
+		cfg-if-1.0.4 \
+		constant_time_eq-0.4.2 \
+		cpufeatures-0.3.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		either-1.15.0 \
-		find-msvc-tools-0.1.4 \
+		either-1.16.0 \
+		find-msvc-tools-0.1.9 \
 		heck-0.5.0 \
 		hex-0.4.3 \
-		indoc-2.0.6 \
-		libc-0.2.177 \
-		memmap2-0.9.8 \
-		memoffset-0.9.1 \
-		once_cell-1.21.3 \
-		portable-atomic-1.11.1 \
-		proc-macro2-1.0.101 \
-		pyo3-0.26.0 \
-		pyo3-build-config-0.26.0 \
-		pyo3-ffi-0.26.0 \
-		pyo3-macros-0.26.0 \
-		pyo3-macros-backend-0.26.0 \
-		quote-1.0.41 \
-		rayon-1.11.0 \
+		libc-0.2.186 \
+		memmap2-0.9.11 \
+		once_cell-1.21.4 \
+		portable-atomic-1.13.1 \
+		proc-macro2-1.0.106 \
+		pyo3-0.29.0 \
+		pyo3-build-config-0.29.0 \
+		pyo3-ffi-0.29.0 \
+		pyo3-macros-0.29.0 \
+		pyo3-macros-backend-0.29.0 \
+		quote-1.0.46 \
+		rayon-1.12.0 \
 		rayon-core-1.13.0 \
-		shlex-1.3.0 \
-		syn-2.0.106 \
-		target-lexicon-0.13.3 \
-		unicode-ident-1.0.19 \
-		unindent-0.2.4
+		shlex-2.0.1 \
+		syn-2.0.118 \
+		target-lexicon-0.13.5 \
+		unicode-ident-1.0.24
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
