@@ -40,7 +40,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.8:security/py-social-auth-core@${PY_FLAVOR}
 
-USES=		cpe pgsql:14+ python:-3.12
+USES=		cpe pgsql:14+ python:3.10-3.14
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME:S/-/_/}
 USE_GITHUB=	yes
