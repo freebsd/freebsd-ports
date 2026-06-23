@@ -1,7 +1,6 @@
 PORTNAME=	sigye
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
-PORTREVISION=	1
+DISTVERSION=	0.5.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,7 +20,7 @@ CARGO_BUILD_ARGS=	-p sigye
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
+# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
 		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
