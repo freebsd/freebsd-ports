@@ -1,5 +1,5 @@
 PORTNAME=	oci
-DISTVERSION=	2.175.0
+DISTVERSION=	2.180.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}circuitbreaker>=1.3.1:devel/py-circuitbreaker@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crc32c>=2.7.1:devel/py-crc32c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docstring_parser>=0.16:textproc/py-docstring_parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mcp>=1.6.0:misc/py-mcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyopenssl>=17.5.0:security/py-pyopenssl@${PY_FLAVOR} \

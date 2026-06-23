@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-04-27 09:59:05 UTC
+--- pyproject.toml.orig	2026-06-22 05:10:35 UTC
 +++ pyproject.toml
 @@ -5,9 +5,7 @@ requires = [
  requires = [
@@ -6,7 +6,7 @@
      "setuptools==59.6.0; python_version == '3.6'",
 -    "setuptools==68.0.0; python_version == '3.7'",
 -    "setuptools==75.3.2; python_version == '3.8'",
--    "setuptools==78.1.1; python_version >= '3.9'",
+-    "setuptools==78.1.1,<81; python_version >= '3.9'",
 +    "setuptools==63.1.0; python_version >= '3.7'",
      "wheel"
  ]
