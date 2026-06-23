@@ -1,3 +1,3 @@
-TIMESTAMP = 1780114363
-SHA256 (timescale-pg_textsearch-v1.3.0_GH0.tar.gz) = 0b86e64106c4426c97b8740a49736314b0a6db522afdd6b29add9fea22bde0e6
-SIZE (timescale-pg_textsearch-v1.3.0_GH0.tar.gz) = 4159619
+TIMESTAMP = 1782189031
+SHA256 (timescale-pg_textsearch-v1.3.1_GH0.tar.gz) = 2ef1f8ea3d9bdef638e64cd844d37790ad27dc53e6bebdb2ad36e549fc5e671f
+SIZE (timescale-pg_textsearch-v1.3.1_GH0.tar.gz) = 4151328
