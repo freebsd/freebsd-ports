@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt5 graphical interface for MAME
 WWW=		https://github.com/qmc2/qmc2-mame-fe
 
+DEPRECATED=	Depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=	2026-09-30
+
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	bash>0:shells/bash \
