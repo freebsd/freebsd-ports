@@ -71,6 +71,9 @@ post-extract:
 	@${RM} ${WRKSRC}/.git*
 
 post-patch:
+.if ${ARCH} == "aarch64"
+	@${REINPLACE_CMD} -e 's|Scale(Pen.Width)|Self.Scale(Pen.Width)|g' ${WRKSRC}/components/tachart/tadrawercanvas.pas
+.endif
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|startlazarus|${PORTNAME}|g' ${WRKSRC}/install/${PORTNAME}.desktop
 	@${REINPLACE_CMD} \
