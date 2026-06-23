@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp-python
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.29
+DISTVERSION=	0.3.31
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -43,6 +43,6 @@ SHEBANG_GLOB=	*.py
 
 CONFLICTS_BUILD=	llama-cpp
 
-# tests as of 0.3.28: 66 passed in 364.39s (0:06:04)
+# tests as of 0.3.31: 14 passed
 
 .include <bsd.port.mk>
