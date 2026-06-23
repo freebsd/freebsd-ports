@@ -1,3 +1,33 @@
+  <vuln vid="fe2e8bdc-ff48-4166-b285-59822c7cf473">
+    <topic>podman -- files outside build context may be included via malicious Git repo or tar archive</topic>
+    <affects>
+	<package>
+	<name>podman</name>
+	<range><lt>5.8.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Podman developers report:</p>
+	<blockquote cite="https://github.com/podman-container-tools/buildah/security/advisories/GHSA-49p4-px3h-rq49">
+	  <p>Building a Dockerfile using an ADD or COPY instruction accessing
+	  a malicious Git repository or tar archive could cause files outside
+	  the build context directory to be included in the build context or
+	  copied into the build.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44517</cvename>
+      <url>https://github.com/podman-container-tools/podman/releases/tag/v5.8.3</url>
+      <url>https://github.com/podman-container-tools/buildah/security/advisories/GHSA-49p4-px3h-rq49</url>
+    </references>
+    <dates>
+      <discovery>2026-06-22</discovery>
+      <entry>2026-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="46b654f8-6b28-11f1-b8e5-3497f65b111b">
     <topic>nginx -- multiple vulnerabilities</topic>
     <affects>
