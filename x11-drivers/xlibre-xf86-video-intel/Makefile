@@ -1,5 +1,6 @@
 PORTNAME=	xlibre-xf86-video-intel
 PORTVERSION=	25.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org

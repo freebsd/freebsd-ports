@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-video-amdgpu
 PORTVERSION=	25.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org

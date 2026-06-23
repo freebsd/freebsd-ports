@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-input-elographics
 PORTVERSION=	25.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org
