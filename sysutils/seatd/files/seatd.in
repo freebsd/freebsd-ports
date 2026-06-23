@@ -21,9 +21,22 @@ load_rc_config "$name"
 : ${seatd_enable="NO"}
 : ${seatd_args="-g video"}
 
+# Compiled-in socket path (meson -Ddefaultpath / SEATD_SOCKET at build time).
+seatd_socket="%%SEATD_SOCKET%%"
+
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}.pid"
 command_args="-s err -T ${name} -p ${pidfile} ${procname} ${seatd_args}"
+
+start_precmd="seatd_precmd"
+
+seatd_precmd()
+{
+	# seatd binds its socket at ${seatd_socket}; create the parent
+	# directory first since it may be nested and /var/run is volatile.
+	_dir="${seatd_socket%/*}"
+	[ "${_dir}" = "${seatd_socket}" ] || /bin/mkdir -p "${_dir}"
+}
 
 run_rc_command "$1"
