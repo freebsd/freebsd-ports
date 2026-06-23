@@ -1,0 +1,12 @@
+-- Relax setuptools version requirement from >=64 to >=63 to match the version available in the ports tree.
+--- pyproject.toml.orig	2026-06-23 15:35:10 UTC
++++ pyproject.toml
+@@ -26,7 +26,7 @@ Source = "https://github.com/cvxopt/cvxopt"
+ Source = "https://github.com/cvxopt/cvxopt"
+ 
+ [build-system]
+-requires = ["setuptools>=64", "setuptools-scm>=8"]
++requires = ["setuptools>=63", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.cibuildwheel]
