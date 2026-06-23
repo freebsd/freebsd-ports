@@ -4,7 +4,7 @@ COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
 LIB_DEPENDS+=	libbareos.so:sysutils/bareos23-client
 
-CONFLICTS=	bareos22-traymonitor bareos24-traymonitor bareos-traymonitor
+CONFLICTS=	bareos24-traymonitor bareos-traymonitor
 
 USES=		desktop-file-utils gettext-runtime pkgconfig
 
