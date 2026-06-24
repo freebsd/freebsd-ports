@@ -1,3 +1,28 @@
+  <vuln vid="6a472f75-6fdc-11f1-bc26-8447094a420f">
+    <topic>go-git -- DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>go-git</name>
+	<range><lt>5.11.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The go-git project reports:</p>
+	<blockquote cite="https://github.com/go-git/go-git/security/advisories/GHSA-mw99-9chc-xw7r">
+	  <p>See link for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/go-git/go-git/security/advisories/GHSA-mw99-9chc-xw7r</url>
+    </references>
+    <dates>
+      <discovery>2023-12-24</discovery>
+      <entry>2026-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71a85f96-6f18-11f1-8569-3c7c3fba4204">
     <topic>ldns -- CWE-346 Origin Validation Error</topic>
     <affects>
