@@ -154,6 +154,7 @@
     SUBDIR += libkml
     SUBDIR += liblinear
     SUBDIR += libmbd
+    SUBDIR += libminc
     SUBDIR += libmsym
     SUBDIR += libnegf
     SUBDIR += liboglappth
@@ -184,7 +185,7 @@
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += metaphysicl
-    SUBDIR += minc2
+    SUBDIR += minc-tools
     SUBDIR += mmdb2
     SUBDIR += mmg
     SUBDIR += mmtf-cpp

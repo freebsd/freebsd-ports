@@ -1,0 +1,7 @@
+MINC - Medical Image NetCDF or MINC isn't netCDF.
+
+The MINC file format is a highly flexible medical image file format built on the
+HDF5 generalized data format.
+
+Note: previously, this port was science/mint2, but it is now split into two
+parts: libminc and minc-tools.

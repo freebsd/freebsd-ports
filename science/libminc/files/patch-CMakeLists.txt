@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-04-24 04:00:26 UTC
++++ CMakeLists.txt
+@@ -81,7 +81,6 @@ if(NOT LIBMINC_EXTERNALLY_CONFIGURED)
+ 
+   # external packages
+   find_package(ZLIB REQUIRED)
+-  set(HDF5_NO_FIND_PACKAGE_CONFIG_FILE ON)
+   find_package(HDF5 REQUIRED COMPONENTS C )
+ 
+   if(LIBMINC_USE_NIFTI)
