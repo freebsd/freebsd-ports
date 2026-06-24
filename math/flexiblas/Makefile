@@ -41,11 +41,16 @@ EXAMPLES_CMAKE_OFF=	-DEXAMPLES:BOOL=OFF
 
 .if exists(${LOCALBASE}/lib/libatlas.so)
 LIB_DEPENDS+=	libatlas.so:math/atlas
-PLIST_SUB+=	OPENBLAS="@comment " ATLAS=""
+PLIST_SUB+=	OPENBLASOPENMP="@comment " OPENBLASPTHREAD="@comment " ATLAS=""
 .else
 LIB_DEPENDS+=	libcblas.so:math/cblas	\
 		libopenblas.so:math/openblas
-PLIST_SUB+=	OPENBLAS="" ATLAS="@comment "
+PLIST_SUB+=	ATLAS="@comment "
+.if exists(/usr/include/omp.h)
+PLIST_SUB+=	OPENBLASOPENMP="" OPENBLASPTHREAD="@comment " ATLAS="@comment "
+.else
+PLIST_SUB+=	OPENBLASOPENMP="@comment " OPENBLASPTHREAD="" ATLAS="@comment "
+.endif
 .endif
 
 post-install:
