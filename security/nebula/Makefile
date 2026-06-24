@@ -26,6 +26,13 @@ PLIST_FILES=	bin/nebula \
 		bin/nebula-cert \
 		etc/${PORTNAME}/config.yml.example
 
+.include <bsd.port.pre.mk>
+
+# 32 bit architectures
+.if ${ARCH:Marmv?} || ${ARCH} == "i386" || ${ARCH} == "powerpc"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-overlay_tun__freebsd.go
+.endif
+
 pre-patch:
 .for m in net term sys
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/$m
@@ -42,4 +49,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/config.yml \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.yml.example
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
