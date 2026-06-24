@@ -1,0 +1,11 @@
+--- progs/CMakeLists.txt.orig	2015-09-11 19:22:24 UTC
++++ progs/CMakeLists.txt
+@@ -222,7 +222,7 @@ INSTALL(PROGRAMS
+   DESTINATION bin )
+ 
+ 
+-INSTALL_MAN_PAGES( ${CMAKE_INSTALL_PREFIX}/man
++INSTALL_MAN_PAGES( ${CMAKE_INSTALL_PREFIX}/share/man
+   coordinates/voxeltoworld.man1
+   mincaverage/mincaverage.man1
+   mincblob/mincblob.man1

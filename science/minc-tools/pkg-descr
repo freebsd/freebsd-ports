@@ -1,0 +1,7 @@
+MINC - Medical Image NetCDF or MINC isn't netCDF.
+
+This metaproject bundles multiple MINC-based packages that historically have
+been developed somewhat independently.
+
+Note: previously, this port was science/mint2, but it is now split into two
+parts: libminc and minc-tools.
