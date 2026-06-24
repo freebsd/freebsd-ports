@@ -1,3 +1,3 @@
-TIMESTAMP = 1772168747
-SHA256 (fastapi_sso-0.21.0.tar.gz) = 5fa596e28abb3c9d14567df8a2757f13a0fe4be8a2701fbf6853cf0cd297470b
-SIZE (fastapi_sso-0.21.0.tar.gz) = 18029
+TIMESTAMP = 1782271068
+SHA256 (fastapi_sso-0.21.1.tar.gz) = c6f730b075caf537efa7c0f531095cf2d963a6fa27d059b3300e5eb19b282adb
+SIZE (fastapi_sso-0.21.1.tar.gz) = 18031
