@@ -1,0 +1,14 @@
+--- thirdparty/thread-pool/CMakeLists.txt.orig	2026-06-23 12:45:11 UTC
++++ thirdparty/thread-pool/CMakeLists.txt
+@@ -3,8 +3,8 @@ target_include_directories( thread-pool INTERFACE ${CM
+ target_include_directories( thread-pool INTERFACE ${CMAKE_CURRENT_SOURCE_DIR} )
+ 
+ # Enable native extensions
+-target_compile_definitions( thread-pool INTERFACE BS_THREAD_POOL_NATIVE_EXTENSIONS=1 )
++# target_compile_definitions( thread-pool INTERFACE BS_THREAD_POOL_NATIVE_EXTENSIONS=1 )
+ 
+ target_sources( thread-pool INTERFACE
+     ${CMAKE_CURRENT_SOURCE_DIR}/bs_thread_pool.hpp
+-    )
+\ No newline at end of file
++    )
