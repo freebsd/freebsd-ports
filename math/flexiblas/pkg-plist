@@ -4,7 +4,8 @@ bin/flexiblas-config
 %%ATLAS%%etc/flexiblasrc.d/ATLAS.conf
 etc/flexiblasrc.d/BlisPThread.conf
 etc/flexiblasrc.d/NETLIB.conf
-%%OPENBLAS%%etc/flexiblasrc.d/OpenBLASOpenMP.conf
+%%OPENBLASOPENMP%%etc/flexiblasrc.d/OpenBLASOpenMP.conf
+%%OPENBLASPTHREAD%%etc/flexiblasrc.d/OpenBLASPThread.conf
 include/flexiblas/blas_gnu.h
 include/flexiblas/blas_intel.h
 include/flexiblas/cblas.h
@@ -34,7 +35,8 @@ lib/flexiblas/libflexiblas_fallback_lapack.so
 lib/flexiblas/libflexiblas_hook_dummy.so
 lib/flexiblas/libflexiblas_hook_profile.so
 lib/flexiblas/libflexiblas_netlib.so
-%%OPENBLAS%%lib/flexiblas/libflexiblas_openblasopenmp.so
+%%OPENBLASOPENMP%%lib/flexiblas/libflexiblas_openblasopenmp.so
+%%OPENBLASPTHREAD%%lib/flexiblas/libflexiblas_openblaspthread.so
 lib/libflexiblas.so
 lib/libflexiblas.so.3
 lib/libflexiblas.so.%%VE%%
