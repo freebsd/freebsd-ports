@@ -1,5 +1,5 @@
 PORTNAME=	gvmd
-DISTVERSION=	26.19.0
+DISTVERSION=	26.31.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -47,8 +47,8 @@ SHEBANG_FILES=	tools/gvm-lsc-rpm-creator \
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/manage_sql.c
-	${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/manage.c \
-		${WRKSRC}/src/gvmd.c ${WRKSRC}/src/manage_sql_secinfo.c
+	${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/gvmd.c \
+		${WRKSRC}/src/manage_sql_secinfo.c ${WRKSRC}/src/manage.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/gvm/gvmd/gnupg
