@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+You installed Grok Build CLI: xAI's Grok CLI.
+
+The binary 'grok' (and its symlink 'agent') can be used to interact
+with the xAI Grok AI platform.
+
+Run 'grok login' to authenticate, or set GROK_DEPLOYMENT_KEY in your
+environment for deployment key authentication.
+
+EOM
+}
+]

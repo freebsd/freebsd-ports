@@ -200,6 +200,7 @@
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += grizzly
+    SUBDIR += grok-build
     SUBDIR += grok-cli
     SUBDIR += gwhich
     SUBDIR += hashcards
