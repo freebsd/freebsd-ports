@@ -1,8 +1,8 @@
 PORTNAME=	claude-code
 DISTVERSION=	2.1.110
-PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Agentic coding tool from Anthropic that lives in your terminal
