@@ -2,6 +2,7 @@
 %%JAVASHAREDIR%%/omada/data/cluster/omada_distributed_internal_mongo_cluster.properties
 %%JAVASHAREDIR%%/omada/data/html/echarts.min.js
 %%JAVASHAREDIR%%/omada/data/html/logo.png
+@owner omada
 %%JAVASHAREDIR%%/omada/data/static/theme/img/deviceIcon/EAP-Bridge.png
 %%JAVASHAREDIR%%/omada/data/static/theme/img/deviceIcon/EAP603-Outdoor-V1.png
 %%JAVASHAREDIR%%/omada/data/static/theme/img/deviceIcon/EAP603GP-Desktop-V1.png
@@ -29,6 +30,7 @@
 %%JAVASHAREDIR%%/omada/data/static/theme/img/virtualDeviceIcon/IES206G-V1.png
 %%JAVASHAREDIR%%/omada/data/static/theme/img/virtualDeviceIcon/IES206GPP-V1.png
 %%JAVASHAREDIR%%/omada/data/static/theme/img/virtualDeviceIcon/IES208G-V1.png
+@owner
 %%JAVASHAREDIR%%/omada/lib/HdrHistogram-2.1.12.jar
 %%JAVASHAREDIR%%/omada/lib/LatencyUtils-2.0.3.jar
 %%JAVASHAREDIR%%/omada/lib/SparseBitSet-1.2.jar
@@ -567,5 +569,8 @@
 @dir(omada,wheel,) %%JAVASHAREDIR%%/omada/data/db
 @dir(omada,wheel,) %%JAVASHAREDIR%%/omada/data/keystore
 @dir(omada,wheel,) %%JAVASHAREDIR%%/omada/data/pdf
+@dir(omada,wheel,) %%JAVASHAREDIR%%/omada/data/static/theme/img/deviceIcon
+@dir(omada,wheel,) %%JAVASHAREDIR%%/omada/data/static/theme/img/topology/deviceicon
+@dir(omada,wheel,) %%JAVASHAREDIR%%/omada/data/static/theme/img/virtualDeviceIcon
 @dir(omada,wheel,) %%JAVASHAREDIR%%/omada/properties
 @dir(omada,wheel,) %%JAVASHAREDIR%%/omada/logs
