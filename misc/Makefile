@@ -483,6 +483,7 @@
     SUBDIR += py-diffusers
     SUBDIR += py-eemeter
     SUBDIR += py-einops
+    SUBDIR += py-elevenlabs
     SUBDIR += py-emoji
     SUBDIR += py-equinox
     SUBDIR += py-evaluate

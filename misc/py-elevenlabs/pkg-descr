@@ -1,0 +1,10 @@
+The official Python SDK for ElevenLabs, the most compelling, rich and
+lifelike voices for creators and developers.
+
+Features:
+- Text-to-speech conversion with multiple AI models
+- Voice cloning and management
+- Real-time audio streaming
+- Async client support
+- Conversational AI agents with real-time audio
+- Speech Engine for server-side voice agents
