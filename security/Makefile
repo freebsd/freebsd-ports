@@ -473,6 +473,7 @@
     SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-auth-script
     SUBDIR += openvpn-devel
+    SUBDIR += open-vulnerability-cli
     SUBDIR += ophcrack
     SUBDIR += opie
     SUBDIR += opkssh
