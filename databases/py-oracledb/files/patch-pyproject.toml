@@ -1,0 +1,25 @@
+remove after devel/py-setuptools is updated to at least 77.0.0
+
+--- pyproject.toml.orig	2026-05-19 17:21:53 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 77.0.0",
++    "setuptools",
+     "wheel",
+     "cython ~= 3.2",
+ ]
+@@ -11,12 +11,6 @@ authors = [{name = "Anthony Tuininga", email = "anthon
+ description = "Python interface to Oracle Database"
+ keywords = ["Oracle", "database"]
+ authors = [{name = "Anthony Tuininga", email = "anthony.tuininga@oracle.com"}]
+-license = "UPL-1.0 OR Apache-2.0"
+-license-files = [
+-    "LICENSE.txt",
+-    "THIRD_PARTY_LICENSES.txt",
+-    "NOTICE.txt",
+-]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

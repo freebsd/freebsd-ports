@@ -799,6 +799,7 @@
     SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysqlclient
+    SUBDIR += py-oracledb
     SUBDIR += py-ormar
     SUBDIR += py-oxyde
     SUBDIR += py-oxyde-core
