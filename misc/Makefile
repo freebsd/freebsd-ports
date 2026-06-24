@@ -52,6 +52,7 @@
     SUBDIR += chmlib
     SUBDIR += chrono
     SUBDIR += cinnamon-translations
+    SUBDIR += claude-code
     SUBDIR += claude-code-legacy
     SUBDIR += clawhub
     SUBDIR += clex
