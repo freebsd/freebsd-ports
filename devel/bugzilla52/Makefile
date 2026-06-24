@@ -1,5 +1,6 @@
 PORTNAME=	bugzilla
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools/bugzilla/5.2-branch
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	\
 		p5-List-MoreUtils>=0.32:lang/p5-List-MoreUtils \
 		p5-Math-Random-ISAAC>=1.001:math/p5-Math-Random-ISAAC \
 		p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable \
-		p5-Template-Toolkit>=3.008:www/p5-Template-Toolkit \
+		p5-Template-Toolkit>=3.009:www/p5-Template-Toolkit \
 		p5-Text-Tabs+Wrap>=2013.0523:textproc/p5-Text-Tabs+Wrap \
 		p5-TimeDate>=2.23:devel/p5-TimeDate \
 		p5-URI>=1.55:net/p5-URI
