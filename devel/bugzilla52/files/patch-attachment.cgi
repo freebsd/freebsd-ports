@@ -1,0 +1,50 @@
+--- attachment.cgi.orig	2024-09-03 14:36:48 UTC
++++ attachment.cgi
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -T
++#!/usr/local/bin/perl -T
+ # This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+@@ -25,8 +25,8 @@ use Bugzilla::Token;
+ use Bugzilla::Attachment::PatchReader;
+ use Bugzilla::Token;
+ 
+-use Encode qw(encode find_encoding);
+-use Encode::MIME::Header;    # Required to alter Encode::Encoding{'MIME-Q'}.
++use Encode qw(find_encoding);
++use URI::Escape qw(uri_escape_utf8);
+ 
+ # For most scripts we don't make $cgi and $template global variables. But
+ # when preparing Bugzilla for mod_perl, this script used these
+@@ -349,10 +349,8 @@ sub view {
+   $filename =~ s/\\/\\\\/g;    # escape backslashes
+   $filename =~ s/"/\\"/g;      # escape quotes
+ 
+-  # Avoid line wrapping done by Encode, which we don't need for HTTP
+-  # headers. See discussion in bug 328628 for details.
+-  local $Encode::Encoding{'MIME-Q'}->{'bpl'} = 10000;
+-  $filename = encode('MIME-Q', $filename);
++  # Follow RFC 6266 section 4.1 (which itself points to RFC 5987 section 3.2)
++  $filename = uri_escape_utf8($filename);
+ 
+   my $disposition
+     = Bugzilla->params->{'allow_attachment_display'} ? 'inline' : 'attachment';
+@@ -372,10 +370,14 @@ sub view {
+       }
+     }
+   }
++
++  # IE8 and older do not support RFC 6266. So for these old browsers
++  # we still pass the old 'filename' attribute. Modern browsers will
++  # automatically pick the new 'filename*' attribute.
+   print $cgi->header(
+-    -type                => "$contenttype; name=\"$filename\"",
+-    -content_disposition => "$disposition; filename=\"$filename\"",
+-    -content_length      => $attachment->datasize
++    -type=> $contenttype,
++    -content_disposition=> "$disposition; filename=\"$filename\"; filename*=UTF-8''$filename",
++    -content_length => $attachment->datasize
+   );
+   disable_utf8();
+   print $attachment->data;
