@@ -13,6 +13,9 @@ WWW=		https://github.com/grafana/loki
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
+
 USES=		go:modules cpe
 CPE_VENDOR=	grafana
 USE_GITHUB=	yes
