@@ -30,7 +30,7 @@ rcvar=ollama_enable
 load_rc_config $name
 
 : ${ollama_enable:="NO"}
-: ${ollama_user:="root"} # the user nobody doesn't have a home directory and ollama needs one to store the models
+: ${ollama_user:="nobody"}
 : ${ollama_args:="serve"}
 : ${ollama_log:="/var/log/ollama-${ollama_user}.log"}
 : ${ollama_pidfile:="/var/run/${name}-${ollama_user}.pid"}
@@ -50,7 +50,13 @@ ollama_precmd()
 {
     # set environment variables for the ollama server
     export OLLAMA_CONTEXT_LENGTH=${ollama_context_length}
-    export HOME=$(eval echo "~${ollama_user}")
+    if [ "$ollama_user" != "nobody" ]; then
+       export HOME=$(eval echo "~${ollama_user}")
+    else
+       export OLLAMA_MODELS=/var/lib/ollama/models
+       mkdir -p ${OLLAMA_MODELS}
+       chown ${ollama_user} ${OLLAMA_MODELS}
+    fi
     if [ "$ollama_use_vulkan" != "0" ]; then
         export OLLAMA_VULKAN=1
     else
