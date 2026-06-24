@@ -227,6 +227,7 @@
     SUBDIR += ocsinventory-ocsreports
     SUBDIR += ocsinventory-server
     SUBDIR += omada5
+    SUBDIR += omada6
     SUBDIR += omping
     SUBDIR += openbmp
     SUBDIR += openlldp
