@@ -1882,6 +1882,7 @@
     SUBDIR += py-limits
     SUBDIR += py-litestar
     SUBDIR += py-livereload
+    SUBDIR += py-ll-xist
     SUBDIR += py-mailman-hyperkitty
     SUBDIR += py-mechanicalsoup
     SUBDIR += py-mechanize
@@ -2765,7 +2766,6 @@
     SUBDIR += xcaddy
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xh
-    SUBDIR += xist
     SUBDIR += xoops
     SUBDIR += xsp
     SUBDIR += xurls

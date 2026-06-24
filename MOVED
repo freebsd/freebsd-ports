@@ -5377,3 +5377,4 @@ sysutils/signon-plugin-oauth2@qt6|sysutils/signon-plugin-oauth2|2026-06-22|Unfla
 net-im/libaccounts-qt@qt5||2026-06-22|Unflavorize, remove Qt5 flavor
 net-im/libaccounts-qt@qt6|net-im/libaccounts-qt|2026-06-22|Unflavorize
 science/minc2|science/minc-tools|2026-06-24|Split into science/minc-tools and science/libminc
+www/xist|www/py-ll-xist|2026-06-24|Use correct Python package name
