@@ -1,11 +1,11 @@
 PORTNAME=	piper-phonemize
 DISTVERSION=	2023.11.14
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-4
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fast, local neural text to speech system
+COMMENT=	Piper text-to-speech phonemizer based on espeak-ng
 WWW=		https://rhasspy.github.io/piper-samples/
 
 LICENSE=	MIT
