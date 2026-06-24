@@ -16,8 +16,12 @@ GH_ACCOUNT=	gradle
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+USES=		cpe
+
 PLIST_FILES=	share/bash-completion/completions/gradle \
 		share/zsh/site-functions/_gradle
+
+CPE_VENDOR=	gradle
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions

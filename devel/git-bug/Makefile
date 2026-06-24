@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		cpe go:modules
 
 _BUILD_COMMIT=	a3fa445
 
@@ -32,6 +32,8 @@ COMPLETIONS_DESC=		Build and install bash, fish and zsh shell completions
 COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
+
+CPE_VENDOR=			${PORTNAME}_project
 
 post-install-COMPLETIONS-on:
 .for _shell in bash fish zsh
