@@ -542,7 +542,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
 		libsqlite3-sys-0.37.0 \
-		libz-sys-1.1.23 \
 		link-cplusplus-1.0.12 \
 		link-section-0.17.2 \
 		linked-hash-map-0.5.6 \
@@ -1174,6 +1173,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zerovec-derive-0.11.3 \
 		zip-0.6.6 \
 		zip-2.4.2 \
+		zlib-rs-0.5.5 \
 		zlib-rs-0.6.3 \
 		zmij-1.0.19 \
 		zoneinfo64-0.3.0 \
@@ -1195,5 +1195,5 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nucleo,nucleo-matcher@git+https://github.com/helix-editor/nucleo.git?rev=4253de9faabb4e5c6d81d946a5e35a90f87347ee\#4253de9faabb4e5c6d81d946a5e35a90f87347ee \
 		ratatui@git+https://github.com/nornagon/ratatui?rev=9b2ad1298408c45918ee9f8241a6f95498cdbed2\#9b2ad1298408c45918ee9f8241a6f95498cdbed2 \
 		crossterm@git+https://github.com/nornagon/crossterm?rev=87db8bfa6dc99427fd3b071681b07fc31c6ce995\#87db8bfa6dc99427fd3b071681b07fc31c6ce995 \
-		tungstenite@git+https://github.com/openai-oss-forks/tungstenite-rs?rev=9200079d3b54a1ff51072e24d81fd354f085156f\#9200079d3b54a1ff51072e24d81fd354f085156f \
-		tokio-tungstenite@git+https://github.com/openai-oss-forks/tokio-tungstenite?rev=132f5b39c862e3a970f731d709608b3e6276d5f6\#132f5b39c862e3a970f731d709608b3e6276d5f6
+		tungstenite@git+https://github.com/openai-oss-forks/tungstenite-rs?rev=4fffad30fe373adbdcffab9545e9e9bf4f2fc19f\#4fffad30fe373adbdcffab9545e9e9bf4f2fc19f \
+		tokio-tungstenite@git+https://github.com/openai-oss-forks/tokio-tungstenite?rev=0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186\#0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186

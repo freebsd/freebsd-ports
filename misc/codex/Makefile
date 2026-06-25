@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.141.0
+DISTVERSION=	0.142.1
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -49,8 +49,8 @@ SHEBANG_FILES=	codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py 
 
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
-CARGO_BUILD_ARGS=	--bin ${PORTNAME}
-CARGO_INSTALL_PATH=	codex-rs
+CARGO_BUILD_ARGS=	--bin ${PORTNAME} \
+			--bin ${PORTNAME}-responses-api-proxy
 CARGO_TEST_ARGS=	--all-features --no-fail-fast
 CARGO_ENV=		OPENSSL_NO_VENDOR=1 \
 			V8_FROM_SOURCE=1 \
@@ -68,7 +68,8 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-responses-api-proxy
 PORTDOCS=	README.md config.md
 
 OPTIONS_DEFINE=		COMPLETIONS DOCS
@@ -105,15 +106,18 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/runtimes/mod.rs \
 		${BUILD_WRKSRC}/core/src/tools/runtimes/mod_tests.rs \
+		${BUILD_WRKSRC}/core/src/tools/sandboxing_tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/guardian_review.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
+		${BUILD_WRKSRC}/exec-server/src/process_sandbox_tests.rs \
 		${BUILD_WRKSRC}/exec-server/tests/file_system_unix.rs \
 		${BUILD_WRKSRC}/shell-command/src/parse_command.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_detect.rs \
 		${BUILD_WRKSRC}/shell-escalation/src/unix/escalate_server.rs \
-		${BUILD_WRKSRC}/tui/src/exec_command.rs
+		${BUILD_WRKSRC}/tui/src/exec_command.rs \
+		${BUILD_WRKSRC}/utils/path-uri/src/tests.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/command_exec.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/hooks_list.rs \
@@ -139,6 +143,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
+		${BUILD_WRKSRC}/core/tests/suite/network_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/openai_file_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/subagent_notifications.rs \
 		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
@@ -171,8 +176,10 @@ post-build-COMPLETIONS-on:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${PORTNAME} \
+.for prog in ${PORTNAME} ${PORTNAME}-responses-api-proxy
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${prog} \
 		${STAGEDIR}${PREFIX}/bin
+.endfor
 
 do-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
