@@ -482,6 +482,7 @@
     SUBDIR += mantra
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
+    SUBDIR += markdown-oxide
     SUBDIR += markdownfmt
     SUBDIR += markdownpart
     SUBDIR += markless
