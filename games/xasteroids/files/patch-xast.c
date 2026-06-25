@@ -1,4 +1,4 @@
---- xast.c.orig	2026-06-19 11:03:44 UTC
+--- xast.c.orig	2026-06-25 14:22:08 UTC
 +++ xast.c
 @@ -3,6 +3,14 @@
  	goetz@cs.buffalo.EDU
@@ -9,13 +9,13 @@
 +		Improved cursor-hiding.
 +		Arrow keys.
 +		ANSI-C cleanups.
-+		Use usleep() instead of a delay loop, when available.
++		Use usleep() instead of a delay loop.
 +		Add prototypes.
 +
  	Changes from version 4.3:
  
  		High score script.
-@@ -27,16 +35,30 @@
+@@ -27,16 +35,27 @@
  			Pat Ryan <pat@jaameri.gsfc.nasa.gov>
  			Craig Smith <csmith@cscs.UUCP>
  			Doug Merritt <doug@netcom.com>
@@ -33,11 +33,8 @@
 -#include <X11/cursorfont.h>	/* For erasing cursor - not important	*/
 +#include <X11/keysym.h>
  #include <math.h>
- 
-+#ifdef HAS_USLEEP
 +#include <unistd.h>
-+#endif
-+
+ 
 +#ifndef __STDC__
 +define void
 +#endif
@@ -47,7 +44,7 @@
  /* Indexes for 1st dimension of obj	*/
  /* The order they are in is important	*/
  #define	AST	0
-@@ -68,10 +90,10 @@
+@@ -68,10 +87,10 @@
  #define M_BULLET 0.1
  
  /* Keys		*/
@@ -62,7 +59,7 @@
  
  #define BMAX		300	/* Max particles in a "boom" + 1	*/
  #define letheight	20	/* height of font	*/
-@@ -121,6 +143,7 @@ int	width, height,
+@@ -121,6 +140,7 @@ int	width, height,
  	shapesize[LASTSHAPE+1]	= {44, 21, 10, 2, 1, SHIPSIZE+1, 35, 20},
  	shield_on;
  
@@ -70,7 +67,7 @@
  initasts()
  {	int i;
  	extern Objtype obj[SHIP+1];
-@@ -143,6 +166,7 @@ initasts()
+@@ -143,6 +163,7 @@ initasts()
  		obj[i].mass = M_BULLET;
  }	}
  
@@ -78,7 +75,7 @@
  makeasts()
  {	int i;
  	extern Objtype obj[SHIP+1];
-@@ -163,7 +187,7 @@ makeasts()
+@@ -163,7 +184,7 @@ makeasts()
  		if (a >  63)
  			obj[i].y = (double) a;
  			else obj[i].y = (double) height - a;
@@ -87,7 +84,7 @@
  		obj[i].rot = (double) a;
  		a = rand(rndint);
  		obj[i].rotvel = ((double) a)/2048;
-@@ -177,6 +201,7 @@ makeasts()
+@@ -177,6 +198,7 @@ makeasts()
  	numasts = i;
  }
  
@@ -95,7 +92,7 @@
  makeenemy()	/* Start an enemy ship	*/
  {	extern Objtype obj[SHIP+1];
  	extern int height, level, rndint;
-@@ -199,9 +224,9 @@ int nextast()	/* Find next unused asteroid object	*/
+@@ -199,9 +221,9 @@ int nextast()	/* Find next unused asteroid object	*/
  	return i;
  }
  
@@ -107,7 +104,7 @@
  {	extern Objtype obj[SHIP+1];
  	extern int shapesize[LASTSHAPE+1];
  	extern double drawscale;
-@@ -258,15 +283,17 @@ Loopend:		jx1 = jx2; jy1 = jy2;
+@@ -258,15 +280,17 @@ Loopend:		jx1 = jx2; jy1 = jy2;
  	return 0;
  }
  
@@ -128,7 +125,7 @@
  	vx = cos((double) c); vy = sin((double) c);
  	obj[i].xvel = obj[i].xvel + vx;
  	obj[i].yvel = obj[i].yvel + vy;
-@@ -282,8 +309,8 @@ blastpair(i, j)		/* Generate random velocity vector v.
+@@ -282,8 +306,8 @@ blastpair(i, j)		/* Generate random velocity vector v.
  #define rotinert(i)	(double) (obj[i].mass*shapesize[obj[i].shape]*shapesize[obj[i].shape])
  
  /* cause two objects to collide elastically	*/
@@ -139,7 +136,7 @@
  {
  double	rotrat, temp;
  extern	Objtype obj[SHIP+1];
-@@ -345,10 +372,9 @@ obj[j].rotvel = temp;
+@@ -345,10 +369,9 @@ obj[j].rotvel = temp;
  obj[j].rotvel = temp;
  }
  
@@ -153,7 +150,7 @@
  {	extern int highscore, ships, score;
  	char text[70];
  	sprintf(text, "Ships:%2d   Score:%6d   Shield:        High:%6d",
-@@ -357,10 +383,9 @@ botline(disp, window, gc)	/* Print status line text	*/
+@@ -357,10 +380,9 @@ botline(disp, window, gc)	/* Print status line text	*/
  			text, strlen(text));
  }
  
@@ -167,7 +164,7 @@
  {	extern int height, highscore, oldscore, ships, score;
  	extern Objtype obj[SHIP+1];	/* to kill ship	*/
  	char sstring[30];
-@@ -389,18 +414,17 @@ printss(disp, window, gc)	/* Print ships and score	*/
+@@ -389,18 +411,17 @@ printss(disp, window, gc)	/* Print ships and score	*/
  	XClearArea(disp, window, 340+(energy>>1), height+8, 8, 10, False);
  }
  
@@ -191,7 +188,7 @@
  { extern int rndint;
    int i;
    unsigned int r1, r2;
-@@ -429,6 +453,7 @@ int duration;
+@@ -429,6 +450,7 @@ int duration;
  }
  
  /* move the various booms that are active */
@@ -199,7 +196,7 @@
  movebooms()
  {
    int i;
-@@ -461,10 +486,8 @@ movebooms()
+@@ -461,10 +483,8 @@ movebooms()
  }
  
  /* Draw the various booms */
@@ -212,7 +209,7 @@
  {
    int i;
    Boom b;
-@@ -481,6 +504,7 @@ drawbooms(disp, window, gc)
+@@ -481,6 +501,7 @@ drawbooms(disp, window, gc)
    }
  }
  
@@ -220,7 +217,7 @@
  deletebooms()	/* delete all booms */
  {	Boom b;
  
-@@ -490,11 +514,11 @@ deletebooms()	/* delete all booms */
+@@ -490,11 +511,11 @@ deletebooms()	/* delete all booms */
  		b = b->next;
  }	}
  
@@ -235,7 +232,7 @@
  
  	if (obj[i].shape == ASTSHAPE1)
  	{	na = nextast();		/* Could put 6 lines in a sub */
-@@ -543,8 +567,9 @@ killast(killer, i)
+@@ -543,8 +564,9 @@ killast(killer, i)
  	{	boom(i, 9, 7);
  		obj[i].alive = 0; upscore(killer, 500);}
  }
@@ -247,7 +244,7 @@
  {	extern Objtype obj[SHIP+1];
  	extern int ships;
  	extern double speedscale;
-@@ -585,6 +610,7 @@ moveobjs(crash)
+@@ -585,6 +607,7 @@ moveobjs(crash)
  	    }
  }
  
@@ -255,7 +252,7 @@
  fire()
  {	extern Objtype obj[SHIP+1];
  	extern int width, nextbul;
-@@ -603,6 +629,7 @@ fire()
+@@ -603,6 +626,7 @@ fire()
  	nextbul++; if (nextbul == LASTBUL+1) nextbul = FBUL;
  }
  
@@ -263,7 +260,7 @@
  hyper()
  {	extern Objtype obj[SHIP+1];
  	extern int width, height, rndint;
-@@ -617,13 +644,9 @@ hyper()
+@@ -617,13 +641,9 @@ hyper()
  	obj[SHIP].y = (double) i;
  }
  
@@ -280,7 +277,7 @@
  {	int line;
  	extern PolarPair shapes[LASTSHAPE+1][11];
  	extern int numpairs[LASTSHAPE+1];
-@@ -639,9 +662,8 @@ vdraw(disp, window, gc, shape, x, y, rot)
+@@ -639,9 +659,8 @@ vdraw(disp, window, gc, shape, x, y, rot)
  	XDrawLines (disp, window, gc, figure, numpairs[shape], CoordModePrevious);
  }
  
@@ -292,18 +289,18 @@
  {	Colormap cmap;
  	Cursor cursor;
  	Display *disp;
-@@ -663,8 +685,8 @@ main(argc, argv)
+@@ -663,8 +682,8 @@ main(argc, argv)
  	extern int level, numasts, rndint, ships, score, oldscore;
  	extern Objtype obj[SHIP+1];
  	unsigned char c;	/* for rand	*/
 -	double *temp, dx, dy, dist;
 -	int crashed, flashon, len, pause = 0, delay = 64,
 +	double dx, dy, dist;
-+	int crashed, flashon, pause = 0, delay = 64,
++	int crashed, flashon, pause = 0, delay = 16384,
  		enemycount, counter, counterstart = 1,
  		i,	/* index for drawing objs, counting bullets */
  		r;	/* radius of shield circle	*/
-@@ -704,11 +726,30 @@ main(argc, argv)
+@@ -704,11 +723,30 @@ main(argc, argv)
  		KeyPressMask | KeyReleaseMask | StructureNotifyMask);
  	XMapRaised (disp, window);
  
@@ -335,7 +332,7 @@
  	XDefineCursor(disp, window, cursor);
  
  	XFillRectangle (disp, pixmap, pmgc, 0, 0, width, height);
-@@ -746,7 +787,7 @@ Newship:    botline(disp, window, gc);
+@@ -746,7 +784,7 @@ Newship:    botline(disp, window, gc);
  		{   XNextEvent(disp, &event);
  		    switch (event.type)
  		    {	case MappingNotify:
@@ -344,7 +341,7 @@
  			    break;
  			case ConfigureNotify:
  			    width = event.xconfigure.width;
-@@ -757,28 +798,29 @@ Newship:    botline(disp, window, gc);
+@@ -757,28 +795,29 @@ Newship:    botline(disp, window, gc);
  			    botline(disp, window, gc);
  			    break;
  			case KeyPress:
@@ -384,7 +381,7 @@
  				    if (obj[SHIP].alive)
  				    {	hyper(); flashon = 1;
  /*				    NOT XSetForeground (disp, gc, bg);
-@@ -787,52 +829,55 @@ Newship:    botline(disp, window, gc);
+@@ -787,52 +826,55 @@ Newship:    botline(disp, window, gc);
  					XFillRectangle (disp, pixmap, pmgc, 0, 0, width, height);
  				    }
  				    break;
@@ -460,7 +457,7 @@
  				    shield_on = 0; break;
  			    }
  /*			    break;		*/
-@@ -850,7 +895,7 @@ Newship:    botline(disp, window, gc);
+@@ -850,7 +892,7 @@ Newship:    botline(disp, window, gc);
  			    botline(disp, window, gc);
  			}
  			/* Write copyright notice	*/
@@ -469,15 +466,13 @@
  			{   sprintf(text, "Xasteroids");
  			    XDrawImageString (disp, pixmap, gc,
  				width/2-50, height/2-2*letheight,
-@@ -917,7 +962,11 @@ Newship:    botline(disp, window, gc);
+@@ -917,7 +959,8 @@ Newship:    botline(disp, window, gc);
  			}
  			else	obj[ENEMYBUL].alive = 0;
  		    }
-+#ifdef HAS_USLEEP
+-		    for (i = 0; i < delay; i++);
++
 +		    usleep(delay);
-+#else
- 		    for (i = 0; i < delay; i++);
-+#endif
  		}
  	    }
  	}
