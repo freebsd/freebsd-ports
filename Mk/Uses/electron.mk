@@ -414,11 +414,21 @@ _EXISTS_NPM_PKGFILE=	1
 # automatically detect the version.
 .  if ${_NODEJS_NPM} == yarn2 || ${_NODEJS_NPM} == yarn4 || ${_NODEJS_NPM} == pnpm
 .    if ${_EXISTS_NPM_PKGFILE} == 1 && empty(NPM_VER)
-NPM_VER!=	${GREP} packageManager ${PKGJSONSDIR}/${NPM_PKGFILE} | \
-		${AWK} -F ':' '{print $$NF}' | \
-		${SED} -e 's/[",]//g' | \
-		${CUT} -f 2 -d '@' | \
-		${CUT} -f 1 -d '+'
+NPM_VER!=	${CAT} ${PKGJSONSDIR}/${NPM_PKGFILE} | \
+		${TR} -d '\n\r\t' | ${SED} -e 's/ //g; s/"//g' | \
+		${SED} -E -e ' \
+			/devEngines:\{packageManager:\{/ { \
+				s/.*devEngines:\{packageManager:\{([^}]+)\}\}.*/\1/; \
+				h; \
+				s/.*name:([^,}]+).*/\1/p; \
+				g; \
+				s/.*version:([^+,}]+).*/@\1/p; \
+				d; \
+			}; \
+			/packageManager:/ { \
+				s/.*packageManager:([^+,}]+).*/\1/p; d; \
+			}' | \
+		${CUT} -f 2 -d '@'
 .    endif
 .    if empty(NPM_VER)
 IGNORE=	does not specity version of ${NPM_CMDNAME} used for prefetching node modules
