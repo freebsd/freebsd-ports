@@ -31,6 +31,7 @@ include/yaf/yafcore.h
 include/yaf/yafhooks.h
 include/yaf/yafrag.h
 include/yaf/yaftab.h
+include/yaf/yaftime.h
 lib/libairframe-%%PORTVERSION%%.so.4
 lib/libairframe-%%PORTVERSION%%.so.4.0.0
 lib/libairframe.so
@@ -64,6 +65,12 @@ lib/libyaf.so
 %%APPLABEL%%lib/yaf/ethipplugin.so
 %%APPLABEL%%lib/yaf/ethipplugin.so.1
 %%APPLABEL%%lib/yaf/ethipplugin.so.1.0.1
+%%APPLABEL%%lib/yaf/gh0stplugin.so
+%%APPLABEL%%lib/yaf/gh0stplugin.so.1
+%%APPLABEL%%lib/yaf/gh0stplugin.so.1.0.1
+%%APPLABEL%%lib/yaf/imapplugin.so
+%%APPLABEL%%lib/yaf/imapplugin.so.1
+%%APPLABEL%%lib/yaf/imapplugin.so.1.0.1
 %%APPLABEL%%lib/yaf/ircplugin.so
 %%APPLABEL%%lib/yaf/ircplugin.so.1
 %%APPLABEL%%lib/yaf/ircplugin.so.1.0.1
@@ -73,12 +80,18 @@ lib/libyaf.so
 %%APPLABEL%%lib/yaf/ldpplugin.so
 %%APPLABEL%%lib/yaf/ldpplugin.so.1
 %%APPLABEL%%lib/yaf/ldpplugin.so.1.0.1
+lib/yaf/libmidencryption.so
+lib/yaf/libmidencryption.so.1
+lib/yaf/libmidencryption.so.1.0.1
 %%APPLABEL%%lib/yaf/modbusplugin.so
 %%APPLABEL%%lib/yaf/modbusplugin.so.1
 %%APPLABEL%%lib/yaf/modbusplugin.so.1.0.1
 %%APPLABEL%%lib/yaf/mysqlplugin.so
 %%APPLABEL%%lib/yaf/mysqlplugin.so.1
 %%APPLABEL%%lib/yaf/mysqlplugin.so.1.0.1
+%%APPLABEL%%lib/yaf/netdgmplugin.so
+%%APPLABEL%%lib/yaf/netdgmplugin.so.1
+%%APPLABEL%%lib/yaf/netdgmplugin.so.1.0.1
 %%APPLABEL%%lib/yaf/nntpplugin.so
 %%APPLABEL%%lib/yaf/nntpplugin.so.1
 %%APPLABEL%%lib/yaf/nntpplugin.so.1.0.1
@@ -118,6 +131,9 @@ lib/libyaf.so
 %%APPLABEL%%lib/yaf/socksplugin.so
 %%APPLABEL%%lib/yaf/socksplugin.so.1
 %%APPLABEL%%lib/yaf/socksplugin.so.1.0.1
+%%APPLABEL%%lib/yaf/sshplugin.so
+%%APPLABEL%%lib/yaf/sshplugin.so.1
+%%APPLABEL%%lib/yaf/sshplugin.so.1.0.1
 %%APPLABEL%%lib/yaf/teredoplugin.so
 %%APPLABEL%%lib/yaf/teredoplugin.so.1
 %%APPLABEL%%lib/yaf/teredoplugin.so.1.0.1
@@ -127,17 +143,11 @@ lib/libyaf.so
 %%APPLABEL%%lib/yaf/tlsplugin.so
 %%APPLABEL%%lib/yaf/tlsplugin.so.1
 %%APPLABEL%%lib/yaf/tlsplugin.so.1.0.1
-%%APPLABEL%%lib/yaf/gh0stplugin.so
-%%APPLABEL%%lib/yaf/gh0stplugin.so.1
-%%APPLABEL%%lib/yaf/gh0stplugin.so.1.0.1
-%%APPLABEL%%lib/yaf/netdgmplugin.so
-%%APPLABEL%%lib/yaf/netdgmplugin.so.1
-%%APPLABEL%%lib/yaf/netdgmplugin.so.1.0.1
 @sample %%ETCDIR%%/dhcp_fingerprints.conf.sample
 @sample %%ETCDIR%%/yafApplabelRules.conf.sample
 @sample %%ETCDIR%%/yafDPIRules.conf.sample
 @sample %%ETCDIR%%/yaf.conf.sample
-%%DATADIR%%/yaf.init
+@sample %%DATADIR%%/yaf.init.sample
 libdata/pkgconfig/libairframe.pc
 libdata/pkgconfig/libyaf.pc
 share/man/man1/airdaemon.1.gz
@@ -145,9 +155,8 @@ share/man/man1/applabel.1.gz
 share/man/man1/filedaemon.1.gz
 share/man/man1/getFlowKeyHash.1.gz
 share/man/man1/yaf.1.gz
+share/man/man1/yaf.init.1.gz
 share/man/man1/yafMeta2Pcap.1.gz
 share/man/man1/yafdhcp.1.gz
 share/man/man1/yafdpi.1.gz
 share/man/man1/yafscii.1.gz
-share/man/man1/yaf.init.1.gz
-share/man/man1/yafzcbalance.1.gz
