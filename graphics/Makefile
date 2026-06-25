@@ -19,6 +19,7 @@
     SUBDIR += R-cran-farver
     SUBDIR += R-cran-ggforce
     SUBDIR += R-cran-ggplot2
+    SUBDIR += R-cran-ggpolypath
     SUBDIR += R-cran-ggrepel
     SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-gridExtra
