@@ -13,7 +13,7 @@ WWW=		https://www.joachim-bauch.de/projects/python/pylzma
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le riscv64
 USES=		dos2unix python
 USE_PYTHON=	concurrent distutils autoplist
 
