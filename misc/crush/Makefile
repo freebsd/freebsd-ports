@@ -17,17 +17,17 @@ USES=		go:1.26+,modules
 GO_MODULE=	github.com/charmbracelet/crush
 GO_LDFLAGS=	-w -X github.com/charmbracelet/crush/internal/version.Version=${DISTVERSION}
 
-# Apply the local git-format patch from the port's files directory.
-EXTRA_PATCHES=	${MASTERDIR}/files/disable.patch
 PATCH_STRIP=	-p1
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
-OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
+OPTIONS_DEFINE=		COMPLETIONS DISABLE_COMMAND_BLOCKING DOCS MANPAGES
+OPTIONS_DEFAULT=	COMPLETIONS DISABLE_COMMAND_BLOCKING MANPAGES
 
 COMPLETIONS_DESC=	Build and/or install shell completions
+DISABLE_COMMAND_BLOCKING_DESC=	Apply local disable-command-blocking patch
+DISABLE_COMMAND_BLOCKING_EXTRA_PATCHES=	${MASTERDIR}/files/disable_command_blocking.patch
 
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
