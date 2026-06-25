@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # FIXME: aarch64 uses portable base functions for now.
 # Upstream has optimized support for aarch64, but the code is not portable.
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc powerpc64 powerpc64le riscv64
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
