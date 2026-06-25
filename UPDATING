@@ -15,8 +15,7 @@ you update your ports collection, before attempting any port upgrades.
   add DEFAULT_VERSIONS+= python=3.11 to make.conf
 
   With packages, the following may ease the process:
-  # sh
-  # for i in $(pkg query -g %n 'py311-*'); do pkg set -yn ${i}:py312-${i#py311-}; done
+  # pkg set -p -n py311-:py312-
   # pkg upgrade
 
   If no longer required, Python 3.11 can be removed via
