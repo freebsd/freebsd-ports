@@ -5,7 +5,7 @@ CATEGORIES=	dns
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
 PATCHFILES=	68ac68fbbb17e4fa0c258f272ed10b6b8d81e32e.patch:-p1
 
-MAINTAINER=	felix@userspace.com.au
+MAINTAINER=	ea@uoga.net
 COMMENT=	High-performance, zero maintenance encrypted DNS proxy
 WWW=		https://github.com/jedisct1/encrypted-dns-server
 
