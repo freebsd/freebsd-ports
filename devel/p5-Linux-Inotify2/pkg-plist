@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Linux/Inotify2.pm
+%%SITE_ARCH%%/auto/Linux/Inotify2/Inotify2.so
+%%PERL5_MAN3%%/Linux::Inotify2.3.gz

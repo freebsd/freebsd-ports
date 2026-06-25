@@ -1,0 +1,2 @@
+A perl interface to Inotify syscalls offering
+scalable directory/file change notification
