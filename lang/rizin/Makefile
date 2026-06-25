@@ -1,6 +1,6 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	0.9.0
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -16,24 +16,27 @@ NOT_FOR_ARCHS=	armv6 armv7
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 LIB_DEPENDS=	libcapstone.so:devel/capstone \
+		libblake3.so:devel/libblake3 \
 		libmspack.so:archivers/libmspack \
 		libxxhash.so:devel/xxhash \
 		libpcre2-8.so:devel/pcre2 \
 		libtree-sitter.so:devel/tree-sitter \
 		liblz4.so:archivers/liblz4 \
 		libzip.so:archivers/libzip \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libZydis.so:devel/zydis
 
-USES=		localbase meson pkgconfig python:build
+USES=		cmake:indirect localbase meson pkgconfig python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rizinorg
-GH_TUPLE=	rizinorg:rz-libdemangle:0031d1a:libdemangle/subprojects/libdemangle \
-		rizinorg:rizin-grammar-c:8158457:rizin_grammar_c/subprojects/rizin-grammar-c \
+GH_TUPLE=	rizinorg:rz-libdemangle:e633061e901208a20ed90f8aaf0b64f25caf73eb:libdemangle/subprojects/libdemangle \
+		rizinorg:rizin-grammar-c:6a9d542145c2c783230ee4f9006bb81e3fbea635:rizin_grammar_c/subprojects/rizin-grammar-c \
 		rizinorg:softfloat:537d18e7:rizin_softfloat/subprojects/softfloat \
-		BLAKE3-team:BLAKE3:54930c9:blake3/subprojects/blake3
+		BLAKE2:BLAKE2:ed1974ea83433eba7b2d95c5dcd9ac33cb847913:blake2/subprojects/blake2
 
-MESON_ARGS=	-D use_sys_capstone=enabled \
+MESON_ARGS=	-D use_sys_blake3=enabled \
+		-D use_sys_capstone=enabled \
 		-D use_sys_magic=enabled \
 		-D use_sys_libzip=enabled \
 		-D use_sys_zlib=enabled \
@@ -44,15 +47,17 @@ MESON_ARGS=	-D use_sys_capstone=enabled \
 		-D use_sys_libmspack=enabled \
 		-D use_sys_tree_sitter=enabled \
 		-D enable_rz_test=false \
-		-D use_sys_libzstd=enabled
+		-D use_sys_libzstd=enabled \
+		-D use_sys_zydis=enabled
 
 PLIST_SUB=	SOVERSION=${PORTVERSION}
 
-TESTING_UNSAFE=	requires additional test input files
+OPTIONS_DEFINE=	TEST
+TEST_DESC=	Download binaries needed for testing
+TEST_GH_TUPLE=	rizinorg:rizin-testbins:7f54b4970d413fe163f4f09dcfd9a328376133f0:test_bins/test/bins
 
 post-extract:
-	${CP} -r ${WRKSRC}/subprojects/packagefiles/blake3 ${WRKSRC}/subprojects
+	${CP} -r ${WRKSRC}/subprojects/packagefiles/blake2 ${WRKSRC}/subprojects
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/rizin-grammar-c ${WRKSRC}/subprojects
-	${CP} ${WRKSRC}/librz/debug/p/native/linux/reg/linux-ppc64.h ${WRKSRC}/librz/debug/p/native/reg/kfbsd-ppc64.h
 
 .include <bsd.port.mk>
