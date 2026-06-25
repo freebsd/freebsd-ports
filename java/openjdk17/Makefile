@@ -154,7 +154,7 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib
 ICONV_LIBS=	${ICONV_LIB}
 .endif
 
-post-patch:
+pre-configure:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${CHMOD} 755 ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
