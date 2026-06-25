@@ -1,6 +1,6 @@
 PORTNAME=	crush
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.79.1
+DISTVERSION=	0.76.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,6 +16,10 @@ USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/charmbracelet/crush
 GO_LDFLAGS=	-w -X github.com/charmbracelet/crush/internal/version.Version=${DISTVERSION}
+
+# Apply the local git-format patch from the port's files directory.
+EXTRA_PATCHES=	${MASTERDIR}/files/disable.patch
+PATCH_STRIP=	-p1
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
