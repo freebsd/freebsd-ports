@@ -54,4 +54,10 @@ post-install:
 CONFIGURE_ARGS+=	--disable-year2038
 .endif
 
+# clang crashes (XSCMPUQP requires Power9) building IEEE-128 long double at
+# -O1+ on the powerpc64le POWER8 baseline; build at -O0. CPUTYPE (POWER9+) is fine.
+.if ${ARCH} == powerpc64le && !defined(CPUTYPE) && ${OSVERSION} >= 1600019
+CFLAGS+=	-O0
+.endif
+
 .include <bsd.port.mk>
