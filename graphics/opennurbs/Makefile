@@ -25,12 +25,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "sparc64" && ${ARCH} != "powerpc" && ${ARCH} != powerpc64
-CFLAGS+=	-DON_LITTLE_ENDIAN
-.else
-CFLAGS+=	-DON_BIG_ENDIAN
-.endif
-
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples_linking_pragmas.h \
