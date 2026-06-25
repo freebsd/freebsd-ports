@@ -63,6 +63,12 @@ CONFLICTS+=	bashc
 
 .include <bsd.port.options.mk>
 
+# clang crashes (XSCMPUQP requires Power9) building IEEE-128 long double at
+# -O1+ on the powerpc64le POWER8 baseline; build at -O0. CPUTYPE (POWER9+) is fine.
+.if ${ARCH} == powerpc64le && !defined(CPUTYPE) && ${OSVERSION} >= 1600019
+CFLAGS+=	-O0
+.endif
+
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:tl} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
 LLD_UNSAFE=		yes
