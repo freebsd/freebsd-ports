@@ -601,6 +601,7 @@
     SUBDIR += piper-phonemize
     SUBDIR += pipewire-module-xrdp
     SUBDIR += pipewire-spa-oss
+    SUBDIR += pipewire-spa-oss-ng
     SUBDIR += pithos
     SUBDIR += plasma6-kpipewire
     SUBDIR += plasma6-ocean-sound-theme
