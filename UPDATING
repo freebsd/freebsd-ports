@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260624
+  AFFECTS: Python users
+  AUTHOR: vishwin@FreeBSD.org
+
+  The default version of python has been switched to 3.12.
+
+  For ports users wanting to keep version 3.11 as default,
+  add DEFAULT_VERSIONS+= python=3.11 to make.conf
+
+  With packages, the following may ease the process:
+  # sh
+  # for i in $(pkg query -g %n 'py311-*'); do pkg set -yn ${i}:py312-${i#py311-}; done
+  # pkg upgrade
+
+  If no longer required, Python 3.11 can be removed via
+  "pkg remove python311" and the directory /usr/local/lib/python3.11 can
+  then be deleted afterwards, if not empty.
+
 20260616:
   AFFECTS: Users of security/gnupg, security/gnupg25, security/gnupg1
   AUTHOR: adridg@FreeBSD.org
