@@ -33,7 +33,6 @@ DESKTOP_ENTRIES="TecnoballZ" \
 		false
 
 post-patch:
-	@${REINPLACE_CMD} -e '/CXXFLAGS=[^$$]*$$/ s|^|#|' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|$$(prefix)/games|$$(prefix)/bin|; \
 		/chmod/ d; /chown/ d' ${WRKSRC}/src/Makefile.am
 .for f in tecnoballz.cc tiles_background.cc sprite_ship.cc controller_magnetic_eyes.cc
