@@ -7,6 +7,6 @@ The following changes have been made:
  - Improved cursor-hiding.
  - Arrow keys.
  - ANSI-C cleanups.
- - Use usleep() instead of a delay loop, when available.
+ - Use usleep() instead of a delay loop.
  - Add prototypes.
  - Reformat man page.
