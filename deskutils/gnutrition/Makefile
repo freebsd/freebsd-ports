@@ -10,7 +10,7 @@ WWW=		http://www.gnu.org/software/gnutrition/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-runtime gmake gnome pkgconfig sqlite tar:xz
+USES=		gettext-runtime gmake gnome pkgconfig sqlite
 USE_GNOME=	glib20 gtk30
 
 GNU_CONFIGURE=	yes
