@@ -39,6 +39,7 @@
     SUBDIR += R-cran-scales
     SUBDIR += R-cran-shape
     SUBDIR += R-cran-tweenr
+    SUBDIR += R-cran-venn
     SUBDIR += R-cran-viridis
     SUBDIR += R-cran-viridisLite
     SUBDIR += R-cran-visNetwork
