@@ -1,0 +1,10 @@
+--- Doc/Zsh/builtins.yo.orig	2022-05-08 06:18:22 UTC
++++ Doc/Zsh/builtins.yo
+@@ -1221,6 +1221,8 @@ sitem(tt(vmemorysize))(Maximum amount of virtual memor
+ sitem(tt(swapsize))(Maximum amount of swap used.)
+ sitem(tt(vmemorysize))(Maximum amount of virtual memory.)
++sitem(tt(pipebuf))(Maximum amount of pipe buffer space used.)
++sitem(tt(virtualmachines))(Maximum number of virtual machines.)
+ endsitem()
+ 
+ Which of these resource limits are available depends on the system.
