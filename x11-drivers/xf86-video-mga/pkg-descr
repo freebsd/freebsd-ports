@@ -1,1 +1,2 @@
-This package contains the X.Org xf86-video-mga driver.
+This is the Matrox video driver for the Xorg X server.
+It also supports embedded G200.

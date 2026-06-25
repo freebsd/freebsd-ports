@@ -1,16 +1,15 @@
 PORTNAME=	xf86-video-mga
-PORTVERSION=	2.0.0
-PORTREVISION=	5
+DISTVERSION=	2.1.0
 PORTEPOCH=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org mga display driver
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-mga
 
-USES=		gl xorg-cat:driver
-USE_GL=		gl
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		tar:xz xorg-cat:driver
 
 .include <bsd.port.mk>
