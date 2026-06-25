@@ -1,3 +1,34 @@
+  <vuln vid="ba8d239f-709f-11f1-a30e-28d2443e6cfa">
+    <topic>ffmpeg -- Out-of-bounds write</topic>
+    <affects>
+    <package>
+	<name>ffmpeg</name>
+	<range><lt>8.1.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23159 reports:</p>
+	<blockquote cite="https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23159">
+	  <p>An out-of-bounds write vulnerability in FFmpeg's libavcodec library,
+specifically in the MagicYUV decoder, allows denial-of-service and,
+in some cases, can be exploited for remote code execution. This
+vulnerability is associated with the file libavcodec/magicyuv.C.
+This issue affects FFmpeg before version 8.1.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-8461</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-8461</url>
+      <url>https://github.com/advisories/GHSA-qff7-4q6c-m8h6</url>
+    </references>
+    <dates>
+      <discovery>2026-06-18</discovery>
+      <entry>2026-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee1e7aef-7117-11f1-873f-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
