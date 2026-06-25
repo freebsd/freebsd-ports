@@ -14,10 +14,10 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		bumpalo-3.20.3 \
 		by_address-1.2.1 \
 		castaway-0.2.4 \
-		cc-1.2.64 \
+		cc-1.2.65 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chacha20-0.10.0 \
+		chacha20-0.10.1 \
 		chrono-0.4.45 \
 		clap-4.6.1 \
 		clap-cargo-0.18.3 \
@@ -46,13 +46,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		errno-0.3.14 \
 		fast-srgb8-1.0.0 \
 		find-msvc-tools-0.1.9 \
-		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		futures-core-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
-		getrandom-0.4.2 \
-		hashbrown-0.15.5 \
+		getrandom-0.4.3 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
@@ -65,7 +63,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		icu_properties-2.2.0 \
 		icu_properties_data-2.2.0 \
 		icu_provider-2.2.0 \
-		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
@@ -74,13 +71,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		instability-0.3.12 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.18 \
-		js-sys-0.3.102 \
+		js-sys-0.3.103 \
 		kasuari-0.4.12 \
 		lazy-regex-3.6.0 \
 		lazy-regex-proc_macros-3.6.0 \
 		lazy_static-1.5.0 \
-		leb128fmt-0.1.0 \
 		libc-0.2.186 \
 		libm-0.2.16 \
 		line-clipping-0.3.7 \
@@ -88,7 +85,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		litemap-0.8.2 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.32 \
+		log-0.4.33 \
 		lru-0.18.0 \
 		memchr-2.8.2 \
 		mio-1.2.1 \
@@ -124,17 +121,16 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		portable-atomic-1.13.1 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
-		prettyplease-0.2.37 \
 		proc-macro-crate-3.5.0 \
 		proc-macro2-1.0.106 \
-		quote-1.0.45 \
+		quote-1.0.46 \
 		r-efi-6.0.0 \
 		rand-0.10.1 \
 		rand_core-0.10.1 \
-		ratatui-0.30.1 \
-		ratatui-core-0.1.1 \
-		ratatui-crossterm-0.1.1 \
-		ratatui-widgets-0.3.1 \
+		ratatui-0.30.2 \
+		ratatui-core-0.1.2 \
+		ratatui-crossterm-0.1.2 \
+		ratatui-widgets-0.3.2 \
 		redox_syscall-0.5.18 \
 		regex-1.12.4 \
 		regex-automata-0.4.14 \
@@ -149,7 +145,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
 		shlex-2.0.1 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
@@ -162,11 +157,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
-		syn-2.0.117 \
+		syn-2.0.118 \
 		synstructure-0.13.2 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
-		time-0.3.49 \
+		time-0.3.51 \
 		time-core-0.1.9 \
 		tinystr-0.8.3 \
 		toml_datetime-1.1.1+spec-1.1.0 \
@@ -175,20 +170,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		unicode-ident-1.0.24 \
 		unicode-segmentation-1.13.3 \
 		unicode-truncate-2.0.1 \
-		unicode-width-0.2.0 \
-		unicode-xid-0.2.6 \
+		unicode-width-0.2.2 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.4+wasi-0.2.12 \
-		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.125 \
-		wasm-bindgen-macro-0.2.125 \
-		wasm-bindgen-macro-support-0.2.125 \
-		wasm-bindgen-shared-0.2.125 \
-		wasm-encoder-0.244.0 \
-		wasm-metadata-0.244.0 \
-		wasmparser-0.244.0 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
@@ -202,13 +191,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		windows-sys-0.61.2 \
 		winnow-1.0.3 \
 		winping-0.10.1 \
-		wit-bindgen-0.51.0 \
-		wit-bindgen-0.57.1 \
-		wit-bindgen-core-0.51.0 \
-		wit-bindgen-rust-0.51.0 \
-		wit-bindgen-rust-macro-0.51.0 \
-		wit-component-0.244.0 \
-		wit-parser-0.244.0 \
 		writeable-0.6.3 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
@@ -216,5 +198,4 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		zerofrom-derive-0.1.7 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
-		zerovec-derive-0.11.3 \
-		zmij-1.0.21
+		zerovec-derive-0.11.3
