@@ -1,14 +1,14 @@
-GITLAB_VERSION=		19.1.0
+GITLAB_VERSION=		19.1.1
 GITLAB_PORTREVISION=	0	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
 
 # Git version gitaly should use (from gitlab mirror)
 # Find current tag from Makefile and .gitlab-ci.yaml
 # and from https://gitlab.com/gitlab-org/git/-/tags
-GITLAB_GIT_VERSION=	2.50.0
+GITLAB_GIT_VERSION=	2.54.0
 # return something like x.yy
 GITLAB_GIT_VERSION_SHORT=	${GITLAB_GIT_VERSION:C/^([0-9]*\.[0-9]*)\..*/\1/}
-GITLAB_GIT_MASTER_VERSION=	b15384c06f77bc2d34d0d3623a8a58218313a561
-GITLAB_GIT_PREV_VERSION=	e417bf2996fbd77acabbf354ed9b5adedacf91c9
+GITLAB_GIT_MASTER_VERSION=	25d6fff5946249d2ed0c71ec7605c3e81678f6cc
+GITLAB_GIT_PREV_VERSION=	b15384c06f77bc2d34d0d3623a8a58218313a561
 
 # Overwrite version for gitlab-kas-grpc
 GITLAB_KAS_GRPC_VERSION=	${GITLAB_VERSION}
