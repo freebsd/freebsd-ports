@@ -1,6 +1,5 @@
 PORTNAME=	tobler
-PORTVERSION=	0.13.0
-PORTREVISION=	4
+PORTVERSION=	0.14.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geopandas>=1.0:graphics/py-geopandas@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.14:math/py-statsmodels@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.67:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
@@ -37,6 +36,7 @@ PLUS_DESC=	Extra features
 
 PLUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=0,2:astro/py-astropy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dask-geopandas>=0:devel/py-dask-geopandas@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}h3>=0:graphics/py-h3@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}h3>=0:graphics/py-h3@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pointpats>=0:graphics/py-pointpats@${PY_FLAVOR}
 
 .include <bsd.port.mk>
