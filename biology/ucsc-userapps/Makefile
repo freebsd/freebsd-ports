@@ -21,7 +21,7 @@ LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake iconv localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
+USES=		gmake iconv localbase:ldflags shebangfix perl5 python ssl tar:tgz
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
