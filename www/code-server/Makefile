@@ -1,5 +1,5 @@
 PORTNAME=	code-server
-DISTVERSION=	4.123.0
+DISTVERSION=	4.126.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-CodeServer/releases/download/code-server-${DISTVERSION}/:code_server
 DISTFILES=	vscode-node-modules-${VSCODE_VERSION}${EXTRACT_SUFX}:code_server \
@@ -43,7 +43,7 @@ PORTDOCS=	README.md
 
 NO_CCACHE=	yes
 
-VSCODE_VERSION=		1.122.1
+VSCODE_VERSION=		1.125.0
 
 MAKE_ENV+=	NODE_OPTIONS=--max-old-space-size=6144 \
 		ESBUILD_WORKER_THREADS=1
