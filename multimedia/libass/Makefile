@@ -1,6 +1,5 @@
 PORTNAME=	libass
-DISTVERSION=	0.17.4
-PORTREVISION=	1
+DISTVERSION=	0.17.5
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -21,9 +20,13 @@ CPE_VENDOR=	libass_project
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
+LDFLAGS_i386=	-Wl,-znotext
+
+CONFIGURE_ARGS=	--disable-static
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-LDFLAGS_i386=	-Wl,-znotext
 
 OPTIONS_DEFINE=		UNIBREAK
 OPTIONS_DEFINE_amd64=	ASM
