@@ -1,5 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	2.0.6
+DISTVERSION=	2.0.7
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -98,7 +98,8 @@ LUA_MESON_ON=	-Dlua=lua
 
 OPENSSL_USES=		ssl
 OPENSSL_MESON_ENABLED=	libcrypto tls-libssl
-OPENSSL_MESON_ON=	-Dlibcrypto-path=${OPENSSLBASE}
+OPENSSL_MESON_ON=	-Dlibcrypto-path=${OPENSSLBASE} \
+			-Dtls-libssl-engines=true
 
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_MESON_ENABLED=	snmp
