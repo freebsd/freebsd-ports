@@ -29,10 +29,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6:devel/py-colorama@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}questionary>=1.8.1:devel/py-questionary@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	copier-org
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	copier-org
 
 .include <bsd.port.pre.mk>
 
