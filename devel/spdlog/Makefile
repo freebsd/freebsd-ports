@@ -16,8 +16,6 @@ TEST_DEPENDS=	catch2>=0:devel/catch2 \
 
 USES=		cmake:testing compiler:c++14-lang cpe pathfix
 
-CPE_VENDOR=	gabime
-
 CMAKE_OFF=	SPDLOG_BUILD_ALL \
 		SPDLOG_BUILD_BENCH \
 		SPDLOG_BUILD_EXAMPLE_HO \
@@ -55,6 +53,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gabime
 
 EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/include/spdlog/fmt/bundled
+
+CPE_VENDOR=	gabime
 
 post-stage:
 	${ECHO_CMD} '#define SPDLOG_FMT_EXTERNAL' >> ${STAGEDIR}${PREFIX}/include/spdlog/tweakme.h
