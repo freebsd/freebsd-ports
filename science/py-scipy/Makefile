@@ -41,7 +41,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVO
 USES=		compiler:c++17-lang cpe fortran pkgconfig python:3.11+ shebangfix
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
-PEP517_BUILD_CONFIG_SETTING=	-Csetup-args=-Duse-system-libraries=all
+PEP517_BUILD_CONFIG_SETTING=	-Csetup-args=-Duse-system-libraries=all -Cbuild-dir=_build
 
 TEST_WRKSRC=	${WRKDIR}
 TEST_ARGS=	--pyargs scipy
