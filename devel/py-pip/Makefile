@@ -50,7 +50,8 @@ GH_ACCOUNT=	pypa
 
 SHEBANG_FILES=	src/pip/__init__.py
 
-OPTIONS_DEFINE=	DOCS
+# DOCS is broken with sphinx 9.0.4.
+# OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}myst-parser>=0:textproc/py-myst-parser@${PY_FLAVOR} \
