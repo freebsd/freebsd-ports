@@ -14,8 +14,8 @@ RUN_DEPENDS=	rubygem-ms_rest_azure>=0.12.0<0.13:devel/rubygem-ms_rest_azure
 
 USES=		cpe gem
 
-CPE_VENDOR=	microsoft
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	microsoft
 
 .include <bsd.port.mk>
