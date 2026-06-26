@@ -1,5 +1,5 @@
 PORTNAME=	proxy2ch
-DISTVERSION=	20260418
+DISTVERSION=	20260625
 CATEGORIES=	japanese www
 MASTER_SITES=	https://codeberg.org/NanashiNoGombe/${PORTNAME}/archive/v${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
