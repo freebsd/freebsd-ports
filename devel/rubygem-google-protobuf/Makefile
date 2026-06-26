@@ -16,8 +16,8 @@ RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
 
 USES=		cpe gem shebangfix
 
-CPE_PRODUCT=	protobuf
 CPE_VENDOR=	google
+CPE_PRODUCT=	protobuf
 
 SHEBANG_GLOB=	*.rb
 
