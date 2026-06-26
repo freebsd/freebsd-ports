@@ -168,6 +168,7 @@ post-install:
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
+	@${RMDIR} ${STAGEDIR}${DOCSDIR}/_sources
 .endif
 
 do-test:
