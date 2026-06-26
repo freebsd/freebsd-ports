@@ -46,11 +46,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.2.0:devel/py-coverage@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}responses>=0.25.8:devel/py-responses@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	python-poetry
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 BINARY_ALIAS=	git=false
 NO_ARCH=	yes
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
+
+CPE_VENDOR=	python-poetry
 
 .include <bsd.port.mk>
