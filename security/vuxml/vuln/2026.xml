@@ -1,3 +1,56 @@
+  <vuln vid="ee1e7aef-7117-11f1-873f-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.1.0</ge><lt>19.1.1</lt></range>
+	<range><ge>19.0.0</ge><lt>19.0.3</lt></range>
+	<range><ge>8.3.0</ge><lt>18.11.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-1-released/">
+	  <p>Cross-site Scripting issue in Analytics Dashboard impacts GitLab EE</p>
+	  <p>Cross-site Scripting issue in Web IDE workbench asset handler impacts GitLab CE/EE</p>
+	  <p>Information Disclosure issue in Duo Workflows impacts GitLab EE</p>
+	  <p>Authorization Bypass issue in Virtual Registry Cleanup Policy API impacts GitLab EE</p>
+	  <p>Improper Authorization issue in Rapid Diffs impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in DAST scanner and site profile management impacts GitLab EE</p>
+	  <p>Insufficient Filtering issue in CI/CD API impacts GitLab CE/EE</p>
+	  <p>Improper Input Validation issue in Snippets impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Maven Package Registry impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in group packages API impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in Protected Environments API impacts GitLab EE</p>
+	  <p>Missing Authorization issue in Security Dashboard impacts GitLab EE</p>
+	  <p>Server-Side Request Forgery issue in Repository Mirroring impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-10086</cvename>
+      <cvename>CVE-2026-10712</cvename>
+      <cvename>CVE-2026-12053</cvename>
+      <cvename>CVE-2026-5309</cvename>
+      <cvename>CVE-2026-2238</cvename>
+      <cvename>CVE-2026-11379</cvename>
+      <cvename>CVE-2026-8330</cvename>
+      <cvename>CVE-2026-1606</cvename>
+      <cvename>CVE-2026-5952</cvename>
+      <cvename>CVE-2026-5796</cvename>
+      <cvename>CVE-2026-0934</cvename>
+      <cvename>CVE-2026-3176</cvename>
+      <cvename>CVE-2026-12635</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-06-24</discovery>
+      <entry>2026-06-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a472f75-6fdc-11f1-bc26-8447094a420f">
     <topic>go-git -- DoS vulnerability</topic>
     <affects>
