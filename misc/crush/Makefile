@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	COMPLETIONS DISABLE_COMMAND_BLOCKING MANPAGES
 
 COMPLETIONS_DESC=	Build and/or install shell completions
 DISABLE_COMMAND_BLOCKING_DESC=	Apply local disable-command-blocking patch
-DISABLE_COMMAND_BLOCKING_EXTRA_PATCHES=	${MASTERDIR}/files/disable_command_blocking.patch
+DISABLE_COMMAND_BLOCKING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-disable_command_blocking
 
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
