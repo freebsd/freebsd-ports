@@ -1,6 +1,5 @@
 PORTNAME=	imagecodecs
-PORTVERSION=	2025.11.11
-PORTREVISION=	4
+PORTVERSION=	2026.5.10
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,9 +42,9 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libzfp.so:devel/zfp \
 		libzopfli.so:archivers/zopfli \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.1,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		jpeg localbase python:3.11+
+USES=		jpeg localbase python:3.12+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jxrlib \
