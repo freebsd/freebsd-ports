@@ -19,7 +19,6 @@ RUN_DEPENDS=	pdftoppm:graphics/poppler-utils \
 		${PYTHON_PKGNAMEPREFIX}bleach>0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cached-path>0:devel/py-cached-path@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ftfy>0:textproc/py-ftfy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>0:www/py-httpx@${PY_FLAVOR} \
@@ -41,7 +40,7 @@ RUN_DEPENDS+=	${RUN_DEPENDS_gpu}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 concurrent autoplist
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
