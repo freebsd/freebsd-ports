@@ -1,5 +1,6 @@
 PORTNAME=	xsdata
 PORTVERSION=	26.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +28,8 @@ SOAP_DESC=	Simple Object Access Protocol (SOAP) support
 
 CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.0:devel/py-click@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR} \
-			ruff>=0.9.8:devel/ruff
+			${PYTHON_PKGNAMEPREFIX}ruff>=0.9.8:devel/py-ruff@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=5.0.0:devel/py-lxml@${PY_FLAVOR}
 SOAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.28.0:www/py-requests@${PY_FLAVOR}
 
