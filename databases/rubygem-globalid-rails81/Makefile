@@ -15,7 +15,8 @@ RUN_DEPENDS=	rubygem-activesupport81>=6.1:devel/rubygem-activesupport81
 
 USES=		cpe gem
 
-CPE_VENDOR=	rubyonrails
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 .include <bsd.port.mk>
