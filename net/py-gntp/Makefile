@@ -1,6 +1,6 @@
 PORTNAME=	gntp
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,12 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+=build_sphinx
+DOCS_MAKE_ENV=		PYTHONPATH=${WRKSRC}
+
+post-build-DOCS-on:
+	cd ${WRKSRC} && ${SETENVI} ${MAKE_ENV} \
+		${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \
+		-b html -d build/doctrees docs build/sphinx/html
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
