@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	aws-lc-fips-sys (FIPS static build via s2n-tls) supports 
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${PY_FLAVOR}
 
-USES=		cargo gmake go:no_targets llvm python:3.8+,run shebangfix
+USES=		cargo gmake go:no_targets llvm python:run shebangfix
 USE_PYTHON=	noflavors
 USE_RC_SUBR=	amazon-efs-mount-watchdog
 
