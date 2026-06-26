@@ -14,10 +14,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
