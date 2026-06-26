@@ -1,4 +1,4 @@
-TIMESTAMP = 1781618458
+TIMESTAMP = 1782502280
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -753,5 +753,5 @@ SHA256 (rust/crates/zvariant_derive-5.12.0.crate) = 90bc6cde9c01c511074be97f7ccb
 SIZE (rust/crates/zvariant_derive-5.12.0.crate) = 17732
 SHA256 (rust/crates/zvariant_utils-3.4.0.crate) = 1e8535915cfa75547e559d8c68e8139909a4aeee076831e4ef7fc59d8172c4d6
 SIZE (rust/crates/zvariant_utils-3.4.0.crate) = 15843
-SHA256 (sectore-timr-tui-v1.10.0_GH0.tar.gz) = 3c71516ad1b0db04c7e1c3259c8f2b5051544099f52e011d1e3e4c12ed3c6ce4
-SIZE (sectore-timr-tui-v1.10.0_GH0.tar.gz) = 989744
+SHA256 (sectore-timr-tui-v1.11.0_GH0.tar.gz) = e22bf84587cbc09bb04579dc7323954538c5da61ffa4bb21b06dce30feeab42b
+SIZE (sectore-timr-tui-v1.11.0_GH0.tar.gz) = 1006130
