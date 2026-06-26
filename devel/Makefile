@@ -5707,6 +5707,7 @@
     SUBDIR += py-ptvsd
     SUBDIR += py-pudb
     SUBDIR += py-pure-eval
+    SUBDIR += py-pure-sasl
     SUBDIR += py-purl
     SUBDIR += py-py
     SUBDIR += py-py-deviceid
