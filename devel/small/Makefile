@@ -13,4 +13,6 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	alandefreitas
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
