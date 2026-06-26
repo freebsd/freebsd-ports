@@ -16,14 +16,14 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		cpe libtool localbase
 
-CPE_VENDOR=	osgeo
-
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	p5-DBD-XBase # bin/dbfdump
+
+CPE_VENDOR=	osgeo
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/shptest ${STAGEDIR}${PREFIX}/bin/
