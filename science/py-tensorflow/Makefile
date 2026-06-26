@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		bash:shells/bash \
 		bazel:devel/bazel7 \
-		cython:lang/cython \
 		git:devel/git \
 		patchelf:sysutils/patchelf \
 		pybind11>=2.6.2:devel/pybind11 \
@@ -64,7 +63,7 @@ JAVA_VENDOR=	openjdk
 USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 USE_PERL5=	build
-USE_PYTHON=	distutils
+USE_PYTHON=	cython distutils
 
 SHEBANG_GLOB=	*.py
 
