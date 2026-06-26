@@ -1,5 +1,5 @@
 PORTNAME=	meka
-DISTVERSION=	0.28.0
+DISTVERSION=	0.29.1
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,9 +25,9 @@ post-extract:
 MAKE_ENV+=	SWAGGER_UI_DOWNLOAD_URL=file:${WRKDIR}/v5.17.14.zip
 
 CARGO_CRATES=	adler2-2.0.1 \
-		agent-client-protocol-0.12.1 \
-		agent-client-protocol-derive-0.11.1 \
-		agent-client-protocol-schema-0.13.2 \
+		agent-client-protocol-0.15.1 \
+		agent-client-protocol-derive-0.15.1 \
+		agent-client-protocol-schema-0.14.0 \
 		aho-corasick-1.1.4 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
@@ -236,7 +236,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.97 \
-		jsonrpcmsg-0.1.2 \
 		jsonwebtoken-10.3.0 \
 		lazy-regex-3.6.0 \
 		lazy-regex-proc_macros-3.6.0 \
@@ -317,7 +316,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quick-error-2.0.1 \
 		quick-xml-0.38.4 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.14 \
+		quinn-proto-0.11.15 \
 		quinn-udp-0.5.14 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
