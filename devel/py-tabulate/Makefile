@@ -16,16 +16,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2.0:devel/py-setuptools@${P
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		WIDECHARS
-OPTIONS_DEFAULT=	WIDECHARS
-WIDECHARS_DESC=		Wide characters support
+OPTIONS_DEFINE=	WIDECHARS
+OPTIONS_DEFAULT=WIDECHARS
+WIDECHARS_DESC=	Wide characters support
 
 WIDECHARS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}
-
-# tests as of 0.10.0: 318 passed, 1 skipped
 
 .include <bsd.port.mk>
