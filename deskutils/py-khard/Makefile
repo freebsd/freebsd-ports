@@ -8,6 +8,8 @@ MAINTAINER=	herbert@gojira.at
 COMMENT=	Console carddav client
 WWW=		https://github.com/lucc/khard/
 
+BROKEN=		does not build with sphinx-9.0.4
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
