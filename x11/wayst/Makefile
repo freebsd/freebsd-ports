@@ -1,16 +1,16 @@
 PORTNAME=	wayst
-DISTVERSION=	g20250601
+DISTVERSION=	g20260608
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	seafork@disroot.org
 COMMENT=	Simple terminal emulator for Wayland and X11
 WWW=		https://github.com/91861/wayst
 
-# https://github.com/91861/wayst/issues/120
-BROKEN_armv7=	src/vt.h:278:1: error: requested alignment is less than minimum alignment of 8 for type 'VtCommand'
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+# https://github.com/91861/wayst/issues/120
+BROKEN_armv7=	src/vt.h:278:1: error: requested alignment is less than minimum alignment of 8 for type 'VtCommand'
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -20,11 +20,13 @@ USES=		gl gmake pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	91861
-GH_TAGNAME=	f5a6c22
+GH_TAGNAME=	51a1c97
 
 USE_GL=		egl gl
 
-PLIST_FILES=	bin/wayst
+PLIST_FILES=	bin/wayst \
+		"@sample ${ETCDIR}/config.sample" \
+		${DESKTOPDIR}/${PORTNAME}.desktop
 
 OPTIONS_DEFAULT=	WAYLAND X11
 OPTIONS_MULTI=		BACKEND
@@ -43,5 +45,10 @@ X11_MAKE_ARGS=	window_protocol+="x11"
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wayst
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.example \
+		${STAGEDIR}${ETCDIR}/config.sample
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
