@@ -1,5 +1,6 @@
 PORTNAME=	myst-parser
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.20,1<0.23,1:textproc/py-docutils
 		${PYTHON_PKGNAMEPREFIX}markdown-it-py>=4.2<5:textproc/py-markdown-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mdit-py-plugins>=0.6.1<1:textproc/py-mdit-py-plugins@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=5,1<10,1:textproc/py-sphinx@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sphinx>=8,1<10,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
