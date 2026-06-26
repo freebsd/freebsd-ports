@@ -15,8 +15,9 @@ RUN_DEPENDS=	rubygem-activesupport50>=5.0:devel/rubygem-activesupport50
 
 USES=		cpe gem
 
-CPE_VENDOR=	rubyonrails
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 PORTSCOUT=	limit:^1\.1\.
 
