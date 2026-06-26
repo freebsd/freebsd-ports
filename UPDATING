@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260626:
+  AFFECTS: net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. With Release Netbox 4.6, Python 3.12 or newer is now required.
+
+     This was actually already the case with previous NetBox 4.5 release,
+     but it could be worked around using smaller patches to ensure
+     compatibility with older Python releases.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20260624
   AFFECTS: Python users
   AUTHOR: vishwin@FreeBSD.org
