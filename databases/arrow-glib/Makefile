@@ -17,7 +17,6 @@ BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow
 LIB_DEPENDS=	libarrow.so:databases/arrow
 
 USES=		compiler:c++17-lang cpe gnome meson pkgconfig python:build
-CPE_VENDOR=	apache
 USE_GNOME=	introspection
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -32,5 +31,7 @@ WRKSRC_SUBDIR=	c_glib
 
 PLIST_SUB=	SHLIB_MAJOR=${PORTVERSION:R:R}0${PORTVERSION:R:E} \
 		SHLIB_MINOR=${PORTVERSION:E}
+
+CPE_VENDOR=	apache
 
 .include <bsd.port.mk>
