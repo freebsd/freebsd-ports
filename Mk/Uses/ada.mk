@@ -13,7 +13,7 @@
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes
 
-_ADA_SUPPORTED=	6 12 13
+_ADA_SUPPORTED=	6 12 13 14 15
 
 _ada_version=	#
 .  for _ver in ${_ADA_SUPPORTED:O:u}

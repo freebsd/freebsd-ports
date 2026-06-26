@@ -1,0 +1,21 @@
+GNAT is a free, high-quality, complete compiler for Ada, integrated into the
+GCC compiler system; the front-end and run-time are written in Ada. GNAT
+supports Ada standards from 1995 to 2012, with on-going development into later
+standards.
+
+Ada was designed for embedded and real-time systems, it features include:
+ * Strong static typing
+ * Modular programming (via the package)
+ * Encapsulation
+ * Readability
+ * Optional run-time checking
+ * Concurrency (via tasks and protected objects), and message passing, as
+   constructs in the language itself
+ * Generics
+
+Ada is designed for "Programming in the large", it suits rapid development, and
+directly supports structured, object-oriented, generic, distributed and
+concurrent programming paradigms. Ada is considered a Design Programming
+Language, as a result of the expressive abstractions and features that informed
+it's design. It's expressiveness allows users to clearly represent design
+solutions modeled on their problem domain.
