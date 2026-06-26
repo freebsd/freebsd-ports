@@ -1519,7 +1519,6 @@
     SUBDIR += sdl3_net
     SUBDIR += sdl_net
     SUBDIR += seaweedfs
-    SUBDIR += seda
     SUBDIR += self-service-password
     SUBDIR += sendemail
     SUBDIR += sendme
