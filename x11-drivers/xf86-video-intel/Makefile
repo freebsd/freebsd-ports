@@ -22,7 +22,6 @@ CPE_VENDOR=	x
 USE_GITLAB=	yes
 GL_TAGNAME=	b74b67f0f321875492968f7097b9d6e82a66d7df
 USE_XORG=	pciaccess pixman
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no # XXX ports/242236
 CONFIGURE_ARGS=	--with-builderstring="${DISTVERSIONFULL}"
 TEST_TARGET=	check
@@ -30,13 +29,17 @@ TEST_TARGET=	check
 # XXX bug 214593: SNA crashes on pre-SandyBridge hardware
 CONFIGURE_ARGS+=--with-default-accel=uxa
 
-OPTIONS_DEFINE=	UDEV XVMC
+OPTIONS_DEFINE=	UDEV TOOLS XVMC
 OPTIONS_DEFAULT=UDEV XVMC
 OPTIONS_SUB=	yes
 
 UDEV_DESC=		udev-based monitor hotplug detection
 UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
 UDEV_CONFIGURE_ENABLE=	udev
+
+TOOLS_DESC=		Install the intel-virtual-output tool
+TOOLS_USE=		XORG=xrandr,xdamage,xfixes,xcursor,xtst,xrender,xscrnsaver,xext,x11,pixman
+TOOLS_CONFIGURE_ENABLE=	tools
 
 XVMC_LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 XVMC_USE=		XORG=x11,xcb,xvmc
