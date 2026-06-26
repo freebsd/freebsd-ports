@@ -53,6 +53,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
+	@${RMDIR} ${STAGEDIR}${DOCSDIR}/_sources
 
 post-install-DOCS-off:
 	# required because fish always installs documentation
