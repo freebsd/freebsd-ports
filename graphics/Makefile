@@ -933,6 +933,7 @@
     SUBDIR += py-descartes
     SUBDIR += py-diplib
     SUBDIR += py-dj52-sorl-thumbnail
+    SUBDIR += py-dj60-sorl-thumbnail
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-djvulibre
     SUBDIR += py-easyocr

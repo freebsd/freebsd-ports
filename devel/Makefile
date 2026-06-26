@@ -4908,6 +4908,8 @@
     SUBDIR += py-dj52-django-rq
     SUBDIR += py-dj52-graphene-django
     SUBDIR += py-dj52-strawberry-graphql
+    SUBDIR += py-dj60-django-rq
+    SUBDIR += py-dj60-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dlinfo
     SUBDIR += py-dm-tree
