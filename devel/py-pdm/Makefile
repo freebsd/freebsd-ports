@@ -39,10 +39,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20:devel/py-virtualenv@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	frostming
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	frostming
 
 OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING
 OPTIONS_DEFAULT=KEYRING
