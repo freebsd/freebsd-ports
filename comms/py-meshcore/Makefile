@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycayennelpp>=0:comms/py-cayennelpp@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial-asyncio-fast>=0:comms/py-pyserial-asyncio-fast@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
