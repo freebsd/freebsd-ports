@@ -1,22 +1,27 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	2.31.0
-PORTREVISION=	22
+DISTVERSION=	3.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command line utility to work with Sentry
-WWW=		https://docs.sentry.io/cli/
+WWW=		https://docs.sentry.io/cli/ \
+		https://github.com/getsentry/sentry-cli
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	FSL-1.1-MIT
+LICENSE_NAME=	Functional Source License, Version 1.1, MIT Future License
 LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libzstd.so:archivers/zstd
 
-USES=		cargo ssl:build
+USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry
+
+CARGO_ENV=	LIBGIT2_NO_VENDOR=1 \
+		OPENSSL_NO_VENDOR=1
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
