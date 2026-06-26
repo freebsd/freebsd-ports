@@ -1,7 +1,6 @@
 PORTNAME=	abaddon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
-PORTREVISION=	5
+DISTVERSION=	0.2.4
 CATEGORIES=	net-im
 
 MAINTAINER=	seafork@disroot.org
@@ -29,15 +28,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	uowuo
 GH_TUPLE=	machinezone:IXWebSocket:bc765e7:ixwebsocket/subprojects/ixwebsocket \
 		hrantzsch:keychain:8846e78:keychain/subprojects/keychain \
-		mackron:miniaudio:350784a:miniaudio/subprojects/miniaudio \
+		discord:libdave:52cd56d:libdave/subprojects/libdave \
+		mackron:miniaudio:9634bed:miniaudio/subprojects/miniaudio \
+		cisco:mlspp:1cc50a1:mlspp/subprojects/mlspp \
 		nayuki:QR-Code-generator:22fac31:qrcodegenerator/subprojects/qrcodegen
-USE_GNOME=	gtkmm30
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.svg \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
+USE_GNOME=	gdkpixbufextra gtkmm30
 
 .include <bsd.port.mk>
