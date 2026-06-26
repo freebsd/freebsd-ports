@@ -18,8 +18,9 @@ RUN_DEPENDS=	rubygem-activemodel81>=${PORTVERSION}<${PORTVERSION}_99:databases/r
 
 USES=		cpe gem
 
-CPE_VENDOR=	activerecord_project
 NO_ARCH=	yes
+
+CPE_VENDOR=	activerecord_project
 
 PORTSCOUT=	limit:^8\.1\.
 
