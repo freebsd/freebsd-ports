@@ -21,10 +21,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=2.1.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-wsgi-adapter>=0.4.1:www/py-requests-wsgi-adapter@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	frostming
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	frostming
 
 .include <bsd.port.pre.mk>
 
