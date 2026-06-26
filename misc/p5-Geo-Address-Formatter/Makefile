@@ -1,10 +1,9 @@
 PORTNAME=	Geo-Address-Formatter
-PORTVERSION=	1.999.2
+PORTVERSION=	1.9992
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EDF
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Geo-Address-Formatter-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Take structured address data and format it according to the various global/country rules
