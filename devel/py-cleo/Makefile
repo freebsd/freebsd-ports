@@ -16,9 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crashtest>=0.4.1<0.5:devel/py-crashtest@${PY
 		${PYTHON_PKGNAMEPREFIX}rapidfuzz>=3.0.0<4:devel/py-rapidfuzz@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	python-poetry
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	python-poetry
 
 .include <bsd.port.mk>
