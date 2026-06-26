@@ -42,6 +42,14 @@ CMAKE_ARGS+=	-DREGOTH_BUILD_WITH_SYSTEM_OPENAL:BOOL=YES
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 LDFLAGS_i386=	-Wl,-znotext
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+CMAKE_ARGS+=	-DBUILD_SQUISH_WITH_SSE2:BOOL=YES
+.else
+CMAKE_ARGS+=	-DBUILD_SQUISH_WITH_SSE2:BOOL=NO
+.endif
+
 post-extract:
 	${MV} ${WRKSRC_bgfx}/* ${WRKSRC}/lib/bgfx-cmake/bgfx
 	${MV} ${WRKSRC_bimg}/* ${WRKSRC}/lib/bgfx-cmake/bimg
@@ -62,4 +70,4 @@ do-install:
 	${CAT} ${FILESDIR}/launcher.sh | ${SED} -e "s|%%DATADIR%%|${DATADIR}|" > \
 		${STAGEDIR}${PREFIX}/bin/REGoth
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
