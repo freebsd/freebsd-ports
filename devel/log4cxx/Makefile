@@ -19,8 +19,6 @@ TEST_DEPENDS=	zip:archivers/zip
 
 USES=		cmake:testing compiler:c++17-lang cpe
 
-CPE_VENDOR=	apache
-
 CMAKE_OFF=	APACHE_MAINTAINER \
 		APR_STATIC \
 		APU_STATIC \
@@ -35,6 +33,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		LOG4CXX_INSTALL_PDB \
 		LOG4CXX_WCHAR_T
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	BOOST
 
