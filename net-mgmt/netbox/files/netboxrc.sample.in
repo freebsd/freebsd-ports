@@ -96,7 +96,7 @@ netbox_upgrade()
 		cd ${netbox_path}
 		%%PYTHON_CMD%% manage.py migrate
 		%%PYTHON_CMD%% manage.py trace_paths --no-input
-		%%LOCALBASE%%/bin/mkdocs build
+		%%LOCALBASE%%/bin/zensical build
 		%%PYTHON_CMD%% manage.py collectstatic --no-input
 		%%PYTHON_CMD%% manage.py remove_stale_contenttypes --no-input
 		%%PYTHON_CMD%% manage.py reindex --lazy
