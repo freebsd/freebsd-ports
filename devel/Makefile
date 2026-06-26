@@ -3701,6 +3701,7 @@
     SUBDIR += p5-Test-Deep-UnorderedPairs
     SUBDIR += p5-Test-Dependencies
     SUBDIR += p5-Test-DependentModules
+    SUBDIR += p5-Test-DescribeMe
     SUBDIR += p5-Test-DiagINC
     SUBDIR += p5-Test-Differences
     SUBDIR += p5-Test-Distribution

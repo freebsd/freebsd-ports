@@ -1,0 +1,3 @@
+Sometimes you want to run (or not run) tests under certain conditions. This
+module provides a way to identify what kind of test a test is and will skip the
+test if the matching conditions aren't met.
