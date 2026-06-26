@@ -10,6 +10,9 @@ WWW=		https://software.intel.com/en-us/imb-user-guide
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/license.txt
 
+NOT_FOR_ARCHS=	armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	64-bit size_t assumed in various places
+
 FLAVORS=		mpich openmpi
 FLAVOR?=		${FLAVORS:[1]}
 openmpi_PKGNAMESUFFIX=	-openmpi
