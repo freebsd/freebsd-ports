@@ -1,0 +1,5 @@
+This is a package to define click command line options from a python dataclass.
+
+You can define a python dataclass from dataclasses with fields that have proper
+types when assigned by click parsing library. Then each field is initialized
+with a option, argument, command or group from clickdc library.

@@ -1,0 +1,5 @@
+TIMESTAMP = 1780751892
+SHA256 (clickdc-0.1.1.tar.gz) = 077f04d7ad00509b43aa8e37a9c7df307c00a73f7fef265235ef98ca54235b9b
+SIZE (clickdc-0.1.1.tar.gz) = 10128
+SHA256 (906faf8dfc48ff4bde9b3e5eec19620fc5100927.patch) = 947eb56e7a341e3e3937955ce31fa382649bceadfb2ae88e95b83345a3a4badc
+SIZE (906faf8dfc48ff4bde9b3e5eec19620fc5100927.patch) = 1083
