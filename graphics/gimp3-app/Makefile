@@ -57,7 +57,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		mypaint-brushes>0:graphics/mypaint-brushes
 
 USES=		cpe desktop-file-utils gettext gnome jpeg libarchive \
-		localbase:ldflags meson ninja perl5 pkgconfig python:3.7+ \
+		localbase:ldflags meson ninja perl5 pkgconfig python \
 		shebangfix tar:xz xorg
 USE_CXXSTD=	gnu++14
 USE_GNOME=	gtk30 introspection cairo gdkpixbuf librsvg2 libxslt
