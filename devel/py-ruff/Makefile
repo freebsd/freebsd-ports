@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.15.19
+DISTVERSION=	0.15.20
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -116,9 +116,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		csv-1.4.0 \
 		csv-core-0.1.12 \
 		ctrlc-3.5.2 \
-		darling-0.23.0 \
-		darling_core-0.23.0 \
-		darling_macro-0.23.0 \
 		dashmap-6.2.1 \
 		datatest-stable-0.3.3 \
 		derive-where-1.6.0 \
@@ -156,10 +153,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		futures-core-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
-		gen-lsp-types-0.8.0 \
+		gen-lsp-types-0.9.0 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.10.0 \
-		get-size2-0.10.0 \
+		get-size-derive2-0.10.1 \
+		get-size2-0.10.1 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
@@ -170,9 +167,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		half-2.6.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
-		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
-		hashlink-0.11.0 \
+		hashlink-0.12.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		html-escape-0.2.13 \
@@ -186,7 +182,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_properties_data-2.2.0 \
 		icu_provider-2.2.0 \
 		id-arena-2.3.0 \
-		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		ignore-0.4.26 \
@@ -197,8 +192,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
-		insta-1.47.2 \
-		insta-cmd-0.6.0 \
+		insta-1.48.0 \
+		insta-cmd-0.7.0 \
 		interpolator-0.5.0 \
 		intrusive-collections-0.10.1 \
 		inventory-0.3.24 \
@@ -208,6 +203,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.15 \
 		jiff-0.2.28 \
 		jiff-static-0.2.28 \
@@ -239,7 +235,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		markdown-1.0.0 \
 		matchers-0.2.0 \
 		matchit-0.9.2 \
-		memchr-2.8.1 \
+		memchr-2.8.2 \
 		memoffset-0.9.1 \
 		mimalloc-0.1.52 \
 		minicov-0.3.8 \
@@ -336,9 +332,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
-		salsa-0.27.0 \
-		salsa-macro-rules-0.27.0 \
-		salsa-macros-0.27.0 \
+		salsa-0.27.2 \
+		salsa-macro-rules-0.27.2 \
+		salsa-macros-0.27.2 \
 		same-file-1.0.6 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
@@ -353,8 +349,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_json-1.0.150 \
 		serde_spanned-1.1.1 \
 		serde_test-1.0.177 \
-		serde_with-3.21.0 \
-		serde_with_macros-3.21.0 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.2 \
@@ -363,7 +357,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		similar-3.1.1 \
 		siphasher-1.0.1 \
 		slab-0.4.12 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		snapbox-1.0.0 \
 		snapbox-macros-1.0.0 \
 		stable_deref_trait-1.2.0 \
@@ -374,7 +368,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		supports-hyperlinks-3.2.0 \
-		syn-2.0.117 \
+		syn-2.0.118 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
@@ -459,7 +453,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasmparser-0.244.0 \
 		web-sys-0.3.100 \
 		web-time-1.1.0 \
-		which-8.0.3 \
+		which-8.0.4 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
