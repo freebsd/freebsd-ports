@@ -1,6 +1,5 @@
 PORTNAME=	ipgen
-PORTVERSION=	1.30.20240527
-PORTREVISION=	1
+PORTVERSION=	1.31.20250410
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -14,7 +13,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 USES=		gmake perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	iij
-GH_TAGNAME=	9e649f4
+GH_TAGNAME=	121ac92
 
 SHEBANG_FILES=	gen/layout_generator
 MAKEFILE=	GNUmakefile
