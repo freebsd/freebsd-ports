@@ -1975,6 +1975,7 @@
     SUBDIR += py-requests-gssapi
     SUBDIR += py-requests-mock
     SUBDIR += py-requests-oauthlib
+    SUBDIR += py-requests-ratelimiter
     SUBDIR += py-requests-toolbelt
     SUBDIR += py-requests-unixsocket
     SUBDIR += py-requests-wsgi-adapter
