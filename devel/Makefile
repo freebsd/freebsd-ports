@@ -5829,6 +5829,7 @@
     SUBDIR += py-pyquery
     SUBDIR += py-pyquil
     SUBDIR += py-pyral
+    SUBDIR += py-pyrate-limiter
     SUBDIR += py-pyrepl
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyright

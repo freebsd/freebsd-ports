@@ -1,0 +1,15 @@
+PyrateLimiter is a fast, async-friendly rate limiter for Python -- Leaky-Bucket
+algorithm with pluggable backends.
+
+Features:
+- Leaky-bucket algorithm: smooth, well-understood rate limiting.
+- Multiple rates at once: e.g. 5/second and 1000/hour on the same key.
+- Per-key limits: track different services, users, or resources independently.
+- Pluggable backends: in-memory, SQLite, Redis (sync and async), Postgres, and
+  multiprocessing.
+- Sync & async: the same API works in both; async paths never block the event
+  loop.
+- Direct calls or decorators: limiter.try_acquire(...) or
+  @limiter.as_decorator(...).
+- Blocking or non-blocking: wait for a permit (with optional timeout) or fail
+  fast.
