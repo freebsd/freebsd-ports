@@ -1,0 +1,2 @@
+Crypt::SysRandom::XS uses whatever C interface is available to procure
+cryptographically random data from the system.
