@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=wayst
+Icon=utilities-terminal
+Terminal=false
+Categories=System;TerminalEmulator;
+Name=Wayst
+GenericName=Terminal
+Comment=A simple terminal emulator
+X-ExecArg=-e
+Keywords=Wayst;terminal;
