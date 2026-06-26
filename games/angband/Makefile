@@ -10,7 +10,7 @@ WWW=		https://rephial.org/
 
 LICENSE=	GPLv2
 
-USES=		autoreconf gmake ncurses
+USES=		autoreconf gmake iconv:build ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_NCURSES_CONFIG=${TRUE}
 CONFIGURE_ARGS=	--localstatedir=/var
@@ -43,6 +43,9 @@ post-patch:
 		's|.SILENT:||' ${WRKSRC}/mk/buildsys.mk.in
 	@${REINPLACE_CMD} -e \
 		's|-O0||' ${WRKSRC}/src/Makefile
+	cd ${WRKSRC}/docs && \
+		${ICONV_CMD} -f MACCENTRALEUROPE -t UTF-8 version.rst > version-utf-8.rst && \
+		${MV} version-utf-8.rst version.rst
 
 post-build-DOCS-on:
 	# Needs gmake, although we could run sphinx directly
