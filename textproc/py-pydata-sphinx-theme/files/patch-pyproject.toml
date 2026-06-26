@@ -11,12 +11,3 @@
  
  [tool.sphinx-theme-builder]
  node-version = "22.9.0"
-@@ -22,7 +20,7 @@ dependencies = [
- readme = "README.md"
- requires-python = ">=3.10"
- dependencies = [
--  "sphinx>=8.0,<10",
-+  "sphinx>=5.0,<10",
-   "beautifulsoup4",
-   "docutils!=0.17.0",
-   "Babel",
