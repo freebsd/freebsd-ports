@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}affine>=0:math/py-affine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.11+
+USES=		compiler:c++11-lang python:3.12+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 OPTIONS_DEFINE=	PLOT S3
