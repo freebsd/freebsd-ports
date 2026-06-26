@@ -214,7 +214,7 @@ CONFIGURE_ARGS+=--create_packlist 1
 .    endif # Mmodbuildtiny
 .    if ${_USE_PERL5:Mdistbuild}
 .      if ${PORTNAME} != Dist-Build
-BUILD_DEPENDS+=	p5-Dist-Build>=0.020:devel/p5-Dist-Build
+BUILD_DEPENDS+=	p5-Dist-Build>=0.025:devel/p5-Dist-Build
 .      endif
 CONFIGURE_ARGS+=--create_packlist 1
 .    endif # Mdistbuild
