@@ -18,8 +18,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		cpe lua:build
 
-CPE_VENDOR=	swig_project
-
 ALL_TARGET=	# empty
 CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ARGS=	--program-suffix=40 \
@@ -30,6 +28,8 @@ GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+CPE_VENDOR=	swig_project
 
 PORTSCOUT=	limit:^4\.0\.
 
