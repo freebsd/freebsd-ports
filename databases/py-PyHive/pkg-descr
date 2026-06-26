@@ -1,0 +1,2 @@
+Collection of Python DB-API and SQLAlchemy interfaces for Presto, Hive and
+Trino.

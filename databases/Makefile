@@ -742,6 +742,7 @@
     SUBDIR += pxtools
     SUBDIR += py-Elixir
     SUBDIR += py-PyGreSQL
+    SUBDIR += py-PyHive
     SUBDIR += py-Pyrseas
     SUBDIR += py-aesqlapius
     SUBDIR += py-agate-sql
