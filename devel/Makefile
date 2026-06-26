@@ -6232,6 +6232,7 @@
     SUBDIR += py-threadpoolctl
     SUBDIR += py-threema-msgapi
     SUBDIR += py-thrift
+    SUBDIR += py-thrift_sasl
     SUBDIR += py-thriftpy2
     SUBDIR += py-throttler
     SUBDIR += py-tiamat

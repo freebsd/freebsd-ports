@@ -1,0 +1,4 @@
+thrift_sasl is a Python module that implements SASL transports for Apache
+Thrift (TSaslClientTransport). It is the glue layer used by clients that need
+to authenticate to a SASL-protected Thrift server such as HiveServer2 in a
+Kerberized Hadoop cluster.
