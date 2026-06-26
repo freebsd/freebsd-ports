@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		cpe gmake localbase
-CPE_VENDOR=	tintin++_project
 
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib \
@@ -29,6 +28,8 @@ PLIST_FILES=	bin/tt++
 PORTDOCS=	CREDITS FAQ README SCRIPTS TODO
 
 CONFLICTS_INSTALL?=	zh-tintin++
+
+CPE_VENDOR=	tintin++_project
 
 SLAVEDIRS=	chinese/tintin++
 
