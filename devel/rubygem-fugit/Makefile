@@ -15,9 +15,9 @@ RUN_DEPENDS=	rubygem-et-orbi>=1.4<2:devel/rubygem-et-orbi \
 
 USES=		cpe gem
 
-CPE_VENDOR=	floraison
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	floraison
 
 # Disable rdoc
 OPTIONS_EXCLUDE=DOCS
