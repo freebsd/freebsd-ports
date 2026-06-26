@@ -22,14 +22,14 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	xapian-core
 
+CPE_VENDOR=	xapian
+
 PORTSCOUT=	limit:^1\.4\.
 
 OPTIONS_DEFINE=	DOCS SSE2
 SSE2_DESC=	Use SSE2 for floating point
 
 SSE2_CONFIGURE_ENABLE=	sse
-
-CPE_VENDOR=	xapian
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xapian-inspect ${STAGEDIR}${PREFIX}/bin/xapian-inspect
