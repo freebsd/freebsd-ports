@@ -22,8 +22,9 @@ lib/cmake/KF6Runner/KF6RunnerConfigVersion.cmake
 lib/cmake/KF6Runner/KF6RunnerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Runner/KF6RunnerTargets.cmake
 lib/libKF6Runner.so
-lib/libKF6Runner.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6Runner.so.6
+lib/libKF6Runner.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_LIBDIR%%/metatypes/qt6kf6runner_metatypes.json
 share/dbus-1/interfaces/kf6_org.kde.krunner1.xml
 share/kdevappwizard/templates/runner6.tar.bz2
 share/kdevappwizard/templates/runner6python.tar.bz2

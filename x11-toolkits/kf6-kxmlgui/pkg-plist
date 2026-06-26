@@ -49,6 +49,7 @@ lib/libKF6XmlGui.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6XmlGui.so.6
 %%QT_PLUGINDIR%%/designer/kxmlgui6widgets.so
 share/locale/af/LC_MESSAGES/kxmlgui6.mo
+share/locale/am/LC_MESSAGES/kxmlgui6.mo
 share/locale/ar/LC_MESSAGES/kxmlgui6.mo
 share/locale/as/LC_MESSAGES/kxmlgui6.mo
 share/locale/ast/LC_MESSAGES/kxmlgui6.mo

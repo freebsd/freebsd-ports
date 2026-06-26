@@ -70,6 +70,7 @@ lib/libKirigamiPrivate.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiTemplates.so
 lib/libKirigamiTemplates.so.6
 lib/libKirigamiTemplates.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_LIBDIR%%/metatypes/qt6kirigamiplatform_metatypes.json
 %%QT_QMLDIR%%/org/kde/kirigami/AboutItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigami/Kirigami.qmltypes
@@ -299,6 +300,7 @@ share/locale/sv/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ta/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/tg/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/tr/LC_MESSAGES/libkirigami6_qt.qm
+share/locale/ug/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/uk/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/zh_CN/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/zh_TW/LC_MESSAGES/libkirigami6_qt.qm
