@@ -22,8 +22,6 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 
 USES=		cmake:testing cpe localbase:ldflags pkgconfig
 
-CPE_VENDOR=	lief-project
-
 CMAKE_OFF=	LIEF_ASAN \
 		LIEF_ASM \
 		LIEF_DEBUG_INFO \
@@ -77,6 +75,8 @@ CMAKE_TESTING_ON=	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	lief-project
 GH_PROJECT=	LIEF
+
+CPE_VENDOR=	lief-project
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
