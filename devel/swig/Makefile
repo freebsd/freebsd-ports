@@ -15,8 +15,6 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		cpe gmake lua:build
 
-CPE_VENDOR=	swig_project
-
 ALL_TARGET=	# empty
 CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ARGS=	--with-boost=no \
@@ -27,6 +25,8 @@ GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+CPE_VENDOR=	swig_project
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
