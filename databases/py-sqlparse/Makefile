@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
-CPE_VENDOR=	sqlparse_project
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	sqlparse_project
 
 SHEBANG_FILES=	sqlparse/cli.py
 
