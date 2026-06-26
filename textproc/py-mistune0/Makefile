@@ -1,10 +1,10 @@
-PORTNAME=	mistune0
+PORTNAME=	mistune
 PORTVERSION=	0.8.4
 PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	mistune-${PORTVERSION}
+PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fastest markdown parser in pure Python
@@ -22,7 +22,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-CPE_PRODUCT=	mistune
 CPE_VENDOR=	mistune_project
 
 PORTSCOUT=	limit:^0\.
