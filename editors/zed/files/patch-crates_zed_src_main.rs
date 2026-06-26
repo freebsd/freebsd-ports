@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-06-10 17:21:09 UTC
+--- crates/zed/src/main.rs.orig	2026-06-24 15:32:03 UTC
 +++ crates/zed/src/main.rs
 @@ -23,6 +23,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -19,7 +19,7 @@
  
  #[cfg(feature = "mimalloc")]
  #[global_allocator]
-@@ -215,6 +219,7 @@ fn main() {
+@@ -222,6 +226,7 @@ fn main() {
      }
  
      // `zed --crash-handler` Makes zed operate in minidump crash handler mode
@@ -27,7 +27,7 @@
      if let Some(socket) = &args.crash_handler {
          crashes::crash_server(socket.as_path(), paths::logs_dir().clone());
          return;
-@@ -384,6 +389,7 @@ fn main() {
+@@ -391,6 +396,7 @@ fn main() {
      ) || *release_channel::RELEASE_CHANNEL
          != ReleaseChannel::Dev;
  
@@ -35,7 +35,7 @@
      let crash_handler = if should_install_crash_handler {
          Some(
              app.background_executor().spawn(crashes::init(
-@@ -606,6 +612,7 @@ fn main() {
+@@ -613,6 +619,7 @@ fn main() {
              let telemetry = telemetry.clone();
              move |_, evt: &client::user::Event, cx| match evt {
                  client::user::Event::PrivateUserInfoUpdated => {
@@ -43,7 +43,7 @@
                      if let Some(crash_client) = cx.try_global::<CrashHandler>() {
                          crashes::set_user_info(
                              &crash_client.0,
-@@ -655,6 +662,7 @@ fn main() {
+@@ -662,6 +669,7 @@ fn main() {
          auto_update::init(client.clone(), cx);
          dap_adapters::init(cx);
          auto_update_ui::init(cx);
@@ -51,7 +51,7 @@
          reliability::init(client.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -847,6 +855,7 @@ fn main() {
+@@ -854,6 +862,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  
