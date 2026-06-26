@@ -1,5 +1,5 @@
 PORTNAME=	godot
-DISTVERSION=	4.6.2
+DISTVERSION=	4.7
 DISTVERSIONSUFFIX=	-stable
 PORTREVISION?=	0
 CATEGORIES=	devel games
@@ -8,9 +8,9 @@ MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Game runtime engine
 WWW=		https://godotengine.org/
 
-LICENSE=	CC-BY-3.0 MIT
+LICENSE=	CC-BY-4.0 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.txt
+LICENSE_FILE_CC-BY-4.0=	${WRKSRC}/misc/logo/LICENSE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	yasm:devel/yasm
@@ -18,8 +18,6 @@ LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2 \
-		libharfbuzz-icu.so:print/harfbuzz-icu \
-		libharfbuzz.so:print/harfbuzz \
 		libmbedtls.so:security/mbedtls3 \
 		libminiupnpc.so:net/miniupnpc \
 		libogg.so:audio/libogg \
@@ -31,6 +29,8 @@ LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libwebp.so:graphics/webp \
 		libwslay_shared.so:www/wslay \
 		libzstd.so:archivers/zstd
+#		libharfbuzz-icu.so:print/harfbuzz-icu
+#		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		xdg-user-dir:devel/xdg-user-dirs \
 		xmessage:x11/xmessage
@@ -45,13 +45,15 @@ USE_GL=		gl glew glu
 USE_SDL=	sdl3
 
 # enabling builtin_openxr results in an uncaught exception during init
+# System-provided icu4c or harfbuzz cause known issues for GDExtension (see GH-91401 and GH-100301)
 MAKE_ARGS+=	platform=linuxbsd \
 		dbus=True \
 		brotli=True \
 		builtin_brotli=False \
 		builtin_freetype=False \
 		builtin_graphite=False \
-		builtin_harfbuzz=False \
+		builtin_harfbuzz=True \
+		builtin_icu4c=True \
 		builtin_libogg=False \
 		builtin_libpng=False \
 		builtin_libtheora=False \
@@ -95,8 +97,8 @@ ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=			alsa=True
 ALSA_MAKE_ARGS_OFF=		alsa=False
 
-# master head at 20/2 - no branch made for 4.6 yet
-EXAMPLES_GH_TUPLE=		godotengine:godot-demo-projects:f228ea632391:DEMOS
+# master head at 23/6 - no branch made for 4.7 yet
+EXAMPLES_GH_TUPLE=		godotengine:godot-demo-projects:939ca55eaad4:DEMOS
 EXAMPLES_PORTEXAMPLES=		*
 
 MOLD_BUILD_DEPENDS=		mold:devel/mold
@@ -164,9 +166,9 @@ do-install-EXAMPLES-on:
 do-install-TOOLS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps \
 		  ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/icon.png \
+	${INSTALL_DATA} ${WRKSRC}/misc/logo/icon.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/${GODOTFILE}.png
-	${INSTALL_DATA} ${WRKSRC}/icon.svg \
+	${INSTALL_DATA} ${WRKSRC}/misc/logo/icon.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${GODOTFILE}.svg
 
 .if ${PORT_OPTIONS:MTEST}
