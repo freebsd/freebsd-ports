@@ -247,6 +247,7 @@
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip-gitlab
     SUBDIR += rubygem-rubyzip13
+    SUBDIR += rubygem-rubyzip2
     SUBDIR += rubygem-snappy
     SUBDIR += rvm
     SUBDIR += rzip
