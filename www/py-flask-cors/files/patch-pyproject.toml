@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-12-12 20:31:39 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ keywords = ['python']
+ authors = [{ name = "Cory Dolphin", email = "corydolphin@gmail.com" }]
+ readme = "README.rst"
+ keywords = ['python']
+-license = "MIT"
++license = { text = "MIT" }
+ requires-python = ">=3.9,<4.0"
+ classifiers = [
+     "Intended Audience :: Developers",

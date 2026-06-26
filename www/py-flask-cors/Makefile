@@ -1,28 +1,25 @@
-PORTNAME=	Flask-Cors
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTNAME=	flask-cors
+PORTVERSION=	6.0.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	flask_cors-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Flask extension adding a decorator for CORS support
-WWW=		https://github.com/corydolphin/flask-cors
+COMMENT=	Flask extension simplifying CORS support
+WWW=		https://corydolphin.github.io/flask-cors/ \
+		https://github.com/corydolphin/flask-cors
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=0.9:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}werkzeug>=0.7:www/py-werkzeug@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v
 
 .include <bsd.port.mk>
