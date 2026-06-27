@@ -1,15 +1,18 @@
 PORTNAME=	libprelude
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+DISTVERSION=	5.2.0
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-siem.org/attachments/download/1395/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sensor support library from Prelude SIEM
-WWW=		https://www.prelude-siem.org/
+WWW=		https://github.com/Prelude-SIEM/libprelude
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=    Upstream project is dead
+EXPIRATION_DATE=       2026-07-31
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libltdl.so:devel/libltdl \
@@ -19,7 +22,6 @@ USES=		libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-lua \
 		--without-python3 \
 		--without-swig \
