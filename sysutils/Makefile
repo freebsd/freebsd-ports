@@ -1066,6 +1066,7 @@
     SUBDIR += py-croniter
     SUBDIR += py-croniter2
     SUBDIR += py-dbuild
+    SUBDIR += py-datalad
     SUBDIR += py-debian-inspector
     SUBDIR += py-dex
     SUBDIR += py-dict-toolbox

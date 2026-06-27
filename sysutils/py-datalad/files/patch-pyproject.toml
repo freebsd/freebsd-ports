@@ -1,0 +1,15 @@
+-- Fix invalid license field format for setuptools validator
+-- Setuptools expects license = {text = "MIT"} not license = "MIT"
+
+--- pyproject.toml.orig	2026-06-09 20:38:32 UTC
++++ pyproject.toml
+@@ -52,8 +52,7 @@ classifiers = [
+     "Topic :: Software Development :: Version Control :: Git",
+     "Topic :: Utilities",
+ ]
+-license = "MIT"
+-license-files = ["COPYING"]
++license = {text = "MIT"}
+ readme = "README.md"
+ 
+ [project.urls]
