@@ -175,6 +175,7 @@
     SUBDIR += getopt
     SUBDIR += ggml
     SUBDIR += gimp-help-en
+    SUBDIR += github-copilot-cli
     SUBDIR += github-copilot-cli-legacy
     SUBDIR += github-copilot-language-server
     SUBDIR += gitlogue
