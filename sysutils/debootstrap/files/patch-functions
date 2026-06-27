@@ -1,27 +1,5 @@
 --- functions.orig	2026-03-26 22:58:30 UTC
 +++ functions
-@@ -700,10 +700,10 @@ download_release_sig () {
- 
- 		info RELEASESIG "Checking Release signature"
- 		# If everything is installed, prefer gpgv for now
--		if in_path gpgv; then
-+		if in_path gpgv2; then
- 			# Don't worry about the exit status from gpgv; parsing the output will
- 			# take care of that.
--			(gpgv --status-fd 1 --keyring "$KEYRING" --ignore-time-conflict \
-+			(gpgv2 --status-fd 1 --keyring "$KEYRING" --ignore-time-conflict \
- 			 "$relsigdest" "$reldest" || true) | read_gpg_status
- 		elif in_path sopv; then
- 			local rc=0
-@@ -715,7 +715,7 @@ download_release_sig () {
- 			check_sqv_status "$rc"
- 		else
- 			# This is already checked at argument parsing time, so shouldn't happen here
--			error 1 NEEDPGPV "none of sopv, sqv or gpgv are installed, but required for Release verification"
-+			error 1 NEEDPGPV "none of sopv, sqv or gpgv2 are installed, but required for Release verification"
- 		fi
- 		progress 100 100 DOWNRELSIG "Downloading Release file signature"
- 	fi
 @@ -1045,7 +1045,7 @@ extract_dpkg_deb_data () {
  extract_dpkg_deb_data () {
  	local pkg="$1"
@@ -74,12 +52,3 @@
  		elif [ "$1" = "STANZAS" ]; then
  			local pkgdest="$2"; shift; shift
  			perl -e '
-@@ -1941,7 +1941,7 @@ read_gpg_status () {
- 	elif [ "$unkkey" ]; then
- 		error 1 UNKNOWNRELSIG "Release signed by unknown key (key id %s)\n   The specified keyring $KEYRING may be incorrect or out of date.\n   You can find the latest Debian release key at https://ftp-master.debian.org/keys.html" "$unkkey"
- 	else
--		error 1 SIGCHECK "Error executing gpgv to check Release signature"
-+		error 1 SIGCHECK "Error executing gpgv2 to check Release signature"
- 	fi
- }
- 
