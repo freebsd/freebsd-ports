@@ -184,7 +184,7 @@ do-build:
 	@${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/prebuilds/freebsd-x64
 	@${ECHO_MSG} "====> Building pty..."
 	@cd ${WRKDIR}/node-pty-${dep_pty_version}/node_modules/${dep_pty_npm_name} && \
-		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
+		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
 			npm rebuild --nodedir=${LOCALBASE} && \
 		${CP} build/Release/pty.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/prebuilds/freebsd-x64/
 	@${ECHO_MSG} "====> Building sharp..."
@@ -195,7 +195,7 @@ do-build:
 		${CP} build/Release/sharp-freebsd-${NODE_ARCH}.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/@img/sharp-freebsd-${NODE_ARCH}/sharp.node
 	@${ECHO_MSG} "====> Building keytar..."
 	@cd ${WRKDIR}/keytar-${dep_keytar_version}/node_modules/${dep_keytar_npm_name} && \
-		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
+		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
 			npm rebuild --nodedir=${LOCALBASE} && \
 		${CP} build/Release/keytar.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/prebuilds/freebsd-x64/
 .if ${FLAVOR} == binary
@@ -217,12 +217,6 @@ do-build:
 	@${CC} ${LDFLAGS} -o ${WRKSRC}/copilot ${WRKSRC}/launcher.o ${WRKSRC}/blob.o
 	@${STRIP_CMD} ${WRKSRC}/copilot
 .endif	# FLAVOR == binary
-
-x:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -path "*/build/*" -name *.node | ${XARGS} ${STRIP_CMD}
-
-x2:
-	@${STRIP_CMD} ${WRKSRC}/copilot
 
 do-install:
 .if ${FLAVOR} == script
