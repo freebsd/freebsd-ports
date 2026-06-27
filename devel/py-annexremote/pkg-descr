@@ -1,0 +1,3 @@
+annexremote is a Python package that helps develop git-annex special remotes.
+It provides a simple interface for creating custom storage backends for
+git-annex, handling the protocol communication and common operations.
