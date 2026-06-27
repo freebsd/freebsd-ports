@@ -2,9 +2,9 @@ https://github.com/eclipse/openvsx/issues/543
 https://github.com/termux/termux-packages/issues/24739
 https://github.com/termux/termux-packages/pull/24757
 
---- remote/package.json.orig	2026-06-19 09:19:52 UTC
+--- remote/package.json.orig	2026-06-23 01:46:13 UTC
 +++ remote/package.json
-@@ -40,6 +40,7 @@
+@@ -41,6 +41,7 @@
      "kerberos": "2.1.1",
      "minimist": "^1.2.8",
      "node-addon-api": "^6.0.0",

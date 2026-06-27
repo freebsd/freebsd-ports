@@ -70,7 +70,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		castaway-0.2.3 \
 		cbor4ii-1.2.2 \
 		cc-1.2.46 \
-		cc-1.2.64 \
+		cc-1.2.65 \
 		cfg-if-1.0.4 \
 		chrono-0.4.42 \
 		ciborium-0.2.2 \
@@ -298,7 +298,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		litemap-0.8.1 \
 		lock_api-0.4.14 \
 		log-0.4.22 \
-		log-0.4.32 \
+		log-0.4.33 \
 		loom-0.7.2 \
 		lru-0.16.2 \
 		mach2-0.4.2 \
@@ -322,13 +322,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		munge-0.4.1 \
 		munge_macro-0.4.1 \
 		napi-3.1.6 \
-		napi-3.9.3 \
+		napi-3.9.4 \
 		napi-build-2.2.3 \
 		napi-build-2.3.2 \
 		napi-derive-3.1.2 \
-		napi-derive-3.5.6 \
+		napi-derive-3.5.7 \
 		napi-derive-backend-2.0.3 \
-		napi-derive-backend-5.0.4 \
+		napi-derive-backend-5.0.5 \
 		napi-sys-3.0.0 \
 		napi-sys-3.2.2 \
 		new_debug_unreachable-1.0.6 \
@@ -422,7 +422,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		quick-error-2.0.1 \
 		quick-xml-0.39.4 \
 		quote-1.0.43 \
-		quote-1.0.45 \
+		quote-1.0.46 \
 		r-efi-5.2.0 \
 		radium-0.7.0 \
 		radix_fmt-1.0.0 \
@@ -689,7 +689,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wayland-backend-0.3.15 \
 		wayland-client-0.31.14 \
 		wayland-clipboard-listener-0.6.1 \
-		wayland-protocols-0.32.12 \
+		wayland-protocols-0.32.13 \
 		wayland-protocols-wlr-0.3.12 \
 		wayland-scanner-0.31.10 \
 		wayland-sys-0.31.11 \
