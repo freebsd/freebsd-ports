@@ -367,6 +367,7 @@
     SUBDIR += py-kimpy
     SUBDIR += py-kinematics
     SUBDIR += py-kliff
+    SUBDIR += py-klusta
     SUBDIR += py-kpLib
     SUBDIR += py-liac-arff
     SUBDIR += py-libgetar
