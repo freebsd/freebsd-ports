@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.8.0
+DISTVERSION=	4.9.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -34,11 +34,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
+		anyhow-1.0.103 \
 		approx-0.5.1 \
 		arbitrary-1.4.2 \
 		arg_enum_proc_macro-0.3.4 \
-		arrayvec-0.7.6 \
+		arrayvec-0.7.7 \
 		as-slice-0.2.1 \
 		assert_enum_variants-0.1.2 \
 		atomic-0.6.1 \
@@ -56,9 +56,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bitflags-1.3.2 \
 		bitflags-2.13.0 \
 		bitstream-io-4.10.0 \
-		bitvec-1.0.1 \
+		bitvec-1.1.1 \
 		block-buffer-0.10.4 \
-		bstr-1.12.1 \
+		bstr-1.12.3 \
 		built-0.8.1 \
 		bumpalo-3.20.3 \
 		by_address-1.2.1 \
@@ -66,14 +66,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
-		bytes-1.11.1 \
+		bytes-1.12.0 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.2.64 \
+		cc-1.2.65 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
-		chacha20-0.10.0 \
+		chacha20-0.10.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -111,6 +111,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		darling_core-0.23.0 \
 		darling_macro-0.20.11 \
 		darling_macro-0.23.0 \
+		defmt-1.1.0 \
+		defmt-macros-1.1.0 \
+		defmt-parser-1.0.0 \
 		deltae-0.3.2 \
 		deranged-0.5.8 \
 		derive_builder-0.20.2 \
@@ -124,8 +127,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		downcast-rs-1.2.1 \
 		either-1.16.0 \
 		encode_unicode-1.0.0 \
-		env_filter-1.0.1 \
-		env_logger-0.11.10 \
+		env_filter-2.0.0 \
+		env_logger-0.11.11 \
 		equator-0.4.2 \
 		equator-macro-0.4.2 \
 		equivalent-1.0.2 \
@@ -144,7 +147,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fixedbitset-0.4.2 \
 		flate2-1.1.9 \
 		fnv-1.0.7 \
-		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		frizbee-0.9.0 \
 		funty-2.0.0 \
@@ -160,7 +162,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		generic-array-0.14.7 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
-		getrandom-0.4.2 \
+		getrandom-0.4.3 \
 		gif-0.14.2 \
 		gimli-0.32.3 \
 		gnuplot-0.0.46 \
@@ -168,13 +170,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		gungraun-macros-0.9.1 \
 		gungraun-runner-0.19.2 \
 		half-2.7.1 \
-		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		icy_sixel-0.5.0 \
-		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
@@ -190,15 +190,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.28 \
-		jiff-static-0.2.28 \
+		jiff-0.2.29 \
+		jiff-static-0.2.29 \
 		jobserver-0.1.34 \
-		js-sys-0.3.102 \
+		js-sys-0.3.103 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
-		leb128fmt-0.1.0 \
 		lebe-0.5.3 \
 		libc-0.2.186 \
 		libfuzzer-sys-0.4.13 \
@@ -209,7 +208,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		linux-raw-sys-0.12.1 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.32 \
+		log-0.4.33 \
 		loop9-0.1.5 \
 		lru-0.18.0 \
 		mac_address-1.1.8 \
@@ -271,8 +270,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		prettyplease-0.2.37 \
+		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error-attr3-3.0.2 \
+		proc-macro-error2-2.0.1 \
 		proc-macro-error3-3.0.2 \
 		proc-macro2-1.0.106 \
 		profiling-1.0.18 \
@@ -282,7 +282,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		qoi-0.4.1 \
 		quantette-0.5.1 \
 		quick-error-2.0.1 \
-		quote-1.0.45 \
+		quote-1.0.46 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
@@ -295,13 +295,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xoshiro-0.7.0 \
-		ratatui-0.30.1 \
-		ratatui-core-0.1.1 \
-		ratatui-crossterm-0.1.1 \
-		ratatui-image-11.0.4 \
-		ratatui-macros-0.7.1 \
-		ratatui-termwiz-0.1.1 \
-		ratatui-widgets-0.3.1 \
+		ratatui-0.30.2 \
+		ratatui-core-0.1.2 \
+		ratatui-crossterm-0.1.2 \
+		ratatui-image-11.0.6 \
+		ratatui-macros-0.7.2 \
+		ratatui-termina-0.1.0 \
+		ratatui-termwiz-0.1.2 \
+		ratatui-widgets-0.3.2 \
 		rav1e-0.8.1 \
 		ravif-0.13.0 \
 		raw-cpuid-11.6.0 \
@@ -316,7 +317,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		regex-syntax-0.8.11 \
 		rgb-0.8.53 \
 		roff-1.1.1 \
-		ron-0.12.1 \
+		ron-0.12.2 \
 		rustc-demangle-0.1.27 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
@@ -361,6 +362,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.118 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
+		termina-0.3.3 \
 		terminfo-0.9.0 \
 		termios-0.3.3 \
 		termwiz-0.23.3 \
@@ -370,7 +372,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		tiff-0.11.3 \
-		time-0.3.49 \
+		time-0.3.51 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
@@ -394,9 +396,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
-		unty-next-0.1.1 \
+		unty-next-0.1.2 \
 		utf8parse-0.2.2 \
-		uuid-1.23.3 \
+		uuid-1.23.4 \
 		v_frame-0.3.9 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
@@ -407,15 +409,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.125 \
-		wasm-bindgen-macro-0.2.125 \
-		wasm-bindgen-macro-support-0.2.125 \
-		wasm-bindgen-shared-0.2.125 \
-		wasm-encoder-0.244.0 \
-		wasm-metadata-0.244.0 \
-		wasmparser-0.244.0 \
-		web-sys-0.3.102 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
+		web-sys-0.3.103 \
 		weezl-0.1.12 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
@@ -449,13 +447,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
 		winreg-0.10.1 \
-		wit-bindgen-0.51.0 \
 		wit-bindgen-0.57.1 \
-		wit-bindgen-core-0.51.0 \
-		wit-bindgen-rust-0.51.0 \
-		wit-bindgen-rust-macro-0.51.0 \
-		wit-component-0.244.0 \
-		wit-parser-0.244.0 \
 		wyz-0.5.1 \
 		y4m-0.8.0 \
 		zerocopy-0.8.52 \
