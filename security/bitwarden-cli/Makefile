@@ -30,8 +30,8 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		ca_root_nss>0:security/ca_root_nss
 
-USES=		electron:env gmake localbase:ldflags nodejs:22,build \
-		pkgconfig python:build sqlite ssl
+USES=		gmake localbase:ldflags nodejs:22,build npm:npm pkgconfig \
+		python:build sqlite ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwarden
@@ -52,7 +52,6 @@ PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
-USE_ELECTRON=	npm:npm prefetch extract
 PKG_NODE_VER=	22.15.1
 PKG_FETCH_VER=	3.5
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \

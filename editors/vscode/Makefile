@@ -61,7 +61,7 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		cargo desktop-file-utils display:test electron:42,build,test \
 		gl gmake gnome gssapi:mit iconv:wchar_t jpeg localbase:ldflags \
-		nodejs:24,build pkgconfig python:build shebangfix xorg
+		nodejs:24,build npm:npm pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
@@ -89,7 +89,6 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xtst
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo pango gdkpixbuf gtk30 libxml2 libxslt
-USE_ELECTRON=	npm:npm
 
 SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts

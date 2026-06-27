@@ -23,7 +23,7 @@ LIB_DEPENDS=	libvips.so:graphics/vips \
 		libsecret-1.so:security/libsecret
 
 USES=		cargo cpe electron:40 gmake localbase:ldflags nodejs:24,build \
-		python:build
+		npm:yarn4 python:build
 
 CPE_VENDOR=	joplinapp
 USE_GITHUB=	yes
@@ -47,7 +47,7 @@ CARGO_TEST=	no
 
 BINARY_ALIAS=		python3=${PYTHON_CMD}
 SUB_FILES=		${PORTNAME}${PKGNAMESUFFIX}
-TARGET_ORDER_OVERRIDE=	750:electron-install-node-modules
+TARGET_ORDER_OVERRIDE=	750:npm-install-node-modules
 
 BUILD_WRKSRC=	${WRKSRC}/packages/app-desktop
 TEST_WRKSRC=	${WRKSRC}/packages/app-desktop
@@ -56,7 +56,7 @@ PORTDOCS=	README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
-USE_ELECTRON=	npm:yarn4 appbuilder prefetch extract build:builder
+USE_ELECTRON=	appbuilder build:builder
 
 DEFAULT_PLUGINS_NODE_MODULES_FILE=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-default-plugins-node-modules${EXTRACT_SUFX}
 APP_CLIPPER_NODE_MODULES_FILE=		${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-app-clipper-node-modules${EXTRACT_SUFX}

@@ -69,10 +69,10 @@ TEST_DEPENDS=	git:devel/git \
 		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
 		sentry-cli:devel/sentry-cli
 
-USES=		bison cargo compiler:c++17-lang cpe display:test electron:env \
-		gettext-tools gl gmake gnome iconv:wchar_t jpeg \
-		localbase:ldflags ninja nodejs:24,build pkgconfig \
-		python:build,test qt:5 shebangfix tar:xz xorg
+USES=		bison cargo compiler:c++17-lang cpe display:test gettext-tools \
+		gl gmake gnome iconv:wchar_t jpeg localbase:ldflags ninja \
+		nodejs:24,build npm:yarn4 pkgconfig python:build,test qt:5 \
+		shebangfix tar:xz xorg
 
 CPE_VENDOR=	electronjs
 USE_GITHUB=	nodefault
@@ -90,7 +90,6 @@ USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
 		xrender xscrnsaver xtst
 USE_QT=		buildtools:build core:build widgets:build
-USE_ELECTRON=	npm:yarn4 prefetch extract
 NPM_EXTRACT_WRKSRC=	${WRKDIR}/${PORTNAME}-${ELECTRON_VER}
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format

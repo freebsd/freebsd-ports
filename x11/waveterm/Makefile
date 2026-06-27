@@ -27,7 +27,7 @@ BUILD_DEPENDS=	task:devel/task
 LIB_DEPENDS=	libvips.so:graphics/vips
 
 USES=		cargo electron:41 gmake go:1.25+,modules,no_targets \
-		nodejs:24,build python:build
+		nodejs:24,build npm:npm python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wavetermdev
@@ -52,7 +52,7 @@ PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
-USE_ELECTRON=	npm:npm appbuilder:devel prefetch extract rebuild build:builder
+USE_ELECTRON=	appbuilder:devel rebuild build:builder
 
 ELECTRON_MAKE_FLAGS+=	-c electron-builder.config.cjs
 
