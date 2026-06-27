@@ -1,7 +1,11 @@
+bin/EchoHelper.debug
 bin/collectionTest.debug
 bin/parserTest.debug
 bin/puzzle
 bin/puzzle.debug
+bin/readAllStdinProcess.debug
+bin/readLineStdinProcess.debug
+bin/stdinProcess.debug
 bin/tape
 bin/tape.debug
 bin/translationsTest.debug
