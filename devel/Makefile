@@ -6494,6 +6494,7 @@
     SUBDIR += py-zope.interface
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.testbrowser
+    SUBDIR += py-zugbruecke
     SUBDIR += py3c
     SUBDIR += pybind11
     SUBDIR += pybind11-json
