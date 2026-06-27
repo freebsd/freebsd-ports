@@ -1,5 +1,5 @@
 PORTNAME=	pytest-xdist
-DISTVERSION=	3.6.1
+DISTVERSION=	3.7.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -35,5 +35,9 @@ SETPROCTITLE_DESC=	Indicate state of current running workers
 
 PSUTIL_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}psutil>=3.0:sysutils/py-psutil@${PY_FLAVOR}
 SETPROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
+
+post-patch:
+	@${REINPLACE_CMD} '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|; s|77|63|g' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
