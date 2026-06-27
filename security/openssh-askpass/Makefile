@@ -22,6 +22,8 @@ PLIST_FILES=	bin/x11-ssh-askpass \
 		share/man/man1/x11-ssh-askpass.1.gz
 PORTDOCS=	README TODO ChangeLog
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
