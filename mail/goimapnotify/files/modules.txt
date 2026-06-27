@@ -62,6 +62,7 @@ github.com/sagikazarmark/slog-shim
 # github.com/sirupsen/logrus v1.8.1
 ## explicit; go 1.13
 github.com/sirupsen/logrus
+github.com/sirupsen/logrus/hooks/syslog
 # github.com/sourcegraph/conc v0.3.0
 ## explicit; go 1.19
 github.com/sourcegraph/conc

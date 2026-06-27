@@ -1,6 +1,5 @@
 PORTNAME=	goimapnotify
-DISTVERSION=	2.5.5
-PORTREVISION=	1
+DISTVERSION=	2.5.6
 CATEGORIES=	mail
 
 MAINTAINER=	juw@posteo.de
@@ -45,7 +44,7 @@ GL_ACCOUNT=	shackra
 USE_RC_SUBR=	${PORTNAME}
 
 GO_TARGET=	./cmd/${PORTNAME}
-_BUILD_COMMIT=	bcc9d8d5
+_BUILD_COMMIT=	251292f1
 _BUILD_XFLAGS=	main.commit=${_BUILD_COMMIT} \
 		main.gittag=${DISTVERSIONFULL} \
 		main.branch=master
