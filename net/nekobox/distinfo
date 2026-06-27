@@ -1,6 +1,6 @@
-TIMESTAMP = 1782088865
-SHA256 (qr243vbi-nekobox-5.11.23_GH0.tar.gz) = 8a33cdea4d6d1d0462604932638f6ffbcde0a7f28013150fedc089b18da682fa
-SIZE (qr243vbi-nekobox-5.11.23_GH0.tar.gz) = 10482704
+TIMESTAMP = 1782528067
+SHA256 (qr243vbi-nekobox-5.11.24_GH0.tar.gz) = 6f8c0d63beed46850964548315b9363e67b1f5fb37f0961b80e152f2e7859883
+SIZE (qr243vbi-nekobox-5.11.24_GH0.tar.gz) = 10554266
 SHA256 (libcpr-cpr-e3edc33_GH0.tar.gz) = 8c20aab765359e9e4a3c603acd7c4ff6d63db3f96e0ff58ec76f65e6640c4bd0
 SIZE (libcpr-cpr-e3edc33_GH0.tar.gz) = 157197
 SHA256 (quickjs-ng-quickjs-fd0a021_GH0.tar.gz) = f735bffc513d278071a9c7bb9bcc9387b72487af38666e7a9a2245550ddaef5b
