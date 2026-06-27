@@ -100,6 +100,11 @@ lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sd
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/node_modules/adm-zip/zipFile.js
 lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/script/install-utils.cjs
 lib/node_modules/@github/copilot/index.js
+lib/node_modules/@github/copilot/koffi/build/koffi/freebsd_arm64/koffi.node
+lib/node_modules/@github/copilot/koffi/build/koffi/freebsd_ia32/koffi.node
+lib/node_modules/@github/copilot/koffi/build/koffi/freebsd_%%NODE_ARCH%%/koffi.node
+lib/node_modules/@github/copilot/koffi/index.d.ts
+lib/node_modules/@github/copilot/koffi/index.js
 lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/ESRPClientLogs0505223422747.json
 lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/ESRPClientLogs0505224031447.json
 lib/node_modules/@github/copilot/mxc-bin/arm64/_manifest/spdx_2.2/bsi.cose
@@ -224,6 +229,10 @@ lib/node_modules/@github/copilot/voice-installer.worker.js
 lib/node_modules/@github/copilot/voice-mic.worker.js
 lib/node_modules/@github/copilot/worker/conoutSocketWorker.js
 @dir lib/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/prebuilds
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/musl_arm64
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/musl_%%NODE_ARCH%%
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/openbsd_ia32
+@dir lib/node_modules/@github/copilot/koffi/build/koffi/openbsd_%%NODE_ARCH%%
 @dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/mac/arm64
 @dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/mac/x86_64
 @dir lib/node_modules/@github/copilot/pvrecorder/node_modules/@picovoice/pvrecorder-node/lib/windows/amd64

@@ -1,10 +1,9 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	1.0.48 # can't be updated before https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=295629 is resolved
-PORTREVISION=	1
-PORTEPOCH=	1
+DISTVERSION=	1.0.44
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}-x # -x is to see if it would fix checksum errors
+PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GitHub Copilot CLI brings the power of the coding agent to terminal
@@ -154,21 +153,6 @@ post-patch:
 	${REINPLACE_CMD} -i '' \
 		-e 's|qg.default.createElement(U,{color:e.MUTED},"v",t)|qg.default.createElement(U,{color:e.MUTED},"v","${PORTVERSION}")|g' \
 		${WRKSRC}/node_modules/@github/copilot/index.js
-	# Add FreeBSD platform support to JavaScript sources
-	# The platform detection functions only handle win32, darwin, linux
-	# Add freebsd case so the CLI can run on FreeBSD
-	${REINPLACE_CMD} -i '' \
-		-e 's|default:throw new Error(`Unsupported platform: \$${e}/\$${t}`)|case"freebsd":return`freebsd-$${t}`;default:throw new Error(`Unsupported platform: $${e}/$${t}`)|' \
-		${WRKSRC}/node_modules/@github/copilot/index.js
-	${REINPLACE_CMD} -i '' \
-		-e 's|default:throw new Error(`Unsupported platform: \$${t}/\$${e}`)|case"freebsd":return`freebsd-$${e}`;default:throw new Error(`Unsupported platform: $${t}/$${e}`)|' \
-		${WRKSRC}/node_modules/@github/copilot/app.js
-	${REINPLACE_CMD} -i '' \
-		-e 's|default:throw new Error(`Unsupported platform: \$${t}/\$${e}`)|case"freebsd":return`freebsd-$${e}`;default:throw new Error(`Unsupported platform: $${t}/$${e}`)|' \
-		${WRKSRC}/node_modules/@github/copilot/sdk/index.js
-	${REINPLACE_CMD} -i '' \
-		-e 's|throw new Error(`Unsupported platform: \$${platform}`)|if(platform==='\''freebsd'\'')return'\''.so'\'';throw new Error(`Unsupported platform: $${platform}`)|' \
-		${WRKSRC}/node_modules/@github/copilot/foundry-local-sdk/node_modules/foundry-local-sdk/dist/detail/coreInterop.js
 	# keytar bundles node-addon-api 4.3.0, whose napi.h initializes
 	# TypedArray::unknown_array_type with static_cast<napi_typedarray_type>(-1).
 	# Clang 16+ (FreeBSD 16-CURRENT) rejects this as "not a constant expression"
@@ -217,6 +201,12 @@ do-build:
 	@${CC} ${LDFLAGS} -o ${WRKSRC}/copilot ${WRKSRC}/launcher.o ${WRKSRC}/blob.o
 	@${STRIP_CMD} ${WRKSRC}/copilot
 .endif	# FLAVOR == binary
+
+x:
+	${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -path "*/build/*" -name *.node | ${XARGS} ${STRIP_CMD}
+
+x2:
+	@${STRIP_CMD} ${WRKSRC}/copilot
 
 do-install:
 .if ${FLAVOR} == script
