@@ -1,6 +1,6 @@
 PORTNAME=	fetion
-PORTVERSION=	0.98.5.2
-PORTREVISION=	8
+DISTVERSION=	0.98.5.2
+PORTREVISION=	9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
 		LOCAL/avl
@@ -12,6 +12,9 @@ WWW=		https://sourceforge.net/projects/fetion/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=		Fetion service is no longer available after 2022
+EXPIRATION_DATE=	2026-07-31
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
