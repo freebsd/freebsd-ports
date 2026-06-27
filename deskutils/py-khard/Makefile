@@ -8,8 +8,6 @@ MAINTAINER=	herbert@gojira.at
 COMMENT=	Console carddav client
 WWW=		https://github.com/lucc/khard/
 
-BROKEN=		does not build with sphinx-9.0.4
-
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
@@ -57,10 +55,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/build/man/khard.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/build/man/khard.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 31200
-BROKEN=		Handler <function run_autoapi at 0x2e76579a5080> for event 'builder-inited' threw an exception (exception: 'TreeRebuilder' object has no attribute 'visit_typealias')
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
