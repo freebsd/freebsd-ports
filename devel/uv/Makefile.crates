@@ -24,7 +24,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		astral-reqwest-middleware-0.5.1 \
 		astral-reqwest-retry-0.9.1 \
 		astral-tl-0.7.11 \
-		astral-tokio-tar-0.6.2 \
+		astral-tokio-tar-0.6.3 \
 		astral-version-ranges-0.1.4 \
 		astral_async_http_range_reader-0.11.0 \
 		astral_async_zip-0.0.18 \
@@ -255,6 +255,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.49 \
 		libredox-0.1.14 \
+		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.1 \
 		lock_api-0.4.14 \
@@ -406,6 +407,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rusticata-macros-4.1.0 \
+		rustix-0.38.44 \
 		rustix-1.1.4 \
 		rustls-0.23.40 \
 		rustls-native-certs-0.8.4 \
