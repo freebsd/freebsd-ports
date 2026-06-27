@@ -1,4 +1,4 @@
---- libr/util/deps.mk.orig	2023-04-15 14:08:46 UTC
+--- libr/util/deps.mk.orig	2026-03-19 11:46:07 UTC
 +++ libr/util/deps.mk
 @@ -21,7 +21,7 @@ endif
  endif
@@ -9,8 +9,11 @@
    ifneq ($(shell expr "`uname -r`" : '[0-9]\.'), 2)
      LDFLAGS+=-lexecinfo
    endif
-@@ -42,4 +42,3 @@ LDFLAGS+=-lm
+@@ -42,7 +42,6 @@ endif
  LINK+=-lm
  endif
  endif
 -
+ ifeq (${OSTYPE},aix)
+ LINK+=-pthread
+ endif
