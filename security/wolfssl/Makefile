@@ -1,6 +1,5 @@
 PORTNAME=	wolfssl
-PORTVERSION=	5.9.1
-PORTREVISION=	1
+PORTVERSION=	5.9.2
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.wolfssl.com/ \
 		LOCAL/fox
@@ -12,7 +11,7 @@ WWW=		https://www.wolfssl.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool zip autoreconf
+USES=		cpe libtool zip
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
