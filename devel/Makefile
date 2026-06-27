@@ -6398,6 +6398,7 @@
     SUBDIR += py-weblib
     SUBDIR += py-websockets
     SUBDIR += py-websockify
+    SUBDIR += py-wenv
     SUBDIR += py-wheel
     SUBDIR += py-wheel-filename
     SUBDIR += py-wheel044
