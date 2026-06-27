@@ -1,5 +1,6 @@
 PORTNAME=	genie
 DISTVERSION=	g2026032500
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://github.com/bkaradzic/GENie
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake lua:53,build
+USES=		gmake lua:53
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkaradzic
 GH_PROJECT=	GENie
