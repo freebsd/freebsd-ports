@@ -17,6 +17,7 @@ rcvar="act_runner_enable"
 load_rc_config "${name}"
 
 : ${act_runner_user:="act_runner"}
+: ${act_runner_group:="act_runner"}
 : ${act_runner_enable:="NO"}
 : ${act_runner_facility:="daemon"}
 : ${act_runner_priority:="debug"}
@@ -51,7 +52,7 @@ act_runner_prestart() {
   #  ensure the log directories are owned by the unprivileged user
   for d in "${act_runner_log_dir} ${act_runner_run_dir}"; do
     if [ ! -e "$d" ]; then
-      install -d -o ${act_runner_user} -g ${act_runner_user} -m 755 ${d}
+      install -d -o ${act_runner_user} -g ${act_runner_group} -m 755 ${d}
     fi
   done
 }

@@ -1,5 +1,5 @@
-TIMESTAMP = 1782045436
-SHA256 (go/devel_gitea-act_runner/act_runner-v0.3.0/v0.3.0.mod) = 22eae2314722bdec6ba427d7edd176a6746c7160e5a9ba8680fa54a8a6920a49
-SIZE (go/devel_gitea-act_runner/act_runner-v0.3.0/v0.3.0.mod) = 4890
-SHA256 (go/devel_gitea-act_runner/act_runner-v0.3.0/v0.3.0.zip) = 9c1dbbe947f76353d4cd17cef44b17de77631963b138305d0da31895a3b3adfe
-SIZE (go/devel_gitea-act_runner/act_runner-v0.3.0/v0.3.0.zip) = 80279
+TIMESTAMP = 1782560787
+SHA256 (go/devel_gitea-act_runner/act_runner-v0.3.1/v0.3.1.mod) = 0be8648cb578662b7882a4bca2744a30ba43fd5306e1b966e0a96346dafff3f8
+SIZE (go/devel_gitea-act_runner/act_runner-v0.3.1/v0.3.1.mod) = 5396
+SHA256 (go/devel_gitea-act_runner/act_runner-v0.3.1/v0.3.1.zip) = 63d3b2faef9bb6f6932ac2d45c9988a727ed74a8695e2bd7c2088f39d118c35a
+SIZE (go/devel_gitea-act_runner/act_runner-v0.3.1/v0.3.1.zip) = 82761
