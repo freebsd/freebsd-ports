@@ -17,7 +17,9 @@ include/colmap/controllers/rotation_averaging.h
 include/colmap/controllers/undistorters.h
 include/colmap/estimators/alignment.h
 include/colmap/estimators/bundle_adjustment.h
+include/colmap/estimators/bundle_adjustment_caspar.h
 include/colmap/estimators/bundle_adjustment_ceres.h
+include/colmap/estimators/caspar/caspar_model_adapter.h
 include/colmap/estimators/coordinate_frame.h
 include/colmap/estimators/cost_functions/alignment.h
 include/colmap/estimators/cost_functions/calibration.h
@@ -91,11 +93,13 @@ include/colmap/math/polynomial.h
 include/colmap/math/random.h
 include/colmap/math/spanning_tree.h
 include/colmap/math/union_find.h
+include/colmap/mvs/advancing_front_meshing.h
 include/colmap/mvs/consistency_graph.h
 include/colmap/mvs/cuda_flip.h
 include/colmap/mvs/cuda_rotate.h
 include/colmap/mvs/cuda_texture.h
 include/colmap/mvs/cuda_transpose.h
+include/colmap/mvs/delaunay_meshing.h
 include/colmap/mvs/depth_map.h
 include/colmap/mvs/fusion.h
 include/colmap/mvs/gpu_mat.h
@@ -104,12 +108,12 @@ include/colmap/mvs/gpu_mat_ref_image.h
 include/colmap/mvs/image.h
 include/colmap/mvs/mat.h
 include/colmap/mvs/mesh_simplification.h
-include/colmap/mvs/meshing.h
 include/colmap/mvs/model.h
 include/colmap/mvs/normal_map.h
 include/colmap/mvs/patch_match.h
 include/colmap/mvs/patch_match_cuda.h
 include/colmap/mvs/patch_match_options.h
+include/colmap/mvs/poisson_meshing.h
 include/colmap/mvs/texture_mapping.h
 include/colmap/mvs/workspace.h
 include/colmap/optim/combination_sampler.h
@@ -119,6 +123,7 @@ include/colmap/optim/progressive_sampler.h
 include/colmap/optim/random_sampler.h
 include/colmap/optim/ransac.h
 include/colmap/optim/sampler.h
+include/colmap/optim/sparse_cholesky.h
 include/colmap/optim/sprt.h
 include/colmap/optim/support_measurement.h
 include/colmap/retrieval/geometry.h

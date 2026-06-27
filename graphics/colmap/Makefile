@@ -1,5 +1,5 @@
 PORTNAME=	colmap
-DISTVERSION=	4.0.4
+DISTVERSION=	4.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -32,7 +32,7 @@ USES=		cmake:testing compiler:${OPENMP}c++11-lib desktop-file-utils \
 USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 USE_GL=		gl glew
-USE_QT=		base
+USE_QT=		base svg
 CMAKE_OFF=	CUDA_ENABLED FETCH_FAISS FETCH_POSELIB FETCH_ONNX
 CMAKE_TESTING_ON=	TESTS_ENABLED
 .if exists(/usr/include/omp.h)
@@ -45,6 +45,8 @@ LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
 
 OPTIONS_DEFINE=		CGAL ONNX DOCS SIMD
 OPTIONS_DEFAULT=	CGAL ONNX SIMD
+# misc/onnxruntime broken on i386
+OPTIONS_EXCLUDE_i386=	ONNX
 
 CGAL_DESC=		Graph-cut on Delaunay triangulation based meshing algorithm
 CGAL_BUILD_DEPENDS=	cgal>0:math/cgal
