@@ -1,0 +1,5 @@
+ProbeInterface is a Python package to handle the layout, geometry, and wiring
+of silicon probes for extracellular electrophysiology experiments. It provides
+a common framework to handle probe information, including 2D and 3D contact
+layouts, probe shapes, wiring to devices, and support for common probe file
+formats.
