@@ -1,7 +1,6 @@
 PORTNAME=	kanidm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.3
-PORTREVISION=	1
+DISTVERSION=	1.10.4
 CATEGORIES=	security net
 
 # implicit-approval+: dtxdf
@@ -23,6 +22,10 @@ client_PLIST=	${.CURDIR}/pkg-plist.client
 server_PKGNAMESUFFIX=	-server
 server_COMMENT=		(server only)
 server_PLIST=	${.CURDIR}/pkg-plist.server
+
+.if ${FLAVOR} == client
+RUN_DEPENDS+=tpm2-tss>0:security/tpm2-tss
+.endif
 
 USES=		cargo llvm
 USE_GITHUB=	yes
