@@ -27,9 +27,16 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README README.* DOC.*
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31200
+BROKEN= Does not build with Python 3.12 and later
+# No module named configparser
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DOC* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
