@@ -361,6 +361,7 @@
     SUBDIR += py-hiPhive
     SUBDIR += py-hoomd-blue
     SUBDIR += py-icet
+    SUBDIR += py-igor2
     SUBDIR += py-inequality
     SUBDIR += py-ipygany
     SUBDIR += py-jupyter_jsmol
