@@ -61,23 +61,23 @@ etc/rc.d/opengist
 %%WWWDIR%%/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff
 %%WWWDIR%%/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2
 %%WWWDIR%%/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf
-%%WWWDIR%%/assets/admin-CkUDLHZS.js
-%%WWWDIR%%/assets/auto-3iNaBMUU.js
+%%WWWDIR%%/assets/admin-tJmhv7Qm.js
 %%WWWDIR%%/assets/auto-BAVJk2MF.css
-%%WWWDIR%%/assets/chunk-BUyN5Cfb.js
-%%WWWDIR%%/assets/dark-BhFW8kVk.js
+%%WWWDIR%%/assets/auto-DZFdjWn-.js
+%%WWWDIR%%/assets/chunk-Bh1tDfsg.js
 %%WWWDIR%%/assets/dark-BrgCWhxc.css
-%%WWWDIR%%/assets/editor-DiTzg43-.js
-%%WWWDIR%%/assets/embed-BRK96T_j.js
-%%WWWDIR%%/assets/embed-hnMtdGD3.css
+%%WWWDIR%%/assets/dark-DVx5-msO.js
+%%WWWDIR%%/assets/editor-bMF3Jr84.js
+%%WWWDIR%%/assets/embed-BVydxoUT.css
+%%WWWDIR%%/assets/embed-DSIJTABY.js
 %%WWWDIR%%/assets/favicon-32-BHd4osPo.png
-%%WWWDIR%%/assets/gist-CrRgLLDL.js
-%%WWWDIR%%/assets/light-BgsumsOV.js
+%%WWWDIR%%/assets/gist-UBSG2TwP.js
 %%WWWDIR%%/assets/light-DgpT-POT.css
-%%WWWDIR%%/assets/main-J5V8RB5Z.css
-%%WWWDIR%%/assets/main-fH2v3Aca.js
+%%WWWDIR%%/assets/light-XhZw2HnZ.js
+%%WWWDIR%%/assets/main-0mJA_5st.css
+%%WWWDIR%%/assets/main-Du4ZoMhO.js
 %%WWWDIR%%/assets/opengist-DI_FK2dF.svg
-%%WWWDIR%%/assets/style_preferences-CEztVbes.js
-%%WWWDIR%%/assets/webauthn-qOtyK3k-.js
+%%WWWDIR%%/assets/style_preferences-B0RS7gZs.js
+%%WWWDIR%%/assets/webauthn-DHNm3GwH.js
 @dir(opengist,opengist,750) /var/db/opengist
 @dir(opengist,opengist,750) /var/run/opengist

@@ -1,6 +1,5 @@
 PORTNAME=	opengist
-PORTVERSION=	1.12.2
-PORTREVISION=	1
+PORTVERSION=	1.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www textproc
 MASTER_SITES=	LOCAL/fox/:js
@@ -18,7 +17,7 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules nodejs:20,build
+USES=		go:1.26+,modules nodejs:24,build
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	thomiceli
