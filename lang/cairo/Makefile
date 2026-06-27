@@ -1,7 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.0
-PORTREVISION=	2
+DISTVERSION=	2.19.0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -25,7 +24,8 @@ USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	starkware-libs
 
-CARGO_CRATES=	adler2-2.0.1 \
+CARGO_CRATES=	addr2line-0.25.1 \
+		adler2-2.0.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		alloca-0.4.0 \
@@ -37,30 +37,31 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
-		ark-ec-0.5.0 \
-		ark-ff-0.5.0 \
-		ark-ff-asm-0.5.0 \
-		ark-ff-macros-0.5.0 \
-		ark-poly-0.5.0 \
-		ark-secp256k1-0.5.0 \
-		ark-secp256r1-0.5.0 \
-		ark-serialize-0.5.0 \
-		ark-serialize-derive-0.5.0 \
-		ark-std-0.5.0 \
+		ark-ec-0.6.0 \
+		ark-ff-0.6.0 \
+		ark-ff-asm-0.6.0 \
+		ark-ff-macros-0.6.0 \
+		ark-poly-0.6.0 \
+		ark-secp256k1-0.6.0 \
+		ark-secp256r1-0.6.0 \
+		ark-serialize-0.6.0 \
+		ark-serialize-derive-0.6.0 \
+		ark-std-0.6.0 \
 		arrayvec-0.7.6 \
 		ascii-canvas-4.0.0 \
 		assert_matches-1.5.0 \
 		async-channel-2.5.0 \
 		atomic-polyfill-1.0.3 \
 		atomic-waker-1.1.2 \
-		autocfg-1.5.0 \
-		aws-lc-rs-1.16.2 \
-		aws-lc-sys-0.39.1 \
+		autocfg-1.5.1 \
+		aws-lc-rs-1.17.0 \
+		aws-lc-sys-0.41.0 \
+		backtrace-0.3.76 \
 		base64-0.22.1 \
 		bimap-0.6.3 \
 		bit-set-0.9.1 \
 		bit-vec-0.9.1 \
-		bitflags-2.11.1 \
+		bitflags-2.12.1 \
 		bitvec-1.0.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
@@ -68,24 +69,23 @@ CARGO_CRATES=	adler2-2.0.1 \
 		borsh-1.6.1 \
 		boxcar-0.2.14 \
 		bstr-1.12.1 \
-		bumpalo-3.20.2 \
+		bumpalo-3.20.3 \
 		byte-slice-cast-1.2.3 \
 		byteorder-1.5.0 \
 		bytes-1.11.1 \
 		cairo-lang-primitive-token-1.0.0 \
 		cairo-vm-3.2.0 \
 		cast-0.3.0 \
-		cc-1.2.60 \
-		cesu8-1.1.0 \
+		cc-1.2.63 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.0 \
+		clap-4.6.1 \
 		clap_builder-4.6.0 \
-		clap_derive-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		cmake-0.1.58 \
 		cobs-0.3.0 \
@@ -96,7 +96,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		console-0.16.3 \
 		const-fnv1a-hash-1.1.0 \
 		const-oid-0.10.2 \
-		const_format-0.2.35 \
+		const_format-0.2.36 \
 		const_format_proc_macros-0.2.34 \
 		convert_case-0.11.0 \
 		core-foundation-0.9.4 \
@@ -115,19 +115,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crunchy-0.2.4 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.7 \
-		crypto-common-0.2.1 \
+		crypto-common-0.2.2 \
 		deranged-0.5.8 \
 		derivative-2.2.0 \
+		dhat-0.3.3 \
 		diff-0.1.13 \
-		diffy-0.4.2 \
+		diffy-0.5.0 \
 		digest-0.10.7 \
-		digest-0.11.2 \
-		displaydoc-0.2.5 \
+		digest-0.11.3 \
+		displaydoc-0.2.6 \
 		dissimilar-1.0.11 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
 		educe-0.6.0 \
-		either-1.15.0 \
+		either-1.16.0 \
 		embedded-io-0.4.0 \
 		embedded-io-0.6.1 \
 		ena-0.14.4 \
@@ -157,7 +158,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		futures-macro-0.3.32 \
 		futures-sink-0.3.32 \
 		futures-task-0.3.32 \
-		futures-timer-3.0.3 \
+		futures-timer-3.0.4 \
 		futures-util-0.3.32 \
 		genco-0.19.0 \
 		genco-macros-0.19.0 \
@@ -166,26 +167,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
+		gimli-0.32.3 \
 		glob-0.3.3 \
 		globset-0.4.18 \
-		good_lp-1.15.1 \
-		h2-0.4.13 \
+		good_lp-1.15.2 \
+		h2-0.4.14 \
 		half-2.7.1 \
 		hash32-0.2.1 \
 		hashbrown-0.15.5 \
-		hashbrown-0.17.0 \
+		hashbrown-0.17.1 \
 		hashlink-0.10.0 \
 		heapless-0.7.17 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
-		http-1.4.0 \
+		http-1.4.1 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
-		hybrid-array-0.4.10 \
-		hyper-1.9.0 \
-		hyper-rustls-0.27.8 \
+		hybrid-array-0.4.12 \
+		hyper-1.10.1 \
+		hyper-rustls-0.27.9 \
 		hyper-util-0.1.20 \
 		icu_collections-2.2.0 \
 		icu_locale_core-2.2.0 \
@@ -196,7 +198,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_provider-2.2.0 \
 		id-arena-2.3.0 \
 		idna-1.1.0 \
-		idna_adapter-1.2.1 \
+		idna_adapter-1.2.2 \
 		ignore-0.4.25 \
 		impl-trait-for-tuples-0.2.3 \
 		indent-0.1.1 \
@@ -206,68 +208,70 @@ CARGO_CRATES=	adler2-2.0.1 \
 		intrusive-collections-0.9.7 \
 		inventory-0.3.24 \
 		ipnet-2.12.0 \
-		iri-string-0.7.12 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jni-0.21.1 \
-		jni-sys-0.3.1 \
+		jni-0.22.4 \
+		jni-macros-0.22.4 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.95 \
+		js-sys-0.3.99 \
 		keccak-0.1.6 \
 		keccak-0.2.0 \
+		konst-0.2.20 \
+		konst_macro_rules-0.2.19 \
 		lalrpop-0.23.1 \
 		lalrpop-util-0.23.1 \
 		lambdaworks-crypto-0.13.0 \
 		lambdaworks-math-0.13.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.185 \
-		libmimalloc-sys-0.1.44 \
+		libc-0.2.186 \
+		libmimalloc-sys-0.1.49 \
 		litemap-0.8.2 \
 		lock_api-0.4.14 \
-		log-0.4.29 \
+		log-0.4.31 \
 		lru-0.12.5 \
 		lru-slab-0.1.2 \
 		matchers-0.2.0 \
 		matrixmultiply-0.3.10 \
-		memchr-2.8.0 \
+		memchr-2.8.1 \
 		memoffset-0.9.1 \
 		microlp-0.4.0 \
-		mimalloc-0.1.48 \
+		mimalloc-0.1.52 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
-		mio-1.2.0 \
+		mintex-0.1.4 \
+		mio-1.2.1 \
 		ndarray-0.17.2 \
 		new_debug_unreachable-1.0.6 \
 		nom-7.1.3 \
 		nu-ansi-term-0.50.3 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
-		num-conv-0.2.1 \
+		num-conv-0.2.2 \
 		num-integer-0.1.46 \
 		num-modular-0.5.1 \
 		num-prime-0.4.4 \
 		num-traits-0.2.19 \
+		object-0.37.3 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
-		openssl-0.10.77 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
 		openssl-src-300.6.0+3.6.2 \
-		openssl-sys-0.9.113 \
+		openssl-sys-0.9.116 \
 		page_size-0.6.0 \
 		parity-scale-codec-3.7.5 \
 		parity-scale-codec-derive-3.7.5 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		paste-1.0.15 \
 		path-clean-1.0.1 \
 		percent-encoding-2.3.2 \
 		petgraph-0.8.3 \
@@ -279,7 +283,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		portable-atomic-1.13.1 \
-		portable-atomic-util-0.2.6 \
+		portable-atomic-util-0.2.7 \
 		postcard-1.1.3 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
@@ -289,7 +293,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		prettyplease-0.2.37 \
 		proc-macro-crate-3.5.0 \
 		proc-macro2-1.0.106 \
-		pulldown-cmark-0.13.3 \
+		pulldown-cmark-0.13.4 \
 		pulldown-cmark-escape-0.11.0 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
@@ -298,7 +302,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
-		rand-0.8.5 \
+		rand-0.8.6 \
 		rand-0.9.4 \
 		rand-0.10.1 \
 		rand_chacha-0.3.1 \
@@ -316,24 +320,26 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
 		relative-path-1.9.3 \
-		reqwest-0.13.2 \
+		reqwest-0.13.4 \
 		rfc6979-0.4.0 \
 		ring-0.17.14 \
 		rstest-0.26.1 \
 		rstest_macros-0.26.1 \
-		rust_decimal-1.41.0 \
+		rust_decimal-1.42.0 \
+		rustc-demangle-0.1.27 \
+		rustc-hash-1.1.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
-		rustls-0.23.38 \
-		rustls-native-certs-0.8.3 \
-		rustls-pki-types-1.14.0 \
-		rustls-platform-verifier-0.6.2 \
+		rustls-0.23.40 \
+		rustls-native-certs-0.8.4 \
+		rustls-pki-types-1.14.1 \
+		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.12 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
-		salsa-0.26.0 \
-		salsa-macro-rules-0.26.0 \
-		salsa-macros-0.26.0 \
+		salsa-0.26.2 \
+		salsa-macro-rules-0.26.2 \
+		salsa-macros-0.26.2 \
 		same-file-1.0.6 \
 		schannel-0.1.29 \
 		schemars-1.2.1 \
@@ -346,22 +352,25 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.149 \
+		serde_json-1.0.150 \
 		serde_spanned-1.1.1 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
-		sha3-0.10.8 \
-		sha3-0.11.0 \
+		sha3-0.10.9 \
+		sha3-0.12.0 \
 		sharded-slab-0.1.7 \
-		shlex-1.3.0 \
+		shlex-2.0.1 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.9 \
-		siphasher-1.0.2 \
+		simd_cesu8-1.1.1 \
+		simdutf8-0.1.5 \
+		siphasher-1.0.3 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		smol_str-0.3.6 \
-		socket2-0.6.3 \
+		socket2-0.6.4 \
 		spin-0.9.8 \
+		sponge-cursor-0.1.0 \
 		sprs-0.11.4 \
 		stable_deref_trait-1.2.1 \
 		starknet-crypto-0.8.1 \
@@ -381,11 +390,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thin-vec-0.2.15 \
-		thiserror-1.0.69 \
+		thin-vec-0.2.18 \
 		thiserror-2.0.18 \
-		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
+		thousands-0.2.0 \
 		thread_local-1.1.9 \
 		time-0.3.47 \
 		time-core-0.1.8 \
@@ -394,17 +402,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.51.1 \
+		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
 		tokio-util-0.7.18 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.11+spec-1.1.0 \
+		toml_edit-0.25.12+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
 		toml_writer-1.1.1+spec-1.1.0 \
 		tower-0.5.3 \
-		tower-http-0.6.8 \
+		tower-http-0.6.11 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
@@ -414,13 +422,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-subscriber-0.3.23 \
 		try-lock-0.2.5 \
 		typeid-1.0.3 \
-		typenum-1.19.0 \
-		typetag-0.2.21 \
-		typetag-impl-0.2.21 \
+		typenum-1.20.1 \
+		typetag-0.2.22 \
+		typetag-impl-0.2.22 \
 		unescaper-0.1.8 \
 		unicase-2.9.0 \
 		unicode-ident-1.0.24 \
-		unicode-segmentation-1.13.2 \
+		unicode-segmentation-1.13.3 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		unit-prefix-0.5.2 \
@@ -430,24 +438,24 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8parse-0.2.2 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
-		vector-map-1.0.2 \
+		vector-map-1.1.0 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.2+wasi-0.2.9 \
+		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.118 \
-		wasm-bindgen-futures-0.4.68 \
-		wasm-bindgen-macro-0.2.118 \
-		wasm-bindgen-macro-support-0.2.118 \
-		wasm-bindgen-shared-0.2.118 \
+		wasm-bindgen-0.2.122 \
+		wasm-bindgen-futures-0.4.72 \
+		wasm-bindgen-macro-0.2.122 \
+		wasm-bindgen-macro-support-0.2.122 \
+		wasm-bindgen-shared-0.2.122 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.95 \
+		web-sys-0.3.99 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.6 \
+		webpki-root-certs-1.0.7 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -456,38 +464,30 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-registry-0.6.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
-		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
-		windows-targets-0.42.2 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
-		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.1 \
-		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_aarch64_msvc-0.53.1 \
-		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_gnullvm-0.53.1 \
-		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.52.6 \
 		windows_i686_msvc-0.53.1 \
-		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnu-0.53.1 \
-		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_gnullvm-0.53.1 \
-		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
-		winnow-1.0.1 \
+		winnow-1.0.3 \
 		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rust-0.51.0 \
 		wit-bindgen-rust-macro-0.51.0 \
@@ -501,12 +501,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		yansi-1.0.1 \
 		yoke-0.8.2 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.48 \
-		zerocopy-derive-0.8.48 \
-		zerofrom-0.1.7 \
+		zerocopy-0.8.50 \
+		zerocopy-derive-0.8.50 \
+		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
-		zeroize_derive-1.4.3 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
