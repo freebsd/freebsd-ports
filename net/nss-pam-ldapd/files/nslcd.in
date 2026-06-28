@@ -2,7 +2,7 @@
 
 # PROVIDE: nslcd
 # REQUIRE: NETWORKING slapd ldconfig resolv kstart
-# BEFORE: syslogd
+# BEFORE: LOGIN syslogd
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable the nslcd daemon:
