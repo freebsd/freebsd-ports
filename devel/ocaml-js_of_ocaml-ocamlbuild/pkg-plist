@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/META
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/dune-package
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.a
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cma
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cmi
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cmt
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cmti
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cmx
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cmxa
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.cmxs
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.ml
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/ocamlbuild_js_of_ocaml.mli
+%%OCAML_SITELIBDIR%%/js_of_ocaml-ocamlbuild/opam
