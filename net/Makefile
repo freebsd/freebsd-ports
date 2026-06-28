@@ -1,6 +1,7 @@
     COMMENT = Networking tools
 
     SUBDIR += 3proxy
+    SUBDIR += 389-ds-base
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
     SUBDIR += R-cran-pingr
