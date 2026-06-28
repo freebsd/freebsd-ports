@@ -975,6 +975,7 @@
     SUBDIR += py-kornia-rs
     SUBDIR += py-leather
     SUBDIR += py-lerc
+    SUBDIR += py-liffile
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
     SUBDIR += py-mcomix

@@ -1,0 +1,5 @@
+Liffile is a Python library to read image and metadata from Leica image files:
+LIF (Leica Image File), LOF (Leica Object File), XLIF (XML Image File), XLCF
+(XML Collection File), XLEF (XML Experiment File), and LIFEXT (Leica Image File
+Extension). These files are written by LAS X software to store collections of
+images and metadata from microscopy experiments.
