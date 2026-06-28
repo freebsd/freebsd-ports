@@ -1,0 +1,3 @@
+Ppx_optcomp is an PPX OCaml syntax extention to introduce conditional
+compilation in OCaml sources. It includes a simple expression language
+to evaluate condition predicates.
