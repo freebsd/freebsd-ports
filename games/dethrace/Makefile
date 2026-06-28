@@ -1,0 +1,31 @@
+PORTNAME=	dethrace
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.10.1
+CATEGORIES=	games
+
+MAINTAINER=	eduardo@FreeBSD.org
+COMMENT=	Reverse engineering the 1997 game "Carmageddon"
+WWW=		https://github.com/dethrace-labs/dethrace
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake:testing sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	dethrace-labs
+GH_TUPLE=	dethrace-labs:BRender-v1.3.2:44d27ffa026a0a3ea4dc0642315913bf5bc27e25:brender/lib/BRender-v1.3.2
+USE_SDL=	sdl3
+
+CMAKE_ON=	DETHRACE_INSTALL DETHRACE_PLATFORM_SDL3
+CMAKE_OFF=	BUILD_TESTS DETHRACE_PLATFORM_SDL1 DETHRACE_PLATFORM_SDL2 \
+		DETHRACE_PLATFORM_SDL_DYNAMIC
+CMAKE_TESTING_ON=	BUILD_TESTS
+
+LDFLAGS+=	-lexecinfo
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-extract:
+	@${ECHO_CMD} "${DISTVERSION}" > ${WRKSRC}/VERSION
+
+.include <bsd.port.mk>

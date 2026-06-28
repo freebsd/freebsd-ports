@@ -186,6 +186,7 @@
     SUBDIR += dangen
     SUBDIR += darkplaces
     SUBDIR += defendguin
+    SUBDIR += dethrace
     SUBDIR += devd-controller-rules
     SUBDIR += devilutionX
     SUBDIR += dhewm3
