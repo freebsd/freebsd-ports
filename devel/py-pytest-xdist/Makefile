@@ -1,5 +1,5 @@
 PORTNAME=	pytest-xdist
-DISTVERSION=	3.7.0
+DISTVERSION=	3.8.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2.3:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}execnet>=2.0:sysutils/py-execnet@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}execnet>=2.1:sysutils/py-execnet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=7.0.0:devel/py-pytest@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=0:sysutils/py-filelock@${PY_FLAVOR}
 
