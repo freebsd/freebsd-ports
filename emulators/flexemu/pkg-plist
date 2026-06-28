@@ -4,6 +4,7 @@ bin/flex2hex
 bin/flexemu
 bin/flexplorer
 bin/fromflex
+bin/hex2flex
 bin/mdcrtool
 bin/toflex
 etc/flexemu.conf
@@ -13,6 +14,7 @@ share/applications/flexemu.desktop
 %%DATADIR%%/6809diag.pdf
 %%DATADIR%%/6809fadg.pdf
 %%DATADIR%%/6x09_Instruction_Sets.pdf
+%%DATADIR%%/README
 %%DATADIR%%/TSC_Text_Processor.pdf
 %%DATADIR%%/asmb.pdf
 %%DATADIR%%/ba2bqs.pdf
