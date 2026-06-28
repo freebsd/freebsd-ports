@@ -1,0 +1,3 @@
+This OCaml library provides an equal function operating on strings in
+constant-time. It may be used by cryptographic code to mitigate
+timing-attacks.

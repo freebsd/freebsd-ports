@@ -1791,6 +1791,7 @@
     SUBDIR += ocaml-dolmen
     SUBDIR += ocaml-domain-name
     SUBDIR += ocaml-dune
+    SUBDIR += ocaml-eqaf
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-fmt
