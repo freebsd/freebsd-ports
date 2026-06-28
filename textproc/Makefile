@@ -2161,6 +2161,7 @@
     SUBDIR += textnote
     SUBDIR += textogif
     SUBDIR += textql
+    SUBDIR += tgrep
     SUBDIR += the_silver_searcher
     SUBDIR += ti-hunspell
     SUBDIR += tinyxml
