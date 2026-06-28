@@ -1,3 +1,59 @@
+  <vuln vid="f00e2de8-7d30-48d2-a43d-68206347dea6">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>gitea</name>
+       <range><lt>1.26.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The Gitea team reports:</p>
+       <ul>
+       <li>CVE-2026-27783: incorrect read permission check</li>
+       <li>CVE-2026-25714: public-only token filtering bypass</li>
+       <li>CVE-2026-20706: missing token scope checking</li>
+       <li>CVE-2026-27771: unauthenticated access to private container images</li>
+       <li>CVE-2026-28744: git smart HTTP request scope bug</li>
+       <li>CVE-2026-28699: basic auth bug</li>
+       <li>CVE-2026-26231: maintainer edit permission escalation</li>
+       <li>CVE-2026-20896: reverse proxy trusted proxies misconfiguration allowing user impersonation</li>
+       <li>CVE-2026-22874: incomplete SSRF protection in webhooks and migrations</li>
+       <li>CVE-2026-27775: branch write permission cache escalation</li>
+       <li>CVE-2026-27761: RSS/Atom feed token scope not enforced</li>
+       <li>CVE-2026-25038: private organization labels leaked to non-members</li>
+       <li>CVE-2026-24451: fork sync allowed after base repo access revoked</li>
+       <li>CVE-2026-20779: TOTP passcode reuse across login surfaces (TOCTOU race)</li>
+       <li>CVE-2026-28740: cross-repository LFS object reuse without Code-unit access</li>
+       <li>OAuth2 callback could auto-reactivate disabled users</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27783</cvename>
+      <cvename>CVE-2026-25714</cvename>
+      <cvename>CVE-2026-20706</cvename>
+      <cvename>CVE-2026-27771</cvename>
+      <cvename>CVE-2026-28744</cvename>
+      <cvename>CVE-2026-28699</cvename>
+      <cvename>CVE-2026-26231</cvename>
+      <cvename>CVE-2026-20896</cvename>
+      <cvename>CVE-2026-22874</cvename>
+      <cvename>CVE-2026-27775</cvename>
+      <cvename>CVE-2026-27761</cvename>
+      <cvename>CVE-2026-25038</cvename>
+      <cvename>CVE-2026-24451</cvename>
+      <cvename>CVE-2026-20779</cvename>
+      <cvename>CVE-2026-28740</cvename>
+      <url>https://blog.gitea.com/release-of-1.26.2/</url>
+      <url>https://blog.gitea.com/release-of-1.26.3-and-1.26.4/</url>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba8d239f-709f-11f1-a30e-28d2443e6cfa">
     <topic>ffmpeg -- Out-of-bounds write</topic>
     <affects>
