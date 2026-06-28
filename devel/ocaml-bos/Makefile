@@ -1,5 +1,5 @@
 PORTNAME=	bos
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/bos/releases/
@@ -51,7 +51,7 @@ do-install:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/bos.cmxs
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/bos_setup.cmxs
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/bos_top.cmxs
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/setup/bos_setup.cmxs
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/top/bos_top.cmxs
 
 .include <bsd.port.mk>
