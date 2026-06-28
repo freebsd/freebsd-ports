@@ -623,6 +623,7 @@
     SUBDIR += py-shap2
     SUBDIR += py-shell-gpt
     SUBDIR += py-sigopt
+    SUBDIR += py-skops
     SUBDIR += py-smdebug-rulesconfig
     SUBDIR += py-snakemake-interface-common
     SUBDIR += py-snakemake-interface-executor-plugins
