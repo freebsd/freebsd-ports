@@ -46,7 +46,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libhdf5.so:science/hdf5 \
 		libicui18n.so:devel/icu
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1<0.8:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++20-lang cmake cpe gl eigen:3 fortran gmake jpeg \

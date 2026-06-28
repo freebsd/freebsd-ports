@@ -24,7 +24,7 @@ FreeCAD/Mod/AddonManager/AddonManagerOptions_AddCustomRepository.ui
 FreeCAD/Mod/AddonManager/AddonStats.py
 FreeCAD/Mod/AddonManager/Init.py
 FreeCAD/Mod/AddonManager/InitGui.py
-FreeCAD/Mod/AddonManager/LICENSE.md
+FreeCAD/Mod/AddonManager/LICENSE
 FreeCAD/Mod/AddonManager/MacroCacheCreator.py
 FreeCAD/Mod/AddonManager/NetworkManager.py
 FreeCAD/Mod/AddonManager/PySideWrapper.py
@@ -84,6 +84,7 @@ FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_pt-PT.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_ru.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_sr-CS.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_sr-SP.qm
+FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_sv.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_uk.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_zh-CN.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_zh-TW.qm
@@ -122,6 +123,7 @@ FreeCAD/Mod/AddonManager/addonmanager_package_details_controller.py
 FreeCAD/Mod/AddonManager/addonmanager_preferences_defaults.json
 FreeCAD/Mod/AddonManager/addonmanager_preferences_migrations.py
 FreeCAD/Mod/AddonManager/addonmanager_python_deps.py
+FreeCAD/Mod/AddonManager/addonmanager_python_deps_commands.py
 FreeCAD/Mod/AddonManager/addonmanager_python_deps_gui.py
 FreeCAD/Mod/AddonManager/addonmanager_readme_controller.py
 FreeCAD/Mod/AddonManager/addonmanager_toolbar_adapter.py
@@ -138,6 +140,7 @@ FreeCAD/Mod/AddonManager/dependency_resolution_dialog.ui
 FreeCAD/Mod/AddonManager/expanded_view.py
 FreeCAD/Mod/AddonManager/expanded_view.ui
 FreeCAD/Mod/AddonManager/first_run.ui
+FreeCAD/Mod/AddonManager/main.py
 FreeCAD/Mod/AddonManager/package.xml
 FreeCAD/Mod/AddonManager/package_details.ui
 FreeCAD/Mod/AddonManager/package_list.py
@@ -1077,6 +1080,7 @@ FreeCAD/Mod/Draft/drafttests/test_dxf.py
 FreeCAD/Mod/Draft/drafttests/test_import.py
 FreeCAD/Mod/Draft/drafttests/test_import_gui.py
 FreeCAD/Mod/Draft/drafttests/test_import_tools.py
+FreeCAD/Mod/Draft/drafttests/test_lines_gui.py
 FreeCAD/Mod/Draft/drafttests/test_manual_input_gui.py
 FreeCAD/Mod/Draft/drafttests/test_modification.py
 FreeCAD/Mod/Draft/drafttests/test_oca.py
@@ -1284,6 +1288,7 @@ FreeCAD/Mod/Fem/femexamples/meshes/mesh_truss_crane_seg2.py
 FreeCAD/Mod/Fem/femexamples/meshes/mesh_truss_crane_seg3.py
 FreeCAD/Mod/Fem/femexamples/mystran_plate.py
 FreeCAD/Mod/Fem/femexamples/rc_wall_2d.py
+FreeCAD/Mod/Fem/femexamples/spark_gap.py
 FreeCAD/Mod/Fem/femexamples/square_pipe_end_twisted_edgeforces.py
 FreeCAD/Mod/Fem/femexamples/square_pipe_end_twisted_nodeforces.py
 FreeCAD/Mod/Fem/femexamples/thermomech_bimetal.py
@@ -1873,6 +1878,8 @@ FreeCAD/Mod/Part/parttests/ColorPerFaceTest.py
 FreeCAD/Mod/Part/parttests/ColorTransparencyTest.py
 FreeCAD/Mod/Part/parttests/Geom2d_tests.py
 FreeCAD/Mod/Part/parttests/TaskFaceAppearancesTest.py
+FreeCAD/Mod/Part/parttests/TestFaceMakerUnifiedNonPlanar.py
+FreeCAD/Mod/Part/parttests/TestFaceMakerUnifiedPlanar.py
 FreeCAD/Mod/Part/parttests/TestPartMirror.py
 FreeCAD/Mod/Part/parttests/TestTangentMode3-0.21.FCStd
 FreeCAD/Mod/Part/parttests/TopoShapeListTest.py
@@ -2014,6 +2021,7 @@ FreeCAD/Mod/TechDraw/TDTest/DrawViewDetailTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewDimensionTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewImageTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewPartTest.py
+FreeCAD/Mod/TechDraw/TDTest/DrawViewScaleTypeTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewSectionTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewSymbolTest.py
 FreeCAD/Mod/TechDraw/TDTest/TechDrawTestUtilities.py
@@ -3389,12 +3397,12 @@ FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/edge-weld.svg
 FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/flanging.svg
 FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/flare-bevel-groove.svg
 FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/flare-v-groove.svg
-FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_312/cathetus.svg
-FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_312/gost-2_312-intermittent.svg
-FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_312/gost-2_312-non-closed.svg
-FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_312/gost-2_312-site-weld.svg
-FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_312/gost-2_312-smooth-processing.svg
-FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_312/gost-2_312-usilenie-remove.svg
+FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_%%PYTHON_SUFFIX%%/cathetus.svg
+FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_%%PYTHON_SUFFIX%%/gost-2_%%PYTHON_SUFFIX%%-intermittent.svg
+FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_%%PYTHON_SUFFIX%%/gost-2_%%PYTHON_SUFFIX%%-non-closed.svg
+FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_%%PYTHON_SUFFIX%%/gost-2_%%PYTHON_SUFFIX%%-site-weld.svg
+FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_%%PYTHON_SUFFIX%%/gost-2_%%PYTHON_SUFFIX%%-smooth-processing.svg
+FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/gost-2_%%PYTHON_SUFFIX%%/gost-2_%%PYTHON_SUFFIX%%-usilenie-remove.svg
 FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/seam-weld.svg
 FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/single-bevel-cjp-groove-weld.svg
 FreeCAD/share/Mod/TechDraw/Symbols/Welding/GOST/single-bevel-groove-weld-with-broad-root-face.svg
