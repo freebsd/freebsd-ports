@@ -1,6 +1,6 @@
---- mediamtx.yml.orig	2026-06-04 22:46:38 UTC
+--- mediamtx.yml.orig	2026-06-28 21:24:55 UTC
 +++ mediamtx.yml
-@@ -482,7 +482,6 @@ pathDefaults:
+@@ -490,7 +490,6 @@ pathDefaults:
    # * whep://existing-url -> the stream is pulled from another WebRTC server / camera with HTTP+WHEP
    # * wheps://existing-url -> the stream is pulled from another WebRTC server / camera with HTTPS+WHEP
    # * redirect -> the stream is provided by another path or server
@@ -8,7 +8,7 @@
    # The following variables can be used in the source string:
    # * $MTX_QUERY: query parameters (passed by first reader)
    # * $G1, $G2, ...: regular expression groups, if path name is
-@@ -612,100 +611,6 @@ pathDefaults:
+@@ -624,101 +623,6 @@ pathDefaults:
    # Path to which clients will be redirected.
    # It can be a relative path (i.e. /otherstream) or an absolute RTSP URL.
    sourceRedirect:
@@ -89,22 +89,23 @@
 -  # format is the one of the strftime() function.
 -  rpiCameraTextOverlay: "%Y-%m-%d %H:%M:%S - MediaMTX"
 -  # Codec (auto, hardwareH264, softwareH264 or mjpeg).
--  # When is "auto" and stream is primary, it defaults to hardwareH264 (if available) or softwareH264.
--  # When is "auto" and stream is secondary, it defaults to mjpeg.
+-  # When is "auto", it defaults to:
+-  # * hardwareH264 when stream is primary and hardware encoder is available
+-  # * softwareH264 when stream is primary and hardware encoder is not available
+-  # * mjpeg when stream is secondary
 -  rpiCameraCodec: auto
 -  # Period between IDR frames (when codec is hardwareH264 or softwareH264).
 -  rpiCameraIDRPeriod: 60
 -  # Bitrate (when codec is hardwareH264 or softwareH264).
 -  rpiCameraBitrate: 5000000
--  # Hardware H264 profile (baseline, main or high) (when codec is hardwareH264).
--  rpiCameraHardwareH264Profile: main
--  # Hardware H264 level (4.0, 4.1 or 4.2) (when codec is hardwareH264).
--  rpiCameraHardwareH264Level: "4.1"
--  # Software H264 profile (baseline, main or high) (when codec is softwareH264).
--  rpiCameraSoftwareH264Profile: baseline
--  # Software H264 level (4.0, 4.1 or 4.2) (when codec is softwareH264).
--  rpiCameraSoftwareH264Level: "4.1"
--  # M-JPEG JPEG quality (when codec is mjpeg).
+-  # H264 profile (auto, baseline, main or high).
+-  # When is "auto", it defaults to:
+-  # * main when codec is hardwareH264
+-  # * baseline when codec is softwareH264
+-  rpiCameraH264Profile: auto
+-  # H264 level (4.0, 4.1 or 4.2).
+-  rpiCameraH264Level: "4.1"
+-  # M-JPEG quality (0-100).
 -  rpiCameraMJPEGQuality: 60
  
    ###############################################
