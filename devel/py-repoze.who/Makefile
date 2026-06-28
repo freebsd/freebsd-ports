@@ -1,8 +1,9 @@
 PORTNAME=	repoze.who
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/./_/}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Identification and authentication framework for WSGI
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:www/py-webob@${PY_FLAVOR} \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
