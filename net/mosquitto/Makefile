@@ -1,6 +1,6 @@
 PORTNAME=	mosquitto
 DISTVERSION=	2.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://mosquitto.org/files/source/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libuuid.so:misc/libuuid
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cmake cpe ssl
+USES=		cmake cpe readline ssl
 USE_RC_SUBR=	mosquitto
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCJSON_INCLUDE_DIR:PATH="${PREFIX}/include/json" \
