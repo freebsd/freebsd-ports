@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-outposts
-PORTVERSION=	1.103.0
+PORTVERSION=	1.105.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
