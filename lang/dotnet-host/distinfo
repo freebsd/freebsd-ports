@@ -1,3 +1,3 @@
-TIMESTAMP = 1773402306
-SHA256 (dotnet-runtime-v9.0.14_GH0.tar.gz) = 70739cfd9e5e18594f7e1c9ec004c5b28db082a0d12122ea7ee5292add3e9adf
-SIZE (dotnet-runtime-v9.0.14_GH0.tar.gz) = 89572155
+TIMESTAMP = 1784733047
+SHA256 (dotnet-runtime-v10.0.10_GH0.tar.gz) = 6bf07e6faf73bcf6aedd2813e5026086af266ae355b153b67358e35cb1141127
+SIZE (dotnet-runtime-v10.0.10_GH0.tar.gz) = 95207826
