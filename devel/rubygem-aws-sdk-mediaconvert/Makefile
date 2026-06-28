@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-mediaconvert
-PORTVERSION=	1.186.0
+PORTVERSION=	1.188.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
