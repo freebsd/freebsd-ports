@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260628:
+  AFFECTS: users of www/gitea
+  AUTHOR: nxjoseph@FreeBSD.org
+
+  Gitea 1.26.3 tightens the fork pull request approval gate:
+  a pull request from a fork must now be merged before it can bypass
+  the approval gate (#38041). Review your workflow approval settings
+  if you rely on the previous behavior.
+  https://github.com/go-gitea/gitea/pull/38041
+
 20260626:
   AFFECTS: net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
