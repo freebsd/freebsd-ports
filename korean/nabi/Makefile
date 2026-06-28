@@ -1,6 +1,5 @@
 PORTNAME=	nabi
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	korean gnome
 
 MAINTAINER=	jkim@FreeBSD.org
@@ -14,14 +13,14 @@ LIB_DEPENDS=	libhangul.so:korean/libhangul
 LIB_DEPENDS+=	libfreetype.so:print/freetype2
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 
-GH_ACCOUNT=	choehwanjin
-GH_TAGNAME=	f08d7d3
-USE_GITHUB=	yes
-
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	ice sm x11
+
+GH_ACCOUNT=	choehwanjin
+GH_TAGNAME=	34d4ece
+USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_RADIO=	LAYOUT
