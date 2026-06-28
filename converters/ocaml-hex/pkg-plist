@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/hex/META
+%%OCAML_SITELIBDIR%%/hex/dune-package
+%%OCAML_SITELIBDIR%%/hex/hex.a
+%%OCAML_SITELIBDIR%%/hex/hex.cma
+%%OCAML_SITELIBDIR%%/hex/hex.cmi
+%%OCAML_SITELIBDIR%%/hex/hex.cmt
+%%OCAML_SITELIBDIR%%/hex/hex.cmti
+%%OCAML_SITELIBDIR%%/hex/hex.cmx
+%%OCAML_SITELIBDIR%%/hex/hex.cmxa
+%%OCAML_SITELIBDIR%%/hex/hex.cmxs
+%%OCAML_SITELIBDIR%%/hex/hex.ml
+%%OCAML_SITELIBDIR%%/hex/hex.mli
+%%OCAML_SITELIBDIR%%/hex/opam

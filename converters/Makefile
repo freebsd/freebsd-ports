@@ -56,6 +56,7 @@
     SUBDIR += nomyso
     SUBDIR += o3read
     SUBDIR += ocaml-base64
+    SUBDIR += ocaml-hex
     SUBDIR += ocaml-jsonm
     SUBDIR += osm2mp
     SUBDIR += osm2pgrouting

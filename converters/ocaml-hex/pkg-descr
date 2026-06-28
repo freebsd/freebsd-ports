@@ -1,0 +1,3 @@
+A library for decoding and encoding base64 (RFC4648) strings in
+OCaml. In addition to the default alphabet and an URI-safe alphabet
+provided by this library, it is possible to use a custom alphabet.
