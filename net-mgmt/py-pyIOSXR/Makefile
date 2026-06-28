@@ -11,6 +11,9 @@ WWW=		https://github.com/fooelisa/pyiosxr
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Upstream inactive since +8 years, code was integrated into py-napalm. Please use net-mgmt/py-napalm instead
+EXPIRATION_DATE=2026-07-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.2.4:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netmiko>=1.4.3:security/py-netmiko@${PY_FLAVOR}
