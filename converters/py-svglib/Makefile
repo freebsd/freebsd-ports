@@ -1,5 +1,5 @@
 PORTNAME=	svglib
-DISTVERSION=	1.6.0
+DISTVERSION=	2.0.2
 CATEGORIES=	converters python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssselect2>=0.2.0:textproc/py-cssselect2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6.0.0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=9.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=4.4.3:print/py-reportlab@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rlpycairo>=0.4.0:graphics/py-rlpycairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss2>=0.6.0:textproc/py-tinycss2@${PY_FLAVOR}
 
 USES=		cpe python
@@ -29,5 +29,11 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 CONFLICTS_INSTALL=	svg2pdf # bin/svg2pdf
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=		BITMAP
+OPTIONS_DEFAULT=	BITMAP
+
+BITMAP_DESC=	Support for rendering ReportLab drawings to Bitmap formats
+BITMAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rlpycairo>=0.4.0:graphics/py-rlpycairo@${PY_FLAVOR}
 
 .include <bsd.port.mk>
