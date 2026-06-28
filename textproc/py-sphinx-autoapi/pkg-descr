@@ -1,3 +1,6 @@
-Sphinx AutoAPI provides "autodoc" style documentation for multiple
-programming languages without needing to load, run, or import the
-project being documented.
+Sphinx AutoAPI is a Sphinx extension for generating complete API documentation
+without needing to load, run, or import the project being documented.
+
+In contrast to the traditional Sphinx autodoc, which requires manual authoring
+and uses code imports, AutoAPI finds and generates documentation by parsing
+source code.
