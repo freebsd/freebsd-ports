@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-opensearchservice
-PORTVERSION=	1.101.0
+PORTVERSION=	1.104.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
