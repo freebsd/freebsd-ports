@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-iotevents
-PORTVERSION=	1.82.0
+PORTVERSION=	1.83.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
