@@ -1800,6 +1800,7 @@
     SUBDIR += ocaml-gen
     SUBDIR += ocaml-gmap
     SUBDIR += ocaml-hmap
+    SUBDIR += ocaml-integers
     SUBDIR += ocaml-ipaddr
     SUBDIR += ocaml-lacaml
     SUBDIR += ocaml-linol

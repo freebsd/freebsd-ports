@@ -1,0 +1,10 @@
+--- src/dune.orig	2026-05-18 08:27:16 UTC
++++ src/dune
+@@ -3,6 +3,5 @@
+  (public_name integers)
+  (wrapped false)
+  (install_c_headers ocaml_integers)
+- (c_names unsigned_stubs)
+- (libraries stdlib-shims)
++ (foreign_stubs (language c) (names unsigned_stubs))
+  (synopsis "Signed and unsigned integers of various sizes"))
