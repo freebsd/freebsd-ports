@@ -1,0 +1,21 @@
+Network diagnostic tool that goes beyond traceroute: MTU discovery, NAT
+detection, route flap alerts, IX identification, and more.
+
+Features:
+- Fast continuous path monitoring with detailed hop statistics
+- Multiple simultaneous targets - trace to several destinations at once
+- Paris/Dublin traceroute - multi-flow probing for ECMP path enumeration
+- ECMP classification - distinguishes per-flow vs per-packet load balancing
+- Path MTU discovery - binary search for maximum unfragmented size
+- NAT detection - identify when NAT devices rewrite source ports
+- Route flap detection - alert on path changes indicating routing instability
+- Rich enrichment - ASN, GeoIP, reverse DNS, IX detection (PeeringDB)
+- MPLS label detection from ICMP extensions
+- ICMP, UDP, TCP probing with auto-detection
+- Great TUI with themes, sparklines, and session export
+- Update notifications - in-app banner when new versions are available
+- Scriptable - JSON, CSV, text report, and line-delimited JSON streaming output
+- Trace diffing - compare two saved sessions for path and latency changes
+- Daemon mode + Prometheus exporter - headless continuous monitoring with
+  /metrics and /healthz
+- Docker-ready - official Dockerfile, graceful SIGTERM shutdown
