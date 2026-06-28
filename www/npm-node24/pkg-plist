@@ -17,6 +17,7 @@ lib/node_modules/npm/bin/npx.cmd
 lib/node_modules/npm/bin/npx.ps1
 lib/node_modules/npm/docs/content/commands/npm-access.md
 lib/node_modules/npm/docs/content/commands/npm-adduser.md
+lib/node_modules/npm/docs/content/commands/npm-approve-scripts.md
 lib/node_modules/npm/docs/content/commands/npm-audit.md
 lib/node_modules/npm/docs/content/commands/npm-bugs.md
 lib/node_modules/npm/docs/content/commands/npm-cache.md
@@ -24,6 +25,7 @@ lib/node_modules/npm/docs/content/commands/npm-ci.md
 lib/node_modules/npm/docs/content/commands/npm-completion.md
 lib/node_modules/npm/docs/content/commands/npm-config.md
 lib/node_modules/npm/docs/content/commands/npm-dedupe.md
+lib/node_modules/npm/docs/content/commands/npm-deny-scripts.md
 lib/node_modules/npm/docs/content/commands/npm-deprecate.md
 lib/node_modules/npm/docs/content/commands/npm-diff.md
 lib/node_modules/npm/docs/content/commands/npm-dist-tag.md
@@ -106,6 +108,7 @@ lib/node_modules/npm/docs/content/using-npm/workspaces.md
 lib/node_modules/npm/docs/lib/index.js
 lib/node_modules/npm/docs/output/commands/npm-access.html
 lib/node_modules/npm/docs/output/commands/npm-adduser.html
+lib/node_modules/npm/docs/output/commands/npm-approve-scripts.html
 lib/node_modules/npm/docs/output/commands/npm-audit.html
 lib/node_modules/npm/docs/output/commands/npm-bugs.html
 lib/node_modules/npm/docs/output/commands/npm-cache.html
@@ -113,6 +116,7 @@ lib/node_modules/npm/docs/output/commands/npm-ci.html
 lib/node_modules/npm/docs/output/commands/npm-completion.html
 lib/node_modules/npm/docs/output/commands/npm-config.html
 lib/node_modules/npm/docs/output/commands/npm-dedupe.html
+lib/node_modules/npm/docs/output/commands/npm-deny-scripts.html
 lib/node_modules/npm/docs/output/commands/npm-deprecate.html
 lib/node_modules/npm/docs/output/commands/npm-diff.html
 lib/node_modules/npm/docs/output/commands/npm-dist-tag.html
@@ -204,6 +208,7 @@ lib/node_modules/npm/lib/cli/validate-engines.js
 lib/node_modules/npm/lib/cli.js
 lib/node_modules/npm/lib/commands/access.js
 lib/node_modules/npm/lib/commands/adduser.js
+lib/node_modules/npm/lib/commands/approve-scripts.js
 lib/node_modules/npm/lib/commands/audit.js
 lib/node_modules/npm/lib/commands/bugs.js
 lib/node_modules/npm/lib/commands/cache.js
@@ -211,6 +216,7 @@ lib/node_modules/npm/lib/commands/ci.js
 lib/node_modules/npm/lib/commands/completion.js
 lib/node_modules/npm/lib/commands/config.js
 lib/node_modules/npm/lib/commands/dedupe.js
+lib/node_modules/npm/lib/commands/deny-scripts.js
 lib/node_modules/npm/lib/commands/deprecate.js
 lib/node_modules/npm/lib/commands/diff.js
 lib/node_modules/npm/lib/commands/dist-tag.js
@@ -286,8 +292,12 @@ lib/node_modules/npm/lib/lifecycle-cmd.js
 lib/node_modules/npm/lib/npm.js
 lib/node_modules/npm/lib/package-url-cmd.js
 lib/node_modules/npm/lib/trust-cmd.js
+lib/node_modules/npm/lib/utils/allow-scripts-cmd.js
+lib/node_modules/npm/lib/utils/allow-scripts-remediation.js
+lib/node_modules/npm/lib/utils/allow-scripts-writer.js
 lib/node_modules/npm/lib/utils/audit-error.js
 lib/node_modules/npm/lib/utils/auth.js
+lib/node_modules/npm/lib/utils/check-allow-scripts.js
 lib/node_modules/npm/lib/utils/cmd-list.js
 lib/node_modules/npm/lib/utils/completion.fish
 @(,,755) lib/node_modules/npm/lib/utils/completion.sh
@@ -315,16 +325,20 @@ lib/node_modules/npm/lib/utils/queryable.js
 lib/node_modules/npm/lib/utils/read-user-info.js
 lib/node_modules/npm/lib/utils/reify-finish.js
 lib/node_modules/npm/lib/utils/reify-output.js
+lib/node_modules/npm/lib/utils/resolve-allow-scripts.js
 lib/node_modules/npm/lib/utils/sbom-cyclonedx.js
 lib/node_modules/npm/lib/utils/sbom-spdx.js
+lib/node_modules/npm/lib/utils/strict-allow-scripts-preflight.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/utils/timers.js
 lib/node_modules/npm/lib/utils/update-workspaces.js
 lib/node_modules/npm/lib/utils/validate-lockfile.js
 lib/node_modules/npm/lib/utils/validate-uuid.js
 lib/node_modules/npm/lib/utils/verify-signatures.js
+lib/node_modules/npm/lib/utils/warn-workspace-allow-scripts.js
 lib/node_modules/npm/man/man1/npm-access.1.gz
 lib/node_modules/npm/man/man1/npm-adduser.1.gz
+lib/node_modules/npm/man/man1/npm-approve-scripts.1.gz
 lib/node_modules/npm/man/man1/npm-audit.1.gz
 lib/node_modules/npm/man/man1/npm-bugs.1.gz
 lib/node_modules/npm/man/man1/npm-cache.1.gz
@@ -332,6 +346,7 @@ lib/node_modules/npm/man/man1/npm-ci.1.gz
 lib/node_modules/npm/man/man1/npm-completion.1.gz
 lib/node_modules/npm/man/man1/npm-config.1.gz
 lib/node_modules/npm/man/man1/npm-dedupe.1.gz
+lib/node_modules/npm/man/man1/npm-deny-scripts.1.gz
 lib/node_modules/npm/man/man1/npm-deprecate.1.gz
 lib/node_modules/npm/man/man1/npm-diff.1.gz
 lib/node_modules/npm/man/man1/npm-dist-tag.1.gz
@@ -479,6 +494,7 @@ lib/node_modules/npm/node_modules/@npmcli/arborist/lib/edge.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/from-path.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/gather-dep-set.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/index.js
+lib/node_modules/npm/node_modules/@npmcli/arborist/lib/install-scripts.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/inventory.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/isolated-classes.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/link.js
@@ -492,15 +508,18 @@ lib/node_modules/npm/node_modules/@npmcli/arborist/lib/place-dep.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/printable.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/query-selector-all.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/realpath.js
+lib/node_modules/npm/node_modules/@npmcli/arborist/lib/release-age-exclude.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/relpath.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/reset-dep-flags.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/retire-path.js
+lib/node_modules/npm/node_modules/@npmcli/arborist/lib/script-allowed.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/shrinkwrap.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/signal-handling.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/signals.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/spec-from-lock.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/tracker.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/tree-check.js
+lib/node_modules/npm/node_modules/@npmcli/arborist/lib/unreviewed-scripts.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/version-from-tgz.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/vuln.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/yarn-lock.js
@@ -514,6 +533,7 @@ lib/node_modules/npm/node_modules/@npmcli/config/lib/env-replace.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/errors.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/nerf-dart.js
+lib/node_modules/npm/node_modules/@npmcli/config/lib/parse-allow-scripts-list.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/parse-field.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/set-envs.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/type-defs.js
@@ -1086,6 +1106,7 @@ lib/node_modules/npm/node_modules/libnpmexec/lib/index.js
 lib/node_modules/npm/node_modules/libnpmexec/lib/is-windows.js
 lib/node_modules/npm/node_modules/libnpmexec/lib/no-tty.js
 lib/node_modules/npm/node_modules/libnpmexec/lib/run-script.js
+lib/node_modules/npm/node_modules/libnpmexec/lib/strict-allow-scripts-preflight.js
 lib/node_modules/npm/node_modules/libnpmexec/lib/with-lock.js
 lib/node_modules/npm/node_modules/libnpmexec/package.json
 lib/node_modules/npm/node_modules/libnpmfund/LICENSE
@@ -1576,6 +1597,7 @@ lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js
 lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/ensureObject.js
 lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/getProp.js
 lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/index.js
+lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/maxNestingDepth.js
 lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/stripComments.js
 lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/unesc.js
 lib/node_modules/npm/node_modules/postcss-selector-parser/package.json
