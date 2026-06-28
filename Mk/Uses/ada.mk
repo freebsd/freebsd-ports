@@ -1,10 +1,12 @@
-# Establish Ada-capable compiler as a build dependency
+# Establish Ada-capable compiler as a build or run dependency
 #
 # Feature:      ada
 # Usage:        USES=ada:ARGS
 # Valid ARGS:   [<version>],[run]
 #
-# version	The chooseable versions are 6 , 12 (default) or 13
+# version	If a Port requires a specific version of Ada, it can be
+# 		explicitly configured with one of the following versions:
+# 		6, 12 (default), 13, 14, or 15
 #
 # run		Add run depends
 #
