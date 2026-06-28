@@ -19,4 +19,15 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+#Error: Python package installs top-level 'tests/' directory in site-packages
+#	Error:   Location: lib/python3.12/site-packages/tests
+#	Error: This causes file conflicts with other packages. Exclude it via pyproject.toml:
+#Error:   [tool.setuptools.packages.find]
+#	Error:   exclude = ["tests", "tests.*"]
+.if ${PYTHON_REL} >= 31200
+IGNORE=		Does not support Python 3.12 or later
+.endif
+
+.include <bsd.port.post.mk>
