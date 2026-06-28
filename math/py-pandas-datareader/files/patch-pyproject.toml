@@ -1,0 +1,28 @@
+--- pyproject.toml.orig	2026-06-28 00:27:02 UTC
++++ pyproject.toml
+@@ -1,13 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8,<9", "wheel"]
++requires = ["setuptools>=63", "setuptools_scm>=8", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "pandas-datareader"
+ dynamic = ["version", "dependencies", "readme"]
+ requires-python = ">=3.11"
+-license = "BSD-3-Clause"
+-license-files = [ "LICENSE.md" ]
++license = { text = "BSD-3-Clause" }
+ description = "Pandas-compatible data readers. Formerly a component of pandas."
+ authors = [
+   {name = "The PyData Development Team", email = "pydata@googlegroups.com"},
+@@ -40,6 +39,9 @@ readme = {file = ["README.md"], content-type = "text/m
+ [tool.setuptools.dynamic]
+ dependencies = {file = ["requirements.txt"]}
+ readme = {file = ["README.md"], content-type = "text/markdown"}
++
++[tool.setuptools.packages.find]
++exclude = ["docs", "docs.*", "tests", "tests.*"]
+ 
+ [tool.setuptools_scm]
+ version_file = "pandas_datareader/_version.py"
