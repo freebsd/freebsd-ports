@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/trie/META
+%%OCAML_SITELIBDIR%%/trie/dune-package
+%%OCAML_SITELIBDIR%%/trie/opam
+%%OCAML_SITELIBDIR%%/trie/trie.a
+%%OCAML_SITELIBDIR%%/trie/trie.cma
+%%OCAML_SITELIBDIR%%/trie/trie.cmi
+%%OCAML_SITELIBDIR%%/trie/trie.cmt
+%%OCAML_SITELIBDIR%%/trie/trie.cmti
+%%OCAML_SITELIBDIR%%/trie/trie.cmx
+%%OCAML_SITELIBDIR%%/trie/trie.cmxa
+%%OCAML_SITELIBDIR%%/trie/trie.cmxs
+%%OCAML_SITELIBDIR%%/trie/trie.ml
+%%OCAML_SITELIBDIR%%/trie/trie.mli
