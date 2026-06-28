@@ -1,7 +1,6 @@
 PORTNAME=	autobahn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	24.4.2
-PORTREVISION=	6
+DISTVERSION=	25.9.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,15 +11,18 @@ WWW=		https://github.com/crossbario/autobahn-python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.14.5:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}txaio>=21.2.1:devel/py-txaio@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}txaio>=25.9.2:devel/py-txaio@${PY_FLAVOR}
 
 USES=		cpe python
 CPE_VENDOR=	crossbar
 USE_GITHUB=	yes
 GH_ACCOUNT=	crossbario
 GH_PROJECT=	autobahn-python
-USE_PYTHON=	autoplist cryptography distutils pytest
+USE_PYTHON=	autoplist cryptography pep517 pytest
 
 OPTIONS_DEFINE=		COMPRESS ENCRYPTION SCRAM SERIALIZATION
 OPTIONS_DEFAULT=	ENCRYPTION SCRAM SERIALIZATION TWISTED
@@ -37,10 +39,12 @@ TWISTED_DESC=		Twisted network backend support
 
 COMPRESS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}python-snappy>=0.6.0:archivers/py-python-snappy@${PY_FLAVOR}
 ENCRYPTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyopenssl>=20.0.1:security/py-pyopenssl@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}service-identity>=18.1.0:security/py-service-identity@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}PyNaCl>=1.4.0:security/py-pynacl@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pytrie>=0.4.0:devel/py-pytrie@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}service-identity>=18.1.0:security/py-service-identity@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}base58>=2.1.1:security/py-base58@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}ecdsa>=0.19.1:security/py-ecdsa@${PY_FLAVOR}
 SCRAM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=20.1.0:security/py-argon2-cffi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}cffi>=1.14.5:devel/py-cffi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}passlib>=1.7.4:security/py-passlib@${PY_FLAVOR}
@@ -51,10 +55,14 @@ SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cbor2>=5.2.0:devel/py-cbor2@${
 				${PYTHON_PKGNAMEPREFIX}ujson>=4.0.2:devel/py-ujson@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}u-msgpack-python>=2.1:devel/py-u-msgpack-python@${PY_FLAVOR}
 TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}attrs>=20.3.0:devel/py-attrs@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}twisted>=24.3.0:devel/py-twisted@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}twisted>=22.10.0:devel/py-twisted@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}zope.interface>=5.2.0:devel/py-zope.interface@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/march=native/d' ${WRKSRC}/autobahn/nvx/_utf8validator.py
+	@${REINPLACE_CMD} -e 's|setuptools>=64|setuptools>=63|' ${WRKSRC}/pyproject.toml
 
 post-stage:
 .if ${ARCH} !=	armv7
