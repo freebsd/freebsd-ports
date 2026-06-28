@@ -1,3 +1,71 @@
+  <vuln vid="d06b1fa2-731f-11f1-a0d2-589cfc10a551">
+    <topic>Multiple vulnerability found in Expat</topic>
+    <affects>
+<package>
+<name>expat</name>
+<name>linux-c7-expat</name>
+<name>linux-rl9-expat</name>
+<range><lt>2.8.2</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://blog.hartwork.org/posts/expat-2-8-2-released/">
+	  <p>Expat 2.8.2 was released yesterday. The key motivation for cutting a release and doing so now was</p>
+	  <p>getting security and non-security bugsfixes out to users. On the security side,</p>
+	  <p>13 vulnerabilities have been fixed:</p>
+	   <ul>
+	    <li>CVE-2026-50219: missing control flow integrity checks</li>
+	    <li>CVE-2026-56131: missing control flow integrity checks</li>
+	    <li>CVE-2026-56132: out-of-bounds write</li>
+	    <li>CVE-2026-56403: integer overflow</li>
+	    <li>CVE-2026-56404: integer overflow</li>
+	    <li>CVE-2026-56405: integer overflow</li>
+	    <li>CVE-2026-56406: integer overflow</li>
+	    <li>CVE-2026-56407: integer overflow</li>
+	    <li>CVE-2026-56408: integer overflow</li>
+	    <li>CVE-2026-56409: integer overflow</li>
+	    <li>CVE-2026-56410: integer overflow</li>
+	    <li>CVE-2026-56411: integer overflow</li>
+	    <li>CVE-2026-56412: missing control flow integrity checks</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-50219</cvename>
+      <cvename>CVE-2026-56131</cvename>
+      <cvename>CVE-2026-56132</cvename>
+      <cvename>CVE-2026-56403</cvename>
+      <cvename>CVE-2026-56404</cvename>
+      <cvename>CVE-2026-56405</cvename>
+      <cvename>CVE-2026-56406</cvename>
+      <cvename>CVE-2026-56407</cvename>
+      <cvename>CVE-2026-56408</cvename>
+      <cvename>CVE-2026-56409</cvename>
+      <cvename>CVE-2026-56410</cvename>
+      <cvename>CVE-2026-56411</cvename>
+      <cvename>CVE-2026-56412</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-50219</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56131</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56132</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56403</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56404</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56405</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56406</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56407</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56408</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56409</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56410</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56411</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56412</url>
+    </references>
+    <dates>
+      <discovery>2026-06-25</discovery>
+      <entry>2026-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f00e2de8-7d30-48d2-a43d-68206347dea6">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
