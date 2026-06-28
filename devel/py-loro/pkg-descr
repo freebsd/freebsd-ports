@@ -1,0 +1,3 @@
+Loro is a CRDTs (Conflict-free Replicated Data Types) library that makes
+building local-first and collaborative apps easier. You can now use it
+in Rust, JS (via WASM), and Swift.
