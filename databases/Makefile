@@ -1163,6 +1163,7 @@
     SUBDIR += tredis
     SUBDIR += trilogy
     SUBDIR += tuning-primer
+    SUBDIR += turso
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += usql
