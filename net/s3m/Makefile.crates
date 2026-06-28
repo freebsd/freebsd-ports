@@ -160,7 +160,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.99 \
+		js-sys-0.3.100 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
 		libredox-0.1.17 \
@@ -171,7 +171,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		lru-slab-0.1.2 \
 		matchit-0.8.4 \
 		md5-0.8.0 \
-		memchr-2.8.1 \
+		memchr-2.8.2 \
 		mime-0.3.17 \
 		mio-1.2.1 \
 		mockito-1.7.2 \
@@ -240,9 +240,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		rend-0.5.3 \
 		reqwest-0.13.4 \
 		ring-0.17.14 \
@@ -284,7 +284,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		similar-2.7.0 \
 		slab-0.4.12 \
 		sled-0.34.7 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		socket2-0.6.4 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
@@ -335,23 +335,23 @@ CARGO_CRATES=	aead-0.5.2 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.2 \
+		uuid-1.23.3 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.3+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.122 \
-		wasm-bindgen-futures-0.4.72 \
-		wasm-bindgen-macro-0.2.122 \
-		wasm-bindgen-macro-support-0.2.122 \
-		wasm-bindgen-shared-0.2.122 \
+		wasm-bindgen-0.2.123 \
+		wasm-bindgen-futures-0.4.73 \
+		wasm-bindgen-macro-0.2.123 \
+		wasm-bindgen-macro-support-0.2.123 \
+		wasm-bindgen-shared-0.2.123 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.5.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.99 \
+		web-sys-0.3.100 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
 		winapi-0.3.9 \
@@ -396,8 +396,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		xattr-1.6.1 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.50 \
-		zerocopy-derive-0.8.50 \
+		zerocopy-0.8.52 \
+		zerocopy-derive-0.8.52 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
