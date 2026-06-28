@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/duration/META
+%%OCAML_SITELIBDIR%%/duration/dune-package
+%%OCAML_SITELIBDIR%%/duration/duration.a
+%%OCAML_SITELIBDIR%%/duration/duration.cma
+%%OCAML_SITELIBDIR%%/duration/duration.cmi
+%%OCAML_SITELIBDIR%%/duration/duration.cmt
+%%OCAML_SITELIBDIR%%/duration/duration.cmti
+%%OCAML_SITELIBDIR%%/duration/duration.cmx
+%%OCAML_SITELIBDIR%%/duration/duration.cmxa
+%%OCAML_SITELIBDIR%%/duration/duration.cmxs
+%%OCAML_SITELIBDIR%%/duration/duration.ml
+%%OCAML_SITELIBDIR%%/duration/duration.mli
+%%OCAML_SITELIBDIR%%/duration/opam

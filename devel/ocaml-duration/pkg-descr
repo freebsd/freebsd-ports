@@ -1,0 +1,3 @@
+Library to convert between various time units in OCaml. The underlying
+representation uses nanoseconds on a 64 bits unsigned integer, for a
+range of about 584 years.
