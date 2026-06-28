@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/gmap/META
+%%OCAML_SITELIBDIR%%/gmap/dune-package
+%%OCAML_SITELIBDIR%%/gmap/gmap.a
+%%OCAML_SITELIBDIR%%/gmap/gmap.cma
+%%OCAML_SITELIBDIR%%/gmap/gmap.cmi
+%%OCAML_SITELIBDIR%%/gmap/gmap.cmt
+%%OCAML_SITELIBDIR%%/gmap/gmap.cmti
+%%OCAML_SITELIBDIR%%/gmap/gmap.cmx
+%%OCAML_SITELIBDIR%%/gmap/gmap.cmxa
+%%OCAML_SITELIBDIR%%/gmap/gmap.cmxs
+%%OCAML_SITELIBDIR%%/gmap/gmap.ml
+%%OCAML_SITELIBDIR%%/gmap/gmap.mli
+%%OCAML_SITELIBDIR%%/gmap/opam

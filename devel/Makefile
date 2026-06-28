@@ -1798,6 +1798,7 @@
     SUBDIR += ocaml-fmt
     SUBDIR += ocaml-fpath
     SUBDIR += ocaml-gen
+    SUBDIR += ocaml-gmap
     SUBDIR += ocaml-hmap
     SUBDIR += ocaml-ipaddr
     SUBDIR += ocaml-lacaml
