@@ -1,7 +1,6 @@
 PORTNAME=	pomerium-envoy-custom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36.5-p1
-PORTREVISION=	2
+DISTVERSION=	1.36.8-p1
 CATEGORIES=	www
 DIST_SUBDIR=	${PORTNAME}
 
@@ -12,7 +11,7 @@ WWW=		https://pomerium.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ENVOY_SRC_COMMIT=	41749943780b54b70b510b1b1a4805ae529e174a
+ENVOY_SRC_COMMIT=	ee7784f95f506e2a606ae668f0d9f70f9d26af83
 ENVOY_API_COMMIT=	f8b75d1efa92bbf534596a013d9ca5873f79dd30
 
 USES=		cmake:indirect compiler:c++20-lang gmake go:no_targets java \
@@ -399,6 +398,7 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--override_repository=fuzzing_pip3=${WRKDIR}/sys_repos/pip3_stub \
 			--override_repository=io_bazel_rules_go=${WRKDIR}/sys_repos/io_bazel_rules_go \
 			--override_repository=com_google_absl=${WRKDIR}/sys_repos/com_google_absl \
+			--override_repository=envoy=${WRKDIR}/envoy-src \
 			--action_env=MAKE=${GMAKE} --host_linkopt=-lm \
 			--linkopt=-lm --linkopt=-L${LOCALBASE}/lib \
 			--cxxopt=-Wno-nullability-completeness \
@@ -456,6 +456,51 @@ post-patch:
 	done
 
 pre-build:
+# Pre-extract @envoy upstream source and apply all patches ourselves.
+# Bypasses Bazel's http_archive patch mechanism, which does not reliably
+# invalidate the cached external-repo when patch file content changes.
+# --override_repository=envoy=... (in BAZEL_BUILD_OPTS) tells Bazel to use
+# this pre-patched local directory instead of fetching via http_archive.
+	${RM} -rf ${WRKDIR}/envoy-src
+	${MKDIR} ${WRKDIR}/envoy-src
+	${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${ENVOY_SRC_COMMIT}.zip \
+		--strip-components=1 \
+		-C ${WRKDIR}/envoy-src
+	for f in \
+	    0001-revert-deps-drop-BoringSSL-linkstatic-patch-38621.patch \
+	    0002-bump-dependencies.patch \
+	    0003-envoy-copts.patch \
+	    0004-pgv.patch \
+	    0005-suppress-duplicate-wip-warnings.patch \
+	    0006-coverage-format.patch \
+	    0007-user-space-io-handle.patch \
+	    0008-cel-cpp-compatibility.patch \
+	    tmp-envoy-41815.patch \
+	    tmp-transport-socket-options.patch \
+	    freebsd-rules-foreign-cc.patch \
+	    freebsd-dependency-imports.patch \
+	    freebsd-envoy-cmake-generate-args.patch \
+	    freebsd-foreign-cc-ares.patch \
+	    freebsd-foreign-cc-nghttp2.patch \
+	    freebsd-foreign-cc-maxmind.patch \
+	    freebsd-maxmind-extension.patch \
+	    freebsd-foreign-cc-zlib.patch \
+	    freebsd-foreign-cc-zstd.patch \
+	    freebsd-foreign-cc-luajit.patch \
+	    freebsd-luajit.patch \
+	    freebsd-platform.patch \
+	    freebsd-terminate-thread.patch \
+	    freebsd-thread-impl.patch \
+	    freebsd-address-impl.patch \
+	    freebsd-io-socket-handle-impl-h.patch \
+	    freebsd-io-socket-handle-impl-cc.patch \
+	    freebsd-lz4-qat-removal.patch \
+	    freebsd-inotify.patch; do \
+	    ${PATCH} -p1 -d ${WRKDIR}/envoy-src < ${WRKSRC}/patches/envoy/$$f || exit 1; \
+	done
+# Also clear any stale Bazel-cached @envoy tree (safety net).
+	${RM} -rf ${WRKDIR}/bazel-out/external/envoy \
+	           ${WRKDIR}/bazel-out/external/envoy.marker
 	for f in rules_python_py_runtime_info_freebsd.patch \
 	    rules_python_py_executable_freebsd.patch \
 	    rules_python_runtime_env_toolchain_freebsd.patch; do \
