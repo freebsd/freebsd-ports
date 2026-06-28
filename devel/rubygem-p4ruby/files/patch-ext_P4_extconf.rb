@@ -1,4 +1,4 @@
---- ext/P4/extconf.rb.orig	2024-01-21 10:40:57 UTC
+--- ext/P4/extconf.rb.orig	2026-06-28 13:34:31 UTC
 +++ ext/P4/extconf.rb
 @@ -384,23 +384,8 @@ def resolve_p4api_dir
  
@@ -26,22 +26,7 @@
    p4api_dir
  end
  
-@@ -455,12 +440,12 @@ def p4_platform_label
-       raise 'Automatic fetching of p4api from perforce FTP is not supported on Windows'
-     when /darwin19|darwin[2-9][0-9]/
-       "macosx1015#{p4_cpu(:darwin)}"
--    when /darwin/      
-+    when /darwin/
-       "darwin90#{p4_cpu(:darwin)}"
-     when /solaris/
-       "solaris10#{p4_cpu(:solaris)}"
-     when /linux/
--      "linux26#{p4_cpu(:linux)}"    
-+      "linux26#{p4_cpu(:linux)}"
-   end
- end
- 
-@@ -586,7 +571,7 @@ puts "$libs #{$libs}"
+@@ -593,7 +578,7 @@ puts "$libs #{$libs}"
  puts "$libs #{$libs}"
  
  # Parse the Version file into a ruby structure

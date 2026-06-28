@@ -1,5 +1,5 @@
 PORTNAME=	p4ruby
-DISTVERSION=	2024.2.2682777
+DISTVERSION=	2024.2.2736761
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perforce/libclient.a:devel/p4api \
 		rubygem-net-ftp>0:ftp/rubygem-net-ftp
 RUN_DEPENDS=	rubygem-net-ftp>0:ftp/rubygem-net-ftp
 
-USES=		gem
+USES=		gem ssl
 
 CONFIGURE_ARGS=	--with-p4api-dir=${LOCALBASE} --with-p4api-lib=${LOCALBASE}/lib/perforce
 
