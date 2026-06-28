@@ -1,5 +1,5 @@
 PORTNAME=	openvox-server
-PORTVERSION=	8.14.0
+PORTVERSION=	8.14.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
