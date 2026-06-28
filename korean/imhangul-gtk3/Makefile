@@ -1,6 +1,6 @@
 PORTNAME=	imhangul
 PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean
 PKGNAMESUFFIX=	-gtk3
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhangul.so:korean/libhangul
 
+USES=		autoreconf gmake gnome libtool pkgconfig
+
 CONFLICTS_INSTALL=	ko-imhangul-3.*
 
 GH_ACCOUNT=	choehwanjin
@@ -22,7 +24,6 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	cairo gdkpixbuf gtk30
-USES=		autoreconf gmake gnome libtool pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
