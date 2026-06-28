@@ -1,6 +1,5 @@
 PORTNAME=	gridExtra
-PORTVERSION=	2.3
-PORTREVISION=	5
+PORTVERSION=	2.3.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/gridExtra/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-gtable>0:math/R-cran-gtable
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-gtable>0:math/R-cran-gtable
 
 USES=		cran:auto-plist
 
