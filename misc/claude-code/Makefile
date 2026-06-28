@@ -1,5 +1,5 @@
 PORTNAME=	claude-code
-DISTVERSION=	2.1.190
+DISTVERSION=	2.1.195
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://downloads.claude.ai/claude-code-releases/${DISTVERSION}/:amd64 \
 		https://downloads.claude.ai/claude-code-releases/${DISTVERSION}/:aarch64
@@ -11,7 +11,6 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Agentic coding tool from Anthropic that lives in your terminal
 WWW=		https://github.com/anthropics/claude-code
 
-BROKEN=		linuxlator is missing few required features, use misc/claude-code-legacy until these are implemented in linuxlator
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	is a Linux binary with a limited platform support
 
