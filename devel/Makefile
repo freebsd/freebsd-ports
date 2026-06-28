@@ -1812,6 +1812,7 @@
     SUBDIR += ocaml-magic
     SUBDIR += ocaml-magic-mime
     SUBDIR += ocaml-merlin
+    SUBDIR += ocaml-mew
     SUBDIR += ocaml-mtime
     SUBDIR += ocaml-ocamlbuild
     SUBDIR += ocaml-ocplib-endian

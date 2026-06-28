@@ -1,0 +1,3 @@
+Mew - Modal Editing Witch - is an general modal editing engine
+generator. Users must provide an implementation for Key, Mode,
+Concurrent modules to the functor.
