@@ -1,6 +1,6 @@
---- runtime/nsd_ossl.c.orig	2026-02-07 11:43:26 UTC
+--- runtime/nsd_ossl.c.orig	2026-06-23 11:08:14 UTC
 +++ runtime/nsd_ossl.c
-@@ -889,7 +889,7 @@ rsRetVal osslPostHandshakeCheck(nsd_ossl_t *pNsd) {
+@@ -921,7 +921,7 @@ rsRetVal osslPostHandshakeCheck(nsd_ossl_t *pNsd) {
      if (SSL_get_shared_ciphers(pNsd->pNetOssl->ssl, szDbg, sizeof szDbg) != NULL)
          dbgprintf("osslPostHandshakeCheck: Debug Shared ciphers = %s\n", szDbg);
  
