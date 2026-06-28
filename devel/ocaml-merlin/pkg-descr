@@ -1,0 +1,5 @@
+Merlin assists you writing OCaml code by providing features commonly
+found in integrated development environments (IDEs) such as code
+completion, browsing, error reporting, etc. Integration with Emacs and
+VIM are provided.  Merlin is also a set of OCaml libraries to help one
+implement said features.

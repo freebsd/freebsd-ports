@@ -1811,6 +1811,7 @@
     SUBDIR += ocaml-lwt_log
     SUBDIR += ocaml-magic
     SUBDIR += ocaml-magic-mime
+    SUBDIR += ocaml-merlin
     SUBDIR += ocaml-mtime
     SUBDIR += ocaml-ocamlbuild
     SUBDIR += ocaml-ocplib-endian
