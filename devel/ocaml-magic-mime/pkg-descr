@@ -1,0 +1,4 @@
+This OCaml library provides lookup functions to map a filename to a
+MIME type (based on the extension of the file), and conversely from a
+MIME type to a list of file extensions. As the database is bundled
+inside an OCaml module, the lookups do not access the filesystem.
