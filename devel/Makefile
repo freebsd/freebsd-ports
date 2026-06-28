@@ -1808,6 +1808,7 @@
     SUBDIR += ocaml-logs
     SUBDIR += ocaml-lsp
     SUBDIR += ocaml-lwt
+    SUBDIR += ocaml-lwt_log
     SUBDIR += ocaml-magic
     SUBDIR += ocaml-mtime
     SUBDIR += ocaml-ocamlbuild

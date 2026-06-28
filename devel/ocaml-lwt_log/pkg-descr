@@ -1,0 +1,2 @@
+Lwt_log is a logging library for OCaml applications using the Lwt
+threading library.
