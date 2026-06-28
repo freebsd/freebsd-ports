@@ -1,6 +1,6 @@
 PORTNAME=	license_finder
 PORTVERSION=	7.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
-		rubygem-rubyzip>=1<3:archivers/rubygem-rubyzip \
+		rubygem-rubyzip2>=1<3:archivers/rubygem-rubyzip2 \
 		rubygem-thor12>=1.2.0<1.3:devel/rubygem-thor12 \
 		rubygem-tomlrb>=1.3<2.1:textproc/rubygem-tomlrb \
 		rubygem-with_env>=1.1.0<1.1.1:devel/rubygem-with_env \
