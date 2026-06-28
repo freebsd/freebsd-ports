@@ -8,4 +8,3 @@ lib/libHTSEngine.a
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 @dir %%DOCSDIR%%
-@dir share/licenses/hts_engine-API-1.10
