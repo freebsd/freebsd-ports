@@ -1,8 +1,11 @@
 PORTNAME=	sz3
 PORTVERSION=	3.3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
+
+PATCH_SITES=	https://github.com/szcompressor/SZ3/commit/
+PATCHFILES=	1bc1cc16e6ecbc6080abbc9a8fb5640876071089.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modular Error-bounded Lossy Compression Framework for Scientific Datasets
