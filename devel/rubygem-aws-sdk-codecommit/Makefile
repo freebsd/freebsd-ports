@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-codecommit
-PORTVERSION=	1.100.0
+PORTVERSION=	1.101.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
