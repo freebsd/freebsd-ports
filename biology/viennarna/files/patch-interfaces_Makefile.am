@@ -1,0 +1,10 @@
+--- interfaces/Makefile.am.orig	2026-04-14 04:48:56 UTC
++++ interfaces/Makefile.am
+@@ -1,6 +1,6 @@ AM_CPPFLAGS = -I$(top_srcdir)/src
+ AM_CPPFLAGS = -I$(top_srcdir)/src
+ 
+-SUBDIRS = @PERL_INTERFACE@ @PYTHON_INTERFACE@ @PYTHON2_INTERFACE@
++SUBDIRS = @PERL_INTERFACE@ @PYTHON_INTERFACE@
+ 
+ SOURCES = \
+     RNA.i \
