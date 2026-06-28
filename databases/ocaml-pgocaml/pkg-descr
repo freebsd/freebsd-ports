@@ -1,0 +1,4 @@
+This library implements the PostgreSQL wire protocol (version 2, for
+PostgreSQL 7 and above) in pure OCaml. In addition to a low-level
+interface, this library provides a PPX syntax extension to type-check
+and validate SQL expressions at build time.
