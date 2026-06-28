@@ -77,6 +77,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/internals/CLIENT-WRITERS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/CODE_STYLE.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/CONNECTION-FILTERS.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/CREDENTIALS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/CURLX.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/DYNBUF.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/HASH.md
@@ -85,6 +86,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/internals/MQTT.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/MULTI-EV.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/NEW-PROTOCOL.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/PEERS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/PORTING.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/RATELIMITS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/README.md
