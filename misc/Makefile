@@ -472,6 +472,7 @@
     SUBDIR += py-comfyui-workflow-templates
     SUBDIR += py-comfyui-workflow-templates-core
     SUBDIR += py-comfyui-workflow-templates-media-api
+    SUBDIR += py-comfyui-workflow-templates-media-assets-01
     SUBDIR += py-comfyui-workflow-templates-media-image
     SUBDIR += py-comfyui-workflow-templates-media-other
     SUBDIR += py-comfyui-workflow-templates-media-video
