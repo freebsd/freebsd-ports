@@ -1,6 +1,6 @@
 PORTNAME=	UCD
-PORTVERSION=	18.0.0 # must sync with deskutils/gucharmap
-PORTEPOCH=	1
+PORTVERSION=	17.0.0 # must sync with deskutils/gucharmap
+PORTEPOCH=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.unicode.org/Public/${PORTVERSION}/${PORTNAME:tl}/:src	\
 		https://raw.githubusercontent.com/unicode-org/unihan-database/12da7b1f81ef6055b43d640095602e31bac4a17b/:lic
