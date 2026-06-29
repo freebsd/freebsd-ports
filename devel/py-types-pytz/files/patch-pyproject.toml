@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-06-29 15:09:53 UTC
++++ pyproject.toml
+@@ -5,8 +5,6 @@ version = "2025.2.0.20251108"
+ [project]
+ name = "types-pytz"
+ version = "2025.2.0.20251108"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
+ description = "Typing stubs for pytz"
+ readme = { text = """\
+ ## Typing stubs for pytz
+@@ -46,5 +44,7 @@ dependencies = []
+ "Chat" = "https://gitter.im/python/typing"
+ 
+ [tool.setuptools]
+-packages = ['pytz-stubs']
+ include-package-data = false
++
++[tool.setuptools.packages.find]
++include = ['pytz-stubs']
