@@ -1,0 +1,120 @@
+diff --git a/internal/agent/common_test.go b/internal/agent/common_test.go
+index 8eb0f10..568d615 100644
+--- a/internal/agent/common_test.go
++++ b/internal/agent/common_test.go
+@@ -166,7 +166,7 @@ func coderAgent(r *vcr.Recorder, env fakeEnv, large, small fantasy.LanguageModel
+ 	}
+ 
+ 	allTools := []fantasy.AgentTool{
+-		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.Attribution, modelName),
++		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.Attribution, modelName, cfg.Config().Options.DisableCommandBlocking),
+ 		tools.NewDownloadTool(env.permissions, env.workingDir, r.GetDefaultClient()),
+ 		tools.NewEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
+ 		tools.NewMultiEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
+diff --git a/internal/agent/coordinator.go b/internal/agent/coordinator.go
+index 86ca09e..c07dd45 100644
+--- a/internal/agent/coordinator.go
++++ b/internal/agent/coordinator.go
+@@ -605,7 +605,7 @@ func (c *coordinator) buildTools(ctx context.Context, agent config.Agent, isSubA
+ 
+ 	allTools = append(
+ 		allTools,
+-		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.Attribution, modelID),
++		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.Attribution, modelID, c.cfg.Config().Options.DisableCommandBlocking),
+ 		tools.NewCrushInfoTool(c.cfg, c.lspManager, c.allSkills, c.activeSkills, c.skillTracker),
+ 		tools.NewCrushLogsTool(logFile),
+ 		tools.NewJobOutputTool(),
+diff --git a/internal/agent/tools/bash.go b/internal/agent/tools/bash.go
+index 6b91c58..b95bfe1 100644
+--- a/internal/agent/tools/bash.go
++++ b/internal/agent/tools/bash.go
+@@ -142,8 +142,11 @@ var bannedCommands = []string{
+ 	"ufw",
+ }
+ 
+-func bashDescription(attribution *config.Attribution, modelID string) string {
++func bashDescription(attribution *config.Attribution, modelID string, disableBlocking bool) string {
+ 	bannedCommandsStr := strings.Join(bannedCommands, ", ")
++	if disableBlocking {
++		bannedCommandsStr = "none"
++	}
+ 	var out bytes.Buffer
+ 	if err := bashDescriptionTpl.Execute(&out, bashDescriptionData{
+ 		BannedCommands:  bannedCommandsStr,
+@@ -158,7 +161,10 @@ func bashDescription(attribution *config.Attribution, modelID string) string {
+ 	return out.String()
+ }
+ 
+-func blockFuncs() []shell.BlockFunc {
++func blockFuncs(disableBlocking bool) []shell.BlockFunc {
++	if disableBlocking {
++		return nil
++	}
+ 	return []shell.BlockFunc{
+ 		shell.CommandsBlocker(bannedCommands),
+ 
+@@ -190,10 +196,10 @@ func blockFuncs() []shell.BlockFunc {
+ 	}
+ }
+ 
+-func NewBashTool(permissions permission.Service, workingDir string, attribution *config.Attribution, modelID string) fantasy.AgentTool {
++func NewBashTool(permissions permission.Service, workingDir string, attribution *config.Attribution, modelID string, disableBlocking bool) fantasy.AgentTool {
+ 	return fantasy.NewAgentTool(
+ 		BashToolName,
+-		string(bashDescription(attribution, modelID)),
++		string(bashDescription(attribution, modelID, disableBlocking)),
+ 		func(ctx context.Context, params BashParams, call fantasy.ToolCall) (fantasy.ToolResponse, error) {
+ 			if params.Command == "" {
+ 				return fantasy.NewTextErrorResponse("missing command"), nil
+@@ -247,7 +253,7 @@ func NewBashTool(permissions permission.Service, workingDir string, attribution
+ 				bgManager := shell.GetBackgroundShellManager()
+ 				bgManager.Cleanup()
+ 				// Use background context so it continues after tool returns
+-				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description)
++				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description)
+ 				if err != nil {
+ 					return fantasy.ToolResponse{}, fmt.Errorf("error starting background shell: %w", err)
+ 				}
+@@ -302,7 +308,7 @@ func NewBashTool(permissions permission.Service, workingDir string, attribution
+ 			// Start with detached context so it can survive if moved to background
+ 			bgManager := shell.GetBackgroundShellManager()
+ 			bgManager.Cleanup()
+-			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description)
++			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description)
+ 			if err != nil {
+ 				return fantasy.ToolResponse{}, fmt.Errorf("error starting shell: %w", err)
+ 			}
+diff --git a/internal/agent/tools/bash_test.go b/internal/agent/tools/bash_test.go
+index 40169e8..42b7426 100644
+--- a/internal/agent/tools/bash_test.go
++++ b/internal/agent/tools/bash_test.go
+@@ -115,7 +115,7 @@ func (m *recordingPermissionService) SubscribeNotifications(ctx context.Context)
+ func newBashToolForTest(workingDir string) fantasy.AgentTool {
+ 	permissions := &mockBashPermissionService{Broker: pubsub.NewBroker[permission.PermissionRequest]()}
+ 	attribution := &config.Attribution{TrailerStyle: config.TrailerStyleNone}
+-	return NewBashTool(permissions, workingDir, attribution, "test-model")
++	return NewBashTool(permissions, workingDir, attribution, "test-model", false)
+ }
+ 
+ func newBashToolWithRecordingPerms(workingDir string, allow bool) (fantasy.AgentTool, *recordingPermissionService) {
+@@ -124,7 +124,7 @@ func newBashToolWithRecordingPerms(workingDir string, allow bool) (fantasy.Agent
+ 		allow:  allow,
+ 	}
+ 	attribution := &config.Attribution{TrailerStyle: config.TrailerStyleNone}
+-	return NewBashTool(perms, workingDir, attribution, "test-model"), perms
++	return NewBashTool(perms, workingDir, attribution, "test-model", false), perms
+ }
+ 
+ func TestBashTool_ChainedCommandsRequirePermission(t *testing.T) {
+diff --git a/internal/config/config.go b/internal/config/config.go
+index fc3bab3..4a7f732 100644
+--- a/internal/config/config.go
++++ b/internal/config/config.go
+@@ -265,6 +265,7 @@ type Options struct {
+ 	Debug                bool        `json:"debug,omitempty" jsonschema:"description=Enable debug logging,default=false"`
+ 	DebugLSP             bool        `json:"debug_lsp,omitempty" jsonschema:"description=Enable debug logging for LSP servers,default=false"`
+ 	DisableAutoSummarize bool        `json:"disable_auto_summarize,omitempty" jsonschema:"description=Disable automatic conversation summarization,default=false"`
++	DisableCommandBlocking bool      `json:"disable_command_blocking,omitempty" jsonschema:"description=Disable blocking of potentially dangerous commands (unsafe),default=false"`
+ 	// DataDirectory is where Crush keeps per-project state such as
+ 	// the SQLite database and workspace overrides. Relative paths are
+ 	// resolved against the working directory; absolute paths are used
