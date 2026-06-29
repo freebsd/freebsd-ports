@@ -337,7 +337,7 @@ goimapnotify:*:387:387::0:0:Goimapnotify Daemon:/nonexistent:/usr/sbin/nologin
 autopulse:*:388:388::0:0:Autopulse Daemon:/nonexistent:/usr/sbin/nologin
 ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 bunkerweb:*:390:390::0:0:Bunkerweb Service:/nonexistent:/usr/sbin/nologin
-# free: 391
+dirsrv:*:391:391::0:0:389 Directory Server:/usr/local/share/dirsrv:/usr/sbin/nologin
 # free: 392
 # free: 393
 # free: 394

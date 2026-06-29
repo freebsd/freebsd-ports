@@ -1,5 +1,6 @@
 PORTNAME=	389-ds-base
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/389ds/389-ds-base/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -9,6 +10,9 @@ WWW=		https://www.port389.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USERS=		dirsrv
+GROUPS=		dirsrv
 
 BUILD_DEPENDS=	${LOCALBASE}/include/crypt.h:security/libxcrypt \
 		cargo:lang/rust \
@@ -41,6 +45,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-rust-offline \
 		--with-netsnmp=${LOCALBASE} \
 		--with-openldap=${LOCALBASE} \
+		--with-localrundir=/var/run \
 		--with-pythonexec=${PYTHON_CMD}
 
 MAKE_ENV=	CARGO_HOME=${WRKSRC}/.cargo \
@@ -50,5 +55,9 @@ MAKE_ENV=	CARGO_HOME=${WRKSRC}/.cargo \
 LIBS+=		-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/db/dirsrv \
+		${STAGEDIR}/var/log/dirsrv
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- configure.ac.orig	2026-06-29 19:19:58 UTC
++++ configure.ac
+@@ -811,6 +811,8 @@ esac
+ # gcc -march=native -dM -E - < /dev/null | grep SSE
+ # We can just use the define in GCC instead!
+ 
++AC_CHECK_FUNCS([getpeereid])
++
+ AC_MSG_CHECKING([for GCC provided 64-bit atomic operations])
+ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
+     #include <inttypes.h>

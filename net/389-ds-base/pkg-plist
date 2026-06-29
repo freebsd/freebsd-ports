@@ -176,3 +176,5 @@ share/man/man5/dirsrv.systemd.5.gz
 share/man/man5/slapd-collations.conf.5.gz
 share/man/man8/ns-slapd.8.gz
 share/metainfo/389-console/org.port389.cockpit_console.metainfo.xml
+@dir(root,wheel,0755) /var/db/dirsrv
+@dir(root,wheel,0755) /var/log/dirsrv
