@@ -1,0 +1,4 @@
+Workflow template JSON definitions for ComfyUI.
+
+This package ships the JSON workflow definitions used by the
+ComfyUI workflow templates system.
