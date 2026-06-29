@@ -1,0 +1,30 @@
+diff --git gfx/wr/webrender/src/texture_cache.rs gfx/wr/webrender/src/texture_cache.rs
+--- gfx/wr/webrender/src/texture_cache.rs
++++ gfx/wr/webrender/src/texture_cache.rs
+@@ -270,23 +270,23 @@
+     SharedAlpha16,
+     Standalone,
+ }
+ 
+ impl BudgetType {
+-    pub const COUNT: usize = 7;
++    const COUNT: usize = 7;
+ 
+-    pub const VALUES: [BudgetType; BudgetType::COUNT] = [
++    const VALUES: [BudgetType; BudgetType::COUNT] = [
+         BudgetType::SharedColor8Linear,
+         BudgetType::SharedColor8Nearest,
+         BudgetType::SharedColor8Glyphs,
+         BudgetType::SharedAlpha8,
+         BudgetType::SharedAlpha8Glyphs,
+         BudgetType::SharedAlpha16,
+         BudgetType::Standalone,
+     ];
+ 
+-    pub const PRESSURE_COUNTERS: [usize; BudgetType::COUNT] = [
++    const PRESSURE_COUNTERS: [usize; BudgetType::COUNT] = [
+         profiler::ATLAS_COLOR8_LINEAR_PRESSURE,
+         profiler::ATLAS_COLOR8_NEAREST_PRESSURE,
+         profiler::ATLAS_COLOR8_GLYPHS_PRESSURE,
+         profiler::ATLAS_ALPHA8_PRESSURE,
+         profiler::ATLAS_ALPHA8_GLYPHS_PRESSURE,
