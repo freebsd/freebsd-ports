@@ -554,6 +554,7 @@
     SUBDIR += py-mistral-common
     SUBDIR += py-mixpanel
     SUBDIR += py-ml-collections
+    SUBDIR += py-mlflow-skinny
     SUBDIR += py-mlflow-tracing
     SUBDIR += py-mmcv
     SUBDIR += py-mmdet

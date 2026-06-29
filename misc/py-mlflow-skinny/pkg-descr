@@ -1,0 +1,3 @@
+This is a meta-package that installs misc/py-mlflow, which provides the
+mlflow-skinny modules bundled together with the rest of the MLflow namespace
+to avoid file conflicts between the separate PyPI distributions.
