@@ -1,6 +1,6 @@
 PORTNAME=	bugzilla
 PORTVERSION=	5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools/bugzilla/5.2-branch
 
@@ -60,7 +60,7 @@ GRAPH_REPORTS_RUN_DEPENDS=	p5-GD>=1.20:graphics/p5-GD \
 				p5-GD-Graph>=0:graphics/p5-GD-Graph \
 				p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil \
 				p5-Template-GD>=0:www/p5-Template-GD
-CHARTING_MODULES_RUN_DEPENDS=	p5-Chart>=2.4.10.1:graphics/p5-Chart
+CHARTING_MODULES_RUN_DEPENDS=	p5-Chart>=2.4.10_1:graphics/p5-Chart
 PATCH_VIEWER_RUN_DEPENDS=	p5-PatchReader>=0.9.6:devel/p5-PatchReader \
 				interdiff:misc/patchutils
 MORE_HTML_RUN_DEPENDS=	p5-HTML-Parser>=3.67:www/p5-HTML-Parser \
