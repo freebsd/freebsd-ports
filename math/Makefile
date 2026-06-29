@@ -1187,7 +1187,6 @@
     SUBDIR += randlib
     SUBDIR += rankwidth
     SUBDIR += readstat
-    SUBDIR += reduce
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon
     SUBDIR += rehearse
