@@ -1,3 +1,56 @@
+  <vuln vid="a8614190-73b4-11f1-910d-3c7c3fba4204">
+    <topic>PowerDNS -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>powerdns</name>
+	<range><lt>5.1.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-05.html">
+	<ul>
+	  <li>CVE-2026-33257: Insufficient input validation of internal webserver</li>
+	  <li>CVE-2026-33260: Insufficient input validation of internal webserver</li>
+	  <li>CVE-2026-33608: Incomplete domain name sanitization during Bind autosecondary zone transfer</li>
+	  <li>CVE-2026-33609: LDAP DN injection</li>
+	  <li>CVE-2026-33610: Possible file descriptor exhaustion in forward-dnsupdate</li>
+	  <li>CVE-2026-33611: Insufficient validation of HTTPS and SVCB records</li>
+	</ul>
+	<p>Thanks to people below for reporting these vulnerabilities:</p>
+	<ul>
+	  <li>Vitaly Simonovich</li>
+	  <li>Cavid</li>
+	  <li>Tibs</li>
+	  <li>ylwango613</li>
+	</ul>
+	</blockquote>
+	<blockquote cite="https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-07.html">
+	<ul>
+	  <li>CVE-2026-42005: Insufficient input validation of internal web server</li>
+	</ul>
+	<p>Thanks to ilya rozentsvaig for reporting this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-33257</cvename>
+      <cvename>CVE-2026-33260</cvename>
+      <cvename>CVE-2026-33608</cvename>
+      <cvename>CVE-2026-33609</cvename>
+      <cvename>CVE-2026-33610</cvename>
+      <cvename>CVE-2026-33611</cvename>
+      <cvename>CVE-2026-42005</cvename>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-05.html</url>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-07.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-16</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62c4ed54-73aa-11f1-910d-3c7c3fba4204">
     <topic>powerdns-recursor -- vulnerabilities</topic>
     <affects>
