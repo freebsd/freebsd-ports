@@ -656,6 +656,7 @@
     SUBDIR += py-torchvision
     SUBDIR += py-tqdm
     SUBDIR += py-transformers
+    SUBDIR += py-tritonclient
     SUBDIR += py-tvm
     SUBDIR += py-uhi
     SUBDIR += py-uuid-utils
