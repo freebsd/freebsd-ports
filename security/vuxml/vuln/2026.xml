@@ -1,3 +1,38 @@
+  <vuln vid="0f3342e3-73ba-11f1-910d-3c7c3fba4204">
+    <topic>rclone -- Unauthenticated command execution in `rclone rcd --rc-serve` via inline remote instantiation</topic>
+    <affects>
+    <package>
+	<name>rclone</name>
+	<range><ge>1.46.0</ge><lt>1.74.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv">https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv</a> reports:</p>
+	<blockquote cite="https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv">
+	  <p>Rclone is a command-line program to sync files and directories to
+and from different cloud storage providers.<br/>From 1.46.0 until 1.74.3, rclone rcd --rc-serve accepts unauthenticated GET and HEAD
+requests to paths of the form: /[remote:path]/object.<br/>The remote
+value is parsed from the URL and passed to normal backend initialization.
+Inline remote configuration can set backend options that execute
+local commands during initialization.<br/>As a result, a single
+unauthenticated GET or HEAD request can execute a command as the
+rclone process user.</p>
+	<p>Thanks to <a href="https://github.com/ncw">Nick Craig-Wood</a> for reporting this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49980</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-49980</url>
+      <url>https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv</url>
+    </references>
+    <dates>
+      <discovery>2026-06-24</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8614190-73b4-11f1-910d-3c7c3fba4204">
     <topic>PowerDNS -- vulnerabilities</topic>
     <affects>
