@@ -1,6 +1,6 @@
 PORTNAME=	hugin
 DISTVERSION=	2025.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 # compiler:c++17-lang
 USES=		cmake desktop-file-utils gettext gl gnome \
 		pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
-USE_GL=		gl glew glu glut
+USE_GL=		gl glu glut
 USE_WX=		3.2+
 USE_XORG=	x11
 
@@ -40,15 +40,26 @@ CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 
 OPTIONS_DEFINE=		AUTOPANOSIFTC LAPACK PANOMATIC PYTHON
-OPTIONS_DEFAULT=	LAPACK PANOMATIC PYTHON
+OPTIONS_RADIO=		OPENGL
+OPTIONS_RADIO_OPENGL=	EPOXY GLEW
+OPTIONS_DEFAULT=	EPOXY LAPACK PANOMATIC PYTHON
 OPTIONS_SUB=		yes
 
 AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 AUTOPANOSIFTC_RUN_DEPENDS=	autopano:graphics/autopano-sift-c
 
+EPOXY_DESC=	use graphics/libepoxy
+EPOXY_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+EPOXY_CMAKE_BOOL=	BUILD_WITH_EPOXY
+
+GLEW_DESC=	use graphics/glew
+GLEW_USE=	gl=glew
+
 LAPACK_DESC=		Use LAPACK based solver in levmar
 LAPACK_CMAKE_BOOL=	ENABLE_LAPACK
 LAPACK_USES=		blaslapack
+
+OPENGL_DESC=	OpenGL helper library
 
 PANOMATIC_DESC=		Install graphics/panomatic
 PANOMATIC_RUN_DEPENDS=	panomatic:graphics/panomatic
