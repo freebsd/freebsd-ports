@@ -1,21 +1,22 @@
 PORTNAME=	rebulk
-DISTVERSION=	3.2.0
-PORTREVISION=	1
+DISTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	andrej@ebert.su
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Python library that performs advanced searches in strings
 WWW=		https://github.com/Toilal/rebulk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}uv-build>0:devel/py-uv-build@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
