@@ -1,4 +1,4 @@
---- llvm-project/clang/tools/IndexStore/IndexStore.exports.orig	2024-05-24 18:46:43 UTC
+--- llvm-project/clang/tools/IndexStore/IndexStore.exports.orig	2025-12-02 17:06:04 UTC
 +++ llvm-project/clang/tools/IndexStore/IndexStore.exports
 @@ -10,9 +10,7 @@ indexstore_store_get_unit_name_from_output_path
  indexstore_store_dispose

@@ -1,6 +1,6 @@
---- swift/unittests/AST/CMakeLists.txt.orig	2024-06-06 04:26:30 UTC
+--- swift/unittests/AST/CMakeLists.txt.orig	2026-04-14 02:40:33 UTC
 +++ swift/unittests/AST/CMakeLists.txt
-@@ -12,7 +12,10 @@ target_link_libraries(SwiftASTTests
+@@ -20,7 +20,10 @@ target_link_libraries(SwiftASTTests
  target_link_libraries(SwiftASTTests
     PRIVATE
     swiftAST

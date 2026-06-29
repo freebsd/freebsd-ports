@@ -1,4 +1,4 @@
---- llbuild/lib/LLBSQLite3/sqlite.h.orig	2025-01-01 00:00:00 UTC
+--- llbuild/lib/LLBSQLite3/sqlite.h.orig	2026-01-23 21:37:08 UTC
 +++ llbuild/lib/LLBSQLite3/sqlite.h
 @@ -0,0 +1,14 @@
 +//===----------------------------------------------------------------------===//

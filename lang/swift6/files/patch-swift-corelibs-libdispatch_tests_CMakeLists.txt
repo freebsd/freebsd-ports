@@ -1,6 +1,6 @@
---- swift-corelibs-libdispatch/tests/CMakeLists.txt.orig	2023-06-15 00:55:45 UTC
+--- swift-corelibs-libdispatch/tests/CMakeLists.txt.orig	2026-02-19 16:21:28 UTC
 +++ swift-corelibs-libdispatch/tests/CMakeLists.txt
-@@ -47,6 +47,7 @@ add_executable(bsdtestharness
+@@ -49,6 +49,7 @@ add_executable(bsdtestharness
  
  add_executable(bsdtestharness
                 bsdtestharness.c)

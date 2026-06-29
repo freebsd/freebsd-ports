@@ -1,4 +1,4 @@
---- swift/stdlib/public/stubs/Random.cpp.orig	2024-06-06 04:26:30 UTC
+--- swift/stdlib/public/stubs/Random.cpp.orig	2025-12-09 23:45:54 UTC
 +++ swift/stdlib/public/stubs/Random.cpp
 @@ -54,7 +54,7 @@ using namespace swift;
  

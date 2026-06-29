@@ -1,6 +1,6 @@
---- llvm-project/compiler-rt/cmake/config-ix.cmake.orig	2024-05-24 18:46:43 UTC
+--- llvm-project/compiler-rt/cmake/config-ix.cmake.orig	2026-04-10 20:08:01 UTC
 +++ llvm-project/compiler-rt/cmake/config-ix.cmake
-@@ -237,6 +237,10 @@ test_targets()
+@@ -247,6 +247,10 @@ test_targets()
  
  test_targets()
  

@@ -1,4 +1,4 @@
---- llbuild/utils/adjust-times/adjust-times.cpp.orig	2024-01-09 06:44:05 UTC
+--- llbuild/utils/adjust-times/adjust-times.cpp.orig	2025-11-14 16:33:33 UTC
 +++ llbuild/utils/adjust-times/adjust-times.cpp
 @@ -50,7 +50,7 @@ static int file_time_set_fixed(const char* filename, s
      struct timeval times[2] = { tv, tv };

@@ -368,6 +368,7 @@
     SUBDIR += squirrel
     SUBDIR += starlark-rust
     SUBDIR += swift510
+    SUBDIR += swift6
     SUBDIR += swipl
     SUBDIR += tauthon
     SUBDIR += tcbasic

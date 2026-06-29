@@ -1,4 +1,4 @@
---- swift/include/swift/SILOptimizer/Differentiation/DifferentiationInvoker.h.orig	2024-06-06 04:26:30 UTC
+--- swift/include/swift/SILOptimizer/Differentiation/DifferentiationInvoker.h.orig	2026-01-23 19:38:03 UTC
 +++ swift/include/swift/SILOptimizer/Differentiation/DifferentiationInvoker.h
 @@ -60,7 +60,12 @@ struct DifferentiationInvoker { (private)
  

@@ -1,4 +1,4 @@
---- swift/cmake/modules/AddSwiftUnittests.cmake.orig	2024-06-06 04:26:30 UTC
+--- swift/cmake/modules/AddSwiftUnittests.cmake.orig	2025-12-09 23:45:54 UTC
 +++ swift/cmake/modules/AddSwiftUnittests.cmake
 @@ -32,6 +32,8 @@ function(add_swift_unittest test_dirname)
    # function defined by AddLLVM.cmake.

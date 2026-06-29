@@ -1,7 +1,7 @@
---- llbuild/Package.swift.orig	2024-01-09 06:44:05 UTC
+--- llbuild/Package.swift.orig	2025-11-06 14:54:32 UTC
 +++ llbuild/Package.swift
-@@ -71,6 +71,13 @@ let package = Package(
-             exclude: []
+@@ -97,6 +97,13 @@ let package = Package(
+             exclude: ["CMakeLists.txt"]
          ),
  
 +        // MARK: sqlite3 as a system library
@@ -12,22 +12,13 @@
 +        ),
 +
          // MARK: Components
-         
+ 
          .target(
-@@ -80,7 +87,7 @@ let package = Package(
-         ),
-         .target(
-             name: "llbuildCore",
--            dependencies: ["llbuildBasic"],
-+            dependencies: ["llbuildBasic", "LLBSQLite3"],
-             path: "lib/Core",
-             linkerSettings: [.linkedLibrary("sqlite3")]
-         ),
-@@ -227,6 +234,7 @@ let package = Package(
+@@ -259,6 +266,7 @@ let package = Package(
              path: "lib/llvm/Support",
              linkerSettings: [
                  .linkedLibrary("m", .when(platforms: [.linux])),
 +                .linkedLibrary("execinfo"),
-                 .linkedLibrary("ncurses", .when(platforms: [.linux, .macOS, .android]))]
+             ] + terminfoLibraries
          ),
      ],

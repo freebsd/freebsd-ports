@@ -1,4 +1,4 @@
---- swift-corelibs-libdispatch/dispatch/source.h.orig	2023-06-15 00:55:45 UTC
+--- swift-corelibs-libdispatch/dispatch/source.h.orig	2025-08-15 00:16:40 UTC
 +++ swift-corelibs-libdispatch/dispatch/source.h
 @@ -116,7 +116,7 @@ DISPATCH_SOURCE_TYPE_DECL(data_replace);
   * The mask is a mask of desired events from dispatch_source_mach_send_flags_t.
