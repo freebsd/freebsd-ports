@@ -1,0 +1,4 @@
+Japanese input method for fcitx5, powered by azooKey engine.
+
+asooKey engine is a kana-kanji conversion module written in Swift,
+supporting neural kana-kanji conversion and other cool features.

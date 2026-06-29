@@ -52,6 +52,7 @@
     SUBDIR += fcitx-skk
     SUBDIR += fcitx5-anthy
     SUBDIR += fcitx5-cskk
+    SUBDIR += fcitx5-hazkey
     SUBDIR += fcitx5-skk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw

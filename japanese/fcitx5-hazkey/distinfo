@@ -1,0 +1,11 @@
+TIMESTAMP = 1770886767
+SHA256 (fcitx5-hazkey-0.2.1-swift-packages.tar.gz) = 610d1f4fa9821a9ed989d822c205f62be8c6176c419342ea4b9b316f79139fff
+SIZE (fcitx5-hazkey-0.2.1-swift-packages.tar.gz) = 274255278
+SHA256 (7ka-Hiira-hazkey-0.2.1_GH0.tar.gz) = bd257a9ab3b3f490e61c31b174b6396715445c11b93b04fcd30f96fd94d6f1dd
+SIZE (7ka-Hiira-hazkey-0.2.1_GH0.tar.gz) = 98024
+SHA256 (azooKey-azooKey_dictionary_storage-e9796e052793c0d4ac304a27f9db4b7beb7cd43c_GH0.tar.gz) = cfcbece98f70e6117be7b25d64ab244411d153e27c58b1793219901fc8ba4fba
+SIZE (azooKey-azooKey_dictionary_storage-e9796e052793c0d4ac304a27f9db4b7beb7cd43c_GH0.tar.gz) = 10557816
+SHA256 (azooKey-azooKey_emoji_dictionary_storage-08f82252fb90ef8f0949a7e3c554e9e1787ce121_GH0.tar.gz) = 79553093a47c5ca8e1462e7742b1f9095aaebdaf09674dbe12943be75336e5e3
+SIZE (azooKey-azooKey_emoji_dictionary_storage-08f82252fb90ef8f0949a7e3c554e9e1787ce121_GH0.tar.gz) = 838054
+SHA256 (7ka-hiira-llama.cpp-10295c26a2a18c3c48863b179c5e6bf34a4057d1_GH0.tar.gz) = 93ea5cff10c6cdca5110c027cf266ae70139fa8c893c2f0d6628fc96442d1f8b
+SIZE (7ka-hiira-llama.cpp-10295c26a2a18c3c48863b179c5e6bf34a4057d1_GH0.tar.gz) = 20827982

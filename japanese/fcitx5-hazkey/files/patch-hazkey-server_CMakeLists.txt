@@ -1,0 +1,11 @@
+--- hazkey-server/CMakeLists.txt.orig	2026-02-08 10:07:38 UTC
++++ hazkey-server/CMakeLists.txt
+@@ -57,7 +57,7 @@ if(HAZKEY_SERVER_STATIC_SWIFT_STDLIB AND NOT SWIFT_DYN
+             get_filename_component(SWIFT_BIN_DIR "${SWIFT_REAL_PATH}" DIRECTORY)
+             get_filename_component(SWIFT_BASE_DIR "${SWIFT_BIN_DIR}" DIRECTORY)
+ 
+-            set(SWIFT_DYNAMIC_LIB_PATH "${SWIFT_BASE_DIR}/lib/swift/linux")
++            set(SWIFT_DYNAMIC_LIB_PATH "${SWIFT_BASE_DIR}/lib/swift/freebsd")
+             message(STATUS "Detected Swift dynamic library path: ${SWIFT_DYNAMIC_LIB_PATH}")
+         else()
+             message(WARNING "Unexpected swift path structure: ${SWIFT_REAL_PATH}")
