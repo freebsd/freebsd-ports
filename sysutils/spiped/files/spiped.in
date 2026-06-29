@@ -54,6 +54,11 @@ spiped_start()
 			echo Invalid value for spiped_pipe_${P}_mode: $MODE
 			continue
 		esac
+		case "$SOURCE" in
+		/*)
+			[ -S "$SOURCE" ] && rm -f "$SOURCE"
+			;;
+		esac
 		${command} -D $MODEFLAG -s $SOURCE -t $TARGET -k $KEY \
 		    -u ${spiped_uid}:${spiped_gid} -p $PIDFILE $FLAGS
 	done
