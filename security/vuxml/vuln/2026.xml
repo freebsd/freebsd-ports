@@ -1,3 +1,54 @@
+  <vuln vid="62c4ed54-73aa-11f1-910d-3c7c3fba4204">
+    <topic>powerdns-recursor -- vulnerabilities</topic>
+    <affects>
+   <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.3</lt></range>
+   </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-08.html">
+	<ul>
+	  <li>CVE-2026-3361: ZoneToCache can poison the cache</li>
+	  <li>CVE-2026-40012: Information about ECS zero scoped answers might leak to clients that use a specific ECS</li>
+	  <li>CVE-2026-42005: Unbounded resource consumption in internal webserver</li>
+	  <li>CVE-2026-42387: Insufficient input validation in ZoneToCache</li>
+	  <li>CVE-2026-42388: Missing input validation for catalog zones</li>
+	  <li>CVE-2026-42389: Reject more queries with invalid header values</li>
+	  <li>CVE-2026-42390: ZONEMD validation can be bypassed</li>
+	  <li>CVE-2026-52690: Spoofed answers can mark an authoritative non-EDNS capable</li>
+	</ul>
+	<p>Thanks to people below for reporting these vulnerabilities.</p>
+	<ul>
+	  <li>Danial Mahadzir</li>
+	  <li>ilya rozentsvaig</li>
+	  <li>Vitaly Simonovich</li>
+	  <li>ylwango613</li>
+	  <li>nurmukhammyed</li>
+	  <li>Mehtab Zafar</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3361</cvename>
+      <cvename>CVE-2026-40012</cvename>
+      <cvename>CVE-2026-42005</cvename>
+      <cvename>CVE-2026-42387</cvename>
+      <cvename>CVE-2026-42388</cvename>
+      <cvename>CVE-2026-42389</cvename>
+      <cvename>CVE-2026-42390</cvename>
+      <cvename>CVE-2026-52690</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-08.html</url>
+    </references>
+    <dates>
+      <discovery>2026-04-04</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c0e17cf-73a0-11f1-910d-3c7c3fba4204">
     <topic>DNSdist -- vulnerabilities</topic>
     <affects>
