@@ -1,7 +1,7 @@
-TIMESTAMP = 1781500308
-SHA256 (go/www_evcc/evcc-io-evcc-0.309.1_GH0/evcc-npm-cache-0.309.1.tar.zst) = b1d286527652bc8d07d08a6a1710eac35da29730c5996fc1601a4f3702ca2879
-SIZE (go/www_evcc/evcc-io-evcc-0.309.1_GH0/evcc-npm-cache-0.309.1.tar.zst) = 104742353
-SHA256 (go/www_evcc/evcc-io-evcc-0.309.1_GH0/go.mod) = bd3e20252258638612fe5c03bd781aad146c13034d814f704c89864d873a72d4
-SIZE (go/www_evcc/evcc-io-evcc-0.309.1_GH0/go.mod) = 12578
-SHA256 (go/www_evcc/evcc-io-evcc-0.309.1_GH0/evcc-io-evcc-0.309.1_GH0.tar.gz) = 16a5c6e65323e20402d14350ba97a56ed792b8f1a0c0c93f1250a1527b4bdc19
-SIZE (go/www_evcc/evcc-io-evcc-0.309.1_GH0/evcc-io-evcc-0.309.1_GH0.tar.gz) = 3074545
+TIMESTAMP = 1782717449
+SHA256 (go/www_evcc/evcc-io-evcc-0.310.1_GH0/evcc-npm-cache-0.310.1.tar.zst) = 6026645eb709aaaae438ec6a70778a28a28b931060072b22bafe0d76e4ec0b75
+SIZE (go/www_evcc/evcc-io-evcc-0.310.1_GH0/evcc-npm-cache-0.310.1.tar.zst) = 87876234
+SHA256 (go/www_evcc/evcc-io-evcc-0.310.1_GH0/go.mod) = 10411822c1f317bcda123703ad463b94d5dad65109ba87b7383844862b19042d
+SIZE (go/www_evcc/evcc-io-evcc-0.310.1_GH0/go.mod) = 12640
+SHA256 (go/www_evcc/evcc-io-evcc-0.310.1_GH0/evcc-io-evcc-0.310.1_GH0.tar.gz) = 1a28160e5adfeac2aa972a3e665e898165eb2ccb004dfa4632d9e3ac7169ba2b
+SIZE (go/www_evcc/evcc-io-evcc-0.310.1_GH0/evcc-io-evcc-0.310.1_GH0.tar.gz) = 3192428
