@@ -5158,6 +5158,7 @@
     SUBDIR += py-hologram
     SUBDIR += py-homebase
     SUBDIR += py-http-prompt
+    SUBDIR += py-huey
     SUBDIR += py-humanize
     SUBDIR += py-hunter
     SUBDIR += py-hupper
