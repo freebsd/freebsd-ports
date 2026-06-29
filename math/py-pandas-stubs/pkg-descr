@@ -1,0 +1,4 @@
+pandas-stubs provides external type annotations for the pandas library.
+
+These stubs are used with static type checkers such as mypy and pyright to
+check pandas code without runtime overhead.
