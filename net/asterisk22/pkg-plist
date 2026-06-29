@@ -293,6 +293,7 @@ include/asterisk/spinlock.h
 include/asterisk/srv.h
 include/asterisk/stasis.h
 include/asterisk/stasis_app.h
+include/asterisk/stasis_app_broadcast.h
 include/asterisk/stasis_app_device_state.h
 include/asterisk/stasis_app_impl.h
 include/asterisk/stasis_app_mailbox.h

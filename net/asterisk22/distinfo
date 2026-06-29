@@ -1,6 +1,6 @@
-TIMESTAMP = 1775806049
-SHA256 (asterisk/asterisk-22.9.0.tar.gz) = 5fd0e623d7415faa5999c1d5797721a3ab8992cbe33d49faac7d948635df94cc
-SIZE (asterisk/asterisk-22.9.0.tar.gz) = 26585391
+TIMESTAMP = 1782570618
+SHA256 (asterisk/asterisk-22.10.1.tar.gz) = 0953564c44fa49827f3c9d70ca6e80db83828c9848440852c6be44c961855353
+SIZE (asterisk/asterisk-22.10.1.tar.gz) = 26672088
 SHA256 (asterisk/asterisk-core-sounds-en-g729-1.6.tar.gz) = b49dec15e07bb9bff6af0da3a07180651a38ef54d3ea54a3f20c35f081ed8714
 SIZE (asterisk/asterisk-core-sounds-en-g729-1.6.tar.gz) = 1557798
 SHA256 (asterisk/asterisk-moh-opsound-g729-2.03.tar.gz) = 0147ca9a97f0c550227aacb7793499057c4d2c64e021c95f93722f27d5549585
@@ -9,5 +9,5 @@ SHA256 (asterisk/asterisk-mp3-204.tar.gz) = 721a6745e5f4bce8bbf5e3caca44ad1da22d
 SIZE (asterisk/asterisk-mp3-204.tar.gz) = 26529
 SHA256 (asterisk/traud-asterisk-opus-83e1b458c77e0e287adeca494eeb79edb077b0ff_GH0.tar.gz) = 572a3c956371ed62b44a4bcd973db10eb4c84f3040cf7156e3acfad3b6bf3ded
 SIZE (asterisk/traud-asterisk-opus-83e1b458c77e0e287adeca494eeb79edb077b0ff_GH0.tar.gz) = 24044
-SHA256 (asterisk/pjsip-pjproject-2.16_GH0.tar.gz) = 3af2e481d51aaa095897820fa2ee26c30e530590c6ca56d23e4133bbdad369eb
-SIZE (asterisk/pjsip-pjproject-2.16_GH0.tar.gz) = 10794360
+SHA256 (asterisk/pjsip-pjproject-2.17_GH0.tar.gz) = 065fe06c06788d97c35f563796d59f00ce52fe9558a52d7b490a042a966facce
+SIZE (asterisk/pjsip-pjproject-2.17_GH0.tar.gz) = 10996639
