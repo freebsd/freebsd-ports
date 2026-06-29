@@ -4875,6 +4875,7 @@
     SUBDIR += py-dask-expr
     SUBDIR += py-dask-geopandas
     SUBDIR += py-dask-histogram
+    SUBDIR += py-databricks-sdk
     SUBDIR += py-dataclass-array
     SUBDIR += py-dataclasses-json
     SUBDIR += py-datadog
