@@ -29,7 +29,12 @@ CONFIGURE_ENV+=	TURN_NO_MONGO=1
 
 TEST_TARGET=	test
 
+USERS=	_turnserver
+GROUPS=	_turnserver
+
 SUB_FILES=	pkg-message
+SUB_LIST=	USER=${USERS} \
+		GROUP=${GROUPS}
 
 MANPAGES=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 \
 		turnutils_stunclient.1 turnutils_uclient.1 coturn.1 \
