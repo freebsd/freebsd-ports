@@ -1,3 +1,60 @@
+  <vuln vid="bebbc065-73d2-11f1-910d-3c7c3fba4204">
+    <topic>NSD -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>nsd</name>
+	<range><lt>4.14.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12244.txt">
+	  <p>CVE-2026-12244: A specially crafted SVCB RR can cause a heap overflow of up to 65509 attacker controlled bytes.</p>
+	  <p>If NSD is configured as secondary for a zone, the primary of that zone can crash NSD with an AXFR containing a DNS message with a special crafted SVCB RR with an rdata size of 65512, that let's an (uint16_t) variable that is used to allocate space needed for the RR wrap (because total size > 65535), causing a heap overflow. The attacker can perform a controlled (RCE class) head write of up to 65509 bytes<br/><br/>
+Even though the data is from a configured primary inside NSD's trust boundary, we do consider the risk significant enough for multi-tenant secondary DNS deployments, given the potential severity of the attack.</p>
+	</blockquote>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12245.txt">
+	  <p>CVE-2026-12245: An attacker can keep all children in a crash-restart loop denying DoT service.</p>
+	  <p>NSD from version 4.13.0 has a heap use-after-free bug in logging errors on TLS connections, causing a crash of the server process, which can be triggered trivially by sending a DNS query over a DoT connection, and closing the connection without reading the response.<br/><br/>
+Any client with access to the DoT port (853) can trigger this. Even though a new server process will be immediately reforked to replace the crashed one, an attacker can keep all children in a crash-restart loop denying DoT service.</p>
+	</blockquote>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12246.txt">
+	  <p>CVE-2026-12246: The RR type APL rdata address, if too large, causes out of bounds write on the
+stack, when the zonefile is written out.</p>
+	  <p>NSD version 4.14.0 introduced a bug where a specially crafted APL RR, with an adflength larger than permitted for the address family will overwrite the stack when the zone is written to disk, with a maximum of 111 attacker controlled bytes.<br/><br/>
+Even though the data is from a configured primary inside NSD's trust boundary, we do consider the risk significant enough for multi-tenant secondary DNS deployments, where a primary could introduce the rogue APL with the secondary not noticing or only after the fact.</p>
+	</blockquote>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12490.txt">
+	  <p>CVE-2026-12490: Secondaries authenticated by a client certificate to transfer a zone over TLS,
+can bypass verification by transferring over TCP.</p>
+	  <p>When a "provide-xfr" is given with a "tls-auth-name", a secondary requesting a transfer should provide a client certificate with that name. However, no client certificate is needed when the request comes in over TLS over the regular "tls-port" (and not the "tls-auth-port") or over over TCP over the regular port, when the other conditions of the "provide-xfr" rule match.<br/><br/>
+The transfer security restrictions for client certificates can be bypassed completely if the attacker can match the other access control conditions, and the "tls-auth-xfr-only" option is not explicitly set to "yes" (which it by default is not)</p>
+	</blockquote>
+	<p>Thanks to people below for reporting and disclosing these vulnerabilities:</p>
+	<ul>
+	  <li>Qifan Zhang from Palo Alto Networks</li>
+	  <li>Haruki Oyama from Waseda University</li>
+	  <li>zhangph</li>
+	</ul>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-12244</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12244.txt</url>
+      <cvename>CVE-2026-12245</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12245.txt</url>
+      <cvename>CVE-2026-12246</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12246.txt</url>
+      <cvename>CVE-2026-12490</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12490.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-06-25</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f3342e3-73ba-11f1-910d-3c7c3fba4204">
     <topic>rclone -- Unauthenticated command execution in `rclone rcd --rc-serve` via inline remote instantiation</topic>
     <affects>
