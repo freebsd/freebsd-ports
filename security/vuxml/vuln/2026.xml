@@ -1,3 +1,52 @@
+  <vuln vid="6c0e17cf-73a0-11f1-910d-3c7c3fba4204">
+    <topic>DNSdist -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>dnsdist</name>
+	<range><lt>2.0.7</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The DNSdist team reports:</p>
+	<blockquote cite="https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-09.html">
+	<ul>
+	  <li>CVE-2026-40011: Prometheus denial of service via crafted DNS queries</li>
+	  <li>CVE-2026-42004: EDNS options smuggling</li>
+	  <li>CVE-2026-42005: Insufficient input validation of internal web server</li>
+	  <li>CVE-2026-40208: Denial of service via DoH3 queries</li>
+	  <li>CVE-2026-40209: Denial of service via IXFR queries</li>
+	  <li>CVE-2026-40210: Out-of-bounds read in SetMacAddrAction</li>
+	  <li>CVE-2026-40211: Denial of service via crafted DoH3 queries</li>
+	</ul>
+	<p>Thanks to people below for reporting these vulnerabilities.</p>
+	<ul>
+	  <li>Haruki Oyama (Waseda University)</li>
+	  <li>Vitaly Simonovich</li>
+	  <li>ilya rozentsvaig</li>
+	  <li>ylwango613</li>
+	  <li>Qifan Zhang (Palo Alto Networks)</li>
+	  <li>Mehtab Zafar</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-40011</cvename>
+      <cvename>CVE-2026-42004</cvename>
+      <cvename>CVE-2026-42005</cvename>
+      <cvename>CVE-2026-40208</cvename>
+      <cvename>CVE-2026-40209</cvename>
+      <cvename>CVE-2026-40210</cvename>
+      <cvename>CVE-2026-40211</cvename>
+      <url>https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-09.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-25</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e82a0e6-6801-42c6-8fb6-91b6b275a9e1">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
