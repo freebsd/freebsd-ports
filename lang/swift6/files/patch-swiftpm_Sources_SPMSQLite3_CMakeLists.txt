@@ -1,0 +1,10 @@
+--- swiftpm/Sources/SPMSQLite3/CMakeLists.txt.orig	2024-06-05 06:47:24 UTC
++++ swiftpm/Sources/SPMSQLite3/CMakeLists.txt
+@@ -11,3 +11,7 @@ target_link_libraries(SPMSQLite3 INTERFACE
+   ${CMAKE_CURRENT_SOURCE_DIR})
+ target_link_libraries(SPMSQLite3 INTERFACE
+   SQLite::SQLite3)
++
++get_target_property(sqlite3_lib_full_path SQLite::SQLite3 IMPORTED_LOCATION)
++get_filename_component(sqlite3_lib_dir "${sqlite3_lib_full_path}" DIRECTORY)
++target_link_directories(SPMSQLite3 INTERFACE "${sqlite3_lib_dir}")

@@ -1,0 +1,686 @@
+--- swift-crypto/Sources/CCryptoBoringSSL/CMakeLists.txt.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/CMakeLists.txt
+@@ -337,7 +337,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL Darwin AND CMAKE_SYSTEM_
+     crypto/fipsmodule/vpaes-x86_64-mac.mac.x86_64.S
+     crypto/fipsmodule/x86_64-mont-mac.mac.x86_64.S
+     crypto/fipsmodule/x86_64-mont5-mac.mac.x86_64.S)
+-elseif(CMAKE_SYSTEM_NAME MATCHES "Linux|Android" AND CMAKE_SYSTEM_PROCESSOR MATCHES "amd64|x86_64")
++elseif(CMAKE_SYSTEM_NAME MATCHES "Linux|Android|FreeBSD" AND CMAKE_SYSTEM_PROCESSOR MATCHES "amd64|x86_64")
+   target_sources(CCryptoBoringSSL PRIVATE
+     crypto/chacha/chacha-x86_64-linux.linux.x86_64.S
+     crypto/cipher_extra/aes128gcmsiv-x86_64-linux.linux.x86_64.S
+@@ -373,7 +373,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL Darwin AND CMAKE_SYS
+     crypto/fipsmodule/sha256-armv8-ios.ios.aarch64.S
+     crypto/fipsmodule/sha512-armv8-ios.ios.aarch64.S
+     crypto/fipsmodule/vpaes-armv8-ios.ios.aarch64.S)
+-elseif(CMAKE_SYSTEM_NAME MATCHES "Linux|Android" AND CMAKE_SYSTEM_PROCESSOR MATCHES "arm64|aarch64")
++elseif(CMAKE_SYSTEM_NAME MATCHES "Linux|Android|FreeBSD" AND CMAKE_SYSTEM_PROCESSOR MATCHES "arm64|aarch64")
+   target_sources(CCryptoBoringSSL PRIVATE
+     crypto/chacha/chacha-armv8-linux.linux.aarch64.S
+     crypto/cipher_extra/chacha20_poly1305_armv8-linux.linux.aarch64.S
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/chacha/chacha-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/chacha/chacha-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1984,8 +1984,8 @@ ChaCha20_512_neon:
+ 	ret
+ .size	ChaCha20_512_neon,.-ChaCha20_512_neon
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/chacha/chacha-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/chacha/chacha-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1628,8 +1628,8 @@ ChaCha20_8x:
+ .cfi_endproc	
+ .size	ChaCha20_8x,.-ChaCha20_8x
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/cipher_extra/aes128gcmsiv-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/cipher_extra/aes128gcmsiv-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -3089,8 +3089,8 @@ _CET_ENDBR
+ .cfi_endproc	
+ .size	aes256gcmsiv_kdf, .-aes256gcmsiv_kdf
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/cipher_extra/chacha20_poly1305_armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/cipher_extra/chacha20_poly1305_armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -3009,8 +3009,8 @@ chacha20_poly1305_open:
+ .cfi_endproc
+ .size	chacha20_poly1305_open,.-chacha20_poly1305_open
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/cipher_extra/chacha20_poly1305_x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/cipher_extra/chacha20_poly1305_x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -8918,8 +8918,8 @@ chacha20_poly1305_seal_avx2:
+ .cfi_endproc	
+ .size	chacha20_poly1305_seal_avx2, .-chacha20_poly1305_seal_avx2
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesni-gcm-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesni-gcm-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -883,8 +883,8 @@ _CET_ENDBR
+ .align	64
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesni-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesni-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -2509,8 +2509,8 @@ _CET_ENDBR
+ .align	64
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesv8-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesv8-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -791,8 +791,8 @@ aes_hw_ctr32_encrypt_blocks:
+ .size	aes_hw_ctr32_encrypt_blocks,.-aes_hw_ctr32_encrypt_blocks
+ #endif
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesv8-gcm-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/aesv8-gcm-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1555,8 +1555,8 @@ aes_gcm_dec_kernel:
+ .size	aes_gcm_dec_kernel,.-aes_gcm_dec_kernel
+ #endif
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/armv8-mont-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/armv8-mont-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1425,8 +1425,8 @@ __bn_mul4x_mont:
+ .align	2
+ .align	4
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/bn-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/bn-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -89,8 +89,8 @@ bn_sub_words:
+ 	ret
+ .size	bn_sub_words,.-bn_sub_words
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghash-neon-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghash-neon-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -335,8 +335,8 @@ gcm_ghash_neon:
+ .align	2
+ .align	2
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghash-ssse3-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghash-ssse3-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -423,8 +423,8 @@ _CET_ENDBR
+ .quad	0x0f0f0f0f0f0f0f0f, 0x0f0f0f0f0f0f0f0f
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghash-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghash-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1133,8 +1133,8 @@ _CET_ENDBR
+ .align	64
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghashv8-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/ghashv8-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -565,8 +565,8 @@ gcm_ghash_v8_4x:
+ .align	2
+ #endif
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/md5-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/md5-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -695,8 +695,8 @@ _CET_ENDBR
+ .cfi_endproc	
+ .size	md5_block_asm_data_order,.-md5_block_asm_data_order
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256-armv8-asm-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256-armv8-asm-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1726,8 +1726,8 @@ ecp_nistz256_select_w7:
+ 	ret
+ .size	ecp_nistz256_select_w7,.-ecp_nistz256_select_w7
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256-x86_64-asm-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256-x86_64-asm-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -4548,8 +4548,8 @@ ecp_nistz256_point_add_affinex:
+ .cfi_endproc	
+ .size	ecp_nistz256_point_add_affinex,.-ecp_nistz256_point_add_affinex
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256_beeu-armv8-asm-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256_beeu-armv8-asm-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -309,8 +309,8 @@ beeu_mod_inverse_vartime:
+ 	ret
+ .size	beeu_mod_inverse_vartime,.-beeu_mod_inverse_vartime
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256_beeu-x86_64-asm-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/p256_beeu-x86_64-asm-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -336,8 +336,8 @@ _CET_ENDBR
+ 
+ .size	beeu_mod_inverse_vartime, .-beeu_mod_inverse_vartime
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/rdrand-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/rdrand-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -57,8 +57,8 @@ _CET_ENDBR
+ .cfi_endproc	
+ .size	CRYPTO_rdrand_multiple8_buf,.-CRYPTO_rdrand_multiple8_buf
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/rsaz-avx2-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/rsaz-avx2-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1749,8 +1749,8 @@ _CET_ENDBR
+ .align	64
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha1-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha1-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1227,8 +1227,8 @@ sha1_block_armv8:
+ .align	2
+ .align	2
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha1-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha1-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -5464,8 +5464,8 @@ K_XX_XX:
+ .align	64
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha256-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha256-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1204,8 +1204,8 @@ sha256_block_armv8:
+ .size	sha256_block_armv8,.-sha256_block_armv8
+ #endif
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha256-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha256-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -4179,8 +4179,8 @@ sha256_block_data_order_avx:
+ .cfi_endproc	
+ .size	sha256_block_data_order_avx,.-sha256_block_data_order_avx
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha512-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha512-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1606,8 +1606,8 @@ sha512_block_armv8:
+ .size	sha512_block_armv8,.-sha512_block_armv8
+ #endif
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha512-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/sha512-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -2987,8 +2987,8 @@ sha512_block_data_order_avx:
+ .cfi_endproc	
+ .size	sha512_block_data_order_avx,.-sha512_block_data_order_avx
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/vpaes-armv8-linux.linux.aarch64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/vpaes-armv8-linux.linux.aarch64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__aarch64__) && defined(__linux__)
++#if defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1224,8 +1224,8 @@ vpaes_ctr32_encrypt_blocks:
+ 	ret
+ .size	vpaes_ctr32_encrypt_blocks,.-vpaes_ctr32_encrypt_blocks
+ #endif  // !OPENSSL_NO_ASM && defined(OPENSSL_AARCH64) && defined(__ELF__)
+-#endif  // defined(__aarch64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__aarch64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/vpaes-x86_64-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/vpaes-x86_64-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1133,8 +1133,8 @@ _vpaes_consts:
+ .size	_vpaes_consts,.-_vpaes_consts
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/x86_64-mont-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/x86_64-mont-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -1253,8 +1253,8 @@ bn_mulx4x_mont:
+ .byte	77,111,110,116,103,111,109,101,114,121,32,77,117,108,116,105,112,108,105,99,97,116,105,111,110,32,102,111,114,32,120,56,54,95,54,52,44,32,67,82,89,80,84,79,71,65,77,83,32,98,121,32,60,97,112,112,114,111,64,111,112,101,110,115,115,108,46,111,114,103,62,0
+ .align	16
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/x86_64-mont5-linux.linux.x86_64.S.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/crypto/fipsmodule/x86_64-mont5-linux.linux.x86_64.S
+@@ -1,5 +1,5 @@
+ #define BORINGSSL_PREFIX CCryptoBoringSSL
+-#if defined(__x86_64__) && defined(__linux__)
++#if defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
+ // This file is generated from a similarly-named Perl script in the BoringSSL
+ // source tree. Do not edit by hand.
+ 
+@@ -3625,8 +3625,8 @@ _CET_ENDBR
+ .byte	77,111,110,116,103,111,109,101,114,121,32,77,117,108,116,105,112,108,105,99,97,116,105,111,110,32,119,105,116,104,32,115,99,97,116,116,101,114,47,103,97,116,104,101,114,32,102,111,114,32,120,56,54,95,54,52,44,32,67,82,89,80,84,79,71,65,77,83,32,98,121,32,60,97,112,112,114,111,64,111,112,101,110,115,115,108,46,111,114,103,62,0
+ .text	
+ #endif
+-#endif  // defined(__x86_64__) && defined(__linux__)
+-#if defined(__linux__) && defined(__ELF__)
++#endif  // defined(__x86_64__) && (defined(__linux__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+ .section .note.GNU-stack,"",%progbits
+ #endif
+ 
+--- swift-crypto/Sources/Crypto/CMakeLists.txt.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/Sources/Crypto/CMakeLists.txt
+@@ -100,7 +100,7 @@ target_compile_definitions(Crypto PRIVATE
+ target_compile_definitions(Crypto PRIVATE
+   "$<$<COMPILE_LANGUAGE:Swift>:CRYPTO_IN_SWIFTPM>")
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Windows" OR CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "WASI")
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Windows" OR CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "WASI" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+   target_compile_definitions(Crypto PRIVATE
+     "$<$<COMPILE_LANGUAGE:Swift>:CRYPTO_IN_SWIFTPM_FORCE_BUILD_API>")
+ endif()
+--- swift-crypto/cmake/modules/SwiftSupport.cmake.orig	2023-09-13 11:03:22 UTC
++++ swift-crypto/cmake/modules/SwiftSupport.cmake
+@@ -42,6 +42,12 @@ function(get_swift_host_arch result_var_name)
+     set("${result_var_name}" "armv7" PARENT_SCOPE)
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "AMD64")
+     set("${result_var_name}" "x86_64" PARENT_SCOPE)
++  elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "amd64")
++    if("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
++      set("${result_var_name}" "x86_64" PARENT_SCOPE)
++    else()
++      set("${result_var_name}" "amd64" PARENT_SCOPE)
++    endif()
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "IA64")
+     set("${result_var_name}" "itanium" PARENT_SCOPE)
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "x86")

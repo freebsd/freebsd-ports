@@ -1,0 +1,11 @@
+--- swift/tools/libStaticMirror/CMakeLists.txt.orig	2024-06-06 04:26:30 UTC
++++ swift/tools/libStaticMirror/CMakeLists.txt
+@@ -20,6 +20,8 @@ target_link_libraries(libStaticMirror PRIVATE
+     swiftStaticMirror
+     swiftRemoteInspection)
+ 
++target_link_options(libStaticMirror PRIVATE "SHELL:-Xlinker -z" "SHELL:-Xlinker nostart-stop-gc")
++
+ set_target_properties(libStaticMirror
+     PROPERTIES
+     OUTPUT_NAME ${SWIFT_SCAN_LIB_NAME})
