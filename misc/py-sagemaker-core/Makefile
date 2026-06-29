@@ -1,5 +1,5 @@
 PORTNAME=	sagemaker-core
-DISTVERSION=	2.14.0
+DISTVERSION=	2.15.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,5 +45,7 @@ USES=		python
 USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
+
+# tests as of 2.15.0: no tests defined
 
 .include <bsd.port.mk>
