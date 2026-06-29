@@ -1,0 +1,37 @@
+From eec42c2fedda888085d3356b3a5af1ada86f5746 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sebastian=20Dr=C3=B6ge?= <sebastian@centricular.com>
+Date: Wed, 17 Jun 2026 10:03:36 +0300
+Subject: [PATCH] h266parser: Check aspect ratio index against lookup table
+ length
+
+Patch provided by Ramesh Adhikari, who also reported this.
+
+Fixes https://gitlab.freedesktop.org/gstreamer/gstreamer/-/work_items/5109
+
+Part-of: <https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/11939>
+---
+ .../gst-libs/gst/codecparsers/gsth266parser.c               | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/subprojects/gst-plugins-bad/gst-libs/gst/codecparsers/gsth266parser.c b/subprojects/gst-plugins-bad/gst-libs/gst/codecparsers/gsth266parser.c
+index ba8cc2fcc91..747227c7435 100644
+--- gst-libs/gst/codecparsers/gsth266parser.c.orig
++++ gst-libs/gst/codecparsers/gsth266parser.c
+@@ -558,9 +558,13 @@ gst_h266_parse_vui_parameters (GstH266VUIParams * vui, NalReader * nr)
+       READ_UINT16 (nr, vui->sar_height, 16);
+       vui->par_n = vui->sar_width;
+       vui->par_d = vui->sar_height;
+-    } else {
++    } else if (vui->aspect_ratio_idc <= 16) {
+       vui->par_n = aspect_ratios[vui->aspect_ratio_idc].par_n;
+       vui->par_d = aspect_ratios[vui->aspect_ratio_idc].par_d;
++    } else {
++      GST_WARNING ("Invalid bitstream: aspect_ratio_idc set "
++          "to value %d (must be 0-16 or %d)",
++          vui->aspect_ratio_idc, EXTENDED_SAR);
+     }
+   } else {
+     vui->aspect_ratio_constant_flag = 0;
+-- 
+GitLab
+

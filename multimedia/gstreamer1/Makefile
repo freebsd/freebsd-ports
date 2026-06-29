@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer
 PORTVERSION=	${_GST_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -70,5 +69,44 @@ makesum-all: makesum
 	@${MAKE} -C ${.CURDIR:H:H}/devel/gstreamer1-devtools makesum
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins makesum-all
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/py-gstreamer1 makesum
+
+# Automatically creates a VuXML entry for the GSreamer suite. This uses a
+# python script to scrape https://gstreamer.freedesktop.org/security/
+# and is pretty good in auto mode, but the output should still be verifed.
+# The script can be run manually with finer parameters for quirky cases.
+create-vuxml:
+	@if ! ${PYTHON_CMD} -c "import bs4" 2>/dev/null; then \
+		${ECHO_MSG} "====>  Error: create-vuxml target requires the bs4 Python module."; \
+		${ECHO_MSG} "====>  Please install it: pkg install ${PYTHON_PKGNAMEPREFIX}beautifulsoup4"; \
+		exit 1; \
+	fi
+	@if ! ${PYTHON_CMD} -c "import requests" 2>/dev/null; then \
+		${ECHO_MSG} "====>  Error: create-vuxml target requires the requests Python module."; \
+		${ECHO_MSG} "====>  Please install it: pkg install ${PYTHON_PKGNAMEPREFIX}requests"; \
+		exit 1; \
+	fi
+	@${ECHO_MSG} "===>  Auto-generating VuXML entry for GStreamer ${PORTVERSION}..."
+	@if [ -f "${FILESDIR}/generate-vuxml-entry.py" ]; then \
+		current_year=$$(date +%Y); \
+		vuxml_file="${.CURDIR:H:H}/security/vuxml/vuln/$${current_year}.xml"; \
+		tmp_vuxml=$$(${MKTEMP} -t gst_vuxml); \
+		trap '${RM} -f "$${tmp_vuxml}"' EXIT; \
+		if ! ${SETENV} ${PYTHON_CMD} ${FILESDIR}/generate-vuxml-entry.py -a -v "${PORTVERSION}" > "$${tmp_vuxml}"; then \
+			${ECHO_MSG} "====>  Error: Python VuXML generator failed."; \
+			exit 1; \
+		fi; \
+		if [ -s "$${tmp_vuxml}" ]; then \
+			if [ -f "$${vuxml_file}" ]; then \
+				${ECHO_CMD} "====> Prepending entry to $${vuxml_file}..."; \
+				${CAT} "$${tmp_vuxml}" "$${vuxml_file}" > "$${vuxml_file}.new"; \
+				${MV} "$${vuxml_file}.new" "$${vuxml_file}"; \
+			else \
+				${ECHO_CMD} "====> Warning: $${vuxml_file} not found. Saving to ${.CURDIR}/vuxml_entry.xml instead. Maybe it's the new year and security/vuxml needs to be updated?"; \
+				${CP} "$${tmp_vuxml}" ${.CURDIR}/vuxml_entry.xml; \
+			fi; \
+		fi; \
+	else \
+		${ECHO_CMD} "====> Warning: ${FILESDIR}/generate-vuxml-entry.py not found. Skipping VuXML generation."; \
+	fi
 
 .include <bsd.port.mk>
