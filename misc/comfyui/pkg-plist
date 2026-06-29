@@ -1,3 +1,4 @@
+bin/comfyui
 %%DATADIR%%/.spectral.yaml
 %%DATADIR%%/CODEOWNERS
 %%DATADIR%%/CONTRIBUTING.md
@@ -78,6 +79,8 @@
 %%DATADIR%%/blueprints/Brightness and Contrast.json
 %%DATADIR%%/blueprints/Canny to Image (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Canny to Video (LTX 2.0).json
+%%DATADIR%%/blueprints/Character Replacement (SCAIL-2 Base).json
+%%DATADIR%%/blueprints/Character Replacement (SCAIL-2 Extend).json
 %%DATADIR%%/blueprints/Chromatic Aberration.json
 %%DATADIR%%/blueprints/Color Adjustment.json
 %%DATADIR%%/blueprints/Color Balance.json
@@ -99,8 +102,10 @@
 %%DATADIR%%/blueprints/Image Blur.json
 %%DATADIR%%/blueprints/Image Captioning (gemini).json
 %%DATADIR%%/blueprints/Image Channels.json
+%%DATADIR%%/blueprints/Image Depth Estimation (Depth Anything 3).json
 %%DATADIR%%/blueprints/Image Depth Estimation (Lotus Depth).json
 %%DATADIR%%/blueprints/Image Depth Estimation (MoGe).json
+%%DATADIR%%/blueprints/Image Edit (Bernini-R).json
 %%DATADIR%%/blueprints/Image Edit (FireRed Image Edit 1.1).json
 %%DATADIR%%/blueprints/Image Edit (Flux.2 Dev).json
 %%DATADIR%%/blueprints/Image Edit (Flux.2 Klein 4B).json
@@ -114,6 +119,7 @@
 %%DATADIR%%/blueprints/Image Outpainting (Qwen-Image).json
 %%DATADIR%%/blueprints/Image Segmentation (SAM3).json
 %%DATADIR%%/blueprints/Image Upscale(Z-image-Turbo).json
+%%DATADIR%%/blueprints/Image to Gaussian Splat (TripoSplat).json
 %%DATADIR%%/blueprints/Image to Layers(Qwen-Image-Layered).json
 %%DATADIR%%/blueprints/Image to Model (Hunyuan3d 2.1).json
 %%DATADIR%%/blueprints/Image to Pose Map (SDPose Multi-Person).json
@@ -129,12 +135,14 @@
 %%DATADIR%%/blueprints/Sharpen.json
 %%DATADIR%%/blueprints/Split Image Grid to Tiles.json
 %%DATADIR%%/blueprints/Text to Audio (ACE-Step 1.5).json
+%%DATADIR%%/blueprints/Text to Image (Anima Base 1.0).json
 %%DATADIR%%/blueprints/Text to Image (Anima).json
 %%DATADIR%%/blueprints/Text to Image (Ernie Image Turbo).json
 %%DATADIR%%/blueprints/Text to Image (Ernie Image).json
 %%DATADIR%%/blueprints/Text to Image (Flux.1 Dev).json
 %%DATADIR%%/blueprints/Text to Image (Flux.1 Krea Dev).json
 %%DATADIR%%/blueprints/Text to Image (Flux.2 Dev).json
+%%DATADIR%%/blueprints/Text to Image (Ideogram v4).json
 %%DATADIR%%/blueprints/Text to Image (NetaYume Lumina).json
 %%DATADIR%%/blueprints/Text to Image (Qwen-Image 2512).json
 %%DATADIR%%/blueprints/Text to Image (Qwen-Image).json
@@ -145,7 +153,9 @@
 %%DATADIR%%/blueprints/Text to Video (Wan 2.2).json
 %%DATADIR%%/blueprints/Unsharp Mask.json
 %%DATADIR%%/blueprints/Video Captioning (Gemini).json
+%%DATADIR%%/blueprints/Video Depth Estimation (Depth Anything 3).json
 %%DATADIR%%/blueprints/Video Depth Estimation (MoGe).json
+%%DATADIR%%/blueprints/Video Edit (Bernini-R).json
 %%DATADIR%%/blueprints/Video Face Detection (Mediapipe).json
 %%DATADIR%%/blueprints/Video Inpaint (VOID).json
 %%DATADIR%%/blueprints/Video Inpainting (Wan2.1 VACE).json
@@ -216,6 +226,7 @@
 %%DATADIR%%/comfy/ldm/audio/embedders.py
 %%DATADIR%%/comfy/ldm/audio/vae_sa3.py
 %%DATADIR%%/comfy/ldm/aura/mmdit.py
+%%DATADIR%%/comfy/ldm/boogu/model.py
 %%DATADIR%%/comfy/ldm/cascade/common.py
 %%DATADIR%%/comfy/ldm/cascade/controlnet.py
 %%DATADIR%%/comfy/ldm/cascade/stage_a.py
@@ -277,6 +288,7 @@
 %%DATADIR%%/comfy/ldm/hydit/posemb_layers.py
 %%DATADIR%%/comfy/ldm/ideogram4/model.py
 %%DATADIR%%/comfy/ldm/kandinsky5/model.py
+%%DATADIR%%/comfy/ldm/krea2/model.py
 %%DATADIR%%/comfy/ldm/lens/model.py
 %%DATADIR%%/comfy/ldm/lightricks/av_model.py
 %%DATADIR%%/comfy/ldm/lightricks/embeddings_connector.py
@@ -389,6 +401,7 @@
 %%DATADIR%%/comfy/text_encoders/anima.py
 %%DATADIR%%/comfy/text_encoders/aura_t5.py
 %%DATADIR%%/comfy/text_encoders/bert.py
+%%DATADIR%%/comfy/text_encoders/boogu.py
 %%DATADIR%%/comfy/text_encoders/byt5_config_small_glyph.json
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/added_tokens.json
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/special_tokens_map.json
@@ -412,6 +425,7 @@
 %%DATADIR%%/comfy/text_encoders/ideogram4.py
 %%DATADIR%%/comfy/text_encoders/jina_clip_2.py
 %%DATADIR%%/comfy/text_encoders/kandinsky5.py
+%%DATADIR%%/comfy/text_encoders/krea2.py
 %%DATADIR%%/comfy/text_encoders/llama.py
 %%DATADIR%%/comfy/text_encoders/llama_tokenizer/tokenizer.json
 %%DATADIR%%/comfy/text_encoders/llama_tokenizer/tokenizer_config.json
@@ -432,6 +446,7 @@
 %%DATADIR%%/comfy/text_encoders/qwen35_tokenizer/merges.txt
 %%DATADIR%%/comfy/text_encoders/qwen35_tokenizer/tokenizer_config.json
 %%DATADIR%%/comfy/text_encoders/qwen35_tokenizer/vocab.json
+%%DATADIR%%/comfy/text_encoders/qwen3vl.py
 %%DATADIR%%/comfy/text_encoders/qwen_image.py
 %%DATADIR%%/comfy/text_encoders/qwen_vl.py
 %%DATADIR%%/comfy/text_encoders/sa3.py
@@ -609,6 +624,7 @@
 %%DATADIR%%/comfy_extras/nodes_audio_encoder.py
 %%DATADIR%%/comfy_extras/nodes_bernini.py
 %%DATADIR%%/comfy_extras/nodes_bg_removal.py
+%%DATADIR%%/comfy_extras/nodes_boogu.py
 %%DATADIR%%/comfy_extras/nodes_camera_trajectory.py
 %%DATADIR%%/comfy_extras/nodes_canny.py
 %%DATADIR%%/comfy_extras/nodes_cfg.py
@@ -841,6 +857,8 @@
 %%DATADIR%%/tests-unit/folder_paths_test/filter_by_content_types_test.py
 %%DATADIR%%/tests-unit/folder_paths_test/misc_test.py
 %%DATADIR%%/tests-unit/folder_paths_test/system_user_test.py
+%%DATADIR%%/tests-unit/jobs_cancel_test/__init__.py
+%%DATADIR%%/tests-unit/jobs_cancel_test/jobs_cancel_test.py
 %%DATADIR%%/tests-unit/prompt_server_test/__init__.py
 %%DATADIR%%/tests-unit/prompt_server_test/system_user_endpoint_test.py
 %%DATADIR%%/tests-unit/prompt_server_test/user_manager_test.py
@@ -883,9 +901,7 @@
 %%DATADIR%%/utils/json_util.py
 %%DATADIR%%/utils/mime_types.py
 /var/db/comfyui/input/example.png
-@dir /var/db/comfyui
 @dir /var/db/comfyui/input
-@dir /var/db/comfyui/models
 @dir /var/db/comfyui/models/audio_encoders
 @dir /var/db/comfyui/models/checkpoints
 @dir /var/db/comfyui/models/clip
@@ -906,10 +922,9 @@
 @dir /var/db/comfyui/models/upscale_models
 @dir /var/db/comfyui/models/vae
 @dir /var/db/comfyui/models/vae_approx
+@dir /var/db/comfyui/models
 @dir /var/db/comfyui/output
 @dir /var/db/comfyui/temp
-@dir /var/db/comfyui/user
 @dir /var/db/comfyui/user/default
-@group users
-@mode 4775
-bin/comfyui
+@dir /var/db/comfyui/user
+@dir /var/db/comfyui

@@ -1,6 +1,6 @@
 PORTNAME=	comfyui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.1
+DISTVERSION=	0.26.0
 CATEGORIES=	misc python # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,10 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.11.8:www/py-aiohttp@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}av>=16.0.0:multimedia/py-av@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blake3>0:security/py-blake3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}comfy-aimdo>=0.4.10:misc/py-comfy-aimdo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfy-kitchen>=0.2.10:misc/py-comfy-kitchen@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-embedded-docs>=0.5.4:misc/py-comfyui-embedded-docs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-frontend-package>=1.45.15:misc/py-comfyui-frontend-package@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates>=0.10.0:misc/py-comfyui-workflow-templates@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfy-kitchen>=0.2.14:misc/py-comfy-kitchen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-embedded-docs>=0.5.5:misc/py-comfyui-embedded-docs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-frontend-package>=1.45.19:misc/py-comfyui-frontend-package@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates>=0.11.0:misc/py-comfyui-workflow-templates@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}einops>0:misc/py-einops@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}glfw>0:graphics/py-glfw@${PY_FLAVOR} \
@@ -82,19 +82,19 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WRITABLE_DIR}/user
 	${MKDIR} ${STAGEDIR}${WRITABLE_DIR}/user/default
 	${MKDIR} ${STAGEDIR}${WRITABLE_DIR}/temp
-	${RLN} -s ${STAGEDIR}${WRITABLE_DIR}/user ${STAGEDIR}${COMFYUI_DIR}/user
-	${RLN} -s ${STAGEDIR}${WRITABLE_DIR}/temp ${STAGEDIR}${COMFYUI_DIR}/temp
+	${RLN} ${STAGEDIR}${WRITABLE_DIR}/user ${STAGEDIR}${COMFYUI_DIR}/user
+	${RLN} ${STAGEDIR}${WRITABLE_DIR}/temp ${STAGEDIR}${COMFYUI_DIR}/temp
 .for dir in audio_encoders checkpoints clip clip_vision controlnet diffusers diffusion_models embeddings gligen hypernetworks \
 	    latent_upscale_models loras model_patches photomaker style_models text_encoders unet upscale_models vae vae_approx
 	${RM} -r ${STAGEDIR}${COMFYUI_DIR}/models/${dir}
 	${MKDIR} ${STAGEDIR}${WRITABLE_DIR}/models/${dir}
-	${RLN} -s ${STAGEDIR}${WRITABLE_DIR}/models/${dir} ${STAGEDIR}${COMFYUI_DIR}/models/${dir}
+	${RLN} ${STAGEDIR}${WRITABLE_DIR}/models/${dir} ${STAGEDIR}${COMFYUI_DIR}/models/${dir}
 .endfor
 	# move installed files to the writable location
 	${MV} ${STAGEDIR}${COMFYUI_DIR}/input ${STAGEDIR}${WRITABLE_DIR}/input
-	${RLN} -s ${STAGEDIR}${WRITABLE_DIR}/input ${STAGEDIR}${COMFYUI_DIR}/input
+	${RLN} ${STAGEDIR}${WRITABLE_DIR}/input ${STAGEDIR}${COMFYUI_DIR}/input
 	${MKDIR} ${STAGEDIR}${WRITABLE_DIR}/output
 	${RM} -r ${STAGEDIR}${COMFYUI_DIR}/output
-	${RLN} -s ${STAGEDIR}${WRITABLE_DIR}/output ${STAGEDIR}${COMFYUI_DIR}/output
+	${RLN} ${STAGEDIR}${WRITABLE_DIR}/output ${STAGEDIR}${COMFYUI_DIR}/output
 
 .include <bsd.port.mk>
