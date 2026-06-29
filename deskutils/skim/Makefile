@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.0
+DISTVERSION=	4.10.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -49,7 +49,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		backtrace-0.3.76 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
-		bincode-next-2.1.0 \
+		bincode-next-3.1.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bit_field-0.10.3 \
@@ -126,6 +126,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
 		either-1.16.0 \
+		either-or-both-0.3.1 \
 		encode_unicode-1.0.0 \
 		env_filter-2.0.0 \
 		env_logger-0.11.11 \
@@ -166,9 +167,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		gif-0.14.2 \
 		gimli-0.32.3 \
 		gnuplot-0.0.46 \
-		gungraun-0.19.2 \
+		gungraun-0.19.3 \
 		gungraun-macros-0.9.1 \
-		gungraun-runner-0.19.2 \
+		gungraun-runner-0.19.3 \
 		half-2.7.1 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
@@ -251,6 +252,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		pastey-0.1.1 \
+		pastey-0.2.3 \
 		pest-2.8.6 \
 		pest_derive-2.8.6 \
 		pest_generator-2.8.6 \
@@ -295,6 +297,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xoshiro-0.7.0 \
+		rapidhash-4.4.2 \
 		ratatui-0.30.2 \
 		ratatui-core-0.1.2 \
 		ratatui-crossterm-0.1.2 \
