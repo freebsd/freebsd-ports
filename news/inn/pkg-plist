@@ -124,6 +124,7 @@ doc/hook-perl
 doc/hook-python
 doc/sample-control
 http/innreport.css
+include/inn/bloom.h
 include/inn/buffer.h
 include/inn/concat.h
 include/inn/confparse.h
@@ -159,6 +160,7 @@ include/inn/sequence.h
 include/inn/storage.h
 include/inn/system.h
 include/inn/timer.h
+include/inn/tombstone.h
 include/inn/tst.h
 include/inn/utility.h
 include/inn/vector.h
