@@ -1095,6 +1095,7 @@
     SUBDIR += py-ldap3
     SUBDIR += py-ldapdomaindump
     SUBDIR += py-ldappool
+    SUBDIR += py-lib389
     SUBDIR += py-libcloud
     SUBDIR += py-libdnet
     SUBDIR += py-magic-wormhole

@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+The lib389 command-line tools can be used to create and manage
+389 Directory Server instances.
+
+Create an instance interactively:
+
+  dscreate interactive
+
+Create an instance from an INF file:
+
+  dscreate from-file /path/to/instance.inf
+
+Manage an existing instance:
+
+  dsctl <instance> status
+  dsctl <instance> start
+  dsctl <instance> stop
+  dsctl <instance> remove --do-it
+
+Use dsconf to manage the server configuration and dsidm to manage
+directory entries.
+EOM
+}
+]
