@@ -1,4 +1,4 @@
-TIMESTAMP = 1782712030
+TIMESTAMP = 1782746211
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -899,5 +899,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.3.crate) = 625dc425cab0dca6dc3c3319506e6
 SIZE (rust/crates/zerovec-derive-0.11.3.crate) = 22115
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (erebe-wstunnel-v10.6.0_GH0.tar.gz) = 15504114bd2a275dde16999d075b17e7d84989b1c54e07dc0c91574d113752e2
-SIZE (erebe-wstunnel-v10.6.0_GH0.tar.gz) = 1721117
+SHA256 (erebe-wstunnel-v10.6.1_GH0.tar.gz) = 6064a5b94af4c75a193a914d4d57ec367f904bb7ee1581824c9cced7e06d1aea
+SIZE (erebe-wstunnel-v10.6.1_GH0.tar.gz) = 1721137
