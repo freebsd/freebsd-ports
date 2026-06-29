@@ -1,3 +1,3 @@
-TIMESTAMP = 1781898665
-SHA256 (sagemaker_serve-1.14.0.tar.gz) = 1407d789fe34121fc92236deaaae1a161043367e0fd928cd7c72816c00724bd6
-SIZE (sagemaker_serve-1.14.0.tar.gz) = 176924
+TIMESTAMP = 1782630551
+SHA256 (sagemaker_serve-1.15.0.tar.gz) = 7ab813a54c373bb02ff616209ced0a0d4fc0fae21af51b44824e588c0ee72675
+SIZE (sagemaker_serve-1.15.0.tar.gz) = 181215
