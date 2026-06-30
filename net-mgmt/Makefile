@@ -436,7 +436,6 @@
     SUBDIR += zabbix7-server
     SUBDIR += zabbix72-frontend
     SUBDIR += zabbix72-java
-    SUBDIR += zabbix72-proxy
     SUBDIR += zabbix72-server
     SUBDIR += zabbix74-agent
     SUBDIR += zabbix74-frontend

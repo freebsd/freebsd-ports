@@ -5429,3 +5429,4 @@ www/py-dj52-social-auth-app-django|www/py-social-auth-app-django|2026-06-30|Has 
 www/py-dj52-djangorestframework|www/py-djangorestframework|2026-06-30|Has expired: Obsolete, please use www/py-djangorestframework instead
 security/krb5-121||2026-06-30|Has expired: Unpatched vulnerabilities, no longer supported by MIT
 net-mgmt/zabbix72-agent||2026-06-30|Has expired: End of life
+net-mgmt/zabbix72-proxy||2026-06-30|Has expired: End of life
