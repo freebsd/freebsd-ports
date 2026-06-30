@@ -177,7 +177,6 @@
     SUBDIR += frp
     SUBDIR += frr10
     SUBDIR += frr10-pythontools
-    SUBDIR += frr8
     SUBDIR += frr9
     SUBDIR += frr9-pythontools
     SUBDIR += fspclient

@@ -5470,3 +5470,4 @@ devel/py-yamlordereddictloader|devel/py-yamlloader|2026-06-30|Has expired: Depre
 editors/notepadnext-devel|editors/notepadnext|2026-06-30|Has expired: editors/notepadnext contains fixes in this port
 archivers/zipmix|archivers/archmerge|2026-06-30|Has expired: No longer supported upstream. Replaced by archivers/archmerge
 net/frr8-pythontools||2026-06-30|Has expired: No longer maintained
+net/frr8||2026-06-30|Has expired: No longer maintained
