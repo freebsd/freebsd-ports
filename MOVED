@@ -5433,3 +5433,4 @@ net-mgmt/zabbix72-proxy||2026-06-30|Has expired: End of life
 net-mgmt/zabbix72-java||2026-06-30|Has expired: End of life
 net-mgmt/zabbix72-frontend||2026-06-30|Has expired: End of life
 net-mgmt/zabbix72-server||2026-06-30|Has expired: End of life
+www/forgejo11|www/forgejo-lts|2026-06-30|Has expired: End of life, please switch to www/forgejo-lts
