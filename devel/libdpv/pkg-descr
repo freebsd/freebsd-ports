@@ -1,0 +1,3 @@
+The dpv library provides an interface for creating complex “gauge”
+widgets for displaying progress on various actions.  The dpv library
+can display progress with one either Xdialog, dialog, or libdialog.

@@ -1,0 +1,6 @@
+include/dpv.h
+lib/libdpv.a
+lib/libdpv.so
+lib/libdpv.so.3
+share/man/man3/dpv.3.gz
+share/man/man3/dpv_free.3.gz
