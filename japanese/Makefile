@@ -163,7 +163,6 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += man
-    SUBDIR += man-doc
     SUBDIR += mecab
     SUBDIR += mecab-ipadic
     SUBDIR += mecab-ipadic-eucjp
