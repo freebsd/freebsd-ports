@@ -1,3 +1,36 @@
+  <vuln vid="5b7cb356-749c-11f1-8a71-50ebf6bdf8e9">
+    <topic>icinga2 -- Improper access control for JSON-RPC update certificate messages</topic>
+    <affects>
+      <package>
+      <name>icinga2</name>
+      <range><lt>2.16.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Icinga team reports:</p>
+	<blockquote cite="https://github.com/Icinga/icinga2/security/advisories/GHSA-vj39-ww8j-vvx5">
+	  <p>The code handling certificate update JSON-RPC messages was
+	    flawed and did not properly validate the sender of the message,
+	    allowing an unauthenticated attacker that can connect to Icinga
+	    2 to update both the own certificate as well as the trusted CA
+	    certificate. Updating the trusted CA allows an attacker to
+	    impersonate a trusted node, allowing them to take control over
+	    the node.</p>
+	  <p>Any Icinga 2 instance that is accessible to an attacker over
+	    the network is affected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/Icinga/icinga2/security/advisories/GHSA-vj39-ww8j-vvx5</url>
+    </references>
+    <dates>
+      <discovery>2026-06-29</discovery>
+      <entry>2026-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7701f760-745c-11f1-bc50-6cc21735f730">
     <topic>PostgresSQL JDBC -- Silent channel-binding authentication downgrade via unsupported certificate algorithms</topic>
     <affects>
