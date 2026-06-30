@@ -1,0 +1,11 @@
+include/verto-libevent.h
+include/verto-module.h
+include/verto.h
+lib/libverto-libevent.so
+lib/libverto-libevent.so.1
+lib/libverto-libevent.so.1.0.0
+lib/libverto.so
+lib/libverto.so.1
+lib/libverto.so.1.0.0
+libdata/pkgconfig/libverto-libevent.pc
+libdata/pkgconfig/libverto.pc

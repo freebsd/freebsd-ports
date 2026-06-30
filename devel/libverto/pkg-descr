@@ -1,0 +1,3 @@
+libverto provides a loop-neutral asynchronous API that allows libraries and
+applications to use event loops without depending directly on a specific event
+loop implementation.
