@@ -1,6 +1,6 @@
 PORTNAME=	commons-digester
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
@@ -12,6 +12,9 @@ WWW=		https://commons.apache.org/proper/commons-digester/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Port only copies a jar. Version 3 was released in 2011. Not used in the ports tree. No maintainer. If you use this, please tell me.
+EXPIRATION_DATE=	2026-09-30
 
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
