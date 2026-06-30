@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260630:
+  AFFECTS: users of net-im/gotosocial
+  AUTHOR: tilde@ultros.pro
+
+  net-im/gotosocial has been updated to 0.22.0
+
+  New configuration options have been added and the upgrade involves
+  lengthy database migrations (allow upwards of 30 minutes) which must not
+  be interrupted.
+
+  Upgrade procedure:
+
+  1. # service gotosocial stop
+  2. Backup database
+  3. # pkg upgrade gotosocial
+  4. Merge new options from etc/gotosocial/config.yaml.sample
+  5. # service gotosocial start (do not interrupt database migrations!)
+
+  PostgreSQL users will need to perform the following manual steps in
+  addition:
+
+  6. Connect to gotosocial database using `psql` command
+  7. VACUUM FULL;
+  8. VACUUM FULL ANALYZE;
+  9. VACUUM (DISABLE_PAGE_SKIPPING ON);
+  10. # service gotosocial restart
+
+  See details at https://codeberg.org/superseriousbusiness/gotosocial/releases/tag/v0.22.0
+
 20260628:
   AFFECTS: users of www/gitea
   AUTHOR: nxjoseph@FreeBSD.org
