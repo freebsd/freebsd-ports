@@ -1,1 +1,4 @@
 langchain-openai is an integration package connecting OpenAI and LangChain.
+
+It provides chat model, embedding, and other OpenAI-specific components for the
+LangChain framework.
