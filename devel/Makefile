@@ -4924,7 +4924,6 @@
     SUBDIR += py-diskcache
     SUBDIR += py-distlib
     SUBDIR += py-distributed
-    SUBDIR += py-dj52-django-rq
     SUBDIR += py-dj52-graphene-django
     SUBDIR += py-dj60-django-rq
     SUBDIR += py-dj60-strawberry-graphql
