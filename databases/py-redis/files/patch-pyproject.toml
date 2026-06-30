@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -38,7 +38,7 @@ xxhash = [
+ ]
+ 
+ xxhash = [
+-    'xxhash~=3.6.0',
++    'xxhash>=3.6.0',
+ ]
+ 
+ ocsp = [
