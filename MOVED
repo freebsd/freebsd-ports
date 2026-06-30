@@ -5458,3 +5458,4 @@ net/unison251||2026-06-30|Has expired: Legacy release unsupported by upstream
 databases/mariadb106-server||2026-06-30|Has expired: End-of-Life approaching, please switch to 11.8 (or 11.4)
 databases/mysql96-client||2026-06-30|Has expired: EOLed upstream, switch to newer version
 databases/mysql96-server||2026-06-30|Has expired: EOLed upstream, switch to newer version
+security/gnupg25|security/gnupg|2026-06-30|Has expired: Will roll up into security/gnupg
