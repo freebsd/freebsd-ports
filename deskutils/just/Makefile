@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.54.0
+DISTVERSION=	1.55.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,14 +30,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		blake3-1.8.5 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
-		bstr-1.12.1 \
+		bstr-1.12.3 \
 		bumpalo-3.20.3 \
 		bytecount-0.6.9 \
-		camino-1.2.3 \
+		camino-1.2.4 \
 		cc-1.2.65 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chacha20-0.10.0 \
+		chacha20-0.10.1 \
 		chrono-0.4.45 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
@@ -82,7 +82,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		is_executable-1.0.6 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
-		js-sys-0.3.102 \
+		js-sys-0.3.103 \
 		lexiclean-0.0.1 \
 		libc-0.2.186 \
 		libredox-0.1.17 \
@@ -143,7 +143,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		tabled-0.18.0 \
 		tabled_derive-0.10.0 \
 		tempfile-3.27.0 \
-		temptree-0.2.0 \
 		terminal_size-0.4.4 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
@@ -155,13 +154,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		unicode-width-0.2.2 \
 		unsafe-libyaml-0.2.11 \
 		utf8parse-0.2.2 \
-		uuid-1.23.3 \
+		uuid-1.23.4 \
 		version_check-0.9.5 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.125 \
-		wasm-bindgen-macro-0.2.125 \
-		wasm-bindgen-macro-support-0.2.125 \
-		wasm-bindgen-shared-0.2.125 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
 		which-8.0.4 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
