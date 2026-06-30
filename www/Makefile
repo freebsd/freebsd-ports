@@ -1580,7 +1580,6 @@
     SUBDIR += py-dj52-django-modelcluster
     SUBDIR += py-dj52-django-multiselectfield
     SUBDIR += py-dj52-django-netfields
-    SUBDIR += py-dj52-django-otp
     SUBDIR += py-dj52-django-permissionedforms
     SUBDIR += py-dj52-django-prometheus
     SUBDIR += py-dj52-django-redis
