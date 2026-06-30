@@ -1602,7 +1602,6 @@
     SUBDIR += py-dj52-drf-writable-nested
     SUBDIR += py-dj52-laces
     SUBDIR += py-dj52-social-auth-app-django
-    SUBDIR += py-dj52-strawberry-graphql-django
     SUBDIR += py-dj60-channels
     SUBDIR += py-dj60-django-auth-ldap
     SUBDIR += py-dj60-django-choices-field
