@@ -6033,7 +6033,6 @@
     SUBDIR += py-rapidfuzz-capi
     SUBDIR += py-ratelim
     SUBDIR += py-ratelimiter
-    SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rchitect
     SUBDIR += py-re-assert
