@@ -1,5 +1,6 @@
 PORTNAME=	wolfssh
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.wolfssl.com/
 
