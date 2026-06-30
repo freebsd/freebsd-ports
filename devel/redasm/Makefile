@@ -25,6 +25,9 @@ PLIST_FILES=	bin/REDasm lib/LibREDasm.so bin/redasm
 post-patch:
 	@${REINPLACE_CMD} -e '/Git/s,find_package,#&, ; \
 		s|unknown|8848416|' ${WRKSRC}/CMakeLists.txt
+# Ampersands are rendered as is for window titles, whack them
+	@${REINPLACE_CMD} -e '/property name="windowTitle"/,+1 \
+		s,&amp;,,' ${WRKSRC}/mainwindow.ui
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/REDasm ${STAGEDIR}${PREFIX}/bin
