@@ -1565,7 +1565,6 @@
     SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-dj42-djangosaml2
     SUBDIR += py-dj52-channels
-    SUBDIR += py-dj52-channels-redis
     SUBDIR += py-dj52-django-allauth
     SUBDIR += py-dj52-django-auditlog
     SUBDIR += py-dj52-django-auth-ldap
