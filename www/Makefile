@@ -2658,7 +2658,6 @@
     SUBDIR += twiki-TwistyContrib
     SUBDIR += twiki-TwistyPlugin
     SUBDIR += twiki-WysiwygPlugin
-    SUBDIR += twms
     SUBDIR += typo3-11
     SUBDIR += typo3-12
     SUBDIR += typo3-13

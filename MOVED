@@ -5459,3 +5459,4 @@ databases/mariadb106-server||2026-06-30|Has expired: End-of-Life approaching, pl
 databases/mysql96-client||2026-06-30|Has expired: EOLed upstream, switch to newer version
 databases/mysql96-server||2026-06-30|Has expired: EOLed upstream, switch to newer version
 security/gnupg25|security/gnupg|2026-06-30|Has expired: Will roll up into security/gnupg
+www/twms||2026-06-30|Has expired: unmaintained port, may not work with newer Python
