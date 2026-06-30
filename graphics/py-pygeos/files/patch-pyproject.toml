@@ -1,10 +1,12 @@
 --- pyproject.toml.orig	2022-12-12 08:21:17 UTC
 +++ pyproject.toml
-@@ -2,7 +2,7 @@
+@@ -1,8 +1,8 @@ requires = [
+ [build-system]
  # numpy and Cython are required to execute setup.py to build Cython extensions
  requires = [
-     "Cython~=0.29",
+-    "Cython~=0.29",
 -    "oldest-supported-numpy",
++    "Cython>=0.29",
 +    "numpy",
      "setuptools>=61.0.0",
  ]

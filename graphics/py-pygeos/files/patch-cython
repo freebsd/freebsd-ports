@@ -1,0 +1,11 @@
+--- pygeos/_geos.pyx.orig	2022-12-12 08:21:17 UTC
++++ pygeos/_geos.pyx
+@@ -8,7 +8,7 @@ from pygeos import GEOSException
+ from pygeos import GEOSException
+ 
+ 
+-cdef void geos_message_handler(const char* message, void* userdata):
++cdef void geos_message_handler(const char* message, void* userdata) noexcept:
+     snprintf(<char *>userdata, 1024, "%s", message)
+ 
+ 
