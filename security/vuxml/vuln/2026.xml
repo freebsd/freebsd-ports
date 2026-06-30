@@ -1,3 +1,40 @@
+  <vuln vid="7701f760-745c-11f1-bc50-6cc21735f730">
+    <topic>PostgresSQL JDBC -- Silent channel-binding authentication downgrade via unsupported certificate algorithms</topic>
+    <affects>
+      <package>
+	<name>postgresql-jdbc</name>
+	<range><lt>47.7.12</lt></range>
+	<range><ge>47.7.4</ge></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-j92g-9f8w-j867">
+	  <p>
+	    channelBinding=require connections can be silently
+	    downgraded from SCRAM-SHA-256-PLUS (with channel
+	    binding) to plain SCRAM-SHA-256 (without it), losing the
+	    man-in-the-middle protection the setting is meant to
+	    guarantee. An attacker who can intercept the TLS
+	    connection triggers the downgrade with a certificate
+	    whose signature algorithm has no tls-server-end-point
+	    channel-binding hash. Examples are Ed25519, Ed448, and
+	    post-quantum algorithms.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-54291</cvename>
+      <url>https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-j92g-9f8w-j867</url>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5181294e-7471-11f1-8de5-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
