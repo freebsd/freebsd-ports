@@ -5379,3 +5379,4 @@ science/minc2|science/minc-tools|2026-06-24|Split into science/minc-tools and sc
 www/xist|www/py-ll-xist|2026-06-24|Use correct Python package name
 net/seda||2026-06-26|Has expired: old, no users in the ports tree, unmaintained, uses long deprecated code removed in jdk25
 math/reduce|math/reduce-psl|2026-06-28|Remove duplicate port, use math/reduce-psl instead
+devel/py-goodreads||2026-06-30|Has expired: Upstream is unmaintained, and the API is no longer available as of 2020-12-08
