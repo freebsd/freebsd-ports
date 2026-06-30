@@ -5439,3 +5439,4 @@ textproc/elasticsearch7|textproc/elasticsearch8|2026-06-30|Has expired: 7.x reac
 filesystems/moosefs3-chunkserver|filesystems/moosefs-chunkserver|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
 filesystems/moosefs3-netdump|filesystems/moosefs-netdump|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
 filesystems/moosefs3-metalogger|filesystems/moosefs-metalogger|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
+filesystems/moosefs3-cgiserv||2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
