@@ -1,12 +1,12 @@
 PORTNAME=	grist-core
-PORTVERSION=	1.7.15
+PORTVERSION=	1.7.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:yarncache
 DISTFILES=	${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarncache
 
 MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	Modern relational spreadsheet running in browser
+COMMENT=	Modern relational spreadsheet running in browser, Community Edition
 WWW=		https://github.com/gristlabs/grist-core
 
 LICENSE=	APACHE20
@@ -52,6 +52,7 @@ post-patch:
 
 pre-build:
 	#(cd ${WORKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} && yarn config set python /usr/local/bin/python3.11)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} echo community > grist-edition
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} PUPPETEER_SKIP_DOWNLOAD=true npm_config_build_from_source=true yarn install --offline
 
 do-build:
@@ -64,7 +65,9 @@ do-install:
 
 	# Cleanup broken sqlite3 build leftovers
 	${RM} -r ${WRKSRC}/node_modules/@gristlabs/sqlite3/build-tmp-napi-v6/Release/.deps/Release/obj.target/nothing \
-		${WRKSRC}/node_modules/@gristlabs/sqlite3/build-tmp-napi-v6/Release/obj.target/nothing
+		${WRKSRC}/node_modules/@gristlabs/sqlite3/build-tmp-napi-v6/Release/obj.target/nothing \
+		${WRKSRC}/node_modules/@gristlabs/sqlite3/build/Release/.deps/Release/obj.target/nothing \
+		${WRKSRC}/node_modules/@gristlabs/sqlite3/build/Release/obj.target/nothing
 
 	# Install main directories
 .for d in node_modules _build bower_components plugins static
