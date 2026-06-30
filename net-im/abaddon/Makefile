@@ -10,6 +10,7 @@ WWW=		https://github.com/uowuo/abaddon
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -41,7 +42,6 @@ OPTIONS_EXCLUDE_powerpc=	VOICE
 OPTIONS_EXCLUDE_powerpcspe=	VOICE
 
 VOICE_DESC=		Voice chat support
-VOICE_BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 VOICE_LIB_DEPENDS=	libopus.so:audio/opus \
 			librnnoise.so:audio/rnnoise \
 			libsodium.so:security/libsodium
