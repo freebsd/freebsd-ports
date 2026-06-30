@@ -5437,3 +5437,4 @@ www/forgejo11|www/forgejo-lts|2026-06-30|Has expired: End of life, please switch
 dns/bind918||2026-06-30|Has expired: End of life, please migrate to a newer version of BIND9
 textproc/elasticsearch7|textproc/elasticsearch8|2026-06-30|Has expired: 7.x reached EoL on 15 Jan 2026 - use textproc/elasticsearch8
 filesystems/moosefs3-chunkserver|filesystems/moosefs-chunkserver|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
+filesystems/moosefs3-netdump|filesystems/moosefs-netdump|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
