@@ -4620,4 +4620,4 @@ bin/paddle
 %%PYTHON_SITELIBDIR%%/paddlepaddle-3.3.0.dev0-py%%PYTHON_VER%%.egg-info/entry_points.txt
 %%PYTHON_SITELIBDIR%%/paddlepaddle-3.3.0.dev0-py%%PYTHON_VER%%.egg-info/requires.txt
 %%PYTHON_SITELIBDIR%%/paddlepaddle-3.3.0.dev0-py%%PYTHON_VER%%.egg-info/top_level.txt
-opt/paddle/share/wheels/paddlepaddle-3.3.0.dev0-cp%%PYTHON_SUFFIX%%-cp%%PYTHON_SUFFIX%%-freebsd_15_1_stable_amd64.whl
+opt/paddle/share/wheels/paddlepaddle-3.3.0.dev0-cp%%PYTHON_SUFFIX%%-cp%%PYTHON_SUFFIX%%-%%WHEEL_TAG%%.whl

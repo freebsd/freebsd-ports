@@ -39,7 +39,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.2:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}safetensors>=0.6.0:misc/py-safetensors@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
+		gfortran${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		cmake llvm:21 python
 USE_PYTHON=	autoplist
@@ -111,6 +112,12 @@ DO_MAKE_BUILD=	${SETENVI} ${WRK_ENV} ${MAKE_ENV:NDESTDIR=*} ${MAKE_CMD} ${MAKE_F
 # complex). Clang 17+ marks these standard traits _LIBCPP_NO_SPECIALIZATIONS
 # which triggers -Winvalid-specialization as an error. Suppress globally.
 CXXFLAGS+=	-Wno-invalid-specialization
+
+CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+
+WHEEL_TAG=	${:!uname -rm | sed -e 's/[.-]/_/g' -e 's/ /_/g' -e 's/^/freebsd_/' | tr '[:upper:]' '[:lower:]'!}
+PLIST_SUB+=	WHEEL_TAG=${WHEEL_TAG}
 
 #MAKE_JOBS_UNSAFE= 	yes
 
