@@ -67,7 +67,6 @@
     SUBDIR += moosefs-master
     SUBDIR += moosefs-metalogger
     SUBDIR += moosefs-netdump
-    SUBDIR += moosefs3-cgi
     SUBDIR += moosefs3-master
     SUBDIR += mp3fs
     SUBDIR += mtools
