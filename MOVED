@@ -5381,3 +5381,4 @@ net/seda||2026-06-26|Has expired: old, no users in the ports tree, unmaintained,
 math/reduce|math/reduce-psl|2026-06-28|Remove duplicate port, use math/reduce-psl instead
 devel/py-goodreads||2026-06-30|Has expired: Upstream is unmaintained, and the API is no longer available as of 2020-12-08
 www/py-django-graphql-jwt34|www/py-django-graphql-jwt|2026-06-30|Has expired: Use py-django-graphql-jwt instead
+www/py-dj52-django-mptt|www/py-django-mptt|2026-06-30|Has expired: Obsolete, please use www/py-django-mptt instead

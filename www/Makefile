@@ -1581,7 +1581,6 @@
     SUBDIR += py-dj52-django-htmx
     SUBDIR += py-dj52-django-js-asset
     SUBDIR += py-dj52-django-modelcluster
-    SUBDIR += py-dj52-django-mptt
     SUBDIR += py-dj52-django-multiselectfield
     SUBDIR += py-dj52-django-netfields
     SUBDIR += py-dj52-django-otp
