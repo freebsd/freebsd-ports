@@ -1564,7 +1564,6 @@
     SUBDIR += py-dj42-django_statici18n
     SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-dj42-djangosaml2
-    SUBDIR += py-dj52-django-allauth
     SUBDIR += py-dj52-djangorestframework
     SUBDIR += py-dj52-social-auth-app-django
     SUBDIR += py-dj60-channels
