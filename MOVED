@@ -5435,3 +5435,4 @@ net-mgmt/zabbix72-frontend||2026-06-30|Has expired: End of life
 net-mgmt/zabbix72-server||2026-06-30|Has expired: End of life
 www/forgejo11|www/forgejo-lts|2026-06-30|Has expired: End of life, please switch to www/forgejo-lts
 dns/bind918||2026-06-30|Has expired: End of life, please migrate to a newer version of BIND9
+textproc/elasticsearch7|textproc/elasticsearch8|2026-06-30|Has expired: 7.x reached EoL on 15 Jan 2026 - use textproc/elasticsearch8
