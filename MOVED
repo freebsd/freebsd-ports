@@ -5477,3 +5477,4 @@ japanese/man-doc||2026-06-30|Has expired: Abandoned, this manual is over 20 year
 devel/py-rauth||2026-06-30|Has expired: No longer maintained upstream
 www/py-flask-collect||2026-06-30|Has expired: Project is discontinued
 lang/spidermonkey115||2026-06-30|Has expired: EOL upstream except to support older Windows
+mail/mime4j||2026-06-30|Has expired: This is a version that is over 14 years old and has multiple vulnerabilities
