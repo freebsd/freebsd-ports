@@ -251,11 +251,11 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/word.tcl
 lib/tcl%%TCL_VER%%/writefile.tcl
-lib/tcl9/%%TCL_VER%%/http-2.10.1.tm
+lib/tcl9/%%TCL_VER%%/http-2.10.2.tm
 lib/tcl9/%%TCL_VER%%/msgcat-1.7.1.tm
 lib/tcl9/%%TCL_VER%%/platform-1.1.0.tm
 lib/tcl9/%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl9/%%TCL_VER%%/tcltest-2.5.10.tm
+lib/tcl9/%%TCL_VER%%/tcltest-2.5.11.tm
 libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man1/tclsh.tcl%%PKGNAMESUFFIX%%.1.gz
 %%TCLMAN%%share/man/man3/DString.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -853,7 +853,6 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man3/Tcl_Ungets.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniChar.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharAtIndex.tcl%%PKGNAMESUFFIX%%.3.gz
-%%TCLMAN%%share/man/man3/Tcl_UniCharCaseMatch.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharIsAlnum.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharIsAlpha.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharIsControl.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -866,8 +865,6 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man3/Tcl_UniCharIsUpper.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharIsWordChar.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharLen.tcl%%PKGNAMESUFFIX%%.3.gz
-%%TCLMAN%%share/man/man3/Tcl_UniCharNcasecmp.tcl%%PKGNAMESUFFIX%%.3.gz
-%%TCLMAN%%share/man/man3/Tcl_UniCharNcmp.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharToLower.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharToTitle.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_UniCharToUpper.tcl%%PKGNAMESUFFIX%%.3.gz
