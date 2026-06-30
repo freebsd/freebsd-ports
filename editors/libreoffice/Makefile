@@ -331,6 +331,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-tls=nss \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
+		--without-dotnet \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
