@@ -5475,3 +5475,4 @@ net-mgmt/arts++||2026-06-30|Has expired: deprecated by upstream, broken
 textproc/redisearch20|textproc/redisearch22|2026-06-30|Has expired: Redisearch 2.0 is no longer maintained use textproc/redisearch22 instead
 japanese/man-doc||2026-06-30|Has expired: Abandoned, this manual is over 20 years old
 devel/py-rauth||2026-06-30|Has expired: No longer maintained upstream
+www/py-flask-collect||2026-06-30|Has expired: Project is discontinued
