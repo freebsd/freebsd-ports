@@ -5461,3 +5461,4 @@ databases/mysql96-server||2026-06-30|Has expired: EOLed upstream, switch to newe
 security/gnupg25|security/gnupg|2026-06-30|Has expired: Will roll up into security/gnupg
 www/twms||2026-06-30|Has expired: unmaintained port, may not work with newer Python
 sysutils/logstash7||2026-06-30|Has expired: 7.x reached EoL on 15 Jan 2026 - use sysutils/logstash8 or sysutils/logstash9*
+security/mcrypt||2026-06-30|Has expired: Abandoned, it has multiple vulnerabilities
