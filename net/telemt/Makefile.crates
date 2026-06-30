@@ -10,7 +10,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		anyhow-1.0.102 \
 		arc-swap-1.9.1 \
 		arrayref-0.3.9 \
-		arrayvec-0.7.6 \
+		arrayvec-0.7.7 \
 		asn1-rs-0.7.2 \
 		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
@@ -23,23 +23,23 @@ CARGO_CRATES=	aead-0.5.2 \
 		base64ct-1.8.3 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
-		bitflags-2.11.1 \
+		bitflags-2.13.0 \
 		blake3-1.8.5 \
 		block-buffer-0.10.4 \
-		block-buffer-0.12.0 \
+		block-buffer-0.12.1 \
 		block-padding-0.3.3 \
 		bumpalo-3.20.3 \
 		byte_string-1.0.0 \
-		bytes-1.11.1 \
+		bytes-1.12.0 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
-		cc-1.2.63 \
+		cc-1.2.65 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
 		chacha20-0.10.0 \
 		chacha20poly1305-0.10.1 \
-		chrono-0.4.44 \
+		chrono-0.4.45 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -95,7 +95,6 @@ CARGO_CRATES=	aead-0.5.2 \
 		fiat-crypto-0.2.9 \
 		find-msvc-tools-0.1.9 \
 		fnv-1.0.7 \
-		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
@@ -112,9 +111,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		generic-array-0.14.7 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
-		getrandom-0.4.2 \
+		getrandom-0.4.3 \
 		ghash-0.5.1 \
-		h2-0.4.14 \
+		h2-0.4.15 \
 		half-2.7.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
@@ -126,13 +125,13 @@ CARGO_CRATES=	aead-0.5.2 \
 		hickory-resolver-0.25.2 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
-		http-1.4.1 \
+		http-1.4.2 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
 		hybrid-array-0.4.12 \
-		hyper-1.10.0 \
+		hyper-1.10.1 \
 		hyper-rustls-0.27.9 \
 		hyper-util-0.1.20 \
 		iana-time-zone-0.1.65 \
@@ -144,11 +143,10 @@ CARGO_CRATES=	aead-0.5.2 \
 		icu_properties-2.2.0 \
 		icu_properties_data-2.2.0 \
 		icu_provider-2.2.0 \
-		id-arena-2.3.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
 		indexmap-2.14.0 \
-		inotify-0.11.1 \
+		inotify-0.11.2 \
 		inotify-sys-0.1.5 \
 		inout-0.1.4 \
 		ipconfig-0.3.4 \
@@ -161,24 +159,23 @@ CARGO_CRATES=	aead-0.5.2 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
-		js-sys-0.3.99 \
+		js-sys-0.3.102 \
 		keccak-0.2.0 \
 		kem-0.3.0 \
-		kqueue-1.1.1 \
+		kqueue-1.2.0 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.0 \
-		leb128fmt-0.1.0 \
 		libc-0.2.186 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
 		lock_api-0.4.14 \
-		log-0.4.30 \
+		log-0.4.33 \
 		lru-0.16.4 \
 		lru-slab-0.1.2 \
 		lru_time_cache-0.11.11 \
 		matchers-0.2.0 \
 		md-5-0.10.6 \
-		memchr-2.8.1 \
+		memchr-2.8.2 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
 		mio-1.2.1 \
@@ -217,14 +214,13 @@ CARGO_CRATES=	aead-0.5.2 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
 		proptest-1.11.0 \
 		quick-error-1.2.3 \
-		quinn-0.11.9 \
-		quinn-proto-0.11.14 \
+		quinn-0.11.11 \
+		quinn-proto-0.11.15 \
 		quinn-udp-0.5.14 \
-		quote-1.0.45 \
+		quote-1.0.46 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		rand-0.9.4 \
@@ -237,9 +233,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		reqwest-0.13.4 \
 		resolv-conf-0.7.6 \
 		ring-0.17.14 \
@@ -248,8 +244,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		rustc_version-0.4.1 \
 		rusticata-macros-4.1.0 \
 		rustix-1.1.4 \
-		rustls-0.23.40 \
-		rustls-native-certs-0.8.3 \
+		rustls-0.23.41 \
+		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
@@ -283,7 +279,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		simd_cesu8-1.1.1 \
 		simdutf8-0.1.5 \
 		slab-0.4.12 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		socket2-0.6.4 \
 		spin-0.10.0 \
 		spki-0.7.3 \
@@ -292,7 +288,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		static_assertions-1.1.0 \
 		subtle-2.6.1 \
 		symlink-0.1.0 \
-		syn-2.0.117 \
+		syn-2.0.118 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		tagptr-0.2.0 \
@@ -300,9 +296,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
-		time-0.3.47 \
-		time-core-0.1.8 \
-		time-macros-0.2.27 \
+		time-0.3.51 \
+		time-core-0.1.9 \
+		time-macros-0.2.30 \
 		tinystr-0.8.3 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
@@ -330,35 +326,30 @@ CARGO_CRATES=	aead-0.5.2 \
 		tracing-subscriber-0.3.23 \
 		trait-variant-0.1.2 \
 		try-lock-0.2.5 \
-		typenum-1.20.0 \
+		typenum-1.20.1 \
 		unarray-0.1.4 \
 		unicode-ident-1.0.24 \
-		unicode-xid-0.2.6 \
 		universal-hash-0.5.1 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
-		uuid-1.23.1 \
+		uuid-1.23.3 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.3+wasi-0.2.9 \
-		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.122 \
-		wasm-bindgen-futures-0.4.72 \
-		wasm-bindgen-macro-0.2.122 \
-		wasm-bindgen-macro-support-0.2.122 \
-		wasm-bindgen-shared-0.2.122 \
-		wasm-encoder-0.244.0 \
-		wasm-metadata-0.244.0 \
-		wasmparser-0.244.0 \
-		web-sys-0.3.99 \
+		wasip2-1.0.4+wasi-0.2.12 \
+		wasm-bindgen-0.2.125 \
+		wasm-bindgen-futures-0.4.75 \
+		wasm-bindgen-macro-0.2.125 \
+		wasm-bindgen-macro-support-0.2.125 \
+		wasm-bindgen-shared-0.2.125 \
+		web-sys-0.3.102 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.7 \
-		webpki-roots-1.0.7 \
+		webpki-root-certs-1.0.8 \
+		webpki-roots-1.0.8 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -393,24 +384,18 @@ CARGO_CRATES=	aead-0.5.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-1.0.3 \
-		wit-bindgen-0.51.0 \
 		wit-bindgen-0.57.1 \
-		wit-bindgen-core-0.51.0 \
-		wit-bindgen-rust-0.51.0 \
-		wit-bindgen-rust-macro-0.51.0 \
-		wit-component-0.244.0 \
-		wit-parser-0.244.0 \
 		writeable-0.6.3 \
 		x25519-dalek-2.0.1 \
 		x509-parser-0.18.1 \
-		yoke-0.8.2 \
+		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.49 \
-		zerocopy-derive-0.8.49 \
+		zerocopy-0.8.52 \
+		zerocopy-derive-0.8.52 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
-		zeroize-1.8.2 \
-		zeroize_derive-1.4.3 \
+		zeroize-1.9.0 \
+		zeroize_derive-1.5.0 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
