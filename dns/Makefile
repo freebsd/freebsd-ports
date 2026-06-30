@@ -7,7 +7,6 @@
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
     SUBDIR += bind9-devel
-    SUBDIR += bind918
     SUBDIR += bind920
     SUBDIR += bindgraph
     SUBDIR += blocky
