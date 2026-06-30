@@ -5417,3 +5417,4 @@ www/py-dj52-djangorestframework-guardian|www/py-djangorestframework-guardian|202
 www/py-dj52-django-guardian|www/py-django-guardian|2026-06-30|Has expired: Obsolete, please use www/py-django-guardian instead
 www/py-dj52-django-celery-results|www/py-django-celery-results|2026-06-30|Has expired: Obsolete, please use www/py-django-celery-results instead
 www/py-dj52-drf-writable-nested|www/py-drf-writable-nested|2026-06-30|Has expired: Obsolete, please use www/py-drf-writable-nested instead
+devel/py-dj52-graphene-django|devel/py-graphene-django|2026-06-30|Has expired: Obsolete, please use devel/py-graphene-django instead
