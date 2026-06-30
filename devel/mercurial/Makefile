@@ -1,6 +1,5 @@
 PORTNAME=	mercurial
-PORTVERSION=	6.9.5
-PORTREVISION=	1
+PORTVERSION=	7.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
@@ -12,6 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.1.0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
@@ -25,8 +25,7 @@ OPTIONS_SUB=		yes
 DATA_SUB_FILES=		pkg-message
 FREEBSD_DESC=		Patches used internally by the FreeBSD Project
 FREEBSD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-authormapsuffix
-NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py
-NLS_USES=		gettext
+NLS_USES=		gettext-tools
 
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
@@ -60,6 +59,9 @@ PORTDOCS=	CONTRIBUTORS README.rst
 .if ${PYTHON_VER} != ${PYTHON_DEFAULT}
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|setuptools>=64|setuptools|' ${WRKSRC}/pyproject.toml
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1/
