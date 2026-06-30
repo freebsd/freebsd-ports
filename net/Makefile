@@ -440,7 +440,6 @@
     SUBDIR += libusrsctp
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
-    SUBDIR += libyang
     SUBDIR += libyang2
     SUBDIR += libyang3
     SUBDIR += libzapojit
