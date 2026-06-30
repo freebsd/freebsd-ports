@@ -469,7 +469,6 @@
     SUBDIR += virtualgl
     SUBDIR += walker
     SUBDIR += wallutils
-    SUBDIR += wapanel
     SUBDIR += watershot
     SUBDIR += waveterm
     SUBDIR += way-displays

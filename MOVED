@@ -5464,3 +5464,4 @@ sysutils/logstash7||2026-06-30|Has expired: 7.x reached EoL on 15 Jan 2026 - use
 security/mcrypt||2026-06-30|Has expired: Abandoned, it has multiple vulnerabilities
 security/steghide||2026-06-30|Has expired: This version is over 22 years old and has vulnerability
 java/jad||2026-06-30|Has expired: This is a version that is over 25 years old and has multiple vulnerabilities
+x11/wapanel||2026-06-30|Has expired: https://github.com/Firstbober/wapanel/issues/39
