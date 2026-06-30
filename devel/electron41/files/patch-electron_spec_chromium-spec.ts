@@ -1,4 +1,4 @@
---- electron/spec/chromium-spec.ts.orig	2026-05-07 20:19:20 UTC
+--- electron/spec/chromium-spec.ts.orig	2026-06-29 04:13:32 UTC
 +++ electron/spec/chromium-spec.ts
 @@ -578,15 +578,15 @@ describe('command line switches', () => {
        testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
@@ -20,7 +20,7 @@
        testLocale('', lcAll, true)
      );
    });
-@@ -3839,12 +3839,12 @@ describe('font fallback', () => {
+@@ -3841,12 +3841,12 @@ describe('font fallback', () => {
        expect(fonts[0].familyName).to.equal('Arial');
      } else if (process.platform === 'darwin') {
        expect(fonts[0].familyName).to.equal('Helvetica');
@@ -35,7 +35,7 @@
      'should fall back to Japanese font for sans-serif Japanese script',
      async function () {
        const html = `
-@@ -4411,7 +4411,7 @@ describe('paste execCommand', () => {
+@@ -4413,7 +4413,7 @@ describe('paste execCommand', () => {
    });
  });
  
