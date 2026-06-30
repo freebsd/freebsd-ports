@@ -1582,7 +1582,6 @@
     SUBDIR += py-dj52-django-netfields
     SUBDIR += py-dj52-django-permissionedforms
     SUBDIR += py-dj52-django-prometheus
-    SUBDIR += py-dj52-django-redis
     SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-django-tables2
     SUBDIR += py-dj52-django-taggit
