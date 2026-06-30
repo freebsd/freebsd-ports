@@ -1565,7 +1565,6 @@
     SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-dj42-djangosaml2
     SUBDIR += py-dj52-django-allauth
-    SUBDIR += py-dj52-django-auditlog
     SUBDIR += py-dj52-django-debug-toolbar
     SUBDIR += py-dj52-djangorestframework
     SUBDIR += py-dj52-social-auth-app-django
