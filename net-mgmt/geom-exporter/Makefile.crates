@@ -4,33 +4,28 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.3 \
 		anstyle-wincon-3.0.9 \
-		anyhow-1.0.98 \
+		anyhow-1.0.103 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
 		axum-0.8.6 \
 		axum-core-0.5.5 \
-		bindgen-0.72.0 \
 		bitflags-2.10.0 \
 		bytes-1.11.1 \
-		cexpr-0.6.0 \
 		cfg-if-1.0.1 \
-		clang-sys-1.8.1 \
 		clap-4.5.40 \
 		clap_builder-4.5.40 \
 		clap_derive-4.5.40 \
 		clap_lex-0.7.5 \
 		colorchoice-1.0.4 \
-		either-1.15.0 \
 		env_filter-0.1.3 \
 		env_logger-0.11.8 \
 		fnv-1.0.7 \
-		freebsd-libgeom-0.3.1 \
-		freebsd-libgeom-sys-0.1.7 \
+		freebsd-libgeom-0.3.2 \
+		freebsd-libgeom-sys-0.1.8 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
-		glob-0.3.2 \
 		heck-0.5.0 \
 		http-1.3.1 \
 		http-body-1.0.1 \
@@ -40,21 +35,17 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		hyper-1.7.0 \
 		hyper-util-0.1.17 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.13.0 \
 		itoa-1.0.15 \
 		jiff-0.2.15 \
 		jiff-static-0.2.15 \
 		lazy_static-1.5.0 \
-		libc-0.2.177 \
-		libloading-0.8.8 \
+		libc-0.2.186 \
 		lock_api-0.4.13 \
 		log-0.4.27 \
 		matchit-0.8.4 \
 		memchr-2.7.5 \
 		mime-0.3.17 \
-		minimal-lexical-0.2.1 \
 		mio-1.0.4 \
-		nom-7.1.3 \
 		once_cell_polyfill-1.70.1 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
@@ -63,7 +54,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		pin-utils-0.1.0 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
-		prettyplease-0.2.34 \
 		proc-macro2-1.0.95 \
 		prometheus-0.14.0 \
 		quote-1.0.40 \
@@ -71,12 +61,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustc-hash-2.1.1 \
 		scopeguard-1.2.0 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		shlex-1.3.0 \
 		smallvec-1.15.1 \
 		socket2-0.6.1 \
 		strsim-0.11.1 \
