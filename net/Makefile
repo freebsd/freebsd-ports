@@ -1634,6 +1634,7 @@
     SUBDIR += tsclient
     SUBDIR += tsctp
     SUBDIR += tsocks
+    SUBDIR += tun2socks
     SUBDIR += tunneller
     SUBDIR += turnserver
     SUBDIR += u6rd
