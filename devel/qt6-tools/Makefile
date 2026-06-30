@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>0:textproc/py-cyclone
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang gl llvm:min=17,max=21,lib,noexport \
+USES=		cmake compiler:c++17-lang gl llvm:min=17,lib,noexport \
 		python:build qt-dist:6
 USE_GL=		opengl
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
