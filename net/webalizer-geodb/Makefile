@@ -1,5 +1,5 @@
 PORTNAME=	webalizer-geodb
-PORTVERSION=	20260601
+PORTVERSION=	20260701
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/webalizer/ \
 		https://ftp.dinoex.de/pub/webalizer/ \
