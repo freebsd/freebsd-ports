@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	flask_cors-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flask extension simplifying CORS support
 WWW=		https://corydolphin.github.io/flask-cors/ \
 		https://github.com/corydolphin/flask-cors
