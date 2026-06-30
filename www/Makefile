@@ -1567,7 +1567,6 @@
     SUBDIR += py-dj52-django-allauth
     SUBDIR += py-dj52-django-auditlog
     SUBDIR += py-dj52-django-debug-toolbar
-    SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-djangorestframework
     SUBDIR += py-dj52-social-auth-app-django
     SUBDIR += py-dj60-channels
