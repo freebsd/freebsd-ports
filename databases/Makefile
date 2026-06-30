@@ -772,7 +772,6 @@
     SUBDIR += py-duckdb
     SUBDIR += py-duckdb_engine
     SUBDIR += py-fakeredis
-    SUBDIR += py-fastparquet
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-pymongo
