@@ -5450,3 +5450,4 @@ www/forgejo14|www/forgejo-lts|2026-06-30|Has expired: Unsupported, please switch
 net/unison248||2026-06-30|Has expired: Legacy release unsupported by upstream
 databases/adminer||2026-06-30|Has expired: Project's poor security practices
 net/libyang||2026-06-30|Has expired: No longer maintained
+japanese/wnn7egg||2026-06-30|Has expired: Abandoned, A patch is needed for the current version of Emacs

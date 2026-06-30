@@ -290,7 +290,6 @@
     SUBDIR += wdic-fpw
     SUBDIR += web1913-fpw
     SUBDIR += webalizer
-    SUBDIR += wnn7egg
     SUBDIR += wordnet-fpw
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
