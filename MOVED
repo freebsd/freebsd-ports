@@ -5441,3 +5441,4 @@ filesystems/moosefs3-netdump|filesystems/moosefs-netdump|2026-06-30|Has expired:
 filesystems/moosefs3-metalogger|filesystems/moosefs-metalogger|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
 filesystems/moosefs3-cgiserv||2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
 filesystems/moosefs3-cli|filesystems/moosefs-cli|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
+filesystems/moosefs3-client|filesystems/moosefs-client|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
