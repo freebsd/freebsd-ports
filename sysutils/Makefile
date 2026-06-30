@@ -317,6 +317,7 @@
     SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += downtimed
+    SUBDIR += dpv
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsblogoutmgr
