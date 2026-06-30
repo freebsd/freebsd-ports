@@ -1,4 +1,4 @@
-TIMESTAMP = 1775926996
+TIMESTAMP = 1782810617
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/android_system_properties-0.1.5.crate) = 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
@@ -429,5 +429,5 @@ SHA256 (rust/crates/zerovec-0.11.5.crate) = 6c28719294829477f525be0186d13efa9a3c
 SIZE (rust/crates/zerovec-0.11.5.crate) = 119620
 SHA256 (rust/crates/zerovec-derive-0.11.2.crate) = eadce39539ca5cb3985590102671f2567e659fca9666581ad3411d59207951f3
 SIZE (rust/crates/zerovec-derive-0.11.2.crate) = 21421
-SHA256 (FrameworkComputer-framework-system-v0.6.2_GH0.tar.gz) = 776c77692262fba50b3028bc6463ed5a1227a86a4fba85aac57a829839e31de1
-SIZE (FrameworkComputer-framework-system-v0.6.2_GH0.tar.gz) = 1590829
+SHA256 (FrameworkComputer-framework-system-v0.6.4_GH0.tar.gz) = 7c1a717651f879bc921f3789046f056752b211630b4585696c2dd1ca7e037b9b
+SIZE (FrameworkComputer-framework-system-v0.6.4_GH0.tar.gz) = 1596042
