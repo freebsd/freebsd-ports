@@ -1,3 +1,40 @@
+  <vuln vid="5181294e-7471-11f1-8de5-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>149.0.7827.200</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>149.0.7827.200</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_01245939337.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[513138301] High CVE-2026-13281: Integer overflow in Mojo. Reported by Google on 2026-05-14</li>
+	    <li>[517522620] High CVE-2026-13282: Use after free in Payments. Reported by Google on 2026-05-28</li>
+	    <li>[522561151] High CVE-2026-13283: Use after free in AdFilter. Reported by Google on 2026-06-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-13281</cvename>
+      <cvename>CVE-2026-13282</cvename>
+      <cvename>CVE-2026-13283</cvename>
+      <url>https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_01245939337.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-25</discovery>
+      <entry>2026-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bebbc065-73d2-11f1-910d-3c7c3fba4204">
     <topic>NSD -- vulnerabilities</topic>
     <affects>
