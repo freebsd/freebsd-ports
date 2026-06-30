@@ -172,7 +172,6 @@
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
     SUBDIR += mariadb106-client
-    SUBDIR += mariadb106-server
     SUBDIR += mariadb114-client
     SUBDIR += mariadb114-server
     SUBDIR += mariadb118-client
