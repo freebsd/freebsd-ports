@@ -1576,7 +1576,6 @@
     SUBDIR += py-dj52-django-guardian
     SUBDIR += py-dj52-django-modelcluster
     SUBDIR += py-dj52-django-multiselectfield
-    SUBDIR += py-dj52-django-netfields
     SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-django-taggit
     SUBDIR += py-dj52-django-tasks
