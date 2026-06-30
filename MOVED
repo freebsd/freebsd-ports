@@ -5471,3 +5471,4 @@ editors/notepadnext-devel|editors/notepadnext|2026-06-30|Has expired: editors/no
 archivers/zipmix|archivers/archmerge|2026-06-30|Has expired: No longer supported upstream. Replaced by archivers/archmerge
 net/frr8-pythontools||2026-06-30|Has expired: No longer maintained
 net/frr8||2026-06-30|Has expired: No longer maintained
+net-mgmt/arts++||2026-06-30|Has expired: deprecated by upstream, broken

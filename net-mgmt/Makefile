@@ -13,7 +13,6 @@
     SUBDIR += argus-clients
     SUBDIR += arpscan
     SUBDIR += arpwatch
-    SUBDIR += arts++
     SUBDIR += bandwhich
     SUBDIR += bandwidthd
     SUBDIR += bgpq3
