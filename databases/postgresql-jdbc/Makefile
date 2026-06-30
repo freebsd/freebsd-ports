@@ -1,6 +1,5 @@
 PORTNAME=	postgresql
-PORTVERSION=	42.7.10
-PORTREVISION=	2
+PORTVERSION=	42.7.12
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc
