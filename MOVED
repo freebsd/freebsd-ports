@@ -5415,3 +5415,4 @@ www/py-dj52-django-filter|www/py-django-filter|2026-06-30|Has expired: Obsolete,
 www/py-dj52-django-auth-ldap|www/py-django-auth-ldap|2026-06-30|Has expired: Obsolete, please use www/py-django-auth-ldap instead
 www/py-dj52-djangorestframework-guardian|www/py-djangorestframework-guardian|2026-06-30|Has expired: Obsolete, please use www/py-djangorestframework-guardian instead
 www/py-dj52-django-guardian|www/py-django-guardian|2026-06-30|Has expired: Obsolete, please use www/py-django-guardian instead
+www/py-dj52-django-celery-results|www/py-django-celery-results|2026-06-30|Has expired: Obsolete, please use www/py-django-celery-results instead

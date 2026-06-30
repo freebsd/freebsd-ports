@@ -1566,7 +1566,6 @@
     SUBDIR += py-dj42-djangosaml2
     SUBDIR += py-dj52-django-allauth
     SUBDIR += py-dj52-django-auditlog
-    SUBDIR += py-dj52-django-celery-results
     SUBDIR += py-dj52-django-crispy-forms
     SUBDIR += py-dj52-django-debug-toolbar
     SUBDIR += py-dj52-django-modelcluster
