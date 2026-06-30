@@ -299,7 +299,6 @@
     SUBDIR += zchunk
     SUBDIR += zim-tools
     SUBDIR += zip
-    SUBDIR += zipmix
     SUBDIR += zipper
     SUBDIR += zlib-ng
     SUBDIR += zoo

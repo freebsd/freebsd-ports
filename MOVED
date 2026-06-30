@@ -5468,3 +5468,4 @@ x11/wapanel||2026-06-30|Has expired: https://github.com/Firstbober/wapanel/issue
 databases/py-fastparquet||2026-06-30|Has expired: Retired by upstream. See https://github.com/dask/fastparquet/commit/dfe8d4ed0107427674dfa1b18918a167f057a328 for details
 devel/py-yamlordereddictloader|devel/py-yamlloader|2026-06-30|Has expired: Deprecated by upstream and no longer actively maintained, please use devel/py-yamlloader instead
 editors/notepadnext-devel|editors/notepadnext|2026-06-30|Has expired: editors/notepadnext contains fixes in this port
+archivers/zipmix|archivers/archmerge|2026-06-30|Has expired: No longer supported upstream. Replaced by archivers/archmerge
