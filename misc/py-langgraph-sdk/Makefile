@@ -19,12 +19,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.25.2:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.15:misc/py-langchain-protocol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14:devel/py-websockets@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 0.3.1: 4 failed, 41 passed, 1 warning in 0.41s (docs/cloud/reference/api/openapi.json missing, see https://github.com/langchain-ai/langgraph/issues/6647)
+# tests as of 0.4.2: 507 passed, 53 skipped, 1 warning in 9.26s
+# (pytest-watch dep omitted because it conflicts with devel/py-pytest-watcher)
 
 .include <bsd.port.mk>
