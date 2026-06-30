@@ -1571,7 +1571,6 @@
     SUBDIR += py-dj52-django-modelcluster
     SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-djangorestframework
-    SUBDIR += py-dj52-drf-writable-nested
     SUBDIR += py-dj52-social-auth-app-django
     SUBDIR += py-dj60-channels
     SUBDIR += py-dj60-django-auth-ldap
