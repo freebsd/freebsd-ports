@@ -242,14 +242,16 @@ do-build:
 .endif
 
 do-install:
+.for dir in bin lib
+	@${FIND} ${OUT5_DIR}${SWIFT_PREFIX}/${dir} -type f -exec ${FILE} {} ';' | \
+		${GREP} 'ELF.*FreeBSD' | ${CUT} -d ':' -f 1 | \
+		${XARGS} ${STRIP_CMD} --strip-debug
+.endfor
 	cd ${OUT5_DIR} && ${COPYTREE_BIN} .${SWIFT_PREFIX}/bin ${STAGEDIR}
 	cd ${OUT5_DIR} && \
 	for dir in include lib local share; do \
 		${COPYTREE_SHARE} .${SWIFT_PREFIX}/$${dir} ${STAGEDIR}; \
 	done
-	@${FIND} ${STAGEDIR}${SWIFT_PREFIX} -type f -exec ${FILE} {} ';' | \
-		${GREP} 'ELF.*FreeBSD' | ${CUT} -d ':' -f 1 | \
-		${XARGS} ${STRIP_CMD} --strip-debug
 	@${GZIP_CMD} ${STAGEDIR}${SWIFT_PREFIX}/share/man/man1/swift.1
 
 do-install-DOCS-on:
