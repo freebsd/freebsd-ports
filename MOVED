@@ -5427,3 +5427,4 @@ graphics/py-dj52-sorl-thumbnail|graphics/py-sorl-thumbnail|2026-06-30|Has expire
 www/py-dj52-django-allauth|www/py-django-allauth|2026-06-30|Has expired: Obsolete, please use www/py-django-allauth instead
 www/py-dj52-social-auth-app-django|www/py-social-auth-app-django|2026-06-30|Has expired: Obsolete, please use www/py-social-auth-app-django instead
 www/py-dj52-djangorestframework|www/py-djangorestframework|2026-06-30|Has expired: Obsolete, please use www/py-djangorestframework instead
+security/krb5-121||2026-06-30|Has expired: Unpatched vulnerabilities, no longer supported by MIT
