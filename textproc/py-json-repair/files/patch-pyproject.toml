@@ -1,12 +1,12 @@
 --  Remove license fields from pyproject.toml as they are currently in an invalid format
 --  for newer setuptools, which causes the build to fail.
 
---- pyproject.toml.orig	2026-06-03 17:25:43 UTC
+--- pyproject.toml.orig	2026-06-29 12:07:41 UTC
 +++ pyproject.toml
-@@ -4,8 +4,6 @@ version = "0.60.1"
+@@ -4,8 +4,6 @@ version = "0.61.1"
  [project]
  name = "json_repair"
- version = "0.60.1"
+ version = "0.61.1"
 -license = "MIT"
 -license-files = ["LICENSE"]
  authors = [
