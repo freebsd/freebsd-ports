@@ -5431,3 +5431,4 @@ security/krb5-121||2026-06-30|Has expired: Unpatched vulnerabilities, no longer 
 net-mgmt/zabbix72-agent||2026-06-30|Has expired: End of life
 net-mgmt/zabbix72-proxy||2026-06-30|Has expired: End of life
 net-mgmt/zabbix72-java||2026-06-30|Has expired: End of life
+net-mgmt/zabbix72-frontend||2026-06-30|Has expired: End of life
