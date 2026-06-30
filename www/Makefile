@@ -1578,7 +1578,6 @@
     SUBDIR += py-dj52-django-multiselectfield
     SUBDIR += py-dj52-django-netfields
     SUBDIR += py-dj52-django-stubs-ext
-    SUBDIR += py-dj52-django-tables2
     SUBDIR += py-dj52-django-taggit
     SUBDIR += py-dj52-django-tasks
     SUBDIR += py-dj52-django-timezone-field
