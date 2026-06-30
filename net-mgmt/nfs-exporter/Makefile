@@ -1,6 +1,5 @@
 PORTNAME=	nfs-exporter
-DISTVERSION=	0.4.6
-PORTREVISION=	3
+PORTVERSION=	0.4.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CRATESIO
 MASTER_SITE_SUBDIR=	freebsd-${PORTNAME}/${DISTVERSION}
@@ -20,7 +19,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 NOT_FOR_ARCHS=	powerpc
 NOT_FOR_ARCHS_REASON_powerpc=needs 64-bit atomics
 
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+TEST_DEPENDS+=	bindgen:devel/rust-bindgen-cli
+TEST_DEPENDS+=	difft:textproc/difftastic
 
 USES=		cargo
 USE_RC_SUBR=	nfs_exporter
