@@ -1,4 +1,4 @@
-TIMESTAMP = 1782356909
+TIMESTAMP = 1782791142
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
@@ -1271,8 +1271,8 @@ SHA256 (rust/crates/openssl-probe-0.1.6.crate) = d05e27ee213611ffe7d6348b942e8f9
 SIZE (rust/crates/openssl-probe-0.1.6.crate) = 8128
 SHA256 (rust/crates/openssl-probe-0.2.1.crate) = 7c87def4c32ab89d880effc9e097653c8da5d6ef28e6b539d313baaacfbafcbe
 SIZE (rust/crates/openssl-probe-0.2.1.crate) = 9155
-SHA256 (rust/crates/openssl-src-300.5.5+3.5.5.crate) = 3f1787d533e03597a7934fd0a765f0d28e94ecc5fb7789f8053b1e699a56f709
-SIZE (rust/crates/openssl-src-300.5.5+3.5.5.crate) = 7041984
+SHA256 (rust/crates/openssl-src-300.6.1+3.6.3.crate) = 46eb8fb9fb3b61ce1c0f8a026c4c1a0714d3a9e138e7fbde78753ce2babc3846
+SIZE (rust/crates/openssl-src-300.6.1+3.6.3.crate) = 7195821
 SHA256 (rust/crates/openssl-sys-0.9.111.crate) = 82cab2d520aa75e3c58898289429321eb788c3106963d0dc886ec7a5f4adc321
 SIZE (rust/crates/openssl-sys-0.9.111.crate) = 80871
 SHA256 (rust/crates/opentelemetry-0.31.0.crate) = b84bcd6ae87133e903af7ef497404dda70c60d0ea14895fc8a5e6722754fc2a0
@@ -2397,5 +2397,5 @@ SHA256 (openai-oss-forks-tungstenite-rs-4fffad30fe373adbdcffab9545e9e9bf4f2fc19f
 SIZE (openai-oss-forks-tungstenite-rs-4fffad30fe373adbdcffab9545e9e9bf4f2fc19f_GH0.tar.gz) = 293806
 SHA256 (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186_GH0.tar.gz) = a1d8bfedf41ea59d5ed375ebc280dad7099d0c3398e91406c51d485270196a3d
 SIZE (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186_GH0.tar.gz) = 33055
-SHA256 (openai-codex-rust-v0.142.1_GH0.tar.gz) = bb4f057150746e451a1be1ecc6917bce989ea3b69ea0b6bd6632b4de880d2b03
-SIZE (openai-codex-rust-v0.142.1_GH0.tar.gz) = 9097897
+SHA256 (openai-codex-rust-v0.142.4_GH0.tar.gz) = 2dfa59bc230e6c7bcd0d29a3e49ab0ea10b86fb3b71758f9d3232fa1c0a0fd26
+SIZE (openai-codex-rust-v0.142.4_GH0.tar.gz) = 9117754

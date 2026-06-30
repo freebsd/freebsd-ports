@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.142.1
+DISTVERSION=	0.142.4
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -95,7 +95,7 @@ post-patch:
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization_tests.rs \
-		${BUILD_WRKSRC}/core/src/context/environment_context_tests.rs \
+		${BUILD_WRKSRC}/core/src/context/world_state/environment_render_tests.rs \
 		${BUILD_WRKSRC}/core/src/exec_policy.rs \
 		${BUILD_WRKSRC}/core/src/exec_policy_tests.rs \
 		${BUILD_WRKSRC}/core/src/exec_tests.rs \
