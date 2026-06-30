@@ -5469,3 +5469,4 @@ databases/py-fastparquet||2026-06-30|Has expired: Retired by upstream. See https
 devel/py-yamlordereddictloader|devel/py-yamlloader|2026-06-30|Has expired: Deprecated by upstream and no longer actively maintained, please use devel/py-yamlloader instead
 editors/notepadnext-devel|editors/notepadnext|2026-06-30|Has expired: editors/notepadnext contains fixes in this port
 archivers/zipmix|archivers/archmerge|2026-06-30|Has expired: No longer supported upstream. Replaced by archivers/archmerge
+net/frr8-pythontools||2026-06-30|Has expired: No longer maintained
