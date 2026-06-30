@@ -1663,7 +1663,6 @@
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison
-    SUBDIR += unison251
     SUBDIR += unison253
     SUBDIR += unix2tcp
     SUBDIR += urelay

@@ -5454,3 +5454,4 @@ japanese/wnn7egg||2026-06-30|Has expired: Abandoned, A patch is needed for the c
 www/node25|www/node26|2026-06-30|Has expired: Node.js 25.* will reach its EoL on 2026-06-01. Use Node.js 26.* (www/node26) instead
 www/npm-node25|www/npm-node26|2026-06-30|Has expired: consumer of www/node25
 www/yarn-node25|www/yarn-node26|2026-06-30|Has expired: consumer of www/node25
+net/unison251||2026-06-30|Has expired: Legacy release unsupported by upstream
