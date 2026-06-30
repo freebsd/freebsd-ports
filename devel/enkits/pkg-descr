@@ -1,0 +1,3 @@
+enkiTS is a C and C++ task scheduler for creating parallel programs.
+It is designed for low overhead, scalability across many cores, and use in
+real-time applications such as games.
