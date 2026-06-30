@@ -5456,3 +5456,5 @@ www/npm-node25|www/npm-node26|2026-06-30|Has expired: consumer of www/node25
 www/yarn-node25|www/yarn-node26|2026-06-30|Has expired: consumer of www/node25
 net/unison251||2026-06-30|Has expired: Legacy release unsupported by upstream
 databases/mariadb106-server||2026-06-30|Has expired: End-of-Life approaching, please switch to 11.8 (or 11.4)
+databases/mysql96-client||2026-06-30|Has expired: EOLed upstream, switch to newer version
+databases/mysql96-server||2026-06-30|Has expired: EOLed upstream, switch to newer version

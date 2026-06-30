@@ -201,8 +201,6 @@
     SUBDIR += mysql80-server
     SUBDIR += mysql84-client
     SUBDIR += mysql84-server
-    SUBDIR += mysql96-client
-    SUBDIR += mysql96-server
     SUBDIR += mysql97-client
     SUBDIR += mysql97-server
     SUBDIR += mysqlbackup
