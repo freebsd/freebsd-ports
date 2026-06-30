@@ -35,7 +35,6 @@
     SUBDIR += intellij-fsnotifier
     SUBDIR += intellij-pty4j
     SUBDIR += intellij-ultimate
-    SUBDIR += jad
     SUBDIR += jai
     SUBDIR += jakarta-oro
     SUBDIR += jasmin
