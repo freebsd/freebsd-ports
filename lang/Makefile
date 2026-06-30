@@ -43,7 +43,6 @@
     SUBDIR += cparser
     SUBDIR += crumb
     SUBDIR += crystal
-    SUBDIR += csharp-mode.el
     SUBDIR += cython
     SUBDIR += cython0
     SUBDIR += dhall
