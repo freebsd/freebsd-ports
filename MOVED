@@ -5466,3 +5466,4 @@ security/steghide||2026-06-30|Has expired: This version is over 22 years old and
 java/jad||2026-06-30|Has expired: This is a version that is over 25 years old and has multiple vulnerabilities
 x11/wapanel||2026-06-30|Has expired: https://github.com/Firstbober/wapanel/issues/39
 databases/py-fastparquet||2026-06-30|Has expired: Retired by upstream. See https://github.com/dask/fastparquet/commit/dfe8d4ed0107427674dfa1b18918a167f057a328 for details
+devel/py-yamlordereddictloader|devel/py-yamlloader|2026-06-30|Has expired: Deprecated by upstream and no longer actively maintained, please use devel/py-yamlloader instead
