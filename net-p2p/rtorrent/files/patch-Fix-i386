@@ -1,0 +1,17 @@
+https://github.com/rakshasa/rtorrent/issues/1859
+
+--- src/rpc/command.h.orig	2026-06-30 20:49:08 UTC
++++ src/rpc/command.h
+@@ -169,8 +169,10 @@ class command_base { (public)
+   template <typename T>
+   void set_function(T s, [[maybe_unused]] int value = command_base_is_valid<T>::value) {
+     static_assert(sizeof(T) <= sizeof(t_pod), "t_pod storage overflow");
+-    static_assert(alignof(std::max_align_t) % alignof(T) == 0, "t_pod alignment insufficient for type");
+-    static_assert(alignof(std::max_align_t) >= alignof(T), "t_pod structural capacity mismatch");
++    #if !defined(__i386__)
++       static_assert(alignof(std::max_align_t) % alignof(T) == 0, "t_pod alignment insufficient for type");
++       static_assert(alignof(std::max_align_t) >= alignof(T), "t_pod structural capacity mismatch");
++    #endif
+ 
+     if (m_dest_helper)
+       m_dest_helper(t_pod);
