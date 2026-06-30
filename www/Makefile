@@ -1571,7 +1571,6 @@
     SUBDIR += py-dj52-django-cors-headers
     SUBDIR += py-dj52-django-crispy-forms
     SUBDIR += py-dj52-django-debug-toolbar
-    SUBDIR += py-dj52-django-extensions
     SUBDIR += py-dj52-django-filter
     SUBDIR += py-dj52-django-guardian
     SUBDIR += py-dj52-django-modelcluster
