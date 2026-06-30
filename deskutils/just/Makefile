@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.55.0
+DISTVERSION=	1.55.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		autocfg-1.5.1 \
 		bitflags-2.13.0 \
 		blake3-1.8.5 \
-		block-buffer-0.10.4 \
+		block-buffer-0.12.1 \
 		block2-0.6.2 \
 		bstr-1.12.3 \
 		bumpalo-3.20.3 \
@@ -46,17 +46,18 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		clap_lex-1.1.0 \
 		clap_mangen-0.3.0 \
 		colorchoice-1.0.5 \
+		const-oid-0.10.2 \
 		constant_time_eq-0.4.2 \
 		core-foundation-sys-0.8.7 \
-		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		crypto-common-0.1.7 \
+		crypto-common-0.2.2 \
 		ctrlc-3.5.2 \
 		diff-0.1.13 \
-		digest-0.10.7 \
+		digest-0.11.3 \
+		digest-io-0.1.0 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
@@ -69,13 +70,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		futures-core-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
-		generic-array-0.14.7 \
 		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.4.3 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
+		hex-0.4.3 \
+		hybrid-array-0.4.13 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		indexmap-2.14.0 \
@@ -128,7 +130,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.150 \
 		serde_yaml-0.9.34+deprecated \
-		sha2-0.10.9 \
+		sha2-0.11.0 \
 		shellexpand-3.1.2 \
 		shlex-1.3.0 \
 		shlex-2.0.1 \
@@ -155,7 +157,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		unsafe-libyaml-0.2.11 \
 		utf8parse-0.2.2 \
 		uuid-1.23.4 \
-		version_check-0.9.5 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.126 \
 		wasm-bindgen-macro-0.2.126 \
