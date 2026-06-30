@@ -1321,6 +1321,7 @@
     SUBDIR += libffi
     SUBDIR += libffi321
     SUBDIR += libffi33
+    SUBDIR += libfigpar
     SUBDIR += libfirm
     SUBDIR += libfixposix
     SUBDIR += libfmt
