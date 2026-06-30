@@ -5445,3 +5445,4 @@ filesystems/moosefs3-client|filesystems/moosefs-client|2026-06-30|Has expired: 3
 filesystems/moosefs3-cgi|filesystems/moosefs-cgi|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
 filesystems/moosefs3-master|filesystems/moosefs-master|2026-06-30|Has expired: 3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
 textproc/py-elasticsearch5|textproc/py-elasticsearch6|2026-06-30|Has expired: 5.x reached EoL, last version was in 2018 - use textproc/py-elasticsearch 9.3.0 instead
+audio/murmur|audio/mumble-server|2026-06-30|Has expired: 1.3 is deprecated by upstream and renamed - use audio/mumble-server instead
