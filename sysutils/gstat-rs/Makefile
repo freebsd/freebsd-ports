@@ -1,7 +1,6 @@
 PORTNAME=	gstat-rs
 DISTVERSIONPREFIX=	gstat-v
-DISTVERSION=	0.1.8
-PORTREVISION=	3
+DISTVERSION=	0.1.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -12,8 +11,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc=	bindgen crashes, see https://github.com/rust-lang/rust-bindgen/issues/1746
-
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
 USE_GITHUB=	yes
