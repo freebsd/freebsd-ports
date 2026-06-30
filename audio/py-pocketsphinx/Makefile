@@ -12,6 +12,9 @@ WWW=	https://github.com/bambocher/pocketsphinx-python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/swig40
+EXPIRATION_DATE=2026-09-30
+
 BUILD_DEPENDS=	swig40>0:devel/swig40
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpulse-simple.so:audio/pulseaudio \
