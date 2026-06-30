@@ -1569,7 +1569,6 @@
     SUBDIR += py-dj52-django-celery-results
     SUBDIR += py-dj52-django-crispy-forms
     SUBDIR += py-dj52-django-debug-toolbar
-    SUBDIR += py-dj52-django-guardian
     SUBDIR += py-dj52-django-modelcluster
     SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-djangorestframework
