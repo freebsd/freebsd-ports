@@ -1,0 +1,29 @@
+--- pyproject.toml.orig	2026-06-14 22:33:29 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools>=77",
++  "setuptools>=63",
+   "setuptools-scm[toml]>=3.4",
+ ]
+ 
+@@ -8,8 +8,7 @@ readme = "README.md"
+ name = "ujson"
+ description = "Ultra fast JSON encoder and decoder for Python"
+ readme = "README.md"
+-license = "BSD-3-Clause AND TCL"
+-license-files = [ "LICENSE.txt" ]
++license = {text = "BSD-3-Clause AND TCL"}
+ authors = [
+   { name = "Jonas Tarnstrom" },
+ ]
+@@ -36,7 +35,7 @@ urls.Source = "https://github.com/ultrajson/ultrajson"
+ urls.Source = "https://github.com/ultrajson/ultrajson"
+ 
+ [tool.setuptools]
+-packages = [ "ujson-stubs" ]
++packages = {find = {exclude = ["tests", "tests.*", "scripts", "scripts.*", "src", "src.*"]}}
+ 
+ [tool.isort]
+ profile = "black"
