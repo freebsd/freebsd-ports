@@ -150,7 +150,7 @@ PYCRYPTOGRAPHY_DEFAULT?=	rust
 .  else
 PYCRYPTOGRAPHY_DEFAULT?=	legacy
 .  endif
-# Possible values: 3.10, 3.11, 3.12, 3.13, 3.13t, 3.14, 3.14t
+# Possible values: 3.10, 3.11, 3.12, 3.13, 3.13t, 3.14, 3.14t, 3.15
 PYTHON_DEFAULT?=	3.12
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
