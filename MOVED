@@ -5448,3 +5448,4 @@ textproc/py-elasticsearch5|textproc/py-elasticsearch6|2026-06-30|Has expired: 5.
 audio/murmur|audio/mumble-server|2026-06-30|Has expired: 1.3 is deprecated by upstream and renamed - use audio/mumble-server instead
 www/forgejo14|www/forgejo-lts|2026-06-30|Has expired: Unsupported, please switch to www/forgejo or www/forgejo-lts
 net/unison248||2026-06-30|Has expired: Legacy release unsupported by upstream
+databases/adminer||2026-06-30|Has expired: Project's poor security practices
