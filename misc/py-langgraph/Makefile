@@ -1,5 +1,5 @@
 PORTNAME=	langgraph
-DISTVERSION=	1.2.6
+DISTVERSION=	1.2.7
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint>=0:misc/py-langgraph-checkpoint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-prebuilt>=0:misc/py-langgraph-prebuilt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-sdk>=0:misc/py-langgraph-sdk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-spy>=0:devel/py-py-spy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-spy>0:devel/py-spy \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperf>=0:devel/py-pyperf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
