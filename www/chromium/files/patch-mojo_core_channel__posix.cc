@@ -1,6 +1,6 @@
---- mojo/core/channel_posix.cc.orig	2026-04-09 06:05:42 UTC
+--- mojo/core/channel_posix.cc.orig	2026-06-30 11:13:46 UTC
 +++ mojo/core/channel_posix.cc
-@@ -606,6 +606,13 @@ void Channel::OfferChannelUpgrade() {
+@@ -613,6 +613,13 @@ void Channel::OfferChannelUpgrade() {
    }
    static_cast<ChannelLinux*>(this)->OfferSharedMemUpgrade();
  }
