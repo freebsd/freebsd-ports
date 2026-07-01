@@ -1,5 +1,5 @@
-TIMESTAMP = 1780389915
-SHA256 (go/security_tailscale/tailscale-v1.98.5/v1.98.5.mod) = f196a8ff0422d5b691106afb0e9151db94b0abde1d28535fbf91c5de52257f52
-SIZE (go/security_tailscale/tailscale-v1.98.5/v1.98.5.mod) = 25662
-SHA256 (go/security_tailscale/tailscale-v1.98.5/v1.98.5.zip) = d1e474b971924eb3668ba2944346549b5eb1268f15a6cc5d33ccbcb30d45f4e3
-SIZE (go/security_tailscale/tailscale-v1.98.5/v1.98.5.zip) = 6084613
+TIMESTAMP = 1782942579
+SHA256 (go/security_tailscale/tailscale-v1.98.8/v1.98.8.mod) = 49e603cbb1608d2358ade7c698dd73617d0d754825be5a57322e10a150c3db8b
+SIZE (go/security_tailscale/tailscale-v1.98.8/v1.98.8.mod) = 25725
+SHA256 (go/security_tailscale/tailscale-v1.98.8/v1.98.8.zip) = 873653a713aeb9b328201452359b4e015dd97860da2ee9cbf5fdce19b8d4324f
+SIZE (go/security_tailscale/tailscale-v1.98.8/v1.98.8.zip) = 6087828
