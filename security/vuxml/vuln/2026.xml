@@ -1,3 +1,483 @@
+  <vuln vid="78910e7e-74e3-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in iconv(3)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Several encoding modules, including HZ, UTF-7, VIQR, and ZW,
+	  did not properly check the size of the caller-supplied output buffer
+	  before writing converted characters.  [CVE-2026-58081]</p>
+	  <p>The ISO-2022 encoding module used a stack buffer sized to MB_LEN_MAX
+	  (6 bytes) for intermediate character output.  Some ISO-2022 variants
+	  can require up to 10 bytes per character, in which case conversions
+	  can trigger a stack buffer overflow of up to four bytes.
+	  [CVE-2026-58082]</p>
+	<h1>Impact:</h1>
+	  <p>An application that uses iconv(3) to convert untrusted input
+	  to or from one of the affected encodings may be vulnerable to buffer
+	  overflows if it uses one of the affected encoding modules.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58081</cvename>
+      <cvename>CVE-2026-58082</cvename>
+      <freebsdsa>SA-26:49.iconv</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="43f9ca02-74e3-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD-kernel -- Kernel stack disclosure in 32-bit compatibility support</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The compat32 kevent() handler translates a 64-bit kevent struct
+	  into a stack- declared 32-bit struct.  It did not first zero the
+	  stack struct.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged user may observe a small amount of uninitialized
+	  kernel stack data, which may contain sensitive information.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49425</cvename>
+      <freebsdsa>SA-26:48.compat32</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2355c475-74e3-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Kernel stack disclosure in Linux compatibility layer</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The Linux waitid() implementation translates a FreeBSD siginfo_t
+	  struct into a stack-declared Linux siginfo_t.  It did not first
+	  zero the stack struct.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged user may observe 104 bytes of uninitialized
+	  kernel stack data, which may contain sensitive information.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49424</cvename>
+      <freebsdsa>SA-26:47.linux</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb1bf2ae-74e2-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Remote DOS via uninitialized memory access in KTLS receive</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When building the iovec array for a received TLS 1.2 CBC record,
+	  ktls_ocf_tls_cbc_decrypt() incremented the iovec index for every
+	  mbuf in the chain, including mbufs that were skipped because they
+	  contained only TLS header bytes.  This left uninitialized entries
+	  in the iovec array.  The iovec array was allocated without zeroing.</p>
+	<h1>Impact:</h1>
+	  <p>A remote TLS peer can cause the kernel to read from uninitialized
+	  iovec entries during HMAC computation, resulting in a kernel panic.
+	  The peer must be able to control TCP segmentation such that the
+	  first mbuf of a CBC record contains only the 5-byte TLS record
+	  header.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49423</cvename>
+      <freebsdsa>SA-26:46.ktls</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cd658f09-74e2-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Incorrect audit records for ptrace(2) syscall requests</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When auditing a system call executed via ptrace(PT_SC_REMOTE),
+	  the kernel passed the return value of an internal setup function
+	  to AUDIT_SYSCALL_EXIT() rather than the actual result of the executed
+	  system call.  As a result, committed audit records for system calls
+	  which returned an error do not reflect the true outcome of the
+	  operation.  That is, they indicate that the operation succeeded
+	  when it in fact failed.</p>
+	<h1>Impact:</h1>
+	  <p>Audit records for system calls executed via ptrace(PT_SC_REMOTE)
+	  may show an incorrect error status.  An attacker with the ability
+	  to debug a process could use this to produce misleading audit trails,
+	  potentially undermining audit-based Intrusion Detection Systems
+	  (IDS).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49426</cvename>
+      <freebsdsa>SA-26:45.audit</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="91017b3b-74e2-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in POSIX largepage objects</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Pages belonging to largepage shared memory objects were not
+	  explicitly wired.  When sendfile(2) transmitted such an object with
+	  the SF_NOCACHE flag, it freed the underlying pages after transmission
+	  even though existing mappings still referred to them.  [CVE-2026-49427]</p>
+	  <p>Separately, certain system calls, such open(2) with the O_TRUNC
+	  flag set, and fspacectl(2), could incorrectly free memory in largepage
+	  objects.  These operations are not permitted on largepage objects,
+	  but the implementation did not verify this.  [CVE-2026-49428]</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can abuse the bug to access freed
+	  kernel memory.  This can be exploited to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49427</cvename>
+      <cvename>CVE-2026-49428</cvename>
+      <freebsdsa>SA-26:44.posixshm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c547c1b-74e2-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Use-after-free in TCP RACK stack option handler</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The RACK setsockopt(2) handler drops the connection lock in
+	  order to copy option data from userspace, then reacquires the lock.
+	  After reacquiring, it verifies that the TCP stack had not been
+	  switched away, but did not reload its pointer to the stack's
+	  per-connection control block.  If userspace switches stacks twice
+	  during this window, the check will succeed but the saved pointer
+	  will refer to freed memory.</p>
+	<h1>Impact:</h1>
+	  <p>The bug may be exploitable by an unprivileged local user to
+	  escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49422</cvename>
+      <freebsdsa>SA-26:43.tcp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="33fd66d1-74e2-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- unlinkat(2) ignores AT_RESOLVE_BENEATH flag</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The kernel function that implements unlinkat(2) and funlinkat(2)
+	  validated the AT_RESOLVE_BENEATH flag but failed to pass it through
+	  to the underlying path lookup.  The flag was silently dropped, so
+	  path resolution was not actually restricted.</p>
+	<h1>Impact:</h1>
+	  <p>A process that uses AT_RESOLVE_BENEATH with unlinkat(2) or
+	  funlinkat(2) to confine path resolution can in fact resolve paths
+	  above the starting directory.  A caller relying on this flag for
+	  path containment may delete files outside the intended directory
+	  tree.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49421</cvename>
+      <freebsdsa>SA-26:42.unlinkat</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f5dd96dd-74e1-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Buffer overflow in libalias RTSP handler</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The RTSP handler in libalias rewrote outgoing packets into a
+	  fixed-length stack buffer without checking whether the rewritten
+	  data fit in the buffer, or whether the result fit back in the
+	  original packet.</p>
+	<h1>Impact:</h1>
+	  <p>A host sending crafted RTSP traffic from inside a NAT gateway
+	  using libalias can overflow a stack buffer, potentially achieving
+	  remote code execution in the kernel (when using ipfw(4) NAT) or in
+	  the natd(8) process (which generally runs as the root user).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49420</cvename>
+      <freebsdsa>SA-26:41.libalias</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9534b664-74e1-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in OpenZFS</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The ZFS_IOC_USERSPACE_MANY ioctl, used by zfs-userspace(8),
+	  truncated a 64-bit output buffer size to a 32-bit integer for the
+	  kernel allocation, but used the original 64-bit size as the buffer
+	  limit when writing records.</p>
+	  <p>The ZFS_IOC_RECV_NEW ioctl, in the heal receive path, similarly
+	  truncated a 64-bit payload size to a 32-bit integer for allocation,
+	  then used the original 64-bit size as the length for a byteswap
+	  operation.</p>
+	  <p>The ZFS_IOC_SET_PROP ioctl, used by zfs-set(8), incorrectly validated
+	  the calling user such that an unprivileged user is able to set
+	  metadata on a dataset indicating that the dataset has received
+	  properties from a zfs-recv(8) stream.</p>
+	<h1>Impact:</h1>
+	  <p>A local user with the "userused" delegated ZFS permission can
+	  trigger a kernel heap overflow via the ZFS_IOC_USERSPACE_MANY ioctl,
+	  potentially escalating privileges.  [CVE-2026-49429]</p>
+	  <p>A local user with the "receive" delegated ZFS permission can trigger
+	  kernel memory corruption via ZFS_IOC_RECV_NEW by sending a crafted
+	  receive stream in heal mode.  [CVE-2026-49430]</p>
+	  <p>Any local user can set the internal ZFS metadata flag "$hasrecvd"
+	  on datasets via ZFS_IOC_SET_PROP.  [CVE-2026-49431]</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49429</cvename>
+      <cvename>CVE-2026-49430</cvename>
+      <cvename>CVE-2026-49431</cvename>
+      <freebsdsa>SA-26:40.zfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b0d0a49-74e1-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Local privilege escalation via execve(2) TOCTOU race</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>During execve(2) of a SUID binary, the new virtual address space
+	  is installed before the process credentials are updated.  During
+	  this window, a process running as the same user can access the
+	  target process's memory via procfs or linprocfs, because the kernel's
+	  debugging permission check still saw the original credentials.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this race to modify the
+	  address space of a SUID binary before its credentials are elevated,
+	  potentially gaining full control of the affected system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49415</cvename>
+      <freebsdsa>SA-26:39.execve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a65c31d1-74e0-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Jail reference count underflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When the JAIL_AT_DESC flag is specified, kern_jail_set() and
+	  kern_jail_get() released the reference to the caller's current
+	  prison before looking up the jail descriptor.  If the descriptor
+	  lookup failed, error-handling paths released the same reference a
+	  second time.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can trigger a prison reference count
+	  underflow, which may cause the prison structure to be freed while
+	  still in use.  When this is done on the jail host, the bug will
+	  generally result in an immediate panic.  However, if the user is
+	  running in a jail, then it may be possible to exploit the bug to
+	  elevate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49419</cvename>
+      <freebsdsa>SA-26:38.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5a34b147-74e0-11f1-958d-bc241121aa0a">
+    <topic>FreeBSD -- Use-after-free in device pager page list</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_1</lt></range>
+	<range><ge>15.0</ge><lt>15.0_11</lt></range>
+	<range><ge>14.4</ge><lt>14.4_7</lt></range>
+	<range><ge>14.3</ge><lt>14.3_16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When msync(MS_INVALIDATE) is called on a mapping of an unmanaged
+	  device object, the physical pages in the mapping range are marked
+	  invalid but remain in the pager's page list.  A subsequent page
+	  fault will cause the fault handler to re-insert the page into the
+	  object's list.  This corrupts the list, and on object destruction
+	  the page is freed twice.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user with access to a device that provides
+	  memory-mapped I/O can trigger a use-after-free in the kernel, though
+	  this is limited to a pool of objects ("fictitious pages") that are
+	  never recycled for a different purpose.  It may be possible to
+	  exploit this to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49418</cvename>
+      <freebsdsa>SA-26:37.vm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-06-30</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b7cb356-749c-11f1-8a71-50ebf6bdf8e9">
     <topic>icinga2 -- Improper access control for JSON-RPC update certificate messages</topic>
     <affects>
