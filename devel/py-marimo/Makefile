@@ -1,5 +1,5 @@
 PORTNAME=	marimo
-PORTVERSION=	0.23.11
+PORTVERSION=	0.23.12
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0<9:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.0:sysutils/py-psutil \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.19<3:textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.21.2<11:textproc/py-pymdown-extensions \
+		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.21.2:textproc/py-pymdown-extensions \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.18:www/py-python-multipart \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.1:devel/py-pyyaml \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=27.1.0:net/py-pyzmq \
