@@ -56,6 +56,14 @@ OPTIONS_DEFINE=	DEBUG DOCS
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
+.include <bsd.port.options.mk>
+
+.if "${ARCH}" == "i386"
+PLIST_SUB+=	NOTI386="@comment "
+.else
+PLIST_SUB+=	NOTI386=""
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's|$${prefix}/cyassl/include|$${prefix}/include/cyassl|' \
