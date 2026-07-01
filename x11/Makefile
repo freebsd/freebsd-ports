@@ -701,7 +701,6 @@
     SUBDIR += xzoom
     SUBDIR += yad
     SUBDIR += yakuake
-    SUBDIR += yalias
     SUBDIR += yeahconsole
     SUBDIR += yelp
     SUBDIR += zenity
