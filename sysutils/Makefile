@@ -1201,7 +1201,6 @@
     SUBDIR += rtkit-unix
     SUBDIR += rtty
     SUBDIR += rubygem-backup
-    SUBDIR += rubygem-bolt
     SUBDIR += rubygem-bosh-gen
     SUBDIR += rubygem-bundle-audit
     SUBDIR += rubygem-bundler
