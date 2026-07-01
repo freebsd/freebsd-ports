@@ -9,7 +9,7 @@ and reload angie:
     load_module modules/ngx_http_vod_module.so;
 
 Please refer to the module documentation for further details:
-https://github.com/kaltura/nginx-vod-module
+https://github.com/dio-az/nginx-vod-module
 EOM
 }
 ]
