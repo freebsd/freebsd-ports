@@ -1,10 +1,9 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.7.4
+DISTVERSION=		2.7.5
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
-			https://build.openvpn.net/downloads/releases/ \
-			LOCAL/mandree
+			https://build.openvpn.net/downloads/releases/
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon
