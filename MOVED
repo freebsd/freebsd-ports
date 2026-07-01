@@ -5482,3 +5482,4 @@ lang/csharp-mode.el||2026-06-30|Has expired: No longer maintained upstream as a 
 x11/yalias||2026-07-01|Has expired: No longer developed upstream
 sysutils/rubygem-bolt|sysutils/rubygem-openbolt|2026-07-01|Has expired: Discontinued, use sysutils/rubygem-openbolt
 textproc/rubygem-puppet-strings|textproc/rubygem-openvox-strings|2026-07-01|Has expired: Discontinued, use textproc/rubygem-openvox-strings
+sysutils/puppetserver8|sysutils/openvox-server8|2026-07-01|Has expired: Discontinued, use sysutils/openvox-server8
