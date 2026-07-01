@@ -2744,7 +2744,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/annotations.jar
 %%DATADIR%%/lib/app-backend.jar
 %%DATADIR%%/lib/app.jar
-%%DATADIR%%/lib/build-marker-CL-261.24374.148
+%%DATADIR%%/lib/build-marker-CL-261.25134.137
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -3141,6 +3141,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/database-plugin-frontend.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-plugin.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/frontend-split/database-frontend.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/modules/intellij.database.ai.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/modules/intellij.database.backend.split.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/modules/intellij.database.cloudExplorer.jba.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/modules/intellij.database.completionMlRanking.jar
@@ -3888,6 +3889,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/clion/lib/modules/intellij.clion.headless.jar
 %%DATADIR%%/plugins/clion/lib/modules/intellij.clion.java.jar
 %%DATADIR%%/plugins/clion/lib/modules/intellij.clion.mcp.jar
+%%DATADIR%%/plugins/clion/lib/modules/intellij.clion.mcp.nova.jar
 %%DATADIR%%/plugins/clion/lib/modules/intellij.clion.newUiOnboarding.jar
 %%DATADIR%%/plugins/clion/lib/modules/intellij.clion.oc.jar
 %%DATADIR%%/plugins/clion/lib/modules/intellij.clion.openfolder.jar
@@ -6019,6 +6021,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/css-plugin/lib/modules/intellij.css.schemeGenerator.jar
 %%DATADIR%%/plugins/css-plugin/lib/modules/intellij.css.watcher.jar
 %%DATADIR%%/plugins/css-plugin/lib/modules/intellij.css.xmlSchemeGenerator.jar
+%%DATADIR%%/plugins/debuggerMcp/lib/debuggerMcp.jar
 %%DATADIR%%/plugins/dev/lib/dev.jar
 %%DATADIR%%/plugins/dts/lib/dts.jar
 %%DATADIR%%/plugins/dts/lib/modules/intellij.dts.cmake.jar
@@ -7484,7 +7487,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/performanceTesting/lib/modules/intellij.performanceTesting.frontend.jar
 %%DATADIR%%/plugins/performanceTesting/lib/modules/intellij.performanceTesting.vcs.jar
 %%DATADIR%%/plugins/performanceTesting/lib/performanceTesting.jar
-%%DATADIR%%/plugins/platform-daemon-plugin/jetbrainsd_linux_x64.tar.gz
+%%DATADIR%%/plugins/platform-daemon-plugin/jetbrainsd_linux_x86_64.tar.gz
 %%DATADIR%%/plugins/platform-daemon-plugin/lib/modules/intellij.libraries.daemon.client.jar
 %%DATADIR%%/plugins/platform-daemon-plugin/lib/modules/intellij.platform.daemon.client.jar
 %%DATADIR%%/plugins/platform-daemon-plugin/lib/modules/intellij.platform.daemon.connection.jar
