@@ -127,6 +127,7 @@
     SUBDIR += py-ofxparse
     SUBDIR += py-pandas-market-calendars
     SUBDIR += py-pandas-ta
+    SUBDIR += py-pandas-ta-openbb
     SUBDIR += py-pycoin
     SUBDIR += py-pycoingecko
     SUBDIR += py-pythclient
