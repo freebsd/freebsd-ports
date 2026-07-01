@@ -11,7 +11,7 @@ WWW=		https://github.com/puppetlabs/pdk
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRACATED=	Depends on expired sysutils/rubygem-facter
+DEPRECATED=	Depends on expired sysutils/rubygem-facter
 EXPIRATION_DATE=2026-09-30
 
 RUN_DEPENDS=	rubygem-bundler>=2.1.0,1:sysutils/rubygem-bundler \
