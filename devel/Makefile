@@ -1715,6 +1715,7 @@
     SUBDIR += mm
     SUBDIR += modd
     SUBDIR += mold
+    SUBDIR += moon
     SUBDIR += mongo-c-driver
     SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
