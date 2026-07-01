@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-zstd
 MODULE_VERSION=	0.1.1
-MODULE_PORTREVISION=	5
+MODULE_PORTREVISION=	6
 GH_TUPLE=	tokers:zstd-nginx-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie zstd dynamic module
