@@ -1,0 +1,9 @@
+sblg is a utility for creating static blogs. It merges articles into templates
+to generate static HTML files, Atom feeds, and JSON files. It's built for use
+with make(1). No PHP, no database: just a simple UNIX tool for pulling data from
+articles and populating templates.
+
+How does it work? You write your HTML (really XHTML) articles and templates.
+sblg(1) pulls data from the articles and merges it into the templates. This is
+usually orchestrated with a Makefile. And that's it. You can write articles in
+any format — like Markdown — so long it converts into XHTML.

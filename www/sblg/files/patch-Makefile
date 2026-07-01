@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-11-28 20:47:46 UTC
++++ Makefile
+@@ -40,7 +40,7 @@ DATADIR	 	 = $(SHAREDIR)/sblg
+ CSSS 		 = article.css \
+ 		   index.css
+ DATADIR	 	 = $(SHAREDIR)/sblg
+-EXAMPLEDIR	 = $(DATADIR)/examples
++EXAMPLEDIR	?= $(DATADIR)/examples
+ DOTAR 		 = Makefile \
+ 		   $(SRCS) \
+ 		   sblg.in.1 \
