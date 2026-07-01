@@ -1,5 +1,5 @@
 PORTNAME=	kquickimageeditor
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 PKGNAMESUFFIX=	-qt6
@@ -19,6 +19,6 @@ USE_KDE=	config ecm:build
 USE_QT=		base declarative
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	SHLIB_VER=0.6.1
+PLIST_SUB=	SHLIB_VER=0.6.2
 
 .include <bsd.port.mk>
