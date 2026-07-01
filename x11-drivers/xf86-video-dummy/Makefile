@@ -1,15 +1,18 @@
 PORTNAME=	xf86-video-dummy
-PORTVERSION=	0.3.8
-PORTREVISION=	4
+DISTVERSION=	0.4.1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org dummy display driver
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-dummy
 
-LICENSE=	MIT
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
 LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		xorg-cat:driver
+USES=		tar:xz xorg-cat:driver
+
+PLIST_FILES=	lib/xorg/modules/drivers/dummy_drv.so
 
 .include <bsd.port.mk>
