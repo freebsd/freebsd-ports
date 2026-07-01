@@ -1,10 +1,9 @@
 PORTNAME=	omada6
-PORTVERSION=	6.2.0.17
-PORTREVISION=	0
+PORTVERSION=	6.2.10.17
 CATEGORIES=	net-mgmt java
-DISTNAME=	Omada_Network_Application_v${PORTVERSION}_linux_x64_20260331104736
-MASTER_SITES=	https://static.tp-link.com/upload/software/2026/202604/20260402/
-EXTRACT_ONLY=	Omada_Network_Application_v${PORTVERSION}_linux_x64_20260331104736.tar.gz
+MASTER_SITES=	https://static.tp-link.com/upload/software/${OMADAY}/${OMADAY}${OMADAM}/${OMADAY}${OMADAM}${OMADAD}/
+DISTNAME=	Omada_Network_Application_v${PORTVERSION}_linux_x64_${OMADA_REL}
+EXTRACT_ONLY=	Omada_Network_Application_v${PORTVERSION}_linux_x64_${OMADA_REL}.tar.gz
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Omada SDN Controller v6
@@ -17,6 +16,12 @@ RUN_DEPENDS=	mongodb70${MONGODB_PKGNAMESUFFIX}>0:databases/mongodb70
 USES=		cpe java:extract,run
 JAVA_VERSION=	8+
 USE_RC_SUBR=	omada
+
+# Master site and distname helpers
+OMADAY=	2026
+OMADAM=	04
+OMADAD=	29
+OMADA_REL=	20260428102037
 
 CONFLICTS_INSTALL=	omada5
 
