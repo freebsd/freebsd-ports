@@ -1,5 +1,5 @@
 PORTNAME=	drawy
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/drawy/${PORTVERSION}
 
@@ -20,5 +20,7 @@ USE_KDE=	config configwidgets coreaddons crash \
 		doctools:build ecm:build
 USE_QT=		base declarative
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
