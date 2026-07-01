@@ -793,6 +793,44 @@
     </dates>
   </vuln>
 
+  <vuln vid="ffa897a0-756f-11f1-b291-a74de6bb0320">
+    <topic>openvpn -- multiple vulnerabilities</topic>
+    <affects>
+      <package><name>openvpn</name> <range><lt>2.7.5</lt></range></package>
+      <package><name>openvpn-devel</name> <range><lt>g20260701,2</lt></range></package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVPN community project team reports:</p>
+	<blockquote cite="https://community.openvpn.net/Downloads#openvpn-275-released-1-july-2026">
+	  <p>[...] OpenVPN 2.7.5 [...] is a bugfix release fixing several security issues:</p>
+	  <ul>
+	    <li>Fix use-after-free bug in ack_write_buf(), triggerable by a well-timed sequence of control channel + authentication packets (CVE-2026-12996)</li>
+	    <li>Fix use-after-free bug in tls_wrap_reneg(), triggerable by suitable sequence of dynamic tls-crypt control-channel packets (CVE-2026-13117)</li>
+	    <li>Fix server crash on reception of suitably malformed auth-token, if --auth-gen-token external-auth is active (CVE-2026-13122)</li>
+	    <li>Fix memory-leak in tls-crypt-v2 client key handling that could lead to out-of-memory situations and subsequent server crashes (CVE-2026-12932)</li>
+	    <li>Fix possible 1-byte buffer overrun on NTLMv2 proxy responses. (CVE-2026-11771)</li>
+	    <li>Fix another memory leak on reception of suitable tls-crypt-v2 packets that could lead to an out of memory situation and server crash (CVE-2026-13698)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/OpenVPN/openvpn/blob/v2.7.5/Changes.rst#overview-of-changes-in-275</url>
+      <cvename>CVE-2026-11771</cvename>
+      <cvename>CVE-2026-12932</cvename>
+      <cvename>CVE-2026-12996</cvename>
+      <cvename>CVE-2026-13117</cvename>
+      <cvename>CVE-2026-13122</cvename>
+      <cvename>CVE-2026-13698</cvename>
+      <url>https://community.openvpn.net/Downloads#openvpn-275-released-1-july-2026</url>
+    </references>
+    <dates>
+      <discovery>2026-07-01</discovery>
+      <entry>2026-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78910e7e-74e3-11f1-958d-bc241121aa0a">
     <topic>FreeBSD -- Multiple vulnerabilities in iconv(3)</topic>
     <affects>
