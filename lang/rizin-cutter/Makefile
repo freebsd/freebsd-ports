@@ -1,6 +1,5 @@
 PORTNAME=	cutter
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	lang devel
 PKGNAMEPREFIX=	rizin-
@@ -20,7 +19,7 @@ USES=		cmake desktop-file-utils pkgconfig python:env qt:6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rizinorg
-GH_TUPLE=	rizinorg:cutter-translations:8d5d2f9b3:translations/src/translations
+GH_TUPLE=	rizinorg:cutter-translations:fa68a9fec31ad8b4a3bf8aab19de9c63d739c39e:translations/src/translations
 
 USE_QT=		5compat base svg tools
 
