@@ -1263,7 +1263,6 @@
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-puppet_forge
     SUBDIR += rubygem-puppetfile-resolver
-    SUBDIR += rubygem-puppetserver-ca
     SUBDIR += rubygem-r10k
     SUBDIR += rubygem-redfish_client
     SUBDIR += rubygem-rubyipmi

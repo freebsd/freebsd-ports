@@ -5486,3 +5486,4 @@ sysutils/puppetserver8|sysutils/openvox-server8|2026-07-01|Has expired: Disconti
 sysutils/puppet8|sysutils/openvox-agent8|2026-07-01|Has expired: Discontinued, use sysutils/openvox-agent8
 databases/puppetdb8|databases/openvoxdb8|2026-07-01|Has expired: Discontinued, use databases/openvoxdb8
 databases/puppetdb-terminus8|databases/openvoxdb-terminus8|2026-07-01|Has expired: Discontinued, use databases/openvoxdb-terminus8
+sysutils/rubygem-puppetserver-ca|sysutils/rubygem-openvoxserver-ca|2026-07-01|Has expired: Discontinued, use sysutils/rubygem-openvoxserver-ca
