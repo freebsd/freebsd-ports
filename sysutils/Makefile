@@ -1035,7 +1035,6 @@
     SUBDIR += pstree
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
-    SUBDIR += puppet8
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen

@@ -5483,3 +5483,4 @@ x11/yalias||2026-07-01|Has expired: No longer developed upstream
 sysutils/rubygem-bolt|sysutils/rubygem-openbolt|2026-07-01|Has expired: Discontinued, use sysutils/rubygem-openbolt
 textproc/rubygem-puppet-strings|textproc/rubygem-openvox-strings|2026-07-01|Has expired: Discontinued, use textproc/rubygem-openvox-strings
 sysutils/puppetserver8|sysutils/openvox-server8|2026-07-01|Has expired: Discontinued, use sysutils/openvox-server8
+sysutils/puppet8|sysutils/openvox-agent8|2026-07-01|Has expired: Discontinued, use sysutils/openvox-agent8
