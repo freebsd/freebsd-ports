@@ -1,5 +1,5 @@
-TIMESTAMP = 1781610105
-SHA256 (go/misc_picoclaw/picoclaw-v0.2.9/v0.2.9.mod) = 531910fc9995a4cbe2e5822e7a265eccb57448577db284d75e740878c1ad7ef5
-SIZE (go/misc_picoclaw/picoclaw-v0.2.9/v0.2.9.mod) = 6250
-SHA256 (go/misc_picoclaw/picoclaw-v0.2.9/v0.2.9.zip) = 8c647d715ec0ddd623ea4468b7361001e259a902c7833f222d7cb804164c2e24
-SIZE (go/misc_picoclaw/picoclaw-v0.2.9/v0.2.9.zip) = 15802301
+TIMESTAMP = 1782895466
+SHA256 (go/misc_picoclaw/picoclaw-v0.3.1/v0.3.1.mod) = 6a21a3a94dd9917a6f007e9dd378ae8d04999378fd496818dc2a3ae2f09ce853
+SIZE (go/misc_picoclaw/picoclaw-v0.3.1/v0.3.1.mod) = 7081
+SHA256 (go/misc_picoclaw/picoclaw-v0.3.1/v0.3.1.zip) = cf328f644e688e02ac590ccf7ab0296329b660fb366dccbccfba481549c79bfa
+SIZE (go/misc_picoclaw/picoclaw-v0.3.1/v0.3.1.zip) = 16230517
