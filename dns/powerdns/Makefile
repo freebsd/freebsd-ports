@@ -1,5 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	5.1.2
+DISTVERSION=	5.1.3
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -29,6 +29,7 @@ MESON_ARGS=	--datadir=${PREFIX}/share/doc \
 		-Ddns-over-tls=enabled \
 		-Dhardening=disabled \
 		-Dipcipher=enabled \
+		-Dlua-records=true \
 		-Dmodule-bind=dynamic \
 		-Dsigners-libcrypto-path=${OPENSSLBASE} \
 		-Dsigners-libcrypto=enabled \
@@ -53,14 +54,14 @@ OPTIONS_SINGLE_EXTLUA=	LUA LUAJIT
 
 OPTIONS_SUB=	yes
 
-EXTLUA_DESC=		Lua library
+EXTLUA_DESC=		Lua library implementation
 GEOIP_DESC=		GeoIP backend (GeoIP2 DB)
 GNUTLS_DESC=		DoT support via GnuTLS (sdig only)
 IXFRDIST_DESC=		Build ixfrdist
 LMDB_DESC=		LMDB backend
-LUABACKEND_DESC=	Lua2 backend
-LUAJIT_DESC=		Use luajit
-LUA_DESC=		Use lang/lua
+LUABACKEND_DESC=	Lua2 backend module (launch=lua2)
+LUAJIT_DESC=		Use LuaJIT (enables Lua records)
+LUA_DESC=		Use lang/lua (enables Lua records)
 MYSQL_DESC=		MySQL backend
 OPENLDAP_DESC=		OpenLDAP backend
 PGSQL_DESC=		PostgreSQL backend
@@ -87,16 +88,14 @@ LMDB_MESON_ON=		-Dmodule-lmdb=dynamic
 LMDB_VARS=		MODULES+=lmdb
 
 LUABACKEND_MESON_ON=	-Dmodule-lua2=dynamic
-LUABACKEND_MESON_TRUE=	lua-records
 LUABACKEND_VARS=	MODULES+=lua2
 
 LUAJIT_USES=		luajit
 LUAJIT_MESON_ON=	-Dlua=luajit
 
-LUA_USES=	lua
-LUA_MESON_ON=	-Dlua=lua
+LUA_USES=		lua
+LUA_MESON_ON=		-Dlua=lua
 
-MYSQL_LIB_DEPENDS=	libunwind.so:devel/libunwind
 MYSQL_USES=		mysql
 MYSQL_MESON_ON=		-Dmodule-gmysql=dynamic
 MYSQL_VARS=		MODULES+=gmysql
@@ -108,9 +107,9 @@ OPENLDAP_MESON_ON=	-Dmodule-ldap=dynamic
 OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
 OPENLDAP_VARS=		MODULES+=ldap
 
-PGSQL_USES=	pgsql
-PGSQL_MESON_ON=	-Dmodule-gpgsql=dynamic
-PGSQL_VARS=	MODULES+=gpgsql
+PGSQL_USES=		pgsql
+PGSQL_MESON_ON=		-Dmodule-gpgsql=dynamic
+PGSQL_VARS=		MODULES+=gpgsql
 
 REMOTE_MESON_ON=	-Dmodule-remote=dynamic
 REMOTE_VARS=		MODULES+=remote

@@ -1,6 +1,6 @@
---- pdns/auth-main.cc.orig	2025-08-22 07:51:37 UTC
+--- pdns/auth-main.cc.orig	2026-06-29 19:18:24 UTC
 +++ pdns/auth-main.cc
-@@ -282,8 +282,8 @@ static void declareArguments()
+@@ -294,8 +294,8 @@ static void declareArguments()
  
    ::arg().setSwitch("no-shuffle", "Set this to prevent random shuffling of answers - for regression testing") = "off";
  
