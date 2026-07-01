@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-upload
 MODULE_VERSION=	2.3.0
-MODULE_PORTREVISION=	5
+MODULE_PORTREVISION=	6
 GH_TUPLE=	fdintino:nginx-upload-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie upload dynamic module
