@@ -156,6 +156,8 @@
 %%MANPAGES%%share/man/man1/glab-orbit-remote.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit-setup.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit.1.gz
+%%MANPAGES%%share/man/man1/glab-packages-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-packages-download.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-list.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-upload.1.gz
 %%MANPAGES%%share/man/man1/glab-packages.1.gz
