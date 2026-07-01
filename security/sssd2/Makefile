@@ -125,6 +125,10 @@ TEST_LIB_DEPENDS=	libcheck.so:devel/check \
 CPPFLAGS+=	-DHAVE_TIMEZONE=1
 .endif
 
+.ifdef WITH_DEBUG
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_util_sss__prctl.c
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|g' \
 		-e 's|/var/lib/sss/pubconf/|/var/db/sss/pubconf/|g' \
