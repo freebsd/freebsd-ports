@@ -45,6 +45,8 @@
 %%X11%%lib/dri/sun4i-drm_dri.so
 %%X11%%%%llvmpipe%%lib/dri/swrast_dri.so
 %%X11%%lib/dri/udl_dri.so
+%%X11%%lib/dri/virtio_gpu_dri.so
+lib/dri/virtio_gpu_drv_video.so
 %%X11%%lib/dri/vkms_dri.so
 %%X11%%%%svga%%lib/dri/vmwgfx_dri.so
 %%X11%%lib/dri/zink_dri.so
