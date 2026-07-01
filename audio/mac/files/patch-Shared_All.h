@@ -3,7 +3,7 @@ We need to define PLATFORM_LINUX as the default if consumers don't do so.
 Fix runtime for little endian archs. At least on amd64, _BIG_ENDIAN is defined
 somewhere in the toolchain, causing the byte order to be reversed.
 
---- Shared/All.h.orig	2026-05-23 07:19:19 UTC
+--- Shared/All.h.orig	2026-07-01 07:25:49 UTC
 +++ Shared/All.h
 @@ -19,7 +19,7 @@ PLATFORM_ANDROID
  #if !defined(PLATFORM_WINDOWS) && !defined(PLATFORM_APPLE) && !defined(PLATFORM_LINUX) && !defined(PLATFORM_ANDROID)
@@ -14,7 +14,7 @@ somewhere in the toolchain, causing the byte order to be reversed.
          #define PLATFORM_LINUX
      #elif defined(__APPLE__)
          #define PLATFORM_APPLE
-@@ -338,7 +338,7 @@ Byte order
+@@ -364,7 +364,7 @@ Byte order
  #define APE_LITTLE_ENDIAN     1234
  #define APE_BIG_ENDIAN        4321
  
