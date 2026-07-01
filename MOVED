@@ -5481,3 +5481,4 @@ mail/mime4j||2026-06-30|Has expired: This is a version that is over 14 years old
 lang/csharp-mode.el||2026-06-30|Has expired: No longer maintained upstream as a standalone package. This mode is part of Emacs core since Emacs 29
 x11/yalias||2026-07-01|Has expired: No longer developed upstream
 sysutils/rubygem-bolt|sysutils/rubygem-openbolt|2026-07-01|Has expired: Discontinued, use sysutils/rubygem-openbolt
+textproc/rubygem-puppet-strings|textproc/rubygem-openvox-strings|2026-07-01|Has expired: Discontinued, use textproc/rubygem-openvox-strings
