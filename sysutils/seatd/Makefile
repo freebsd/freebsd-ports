@@ -16,6 +16,12 @@ USE_RC_SUBR=	${PORTNAME}
 CPE_VENDOR=	${PORTNAME}_project
 MESON_DISABLED=	libseat-logind
 SUB_FILES=	pkg-message
+
+# Socket path is compiled into seatd/libseat (SEATD_DEFAULTPATH).  Expose it
+# as a build-time knob; override with `make SEATD_SOCKET=...` or make.conf.
+SEATD_SOCKET?=
+MESON_ARGS+=	-Ddefaultpath=${SEATD_SOCKET}
+SUB_LIST+=	SEATD_SOCKET=${SEATD_SOCKET}
 PLIST_FILES=	bin/${PORTNAME} \
 		"@(,video,4750) bin/${PORTNAME}-launch" \
 		include/libseat.h \
