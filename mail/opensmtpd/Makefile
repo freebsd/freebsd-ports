@@ -1,10 +1,10 @@
 PORTNAME=	opensmtpd
-PORTVERSION=	7.6.0
+PORTVERSION=	7.8.0
 DISTVERSIONSUFFIX=	p1
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	https://www.opensmtpd.org/archives/
-
+MASTER_SITES=	https://github.com/OpenSMTPD/OpenSMTPD/releases/download/${DISTVERSIONFULL}/ \
+		https://www.opensmtpd.org/archives/
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 WWW=		https://www.OpenSMTPD.org/
