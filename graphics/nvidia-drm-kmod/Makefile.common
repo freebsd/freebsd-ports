@@ -82,6 +82,11 @@ post-patch:
 	${REINPLACE_CMD} -e 's:struct nv_drm_mst_display_info \*r_info = (struct nv_drm_mst_display_info:const struct nv_drm_mst_display_info \*r_info = (const struct nv_drm_mst_display_info:' \
 		${WRKSRC}/nvidia-drm-drv.c
 .endif
+	# Workaround for build failure on graphics/nvidia-drm-515-kmod*,
+	# as struct dma_buf_map was renamed to struct iosys_map at Linux 5.18 (DRM5.18).
+.if ${.CURDIR:M*nvidia-drm-515-kmod*}
+	${REINPLACE_CMD} -e 's:defined(NV_LINUX_IOSYS_MAP_H_PRESENT):0:' ${WRKSRC}/nvidia-drm-gem.c
+.endif
 	# We should support -CURRENT: kill the check (first #if __FreeBSD_version)
 	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
 			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
