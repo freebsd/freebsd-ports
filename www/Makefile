@@ -1917,6 +1917,7 @@
     SUBDIR += py-quart
     SUBDIR += py-quart-trio
     SUBDIR += py-quilt3
+    SUBDIR += py-random-user-agent
     SUBDIR += py-readability-lxml
     SUBDIR += py-recaptcha
     SUBDIR += py-requests
