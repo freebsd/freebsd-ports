@@ -41,8 +41,7 @@ GH_TUPLE=	ajg:form:v1.5.1:ajg_form/vendor/github.com/ajg/form \
 		wireguard:wireguard-go:f333402bd9cb:wireguard_wireguard_go/vendor/golang.zx2c4.com/wireguard
 
 GO_TARGET=	.
-GO_BUILDFLAGS=	-ldflags="-w -s \
-		-X github.com/${GH_ACCOUNT}/${PORTNAME}/v2/internal/version.Version=v${DISTVERSION}"
+GO_LDFLAGS=	-X github.com/${GH_ACCOUNT}/${PORTNAME}/v2/internal/version.Version=v${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 
