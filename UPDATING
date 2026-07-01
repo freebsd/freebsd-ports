@@ -6,6 +6,37 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20260630:
+  AFFECTS: users of audio/murmur
+  AUTHOR: vvd@FreeBSD.org
+
+  Branch 1.3 is deprecated by upstream. Also it doesn't support OpenSSL 3.
+  Port audio/murmur removed from tree - use audio/mumble-server instead.
+  Upstream has renamed murmur to mumble-server, so when upgrading to
+  version 1.5.x, you need to do the following:
+  1. Before upgrade stop server:
+      service murmur stop
+  2. Rename all working files and directories:
+      mv /var/db/murmur/murmur.sqlite /var/db/murmur/mumble-server.sqlite
+      mv /var/db/murmur               /var/db/mumble-server
+      mv /var/log/murmur/murmur.log   /var/log/murmur/mumble-server.log
+      mv /var/log/murmur              /var/log/mumble-server
+      mv /var/run/murmur              /var/run/mumble-server
+  3. Backup murmur.ini:
+      mv /usr/local/etc/murmur.ini    /usr/local/etc/murmur.ini.old
+  4. Remove port audio/murmur and install audio/mumble-server.
+  5. Remove old user and group murmur:
+      pw userdel murmur
+      pw groupdel murmur
+  6. Change owner of old files:
+      chown -R mumble-server:mumble-server /var/db/mumble-server \
+                    /var/log/mumble-server /var/run/mumble-server
+  7. Add your customizations in /usr/local/etc/mumble/mumble-server.ini.
+  8. Update /etc/rc.conf:
+      replace murmur_enable="YES" with mumble_server_enable="YES".
+  9. Start server:
+      service mumble_server start
+
+20260630:
   AFFECTS: users of net-im/gotosocial
   AUTHOR: tilde@ultros.pro
 
