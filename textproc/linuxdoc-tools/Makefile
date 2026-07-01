@@ -36,8 +36,4 @@ DOCS_USES=		makeinfo tex
 DOCS_USE=		TEX=dvipsk:build,latex:build,pdftex:build
 DOCS_CONFIGURE_ENABLE=	docs
 
-post-stage:
-	@${RM} ${STAGEDIR}${DOCSDIR}/Makefile.orig \
-		${STAGEDIR}${DOCSDIR}/example/Makefile.orig
-
 .include <bsd.port.mk>
