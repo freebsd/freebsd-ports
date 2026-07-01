@@ -1,6 +1,5 @@
 PORTNAME=	gnu-radius
-PORTVERSION=	1.6.1
-PORTREVISION=	18
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	GNU/radius
 DISTNAME=	radius-${PORTVERSION}
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		cpe gmake libtool
+USES=		cpe gmake libtool tar:bz2
 USE_RC_SUBR=	radiusd
 USE_SUBMAKE=	yes
 USE_LDCONFIG=	yes
@@ -45,7 +44,7 @@ EMACS_DESC=	Install Emacs dotfiles
 
 SNMP_CONFIGURE_ENABLE=		snmp
 CLIENT_CONFIGURE_ENABLE=	client
-CLIENT_USES=			guile:1.8,alias
+CLIENT_USES=			guile:3.0,alias
 CLIENT_CONFIGURE_OFF=		--without-guile
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_WITH=		mysql

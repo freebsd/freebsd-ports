@@ -1,2 +1,3 @@
-SHA256 (radius-1.6.1.tar.gz) = 3053b670704aa2fbcb6235d9a8f2e31329849faa5eca8c2b9a55cb35ff0993d0
-SIZE (radius-1.6.1.tar.gz) = 2602368
+TIMESTAMP = 1776835676
+SHA256 (radius-1.7.tar.bz2) = 457e2ba00f992bbf7242ac36971ba35eb9b4cfdfd909c75c1c3d639192e744b3
+SIZE (radius-1.7.tar.bz2) = 1648302
