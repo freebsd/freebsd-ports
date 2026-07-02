@@ -7,9 +7,9 @@
 -- so git sources must be removed. The default allocator is used
 -- instead of jemalloc to avoid runtime TLS errors.
 
---- Cargo.lock.orig	2026-05-29 09:06:27 UTC
+--- Cargo.lock.orig	2026-06-29 14:09:18 UTC
 +++ Cargo.lock
-@@ -1039,7 +1039,6 @@ version = "0.7.2"
+@@ -1016,7 +1016,6 @@ version = "0.7.2"
  [[package]]
  name = "color-backtrace"
  version = "0.7.2"
@@ -17,19 +17,36 @@
  dependencies = [
   "btparse",
   "termcolor",
-@@ -2779,7 +2778,6 @@ version = "0.13.2"
+@@ -2770,7 +2769,6 @@ version = "0.13.2"
  [[package]]
  name = "object_store"
  version = "0.13.2"
--source = "git+https://github.com/apache/arrow-rs-object-store?rev=6f1c9acc94636e059a2b3aef5c75e815e065cc89#6f1c9acc94636e059a2b3aef5c75e815e065cc89"
+-source = "git+https://github.com/kdn36/arrow-rs-object-store?branch=feat_with_dns_resolver#f50a6e5c564b2b5933eca15cd20ff9b5614374a1"
  dependencies = [
   "async-trait",
   "base64",
-@@ -3398,7 +3396,6 @@ dependencies = [
-  "polars-core",
-  "polars-io",
-  "polars-utils",
+@@ -3408,7 +3406,6 @@ dependencies = [
+  "rand 0.10.1",
+  "rand_distr",
+  "thread_local",
 - "tikv-jemallocator",
   "tokio",
+  "uuid",
+ ]
+@@ -5095,16 +5092,6 @@ dependencies = [
+ dependencies = [
+  "cc",
+  "libc",
+-]
+-
+-[[package]]
+-name = "tikv-jemallocator"
+-version = "0.7.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "249f09e49ab1609436f34c776e84231bead18d6a955f119f939bdc1d847561bd"
+-dependencies = [
+- "libc",
+- "tikv-jemalloc-sys",
  ]
  
+ [[package]]
