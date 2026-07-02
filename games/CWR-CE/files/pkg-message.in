@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+CWR-CE installs the engine binaries (PoseidonGame, PoseidonServer,
+PoseidonStudio, PoseidonTools, PoseidonTetris, PoseidonGameDemo) but
+no game data. The original "Arma: Cold War Assault" assets are required
+to run anything beyond Tetris and are NOT redistributable.
+
+If you own the game (e.g. via GOG), install the data with:
+
+    pkg install innoextract
+    install-cwr-data /path/to/setup_arma_cold_war_assault_*.exe
+
+This unpacks DTA/, AddOns/, BIN/, Campaigns/, Worlds/, ... into
+~/.local/share/CWR/base/ in the layout the engine expects. Pass
+--dest <dir> to install elsewhere, or --help for the full usage.
+
+Then launch the game with:
+
+    cwr-ce
+
+The launcher resolves the data root and passes it to PoseidonGame.
+If you installed the data elsewhere, set $CWR_DATA before launching:
+
+    CWR_DATA=/path/to/data-root cwr-ce
+
+Any extra arguments are forwarded to PoseidonGame (see --help).
+
+EOM
+}
+]

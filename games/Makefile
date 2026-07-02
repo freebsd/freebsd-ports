@@ -11,6 +11,7 @@
     SUBDIR += 90secondportraits
     SUBDIR += Bugdom
     SUBDIR += Bugdom2
+    SUBDIR += CWR-CE
     SUBDIR += CaribbeanStud
     SUBDIR += DDNet
     SUBDIR += Doom64EX

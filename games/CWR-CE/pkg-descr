@@ -1,0 +1,15 @@
+Arma: Cold War Assault - Remastered (codename Poseidon) is the engine
+and game source code first released in 2001 as Operation Flashpoint:
+Cold War Crisis. It is the codebase that launched Bohemia Interactive
+and began the technology lineage later grown into Real Virtuality, Arma,
+and Enfusion. The code has been modernized to C++20, built with CMake
+and Clang.
+
+Game assets (models, textures, sounds, missions, voices) are NOT
+included with this port and are NOT GPL. They ship separately under the
+Arma Public License Share Alike (APL-SA).
+A free Demo is available on Steam:
+https://store.steampowered.com/app/4819000
+And this game was tested with the full GOG version game assets too.
+
+Without game data the binaries do nothing useful at runtime.
