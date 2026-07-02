@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.0
-PORTREVISION=	2
+DISTVERSION=	0.53.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -118,7 +117,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-automata-0.4.13 \
 		regex-lite-0.1.8 \
 		regex-syntax-0.8.8 \
-		rustc-hash-2.1.1 \
+		rustc-hash-2.1.2 \
 		rustix-1.1.3 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
@@ -126,7 +125,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.149 \
-		serde_spanned-1.0.4 \
+		serde_spanned-1.1.1 \
 		shell-words-1.1.1 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.8 \
@@ -148,12 +147,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-macros-0.2.25 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		toml-1.0.6+spec-1.1.0 \
+		toml-1.1.0+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
-		toml_datetime-1.0.0+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.23.10+spec-1.0.0 \
-		toml_parser-1.0.9+spec-1.1.0 \
-		toml_writer-1.0.6+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
+		toml_writer-1.1.1+spec-1.1.0 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.22 \
 		unicode-normalization-0.1.25 \
@@ -188,6 +187,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
+		winnow-1.0.3 \
 		xdg-3.0.0 \
 		yaml-rust-0.4.5 \
 		yansi-1.0.1 \
