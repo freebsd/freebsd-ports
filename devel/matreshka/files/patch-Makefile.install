@@ -1,0 +1,11 @@
+--- Makefile.install.orig	2026-06-27 23:13:46 UTC
++++ Makefile.install
+@@ -72,7 +72,7 @@ INSTALL_TARGETS += cleanup
+ 
+ INSTALL_TARGETS += cleanup
+ 
+-GPRINSTALL_FLAGS = --prefix=$(PREFIX) --sources-subdir=$(INSTALL_INCLUDE_DIR) --lib-subdir=${INSTALL_ALI_DIR} --project-subdir=${INSTALL_PROJECT_DIR} --link-lib-subdir=$(INSTALL_LIBRARY_DIR)
++GPRINSTALL_FLAGS = --prefix=$(PREFIX) --sources-subdir=$(INSTALL_INCLUDE_DIR) --lib-subdir=${INSTALL_ALI_DIR} --project-subdir=${INSTALL_PROJECT_DIR} --link-lib-subdir=$(INSTALL_LIBRARY_DIR) %%GPRINSTALL_FLAGS%%
+ 
+ install: $(INSTALL_TARGETS)
+ 

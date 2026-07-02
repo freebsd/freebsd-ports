@@ -1,0 +1,11 @@
+--- Makefile.build.orig	2026-06-27 23:13:41 UTC
++++ Makefile.build
+@@ -3,7 +3,7 @@ endif
+ ifdef HAS_GPRBUILD2014
+ GNATMAKE = gnatmake
+ endif
+-GPRBUILD_FLAGS = -p $(SMP_MFLAGS)
++GPRBUILD_FLAGS = -p $(SMP_MFLAGS) %%GPRBUILD_FLAGS%%
+ 
+ ALL_TARGETS = league xml fastcgi servlet spikedog-api spikedog-core soap wsse\
+                wsdl2ada sql uaflex
