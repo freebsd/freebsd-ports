@@ -1,5 +1,6 @@
 PORTNAME=	breathe
 PORTVERSION=	4.36.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-spelling>=0:textproc/py-sphinxcontrib-spelling@${PY_FLAVOR} \
 		doxygen:devel/doxygen
 
-USES=		gmake python
+USES=		gmake magick python
 USE_GITHUB=	yes
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
 USE_PYTHON=	autoplist pep517 pytest

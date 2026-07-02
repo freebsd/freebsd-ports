@@ -1,6 +1,15 @@
+diff -u documentation/source/conf.py.orig b/documentation/source/conf.py
 --- documentation/source/conf.py.orig	2026-04-26 08:35:23 UTC
 +++ documentation/source/conf.py
-@@ -37,12 +37,12 @@ else:
+@@ -22,6 +22,7 @@
+ extensions = [
+     "breathe",
+     "sphinx.ext.graphviz",
++    "sphinx.ext.imgconverter",
+     "sphinx_copybutton",
+     "sphinxcontrib.spelling",
+ ]
+@@ -37,12 +38,12 @@
      version = release = "compare"
  else:
      # Get a description of the current position.
