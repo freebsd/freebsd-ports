@@ -40,6 +40,7 @@
     SUBDIR += pkg_search
     SUBDIR += pkg_tree
     SUBDIR += pkgcompare
+    SUBDIR += pkgfe
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-index-uniquifier
