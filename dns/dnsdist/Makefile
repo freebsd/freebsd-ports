@@ -1,6 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	2.0.7
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -107,5 +106,6 @@ SNMP_MESON_ENABLED=	snmp
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/dnsdist.conf-dist ${STAGEDIR}${ETCDIR}/dnsdist.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/dnsdist.yml-dist ${STAGEDIR}${ETCDIR}/dnsdist.yml.sample
 
 .include <bsd.port.mk>

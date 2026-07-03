@@ -1,3 +1,4 @@
 sbin/dnsdist
 share/man/man1/dnsdist.1.gz
 @sample %%ETCDIR%%/dnsdist.conf.sample
+@sample %%ETCDIR%%/dnsdist.yml.sample
