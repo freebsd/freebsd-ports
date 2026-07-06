@@ -165,6 +165,7 @@
     SUBDIR += abella
     SUBDIR += abs
     SUBDIR += acalc
+    SUBDIR += adasat
     SUBDIR += add
     SUBDIR += adept
     SUBDIR += adol-c

@@ -1,0 +1,10 @@
+--- adasat.gpr.orig	2026-07-01 12:26:53 UTC
++++ adasat.gpr
+@@ -13,6 +13,7 @@ library project AdaSAT is
+    for Object_Dir use "obj/" & Library_Kind_Param & "/" & Build_Mode;
+    for Library_Name use "adasat";
+    for Library_Kind use Library_Kind_Param;
++   for Library_Version use "libadasat.so.%%SO_VERSION%%";
+ 
+    Common_Ada_Cargs := ("-gnatwa", "-gnatyg", "-fPIC");
+ 

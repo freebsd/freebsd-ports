@@ -1,0 +1,8 @@
+AdaSAT is an implementation of Davis–Putnam–Logemann–Loveland (DPLL) based
+propositional satisfiability problem (SAT) solver in Ada.
+
+Supported features include:
+* Conflict analysis and backjumping
+* Two-watched literals scheme
+* Built-in support for At-Most-One constraints
+* Custom theories
