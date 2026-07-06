@@ -48,13 +48,6 @@ READLINE_RUN_DEPENDS_OFF=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 SINK_RUN_DEPENDS=	mpeg_encode:multimedia/mpeg_encode \
 			ppmtogif:graphics/netpbm
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503800
-BUILD_DEPENDS+=	p5-Text-Balanced>=2.05:textproc/p5-Text-Balanced
-RUN_DEPENDS+=	p5-Text-Balanced>=2.05:textproc/p5-Text-Balanced
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pdl
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Bad/Bad.so
@@ -74,4 +67,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Transform/Transform.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Ufunc/Ufunc.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	opennurbs
-PORTVERSION=	8.27.26019.16021
+PORTVERSION=	8.32.26160.13001
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -24,12 +24,6 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "sparc64" && ${ARCH} != "powerpc" && ${ARCH} != powerpc64
-CFLAGS+=	-DON_LITTLE_ENDIAN
-.else
-CFLAGS+=	-DON_BIG_ENDIAN
-.endif
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

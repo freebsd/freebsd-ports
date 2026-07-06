@@ -1,6 +1,6 @@
-TIMESTAMP = 1779543363
-SHA256 (iocaine-3.4.0.tar.gz) = a0869d52973750921afd5a33ba139a487b14caf4541f8b7deb27c8ccb4e503c6
-SIZE (iocaine-3.4.0.tar.gz) = 207949
+TIMESTAMP = 1781720702
+SHA256 (iocaine-3.5.0.tar.gz) = d0acb7019238c4b7cb163a999dacbe4919ab0cc1380c1c39e79b6b7e108d6f1b
+SIZE (iocaine-3.5.0.tar.gz) = 208077
 SHA256 (robots.json) = 7dc0eadf44ab85df7995a1f3a782967440ebd0363e2521e12a44bd85f2f9730b
 SIZE (robots.json) = 55286
 SHA256 (fennel-1.6.1.lua) = c3d45602041e7d8ef8a212563573df040c48a85c648a29fb4597ebed4bc38ec2

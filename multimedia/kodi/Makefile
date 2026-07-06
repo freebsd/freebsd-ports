@@ -1,11 +1,10 @@
 PORTNAME=	kodi
-DISTVERSION=	22.0a3
+DISTVERSION=	22.0b1
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://mirrors.kodi.tv/build-deps/sources/
 DISTFILES=	apache-groovy-binary-${GROOVY_VERSION}.zip \
 		commons-lang3-${COMMONS_LANG_VERSION}-bin.tar.gz \
-		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz \
-		json-${NLOHMANN_JSON_VERSION}.tar.xz
+		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 # do not forget to fix devel/kodi-platform when updating kodi
 
@@ -18,6 +17,7 @@ LICENSE=	GPLv2+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers \
+		nlohmann-json>0:devel/nlohmann-json \
 		swig>0:devel/swig
 LIB_DEPENDS=	libaacs.so:multimedia/libaacs \
 		libass.so:multimedia/libass \
@@ -58,11 +58,9 @@ KODI_CODENAME=		Piers
 LIBDVDCSS_VERSION=	1.4.3-Next-Nexus-Alpha2-2
 LIBDVDNAV_VERSION=	6.1.1-Next-Nexus-Alpha2-2
 LIBDVDREAD_VERSION=	6.1.3-Next-Nexus-Alpha2-2
-GROOVY_VERSION=		4.0.26
-COMMONS_LANG_VERSION=	3.17.0
-COMMONS_TEXT_VERSION=	1.13.0
-# TODO: make it a new port
-NLOHMANN_JSON_VERSION=	3.12.0
+GROOVY_VERSION=		4.0.30
+COMMONS_LANG_VERSION=	3.20.0
+COMMONS_TEXT_VERSION=	1.15.0
 
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:${DISTVERSION}-${KODI_CODENAME} \
@@ -71,7 +69,7 @@ GH_TUPLE=	xbmc:xbmc:${DISTVERSION}-${KODI_CODENAME} \
 		xbmc:libdvdread:${LIBDVDREAD_VERSION}:libdvdread/tools/depends/target/libdvdread/native
 
 USE_GNOME=	libxml2
-JAVA_VERSION=	8 11
+JAVA_VERSION=	8 11 17 21
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	kodi
 
@@ -92,9 +90,8 @@ CMAKE_ARGS=	-Dapache-commons-lang_SOURCE_DIR="${WRKSRC}/tools/depends/share/java
 		-Dgroovy_SOURCE_DIR="${WRKSRC}/tools/depends/share/groovy" \
 		-DLIBDVDCSS_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdcss-${LIBDVDCSS_VERSION}_GH0.tar.gz" \
 		-DLIBDVDNAV_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdnav-${LIBDVDNAV_VERSION}_GH0.tar.gz" \
-		-DLIBDVDREAD_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdread-${LIBDVDREAD_VERSION}_GH0.tar.gz" \
-		-DNLOHMANN_JSON_URL="${DISTDIR}/${PORTNAME}/json-${NLOHMANN_JSON_VERSION}.tar.xz"
-CMAKE_ON=	ENABLE_INTERNAL_NLOHMANNJSON VERBOSE_FIND
+		-DLIBDVDREAD_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdread-${LIBDVDREAD_VERSION}_GH0.tar.gz"
+CMAKE_ON=	VERBOSE_FIND
 CMAKE_OFF=	ENABLE_INTERNAL_CROSSGUID
 CONFIGURE_ENV=	_CPU_FEATURE="${CPU_FEATURE}"
 

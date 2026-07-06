@@ -1,0 +1,11 @@
+--- conversion/CMakeLists.txt.orig	2026-06-24 14:11:21 UTC
++++ conversion/CMakeLists.txt
+@@ -84,7 +84,7 @@ INSTALL(TARGETS
+    DESTINATION bin)
+ 
+ 
+-INSTALL_MAN_PAGES( ${CMAKE_INSTALL_PREFIX}/man
++INSTALL_MAN_PAGES( ${CMAKE_INSTALL_PREFIX}/share/man
+   dcm2mnc/dcm2mnc.man1
+   ecattominc/ecattominc.man1
+   micropet/upet2mnc.man1

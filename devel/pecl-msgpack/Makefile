@@ -1,5 +1,5 @@
 PORTNAME=	msgpack
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -7,15 +7,16 @@ COMMENT=	Provides API for communicating with MessagePack serialization
 WWW=		https://pecl.php.net/package/msgpack
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=   ${WRKSRC}/LICENSE
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	86
 
-OPTIONS_DEFINE=		OPCACHE
-OPTIONS_DEFAULT=	OPCACHE
-OPCACHE_DESC?=		Use OPcache to improve performance
+OPTIONS_DEFINE=		APCU
+OPTIONS_DEFAULT=	APCU
+APCU_DESC=		Register as a serializer for APCu
 
-OPCACHE_BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-OPCACHE_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-OPCACHE_USE=		PHP=opcache
+APCU_BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/apcu/apc_serializer.h:devel/pecl-APCu@${PHP_FLAVOR}
+APCU_CONFIGURE_ENABLE=	apcu
 
 .include <bsd.port.mk>

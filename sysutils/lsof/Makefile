@@ -68,4 +68,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${DATADIR}
 
+# Create dummy empty vnode_if.h in case vnode.h includes it
+# (true on FreeBSD 16, harmless if not).
+post-patch:
+	${TOUCH} ${WRKSRC}/include/vnode_if.h
+
 .include <bsd.port.post.mk>

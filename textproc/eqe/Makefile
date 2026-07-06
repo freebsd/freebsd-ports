@@ -1,6 +1,6 @@
 PORTNAME=	eqe
 PORTVERSION=	1.3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	http://rlehy.free.fr/
 

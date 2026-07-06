@@ -1,8 +1,7 @@
 PORTNAME=	oxygen-icons
-DISTVERSION=	6.2.0
-CATEGORIES=	x11-themes kde
-MASTER_SITES=	KDE/stable/${PORTNAME}
-DIST_SUBDIR=	KDE/${PORTNAME}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+CATEGORIES=	x11-themes kde kde-frameworks
+PKGNAMEPREFIX=	# override kde.mk
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The Oxygen icon theme for KDE

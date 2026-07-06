@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	26.2.5.21
+DISTVERSION=	28.5.0.2
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -18,7 +18,7 @@ USE_GITHUB=	nodefault
 
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	5.2.1:corba
+GH_TAGNAME=	5.2.2:corba
 USE_PERL5=	build
 USE_RC_SUBR=	epmd
 
@@ -40,12 +40,12 @@ WRKSRC=		${WRKSRC_otp}
 USERS=		beam
 GROUPS=		beam
 
-_EI_VSN=	5.5.1
-_SNMP_VSN=	5.15
-_TOOLS_VSN=	3.6
+_EI_VSN=	5.7.0.1
+_SNMP_VSN=	5.20.2.1
+_TOOLS_VSN=	4.1.4
 
-OPTIONS_DEFINE=		CHUNKS CORBA DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
-			OPENSSL PDF SCTP SHARING WX
+OPTIONS_DEFINE=		CHUNKS CORBA DTRACE JAVA KQUEUE MANPAGES ODBC \
+			OPENSSL SCTP SHARING WX
 OPTIONS_DEFAULT=	CHUNKS CORBA DTRACE KQUEUE MANPAGES OPENSSL SCTP \
 			SHARING
 
@@ -65,9 +65,7 @@ OPTIONS_SUB=	yes
 
 CHUNKS_DESC=	Enable in-line documentation in Erlang console
 CORBA_DESC=	Enable Corba support
-FOP_DESC=	Build full documentation with Apache FOP
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
-PDF_DESC=	Build PDF documentation
 SCTP_DESC=	Enable SCTP support
 SHARING_DESC=	Enable term copy-and-share support
 WX_DESC=	Enable WX application
@@ -81,9 +79,6 @@ CHUNKS_MAKE_ARGS+=		DOC_TARGETS=chunks \
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
-FOP_PREVENTS=			MANPAGES
-FOP_BUILD_DEPENDS=		fop:textproc/fop \
-				xsltproc:textproc/libxslt
 JAVA_USES=			java
 JAVA_CONFIGURE_WITH=		javac
 JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
@@ -94,7 +89,6 @@ ODBC_USES=			localbase:ldflags
 ODBC_CONFIGURE_WITH=		odbc
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
-PDF_IMPLIES=			FOP
 SCTP_CONFIGURE_ENABLE=		sctp
 SHARING_CONFIGURE_ENABLE=	sharing-preserving
 WX_USES=			gl
@@ -150,20 +144,6 @@ post-build-CORBA-on:
 		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
 		${MAKE_CMD}
 
-# The man-pages are put (in spite of FreeBSD's port convention) in a private
-# subdir. This is to avoid cluttering up the man page name space. Also the
-# Erlang man pages are more of internal documentation using the man format than
-# actual system man pages. (erl.1 and epmd.1 perhaps being the exception).
-
-post-build-FOP-on:
-	@cd ${WRKSRC} && \
-		${MAKE_CMD} docs
-.if ${PORT_OPTIONS:MCORBA}
-	cd ${WRKSRC_corba} && \
-		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
-		${MAKE_CMD} docs
-.endif
-
 post-install:
 	${LN} -sf ../lib/${_ERLANG_LIB}/lib/erl_interface-${_EI_VSN}/bin/erl_call \
 		${STAGEDIR}${PREFIX}/bin/erl_call
@@ -190,22 +170,6 @@ post-install-DTRACE-on:
 		${WRKSRC}/lib/runtime_tools/examples/*.d \
 		${STAGEDIR}${DATADIR}/dtrace
 
-post-install-FOP-on:
-	@${ECHO_CMD} "MANPATH ${PREFIX}/lib/erlang/man" > ${WRKDIR}/erlang.conf
-	${INSTALL_DATA} ${WRKDIR}/erlang.conf \
-		${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
-	for SECTION in 1 3 4 6 7; \
-		do ${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
-		${FIND} ${WRKSRC}/erts ${WRKSRC}/lib -type f | \
-		${GREP} doc/man$${SECTION} | \
-		${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
-		done
-.if ${PORT_OPTIONS:MCORBA}
-	${FIND} ${WRKSRC_corba}/lib -type f | \
-		${GREP} doc/man3 | \
-		${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man3
-.endif
-
 post-install-JAVA-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/jinterface-*
 
@@ -216,15 +180,6 @@ post-install-OPENSSL-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/crypto-*
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/ssh-*
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/ssl-*
-
-post-install-PDF-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${FIND} ${WRKSRC} -name \*.pdf | \
-		${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MCORBA}
-	${FIND} ${WRKSRC_corba} -name \*.pdf | \
-		${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
-.endif
 
 post-install-WX-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/debugger-*
@@ -239,10 +194,5 @@ post-stage:
 		${FIND} lib/${_ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o \
 		-type l | \
 		${SORT} >> ${TMPPLIST}
-	@if [ -d ${STAGEDIR}/${DOCSDIR} ]; then \
-		cd ${STAGEDIR}${PREFIX}; \
-		${FIND} ${DOCSDIR_REL}/* -name \*.pdf | \
-		${SORT} >> ${TMPPLIST}; \
-		fi
 
 .include <bsd.port.post.mk>

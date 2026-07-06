@@ -1,5 +1,5 @@
 PORTNAME=	gitte
-DISTVERSION=	0.5.0
+DISTVERSION=	0.8.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://codeberg.org/ckruse/Gitte/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

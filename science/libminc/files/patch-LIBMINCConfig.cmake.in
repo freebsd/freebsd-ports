@@ -1,0 +1,10 @@
+--- LIBMINCConfig.cmake.in.orig	2026-04-24 04:00:26 UTC
++++ LIBMINCConfig.cmake.in
+@@ -33,7 +33,6 @@ find_dependency(ZLIB REQUIRED)
+ # ----- Resolve transitive dependencies -----
+ find_dependency(ZLIB REQUIRED)
+ 
+-set(HDF5_NO_FIND_PACKAGE_CONFIG_FILE ON)
+ # Provide hints so the system FindHDF5 can find the same HDF5 we were built with
+ # (especially important on Debian/Ubuntu where the serial variant lives in
+ #  non-standard paths like /usr/include/hdf5/serial)

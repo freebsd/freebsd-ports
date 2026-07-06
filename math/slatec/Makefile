@@ -29,6 +29,7 @@ LDADD ?=	-lgfortran -lm
 SRCCONF=	/dev/null
 MAKE_ENV+=	LDADD="${LDADD}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
+MAKE_ARGS+=	STRIP=${STRIP}
 FFLAGS+=	-std=legacy
 
 # ld.bfd supports neither -z relro nor -z norelro on armv7

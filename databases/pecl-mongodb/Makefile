@@ -9,5 +9,6 @@ WWW=		https://docs.mongodb.org/ecosystem/drivers/php/
 LICENSE=	APACHE20
 
 USES=		gmake localbase php:build,pecl ssl
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

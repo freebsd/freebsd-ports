@@ -1,7 +1,7 @@
 PORTNAME=	hub
 PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	41
+PORTREVISION=	42
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		cpe go:modules
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	github
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github

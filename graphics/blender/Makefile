@@ -1,6 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	5.0.1
-PORTREVISION=	4
+PORTEPOCH=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run \
-		pkgconfig python:3.11 shebangfix tar:xz xorg
+		pkgconfig python shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 
 SHEBANG_FILES=	scripts/modules/blend_render_info.py

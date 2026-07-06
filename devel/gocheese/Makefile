@@ -1,6 +1,6 @@
 PORTNAME=	gocheese
 DISTVERSION=	5.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.gocheese.stargrave.org/download/
 

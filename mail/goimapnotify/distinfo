@@ -55,5 +55,5 @@ SHA256 (uber-go-atomic-v1.9.0_GH0.tar.gz) = a6b11bb77c479298cdfdfdf2132975dbd975
 SIZE (uber-go-atomic-v1.9.0_GH0.tar.gz) = 21331
 SHA256 (uber-go-multierr-v1.9.0_GH0.tar.gz) = 0664e6c869ca2bef1851b77b9384d8fb1a5f41514b4b174da340e31c616da028
 SIZE (uber-go-multierr-v1.9.0_GH0.tar.gz) = 15662
-SHA256 (goimapnotify-2.5.5.tar.bz2) = 3d6a2a724d5a5b9d074b01ce6cbbf99425c6fbfdcfd2a530c8a5367b26a6f74f
-SIZE (goimapnotify-2.5.5.tar.bz2) = 59705
+SHA256 (goimapnotify-2.5.6.tar.bz2) = d0e9b80a0284ad19ad94103f4c5be7004a6921b0b7fc9981e07094eaf74ca16b
+SIZE (goimapnotify-2.5.6.tar.bz2) = 62695

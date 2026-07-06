@@ -1,4 +1,4 @@
---- ui/base/resource/resource_bundle.cc.orig	2026-01-14 08:33:23 UTC
+--- ui/base/resource/resource_bundle.cc.orig	2026-07-01 06:24:19 UTC
 +++ ui/base/resource/resource_bundle.cc
 @@ -996,7 +996,7 @@ void ResourceBundle::ReloadFonts() {
  }

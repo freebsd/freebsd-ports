@@ -3,7 +3,8 @@ include/hangul-1.0/hangul.h
 lib/libhangul.a
 lib/libhangul.so
 lib/libhangul.so.1
-lib/libhangul.so.1.0.0
+lib/libhangul.so.1.1.0
 libdata/pkgconfig/libhangul.pc
-%%NLS%%share/locale/ko/LC_MESSAGES/libhangul.mo
 %%DATADIR%%/hanja/hanja.txt
+%%DATADIR%%/hanja/mssymbol.txt
+%%NLS%%share/locale/ko/LC_MESSAGES/libhangul.mo

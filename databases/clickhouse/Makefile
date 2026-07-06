@@ -1,7 +1,7 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.1.3.52
-DISTVERSIONSUFFIX=-stable
+DISTVERSION=	26.3.9.8
+DISTVERSIONSUFFIX=-lts
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -16,6 +16,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
+	gfind:misc/findutils \
+	ggrep:textproc/gnugrep \
 	nasm:devel/nasm
 RUN_DEPENDS=	bash:shells/bash
 .if defined(MAINTAINER_MODE)
@@ -33,8 +35,8 @@ USE_PERL5=	build
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	tests/clickhouse-test \
-		tests/queries/0_stateless/02010_lc_native.python \
-		tests/queries/0_stateless/02203_shebang
+		tests/queries/0_stateless/02010_lc_native.python
+#		tests/queries/0_stateless/02203_shebang
 SHEBANG_GLOB=	*.expect *.py *.python *.sh
 SHEBANG_LANG=	clickhouse-local expect
 clickhouse-local_OLD_CMD=	/usr/bin/clickhouse-local
@@ -46,7 +48,8 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=20 \
 		-DNO_WERROR=1 \
 		-DCOMPILER_CACHE=disabled \
 		-DPARALLEL_COMPILE_JOBS=${MAKE_JOBS_NUMBER} \
-		-DPARALLEL_LINK_JOBS=${MAKE_JOBS_NUMBER}
+		-DPARALLEL_LINK_JOBS=${MAKE_JOBS_NUMBER} \
+		-DUSE_SYSTEM_COMPILER_RT=ON
 CMAKE_OFF=	ENABLE_PARQUET ENABLE_THINLTO ENABLE_UTILS
 
 .if defined(WITH_DEBUG)
@@ -74,6 +77,9 @@ RUST_CMAKE_BOOL=	ENABLE_RUST
 TEST_RUN_DEPENDS=	expect>0:lang/expect
 TEST_CMAKE_BOOL=	ENABLE_TESTS
 
+BINARY_ALIAS=	find=${LOCALBASE}/bin/gfind \
+		grep=${LOCALBASE}/bin/ggrep
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
@@ -93,6 +99,8 @@ SOVERSION=	${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
+	@${REINPLACE_CMD} -e 's|^ROOT_PATH.*|ROOT_PATH=${WRKSRC}|' ${WRKSRC}/utils/list-licenses/list-licenses.sh
+	${CP} -R ${WRKSRC}/contrib/rapidjson/contrib/natvis ${WRKSRC}/contrib/natvis
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 
 post-install:

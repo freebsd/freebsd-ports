@@ -1,0 +1,8 @@
+Easily generate information-rich, publication-quality tables from Python.
+
+This package allows you to create and customize tables with a
+comprehensive set of formatting options. You can mix text, numbers,
+and graphics, add headers, footnotes, and spans, all while producing
+beautiful output that can be rendered in HTML or exported to various
+formats. It is part of the Posit ecosystem, designed to work well
+with data analysis workflows in Python.

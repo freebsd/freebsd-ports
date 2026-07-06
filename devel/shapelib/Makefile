@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSE-LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		libtool localbase
+USES=		cpe libtool localbase
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
@@ -22,6 +22,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	p5-DBD-XBase # bin/dbfdump
+
+CPE_VENDOR=	osgeo
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/shptest ${STAGEDIR}${PREFIX}/bin/

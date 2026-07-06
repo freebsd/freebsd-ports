@@ -1,7 +1,7 @@
---- pyproject.toml.orig	2025-12-09 16:13:35 UTC
+--- pyproject.toml.orig	2026-06-02 08:32:39 UTC
 +++ pyproject.toml
-@@ -13,8 +13,7 @@ requires-python = ">=3.11"
-   "threadpoolctl>=3.2.0",
+@@ -14,8 +14,7 @@ requires-python = ">=3.11"
+   "threadpoolctl>=3.5.0",
  ]
  requires-python = ">=3.11"
 -license = "BSD-3-Clause"
@@ -10,14 +10,3 @@
  classifiers=[
    "Intended Audience :: Science/Research",
    "Intended Audience :: Developers",
-@@ -97,8 +96,8 @@ requires = [
- requires = [
-     "meson-python>=0.17.1,<0.19.0",
-     "cython>=3.1.2,<3.3.0",
--    "numpy>=2,<2.4.0",
--    "scipy>=1.10.0,<1.17.0",
-+    "numpy",
-+    "scipy>=1.10.0",
- ]
- 
- [tool.pytest.ini_options]

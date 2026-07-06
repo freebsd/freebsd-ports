@@ -34,8 +34,7 @@ USE_PYTHON=	autoplist concurrent cryptography_test pep517 pytest
 
 NO_ARCH=	yes
 PYTEST_IGNORED_TESTS=	test_ssl_read_timeout
-TEST_ENV=	LC_ALL=en_US.UTF-8 \
-		PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 SUB_FILES=	pkg-message
 

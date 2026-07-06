@@ -11,14 +11,13 @@ WWW=		https://github.com/AndrewAnnex/SpiceyPy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=3.1:lang/cython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libcspice.so:astro/cspice
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23.5:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake:indirect python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	autoplist cython pep517 pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AndrewAnnex

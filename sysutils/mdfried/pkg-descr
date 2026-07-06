@@ -1,2 +1,16 @@
 Mdfried is a markdown viewer for the terminal that renders headers as Bigger
 Text than the rest.
+
+Features:
+
+- Big Headers™: headers are actually rendered as images, or with the Text
+  Sizing Protocol
+- Image previews with multiple graphics protocols
+- Pager with basic unix-page and Vi-style keybindings
+- Search
+- Links: opens URLs with xdg-open or equivalent command.
+- Syntax highlighting in codeblocks with arborium
+- Mermaid diagram rendering via internal renderer or external mermaid-cli
+  command
+- Experimental PDF support.
+- Theme configuration support

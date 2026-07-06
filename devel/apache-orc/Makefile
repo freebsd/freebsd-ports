@@ -22,7 +22,9 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		libprotobuf.so:devel/protobuf \
 		libabsl_demangle_internal.so:devel/abseil
 
-USES=		cmake
+USES=		cmake cpe
+
+CPE_VENDOR=	apache
 
 CMAKE_ARGS+=	-DBUILD_JAVA=OFF \
 		-DZLIB_HOME="/usr" \

@@ -1,6 +1,6 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2026-04-09 06:05:42 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
-@@ -137,7 +137,7 @@ namespace {
+@@ -138,7 +138,7 @@ namespace {
  tab_groups::TabGroupSyncService* GetTabGroupSyncService(Profile* profile) {
    CHECK(profile);
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
    tab_groups::TabGroupSyncService* service =
        tab_groups::TabGroupSyncServiceFactory::GetForProfile(profile);
    CHECK(service);
-@@ -415,7 +415,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
+@@ -424,7 +424,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
    bool local_sync_backend_enabled = false;
    // Only check the local sync backend pref on the supported platforms of
    // Windows, Mac and Linux.

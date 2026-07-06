@@ -1,6 +1,6 @@
 PORTNAME=	imagick
 DISTVERSION=	3.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	000.fbsd@quip.cz
@@ -10,6 +10,7 @@ WWW=		https://pecl.php.net/package/imagick
 LICENSE=	PHP301
 
 USES=		cpe localbase magick php:pecl
+IGNORE_WITH_PHP=	86
 
 CPE_VENDOR=	php
 

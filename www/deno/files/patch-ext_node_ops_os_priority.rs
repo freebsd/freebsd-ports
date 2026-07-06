@@ -1,6 +1,6 @@
---- ext/node/ops/os/priority.rs.orig	2023-08-21 14:55:59 UTC
+--- ext/node/ops/os/priority.rs.orig	2026-07-01 13:28:43 UTC
 +++ ext/node/ops/os/priority.rs
-@@ -68,7 +68,7 @@ mod priority {
+@@ -26,7 +26,7 @@ mod impl_ {
      set_errno(Errno(0));
      match (
        // SAFETY: libc::getpriority is unsafe
@@ -8,10 +8,10 @@
 +      unsafe { libc::getpriority(PRIO_PROCESS, (pid as id_t).try_into().unwrap()) },
        errno(),
      ) {
-       (-1, Errno(0)) => Ok(PRIORITY_HIGH),
-@@ -79,7 +79,7 @@ mod priority {
- 
-   pub fn set_priority(pid: u32, priority: i32) -> Result<(), AnyError> {
+       (-1, Errno(0)) => Ok(-1),
+@@ -40,7 +40,7 @@ mod impl_ {
+     priority: i32,
+   ) -> Result<(), super::PriorityError> {
      // SAFETY: libc::setpriority is unsafe
 -    match unsafe { libc::setpriority(PRIO_PROCESS, pid as id_t, priority) } {
 +    match unsafe { libc::setpriority(PRIO_PROCESS, (pid as id_t).try_into().unwrap(), priority) } {

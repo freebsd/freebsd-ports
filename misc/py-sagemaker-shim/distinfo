@@ -1,3 +1,3 @@
-TIMESTAMP = 1778345469
-SHA256 (sagemaker_shim-0.7.0.tar.gz) = e1c545b8ed67c8fa7c4cd9d70a56399191b49614bc188358b73467298fccb8d1
-SIZE (sagemaker_shim-0.7.0.tar.gz) = 39100
+TIMESTAMP = 1781909186
+SHA256 (sagemaker_shim-0.8.1.tar.gz) = c69d32cc29d27fe312c58493328199af3ba2f86d84a3eefa1a9eda578ef7ce60
+SIZE (sagemaker_shim-0.8.1.tar.gz) = 40280

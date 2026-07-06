@@ -1,6 +1,11 @@
 --- CMakeLists.txt.orig	2013-12-11 17:36:43 UTC
 +++ CMakeLists.txt
-@@ -28,11 +28,9 @@ include_directories(
+@@ -24,15 +24,13 @@ include_directories(
+ set(SRC_DIR ${PROJECT_SOURCE_DIR}/src)
+ 
+ include_directories(
+-	${SDL_INCLUDE_DIR}
++	${SDL_INCLUDE_DIR}/..
  	${SDLTTF_INCLUDE_DIR}
  )
  

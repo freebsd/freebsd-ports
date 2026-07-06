@@ -21,6 +21,7 @@ RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.9:net-mgmt/icinga-php-lib
 USES=		php:web,flavors shebangfix
 # php json extension is required but it's statically linked in default php
 USE_PHP=	curl dom xml
+IGNORE_WITH_PHP=	86
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
@@ -42,6 +43,7 @@ OPTIONS_DEFAULT=	MYSQL PGSQL
 
 PDF_DESC=		Export graphs as PDF
 PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+PDF_VARS=		IGNORE_WITH_PHP=86
 
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
 MYSQL_USE=	PHP=mysqli,pdo_mysql

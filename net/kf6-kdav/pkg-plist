@@ -1,4 +1,5 @@
 include/KF6/KDAV/KDAV/DavCollection
+include/KF6/KDAV/KDAV/DavCollectionCreateJob
 include/KF6/KDAV/KDAV/DavCollectionDeleteJob
 include/KF6/KDAV/KDAV/DavCollectionModifyJob
 include/KF6/KDAV/KDAV/DavCollectionsFetchJob
@@ -19,6 +20,7 @@ include/KF6/KDAV/KDAV/Enums
 include/KF6/KDAV/KDAV/EtagCache
 include/KF6/KDAV/KDAV/ProtocolInfo
 include/KF6/KDAV/kdav/davcollection.h
+include/KF6/KDAV/kdav/davcollectioncreatejob.h
 include/KF6/KDAV/kdav/davcollectiondeletejob.h
 include/KF6/KDAV/kdav/davcollectionmodifyjob.h
 include/KF6/KDAV/kdav/davcollectionsfetchjob.h
@@ -93,6 +95,7 @@ share/locale/sr@latin/LC_MESSAGES/libkdav6.mo
 share/locale/sv/LC_MESSAGES/libkdav6.mo
 share/locale/ta/LC_MESSAGES/libkdav6.mo
 share/locale/tr/LC_MESSAGES/libkdav6.mo
+share/locale/ug/LC_MESSAGES/libkdav6.mo
 share/locale/uk/LC_MESSAGES/libkdav6.mo
 share/locale/zh_CN/LC_MESSAGES/libkdav6.mo
 share/locale/zh_TW/LC_MESSAGES/libkdav6.mo

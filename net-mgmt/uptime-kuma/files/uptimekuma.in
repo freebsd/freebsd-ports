@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# PROVIDE: uptimekuma
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# uptimekuma_enable (bool):        Set to NO by default.
+#                                  Set it to YES to enable uptimekuma.
+# uptimekuma_user (string):        User account to run as.
+#                                  Default is "%%USERS%%".
+# uptimekuma_group (string):       Group to run as.
+#                                  Default is "%%GROUPS%%".
+# uptimekuma_datadir (string):     Directory for application data and database.
+#                                  Default is "/var/db/uptime-kuma".
+# uptimekuma_host (string):        IP address to listen on.
+#                                  Default is "0.0.0.0".
+# uptimekuma_port (string):        TCP port to listen on.
+#                                  Default is "3001".
+# uptimekuma_options (string):     Additional command-line arguments appended
+#                                  after --data-dir.
+#                                  Default is "".
+# uptimekuma_errorlog (string):    Path for unexpected application errors.
+#                                  Default is
+#                                  "/var/log/uptime-kuma/error.log".
+# uptimekuma_env (string):         Additional environment variables.
+#                                  Defaults are typically required, so append.
+
+. /etc/rc.subr
+
+name="uptimekuma"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${uptimekuma_enable:="NO"}
+: ${uptimekuma_user:="%%USERS%%"}
+: ${uptimekuma_group:="%%GROUPS%%"}
+: ${uptimekuma_datadir:="/var/db/uptime-kuma"}
+: ${uptimekuma_host:="0.0.0.0"}
+: ${uptimekuma_port:="3001"}
+: ${uptimekuma_options:=""}
+: ${uptimekuma_errorlog:="/var/log/uptime-kuma/error.log"}
+: ${uptimekuma_env:="LC_ALL=en_US.UTF-8 PLAYWRIGHT_BROWSERS_PATH=/nonexistent"}
+
+logfile="/var/log/uptime-kuma/uptime-kuma.log"
+pidfile="/var/run/uptime-kuma/${name}.pid"
+
+procname="/usr/sbin/daemon"
+
+uptimekuma_chdir="%%WWWDIR%%"
+
+command="/usr/sbin/daemon"
+command_args="-H -r -f -o ${logfile} -P ${pidfile} -t ${name} \
+    /usr/bin/env ${uptimekuma_env} UPTIME_KUMA_ERROR_LOG=${uptimekuma_errorlog} \
+    /usr/local/bin/node %%WWWDIR%%/server/server.js \
+    --host=${uptimekuma_host} --port=${uptimekuma_port} \
+    --data-dir=${uptimekuma_datadir} ${uptimekuma_options}"
+
+start_precmd="${name}_precmd"
+
+uptimekuma_precmd()
+{
+    install -d -o ${uptimekuma_user} -g ${uptimekuma_group} ${uptimekuma_datadir}
+    install -d -o ${uptimekuma_user} -g ${uptimekuma_group} /var/run/uptime-kuma
+    install -d -o ${uptimekuma_user} -g ${uptimekuma_group} /var/log/uptime-kuma
+    install -d -o ${uptimekuma_user} -g ${uptimekuma_group} "$(dirname "${uptimekuma_errorlog}")"
+    install -o ${uptimekuma_user} -g ${uptimekuma_group} /dev/null ${pidfile}
+    touch ${logfile} ${uptimekuma_errorlog}
+    chown ${uptimekuma_user}:${uptimekuma_group} ${logfile} ${uptimekuma_errorlog}
+}
+
+run_rc_command "$1"

@@ -1,6 +1,5 @@
 PORTNAME=	openTSNE
-DISTVERSION=	1.0.2
-PORTREVISION=	2
+DISTVERSION=	1.0.4
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,12 +20,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.20:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang localbase:ldflags python
-USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/pavlin-policar/openTSNE/issues/237
+USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+# tests as of 1.0.4: 99 passed, 2 skipped
 
 .include <bsd.port.mk>

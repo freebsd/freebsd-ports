@@ -1,4 +1,4 @@
---- build/toolchain/gcc_toolchain.gni.orig	2026-05-07 17:02:56 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2026-07-01 06:24:19 UTC
 +++ build/toolchain/gcc_toolchain.gni
 @@ -46,6 +46,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
@@ -14,7 +14,20 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -927,22 +934,12 @@ template("gcc_toolchain") {
+@@ -407,8 +414,10 @@ template("single_gcc_toolchain") {
+         command = "cmd /s /c \"\"$python_path\" $tool_wrapper_path delete-file {{output}} && $command\""
+       } else {
+         command = "rm -f {{output}} && $command"
+-        inputs =
+-            [ get_path_info(rebase_path(ar, ".", root_out_dir), "abspath") ]
++        if (!is_bsd) {
++          inputs =
++              [ get_path_info(rebase_path(ar, ".", root_out_dir), "abspath") ]
++        }
+       }
+ 
+       # Almost all targets build with //build/config/compiler:thin_archive which
+@@ -998,22 +1007,12 @@ template("gcc_toolchain") {
  # actually just be doing a native compile.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {

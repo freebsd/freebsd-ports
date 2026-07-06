@@ -11,7 +11,8 @@ WWW=		https://github.com/mongodb/mongo-python-driver
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	mongodb
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	py[0-9][0-9]-pymongo28

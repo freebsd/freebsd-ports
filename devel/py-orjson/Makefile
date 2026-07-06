@@ -1,6 +1,6 @@
 PORTNAME=	orjson
 DISTVERSION=	3.11.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@
 		${PYTHON_PKGNAMEPREFIX}pytz>0,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xxhash>0:devel/py-xxhash@${PY_FLAVOR}
 
-USES=		cargo python
+USES=		cargo cpe python
+CPE_VENDOR=	ijl
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 CARGO_BUILD=	no

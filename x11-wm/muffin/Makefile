@@ -27,7 +27,8 @@ LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config \
 		zenity>0:x11/zenity
 
-USES=		compiler:c11 gettext-tools gl gnome localbase meson pkgconfig xorg
+USES=		compiler:c11 display:test gettext-tools gl gnome localbase meson \
+		pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint

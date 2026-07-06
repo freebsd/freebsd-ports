@@ -1,5 +1,5 @@
-TIMESTAMP = 1780279821
-SHA256 (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.10/v0.4.10.mod) = f16832a019e7ef97a6aeefd00d8698883c9fe20c02fdec63bd798438279e1391
-SIZE (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.10/v0.4.10.mod) = 733
-SHA256 (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.10/v0.4.10.zip) = 91128f8e4d24d2df6d609405b06887e1814a175381bddecee1aa878d4bde787f
-SIZE (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.10/v0.4.10.zip) = 33830
+TIMESTAMP = 1781146234
+SHA256 (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.11/v0.4.11.mod) = f16832a019e7ef97a6aeefd00d8698883c9fe20c02fdec63bd798438279e1391
+SIZE (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.11/v0.4.11.mod) = 733
+SHA256 (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.11/v0.4.11.zip) = 69e791c0a42d281e661feab1221650461f8e24002b7eb9fc2bac55f1ea7928f6
+SIZE (go/x11_nwg-dock-hyprland/nwg-dock-hyprland-v0.4.11/v0.4.11.zip) = 33877

@@ -92,7 +92,9 @@ include/wangle/ssl/TLSInMemoryTicketProcessor.h
 include/wangle/ssl/TLSTicketKeyManager.h
 include/wangle/ssl/TLSTicketKeySeeds.h
 include/wangle/util/FilePoller.h
+include/wangle/util/Logging.h
 include/wangle/util/MultiFilePoller.h
+include/wangle/wangle-config.h
 lib/cmake/wangle/wangle-config.cmake
 lib/cmake/wangle/wangle-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/wangle/wangle-targets.cmake

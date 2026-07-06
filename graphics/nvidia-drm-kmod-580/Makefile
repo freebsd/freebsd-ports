@@ -1,6 +1,6 @@
-DISTVERSION?=	580.159.04
+DISTVERSION?=	580.173.02
 # Explicitly set PORTREVISION as it can be overridden by the master port
-PORTREVISION=	1
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../nvidia-drm-kmod
 PKGNAMESUFFIX=	-580

@@ -49,7 +49,10 @@ ICU_DESC=	ICU
 
 7Z_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}py7zr>=0:archivers/py-py7zr@${PY_FLAVOR}
 CBR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rarfile>=0:archivers/py-rarfile@${PY_FLAVOR} \
-			rar>=0:archivers/rar
+			unrar:archivers/unrar \
+			${CBR_RUN_DEPENDS_${ARCH}}
+CBR_RUN_DEPENDS_amd64=	rar:archivers/rar
+CBR_RUN_DEPENDS_i386=	rar:archivers/rar-i386
 ICU_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyicu>=0:devel/py-pyicu@${PY_FLAVOR}
 
 .include <bsd.port.mk>

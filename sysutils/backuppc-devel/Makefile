@@ -24,8 +24,6 @@ BROKEN=		fails to build under qemu: uncaught target signal 11 (Segmetation fault
 
 CONFLICTS_INSTALL=	backuppc backuppc4
 
-CPE_VENDOR=	craig_barratt
-
 USE_GITHUB=	yes
 GH_TAGNAME=	174e707
 USE_PERL5=	extract

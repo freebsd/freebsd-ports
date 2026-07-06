@@ -1,4 +1,4 @@
---- media/media_options.gni.orig	2026-05-07 17:02:56 UTC
+--- media/media_options.gni.orig	2026-07-01 06:24:19 UTC
 +++ media/media_options.gni
 @@ -209,12 +209,15 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
@@ -14,6 +14,6 @@
    # desktop Chromecast builds.
 -  if (is_posix && !is_android && !is_apple &&
 +  if (is_posix && !is_android && !is_apple && !is_bsd &&
-       (!is_castos || (target_cpu == "x86" || target_cpu == "x64") ||
-        is_cast_audio_only)) {
+       (!is_castos || (target_cpu == "x86" || target_cpu == "x64"))) {
      use_alsa = true
+ 

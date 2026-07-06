@@ -1,5 +1,6 @@
 PORTNAME=	libssh2
 DISTVERSION=	1.11.1
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
@@ -7,7 +8,8 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 
 PATCH_SITES=	https://github.com/libssh2/libssh2/commit/
 PATCHFILES=	5d03b4f94ac6740e0085a6acda6fc417ca6ecc83.patch:-p1 \
-		d4e43c7b69d10b6cfaaa53787addfd4beac7a3ce.patch:-p1
+		d4e43c7b69d10b6cfaaa53787addfd4beac7a3ce.patch:-p1 \
+		256d04b60d80bf1190e96b0ad1e91b2174d744b1.patch:-p1
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol

@@ -19,7 +19,6 @@ share/icons/oxygen/64x64/apps/kollision.png
 %%DATADIR%%/themes/default.svgz
 share/locale/ar/LC_MESSAGES/kollision.mo
 share/locale/ast/LC_MESSAGES/kollision.mo
-share/locale/bg/LC_MESSAGES/kollision.mo
 share/locale/bs/LC_MESSAGES/kollision.mo
 share/locale/ca/LC_MESSAGES/kollision.mo
 share/locale/ca@valencia/LC_MESSAGES/kollision.mo

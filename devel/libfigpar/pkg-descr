@@ -1,0 +1,6 @@
+The figpar library provides a light-weight, portable framework for
+parsing configuration files.
+
+Due to the fact that configuration files may have basic syntax
+differences, the library does not attempt to impose any structure on the
+data but instead provides raw data to a set of callback functions.

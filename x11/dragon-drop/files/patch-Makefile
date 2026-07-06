@@ -1,0 +1,12 @@
+--- Makefile.orig	2022-03-05 21:12:27 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-PREFIX = $(HOME)/.local
+-MANPREFIX = $(PREFIX)/share/man
+-NAME = dragon
++PREFIX ?= $(HOME)/.local
++MANPREFIX ?= $(PREFIX)/share/man
++NAME ?= dragon
+ 
+ all: $(NAME)
+ 

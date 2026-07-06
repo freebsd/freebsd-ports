@@ -2,8 +2,8 @@ PORTNAME=	kcalendarcore
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	net kde kde-frameworks
 
-COMMENT=	Provides access to and handling of calendar data
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Provides access to and handling of calendar data
 
 LIB_DEPENDS=	libical.so:devel/libical
 

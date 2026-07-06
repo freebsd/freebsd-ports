@@ -1,7 +1,6 @@
 PORTNAME=	onnx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.1
-PORTREVISION=	2
+DISTVERSION=	1.22.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,8 +32,8 @@ post-install:
 post-test:
 	cd ${BUILD_WRKSRC} && ./onnx_gtests
 
-# tests as of 1.19.1: (NOTE: tests require static build, so the CMAKE_ON=BUILD_SHARED_LIBS needs to be commented out)
-# [==========] 95 tests from 13 test suites ran. (18 ms total)
-# [  PASSED  ] 95 tests.
+# tests as of 1.22.0:
+# [==========] 100 tests from 15 test suites ran. (42 ms total)
+# [  PASSED  ] 100 tests.
 
 .include <bsd.port.mk>

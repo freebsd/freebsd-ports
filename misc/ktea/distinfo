@@ -1,0 +1,5 @@
+TIMESTAMP = 1781198343
+SHA256 (go/misc_ktea/ktea-v0.8.0/v0.8.0.mod) = 6ce3a915e95d6659338d4ece3066258aaa482068e0451594148ae4fa1d0da10b
+SIZE (go/misc_ktea/ktea-v0.8.0/v0.8.0.mod) = 13812
+SHA256 (go/misc_ktea/ktea-v0.8.0/v0.8.0.zip) = 052bf00dc43609732626f39e677770b9082f89e427d7a9cbc1b662d0cb00a3ad
+SIZE (go/misc_ktea/ktea-v0.8.0/v0.8.0.zip) = 1198986

@@ -1,6 +1,6 @@
 PORTNAME=	gram
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://codeberg.org/GramEditor/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/:main
 PKGNAMESUFFIX=	-text-editor

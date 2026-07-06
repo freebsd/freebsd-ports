@@ -1,0 +1,18 @@
+--- Makefile.orig	2026-05-27 13:41:12 UTC
++++ Makefile
+@@ -1,6 +1,3 @@
+-BUILD_DATE ?= $(shell date "+%Y/%m/%d")
+-PKG_VER=$(shell if [ -f debian/changelog ]; then grep rpiboot debian/changelog | head -n1 | sed 's/.*(\(.*\)).*/\1/g'; else echo local; fi)
+-GIT_VER=$(shell git rev-parse HEAD 2>/dev/null | cut -c1-8 || echo "")
+ HAVE_XXD=$(shell xxd -v >/dev/null 2>/dev/null && echo y)
+ INSTALL_PREFIX?=/usr
+ ifeq ($(OS),Windows_NT)
+@@ -10,7 +7,7 @@ rpiboot: main.c bootfiles.c decode_duid.c fmemopen.c m
+ endif
+ 
+ rpiboot: main.c bootfiles.c decode_duid.c fmemopen.c msd/bootcode.h msd/start.h msd/bootcode4.h
+-	$(CC) -Wall -Wextra -g $(CPPFLAGS) $(CFLAGS) -o $@ main.c bootfiles.c decode_duid.c `pkg-config --cflags --libs libusb-1.0` -DGIT_VER="\"$(GIT_VER)\"" -DPKG_VER="\"$(PKG_VER)\"" -DBUILD_DATE="\"$(BUILD_DATE)\"" -DDEFAULT_MSG_DIR=\"$(DEFAULT_MSG_DIR)\" $(LDFLAGS)
++	$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ main.c bootfiles.c decode_duid.c `pkg-config --cflags --libs libusb-1.0` -DPKG_VER="\"$(PKG_VER)\"" -DDEFAULT_MSG_DIR=\"$(DEFAULT_MSG_DIR)\" $(LDFLAGS)
+ 
+ ifeq ($(HAVE_XXD),y)
+ %.h: %.bin

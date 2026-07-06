@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-nan
 PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pub.ista.ac.at/~schloegl/matlab/NaN/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}

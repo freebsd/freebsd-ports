@@ -1,7 +1,7 @@
 PORTNAME=	limnoria
-PORTVERSION=	2021.11.18
-PORTREVISION=	3
+DISTVERSION=	2021.11.20
 CATEGORIES=	irc python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://github.com/ProgVal/Limnoria
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
@@ -19,11 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${PY_F
 
 USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
-USE_GITHUB=	yes
-GH_ACCOUNT=	ProgVal
-GH_PROJECT=	Limnoria
-GH_TAGNAME=	master-2021-11-18
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

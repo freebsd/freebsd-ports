@@ -1,6 +1,6 @@
---- runtime/ops/tty.rs.orig	2020-12-14 21:25:05 UTC
+--- runtime/ops/tty.rs.orig	2026-07-01 13:28:43 UTC
 +++ runtime/ops/tty.rs
-@@ -316,7 +316,7 @@ fn console_size_from_fd(
+@@ -424,7 +424,7 @@ fn console_size_from_fd(
    // SAFETY: libc calls
    unsafe {
      let mut size: libc::winsize = std::mem::zeroed();

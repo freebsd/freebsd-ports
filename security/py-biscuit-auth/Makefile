@@ -1,5 +1,6 @@
 PORTNAME=       biscuit-auth
 DISTVERSION=    0.4.0
+PORTREVISION=	1
 CATEGORIES=     security python
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 

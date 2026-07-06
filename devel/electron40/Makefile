@@ -33,7 +33,7 @@ BUILD_DEPENDS=	esbuild:devel/esbuild \
 		gperf:devel/gperf \
 		bindgen:devel/rust-bindgen-cli \
 		yasm:devel/yasm \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
 		rustc:lang/rust \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION} \
@@ -69,10 +69,10 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	git:devel/git \
 		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR}
 
-USES=		bison compiler:c++17-lang cpe display:test electron:env \
-		gettext-tools gl gmake gnome iconv:wchar_t jpeg \
-		localbase:ldflags ninja nodejs:24,build pkgconfig \
-		python:build,test qt:5 shebangfix tar:xz xorg
+USES=		bison compiler:c++17-lang cpe display:test gettext-tools gl \
+		gmake gnome iconv:wchar_t jpeg localbase:ldflags ninja \
+		nodejs:24,build npm:yarn4 pkgconfig python:build,test qt:5 \
+		shebangfix tar:xz xorg
 
 CPE_VENDOR=	electronjs
 USE_GITHUB=	yes
@@ -88,7 +88,6 @@ USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
 		xrender xscrnsaver xtst
 USE_QT=		buildtools:build core:build widgets:build
-USE_ELECTRON=	npm:yarn4 prefetch extract
 NPM_EXTRACT_WRKSRC=	${WRKSRC:H}/${PORTNAME}-${ELECTRON_VER}
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
@@ -303,7 +302,7 @@ pre-extract:
 	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.? > \
 		${WRKSRC:H}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}
 	@cd ${WRKSRC:H} && \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	${SETENV} ${EXTRACT_ENV} ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		chromium-${CHROMIUM_VER}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 post-extract:

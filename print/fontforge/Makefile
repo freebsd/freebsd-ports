@@ -121,5 +121,6 @@ post-patch-FREETYPE-on:
 post-stage-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo \
 		${STAGEDIR}${DOCSDIR}/.nojekyll
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/_sources
 
 .include <bsd.port.mk>

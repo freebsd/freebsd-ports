@@ -1,5 +1,5 @@
 PORTNAME=	BibTeX-Parser
-PORTVERSION=	1.93
+PORTVERSION=	1.95
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BORISV
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \
 		p5-LaTeX-ToUnicode>=0.11:textproc/p5-LaTeX-ToUnicode
+TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=0:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure

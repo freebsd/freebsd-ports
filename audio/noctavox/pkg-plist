@@ -2,10 +2,29 @@ bin/noctavox
 bin/vox
 %%PORTDOCS%%%%DOCSDIR%%/header.gif
 %%PORTDOCS%%%%DOCSDIR%%/keymaps.md
+%%PORTDOCS%%%%DOCSDIR%%/readme.md
 %%PORTDOCS%%%%DOCSDIR%%/themes.md
+%%PORTDOCS%%%%DOCSDIR%%/themes.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/3024.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Alucard [Light].toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Ayu Dark.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Ayu Mirage.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Bumblebee.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Catppuccin Latte [Light].toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Catppuccin Mocha.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Cherry Blossom [Light].toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Dracula.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Everforest Dark.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Gruvbox [No borders].toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Kanagawa.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Monokai Classic.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Monokai Pro.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Monokai Vivid.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Noctavox Classic.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Noctavox Transparent.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Nord Mist.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Rose Pine.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Soft Light.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Solarized Dark.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Synthwave 84.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Tokyo Night.toml

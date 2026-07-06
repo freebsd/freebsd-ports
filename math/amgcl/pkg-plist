@@ -18,6 +18,7 @@ include/amgcl/backend/detail/default_direct_solver.hpp
 include/amgcl/backend/detail/matrix_ops.hpp
 include/amgcl/backend/detail/mixing.hpp
 include/amgcl/backend/eigen.hpp
+include/amgcl/backend/hip.hpp
 include/amgcl/backend/hpx.hpp
 include/amgcl/backend/interface.hpp
 include/amgcl/backend/mkl.hpp
@@ -113,6 +114,7 @@ include/amgcl/relaxation/ilu0_chow_patel.hpp
 include/amgcl/relaxation/iluk.hpp
 include/amgcl/relaxation/ilup.hpp
 include/amgcl/relaxation/ilut.hpp
+include/amgcl/relaxation/rocsparse_ilu0.hpp
 include/amgcl/relaxation/runtime.hpp
 include/amgcl/relaxation/spai0.hpp
 include/amgcl/relaxation/spai1.hpp

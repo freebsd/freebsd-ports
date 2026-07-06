@@ -1,6 +1,6 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.12
+DISTVERSION=	2.0.13
 PORTEPOCH=	2
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,6 +52,6 @@ PORTSCOUT=	limit:^1.* # 2.x is WIP and we don't accept it before qBittorrent doe
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_TAG}.so
 
-# tests as of 2.0.12: 2 passed in 3.28s
+# tests as of 2.0.13: 2 passed in 3.81s
 
 .include <bsd.port.mk>

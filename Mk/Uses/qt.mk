@@ -122,11 +122,6 @@ PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .    endif
 .  endfor
 
-# Suppress warnings from rcc about not using a UTF-8 locale.
-.  if ${_QT_VER:M6}
-USE_LOCALE?=		C.UTF-8
-.  endif
-
 CONFIGURE_ENV+=		QT_SELECT=${_QT_RELNAME}
 MAKE_ENV+=		QT_SELECT=${_QT_RELNAME}
 

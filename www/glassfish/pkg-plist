@@ -145,8 +145,8 @@
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-suntheme-6.0.3.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/faces-config.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/.gitkeep_empty_dir
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-commandrecorder-plugin-8.0.2.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-8.0.2.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-commandrecorder-plugin-%%VER%%.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-%%VER%%.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/sun-web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/index.jsf

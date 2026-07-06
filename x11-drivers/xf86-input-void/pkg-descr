@@ -1,1 +1,4 @@
-This package contains the X.Org xf86-input-void driver.
+Void is a dummy/null Xorg input driver. It doesn't connect to any
+physical device, and it never delivers any events. It functions as both
+a pointer and keyboard device, and may be used as X server's core
+pointer and/or core keyboard.

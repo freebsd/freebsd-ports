@@ -1,14 +1,14 @@
 PORTNAME=	xf86-input-void
-PORTVERSION=	1.4.1
-PORTREVISION=	6
+DISTVERSION=	1.4.2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org void input driver
-WWW=		https://www.x.org/
+COMMENT=	Null input driver for the Xorg X server
+WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-input-void
 
-USES=		xorg-cat:driver
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		tar:xz xorg-cat:driver
 
 .include <bsd.port.mk>

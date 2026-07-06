@@ -1,5 +1,6 @@
 PORTNAME=	openvox-strings
 PORTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	openvox-agent8>=7:sysutils/openvox-agent8 \
+		rubygem-irb>=0:devel/rubygem-irb \
 		rubygem-rgen>=0:devel/rubygem-rgen \
 		rubygem-yard>=0.9.5<0.10:textproc/rubygem-yard
 

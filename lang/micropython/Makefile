@@ -10,9 +10,6 @@ WWW=		https://www.micropython.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=	fails to assemble: error: invalid operand for instruction
-BROKEN_armv7=	fails to assemble: error: invalid operand for instruction
-
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		gmake pkgconfig python:,build
@@ -25,6 +22,9 @@ GH_TUPLE=	micropython:axtls:531cab9:axtls \
 
 MAKE_ARGS+=	CC=${CC} CPP="${CC} -E" V=1
 MAKE_ENV+=	CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS} -Wno-float-conversion" COPT=""
+
+# required for _Float16 support
+CFLAGS_i386=	-msse2
 
 # With aarch64 (QEMU) the float_parse and the float_parse_doubleprec tests
 # fail as they give a different output.

@@ -75,6 +75,7 @@
     SUBDIR += couriergraph
     SUBDIR += crm114
     SUBDIR += cvsmail
+    SUBDIR += cyrus-imapd
     SUBDIR += cyrus-imapd25
     SUBDIR += cyrus-imapd30
     SUBDIR += cyrus-imapd310
@@ -240,7 +241,6 @@
     SUBDIR += milter-regex
     SUBDIR += milter-skem
     SUBDIR += mime-construct
-    SUBDIR += mime4j
     SUBDIR += mimedefang
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
@@ -634,6 +634,7 @@
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-mini_mime
     SUBDIR += rubygem-net-imap
+    SUBDIR += rubygem-net-imap-gitlab
     SUBDIR += rubygem-net-pop
     SUBDIR += rubygem-net-smtp
     SUBDIR += rubygem-pony
@@ -697,6 +698,7 @@
     SUBDIR += spampd
     SUBDIR += spamprobe
     SUBDIR += spamstats
+    SUBDIR += spf-tools
     SUBDIR += spfmilter
     SUBDIR += spfval
     SUBDIR += spmfilter

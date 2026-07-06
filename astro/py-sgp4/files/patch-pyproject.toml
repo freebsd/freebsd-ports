@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-07-03 12:46:43 UTC
++++ pyproject.toml
+@@ -10,8 +10,7 @@ readme = "README.rst"
+ name = "sgp4"
+ description = "The C++ SGP4 routine that, given an Earth satellite TLE, computes its position."
+ readme = "README.rst"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ requires-python = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,!=3.8.*,!=3.9.*"
+ dynamic = ["version", "authors", "dependencies", "classifiers"]
+ 

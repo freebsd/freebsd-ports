@@ -1,10 +1,9 @@
 PORTNAME=	knotifyconfig
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Configuration system for KNotify
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Configuration system for KNotify
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 

@@ -1,0 +1,10 @@
+--- DESCRIPTION.orig	2026-02-24 08:20:02 UTC
++++ DESCRIPTION
+@@ -23,6 +23,7 @@ Copyright: See file COPYRIGHTS
+ Description: Provides comprehensive functionality to read, write and format Excel data.
+ License: GPL-3
+ Copyright: See file COPYRIGHTS
++Encoding: UTF-8
+ LazyData: yes
+ Config/testthat/edition: 3
+ NeedsCompilation: no

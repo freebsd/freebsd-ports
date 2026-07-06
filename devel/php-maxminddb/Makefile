@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 USES=		compiler:c11 localbase:ldflags php:ext
+IGNORE_WITH_PHP=	86
 
 WRKSRC_SUBDIR=	ext
 

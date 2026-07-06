@@ -1,6 +1,6 @@
 PORTNAME=	cfengine
 DISTVERSION=	3.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}
@@ -48,7 +48,7 @@ INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libpcre2-posix.so:devel/pcre2 \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libyaml.so:textproc/libyaml \
 		libcurl.so:ftp/curl
 

@@ -1,1 +1,7 @@
-TUI for managing XDG default applications
+TUI for managing XDG default applications.
+View and set defaults for file categories without using xdg-mime directly.
+Built with C using GLib/GIO and termbox2.
+
+Features:
+ - Browse by category (Browsers, Text Editors, etc.)
+ - Current default marked with *

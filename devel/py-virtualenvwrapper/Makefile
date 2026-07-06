@@ -9,6 +9,10 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Enhancements to virtualenv
 WWW=		https://virtualenvwrapper.readthedocs.io/
 
+BROKEN=		outdated, does not support modern Python stack
+DEPRECATED=	Fails to build with sphinx-9.0.4, does not support Python 3.12
+EXPIRATION_DATE=	2026-07-31
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

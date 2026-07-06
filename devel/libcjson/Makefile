@@ -1,6 +1,7 @@
 PORTNAME=	libcjson
 PORTVERSION=	1.7.19
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/DaveGamble/cJSON
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c11
+USES=		cmake:testing cpe compiler:c11
 
 CMAKE_OFF=	CJSON_OVERRIDE_BUILD_SHARED_LIBS \
 		ENABLE_CJSON_TEST \
@@ -38,5 +39,9 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	DaveGamble
 GH_PROJECT=	cJSON
+GH_TAGNAME=	fb16e5c
+
+CPE_VENDOR=	davegamble
+CPE_PRODUCT=	cjson
 
 .include <bsd.port.mk>

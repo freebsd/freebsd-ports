@@ -1,7 +1,7 @@
---- components/device_signals/core/common/signals_features.h.orig	2026-05-09 18:09:27 UTC
+--- components/device_signals/core/common/signals_features.h.orig	2026-06-05 13:45:06 UTC
 +++ components/device_signals/core/common/signals_features.h
-@@ -36,7 +36,7 @@ bool IsDetectedAgentSignalCollectionEnabled();
- bool IsPolicyDataCollectionEnabled();
+@@ -42,7 +42,7 @@ bool IsCertificateCollectionEnabled();
+ bool IsContentBindingVersioningEnabled();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

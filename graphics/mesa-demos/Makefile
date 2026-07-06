@@ -1,7 +1,7 @@
 PORTNAME=	mesa-demos
-PORTVERSION=	8.5.0
+PORTVERSION=	9.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://mesa.freedesktop.org/archive/demos/${PORTVERSION}/ \
+MASTER_SITES=	https://mesa.freedesktop.org/archive/demos/ \
 		ftp://ftp.freedesktop.org/pub/mesa/demos/ #${PORTVERSION}/
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,9 +12,15 @@ LICENSE=	MIT
 
 CONFLICTS_INSTALL=	glx-utils
 
-USES=		gl localbase meson pkgconfig tar:bzip2 xorg
+BUILD_DEPENDS=	glslangValidator:graphics/glslang \
+		vulkan-headers>0:graphics/vulkan-headers
+
+LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
+		libxkbcommon.so:x11/libxkbcommon
+
+USES=		gl localbase meson pkgconfig tar:xz xorg
 USE_GL=		egl gl glesv2 glu glut
-USE_XORG=	xorgproto x11 xdamage xext xfixes xi xxf86vm
+USE_XORG=	xcb xorgproto x11 xdamage xext xfixes xi xxf86vm
 
 MESON_ARGS+=	-Dwith-glut=${LOCALBASE} \
 		-Dgles1=disabled \

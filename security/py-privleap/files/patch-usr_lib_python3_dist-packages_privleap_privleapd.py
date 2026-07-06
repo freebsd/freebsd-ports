@@ -1,4 +1,4 @@
---- usr/lib/python3/dist-packages/privleap/privleapd.py.orig	2026-05-24 19:41:39 UTC
+--- usr/lib/python3/dist-packages/privleap/privleapd.py.orig	2026-07-03 19:48:15 UTC
 +++ usr/lib/python3/dist-packages/privleap/privleapd.py
 @@ -28,8 +28,6 @@ from dataclasses import dataclass
  from typing import cast, SupportsIndex, NoReturn, Any, IO
@@ -33,7 +33,7 @@
      action_process: subprocess.Popen[bytes] = subprocess.Popen(
          [
 -            "/usr/libexec/privleap/shim.py",
-+            "/usr/local/libexec/privleap/shim.py",
++            f"{sys.prefix}/libexec/privleap/shim.py",
              calling_user,
              target_user,
              target_group,
@@ -114,12 +114,12 @@
                  if ready_sock_info_obj.listen_socket.socket_type == (
                      PrivleapSocketType.CONTROL
                  ):
-@@ -1799,8 +1790,6 @@ def main() -> NoReturn:
-     populate_state_dir()
-     open_control_socket()
-     open_persistent_comm_sockets(in_control_thread=False)
+@@ -1804,8 +1795,6 @@ def main() -> NoReturn:
+         target=control_handler_loop, daemon=True
+     )
+     control_handler_thread.start()
 -    PrivleapdGlobal.sdnotify_object.notify("READY=1")
 -    PrivleapdGlobal.sdnotify_object.notify("STATUS=Fully started")
      if PrivleapdGlobal.test_mode:
          Path("/tmp/privleapd-ready-for-test").touch()
-     control_handler_thread: Thread = Thread(
+     main_loop()

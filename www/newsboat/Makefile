@@ -1,9 +1,8 @@
 PORTNAME=	newsboat
-DISTVERSION=	2.42
-PORTREVISION=	3
+DISTVERSION=	2.44
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${DISTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mt-bugs@markoturk.info
 COMMENT=	RSS feed reader for the text console

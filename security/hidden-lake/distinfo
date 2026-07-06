@@ -1,5 +1,5 @@
-TIMESTAMP = 1779979727
-SHA256 (go/security_hidden-lake/hidden-lake-v1.11.1/v1.11.1.mod) = ab7010f149e988c52ca5b9890e7eacb490c80f17e111adb2b1f5994c2b13c976
-SIZE (go/security_hidden-lake/hidden-lake-v1.11.1/v1.11.1.mod) = 311
-SHA256 (go/security_hidden-lake/hidden-lake-v1.11.1/v1.11.1.zip) = cbd17b7ae479d78dd8e94c1271ecae9d45adb972b5e716c0c7cdb47a3630dc57
-SIZE (go/security_hidden-lake/hidden-lake-v1.11.1/v1.11.1.zip) = 8192059
+TIMESTAMP = 1780774642
+SHA256 (go/security_hidden-lake/hidden-lake-v1.11.2/v1.11.2.mod) = 6fd501a86a9483fc1162b0064d4124187c7786f9992771c4df932cee5f788432
+SIZE (go/security_hidden-lake/hidden-lake-v1.11.2/v1.11.2.mod) = 311
+SHA256 (go/security_hidden-lake/hidden-lake-v1.11.2/v1.11.2.zip) = 817a993ce58b688059ea527355557341272e3619293bb15e8e7ba1c4aec18025
+SIZE (go/security_hidden-lake/hidden-lake-v1.11.2/v1.11.2.zip) = 8280672

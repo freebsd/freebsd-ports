@@ -1,5 +1,5 @@
 PORTNAME=	mcp-inspector
-DISTVERSION=	0.21.2
+DISTVERSION=	0.22.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 

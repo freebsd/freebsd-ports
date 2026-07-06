@@ -1,6 +1,6 @@
 PORTNAME=	libdicom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.3.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,8 +22,10 @@ GH_ACCOUNT=	ImagingDataCommons
 MESON_ARGS=	-Dtests=false
 
 do-test:
-	@cd ${WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --reconfigure ${CONFIGURE_ARGS} -Dtests=true && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} test
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} configure . -Dtests=true && \
+		${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_ARGS} meson-test-prereq test
+
+# tests as of 1.3.0: Ok: 1, Fail: 0
 
 .include <bsd.port.mk>

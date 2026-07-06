@@ -1,6 +1,6 @@
 PORTNAME=	pinentry
-PORTVERSION=	1.3.2
-PORTREVISION?=	2
+PORTVERSION=	1.3.3
+PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
@@ -36,7 +36,7 @@ NCURSES_RUN_DEPENDS=	${PINENTRY_NCURSES}:security/pinentry-curses
 EFL_DESC=	EFL frontend
 PINENTRY_EFL=	pinentry-efl
 # Due to a dependency loop that exists between security/pinentry-efl,
-# devel/elf, graphics/poppler, security/gpgmepp, security/gpgme,
+# devel/efl, graphics/poppler, security/gpgmepp, security/gpgme,
 # security/gnupg and security/pinentry, the user must install
 # pinentry-efl manually. See pkg-message.dep-loop for more details.
 #EFL_RUN_DEPENDS=	${PINENTRY_EFL}:security/pinentry-efl
@@ -62,13 +62,7 @@ QT6_RUN_DEPENDS=	${PINENTRY_QT6}:security/pinentry-qt6
 
 GNOME_DESC=	GNOME frontend
 PINENTRY_GNOME=	pinentry-gnome3
-# Due to a dependency loop that exists between security/pinentry-gnome,
-# security/gcr, security/gnupg and security/pinentry, the user must install
-# pinentry-gnome manually. See pkg-message.dep-loop for more details.
-#GNOME_RUN_DEPENDS=	${PINENTRY_GNOME}:security/pinentry-gnome
-GNOME_SUB_FILES=pkg-message.dep-loop
-GNOME_SUB_LIST=	PKGNAME="pinentry-gnome"
-GNOME_VARS=	PKGMESSAGE+=${WRKDIR}/pkg-message.dep-loop
+GNOME_RUN_DEPENDS=	${PINENTRY_GNOME}:security/pinentry-gnome
 
 .include <bsd.port.options.mk>
 
@@ -94,7 +88,7 @@ LDFLAGS+=	-Wl,--as-needed
 
 OPTIONS_DEFINE=	LIBSECRET
 
-LIBSECRET_DESC=	Saving the passphrase with libsecret
+LIBSECRET_DESC=	Store passphrases with libsecret
 LIBSECRET_CONFIGURE_ENABLE=	libsecret
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_USES=		gnome
@@ -102,7 +96,7 @@ LIBSECRET_USE=		GNOME=glib20
 
 .if ${PINENTRY_GUI} == "gnome"
 OPTIONS_SLAVE=	LIBSECRET
-LIB_DEPENDS+=	libgcr-base-3.so:security/gcr3
+LIB_DEPENDS+=	libgcr-4.so:security/gcr
 PLIST_FILES=	bin/pinentry-gnome3
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gnome3

@@ -9,5 +9,6 @@ WWW=		https://pecl.php.net/package/opentelemetry
 LICENSE=	APACHE20
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

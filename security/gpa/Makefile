@@ -10,11 +10,11 @@ WWW=		https://www.gnupg.org/software/gpa/index.html
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gpgv2:security/gnupg
+BUILD_DEPENDS=	gnupg>=2.5.20:security/gnupg
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpg-error.so:security/libgpg-error
-RUN_DEPENDS=	gpgv2:security/gnupg
+RUN_DEPENDS=	gnupg>=2.5.20:security/gnupg
 
 USES=		desktop-file-utils gmake gnome localbase pkgconfig tar:bzip2
 USE_GNOME=	gdkpixbuf gtk30

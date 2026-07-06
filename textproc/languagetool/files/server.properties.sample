@@ -1,0 +1,20 @@
+# Configuration for the LanguageTool HTTP server.
+# See https://dev.languagetool.org/http-server for all options.
+
+# Uncomment to enable n-gram data for improved confused-word detection.
+# Download per-language data sets from
+# https://languagetool.org/download/ngram-data/ and unpack them into
+# per-language subdirectories (e.g. ngrams/en, ngrams/it).
+#languageModel=/var/db/languagetool/ngrams
+
+# Uncomment to enable fastText-based automatic language detection.
+#fasttextModel=/path/to/lid.176.bin
+#fasttextBinary=/usr/local/bin/fasttext
+
+# Limit maximum text length per check request (characters).
+maxTextLength=50000
+
+# Abort a single check that runs longer than this (milliseconds).
+# Guards against pathological requests (e.g. very long sentences)
+# exhausting the Java heap.
+maxCheckTimeMillis=60000

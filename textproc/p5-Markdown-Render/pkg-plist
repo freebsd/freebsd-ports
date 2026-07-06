@@ -1,3 +1,4 @@
 bin/md-utils.pl
 %%SITE_PERL%%/Markdown/Render.pm
+%%PERL5_MAN1%%/md-utils.1.gz
 %%PERL5_MAN3%%/Markdown::Render.3.gz

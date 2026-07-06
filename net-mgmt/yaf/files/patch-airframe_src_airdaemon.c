@@ -1,6 +1,6 @@
---- airframe/src/airdaemon.c.orig	2023-02-08 18:37:15 UTC
+--- airframe/src/airdaemon.c.orig	2026-03-19 20:13:51 UTC
 +++ airframe/src/airdaemon.c
-@@ -61,6 +61,10 @@
+@@ -43,6 +43,10 @@
  #include <airframe/airopt.h>
  #include <airframe/logconfig.h>
  

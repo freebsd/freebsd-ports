@@ -13,6 +13,8 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ckormanyos
 
+NO_ARCH=	yes
+
 PLIST_FILES=	include/math/wide_integer/uintwide_t.h \
 		lib/cmake/wide-integer/WideIntegerConfig.cmake
 

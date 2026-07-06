@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-02-26 18:25:49 UTC
++++ pyproject.toml
+@@ -21,8 +21,6 @@ readme = "README.md"
+ authors = [{ name = "Apache Software Foundation", email = "dev@iceberg.apache.org" }]
+ requires-python = ">=3.10.0,<4.0.0"
+ readme = "README.md"
+-license = "Apache-2.0"
+-license-files = ["LICENSE", "NOTICE"]
+ classifiers = [
+     "Operating System :: OS Independent",
+     "Programming Language :: Python :: 3.10",
+@@ -146,7 +144,7 @@ default-groups = [
+ ]
+ 
+ [build-system]
+-requires = ["setuptools>=80", "wheel", "Cython>=3.0.0"]
++requires = ["setuptools", "wheel", "Cython>=3.0.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.pytest.ini_options]

@@ -1,5 +1,5 @@
 PORTNAME=	pipe-viewer
-DISTVERSION=	0.5.7
+DISTVERSION=	0.5.8
 CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	dtxdf@FreeBSD.org

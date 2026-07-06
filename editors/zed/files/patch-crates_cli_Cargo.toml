@@ -1,6 +1,6 @@
---- crates/cli/Cargo.toml.orig	2026-05-13 17:09:47 UTC
+--- crates/cli/Cargo.toml.orig	2026-07-01 15:07:44 UTC
 +++ crates/cli/Cargo.toml
-@@ -27,7 +27,7 @@ dialoguer.workspace = true
+@@ -29,7 +29,7 @@ dialoguer.workspace = true
  collections.workspace = true
  console.workspace = true
  dialoguer.workspace = true

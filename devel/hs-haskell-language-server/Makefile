@@ -31,8 +31,6 @@ GHC_VERSION=	9.8.4
 
 USES=		cabal
 
-USE_LOCALE=	C.UTF-8
-
 .for flavor in ${FLAVORS}
 .	include "Makefile.cabal.${flavor}"
 .endfor

@@ -1,5 +1,6 @@
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.17.0
+PORTREVISION=	1
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -18,7 +19,7 @@ ONLY_FOR_ARCHS_REASON= deflate.c:149:2: error: "Only 64-bit Intel and ARM archit
 
 BUILD_DEPENDS=	grpc>0:devel/grpc
 LIB_DEPENDS=	libdw.so:devel/elfutils \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		liblzo2.so:archivers/lzo2 \
 		libnghttp2.so:www/libnghttp2 \
 		libpcre2-8.so:devel/pcre2 \

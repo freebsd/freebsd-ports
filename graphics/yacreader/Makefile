@@ -1,6 +1,5 @@
 PORTNAME=	yacreader
-DISTVERSION=	10.0.0
-PORTREVISION=	1
+DISTVERSION=	10.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/YACReader/${PORTNAME}/releases/download/${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.xz
@@ -29,6 +28,7 @@ ARCHIVE_DESC=		libarchive instead of unarr for reading compressed formats
 ARCHIVE_LIB_DEPENDS_OFF=libunarr.so:archivers/unarr
 ARCHIVE_USES=		libarchive
 ARCHIVE_CMAKE_ON=	-DDECOMPRESSION_BACKEND=libarchive
+ARCHIVE_CMAKE_OFF=	-DDECOMPRESSION_BACKEND=unarr
 
 POPPLER_LIB_DEPENDS=	libpoppler-qt6.so:graphics/poppler-qt6
 POPPLER_CMAKE_OFF=	-DPDF_BACKEND=no_pdf

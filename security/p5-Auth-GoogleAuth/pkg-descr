@@ -1,0 +1,6 @@
+Auth::GoogleAuth is a Perl module providing an abstraction for the TOTP
+(Time-based One-Time Password) algorithm as used by Google Authenticator
+and compatible applications (RFC 6238).
+
+It supports generating and verifying TOTP codes, producing otpauth:// URIs,
+and generating QR code URLs suitable for enrollment in authenticator apps.

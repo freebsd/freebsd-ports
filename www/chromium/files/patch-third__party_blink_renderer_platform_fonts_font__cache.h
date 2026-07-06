@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2026-02-11 09:05:39 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2026-07-01 06:24:19 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -53,7 +53,7 @@
+@@ -54,7 +54,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
@@ -9,7 +9,7 @@
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -150,7 +150,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -148,7 +148,7 @@ class PLATFORM_EXPORT FontCache final {
  
    static void MaybePreloadSystemFonts();
  

@@ -1,6 +1,6 @@
 PORTNAME=	lager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.3
 CATEGORIES=	devel
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	boost-libs>=0:devel/boost-libs \
+		cereal>=0:devel/cereal \
 		immer>=0:devel/immer \
 		zug>=0:devel/zug
 
@@ -39,5 +40,9 @@ TEST_CMAKE_BOOL=	lager_BUILD_TESTS
 TEST_ALL_TARGET=	install tests
 TEST_ALL_TARGET_OFF=	install
 TEST_TEST_TARGET=	test
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|(project\(.*VERSION )[0-9.]+|\1${DISTVERSION}|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	appstream-generator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/arrowd/:assets
 DISTFILES=	${_ASSETS_DISTNAME}${EXTRACT_SUFX}:assets
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libappstream-compose.so:devel/appstream-compose \
 		libCatch2.so:devel/catch2 \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libicuuc.so:devel/icu \
 		libtbb.so:devel/onetbb \
 		libfyaml.so:textproc/libfyaml

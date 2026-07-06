@@ -1,6 +1,6 @@
 PORTNAME=		cbqn
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.11.0
+DISTVERSION=		0.12.0
 CATEGORIES=		lang
 
 MAINTAINER=		siva@FreeBSD.org
@@ -23,8 +23,8 @@ GH_ACCOUNT=		dzaima
 GH_PROJECT=		CBQN
 GH_TUPLE=		dzaima:replxx:5e3bd870699007b9536d29f60e3a2b0a68ce0a7a:replxx/build/replxxLocal \
 			dzaima:cbqnBytecode:156b47caf895f6706811c5c34bbbbaf192b8018b:cbqnBytecode/build/bytecodeLocal \
-			mlochbaum:Singeli:2936c66b061b9df61cafc1f8d07a7ed53bf10bee:Singeli/build/singeliLocal \
-			mlochbaum:BQN:0ffb828ca19fe6f53463068fd92a0eb3776d62a4:mlochbaumBQN/test/mlochbaumBQN \
+			mlochbaum:Singeli:5187ed3aa22a2257b63c04a5498ec756fa6263cb:Singeli/build/singeliLocal \
+			mlochbaum:BQN:3d8f6876d9fb2a055e164137ab058ba70bffda1c:mlochbaumBQN/test/mlochbaumBQN
 
 MAKEFILE=		makefile
 ALL_TARGET=		default

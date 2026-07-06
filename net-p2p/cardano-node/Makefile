@@ -1,6 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	11.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96 \
 		protoc:devel/protobuf
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libsnappy.so:archivers/snappy
 RUN_DEPENDS=	${LOCALBASE}/share/rc-subr-jail/rc.subr.jail:ports-mgmt/rc-subr-jail
 

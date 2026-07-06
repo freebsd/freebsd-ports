@@ -1,5 +1,5 @@
 PORTNAME=	lzbench
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -22,8 +22,6 @@ post-patch:
 		${WRKSRC}/bench/lzbench.h
 	@${REINPLACE_CMD} -e 's,shell echo|$$(CC),& 2>/dev/null,' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^#if defined(__FreeBSD__)/,+1s,machine,sys,' \
-		${WRKSRC}/misc/kanzi-cpp/src/Memory.hpp
 	@${REINPLACE_CMD} -e '/^#if/s,defined(__aarch64__),& ||\
 		__riscv_xlen == 64,' ${WRKSRC}/lz/tornado/Common.h
 

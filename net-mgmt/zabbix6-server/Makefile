@@ -18,8 +18,13 @@ CONFLICTS_INSTALL=	${PORTNAME}[0-9]${PKGNAMESUFFIX} \
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 
+USES=		cpe
+
+CPE_PRODUCT?=	zabbix_server
+CPE_VENDOR=	zabbix
+
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
-USES=		iconv pkgconfig
+USES+=		iconv pkgconfig
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
 			--with-libevent=${LOCALBASE} \
@@ -140,7 +145,7 @@ SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 UNIXODBC_CONFIGURE_WITH=	unixodbc
 UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 .elif ${ZABBIX_BUILD} == "agent"
-OPTOINS_DEFINE+=		PCRE
+OPTIONS_DEFINE+=		PCRE
 OPTIONS_SINGLE+=		SSL
 OPTIONS_SINGLE_SSL=		GNUTLS OPENSSL
 .endif # if ${ZABBIX_BUILD} != "agent"

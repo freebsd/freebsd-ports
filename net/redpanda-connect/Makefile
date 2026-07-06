@@ -1,7 +1,6 @@
 PORTNAME=	connect
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.90.3
-PORTREVISION=	1
+DISTVERSION=	4.99.0
 CATEGORIES=	net
 PKGNAMEPREFIX=	redpanda-
 
@@ -26,6 +25,8 @@ GO_MODULE=	github.com/redpanda-data/connect/v4
 GO_TARGET=	./cmd/redpanda-connect
 
 ETCDIR=		${PREFIX}/etc/${PKGNAMEPREFIX}${PORTNAME}
+
+PORTSCOUT=	limit:^[0-9\.]*$$ # otherwise it picks up -rc prerelease tags
 
 # Redpanda Connect was formerly known as Benthos
 USERS=		benthos

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/SysRandom/XS.pm
+%%SITE_ARCH%%/auto/Crypt/SysRandom/XS/XS.so
+%%PERL5_MAN3%%/Crypt::SysRandom::XS.3.gz

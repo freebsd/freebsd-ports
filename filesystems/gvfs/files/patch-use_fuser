@@ -1,0 +1,128 @@
+diff --git a/meson.build b/meson.build
+index 04214bff..352ac3b3 100644
+--- meson.build
++++ meson.build
+@@ -343,6 +343,15 @@ if enable_udisks2
+   udisks2_dep = dependency('udisks2', version: '>= 1.97')
+ endif
+ 
++# *** Check which command should be used to check processes blocking umount ***
++busy_processes_command = get_option('busy_processes_command')
++config_h.set_quoted('BUSY_PROCESS_COMMAND', busy_processes_command)
++if busy_processes_command == 'lsof'
++  config_h.set('BUSY_PROCESS_SPAWN', '"lsof -t \"%s\""')
++elif busy_processes_command == 'fuser'
++  config_h.set('BUSY_PROCESS_SPAWN', '"fuser -m \"%s\""')
++endif
++
+ # *** Check for libsystemd-login ***
+ enable_logind = get_option('logind')
+ if enable_logind
+@@ -500,6 +509,7 @@ gnome.post_install(
+ )
+ 
+ summary({
++  'busy_processes_command': busy_processes_command,
+   'systemduserunitdir': systemd_systemduserunitdir,
+   'tmpfilesdir': systemd_tmpfilesdir,
+   'privileged_group': privileged_group,
+diff --git a/meson_options.txt b/meson_options.txt
+index c68fcf3c..60ca4935 100644
+--- meson_options.txt
++++ meson_options.txt
+@@ -1,3 +1,4 @@
++option('busy_processes_command', type: 'combo', choices: ['lsof', 'fuser'], value: 'lsof', description: 'Command used to detect processes blocking unmount')
+ option('systemduserunitdir', type: 'string', value: '', description: 'custom directory for systemd user units, or \'no\' to disable')
+ option('tmpfilesdir', type: 'string', value: '', description: 'custom directory for tmpfiles.d config files, or \'no\' to disable')
+ option('privileged_group', type: 'string', value: 'wheel', description: 'custom name for group that has elevated permissions')
+diff --git a/monitor/udisks2/gvfsudisks2mount.c b/monitor/udisks2/gvfsudisks2mount.c
+index 466ecabc..f3781406 100644
+--- monitor/udisks2/gvfsudisks2mount.c
++++ monitor/udisks2/gvfsudisks2mount.c
+@@ -648,9 +648,9 @@ on_mount_op_reply (GMountOperation       *mount_operation,
+ }
+ 
+ static void
+-lsof_command_cb (GObject       *source_object,
+-                 GAsyncResult  *res,
+-                 gpointer       user_data)
++busy_processes_command_cb (GObject       *source_object,
++                           GAsyncResult  *res,
++                           gpointer       user_data)
+ {
+   GTask *task = G_TASK (user_data);
+   UnmountData *data = g_task_get_task_data (task);
+@@ -671,15 +671,24 @@ lsof_command_cb (GObject       *source_object,
+                                         NULL, /* gchar **out_standard_error */
+                                         &error))
+     {
+-      g_printerr ("Error launching lsof(1): %s (%s, %d)\n",
+-                  error->message, g_quark_to_string (error->domain), error->code);
++      g_warning ("Error launching %s(1): %s (%s, %d)\n",
++                 BUSY_PROCESS_COMMAND,
++                 error->message,
++                 g_quark_to_string (error->domain),
++                 error->code);
+       g_error_free (error);
+       goto out;
+     }
+ 
+-  if (!(WIFEXITED (exit_status) && WEXITSTATUS (exit_status) == 0))
++  if (!WIFEXITED (exit_status))
+     {
+-      g_printerr ("lsof(1) did not exit normally\n");
++      g_warning ("%s(1) killed by signal %d\n", BUSY_PROCESS_COMMAND, WTERMSIG (exit_status));
++      goto out;
++    }
++  if (WEXITSTATUS (exit_status) != 0)
++    {
++      /* A non-zero exit is expected when no processes are using the mount */
++      g_debug ("%s(1) exited with status %d\n", BUSY_PROCESS_COMMAND, WEXITSTATUS (exit_status));
+       goto out;
+     }
+ 
+@@ -693,10 +702,16 @@ lsof_command_cb (GObject       *source_object,
+         break;
+ 
+       pid = strtol (p, &endp, 10);
+-      if (pid == 0 && p == endp)
+-        break;
++      if (p == endp)
++        {
++          /* strtol made no progress: skip one non-numeric character so the
++           * loop doesn't stall and subsequent PIDs are not lost. */
++          p++;
++          continue;
++        }
+ 
+-      g_array_append_val (processes, pid);
++      if (pid != 0)
++        g_array_append_val (processes, pid);
+ 
+       p = endp;
+     }
+@@ -711,9 +726,9 @@ lsof_command_cb (GObject       *source_object,
+       is_stop = unmount_operation_is_stop (data->mount_operation);
+ 
+       /* We want to emit the 'show-processes' signal even if launching
+-       * lsof(1) failed or if it didn't return any PIDs. This is because
+-       * it won't show e.g. root-owned processes operating on files
+-       * on the mount point.
++       * lsof(1) or fuser(1) failed or if it didn't return any PIDs. This
++       * is because it won't show e.g. root-owned processes operating on
++       * files on the mount point.
+        *
+        * (unfortunately there's no way to convey that it failed)
+        */
+@@ -779,9 +794,9 @@ unmount_show_busy (GTask        *task,
+   escaped_mount_point = g_strescape (mount_point, NULL);
+   gvfs_udisks2_utils_spawn (10, /* timeout in seconds */
+                             g_task_get_cancellable (task),
+-                            lsof_command_cb,
++                            busy_processes_command_cb,
+                             g_object_ref (task),
+-                            "lsof -t \"%s\"",
++                            BUSY_PROCESS_SPAWN,
+                             escaped_mount_point);
+   g_free (escaped_mount_point);
+ }

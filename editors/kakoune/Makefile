@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	DEBUG DOCS
 DEBUG_MAKE_ARGS=	debug=yes
 
 TEST_TARGET=	test
-TEST_ENV+=	LC_ALL=en_US.UTF-8
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kak

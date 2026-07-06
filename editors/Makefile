@@ -24,6 +24,7 @@
     SUBDIR += cooledit
     SUBDIR += cpeditor
     SUBDIR += cream
+    SUBDIR += croft
     SUBDIR += cudatext
     SUBDIR += deforaos-editor
     SUBDIR += dhex
@@ -225,7 +226,6 @@
     SUBDIR += neovim-gtk
     SUBDIR += neovim-qt
     SUBDIR += notepadnext
-    SUBDIR += notepadnext-devel
     SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2

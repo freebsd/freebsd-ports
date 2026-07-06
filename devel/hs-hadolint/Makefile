@@ -12,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	ghc:lang/ghc
 
 USES=		cabal
-USE_LOCALE=	en_US.UTF-8
-
 USE_CABAL=	Diff-1.0.2 \
 		HsYAML-0.2.1.5_1 \
 		OneTuple-0.4.3 \

@@ -1,5 +1,5 @@
 PORTNAME=	progressr
-DISTVERSION=	0.19.0
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -7,7 +7,7 @@ MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Inclusive, Unifying API for Progress Updates
 WWW=		https://cran.r-project.org/package=progressr
 
-LICENSE=	GPLv3
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
 		R-cran-progress>0:devel/R-cran-progress

@@ -1,15 +1,12 @@
-PORTNAME=	sqlite3
-DISTVERSION=	3.53.1
-# SECURITY WARNING: when updating this port, also file vuxml entry
-# for ports/databases/linux-c7-sqlite3 (but mind it has a different EPOCH)
-# and coordinate with ports/emulators/linux_base which also ships sqlite3.
+PORTNAME=	sqlite
+PORTVERSION=	3.53.3
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
-.if defined(TEA)
-PKGNAMEPREFIX=	tcl-
-.endif
-DISTNAME=	sqlite-src-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
+MASTER_SITES=	https://sqlite.org/2026/ \
+		https://www2.sqlite.org/2026/ \
+		https://www3.sqlite.org/2026/
+PKGNAMESUFFIX=	3
+DISTNAME=	sqlite-src-${PORTVERSION:C|\.([[:digit:]])[[:>:]]|0\1|g:S|.||g}00
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQL database engine in a C library
@@ -19,10 +16,7 @@ COMMENT+=	(ICU flavor)
 .if ${FLAVOR:U} == tcl
 COMMENT+=	(TCL flavor)
 .endif
-.if defined(TEA)
-COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
-.endif
-WWW=		https://www.sqlite.org/ \
+WWW=		https://sqlite.org/ \
 		https://github.com/sqlite/sqlite
 
 LICENSE=	PD
@@ -35,30 +29,38 @@ icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
 .endif
 
-USES=	cpe libtool ncurses zip
-USE_LDCONFIG=	yes
+USES=		cpe libtool ncurses zip
 
-HAS_CONFIGURE=	yes
+ALL_TARGET=	sqldiff
 CONFIGURE_ARGS=	--linemacros \
 		--prefix=${PREFIX} \
-		--soname=legacy OPTIONS='${_OPTIONS}'
+		--soname=legacy \
+		OPTIONS='${_OPTIONS}'
 # [The Chronicles of SONAME](https://sqlite.org/src/forumpost/5a3b44f510df8ded)
 # [Set features OPTIONS for autosetup configurator](https://msteveb.github.io/autosetup/)
+# Compilation Options For SQLite https://sqlite.org/compile.html
+CPPFLAGS+=	-DHAVE_FCHOWN=1 \
+		-DHAVE_FDATASYNC=1 \
+		-DHAVE_GMTIME_R=1 \
+		-DHAVE_ISNAN=1 \
+		-DHAVE_LOCALTIME_R=1 \
+		-DHAVE_LSTAT=1 \
+		-DHAVE_MALLOC_USABLE_SIZE=1 \
+		-DHAVE_PREAD=1 \
+		-DHAVE_PWRITE=1 \
+		-DHAVE_READLINK=1 \
+		-DHAVE_STRCHRNUL=1 \
+		-DHAVE_STRERROR_R=1 \
+		-DHAVE_USLEEP=1 \
+		-DSQLITE_DEFAULT_FILE_PERMISSIONS=${SQLITE_DEFAULT_FILE_PERMISSIONS} \
+		-DSQLITE_OS_UNIX=1 \
+		-DSQLITE_STRICT_SUBTYPE=${SQLITE_STRICT_SUBTYPE}
+HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-ALL_TARGET=	sqldiff
-.if defined(TEA)
-INSTALL_TARGET=	tcl_install
-.endif
 TEST_TARGET=	test
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-# The default numeric file permissions for newly created database files under unix.
-# If not specified, the default is 0644 which means that the files is globally
-# readable but only writable by the creator.
-.ifdef DEFAULT_FILE_PERMISSIONS
-CPPFLAGS+=	-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
-.endif
 
 CONFLICTS_INSTALL=	sqlite3 sqlite3-icu sqlite3-tcl tcl-sqlite3 # include/sqlite3.h share/examples/sqlite3/example.tcl
 
@@ -66,8 +68,11 @@ SUB_FILES=	example.tcl
 SUB_LIST=	TCLSH_CMD=${TCLSH}
 
 .if defined(TEA)
-USES+=	sqlite
-DESCR=	${MASTERDIR}/pkg-descr-tea
+PKGNAMEPREFIX=	tcl-
+COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
+INSTALL_TARGET=	tcl_install
+USES+=		sqlite
+DESCR=		${MASTERDIR}/pkg-descr-tea
 SUB_LIST+=	TEA="" NO_TEA="@comment "
 PLIST_SUB+=	TEA="" NO_TEA="@comment "
 .else
@@ -75,10 +80,12 @@ SUB_LIST+=	TEA="@comment " NO_TEA=""
 PLIST_SUB+=	TEA="@comment " NO_TEA=""
 .endif
 
-PLIST_SUB+=	TCLVER=tcl${TCL_VER} TCLSUF=tcl${TCL_VER:S/.//g} DISTVERSION=${DISTVERSION}
+PLIST_SUB+=	TCLVER=tcl${TCL_VER} TCLSUF=tcl${TCL_VER:S/.//g} PORTVERSION=${PORTVERSION}
 
-# Compilation Options For SQLite https://www.sqlite.org/compile.html
-OPTIONS_DEFINE=		EXAMPLES STRIP TCL THREADS
+SQLITE_STRICT_SUBTYPE?=	1	# https://sqlite.org/compile.html#strict_subtype
+SQLITE_DEFAULT_FILE_PERMISSIONS?=	0644	#  https://sqlite.org/compile.html#default_file_permissions
+
+OPTIONS_DEFINE=		EXAMPLES TCL THREADS
 .if !defined(TEA)
 OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			FTS4 FTS5 LIKENOTBLOB MEMMAN METADATA NORMALIZE NULL_TRIM RBU SECURE_DELETE \
@@ -86,7 +93,7 @@ OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			UPDATE_LIMIT URI URI_AUTHORITY
 .endif
 OPTIONS_DEFAULT=	DBPAGE DBSTAT DIRECT_READ EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
-			RTREE SECURE_DELETE SESSION STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
+			RTREE SECURE_DELETE SESSION THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
 # FTS3_TOKEN used by audio/clementine-player, mail/thunderbird, www/seamonkey
@@ -120,70 +127,70 @@ OPTIONS_SLAVE=		TCL
 .endif
 OPTIONS_SUB=		yes
 
-ARMOR_DESC=		Detect misuse of the API # https://www.sqlite.org/compile.html#enable_api_armor
+ARMOR_DESC=		Detect misuse of the API # https://sqlite.org/compile.html#enable_api_armor
 DBPAGE_DESC=		Enable DBPAGE Virtual Table # https://sqlite.org/compile.html#enable_dbpage_vtab
-DBSTAT_DESC=		Enable DBSTAT Virtual Table # https://www.sqlite.org/dbstat.html
+DBSTAT_DESC=		Enable DBSTAT Virtual Table # https://sqlite.org/dbstat.html
 DIRECT_READ_DESC=	File is read directly from disk # https://sqlite.org/compile.html#direct_overflow_read
-DQS_DESC=		Double-quoted String Literals # https://www.sqlite.org/compile.html#dqs
+DQS_DESC=		Double-quoted String Literals # https://sqlite.org/compile.html#dqs
 EXTENSION_DESC=		Enable loadable extensions
-FTS3_TOKEN_DESC=	Enable two-args version fts3_tokenizer # https://www.sqlite.org/compile.html#enable_fts3_tokenizer, https://www.sqlite.org/fts3.html#f3tknzr
-FTS4_DESC=		Enable FTS3/4 (Full Text Search) module # https://www.sqlite.org/fts3.html, https://www.sqlite.org/compile.html#enable_fts3_parenthesis
-FTS5_DESC=		Enable version 5 full-text search engine # https://www.sqlite.org/fts5.html
-GEOPOLY_DESC=		Uses the GeoJSON notation (RFC-7946) # https://www.sqlite.org/geopoly.html
+FTS3_TOKEN_DESC=	Enable two-args version fts3_tokenizer # https://sqlite.org/compile.html#enable_fts3_tokenizer, https://sqlite.org/fts3.html#f3tknzr
+FTS4_DESC=		Enable FTS3/4 (Full Text Search) module # https://sqlite.org/fts3.html, https://sqlite.org/compile.html#enable_fts3_parenthesis
+FTS5_DESC=		Enable version 5 full-text search engine # https://sqlite.org/fts5.html
+GEOPOLY_DESC=		Uses the GeoJSON notation (RFC-7946) # https://sqlite.org/geopoly.html
 LIKENOTBLOB_DESC=	LIKE does not match blobs # https://sqlite.org/compile.html#like_doesnt_match_blobs
 MEMMAN_DESC=		Allow it to release unused memory
 METADATA_DESC=		Enable column metadata
 NORMALIZE_DESC=		Enable normalized sql function
 NULL_TRIM_DESC=		Omits NULL columns at the ends of rows # https://sqlite.org/compile.html#enable_null_trim
-OFFSET_DESC=		Enable sqlite_offset() returning records file offset # http://www.sqlite.org/compile.html#enable_offset_sql_func
+OFFSET_DESC=		Enable sqlite_offset() returning records file offset # http://sqlite.org/compile.html#enable_offset_sql_func
 OPT_EXT_DESC=		Optional extensions
 OPT_FUNC_DESC=		Optional functions
-RAMT_DESC=		Where to store temporary file # https://www.sqlite.org/tempfiles.html#tempstore
-RBU_DESC=		Enable the resumable bulk update # https://www.sqlite.org/rbu.html
+RAMT_DESC=		Where to store temporary file # https://sqlite.org/tempfiles.html#tempstore
+RBU_DESC=		Enable the resumable bulk update # https://sqlite.org/rbu.html
 RL_DESC=		Command line editing library
-RTREEG_DESC=		Index type for range queries # https://www.sqlite.org/rtree.html
+RTREEG_DESC=		Index type for range queries # https://sqlite.org/rtree.html
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 SECURE_DELETE_DESC=	Overwrite deleted information with zeros
-SESSION_DESC=		Enable the session extension # https://www.sqlite.org/sessionintro.html
-SORT_REF_DESC=		To use references in the sorter # https://www.sqlite.org/compile.html#enable_sorter_references
+SESSION_DESC=		Enable the session extension # https://sqlite.org/sessionintro.html
+SORT_REF_DESC=		To use references in the sorter # https://sqlite.org/compile.html#enable_sorter_references
 SOUNDEX_DESC=		Enable the soundex() SQL function
 STAT3_DESC=		Collect histogram data from leftmost column
 STAT4_DESC=		Collect histogram data from all columns
-STAT_DESC=		Which query planner to use, stability or ... # https://www.sqlite.org/queryplanner-ng.html#qpstab
-STMT_DESC=		Prepared statement scan status # https://www.sqlite.org/c3ref/stmt_scanstatus.html
+STAT_DESC=		Which query planner to use, stability or ... # https://sqlite.org/queryplanner-ng.html#qpstab
+STMT_DESC=		Prepared statement scan status # https://sqlite.org/c3ref/stmt_scanstatus.html
 TCL_DESC=		Enable tcl extension and sqlite_analyzer
-TRUSTED_SCHEMA_DESC=	SQL functions & virtual tables are considered unsafe # https://www.sqlite.org/compile.html#trusted_schema
+TRUSTED_SCHEMA_DESC=	SQL functions & virtual tables are considered unsafe # https://sqlite.org/compile.html#trusted_schema
 TS0_DESC=		Always use temporary file
 TS1_DESC=		File by default, change allowed PRAGMA
 TS2_DESC=		Memory by default, change allowed PRAGMA
 TS3_DESC=		Always use memory
-UNICODE61_DESC=		Unicode Version 6.1 tokenizer # https://www.sqlite.org/fts3.html#tokenizer
+UNICODE61_DESC=		Unicode Version 6.1 tokenizer # https://sqlite.org/fts3.html#tokenizer
 UNKNOWN_SQL_DESC=	Suppress unknown function errors # http://sqlite.org/compile.html#enable_unknown_sql_function
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
-UPDATE_LIMIT_DESC=	UPDATE/DELETE is extended with ORDER BY and LIMIT # https://www.sqlite.org/compile.html#enable_update_delete_limit
+UPDATE_LIMIT_DESC=	UPDATE/DELETE is extended with ORDER BY and LIMIT # https://sqlite.org/compile.html#enable_update_delete_limit
 URI_AUTHORITY_DESC=	Allow convert URL into a UNC
 URI_DESC=		Enable use the URI filename
 
-ARMOR_CPPFLAGS=	-DSQLITE_ENABLE_API_ARMOR=1
+ARMOR_CPPFLAGS=		-DSQLITE_ENABLE_API_ARMOR=1
 DBPAGE_CPPFLAGS=	-DSQLITE_ENABLE_DBPAGE_VTAB=1
 DBSTAT_CPPFLAGS=	-DSQLITE_ENABLE_DBSTAT_VTAB=1
 DIRECT_READ_CPPFLAGS_OFF=	-DSQLITE_DIRECT_OVERFLOW_READ=0
-DQS_CPPFLAGS=	-DSQLITE_DQS=3
+DQS_CPPFLAGS=		-DSQLITE_DQS=3
 DQS_CPPFLAGS_OFF=	-DSQLITE_DQS=0
 EXTENSION_CONFIGURE_ENABLE=	load-extension
 FTS3_TOKEN_CPPFLAGS=	-DSQLITE_ENABLE_FTS3_TOKENIZER=1
 FTS4_CONFIGURE_ON=	--fts3 --fts4
-FTS4_CPPFLAGS=	-DSQLITE_ENABLE_FTS3_PARENTHESIS=1
+FTS4_CPPFLAGS=		-DSQLITE_ENABLE_FTS3_PARENTHESIS=1
 FTS5_CONFIGURE_ON=	--fts5
-FTS5_VARS=	_OPTIONS+=-lm
+FTS5_VARS=		_OPTIONS+=-lm
 GEOPOLY_IMPLIES=	RTREE
 GEOPOLY_CONFIGURE_ON=	--geopoly
 ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:devel/icu
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
 ICU_CONFIGURE_ON=	--with-icu-config=${LOCALBASE}/bin/icu-config --icu-collations
 ICU_CPPFLAGS=		`${LOCALBASE}/bin/icu-config --cppflags`
-LIBEDIT_USES=	libedit
+LIBEDIT_USES=		libedit
 LIBEDIT_CONFIGURE_ON=	--editline
 LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
 MEMMAN_CPPFLAGS=	-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
@@ -191,8 +198,8 @@ METADATA_CPPFLAGS=	-DSQLITE_ENABLE_COLUMN_METADATA=1
 NORMALIZE_CPPFLAGS=	-DSQLITE_ENABLE_NORMALIZE=1
 NULL_TRIM_CPPFLAGS=	-DSQLITE_ENABLE_NULL_TRIM=1
 OFFSET_CPPFLAGS=	-DSQLITE_ENABLE_OFFSET_SQL_FUNC=1
-RBU_CPPFLAGS=	-DSQLITE_ENABLE_RBU=1
-READLINE_USES=	readline
+RBU_CPPFLAGS=		-DSQLITE_ENABLE_RBU=1
+READLINE_USES=		readline
 READLINE_CONFIGURE_ENABLE=	readline
 RTREE_CONFIGURE_ON=	--rtree
 RTREE_INT_CPPFLAGS=	-DSQLITE_RTREE_INT_ONLY=1
@@ -200,19 +207,20 @@ SECURE_DELETE_CPPFLAGS=	-DSQLITE_SECURE_DELETE=1
 SESSION_CONFIGURE_ON=	--session
 SORT_REF_CPPFLAGS=	-DSQLITE_ENABLE_SORTER_REFERENCES=1
 SOUNDEX_CPPFLAGS=	-DSQLITE_SOUNDEX=1
-STAT3_CPPFLAGS=	-DSQLITE_ENABLE_STAT3=1
-STAT4_CPPFLAGS=	-DSQLITE_ENABLE_STAT4=1
+STAT3_CPPFLAGS=		-DSQLITE_ENABLE_STAT3=1
+STAT4_CPPFLAGS=		-DSQLITE_ENABLE_STAT4=1
 STATIC_CONFIGURE_OFF=	--dynlink-tools
-STATIC_CONFIGURE_ENABLE=	static
+STATIC_CONFIGURE_ENABLE=static
 STMT_CONFIGURE_ON=	--scanstatus
-TCL_USES=	tcl
-TCL_USES_OFF=	tcl:build
+TCL_USES=		tcl
+TCL_USES_OFF=		tcl:build
 TCL_CONFIGURE_OFF=	--disable-tcl
 TCL_CONFIGURE_ENV=	ac_cv_prog_TCLSH_CMD=${TCLSH}
+TCL_LIB_DEPENDS=	libtommath.so:math/libtommath
 TCL_ALL_TARGET+=	sqlite3_analyzer
 THREADS_CONFIGURE_OFF=	--disable-threadsafe
-THREADS_VARS=	_OPTIONS+=-lpthread
-TRUSTED_SCHEMA_CPPFLAGS=	-DSQLITE_TRUSTED_SCHEMA=0
+THREADS_VARS=		_OPTIONS+=-lpthread
+TRUSTED_SCHEMA_CPPFLAGS=-DSQLITE_TRUSTED_SCHEMA=0
 TS0_CONFIGURE_ON=	--with-tempstore=never
 TS1_CONFIGURE_ON=	--with-tempstore=no
 TS2_CONFIGURE_ON=	--with-tempstore=yes
@@ -221,54 +229,10 @@ UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 UNKNOWN_SQL_CPPFLAGS=	-DSQLITE_ENABLE_UNKNOWN_SQL_FUNCTION=1
 UNLOCK_NOTIFY_CPPFLAGS=	-DSQLITE_ENABLE_UNLOCK_NOTIFY=1
 UPDATE_LIMIT_CONFIGURE_ON=	--update-limit
-URI_CPPFLAGS=	-DSQLITE_USE_URI=1
+URI_CPPFLAGS=		-DSQLITE_USE_URI=1
 URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 
-CPE_VENDOR=	sqlite
-CPE_PRODUCT=	sqlite
-
 .include <bsd.port.options.mk>
-
-# _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-_YEAR=	2026
-
-# Recommended options
-# https://sqlite.org/compile.html#strict_subtype
-.if defined(SQLITE_STRICT_SUBTYPE)
-CPPFLAGS+=	-DSQLITE_STRICT_SUBTYPE=${SQLITE_STRICT_SUBTYPE}
-.else
-# This recommended option helps to identify problems in the implementation of application-defined SQL functions early in the development cycle.
-CPPFLAGS+=	-DSQLITE_STRICT_SUBTYPE=1
-.endif
-
-# Platform Configuration
-# -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]
-CPPFLAGS+=	-DHAVE_FCHOWN=1 \
-		-DHAVE_FDATASYNC=1 \
-		-DHAVE_ISNAN=1 \
-		-DHAVE_GMTIME_R=1 \
-		-DHAVE_LOCALTIME_R=1 \
-		-DHAVE_LSTAT=1 \
-		-DHAVE_MALLOC_USABLE_SIZE=1 \
-		-DHAVE_PREAD=1 \
-		-DHAVE_PWRITE=1 \
-		-DHAVE_USLEEP=1 \
-		-DHAVE_STRCHRNUL=1 \
-		-DHAVE_STRERROR_R=1 \
-		-DHAVE_READLINK=1 \
-		-DSQLITE_OS_UNIX=1
-
-.if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS+=	libtommath.so:math/libtommath
-.endif
-
-# For compare with checksum from of the site. Now, this is a NIST SHA3-256 hash. sha256 not suitable for compare.
-# But the creation of a new target does not justify the emergence of dependence on the perl5.
-# sha3sum maybe installed with p5-Digest-SHA3 port.
-# EXTRACT_DEPENDS=p5-Digest-SHA3:security/p5-Digest-SHA3; USES=perl5; USE_PERL5=extract;
-# @${PERL} -MDigest::SHA3 -le 'print Digest::SHA3->new(sha_256_hex)->add(<>)->hexdigest' < ${DISTDIR}/${ALLFILES}
-post-fetch:
-	@${WHICH} sha3sum > /dev/null && for entry in ${ALLFILES}; do ${ECHO_MSG} -n "=> "; sha3sum -a 256 --tag "${DISTDIR}/$${entry}"; done || ${TRUE}
 
 post-configure:
 	@${ECHO_MSG} "===> CONFIGURE_ARGS=${CONFIGURE_ARGS}"
@@ -289,20 +253,14 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a ${STAGEDIR}${PREFIX}/bin/sqlite3 ${STAGEDIR}${PREFIX}/lib/libsqlite3.so
 	${INSTALL_PROGRAM} ${WRKSRC}/sqldiff ${STAGEDIR}${PREFIX}/bin
-.else
-	${RM} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libsqlite3.a
-.endif
-
-post-install-STRIP-on:
-.if !defined(TEA)
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlite3 ${STAGEDIR}${PREFIX}/lib/libsqlite3.so
-.endif
-.if ${PORT_OPTIONS:MTCL}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/sqlite${PORTVERSION}/libsqlite${PORTVERSION}.so
+.else
+	${RM} ${STAGEDIR}${PREFIX}/lib/libsqlite3.a ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.${PORTVERSION}
 .endif
 
 post-install-TCL-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/sqlite3_analyzer ${STAGEDIR}${PREFIX}/bin
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/sqlite${PORTVERSION}/libsqlite${PORTVERSION}.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/mann
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

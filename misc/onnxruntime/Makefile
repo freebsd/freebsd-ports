@@ -1,6 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.26.0
+DISTVERSION=	1.27.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -51,6 +51,8 @@ dev-update-deps-in-makefiles: extract # this should be run when the port is upda
 
 pre-configure:
 	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.zip);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	# correct one mismatching hash
+	#@${REINPLACE_CMD} -E 's|1094e3bb7a8af763dcb136ccd676e6e75e614eec|5d2b21b10478556c5e209dd7229e298a5c9f0b02|' ${DEPS_FILE}
 
 # NOTE there should be an EXTRACT_ONLY statement
 # NOTE shared libs can't be enabled because the build would fail, see discussion in this issue: https://github.com/microsoft/onnxruntime/issues/22331

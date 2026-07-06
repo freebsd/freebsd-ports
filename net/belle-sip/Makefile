@@ -1,6 +1,5 @@
 PORTNAME=	belle-sip
-DISTVERSION=	5.4.100
-PORTREVISION=	1
+DISTVERSION=	5.4.121
 CATEGORIES=	net java
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -29,5 +28,7 @@ CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_OFF=		ENABLE_UNIT_TESTS
 
 LDFLAGS+=	-lpthread
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>

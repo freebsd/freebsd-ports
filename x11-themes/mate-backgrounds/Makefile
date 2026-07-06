@@ -1,7 +1,8 @@
 PORTNAME=	mate-backgrounds
-PORTVERSION=	1.28.0
+DISTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes graphics mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -11,10 +12,9 @@ WWW=		https://mate-desktop.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome pathfix tar:xz
 USE_GNOME=	glib20 intlhack
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-backgrounds/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

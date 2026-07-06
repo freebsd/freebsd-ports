@@ -1,0 +1,42 @@
+  The tests by default will execute gprbuild with -q for quiet, this can make
+  debugging difficult. Provide a mechanism to customise how the tests execute
+  grpbuild from the Port Makefile.
+
+--- tests/Makefile.orig	2026-07-01 01:20:10 UTC
++++ tests/Makefile
+@@ -81,7 +81,7 @@ test_multiple_xsd:
+ test_multiple_xsd:
+ 	@echo "multiple xsd"
+ 	@cd schema/multiple_xsd; \
+-		gprbuild -q -Pdefault.gpr; \
++		gprbuild %%TESTS_GPRBUILD_ARGS%% -Pdefault.gpr; \
+ 		./validate > $(RESULTS)/multiple_xsd.out; \
+ 		cp $(RESULTS)/multiple_xsd.out $(RESULTS)/multiple_xsd.diff; \
+ 		cat $(RESULTS)/multiple_xsd.diff
+@@ -89,7 +89,7 @@ test_examples_dom:
+ test_examples_dom:
+ 	@echo "test examples dom"
+ 	@cd ../docs/dom; \
+-		gprbuild -q -p -Pdefault.gpr 2> $(RESULTS)/domexample.out; \
++		gprbuild %%TESTS_GPRBUILD_ARGS%% -p -Pdefault.gpr 2> $(RESULTS)/domexample.out; \
+ 		./domexample >> $(RESULTS)/domexample.out; \
+ 		cp $(RESULTS)/domexample.out $(RESULTS)/domexample.diff; \
+ 		cat $(RESULTS)/domexample.diff; \
+@@ -104,7 +104,7 @@ test_examples_sax:
+ test_examples_sax:
+ 	@echo "test examples sax"
+ 	@cd ../docs/sax; \
+-		gprbuild -q -p -Pdefault.gpr 2> $(RESULTS)/saxexample_main.out; \
++		gprbuild %%TESTS_GPRBUILD_ARGS%% -p -Pdefault.gpr 2> $(RESULTS)/saxexample_main.out; \
+ 		./saxexample_main >> $(RESULTS)/saxexample_main.out; \
+ 		diff -b $(EXAMPLE_EXPECTED)/saxexample_main.expected $(RESULTS)/saxexample_main.out > $(RESULTS)/saxexample_main.diff; \
+ 		if test -s $(RESULTS)/saxexample_main.diff; then \
+@@ -114,7 +114,7 @@ test_examples_schema:
+ test_examples_schema:
+ 	@echo "test examples schema"
+ 	@cd ../docs/schema; \
+-		gprbuild -q -p -Pdefault.gpr 2> $(RESULTS)/schemaexample.out; \
++		gprbuild %%TESTS_GPRBUILD_ARGS%% -p -Pdefault.gpr 2> $(RESULTS)/schemaexample.out; \
+ 		./schemaexample >> $(RESULTS)/schemaexample.out; \
+ 		cp $(RESULTS)/schemaexample.out $(RESULTS)/schemaexample.diff; \
+ 		cat $(RESULTS)/schemaexample.diff

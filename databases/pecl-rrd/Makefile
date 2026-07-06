@@ -11,6 +11,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 USES=		php:pecl localbase pkgconfig
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.pre.mk>
 

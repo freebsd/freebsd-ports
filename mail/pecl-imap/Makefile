@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libc-client.so.2010:mail/panda-cclient
 
 USES=		php:pecl localbase ssl
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	82 83 86
 
 CONFIGURE_ARGS+=	--with-imap-ssl=${OPENSSLBASE} --with-imap=${LOCALBASE}
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"

@@ -1,9 +1,8 @@
 PORTNAME=	commons-daemon
-DISTVERSION=	1.5.1
-PORTREVISION=	3
+DISTVERSION=	1.6.0
 CATEGORIES=	devel java
-MASTER_SITES=	https://archive.apache.org/dist/commons/daemon/source/:src \
-		https://archive.apache.org/dist/commons/daemon/binaries/:bin
+MASTER_SITES=	APACHE_COMMONS_SOURCE:src \
+		APACHE_COMMONS_BINARIES:bin
 PKGNAMEPREFIX=	apache-
 DISTFILES=	${PORTNAME}-${DISTVERSION}-native-src${EXTRACT_SUFX}:src \
 		${PORTNAME}-${DISTVERSION}-bin${EXTRACT_SUFX}:bin
@@ -14,7 +13,7 @@ WWW=		https://commons.apache.org/proper/commons-daemon/
 
 LICENSE=	APACHE20
 
-USES=		java
+USES=		autoreconf java
 JAVA_OS=	native
 
 GNU_CONFIGURE=	yes

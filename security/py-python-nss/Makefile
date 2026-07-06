@@ -29,6 +29,8 @@ TEST_TARGET=	# empty
 TEST_WRKSRC=	${WRKSRC}/test
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests -t
 
+CPPFLAGS+=	-DHAVE_STDARG_PROTOTYPES
+
 post-patch:
 	@(cd ${WRKSRC}/test && ${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g' setup_certs.py test_pkcs12.py)
 

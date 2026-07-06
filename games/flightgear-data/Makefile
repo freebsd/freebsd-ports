@@ -1,5 +1,5 @@
 PORTNAME=	flightgear-data
-PORTVERSION=	2024.1.5
+PORTVERSION=	2024.1.6
 CATEGORIES=	games
 MASTER_SITES=	https://download.flightgear.org/release-${PORTVERSION:R}/
 DISTNAME=	FlightGear-${PORTVERSION}-data

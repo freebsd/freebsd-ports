@@ -1,6 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27
+DISTVERSION=	1.27.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,7 +52,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libsz.so:science/libaec \
 		libtbb.so:devel/onetbb
 
-USES=		bison blaslapack:openblas cmake eigen:3 gnome jpeg llvm:18 localbase:ldflags pkgconfig sqlite xorg # compiler:c++17-lang
+USES=		bison blaslapack:openblas cmake eigen:3 gnome jpeg llvm:${LLVM_DEFAULT} localbase:ldflags pkgconfig sqlite xorg # compiler:c++17-lang
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xau xcb xdmcp xext

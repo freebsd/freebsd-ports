@@ -1,5 +1,5 @@
 PORTNAME=	objfw
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.7
 CATEGORIES=	devel lang
 MASTER_SITES=	https://objfw.nil.im/downloads/
 

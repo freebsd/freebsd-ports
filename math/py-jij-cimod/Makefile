@@ -1,6 +1,5 @@
 PORTNAME=	jij-cimod
-DISTVERSION=	1.7.3
-PORTREVISION=	2
+DISTVERSION=	1.7.4
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +22,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 LIB_DEPENDS=	libcblas.so:math/cblas \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.21:science/py-dimod@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.16:science/py-scipy@${PY_FLAVOR}
 
 USES=		cmake:indirect compiler:c++17-lang eigen:3 localbase:ldflags python
 USE_PYTHON=	pep517 cython autoplist pytest
@@ -30,6 +32,6 @@ USE_PYTHON=	pep517 cython autoplist pytest
 TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.7.3: 49 passed, 10 warnings in 19.01s
+# tests as of 1.7.4: 49 passed
 
 .include <bsd.port.mk>

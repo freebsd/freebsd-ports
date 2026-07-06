@@ -1,5 +1,5 @@
 PORTNAME=	PackageKit
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 
@@ -27,8 +27,8 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	packagekit_project
 SHEBANG_FILES=	contrib/cron/packagekit-background.cron \
-		tests/data/pk-spawn-test-sigquit.py \
-		tests/data/pk-spawn-dispatcher.py
+		tests/data/*.py \
+		tests/runner/*.py
 
 MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc \
 		-Dpackaging_backend=freebsd -Dsystemd=false -Doffline_update=false \

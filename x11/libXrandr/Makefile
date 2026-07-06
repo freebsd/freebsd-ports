@@ -1,10 +1,10 @@
 PORTNAME=	libXrandr
-PORTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X Resize and Rotate extension library
-WWW=		https://www.freedesktop.org/Software/xlibs
+COMMENT=	Xlib Resize, Rotate and Reflection extension library
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libxrandr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

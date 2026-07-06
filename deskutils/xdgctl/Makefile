@@ -1,6 +1,6 @@
 PORTNAME=	xdgctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	l.lux@magenta.de
@@ -11,17 +11,15 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake gnome pkgconfig
-USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitjafelicijan
-GH_TAGNAME=	v1.0
+USE_GNOME=	glib20
 
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/xdgctl
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-	${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

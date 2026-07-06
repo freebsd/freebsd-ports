@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent cython pep517
+
+CPE_VENDOR=	long2ice
 
 post-patch:
 	@${MV} ${WRKSRC}/build.py ${WRKSRC}/build_cython.py

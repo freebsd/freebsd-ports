@@ -78,7 +78,8 @@ WEBINTERFACE_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
 NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
 
-CPE_VENDOR=			${PORTNAME}_project
+CPE_VENDOR=			${PORTNAME}
+CPE_PRODUCT=			${PORTNAME}_server
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/owntone/owntone-sqlext.so

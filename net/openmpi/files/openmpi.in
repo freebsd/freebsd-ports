@@ -1,0 +1,11 @@
+#%Module
+
+proc ModulesHelp { } {
+   puts stderr "This module adds Open MPI/SHMEM v%%DISTVERSION%% to various paths"
+}
+
+module-whatis   "Sets up Open MPI/SHMEM v%%DISTVERSION%% in your environment"
+
+prepend-path PATH "%%PREFIX%%/%%MPIDIR%%/bin"
+prepend-path LD_LIBRARY_PATH "%%PREFIX%%/%%MPIDIR%%/lib"
+prepend-path MANPATH "%%PREFIX%%/%%MPIDIR%%/share/man"

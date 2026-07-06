@@ -16,7 +16,7 @@ USES=		php:cli,flavors python:env shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
 USE_PHP=	curl dom simplexml zlib
-IGNORE_WITH_PHP=	85
+IGNORE_WITH_PHP=	85 86
 
 PHP_DESTDIR=	lib/php/arcanist
 SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \

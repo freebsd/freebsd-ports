@@ -13,7 +13,10 @@ WWW=		https://www.gnome.org/projects/gconf/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
+USES=		cpe tar:xz
+
+CPE_PRODUCT=	gconf
+CPE_VENDOR=	gnome
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 

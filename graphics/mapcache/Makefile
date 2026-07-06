@@ -1,11 +1,7 @@
 PORTNAME=		mapcache
-DISTVERSION=		1.14.1
-PORTREVISION=	4
+DISTVERSION=		1.16.0
 CATEGORIES=		graphics
 MASTER_SITES=		http://download.osgeo.org/mapserver/
-
-PATCH_SITES=	https://github.com/MapServer/mapcache/commit/
-PATCHFILES=	0948ea28df9ef5dae8705196b32f0742268953cf.patch:-p1
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		Server that implements tile caching to speed up access to WMS layers

@@ -24,26 +24,15 @@ fi
 
 # check BerkeleyDB 4.0...4.7 versions
 rx='db4[1-7]?(-nocrypto)?-4'
-if pkg -N 2>/dev/null ; then pkg=yes ; else pkg= ; fi
-if [ -n "$pkg" ] ; then
-    # pkg
-    dbnames=$(pkg info -x "$rx")
-else
-    # old pkg_*
-    dbnames=$(pkg_info -E -X "$rx")
-fi
+dbnames=$(pkg info -x "$rx")
 
 # due to set -e, the script will not reach this point
 # unless there have been matched packages - without packages,
-# pkg_info or pkg will exit with failure.
+# pkg will exit with failure.
 
 # check if we need to pass in origins or package names
 if [ "$tool" = portupgrade ] ; then
-    if [ -n "$pkg" ] ; then
-	dbnames=$(printf '%s\n' "$dbnames" | xargs -n1 pkg info -q -o)
-    else
-	dbnames=$(printf '%s\n' "$dbnames" | xargs -n1 pkg_info -q -o)
-    fi
+    dbnames=$(printf '%s\n' "$dbnames" | xargs -n1 pkg info -q -o)
 fi
 
 # generate the upgrade command
@@ -68,10 +57,6 @@ $cmd
 # due to set -e, the script will not reach this point
 # if there was an error or failure with the upgrade tool
 
-if [ -n "$pkg" ] ; then
-    pkg delete $dbnames
-else
-    pkg_delete $dbnames
-fi
+pkg delete $dbnames
 
 echo "Success."

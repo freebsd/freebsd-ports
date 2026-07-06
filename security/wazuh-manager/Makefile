@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.14.5
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/51/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -79,19 +80,16 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			sqlite.tar.gz:wazuh_sources \
 			zlib.tar.gz:wazuh_sources
 
-OPTIONS_DEFINE=	INOTIFY PRELUDE ZEROMQ
+OPTIONS_DEFINE=	INOTIFY ZEROMQ
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP=		DATABASE
 
-PRELUDE_LIB_DEPENDS=	libprelude.so:security/libprelude
 ZEROMQ_LIB_DEPENDS=	libczmq.so:net/czmq
 
 INOTIFY_DESC=	Kevent based real time monitoring
-PRELUDE_DESC=	Sensor support from Prelude SIEM
 ZEROMQ_DESC=	ZeroMQ support
 
 ZEROMQ_MAKE_ENV=	USE_ZEROMQ=yes
-PRELUDE_MAKE_ENV=	USE_PRELUDE=yes
 INOTIFY_MAKE_ENV=	USE_INOTIFY=yes \
 			INOTIFY_LIB=${INOTIFY_LIB}
 INOTIFY_USES=	pkgconfig inotify
@@ -154,7 +152,7 @@ WZPYTHONWHEELS=	cffi-2.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.2.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		numpy-1.26.4-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.9.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-21.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-24.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyyaml-6.0.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		rpds_py-0.15.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.17.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
@@ -166,13 +164,13 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=	_p3
-FBSD15_PATCH_LEVEL=	_p8
+FBSD14_PATCH_LEVEL=	_p5
+FBSD15_PATCH_LEVEL=	_p9
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD14_PATCH_LEVEL=	_p3
-FBSD15_PATCH_LEVEL=	_p8
+FBSD14_PATCH_LEVEL=	_p5
+FBSD15_PATCH_LEVEL=	_p9
 .endif
 
 .if ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000

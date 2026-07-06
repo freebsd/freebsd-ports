@@ -46,6 +46,7 @@ RAR_DESC=	RAR archive support
 RAR_RUN_DEPENDS=	unrar:archivers/unrar \
 			${RAR_RUN_DEPENDS_${ARCH}}
 RAR_RUN_DEPENDS_amd64=	rar:archivers/rar
+RAR_RUN_DEPENDS_i386=	rar:archivers/rar-i386
 
 ZIP_DESC=	ZIP archive support
 ZIP_RUN_DEPENDS=	zip:archivers/zip

@@ -1,9 +1,9 @@
 PORTNAME=	libblkid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.42.1
+DISTVERSION=	2.42.2
 CATEGORIES=	filesystems
 
-MAINTAINER=	arrowd@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Library to identify block devices (disks) as to their content
 WWW=		https://github.com/util-linux/util-linux
 

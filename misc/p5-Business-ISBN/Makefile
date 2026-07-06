@@ -21,6 +21,8 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 OPTIONS_DEFINE=	BARCODE XISBN
 BARCODE_DESC=	Barcode support
 XISBN_DESC=	xISBN support

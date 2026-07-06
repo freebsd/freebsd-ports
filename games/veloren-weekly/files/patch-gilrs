@@ -23,39 +23,40 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2026-02-25 13:54:57 UTC
+--- Cargo.lock.orig	2026-06-24 22:15:32 UTC
 +++ Cargo.lock
-@@ -2934,9 +2934,9 @@ dependencies = [
+@@ -2917,9 +2917,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
--version = "0.11.0"
+-version = "0.11.2"
 +version = "0.10.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "bbb2c998745a3c1ac90f64f4f7b3a54219fd3612d7705e7798212935641ed18f"
+-checksum = "902fb00d3f6398e635be22e5c837b303c501835cca7ac11a47bba138f7aafdd8"
 +checksum = "62fd19844d0eb919aca41d3e4ea0e0b6bf60e1e827558b101c269015b8f5f27a"
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2948,24 +2948,23 @@ dependencies = [
+@@ -2931,24 +2931,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
--version = "0.6.6"
+-version = "0.6.8"
 +version = "0.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "be11a71ac3564f6965839e2ed275bf4fcf5ce16d80d396e1dfdb7b2d80bd587e"
+-checksum = "dc7f0ce6237abcc0523f2a5502b1e3fe5802daaae47ac14e166fe49551301ea9"
 +checksum = "5ccc99e9b8d63ffcaa334c4babfa31f46e156618a11f63efb6e8e6bcb37b830d"
  dependencies = [
-- "core-foundation 0.10.1",
 - "inotify",
 + "core-foundation 0.9.4",
-  "io-kit-sys",
++ "io-kit-sys",
   "js-sys",
   "libc",
   "libudev-sys",
   "log",
-- "nix 0.30.1",
+- "nix 0.31.3",
+- "objc2-core-foundation",
+- "objc2-io-kit",
 + "nix 0.26.4",
   "serde",
   "uuid",
@@ -67,19 +68,24 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  
  [[package]]
-@@ -3743,9 +3742,9 @@ dependencies = [
+@@ -3750,6 +3749,16 @@ dependencies = [
+  "windows-sys 0.59.0",
+ ]
  
- [[package]]
- name = "io-kit-sys"
--version = "0.4.1"
++[[package]]
++name = "io-kit-sys"
 +version = "0.3.0"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "617ee6cf8e3f66f3b4ea67a4058564628cde41901316e19f559e14c7c72c5e7b"
++source = "registry+https://github.com/rust-lang/crates.io-index"
 +checksum = "9b2d4429acc1deff0fbdece0325b4997bdb02b2c245ab7023fd5deca0f6348de"
- dependencies = [
-  "core-foundation-sys",
-  "mach2 0.4.3",
-@@ -4564,6 +4563,17 @@ dependencies = [
++dependencies = [
++ "core-foundation-sys",
++ "mach2 0.4.3",
++]
++
+ [[package]]
+ name = "io-lifetimes"
+ version = "2.0.4"
+@@ -4619,6 +4628,17 @@ dependencies = [
   "memoffset 0.6.5",
  ]
  
@@ -97,17 +103,53 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "nix"
  version = "0.29.0"
-@@ -8303,7 +8313,7 @@ version = "1.6.3"
+@@ -5157,17 +5177,6 @@ dependencies = [
+  "objc2-core-foundation",
+ ]
+ 
+-[[package]]
+-name = "objc2-io-kit"
+-version = "0.3.2"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "33fafba39597d6dc1fb709123dfa8289d39406734be322956a69f0931c73bb15"
+-dependencies = [
+- "bitflags 2.13.0",
+- "libc",
+- "objc2-core-foundation",
+-]
+-
+ [[package]]
+ name = "objc2-io-surface"
+ version = "0.3.2"
+@@ -7758,7 +7767,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd"
+ dependencies = [
+  "fastrand",
+- "getrandom 0.4.2",
++ "getrandom 0.3.4",
+  "once_cell",
+  "rustix 1.1.4",
+  "windows-sys 0.61.2",
+@@ -8306,7 +8315,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "c5f7c95348f20c1c913d72157b3c6dee6ea3e30b3d19502c5a7f6d3f160dacbf"
+ dependencies = [
+  "cc",
+- "windows-targets 0.52.6",
++ "windows-targets 0.48.5",
+ ]
+ 
+ [[package]]
+@@ -8352,7 +8361,7 @@ version = "1.6.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
  dependencies = [
 - "cfg-if 1.0.4",
 + "cfg-if 0.1.10",
-  "rand 0.8.5",
+  "rand 0.8.6",
   "static_assertions",
  ]
-@@ -10322,6 +10332,16 @@ dependencies = [
-  "thiserror 2.0.17",
+@@ -10378,6 +10387,16 @@ dependencies = [
+  "thiserror 2.0.18",
  ]
  
 +[[package]]
@@ -123,7 +165,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "windows"
  version = "0.58.0"
-@@ -10353,6 +10373,15 @@ dependencies = [
+@@ -10431,6 +10450,15 @@ dependencies = [
   "windows-core 0.62.2",
  ]
  

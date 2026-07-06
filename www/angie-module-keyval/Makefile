@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-keyval
-MODULE_VERSION=	0.4.0
-MODULE_PORTREVISION=	1
+MODULE_VERSION=	0.5.0
+MODULE_PORTREVISION=	0
 GH_TUPLE=	kjdev:nginx-keyval:${MODULE_VERSION}:module
 
 COMMENT=	Angie keyval dynamic module

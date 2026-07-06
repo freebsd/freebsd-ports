@@ -1593,7 +1593,6 @@ include/wine/windows/xpsobjectmodel_1.h
 include/wine/windows/xpsobjectmodel_1.idl
 include/wine/windows/zmouse.h
 lib/wine/%%WINEARCH%%-unix/avicap32.so
-lib/wine/%%WINEARCH%%-unix/bcrypt.so
 lib/wine/%%WINEARCH%%-unix/crypt32.so
 lib/wine/%%WINEARCH%%-unix/ctapi32.so
 lib/wine/%%WINEARCH%%-unix/dnsapi.so
@@ -2076,6 +2075,7 @@ lib/wine/%%WINEARCH%%-windows/drmclien.dll
 lib/wine/%%WINEARCH%%-windows/dsdmo.dll
 lib/wine/%%WINEARCH%%-windows/dsound.dll
 lib/wine/%%WINEARCH%%-windows/dsquery.dll
+lib/wine/%%WINEARCH%%-windows/dsrole.dll
 lib/wine/%%WINEARCH%%-windows/dssenh.dll
 lib/wine/%%WINEARCH%%-windows/dsuiext.dll
 lib/wine/%%WINEARCH%%-windows/dswave.dll
@@ -2665,6 +2665,7 @@ lib/wine/%%WINEARCH%%-windows/rpcss.exe
 lib/wine/%%WINEARCH%%-windows/rsabase.dll
 lib/wine/%%WINEARCH%%-windows/rsaenh.dll
 lib/wine/%%WINEARCH%%-windows/rstrtmgr.dll
+lib/wine/%%WINEARCH%%-windows/rtscom.dll
 lib/wine/%%WINEARCH%%-windows/rtutils.dll
 lib/wine/%%WINEARCH%%-windows/rtworkq.dll
 lib/wine/%%WINEARCH%%-windows/runas.exe
@@ -2744,6 +2745,7 @@ lib/wine/%%WINEARCH%%-windows/termsv.exe
 lib/wine/%%WINEARCH%%-windows/threadpoolwinrt.dll
 lib/wine/%%WINEARCH%%-windows/thumbcache.dll
 lib/wine/%%WINEARCH%%-windows/timeout.exe
+lib/wine/%%WINEARCH%%-windows/tiptsf.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/toolhelp.dll16
 lib/wine/%%WINEARCH%%-windows/traffic.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/twain.dll16

@@ -1,7 +1,8 @@
 PORTNAME=	marco
-PORTVERSION=	1.28.1
+DISTVERSION=	1.28.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,8 +20,6 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libgtop-2.0.so:devel/libgtop
 RUN_DEPENDS=	zenity>=3.0.0:x11/zenity
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:xz xorg mate
 USE_XORG=	ice sm x11 xcomposite xcursor xdamage xext xfixes \
@@ -28,6 +27,7 @@ USE_XORG=	ice sm x11 xcomposite xcursor xdamage xext xfixes \
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_MATE=	desktop
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/marco/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip

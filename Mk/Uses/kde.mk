@@ -99,7 +99,7 @@ KDE_FRAMEWORKS5_VERSION?=	5.116.0
 KDE_FRAMEWORKS5_BRANCH?=	stable
 
 # Current KDE Frameworks (Qt6 based).
-KDE_FRAMEWORKS6_VERSION?=	6.26.0
+KDE_FRAMEWORKS6_VERSION?=	6.27.0
 KDE_FRAMEWORKS6_BRANCH?=	stable
 
 # Current KDE applications.
@@ -107,8 +107,8 @@ KDE_FRAMEWORKS6_BRANCH?=	stable
 # - check and update if needed _${PORTNAME}_PROJECT_VERSION for the following ports:
 #   audio/audiocd-kio, devel/kdevelop, games/libkdegames, games/libkmahjongg, graphics/kgraphviewer
 # - bump SHLIB_VER for editors/calligra.
-KDE_APPLICATIONS6_VERSION?=	26.04.1
-KDE_APPLICATIONS6_SHLIB_VER?=	6.7.1
+KDE_APPLICATIONS6_VERSION?=	26.04.3
+KDE_APPLICATIONS6_SHLIB_VER?=	6.7.3
 # G as in KDE Gear, and as in "don't make the variable name longer than required".
 KDE_APPLICATIONS6_SHLIB_G_VER?=	${KDE_APPLICATIONS6_VERSION}
 KDE_APPLICATIONS6_BRANCH?=	stable
@@ -239,8 +239,6 @@ IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 .    endif #defined(_KDE_CATEGORY)
 
 # ==============================================================================
-# === SET UP LOCALE ENVIRONMENT =================================================
-USE_LOCALE?=	en_US.UTF-8
 
 # === SET UP CMAKE ENVIRONMENT =================================================
 # Help cmake to find files when testing ports with non-default PREFIX.

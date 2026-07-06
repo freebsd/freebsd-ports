@@ -17,7 +17,6 @@
 %%PORTDOCS%%bin/pde_TschumperleDeriche2d
 %%PORTDOCS%%bin/pde_heatflow2d
 %%PORTDOCS%%bin/plotter1d
-%%PORTDOCS%%bin/radon_transform2d
 %%PORTDOCS%%bin/scene3d
 %%PORTDOCS%%bin/spherical_function3d
 %%PORTDOCS%%bin/tetris
@@ -29,6 +28,7 @@
 %%PORTDOCS%%bin/use_jpeg_buffer
 %%PORTDOCS%%bin/use_nlmeans
 %%PORTDOCS%%bin/use_skeleton
+%%PORTDOCS%%bin/use_tiff_stream
 %%PORTDOCS%%bin/wavelet_atrous
 include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -62,7 +62,6 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pde_TschumperleDeriche2d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pde_heatflow2d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plotter1d.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/radon_transform2d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scene3d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spherical_function3d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tetris.cpp

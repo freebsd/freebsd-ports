@@ -1,8 +1,8 @@
 PORTNAME=	mate-screensaver
-PORTVERSION=	1.28.0
-PORTREVISION=	2
+DISTVERSION=	1.28.0
+PORTREVISION=	3
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,14 +19,13 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libnotify.so:devel/libnotify \
 		libstartup-notification-1.so:x11/startup-notification
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gl gmake gnome localbase mate pathfix pkgconfig tar:xz \
 		xorg
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus session:run
 USE_XORG=	ice sm x11 xext xscrnsaver xxf86vm
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-screensaver/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-console-kit=yes \

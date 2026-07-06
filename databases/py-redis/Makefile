@@ -1,5 +1,6 @@
 PORTNAME=	redis
 PORTVERSION=	7.4.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,7 +40,7 @@ OCSP_USE=		PYTHON=cryptography
 OTEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.39.1:devel/py-opentelemetry-api@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-http>=1.39.1:devel/py-opentelemetry-exporter-otlp-proto-http@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.39.1:devel/py-opentelemetry-sdk@${PY_FLAVOR}
-XXHASH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xxhash>=3.6.0<3.7:devel/py-xxhash@${PY_FLAVOR}
+XXHASH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xxhash>=3.6.0:devel/py-xxhash@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 

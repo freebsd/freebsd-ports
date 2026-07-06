@@ -16,7 +16,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 
-USES=		gmake ncurses tar:tgz
+USES=		cpe gmake ncurses tar:tgz
+
+CPE_PRODUCT=	nethack
+CPE_VENDOR=	nethack
 
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \

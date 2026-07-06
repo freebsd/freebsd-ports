@@ -1,7 +1,7 @@
 PORTNAME=	go-git
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.10.0
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/go-git/go-git
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 GO_MODULE=	github.com/go-git/go-git/v5
 GO_TARGET=	./cli/go-git
 GO_BUILDFLAGS=	-ldflags=" \
@@ -19,5 +19,7 @@ GO_BUILDFLAGS=	-ldflags=" \
 			-X main.build=FreeBSD"
 
 PLIST_FILES=	bin/go-git
+
+CPE_VENDOR=	${PORTNAME}_project
 
 .include <bsd.port.mk>

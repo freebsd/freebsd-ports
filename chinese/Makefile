@@ -67,6 +67,7 @@
     SUBDIR += lunar
     SUBDIR += moettf
     SUBDIR += opencc
+    SUBDIR += opencc-cli
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
     SUBDIR += p5-Date-Chinese
@@ -89,6 +90,8 @@
     SUBDIR += pcmanx
     SUBDIR += php-opencc
     SUBDIR += phpbb3-tw
+    SUBDIR += py-OpenCC
+    SUBDIR += py-chinese-calendar
     SUBDIR += py-rjieba
     SUBDIR += pycangjie
     SUBDIR += pyzy

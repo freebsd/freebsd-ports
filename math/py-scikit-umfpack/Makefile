@@ -25,7 +25,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		fortran localbase:ldflags python
+USES=		fortran localbase:ldflags pkgconfig python
 USE_PYTHON=	pep517 cython autoplist pytest
 PEP517_BUILD_CONFIG_SETTING=	"-Cbuild-dir=_build"
 

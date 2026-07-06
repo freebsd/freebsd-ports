@@ -1,0 +1,2 @@
+skops is a set of tools for scikit-learn compatibility and machine learning
+in production, including model cards and persistence helpers.

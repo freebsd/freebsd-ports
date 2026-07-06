@@ -1,10 +1,18 @@
---- PythonQt.pro.orig	2023-02-01 08:09:21 UTC
+--- PythonQt.pro.orig	2026-06-05 12:41:07 UTC
 +++ PythonQt.pro
-@@ -1,6 +1,6 @@
- TEMPLATE = subdirs
+@@ -2,7 +2,7 @@ TEMPLATE = subdirs
  
--SUBDIRS = generator src extensions tests examples
-+SUBDIRS = generator src extensions #tests examples
+ # Define the full set of subdirectories, including the generator.
+ # This list is used as the default build target.
+-ALL_SUBDIRS = generator src extensions tests examples
++ALL_SUBDIRS = generator src extensions #tests examples
+ 
  tests.depends += src extensions
  extensions.depends += src
- examples.depends += src extensions
+@@ -21,4 +21,4 @@ CONFIG(generator_only) {
+ } else {
+     # If neither special option is set, use the default build which includes everything.
+     SUBDIRS = $$ALL_SUBDIRS
+-}
+\ No newline at end of file
++}

@@ -65,6 +65,9 @@ MAKE_ARGS+=FIRMWARE=4950_92.bin
 #.endif
 
 post-patch:
+.if ${ARCH:Mpowerpc*}
+	@${REINPLACE_CMD} -e 's|i386-dis.o|ppc-dis.o|' ${WRKSRC}/Makefile
+.endif
 .if ${PORT_OPTIONS:MFIRMWARE_215H3} || ${PORT_OPTIONS:MFIRMWARE_215}
 	@${CP} ${WRKDIR}/hp4950v215/*.lib ${WRKSRC}/
 	@${CP} ${WRKDIR}/hp4950v215/*.bin ${WRKSRC}/

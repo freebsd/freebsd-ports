@@ -1,1 +1,8 @@
 json-repair is a simple package that can be used to fix an invalid json string.
+It can repair malformed JSON from LLMs, APIs, logs, and user input.
+
+Features:
+- Fix missing quotes, commas, brackets, comments, stray prose, and truncated
+  values.
+- Use it as a drop-in fallback for json.loads() or as a schema-guided repair
+  step.

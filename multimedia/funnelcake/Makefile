@@ -1,5 +1,5 @@
 PORTNAME=		funnelcake
-PORTVERSION=		0.1.0
+PORTVERSION=		0.1.1
 CATEGORIES=		multimedia
 
 MAINTAINER=		toasty@dragondata.com

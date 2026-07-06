@@ -28,6 +28,4 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		DISABLE_WERROR
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	json-c_project
-
 .include <bsd.port.mk>

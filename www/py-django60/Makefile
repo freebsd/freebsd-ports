@@ -1,5 +1,5 @@
 PORTNAME=	django
-PORTVERSION=	6.0.5
+PORTVERSION=	6.0.6
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.9.1:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.5.0:databases/py-sqlparse@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tblib>0:devel/py-tblib@${PY_FLAVOR}
 
-USES=		cpe python:3.11-3.12 shebangfix
+USES=		cpe python:3.11+ shebangfix
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
@@ -34,9 +34,6 @@ SHEBANG_FILES=	django/conf/project_template/manage.py-tpl
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django[0-9][0-9]
 
 CPE_VENDOR=	djangoproject
-
-# Upstream archive contains files with UTF-8 names
-# EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 OPTIONS_DEFINE=	DOCS HTMLDOCS
 OPTIONS_GROUP=	DATABASE

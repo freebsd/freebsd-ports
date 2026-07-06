@@ -1227,7 +1227,12 @@
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/refs/deconvergence-std.slangp
 %%DATADIR%%/bezel/koko-aio/config/config-static.inc
 %%DATADIR%%/bezel/koko-aio/config/config-user-optional-template.txt
-%%DATADIR%%/bezel/koko-aio/config/config-user.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/00_readme.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/disabled/adaptive_strobe.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/disabled/lcd_antighosting.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/disabled/led1.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/disabled/led2.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/disabled/led3.txt
 %%DATADIR%%/bezel/koko-aio/docs-ng.md
 %%DATADIR%%/bezel/koko-aio/koko-aio-ng-DMG.slangp
 %%DATADIR%%/bezel/koko-aio/koko-aio-ng.slangp
@@ -1243,7 +1248,6 @@
 %%DATADIR%%/bezel/koko-aio/shaders-ng/config.globals.inc
 %%DATADIR%%/bezel/koko-aio/shaders-ng/config.inc
 %%DATADIR%%/bezel/koko-aio/shaders-ng/final_pass.slang
-%%DATADIR%%/bezel/koko-aio/shaders-ng/final_pass_new.slang
 %%DATADIR%%/bezel/koko-aio/shaders-ng/fxaa.slang
 %%DATADIR%%/bezel/koko-aio/shaders-ng/halo.slang
 %%DATADIR%%/bezel/koko-aio/shaders-ng/halo_pre_gamma.slang
@@ -2844,7 +2848,6 @@
 %%DATADIR%%/crt/shaders/crt-super-xbr/super-xbr-pass1.slang
 %%DATADIR%%/crt/shaders/crt-super-xbr/super-xbr-pass2.slang
 %%DATADIR%%/crt/shaders/crt-super-xbr/threshold.slang
-%%DATADIR%%/crt/shaders/crt-yah/blur.stage-f.core.h
 %%DATADIR%%/crt/shaders/crt-yah/blur.stage-f.h
 %%DATADIR%%/crt/shaders/crt-yah/blur.stage-v.h
 %%DATADIR%%/crt/shaders/crt-yah/common/color-helper.h
@@ -3472,14 +3475,14 @@
 %%DATADIR%%/edge-smoothing/scalehq/shaders/2xScaleHQ.slang
 %%DATADIR%%/edge-smoothing/scalehq/shaders/4xScaleHQ.slang
 %%DATADIR%%/edge-smoothing/scalenx/epx.slangp
-%%DATADIR%%/edge-smoothing/scalenx/mmpx-ex.slangp
+%%DATADIR%%/edge-smoothing/scalenx/mmpx-ADV.slangp
 %%DATADIR%%/edge-smoothing/scalenx/mmpx.slangp
 %%DATADIR%%/edge-smoothing/scalenx/scale2x.slangp
 %%DATADIR%%/edge-smoothing/scalenx/scale2xSFX.slangp
 %%DATADIR%%/edge-smoothing/scalenx/scale2xplus.slangp
 %%DATADIR%%/edge-smoothing/scalenx/scale3x.slangp
 %%DATADIR%%/edge-smoothing/scalenx/shaders/epx.slang
-%%DATADIR%%/edge-smoothing/scalenx/shaders/mmpx-ex.slang
+%%DATADIR%%/edge-smoothing/scalenx/shaders/mmpx-ADV.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/mmpx.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale2x.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale2xSFX.slang
@@ -3691,6 +3694,7 @@
 %%DATADIR%%/handheld/gb-palette-light.slangp
 %%DATADIR%%/handheld/gb-palette-pocket.slangp
 %%DATADIR%%/handheld/gbc-dev.slangp
+%%DATADIR%%/handheld/glare.slangp
 %%DATADIR%%/handheld/lcd-grid-v2.slangp
 %%DATADIR%%/handheld/lcd-grid.slangp
 %%DATADIR%%/handheld/lcd-shader.slangp
@@ -3769,6 +3773,7 @@
 %%DATADIR%%/handheld/shaders/gb-palette/resources/palette-light.png
 %%DATADIR%%/handheld/shaders/gb-palette/resources/palette-pocket.png
 %%DATADIR%%/handheld/shaders/gbc_pokemon_modernizer.slang
+%%DATADIR%%/handheld/shaders/glare.slang
 %%DATADIR%%/handheld/shaders/lcd-cgwg/lcd-grid-v2.slang
 %%DATADIR%%/handheld/shaders/lcd-cgwg/lcd-grid.slang
 %%DATADIR%%/handheld/shaders/lcd-shader/background.png
@@ -3934,6 +3939,8 @@
 %%DATADIR%%/include/quad-pixel-communication.h
 %%DATADIR%%/include/special-functions.h
 %%DATADIR%%/include/subpixel_masks.h
+%%DATADIR%%/interpolation/EWA-Cubics.slangp
+%%DATADIR%%/interpolation/EWA-Custom-B-Blur.slangp
 %%DATADIR%%/interpolation/b-spline-4-taps-fast.slangp
 %%DATADIR%%/interpolation/b-spline-4-taps.slangp
 %%DATADIR%%/interpolation/b-spline-fast.slangp
@@ -3971,6 +3978,8 @@
 %%DATADIR%%/interpolation/linear-gamma-presets/spline16-fast.slangp
 %%DATADIR%%/interpolation/linear-gamma-presets/spline36-fast.slangp
 %%DATADIR%%/interpolation/quilez.slangp
+%%DATADIR%%/interpolation/shaders/EWA-Cubics.slang
+%%DATADIR%%/interpolation/shaders/EWA-Custom-B-Blur.slang
 %%DATADIR%%/interpolation/shaders/b-spline-4-taps.slang
 %%DATADIR%%/interpolation/shaders/bicubic-5-taps.slang
 %%DATADIR%%/interpolation/shaders/bicubic.slang

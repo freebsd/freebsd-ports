@@ -10,6 +10,7 @@ LICENSE=	GPLv2+
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gl \
 		kde:6 libarchive qt:6 tar:xz xorg
+CPE_VENDOR=	kde
 USE_KDE=	bookmarks colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons doctools filemetadata i18n \
 		iconthemes itemviews jobwidgets kio parts pty service solid \
@@ -32,7 +33,9 @@ OPTIONS_SUB=		YES
 
 RAR_DESC=	Support for RAR archives (runtime)
 RAR_RUN_DEPENDS=	unrar:archivers/unrar \
-			rar:archivers/rar
+			${RAR_RUN_DEPENDS_${ARCH}}
+RAR_RUN_DEPENDS_amd64=	rar:archivers/rar
+RAR_RUN_DEPENDS_i386=	rar:archivers/rar-i386
 
 ZIP_DESC=	Support for ZIP archives
 ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip

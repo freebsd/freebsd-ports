@@ -31,7 +31,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 # are set. We will pull boost in just to be on the safe side.
 
 USES=		cmake:noninja compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run pkgconfig \
-		python:3.11 shebangfix tar:xz xorg
+		python shebangfix tar:xz xorg
+CPE_PRODUCT=	blender
 USE_XORG=	x11 xext xfixes xmu xrender
 
 SHEBANG_FILES=	scripts/modules/bl_i18n_utils/merge_po.py \

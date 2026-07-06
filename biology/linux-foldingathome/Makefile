@@ -1,5 +1,6 @@
 PORTNAME=	foldingathome
 DISTVERSION=	8.4.9
+PORTREVISION=	2
 CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/
 PKGNAMEPREFIX=	linux-
@@ -9,12 +10,8 @@ MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
 WWW=		https://foldingathome.org/
 
-# Distribution without permission is prohibited
-LICENSE=	FAHSL
-LICENSE_NAME=	Folding@home Software License
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/${DISTNAME:T}/LICENSE
-LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
-		auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
@@ -27,7 +24,7 @@ ETCDIR=		${PREFIX}/etc/fahclient
 DOCSDIR=	${PREFIX}/share/doc/fahclient
 NO_BUILD=	yes
 
-SUB_FILES=	pkg-message
+SUB_FILES=	fahclient.8 pkg-message
 SUB_LIST=	FAHCLIENT_CONFIG_XML=${_FAHCLIENT_CONFIG_XML} \
 		FAHCLIENT_PROGRAM=${_FAHCLIENT_PROGRAM} \
 		FAHCLIENT_WORK_DIR=${_FAHCLIENT_WORK_DIR}
@@ -60,6 +57,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/config.xml.sample \
 		${STAGEDIR}${_FAHCLIENT_CONFIG_XML}.sample
 	@${MKDIR} ${STAGEDIR}${_FAHCLIENT_WORK_DIR}
+	${INSTALL_MAN} ${WRKDIR}/fahclient.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -22,9 +22,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=0:devel/py-cloudpickle@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pytest-mypy-plugins>=0:devel/py-pytest-mypy-plugins@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	attrs_project
 
 .include <bsd.port.mk>

@@ -23,13 +23,14 @@ include/DrawyCore/rectangledeserializer.hpp
 include/DrawyCore/rectangleserializer.hpp
 include/DrawyCore/textdeserializer.hpp
 include/DrawyCore/textserializer.hpp
+lib/libdrawyconfig.so
 lib/libdrawygui.so
 lib/libdrawygui.so.0
-lib/libdrawygui.so.1.0.1
+lib/libdrawygui.so.%%SHLIB_VER%%
 lib/libdrawywidgets.so.0
-lib/libdrawywidgets.so.1.0.1
+lib/libdrawywidgets.so.%%SHLIB_VER%%
 lib/libstandardformplugin.so.0
-lib/libstandardformplugin.so.1.0.1
+lib/libstandardformplugin.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/drawypluginforms/basicshapesform_plugin.so
 share/applications/org.kde.drawy.desktop
 share/config.kcfg/drawyglobalconfig.kcfg
@@ -64,6 +65,7 @@ share/locale/ia/LC_MESSAGES/drawy.mo
 share/locale/is/LC_MESSAGES/drawy.mo
 share/locale/it/LC_MESSAGES/drawy.mo
 share/locale/ka/LC_MESSAGES/drawy.mo
+share/locale/ko/LC_MESSAGES/drawy.mo
 share/locale/nl/LC_MESSAGES/drawy.mo
 share/locale/pt_BR/LC_MESSAGES/drawy.mo
 share/locale/sk/LC_MESSAGES/drawy.mo

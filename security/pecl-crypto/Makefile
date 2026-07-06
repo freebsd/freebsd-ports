@@ -9,6 +9,7 @@ WWW=		https://pecl.php.net/package/crypto
 LICENSE=	PHP301
 
 USES=		compiler:c++11-lang php:pecl ssl
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	--with-crypto
 

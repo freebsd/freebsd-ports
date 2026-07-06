@@ -21,4 +21,10 @@ post-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/http_parser/parser*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} > 31200
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-python312
+.endif
+
+.include <bsd.port.post.mk>

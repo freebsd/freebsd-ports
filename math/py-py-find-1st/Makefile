@@ -1,6 +1,5 @@
 PORTNAME=	py-find-1st
-DISTVERSION=	1.1.6
-PORTREVISION=	2
+DISTVERSION=	1.1.9
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # tests are broken, see https://github.com/roebel/py_find_1st/issues/13
+USE_PYTHON=	pep517 autoplist pytest # tests as of 1.1.9 are still broken: ModuleNotFoundError: No module named 'utf1st_inst_dir', see https://github.com/roebel/py_find_1st/issues/13
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

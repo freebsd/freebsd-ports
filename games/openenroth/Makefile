@@ -12,12 +12,13 @@ WWW=		https://github.com/OpenEnroth/OpenEnroth
 
 LICENSE=	LGPL3
 
+BUILD_DEPENDS=	${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfmt.so:devel/libfmt \
 		libpng.so:graphics/png \
 		libspdlog.so:devel/spdlog
 
-USES=		cmake gl openal sdl
+USES=		cmake compiler:c++23-lang gl openal pkgconfig sdl
 USE_GL=		gl
 USE_SDL=	sdl2
 SUB_FILES=	pkg-message
@@ -26,26 +27,24 @@ CMAKE_OFF=	OE_BUILD_TESTS OE_USE_PREBUILT_DEPENDENCIES
 LDFLAGS_i386=	-Wl,-znotext
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenEnroth CLIUtils:cli11 vector-of-bool:cmrc fastfloat:ff \
-		TartanLlama:gen g-truc:glm ocornut:img Rookfighter:ifcpp \
-		boostorg:l2 zhaozg:ljcm LuaJIT:lj Neargye:me mandreyel:mio \
-		nlohmann:nj gharveymn:sv ThePhD:sol2
-GH_PROJECT=	OpenEnroth backward-cpp:bwcpp cmrc:cmrc CLI11:cli11 \
-		fast_float:ff generator:gen glm:glm imgui:img \
-		inifile-cpp:ifcpp lambda2:l2 luajit-cmake:ljcm LuaJIT:lj \
-		magic_enum:me mio:mio json:nj small_vector:sv sol2:sol2
-GH_TAGNAME=	9ba8864 51f0700:bwcpp 9532482:cli11 952ffdd:cmrc 1ea4f27:ff \
-		2a91250:gen 0af55cc:glm 1f7f1f5:img 7bb1ec3:ifcpp dddfec6:l2 \
-		6446221:ljcm 97813fb:lj d01a4f9:me 8b6b7d8:mio 55f9368:nj \
-		e8e63fe:sv 336f76c:sol2
-GH_SUBDIR=	thirdparty/backward_cpp:bwcpp thirdparty/cli11:cli11 \
-		thirdparty/cmrc:cmrc thirdparty/fast_float:ff \
-		thirdparty/generator:gen thirdparty/glm:glm \
-		thirdparty/imgui/imgui:img thirdparty/inifile_cpp:ifcpp \
-		thirdparty/lambda2:l2 thirdparty/luajit-cmake:ljcm \
-		thirdparty/luajit:lj thirdparty/magic_enum:me \
-		thirdparty/mio:mio thirdparty/nlohmann_json:nj \
-		thirdparty/small_vector:sv thirdparty/sol2:sol2
+GH_ACCOUNT=	OpenEnroth
+GH_PROJECT=	OpenEnroth
+GH_TAGNAME=	9ba8864
+GH_TUPLE=	CLIUtils:CLI11:9532482:C_C/thirdparty/cli11 \
+		LuaJIT:LuaJIT:97813fb:L_L/thirdparty/luajit \
+		Neargye:magic_enum:d01a4f9:N_m/thirdparty/magic_enum \
+		OpenEnroth:backward-cpp:51f0700:O_b/thirdparty/backward_cpp \
+		Rookfighter:inifile-cpp:7bb1ec3:R_i/thirdparty/inifile_cpp \
+		TartanLlama:generator:2a91250:T_g/thirdparty/generator \
+		ThePhD:sol2:336f76c:T_s/thirdparty/sol2 \
+		boostorg:lambda2:dddfec6:b_l/thirdparty/lambda2 \
+		g-truc:glm:0af55cc:g_g/thirdparty/glm \
+		gharveymn:small_vector:e8e63fe:g_s/thirdparty/small_vector \
+		mandreyel:mio:8b6b7d8:m_m/thirdparty/mio \
+		nlohmann:json:55f9368:n_j/thirdparty/nlohmann_json \
+		ocornut:imgui:1f7f1f5:o_i/thirdparty/imgui/imgui \
+		vector-of-bool:cmrc:952ffdd:v_c/thirdparty/cmrc \
+		zhaozg:luajit-cmake:6446221:zh_l/thirdparty/luajit-cmake
 
 PORTSCOUT=	skipv:nightly
 
@@ -53,12 +52,16 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	    '/PROJECT_VERSION/s,unknown,git-${GH_TAGNAME:[1]},' \
 		${WRKSRC}/CMakeModules/Git.cmake
+	@${REINPLACE_CMD} -e '/assert/s,context,&.operator bool(),' \
+		${WRKSRC}/src/Library/Platform/Application/PlatformApplication.cpp
 	@${REINPLACE_CMD} -e '/extern "C"/ { x; \
 	    s/^/#define AV_INPUT_BUFFER_MIN_SIZE 16384/; G; }' \
 		${WRKSRC}/src/Media/FFmpegBlobInputStream.cpp
 	@${REINPLACE_CMD} -e '/target_include_directories(imgui_backends/ \
 	    s,), ${LOCALBASE}/include&,' \
 		${WRKSRC}/thirdparty/imgui/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's, empty_string,& = 0,' \
+		${WRKSRC_o_i}/imgui_widgets.cpp
 
 do-install:
 .for prog in CodeGen LodTool OpenEnroth

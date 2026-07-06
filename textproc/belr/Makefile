@@ -1,5 +1,5 @@
 PORTNAME=	belr
-DISTVERSION=	5.4.100
+DISTVERSION=	5.4.121
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -22,5 +22,7 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 LDFLAGS+=	-lpthread
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- components/services/font_data/font_data_service_impl.cc.orig	2026-04-15 11:25:12 UTC
+--- components/services/font_data/font_data_service_impl.cc.orig	2026-06-05 13:45:06 UTC
 +++ components/services/font_data/font_data_service_impl.cc
-@@ -119,7 +119,7 @@ std::tuple<base::File, uint64_t> FontDataServiceImpl::
+@@ -121,7 +121,7 @@ std::tuple<base::File, uint64_t> FontDataServiceImpl::
    typeface.getResourceName(&font_path);
    base::UmaHistogramBoolean("Chrome.FontDataService.EmptyPathOnGetFileHandle",
                              font_path.isEmpty());

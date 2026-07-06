@@ -1,0 +1,9 @@
+%%PYTHON_SITELIBDIR%%/tesserocr-%%DISTVERSION%%.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/tesserocr-%%DISTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/tesserocr-%%DISTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/tesserocr-%%DISTVERSION%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/tesserocr-%%DISTVERSION%%.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/tesserocr/__init__.py
+%%PYTHON_SITELIBDIR%%/tesserocr/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/tesserocr/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/tesserocr/tesserocr%%PYTHON_TAG%%.so

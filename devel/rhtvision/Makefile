@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete C++ Text User Interface (TUI) library
 WWW=		https://sourceforge.net/projects/tvision/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/copying
+
 OPTIONS_DEFINE=	NLS X11
 OPTIONS_SUB=	yes
 

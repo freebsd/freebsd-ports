@@ -1,5 +1,5 @@
 PORTNAME=	sssd
-PORTVERSION=	2.13.0
+PORTVERSION=	2.13.1
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -123,6 +123,10 @@ TEST_LIB_DEPENDS=	libcheck.so:devel/check \
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
 CPPFLAGS+=	-DHAVE_TIMEZONE=1
+.endif
+
+.ifdef WITH_DEBUG
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_util_sss__prctl.c
 .endif
 
 post-patch:

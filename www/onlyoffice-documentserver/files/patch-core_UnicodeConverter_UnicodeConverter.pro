@@ -1,10 +1,10 @@
---- core/UnicodeConverter/UnicodeConverter.pro.orig	2021-09-30 12:13:32 UTC
+--- core/UnicodeConverter/UnicodeConverter.pro.orig	2026-05-17 15:03:58 UTC
 +++ core/UnicodeConverter/UnicodeConverter.pro
-@@ -13,6 +13,12 @@ DEFINES += UNICODECONVERTER_USE_DYNAMIC_LIBRARY
+@@ -46,6 +46,12 @@
  
  DEFINES += UNICODECONVERTER_USE_DYNAMIC_LIBRARY
  
-+core_freebsd {    
++core_freebsd {
 +    CONFIG += c++17
 +    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\'"
 +    QMAKE_LFLAGS += -Wl,--disable-new-dtags

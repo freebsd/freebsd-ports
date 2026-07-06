@@ -1,8 +1,7 @@
 PORTNAME=	libburn
-PORTVERSION=	1.5.6
-PORTREVISION=	1
+DISTVERSION=	1.5.8
 CATEGORIES=	devel
-MASTER_SITES=	http://files.libburnia-project.org/releases/
+MASTER_SITES=	https://files.libburnia-project.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia library to read/write optical discs
@@ -14,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*.txt

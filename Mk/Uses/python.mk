@@ -341,8 +341,8 @@ ZEROREGS_UNSAFE=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		3.11 3.12 3.13 3.13t 3.14 3.15 3.10 2.7 # preferred first
-_PYTHON_PORTBRANCH=		3.11		# ${_PYTHON_VERSIONS:[1]}
+_PYTHON_VERSIONS=		3.12 3.13 3.13t 3.14 3.14t 3.11 3.10 3.15 2.7 # preferred first
+_PYTHON_PORTBRANCH=		3.12		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
 
@@ -605,7 +605,11 @@ _EXPORTED_VARS+=	PYTHONBASE
 
 PYTHON_INCLUDEDIR=	${PYTHONBASE}/include/python${_PYTHON_VERSION}${PYTHON_ABIVER}
 PYTHON_LIBDIR=		${PYTHONBASE}/lib/python${_PYTHON_VERSION}
+.  if ${PYTHON_REL} >= 31400
+PYTHON_PLATFORM=	${OPSYS:tl}
+.  else
 PYTHON_PLATFORM=	${OPSYS:tl}${OSREL:C/\.[0-9.]*//}
+.  endif
 PYTHON_SITELIBDIR=	${PYTHON_LIBDIR}/site-packages
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
 PYTHON_PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}

@@ -36,6 +36,7 @@ include/cego/CegoAttrAlias.h
 include/cego/CegoAttrComp.h
 include/cego/CegoAttrCond.h
 include/cego/CegoAttrDesc.h
+include/cego/CegoAuthManager.h
 include/cego/CegoBTreeCursor.h
 include/cego/CegoBTreeManager.h
 include/cego/CegoBTreeNode.h
@@ -85,6 +86,7 @@ include/cego/CegoNet.h
 include/cego/CegoObject.h
 include/cego/CegoObjectCursor.h
 include/cego/CegoObjectManager.h
+include/cego/CegoObjectUsage.h
 include/cego/CegoOrderCursor.h
 include/cego/CegoOrderNode.h
 include/cego/CegoOrderSpace.h

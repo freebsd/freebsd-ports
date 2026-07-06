@@ -1,14 +1,8 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.5
-PORTREVISION=	2
+PORTVERSION=	4.7.3
+# PORTREVISION=	1
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/musescore/MuseScore/commit/
-PATCHFILES+=	b79c3ba61e599e2211ba69f7be561ecfbdab941c.patch:-p1 # Fix build with Qt 6.10.1
-PATCHFILES+=	6f63cd15ced0b2a624a85e471724fba922762974.patch:-p1 # Add missing include for Qt 6.10
-PATCHFILES+=	e25d01bd7f650e51911929ec2aa519923913cd05.patch:-p1 # Add missing include for Qt 6.10
-PATCHFILES+=	36d544ab41abff3dc675202953486b837f21b8b6.patch:-p1 # Fix build on FreeBSD
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
@@ -28,15 +22,36 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libtinyxml2.so:textproc/tinyxml2 \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	alsa-plugins>=1.2:audio/alsa-plugins
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
+		vulkan-loader>0:graphics/vulkan-loader
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase \
-		pkgconfig qt:6 shared-mime-info
+		pkgconfig qt:6 pathfix
 USE_GL=		opengl
 USE_QT=		5compat base declarative networkauth scxml svg \
-		shadertools:build tools:build
-
+		tools:build
 USE_GITHUB=	yes
 GH_PROJECT=	MuseScore
+GH_ACCOUNT=	musescore
+
+OPTIONS_DEFINE=		MNX
+
+MNX_DESC=	experimental MNX json import/export support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMNX}
+BUILD_DEPENDS+=	xxd:sysutils/xxd
+GH_TUPLE+=	\
+		nlohmann:json:v3.12.0:json \
+		w3c:mnx:d513cf7a28a84c803ed36e448b416cb49c3a22f9:w3c \
+		pboettch:json-schema-validator:40af3ec39670e768fc3f01f935140af311d71024:validator \
+		rpatters1:mnxdom:e7c947bf768caccf315426dcae0dfac02caf738b:mnxdom \
+		musescore:muse_framework:8d6707fb9cbc9b5b52f7b7649d0dd4976dd4e0ac:muse_framework/muse
+CMAKE_ON+=	MUE_BUILD_IMPEXP_MNX_MODULE
+.else
+CMAKE_OFF+=	MUE_BUILD_IMPEXP_MNX_MODULE
+.endif
 
 # Each release gets a subdir containing the distfiles for that release,
 # so hope that scanning the parent dir finds new ones.
@@ -50,28 +65,39 @@ CMAKE_TESTS=	MUE_BUILD_BRAILLE_TESTS \
 		MUE_BUILD_NOTATION_TESTS \
 		MUE_BUILD_PLAYBACK_TESTS \
 		MUE_BUILD_PROJECT_TESTS
-CMAKE_ON=	MUE_COMPILE_USE_SYSTEM_FLAC \
+CMAKE_ON+=	MUE_COMPILE_USE_SYSTEM_FLAC \
 		MUE_COMPILE_USE_SYSTEM_FREETYPE \
 		MUE_COMPILE_USE_SYSTEM_HARFBUZZ \
 		MUE_COMPILE_USE_SYSTEM_OPUS \
 		MUE_COMPILE_USE_SYSTEM_OPUSENC \
 		MUE_COMPILE_USE_SYSTEM_TINYXML
-CMAKE_OFF=	MUSE_COMPILE_USE_PCH \
+CMAKE_OFF+=	MUE_BUILD_CRASHPAD_CLIENT \
+		MUE_COMPILE_USE_PCH \
 		${CMAKE_TESTS}
-CMAKE_BUILD_TYPE=	release
-CMAKE_ARGS=	-DMUSE_APP_BUILD_MODE="release"
+CMAKE_BUILD_TYPE=	Release
+CMAKE_ARGS+=	-DMUSE_APP_BUILD_MODE="release"
+
+.include <bsd.port.pre.mk>
+
+post-patch-MNX-on:
+# mnxdom dependencies
+	@${MKDIR} ${WRKDIR}/.build/_deps
+	@${MV} ${WRKSRC_mnxdom} ${WRKDIR}/.build/_deps/mnxdom-src
+	@${MV} ${WRKSRC_json} ${WRKDIR}/.build/_deps/nlohmann_json-src
+	@${MV} ${WRKSRC_w3c} ${WRKDIR}/.build/_deps/mnx_w3c-src
+	@${MV} ${WRKSRC_validator} ${WRKDIR}/.build/_deps/json_schema_validator-src
 
 post-install:
-	# workaround for https://github.com/musescore/MuseScore/issues/26103
-	@${RM} -r \
-		${STAGEDIR}${PREFIX}/include \
-		${STAGEDIR}${PREFIX}/lib \
-		${STAGEDIR}${PREFIX}/libdata
-	# workaround for https://github.com/musescore/MuseScore/issues/26104
-	@${INSTALL_DATA} ${FILESDIR}/mscore.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	# ${RM} ${STAGEDIR}${PREFIX}/bin/musescore
+
+post-stage:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
+	${INSTALL_DATA} ${CMAKE_SOURCE_PATH}/share/icons/AppIcon/MS4_AppIcon_48x48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/mscore.png
+	${INSTALL_DATA} ${FILESDIR}/mscore.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	@${REINPLACE_CMD} -i '' -e "\
 		s|^Version=.*|Version=${PORTVERSION}|; \
-		s|^Name=.*|Name=MuseScore|; \
+		s|^Name=.*|Name=MuseScore Studio|; \
 		"  ${STAGEDIR}${PREFIX}/share/applications/mscore.desktop
+	${LN} -s mscore ${STAGEDIR}${PREFIX}/bin/musescore
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

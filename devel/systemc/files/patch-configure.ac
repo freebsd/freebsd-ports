@@ -1,0 +1,13 @@
+--- configure.ac.orig	2026-06-07 11:34:19 UTC
++++ configure.ac
+@@ -164,6 +164,10 @@ AS_CASE([${TARGET_ARCH}],
+          [TARGET_ARCH="linuxaarch64"
+           QT_ARCH="aarch64"
+           CPU_ARCH=""],
++       [powerpc64le|powerpc64], dnl
++         [TARGET_ARCH="${TARGET_ARCH}64"
++          QT_ARCH="powerpc64"
++          CPU_ARCH=""],
+        [AC_MSG_ERROR("sorry...architecture not supported")])
+ 
+      # check compiler

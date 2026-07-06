@@ -1,5 +1,5 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.16.0
+DISTVERSION=	3.0.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,28 +10,27 @@ WWW=		https://github.com/libsidplayfp/libsidplayfp
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+LIB_DEPENDS=	libresidfp.so:audio/libresidfp
 
-USES=		compiler:c++23-lang libtool pkgconfig
+USES=		compiler:c++23-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-exsid=no \
-		--with-gcrypt \
 		--with-usbsid=no
 
 INSTALL_TARGET=	install-strip
 
-SIDPLAYFP_SHLIB_VERSION=        6.7.44
-STILVIEW_SHLIB_VERSION=         0.0.7
+SIDPLAYFP_SHLIB_VERSION=        7.7.47
+STILVIEW_SHLIB_VERSION=         0.0.8
 
 PLIST_SUB+=	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \
 		SIDPLAYFP_SHLIB_VERSION=${SIDPLAYFP_SHLIB_VERSION} \
 		STILVIEW_SHLIB_VER=${STILVIEW_SHLIB_VERSION:C/\.[[:digit:].]+//} \
 		STILVIEW_SHLIB_VERSION=${STILVIEW_SHLIB_VERSION}
 
-PORTDOCS1=	NEWS README TODO
+PORTDOCS1=	NEWS.md README.md TODO
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DEBUG DOCS DOXYGEN

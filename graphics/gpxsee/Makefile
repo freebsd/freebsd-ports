@@ -1,5 +1,5 @@
 PORTNAME=	gpxsee
-DISTVERSION=	16.7
+DISTVERSION=	16.10
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -21,7 +21,6 @@ OPTIONS_DEFINE=	NLS TIFF
 OPTIONS_DEFAULT=	TIFF
 OPTIONS_SUB=	yes
 TIFF_DESC=	Support for GeoTIFF images
-NLS_USES=	gettext-runtime
 TIFF_USE=	QT=imageformats:run
 
 pre-build-NLS-on:

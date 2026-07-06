@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-input-void-1.4.1.tar.bz2) = f96e4f0a622821bf43a74bd419f2a18423343996c9d243c7e1430ba2d142339c
-SIZE (xorg/driver/xf86-input-void-1.4.1.tar.bz2) = 271597
+TIMESTAMP = 1782932710
+SHA256 (xorg/driver/xf86-input-void-1.4.2.tar.xz) = a211d8e21ce0e2ed8af5b8a2e8d4409d70c9c7e5ee528f5e6002ad279bf07885
+SIZE (xorg/driver/xf86-input-void-1.4.2.tar.xz) = 257888

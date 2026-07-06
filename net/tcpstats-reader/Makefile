@@ -1,6 +1,7 @@
 PORTNAME=	tcpstats-reader
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	dave.seddon.ca@gmail.com

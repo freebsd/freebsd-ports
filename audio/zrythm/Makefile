@@ -1,38 +1,44 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-alpha.26.0.13
-PORTREVISION=	17
+DISTVERSION=	1.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern music production system, also known as DAW
-WWW=		https://www.zrythm.org/en/
+WWW=		https://www.zrythm.org/en/ \
+		https://github.com/zrythm/zrythm
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
+		Carla>0:audio/carla \
 		help2man:misc/help2man \
 		${LOCALBASE}/lib/libbacktrace.a:devel/libbacktrace \
-		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons
+		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons \
+		sassc:textproc/sassc
 LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libavcodec.so:multimedia/ffmpeg \
+		libbacktrace.so:devel/libbacktrace \
 		libcyaml.so:textproc/libcyaml \
 		libgtop-2.0.so:devel/libgtop \
+		libgraphene-1.0.so:graphics/graphene \
 		libcgraph.so:graphics/graphviz \
 		libcurl.so:ftp/curl \
 		libfftw3_threads.so:math/fftw3 \
 		libfftw3f_threads.so:math/fftw3-float \
+		libfluidsynth.so:audio/fluidsynth \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libjack.so:audio/jack \
 		libjson-glib-1.0.so:devel/json-glib \
 		liblilv-0.so:audio/lilv \
+		libsoxr.so:audio/libsoxr \
+		libpanel-1.so:x11-toolkits/libpanel \
 		libpcre.so:devel/pcre \
 		libpcre2-8.so:devel/pcre2 \
 		libportaudio.so:audio/portaudio \
 		libpulse.so:audio/pulseaudio \
-		libreproc.so:devel/reproc \
 		librubberband.so:audio/rubberband \
-		libsamplerate.so:audio/libsamplerate \
 		libserd-0.so:devel/serd \
 		libsmf.so:audio/libsmf \
 		libsndfile.so:audio/libsndfile \
@@ -43,15 +49,18 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libvamp-hostsdk.so:audio/vamp-plugin-sdk \
 		libxxhash.so:devel/xxhash \
 		libyaml.so:textproc/libyaml \
+		libyyjson.so:devel/yyjson \
+		libzix-0.so:devel/zix \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+RUN_DEPENDS=	Carla>0:audio/carla \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime \
 		guile:2.2,3.0,alias,conflicts gnome libtool localbase:ldflags \
 		meson pkgconfig python:build shared-mime-info shebangfix xorg
 USE_GITHUB=	yes
-USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 gtksourceview3 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk40 gtksourceview5 libadwaita libxml2 pango
 USE_XORG=	x11
 
 SHEBANG_FILES=	scripts/collect_translatables.sh

@@ -1,5 +1,5 @@
 PORTNAME=	ldns
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.2
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -15,6 +15,8 @@ USES=		cpe gmake libtool perl5 ssl
 CPE_VENDOR=	nlnetlabs
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+
+SOVERSION=	3.9.0
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dane-ta-usage \
@@ -73,8 +75,8 @@ post-patch:
 		-e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' \
 		${WRKSRC}/Makefile.in
 post-install:
-# file /usr/local/lib/python3.11/site-packages/_ldns.so.3.6.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.3.6.0
+# file /usr/local/lib/python3.11/site-packages/_ldns.so.${SOVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.${SOVERSION}
 
 .elif defined(BUILD_P5PERL)
 
@@ -133,5 +135,7 @@ post-install-EXAMPLES-on:
 	${STRIP_CMD} ${EXAMPLES_LIST:S|^|${STAGEDIR}${PREFIX}/bin/|}
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
+
+PLIST_SUB+=	SOVERSION="${SOVERSION}"
 
 .include <bsd.port.mk>

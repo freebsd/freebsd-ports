@@ -1,6 +1,5 @@
 PORTNAME=	dwavebinarycsp
-DISTVERSION=	0.3.0
-PORTREVISION=	2
+DISTVERSION=	0.3.1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,5 +26,7 @@ GH_ACCOUNT=	dwavesystems
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 0.3.1: Ran 51 tests in 1.584s (all tests passed)
 
 .include <bsd.port.mk>

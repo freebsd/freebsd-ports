@@ -8,7 +8,7 @@ driver.
 To successfully process 3D figures or examples, it is necessary to always
 use software rendering.
 
-% env LIBGL_ALWAYS_SOFTWARE=1 asy sample.asy
+% env LIBGL_ALWAYS_SOFTWARE=1 asy
 EOM
 }
 ]

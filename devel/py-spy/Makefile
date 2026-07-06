@@ -1,6 +1,6 @@
 PORTNAME=	py-spy # despite its name this is NOT a Python package, but a Rust-based profiler for Python program
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_PYPI}
 MASTER_SITE_SUBDIR=	source/p/py_spy

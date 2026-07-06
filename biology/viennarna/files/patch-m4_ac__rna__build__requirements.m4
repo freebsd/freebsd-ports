@@ -2,13 +2,13 @@
 # - Replace bundled dlib detection with pkg-config
 # - Use system dlib from science/dlib-cpp port
 # - Remove hardcoded paths to bundled dlib-19.24
---- m4/ac_rna_build_requirements.m4.orig	2024-06-01 20:46:46 UTC
+--- m4/ac_rna_build_requirements.m4.orig	2025-12-21 15:30:13 UTC
 +++ m4/ac_rna_build_requirements.m4
-@@ -253,28 +253,18 @@ AC_DEFUN([RNA_CHECK_DLIB], [
+@@ -358,29 +358,18 @@ AC_DEFUN([RNA_CHECK_DLIB], [
  
  AC_DEFUN([RNA_CHECK_DLIB], [
    AX_CXX_COMPILE_STDCXX(17, noext, mandatory)
--  DLIB_VERSION=19.24
+-  DLIB_VERSION=20.0
 -  DLIB_DIR="dlib-${DLIB_VERSION}"
 -  DLIB_PATH="${srcdir}/src/${DLIB_DIR}"
 -  DLIB_SRC_FILE="${DLIB_PATH}/dlib/all/source.cpp"
@@ -36,8 +36,9 @@
 -  AC_SUBST(DLIB_CPPFLAGS, "-I\$(top_srcdir)/src/${DLIB_DIR} -DDLIB_NO_GUI_SUPPORT")
 -  AC_SUBST(DLIB_DIR)
 -  AC_SUBST(DLIB_VERSION)
+-
 +  AC_SUBST(DLIB_CPPFLAGS, "${DLIB_CFLAGS} -DDLIB_NO_GUI_SUPPORT")
 +  AC_SUBST(DLIB_LIBS, "${DLIB_LIBS}")
- 
  ])
  
+ ##

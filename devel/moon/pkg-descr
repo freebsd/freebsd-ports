@@ -1,0 +1,10 @@
+moon is a repository management, organization, orchestration, and notification
+tool, primarily designed for the web ecosystem. It is built around the concept
+of a workspace containing many projects, and aims to reduce the friction of
+working in monorepos and polyrepos.
+
+Key features:
+- Incremental task execution with smart hashing and remote caching
+- Project graph and dependency-aware run order
+- Built-in toolchain management (Node.js, Bun, Deno, Rust, Go, Python, ...)
+- Cross-platform, written in Rust, single static binary

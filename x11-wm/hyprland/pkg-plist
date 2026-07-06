@@ -76,6 +76,7 @@ include/hyprland/src/config/lua/DefaultConfig.hpp
 include/hyprland/src/config/lua/Emergency.hpp
 include/hyprland/src/config/lua/LuaBindings.hpp
 include/hyprland/src/config/lua/LuaEventHandler.hpp
+include/hyprland/src/config/lua/bindings/Check.hpp
 include/hyprland/src/config/lua/bindings/LuaBindingsInternal.hpp
 include/hyprland/src/config/lua/layout/LuaLayoutContext.hpp
 include/hyprland/src/config/lua/layout/LuaLayoutProvider.hpp

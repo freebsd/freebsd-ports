@@ -1,15 +1,20 @@
---- rollup/rust/bindings_napi/Cargo.toml.orig	2026-02-11 09:05:39 UTC
+--- rollup/rust/bindings_napi/Cargo.toml.orig	2026-07-01 06:24:19 UTC
 +++ rollup/rust/bindings_napi/Cargo.toml
-@@ -15,10 +15,10 @@ napi-derive = "2.16.12"
+@@ -15,7 +15,7 @@ napi-derive = "3.5.5"
  parse_ast = { path = "../parse_ast" }
  xxhash = { path = "../xxhash" }
  
--[target.'cfg(not(target_os = "linux"))'.dependencies]
+-[target.'cfg(not(any(target_os = "linux", target_os = "freebsd")))'.dependencies]
 +[target.'cfg(not(any(target_os = "linux", target_os = "freebsd", target_os = "openbsd")))'.dependencies]
- mimalloc-rust = { version = "0.2.1" }
+ mimalloc-safe = { version = "0.1.58" }
  
--[target.'cfg(all(target_os = "linux", not(all(target_env = "musl", target_arch = "aarch64"))))'.dependencies]
-+[target.'cfg(any(all(target_os = "linux", not(all(target_env = "musl", target_arch = "aarch64"))), all(target_os = "freebsd", not(target_arch = "aarch64")), all(target_os = "openbsd", not(target_arch = "aarch64"))))'.dependencies]
- mimalloc-rust = { version = "0.2.1", features = ["local-dynamic-tls"] }
+ # Readable version of the target specifier
+@@ -33,7 +33,7 @@ mimalloc-safe = { version = "0.1.58" }
+ # 		)
+ # 	)
+ # )
+-[target.'cfg(any(all(target_os = "linux", not(target_arch = "loongarch64"), not(all(target_arch = "riscv64", target_env = "musl")), not(target_env = "ohos")), all(target_os = "freebsd", not(target_arch = "aarch64"))))'.dependencies]
++[target.'cfg(any(all(target_os = "linux", not(target_arch = "loongarch64"), not(all(target_arch = "riscv64", target_env = "musl")), not(target_env = "ohos")), all(target_os = "openbsd", not(target_arch = "aarch64")), all(target_os = "freebsd", not(target_arch = "aarch64"))))'.dependencies]
+ mimalloc-safe = { version = "0.1.58", features = ["local_dynamic_tls"] }
  
- [build-dependencies]
+ # Disable architecture specific optimizations on aarch64 platforms

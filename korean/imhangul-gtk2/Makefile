@@ -1,6 +1,6 @@
 PORTNAME=	imhangul
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean
 PKGNAMESUFFIX=	-gtk2
 
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libhangul.so:korean/libhangul \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
+USES=		autoreconf gmake gnome libtool pkgconfig
+
 CONFLICTS_INSTALL=	ko-imhangul-[0-2].*
 
 GH_ACCOUNT=	choehwanjin
@@ -24,7 +26,6 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	cairo gdkpixbuf gtk20
-USES=		autoreconf gmake gnome libtool pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

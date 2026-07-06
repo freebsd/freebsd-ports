@@ -1,7 +1,11 @@
 PORTNAME=	wolfssh
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.wolfssl.com/
+
+PATCH_SITES=	https://github.com/wolfSSL/wolfssh/commit/
+PATCHFILES=	73b10ad26d51309852e87e74cb4e6d27f2faf33b.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight SSH Library

@@ -1,5 +1,5 @@
 PORTNAME=	cargo-about
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

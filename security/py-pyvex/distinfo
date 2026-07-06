@@ -1,7 +1,7 @@
-TIMESTAMP = 1626098519
-SHA256 (pyvex-9.0.5405.tar.gz) = 6d34fb801432b6c5f95ab6b86c462d3aec8c93b751544dad3b40ba7d12984c29
-SIZE (pyvex-9.0.5405.tar.gz) = 1767188
-SHA256 (angr-pyvex-v9.0.5405_GH0.tar.gz) = 63d3b4ca662c052a714e83e1d573ccf5865004cfd63cdbd5fb85b533864651be
-SIZE (angr-pyvex-v9.0.5405_GH0.tar.gz) = 87680
+TIMESTAMP = 1783273637
+SHA256 (pyvex-9.2.222.tar.gz) = ea384cfe50ed46a915ab8dadd6e774fda51434ff88dba7e33ebe3cb53f6cfcc2
+SIZE (pyvex-9.2.222.tar.gz) = 3649034
+SHA256 (angr-pyvex-v9.2.222_GH0.tar.gz) = 9b521cbe2d13a269f9ba0a0c8d069eb3929c2f965d6eea4f7b286c61617ddff0
+SIZE (angr-pyvex-v9.2.222_GH0.tar.gz) = 99021
 SHA256 (angr-binaries-v9.0.5405_GH0.tar.gz) = c6cf9e357450d485ff9f32bba6f495e7a0336178b6d8dde1bb16430da8b58efe
 SIZE (angr-binaries-v9.0.5405_GH0.tar.gz) = 57764618

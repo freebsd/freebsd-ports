@@ -45,6 +45,7 @@ include/spirv/unified1/GLSL.std.450.h
 include/spirv/unified1/NonSemanticClspvReflection.h
 include/spirv/unified1/NonSemanticDebugBreak.h
 include/spirv/unified1/NonSemanticDebugPrintf.h
+include/spirv/unified1/NonSemanticShaderDebugInfo.h
 include/spirv/unified1/NonSemanticShaderDebugInfo100.h
 include/spirv/unified1/NonSemanticVkspReflection.h
 include/spirv/unified1/OpenCL.std.h
@@ -57,6 +58,7 @@ include/spirv/unified1/extinst.nonsemantic.clspvreflection.grammar.json
 include/spirv/unified1/extinst.nonsemantic.debugbreak.grammar.json
 include/spirv/unified1/extinst.nonsemantic.debugprintf.grammar.json
 include/spirv/unified1/extinst.nonsemantic.shader.debuginfo.100.grammar.json
+include/spirv/unified1/extinst.nonsemantic.shader.debuginfo.grammar.json
 include/spirv/unified1/extinst.nonsemantic.vkspreflection.grammar.json
 include/spirv/unified1/extinst.opencl.debuginfo.100.grammar.json
 include/spirv/unified1/extinst.opencl.std.100.grammar.json

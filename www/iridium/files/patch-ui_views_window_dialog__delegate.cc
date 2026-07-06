@@ -1,6 +1,6 @@
---- ui/views/window/dialog_delegate.cc.orig	2026-05-11 13:57:04 UTC
+--- ui/views/window/dialog_delegate.cc.orig	2026-06-10 12:51:34 UTC
 +++ ui/views/window/dialog_delegate.cc
-@@ -128,7 +128,7 @@ Widget* DialogDelegate::CreateDialogWidget(
+@@ -125,7 +125,7 @@ Widget* DialogDelegate::CreateDialogWidget(
  
  // static
  bool DialogDelegate::CanSupportCustomFrame(gfx::NativeView parent) {

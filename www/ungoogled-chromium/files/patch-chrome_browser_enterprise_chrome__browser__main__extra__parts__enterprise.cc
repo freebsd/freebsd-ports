@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/chrome_browser_main_extra_parts_enterprise.cc.orig	2025-12-06 13:30:52 UTC
+--- chrome/browser/enterprise/chrome_browser_main_extra_parts_enterprise.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/enterprise/chrome_browser_main_extra_parts_enterprise.cc
-@@ -7,7 +7,7 @@
+@@ -8,7 +8,7 @@
  #include "components/enterprise/buildflags/buildflags.h"
  #include "content/public/browser/browser_thread.h"
  
@@ -9,7 +9,7 @@
      BUILDFLAG(ENTERPRISE_LOCAL_CONTENT_ANALYSIS)
  #include "chrome/browser/enterprise/connectors/analysis/content_analysis_sdk_manager.h"  // nogncheck
  #include "chrome/browser/enterprise/connectors/connectors_service.h"  // nogncheck
-@@ -53,7 +53,7 @@ ChromeBrowserMainExtraPartsEnterprise::ChromeBrowserMa
+@@ -54,7 +54,7 @@ ChromeBrowserMainExtraPartsEnterprise::ChromeBrowserMa
  ChromeBrowserMainExtraPartsEnterprise::
      ~ChromeBrowserMainExtraPartsEnterprise() = default;
  

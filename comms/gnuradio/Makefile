@@ -85,6 +85,8 @@ USE_LDCONFIG=	yes
 LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft filter pmt \
 		qtgui runtime trellis video-sdl vocoder wavelet
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS UHD
 OPTIONS_SUB=	yes
 UHD_DESC=	Include UHD support from Ettus

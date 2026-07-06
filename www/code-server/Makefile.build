@@ -1,0 +1,85 @@
+post-extract:
+	${RM} -r ${WRKSRC}/lib/vscode
+	${MV} ${WRKDIR}/vscode-${VSCODE_VERSION} ${WRKSRC}/lib/vscode
+.if !defined(BOOTSTRAP_NODE_MODULES)
+	${TAR} -xzf ${DISTDIR}/code-server-node-modules-${DISTVERSION}${EXTRACT_SUFX} \
+		-C ${WRKSRC}
+.endif
+	${TAR} -xzf ${DISTDIR}/vscode-reh-web-linux-x64-${DISTVERSION}${EXTRACT_SUFX} \
+		-C ${WRKSRC}
+.for dir in ${VSCODE_NODE_MODULES}
+	${MKDIR} ${WRKSRC}/lib/vscode/${dir}
+	${TAR} -xzf ${WRKDIR}/vscode-${dir:S|/|_|g}-node-modules${EXTRACT_SUFX} \
+		-C ${WRKSRC}/lib/vscode/${dir}
+.endfor
+
+post-patch:
+	cd ${WRKSRC} && while read patchfile; do \
+		${PATCH} -p1 < ${WRKSRC}/patches/$${patchfile}; \
+	done < ${WRKSRC}/patches/series
+	${CP} ${WRKSRC}/lib/vscode/build/.moduleignore.linux \
+		${WRKSRC}/lib/vscode/build/.moduleignore.freebsd
+	${REINPLACE_CMD} -e '/"typeRoots": \[/,+2d' \
+		${WRKSRC}/lib/vscode/extensions/configuration-editing/tsconfig.json
+	${LOCALBASE}/bin/jq \
+		'.version = "${DISTVERSION}" | .commit = "${DISTVERSION}"' \
+		${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
+	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		npm run build
+	cd ${WRKSRC}/lib/vscode/node_modules/node-pty && \
+		${SETENV} ${MAKE_ENV} PYTHON=${PYTHON_CMD} \
+		node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
+		rebuild --nodedir=${LOCALBASE}
+	${MKDIR} ${WRKSRC}/lib/vscode/node_modules/node-pty/prebuilds/freebsd-x64
+	${CP} ${WRKSRC}/lib/vscode/node_modules/node-pty/build/Release/pty.node \
+		${WRKSRC}/lib/vscode/node_modules/node-pty/prebuilds/freebsd-x64/pty.node
+	cd ${WRKSRC}/lib/vscode/node_modules/@vscode/spdlog && \
+		${SETENV} ${MAKE_ENV} PYTHON=${PYTHON_CMD} \
+		node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
+		rebuild --nodedir=${LOCALBASE}
+	cd ${WRKSRC}/lib/vscode/node_modules/@vscode/native-watchdog && \
+		${SETENV} ${MAKE_ENV} PYTHON=${PYTHON_CMD} \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
+		rebuild --nodedir=${LOCALBASE}
+	cd ${WRKSRC}/lib/vscode && \
+		VSCODE_NODE_VERSION=$$(${AWK} \
+			'/node-v[0-9.]+-linux-x64\.tar\.gz/ { \
+				sub(/^.*node-v/, "", $$2); \
+				sub(/-linux-x64\.tar\.gz$$/, "", $$2); \
+				print $$2; \
+				exit \
+			}' build/checksums/nodejs.txt) && \
+		${MKDIR} .build/node/v$${VSCODE_NODE_VERSION}/linux-x64 && \
+		${CP} ${LOCALBASE}/bin/node \
+			.build/node/v$${VSCODE_NODE_VERSION}/linux-x64/node
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} VERSION=${DISTVERSION} \
+		npm run build:vscode
+	${PERL} -0pi \
+		-e 's#process\.platform !== "linux"\) \{#process.platform !== "linux" \&\&\n    process.platform !== "freebsd") {#' \
+		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/deviceid/dist/index.js
+	${PERL} -0pi \
+		-e 's#process\.platform === "linux"#process.platform === "linux" || process.platform === "freebsd"#' \
+		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/deviceid/dist/storage.js
+	${MKDIR} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/node-pty/prebuilds/freebsd-x64
+	${CP} ${WRKSRC}/lib/vscode/node_modules/node-pty/build/Release/pty.node \
+		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/node-pty/prebuilds/freebsd-x64/pty.node
+	${MKDIR} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/spdlog/build/Release
+	${CP} ${WRKSRC}/lib/vscode/node_modules/@vscode/spdlog/build/Release/spdlog.node \
+		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/spdlog/build/Release/spdlog.node
+	${MKDIR} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/native-watchdog/build/Release
+	${CP} ${WRKSRC}/lib/vscode/node_modules/@vscode/native-watchdog/build/Release/watchdog.node \
+		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/native-watchdog/build/Release/watchdog.node
+	${RM} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node
+
+make-node-modules-archive:
+	${MAKE} BOOTSTRAP_NODE_MODULES=yes clean extract
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		npm ci --ignore-scripts --no-progress --no-audit \
+		--no-fund --no-update-notifier
+	cd ${WRKSRC} && ${TAR} -czf \
+		${WRKDIR}/code-server-node-modules-${DISTVERSION}${EXTRACT_SUFX} \
+		node_modules

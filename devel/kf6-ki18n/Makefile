@@ -2,8 +2,8 @@ PORTNAME=	ki18n
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Advanced internationalization framework
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Advanced internationalization framework
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes

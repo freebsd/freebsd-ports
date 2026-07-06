@@ -1,6 +1,5 @@
 PORTNAME=	colour-science
-DISTVERSION=	0.4.6
-PORTREVISION=	3
+DISTVERSION=	0.4.7
 CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imageio>=2:graphics/py-imageio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.24:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.10:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.13.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -26,5 +24,7 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 # the test colour/characterisation/tests/test_correction.py::TestColourCorrectionFinlayson2015::test_nan_colour_correction_Finlayson2015 hangs, see https://github.com/colour-science/colour/issues/1351
+
+# tests as of 0.4.7: 2300+ passed, some failed
 
 .include <bsd.port.mk>

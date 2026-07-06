@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Sisimai/Lhost/ApacheJames.pm
 %%SITE_PERL%%/Sisimai/Lhost/Biglobe.pm
 %%SITE_PERL%%/Sisimai/Lhost/Courier.pm
+%%SITE_PERL%%/Sisimai/Lhost/DeutscheTelekom.pm
 %%SITE_PERL%%/Sisimai/Lhost/Domino.pm
 %%SITE_PERL%%/Sisimai/Lhost/DragonFly.pm
 %%SITE_PERL%%/Sisimai/Lhost/EZweb.pm
@@ -138,6 +139,7 @@
 %%PERL5_MAN3%%/Sisimai::Lhost::ApacheJames.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Biglobe.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Courier.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::DeutscheTelekom.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Domino.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::DragonFly.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::EZweb.3.gz

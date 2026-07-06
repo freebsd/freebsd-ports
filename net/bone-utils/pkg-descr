@@ -1,0 +1,23 @@
+This is the [B]ag [O]f [N]etgraph [E]xtensions utilities package is an evolving
+set of extra netgraph(4) utilities to simplify using the kernel modules in
+net/bone-kmods. Additionally it provides a very simple rc(8) script which
+re-names interfaces to match whatever you named them in your ngctl.conf.
+
+At present this module provides the following:
+* netgraph rc(8) script that keeps ifconfig(8)/ngctl(8) in agreement on nodes
+  that present a network interface (ng_eiface(4), ng_ether(4), ng_iface(4)).
+* jeiface script to create an ng_eiface(4) in a jail giving it the name and
+  optional MAC you request.
+* ncpcap(8) connectes to nodes to capture traffic. It is meant to have its
+  output piped to tcpdump(1)
+* ngportal(8) is the fast and simple way to connect to vnets using netgraph.
+
+See manpages for more details and example usage. This package needs the correct
+version of net/bone-kmods for your system. Most users want the default flavor:
+
+  pkg install bone-kmods
+
+If you built your kernel with INVARIANTS (the default in CURRENT), use the
+@invariants flavor:
+
+  pkg install bone-kmods-invariants

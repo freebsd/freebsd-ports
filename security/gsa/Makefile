@@ -1,6 +1,6 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.14.0
+DISTVERSION=	27.4.1
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -9,15 +9,12 @@ WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 
-DEPRECATED=	Depends on expired www/npm-node20
-EXPIRATION_DATE=2026-09-02
-
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-BUILD_DEPENDS=	npm-node20>0:www/npm-node20
+BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad
 
-USES=		nodejs:20,build
+USES=		nodejs:24,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone

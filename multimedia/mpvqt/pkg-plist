@@ -12,3 +12,4 @@ lib/cmake/MpvQt/MpvQtTargets.cmake
 lib/libMpvQt.so
 lib/libMpvQt.so.%%SHLIB_VER%%
 lib/libMpvQt.so.%%SHLIB_VERSION%%
+%%QT_LIBDIR%%/metatypes/qt6mpvqt_metatypes.json

@@ -13,10 +13,10 @@
 +
 +array_args = sys.argv[1:]
 +array_modules = []
-+base.set_env('QT_SELECT', 'qt5')
-+if not base.is_dir("./qt_build/Qt-5.15.14"):
-+    base.cmd("mkdir", ["-p", "qt_build/Qt-5.15.14",])
-+    base.cmd("ln", ["-s", "%%LOCALBASE%%/lib/qt5", "qt_build/Qt-5.15.14/clang_64"])
++qt_root= "qt_build/Qt-%%QT_VERSION%%"
++if not base.is_dir(qt_root):
++    base.cmd("mkdir", ["-p", qt_root,])
++    base.cmd("ln", ["-s", "%%QT_LIBDIR%%", qt_root + "/clang_64"])
 +
 +config = {}
 +for arg in array_args:
@@ -50,7 +50,7 @@
 +                      "--module", modules,
 +                      "--update", "0",
 +                      "--platform", "freebsd_64",
-+                      "--qt-dir", os.getcwd() + "/qt_build/Qt-5.15.14"]
++                      "--qt-dir", os.path.join(os.getcwd(),qt_root)]
 +
 +base.cmd_in_dir("../..", "./configure.py", build_tools_params)
 +base.cmd_in_dir("../..", "./make.py")

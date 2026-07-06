@@ -1,6 +1,5 @@
 PORTNAME=	e-antic
-DISTVERSION=	2.1.0
-PORTREVISION=	3
+DISTVERSION=	2.1.1
 #MASTER_SITES=	https://www.labri.fr/perso/vdelecro/e-antic/
 CATEGORIES=	math
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libflint.so:math/flint2		\
 		libboost_thread.so:devel/boost-libs
 
-USES=		autoreconf compiler:c++11-lang gmake libtool localbase	\
+USES=		autoreconf compiler:c++14-lang gmake libtool localbase	\
 		python
 
 USE_GITHUB=	yes
@@ -37,7 +36,7 @@ GH_SUBDIR=	libeantic/upstream/antic:a	\
 
 LIBS+=		"-lm"
 GNU_CONFIGURE=	yes
-# pytest requires cppyy, doc requires standardese
+# pytest requires cppyy, doc requires sphinx + py-breathe + plantuml + doxygen
 CONFIGURE_ARGS=	--without-byexample	\
 		--without-benchmark	\
 		--without-pytest	\

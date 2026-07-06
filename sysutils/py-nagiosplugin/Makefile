@@ -1,19 +1,18 @@
 PORTNAME=	nagiosplugin
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+DISTVERSION=	1.3.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Class library for writing Nagios (Icinga) plugins
-WWW=		https://bitbucket.org/flyingcircus/nagiosplugin
+WWW=		https://nagiosplugin.readthedocs.io/
 
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 

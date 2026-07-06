@@ -1,0 +1,181 @@
+.\"
+.\" SPDX-License-Identifier: BSD-2-Clause
+.\"
+.\" Copyright (c) 2020-2026 Mateusz Piotrowski <0mp@FreeBSD.org>
+.\"
+.Dd June 9, 2026
+.Dt FAHCLIENT 8
+.Os
+.Sh NAME
+.Nm fahclient
+.Nd service daemon for the Folding@home Client
+.Sh SYNOPSIS
+.Nm
+.Ar command Op Ar args ...
+.Nm
+.Cm log
+.Nm
+.Cm showconfig
+.Sh DESCRIPTION
+.Nm
+is an
+.Xr rc 8
+daemon for the Folding@home Client.
+.Pp
+Configure
+.Nm
+with the following
+.Xr rc.conf 5
+variables:
+.Bl -tag -width fahclient_extra_flags -offset 2n
+.It Va fahclient_enable
+Toggle to enable
+.Nm .
+Default:
+.Dq NO .
+.It Va fahclient_chdir
+Working directory of
+.Nm .
+Default:
+.Dq Pa %%FAHCLIENT_WORK_DIR%% .
+.It Va fahclient_config
+Configuration file.
+Default:
+.Dq Pa %%ETCDIR%%/config.xml .
+.It Va fahclient_donor
+Donor to attribute work units to.
+Settings in the configuration file take precedence.
+Default:
+.Dq Anonymous .
+.It Va fahclient_extra_flags
+Extra flags passed to the Folding@home Client after other flags.
+Default: empty.
+.It Va fahclient_flags
+Extra flags passed to
+.Xr daemon 8
+before any other flags.
+Default: empty.
+.It Va fahclient_logfile
+Log file.
+Takes precedence over settings in the configuration file.
+Default:
+.Dq Pa %%FAHCLIENT_WORK_DIR%%/log.txt .
+.It Va fahclient_team
+Folding@home team to join and attribute work units to.
+Settings in the configuration file take precedence.
+Default:
+.Ql 11743 ,
+Team
+.Fx .
+.It Va fahclient_pidfile
+PID file.
+Default:
+.Dq Pa %%FAHCLIENT_WORK_DIR%%/fahclient.pid .
+.It Va fahclient_user
+System user to run
+.Nm fahclient
+as.
+Default:
+.Ql fahclient .
+.El
+.Pp
+.Nm
+supports the following extra commands:
+.Bl -tag -width showconfig -offset 2n
+.It Cm log
+View
+.Nm Ap s
+folding logs.
+.It Cm showconfig
+Show the final configuration of
+.Nm
+after all configuration files and command-line flags are processed.
+.El
+.Pp
+The Web Dashboard is available at
+.Lk https://v8-4.foldingathome.org/
+and
+.Lk http://localhost:7396/
+when
+.Nm
+is running.
+Visit the Web Dashboard to connect
+.Nm
+to a Folding@home Account and manage folding work.
+.Pp
+Link
+.Nm
+to an existing account with an Account Token.
+Generate it on the Web Dashboard.
+Add the Account Token to either the configuration file
+or specify it a command-line argument to
+.Nm :
+.Dl sysrc fahclient_extra_flags+=" --account-token=<Account-Token>"
+.Pp
+Refer to the Folding@home Client's help message for more usage
+information:
+.Dl %%FAHCLIENT_PROGRAM%% --help
+.Sh FILES
+.Bl -tag -width "%%FAHCLIENT_PROGRAM%%"
+.It Pa %%FAHCLIENT_PROGRAM%%
+Folding@home Client program invoked by the
+.Nm
+daemon.
+.Sh EXAMPLES
+.Ss Example 1: Quick Start
+Start
+.Nm
+by executing the following steps:
+.Bd -literal -offset indent
+# Mount linprocfs(5) at /compat/linux/proc:
+mount -t linprocfs linprocfs /compat/linux/proc
+# Mount linsysfs(5) at /compat/linux/proc:
+mount -t linsysfs linsysfs /compat/linux/sys
+# Enable fahclient:
+service fahclient enable
+# Optionally, set the desired donor name:
+sysrc fahclient_donor="Anonymous"
+# Start fahclient:
+service fahclient start
+.Ed
+.Pp
+Open the Folding@home Web Dashboard to finish the setup.
+.Pp
+Add
+.Xr linprocfs 5
+and
+.Xr linsysfs 5
+entries to
+.Xr fstab 5
+to make the setup persistent across reboots.
+.Sh SEE ALSO
+.Lk https://foldingathome.org/guides/v8-4-client-guide/ "Folding@home v8.4 Client Guide"
+.Pp
+.Lk https://foldingathome.org/faq/ "Folding@home FAQ"
+.Pp
+.Lk https://foldingforum.org/ "Folding Forum"
+.Pp
+.Lk https://stats.foldingathome.org/team/11743 "Team FreeBSD Statistics"
+.Sh HISTORY
+Team
+.Fx
+was founded by
+.An Frank Mayhar .
+.Sh AUTHORS
+The
+.Nm
+manual page was written by
+.An Mateusz Piotrowski Aq Mt 0mp@FreeBSD.org .
+.Sh CAVEATS
+The working directory of
+.Nm
+must have the execute permissions enabled to function properly.
+For example, on a
+.Xr zfs 4
+dataset where
+.Pa %%FAHCLIENT_WORK_DIR%%
+is located the
+.Ql exec
+property
+must be set to
+.Ql on .

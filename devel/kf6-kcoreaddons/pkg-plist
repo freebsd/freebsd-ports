@@ -81,6 +81,7 @@ lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake
 lib/libKF6CoreAddons.so
 lib/libKF6CoreAddons.so.6
 lib/libKF6CoreAddons.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_LIBDIR%%/metatypes/qt6kf6coreaddons_metatypes.json
 %%QT_QMLDIR%%/org/kde/coreaddons/kcoreaddonsplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/coreaddons/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/coreaddons/libkcoreaddonsplugin.so
@@ -88,6 +89,7 @@ lib/libKF6CoreAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 libdata/pkgconfig/KF6CoreAddons.pc
 share/kf6/jsonschema/kpluginmetadata.schema.json
 share/locale/af/LC_MESSAGES/kcoreaddons6_qt.qm
+share/locale/am/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ar/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/as/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ast/LC_MESSAGES/kcoreaddons6_qt.qm

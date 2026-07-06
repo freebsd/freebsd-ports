@@ -1,6 +1,6 @@
---- raddb/Makefile.in.orig	2008-12-17 11:09:50 UTC
+--- raddb/Makefile.in.orig	2025-12-11 11:41:25 UTC
 +++ raddb/Makefile.in
-@@ -893,10 +893,10 @@ install-data-local:
+@@ -794,10 +794,10 @@ install-data-local:
  		echo '================================================================='; \
  	else \
  		for file in $(raddb_files_644); do \
@@ -11,5 +11,5 @@
 -			${INSTALL} -m 600 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$$file; \
 +			${INSTALL} -m 600 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$${file}.sample; \
  		done; \
- 	        for file in $(dictionaries); do \
- 		        ${INSTALL} -m 644 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$$file; \
+ 		for file in $(dictionaries); do \
+ 			${INSTALL} -m 644 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$$file; \

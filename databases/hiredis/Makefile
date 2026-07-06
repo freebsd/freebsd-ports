@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe ssl
-CPE_VENDOR=	redislabs
+CPE_VENDOR=	redis
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	redis

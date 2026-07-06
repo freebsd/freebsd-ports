@@ -1,5 +1,5 @@
 PORTNAME=	model-hosting-container-standards
-DISTVERSION=	0.1.15
+DISTVERSION=	0.1.16
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

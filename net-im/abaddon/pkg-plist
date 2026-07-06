@@ -75,5 +75,5 @@ bin/abaddon
 %%DATADIR%%/res/typing_indicator.gif
 %%DATADIR%%/res/xbox.png
 %%DATADIR%%/res/youtube.png
-share/applications/abaddon.desktop
-share/icons/hicolor/scalable/apps/abaddon.svg
+share/applications/io.github.uowuo.abaddon.desktop
+share/icons/hicolor/scalable/apps/io.github.uowuo.abaddon.svg

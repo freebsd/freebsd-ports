@@ -1,0 +1,5 @@
+DataLad is a free and open source distributed data management system
+that keeps track of your data, creates structure, ensures reproducibility,
+supports collaboration, and integrates with widely used data
+infrastructure. It provides a unified data distribution with built-in
+data versioning using git and git-annex.

@@ -1,6 +1,5 @@
 PORTNAME=	pytorch-lightning
-DISTVERSION=	2.6.1
-PORTREVISION=	1
+DISTVERSION=	2.6.5
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=2022.5.0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lightning-utilities>=0.10.0:misc/py-lightning-utilities@${PY_FLAVOR} \
@@ -26,10 +26,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=2022.5.0:filesystems/py-fsspec@${PY_
 		${PYTHON_PKGNAMEPREFIX}pyyaml>5.4:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 WRKSRC=		${WRKDIR}/pytorch_lightning-${DISTVERSION}
 
 NO_ARCH=	yes
+
+# tests as of 2.6.5: 4 passed in 12.56s
 
 .include <bsd.port.mk>

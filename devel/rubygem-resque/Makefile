@@ -16,6 +16,6 @@ RUN_DEPENDS+=	rubygem-mono_logger>=1.0:devel/rubygem-mono_logger \
 		rubygem-sinatra>0.9.3:www/rubygem-sinatra
 
 NO_ARCH=	yes
-USES=		gem
+USES=		cpe gem
 
 .include <bsd.port.mk>

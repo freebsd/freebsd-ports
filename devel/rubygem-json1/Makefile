@@ -11,7 +11,9 @@ WWW=		https://flori.github.io/json/
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	ruby-lang
 
 PORTSCOUT=	limit:^1\.
 

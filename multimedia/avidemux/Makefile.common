@@ -12,6 +12,9 @@ LIB_DEPENDS+=	libmad.so:audio/libmad \
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Obsolete version with various bugs and issues
+EXPIRATION_DATE=2026-08-31
+
 USE_GNOME=	libxml2
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options

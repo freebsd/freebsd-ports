@@ -1,0 +1,16 @@
+nvom 0.12.3 gets confused about which Lua to use during the build. In
+particular, it reaches for lua51, rather than luajit (which is what it
+actually wants).
+
+
+--- src/nvim/CMakeLists.txt.orig	2026-06-12 10:04:12 UTC
++++ src/nvim/CMakeLists.txt
+@@ -641,7 +641,7 @@ add_custom_command(
+ 
+ add_custom_command(
+   OUTPUT ${VIM_MODULE_FILE}
+-  COMMAND ${LUA_PRG} ${CHAR_BLOB_GENERATOR} ${LUA_BLOB_COMPILE_FLAG} ${VIM_MODULE_FILE}
++  COMMAND ${LUA_GEN_PRG} ${CHAR_BLOB_GENERATOR} ${LUA_BLOB_COMPILE_FLAG} ${VIM_MODULE_FILE}
+       # NB: vim._init_packages and vim.inspect must be be first and second ones
+       # respectively, otherwise --luamod-dev won't work properly.
+       ${LUA_INIT_PACKAGES_MODULE_SOURCE} "vim._init_packages"

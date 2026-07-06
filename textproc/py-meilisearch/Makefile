@@ -1,5 +1,5 @@
 PORTNAME=	meilisearch
-DISTVERSION=	0.41.0
+DISTVERSION=	0.41.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 0.36.0: 7 passed in 1.95s
+# tests as of 0.41.1: 9 passed in 4.82s
 
 .include <bsd.port.mk>

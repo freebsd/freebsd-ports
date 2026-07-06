@@ -26,7 +26,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Depends on expired devel/electron37
-EXPIRATION_DATE=2026-06-30
+EXPIRATION_DATE=2026-07-30
 
 BROKEN_i386=	fails to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
 

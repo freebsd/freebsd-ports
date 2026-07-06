@@ -1,6 +1,6 @@
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.7.6
+DISTVERSION=	4.0.1
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -77,10 +77,10 @@ PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
 	hough_transform2d image2ascii image_registration2d image_surface3d	\
 	jawbreaker mcf_levelsets2d mcf_levelsets3d odykill			\
-	pde_TschumperleDeriche2d pde_heatflow2d plotter1d radon_transform2d	\
+	pde_TschumperleDeriche2d pde_heatflow2d plotter1d	\
 	scene3d spherical_function3d tetris tron tutorial use_RGBclass		\
 	use_chlpca use_draw_gradient use_jpeg_buffer use_nlmeans use_skeleton	\
-	wavelet_atrous
+	use_tiff_stream wavelet_atrous
 .else
 NO_BUILD=	yes
 .endif

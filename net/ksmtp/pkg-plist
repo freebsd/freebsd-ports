@@ -19,7 +19,6 @@ lib/libKPim6SMTP.so.6
 lib/libKPim6SMTP.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/libksmtp6.mo
 share/locale/ast/LC_MESSAGES/libksmtp6.mo
-share/locale/bg/LC_MESSAGES/libksmtp6.mo
 share/locale/bs/LC_MESSAGES/libksmtp6.mo
 share/locale/ca/LC_MESSAGES/libksmtp6.mo
 share/locale/ca@valencia/LC_MESSAGES/libksmtp6.mo

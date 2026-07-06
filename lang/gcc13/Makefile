@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	13.3.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -69,6 +69,10 @@ GRAPHITE_LIB_DEPENDS=          libisl.so:devel/isl
 GRAPHITE_CONFIGURE_WITH+=      isl
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64le && ${OSVERSION} >= 1600019
+CONFIGURE_ARGS+=	--with-long-double-format=ieee
+.endif
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}

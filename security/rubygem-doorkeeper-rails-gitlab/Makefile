@@ -1,5 +1,5 @@
 PORTNAME=	doorkeeper
-PORTVERSION=	5.8.2
+PORTVERSION=	5.9.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -15,8 +15,8 @@ RUN_DEPENDS=	rubygem-railties-gitlab>=5:www/rubygem-railties-gitlab
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	doorkeeper_project
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

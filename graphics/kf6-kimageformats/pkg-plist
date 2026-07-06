@@ -5,6 +5,7 @@ lib/cmake/KF6ImageFormats/KF6ImageFormatsConfigVersion.cmake
 %%QT_PLUGINDIR%%/imageformats/kimg_dds.so
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
 %%OPENEXR%%%%QT_PLUGINDIR%%/imageformats/kimg_exr.so
+%%QT_PLUGINDIR%%/imageformats/kimg_ff.so
 %%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
 %%HEIF%%%%QT_PLUGINDIR%%/imageformats/kimg_heif.so
 %%QT_PLUGINDIR%%/imageformats/kimg_iff.so

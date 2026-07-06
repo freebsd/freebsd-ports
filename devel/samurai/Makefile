@@ -24,10 +24,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/samu ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/samu.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS}_${OSREL:R} == FreeBSD_13
-CFLAGS+=	-D_XOPEN_SOURCE=700L
-.endif
-
 .include <bsd.port.mk>

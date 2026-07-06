@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		php:pecl pkgconfig
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	--with-libzstd
 

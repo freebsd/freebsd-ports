@@ -9,4 +9,6 @@ PLIST=		${PKGDIR}/pkg-plist.agent
 OPTIONS_DEFINE=		CURL IPV6 MODBUS
 OPTIONS_DEFAULT=	CURL OPENSSL
 
+CPE_PRODUCT=	zabbix-agent
+
 .include "${MASTERDIR}/Makefile"

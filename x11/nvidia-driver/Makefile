@@ -61,10 +61,13 @@ LIB_DEPENDS+=	libnvidia-egl-xcb.so:graphics/egl-x11
 LIB_DEPENDS+=	libnvidia-egl-wayland2.so:graphics/egl-wayland2
 .endif
 
-USES=		uidfix xorg
+USES=		cpe uidfix xorg
 .if ${NVVERSION} >= 470.04201
 USES+=		tar:xz
 .endif
+
+CPE_PRODUCT=	gpu_driver
+CPE_VENDOR=	nvidia
 
 USE_XORG=	x11 xext
 .if ${FLAVOR} == xlibre

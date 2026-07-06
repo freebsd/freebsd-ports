@@ -1,7 +1,7 @@
 Index: cli/tools/bundle/esbuild.rs
---- cli/tools/bundle/esbuild.rs.orig
+--- cli/tools/bundle/esbuild.rs.orig	2026-07-01 13:28:43 UTC
 +++ cli/tools/bundle/esbuild.rs
-@@ -22,10 +22,14 @@ pub const ESBUILD_VERSION: &str = "0.25.5";
+@@ -22,10 +22,14 @@ fn esbuild_platform() -> &'static str {
  
  fn esbuild_platform() -> &'static str {
    match (std::env::consts::ARCH, std::env::consts::OS) {
@@ -15,4 +15,4 @@ Index: cli/tools/bundle/esbuild.rs
 +    ("aarch64", "openbsd") => "openbsd-arm64",
      ("x86_64", "windows") => "win32-x64",
      ("aarch64", "windows") => "win32-arm64",
-     _ => panic!(
+     ("x86_64", "android") => "android-x64",

@@ -12,7 +12,6 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_arm64=	error: use of undeclared identifier 'isnanl'
-BROKEN_armv7=	error: use of undeclared identifier 'isnanl'
 BROKEN_i386=	error: undefined symbol: __trunctfdf2
 
 TEST_DEPENDS=	mpfr>0:math/mpfr

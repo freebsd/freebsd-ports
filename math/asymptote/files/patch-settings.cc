@@ -7,7 +7,7 @@
 -string defaultPSViewer="evince";
 -string defaultPDFViewer="evince";
 -string defaultHTMLViewer="google-chrome";
-+string defaultPSViewer="gv";
++string defaultPSViewer="xdg-open";
 +string defaultPDFViewer="xdg-open";
 +string defaultHTMLViewer="xdg-open";
  #endif

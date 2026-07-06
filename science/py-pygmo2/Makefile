@@ -1,7 +1,6 @@
 PORTNAME=	pygmo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.7
-PORTREVISION=	10
+DISTVERSION=	2.19.8
 CATEGORIES=	science graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -37,5 +36,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include/coin # see https://github.com/esa/pygmo2/issue
 do-test: install # tests require sysctl sudo sysctl kern.threads.max_threads_per_proc variable to be at least 15000 ; test taken from azure-pipelines.yml
 	# some tests fail, see https://github.com/esa/pygmo2/issues/135
 	@${PYTHON_CMD} -c "import pygmo; pygmo.test.run_test_suite(1); pygmo.mp_island.shutdown_pool(); pygmo.mp_bfe.shutdown_pool()"
+
+# tests as of 2.19.8: Ran 71 tests, 22 errors (known issues, see do-test)
 
 .include <bsd.port.mk>

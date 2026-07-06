@@ -11,8 +11,8 @@ WWW=		https://docs.keydb.dev/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_i386=	assertion failed: static_assert(sizeof(long) == sizeof(long long),"")
-BROKEN_powerpc=	assertion failed: static_assert(sizeof(long) == sizeof(long long),"")
+NOT_FOR_ARCHS=	armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	assertion failed: static_assert(sizeof(long) == sizeof(long long),"")
 
 LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		liblz4.so:archivers/liblz4 \

@@ -13,7 +13,6 @@
     SUBDIR += argus-clients
     SUBDIR += arpscan
     SUBDIR += arpwatch
-    SUBDIR += arts++
     SUBDIR += bandwhich
     SUBDIR += bandwidthd
     SUBDIR += bgpq3
@@ -227,6 +226,7 @@
     SUBDIR += ocsinventory-ocsreports
     SUBDIR += ocsinventory-server
     SUBDIR += omada5
+    SUBDIR += omada6
     SUBDIR += omping
     SUBDIR += openbmp
     SUBDIR += openlldp
@@ -304,6 +304,7 @@
     SUBDIR += php83-snmp
     SUBDIR += php84-snmp
     SUBDIR += php85-snmp
+    SUBDIR += php86-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
     SUBDIR += ping_exporter
@@ -412,6 +413,7 @@
     SUBDIR += unbound_exporter
     SUBDIR += unifi10
     SUBDIR += unifi9
+    SUBDIR += uptime-kuma
     SUBDIR += victoria-logs
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
@@ -433,11 +435,6 @@
     SUBDIR += zabbix7-java
     SUBDIR += zabbix7-proxy
     SUBDIR += zabbix7-server
-    SUBDIR += zabbix72-agent
-    SUBDIR += zabbix72-frontend
-    SUBDIR += zabbix72-java
-    SUBDIR += zabbix72-proxy
-    SUBDIR += zabbix72-server
     SUBDIR += zabbix74-agent
     SUBDIR += zabbix74-frontend
     SUBDIR += zabbix74-java

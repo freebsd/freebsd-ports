@@ -1,0 +1,14 @@
+  Documentation is handled by the Port itself. Remove these Install
+  Artifacts to eliminate the noise polution in the build log.
+
+--- input_sources/xmlada_input.gpr.orig	2026-07-01 04:25:40 UTC
++++ input_sources/xmlada_input.gpr
+@@ -39,8 +39,6 @@ project XmlAda_Input is
+    package Ide      renames XmlAda_Shared.Ide;
+ 
+    package Install is
+-      for Artifacts ("share/doc/xmlada")
+-        use ("../docs/_build/html/*", "../docs/_build/latex/XMLAda.pdf");
+       for Artifacts ("share/gpr") use ("../distrib/xmlada.gpr");
+       for Artifacts ("share/examples/xmlada/dom") use ("../docs/dom/*");
+       for Artifacts ("share/examples/xmlada/sax") use ("../docs/sax/*");

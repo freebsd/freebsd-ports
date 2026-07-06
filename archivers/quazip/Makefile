@@ -1,6 +1,6 @@
 PORTNAME=	quazip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
+DISTVERSION=	1.7.1
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -11,8 +11,8 @@ WWW=		https://github.com/stachenov/quazip
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	qt6
 
 USES=		cmake:testing compiler:c++${"${FLAVOR:Mqt6}" != "":?17:14}-lang \
 		cpe qt:${FLAVOR:S/qt//}
@@ -30,6 +30,7 @@ CMAKE_ARGS=	-DQUAZIP_QT_MAJOR_VERSION=${FLAVOR:S/qt//}
 CMAKE_TESTING_ON=	QUAZIP_ENABLE_TESTS
 
 PLIST_SUB=	QTVER_SUFFIX=${FLAVOR:S/qt//} \
+		QUAZIP_VER=${DISTVERSION:R} \
 		QUAZIP_VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

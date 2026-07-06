@@ -1,8 +1,8 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	4.10
+DISTVERSION=	4.11
 CATEGORIES=	graphics
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Vulkan Hardware Capability Viewer
 WWW=		https://vulkan.gpuinfo.org/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:6
+USES=		compiler:c++17-lang desktop-file-utils pkgconfig qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	VulkanCapsViewer
@@ -48,7 +48,7 @@ post-patch:
 		${WRKSRC}/vulkanCapsViewer.pro
 	@${REINPLACE_CMD} -e 's/__linux/__unix/' \
 		${WRKSRC}/vulkanCapsViewer.cpp
-	@${REINPLACE_CMD} -e 's|$$$$PWD/Vulkan-Headers/include/vulkan/vulkan.h|${LOCALBASE}/include/vulkan/vulkan.h|' \
+	@${REINPLACE_CMD} -e 's|$$$$PWD/Vulkan-Headers|${LOCALBASE}|' \
 		${WRKSRC}/vulkanCapsViewer.pri
 
 .include <bsd.port.mk>

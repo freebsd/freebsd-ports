@@ -5,13 +5,132 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
+		ansi-to-tui-8.0.1 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
+		approx-0.5.1 \
 		arbitrary-1.4.2 \
+		arborium-2.17.0 \
+		arborium-ada-2.17.0 \
+		arborium-agda-2.17.0 \
+		arborium-asciidoc-2.17.0 \
+		arborium-asm-2.17.0 \
+		arborium-awk-2.17.0 \
+		arborium-bash-2.17.0 \
+		arborium-batch-2.17.0 \
+		arborium-c-2.17.0 \
+		arborium-c-sharp-2.17.0 \
+		arborium-caddy-2.17.0 \
+		arborium-capnp-2.17.0 \
+		arborium-cedar-2.17.0 \
+		arborium-cedarschema-2.17.0 \
+		arborium-clojure-2.17.0 \
+		arborium-cmake-2.17.0 \
+		arborium-cobol-2.17.0 \
+		arborium-commonlisp-2.17.0 \
+		arborium-cpp-2.17.0 \
+		arborium-css-2.17.0 \
+		arborium-d-2.17.0 \
+		arborium-dart-2.17.0 \
+		arborium-devicetree-2.17.0 \
+		arborium-diff-2.17.0 \
+		arborium-dockerfile-2.17.0 \
+		arborium-dot-2.17.0 \
+		arborium-elisp-2.17.0 \
+		arborium-elixir-2.17.0 \
+		arborium-elm-2.17.0 \
+		arborium-erlang-2.17.0 \
+		arborium-fish-2.17.0 \
+		arborium-fsharp-2.17.0 \
+		arborium-gitattributes-2.17.0 \
+		arborium-gleam-2.17.0 \
+		arborium-glsl-2.17.0 \
+		arborium-go-2.17.0 \
+		arborium-graphql-2.17.0 \
+		arborium-groovy-2.17.0 \
+		arborium-haskell-2.17.0 \
+		arborium-hcl-2.17.0 \
+		arborium-highlight-2.17.0 \
+		arborium-hlsl-2.17.0 \
+		arborium-html-2.17.0 \
+		arborium-idris-2.17.0 \
+		arborium-ini-2.17.0 \
+		arborium-java-2.17.0 \
+		arborium-javascript-2.17.0 \
+		arborium-jinja2-2.17.0 \
+		arborium-jq-2.17.0 \
+		arborium-jsdoc-2.17.0 \
+		arborium-json-2.17.0 \
+		arborium-julia-2.17.0 \
+		arborium-just-2.17.0 \
+		arborium-kconfig-2.17.0 \
+		arborium-kdl-2.17.0 \
+		arborium-kotlin-2.17.0 \
+		arborium-lean-2.17.0 \
+		arborium-lua-2.17.0 \
+		arborium-make-2.17.0 \
+		arborium-markdown-2.17.0 \
+		arborium-matlab-2.17.0 \
+		arborium-meson-2.17.0 \
+		arborium-nginx-2.17.0 \
+		arborium-ninja-2.17.0 \
+		arborium-nix-2.17.0 \
+		arborium-objc-2.17.0 \
+		arborium-ocaml-2.17.0 \
+		arborium-odin-2.17.0 \
+		arborium-perl-2.17.0 \
+		arborium-php-2.17.0 \
+		arborium-postscript-2.17.0 \
+		arborium-powershell-2.17.0 \
+		arborium-prolog-2.17.0 \
+		arborium-proto-2.17.0 \
+		arborium-python-2.17.0 \
+		arborium-query-2.17.0 \
+		arborium-r-2.17.0 \
+		arborium-regex-2.17.0 \
+		arborium-rego-2.17.0 \
+		arborium-rescript-2.17.0 \
+		arborium-ron-2.17.0 \
+		arborium-ruby-2.17.0 \
+		arborium-rust-2.17.0 \
+		arborium-scala-2.17.0 \
+		arborium-scheme-2.17.0 \
+		arborium-scss-2.17.0 \
+		arborium-solidity-2.17.0 \
+		arborium-sparql-2.17.0 \
+		arborium-sql-2.17.0 \
+		arborium-ssh-config-2.17.0 \
+		arborium-starlark-2.17.0 \
+		arborium-styx-2.17.0 \
+		arborium-svelte-2.17.0 \
+		arborium-swift-2.17.0 \
+		arborium-sysroot-2.17.0 \
+		arborium-textproto-2.17.0 \
+		arborium-theme-2.17.0 \
+		arborium-thrift-2.17.0 \
+		arborium-tlaplus-2.17.0 \
+		arborium-toml-2.17.0 \
+		arborium-tree-sitter-2.17.0 \
+		arborium-tsx-2.17.0 \
+		arborium-typescript-2.17.0 \
+		arborium-typst-2.17.0 \
+		arborium-uiua-2.17.0 \
+		arborium-vb-2.17.0 \
+		arborium-verilog-2.17.0 \
+		arborium-vhdl-2.17.0 \
+		arborium-vim-2.17.0 \
+		arborium-vue-2.17.0 \
+		arborium-wit-2.17.0 \
+		arborium-x86asm-2.17.0 \
+		arborium-xml-2.17.0 \
+		arborium-yaml-2.17.0 \
+		arborium-yuri-2.17.0 \
+		arborium-zig-2.17.0 \
+		arborium-zsh-2.17.0 \
 		arg_enum_proc_macro-0.3.4 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
@@ -23,11 +142,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
+		bindgen-0.69.5 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bit_field-0.10.3 \
 		bitflags-1.3.2 \
-		bitflags-2.10.0 \
+		bitflags-2.12.1 \
 		bitstream-io-2.6.0 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
@@ -36,11 +156,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		by_address-1.2.1 \
 		bytemuck-1.24.0 \
 		bytemuck_derive-1.10.2 \
+		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.0 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.50 \
+		cexpr-0.6.0 \
 		cfg-expr-0.15.8 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -48,6 +170,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
+		clang-sys-1.8.1 \
 		clap-4.5.53 \
 		clap_builder-4.5.53 \
 		clap_derive-4.5.49 \
@@ -62,12 +185,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		convert_case-0.10.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
+		core-graphics-0.23.2 \
+		core-graphics-types-0.1.3 \
+		core-text-20.1.0 \
 		core_maths-0.1.1 \
 		cosmic-text-0.18.2 \
 		cpufeatures-0.2.17 \
 		crc32fast-1.5.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
+		critical-section-1.2.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
@@ -89,9 +216,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		directories-5.0.1 \
+		dirs-6.0.0 \
 		dirs-sys-0.4.1 \
+		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
+		dlib-0.5.3 \
+		dlmalloc-0.2.14 \
 		document-features-0.2.12 \
+		dwrote-0.11.5 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
@@ -113,13 +245,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		flate2-1.1.5 \
 		flexi_logger-0.31.7 \
 		float-cmp-0.9.0 \
+		float-ord-0.3.2 \
 		fnv-1.0.7 \
 		foldhash-0.2.0 \
+		font-kit-0.14.3 \
 		font-types-0.9.0 \
 		font-types-0.11.3 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.23.0 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.3 \
+		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.2 \
+		freetype-sys-0.20.1 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
 		futures-channel-0.3.31 \
@@ -135,10 +273,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gif-0.13.3 \
 		gif-0.14.2 \
 		gimli-0.31.1 \
+		glob-0.3.3 \
 		h2-0.3.27 \
 		half-2.7.1 \
 		harfrust-0.5.2 \
 		hashbrown-0.16.1 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
@@ -169,7 +309,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		imagesize-0.14.0 \
 		imgref-1.12.0 \
 		indenter-0.3.4 \
-		indexmap-2.11.4 \
+		indexmap-2.14.0 \
 		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
@@ -189,15 +329,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jobserver-0.1.34 \
 		jpeg-decoder-0.3.2 \
 		js-sys-0.3.83 \
+		json5-1.3.1 \
 		kasuari-0.4.9 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		kurbo-0.13.0 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
+		lazycell-1.3.0 \
 		lebe-0.5.3 \
 		libc-0.2.178 \
 		libfuzzer-sys-0.4.10 \
+		libloading-0.8.9 \
 		libm-0.2.15 \
 		libredox-0.1.11 \
 		line-clipping-0.3.4 \
@@ -209,17 +352,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
 		loop9-0.1.5 \
-		lru-0.16.2 \
+		lru-0.18.0 \
 		mac_address-1.1.8 \
 		maybe-rayon-0.1.1 \
 		memchr-2.7.6 \
 		memmap2-0.9.9 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
+		mermaid-rs-renderer-0.2.2 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.1.1 \
+		mupdf-0.4.4 \
+		mupdf-sys-0.4.4 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.29.0 \
 		nom-7.1.3 \
@@ -230,11 +376,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		notify-types-2.0.0 \
 		nu-ansi-term-0.50.3 \
 		num-bigint-0.4.6 \
-		num-conv-0.1.0 \
+		num-conv-0.2.2 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
+		num_enum-0.7.6 \
+		num_enum_derive-0.7.6 \
 		num_threads-0.1.7 \
 		numtoa-0.2.4 \
 		object-0.36.7 \
@@ -253,6 +401,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		pathdiff-0.2.3 \
+		pathfinder_geometry-0.5.1 \
+		pathfinder_simd-0.5.6 \
 		percent-encoding-2.3.2 \
 		pest-2.8.3 \
 		pest_derive-2.8.3 \
@@ -276,6 +426,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
+		proc-macro-crate-3.5.0 \
 		proc-macro2-1.0.103 \
 		profiling-1.0.17 \
 		profiling-procmacros-1.0.17 \
@@ -292,14 +443,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.9.5 \
 		rand_xoshiro-0.7.0 \
 		rangemap-1.7.1 \
-		ratatui-0.30.0 \
-		ratatui-core-0.1.0 \
-		ratatui-crossterm-0.1.0 \
-		ratatui-image-11.0.2 \
-		ratatui-macros-0.7.0 \
-		ratatui-termion-0.1.0 \
-		ratatui-termwiz-0.1.0 \
-		ratatui-widgets-0.3.0 \
+		ratatui-0.30.1 \
+		ratatui-core-0.1.1 \
+		ratatui-crossterm-0.1.1 \
+		ratatui-image-11.0.4 \
+		ratatui-macros-0.7.1 \
+		ratatui-termion-0.1.1 \
+		ratatui-termwiz-0.1.1 \
+		ratatui-widgets-0.3.1 \
 		rav1e-0.7.1 \
 		ravif-0.11.20 \
 		rayon-1.11.0 \
@@ -308,18 +459,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		read-fonts-0.37.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
+		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.8 \
 		reqwest-0.11.27 \
+		resvg-0.46.0 \
 		resvg-0.47.0 \
 		rgb-0.8.52 \
 		ring-0.17.14 \
 		roxmltree-0.20.0 \
 		roxmltree-0.21.1 \
 		rustc-demangle-0.1.26 \
+		rustc-hash-1.1.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
@@ -350,6 +504,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		signal-hook-registry-1.4.7 \
 		simd-adler32-0.3.8 \
 		simd_helpers-0.1.0 \
+		simdutf8-0.1.5 \
 		similar-2.7.0 \
 		simplecss-0.2.2 \
 		siphasher-1.0.1 \
@@ -367,8 +522,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		streaming-iterator-0.1.9 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
-		strum-0.27.2 \
-		strum_macros-0.27.2 \
+		strum-0.28.0 \
+		strum_macros-0.28.0 \
 		svgtypes-0.16.1 \
 		swash-0.2.6 \
 		syn-1.0.109 \
@@ -393,9 +548,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.9 \
 		tiff-0.9.1 \
-		time-0.3.44 \
-		time-core-0.1.6 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		tiny-skia-0.11.4 \
 		tiny-skia-0.12.0 \
+		tiny-skia-path-0.11.4 \
 		tiny-skia-path-0.12.0 \
 		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
@@ -407,14 +564,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-util-0.7.17 \
 		toml-0.8.23 \
 		toml_datetime-0.6.11 \
+		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.22.27 \
+		toml_edit-0.25.12+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
 		toml_write-0.1.2 \
 		tower-service-0.3.3 \
 		tracing-0.1.44 \
 		tracing-core-0.1.36 \
 		tracing-error-0.2.1 \
 		tracing-subscriber-0.3.22 \
-		tree-sitter-0.26.3 \
 		tree-sitter-language-0.1.6 \
 		tree-sitter-md-0.5.1 \
 		try-lock-0.2.5 \
@@ -434,6 +593,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-width-0.2.2 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
+		usvg-0.46.0 \
 		usvg-0.47.0 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
@@ -513,7 +673,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
+		winnow-1.0.3 \
 		winreg-0.50.0 \
+		wio-0.2.2 \
 		wit-bindgen-0.46.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
@@ -521,6 +683,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		xmlwriter-0.1.0 \
 		yansi-1.0.1 \
 		yazi-0.2.1 \
+		yeslogic-fontconfig-sys-6.0.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zeno-0.3.3 \

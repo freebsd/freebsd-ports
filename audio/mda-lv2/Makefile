@@ -1,5 +1,5 @@
 PORTNAME=	mda-lv2
-DISTVERSION=	1.2.10
+DISTVERSION=	1.2.12
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 

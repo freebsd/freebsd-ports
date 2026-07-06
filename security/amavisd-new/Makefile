@@ -148,7 +148,9 @@ RUN_DEPENDS+=	file>=4.21:sysutils/file
 # at that port, therefore we will block instantly here if the platform does
 # not suit rar.
 .if ${PORT_OPTIONS:MRAR}
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
+RUN_DEPENDS+=	${LOCALBASE}/bin/rar:archivers/rar-i386
+.elif ${ARCH} == "amd64"
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:archivers/rar
 .else
 IGNORE=		archivers/rar is a x86 binary port and is not compatible with ${ARCH}

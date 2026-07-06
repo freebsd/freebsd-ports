@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=3.5.3:databases/py-redis@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}six>=1.15.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.0:net/py-urllib3@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	spotipy_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	spotipy-dev
 USE_PYTHON=	autoplist distutils

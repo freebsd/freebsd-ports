@@ -2,8 +2,8 @@ PORTNAME=	kuserfeedback
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	sysutils kde kde-frameworks
 
-COMMENT=	Framework for collecting feedback from application users
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Framework for collecting feedback from application users
 
 USES=		bison cmake gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl

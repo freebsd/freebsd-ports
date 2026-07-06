@@ -60,6 +60,7 @@
     SUBDIR += ghostscript10
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
+    SUBDIR += graphics2d
     SUBDIR += gsfonts
     SUBDIR += gspdf
     SUBDIR += gtklp
@@ -168,6 +169,7 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
+    SUBDIR += publisher
     SUBDIR += py-PyMuPDF
     SUBDIR += py-collidoscope
     SUBDIR += py-dehinter

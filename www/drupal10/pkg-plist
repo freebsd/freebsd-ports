@@ -5592,6 +5592,9 @@
 %%WWWDIR%%/core/modules/block_content/tests/modules/block_content_test_views/test_views/views.view.test_block_content_view.yml
 %%WWWDIR%%/core/modules/block_content/tests/modules/block_content_test_views/test_views/views.view.test_field_filters.yml
 %%WWWDIR%%/core/modules/block_content/tests/modules/block_content_test_views/test_views/views.view.test_field_type.yml
+%%WWWDIR%%/core/modules/block_content/tests/modules/block_content_theme_suggestions_test/block_content_theme_suggestions_test.info.yml
+%%WWWDIR%%/core/modules/block_content/tests/modules/block_content_theme_suggestions_test/block_content_theme_suggestions_test.module
+%%WWWDIR%%/core/modules/block_content/tests/modules/block_content_theme_suggestions_test/templates/block--block-content--view-type--basic--full.html.twig
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentCacheTagsTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentContextualLinksTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentCreationTest.php
@@ -5605,6 +5608,7 @@
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentRevisionsTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentSaveTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentTestBase.php
+%%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentThemeSuggestionsTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentTranslationUITest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/BlockContentTypeTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Functional/GenericTest.php
@@ -8614,6 +8618,7 @@
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Kernel/TestCoverageTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Traits/CommonCollectionFilterAccessTestPatternsTrait.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Traits/GetDocumentFromResponseTrait.php
+%%WWWDIR%%/core/modules/jsonapi/tests/src/Unit/Encoder/JsonEncoderTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Unit/EventSubscriber/ResourceResponseValidatorTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Unit/JsonApiResource/LinkTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Unit/JsonApiSpecTest.php
@@ -9623,6 +9628,7 @@
 %%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/EmbeddedFormWidgetTest.php
 %%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/EntityReferenceWidgetTest.php
 %%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/FieldUiIntegrationTest.php
+%%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/MediaLibraryContextualFilterTest.php
 %%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/MediaLibraryTestBase.php
 %%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/MediaOverviewTest.php
 %%WWWDIR%%/core/modules/media_library/tests/src/FunctionalJavascript/TranslationsTest.php
@@ -13688,6 +13694,7 @@
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextItemBaseTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextSummaryTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextWithSummaryItemTest.php
+%%WWWDIR%%/core/modules/text/tests/src/Unit/Plugin/Field/FieldType/TextFieldItemListTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Unit/Plugin/migrate/field/d6/TextFieldTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Unit/Plugin/migrate/field/d7/TextFieldTest.php
 %%WWWDIR%%/core/modules/text/text.field_type_categories.yml
@@ -17049,6 +17056,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/MapBaseFieldTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/DirectoryTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileCopyTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteRecursiveRemoteTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteRecursiveTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileMoveTest.php
@@ -20020,6 +20028,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/psr7/README.md
+%%WWWDIR%%/vendor/guzzlehttp/psr7/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/AppendStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/BufferStream.php
@@ -20041,6 +20050,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Query.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Request.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Response.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc3986.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc7230.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/ServerRequest.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Stream.php
@@ -20515,6 +20525,7 @@
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckCircularReferencesPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckDefinitionValidityPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckExceptionOnInvalidReferenceBehaviorPass.php
+%%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckFactoryBuilderCircularReferencePass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckReferenceValidityPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/CheckTypeDeclarationsPass.php
 %%WWWDIR%%/vendor/symfony/dependency-injection/Compiler/Compiler.php
@@ -21323,6 +21334,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php83/Resources/stubs/Override.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php83/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/bootstrap81.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/composer.json
 %%WWWDIR%%/vendor/symfony/process/CHANGELOG.md
@@ -21525,6 +21537,7 @@
 %%WWWDIR%%/vendor/symfony/serializer/Mapping/Factory/ClassMetadataFactoryInterface.php
 %%WWWDIR%%/vendor/symfony/serializer/Mapping/Factory/ClassResolverTrait.php
 %%WWWDIR%%/vendor/symfony/serializer/Mapping/Factory/CompiledClassMetadataFactory.php
+%%WWWDIR%%/vendor/symfony/serializer/Mapping/Loader/AccessorCollisionResolverTrait.php
 %%WWWDIR%%/vendor/symfony/serializer/Mapping/Loader/AnnotationLoader.php
 %%WWWDIR%%/vendor/symfony/serializer/Mapping/Loader/AttributeLoader.php
 %%WWWDIR%%/vendor/symfony/serializer/Mapping/Loader/FileLoader.php
@@ -21578,6 +21591,7 @@
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/Required.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/SubscribedService.php
 %%WWWDIR%%/vendor/symfony/service-contracts/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/service-contracts/ContainerAwareInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/LICENSE
 %%WWWDIR%%/vendor/symfony/service-contracts/README.md
 %%WWWDIR%%/vendor/symfony/service-contracts/ResetInterface.php
@@ -21955,6 +21969,7 @@
 %%WWWDIR%%/vendor/symfony/yaml/Inline.php
 %%WWWDIR%%/vendor/symfony/yaml/LICENSE
 %%WWWDIR%%/vendor/symfony/yaml/Parser.php
+%%WWWDIR%%/vendor/symfony/yaml/ParserState.php
 %%WWWDIR%%/vendor/symfony/yaml/README.md
 %%WWWDIR%%/vendor/symfony/yaml/Resources/bin/yaml-lint
 %%WWWDIR%%/vendor/symfony/yaml/Tag/TaggedValue.php
@@ -21965,7 +21980,6 @@
 %%WWWDIR%%/vendor/twig/twig/LICENSE
 %%WWWDIR%%/vendor/twig/twig/README.rst
 %%WWWDIR%%/vendor/twig/twig/composer.json
-%%WWWDIR%%/vendor/twig/twig/splitsh.json
 %%WWWDIR%%/vendor/twig/twig/src/AbstractTwigCallable.php
 %%WWWDIR%%/vendor/twig/twig/src/Attribute/AsTwigFilter.php
 %%WWWDIR%%/vendor/twig/twig/src/Attribute/AsTwigFunction.php
@@ -21993,6 +22007,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/ExpressionParsers.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/ArgumentsTrait.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/ArrowExpressionParser.php
+%%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/AssignmentExpressionParser.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/BinaryOperatorExpressionParser.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/ConditionalTernaryExpressionParser.php
 %%WWWDIR%%/vendor/twig/twig/src/ExpressionParser/Infix/DotExpressionParser.php
@@ -22039,6 +22054,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckSecurityCallNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckSecurityNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckToStringNode.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/CoercesChildrenToStringInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/DeprecatedNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/DoNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/EmbedNode.php
@@ -22072,10 +22088,15 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/MulBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotEqualBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotInBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotSameAsBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NullCoalesceBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/ObjectDestructuringSetBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/OrBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/PowerBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/RangeBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SameAsBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SequenceDestructuringSetBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SetBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SpaceshipBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/StartsWithBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/SubBinary.php
@@ -22084,6 +22105,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/CallExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/ConditionalExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/ConstantExpression.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/EmptyExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Filter/DefaultFilter.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Filter/RawFilter.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/FilterExpression.php

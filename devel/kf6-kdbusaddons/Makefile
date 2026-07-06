@@ -2,8 +2,8 @@ PORTNAME=	kdbusaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Convenience classes for D-Bus
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Convenience classes for D-Bus
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 

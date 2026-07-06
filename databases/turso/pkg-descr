@@ -1,0 +1,7 @@
+Turso is an open-source, SQLite-compatible database written in Rust that
+lets developers create millions of small, file-based databases for AI
+agents, multi-tenant SaaS applications, and edge workloads.
+
+Unlike traditional databases that run as a single shared server process,
+Turso treats each database as a lightweight file that can be spun up
+instantly, replicated globally, or synced to a device.

@@ -1,0 +1,4 @@
+leaf is a terminal-based Markdown previewer that brings a GUI-like
+experience to your command line. It renders Markdown files with rich
+formatting, syntax highlighting, LaTeX math, Mermaid diagrams, and
+more - all without leaving your terminal.

@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-06 01:35:03 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77", "setuptools-scm>=8"]
++requires = ["setuptools>=63", "setuptools-scm>=8"]
+ 
+ [project]
+ authors = [
+@@ -25,8 +25,7 @@ dynamic = ["version"]
+ ]
+ description = "Utilities for the Earthkit ecosystem"
+ dynamic = ["version"]
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ name = "earthkit-utils"
+ readme = "README.md"
+ requires-python = ">=3.10"

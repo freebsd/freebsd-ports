@@ -2,7 +2,7 @@
   "private": "true",
   "name": "deltachat-desktop",
   "type": "module",
-  "version": "2.49.1",
+  "version": "2.52.0",
   "scripts": {
     "preinstall": "node ./bin/check-nodejs-version.js",
     "check": "pnpm check:types && pnpm check:lint && pnpm check:format && pnpm check:target-versions",
@@ -35,7 +35,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": "^22",
+    "node": ">=22 <27",
     "pnpm": ">=9.6.0"
   },
   "pnpm": {
@@ -50,7 +50,6 @@
       ]
     },
     "onlyBuiltDependencies": [
-      "@parcel/watcher",
       "electron",
       "esbuild"
     ],
@@ -61,14 +60,18 @@
       "minimatch@>=5.0.0 <5.1.8": "^5.1.8",
       "minimatch@>=9.0.0 <9.0.7": "^9.0.7",
       "minimatch@>=10.0.0 <10.2.3": "^10.2.3"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "electron-winstaller"
+    ]
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.2",
-    "@types/node": "^22.19.3",
     "@types/ignore-walk": "^4.0.3",
+    "@types/node": "^22.19.3",
     "@typescript-eslint/eslint-plugin": "^8.51.0",
     "@typescript-eslint/parser": "^8.51.0",
     "chokidar": "^5.0.0",
@@ -81,6 +84,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "^8.51.0",
     "xml-js": "^1.6.11",
-    "yaml": "^2.8.2"
-  }
+    "yaml": "^2.8.3"
+  },
+  "packageManager": "pnpm@10.33.2"
 }

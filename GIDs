@@ -332,7 +332,7 @@ goimapnotify:*:387:
 autopulse:*:388:
 ldap:*:389:
 bunkerweb:*:390:
-# free: 391
+dirsrv:*:391:
 # free: 392
 # free: 393
 # free: 394
@@ -440,7 +440,7 @@ stalwart:*:484:
 # free: 496
 # free: 497
 rustypaste:*:498:
-# free: 499
+microbin:*:499:
 qw:*:500:
 qwfwd:*:501:
 birdvty:*:502:
@@ -744,7 +744,7 @@ healthchecks:*:790:
 # free: 799
 clickhouse:*:800:
 # free: 801
-# free: 802
+languagetool:*:802:
 # free: 803
 # free: 804
 # free: 805

@@ -14,7 +14,7 @@
 set -eu -o pipefail
 set -o pipefail
 
-export LC_ALL=C
+export LC_ALL=C.UTF-8
 
 ##
 ## npmjs-get-latest-version.sh: retrieves the latest version of a given Node.js package as registered on https://registry.npmjs.org

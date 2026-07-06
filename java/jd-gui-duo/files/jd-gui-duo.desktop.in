@@ -1,0 +1,10 @@
+[Desktop Entry]
+Comment=Java Decompiler JD-GUI-DUO
+Terminal=false
+Name=JD-GUI-DUO
+Exec=jd-gui-duo
+Type=Application
+Categories=Application;Development;
+Icon=%%PREFIX%%/share/pixmaps/jd-gui-duo.ico
+MimeType=application/java;application/java-vm;application/java-archive
+StartupWMClass=org-jd-gui-duo-App

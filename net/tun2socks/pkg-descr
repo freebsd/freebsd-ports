@@ -1,0 +1,8 @@
+tun2socks creates a TUN network interface that tunnels TCP and UDP
+traffic through a SOCKS5, HTTP, Shadowsocks, or Relay proxy.  It is
+powered by gVisor's userspace TCP/IP stack and supports gateway mode
+for transparent proxying of other devices on the network.
+
+Features include IPv4/IPv6 support, multiple proxy protocols with
+authentication, a REST API for runtime statistics, and cross-platform
+compatibility with Linux, macOS, FreeBSD, OpenBSD, and Windows.

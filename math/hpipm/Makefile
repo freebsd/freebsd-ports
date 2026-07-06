@@ -1,5 +1,6 @@
 PORTNAME=	hpipm
 DISTVERSION=	0.1.3-225 # new release is promised here: https://github.com/giaf/hpipm/issues/170
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g79008aa
 CATEGORIES=	math
 

@@ -1,5 +1,6 @@
 PORTNAME=		krb5
 PORTVERSION=		1.23.${MIT_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAME_X=		-${FLAVOR:S/default//}-devel
@@ -8,8 +9,8 @@ PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
 PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
 
-HASH=			4ae75cded
-MIT_COMMIT_DATE=	2026.05.20
+HASH=			27310e2e1
+MIT_COMMIT_DATE=	2026.06.15
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -57,7 +58,7 @@ LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_WITH=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 LMDB_IMPLIES=		LDAP
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls

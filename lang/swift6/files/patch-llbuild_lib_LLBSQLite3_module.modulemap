@@ -1,0 +1,8 @@
+--- llbuild/lib/LLBSQLite3/module.modulemap.orig	2026-01-23 21:37:08 UTC
++++ llbuild/lib/LLBSQLite3/module.modulemap
+@@ -0,0 +1,5 @@
++module LLBSQLite3 [system] {
++  header "sqlite.h"
++  link "sqlite3"
++  export *
++}

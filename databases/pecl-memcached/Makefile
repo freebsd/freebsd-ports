@@ -13,13 +13,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	libmemcached>=1.0.18:databases/libmemcached
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
-USES=		php:build,pecl pkgconfig
+USES=		cpe php:build,pecl pkgconfig
 USE_PHP=	session:build
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	--enable-memcached-json \
 		--enable-memcached-protocol \
 		--enable-memcached-session \
 		--with-libmemcached-dir=${LOCALBASE}
+
+CPE_VENDOR=	php
 
 OPTIONS_DEFINE=	IGBINARY MSGPACK SASL
 OPTIONS_DEFAULT=SASL

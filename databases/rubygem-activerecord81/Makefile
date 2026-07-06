@@ -16,9 +16,11 @@ RUN_DEPENDS=	rubygem-activemodel81>=${PORTVERSION}<${PORTVERSION}_99:databases/r
 		rubygem-activesupport81>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport81 \
 		rubygem-timeout>=0.4.0:devel/rubygem-timeout
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	activerecord_project
 
 PORTSCOUT=	limit:^8\.1\.
 

@@ -38,7 +38,6 @@ share/icons/hicolor/scalable/apps/kbreakout.svg
 %%DATADIR%%/themes/web20_preview.png
 share/locale/ar/LC_MESSAGES/kbreakout.mo
 share/locale/ast/LC_MESSAGES/kbreakout.mo
-share/locale/bg/LC_MESSAGES/kbreakout.mo
 share/locale/bs/LC_MESSAGES/kbreakout.mo
 share/locale/ca/LC_MESSAGES/kbreakout.mo
 share/locale/ca@valencia/LC_MESSAGES/kbreakout.mo

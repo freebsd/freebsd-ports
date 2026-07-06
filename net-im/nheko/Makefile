@@ -1,7 +1,7 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/Nheko-Reborn/nheko/commit/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	\
 		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libmatrix_client.so:net-im/mtxclient \
 		libolm.so:security/olm \
 		libqt6keychain.so:security/qtkeychain@qt6

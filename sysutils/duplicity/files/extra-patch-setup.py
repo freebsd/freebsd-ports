@@ -1,6 +1,6 @@
---- setup.py.orig	2025-11-13 17:58:14 UTC
+--- setup.py.orig	2026-06-16 16:27:24 UTC
 +++ setup.py
-@@ -130,28 +130,6 @@ def get_data_files():
+@@ -126,28 +126,6 @@ def get_data_files():
      if os.environ.get("READTHEDOCS") == "True":
          return data_files
  

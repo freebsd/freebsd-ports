@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/os_integration_test_override.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/web_applications/os_integration/os_integration_test_override.h.orig	2026-06-10 12:51:34 UTC
 +++ chrome/browser/web_applications/os_integration/os_integration_test_override.h
-@@ -99,7 +99,7 @@ class OsIntegrationTestOverride
+@@ -103,7 +103,7 @@ class OsIntegrationTestOverride
    virtual base::FilePath chrome_apps_folder() = 0;
    virtual void EnableOrDisablePathOnLogin(const base::FilePath& file_path,
                                            bool enable_on_login) = 0;

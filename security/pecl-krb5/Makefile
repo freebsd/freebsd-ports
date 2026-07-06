@@ -10,6 +10,7 @@ WWW=		https://pecl.php.net/package/krb5
 LICENSE=	BSD3CLAUSE
 
 USES=		php:pecl gssapi:mit
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	--with-krb5config=${LOCALBASE}/bin/krb5-config
 

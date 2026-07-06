@@ -1,7 +1,6 @@
 PORTNAME=	amazon-efs-utils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
-PORTREVISION=	1
+DISTVERSION=	3.1.3
 CATEGORIES=	filesystems python
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -16,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	aws-lc-fips-sys (FIPS static build via s2n-tls) supports 
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${PY_FLAVOR}
 
-USES=		cargo gmake go:no_targets llvm python:3.8+,run shebangfix
+USES=		cargo gmake go:no_targets llvm python:run shebangfix
 USE_PYTHON=	noflavors
 USE_RC_SUBR=	amazon-efs-mount-watchdog
 
@@ -50,6 +49,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|mount\.efs|mount_efs|g' \
 		${WRKSRC}/src/efs_utils_common/file_utils.py \
 		${WRKSRC}/man/mount.efs.8
+	@${REINPLACE_CMD} -e 's|@@EFS_LIBDIR@@|${EFS_LIBDIR}|g' \
+		${WRKSRC}/src/mount_efs/__init__.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/efs-proxy \

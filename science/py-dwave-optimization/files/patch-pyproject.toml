@@ -1,12 +1,30 @@
---- pyproject.toml.orig	2025-09-18 00:07:10 UTC
+--- pyproject.toml.orig	2026-06-18 00:28:25 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@ requires = [
+@@ -1,10 +1,9 @@ requires = [
  [build-system]
  requires = [
--    "cython~=3.1.0",
--    "meson-python~=0.18.0",
-+    "cython~=3.1",
-+    "meson-python",
+     # Same as dependency-groups.build, last refreshed April 2026
+-    "cython~=3.2.0",
+-    "meson~=1.11.0",
+-    "meson-python~=0.19.0",
+-    "ninja~=1.13.0",
++    "cython>=3.2.4",
++    "meson>=1.10.2",
++    "meson-python>=0.18.0",
  ]
  build-backend = 'mesonpy'
  
+@@ -59,10 +58,9 @@ build = [
+ ]
+ build = [
+     # Same as build-system.requires, last refreshed April 2026
+-    "cython~=3.2.0",
+-    "meson~=1.11.0",
+-    "meson-python~=0.19.0",
+-    "ninja~=1.13.0",
++    "cython>=3.2.4",
++    "meson>=1.10.2",
++    "meson-python>=0.18.0",
+ ]
+ blas-build = [
+     {include-group = "build"},

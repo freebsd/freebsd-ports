@@ -1,5 +1,5 @@
-TIMESTAMP = 1779187958
-SHA256 (grist-core-yarn-offline-cache-1.7.13.tar.gz) = 19d729af60e6e57eb201d0e224c04ebd6d7c45c937da89a9342d34372fd42513
-SIZE (grist-core-yarn-offline-cache-1.7.13.tar.gz) = 246856693
-SHA256 (gristlabs-grist-core-v1.7.13_GH0.tar.gz) = e09c965651358c2a39b29f5d5924b3c53d72c6b52fd4bd235a21454a83536dbf
-SIZE (gristlabs-grist-core-v1.7.13_GH0.tar.gz) = 21376912
+TIMESTAMP = 1782799125
+SHA256 (grist-core-yarn-offline-cache-1.7.16.tar.gz) = f24181b262914851ec740e0587cedc82872b321706e18d4be6b9ad1376a9dfae
+SIZE (grist-core-yarn-offline-cache-1.7.16.tar.gz) = 248644690
+SHA256 (gristlabs-grist-core-v1.7.16_GH0.tar.gz) = e2b704ba2985472f5e0650b9ac8d8b06fd237857a9ae9c50e2687c2f2e89b5b8
+SIZE (gristlabs-grist-core-v1.7.16_GH0.tar.gz) = 21611412

@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		meson pkgconfig tar:xz
+USES=		cpe meson pkgconfig tar:xz
 
 MESON_ARGS=	--default-library=both \
 		-Dbenchmarks=auto \
@@ -25,5 +25,7 @@ MESON_ENABLED=	tools
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	LIBMINORVER=${PORTVERSION:E}
+
+CPE_VENDOR=	gstreamer
 
 .include <bsd.port.mk>

@@ -10,6 +10,9 @@ WWW=		https://metacpan.org/dist/libapreq2
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Project is retired by Apache HTTP Server project
+EXPIRATION_DATE=2026-12-31
+
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libaprutil-1.so:devel/apr1 \
 		libexpat.so:textproc/expat2

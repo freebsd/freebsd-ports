@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.h.orig	2025-12-10 15:04:57 UTC
+--- ui/gfx/native_pixmap_handle.h.orig	2026-06-10 12:51:34 UTC
 +++ ui/gfx/native_pixmap_handle.h
 @@ -14,7 +14,7 @@
  #include "build/build_config.h"
@@ -10,8 +10,8 @@
  #endif
  
 @@ -34,7 +34,7 @@ struct COMPONENT_EXPORT(GFX) NativePixmapPlane {
-   NativePixmapPlane(int stride,
-                     int offset,
+   NativePixmapPlane(uint32_t stride,
+                     uint64_t offset,
                      uint64_t size
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

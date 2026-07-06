@@ -1,0 +1,2 @@
+GPUtil is a Python module for getting the GPU status from NVIDIA GPUs
+using nvidia-smi.

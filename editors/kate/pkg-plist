@@ -975,6 +975,7 @@ share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletree.mo
 share/locale/ko/LC_MESSAGES/kategdbplugin.mo
 share/locale/ko/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ko/LC_MESSAGES/kategpgplugin.mo
 share/locale/ko/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ko/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ko/LC_MESSAGES/kateproject.mo
@@ -1235,6 +1236,7 @@ share/locale/nn/LC_MESSAGES/katexmlcheck.mo
 share/locale/nn/LC_MESSAGES/katexmltools.mo
 share/locale/nn/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/nn/LC_MESSAGES/lspclient.mo
+share/locale/nn/LC_MESSAGES/rainbowparens.mo
 share/locale/nn/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/oc/LC_MESSAGES/kate.mo
 share/locale/oc/LC_MESSAGES/katefilebrowserplugin.mo

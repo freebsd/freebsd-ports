@@ -17,7 +17,8 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake gl localbase:ldflags pkgconfig xorg
+USES=		cmake cpe gl localbase:ldflags pkgconfig xorg
+CPE_VENDOR=	liballeg
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xcursor xext xpm xxf86dga xxf86vm

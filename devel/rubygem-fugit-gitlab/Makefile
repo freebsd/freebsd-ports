@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-et-orbi>=1.2.11<2:devel/rubygem-et-orbi \
 		rubygem-raabro>=1.4<2:textproc/rubygem-raabro
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	floraison
 
 NO_ARCH=	yes
 

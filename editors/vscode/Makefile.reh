@@ -1,9 +1,11 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
 CATEGORIES=	editors
-MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
+		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VER}/:copilot_cli
 PKGNAMESUFFIX=	-reh
-DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules
+DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
+		github-copilot-${COPILOT_CLI_VER}-linux-${NODEJS_ARCH}.tgz:copilot_cli
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -17,9 +19,10 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
-BUILD_DEPENDS=	typescript-go>=7.0.0.g20260506:lang/typescript-go \
+BUILD_DEPENDS=	typescript-go>=7.0.0.g20260609:lang/typescript-go \
 		jq:textproc/jq \
-		rg:textproc/ripgrep
+		rg:textproc/ripgrep \
+		tgrep:textproc/tgrep
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
 		libicui18n.so:devel/icu \
@@ -33,27 +36,24 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libsqlite3.so:databases/sqlite3 \
 		libsecret-1.so:security/libsecret
 
-USES=		cargo electron:env gssapi:mit localbase:ldflags \
-		nodejs:22,build pkgconfig python:build shebangfix
+USES=		cargo gssapi:mit localbase:ldflags nodejs:24,build npm:npm \
+		pkgconfig python:build shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
-# See ${WRKSRC}/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/package.json for node-clipboard-rs version
-GH_TUPLE=	Teddy-Zhu:node-clipboard-rs:v0.0.10:node_clipboard_rs/node-clipboard-rs
 # See ${WRKSRC}/build/rspack/node_modules/@rspack/binding/package.json for rspack version
-GH_TUPLE+=	web-infra-dev:rspack:v1.7.10:rspack/rspack
+GH_TUPLE=	web-infra-dev:rspack:v1.7.10:rspack/rspack
 
-CARGO_CARGOTOML_CLIPBOARD=	${WRKSRC}/node-clipboard-rs/Cargo.toml
-CARGO_CARGOLOCK_CLIPBOARD=	${WRKSRC}/node-clipboard-rs/Cargo.lock
-CARGO_CARGOTOML_RSPACK=		${WRKSRC}/rspack/Cargo.toml
-CARGO_CARGOLOCK_RSPACK=		${WRKSRC}/rspack/Cargo.lock
-CARGO_CARGOTOML=		${CARGO_CARGOTOML_CLIPBOARD}
-CARGO_CARGOLOCK=		${CARGO_CARGOLOCK_CLIPBOARD}
+CARGO_CARGOTOML=${WRKSRC}/rspack/Cargo.toml
+CARGO_CARGOLOCK=${WRKSRC}/rspack/Cargo.lock
+CARGO_BUILDDEP=	any-version
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
-USE_ELECTRON=	npm:npm
+CFLAGS+=	-Wno-error=implicit-function-declaration
+
+USE_CXXSTD=	c++20
 
 SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -63,10 +63,12 @@ MAKE_ENV=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
+COPILOT_CLI_VER=	1.0.65
+
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-NODEJS_ARCH=	${ELECTRON_ARCH}
+NODEJS_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 NODEJS_DIR=	${PORTSDIR}/www/node${NODEJS_VERSION}
 .include "${NODEJS_DIR}/Makefile.version"
 
@@ -82,6 +84,18 @@ post-extract:
 				-C ${WRKSRC}/$${dir}; \
 		fi; \
 	done
+	# copy contents for @github/copilot-linux-x64 to @github/copilot-freebsd-x64
+	# note: this is just for the build process to pass. GitHub Copilot CLI
+	# is a closed-source product and not usable on FreeBSD
+	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH} \
+		${WRKSRC}/remote/node_modules/@github/copilot-linux-${NODEJS_ARCH} \
+		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
+	@${CP} -R ${WRKDIR}/package/* \
+		${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
+	@${CP} -R ${WRKDIR}/package/* \
+		${WRKSRC}/remote/node_modules/@github/copilot-linux-${NODEJS_ARCH}
+	@${CP} -R ${WRKDIR}/package/* \
+		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
@@ -122,41 +136,27 @@ pre-build:
 			fi; \
 		done; \
 	done
-# build native node module for @teddyzhu/clipboard
-	@${CARGO_CARGO_RUN} build \
-		--manifest-path ${CARGO_CARGOTOML_CLIPBOARD} \
-		--verbose --verbose \
-		${CARGO_BUILD_ARGS}
-	${CP} ${CARGO_TARGET_DIR}/*/libclipboard.so \
-		${WRKSRC}/remote/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/clipboard.freebsd-${NODEJS_ARCH}.node
 	# # build native node module for @rspack/binding
 	# @${CARGO_CARGO_RUN} build \
 	#	--manifest-path ${CARGO_CARGOTOML_RSPACK} \
 	#	--verbose --verbose \
 	#	${CARGO_BUILD_ARGS}
 	# ${CP} ${CARGO_TARGET_DIR}/*/librspack.so \
-	#	${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${ELECTRON_ARCH}.node
-# copy rg binary file to @vscode/ripgrep node module directory
-	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin \
-		${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin \
-		${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
-		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
-# copy rg binary file to @github/copilot node modules directory
-	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot/ripgrep/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/rg \
-		${WRKSRC}/remote/node_modules/@github/copilot/ripgrep/bin/freebsd-${NODEJS_ARCH}
-# copy keytar.node binary file to @github/copilot node modules directory
-	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
-	${CP} ${WRKSRC}/build/node_modules/keytar/build/Release/keytar.node \
-		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
-# copy pty.node binary file to @github/copilot node modules directory
-	${CP} ${WRKSRC}/remote/node_modules/node-pty/build/Release/pty.node \
-		${WRKSRC}/remote/node_modules/@github/copilot/prebuilds/freebsd-${NODEJS_ARCH}
-
+	#	${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${NODEJS_ARCH}.node
+# copy rg binary file
+	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH} \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH} \
+		${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH} \
+		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+# copy tgrep binary file
+	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH} \
+		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
 do-build:
 # setup download cache for node
 	@${MKDIR} ${WRKSRC}/.build/node/v${NODEJS_PORTVERSION}/linux-${NODEJS_ARCH}

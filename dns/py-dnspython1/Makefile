@@ -13,6 +13,9 @@ WWW=		https://www.dnspython.org/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 USES=		python:2.7 zip
 USE_PYTHON=	autoplist concurrent cython0 distutils
 

@@ -1,0 +1,6 @@
+AMReX is a software framework designed to accelerate scientific discovery for
+applications solving partial differential equations on block-structured meshes.
+Its massively parallel adaptive mesh refinement (AMR) algorithms focus
+computational resources and allow scalable performance on heterogeneous
+architectures so that scientists can efficiently resolve details in large
+simulations.

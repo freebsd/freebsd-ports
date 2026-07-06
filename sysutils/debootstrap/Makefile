@@ -1,5 +1,6 @@
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.143
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/debian/copyright
 
 RUN_DEPENDS=	${LOCALBASE}/share/keyrings/ubuntu-archive-keyring.gpg:security/ubuntu-keyring \
 		bash:shells/bash \
-		gpgv2:security/gnupg \
+		gpgv:security/gnupg \
 		gtar:archivers/gtar \
 		pcre2grep:devel/pcre2 \
 		wget:ftp/wget

@@ -11,7 +11,8 @@ WWW=		https://github.com/lief-project/lief
 
 LICENSE=	APACHE20
 
-USES=		cmake:indirect python zip
+USES=		cmake:indirect cpe python zip
+CPE_VENDOR=	lief-project
 USE_PYTHON=	concurrent distutils
 
 PY_VER=		${PYTHON_VER:S/.//}

@@ -1,0 +1,8 @@
+Spatial modeling based on scikit-learn.
+
+The aim of the package is to provide implementations of spatially-explicit
+modelling.
+
+At the moment, spml provides a framework for prototyping geographically weighted
+extensions of regression and classification models based on scikit-learn and
+libpysal.graph and a subset of models implemented on top of this framework.

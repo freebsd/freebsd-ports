@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Wrapper for the LanguageTool GUI checker.
+#
+# The Java VM is selected at run time by javavm(1).  Set JAVA_HOME or
+# JAVA_VERSION in the environment to override the default selection.
+#
+JAVA_VERSION="${JAVA_VERSION:-%%JAVA_VERSION%%}"
+export JAVA_VERSION
+exec %%LOCALBASE%%/bin/java -jar %%DATADIR%%/languagetool.jar "$@"

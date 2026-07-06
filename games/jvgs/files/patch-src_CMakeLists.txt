@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2010-02-18 11:08:35 UTC
++++ src/CMakeLists.txt
+@@ -2,6 +2,7 @@ INCLUDE_DIRECTORIES(
+ 
+ INCLUDE_DIRECTORIES(
+     ${SDL_INCLUDE_DIR}
++    ${SDL_INCLUDE_DIR}/..
+     ${LUA_INCLUDE_DIR}
+     ${FREETYPE_INCLUDE_DIRS}
+     ${SDLMIXER_INCLUDE_DIR}

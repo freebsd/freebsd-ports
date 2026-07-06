@@ -1,23 +1,23 @@
 # this is a workaround for a broken gimptool-2.0 (uses wrong plugin dir
 # when installing plugins)
---- configure.orig	2019-08-27 19:37:57 UTC
+--- configure.orig	2025-03-12 19:27:58 UTC
 +++ configure
-@@ -15324,8 +15324,7 @@ else
+@@ -16315,8 +16315,7 @@ printf %s "checking for GIMP 2.0 plug-in directory... 
    if test x${BUILD_GIMP2} = xyes ; then
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GIMP 2.0 plug-in directory" >&5
- $as_echo_n "checking for GIMP 2.0 plug-in directory... " >&6; }
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for GIMP 2.0 plug-in directory" >&5
+ printf %s "checking for GIMP 2.0 plug-in directory... " >&6; }
 -    GIMPTOOL2_OUTPUT=`$GIMPTOOL2_CHECK --dry-run --install-${PLUG_IN_PATH} print | tail -n 1`
 -    GIMP2_PLUGIN_DIR=`echo "$GIMPTOOL2_OUTPUT" | cut -d ' ' -f 3 | tr -d "\'"`
 +    GIMP2_PLUGIN_DIR=`$GIMPTOOL2_CHECK --gimpplugindir`/plug-ins
-     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIMP2_PLUGIN_DIR" >&5
- $as_echo "$GIMP2_PLUGIN_DIR" >&6; }
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $GIMP2_PLUGIN_DIR" >&5
+ printf "%s\n" "$GIMP2_PLUGIN_DIR" >&6; }
      if test "x$NO_PKGCONFIG_PATHS" = x; then
-@@ -18629,7 +18629,7 @@
+@@ -20636,7 +20635,7 @@ fi
  
- if test x$ac_compiler_gnu = "xyes"; then
+ # C99 + POSIX extras
  
--  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -D_POSIX_C_SOURCE=200809L -std=c99 ; do
-+  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -D_POSIX_C_SOURCE=200809L ; do
+-  for stp_ac_arg in -D_POSIX_C_SOURCE=200809L -std=c99 ; do
++  for stp_ac_arg in  ; do
  
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
- $as_echo_n "checking if ${CC} supports ${stp_ac_arg}... " >&6; }
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
+ printf %s "checking if ${CC} supports ${stp_ac_arg}... " >&6; }

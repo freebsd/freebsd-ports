@@ -1485,6 +1485,7 @@ libexec/gogs/public/plugins/codemirror-5.17.0/mode/yaml/index.html
 libexec/gogs/public/plugins/codemirror-5.17.0/mode/yaml/yaml.js
 libexec/gogs/public/plugins/codemirror-5.17.0/mode/z80/index.html
 libexec/gogs/public/plugins/codemirror-5.17.0/mode/z80/z80.js
+libexec/gogs/public/plugins/dompurify-3.4.8/purify.min.js
 libexec/gogs/public/plugins/dropzone-5.5.0/dropzone.min.css
 libexec/gogs/public/plugins/dropzone-5.5.0/dropzone.min.js
 libexec/gogs/public/plugins/highlight-9.18.0/%%GOGS_USER%%hub.css
@@ -1495,9 +1496,9 @@ libexec/gogs/public/plugins/jquery.datetimepicker-2.4.5/jquery.datetimepicker.js
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.css
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.min.js
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.png
-libexec/gogs/public/plugins/marked-0.8.1/marked.min.js
+libexec/gogs/public/plugins/marked-4.3.0/marked.min.js
 libexec/gogs/public/plugins/mermaid-11.12.1/mermaid.min.js
-libexec/gogs/public/plugins/notebookjs-0.4.2/notebook.min.js
+libexec/gogs/public/plugins/notebookjs-0.8.3/notebook.min.js
 libexec/gogs/public/plugins/pdfjs-5.2.133/LICENSE
 libexec/gogs/public/plugins/pdfjs-5.2.133/build/pdf.mjs
 libexec/gogs/public/plugins/pdfjs-5.2.133/build/pdf.mjs.map

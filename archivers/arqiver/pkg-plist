@@ -1,11 +1,13 @@
 bin/arqiver
 share/applications/arqiver.desktop
+%%DATADIR%%/translations/arqiver_az.qm
 %%DATADIR%%/translations/arqiver_be.qm
 %%DATADIR%%/translations/arqiver_bg.qm
 %%DATADIR%%/translations/arqiver_ca.qm
 %%DATADIR%%/translations/arqiver_cs.qm
 %%DATADIR%%/translations/arqiver_de.qm
 %%DATADIR%%/translations/arqiver_el.qm
+%%DATADIR%%/translations/arqiver_en_GB.qm
 %%DATADIR%%/translations/arqiver_eo.qm
 %%DATADIR%%/translations/arqiver_es.qm
 %%DATADIR%%/translations/arqiver_et.qm
@@ -17,6 +19,7 @@ share/applications/arqiver.desktop
 %%DATADIR%%/translations/arqiver_hu.qm
 %%DATADIR%%/translations/arqiver_it.qm
 %%DATADIR%%/translations/arqiver_ka.qm
+%%DATADIR%%/translations/arqiver_kab.qm
 %%DATADIR%%/translations/arqiver_ko.qm
 %%DATADIR%%/translations/arqiver_lt.qm
 %%DATADIR%%/translations/arqiver_nl.qm
@@ -26,4 +29,6 @@ share/applications/arqiver.desktop
 %%DATADIR%%/translations/arqiver_ru.qm
 %%DATADIR%%/translations/arqiver_tr.qm
 %%DATADIR%%/translations/arqiver_uk.qm
+%%DATADIR%%/translations/arqiver_zh_CN.qm
+%%DATADIR%%/translations/arqiver_zh_TW.qm
 share/icons/hicolor/scalable/apps/arqiver.svg

@@ -26,10 +26,12 @@ bin/gotosocial
 %%WWWDIR%%/assets/dist/_media-wrapper.css
 %%WWWDIR%%/assets/dist/_prism-dark.css
 %%WWWDIR%%/assets/dist/_prism-light.css
+%%WWWDIR%%/assets/dist/_profile-header-wide-stats.css
 %%WWWDIR%%/assets/dist/_profile-header.css
 %%WWWDIR%%/assets/dist/_status-media.css
 %%WWWDIR%%/assets/dist/about.css
 %%WWWDIR%%/assets/dist/base.css
+%%WWWDIR%%/assets/dist/directory.css
 %%WWWDIR%%/assets/dist/frontend.js
 %%WWWDIR%%/assets/dist/frontend_prerender.js
 %%WWWDIR%%/assets/dist/index.css
@@ -174,12 +176,12 @@ bin/gotosocial
 %%WWWDIR%%/assets/themes/sunset-light.css
 %%WWWDIR%%/assets/tusky.svg
 %%WWWDIR%%/template/2fa.tmpl
-%%WWWDIR%%/template/404.tmpl
 %%WWWDIR%%/template/about.tmpl
 %%WWWDIR%%/template/authorize-interaction.tmpl
 %%WWWDIR%%/template/authorize.tmpl
 %%WWWDIR%%/template/confirm-email.tmpl
 %%WWWDIR%%/template/confirmed-email.tmpl
+%%WWWDIR%%/template/directory.tmpl
 %%WWWDIR%%/template/domain-allowlist.tmpl
 %%WWWDIR%%/template/domain-blocklist.tmpl
 %%WWWDIR%%/template/email_confirm.tmpl
@@ -195,6 +197,8 @@ bin/gotosocial
 %%WWWDIR%%/template/index.tmpl
 %%WWWDIR%%/template/index_register.tmpl
 %%WWWDIR%%/template/index_what_is_this.tmpl
+%%WWWDIR%%/template/item_deleted.tmpl
+%%WWWDIR%%/template/item_not_visible.tmpl
 %%WWWDIR%%/template/login-info.tmpl
 %%WWWDIR%%/template/login_button.tmpl
 %%WWWDIR%%/template/maintenance.tmpl

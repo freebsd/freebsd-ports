@@ -12,6 +12,9 @@ WWW=		https://github.com/breezy-team/fastbencode
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 USES=		python
 USE_PYTHON=	autoplist cython0 distutils
 

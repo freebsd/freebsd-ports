@@ -1,6 +1,6 @@
---- misc/pcap.c	2022-02-22 05:32:53.000000000 -0500
-+++ misc/pcap.c	2022-05-21 23:28:28.467854000 -0500
-@@ -38,6 +38,13 @@
+--- misc/pcap.c.orig	2026-06-22 06:53:05.000000000 -0700
++++ misc/pcap.c	2026-06-23 00:15:36.671060000 -0700
+@@ -25,6 +25,13 @@
  #include <sys/ioctl.h>
  #include <sys/param.h>
  #include <sys/types.h>
@@ -14,7 +14,85 @@
  #include <unistd.h>
  
  #define MAXROUTES 1024
-@@ -1196,8 +1203,84 @@
+@@ -414,6 +421,56 @@
+ {
+   static struct interface_info mydevs[1024];
+   int numinterfaces = 0;
++#if defined(__FreeBSD__)
++  struct ifaddrs *ifaddr, *ifa;
++  struct sockaddr_in *saddr;
++  char *p;
++
++  if (getifaddrs (&ifaddr) == -1)
++    {
++      g_message ("getinterfaces: getifaddrs failed");
++      return NULL;
++    }
++
++  for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
++    {
++      if (ifa->ifa_addr == NULL)
++        continue;
++      if (ifa->ifa_addr->sa_family != AF_INET)
++        continue;
++
++       saddr = (struct sockaddr_in *) ifa->ifa_addr;
++
++      if (numinterfaces >= 1023)
++        {
++          g_message ("You seem to have more than 1023 network interfaces."
++                     " Things may not work right.");
++          break;
++        }
++
++      mydevs[numinterfaces].addr = saddr->sin_addr;
++
++      memset (mydevs[numinterfaces].name, 0, MAX_IFACE_NAME_LEN);
++      if ((p = strchr (ifa->ifa_name, ':')))
++        {
++          size_t len = (size_t) (p - ifa->ifa_name);
++          if (len >= MAX_IFACE_NAME_LEN)
++            len = MAX_IFACE_NAME_LEN - 1;
++          memcpy (mydevs[numinterfaces].name, ifa->ifa_name, len);
++        }
++      else
++        {
++          strncpy (mydevs[numinterfaces].name, ifa->ifa_name,
++                   MAX_IFACE_NAME_LEN - 1);
++        }
++
++      numinterfaces++;
++      if (numinterfaces < 1024)
++        mydevs[numinterfaces].name[0] = '\0';
++     }
++      
++  freeifaddrs (ifaddr);
++#else
+   int sd;
+   int len;
+   char *p;
+@@ -442,12 +499,6 @@
+     g_message (
+       "getinterfaces: SIOCGIFCONF claims you have no network interfaces!");
+ 
+-#ifndef __FreeBSD__
+-  len = sizeof (struct ifmap);
+-#else
+-  len = sizeof (struct sockaddr);
+-#endif
+-
+   for (bufp = buf; bufp && *bufp && (bufp < (buf + ifc.ifc_len));
+        bufp += sizeof (ifr->ifr_name) + len)
+     {
+@@ -476,6 +527,7 @@
+       mydevs[numinterfaces].name[0] = '\0';
+     }
+ 
++#endif
+   // If output parameter given, set value
+   if (howmany)
+     *howmany = numinterfaces;
+@@ -1193,8 +1245,84 @@
          }
        else
          {

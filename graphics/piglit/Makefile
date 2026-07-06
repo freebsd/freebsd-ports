@@ -1,5 +1,5 @@
 PORTNAME=	piglit
-PORTVERSION=	20260502
+PORTVERSION=	20260521
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	MIT GPLv2 GPLv3 LGPL20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.4:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		glslangValidator:graphics/glslang \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwaffle-1.so:graphics/waffle \
 		libwayland-egl.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.4:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
@@ -31,7 +31,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	piglit
-GL_TAGNAME=	0730373391be9a944a16a2a975871c0e740c45f0
+GL_TAGNAME=	2b8ed2f52a7a99eebfd0923baf5b9f7f681cdf26
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
 SHEBANG_FILES=	piglit replayer/replayer.py

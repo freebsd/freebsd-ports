@@ -45,8 +45,6 @@ USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 MAKE_ENV=	USE_SYSTEM_DEPS=1
 
-CPE_VENDOR=	aiohttp_project
-
 OPTIONS_DEFINE=	SPEEDUPS
 SPEEDUPS_DESC=	Performance speedups
 

@@ -1,0 +1,47 @@
+--- TESTING/CMakeLists.txt.orig	2026-06-06 06:02:10 UTC
++++ TESTING/CMakeLists.txt
+@@ -29,7 +29,7 @@ function(add_superlumt_test target input)
+           set(testName "${target}_${p}_${s}_${l}")
+           add_test(
+ 		NAME ${testName}_SP
+-        	COMMAND sh -c $<TARGET_FILE:${target}> -t "SP" -s ${s} -l ${l} -p ${p} < ${TEST_INPUT} )
++        	COMMAND sh -c "$<TARGET_FILE:${target}> -t SP -s ${s} -l ${l} -p ${p} < ${TEST_INPUT}" )
+       endforeach()
+     endforeach()
+   endforeach()
+@@ -51,7 +51,7 @@ if(enable_single)
+ if(enable_single)
+   add_executable(pstest
+ 		psdrive.c sp_sconvert.c psgst01.c psgst02.c psgst04.c psgst07.c
+-          	psgssv.c psgssvx.c sp_ienv.c )
++          	psgssv.c psgssvx.c sp_ienv.c ${PROJECT_SOURCE_DIR}/TESTING/MATGEN/xerbla.c )
+   target_link_libraries(pstest ${test_link_libs})
+   add_superlumt_test(pstest g10)
+ endif()
+@@ -60,7 +60,7 @@ if(enable_double)
+ if(enable_double)
+   add_executable(pdtest
+ 		pddrive.c sp_dconvert.c pdgst01.c pdgst02.c pdgst04.c pdgst07.c
+-		pdgssv.c pdgssvx.c sp_ienv.c )
++		pdgssv.c pdgssvx.c sp_ienv.c ${PROJECT_SOURCE_DIR}/TESTING/MATGEN/xerbla.c )
+   target_link_libraries(pdtest ${test_link_libs})
+   add_superlumt_test(pdtest g10)
+ endif()
+@@ -68,7 +68,7 @@ if(enable_complex)
+ if(enable_complex)
+   add_executable(pctest
+ 		pcdrive.c sp_cconvert.c pcgst01.c pcgst02.c pcgst04.c pcgst07.c
+-          	pcgssv.c pcgssvx.c sp_ienv.c )
++          	pcgssv.c pcgssvx.c sp_ienv.c ${PROJECT_SOURCE_DIR}/TESTING/MATGEN/xerbla.c )
+   target_link_libraries(pctest ${test_link_libs})
+   add_superlumt_test(pctest cg20.cua)
+ endif()
+@@ -76,7 +76,7 @@ if(enable_complex16)
+ if(enable_complex16)
+   add_executable(pztest
+ 		pzdrive.c sp_zconvert.c pzgst01.c pzgst02.c pzgst04.c pzgst07.c
+-		pzgssv.c pzgssvx.c sp_ienv.c )
++		pzgssv.c pzgssvx.c sp_ienv.c ${PROJECT_SOURCE_DIR}/TESTING/MATGEN/xerbla.c )
+   target_link_libraries(pztest ${test_link_libs})
+   add_superlumt_test(pztest cg20.cua)
+ endif()

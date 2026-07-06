@@ -1,0 +1,21 @@
+--- cargo-crates/v8-149.4.0/build/config/BUILD.gn.orig	2026-07-04 01:31:33 UTC
++++ cargo-crates/v8-149.4.0/build/config/BUILD.gn
+@@ -119,7 +119,7 @@ config("debug") {
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if ((is_linux || is_chromeos) && current_cpu == "x64" &&
++  } else if ((is_linux || is_bsd || is_chromeos) && current_cpu == "x64" &&
+              enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+@@ -211,9 +211,7 @@ config("default_libs") {
+     libs = []
+   } else if (is_linux || is_chromeos) {
+     libs = [
+-      "dl",
+       "pthread",
+-      "rt",
+     ]
+   }
+ }

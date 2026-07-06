@@ -1,7 +1,6 @@
 PORTNAME=	hist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.2
-PORTREVISION=	2
+DISTVERSION=	2.10.1
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.5:misc/py-boost-histogram@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}histoprint>=2.2.0:misc/py-histoprint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4:devel/py-typing-extensions@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>=2022:devel/py-dask@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.6:misc/py-boost-histogram@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.21.3:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=23:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}histoprint>=2.2.0:misc/py-histoprint@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awkward>=2.0.7:math/py-awkward@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dask>=2022:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask-histogram>=2023.1:devel/py-dask-histogram@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mplhep>0:science/py-mplhep@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.10.7:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mplhep>=0.3.33:science/py-mplhep@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mpl>=0.12:devel/py-pytest-mpl@${PY_FLAVOR}
 
 USES=		python

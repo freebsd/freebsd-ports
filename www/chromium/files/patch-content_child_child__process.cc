@@ -1,6 +1,6 @@
---- content/child/child_process.cc.orig	2026-03-13 06:02:14 UTC
+--- content/child/child_process.cc.orig	2026-07-01 06:24:19 UTC
 +++ content/child/child_process.cc
-@@ -36,7 +36,7 @@
+@@ -37,7 +37,7 @@
  #include "content/common/android/cpu_time_metrics.h"
  #endif
  

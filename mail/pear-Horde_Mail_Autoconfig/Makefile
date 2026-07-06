@@ -13,6 +13,7 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Imap_Client \
 		Horde_Mail \
 		Horde_Smtp
+IGNORE_WITH_PHP=	86
 
 RUN_DEPENDS+=	${PEARDIR}/Net/DNS2.php:dns/pear-Net_DNS21@${PHP_FLAVOR}
 

@@ -1,6 +1,6 @@
 PORTNAME=	breathe
-PORTVERSION=	4.35.0
-PORTREVISION=	3
+PORTVERSION=	4.36.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,15 +12,15 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}flit-core>=3.7:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
 		graphviz>=0:graphics/graphviz \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=7.2,1:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>=0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-spelling>=0:textproc/py-sphinxcontrib-spelling@${PY_FLAVOR} \
 		doxygen:devel/doxygen
 
-USES=		gmake python
+USES=		gmake magick python
 USE_GITHUB=	yes
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
 USE_PYTHON=	autoplist pep517 pytest
@@ -39,7 +39,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 post-patch:
-		${REINPLACE_CMD} "s/^git_tag = subprocess.*/git_tag = b'v${PORTVERSION}'/" \
+		${REINPLACE_CMD} "s/%%VERSION%%/v${PORTVERSION}/" \
 			${WRKSRC}/documentation/source/conf.py
 
 post-build-DOCS-on:

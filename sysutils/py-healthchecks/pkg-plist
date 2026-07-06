@@ -3,6 +3,24 @@
 @dir(%%USER%%,%%GROUP%%,0700) /var/run/%%USER%%
 bin/hcks
 %%EXAMPLESDIR%%/uwsgi.ini
+%%HOMEDIR%%/hc/accounts/management/commands/__pycache__/sendflappingnotices%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/accounts/management/commands/sendflappingnotices.py
+%%HOMEDIR%%/hc/accounts/migrations/0052_remove_profile_team_limit.py
+%%HOMEDIR%%/hc/accounts/migrations/__pycache__/0052_remove_profile_team_limit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/api/migrations/0123_alter_channel_kind.py
+%%HOMEDIR%%/hc/api/migrations/__pycache__/0123_alter_channel_kind%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/api/tests/__pycache__/test_prunepingsslow%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/api/tests/test_prunepingsslow.py
+%%HOMEDIR%%/static-collected/CACHE/css/output.95538a712ebb.css
+%%HOMEDIR%%/static-collected/CACHE/css/output.95538a712ebb.css.gz
+%%HOMEDIR%%/static-collected/CACHE/css/output.c14434dfa624.css
+%%HOMEDIR%%/static-collected/CACHE/css/output.c14434dfa624.css.gz
+%%HOMEDIR%%/static-collected/CACHE/js/output.d33e50f5a1a4.js
+%%HOMEDIR%%/static-collected/CACHE/js/output.d33e50f5a1a4.js.gz
+%%HOMEDIR%%/templates/emails/flapping-notice-body-html.html
+%%HOMEDIR%%/templates/emails/flapping-notice-body-text.html
+%%HOMEDIR%%/templates/emails/flapping-notice-subject.html
+%%HOMEDIR%%/templates/emails/report-when.html
 %%HOMEDIR%%/CHANGELOG.md
 %%HOMEDIR%%/hc/__init__.py
 %%HOMEDIR%%/hc/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -1531,8 +1549,6 @@ bin/hcks
 %%HOMEDIR%%/search.db
 %%HOMEDIR%%/static-collected/CACHE/css/output.0b91ab91a44f.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.0b91ab91a44f.css.gz
-%%HOMEDIR%%/static-collected/CACHE/css/output.10c762b66514.css
-%%HOMEDIR%%/static-collected/CACHE/css/output.10c762b66514.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.137dbe41694e.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.137dbe41694e.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.150f42047134.css
@@ -1577,8 +1593,6 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.994ced6690f1.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.99b939d7a1fa.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.99b939d7a1fa.css.gz
-%%HOMEDIR%%/static-collected/CACHE/css/output.9a9ce3157513.css
-%%HOMEDIR%%/static-collected/CACHE/css/output.9a9ce3157513.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.9bc737015d79.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.9bc737015d79.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.9dc9155cfd63.css
@@ -1651,8 +1665,6 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/js/output.9ce1f5e65e9a.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.9f0fa72b79a3.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.9f0fa72b79a3.js.gz
-%%HOMEDIR%%/static-collected/CACHE/js/output.b3b6d09808d6.js
-%%HOMEDIR%%/static-collected/CACHE/js/output.b3b6d09808d6.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.b4ba48ed4f66.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.b4ba48ed4f66.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.b85217576987.js

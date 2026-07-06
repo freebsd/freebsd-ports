@@ -112,7 +112,6 @@ share/knsrcfiles/cantor_qalculate.knsrc
 share/knsrcfiles/cantor_sage.knsrc
 share/knsrcfiles/cantor_scilab.knsrc
 share/locale/ar/LC_MESSAGES/cantor.mo
-share/locale/bg/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo
 share/locale/ca/LC_MESSAGES/cantor.mo
 share/locale/ca@valencia/LC_MESSAGES/cantor.mo

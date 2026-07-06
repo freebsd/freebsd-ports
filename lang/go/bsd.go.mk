@@ -49,8 +49,6 @@ REINPLACE_ARGS=	-i''
 # Example: 1.24.2 matches go124, 1.25.2 matches go125, etc.
 PORTSCOUT?=	limit:^${DISTVERSION:R:S/./\./g}\.
 
-# Upstream archive contains files with UTF-8 names
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
 BASH?=		${LOCALBASE}/bin/bash
 
 OPTIONS_DEFINE_i386=	SOFTFLOAT

@@ -13,6 +13,9 @@ WWW=		https://github.com/ktbyers/nxapi-plumbing
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream inactive since +8 years, code was integrated into py-napalm. Please use net-mgmt/py-napalm instead
+EXPIRATION_DATE=2026-07-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \

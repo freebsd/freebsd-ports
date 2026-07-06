@@ -41,6 +41,7 @@ DATADIR=	${PREFIX}/share/surge-xt
 
 CMAKE_ON=	SURGE_BUILD_LV2 \
 		SURGE_SKIP_VST3
+CMAKE_ON+=	SURGE_SKIP_WERROR # fix breakage, see https://github.com/surge-synthesizer/surge/issues/8410
 CMAKE_OFF=	JUCE_PLUGINHOST_VST3 JUCE_PLUGINHOST_VST
 
 CFLAGS+=	-Wno-nan-infinity-disabled -Wno-unknown-warning-option # workaround for https://github.com/surge-synthesizer/surge/issues/7730
@@ -84,6 +85,12 @@ PORTSCOUT=	ignore:1 # conflicts with old-gen audio/surge-synthesizer-lv2
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == aarch64
 CMAKE_ARGS+=	-DARM_NATIVE=native # based on https://github.com/surge-synthesizer/surge/tree/release/1.9.0#building-for-arm-platforms
+.endif
+
+.if ${ARCH:Mpowerpc64*}
+CMAKE_ON+=	SURGE_SKIP_LUA # LuaJIT has no ppc64 backend
+CFLAGS+=	-Wno-deprecated-altivec-src-compat # simde vector-bool warning is fatal under -Werror
+CXXFLAGS+=	-Wno-deprecated-altivec-src-compat
 .endif
 
 .include <bsd.port.pre.mk>

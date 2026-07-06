@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2026-05-07 17:02:56 UTC
+--- content/gpu/gpu_main.cc.orig	2026-07-01 06:24:19 UTC
 +++ content/gpu/gpu_main.cc
-@@ -108,10 +108,14 @@
+@@ -109,10 +109,14 @@
  #include "sandbox/win/src/sandbox.h"
  #endif
  
@@ -16,7 +16,7 @@
  #include "sandbox/policy/sandbox_type.h"
  #endif
  
-@@ -129,7 +133,7 @@ namespace content {
+@@ -130,7 +134,7 @@ namespace content {
  
  namespace {
  
@@ -25,7 +25,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -196,7 +200,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -197,7 +201,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
      TRACE_EVENT("gpu,startup", "gpu_main::EnsureSandboxInitialized");
@@ -34,7 +34,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -312,7 +316,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -313,7 +317,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type, /*is_main_thread=*/true);
      }
@@ -43,7 +43,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -337,7 +341,8 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -338,7 +342,8 @@ int GpuMain(MainFunctionParams parameters) {
    base::PlatformThread::SetName("CrGpuMain");
    mojo::InterfaceEndpointClient::SetThreadNameSuffixForMetrics("GpuMain");
  
@@ -53,7 +53,7 @@
    // Thread type delegate of the process should be registered before
    // thread type change below for the main thread and for thread pool in
    // ChildProcess constructor.
-@@ -489,7 +494,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -490,7 +495,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -62,7 +62,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -537,7 +542,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -538,7 +543,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

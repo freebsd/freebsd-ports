@@ -1,6 +1,6 @@
 PORTNAME=	opennn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.0
+DISTVERSION=	8.0.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,5 +49,7 @@ do-install:
 
 post-test:
 	@cd ${TEST_WRKSRC} && ${BUILD_WRKSRC}/bin/run_tests
+
+# tests as of 8.0.1: several tests fail, see https://github.com/Artelnics/opennn/issues/341
 
 .include <bsd.port.mk>

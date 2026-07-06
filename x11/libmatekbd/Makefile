@@ -1,7 +1,8 @@
 PORTNAME=	libmatekbd
-PORTVERSION=	1.28.0
+DISTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -13,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase pathfix \
 		pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/libmatekbd/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

@@ -12,6 +12,9 @@ WWW=		https://www.openems.de/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 BUILD_DEPENDS=	${NONEXISTENT}:cad/py-csxcad:patch \
 		${PYTHON_PKGNAMEPREFIX}csxcad>0:cad/py-csxcad@${PY_FLAVOR}
 LIB_DEPENDS=	libCSXCAD.so:cad/csxcad \

@@ -1,5 +1,5 @@
 PORTNAME=	lfcbase
-PORTVERSION=	1.23.5
+PORTVERSION=	1.23.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool ncurses
+USES=		libtool ncurses tar:bz2
 INSTALL_TARGET=	install-strip
 
 post-patch:

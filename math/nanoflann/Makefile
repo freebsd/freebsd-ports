@@ -1,6 +1,5 @@
 PORTNAME=	nanoflann
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.3
+DISTVERSION=	1.10.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,5 +34,7 @@ benchmarks: build # benchmarks fail to run: https://github.com/jlblancoc/nanofla
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_BENCHMARKS=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} benchmarks
+
+# tests as of 1.10.0: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

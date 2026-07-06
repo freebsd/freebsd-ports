@@ -1,7 +1,7 @@
 PORTNAME=	nyxt
 DISTVERSION=	3.12.0
 DISTVERSIONSUFFIX=	-source-with-submodules
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/atlas-engineer/${PORTNAME}/releases/download/${DISTVERSION}/
 

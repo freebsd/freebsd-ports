@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-DISTVERSION=	20.19.0
+DISTVERSION=	20.20.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -223,7 +223,7 @@ ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 ASTERISK_USER=	asterisk
 ASTERISK_GROUP=	asterisk
 
-PJSIP_VERSION=	2.16
+PJSIP_VERSION=	2.17
 
 .include <bsd.port.options.mk>
 

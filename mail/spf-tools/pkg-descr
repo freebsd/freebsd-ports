@@ -1,0 +1,3 @@
+A collection of scripts for manipulating SPF records to stay within
+the 10 DNS look-up limit specified in RFC 7208.  Also includes scripts
+to update SPF records via AWS, Cloudflare, and DNSimple APIs.

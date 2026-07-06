@@ -362,12 +362,12 @@ pod/nginx/welcome_nginx_facebook.pod
 pod/nginx/windows.pod
 pod/ngx_devel_kit-0.3.4/ngx_devel_kit-0.3.4.pod
 pod/ngx_devel_kit-0.3.4/readme_auto_lib.pod
-pod/ngx_lua-0.10.31rc2/ngx_lua-0.10.31rc2.pod
+pod/ngx_lua-0.10.31rc5/ngx_lua-0.10.31rc5.pod
 pod/ngx_lua_upstream-0.08/ngx_lua_upstream-0.08.pod
 pod/ngx_postgres-1.0/ngx_postgres-1.0.pod
 pod/ngx_postgres-1.0/todo.pod
-pod/ngx_stream_lua-0.0.19rc3/dev_notes.pod
-pod/ngx_stream_lua-0.0.19rc3/ngx_stream_lua-0.0.19rc3.pod
+pod/ngx_stream_lua-0.0.19rc4/dev_notes.pod
+pod/ngx_stream_lua-0.0.19rc4/ngx_stream_lua-0.0.19rc4.pod
 pod/opm-0.0.9/opm-0.0.9.pod
 pod/opm-0.0.9/web.docs.md.docs.pod
 pod/rds-csv-nginx-module-0.10/rds-csv-nginx-module-0.10.pod
@@ -385,21 +385,3 @@ resty.index
 @dir site/lualib
 @dir site/manifest
 @dir site/pod
-%%LUARESTYDNS%%lualib/resty/dns/resolver.lua
-%%LUARESTYUPLOAD%%lualib/resty/upload.lua
-%%LUARESTYSTRING%%lualib/resty/sha1.lua
-%%LUARESTYSTRING%%lualib/resty/random.lua
-%%LUARESTYSTRING%%lualib/resty/md5.lua
-%%LUARESTYSTRING%%lualib/resty/aes.lua
-%%LUARESTYSTRING%%lualib/resty/sha384.lua
-%%LUARESTYMYSQL%%lualib/resty/mysql.lua
-%%LUARESTYMEM%%lualib/resty/memcached.lua
-%%LUARESTYREDIS%%lualib/resty/redis.lua
-%%LUARESTYSTRING%%lualib/resty/sha512.lua
-%%LUARESTYSTRING%%lualib/resty/sha256.lua
-%%LUARESTYSTRING%%lualib/resty/string.lua
-%%LUARESTYSTRING%%lualib/resty/sha224.lua
-%%LUARESTYSTRING%%lualib/resty/sha.lua
-%%LUARDS%%lualib/rds/parser.so
-%%LUACJSON%%lualib/cjson.so
-%%LUAREDISPARS%%lualib/redis/parser.so

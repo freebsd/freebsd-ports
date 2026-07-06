@@ -22,6 +22,7 @@ share/applications/dog.unix.cantata.Cantata.desktop
 %%NLS%%%%DATADIR%%/translations/cantata_pl.qm
 %%NLS%%%%DATADIR%%/translations/cantata_pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/cantata_ru.qm
+%%NLS%%%%DATADIR%%/translations/cantata_tr.qm
 %%NLS%%%%DATADIR%%/translations/cantata_zh_CN.qm
 share/icons/hicolor/128x128/apps/dog.unix.cantata.Cantata.png
 share/icons/hicolor/16x16/apps/dog.unix.cantata.Cantata.png

@@ -584,6 +584,7 @@
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-divand
     SUBDIR += octave-forge-doctest
+    SUBDIR += octave-forge-dsppack
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-fda
     SUBDIR += octave-forge-femoctave
@@ -914,6 +915,8 @@
     SUBDIR += php84-gmp
     SUBDIR += php85-bcmath
     SUBDIR += php85-gmp
+    SUBDIR += php86-bcmath
+    SUBDIR += php86-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += piranha
@@ -1058,6 +1061,7 @@
     SUBDIR += py-mnnpy
     SUBDIR += py-moarchiving
     SUBDIR += py-modin
+    SUBDIR += py-moocore
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-narwhals
@@ -1067,6 +1071,7 @@
     SUBDIR += py-nevergrad
     SUBDIR += py-nlopt
     SUBDIR += py-numba-stats
+    SUBDIR += py-numdifftools
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
@@ -1079,6 +1084,7 @@
     SUBDIR += py-osqp
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
+    SUBDIR += py-pandas-stubs
     SUBDIR += py-patsy
     SUBDIR += py-pcodec
     SUBDIR += py-pdal
@@ -1184,7 +1190,6 @@
     SUBDIR += randlib
     SUBDIR += rankwidth
     SUBDIR += readstat
-    SUBDIR += reduce
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon
     SUBDIR += rehearse
@@ -1273,6 +1278,7 @@
     SUBDIR += sundials
     SUBDIR += superlu
     SUBDIR += superlu-dist
+    SUBDIR += superlu-mt
     SUBDIR += symengine
     SUBDIR += symfpu
     SUBDIR += symmetrica

@@ -5,4 +5,6 @@ PKGNAMESUFFIX=	-proxy
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}-server
 
+CPE_PRODUCT=	zabbix
+
 .include "${MASTERDIR}/Makefile"

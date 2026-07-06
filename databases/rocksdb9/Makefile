@@ -5,6 +5,9 @@ PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	9
 
+PATCH_SITES=	https://github.com/facebook/rocksdb/commit/
+PATCHFILES=	496eebaee891c5f132d1ec1d9293a9c7f59b1e46.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Persistent key-value store for fast storage environments
 WWW=		https://rocksdb.org/ \

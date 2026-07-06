@@ -1,5 +1,5 @@
-TIMESTAMP = 1780021033
-SHA256 (go/devel_pinact/pinact-v4.0.0/v4.0.0.mod) = c3b8394bb5ee6c99b6c56c3fd39a92a1f39423e1e4af660823addfec0b4cc32c
-SIZE (go/devel_pinact/pinact-v4.0.0/v4.0.0.mod) = 1787
-SHA256 (go/devel_pinact/pinact-v4.0.0/v4.0.0.zip) = 1e4dbb8db53690deb5836ffa398cc0db0251e92c2b332cf67408d6af920cbcae
-SIZE (go/devel_pinact/pinact-v4.0.0/v4.0.0.zip) = 160221
+TIMESTAMP = 1781147537
+SHA256 (go/devel_pinact/pinact-v4.1.0/v4.1.0.mod) = 209f03730428b974e2bda78fc81182b6a4cbf04d1bda887e88dfbe8bbbae4b6d
+SIZE (go/devel_pinact/pinact-v4.1.0/v4.1.0.mod) = 1685
+SHA256 (go/devel_pinact/pinact-v4.1.0/v4.1.0.zip) = fbeab05defa16dbe2c430c18367bf1e47f5258d447b927a659656465bcdff7ab
+SIZE (go/devel_pinact/pinact-v4.1.0/v4.1.0.zip) = 160741

@@ -1,5 +1,5 @@
 PORTNAME=	app-model
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	devel science
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}in-n-out>=0.1.5:devel/py-in-n-out@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}psygnal>=0.10:devel/py-psygnal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-compat>=0.1.1:devel/py-pydantic-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.8:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12:devel/py-typing-extensions@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}QtPy>0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}superqt>0:x11-toolkits/py-superqt@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-qt>0:devel/py-pytest-qt@${PY_FLAVOR} \

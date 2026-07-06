@@ -13,9 +13,10 @@
 # kafka_connect_group:			Group to run Kafka Connect
 #					Default: %%KAFKA_GROUP%%
 # kafka_connect_config:			Configuration file to run Kafka Connect
-#					Default: %%ETCDIR%%/connect.properties
+#					Default: %%ETCDIR%%/connect-standalone.properties or
+#						 %%ETCDIR%%/connect-distributed.properties
 # kafka_connect_log4j_config:		Configuration file for Kafka Connect logging
-#					Default: %%ETCDIR%%/connect-log4j.properties
+#					Default: %%ETCDIR%%/connect-log4j2.yaml
 # kafka_connect_log_dir:		Directory to store Kafka Connect logs
 #					Default: %%KAFKA_LOGDIR%%
 # kafka_connect_java_opts:		Options passed to JVM to start Kafka Connect
@@ -42,7 +43,7 @@ load_rc_config "${name}"
 : ${kafka_connect_user:="%%KAFKA_USER%%"}
 : ${kafka_connect_group:="%%KAFKA_GROUP%%"}
 : ${kafka_connect_config:="%%ETCDIR%%/connect.properties"}
-: ${kafka_connect_log4j_config:="%%ETCDIR%%/connect-log4j.properties"}
+: ${kafka_connect_log4j_config:="%%ETCDIR%%/connect-log4j2.yaml"}
 : ${kafka_connect_log_dir:="%%KAFKA_LOGDIR%%"}
 : ${kafka_connect_pidfile:=/var/run/kafka_connect.pid}
 : ${kafka_connect_syslog_output_enable:="YES"}
@@ -70,7 +71,7 @@ else
 	kafka_connect_class="org.apache.kafka.connect.cli.ConnectDistributed"
 fi
 
-JAVA="%%JAVA%%"
+JAVA="%%LOCALBASE%%/bin/java"
 CLASSPATH=":%%DATADIR%%/libs/*"
 
 kafka_connect_log_opts="-Dkafka_connect.log.dir=${kafka_connect_log_dir} -Dlog4j.configuration=file:${kafka_connect_log4j_config}"

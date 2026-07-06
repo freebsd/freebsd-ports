@@ -17,8 +17,10 @@ include/d/dlib/container/bst.d
 include/d/dlib/container/buffer.d
 include/d/dlib/container/dict.d
 include/d/dlib/container/linkedlist.d
+include/d/dlib/container/mappedlist.d
 include/d/dlib/container/package.d
 include/d/dlib/container/queue.d
+include/d/dlib/container/spscqueue.d
 include/d/dlib/container/stack.d
 include/d/dlib/core/bitio.d
 include/d/dlib/core/compound.d
@@ -70,6 +72,7 @@ include/d/dlib/image/filters/desaturate.d
 include/d/dlib/image/filters/edgedetect.d
 include/d/dlib/image/filters/histogram.d
 include/d/dlib/image/filters/lens.d
+include/d/dlib/image/filters/median.d
 include/d/dlib/image/filters/morphology.d
 include/d/dlib/image/filters/normalmap.d
 include/d/dlib/image/filters/package.d
@@ -124,6 +127,7 @@ include/d/dlib/math/transformation.d
 include/d/dlib/math/utils.d
 include/d/dlib/math/vector.d
 include/d/dlib/memory/allocator.d
+include/d/dlib/memory/arena.d
 include/d/dlib/memory/gcallocator.d
 include/d/dlib/memory/mallocator.d
 include/d/dlib/memory/mmappool.d
@@ -133,6 +137,8 @@ include/d/dlib/network/package.d
 include/d/dlib/network/socket.d
 include/d/dlib/network/url.d
 include/d/dlib/package.d
+include/d/dlib/random/package.d
+include/d/dlib/random/random.d
 include/d/dlib/serialization/json.d
 include/d/dlib/serialization/package.d
 include/d/dlib/serialization/xml.d

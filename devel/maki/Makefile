@@ -1,6 +1,6 @@
 PORTNAME=	maki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.9
+DISTVERSION=	0.3.20
 CATEGORIES=	devel
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -20,8 +20,6 @@ RUN_DEPENDS=	bash:shells/bash
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PLIST_FILES=	bin/maki
-
-.include "${.CURDIR}/Makefile.crates"
 
 MAKE_ENV+=	PYO3_PYTHON=${PYTHON_CMD}
 

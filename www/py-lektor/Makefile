@@ -11,7 +11,7 @@ WWW=		https://www.getlektor.com/
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=	depends on package: py39-Flask>=0 - not found
+BROKEN=		py312-Lektor-3.3.10_1 depends on package: py312-werkzeug<=3 - not found
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ExifRead>=0:graphics/py-exifread@${PY_FLAVOR} \

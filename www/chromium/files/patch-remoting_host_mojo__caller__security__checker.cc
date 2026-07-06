@@ -1,6 +1,6 @@
---- remoting/host/mojo_caller_security_checker.cc.orig	2026-05-07 17:02:56 UTC
+--- remoting/host/mojo_caller_security_checker.cc.orig	2026-07-01 06:24:19 UTC
 +++ remoting/host/mojo_caller_security_checker.cc
-@@ -32,7 +32,7 @@
+@@ -40,7 +40,7 @@
  namespace remoting {
  namespace {
  
@@ -9,7 +9,7 @@
  constexpr auto kAllowedCallerProgramNames =
      base::MakeFixedFlatSet<base::FilePath::StringViewType>({
          "remote-open-url",
-@@ -62,7 +62,7 @@ bool IsTrustedMojoEndpoint(
+@@ -136,7 +136,7 @@ bool IsTrustedMojoEndpoint(
      const named_mojo_ipc_server::ConnectionInfo& caller) {
  #if BUILDFLAG(IS_MAC)
    return IsProcessTrusted(caller.audit_token, kAllowedIdentifiers);
@@ -18,7 +18,7 @@
  
    static base::NoDestructor<base::FilePath> current_process_image_path(
        GetProcessImagePath(base::GetCurrentProcId()));
-@@ -99,7 +99,7 @@ bool IsTrustedMojoEndpoint(
+@@ -173,7 +173,7 @@ bool IsTrustedMojoEndpoint(
    base::FilePath::StringType program_name =
        caller_process_image_path.BaseName().value();
    if (!kAllowedCallerProgramNames.contains(program_name)) {

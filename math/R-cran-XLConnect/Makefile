@@ -1,6 +1,5 @@
 PORTNAME=	XLConnect
-DISTVERSION=	1.2.2
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -22,12 +21,12 @@ RUN_DEPENDS=	R-cran-rJava>0:devel/R-cran-rJava	\
 		apache-commons-compress>0:archivers/apache-commons-compress \
 		apache-commons-collections4>0:java/apache-commons-collections4
 TEST_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo	\
-		R-cran-RUnit>0:devel/R-cran-RUnit	\
+		R-cran-testthat>0:devel/R-cran-testthat	\
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2
 
 USES=		cran java
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|JAVALIBDIR|${JAVALIBDIR}|g' ${WRKSRC}/R/onLoad.R
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' ${WRKSRC}/R/onLoad.R
 
 .include <bsd.port.mk>

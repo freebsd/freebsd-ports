@@ -1,5 +1,6 @@
 PORTNAME=	rsync
-DISTVERSION=	3.4.3
+DISTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -16,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
-TEST_DEPENDS=	${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
 
 USES=		autoreconf:build cpe python shebangfix ssl
 CPE_VENDOR=	samba
@@ -29,6 +29,7 @@ SHEBANG_FILES=	runtests.py support/rrsync
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-debug \
+		--disable-md2man \
 		--enable-ipv6 \
 		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
 
@@ -43,15 +44,15 @@ SUB_LIST=	NAME=rsyncd
 PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 
 # define options
-OPTIONS_DEFINE=		DOCS ICONV POPT_PORT SSH ZLIB_BASE
-OPTIONS_DEFAULT=	ICONV SSH ZLIB_BASE
-OPTIONS_RADIO=		PTS
+OPTIONS_DEFINE=		DOCS FLAGS ICONV POPT_PORT SSH ZLIB_BASE
+OPTIONS_DEFAULT=	FLAGS ICONV SSH ZLIB_BASE
 
 # options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
-PTS_DESC=	Functionality provided by third party patches
 SSH_DESC=	Use SSH instead of RSH
 
+FLAGS_DESC=	File system flags support patch, adds --file-flags
+FLAGS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-file-flags.diff
 ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 
 ICONV_USES=		iconv:translit
@@ -72,7 +73,8 @@ CONFIGURE_ARGS+=	ac_cv_search_libiconv_open=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:/etc/r{1,2}sync:${ETCDIR}/:g' \
+	@${REINPLACE_CMD} -e 's:/etc/rsync/:${ETCDIR}/:g' \
+					  -e 's:/etc/rsyncd:${ETCDIR}/rsyncd:g' \
 					  -e 's:/etc/letsencrypt:${PREFIX}/etc/letsencrypt:g' \
 					  ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync

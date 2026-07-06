@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		dos2unix php:pecl
 USE_PHP=	session:build zlib:build
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
 USE_CSTD=	gnu89

@@ -1,15 +1,15 @@
---- remoting/host/ipc_desktop_environment.h.orig	2026-05-09 18:09:27 UTC
+--- remoting/host/ipc_desktop_environment.h.orig	2026-06-05 13:45:06 UTC
 +++ remoting/host/ipc_desktop_environment.h
 @@ -128,7 +128,7 @@ class IpcDesktopEnvironmentFactory : public DesktopEnv
-       int session_id,
+       int terminal_id,
        mojo::ScopedMessagePipeHandle desktop_pipe) override;
    void OnTerminalDisconnected(int terminal_id) override;
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    void OnSessionServicesClientConnected(
        int terminal_id,
        mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver)
-@@ -160,7 +160,7 @@ class IpcDesktopEnvironmentFactory : public DesktopEnv
+@@ -170,7 +170,7 @@ class IpcDesktopEnvironmentFactory : public DesktopEnv
    // the same email address reconnects, the desktop session will be reused and
    // the desktop process will be requested to send a new desktop pipe.
    // TODO: yuweih - see if it makes sense to enable it on Windows.

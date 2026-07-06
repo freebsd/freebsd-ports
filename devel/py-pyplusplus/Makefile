@@ -1,6 +1,5 @@
 PORTNAME=	pyplusplus
-DISTVERSION=	1.8.5
-PORTREVISION=	1
+DISTVERSION=	1.8.7
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +10,14 @@ WWW=		https://github.com/ompl/pyplusplus
 
 LICENSE=	BSL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygccxml>0:textproc/py-pygccxml@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygccxml>0:textproc/py-pygccxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygccxml>0:textproc/py-pygccxml@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist pep517
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

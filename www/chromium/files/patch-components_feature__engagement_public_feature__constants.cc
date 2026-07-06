@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2026-05-07 17:02:56 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2026-07-01 06:24:19 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -32,7 +32,7 @@ bool IsOnDeviceStorageEnabled() {
  }
@@ -9,16 +9,16 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_FEATURE(kEsbDownloadRowPromoFeature,
               "EsbDownloadRowPromo",
-@@ -901,7 +901,7 @@ BASE_FEATURE(kIPHiOSActiveDaysTrackingFeature,
+@@ -932,7 +932,7 @@ BASE_FEATURE(kIPHiOSActiveDaysTrackingFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kIPHAutofillBnplAffirmOrZipSuggestionFeature,
-              "IPH_AutofillBnplAffirmOrZipSuggestion",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -968,7 +968,7 @@ BASE_FEATURE(kIPHLauncherSearchHelpUiFeature,
+ BASE_FEATURE(kIPHAutofillAtMemoryFeature,
+              "IPH_AutofillAtMemory",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -1005,7 +1005,7 @@ BASE_FEATURE(kIPHLauncherSearchHelpUiFeature,
               base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  

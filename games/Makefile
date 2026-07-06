@@ -11,6 +11,7 @@
     SUBDIR += 90secondportraits
     SUBDIR += Bugdom
     SUBDIR += Bugdom2
+    SUBDIR += CWR-CE
     SUBDIR += CaribbeanStud
     SUBDIR += DDNet
     SUBDIR += Doom64EX
@@ -144,7 +145,6 @@
     SUBDIR += cave9
     SUBDIR += cavezofphear
     SUBDIR += cdogs-sdl
-    SUBDIR += cgoban
     SUBDIR += chapping
     SUBDIR += chessx
     SUBDIR += chocolate-doom
@@ -187,6 +187,7 @@
     SUBDIR += dangen
     SUBDIR += darkplaces
     SUBDIR += defendguin
+    SUBDIR += dethrace
     SUBDIR += devd-controller-rules
     SUBDIR += devilutionX
     SUBDIR += dhewm3
@@ -626,6 +627,7 @@
     SUBDIR += minecraft-server
     SUBDIR += minerbold
     SUBDIR += minetest_game
+    SUBDIR += minetestmapper
     SUBDIR += minigalaxy
     SUBDIR += mirrormagic
     SUBDIR += miscom
@@ -1017,7 +1019,6 @@
     SUBDIR += untahris
     SUBDIR += uqm
     SUBDIR += urbanterror-data
-    SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vanilla-conquer
     SUBDIR += vavoom

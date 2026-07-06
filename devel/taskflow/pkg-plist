@@ -1,7 +1,10 @@
 include/taskflow/algorithm/algorithm.hpp
 include/taskflow/algorithm/data_pipeline.hpp
+include/taskflow/algorithm/fill.hpp
 include/taskflow/algorithm/find.hpp
 include/taskflow/algorithm/for_each.hpp
+include/taskflow/algorithm/generate.hpp
+include/taskflow/algorithm/merge.hpp
 include/taskflow/algorithm/module.hpp
 include/taskflow/algorithm/partitioner.hpp
 include/taskflow/algorithm/pipeline.hpp
@@ -19,7 +22,6 @@ include/taskflow/core/executor.hpp
 include/taskflow/core/flow_builder.hpp
 include/taskflow/core/graph.hpp
 include/taskflow/core/nonblocking_notifier.hpp
-include/taskflow/core/observer.hpp
 include/taskflow/core/runtime.hpp
 include/taskflow/core/semaphore.hpp
 include/taskflow/core/task.hpp
@@ -49,6 +51,9 @@ include/taskflow/cuda/cuda_meta.hpp
 include/taskflow/cuda/cuda_optimizer.hpp
 include/taskflow/cuda/cuda_stream.hpp
 include/taskflow/cuda/cudaflow.hpp
+include/taskflow/observer/chrome.hpp
+include/taskflow/observer/interface.hpp
+include/taskflow/observer/tfprof.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/utility/iterator.hpp
 include/taskflow/utility/lazy_string.hpp
@@ -59,9 +64,11 @@ include/taskflow/utility/object_pool.hpp
 include/taskflow/utility/os.hpp
 include/taskflow/utility/serializer.hpp
 include/taskflow/utility/small_vector.hpp
+include/taskflow/utility/spsc.hpp
 include/taskflow/utility/stream.hpp
 include/taskflow/utility/traits.hpp
 include/taskflow/utility/uuid.hpp
-lib/cmake/Taskflow/TaskflowConfig.cmake
-lib/cmake/Taskflow/TaskflowConfigVersion.cmake
-lib/cmake/Taskflow/TaskflowTargets.cmake
+libdata/pkgconfig/taskflow.pc
+share/cmake/Taskflow/TaskflowConfig.cmake
+share/cmake/Taskflow/TaskflowConfigVersion.cmake
+share/cmake/Taskflow/TaskflowTargets.cmake

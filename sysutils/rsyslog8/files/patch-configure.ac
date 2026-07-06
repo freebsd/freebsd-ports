@@ -1,0 +1,12 @@
+--- configure.ac.orig	2026-06-27 12:08:57 UTC
++++ configure.ac
+@@ -56,9 +56,6 @@ then
+ 
+ if test "$GCC" = "yes"
+ then
+-	m4_pattern_forbid([^AX_])
+-	AX_IS_RELEASE([git-directory])
+-	AX_COMPILER_FLAGS(,,,,[-Wunused-parameter -Wmissing-field-initializers])
+ 	# unfortunately, AX_COMPILER_FLAGS does not provide a way to override
+ 	# the default -Wno-error=warning" flags. So we do this via sed below.
+ 	# Note: we *really* want to have this error out during CI testing!

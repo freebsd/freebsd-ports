@@ -1,0 +1,18 @@
+diff --git pyproject.toml pyproject.toml
+index d24e941..67a1911 100644
+--- pyproject.toml
++++ pyproject.toml
+@@ -1,11 +1,11 @@
+ [build-system]
+ requires = [
+-  "setuptools>=67.8",
++  "setuptools>=63.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "python-sane"
++name = "sane"
+ version = "2.9.2"
+ description = "This is the python-sane package"
+ readme = "README.rst"

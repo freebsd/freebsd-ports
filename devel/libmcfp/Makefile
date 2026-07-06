@@ -1,6 +1,7 @@
 PORTNAME=	libmcfp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,7 +9,6 @@ COMMENT=	C++ header only library to parse command line arguments
 WWW=		https://github.com/mhekkel/libmcfp
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	fast_float>0:math/fast_float
 TEST_DEPENDS=	catch2>0:devel/catch2 \

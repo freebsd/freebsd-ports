@@ -686,6 +686,7 @@ include/zeek/analyzer/protocol/ftp/FTP.h
 include/zeek/analyzer/protocol/ftp/events.bif.h
 include/zeek/analyzer/protocol/ftp/functions.bif.h
 include/zeek/analyzer/protocol/gnutella/Gnutella.h
+include/zeek/analyzer/protocol/gnutella/consts.bif.h
 include/zeek/analyzer/protocol/gnutella/events.bif.h
 include/zeek/analyzer/protocol/gssapi/GSSAPI.h
 include/zeek/analyzer/protocol/gssapi/events.bif.h
@@ -804,6 +805,7 @@ include/zeek/analyzer/protocol/rpc/NFS.h
 include/zeek/analyzer/protocol/rpc/Portmap.h
 include/zeek/analyzer/protocol/rpc/RPC.h
 include/zeek/analyzer/protocol/rpc/XDR.h
+include/zeek/analyzer/protocol/rpc/consts.bif.h
 include/zeek/analyzer/protocol/rpc/events.bif.h
 include/zeek/analyzer/protocol/sip/SIP.h
 include/zeek/analyzer/protocol/sip/SIP_TCP.h
@@ -904,6 +906,7 @@ include/zeek/analyzer/protocol/socks/socks-analyzer.pac
 include/zeek/analyzer/protocol/socks/socks-protocol.pac
 include/zeek/analyzer/protocol/socks/socks.pac
 include/zeek/analyzer/protocol/ssh/SSH.h
+include/zeek/analyzer/protocol/ssh/consts.bif.h
 include/zeek/analyzer/protocol/ssh/consts.pac
 include/zeek/analyzer/protocol/ssh/events.bif.h
 include/zeek/analyzer/protocol/ssh/ssh-analyzer.pac
@@ -1519,6 +1522,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_GTPv1.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Geneve.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Geneve.functions.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_Gnutella.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Gnutella.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_HTTP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_HTTP.functions.bif.zeek
@@ -1553,6 +1557,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_RDP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RDP.types.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RFB.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_RPC.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RPC.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RawReader.raw.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SIP.events.bif.zeek
@@ -1597,6 +1602,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_SOCKS.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SQLiteReader.sqlite.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SQLiteWriter.sqlite.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_SSH.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSH.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSH.types.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.consts.bif.zeek

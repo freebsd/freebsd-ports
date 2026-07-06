@@ -2,13 +2,14 @@ PORTNAME=	kio
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Network transparent access to files and data
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Network transparent access to files and data
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake desktop-file-utils gettext gl gnome kde:6 qt:6 ssl \
+USES=		cmake cpe desktop-file-utils gettext gl gnome kde:6 qt:6 ssl \
 		tar:xz xorg
+CPE_VENDOR=	kde
 USE_GL=		gl opengl
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks colorscheme completion config \

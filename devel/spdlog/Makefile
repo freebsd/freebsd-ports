@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt
 TEST_DEPENDS=	catch2>=0:devel/catch2 \
 		pkgconf>=0:devel/pkgconf
 
-USES=		cmake:testing compiler:c++14-lang pathfix
+USES=		cmake:testing compiler:c++14-lang cpe pathfix
 
 CMAKE_OFF=	SPDLOG_BUILD_ALL \
 		SPDLOG_BUILD_BENCH \
@@ -53,6 +53,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gabime
 
 EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/include/spdlog/fmt/bundled
+
+CPE_VENDOR=	gabime
 
 post-stage:
 	${ECHO_CMD} '#define SPDLOG_FMT_EXTERNAL' >> ${STAGEDIR}${PREFIX}/include/spdlog/tweakme.h

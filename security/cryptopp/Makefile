@@ -1,5 +1,6 @@
 PORTNAME=	cryptopp
 PORTVERSION=	8.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/weidai11/${PORTNAME}/releases/download/CRYPTOPP_${PORTVERSION:S/./_/g}/
 DISTNAME=	cryptopp${PORTVERSION:S/.//g}
@@ -52,6 +53,8 @@ TOOLS_DESC=		Install encryption/decryption tools
 TOOLS_MAKE_ENV=		CRYPTOPP_DATA_DIR=${DATADIR}/
 TOOLS_ALL_TARGET=	cryptest.exe
 TOOLS_TEST_TARGET_OFF=	test
+
+CONFLICTS_INSTALL=	cryptopp-modern
 
 .include <bsd.port.options.mk>
 

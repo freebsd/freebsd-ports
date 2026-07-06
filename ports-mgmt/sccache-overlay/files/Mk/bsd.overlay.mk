@@ -33,13 +33,15 @@ _SCCACHE_ENV=	RUSTC_WRAPPER="${SCCACHE_BIN}" \
 CONFIGURE_ENV+=	${_SCCACHE_ENV}
 MAKE_ENV+=	${_SCCACHE_ENV}
 
-_USES_configure+=	250:sccache-start
+_USES_configure+=	100:sccache-start
 _USES_stage+=		950:sccache-stats
 
 sccache-start:
-	@${ECHO_MSG} "==> Starting sccache"
-	@${LN} -Fs ${_SCCACHE_LIBS} /tmp/sccache-overlay
-	@${SETENV} ${_SCCACHE_ENV} ${SCCACHE_BIN} --start-server || ${TRUE}
+	@if [ ! -S "${SCCACHE_UNIX_LISTEN}" ]; then \
+	    ${ECHO_MSG} "==> Starting sccache"; \
+	    ${LN} -Fs ${_SCCACHE_LIBS} /tmp/sccache-overlay; \
+	    ${SETENV} ${_SCCACHE_ENV} ${SCCACHE_BIN} --start-server || ${TRUE}; \
+	fi
 	@${SETENV} ${_SCCACHE_ENV} ${SCCACHE_BIN} --show-stats
 
 sccache-stats:

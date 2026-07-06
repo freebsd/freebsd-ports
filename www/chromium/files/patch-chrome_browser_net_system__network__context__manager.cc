@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -138,7 +138,7 @@ enum class NetworkSandboxState {
  // The global instance of the SystemNetworkContextManager.
@@ -104,7 +104,7 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -762,11 +762,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -765,11 +765,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
  
    registry->RegisterListPref(prefs::kExplicitlyAllowedNetworkPorts);
  
@@ -118,7 +118,7 @@
    registry->RegisterBooleanPref(prefs::kReceivedHttpAuthNegotiateHeader, false);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -823,7 +823,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -826,7 +826,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    OnNewHttpAuthDynamicParams(http_auth_dynamic_params);
    network_service->ConfigureHttpAuthPrefs(std::move(http_auth_dynamic_params));
  
@@ -127,7 +127,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -1075,7 +1075,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -1072,7 +1072,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  

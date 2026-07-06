@@ -1,5 +1,5 @@
 PORTNAME=	mclust
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,7 +10,8 @@ WWW=		https://cran.r-project.org/package=mclust
 LICENSE=	GPLv2+
 
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr	\
-		R-cran-geometry>0:math/R-cran-geometry
+		R-cran-geometry>0:math/R-cran-geometry	\
+		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown
 
 USES=		cran:compiles
 

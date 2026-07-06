@@ -22,10 +22,10 @@ libexec/Iblis/public/de_DE.qm
 libexec/Iblis/public/dv_MV.qm
 libexec/Iblis/public/dz_BT.qm
 libexec/Iblis/public/el_GR.qm
-libexec/Iblis/public/emoji.ttf
 libexec/Iblis/public/es_ES.qm
 libexec/Iblis/public/et_EE.qm
 libexec/Iblis/public/eu_ES.qm
+libexec/Iblis/public/expanded_rsa_keys.json
 libexec/Iblis/public/fa_IR.qm
 libexec/Iblis/public/ff_SN.qm
 libexec/Iblis/public/fi_FI.qm

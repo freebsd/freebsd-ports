@@ -1,0 +1,5 @@
+bin/supermodel
+@sample %%ETCDIR%%/Games.xml.sample
+@sample %%ETCDIR%%/Music.xml.sample
+%%DATADIR%%/p1crosshair.bmp
+%%DATADIR%%/p2crosshair.bmp

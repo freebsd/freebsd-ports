@@ -1,6 +1,6 @@
 PORTNAME=	omada5
 PORTVERSION=	5.15.24.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt java
 DISTNAME=	Omada_SDN_Controller_v${PORTVERSION}_linux_x64_20250724152611
 MASTER_SITES=	https://static.tp-link.com/upload/software/2025/202508/20250802/

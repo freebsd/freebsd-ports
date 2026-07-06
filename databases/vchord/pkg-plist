@@ -13,5 +13,6 @@ share/postgresql/extension/vchord--0.5.1--0.5.2.sql
 share/postgresql/extension/vchord--0.5.2--0.5.3.sql
 share/postgresql/extension/vchord--0.5.3--1.0.0.sql
 share/postgresql/extension/vchord--1.0.0--1.1.0.sql
-share/postgresql/extension/vchord--1.1.0.sql
+share/postgresql/extension/vchord--1.1.0--1.1.1.sql
+share/postgresql/extension/vchord--1.1.1.sql
 share/postgresql/extension/vchord.control

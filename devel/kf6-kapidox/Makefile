@@ -2,8 +2,8 @@ PORTNAME=	kapidox
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Scripts and data for building API documentation (dox)
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Scripts and data for building API documentation (dox)
 
 USES=		kde:6 python qt:6 tar:xz
 USE_KDE=	ecm:build

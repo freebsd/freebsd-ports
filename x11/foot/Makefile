@@ -78,7 +78,7 @@ post-build-PGO-on:
 	(cd ${BUILD_WRKSRC} && ./${PORTNAME} --version) # -Wbackend-plugin/-Wmissing-profile
 .if defined(WAYLAND_DISPLAY)
 # Likely a local build, so optimize for the current config
-	(cd ${BUILD_WRKSRC} && LC_ALL=en_US.UTF-8 ./${PORTNAME} ${PYTHON_CMD} \
+	(cd ${BUILD_WRKSRC} && ./${PORTNAME} ${PYTHON_CMD} \
 		${WRKSRC}/scripts/generate-alt-random-writes.py \
 		${PGO_SCRIPT_ARGS})
 .else

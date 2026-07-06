@@ -16,6 +16,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/py2bit.cpython-311.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/py2bit${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

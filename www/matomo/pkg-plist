@@ -6,6 +6,7 @@
 @dir %%WWWDIR%%/plugins/Contents/screenshots
 @dir %%WWWDIR%%/vendor/symfony/string/Resources/bin
 @dir %%WWWDIR%%/vendor/szymach/c-pchart/cache
+%%WWWDIR%%/AGENTS.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/DIObject.php
@@ -697,6 +698,7 @@
 %%WWWDIR%%/core/Updates/5.0.0-b1.php
 %%WWWDIR%%/core/Updates/5.0.0-rc2.php
 %%WWWDIR%%/core/Updates/5.0.0-rc5.php
+%%WWWDIR%%/core/Updates/5.11.0-b1.php
 %%WWWDIR%%/core/Updates/5.2.0-b2.php
 %%WWWDIR%%/core/Updates/5.2.0-b6.php
 %%WWWDIR%%/core/Updates/5.3.0-b1.php
@@ -1613,11 +1615,11 @@
 %%WWWDIR%%/plugins/BotTracking/templates/_noDataAmazonCloudFront.twig
 %%WWWDIR%%/plugins/BotTracking/templates/_noDataCloudflare.twig
 %%WWWDIR%%/plugins/BotTracking/templates/_noDataWordPress.twig
-%%WWWDIR%%/plugins/BotTracking/templates/noRecentRequestsMessage.twig
 %%WWWDIR%%/plugins/BotTracking/templates/siteWithoutData.twig
 %%WWWDIR%%/plugins/BotTracking/vue/dist/BotTracking.umd.js
 %%WWWDIR%%/plugins/BotTracking/vue/dist/BotTracking.umd.min.js
 %%WWWDIR%%/plugins/BotTracking/vue/dist/umd.metadata.json
+%%WWWDIR%%/plugins/BotTracking/vue/src/NoRecentRequests/NoRecentRequestsWidget.vue
 %%WWWDIR%%/plugins/BotTracking/vue/src/SiteWithoutData/SiteWithoutData.vue
 %%WWWDIR%%/plugins/BotTracking/vue/src/index.ts
 %%WWWDIR%%/plugins/BulkTracking/BulkTracking.php
@@ -1638,7 +1640,6 @@
 %%WWWDIR%%/plugins/Contents/Columns/Metrics/InteractionRate.php
 %%WWWDIR%%/plugins/Contents/Contents.php
 %%WWWDIR%%/plugins/Contents/Dimensions.php
-%%WWWDIR%%/plugins/Contents/README.md
 %%WWWDIR%%/plugins/Contents/RecordBuilders/ContentRecords.php
 %%WWWDIR%%/plugins/Contents/Reports/Base.php
 %%WWWDIR%%/plugins/Contents/Reports/GetContentNames.php
@@ -1999,6 +2000,7 @@
 %%WWWDIR%%/plugins/CoreHome/javascripts/popover.js
 %%WWWDIR%%/plugins/CoreHome/javascripts/require.js
 %%WWWDIR%%/plugins/CoreHome/javascripts/sparkline.js
+%%WWWDIR%%/plugins/CoreHome/javascripts/themes.js
 %%WWWDIR%%/plugins/CoreHome/javascripts/top_controls.js
 %%WWWDIR%%/plugins/CoreHome/javascripts/uiControl.js
 %%WWWDIR%%/plugins/CoreHome/lang/am.json
@@ -2151,12 +2153,18 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/ContentBlock/ContentBlock.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/ContentIntro/ContentIntro.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/ContentTable/ContentTable.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/ContentTable/contentTableUtils.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/CookieHelper/CookieHelper.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/CopyToClipboard/CopyToClipboard.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/DataTable/DataTableActions.utils.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/DataTable/DataTableActions.utils.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/DataTable/DataTableActions.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/DatePicker/DatePicker.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/DateRangePicker/DateRangePicker.less
 %%WWWDIR%%/plugins/CoreHome/vue/src/DateRangePicker/DateRangePicker.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/DraggableList/DraggableList.less
+%%WWWDIR%%/plugins/CoreHome/vue/src/DraggableList/DraggableList.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/DraggableList/DraggableList.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/DropdownButton/DropdownButton.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/DropdownMenu/DropdownMenu.less
 %%WWWDIR%%/plugins/CoreHome/vue/src/DropdownMenu/DropdownMenu.ts
@@ -2178,6 +2186,8 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/MatomoDialog/MatomoDialog.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/MatomoHelper/MatomoHelper.spec.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/MatomoLoader/MatomoLoader.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/MatomoModal/MatomoModal.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/MatomoModal/MatomoModal.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/MatomoUrl/MatomoUrl.spec.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/MatomoUrl/MatomoUrl.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/MenuItemsDropdown/MenuItemsDropdown.less
@@ -2251,6 +2261,9 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/ReportingPage/ReportingPage.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/ReportingPages/ReportingPages.store.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/SearchFiltersPersistence/SearchFiltersPersistence.store.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/SearchInput/SearchInput.less
+%%WWWDIR%%/plugins/CoreHome/vue/src/SearchInput/SearchInput.spec.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/SearchInput/SearchInput.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/Segmentation/Segments.store.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/SelectOnFocus/SelectOnFocus.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/ShowHelpLink/ShowHelpLink.vue
@@ -2268,6 +2281,7 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/Tooltips/Tooltips.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/VersionInfoHeaderMessage/VersionInfoHeaderMessage.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/VueEntryContainer/VueEntryContainer.vue
+%%WWWDIR%%/plugins/CoreHome/vue/src/Widget/ClientWidgetRenderer.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/Widget/Widget.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/Widget/Widgets.store.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/Widget/types.ts
@@ -2530,6 +2544,7 @@
 %%WWWDIR%%/plugins/CoreUpdater/templates/updateHttpsError.twig
 %%WWWDIR%%/plugins/CoreUpdater/templates/updateSuccess.twig
 %%WWWDIR%%/plugins/CoreVisualizations/CoreVisualizations.php
+%%WWWDIR%%/plugins/CoreVisualizations/FeatureFlags/PlotLinesTweaks.php
 %%WWWDIR%%/plugins/CoreVisualizations/JqplotDataGenerator.php
 %%WWWDIR%%/plugins/CoreVisualizations/JqplotDataGenerator/Chart.php
 %%WWWDIR%%/plugins/CoreVisualizations/JqplotDataGenerator/Evolution.php
@@ -2561,7 +2576,7 @@
 %%WWWDIR%%/plugins/CoreVisualizations/javascripts/jqplotPieGraph.js
 %%WWWDIR%%/plugins/CoreVisualizations/javascripts/seriesPicker.js
 %%WWWDIR%%/plugins/CoreVisualizations/stylesheets/dataTableVisualizations.less
-%%WWWDIR%%/plugins/CoreVisualizations/stylesheets/jqplot.css
+%%WWWDIR%%/plugins/CoreVisualizations/stylesheets/jqplot.less
 %%WWWDIR%%/plugins/CoreVisualizations/templates/_dataTableViz_htmlTable.twig
 %%WWWDIR%%/plugins/CoreVisualizations/templates/_dataTableViz_htmlTable_comparisons.twig
 %%WWWDIR%%/plugins/CoreVisualizations/templates/_dataTableViz_htmlTable_ratio.twig
@@ -2587,6 +2602,7 @@
 %%WWWDIR%%/plugins/CoreVue/polyfills/src/jqueryNativeEventTrigger.ts
 %%WWWDIR%%/plugins/CoreVue/scripts/cli-service-proxy.js
 %%WWWDIR%%/plugins/CoreVue/types/index.d.ts
+%%WWWDIR%%/plugins/CoreVue/types/plugin-modules.d.ts
 %%WWWDIR%%/plugins/CoreVue/types/shims-vue.d.ts
 %%WWWDIR%%/plugins/CustomDimensions/API.php
 %%WWWDIR%%/plugins/CustomDimensions/Archiver.php
@@ -2607,6 +2623,7 @@
 %%WWWDIR%%/plugins/CustomDimensions/Dimension/CaseSensitive.php
 %%WWWDIR%%/plugins/CustomDimensions/Dimension/CustomActionDimension.php
 %%WWWDIR%%/plugins/CustomDimensions/Dimension/CustomVisitDimension.php
+%%WWWDIR%%/plugins/CustomDimensions/Dimension/Description.php
 %%WWWDIR%%/plugins/CustomDimensions/Dimension/Dimension.php
 %%WWWDIR%%/plugins/CustomDimensions/Dimension/Extraction.php
 %%WWWDIR%%/plugins/CustomDimensions/Dimension/Extractions.php
@@ -2971,6 +2988,15 @@
 %%WWWDIR%%/plugins/Dashboard/vue/dist/Dashboard.umd.js
 %%WWWDIR%%/plugins/Dashboard/vue/dist/Dashboard.umd.min.js
 %%WWWDIR%%/plugins/Dashboard/vue/dist/umd.metadata.json
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/AddWidgetModal.less
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/AddWidgetModal.spec.ts
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/AddWidgetModal.vue
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/CategoryList.spec.ts
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/CategoryList.vue
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/WidgetPreview.spec.ts
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/WidgetPreview.vue
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/WidgetsList.spec.ts
+%%WWWDIR%%/plugins/Dashboard/vue/src/AddWidgetModal/WidgetsList.vue
 %%WWWDIR%%/plugins/Dashboard/vue/src/Dashboard/Dashboard.store.ts
 %%WWWDIR%%/plugins/Dashboard/vue/src/Dashboard/Dashboard.ts
 %%WWWDIR%%/plugins/Dashboard/vue/src/DashboardSettings/DashboardSettings.spec.ts
@@ -3431,7 +3457,6 @@
 %%WWWDIR%%/plugins/Ecommerce/templates/_actionTooltip.twig
 %%WWWDIR%%/plugins/Ecommerce/templates/_profileSummary.twig
 %%WWWDIR%%/plugins/Ecommerce/templates/conversionOverview.twig
-%%WWWDIR%%/plugins/Ecommerce/templates/getSparklines.twig
 %%WWWDIR%%/plugins/Ecommerce/vue/dist/Ecommerce.umd.js
 %%WWWDIR%%/plugins/Ecommerce/vue/dist/Ecommerce.umd.min.js
 %%WWWDIR%%/plugins/Ecommerce/vue/dist/umd.metadata.json
@@ -4538,7 +4563,9 @@
 %%WWWDIR%%/plugins/Live/images/file8.png
 %%WWWDIR%%/plugins/Live/images/file9.png
 %%WWWDIR%%/plugins/Live/images/pause.png
+%%WWWDIR%%/plugins/Live/images/pause.svg
 %%WWWDIR%%/plugins/Live/images/play.png
+%%WWWDIR%%/plugins/Live/images/play.svg
 %%WWWDIR%%/plugins/Live/images/returningVisitor.png
 %%WWWDIR%%/plugins/Live/images/unknown_avatar.png
 %%WWWDIR%%/plugins/Live/images/visitorProfileLaunch.png
@@ -5114,7 +5141,6 @@
 %%WWWDIR%%/plugins/Morpheus/fonts/matomo.ttf
 %%WWWDIR%%/plugins/Morpheus/fonts/matomo.woff
 %%WWWDIR%%/plugins/Morpheus/fonts/matomo.woff2
-%%WWWDIR%%/plugins/Morpheus/fonts/selection.json
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/ai-assistants.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-add.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-admin-development.svg
@@ -5136,6 +5162,7 @@
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-business.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-calendar.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-chart-bar.svg
+%%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-chart-line-edit.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-chart-pie.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-chevron-down.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-chevron-up.svg
@@ -5227,6 +5254,7 @@
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-table.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-tag-cloud.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-transition.svg
+%%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-update.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-upload.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-user-add.svg
 %%WWWDIR%%/plugins/Morpheus/fonts/svgs/icon-user-personal.svg
@@ -6568,6 +6596,8 @@
 %%WWWDIR%%/plugins/Morpheus/images/calendar.png
 %%WWWDIR%%/plugins/Morpheus/images/chart_bar.png
 %%WWWDIR%%/plugins/Morpheus/images/chart_line_edit.png
+%%WWWDIR%%/plugins/Morpheus/images/chart_line_edit.svg
+%%WWWDIR%%/plugins/Morpheus/images/chart_line_edit_dark.svg
 %%WWWDIR%%/plugins/Morpheus/images/chart_pie.png
 %%WWWDIR%%/plugins/Morpheus/images/close.png
 %%WWWDIR%%/plugins/Morpheus/images/collapsed_arrows.png
@@ -6667,6 +6697,7 @@
 %%WWWDIR%%/plugins/Morpheus/stylesheets/base/colors.less
 %%WWWDIR%%/plugins/Morpheus/stylesheets/base/icons.css
 %%WWWDIR%%/plugins/Morpheus/stylesheets/base/mixins.less
+%%WWWDIR%%/plugins/Morpheus/stylesheets/base/mode-colors.less
 %%WWWDIR%%/plugins/Morpheus/stylesheets/general/_admin.less
 %%WWWDIR%%/plugins/Morpheus/stylesheets/general/_default.less
 %%WWWDIR%%/plugins/Morpheus/stylesheets/general/_form.less
@@ -6737,12 +6768,17 @@
 %%WWWDIR%%/plugins/MultiSites/config/config.php
 %%WWWDIR%%/plugins/MultiSites/config/tracker.php
 %%WWWDIR%%/plugins/MultiSites/images/arrow_down.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_down.svg
 %%WWWDIR%%/plugins/MultiSites/images/arrow_down_green.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_down_green.svg
 %%WWWDIR%%/plugins/MultiSites/images/arrow_up.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_up.svg
 %%WWWDIR%%/plugins/MultiSites/images/arrow_up_red.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_up_red.svg
 %%WWWDIR%%/plugins/MultiSites/images/kpi_divider.svg
 %%WWWDIR%%/plugins/MultiSites/images/kpi_divider_horizontal.svg
 %%WWWDIR%%/plugins/MultiSites/images/stop.png
+%%WWWDIR%%/plugins/MultiSites/images/stop.svg
 %%WWWDIR%%/plugins/MultiSites/lang/am.json
 %%WWWDIR%%/plugins/MultiSites/lang/ar.json
 %%WWWDIR%%/plugins/MultiSites/lang/az.json
@@ -7034,7 +7070,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/PrivacyManager.php
 %%WWWDIR%%/plugins/PrivacyManager/ReferrerAnonymizer.php
 %%WWWDIR%%/plugins/PrivacyManager/ReportsPurger.php
-%%WWWDIR%%/plugins/PrivacyManager/Settings/CampaignTrackingParametersDisabled.php
+%%WWWDIR%%/plugins/PrivacyManager/Settings/CampaignParameterValuesMasked.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/CompliancePolicyEnforcedSetting.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/DataRoundingEnabled.php
 %%WWWDIR%%/plugins/PrivacyManager/Settings/IPAnonymisation.php
@@ -7681,8 +7717,8 @@
 %%WWWDIR%%/plugins/ScheduledReports/vue/dist/ScheduledReports.umd.js
 %%WWWDIR%%/plugins/ScheduledReports/vue/dist/ScheduledReports.umd.min.js
 %%WWWDIR%%/plugins/ScheduledReports/vue/dist/umd.metadata.json
+%%WWWDIR%%/plugins/ScheduledReports/vue/src/AddReport/AddReport.spec.ts
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/AddReport/AddReport.vue
-%%WWWDIR%%/plugins/ScheduledReports/vue/src/AddReport/SelectedReportsList.vue
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/ListReports/ListReports.vue
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/ManageScheduledReport/ManageScheduledReport.spec.ts
 %%WWWDIR%%/plugins/ScheduledReports/vue/src/ManageScheduledReport/ManageScheduledReport.vue
@@ -7794,10 +7830,25 @@
 %%WWWDIR%%/plugins/SegmentEditor/vue/dist/SegmentEditor.umd.js
 %%WWWDIR%%/plugins/SegmentEditor/vue/dist/SegmentEditor.umd.min.js
 %%WWWDIR%%/plugins/SegmentEditor/vue/dist/umd.metadata.json
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/Buttons/CompareButton.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/Buttons/CompareButton.vue.spec.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/Buttons/EditButton.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/Buttons/EditButton.vue.spec.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/Buttons/StarButton.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/Buttons/StarButton.vue.spec.ts
 %%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentGenerator/SegmentGenerator.less
 %%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentGenerator/SegmentGenerator.store.ts
 %%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentGenerator/SegmentGenerator.vue
 %%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentGenerator/ValueInput.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/CompareIcon.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/CompareIcon.vue.spec.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/SegmentSelector.helpers.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/SegmentSelector.store.spec.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/SegmentSelector.store.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/SegmentSelector.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/SegmentSelector.vue.spec.ts
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/StarIcon.vue
+%%WWWDIR%%/plugins/SegmentEditor/vue/src/SegmentSelector/StarIcon.vue.spec.ts
 %%WWWDIR%%/plugins/SegmentEditor/vue/src/index.ts
 %%WWWDIR%%/plugins/SegmentEditor/vue/src/types.ts
 %%WWWDIR%%/plugins/SitesManager/API.php
@@ -8300,6 +8351,7 @@
 %%WWWDIR%%/plugins/TagManager/images/icons/sentry.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/shareaholic.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/show.svg
+%%WWWDIR%%/plugins/TagManager/images/icons/tag-manager-icon.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/tawk_to.png
 %%WWWDIR%%/plugins/TagManager/images/icons/timer.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/visualwebsitepptimizer.svg
@@ -8384,8 +8436,10 @@
 %%WWWDIR%%/plugins/TagManager/libs/jquery-timepicker/jquery.timepicker.min.js
 %%WWWDIR%%/plugins/TagManager/libs/jquery-timepicker/jt.timepicker.jquery.json
 %%WWWDIR%%/plugins/TagManager/pull_request_template.md
+%%WWWDIR%%/plugins/TagManager/stylesheets/containerMenu.less
 %%WWWDIR%%/plugins/TagManager/stylesheets/manageEdit.less
 %%WWWDIR%%/plugins/TagManager/stylesheets/manageList.less
+%%WWWDIR%%/plugins/TagManager/templates/_menu.twig
 %%WWWDIR%%/plugins/TagManager/templates/copyDialog.twig
 %%WWWDIR%%/plugins/TagManager/templates/dashboard.twig
 %%WWWDIR%%/plugins/TagManager/templates/debug.twig
@@ -8488,7 +8542,6 @@
 %%WWWDIR%%/plugins/Tour/Widgets/GetEngagement.php
 %%WWWDIR%%/plugins/Tour/config/config.php
 %%WWWDIR%%/plugins/Tour/config/tracker.php
-%%WWWDIR%%/plugins/Tour/javascripts/engagement.js
 %%WWWDIR%%/plugins/Tour/lang/am.json
 %%WWWDIR%%/plugins/Tour/lang/ar.json
 %%WWWDIR%%/plugins/Tour/lang/az.json
@@ -8557,7 +8610,11 @@
 %%WWWDIR%%/plugins/Tour/lang/zh-cn.json
 %%WWWDIR%%/plugins/Tour/lang/zh-tw.json
 %%WWWDIR%%/plugins/Tour/stylesheets/engagement.less
-%%WWWDIR%%/plugins/Tour/templates/engagement.twig
+%%WWWDIR%%/plugins/Tour/vue/dist/Tour.umd.js
+%%WWWDIR%%/plugins/Tour/vue/dist/Tour.umd.min.js
+%%WWWDIR%%/plugins/Tour/vue/dist/umd.metadata.json
+%%WWWDIR%%/plugins/Tour/vue/src/BecomeMatomoExpert/BecomeMatomoExpert.vue
+%%WWWDIR%%/plugins/Tour/vue/src/index.ts
 %%WWWDIR%%/plugins/Transitions/API.php
 %%WWWDIR%%/plugins/Transitions/Categories/TransitionsSubcategory.php
 %%WWWDIR%%/plugins/Transitions/Controller.php
@@ -8638,7 +8695,6 @@
 %%WWWDIR%%/plugins/Transitions/stylesheets/_transitionColors.less
 %%WWWDIR%%/plugins/Transitions/stylesheets/transitions.less
 %%WWWDIR%%/plugins/Transitions/templates/renderPopover.twig
-%%WWWDIR%%/plugins/Transitions/templates/transitions.twig
 %%WWWDIR%%/plugins/Transitions/vue/dist/Transitions.umd.js
 %%WWWDIR%%/plugins/Transitions/vue/dist/Transitions.umd.min.js
 %%WWWDIR%%/plugins/Transitions/vue/dist/umd.metadata.json
@@ -9328,6 +9384,7 @@
 %%WWWDIR%%/plugins/UsersManager/Validators/AllowedEmailDomain.php
 %%WWWDIR%%/plugins/UsersManager/Validators/Email.php
 %%WWWDIR%%/plugins/UsersManager/Validators/Login.php
+%%WWWDIR%%/plugins/UsersManager/changes.json
 %%WWWDIR%%/plugins/UsersManager/config/config.php
 %%WWWDIR%%/plugins/UsersManager/config/tracker.php
 %%WWWDIR%%/plugins/UsersManager/images/no-access.png
@@ -9912,6 +9969,7 @@
 %%WWWDIR%%/plugins/Widgetize/lang/zh-cn.json
 %%WWWDIR%%/plugins/Widgetize/lang/zh-tw.json
 %%WWWDIR%%/plugins/Widgetize/stylesheets/widgetize.less
+%%WWWDIR%%/plugins/Widgetize/templates/clientWidget.twig
 %%WWWDIR%%/plugins/Widgetize/templates/iframe.twig
 %%WWWDIR%%/plugins/Widgetize/templates/iframe_empty.twig
 %%WWWDIR%%/plugins/Widgetize/templates/index.twig
@@ -11025,6 +11083,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap85.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Normalizer.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/README.md
@@ -11033,6 +11092,8 @@
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalDecomposition.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/combiningClass.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/compatibilityDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/rawCanonicalDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/rawCompatibilityDecomposition.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
@@ -11043,6 +11104,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap72.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-php73/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php73/Php73.php
@@ -11221,6 +11283,7 @@
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Draw.php
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Image.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/LICENSE.TXT
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/Makefile
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/README.md
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/VERSION
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/config/tcpdf_config.php

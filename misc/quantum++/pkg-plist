@@ -75,7 +75,7 @@ lib/cmake/qpp/qppConfig.cmake
 lib/cmake/qpp/qppConfigVersion.cmake
 lib/cmake/qpp/qpp_MATLAB.cmake
 lib/cmake/qpp/qpp_compiler_flags.cmake
-lib/cmake/qpp/qpp_eigen3.cmake
+lib/cmake/qpp/qpp_eigen.cmake
 lib/cmake/qpp/qpp_openmp.cmake
 lib/cmake/qpp/qpp_openqasm.cmake
 lib/cmake/qpp/qpp_sanitize.cmake

@@ -1,0 +1,9 @@
+deepsearch-glm is a specialized Python library developed by IBM to create
+and deploy fast Graph Language Models. It enables advanced data extraction
+and structural document understanding at scale.
+
+Key Capabilities
+* Entity Extraction: Automatically isolates key domain terms from text.
+* Relationship Mapping: Identifies connections between data points.
+* Advanced NLP: Applies semantic parsing directly on raw documents.
+* Docling Integration: Pairs natively with structured document tools.

@@ -1,0 +1,3 @@
+pytest-dotenv is a pytest plugin that parses environment files before running
+tests. It uses python-dotenv to load variables from .env files, with optional
+configuration through pytest config files such as pytest.ini or tox.ini.

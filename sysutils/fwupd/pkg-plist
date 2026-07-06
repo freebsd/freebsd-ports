@@ -54,9 +54,9 @@ include/fwupd-3/libfwupd/fwupd-security-attr-struct.h
 include/fwupd-3/libfwupd/fwupd-security-attr.h
 include/fwupd-3/libfwupd/fwupd-variant.h
 include/fwupd-3/libfwupd/fwupd-version.h
-lib/fwupd-2.1.4/libfwupdengine.so
-lib/fwupd-2.1.4/libfwupdplugin.so
-lib/fwupd-2.1.4/libfwupdutil.so
+lib/fwupd-2.1.5/libfwupdengine.so
+lib/fwupd-2.1.5/libfwupdplugin.so
+lib/fwupd-2.1.5/libfwupdutil.so
 lib/girepository-1.0/Fwupd-2.0.typelib
 lib/libfwupd.so
 lib/libfwupd.so.3
@@ -121,8 +121,12 @@ libexec/fwupd/fwupd
 %%TEST%%libexec/installed-tests/fwupd/pixart-tp-self-test
 %%TEST%%libexec/installed-tests/fwupd/snap-self-test
 %%TEST%%libexec/installed-tests/fwupd/synaptics-prometheus-self-test
+%%TEST%%libexec/installed-tests/fwupd/uefi-db-self-test
 %%TEST%%libexec/installed-tests/fwupd/uefi-dbx-self-test
 %%TEST%%libexec/installed-tests/fwupd/uefi-mok-self-test
+%%TEST%%libexec/installed-tests/fwupd/uefi-sbat-self-test
+%%TEST%%libexec/installed-tests/fwupd/upower-self-test
+%%TEST%%libexec/installed-tests/fwupd/vbe-self-test
 %%TEST%%libexec/installed-tests/fwupd/vli-self-test
 %%TEST%%libexec/installed-tests/fwupd/wacom-usb-self-test
 share/dbus-1/interfaces/org.freedesktop.fwupd.xml
@@ -1410,7 +1414,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/const.CFI_DEVICE_CMD_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.CHUNK_ADDR_OFFSET_NONE.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.CHUNK_PAGESZ_NONE.html
-%%PORTDOCS%%share/doc/libfwupdplugin/const.CONTEXT_HWID_FLAG_LOAD_ALL.html
+%%PORTDOCS%%share/doc/libfwupdplugin/const.CONTEXT_LOAD_FLAG_HWID_ALL.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.CONTEXT_QUIRK_SOURCE_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.COSWID_ENTITY_ROLE_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.COSWID_TAG_LAST.html
@@ -1818,6 +1822,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/ebitdo-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/egis-moc-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/elan-kbd-README.html
+%%PORTDOCS%%share/doc/libfwupdplugin/elan-ts-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/elanfp-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/elantp-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/emmc-README.html
@@ -1930,7 +1935,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ConfigLoadFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ContextEspFileFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ContextFlags.html
-%%PORTDOCS%%share/doc/libfwupdplugin/flags.ContextHwidFlags.html
+%%PORTDOCS%%share/doc/libfwupdplugin/flags.ContextLoadFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.DeviceIncorporateFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.DeviceInstanceFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.DumpFlags.html
@@ -1948,7 +1953,6 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ProcessorFeatureFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ProcessorMitigationFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ProgressFlags.html
-%%PORTDOCS%%share/doc/libfwupdplugin/flags.QuirksLoadFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.SecurityAttrsFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.SmbiosBiosCharacteristics.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.SmbiosBiosCharacteristicsExt.html
@@ -1963,6 +1967,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/fresco-pd-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.BIT_CLEAR.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.BIT_SET.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.base64_encode.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.byte_array_align_up.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.byte_array_append_array.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.byte_array_append_bytes.html
@@ -1994,10 +1999,16 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.cfu_rr_code_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.coff_subsystem_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.common_align_up.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.common_from_bcd_u16.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.common_from_bcd_u8.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.common_get_kernel_cmdline.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.common_get_memory_size.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.common_get_olson_timezone_id.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.common_get_random.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.common_get_random_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.common_guid_is_plausible.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.common_to_bcd_u16.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.common_to_bcd_u8.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.coswid_entity_role_from_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.coswid_entity_role_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.coswid_hash_alg_from_string.html
@@ -2018,7 +2029,6 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.coswid_write_tag_item.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.coswid_write_tag_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.cpu_get_attrs.html
-%%PORTDOCS%%share/doc/libfwupdplugin/func.cpu_get_vendor.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.cpuid.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.crc16.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.crc16_bytes.html
@@ -2183,7 +2193,6 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.mkhi_status_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.output_stream_from_path.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.output_stream_write_bytes.html
-%%PORTDOCS%%share/doc/libfwupdplugin/func.path_find_program.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_get_files.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_get_symlink_target.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.path_glob.html
@@ -2465,6 +2474,11 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_chassis_kind.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_compile_versions.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_config.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_config_bool.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_config_str.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_config_strv.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_config_u64.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_cpu_vendor.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_data.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_default_esp.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.get_display_state.html
@@ -2498,9 +2512,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.has_hwid_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.has_hwid_guid.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.housekeeping.html
-%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.load_hwinfo.html
-%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.load_path_store.html
-%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.load_quirks.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.load.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.lookup_quirk_by_id.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.lookup_quirk_by_id_iter.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.reload_bios_settings.html
@@ -2509,6 +2521,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_battery_level.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_battery_threshold.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_chassis_kind.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_cpu_vendor.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_data.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_display_state.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Context.set_esp_location.html
@@ -3082,7 +3095,9 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PartialInputStream.get_offset.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PartialInputStream.get_size.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.add_prefix.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.add_program_path.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.build_filename.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.find_program.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.get_path.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.load_defaults.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.PathStore.load_from_env.html
@@ -3098,6 +3113,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_device_gtype.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_device_udev_subsystem.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_firmware_gtype.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_private_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_report_metadata.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_rule.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.add_string.html
@@ -3119,11 +3135,14 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.get_priority.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.get_report_metadata.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.get_rules.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.has_private_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.is_open.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.name_compare.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.open.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.order_compare.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.register_private_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.remove_device.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.remove_private_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.reset_config_values.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_activate.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_add_security_attrs.html
@@ -4278,6 +4297,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.get_efivar_bytes.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.get_guid.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.get_name.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.read_default.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.set_efivar_bytes.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.set_guid.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.UefiDevice.set_name.html
@@ -4426,6 +4446,9 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.X509Certificate.get_activation_time.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.X509Certificate.get_issuer.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.X509Certificate.get_subject.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.X509Certificate.set_activation_time.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.X509Certificate.set_issuer.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.X509Certificate.set_subject.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.ZipFile.get_compression.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.ZipFile.set_compression.html
 %%PORTDOCS%%share/doc/libfwupdplugin/modem-manager-README.html

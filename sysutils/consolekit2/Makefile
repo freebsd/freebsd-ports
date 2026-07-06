@@ -1,7 +1,11 @@
 PORTNAME=	consolekit
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	75867d5ec7187b60e5732843acbe0f67c61421cf.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Framework for defining and tracking users

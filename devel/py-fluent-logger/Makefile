@@ -11,7 +11,7 @@ WWW=		https://github.com/fluent/fluent-logger-python
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	py311-hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR}
 
 USES=		python

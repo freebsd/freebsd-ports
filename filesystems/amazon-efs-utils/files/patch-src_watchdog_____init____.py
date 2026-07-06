@@ -1,23 +1,5 @@
 --- src/watchdog/__init__.py.orig	2026-04-17 08:53:05 UTC
 +++ src/watchdog/__init__.py
-@@ -60,7 +60,7 @@ FS_PREFIX = "fs-"
- SERVICE = "elasticfilesystem"
- FS_PREFIX = "fs-"
- 
--CONFIG_FILE = "/etc/amazon/efs/efs-utils.conf"
-+CONFIG_FILE = "/usr/local/etc/amazon/efs/efs-utils.conf"
- CONFIG_SECTION = "mount-watchdog"
- MOUNT_CONFIG_SECTION = "mount"
- CLIENT_INFO_SECTION = "client-info"
-@@ -79,7 +79,7 @@ EFS_SERVICE_NAME = "elasticfilesystem"
- 
- DEFAULT_NFS_PORT = "2049"
- EFS_SERVICE_NAME = "elasticfilesystem"
--PRIVATE_KEY_FILE = "/etc/amazon/efs/privateKey.pem"
-+PRIVATE_KEY_FILE = "/usr/local/etc/amazon/efs/privateKey.pem"
- DEFAULT_REFRESH_SELF_SIGNED_CERT_INTERVAL_MIN = 60
- DEFAULT_STUNNEL_HEALTH_CHECK_INTERVAL_MIN = 5
- DEFAULT_STUNNEL_HEALTH_CHECK_TIMEOUT_SEC = 30
 @@ -742,7 +742,64 @@ def get_current_local_nfs_mounts(mount_file="/proc/mou
      """
      mounts = []

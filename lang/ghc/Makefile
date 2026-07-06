@@ -1,6 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 CONFIGURE_ENV=		CC=${CC} CXX=${CXX} CPP=${CPP} GHC=${BOOT_GHC} \
 			ALEX=/usr/bin/true HAPPY=/usr/bin/true
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
-USE_LOCALE=		en_US.UTF-8
 NO_CCACHE=		yes
 OPTIONS_SUB=		yes
 SHEBANG_FILES=		${BOOT_SCRIPT} \
@@ -178,12 +177,6 @@ pre-configure:
 .endif
 
 pre-build:
-.if ${ARCH} == powerpc64
-# FreeBSD ppc64 BE is ELFv2, but GHC's configure hardcodes powerpc64 -> ELF_V1.
-	${REINPLACE_CMD} -e 's|ArchPPC_64 ELF_V1|ArchPPC_64 ELF_V2|g' \
-		${WRKSRC}/hadrian/cfg/default.target \
-		${WRKSRC}/hadrian/cfg/default.host.target
-.endif
 .if ! ${PORT_OPTIONS:MBOOT}
 # Compile Hadrian using the bootstrap compiler and bootstrap Hadrian distfile
 	cd ${WRKSRC}/hadrian/bootstrap && \

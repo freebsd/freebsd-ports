@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-njs
 MODULE_VERSION=	0.9.9
-MODULE_PORTREVISION=	0
+MODULE_PORTREVISION=	1
 GH_TUPLE=	nginx:njs:${MODULE_VERSION}:module
 
 COMMENT=	Angie NJS dynamic module

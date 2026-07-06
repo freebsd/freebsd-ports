@@ -40,6 +40,8 @@ include/d_blas.h
 include/d_blas_64.h
 include/s_blas.h
 include/s_blas_64.h
-lib/cmake/blasfeoConfig-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/blasfeoConfig.cmake
 lib/libblasfeo.so
+lib/libblasfeo.so.0
+lib/libblasfeo.so.0.1.4.2
+share/cmake/blasfeo/blasfeoConfig-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/blasfeo/blasfeoConfig.cmake

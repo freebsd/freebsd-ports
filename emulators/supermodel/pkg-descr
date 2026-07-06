@@ -1,0 +1,9 @@
+Supermodel emulates Sega's Model 3 arcade platform, allowing you
+to relive state-of-the-art 3D arcade gaming as it existed from 1996
+through 1999. It uses OpenGL, SDL2, and can run on Windows, Linux, and
+macOS. It also supports network play on low-latency network connections.
+
+The aim of the Supermodel project is to develop an emulator that is
+both accurate and playable. As with virtually all arcade hardware, no
+public documentation for the Model 3 platform exists. What is known so
+far has been painstakingly reverse engineered from scratch.

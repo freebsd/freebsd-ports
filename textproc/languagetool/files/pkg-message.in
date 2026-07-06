@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+LanguageTool has been installed.
+
+Command-line checker:
+
+	languagetool [options] <file>
+
+To run the LanguageTool HTTP server:
+
+	sysrc languagetool_enable="YES"
+	service languagetool start
+
+By default, the server listens on http://localhost:8081 and runs as user
+"languagetool".  See %%PREFIX%%/etc/rc.d/languagetool for all tunables
+(port, user, JVM options, extra server arguments).
+
+Server configuration lives in:
+
+	%%ETCDIR%%/server.properties
+
+The server's Java heap is capped at 512 MB by default; raise it with,
+e.g., languagetool_java_opts="-Xmx1g" for heavy use.  Optional n-gram
+data sets (several GB, see the sample configuration file) improve
+detection of commonly confused words.
+EOM
+}
+]

@@ -15,7 +15,7 @@ USES=		cpe gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	trilogy-libraries
 
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	trilogy_project
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/example/trilogy_query ${STAGEDIR}${PREFIX}/bin/

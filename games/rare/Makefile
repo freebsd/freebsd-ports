@@ -1,5 +1,5 @@
 PORTNAME=	rare
-DISTVERSION=	1.12.0
+DISTVERSION=	1.12.0.155
 CATEGORIES=	games
 
 MAINTAINER=	Alexander88207@protonmail.com

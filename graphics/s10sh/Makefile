@@ -12,11 +12,6 @@ WWW=		http://www.reynoldsnet.org/s10sh/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	Fails to build: error: cannot find the byte order for this architecture, fix bytesex.h
-BROKEN_armv6=	Fails to build: error: cannot find the byte order for this architecture, fix bytesex.h
-BROKEN_armv7=	Fails to build: error: cannot find the byte order for this architecture, fix bytesex.h
-BROKEN_riscv64=	Fails to build: error: cannot find the byte order for this architecture, fix bytesex.h
-
 USES=		ncurses readline
 
 # Don't extract the libusb bundled with s10sh:

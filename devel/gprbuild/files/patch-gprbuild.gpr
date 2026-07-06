@@ -1,0 +1,16 @@
+  Documentation is handled by the Port itself. Remove these Install
+  Artifacts to eliminate the noise polution in the build log.
+
+--- gprbuild.gpr.orig	2026-07-02 06:40:37 UTC
++++ gprbuild.gpr
+@@ -154,10 +154,6 @@ project Gprbuild is
+    package Install is
+       case Install_Mode is
+          when "all" | "nointernal" =>
+-            for Artifacts ("share/doc/gprbuild/txt") use ("doc/txt/*.txt");
+-            for Artifacts ("share/doc/gprbuild/info") use ("doc/info/*.info");
+-            for Artifacts ("share/doc/gprbuild/pdf") use ("doc/pdf/*.pdf");
+-            for Artifacts ("share/doc/gprbuild") use ("doc/html");
+             for Artifacts ("share") use ("share/gprconfig");
+ 
+             case Target is

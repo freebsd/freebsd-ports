@@ -2,8 +2,8 @@ PORTNAME=	kiconthemes
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-themes kde kde-frameworks
 
-COMMENT=	Icon GUI utilities
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Icon GUI utilities
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 

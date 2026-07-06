@@ -1,0 +1,11 @@
+--- cargo-crates/v8-149.2.0/build/config/sanitizers/sanitizers.gni.orig	2026-06-10 07:20:15 UTC
++++ cargo-crates/v8-149.2.0/build/config/sanitizers/sanitizers.gni
+@@ -530,7 +530,7 @@ template("ubsan_hardening") {
+       _condition = invoker.condition
+     }
+ 
+-    if (_condition && !is_ubsan && is_clang) {
++    if (_condition && !is_ubsan && is_clang && !is_bsd) {
+       cflags = [
+         "-fsanitize=${invoker.sanitizer}",
+         "-fsanitize-trap=${invoker.sanitizer}",

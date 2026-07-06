@@ -15,7 +15,7 @@
 # kafka_config:				Configuration file to run Kafka
 #					Default: %%ETCDIR%%/server.properties
 # kafka_log4j_config:			Configuration file for Kafka logging
-#					Default: %%ETCDIR%%/log4j.properties
+#					Default: %%ETCDIR%%/log4j2.yaml
 # kafka_log_dir:			Directory to store Kafka logs
 #					Default: %%KAFKA_LOGDIR%%
 # kafka_java_opts:			Options passed to JVM to start Kafka
@@ -42,7 +42,7 @@ load_rc_config "${name}"
 : ${kafka_user:="%%KAFKA_USER%%"}
 : ${kafka_group:="%%KAFKA_GROUP%%"}
 : ${kafka_config:="%%ETCDIR%%/server.properties"}
-: ${kafka_log4j_config:="%%ETCDIR%%/log4j.properties"}
+: ${kafka_log4j_config:="%%ETCDIR%%/log4j2.yaml"}
 : ${kafka_log_dir:="%%KAFKA_LOGDIR%%"}
 : ${kafka_pidfile:=/var/run/kafka.pid}
 : ${kafka_syslog_output_enable:="YES"}
@@ -68,7 +68,7 @@ if checkyesno kafka_syslog_output_enable; then
 	fi
 fi
 
-JAVA="%%JAVA%%"
+JAVA="%%LOCALBASE%%/bin/java"
 CLASSPATH=":%%DATADIR%%/libs/*"
 
 kafka_class="kafka.Kafka"

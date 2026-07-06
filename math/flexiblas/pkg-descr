@@ -3,7 +3,7 @@ backends.
 
 - Runtime exchangeable BLAS and LAPACK backend without recompilation of any
   software.
-- Supports all BLAS functions and al LAPACK functions from Version 3.10.0 with
+- Supports all BLAS functions and all LAPACK functions from Version 3.10.0 with
   an 100% BLAS and LAPACK compatible ABI/API.
 - Flexible per system/per user/per host configuration files.
 - Integration of user-owned BLAS libraries without administrator privileges,

@@ -1,0 +1,3 @@
+PyNWB is a Python package for working with NWB (Neurodata Without Borders)
+data. It provides a high-level API for efficiently working with
+neurophysiology data stored in the NWB format.

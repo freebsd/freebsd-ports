@@ -1,7 +1,7 @@
 PORTNAME=	pgpool-II
-DISTVERSION=	4.7.1
+DISTVERSION=	4.7.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
+MASTER_SITES=	https://www.pgpool.net/source/
 PKGNAMESUFFIX=	-47
 
 MAINTAINER=	bofh@FreeBSD.org

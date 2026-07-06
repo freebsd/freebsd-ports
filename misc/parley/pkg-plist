@@ -85,7 +85,6 @@ share/locale/af/LC_MESSAGES/parley.mo
 share/locale/ar/LC_MESSAGES/parley.mo
 share/locale/ast/LC_MESSAGES/parley.mo
 share/locale/be/LC_MESSAGES/parley.mo
-share/locale/bg/LC_MESSAGES/parley.mo
 share/locale/bn/LC_MESSAGES/parley.mo
 share/locale/br/LC_MESSAGES/parley.mo
 share/locale/bs/LC_MESSAGES/parley.mo
@@ -118,6 +117,7 @@ share/locale/ja/LC_MESSAGES/parley.mo
 share/locale/ka/LC_MESSAGES/parley.mo
 share/locale/kk/LC_MESSAGES/parley.mo
 share/locale/km/LC_MESSAGES/parley.mo
+share/locale/ko/LC_MESSAGES/parley.mo
 share/locale/lt/LC_MESSAGES/parley.mo
 share/locale/lv/LC_MESSAGES/parley.mo
 share/locale/mk/LC_MESSAGES/parley.mo

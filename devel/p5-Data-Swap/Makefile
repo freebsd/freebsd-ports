@@ -12,10 +12,8 @@ WWW=		https://metacpan.org/release/Data-Swap
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 503700
 BROKEN=         uses hidden Perl functions that are hidden after 5.37.0
-.endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2026-08-01
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,3 @@
+Pyrefly is a fast type checker and language server for Python, written in
+Rust. It is distributed as a thin Python package built with maturin; the
+Python wrapper invokes the native pyrefly binary.

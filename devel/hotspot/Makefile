@@ -18,7 +18,8 @@ LIB_DEPENDS=	libdw.so:devel/elfutils \
 		libkgraphviewer.so:graphics/kgraphviewer \
 		libzstd.so:archivers/zstd
 
-USES=		cmake desktop-file-utils gettext-tools qt:6 kde:6 pkgconfig xorg
+USES=		cmake cpe desktop-file-utils gettext-tools qt:6 kde:6 pkgconfig xorg
+CPE_VENDOR=	kdab
 USE_KDE=	ecm \
 		archive auth bookmarks codecs completion config configwidgets coreaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kio notifications parts service solid sonnet syntaxhighlighting \

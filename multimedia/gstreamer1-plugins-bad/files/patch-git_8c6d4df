@@ -1,0 +1,31 @@
+From 8c6d4df57b531c7b41a5f3bce28d2c7bc98a1d3d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sebastian=20Dr=C3=B6ge?= <sebastian@centricular.com>
+Date: Tue, 16 Jun 2026 15:23:13 +0300
+Subject: [PATCH] h264parse: Check for enough slice header data being available
+
+Patch provided by Ramesh Adhikari, who also reported this.
+
+Fixes https://gitlab.freedesktop.org/gstreamer/gstreamer/-/work_items/5108
+
+Part-of: <https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/11938>
+---
+ subprojects/gst-plugins-bad/gst/videoparsers/gsth264parse.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/subprojects/gst-plugins-bad/gst/videoparsers/gsth264parse.c b/subprojects/gst-plugins-bad/gst/videoparsers/gsth264parse.c
+index 8bbddb07239..1b97678993f 100644
+--- gst/videoparsers/gsth264parse.c.orig
++++ gst/videoparsers/gsth264parse.c
+@@ -1129,7 +1129,8 @@ gst_h264_parse_process_nal (GstH264Parse * h264parse, GstH264NalUnit * nalu)
+       h264parse->picture_start = TRUE;
+ 
+       /* don't need to parse the whole slice (header) here */
+-      if (*(nalu->data + nalu->offset + nalu->header_bytes) & 0x80) {
++      if (nalu->size > nalu->header_bytes &&
++          *(nalu->data + nalu->offset + nalu->header_bytes) & 0x80) {
+         /* means first_mb_in_slice == 0 */
+         /* real frame data */
+         GST_DEBUG_OBJECT (h264parse, "first_mb_in_slice = 0");
+-- 
+GitLab
+

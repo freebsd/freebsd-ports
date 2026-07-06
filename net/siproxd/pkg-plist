@@ -20,6 +20,8 @@ lib/siproxd/plugin_prefix.la
 lib/siproxd/plugin_prefix.so
 lib/siproxd/plugin_regex.la
 lib/siproxd/plugin_regex.so
+lib/siproxd/plugin_regex_body.la
+lib/siproxd/plugin_regex_body.so
 lib/siproxd/plugin_shortdial.la
 lib/siproxd/plugin_shortdial.so
 lib/siproxd/plugin_siptrunk.la

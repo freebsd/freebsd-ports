@@ -1,0 +1,3 @@
+Python client library for the AIStudio API providing access to Baidu's
+AI Studio platform for model management, dataset operations, and pipeline
+development.

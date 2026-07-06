@@ -1,0 +1,7 @@
+Pandas TA OpenBB is a fork of the Pandas Technical Analysis (pandas-ta)
+library, maintained for compatibility with NumPy 2 and the OpenBB
+ecosystem.  It leverages the Pandas package with more than 130 technical
+indicators and utility functions, including commonly used indicators such
+as Simple Moving Average (sma), Moving Average Convergence Divergence
+(macd), Bollinger Bands (bbands), On-Balance Volume (obv), Relative
+Strength Index (rsi), and many more.

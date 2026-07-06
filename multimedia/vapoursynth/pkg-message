@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+If this application is built in "compatibility mode" on amd64 it means that
+you're either using a prebuilt binary package or that CPUTYPE variable wasn't
+set during build. Application will still continue to work but without assembly
+optimization which means REDUCED performance. It is HIGHLY recommended that
+you recompile this software and plugins with CPUTYPE variable defined.
+EOM
+}
+]

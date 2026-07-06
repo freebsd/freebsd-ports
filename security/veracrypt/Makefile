@@ -1,6 +1,5 @@
 PORTNAME=	veracrypt
-PORTVERSION=	1.26.24
-PORTREVISION=	1
+PORTVERSION=	1.26.29
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/v/V/:S/c/C/}%20${PORTVERSION}/Source%20Code
 DISTNAME=	${PORTNAME:S/v/V/:S/c/C/}_${PORTVERSION}_Source
@@ -24,6 +23,7 @@ ALL_TARGET=	#
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 SUB_FILES=	pkg-message
 
+MAKE_ENV+=	SOURCE_DATE_EPOCH=1780902000
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
@@ -39,10 +39,12 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Main/veracrypt ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/Setup/FreeBSD/veracrypt.desktop ${STAGEDIR}${PREFIX}/share/applications/
-.	for RESO in 128 16 256 48
+.	for RESO in 1024 128 16 256 48
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
-		${INSTALL_DATA} ${WRKSRC}/src/Resources/Icons/VeraCrypt-${RESO}x${RESO}.xpm ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps/${PORTNAME}.xpm
+		${INSTALL_DATA} ${WRKSRC}/src/Resources/Icons/VeraCrypt-${RESO}x${RESO}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps/${PORTNAME}.png
 .	endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
+	${INSTALL_DATA} ${WRKSRC}/src/Resources/Icons/VeraCrypt.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html

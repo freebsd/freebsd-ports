@@ -1,6 +1,6 @@
 PORTNAME=	php83
-DISTVERSION=	8.3.31
-PORTREVISION?=	0
+DISTVERSION=	8.3.32
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
@@ -192,7 +192,7 @@ COMMENT=	The ${PHP_MODNAME} shared extension for php
 USES+=		php:ext,noflavors
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
 PHP_VER=	83
-IGNORE_WITH_PHP=	82 84 85
+IGNORE_WITH_PHP=	82 84 85 86
 
 EXTSUBDIR=	${DISTNAME}/ext/${PHP_MODNAME}
 WRKSRC=		${WRKDIR}/${EXTSUBDIR}
@@ -251,7 +251,7 @@ FLATFILE_CONFIGURE_ON=	--disable-flatfile
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
 INIFILE_CONFIGURE_OFF=	--disable-inifile
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 LMDB_CONFIGURE_ARGS=	--with-lmdb=${LOCALBASE}
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
 QDBM_CONFIGURE_ARGS=	--with-qdbm=${LOCALBASE}

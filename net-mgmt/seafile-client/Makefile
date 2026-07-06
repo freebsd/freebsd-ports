@@ -1,10 +1,10 @@
 PORTNAME=	seafile-client
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.6
+DISTVERSION=	9.0.18
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	d.stoye@cms.hu-berlin.de
 COMMENT=	Open Source Cloud Storage (Client)
 WWW=		https://github.com/haiwen/seafile
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libinotify.so:devel/libinotify \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/libuuid \
+		libargon2.so:security/libargon2 \
 		libjansson.so:devel/jansson \
 		libwebsockets.so:net/libwebsockets
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \

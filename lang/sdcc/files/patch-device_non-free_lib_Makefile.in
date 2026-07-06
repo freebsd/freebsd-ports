@@ -1,0 +1,32 @@
+--- device/non-free/lib/Makefile.in.orig	2025-10-22 13:02:05 UTC
++++ device/non-free/lib/Makefile.in
+@@ -352,17 +352,6 @@ ifneq ($(TARGETS), )
+ install: all installdirs
+ ifneq ($(TARGETS), )
+ 	[ ! -d "$(BUILDDIR)" ] || $(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
+-	$(CP_U) -r $(foreach p, $(ENABLED_PORTS), $(srcdir)/$(p)) $(sdcc_libdir)/src
+-
+-	for src in $(ENABLED_PORTS); do \
+-	  find $(sdcc_libdir)/src/$$src -depth \
+-	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
+-	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'autom4te.cache' -o \
+-	    -name 'build' -o -name 'bin' -o -name 'Makefile*' -o -name 'config*' -o \
+-	    -name 'depcomp' -o -name 'missing' -o -name 'install-sh' -o \
+-	    -name 'bootstrap.sh' \) \
+-	    -exec rm -rf {} + ; \
+-	done
+ endif
+ 
+ # Deleting all the installed files
+@@ -384,10 +373,7 @@ ifneq ($(TARGETS), )
+ # ---------------------------------
+ installdirs:
+ ifneq ($(TARGETS), )
+-	for libdir in $(ENABLED_PORTS); do \
+-	  mkdir -p $(sdcc_libdir)/$$libdir; \
+-	done
+-	mkdir -p $(sdcc_libdir)/src
++	mkdir -p $(sdcc_libdir)
+ endif
+ 
+ # Creating dependencies

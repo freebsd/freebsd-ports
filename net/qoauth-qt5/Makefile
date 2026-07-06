@@ -9,6 +9,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 support for OAuth-powered network services
 WWW=		https://github.com/ayoy/qoauth
 
+DEPRECATED=	Discontinued, not needed for modern Qt based projects
+EXPIRATION_DATE=	2026-09-30
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -17,6 +17,7 @@ USES=		cpe fakeroot php sqlite
 USE_GITHUB=	yes
 USE_PHP=	gd imap ldap odbc pdo pdo_odbc pdo_sqlite phar session \
 		simplexml sockets xml
+IGNORE_WITH_PHP=	86
 
 VARBASE=	var
 

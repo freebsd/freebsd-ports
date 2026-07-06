@@ -1,5 +1,6 @@
 PORTNAME=	http
 DISTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	www
 DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 
@@ -9,6 +10,9 @@ WWW=		https://pecl.php.net/package/pecl_http
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=		pecl infrastructure is being deprecated and no consumers for this port
+EXPIRAION_DATE=	2026-09-30
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2@${PHP_FLAVOR} \
 		re2c:devel/re2c \
@@ -20,6 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2@${PH
 
 USES=		php:build,pecl
 USE_PHP=	iconv:build zlib:build
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 

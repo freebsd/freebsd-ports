@@ -1,6 +1,6 @@
 PORTNAME=	komodo-edit
 DISTVERSION=	11.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${DISTVERSION}/ \
 		http://downloads.activestate.com/Komodo/releases/archive/${DISTVERSION:R:R}.x/${DISTVERSION}/
@@ -25,17 +25,17 @@ USE_LINUX=	alsalib dbuslibs gtk2 imageformats-libs xorglibs
 DESKTOP_ENTRIES="Komodo Edit" \
 		"Free multi-platform editor that makes it easy to write quality code." \
 		${DATADIR}/share/icons/komodo48.png \
-		"komodo" \
+		"komodo-edit" \
 		"Development;Utility;TextEditor;" \
 		false
 NO_BUILD=	yes
-PLIST_FILES=	bin/komodo
+PLIST_FILES=	bin/komodo-edit
 PORTDATA=	*
 
 do-install:
 	cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/komodo
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/lib/mozilla/komodo
-	${RLN} ${STAGEDIR}${DATADIR}/bin/komodo ${STAGEDIR}${PREFIX}/bin
+	${RLN} ${STAGEDIR}${DATADIR}/bin/komodo ${STAGEDIR}${PREFIX}/bin/komodo-edit
 
 .include <bsd.port.mk>

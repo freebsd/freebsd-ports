@@ -1,5 +1,6 @@
 PORTNAME=	gvfs
 DISTVERSION=	1.58.4
+PORTREVISION=	1
 CATEGORIES=	filesystems devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -19,8 +20,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \
 		libsecret-1.so:security/libsecret
-RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks \
-		lsof:sysutils/lsof
+RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks
 
 USES=		cpe gettext-tools gnome libarchive localbase meson \
 		pkgconfig python:build tar:xz
@@ -37,11 +37,15 @@ MESON_ARGS=	-Dsystemduserunitdir=no \
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	AFC AVAHI BLURAY CDDA FUSE GOA GOOGLE GPHOTO MTP NFS ONEDRIVE SMB
-OPTIONS_DEFAULT=	AVAHI BLURAY CDDA GPHOTO MTP NFS SMB
+OPTIONS_RADIO=	BUSYCOMMAND
+OPTIONS_RADIO_BUSYCOMMAND= FUSER LSOF
+OPTIONS_DEFAULT=	AVAHI BLURAY CDDA FUSER GPHOTO MTP NFS SMB
 OPTIONS_SUB=	yes
 
 AFC_DESC=	Apple device support
 BLURAY_DESC=	Blu-ray metadata support
+FUSER_DESC=	Use fuser(1) to check processes blocking umount
+LSOF_DESC=	Use lsof(1) to check processes blocking umount
 GOA_DESC=	GNOME Online Accounts volume monitor support
 GOOGLE_DESC=	Google backend
 ONEDRIVE_DESC=	OneDrive backend
@@ -64,6 +68,8 @@ CDDA_MESON_TRUE=	cdda
 FUSE_USES=		fuse:3
 FUSE_MESON_TRUE=	fuse
 
+FUSER_MESON_ON=		-Dbusy_processes_command=fuser
+
 GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts
 GOA_MESON_TRUE=		goa
 
@@ -73,6 +79,9 @@ GOOGLE_MESON_TRUE=	google
 
 GPHOTO_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 GPHOTO_MESON_TRUE=	gphoto2
+
+LSOF_MESON_ON=		-Dbusy_processes_command=lsof
+LSOF_RUN_DEPENDS=	lsof:sysutils/lsof
 
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_MESON_TRUE=		mtp

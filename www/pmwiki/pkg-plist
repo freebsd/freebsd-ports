@@ -38,6 +38,7 @@
 %%PMWIKIDIR%%/pub/lib/pmwiki-core.css
 %%PMWIKIDIR%%/pub/lib/pmwiki-darktoggle.js
 %%PMWIKIDIR%%/pub/lib/pmwiki-lib.js
+%%PMWIKIDIR%%/pub/lib/pmwiki-media.js
 %%PMWIKIDIR%%/pub/lib/pmwiki-utils.js
 %%PMWIKIDIR%%/pub/lib/pmwiki.syntax.css
 %%PMWIKIDIR%%/pub/lib/pmwiki.syntax.js
@@ -75,6 +76,7 @@
 %%PMWIKIDIR%%/scripts/httpauth.php
 %%PMWIKIDIR%%/scripts/intermap.txt
 %%PMWIKIDIR%%/scripts/markupexpr.php
+%%PMWIKIDIR%%/scripts/media.php
 %%PMWIKIDIR%%/scripts/notify.php
 %%PMWIKIDIR%%/scripts/pagelist.php
 %%PMWIKIDIR%%/scripts/pagerev.php
@@ -156,6 +158,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailingLists
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupExpressions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupMasterIndex
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Media
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Notify
 %%PMWIKIDIR%%/wikilib.d/PmWiki.OtherVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageDirectives

@@ -11,6 +11,7 @@ WWW=		https://www.python.org/
 LICENSE=	PSFL
 
 USES=		cpe linux:rl9
+CPE_PRODUCT=	python
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes

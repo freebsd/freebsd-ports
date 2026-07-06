@@ -28,9 +28,11 @@ TEST_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	apache
 
 .include <bsd.port.mk>

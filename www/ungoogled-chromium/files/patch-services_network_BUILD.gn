@@ -1,9 +1,9 @@
---- services/network/BUILD.gn.orig	2026-05-09 18:09:27 UTC
+--- services/network/BUILD.gn.orig	2026-06-05 13:45:06 UTC
 +++ services/network/BUILD.gn
-@@ -447,7 +447,6 @@ if (is_linux || is_chromeos) {
-     ]
+@@ -453,7 +453,6 @@ if (is_linux || is_chromeos) {
      deps = [
        "//base",
+       "//components/vrp_flags:buildflags",
 -      "//sandbox/linux:sandbox_services",
        "//sandbox/policy",
      ]

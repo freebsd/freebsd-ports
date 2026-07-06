@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2025-11-13 17:58:14 UTC
+--- pyproject.toml.orig	2026-06-16 16:27:24 UTC
 +++ pyproject.toml
-@@ -34,10 +34,10 @@ requires = [
+@@ -33,10 +33,10 @@ requires = [
  [build-system]
  requires = [
      "build>=1.1",

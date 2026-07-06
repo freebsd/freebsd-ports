@@ -1,0 +1,22 @@
+--- ldap/admin/src/defaults.inf.in.orig	2026-06-29 16:38:28 UTC
++++ ldap/admin/src/defaults.inf.in
+@@ -53,14 +53,14 @@ cert_dir = @instconfigdir@/slapd-{instance_name}
+ schema_dir = @instconfigdir@/slapd-{instance_name}/schema
+ cert_dir = @instconfigdir@/slapd-{instance_name}
+ 
+-lock_dir = @localrundir@/lock/dirsrv/slapd-{instance_name}
++lock_dir = @localrundir@/dirsrv/slapd-{instance_name}
+ log_dir = @localstatedir@/log/dirsrv/slapd-{instance_name}
+ access_log = @localstatedir@/log/dirsrv/slapd-{instance_name}/access
+ audit_log = @localstatedir@/log/dirsrv/slapd-{instance_name}/audit
+ error_log = @localstatedir@/log/dirsrv/slapd-{instance_name}/errors
+ security_log = @localstatedir@/log/dirsrv/slapd-{instance_name}/security
+-db_dir = @localstatedir@/lib/dirsrv/slapd-{instance_name}/db
+-db_home_dir = /dev/shm/slapd-{instance_name}
+-backup_dir = @localstatedir@/lib/dirsrv/slapd-{instance_name}/bak
+-ldif_dir = @localstatedir@/lib/dirsrv/slapd-{instance_name}/ldif
++db_dir = @localstatedir@/db/dirsrv/slapd-{instance_name}/db
++db_home_dir = @localstatedir@/db/dirsrv/slapd-{instance_name}/db
++backup_dir = @localstatedir@/db/dirsrv/slapd-{instance_name}/bak
++ldif_dir = @localstatedir@/db/dirsrv/slapd-{instance_name}/ldif
+ 

@@ -1,0 +1,4 @@
+moocore is a core library for Multi-Objective Optimization.
+
+It provides efficient implementations of common MOO algorithms and metrics,
+such as Hypervolume, EAF, and IGD.

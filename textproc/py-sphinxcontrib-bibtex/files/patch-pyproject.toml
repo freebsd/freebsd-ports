@@ -9,12 +9,3 @@
  description = "Sphinx extension for BibTeX style citations."
  readme = "README.rst"
  requires-python = ">=3.10"
-@@ -32,7 +32,7 @@ dependencies = [
-     "Topic :: Utilities",
- ]
- dependencies = [
--    "Sphinx>=7.4",
-+    "Sphinx>=4.0",
-     "docutils>=0.20",
-     "pybtex>=0.25",
-     "pybtex-docutils>=1.0.2",

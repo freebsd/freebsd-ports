@@ -11,7 +11,7 @@ WWW=		https://libguestfs.org/hivex.3.html \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime gmake gnome iconv libtool perl5 pkgconfig readline shebangfix
+USES=		cpe gettext-runtime gmake gnome iconv libtool perl5 pkgconfig readline shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--disable-nls \
 CONFIGURE_ARGS_amd64=	--enable-year2038
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	redhat
 
 SHEBANG_FILES=	sh/hivexget
 bash_CMD=	/bin/sh

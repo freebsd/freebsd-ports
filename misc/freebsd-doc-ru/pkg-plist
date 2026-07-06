@@ -38,6 +38,7 @@
 %%HTML%%%%DOCBASE%%/ru/articles/vinum/index.html
 %%HTML%%%%DOCBASE%%/ru/articles/vm-design/index.html
 %%HTML%%%%DOCBASE%%/ru/articles/vpn-ipsec/index.html
+%%HTML%%%%DOCBASE%%/ru/articles/x86-assembly/index.html
 %%HTML%%%%DOCBASE%%/ru/books/accessibility/blindness/index.html
 %%HTML%%%%DOCBASE%%/ru/books/accessibility/book/index.html
 %%HTML%%%%DOCBASE%%/ru/books/accessibility/colors/index.html
@@ -84,13 +85,11 @@
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/partii/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/partiii/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/partiv/index.html
-%%HTML%%%%DOCBASE%%/ru/books/developers-handbook/partv/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/policies/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/secure/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/sockets/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/testing/index.html
 %%HTML%%%%DOCBASE%%/ru/books/developers-handbook/tools/index.html
-%%HTML%%%%DOCBASE%%/ru/books/developers-handbook/x86/index.html
 %%HTML%%%%DOCBASE%%/ru/books/dev-model/index.html
 %%HTML%%%%DOCBASE%%/ru/books/faq/index.html
 %%HTML%%%%DOCBASE%%/ru/books/fdp-primer/asciidoctor-primer/index.html
@@ -218,6 +217,7 @@
 %%PDF%%%%DOCBASE%%/ru/articles/vinum/vinum_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/articles/vm-design/vm-design_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/articles/vpn-ipsec/vpn-ipsec_ru.pdf
+%%PDF%%%%DOCBASE%%/ru/articles/x86-assembly/x86-assembly_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/books/arch-handbook/arch-handbook_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/books/design-44bsd/design-44bsd_ru.pdf
 %%PDF%%%%DOCBASE%%/ru/books/developers-handbook/developers-handbook_ru.pdf

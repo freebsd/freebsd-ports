@@ -1,6 +1,6 @@
---- src/decode.c.orig	2023-02-08 18:37:15 UTC
+--- src/decode.c.orig	2026-03-19 20:13:51 UTC
 +++ src/decode.c
-@@ -1653,6 +1653,12 @@ yfDecodeIP(
+@@ -1855,6 +1855,12 @@ yfDecodeIP(
              key->dp = 0;
          }
          break;

@@ -1,7 +1,7 @@
 PORTNAME=	dcd
-PORTVERSION=	0.13.6
+PORTVERSION=	0.16.2
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	5
+PORTREVISION?=	0
 CATEGORIES?=	devel
 PKGNAMESUFFIX?=	-server
 
@@ -11,17 +11,12 @@ WWW=		https://github.com/dlang-community/DCD
 
 LICENSE=	BSL
 
-BROKEN=		none of the overloads of `fatalHandler` are callable using a `shared` object
-
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		rdmd:lang/dlang-tools \
 		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers \
-		${LOCALBASE}/lib/d/libdsymbol.a:devel/dsymbol \
 		${LOCALBASE}/lib/d/libmsgpack-d.a:devel/msgpack-d \
-		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
-		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \
-		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
+		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse
 
 USES=		pkgconfig
 USE_GITHUB=	yes
@@ -35,7 +30,8 @@ D_LIB_DIR=	${PREFIX}/lib/d
 DC=		${PREFIX}/bin/ldmd2
 
 post-patch:
-	${REINPLACE_CMD} '7d' ${WRKSRC}/common/dub.sdl
+	${REINPLACE_CMD} '8d' ${WRKSRC}/common/dub.sdl
+	${REINPLACE_CMD} '9,10d' ${WRKSRC}/dsymbol/dub.json
 	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dub.json
 
 do-build:
@@ -52,8 +48,9 @@ do-install:
 .if ${PKGNAMESUFFIX} == "-server"
 	@${MKDIR} ${STAGEDIR}/${D_LIB_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/libdcd.a ${STAGEDIR}${D_LIB_DIR}
-	@${MKDIR} ${STAGEDIR}/${D_INCLUDE_DIR}/common
+	@${MKDIR} ${STAGEDIR}/${D_INCLUDE_DIR}/dsymbol
 	cd ${WRKSRC}/common/src/dcd/common && ${COPYTREE_SHARE} . ${STAGEDIR}${D_INCLUDE_DIR}/dcd/common "-name *\.d"
+	cd ${WRKSRC}/dsymbol/src/dsymbol && ${COPYTREE_SHARE} . ${STAGEDIR}${D_INCLUDE_DIR}/dsymbol "-name *\.d"
 .endif
 
 .include <bsd.port.mk>

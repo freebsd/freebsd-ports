@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-06-15 03:18:56 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,6 @@ requires-python = ">=3.6"
+ description = "Convert the Korean lunar calendar to/from the Gregorian solar calendar (KARI standard)."
+ readme = "README.md"
+ requires-python = ">=3.6"
+-license = "MIT"
+-license-files = ["LICENSE"]
+ authors = [{ name = "Jinil Lee", email = "usingsky@gmail.com" }]
+ maintainers = [{ name = "Jinil Lee", email = "usingsky@gmail.com" }]
+ keywords = ["calendar", "korean", "lunar", "solar", "음력", "양력", "달력"]

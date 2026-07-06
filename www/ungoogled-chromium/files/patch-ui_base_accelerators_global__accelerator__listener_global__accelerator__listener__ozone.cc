@@ -1,7 +1,7 @@
---- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2026-02-15 10:01:45 UTC
+--- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2026-06-05 13:45:06 UTC
 +++ ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc
-@@ -11,7 +11,7 @@
- #include "ui/base/accelerators/accelerator.h"
+@@ -12,7 +12,7 @@
+ #include "ui/base/ui_base_features.h"
  #include "ui/ozone/public/ozone_platform.h"
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/feature_list.h"
  #include "base/nix/xdg_util.h"
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
  using content::BrowserThread;
  
  namespace {
@@ -18,7 +18,7 @@
  BASE_FEATURE(kGlobalShortcutsPortal, base::FEATURE_ENABLED_BY_DEFAULT);
  
  constexpr char kSessionSuffix[] = "_global_shortcuts";
-@@ -48,7 +48,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
+@@ -49,7 +49,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
      return instance->get();
    }
  

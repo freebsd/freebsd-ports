@@ -1,3 +1,5 @@
 TIMESTAMP = 1599398002
 SHA256 (psi-1.5.tar.xz) = 3167350fd43fab4dc948cb5179ca10159a7aa318472d1a8a7617e41f5aa8b5b7
 SIZE (psi-1.5.tar.xz) = 2125104
+SHA256 (TartanLlama-optional-v1.1.0_GH0.tar.gz) = 88ece79f3de5ccaec4191951a222f95cc80c4381dafd3163bdb1ff87cedf3118
+SIZE (TartanLlama-optional-v1.1.0_GH0.tar.gz) = 22265

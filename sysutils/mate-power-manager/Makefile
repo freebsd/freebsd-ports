@@ -1,8 +1,8 @@
 PORTNAME=	mate-power-manager
-PORTVERSION=	1.28.1
-PORTREVISION=	1
+DISTVERSION=	1.28.1
+PORTREVISION=	2
 CATEGORIES=	sysutils mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,13 +24,12 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libupower-glib.so:sysutils/upower
 RUN_DEPENDS=	pkexec:sysutils/polkit
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
 		tar:xz xorg
 USE_MATE=	panel
 USE_XORG=	x11 xext xorgproto xrandr xrender
 USE_GNOME=	cairo glib20 gtk30 intlhack
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-power-manager/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	LIBS="-lexecinfo"

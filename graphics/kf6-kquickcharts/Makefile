@@ -2,8 +2,8 @@ PORTNAME=	kquickcharts
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	graphics kde kde-frameworks
 
-COMMENT=	QtQuick module providing high-performance charts
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	QtQuick module providing high-performance charts
 
 USES=		cmake gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl

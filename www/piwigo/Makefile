@@ -50,6 +50,7 @@ OPT_DESC=	Optional dependencies
 EXIFTOOL_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 IMAGICK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
+IMAGICK_VARS=	IGNORE_WITH_PHP=86
 MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
 
 .include <bsd.port.pre.mk>

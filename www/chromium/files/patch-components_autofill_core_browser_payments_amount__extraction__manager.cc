@@ -1,6 +1,6 @@
---- components/autofill/core/browser/payments/amount_extraction_manager.cc.orig	2026-05-07 17:02:56 UTC
+--- components/autofill/core/browser/payments/amount_extraction_manager.cc.orig	2026-07-01 06:24:19 UTC
 +++ components/autofill/core/browser/payments/amount_extraction_manager.cc
-@@ -284,7 +284,7 @@ void AmountExtractionManager::OnCheckoutAmountReceived
+@@ -298,7 +298,7 @@ void AmountExtractionManager::OnCheckoutAmountReceived
                                               /*timeout_reached=*/false);
    }
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
@@ -9,7 +9,7 @@
      if (base::FeatureList::IsEnabled(
              ::autofill::features::kAutofillEnableAmountExtractionTesting)) {
        VLOG(3) << "The result of amount extraction on domain "
-@@ -372,7 +372,7 @@ void AmountExtractionManager::OnTimeoutReached() {
+@@ -386,7 +386,7 @@ void AmountExtractionManager::OnTimeoutReached() {
    }
  
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
@@ -18,7 +18,7 @@
      if (base::FeatureList::IsEnabled(
              ::autofill::features::kAutofillEnableAmountExtractionTesting)) {
        VLOG(3) << "The amount extraction on domain "
-@@ -392,7 +392,7 @@ AmountExtractionManager::CheckEligibilityForFeaturesRe
+@@ -406,7 +406,7 @@ AmountExtractionManager::CheckEligibilityForFeaturesRe
  
    // Check eligibility of BNPL feature.
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||

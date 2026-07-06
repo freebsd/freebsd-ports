@@ -1,0 +1,3 @@
+Dockerbox deploys a Linux guest to run docker daemon host system so
+that it serves as a "remote" host enabling the use of docker on
+FreeBSD host system.

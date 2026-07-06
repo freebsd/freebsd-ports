@@ -1,15 +1,15 @@
---- Makefile.orig	2026-03-10 01:11:21 UTC
+--- Makefile.orig	2026-06-10 06:28:19 UTC
 +++ Makefile
 @@ -5,7 +5,7 @@ MAN_DIR?=$(PREFIX)/usr/share/man/man6
  GAMES_DIR?=$(PREFIX)/usr/bin
  SCORES_DIR?=$(PREFIX)/var/games
  MAN_DIR?=$(PREFIX)/usr/share/man/man6
 -CFLAGS+= -Wno-unused-result -DSCORES_DIR=\"$(SCORES_DIR)\"
-+CFLAGS+= ${CPPFLAGS} -Wno-unused-result -DSCORES_DIR=\"$(SCORES_DIR)\"
- LIBS_PKG_CONFIG!=pkg-config --libs --cflags ncurses
++CFLAGS+= $(CPPFLAGS) -Wno-unused-result -DSCORES_DIR=\"$(SCORES_DIR)\"
+ PKG_CONFIG?=pkg-config
+ LIBS_PKG_CONFIG!=$(PKG_CONFIG) --libs --cflags ncurses
  LIBS=$(LIBS_PKG_CONFIG) -lm
- 
-@@ -16,8 +16,8 @@ scorefiles:
+@@ -17,8 +17,8 @@ scorefiles:
  all: $(ALL)
  
  scorefiles:
@@ -18,5 +18,5 @@
 +	mkdir -p ${DESTDIR}${SCORES_DIR}
 +	for sf in $(SCORE_FILES); do touch ${DESTDIR}$(SCORES_DIR)/$$sf.sample; done;
  
- manpages:
+ manpages: dirs
  	cp man/* $(DESTDIR)$(MAN_DIR)

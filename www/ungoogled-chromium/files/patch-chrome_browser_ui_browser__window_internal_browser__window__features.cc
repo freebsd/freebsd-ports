@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_window/internal/browser_window_features.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ui/browser_window/internal/browser_window_features.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/ui/browser_window/internal/browser_window_features.cc
-@@ -191,7 +191,7 @@
+@@ -206,7 +206,7 @@
  #include "chrome/browser/ui/startup/default_browser_prompt/pin_infobar/pin_infobar_controller.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_controller.h"
  #endif
  
-@@ -498,7 +498,7 @@ void BrowserWindowFeatures::Init(BrowserWindowInterfac
+@@ -540,7 +540,7 @@ void BrowserWindowFeatures::Init(BrowserWindowInterfac
    call_to_action_lock_ =
        GetUserDataFactory().CreateInstance<CallToActionLock>(*browser, browser);
  

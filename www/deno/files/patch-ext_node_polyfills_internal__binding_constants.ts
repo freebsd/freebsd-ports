@@ -1,6 +1,6 @@
---- ext/node/polyfills/internal_binding/constants.ts.orig	2025-03-30 15:55:39 UTC
+--- ext/node/polyfills/internal_binding/constants.ts.orig	2026-07-01 13:28:43 UTC
 +++ ext/node/polyfills/internal_binding/constants.ts
-@@ -332,6 +332,137 @@ if (buildOs === "darwin") {
+@@ -337,6 +337,137 @@ if (buildOs === "darwin") {
        PRIORITY_HIGHEST: -20,
      },
    };
@@ -137,4 +137,4 @@
 +  };
  } else if (buildOs === "linux" || buildOs === "android") {
    os = {
-     UV_UDP_REUSEADDR: 4,
+     UV_UDP_IPV6ONLY: 2,

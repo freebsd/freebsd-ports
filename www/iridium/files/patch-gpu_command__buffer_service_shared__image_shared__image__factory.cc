@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-06-02 06:11:14 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-06-10 12:51:34 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
 @@ -55,7 +55,7 @@
  #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
@@ -36,7 +36,7 @@
    if (gr_context_type_ == GrContextType::kVulkan
  #if BUILDFLAG(USE_WEBGPU_ON_VULKAN_VIA_GL_INTEROP)
        /* We support GL context for WebGPU gl-vulkan interop (on linux).*/
-@@ -1051,7 +1051,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
+@@ -1043,7 +1043,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

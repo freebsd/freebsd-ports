@@ -1,4 +1,4 @@
---- base/debug/stack_trace.cc.orig	2026-02-11 09:05:39 UTC
+--- base/debug/stack_trace.cc.orig	2026-06-04 10:12:25 UTC
 +++ base/debug/stack_trace.cc
 @@ -293,7 +293,7 @@ bool StackTrace::WillSymbolizeToStreamForTesting() {
    // Symbols are not expected to be reliable when gn args specifies
@@ -27,7 +27,7 @@
 +#if !defined(__UCLIBC__) && !defined(_AIX) && !BUILDFLAG(IS_BSD)
    OutputToStreamWithPrefix(&stream, prefix_string);
  #endif
-   return stream.str();
+   return std::move(stream).str();
 @@ -393,7 +395,7 @@ bool StackTrace::ShouldSuppressOutput() {
  }
  

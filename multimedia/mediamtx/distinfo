@@ -1,7 +1,7 @@
-TIMESTAMP = 1778875757
-SHA256 (go/multimedia_mediamtx/mediamtx-v1.18.2/release.zip) = 09c827969e702e82be694da80dbf16dbdf5ff6819c33a374b1757e1bc0adb458
-SIZE (go/multimedia_mediamtx/mediamtx-v1.18.2/release.zip) = 5594711
-SHA256 (go/multimedia_mediamtx/mediamtx-v1.18.2/v1.18.2.mod) = 5dbbcc5b9b680e2b6ec899bac545240feb58a630022ca551a71f4befdecb302f
-SIZE (go/multimedia_mediamtx/mediamtx-v1.18.2/v1.18.2.mod) = 4413
-SHA256 (go/multimedia_mediamtx/mediamtx-v1.18.2/v1.18.2.zip) = 48996ef92279bb8c1fe36ecf9845a212993b6be0a8a83d8deaca5556a88f1937
-SIZE (go/multimedia_mediamtx/mediamtx-v1.18.2/v1.18.2.zip) = 784747
+TIMESTAMP = 1782681770
+SHA256 (go/multimedia_mediamtx/mediamtx-v1.19.2/release.zip) = 09c827969e702e82be694da80dbf16dbdf5ff6819c33a374b1757e1bc0adb458
+SIZE (go/multimedia_mediamtx/mediamtx-v1.19.2/release.zip) = 5594711
+SHA256 (go/multimedia_mediamtx/mediamtx-v1.19.2/v1.19.2.mod) = e2b47290d442a1f2817b474e3bc051962317be72ff6196d082522312b344bcad
+SIZE (go/multimedia_mediamtx/mediamtx-v1.19.2/v1.19.2.mod) = 4578
+SHA256 (go/multimedia_mediamtx/mediamtx-v1.19.2/v1.19.2.zip) = 994f28903ee8104e284ddcac10ebe87258f4618c48011cc776a635ffcdc3030d
+SIZE (go/multimedia_mediamtx/mediamtx-v1.19.2/v1.19.2.zip) = 869607

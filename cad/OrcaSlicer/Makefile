@@ -1,6 +1,7 @@
 PORTNAME=	OrcaSlicer
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	kenrap@FreeBSD.org
@@ -32,8 +33,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
 		libwx_baseu-3.2.so:x11-toolkits/wxgtk32
 
-USES=	cmake desktop-file-utils gl gnome gstreamer jpeg \
-	localbase:ldflags pkgconfig ssl xorg
+USES=		cmake desktop-file-utils gl gnome gstreamer jpeg \
+		localbase:ldflags pkgconfig ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OrcaSlicer
@@ -42,14 +43,12 @@ USE_GL=		gl glew
 USE_GNOME=	gtk30
 USE_XORG=	x11
 
-CMAKE_ARGS=	-DSLIC3R_FHS=1 \
-		-DSLIC3R_GTK=3 \
-		-DSLIC3R_STATIC=0 \
-		-DORCA_TOOLS=1 \
+CMAKE_ARGS=	-DBBL_INTERNAL_TESTING=0 \
 		-DBBL_RELEASE_TO_PUBLIC=1 \
-		-DBBL_INTERNAL_TESTING=0
-
-CXXFLAGS+=	-DwxDEBUG_LEVEL=0
+		-DORCA_TOOLS=1 \
+		-DSLIC3R_FHS=1 \
+		-DSLIC3R_GTK=3 \
+		-DSLIC3R_STATIC=0
 
 post-patch:
 	${CP} ${FILESDIR}/hid.c ${WRKSRC}/deps_src/hidapi/linux/hid.c

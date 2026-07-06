@@ -1,6 +1,6 @@
 PORTNAME=	inspectrum
 DISTVERSIONPREFIX=     v
-PORTVERSION=   0.2.3
+PORTVERSION=   0.4.0
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	mr@FreeBSD.org

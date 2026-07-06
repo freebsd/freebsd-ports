@@ -1,5 +1,5 @@
 PORTNAME=	tikiwiki
-DISTVERSION=	29.1
+DISTVERSION=	29.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_29.x_Bellatrix/${DISTVERSION}/
 DISTNAME=	tiki-${DISTVERSION}
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 USES=		php:web
 USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt \
 		posix session xml zip zlib
+IGNORE_WITH_PHP=	86
 
 NO_BUILD=	yes
 NO_MTREE=	yes

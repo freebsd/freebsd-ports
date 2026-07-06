@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+If you choose to enable netgraph in your rc.conf, don't forget
+to add the following to your loader.conf:
+	netgraph_load="YES"
+	ng_ether_load="YES"
+If those are not loaded before any physical network interface
+drivers, they will not be available for ngctl(8) to configure.
+
+This package needs the correct version of net/bone-kmods for your system. Most
+users want the default flavor:
+
+  pkg install bone-kmods
+
+If you built your kernel with INVARIANTS (the default in CURRENT), use the
+@invariants flavor:
+
+  pkg install bone-kmods-invariants
+EOM
+}
+]

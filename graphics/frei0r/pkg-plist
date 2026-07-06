@@ -32,12 +32,14 @@ lib/frei0r-1/brightness.so
 lib/frei0r-1/burn.so
 lib/frei0r-1/bw0r.so
 lib/frei0r-1/c0rners.so
+lib/frei0r-1/camerashake.so
 lib/frei0r-1/cartoon.so
 lib/frei0r-1/cluster.so
 lib/frei0r-1/colgate.so
 lib/frei0r-1/color_only.so
 lib/frei0r-1/coloradj_RGB.so
 lib/frei0r-1/colordistance.so
+lib/frei0r-1/colorenhance.so
 lib/frei0r-1/colorhalftone.so
 lib/frei0r-1/colorize.so
 lib/frei0r-1/colortap.so
@@ -154,5 +156,6 @@ lib/frei0r-1/uvmap.so
 lib/frei0r-1/value.so
 lib/frei0r-1/vertigo.so
 lib/frei0r-1/vignette.so
+lib/frei0r-1/water.so
 lib/frei0r-1/xfade0r.so
 libdata/pkgconfig/frei0r.pc

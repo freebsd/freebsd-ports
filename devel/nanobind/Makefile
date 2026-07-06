@@ -1,7 +1,6 @@
 PORTNAME=	nanobind
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
-PORTREVISION=	1
+DISTVERSION=	2.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,7 +51,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/cmake/darwin-ld-pypy.sym \
 		${STAGEDIR}${PREFIX}/cmake/darwin-python-path.py
 	# correct path to the src directory in cmake file
-	@${REINPLACE_CMD} -e 's|$${NB_DIR}/src/|${DATADIR}/src/|g' \
+	@${REINPLACE_CMD} -i '' -e 's|$${NB_DIR}/src/|${DATADIR}/src/|g' \
 		${STAGEDIR}${PREFIX}/cmake/nanobind-config.cmake
 
 post-test:

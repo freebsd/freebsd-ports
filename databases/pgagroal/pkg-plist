@@ -1,4 +1,5 @@
 bin/pgagroal
+bin/pgagroal-config
 bin/pgagroal-vault
 bin/pgagroal-admin
 bin/pgagroal-cli
@@ -9,6 +10,7 @@ lib/libpgagroal.so.2
 lib/libpgagroal.so.%%PORTVERSION%%
 share/man/man1/pgagroal-admin.1.gz
 share/man/man1/pgagroal-cli.1.gz
+share/man/man1/pgagroal-config.1.gz
 share/man/man1/pgagroal.1.gz
 share/man/man5/pgagroal.conf.5.gz
 share/man/man5/pgagroal_databases.conf.5.gz

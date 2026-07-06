@@ -1,0 +1,15 @@
+--- libgcc/config.host.orig
++++ libgcc/config.host
+@@ -1186,6 +1186,12 @@
+ 	powerpc64*)
+ 	  tmake_file="${tmake_file} rs6000/t-freebsd64"
+ 	  md_unwind_header=rs6000/freebsd-unwind.h
++	  if test $libgcc_cv_powerpc_float128 = yes; then
++	    tmake_file="${tmake_file} rs6000/t-float128"
++	  fi
++	  if test $libgcc_cv_powerpc_float128_hw = yes; then
++	    tmake_file="${tmake_file} rs6000/t-float128-hw"
++	  fi
+ 	  ;;
+ 	esac
+ 	;;

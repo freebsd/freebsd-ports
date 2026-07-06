@@ -1,16 +1,16 @@
 PORTNAME=	fslsfonts
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+DISTVERSION=	1.0.7
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	List fonts served by the X font server
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/app/fslsfonts
 
-USES=		xorg xorg-cat:app
-USE_XORG=	x11 libfs
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		tar:xz xorg xorg-cat:app
+USE_XORG=	libfs xorgproto
 
 PLIST_FILES=	bin/fslsfonts share/man/man1/fslsfonts.1.gz
 

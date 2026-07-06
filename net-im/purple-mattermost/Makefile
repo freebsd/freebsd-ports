@@ -1,10 +1,10 @@
 PORTNAME=	purple-mattermost
-PORTVERSION=	2.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mattermost plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-mattermost
 
@@ -16,10 +16,10 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpurple.so:net-im/libpurple
 
 USES=		gettext gmake gnome localbase pkgconfig
-USE_GNOME=	glib20
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/purple-2/libmattermost.so \
 		share/pixmaps/pidgin/protocols/16/mattermost.png \

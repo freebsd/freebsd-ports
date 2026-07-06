@@ -1,24 +1,19 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.9.1
 CATEGORIES=	net
 
 # JavaScripts
 MASTER_SITES+=	https://github.com/chartjs/Chart.js/releases/download/v${_CHARTJS}/:chartjs \
-		https://github.com/cloudamqp/amqp-client.js/releases/download/v${_AMQP_JS}/:amqpclient \
 		https://moment.github.io/luxon/es6/:luxon \
 		https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@${_LUXON_JS}/dist/:chartjsadapter \
-		https://unpkg.com/@stoplight/elements@${_ELEMENTS}/:elements \
-		https://raw.githubusercontent.com/eclipse-paho/paho.mqtt.javascript/master/src/:paho
+		https://unpkg.com/@stoplight/elements@${_ELEMENTS}/:elements
 
 DISTFILES+=	chart.js-${_CHARTJS}.tgz:chartjs \
-		amqp-websocket-client.mjs:amqpclient \
-		amqp-websocket-client.mjs.map:amqpclient \
 		luxon.js:luxon \
 		chartjs-adapter-luxon.esm.js:chartjsadapter \
 		web-components.min.js:elements \
-		styles.min.css:elements \
-		paho-mqtt.js:paho
+		styles.min.css:elements
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		84codes-lz4.cr-${_LZ4}_GH0.tar.gz \
@@ -29,14 +24,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		chart.js-${_CHARTJS}.tgz
 
 # Crystal library versions
-_AMQP_CLIENT=	1.3.2
-_AMQP_PROTO=	1.1.22
-_LZ4=		96d714f7593c66ca7425872fd26c7b1286806d3d
+_AMQP_CLIENT=	1.3.3
+_AMQP_PROTO=	1.3.0
+_LZ4=		0015e74e0ed0f6bb15de9c25c25034ad4bc7f636
 _MQTT=		0.3.0
-_SYSTEMD=	3.0.0
+_SYSTEMD=	3.0.1
 
 # JavaScript library versions
-_AMQP_JS=		3.1.1
 _CHARTJS=		4.0.1
 _ELEMENTS=		8.2.0
 _LUXON_JS=		1.3.1
@@ -96,6 +90,18 @@ post-extract:
 		-e 's,/tmp/lavinmq-http.sock,/var/run/lavinmq/http.sock,' \
 		-e 's,/tmp/lavinmq.sock,/var/run/lavinmq/amqp.sock,' \
 		${WRKSRC}/extras/lavinmq.ini
+	@${ECHO} "control_unix_path = /var/run/lavinmq/lavinmqctl.sock" \
+		>> ${WRKSRC}/extras/lavinmq.ini
+# fix compiled-in defaults for FreeBSD hier(7) paths
+	@${REINPLACE_CMD} \
+		-e 's,/var/lib/lavinmq,/var/db/lavinmq,' \
+		${WRKSRC}/src/lavinmq/config/options.cr
+	@${REINPLACE_CMD} \
+		-e 's,/tmp/lavinmqctl.sock,/var/run/lavinmq/lavinmqctl.sock,' \
+		${WRKSRC}/src/lavinmq/http/constants.cr
+	@${REINPLACE_CMD} \
+		-e 's,/etc/lavinmq,${PREFIX}/etc/lavinmq,' \
+		${WRKSRC}/src/lavinmq/config.cr
 # setup javaScript directories
 	${MKDIR} ${WRKSRC}/static/js/lib \
 		${WRKSRC}/static/js/lib/chunks
@@ -104,9 +110,6 @@ post-extract:
 		> ${WRKSRC}/static/js/lib/chart.js
 	${TAR} -xOf ${DISTDIR}/chart.js-${_CHARTJS}.tgz package/dist/chunks/helpers.segment.js \
 		> ${WRKSRC}/static/js/lib/chunks/helpers.segment.js
-# copy AMQP WebSocket client files
-	${CP} ${DISTDIR}/amqp-websocket-client.mjs ${WRKSRC}/static/js/lib/
-	${CP} ${DISTDIR}/amqp-websocket-client.mjs.map ${WRKSRC}/static/js/lib/
 # copy luxon and Chart.js adapter
 	${CP} ${DISTDIR}/luxon.js ${WRKSRC}/static/js/lib/
 	${CP} ${DISTDIR}/chartjs-adapter-luxon.esm.js ${WRKSRC}/static/js/lib/
@@ -116,8 +119,16 @@ post-extract:
 # copy stoplight Elements files
 	${CP} ${DISTDIR}/web-components.min.js ${WRKSRC}/static/js/lib/elements-${_ELEMENTS}.js
 	${CP} ${DISTDIR}/styles.min.css ${WRKSRC}/static/js/lib/elements-${_ELEMENTS}.css
-# copy paho MQTT
-	${CP} ${DISTDIR}/paho-mqtt.js ${WRKSRC}/static/js/lib/
+
+pre-build:
+# render .shtml views into static .html (baked into binary at compile time)
+.for v in 401 404 channel channels connection connections consumers \
+	exchange exchanges federation login logs nodes operator-policies \
+	overview policies queue queues shovels stream unacked user users \
+	vhost vhosts
+	${WRKSRC}/views/render.sh ${WRKSRC}/views/${v}.shtml \
+		"${DISTVERSION}" > ${WRKSRC}/static/${v}.html
+.endfor
 
 do-build:
 	${MKDIR} ${WRKDIR}/man1

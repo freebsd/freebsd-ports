@@ -1,6 +1,6 @@
---- src/rrd_open.c.orig	2019-05-28 01:48:09.000000000 +0700
-+++ src/rrd_open.c	2022-07-11 00:05:29.242533000 +0700
-@@ -32,6 +32,16 @@
+--- src/rrd_open.c.orig	2026-05-19 19:35:26 UTC
++++ src/rrd_open.c
+@@ -33,6 +33,16 @@
  #include "rrd_rados.h"
  #endif
  
@@ -17,7 +17,7 @@
  #define MEMBLK 8192
  
  #ifdef _WIN32
-@@ -776,8 +786,9 @@ int rrd_rwlock(
+@@ -799,8 +809,9 @@ int rrd_rwlock(
              return 0;
      }
  #endif
@@ -28,7 +28,7 @@
  
      rrd_simple_file = (rrd_simple_file_t *) rrd_file->pvt;
  #ifdef USE_WINDOWS_LOCK
-@@ -786,6 +797,25 @@ int rrd_rwlock(
+@@ -809,6 +820,25 @@ int rrd_rwlock(
      /* Silence unused parameter compiler warning */
      (void) writelock;
  #else
@@ -53,10 +53,11 @@
 +    }
      {
          struct flock lock;
- 
---- doc/rrdtool.pod.orig	2019-02-04 20:54:28.000000000 +0700
-+++ doc/rrdtool.pod	2022-07-11 00:37:16.486373000 +0700
-@@ -321,6 +321,21 @@
+         int op = lock_mode == RRD_LOCK_TRY ? F_SETLK : F_SETLKW;
+
+--- doc/rrdtool.pod.orig	2026-05-19 19:34:20 UTC
++++ doc/rrdtool.pod
+@@ -356,6 +356,21 @@ stress on your disks.
  L<rrdcached>, a caching daemon for RRDtool which may help you lessen the
  stress on your disks.
  

@@ -1,0 +1,3 @@
+wenv is a Python package that allows you to run Python on Wine, enabling Windows
+Python code to run on Linux, macOS, and BSD systems. It provides a simple way
+to set up and manage Python environments running under Wine.

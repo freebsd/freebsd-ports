@@ -1,6 +1,6 @@
 PORTNAME=	ldb
 PORTVERSION=	2.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	${PORTVERSION:C/([[:digit:]]+)[.]([[:digit:]]+).*/\1\2/}
@@ -78,7 +78,7 @@ PYTHON3_PLIST_FILES=	${PKGCONFIGDIR}/pyldb-util${PYTHON_TAG}.pc \
 _CFLAGS_clang=	-fno-color-diagnostics
 
 _LDB_DEPENDS=	talloc242>=2.4.2:devel/talloc242 tevent016>=0.16.0:devel/tevent016 \
-		tdb1410>=1.4.10:databases/tdb1410 lmdb>=0.9.23:databases/lmdb \
+		tdb1410>=1.4.10:databases/tdb1410 lmdb0>=0.9.23:databases/lmdb0 \
 		popt>=0:devel/popt
 _LDB_BINS=	bin/ldbedit bin/ldbmodify bin/ldbadd bin/ldbdel bin/ldbsearch \
 		bin/ldbrename

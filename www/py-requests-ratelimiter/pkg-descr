@@ -1,0 +1,14 @@
+Requests-Ratelimiter is a simple wrapper around pyrate-limiter that adds
+convenient integration with the requests library.
+
+Features:
+- pyrate-limiter is a general-purpose rate-limiting library that implements the
+  leaky bucket algorithm, supports multiple rate limits, and has optional
+  persistence with SQLite and Redis backends
+- requests-ratelimiter adds some conveniences for sending rate-limited HTTP
+  requests with the requests library
+- It can be used as either a session or a transport adapter
+- It can also be used as a mixin, for compatibility with other requests-based
+  libraries
+- Rate limits are tracked separately per host
+- Different rate limits can optionally be applied to different hosts

@@ -23,7 +23,6 @@ COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		simde>0:devel/simde \
-		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython \
 		${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
@@ -32,7 +31,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		localbase perl5 python shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	test
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 GH_ACCOUNT=	macs3-project
 GH_PROJECT=	MACS

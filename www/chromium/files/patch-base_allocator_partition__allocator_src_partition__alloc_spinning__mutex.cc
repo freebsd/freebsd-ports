@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2026-02-11 09:05:39 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2026-07-01 06:24:19 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
 @@ -20,7 +20,16 @@
  #endif
@@ -17,7 +17,7 @@
  #include <sys/syscall.h>
  #include <unistd.h>
  
-@@ -159,8 +168,16 @@ PA_ALWAYS_INLINE long FutexSyscall(volatile void* ftx,
+@@ -150,8 +159,16 @@ PA_ALWAYS_INLINE long FutexSyscall(volatile void* ftx,
    int saved_errno = errno;
    errno = 0;
  
@@ -33,4 +33,4 @@
 +#endif
    if (retval == -1) {
      // These are programming errors, check them.
-     PA_DCHECK((errno != EPERM) || (errno != EACCES) || (errno != EINVAL) ||
+     [[maybe_unused]] const int futex_errno = errno;

@@ -2,7 +2,7 @@ include/libspectrum.h
 lib/libspectrum.a
 lib/libspectrum.so
 lib/libspectrum.so.18
-lib/libspectrum.so.18.0.1
+lib/libspectrum.so.18.0.2
 libdata/pkgconfig/libspectrum.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

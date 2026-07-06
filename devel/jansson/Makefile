@@ -1,5 +1,5 @@
 PORTNAME=	jansson
-DISTVERSION=	2.15.0
+DISTVERSION=	2.15.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/akheron/${PORTNAME}/releases/download/v${DISTVERSION}/
 

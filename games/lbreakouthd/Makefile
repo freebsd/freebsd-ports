@@ -1,12 +1,11 @@
 PORTNAME=	lbreakouthd
-PORTVERSION=	1.1.11
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Breakout-style arcade game
-WWW=		https://lgames.sourceforge.io/LBreakout2/
+WWW=		https://lgames.sourceforge.io/LBreakoutHD/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

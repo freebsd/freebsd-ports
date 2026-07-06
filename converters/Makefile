@@ -56,6 +56,7 @@
     SUBDIR += nomyso
     SUBDIR += o3read
     SUBDIR += ocaml-base64
+    SUBDIR += ocaml-hex
     SUBDIR += ocaml-jsonm
     SUBDIR += osm2mp
     SUBDIR += osm2pgrouting
@@ -146,6 +147,8 @@
     SUBDIR += php84-mbstring
     SUBDIR += php85-iconv
     SUBDIR += php85-mbstring
+    SUBDIR += php86-iconv
+    SUBDIR += php86-mbstring
     SUBDIR += psiconv
     SUBDIR += py-bencode.py
     SUBDIR += py-bencoder

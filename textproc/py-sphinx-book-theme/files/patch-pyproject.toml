@@ -9,14 +9,3 @@
  
  [tool.sphinx-theme-builder]
  node-version = "20.9.0"
-@@ -39,8 +39,8 @@ dependencies = [
- 
- requires-python = ">=3.11"
- dependencies = [
--  "sphinx>=7.0",
--  "pydata-sphinx-theme==0.16.1"
-+  "sphinx>=5.3",
-+  "pydata-sphinx-theme>=0.15.4"
- ]
- 
- license = { file = "LICENSE" }

@@ -5,13 +5,14 @@ Remember to run:
 
 sysrc puppetserver_enable=yes
 
-A note to users upgrading to 2.6 who have also modified bootstrap.cfg, please
-see the release notes for breaking changes in 2.5.
+OpenVox Server ships with a version of JRuby that bundle an older version of
+the json gem than the one provided by the ports pollection.  If
+devel/rubygem-json is installed, OpenVox Server may fail to start because it
+loads the newer gem version, which lacks Java support.
 
-https://docs.puppet.com/puppetserver/latest/release_notes.html#puppet-server-25
+This can be fixed by running:
 
-The file bootstrap.cfg has been removed and ca configuration has been moved out
-to its own file in ca.cfg.
+puppetserver gem install json
 EOM
 }
 ]

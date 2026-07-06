@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-06-08 15:29:12 UTC
++++ pyproject.toml
+@@ -3,8 +3,7 @@ authors = [{ name = "sigma67", email = "ytmusicapi@gma
+ description = "Unofficial API for YouTube Music"
+ requires-python = ">=3.10"
+ authors = [{ name = "sigma67", email = "ytmusicapi@gmail.com" }]
+-license-files = ["LICENSE"]
+-license = "MIT"
++license = { file = "LICENSE" }
+ classifiers = ["Programming Language :: Python :: 3"]
+ dependencies = ["requests >= 2.22"]
+ dynamic = ["version", "readme"]
+@@ -18,7 +17,7 @@ repository = "https://github.com/sigma67/ytmusicapi"
+ repository = "https://github.com/sigma67/ytmusicapi"
+ 
+ [build-system]
+-requires = ["setuptools>=65", "setuptools_scm[toml]>=7"]
++requires = ["setuptools", "setuptools_scm[toml]"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.dynamic]

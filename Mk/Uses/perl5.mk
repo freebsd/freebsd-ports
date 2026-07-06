@@ -42,12 +42,12 @@ USE_PERL5?=	run build
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.  if ${PERL5_DEFAULT} == 5.38
-.include "${PORTSDIR}/lang/perl5.38/version.mk"
-.  elif ${PERL5_DEFAULT} == 5.40
+.  if ${PERL5_DEFAULT} == 5.40
 .include "${PORTSDIR}/lang/perl5.40/version.mk"
 .  elif ${PERL5_DEFAULT} == 5.42
 .include "${PORTSDIR}/lang/perl5.42/version.mk"
+.  elif ${PERL5_DEFAULT} == 5.44
+.include "${PORTSDIR}/lang/perl5.44/version.mk"
 .  elif ${PERL5_DEFAULT} == devel
 .include "${PORTSDIR}/lang/perl5-devel/version.mk"
 # Force PERL_PORT here in case two identical PERL_VERSION.
@@ -81,12 +81,12 @@ PERL_ARCH?=	mach
 # perl5_default file, or up there in the default versions selection.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.  if   ${PERL_LEVEL} >= 504200
+.  if   ${PERL_LEVEL} >= 504400
+PERL_PORT?=	perl5.44
+.  elif   ${PERL_LEVEL} >= 504200
 PERL_PORT?=	perl5.42
-.  elif   ${PERL_LEVEL} >= 504000
+.  else # ${PERL_LEVEL} < 504200
 PERL_PORT?=	perl5.40
-.  else # ${PERL_LEVEL} < 504000
-PERL_PORT?=	perl5.38
 .  endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -214,7 +214,7 @@ CONFIGURE_ARGS+=--create_packlist 1
 .    endif # Mmodbuildtiny
 .    if ${_USE_PERL5:Mdistbuild}
 .      if ${PORTNAME} != Dist-Build
-BUILD_DEPENDS+=	p5-Dist-Build>=0.020:devel/p5-Dist-Build
+BUILD_DEPENDS+=	p5-Dist-Build>=0.025:devel/p5-Dist-Build
 .      endif
 CONFIGURE_ARGS+=--create_packlist 1
 .    endif # Mdistbuild

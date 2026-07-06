@@ -1,3 +1,9 @@
-xkbcommon is a library to handle keyboard descriptions, including loading them
-from disk, parsing them and handling their state. It's mainly meant for client
-toolkits, window systems, and other system applications
+libxkbcommon is a keyboard keymap compiler and support library which
+processes keymaps as defined by the XKB specification. It also contains
+a module for handling Compose and dead keys, a separate registry library
+for listing available keyboard layouts and a fair set of CLI tools to
+support keyboard layouts development.
+
+libxkbcommon is the standard keymap handling library on Wayland and is
+used by compositors, toolkits, and applications to handle keyboard state
+and translate key events into characters and actions.

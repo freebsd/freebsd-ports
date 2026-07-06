@@ -1,0 +1,2 @@
+tritonclient provides a Python client library and utilities for communicating
+with NVIDIA Triton Inference Server over HTTP and gRPC.

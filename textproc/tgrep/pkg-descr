@@ -1,0 +1,7 @@
+Trigram-indexed grep with a client/server architecture for fast regex
+search in large codebases.
+
+Tools like grep and ripgrep scan every file on every search - O(total
+bytes) per query. In a 100k+ file monorepo, that's painfully
+slow. tgrep pre-builds a trigram index so searches only touch the
+small set of files that could match.

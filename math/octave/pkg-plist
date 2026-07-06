@@ -795,13 +795,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so.13
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.13.0.1
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.13.0.2
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.14
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.14.0.1
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.14
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.14.1.1
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.15
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.15.0.1
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so.1
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so.1.0.1

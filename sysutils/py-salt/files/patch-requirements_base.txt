@@ -1,24 +1,41 @@
---- requirements/base.txt.orig	2026-04-24 00:00:00 UTC
+--- requirements/base.txt.orig
 +++ requirements/base.txt
-@@ -9,6 +9,6 @@
- cherrypy>=18.6.1
+@@ -9,15 +9,15 @@
+ cheroot>=11.1.2
+ cherrypy>=18.10.0
  # We need contextvars for salt-ssh
 -contextvars
--croniter>=0.3.0,!=0.3.22; sys_platform != 'win32'
--cryptography>=46.0.7
+-croniter!=0.3.22,>=6.2.2; sys_platform != 'win32'
 +#contextvars
-+#croniter>=0.3.0,!=0.3.22; sys_platform != 'win32'
-+cryptography>=42.0.0
- distro>=1.0.1
-@@ -26,8 +26,8 @@
- lxml>=6.0.2; sys_platform == 'win32'
--MarkupSafe<3.0.0
++#croniter!=0.3.22,>=6.2.2; sys_platform != 'win32'
+ # cryptography 48.0.0 drops support for Python 3.9.0 and 3.9.1
+ # (only >3.9.1 is accepted), but the py3.9 lock files are compiled
+ # with --python-version=3.9 which includes those releases. Cap at the
+ # last 46.x release for Python 3.9 so uv pip compile can still resolve.
+ # Furthermore, pyOpenSSL 26.2 dropped X509Extension and add_extensions()
+ # which breaks salt/modules/tls.py. pyOpenSSL < 26.2 requires cryptography < 48.0.0.
+-cryptography>=46.0.7,<48.0.0
++cryptography>=46.0.7
+ distro>=1.9.0
+ frozenlist>=1.8.0; python_version < '3.11'
+ frozenlist>=1.5.0; python_version >= '3.11'
+@@ -31,7 +31,7 @@
+ jmespath>=1.1.0
+ looseversion
+ lxml>=6.1.1; sys_platform == 'win32'
+-MarkupSafe<4.0.0
 +MarkupSafe
- msgpack>=1.0.0
- # Packaging 24.1 imports annotations from __future__ which breaks salt ssh
- # tests on target hosts with older python versions.
+ # multidict 6.0.4 fails to source-build under clang 17+ with strict int/pointer
+ # conversion checks (macOS 15 onedir builds compile from sdist via
+ # --no-binary=:all:). 6.6+ fixed the C source compatibility.
+@@ -43,8 +43,8 @@
+ # `/` parameter syntax which is a SyntaxError on Python <3.8. Keep at
+ # 24.0 to preserve salt-ssh compatibility against legacy target
+ # Pythons; salt 3006.x still promises this matrix.
 -packaging==24.0
 -psutil<6.0.0; python_version <= '3.9'
 +packaging>=21.3
 +#psutil<6.0.0; python_version <= '3.9'
  psutil>=5.0.0; python_version >= '3.10'
+ # pymssql 2.3.12+ dropped win32 (32-bit Windows) wheels; salt 3006.x
+ # still builds a Windows x86 onedir, so pin to the last release that

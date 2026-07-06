@@ -1,0 +1,4 @@
+FastMCP is a fast, Pythonic way to build Model Context Protocol (MCP) servers
+and clients. This slim package provides the core FastMCP functionality with
+minimal required dependencies. Optional extras (mcp, server, client, etc.)
+add the heavier dependencies as needed.

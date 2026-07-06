@@ -23,8 +23,7 @@ following URL:
 Limitations on FreeBSD:
 
 Realtime collaboration features based on WebRTC are not yet
-supported. In addition, integrated terminal is very laggy (might
-depending on a user's environment).
+supported.
 
 More information on Zed developments for FreeBSD is available at the
 following URLs:

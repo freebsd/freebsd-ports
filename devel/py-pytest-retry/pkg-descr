@@ -1,0 +1,3 @@
+pytest-retry is a Pytest plugin that helps stabilize test suites by re-running
+unreliable tests. It adds the ability to retry flaky tests via global config
+options or a @pytest.mark.flaky marker for individual tests.

@@ -24,9 +24,9 @@ LIBVALKEY_DESC=	Install valkey with libvalkey support
 OCSP_DESC=	Enable support for OCSP stapling
 
 LIBVALKEY_RUN_DEPENDS=	libvalkey>=0:databases/libvalkey
-OCSP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyopenssl>=0:security/py-pyopenssl@${PY_FLAVOR} \
+OCSP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopenssl>=0:security/py-pyopenssl@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+OCSP_USE=		PYTHON=cryptography
 
 .include <bsd.port.pre.mk>
 

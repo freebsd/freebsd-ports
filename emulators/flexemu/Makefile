@@ -1,6 +1,6 @@
 PORTNAME=	flexemu
 DISTVERSIONPREFIX=	V
-DISTVERSION=	3.31
+DISTVERSION=	3.32
 CATEGORIES=	emulators
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -26,6 +26,12 @@ CMAKE_ARGS+=	-DFLEXEMU_QT_MAJOR_VERSION=6 \
 		-DRUN_CLANG_TIDY=${LOCALBASE}/llvm${COMPILER_VERSION:C/.$//}/bin/run-clang-tidy
 
 # test target should be executed as a regular user
+# ON FAILURE:
+# cd /poudriere/ports/default/emulators/flexemu/work/.build
+# /usr/local/bin/ctest --parallel XX --force-new-ctest-process --rerun-failed --output-on-failure -V
 TEST_TARGET=	test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}
+.include <bsd.port.post.mk>

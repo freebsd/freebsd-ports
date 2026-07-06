@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		cpe
+CPE_VENDOR=	redis
 USE_GITHUB=	yes
 GH_ACCOUNT=	RedisBloom
 GH_PROJECT=	RedisBloom

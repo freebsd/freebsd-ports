@@ -1,11 +1,6 @@
-xFormers is a Toolbox to Accelerate Research on Transformers.
+FastMCP is a fast, Pythonic way to build MCP (Model Context Protocol)
+servers and clients.
 
-xFormers is:
-* Customizable building blocks: Independent/customizable building blocks that
-  can be used without boilerplate code. The components are domain-agnostic and
-  xFormers is used by researchers in vision, NLP and more.
-* Research first: xFormers contains bleeding-edge components, that are not yet
-  available in mainstream libraries like PyTorch.
-* Built with efficiency in mind: Because speed of iteration matters, components
-  are as fast and memory-efficient as possible. xFormers contains its own CUDA
-  kernels, but dispatches to other libraries when relevant.
+It provides a high-level, ergonomic interface over the Model Context
+Protocol, making it easy to expose tools, resources, and prompts to
+LLMs and agents.

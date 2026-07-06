@@ -1,0 +1,20 @@
+--- makefile.orig	2023-07-05 20:41:42 UTC
++++ makefile
+@@ -86,8 +86,6 @@ endif
+ 	WRITE_TO_TARGET_NAME = -o $@
+ endif
+ 
+-SHELL:=/usr/bin/env bash
+-
+ GITHASH = bin/githash.txt
+ 
+ 
+@@ -123,7 +121,7 @@ ${GITHASH}:
+ githash: ${GITHASH}
+ 
+ ${GITHASH}:
+-	mkdir -p bin && ${GIT} describe --tags --always > ${GITHASH}
++	mkdir -p bin && echo v%%PORTVERSION%% > ${GITHASH}
+ 
+ debug: ${GITHASH}
+ 	${DC} -w -g -Jbin -ofdsc ${VERSIONS} ${DEBUG_VERSIONS} ${INCLUDE_PATHS} ${SRC}

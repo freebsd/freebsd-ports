@@ -1,5 +1,14 @@
 --- leveldb_object.cc.orig	2016-12-27 23:03:15 UTC
 +++ leveldb_object.cc
+@@ -792,7 +792,7 @@ static int pyleveldb_str_eq(PyObject* p, const char* s
+ 	// unicode string
+ 	if (PyUnicode_Check(p)) {
+ 		size_t i = 0;
+-		Py_UNICODE* c = PyUnicode_AS_UNICODE(p);
++		const char* c = PyUnicode_AsUTF8(p);
+ 
+ 		while (s[i] && c[i] && (int)s[i] == (int)c[i])
+ 			i++;
 @@ -901,9 +901,8 @@ static int PyLevelDB_init(PyLevelDB* sel
  	int block_size = 4096;
  	int max_open_files = 1000;

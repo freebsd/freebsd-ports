@@ -1,6 +1,6 @@
---- crates/remote_server/Cargo.toml.orig	2026-05-06 20:35:33 UTC
+--- crates/remote_server/Cargo.toml.orig	2026-07-01 15:07:44 UTC
 +++ crates/remote_server/Cargo.toml
-@@ -28,7 +28,6 @@ collections.workspace = true
+@@ -29,7 +29,6 @@ collections.workspace = true
  clap.workspace = true
  client.workspace = true
  collections.workspace = true
@@ -8,7 +8,7 @@
  dap_adapters.workspace = true
  debug_adapter_extension.workspace = true
  env_logger.workspace = true
-@@ -75,11 +74,18 @@ uuid = { workspace = true, features = ["v4"] }
+@@ -76,11 +75,18 @@ uuid = { workspace = true, features = ["v4"] }
  rayon.workspace = true
  uuid = { workspace = true, features = ["v4"] }
  

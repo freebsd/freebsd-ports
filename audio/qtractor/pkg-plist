@@ -27,3 +27,4 @@ share/mime/packages/org.rncbc.qtractor.xml
 %%DATADIR%%/translations/qtractor_pt_BR.qm
 %%DATADIR%%/translations/qtractor_ru.qm
 %%DATADIR%%/translations/qtractor_uk.qm
+%%DATADIR%%/translations/qtractor_zh_CN.qm

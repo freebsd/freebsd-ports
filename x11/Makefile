@@ -68,6 +68,7 @@
     SUBDIR += dmenu
     SUBDIR += dmenu2
     SUBDIR += docker-tray
+    SUBDIR += dragon-drop
     SUBDIR += dsbautostart
     SUBDIR += dsbxinput
     SUBDIR += dwlb
@@ -447,7 +448,6 @@
     SUBDIR += sxmo-wayout
     SUBDIR += sxpc
     SUBDIR += tabbed
-    SUBDIR += taiga
     SUBDIR += tecla
     SUBDIR += temperature.app
     SUBDIR += terminal.app
@@ -469,7 +469,6 @@
     SUBDIR += virtualgl
     SUBDIR += walker
     SUBDIR += wallutils
-    SUBDIR += wapanel
     SUBDIR += watershot
     SUBDIR += waveterm
     SUBDIR += way-displays
@@ -702,7 +701,6 @@
     SUBDIR += xzoom
     SUBDIR += yad
     SUBDIR += yakuake
-    SUBDIR += yalias
     SUBDIR += yeahconsole
     SUBDIR += yelp
     SUBDIR += zenity

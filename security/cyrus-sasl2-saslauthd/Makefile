@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	-saslauthd
 
 COMMENT=	SASL authentication server for cyrus-sasl2
@@ -38,7 +38,7 @@ GDBM_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 LMDB_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=lmdb
 LMDB_CFLAGS=		-I${LOCALBASE}/include

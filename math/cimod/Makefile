@@ -1,6 +1,6 @@
 PORTNAME=	cimod
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
+DISTVERSION=	1.7.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +29,6 @@ NO_ARCH=	yes
 do-install: # see https://github.com/OpenJij/cimod/issues/103
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/include
 
-# tests as of 1.7.3: 100% tests passed, 0 tests failed out of 79
+# tests as of 1.7.4: 100% tests passed, 0 tests failed out of 79
 
 .include <bsd.port.mk>

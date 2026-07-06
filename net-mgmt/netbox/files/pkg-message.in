@@ -24,80 +24,13 @@ The following steps are required to finish the upgrade:
 # cd %%DATADIR%%
 # python%%PYTHON_VER%% manage.py migrate
 # python%%PYTHON_VER%% manage.py trace_paths --no-input
-# mkdocs build
+# zensical build
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
 # python%%PYTHON_VER%% manage.py reindex --lazy
 # python%%PYTHON_VER%% manage.py clearsessions
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
-EOD
-}
-{ type: upgrade
-  maximum_version: 3.5.2
-  message: <<EOD
-1. If the plugin security/py-netbox-secretstore is used, which is no longer
-   maintained by upstream, the following steps must be done before upgrading to
-   NetBox 3.5:
-
-   * Migrate from security/py-netbox-secretstore (= 1.4.2_2) to
-     security/py-netbox-secrets (= 1.7.6) with a NetBox 3.4.x instance.
-
-     It is very important that the versions of py-netbox-secretstore and
-     py-netbox-secrets match as specified otherwise the migration will not
-     be successful.
-
-     The reason for this is that py-netbox-secrets 1.8.x is not backwards
-     compatible with Netbox 3.4.  For further details please see the updating
-     instructions of py-netbox-secretstore or the UPDATING entry of 2023-05-11.
-
-2. The NetBox 3.5 release contains some breaking changes, so the following
-   items should be checked as well:
-
-   * The "account: field has been removed from the provider model.
-     This information is now tracked using the new provider account model.
-     Multiple accounts can be assigned per provider.
-
-   * A minimum length of 50 characters is now enforced for the SECRET_KEY
-     configuration parameter.
-
-   * The JobResult model has been moved from the "extras" app to "core" and
-     renamed to Job. Accordingly, its REST API endpoint has been moved from
-     "/api/extras/job-results/" to "/api/core/jobs/".
-
-   * The "obj_type" field on the Job model (previously JobResult) has been
-     renamed to "object_type" for consistency with other models.
-
-   * The JOBRESULT_RETENTION configuration parameter has been renamed
-     to JOB_RETENTION.
-
-   * The "obj" context variable is no longer passed when rendering custom
-     links: Use "object" instead.
-
-   * The REST API schema is now generated using the OpenAPI 3.0 spec
-
-   * The URLs for the REST API schema documentation have changed:
-       - "/api/docs/" is now "/api/schema/swagger-ui/"
-       - "/api/redoc/" is now "/api/schema/redoc/"
-EOD
-}
-{ type: upgrade
-  maximum_version: 3.5.4
-  message: <<EOD
-If a separate configuration file is used that does not have an ".py" extension,
-the following message may appear when the netbox rc script is started:
-
-!!!
-!!! WARNING: configuration file should have a valid Python extension.
-!!!
-
-In this case, the existing configuration file should be provided with a ".py"
-extension and if set, the rc variable "netbox_config" should also point to the
-configuration file with the new file extension.
-
-The netbox sample rc script, which is provided via the EXAMPLES option, has
-been adjusted accordingly.  This also includes a fix for the default path of
-the configuration if the rc variable "netbox_config" is not set.
 EOD
 }
 { type: upgrade
@@ -383,6 +316,19 @@ EOD
 
      * The load_yaml() and load_json() utility methods have been removed from
        the base class for custom scripts.
+EOD
+}
+{ type: upgrade
+  maximum_version: 4.6.3
+  message: <<EOD
+1. NetBox 4.6 requires Python 3.12 or newer.
+
+2. Please note that the command to build to offline documentation has been
+   changed from "mkdocs build" to "zensical build".
+
+   The general update instructions in this pkg-message and the netbox sample rc
+   script (available via the EXAMPLES option) have also been updated
+   accordingly.
 EOD
 }
 ]

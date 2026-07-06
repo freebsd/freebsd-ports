@@ -98,6 +98,7 @@ share/man/man1/jj-bookmark-untrack.1.gz
 share/man/man1/jj-bookmark.1.gz
 share/man/man1/jj-commit.1.gz
 share/man/man1/jj-config-edit.1.gz
+share/man/man1/jj-config-gc.1.gz
 share/man/man1/jj-config-get.1.gz
 share/man/man1/jj-config-list.1.gz
 share/man/man1/jj-config-path.1.gz
@@ -161,6 +162,7 @@ share/man/man1/jj-resolve.1.gz
 share/man/man1/jj-restore.1.gz
 share/man/man1/jj-revert.1.gz
 share/man/man1/jj-root.1.gz
+share/man/man1/jj-run.1.gz
 share/man/man1/jj-show.1.gz
 share/man/man1/jj-sign.1.gz
 share/man/man1/jj-simplify-parents.1.gz
@@ -178,6 +180,8 @@ share/man/man1/jj-tag-set.1.gz
 share/man/man1/jj-tag.1.gz
 share/man/man1/jj-undo.1.gz
 share/man/man1/jj-unsign.1.gz
+share/man/man1/jj-util-backend-name.1.gz
+share/man/man1/jj-util-backend.1.gz
 share/man/man1/jj-util-completion.1.gz
 share/man/man1/jj-util-config-schema.1.gz
 share/man/man1/jj-util-exec.1.gz

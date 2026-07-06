@@ -1,6 +1,5 @@
 PORTNAME=	swi-pl
-DISTVERSION=	9.2.9
-PORTREVISION=	1
+DISTVERSION=	10.0.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -13,80 +12,60 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_i386=	FAILED: man/lib/clpfdlib.tex
 
+BUILD_DEPENDS=  uuid-config:misc/ossp-uuid
 LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2 \
 		libossp-uuid.so:misc/ossp-uuid \
-		libyaml.so:textproc/libyaml
+		libyaml.so:textproc/libyaml \
+		${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_armv7=	libunwind.so:devel/libunwind
+LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
-USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig \
-		python readline shebangfix ssl xorg
-USE_XORG=	ice sm x11 xext xft xinerama xpm xt xrandr
+USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig python ssl localbase:ldflags
+USE_LDCONFIG=	${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}
+
+CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DBUILD_TESTING=OFF -DSYSTEM_LIBEDIT=ON
+.ifndef WITH_DEBUG
+CMAKE_BUILD_TYPE=PGO
+.endif
+
+LDFLAGS+=	-lstdthreads
+NOPRECIOUSMAKEVARS=	yes
+PLIST_SUB+=	ARCH=${ARCH} OS=${OPSYS:tl}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GMP ODBC TCMALLOC THREADED XPCE
 OPTIONS_DEFAULT=	GMP ODBC TCMALLOC THREADED XPCE
 OPTIONS_SUB=		yes
+# devel/google-perftools broken on these
+OPTIONS_EXCLUDE_aarch64= TCMALLOC
+OPTIONS_EXCLUDE_armv7= TCMALLOC
+OPTIONS_EXCLUDE_riscv64= TCMALLOC
 
-MAKE_ENV=	XDG_DATA_DIRS=/dummy
-CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DSWIPL_PACKAGES_QT=OFF -DBUILD_TESTING=OFF
-
-LDFLAGS+=	-lstdthreads
-
-DOCS_CMAKE_ON=	-DINSTALL_DOCUMENTATION=ON
-DOCS_CMAKE_OFF=	-DINSTALL_DOCUMENTATION=OFF
+DOCS_CMAKE_BOOL=	INSTALL_DOCUMENTATION
 
 TCMALLOC_DESC=		Use tcmalloc instead of default freebsd jemalloc
-TCMALLOC_CMAKE_ON=	-DUSE_TCMALLOC=ON
-TCMALLOC_CMAKE_OFF=	-DUSE_TCMALLOC=OFF
+TCMALLOC_CMAKE_BOOL=	USE_TCMALLOC
 TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
 XPCE_DESC=		Install XPCE graphical support
-XPCE_CMAKE_ON=		-DSWIPL_PACKAGES_X=ON
-XPCE_CMAKE_OFF=		-DSWIPL_PACKAGES_X=OFF
-XPCE_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-XPCE_USES=		jpeg
+XPCE_CMAKE_BOOL=	SWIPL_PACKAGES_GUI
+XPCE_USES=		sdl
+XPCE_USE=		sdl=sdl3,image3
+XPCE_LIB_DEPENDS=	libcairo.so:graphics/cairo \
+			libpangocairo-1.0.so:x11-toolkits/pango
 
 GMP_DESC=		Enable bignum and rational numbers
-GMP_CMAKE_ON=		-DUSE_GMP=ON
-GMP_CMAKE_OFF=		-DUSE_GMP=OFF
+GMP_CMAKE_BOOL=		USE_GMP
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 THREADED_DESC=		Enable support for Prolog threads
-THREADED_CMAKE_ON=	-DMULTI_THREADED=ON
-THREADED_CMAKE_OFF=	-DMULTI_THREADED=OFF
+THREADED_CMAKE_BOOL=	MULTI_THREADED
 
 ODBC_DESC=		Enable ODBC and CQL packages
-ODBC_CMAKE_ON=		-DSWIPL_PACKAGES_ODBC=ON
-ODBC_CMAKE_OFF=		-DSWIPL_PACKAGES_ODBC=OFF
+ODBC_CMAKE_BOOL=	SWIPL_PACKAGES_ODBC
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-.include <bsd.port.options.mk>
-
-SHEBANG_FILES=	library/dialect/sicstus/swipl-lfr.pl
-SHEBANG_LANG=	swipl
-
-CMAKE_BUILD_TYPE=	Release
-
-NOPRECIOUSMAKEVARS=	yes
-
-.include <bsd.port.pre.mk>
-
-USE_LDCONFIG=	${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}
-
-PLIST_SUB+=	ARCH=${ARCH} OS=${OPSYS:tl}
-
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
-LIB_DEPENDS+=	libunwind.so:devel/libunwind
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/' \
-		${WRKSRC}/packages/cpp/SWI-cpp.h
-	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/' \
-		${WRKSRC}/packages/cpp/SWI-cpp2.h
-	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|' \
-		${WRKSRC}/cmake/LocationsPostPorts.cmake
-
-post-install-XPCE-on:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}/pl2xpce.so
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

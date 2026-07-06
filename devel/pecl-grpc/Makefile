@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.78.0
+PORTVERSION=	1.82.0
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -10,5 +10,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang php:pecl
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

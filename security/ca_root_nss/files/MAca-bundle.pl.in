@@ -46,7 +46,7 @@ print <<EOH;
 ##
 ##  It contains certificates trusted for server authentication.
 ##
-##  Extracted from nss-%%VERSION_NSS%%
+##  Extracted from nss-%%DISTVERSION%%
 ##
 EOH
 my $debug = 0;

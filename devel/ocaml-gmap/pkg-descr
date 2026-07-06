@@ -1,0 +1,3 @@
+This library provides an hashmap implementation whose values are typed
+by the type parameter of the associated (polymorphic) key. This
+library relies on generalized algebraic data type (GADT) of OCaml.

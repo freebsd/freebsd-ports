@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-et-orbi>=1.4<2:devel/rubygem-et-orbi \
 		rubygem-raabro>=1.4<2:textproc/rubygem-raabro
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	floraison
 
 # Disable rdoc
 OPTIONS_EXCLUDE=DOCS

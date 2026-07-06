@@ -1,3 +1,3 @@
-TIMESTAMP = 1485310562
-SHA256 (xorg/driver/xf86-video-ast-1.1.5.tar.bz2) = 1edbbc55d47d3fd71dec99b15c2483e22738c642623a0fb86ef4a81a9067a2de
-SIZE (xorg/driver/xf86-video-ast-1.1.5.tar.bz2) = 339848
+TIMESTAMP = 1782445809
+SHA256 (xorg/driver/xf86-video-ast-1.2.1.tar.xz) = df6b630e193c32972a20b02fa6db7fd38d026e835464e26d469de32e31c87cb6
+SIZE (xorg/driver/xf86-video-ast-1.2.1.tar.xz) = 322180

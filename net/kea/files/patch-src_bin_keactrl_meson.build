@@ -1,8 +1,8 @@
---- src/bin/keactrl/meson.build.orig	2025-07-10 15:51:59 UTC
+--- src/bin/keactrl/meson.build.orig	2026-06-22 07:49:20 UTC
 +++ src/bin/keactrl/meson.build
-@@ -14,7 +14,7 @@ keactrl_conf_data.set('PACKAGE_VERSION', PROJECT_VERSI
-     PROJECT_VERSION + f' (@SOURCE_OF_INSTALLATION@)',
- )
+@@ -11,7 +11,7 @@ keactrl_conf_data.set('PACKAGE_VERSION', PROJECT_VERSI
+ endif
+ keactrl_conf_data.set('EXTENDED_VERSION', EXTENDED_VERSION)
  keactrl_conf_data.set('PACKAGE_VERSION', PROJECT_VERSION)
 -keactrl_conf_data.set('runstatedir', '${prefix}/' + LOCALSTATEDIR + '/run')
 +keactrl_conf_data.set('runstatedir', '/' + LOCALSTATEDIR + '/run')

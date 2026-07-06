@@ -1,7 +1,7 @@
 PORTNAME=	immudb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake go:modules,no_targets
+USES=		cpe gmake go:modules,no_targets
+CPE_VENDOR=	codenotary
 GO_MODULE=	github.com/codenotary/immudb
 
 .include <bsd.port.pre.mk>

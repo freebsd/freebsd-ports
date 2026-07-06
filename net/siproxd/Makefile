@@ -1,5 +1,5 @@
 PORTNAME=	siproxd
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.4
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -24,6 +24,8 @@ PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
 OPTIONS_DEFINE=	DOCS
+
+TEST_TARGET=	check
 
 post-patch:
 	${REINPLACE_CMD} -e 's,siproxd\.conf\.example,siproxd.conf.sample,g' \

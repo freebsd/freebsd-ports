@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/Copyright.txt
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		cmake python:build qt:6
-USE_LOCALE=	en_US.UTF-8
 USE_QT=		sqldriver-sqlite:build tools:build
 
 CMAKE_ARGS=	-DCMAKE_DOC_DIR:STRING="${DOCSDIR_REL}" \

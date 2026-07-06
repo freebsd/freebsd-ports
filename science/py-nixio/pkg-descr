@@ -1,0 +1,4 @@
+NIXIO is a Python reimplementation of the NIX (Neuroscience Information
+Exchange) data model and format. NIX is an open data format designed for
+storing annotated scientific data in a hierarchical structure, particularly
+suited for neuroscience research.

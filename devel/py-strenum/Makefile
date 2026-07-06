@@ -5,6 +5,9 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+PATCH_SITES=	https://github.com/irgeek/${PORTNAME}/commit/
+PATCHFILES+=	896bef1b7e4a.patch:-p1 # https://github.com/irgeek/StrEnum/pull/34
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Enum that inherits from str
 WWW=		https://pypi.org/project/StrEnum/

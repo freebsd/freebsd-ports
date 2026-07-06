@@ -24,11 +24,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>0:devel/py-dataclasses-jso
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-watcher>0:devel/py-pytest-watcher@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR} # math/py-pandas-stubs isn't ported yet
+		${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+# tests as of 4.1.1: 4 failed, 152 passed, 17 skipped in 260.81s
 
 .include <bsd.port.mk>

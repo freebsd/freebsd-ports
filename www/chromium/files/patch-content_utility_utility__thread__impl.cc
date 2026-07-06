@@ -1,6 +1,6 @@
---- content/utility/utility_thread_impl.cc.orig	2024-05-21 18:07:39 UTC
+--- content/utility/utility_thread_impl.cc.orig	2026-07-01 06:24:19 UTC
 +++ content/utility/utility_thread_impl.cc
-@@ -31,7 +31,7 @@
+@@ -30,7 +30,7 @@
  #include "mojo/public/cpp/bindings/pending_receiver.h"
  #include "mojo/public/cpp/bindings/service_factory.h"
  
@@ -9,7 +9,7 @@
  #include "content/child/sandboxed_process_thread_type_handler.h"
  #endif
  
-@@ -251,7 +251,8 @@ void UtilityThreadImpl::Init() {
+@@ -250,7 +250,8 @@ void UtilityThreadImpl::Init() {
  
    GetContentClient()->utility()->UtilityThreadStarted();
  

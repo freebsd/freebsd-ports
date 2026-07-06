@@ -11,6 +11,9 @@ WWW=		https://github.com/drfiemost/liblastfm
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream repo archived on Aug 22, 2025
+EXPIRATION_DATE=2026-08-31
+
 USES=		cmake:testing compiler:c++17-lang pkgconfig qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	lastfm

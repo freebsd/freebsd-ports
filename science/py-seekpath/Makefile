@@ -1,5 +1,5 @@
 PORTNAME=	seekpath
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 PORTREVISION=	2
 CATEGORIES=	science # chemistry
 MASTER_SITES=	PYPI
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spglib>=1.14.1:science/py-spglib@${PY_FLAVOR}
 
 USES=		python

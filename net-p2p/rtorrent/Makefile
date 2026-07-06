@@ -1,5 +1,5 @@
 PORTNAME=	rtorrent
-DISTVERSION=	0.16.11
+DISTVERSION=	0.16.17
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -10,6 +10,8 @@ WWW=		https://github.com/rakshasa/rtorrent
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+
+BROKEN_i386=	error: static assertion failed; see also: https://github.com/rakshasa/rtorrent/issues/1859
 
 LIB_DEPENDS=	libtorrent.so:net-p2p/libtorrent
 TEST_DEPENDS=	cppunit>0:devel/cppunit

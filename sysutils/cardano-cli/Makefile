@@ -1,6 +1,7 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	11.0.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -15,7 +16,7 @@ NOT_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
-		liblmdb.so:databases/lmdb
+		liblmdb.so:databases/lmdb0
 
 USES=		autoreconf:build cabal gmake libtool pkgconfig
 

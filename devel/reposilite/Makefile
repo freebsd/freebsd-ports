@@ -13,7 +13,8 @@ WWW=		https://reposilite.com
 
 LICENSE=	APACHE20
 
-USES=		java
+USES=		cpe java
+CPE_VENDOR=	dzikoysk
 JAVA_VERSION=	11+
 
 NO_BUILD=	yes

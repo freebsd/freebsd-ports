@@ -14,8 +14,9 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-install:
+	# install files
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	# autoplist for potentials: 500+ files in DATADIR
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} ${DATADIR:S/^${PREFIX}\///} -type f >> ${TMPPLIST}

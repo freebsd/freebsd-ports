@@ -1,0 +1,13 @@
+Rgx is a regex debugger for the terminal — step-through execution, 3 engines,
+code generation, and live stream filtering.
+
+rgx is useful if you:
+
+  - Work on remote servers where opening a browser isn't practical — SSH,
+    containers, air-gapped environments.
+  - Want to pipe regex results into other commands (echo "log" | rgx -p '\d+' |
+    sort) — regex101 can't do this.
+  - Need engine-specific behavior — check whether a pattern works in Rust's
+    regex crate vs. PCRE2 without guessing.
+  - Prefer staying in the terminal and find the context switch to a browser
+    disruptive.

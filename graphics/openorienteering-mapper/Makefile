@@ -53,4 +53,8 @@ TEST_TEST_TARGET=	test
 TIFF_DESC=	Support for TIFF
 TIFF_USE=	QT=imageformats
 
+.if defined(DISABLE_LICENSES)
+CMAKE_ARGS+=	-DLICENSING_PROVIDER=OFF
+.endif
+
 .include <bsd.port.mk>

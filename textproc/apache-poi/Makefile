@@ -1,6 +1,5 @@
 PORTNAME=	poi
-PORTVERSION=	5.4.1
-PORTREVISION=	2
+PORTVERSION=	5.5.1
 CATEGORIES=	textproc devel java
 MASTER_SITES=	${MAVEN_SITE}/poi/${PORTVERSION}/:poi	\
 		${MAVEN_SITE}/poi-examples/${PORTVERSION}/:examples	\
@@ -27,6 +26,7 @@ LICENSE_FILE=	${WRKDIR}/META-INF/LICENSE
 
 RUN_DEPENDS=	pdfbox>0:print/pdfbox	\
 		batik>0:graphics/batik	\
+		graphics2d>0:print/graphics2d	\
 		xmlsec>0:security/xml-security	\
 		SparseBitSet>0:devel/sparsebitset	\
 		apache-log4j2>0:devel/apache-log4j2	\

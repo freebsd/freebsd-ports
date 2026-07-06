@@ -1,0 +1,7 @@
+bin/rpiboot
+share/rpiboot/mass-storage-gadget64/boot.img
+share/rpiboot/mass-storage-gadget64/bootfiles.bin
+share/rpiboot/mass-storage-gadget64/config.txt
+share/rpiboot/msd/bootcode.bin
+share/rpiboot/msd/bootcode4.bin
+share/rpiboot/msd/start.elf

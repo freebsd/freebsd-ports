@@ -1,15 +1,15 @@
---- ui/gfx/render_text_api_fuzzer.cc.orig	2025-01-15 09:18:26 UTC
+--- ui/gfx/render_text_api_fuzzer.cc.orig	2026-07-01 06:24:19 UTC
 +++ ui/gfx/render_text_api_fuzzer.cc
-@@ -19,7 +19,7 @@
- #include "ui/gfx/font_util.h"
- #include "ui/gfx/render_text.h"
+@@ -24,7 +24,7 @@
+ #include "base/test/test_support_android.h"
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "third_party/test_fonts/fontconfig/fontconfig_util_linux.h"
  #endif
  
-@@ -46,7 +46,7 @@ struct Environment {
+@@ -59,7 +59,7 @@ struct Environment {
  
      CHECK(base::i18n::InitializeICU());
  

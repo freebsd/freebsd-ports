@@ -78,7 +78,6 @@
 %%WWWDIR%%/application/controllers/NotificationController.php
 %%WWWDIR%%/application/controllers/NotificationsController.php
 %%WWWDIR%%/application/controllers/NotificationtemplateController.php
-%%WWWDIR%%/application/controllers/PhperrorController.php
 %%WWWDIR%%/application/controllers/ScheduledDowntimeController.php
 %%WWWDIR%%/application/controllers/ScheduledDowntimesController.php
 %%WWWDIR%%/application/controllers/SchemaController.php
@@ -178,8 +177,6 @@
 %%WWWDIR%%/application/views/helpers/FormSimpleNote.php
 %%WWWDIR%%/application/views/helpers/FormStoredPassword.php
 %%WWWDIR%%/application/views/helpers/RenderPlainObject.php
-%%WWWDIR%%/application/views/scripts/phperror/dependencies.phtml
-%%WWWDIR%%/application/views/scripts/phperror/error.phtml
 %%WWWDIR%%/application/views/scripts/settings/index.phtml
 %%WWWDIR%%/application/views/scripts/suggest/index.phtml
 %%WWWDIR%%/configuration.php
@@ -261,8 +258,6 @@
 %%WWWDIR%%/doc/screenshot/director/93_testing/933_director_testing_history.png
 %%WWWDIR%%/doc/screenshot/director/readme/director_main_screen.png
 %%WWWDIR%%/library/Director/Acl.php
-%%WWWDIR%%/library/Director/Application/Dependency.php
-%%WWWDIR%%/library/Director/Application/DependencyChecker.php
 %%WWWDIR%%/library/Director/Application/MemoryLimit.php
 %%WWWDIR%%/library/Director/Auth/MonitoringRestriction.php
 %%WWWDIR%%/library/Director/Auth/Permission.php
@@ -308,6 +303,7 @@
 %%WWWDIR%%/library/Director/Daemon/LogProxy.php
 %%WWWDIR%%/library/Director/Daemon/Logger.php
 %%WWWDIR%%/library/Director/Daemon/ProcessList.php
+%%WWWDIR%%/library/Director/Daemon/PromiseUtil.php
 %%WWWDIR%%/library/Director/Daemon/RunningDaemonInfo.php
 %%WWWDIR%%/library/Director/Daemon/SystemdLogWriter.php
 %%WWWDIR%%/library/Director/Dashboard/AlertsDashboard.php
@@ -727,8 +723,6 @@
 %%WWWDIR%%/library/Director/Web/Table/DatalistEntryTable.php
 %%WWWDIR%%/library/Director/Web/Table/DatalistTable.php
 %%WWWDIR%%/library/Director/Web/Table/DbHelper.php
-%%WWWDIR%%/library/Director/Web/Table/Dependency/DependencyInfoTable.php
-%%WWWDIR%%/library/Director/Web/Table/Dependency/Html.php
 %%WWWDIR%%/library/Director/Web/Table/DependencyTemplateUsageTable.php
 %%WWWDIR%%/library/Director/Web/Table/DeploymentLogTable.php
 %%WWWDIR%%/library/Director/Web/Table/FilterableByUsage.php
@@ -819,8 +813,6 @@
 %%WWWDIR%%/public/img/tree.png
 %%WWWDIR%%/public/js/module.js
 %%WWWDIR%%/register-hooks.php
-%%WWWDIR%%/run-missingdeps.php
-%%WWWDIR%%/run-php5.3.php
 %%WWWDIR%%/run.php
 %%WWWDIR%%/schema/mysql-legacy-changes/upgrade_1.sql
 %%WWWDIR%%/schema/mysql-legacy-changes/upgrade_10.sql
@@ -1120,7 +1112,6 @@
 %%WWWDIR%%/test/bootstrap.php
 %%WWWDIR%%/test/config/authentication.ini
 %%WWWDIR%%/test/config/resources.ini
-%%WWWDIR%%/test/php/library/Director/Application/DependencyTest.php
 %%WWWDIR%%/test/php/library/Director/Application/FiltersWorkAsExpectedTest.php
 %%WWWDIR%%/test/php/library/Director/Application/MemoryLimitTest.php
 %%WWWDIR%%/test/php/library/Director/CustomVariable/CustomVariablesTest.php

@@ -8291,6 +8291,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_MeanWell_NID30_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_MeanWell_NID60_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_MeanWell_NSD10_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_MeanWell_SMU02x-xxN_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_Murata_CRE1xxxxxx3C_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_Murata_CRE1xxxxxxDC_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_Murata_CRE1xxxxxxSC_THT.kicad_mod
@@ -12010,7 +12011,6 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/WDFN-8-1EP_6x5mm_P1.27mm_EP3.4x4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/WDFN-8-1EP_8x6mm_P1.27mm_EP6x4.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/WDFN-8-1EP_8x6mm_P1.27mm_EP6x4.8mm_ThermalVias.kicad_mod
-%%DATADIR%%/footprints/Package_DFN_QFN.pretty/WDFN-8_2x2mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/WFDFPN-8-1EP_3x2mm_P0.5mm_EP1.25x1.35mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/WQFN-14-1EP_2.5x2.5mm_P0.5mm_EP1.45x1.45mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/WQFN-14-1EP_2.5x2.5mm_P0.5mm_EP1.45x1.45mm_ThermalVias.kicad_mod
@@ -12356,7 +12356,6 @@
 %%DATADIR%%/footprints/Package_DirectFET.pretty/DirectFET_ST.kicad_mod
 %%DATADIR%%/footprints/Package_LCC.pretty/Analog_LCC-8_5x5mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/Package_LCC.pretty/MO047AD_PLCC-52_19.1x19.1mm_P1.27mm.kicad_mod
-%%DATADIR%%/footprints/Package_LCC.pretty/PLCC-20.kicad_mod
 %%DATADIR%%/footprints/Package_LCC.pretty/PLCC-20_9.0x9.0mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/Package_LCC.pretty/PLCC-20_SMD-Socket.kicad_mod
 %%DATADIR%%/footprints/Package_LCC.pretty/PLCC-20_THT-Socket.kicad_mod
@@ -13030,8 +13029,6 @@
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-6-1EP_3x3mm_P0.95mm.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-6_1.5x1.5mm_P0.5mm.kicad_mod
-%%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm.kicad_mod
-%%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_3x2.5mm_P0.5mm_EP1.2x1.5mm_PullBack.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_3x2.5mm_P0.5mm_EP1.2x1.5mm_PullBack_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_3x3mm_P0.5mm_EP1.2x2mm.kicad_mod

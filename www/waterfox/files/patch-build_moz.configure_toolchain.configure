@@ -1,0 +1,46 @@
+commit 7503d73295e6a6fd84c35ffabce08e3d2f3b56de
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    catch wasm32-wasi target naming in FreeBSD
+    
+    Freebsd ports 7c5b2039a45ad renamed the WebAssemply target to
+    wasm32-wasip1 in all LLVM versions when LLVM 22.1 switched to
+    the new name. Make sure to catch it in toolchain.configure, so
+    the compiler can find it's assorted files.
+
+diff --git build/moz.configure/toolchain.configure build/moz.configure/toolchain.configure
+index 5ca00b2b62a1..0e66441d8692 100644
+--- build/moz.configure/toolchain.configure
++++ build/moz.configure/toolchain.configure
+@@ -653,6 +653,7 @@ def same_arch_different_bits():
+ 
+ @imports(_from="mozshellutil", _import="quote")
+ @imports(_from="mozbuild.configure.constants", _import="OS_preprocessor_checks")
++@imports(_from="sys", _import="platform")
+ def check_compiler(configure_cache, compiler, language, target, android_version):
+     info = get_compiler_info(configure_cache, compiler, language)
+ 
+@@ -695,8 +696,9 @@ def check_compiler(configure_cache, compiler, language, target, android_version)
+         # This makes clang define __ANDROID_API__ and use versioned library
+         # directories from the NDK.
+         toolchain = "%s%d" % (target.toolchain, android_version)
+-    elif target.kernel == "WASI" and info.type == "clang" and info.version >= Version("22.1"):
+-        # The wasm32-wasi target was renamed to wasm32-wasip1 in LLVM 22.1.
++    elif (target.kernel == "WASI" and info.type == "clang") and (info.version >= Version("22.1") or platform.startswith("freebsd")):
++        # The wasm32-wasi target was renamed to wasm32-wasip1 in LLVM 22.1
++        # and FreeBSD uses it since ports 7c5b2039a45ad for all LLVM ports
+         toolchain = "wasm32-wasip1"
+     else:
+         toolchain = target.toolchain
+@@ -954,8 +956,10 @@ def compiler_wrapper(wrapper, ccache):
+ 
+ 
+ @dependable
++@imports(_from="sys", _import="platform")
+ def wasm():
+-    return split_triplet("wasm32-wasi", allow_wasi=True)
++    log.warning("USING PLATFORM %s" % platform)
++    return split_triplet("wasm32-wasip1" if platform.startswith("freebsd") else "wasm32-wasi", allow_wasi=True)
+ 
+ 
+ @template

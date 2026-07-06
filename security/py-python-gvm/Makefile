@@ -1,5 +1,5 @@
 PORTNAME=	python-gvm
-DISTVERSION=	26.11.0
+DISTVERSION=	27.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,8 @@ WWW=		https://github.com/greenbone/python-gvm
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone

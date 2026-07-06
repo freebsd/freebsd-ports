@@ -1,0 +1,7 @@
+Now it is time to configure this package.
+
+ln -s %%DATADIR%% ${XDG_DATA_HOME}/supermodel/Assets
+
+Copy %%ETCDIR%%/Games.xml.sample and %%ETCDIR%%/Music.xml.sample 
+into either a ${XDG_CONFIG_HOME}/%%PORTNAME%%/Config or 
+$HOME/.%%PORTNAME%%/Config directory as Games.xml and Music.xml respectivly.

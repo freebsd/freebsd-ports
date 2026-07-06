@@ -1,4 +1,4 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2026-01-16 13:40:34 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2026-06-05 13:45:06 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
 @@ -66,7 +66,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
    UserAgentOverride user_agent_override;
@@ -9,7 +9,7 @@
    std::string system_font_family_name;
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -88,7 +88,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+@@ -84,7 +84,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
  #if BUILDFLAG(IS_OZONE)
    bool selection_clipboard_buffer_available{false};
  #endif

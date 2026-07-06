@@ -1,6 +1,6 @@
---- net/base/features.cc.orig	2026-05-07 17:02:56 UTC
+--- net/base/features.cc.orig	2026-07-01 06:24:19 UTC
 +++ net/base/features.cc
-@@ -36,7 +36,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
+@@ -40,7 +40,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
  
  BASE_FEATURE(kAsyncDns,
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || \
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -308,7 +308,7 @@ inline constexpr auto kMigrateSessionsOnNetworkChangeV
+@@ -314,7 +314,7 @@ inline constexpr auto kMigrateSessionsOnNetworkChangeV
  BASE_FEATURE(kMigrateSessionsOnNetworkChangeV2,
               kMigrateSessionsOnNetworkChangeV2Default);
  
@@ -18,7 +18,7 @@
  BASE_FEATURE(kAddressTrackerLinuxIsProxied, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -427,7 +427,7 @@ BASE_FEATURE(kReportingApiEnableEnterpriseCookieIssues
+@@ -426,7 +426,7 @@ BASE_FEATURE(kReportingApiEnableEnterpriseCookieIssues
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  BASE_FEATURE(kSimdutfBase64Support,

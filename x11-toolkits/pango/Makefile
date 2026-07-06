@@ -1,6 +1,5 @@
 PORTNAME=	pango
-DISTVERSION=	1.56.4
-PORTREVISION=	1
+DISTVERSION=	1.57.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -25,7 +24,7 @@ USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^1\.[^9]
 
-PLIST_SUB=	LIBVERSION=0.${PORTVERSION:R:E}00.${PORTVERSION:E}
+PLIST_SUB=	LIBVERSION=0.${PORTVERSION:R:E}0${PORTVERSION:E}.0
 
 TESTING_UNSAFE=	ERROR:../tests/test-font-data.c:153:test_boxes_font_metrics: assertion failed (metrics->approximate_char_width == boxes_unhinted_metrics.approximate_char_width): (46201 == 49273)
 
@@ -46,6 +45,10 @@ MANPAGES_MESON_TRUE=	man-pages
 X11_USES=		xorg
 X11_USE=		XORG=x11,xft,xrender
 X11_MESON_ENABLED=	xft
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/etc/fonts/fonts.conf|${LOCALBASE}&|' \
+		${WRKSRC}/tests/meson.build
 
 pre-test:
 # Don't test backup files. Silly Meson.

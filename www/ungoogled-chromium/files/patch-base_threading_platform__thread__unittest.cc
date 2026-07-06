@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2026-04-15 11:25:12 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2026-06-05 14:13:43 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& os, MessagePump
  #include "base/time/time.h"

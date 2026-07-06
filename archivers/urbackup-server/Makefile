@@ -1,5 +1,6 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.37
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/server-license.txt
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libzstd.so:archivers/zstd
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse libtool \

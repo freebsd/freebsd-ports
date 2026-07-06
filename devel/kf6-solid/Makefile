@@ -2,8 +2,8 @@ PORTNAME=	solid
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Desktop hardware abstraction
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Desktop hardware abstraction
 
 RUN_DEPENDS=	bsdisks:sysutils/bsdisks
 

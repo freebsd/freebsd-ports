@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-georoutes
-PORTVERSION=	1.24.0
+PORTVERSION=	1.27.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

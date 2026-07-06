@@ -1,6 +1,6 @@
 PORTNAME=	locust
 DISTVERSION=	2.37.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks www python
 MASTER_SITES=	PYPI \
 		https://github.com/locustio/locust/archive/refs/tags/:EXTRA
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0:devel/py-configargparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=0:www/py-flask-cors@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-cors>=0:www/py-flask-cors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0:www/py-flask-login@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \

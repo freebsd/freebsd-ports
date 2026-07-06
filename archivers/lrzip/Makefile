@@ -24,7 +24,8 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-L${LOCALBASE}/lib
 SHEBANG_FILES=	${WRKSRC}/lrztar
 USE_PERL5=	build
-CPE_VENDOR=	lrzip_project
+CPE_VENDOR=	long_range_zip_project
+CPE_PRODUCT=	long_range_zip
 
 CONFLICTS_INSTALL=	lrzsz # bin/lrz share/man/man1/lrz.1.gz
 

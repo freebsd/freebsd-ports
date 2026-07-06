@@ -1,6 +1,5 @@
 PORTNAME=	zotero
-DISTVERSION=	7.0.15
-PORTREVISION=	1
+DISTVERSION=	9.0.4
 CATEGORIES=	science deskutils
 MASTER_SITES=	LOCAL/mikael
 DISTFILES=	Zotero-${DISTVERSION}_FreeBSD-${ARCH}${EXTRACT_SUFX}
@@ -12,8 +11,8 @@ WWW=		https://www.zotero.org/
 
 LICENSE=	AGPLv3
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	uses FreeBSD 13.x precompiled binaries
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	uses FreeBSD 14.x precompiled binaries
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
@@ -36,7 +35,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libplc4.so:devel/nspr \
 		libpng16.so:graphics/png \
 		libwayland-client.so:graphics/wayland \
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon \
+		libutil.so.9:misc/compat14x
 
 USES=		desktop-file-utils gettext-runtime gl iconv jpeg gnome sqlite tar:xz xorg
 USE_GL=		egl

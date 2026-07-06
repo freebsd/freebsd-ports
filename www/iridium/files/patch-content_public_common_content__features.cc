@@ -1,6 +1,6 @@
---- content/public/common/content_features.cc.orig	2026-05-21 13:02:14 UTC
+--- content/public/common/content_features.cc.orig	2026-06-10 12:51:34 UTC
 +++ content/public/common/content_features.cc
-@@ -140,7 +140,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup, base::FEATU
+@@ -144,7 +144,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup, base::FEATU
  
  // Runs the audio service in a separate process.
  BASE_FEATURE(kAudioServiceOutOfProcess,
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -150,7 +150,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
+@@ -154,7 +154,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
  // Enables the audio-service sandbox. This feature has an effect only when the
  // kAudioServiceOutOfProcess feature is enabled.
  BASE_FEATURE(kAudioServiceSandbox,
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1159,10 +1159,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
+@@ -1186,10 +1186,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
  
  // Enable WebAssembly trap handler.
  BASE_FEATURE(kWebAssemblyTrapHandler,
@@ -31,7 +31,7 @@
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1223,7 +1223,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
+@@ -1250,7 +1250,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

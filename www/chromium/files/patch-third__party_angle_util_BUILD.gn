@@ -1,6 +1,6 @@
---- third_party/angle/util/BUILD.gn.orig	2025-09-06 10:01:20 UTC
+--- third_party/angle/util/BUILD.gn.orig	2026-07-01 06:24:19 UTC
 +++ third_party/angle/util/BUILD.gn
-@@ -334,7 +334,7 @@ foreach(is_shared_library,
+@@ -343,7 +343,7 @@ foreach(is_shared_library,
      ]
      libs = []
  

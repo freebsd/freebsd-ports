@@ -37,6 +37,7 @@
 %%HTML%%%%DOCBASE%%/en/articles/vinum/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vm-design/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vpn-ipsec/index.html
+%%HTML%%%%DOCBASE%%/en/articles/x86-assembly/index.html
 %%HTML%%%%DOCBASE%%/en/books/accessibility/blindness/index.html
 %%HTML%%%%DOCBASE%%/en/books/accessibility/book/index.html
 %%HTML%%%%DOCBASE%%/en/books/accessibility/colors/index.html
@@ -84,13 +85,11 @@
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/partii/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/partiii/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/partiv/index.html
-%%HTML%%%%DOCBASE%%/en/books/developers-handbook/partv/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/policies/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/secure/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/sockets/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/testing/index.html
 %%HTML%%%%DOCBASE%%/en/books/developers-handbook/tools/index.html
-%%HTML%%%%DOCBASE%%/en/books/developers-handbook/x86/index.html
 %%HTML%%%%DOCBASE%%/en/books/faq/index.html
 %%HTML%%%%DOCBASE%%/en/books/fdp-primer/asciidoctor-primer/index.html
 %%HTML%%%%DOCBASE%%/en/books/fdp-primer/book/index.html
@@ -120,6 +119,7 @@
 %%HTML%%%%DOCBASE%%/en/books/handbook/bsdinstall/index.html
 %%HTML%%%%DOCBASE%%/en/books/handbook/colophon/index.html
 %%HTML%%%%DOCBASE%%/en/books/handbook/config/index.html
+%%HTML%%%%DOCBASE%%/en/books/handbook/containers/index.html
 %%HTML%%%%DOCBASE%%/en/books/handbook/cutting-edge/index.html
 %%HTML%%%%DOCBASE%%/en/books/handbook/desktop/index.html
 %%HTML%%%%DOCBASE%%/en/books/handbook/disks/index.html
@@ -1101,6 +1101,7 @@
 %%PDF%%%%DOCBASE%%/en/articles/vinum/vinum_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vm-design/vm-design_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vpn-ipsec/vpn-ipsec_en.pdf
+%%PDF%%%%DOCBASE%%/en/articles/x86-assembly/x86-assembly_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/accessibility/accessibility_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/arch-handbook/arch-handbook_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/design-44bsd/design-44bsd_en.pdf

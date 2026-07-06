@@ -1,6 +1,6 @@
---- remoting/host/security_key/remote_security_key_main.cc.orig	2025-07-02 06:08:04 UTC
+--- remoting/host/security_key/remote_security_key_main.cc.orig	2026-07-01 06:24:19 UTC
 +++ remoting/host/security_key/remote_security_key_main.cc
-@@ -24,7 +24,7 @@
+@@ -23,7 +23,7 @@
  #include "remoting/host/security_key/security_key_message_handler.h"
  #include "remoting/host/usage_stats_consent.h"
  
@@ -9,7 +9,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -96,7 +96,7 @@ int RemoteSecurityKeyMain(int argc, char** argv) {
+@@ -90,7 +90,7 @@ int RemoteSecurityKeyMain(int argc, char** argv) {
  
  #if defined(REMOTING_ENABLE_CRASH_REPORTING)
    if (IsUsageStatsAllowed()) {

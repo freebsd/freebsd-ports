@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+This port aggressively prunes the node_modules tree to reduce the installed
+size, including removing TypeScript sources, source maps, build tooling,
+test suites, Azure AD/Key Vault dependencies, and Playwright. It is
+possible that a required file was inadvertently removed.
+
+If you encounter a runtime error such as "Cannot find module ..." or
+missing functionality loss, please report a bug at:
+
+    https://bugs.freebsd.org/bugzilla/
+
+Include the full error message, the output of `pkg info uptime-kuma`,
+and any relevant configuration options or settings.
+EOM
+}
+]

@@ -1,6 +1,5 @@
 PORTNAME=	libaravis
-DISTVERSION=	0.8.34
-PORTREVISION=	1
+DISTVERSION=	0.8.36
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,11 +24,11 @@ MESON_ARGS=	-Dgst-plugin=disabled \
 
 INSTALL_TARGET=	install-strip
 
-DOCSDIR=	${PREFIX}/share/doc/aravis-0.8
+DOCSDIR=	${PREFIX}/share/doc/aravis-${DISTVERSION:R}
 
 PLIST_SUB=	SOVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=		DOCS FAST_HEARTBEAT NLS USB
+OPTIONS_DEFINE=		DOCS FAST_HEARTBEAT USB
 OPTIONS_DEFAULT=	USB
 OPTIONS_SUB=		yes
 
@@ -39,7 +38,6 @@ USB_DESC=		build with USB support
 DOCS_BUILD_DEPENDS=		gi-docgen:textproc/py-gi-docgen
 DOCS_MESON_ENABLED=		documentation
 FAST_HEARTBEAT_MESON_TRUE=	fast-heartbeat
-NLS_USES=			gettext
 USB_MESON_ENABLED=		usb
 
 .include <bsd.port.mk>

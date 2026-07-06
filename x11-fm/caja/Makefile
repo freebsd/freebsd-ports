@@ -1,8 +1,8 @@
 PORTNAME=	caja
-PORTVERSION=	1.28.0
-PORTREVISION=	4
+DISTVERSION=	1.28.0
+PORTREVISION=	5
 CATEGORIES=	x11-fm mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,8 +20,6 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libstartup-notification-1.so:x11/startup-notification \
 		libnotify.so:devel/libnotify
 
-PORTSCOUT=	limitw:1,even
-
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
 		localbase mate pathfix pkgconfig shared-mime-info tar:xz xorg
 USE_MATE=	desktop icontheme:run
@@ -29,6 +27,7 @@ USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 gnomeprefix intltool introspection:build libxml2 \
 		gvfs
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/caja/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-packagekit \

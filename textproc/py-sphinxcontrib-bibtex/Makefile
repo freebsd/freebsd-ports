@@ -1,5 +1,6 @@
 PORTNAME=	sphinxcontrib-bibtex
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.20,1:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybtex>=0.25:textproc/py-pybtex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybtex-docutils>=1.0.2:textproc/py-pybtex-docutils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=3.5,1:textproc/py-sphinx@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sphinx>=7.4,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

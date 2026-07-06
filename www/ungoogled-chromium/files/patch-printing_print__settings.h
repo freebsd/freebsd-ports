@@ -1,4 +1,4 @@
---- printing/print_settings.h.orig	2026-02-15 10:01:45 UTC
+--- printing/print_settings.h.orig	2026-06-05 13:45:06 UTC
 +++ printing/print_settings.h
 @@ -25,7 +25,7 @@
  #include "base/values.h"
@@ -27,7 +27,7 @@
    using AdvancedSettings = std::map<std::string, base::Value>;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -300,7 +300,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
+@@ -298,7 +298,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -36,7 +36,7 @@
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -461,7 +461,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
+@@ -459,7 +459,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
    // Number of pages per sheet.
    int pages_per_sheet_;
  

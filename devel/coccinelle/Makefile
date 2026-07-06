@@ -1,6 +1,5 @@
 PORTNAME=	coccinelle
-DISTVERSION=	1.3
-PORTREVISION=	1
+DISTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	https://coccinelle.gitlabpages.inria.fr/website/distrib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -12,16 +11,14 @@ WWW=		https://coccinelle.gitlabpages.inria.fr/website/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	menhir:devel/menhir \
+BUILD_DEPENDS=	${OCAMLFIND_DEPEND} \
+		menhir:devel/menhir \
 		ocaml-parmap>=0:devel/ocaml-parmap \
 		ocaml-pcre>=0:devel/ocaml-pcre
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake ocaml:camlp4 perl5 pkgconfig:build python shebangfix
-USE_GITHUB=	nodefault
-# until coccinelle/stdcompat releases with ocaml 5.2 support.
-GH_TUPLE=	thierry-martinez:stdcompat:d53390d788027fe0a2282c4745eb3d1626341f99:stdcompat
+USES=		autoreconf gmake ocaml:build,camlp4 perl5 pkgconfig:build python shebangfix
 USE_PERL5=	build
 SHEBANG_FILES=	tools/pycocci scripts/cpptests.sh
 GNU_CONFIGURE=	yes
@@ -39,12 +36,8 @@ VIM_DESC=	Vim plugin
 
 EMACS_USES=	emacs
 
-post-extract:
-	${RM} -r ${WRKSRC}/bundles/stdcompat/stdcompat-current
-	(cd ${WRKSRC_stdcompat} && ${COPYTREE_SHARE} . \
-		${WRKSRC}/bundles/stdcompat/stdcompat-current)
-
 post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/share/metainfo
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spatch
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spgen
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/coccinelle/*.so

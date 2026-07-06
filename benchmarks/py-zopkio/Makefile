@@ -1,15 +1,18 @@
 PORTNAME=	Zopkio
-PORTVERSION=	0.2.5
-PORTREVISION=	10
+DISTVERSION=	0.2.5
+PORTREVISION=	11
 CATEGORIES=	benchmarks python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional and Performance Test Framework
-WWW=		https://github.com/linkedin/Zopkio
+WWW=		https://github.com/LinkedInAttic/Zopkio
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream last activity was in 2016, and the project has been moved to the LinkedInAttic GitHub account.
+EXPIRATION_DATE=	2026-07-28
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}naarad>=1.0.15:benchmarks/py-naarad@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \

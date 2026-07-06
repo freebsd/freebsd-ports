@@ -1,4 +1,4 @@
---- src/uct/tcp/tcp_iface.c.orig	2026-03-14 01:11:54 UTC
+--- src/uct/tcp/tcp_iface.c.orig	2026-05-06 13:47:14 UTC
 +++ src/uct/tcp/tcp_iface.c
 @@ -20,6 +20,10 @@
  #include <netinet/tcp.h>
@@ -11,7 +11,7 @@
  
  #define UCT_TCP_IFACE_NETDEV_DIR "/sys/class/net"
  
-@@ -289,6 +293,11 @@ uct_tcp_iface_get_sysfs_path(const char *dev_name, cha
+@@ -284,6 +288,11 @@ uct_tcp_iface_get_sysfs_path(const char *dev_name, cha
  static const char *
  uct_tcp_iface_get_sysfs_path(const char *dev_name, char *path_buffer)
  {
@@ -23,7 +23,7 @@
      const char *sysfs_path = NULL;
      ucs_status_t status;
      char *lowest_path_buf;
-@@ -315,6 +324,7 @@ out:
+@@ -310,6 +319,7 @@ out:
      ucs_free(lowest_path_buf);
  out:
      return sysfs_path;
@@ -31,7 +31,24 @@
  }
  
  static ucs_status_t uct_tcp_iface_query(uct_iface_h tl_iface,
-@@ -948,6 +958,10 @@ static int uct_tcp_is_bridge(const char *if_name)
+@@ -422,7 +432,16 @@ static void uct_tcp_iface_handle_events(void *callback
+     unsigned *count  = (unsigned*)arg;
+     uct_tcp_ep_t *ep = (uct_tcp_ep_t*)callback_data;
+ 
++#if defined(__FreeBSD__)
++    /* kqueue may deliver a queued event for an ep that was closed and
++     * removed from the event set between the kevent() call and this
++     * callback.  Treat it as a no-op rather than aborting. */
++    if (ep->conn_state == UCT_TCP_EP_CONN_STATE_CLOSED) {
++        return;
++    }
++#else
+     ucs_assertv(ep->conn_state != UCT_TCP_EP_CONN_STATE_CLOSED, "ep=%p", ep);
++#endif
+ 
+     if (events & UCS_EVENT_SET_EVREAD) {
+         *count += uct_tcp_ep_cm_state[ep->conn_state].rx_progress(ep);
+@@ -943,6 +962,10 @@ static int uct_tcp_is_bridge(const char *if_name)
  
  static int uct_tcp_is_bridge(const char *if_name)
  {
@@ -42,7 +59,7 @@
      char *path;
      int ret;
      struct stat st;
-@@ -967,6 +981,7 @@ out:
+@@ -962,6 +985,7 @@ out:
      ucs_free(path);
  out:
      return ret;
@@ -50,7 +67,7 @@
  }
  
  ucs_status_t uct_tcp_query_devices(uct_md_h md,
-@@ -976,7 +991,11 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
+@@ -971,7 +995,11 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
      uct_tcp_md_t *tcp_md               = ucs_derived_of(md, uct_tcp_md_t);
      const unsigned sys_device_priority = 10;
      uct_tl_device_resource_t *devices, *tmp;
@@ -63,7 +80,7 @@
      unsigned num_devices;
      int is_active, i, n;
      ucs_status_t status;
-@@ -984,21 +1003,77 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
+@@ -979,21 +1007,77 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
      char *path_buffer;
      ucs_sys_device_t sys_dev;
  
@@ -142,7 +159,7 @@
      ucs_carray_for_each(entry, entries, n) {
          /* According to the sysfs(5) manual page, all of entries
           * has to be a symbolic link representing one of the real
-@@ -1050,18 +1125,28 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
+@@ -1045,18 +1129,28 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
          devices[num_devices].sys_device = sys_dev;
          ++num_devices;
      }

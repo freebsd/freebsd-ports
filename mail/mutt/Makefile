@@ -1,5 +1,6 @@
 PORTNAME=	mutt
-DISTVERSION=	2.3.2
+DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/
@@ -123,7 +124,7 @@ HCACHE_GDBM_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 HCACHE_GDBM_CONFIGURE_WITH=		gdbm=${LOCALBASE}
 HCACHE_KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 HCACHE_KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet=${LOCALBASE}
-HCACHE_LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+HCACHE_LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
 HCACHE_LMDB_CONFIGURE_WITH=		lmdb=${LOCALBASE}
 HCACHE_NONE_CONFIGURE_ON=		--disable-hcache
 HCACHE_NONE_CONFIGURE_OFF=		--enable-hcache

@@ -1,0 +1,4 @@
+zugbruecke is a Python package that allows calling routines in Windows DLLs
+from Python scripts running under Linux, macOS, or BSD. It acts as a drop-in
+replacement for ctypes, enabling cross-platform usage of Windows-specific DLLs
+via Wine.

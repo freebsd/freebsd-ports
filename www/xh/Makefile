@@ -1,10 +1,9 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.3
-PORTREVISION=	3
+DISTVERSION=	0.26.1
 CATEGORIES=	www
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Friendly and fast tool for sending HTTP requests
 WWW=		https://github.com/ducaale/xh
 

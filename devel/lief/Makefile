@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libmbedtls.so:security/mbedtls3 \
 		libspdlog.so:devel/spdlog
 
-USES=		cmake:testing localbase:ldflags pkgconfig
+USES=		cmake:testing cpe localbase:ldflags pkgconfig
 
 CMAKE_OFF=	LIEF_ASAN \
 		LIEF_ASM \
@@ -75,6 +75,8 @@ CMAKE_TESTING_ON=	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	lief-project
 GH_PROJECT=	LIEF
+
+CPE_VENDOR=	lief-project
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt

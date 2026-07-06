@@ -10,6 +10,9 @@ WWW=		http://www.denemo.org/
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Outdated, current release is a decade old
+EXPIRATION_DATE=2026-08-31
+
 LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \

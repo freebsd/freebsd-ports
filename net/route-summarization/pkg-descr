@@ -1,0 +1,6 @@
+A lightweight CIDR aggregation utility built in Perl using the
+Net::CIDR::Lite module. This tool summarizes IPv4 and IPv6 prefixes
+from standard input and optionally formats output for SPF record
+usage.
+
+Inspired by the original concept described in Random Thoughts.

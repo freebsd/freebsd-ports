@@ -1,4 +1,4 @@
---- chrome/browser/printing/print_backend_service_manager.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/printing/print_backend_service_manager.cc.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/printing/print_backend_service_manager.cc
 @@ -35,7 +35,7 @@
  #include "printing/printing_context.h"
@@ -9,7 +9,7 @@
  #include "content/public/common/content_switches.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -885,7 +885,7 @@ PrintBackendServiceManager::GetServiceFromBundle(
+@@ -871,7 +871,7 @@ PrintBackendServiceManager::GetServiceFromBundle(
              << remote_id << "`";
  
      std::vector<std::string> extra_switches;
@@ -18,7 +18,7 @@
      if (auto* linux_ui = ui::LinuxUi::instance()) {
        extra_switches = linux_ui->GetCmdLineFlagsForCopy();
      }
-@@ -1071,7 +1071,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+@@ -1043,7 +1043,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        return kNoClientsRegisteredResetOnIdleTimeout;
  
      case ClientType::kQueryWithUi:

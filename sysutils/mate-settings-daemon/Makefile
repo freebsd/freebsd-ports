@@ -1,8 +1,8 @@
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.28.0
-PORTREVISION=	3
+DISTVERSION=	1.28.0
+PORTREVISION=	4
 CATEGORIES=	sysutils mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -25,14 +25,13 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	xrdb:x11/xrdb
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome libtool localbase mate pathfix \
 		pkgconfig tar:xz xorg
 USE_MATE=	desktop libmatekbd mixer
 USE_XORG=	ice sm x11 xext xi
 USE_GNOME=	cairo dconf gtk30 intlhack
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-settings-daemon/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \

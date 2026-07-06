@@ -1,6 +1,15 @@
---- chrome/browser/ui/browser_commands.cc.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/ui/browser_commands.cc.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/ui/browser_commands.cc
-@@ -2434,7 +2434,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
+@@ -1233,7 +1233,7 @@ void NewTabToRight(BrowserWindowInterface* browser) {
+ }
+ 
+ void NewTabFromClipboardURL(BrowserWindowInterface* browser) {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (ui::Clipboard::IsSupportedClipboardBuffer(
+           ui::ClipboardBuffer::kSelection)) {
+     ui::Clipboard* clipboard = ui::Clipboard::GetForCurrentThread();
+@@ -2529,7 +2529,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
      ShowOutdatedUpgradeBubble(browser, browser,
                                /*auto_update_enabled=*/false);
    } else {

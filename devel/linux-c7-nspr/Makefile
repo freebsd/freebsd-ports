@@ -7,7 +7,9 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Netscape Portable Runtime (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_PRODUCT=	netscape_portable_runtime
+CPE_VENDOR=	mozilla
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 

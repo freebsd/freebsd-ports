@@ -82,6 +82,17 @@ validate: tidy check-portepoch
 		${ECHO_CMD} Consider using ${VUXML_FILE}.unexpanded for final commit; \
 		return 1; \
 	fi
+	@${ECHO_MSG} Checking CVE IDs...
+	@(NON_CANONICAL_CVE="`cd ${.CURDIR} && ${GREP} -Fn '<cvename>' vuln/*.xml | ${EGREP} -v '(CAN|CVE)-' | ${SED} -E 's/([0-9]+:)[[:space:]]*</\1 </' || ${TRUE}`"; \
+	if [ -z "$${NON_CANONICAL_CVE}" ]; \
+	then \
+		${ECHO_MSG} ... seems okay; \
+	else \
+		${ECHO_MSG} Only CVE IDs are allowed within cvename tags. These lines are wrong:; \
+		printf "%s\n" "$${NON_CANONICAL_CVE}"; \
+		return 1; \
+	fi)
+
 	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FLAT_FILE}
 	@${ECHO_CMD}
 	@${ECHO_CMD} 'Be sure to get versioning right for PORTEPOCH and remember possible linux-* ports!'

@@ -11,6 +11,7 @@ WWW=		https://www.openssl.org/
 LICENSE=	OpenSSL
 
 USES=		cpe linux:c7
+CPE_PRODUCT=	openssl
 USE_LINUX=	openssl
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes

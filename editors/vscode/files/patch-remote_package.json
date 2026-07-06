@@ -1,0 +1,14 @@
+https://github.com/eclipse/openvsx/issues/543
+https://github.com/termux/termux-packages/issues/24739
+https://github.com/termux/termux-packages/pull/24757
+
+--- remote/package.json.orig	2026-06-23 01:46:13 UTC
++++ remote/package.json
+@@ -41,6 +41,7 @@
+     "kerberos": "2.1.1",
+     "minimist": "^1.2.8",
+     "node-addon-api": "^6.0.0",
++    "node-ovsx-sign": "^1.2.0",
+     "node-pty": "^1.2.0-beta.13",
+     "ssh2": "^1.16.0",
+     "tar": "^7.5.9",

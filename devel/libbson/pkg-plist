@@ -45,14 +45,13 @@ lib/libbson-1.0.so.0.0.0
 lib/libbson-static-1.0.a
 libdata/pkgconfig/libbson-1.0.pc
 libdata/pkgconfig/libbson-static-1.0.pc
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/_sphinx_javascript_frameworks_compat.js
+%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/base-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/debug.css
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/documentation_options.js
+%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/english-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/jquery-3.6.0.js
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/plus.png
@@ -68,8 +67,6 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/styles/furo-extensions.css.map
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/styles/furo.css
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/styles/furo.css.map
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/underscore-1.13.1.js
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/api/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/api.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_aligned_alloc/index.html
@@ -788,4 +785,5 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%share/man/man3/bson_writer_t.3.gz
 %%PORTDOCS%%share/man/man3/bson_zero_free.3.gz
 %%PORTDOCS%%share/man/man3/libbson_legacy_extended_json.3.gz
+%%PORTDOCS%%@dir %%DOCSDIR%%/libbson/html/_sources
 %%PORTDOCS%%@dir %%DOCSDIR%%/libbson/html/index

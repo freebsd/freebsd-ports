@@ -8,6 +8,7 @@ WWW=		https://pear.horde.org
 
 USES=		horde php
 USE_PHP=	memcache
+IGNORE_WITH_PHP=	86
 USE_HORDE_RUN=	Horde_Exception
 
 .include <bsd.port.mk>

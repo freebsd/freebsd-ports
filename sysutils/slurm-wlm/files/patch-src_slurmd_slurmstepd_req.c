@@ -1,4 +1,4 @@
---- src/slurmd/slurmstepd/req.c.orig	2026-01-15 20:26:01 UTC
+--- src/slurmd/slurmstepd/req.c.orig	2026-06-09 20:26:02 UTC
 +++ src/slurmd/slurmstepd/req.c
 @@ -58,6 +58,7 @@
  #include "src/common/proc_args.h"
@@ -8,7 +8,7 @@
  #include "src/common/stepd_api.h"
  #include "src/common/stepd_proxy.h"
  #include "src/common/strlcpy.h"
-@@ -135,7 +136,7 @@ _create_socket(const char *name)
+@@ -140,7 +141,7 @@ _create_socket(const char *name)
  _create_socket(const char *name)
  {
  	int fd;
@@ -17,7 +17,7 @@
  	struct sockaddr_un addr;
  
  	/*
-@@ -156,7 +157,8 @@ _create_socket(const char *name)
+@@ -161,7 +162,8 @@ _create_socket(const char *name)
  	memset(&addr, 0, sizeof(addr));
  	addr.sun_family = AF_UNIX;
  	strlcpy(addr.sun_path, name, sizeof(addr.sun_path));
@@ -27,7 +27,7 @@
  
  	/* bind the name to the descriptor */
  	if (bind(fd, (struct sockaddr *) &addr, len) < 0) {
-@@ -348,12 +350,12 @@ static int _msg_socket_accept(eio_obj_t *obj, list_t *
+@@ -362,12 +364,12 @@ static int _msg_socket_accept(eio_obj_t *obj, list_t *
  {
  	int fd, *param = NULL;
  	struct sockaddr_un addr;

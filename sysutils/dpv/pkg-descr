@@ -1,0 +1,3 @@
+The dpv utility provides a dialog progress view, allowing a user to
+see current throughput rate and total data transferred for one or more
+streams.

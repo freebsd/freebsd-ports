@@ -20,6 +20,8 @@ CONFLICTS_INSTALL=	mysql8[1-9]-client \
 			mariadb[0-9][0-9]-client \
 			percona[0-9][0-9]-client
 
+CPE_PRODUCT=	mysql
+
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1 -DINSTALL_SUPPORTFILESDIR=0
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql

@@ -1,7 +1,7 @@
 PORTNAME=	forgejo-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://codeberg.org/forgejo-contrib/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
 		LOCAL/jrm:comp

@@ -1,6 +1,6 @@
---- ext/os/lib.rs.orig	2023-01-13 13:12:37 UTC
+--- ext/os/lib.rs.orig	2026-07-01 13:28:43 UTC
 +++ ext/os/lib.rs
-@@ -5,6 +5,7 @@ use std::collections::HashMap;
+@@ -5,6 +5,7 @@ use std::ops::ControlFlow;
  use std::env;
  use std::ffi::OsString;
  use std::ops::ControlFlow;
@@ -8,30 +8,31 @@
  use std::sync::Arc;
  use std::sync::atomic::AtomicI32;
  use std::sync::atomic::Ordering;
-@@ -112,7 +113,8 @@ pub enum OsError {
+@@ -149,7 +150,8 @@ fn op_exec_path() -> Result<String, OsError> {
  #[op2]
  #[string]
  fn op_exec_path() -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();
 +  let current_exe =
-+    env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
++    env::current_exe().unwrap_or_else(|_| PathBuf::from("%%PREFIX%%/bin/deno"));
    // normalize path so it doesn't include '.' or '..' components
    let path = normalize_path(Cow::Owned(current_exe));
  
-@@ -660,6 +662,46 @@ fn rss() -> u64 {
+@@ -778,6 +780,46 @@ fn rss() -> u64 {
+     pagesize * unsafe { (*kinfoproc.as_mut_ptr()).p_vm_rssize as u64 }
    } else {
      0
-   }
++  }
 +}
 +
 +#[cfg(target_os = "freebsd")]
-+fn rss() -> usize {
++fn rss() -> u64 {
 +  // Uses FreeBSD's KERN_PROC_PID sysctl(2)
 +  // to retrieve information about the current
 +  // process, part of which is the RSS (ki_rssize)
 +  let pid = unsafe { libc::getpid() };
 +  // SAFETY: libc call (get system page size)
-+  let pagesize = unsafe { libc::sysconf(libc::_SC_PAGESIZE) } as usize;
++  let pagesize = unsafe { libc::sysconf(libc::_SC_PAGESIZE) } as u64;
 +  // KERN_PROC_PID returns a struct libc::kinfo_proc
 +  let mut kinfoproc = std::mem::MaybeUninit::<libc::kinfo_proc>::uninit();
 +  let mut size = std::mem::size_of_val(&kinfoproc) as libc::size_t;
@@ -58,10 +59,9 @@
 +    // SAFETY: sysctl returns 0 on success and kinfoproc is initialized
 +    // ki_rssize contains size in pages -> multiply with pagesize to
 +    // get size in bytes.
-+    pagesize * unsafe { (*kinfoproc.as_mut_ptr()).ki_rssize as usize }
++    pagesize * unsafe { (*kinfoproc.as_mut_ptr()).ki_rssize as u64 }
 +  } else {
-+  0
-+  } 
++    0u64
+   }
  }
  
- #[cfg(windows)]

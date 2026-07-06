@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+LMDB 1.0 introduced an incompatible on-disk file format change.
+Databases created with LMDB 0.9.x cannot be opened with LMDB 1.0.
+
+If you are migrating from LMDB 0.9.x, you must export your existing
+databases using the old mdb_dump and re-import them with the new
+mdb_load:
+
+  # mdb_dump -a /path/to/db > /tmp/mydb.dump
+  # mdb_load -f /tmp/mydb.dump /path/to/newdb
+
+There is no support in LMDB 1.0 for operating directly on v0.9 DB files.
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.0.0"
+  message: <<EOM
+LMDB 1.0 introduced an incompatible on-disk file format change.
+Databases created with LMDB 0.9.x cannot be opened with LMDB 1.0.
+
+Before using the new library, export your existing databases using the
+old mdb_dump utility and re-import them with the new mdb_load:
+
+  # mdb_dump -a /path/to/db > /tmp/mydb.dump
+  # mdb_load -f /tmp/mydb.dump /path/to/newdb
+
+There is no support in LMDB 1.0 for operating directly on v0.9 DB files.
+EOM
+}
+]

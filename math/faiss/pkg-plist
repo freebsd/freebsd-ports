@@ -64,6 +64,7 @@ include/faiss/impl/FaissAssert.h
 include/faiss/impl/FaissException.h
 include/faiss/impl/HNSW.h
 include/faiss/impl/IDSelector.h
+include/faiss/impl/InvertedListScannerStats.h
 include/faiss/impl/LocalSearchQuantizer.h
 include/faiss/impl/NNDescent.h
 include/faiss/impl/NSG.h
@@ -162,6 +163,7 @@ include/faiss/utils/hamming.h
 include/faiss/utils/hamming_distance/common.h
 include/faiss/utils/hamming_distance/hamming_computer-avx2.h
 include/faiss/utils/hamming_distance/hamming_computer-avx512.h
+include/faiss/utils/hamming_distance/hamming_computer-avx512_spr.h
 include/faiss/utils/hamming_distance/hamming_computer-generic.h
 include/faiss/utils/hamming_distance/hamming_computer-neon.h
 include/faiss/utils/hamming_distance/hamming_computer-rvv.h

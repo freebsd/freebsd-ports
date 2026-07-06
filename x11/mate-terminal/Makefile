@@ -1,7 +1,7 @@
 PORTNAME=	mate-terminal
-PORTVERSION=	1.28.1
+DISTVERSION=	1.28.1
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,12 +15,11 @@ BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libpcre2-8.so:devel/pcre2
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome localbase pathfix perl5 pkgconfig \
 		shebangfix tar:xz xorg
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo dconf gdkpixbuf gtk30 intltool vte3
+PORTSCOUT=	limitw:1,even
 SHEBANG_FILES=	mate-terminal.wrapper
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

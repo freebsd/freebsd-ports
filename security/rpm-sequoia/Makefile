@@ -1,6 +1,7 @@
 PORTNAME=	rpm-sequoia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES=	security archivers
 
 MAINTAINER=	yuri@FreeBSD.org

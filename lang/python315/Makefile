@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${PYTHON_SUFFIX}
 DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pre-release versions of the interpreted object-oriented programming language
 WWW=		https://www.python.org/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline \
+USES=		compiler:c11 cpe gmake ncurses pathfix pkgconfig readline \
 		shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
@@ -66,7 +66,6 @@ OPTIONS_SUB=		yes
 
 LIBMPDEC_DESC=		Use libmpdec from ports instead of bundled version
 LTO_DESC=		Use Link-Time Optimization with -flto=thin
-LTOFULL_DESC=		Use -flto=full (not =thin) (faster build at more CPU time)
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
 
@@ -183,10 +182,7 @@ sigstore-verify: ${_sigstorebundle} checksum
 		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 
 pre-test:
-	@${ECHO_CMD} "=== NOTE: the py314-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
-.if ${PORT_OPTIONS:MDEBUG}
-	@${ECHO_CMD} "=== NOTE: The test_ssl test is known to fail with DEBUG option enabled ==="
-.endif
+	@${ECHO_CMD} "=== NOTE: the py315-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
 .if empty(PORT_OPTIONS:MIPV6)
 	@${ECHO_CMD} "=== NOTE: Some asynch tests require IPV6 support enabled, expect some test failures ==="
 .endif

@@ -2539,7 +2539,7 @@ lib/cmake/openturns/OpenTURNSConfigVersion.cmake
 lib/libOT.so
 lib/libOT.so.0.28
 lib/libOT.so.0.28.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.27.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.27.1.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/DistFunc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/FittingTest.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/HypothesisTest.py

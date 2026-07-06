@@ -1,7 +1,8 @@
 PORTNAME=	lzma
-PORTVERSION=	26.01
+PORTVERSION=	26.02
 CATEGORIES=	archivers
-MASTER_SITES=	SF/sevenzip/LZMA%20SDK/
+MASTER_SITES=	SF/sevenzip/LZMA%20SDK/ \
+		https://www.7-zip.org/a/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
 MAINTAINER=	fuz@FreeBSD.org

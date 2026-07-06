@@ -3,7 +3,6 @@ bin/ntopng-geoip2update.sh
 share/man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/css/README.md
 %%DATADIR%%/httpdocs/css/select2.min.css
-%%DATADIR%%/httpdocs/dist/ntopng.css.map
 %%DATADIR%%/httpdocs/dist/1815e00441357e01619e.ttf
 %%DATADIR%%/httpdocs/dist/2463b90d9a316e4e5294.woff2
 %%DATADIR%%/httpdocs/dist/2582b0e4bcf85eceead0.ttf
@@ -35,6 +34,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/dist/login.js
 %%DATADIR%%/httpdocs/dist/login.js.map
 %%DATADIR%%/httpdocs/dist/ntopng.css
+%%DATADIR%%/httpdocs/dist/ntopng.css.map
 %%DATADIR%%/httpdocs/dist/ntopng.js
 %%DATADIR%%/httpdocs/dist/third-party.css
 %%DATADIR%%/httpdocs/dist/third-party.css.map
@@ -986,6 +986,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/exporters_utils.lua
 %%DATADIR%%/scripts/lua/modules/field_units.lua
 %%DATADIR%%/scripts/lua/modules/file_utils.lua
+%%DATADIR%%/scripts/lua/modules/find_utils.lua
 %%DATADIR%%/scripts/lua/modules/fingerprint_utils.lua
 %%DATADIR%%/scripts/lua/modules/flow_consts.lua
 %%DATADIR%%/scripts/lua/modules/flow_data.lua
@@ -1023,6 +1024,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/import_export/import_export.lua
 %%DATADIR%%/scripts/lua/modules/import_export/import_export_rest_utils.lua
 %%DATADIR%%/scripts/lua/modules/import_export/infrastructure_import_export.lua
+%%DATADIR%%/scripts/lua/modules/import_export/nedge_import_export.lua
 %%DATADIR%%/scripts/lua/modules/import_export/notifications_import_export.lua
 %%DATADIR%%/scripts/lua/modules/import_export/pool_import_export.lua
 %%DATADIR%%/scripts/lua/modules/import_export/snmp_import_export.lua

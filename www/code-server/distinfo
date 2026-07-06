@@ -1,0 +1,11 @@
+TIMESTAMP = 1782424021
+SHA256 (vscode-node-modules-1.125.0.tar.gz) = ab6dc5b6d0937e127bc5fd76cfeafb2274411f7a22b8aef1b7af64225ffef316
+SIZE (vscode-node-modules-1.125.0.tar.gz) = 1368551952
+SHA256 (vscode-reh-web-linux-x64-4.126.0.tar.gz) = 0d19ed246faed671159022e151079f5a50fa199955bb78e61320c757d492238d
+SIZE (vscode-reh-web-linux-x64-4.126.0.tar.gz) = 121799090
+SHA256 (code-server-node-modules-4.126.0.tar.gz) = e8126c13a529b5228a466262f4e33efd4b572cdf5128bd23e9946ce61cca466c
+SIZE (code-server-node-modules-4.126.0.tar.gz) = 18228541
+SHA256 (coder-code-server-4.126.0-v4.126.0_GH0.tar.gz) = f7bf36b16416687e5490856d0cc9b098da898a1f42a83e83597b40584032ff19
+SIZE (coder-code-server-4.126.0-v4.126.0_GH0.tar.gz) = 778717
+SHA256 (microsoft-vscode-1.125.0_GH0.tar.gz) = 6fa57b17a1860c2d17e46a64273991069fddb1057e98f51690496a0abddda5e0
+SIZE (microsoft-vscode-1.125.0_GH0.tar.gz) = 43902592

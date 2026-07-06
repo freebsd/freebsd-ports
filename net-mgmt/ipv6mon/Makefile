@@ -20,7 +20,7 @@ CFLAGS+=	-DIPV6MON_CONF=\\\"${PREFIX}/etc/ipv6mon.conf\\\"
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
-MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man STRIP=${STRIP}
 
 PORTDOCS=	README.TXT \
 		ipv6mon-installation-notes.odt \

@@ -1,0 +1,13 @@
+--- swiftpm/Sources/SPMSQLite3/CMakeLists.txt.orig	2025-12-02 18:02:10 UTC
++++ swiftpm/Sources/SPMSQLite3/CMakeLists.txt
+@@ -11,6 +11,10 @@ target_link_libraries(SPMSQLite3 INTERFACE
+   ${CMAKE_CURRENT_SOURCE_DIR})
+ target_link_libraries(SPMSQLite3 INTERFACE
+   SQLite::SQLite3)
++
++get_target_property(sqlite3_lib_full_path SQLite::SQLite3 IMPORTED_LOCATION)
++get_filename_component(sqlite3_lib_dir "${sqlite3_lib_full_path}" DIRECTORY)
++target_link_directories(SPMSQLite3 INTERFACE "${sqlite3_lib_dir}")
+ if(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
+   target_link_options(SPMSQLite3 INTERFACE "-L/usr/local/lib")
+ endif()

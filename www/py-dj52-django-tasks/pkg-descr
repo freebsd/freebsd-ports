@@ -1,2 +1,0 @@
-Django Tasks provides an implementation and backport of background workers and
-tasks in Django, as defined in DEP 0014.

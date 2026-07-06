@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-08-14 16:08:07 UTC
++++ pyproject.toml
+@@ -92,7 +92,7 @@ aiohttp = "^3.8.1"
+ [tool.poetry.dependencies]
+ python = "^3.8"
+ aiohttp = "^3.8.1"
+-async-timeout = "^4.0.2"
++async-timeout = ">=4.0.2"
+ yarl = "^1.5.1"
+ 
+ [tool.poetry.group.dev.dependencies]

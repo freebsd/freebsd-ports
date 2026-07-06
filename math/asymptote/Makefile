@@ -1,6 +1,5 @@
 PORTNAME=	asymptote
-PORTVERSION=	2.92
-PORTREVISION=	6
+PORTVERSION=	3.12
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -14,21 +13,29 @@ LICENSE_COMB=	dual
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
-		libsigsegv.so:devel/libsigsegv
+BUILD_DEPENDS=	glm>0:math/glm \
+		glslang>0:graphics/glslang \
+		vulkan-headers>0:graphics/vulkan-headers
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libglfw.so:graphics/glfw \
+		libsigsegv.so:devel/libsigsegv \
+		libvulkan.so:graphics/vulkan-loader \
+		libglslang.so:graphics/glslang@shared
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyside6>0:devel/pyside6 \
 		${PY_PILLOW} \
 		xdg-open:devel/xdg-utils
 
-USES=		bison compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python \
-		pyqt:5 shebangfix tar:tgz tex
-SHEBANG_FILES=	GUI/*.py
-USE_GL=		gl glu glut
+USES=		bison compiler:c++17-lang gettext-runtime ghostscript gl gmake \
+		gnome ncurses perl5 python pyqt:6 shebangfix tar:tgz tex
+SHEBANG_GLOB=	*.py
+USE_GL=		gl glu
 USE_GNOME=	librsvg2:run
 USE_PERL5=	build
 USE_TEX=	dvipsk formats
-USE_PYQT=	pyqt5:run
+USE_PYQT=	pyqt6:run
+
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
@@ -36,7 +43,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-lsp # disable the module with Boost-related errors
 
 MAKE_ENV=	ASYMPTOTE_HOME=${WRKDIR} HOME=${WRKDIR}
-MAKE_JOBS_UNSAFE=	yes # see https://github.com/vectorgraphics/asymptote/issues/331
+MAKE_JOBS_UNSAFE=yes # https://github.com/vectorgraphics/asymptote/issues/331 fixed but still needed
 
 ALL_TARGET=	asy asy-keywords.el
 INSTALL_TARGET=	install-asy
@@ -45,11 +52,12 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFAULT=	FFTW GSL MANPAGES READLINE
-OPTIONS_DEFINE=		BDWGC DOCS EXAMPLES FFTW GSL MANPAGES OFFSCREEN READLINE
+OPTIONS_DEFINE=		BDWGC DOCS EXAMPLES FFTW GSL MANPAGES READLINE
 
 BDWGC_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 BDWGC_DESC=		Enable Boehm-Demers-Weiser garbage collector
 BDWGC_CONFIGURE_ENABLE=	gc=${LOCALBASE}
+BDWGC_BROKEN=		To be fixed
 
 DOCS_ALL_TARGET=	html
 DOCS_BUILD_DEPENDS=	texi2dvi:print/texinfo
@@ -66,11 +74,7 @@ GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
 MANPAGES_ALL_TARGET=	man
 MANPAGES_BUILD_DEPENDS=	texi2dvi:print/texinfo
-MANPAGES_INFO=	asy-faq
-
-OFFSCREEN_CONFIGURE_ENABLE=	offscreen
-OFFSCREEN_DESC=	Enable offscreen rendering using OSMesa library
-OFFSCREEN_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
+MANPAGES_INFO=		asy-faq
 
 READLINE_CONFIGURE_ENABLE=	readline
 READLINE_USES=	readline
@@ -80,19 +84,10 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} 's,makeinfo,${LOCALBASE}/bin/makeinfo,' \
+pre-configure:
+	${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's,makeinfo,${LOCALBASE}/bin/makeinfo,' \
 		${WRKSRC}/doc/png/Makefile.in
-
-# Fix the python interpreter in the generated file share/asymptote/GUI/xasyVersion.py:
-	@${REINPLACE_CMD} 's,/usr/bin/env python3,${PYTHON_CMD},' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asy

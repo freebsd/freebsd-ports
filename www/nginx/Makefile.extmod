@@ -185,8 +185,9 @@ HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 HTTP_VIDEO_THUMBEXTRACTOR_EXTRA_PATCHES=${PATCHDIR}/extra-patch-nginx-thumbextractor-module-config
 
-HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:5b2604b:mod_zip
+HTTP_ZIP_GH_TUPLE=	evanmiller:mod_zip:a9f9afa:mod_zip
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
+HTTP_ZIP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
 ICONV_USES=		iconv
@@ -235,7 +236,7 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.9.9:njs
+NJS_GH_TUPLE=		nginx:njs:1.0.0:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 NJS_IMPLIES=		STREAM
 

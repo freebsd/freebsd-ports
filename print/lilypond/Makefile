@@ -1,6 +1,5 @@
 PORTNAME=	lilypond
-DISTVERSION=	2.24.4
-PORTREVISION=	1
+DISTVERSION=	2.26.0
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
@@ -22,21 +21,22 @@ BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz
+		libharfbuzz.so:print/harfbuzz \
+		libpng16.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu \
 		mftrace:print/mftrace \
 		urw-base35-fonts>0:x11-fonts/urw-base35-fonts
 
 USES=		bison:build compiler:c++11-lib cpe gettext-tools ghostscript \
 		gmake gnome magick:7,build perl5 pkgconfig python
-USE_CXXSTD=	c++14
-USE_GNOME=	pango
+USE_CXXSTD=	c++17
+USE_GNOME=	cairo pango
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		FLEX=${FLEX} \
-		GUILE_FLAVOR=guile-${GUILE_VER} \
+		GUILE_FLAVOR=${GUILE_CMD} \
 		HOME=${WRKDIR} \
 		YACC=${YACC}
 
@@ -60,7 +60,7 @@ INFO=		lilypond-changes \
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=		NLS
-OPTIONS_DEFAULT=	GUILE2
+OPTIONS_DEFAULT=	GUILE3
 OPTIONS_SINGLE=		GUILE
 OPTIONS_SINGLE_GUILE=	GUILE2 GUILE3
 OPTIONS_SUB=		yes

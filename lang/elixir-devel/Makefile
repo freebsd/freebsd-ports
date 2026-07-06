@@ -1,8 +1,6 @@
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.0
-DISTVERSIONSUFFIX=	-rc.6
-PORTREVISION=	2
+DISTVERSION=	1.20.2
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}/:doc
 PKGNAMESUFFIX=	-devel
@@ -22,7 +20,6 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
-USE_LOCALE=	en_US.UTF-8
 MAKE_ENV+=	MAN_PREFIX=${PREFIX}/share/man \
 		PATH="${LOCALBASE}/lib/erlang${_ERLANG_VER}/bin:${PATH}"
 ALL_TARGET=	# empty
@@ -57,6 +54,11 @@ post-install:
 		cd ${WRKSRC}/lib/$${lib}/lib && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/elixir/lib/$${lib}/lib; \
 		done
+
+post-stage-DOCS-on:
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} ${DOCSDIR_REL} -type f -o -type l | \
+		${SORT} >> ${TMPPLIST}
 
 do-test:
 	cd ${WRKSRC} && \

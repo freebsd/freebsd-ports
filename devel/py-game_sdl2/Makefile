@@ -13,6 +13,9 @@ WWW=		https://github.com/renpy/pygame_sdl2
 LICENSE=	LGPL21+ ZLIB
 LICENSE_COMB=	multi
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		jpeg localbase python:2.7+ sdl

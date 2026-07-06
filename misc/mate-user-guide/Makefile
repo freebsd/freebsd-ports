@@ -1,8 +1,8 @@
 PORTNAME=	mate-user-guide
-PORTVERSION=	1.28.0
-PORTREVISION=	1
+DISTVERSION=	1.28.0
+PORTREVISION=	2
 CATEGORIES=	misc mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,9 +15,8 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 		intltool>=0.40.0:textproc/intltool
 RUN_DEPENDS=	yelp:x11/yelp
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake tar:xz
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-user-guide/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

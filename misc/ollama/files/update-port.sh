@@ -16,6 +16,14 @@ GH_ACCOUNT_ORIG="ollama"
 GH_ACCOUNT_FORK="yurivict"
 GO_CMD=$(make -V GO_CMD)
 
+# make GoLang proxy to ingest the new version
+echo "==> submitting the new version $VERSION to the GoLang proxy"
+echo GOPROXY=proxy.golang.org $GO_CMD list -m github.com/$GH_ACCOUNT_FORK/ollama@v$VERSION
+
+# final message
+echo "success: done updating the $GH_ACCOUNT_FORK/$GH_PROJECT to version $VERSION"
+exit 0
+
 # check if GO_CMD is set and is a valid command
 if [ -z "$GO_CMD" ]; then
 	echo "error: GO_CMD is not set"
@@ -48,9 +56,6 @@ cp -r \
 	../$GH_ACCOUNT_ORIG-$GH_PROJECT.repo/.gitignore \
 	../$GH_ACCOUNT_ORIG-$GH_PROJECT.repo/.golangci.yaml \
 	.
-
-# apply freebsd compatibility patch
-(patch-no-backup-1 < ../files/freebsd-compatibility.patch) || { echo "error: failed to apply freebsd compatibility patch"; exit 1; }
 
 # change import path to the fork
 grep -rl ollama/ollama | xargs sed -i '' -e 's|ollama/ollama|yurivict/ollama|g'

@@ -1,3 +1,5 @@
 TIMESTAMP = 1688076173
 SHA256 (StrEnum-0.4.15.tar.gz) = 878fb5ab705442070e4dd1929bb5e2249511c0bcf2b0eeacf3bcd80875c82eff
 SIZE (StrEnum-0.4.15.tar.gz) = 23384
+SHA256 (896bef1b7e4a.patch) = f39d3b96dfc0447a3c54ec8083f90e3c40ce92196e232e694cec232bf8709fb0
+SIZE (896bef1b7e4a.patch) = 923

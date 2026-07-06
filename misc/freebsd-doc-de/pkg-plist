@@ -7,6 +7,7 @@
 %%HTML%%%%DOCBASE%%/de/articles/new-users/index.html
 %%HTML%%%%DOCBASE%%/de/articles/port-mentor-guidelines/index.html
 %%HTML%%%%DOCBASE%%/de/articles/solid-state/index.html
+%%HTML%%%%DOCBASE%%/de/articles/articles/x86-assembly/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/bibliography/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/index.html
@@ -19,13 +20,11 @@
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/partii/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/partiii/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/partiv/index.html
-%%HTML%%%%DOCBASE%%/de/books/developers-handbook/partv/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/policies/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/secure/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/sockets/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/testing/index.html
 %%HTML%%%%DOCBASE%%/de/books/developers-handbook/tools/index.html
-%%HTML%%%%DOCBASE%%/de/books/developers-handbook/x86/index.html
 %%HTML%%%%DOCBASE%%/de/books/faq/index.html
 %%HTML%%%%DOCBASE%%/de/books/handbook/advanced-networking/index.html
 %%HTML%%%%DOCBASE%%/de/books/handbook/audit/index.html
@@ -95,6 +94,7 @@
 %%PDF%%%%DOCBASE%%/de/articles/new-users/new-users_de.pdf
 %%PDF%%%%DOCBASE%%/de/articles/port-mentor-guidelines/port-mentor-guidelines_de.pdf
 %%PDF%%%%DOCBASE%%/de/articles/solid-state/solid-state_de.pdf
+%%PDF%%%%DOCBASE%%/de/articles/x86-assembly/x86-assembly_de.pdf
 %%PDF%%%%DOCBASE%%/de/books/developers-handbook/developers-handbook_de.pdf
 %%PDF%%%%DOCBASE%%/de/books/faq/faq_de.pdf
 %%PDF%%%%DOCBASE%%/de/books/handbook/handbook_de.pdf

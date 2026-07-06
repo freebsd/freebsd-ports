@@ -20,8 +20,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 
 USES=		cpe libtool pathfix pkgconfig
-CPE_VENDOR=	boehm-demers-weiser
-CPE_PRODUCT=	garbage_collector
+CPE_VENDOR=	bdwgc_project
+CPE_PRODUCT=	bdwgc
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

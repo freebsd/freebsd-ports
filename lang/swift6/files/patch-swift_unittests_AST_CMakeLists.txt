@@ -1,0 +1,13 @@
+--- swift/unittests/AST/CMakeLists.txt.orig	2026-04-14 02:40:33 UTC
++++ swift/unittests/AST/CMakeLists.txt
+@@ -20,7 +20,10 @@ target_link_libraries(SwiftASTTests
+ target_link_libraries(SwiftASTTests
+    PRIVATE
+    swiftAST
++   swiftFrontend
+    # FIXME: Circular dependencies.
+    swiftParse
+    swiftSema
++   swiftSILGen
++   swiftSILOptimizer
+ )

@@ -10,7 +10,6 @@
 # ELIXIR_LIB_ROOT	- Elixir default library path
 # ELIXIR_APP_ROOT	- Root directory for this Elixir app
 # ELIXIR_HIDDEN		- Applications to be hidden from the code path; usually ${PORTNAME}
-# ELIXIR_LOCALE		- An UTF-8 locale to be used by Elixir during builds (any UTF-8 locale is good)
 # MIX_CMD		- The "mix" command
 # MIX_COMPILE		- The "mix" command used to compile an Elixir app
 # MIX_REWRITE		- Automatically replace Mix dependencies with code paths
@@ -40,9 +39,8 @@ ELIXIR_APP_NAME?=	${PORTNAME}
 ELIXIR_LIB_ROOT?=	${LOCALBASE}/lib/elixir/lib
 ELIXIR_APP_ROOT?=	${PREFIX}/lib/elixir/lib/${ELIXIR_APP_NAME}
 ELIXIR_HIDDEN?=		"^${ELIXIR_APP_NAME}$$"
-ELIXIR_LOCALE?=		en_US.UTF-8
 MIX_CMD?=		${LOCALBASE}/bin/mix
-MIX_COMPILE?=		${SETENVI} ${WRK_ENV} ${MIX_ENV} LANG=${ELIXIR_LOCALE} LC_ALL=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} ${MIX_TARGET}
+MIX_COMPILE?=		${SETENVI} ${WRK_ENV} ${MIX_ENV} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} ${MIX_TARGET}
 MIX_REWRITE?=
 MIX_BUILD_DEPS?=
 MIX_RUN_DEPS?=

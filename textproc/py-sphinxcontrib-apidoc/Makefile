@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/[-_.]/_/}-${DISTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A Sphinx extension for running sphinx-apidoc on each build
+COMMENT=	Sphinx extension for running sphinx-apidoc on each build
 WWW=		https://github.com/sphinx-contrib/apidoc
 
 LICENSE=	BSD2CLAUSE
@@ -20,5 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=5.0.0:textproc/py-sphinx@${PY_FLAVOR
 
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

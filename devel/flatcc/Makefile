@@ -10,7 +10,8 @@ WWW=		https://github.com/dvidelabs/flatcc
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++11-lib cpe
+CPE_VENDOR=	flatcc_project
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

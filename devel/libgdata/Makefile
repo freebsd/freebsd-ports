@@ -19,7 +19,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgcr-base-3.so:security/gcr3 \
 		liboauth.so:net/liboauth
 
-USES=		gettext gnome localbase meson pkgconfig tar:xz vala:build
+USES=		cpe gettext gnome localbase meson pkgconfig tar:xz vala:build
+CPE_VENDOR=	gnome
 USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
 

@@ -74,6 +74,7 @@ include/ViennaRNA/constraints_hard.h
 include/ViennaRNA/constraints_ligand.h
 include/ViennaRNA/constraints_soft.h
 include/ViennaRNA/convert_epars.h
+include/ViennaRNA/data/transform.h
 include/ViennaRNA/data_structures.h
 include/ViennaRNA/datastructures/array.h
 include/ViennaRNA/datastructures/basic.h
@@ -134,6 +135,7 @@ include/ViennaRNA/loops/external.h
 include/ViennaRNA/loops/hairpin.h
 include/ViennaRNA/loops/internal.h
 include/ViennaRNA/loops/multibranch.h
+include/ViennaRNA/math/functions.h
 include/ViennaRNA/mconf.h
 include/ViennaRNA/mfe.h
 include/ViennaRNA/mfe/exterior.h
@@ -189,6 +191,10 @@ include/ViennaRNA/probabilities/basepairs.h
 include/ViennaRNA/probabilities/structures.h
 include/ViennaRNA/probing/SHAPE.h
 include/ViennaRNA/probing/basic.h
+include/ViennaRNA/probing/strategy_deigan.h
+include/ViennaRNA/probing/strategy_eddy.h
+include/ViennaRNA/probing/strategy_nlogp.h
+include/ViennaRNA/probing/strategy_zarringhalam.h
 include/ViennaRNA/profiledist.h
 include/ViennaRNA/read_epars.h
 include/ViennaRNA/ribo.h
@@ -266,6 +272,10 @@ share/ViennaRNA/bin/rotate_ss.pl
 share/ViennaRNA/bin/switch.pl
 share/ViennaRNA/dna_mathews1999.par
 share/ViennaRNA/dna_mathews2004.par
+share/ViennaRNA/prior_probing_1M7_paired.data
+share/ViennaRNA/prior_probing_1M7_unpaired.data
+share/ViennaRNA/prior_probing_DMS_paired.data
+share/ViennaRNA/prior_probing_DMS_unpaired.data
 share/ViennaRNA/rna_andronescu2007.par
 share/ViennaRNA/rna_langdon2018.par
 share/ViennaRNA/rna_misc_special_hairpins.par

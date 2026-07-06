@@ -1,0 +1,13 @@
+speedata Publisher is a professional, non-interactive layout engine for
+database publishing. It generates high-quality PDF files from XML data
+and XML layout instructions, making it well suited for product catalogs,
+price lists, and other documents with demanding layout requirements.
+The layout description language allows complex, nearly arbitrary page
+designs while keeping the job as straightforward as possible. It can be
+thought of as "XSL-FO on steroids" or a server-side alternative to
+desktop publishing tools like InDesign. It is production-proven and used
+in commercial environments worldwide.
+The core typesetting engine is LuaTeX (not included; must be provided
+separately via download.speedata.de or the official packages). The Go
+front-end binary (sp) drives the build process and handles XML parsing,
+resource loading, and orchestration of the LuaTeX process.

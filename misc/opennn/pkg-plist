@@ -9,6 +9,7 @@ include/opennn/dataset.h
 include/opennn/dense_layer.h
 include/opennn/embedding_layer.h
 include/opennn/flatten_layer.h
+include/opennn/formula_expression.h
 include/opennn/genetic_algorithm.h
 include/opennn/growing_inputs.h
 include/opennn/growing_neurons.h

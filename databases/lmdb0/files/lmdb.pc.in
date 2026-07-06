@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: lmdb
+Description: Lightning Memory-Mapped Database
+URL: https://symas.com/lmdb/
+Version: %%PORTVERSION%%
+Libs: -L${libdir} -llmdb
+Cflags: -I${includedir}

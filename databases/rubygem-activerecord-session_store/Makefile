@@ -16,8 +16,11 @@ RUN_DEPENDS=	rubygem-actionpack80>=7.0:www/rubygem-actionpack80 \
 		rubygem-rack>=2.0.8,3<4,3:www/rubygem-rack \
 		rubygem-railties80>=7.0:www/rubygem-railties80
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	active_record_session_store
 
 .include <bsd.port.mk>

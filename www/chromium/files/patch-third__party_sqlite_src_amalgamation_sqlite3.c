@@ -1,6 +1,6 @@
---- third_party/sqlite/src/amalgamation/sqlite3.c.orig	2026-05-07 17:02:56 UTC
+--- third_party/sqlite/src/amalgamation/sqlite3.c.orig	2026-07-01 06:24:19 UTC
 +++ third_party/sqlite/src/amalgamation/sqlite3.c
-@@ -14770,7 +14770,7 @@ struct fts5_api {
+@@ -15161,7 +15161,7 @@ struct fts5_api {
  ** But _XOPEN_SOURCE define causes problems for Mac OS X, so omit
  ** it.
  */
@@ -9,7 +9,7 @@
  #  define _XOPEN_SOURCE 600
  #endif
  
-@@ -46304,7 +46304,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -47271,7 +47271,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
    memset(zBuf, 0, nBuf);
    randomnessPid = osGetpid(0);
  #if !defined(SQLITE_TEST) && !defined(SQLITE_OMIT_RANDOMNESS)
@@ -22,7 +22,7 @@
      int fd, got;
      fd = robust_open("/dev/urandom", O_RDONLY, 0);
      if( fd<0 ){
-@@ -46319,6 +46324,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -47286,6 +47291,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
        robust_close(0, fd, __LINE__);
      }
    }

@@ -1,5 +1,6 @@
 PORTNAME=	cgicc
-PORTVERSION=	3.2.20
+DISTVERSION=	3.2.20
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
@@ -9,13 +10,18 @@ WWW=		https://www.gnu.org/software/cgicc/
 
 LICENSE=	LGPL3+
 
+DEPRECATED=		Unmaintained upstream
+EXPIRATION_DATE=	2026-07-31
+
 USES=		autoreconf:build libtool pathfix
 USE_CXXSTD=	c++11
 USE_GCC=	12
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

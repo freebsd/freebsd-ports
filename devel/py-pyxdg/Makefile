@@ -18,7 +18,8 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	python
 USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes

@@ -1,5 +1,5 @@
 PORTNAME=	nekobox
-DISTVERSION=	5.11.8
+DISTVERSION=	5.11.24
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,18 +13,22 @@ BUILD_DEPENDS=	thrift:devel/thrift
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcpr.so:www/cpr \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb \
-		libthrift.so:devel/thrift-cpp
+		libleveldb.so:databases/leveldb \
+		libsnappy.so:archivers/snappy \
+		libthrift.so:devel/thrift-cpp \
+		libyaml-cpp.so:devel/yaml-cpp
 RUN_DEPENDS=	sing-box:net/sing-box
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl localbase:ldflags pkgconfig qt:6 xorg
-USE_GL=		gl opengl
-USE_QT=		base declarative tools:build
+USE_GL=		opengl
+USE_QT=		base tools:build
 USE_XORG=	ice sm x11 xext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qr243vbi
 GH_PROJECT=	nekobox
+GH_TUPLE=	libcpr:cpr:e3edc33:cpr/src/3rdparty/cpr \
+		quickjs-ng:quickjs:fd0a021:qjs/src/3rdparty/qjs
 
 CMAKE_ON=	CMAKE_SKIP_INSTALL_RPATH \
 		SKIP_UPDATER

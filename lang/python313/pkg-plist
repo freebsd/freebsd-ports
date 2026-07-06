@@ -1753,7 +1753,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-26.0.1-py3-none-any.whl
+%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_uninstall.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/enum.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/filecmp.py
@@ -5008,6 +5008,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_watchers%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_watchers%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_watchers%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_weakref%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_weakref%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_weakref%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/check_config.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_abstract.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_bytearray.py
@@ -5040,6 +5043,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_tuple.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_unicode.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_watchers.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_weakref.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_cext/__init__.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_cext/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_cext/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -6416,6 +6420,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/__pycache__/test_unicode%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/__pycache__/test_unicode%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/__pycache__/test_unicode%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/json_lines.jsonl
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/test_decode.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/test_default.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_json/test_dump.py

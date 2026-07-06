@@ -1,0 +1,13 @@
+-- Exclude examples from being installed as a top-level package.
+
+--- pyproject.toml.orig	2026-06-08 09:40:15 UTC
++++ pyproject.toml
+@@ -45,7 +45,7 @@ Issues = "https://github.com/Zulko/gizeh/issues"
+ Issues = "https://github.com/Zulko/gizeh/issues"
+ 
+ [tool.setuptools.packages.find]
+-exclude = ["docs*", "tests*"]
++exclude = ["docs*", "tests*", "examples*"]
+ 
+ [tool.ruff]
+ target-version = "py37"

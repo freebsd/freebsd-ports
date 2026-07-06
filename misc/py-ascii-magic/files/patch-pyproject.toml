@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-06-04 19:46:59 UTC
++++ pyproject.toml
+@@ -7,7 +7,6 @@ readme = "README.md"
+ version = "2.7.5"
+ description = "Converts pictures into ASCII art"
+ readme = "README.md"
+-license = "MIT"
+ requires-python = ">= 3.6"
+ authors = [
+     { name = "Leandro Barone", email = "web@leandrobarone.com.ar" },

@@ -1,5 +1,5 @@
 PORTNAME=	cppcheck
-DISTVERSION=	2.20.1
+DISTVERSION=	2.21.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs
 
-USES=		compiler:c++11-lib shebangfix tar:bzip2
+USES=		compiler:c++11-lib cpe shebangfix tar:bzip2
+CPE_VENDOR=	cppchecksolutions
 USE_GITHUB=	yes
 GH_ACCOUNT=	danmar
 SHEBANG_FILES=	htmlreport/cppcheck-htmlreport

@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/startup_tab_provider.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ui/startup/startup_tab_provider.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/ui/startup/startup_tab_provider.cc
-@@ -66,7 +66,7 @@
+@@ -67,7 +67,7 @@
  #include "extensions/common/manifest_handlers/chrome_url_overrides_handler.h"
  #endif  // !BUILDFLAG(IS_ANDROID)
  

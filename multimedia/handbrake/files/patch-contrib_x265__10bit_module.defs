@@ -1,0 +1,11 @@
+--- contrib/x265_10bit/module.defs.orig	2026-03-22 14:31:00 UTC
++++ contrib/x265_10bit/module.defs
+@@ -16,7 +16,7 @@
+ X265_10.CONFIGURE.deps        =
+ X265_10.CONFIGURE.static      =
+ X265_10.CONFIGURE.shared      = -DENABLE_SHARED=OFF
+-X265_10.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DCMAKE_ASM_NASM_FLAGS=-w-macro-params-legacy
++X265_10.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DENABLE_ALTIVEC=OFF -DCMAKE_ASM_NASM_FLAGS=-w-macro-params-legacy
+ 
+ ifneq (1,$(FEATURE.numa))
+     X265_10.CONFIGURE.extra  += -DENABLE_LIBNUMA=OFF

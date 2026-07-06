@@ -9,13 +9,6 @@
 %%OCAML_SITELIBDIR%%/base64/base64.cmxs
 %%OCAML_SITELIBDIR%%/base64/base64.ml
 %%OCAML_SITELIBDIR%%/base64/base64.mli
-%%OCAML_SITELIBDIR%%/base64/base64__.cmi
-%%OCAML_SITELIBDIR%%/base64/base64__.cmt
-%%OCAML_SITELIBDIR%%/base64/base64__.cmx
-%%OCAML_SITELIBDIR%%/base64/base64__.ml
-%%OCAML_SITELIBDIR%%/base64/base64__Unsafe.cmi
-%%OCAML_SITELIBDIR%%/base64/base64__Unsafe.cmt
-%%OCAML_SITELIBDIR%%/base64/base64__Unsafe.cmx
 %%OCAML_SITELIBDIR%%/base64/dune-package
 %%OCAML_SITELIBDIR%%/base64/opam
 %%OCAML_SITELIBDIR%%/base64/rfc2045/base64_rfc2045.a
@@ -28,4 +21,3 @@
 %%OCAML_SITELIBDIR%%/base64/rfc2045/base64_rfc2045.cmxs
 %%OCAML_SITELIBDIR%%/base64/rfc2045/base64_rfc2045.ml
 %%OCAML_SITELIBDIR%%/base64/rfc2045/base64_rfc2045.mli
-%%OCAML_SITELIBDIR%%/base64/unsafe.ml

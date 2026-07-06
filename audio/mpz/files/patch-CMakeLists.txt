@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2026-06-07 05:11:46 UTC
++++ CMakeLists.txt
+@@ -329,10 +329,9 @@ endif()
+ # ENDOF TAGLIB
+ 
+ # QHOTKEY
+-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE qhotkey)
+-set(QHOTKEY_DIR 3rdparty/QHotkey-1.5.0)
+-add_subdirectory(${QHOTKEY_DIR})
+-message(STATUS "using vendored qhotkey from ${QHOTKEY_DIR}")
++find_library(QHOTKEY_LIB qhotkey REQUIRED)
++message(STATUS "using system-wide qhotkey")
++target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${QHOTKEY_LIB})
+ # ENDOF QHOTKEY
+ 
+ # QTWAITINGSPINNER
+@@ -362,7 +361,7 @@ endif()
+ # demangled function names from STRIPPED release binaries (no DWARF shipped).
+ # Skipped on Windows: PE has no .dynsym equivalent for executables, so the
+ # same trick can't work there without shipping DWARF or PDBs.
+-if(UNIX AND NOT APPLE)
++if(LINUX AND NOT APPLE)
+   set(CPPTRACE_DIR 3rdparty/cpptrace-1.0.4)
+   set(CPPTRACE_BUILD_TESTING OFF CACHE BOOL "" FORCE)
+   set(CPPTRACE_GET_SYMBOLS_WITH_LIBDL ON CACHE BOOL "" FORCE)

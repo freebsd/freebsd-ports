@@ -1,6 +1,6 @@
---- net/dns/BUILD.gn.orig	2026-05-11 13:57:04 UTC
+--- net/dns/BUILD.gn.orig	2026-06-10 12:51:34 UTC
 +++ net/dns/BUILD.gn
-@@ -170,7 +170,7 @@ source_set("dns") {
+@@ -169,7 +169,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]
@@ -9,7 +9,7 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -204,6 +204,7 @@ source_set("dns") {
+@@ -203,6 +203,7 @@ source_set("dns") {
    }
  
    deps = [ "//net:net_deps" ]
@@ -17,7 +17,7 @@
  
    public_deps = [
      ":dns_client",
-@@ -283,6 +284,7 @@ source_set("host_resolver") {
+@@ -281,6 +282,7 @@ source_set("host_resolver") {
    deps = [
      "//net:net_deps",
      "//net/dns/public",
@@ -25,7 +25,7 @@
    ]
    public_deps = [ "//net:net_public_deps" ]
  
-@@ -493,9 +495,9 @@ source_set("tests") {
+@@ -484,9 +486,9 @@ source_set("tests") {
        "mock_dns_platform_android_attempt_delegate.cc",
        "mock_dns_platform_android_attempt_delegate.h",
      ]

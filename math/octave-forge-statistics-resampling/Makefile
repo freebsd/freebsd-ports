@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-statistics-resampling
 DISTVERSION=	5.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

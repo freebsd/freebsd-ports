@@ -72,6 +72,8 @@ bin/lynx
 %%PORTDOCS%%%%DOCSDIR%%/test/circle.html
 %%PORTDOCS%%%%DOCSDIR%%/test/cp-1252.html
 %%PORTDOCS%%%%DOCSDIR%%/test/cp-1252a.html
+%%PORTDOCS%%%%DOCSDIR%%/test/formaction.html
+%%PORTDOCS%%%%DOCSDIR%%/test/formaction2.html
 %%PORTDOCS%%%%DOCSDIR%%/test/image.jpg
 %%PORTDOCS%%%%DOCSDIR%%/test/idna-tr46.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1.html
@@ -79,6 +81,7 @@ bin/lynx
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/koi8-r.html
+%%PORTDOCS%%%%DOCSDIR%%/test/named-entities.html
 %%PORTDOCS%%%%DOCSDIR%%/test/nobody
 %%PORTDOCS%%%%DOCSDIR%%/test/quickbrown.html
 %%PORTDOCS%%%%DOCSDIR%%/test/raw8bit.html
@@ -105,6 +108,8 @@ bin/lynx
 %%NLS%%share/locale/id/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/lynx.mo

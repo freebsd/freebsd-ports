@@ -1,0 +1,7 @@
+Digestif is a hashing library for OCaml supporting the following
+algorithm: BLAKE2B, BLAKE2S, Keccak-256, MD5, RIPEMD160, SHA1, SHA224,
+SHA256, SHA3, SHA384, SHA512 and WHIRLPOOL.
+
+This library permits to link against one of the two provided
+implementations: the pure OCaml implementation ("digestif.ocaml"), or
+one written in the C language ("digestif.c").

@@ -1,5 +1,5 @@
 PORTNAME=	graphite2
-DISTVERSION=	1.3.14
+DISTVERSION=	1.3.15
 CATEGORIES=	graphics print
 MASTER_SITES=	https://github.com/silnrsi/graphite/releases/download/${DISTVERSION}/
 
@@ -12,13 +12,12 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>0:print/py-fonttools@${PY_FLAVOR}
-LDFLAGS+=	-Wl,--as-needed
 
-USES=		cmake compiler:c++11-lib cpe python:test tar:tgz
-USE_LDCONFIG=	yes
+USES=		cmake:testing compiler:c++11-lib cpe pathfix python:test tar:tgz
 CPE_VENDOR=	sil
+USE_LDCONFIG=	yes
 
-TEST_TARGET=	test
+CMAKE_OFF=	BUILD_TESTING
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig|data&|' ${WRKSRC}/CMakeLists.txt

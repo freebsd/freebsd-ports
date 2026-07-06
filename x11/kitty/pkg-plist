@@ -73,10 +73,10 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_multiple-cursors-protocol_49ab6a61.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_open_actions_b5f13270.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_overview_249bd848.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_performance_fb7e6752.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_performance_76c80d2e.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_pipe_168d77ad.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_pointer-shapes_96e448ee.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_press-mentions_84bca3c2.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_press-mentions_3ce20e22.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_protocol-extensions_ea5204ed.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_quake-screenshots_d232c5bb.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_quickstart_9d1a56df.png
@@ -165,7 +165,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/underlines.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/unscroll.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/wide-gamut-colors.rst.txt
-%%PORTDOCS%%%%DOCSDIR%%/_static/_sphinx_javascript_frameworks_compat.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/base-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/check-solid.svg
 %%PORTDOCS%%%%DOCSDIR%%/_static/clipboard.min.js
@@ -178,9 +178,8 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_static/debug.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/documentation_options.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/english-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-3.6.0.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/kitty.svg
 %%PORTDOCS%%%%DOCSDIR%%/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
@@ -202,8 +201,6 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_static/tabs.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/timestamps.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/timestamps.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/underscore-1.13.1.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/actions.html
 %%PORTDOCS%%%%DOCSDIR%%/binary.html
 %%PORTDOCS%%%%DOCSDIR%%/build.html
@@ -1061,6 +1058,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/terminfo/kitty.termcap
 %%DATADIR%%/terminfo/kitty.terminfo
 %%DATADIR%%/terminfo/x/xterm-kitty
-%%PORTMANPAGES%%share/man/man1/kitty.1.gz
-%%PORTMANPAGES%%share/man/man5/kitty.conf.5.gz
+share/man/man1/kitty.1.gz
+share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo

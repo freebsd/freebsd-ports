@@ -1,5 +1,4 @@
-@(,games,2755) bin/lmarbles
-share/man/man6/lmarbles.6.gz
+bin/lmarbles
 share/applications/lmarbles.desktop
 %%DATADIR%%/gfx/board.bmp
 %%DATADIR%%/gfx/f_red.bmp
@@ -58,6 +57,12 @@ share/applications/lmarbles.desktop
 %%DATADIR%%/gfx/wood/wall.bmp
 %%DATADIR%%/gfx/wood/wall_crumble.bmp
 %%DATADIR%%/levels/Original
+%%DATADIR%%/manual/arrow.jpg
+%%DATADIR%%/manual/arrow2.jpg
+%%DATADIR%%/manual/crumble.jpg
+%%DATADIR%%/manual/manual.html
+%%DATADIR%%/manual/marbles.jpg
+%%DATADIR%%/manual/teleport.jpg
 %%DATADIR%%/sounds/alarm.wav
 %%DATADIR%%/sounds/arrow.wav
 %%DATADIR%%/sounds/click.wav
@@ -66,8 +71,7 @@ share/applications/lmarbles.desktop
 %%DATADIR%%/sounds/select.wav
 %%DATADIR%%/sounds/stop.wav
 %%DATADIR%%/sounds/teleport.wav
-share/pixmaps/lmarbles32.png
-share/pixmaps/lmarbles48.gif
-share/pixmaps/lmarbles48.png
-@sample(,games,664) /var/games/lmarbles/lmarbles.prfs.sample
-@dir /var/games/lmarbles
+share/locale/de/LC_MESSAGES/lmarbles.mo
+share/locale/fr/LC_MESSAGES/lmarbles.mo
+share/man/man6/lmarbles.6.gz
+share/pixmaps/lmarbles.png

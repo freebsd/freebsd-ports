@@ -1,7 +1,10 @@
+%%ZIPSRC%%%%DATADIR%%/bcjmail-src.zip
 %%ZIPSRC%%%%DATADIR%%/bcmail-src.zip
 %%ZIPSRC%%%%DATADIR%%/bcpg-src.zip
 %%ZIPSRC%%%%DATADIR%%/bcpkix-src.zip
 %%ZIPSRC%%%%DATADIR%%/bcprov-src.zip
+%%ZIPSRC%%%%DATADIR%%/bctls-src.zip
+%%ZIPSRC%%%%DATADIR%%/bcutil-src.zip
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS.html
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
 %%PORTDOCS%%%%DOCSDIR%%/bcjmail/index.html

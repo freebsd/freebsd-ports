@@ -1,7 +1,7 @@
 PORTNAME=	joplin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.14
-PORTREVISION=	1
+DISTVERSION=	3.6.15
+PORTREVISION=	2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-desktop
 DISTFILES=	${DEFAULT_PLUGINS_NODE_MODULES_FILE}:prefetch \
@@ -22,9 +22,10 @@ BUILD_DEPENDS=	7zz:archivers/7-zip \
 LIB_DEPENDS=	libvips.so:graphics/vips \
 		libsecret-1.so:security/libsecret
 
-USES=		cargo electron:40 gmake localbase:ldflags nodejs:24,build \
-		python:build
+USES=		cargo cpe electron:40 gmake localbase:ldflags nodejs:24,build \
+		npm:yarn4 python:build
 
+CPE_VENDOR=	joplinapp
 USE_GITHUB=	yes
 GH_ACCOUNT=	laurent22
 GH_TUPLE=	rollup:rollup:v4.9.1:rollup/rollup \
@@ -46,7 +47,7 @@ CARGO_TEST=	no
 
 BINARY_ALIAS=		python3=${PYTHON_CMD}
 SUB_FILES=		${PORTNAME}${PKGNAMESUFFIX}
-TARGET_ORDER_OVERRIDE=	750:electron-install-node-modules
+TARGET_ORDER_OVERRIDE=	750:npm-install-node-modules
 
 BUILD_WRKSRC=	${WRKSRC}/packages/app-desktop
 TEST_WRKSRC=	${WRKSRC}/packages/app-desktop
@@ -55,7 +56,7 @@ PORTDOCS=	README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
-USE_ELECTRON=	npm:yarn4 appbuilder prefetch extract build:builder
+USE_ELECTRON=	appbuilder build:builder
 
 DEFAULT_PLUGINS_NODE_MODULES_FILE=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-default-plugins-node-modules${EXTRACT_SUFX}
 APP_CLIPPER_NODE_MODULES_FILE=		${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-app-clipper-node-modules${EXTRACT_SUFX}
@@ -75,8 +76,7 @@ pre-fetch:
 		${SETENV} SCRIPTSDIR=${SCRIPTSDIR} WRKDIR=${WRKDIR} \
 			${SH} ${SCRIPTSDIR}/electron-create-mtree.sh node-modules-cache > \
 			node-modules-cache.mtree && \
-		${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-			${TAR} -cz --options 'gzip:!timestamp' \
+		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DEFAULT_PLUGINS_NODE_MODULES_FILE} @node-modules-cache.mtree; \
 		${RM} -r ${WRKDIR}/node-modules-cache; \
 	fi
@@ -92,8 +92,7 @@ pre-fetch:
 		${SETENV} SCRIPTSDIR=${SCRIPTSDIR} WRKDIR=${WRKDIR} \
 			${SH} ${SCRIPTSDIR}/electron-create-mtree.sh node-modules-cache-app-clipper > \
 			node-modules-cache-app-clipper.mtree && \
-		${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-			${TAR} -cz --options 'gzip:!timestamp' \
+		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${APP_CLIPPER_NODE_MODULES_FILE} @node-modules-cache-app-clipper.mtree; \
 		${RM} -r ${WRKDIR}/node-modules-cache-app-clipper; \
 	fi

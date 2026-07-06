@@ -1,6 +1,6 @@
 PORTNAME=	sdcc
 DISTVERSIONPREFIX=	src-
-DISTVERSION=	4.4.0
+DISTVERSION=	4.6.0
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -16,8 +16,9 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/sdas/COPYING3
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs \
 		gpasm:devel/gputils
 LIB_DEPENDS=	libzstd.so:archivers/zstd
+RUN_DEPENDS=	gpasm:devel/gputils
 
-USES=		autoreconf:build bison compiler:c++11-lang gmake iconv \
+USES=		bison compiler:c++11-lang gettext-runtime gmake iconv \
 		localbase python readline shebangfix tar:bzip2
 SHEBANG_FILES=	support/scripts/as2gbmap.py
 
@@ -39,7 +40,6 @@ PLIST_SUB=	CONFIGURE_TARGET=${CONFIGURE_TARGET}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -52,8 +52,6 @@ post-patch:
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/sdas/linksrc/Makefile.in \
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
-	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' \
-		${WRKSRC}/support/sdbinutils/bfd/Makefile.in
 	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/PICARCH/g' \
 		${WRKSRC}/device/lib/pic14/Makefile.common \
 		${WRKSRC}/device/lib/pic14/Makefile.in \
@@ -85,10 +83,17 @@ post-patch:
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/sim/ucsim/packages_in.mk
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${FIND} -d ${STAGEDIR}${DATADIR} -type d -empty -delete
+# Remove BFD related things otherwise we conflict with the binutils port
+	${RM}	${STAGEDIR}${PREFIX}/bin/c++filt \
+		${ctf-api.h ctf.h dis-asm.h sframe-api.h sframe.h \
+			:L:S|^|${STAGEDIR}${PREFIX}/include/|} \
+		${libctf* libopcodes* libsframe* \
+			:L:S|^|${STAGEDIR}${PREFIX}/lib/|} \
+		${ctf-spec.info sframe-spec.info \
+			:L:S|^|${STAGEDIR}${PREFIX}/share/info/|}
 
 .include <bsd.port.mk>

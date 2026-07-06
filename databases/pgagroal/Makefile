@@ -1,11 +1,11 @@
 PORTNAME=	pgagroal
-DISTVERSION=	2.0.2
+DISTVERSION=	2.1.0
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/agroal/${PORTNAME}/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance protocol-native connection pool for PostgreSQL
-WWW=		https://agroal.github.io/pgagroal/
+WWW=		https://pgagroal.github.io/
 
 LICENSE=	BSD3CLAUSE
 

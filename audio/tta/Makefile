@@ -10,6 +10,9 @@ WWW=		http://www.true-audio.com/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Legacy format, no active development for a decade
+EXPIRATION_DATE=2026-08-31
+
 USES=		gmake tar:tgz
 ALL_TARGET=	ttaenc
 MAKE_ARGS=	CFLAGS="${CFLAGS}" INSDIR="${STAGEDIR}${PREFIX}/bin"

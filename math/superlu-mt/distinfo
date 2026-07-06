@@ -1,0 +1,5 @@
+TIMESTAMP = 1780814452
+SHA256 (xiaoyeli-superlu_mt-v4.0.2_GH0.tar.gz) = bc6659b145347fa77f90902827c140204c779f297ecb0dddb02a9d71dd2963a9
+SIZE (xiaoyeli-superlu_mt-v4.0.2_GH0.tar.gz) = 1800129
+SHA256 (b121cf0fcafbd10a1ca18c8d062d54cd68bbae9d.patch) = e17ef42ea1534f29e70af725f192b389fdab943d60a855133d214b82badce8be
+SIZE (b121cf0fcafbd10a1ca18c8d062d54cd68bbae9d.patch) = 4472

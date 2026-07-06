@@ -110,7 +110,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	82 83 84 85
+_ALL_PHP_VERSIONS=	82 83 84 85 86
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -179,7 +179,10 @@ PHP_VER=	${FLAVOR:S/^php//}
 	(${FLAVOR:Mphp[0-9][0-9]} && ${FLAVOR} != ${FLAVORS:[1]})
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.    if ${PHP_VER} == 85
+.    if ${PHP_VER} == 86
+PHP_EXT_DIR=   20250926
+PHP_EXT_INC=    hash json opcache openssl pcre random spl
+.    elif ${PHP_VER} == 85
 PHP_EXT_DIR=   20250925
 PHP_EXT_INC=    hash json opcache openssl pcre random spl
 .    elif ${PHP_VER} == 84
@@ -372,21 +375,22 @@ add-plist-phpext:
 # Extensions
 .  if defined(USE_PHP) && ${USE_PHP:tl} != "yes"
 # non-version specific components
-_USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
+_USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dom \
 		enchant exif ffi fileinfo filter ftp gd gettext gmp \
 		hash iconv igbinary imap intl json ldap mbstring mcrypt \
 		memcache memcached mysqli odbc \
 		openssl pcntl pcre pdo pdo_dblib pdo_firebird pdo_mysql \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
-		pspell radius random readline redis session shmop simplexml snmp \
+		pspell radius random readline session shmop simplexml snmp \
 		soap sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zephir_parser \
 		zip zlib
 # version specific components
-_USE_PHP_VER82=	${_USE_PHP_ALL} opcache
-_USE_PHP_VER83=	${_USE_PHP_ALL} opcache
-_USE_PHP_VER84=	${_USE_PHP_ALL} opcache
-_USE_PHP_VER85=	${_USE_PHP_ALL}
+_USE_PHP_VER82=	${_USE_PHP_ALL} bitset imagick opcache redis
+_USE_PHP_VER83=	${_USE_PHP_ALL} bitset imagick opcache redis
+_USE_PHP_VER84=	${_USE_PHP_ALL} bitset imagick opcache redis
+_USE_PHP_VER85=	${_USE_PHP_ALL} bitset imagick redis
+_USE_PHP_VER86=	${_USE_PHP_ALL}
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}
@@ -407,6 +411,7 @@ gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
+imagick_DEPENDS=	graphics/pecl-imagick@${PHP_FLAVOR}
 .    if ${PHP_VER} <= 83
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 .    else
@@ -437,7 +442,7 @@ posix_DEPENDS=	sysutils/php${PHP_VER}-posix
 .    if ${PHP_VER} <= 83
 pspell_DEPENDS=	textproc/php${PHP_VER}-pspell
 .    else
-pspell_DEPENDS=	textproc/pecl-pspell@${PHP_FLAVOR}
+pspell_DEPENDS=	textproc/php-pspell@${PHP_FLAVOR}
 .    endif
 radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline

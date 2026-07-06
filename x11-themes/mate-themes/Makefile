@@ -1,8 +1,8 @@
 PORTNAME=	mate-themes
-PORTVERSION=	3.22.23
-PORTREVISION=	1
+DISTVERSION=	3.22.23
+PORTREVISION=	2
 CATEGORIES=	x11-themes mate
-MASTER_SITES=	MATE/themes/${PORTVERSION:R}/
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	gtk-engines2>=2.15.0:x11-themes/gtk-engines2 \
 		gtk-murrine-engine>=0.98:x11-themes/gtk-murrine-engine
 
-PORTSCOUT=	limit:^${PORTVERSION:R:S|.|\.|}\.*$$
-
 USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-themes/releases/ limit:^${DISTVERSION:R:S|.|\.|}\.*$$
 GNU_CONFIGURE=	yes
 
 LOCALES=	af am an ar ar_SA as ast az be bg bn bn_IN br \

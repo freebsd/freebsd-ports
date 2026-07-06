@@ -1,20 +1,20 @@
---- server/package.json.orig	2026-02-23 07:24:11 UTC
+--- server/package.json.orig	2026-05-17 11:10:44 UTC
 +++ server/package.json
 @@ -4,9 +4,11 @@
    "homepage": "https://www.onlyoffice.com",
    "private": true,
    "dependencies": {
-+    "grunt": "^1.6.1",
++    "grunt": "^1.6.2",
 +    "grunt-cli": "^1.5.0",
      "license-downloader": "1.0.8",
      "license-report": "6.5.0",
 -    "npm-run-all": "4.1.5"
-+    "concurrently": "^9.2.0"
++    "concurrently": "^10.0.0"
    },
    "devDependencies": {
      "@eslint/compat": "1.2.3",
-@@ -36,10 +38,10 @@
-     "integration database tests": "cd ./DocService && jest integration/databaseTests --inject-globals=false --config=../tests/jest.config.js",
+@@ -37,10 +39,10 @@
+     "integration rabbitmq tests": "cd ./DocService && jest integration/rabbitmq --inject-globals=false --config=../tests/jest.config.js --passWithNoTests",
      "tests": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js",
      "tests:dev": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js --watch",
 -    "install:Common": "npm ci --prefix ./Common",
@@ -28,7 +28,7 @@
      "3d-party-lic-json:Common": "license-report --output=json --package=./Common/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
      "3d-party-lic-json:DocService": "license-report --output=json --package=./DocService/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
      "3d-party-lic-json:FileConverter": "license-report --output=json --package=./FileConverter/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
-@@ -52,6 +54,6 @@
+@@ -53,6 +55,6 @@
      "3d-party-lic-report:FileConverter": "run-s 3d-party-lic-json:FileConverter 3d-party-lic-downloader 3d-party-lic-md",
      "3d-party-lic-report:Metrics": "run-s 3d-party-lic-json:Metrics 3d-party-lic-downloader 3d-party-lic-md",
      "3d-party-lic-report": "run-s 3d-party-lic-md-header 3d-party-lic-report:*",

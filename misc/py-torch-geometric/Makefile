@@ -1,5 +1,5 @@
 PORTNAME=	torch-geometric
-DISTVERSION=	2.7.0
+DISTVERSION=	2.8.0
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +8,8 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graph neural network library for PyTorch
 WWW=		https://pyg.org/ \
-		https://pytorch-geometric.readthedocs.io/en/latest/
+		https://pytorch-geometric.readthedocs.io/en/latest/ \
+		https://github.com/pyg-team/pytorch_geometric
 
 LICENSE=	MIT
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dgl>0:math/py-dgl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}  \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}  \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.8.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR} \

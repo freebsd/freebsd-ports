@@ -130,8 +130,8 @@ include/xorg/xisb.h
 include/xorg/xkbrules.h
 include/xorg/xkbsrv.h
 include/xorg/xkbstr.h
-include/xorg/xorg-server.h
 include/xorg/xlibre-server.h
+include/xorg/xorg-server.h
 include/xorg/xorgVersion.h
 include/xorg/xserver-properties.h
 include/xorg/xvdix.h
@@ -148,13 +148,14 @@ lib/xorg/modules/xlibre-25/libshadowfb.so
 lib/xorg/modules/xlibre-25/libvgahw.so
 lib/xorg/modules/xlibre-25/libwfb.so
 lib/xorg/protocol.txt
-libdata/pkgconfig/xorg-server.pc
 libdata/pkgconfig/xlibre-server.pc
+libdata/pkgconfig/xorg-server.pc
 %%SUID%%libexec/Xorg
 %%SUID%%@(,,4555) libexec/Xorg.wrap
+share/X11/xorg.conf.d/10-nvidia-modules.conf
+share/X11/xorg.conf.d/10-nvidia.conf
 %%UDEV%%share/X11/xorg.conf.d/10-quirks.conf
 share/X11/xorg.conf.d/20-evdev-kbd.conf
-share/X11/xorg.conf.d/10-nvidia.conf
 share/aclocal/xorg-server.m4
 share/man/man1/Xorg.1.gz
 %%SUID%%share/man/man1/Xorg.wrap.1.gz
@@ -170,5 +171,5 @@ share/man/man5/xorg.conf.d.5.gz
 @dir %%FONTPATHD%%
 @dir etc/X11/xorg.conf.d
 @dir lib/xorg/modules/drivers
-@dir lib/xorg/modules/input
 @dir lib/xorg/modules/extensions
+@dir lib/xorg/modules/input

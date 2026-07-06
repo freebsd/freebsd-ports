@@ -12,6 +12,12 @@ You will have to run %%DATADIR%%/mkimapdcert to create
 a self-signed certificate if you want to use imapd-ssl.
 And you will have to copy and edit the *.dist files to *
 in %%CONFDIR%%.
+
+If you have maildirs with a lot of messages
+(indicatively > 120000), imapd could exhaust memory while
+scanning them.
+If you see the imapd process crash with SIGABRT try
+incrasing the ULIMIT setting in imapd configuration file.
 EOM
 }
 ]

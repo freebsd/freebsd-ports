@@ -96,6 +96,9 @@ github.com/erikgeiser/coninput
 # github.com/getkin/kin-openapi v0.133.0
 ## explicit; go 1.22.5
 github.com/getkin/kin-openapi/openapi3
+# github.com/google/uuid v1.6.0
+## explicit; go 1.12
+github.com/google/uuid
 # github.com/ghodss/yaml v1.0.0
 ## explicit
 github.com/ghodss/yaml
@@ -121,6 +124,9 @@ github.com/josharian/intern
 # github.com/lucasb-eyer/go-colorful v1.3.0
 ## explicit; go 1.12
 github.com/lucasb-eyer/go-colorful
+# github.com/lrstanley/bubblezone v0.0.0-20240914071701-b48c55a5e78e
+## explicit; go 1.19
+github.com/lrstanley/bubblezone
 # github.com/mailru/easyjson v0.9.1
 ## explicit; go 1.20
 github.com/mailru/easyjson/jlexer
@@ -183,6 +189,14 @@ github.com/muesli/reflow/wordwrap
 # github.com/muesli/termenv v0.16.0
 ## explicit; go 1.17
 github.com/muesli/termenv
+# github.com/NimbleMarkets/ntcharts v0.5.1
+## explicit; go 1.22.0
+github.com/NimbleMarkets/ntcharts/canvas
+github.com/NimbleMarkets/ntcharts/canvas/buffer
+github.com/NimbleMarkets/ntcharts/canvas/graph
+github.com/NimbleMarkets/ntcharts/canvas/runes
+github.com/NimbleMarkets/ntcharts/linechart
+github.com/NimbleMarkets/ntcharts/linechart/timeserieslinechart
 # github.com/oasdiff/yaml v0.0.0-20250309154309-f31be36b4037
 ## explicit; go 1.22.5
 github.com/oasdiff/yaml

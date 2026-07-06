@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# PROVIDE: languagetool
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable
+# languagetool:
+#
+# languagetool_enable (bool):		Set to "NO" by default.
+#					Set it to "YES" to enable languagetool.
+# languagetool_user (str):		User to run the server as.
+#					Default: "languagetool"
+# languagetool_port (int):		HTTP port to listen on.
+#					Default: 8081
+# languagetool_config (str):		Path to server.properties.
+#					Default: %%ETCDIR%%/server.properties
+# languagetool_java_version (str):	Java VM version constraint passed to
+#					javavm(1).
+#					Default: "%%JAVA_VERSION%%"
+# languagetool_java_opts (str):		JVM options (example: to heap limit).
+#					Default: "-Xmx512m"
+# languagetool_args (str):		Extra HTTPServer arguments, e.g.
+#					"--allow-origin '*'" or "--public".
+#					Default: empty
+
+. /etc/rc.subr
+
+name=languagetool
+rcvar=languagetool_enable
+
+load_rc_config $name
+
+: ${languagetool_enable:="NO"}
+: ${languagetool_user:="languagetool"}
+: ${languagetool_port:="8081"}
+: ${languagetool_config:="%%ETCDIR%%/server.properties"}
+: ${languagetool_java_version:="%%JAVA_VERSION%%"}
+: ${languagetool_java_opts:="-Xmx512m"}
+: ${languagetool_args:=""}
+
+piddir=/var/run/${name}
+pidfile=${piddir}/${name}.pid
+command=/usr/sbin/daemon
+command_args="-S -T ${name} -R 10 -P ${pidfile} \
+	/usr/bin/env JAVA_VERSION=${languagetool_java_version} \
+	%%LOCALBASE%%/bin/java -XX:+ExitOnOutOfMemoryError \
+	${languagetool_java_opts} \
+	-cp %%DATADIR%%/languagetool-server.jar \
+	org.languagetool.server.HTTPServer \
+	--config ${languagetool_config} \
+	--port ${languagetool_port} ${languagetool_args}"
+
+start_precmd=languagetool_prestart
+
+languagetool_prestart()
+{
+	install -d -o ${languagetool_user} ${piddir}
+}
+
+run_rc_command "$1"

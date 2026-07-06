@@ -13,7 +13,7 @@
              make = 'gmake' if is_freebsd else 'make'
 -            run_tool([make, 'docs'])
 +            if build_docs:
-+                run_tool([make, 'docs'])
++                run_tool([make, 'html'])
 +            if build_manpages:
 +                run_tool([make, 'man'])
          else:

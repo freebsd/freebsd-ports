@@ -1,10 +1,9 @@
 PORTNAME=	bouncycastle
-DISTVERSION=	1.71
-PORTREVISION=	5
+DISTVERSION=	1.83
 CATEGORIES=	java security
-MASTER_SITES=	http://www.bouncycastle.org/download/ \
-		http://polydistortion.net/bc/download/
-DISTNAME=	crypto-${DVERSION}
+MASTER_SITES=	https://github.com/bcgit/bc-java/archive/refs/tags/
+DISTNAME=	r${DVERSION1}rv${DVERSION2}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
@@ -28,8 +27,6 @@ MAKE_ARGS=	-f \
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 ALL_TARGET=	build-provider build
 
-CONFLICTS_INSTALL=	bouncycastle-1.4*
-
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		DOCS ZIPSRC
@@ -39,12 +36,14 @@ OPTIONS_SUB=		yes
 ZIPSRC_DESC=		Install bundled ZIP source files
 ZIPSRC_ALL_TARGET=	zip-src
 
+DVERSION1=	${PORTVERSION:R}
+DVERSION2=	${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/bc-java-${DISTNAME}
 ARTIFACTSDIR=	${WRKSRC}/build/artifacts/jdk${JDKMVERSION}
-DVERSION=	${PORTVERSION:S/.//}
 JDKMVERSION=	1.8
 JDKNVERSION=	18
 # matches target.prefix property in WRKSRC/ant/jdk18+.xml
-JARSUFFIX=	-jdk${JDKNVERSION}on-${DVERSION}.jar
+JARSUFFIX=	-jdk${JDKNVERSION}on-${PORTVERSION}.jar
 
 .include <bsd.port.options.mk>
 
@@ -57,11 +56,11 @@ do-install:
 	for src in $$(${FIND} ${ARTIFACTSDIR}/jars -name "*${JARSUFFIX}"); do \
 		dst="$${src##*/}"; \
 		dst="$${dst%%-jdk*}.jar"; \
-		${INSTALL_DATA} "$$src" "${STAGEDIR}/${JAVAJARDIR}/$${dst}"; \
+		${INSTALL_DATA} "$$src" "${STAGEDIR}${JAVAJARDIR}/$${dst}"; \
 	done
 # Install the bundlded version of bcprov.jar because we need a signed JAR.
 # See bfca5d2c6e01d757f1f37c141c22645c2835104b for details.
-	${INSTALL_DATA} ${WRKSRC}/jars/bcprov${JARSUFFIX} \
+	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/bcprov${JARSUFFIX} \
 		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
 
 do-install-DOCS-on:

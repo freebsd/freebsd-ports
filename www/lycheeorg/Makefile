@@ -34,6 +34,7 @@ MEMCACHED_DESC=		Memcached key-value store database support
 EXIFTOOL_RUN_DEPENDS=		p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 FFMPEG_RUN_DEPENDS=		ffmpeg>=0:multimedia/ffmpeg
 IMAGEMAGICK_RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}pecl-imagick>=0:graphics/pecl-imagick@${PHP_FLAVOR}
+IMAGEMAGICK_VARS=	IGNORE_WITH_PHP=86
 MEMCACHED_RUN_DEPENDS=		${PHP_PKGNAMEPREFIX}pecl-memcached>=0:databases/pecl-memcached@${PHP_FLAVOR}
 REDIS_RUN_DEPENDS=		${PHP_PKGNAMEPREFIX}pecl-redis>=0:databases/pecl-redis@${PHP_FLAVOR}
 

@@ -1,9 +1,9 @@
---- content/common/features.h.orig	2026-05-07 17:02:56 UTC
+--- content/common/features.h.orig	2026-07-01 06:24:19 UTC
 +++ content/common/features.h
-@@ -81,7 +81,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNeg
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnInvalidNavigationHeaders);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnOriginHeaderMismatch);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnUnexpectedOriginHeader);
+@@ -82,7 +82,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(
+     kDocumentIsolationPolicyWithoutSiteIsolation);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedOriginHeader);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);

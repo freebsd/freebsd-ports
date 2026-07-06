@@ -1,7 +1,12 @@
 PORTNAME=	seatd
 DISTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+
+PATCH_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/commit/
+PATCHFILES+=	9d1f83e28254.patch:-p1 # sddm bugfix
+PATCHFILES+=	4bcdc8197215.patch:-p1 # sddm bugfix
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Minimal seat management daemon and universal library

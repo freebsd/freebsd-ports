@@ -1,6 +1,14 @@
 --- thirdparty/CMakeLists.txt.orig	2025-09-07 22:10:00 UTC
 +++ thirdparty/CMakeLists.txt
-@@ -21,8 +21,6 @@ add_subdirectory(sol2 EXCLUDE_FROM_ALL)
+@@ -8,7 +8,6 @@ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+ 
+ # Using EXCLUDE_FROM_ALL when adding subdirectories so that we dont add the libs to install target.
+ add_subdirectory(cmrc EXCLUDE_FROM_ALL)
+-add_subdirectory(fast_float EXCLUDE_FROM_ALL)
+ add_subdirectory(glm EXCLUDE_FROM_ALL)
+ add_subdirectory(magic_enum EXCLUDE_FROM_ALL)
+ add_subdirectory(cli11 EXCLUDE_FROM_ALL)
+@@ -21,8 +20,6 @@ add_subdirectory(sol2 EXCLUDE_FROM_ALL)
  target_compile_definitions(sol2 INTERFACE SOL_EXCEPTIONS_ALWAYS_UNSAFE=1) # Make sure sol2 doesn't propagate C++ exceptions to luajit.
  
  # fmt
@@ -9,7 +17,7 @@
  if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
      target_compile_definitions(fmt INTERFACE FMT_CONSTEVAL=) # MSVC chokes on fmt consteval formatting, so we define FMT_CONSTEVAL=<empty>.
  endif()
-@@ -51,7 +49,6 @@ set(SPDLOG_DISABLE_DEFAULT_LOGGER ON)
+@@ -51,7 +48,6 @@ set(SPDLOG_DISABLE_DEFAULT_LOGGER ON)
  if(OE_BUILD_PLATFORM STREQUAL "windows")
      set(SPDLOG_WCHAR_SUPPORT ON) # Use unicode APIs on Windows.
  endif()

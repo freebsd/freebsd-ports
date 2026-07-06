@@ -8,7 +8,8 @@ COMMENT=	KF5 addons to QtCore
 LICENSE=	LGPL21+ BSD3CLAUSE
 LICENSE_COMB=	multi
 
-USES=		cmake compiler:c++11-lib kde:5 qt:5 shared-mime-info tar:xz
+USES=		cmake compiler:c++11-lib cpe kde:5 qt:5 shared-mime-info tar:xz
+CPE_VENDOR=	kde
 USE_KDE=	ecm:build
 USE_QT=		core dbus linguisttools \
 		buildtools:build qmake:build

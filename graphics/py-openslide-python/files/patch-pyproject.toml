@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-06-08 06:13:21 UTC
++++ pyproject.toml
+@@ -5,8 +5,6 @@ readme = "README.md"
+ ]
+ description = "Python interface to OpenSlide"
+ readme = "README.md"
+-license = "LGPL-2.1-only AND BSD-3-Clause AND MIT AND LicenseRef-Public-Domain"
+-license-files = ["COPYING.LESSER", "**/LICENSE.*"]
+ keywords = ["OpenSlide", "whole-slide image", "virtual slide", "library"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

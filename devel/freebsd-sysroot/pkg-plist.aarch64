@@ -111,7 +111,6 @@
 %%ROOT%%/usr/include/arm/reg.h
 %%ROOT%%/usr/include/arm/reloc.h
 %%ROOT%%/usr/include/arm/resource.h
-%%ROOT%%/usr/include/arm/runq.h
 %%ROOT%%/usr/include/arm/setjmp.h
 %%ROOT%%/usr/include/arm/sf_buf.h
 %%ROOT%%/usr/include/arm/signal.h
@@ -1765,6 +1764,7 @@
 %%ROOT%%/usr/include/machine/cmn600_reg.h
 %%ROOT%%/usr/include/machine/counter.h
 %%ROOT%%/usr/include/machine/cpu.h
+%%ROOT%%/usr/include/machine/cpu_feat.h
 %%ROOT%%/usr/include/machine/cpufunc.h
 %%ROOT%%/usr/include/machine/cpuinfo.h
 %%ROOT%%/usr/include/machine/csan.h
@@ -1811,7 +1811,6 @@
 %%ROOT%%/usr/include/machine/reg.h
 %%ROOT%%/usr/include/machine/reloc.h
 %%ROOT%%/usr/include/machine/resource.h
-%%ROOT%%/usr/include/machine/runq.h
 %%ROOT%%/usr/include/machine/setjmp.h
 %%ROOT%%/usr/include/machine/sf_buf.h
 %%ROOT%%/usr/include/machine/sigframe.h
@@ -2623,6 +2622,8 @@
 %%ROOT%%/usr/include/sys/_lockmgr.h
 %%ROOT%%/usr/include/sys/_mutex.h
 %%ROOT%%/usr/include/sys/_null.h
+%%ROOT%%/usr/include/sys/_nv.h
+%%ROOT%%/usr/include/sys/_param.h
 %%ROOT%%/usr/include/sys/_pctrie.h
 %%ROOT%%/usr/include/sys/_pthreadtypes.h
 %%ROOT%%/usr/include/sys/_pv_entry.h
@@ -2912,6 +2913,7 @@
 %%ROOT%%/usr/include/sys/stat.h
 %%ROOT%%/usr/include/sys/stats.h
 %%ROOT%%/usr/include/sys/statvfs.h
+%%ROOT%%/usr/include/sys/stdarg.h
 %%ROOT%%/usr/include/sys/stdatomic.h
 %%ROOT%%/usr/include/sys/stddef.h
 %%ROOT%%/usr/include/sys/stdint.h
@@ -3361,8 +3363,12 @@
 %%ROOT%%/usr/lib/engines-3/capi.so
 %%ROOT%%/usr/lib/engines-3/devcrypto.so
 %%ROOT%%/usr/lib/engines-3/loader_attic.so
+%%ROOT%%/usr/lib/flua/freebsd/kenv.so
+%%ROOT%%/usr/lib/flua/freebsd/sys/linker.so
 %%ROOT%%/usr/lib/flua/hash.so
 %%ROOT%%/usr/lib/flua/jail.so
+%%ROOT%%/usr/lib/flua/ucl.so
+%%ROOT%%/usr/lib/flua/yaml.so
 %%ROOT%%/usr/lib/gcrt1.o
 %%ROOT%%/usr/lib/i18n/libBIG5.so
 %%ROOT%%/usr/lib/i18n/libBIG5.so.5
@@ -3661,7 +3667,6 @@
 %%ROOT%%/usr/lib/libnetmap.a
 %%ROOT%%/usr/lib/libnetmap.so
 %%ROOT%%/usr/lib/libnetmap.so.5
-%%ROOT%%/usr/lib/libnss_tacplus.a
 %%ROOT%%/usr/lib/libnv.a
 %%ROOT%%/usr/lib/libnv.so
 %%ROOT%%/usr/lib/libnvpair.a
@@ -3828,6 +3833,7 @@
 %%ROOT%%/usr/lib/nss_tacplus.so
 %%ROOT%%/usr/lib/nss_tacplus.so.1
 %%ROOT%%/usr/lib/ossl-modules/legacy.so
+%%ROOT%%/usr/libdata/pkgconfig/bzip2.pc
 %%ROOT%%/usr/libdata/pkgconfig/form.pc
 %%ROOT%%/usr/libdata/pkgconfig/formw.pc
 %%ROOT%%/usr/libdata/pkgconfig/libcrypto.pc

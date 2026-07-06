@@ -9,6 +9,9 @@ WWW=		https://github.com/horsicq/XOpcodeCalc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	has parts written in x86 assembly language
+
 USES=		pkgconfig qt:5
 GNU_CONFIGURE=	yes
 USE_QT=		buildtools:build qmake:build core gui widgets

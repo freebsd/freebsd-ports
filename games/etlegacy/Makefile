@@ -1,6 +1,5 @@
 PORTNAME=	etlegacy
-DISTVERSION=	2.81.1
-PORTREVISION=	3
+DISTVERSION=	2.84.0
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.etlegacy.com/geoip/:geoip \
 		https://mirror.etlegacy.com/wolfadmin/:wolfadmin
@@ -20,7 +19,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils localbase \
 		lua pkgconfig sqlite
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
-GH_TAGNAME=	956269f4c13ebe31ba2a0f0b805588383209bd5b
+GH_TAGNAME=	764ffc0
 
 CMAKE_ARGS+=	-DCROSS_COMPILE32=OFF \
 		-DBUNDLED_LIBS=OFF \
@@ -123,8 +122,5 @@ post-extract:
 	@${MKDIR} ${WRKDIR}/.build/legacy
 	@cd ${WRKDIR}/.build/legacy && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/GeoIP.dat.tar.gz ${EXTRACT_AFTER_ARGS}
 	@cd ${WRKDIR}/.build/legacy && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/wolfadmin.tar.gz ${EXTRACT_AFTER_ARGS}
-
-post-patch:
-	${REINPLACE_CMD} -e 's|AMD64|amd64|g' ${WRKSRC}/cmake/ETLPlatform.cmake
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	mcmc-jags
-DISTVERSION=	4.3.1
-PORTREVISION=	6
+DISTVERSION=	4.3.2
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
 		SF/mcmc-jags/Examples/${S}.x/:2 \
@@ -17,25 +16,23 @@ WWW=		http://mcmc-jags.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	cppunit>0:devel/cppunit
 LIB_DEPENDS=	libltdl.so:devel/libltdl
+
+USES=		bison compiler:features fortran gmake libtool localbase pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		bison compiler:features fortran gmake libtool localbase pathfix
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/JAGS-${PORTVERSION}
 
 OPTIONS_SINGLE=	BLAS
-OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB
+OPTIONS_SINGLE_BLAS=	OPENBLAS NETLIB
 
 OPTIONS_DEFAULT+=	OPENBLAS
 
-ATLAS_USES=	blaslapack:atlas
-ATLAS_VARS=	MANUAL_PACKAGE_BUILD=\
-"Choose a BLAS option other than ATLAS for package building."
 NETLIB_USES=	blaslapack:netlib
 OPENBLAS_USES=	blaslapack:openblas
 DOCS_DISTFILES=	jags_developer_manual.pdf:3 jags_installation_manual.pdf:4 \
@@ -53,8 +50,8 @@ S=		${PORTVERSION:C|\..*||}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} \
+pre-configure:
+	${REINPLACE_CMD} \
 		-e '/@WINDOWS_FALSE@bin_SCRIPTS =/s/jags/mcmc-&/' \
 		-e '/CLEANFILES =/s/jags/mcmc-&/' \
 		-e '/@WINDOWS_FALSE@jags:/s/jags/mcmc-&/' \
@@ -62,17 +59,17 @@ post-patch:
 		-e '/@WINDOWS_FALSE@.*mv jags.tmp jags/s/jags/mcmc-&/2' \
 		${WRKSRC}/src/terminal/Makefile.in
 
-post-patch-EXAMPLES-on:
-	@${SED} -i '' -e '\|JAGS ?=|{s|jags|mcmc-&|;s|/usr/local|${PREFIX}|;}' \
+pre-configure-EXAMPLES-on:
+	${SED} -i '' -e '\|JAGS ?=|{s|jags|mcmc-&|;s|/usr/local|${PREFIX}|;}' \
 		${WRKDIR}/classic-bugs/vol[12]/Makefile
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:math/R-cran-coda

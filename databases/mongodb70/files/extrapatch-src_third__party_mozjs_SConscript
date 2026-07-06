@@ -1,8 +1,8 @@
---- src/third_party/mozjs/SConscript.orig	2024-08-14 20:38:09 UTC
+--- src/third_party/mozjs/SConscript.orig	2026-06-16 06:40:34 UTC
 +++ src/third_party/mozjs/SConscript
-@@ -144,7 +145,7 @@ sources = [
-     "extract/js/src/wasm/WasmCode-platform.cpp",
- ]
+@@ -157,7 +157,7 @@ if get_option('spider-monkey-dbg') == "on":
+ if get_option('spider-monkey-dbg') == "on":
+     sources.append("extract/js/src/util/Utility.cpp")
  
 -if env['TARGET_ARCH'] == 'x86_64' and not env.TargetOSIs('windows'):
 +if False and env['TARGET_ARCH'] == 'x86_64' and not env.TargetOSIs('windows'):

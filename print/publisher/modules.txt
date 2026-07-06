@@ -1,0 +1,33 @@
+GH_TUPLE=	\
+		Masterminds:semver:v1.5.0:masterminds_semver/src/go/vendor/github.com/Masterminds/semver \
+		PuerkitoBio:goquery:v1.9.1:puerkitobio_goquery/src/go/vendor/github.com/PuerkitoBio/goquery \
+		alecthomas:chroma:v0.10.0:alecthomas_chroma/src/go/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v2.13.0:alecthomas_chroma_v2/src/go/vendor/github.com/alecthomas/chroma/v2 \
+		andybalholm:cascadia:v1.3.2:andybalholm_cascadia/src/go/vendor/github.com/andybalholm/cascadia \
+		cjoudrey:gluahttp:25003d9adfa9:cjoudrey_gluahttp/src/go/vendor/github.com/cjoudrey/gluahttp \
+		dlclark:regexp2:v1.11.0:dlclark_regexp2/src/go/vendor/github.com/dlclark/regexp2 \
+		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/src/go/vendor/github.com/fsnotify/fsnotify \
+		gammazero:deque:v0.2.1:gammazero_deque/src/go/vendor/github.com/gammazero/deque \
+		gammazero:workerpool:v1.1.3:gammazero_workerpool/src/go/vendor/github.com/gammazero/workerpool \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml/src/go/vendor/gopkg.in/yaml.v3 \
+		gofrs:uuid:v4.4.0:gofrs_uuid/src/go/vendor/github.com/gofrs/uuid \
+		golang:image:v0.18.0:golang_image/src/go/vendor/golang.org/x/image \
+		golang:net:v0.35.0:golang_net/src/go/vendor/golang.org/x/net \
+		golang:sys:v0.30.0:golang_sys/src/go/vendor/golang.org/x/sys \
+		golang:text:v0.22.0:golang_text/src/go/vendor/golang.org/x/text \
+		google:btree:v1.1.2:google_btree/src/go/vendor/github.com/google/btree \
+		gorilla:mux:v1.8.1:gorilla_mux/src/go/vendor/github.com/gorilla/mux \
+		gregjones:httpcache:901d90724c79:gregjones_httpcache/src/go/vendor/github.com/gregjones/httpcache \
+		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/src/go/vendor/github.com/inconshreveable/mousetrap \
+		peterbourgon:diskv:v2.0.1:peterbourgon_diskv/src/go/vendor/github.com/peterbourgon/diskv \
+		russross:blackfriday:v1.6.0:russross_blackfriday/src/go/vendor/github.com/russross/blackfriday \
+		speedata:bild:dd063a632b14:speedata_bild/src/go/vendor/github.com/speedata/bild \
+		speedata:config:3a3f44982ec4:speedata_config/src/go/vendor/github.com/speedata/config \
+		speedata:css:68d469dc62c4:speedata_css_scanner/src/go/vendor/github.com/speedata/css \
+		speedata:go-epub:v0.5.5:speedata_go_epub/src/go/vendor/github.com/speedata/go-epub \
+		speedata:goxlsx:v1.0.2:speedata_goxlsx/src/go/vendor/github.com/speedata/goxlsx \
+		speedata:hotfolder:5f743a840a92:speedata_hotfolder/src/go/vendor/github.com/speedata/hotfolder \
+		speedata:optionparser:v1.1.1:speedata_optionparser/src/go/vendor/github.com/speedata/optionparser \
+		yuin:goldmark-highlighting:37449abec8cc:yuin_goldmark_highlighting_v2/src/go/vendor/github.com/yuin/goldmark-highlighting/v2 \
+		yuin:goldmark:v1.7.1:yuin_goldmark/src/go/vendor/github.com/yuin/goldmark \
+		yuin:gopher-lua:v1.1.1:yuin_gopher_lua/src/go/vendor/github.com/yuin/gopher-lua

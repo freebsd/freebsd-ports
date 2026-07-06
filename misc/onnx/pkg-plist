@@ -12,6 +12,8 @@ include/onnx/common/model_helpers.h
 include/onnx/common/path.h
 include/onnx/common/platform_helpers.h
 include/onnx/common/proto_util.h
+include/onnx/common/safe_math.h
+include/onnx/common/scoped_resource.h
 include/onnx/common/status.h
 include/onnx/common/tensor.h
 include/onnx/common/version.h
@@ -20,6 +22,7 @@ include/onnx/defs/attr_proto_util.h
 include/onnx/defs/controlflow/utils.h
 include/onnx/defs/data_propagators.h
 include/onnx/defs/data_type_utils.h
+include/onnx/defs/doc_strings.h
 include/onnx/defs/function.h
 include/onnx/defs/generator/utils.h
 include/onnx/defs/math/utils.h
@@ -38,6 +41,7 @@ include/onnx/defs/tensor/utils.h
 include/onnx/defs/tensor_proto_util.h
 include/onnx/defs/tensor_util.h
 include/onnx/defs/traditionalml/utils.h
+include/onnx/defs/type_builders.h
 include/onnx/inliner/inliner.h
 include/onnx/onnx-data.pb.h
 include/onnx/onnx-ml.pb.h
@@ -72,6 +76,7 @@ include/onnx/version_converter/adapters/maxpool_8_7.h
 include/onnx/version_converter/adapters/no_previous_version.h
 include/onnx/version_converter/adapters/pad_10_11.h
 include/onnx/version_converter/adapters/q_dq_21_20.h
+include/onnx/version_converter/adapters/range_27_26.h
 include/onnx/version_converter/adapters/remove_consumed_inputs.h
 include/onnx/version_converter/adapters/reshape_4_5.h
 include/onnx/version_converter/adapters/reshape_5_4.h
@@ -79,6 +84,8 @@ include/onnx/version_converter/adapters/resize_10_11.h
 include/onnx/version_converter/adapters/scan_8_9.h
 include/onnx/version_converter/adapters/scan_9_8.h
 include/onnx/version_converter/adapters/scatter_10_11.h
+include/onnx/version_converter/adapters/scatter_16_15.h
+include/onnx/version_converter/adapters/scatter_18_17.h
 include/onnx/version_converter/adapters/slice_9_10.h
 include/onnx/version_converter/adapters/softmax_12_13.h
 include/onnx/version_converter/adapters/softmax_13_12.h

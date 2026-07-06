@@ -1,6 +1,6 @@
 PORTNAME=	zug
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	devel
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -14,6 +14,7 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	arximboldi
 
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:STRING="17"
 CMAKE_ON=	DISABLE_WERROR
 CMAKE_OFF=	zug_BUILD_DOCS
 
@@ -28,5 +29,9 @@ TEST_CMAKE_BOOL=	zug_BUILD_EXAMPLES \
 TEST_ALL_TARGET=	install examples tests
 TEST_ALL_TARGET_OFF=	install
 TEST_TEST_TARGET=	test
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|(project\(.*VERSION )[0-9.]+|\1${DISTVERSION}|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

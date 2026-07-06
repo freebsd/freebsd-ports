@@ -1,4 +1,6 @@
 bin/nabi
+%%NLS%%share/locale/de/LC_MESSAGES/nabi.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/nabi.mo
 %%DATADIR%%/keyboard_layouts
 %%DATADIR%%/nabi-about.png
 %%DATADIR%%/nabi.png
@@ -46,5 +48,3 @@ bin/nabi
 %%DATADIR%%/themes/ubuntu-mono-light/english.png
 %%DATADIR%%/themes/ubuntu-mono-light/hangul.png
 %%DATADIR%%/themes/ubuntu-mono-light/none.png
-%%NLS%%share/locale/de/LC_MESSAGES/nabi.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/nabi.mo

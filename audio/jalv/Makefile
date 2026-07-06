@@ -1,6 +1,5 @@
 PORTNAME=	jalv
-DISTVERSION=	1.6.8
-PORTREVISION=	4
+DISTVERSION=	1.10.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -19,15 +18,24 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libsord-0.so:devel/sord \
 		libserd-0.so:devel/serd \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libzix-0.so:devel/zix
 
 USES=		desktop-file-utils gnome pkgconfig meson qmake:no_configure,no_env \
-		qt:5 tar:xz
-USE_QT=		core gui widgets buildtools:build
+		qt:6 tar:xz
+USE_QT=		base tools:build
 USE_GNOME=	atk atkmm cairo cairomm pango pangomm libsigc++20 \
 		gdkpixbuf glib20 glibmm  gtk20 gtk30 gtkmm24
-MESON_ARGS=	-Dportaudio=disabled
+MESON_ARGS=	-Dportaudio=disabled \
+		-Dqt5=disabled \
+		-Dqt6=enabled
 
-CXXFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC \
+		-include ctype.h \
+		-D_XOPEN_SOURCE=700
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 .include <bsd.port.mk>

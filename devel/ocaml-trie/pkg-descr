@@ -1,0 +1,2 @@
+This OCaml library implements a trie tree in OCaml. A trie is a
+datastructure used to implement a prefix search efficiently.

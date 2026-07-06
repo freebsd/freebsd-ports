@@ -1,6 +1,7 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.37
+DISTVERSION=	0.0.38
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -403,10 +404,10 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		objc2-user-notifications-0.2.2 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
-		openssl-0.10.79 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.115 \
+		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		orbclient-0.3.54 \
 		ordered-float-4.6.0 \

@@ -1,3 +1,3 @@
-TIMESTAMP = 1775076239
-SHA256 (google_cloud_container-2.64.0.tar.gz) = b41593e189f25d4c5a5b5f796669c1e4384ba0a25f6b298f64b556915b1e374d
-SIZE (google_cloud_container-2.64.0.tar.gz) = 398361
+TIMESTAMP = 1780559123
+SHA256 (google_cloud_container-2.65.0.tar.gz) = 67605d396a188ebd02cd73a425503667ea2f5bc56b17571a9a678b7d55b734dc
+SIZE (google_cloud_container-2.65.0.tar.gz) = 408550

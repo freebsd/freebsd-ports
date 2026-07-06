@@ -14,6 +14,7 @@ GH_ACCOUNT=	nbari
 GH_PROJECT=	${PORTNAME:tu}
 
 USES=		php
+IGNORE_WITH_PHP=	86
 
 NO_BUILD=	yes
 NO_ARCH=	yes

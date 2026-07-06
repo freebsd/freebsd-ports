@@ -1,6 +1,6 @@
 PORTNAME=	znapzend
-PORTVERSION=	0.23.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.23.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -18,10 +18,10 @@ BUILD_DEPENDS=	mbuffer>=0:misc/mbuffer \
 RUN_DEPENDS=	mbuffer>=0:misc/mbuffer \
 		p5-IO-Pipely>=0:devel/p5-IO-Pipely \
 		p5-Mojo-IOLoop-ForkCall>=0.21:www/p5-Mojo-IOLoop-ForkCall \
+		p5-Mojo-Log-Clearable>=0:devel/p5-Mojo-Log-Clearable \
 		p5-Mojolicious>=7.15:www/p5-Mojolicious \
-		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils \
 		p5-Role-Tiny>=2:devel/p5-Role-Tiny \
-		p5-Mojo-Log-Clearable>=0:devel/p5-Mojo-Log-Clearable
+		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 
 USES=		autoreconf gmake perl5
 USE_GITHUB=	yes

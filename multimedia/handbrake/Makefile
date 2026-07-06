@@ -116,6 +116,13 @@ pre-configure:
 	    ${INSTALL_DATA} ${CONTRIB_FILES} \
 	    ${WRKSRC}/download
 
+# x265's CMakeLists.txt adds the GCC-only `-mabi=altivec` flag on POWER, which
+# clang rejects.  Hand it to HandBrake's contrib patch machinery, which applies
+# `P??-freebsd*.patch` to the bundled x265 source at build time.
+post-patch:
+	${CP} ${FILESDIR}/P00-freebsd-x265-mabi-altivec.patch \
+	    ${WRKSRC}/contrib/x265
+
 # Some unbundled software uses a hardcoded  `lib/pkgconfig` directory for .pc
 # files. But the unbundled software built by Meson correctly places the .pc
 # file in `libdata/pkgconfig` in the FreeBSD way. To handle these two kinds of

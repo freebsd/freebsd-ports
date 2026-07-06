@@ -1,15 +1,15 @@
 PORTNAME=	font-misc-ethiopic
-PORTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Ethiopic font
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/font/misc-ethiopic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg-cat:font
+USES=		tar:xz xorg-cat:font
 FONTNAME=	TTF
 NO_ARCH=	yes
 

@@ -1,4 +1,5 @@
 bin/hq
+bin/masque_client
 bin/proxygen_cocurl
 bin/proxygen_curl
 bin/proxygen_echo

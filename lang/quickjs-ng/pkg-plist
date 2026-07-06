@@ -1,8 +1,8 @@
 bin/qjs
 bin/qjsc
 include/quickjs.h
-lib/cmake/quickjs/qjsConfig-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/quickjs/qjsConfig.cmake
+lib/cmake/qjs/qjsConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/qjs/qjsConfig.cmake
 lib/libqjs.so
 lib/libqjs.so.0
 lib/libqjs.so.%%PORTVERSION%%

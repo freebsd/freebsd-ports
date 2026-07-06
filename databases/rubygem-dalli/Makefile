@@ -1,5 +1,5 @@
 PORTNAME=	dalli
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	dalli_project
 
 .include <bsd.port.mk>

@@ -17,8 +17,6 @@ USES=		cabal
 USE_GITHUB=	yes
 GH_TUPLE=	purescript:cheapskate:633c69024e061ad956f1aecfc137fb99a7a7a20b:cheapskate/dist-newstyle/src/cheapskate-2b7d9040a6c99dc66a75cbbf8e892de170830ff08b4c515e8a6898af1e6b078a
 
-USE_LOCALE=	en_US.UTF-8
-
 BINARY_ALIAS=	git=true
 
 USE_CABAL=	Glob-0.10.2_3 \

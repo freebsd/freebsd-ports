@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/compose/compose_dialog_view.cc.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/ui/views/compose/compose_dialog_view.cc.orig	2026-06-04 10:12:25 UTC
 +++ chrome/browser/ui/views/compose/compose_dialog_view.cc
 @@ -160,7 +160,7 @@ void ComposeDialogView::OnBeforeBubbleWidgetInit(
      views::Widget::InitParams* params,
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // In linux, windows may be clipped to their anchors' bounds,
    // resulting in visual errors, unless they use accelerated rendering. See
-   // crbug.com/1445770 for details.
+   // crbug.com/40912626 for details.

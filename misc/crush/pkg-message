@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+By default, crush blocks the execution of potentially dangerous commands
+(like known hazardous system commands or package installations). If you
+operate in a safe environment or need to run these commands, you can
+disable this protection:
+
+{
+  "$schema": "https://charm.land/crush.json",
+  "options": {
+    "disable_command_blocking": true
+  }
+}
+EOM
+}
+]

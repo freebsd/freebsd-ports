@@ -1,0 +1,14 @@
+-- Declare the 'indentlevel' glog flag added by PaddlePaddle to control
+-- per-line indentation in log messages.
+--- third_party/glog/src/glog/logging.h.in.orig	2019-03-22 02:51:46 UTC
++++ third_party/glog/src/glog/logging.h.in
+@@ -343,6 +343,9 @@ DECLARE_int32(stderrthreshold);
+ // stderr in addition to log files.
+ DECLARE_int32(stderrthreshold);
+ 
++//The indent level for every lines in log message
++DECLARE_int32(indentlevel);
++
+ // Set whether the log prefix should be prepended to each line of output.
+ DECLARE_bool(log_prefix);
+ 

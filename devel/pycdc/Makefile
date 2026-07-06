@@ -11,7 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++11-lang python:env,test shebangfix
+USES=		cmake compiler:c++11-lang cpe python:env,test shebangfix
+
+CPE_VENDOR=	pycdc_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zrax

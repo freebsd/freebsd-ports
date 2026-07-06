@@ -1,5 +1,5 @@
 PORTNAME=	dbplyr
-DISTVERSION=	2.5.2
+DISTVERSION=	2.6.0
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -36,5 +36,13 @@ TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-testthat>=3.1.10:devel/R-cran-testthat
 
 USES=		cran:auto-plist
+
+pre-test:
+	@${LOCALBASE}/bin/Rscript -e 'install.packages("nycflights13", \
+		repos = "https://cloud.r-project.org")'
+
+do-test:
+	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
+	${LOCALBASE}/bin/R CMD check --no-manual ${PORTNAME}
 
 .include <bsd.port.mk>

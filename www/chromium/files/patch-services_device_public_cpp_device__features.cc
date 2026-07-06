@@ -1,6 +1,6 @@
---- services/device/public/cpp/device_features.cc.orig	2026-05-30 09:39:35 UTC
+--- services/device/public/cpp/device_features.cc.orig	2026-07-01 06:24:19 UTC
 +++ services/device/public/cpp/device_features.cc
-@@ -152,11 +152,11 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
+@@ -174,11 +174,11 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
  // a USB interface is busy.
  #if BUILDFLAG(IS_ANDROID)
  BASE_FEATURE(kAutomaticUsbDetach, base::FEATURE_ENABLED_BY_DEFAULT);

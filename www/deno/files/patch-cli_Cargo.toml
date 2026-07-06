@@ -1,7 +1,7 @@
 deno's upgrade feature cannot work on FreeBSD, directly disable it
 
 Index: cli/Cargo.toml
---- cli/Cargo.toml.orig
+--- cli/Cargo.toml.orig	2026-07-01 13:28:43 UTC
 +++ cli/Cargo.toml
 @@ -24,7 +24,7 @@ harness = false
  harness = false
@@ -12,12 +12,12 @@ Index: cli/Cargo.toml
  # A feature that enables heap profiling with dhat on Linux.
  # 1. Compile with `cargo build --profile=release-with-debug --features=dhat-heap`
  # 2. Run the executable. It will output a dhat-heap.json file.
-@@ -131,7 +131,7 @@ jupyter_runtime.workspace = true
+@@ -134,7 +134,7 @@ jsonc-parser = { workspace = true, features = ["cst", 
+ import_map.workspace = true
+ indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }
- jupyter-protocol.workspace = true
- jupyter_runtime.workspace = true
 -keyring = { version = "3.6.3", features = ["apple-native", "sync-secret-service", "windows-native", "vendored"] }
 +keyring = { version = "3.6.3", features = ["apple-native", "sync-secret-service", "windows-native"] }
- lazy-regex.workspace = true
- libc.workspace = true
- libz-sys.workspace = true
+ lax-css.workspace = true
+ lax-markup.workspace = true
+ lax-sql.workspace = true

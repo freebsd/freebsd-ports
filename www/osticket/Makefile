@@ -18,6 +18,7 @@ USES=		cpe php:web zip
 CPE_VENDOR=	enhancesoft
 USE_PHP=	ctype curl dom fileinfo filter gd gettext iconv imap intl \
 		mbstring mysqli opcache phar session xml zip
+IGNORE_WITH_PHP=	86
 
 NO_ARCH=	yes
 NO_BUILD=	yes

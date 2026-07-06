@@ -1,0 +1,7 @@
+Using this library you can use any Graphics2D API based SVG / graph / chart
+library to embed those graphics as vector drawing in a PDF. In combination with
+PDFBox PDFRenderer/PageDrawer you can also "rerender" PDF pages and change
+certain aspects. E.g. change the color mapping and perform an overfill. Now also
+it's possible to setup masking of all draw()/fill() calls. Think of this like an
+additional clipping, just that this supports bitmap images and complete complex
+drawings (XForm's) as alpha masks.

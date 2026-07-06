@@ -1,6 +1,6 @@
 PORTNAME=	libsignon-glib
 DISTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -11,8 +11,8 @@ WWW=		https://gitlab.com/accounts-sso/libsignon-glib
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	signond:sysutils/signond@qt5
-RUN_DEPENDS=	signond:sysutils/signond@qt5
+BUILD_DEPENDS=	signond:sysutils/signond
+RUN_DEPENDS=	signond:sysutils/signond
 
 USES=		gnome meson pathfix pkgconfig python tar:bz2 vala:build
 USE_GNOME=	introspection pygobject3

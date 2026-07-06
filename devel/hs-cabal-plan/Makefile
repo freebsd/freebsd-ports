@@ -11,8 +11,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPLv2
 
 USES=		cabal
-USE_LOCALE=	en_US.UTF-8
-
 USE_CABAL=	OneTuple-0.4.2_1 \
 		QuickCheck-2.16.0.0 \
 		StateVar-1.2.2 \

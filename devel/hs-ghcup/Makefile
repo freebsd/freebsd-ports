@@ -1,5 +1,5 @@
 PORTNAME=	ghcup
-DISTVERSION=	0.2.5.0
+DISTVERSION=	0.2.6.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	tiga@FreeBSD.org

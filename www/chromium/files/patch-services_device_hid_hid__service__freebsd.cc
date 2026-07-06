@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2025-01-19 19:00:05 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2026-07-02 07:32:08 UTC
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,395 @@
+@@ -0,0 +1,394 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -383,7 +383,6 @@
 +
 +  if (!base::SetNonBlocking(params->fd.get())) {
 +    HID_PLOG(ERROR) << "Failed to set the non-blocking flag on the device fd";
-+    std::move(params->callback).Run(nullptr);
 +  }
 +
 +  std::move(params->callback).Run(base::MakeRefCounted<HidConnectionFreeBSD>(

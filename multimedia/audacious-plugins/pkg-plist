@@ -266,6 +266,7 @@ share/audacious/Skins/Winamp2.9/volume.png
 %%NLS%%share/locale/id_ID/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/it/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/audacious-plugins.mo

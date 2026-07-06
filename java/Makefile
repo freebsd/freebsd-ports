@@ -12,7 +12,6 @@
     SUBDIR += apache-commons-lang3
     SUBDIR += apache-commons-logging
     SUBDIR += apache-commons-pool
-    SUBDIR += aparapi
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej
@@ -36,7 +35,6 @@
     SUBDIR += intellij-fsnotifier
     SUBDIR += intellij-pty4j
     SUBDIR += intellij-ultimate
-    SUBDIR += jad
     SUBDIR += jai
     SUBDIR += jakarta-oro
     SUBDIR += jasmin
@@ -53,7 +51,7 @@
     SUBDIR += jcalendar
     SUBDIR += jcckit
     SUBDIR += jcommon
-    SUBDIR += jd-gui
+    SUBDIR += jd-gui-duo
     SUBDIR += jdk11-doc
     SUBDIR += jdk8-doc
     SUBDIR += jflex
@@ -84,7 +82,6 @@
     SUBDIR += openjdk17-jre
     SUBDIR += openjdk21
     SUBDIR += openjdk21-jre
-    SUBDIR += openjdk24
     SUBDIR += openjdk25
     SUBDIR += openjdk26
     SUBDIR += openjdk8

@@ -10,6 +10,9 @@ WWW=		https://www.dgl.ai/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${BACKEND_DEPENDS}

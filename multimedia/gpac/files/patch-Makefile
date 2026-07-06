@@ -1,6 +1,6 @@
---- Makefile.orig	2026-01-10 11:12:25 UTC
+--- Makefile.orig	2026-06-13 00:01:52 UTC
 +++ Makefile
-@@ -139,15 +139,16 @@ endif
+@@ -193,15 +193,16 @@ endif
  	$(INSTALL) $(INSTFLAGS) -m 644 $(SRC_PATH)/share/doc/man/gpac-filters.1 $(DESTDIR)$(prefix)/$(man_dir)/man1/
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac"
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac/res"
@@ -10,7 +10,7 @@
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac/shaders"
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac/scripts"
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac/python"
- 	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac/vis"
+ 	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/gpac/rmtws"
  	$(INSTALL) $(INSTFLAGS) -m 644 $(SRC_PATH)/share/default.cfg $(DESTDIR)$(prefix)/share/gpac/
  
 +ifeq ($(CONFIG_X11),yes)
@@ -20,7 +20,7 @@
  ifneq ($(CONFIG_DARWIN),yes)
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/icons/hicolor/128x128/apps"
  	$(INSTALL) -d "$(DESTDIR)$(prefix)/share/applications"
-@@ -155,28 +156,32 @@ endif
+@@ -209,28 +210,32 @@ endif
  	$(INSTALL) $(INSTFLAGS) -m 644 $(SRC_PATH)/share/res/gpac.png "$(DESTDIR)$(prefix)/share/icons/hicolor/128x128/apps/"
  	$(INSTALL) $(INSTFLAGS) -m 644 $(SRC_PATH)/share/gpac.desktop "$(DESTDIR)$(prefix)/share/applications/"
  endif
@@ -31,15 +31,14 @@
 +endif
  
  
--ifeq ($(CONFIG_DARWIN),yes)
+ ifneq (,$(filter yes,$(CONFIG_DARWIN) $(CONFIG_FREEBSD)))
 -	cp $(SRC_PATH)/share/gui/icons/* "$(DESTDIR)$(prefix)/share/gpac/gui/icons/"
 -	cp -R $(SRC_PATH)/share/gui/extensions/* "$(DESTDIR)$(prefix)/share/gpac/gui/extensions/"
-+ifneq (,$(filter yes,$(CONFIG_DARWIN) $(CONFIG_FREEBSD)))
  	cp $(SRC_PATH)/share/shaders/* "$(DESTDIR)$(prefix)/share/gpac/shaders/"
  	cp -R $(SRC_PATH)/share/scripts/* "$(DESTDIR)$(prefix)/share/gpac/scripts/"
  	cp -R $(SRC_PATH)/share/python/* "$(DESTDIR)$(prefix)/share/gpac/python/"
  	cp $(SRC_PATH)/share/res/* "$(DESTDIR)$(prefix)/share/gpac/res/"
- 	cp -R $(SRC_PATH)/share/vis/* "$(DESTDIR)$(prefix)/share/gpac/vis/"
+ 	cp -R $(SRC_PATH)/share/rmtws/* "$(DESTDIR)$(prefix)/share/gpac/rmtws/"
 +ifeq ($(CONFIG_X11),yes)
 +	cp $(SRC_PATH)/share/gui/icons/* "$(DESTDIR)$(prefix)/share/gpac/gui/icons/"
 +	cp -R $(SRC_PATH)/share/gui/extensions/* "$(DESTDIR)$(prefix)/share/gpac/gui/extensions/"
@@ -51,7 +50,7 @@
  	cp -R --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/scripts/* $(DESTDIR)$(prefix)/share/gpac/scripts/
  	cp -R --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/python/* $(DESTDIR)$(prefix)/share/gpac/python/
  	cp --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/res/* $(DESTDIR)$(prefix)/share/gpac/res/
- 	cp -R --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/vis/* $(DESTDIR)$(prefix)/share/gpac/vis/
+ 	cp -R --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/rmtws/* $(DESTDIR)$(prefix)/share/gpac/rmtws/
 +ifeq ($(CONFIG_X11),yes)
 +	cp --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/gui/icons/* $(DESTDIR)$(prefix)/share/gpac/gui/icons/
 +	cp -R --no-preserve=mode,ownership,timestamp $(SRC_PATH)/share/gui/extensions/* $(DESTDIR)$(prefix)/share/gpac/gui/extensions/

@@ -1,6 +1,6 @@
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.10.1
+DISTVERSION=	4.11.0
 PORTREVISION=	1
 CATEGORIES=	irc
 
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--binary-dir=${PREFIX}/bin \
 		--data-dir=${_INSPIRCD_DBDIR} \
 		--disable-auto-extras \
 		--distribution-label=${OPSYS}-${PORTVERSION} \
+		--example-dir=${EXAMPLESDIR} \
 		--gid=nobody \
 		--log-dir=${_INSPIRCD_LOGDIR} \
 		--manual-dir=${PREFIX}/share/man/man1 \

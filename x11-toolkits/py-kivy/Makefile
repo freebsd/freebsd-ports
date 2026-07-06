@@ -1,6 +1,5 @@
 PORTNAME=	kivy
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.3.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ WWW=		https://kivy.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filetype>0:devel/py-filetype@${PY_FLAVOR}
 LIB_DEPENDS=	libmtdev.so:devel/libmtdev
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
@@ -24,7 +23,8 @@ MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 
 USES=		display:test gl pytest python shebangfix uniquefiles:dirs
 USE_GL=		egl gl glesv2
-USE_PYTHON=	autoplist concurrent cython0 distutils
+USE_PYTHON=	autoplist concurrent cython distutils
+
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=		--inplace
 PYDISTUTILS_EGGINFO=		Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info
@@ -52,7 +52,9 @@ SPELLING_DESC=	Spell checking support
 TEXT_DESC=	Text rendering support (compulsory)
 WINDOW_DESC=	Window support (compulsory)
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-jquery>0:textproc/py-sphinxcontrib-jquery@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-jquery>0:textproc/py-sphinxcontrib-jquery@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+DOCS_MAKE_ENV=		READTHEDOCS=True
 ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>0:textproc/py-enchant@${PY_FLAVOR}
 GSTREAMER_MAKE_ENV=	USE_GSTREAMER=1
 GSTREAMER_MAKE_ENV_OFF=	USE_GSTREAMER=0
@@ -76,18 +78,6 @@ X11_MAKE_ENV_OFF=	USE_X11=0
 X11_USES=		xorg
 X11_USE=		XORG=xrender,x11
 
-post-patch:
-	@${REINPLACE_CMD} -e '/GLSHADERSOURCEPTR/s,const GLchar\*,& const ,' \
-		${WRKSRC}/kivy/graphics/cgl.pxd
-	@${REINPLACE_CMD} -e '/glShaderSource/s,const GLchar\*,& const ,' \
-		${WRKSRC}/kivy/graphics/cgl.pxd \
-		${WRKSRC}/kivy/graphics/cgl_backend/cgl_gl.pyx \
-		${WRKSRC}/kivy/include/common_subset.h
-	@${REINPLACE_CMD} -e '/mockShaderSource/s,const GLchar\*,& const,' \
-		${WRKSRC}/kivy/graphics/cgl_backend/cgl_mock.pyx
-	@${REINPLACE_CMD} -e '/dbgShaderSource/s,const GLchar\*,& const,' \
-		${WRKSRC}/kivy/graphics/cgl_backend/cgl_debug.pyx \
-
 post-build-DOCS-on:
 	${MKDIR} ${WRKSRC}/doc/build/doctrees ${WRKSRC}/doc/build/html
 	(cd ${WRKSRC}; \
@@ -105,3 +95,5 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/doc/build/html; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
+
+PATCH_ARGS+=	-l

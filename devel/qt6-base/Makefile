@@ -40,7 +40,6 @@ USES=		cmake compiler:c++17-lang gl gnome jpeg perl5 pkgconfig python \
 USE_GL=		egl opengl
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
-USE_LOCALE=	C.UTF-8
 
 SHEBANG_FILES=	${WRKSRC}/libexec/qt-android-runner.py \
 		${WRKSRC}/mkspecs/features/uikit/device_destinations.sh \

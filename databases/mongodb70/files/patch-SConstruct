@@ -1,6 +1,6 @@
---- SConstruct.orig	2025-11-03 12:58:46 UTC
+--- SConstruct.orig	2026-06-16 06:40:34 UTC
 +++ SConstruct
-@@ -1798,7 +1798,7 @@ if unknown_vars:
+@@ -1840,7 +1840,7 @@ if unknown_vars:
  
  unknown_vars = env_vars.UnknownVariables()
  if unknown_vars:

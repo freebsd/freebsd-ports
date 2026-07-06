@@ -16,9 +16,10 @@ RUN_DEPENDS=	kicad:cad/kicad-devel
 
 CONFLICTS_INSTALL=	kicad-library-packages3d # share/kicad/3dmodels/Battery.3dshapes/BatteryHolder_Bulgin_BX0036_1xC.step
 
+# https://gitlab.com/kicad/libraries/kicad-packages3D
 USE_GITLAB=	nodefault
 GL_ACCOUNT=	kicad
-GL_PROJECT=	kicad/packages3D
+GL_PROJECT=	libraries/kicad-packages3D
 GL_TAGNAME=	${GIT_P3D_HASH}
 
 USES=		cmake

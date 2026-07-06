@@ -1,6 +1,6 @@
 PORTNAME=	nwg-dock-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.10
+DISTVERSION=	0.4.11
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org

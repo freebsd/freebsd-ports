@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash \
 		git:devel/git
 
-USES=		gmake
+USES=		cpe gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	tj
 
@@ -20,5 +20,7 @@ MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man/man1
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+CPE_VENDOR=	${PORTNAME}_project
 
 .include <bsd.port.mk>

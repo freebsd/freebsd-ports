@@ -11,8 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe
-CPE_VENDOR=	audiocoding
-CPE_PRODUCT=	freeware_advanced_audio_decoder_2
+CPE_VENDOR=	faad2_project
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

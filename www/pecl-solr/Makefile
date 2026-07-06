@@ -14,6 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gnome php:build,pecl pkgconfig
 USE_GNOME=	libxml2
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	LIBXML_CFLAGS=-I${LOCALBASE}/include/libxml2 \
 		LIBXML_LIBS=-L${LOCALBASE}/include/libxml2

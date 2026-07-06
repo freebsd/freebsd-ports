@@ -1,5 +1,5 @@
 PORTNAME=	qmdnsengine
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org

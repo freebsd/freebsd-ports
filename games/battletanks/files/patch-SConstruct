@@ -1,6 +1,6 @@
 --- SConstruct.orig	2009-12-10 14:58:55 UTC
 +++ SConstruct
-@@ -16,7 +16,7 @@ env['BUILDERS']['Library'] = picLibBuilder
+@@ -16,7 +16,7 @@ picLibBuilder = Builder(
  env['BUILDERS']['StaticLibrary'] = picLibBuilder
  env['BUILDERS']['Library'] = picLibBuilder
  
@@ -9,7 +9,7 @@
  #opts.Add('CC', 'C compiler')
  #opts.Add('CXX', 'C++ compiler')
  opts.Add('CCFLAGS', 'General options that are passed to the C compiler')
-@@ -30,12 +30,13 @@ if sys.platform != "win32":
+@@ -30,12 +30,13 @@ opts.Add('CPPPATH', 'extra cpp path')
  
  if sys.platform != "win32":
  	opts.Add('prefix', 'prefix for **nix packaging', '')
@@ -25,7 +25,7 @@
  
  opts.Update(env)
  opts.Save('options.cache', env.Clone())
-@@ -47,16 +48,18 @@ import SCons.Util
+@@ -47,16 +48,18 @@ debug = buildmode == "debug"
  Export('debug')
  
  import SCons.Util
@@ -80,7 +80,7 @@
  	Exit(1)
  	
  
-@@ -140,23 +140,23 @@ Export('smpeg_lib')
+@@ -140,23 +140,23 @@ if debug and sys.platform == 'win32':
  	smpeg_lib = 'smpeg_d'
  Export('smpeg_lib')
  
@@ -110,6 +110,15 @@
  
  conf.Finish()
  
+@@ -177,7 +177,7 @@ Export('have_sse')
+ lib_dir = '.'
+ plugins_dir = ''
+ try : 
+-	version_file = file('.svnversion', 'r')
++	version_file = open('.svnversion')
+ 	try : 
+ 		version = version_file.readline().strip()
+ 		prefix = env['prefix']
 @@ -205,7 +205,7 @@ try : 
  
  	except: 
@@ -119,19 +128,7 @@
  except : 
  	svnversion = os.popen('svnversion -n .', 'r')
  	version = svnversion.readline().strip()
-@@ -238,7 +238,10 @@ version = version[version.rfind(':') + 1:]
- 			env.Append(CPPDEFINES='PLUGINS_DIR="\\"' + plugins_dir + '\\""')
- 
- version = version[version.rfind(':') + 1:]
--revision = int(version.replace('M', ''))
-+try:
-+    revision = int(version.replace('M', ''))
-+except ValueError:
-+    revision = 0
- 
- Export('version')
- Export('revision')
-@@ -246,31 +249,35 @@ version = '0.9.%s' %version
+@@ -246,31 +246,35 @@ Export('lib_dir')
  Export('plugins_dir')
  
  version = '0.9.%s' %version

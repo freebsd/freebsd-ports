@@ -1,6 +1,7 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
 DISTVERSION=	148
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}-source
@@ -61,6 +62,8 @@ OPTIONS_GROUP_SHADER=		LIBRASHADER LIBRETRO
 # error loading plugin: Cannot open "/usr/bin/../lib/LLVMgold.so"
 # on tools/sourcery target, so exclude OPENAL on i386
 OPTIONS_EXCLUDE_i386=	OPENAL
+OPTIONS_EXCLUDE_powerpc64le=	N64
+OPTIONS_EXCLUDE_powerpc64=	N64
 
 OPTIONS_SUB=	yes
 

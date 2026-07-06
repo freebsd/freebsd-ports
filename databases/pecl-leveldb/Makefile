@@ -12,5 +12,6 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

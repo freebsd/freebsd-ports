@@ -183,6 +183,7 @@ bin/3dSignatures.R
 bin/3dSkullStrip
 bin/3dSliceNDice
 bin/3dSpaceTimeCorr
+bin/3dSpaceTimeCorr2
 bin/3dSpatNorm
 bin/3dStatClust
 bin/3dSurf2Vol
@@ -912,6 +913,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_tedana_afni.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_textdata.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_timing.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_torch_util.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_tsv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_uber_align.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_uber_proc.py
@@ -2067,4 +2069,3 @@ lib/afni/plug_zeropad.so
 %%PORTDOCS%%%%DOCSDIR%%/README.volreg
 %%PORTDOCS%%%%DOCSDIR%%/README.web
 %%PORTDOCS%%%%DOCSDIR%%/README.ziad
-

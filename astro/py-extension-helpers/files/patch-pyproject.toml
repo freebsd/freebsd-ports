@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-07-03 09:45:00 UTC
++++ pyproject.toml
+@@ -18,7 +18,7 @@ dependencies = [
+ ]
+ requires-python = ">=3.10"
+ dependencies = [
+-    "setuptools>=64",
++    "setuptools>=63",
+     "tomli>=1.0.0 ; python_version < '3.11'",
+ ]
+ dynamic = ["version"]

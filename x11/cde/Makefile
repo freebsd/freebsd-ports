@@ -1,6 +1,6 @@
 PORTNAME=	cde
 DISTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		xrdb:x11/xrdb \
 		xset:x11/xset \
 		sessreg:x11/sessreg
-LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 
 USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg

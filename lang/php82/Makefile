@@ -1,6 +1,6 @@
 PORTNAME=	php82
-DISTVERSION=	8.2.31
-PORTREVISION?=	0
+DISTVERSION=	8.2.32
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
@@ -10,6 +10,9 @@ COMMENT=	PHP Scripting Language (8.2.X branch)
 WWW=		https://www.php.net/
 
 LICENSE=	PHP301
+
+DEPRECATED=		Upstream EOL reaches on 2026-12-31
+EXPIRATION_DATE=		2026-12-31
 
 USES+=		compiler:c11 cpe gnome localbase pkgconfig tar:xz
 CPE_PRODUCT=	php
@@ -174,7 +177,7 @@ COMMENT=	The ${PHP_MODNAME} shared extension for php
 USES+=		php:ext,noflavors
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
 PHP_VER=	82
-IGNORE_WITH_PHP=	83 84 85
+IGNORE_WITH_PHP=	83 84 85 86
 
 EXTSUBDIR=	${DISTNAME}/ext/${PHP_MODNAME}
 WRKSRC=		${WRKDIR}/${EXTSUBDIR}
@@ -233,7 +236,7 @@ FLATFILE_CONFIGURE_ON=	--disable-flatfile
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
 INIFILE_CONFIGURE_OFF=	--disable-inifile
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 LMDB_CONFIGURE_ARGS=	--with-lmdb=${LOCALBASE}
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
 QDBM_CONFIGURE_ARGS=	--with-qdbm=${LOCALBASE}

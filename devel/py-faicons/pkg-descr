@@ -1,0 +1,6 @@
+Interface to Font-Awesome for use in Shiny.
+
+This package provides an icon class and SVG rendering utilities for
+Font Awesome icons in Python. It is part of the Shiny for Python
+ecosystem, enabling easy integration of Font Awesome icons in web
+applications.

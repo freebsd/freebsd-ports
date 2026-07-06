@@ -14,7 +14,9 @@ WWW=		https://www.libsdl.org/ \
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake iconv pkgconfig
+USES=		cmake cpe iconv pkgconfig
+CPE_PRODUCT=	simple_directmedia_layer
+CPE_VENDOR=	libsdl
 CMAKE_OFF=	SDL_ARTS \
 		SDL_CCACHE \
 		SDL_ESD \

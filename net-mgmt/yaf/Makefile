@@ -1,6 +1,5 @@
 PORTNAME=	yaf
-DISTVERSION=	2.13.0
-PORTREVISION=	1
+DISTVERSION=	2.19.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -9,12 +8,12 @@ COMMENT=	Yet Another Flowmeter
 WWW=		https://tools.netsa.cert.org/yaf/index.html
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
 		libltdl.so:devel/libltdl \
 		libpcap.so:net/libpcap \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -69,10 +68,13 @@ CONFIGURE_ARGS+=	--with-dag=${LOCALBASE}
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/yaf
-.for f in dhcp_fingerprints.conf yafApplabelRules.conf yafDPIRules.conf yaf.conf
-	${MV} ${STAGEDIR}${PREFIX}/etc/yaf/$f ${STAGEDIR}${PREFIX}/etc/yaf/$f.sample
+.for f in dhcp_fingerprints.conf yafApplabelRules.conf yafDPIRules.conf
+	${MV} ${STAGEDIR}${ETCDIR}/$f ${STAGEDIR}${ETCDIR}/$f.sample
 .endfor
-	${RM} ${STAGEDIR}${PREFIX}/etc/p0f.fp
+	${MV} ${STAGEDIR}${DATADIR}/etc/yaf.conf ${STAGEDIR}${ETCDIR}/yaf.conf.sample
+	${MV} ${STAGEDIR}${DATADIR}/yaf.init ${STAGEDIR}${DATADIR}/yaf.init.sample
+	${RM} -r ${STAGEDIR}${DATADIR}/etc
+	${RM} -r ${STAGEDIR}${DATADIR}/lib
+	${RM} -r ${STAGEDIR}${DATADIR}/libexec
 
 .include <bsd.port.mk>

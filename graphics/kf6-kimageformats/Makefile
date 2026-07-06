@@ -1,9 +1,10 @@
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-frameworks
 
-COMMENT=	Plugins to allow QImage to support extra file formats
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Plugins to allow QImage to support extra file formats
 
 USES=		cmake gl kde:6 pkgconfig qt:6 tar:xz
 USE_GL=		gl opengl

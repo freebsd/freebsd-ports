@@ -1,4 +1,4 @@
-PORTREVISION=	5
+PORTREVISION=	6
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 WWW=		https://www.cyrusimap.org/sasl/
@@ -42,7 +42,7 @@ GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 LMDB_CONFIGURE_ON=	--with-dblib=lmdb
 LMDB_CFLAGS=		-I${LOCALBASE}/include
 LMDB_LDFLAGS=		-L${LOCALBASE}/lib

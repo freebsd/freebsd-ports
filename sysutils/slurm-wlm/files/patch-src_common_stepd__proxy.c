@@ -1,4 +1,4 @@
---- src/common/stepd_proxy.c.orig	2026-01-15 20:26:01 UTC
+--- src/common/stepd_proxy.c.orig	2026-06-09 20:26:02 UTC
 +++ src/common/stepd_proxy.c
 @@ -40,6 +40,7 @@
  #include "src/common/read_config.h"
@@ -8,7 +8,7 @@
  #include "src/common/stepd_api.h"
  #include "src/common/stepd_proxy.h"
  #include "src/common/xmalloc.h"
-@@ -299,13 +300,14 @@ static int _stepd_connect_to_slurmd(void)
+@@ -297,13 +298,14 @@ static int _stepd_connect_to_slurmd(void)
  static int _stepd_connect_to_slurmd(void)
  {
  	struct sockaddr_un slurmd_addr = { .sun_family = AF_UNIX };

@@ -1,0 +1,10 @@
+AutoTempo manages Jira worklogs through the Tempo Timesheets REST API using a
+simple, version-controllable text file.  It can generate a monthly worklog
+template pre-populated with working days, expand keyword shortcuts and
+recurring entries defined in config.toml, validate daily totals, and apply
+worklogs idempotently to Jira.  A helper can draft worklogs from local git
+commit history.
+
+Targets Tempo Timesheets on Jira Server/Data Center; authentication uses a
+Jira personal access token.  The tool is run from a directory containing a
+config.toml file.

@@ -1,6 +1,6 @@
 PORTNAME=	fish
 DISTVERSION=	4.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
@@ -53,6 +53,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
+	@${RMDIR} ${STAGEDIR}${DOCSDIR}/_sources
 
 post-install-DOCS-off:
 	# required because fish always installs documentation

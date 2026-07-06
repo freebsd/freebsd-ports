@@ -137,7 +137,6 @@ USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
-USE_LOCALE?=	en_US.UTF-8
 
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
@@ -331,6 +330,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-tls=nss \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
+		--without-dotnet \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
@@ -341,8 +341,8 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		ICU_LIBS="`icu-config --ldflags`" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
-		ZXING_CFLAGS="-I${LOCALBASE}/include/ZXing \
-		CPLUS_INCLUDE_PATH="-I${LOCALBASE}/include \
+		ZXING_CFLAGS="-I${LOCALBASE}/include/ZXing" \
+		CPLUS_INCLUDE_PATH="-I${LOCALBASE}/include" \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
@@ -363,11 +363,6 @@ MDDS_VERSION=	3.1
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ( \
-    (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
-BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
-.endif
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia

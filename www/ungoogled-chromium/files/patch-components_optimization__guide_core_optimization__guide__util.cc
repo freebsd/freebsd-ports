@@ -1,4 +1,4 @@
---- components/optimization_guide/core/optimization_guide_util.cc.orig	2026-05-09 18:09:27 UTC
+--- components/optimization_guide/core/optimization_guide_util.cc.orig	2026-06-05 13:45:06 UTC
 +++ components/optimization_guide/core/optimization_guide_util.cc
 @@ -37,7 +37,7 @@ optimization_guide::proto::Platform GetPlatform() {
    return optimization_guide::proto::PLATFORM_CHROMEOS;
@@ -9,7 +9,7 @@
    return optimization_guide::proto::PLATFORM_LINUX;
  #else
    return optimization_guide::proto::PLATFORM_UNDEFINED;
-@@ -181,7 +181,7 @@ optimization_guide::proto::ChromePlatform GetChromePla
+@@ -184,7 +184,7 @@ optimization_guide::proto::ChromePlatform GetChromePla
    return optimization_guide::proto::CHROME_PLATFORM_CHROMEOS;
  #elif BUILDFLAG(IS_ANDROID)
    return optimization_guide::proto::CHROME_PLATFORM_ANDROID;

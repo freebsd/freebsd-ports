@@ -10,6 +10,7 @@ include/Cuda/Kokkos_Cuda_GraphNode_Impl.hpp
 include/Cuda/Kokkos_Cuda_Graph_Impl.hpp
 include/Cuda/Kokkos_Cuda_Half_Conversion.hpp
 include/Cuda/Kokkos_Cuda_Half_Impl_Type.hpp
+include/Cuda/Kokkos_Cuda_Half_MathematicalFunctions.hpp
 include/Cuda/Kokkos_Cuda_Instance.hpp
 include/Cuda/Kokkos_Cuda_KernelLaunch.hpp
 include/Cuda/Kokkos_Cuda_MDRangePolicy.hpp
@@ -36,6 +37,7 @@ include/HIP/Kokkos_HIP_Graph_Impl.hpp
 include/HIP/Kokkos_HIP_Half_Conversion.hpp
 include/HIP/Kokkos_HIP_Half_Impl_Type.hpp
 include/HIP/Kokkos_HIP_Instance.hpp
+include/HIP/Kokkos_HIP_IsXnack.hpp
 include/HIP/Kokkos_HIP_KernelLaunch.hpp
 include/HIP/Kokkos_HIP_MDRangePolicy.hpp
 include/HIP/Kokkos_HIP_ParallelFor_MDRange.hpp
@@ -122,6 +124,7 @@ include/Kokkos_SIMD_AVX512.hpp
 include/Kokkos_SIMD_Common.hpp
 include/Kokkos_SIMD_Common_Math.hpp
 include/Kokkos_SIMD_NEON.hpp
+include/Kokkos_SIMD_SVE.hpp
 include/Kokkos_SIMD_Scalar.hpp
 include/Kokkos_ScatterView.hpp
 include/Kokkos_ScratchSpace.hpp
@@ -198,6 +201,7 @@ include/SYCL/Kokkos_SYCL_GraphNode_Impl.hpp
 include/SYCL/Kokkos_SYCL_Graph_Impl.hpp
 include/SYCL/Kokkos_SYCL_Half_Conversion.hpp
 include/SYCL/Kokkos_SYCL_Half_Impl_Type.hpp
+include/SYCL/Kokkos_SYCL_Half_MathematicalFunctions.hpp
 include/SYCL/Kokkos_SYCL_Instance.hpp
 include/SYCL/Kokkos_SYCL_MDRangePolicy.hpp
 include/SYCL/Kokkos_SYCL_ParallelFor_MDRange.hpp
@@ -239,8 +243,10 @@ include/Threads/Kokkos_Threads_UniqueToken.hpp
 include/Threads/Kokkos_Threads_WorkGraphPolicy.hpp
 include/View/Hooks/Kokkos_ViewHooks.hpp
 include/View/Kokkos_BasicView.hpp
+include/View/Kokkos_ViewAccessPreconditionsCheck.hpp
 include/View/Kokkos_ViewAlloc.hpp
 include/View/Kokkos_ViewAtomic.hpp
+include/View/Kokkos_ViewCommonType.hpp
 include/View/Kokkos_ViewCtor.hpp
 include/View/Kokkos_ViewDataAnalysis.hpp
 include/View/Kokkos_ViewLegacy.hpp
@@ -360,7 +366,6 @@ include/fwd/Kokkos_Fwd_THREADS.hpp
 include/impl/KokkosExp_Host_IterateTile.hpp
 include/impl/KokkosExp_IterateTileGPU.hpp
 include/impl/Kokkos_AnalyzePolicy.hpp
-include/impl/Kokkos_BitOps.hpp
 include/impl/Kokkos_Bitset_impl.hpp
 include/impl/Kokkos_CPUDiscovery.hpp
 include/impl/Kokkos_ChaseLev.hpp
@@ -385,6 +390,7 @@ include/impl/Kokkos_GraphImpl_Utilities.hpp
 include/impl/Kokkos_GraphImpl_fwd.hpp
 include/impl/Kokkos_GraphNodeCustomization.hpp
 include/impl/Kokkos_GraphNodeImpl.hpp
+include/impl/Kokkos_GraphNodeThenImpl.hpp
 include/impl/Kokkos_Half_FloatingPointWrapper.hpp
 include/impl/Kokkos_Half_MathematicalFunctions.hpp
 include/impl/Kokkos_Half_NumericTraits.hpp
@@ -397,6 +403,7 @@ include/impl/Kokkos_InitializationSettings.hpp
 include/impl/Kokkos_LIFO.hpp
 include/impl/Kokkos_LinkedListNode.hpp
 include/impl/Kokkos_MultipleTaskQueue.hpp
+include/impl/Kokkos_Neon_SVE_bridge.hpp
 include/impl/Kokkos_NvidiaGpuArchitectures.hpp
 include/impl/Kokkos_OptionalRef.hpp
 include/impl/Kokkos_ParseCommandLineArgumentsAndEnvironmentVariables.hpp
@@ -582,12 +589,15 @@ lib/cmake/Kokkos/KokkosConfigCommon.cmake
 lib/cmake/Kokkos/KokkosConfigVersion.cmake
 lib/cmake/Kokkos/KokkosTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kokkos/KokkosTargets.cmake
+lib/libkokkosalgorithms.so
+lib/libkokkosalgorithms.so.4.7
+lib/libkokkosalgorithms.so.4.7.4
 lib/libkokkoscontainers.so
-lib/libkokkoscontainers.so.4.5
-lib/libkokkoscontainers.so.4.5.1
+lib/libkokkoscontainers.so.4.7
+lib/libkokkoscontainers.so.4.7.4
 lib/libkokkoscore.so
-lib/libkokkoscore.so.4.5
-lib/libkokkoscore.so.4.5.1
+lib/libkokkoscore.so.4.7
+lib/libkokkoscore.so.4.7.4
 lib/libkokkossimd.so
-lib/libkokkossimd.so.4.5
-lib/libkokkossimd.so.4.5.1
+lib/libkokkossimd.so.4.7
+lib/libkokkossimd.so.4.7.4

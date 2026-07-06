@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/browser_management/browser_management_service.cc.orig	2026-05-11 13:57:04 UTC
+--- chrome/browser/enterprise/browser_management/browser_management_service.cc.orig	2026-06-10 12:51:34 UTC
 +++ chrome/browser/enterprise/browser_management/browser_management_service.cc
 @@ -50,7 +50,7 @@ GetManagementStatusProviders(Profile* profile) {
  
@@ -9,7 +9,7 @@
    base::SequencedTaskRunner::GetCurrentDefault()->PostTask(
        FROM_HERE,
        base::BindOnce(&BrowserManagementService::UpdateManagementIconForProfile,
-@@ -75,7 +75,7 @@ BrowserManagementService::BrowserManagementService(Pro
+@@ -74,7 +74,7 @@ BrowserManagementService::BrowserManagementService(Pro
  }
  
  ui::ImageModel* BrowserManagementService::GetManagementIconForProfile() {
@@ -18,7 +18,7 @@
    return management_icon_for_profile_.IsEmpty() ? nullptr
                                                  : &management_icon_for_profile_;
  #else
-@@ -84,7 +84,7 @@ ui::ImageModel* BrowserManagementService::GetManagemen
+@@ -83,7 +83,7 @@ ui::ImageModel* BrowserManagementService::GetManagemen
  }
  
  gfx::Image* BrowserManagementService::GetManagementIconForBrowser() {
@@ -27,7 +27,7 @@
    return management_icon_for_browser_.IsEmpty() ? nullptr
                                                  : &management_icon_for_browser_;
  #else
-@@ -97,7 +97,7 @@ void BrowserManagementService::TriggerPolicyStatusChan
+@@ -96,7 +96,7 @@ void BrowserManagementService::TriggerPolicyStatusChan
    OnPolicyStatusChanged();
  }
  
@@ -36,7 +36,7 @@
  void BrowserManagementService::SetBrowserManagementIconForTesting(
      const gfx::Image& management_icon) {
    CHECK_IS_TEST();
-@@ -186,7 +186,7 @@ void BrowserManagementService::SetManagementIconForBro
+@@ -185,7 +185,7 @@ void BrowserManagementService::SetManagementIconForBro
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  void BrowserManagementService::OnPolicyStatusChanged() {

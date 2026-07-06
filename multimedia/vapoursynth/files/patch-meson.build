@@ -1,0 +1,27 @@
+--- meson.build.orig	2026-06-19 11:14:53 UTC
++++ meson.build
+@@ -1,5 +1,5 @@ project('VapourSynth', ['c', 'cpp', 'cython'],
+ project('VapourSynth', ['c', 'cpp', 'cython'],
+-    default_options: ['buildtype=release', 'b_lto=true', 'b_ndebug=if-release', 'c_std=c99', 'cpp_std=c++17'],
++    default_options: ['buildtype=release', 'b_ndebug=if-release', 'c_std=c99', 'cpp_std=c++17'],
+     license: 'LGPL-2.1-or-later',
+     meson_version: '>=0.63.0',
+     version: run_command('cat', 'VAPOURSYNTH_VERSION', check: true).stdout().strip().split()[2].split('-')[0],
+@@ -124,8 +124,6 @@ if enable_x86_asm
+             'src/core/kernel/x86/planestats_sse2.c',
+             'src/core/kernel/x86/transpose_sse2.c',
+         ),
+-        c_args: '-march=x86-64-v2',
+-        cpp_args: '-march=x86-64-v2',
+         gnu_symbol_visibility: 'hidden',
+         include_directories: incdir,
+     )
+@@ -137,8 +135,6 @@ if enable_x86_asm
+             'src/core/kernel/x86/merge_avx2.c',
+             'src/core/kernel/x86/planestats_avx2.c',
+         ),
+-        c_args: '-march=x86-64-v3',
+-        cpp_args: '-march=x86-64-v3',
+         gnu_symbol_visibility: 'hidden',
+         include_directories: incdir,
+     )

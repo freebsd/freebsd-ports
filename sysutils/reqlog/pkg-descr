@@ -1,0 +1,7 @@
+reqlog is a CLI tool for searching, tracing, and streaming logs across
+local files, Docker containers, and remote servers over SSH.
+
+It helps debug requests in distributed systems by following identifiers
+such as request_id, trace_id, and correlation_id, as well as custom
+key-value searches, without requiring centralized tracing
+infrastructure.

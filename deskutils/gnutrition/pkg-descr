@@ -1,0 +1,4 @@
+GNUtrition is a free nutrition tracker software that queries USDA food
+data from a local SQLite database. It provides an easy-to-use interface
+for searching foods, logging meals, and reviewing daily food-group
+budgets.

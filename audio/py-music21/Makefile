@@ -1,5 +1,5 @@
 PORTNAME=	music21
-DISTVERSION=	10.1.0
+DISTVERSION=	10.5.0
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpickle>0:devel/py-jsonpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.4:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webcolors>=1.5:graphics/py-webcolors@${PY_FLAVOR} \
 		lilypond:print/lilypond \
@@ -38,6 +38,6 @@ post-patch:
 		s|/usr/bin/xdg-open|${LOCALBASE}/bin/xdg-open|" \
 		${WRKSRC}/music21/environment.py
 
-# tests as of 10.1.0:  925 passed, 2 skipped in 14.32s
+# tests as of 10.5.0: 927 passed, 2 skipped in 77.74s (0:01:17)
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	tomllint
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0_3:devel/py-setuptools@$
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.46.3_1:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist pep517 pytest
+
+# tests: 16 passed
+TEST_ENV=	PYTHONIOENCODING=utf-8 \
+		PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
 
 NO_ARCH=	yes
 

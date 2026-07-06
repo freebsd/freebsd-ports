@@ -15,7 +15,7 @@ LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
 		libxcvt.so:x11/libxcvt \
 		libpwquality.so:security/libpwquality
 # almost equivalent to x11-servers/xorg-server's
-RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
+RUN_DEPENDS+=	${LOCALBASE}/share/xkeyboard-config-2/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
 USES+=		autoreconf:build compiler:c11 gl jpeg libtool perl5 pkgconfig ssl shebangfix xorg

@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2026-04-30 12:45:04 UTC
++++ Makefile.am
+@@ -12,7 +12,7 @@ QUOTE := $(NULLSTRING)"# a double quote"
+ # First, we setup the definitions from configure.ac
+ #
+ 
+-PYTHON := python3
++PYTHON := @pythonexec@
+ if DEBUG
+ # This allows sccache to work correctly with C files.
+ BUILDNUM := "\"0000.000.0000\""

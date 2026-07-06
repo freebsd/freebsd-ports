@@ -1,6 +1,6 @@
---- os.hpp.orig	2025-02-12 14:05:27 UTC
+--- os.hpp.orig	2026-06-27 11:35:31 UTC
 +++ os.hpp
-@@ -158,10 +158,13 @@
+@@ -162,10 +162,13 @@
  
  #if defined(__aarch64__) && (defined(__ARM_FEATURE_CRYPTO) || defined(__ARM_FEATURE_CRC32))
  #include <arm_neon.h>
@@ -15,7 +15,7 @@
  #ifdef __ARM_FEATURE_CRYPTO
  #define USE_NEON_AES
  #endif
-@@ -169,6 +172,10 @@
+@@ -173,6 +176,10 @@
  #define USE_NEON_CRC32
  #endif
  #endif

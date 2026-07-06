@@ -1,6 +1,6 @@
 PORTNAME=	lace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
+DISTVERSION=	2.4.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-work-stealing
 
@@ -29,6 +29,6 @@ pre-configure: # see discussion in https://github.com/trolando/lace/issues/16
 	@${REINPLACE_CMD} -e 's,memory_order_[[:alnum:]_]*,memory_order_seq_cst,g' \
 		${WRKSRC}/src/*.[ch] ${WRKSRC}/src/lace.sh
 
-# tests as of 2.3.2: 100% tests passed, 0 tests failed out of 4
+# tests as of 2.4.0: 100% tests passed, 0 tests failed out of 5
 
 .include <bsd.port.mk>

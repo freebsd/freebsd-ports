@@ -1,0 +1,223 @@
+Index: src/l2tp.c
+===================================================================
+--- src/l2tp.c	(revision 2597)
++++ src/l2tp.c	(revision 2598)
+@@ -411,17 +411,24 @@ L2tpOpen(Link l)
+ 		return;
+ 	};
+ 
+-	l->state = PHYS_STATE_CONNECTING;
+-	strlcpy(pi->callingnum, pi->conf.callingnum, sizeof(pi->callingnum));
+-	strlcpy(pi->callednum, pi->conf.callednum, sizeof(pi->callednum));
+-
+-	if ((!Enabled(&pi->conf.options, L2TP_CONF_RESOLVE_ONCE)) &&
+-	    (pi->conf.fqdn_peer_addr != NULL)) {
++	if ((!Enabled(&pi->conf.options, L2TP_CONF_RESOLVE_ONCE) ||
++	      u_addrempty(&pi->conf.peer_addr.addr)) &&
++	      (pi->conf.fqdn_peer_addr != NULL)) {
+ 	    struct u_range	rng;
+ 	    if (ParseRange(pi->conf.fqdn_peer_addr, &rng, ALLOW_IPV4|ALLOW_IPV6))
+ 		pi->conf.peer_addr = rng;
++	    else {
++		Log(LG_PHYS, ("[%s] L2TP: failed to resolve peer name: %s",
++		    l->name, pi->conf.fqdn_peer_addr));
++		PhysDown(l, STR_CON_FAILED, "failed to resolve peer name");
++		return;
++	    }
+ 	}
+ 
++	l->state = PHYS_STATE_CONNECTING;
++	strlcpy(pi->callingnum, pi->conf.callingnum, sizeof(pi->callingnum));
++	strlcpy(pi->callednum, pi->conf.callednum, sizeof(pi->callednum));
++
+ 	ghash_walk_init(gL2tpTuns, &walk);
+ 	while ((tun = ghash_walk_next(gL2tpTuns, &walk)) != NULL) {
+ 	    if (tun->ctrl && tun->alive && tun->active_sessions < gL2TPtunlimit &&
+@@ -1761,24 +1768,27 @@ L2tpSetCommand(Context ctx, int ac, const char *const 
+ 		    Freee(*fqdn_peer_addr);
+ 		*fqdn_peer_addr = Mstrdup(MB_PHYS, av[0]);
+ 	    }
+-    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
+-		return(-1);
+     	    if (ac > 1) {
+ 		if ((port = atoi(av[1])) < 0 || port > 0xffff)
+ 		    return(-1);
+     	    } else {
+ 		port = 0;
+     	    }
++
++    	    if ((intptr_t)arg == SET_SELFADDR)
++    		l2tp->conf.self_port = port;
++    	    else
++		l2tp->conf.peer_port = port;
++    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
++		return(-1);
+     	    if ((intptr_t)arg == SET_SELFADDR) {
+ 		l2tp->conf.self_addr = rng.addr;
+-		l2tp->conf.self_port = port;
+ 		if (l2tp->server) {
+ 		    L2tpUnListen(ctx->lnk);
+ 		    L2tpListen(ctx->lnk);
+ 		}
+     	    } else {
+ 		l2tp->conf.peer_addr = rng;
+-		l2tp->conf.peer_port = port;
+     	    }
+     	    break;
+ 	case SET_CALLINGNUM:
+Index: src/pptp.c
+===================================================================
+--- src/pptp.c	(revision 2597)
++++ src/pptp.c	(revision 2598)
+@@ -360,11 +360,17 @@ PptpOriginate(Link l)
+     linfo.cancel = PptpCancel;
+     strlcpy(pptp->callingnum, pptp->conf.callingnum, sizeof(pptp->callingnum));
+     strlcpy(pptp->callednum, pptp->conf.callednum, sizeof(pptp->callednum));
+-    if ((!Enabled(&pptp->conf.options, PPTP_CONF_RESOLVE_ONCE)) &&
+-	(pptp->conf.fqdn_peer_addr != NULL)) {
++    if ((!Enabled(&pptp->conf.options, PPTP_CONF_RESOLVE_ONCE) ||
++    	   u_addrempty(&pptp->conf.peer_addr.addr)) &&
++    	   (pptp->conf.fqdn_peer_addr != NULL)) {
+ 	struct u_range	rng;
+ 	if (ParseRange(pptp->conf.fqdn_peer_addr, &rng, ALLOW_IPV4|ALLOW_IPV6))
+ 	    pptp->conf.peer_addr = rng;
++	    else {
++		Log(LG_PHYS, ("[%s] PPTP: failed to resolve peer name: %s",
++		    l->name, pptp->conf.fqdn_peer_addr));
++		return(-1);
++	    }
+     }
+     if (!pptp->outcall) {
+ 	int frameType = PPTP_FRAMECAP_SYNC;
+@@ -1183,20 +1189,22 @@ PptpSetCommand(Context ctx, int ac, const char *const 
+ 		    Freee(*fqdn_peer_addr);
+ 		*fqdn_peer_addr = Mstrdup(MB_PHYS, av[0]);
+ 	    }
+-    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
+-		return(-1);
+     	    if (ac > 1) {
+ 		if ((port = atoi(av[1])) < 0 || port > 0xffff)
+ 		    return(-1);
+     	    } else {
+ 		port = 0;
+     	    }
++    	    if ((intptr_t)arg == SET_SELFADDR)
++		pi->conf.self_port = port;
++	    else
++		pi->conf.peer_port = port;
++    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
++		return(-1);
+     	    if ((intptr_t)arg == SET_SELFADDR) {
+ 		pi->conf.self_addr = rng.addr;
+-		pi->conf.self_port = port;
+     	    } else {
+ 		pi->conf.peer_addr = rng;
+-		pi->conf.peer_port = port;
+     	    }
+     	    break;
+ 	case SET_CALLINGNUM:
+Index: src/tcp.c
+===================================================================
+--- src/tcp.c	(revision 2597)
++++ src/tcp.c	(revision 2598)
+@@ -289,11 +289,20 @@ TcpOpen(Link l)
+ 		PhysUp(l);
+ 		return;
+ 	}
+-	if ((!Enabled(&pi->conf.options, TCP_CONF_RESOLVE_ONCE)) &&
+-	    (pi->conf.fqdn_peer_addr != NULL)) {
++	if ((!Enabled(&pi->conf.options, TCP_CONF_RESOLVE_ONCE) ||
++	      u_addrempty(&pi->conf.peer_addr.addr)) &&
++	      (pi->conf.fqdn_peer_addr != NULL)) {
+ 	    struct u_range	rng;
+ 	    if (ParseRange(pi->conf.fqdn_peer_addr, &rng, ALLOW_IPV4|ALLOW_IPV6))
+ 		pi->conf.peer_addr = rng;
++	    else {
++		Log(LG_PHYS, ("[%s] TCP: failed to resolve peer name: %s",
++		    l->name, pi->conf.fqdn_peer_addr));
++		l->state = PHYS_STATE_DOWN;
++		TcpDoClose(l);
++		PhysDown(l, STR_CON_FAILED, "failed to resolve peer name");
++		return;
++	    }
+ 	}
+ 
+ 	u_addrcopy(&pi->conf.peer_addr.addr,&pi->peer_addr);
+@@ -887,20 +896,22 @@ TcpSetCommand(Context ctx, int ac, const char *const a
+ 		    Freee(*fqdn_peer_addr);
+ 		*fqdn_peer_addr = Mstrdup(MB_PHYS, av[0]);
+ 	    }
+-    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
+-		return(-1);
+ 	    if (ac > 1) {
+ 		if ((port = atoi(av[1])) < 0 || port > 0xffff)
+ 		    return(-1);
+     	    } else {
+ 	        port = 0;
+     	    }
++    	    if ((intptr_t)arg == SET_SELFADDR)
++		pi->conf.self_port = port;
++	    else
++	    	pi->conf.peer_port = port;
++    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
++		return(-1);
+     	    if ((intptr_t)arg == SET_SELFADDR) {
+ 	    	pi->conf.self_addr = rng.addr;
+-		pi->conf.self_port = port;
+     	    } else {
+ 		pi->conf.peer_addr = rng;
+-		pi->conf.peer_port = port;
+     	    }
+ 	    if (pi->If) {
+ 		TcpUnListen(ctx->lnk);
+Index: src/udp.c
+===================================================================
+--- src/udp.c	(revision 2597)
++++ src/udp.c	(revision 2598)
+@@ -277,11 +277,17 @@ UdpOpen(Link l)
+ 	    goto fail;
+ 	}
+ 
+-	if ((!Enabled(&pi->conf.options, UDP_CONF_RESOLVE_ONCE)) &&
+-	    (pi->conf.fqdn_peer_addr != NULL)) {
++	if ((!Enabled(&pi->conf.options, UDP_CONF_RESOLVE_ONCE) ||
++	      u_addrempty(&pi->conf.peer_addr.addr)) &&
++	      (pi->conf.fqdn_peer_addr != NULL)) {
+ 	    struct u_range	rng;
+ 	    if (ParseRange(pi->conf.fqdn_peer_addr, &rng, ALLOW_IPV4|ALLOW_IPV6))
+ 		pi->conf.peer_addr = rng;
++	    else {
++		Log(LG_PHYS, ("[%s] UDP: failed to resolve peer name: %s",
++		    l->name, pi->conf.fqdn_peer_addr));
++		goto fail;
++	    }
+ 	}
+ 
+ 	/* Bind socket */
+@@ -747,20 +753,22 @@ UdpSetCommand(Context ctx, int ac, const char *const a
+ 		    Freee(*fqdn_peer_addr);
+ 		*fqdn_peer_addr = Mstrdup(MB_PHYS, av[0]);
+ 	    }
+-    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
+-		return(-1);
+     	    if (ac > 1) {
+ 		if ((port = atoi(av[1])) < 0 || port > 0xffff)
+ 		    return(-1);
+     	    } else {
+ 		port = 0;
+     	    }
++    	    if ((intptr_t)arg == SET_SELFADDR)
++		pi->conf.self_port = port;
++	    else
++	    	pi->conf.peer_port = port;
++    	    if (ac < 1 || ac > 2 || !ParseRange(av[0], &rng, ALLOW_IPV4|ALLOW_IPV6))
++		return(-1);
+     	    if ((intptr_t)arg == SET_SELFADDR) {
+ 		pi->conf.self_addr = rng.addr;
+-		pi->conf.self_port = port;
+     	    } else {
+ 		pi->conf.peer_addr = rng;
+-		pi->conf.peer_port = port;
+     	    }
+ 	    if (pi->If) {
+ 		UdpUnListen(ctx->lnk);

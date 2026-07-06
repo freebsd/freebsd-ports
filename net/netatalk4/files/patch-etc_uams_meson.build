@@ -1,4 +1,4 @@
---- etc/uams/meson.build.orig	2025-08-07 15:36:39 UTC
+--- etc/uams/meson.build.orig	2026-05-30 12:42:34 UTC
 +++ etc/uams/meson.build
 @@ -24,7 +24,7 @@ library(
      name_suffix: lib_suffix,
@@ -44,16 +44,16 @@
 +    install_dir: libexecdir / 'netatalk-uams',
  )
  
- if have_pam
-@@ -85,7 +85,7 @@ if have_pam
-         name_suffix: lib_suffix,
-         override_options: 'b_lundef=false',
-         install: true,
--        install_dir: libdir / 'netatalk',
-+        install_dir: libexecdir / 'netatalk-uams',
-     )
+ library(
+@@ -84,7 +84,7 @@ library(
+     name_suffix: lib_suffix,
+     override_options: 'b_lundef=false',
+     install: true,
+-    install_dir: libdir / 'netatalk',
++    install_dir: libexecdir / 'netatalk-uams',
+ )
  
-     library(
+ if have_pam
 @@ -97,7 +97,7 @@ if have_pam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
@@ -63,7 +63,16 @@
      )
  
      library(
-@@ -109,40 +109,40 @@ if have_pam
+@@ -109,7 +109,7 @@ if have_pam
+         name_suffix: lib_suffix,
+         override_options: 'b_lundef=false',
+         install: true,
+-        install_dir: libdir / 'netatalk',
++        install_dir: libexecdir / 'netatalk-uams',
+     )
+ 
+     library(
+@@ -121,40 +121,40 @@ if have_pam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
          install: true,
@@ -111,7 +120,7 @@
          pointing_to: 'uams_dhx2_passwd.so',
      )
  endif
-@@ -158,6 +158,6 @@ if have_krb5_uam
+@@ -170,6 +170,6 @@ if have_krb5_uam
          name_suffix: lib_suffix,
          override_options: 'b_lundef=false',
          install: true,

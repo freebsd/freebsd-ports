@@ -15,5 +15,6 @@ USES=		php:pecl ssl
 CONFIGURE_ARGS=	--with-openssl-dir=${OPENSSLBASE}
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-lssl -lcrypto"
 USE_PHP=	sockets:build
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

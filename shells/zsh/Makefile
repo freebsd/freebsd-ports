@@ -1,6 +1,5 @@
 PORTNAME=	zsh
-DISTVERSION=	5.9
-PORTREVISION=	5
+DISTVERSION=	5.9.1
 CATEGORIES=	shells
 MASTER_SITES=	https://www.zsh.org/pub/ \
 		SF \
@@ -57,7 +56,7 @@ ETCDIR_DESC=	System-wide defaults in /etc (instead of $${PREFIX}/etc)
 GDBM_DESC=	Enable GDBM support (GPL)
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc

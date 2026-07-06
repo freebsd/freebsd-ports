@@ -63,6 +63,12 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/scummmodern.zip
 %%DATADIR%%/scummremastered.zip
 %%DATADIR%%/shaders.dat
+%%XENGINES%%%%DATADIR%%/shaders/colony_bitmap.fragment
+%%XENGINES%%%%DATADIR%%/shaders/colony_bitmap.vertex
+%%XENGINES%%%%DATADIR%%/shaders/colony_solid.fragment
+%%XENGINES%%%%DATADIR%%/shaders/colony_solid.vertex
+%%XENGINES%%%%DATADIR%%/shaders/colony_solid_3d.fragment
+%%XENGINES%%%%DATADIR%%/shaders/colony_solid_3d.vertex
 %%DATADIR%%/shaders/emi_actor.fragment
 %%DATADIR%%/shaders/emi_actor.vertex
 %%DATADIR%%/shaders/emi_actorlights.fragment

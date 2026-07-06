@@ -1,13 +1,7 @@
 PORTNAME=	cataclysm-dda
-PORTVERSION=	0.H			# Preserve PORTVERSION so uppercase is respected
-DISTVERSIONSUFFIX=	-g08f04fd	# Using TAG instead of upstream 0.H-RELEASE
-PORTREVISION=	1
+PORTVERSION=	0.I # Preserve PORTVERSION so uppercase is respected
 PORTEPOCH=	1
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	1ab7d1793b3a34779e4616b8c0c7fab37a6da3be.patch:-p1 # Fix build with clang 19 \
-		https://github.com/CleverRaven/Cataclysm-DDA/issues/77355
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Roguelike set in a post-apocalyptic world
@@ -21,7 +15,8 @@ FLAVOR?=	curses
 FLAVORS_SUB=	yes
 
 tiles_PKGNAMESUFFIX=		-tiles
-tiles_LIB_DEPENDS=		libFLAC.so:audio/flac
+tiles_LIB_DEPENDS=		libFLAC.so:audio/flac \
+				libfreetype.so:print/freetype2
 curses_CONFLICTS_INSTALL=	cataclysm-dda-tiles
 tiles_CONFLICTS_INSTALL=	cataclysm-dda
 
@@ -36,7 +31,9 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext-tools
+NLS_CMAKE_ON=	-DCMAKE_INSTALL_LOCALEDIR="${PREFIX}/share/locale"
 NLS_CMAKE_OFF=	-DLOCALIZE=OFF
+
 PORTDOCS=	*
 
 .if ${FLAVOR} == tiles
@@ -44,6 +41,8 @@ PORTDOCS=	*
 USES+=		pkgconfig sdl
 USE_SDL=	image2 mixer2 ttf2
 CMAKE_ON+=	SOUND TILES
+CXXFLAGS+=	-I${LOCALBASE}/include/freetype2
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .else
 
@@ -67,7 +66,7 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Clang 21.1.8 introduced stricter flow analysis on 16-CURRENT (2026-04-25)
 # This workaround prevents build failure in math_parser.cpp and others.
@@ -76,4 +75,7 @@ post-install-DOCS-on:
 CXXFLAGS+=	-Wno-error=missing-noreturn -Wno-error=deprecated-declarations
 .endif
 
-.include <bsd.port.post.mk>
+# Avoid build failure due to strict Clang range-loop warning combined with -Werror
+CXXFLAGS+=		-Wno-error=range-loop-construct
+
+.include <bsd.port.mk>

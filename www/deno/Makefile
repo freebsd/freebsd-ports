@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.14
+DISTVERSION=	2.9.1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,10 +25,10 @@ USES=		cargo cpe gmake gnome llvm:min=21,build ninja:build pkgconfig:build pytho
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
-GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/cli/bench/testdata/lsp_benchdata \
-		denoland:node_test:8846b53:nodetest/tests/node_compat/runner/suite \
-		denoland:std:1f032bb7:denostd/tests/util/std \
-		web-platform-tests:wpt:e78446e:webp/tests/wpt/suite
+GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/tests/bench/testdata/lsp_benchdata \
+		denoland:node_test:195065d:nodetest/tests/node_compat/runner/suite \
+		denoland:std:9c5b710:denostd/tests/util/std \
+		web-platform-tests:wpt:d85e753e65ee8e9654e76a2b4d62b9b5a0ac51e7:webp/tests/wpt/suite
 
 USE_GNOME=	glib20
 
@@ -53,12 +53,13 @@ CARGO_ENV+=	V8_FROM_SOURCE=1 \
 		v8_enable_cet_ibt=true"
 
 PLIST_FILES=	bin/${PORTNAME} \
-		bin/denort
+		bin/denort \
+		lib/libdenort.so
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 DENO_CORE_ICUDATA_V=	0.77.0
-V8_CARGO_V=		147.4.0
+V8_CARGO_V=		149.4.0
 
 V8_DISTDIR=	${CARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR=	${V8_DISTDIR}/v8/tools/builtins-pgo
@@ -68,12 +69,12 @@ CARGO_INSTALL=	no
 WITHOUT_LTO=	yes
 
 post-patch:
+	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" \
+		${WRKSRC}/ext/os/lib.rs
 	${REINPLACE_CMD} "s|${PREFIX}|${PREFIX}|" \
 		${WRKSRC}/cli/task_runner.rs \
-		${WRKSRC}/cli/tools/jupyter/install.rs \
-		${WRKSRC}/ext/os/lib.rs \
 		${WRKSRC}/tests/unit_node/process_test.ts
-	${REINPLACE_CMD} -e "s|%%CC%%|${CC}|" -e "s|%%CXX%%|${CXX}|" \
+	${REINPLACE_CMD} -e "s|%%LLVM_PREFIX%%|${LLVM_PREFIX}|g" \
 		${WRKSRC}/cargo-crates/v8-${V8_CARGO_V}/build/toolchain/gcc_toolchain.gni
 	${REINPLACE_CMD} "s|linux|freebsd|g" \
 		${WRKSRC}/tests/ffi/testdata/ffi_callback_errors.ts \
@@ -105,5 +106,6 @@ do-test:
 do-install:
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/deno ${STAGEDIR}${LOCALBASE}/bin
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/denort ${STAGEDIR}${LOCALBASE}/bin
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libdenort.so ${STAGEDIR}${LOCALBASE}/lib
 
 .include <bsd.port.mk>

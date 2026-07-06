@@ -14,6 +14,5 @@ BROKEN_FreeBSD_16=	compilation fails: ghc SEGVs, see https://bugs.freebsd.org/bu
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		cabal
-USE_LOCALE=	C.UTF-8
 
 .include <bsd.port.mk>

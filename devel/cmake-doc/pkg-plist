@@ -2093,7 +2093,6 @@
 %%DOCSDIR%%/html/_sources/variable/WINDOWS_STORE.rst.txt
 %%DOCSDIR%%/html/_sources/variable/XCODE.rst.txt
 %%DOCSDIR%%/html/_sources/variable/XCODE_VERSION.rst.txt
-%%DOCSDIR%%/html/_static/_sphinx_javascript_frameworks_compat.js
 %%DOCSDIR%%/html/_static/basic.css
 %%DOCSDIR%%/html/_static/classic.css
 %%DOCSDIR%%/html/_static/cmake-favicon.ico
@@ -2103,8 +2102,6 @@
 %%DOCSDIR%%/html/_static/doctools.js
 %%DOCSDIR%%/html/_static/documentation_options.js
 %%DOCSDIR%%/html/_static/file.png
-%%DOCSDIR%%/html/_static/jquery-3.6.0.js
-%%DOCSDIR%%/html/_static/jquery.js
 %%DOCSDIR%%/html/_static/language_data.js
 %%DOCSDIR%%/html/_static/minus.png
 %%DOCSDIR%%/html/_static/plus.png
@@ -2112,8 +2109,6 @@
 %%DOCSDIR%%/html/_static/searchtools.js
 %%DOCSDIR%%/html/_static/sidebar.js
 %%DOCSDIR%%/html/_static/sphinx_highlight.js
-%%DOCSDIR%%/html/_static/underscore-1.13.1.js
-%%DOCSDIR%%/html/_static/underscore.js
 %%DOCSDIR%%/html/command/add_compile_definitions.html
 %%DOCSDIR%%/html/command/add_compile_options.html
 %%DOCSDIR%%/html/command/add_custom_command.html

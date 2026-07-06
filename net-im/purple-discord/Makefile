@@ -1,5 +1,6 @@
 PORTNAME=	purple-discord
 DISTVERSION=	g20251012
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	atanubiswas484@gmail.com

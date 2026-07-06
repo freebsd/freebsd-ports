@@ -1,6 +1,6 @@
---- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2026-05-07 17:02:56 UTC
+--- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2026-07-01 06:24:19 UTC
 +++ media/capture/video/linux/video_capture_device_factory_v4l2.cc
-@@ -42,6 +42,7 @@ bool CompareCaptureDevices(const VideoCaptureDeviceInf
+@@ -43,6 +43,7 @@ bool CompareCaptureDevices(const VideoCaptureDeviceInf
    return a.descriptor < b.descriptor;
  }
  
@@ -8,9 +8,9 @@
  // USB VID and PID are both 4 bytes long.
  const size_t kVidPidSize = 4;
  const size_t kMaxInterfaceNameSize = 256;
-@@ -74,11 +75,24 @@ std::string ExtractFileNameFromDeviceId(const std::str
+@@ -72,11 +73,24 @@ std::string ExtractFileNameFromDeviceId(const std::str
    DCHECK(base::StartsWith(device_id, kDevDir, base::CompareCase::SENSITIVE));
-   return device_id.substr(UNSAFE_TODO(strlen(kDevDir)), device_id.length());
+   return device_id.substr(kDevDir.length());
  }
 +#endif
  
@@ -33,7 +33,7 @@
      const base::FilePath path("/dev/");
      base::FileEnumerator enumerator(path, false, base::FileEnumerator::FILES,
                                      "video*");
-@@ -86,9 +100,13 @@ class DevVideoFilePathsDeviceProvider
+@@ -84,9 +98,13 @@ class DevVideoFilePathsDeviceProvider
        const base::FileEnumerator::FileInfo info = enumerator.GetInfo();
        target_container->emplace_back(path.value() + info.GetName().value());
      }
@@ -47,7 +47,7 @@
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      std::string usb_id;
      const std::string vid_path =
-@@ -105,9 +123,13 @@ class DevVideoFilePathsDeviceProvider
+@@ -103,9 +121,13 @@ class DevVideoFilePathsDeviceProvider
      }
  
      return usb_id;
@@ -61,7 +61,7 @@
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -118,6 +140,7 @@ class DevVideoFilePathsDeviceProvider
+@@ -116,6 +138,7 @@ class DevVideoFilePathsDeviceProvider
        return std::string();
      }
      return display_name;
@@ -69,7 +69,7 @@
    }
  };
  
-@@ -223,7 +246,7 @@ void VideoCaptureDeviceFactoryV4L2::GetDevicesInfo(
+@@ -221,7 +244,7 @@ void VideoCaptureDeviceFactoryV4L2::GetDevicesInfo(
    std::move(callback).Run(std::move(devices_info));
  }
  

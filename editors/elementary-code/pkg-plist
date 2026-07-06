@@ -24,7 +24,6 @@ lib/libcodecore.so
 lib/libcodecore.so.0
 lib/libcodecore.so.0.0
 libdata/pkgconfig/codecore.pc
-share/man/man1/io.elementary.code.1.gz
 share/applications/io.elementary.code.desktop
 share/gtksourceview-4/styles/elementary-dark.xml
 share/gtksourceview-4/styles/elementary-highcontrast-light.xml
@@ -239,10 +238,11 @@ share/locale/zh/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_CN/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_HANS/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_HANT/LC_MESSAGES/io.elementary.code.mo
-share/locale/zh_Hant/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_HK/LC_MESSAGES/io.elementary.code.mo
+share/locale/zh_Hant/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_TW/LC_MESSAGES/io.elementary.code.mo
 share/locale/zu/LC_MESSAGES/io.elementary.code.mo
+share/man/man1/io.elementary.code.1.gz
 share/metainfo/io.elementary.code.metainfo.xml
 share/polkit-1/actions/io.elementary.code.policy
 share/vala/vapi/codecore.deps

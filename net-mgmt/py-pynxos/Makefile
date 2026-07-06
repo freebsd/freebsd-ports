@@ -11,6 +11,9 @@ WWW=		https://github.com/networktocode/pynxos
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Upstream inactive since +7 years, was used by py-napalm for a while, until it was replaced by py-nxapi-plumbing. Please use net-mgmt/py-napalm instead
+EXPIRATION_DATE=2026-07-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scp>0:security/py-scp@${PY_FLAVOR}

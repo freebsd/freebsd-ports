@@ -1,5 +1,6 @@
 PORTNAME=	ot-recorder
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -11,13 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	curl>0:ftp/curl \
 		libconfig>0:devel/libconfig \
-		lmdb>0:databases/lmdb \
+		lmdb0>0:databases/lmdb0 \
 		mosquitto>0:net/mosquitto \
 		pkgconf>0:devel/pkgconf
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libmosquitto.so:net/mosquitto \
 		libuuid.so:misc/libuuid
 

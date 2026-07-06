@@ -5,7 +5,7 @@
 set -e
 set -o pipefail
 
-export LC_ALL=C
+export LC_ALL=C.UTF-8
 
 ##
 ## pypi-get-latest-version.sh: retrieves the latest version of a given Python package as registered on https://pypi.org
@@ -40,7 +40,7 @@ done
 # MAIN
 
 fetch -o - https://pypi.python.org/pypi/$PACKAGE_NAME/json 2>/dev/null |
-	jq -r '.releases | keys[]' |
+	jq -r '.releases | to_entries[] | select( .value | all(.yanked) | not ) | .key' |
 	grep -v dev |
 	grep -v -E ".*(a|b|rc)[0-9]*$" |
 	version_sort |

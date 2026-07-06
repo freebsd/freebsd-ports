@@ -1,6 +1,5 @@
 PORTNAME=	libpsl
-PORTVERSION=	0.21.5
-PORTREVISION=	2
+PORTVERSION=	0.22.0
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/rockdaboot/libpsl/releases/download/${PORTVERSION}/
 
@@ -15,13 +14,13 @@ BUILD_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 USES=		localbase:ldflags meson pkgconfig python:build shebangfix tar:lz
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	--default-library=both \
 		-Dbuiltin=true \
 		-Ddocs=false \
 		-Dpsl_file=${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
 		-Dpsl_testfile=${LOCALBASE}/share/public_suffix_list/test_psl.txt
 USE_LDCONFIG=	yes
-USE_LOCALE=	en_US.UTF-8
 
 SHEBANG_FILES=	src/psl-make-dafsa
 TEST_TARGET=	test

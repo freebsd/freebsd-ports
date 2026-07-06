@@ -1,5 +1,5 @@
 PORTNAME=	rsyslog
-PORTVERSION=	8.2604.0
+PORTVERSION=	8.2606.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -24,12 +24,16 @@ USES=		cpe libtool pkgconfig autoreconf python:env
 
 PORTSCOUT=	limit:^8\.
 
-OPTIONS_DEFINE=	DBI DOCS DTLS ELASTIC GCRYPT GSSAPI HTTP JSONPARSE KAFKA \
-		MYSQL NORMALIZE PGSQL RABBITMQ RELP SNMP
+OPTIONS_DEFINE=	BEATS DBI DOCS DTLS ELASTIC GCRYPT GSSAPI HTTP JSONPARSE \
+		KAFKA MYSQL NORMALIZE PGSQL RABBITMQ RELP SNMP
 OPTIONS_RADIO=	SSLLIB
 OPTIONS_RADIO_SSLLIB=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=GCRYPT
 OPTIONS_SUB=	yes
+
+BEATS_DESC=		Enable input from Elastic *Beats
+BEATS_CONFIGURE_ENABLE=	imbeats
+BEATS_PLIST_FILES=	lib/rsyslog/imbeats.so
 
 DBI_DESC=		LibDBI output module for rsyslog
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
@@ -119,10 +123,6 @@ SNMP_PLIST_FILES=	lib/rsyslog/omsnmp.so
 
 .ifdef WITH_MYSQL_MICROSECONDS
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
-.endif
-
-.ifdef WITH_SANE_HOSTNAME
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include

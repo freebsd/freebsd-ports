@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+You installed OpenBB: Qt based Tox client.
+
+In order to run it please start the following command:
+$ openbb-api --host 127.0.0.1 --port 6900
+
+After this point your browser to http://127.0.0.1:6900
+
+EOM
+}
+]

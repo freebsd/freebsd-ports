@@ -1,5 +1,5 @@
-TIMESTAMP = 1768495022
-SHA256 (go/sysutils_superfile/superfile-v1.5.0/v1.5.0.mod) = ffab4f10c16c9e81e59928b208567124e3399f4b8640bc2ea74621dd7adbf06c
-SIZE (go/sysutils_superfile/superfile-v1.5.0/v1.5.0.mod) = 3459
-SHA256 (go/sysutils_superfile/superfile-v1.5.0/v1.5.0.zip) = 4b114bf98296a7c99737379b0986e01beeac73fb8907037c4b0d19385d8f9aab
-SIZE (go/sysutils_superfile/superfile-v1.5.0/v1.5.0.zip) = 21307414
+TIMESTAMP = 1781795936
+SHA256 (go/sysutils_superfile/superfile-v1.6.1-0.20260618150422-5845124b77cd/v1.6.1-0.20260618150422-5845124b77cd.mod) = cf498e14fd89aaecff9aa9543e9c085a01c1175638e701db454c69cac405692b
+SIZE (go/sysutils_superfile/superfile-v1.6.1-0.20260618150422-5845124b77cd/v1.6.1-0.20260618150422-5845124b77cd.mod) = 4007
+SHA256 (go/sysutils_superfile/superfile-v1.6.1-0.20260618150422-5845124b77cd/v1.6.1-0.20260618150422-5845124b77cd.zip) = 901fbf81fdcfecbad5bc3c0ae8a12879c1e0d45459f9760113aa1e14a7b0b421
+SIZE (go/sysutils_superfile/superfile-v1.6.1-0.20260618150422-5845124b77cd/v1.6.1-0.20260618150422-5845124b77cd.zip) = 21030429

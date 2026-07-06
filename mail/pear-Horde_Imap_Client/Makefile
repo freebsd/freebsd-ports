@@ -13,6 +13,7 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mime \
 		Horde_Stream \
 		Horde_Util
+IGNORE_WITH_PHP=	86
 
 NO_ARCH=	yes
 

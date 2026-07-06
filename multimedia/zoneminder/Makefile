@@ -49,6 +49,7 @@ GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		chmike:CxxUrl:eaf46c0:CxxUrl/dep/CxxUrl \
 		ZoneMinder:RtspServer:a071599:rtsp_server/dep/RtspServer
 USE_PHP=	ctype gd intl opcache pdo_mysql session sockets sysvsem
+IGNORE_WITH_PHP=	86
 USE_RC_SUBR=	${PORTNAME}
 
 CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \

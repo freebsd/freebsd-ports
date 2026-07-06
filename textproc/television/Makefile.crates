@@ -12,7 +12,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
-		arrayvec-0.7.6 \
 		atomic-0.6.1 \
 		autocfg-1.5.0 \
 		backtrace-0.3.76 \
@@ -21,17 +20,16 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.10.0 \
+		bitflags-2.11.0 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
 		bumpalo-3.19.0 \
 		bytemuck-1.24.0 \
-		bytes-1.11.0 \
+		bytes-1.11.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.48 \
 		cfg-if-1.0.4 \
-		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
 		ciborium-0.2.2 \
@@ -54,6 +52,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		crc32fast-1.5.0 \
 		criterion-0.8.1 \
 		criterion-plot-0.8.1 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
@@ -80,7 +79,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.0 \
 		document-features-0.2.12 \
-		downcast-rs-1.2.1 \
 		dyn-clone-1.0.20 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
@@ -120,6 +118,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indexmap-2.12.1 \
 		indoc-2.0.7 \
 		instability-0.3.9 \
+		int-enum-1.2.0 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
@@ -131,6 +130,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lazy-regex-proc_macros-3.4.2 \
 		lazy_static-1.5.0 \
 		libc-0.2.177 \
+		libghostty-vt-0.1.1 \
+		libghostty-vt-sys-0.1.1 \
 		libredox-0.1.10 \
 		line-clipping-0.3.5 \
 		linux-raw-sys-0.4.15 \
@@ -141,19 +142,18 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lru-0.16.2 \
 		mac_address-1.1.8 \
 		matchers-0.2.0 \
-		memchr-2.7.6 \
+		memchr-2.8.0 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.1.0 \
-		nix-0.28.0 \
 		nix-0.29.0 \
 		nix-0.30.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		nu-ansi-term-0.50.3 \
-		num-conv-0.1.0 \
+		num-conv-0.2.0 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
@@ -187,6 +187,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pest_derive-2.8.4 \
 		pest_generator-2.8.4 \
 		pest_meta-2.8.4 \
+		phantom-core-0.1.0 \
+		phantom-daemon-0.1.0 \
+		phantom-test-0.1.0 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -197,9 +200,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		portable-atomic-1.13.0 \
-		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		proc-macro2-1.0.103 \
+		proc-macro2-diagnostics-0.10.1 \
 		quote-1.0.42 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -245,11 +248,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_spanned-1.0.3 \
 		serde_with-3.16.1 \
 		serde_with_macros-3.16.1 \
-		serial2-0.2.33 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
-		shared_library-0.1.9 \
-		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		signal-hook-0.3.18 \
 		signal-hook-0.4.1 \
@@ -268,6 +268,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.111 \
+		television-nucleo-0.5.0 \
+		television-nucleo-matcher-0.3.1 \
 		tempfile-3.23.0 \
 		terminfo-0.9.0 \
 		termion-4.0.6 \
@@ -278,9 +280,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.9 \
-		time-0.3.44 \
-		time-core-0.1.6 \
-		time-macros-0.2.24 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		time-macros-0.2.27 \
 		tinytemplate-1.2.1 \
 		tokio-1.48.0 \
 		tokio-macros-2.6.0 \
@@ -298,7 +300,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-2.0.0 \
-		unicode-width-0.2.2 \
+		unicode-width-0.2.0 \
 		untrusted-0.9.0 \
 		ureq-3.1.4 \
 		ureq-proto-0.5.3 \
@@ -309,8 +311,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		version_check-0.9.5 \
 		vt-push-parser-0.11.0 \
 		vt-push-parser-0.13.1 \
-		vt100-0.16.2 \
-		vte-0.15.0 \
 		vtparse-0.6.2 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
@@ -361,10 +361,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
-		winreg-0.10.1 \
 		winsafe-0.0.19 \
 		wit-bindgen-0.46.0 \
 		zerocopy-0.8.30 \
 		zerocopy-derive-0.8.30 \
-		zeroize-1.8.2 \
-		nucleo,nucleo-matcher@git+https://github.com/alexpasmantier/nucleo.git?branch=television\#4a5b53c7fa7abb8d777c49dc5850033ae108683e
+		zeroize-1.8.2

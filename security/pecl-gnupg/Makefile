@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 USES=		localbase php:pecl
+IGNORE_WITH_PHP=	86
 
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include
 

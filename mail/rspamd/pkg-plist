@@ -16,7 +16,10 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/local.d/antivirus.conf.example
 %%ETCDIR%%/local.d/module.conf.example
 %%ETCDIR%%/logging.inc
+%%ETCDIR%%/lua.local.d/maps/example.lua.example
 %%ETCDIR%%/lua.local.d/module.lua.example
+%%ETCDIR%%/lua.local.d/regexps/example.lua.example
+%%ETCDIR%%/lua.local.d/selectors/example.lua.example
 %%ETCDIR%%/maps.d/dmarc_whitelist.inc
 %%ETCDIR%%/maps.d/exe_clickbait.inc
 %%ETCDIR%%/maps.d/maillist.inc
@@ -24,8 +27,8 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/maps.d/mime_types.inc
 %%ETCDIR%%/maps.d/redirectors.inc
 %%ETCDIR%%/maps.d/spf_dkim_whitelist.inc
-%%ETCDIR%%/maps.d/suspicious_tlds.inc
 %%ETCDIR%%/maps.d/surbl-whitelist.inc
+%%ETCDIR%%/maps.d/suspicious_tlds.inc
 %%ETCDIR%%/metrics.conf
 %%ETCDIR%%/modules.conf
 %%ETCDIR%%/modules.d/aliases.conf
@@ -189,6 +192,8 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_content/vcard.lua
 %%DATADIR%%/lualib/lua_cta.lua
 %%DATADIR%%/lualib/lua_dkim_tools.lua
+%%DATADIR%%/lualib/lua_extras.lua
+%%DATADIR%%/lualib/lua_feedback_parsers.lua
 %%DATADIR%%/lualib/lua_ffi/common.lua
 %%DATADIR%%/lualib/lua_ffi/dkim.lua
 %%DATADIR%%/lualib/lua_ffi/init.lua
@@ -217,6 +222,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_scanners/cloudmark.lua
 %%DATADIR%%/lualib/lua_scanners/common.lua
 %%DATADIR%%/lualib/lua_scanners/dcc.lua
+%%DATADIR%%/lualib/lua_scanners/expurgate.lua
 %%DATADIR%%/lualib/lua_scanners/fprot.lua
 %%DATADIR%%/lualib/lua_scanners/icap.lua
 %%DATADIR%%/lualib/lua_scanners/init.lua
@@ -292,6 +298,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/keypair.lua
 %%DATADIR%%/lualib/rspamadm/logstats.lua
 %%DATADIR%%/lualib/rspamadm/mapstats.lua
+%%DATADIR%%/lualib/rspamadm/memstat.lua
 %%DATADIR%%/lualib/rspamadm/mime.lua
 %%DATADIR%%/lualib/rspamadm/neural_export.lua
 %%DATADIR%%/lualib/rspamadm/neural_test.lua

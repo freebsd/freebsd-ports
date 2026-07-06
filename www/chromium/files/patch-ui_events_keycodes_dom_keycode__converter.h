@@ -1,6 +1,6 @@
---- ui/events/keycodes/dom/keycode_converter.h.orig	2024-06-17 12:56:06 UTC
+--- ui/events/keycodes/dom/keycode_converter.h.orig	2026-07-01 06:24:19 UTC
 +++ ui/events/keycodes/dom/keycode_converter.h
-@@ -64,7 +64,7 @@ class KeycodeConverter {
+@@ -65,7 +65,7 @@ class KeycodeConverter {
    // Convert a DomCode into a native keycode.
    static int DomCodeToNativeKeycode(DomCode code);
  

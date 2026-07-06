@@ -1,8 +1,8 @@
 PORTNAME=	mate-applets
-PORTVERSION=	1.28.1
-PORTREVISION=	3
+DISTVERSION=	1.28.1
+PORTREVISION=	4
 CATEGORIES=	x11 mate
-MASTER_SITES=	MATE
+MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,8 +22,6 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 		libgucharmap_2_90.so:deskutils/gucharmap \
 		libnotify.so:devel/libnotify
 
-PORTSCOUT=	limitw:1,even
-
 USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
 		pkgconfig tar:xz xorg
 USE_CSTD=	c11
@@ -32,6 +30,7 @@ USE_MATE=	libmateweather panel
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 gtksourceview4 intltool libwnck3 libxml2
 USE_LDCONFIG=	yes
+PORTSCOUT=	site:https://github.com/mate-desktop/mate-applets/releases/ limitw:1,even
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	OS_SYS="/usr/include"

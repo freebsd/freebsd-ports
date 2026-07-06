@@ -1,0 +1,3 @@
+Mew_vi - Modal Editing Witch, VI interpreter - is an VI-like modal
+editing engine generator. Users must provide an implementation for
+Key, Mode, Concurrent modules to the functor.

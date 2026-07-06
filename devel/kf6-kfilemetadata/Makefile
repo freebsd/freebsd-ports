@@ -2,8 +2,8 @@ PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Library for extracting the text and metadata from a number files
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Library for extracting the text and metadata from a number files
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libepub.so:textproc/ebook-tools \

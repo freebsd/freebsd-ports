@@ -1,6 +1,6 @@
 PORTNAME=	dnsjit
 DISTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns net
 MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libgnutls.so:security/gnutls \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 

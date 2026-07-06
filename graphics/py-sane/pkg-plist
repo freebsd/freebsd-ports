@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/__pycache__/sane%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/sane%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/_sane%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/sane-%%DISTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/sane-%%DISTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/sane-%%DISTVERSION%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/sane-%%DISTVERSION%%.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/sane.py

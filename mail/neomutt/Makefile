@@ -1,5 +1,6 @@
 PORTNAME=	neomutt
-PORTVERSION=	20260504
+PORTVERSION=	20260616
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -59,7 +60,7 @@ GDBM_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 KYOTOCABINET_CONFIGURE_ON=	--kyotocabinet
 KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 LMDB_CONFIGURE_ON=		--lmdb
-LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
 QDBM_CONFIGURE_ON=		--qdbm
 QDBM_LIB_DEPENDS=		libqdbm.so:databases/qdbm
 TOKYOCABINET_CONFIGURE_ON=	--tokyocabinet

@@ -1,15 +1,15 @@
---- chrome/browser/ui/ui_features.h.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/ui/ui_features.h.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(kBrowserWidgetCacheThemeService);
+@@ -28,7 +28,7 @@ BASE_DECLARE_FEATURE(kCreateNewTabGroupAppMenuTopLevel
  
- BASE_DECLARE_FEATURE(kCreateNewTabGroupAppMenuTopLevel);
+ BASE_DECLARE_FEATURE(kCtrlTabMru);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_DECLARE_FEATURE(kDseIntegrity);
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
-@@ -68,7 +68,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
+@@ -74,7 +74,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
  BASE_DECLARE_FEATURE_PARAM(int, kSeparateDefaultAndPinPromptMessageVersion);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
@@ -18,7 +18,7 @@
  // When enabled, user may see the session restore UI flow.
  BASE_DECLARE_FEATURE(kSessionRestoreInfobar);
  
-@@ -257,7 +257,7 @@ BASE_DECLARE_FEATURE(kWebUITabStripContextMenuAfterTap
+@@ -260,7 +260,7 @@ BASE_DECLARE_FEATURE(kManagedProfileRequiredInterstiti
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

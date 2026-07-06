@@ -1,0 +1,38 @@
+--- build/config/compiler_cpu_abi.gn.orig	2026-07-01 06:24:19 UTC
++++ build/config/compiler_cpu_abi.gn
+@@ -48,7 +48,7 @@ if (is_chromeos_device && is_chromeos) {
+ if ((is_posix && !is_apple) || is_fuchsia) {
+   # simplicity we always explicitly set the architecture.
+   if (current_cpu == "x64") {
+-    if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
++    if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
+       cpu_abi_cflags += [ "--target=x86_64-unknown-linux-gnu" ]
+       cpu_abi_ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
+     } else {
+@@ -62,7 +62,7 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+       cpu_abi_ldflags += [ "-march=$cros_target_cpu_arch" ]
+     }
+   } else if (current_cpu == "x86") {
+-    if (is_clang && !is_android && !is_chromeos_device) {
++    if (is_clang && !is_android && !is_chromeos_device && !is_bsd) {
+       cpu_abi_cflags += [ "--target=i386-unknown-linux-gnu" ]
+       cpu_abi_ldflags += [ "--target=i386-unknown-linux-gnu" ]
+     } else {
+@@ -74,7 +74,7 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+       "-msse3",
+     ]
+   } else if (current_cpu == "arm") {
+-    if (is_clang && !is_android && !is_chromeos_device) {
++    if (is_clang && !is_android && !is_chromeos_device && !is_bsd) {
+       cpu_abi_cflags += [ "--target=arm-linux-gnueabihf" ]
+       cpu_abi_ldflags += [ "--target=arm-linux-gnueabihf" ]
+     }
+@@ -83,7 +83,7 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+       "-mfloat-abi=$arm_float_abi",
+     ]
+   } else if (current_cpu == "arm64") {
+-    if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
++    if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
+       cpu_abi_cflags += [ "--target=aarch64-linux-gnu" ]
+       cpu_abi_ldflags += [ "--target=aarch64-linux-gnu" ]
+     }

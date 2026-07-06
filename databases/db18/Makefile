@@ -20,7 +20,9 @@ LICENSE_FILE_UPL10=	${WRKSRC}/../EXAMPLES-LICENSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS_UPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake libtool ssl
+USES=		cpe gmake libtool ssl
+CPE_PRODUCT=	berkeley_db
+CPE_VENDOR=	oracle
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes

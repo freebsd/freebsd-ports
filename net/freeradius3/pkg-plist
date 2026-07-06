@@ -5,9 +5,12 @@ bin/map_unit
 bin/rad_counter
 bin/radattr
 bin/radclient
+@comment bin/radconf2json
 bin/radcrypt
+@comment bin/raddict2json
 bin/radeapclient
 bin/radlast
+@comment bin/radmod2json
 bin/radsecret
 bin/radsniff
 bin/radsqlrelay
@@ -18,11 +21,14 @@ bin/rlm_ippool_tool
 bin/rlm_sqlippool_tool
 bin/smbencrypt
 include/freeradius/autoconf.h
+include/freeradius/automask.h
 include/freeradius/attributes.h
 include/freeradius/base64.h
 include/freeradius/build.h
+include/freeradius/clients.h
 include/freeradius/conf.h
 include/freeradius/conffile.h
+include/freeradius/connection.h
 include/freeradius/detail.h
 include/freeradius/event.h
 include/freeradius/features.h
@@ -30,6 +36,8 @@ include/freeradius/freeradius.h
 include/freeradius/hash.h
 include/freeradius/heap.h
 include/freeradius/libradius.h
+include/freeradius/listen.h
+include/freeradius/log.h
 include/freeradius/map.h
 include/freeradius/md4.h
 include/freeradius/md5.h
@@ -37,6 +45,7 @@ include/freeradius/missing.h
 include/freeradius/modcall.h
 include/freeradius/modules.h
 include/freeradius/packet.h
+include/freeradius/process.h
 include/freeradius/rad_assert.h
 include/freeradius/radius.h
 include/freeradius/radiusd.h
@@ -81,12 +90,14 @@ include/freeradius/rfc8559.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
-include/freeradius/threads.h
-include/freeradius/token.h
-include/freeradius/tls.h
 include/freeradius/tcp.h
+include/freeradius/threads.h
+include/freeradius/tls.h
+include/freeradius/tmpl.h
+include/freeradius/token.h
 include/freeradius/udpfromto.h
 include/freeradius/vqp.h
+include/freeradius/xlat.h
 %%LIBDIR%%/libfreeradius-dhcp.a
 %%LIBDIR%%/libfreeradius-dhcp.la
 %%LIBDIR%%/libfreeradius-dhcp.so
@@ -526,6 +537,7 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/coverage.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/index.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/profile.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/protocol-error.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/release-method.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/nav.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/index.adoc
@@ -695,7 +707,6 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/tutorials/pages/virtual.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/tutorials/partials/common_control_attrs_sidebar.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/tutorials/partials/unlang_start.adoc
-%%PORTDOCS%%%%DOCSDIR%%/rfc/leap.txt
 %%EXAMPLESDIR%%/raddb/README.rst
 %%EXAMPLESDIR%%/raddb/certs/01.pem
 %%EXAMPLESDIR%%/raddb/certs/02.pem
@@ -926,6 +937,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail.log
 %%EXAMPLESDIR%%/raddb/mods-enabled/digest
+%%EXAMPLESDIR%%/raddb/mods-enabled/dpsk
 %%EXAMPLESDIR%%/raddb/mods-enabled/dynamic_clients
 %%EXAMPLESDIR%%/raddb/mods-enabled/eap
 %%EXAMPLESDIR%%/raddb/mods-enabled/echo
@@ -1205,6 +1217,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
+%%DATADIR%%/dictionary.rtbrick
 %%DATADIR%%/dictionary.ruckus
 %%DATADIR%%/dictionary.ruggedcom
 %%DATADIR%%/dictionary.sangoma

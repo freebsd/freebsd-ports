@@ -8,6 +8,10 @@ WWW=		https://github.com/happyfish100/libfastcommon
 
 LICENSE=	GPLv3
 
+USES=		cpe
+
+CPE_VENDOR=	happyfish100
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
 GH_TAGNAME=	V1.0.43

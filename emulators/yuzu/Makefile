@@ -42,13 +42,6 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libenet.so:net/enet
 TEST_DEPENDS=	catch2>0:devel/catch2
 
-FLAVORS=	qt6 qt5
-qt5_PKGNAMESUFFIX=	-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}
-qt5_OPTIONS_SLAVE=	QT5
-qt5_OPTIONS_EXCLUDE=	QT6
-qt6_CONFLICTS_INSTALL=	${PORTNAME}-qt5
-
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	yuzu-mirror
 GH_TAGNAME=	15e6e48bef
@@ -82,23 +75,11 @@ LDFLAGS+=	-Wl,--as-needed # Qt5Network
 PLIST_FILES=	bin/${PORTNAME}-cmd \
 		bin/${PORTNAME}-room
 
-OPTIONS_DEFINE=	ALSA GUI PULSEAUDIO JACK LTO NLS SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK LTO NLS QT6 SNDIO VAAPI VULKAN WEBENGINE
 OPTIONS_DEFAULT=PULSEAUDIO JACK LTO QT6 SNDIO VAAPI VULKAN WEBENGINE
-OPTIONS_SINGLE=	GUI
-OPTIONS_SINGLE_GUI=	QT5 QT6
-OPTIONS_SLAVE=		${${FLAVOR}_OPTIONS_SLAVE}
-OPTIONS_EXCLUDE=	${${FLAVOR}_OPTIONS_EXCLUDE}
 
 ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 ALSA_CMAKE_BOOL=	USE_ALSA
-
-GUI_USES=		desktop-file-utils shared-mime-info
-GUI_CMAKE_BOOL=		ENABLE_QT
-GUI_PLIST_FILES=	bin/${PORTNAME} \
-			share/applications/org.yuzu_emu.yuzu.desktop \
-			share/icons/hicolor/scalable/apps/org.yuzu_emu.yuzu.svg \
-			share/metainfo/org.yuzu_emu.yuzu.metainfo.xml \
-			share/mime/packages/org.yuzu_emu.yuzu.xml
 
 JACK_BUILD_DEPENDS=	jackit>0:audio/jack
 JACK_CMAKE_BOOL=	USE_JACK
@@ -106,21 +87,21 @@ JACK_CMAKE_BOOL=	USE_JACK
 LTO_CMAKE_BOOL=		YUZU_ENABLE_LTO
 
 NLS_DESC=		UI translations (implies ${NLS_IMPLIES})
-NLS_USE=		QT=${"${PORT_OPTIONS:MQT5}":?linguist:}tools:build
+NLS_USE=		QT=tools:build
 NLS_CMAKE_BOOL=		ENABLE_QT_TRANSLATION
-NLS_IMPLIES=		GUI
+NLS_IMPLIES=		QT6
 
 PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
-QT5_USES=		qt:5
-QT5_USE=		QT=qmake:build,buildtools:build,concurrent:build,core,dbus,gui,multimedia,widgets
-QT5_IMPLIES=		GUI
-
-QT6_USES=		qt:6
+QT6_USES=		desktop-file-utils shared-mime-info qt:6
 QT6_USE=		QT=base
-QT6_CMAKE_BOOL=		ENABLE_QT6
-QT6_IMPLIES=		GUI
+QT6_CMAKE_BOOL=		ENABLE_QT ENABLE_QT6
+QT6_PLIST_FILES=	bin/${PORTNAME} \
+			share/applications/org.yuzu_emu.yuzu.desktop \
+			share/icons/hicolor/scalable/apps/org.yuzu_emu.yuzu.svg \
+			share/metainfo/org.yuzu_emu.yuzu.metainfo.xml \
+			share/mime/packages/org.yuzu_emu.yuzu.xml
 
 SNDIO_BUILD_DEPENDS=	sndio>0:audio/sndio
 SNDIO_CMAKE_BOOL=	USE_SNDIO
@@ -133,7 +114,7 @@ VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 WEBENGINE_DESC=		Web applet support (implies ${WEBENGINE_IMPLIES})
 WEBENGINE_USE=		QT=webengine
 WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
-WEBENGINE_IMPLIES=	GUI
+WEBENGINE_IMPLIES=	QT6
 
 post-extract:
 	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${DISTDIR}/,} \

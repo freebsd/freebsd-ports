@@ -1,5 +1,5 @@
 PORTNAME=	pugixml
-DISTVERSION=	1.15
+DISTVERSION=	1.16
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v${DISTVERSION}/
 
@@ -10,7 +10,7 @@ WWW=		https://pugixml.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake compiler:c++11-lang cpe
+USES=		cmake compiler:c++17-lang cpe
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 

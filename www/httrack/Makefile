@@ -1,9 +1,6 @@
 PORTNAME=	httrack
-PORTVERSION=	3.49.5
+PORTVERSION=	3.49.6
 CATEGORIES=	www
-
-PATCH_SITES=	https://github.com/xroche/httrack/commit/
-PATCHFILES=	ce2d2ce810cb1bbaf1c587a3947c31adb47d5244.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
@@ -22,6 +19,7 @@ USE_LDCONFIG=	${PREFIX}/lib/httrack
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xroche
+GH_TAGNAME=	748c35d
 GH_TUPLE=	xroche:coucal:73ada07:xroche_coucal/src/coucal
 
 SHEBANG_FILES=	src/webhttrack

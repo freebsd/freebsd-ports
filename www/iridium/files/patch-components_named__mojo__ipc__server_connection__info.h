@@ -1,6 +1,6 @@
---- components/named_mojo_ipc_server/connection_info.h.orig	2026-05-11 13:57:04 UTC
+--- components/named_mojo_ipc_server/connection_info.h.orig	2026-06-10 12:51:34 UTC
 +++ components/named_mojo_ipc_server/connection_info.h
-@@ -13,7 +13,8 @@
+@@ -15,7 +15,8 @@
  #include "base/win/scoped_handle.h"
  #elif BUILDFLAG(IS_MAC)
  #include <bsm/libbsm.h>
@@ -10,7 +10,7 @@
  #include <sys/socket.h>
  #endif
  
-@@ -30,8 +31,10 @@ struct ConnectionInfo {
+@@ -32,8 +33,10 @@ struct ConnectionInfo {
    base::ProcessId pid{};
  #if BUILDFLAG(IS_MAC)
    audit_token_t audit_token{};

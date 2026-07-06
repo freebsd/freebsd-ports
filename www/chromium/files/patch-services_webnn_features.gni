@@ -1,4 +1,4 @@
---- services/webnn/features.gni.orig	2026-05-07 17:02:56 UTC
+--- services/webnn/features.gni.orig	2026-07-01 06:24:19 UTC
 +++ services/webnn/features.gni
 @@ -9,7 +9,7 @@ assert(use_blink)
  
@@ -7,5 +7,5 @@
 -  webnn_use_tflite = is_android || is_chromeos || is_linux || is_apple || is_win
 +  webnn_use_tflite = !is_bsd && (is_android || is_chromeos || is_linux || is_apple || is_win)
  
-   # LiteRT matches TFLite except for arm.
-   # TODO(b/454732289): Add arm support once APK size issue is resolved.
+   # LiteRT matches TFLite.
+   webnn_use_litert = is_android || is_chromeos || is_linux || is_apple || is_win

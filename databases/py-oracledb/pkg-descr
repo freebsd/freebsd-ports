@@ -1,0 +1,5 @@
+The python-oracledb driver is the widely used, open-source Python
+extension module allowing Python programs to connect directly to
+Oracle Database with no extra libraries needed. The module is built
+with Cython for safety and speed. It is lightweight and high-performance.
+It is stable, well tested, and has comprehensive documentation.

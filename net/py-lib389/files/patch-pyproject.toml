@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-06-29 14:08:52 UTC
++++ pyproject.toml
+@@ -58,7 +58,6 @@ build_py       = "build_hooks.build_py"
+ 
+ [tool.setuptools.cmdclass]
+ build_py       = "build_hooks.build_py"
+-install        = "build_hooks.install"
+ build_manpages = "build_hooks.build_manpages"
+ 
+ [tool.build_manpages]
+@@ -89,6 +88,7 @@ include = ["lib389", "lib389.*"]
+ 
+ [tool.setuptools.packages.find]
+ include = ["lib389", "lib389.*"]
++exclude = ["lib389.tests", "lib389.tests.*"]
+ 
+ [dependency-groups]
+ test = ["pytest"]

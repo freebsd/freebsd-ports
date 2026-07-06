@@ -48,9 +48,10 @@ LIB_DEPENDS=	libada.so:devel/libada \
 		libmongocrypt.so:databases/libmongocrypt
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++20-lang gmake gssapi:mit localbase nodejs:24,build \
+USES=		compiler:c++20-lang cpe gmake gssapi:mit localbase nodejs:24,build \
 		pkgconfig python:build shebangfix sqlite ssl tar:xz
 
+CPE_VENDOR=	mongodb
 USE_GITHUB=	yes
 GH_ACCOUNT=	VultureProject
 GH_PROJECT=	mongosh
@@ -72,6 +73,8 @@ MAKE_ENV=	${CUSTOM_ENV} \
 		LINK="${CXX}"
 # CXXFLAGS+=	-DNODE_API_EXPERIMENTAL \
 # 		-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT
+EXTRACT_AFTER_ARGS=	--exclude scripts/nodejs-patches/008-windows-tcp-connect-crash-fix-node-62561.patch \
+			--no-same-owner --no-same-permissions
 REINPLACE_ARGS=	-i ''
 
 MONGO_CRYPT_VER=7.0.0

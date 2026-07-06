@@ -262,6 +262,7 @@ sbin/split-logfile
 %%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
 %%WWWDIR%%/error/HTTP_BAD_REQUEST.html.var
 %%WWWDIR%%/error/HTTP_FORBIDDEN.html.var
+%%WWWDIR%%/error/HTTP_GATEWAY_TIME_OUT.html.var
 %%WWWDIR%%/error/HTTP_GONE.html.var
 %%WWWDIR%%/error/HTTP_INTERNAL_SERVER_ERROR.html.var
 %%WWWDIR%%/error/HTTP_LENGTH_REQUIRED.html.var

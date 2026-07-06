@@ -1,5 +1,5 @@
 PORTNAME=	nanocoder
-DISTVERSION=	1.27.0
+DISTVERSION=	1.28.0
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -46,6 +46,6 @@ do-install:
 	# set exec bit
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/.bin/${PORTNAME}
 	# create symlink in bin
-	@${RLN} -s ${STAGEDIR}${PREFIX}/lib/node_modules/.bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${RLN} ${STAGEDIR}${PREFIX}/lib/node_modules/.bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

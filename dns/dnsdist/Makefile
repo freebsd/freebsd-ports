@@ -1,6 +1,6 @@
 PORTNAME=	dnsdist
-DISTVERSION=	2.0.5
-PORTREVISION=	2
+DISTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -88,7 +88,7 @@ GNUTLS_MESON_ENABLED=	tls-gnutls
 IPCIPHER_IMPLIES=	OPENSSL
 IPCIPHER_MESON_ENABLED=	ipcipher
 
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 LMDB_MESON_ENABLED=	lmdb
 
 LUAJIT_USES=		luajit
@@ -99,7 +99,9 @@ LUA_MESON_ON=	-Dlua=lua
 
 OPENSSL_USES=		ssl
 OPENSSL_MESON_ENABLED=	libcrypto tls-libssl
-OPENSSL_MESON_ON=	-Dlibcrypto-path=${OPENSSLBASE} -Dtls-libssl-engines=true
+OPENSSL_MESON_ON=	-Dlibcrypto-path=${OPENSSLBASE} \
+			-Dtls-libssl-engines=true
+
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_MESON_ENABLED=	snmp
 

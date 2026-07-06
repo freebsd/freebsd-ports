@@ -2,8 +2,8 @@ PORTNAME=	kcrash
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Graceful handling of application crashes
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Graceful handling of application crashes
 
 USES=		cmake gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl

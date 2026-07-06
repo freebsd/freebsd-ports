@@ -1,5 +1,5 @@
 PORTNAME=	mediastreamer
-DISTVERSION=	5.4.100
+DISTVERSION=	5.4.121
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -68,8 +68,8 @@ MATROSKA_CMAKE_BOOL=	ENABLE_MKV
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CMAKE_BOOL=	ENABLE_OPUS
 QTGL_IMPLIES=	VIDEO
-QTGL_USES=	qt:5
-QTGL_USE=	QT=core,declarative,gui,network,buildtools:build,qmake:build
+QTGL_USES=	qt:6
+QTGL_USE=	QT=base,declarative
 QTGL_CMAKE_BOOL=	ENABLE_QT_GL
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
@@ -87,7 +87,7 @@ VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CMAKE_BOOL=		ENABLE_VPX
 XVIDEO_IMPLIES=		VIDEO
 XVIDEO_USES=		xorg
-XVIDEO_USE=		XORG=x11,xext,xfixes,xorgproto,xv
+XVIDEO_USE=		XORG=x11,xext,xfixes,xinerama,xorgproto,xv
 XVIDEO_CMAKE_BOOL=	ENABLE_X11 ENABLE_XV
 XVIDEO_LDFLAGS=		-L${LOCALBASE}/lib -lX11
 

@@ -225,6 +225,8 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_12.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_12P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_12_PACKED.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_14.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_14P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_16.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_BG_8.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_10.html
@@ -233,6 +235,8 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_12.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_12P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_12_PACKED.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_14.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_14P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_16.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GB_8.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_10.html
@@ -241,6 +245,8 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_12.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_12P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_12_PACKED.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_14.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_14P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_16.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_GR_8.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_10.html
@@ -249,6 +255,8 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_12.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_12P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_12_PACKED.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_14.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_14P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_16.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BAYER_RG_8.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_BGRA_8_PACKED.html
@@ -311,8 +319,10 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_DATA_8S.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_10.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_10_PACKED.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_10P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_12.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_12_PACKED.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_12P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_14.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_16.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_MONO_8.html
@@ -323,8 +333,10 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_RGB_12_PACKED.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_RGB_12_PLANAR.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_RGB_16_PLANAR.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_RGB_565P.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_RGB_8_PACKED.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_RGB_8_PLANAR.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_YCBCR_422_8_PACKED.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_YUV_411_PACKED.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_YUV_422_PACKED.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/const.PIXEL_FORMAT_YUV_422_YUYV_PACKED.html
@@ -492,6 +504,7 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.make_thread_high_priority.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.make_thread_realtime.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.open_device.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.select_interface.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.set_fake_camera_genicam_filename.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.set_interface_flags.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/func.shutdown.html
@@ -577,6 +590,7 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_exposure_time.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_exposure_time_auto.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_exposure_time_bounds.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_exposure_time_increment.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_exposure_time_representation.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_feature_representation.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_float.html
@@ -590,6 +604,7 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_gain.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_gain_auto.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_gain_bounds.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_gain_increment.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_gain_representation.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_height_bounds.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Camera.get_height_increment.html
@@ -694,6 +709,8 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.ChunkParser.get_float_value.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.ChunkParser.get_integer_value.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.ChunkParser.get_string_value.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.ChunkParser.set_integer_feature_value.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.ChunkParser.set_string_feature_value.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.create_chunk_parser.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.create_stream.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.create_stream_full.html
@@ -720,6 +737,7 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.is_enumeration_entry_available.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.is_feature_available.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.is_feature_implemented.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.read_bytes.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.read_memory.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.read_register.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.set_access_check_policy.html
@@ -732,6 +750,7 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.set_register_cache_policy.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.set_register_feature_value.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.set_string_feature_value.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.write_bytes.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.write_memory.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.Device.write_register.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/method.DomCharacterData.get_data.html

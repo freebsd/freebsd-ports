@@ -1,6 +1,6 @@
 PORTNAME=	RRDTool-OO
-PORTVERSION=	0.36
-PORTREVISION=	1
+DISTVERSION=	0.36
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +18,8 @@ RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.2011|1.10002|g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

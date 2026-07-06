@@ -1,0 +1,18 @@
+-- Make include of mcfp-module-targets.cmake conditional because
+-- MCFP_BUILD_CXX_MODULE defaults to OFF and the module targets file
+-- is not generated when the module is not built.
+-- Without this, dependent projects fail at CMake configure time with:
+--   INCLUDE could not find requested file: mcfp-module-targets.cmake
+
+--- cmake/mcfp-config.cmake.in.orig	2026-06-12 05:39:17 UTC
++++ cmake/mcfp-config.cmake.in
+@@ -5,6 +5,8 @@ INCLUDE("${CMAKE_CURRENT_LIST_DIR}/mcfp-targets.cmake"
+ @PACKAGE_INIT@
+ 
+ INCLUDE("${CMAKE_CURRENT_LIST_DIR}/mcfp-targets.cmake")
+-INCLUDE("${CMAKE_CURRENT_LIST_DIR}/mcfp-module-targets.cmake")
++IF(EXISTS "${CMAKE_CURRENT_LIST_DIR}/mcfp-module-targets.cmake")
++  INCLUDE("${CMAKE_CURRENT_LIST_DIR}/mcfp-module-targets.cmake")
++ENDIF()
+ 
+ check_required_components(mcfp)

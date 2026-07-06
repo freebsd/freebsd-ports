@@ -1,15 +1,15 @@
---- src/Makefile	2022-02-19 18:16:01.000000000 -0500
-+++ src/Makefile	2023-07-17 18:16:43.271921000 -0500
-@@ -44,10 +44,10 @@
+--- src/Makefile.orig	2026-06-09 03:55:00.000000000 -0700
++++ src/Makefile	2026-06-17 12:20:53.693603000 -0700
+@@ -47,10 +47,10 @@
  export RANLIB ?= ranlib
  
  export CFLAGS := -Wall
 -export CXXFLAGS := -Wall -Wno-unused-parameter
 +export CXXFLAGS ?= -Wall -Wno-unused-parameter
- C_CXX_FLAGS := -MMD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -I$(BASE_DIR) -I$(BASE_DIR)/Crypto
+ C_CXX_FLAGS := -MMD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -I$(BASE_DIR) -I$(BASE_DIR)/Crypto -DARGON2_NO_THREADS -I$(BASE_DIR)/Crypto/Argon2/include
  export ASFLAGS := -D __GNUC__ -D __YASM__
 -export LFLAGS :=
 +export LFLAGS ?=
  
+ export PKG_CONFIG ?= pkg-config
  export PKG_CONFIG_PATH ?= /usr/local/lib/pkgconfig
- 

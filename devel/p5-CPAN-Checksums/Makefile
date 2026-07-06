@@ -16,7 +16,9 @@ RUN_DEPENDS=	p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
 		p5-Data-Compare>=0:devel/p5-Data-Compare \
 		p5-Module-Signature>=0:security/p5-Module-Signature
 
-USES=		perl5
+USES=		cpe perl5
+CPE_PRODUCT=	cpan::checksums
+CPE_VENDOR=	cpan::checksums_project
 USE_PERL5=	configure
 
 NO_ARCH=	yes

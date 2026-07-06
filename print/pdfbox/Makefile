@@ -1,6 +1,5 @@
 PORTNAME=	pdfbox
-PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTVERSION=	3.0.7
 CATEGORIES=	print textproc java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTVERSION}/
 DISTFILES=	${JAR_NAMES:S/$/-${PORTVERSION}.jar/}
@@ -17,7 +16,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle \
 		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io
 
 JAR_NAMES=	pdfbox fontbox preflight xmpbox pdfbox-tools pdfbox-debugger \
-		pdfbox-app
+		pdfbox-app pdfbox-io
 
 USES=		cpe java
 CPE_VENDOR=	apache

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		cpe libedit libtool localbase ncurses pathfix \
 		pkgconfig python:build shebangfix tar:tgz
-CPE_VENDOR=	varnish-cache
+CPE_VENDOR=	varnish_cache_project
 CPE_PRODUCT=	varnish_cache
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

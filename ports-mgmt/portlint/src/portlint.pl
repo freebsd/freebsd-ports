@@ -53,7 +53,7 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 24;
+my $minor = 25;
 my $micro = 0;
 
 # default setting - for FreeBSD
@@ -178,6 +178,7 @@ my @varlist =  qw(
 
 my %makevar;
 our @wrkdirs = ('work');
+our $metaport = 0;
 my $i = 0;
 for (split(/\n/, get_makevar(@varlist))) {
 	$_ =~ s/\0//;
@@ -273,6 +274,10 @@ foreach my $omuse (@omuses) {
 }
 foreach my $muse (@muses) {
 	$makevar{USES} .= " " . $muse;
+}
+
+if ($makevar{USES} =~ /\bmetaport\b/) {
+	$metaport = 1;
 }
 
 #
@@ -1373,6 +1378,7 @@ sub checkmakefile {
 	my $desktop_entries = '';
 	my $conflicts = "";
 	my %targ_hashes = ();
+	my $found_earlier = 0;
 
 	my $masterdir = $makevar{MASTERDIR};
 	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
@@ -1382,7 +1388,15 @@ sub checkmakefile {
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
 	$tmp = 0;
+	my $trailing_bs = 0;
 	while (<IN>) {
+		if ($trailing_bs && ($_ eq "" || /^\s+$/)) {
+			&perror("FATAL", $file, $.-1, "line ends with '\\' but next line is ".
+				"empty");
+			$trailing_bs = 0;
+		} elsif ($trailing_bs) {
+			$trailing_bs = 0;
+		}
 		if ($_ =~ /[ \t]+\n?$/) {
 			&perror("WARN", $file, $., "whitespace before ".
 				"end of line.");
@@ -1405,6 +1419,7 @@ sub checkmakefile {
 		$rawwhole .= $_;
 		if (/\\$/) {
 			# Concat continued lines.
+			$trailing_bs = 1;
 			chomp $rawwhole;
 			chop $rawwhole;
 		}
@@ -2172,8 +2187,8 @@ xargs xmkmf
 				&& $curline !~ /^PORTNAME=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_INSTALL_TARGET[?+]?=[^\n]+$i/m
-				&& $curline !~ /^IGNORE(_[\w\d]+)?(.)?=[^\n]+$i/m
-				&& $curline !~ /^BROKEN(_[\w\d]+)?(.)?=[^\n]+$i/m
+				&& $curline !~ /^([\w\d]+_)?IGNORE(_[\w\d]+)?(.)?=[^\n]+$i/m
+				&& $curline !~ /^([\w\d]+_)?BROKEN(_[\w\d]+)?(.)?=[^\n]+$i/m
 				&& $curline !~ /^RESTRICTED(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_PACKAGE(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
@@ -2208,8 +2223,8 @@ xargs xmkmf
 			my $lineno = &linenumber($`);
 			if ($lm =~ /(^|\s+)[\@\-]{0,2}($i\d*)\b/
 				&& $lm !~ /^[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/m
-				&& $lm !~ /^IGNORE(.)?=[^\n]+($i\d*)/m
-				&& $lm !~ /^BROKEN(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^([\w\d]+_)?IGNORE(_[\w\d]+)?(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^([\w\d]+_)?BROKEN(_[\w\d]+)?(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^RESTRICTED(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^NO_PACKAGE(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^NO_CDROM(.)?=[^\n]+($i\d*)/m
@@ -2897,7 +2912,9 @@ DIST_SUBDIR EXTRACT_ONLY
 			}
 		}
 	} else {
-		&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
+		if (!$metaport) {
+			&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
+		}
 	}
 
 	# check DISTFILES and related items.
@@ -3187,7 +3204,7 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 		if ($verbose);
 	$tmp = $sections[$idx] // '';
 
-	&checkearlier($file, $tmp, @varnames);
+	$found_earlier = &checkearlier($file, $tmp, @varnames);
 	&checkorder('MAINTAINER', $tmp, $file, qw(
 MAINTAINER COMMENT WWW
 	));
@@ -3407,7 +3424,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	}
 
 	push(@varnames, @linestocheck);
-	&checkearlier($file, $tmp, @varnames);
+	$found_earlier = &checkearlier($file, $tmp, @varnames);
 
 	# section 8: FLAVORS/FLAVOR(optional)
 	#
@@ -3480,7 +3497,10 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	# Makefile 10: check the rest of file
 	#
 	print "OK: checking the rest of the $file.\n" if ($verbose);
-	$tmp = join("\n\n", @sections[$idx+1 .. scalar(@sections)-1]);
+	if ($found_earlier) {
+		$idx++;
+	}
+	$tmp = join("\n\n", @sections[$idx .. scalar(@sections)-1]);
 
 	$tmp = "\n" . $tmp;	# to make the begin-of-line check easier
 
@@ -3822,8 +3842,10 @@ sub checkorder {
 		# This if condition tests for .if, .else (in all forms),
 		# .for and .endfor and .include
 		} elsif ($i !~ m/^\.(if|el|endif|for|endfor|include)/) {
-			&perror("FATAL", $file, -1, "extra item \"$i\" placed in the ".
-				"$section section.");
+			if ($i eq "USES" && !$metaport) {
+				&perror("FATAL", $file, -1, "extra item \"$i\" placed in the ".
+					"$section section.");
+			}
 		}
 	}
 	if ($invalidorder) {
@@ -3838,13 +3860,17 @@ sub checkearlier {
 	my($file, $str, @varnames) = @_;
 
 	$str //= '';
+	my $found_issue = 0;
 
 	print "OK: checking items that have to appear earlier.\n" if ($verbose);
 	foreach my $i (@varnames) {
 		if ($str =~ /\n($i)\??=/) {
 			&perror("WARN", $file, -1, "\"$1\" has to appear earlier.");
+			$found_issue = 1;
 		}
 	}
+
+	return $found_issue;
 }
 
 sub linenumber {

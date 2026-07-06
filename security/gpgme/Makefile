@@ -1,5 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -19,7 +19,6 @@ CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-languages="cl"
-CFLAGS+=	-Wno-suggest-override -Wno-unknown-warning-option
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
@@ -58,7 +57,7 @@ post-patch:
 pre-build-TEST-on:
 	@if [ ! -d "/var/run/user/${UID}" ]; then \
 		SOCKETS="dirmngr gpg-agent gpg-agent.browser gpg-agent.extra gpg-agent.ssh scdaemon uiserver"; \
-		TESTSUBDIRS="lang/python/tests lang/qt/tests tests/gpg tests/gpgsm"; \
+		TESTSUBDIRS="tests/gpg tests/gpgsm tests/json tests/opassuan"; \
 		TMPSOCKETDIR=$$(${MKTEMP} -d -t gpgmetest); \
 		${ECHO_CMD} "$${TMPSOCKETDIR}" > ${WRKDIR}/.tmpsocketdir; \
 		trap "${RM} -r $${TMPSOCKETDIR}; exit 1" 1 2 3 5 10 13 15; \
@@ -66,7 +65,7 @@ pre-build-TEST-on:
 				for subdir in $${TESTSUBDIRS}; do \
 					${PRINTF} "%%Assuan%%\nsocket=$${TMPSOCKETDIR}/S.$${sock}\n" > ${WRKSRC}/$${subdir}/S.$${sock}; \
 				done; \
-		  	done; \
+			done; \
 	fi
 
 post-build-TEST-on:

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-04-29 00:05:06 UTC
+--- CMakeLists.txt.orig	2026-07-01 03:24:20 UTC
 +++ CMakeLists.txt
-@@ -431,30 +431,33 @@ include_directories(third_party/antlr4_runtime/src)
+@@ -442,36 +442,39 @@ include_directories(third_party/antlr4_runtime/src)
  
  include_directories(third_party/antlr4_cypher/include)
  include_directories(third_party/antlr4_runtime/src)
@@ -38,9 +38,17 @@
 +#include_directories(third_party/lz4)
  include_directories(third_party/roaring_bitmap)
  include_directories(SYSTEM third_party/simsimd/include)
-+
+ 
 +include_directories($ENV{LOCALBASE}/include)
 +link_directories($ENV{LOCALBASE}/lib)
- 
++
  add_subdirectory(third_party)
  
+ add_library(lbug_link_deps INTERFACE)
+-set(LBUG_STATIC_ARCHIVE_LIBRARIES antlr4_cypher antlr4_runtime brotlidec brotlicommon utf8proc re2 fastpfor parquet snappy thrift yyjson zstd miniz mbedtls lz4 roaring_bitmap simsimd)
+-set(LBUG_LINK_LIBRARIES ${LBUG_STATIC_ARCHIVE_LIBRARIES} fast_float)
++set(LBUG_STATIC_ARCHIVE_LIBRARIES antlr4_cypher antlr4_runtime utf8proc re2 fastpfor parquet snappy thrift miniz mbedtls roaring_bitmap simsimd)
++set(LBUG_LINK_LIBRARIES ${LBUG_STATIC_ARCHIVE_LIBRARIES} fast_float brotlidec brotlicommon yyjson zstd lz4)
+ if (NOT __SINGLE_THREADED__)
+     list(APPEND LBUG_LINK_LIBRARIES Threads::Threads)
+ endif()

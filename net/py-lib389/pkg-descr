@@ -1,0 +1,3 @@
+lib389 is the Python administration library for 389 Directory Server. It
+provides APIs and command-line tools for creating, configuring, managing,
+and inspecting directory server instances.

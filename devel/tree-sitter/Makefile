@@ -1,6 +1,6 @@
 PORTNAME=	tree-sitter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.9
+DISTVERSION=	0.26.10
 CATEGORIES=	devel
 
 # When updating this port, make sure that editors/neovim can

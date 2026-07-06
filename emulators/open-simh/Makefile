@@ -1,5 +1,5 @@
 PORTNAME=	open-simh
-PORTVERSION=	4.1.0.20240303
+PORTVERSION=	4.1.0.20260507
 CATEGORIES=	emulators
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-LIB_DEPENDS=	libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libpng16.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	open-simh
 GH_PROJECT=	simh
-GH_TAGNAME=	d4f85d01bdf7301d5f7a2c4e51c3a84024561b26
+GH_TAGNAME=	0dc9decac98fc99c8db9722cd5d941b9e73ac67b
 
 USE_SDL=	sdl2 ttf2
 
@@ -33,6 +33,12 @@ MAKE_ENV=	CFLAGS_O="${CFLAGS}" \
 		WARNINGS=ALLOWED
 
 CONFLICTS_INSTALL=	simh simh-hp2100 simh-hp3000
+
+OPTIONS_DEFINE=		VDE
+OPTIONS_DEFAULT=	VDE
+VDE_DESC=		VDE Ethernet networking support
+
+VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
 
 .include <bsd.port.pre.mk>
 

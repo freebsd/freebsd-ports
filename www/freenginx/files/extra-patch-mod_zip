@@ -1,0 +1,31 @@
+--- ../mod_zip-a9f9afa/config	2025-09-04 19:55:16.000000000 +0000
++++ ../mod_zip-a9f9afa/config	2026-06-12 13:41:30.208275468 +0000
+@@ -43,7 +43,7 @@
+ 
+ ngx_feature="multi-value headers are linked lists (nginx 1.23.0+)"
+ ngx_feature_name="NGX_ZIP_MULTI_HEADERS_LINKED_LISTS"
+-ngx_feature_run=yes
++ngx_feature_run=no
+ ngx_feature_incs="#include \"nginx.h\""
+ ngx_feature_path="src/core"
+ ngx_feature_test="
+--- ../mod_zip-a9f9afa/ngx_http_zip_module.h	2025-09-04 19:55:16.000000000 +0000
++++ ../mod_zip-a9f9afa/ngx_http_zip_module.h	2026-06-12 13:41:14.029809686 +0000
+@@ -3,8 +3,17 @@
+ #include <ngx_config.h>
+ #include <ngx_core.h>
+ #include <ngx_http.h>
++#include <nginx.h>
+ #include <time.h>
+ 
++/* Fallback in case the configure-time feature test did not run:
++ * multi-value headers became linked lists in nginx 1.23.0 */
++#ifndef NGX_ZIP_MULTI_HEADERS_LINKED_LISTS
++#if (nginx_version >= 1023000)
++#define NGX_ZIP_MULTI_HEADERS_LINKED_LISTS 1
++#endif
++#endif
++
+ #define NGX_ZIP_MIME_TYPE "application/zip"
+ #define ngx_http_zip_current_file(ctx) ctx->pieces[ctx->pieces_i].file
+ 

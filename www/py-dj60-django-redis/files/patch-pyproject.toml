@@ -1,0 +1,19 @@
+Enable build for older versions of py-setuptools.
+
+--- pyproject.toml.orig	2026-06-24 14:09:51 UTC
++++ pyproject.toml
+@@ -1,12 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "django-redis"
+ description = "Full featured redis cache backend for Django."
+ readme = "README.rst"
+-license = "BSD-3-Clause"
++license = { text="BSD-3-Clause" }
+ 
+ authors = [
+   { name = "Andrei Antoukh", email = "niwi@niwi.nz" },

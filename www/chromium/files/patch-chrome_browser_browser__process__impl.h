@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.h.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/browser_process_impl.h.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/browser_process_impl.h
-@@ -432,7 +432,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -435,7 +435,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
    std::unique_ptr<BatteryMetrics> battery_metrics_;
  

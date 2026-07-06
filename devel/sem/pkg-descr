@@ -6,3 +6,6 @@ changed."
 
 It works in any Git repo with no setup. It can run as the default
 `git diff` tool; see the WWW for setup instructions.
+
+This port flips opt-out telemetry to opt-in. Set SEM_NO_TELEMETRY=0 to
+enable telemetry.

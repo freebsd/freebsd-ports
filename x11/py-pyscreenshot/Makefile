@@ -1,6 +1,5 @@
 PORTNAME=	pyscreenshot
-PORTVERSION=	0.5.1
-PORTREVISION=	6
+DISTVERSION=	2.0
 CATEGORIES=	x11 python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,9 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}easyprocess>0:devel/py-easyprocess@${PY_FLAVOR} \
-		${PY_PILLOW}
+		${PYTHON_PKGNAMEPREFIX}entrypoint2>0:devel/py-entrypoint2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jeepney>=0.8.0:devel/py-jeepney@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mss>0:deskutils/py-mss@${PY_FLAVOR}
 
 USES=		magick:6,run python
 

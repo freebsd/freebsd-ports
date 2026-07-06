@@ -1,6 +1,6 @@
 PORTNAME=	dbi
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ WWW=		https://github.com/erikh/ruby-dbi
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-deprecated2>=2.0.1:devel/rubygem-deprecated2 \
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-deprecated2>=2.0.1:devel/rubygem-deprecated2 \
 		rubygem-aspectr>=0:devel/rubygem-aspectr
 
 NO_ARCH=	yes

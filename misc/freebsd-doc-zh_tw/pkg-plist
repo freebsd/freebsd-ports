@@ -7,6 +7,7 @@
 %%HTML%%%%DOCBASE%%/zh-tw/articles/pr-guidelines/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/articles/problem-reports/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/articles/remote-install/index.html
+%%HTML%%%%DOCBASE%%/zh-tw/articles/x86-assembly/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/bibliography/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/index.html
@@ -19,13 +20,11 @@
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/partii/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/partiii/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/partiv/index.html
-%%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/partv/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/policies/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/secure/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/sockets/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/testing/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/tools/index.html
-%%HTML%%%%DOCBASE%%/zh-tw/books/developers-handbook/x86/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/faq/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/handbook/advanced-networking/index.html
 %%HTML%%%%DOCBASE%%/zh-tw/books/handbook/audit/index.html
@@ -99,6 +98,7 @@
 %%PDF%%%%DOCBASE%%/zh-tw/articles/pr-guidelines/pr-guidelines_zh-tw.pdf
 %%PDF%%%%DOCBASE%%/zh-tw/articles/problem-reports/problem-reports_zh-tw.pdf
 %%PDF%%%%DOCBASE%%/zh-tw/articles/remote-install/remote-install_zh-tw.pdf
+%%PDF%%%%DOCBASE%%/zh-tw/articles/x86-assembly/x86-assembly_zh-tw.pdf
 %%PDF%%%%DOCBASE%%/zh-tw/books/developers-handbook/developers-handbook_zh-tw.pdf
 %%PDF%%%%DOCBASE%%/zh-tw/books/faq/faq_zh-tw.pdf
 %%PDF%%%%DOCBASE%%/zh-tw/books/handbook/handbook_zh-tw.pdf

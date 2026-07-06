@@ -21,7 +21,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 504300
-BROKEN=		requires at least perl 5.38, supporting perl 5.42.x
+BROKEN=		requires perl 5.40 up to 5.42
 .endif
 
 .include <bsd.port.post.mk>

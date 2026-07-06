@@ -1,0 +1,11 @@
+--- uuid-config.in.orig	2026-06-08 10:06:23 UTC
++++ uuid-config.in
+@@ -121,7 +121,7 @@ do
+             output_extra="$output_extra $uuid_ldflags"
+             ;;
+         --libs)
+-            output="$output -luuid"
++            output="$output -lossp-uuid"
+             output_extra="$output_extra $uuid_libs"
+             ;;
+         * )

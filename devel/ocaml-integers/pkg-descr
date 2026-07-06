@@ -1,0 +1,3 @@
+This OCaml library provides 8-, 16-, 32- and 64-bytes signed and
+unsigned integer types for OCaml. Additionally, platform dependent
+types are provided, such as size_t, int, llong, etc.

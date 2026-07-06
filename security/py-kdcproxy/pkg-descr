@@ -1,0 +1,5 @@
+kdcproxy is a WSGI module for proxying Kerberos KDC requests over HTTP
+and HTTPS using the Microsoft MS-KKDCP protocol.
+
+It supports explicit KDC configuration, DNS SRV discovery, and MIT
+Kerberos configuration.

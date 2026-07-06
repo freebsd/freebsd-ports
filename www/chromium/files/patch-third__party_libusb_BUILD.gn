@@ -1,4 +1,4 @@
---- third_party/libusb/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- third_party/libusb/BUILD.gn.orig	2026-07-01 06:24:19 UTC
 +++ third_party/libusb/BUILD.gn
 @@ -3,7 +3,7 @@
  # found in the LICENSE file.
@@ -7,9 +7,9 @@
 -assert(is_mac)
 +assert(is_mac || is_bsd)
  
- import("//build/config/chromeos/ui_mode.gni")
  import("//build/config/features.gni")
-@@ -103,7 +103,7 @@ static_library("libusb") {
+ 
+@@ -102,7 +102,7 @@ static_library("libusb") {
      ]
    }
  
@@ -18,7 +18,7 @@
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -114,11 +114,21 @@ static_library("libusb") {
+@@ -113,11 +113,21 @@ static_library("libusb") {
      ]
    }
  
@@ -32,7 +32,7 @@
 +    ]
 +  }
 +
-   if (is_chromeos_ash) {
+   if (is_chromeos) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
  
@@ -41,7 +41,7 @@
      sources += [ "src/libusb/os/linux_udev.cc" ]
      defines += [
        "HAVE_LIBUDEV=1",
-@@ -127,7 +137,7 @@ static_library("libusb") {
+@@ -126,7 +136,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }
  

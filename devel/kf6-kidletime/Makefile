@@ -2,8 +2,8 @@ PORTNAME=	kidletime
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-COMMENT=	Reporting of idle time of user and system
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Reporting of idle time of user and system
 
 BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
 

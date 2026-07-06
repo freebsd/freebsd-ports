@@ -1,0 +1,5 @@
+markdown-oxide is a PKM (Personal Knowledge Management) Markdown Language
+Server. It implements the Language Server Protocol for Markdown files,
+providing features such as completions, diagnostics, references, code
+actions, and outline support -- with special handling for personal
+knowledge management workflows (wiki-links, tags, references).

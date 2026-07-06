@@ -1,0 +1,28 @@
+Remove check for getaddrinfo_a() which is glibc-specific and not used
+anywhere in the codebase. This fuction was incorporated into glibc >=
+2.34 (released 2021-08-01) [1], so even on systems that use glibc,
+this check is moot.
+
+[1] https://sourceware.org/git/?p=glibc.git;a=commit;h=2ace57217028da99fc98f79ae0a625a1ec842724
+
+--- configure.orig	2026-01-16 20:31:09 UTC
++++ configure
+@@ -13887,18 +13887,6 @@ fi
+ fi
+ 
+ 
+-ANL_LIBS=""
+-OLD_LIBS=$LIBS
+-LIBS="$LIBS -lanl"
+-ac_fn_c_check_func "$LINENO" "getaddrinfo_a" "ac_cv_func_getaddrinfo_a"
+-if test "x$ac_cv_func_getaddrinfo_a" = xyes
+-then :
+-  LIBGAVL_LIBS="${LIBGAVL_LIBS} -lanl"
+-else $as_nop
+-  as_fn_error $? "\"getaddrinfo_a not found in libanl\"" "$LINENO" 5
+-fi
+-
+-LIBS=$OLD_LIBS
+ 
+ 
+ 

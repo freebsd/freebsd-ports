@@ -1,0 +1,4 @@
+Check if some day is holiday in China.
+
+Determines whether a given date is a workday or holiday in China,
+covering 2004 through 2026.

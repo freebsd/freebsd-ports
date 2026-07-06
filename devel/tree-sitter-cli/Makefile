@@ -1,10 +1,10 @@
 PORTNAME=	tree-sitter-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.8
-PORTREVISION=	7
+DISTVERSION=	0.26.9
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	amad@atl.tools
+MAINTAINER=	amadaluzia@disroot.org
 COMMENT=	CLI tool for developing, testing, and using Tree-sitter parsers
 WWW=		https://tree-sitter.github.io/tree-sitter/
 
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node24
 
-USES=		cargo
+USES=		cargo llvm:lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	tree-sitter
 GH_PROJECT=	tree-sitter
 
 CARGO_BUILD_ARGS=	-p tree-sitter-cli
-CARGO_INSTALL_PATH=	cli
+CARGO_INSTALL_PATH=	crates/cli
 # tests require cloning fixtures.
 CARGO_TEST=		no
 

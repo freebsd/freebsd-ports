@@ -1,6 +1,6 @@
---- electron/spec/crash-spec.ts.orig	2026-05-07 20:19:20 UTC
+--- electron/spec/crash-spec.ts.orig	2026-07-03 02:01:22 UTC
 +++ electron/spec/crash-spec.ts
-@@ -52,7 +52,7 @@ const shouldRunCase = (crashCase: string) => {
+@@ -53,7 +53,7 @@ const shouldRunCase = (crashCase: string) => {
        if (process.platform === 'win32') {
          return process.arch !== 'ia32';
        } else {

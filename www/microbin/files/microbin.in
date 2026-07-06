@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: microbin
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for microbin in /etc/rc.conf
+#
+# microbin_enable (bool):	Enable microbin. (Default=NO)
+# microbin_env_file (str):	Path containing the environment variables
+#                           	to be used by microbin. (Default: %%ETCDIR%%/microbin.env)
+# microbin_logfile (str):	Log file used to store the microbin's output. (Default: /var/log/microbin.log)
+# microbin_pidfile (str):	File used by microbin to store the process ID. (Default: /var/run/microbin.pid)
+# microbin_username (str):	User to run microbin as. (Default: microbin)
+# microbin_port (int):		Port to run the webserver on. (Default: 8080)
+# microbin_datadir (str):	Path to save the uploads inside. (Default: /var/db/microbin)
+
+. /etc/rc.subr
+
+name="microbin"
+desc="Tiny, self-contained, configurable paste bin and URL shortener"
+rcvar="microbin_enable"
+
+load_rc_config $name
+
+: ${microbin_enable:="NO"}
+: ${microbin_datadir:="/var/db/microbin"}
+: ${microbin_env_file:="%%ETCDIR%%/microbin.env"}
+: ${microbin_logfile:="/var/log/microbin.log"}
+: ${microbin_pidfile:="/var/run/microbin.pid"}
+: ${microbin_port:="8080"}
+: ${microbin_username:="microbin"}
+
+pidfile="${microbin_pidfile}"
+procname="%%PREFIX%%/bin/microbin"
+command="/usr/sbin/daemon"
+command_args="-o '${microbin_logfile}' -p '${pidfile}' -u '${microbin_username}' -t '${desc}' -- ${procname} -p ${microbin_port} --data-dir ${microbin_datadir}"
+
+run_rc_command "$1"

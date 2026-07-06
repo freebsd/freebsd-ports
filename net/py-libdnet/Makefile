@@ -7,6 +7,9 @@ COMMENT=	Python module for libdnet
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 USES=		autoreconf libtool localbase:ldflags python
 
 MASTERDIR=	${.CURDIR}/../libdnet

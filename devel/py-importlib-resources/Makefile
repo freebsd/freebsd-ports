@@ -1,5 +1,5 @@
 PORTNAME=	importlib-resources
-DISTVERSION=	6.5.2
+DISTVERSION=	7.0.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=56:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coherent.licensed>0:devel/py-coherent.licensed@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4.1:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
@@ -20,5 +21,9 @@ USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} '/license-files/d; s|^license = "Apache-2.0"|license = { text = "Apache-2.0" }|; s|77|63|g' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

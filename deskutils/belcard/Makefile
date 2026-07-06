@@ -1,5 +1,5 @@
 PORTNAME=	belcard
-DISTVERSION=	5.4.100
+DISTVERSION=	5.4.121
 CATEGORIES=	deskutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -24,5 +24,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	ENABLE_UNIT_TESTS
 
 LDFLAGS+=	-lpthread
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>

@@ -1,0 +1,2 @@
+mlflow-tracing is a lightweight Python package that provides the minimum set
+of dependencies and functionality to instrument code with MLflow Tracing.

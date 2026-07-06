@@ -1,6 +1,5 @@
 PORTNAME=	korean-lunar-calendar
-DISTVERSION=	0.3.1
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	korean python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,11 @@ WWW=		https://github.com/usingsky/korean_lunar_calendar_py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 

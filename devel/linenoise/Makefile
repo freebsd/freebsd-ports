@@ -9,10 +9,12 @@ WWW=		https://github.com/antirez/linenoise
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_LDCONFIG=	yes
+USES=		cpe
 
+CPE_VENDOR=	antirez
 USE_GITHUB=	yes
 GH_ACCOUNT=	antirez
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/linenoise.h \
 		lib/liblinenoise.so \

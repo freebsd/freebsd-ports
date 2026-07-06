@@ -1,5 +1,5 @@
 PORTNAME=	netperfmeter
-DISTVERSION=	2.0.5
+DISTVERSION=	2.0.8
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/netperfmeter/download/
 
@@ -19,20 +19,25 @@ SHEBANG_FILES=	src/pdfembedfonts src/plot-netperfmeter-results \
 # https://bugs.freebsd.org/285706 https://bugs.freebsd.org/292237
 MAKE_ENV=	OMP_NUM_THREADS=1
 
-OPTIONS_DEFINE=		EXAMPLE_RESULTS EXAMPLE_SCRIPTS ICONS PLOT_PROGRAMS
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=			ICONS \
+				PLOT_PROGRAMS \
+				EXAMPLE_SCRIPTS \
+				EXAMPLE_RESULTS
 
-EXAMPLE_RESULTS_DESC=	Include example results
-EXAMPLE_SCRIPTS_DESC=	Include example scripts
-ICONS_DESC=		Include icons
-PLOT_PROGRAMS_DESC=	Include plot programs
+OPTIONS_DEFAULT=		${OPTIONS_DEFINE}
+OPTIONS_SUB=			yes
+
+EXAMPLE_RESULTS_DESC=		Include example results
+EXAMPLE_SCRIPTS_DESC=		Include example scripts
+ICONS_DESC=			Include icons
+PLOT_PROGRAMS_DESC=		Include plot programs
 
 EXAMPLE_RESULTS_CMAKE_BOOL=	WITH_EXAMPLE_RESULTS
+
 EXAMPLE_SCRIPTS_CMAKE_BOOL=	WITH_EXAMPLE_SCRIPTS
 
 ICONS_BUILD_DEPENDS=		gm:graphics/GraphicsMagick \
-				pdf2svg:graphics/pdf2svg
+				mutool:graphics/mupdf
 ICONS_USES=			ghostscript
 ICONS_CMAKE_BOOL=		WITH_ICONS
 

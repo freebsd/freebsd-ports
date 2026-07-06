@@ -26,6 +26,9 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_TEXT=	See https://obsidian.md/terms
 LICENSE_PERMS=
 
+DEPRECATED=	Depends on expired devel/electron39
+EXPIRATION_DATE=2026-09-30
+
 USES=		electronfix:39
 
 ELECTRONFIX_MAIN_EXECUTABLE=	obsidian

@@ -29,7 +29,6 @@ lib/odin/base/runtime/os_specific.odin
 lib/odin/base/runtime/os_specific_bsd.odin
 lib/odin/base/runtime/os_specific_darwin.odin
 lib/odin/base/runtime/os_specific_freestanding.odin
-lib/odin/base/runtime/os_specific_haiku.odin
 lib/odin/base/runtime/os_specific_js.odin
 lib/odin/base/runtime/os_specific_linux.odin
 lib/odin/base/runtime/os_specific_orca.odin
@@ -158,6 +157,24 @@ lib/odin/core/crypto/_fiat/field_scalarp256r1/field.odin
 lib/odin/core/crypto/_fiat/field_scalarp256r1/field64.odin
 lib/odin/core/crypto/_fiat/field_scalarp384r1/field.odin
 lib/odin/core/crypto/_fiat/field_scalarp384r1/field64.odin
+lib/odin/core/crypto/_mldsa/constants.odin
+lib/odin/core/crypto/_mldsa/dsa_internal.odin
+lib/odin/core/crypto/_mldsa/ntt.odin
+lib/odin/core/crypto/_mldsa/packing.odin
+lib/odin/core/crypto/_mldsa/poly.odin
+lib/odin/core/crypto/_mldsa/polyvec.odin
+lib/odin/core/crypto/_mldsa/reduce.odin
+lib/odin/core/crypto/_mldsa/rounding.odin
+lib/odin/core/crypto/_mldsa/symmetric_shake.odin
+lib/odin/core/crypto/_mlkem/cbd.odin
+lib/odin/core/crypto/_mlkem/constants.odin
+lib/odin/core/crypto/_mlkem/k_pke.odin
+lib/odin/core/crypto/_mlkem/kem_internal.odin
+lib/odin/core/crypto/_mlkem/ntt.odin
+lib/odin/core/crypto/_mlkem/poly.odin
+lib/odin/core/crypto/_mlkem/polyvec.odin
+lib/odin/core/crypto/_mlkem/reduce.odin
+lib/odin/core/crypto/_mlkem/symmetric_shake.odin
 lib/odin/core/crypto/_sha3/sha3.odin
 lib/odin/core/crypto/_sha3/sp800_185.odin
 lib/odin/core/crypto/_subtle/subtle.odin
@@ -219,6 +236,10 @@ lib/odin/core/crypto/legacy/README.md
 lib/odin/core/crypto/legacy/keccak/keccak.odin
 lib/odin/core/crypto/legacy/md5/md5.odin
 lib/odin/core/crypto/legacy/sha1/sha1.odin
+lib/odin/core/crypto/mldsa/api.odin
+lib/odin/core/crypto/mldsa/doc.odin
+lib/odin/core/crypto/mlkem/api.odin
+lib/odin/core/crypto/mlkem/doc.odin
 lib/odin/core/crypto/noise/api.odin
 lib/odin/core/crypto/noise/doc.odin
 lib/odin/core/crypto/noise/patterns.odin
@@ -251,7 +272,6 @@ lib/odin/core/debug/trace/trace_windows.odin
 lib/odin/core/dynlib/doc.odin
 lib/odin/core/dynlib/example/example.odin
 lib/odin/core/dynlib/example/lib.odin
-lib/odin/core/dynlib/lb_haiku.odin
 lib/odin/core/dynlib/lib.odin
 lib/odin/core/dynlib/lib_js.odin
 lib/odin/core/dynlib/lib_unix.odin
@@ -288,6 +308,8 @@ lib/odin/core/encoding/json/tokenizer.odin
 lib/odin/core/encoding/json/types.odin
 lib/odin/core/encoding/json/unmarshal.odin
 lib/odin/core/encoding/json/validator.odin
+lib/odin/core/encoding/pem/doc.odin
+lib/odin/core/encoding/pem/pem.odin
 lib/odin/core/encoding/uuid/LICENSE
 lib/odin/core/encoding/uuid/definitions.odin
 lib/odin/core/encoding/uuid/doc.odin
@@ -409,6 +431,7 @@ lib/odin/core/math/linalg/swizzle.odin
 lib/odin/core/math/math.odin
 lib/odin/core/math/math_basic.odin
 lib/odin/core/math/math_basic_js.odin
+lib/odin/core/math/math_cbrt.odin
 lib/odin/core/math/math_erf.odin
 lib/odin/core/math/math_gamma.odin
 lib/odin/core/math/math_lgamma.odin
@@ -556,7 +579,6 @@ lib/odin/core/os/old/os.odin
 lib/odin/core/os/old/os_darwin.odin
 lib/odin/core/os/old/os_freebsd.odin
 lib/odin/core/os/old/os_freestanding.odin
-lib/odin/core/os/old/os_haiku.odin
 lib/odin/core/os/old/os_js.odin
 lib/odin/core/os/old/os_linux.odin
 lib/odin/core/os/old/os_netbsd.odin
@@ -681,7 +703,6 @@ lib/odin/core/sync/doc.odin
 lib/odin/core/sync/extended.odin
 lib/odin/core/sync/futex_darwin.odin
 lib/odin/core/sync/futex_freebsd.odin
-lib/odin/core/sync/futex_haiku.odin
 lib/odin/core/sync/futex_linux.odin
 lib/odin/core/sync/futex_netbsd.odin
 lib/odin/core/sync/futex_openbsd.odin
@@ -691,7 +712,6 @@ lib/odin/core/sync/primitives.odin
 lib/odin/core/sync/primitives_atomic.odin
 lib/odin/core/sync/primitives_darwin.odin
 lib/odin/core/sync/primitives_freebsd.odin
-lib/odin/core/sync/primitives_haiku.odin
 lib/odin/core/sync/primitives_internal.odin
 lib/odin/core/sync/primitives_linux.odin
 lib/odin/core/sync/primitives_netbsd.odin
@@ -761,10 +781,6 @@ lib/odin/core/sys/darwin/xnu_system_call_wrappers.odin
 lib/odin/core/sys/freebsd/constants.odin
 lib/odin/core/sys/freebsd/syscalls.odin
 lib/odin/core/sys/freebsd/types.odin
-lib/odin/core/sys/haiku/errno.odin
-lib/odin/core/sys/haiku/find_directory.odin
-lib/odin/core/sys/haiku/os.odin
-lib/odin/core/sys/haiku/types.odin
 lib/odin/core/sys/info/cpu_arm.odin
 lib/odin/core/sys/info/cpu_darwin.odin
 lib/odin/core/sys/info/cpu_darwin_arm64.odin
@@ -781,7 +797,6 @@ lib/odin/core/sys/info/platform_bsd.odin
 lib/odin/core/sys/info/platform_darwin.odin
 lib/odin/core/sys/info/platform_freebsd.odin
 lib/odin/core/sys/info/platform_linux.odin
-lib/odin/core/sys/info/platform_other.odin
 lib/odin/core/sys/info/platform_wasm.odin
 lib/odin/core/sys/info/platform_windows.odin
 lib/odin/core/sys/info/sysinfo.odin
@@ -1139,7 +1154,6 @@ lib/odin/vendor/directx/d3d_compiler/d3d_compiler.odin
 lib/odin/vendor/directx/d3d_compiler/d3dcompiler_47.dll
 lib/odin/vendor/directx/d3d_compiler/d3dcompiler_47.lib
 lib/odin/vendor/directx/dxc/dxcapi.odin
-lib/odin/vendor/directx/dxc/dxcdef_haiku.odin
 lib/odin/vendor/directx/dxc/dxcdef_unix.odin
 lib/odin/vendor/directx/dxc/dxcdef_windows.odin
 lib/odin/vendor/directx/dxc/dxcompiler.dll

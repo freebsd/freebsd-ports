@@ -1,7 +1,7 @@
 PORTNAME=	tweedledum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1-20221123
-PORTREVISION=	1
+DISTVERSION=	1.2.0
+#PORTVERSION=	${DISTVERSION}-20260518
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,23 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 #BROKEN_FreeBSD_14=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265751
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
-		cmake:devel/cmake-core
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>=0.10:devel/py-scikit-build@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.10:devel/py-scikit-build-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nanobind>=2.12.0:devel/py-nanobind@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang python
-USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/boschmitt/tweedledum/issues/176
+USES=		cmake:indirect ninja:build compiler:c++17-lang python
+USE_PYTHON=	autoplist pep517 pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boschmitt
-GH_TAGNAME=	9d3a2fa
-GH_TUPLE=	pybind:pybind11:v2.12.0:pybind11
+GH_TAGNAME=	b30d175b1e5343ccefaa5762cd66a80980667bed
 
-#MAKE_ENV=	CMAKE_ARGS=-DTWEEDLEDUM_USE_EXTERNAL_PYBIND11=ON # external pybind11 should work but it fails to configure
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/python/test
-
-post-extract:
-	@${RM} -r ${WRKSRC}/external/pybind11
-	@${CP} -r ${WRKSRC_pybind11} ${WRKSRC}/external/pybind11
 
 .include <bsd.port.mk>

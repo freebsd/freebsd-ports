@@ -1,5 +1,5 @@
 PORTNAME=	pmwiki
-DISTVERSION=	2.5.8
+DISTVERSION=	2.6.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
@@ -11,7 +11,7 @@ WWW=		https://www.pmwiki.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
-USES=		cpe tar:tgz php:web
+USES=		cpe php:web tar:tgz
 USE_PHP=	mbstring session
 
 NO_ARCH=	yes

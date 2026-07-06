@@ -1,5 +1,5 @@
 PORTNAME=	dos2unix
-DISTVERSION=	7.5.5
+DISTVERSION=	7.5.6
 CATEGORIES=	converters
 MASTER_SITES=	SF \
 		https://waterlander.net/dos2unix/files/

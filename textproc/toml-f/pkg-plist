@@ -45,9 +45,9 @@ lib/cmake/toml-f/toml-f-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/toml-f/toml-f-targets.cmake
 lib/libtest-drive.so
 lib/libtest-drive.so.0
-lib/libtest-drive.so.0.5.0
+lib/libtest-drive.so.0.6.0
 lib/libtoml-f.so
 lib/libtoml-f.so.0
-lib/libtoml-f.so.0.5.0
+lib/libtoml-f.so.0.5.1
 libdata/pkgconfig/test-drive.pc
 libdata/pkgconfig/toml-f.pc

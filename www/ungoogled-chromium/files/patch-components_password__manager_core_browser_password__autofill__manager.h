@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_autofill_manager.h.orig	2026-05-09 18:09:27 UTC
+--- components/password_manager/core/browser/password_autofill_manager.h.orig	2026-06-17 19:06:11 UTC
 +++ components/password_manager/core/browser/password_autofill_manager.h
-@@ -290,7 +290,7 @@ class PasswordAutofillManager : public autofill::Autof
+@@ -299,7 +299,7 @@ class PasswordAutofillManager : public autofill::Autof
  
    // Stores the controller of warning popup UI on cross domain filling.
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \

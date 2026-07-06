@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc.orig	2026-05-07 17:02:56 UTC
+--- third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc.orig	2026-07-01 06:24:19 UTC
 +++ third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc
-@@ -6481,7 +6481,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
+@@ -6684,7 +6684,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
        params.function_id == kTexImage2D ||
        (params.function_id == kTexSubImage2D &&
         base::FeatureList::IsEnabled(kAllowGpuUploadForTexSubImageOnAndroid));

@@ -1,6 +1,5 @@
 PORTNAME=	xlswriter
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,6 +14,7 @@ LIB_DEPENDS=	libxlsxwriter.so:math/libxlsxwriter
 
 #USES=		localbase php:pecl ssl
 USES=		php:pecl ssl
+IGNORE_WITH_PHP=	86
 
 CFLAGS+=	-I${LOCALBASE}/include/minizip
 CONFIGURE_ARGS=	 --with-libxlsxwriter=${LOCALBASE} \

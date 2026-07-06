@@ -1,9 +1,12 @@
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 		LOCAL/bms
+
+PATCH_SITES=    https://sources.debian.org/data/main/libs/libsmi/0.4.8%2Bdfsg2-18/debian/patches/
+PATCHFILES=     cve-2010-2891.patch:-p1
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Library to access SMI MIB information

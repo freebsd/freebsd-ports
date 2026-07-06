@@ -1,0 +1,15 @@
+-- Fix project.license in pyproject.toml to follow PEP 621.
+-- Remove license-files as it is not part of PEP 621 [project] table.
+
+--- pyproject.toml.orig	2026-06-09 18:17:18 UTC
++++ pyproject.toml
+@@ -24,8 +24,7 @@ authors = [
+ authors = [
+      {name = "Matthew Newville", email = "matt.newville@gmail.com"}
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ keywords = ["AST", "expression evaluation", "eval"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

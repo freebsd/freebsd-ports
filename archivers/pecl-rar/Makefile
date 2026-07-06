@@ -18,6 +18,7 @@ WWW=		https://pecl.php.net/package/rar
 LICENSE=	PHP301
 
 USES=		compiler:c11 php:build,pecl
+IGNORE_WITH_PHP=	86
 
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 

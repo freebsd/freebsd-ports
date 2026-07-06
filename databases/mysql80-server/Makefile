@@ -22,6 +22,7 @@ USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
 		ncurses perl5 pkgconfig shebangfix ssl
 
 CPE_VENDOR=	oracle
+CPE_PRODUCT?=	mysql_server
 
 USE_CXXSTD=	c++17
 USE_PERL5=	run

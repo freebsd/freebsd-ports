@@ -1,5 +1,5 @@
 PORTNAME=	llguidance
-DISTVERSION=	1.7.5
+DISTVERSION=	1.7.6
 PORTREVISION=	1
 CATEGORIES=	textproc python # machine-learning
 MASTER_SITES=	PYPI
@@ -93,7 +93,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
-		derivre-0.3.11 \
+		derivre-0.3.12 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
@@ -131,6 +131,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		h2-0.4.11 \
 		half-2.7.1 \
 		hashbrown-0.15.4 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hf-hub-0.4.3 \
@@ -196,10 +197,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		oorandom-11.1.5 \
-		openssl-0.10.78 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
-		openssl-sys-0.9.114 \
+		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		outref-0.5.2 \
 		page_size-0.6.0 \
@@ -275,8 +276,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		strum-0.27.1 \
-		strum_macros-0.27.1 \
+		strum-0.28.0 \
+		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		syn-2.0.104 \
 		sync_wrapper-1.0.2 \
@@ -392,6 +393,6 @@ pre-test:
 post-test:
 	@${MV} ${WRKSRC}/python/llguidance.hidden ${WRKSRC}/python/llguidance
 
-# tests as of 1.7.0: 32 passed, 2 skipped, 128272 warnings in 16.20s
+# tests as of 1.7.6: 25 passed, 2 skipped, 128286 warnings, 1 error in 24.99s
 
 .include <bsd.port.mk>

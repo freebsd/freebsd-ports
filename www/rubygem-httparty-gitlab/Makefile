@@ -22,6 +22,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/httparty
 
-CPE_VENDOR=	john_nunemaker
+CPE_VENDOR=	jnunemaker
 
 .include <bsd.port.mk>

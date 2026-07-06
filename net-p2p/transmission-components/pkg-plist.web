@@ -1,6 +1,6 @@
 %%DATADIR%%/public_html/images/favicon.ico
-%%DATADIR%%/public_html/images/favicon.png
-%%DATADIR%%/public_html/images/webclip-icon.png
+%%DATADIR%%/public_html/images/favicon.svg
+%%DATADIR%%/public_html/images/apple-touch-icon.png
 %%DATADIR%%/public_html/index.html
 %%DATADIR%%/public_html/transmission-app.css
 %%DATADIR%%/public_html/transmission-app.css.LEGAL.txt

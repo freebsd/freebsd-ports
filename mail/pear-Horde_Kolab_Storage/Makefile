@@ -17,6 +17,8 @@ USE_HORDE_RUN=	Horde_Cache \
 
 # Optional but we want it
 USE_PHP+=	imap
+IGNORE_WITH_PHP=	86
+
 USE_HORDE_RUN+=	Horde_Imap_Client
 
 .include <bsd.port.mk>

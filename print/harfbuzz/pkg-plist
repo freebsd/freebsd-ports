@@ -123,6 +123,9 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-13-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-13-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-13-2-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-14-0-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-14-1-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-14-2-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-2-0.html
@@ -166,6 +169,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/core-api.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/deprecated-api-index.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/favicon.ico
 %%DOCS%%share/gtk-doc/html/harfbuzz/fonts-and-faces-custom-functions.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/fonts-and-faces-native-opentype.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/fonts-and-faces-variable.html
@@ -189,6 +193,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-gdi.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-glib.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-gpu.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-graphite2.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-icu.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-map.html
@@ -213,6 +218,11 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-vector.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-version.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz.devhelp2
+%%DOCS%%share/gtk-doc/html/harfbuzz/hb-gpu.png
+%%DOCS%%share/gtk-doc/html/harfbuzz/hb-raster.png
+%%DOCS%%share/gtk-doc/html/harfbuzz/hb-shape.png
+%%DOCS%%share/gtk-doc/html/harfbuzz/hb-subset.png
+%%DOCS%%share/gtk-doc/html/harfbuzz/hb-vector.png
 %%DOCS%%share/gtk-doc/html/harfbuzz/home.png
 %%DOCS%%share/gtk-doc/html/harfbuzz/index.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/install-harfbuzz.html

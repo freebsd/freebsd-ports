@@ -1,4 +1,4 @@
---- crates/gpui/src/platform.rs.orig	2026-05-13 17:09:47 UTC
+--- crates/gpui/src/platform.rs.orig	2026-06-17 14:36:18 UTC
 +++ crates/gpui/src/platform.rs
 @@ -2,7 +2,7 @@ mod keystroke;
  mod keyboard;
@@ -9,7 +9,7 @@
  #[expect(missing_docs)]
  pub mod layer_shell;
  
-@@ -19,7 +19,7 @@ pub mod scap_screen_capture;
+@@ -22,7 +22,7 @@ pub mod scap_screen_capture;
  pub mod scap_screen_capture;
  
  #[cfg(all(
@@ -18,7 +18,7 @@
      feature = "screen-capture"
  ))]
  pub(crate) type PlatformScreenCaptureFrame = scap::frame::Frame;
-@@ -1588,7 +1588,7 @@ pub enum WindowKind {
+@@ -1671,7 +1671,7 @@ pub enum WindowKind {
  
      /// A Wayland LayerShell window, used to draw overlays or backgrounds for applications such as
      /// docks, notifications or wallpapers.

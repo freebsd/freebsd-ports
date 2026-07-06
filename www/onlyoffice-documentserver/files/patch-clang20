@@ -1,0 +1,33 @@
+--- core/Common/3dParty/v8_89/v8/src/compiler/backend/instruction.h.orig	2021-04-12 17:00:33 UTC
++++ core/Common/3dParty/v8_89/v8/src/compiler/backend/instruction.h
+@@ -563,7 +563,7 @@
+   }
+ 
+   STATIC_ASSERT(KindField::kSize == 3);
+-  using LocationKindField = base::BitField64<LocationKind, 3, 2>;
++  using LocationKindField = base::BitField64<LocationKind, 3, 1>;
+   using RepresentationField = base::BitField64<MachineRepresentation, 5, 8>;
+   using IndexField = base::BitField64<int32_t, 35, 29>;
+ };
+--- core/Common/3dParty/v8_89/v8/src/profiler/profile-generator.h.orig	2021-04-12 21:00:33 UTC
++++ core/Common/3dParty/v8_89/v8/src/profiler/profile-generator.h
+@@ -212,7 +212,7 @@
+   V8_EXPORT_PRIVATE static base::LazyDynamicInstance<
+       CodeEntry, RootEntryCreateTrait>::type kRootEntry;
+ 
+-  using TagField = base::BitField<CodeEventListener::LogEventsAndTags, 0, 8>;
++  using TagField = base::BitField<CodeEventListener::LogEventsAndTags, 0, 5>;
+   using BuiltinIdField = base::BitField<Builtins::Name, 8, 22>;
+   static_assert(Builtins::builtin_count <= BuiltinIdField::kNumValues,
+                 "builtin_count exceeds size of bitfield");
+--- core/Common/3dParty/v8_89/v8/src/wasm/wasm-code-manager.h.orig	2021-04-12 21:00:33 UTC
++++ core/Common/3dParty/v8_89/v8/src/wasm/wasm-code-manager.h
+@@ -340,7 +340,7 @@
+   int trap_handler_index_ = -1;
+ 
+   // Bits encoded in {flags_}:
+-  using KindField = base::BitField8<Kind, 0, 3>;
++  using KindField = base::BitField8<Kind, 0, 2>;
+   using ExecutionTierField = KindField::Next<ExecutionTier, 2>;
+   using ForDebuggingField = ExecutionTierField::Next<ForDebugging, 2>;
+ 

@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-omics
-PORTVERSION=	1.69.0
+PORTVERSION=	1.74.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

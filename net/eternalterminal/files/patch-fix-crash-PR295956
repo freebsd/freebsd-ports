@@ -1,0 +1,113 @@
+Add backports to fix etserver crashes on session end and transient errors.
+
+Backport from:
+- a2d2e62d8d7b ("terminal: Fix etserver crash on session end due to ECHILD (#748)")
+- c6650d9577f5 ("base: Fix etserver crash on transient accept() errors (#756)")
+
+--- src/base/UnixSocketHandler.cpp.orig	2025-07-22 01:37:18 UTC
++++ src/base/UnixSocketHandler.cpp
+@@ -142,12 +142,28 @@ int UnixSocketHandler::accept(int sockFd) {
+     initSocket(client_sock);
+     VLOG(3) << "Client_socket inserted to activeSockets";
+     return client_sock;
+-  } else if (acceptErrno != EAGAIN && acceptErrno != EWOULDBLOCK) {
++  } else if (isTransientAcceptError(acceptErrno)) {
++    // Transient, per-connection failure: fall through and return -1; the
++    // server loop simply retries on the next iteration.
++  } else {
+     FATAL_FAIL(-1);  // STFATAL with the error
+   }
+ 
+   SetErrno(acceptErrno);
+   return -1;
++}
++
++bool UnixSocketHandler::isTransientAcceptError(int err) {
++  // accept(2) routinely fails for benign, per-connection reasons that must
++  // not abort the whole server:
++  //  - EAGAIN/EWOULDBLOCK: non-blocking socket with no pending connection.
++  //  - ECONNABORTED: the peer reset the connection between landing in the
++  //    listen queue and our accept() call.  Surfaced readily on FreeBSD by
++  //    clients that connect and immediately disconnect (keepalive/reconnect
++  //    churn) and previously aborted etserver.
++  //  - EINTR: the call was interrupted by a signal.
++  return err == EAGAIN || err == EWOULDBLOCK || err == ECONNABORTED ||
++         err == EINTR;
+ }
+ 
+ void UnixSocketHandler::close(int fd) {
+--- src/base/UnixSocketHandler.hpp.orig	2025-07-22 01:37:18 UTC
++++ src/base/UnixSocketHandler.hpp
+@@ -14,6 +14,7 @@ class UnixSocketHandler : public SocketHandler {
+   virtual ssize_t read(int fd, void* buf, size_t count);
+   virtual ssize_t write(int fd, const void* buf, size_t count);
+   virtual int accept(int fd);
++  static bool isTransientAcceptError(int err);
+   virtual void close(int fd);
+   virtual vector<int> getActiveSockets();
+ 
+--- src/terminal/PsuedoUserTerminal.hpp.orig	2025-07-22 01:37:18 UTC
++++ src/terminal/PsuedoUserTerminal.hpp
+@@ -96,7 +96,11 @@ class PsuedoUserTerminal : public UserTerminal {
+     FATAL_FAIL(waitpid(getPid(), &throwaway, WUNTRACED));
+ #else
+     siginfo_t childInfo;
+-    FATAL_FAIL(waitid(P_PID, getPid(), &childInfo, WEXITED));
++    if (getPid() > 0) {
++      if (waitid(P_PID, getPid(), &childInfo, WEXITED) == -1) {
++        LOG(ERROR) << "waitid failed, child already reaped.";
++      }
++    }
+ #endif
+   }
+ 
+--- test/unit_tests/UnixSocketHandlerTest.cpp.orig	2026-06-09 03:43:36 UTC
++++ test/unit_tests/UnixSocketHandlerTest.cpp
+@@ -0,0 +1,47 @@
++#include "PipeSocketHandler.hpp"
++#include "TestHeaders.hpp"
++
++using namespace et;
++
++TEST_CASE("AcceptTransientErrorClassification", "[UnixSocketHandler]") {
++  // The errnos that must be tolerated rather than aborting the server.
++  // ECONNABORTED is the case that crashed etserver on FreeBSD.
++  REQUIRE(UnixSocketHandler::isTransientAcceptError(EAGAIN));
++  REQUIRE(UnixSocketHandler::isTransientAcceptError(EWOULDBLOCK));
++  REQUIRE(UnixSocketHandler::isTransientAcceptError(ECONNABORTED));
++  REQUIRE(UnixSocketHandler::isTransientAcceptError(EINTR));
++
++  // Genuine logic errors must still be treated as fatal.
++  REQUIRE_FALSE(UnixSocketHandler::isTransientAcceptError(EBADF));
++  REQUIRE_FALSE(UnixSocketHandler::isTransientAcceptError(EINVAL));
++  REQUIRE_FALSE(UnixSocketHandler::isTransientAcceptError(ENOTSOCK));
++  REQUIRE_FALSE(UnixSocketHandler::isTransientAcceptError(EFAULT));
++}
++
++TEST_CASE("AcceptDoesNotAbortWhenNoPendingConnection", "[UnixSocketHandler]") {
++  // End-to-end check: accept() on a non-blocking listening socket with no
++  // pending connection fails with EAGAIN/EWOULDBLOCK and must return -1 to the
++  // caller instead of hitting FATAL_FAIL.
++  shared_ptr<PipeSocketHandler> socketHandler(new PipeSocketHandler());
++
++  string tmpPath = GetTempDirectory() + string("et_test_XXXXXXXX");
++  string pipeDirectory = string(mkdtemp(&tmpPath[0]));
++  string pipePath = pipeDirectory + "/pipe";
++
++  SocketEndpoint endpoint;
++  endpoint.set_name(pipePath);
++
++  set<int> serverFds = socketHandler->listen(endpoint);
++  REQUIRE(!serverFds.empty());
++  int serverFd = *serverFds.begin();
++
++  int clientFd = socketHandler->accept(serverFd);
++  REQUIRE(clientFd == -1);
++  REQUIRE((GetErrno() == EAGAIN || GetErrno() == EWOULDBLOCK));
++
++  socketHandler->stopListening(endpoint);
++  // stopListening() only closes the fd; the bound socket file remains, so
++  // remove it before the (now empty) directory.
++  FATAL_FAIL(::remove(pipePath.c_str()));
++  FATAL_FAIL(::remove(pipeDirectory.c_str()));
++}

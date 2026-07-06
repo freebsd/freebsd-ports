@@ -25,8 +25,8 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
 
-CPE_PRODUCT=	xerces-c++
 CPE_VENDOR=	apache
+CPE_PRODUCT=	xerces-c++
 
 .include <bsd.port.pre.mk>
 

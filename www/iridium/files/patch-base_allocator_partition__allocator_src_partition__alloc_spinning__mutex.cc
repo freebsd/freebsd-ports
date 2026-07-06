@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2026-02-16 10:45:29 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2026-06-10 12:51:34 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
 @@ -20,7 +20,16 @@
  #endif
@@ -33,4 +33,4 @@
 +#endif
    if (retval == -1) {
      // These are programming errors, check them.
-     PA_DCHECK((errno != EPERM) || (errno != EACCES) || (errno != EINVAL) ||
+     [[maybe_unused]] const int futex_errno = errno;

@@ -1,6 +1,6 @@
-TIMESTAMP = 1779950447
-SHA256 (cabal/ghcup-0.2.5.0/ghcup-0.2.5.0.tar.gz) = 911b395ca249f5cb81ed0130d1ea557875f1d78cc6258795afed707171fcfe29
-SIZE (cabal/ghcup-0.2.5.0/ghcup-0.2.5.0.tar.gz) = 275312
+TIMESTAMP = 1781648944
+SHA256 (cabal/ghcup-0.2.6.2/ghcup-0.2.6.2.tar.gz) = 62bba28f5a67a6eee9b9704c6f02806122a31af1817ff17fc269c213dc4b5173
+SIZE (cabal/ghcup-0.2.6.2/ghcup-0.2.6.2.tar.gz) = 281200
 SHA256 (cabal/Cabal-3.16.1.0/Cabal-3.16.1.0.tar.gz) = c6b8a37d21dc67c1c68d36a6258ea529391d4bb8bcc1caebaa9b483d93ef2556
 SIZE (cabal/Cabal-3.16.1.0/Cabal-3.16.1.0.tar.gz) = 476607
 SHA256 (cabal/Cabal-3.16.1.0/revision/1.cabal) = 39873317ab895194547c3fd72c91cdb97c800a49b2656920854747ee466627ca
@@ -237,10 +237,6 @@ SHA256 (cabal/optparse-applicative-0.19.0.0/optparse-applicative-0.19.0.0.tar.gz
 SIZE (cabal/optparse-applicative-0.19.0.0/optparse-applicative-0.19.0.0.tar.gz) = 67629
 SHA256 (cabal/os-release-1.0.2.1/os-release-1.0.2.1.tar.gz) = 8333f3192927a823f49146711390cfc7e428faf5e7eb3d9fdcbd52326535ce3b
 SIZE (cabal/os-release-1.0.2.1/os-release-1.0.2.1.tar.gz) = 9553
-SHA256 (cabal/os-string-2.0.10/os-string-2.0.10.tar.gz) = f682b8a6121a09fc820ce69d99e33bfa9b1a959505663ef2fedebe7b95c75aa5
-SIZE (cabal/os-string-2.0.10/os-string-2.0.10.tar.gz) = 46124
-SHA256 (cabal/os-string-2.0.10/revision/1.cabal) = cb379c1fb1a6d8c912d04df24ca8d42c6c8f3b8a81943e85847b4219fbd21578
-SIZE (cabal/os-string-2.0.10/revision/1.cabal) = 3819
 SHA256 (cabal/parser-combinators-1.3.1/parser-combinators-1.3.1.tar.gz) = 9c506cc38f9df0fc23a942e739ed1f0799fc6c54515d770de044168ecff740bf
 SIZE (cabal/parser-combinators-1.3.1/parser-combinators-1.3.1.tar.gz) = 11684
 SHA256 (cabal/parsers-0.12.12/parsers-0.12.12.tar.gz) = dd9e538b7a9e732a5a4241d6de01d298aff4bb19a9582e9464ee4ba660c626bc

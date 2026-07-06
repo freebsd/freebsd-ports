@@ -1,5 +1,6 @@
 PORTNAME=	tcl-lmdb
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -8,7 +9,7 @@ WWW=		https://github.com/ray2501/tcl-lmdb
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 
 USES=		gmake localbase:ldflags tcl:tea
 

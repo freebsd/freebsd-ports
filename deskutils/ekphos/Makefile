@@ -1,12 +1,12 @@
 PORTNAME=	ekphos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.10
-PORTREVISION=	2
+DISTVERSION=	0.25.10
+PORTREVISION=	0
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Lightweight, fast, terminal-based markdown research tool
-WWW=		https://www.ekphos.xyz/
+WWW=		https://ekphos.netlify.app/docs
 
 LICENSE=	APACHE20 BSD0CLAUSE BSD2CLAUSE BSD3CLAUSE BSL CC0-1.0 CDLA20 \
 		ISCL MIT MPL20 UNICODE UNLICENSE ZLIB

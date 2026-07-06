@@ -1,6 +1,6 @@
 PORTNAME=	topaz
 DISTVERSION=	3_41
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -10,6 +10,9 @@ COMMENT=	Command driven graph plotting system for scientists and engineers
 WWW=		https://hp.vector.co.jp/authors/VA007663/topaz/
 
 LICENSE=	GPLv2
+
+DEPRECATED=		Last release was in 2011 and WWW is unavailable
+EXPIRATION_DATE=	2026-08-03
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

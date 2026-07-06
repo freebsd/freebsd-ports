@@ -1,6 +1,5 @@
 PORTNAME=	libhangul
-PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTVERSION=	0.2.0
 CATEGORIES=	korean
 
 MAINTAINER=	jkim@FreeBSD.org
@@ -15,7 +14,7 @@ TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/check
 USES=		autoreconf iconv libtool pathfix pkgconfig
 
 GH_ACCOUNT=	choehwanjin
-GH_TAGNAME=	9fe2d4e
+GH_TAGNAME=	41c702f
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes

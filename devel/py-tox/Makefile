@@ -1,5 +1,5 @@
 PORTNAME=	tox
-DISTVERSION=	4.36.0
+DISTVERSION=	4.36.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.5:devel/py-hatch-vcs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hatchling>=1.27:devel/py-hatchling@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.28:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=7.0.1:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=5.2:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6:devel/py-colorama@${PY_FLAVOR} \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=7.0.1:devel/py-cachetools@${PY_F
 		${PYTHON_PKGNAMEPREFIX}packaging>=26:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=1.6:devel/py-pluggy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproject-api>=1.9.1:devel/py-pyproject-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproject-api>=1.10:devel/py-pyproject-api@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PY_TYPING_EXTENSIONS} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.36.1:devel/py-virtualenv@${PY_FLAVOR}

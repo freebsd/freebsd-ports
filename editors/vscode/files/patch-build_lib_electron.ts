@@ -1,9 +1,9 @@
---- build/lib/electron.ts.orig	2026-05-29 07:25:37 UTC
+--- build/lib/electron.ts.orig	2026-06-30 11:53:00 UTC
 +++ build/lib/electron.ts
-@@ -203,10 +203,11 @@ export const config = {
+@@ -240,10 +240,11 @@ export const config = {
  	winIcon: 'resources/win32/code.ico',
  	token: process.env['GITHUB_TOKEN'],
- 	repo: product.electronRepository || undefined,
+ 	repo: electronAssetResolver,
 -	validateChecksum: true,
 +	validateChecksum: false,
  	checksumFile: path.join(root, 'build', 'checksums', 'electron.txt'),

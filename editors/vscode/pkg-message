@@ -36,7 +36,7 @@ FreeBSD 14 for compatibility reasons.
 [1] https://code.visualstudio.com/docs/getstarted/extensions#_install-a-vs-code-extension
 [2] https://open-vsx.org/extension/jeanp413/open-remote-ssh
 [3] https://github.com/tagattie/FreeBSD-VSCode/releases
-[4] https://www.freshports.org/www/node22/
+[4] https://www.freshports.org/www/node24/
 
 EOM
 }

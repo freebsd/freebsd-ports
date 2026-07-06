@@ -19,7 +19,10 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils \
 		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
-USES=		java
+USES=		cpe java
+
+CPE_PRODUCT=	commons_configuration
+CPE_VENDOR=	apache
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

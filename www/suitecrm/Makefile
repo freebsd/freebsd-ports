@@ -17,6 +17,8 @@ USE_PHP=	curl ctype dom filter gd iconv imap intl ldap \
 		mysqli pdo pdo_mysql posix session simplexml \
 		soap sodium tokenizer xml mbstring xmlreader \
 		xmlwriter zip zlib
+IGNORE_WITH_PHP=	86
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

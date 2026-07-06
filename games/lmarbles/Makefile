@@ -1,44 +1,31 @@
 PORTNAME=	lmarbles
-PORTVERSION=	1.0.8
-PORTREVISION=	6
+DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/${PORTNAME} \
-		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}_icons${EXTRACT_SUFX}:icons
+MASTER_SITES=	SF/lgames/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dnpowers@me.com
 COMMENT=	Atomix-like game of moving marbles in puzzles
 WWW=		http://lgames.sourceforge.net/index.php?project=LMarbles
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake sdl
-USE_SDL=	sdl mixer
+USES=		gettext-runtime gmake localbase:ldflags sdl
+USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--localstatedir=/var/games/${PORTNAME}
+
+LDFLAGS+=	-lintl
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(datadir)/icons|(datadir)/pixmaps|; \
-		s|(datadir)/pixmaps/lmarbles48.gif|(datadir)/pixmaps/lmarbles48.png|' \
+	@${REINPLACE_CMD} -e 's|(datadir)/icons/hicolor/256x256/apps|(datadir)/pixmaps|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-m 666||; \
-		s|lmarbles.prfs|lmarbles.prfs.sample|' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|icons/lmarbles48.gif|icons/lmarbles48.png|' \
-		${WRKSRC}/lmarbles.desktop.in
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}*.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS ChangeLog README README-SDL.txt" ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/src && ${COPYTREE_SHARE} "manual" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

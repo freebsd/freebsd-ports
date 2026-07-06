@@ -13,5 +13,6 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libmcrypt.so:security/libmcrypt
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

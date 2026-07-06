@@ -1,10 +1,10 @@
 PORTNAME=	gir-to-d
 PORTVERSION=	0.23.4
-PORTREVISION=	1
+PORTREVISION=	2
 #DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 
-MAINTAINER=	arrowd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create D bindings from GObject introspection files
 WWW=		https://github.com/gtkd-developers/gir-to-d
 

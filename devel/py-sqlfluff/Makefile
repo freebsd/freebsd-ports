@@ -1,5 +1,5 @@
 PORTNAME=	sqlfluff
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_F
 		${PYTHON_PKGNAMEPREFIX}tblib>=0:devel/py-tblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes

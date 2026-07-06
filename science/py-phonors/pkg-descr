@@ -1,0 +1,6 @@
+phonors provides Rust kernels for phonopy and phono3py.
+
+It is a Rust extension module providing the heavy numerical kernels used
+by phono3py and intended to also back phonopy as its C kernels are ported.
+It is built with maturin and PyO3, distributed as abi3-py310 wheels
+(Python 3.10+).

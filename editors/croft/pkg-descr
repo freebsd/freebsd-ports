@@ -1,0 +1,10 @@
+Croft is a VS Code style three pane workspace that runs entirely inside
+your terminal.  It ships as a single static binary and aims for low
+latency and high performance.
+
+Features include a file explorer, an editor pane with tree-sitter based
+syntax highlighting, an embedded shell, fuzzy file and content search,
+and Language Server Protocol integration.
+
+Croft is written in Rust and uses ratatui and crossterm for its terminal
+user interface.

@@ -1,0 +1,12 @@
+--- data/CMakeLists.txt.orig	2026-06-19 22:59:36 UTC
++++ data/CMakeLists.txt
+@@ -9,8 +9,7 @@ set(CATACLYSM_DATA_DIRS
+         title
+         core
+         screenshots
+-        xdg
+-        help)
++        xdg)
+ 
+ if (SOUND)
+     list(APPEND CATACLYSM_DATA_DIRS sound)

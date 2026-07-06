@@ -1,8 +1,7 @@
-%%JPEG%%bin/cjpegli
 bin/cjxl
-%%JPEG%%bin/djpegli
 bin/djxl
 bin/jxlinfo
+bin/jxltran
 include/jxl/cms.h
 include/jxl/cms_interface.h
 include/jxl/codestream_header.h
@@ -27,14 +26,14 @@ include/jxl/types.h
 include/jxl/version.h
 %%PIXBUF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jxl.so
 lib/libjxl.so
-lib/libjxl.so.0.11
+lib/libjxl.so.0.12
 lib/libjxl.so.%%VERSION%%
 lib/libjxl_cms.so
-lib/libjxl_cms.so.0.11
+lib/libjxl_cms.so.0.12
 lib/libjxl_cms.so.%%VERSION%%
 lib/libjxl_extras_codec.a
 lib/libjxl_threads.so
-lib/libjxl_threads.so.0.11
+lib/libjxl_threads.so.0.12
 lib/libjxl_threads.so.%%VERSION%%
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_cms.pc

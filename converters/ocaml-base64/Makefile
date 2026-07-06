@@ -1,11 +1,10 @@
 PORTNAME=	base64
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	converters
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Base64 encoding and decoding in OCaml
 WWW=		https://github.com/mirage/ocaml-base64
 

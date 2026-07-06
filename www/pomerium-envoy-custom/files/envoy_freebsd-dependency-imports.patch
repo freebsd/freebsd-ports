@@ -1,11 +1,9 @@
-diff --git a/bazel/dependency_imports.bzl b/bazel/dependency_imports.bzl
-index fc4309a..fa9bcb2 100644
 --- a/bazel/dependency_imports.bzl
 +++ b/bazel/dependency_imports.bzl
-@@ -1,28 +1,16 @@
+@@ -1,96 +1,54 @@
 -load("@aspect_bazel_lib//lib:repositories.bzl", "register_jq_toolchains", "register_yq_toolchains")
-+load("@aspect_bazel_lib//lib:repositories.bzl", "register_jq_toolchains")
 -load("@base_pip3//:requirements.bzl", pip_dependencies = "install_deps")
++load("@aspect_bazel_lib//lib:repositories.bzl", "register_jq_toolchains")
  load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
 -load("@build_bazel_rules_apple//apple:repositories.bzl", "apple_rules_dependencies")
  load("@com_github_aignas_rules_shellcheck//:deps.bzl", "shellcheck_dependencies")
@@ -17,8 +15,9 @@ index fc4309a..fa9bcb2 100644
  load("@envoy_toolshed//compile:sanitizer_libs.bzl", "setup_sanitizer_libs")
  load("@envoy_toolshed//coverage/grcov:grcov_repository.bzl", "grcov_repository")
 -load("@fuzzing_pip3//:requirements.bzl", pip_fuzzing_dependencies = "install_deps")
- load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_register_toolchains", "go_rules_dependencies")
+-load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_register_toolchains", "go_rules_dependencies")
 -load("@proxy_wasm_rust_sdk//bazel:dependencies.bzl", "proxy_wasm_rust_sdk_dependencies")
++load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
  load("@rules_buf//buf:repositories.bzl", "rules_buf_toolchains")
  load("@rules_cc//cc:extensions.bzl", "compatibility_proxy_repo")
  load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
@@ -32,7 +31,13 @@ index fc4309a..fa9bcb2 100644
  
  # go version for rules_go
  GO_VERSION = "1.24.6"
-@@ -36,7 +23,6 @@ BUF_VERSION = "v1.56.0"
+ 
+ JQ_VERSION = "1.7"
+ YQ_VERSION = "4.24.4"
+ 
+ BUF_SHA = "5790beb45aaf51a6d7e68ca2255b22e1b14c9ae405a6c472cdcfc228c66abfc1"
+ BUF_VERSION = "v1.56.0"
+ 
  def envoy_dependency_imports(
          go_version = GO_VERSION,
          jq_version = JQ_VERSION,
@@ -40,9 +45,15 @@ index fc4309a..fa9bcb2 100644
          buf_sha = BUF_SHA,
          buf_version = BUF_VERSION):
      compatibility_proxy_repo()
-@@ -47,41 +33,14 @@ def envoy_dependency_imports(
+     rules_foreign_cc_dependencies(
+         register_default_tools = False,
+         register_built_tools = False,
+     )
      go_rules_dependencies()
-     go_register_toolchains(version = "host")
+-    go_register_toolchains(go_version)
+-    if go_version != "host":
+-        envoy_download_go_sdks(go_version)
++    go_register_toolchains(version = "host")
      gazelle_dependencies(go_sdk = "go_sdk")
 -    apple_rules_dependencies()
 -    pip_dependencies()
@@ -83,7 +94,21 @@ index fc4309a..fa9bcb2 100644
      parser_deps()
  
      rules_buf_toolchains(
-@@ -168,9 +127,14 @@ def envoy_dependency_imports(
+         sha256 = buf_sha,
+         version = buf_version,
+     )
+ 
+     setup_sanitizer_libs()
+ 
+     # These dependencies, like most of the Go in this repository, exist only for the API.
+@@ -168,92 +126,63 @@
+         sum = "h1:B/lvg4tQ5hfFZd4V2hcSfFVfUvAK6GSFKxIIzwnkv8g=",
+         version = "v0.0.0-20220520190051-1e77728a1eaa",
+         build_external = "external",
+         build_directives = [
+             "gazelle:resolve go google.golang.org/genproto/googleapis/api/expr/v1alpha1 @org_golang_google_genproto_googleapis_api//expr/v1alpha1",
+         ],
+     )
      go_repository(
          name = "com_github_spf13_afero",
          importpath = "github.com/spf13/afero",
@@ -92,15 +117,16 @@ index fc4309a..fa9bcb2 100644
 +        sum = "h1:EaGW2JJh15aKOejeuJ+wpFSHnbd7GE6Wvp3TsNhb6LY=",
 +        version = "v1.10.0",
          build_external = "external",
-+        build_directives = [
-+            "gazelle:resolve go golang.org/x/text/runes @org_golang_x_text//runes",
-+            "gazelle:resolve go golang.org/x/text/transform @org_golang_x_text//transform",
-+            "gazelle:resolve go golang.org/x/text/unicode/norm @org_golang_x_text//unicode/norm",
-+        ],
          # project_url = "https://pkg.go.dev/github.com/spf13/afero",
          # last_update = "2021-03-20"
          # use_category = ["api"],
-@@ -179,9 +143,18 @@ def envoy_dependency_imports(
+         # source = "https://github.com/bufbuild/protoc-gen-validate/blob/v0.6.1/dependencies.bzl#L60-L65"
+         build_directives = [
+             "gazelle:resolve go golang.org/x/text/runes @org_golang_x_text//runes",
+             "gazelle:resolve go golang.org/x/text/transform @org_golang_x_text//transform",
+             "gazelle:resolve go golang.org/x/text/unicode/norm @org_golang_x_text//unicode/norm",
+         ],
+     )
      go_repository(
          name = "com_github_lyft_protoc_gen_star_v2",
          importpath = "github.com/lyft/protoc-gen-star/v2",
@@ -110,18 +136,19 @@ index fc4309a..fa9bcb2 100644
 +        version = "v2.0.4-0.20230330145011-496ad1ac90a4",
          build_external = "external",
 +        build_file_generation = "on",
-+        build_directives = [
-+            "gazelle:resolve go github.com/spf13/afero @com_github_spf13_afero//:afero",
+         # project_url = "https://pkg.go.dev/github.com/lyft/protoc-gen-star",
+         # last_update = "2023-01-06"
+         # use_category = ["api"],
+         # source = "https://github.com/bufbuild/protoc-gen-validate/blob/v0.10.1/dependencies.bzl#L35-L40"
+         build_directives = [
+             "gazelle:resolve go github.com/spf13/afero @com_github_spf13_afero//:afero",
 +            "gazelle:resolve go google.golang.org/protobuf/proto @org_golang_google_protobuf//proto",
 +            "gazelle:resolve go google.golang.org/protobuf/runtime/protoimpl @org_golang_google_protobuf//runtime/protoimpl",
 +            "gazelle:resolve go google.golang.org/protobuf/types/descriptorpb @org_golang_google_protobuf//types/descriptorpb",
 +            "gazelle:resolve go google.golang.org/protobuf/types/pluginpb @org_golang_google_protobuf//types/pluginpb",
-+        ],
+         ],
 +        build_extra_args = ["-exclude=lang/go/goimports.go"],
-         # project_url = "https://pkg.go.dev/github.com/lyft/protoc-gen-star",
-         # last_update = "2023-01-06"
-         # use_category = ["api"],
-@@ -190,8 +163,8 @@ def envoy_dependency_imports(
+     )
      go_repository(
          name = "com_github_iancoleman_strcase",
          importpath = "github.com/iancoleman/strcase",
@@ -132,13 +159,20 @@ index fc4309a..fa9bcb2 100644
          build_external = "external",
          # project_url = "https://pkg.go.dev/github.com/iancoleman/strcase",
          # last_update = "2020-11-22"
-@@ -206,39 +179,5 @@ def envoy_dependency_imports(
+         # use_category = ["api"],
+         # source = "https://github.com/bufbuild/protoc-gen-validate/blob/v0.6.1/dependencies.bzl#L23-L28"
+     )
+     go_repository(
+         name = "com_github_planetscale_vtprotobuf",
+         importpath = "github.com/planetscale/vtprotobuf",
+         sum = "h1:ujRGEVWJEoaxQ+8+HMl8YEpGaDAgohgZxJ5S+d2TTFQ=",
+         version = "v0.6.1-0.20240409071808-615f978279ca",
          build_external = "external",
      )
  
 -    protoc_gen_jsonschema_go_dependencies()
      rules_proto_grpc_toolchains()
- 
+-
 -def envoy_download_go_sdks(go_version):
 -    go_download_sdk(
 -        name = "go_linux_amd64",

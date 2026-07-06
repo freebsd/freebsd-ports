@@ -1,4 +1,4 @@
---- meson.build.orig	2026-02-18 05:26:24 UTC
+--- meson.build.orig	2026-05-29 13:04:35 UTC
 +++ meson.build
 @@ -12,12 +12,16 @@ endif
      endif
@@ -19,9 +19,11 @@
    # 确保 sysconfdir 是绝对路径
    if not sysconfdir.startswith('/')
      sysconfdir = '/' + sysconfdir
-@@ -72,7 +76,7 @@ c_args = [
+@@ -72,9 +76,8 @@ c_args = [
+   '-g',
+   '-Wno-unused-function',
    '-DWLR_USE_UNSTABLE',
-   '-D_POSIX_C_SOURCE=200809L',
+-  '-D_POSIX_C_SOURCE=200809L',
    '-DVERSION="@0@"'.format(version_with_hash),
 -  '-DSYSCONFDIR="@0@"'.format('/etc'),
 +  '-DSYSCONFDIR="@0@"'.format(sysconfdir),

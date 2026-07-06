@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-07-01 10:52:14 UTC
++++ Makefile
+@@ -8,7 +8,7 @@ install:
+ all:
+ 
+ install:
+-	mkdir -p ${DST}/etc/ezjail/ ${DST}/man/man5/ ${DST}/man/man7 ${DST}/man/man8 ${DST}/etc/rc.d/ ${DST}/bin/ ${DST}/share/examples/ezjail ${DST}/share/zsh/site-functions
++	mkdir -p ${DST}/etc/ezjail/ ${DST}/share/man/man5/ ${DST}/share/man/man7 ${DST}/share/man/man8 ${DST}/etc/rc.d/ ${DST}/bin/ ${DST}/share/examples/ezjail ${DST}/share/zsh/site-functions
+ 	cp -R examples/example ${DST}/share/examples/ezjail/
+ 	cp -R examples/nullmailer-example ${DST}/share/examples/ezjail/
+ 	cp -R share/zsh/site-functions/ ${DST}/share/zsh/site-functions/

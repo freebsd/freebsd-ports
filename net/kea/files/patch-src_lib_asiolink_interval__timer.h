@@ -1,8 +1,8 @@
---- src/lib/asiolink/interval_timer.h.orig	2025-08-20 08:14:44 UTC
+--- src/lib/asiolink/interval_timer.h.orig	2026-06-22 07:49:20 UTC
 +++ src/lib/asiolink/interval_timer.h
-@@ -7,6 +7,7 @@
- #ifndef ASIOLINK_INTERVAL_TIMER_H
- #define ASIOLINK_INTERVAL_TIMER_H 1
+@@ -16,6 +16,7 @@
+ #pragma GCC diagnostic pop
+ #endif
  
 +#include <boost/asio/deadline_timer.hpp>
  #include <boost/shared_ptr.hpp>

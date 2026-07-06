@@ -1,4 +1,4 @@
---- media/gpu/chromeos/libyuv_image_processor_backend.cc.orig	2025-01-27 17:37:37 UTC
+--- media/gpu/chromeos/libyuv_image_processor_backend.cc.orig	2026-06-17 04:34:12 UTC
 +++ media/gpu/chromeos/libyuv_image_processor_backend.cc
 @@ -53,7 +53,7 @@ static constexpr struct {
  #define CONV(in, out, trans, result) \
@@ -9,7 +9,7 @@
      CONV(NV12, AR24, kConversion, Supported),
  #endif
      CONV(NV12, NV12, kConversion, Supported),
-@@ -412,7 +412,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
+@@ -425,7 +425,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
            fr->GetWritableVisibleData(VideoFrame::Plane::kUV)), \
        fr->stride(VideoFrame::Plane::kUV)
  
@@ -18,7 +18,7 @@
  #define ARGB_DATA(fr)                                   \
    fr->GetWritableVisibleData(VideoFrame::Plane::kARGB), \
        fr->stride(VideoFrame::Plane::kARGB)
-@@ -574,7 +574,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
+@@ -587,7 +587,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
      }
    }
  

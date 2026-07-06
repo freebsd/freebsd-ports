@@ -1,7 +1,7 @@
 PORTNAME=	rocksdb-jni
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases java
 MASTER_SITES=	https://rocksdb-deps.s3-us-west-2.amazonaws.com/jars/:deps
 DISTFILES=	assertj-core-2.9.0.jar:deps \
@@ -29,7 +29,7 @@ USES=		cmake compiler:c++17-lang java localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 GH_PROJECT=	rocksdb
-JAVA_VERSION=	21
+JAVA_VERSION=	21+
 
 WRKSRC_SUBDIR=	java
 

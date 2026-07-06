@@ -1,6 +1,5 @@
 PORTNAME=	xlibre-server
 PORTVERSION=	${XLIBRE_VER}
-PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	xlibre@FreeBSD.org
@@ -54,6 +53,10 @@ USE_GL+=	gbm
 .include 	"${.CURDIR}/../xlibre-server/Makefile.common"
 
 OLDMODULEDIR=	/lib/xorg/modules
+
+post-patch:
+	@${REINPLACE_CMD} -e '43,54d' ${WRKSRC}/config/meson.build
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}${OLDMODULEDIR}/extensions

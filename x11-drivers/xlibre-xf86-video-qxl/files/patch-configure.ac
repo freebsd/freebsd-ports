@@ -1,0 +1,15 @@
+--- configure.ac.orig	2025-12-18 18:16:59 UTC
++++ configure.ac
+@@ -87,7 +87,11 @@ fi
+ 	DRM_MODE=no
+ fi
+ 
+-PKG_CHECK_MODULES([PCIACCESS], [pciaccess >= 0.10])
++PKG_CHECK_MODULES([PCIACCESS], [pciaccess >= 0.10.0], [LIBPCIACCESS=yes], [LIBPCIACCESS=no])
++if test "x$LIBPCIACCESS" = xyes; then
++	AC_DEFINE(HAVE_PCI_DEVICE_IS_BOOT_DISPLAY, 1, [libpciaccess support])
++	CFLAGS="-DHAVE_PCI_DEVICE_IS_BOOT_DISPLAY=1 $CFLAGS"
++fi
+ 
+ save_CFLAGS="$CFLAGS"
+ CFLAGS="$DRM_CFLAGS $CFLAGS"

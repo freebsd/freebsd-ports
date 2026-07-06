@@ -1,6 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	19.0.20251227
-PORTREVISION=	1
+PORTVERSION=	19.0.20260618
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +10,7 @@ WWW=		https://www.odoo.com
 LICENSE=	LGPL3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	6f1d40b4f5383ed515aa502751139792e18c74f6
+GH_TAGNAME=	77cda8dd500c7f24bd0ee98a0e6b7fadc6be5c31
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \

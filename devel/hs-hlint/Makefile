@@ -9,8 +9,6 @@ WWW=		https://github.com/ndmitchell/hlint
 LICENSE=	BSD3CLAUSE
 
 USES=		cabal
-
-USE_LOCALE=	C.UTF-8
 USE_CABAL=	OneTuple-0.4.2_1 \
 		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \

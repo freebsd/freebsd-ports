@@ -1,20 +1,24 @@
 PORTNAME=	libpreludedb
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+DISTVERSION=	5.2.0
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-siem.org/attachments/download/1393/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library to access Prelude IDMEF database
-WWW=		https://www.prelude-siem.org/
+WWW=		https://github.com/Prelude-SIEM/libpreludedb
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream project is dead
+EXPIRATION_DATE=	2026-07-30
+
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libltdl.so:devel/libltdl \
 		libpcre.so:devel/pcre \
-		libprelude.so:security/libprelude
+		libprelude.so:security/libprelude \
+		libunwind.so:devel/libunwind
 
 USES=		gmake libtool python shebangfix ssl
 USE_LDCONFIG=	yes
@@ -22,7 +26,6 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	preludedb-admin
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-swig
 CONFIGURE_ENV=	PYTHON3=${PYTHON_CMD}
 

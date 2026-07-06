@@ -1,5 +1,5 @@
 PORTNAME=	socketapi
-DISTVERSION=	2.2.26
+DISTVERSION=	2.2.28
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/sctplib/download/
 

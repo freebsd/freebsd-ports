@@ -22,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyNaCl>0:security/py-pynacl@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	aio-libs
+CPE_PRODUCT=	aiohttp_session
 USE_PYTHON=	autoplist distutils cython
 
 NO_ARCH=	yes

@@ -50,9 +50,12 @@ Working examples:
   2. run:
      ollama run x/z-image-turbo {textual description of the desired image}
 
+Please note that the x/z-image-turbo model requires a minimum of 64GB of
+RAM to run or a similar amount of VRAM on a Vulkan device.
+
 There are also a lot of text-to-text models that you can chat with.
 
-You migh also want to install the 'gollama' package. gollama allows to
+You might also want to install the 'gollama' package. gollama allows to
 run ollama models very easily.
 
 EOM

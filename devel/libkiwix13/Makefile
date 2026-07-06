@@ -28,7 +28,8 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:c++17-lang meson pkgconfig python shebangfix tar:xz
+USES=		compiler:c++17-lang cpe meson pkgconfig python shebangfix tar:xz
+CPE_VENDOR=	kiwix
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	libkiwix

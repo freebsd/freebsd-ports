@@ -8,8 +8,8 @@ WWW=		https://projects.kde.org/projects/kdereview/kaccounts-providers
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libkaccounts6.so:net-im/kaccounts-integration \
-		libaccounts-qt6.so:net-im/libaccounts-qt@qt6 \
-		libsignon-qt6.so:sysutils/signond@qt6
+		libaccounts-qt6.so:net-im/libaccounts-qt \
+		libsignon-qt6.so:sysutils/signond
 
 USES=		cmake compiler:c++11-lang gettext gnome kde:6 pkgconfig qt:6 \
 		tar:xz

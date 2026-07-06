@@ -6,7 +6,11 @@ bin/ldc-prune-cache
 bin/ldc2
 bin/ldmd2
 bin/timetrace2txt
-etc/ldc2.conf
+etc/ldc2.conf/00-docs.conf
+etc/ldc2.conf/30-compiler.conf
+etc/ldc2.conf/50-target-default.conf
+etc/ldc2.conf/55-target-wasm.conf
+etc/ldc2.conf/70-compiler-rt.conf
 include/d/__importc_builtins.di
 include/d/core/atomic.d
 include/d/core/attribute.d
@@ -40,6 +44,7 @@ include/d/core/internal/backtrace/elf.d
 include/d/core/internal/backtrace/libunwind.d
 include/d/core/internal/backtrace/macho.d
 include/d/core/internal/backtrace/unwind.d
+include/d/core/internal/cast_.d
 include/d/core/internal/container/array.d
 include/d/core/internal/container/common.d
 include/d/core/internal/container/hashtab.d
@@ -236,9 +241,11 @@ include/d/core/sys/linux/sys/prctl.d
 include/d/core/sys/linux/sys/procfs.d
 include/d/core/sys/linux/sys/signalfd.d
 include/d/core/sys/linux/sys/socket.d
+include/d/core/sys/linux/sys/syscall.d
 include/d/core/sys/linux/sys/sysinfo.d
 include/d/core/sys/linux/sys/time.d
 include/d/core/sys/linux/sys/xattr.d
+include/d/core/sys/linux/syscall.d
 include/d/core/sys/linux/termios.d
 include/d/core/sys/linux/time.d
 include/d/core/sys/linux/timerfd.d
@@ -282,6 +289,7 @@ include/d/core/sys/posix/arpa/inet.d
 include/d/core/sys/posix/config.d
 include/d/core/sys/posix/dirent.d
 include/d/core/sys/posix/dlfcn.d
+include/d/core/sys/posix/endian.d
 include/d/core/sys/posix/fcntl.d
 include/d/core/sys/posix/grp.d
 include/d/core/sys/posix/iconv.d
@@ -346,8 +354,11 @@ include/d/core/sys/solaris/sys/elf_notes.d
 include/d/core/sys/solaris/sys/elftypes.d
 include/d/core/sys/solaris/sys/link.d
 include/d/core/sys/solaris/sys/priocntl.d
+include/d/core/sys/solaris/sys/procfs.d
 include/d/core/sys/solaris/sys/procset.d
+include/d/core/sys/solaris/sys/regset.d
 include/d/core/sys/solaris/sys/types.d
+include/d/core/sys/solaris/thread.d
 include/d/core/sys/solaris/time.d
 include/d/core/sys/windows/accctrl.d
 include/d/core/sys/windows/aclapi.d
@@ -651,6 +662,7 @@ include/d/std/int128.d
 include/d/std/internal/attributes.d
 include/d/std/internal/cstring.d
 include/d/std/internal/digest/sha_SSSE3.d
+include/d/std/internal/entropy.d
 include/d/std/internal/math/biguintarm.d
 include/d/std/internal/math/biguintcore.d
 include/d/std/internal/math/biguintnoasm.d
@@ -732,26 +744,26 @@ include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.111
-lib/libdruntime-ldc-debug-shared.so.111.0
+lib/libdruntime-ldc-debug-shared.so.112
+lib/libdruntime-ldc-debug-shared.so.112.1
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.111
-lib/libdruntime-ldc-shared.so.111.0
+lib/libdruntime-ldc-shared.so.112
+lib/libdruntime-ldc-shared.so.112.1
 lib/libdruntime-ldc.a
 lib/libldc-jit-rt.a
 lib/libldc-jit.so
-lib/libldc-jit.so.111
-lib/libldc-jit.so.111.0
+lib/libldc-jit.so.112
+lib/libldc-jit.so.112.1
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.111
-lib/libphobos2-ldc-debug-shared.so.111.0
+lib/libphobos2-ldc-debug-shared.so.112
+lib/libphobos2-ldc-debug-shared.so.112.1
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.111
-lib/libphobos2-ldc-shared.so.111.0
+lib/libphobos2-ldc-shared.so.112
+lib/libphobos2-ldc-shared.so.112.1
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test

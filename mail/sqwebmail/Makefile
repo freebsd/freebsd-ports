@@ -1,5 +1,6 @@
 PORTNAME=	sqwebmail
 PORTVERSION=	6.3.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 

@@ -15,7 +15,9 @@ WWW=		https://www.darwinsys.com/file/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		cpe python
+CPE_PRODUCT=	file
+CPE_VENDOR=	file_project
 USE_PYTHON=	autoplist distutils
 
 # both install module as magic.py

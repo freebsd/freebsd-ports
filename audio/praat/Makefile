@@ -1,6 +1,6 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.4.65
+DISTVERSION=		6.4.67
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -11,12 +11,13 @@ WWW=		https://www.fon.hum.uva.nl/praat/ \
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libjack.so:audio/jack \
 		libharfbuzz.so:print/harfbuzz
 # These are recommended but I can't tell the difference
 RUN_DEPENDS=	Charis>=0:x11-fonts/charis \
 		DoulosSIL>=0:x11-fonts/doulos
 
-USES=		compiler:c++17-lang gnome iconv pkgconfig xorg
+USES=		compiler:c++17-lang gmake gnome iconv pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11
@@ -28,12 +29,12 @@ PLIST_FILES=	bin/praat \
 
 WRKSRC=			${WRKDIR}/praat.github.io-${DISTVERSION}
 
+MAKE_ARGS+=	RANLIB=${RANLIB}
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' \
 		${WRKSRC}/*/Makefile \
 		${WRKSRC}/external/*/Makefile
-	${CP} ${WRKSRC}/makefiles/makefile.defs.freebsd.alsa \
-		${WRKSRC}/makefile.defs
 	@${CP} ${WRKSRC}/main/praat-480.svg \
 		${WRKSRC}/praat.svg
 

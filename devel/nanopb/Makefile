@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} # for the pkg_resources package
 TEST_DEPENDS=	scons:devel/scons
 
-USES=		cmake python shebangfix
+USES=		cmake cpe python shebangfix
+CPE_VENDOR=	nanopb_project
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

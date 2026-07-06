@@ -26,10 +26,3 @@
  file(GLOB_RECURSE TEST_SOURCES "tests/*.cpp" "tests/MATLAB/*.cpp"
       "tests/classes/*.cpp" "tests/qasm/*.cpp")
  
-@@ -44,5 +35,5 @@ target_link_libraries(${TARGET_NAME} PRIVATE libqpp_in
-              RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/unit_tests")
- target_link_libraries(${TARGET_NAME} PRIVATE libqpp_internal GTest::gmock)
- 
--include(GoogleTest)
-+target_link_libraries(${TARGET_NAME} PUBLIC ${QPP_LINK_DEPS} gtest gmock libqpp)
- gtest_discover_tests(${TARGET_NAME})

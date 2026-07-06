@@ -1,15 +1,15 @@
---- src/Gui/CMakeLists.txt.orig	2026-01-01 15:27:46 UTC
+--- src/Gui/CMakeLists.txt.orig	2026-06-22 10:15:48 UTC
 +++ src/Gui/CMakeLists.txt
-@@ -112,7 +112,7 @@ else(MSVC)
-     set(FreeCADGui_LIBS
+@@ -116,7 +116,7 @@ else(MSVC)
          FreeCADApp
+         libfastsignals
          ${Boost_LIBRARIES}
 -        ${OPENGL_gl_LIBRARY}
 +        ${OPENGL_gl_LIBRARY} -L${CMAKE_INSTALL_PREFIX}/lib
          ${3DCONNEXION_LINKFLAGS}
      )
  endif(MSVC)
-@@ -1568,13 +1568,13 @@ else(WIN32)
+@@ -1521,13 +1521,13 @@ else(WIN32)
      INSTALL(TARGETS FreeCADGui
          LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
      )

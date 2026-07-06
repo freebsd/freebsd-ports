@@ -1,4 +1,4 @@
---- services/device/usb/usb_device_handle_usbfs.cc.orig	2026-02-11 09:05:39 UTC
+--- services/device/usb/usb_device_handle_usbfs.cc.orig	2026-07-01 06:24:19 UTC
 +++ services/device/usb/usb_device_handle_usbfs.cc
 @@ -33,7 +33,7 @@
  #include "chromeos/dbus/permission_broker/permission_broker_client.h"
@@ -36,7 +36,7 @@
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -975,7 +975,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -982,7 +982,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

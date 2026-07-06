@@ -1,12 +1,12 @@
 CARGO_CRATES=	adler2-2.0.1 \
 		adler32-1.2.0 \
+		aegis-password-generator-0.1.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		allocator-api2-0.2.21 \
 		alphanumeric-sort-1.5.5 \
-		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		ansi-str-0.9.0 \
 		ansitok-0.3.0 \
@@ -76,9 +76,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytemuck-1.25.0 \
 		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
-		bytes-1.11.1 \
+		bytes-1.12.0 \
 		bytes-utils-0.1.4 \
-		bytesize-2.3.1 \
+		bytesize-2.4.0 \
 		byteyarn-0.5.1 \
 		calamine-0.35.0 \
 		castaway-0.2.4 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.0 \
 		chardetng-0.1.17 \
-		chrono-0.4.41 \
+		chrono-0.4.44 \
 		chrono-humanize-0.2.3 \
 		chrono-tz-0.10.4 \
 		clang-sys-1.8.1 \
@@ -161,10 +161,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fast-float2-0.2.3 \
 		fastrand-2.3.0 \
 		fd-lock-4.0.4 \
-		fff-grep-0.8.4 \
+		fff-grep-0.9.6 \
 		fff-notify-debouncer-full-0.9.4 \
-		fff-query-parser-0.8.4 \
-		fff-search-0.8.4 \
+		fff-query-parser-0.9.6 \
+		fff-search-0.9.6 \
 		file-id-0.2.3 \
 		filedescriptor-0.8.3 \
 		filesize-0.2.0 \
@@ -193,7 +193,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		futures-sink-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
-		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getrandom-0.2.17 \
@@ -257,6 +256,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.17 \
 		jiff-0.2.23 \
 		jiff-static-0.2.23 \
@@ -265,12 +265,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.91 \
 		jsonpath_lib_polars_vendor-0.0.1 \
+		kdl-6.7.1 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
 		lean_string-0.6.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.185 \
+		libc-0.2.186 \
 		libflate-1.4.0 \
 		libflate_lz77-1.2.0 \
 		libgit2-sys-0.18.3+1.9.2 \
@@ -305,9 +306,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		miniz_oxide-0.8.9 \
 		mio-0.8.11 \
 		mio-1.2.0 \
-		mq-markdown-0.5.26 \
-		neo_frizbee-0.10.2 \
-		nix-0.31.2 \
+		mq-markdown-0.6.0 \
+		neo_frizbee-0.10.3 \
+		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		notify-6.1.1 \
@@ -317,29 +318,30 @@ CARGO_CRATES=	adler2-2.0.1 \
 		now-0.1.3 \
 		ntapi-0.4.3 \
 		nu-ansi-term-0.50.3 \
-		nu-cmd-base-0.113.1 \
-		nu-cmd-lang-0.113.1 \
-		nu-color-config-0.113.1 \
-		nu-command-0.113.1 \
-		nu-derive-value-0.113.1 \
-		nu-engine-0.113.1 \
-		nu-experimental-0.113.1 \
-		nu-glob-0.113.1 \
-		nu-heavy-utils-0.113.1 \
-		nu-json-0.113.1 \
-		nu-parser-0.113.1 \
-		nu-path-0.113.1 \
-		nu-plugin-0.113.1 \
-		nu-plugin-core-0.113.1 \
-		nu-plugin-engine-0.113.1 \
-		nu-plugin-protocol-0.113.1 \
-		nu-plugin-test-support-0.113.1 \
-		nu-pretty-hex-0.113.1 \
-		nu-protocol-0.113.1 \
-		nu-system-0.113.1 \
-		nu-table-0.113.1 \
-		nu-term-grid-0.113.1 \
-		nu-utils-0.113.1 \
+		nu-cmd-base-0.114.0 \
+		nu-cmd-lang-0.114.0 \
+		nu-color-config-0.114.0 \
+		nu-command-0.114.0 \
+		nu-derive-value-0.114.0 \
+		nu-engine-0.114.0 \
+		nu-experimental-0.114.0 \
+		nu-glob-0.114.0 \
+		nu-heavy-utils-0.114.0 \
+		nu-json-0.114.0 \
+		nu-parser-0.114.0 \
+		nu-path-0.114.0 \
+		nu-plugin-0.114.0 \
+		nu-plugin-core-0.114.0 \
+		nu-plugin-engine-0.114.0 \
+		nu-plugin-protocol-0.114.0 \
+		nu-plugin-test-support-0.114.0 \
+		nu-pretty-hex-0.114.0 \
+		nu-protocol-0.114.0 \
+		nu-system-0.114.0 \
+		nu-table-0.114.0 \
+		nu-term-grid-0.114.0 \
+		nu-utils-0.114.0 \
+		nucleo-matcher-0.3.1 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
@@ -350,7 +352,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-iter-0.1.45 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		nuon-0.113.1 \
+		nuon-0.114.0 \
 		objc2-0.6.4 \
 		objc2-app-kit-0.3.2 \
 		objc2-core-foundation-0.3.2 \
@@ -360,6 +362,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-foundation-0.3.2 \
 		objc2-io-kit-0.3.2 \
 		objc2-io-surface-0.3.2 \
+		objc2-open-directory-0.3.2 \
 		object-0.37.3 \
 		object_store-0.13.1 \
 		oem_cp-2.1.2 \
@@ -374,7 +377,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		outref-0.5.2 \
 		owo-colors-4.3.0 \
 		page_size-0.6.0 \
-		papergrid-0.17.0 \
+		papergrid-0.18.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -400,29 +403,32 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plain-0.2.3 \
 		planus-1.1.1 \
 		platform-info-2.0.5 \
-		polars-0.53.0 \
-		polars-arrow-0.53.0 \
+		polars-0.54.4 \
+		polars-arrow-0.54.4 \
 		polars-arrow-format-0.2.1 \
-		polars-buffer-0.53.0 \
-		polars-compute-0.53.0 \
-		polars-core-0.53.0 \
-		polars-dtype-0.53.0 \
-		polars-error-0.53.0 \
-		polars-expr-0.53.0 \
-		polars-io-0.53.0 \
-		polars-json-0.53.0 \
-		polars-lazy-0.53.0 \
-		polars-mem-engine-0.53.0 \
-		polars-ops-0.53.0 \
-		polars-parquet-0.53.0 \
+		polars-async-0.54.4 \
+		polars-buffer-0.54.4 \
+		polars-compute-0.54.4 \
+		polars-config-0.54.4 \
+		polars-core-0.54.4 \
+		polars-dtype-0.54.4 \
+		polars-error-0.54.4 \
+		polars-expr-0.54.4 \
+		polars-io-0.54.4 \
+		polars-json-0.54.4 \
+		polars-lazy-0.54.4 \
+		polars-mem-engine-0.54.4 \
+		polars-ooc-0.54.4 \
+		polars-ops-0.54.4 \
+		polars-parquet-0.54.4 \
 		polars-parquet-format-0.1.0 \
-		polars-plan-0.53.0 \
-		polars-row-0.53.0 \
-		polars-schema-0.53.0 \
-		polars-sql-0.53.0 \
-		polars-stream-0.53.0 \
-		polars-time-0.53.0 \
-		polars-utils-0.53.0 \
+		polars-plan-0.54.4 \
+		polars-row-0.54.4 \
+		polars-schema-0.54.4 \
+		polars-sql-0.54.4 \
+		polars-stream-0.54.4 \
+		polars-time-0.54.4 \
+		polars-utils-0.54.4 \
 		pori-0.0.0 \
 		portable-atomic-1.13.1 \
 		portable-atomic-util-0.2.5 \
@@ -441,9 +447,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pwd-1.4.0 \
 		quick-xml-0.38.4 \
 		quick-xml-0.39.4 \
-		quick-xml-0.40.1 \
+		quick-xml-0.41.0 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.14 \
+		quinn-proto-0.11.15 \
 		quinn-udp-0.5.14 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
@@ -465,7 +471,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_syscall-0.7.3 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
-		reedline-0.48.0 \
+		reedline-0.49.0 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		regex-1.12.3 \
@@ -477,7 +483,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rle-decode-fast-1.0.3 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
-		roxmltree-0.20.0 \
+		roxmltree-0.21.1 \
 		rust_decimal-1.40.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
@@ -548,8 +554,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		synchronoise-1.0.1 \
 		synstructure-0.13.2 \
 		sys-locale-0.3.2 \
-		sysinfo-0.38.4 \
-		tabled-0.20.0 \
+		sysinfo-0.37.2 \
+		sysinfo-0.39.3 \
+		tabled-0.21.0 \
 		tempfile-3.27.0 \
 		terminal_size-0.4.3 \
 		testing_table-0.3.0 \
@@ -615,15 +622,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		urlencoding-2.1.3 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uu_cp-0.8.0 \
-		uu_mkdir-0.8.0 \
-		uu_mktemp-0.8.0 \
-		uu_mv-0.8.0 \
-		uu_touch-0.8.0 \
-		uu_uname-0.8.0 \
-		uu_whoami-0.8.0 \
-		uucore-0.8.0 \
-		uucore_procs-0.8.0 \
+		uu_cp-0.9.0 \
+		uu_mkdir-0.9.0 \
+		uu_mktemp-0.9.0 \
+		uu_mv-0.9.0 \
+		uu_touch-0.9.0 \
+		uu_uname-0.9.0 \
+		uu_whoami-0.9.0 \
+		uucore-0.9.0 \
+		uucore_procs-0.9.0 \
 		uuid-1.23.1 \
 		v_htmlescape-0.15.8 \
 		valuable-0.1.1 \
@@ -663,16 +670,23 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.61.3 \
 		windows-0.62.2 \
+		windows-collections-0.2.0 \
 		windows-collections-0.3.2 \
+		windows-core-0.61.2 \
 		windows-core-0.62.2 \
+		windows-future-0.2.1 \
 		windows-future-0.3.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
 		windows-link-0.1.3 \
 		windows-link-0.2.1 \
+		windows-numerics-0.2.0 \
 		windows-numerics-0.3.1 \
+		windows-result-0.3.4 \
 		windows-result-0.4.1 \
+		windows-strings-0.4.2 \
 		windows-strings-0.5.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
@@ -682,6 +696,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
+		windows-threading-0.1.0 \
 		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \

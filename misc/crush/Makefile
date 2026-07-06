@@ -1,6 +1,6 @@
 PORTNAME=	crush
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.74.1
+DISTVERSION=	0.81.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -20,14 +20,17 @@ GO_LDFLAGS=	-w -X github.com/charmbracelet/crush/internal/version.Version=${DIST
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
-OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
+OPTIONS_DEFINE=		COMPLETIONS DISABLE_COMMAND_BLOCKING DOCS MANPAGES
+OPTIONS_DEFAULT=	COMPLETIONS DISABLE_COMMAND_BLOCKING MANPAGES
 
-COMPLETIONS_DESC=	Build and/or install shell completions
+COMPLETIONS_DESC=		Build and/or install shell completions
+DISABLE_COMMAND_BLOCKING_DESC=	Support for disabling dangerous command blocking
 
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
+
+DISABLE_COMMAND_BLOCKING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-disable-command-blocking
 
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 

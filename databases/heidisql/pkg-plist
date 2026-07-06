@@ -24,6 +24,7 @@ share/applications/heidisql.desktop
 %%DATADIR%%/locale/heidisql.ja.mo
 %%DATADIR%%/locale/heidisql.ka.mo
 %%DATADIR%%/locale/heidisql.ko.mo
+%%DATADIR%%/locale/heidisql.mo
 %%DATADIR%%/locale/heidisql.nl.mo
 %%DATADIR%%/locale/heidisql.no.mo
 %%DATADIR%%/locale/heidisql.pl.mo

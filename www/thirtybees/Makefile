@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES
 USES=		php:web zip
 USE_PHP=	bcmath curl gd imap mbstring opcache pdo_mysql \
 		soap xml zip
+IGNORE_WITH_PHP=	86
 
 NO_BUILD=	yes
 NO_ARCH=	yes

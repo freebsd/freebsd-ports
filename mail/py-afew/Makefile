@@ -9,6 +9,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Initial tagging script for Notmuch mail
 WWW=		https://github.com/afewmail/afew
 
+BROKEN=		does not support modern Python stack
+DEPRECATED=	Fails to build with sphinx-9.0.4, does not support Python 3.13
+EXPIRATION_DATE=	2026-07-31
+
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

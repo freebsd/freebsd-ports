@@ -1,6 +1,6 @@
 PORTNAME=	autotrace
 DISTVERSION=	0.31.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/autotrace/autotrace/commit/

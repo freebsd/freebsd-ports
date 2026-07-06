@@ -1,15 +1,18 @@
---- gen/GNUmakefile.orig	2024-05-27 06:59:46 UTC
+--- gen/GNUmakefile.orig	2025-04-11 02:11:10 UTC
 +++ gen/GNUmakefile
-@@ -46,9 +46,9 @@ install:
- 	rm -f .depend GPATH GRTAGS GSYMS GTAGS
+@@ -1,6 +1,6 @@ include ../Makefile.inc
+ include ../Makefile.inc
+ 
+-PROG=		ipgen webserv
++PROG=		ipgen
+ SRCS=		gen.c util.c webserv.c pbuf.c sequencecheck.c seqtable.c item.c genscript.c flowparse.c pktgen_item.c
+ CFLAGS+=	-I.. -I${LOCALBASE}/include -g -DHTDOCS=\"${PREFIX}/share/ipgen/htdocs\"
+ CFLAGS+=	-Wall -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith
+@@ -47,7 +47,6 @@ install:
  
  install:
--	install -o root -g wheel -m 550 ipgen ${DESTDIR}${PREFIX}/bin/
--	install -o root -g wheel -m 755 -d ${DESTDIR}${MANDIR}/man1
--	install -o root -g wheel -m 444 ipgen.1 ${DESTDIR}${MANDIR}/man1
-+	${BSD_INSTALL_PROGRAM} ipgen ${DESTDIR}${PREFIX}/bin/
-+	${BSD_INSTALL_DIR} -d ${DESTDIR}${MANDIR}/man1
-+	${BSD_INSTALL_MAN} ipgen.1 ${DESTDIR}${MANDIR}/man1
+ 	${INSTALL_PROGRAM} ipgen ${DESTDIR}${PREFIX}/bin/
+-	${INSTALL_PROGRAM} webserv ${DESTDIR}${PREFIX}/bin/
+ 	${INSTALL} -d ${DESTDIR}${MANDIR}/man1
+ 	${INSTALL_MAN} ipgen.1 ${DESTDIR}${MANDIR}/man1
  
- sequencecheck: sequencecheck.c seqcheck_test.c
- 	$(CC) -o $@ sequencecheck.c $(CFLAGS) -DTEST

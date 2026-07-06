@@ -1,7 +1,7 @@
 Index: ext/node/ops/constant.rs
---- ext/node/ops/constant.rs.orig
+--- ext/node/ops/constant.rs.orig	2026-07-01 13:28:43 UTC
 +++ ext/node/ops/constant.rs
-@@ -226,6 +226,13 @@ fn common_unix_fs_constants() -> FsConstants {
+@@ -242,6 +242,13 @@ fn common_unix_fs_constants() -> FsConstants {
    }
  }
  

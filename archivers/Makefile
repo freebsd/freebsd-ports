@@ -180,6 +180,10 @@
     SUBDIR += php85-phar
     SUBDIR += php85-zip
     SUBDIR += php85-zlib
+    SUBDIR += php86-bz2
+    SUBDIR += php86-phar
+    SUBDIR += php86-zip
+    SUBDIR += php86-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plakar
@@ -187,6 +191,7 @@
     SUBDIR += ppmd
     SUBDIR += ppunpack
     SUBDIR += py-acefile
+    SUBDIR += py-arpy
     SUBDIR += py-bitshuffle
     SUBDIR += py-blosc
     SUBDIR += py-blosc2
@@ -209,6 +214,7 @@
     SUBDIR += py-patool
     SUBDIR += py-py7zr
     SUBDIR += py-pybcj
+    SUBDIR += py-pycdlib
     SUBDIR += py-pyminizip
     SUBDIR += py-pyppmd
     SUBDIR += py-python-lhafile
@@ -246,6 +252,7 @@
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip-gitlab
     SUBDIR += rubygem-rubyzip13
+    SUBDIR += rubygem-rubyzip2
     SUBDIR += rubygem-snappy
     SUBDIR += rvm
     SUBDIR += rzip
@@ -297,7 +304,6 @@
     SUBDIR += zchunk
     SUBDIR += zim-tools
     SUBDIR += zip
-    SUBDIR += zipmix
     SUBDIR += zipper
     SUBDIR += zlib-ng
     SUBDIR += zoo

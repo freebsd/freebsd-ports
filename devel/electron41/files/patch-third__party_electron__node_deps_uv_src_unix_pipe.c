@@ -1,6 +1,6 @@
---- third_party/electron_node/deps/uv/src/unix/pipe.c.orig	2025-06-24 07:41:14 UTC
+--- third_party/electron_node/deps/uv/src/unix/pipe.c.orig	2026-05-20 13:16:17 UTC
 +++ third_party/electron_node/deps/uv/src/unix/pipe.c
-@@ -209,9 +209,13 @@ int uv_pipe_open(uv_pipe_t* handle, uv_file fd) {
+@@ -208,9 +208,13 @@ int uv_pipe_open(uv_pipe_t* handle, uv_file fd) {
    if (mode == -1)
      return UV__ERR(errno); /* according to docs, must be EBADF */
  

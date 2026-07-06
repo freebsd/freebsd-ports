@@ -1,7 +1,31 @@
---- pyproject.toml.orig	2023-02-13 08:53:21 UTC
+-- Fix build: pyproject.toml is broken in the upstream release
+--
+-- The upstream pyproject.toml has a syntax error in the [build-system] section
+-- where two 'requires' lists seem to have been merged incorrectly.
+-- This patch fixes the syntax and simplifies the dependencies.
+
+--- pyproject.toml.orig 2026-04-14 10:28:44 UTC
 +++ pyproject.toml
-@@ -1,3 +1,3 @@
+@@ -1,11 +1,6 @@
  [build-system]
  # Minimum requirements for the build system to execute.
--requires = ["setuptools", "oldest-supported-numpy", "wheel"]  # PEP 508 specifications.
-+requires = ["setuptools", "numpy", "wheel"]  # PEP 508 specifications.
+-requires = [
+-         "setuptools >= 75.0",
+-         "oldest-supported-numpy; python_version<='3.8'",
+-         "numpy>=2.0,<3; python_version>'3.8'",
+-         "wheel"
+-   ]  # PEP 508 specifications.
++requires = ["setuptools", "numpy", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -27,8 +22,7 @@ dependencies = [
+ ]
+ license = { text = "GPL" }
+ dependencies = [
+-    "numpy>=1.13.0,<2.0; python_version<='3.8'",
+-    "numpy>=1.19.3,<3; python_version>'3.8'",
++    "numpy>=1.16",
+ ]
+ keywords = ["numpy","extension","find"]
+ 

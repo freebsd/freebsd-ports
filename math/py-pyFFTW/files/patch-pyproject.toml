@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-06-06 23:39:08 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+     "wheel",
+-    "setuptools>=64",
++    "setuptools>=63",
+     "setuptools-scm",
+     "Cython>=3",
+     # taken from scipy (2024/06/28)
+@@ -27,8 +27,7 @@ readme = "README.md"
+     "numpy>=1.20",
+ ]
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

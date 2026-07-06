@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-3d43b280298c
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Linux DVB API applications and utilities
-WWW=		https://linuxtv.org/hg/dvb-apps/
+WWW=		https://www.linuxtv.org/wiki/index.php/LinuxTV_dvb-apps
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

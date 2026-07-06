@@ -1,0 +1,4 @@
+Grok Build CLI is a command-line tool 'grok' (also symlinked as 'agent') for
+interacting with the xAI Grok AI platform.
+
+grok is a closed source Linux binary working through Linuxlator.

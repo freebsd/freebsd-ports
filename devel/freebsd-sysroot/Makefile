@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2026-04-30
+DISTVERSION=	a2026-06-30
 CATEGORIES=	devel
 MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
 		LOCAL/rust:${FLAVOR}
@@ -43,7 +43,7 @@ PLIST_SUB=	ROOT=${_SYSROOT:S,^${PREFIX}/,,}
 
 _GCC_VERSION=				${_SYSROOT_DIST_powerpc:[2]:C/-.*//}
 _SYSROOT=				${PREFIX}/${PORTNAME}/${FLAVOR:S/_/-/g}
-_SYSROOT_VER=				14.3-RELEASE
+_SYSROOT_VER=				14.4-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_armv7=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv7-GENERICSD.img.xz

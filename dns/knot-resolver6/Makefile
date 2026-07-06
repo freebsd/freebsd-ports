@@ -1,6 +1,6 @@
 PORTNAME=	knot-resolver
 DISTVERSION=	6.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://knot-resolver.nic.cz/release/ \
 		https://dns.company/downloads/knot-resolver/
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libdnssec.so:dns/knot3 \
 		libgnutls.so:security/gnutls \
 		libknot.so:dns/knot3 \
-		liblmdb.so:databases/lmdb \
+		liblmdb.so:databases/lmdb0 \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv \
 		libzscanner.so:dns/knot3

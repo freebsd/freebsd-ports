@@ -1,5 +1,5 @@
 PORTNAME=	httr2
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -24,12 +24,14 @@ RUN_DEPENDS=	R-cran-cli>=3.0.0:devel/R-cran-cli \
 TEST_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass \
 		R-cran-clipr>0:devel/R-cran-clipr \
 		R-cran-covr>0:devel/R-cran-covr \
+		R-cran-digest>0:security/R-cran-digest \
 		R-cran-docopt>0:devel/R-cran-docopt \
 		R-cran-httpuv>0:www/R-cran-httpuv \
 		R-cran-jose>0:www/R-cran-jose \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-later>=1.4.0:devel/R-cran-later \
+		R-cran-otel>=0.2.0:devel/R-cran-otel \
 		R-cran-promises>0:devel/R-cran-promises \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-testthat>=3.1.8:devel/R-cran-testthat \

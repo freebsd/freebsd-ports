@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+The route53.sh script was installed, however you will need to install
+the AWS CLI dependency yourself.  CLI v1 is available on PyPI as the
+awscli package.  To install CLI v2, please see the following:
+
+Official CLI v1 to v2 migration tool:
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-migration-tool.html
+
+Issue on the aws-cli GitHub repository discussing publishing CLI v2
+directly to PyPI:
+
+https://github.com/aws/aws-cli/issues/4947
+EOM
+}
+]

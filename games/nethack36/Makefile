@@ -14,7 +14,10 @@ LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/dat/license
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c11 gmake ncurses tar:tgz
+USES=		compiler:c11 cpe gmake ncurses tar:tgz
+
+CPE_PRODUCT=	nethack
+CPE_VENDOR=	nethack
 
 WRKSRC=		${WRKDIR}/NetHack-${PORTVERSION}
 

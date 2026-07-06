@@ -1,42 +1,24 @@
 PORTNAME=	wxformbuilder
-DISTVERSION=	3.5.0-beta
-PORTREVISION=	11
+DISTVERSION=	4.2.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-nightly/${DISTVERSION}
-DISTNAME=	wxFormBuilder_v${DISTVERSION}-source
+MASTER_SITES=	https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v${DISTVERSION}/
+DISTNAME=	wxFormBuilder-${DISTVERSION}-source-full
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	FreeBSD@Shaneware.Biz
 COMMENT=	WYSIWYG GUI Designer and Code Generator for wxWidgets
-WWW=		http://wxformbuilder.org/
+WWW=		https://github.com/wxFormBuilder/wxFormBuilder/
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++11-lib dos2unix gmake zip
-USE_CSTD=	c++11
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
+
+USES=		cmake compiler:c++17-lang desktop-file-utils shared-mime-info
 USE_LDCONFIG=	yes
-USE_WX=		3.0+
-WRKSRC=		${WRKDIR}/source
-MAKE_ARGS=	config=release ARCH=
-BUILD_WRKSRC=	${WRKSRC}/build/${WX_VERSION}/gmake
-DOS2UNIX_GLOB=	*.lua
+USE_WX=		3.2+
 
-do-configure:
-	cd ${WRKSRC} && ${SH} create_build_files4.sh
+EXTRACT_AFTER_ARGS=	--exclude third_party/tinyxml2 \
+			--no-same-owner --no-same-permissions
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%WX_CONFIG%%|${WX_CONFIG}|g' ${WRKSRC}/build/premake/wxwidgets.lua \
-		${WRKSRC}/create_build_files4.sh ${WRKSRC}/sdk/plugin_interface/premake.lua \
-		${WRKSRC}/sdk/premake/scripts/wxpresets.lua
-
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/wxformbuilder
-	(cd ${WRKSRC}/output && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	(cd ${STAGEDIR}${DATADIR}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin)
-	${RM} -r ${STAGEDIR}${DATADIR}/bin/
-	(cd ${STAGEDIR}${DATADIR}/lib && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib)
-	${RM} -r ${STAGEDIR}${DATADIR}/lib/
-	${RM} -r ${STAGEDIR}${DATADIR}/share/
-	${RM} ${STAGEDIR}${DATADIR}/license.txt
-	${RM} ${STAGEDIR}${DATADIR}/Changelog.txt
+WRKSRC=		${WRKDIR}/${DISTNAME:S|-source-full||}
 
 .include <bsd.port.mk>

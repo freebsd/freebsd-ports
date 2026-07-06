@@ -51,7 +51,7 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 WRKSRC=		${WRKDIR}/ansible_lint-${PORTVERSION}
 
-TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/
+TEST_ENV=	PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

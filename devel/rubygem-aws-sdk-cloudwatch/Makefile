@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cloudwatch
-PORTVERSION=	1.138.0
+PORTVERSION=	1.140.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,10 +1,9 @@
 PORTNAME=	mdp
-PORTVERSION=	3.5
-PORTREVISION=	7
+DISTVERSION=	3.6
 CATEGORIES=	science python
-MASTER_SITES=	SF/${PORTNAME}-toolkit/${PORTNAME}-toolkit/${PORTVERSION}
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modular toolkit for Data Processing
@@ -12,10 +11,13 @@ WWW=		https://mdp-toolkit.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	No upstream activity since 2020
+EXPIRATION_DATE=	2026-08-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	LIBSVM SCIPY
 

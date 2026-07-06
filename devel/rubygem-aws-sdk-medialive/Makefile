@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-medialive
-PORTVERSION=	1.187.0
+PORTVERSION=	1.190.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

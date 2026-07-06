@@ -1,0 +1,2 @@
+Huey is a little task queue for Python. It supports multi-process, multi-thread
+or greenlet task execution models, with optional Redis-backed storage.

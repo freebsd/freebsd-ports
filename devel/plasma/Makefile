@@ -10,6 +10,9 @@ WWW=		https://www.github.com/plasma-disassembler/plasma
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream inactive since +7 years. Please use lang/rizin instead
+EXPIRATION_DATE=2026-07-31
+
 BUILD_DEPENDS=	bash:shells/bash \
 		binutils>=2:devel/binutils \
 		capstone>=3:devel/capstone

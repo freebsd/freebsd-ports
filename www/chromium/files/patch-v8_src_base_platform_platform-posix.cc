@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2026-03-13 06:02:14 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2026-07-01 06:24:19 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -78,7 +78,7 @@
  #include <sys/syscall.h>
@@ -42,7 +42,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1422,7 +1430,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1423,7 +1431,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \

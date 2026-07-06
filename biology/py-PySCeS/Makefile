@@ -1,10 +1,8 @@
 PORTNAME=	pysces
-DISTVERSION=	1.2.2
-PORTREVISION=	3
+DISTVERSION=	1.2.3
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python Simulator for Cellular Systems
@@ -14,12 +12,12 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
-PY_EXTRA=	${PYTHON_PKGNAMEPREFIX}python-libsbml>0:biology/py-python-libsbml@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23.5,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PY_EXTRA}
+		${PYTHON_PKGNAMEPREFIX}numdifftools>0:math/py-numdifftools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-libsbml>0:biology/py-python-libsbml@${PY_FLAVOR}
 
 USES=		fortran localbase:ldflags python
 USE_PYTHON=	pep517 autoplist pytest
@@ -37,5 +35,7 @@ post-install:
 
 do-test: # from section 2.1 Loading PySCeS in http://pysces.sourceforge.net/pdf/userguide.pdf
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c "import pysces; pysces.test();"
+
+# tests as of 1.2.3: 30 tests passed
 
 .include <bsd.port.mk>

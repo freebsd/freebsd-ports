@@ -23,7 +23,7 @@ TEST_TARGET=		test
 
 CMAKE_SOURCE_PATH=	${WRKSRC}
 
-USES=		cmake:insource tar:bzip2
+USES=		cmake:insource cpe tar:bzip2
 USE_LDCONFIG=	yes
 
 LLVM_SVN=	http://llvm.org/svn/llvm-project
@@ -39,6 +39,8 @@ BROKEN_TESTS?=	fixunsdfti_test \
 PLIST_FILES=	include/Block.h \
 		include/Block_private.h \
 		lib/libBlocksRuntime.so
+
+CPE_VENDOR=	llvm
 
 .include <bsd.port.pre.mk>
 

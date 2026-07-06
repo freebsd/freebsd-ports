@@ -1,6 +1,6 @@
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	26.0.6
+DISTVERSION=	26.0.32
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
@@ -16,6 +16,7 @@ LICENSE_TEXT_PERSONAL=	Free for personal use only
 LICENSE_PERMS_PERSONAL=	auto-accept
 
 USES=		mysql shebangfix php:web python
+IGNORE_WITH_PHP=	86
 
 NO_ARCH=	yes
 NO_BUILD=	yes

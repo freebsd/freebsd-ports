@@ -1,0 +1,17 @@
+--- sapi/fpm/www.conf.in.orig	2023-03-14 16:11:05 UTC
++++ sapi/fpm/www.conf.in
+@@ -32,10 +32,14 @@ group = @php_fpm_group@
+ ; Valid syntaxes are:
+ ;   'ip.add.re.ss:port'    - to listen on a TCP socket to a specific IPv4 address on
+ ;                            a specific port;
++;   '0.0.0.0:port'         - to listen on a TCP socket to all IPv4 addresses on
++;                            a specific port;
+ ;   '[ip:6:addr:ess]:port' - to listen on a TCP socket to a specific IPv6 address on
+ ;                            a specific port;
+ ;   'port'                 - to listen on a TCP socket to all addresses
+ ;                            (IPv6 and IPv4-mapped) on a specific port;
++;                            Note: IPv4-mapped addresses are disabled by-default in
++;                                  FreeBSD for security reasons;
+ ;   '/path/to/unix/socket' - to listen on a unix socket.
+ ; Note: This value is mandatory.
+ listen = 127.0.0.1:9000

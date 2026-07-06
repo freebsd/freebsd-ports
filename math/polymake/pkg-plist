@@ -373,14 +373,14 @@ include/polymake/tropical/thomog.h
 include/polymake/type_utils.h
 include/polymake/vector
 lib/libpolymake-apps-rt.so
-lib/libpolymake-apps-rt.so.4
-lib/libpolymake-apps-rt.so.4.13
+lib/libpolymake-apps-rt.so.%%SOVER%%
+lib/libpolymake-apps-rt.so.%%VER%%
 lib/libpolymake-apps.so
-lib/libpolymake-apps.so.4
-lib/libpolymake-apps.so.4.13
+lib/libpolymake-apps.so.%%SOVER%%
+lib/libpolymake-apps.so.%%VER%%
 lib/libpolymake.so
-lib/libpolymake.so.4
-lib/libpolymake.so.4.13
+lib/libpolymake.so.%%SOVER%%
+lib/libpolymake.so.%%VER%%
 libexec/polymake/config.ninja
 libexec/polymake/lib/common.so
 libexec/polymake/lib/fan.so
@@ -389,16 +389,16 @@ libexec/polymake/lib/graph.so
 libexec/polymake/lib/group.so
 libexec/polymake/lib/ideal.so
 libexec/polymake/lib/libpolymake-apps-rt.so
-libexec/polymake/lib/libpolymake-apps-rt.so.4
-libexec/polymake/lib/libpolymake-apps-rt.so.4.13
+libexec/polymake/lib/libpolymake-apps-rt.so.%%SOVER%%
+libexec/polymake/lib/libpolymake-apps-rt.so.%%VER%%
 libexec/polymake/lib/libpolymake-apps.so
-libexec/polymake/lib/libpolymake-apps.so.4
-libexec/polymake/lib/libpolymake-apps.so.4.13
+libexec/polymake/lib/libpolymake-apps.so.%%SOVER%%
+libexec/polymake/lib/libpolymake-apps.so.%%VER%%
 libexec/polymake/lib/matroid.so
 libexec/polymake/lib/polytope.so
 libexec/polymake/lib/topaz.so
 libexec/polymake/lib/tropical.so
-@comment libexec/polymake/perlx/%%PERL_VERSION%%/amd64-freebsd-thread-multi/auto/Polymake/Ext/Ext.so
+libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_ARCHNAME%%/auto/Polymake/Ext/Ext.so
 libexec/polymake/shared
 %%DATADIR%%/apps/common/perllib/BackgroundViewer.pm
 %%DATADIR%%/apps/common/perllib/Geomview.pm
@@ -925,6 +925,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/polytope/src/schlegel_transform.cc
 %%DATADIR%%/apps/polytope/src/separating_hyperplane.cc
 %%DATADIR%%/apps/polytope/src/simplex.cc
+%%DATADIR%%/apps/polytope/src/smooth_vertices.cc
 %%DATADIR%%/apps/polytope/src/solids.cc
 %%DATADIR%%/apps/polytope/src/spherize.cc
 %%DATADIR%%/apps/polytope/src/split_compatibility_graph.cc
@@ -1112,7 +1113,6 @@ libexec/polymake/shared
 %%DATADIR%%/apps/tropical/src/dual_addition_version_cone.cc
 %%DATADIR%%/apps/tropical/src/dual_addition_version_cycle.cc
 %%DATADIR%%/apps/tropical/src/envelope.cc
-%%DATADIR%%/apps/tropical/src/extract_pseudovertices.cc
 %%DATADIR%%/apps/tropical/src/feasible_cell.cc
 %%DATADIR%%/apps/tropical/src/hypersimplex.cc
 %%DATADIR%%/apps/tropical/src/hypersurface.cc
@@ -1508,6 +1508,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/3.5
 %%DATADIR%%/upgrades/4.1
 %%DATADIR%%/upgrades/4.12
+%%DATADIR%%/upgrades/4.14
 %%DATADIR%%/upgrades/4.2
 %%DATADIR%%/upgrades/4.3
 %%DATADIR%%/upgrades/4.4
@@ -1527,6 +1528,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/big_objects-4.0.1
 %%DATADIR%%/upgrades/big_objects-4.1.1
 %%DATADIR%%/upgrades/big_objects-4.11.1
+%%DATADIR%%/upgrades/big_objects-4.13.1
 %%DATADIR%%/upgrades/big_objects-4.2.1
 %%DATADIR%%/upgrades/big_objects-4.3.1
 %%DATADIR%%/upgrades/big_objects-4.3.3

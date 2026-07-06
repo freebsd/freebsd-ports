@@ -24,7 +24,7 @@ lib/etlegacy/legacy/GeoIP.dat
 lib/etlegacy/legacy/banners.toml
 lib/etlegacy/legacy/description.txt
 lib/etlegacy/legacy/greetings.toml
-lib/etlegacy/legacy/legacy_2.81-dirty.pk3
+lib/etlegacy/legacy/legacy_2.84-dirty.pk3
 lib/etlegacy/legacy/lualibs/legacydb.lua
 lib/etlegacy/legacy/lualibs/toml.lua
 lib/etlegacy/legacy/luascripts/wolfadmin/COPYING.txt
@@ -134,6 +134,13 @@ lib/etlegacy/legacy/luascripts/wolfadmin/util/util.lua
 %%POWERPC64%%lib/etlegacy/legacy/qagame.mp.fbsd.powerpc64.so
 %%POWERPC64LE%%lib/etlegacy/legacy/qagame.mp.fbsd.powerpc64le.so
 lib/etlegacy/legacy/rules.toml
+%%AARCH64%%lib/etlegacy/legacy/tvgame.mp.fbsd.aarch64.so
+%%AMD64%%lib/etlegacy/legacy/tvgame.mp.fbsd.x86_64.so
+%%ARMV7%%lib/etlegacy/legacy/tvgame.mp.fbsd.armv7.so
+%%I386%%lib/etlegacy/legacy/tvgame.mp.fbsd.i386.so
+%%POWERPC%%lib/etlegacy/legacy/tvgame.mp.fbsd.powerpc.so
+%%POWERPC64%%lib/etlegacy/legacy/tvgame.mp.fbsd.powerpc64.so
+%%POWERPC64LE%%lib/etlegacy/legacy/tvgame.mp.fbsd.powerpc64le.so
 lib/etlegacy/legacy/wolfadmin.toml
 %%AARCH64%%%%CLIENT%%lib/etlegacy/librenderer_opengl1_aarch64.so
 %%AMD64%%%%CLIENT%%lib/etlegacy/librenderer_opengl1_x86_64.so

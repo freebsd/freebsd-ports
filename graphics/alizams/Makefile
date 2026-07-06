@@ -1,6 +1,7 @@
 PORTNAME=	alizams
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.12
+DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,15 +17,15 @@ LIB_DEPENDS=	libITKCommon-${ITK_VER}.so:science/InsightToolkit \
 		libvnl.so:misc/vxl
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake desktop-file-utils eigen:3 qt:5 gl
-USE_QT=		core gui printsupport sql svg widgets
-USE_GL=		gl opengl
+USES=		cmake desktop-file-utils eigen:3 qt:6 gl
+USE_QT=		5compat base svg
+USE_GL=		opengl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlizaMedicalImaging
 GH_PROJECT=	AlizaMS
 
-CMAKE_ARGS=	-DALIZA_QT_VERSION=5
+CMAKE_ARGS=	-DALIZA_QT_VERSION=6
 
 .include <bsd.port.options.mk>
 
@@ -33,4 +34,9 @@ CMAKE_ARGS+=	-DALIZA_DISABLE_SIMDMATH:BOOL=YES # i386 also needs disabling SIND,
 .endif
 
 .include <../../science/InsightToolkit/Makefile.version>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^Exec=/s,/usr,${PREFIX},' \
+		${WRKSRC}/package/archive/usr/share/applications/${PORTNAME}.desktop
+
 .include <bsd.port.mk>

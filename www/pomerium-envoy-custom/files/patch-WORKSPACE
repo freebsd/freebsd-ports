@@ -1,4 +1,4 @@
---- WORKSPACE.orig	2026-03-16 21:25:50 UTC
+--- WORKSPACE.orig	2026-06-25 04:52:37 UTC
 +++ WORKSPACE
 @@ -2,31 +2,6 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "
  
@@ -29,7 +29,7 @@
 -
 -hedron_compile_commands_setup_transitive_transitive_transitive()
 -
- envoy_version = "41749943780b54b70b510b1b1a4805ae529e174a"
+ envoy_version = "ee7784f95f506e2a606ae668f0d9f70f9d26af83"
  
  openssh_version = "V_10_2_P1"
 @@ -57,6 +32,26 @@ http_archive(
@@ -57,11 +57,11 @@
 +        "//patches/envoy:freebsd-lz4-qat-removal.patch",
 +        "//patches/envoy:freebsd-inotify.patch",
      ],
-     sha256 = "26de1f5b0497a3b4dba9b6157fc555f3c9f4e1f21214462ebff5b19649304e9f",
+     sha256 = "6064371695a3cae6819f45407d275dc432ce59b95bb18071cfd2e981295baa80",
      strip_prefix = "envoy-" + envoy_version,
-@@ -87,9 +82,30 @@ envoy_python_dependencies()
+@@ -89,7 +84,28 @@ load("@envoy//bazel:dependency_imports.bzl", "envoy_de
  
- envoy_python_dependencies()
+ load("@envoy//bazel:dependency_imports.bzl", "envoy_dependency_imports")
  
 +# FreeBSD: Pre-register rules_proto 7.1.0 before envoy_dependency_imports() runs.
 +# rules_proto_grpc_toolchains() (called inside envoy_dependency_imports) would otherwise
@@ -76,8 +76,6 @@
 +    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/7.1.0.tar.gz",
 +)
 +
- load("@envoy//bazel:dependency_imports.bzl", "envoy_dependency_imports")
- 
  envoy_dependency_imports()
 +
 +# FreeBSD: Register @local_jdk compile toolchains before DEFAULT.WORKSPACE.SUFFIX

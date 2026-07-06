@@ -26,7 +26,6 @@ share/icons/hicolor/64x64/apps/killbots.png
 %%DATADIR%%/themes/robotkill.svgz
 share/locale/ar/LC_MESSAGES/killbots.mo
 share/locale/ast/LC_MESSAGES/killbots.mo
-share/locale/bg/LC_MESSAGES/killbots.mo
 share/locale/bs/LC_MESSAGES/killbots.mo
 share/locale/ca/LC_MESSAGES/killbots.mo
 share/locale/ca@valencia/LC_MESSAGES/killbots.mo

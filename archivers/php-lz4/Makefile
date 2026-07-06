@@ -1,5 +1,6 @@
 PORTNAME=	lz4
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
 USES=		php:ext
+IGNORE_WITH_PHP=	86
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kjdev
@@ -26,5 +28,6 @@ OPTIONS_DEFAULT=	APCU
 APCU_DESC=		APCu cache compression support for objects
 
 APCU_BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/apcu/apc_serializer.h:devel/pecl-APCu@${PHP_FLAVOR}
+APCU_CONFIGURE_ENABLE=	apcu
 
 .include <bsd.port.mk>

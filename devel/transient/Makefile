@@ -1,6 +1,6 @@
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.4
+DISTVERSION=	0.13.5
 CATEGORIES=	devel elisp
 MASTER_SITES=	https://raw.githubusercontent.com/magit/magit.vc/${_ASSETS_VER}/assets/:assets
 DISTFILES=	${_ASSETS:@.a.@${.a.}:assets@}
@@ -15,7 +15,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 _BR_DEPENDS=	compat.el>=31.0.0.0:misc/compat.el \
-		cond-let>=1.0.0:devel/cond-let
+		cond-let>=1.0.0:devel/cond-let \
+		llama.el>=1.0.0:devel/llama.el
 BUILD_DEPENDS=	${_BR_DEPENDS}
 RUN_DEPENDS=	${_BR_DEPENDS}
 

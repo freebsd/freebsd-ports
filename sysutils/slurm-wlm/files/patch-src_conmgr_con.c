@@ -1,6 +1,6 @@
---- src/conmgr/con.c.orig	2026-01-15 20:26:01 UTC
+--- src/conmgr/con.c.orig	2026-06-09 20:26:02 UTC
 +++ src/conmgr/con.c
-@@ -59,6 +59,7 @@
+@@ -60,6 +60,7 @@
  #include "src/common/slurm_protocol_api.h"
  #include "src/common/slurm_protocol_defs.h"
  #include "src/common/slurm_protocol_socket.h"
@@ -8,7 +8,7 @@
  #include "src/common/slurm_time.h"
  #include "src/common/util-net.h"
  #include "src/common/xmalloc.h"
-@@ -1029,6 +1030,7 @@ static int _add_unix_listener(conmgr_con_type_t type, 
+@@ -1132,6 +1133,7 @@ static int _add_unix_listener(const conmgr_timeouts_t 
  	slurm_addr_t addr = { 0 };
  	int fd = socket(AF_UNIX, SOCK_STREAM | SOCK_CLOEXEC, 0);
  	int rc = EINVAL;
@@ -16,7 +16,7 @@
  
  	if (fd < 0)
  		fatal("%s: socket() failed: %m", __func__);
-@@ -1045,9 +1047,11 @@ static int _add_unix_listener(conmgr_con_type_t type, 
+@@ -1148,9 +1150,11 @@ static int _add_unix_listener(const conmgr_timeouts_t 
  	if (unlink(unixsock) && (errno != ENOENT))
  		error("Error unlink(%s): %m", unixsock);
  
@@ -31,17 +31,17 @@
  		fatal("%s: [%s] Unable to bind UNIX socket: %m",
  		      __func__, listen_on);
  
-@@ -1059,7 +1063,7 @@ static int _add_unix_listener(conmgr_con_type_t type, 
+@@ -1162,7 +1166,7 @@ static int _add_unix_listener(const conmgr_timeouts_t 
  		      __func__, listen_on);
  
- 	return add_connection(type, NULL, fd, -1, events, flags, &addr,
--			      sizeof(addr), true, unixsock, NULL, arg);
-+			      bind_len, true, unixsock, NULL, arg);
+ 	return add_connection(type, timeouts, NULL, fd, -1, events, flags,
+-			      &addr, sizeof(addr), true, unixsock, NULL, NULL,
++			      &addr, bind_len, true, unixsock, NULL, NULL,
+ 			      arg);
  }
  
- static int _add_socket_listener(conmgr_con_type_t type,
-@@ -1207,16 +1211,14 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
- 					void *arg)
+@@ -1316,16 +1320,14 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
+ 					const char *tls_cert, void *arg)
  {
  	int fd = -1, rc = SLURM_ERROR;
 -	//socklen_t bindlen = 0;
@@ -58,7 +58,7 @@
  	} else {
  		return EAFNOSUPPORT;
  	}
-@@ -1233,9 +1235,12 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
+@@ -1342,9 +1344,12 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
  
  	log_flag(CONMGR, "%s: [%pA(fd:%d)] attempting to connect() new socket",
  		 __func__, addr, fd);

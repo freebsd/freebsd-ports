@@ -46,11 +46,12 @@ OPTIONS_DEFINE=	DBUS SASL GSTREAMER VV IDN PERL TCLTK
 OPTIONS_GROUP=		PROTOCOLS
 OPTIONS_RADIO=	TLS
 OPTIONS_RADIO_TLS=	NSS GNUTLS
-OPTIONS_GROUP_PROTOCOLS=BONJOUR GG SAMETIME SILC IRC JABBER \
+OPTIONS_GROUP_PROTOCOLS=BONJOUR GG SAMETIME IRC JABBER \
 			NOVELL QQ SIMPLE ZEPHYR
 OPTIONS_DEFAULT=	BONJOUR DBUS NSS GSTREAMER VV IDN GG IRC JABBER \
 			NOVELL QQ SASL SIMPLE ZEPHYR
 BONJOUR_DESC=	mDNS support and Bonjour protocol
+GEVOLUTION_DESC=Enable Evolution plugin
 GNUTLS_DESC=	Use GNUTLS for encryption support
 NSS_DESC=	Use Mozilla NSS for encryption support
 SASL_DESC=	Cyrus SASL support (for jabberd)
@@ -68,7 +69,7 @@ ZEPHYR_DESC=	The Zephyr chat protocol
 
 PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION:R:E}.${PORTVERSION:E}
 .if defined(WITH_GTKUI)
-OPTIONS_DEFINE+=	GTKSPELL CAP
+OPTIONS_DEFINE+=	GEVOLUTION GTKSPELL CAP
 OPTIONS_DEFAULT+=	GTKSPELL CAP
 GTKSPELL_DESC=	Spell checking support
 CAP_DESC=	Contact Availability Prediction plugin
@@ -119,7 +120,7 @@ PLIST_SUB+=		PERL:="@comment not installed: " \
 			PERLMAN:="@comment not installed: "
 .endif
 
-.if defined(WITH_GTKUI)
+.if defined(WITH_GEVOLUTION)
 USE_GNOME+=		evolutiondataserver3
 PLIST_SUB+=		EVO=""
 CONFIGURE_ARGS+=	--enable-gevolution
@@ -223,16 +224,6 @@ PRPL_MODULES:=	sametime,${PRPL_MODULES}
 .else
 PLIST_SUB+=	SAMETIME="@comment not installed: "
 CONFIGURE_ARGS+=--disable-meanwhile
-.endif
-
-.if ${PORT_OPTIONS:MSILC}
-LIB_DEPENDS+=		libsilcclient.so:devel/silc-toolkit
-CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
-			--with-silc-libs=${LOCALBASE}/lib
-PLIST_SUB+=		SILC=""
-PRPL_MODULES:=		silc,${PRPL_MODULES}
-.else
-PLIST_SUB+=		SILC="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MGG}

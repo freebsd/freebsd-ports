@@ -10,27 +10,26 @@ useful for USES=cargo, the patch-in-config feature also needs to
 be stabilized first.  It will be available in Rust 1.56.
 
 [1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=256581
-
---- src/tools/cargo/src/cargo/sources/git/source.rs.orig	2021-10-04 20:59:57 UTC
+--- src/tools/cargo/src/cargo/sources/git/source.rs.orig	2026-04-11 13:43:17 UTC
 +++ src/tools/cargo/src/cargo/sources/git/source.rs
-@@ -205,6 +205,9 @@ impl<'cfg> Source for GitSource<'cfg> {
-         kind: QueryKind,
-         f: &mut dyn FnMut(IndexSummary),
-     ) -> Poll<CargoResult<()>> {
-+        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
-+            return Poll::Ready(Ok(()));
-+        }
-         if let Some(src) = self.path_source.as_mut() {
-             src.query(dep, kind, f)
-         } else {
-@@ -228,6 +231,10 @@ impl<'cfg> Source for GitSource<'cfg> {
-         if self.path_source.is_some() {
-             self.mark_used(None)?;
+@@ -254,6 +254,10 @@ impl<'gctx> GitSource<'gctx> {
              return Ok(());
-+        }
-+
-+        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
-+             return Ok(());
          }
  
-         let git_fs = self.config.git_path();
++        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
++            return Ok(());
++        }
++
+         let git_fs = self.gctx.git_path();
+         // Ignore errors creating it, in case this is a read-only filesystem:
+         // perhaps the later operations can succeed anyhow.
+@@ -393,6 +397,9 @@ impl<'gctx> Source for GitSource<'gctx> {
+         kind: QueryKind,
+         f: &mut dyn FnMut(IndexSummary),
+     ) -> CargoResult<()> {
++        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
++            return Ok(())
++        }
+         if self.path_source.borrow().is_none() {
+             self.update()?;
+         }

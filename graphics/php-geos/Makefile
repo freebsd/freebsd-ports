@@ -17,6 +17,7 @@ BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
 USES=		localbase:ldflags php:ext
+IGNORE_WITH_PHP=	86
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libgeos

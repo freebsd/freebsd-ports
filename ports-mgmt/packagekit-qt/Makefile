@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/dbus-1/interfaces/org.freedesktop.PackageKit.xml:ports-mgmt/packagekit
 
 USES=		cmake cpe pathfix qt:6 tar:xz
+CPE_PRODUCT=	packagekit
 CPE_VENDOR=	packagekit_project
 USE_LDCONFIG=	yes
 USE_QT=		base

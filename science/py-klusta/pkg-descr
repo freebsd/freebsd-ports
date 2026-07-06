@@ -1,0 +1,4 @@
+Klusta is an open source package for automatic spike sorting of multielectrode
+neurophysiological recordings. It implements spike detection, automatic
+clustering, and manual curation interfaces for analyzing electrophysiology data
+from probes containing up to a few dozen recording sites.

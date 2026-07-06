@@ -1,6 +1,6 @@
 PORTNAME=	emu64
-DISTVERSION=	5.1.0
-PORTREVISION=	2
+DISTVERSION=	5.2.0
+PORTREVISION=	0
 CATEGORIES=	emulators
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -18,8 +18,6 @@ USES=		compiler:c++11-lang desktop-file-utils dos2unix gl pkgconfig \
 		qmake:outsource qt:6 sdl
 USE_GL=		gl glu
 USE_QT=		base 5compat tools translations
-
-DOS2UNIX_GLOB=	*.cpp *.h
 
 USE_SDL=	sdl2 image2
 USE_GITHUB=	yes

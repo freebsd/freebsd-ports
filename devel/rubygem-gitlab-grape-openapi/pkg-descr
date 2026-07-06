@@ -1,0 +1,2 @@
+A Ruby gem that introspects Grape API definitions and generates OpenAPI 3.0
+specification files

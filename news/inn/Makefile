@@ -1,6 +1,6 @@
 PORTNAME?=	inn
-PORTVERSION?=	2.7.3
-PORTREVISION?=	3
+PORTVERSION?=	2.7.4
+PORTREVISION?=	0
 CATEGORIES=	news
 MASTER_SITES=	ISC
 MASTER_SITE_SUBDIR?=	${PORTNAME}
@@ -48,9 +48,9 @@ CONFLICTS?=	inn-current
 SUB_FILES=	pkg-install
 SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
 
-INNLIB_LONG?=		9.0.2
-LIBVER_LONG?=		3.0.9
-LIBSTORAGEVER_LONG?=	3.1.3
+INNLIB_LONG?=		9.1.0
+LIBVER_LONG?=		3.0.10
+LIBSTORAGEVER_LONG?=	5.0.0
 
 CONFIG_FILES+=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
 		control.ctl.local cycbuff.conf distrib.pats distributions \
@@ -103,11 +103,7 @@ BERKELEYDB_CONFIGURE_ON=	--with-bdb-include=${BDB_INCLUDE_DIR} \
 				--with-bdb-lib=${LOCALBASE}/lib \
 				--with-bdb=${LOCALBASE}
 
-.if ${BRANCH:U} == 2.8
 BLOCKLISTD_CONFIGURE_WITH=	blocklist
-.else
-BLOCKLISTD_CONFIGURE_WITH=	blacklist
-.endif
 
 CANLOCK_LIB_DEPENDS=	libcanlock.so:news/libcanlock
 CANLOCK_CONFIGURE_ON=	--with-canlock=${LOCALBASE}
@@ -167,14 +163,6 @@ post-patch:
 	                  ${WRKSRC}/site/Makefile
 .if ${PORT_OPTIONS:MBERKELEYDB}
 	@${REINPLACE_CMD} -e 's!-ldb!-ldb-${BDB_VER}!' ${WRKSRC}/configure
-.endif
-.if ${BRANCH:U} == 2.7
-.  if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
-	@${FIND} ${WRKSRC} -type f -exec ${SED} -i '' \
-		-e 's/BLACKLIST/BLOCKLIST/g' \
-		-e 's/Blacklist/Blocklist/g' \
-		-e 's/blacklist/blocklist/g' {} +
-.  endif
 .endif
 
 pre-install:

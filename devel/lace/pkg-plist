@@ -9,13 +9,13 @@ lib/cmake/lace/lace-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/lace/lace-targets.cmake
 lib/liblace.so
 lib/liblace.so.2
-lib/liblace.so.2.3.2
+lib/liblace.so.2.4.0
 lib/liblace128.so
 lib/liblace128.so.2
-lib/liblace128.so.2.3.2
+lib/liblace128.so.2.4.0
 lib/liblace32.so
 lib/liblace32.so.2
-lib/liblace32.so.2.3.2
+lib/liblace32.so.2.4.0
 libdata/pkgconfig/lace.pc
 libdata/pkgconfig/lace128.pc
 libdata/pkgconfig/lace32.pc

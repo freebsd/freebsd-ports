@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=7.4.2:devel/py-pytest@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
-TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/
+TEST_ENV=	PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

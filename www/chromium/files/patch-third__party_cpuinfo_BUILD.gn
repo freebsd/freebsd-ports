@@ -1,6 +1,6 @@
---- third_party/cpuinfo/BUILD.gn.orig	2026-05-07 17:02:56 UTC
+--- third_party/cpuinfo/BUILD.gn.orig	2026-07-01 06:24:19 UTC
 +++ third_party/cpuinfo/BUILD.gn
-@@ -67,7 +67,7 @@ source_set("cpuinfo") {
+@@ -87,7 +87,7 @@ target(_cpuinfo_target_type, "cpuinfo") {
  }
  
  source_set("os_specific") {
@@ -9,7 +9,7 @@
      sources = [
        "src/src/linux/cpulist.c",
        "src/src/linux/multiline.c",
-@@ -149,7 +149,7 @@ source_set("x86_cache") {
+@@ -169,7 +169,7 @@ source_set("x86_cache") {
  }
  
  source_set("cpu_and_os_specific") {
@@ -18,7 +18,7 @@
        (current_cpu == "x86" || current_cpu == "x64")) {
      sources = [
        "src/src/x86/linux/cpuinfo.c",
-@@ -157,7 +157,7 @@ source_set("cpu_and_os_specific") {
+@@ -177,7 +177,7 @@ source_set("cpu_and_os_specific") {
      ]
    }
  
@@ -27,7 +27,7 @@
      sources = [
        "src/src/arm/linux/aarch32-isa.c",
        "src/src/arm/linux/api.h",
-@@ -170,7 +170,7 @@ source_set("cpu_and_os_specific") {
+@@ -190,7 +190,7 @@ source_set("cpu_and_os_specific") {
      ]
    }
  
@@ -36,7 +36,7 @@
      sources = [
        "src/src/arm/linux/aarch64-isa.c",
        "src/src/arm/linux/api.h",
-@@ -183,7 +183,7 @@ source_set("cpu_and_os_specific") {
+@@ -203,7 +203,7 @@ source_set("cpu_and_os_specific") {
      ]
    }
  

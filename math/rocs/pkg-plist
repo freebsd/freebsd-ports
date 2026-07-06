@@ -38,8 +38,6 @@ share/icons/hicolor/scalable/actions/rocsvisible.svgz
 share/icons/hicolor/scalable/apps/rocs.svgz
 share/locale/ar/LC_MESSAGES/libgraphtheory.mo
 share/locale/ar/LC_MESSAGES/rocs.mo
-share/locale/bg/LC_MESSAGES/libgraphtheory.mo
-share/locale/bg/LC_MESSAGES/rocs.mo
 share/locale/bs/LC_MESSAGES/libgraphtheory.mo
 share/locale/bs/LC_MESSAGES/rocs.mo
 share/locale/ca/LC_MESSAGES/libgraphtheory.mo

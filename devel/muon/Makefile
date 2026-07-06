@@ -1,15 +1,11 @@
 PORTNAME=	muon
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	https://muon.build/releases/v${DISTVERSION}/ \
 		https://muon.build/releases/v${DISTVERSION}/docs/:docs
 DISTFILES=	${PORTNAME}-v${DISTVERSION}${EXTRACT_SUFX} \
-		man.tar.gz:docs
+		man${EXTRACT_SUFX}:docs
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
-
-PATCH_SITES=	https://github.com/muon-build/muon/commit/
-PATCHFILES=	42dbeee661a9419b9f0514996d67978713de7726.patch:-p1
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Build system compatible with meson
@@ -18,18 +14,21 @@ WWW=		https://muon.build/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
-USES=		ninja:samurai pkgconfig:both
+USES=		ninja:samurai
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/_build
 INSTALL_WRKSRC=	${WRKSRC}/_build
 
+WITHOUT_FBSD10_FIX=	yes
+CFLAGS+=	-D__XSI_VISIBLE=1
+
 ALL_TARGET=
 PLIST_FILES=	bin/muon \
 		share/man/man1/muon.1.gz \
+		share/man/man3/meson-reference.3.gz \
 		share/man/man5/meson.build.5.gz
 
-CFLAGS+=	-D__XSI_VISIBLE=1
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-configure:
@@ -41,7 +40,7 @@ do-configure:
 			-Dtracy=disabled \
 			-Dmeson-tests=disabled \
 			-Dmeson-docs=disabled \
-			-Dlibpkgconf=enabled \
+			-Dlibpkgconf=disabled \
 			${BUILD_WRKSRC})
 
 do-install:

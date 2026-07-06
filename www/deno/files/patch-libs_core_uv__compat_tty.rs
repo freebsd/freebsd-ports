@@ -1,6 +1,6 @@
---- libs/core/uv_compat/tty.rs.orig	2026-03-27 11:37:23.000000000 +0100
-+++ libs/core/uv_compat/tty.rs	2026-03-31 09:06:58.300848000 +0200
-@@ -378,7 +378,7 @@ mod global_termios {
+--- libs/core/uv_compat/tty.rs.orig	2026-07-01 13:28:43 UTC
++++ libs/core/uv_compat/tty.rs
+@@ -381,7 +381,7 @@ mod global_termios {
    }
  
    /// Get a pointer to the thread-local errno value.
@@ -9,7 +9,7 @@
    fn errno_location() -> *mut c_int {
      unsafe extern "C" {
        fn __error() -> *mut c_int;
-@@ -394,7 +394,7 @@ mod global_termios {
+@@ -397,7 +397,7 @@ mod global_termios {
      unsafe { __errno_location() }
    }
  

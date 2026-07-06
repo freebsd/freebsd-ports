@@ -1,3 +1,3 @@
-TIMESTAMP = 1716927335
-SHA256 (xorg/lib/libXrandr-1.5.4.tar.xz) = 1ad5b065375f4a85915aa60611cc6407c060492a214d7f9daf214be752c3b4d3
-SIZE (xorg/lib/libXrandr-1.5.4.tar.xz) = 282928
+TIMESTAMP = 1770108733
+SHA256 (xorg/lib/libXrandr-1.5.5.tar.xz) = 72b922c2e765434e9e9f0960148070bd4504b288263e2868a4ccce1b7cf2767a
+SIZE (xorg/lib/libXrandr-1.5.5.tar.xz) = 288912

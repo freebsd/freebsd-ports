@@ -1,6 +1,6 @@
---- chrome/browser/background/extensions/background_mode_manager.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/background/extensions/background_mode_manager.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/background/extensions/background_mode_manager.cc
-@@ -870,7 +870,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
+@@ -871,7 +871,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
    }
  
    return family->CreateExact(size).AsImageSkia();

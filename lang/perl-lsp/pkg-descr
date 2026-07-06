@@ -1,0 +1,3 @@
+Perl-LSP is a fast Perl language server in Rust with cross-file type
+inference, completion, goto-def, and rename. Built on tree-sitter-perl
+and tower-lsp.

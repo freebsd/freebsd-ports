@@ -11,7 +11,8 @@ WWW=		http://libiec61850.com/libiec61850
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang dos2unix
+USES=		cmake compiler:c++11-lang cpe dos2unix
+CPE_VENDOR=	mz-automation
 USE_GITHUB=	yes
 GH_ACCOUNT=	mz-automation
 

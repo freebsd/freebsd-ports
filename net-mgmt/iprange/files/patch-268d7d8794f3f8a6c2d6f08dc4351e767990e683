@@ -1,0 +1,1083 @@
+From 268d7d8794f3f8a6c2d6f08dc4351e767990e683 Mon Sep 17 00:00:00 2001
+From: "R. Christian McDonald" <rcm@rcm.sh>
+Date: Tue, 2 Jun 2026 11:57:11 -0400
+Subject: [PATCH] ipv6: support 32-bit platforms without __uint128_t
+
+IPv6 support (2.0.0) relied on the __uint128_t builtin, which i386 and
+armv7 lack, so the build hard-errored there.
+
+Add src/uint128.h: on 64-bit it typedefs __uint128_t and inlines the bare
+operators (unchanged codegen); on 32-bit it falls back to a portable
+{hi, lo} struct with explicit arithmetic.
+---
+ Makefile.am           |   1 +
+ configure.ac          |   5 +-
+ src/iprange6.h        |  53 +++++-----
+ src/iprange6_main.c   |  24 ++---
+ src/ipset6.c          |   4 +-
+ src/ipset6.h          |  20 ++--
+ src/ipset6_binary.c   |  36 +++----
+ src/ipset6_common.c   |   8 +-
+ src/ipset6_diff.c     |  24 ++---
+ src/ipset6_exclude.c  |  16 +--
+ src/ipset6_load.c     |  12 +--
+ src/ipset6_optimize.c |  16 +--
+ src/ipset6_print.c    |  22 ++--
+ src/uint128.h         | 230 ++++++++++++++++++++++++++++++++++++++++++
+ 15 files changed, 356 insertions(+), 121 deletions(-)
+ create mode 100644 src/uint128.h
+
+diff --git a/Makefile.am b/Makefile.am
+index 64353db..fa9043f 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -34,6 +34,7 @@ iprange_SOURCES = \
+ 	src/iprange.c \
+ 	src/iprange.h \
+ 	src/iprange6.h \
++	src/uint128.h \
+ 	src/iprange6_main.c \
+ 	src/ipset.c \
+ 	src/ipset.h \
+diff --git a/configure.ac b/configure.ac
+index 0015482..992b67b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -73,8 +73,9 @@ CC="${PTHREAD_CC}"
+ AC_TYPE_UINT32_T
+ AC_C_INLINE
+ 
+-AC_CHECK_TYPE([__uint128_t], [],
+-  [AC_MSG_ERROR([Your compiler does not support __uint128_t, required for IPv6 support.])],
++AC_CHECK_TYPE([__uint128_t],
++  [AC_MSG_NOTICE([Native __uint128_t detected — using hardware 128-bit integers for IPv6])],
++  [AC_MSG_NOTICE([__uint128_t not available — using portable 128-bit arithmetic for IPv6])],
+   [/* no includes needed */])
+ 
+ test "${with_compare_with_common}" = "yes" && AC_DEFINE([COMPARE_WITH_COMMON], [1], [compare settings])
+diff --git a/src/iprange6.h b/src/iprange6.h
+index 2bf0871..448f28c 100644
+--- a/src/iprange6.h
++++ b/src/iprange6.h
+@@ -2,10 +2,11 @@
+ #define IPRANGE_IPRANGE6_H
+ 
+ #include "iprange.h"
++#include "uint128.h"
+ #include <string.h>
+ 
+ /* IPv6 address type: 128-bit unsigned integer in host byte order */
+-typedef __uint128_t ipv6_addr_t;
++typedef uint128_t ipv6_addr_t;
+ 
+ /* IPv6 network address type: one field for the net address, one for broadcast */
+ typedef struct network_addr6 {
+@@ -14,11 +15,11 @@ typedef struct network_addr6 {
+ } network_addr6_t;
+ 
+ /* Maximum IPv6 address */
+-#define IPV6_ADDR_MAX ((ipv6_addr_t)((__uint128_t)(-1)))
++#define IPV6_ADDR_MAX U128_MAX
+ 
+ /* IPv4-mapped IPv6 prefix: ::ffff:0:0/96 */
+-#define IPV6_MAPPED_PREFIX ((ipv6_addr_t)0xFFFF00000000ULL)
+-#define IPV6_MAPPED_MASK   ((ipv6_addr_t)0xFFFFFFFFULL)
++#define IPV6_MAPPED_PREFIX (u128_from_u64(0xFFFF00000000ULL))
++#define IPV6_MAPPED_MASK   (u128_from_u64(0xFFFFFFFFULL))
+ 
+ #define IP6STR_MAX_LEN 46
+ 
+@@ -28,18 +29,18 @@ typedef struct network_addr6 {
+ /*----------------------------------------------------------------------*/
+ 
+ static inline ipv6_addr_t in6_addr_to_ipv6(const struct in6_addr *in6) {
+-    ipv6_addr_t result = 0;
++    ipv6_addr_t result = U128_ZERO;
+     int i;
+     for(i = 0; i < 16; i++)
+-        result = (result << 8) | in6->s6_addr[i];
++        result = u128_or(u128_shl(result, 8), u128_from_u64(in6->s6_addr[i]));
+     return result;
+ }
+ 
+ static inline void ipv6_to_in6_addr(ipv6_addr_t addr, struct in6_addr *in6) {
+     int i;
+     for(i = 15; i >= 0; i--) {
+-        in6->s6_addr[i] = (uint8_t)(addr & 0xFF);
+-        addr >>= 8;
++        in6->s6_addr[i] = (uint8_t)u128_lo64(addr);
++        addr = u128_shr(addr, 8);
+     }
+ }
+ 
+@@ -48,24 +49,24 @@ static inline void ipv6_to_in6_addr(ipv6_addr_t addr, struct in6_addr *in6) {
+ /*----------------------------------------------*/
+ static inline ipv6_addr_t netmask6(int prefix) {
+     if(prefix == 0)
+-        return (ipv6_addr_t)0;
++        return U128_ZERO;
+     if(prefix >= 128)
+         return IPV6_ADDR_MAX;
+-    return IPV6_ADDR_MAX << (128 - prefix);
++    return u128_shl(U128_MAX, 128 - prefix);
+ }
+ 
+ /*----------------------------------------------------*/
+ /* Compute broadcast address given address and prefix  */
+ /*----------------------------------------------------*/
+ static inline ipv6_addr_t broadcast6(ipv6_addr_t addr, int prefix) {
+-    return addr | ~netmask6(prefix);
++    return u128_or(addr, u128_not(netmask6(prefix)));
+ }
+ 
+ /*--------------------------------------------------*/
+ /* Compute network address given address and prefix  */
+ /*--------------------------------------------------*/
+ static inline ipv6_addr_t network6(ipv6_addr_t addr, int prefix) {
+-    return addr & netmask6(prefix);
++    return u128_and(addr, netmask6(prefix));
+ }
+ 
+ /*------------------------------------------------------------------*/
+@@ -73,9 +74,9 @@ static inline ipv6_addr_t network6(ipv6_addr_t addr, int prefix) {
+ /*------------------------------------------------------------------*/
+ static inline ipv6_addr_t set_bit6(ipv6_addr_t addr, int bitno, int val) {
+     if(val)
+-        return addr | ((__uint128_t)1 << (128 - bitno));
++        return u128_or(addr, u128_shl(U128_ONE, 128 - bitno));
+     else
+-        return addr & ~((__uint128_t)1 << (128 - bitno));
++        return u128_and(addr, u128_not(u128_shl(U128_ONE, 128 - bitno)));
+ }
+ 
+ /*-----------------------------------------------------------*/
+@@ -121,8 +122,8 @@ static inline network_addr6_t str2netaddr6(char *ipstr, int *err) {
+                     || parsed_prefix < 0 || parsed_prefix > 128)) {
+             if(err) (*err)++;
+             fprintf(stderr, "%s: Invalid IPv6 prefix /%s\n", PROG, prefixstr);
+-            netaddr.addr = 0;
+-            netaddr.broadcast = 0;
++            netaddr.addr = U128_ZERO;
++            netaddr.broadcast = U128_ZERO;
+             return netaddr;
+         }
+         prefix = (int)parsed_prefix;
+@@ -131,8 +132,8 @@ static inline network_addr6_t str2netaddr6(char *ipstr, int *err) {
+     if(!str_to_ipv6(ipstr, &addr)) {
+         if(err) (*err)++;
+         fprintf(stderr, "%s: Invalid IPv6 address %s\n", PROG, ipstr);
+-        netaddr.addr = 0;
+-        netaddr.broadcast = 0;
++        netaddr.addr = U128_ZERO;
++        netaddr.broadcast = U128_ZERO;
+         return netaddr;
+     }
+ 
+@@ -149,21 +150,21 @@ static inline network_addr6_t str2netaddr6(char *ipstr, int *err) {
+ /* Check if an IPv6 address is IPv4-mapped (::ffff:x.x.x.x)  */
+ /*-----------------------------------------------------------*/
+ static inline int is_ipv4_mapped(ipv6_addr_t addr) {
+-    return (addr >> 32) == 0xFFFF;
++    return u128_eq(u128_shr(addr, 32), u128_from_u64(0xFFFF));
+ }
+ 
+ /*-----------------------------------------------------------*/
+ /* Convert IPv4 to IPv4-mapped IPv6                           */
+ /*-----------------------------------------------------------*/
+ static inline ipv6_addr_t ipv4_to_mapped6(in_addr_t ipv4) {
+-    return IPV6_MAPPED_PREFIX | (ipv6_addr_t)ipv4;
++    return u128_or(IPV6_MAPPED_PREFIX, u128_from_u64(ipv4));
+ }
+ 
+ /*-----------------------------------------------------------*/
+ /* Extract IPv4 from IPv4-mapped IPv6                         */
+ /*-----------------------------------------------------------*/
+ static inline in_addr_t mapped6_to_ipv4(ipv6_addr_t addr) {
+-    return (in_addr_t)(addr & IPV6_MAPPED_MASK);
++    return (in_addr_t)u128_lo64(u128_and(addr, IPV6_MAPPED_MASK));
+ }
+ 
+ /*-----------------------------------------------------------*/
+@@ -171,18 +172,18 @@ static inline in_addr_t mapped6_to_ipv4(ipv6_addr_t addr) {
+ /* Returns pointer to start of number within buf               */
+ /* buf must be at least 40 bytes                               */
+ /*-----------------------------------------------------------*/
+-static inline char *u128_to_dec(char *buf, size_t buflen, __uint128_t val) {
++static inline char *u128_to_dec(char *buf, size_t buflen, uint128_t val) {
+     char *p = buf + buflen - 1;
+     *p = '\0';
+ 
+-    if(val == 0) {
++    if(u128_is_zero(val)) {
+         *(--p) = '0';
+         return p;
+     }
+ 
+-    while(val > 0) {
+-        *(--p) = '0' + (char)(val % 10);
+-        val /= 10;
++    while(!u128_is_zero(val)) {
++        *(--p) = '0' + (char)u128_mod10(val);
++        val = u128_div10(val);
+     }
+     return p;
+ }
+diff --git a/src/iprange6_main.c b/src/iprange6_main.c
+index 0484406..07c9e8d 100644
+--- a/src/iprange6_main.c
++++ b/src/iprange6_main.c
+@@ -42,9 +42,9 @@ static void free_pathnames6(char **files, size_t entries)
+     free(files);
+ }
+ 
+-static __uint128_t ipset6_report_unique_ips(ipset6 *ips, size_t *entries)
++static uint128_t ipset6_report_unique_ips(ipset6 *ips, size_t *entries)
+ {
+-    __uint128_t unique_ips = ipset6_unique_ips(ips);
++    uint128_t unique_ips = ipset6_unique_ips(ips);
+     if(entries) *entries = ips->entries;
+     return unique_ips;
+ }
+@@ -337,7 +337,7 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+         if(mode == MODE_COMBINE)
+             ipset6_print(root, print);
+         else if(mode == MODE_COUNT_UNIQUE_MERGED) {
+-            __uint128_t unique_ips = ipset6_report_unique_ips(root, NULL);
++            uint128_t unique_ips = ipset6_report_unique_ips(root, NULL);
+             if(unlikely(header)) printf("entries,unique_ips\n");
+             printf("%zu,%s\n", root->entries, u128_to_dec(u128buf, sizeof(u128buf), unique_ips));
+         }
+@@ -381,7 +381,7 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+         ips6 = ipset6_diff(root, second);
+         if(!quiet) ipset6_print(ips6, print);
+ 
+-        if(ips6->unique_ips) ret = 1;
++        if(!u128_is_zero(ips6->unique_ips)) ret = 1;
+         else ret = 0;
+     }
+     else if(mode == MODE_COMPARE) {
+@@ -400,8 +400,8 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+             for(ips2 = ips6; ips2; ips2 = ips2->next) {
+                 ipset6 *comips;
+                 size_t entries1, entries2;
+-                __uint128_t unique1 = ipset6_report_unique_ips(ips6, &entries1);
+-                __uint128_t unique2 = ipset6_report_unique_ips(ips2, &entries2);
++                uint128_t unique1 = ipset6_report_unique_ips(ips6, &entries1);
++                uint128_t unique2 = ipset6_report_unique_ips(ips2, &entries2);
+ 
+                 if(ips6 == ips2) continue;
+ 
+@@ -416,7 +416,7 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+                     u128_to_dec(u128buf, sizeof(u128buf), unique1));
+                 printf("%s,", u128_to_dec(u128buf, sizeof(u128buf), unique2));
+                 printf("%s,", u128_to_dec(u128buf, sizeof(u128buf), comips->unique_ips));
+-                printf("%s\n", u128_to_dec(u128buf, sizeof(u128buf), unique1 + unique2 - comips->unique_ips));
++                printf("%s\n", u128_to_dec(u128buf, sizeof(u128buf), u128_sub(u128_add(unique1, unique2), comips->unique_ips)));
+                 ipset6_free(comips);
+             }
+         }
+@@ -437,8 +437,8 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+         for(ips6 = root; ips6; ips6 = ips6->next) {
+             for(ips2 = second; ips2; ips2 = ips2->next) {
+                 size_t entries1, entries2;
+-                __uint128_t unique1 = ipset6_report_unique_ips(ips6, &entries1);
+-                __uint128_t unique2 = ipset6_report_unique_ips(ips2, &entries2);
++                uint128_t unique1 = ipset6_report_unique_ips(ips6, &entries1);
++                uint128_t unique2 = ipset6_report_unique_ips(ips2, &entries2);
+ 
+                 ipset6 *combined = ipset6_combine(ips6, ips2);
+                 if(!combined) {
+@@ -451,7 +451,7 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+                     u128_to_dec(u128buf, sizeof(u128buf), unique1));
+                 printf("%s,", u128_to_dec(u128buf, sizeof(u128buf), unique2));
+                 printf("%s,", u128_to_dec(u128buf, sizeof(u128buf), combined->unique_ips));
+-                printf("%s\n", u128_to_dec(u128buf, sizeof(u128buf), unique1 + unique2 - combined->unique_ips));
++                printf("%s\n", u128_to_dec(u128buf, sizeof(u128buf), u128_sub(u128_add(unique1, unique2), combined->unique_ips)));
+                 ipset6_free(combined);
+             }
+         }
+@@ -468,7 +468,7 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+ 
+         for(ips6 = root; ips6; ips6 = ips6->next) {
+             size_t entries;
+-            __uint128_t unique_ips = ipset6_report_unique_ips(ips6, &entries);
++            uint128_t unique_ips = ipset6_report_unique_ips(ips6, &entries);
+ 
+             if(ips6 == first) continue;
+ 
+@@ -481,7 +481,7 @@ int iprange6_run(int argc, char **argv, int mode, IPSET_PRINT_CMD print,
+             ipset6_optimize(comips);
+             printf("%s,%zu,%s,", ips6->filename, entries,
+                 u128_to_dec(u128buf, sizeof(u128buf), unique_ips));
+-            printf("%s\n", u128_to_dec(u128buf, sizeof(u128buf), unique_ips + first->unique_ips - comips->unique_ips));
++            printf("%s\n", u128_to_dec(u128buf, sizeof(u128buf), u128_sub(u128_add(unique_ips, first->unique_ips), comips->unique_ips)));
+             ipset6_free(comips);
+         }
+     }
+diff --git a/src/ipset6.c b/src/ipset6.c
+index a34833d..79aa360 100644
+--- a/src/ipset6.c
++++ b/src/ipset6.c
+@@ -24,7 +24,7 @@ ipset6 *ipset6_create(const char *filename, size_t entries) {
+     ips->lines = 0;
+     ips->entries = 0;
+     ips->entries_max = entries;
+-    ips->unique_ips = 0;
++    ips->unique_ips = U128_ZERO;
+     ips->next = NULL;
+     ips->prev = NULL;
+     ips->flags = 0;
+@@ -87,7 +87,7 @@ void ipset6_grow_internal(ipset6 *ips, size_t free_entries_needed) {
+     }
+ }
+ 
+-inline __uint128_t ipset6_unique_ips(ipset6 *ips) {
++inline uint128_t ipset6_unique_ips(ipset6 *ips) {
+     if(unlikely(!(ips->flags & IPSET_FLAG_OPTIMIZED)))
+         ipset6_optimize(ips);
+ 
+diff --git a/src/ipset6.h b/src/ipset6.h
+index aa9c9c5..c4cd11e 100644
+--- a/src/ipset6.h
++++ b/src/ipset6.h
+@@ -9,7 +9,7 @@ typedef struct ipset6 {
+     size_t lines;
+     size_t entries;
+     size_t entries_max;
+-    __uint128_t unique_ips;
++    uint128_t unique_ips;
+ 
+     uint32_t flags;
+ 
+@@ -25,7 +25,7 @@ extern void ipset6_free_all(ipset6 *ips);
+ 
+ extern size_t prefix6_counters[129];
+ 
+-extern __uint128_t ipset6_unique_ips(ipset6 *ips);
++extern uint128_t ipset6_unique_ips(ipset6 *ips);
+ 
+ static inline int ipset6_entries_allocation_overflows(size_t entries) {
+     return (entries > (SIZE_MAX / sizeof(network_addr6_t)));
+@@ -56,26 +56,26 @@ static inline void ipset6_added_entry(ipset6 *ips) {
+ 
+     ips->lines++;
+ 
+-    /* overflow-safe unique_ips: 2^128 doesn't fit in __uint128_t, saturate at max */
+-    if(lo == 0 && hi == IPV6_ADDR_MAX)
++    /* overflow-safe unique_ips: 2^128 doesn't fit in uint128_t, saturate at max */
++    if(u128_is_zero(lo) && u128_eq(hi, IPV6_ADDR_MAX))
+         ips->unique_ips = IPV6_ADDR_MAX;
+     else {
+-        __uint128_t size = hi - lo + 1;
+-        if(ips->unique_ips > IPV6_ADDR_MAX - size)
++        uint128_t size = u128_add(u128_sub(hi, lo), U128_ONE);
++        if(u128_gt(ips->unique_ips, u128_sub(IPV6_ADDR_MAX, size)))
+             ips->unique_ips = IPV6_ADDR_MAX;
+         else
+-            ips->unique_ips += size;
++            ips->unique_ips = u128_add(ips->unique_ips, size);
+     }
+ 
+     if(likely(ips->flags & IPSET_FLAG_OPTIMIZED && entries > 0)) {
+         /* overflow-safe adjacency: broadcast + 1 wraps at IPV6_ADDR_MAX */
+-        if(unlikely(ips->netaddrs[entries - 1].broadcast != IPV6_ADDR_MAX &&
+-                    lo == (ips->netaddrs[entries - 1].broadcast + 1))) {
++        if(unlikely(!u128_eq(ips->netaddrs[entries - 1].broadcast, IPV6_ADDR_MAX) &&
++                    u128_eq(lo, u128_inc(ips->netaddrs[entries - 1].broadcast)))) {
+             ips->netaddrs[entries - 1].broadcast = hi;
+             return;
+         }
+ 
+-        if(likely(lo > ips->netaddrs[entries - 1].broadcast)) {
++        if(likely(u128_gt(lo, ips->netaddrs[entries - 1].broadcast))) {
+             ips->entries++;
+             return;
+         }
+diff --git a/src/ipset6_binary.c b/src/ipset6_binary.c
+index bc6caa9..c23a3e2 100644
+--- a/src/ipset6_binary.c
++++ b/src/ipset6_binary.c
+@@ -10,15 +10,15 @@ static void binary6_write_failed(void) {
+     exit(1);
+ }
+ 
+-static int binary6_validate_payload(ipset6 *ips, int header_optimized, size_t entries, __uint128_t expected_unique_ips, int *payload_is_optimized)
++static int binary6_validate_payload(ipset6 *ips, int header_optimized, size_t entries, uint128_t expected_unique_ips, int *payload_is_optimized)
+ {
+     size_t i;
+-    __uint128_t actual_unique_ips = 0;
++    uint128_t actual_unique_ips = U128_ZERO;
+ 
+     *payload_is_optimized = 1;
+ 
+     if(!entries) {
+-        if(unlikely(expected_unique_ips != 0)) {
++        if(unlikely(!u128_is_zero(expected_unique_ips))) {
+             fprintf(stderr, "%s: %s: unique IPs do not match the binary payload\n", PROG, ips->filename);
+             return 1;
+         }
+@@ -26,7 +26,7 @@ static int binary6_validate_payload(ipset6 *ips, int header_optimized, size_t en
+     }
+ 
+     for(i = 0; i < entries; i++) {
+-        if(unlikely(ips->netaddrs[ips->entries + i].addr > ips->netaddrs[ips->entries + i].broadcast)) {
++        if(unlikely(u128_gt(ips->netaddrs[ips->entries + i].addr, ips->netaddrs[ips->entries + i].broadcast))) {
+             fprintf(stderr, "%s: %s: invalid binary record %zu has addr > broadcast\n", PROG, ips->filename, i + 1);
+             return 1;
+         }
+@@ -36,9 +36,9 @@ static int binary6_validate_payload(ipset6 *ips, int header_optimized, size_t en
+         network_addr6_t *prev = &ips->netaddrs[ips->entries + i - 1];
+         network_addr6_t *curr = &ips->netaddrs[ips->entries + i];
+ 
+-        if(curr->addr < prev->addr
+-           || curr->addr <= prev->broadcast
+-           || (prev->broadcast != IPV6_ADDR_MAX && curr->addr == (prev->broadcast + 1))) {
++        if(u128_lt(curr->addr, prev->addr)
++           || u128_le(curr->addr, prev->broadcast)
++           || (!u128_eq(prev->broadcast, IPV6_ADDR_MAX) && u128_eq(curr->addr, u128_inc(prev->broadcast)))) {
+             *payload_is_optimized = 0;
+             break;
+         }
+@@ -46,8 +46,8 @@ static int binary6_validate_payload(ipset6 *ips, int header_optimized, size_t en
+ 
+     if(*payload_is_optimized) {
+         for(i = 0; i < entries; i++) {
+-            __uint128_t size = ips->netaddrs[ips->entries + i].broadcast - ips->netaddrs[ips->entries + i].addr + 1;
+-            actual_unique_ips += size;
++            uint128_t size = u128_add(u128_sub(ips->netaddrs[ips->entries + i].broadcast, ips->netaddrs[ips->entries + i].addr), U128_ONE);
++            actual_unique_ips = u128_add(actual_unique_ips, size);
+         }
+     }
+     else {
+@@ -57,7 +57,7 @@ static int binary6_validate_payload(ipset6 *ips, int header_optimized, size_t en
+         actual_unique_ips = expected_unique_ips;
+     }
+ 
+-    if(unlikely(expected_unique_ips != actual_unique_ips)) {
++    if(unlikely(!u128_eq(expected_unique_ips, actual_unique_ips))) {
+         fprintf(stderr, "%s: %s: unique IPs do not match the binary payload\n", PROG, ips->filename);
+         return 1;
+     }
+@@ -91,9 +91,9 @@ static int parse_binary6_size_field(ipset6 *ips, const char *field, const char *
+     return 0;
+ }
+ 
+-static int parse_binary6_u128_field(ipset6 *ips, const char *field, const char *value, __uint128_t *parsed_value)
++static int parse_binary6_u128_field(ipset6 *ips, const char *field, const char *value, uint128_t *parsed_value)
+ {
+-    __uint128_t result = 0;
++    uint128_t result = U128_ZERO;
+     const char *s = value;
+ 
+     if(!s || *s < '0' || *s > '9') {
+@@ -102,9 +102,9 @@ static int parse_binary6_u128_field(ipset6 *ips, const char *field, const char *
+     }
+ 
+     while(*s >= '0' && *s <= '9') {
+-        __uint128_t prev = result;
+-        result = result * 10 + (*s - '0');
+-        if(unlikely(result < prev)) {
++        uint128_t prev = result;
++        result = u128_add(u128_mul_u64(result, 10), u128_from_u64(*s - '0'));
++        if(unlikely(u128_lt(result, prev))) {
+             fprintf(stderr, "%s: %s: %s value overflow\n", PROG, ips->filename, field);
+             return 1;
+         }
+@@ -123,7 +123,7 @@ static int parse_binary6_u128_field(ipset6 *ips, const char *field, const char *
+ int ipset6_load_binary_v20(FILE *fp, ipset6 *ips, int first_line_missing) {
+     char buffer[MAX_LINE + 1], *s;
+     size_t entries, bytes, lines, expected_bytes, record_size;
+-    __uint128_t unique_ips;
++    uint128_t unique_ips;
+     uint32_t endian;
+     size_t loaded;
+     int header_optimized = 0;
+@@ -230,7 +230,7 @@ int ipset6_load_binary_v20(FILE *fp, ipset6 *ips, int first_line_missing) {
+         return 1;
+     }
+ 
+-    if(unique_ips < entries && unique_ips != 0) {
++    if(u128_lt(unique_ips, u128_from_u64(entries)) && !u128_is_zero(unique_ips)) {
+         fprintf(stderr, "%s: %s: unique IPs cannot be less than entries (%zu)\n", PROG, ips->filename, entries);
+         return 1;
+     }
+@@ -263,7 +263,7 @@ int ipset6_load_binary_v20(FILE *fp, ipset6 *ips, int first_line_missing) {
+ 
+     ips->entries += loaded;
+     ips->lines += lines;
+-    ips->unique_ips += unique_ips;
++    ips->unique_ips = u128_add(ips->unique_ips, unique_ips);
+     ips->flags &= ~IPSET_FLAG_OPTIMIZED;
+     if(header_optimized && payload_is_optimized) ips->flags |= IPSET_FLAG_OPTIMIZED;
+ 
+diff --git a/src/ipset6_common.c b/src/ipset6_common.c
+index f284144..d84cf1a 100644
+--- a/src/ipset6_common.c
++++ b/src/ipset6_common.c
+@@ -33,7 +33,7 @@ inline ipset6 *ipset6_common(ipset6 *ips1, ipset6 *ips2) {
+     hi2 = ips2->netaddrs[0].broadcast;
+ 
+     while(i1 < n1 && i2 < n2) {
+-        if(lo1 > hi2) {
++        if(u128_gt(lo1, hi2)) {
+             i2++;
+             if(i2 < n2) {
+                 lo2 = ips2->netaddrs[i2].addr;
+@@ -42,7 +42,7 @@ inline ipset6 *ipset6_common(ipset6 *ips1, ipset6 *ips2) {
+             continue;
+         }
+ 
+-        if(lo2 > hi1) {
++        if(u128_gt(lo2, hi1)) {
+             i1++;
+             if(i1 < n1) {
+                 lo1 = ips1->netaddrs[i1].addr;
+@@ -51,9 +51,9 @@ inline ipset6 *ipset6_common(ipset6 *ips1, ipset6 *ips2) {
+             continue;
+         }
+ 
+-        lo = (lo1 > lo2) ? lo1 : lo2;
++        lo = u128_gt(lo1, lo2) ? lo1 : lo2;
+ 
+-        if(hi1 < hi2) {
++        if(u128_lt(hi1, hi2)) {
+             hi = hi1;
+             i1++;
+             if(i1 < n1) {
+diff --git a/src/ipset6_diff.c b/src/ipset6_diff.c
+index f629ae3..7f07d9c 100644
+--- a/src/ipset6_diff.c
++++ b/src/ipset6_diff.c
+@@ -53,7 +53,7 @@ inline ipset6 *ipset6_diff(ipset6 *ips1, ipset6 *ips2) {
+     hi2 = ips2->netaddrs[0].broadcast;
+ 
+     while(i1 < n1 && i2 < n2) {
+-        if(lo1 > hi2) {
++        if(u128_gt(lo1, hi2)) {
+             ipset6_add_ip_range(ips, lo2, hi2);
+             i2++;
+             if(i2 < n2) {
+@@ -62,7 +62,7 @@ inline ipset6 *ipset6_diff(ipset6 *ips1, ipset6 *ips2) {
+             }
+             continue;
+         }
+-        if(lo2 > hi1) {
++        if(u128_gt(lo2, hi1)) {
+             ipset6_add_ip_range(ips, lo1, hi1);
+             i1++;
+             if(i1 < n1) {
+@@ -72,14 +72,14 @@ inline ipset6 *ipset6_diff(ipset6 *ips1, ipset6 *ips2) {
+             continue;
+         }
+ 
+-        if(lo1 > lo2)
+-            ipset6_add_ip_range(ips, lo2, lo1 - 1);
+-        else if(lo2 > lo1)
+-            ipset6_add_ip_range(ips, lo1, lo2 - 1);
++        if(u128_gt(lo1, lo2))
++            ipset6_add_ip_range(ips, lo2, u128_dec(lo1));
++        else if(u128_gt(lo2, lo1))
++            ipset6_add_ip_range(ips, lo1, u128_dec(lo2));
+ 
+-        if(hi1 > hi2) {
+-            if(hi2 == IPV6_ADDR_MAX) { i1++; i2++; }
+-            else { lo1 = hi2 + 1; i2++; }
++        if(u128_gt(hi1, hi2)) {
++            if(u128_eq(hi2, IPV6_ADDR_MAX)) { i1++; i2++; }
++            else { lo1 = u128_inc(hi2); i2++; }
+             if(i2 < n2) {
+                 lo2 = ips2->netaddrs[i2].addr;
+                 hi2 = ips2->netaddrs[i2].broadcast;
+@@ -90,9 +90,9 @@ inline ipset6 *ipset6_diff(ipset6 *ips1, ipset6 *ips2) {
+             }
+             continue;
+         }
+-        else if(hi2 > hi1) {
+-            if(hi1 == IPV6_ADDR_MAX) { i1++; i2++; }
+-            else { lo2 = hi1 + 1; i1++; }
++        else if(u128_gt(hi2, hi1)) {
++            if(u128_eq(hi1, IPV6_ADDR_MAX)) { i1++; i2++; }
++            else { lo2 = u128_inc(hi1); i1++; }
+             if(i1 < n1) {
+                 lo1 = ips1->netaddrs[i1].addr;
+                 hi1 = ips1->netaddrs[i1].broadcast;
+diff --git a/src/ipset6_exclude.c b/src/ipset6_exclude.c
+index c7bb969..75dbaaf 100644
+--- a/src/ipset6_exclude.c
++++ b/src/ipset6_exclude.c
+@@ -43,7 +43,7 @@ inline ipset6 *ipset6_exclude(ipset6 *ips1, ipset6 *ips2) {
+     hi2 = ips2->netaddrs[0].broadcast;
+ 
+     while(i1 < n1 && i2 < n2) {
+-        if(lo1 > hi2) {
++        if(u128_gt(lo1, hi2)) {
+             i2++;
+             if(i2 < n2) {
+                 lo2 = ips2->netaddrs[i2].addr;
+@@ -52,7 +52,7 @@ inline ipset6 *ipset6_exclude(ipset6 *ips1, ipset6 *ips2) {
+             continue;
+         }
+ 
+-        if(lo2 > hi1) {
++        if(u128_gt(lo2, hi1)) {
+             ipset6_add_ip_range(ips, lo1, hi1);
+             i1++;
+             if(i1 < n1) {
+@@ -62,12 +62,12 @@ inline ipset6 *ipset6_exclude(ipset6 *ips1, ipset6 *ips2) {
+             continue;
+         }
+ 
+-        if(lo1 < lo2) {
+-            ipset6_add_ip_range(ips, lo1, lo2 - 1);
++        if(u128_lt(lo1, lo2)) {
++            ipset6_add_ip_range(ips, lo1, u128_dec(lo2));
+             lo1 = lo2;
+         }
+ 
+-        if(hi1 == hi2) {
++        if(u128_eq(hi1, hi2)) {
+             i1++;
+             if(i1 < n1) {
+                 lo1 = ips1->netaddrs[i1].addr;
+@@ -79,7 +79,7 @@ inline ipset6 *ipset6_exclude(ipset6 *ips1, ipset6 *ips2) {
+                 hi2 = ips2->netaddrs[i2].broadcast;
+             }
+         }
+-        else if(hi1 < hi2) {
++        else if(u128_lt(hi1, hi2)) {
+             i1++;
+             if(i1 < n1) {
+                 lo1 = ips1->netaddrs[i1].addr;
+@@ -89,7 +89,7 @@ inline ipset6 *ipset6_exclude(ipset6 *ips1, ipset6 *ips2) {
+         else {
+             /* hi2 + 1 would overflow if hi2 == IPV6_ADDR_MAX, but that means
+              * ips2 covers everything from lo1..max, so nothing remains in ips1 */
+-            if(hi2 == IPV6_ADDR_MAX) {
++            if(u128_eq(hi2, IPV6_ADDR_MAX)) {
+                 i1++;
+                 if(i1 < n1) {
+                     lo1 = ips1->netaddrs[i1].addr;
+@@ -97,7 +97,7 @@ inline ipset6 *ipset6_exclude(ipset6 *ips1, ipset6 *ips2) {
+                 }
+             }
+             else {
+-                lo1 = hi2 + 1;
++                lo1 = u128_inc(hi2);
+             }
+             i2++;
+             if(i2 < n2) {
+diff --git a/src/ipset6_load.c b/src/ipset6_load.c
+index 6295ef2..b64ca9f 100644
+--- a/src/ipset6_load.c
++++ b/src/ipset6_load.c
+@@ -152,8 +152,8 @@ static network_addr6_t parse_address6(char *ipstr, int *err) {
+     else if(addr_class == 4) {
+         network_addr_t v4 = str2netaddr(ipstr, err);
+         if(*err) {
+-            netaddr.addr = 0;
+-            netaddr.broadcast = 0;
++            netaddr.addr = U128_ZERO;
++            netaddr.broadcast = U128_ZERO;
+             return netaddr;
+         }
+ 
+@@ -164,8 +164,8 @@ static network_addr6_t parse_address6(char *ipstr, int *err) {
+ 
+     if(err) (*err)++;
+     fprintf(stderr, "%s: Cannot parse address: %s\n", PROG, ipstr);
+-    netaddr.addr = 0;
+-    netaddr.broadcast = 0;
++    netaddr.addr = U128_ZERO;
++    netaddr.broadcast = U128_ZERO;
+     return netaddr;
+ }
+ 
+@@ -275,8 +275,8 @@ ipset6 *ipset6_load(const char *filename) {
+                     continue;
+                 }
+ 
+-                ipv6_addr_t lo = (net1.addr < net2.addr) ? net1.addr : net2.addr;
+-                ipv6_addr_t hi = (net1.broadcast > net2.broadcast) ? net1.broadcast : net2.broadcast;
++                ipv6_addr_t lo = u128_lt(net1.addr, net2.addr) ? net1.addr : net2.addr;
++                ipv6_addr_t hi = u128_gt(net1.broadcast, net2.broadcast) ? net1.broadcast : net2.broadcast;
+                 ipset6_add_ip_range(ips, lo, hi);
+             }
+                 break;
+diff --git a/src/ipset6_optimize.c b/src/ipset6_optimize.c
+index f11a7d4..d0c1734 100644
+--- a/src/ipset6_optimize.c
++++ b/src/ipset6_optimize.c
+@@ -6,10 +6,10 @@ static int compar_netaddr6(const void *p1, const void *p2) {
+     const network_addr6_t *na1 = (const network_addr6_t *)p1;
+     const network_addr6_t *na2 = (const network_addr6_t *)p2;
+ 
+-    if(na1->addr < na2->addr) return -1;
+-    if(na1->addr > na2->addr) return 1;
+-    if(na1->broadcast > na2->broadcast) return -1;
+-    if(na1->broadcast < na2->broadcast) return 1;
++    if(u128_lt(na1->addr, na2->addr)) return -1;
++    if(u128_gt(na1->addr, na2->addr)) return 1;
++    if(u128_gt(na1->broadcast, na2->broadcast)) return -1;
++    if(u128_lt(na1->broadcast, na2->broadcast)) return 1;
+     return 0;
+ }
+ 
+@@ -25,7 +25,7 @@ inline void ipset6_optimize(ipset6 *ips) {
+ 
+     if(unlikely(n == 0)) {
+         ips->flags |= IPSET_FLAG_OPTIMIZED;
+-        ips->unique_ips = 0;
++        ips->unique_ips = U128_ZERO;
+         return;
+     }
+ 
+@@ -39,17 +39,17 @@ inline void ipset6_optimize(ipset6 *ips) {
+ 
+     ips->netaddrs = naddrs;
+     ips->entries = 0;
+-    ips->unique_ips = 0;
++    ips->unique_ips = U128_ZERO;
+     ips->lines = 0;
+ 
+     lo = oaddrs[0].addr;
+     hi = oaddrs[0].broadcast;
+     for(i = 1; i < n; i++) {
+-        if(oaddrs[i].broadcast <= hi)
++        if(u128_le(oaddrs[i].broadcast, hi))
+             continue;
+ 
+         /* overflow-safe adjacency check: hi + 1 would overflow if hi == max */
+-        if(oaddrs[i].addr <= hi || (hi != IPV6_ADDR_MAX && oaddrs[i].addr == hi + 1)) {
++        if(u128_le(oaddrs[i].addr, hi) || (!u128_eq(hi, IPV6_ADDR_MAX) && u128_eq(oaddrs[i].addr, u128_inc(hi)))) {
+             hi = oaddrs[i].broadcast;
+             continue;
+         }
+diff --git a/src/ipset6_print.c b/src/ipset6_print.c
+index 32794b0..0dafe25 100644
+--- a/src/ipset6_print.c
++++ b/src/ipset6_print.c
+@@ -41,7 +41,7 @@ inline void print_addr6(ipv6_addr_t addr, int prefix) {
+ inline void print_addr6_range(ipv6_addr_t lo, ipv6_addr_t hi) {
+     char buf[IP6STR_MAX_LEN + 1];
+ 
+-    if(unlikely(lo > hi)) {
++    if(unlikely(u128_gt(lo, hi))) {
+         ipv6_addr_t t = hi;
+         fprintf(stderr, "%s: WARNING: invalid range reversed start=%s", PROG, ip6str_r(buf, lo));
+         fprintf(stderr, " end=%s\n", ip6str_r(buf, hi));
+@@ -49,7 +49,7 @@ inline void print_addr6_range(ipv6_addr_t lo, ipv6_addr_t hi) {
+         lo = t;
+     }
+ 
+-    if(lo == hi) {
++    if(u128_eq(lo, hi)) {
+         printf("%s%s-", print_prefix_ips, ip6str_r(buf, lo));
+         printf("%s%s\n", ip6str_r(buf, hi), print_suffix_ips);
+     }
+@@ -72,7 +72,7 @@ inline void print_addr6_single(ipv6_addr_t x) {
+ inline int split_range6(ipv6_addr_t addr, int prefix, ipv6_addr_t lo, ipv6_addr_t hi, void (*print)(ipv6_addr_t, int)) {
+     ipv6_addr_t bc, lower_half, upper_half;
+ 
+-    if(unlikely(lo > hi)) {
++    if(unlikely(u128_gt(lo, hi))) {
+         ipv6_addr_t t = hi;
+         char buf[IP6STR_MAX_LEN + 1];
+         fprintf(stderr, "%s: WARNING: invalid range reversed start=%s", PROG, ip6str_r(buf, lo));
+@@ -88,13 +88,13 @@ inline int split_range6(ipv6_addr_t addr, int prefix, ipv6_addr_t lo, ipv6_addr_
+ 
+     bc = broadcast6(addr, prefix);
+ 
+-    if(unlikely(lo < addr || hi > bc)) {
++    if(unlikely(u128_lt(lo, addr) || u128_gt(hi, bc))) {
+         char buf[IP6STR_MAX_LEN + 1];
+         fprintf(stderr, "%s: Out of range limits for IPv6 network %s/%d\n", PROG, ip6str_r(buf, addr), prefix);
+         return 0;
+     }
+ 
+-    if(lo == addr && hi == bc && prefix6_enabled[prefix]) {
++    if(u128_eq(lo, addr) && u128_eq(hi, bc) && prefix6_enabled[prefix]) {
+         print(addr, prefix);
+         return 1;
+     }
+@@ -103,9 +103,9 @@ inline int split_range6(ipv6_addr_t addr, int prefix, ipv6_addr_t lo, ipv6_addr_
+     lower_half = addr;
+     upper_half = set_bit6(addr, prefix, 1);
+ 
+-    if(hi < upper_half)
++    if(u128_lt(hi, upper_half))
+         return split_range6(lower_half, prefix, lo, hi, print);
+-    else if(lo >= upper_half)
++    else if(u128_ge(lo, upper_half))
+         return split_range6(upper_half, prefix, lo, hi, print);
+     else
+         return (
+@@ -136,7 +136,7 @@ void ipset6_print(ipset6 *ips, IPSET_PRINT_CMD print) {
+ 
+             n = ips->entries;
+             for(i = 0; i < n; i++)
+-                total += split_range6((__uint128_t)0, 0, ips->netaddrs[i].addr, ips->netaddrs[i].broadcast, print_addr6);
++                total += split_range6(U128_ZERO, 0, ips->netaddrs[i].addr, ips->netaddrs[i].broadcast, print_addr6);
+             break;
+ 
+         case PRINT_SINGLE_IPS:
+@@ -146,7 +146,7 @@ void ipset6_print(ipset6 *ips, IPSET_PRINT_CMD print) {
+                 ipv6_addr_t end = ips->netaddrs[i].broadcast;
+                 ipv6_addr_t x;
+ 
+-                if(unlikely(start > end)) {
++                if(unlikely(u128_gt(start, end))) {
+                     char buf[IP6STR_MAX_LEN + 1];
+                     fprintf(stderr, "%s: WARNING: invalid range reversed start=%s", PROG, ip6str_r(buf, start));
+                     fprintf(stderr, " end=%s\n", ip6str_r(buf, end));
+@@ -154,13 +154,13 @@ void ipset6_print(ipset6 *ips, IPSET_PRINT_CMD print) {
+                     end = start;
+                     start = x;
+                 }
+-                if(unlikely(end - start > IPV6_SINGLE_IP_CAP)) {
++                if(unlikely(u128_gt(u128_sub(end, start), u128_from_u64(IPV6_SINGLE_IP_CAP)))) {
+                     char buf[IP6STR_MAX_LEN + 1];
+                     fprintf(stderr, "%s: too big range eliminated start=%s", PROG, ip6str_r(buf, start));
+                     fprintf(stderr, " end=%s\n", ip6str_r(buf, end));
+                     continue;
+                 }
+-                for(x = start; x >= start && x <= end; x++) {
++                for(x = start; u128_ge(x, start) && u128_le(x, end); x = u128_inc(x)) {
+                     print_addr6_single(x);
+                     total++;
+                 }
+diff --git a/src/uint128.h b/src/uint128.h
+new file mode 100644
+index 0000000..0da5873
+--- /dev/null
++++ b/src/uint128.h
+@@ -0,0 +1,230 @@
++#ifndef IPRANGE_UINT128_H
++#define IPRANGE_UINT128_H
++
++#include <stdint.h>
++
++/* Define IPRANGE_FORCE_PORTABLE_U128 to compile the portable (struct-based)
++ * 128-bit path even on platforms that have native __uint128_t. This lets the
++ * 32-bit code path be exercised by the test suite on a 64-bit host. */
++#if defined(__SIZEOF_INT128__) && !defined(IPRANGE_FORCE_PORTABLE_U128)
++
++/* ================================================================
++ * Native 128-bit path (64-bit platforms with compiler support).
++ * Every function compiles to the native operator — zero overhead.
++ * ================================================================ */
++
++typedef __uint128_t uint128_t;
++
++#define U128_ZERO ((uint128_t)0)
++#define U128_ONE  ((uint128_t)1)
++#define U128_MAX  ((uint128_t)((__uint128_t)(-1)))
++
++static inline uint128_t u128_from_u64(uint64_t v)  { return (uint128_t)v; }
++static inline uint128_t u128_from_u32(uint32_t v)  { return (uint128_t)v; }
++
++static inline uint64_t u128_hi64(uint128_t a) { return (uint64_t)(a >> 64); }
++static inline uint64_t u128_lo64(uint128_t a) { return (uint64_t)a; }
++
++static inline int u128_is_zero(uint128_t a)         { return a == 0; }
++static inline int u128_eq(uint128_t a, uint128_t b)  { return a == b; }
++static inline int u128_lt(uint128_t a, uint128_t b)  { return a < b; }
++static inline int u128_gt(uint128_t a, uint128_t b)  { return a > b; }
++static inline int u128_le(uint128_t a, uint128_t b)  { return a <= b; }
++static inline int u128_ge(uint128_t a, uint128_t b)  { return a >= b; }
++
++static inline uint128_t u128_add(uint128_t a, uint128_t b) { return a + b; }
++static inline uint128_t u128_sub(uint128_t a, uint128_t b) { return a - b; }
++static inline uint128_t u128_inc(uint128_t a) { return a + 1; }
++static inline uint128_t u128_dec(uint128_t a) { return a - 1; }
++
++static inline uint128_t u128_and(uint128_t a, uint128_t b) { return a & b; }
++static inline uint128_t u128_or(uint128_t a, uint128_t b)  { return a | b; }
++static inline uint128_t u128_not(uint128_t a)               { return ~a; }
++static inline uint128_t u128_shl(uint128_t a, int n)        { return a << n; }
++static inline uint128_t u128_shr(uint128_t a, int n)        { return a >> n; }
++
++static inline uint128_t u128_mul_u64(uint128_t a, uint64_t b) { return a * b; }
++static inline uint128_t u128_div10(uint128_t a) { return a / 10; }
++static inline int       u128_mod10(uint128_t a) { return (int)(a % 10); }
++
++#else /* !__SIZEOF_INT128__ */
++
++/* ================================================================
++ * Portable 128-bit path (32-bit platforms without __uint128_t).
++ * Uses a struct of two uint64_t with explicit arithmetic.
++ * ================================================================ */
++
++/* Field order matches the byte layout of a native __uint128_t on the same
++ * endianness, so that an array of these structs is binary-compatible with one
++ * of native __uint128_t. This lets binary ipset files written by a 64-bit
++ * (native) build load correctly on a 32-bit (portable) build of the same
++ * endianness, and vice versa. All code refers to the fields by name, so the
++ * order is irrelevant to arithmetic; only the in-memory layout changes. */
++#if defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
++typedef struct { uint64_t hi; uint64_t lo; } uint128_t;
++#else
++typedef struct { uint64_t lo; uint64_t hi; } uint128_t;
++#endif
++
++#define U128_ZERO ((uint128_t){ .hi = 0, .lo = 0 })
++#define U128_ONE  ((uint128_t){ .hi = 0, .lo = 1 })
++#define U128_MAX  ((uint128_t){ .hi = UINT64_MAX, .lo = UINT64_MAX })
++
++static inline uint128_t u128_from_u64(uint64_t v) {
++    uint128_t r = { .hi = 0, .lo = v };
++    return r;
++}
++
++static inline uint128_t u128_from_u32(uint32_t v) {
++    uint128_t r = { .hi = 0, .lo = (uint64_t)v };
++    return r;
++}
++
++static inline uint64_t u128_hi64(uint128_t a) { return a.hi; }
++static inline uint64_t u128_lo64(uint128_t a) { return a.lo; }
++
++static inline int u128_is_zero(uint128_t a) {
++    return a.hi == 0 && a.lo == 0;
++}
++
++static inline int u128_eq(uint128_t a, uint128_t b) {
++    return a.hi == b.hi && a.lo == b.lo;
++}
++
++static inline int u128_lt(uint128_t a, uint128_t b) {
++    return a.hi < b.hi || (a.hi == b.hi && a.lo < b.lo);
++}
++
++static inline int u128_gt(uint128_t a, uint128_t b) {
++    return a.hi > b.hi || (a.hi == b.hi && a.lo > b.lo);
++}
++
++static inline int u128_le(uint128_t a, uint128_t b) { return !u128_gt(a, b); }
++static inline int u128_ge(uint128_t a, uint128_t b) { return !u128_lt(a, b); }
++
++static inline uint128_t u128_add(uint128_t a, uint128_t b) {
++    uint128_t r;
++    r.lo = a.lo + b.lo;
++    r.hi = a.hi + b.hi + (r.lo < a.lo);
++    return r;
++}
++
++static inline uint128_t u128_sub(uint128_t a, uint128_t b) {
++    uint128_t r;
++    r.lo = a.lo - b.lo;
++    r.hi = a.hi - b.hi - (a.lo < b.lo);
++    return r;
++}
++
++static inline uint128_t u128_inc(uint128_t a) {
++    uint128_t r;
++    r.lo = a.lo + 1;
++    r.hi = a.hi + (r.lo == 0);
++    return r;
++}
++
++static inline uint128_t u128_dec(uint128_t a) {
++    uint128_t r;
++    r.hi = a.hi - (a.lo == 0);
++    r.lo = a.lo - 1;
++    return r;
++}
++
++static inline uint128_t u128_and(uint128_t a, uint128_t b) {
++    uint128_t r = { .hi = a.hi & b.hi, .lo = a.lo & b.lo };
++    return r;
++}
++
++static inline uint128_t u128_or(uint128_t a, uint128_t b) {
++    uint128_t r = { .hi = a.hi | b.hi, .lo = a.lo | b.lo };
++    return r;
++}
++
++static inline uint128_t u128_not(uint128_t a) {
++    uint128_t r = { .hi = ~a.hi, .lo = ~a.lo };
++    return r;
++}
++
++static inline uint128_t u128_shl(uint128_t a, int n) {
++    uint128_t r;
++    if(n == 0)   return a;
++    if(n >= 128) { r.hi = 0; r.lo = 0; return r; }
++    if(n >= 64) {
++        r.hi = a.lo << (n - 64);
++        r.lo = 0;
++    }
++    else {
++        r.hi = (a.hi << n) | (a.lo >> (64 - n));
++        r.lo = a.lo << n;
++    }
++    return r;
++}
++
++static inline uint128_t u128_shr(uint128_t a, int n) {
++    uint128_t r;
++    if(n == 0)   return a;
++    if(n >= 128) { r.hi = 0; r.lo = 0; return r; }
++    if(n >= 64) {
++        r.lo = a.hi >> (n - 64);
++        r.hi = 0;
++    }
++    else {
++        r.lo = (a.lo >> n) | (a.hi << (64 - n));
++        r.hi = a.hi >> n;
++    }
++    return r;
++}
++
++/* multiply uint128 by uint64, keeping low 128 bits */
++static inline uint128_t u128_mul_u64(uint128_t a, uint64_t b) {
++    uint32_t al = (uint32_t)a.lo;
++    uint32_t ah = (uint32_t)(a.lo >> 32);
++    uint32_t bl = (uint32_t)b;
++    uint32_t bh = (uint32_t)(b >> 32);
++    uint64_t p0, p1, p2, p3, carry;
++    uint128_t r;
++
++    p0 = (uint64_t)al * bl;
++    p1 = (uint64_t)al * bh;
++    p2 = (uint64_t)ah * bl;
++    p3 = (uint64_t)ah * bh;
++
++    carry = (p0 >> 32) + (uint32_t)p1 + (uint32_t)p2;
++    r.lo = ((uint64_t)(uint32_t)p0) | (carry << 32);
++    r.hi = p3 + (p1 >> 32) + (p2 >> 32) + (carry >> 32) + a.hi * b;
++    return r;
++}
++
++/* long division by 10 using 32-bit digits */
++static inline uint128_t u128_div10(uint128_t a) {
++    uint128_t q;
++    uint32_t d3, d2, d1, d0, q3, q2, q1, q0;
++    uint64_t r, tmp;
++
++    d3 = (uint32_t)(a.hi >> 32);
++    d2 = (uint32_t)a.hi;
++    d1 = (uint32_t)(a.lo >> 32);
++    d0 = (uint32_t)a.lo;
++
++    tmp = (uint64_t)d3;         q3 = (uint32_t)(tmp / 10); r = tmp % 10;
++    tmp = (r << 32) | d2;       q2 = (uint32_t)(tmp / 10); r = tmp % 10;
++    tmp = (r << 32) | d1;       q1 = (uint32_t)(tmp / 10); r = tmp % 10;
++    tmp = (r << 32) | d0;       q0 = (uint32_t)(tmp / 10);
++
++    q.hi = ((uint64_t)q3 << 32) | q2;
++    q.lo = ((uint64_t)q1 << 32) | q0;
++    return q;
++}
++
++static inline int u128_mod10(uint128_t a) {
++    uint64_t r;
++    r = ((uint64_t)(uint32_t)(a.hi >> 32)) % 10;
++    r = ((r << 32) | (uint32_t)a.hi) % 10;
++    r = ((r << 32) | (uint32_t)(a.lo >> 32)) % 10;
++    r = ((r << 32) | (uint32_t)a.lo) % 10;
++    return (int)r;
++}
++
++#endif /* __SIZEOF_INT128__ */
++
++#endif /* IPRANGE_UINT128_H */

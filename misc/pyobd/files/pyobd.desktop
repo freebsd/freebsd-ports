@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF8
+Icon=pyobd
+Name=pyOBD
+GenericName=OBD2 Diagnostics
+Comment=Car On-Board 2 vehicle diagnostics (ELM-32x compatible interface)
+Exec=pyobd
+Terminal=false
+Type=Application
+Categories=Utility;

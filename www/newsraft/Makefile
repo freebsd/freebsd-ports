@@ -18,7 +18,6 @@ USES=		pkgconfig sqlite
 
 MAKEFILE=	makefile
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
-TEST_ENV+=	LANG=C.UTF-8
 TEST_TARGET=	check
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

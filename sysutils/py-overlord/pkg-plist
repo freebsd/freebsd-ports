@@ -29,6 +29,8 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/__pycache__/director%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/__pycache__/environment%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/overlord/__pycache__/environment%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/overlord/__pycache__/error%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/overlord/__pycache__/error%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/__pycache__/etcd%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/overlord/__pycache__/etcd%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/__pycache__/exceptions%%PYTHON_TAG%%.opt-1.pyc
@@ -106,6 +108,7 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/default.py
 %%PYTHON_SITELIBDIR%%/overlord/director.py
 %%PYTHON_SITELIBDIR%%/overlord/environment.py
+%%PYTHON_SITELIBDIR%%/overlord/error.py
 %%PYTHON_SITELIBDIR%%/overlord/etcd.py
 %%PYTHON_SITELIBDIR%%/overlord/exceptions.py
 %%PYTHON_SITELIBDIR%%/overlord/jail.py

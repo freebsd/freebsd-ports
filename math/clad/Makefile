@@ -1,6 +1,6 @@
 PORTNAME=	clad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
+DISTVERSION=	2.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 
 TEST_DEPENDS=	kokkos>0:devel/kokkos
 
-USES=		cmake:testing llvm:16,build,run localbase
+USES=		cmake:testing llvm:build,run localbase
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -40,6 +40,6 @@ post-patch:
 		' \
 		${WRKSRC}/test/lit.cfg
 
-# tests fail to compile: https://github.com/vgvassilev/clad/issues/993, https://github.com/vgvassilev/clad/issues/1181
+# tests fail to compile: https://github.com/vgvassilev/clad/issues/993, https://github.com/vgvassilev/clad/issues/1181, https://github.com/vgvassilev/clad/issues/1860
 
 .include <bsd.port.mk>

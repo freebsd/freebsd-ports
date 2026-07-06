@@ -45,9 +45,6 @@ BUILD_DEPENDS+=	meson:devel/meson
 # meson uses ninja
 .include "${USESDIR}/ninja.mk"
 
-# meson might have issues with non-unicode locales
-USE_LOCALE?=	en_US.UTF-8
-
 # Enable muon's meson compatibility mode
 .  if !empty(meson_ARGS:Mmuon)
 CONFIGURE_ARGS+=	meson

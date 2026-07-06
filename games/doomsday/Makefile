@@ -31,9 +31,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
 post-patch:
-	# Removing (three) non-ascii bytes from the beginning of the file
-	@${REINPLACE_CMD} '1s,^...,,' \
-		${WRKSRC}/apps/client/src/client/cl_sound.cpp
 	@${REINPLACE_CMD} -E -e 's|(DENG_DISTRIB_DIR /usr)|\1/local|' \
 		-e 's|python3|${PYTHON_VERSION}|' \
 		${WRKSRC}/cmake/Config.cmake

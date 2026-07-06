@@ -1,0 +1,5 @@
+marimo is a reactive Python notebook: run a cell or interact with a UI
+element, and marimo automatically runs dependent cells (or marks them as
+stale), keeping code and outputs consistent. marimo notebooks are stored
+as pure Python (with first-class SQL support), executable as scripts,
+and deployable as apps.

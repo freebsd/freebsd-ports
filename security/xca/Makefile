@@ -20,7 +20,6 @@ qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		cmake compiler:c++17-lang desktop-file-utils localbase \
 		pkgconfig shared-mime-info ssl
-USE_LOCALE=	en_US.UTF-8
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5

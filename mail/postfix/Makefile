@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.11.3
+DISTVERSION=	3.11.5
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
@@ -134,7 +134,7 @@ BDB_USES=			bdb
 CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
-LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
 MONGO_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
 				libmongoc-1.0.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql

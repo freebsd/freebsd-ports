@@ -1,5 +1,5 @@
 PORTNAME=	privoxy
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	www
 MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${DISTVERSION}%20(stable)/ \
 		SF/ijbswa/Sources/${DISTVERSION}%20%28stable%29
@@ -116,7 +116,7 @@ do-install:
 		${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${config match-all.action trust user.action:L:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/user-manual
@@ -127,5 +127,7 @@ do-install-PRIVOXY_TOOLS-on:
 	${INSTALL_SCRIPT} ${privoxy-log-parser.pl privoxy-regression-test.pl \
 		uagen.pl url-pattern-translator.pl:L:S|^|${WRKSRC}/tools/|} \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${privoxy-log-parser.1 privoxy-regression-test.1 \
+		uagen.1:L:S|^|${WRKSRC}/man/|} ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

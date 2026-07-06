@@ -1,6 +1,5 @@
 PORTNAME=	uncertainties
-DISTVERSION=	3.2.2
-PORTREVISION=	2
+DISTVERSION=	3.2.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,5 +25,7 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 3.2.4: 779 passed, 1 skipped, 1 xfailed, 934 warnings in 12.10s
 
 .include <bsd.port.mk>

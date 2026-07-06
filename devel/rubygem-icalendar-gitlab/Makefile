@@ -16,7 +16,9 @@ RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-logger-gitlab>=0:devel/rubygem-logger-gitlab \
 		rubygem-ostruct>=0:devel/rubygem-ostruct
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	icalendar_project
 
 NO_ARCH=	yes
 

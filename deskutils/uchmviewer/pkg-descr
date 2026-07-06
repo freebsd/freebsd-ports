@@ -1,0 +1,9 @@
+uChmViewer is a fork of the KchmViewer with some improvements. uChmViewer is a
+chm (MS HTML help file format) and epub viewer, written in C++ using Qt
+framework.
+
+The main advantage of uChmViewer is extended support for non-English
+languages. Unlike others, uChmViewer in most cases correctly detects chm file
+encoding, correctly shows tables of context of Russian, Korean, Chinese and
+Japanese help files. It also correctly searches text in non-English help
+files, including Korean, Chinese and Japanese.

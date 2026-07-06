@@ -1,11 +1,12 @@
 PORTNAME=	diplib
-DISTVERSION=	3.5.1
+DISTVERSION=	3.6.0
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library and development environment for quantitative image analysis
-WWW=		https://diplib.org/
+WWW=		https://diplib.org/ \
+		https://github.com/DIPlib/diplib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt

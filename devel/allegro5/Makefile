@@ -29,8 +29,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvorbisfile.so:audio/libvorbis \
 		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++11-lang gl gnome jpeg localbase openal:soft \
+USES=		cmake cpe compiler:c++11-lang gl gnome jpeg localbase openal:soft \
 		pkgconfig xorg
+CPE_VENDOR=	liballeg
 USE_GL=		glu opengl
 USE_GNOME=	cairo gdkpixbuf gtk30
 USE_LDCONFIG=	yes

@@ -17,7 +17,6 @@ lib/libpcscspy.so.0
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
 %%PORTDOCS%%%%DOCSDIR%%/setup_spy.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
 share/man/man1/pcsc-spy.1.gz
 share/man/man5/reader.conf.5.gz

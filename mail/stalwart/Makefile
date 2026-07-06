@@ -1,7 +1,7 @@
 PORTNAME=	stalwart
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 
 MAINTAINER=	orville@anislet.dev
@@ -18,6 +18,7 @@ LICENSE_PERMS_SELv1=	pkg-mirror auto-accept
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cpe cargo
+CPE_VENDOR=	stalw
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
 GH_PROJECT=	stalwart

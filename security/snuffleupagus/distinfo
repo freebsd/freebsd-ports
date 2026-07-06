@@ -1,5 +1,3 @@
-TIMESTAMP = 1718686344
-SHA256 (jvoisin-snuffleupagus-v0.10.0_GH0.tar.gz) = 2b48dc38e208e793d3e694688d9ae9fc429e99a8df01133f6e0a4444036ba304
-SIZE (jvoisin-snuffleupagus-v0.10.0_GH0.tar.gz) = 11991358
-SHA256 (b005df2.patch) = ab46c73e787f339aa5c6cdb28d18efaaa9a272f64bcef8955bc32678388956bc
-SIZE (b005df2.patch) = 1300
+TIMESTAMP = 1783211554
+SHA256 (jvoisin-snuffleupagus-v0.11.0_GH0.tar.gz) = 7ed7dd3aca0a8f0971e87b56c19c60a1a4d654ee4cbbee9a5091b9d4cca28a34
+SIZE (jvoisin-snuffleupagus-v0.11.0_GH0.tar.gz) = 11994472

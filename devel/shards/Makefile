@@ -1,6 +1,7 @@
 PORTNAME=	shards
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dch@FreeBSD.org
@@ -31,6 +32,6 @@ PLIST_FILES=	bin/shards \
 		share/man/man5/shard.yml.5.gz
 
 post-install:
-		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/shards
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/shards
 
 .include <bsd.port.mk>

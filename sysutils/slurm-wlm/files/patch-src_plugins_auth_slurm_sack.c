@@ -1,4 +1,4 @@
---- src/plugins/auth/slurm/sack.c.orig	2026-01-15 20:26:01 UTC
+--- src/plugins/auth/slurm/sack.c.orig	2026-06-09 20:26:02 UTC
 +++ src/plugins/auth/slurm/sack.c
 @@ -43,6 +43,7 @@
  #include "slurm/slurm.h"
@@ -8,7 +8,7 @@
  
  #include "src/common/env.h"
  #include "src/common/fd.h"
-@@ -299,6 +300,7 @@ extern void init_sack_conmgr(void)
+@@ -301,6 +302,7 @@ extern void init_sack_conmgr(void)
  		char *runtime_dir = NULL, *runtime_socket = NULL;
  		slurm_addr_t addr = {0};
  		mode_t mask;
@@ -16,7 +16,7 @@
  
  		if (running_in_slurmctld()) {
  			_prepare_run_dir("slurmctld", true);
-@@ -337,9 +339,9 @@ extern void init_sack_conmgr(void)
+@@ -339,9 +341,9 @@ extern void init_sack_conmgr(void)
  		/* set value of socket path */
  		mask = umask(0);
  

@@ -1,4 +1,4 @@
---- media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2025-08-07 06:57:29 UTC
+--- media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2026-07-01 06:24:19 UTC
 +++ media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc
 @@ -17,7 +17,9 @@
  #include "media/gpu/vaapi/vaapi_wrapper.h"
@@ -18,7 +18,7 @@
  void AllowAccessToRenderNodes(std::vector<BrokerFilePermission>& permissions,
                                bool include_sys_dev_char,
                                bool read_write) {
-@@ -180,6 +183,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
+@@ -207,6 +210,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
    NOTREACHED();
  #endif  // BUILDFLAG(USE_V4L2_CODEC)
  }
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -195,6 +199,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
+@@ -222,6 +226,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
  //   (at least).
  bool HardwareVideoDecodingPreSandboxHook(
      sandbox::policy::SandboxLinux::Options options) {
@@ -34,7 +34,7 @@
    using HardwareVideoDecodingProcessPolicy =
        sandbox::policy::HardwareVideoDecodingProcessPolicy;
    using PolicyType =
-@@ -240,6 +245,7 @@ bool HardwareVideoDecodingPreSandboxHook(
+@@ -267,6 +272,7 @@ bool HardwareVideoDecodingPreSandboxHook(
    // |permissions| is empty?
    sandbox::policy::SandboxLinux::GetInstance()->StartBrokerProcess(
        command_set, permissions, options);

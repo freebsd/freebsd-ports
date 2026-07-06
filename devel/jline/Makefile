@@ -10,7 +10,7 @@ WWW=		https://jline.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 
-USES=		java zip
+USES=		cpe java zip
 
 OPTIONS_DEFINE=	JLINEPATCH DOCS
 JLINEPATCH_DESC=	Allow ConsoleRunner customized completion

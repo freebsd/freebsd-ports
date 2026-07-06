@@ -31,8 +31,6 @@ TEST_DEPENDS=	R-cran-cyclocomp>0:devel/R-cran-cyclocomp \
 
 USES=		cran:auto-plist
 
-MAKE_ENV=	LC_ALL=C.UTF-8
-
 post-install:
 	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
 

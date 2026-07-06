@@ -1,13 +1,13 @@
 --- package.json.orig	2025-05-28 20:17:57 UTC
 +++ package.json
-@@ -357,13 +357,14 @@
+@@ -359,13 +359,14 @@
        "growing-file@0.1.3": "patches/growing-file+0.1.3.patch",
        "app-builder-lib": "patches/app-builder-lib.patch",
        "dmg-builder": "patches/dmg-builder.patch",
 -      "fs-xattr": "patches/fs-xattr.patch",
        "@types/chai": "patches/@types__chai.patch",
        "@napi-rs/canvas@0.1.61": "patches/@napi-rs__canvas@0.1.61.patch",
-       "playwright-core@1.58.2": "patches/playwright-core@1.58.2.patch",
+       "playwright-core": "patches/playwright-core.patch",
        "tsx": "patches/tsx.patch",
        "node-fetch@3.3.2": "patches/node-fetch@3.3.2.patch",
 -      "zod@4.3.6": "patches/zod@4.3.6.patch"
@@ -17,7 +17,7 @@
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -501,20 +502,6 @@
+@@ -503,20 +504,6 @@
        "asarUnpack": [
          "build/icons/win/icon.ico"
        ]

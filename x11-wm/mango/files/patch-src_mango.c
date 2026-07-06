@@ -1,6 +1,6 @@
---- src/mango.c.orig	2025-12-03 10:15:56 UTC
+--- src/mango.c.orig	2026-05-29 13:04:35 UTC
 +++ src/mango.c
-@@ -6,7 +6,11 @@
+@@ -7,7 +7,11 @@
  #include <getopt.h>
  #include <libinput.h>
  #include <limits.h>

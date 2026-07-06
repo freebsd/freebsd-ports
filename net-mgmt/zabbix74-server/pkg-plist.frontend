@@ -391,6 +391,7 @@
 %%WWWDIR%%/app/partials/configuration.tags.tab.php
 %%WWWDIR%%/app/partials/configuration.valuemap.php
 %%WWWDIR%%/app/partials/graph.edit.graph.tab.php
+%%WWWDIR%%/app/partials/host.interface.selector.php
 %%WWWDIR%%/app/partials/hostmacros.inherited.list.html.php
 %%WWWDIR%%/app/partials/hostmacros.list.html.php
 %%WWWDIR%%/app/partials/item.edit.item.tab.php
@@ -398,6 +399,7 @@
 %%WWWDIR%%/app/partials/item.list.filter.php
 %%WWWDIR%%/app/partials/js/configuration.tags.tab.js.php
 %%WWWDIR%%/app/partials/js/configuration.valuemap.js.php
+%%WWWDIR%%/app/partials/js/host.interface.selector.js.php
 %%WWWDIR%%/app/partials/js/scheduledreport.formgrid.js.php
 %%WWWDIR%%/app/partials/js/scheduledreport.subscription.js.php
 %%WWWDIR%%/app/partials/js/user.edit.media.tab.js.php

@@ -347,6 +347,7 @@ share/man/man1/musicxml2ly.1.gz
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/display-lily.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/display-woodwind-diagrams.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-backend.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/document-break-align-symbols.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-colors.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-context-mods.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-functions.scm

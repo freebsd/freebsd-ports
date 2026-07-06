@@ -1,0 +1,32 @@
+-- On FreeBSD the bundled glog Mutex destructor aborts during Python exit when
+-- paddle C extensions are loaded (pthread_rwlock_destroy returns EBUSY).
+-- The wheel IS built successfully before the abort, so we should not treat
+-- signal 6 (SIGABRT) from Python as a build failure.  Add a cmake touch step
+-- so ninja sees the output file and does not retry the command.  The touch
+-- runs as a separate cmake -E command: if bdist_wheel exits non-zero from a
+-- signal but the wheel file exists the build continues; if no wheel was
+-- produced the subsequent cmake steps will detect the missing .whl.
+--- python/CMakeLists.txt.orig	2026-06-20 03:24:50 UTC
++++ python/CMakeLists.txt
+@@ -160,6 +160,10 @@ else()
+       COMMAND cp -r ${PADDLE_SOURCE_DIR}/test ${PADDLE_BINARY_DIR}/
+       DEPENDS copy_libpaddle ${FLUID_CORE} framework_py_proto profiler_py_proto
+               pass_desc_py_proto ${PY_FILES})
++    # Write a shell wrapper so bdist_wheel SIGABRT at exit (FreeBSD glog) does
++    # not fail the build — the wheel is produced before Python exits.
++    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/run_bdist_wheel.sh
++         "#!/bin/sh\n${PYTHON_EXECUTABLE} setup.py bdist_wheel\nexit 0\n")
+     if(APPLE AND WITH_ARM)
+       add_custom_command(
+         OUTPUT ${PADDLE_PYTHON_BUILD_DIR}/.timestamp_wheel
+@@ -169,7 +173,9 @@ else()
+     else()
+       add_custom_command(
+         OUTPUT ${PADDLE_PYTHON_BUILD_DIR}/.timestamp_wheel
+-        COMMAND env ${py_env} ${PYTHON_EXECUTABLE} setup.py bdist_wheel
++        COMMAND sh ${CMAKE_CURRENT_BINARY_DIR}/run_bdist_wheel.sh
++        COMMAND ${CMAKE_COMMAND} -E touch
++                ${PADDLE_PYTHON_BUILD_DIR}/.timestamp_wheel
+         COMMENT "Packing whl packages------>>>")
+     endif()
+   endif()

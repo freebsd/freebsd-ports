@@ -1,6 +1,5 @@
 PORTNAME=	rrdtool
-DISTVERSION=	1.9.0
-PORTREVISION=	1
+DISTVERSION=	1.10.3
 CATEGORIES=	databases graphics
 MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}/
 
@@ -11,16 +10,21 @@ WWW=		https://oss.oetiker.ch/rrdtool/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe gmake gnome libtool pkgconfig shebangfix
+TEST_DEPENDS=	bash:shells/bash \
+		gseq:sysutils/coreutils
+
+USES=		cpe gmake gnome libtool pkgconfig python:test shebangfix
 CPE_VENDOR=	rrdtool_project
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	rrdcached
-SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl examples/stripes.py
+SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl examples/stripes.py \
+		tests/*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcl
 CONFIGURE_ENV=	RRDDOCDIR=${DOCSDIR:Q}
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 # Some symbols in the linker version script librrd.sym are undefined when the
 # CACHE option is off. Suppress errors with lld >= 17 due to these undefined
 # symbols.
@@ -64,7 +68,9 @@ PERL_PORTEXAMPLES=		4charts.pl bigtops.pl minmax.pl perftest.pl \
 				piped-demo.pl rrdcached/rrdcached-size.pl \
 				rrdcached/RRDCached.pm shared-demo.pl \
 				stripes.pl
-PYTHON_BUILD_DEPENDS=		${PY_SETUPTOOLS}
+PYTHON_BUILD_DEPENDS=		${PY_SETUPTOOLS} \
+				${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 PYTHON_USES=			python
 PYTHON_USE=			PYTHON=flavors,optsuffix
 PYTHON_CONFIGURE_ENABLE=	python
@@ -75,6 +81,11 @@ RUBY_CONFIGURE_ENABLE=		ruby
 post-extract:
 	@${REINPLACE_CMD} -E 's|(^rrdtool_LDADD = librrd.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g' \
+		${WRKSRC}/tests/functions \
+		${WRKSRC}/tests/xport3
 
 post-install-EXAMPLES-on:
 .if !defined(BATCH)
@@ -99,5 +110,10 @@ post-install-PYTHON-off:
 
 post-install-RUBY-on:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/RRD.so
+
+pre-test:
+	@${MKDIR} ${WRKDIR}/.bin
+	@${LN} -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/.bin/seq
+	@${MKDIR} ${WRKSRC}/tests/cached
 
 .include <bsd.port.mk>

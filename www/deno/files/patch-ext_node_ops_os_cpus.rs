@@ -1,6 +1,6 @@
---- ext/node/ops/os/cpus.rs.orig	2024-03-17 20:42:18 UTC
+--- ext/node/ops/os/cpus.rs.orig	2026-07-01 13:28:43 UTC
 +++ ext/node/ops/os/cpus.rs
-@@ -362,6 +362,54 @@ pub fn cpu_info() -> Option<Vec<CpuInfo>> {
+@@ -364,6 +364,54 @@ pub fn cpu_info() -> Option<Vec<CpuInfo>> {
    }
  }
  

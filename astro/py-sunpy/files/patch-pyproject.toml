@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-07-03 08:37:32 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = [
+   "setuptools>=62.1",
+   "setuptools_scm[toml]>=8.0.1",
+   "wheel",
+-  "extension-helpers>=1.4,<2",
++  "extension-helpers>=1.4.0",
+   "numpy>=2.0.0rc1",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -13,8 +13,7 @@ readme = { file = "README.rst", content-type = "text/x
+ description = "SunPy core package: Python for Solar Physics"
+ requires-python = ">=3.12"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+-license-files = ["LICENSE.rst", "licenses/*.rst"]
+-license = "BSD-3-Clause"
++license ={ file = "LICENSE.rst" }
+ authors = [
+   { name = "The SunPy Community", email = "sunpy@googlegroups.com" },
+ ]

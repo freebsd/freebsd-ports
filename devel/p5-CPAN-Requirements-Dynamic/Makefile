@@ -18,11 +18,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 504000
-BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.142:devel/p5-CPAN-Meta-Requirements
-RUN_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.142:devel/p5-CPAN-Meta-Requirements
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

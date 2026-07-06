@@ -16,6 +16,8 @@ RUN_DEPENDS=	${PYDEPS}
 
 USES=		cmake:indirect localbase meson pkgconfig python
 USE_PYTHON=	cython
+BINARY_ALIAS=	cython=cython-${PYTHON_VER}
+
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif

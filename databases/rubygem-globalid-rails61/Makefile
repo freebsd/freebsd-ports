@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport61>=6.1:devel/rubygem-activesupport61
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 .include <bsd.port.mk>

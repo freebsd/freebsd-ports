@@ -1,5 +1,5 @@
 PORTNAME=	arqiver
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/tsujan/${PORTNAME}/releases/download/V${DISTVERSION}/
 DISTNAME=	Arqiver-${DISTVERSION}

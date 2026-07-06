@@ -1,8 +1,20 @@
---- CMakeLists.txt.orig	2019-11-30 03:55:12 UTC
+--- CMakeLists.txt.orig	2026-06-07 15:42:50 UTC
 +++ CMakeLists.txt
-@@ -78,4 +78,4 @@ install(EXPORT pegtl-targets
+@@ -35,7 +35,7 @@ set(PEGTL_INSTALL_INCLUDE_DIR "include" CACHE STRING "
  
+ # installation directories
+ set(PEGTL_INSTALL_INCLUDE_DIR "include" CACHE STRING "The installation include directory")
+-set(PEGTL_INSTALL_DOC_DIR "share/doc/tao/pegtl" CACHE STRING "The installation doc directory")
++#set(PEGTL_INSTALL_DOC_DIR "share/doc/tao/pegtl" CACHE STRING "The installation doc directory")
+ set(PEGTL_INSTALL_CMAKE_DIR "share/pegtl/cmake" CACHE STRING "The installation cmake directory")
+ set(PEGTL_INSTALL_PKGCONFIG_DIR "share/pkgconfig" CACHE STRING "The installation pkgconfig directory")
+ 
+@@ -88,7 +88,7 @@ install(DIRECTORY include/ DESTINATION ${PEGTL_INSTALL
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pegtl-config-version.cmake DESTINATION ${PEGTL_INSTALL_CMAKE_DIR})
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pegtl.pc DESTINATION ${PEGTL_INSTALL_PKGCONFIG_DIR})
  install(DIRECTORY include/ DESTINATION ${PEGTL_INSTALL_INCLUDE_DIR})
--install(FILES LICENSE DESTINATION ${PEGTL_INSTALL_DOC_DIR})
-+#install(FILES LICENSE DESTINATION ${PEGTL_INSTALL_DOC_DIR})
+-install(FILES LICENSE_1_0.txt DESTINATION ${PEGTL_INSTALL_DOC_DIR})
++#install(FILES LICENSE_1_0.txt DESTINATION ${PEGTL_INSTALL_DOC_DIR})
+ 
+ export(EXPORT pegtl-targets
+   FILE ${pegtl_BINARY_DIR}/pegtl-targets.cmake

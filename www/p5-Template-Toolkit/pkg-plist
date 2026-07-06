@@ -40,6 +40,7 @@ bin/ttree
 %%SITE_ARCH%%/Template/Plugin/HTML.pm
 %%SITE_ARCH%%/Template/Plugin/Image.pm
 %%SITE_ARCH%%/Template/Plugin/Iterator.pm
+%%SITE_ARCH%%/Template/Plugin/List.pm
 %%SITE_ARCH%%/Template/Plugin/Math.pm
 %%SITE_ARCH%%/Template/Plugin/Pod.pm
 %%SITE_ARCH%%/Template/Plugin/Procedural.pm

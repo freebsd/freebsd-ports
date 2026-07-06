@@ -1,0 +1,12 @@
+{ type: install
+  message: <<EOM
+GHCup installs binaries into "$HOME/.ghcup/bin" by default.
+
+You may want to add it to your PATH.
+
+You can also set the following env variables:
+  * GHCUP_INSTALL_BASE_PREFIX: the base of ghcup (default: $HOME)
+  * GHCUP_USE_XDG_DIRS: set to anything to use XDG style directories
+EOM
+}
+]

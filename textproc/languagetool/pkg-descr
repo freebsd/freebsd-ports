@@ -1,0 +1,11 @@
+LanguageTool is an open-source proofreading tool for English, Italian,
+French, German, Spanish, Portuguese, Dutch, and many other languages.
+It detects grammar, style, and spelling errors that a simple spell
+checker cannot find, such as subject-verb agreement problems, incorrect
+articles, and commonly confused words.
+
+Both command-line and GUI checkers are included, as well as an embedded
+HTTP server to expose the LanguageTool API locally.  The server allows
+clients such as Emacs (via flymake-languagetool or langtool.el), Neovim,
+and browser extensions to request proofreading without sending text to
+third-party services.

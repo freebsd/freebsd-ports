@@ -1,0 +1,80 @@
+--- Makefile.orig	2024-01-29 18:20:26 UTC
++++ Makefile
+@@ -23,22 +23,24 @@ OPT = -O2 -g
+ W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
+ THREADS = -pthread
+ OPT = -O2 -g
+-CFLAGS	= $(THREADS) $(OPT) $(W) $(XCFLAGS)
++CFLAGS	+= $(THREADS) $(W)
+ LDLIBS	=
+ SOLIBS	=
+-SOEXT	= .so
+-prefix	= /usr/local
++SOEXT	= .so.0
++prefix	?= /usr/local
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ libdir = $(exec_prefix)/lib
+ includedir = $(prefix)/include
+ datarootdir = $(prefix)/share
+-mandir = $(datarootdir)/man
++mandir = $(prefix)/share/man
+ 
+ ########################################################################
+ 
+ IHDRS	= lmdb.h
+-ILIBS	= liblmdb.a liblmdb$(SOEXT)
++LIBS	= liblmdb.a
++SHLIBS	= liblmdb$(SOEXT)
++ILIBS	= $(LIBS) $(SHLIBS)
+ IPROGS	= mdb_stat mdb_copy mdb_dump mdb_load
+ IDOCS	= mdb_stat.1 mdb_copy.1 mdb_dump.1 mdb_load.1
+ PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
+@@ -49,10 +51,11 @@ install: $(ILIBS) $(IPROGS) $(IHDRS)
+ 	mkdir -p $(DESTDIR)$(libdir)
+ 	mkdir -p $(DESTDIR)$(includedir)
+ 	mkdir -p $(DESTDIR)$(mandir)/man1
+-	for f in $(IPROGS); do cp $$f $(DESTDIR)$(bindir); done
+-	for f in $(ILIBS); do cp $$f $(DESTDIR)$(libdir); done
+-	for f in $(IHDRS); do cp $$f $(DESTDIR)$(includedir); done
+-	for f in $(IDOCS); do cp $$f $(DESTDIR)$(mandir)/man1; done
++	for f in $(IPROGS); do $(INSTALL_PROGRAM) $$f $(DESTDIR)$(bindir); done
++	for f in $(LIBS); do $(INSTALL_DATA) $$f $(DESTDIR)$(libdir); done
++	for f in $(SHLIBS); do $(INSTALL_LIB) $$f $(DESTDIR)$(libdir); done
++	for f in $(IHDRS); do $(INSTALL_DATA) $$f $(DESTDIR)$(includedir); done
++	for f in $(IDOCS); do $(INSTALL_MAN) $$f $(DESTDIR)$(mandir)/man1; done
+ 
+ clean:
+ 	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
+@@ -66,19 +69,30 @@ liblmdb$(SOEXT):	mdb.lo midl.lo
+ 
+ liblmdb$(SOEXT):	mdb.lo midl.lo
+ #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
+-	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.lo midl.lo $(SOLIBS)
++	$(CC) $(LDFLAGS) -pthread -shared -Wl,-soname,$@ -o $@ mdb.lo midl.lo $(SOLIBS)
+ 
+ mdb_stat: mdb_stat.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mdb_copy: mdb_copy.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mdb_dump: mdb_dump.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mdb_load: mdb_load.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest:    mtest.o    liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest2:	mtest2.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest3:	mtest3.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest4:	mtest4.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest5:	mtest5.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest6:	mtest6.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mplay:	mplay.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ 
+ mdb.o: mdb.c lmdb.h midl.h
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -c mdb.c

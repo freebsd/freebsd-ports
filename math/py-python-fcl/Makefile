@@ -12,6 +12,9 @@ WWW=		https://libraries.io/pypi/python-fcl
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired lang/cython0
+EXPIRATION_DATE=2026-09-15
+
 LIB_DEPENDS=	libfcl05.so:math/fcl05 \
 		liboctomap.so:math/octomap
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}

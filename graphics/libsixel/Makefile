@@ -12,7 +12,7 @@ WWW=		https://github.com/saitoha/libsixel
 LICENSE=	MIT
 
 USES=		cpe libtool pkgconfig
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	saitoha
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

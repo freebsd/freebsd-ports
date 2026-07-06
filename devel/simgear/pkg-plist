@@ -352,6 +352,7 @@ include/simgear/sound/soundmgr.hxx
 include/simgear/sound/xmlsound.hxx
 include/simgear/std/integer_sequence.hxx
 include/simgear/std/type_traits.hxx
+include/simgear/structure/ExpressionBinding.hxx
 include/simgear/structure/SGAtomic.hxx
 include/simgear/structure/SGBinding.hxx
 include/simgear/structure/SGExpression.hxx

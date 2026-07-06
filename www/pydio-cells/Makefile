@@ -1,6 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -11,10 +11,10 @@ WWW=		https://github.com/pydio/cells
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	Not supported on i386
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
-USES=		cpe go:modules gmake
+USES=		cpe go:1.26+,modules gmake
 CPE_VENDOR=	pydio
 USE_RC_SUBR=	${PORTNAME}
 

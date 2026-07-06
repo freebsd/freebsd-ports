@@ -1,16 +1,16 @@
---- chrome/browser/ui/webui/password_manager/promo_cards_handler.cc.orig	2026-03-13 06:02:14 UTC
+--- chrome/browser/ui/webui/password_manager/promo_cards_handler.cc.orig	2026-07-01 06:24:19 UTC
 +++ chrome/browser/ui/webui/password_manager/promo_cards_handler.cc
-@@ -31,7 +31,7 @@
- #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
+@@ -30,7 +30,7 @@
+ #endif
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/memory/scoped_refptr.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.h"
- #include "components/os_crypt/async/browser/os_crypt_async.h"
 @@ -78,7 +78,7 @@ PromoCardsHandler::PromoCardsHandler(Profile* profile)
- #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
+ #endif
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -35,4 +35,4 @@
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  void PromoCardsHandler::OnEncryptorReceived(
      base::Value callback_id,
-     os_crypt_async::Encryptor encryptor) {
+     scoped_refptr<os_crypt_async::Encryptor> encryptor) {

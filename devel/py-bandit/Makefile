@@ -1,6 +1,5 @@
 PORTNAME=	bandit
-DISTVERSION=	1.7.10
-PORTREVISION=	1
+DISTVERSION=	1.9.4
 CATEGORIES=	devel security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,9 @@ WWW=		https://github.com/PyCQA/bandit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gitpython>=3.1.30:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR} \
@@ -29,7 +30,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8.0:www/py-beautifulsoup@$
 		${PY_TOMLI}
 
 USES=		python
-USE_PYTHON=	autoplist distutils pytest # 1 test fails, see https://github.com/PyCQA/bandit/issues/1083
+USE_PYTHON=	autoplist pep517 pytest # 1 test fails, see https://github.com/PyCQA/bandit/issues/1083
+
+PYTEST_ARGS=	tests -p no:ruff -p no:black -p no:flake8 -p no:flakes -p no:checkdocs -p no:pretty -p no:benchmark -p no:xdist
 
 NO_ARCH=	yes
 
@@ -37,5 +40,7 @@ MAKE_ENV+=	PBR_VERSION=${PORTVERSION}
 TEST_ENV=	${MAKE_ENV} \
 		PATH=${STAGEDIR}${PREFIX}/bin:${PATH} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 1.9.4: 274 passed, 5 warnings in 7.30s
 
 .include <bsd.port.mk>

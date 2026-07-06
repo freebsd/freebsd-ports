@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		iconv:translit gnome php:pecl pkgconfig
 USE_PHP=	xml:build
+IGNORE_WITH_PHP=	86
 USE_GNOME=	libxml2
 
 CONFIGURE_ARGS+=	--with-iconv-dir=${LOCALBASE}

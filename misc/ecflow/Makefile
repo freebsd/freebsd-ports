@@ -1,5 +1,5 @@
 PORTNAME=	ecflow
-DISTVERSION=	5.15.1
+DISTVERSION=	5.17.0
 CATEGORIES=	misc
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/8650755/
 DISTNAME=	ecFlow-${DISTVERSION}-Source
@@ -23,7 +23,10 @@ USE_GL=		gl opengl
 
 SHEBANG_GLOB=	*.sh *.in *.py
 
-CMAKE_OFF=	ENABLE_STATIC_BOOST_LIBS ENABLE_TESTS ENABLE_ALL_TESTS
+CMAKE_OFF=	ENABLE_STATIC_BOOST_LIBS \
+		ENABLE_PYTHON \
+		ENABLE_TESTS \
+		ENABLE_ALL_TESTS
 
 CXXFLAGS_armv7=	-fPIC # attempt to work around compilation failure, see https://jira.ecmwf.int/browse/SUP-3688
 CXXFLAGS_i386=	-fPIC # attempt to work around compilation failure, see https://jira.ecmwf.int/browse/SUP-3688

@@ -30,11 +30,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=5.3:devel/py-coverage@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.0.2,1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenize-rt>=3.2.0:devel/py-tokenize-rt@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
+
+CPE_VENDOR=	python
 
 OPTIONS_DEFINE=	COLORAMA D JUPYTER UVLOOP
 OPTIONS_DEFAULT=COLORAMA

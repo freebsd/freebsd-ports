@@ -12,25 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 FLAVORS=	hier run
 FLAVOR?=	${FLAVORS:[1]}
-.if ${FLAVOR} == run # Follow hier(7)
 BUILD_DEPENDS=	execline>=2.9.8.1:lang/execline \
 		skalibs>=2.14.5.1:devel/skalibs \
 		s6>=2.14.0.1:sysutils/s6 \
-		s6-rc-run>=0.6.0.0:sysutils/s6-rc
+		s6-rc${PKGNAMESUFFIX}>=0.6.0.0:sysutils/s6-rc@${FLAVOR}
 RUN_DEPENDS=	execline>=2.9.8.1:lang/execline \
 		skalibs>=2.14.5.1:devel/skalibs \
 		s6>=2.14.0.1:sysutils/s6 \
-		s6-rc-run>=0.6.0.0:sysutils/s6-rc
-.else
-BUILD_DEPENDS=	execline>=2.9.8.1:lang/execline \
-		skalibs>=2.14.5.1:devel/skalibs \
-		s6>=2.14.0.1:sysutils/s6 \
-		s6-rc>=0.6.0.0:sysutils/s6-rc
-RUN_DEPENDS=	execline>=2.9.8.1:lang/execline \
-		skalibs>=2.14.5.1:devel/skalibs \
-		s6>=2.14.0.1:sysutils/s6 \
-		s6-rc>=0.6.0.0:sysutils/s6-rc
-.endif
+		s6-rc${PKGNAMESUFFIX}>=0.6.0.0:sysutils/s6-rc@${FLAVOR}
 LIB_DEPENDS=	libs6.so:sysutils/s6 \
 		libskarnet.so:devel/skalibs
 

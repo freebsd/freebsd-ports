@@ -1,6 +1,6 @@
---- src/actions/make/make_cpp.lua.orig	2023-09-20 17:46:05 UTC
+--- src/actions/make/make_cpp.lua.orig	2026-03-25 18:20:17 UTC
 +++ src/actions/make/make_cpp.lua
-@@ -225,9 +225,8 @@ --
+@@ -226,9 +226,8 @@ --
  		_p('endif')
  		_p('')
  
@@ -12,7 +12,7 @@
  		_p('')
  
  		-- identify the shell type
-@@ -254,11 +253,6 @@ --
+@@ -255,11 +254,6 @@ --
  		_p('endif')
  		_p('')
  
@@ -24,7 +24,7 @@
  		_p('ifndef RESCOMP')
  		_p('  ifdef WINDRES')
  		_p('    RESCOMP = $(WINDRES)')
-@@ -423,11 +417,11 @@ --
+@@ -424,11 +418,11 @@ --
  
  		_p('  ALL_CPPFLAGS       += $(CPPFLAGS) %s $(DEFINES) $(INCLUDES)', table.concat(cc.getcppflags(cfg), " "))
  
@@ -41,7 +41,7 @@
  
  		_p('  ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)%s',
  		        make.list(table.join(cc.getdefines(cfg.resdefines),
-@@ -467,7 +461,7 @@ --
+@@ -468,7 +462,7 @@ --
  			lddeps  = libdeps
  		end
  
@@ -50,7 +50,7 @@
  		_p('  LIBDEPS            +=%s', libdeps)
  		_p('  LDDEPS             +=%s', lddeps)
  
-@@ -497,7 +491,7 @@ --
+@@ -498,7 +492,7 @@ --
  				startgroup = '-Wl,--start-group '
  				endgroup   = ' -Wl,--end-group'
  			end

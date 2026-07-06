@@ -29,6 +29,7 @@ OPENBLAS_USES=	blaslapack:openblas
 # ld.bfd supports neither -z relro nor -z norelro on armv7
 BINUTILS_NO_MAKE_ENV_armv7=	LD
 BINUTILS_NO_MAKE_ENV=	${BINUTILS_NO_MAKE_ENV_${ARCH}}
+MAKE_ARGS+=	STRIP=${STRIP}
 
 PORTDOCS=	README.txt
 PORTEXAMPLES=	lmdemo.c Makefile.demo

@@ -1,6 +1,5 @@
 PORTNAME=	sundials
-DISTVERSION=	7.5.0
-PORTREVISION=	3
+DISTVERSION=	7.7.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
 
@@ -24,8 +23,8 @@ CMAKE_TESTING_ON=	SUNDIALS_TEST_UNITTESTS \
 
 FCFLAGS:=		${FFLAGS} # project checks that these flags are equal
 
-OPTIONS_DEFINE=		BLAS EXAMPLES KLU LAPACK MPI OPENMP
-OPTIONS_DEFAULT=	KLU LAPACK MPI OPENMP
+OPTIONS_DEFINE=		BLAS EXAMPLES KLU LAPACK MPI OPENMP SUPERLUMT
+OPTIONS_DEFAULT=	KLU LAPACK MPI OPENMP SUPERLUMT
 # no OpenMP on armv7
 .if !exists(/usr/include/omp.h)
 OPTIONS_EXCLUDE=	OPENMP
@@ -79,6 +78,13 @@ PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI
 PETSC_PREVENTS=		LAPACK  # error: Incompatible sunindextype for LAPACK; disable LAPACK and rebuild
 PETSC_BROKEN=		ERROR: PETSc not functional due to index size mismatch: SUNDIALS_INDEX_SIZE=64, but PETSc was built with 32-bit indices
+
+SUPERLUMT_DESC=		Use SuperLU_MT sparse linear solver
+SUPERLUMT_CMAKE_BOOL=	ENABLE_SUPERLUMT
+SUPERLUMT_CMAKE_ON=	-DSUPERLUMT_INCLUDE_DIR=${LOCALBASE}/include/superlu_mt \
+			-DSUPERLUMT_LIBRARY_DIR=${LOCALBASE}/lib
+SUPERLUMT_LIB_DEPENDS=	libsuperlu_mt_PTHREAD.so:math/superlu-mt
+
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/sundials/LICENSE

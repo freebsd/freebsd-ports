@@ -42,8 +42,6 @@ USE_QT=		base declarative quick3d sqldriver-sqlite:run webengine \
 		websockets tools:build
 .endif
 
-# Upstream archive contains files with UTF-8 names
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
 NO_ARCH=	yes
 PLIST_FILES=	share/applications/${PORTNAME}-${PYTHON_VER}.desktop \
 		share/man/man1/${PORTNAME}.1.gz

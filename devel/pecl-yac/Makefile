@@ -10,6 +10,7 @@ WWW=		https://github.com/laruence/yac/wiki
 LICENSE=	PHP301
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	86
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module

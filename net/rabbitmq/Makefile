@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	4.3.1
+DISTVERSION=	4.3.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-server/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-server-generic-unix-${DISTVERSION}
@@ -16,7 +16,6 @@ RUN_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}:lang/erlang-runtime${_
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	pivotal_software
-USE_LOCALE=	en_US.UTF-8
 USE_RC_SUBR=	${PORTNAME}
 
 NO_ARCH=	yes

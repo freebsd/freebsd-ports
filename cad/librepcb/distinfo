@@ -1,6 +1,6 @@
-TIMESTAMP = 1779326830
-SHA256 (librepcb-2.1.0-source.zip) = 5b89e936f02fb14c2d519bc79d0de799a9c978c988d499f8bb4cf8ddbc127094
-SIZE (librepcb-2.1.0-source.zip) = 33037956
+TIMESTAMP = 1781668795
+SHA256 (librepcb-2.1.1-source.zip) = c5f6443e1fac1682fdb0f662136c4abb582b8ec9ce260ee94b4e82f0d8dd69c0
+SIZE (librepcb-2.1.1-source.zip) = 33058352
 SHA256 (rust/crates/ab_glyph-0.2.29.crate) = ec3672c180e71eeaaac3a541fbbc5f5ad4def8b747c595ad30d674e43049f7b0
 SIZE (rust/crates/ab_glyph-0.2.29.crate) = 20011
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.8.crate) = c71b1793ee61086797f5c80b6efa2b8ffa6d5dd703f118545808a7f2e27f7046

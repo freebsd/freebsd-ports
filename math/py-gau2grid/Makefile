@@ -1,7 +1,6 @@
 PORTNAME=	gau2grid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.7
-PORTREVISION=	4
+DISTVERSION=	2.0.9
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,6 +30,7 @@ NATIVE_CMAKE_BOOL=	ENABLE_XHOST
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/gau2grid/__pycache__
+	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/gau2grid/LICENSE
 	@${RM} -r ${STAGEDIR}${LOCALBASE}//lib/usr # LICENSE is installed under there
 
 do-test:

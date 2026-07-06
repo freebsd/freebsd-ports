@@ -17,13 +17,12 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libvorbisfile.so:audio/libvorbis \
 		libsmpeg.so:multimedia/smpeg
 
-USES=		lua:51 openal:al pkgconfig python:build scons sdl tar:bzip2
+USES=		lua openal:al pkgconfig python:build scons sdl tar:bzip2
 USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 USE_SDL=	image sdl
 MAKE_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR} \
 		--install-sandbox=${STAGEDIR}
-CXXFLAGS+=	-fpermissive
 
 PORTDOCS=	LICENSE LICENSE.EXCEPTION README-en.txt README-linux.txt \
 		donate.url homepage.url project_page.url video.txt
@@ -33,8 +32,8 @@ DESKTOP_ENTRIES="Battle Tanks" "" "" "${PORTNAME}" "Game;ArcadeGame;" ""
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/lua5\.1/lua-${LUA_VER}/' \
-		${WRKSRC}/engine/SConscript
+	@${REINPLACE_CMD} -e '/for lua in/s/lua5\.1/lua-${LUA_VER}/ ; \
+		/^env.*ENABLE_LUA/d' ${WRKSRC}/engine/SConscript
 	@${REINPLACE_CMD} -e "s/env\.has_key('prefix')/'prefix' in env/" \
 		${WRKSRC}/mrt/SConscript
 # Prevent the clash with /usr/include/semaphore.h

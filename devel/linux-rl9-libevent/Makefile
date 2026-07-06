@@ -10,7 +10,8 @@ WWW=		https://libevent.org/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		linux:rl9
+USES=		cpe linux:rl9
+CPE_VENDOR=	libevent_project
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes

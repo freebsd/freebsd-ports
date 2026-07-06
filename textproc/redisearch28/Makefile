@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.8.5
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -19,17 +19,17 @@ LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
-LIB_DEPENDS=	libabsl_base.so:devel/abseil
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libcpu_features.so:devel/cpu_features
 
-USES=		cmake compiler localbase
+USES=		cmake compiler localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	RedisAI:VectorSimilarity:9f38780:vectorsimilarity/deps/VectorSimilarity \
-			google:cpu_features:438a66e:cpu_features/deps/cpu_features \
-			RedisLabsModules:readies:8c6994c:readies/deps/readies \
-			RedisLabs:RedisModulesSDK:7ba899d:redismodulesdk/deps/RedisModulesSDK \
-			google:s2geometry:efb4eb8:s2geometry/deps/s2geometry
+GH_TUPLE=	RedisAI:VectorSimilarity:94f2fcd:vectorsimilarity/deps/VectorSimilarity \
+		RedisLabsModules:readies:42a6c2c:readies/deps/readies \
+		RedisLabs:RedisModulesSDK:7ba899d:redismodulesdk/deps/RedisModulesSDK \
+		google:s2geometry:efb4eb8:s2geometry/deps/s2geometry
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd -Wno-dev
@@ -39,16 +39,14 @@ CONFLICTS_INSTALL=	redisearch*
 PLIST_FILES=	lib/${PORTNAME}${PKGNAMESUFFIX}.so
 
 CFLAGS+=	-DCLOCK_MONOTONIC_RAW=CLOCK_MONOTONIC -fPIC
-CXXFLAGS+=-Wno-vla-cxx-extension -fPIC
+CXXFLAGS+=	-Wno-vla-cxx-extension -fPIC -I${LOCALBASE}/include/cpu_features
+LDFLAGS+=      -lcpu_features
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|20230125.1|20250127|g' \
 		-e '/conan_toolchain.cmake/d' \
 		${WRKSRC}/src/geometry/CMakeLists.txt
-
-pre-configure:
-	@${MKDIR} ${WRKDIR}/.build/_deps
-	@${MV} ${WRKSRC}/deps/cpu_features ${WRKDIR}/.build/_deps/cpu_features-src
+	${ECHO_CMD} "find_package(CpuFeatures REQUIRED)" > ${WRKSRC}/deps/VectorSimilarity/cmake/cpu_features.cmake
 
 do-install:
 	${INSTALL} -m 0755 ${INSTALL_WRKSRC}/redisearch.so \

@@ -6,7 +6,7 @@ include/openslide/openslide-features.h
 include/openslide/openslide.h
 lib/libopenslide.so
 lib/libopenslide.so.1
-lib/libopenslide.so.1.0.0
+lib/libopenslide.so.1.0.1
 libdata/pkgconfig/openslide.pc
 share/man/man1/openslide-quickhash1sum.1.gz
 share/man/man1/openslide-show-properties.1.gz

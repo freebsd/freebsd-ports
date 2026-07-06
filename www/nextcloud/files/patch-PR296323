@@ -1,0 +1,25 @@
+--- core/BackgroundJobs/CleanupBackgroundJobsJob.php.orig	2026-06-25 12:29:12 UTC
++++ core/BackgroundJobs/CleanupBackgroundJobsJob.php
+@@ -47,10 +47,8 @@ class CleanupBackgroundJobsJob extends TimedJob {
+ 			if ($job->serverId !== $currentServerId) {
+ 				continue;
+ 			}
+-			$output = [];
+-			$result = 0;
+-			exec('ps -p ' . escapeshellarg((string)$job->pid) . ' -o cmd', $output, $result);
+-			if (count($output) === 1 && current($output) === 'CMD' && $result === 1) {
++			$processExists = posix_kill($job->pid, 0) || posix_get_last_error() === POSIX_EPERM;
++			if (!$processExists) {
+ 				// Process doesn't exists anymore
+ 				$maxDuration = (new DateTimeImmutable())->diff($job->startedAt);
+ 				$maxDuration
+--- lib/private/BackgroundJob/JobRuns.php.orig	2026-06-29 20:06:31 UTC
++++ lib/private/BackgroundJob/JobRuns.php
+@@ -63,7 +63,6 @@ final readonly class JobRuns implements IJobRuns {
+ 
+ 	public function deleteBefore(int $timestamp): int {
+ 		$beforeSnowflake = $this->snowflakeGenerator->minForTimeId($timestamp);
+-		$beforeSnowflake = '91480652934574081';
+ 		$qb = $this->connection->getQueryBuilder();
+ 		$result = $qb
+ 			->delete(self::TABLE)

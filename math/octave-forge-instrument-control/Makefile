@@ -1,7 +1,7 @@
 PORTNAME=	octave-forge-instrument-control
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

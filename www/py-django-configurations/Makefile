@@ -12,6 +12,7 @@ WWW=		https://github.com/jazzband/django-configurations
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not support modern Python stack
 DEPRECATED=	Upstream no longer active, project is abandoned, please use www/py-django-configurator instead
 EXPIRATION_DATE=2026-07-31
 

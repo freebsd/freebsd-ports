@@ -13,7 +13,9 @@ WWW=		https://www.mantisbt.org/
 
 LICENSE=	GPLv2
 
-USES=		php:flavors
+USES=		cpe php:flavors
+CPE_PRODUCT=	mantisbt
+CPE_VENDOR=	mantisbt
 USE_GITHUB=	nodefault
 USE_PHP=	fileinfo filter mbstring session xml
 

@@ -1,6 +1,6 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.15
+DISTVERSION=	3.0.16
 PORTREVISION=	0
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/owasp-modsecurity/ModSecurity/releases/download/v${DISTVERSION}/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cpe gmake gnome libtool pkgconfig:build
 
-CPE_VENDOR=	trustwave
+CPE_VENDOR=	owasp
 
 USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411

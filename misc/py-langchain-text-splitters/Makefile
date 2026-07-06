@@ -28,6 +28,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests fail: INTERNALERROR> ValueError: no option named 'only_extended'
+# tests as of 1.1.2: xdist worker crashes with 2 errors
 
 .include <bsd.port.mk>

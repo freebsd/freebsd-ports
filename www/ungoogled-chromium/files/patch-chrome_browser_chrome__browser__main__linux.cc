@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2026-06-05 13:45:06 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
 @@ -23,7 +23,7 @@
  #include "device/bluetooth/dbus/bluez_dbus_manager.h"
@@ -9,7 +9,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #if BUILDFLAG(USE_DBUS)
  #include "components/dbus/thread_linux/dbus_thread_linux.h"
-@@ -68,8 +68,10 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
+@@ -66,15 +66,17 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
  
  #if !BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(USE_DBUS)
@@ -18,9 +18,8 @@
        dbus_thread_linux::GetSharedSystemBus().get());
 +#endif
  #endif  // BUILDFLAG(USE_DBUS)
+ #endif  // !BUILDFLAG(IS_CHROMEOS)
  
-   // Set up crypt config. This needs to be done before anything starts the
-@@ -96,7 +98,7 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
    ChromeBrowserMainPartsPosix::PostCreateMainMessageLoop();
  }
  
@@ -29,7 +28,7 @@
  void ChromeBrowserMainPartsLinux::PostMainMessageLoopRun() {
    ChromeBrowserMainPartsPosix::PostMainMessageLoopRun();
    ui::OzonePlatform::GetInstance()->PostMainMessageLoopRun();
-@@ -130,7 +132,7 @@ void ChromeBrowserMainPartsLinux::PostBrowserStart() {
+@@ -108,7 +110,7 @@ void ChromeBrowserMainPartsLinux::PostBrowserStart() {
  #endif  // BUILDFLAG(USE_DBUS) && !BUILDFLAG(IS_CHROMEOS)
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

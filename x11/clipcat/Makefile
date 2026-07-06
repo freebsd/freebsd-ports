@@ -1,7 +1,7 @@
 PORTNAME=	clipcat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	build breaks, see https://github.com/rust-lang/rust/issues/119914
+BROKEN_i386=	ld: error: undefined symbol: __atomic_load
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 

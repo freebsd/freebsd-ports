@@ -500,7 +500,6 @@ share/icons/hicolor/scalable/apps/kajongg.svgz
 %%DATADIR%%/wind.py
 share/locale/ar/LC_MESSAGES/kajongg.mo
 share/locale/ast/LC_MESSAGES/kajongg.mo
-share/locale/bg/LC_MESSAGES/kajongg.mo
 share/locale/bs/LC_MESSAGES/kajongg.mo
 share/locale/ca/LC_MESSAGES/kajongg.mo
 share/locale/ca@valencia/LC_MESSAGES/kajongg.mo
@@ -527,6 +526,7 @@ share/locale/ja/LC_MESSAGES/kajongg.mo
 share/locale/ka/LC_MESSAGES/kajongg.mo
 share/locale/kk/LC_MESSAGES/kajongg.mo
 share/locale/km/LC_MESSAGES/kajongg.mo
+share/locale/ko/LC_MESSAGES/kajongg.mo
 share/locale/lt/LC_MESSAGES/kajongg.mo
 share/locale/mai/LC_MESSAGES/kajongg.mo
 share/locale/ml/LC_MESSAGES/kajongg.mo

@@ -20,3 +20,13 @@ from __FreeBSD_version == 1000010.
  # else
  #  error The C library not known to support .init_array/.fini_array
  # endif
+@@ -31678,7 +31678,8 @@
+ if test "${with_long_double_format+set}" = set; then :
+   withval=$with_long_double_format;
+ case "$target:$with_long_double_format" in
+-  powerpc64le-*-linux*:ieee | powerpc64le-*-linux*:ibm)
++  powerpc64le-*-linux*:ieee | powerpc64le-*-linux*:ibm | \
++  powerpc64le-*-freebsd*:ieee | powerpc64le-*-freebsd*:ibm)
+     :
+     ;;
+   powerpc64-*-linux*:ieee | powerpc64-*-linux*:ibm)

@@ -17,4 +17,20 @@ and the keyboard shortcut to launch a terminal
 (replace foot with your preferred terminal emulator).
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.14.0"
+  message: <<EOM
+  Version 0.14.0 of Mango has some breaking changes:
+
+  - IPC Protocol Upgrade: The old dwl IPC protocol is now deprecated and will
+    be removed in the next version.
+  - Socket Restructuring: mmsg(1) now restricts the use of independent sockets.
+    This structural change delivers a more powerful, concise, and reliable
+    syntax, allowing you to seamlessly retrieve data for all clients, tags,
+    monitors, and messages.
+
+  As a result, you must adapt any script that uses the mmsg(1) command to
+  the new syntax.
+EOM
+}
 ]

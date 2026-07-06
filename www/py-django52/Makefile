@@ -1,5 +1,5 @@
 PORTNAME=	django
-PORTVERSION=	5.2.14
+PORTVERSION=	5.2.15
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
@@ -35,9 +35,6 @@ SHEBANG_FILES=	django/conf/project_template/manage.py-tpl
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django[0-9][0-9]
 
 CPE_VENDOR=	djangoproject
-
-# Upstream archive contains files with UTF-8 names
-# EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 OPTIONS_DEFINE=	DOCS HTMLDOCS
 OPTIONS_GROUP=	DATABASE

@@ -1,4 +1,6 @@
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/JlCompress.h
+include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/QuaCompress.h
+include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/QuaExtract.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/ioapi.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/minizip_crypt.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quaadler32.h
@@ -7,8 +9,10 @@ include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quacrc32.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quagzipfile.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quaziodevice.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip.h
+include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_config.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_global.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_qt_compat.h
+include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazip_textcodec.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazipdir.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazipfile.h
 include/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/quazip/quazipfileinfo.h
@@ -20,6 +24,6 @@ lib/cmake/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/QuaZip-Qt%%QTVER_SUFFIX%%
 lib/cmake/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/QuaZip-Qt%%QTVER_SUFFIX%%_SharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QuaZip-Qt%%QTVER_SUFFIX%%-%%QUAZIP_VERSION%%/QuaZip-Qt%%QTVER_SUFFIX%%_SharedTargets.cmake
 lib/libquazip1-qt%%QTVER_SUFFIX%%.so
+lib/libquazip1-qt%%QTVER_SUFFIX%%.so.%%QUAZIP_VER%%
 lib/libquazip1-qt%%QTVER_SUFFIX%%.so.%%QUAZIP_VERSION%%
-lib/libquazip1-qt%%QTVER_SUFFIX%%.so.%%QUAZIP_VERSION%%.0
 libdata/pkgconfig/quazip1-qt%%QTVER_SUFFIX%%.pc

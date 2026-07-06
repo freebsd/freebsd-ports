@@ -1,6 +1,5 @@
 PORTNAME=	txtorcon
-DISTVERSION=	24.8.0
-PORTREVISION=	1
+DISTVERSION=	26.6.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +12,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Automat>0:devel/py-Automat@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}incremental>0:devel/py-incremental@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=15.5.0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.1:devel/py-zope.interface@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist cryptography distutils pytest # 1 test fails, see https://github.com/meejah/txtorcon/issues/376
+USE_PYTHON=	distutils autoplist cryptography pytest # 1 test fails, see https://github.com/meejah/txtorcon/issues/376
 
 SHEBANG_FILES=	examples/*.py
 
@@ -42,6 +40,6 @@ post-patch-DOCS-off:
 post-patch-EXAMPLES-off:
 	@${REINPLACE_CMD} -E "s|(.*'${EXAMPLESDIR}'.*)|#\1|" ${WRKSRC}/setup.py
 
-# tests as of 24.8.0: 1 failed, 679 passed, 2 skipped, 662 warnings in 195.73s (0:03:15)
+# tests as of 26.6.0: 1 failed, 681 passed, 2 skipped, 129 warnings in 6.71s
 
 .include <bsd.port.mk>

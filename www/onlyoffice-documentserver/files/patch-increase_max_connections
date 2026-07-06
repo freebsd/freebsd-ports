@@ -1,14 +1,14 @@
 --- server/Common/sources/constants.js.orig	2025-10-12 16:21:06 UTC
 +++ server/Common/sources/constants.js
-@@ -88,7 +88,7 @@ exports.LICENSE_RESULT = {
+@@ -91,7 +91,7 @@
    NotBefore: 16
  };
  
 -exports.LICENSE_CONNECTIONS = 20;
 +exports.LICENSE_CONNECTIONS = 2000;
+ exports.LICENSE_CONNECTIONS_OS = 0x7fffffff; // max signed 32-bit value
  exports.LICENSE_USERS = 3;
  exports.LICENSE_EXPIRE_USERS_ONE_DAY = 24 * 60 * 60; // day in seconds
- 
 --- web-apps/apps/documenteditor/mobile/src/lib/patch.jsx.orig	2025-10-12 20:28:53 UTC
 +++ web-apps/apps/documenteditor/mobile/src/lib/patch.jsx
 @@ -4,7 +4,7 @@ EditorUIController.isSupportEditFeature = () => {

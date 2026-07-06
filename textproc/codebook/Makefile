@@ -1,6 +1,7 @@
 PORTNAME=	codebook
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.41
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://github.com/blopker/codebook
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_aarch64=	fails ti build: unknown field mc_gpregs
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2

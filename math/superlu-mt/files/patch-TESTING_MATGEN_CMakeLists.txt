@@ -1,0 +1,8 @@
+--- TESTING/MATGEN/CMakeLists.txt.orig	2026-06-06 05:56:50 UTC
++++ TESTING/MATGEN/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-set(sources lsamen.c)
++set(sources lsamen.c xerbla.c)
+ set(SCATGEN
+     slatm1.c
+     slaran.c

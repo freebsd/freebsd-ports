@@ -1,6 +1,6 @@
---- components/sync/service/sync_prefs.cc.orig	2026-05-07 17:02:56 UTC
+--- components/sync/service/sync_prefs.cc.orig	2026-07-01 06:24:19 UTC
 +++ components/sync/service/sync_prefs.cc
-@@ -866,7 +866,7 @@ bool SyncPrefs::MaybeMigratePrefsForSyncToSigninPart1(
+@@ -884,7 +884,7 @@ bool SyncPrefs::MaybeMigratePrefsForSyncToSigninPart1(
            update_selected_types_dict->EnsureDict(
                signin::GaiaIdHash::FromGaiaId(gaia_id).ToBase64());
  

@@ -1,4 +1,4 @@
---- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2025-01-25 09:34:31 UTC
+--- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2026-06-05 13:45:06 UTC
 +++ extensions/browser/api/networking_private/networking_private_delegate_factory.cc
 @@ -12,7 +12,7 @@
  
@@ -9,7 +9,7 @@
  #include "extensions/browser/api/networking_private/networking_private_linux.h"
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  #include "components/wifi/wifi_service.h"
-@@ -63,7 +63,7 @@ NetworkingPrivateDelegateFactory::BuildServiceInstance
+@@ -64,7 +64,7 @@ NetworkingPrivateDelegateFactory::BuildServiceInstance
    std::unique_ptr<NetworkingPrivateDelegate> delegate;
  #if BUILDFLAG(IS_CHROMEOS)
    delegate = std::make_unique<NetworkingPrivateChromeOS>(browser_context);
@@ -18,7 +18,7 @@
    delegate = std::make_unique<NetworkingPrivateLinux>();
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
    std::unique_ptr<wifi::WiFiService> wifi_service(wifi::WiFiService::Create());
-@@ -74,7 +74,7 @@ NetworkingPrivateDelegateFactory::BuildServiceInstance
+@@ -75,7 +75,7 @@ NetworkingPrivateDelegateFactory::BuildServiceInstance
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

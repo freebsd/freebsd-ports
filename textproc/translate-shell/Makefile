@@ -23,7 +23,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	soimort
 
 ALL_TARGET=	build
-TEST_ENV=	LC_ALL=C.UTF-8
 TEST_TARGET=	test
 NO_ARCH=	yes
 PLIST_FILES=	bin/trans \

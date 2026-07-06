@@ -1,0 +1,14 @@
+The Mozc extended dictionary system and user dictionary solved the
+challenges of "legal affairs, operations, and quality."
+
+The vocabulary (approximately 1.02 million words) from "UniDic" the
+highest-quality corpus compiled by the National Institute for Japanese
+Language and Linguistics, has been optimized for Mozc's algorithms,
+resulting in approximately 354,000 practical basic forms.
+
+The most distinctive feature of this project is that it requires no
+complex build chains such as C++ compilers or Bazel. It can be
+imported directly from the GUI's Dictionary Tool.
+
+Mozc's user dictionaries have a limit of 100,000 words per file so
+they are automatically split into manageable sizes.

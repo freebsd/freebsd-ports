@@ -14,7 +14,6 @@
     SUBDIR += R-cran-pool
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
-    SUBDIR += adminer
     SUBDIR += adodb5
     SUBDIR += akonadi
     SUBDIR += apache-commons-dbutils
@@ -38,6 +37,7 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += clickhouse-cpp
+    SUBDIR += clickhouse-devel
     SUBDIR += closql
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
@@ -96,6 +96,7 @@
     SUBDIR += heidisql
     SUBDIR += hiredis
     SUBDIR += hsqldb
+    SUBDIR += iceberg-rust
     SUBDIR += immudb
     SUBDIR += imposm3
     SUBDIR += influxdb
@@ -154,6 +155,7 @@
     SUBDIR += liquibase
     SUBDIR += litestream
     SUBDIR += lmdb
+    SUBDIR += lmdb0
     SUBDIR += lua-lsqlite3
     SUBDIR += lua-pgsql
     SUBDIR += lua-resty-redis
@@ -170,8 +172,6 @@
     SUBDIR += mariadb-java-client
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
-    SUBDIR += mariadb106-client
-    SUBDIR += mariadb106-server
     SUBDIR += mariadb114-client
     SUBDIR += mariadb114-server
     SUBDIR += mariadb118-client
@@ -182,6 +182,7 @@
     SUBDIR += mdbx
     SUBDIR += mdcached
     SUBDIR += memcached
+    SUBDIR += memtui
     SUBDIR += metabase
     SUBDIR += mongodb-tools
     SUBDIR += mongodb70
@@ -200,8 +201,6 @@
     SUBDIR += mysql80-server
     SUBDIR += mysql84-client
     SUBDIR += mysql84-server
-    SUBDIR += mysql96-client
-    SUBDIR += mysql96-server
     SUBDIR += mysql97-client
     SUBDIR += mysql97-server
     SUBDIR += mysqlbackup
@@ -219,6 +218,7 @@
     SUBDIR += neo4j
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
+    SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
     SUBDIR += octosql
     SUBDIR += odbc-cpp-wrapper
@@ -646,6 +646,18 @@
     SUBDIR += php85-pdo_sqlite
     SUBDIR += php85-pgsql
     SUBDIR += php85-sqlite3
+    SUBDIR += php86-dba
+    SUBDIR += php86-mysqli
+    SUBDIR += php86-odbc
+    SUBDIR += php86-pdo
+    SUBDIR += php86-pdo_dblib
+    SUBDIR += php86-pdo_firebird
+    SUBDIR += php86-pdo_mysql
+    SUBDIR += php86-pdo_odbc
+    SUBDIR += php86-pdo_pgsql
+    SUBDIR += php86-pdo_sqlite
+    SUBDIR += php86-pgsql
+    SUBDIR += php86-sqlite3
     SUBDIR += phpliteadmin
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
@@ -732,13 +744,12 @@
     SUBDIR += prometheus-postgresql-adapter
     SUBDIR += proxysql
     SUBDIR += pspg
-    SUBDIR += puppetdb-terminus8
-    SUBDIR += puppetdb8
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
     SUBDIR += py-Elixir
     SUBDIR += py-PyGreSQL
+    SUBDIR += py-PyHive
     SUBDIR += py-Pyrseas
     SUBDIR += py-aesqlapius
     SUBDIR += py-agate-sql
@@ -751,7 +762,6 @@
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-anysqlite
-    SUBDIR += py-apache-arrow
     SUBDIR += py-apsw
     SUBDIR += py-apswutils
     SUBDIR += py-asyncmy
@@ -772,7 +782,6 @@
     SUBDIR += py-duckdb
     SUBDIR += py-duckdb_engine
     SUBDIR += py-fakeredis
-    SUBDIR += py-fastparquet
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-pymongo
@@ -797,6 +806,7 @@
     SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysqlclient
+    SUBDIR += py-oracledb
     SUBDIR += py-ormar
     SUBDIR += py-oxyde
     SUBDIR += py-oxyde-core
@@ -824,6 +834,8 @@
     SUBDIR += py-psycopg2cffi
     SUBDIR += py-pum
     SUBDIR += py-pyarrow
+    SUBDIR += py-pyarrow-stubs
+    SUBDIR += py-pyiceberg
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
     SUBDIR += py-pymongo
@@ -1157,6 +1169,7 @@
     SUBDIR += tredis
     SUBDIR += trilogy
     SUBDIR += tuning-primer
+    SUBDIR += turso
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += usql
