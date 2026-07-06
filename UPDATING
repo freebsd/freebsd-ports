@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260721:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  The OpenSSH HPN option and flavor are deprecated and will be removed.
+  Base removed the patch in 2016, and the patch has not matched upstream
+  in many years. The new upstream is named "hpn-ssh". It may be revived
+  as a separate package/port in the future.
+
+  To switch the package:
+  # pkg set -n openssh-portable-hpn:openssh-portable
+
+  Remove these options:
+    sshd_config:
+      - NoneEnabled
+      - HPNDisabled
+      - HPNBufferSize
+      - TcpRcvBufPoll
+    ssh_config:
+      - NoneEnabled
+      - NoneSwitch
+      - TcpRcvBufPoll
+      - TcpRcvBuf
+      - HPNDisabled
+      - HPNBufferSize
+
 20260708:
   AFFECTS: users of net/croc
   AUTHOR: olgeni@FreeBSD.org

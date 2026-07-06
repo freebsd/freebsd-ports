@@ -31,16 +31,16 @@ r294563 was incomplete; re-add the client-side options as well.
  
  	{ NULL, oBadOption }
  };
---- servconf.c.orig	2024-09-19 15:20:48.000000000 -0700
-+++ servconf.c	2024-10-07 20:18:18.259726000 -0700
-@@ -746,6 +746,10 @@ static struct {
- 	{ "unusedconnectiontimeout", sUnusedConnectionTimeout, SSHCFG_ALL },
- 	{ "sshdsessionpath", sSshdSessionPath, SSHCFG_GLOBAL },
- 	{ "refuseconnection", sRefuseConnection, SSHCFG_ALL },
-+	{ "noneenabled", sUnsupported, SSHCFG_ALL },
-+	{ "hpndisabled", sDeprecated, SSHCFG_ALL },
-+	{ "hpnbuffersize", sDeprecated, SSHCFG_ALL },
-+	{ "tcprcvbufpoll", sDeprecated, SSHCFG_ALL },
- 	{ NULL, sBadOption, 0 }
- };
+--- servconf.h.orig	2026-07-06 00:57:12.000000000 -0700
++++ servconf.h	2026-07-06 13:38:43.139752000 -0700
+@@ -251,6 +251,10 @@ SSHCONF_DEPRECATE(AFSTokenPassing, SSHCFG_GLOBAL, SSHC
+ SSHCONF_DEPRECATE(UsePrivilegeSeparation, SSHCFG_GLOBAL, SSHCONF_DEPRECATED) \
+ SSHCONF_DEPRECATE(KerberosTgtPassing, SSHCFG_GLOBAL, SSHCONF_DEPRECATED) \
+ SSHCONF_DEPRECATE(AFSTokenPassing, SSHCFG_GLOBAL, SSHCONF_DEPRECATED) \
++SSHCONF_DEPRECATE(NoneEnabled, SSHCFG_ALL, SSHCONF_DEPRECATED) \
++SSHCONF_DEPRECATE(HPNDisabled, SSHCFG_ALL, SSHCONF_DEPRECATED) \
++SSHCONF_DEPRECATE(HPNBufferSize, SSHCFG_ALL, SSHCONF_DEPRECATED) \
++SSHCONF_DEPRECATE(TCPRcvBufPoll, SSHCFG_ALL, SSHCONF_DEPRECATED) \
+ SSHCONF_DEPRECATE(Protocol, SSHCFG_GLOBAL, SSHCONF_IGNORE)
  
+ #define SSHD_CONFIG_ENTRIES_ALIASES \

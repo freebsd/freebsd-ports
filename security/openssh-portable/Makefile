@@ -1,5 +1,5 @@
 PORTNAME=	openssh
-DISTVERSION=	10.3p1
+DISTVERSION=	10.4p1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -96,7 +96,17 @@ ETCDIR?=		${PREFIX}/etc/ssh
 
 .include <bsd.port.pre.mk>
 
-PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
+PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex,github_openssh
+
+# This needs to be applied first, before the gsskex patch at least.
+PATCH_SITES+=	https://github.com/openssh/openssh-portable/commit/:github_openssh
+PATCHFILES+=	c147093565634eae9f91e4df99e04a6b3513f9c6.patch:-p1:github_openssh
+
+.if ${FLAVOR:U} == hpn || ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
+DEPRECATED=	HPN patch is deprecated. Removed in base in 2016, and does not match official HPN-SSH implementation
+EXPIRATION_DATE=2026-10-01
+PKGMESSAGE=	${PKGDIR}/pkg-message.hpn
+.endif
 
 # Must add this patch before HPN due to conflicts
 .if !${PORT_OPTIONS:MBLACKLISTD}
@@ -115,13 +125,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
 .  endif
 # - See https://sources.debian.org/data/main/o/openssh/ for which subdir to
 # pull from.
-GSSAPI_DEBIAN_VERSION=	10.3p1
+# GSSAPI_DEBIAN_VERSION=	10.4p1
 GSSAPI_DEBIAN_SUBDIR=	${GSSAPI_DEBIAN_VERSION:U${DISTVERSION}}-1
 # - Debian does not use a versioned filename so we trick fetch to make one for
 # us with the ?<anything>=/ trick.
 PATCH_SITES+=	https://sources.debian.org/data/main/o/openssh/1:${GSSAPI_DEBIAN_SUBDIR}/debian/patches/gssapi.patch?dummy=/:gsskex
 # Bump this when updating the patch location
-GSSAPI_DISTVERSION=	10.3p1
+GSSAPI_DISTVERSION=	10.4p1
 PATCHFILES+=	openssh-${GSSAPI_DISTVERSION:U${DISTVERSION}}-gsskex-all-debian-rh-${GSSAPI_DISTVERSION}.patch:-p1:gsskex
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gssapi-kexgssc.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gssapi-kexgsss.c

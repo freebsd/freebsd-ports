@@ -1,5 +1,7 @@
-TIMESTAMP = 1777161775
-SHA256 (openssh-10.3p1.tar.gz) = 56682a36bb92dcf4b4f016fd8ec8e74059b79a8de25c15d670d731e7d18e45f4
-SIZE (openssh-10.3p1.tar.gz) = 2007369
-SHA256 (openssh-10.3p1-gsskex-all-debian-rh-10.3p1.patch) = 58f2d59009442572107f6e02c43145676d4ee6461907f719820c77b07adb6612
-SIZE (openssh-10.3p1-gsskex-all-debian-rh-10.3p1.patch) = 126667
+TIMESTAMP = 1784648115
+SHA256 (openssh-10.4p1.tar.gz) = ef6026dd2aea8d56059638d5d3262902c892ceba9f88395835e0d06d3fb63238
+SIZE (openssh-10.4p1.tar.gz) = 2321796
+SHA256 (c147093565634eae9f91e4df99e04a6b3513f9c6.patch) = 862c37dd85fe286e8ea6394c0c8111d54688bb81617bbe3928a1138651687ebe
+SIZE (c147093565634eae9f91e4df99e04a6b3513f9c6.patch) = 4206
+SHA256 (openssh-10.4p1-gsskex-all-debian-rh-10.4p1.patch) = dc88ff53591dcafcb6ac148d451eb1b9adc9d2c047e68509354ea4f07dc56f41
+SIZE (openssh-10.4p1-gsskex-all-debian-rh-10.4p1.patch) = 124953

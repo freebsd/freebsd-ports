@@ -693,9 +693,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	char **patterns = NULL;
  	size_t n, npatterns = 0;
  	struct timeval tv[2];
---- work/openssh/servconf.c.orig	2025-04-09 00:02:43.000000000 -0700
-+++ work/openssh/servconf.c	2025-04-10 22:30:44.919047000 -0700
-@@ -69,6 +69,9 @@
+--- work/openssh/servconf.c.orig	2026-07-21 08:56:02.560966000 -0700
++++ work/openssh/servconf.c	2026-07-21 09:12:31.696064000 -0700
+@@ -62,6 +62,9 @@
  #include "myproposal.h"
  #include "digest.h"
  #include "version.h"
@@ -703,27 +703,13 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#include "sshbuf.h"
 +#endif
  
- #if !defined(SSHD_PAM_SERVICE)
- # define SSHD_PAM_SERVICE		"sshd"
-@@ -204,6 +207,14 @@ initialize_server_options(ServerOptions *options)
- 	options->authorized_principals_file = NULL;
- 	options->authorized_principals_command = NULL;
- 	options->authorized_principals_command_user = NULL;
-+#ifdef NONE_CIPHER_ENABLED
-+	options->none_enabled = -1;
-+#endif
-+#ifdef HPN_ENABLED
-+	options->tcp_rcv_buf_poll = -1;
-+	options->hpn_disabled = -1;
-+	options->hpn_buffer_size = -1;
-+#endif
- 	options->ip_qos_interactive = -1;
- 	options->ip_qos_bulk = -1;
- 	options->version_addendum = NULL;
-@@ -471,6 +482,57 @@ fill_default_server_options(ServerOptions *options)
- 	}
- 	if (options->permit_tun == -1)
- 		options->permit_tun = SSH_TUNMODE_NO;
+ #define SSHD_CONFIG_BLOB_VERSION	1
+ 
+@@ -303,7 +306,58 @@ fill_default_server_options(ServerOptions *options)
+ #undef SSHCONF_UNSUPPORTED_INT
+ #undef SSHCONF_UNSUPPORTED_STRING
+ #undef SSHCONF_ALIAS
++
 +#ifdef NONE_CIPHER_ENABLED
 +	if (options->none_enabled == -1) 
 +		options->none_enabled = 0;
@@ -742,7 +728,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		} else {
 +			int sock, socksize;
 +			socklen_t socksizelen = sizeof(socksize);
-+
+ 
 +			/*
 +			 * get the current RCV size and set it to that
 +			 * create a socket but don't connect it
@@ -775,51 +761,25 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	}
 +#endif
 +
- 	if (options->ip_qos_interactive == -1)
- 		options->ip_qos_interactive = IPTOS_DSCP_AF21;
- 	if (options->ip_qos_bulk == -1)
-@@ -573,6 +635,12 @@ typedef enum {
- 	sUsePrivilegeSeparation, sAllowAgentForwarding,
- 	sHostCertificate, sInclude,
- 	sRevokedKeys, sTrustedUserCAKeys, sAuthorizedPrincipalsFile,
-+#ifdef NONE_CIPHER_ENABLED
-+	sNoneEnabled,
-+#endif
-+#ifdef HPN_ENABLED
-+	sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
-+#endif
- 	sAuthorizedPrincipalsCommand, sAuthorizedPrincipalsCommandUser,
- 	sKexAlgorithms, sCASignatureAlgorithms, sIPQoS, sVersionAddendum,
- 	sAuthorizedKeysCommand, sAuthorizedKeysCommandUser,
-@@ -727,6 +795,14 @@ static struct {
- 	{ "revokedkeys", sRevokedKeys, SSHCFG_ALL },
- 	{ "trustedusercakeys", sTrustedUserCAKeys, SSHCFG_ALL },
- 	{ "authorizedprincipalsfile", sAuthorizedPrincipalsFile, SSHCFG_ALL },
-+#ifdef NONE_CIPHER_ENABLED
-+	{ "noneenabled", sNoneEnabled, SSHCFG_ALL },
-+#endif
-+#ifdef HPN_ENABLED
-+	{ "hpndisabled", sHPNDisabled, SSHCFG_ALL },
-+	{ "hpnbuffersize", sHPNBufferSize, SSHCFG_ALL },
-+	{ "tcprcvbufpoll", sTcpRcvBufPoll, SSHCFG_ALL },
-+#endif
- 	{ "kexalgorithms", sKexAlgorithms, SSHCFG_GLOBAL },
- 	{ "include", sInclude, SSHCFG_ALL },
- 	{ "ipqos", sIPQoS, SSHCFG_ALL },
-@@ -1568,6 +1644,25 @@ process_server_config_line_depth(ServerOptions *option
- 		intptr = &options->hostbased_authentication;
- 		goto parse_flag;
+ #ifdef USE_PAM
+ 	if (options->pam_service_name == NULL)
+ 		options->pam_service_name = xstrdup(SSHD_PAM_SERVICE);
+@@ -1350,8 +1404,27 @@ process_server_config_line_depth(ServerOptions *option
  
+ 	case sHostbasedAuthentication:
+ 		intptr = &options->hostbased_authentication;
++		goto parse_flag;
++
 +#ifdef NONE_CIPHER_ENABLED
 +	case sNoneEnabled:
 +		intptr = &options->none_enabled;
-+		goto parse_flag;
+ 		goto parse_flag;
 +#endif
 +#ifdef HPN_ENABLED
 +	case sTcpRcvBufPoll:
 +		intptr = &options->tcp_rcv_buf_poll;
 +		goto parse_flag;
-+
+ 
 +	case sHPNDisabled:
 +		intptr = &options->hpn_disabled;
 +		goto parse_flag;
@@ -832,24 +792,41 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	case sHostbasedUsesNameFromPacketOnly:
  		intptr = &options->hostbased_uses_name_from_packet_only;
  		goto parse_flag;
---- work.clean/openssh-6.8p1/servconf.h	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/servconf.h	2015-04-03 13:48:37.316827000 -0500
-@@ -169,6 +169,15 @@
- 
- 	int	use_pam;		/* Enable auth via PAM */
+--- work/openssh/servconf.h.orig	2026-07-21 08:56:02.562664000 -0700
++++ work/openssh/servconf.h	2026-07-21 09:05:57.527148000 -0700
+@@ -264,13 +264,31 @@ SSHCONF_ALIAS(KeepAlive, TCPKeepAlive, SSHCFG_GLOBAL)
+ SSHCONF_ALIAS(UseBlacklist, UseBlocklist, SSHCFG_GLOBAL) \
+ SSHCONF_ALIAS(KeepAlive, TCPKeepAlive, SSHCFG_GLOBAL)
  
 +#ifdef NONE_CIPHER_ENABLED
-+	int	none_enabled;		/* enable NONE cipher switch */	
++#define SSHD_CONFIG_HPN_NONE_ENABLED  \
++    SSHCONF_INTFLAG(none_enabled, NoneEnabled, SSHCFG_ALL, -1, SSHCFG_COPY_MATCH)
++#else
++#define SSHD_CONFIG_HPN_NONE_ENABLED
 +#endif
 +#ifdef HPN_ENABLED
-+	int     tcp_rcv_buf_poll;       /* poll tcp rcv window in autotuning kernels*/
-+	int	hpn_disabled;		/* disable hpn functionality. false by default */
-+	int	hpn_buffer_size;	/* set the hpn buffer size - default 3MB */
++#define SSHD_CONFIG_ENTRIES_HPN \
++SSHCONF_INTFLAG(hpn_buffer_size, HPNBufferSize, SSHCFG_ALL, -1, SSHCFG_COPY_MATCH) \
++SSHCONF_INTFLAG(tcp_rcv_buf_poll, TcpRcvBufPoll, SSHCFG_ALL, -1, SSHCFG_COPY_MATCH) \
++SSHCONF_INTFLAG(hpn_disabled, HPNDisabled, SSHCFG_ALL, -1, SSHCFG_COPY_MATCH) \
++SSHD_CONFIG_HPN_NONE_ENABLED
++#else
++#define SSHD_CONFIG_ENTRIES_HPN \
++SSHD_CONFIG_HPN_NONE_ENABLED
 +#endif
 +
- 	int	permit_tun;
+ #define SSHD_CONFIG_ENTRIES_BASE \
+ 	SSHD_CONFIG_ENTRIES_CUSTOM \
+ 	SSHD_CONFIG_ENTRIES_MAIN \
+ 	SSHD_CONFIG_ENTRIES_LEGACY \
+ 	SSHD_CONFIG_ENTRIES_ALIASES \
+ 	SSHD_CONFIG_ENTRIES_PAM \
+-	SSHD_CONFIG_ENTRIES_LASTLOG
++	SSHD_CONFIG_ENTRIES_LASTLOG \
++	SSHD_CONFIG_ENTRIES_HPN
  
- 	int	num_permitted_opens;
+ #ifdef USE_PAM
+ #define SSHD_CONFIG_ENTRIES_PAM \
 --- work/openssh-7.7p1/serverloop.c.orig	2018-04-01 22:38:28.000000000 -0700
 +++ work/openssh-7.7p1/serverloop.c	2018-06-27 16:53:02.246871000 -0700
 @@ -550,6 +550,12 @@ server_request_tun(struct ssh *ssh)
