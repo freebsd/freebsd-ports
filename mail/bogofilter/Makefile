@@ -1,49 +1,55 @@
 PORTNAME=	bogofilter
 DISTVERSION=	1.3.0.rc1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-1.3.0.beta/ \
 		https://gitlab.com/-/project/12408342/uploads/647db3bd2f28a1f91bdd3bb1945d91fe/
-PKGNAMESUFFIX?=	# blank by default, and ?= so slave ports can override
 
-MAINTAINER?=	mandree@FreeBSD.org
-COMMENT?=	Fast, teachable, learning spam detector (LMDB database)
+MAINTAINER=	mandree@FreeBSD.org
+COMMENT?=	Fast, teachable, learning spam detector (LMDB 0.9 database)
 WWW=		https://bogofilter.sourceforge.io/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+
+DEPRECATED?=	This port will update to LMDB 1.0. Please transition to bogofilter-lmdb1 before December 2026, see UPDATING
+# no EXPIRATION_DATE, we don't intend to remove this.
+# The plan is: at the same time as bogofilter-lmdb1 expires, upgrade this port to LMDB 1.0.
+
+USES+=		cpe perl5 shebangfix tar:xz
+CPE_VENDOR=	bogofilter_project
+USE_PERL5=	run
+
+SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \
+		src/tests/unsort.pl contrib/*.pl
+GNU_CONFIGURE=	yes
+
+TEST_TARGET=	check
+
+CONFLICTS_INSTALL?=	bogofilter-kc bogofilter-lmdb1 bogofilter-sqlite
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		GSL UNICODE DOCS
 OPTIONS_DEFAULT=	GSL UNICODE
 GSL_DESC=		Link with system-wide GSL dynamically (recommended)
 UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 
-CONFLICTS_INSTALL?=	bogofilter-bdb bogofilter-kc bogofilter-lmdb bogofilter-sqlite  # bogofilter-bdb and -lmdb are historic, but let's keep them for a while
-
-USES+=		cpe perl5 shebangfix tar:xz
-SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \
-		src/tests/unsort.pl contrib/*.pl
-USE_PERL5=	run
-GNU_CONFIGURE=	yes
-
-CPE_VENDOR=	bogofilter_project
-
-UNICODE_USES=	iconv
-UNICODE_CONFIGURE_ENABLE=	unicode
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 GSL_CONFIGURE_OFF=	--with-included-gsl
 
-PORTDOCS=	*
-
-TEST_TARGET=	check
+UNICODE_USES=	iconv
+UNICODE_CONFIGURE_ENABLE=	unicode
 
 .include <bsd.port.pre.mk>
 
 BF_CPPFLAGS?=		-I${LOCALBASE}/include
 BF_LIBS?=		# empty, can be passed in by slave ports
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
-.if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
+
+.if ${MASTERDIR} == ${.CURDIR}
+# we're building the master port
 CONFIGURE_ARGS+=	--with-database=lmdb
-LIB_DEPENDS=   liblmdb.so:databases/lmdb0
+LIB_DEPENDS+=	liblmdb.so.0:databases/lmdb0
 .endif
 .if ${PORT_OPTIONS:MUNICODE}
 BF_LIBS+=		${ICONV_LIB}

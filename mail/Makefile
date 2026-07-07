@@ -29,6 +29,7 @@
     SUBDIR += bmf
     SUBDIR += bogofilter
     SUBDIR += bogofilter-kc
+    SUBDIR += bogofilter-lmdb1
     SUBDIR += bogofilter-sqlite
     SUBDIR += bsd-vacation
     SUBDIR += bsfilter

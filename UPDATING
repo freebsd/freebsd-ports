@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260707:
+  AFFECTS: users of mail/bogofilter
+  AUTHOR: mandree@FreeBSD.org
+
+  Due to the LMDB 1.0 incompatibility (see 20260702 entry for
+  databases/lmdb), mail/bogofilter currently depends on lmdb0
+  so it can continue using existing wordlist.lmdb databases.
+
+  For users who wish to transition to LMDB 1.0.0, please:
+  - identify all wordlist.lmdb files, and
+  - for each of them, run:
+    bogoutil -d /path/to/wordlist.ldmb >/path/to/wordlist.txt
+  - THEN you can install to mail/bogofilter-lmdb1,
+  - for each of the wordlist.lmdb files, move them to a safe
+    place, and recreate them from the text file, i.e.
+    for each, run:
+    bogoutil -l /path/to/wordlist.lmdb </path/to/wordlist.txt
+
+  At a later point, we will upgrade mail/bogofilter to refer
+  to lmdb 1.0 and remove the bogofilter-lmdb1 port.
+
 20260702:
   AFFECTS: users of databases/lmdb
   AUTHOR: delphij@FreeBSD.org
