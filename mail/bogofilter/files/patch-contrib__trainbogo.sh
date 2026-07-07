@@ -1,6 +1,6 @@
---- ./contrib/trainbogo.sh.orig	2007-07-24 00:44:06.000000000 +0200
-+++ ./contrib/trainbogo.sh	2011-08-31 12:15:20.000000000 +0200
-@@ -181,7 +181,7 @@
+--- contrib/trainbogo.sh.orig	2025-04-04 13:02:33 UTC
++++ contrib/trainbogo.sh
+@@ -178,7 +178,7 @@ if [ ! -f "${list}" ] || [ -n "${dofilelist}" ]; then
      for i in "${hamdir}"/* "${spamdir}"/*
        do
        [ ! -f "${i}" ] && continue
