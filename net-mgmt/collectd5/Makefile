@@ -1,6 +1,6 @@
 PORTNAME=	collectd
 DISTVERSION=	5.12.0
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -154,8 +154,8 @@ MODBUS_LIB_DEPENDS=		libmodbus.so:comms/libmodbus
 MODBUS_CONFIGURE_ENABLE=	modbus
 MODBUS_CONFIGURE_WITH=		libmodbus=use_pkgconfig
 
-MONGODB_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
-				libmongoc-1.0.so:devel/mongo-c-driver
+MONGODB_LIB_DEPENDS=		libbson2.so:devel/libbson \
+				libmongoc2.so:devel/mongo-c-driver
 MONGODB_CONFIGURE_ENABLE=	write_mongodb
 MONGODB_CONFIGURE_WITH=		libmongoc
 
