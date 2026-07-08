@@ -1,7 +1,7 @@
 PORTNAME=		fastnetmon
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.2.9
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		net-mgmt security
 
 MAINTAINER=		farrokhi@FreeBSD.org
@@ -16,8 +16,8 @@ BROKEN_armv7=	does not build: invokes x86 assembler
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp \
-		libmongoc-1.0.so:devel/mongo-c-driver \
-		libbson-1.0.so:devel/libbson \
+		libmongoc2.so:devel/mongo-c-driver \
+		libbson2.so:devel/libbson \
 		libcapnp.so:devel/capnproto \
 		libgrpc.so:devel/grpc \
 		libprotobuf.so:devel/protobuf \
