@@ -1,6 +1,6 @@
 PORTNAME=	freenginx
 PORTVERSION=	1.30.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -287,7 +287,8 @@ post-patch-FASTDFS-on:
 		${WRKSRC_fastdfs}/src/config
 
 post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!\/usr!${LOCALBASE}!g' \
+	@${REINPLACE_CMD} -e 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+		-e 's!%%MONGOC_VERSION%%!${MONGOC_VERSION}!g' \
 		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
