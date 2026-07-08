@@ -293,7 +293,8 @@ post-patch-FASTDFS-on:
 		${WRKSRC_fastdfs}/src/config
 
 post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!\/usr!${LOCALBASE}!g' \
+	@${REINPLACE_CMD} -e 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+		-e 's!%%MONGOC_VERSION%%!${MONGOC_VERSION}!g' \
 		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
