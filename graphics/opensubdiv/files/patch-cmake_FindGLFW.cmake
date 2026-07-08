@@ -1,6 +1,6 @@
---- cmake/FindGLFW.cmakeorig	2018-02-08 09:39:46 UTC
+--- cmake/FindGLFW.cmake.orig	2025-10-24 17:23:59 UTC
 +++ cmake/FindGLFW.cmake
-@@ -174,7 +174,7 @@ else ()
+@@ -157,7 +157,7 @@ else ()
                  message(FATAL_ERROR "Xi library not found - required for GLFW")
              endif()
  
