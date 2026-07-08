@@ -1,0 +1,14 @@
+--- ../nginx-gridfs-059bdc3/nginx-gridfs/config.orig	2026-07-07 12:40:20.001344000 +0000
++++ ../nginx-gridfs-059bdc3/nginx-gridfs/config	2026-07-07 12:41:06.850920000 +0000
+@@ -1,7 +1,7 @@
+ ngx_module_type=HTTP
+ ngx_module_name=ngx_http_gridfs_module
+-ngx_module_incs="/usr/include/libmongoc-1.0 /usr/include/libbson-1.0"
+-ngx_module_libs="-lmongoc-1.0 -lbson-1.0"
++ngx_module_incs="%%LOCALBASE%%/include/mongoc-%%MONGOC_VERSION%% %%LOCALBASE%%/include/bson-%%MONGOC_VERSION%%"
++ngx_module_libs="-lmongoc2 -lbson2"
+ ngx_module_srcs="$ngx_addon_dir/ngx_http_gridfs_module.c"
+ . auto/module
+-ngx_addon_name=$ngx_module_name
+\ No newline at end of file
++ngx_addon_name=$ngx_module_name
