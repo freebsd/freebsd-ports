@@ -1,5 +1,5 @@
 PORTNAME=	libmongocrypt
-DISTVERSION=	1.15.1
+DISTVERSION=	1.20.0
 CATEGORIES=	databases
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -9,8 +9,8 @@ WWW=		https://github.com/mongodb/libmongocrypt
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
-		libmongoc-1.0.so:devel/mongo-c-driver
+LIB_DEPENDS=	libbson2.so:devel/libbson \
+		libmongoc2.so:devel/mongo-c-driver
 
 USES=		cmake cpe python:build ssl
 
@@ -20,7 +20,8 @@ GH_ACCOUNT=	mongodb
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_VERSION=${DISTVERSION} \
-		-DMONGOCRYPT_MONGOC_DIR="USE-SYSTEM"
+		-DMONGOCRYPT_MONGOC_DIR="USE-SYSTEM" \
+		-DMONGOCRYPT_CRYPTO=OpenSSL
 CMAKE_ON=	USE_SHARED_LIBBSON
 CMAKE_OFF=	BUILD_TESTING ENABLE_ONLINE_TESTS \
 		MONGOCRYPT_ENABLE_DECIMAL128
