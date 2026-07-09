@@ -1,16 +1,16 @@
 PORTNAME=	lunitx
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Extended version of lunit, a unit testing framework for Lua
 WWW=		https://github.com/dcurrie/lunit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		lua:52-54
+USES=		lua:52-55
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dcurrie
