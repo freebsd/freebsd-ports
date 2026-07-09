@@ -1,5 +1,6 @@
 PORTNAME=	hipercontracer
 DISTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
@@ -98,8 +99,8 @@ LIBHPCTDB_MARIADB_LIB_DEPENDS=	libmariadb.so:databases/mariadb118-client
 LIBHPCTDB_MARIADB_CMAKE_BOOL=	ENABLE_BACKEND_MARIADB
 
 LIBHPCTDB_MONGODB_IMPLIES=	LIBHPCTDB
-LIBHPCTDB_MONGODB_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
-				libmongoc-1.0.so:devel/mongo-c-driver
+LIBHPCTDB_MONGODB_LIB_DEPENDS=	libbson2.so:devel/libbson \
+				libmongoc2.so:devel/mongo-c-driver
 LIBHPCTDB_MONGODB_CMAKE_BOOL=	ENABLE_BACKEND_MONGODB
 
 LIBHPCTDB_POSTGRESQL_IMPLIES=		LIBHPCTDB
