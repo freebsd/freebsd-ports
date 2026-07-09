@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.12-20260706
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -126,8 +126,8 @@ CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
 LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
-MONGO_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
-				libmongoc-1.0.so:devel/mongo-c-driver
+MONGO_LIB_DEPENDS=		libbson2.so:devel/libbson \
+				libmongoc2.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql
 PCRE2_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
 PGSQL_USES=			pgsql
@@ -135,6 +135,9 @@ SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 TLSRPT_LIB_DEPENDS=		libtlsrpt.so:mail/libtlsrpt
+
+MONGOC_VERSION!=		cd ${.CURDIR}/../../devel/mongo-c-driver; \
+				make -V DISTVERSION
 
 ALL_TARGET=	default
 
@@ -297,9 +300,9 @@ IGNORE=		blocklistd is only supported on FreeBSD
 
 .if ${PORT_OPTIONS:MMONGO}
 DYN_EXT+=		mongodb
-POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/libmongoc-1.0 \
-			-I${LOCALBASE}/include/libbson-1.0
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc-1.0 -lbson-1.0"
+POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/mongoc-${MONGOC_VERSION} \
+			-I${LOCALBASE}/include/bson-${MONGOC_VERSION}
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc2 -lbson2"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
