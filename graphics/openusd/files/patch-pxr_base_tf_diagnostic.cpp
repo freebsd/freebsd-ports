@@ -1,4 +1,4 @@
---- pxr/base/tf/diagnostic.cpp.orig	2025-10-24 16:21:56 UTC
+--- pxr/base/tf/diagnostic.cpp.orig	2026-04-24 18:55:54 UTC
 +++ pxr/base/tf/diagnostic.cpp
 @@ -20,6 +20,7 @@
  #include <cstdio>
@@ -6,5 +6,5 @@
  #include <csignal>
 +#include <unistd.h>
  
- using std::string;
- 
+ #if defined(ARCH_OS_WASM_VM)
+ #include <emscripten.h>

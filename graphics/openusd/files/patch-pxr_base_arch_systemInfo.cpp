@@ -1,4 +1,4 @@
---- pxr/base/arch/systemInfo.cpp.orig	2025-10-24 16:21:56 UTC
+--- pxr/base/arch/systemInfo.cpp.orig	2026-04-24 18:55:54 UTC
 +++ pxr/base/arch/systemInfo.cpp
 @@ -15,7 +15,7 @@
  #include <functional>
@@ -53,7 +53,7 @@
  
  #elif defined(ARCH_OS_DARWIN)
  
-@@ -177,7 +185,7 @@ ArchGetPageSize()
+@@ -180,7 +188,7 @@ ArchGetPageSize()
  ArchGetPageSize()
  {
  #if defined(ARCH_OS_LINUX) || defined(ARCH_OS_DARWIN) || \
