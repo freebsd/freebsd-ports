@@ -18,7 +18,7 @@ date=$(awk -F "=" /^compiler_date/'{print $2}' /tmp/stage0)
 
 version=$(make -C "${PORTSDIR}/lang/rust" -V PORTVERSION)
 
-export ABI=FreeBSD:13:amd64
+export ABI=FreeBSD:14:amd64
 export INSTALL_AS_USER=1
 export PKG_DBDIR="${DATADIR}/pkgdb"
 pkg update -f -r FreeBSD-ports
