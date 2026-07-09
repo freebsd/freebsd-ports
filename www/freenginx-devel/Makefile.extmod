@@ -70,9 +70,12 @@ FORMINPUT_IMPLIES=	DEVEL_KIT
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
 
 GRIDFS_GH_TUPLE=	nieoding:nginx-gridfs:059bdc3:gridfs
-GRIDFS_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
-			libmongoc-1.0.so:devel/mongo-c-driver
+GRIDFS_LIB_DEPENDS=	libbson2.so:devel/libbson \
+			libmongoc2.so:devel/mongo-c-driver
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
+MONGOC_VERSION!=	cd ${.CURDIR}/../../devel/mongo-c-driver; make -V DISTVERSION
+GRIDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-gridfs_config \
+			${PATCHDIR}/extra-patch-ngnx-gridfs_ngx_http_gridfs_module.c
 
 HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:v0.39:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
