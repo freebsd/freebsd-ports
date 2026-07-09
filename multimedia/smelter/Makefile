@@ -1,6 +1,6 @@
 PORTNAME=	smelter
-DISTVERSIONPREFIX=	vk-video/v
-DISTVERSION=	0.3.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +71,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		base64ct-1.6.0 \
 		bindgen-0.65.1 \
 		bindgen-0.72.1 \
-		bit-set-0.9.1 \
+		bit-set-0.10.0 \
 		bit-vec-0.9.1 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
@@ -117,6 +117,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		concurrent-queue-2.5.0 \
 		console_error_panic_hook-0.1.7 \
 		const-oid-0.9.6 \
+		const-random-0.1.18 \
+		const-random-macro-0.1.16 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
@@ -170,8 +172,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		encoding_rs-0.8.35 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
-		etagere-0.2.15 \
-		euclid-0.22.11 \
+		etagere-0.3.0 \
+		euclid-0.22.14 \
 		exr-1.73.0 \
 		fastrand-2.3.0 \
 		fdeflate-0.3.7 \
@@ -190,6 +192,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		foldhash-0.2.0 \
 		font-types-0.10.1 \
 		font-types-0.11.1 \
+		font8x8-0.3.1 \
 		fontconfig-parser-0.5.7 \
 		fontdb-0.14.1 \
 		fontdb-0.23.0 \
@@ -225,22 +228,19 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		glow-0.17.0 \
 		glutin_wgl_sys-0.6.1 \
 		gpu-allocator-0.28.0 \
-		gpu-descriptor-0.3.2 \
-		gpu-descriptor-types-0.2.0 \
 		group-0.13.0 \
 		h2-0.4.7 \
 		h264-reader-0.8.0 \
 		half-2.6.0 \
 		harfrust-0.5.2 \
 		hashbrown-0.12.3 \
-		hashbrown-0.15.2 \
 		hashbrown-0.16.1 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hermit-abi-0.4.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
 		hex-slice-0.1.4 \
-		hexf-parse-0.2.1 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
 		home-0.5.12 \
@@ -272,6 +272,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		indexmap-2.12.1 \
 		inout-0.1.3 \
 		inquire-0.7.5 \
+		instant-0.1.13 \
 		interceptor-0.17.1 \
 		ipnet-2.11.0 \
 		is_terminal_polyfill-1.70.1 \
@@ -315,6 +316,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		memoffset-0.7.1 \
 		microfft-0.6.0 \
 		mime-0.3.17 \
+		minifb-0.28.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-0.8.11 \
@@ -324,7 +326,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		multer-3.1.0 \
 		munge-0.4.7 \
 		munge_macro-0.4.7 \
-		naga-29.0.0 \
 		nalgebra-0.32.6 \
 		nalgebra-glm-0.18.0 \
 		native-tls-0.2.13 \
@@ -334,6 +335,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		ndk-sys-0.6.0+11769913 \
 		newline-converter-0.3.0 \
 		nix-0.23.2 \
+		nix-0.24.3 \
 		nix-0.26.4 \
 		nom-7.1.3 \
 		nu-ansi-term-0.50.1 \
@@ -359,11 +361,11 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		oid-registry-0.7.1 \
 		once_cell-1.21.3 \
 		opaque-debug-0.3.1 \
-		openssl-0.10.72 \
+		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.107 \
+		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		opus-0.3.0 \
 		orbclient-0.3.48 \
@@ -407,7 +409,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		quote-1.0.38 \
 		rancor-0.1.1 \
 		rand-0.8.5 \
-		rand-0.9.2 \
+		rand-0.9.3 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
@@ -438,8 +440,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		rfc6979-0.4.0 \
 		rgb-0.8.50 \
 		ring-0.17.14 \
-		rkyv-0.8.15 \
-		rkyv_derive-0.8.15 \
+		rkyv-0.8.16 \
+		rkyv_derive-0.8.16 \
 		roxmltree-0.18.1 \
 		roxmltree-0.20.0 \
 		rtcp-0.17.1 \
@@ -457,7 +459,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		rustls-native-certs-0.8.3 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.12.0 \
-		rustls-webpki-0.103.10 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.19 \
 		rustybuzz-0.7.0 \
 		ryu-1.0.19 \
@@ -470,6 +472,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		scopeguard-1.2.0 \
 		scratch-1.0.7 \
 		sctk-adwaita-0.8.3 \
+		sdl2-0.35.2 \
+		sdl2-sys-0.35.2 \
 		sdp-0.17.1 \
 		sec1-0.7.3 \
 		security-framework-2.11.1 \
@@ -522,7 +526,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		stun-0.17.1 \
 		substring-1.4.5 \
 		subtle-2.6.1 \
-		svg_fmt-0.4.4 \
 		svgtypes-0.11.0 \
 		swash-0.2.6 \
 		syn-1.0.109 \
@@ -532,7 +535,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		sys-locale-0.3.2 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		tempfile-3.16.0 \
 		termcolor-1.4.1 \
 		thiserror-1.0.69 \
@@ -544,6 +547,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
+		tiny-keccak-2.0.2 \
 		tiny-skia-0.10.0 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.10.0 \
@@ -611,6 +615,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		v4l2-sys-mit-0.3.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
+		version-compare-0.1.1 \
 		version_check-0.9.5 \
 		visibility-0.1.1 \
 		vk-mem-0.4.0 \
@@ -625,13 +630,19 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		wasm-bindgen-macro-support-0.2.114 \
 		wasm-bindgen-shared-0.2.114 \
 		wayland-backend-0.3.8 \
+		wayland-client-0.29.5 \
 		wayland-client-0.31.8 \
+		wayland-commons-0.29.5 \
 		wayland-csd-frame-0.3.0 \
+		wayland-cursor-0.29.5 \
 		wayland-cursor-0.31.8 \
+		wayland-protocols-0.29.5 \
 		wayland-protocols-0.31.2 \
 		wayland-protocols-plasma-0.2.0 \
 		wayland-protocols-wlr-0.2.0 \
+		wayland-scanner-0.29.5 \
 		wayland-scanner-0.31.6 \
+		wayland-sys-0.29.5 \
 		wayland-sys-0.31.6 \
 		web-sys-0.3.91 \
 		web-time-0.2.4 \
@@ -644,15 +655,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		webrtc-srtp-0.17.1 \
 		webrtc-util-0.17.1 \
 		weezl-0.1.12 \
-		wgpu-29.0.0 \
-		wgpu-core-29.0.0 \
-		wgpu-core-deps-apple-29.0.0 \
-		wgpu-core-deps-emscripten-29.0.0 \
-		wgpu-core-deps-wasm-29.0.0 \
-		wgpu-core-deps-windows-linux-android-29.0.0 \
-		wgpu-hal-29.0.0 \
-		wgpu-naga-bridge-29.0.0 \
-		wgpu-types-29.0.0 \
 		which-4.4.2 \
 		wide-0.7.32 \
 		widestring-1.1.0 \
@@ -753,8 +755,9 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
 		zune-inflate-0.2.54 \
-		mp4@git+https://github.com/smelter-labs/mp4-rust.git?branch=preserve-asc\#e0d3e9eb4b14b0ee127f3c44b578375d954c14d5 \
-		glyphon@git+https://github.com/grovesNL/glyphon?rev=28f1cb9\#28f1cb92e120ab790eca9ecc6aeb0ed8c8336fc0
+		naga,wgpu,wgpu-core,wgpu-core-deps-apple,wgpu-core-deps-emscripten,wgpu-core-deps-wasm,wgpu-core-deps-windows-linux-android,wgpu-hal,wgpu-naga-bridge,wgpu-types@git+https://github.com/gfx-rs/wgpu?rev=1503796\#1503796ad4cf16f1a8010fbcf2fa09e626b198f6 \
+		glyphon@git+https://github.com/smelter-labs/glyphon?rev=33b3dfe\#33b3dfed4c2867ba7d94ecba4b5b68f031c35f0d \
+		mp4@git+https://github.com/smelter-labs/mp4-rust.git?branch=preserve-asc\#e0d3e9eb4b14b0ee127f3c44b578375d954c14d5
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
