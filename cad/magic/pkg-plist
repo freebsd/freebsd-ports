@@ -3,7 +3,6 @@ bin/ext2spice
 bin/magic
 lib/magic/doc/addendum6_5.ps
 lib/magic/doc/copyright.ps
-lib/magic/doc/html/Makefile
 lib/magic/doc/html/addcommandentry.html
 lib/magic/doc/html/addpath.html
 lib/magic/doc/html/antennacheck.html
