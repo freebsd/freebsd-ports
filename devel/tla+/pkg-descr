@@ -1,0 +1,19 @@
+TLA+ is a language for modeling software above the code level and
+hardware above the circuit level. The tool most commonly used by
+engineers is the TLC model checker, but there is also a proof
+checker. TLA+ is based on mathematics and does not resemble any
+programming language. Most engineers will find PlusCal to be the
+easiest way to start using TLA+.
+
+This port installs the TLA+ command-line tools packaged as
+tla2tools.jar, with wrapper scripts for each:
+
+  tla-tlc      - the TLC model checker, which explores a
+                 specification's state space to check safety and
+                 liveness properties
+  tla-sany     - the SANY syntactic and semantic analyzer (parser)
+  tla-tla2sany - export a parsed TLA+ module as an XML parse tree
+  tla-pcal     - the PlusCal-to-TLA+ translator
+  tla-tla2tex  - the LaTeX pretty printer for TLA+ specifications
+
+The graphical TLA Toolbox IDE is not included.
