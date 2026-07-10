@@ -8,7 +8,7 @@
  
  [project]
  name = "mashumaro"
- version = "3.17"
+ version = "3.22"
 -license = "Apache-2.0"
 +license = { text = "Apache-2.0" }
  description = "Fast and well tested serialization library"
