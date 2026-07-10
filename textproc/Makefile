@@ -207,6 +207,7 @@
     SUBDIR += fcitx-qt5
     SUBDIR += fcitx-table-other
     SUBDIR += fcitx5
+    SUBDIR += fcitx5-afrim
     SUBDIR += fcitx5-configtool
     SUBDIR += fcitx5-gtk
     SUBDIR += fcitx5-gtk-common
