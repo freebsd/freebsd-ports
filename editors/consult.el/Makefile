@@ -1,5 +1,5 @@
 PORTNAME=	consult.el
-DISTVERSION=	3.3
+DISTVERSION=	3.6
 CATEGORIES=	editors elisp
 
 MAINTAINER=	pat@patmaddox.com
@@ -9,7 +9,7 @@ WWW=		https://github.com/minad/consult
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	compat.el>=30.1.0.0:misc/compat.el
+RUN_DEPENDS=	compat.el>=31.0.0.0:misc/compat.el
 
 USES=		emacs
 USE_GITHUB=	yes
