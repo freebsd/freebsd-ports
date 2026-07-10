@@ -1,6 +1,5 @@
 PORTNAME=	perspective.el
-DISTVERSION=	2.20
-PORTREVISION=	2
+DISTVERSION=	2.22
 CATEGORIES=	editors elisp
 
 MAINTAINER=	pat@patmaddox.com
