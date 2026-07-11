@@ -1,6 +1,5 @@
 PORTNAME=	python-semantic-release
-PORTVERSION=	10.5.3
-PORTREVISION=	6
+PORTVERSION=	10.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-semantic-release/python-semantic-release/releases/download/v${PORTVERSION}/
@@ -15,14 +14,14 @@ WWW=		https://python-semantic-release.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0<83.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.42<1:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.3.0<8.4:devel/py-click@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0<9.0.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-option-group>=0.5<1:devel/py-click-option-group@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deprecated>=1.2<2:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dotty-dict>=1.3<2:devel/py-dotty-dict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=3.0<4:devel/py-gitpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.0<7:devel/py-importlib-resources@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0<3:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gitlab>=4.0.0<9.0.0:devel/py-python-gitlab@${PY_FLAVOR} \
