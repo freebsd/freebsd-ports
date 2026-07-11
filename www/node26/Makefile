@@ -33,12 +33,13 @@ LIB_DEPENDS=	libada.so:devel/libada \
 		libnghttp3.so:www/libnghttp3 \
 		libngtcp2.so:net/libngtcp2 \
 		libsimdjson.so:devel/simdjson \
+		libsqlite3.so:databases/sqlite3 \
 		libuv.so:devel/libuv \
 		libuvwasi.so:devel/uvwasi \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix sqlite tar:xz
+USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ada \
