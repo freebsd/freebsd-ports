@@ -1,6 +1,7 @@
 PORTNAME=	rocksdb
 PORTVERSION=	11.1.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +20,8 @@ BROKEN_armv7=	does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
+		libtbb.so:devel/onetbb \
+		libgtest.so:devel/googletest \
 		libsnappy.so:archivers/snappy
 
 USES=		compiler:c++20-lang gmake localbase:ldflags perl5
@@ -30,7 +33,8 @@ CONFIGURE_ARGS=	make_config.mk
 CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_DISABLE_PG=1 ROCKSDB_ROOT=${WRKSRC}
 CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 HAS_CONFIGURE=	yes
-MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1 V=1
+MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1 V=1 \
+		DISABLE_WARNING_AS_ERROR=yes
 USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
@@ -66,6 +70,17 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e 's| -march=native||' ${WRKSRC}/build_tools/build_detect_platform
 .endif
+
+post-stage:
+	# To be removed when this ports uses cmake
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/modules
+	${INSTALL_DATA} ${WRKSRC}/cmake/RocksDBConfig.cmake.in	\
+		${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/RocksDBConfig.cmake
+	${INSTALL_DATA} ${FILESDIR}/RocksDBTargets.cmake	\
+		${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/
+	${SED} -e 's|%%VERSION%%|${PORTVERSION}|;s|%%VER%%|${PORTVERSION:R:R}|' \
+		${FILESDIR}/RocksDBTargets-release.cmake.in > ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/RocksDBTargets-release.cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/* ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/modules/
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
