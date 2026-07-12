@@ -1,5 +1,6 @@
 PORTNAME=	zeek
 DISTVERSION=	8.0.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -171,6 +172,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zeek-cut
 	@${RM} ${STAGEDIR}${PREFIX}/share/zeek/tests
 	${LN} -s ../btest/data ${STAGEDIR}${PREFIX}/share/zeek/tests
+	# upstream leaks a lot of empty include directories!
+	@${FIND} ${STAGEDIR}${PREFIX}/include/zeek -type d -empty -delete
 
 post-install-ZEEKCTL-on:
 	${MKDIR} ${STAGEDIR}/var/spool/zeek/installed-scripts-do-not-touch/auto

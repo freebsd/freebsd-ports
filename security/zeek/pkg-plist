@@ -1,9 +1,3 @@
-@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/log/zeek
-@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek
-@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/tmp
-%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch
-%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/auto
-%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/site
 bin/bifcl
 bin/binpac
 %%ZEEKCTL%%bin/capstats
@@ -2302,11 +2296,19 @@ share/zeek/tests
 %%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local-worker.zeek
 %%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local.zeek
 %%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local.zeek.sample
+%%ZEEKCTL%%/var/spool/zeek/zeekctl-config.sh
+@dir var/lib
 @dir share/man/man8
 @dir share/man/man1
 @dir share/man
 %%SPICY%%@dir lib/zeek/spicy
 @dir lib/zeek/plugins
-@dir include/zeek/analyzer/protocol/quic
-@dir include/zeek/analyzer/protocol/ldap
 %%ZEEKCTL%%@postexec su -fm %%ZEEKUSER%% -c '%D/bin/zeekctl install; rm -f /var/spool/zeek/debug.log'
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/tmp
+%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/site
+%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/auto
+%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/extract_files
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/brokerstore
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/log/zeek
