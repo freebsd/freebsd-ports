@@ -2296,7 +2296,7 @@ share/zeek/tests
 %%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local-worker.zeek
 %%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local.zeek
 %%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local.zeek.sample
-%%ZEEKCTL%%/var/spool/zeek/zeekctl-config.sh
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/zeekctl-config.sh
 @dir var/lib
 @dir share/man/man8
 @dir share/man/man1
