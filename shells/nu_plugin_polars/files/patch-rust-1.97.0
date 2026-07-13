@@ -1,0 +1,131 @@
+From 87e3457c095c98fcac554548ee80f56e0cfb80ae Mon Sep 17 00:00:00 2001
+From: YangJie <yangjie01@baidu.com>
+Date: Mon, 20 Apr 2026 23:31:00 +0800
+Subject: [PATCH] fix: replace transmute UB in error constructors with safe
+ alternatives (#58)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+## Summary
+
+`pie()` used `unsafe { mem::transmute(kind) }` to create a
+`ParseIntError` from an `IntErrorKind`, and `tfie()` used `unsafe {
+mem::transmute(()) }` to create a `TryFromIntError`. Both rely on
+unstable internal layouts of standard library types.
+
+Starting with Rust nightly `nightly-2026-04-18` (commit `e9e32aca5`,
+2026-04-17) on Linux x86_64, `TryFromIntError` grew from 0 to 1 byte,
+causing `tfie()` to fail at compile time:
+
+```
+error[E0512]: cannot transmute between types of different sizes, or dependently-sized types
+  --> src/error.rs:16:14
+   |
+16 |     unsafe { mem::transmute(()) }
+   |              ^^^^^^^^^^^^^^
+   |
+   = note: source type: `()` (0 bits)
+   = note: target type: `TryFromIntError` (8 bits)
+```
+
+`pie()` still compiles today but is equally fragile — it depends on
+`IntErrorKind` and `ParseIntError` having the same layout.
+
+## Changes
+
+Replace both functions with safe stdlib operations:
+
+- **`pie(kind)`**: `unsafe { mem::transmute(kind) }` → match on
+`IntErrorKind` and trigger real parse errors via `from_str_radix`. Stays
+`const fn`.
+- **`tfie()`**: `unsafe { mem::transmute(()) }` →
+`u8::try_from(-1i8).unwrap_err()`. No longer `const fn` since `TryFrom`
+isn't const-stable yet, but no call site uses it in const context.
+
+Other changes per review feedback:
+- Use `unreachable!()` for the wildcard match arm (internal-only input)
+- Remove `IntErrorKind::Zero` from `pie()` (not used by the library)
+
+## Verification
+
+- All 207 existing tests pass on stable, nightly (macOS), and nightly
+(Linux x86_64 via Docker)
+- Confirmed the original code **fails to compile** on
+`nightly-2026-04-18` Linux x86_64
+- Confirmed the fix **compiles and passes** on `nightly-2026-04-18`
+Linux x86_64
+- All CI lint checks pass: `cargo fmt`, `cargo clippy` (workspace,
+serde, macros, llvm-intrinsics)
+---
+ src/error.rs | 42 +++++++++++++++++++++++++++---------------
+ 1 file changed, 27 insertions(+), 15 deletions(-)
+
+diff --git a/src/error.rs b/src/error.rs
+index be09e79..117dd5a 100644
+--- cargo-crates/ethnum-1.5.2/src/error.rs
++++ cargo-crates/ethnum-1.5.2/src/error.rs
+@@ -1,25 +1,41 @@
+-//! Module with hacks for creating error variants for standard library errors
+-//! without public interfaces.
++//! Module with safe helpers for creating error variants for standard library
++//! errors without public constructors.
+ 
+-use core::{
+-    mem,
+-    num::{IntErrorKind, ParseIntError, TryFromIntError},
+-};
++use core::num::{IntErrorKind, ParseIntError, TryFromIntError};
+ 
+-/// Returns a `ParseIntError` from an `IntErrorKind`.
++/// Returns a `ParseIntError` with the specified `IntErrorKind`.
+ pub const fn pie(kind: IntErrorKind) -> ParseIntError {
+-    unsafe { mem::transmute(kind) }
++    match kind {
++        IntErrorKind::Empty => u8_parse_error(""),
++        IntErrorKind::InvalidDigit => u8_parse_error("?"),
++        IntErrorKind::PosOverflow => u8_parse_error("256"),
++        IntErrorKind::NegOverflow => i8_parse_error("-129"),
++        _ => unreachable!(),
++    }
++}
++
++const fn u8_parse_error(s: &str) -> ParseIntError {
++    let Err(err) = u8::from_str_radix(s, 10) else {
++        panic!("not a parse error!");
++    };
++    err
++}
++
++const fn i8_parse_error(s: &str) -> ParseIntError {
++    let Err(err) = i8::from_str_radix(s, 10) else {
++        panic!("not a parse error!");
++    };
++    err
+ }
+ 
+ /// Returns a `TryFromIntError`.
+-pub const fn tfie() -> TryFromIntError {
+-    unsafe { mem::transmute(()) }
++pub fn tfie() -> TryFromIntError {
++    u8::try_from(-1i8).unwrap_err()
+ }
+ 
+ #[cfg(test)]
+ mod tests {
+     use super::*;
+-    use core::num::NonZeroU32;
+ 
+     #[test]
+     #[allow(clippy::from_str_radix_10)]
+@@ -40,10 +56,6 @@ mod tests {
+             pie(IntErrorKind::NegOverflow),
+             i8::from_str_radix("-1337", 10).unwrap_err(),
+         );
+-        assert_eq!(
+-            pie(IntErrorKind::Zero),
+-            "0".parse::<NonZeroU32>().unwrap_err(),
+-        );
+     }
+ 
+     #[test]
