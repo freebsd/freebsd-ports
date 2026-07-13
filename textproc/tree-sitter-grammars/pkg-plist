@@ -1,11 +1,9 @@
 %%DATADIR%%/libtree-sitter-ada.so
 %%DATADIR%%/libtree-sitter-adl.so
 %%DATADIR%%/libtree-sitter-agda.so
-%%DATADIR%%/libtree-sitter-astro.so
 %%DATADIR%%/libtree-sitter-awk.so
 %%DATADIR%%/libtree-sitter-bash.so
 %%DATADIR%%/libtree-sitter-bass.so
-%%DATADIR%%/libtree-sitter-beancount.so
 %%DATADIR%%/libtree-sitter-bibtex.so
 %%DATADIR%%/libtree-sitter-bicep.so
 %%DATADIR%%/libtree-sitter-bitbake.so
@@ -17,10 +15,8 @@
 %%DATADIR%%/libtree-sitter-capnp.so
 %%DATADIR%%/libtree-sitter-cel.so
 %%DATADIR%%/libtree-sitter-clojure.so
-%%DATADIR%%/libtree-sitter-cmake.so
 %%DATADIR%%/libtree-sitter-comment.so
 %%DATADIR%%/libtree-sitter-cpon.so
-%%DATADIR%%/libtree-sitter-cpp.so
 %%DATADIR%%/libtree-sitter-css.so
 %%DATADIR%%/libtree-sitter-cue.so
 %%DATADIR%%/libtree-sitter-d.so
@@ -36,8 +32,6 @@
 %%DATADIR%%/libtree-sitter-edoc.so
 %%DATADIR%%/libtree-sitter-eex.so
 %%DATADIR%%/libtree-sitter-elisp.so
-%%DATADIR%%/libtree-sitter-elixir.so
-%%DATADIR%%/libtree-sitter-elm.so
 %%DATADIR%%/libtree-sitter-elvish.so
 %%DATADIR%%/libtree-sitter-embedded-template.so
 %%DATADIR%%/libtree-sitter-erlang.so
@@ -45,8 +39,6 @@
 %%DATADIR%%/libtree-sitter-fidl.so
 %%DATADIR%%/libtree-sitter-fish.so
 %%DATADIR%%/libtree-sitter-forth.so
-%%DATADIR%%/libtree-sitter-fortran.so
-%%DATADIR%%/libtree-sitter-fsharp.so
 %%DATADIR%%/libtree-sitter-gas.so
 %%DATADIR%%/libtree-sitter-gdscript.so
 %%DATADIR%%/libtree-sitter-gemini.so
@@ -67,14 +59,11 @@
 %%DATADIR%%/libtree-sitter-graphql.so
 %%DATADIR%%/libtree-sitter-groovy.so
 %%DATADIR%%/libtree-sitter-hare.so
-%%DATADIR%%/libtree-sitter-haskell-persistent.so
 %%DATADIR%%/libtree-sitter-haskell.so
-%%DATADIR%%/libtree-sitter-hcl.so
 %%DATADIR%%/libtree-sitter-heex.so
 %%DATADIR%%/libtree-sitter-hocon.so
 %%DATADIR%%/libtree-sitter-hoon.so
 %%DATADIR%%/libtree-sitter-hosts.so
-%%DATADIR%%/libtree-sitter-html.so
 %%DATADIR%%/libtree-sitter-hurl.so
 %%DATADIR%%/libtree-sitter-hyprlang.so
 %%DATADIR%%/libtree-sitter-iex.so
@@ -97,7 +86,6 @@
 %%DATADIR%%/libtree-sitter-latex.so
 %%DATADIR%%/libtree-sitter-ld.so
 %%DATADIR%%/libtree-sitter-ldif.so
-%%DATADIR%%/libtree-sitter-lean.so
 %%DATADIR%%/libtree-sitter-ledger.so
 %%DATADIR%%/libtree-sitter-llvm-mir.so
 %%DATADIR%%/libtree-sitter-llvm.so
@@ -114,7 +102,6 @@
 %%DATADIR%%/libtree-sitter-mojo.so
 %%DATADIR%%/libtree-sitter-move.so
 %%DATADIR%%/libtree-sitter-nasm.so
-%%DATADIR%%/libtree-sitter-nickel.so
 %%DATADIR%%/libtree-sitter-nim.so
 %%DATADIR%%/libtree-sitter-nix.so
 %%DATADIR%%/libtree-sitter-nu.so
@@ -124,14 +111,12 @@
 %%DATADIR%%/libtree-sitter-ohm.so
 %%DATADIR%%/libtree-sitter-opencl.so
 %%DATADIR%%/libtree-sitter-openscad.so
-%%DATADIR%%/libtree-sitter-org.so
 %%DATADIR%%/libtree-sitter-pascal.so
 %%DATADIR%%/libtree-sitter-passwd.so
 %%DATADIR%%/libtree-sitter-pem.so
 %%DATADIR%%/libtree-sitter-perl.so
 %%DATADIR%%/libtree-sitter-pest.so
 %%DATADIR%%/libtree-sitter-php-only.so
-%%DATADIR%%/libtree-sitter-php.so
 %%DATADIR%%/libtree-sitter-pkl.so
 %%DATADIR%%/libtree-sitter-po.so
 %%DATADIR%%/libtree-sitter-pod.so
@@ -150,7 +135,6 @@
 %%DATADIR%%/libtree-sitter-robot.so
 %%DATADIR%%/libtree-sitter-ron.so
 %%DATADIR%%/libtree-sitter-rst.so
-%%DATADIR%%/libtree-sitter-ruby.so
 %%DATADIR%%/libtree-sitter-rust.so
 %%DATADIR%%/libtree-sitter-scala.so
 %%DATADIR%%/libtree-sitter-scheme.so
@@ -189,7 +173,6 @@
 %%DATADIR%%/libtree-sitter-verilog.so
 %%DATADIR%%/libtree-sitter-vhdl.so
 %%DATADIR%%/libtree-sitter-vhs.so
-%%DATADIR%%/libtree-sitter-vue.so
 %%DATADIR%%/libtree-sitter-wast.so
 %%DATADIR%%/libtree-sitter-wat.so
 %%DATADIR%%/libtree-sitter-wgsl.so
@@ -197,7 +180,6 @@
 %%DATADIR%%/libtree-sitter-xit.so
 %%DATADIR%%/libtree-sitter-xml.so
 %%DATADIR%%/libtree-sitter-xtc.so
-%%DATADIR%%/libtree-sitter-yaml.so
 %%DATADIR%%/libtree-sitter-yuck.so
 %%DATADIR%%/libtree-sitter-zig.so
 %%DATADIR%%/version
