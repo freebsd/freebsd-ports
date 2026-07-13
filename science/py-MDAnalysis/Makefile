@@ -1,6 +1,6 @@
 PORTNAME=	MDAnalysis
 DISTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,10 +32,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GridDataFormats>=0.4.0:math/py-GridDataForma
 USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils cython autoplist pytest
 
-# tests as of 2.10.0
-
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-patch:
+	@${RM} -r ${WRKSRC}/doc
 
 .include <bsd.port.mk>
