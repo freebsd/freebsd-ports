@@ -138,8 +138,8 @@ _NPM_EXISTS_PKGFILE?=	no
 .  if exists(${PKGJSONSDIR}/${NPM_PKGFILE})
 _NPM_EXISTS_PKGFILE=	yes
 .  endif
-.  if (${_NPM_NAME} == yarn2 || ${_NPM_NAME} == yarn4 || ${_NPM_NAME} == pnpm) && \
-	${_NPM_EXISTS_PKGFILE} == yes && empty(NPM_VER)
+.  if ${_NPM_NAME} == yarn2 || ${_NPM_NAME} == yarn4 || ${_NPM_NAME} == pnpm
+.    if ${_NPM_EXISTS_PKGFILE} == yes && empty(NPM_VER)
 NPM_VER!=	${CAT} ${PKGJSONSDIR}/${NPM_PKGFILE} | \
 		${TR} -d '\n\r\t' | ${SED} -e 's/ //g; s/"//g' | \
 		${SED} -E -e ' \
@@ -155,6 +155,7 @@ NPM_VER!=	${CAT} ${PKGJSONSDIR}/${NPM_PKGFILE} | \
 				s/.*packageManager:([^+,}]+).*/\1/p; d; \
 			}' | \
 		${CUT} -f 2 -d '@'
+.    endif
 .    if empty(NPM_VER)
 IGNORE=	does not specity version of ${NPM_CMDNAME} used for prefetching node modules
 .    else
