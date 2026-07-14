@@ -157,6 +157,10 @@ NPM_VER!=	${CAT} ${PKGJSONSDIR}/${NPM_PKGFILE} | \
 		${CUT} -f 2 -d '@'
 .    if empty(NPM_VER)
 IGNORE=	does not specity version of ${NPM_CMDNAME} used for prefetching node modules
+.    else
+_NPM_VER_PARTS=	${NPM_VER:S/./ /g}
+NPM_VER_MAJOR=	${_NPM_VER_PARTS:[1]}
+NPM_VER_MINOR=	${_NPM_VER_PARTS:[2]}
 .    endif
 .  endif
 
@@ -261,7 +265,7 @@ DISTFILES+=		${_DISTFILE_prefetch}:prefetch
 FETCH_DEPENDS+= ${_NPM_PKGNAME}>0:${_NPM_PORTDIR}
 .    elif ${_NPM_NAME} == pnpm
 FETCH_DEPENDS+=	jq:textproc/jq
-.      if ${NPM_VER:R:R} >= 11
+.      if ${NPM_VER_MAJOR} >= 11
 FETCH_DEPENDS+=	sqlite3:databases/sqlite3
 .      endif
 .    endif
@@ -300,7 +304,7 @@ npm-archive-node-modules:
 	fi
 .    elif ${_NPM_NAME:Myarn*} || ${_NPM_NAME} == pnpm
 .      if ${_NPM_NAME} == pnpm
-.        if ${NPM_VER:R:R} >= 11
+.        if ${NPM_VER_MAJOR} >= 11
 	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} ] && [ -d ${WRKDIR}/node-modules-cache ]; then \
 		${ECHO_MSG} "===>  Normalizing timestamps and permissions of prefetched node modules"; \
 		tmpdir=${WRKDIR}/pnpm_tmp; \
@@ -425,9 +429,10 @@ _USES_extract+=	600:npm-extract-node-package-manager \
 EXTRACT_DEPENDS+= ${_NPM_PKGNAME}>0:${_NPM_PORTDIR}
 .    elif ${_NPM_NAME} == yarn2 || ${_NPM_NAME} == yarn4 || ${_NPM_NAME} == pnpm
 EXTRACT_DEPENDS+= ${_NODEJS_PKGNAME}>0:${_NODEJS_PORT}
-.      if ${_NPM_NAME} == pnpm && ${NPM_VER:R:R} >= 11
+.      if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 11
 EXTRACT_DEPENDS+= sqlite3:databases/sqlite3
-.        if ${NPM_VER:R} >= 11.3
+.        if (${NPM_VER_MAJOR} == 11 && ${NPM_VER_MINOR} >= 3) || \
+	     ${NPM_VER_MAJOR} >= 12
 NPM_EXTRACT_FLAGS+=	--trust-lockfile
 .        endif
 .      endif
@@ -486,7 +491,7 @@ npm-install-node-modules:
 	fi
 .    elif ${_NPM_NAME} == pnpm
 	@${ECHO_MSG} "===>  Installing node modules from prefetched cache"
-.      if ${NPM_VER:R:R} >= 11
+.      if ${NPM_VER_MAJOR} >= 11
 	@if [ -d ${EXTRACT_WRKDIR}/${NPM_MODULE_CACHE} ]; then \
 		normalized_db_dump=${EXTRACT_WRKDIR}/${NPM_MODULE_CACHE}/v11/index_dump.sql; \
 		index_db=${EXTRACT_WRKDIR}/${NPM_MODULE_CACHE}/v11/index.db; \
