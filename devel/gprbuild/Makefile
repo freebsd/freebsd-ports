@@ -13,6 +13,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING3
 LICENSE_FILE_GPLv3RLE+ =	${WRKSRC}/COPYING.RUNTIME
 
+# See PR 296655
+IGNORE_i386=	It builds, but cannot be used to build other ports
+
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		ada:run python:build
