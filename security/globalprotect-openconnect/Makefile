@@ -1,7 +1,7 @@
 PORTNAME=	globalprotect-openconnect
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	guru@unixarea.de
@@ -10,6 +10,9 @@ WWW=		https://github.com/yuezk/GlobalProtect-openconnect
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=     This version has a vulnerability (CVE-2021-45810)
+EXPIRATION_DATE=        2026-08-31
 
 LIB_DEPENDS=	libopenconnect.so:security/openconnect \
 		libqt5keychain.so:security/qtkeychain@qt5
