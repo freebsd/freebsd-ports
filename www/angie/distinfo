@@ -53,7 +53,7 @@ SHA256 (kyprizel-testcookie-nginx-module-7d263d4322b7de6b99b486e5e10ecaf0295890a
 SIZE (kyprizel-testcookie-nginx-module-7d263d4322b7de6b99b486e5e10ecaf0295890ad_GH0.tar.gz) = 21042
 SHA256 (fdintino-nginx-upload-module-2.3.0_GH0.tar.gz) = c86e318addb9c88d70fdbd58ff1f6ef6f404a93070f6db8017a1f880c97946c4
 SIZE (fdintino-nginx-upload-module-2.3.0_GH0.tar.gz) = 40139
-SHA256 (dio-az-nginx-vod-module-v1.8.1_GH0.tar.gz) = 9785658b653a8f4ce67dec6ccdf4e8912c44a8ac2e9cea8f920aeac90288b62e
-SIZE (dio-az-nginx-vod-module-v1.8.1_GH0.tar.gz) = 457830
+SHA256 (dio-az-nginx-vod-module-v1.9.0_GH0.tar.gz) = f77f770b20a997502bcad1d8f178ac71314710a9ddd84f3830570a6e6848eda6
+SIZE (dio-az-nginx-vod-module-v1.9.0_GH0.tar.gz) = 460842
 SHA256 (tokers-zstd-nginx-module-0.1.1_GH0.tar.gz) = 707d534f8ca4263ff043066db15eac284632aea875f9fe98c96cea9529e15f41
 SIZE (tokers-zstd-nginx-module-0.1.1_GH0.tar.gz) = 55417
