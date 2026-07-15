@@ -2,13 +2,14 @@ PORTNAME=	kochi
 PORTVERSION=	20030809
 PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	OSDN/efont
+MASTER_SITES=	https://www.mirrorservice.org/pub/minix/distfiles/backup/ \
+		https://mirror.sobukus.de/files/grimoire/fonts-x11/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	${PORTNAME}-substitute-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Kochi Japanese TrueType font
-WWW=		http://wiki.fdiary.net/font/?kochi-alternative
+WWW=		https://web.archive.org/web/20070818042714/http://www.on.cs.keio.ac.jp/~yasu/jp_fonts.html
 
 LICENSE=	COPYINGATTACHED
 LICENSE_NAME=	Free redistribution with copyright document attached
