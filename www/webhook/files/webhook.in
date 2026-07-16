@@ -32,6 +32,6 @@ command_args="%%DAEMONARGS%% -p ${pidfile} ${procname} \
 	-hooks ${webhook_conf} ${webhook_options}"
 
 start_precmd="install -o ${webhook_user} /dev/null ${pidfile}"
-reload_cmd="pkill -SIGUSR1-U ${webhook_user} -F {pidfile} ${procname}"
+reload_cmd="pkill -SIGUSR1 -U ${webhook_user} -F ${pidfile} -f ${procname}"
 
 run_rc_command "$1"
