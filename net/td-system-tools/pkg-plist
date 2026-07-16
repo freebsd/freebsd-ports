@@ -131,9 +131,9 @@
 %%X509_TOOLS%%share/man/man1/view-crl.1.gz
 %%X509_TOOLS%%share/system-tools/CertificateHelper.py
 %%X509_TOOLS%%share/system-tools/generate-test-certificates
-%%GIMP_SCRIPTS_EXAMPLES%%share/system-tools/gimp-scripts-examples/Bergen.jpeg
+%%GIMP_SCRIPTS_EXAMPLES%%share/system-tools/gimp-scripts-examples/Bergen.webp
 %%GIMP_SCRIPTS_EXAMPLES%%share/system-tools/gimp-scripts-examples/Fractal.fsf
-%%GIMP_SCRIPTS_EXAMPLES%%share/system-tools/gimp-scripts-examples/Portobello.jpeg
+%%GIMP_SCRIPTS_EXAMPLES%%share/system-tools/gimp-scripts-examples/Portobello.webp
 %%X509_TOOLS%%share/system-tools/make-test-certificates
 %%TEXT_BLOCK%%share/text-block/example1.txt
 %%TEXT_BLOCK%%share/text-block/example2.txt
