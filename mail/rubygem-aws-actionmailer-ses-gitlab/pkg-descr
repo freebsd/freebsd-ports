@@ -1,0 +1,2 @@
+This gem contains ActionMailer delivery method classes with Amazon SES and
+SESV2. See the API documentation for the full reference.

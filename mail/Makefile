@@ -621,6 +621,7 @@
     SUBDIR += rubygem-actionmailer72
     SUBDIR += rubygem-actionmailer80
     SUBDIR += rubygem-actionmailer81
+    SUBDIR += rubygem-aws-actionmailer-ses-gitlab
     SUBDIR += rubygem-email_reply_parser
     SUBDIR += rubygem-email_reply_parser-discourse
     SUBDIR += rubygem-email_reply_trimmer
