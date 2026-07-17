@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-grape-openapi
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-grape20>=0:devel/rubygem-grape20 \
-		rubygem-grape-entity>=1.0.1<1.1,1:devel/rubygem-grape-entity \
+		rubygem-grape-entity>=1.0.1<2,1:devel/rubygem-grape-entity \
 		rubygem-js_regex>=3.8.0<4.0:textproc/rubygem-js_regex
 
 USES=		gem
