@@ -32,7 +32,8 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_TUPLE=	gitlab-org:git:v${GITLAB_GIT_VERSION}:git_dep/_build/deps/git-v${GITLAB_GIT_VERSION_SHORT} \
 		gitlab-org:git:${GITLAB_GIT_MASTER_VERSION}:git_master_dep/_build/deps/git-master \
-		gitlab-org:git:${GITLAB_GIT_PREV_VERSION}:git_prev_dep/_build/deps/git-prev
+		gitlab-org:git:${GITLAB_GIT_PREV_VERSION}:git_prev_dep/_build/deps/git-prev \
+		gitlab-org:git:${GITLAB_GIT_VERSION_MVCC}:git_mvcc_dep/_build/deps/git-mvcc
 
 GO_MOD_DIST=	gitlab
 GO_MODULE=	gitlab.com/gitlab-org/gitaly/v19

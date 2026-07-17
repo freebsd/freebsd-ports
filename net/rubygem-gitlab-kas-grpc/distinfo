@@ -1,3 +1,3 @@
-TIMESTAMP = 1783575881
-SHA256 (rubygem/gitlab-kas-grpc-19.1.2.gem) = c03fae26b7ac448e4ed67e41d1168251f9ef21cdc120d815999b7b3187034b4c
-SIZE (rubygem/gitlab-kas-grpc-19.1.2.gem) = 12800
+TIMESTAMP = 1784285767
+SHA256 (rubygem/gitlab-kas-grpc-19.2.0.pre.rc1.gem) = cb744b3a3e071f5e3151dfd85fce2ba7c28b043e95e8826b0ed2b546180d83ea
+SIZE (rubygem/gitlab-kas-grpc-19.2.0.pre.rc1.gem) = 13824

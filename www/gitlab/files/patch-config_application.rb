@@ -1,7 +1,7 @@
---- config/application.rb.orig	2025-02-13 06:21:36 UTC
+--- config/application.rb.orig	2026-07-15 20:09:39 UTC
 +++ config/application.rb
-@@ -1,6 +1,11 @@ require_relative 'boot'
- # frozen_string_literal: true
+@@ -2,6 +2,11 @@ require_relative 'boot'
+ 
  require_relative 'boot'
  
 +# Required as rubygem-concurrent-ruby version 1.3.5 has remove logger, but is required by active_support

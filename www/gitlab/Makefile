@@ -33,7 +33,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=5.14.7:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=${GITLAB_VERSION}:net/gitlab-agent \
 	gitlab-pages>=${GITLAB_VERSION}:www/gitlab-pages \
-	gitlab-shell>=14.54.0:devel/gitlab-shell \
+	gitlab-shell>=14.56.1:devel/gitlab-shell \
 	gitlab-workhorse>=${GITLAB_VERSION}:www/gitlab-workhorse \
 	gitlab-zoekt-indexer>=1.16.1:textproc/gitlab-zoekt-indexer \
 	redis>=7.2:databases/redis \
@@ -49,20 +49,20 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-drb-gitlab>=2.2.3<3:devel/rubygem-drb-gitlab \
 	rubygem-bootsnap-gitlab>=1.24.6<1.25:devel/rubygem-bootsnap-gitlab \
 	rubygem-ffi>=1.17.4<2:devel/rubygem-ffi \
-	rubygem-openssl3>=3.3.2<3.4:security/rubygem-openssl3 \
-	rubygem-gitlab-secret_detection>=0.42.0<1:security/rubygem-gitlab-secret_detection \
+	rubygem-openssl3>=3.3.3<3.4:security/rubygem-openssl3 \
+	rubygem-gitlab-secret_detection>=0.42.1<1:security/rubygem-gitlab-secret_detection \
 	rubygem-responders-rails-gitlab>=3.0<4.0:www/rubygem-responders-rails-gitlab \
 	rubygem-sprockets-gitlab>=3.7.5<3.8:devel/rubygem-sprockets-gitlab \
 	rubygem-sprockets-rails-rails-gitlab>=3.5.2<3.6:devel/rubygem-sprockets-rails-rails-gitlab \
 	rubygem-view_component-rails-gitlab>=3.23.2<3.24:devel/rubygem-view_component-rails-gitlab \
 	rubygem-pg-gitlab>=1.6.3<1.7:databases/rubygem-pg-gitlab \
-	rubygem-faraday-gitlab>=2.14.2<3:www/rubygem-faraday-gitlab \
-	rubygem-faraday-retry-gitlab>=2<3:www/rubygem-faraday-retry-gitlab \
+	rubygem-faraday-gitlab>=2.14.3<3:www/rubygem-faraday-gitlab \
+	rubygem-faraday-retry-gitlab>=2.4.0<3:www/rubygem-faraday-retry-gitlab \
 	rubygem-logger-gitlab>=1.7.0<1.8:devel/rubygem-logger-gitlab \
 	rubygem-marginalia>=1.11.1<1.12:databases/rubygem-marginalia \
 	rubygem-declarative_policy>=2.1.0<2.2:security/rubygem-declarative_policy \
 	rubygem-gitlab-glaz>=0.0.3<0.1:security/rubygem-gitlab-glaz \
-	rubygem-coverband>=6.2.0<6.3:www/rubygem-coverband \
+	rubygem-coverband>=6.2.1<6.3:www/rubygem-coverband \
 	rubygem-devise-rails-gitlab>=4.9.3<4.10:devel/rubygem-devise-rails-gitlab \
 	rubygem-bcrypt>=3.1.22<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper-rails-gitlab>=5.9.0<6:security/rubygem-doorkeeper-rails-gitlab \
@@ -73,7 +73,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-omniauth-saml-gitlab>=2.2.5<3:security/rubygem-omniauth-saml-gitlab \
 	rubygem-omniauth-gl>=2.1.3<3:security/rubygem-omniauth-gl \
 	rubygem-omniauth-auth0-gitlab>=3.1.1<3.2.0:net/rubygem-omniauth-auth0-gitlab \
-	rubygem-omniauth-azure-activedirectory-v2>=2.0<3:net/rubygem-omniauth-azure-activedirectory-v2 \
+	rubygem-omniauth-azure-activedirectory-v2>=2.4<3:net/rubygem-omniauth-azure-activedirectory-v2 \
 	rubygem-omniauth-alicloud>=3.0.0<3.1:security/rubygem-omniauth-alicloud \
 	rubygem-omniauth-github-gitlab>=2.0.1<2.1:net/rubygem-omniauth-github-gitlab \
 	rubygem-omniauth-google-oauth2-gitlab>=1.2.2<2:net/rubygem-omniauth-google-oauth2-gitlab \
@@ -94,18 +94,18 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-attr_encrypted>=4.2<5:security/rubygem-attr_encrypted \
 	rubygem-validates_hostname-gitlab>=1.0.13<1.1.0:dns/rubygem-validates_hostname-gitlab \
 	rubygem-rubyzip-gitlab>=2.4.1<2.5:archivers/rubygem-rubyzip-gitlab \
-	rubygem-acme-client-gitlab>=2.0.31<3:security/rubygem-acme-client-gitlab \
+	rubygem-acme-client-gitlab>=2.0.32<3:security/rubygem-acme-client-gitlab \
 	rubygem-browser5>=5.3.1<5.4:www/rubygem-browser5 \
-	rubygem-ohai>=19.1.24<19.2:sysutils/rubygem-ohai \
+	rubygem-ohai>=19.1.40<19.2:sysutils/rubygem-ohai \
 	rubygem-gpgme>=2.0.26<2.1.0:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap-gitlab>=2.3.0<2.4.0:net/rubygem-gitlab_omniauth-ldap-gitlab \
 	rubygem-net-ldap>=0.20.0<0.21:net/rubygem-net-ldap \
 	rubygem-grape20>=2.0.0<2.1:devel/rubygem-grape20 \
-	rubygem-grape-entity>=1.0.1<1.1,1:devel/rubygem-grape-entity \
+	rubygem-grape-entity>=1.1.0<1.2,1:devel/rubygem-grape-entity \
 	rubygem-grape-swagger-gitlab>=2.1.2<2.2:devel/rubygem-grape-swagger-gitlab \
 	rubygem-grape-swagger-entity>=0.7.1<0.8:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.1<2.1:devel/rubygem-grape-path-helpers \
-	rubygem-gitlab-grape-openapi>=0.1<1:devel/rubygem-gitlab-grape-openapi \
+	rubygem-gitlab-grape-openapi>=0.2.1<1:devel/rubygem-gitlab-grape-openapi \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
 	rubygem-graphql>=2.6.3<2.6.4:devel/rubygem-graphql \
 	rubygem-apollo_upload_server>=2.1.8<2.2:net/rubygem-apollo_upload_server \
@@ -143,14 +143,14 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-elasticsearch-model-gitlab>=7.2<8:textproc/rubygem-elasticsearch-model-gitlab \
 	rubygem-elasticsearch-rails7>=7.2<8:textproc/rubygem-elasticsearch-rails7 \
 	rubygem-elasticsearch-api-gitlab>=7.17.11<7.18:textproc/rubygem-elasticsearch-api-gitlab \
-	rubygem-aws-sdk-core-gitlab>=3.250.0<3.251:devel/rubygem-aws-sdk-core-gitlab \
+	rubygem-aws-sdk-core-gitlab>=3.252.0<3.253:devel/rubygem-aws-sdk-core-gitlab \
 	rubygem-aws-sdk-cloudformation-gitlab>=1.154<2:devel/rubygem-aws-sdk-cloudformation-gitlab \
-	rubygem-aws-sdk-s3-gitlab>=1.224.0<1.225:devel/rubygem-aws-sdk-s3-gitlab \
+	rubygem-aws-sdk-s3-gitlab>=1.226.0<1.227:devel/rubygem-aws-sdk-s3-gitlab \
 	rubygem-faraday-typhoeus-gitlab>=1.1<2:www/rubygem-faraday-typhoeus-gitlab \
 	rubygem-faraday_middleware-aws-sigv4-gitlab>=1.0.1<1.1:devel/rubygem-faraday_middleware-aws-sigv4-gitlab \
 	rubygem-typhoeus-gitlab>=1.4.0<1.5:www/rubygem-typhoeus-gitlab \
 	rubygem-html-pipeline-gitlab>=2.14.3<2.15:textproc/rubygem-html-pipeline-gitlab \
-	rubygem-gitlab-markup>=2.0.0<2.1:textproc/rubygem-gitlab-markup \
+	rubygem-gitlab-markup>=2.1.0<2.2:textproc/rubygem-gitlab-markup \
 	rubygem-commonmarker0>=0.23.12<0.24:textproc/rubygem-commonmarker0 \
 	rubygem-kramdown-gitlab>=2.5.2<2.6:textproc/rubygem-kramdown-gitlab \
 	rubygem-redcloth>=4.3.3<4.4.0:www/rubygem-redcloth \
@@ -171,7 +171,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-diffy>=3.4.4<4:textproc/rubygem-diffy \
 	rubygem-rack-gitlab>=2.2.23<2.3:www/rubygem-rack-gitlab \
 	rubygem-rack-timeout>=0.7.0<0.8:www/rubygem-rack-timeout \
-	rubygem-puma-gitlab>=8.0<9:www/rubygem-puma-gitlab \
+	rubygem-puma-gitlab>=8.0.2<9:www/rubygem-puma-gitlab \
 	rubygem-sd_notify>=0.1.1<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord-gitlab>=0.100.0<0.101.0:databases/rubygem-state_machines-activerecord-gitlab \
 	rubygem-sidekiq-gitlab>=7.3.9:devel/rubygem-sidekiq-gitlab \
@@ -187,11 +187,11 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-device_detector>=1.1.3:devel/rubygem-device_detector \
 	rubygem-redis-gitlab>=5.4.1<5.5:databases/rubygem-redis-gitlab \
 	rubygem-redis-client>=0.29.0<1:databases/rubygem-redis-client \
-	rubygem-redis-cluster-client>=0.15.0<1:databases/rubygem-redis-cluster-client \
+	rubygem-redis-cluster-client>=0.16.5<1:databases/rubygem-redis-cluster-client \
 	rubygem-redis-clustering-gitlab>=5.4.1<5.5:databases/rubygem-redis-clustering-gitlab \
 	rubygem-connection_pool-gitlab>=2.5.5<2.6:net/rubygem-connection_pool-gitlab \
 	rubygem-redis-actionpack-rails-gitlab>=5.5.0<5.6:databases/rubygem-redis-actionpack-rails-gitlab \
-	rubygem-jira-ruby-gitlab>=2.3.0<2.4:devel/rubygem-jira-ruby-gitlab \
+	rubygem-jira-ruby-gitlab>=3.2.0<3.3:devel/rubygem-jira-ruby-gitlab \
 	rubygem-atlassian-jwt>=0.2.1<0.3.0:www/rubygem-atlassian-jwt \
 	rubygem-slack-messenger>=2.3.5<2.4.0:devel/rubygem-slack-messenger \
 	rubygem-kubeclient>=4.12.0<4.13.0:www/rubygem-kubeclient \
@@ -209,7 +209,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-rack-proxy-gitlab>=0.7.7<0.8.0:www/rubygem-rack-proxy-gitlab \
 	rubygem-cssbundling-rails-rails-gitlab>=1.4.3<1.5:www/rubygem-cssbundling-rails-rails-gitlab \
 	rubygem-terser>=1.0.2<1.0.3:textproc/rubygem-terser \
-	rubygem-click_house-client>=0.10.0<0.11:databases/rubygem-click_house-client \
+	rubygem-click_house-client>=0.11.0<0.12:databases/rubygem-click_house-client \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 	rubygem-gon-rails-gitlab>=6.5.0<6.6:www/rubygem-gon-rails-gitlab \
 	rubygem-request_store>=1.7.0<1.8:devel/rubygem-request_store \
@@ -221,7 +221,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-sentry-sidekiq>=5.23.0<5.24:devel/rubygem-sentry-sidekiq \
 	rubygem-pg_query>=6.2.2<6.3:databases/rubygem-pg_query \
 	rubygem-premailer-rails-rails-gitlab>=1.12.0<1.13:mail/rubygem-premailer-rails-rails-gitlab \
-	rubygem-gitlab-labkit>=2.6.0<2.7:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=2.7.0<2.8:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.22.0,1<0.23,1:devel/rubygem-thrift \
 	rubygem-rails-i18n-rails-gitlab>=7.0.9<8:devel/rubygem-rails-i18n-rails-gitlab \
 	rubygem-gettext_i18n_rails>=1.13.0<1.14:devel/rubygem-gettext_i18n_rails \
@@ -231,9 +231,9 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-peek-rails-gitlab>=1.1<2.0:devel/rubygem-peek-rails-gitlab \
 	rubygem-snowplow-tracker>=0.8.0<1:devel/rubygem-snowplow-tracker \
 	rubygem-webrick>=1.9.0<1.10:www/rubygem-webrick \
-	rubygem-prometheus-client-mmap>=1.5.0<1.6:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=1.6.0<1.7:devel/rubygem-prometheus-client-mmap \
 	rubygem-async-gitlab>=2.39.0<2.40:devel/rubygem-async-gitlab \
-	rubygem-io-event-gitlab>=1.14.5<2:devel/rubygem-io-event-gitlab \
+	rubygem-io-event-gitlab>=1.16.2<2:devel/rubygem-io-event-gitlab \
 	rubygem-gitlab-security_report_schemas>=0.2.0.min15.0.0.max15.2.4<0.2.0.min15.0.0.max15.2.5:devel/rubygem-gitlab-security_report_schemas \
 	rubygem-vite_rails-gitlab>=3.10.0<3.11:devel/rubygem-vite_rails-gitlab \
 	rubygem-vite_ruby-gitlab>=3.10.1<3.11:devel/rubygem-vite_ruby-gitlab \
@@ -263,17 +263,17 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-opentelemetry-instrumentation-sidekiq-gitlab>=0.28.1:devel/rubygem-opentelemetry-instrumentation-sidekiq-gitlab \
 	rubygem-warning>=1.5.0<1.6:devel/rubygem-warning \
 	rubygem-git>=1.19.1<2:devel/rubygem-git \
-	rubygem-gitlab-dangerfiles>=4.11.1<4.12:devel/rubygem-gitlab-dangerfiles \
+	rubygem-gitlab-dangerfiles>=4.12.0<4.13:devel/rubygem-gitlab-dangerfiles \
 	rubygem-rspec>=3.0<4:devel/rubygem-rspec \
 	rubygem-octokit-gitlab>=9.0<10:net/rubygem-octokit-gitlab \
-	rubygem-faraday-multipart>=1.1.1<2:www/rubygem-faraday-multipart \
-	rubygem-gitlab-mail_room>=1.0.0<1.1.0:mail/rubygem-gitlab-mail_room \
+	rubygem-faraday-multipart>=1.2.0<2:www/rubygem-faraday-multipart \
+	rubygem-gitlab-mail_room>=1.1.0<1.2.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0.4.0:textproc/rubygem-html2text \
 	rubygem-stackprof>=0.2.28<0.3:devel/rubygem-stackprof \
 	rubygem-rbtrace>=0.5.3<1.0:devel/rubygem-rbtrace \
 	rubygem-memory_profiler>=1.1.0<2.0:devel/rubygem-memory_profiler \
-	rubygem-oauth2-gitlab>=2.0.20<3:net/rubygem-oauth2-gitlab \
+	rubygem-oauth2-gitlab>=2.0.24<3:net/rubygem-oauth2-gitlab \
 	rubygem-health_check-rails-gitlab>=3.0<4:devel/rubygem-health_check-rails-gitlab \
 	rubygem-vmstat>=2.3.1<2.4.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem-gitlab>=1.5.5<1.6:sysutils/rubygem-sys-filesystem-gitlab \
@@ -282,7 +282,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-spamcheck>=1.3.3<1.4:net/rubygem-spamcheck \
 	rubygem-gitaly>=19.0<20:net/rubygem-gitaly \
 	rubygem-gitlab-kas-grpc>=${GITLAB_KAS_GRPC_VERSION}:net/rubygem-gitlab-kas-grpc \
-	rubygem-gitlab-gkg-proto>=0.37.0<0.38:net/rubygem-gitlab-gkg-proto \
+	rubygem-gitlab-gkg-proto>=0.87.0<0.88:net/rubygem-gitlab-gkg-proto \
 	rubygem-grpc-gitlab>=1.81.0<1.82:net/rubygem-grpc-gitlab \
 	rubygem-google-protobuf>=4.35.0<5:devel/rubygem-google-protobuf \
 	rubygem-toml-rb>=4.1<5:www/rubygem-toml-rb \
@@ -290,7 +290,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-flipper-active_record-rails-gitlab>=1.3.6<1.4:databases/rubygem-flipper-active_record-rails-gitlab \
 	rubygem-flipper-active_support_cache_store-rails-gitlab>=1.3.6<1.4:devel/rubygem-flipper-active_support_cache_store-rails-gitlab \
 	rubygem-unleash>=3.2.2<3.3:devel/rubygem-unleash \
-	rubygem-gitlab-experiment>=1.5.0<1.6:devel/rubygem-gitlab-experiment \
+	rubygem-gitlab-experiment>=1.6.0<1.7:devel/rubygem-gitlab-experiment \
 	rubygem-lograge-rails-gitlab>=0.11.2<1.0:www/rubygem-lograge-rails-gitlab \
 	rubygem-grape_logging-gitlab>=1.8.4<2.0:devel/rubygem-grape_logging-gitlab \
 	rubygem-gitlab-net-dns>=0.15.0<0.16:dns/rubygem-gitlab-net-dns \
@@ -298,6 +298,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-retriable-gitlab>=3.1.2<3.2.0:devel/rubygem-retriable-gitlab \
 	rubygem-lru_redux>0:devel/rubygem-lru_redux \
 	rubygem-mail-gitlab>=2.9.0<2.9.1:mail/rubygem-mail-gitlab \
+	rubygem-aws-actionmailer-ses-gitlab>=1.2.0<2:mail/rubygem-aws-actionmailer-ses-gitlab \
 	rubygem-lockbox>=1.4.1<1.5:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-jsonb_accessor>=1.4<2:www/rubygem-jsonb_accessor \
@@ -314,7 +315,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-cvss-suite>=4.1.2<4.2:security/rubygem-cvss-suite \
 	rubygem-zstd-ruby-gitlab>=2.0.6<3:devel/rubygem-zstd-ruby-gitlab \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
-	rubygem-devfile>=0.5.2<0.6:net/rubygem-devfile \
+	rubygem-devfile>=0.5.3<0.6:net/rubygem-devfile \
 	rubygem-hashdiff>=1.2.1<1.3:devel/rubygem-hashdiff \
 	rubygem-CFPropertyList-gitlab>=3.0.7<3.1:devel/rubygem-CFPropertyList-gitlab \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
@@ -322,22 +323,23 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-base6402>=0.2.0<0.3:converters/rubygem-base6402 \
 	rubygem-net-protocol>=0.2.2<0.3:net/rubygem-net-protocol \
 	rubygem-nkf-gitlab>=0.2.0<0.3:net/rubygem-nkf-gitlab \
+	rubygem-resolv-replace>=0.2.0<0.3:dns/rubygem-resolv-replace \
 	rubygem-net-http-gitlab>=0.6.0<0.6.1:www/rubygem-net-http-gitlab \
 	rubygem-uri-gitlab>=1.1.1<1.2:net/rubygem-uri-gitlab \
 	rubygem-duo_api>=1.4<2:security/rubygem-duo_api \
 	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
 	rubygem-paper_trail>=16.0<17:devel/rubygem-paper_trail \
 	rubygem-i18n_data>=0.13.1<1:devel/rubygem-i18n_data \
-	rubygem-gitlab-cloud-connector>=1.51<2:security/rubygem-gitlab-cloud-connector \
+	rubygem-gitlab-cloud-connector>=1.52<2:security/rubygem-gitlab-cloud-connector \
 	rubygem-gvltools>=0.4.0<0.5:devel/rubygem-gvltools \
-	rubygem-gitlab_query_language>=0.28.0<0.29:devel/rubygem-gitlab_query_language \
+	rubygem-gitlab_query_language>=0.29.0<0.30:devel/rubygem-gitlab_query_language \
 	rubygem-zlib>=3.2.3<3.3:devel/rubygem-zlib \
 	rubygem-license_finder-gitlab>=7.2.1<8:devel/rubygem-license_finder-gitlab \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
 	rubygem-parallel>=1.27.0<2:sysutils/rubygem-parallel \
 	rubygem-google-cloud-storage_transfer-gitlab>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer-gitlab \
 	rubygem-minitest>=5.11<6:devel/rubygem-minitest \
-	rubygem-grpc-tools>=1.80.0<1.81:net/rubygem-grpc-tools \
+	rubygem-grpc-tools>=1.81.0<1.82:net/rubygem-grpc-tools \
 	rubygem-opensearch-ruby-gitlab>=0:textproc/rubygem-opensearch-ruby-gitlab \
 	rubygem-bigdecimal-gitlab>=3.3.1<4:math/rubygem-bigdecimal-gitlab \
 	rubygem-freezolite>=0.6<1:devel/rubygem-freezolite
@@ -368,6 +370,7 @@ SHEBANG_FILES=	gems/bundler-checksum/test/project_with_checksum_lock/scripts/tes
 		scripts/build_assets_image \
 		scripts/build_qa_image \
 		scripts/build_gdk_image \
+		scripts/build_siphon_tables_image \
 		scripts/compile_assets \
 		scripts/db_tasks \
 		scripts/rails-update-bisect \
@@ -522,6 +525,7 @@ post-install:
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/qa/specs/features/browser_ui/5_package" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/qa/specs/features/browser_ui/8_monitor" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/tmp" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${WWWDIR_REL}/spec/contracts/consumer/external" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/spec/support/gitlab-git-test.git/refs/heads" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/spec/support/gitlab-git-test.git/refs/tags" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,755) ${WWWDIR_REL}/shared" >> ${TMPPLIST}
@@ -558,6 +562,7 @@ post-install:
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/workhorse/changelogs/unreleased" >> ${TMPPLIST}
 .if ${FLAVOR:U} == ee
 	# Gitlab-ee version
+	@${ECHO_CMD} "@dir(,,755) ${WWWDIR_REL}/ee/spec/contracts/consumer/external" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,755) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/4_verify" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,755) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/5_package" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,755) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/8_monitor" >> ${TMPPLIST}

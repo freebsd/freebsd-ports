@@ -1,5 +1,5 @@
-TIMESTAMP = 1783575867
-SHA256 (go/www_gitlab-pages/gitlab-pages-v19.1.2/go.mod) = e3623e5c4b9c16f07be95e90fb28e3f3dde541279e817291b7c63ad8a6a65c61
-SIZE (go/www_gitlab-pages/gitlab-pages-v19.1.2/go.mod) = 4049
-SHA256 (go/www_gitlab-pages/gitlab-pages-v19.1.2/gitlab-pages-v19.1.2.tar.bz2) = 34714d8f6430c2268cfda5a4fe003c324a44980c959742fd4992bdd2f0809abc
-SIZE (go/www_gitlab-pages/gitlab-pages-v19.1.2/gitlab-pages-v19.1.2.tar.bz2) = 242735
+TIMESTAMP = 1784177852
+SHA256 (go/www_gitlab-pages/gitlab-pages-v19.2.0/go.mod) = ac6ec203774f56da7be300a587418c6b260708c05ae8b6c5bea5da6451ecf1c3
+SIZE (go/www_gitlab-pages/gitlab-pages-v19.2.0/go.mod) = 4049
+SHA256 (go/www_gitlab-pages/gitlab-pages-v19.2.0/gitlab-pages-v19.2.0.tar.bz2) = 37e17496f76cdb09454e3d76b0f876ed9e1dc40105f2fe7aaecd91c4cf312664
+SIZE (go/www_gitlab-pages/gitlab-pages-v19.2.0/gitlab-pages-v19.2.0.tar.bz2) = 243313
