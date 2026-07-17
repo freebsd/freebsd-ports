@@ -2142,6 +2142,7 @@
     SUBDIR += sansi
     SUBDIR += sarep
     SUBDIR += sassc
+    SUBDIR += sasso
     SUBDIR += saxon-he
     SUBDIR += sc-aspell
     SUBDIR += scdoc

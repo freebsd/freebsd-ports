@@ -1,0 +1,11 @@
+Sasso is a compiler for Sass, the Syntactically Awesome Style Sheets
+language, written in Rust. Sass provides features such as variables,
+nesting, mixins, inheritance and imports, which allows one to write
+CSS (Cascading Style Sheets) more easily and tersely.
+
+Sasso supports both the SCSS syntax -- a superset of CSS3 -- and the
+older indended Sass syntax. It aims for a perfect compatibility with
+the current release of Dart Sass, the reference implementation of the
+Sass language. It is tested against the official Sass Spec Suite where
+it achieves a 100% success rate on the subset implemented by Dart
+Sass, producing byte-for-byte identical outputs.
