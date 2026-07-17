@@ -6560,11 +6560,11 @@
 %%64BITS%%%%32BITS%%%%GNAT%%/lib32/libatomic.so.1.2.0
 %%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgcc_s.so
 %%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgcc_s.so.1
-%%GNAT%%/lib32/libgomp.a
-%%GNAT%%/lib32/libgomp.so
-%%GNAT%%/lib32/libgomp.so.1
-%%GNAT%%/lib32/libgomp.so.1.0.0
-%%GNAT%%/lib32/libgomp.spec
+%%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgomp.a
+%%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgomp.so
+%%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgomp.so.1
+%%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgomp.so.1.0.0
+%%64BITS%%%%32BITS%%%%GNAT%%/lib32/libgomp.spec
 %%64BITS%%%%32BITS%%%%GNAT%%/lib32/libitm.a
 %%64BITS%%%%32BITS%%%%GNAT%%/lib32/libitm.so
 %%64BITS%%%%32BITS%%%%GNAT%%/lib32/libitm.so.1
