@@ -1,5 +1,4 @@
 include/torrent/bitfield.h
-include/torrent/chunk_manager.h
 include/torrent/common.h
 include/torrent/data/block.h
 include/torrent/data/block_list.h
@@ -46,6 +45,8 @@ include/torrent/peer/peer.h
 include/torrent/peer/peer_info.h
 include/torrent/peer/peer_list.h
 include/torrent/rate.h
+include/torrent/runtime/client_config.h
+include/torrent/runtime/memory_manager.h
 include/torrent/runtime/network_config.h
 include/torrent/runtime/network_manager.h
 include/torrent/runtime/proxy_manager.h
@@ -53,8 +54,8 @@ include/torrent/runtime/runtime.h
 include/torrent/runtime/socket_manager.h
 include/torrent/system/callbacks.h
 include/torrent/system/poll.h
-include/torrent/system/system.h
 include/torrent/system/thread.h
+include/torrent/system/types.h
 include/torrent/throttle.h
 include/torrent/torrent.h
 include/torrent/tracker/dht_controller.h
@@ -78,6 +79,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.47
-lib/libtorrent.so.47.0.0
+lib/libtorrent.so.48
+lib/libtorrent.so.48.0.0
 libdata/pkgconfig/libtorrent.pc

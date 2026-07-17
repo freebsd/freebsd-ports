@@ -1,0 +1,12 @@
+https://github.com/rakshasa/libtorrent/issues/841
+
+--- src/torrent/system/system.cc.orig	2026-07-17 09:47:03 UTC
++++ src/torrent/system/system.cc
+@@ -8,6 +8,7 @@
+ #include "torrent/system/callbacks.h"
+ #include "torrent/system/thread.h"
+ #include "torrent/system/types.h"
++#include <sys/socket.h>
+ 
+ namespace torrent::system {
+ 
