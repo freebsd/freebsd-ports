@@ -1,5 +1,5 @@
 PORTNAME=	jira-ruby
-PORTVERSION=	2.3.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,9 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport-gitlab>=0:devel/rubygem-activesupport-gitlab \
-		rubygem-atlassian-jwt>=0:www/rubygem-atlassian-jwt \
+		rubygem-cgi>=0:www/rubygem-cgi \
+		rubygem-jwt>=2.1:www/rubygem-jwt \
 		rubygem-multipart-post>=0:www/rubygem-multipart-post \
-		rubygem-oauth0>=0.5.0<1:net/rubygem-oauth0
+		rubygem-oauth-gitlab>=1.0<2:net/rubygem-oauth-gitlab
 
 USES=		gem
 
