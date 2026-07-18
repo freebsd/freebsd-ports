@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	JSON schema generation from dataclasses
 WWW=		https://github.com/dbt-labs/hologram
 

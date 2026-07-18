@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	comms elisp
 MASTER_SITES=	https://codeberg.org/akib/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Emulate A Terminal, in a region, in a buffer and in Eshell
 WWW=		https://codeberg.org/akib/emacs-eat
 

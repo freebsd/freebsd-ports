@@ -3,7 +3,7 @@ PORTVERSION=	1.0p20231215.1901
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Github Flavored Markdown exporter for Org Mode
 WWW=		https://github.com/larstvei/ox-gfm
 

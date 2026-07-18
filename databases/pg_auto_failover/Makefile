@@ -4,7 +4,7 @@ DISTVERSION=	2.2
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Postgres extension for automated failover and high-availability
 WWW=		https://pg-auto-failover.readthedocs.io
 

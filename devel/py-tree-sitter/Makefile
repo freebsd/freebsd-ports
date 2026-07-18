@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	tree_sitter-${PORTVERSION}
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Python bindings to the Tree-sitter parsing library
 WWW=		https://github.com/tree-sitter/py-tree-sitter
 
