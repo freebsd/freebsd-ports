@@ -4,7 +4,7 @@ DISTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Emacs mode for the Go programming language
 WWW=		https://github.com/dominikh/go-mode.el
 

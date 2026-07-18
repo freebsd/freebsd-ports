@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	dbt_extractor-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Analyze and extract information from Jinja used in dbt projects
 WWW=		https://github.com/dbt-labs/dbt-extractor/
 

@@ -5,7 +5,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Snowflake adapter plugin for dbt
 WWW=		https://github.com/dbt-labs/dbt-snowflake
 

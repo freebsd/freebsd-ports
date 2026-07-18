@@ -3,7 +3,7 @@ PORTVERSION=	g20220824
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Org-Babel support for evaluating Rust code
 WWW=		https://github.com/micanzhang/ob-rust
 
