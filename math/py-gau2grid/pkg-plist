@@ -8,7 +8,7 @@
 %%PYTHON_SITELIBDIR%%/gau2grid/codegen.py
 %%PYTHON_SITELIBDIR%%/gau2grid/docs_generator.py
 %%PYTHON_SITELIBDIR%%/gau2grid/extras.py
-%%PYTHON_SITELIBDIR%%/gau2grid/gg.so
+%%PYTHON_SITELIBDIR%%/gau2grid/gg
 %%PYTHON_SITELIBDIR%%/gau2grid/order.py
 %%PYTHON_SITELIBDIR%%/gau2grid/python_reference.py
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/__init__.py
