@@ -32,6 +32,7 @@ bin/gnunet-nse
 bin/gnunet-pils
 bin/gnunet-publish
 bin/gnunet-reclaim
+bin/gnunet-regex
 bin/gnunet-resolver
 bin/gnunet-revocation
 bin/gnunet-rps
@@ -240,6 +241,13 @@ lib/gnunet/libgnunet_plugin_namestore_sqlite.so
 lib/gnunet/libgnunet_plugin_peerstore_sqlite.so
 lib/gnunet/libgnunet_plugin_reclaim_attribute_basic.so
 lib/gnunet/libgnunet_plugin_reclaim_credential_jwt.so
+lib/gnunet/libgnunet_plugin_datacache_postgres.so
+lib/gnunet/libgnunet_plugin_datastore_postgres.so
+lib/gnunet/libgnunet_plugin_namecache_postgres.so
+lib/gnunet/libgnunet_plugin_namestore_postgres.so
+lib/libgnunetpq.so
+lib/libgnunetpq.so.5
+lib/libgnunetpq.so.5.4.0
 lib/libgnunetabd.so
 lib/libgnunetabd.so.0
 lib/libgnunetabd.so.0.0.0
@@ -304,7 +312,7 @@ lib/libgnunetjson.so.3
 lib/libgnunetjson.so.3.1.0
 lib/libgnunetmessenger.so
 lib/libgnunetmessenger.so.0
-lib/libgnunetmessenger.so.0.0.0
+lib/libgnunetmessenger.so.0.0.7
 lib/libgnunetmhd.so
 lib/libgnunetmhd.so.0
 lib/libgnunetmhd.so.0.0.1
@@ -402,8 +410,8 @@ lib/libgnunettransportmonitor.so
 lib/libgnunettransportmonitor.so.0
 lib/libgnunettransportmonitor.so.0.0.0
 lib/libgnunetutil.so
-lib/libgnunetutil.so.20
-lib/libgnunetutil.so.20.0.0
+lib/libgnunetutil.so.22
+lib/libgnunetutil.so.22.0.0
 lib/libgnunetvpn.so
 lib/libgnunetvpn.so.0
 lib/libgnunetvpn.so.0.0.0
@@ -532,6 +540,7 @@ share/applications/gnunet-uri.desktop
 %%DATADIR%%/sql/namecache-drop.sql
 %%DATADIR%%/sql/namestore-0001.sql
 %%DATADIR%%/sql/namestore-drop.sql
+%%DATADIR%%/sql/versioning.sql
 %%DATADIR%%/testing_hostkeys.ecc
 %%DATADIR%%/topo.sh
 share/info/gnunet.info

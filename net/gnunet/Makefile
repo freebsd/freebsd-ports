@@ -1,5 +1,5 @@
 PORTNAME=	gnunet
-DISTVERSION=	0.26.2
+DISTVERSION=	0.27.0
 CATEGORIES=	net
 MASTER_SITES=	GNU
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libgnutls.so:security/gnutls \
 		libsodium.so:security/libsodium \
 		libidn2.so:dns/libidn2 \
-		libgmp.so:math/gmp
+		libgmp.so:math/gmp \
+		libpq.so:databases/postgresql18-client
 
 # RUN_DEPENDS=
 
