@@ -136,7 +136,7 @@ baselibs() {
 			;;
 		esac
 	done <<-EOF
-	$(list_stagedir_elfs -exec readelf -d {} + 2>/dev/null)
+	$(list_stagedir_elfs -exec readelf -d {} \; 2>/dev/null)
 	EOF
 
 	if ! list_stagedir_elfs | egrep -q 'lib(crypto|ssl).so*'; then
