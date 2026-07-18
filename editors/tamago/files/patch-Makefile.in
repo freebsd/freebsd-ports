@@ -1,15 +1,70 @@
---- Makefile.in.orig	2016-05-15 21:22:18 UTC
+--- Makefile.in.orig	2022-05-05 12:01:44 UTC
 +++ Makefile.in
-@@ -423,8 +423,11 @@ distclean-hdr:
- 	  $(EMACS) --batch \
- 	    $(AM_ELCFLAGS) $(ELCFLAGS) \
- 	    $$am__subdir_includes -L $(builddir) -L $(srcdir) \
+@@ -347,10 +347,10 @@ noinst_LISP = \
+ 	its.el \
+ 	its-keydef.el
+ 
+-dist_lisp_LISP = ${noinst_LISP:.el=.el.gz} ${noinst_LISP:.el=.elc} \
++dist_lisp_LISP = ${noinst_LISP:.el=.el.gz} \
+ 		leim-list.el eggrc
+ 
+-ELCFILES = ${noinst_LISP:.el=.el.gz} ${noinst_LISP:.el=.elc}
++ELCFILES = ${noinst_LISP:.el=.el.gz}
+ EXTRA_LISP = docomp.el leim-list.el
+ DOCS = AUTHORS ChangeLog README TODO PROBLEMS \
+ 		ChangeLog.1997-1998 ChangeLog.2000-2001 ChangeLog.2002-2004 \
+@@ -361,32 +361,6 @@ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+ .SUFFIXES:
+-.SUFFIXES: .el .elc
+-am--refresh: Makefile
+-	@:
+-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(top_srcdir)/elisp.mk $(am__configure_deps)
+-	@for dep in $?; do \
+-	  case '$(am__configure_deps)' in \
+-	    *$$dep*) \
+-	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu'; \
+-	      $(am__cd) $(srcdir) && $(AUTOMAKE) --gnu \
+-		&& exit 0; \
+-	      exit 1;; \
+-	  esac; \
+-	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile'; \
+-	$(am__cd) $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu Makefile
+-Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+-	@case '$?' in \
+-	  *config.status*) \
+-	    echo ' $(SHELL) ./config.status'; \
+-	    $(SHELL) ./config.status;; \
+-	  *) \
+-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
+-	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
+-	esac;
+-$(top_srcdir)/elisp.mk $(am__empty):
+ 
+ $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+@@ -411,21 +385,6 @@ distclean-hdr:
+ 
+ distclean-hdr:
+ 	-rm -f config.h stamp-h1
+-
+-.el.elc:
+-	if test "$(EMACS)" != "no"; then \
+-	  am__dir=. am__subdir_includes=''; \
+-	  case $@ in */*) \
+-	    am__dir=`echo '$@' | sed 's,/[^/]*$$,,'`; \
+-	    am__subdir_includes="-L $$am__dir -L $(srcdir)/$$am__dir"; \
+-	  esac; \
+-	  test -d "$$am__dir" || $(MKDIR_P) "$$am__dir" || exit 1; \
+-	  $(EMACS) --batch \
+-	    $(AM_ELCFLAGS) $(ELCFLAGS) \
+-	    $$am__subdir_includes -L $(builddir) -L $(srcdir) \
 -	    --eval "(defun byte-compile-dest-file (f) \"$@\")" \
-+	    --eval "(defun byte-compile-dest-file (f) \"/tmp/$@\")" \
- 	    --eval "(unless (byte-compile-file \"$<\") (kill-emacs 1))"; \
-+	    if [ -f "/tmp/$@" ]; then \
-+		cp /tmp/$@ $@ && rm -f /tmp/$@; \
-+	    fi; \
- 	else :; fi
+-	    --eval "(unless (byte-compile-file \"$<\") (kill-emacs 1))"; \
+-	else :; fi
  
  install-dist_lispLISP: $(dist_lisp_LISP) $(ELCFILES)
+ 	@$(NORMAL_INSTALL)
