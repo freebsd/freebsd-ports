@@ -5,7 +5,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/groups/xorg/driver
 
 VIDEODIR=	${LOCALBASE}/lib/xorg/modules/drivers
 INPUTDIR=	${LOCALBASE}/lib/xorg/modules/input
@@ -25,7 +25,9 @@ INPUT_DRIVERS=		egalax \
 
 VIDEO_DRIVERS=		ast \
 			dummy \
+			mga \
 			nv \
+			qxl \
 			scfb \
 			vesa
 
@@ -63,10 +65,6 @@ QUIRKS=		keyboard:kbd
 .if ${ARCH}==i386 || ${ARCH}==amd64
 INPUT_DRIVERS+= vmmouse
 VIDEO_DRIVERS+=	amdgpu ati intel vmware
-.endif
-
-.if ${ARCH}==i386
-VIDEO_DRIVERS+= geode
 .endif
 
 .for type in input video
