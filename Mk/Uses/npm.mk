@@ -309,9 +309,10 @@ npm-archive-node-modules:
 	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} ] && [ -d ${WRKDIR}/node-modules-cache ]; then \
 		${ECHO_MSG} "===>  Normalizing timestamps and permissions of prefetched node modules"; \
 		tmpdir=${WRKDIR}/pnpm_tmp; \
-		input_db=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}/v11/index.db; \
+		storedir=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}/v11; \
+		input_db=$${storedir}/index.db; \
 		output_db=$${tmpdir}/index.db; \
-		output_db_dump=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}/v11/index_dump.sql; \
+		output_db_dump=$${storedir}/index_dump.sql; \
 		${MKDIR} $${tmpdir}; \
 		cd $${tmpdir} && ${SETENV} ${MAKE_ENV} ${NPM_CMDNAME} add --ignore-scripts --silent msgpackr; \
 		sqlite3 $${input_db} \
@@ -389,7 +390,7 @@ npm-archive-node-modules:
 		done; \
 		sqlite3 $${output_db} "REINDEX; VACUUM;"; \
 		sqlite3 $${output_db} ".dump" > $${output_db_dump}; \
-		${RM} $${input_db}; \
+		${RM} -r $${input_db} $${storedir}/tmp; \
 	fi
 .        else
 	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} ] && [ -d ${WRKDIR}/node-modules-cache ]; then \
