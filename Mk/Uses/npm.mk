@@ -211,6 +211,7 @@ NPM_REBUILD_CMD?=	${NPM_CMDNAME} rebuild
 .    endif
 .  elif ${_NPM_NAME} == pnpm
 NPM_LOCKFILE?=		pnpm-lock.yaml
+NPM_WORKSPACEFILE?=	pnpm-workspace.yaml
 NPM_MODULE_CACHE?=	pnpm-store
 NPM_CMDNAME?=		pnpm
 NPM_CACHE_SETUP_CMD?=	${DO_NADA}
@@ -460,6 +461,15 @@ npm-copy-package-file:
 		fi; \
 		${CP} ${PKGJSONSDIR}/$${f} ${NPM_EXTRACT_WRKSRC}/$${f}; \
 	done
+.      if defined(NPM_WORKSPACEFILE) && !empty(NPM_WORKSPACEFILE)
+	@for f in `${FIND} ${PKGJSONSDIR} -type f -name ${NPM_WORKSPACEFILE} -print | ${SED} -e 's|${PKGJSONSDIR}/||'`; do \
+		${MKDIR} -p `${DIRNAME} ${NPM_EXTRACT_WRKSRC}/$${f}`; \
+		if [ -f ${NPM_EXTRACT_WRKSRC}/$${f} ]; then \
+			${MV} -f ${NPM_EXTRACT_WRKSRC}/$${f} ${NPM_EXTRACT_WRKSRC}/$${f}.bak; \
+		fi; \
+		${CP} ${PKGJSONSDIR}/$${f} ${NPM_EXTRACT_WRKSRC}/$${f}; \
+	done
+.      endif
 .    endif
 
 npm-install-node-modules:
