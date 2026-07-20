@@ -1,5 +1,5 @@
---- cgx_2.22/src/Makefile.orig	2024-05-29 18:48:12 UTC
-+++ cgx_2.22/src/Makefile
+--- cgx_2.23/src/Makefile.orig	2024-05-29 18:48:12 UTC
++++ cgx_2.23/src/Makefile
 @@ -4,12 +4,12 @@ CFLAGS = -O2 -Wall -Wno-narrowing -DSEMINIT \
    -I/usr/include \
    -I/usr/include/GL \

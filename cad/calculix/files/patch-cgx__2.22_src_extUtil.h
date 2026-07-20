@@ -1,5 +1,5 @@
---- cgx_2.22/src/extUtil.h.orig	2024-10-21 22:22:47 UTC
-+++ cgx_2.22/src/extUtil.h
+--- cgx_2.23/src/extUtil.h.orig	2024-10-21 22:22:47 UTC
++++ cgx_2.23/src/extUtil.h
 @@ -37,7 +37,7 @@ void printf_fflush(const char *fmt,...);
  }
    #endif
