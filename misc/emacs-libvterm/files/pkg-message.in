@@ -1,0 +1,26 @@
+[
+{
+  type: install
+  message: <<EOT
+Final emacs-libvterm setup instructions:
+
+Add (require 'vterm) to your Emacs configuration.
+
+M-x 'vterm' to open a new terminal.
+EOT
+}
+{
+  type: upgrade
+  maximum_version: "g20251119_2"
+  message: <<EOM
+The emacs-libvterm shell-integration scripts have moved:
+
+old:  %%PREFIX%%/%%EMACS_SITE_LISPDIR%%/etc/
+new:  %%PREFIX%%/%%EMACS_SITE_LISPDIR%%/vterm/etc/
+
+If you source emacs-vterm-bash.sh, emacs-vterm-zsh.sh, or
+emacs-vterm.fish from your shell startup file (e.g. .bashrc, .zshrc, or
+config.fish), update the path accordingly.
+EOM
+}
+]
