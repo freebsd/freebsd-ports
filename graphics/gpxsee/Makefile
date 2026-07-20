@@ -1,8 +1,8 @@
 PORTNAME=	gpxsee
-DISTVERSION=	16.10
+DISTVERSION=	16.11
 CATEGORIES=	graphics geography
 
-MAINTAINER=	sikmir@gmail.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	GPS log file viewer and analyzer
 WWW=		https://www.gpxsee.org/
 
