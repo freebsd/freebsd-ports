@@ -1,25 +1,29 @@
 PORTNAME=	muscle
-PORTVERSION=	3.8.1551
+PORTVERSION=	5.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
-MASTER_SITES=	http://www.drive5.com/muscle/
-DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	MUltiple Sequence Comparison by Log-Expectation
 WWW=		https://www.drive5.com/muscle/
 
-LICENSE=	PD
+LICENSE=	GPLv3
 
-USES=		dos2unix gmake
-NO_WRKSUBDIR=	yes
-DOS2UNIX_GLOB=	*.cpp
+BUILD_DEPENDS=	bash:shells/bash
+
+USES=		gmake
+USE_GCC=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rcedgar
+ALL_TARGET=	${OPSYS}/${PORTNAME}
+BINARY_ALIAS=	g++=g++14
+WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/muscle
 
-post-patch:
-	${MV} ${WRKSRC}/subfams.cpp ${WRKSRC}/subfams.cpp.not_to_be_compiled
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/muscle ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && \
+	${INSTALL} ${OPSYS}/muscle ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
