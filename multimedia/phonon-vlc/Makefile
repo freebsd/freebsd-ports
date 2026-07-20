@@ -1,6 +1,6 @@
 PORTNAME=	phonon
 DISTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-${PHONON_PLUGIN}/${DISTVERSION}
 PKGNAMESUFFIX=	-${PHONON_PLUGIN}-${FLAVOR}
@@ -15,12 +15,13 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVOR?=	qt6
 
 LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
-USES=		cmake compiler:c++11-lang kde:${FLAVOR:S/qt//} pkgconfig \
+USES=		cmake compiler:c++11-lang gl kde:${FLAVOR:S/qt//} pkgconfig \
 		qt:${FLAVOR:S/qt//} tar:xz
+USE_GL=		gl opengl
 USE_KDE=	phonon ecm:build
 USE_QT=		${_USE_QT_${FLAVOR}}
 
