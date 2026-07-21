@@ -867,9 +867,6 @@
 %%WWWDIR%%/include/mpdf/vendor/composer/installed.php
 %%WWWDIR%%/include/mpdf/vendor/composer/platform_check.php
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/CONTRIBUTING.md
-%%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/FUNDING.yml
-%%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/ISSUE_TEMPLATE/Bug_report.md
-%%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/ISSUE_TEMPLATE/Feature_request.md
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/ISSUE_TEMPLATE/config.yml
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/workflows/coverage.yml
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/.github/workflows/cs.yml
@@ -1156,7 +1153,6 @@
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/PageFormat.php
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/Pdf/Protection.php
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/Pdf/Protection/UniqidGenerator.php
-%%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/RemoteContentFetcher.php
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/ServiceFactory.php
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/Shaper/Indic.php
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/src/Shaper/Myanmar.php
@@ -1378,7 +1374,6 @@
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/ttfonts/lannaalif-v1-03.ttf
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/ttfonts/ocrb10.ttf
 %%WWWDIR%%/include/mpdf/vendor/mpdf/mpdf/ttfonts/ocrbinfo.txt
-%%WWWDIR%%/include/mpdf/vendor/myclabs/deep-copy/.github/FUNDING.yml
 %%WWWDIR%%/include/mpdf/vendor/myclabs/deep-copy/LICENSE
 %%WWWDIR%%/include/mpdf/vendor/myclabs/deep-copy/README.md
 %%WWWDIR%%/include/mpdf/vendor/myclabs/deep-copy/composer.json
