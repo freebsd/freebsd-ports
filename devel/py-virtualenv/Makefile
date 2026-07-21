@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.2.3
+PORTVERSION=	21.6.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.7:devel/py-distlib@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.12.2:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-discovery>=1.2.2:devel/py-python-discovery@${PY_FLAVOR}
-# tests: 258 passed, 23 skipped, 2 deselected
+# tests: 308 passed, 20 skipped, 2 deselected
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.3.2:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
