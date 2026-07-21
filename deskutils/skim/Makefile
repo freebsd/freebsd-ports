@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.1
+DISTVERSION=	5.3.2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -64,11 +64,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.2 \
+		clap-4.6.3 \
 		clap_builder-4.6.2 \
 		clap_complete-4.6.7 \
 		clap_complete_nushell-4.6.1 \
-		clap_derive-4.6.1 \
+		clap_derive-4.6.3 \
 		clap_lex-1.1.0 \
 		clap_mangen-0.3.0 \
 		color_quant-1.1.0 \
@@ -169,9 +169,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.33 \
+		jiff-0.2.34 \
 		jiff-core-0.1.0 \
-		jiff-static-0.2.33 \
+		jiff-static-0.2.34 \
 		js-sys-0.3.103 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
@@ -313,7 +313,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.0 \
+		syn-3.0.2 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
@@ -325,12 +325,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.19 \
 		thread_local-1.1.10 \
-		time-0.3.53 \
+		time-0.3.54 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.0 \
+		tokio-1.53.1 \
 		tokio-macros-2.7.1 \
 		tokio-util-0.7.18 \
 		tui-term-0.3.4 \
@@ -396,8 +396,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winreg-0.10.1 \
 		wit-bindgen-0.57.1 \
 		wyz-0.5.1 \
-		zerocopy-0.8.54 \
-		zerocopy-derive-0.8.54 \
+		zerocopy-0.8.55 \
+		zerocopy-derive-0.8.55 \
 		zmij-1.0.23 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15
