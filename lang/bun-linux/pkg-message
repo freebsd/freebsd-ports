@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+You installed the Linux version of Bun.
+
+The 'bun' command runs the Linux binary through the Linuxulator.
+Make sure /compat/linux/proc is mounted before using bun:
+
+  sudo mount -t linprocfs linprocfs /compat/linux/proc
+
+Run 'bun --help' to get started.
+EOM
+}
+]

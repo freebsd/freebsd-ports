@@ -18,6 +18,7 @@
     SUBDIR += bend
     SUBDIR += bsh
     SUBDIR += bun
+    SUBDIR += bun-linux
     SUBDIR += bwbasic
     SUBDIR += c
     SUBDIR += c3c

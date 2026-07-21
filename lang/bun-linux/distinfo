@@ -1,0 +1,5 @@
+TIMESTAMP = 1784592947
+SHA256 (bun-linux-1.3.14/bun-linux-x64-baseline.zip) = a063908ae08b7852ca10939bbdc6ceed3ddabce8fb9402dce83d65d73b36e6c7
+SIZE (bun-linux-1.3.14/bun-linux-x64-baseline.zip) = 35595658
+SHA256 (bun-linux-1.3.14/bun-linux-aarch64.zip) = a27ffb63a8310375836e0d6f668ae17fa8d8d18b88c37c821c65331973a19a3b
+SIZE (bun-linux-1.3.14/bun-linux-aarch64.zip) = 35700603
