@@ -1,7 +1,6 @@
 PORTNAME=	srt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.5
-PORTREVISION=	1
+DISTVERSION=	1.5.6
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,5 +49,7 @@ OPENSSL_USES=		ssl
 OPENSSL_CMAKE_ON=	-DUSE_ENCLIB=openssl
 
 SRTFFPLAY_RUN_DEPENDS=	bash:shells/bash
+
+# tests as of 1.5.6: 99% tests passed, 1 tests failed out of 263
 
 .include <bsd.port.mk>
