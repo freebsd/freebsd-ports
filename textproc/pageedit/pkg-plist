@@ -5,11 +5,15 @@ share/icons/hicolor/256x256/apps/pageedit.png
 share/icons/hicolor/32x32/apps/pageedit.png
 share/icons/hicolor/48x48/apps/pageedit.png
 share/icons/hicolor/scalable/apps/pageedit.svg
+%%DATADIR%%/examples/clip_entries.ini
+%%DATADIR%%/translations/pageedit_ar.qm
+%%DATADIR%%/translations/pageedit_ca.qm
 %%DATADIR%%/translations/pageedit_cs.qm
 %%DATADIR%%/translations/pageedit_da_DK.qm
 %%DATADIR%%/translations/pageedit_de.qm
 %%DATADIR%%/translations/pageedit_en.qm
 %%DATADIR%%/translations/pageedit_es.qm
+%%DATADIR%%/translations/pageedit_fi.qm
 %%DATADIR%%/translations/pageedit_fr.qm
 %%DATADIR%%/translations/pageedit_hu_HU.qm
 %%DATADIR%%/translations/pageedit_it.qm
@@ -20,14 +24,11 @@ share/icons/hicolor/scalable/apps/pageedit.svg
 %%DATADIR%%/translations/pageedit_pt_BR.qm
 %%DATADIR%%/translations/pageedit_ru.qm
 %%DATADIR%%/translations/pageedit_sr.qm
-%%DATADIR%%/translations/pageedit_sv.qm
 %%DATADIR%%/translations/pageedit_tr.qm
-%%DATADIR%%/translations/pageedit_uk_UA.qm
+%%DATADIR%%/translations/pageedit_uk.qm
 %%DATADIR%%/translations/pageedit_zh_CN.qm
-%%DATADIR%%/translations/pageedit_zh_TW.qm
-@dir %%QT_DATADIR%%/qtwebengine_dictionaries
-%%QT5_ONLY%%%%QT_DATADIR%%/qtwebengine_dictionaries/de_DE.bdic
-%%QT5_ONLY%%%%QT_DATADIR%%/qtwebengine_dictionaries/en_GB.bdic
-%%QT5_ONLY%%%%QT_DATADIR%%/qtwebengine_dictionaries/en_US.bdic
-%%QT5_ONLY%%%%QT_DATADIR%%/qtwebengine_dictionaries/es.bdic
-%%QT5_ONLY%%%%QT_DATADIR%%/qtwebengine_dictionaries/fr.bdic
+%%QT_DATADIR%%/qtwebengine_dictionaries/de_DE.bdic
+%%QT_DATADIR%%/qtwebengine_dictionaries/en_GB.bdic
+%%QT_DATADIR%%/qtwebengine_dictionaries/en_US.bdic
+%%QT_DATADIR%%/qtwebengine_dictionaries/es.bdic
+%%QT_DATADIR%%/qtwebengine_dictionaries/fr.bdic
