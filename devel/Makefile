@@ -1105,6 +1105,7 @@
     SUBDIR += ittapi
     SUBDIR += ivykis
     SUBDIR += jakarta-activation-api
+    SUBDIR += jakarta-annotation-api
     SUBDIR += jam
     SUBDIR += janet-lsp
     SUBDIR += jansson

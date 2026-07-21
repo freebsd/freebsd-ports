@@ -1,0 +1,5 @@
+Jakarta Annotations defines a collection of annotations representing common
+semantic concepts that enable a declarative programming style across a variety
+of Java technologies.
+
+The API uses the Java Platform Module System module name jakarta.annotation.
