@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gtkspell/${PORTNAME}
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Spellchecking for GtkText widgets
 WWW=		https://gtkspell.sourceforge.net
 
