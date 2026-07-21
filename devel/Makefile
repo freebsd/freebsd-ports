@@ -1105,6 +1105,7 @@
     SUBDIR += ittapi
     SUBDIR += ivykis
     SUBDIR += jackson-annotations
+    SUBDIR += jackson-core
     SUBDIR += jakarta-activation-api
     SUBDIR += jakarta-annotation-api
     SUBDIR += jam

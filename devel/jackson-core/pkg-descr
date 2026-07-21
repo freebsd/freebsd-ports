@@ -1,0 +1,3 @@
+Jackson Core provides the low-level streaming API and JSON parser and
+generator implementation used by the Jackson data-processing suite. It
+supports token-based JSON processing without requiring data binding.
