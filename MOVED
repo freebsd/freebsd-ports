@@ -5505,3 +5505,4 @@ misc/py-lance-namespace-urllib3-client|databases/py-lance-namespace-urllib3-clie
 net/proxychains|net/proxychains-ng|2026-07-16|Has expired: Use net/proxychains-ng instead
 x11/swww|x11/awww|2026-07-17|Upstream renamed
 misc/py-fastavro|textproc/py-fastavro|2026-07-20|Remove duplicate port, use textproc/py-fastavro instead
+net/nitroshare||2026-07-21|Deprecated upstream, the author is working on the new GoLang nitroshare2 which is not ready yet
