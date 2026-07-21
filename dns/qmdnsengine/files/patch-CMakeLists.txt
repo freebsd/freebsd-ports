@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-07-21 10:49:08 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ endif()
+ 	message( STATUS "QMdnsEngine: Use CMAKE_PREFIX_PATH to locate Qt version to be used: ${CMAKE_PREFIX_PATH}" )
+ endif()
+ 
+-find_package(QT NAMES Qt6 Qt5 COMPONENTS Network REQUIRED)
++find_package(QT NAMES Qt6 COMPONENTS Network REQUIRED)
+ message( STATUS "QMdnsEngine: Found Qt Version: ${QT_VERSION}" )
+ 
+ if (${QT_VERSION_MAJOR} GREATER_EQUAL 6 )
