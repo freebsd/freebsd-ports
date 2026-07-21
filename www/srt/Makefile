@@ -5,7 +5,8 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Secure Reliable Transport (SRT) Protocol
-WWW=		https://www.srtalliance.org/
+WWW=		https://www.srtalliance.org/ \
+		https://github.com/Haivision/srt
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -50,6 +51,6 @@ OPENSSL_CMAKE_ON=	-DUSE_ENCLIB=openssl
 
 SRTFFPLAY_RUN_DEPENDS=	bash:shells/bash
 
-# tests as of 1.5.6: 99% tests passed, 1 tests failed out of 263
+# tests as of 1.5.6: 100% tests passed, 0 tests failed out of 263
 
 .include <bsd.port.mk>
