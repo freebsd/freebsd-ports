@@ -1,0 +1,3 @@
+Jackson Annotations provides general-purpose annotations for the Jackson
+data processor. These annotations are used on value and handler types and
+do not contain the functionality that processes the annotations.
