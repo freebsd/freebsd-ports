@@ -1110,6 +1110,7 @@
     SUBDIR += janet-lsp
     SUBDIR += jansson
     SUBDIR += java-findbugs
+    SUBDIR += javax-activation-api
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
     SUBDIR += jech-dht

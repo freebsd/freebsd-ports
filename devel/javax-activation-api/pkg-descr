@@ -1,0 +1,6 @@
+Jakarta Activation API 1.2.2 provides the classic javax.activation API for
+handling MIME-typed data. Despite the Maven artifact name, this release
+still provides classes in the javax.activation namespace.
+
+This port installs only the Activation API and does not include an
+implementation.
