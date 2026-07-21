@@ -1,0 +1,3 @@
+Jackson Databind provides data binding between JSON content and Java objects.
+It uses Jackson Core for streaming JSON processing and Jackson Annotations
+for data-binding configuration.
