@@ -1,6 +1,7 @@
 PORTNAME=	libspnav
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +11,13 @@ WWW=		https://spacenav.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	gsed:textproc/gsed
+
 USES=		gmake xorg
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+
+BINARY_ALIAS=	sed=gsed
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeSpacenav
