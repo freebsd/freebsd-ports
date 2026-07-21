@@ -1,0 +1,10 @@
+--- src/lib/util/meson.build.orig	2026-07-21 20:28:31 UTC
++++ src/lib/util/meson.build
+@@ -100,7 +100,6 @@ libgnunetutil = library(
+         unistr_dep,
+         ltdl_dep,
+         idn_dep,
+-        atomic_dep,
+     ],
+     include_directories: [incdir, configuration_inc],
+     install: true,

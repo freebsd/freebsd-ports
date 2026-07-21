@@ -1,4 +1,4 @@
---- meson.build.orig	2026-07-07 11:27:47 UTC
+--- meson.build.orig	2025-12-22 20:50:58 UTC
 +++ meson.build
 @@ -8,6 +8,8 @@ add_project_arguments('-D_GNU_SOURCE', language: 'c')
  
@@ -9,3 +9,16 @@
  
  cc = meson.get_compiler('c')
  incdir = include_directories('src/include')
+@@ -456,12 +458,6 @@ if not tun_found and cc.check_header('net/tun/if_tun.h
+         private_config.set_quoted('IF_TUN_HDR', 'net/tun/if_tun.h')
+         tun_found = true
+     endif
+-endif
+-
+-# Check for optional libatomic
+-atomic_dep = dependency('', required: false)
+-if cc.has_function('__atomic_load_8') == false
+-    atomic_dep = cc.find_library('atomic', required: true)
+ endif
+ 
+ # GNUTLS DANE
