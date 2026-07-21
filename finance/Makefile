@@ -206,6 +206,7 @@
     SUBDIR += skrooge
     SUBDIR += sql-ledger
     SUBDIR += taler-exchange
+    SUBDIR += taler-merchant
     SUBDIR += ticker
     SUBDIR += tickrs
     SUBDIR += venice
