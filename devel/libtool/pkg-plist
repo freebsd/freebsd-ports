@@ -1,5 +1,7 @@
 bin/libtool
+bin/libtool-next-version
 bin/libtoolize
+share/man/man1/libtool-next-version.1.gz
 share/man/man1/libtool.1.gz
 share/man/man1/libtoolize.1.gz
 share/aclocal/libtool.m4
