@@ -1112,6 +1112,7 @@
     SUBDIR += java-findbugs
     SUBDIR += javax-activation-api
     SUBDIR += javax-ws-rs-api
+    SUBDIR += jaxb-api
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
     SUBDIR += jech-dht

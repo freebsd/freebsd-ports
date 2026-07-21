@@ -1,0 +1,7 @@
+Jakarta XML Binding API 2.3 provides the classic javax.xml.bind API for
+mapping Java classes to XML representations. Although the Maven artifact is
+named jakarta.xml.bind-api, version 2.3.3 still uses the javax.xml.bind
+namespace.
+
+This port installs only the JAXB API and does not include a JAXB runtime
+implementation.
