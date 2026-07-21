@@ -1,6 +1,5 @@
 PORTNAME=	dovi_tool
-DISTVERSION=	2.1.2
-PORTREVISION=	16
+DISTVERSION=	2.3.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	michiel@vanbaak.eu
