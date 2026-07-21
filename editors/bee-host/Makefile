@@ -1,5 +1,5 @@
 PORTNAME=	bee-host
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.1
 CATEGORIES=	editors www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -23,5 +23,8 @@ OPTIONS_DEFINE=	DOCS
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE:C|/||}|' ${WRKSRC}/vars.sh
+
+post-stage:
+	${RM} -rf ${STAGEDIR}/usr/lib64
 
 .include <bsd.port.mk>
