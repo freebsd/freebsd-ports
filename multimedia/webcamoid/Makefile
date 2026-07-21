@@ -49,13 +49,13 @@ CXXFLAGS+=	-mmmx
 .endif
 
 # Intel SIMD instructions are only supported on amd64 and i386
-#.if ${ARCH} == amd64 || ${ARCH} == i386
-#PLIST_FILES+=	lib/qt/plugins/avkys/libSimdCore_avx.so \
-#		lib/qt/plugins/avkys/libSimdCore_avx2.so \
-#		lib/qt/plugins/avkys/libSimdCore_mmx.so \
-#		lib/qt/plugins/avkys/libSimdCore_sse.so \
-#		lib/qt/plugins/avkys/libSimdCore_sse2.so \
-#		lib/qt/plugins/avkys/libSimdCore_sse4_1.so
-#.endif
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_FILES+=	lib/qt/plugins/avkys/libSimdCore_avx.so \
+		lib/qt/plugins/avkys/libSimdCore_avx2.so \
+		lib/qt/plugins/avkys/libSimdCore_mmx.so \
+		lib/qt/plugins/avkys/libSimdCore_sse.so \
+		lib/qt/plugins/avkys/libSimdCore_sse2.so \
+		lib/qt/plugins/avkys/libSimdCore_sse4_1.so
+.endif
 
 .include <bsd.port.post.mk>
