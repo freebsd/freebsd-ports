@@ -1,4 +1,4 @@
-TIMESTAMP = 1783962570
+TIMESTAMP = 1784608023
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -981,8 +981,6 @@ SHA256 (rust/crates/prost-types-0.14.3.crate) = 8991c4cbdb8bc5b11f0b074ffe286c30
 SIZE (rust/crates/prost-types-0.14.3.crate) = 49368
 SHA256 (rust/crates/protobuf-3.7.2.crate) = d65a1d4ddae7d8b5de68153b48f6aa3bba8cb002b243dbdbc55a5afbc98f99f4
 SIZE (rust/crates/protobuf-3.7.2.crate) = 211978
-SHA256 (rust/crates/protobuf-src-1.1.0+21.5.crate) = c7ac8852baeb3cc6fb83b93646fb93c0ffe5d14bf138c945ceb4b9948ee0e3c1
-SIZE (rust/crates/protobuf-src-1.1.0+21.5.crate) = 6792235
 SHA256 (rust/crates/protobuf-support-3.7.2.crate) = 3e36c2f31e0a47f9280fb347ef5e461ffcd2c52dd520d8e216b52f93b0b0d7d6
 SIZE (rust/crates/protobuf-support-3.7.2.crate) = 11725
 SHA256 (rust/crates/protosol-6.1.0.crate) = acef24e715f0ce9ac6491004da1c35c919c60517f976f61e0f05f34d22e873ec

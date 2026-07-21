@@ -1,0 +1,10 @@
+--- Cargo.toml.orig	2026-07-21 04:26:20 UTC
++++ Cargo.toml
+@@ -317,7 +317,6 @@ prost-types = "0.14.3"
+ proptest = "1.11"
+ prost = "0.14.3"
+ prost-types = "0.14.3"
+-protobuf-src = "1.1.0"
+ protosol = "=6.1.0"
+ qualifier_attr = { version = "0.2.2", default-features = false }
+ quinn = "0.11.9"

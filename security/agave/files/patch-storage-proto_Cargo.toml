@@ -1,0 +1,12 @@
+--- storage-proto/Cargo.toml.orig	2026-07-21 04:26:20 UTC
++++ storage-proto/Cargo.toml
+@@ -42,9 +42,6 @@ tonic-prost-build = { workspace = true }
+ 
+ # windows users should install the protobuf compiler manually and set the PROTOC
+ # envar to point to the installed binary
+-[target."cfg(not(windows))".build-dependencies]
+-protobuf-src = { workspace = true }
+-
+ [dev-dependencies]
+ enum-iterator = { workspace = true }
+ test-case = { workspace = true }

@@ -1,6 +1,7 @@
 PORTNAME=	agave
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-blockchain
 
@@ -17,6 +18,7 @@ BROKEN_i386=		fails on 32-bit systems: https://github.com/solana-labs/solana/iss
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libhidapi.so:comms/hidapi \
+		libprotobuf.so:devel/protobuf \
 		librocksdb.so:databases/rocksdb \
 		libzstd.so:archivers/zstd
 
@@ -516,7 +518,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		prost-derive-0.14.3 \
 		prost-types-0.14.3 \
 		protobuf-3.7.2 \
-		protobuf-src-1.1.0+21.5 \
 		protobuf-support-3.7.2 \
 		protosol-6.1.0 \
 		pulldown-cmark-0.13.1 \
@@ -952,7 +953,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 XARCH=		${ARCH:S/amd64/x86_64/:tu}
 
 MAKE_ENV=	${XARCH}_UNKNOWN_FREEBSD_OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
-		${XARCH}_UNKNOWN_FREEBSD_OPENSSL_LIB_DIR=${OPENSSLLIB}
+		${XARCH}_UNKNOWN_FREEBSD_OPENSSL_LIB_DIR=${OPENSSLLIB} \
+		PROTOC=${LOCALBASE}/bin/protoc
 
 BINARY_ALIAS=	llvm-config=${LOCALBASE}/bin/${LLVM_CONFIG}
 

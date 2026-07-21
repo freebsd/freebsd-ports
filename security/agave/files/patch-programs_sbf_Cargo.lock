@@ -1,0 +1,26 @@
+--- programs/sbf/Cargo.lock.orig	2026-07-21 04:26:20 UTC
++++ programs/sbf/Cargo.lock
+@@ -4705,15 +4705,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "protobuf-src"
+-version = "1.1.0+21.5"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c7ac8852baeb3cc6fb83b93646fb93c0ffe5d14bf138c945ceb4b9948ee0e3c1"
+-dependencies = [
+- "autotools",
+-]
+-
+-[[package]]
+ name = "protobuf-support"
+ version = "3.7.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -9373,7 +9364,6 @@ dependencies = [
+  "bincode",
+  "bs58",
+  "prost",
+- "protobuf-src",
+  "serde",
+  "solana-account-decoder",
+  "solana-hash 4.3.0",
