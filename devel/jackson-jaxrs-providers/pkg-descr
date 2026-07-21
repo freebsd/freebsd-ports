@@ -1,0 +1,6 @@
+Jackson JAX-RS Providers integrate Jackson data binding with applications
+using the classic javax.ws.rs API.
+
+This package installs the common Jackson JAX-RS provider classes and the
+JSON provider required by Dogtag PKI. Additional Jackson data format
+providers are not included.
