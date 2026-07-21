@@ -4614,6 +4614,7 @@
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_APV_APH2213.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_AVX_LMLP07A7.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPI-0425.step
+%%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPI-0628.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPIAIG-F4020.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Bourns-SRN4018.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Bourns_SDR1806.step
@@ -5858,6 +5859,7 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHF0024A_VQFN-24-1EP_4x5mm_P0.5mm_EP2.65x3.65mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHH0036C_VQFN-36-1EP_6x6mm_P0.5mm_EP4.4x4.4mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RNQ0040A_WQFN-40-1EP_6x4mm_P0.4mm_EP4.7x2.7mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RRW0024A_WQFN-24-1EP_3x3mm_P0.4mm_EP1.9x1.9mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RSA_VQFN-16-1EP_4x4mm_P0.65mm_EP2.7x2.7mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step
@@ -6224,6 +6226,7 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.4x3.2mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm_Mask2.75x3.43mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-24-1EP_4.4x7.8mm_P0.65mm_EP3.4x7.8mm_Mask2.4x4.68mm.step
@@ -6417,6 +6420,7 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/TSSOP-8_4.4x3mm_P0.65mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.85x4.9mm_Mask2.4x3.1mm_ThermalVias.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.94x3.34mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.155x3.255mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Texas_PWP0020A.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Toshiba_SOIC-4-6_4.4x3.6mm_P1.27mm.step

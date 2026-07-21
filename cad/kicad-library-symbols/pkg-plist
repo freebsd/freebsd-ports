@@ -35,6 +35,7 @@
 %%DATADIR%%/symbols/Connector_Generic_Shielded.kicad_sym
 %%DATADIR%%/symbols/Converter_ACDC.kicad_sym
 %%DATADIR%%/symbols/Converter_DCDC.kicad_sym
+%%DATADIR%%/symbols/Converter_DCDC_Isolated.kicad_sym
 %%DATADIR%%/symbols/DSP_AnalogDevices.kicad_sym
 %%DATADIR%%/symbols/DSP_Freescale.kicad_sym
 %%DATADIR%%/symbols/DSP_Microchip_DSPIC33.kicad_sym

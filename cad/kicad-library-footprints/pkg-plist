@@ -7730,6 +7730,15 @@
 %%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_215079-4_2x02_P1.27mm_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_215079-8_2x04_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_7-188275-4_2x02_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_7-188275-6_2x03_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_7-188275-8_2x04_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_8-188275-0_2x05_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_8-188275-2_2x06_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_8-188275-4_2x07_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_8-188275-6_2x08_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_8-188275-8_2x09_P1.27mm_Vertical.kicad_mod
+%%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_Micro-MaTch_9-188275-0_2x10_P1.27mm_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_T4041037031-000_M8_03_Socket_Straight.kicad_mod
 %%DATADIR%%/footprints/Connector_TE-Connectivity.pretty/TE_T4041037041-000_M8_04_Socket_Straight.kicad_mod
 %%DATADIR%%/footprints/Connector_USB.pretty/USB3_A_Molex_48393-001.kicad_mod
@@ -9148,6 +9157,7 @@
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_APV_APH2213.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_AVX_LMLP07A7.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-0425.kicad_mod
+%%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-0628.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-0630LR.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-3012S.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-4030S.kicad_mod
@@ -12563,6 +12573,8 @@
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3x3mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP2.74x3.86mm.kicad_mod
@@ -12917,6 +12929,8 @@
 %%DATADIR%%/footprints/Package_SO.pretty/Texas_HSOP-8-1EP_3.9x4.9mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/Texas_HSOP-8-1EP_3.9x4.9mm_P1.27mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.94x3.34mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.94x3.34mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.155x3.255mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.155x3.255mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm.kicad_mod
@@ -13029,8 +13043,6 @@
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-6-1EP_3x3mm_P0.95mm.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-6_1.5x1.5mm_P0.5mm.kicad_mod
-%%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm.kicad_mod
-%%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_3x2.5mm_P0.5mm_EP1.2x1.5mm_PullBack.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_3x2.5mm_P0.5mm_EP1.2x1.5mm_PullBack_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SON.pretty/WSON-8-1EP_3x3mm_P0.5mm_EP1.2x2mm.kicad_mod
