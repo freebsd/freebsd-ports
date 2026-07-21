@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260724:
+  AFFECTS: users of news/inn, news/inn-current
+  AUTHOR: kbowling@FreeBSD.org
+
+  The BERKELEYDB option now depends on databases/db18 instead of
+  databases/db5 (EOL).  If you use the ovdb overview method, stop the
+  news system, upgrade the port, then upgrade the overview database
+  in-place as the news user before restarting:
+
+    # service innd stop
+    # pkg upgrade news/inn   # or rebuild from ports
+    # su -m news -c 'ovdb_init -u'
+    # service innd start
+
+  The upgrade is in-place and cannot be undone.  See ovdb_init(8) for
+  details.  Users not using ovdb can ignore this entry.
+
 20260721:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
