@@ -1,0 +1,5 @@
+RESTEasy is an implementation of the Jakarta RESTful Web Services
+specification using the classic javax.ws.rs namespace.
+
+This port installs the RESTEasy core JAX-RS implementation, the Jackson 2
+JSON provider, and the Servlet container initializer.

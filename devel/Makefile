@@ -6690,6 +6690,7 @@
     SUBDIR += reposilite
     SUBDIR += reproc
     SUBDIR += resolv_wrapper
+    SUBDIR += resteasy
     SUBDIR += revive
     SUBDIR += rgbds
     SUBDIR += rgx

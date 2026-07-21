@@ -1,0 +1,7 @@
+TIMESTAMP = 1784187133
+SHA256 (resteasy-jaxrs-3.0.26.Final.jar) = 687a779b3faefd77e0f3d0c2619594fdf1d7f9602723808fae4a3c883430865a
+SIZE (resteasy-jaxrs-3.0.26.Final.jar) = 917889
+SHA256 (resteasy-jackson2-provider-3.0.26.Final.jar) = 15798f7f775579c3702285ac977178250b41fd71a5ba707686bf21b5e570d5ba
+SIZE (resteasy-jackson2-provider-3.0.26.Final.jar) = 17801
+SHA256 (resteasy-servlet-initializer-3.0.26.Final.jar) = 0862ad5dad93047bdc7d3459aca7048454e8568a9995da3a1eae8e35c5188f78
+SIZE (resteasy-servlet-initializer-3.0.26.Final.jar) = 8868
